@@ -5,7 +5,7 @@
       "docset_name": "WindowsServerDocs-pr",
       "build_source_folder": "WindowsServerDocs",
       "build_output_subfolder": "WindowsServerDocs-VSTS",
-      "locale": "ja-JP",
+      "locale": "ja-jp",
       "monikers": [],
       "open_to_public_contributors": false,
       "type_mapping": {
@@ -21,7 +21,7 @@
       "docset_name": "WindowsServerEssentialsDocs-pr",
       "build_source_folder": "EssentialsDocs",
       "build_output_subfolder": "EssentialsDocs-VSTS",
-      "locale": "ja-JP",
+      "locale": "ja-jp",
       "monikers": [],
       "open_to_public_contributors": false,
       "type_mapping": {
@@ -37,7 +37,7 @@
   "notification_subscribers": [],
   "branches_to_filter": [
     "live-sxs",
-    "master-sxs"
+    "live"
   ],
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/windowsserverdocs",
   "git_repository_branch_open_to_public_contributors": "master",
@@ -54,7 +54,7 @@
     },
     {
       "path_to_root": "_themes",
-      "url": "https://github.com/Microsoft/templates.docs.msft.ja-JP",
+      "url": "https://github.com/Microsoft/templates.docs.msft.ja-jp",
       "branch": "master",
       "branch_mapping": {}
     },
