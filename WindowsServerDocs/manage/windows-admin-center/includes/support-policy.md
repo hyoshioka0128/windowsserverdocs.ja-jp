@@ -1,3 +1,0 @@
-Windows Admin Center (プレビュー以外) のリリースは、Microsoft の[最新のライフ サイクル ポリシー](https://support.microsoft.com/help/30881/modern-lifecycle-policy)に基づいて、継続的にサポートされます。 つまり、Windows Admin Center の最新バージョンのみが処理され、サポートされている場合、引き続きサポートされている使用可能状況の 30 日以内の最新の Windows Admin Center リリースへのアップグレードをユーザーが現在状態を維持する必要があります。 このポリシーは、自体と同様のリリース (プレビュー以外の) Microsoft の拡張機能フィード Windows Admin Center の拡張機能で公開に、Windows Admin Center プラットフォームの両方に適用されます。 いくつかの拡張機能に Windows Admin Center のリリースの間で、他と比べてより頻繁に更新されることに注意してください。
-
-Windows Admin Center Preview リリースについては、 [Windows Insider Preview のリリース](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)を参照してください。
