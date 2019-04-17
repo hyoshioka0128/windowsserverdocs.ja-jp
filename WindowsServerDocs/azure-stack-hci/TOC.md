@@ -1,0 +1,7 @@
+# [Azure Stack HCI](index.md)
+## [Hyper-V](../virtualization/hyper-v/index.md)
+## [記憶域スペース ダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md)
+## [フェールオーバー クラスタリング](../failover-clustering/failover-clustering-overview.md)
+## [ソフトウェア定義ネットワーク](https://docs.microsoft.com/windows-server/networking/sdn/)
+## [Windows Admin Center](../manage/windows-admin-center/overview.md)
+## [Azure への接続](../azure-hybrid-services/index.md)
