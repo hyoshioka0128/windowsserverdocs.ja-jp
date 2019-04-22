@@ -1,93 +1,93 @@
 ---
-title: サーバーのパフォーマンスの履歴
+title: サーバーのパフォーマンス履歴
 ms.author: cosdar
 ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/0s/2018
-Keywords: Storage Spaces Direct
+Keywords: 記憶域スペース ダイレクト
 ms.localizationpriority: medium
 ms.openlocfilehash: 33fd62376e9769c23fc6b00eefde9a9b95eb4650
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1894251"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59820593"
 ---
-# <a name="performance-history-for-servers"></a>サーバーのパフォーマンスの履歴
+# <a name="performance-history-for-servers"></a>サーバーのパフォーマンス履歴
 
-> 対象アプリケーション: Windows Server 内部のプレビュー
+> 適用先:Windows Server Insider Preview
 
-[記憶域スペースの直接のパフォーマンス履歴](performance-history.md)のサブこのトピックは、サーバーのパフォーマンスの履歴を収集するために詳しく説明します。 パフォーマンスの履歴はクラスター内のすべてのサーバーで使用できます。
+このサブ トピックの[記憶域スペース ダイレクトのパフォーマンスの履歴](performance-history.md)サーバー用に収集されたパフォーマンスの履歴の詳細について説明します。 パフォーマンスの履歴はすべてのサーバー クラスターで使用できます。
 
    > [!NOTE]
-   > 下にあるサーバーのパフォーマンスの履歴を収集することはできません。 コレクションとサーバーが復帰自動的に再開します。
+   > 停止しているサーバーのパフォーマンスの履歴を収集できません。 コレクションは、ときに、サーバーが復帰自動的に再開されます。
 
-## <a name="series-names-and-units"></a>系列の名前と単位
+## <a name="series-names-and-units"></a>系列名とユニット
 
-対象のすべてのサーバーでは、これらの連続データが収集されます。
+これらの系列は、すべての対象となるサーバーで収集されます。
 
-| 連続データ                           | Unit    |
+| シリーズ                           | Unit    |
 |----------------------------------|---------|
-| `clusternode.cpu.usage`          | 率 (%) |
-| `clusternode.cpu.usage.guest`    | 率 (%) |
-| `clusternode.cpu.usage.host`     | 率 (%) |
-| `clusternode.memory.total`       |  バイト   |
-| `clusternode.memory.available`   |  バイト   |
-| `clusternode.memory.usage`       |  バイト   |
-| `clusternode.memory.usage.guest` |  バイト   |
-| `clusternode.memory.usage.host`  |  バイト   |
+| `clusternode.cpu.usage`          | % |
+| `clusternode.cpu.usage.guest`    | % |
+| `clusternode.cpu.usage.host`     | % |
+| `clusternode.memory.total`       | バイト数   |
+| `clusternode.memory.available`   | バイト数   |
+| `clusternode.memory.usage`       | バイト数   |
+| `clusternode.memory.usage.guest` | バイト数   |
+| `clusternode.memory.usage.host`  | バイト数   |
 
-さらに、連続データを次のようなドライブ`physicaldisk.size.total`サーバーなどのネットワーク アダプター系列に添付されているすべての有効なドライブに集計されます`networkadapter.bytes.total`サーバーに接続されているすべての条件を満たすネットワーク アダプターに集計されます。
+さらに、ドライブの系列のなど`physicaldisk.size.total`などのネットワーク アダプターの系列、サーバーに接続されているすべての対象となるドライブごとに集計`networkadapter.bytes.total`サーバーに接続されているすべての対象となるネットワーク アダプターごとに集計します。
 
-## <a name="how-to-interpret"></a>内容を理解する方法
+## <a name="how-to-interpret"></a>解釈する方法
 
-| 連続データ                           | 内容を理解する方法                                                      |
+| シリーズ                           | 解釈する方法                                                      |
 |----------------------------------|-----------------------------------------------------------------------|
-| `clusternode.cpu.usage`          | アイドル状態ではないプロセッサ時間の割合。                        |
-| `clusternode.cpu.usage.guest`    | ゲスト (仮想マシン) の要求に使用するプロセッサ時間の割合。 |
-| `clusternode.cpu.usage.host`     | ホスト要求に使用するプロセッサ時間の割合。                    |
-| `clusternode.memory.total`       | サーバーの物理メモリの合計です。                              |
-| `clusternode.memory.available`   | サーバーの使用可能メモリします。                                   |
-| `clusternode.memory.usage`       | サーバーの割り当てられたメモリを (利用できません)。                   |
-| `clusternode.memory.usage.guest` | ゲスト (仮想マシン) の要求に割り当てられたメモリします。               |
-| `clusternode.memory.usage.host`  | 需要のホストに割り当てられたメモリします。                                  |
+| `clusternode.cpu.usage`          | アイドル プロセッサ時間の割合。                        |
+| `clusternode.cpu.usage.guest`    | ゲスト (仮想マシン) の要求時に使用されるプロセッサ時間の割合。 |
+| `clusternode.cpu.usage.host`     | ホストの要求時に使用されるプロセッサ時間の割合。                    |
+| `clusternode.memory.total`       | サーバーの物理メモリの合計。                              |
+| `clusternode.memory.available`   | サーバーの使用可能なメモリ。                                   |
+| `clusternode.memory.usage`       | サーバーの割り当てられたメモリを (使用できません)。                   |
+| `clusternode.memory.usage.guest` | ゲスト (仮想マシン) の要求時に割り当てられたメモリ。               |
+| `clusternode.memory.usage.host`  | ホストの要求時に割り当てられたメモリ。                                  |
 
-## <a name="where-they-come-from"></a>どこから取得します。
+## <a name="where-they-come-from"></a>来た
 
-`cpu.*` HYPER-V が有効になっているかどうかによって、さまざまなパフォーマンス カウンターから連続データを収集します。
+`cpu.*`シリーズは、HYPER-V が有効になっているかどうかに応じてさまざまなパフォーマンス カウンターから収集されます。
 
-HYPER-V] がオンの場合
+場合は、HYPER-V が有効になります。
 
-| 連続データ                           | ソース反対 |
+| シリーズ                           | ソースのカウンター |
 |----------------------------------|----------------|
 | `clusternode.cpu.usage`          | `Hyper-V Hypervisor Logical Processor` > `_Total` > `% Total Run Time`      |
 | `clusternode.cpu.usage.guest`    | `Hyper-V Hypervisor Virtual Processor` > `_Total` > `% Total Run Time`      |
 | `clusternode.cpu.usage.host`     | `Hyper-V Hypervisor Root Virtual Processor` > `_Total` > `% Total Run Time` |
 
-使用して、`% Total Run Time`カウンターにより、パフォーマンスの履歴属性をすべて使用します。
+使用して、`% Total Run Time`カウンターにより、パフォーマンスの履歴がすべての使用量を属性します。
 
-HYPER-V が有効になっていない場合: 場合
+場合は、HYPER-V が有効になっていません。
 
-| 連続データ                           | ソース反対 |
+| シリーズ                           | ソースのカウンター |
 |----------------------------------|----------------|
 | `clusternode.cpu.usage`          | `Processor` > `_Total` > `% Processor Time` |
-| `clusternode.cpu.usage.guest`    | *ゼロ* |
+| `clusternode.cpu.usage.guest`    | *zero* |
 | `clusternode.cpu.usage.host`     | *使用率の合計と同じ* |
 
-不完全な同期では、本`clusternode.cpu.usage`は常に`clusternode.cpu.usage.host`と`clusternode.cpu.usage.guest`します。
+不完全な同期は、本`clusternode.cpu.usage`は常に`clusternode.cpu.usage.host`plus`clusternode.cpu.usage.guest`します。
 
-ただし、同じ`clusternode.cpu.usage.guest`の合計は、常に`vm.cpu.usage`ホスト サーバー上のすべての仮想マシンのします。
+同じ注意点があります`clusternode.cpu.usage.guest`の合計は、常に`vm.cpu.usage`のすべてのバーチャル マシン ホスト サーバーにします。
 
-`memory.*`系列は、(準備中)。
+`memory.*`シリーズは、(近日)。
 
   > [!NOTE]
-  > カウンターがないサンプル、全体の間隔で表されます。 たとえば、サーバーがアイドル状態 9 秒数が 100% の CPU にスパイクに 10 日目の`clusternode.cpu.usage`この 10 秒間隔で平均 10% として記録されます。 これにより、そのパフォーマンス履歴は、すべての作業を収集し、ノイズ堅牢なされます。
+  > カウンターは、サンプリングされなかった、全体の間隔で測定されます。 たとえば、サーバーがアイドル状態 9 秒ですが 100% の CPU に急増の 10 日の 1 秒間その`clusternode.cpu.usage`この 10 秒間に平均で 10% として記録されます。 これにより、そのパフォーマンス履歴がすべてのアクティビティをキャプチャしがノイズに堅牢になりました。
 
-## <a name="usage-in-powershell"></a>PowerShell での使用
+## <a name="usage-in-powershell"></a>PowerShell での使用法
 
-[Get ClusterNode](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternode)コマンドレットを使用します。
+使用して、 [Get-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/get-clusternode)コマンドレット。
 
 ```PowerShell
 Get-ClusterNode <Name> | Get-ClusterPerf
@@ -95,4 +95,4 @@ Get-ClusterNode <Name> | Get-ClusterPerf
 
 ## <a name="see-also"></a>関連項目
 
-- [記憶域スペースの直接のパフォーマンス履歴](performance-history.md)
+- [記憶域スペース ダイレクトのパフォーマンスの履歴](performance-history.md)

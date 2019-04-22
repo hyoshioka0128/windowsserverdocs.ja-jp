@@ -1,6 +1,6 @@
 ---
-title: "AD FS 2016 で OpenID 接続または OAuth を使用するときに、id_token に出力される要求をカスタマイズします。"
-description: "AD FS 2016 でのカスタム ID トークン conecpts の技術概要"
+title: AD FS 2016 で OpenID Connect または OAuth を使用する場合は、id_token に出力される要求をカスタマイズします。
+description: AD FS 2016 でのカスタム id トークン conecpts の技術概要
 author: anandyadavmsft
 ms.author: billmath
 manager: mtillman
@@ -9,87 +9,88 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.reviewer: anandy
 ms.technology: identity-adfs
-ms.openlocfilehash: c17d50bb6d90726eafc3e585f16a7a8189a68392
-ms.sourcegitcommit: c16a2bf1b8a48ff267e71ff29f18b5e5cda003e8
+ms.openlocfilehash: 8c8e14f22a4bca5b6d32e841814a58a4b4ddca01
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59820643"
 ---
-# <a name="customize-claims-to-be-emitted-in-idtoken-when-using-openid-connect-or-oauth-with-ad-fs-2016"></a>AD FS 2016 で OpenID 接続または OAuth を使用するときに、id_token に出力される要求をカスタマイズします。
+# <a name="customize-claims-to-be-emitted-in-idtoken-when-using-openid-connect-or-oauth-with-ad-fs-2016"></a>AD FS 2016 で OpenID Connect または OAuth を使用する場合は、id_token に出力される要求をカスタマイズします。
 
 ## <a name="overview"></a>概要
-The article [here](enabling-openId-connect-with-ad-fs.md) shows how to build an app that uses AD FS for OpenID Connect sign on. ただし、既定では、id_token で利用可能なクレームの固定セットのみです。 AD FS 2016 で OpenID 接続シナリオ id_token をカスタマイズする機能があります。
+記事[ここ](enabling-openId-connect-with-ad-fs.md)OpenID Connect のサインオン用に AD FS を使用するアプリをビルドする方法を示します。 ただし、既定では、id_token で使用できる要求の固定セットだけです。 AD FS 2016 では、OpenID Connect のシナリオで id_token をカスタマイズする機能があります。
 
-## <a name="when-are-custom-id-token-used"></a>カスタム ID がしたときに使用されるトークンですか?
-特定のシナリオでことは、クライアント アプリケーションにアクセスしようとするリソースがないことです。 そのため、本当に必要はありません、アクセス トークン。 このような場合、クライアント アプリケーションには、のみ、ID トークンですが、機能のためにいくつか追加の信頼性情報と基本的に必要があります。
+## <a name="when-are-custom-id-token-used"></a>カスタム ID が場合に使用されるトークンですか?
+特定のシナリオでは、クライアント アプリケーションにアクセスしようとするリソースがないことができます。 そのため、アクセス トークンは本当に必要ありません。 このような場合、クライアント アプリケーションには、のみ、ID トークンですがいくつか追加の要求のヘルプで、機能を本質的には必要があります。
 
-## <a name="what-are-the-restrictions-on-getting-custom-claims-in-id-token"></a>ID でカスタムの要求のトークンの取得に関する制限事項とは何ですか。
+## <a name="what-are-the-restrictions-on-getting-custom-claims-in-id-token"></a>ID でカスタム要求のトークンの取得に関する制限事項とは
 
-### <a name="scenario-1"></a>シナリオ 1
+### <a name="scenario-1"></a>例 1
 
-![制限します。](media/Custom-Id-Tokens-in-AD-FS/res1.png)
+![制限](media/Custom-Id-Tokens-in-AD-FS/res1.png)
 
-1.  response_mode が form_post として設定します。
-2.  パブリック クライアントのみを取得できますカスタム要求 ID でトークン
-3.  証明書利用者の識別子は、クライアント識別子と同じである必要があります。
+1.  response_mode は form_post として設定します。
+2.  パブリック クライアントのみで入手できますカスタム クレーム ID トークン
+3.  証明書利用者のパーティの識別子をクライアント識別子と同じにする必要があります。
 
 ### <a name="scenario-2"></a>シナリオ 2
 
-![制限します。](media/Custom-Id-Tokens-in-AD-FS/restrict2.png)
+![制限](media/Custom-Id-Tokens-in-AD-FS/restrict2.png)
 
-[KB4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472)、AD FS サーバーにインストールされています。
-1.  response_mode が form_post として設定します。
-2.  クライアント – RP ペアにスコープ allatclaims を割り当てます。
-次の例に示されている Grant-ADFSApplicationPermission コマンドレットを使用して、スコープを割り当てることができます。
+[KB4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472) AD FS サーバーにインストールされています。
+1.  response_mode は form_post として設定します。
+2.  クライアント-RP ペアには、スコープ allatclaims を割り当てます。
+次の例に示すように Grant ADFSApplicationPermission コマンドレットを使用して、スコープを割り当てることができます。
 
 ``` powershell
 Grant-AdfsApplicationPermission -ClientRoleIdentifier "https://my/privateclient" -ServerRoleIdentifier "https://rp/fedpassive" -ScopeNames "allatclaims","openid"
 ```
 
-## <a name="creating-an-oauth-application-to-handle-custom-claims-in-id-token"></a>OAuth ID トークン内のカスタムの要求を処理するアプリケーションを作成します。
-記事を使用して[次のとおり](Enabling-OpenId-Connect-with-AD-FS-2016.md)OpenID 接続の AD FS がサインオンを使用するアプリケーション アプリを作成します。 カスタムの信頼性情報と、ID トークンを受信するための AD FS で、アプリケーションを構成するには、次の手順に従います。
+## <a name="creating-an-oauth-application-to-handle-custom-claims-in-id-token"></a>ID トークンのカスタム要求を処理するために OAuth アプリケーションを作成します。
+アーティクルを使用して、[ここで](Enabling-OpenId-Connect-with-AD-FS-2016.md)OpenID Connect の AD FS のサインオンに使用するアプリケーションのアプリを作成します。 カスタム クレームと ID トークンを受信するための AD FS でアプリケーションを構成するのには、次の手順に従います。
 
-### <a name="create-the-application-group-in-ad-fs-2016"></a>AD FS 2016 でアプリケーション グループを作成します。
+### <a name="create-the-application-group-in-ad-fs-2016"></a>AD FS 2016 でのアプリケーション グループを作成します。
 
-1.  CustomTokenClient と呼ばれる、以下に示す、新しいテンプレートに基づくアプリケーション グループを作成します。
+1.  CustomTokenClient と呼ばれる、次に示す、新しいテンプレートに基づくアプリケーション グループを作成します。
 
 ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
 
-2. このテンプレートでは、機密性の高いクライアントを作成します。 Id をメモし、VS プロジェクトの SSL URL として返される URI を指定します。
+2. このテンプレートは、秘密のクライアントを作成します。 Id をメモし、VS プロジェクトの SSL URL として戻り値の URI を指定します。
 
 ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
 
-3.  次の手順で選択**共有シークレットを生成**クライアント資格情報を作成し、生成されたクライアントの資格情報をコピーします。
+3.  次の手順で選択**共有シークレットを生成**クライアント資格情報を作成し、生成されたクライアント資格情報をコピーします。
 
 ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
 
-4. をクリックして**次**進んでウィザードを完了します。
+4. をクリックして**次**ウィザードを完了に進んでください。
 
 ![クライアント](media/Custom-Id-Tokens-in-AD-FS/clientsnap4.png)
 
-### <a name="create-the-relying-party"></a>証明書利用者を作成します。
-ID でカスタムの信頼性情報を追加するためにトークンを作成する必要が信頼性情報は、ID トークンに追加される RP します。 次に示すように、新しい証明書利用者を作成するのにには、証明書利用者信頼の追加ウィザードを使用します。
+### <a name="create-the-relying-party"></a>証明書利用者のパーティを作成します
+ID でカスタム クレームを追加するためにトークンを作成する必要を RP のクレームは、ID トークンに追加される予定です。 次に示すように、新しい証明書利用者のパーティを作成するのにには、証明書利用者信頼の追加ウィザードを使用します。
  
 ![証明書利用者](media/Custom-Id-Tokens-in-AD-FS/rpsnap1.png)
 
-証明書利用者が作成されたら、証明書利用者のパーティ エントリを右クリックし、選択**要求発行ポリシーの編集**要求発行規則を追加します。 以下に示すように、ID トークンの必要なカスタムの信頼性情報を追加します。
+証明書利用者が作成されると、証明書利用者のパーティのエントリを右クリックし、選択**要求発行ポリシーの編集**要求発行規則を追加します。 次に示すように、ID トークンに必要なカスタム クレームを追加します。
 
 ![証明書利用者](media/Custom-Id-Tokens-in-AD-FS/rpsnap2.png)
 
 ### <a name="assign-allatclaims-scope-to-the-pair-of-client-and-relying-party"></a>クライアントと証明書利用者のペアに"allatclaims"スコープを割り当てる
-PowerShell を使用して AD FS サーバーで、次の例で指定されている新しい allatclaims スコープを割り当てる (clientID とサーバーを変更します。
+AD FS サーバーで PowerShell を使用して次の例で指定されている新しい allatclaims スコープを割り当てる (サーバーとクライアント Id を変更します。
 
 ``` powershell
 Grant-AdfsApplicationPermission -ClientRoleIdentifier "5db77ce4-cedf-4319-85f7-cc230b7022e0" -ServerRoleIdentifier "https://customidrp1/" -ScopeNames "allatclaims","openid"
 ```
 
 >[!NOTE]
->アプリケーションの設定に従って ClientRoleIdentifier と ServerRoleIdentifier を変更します。
+>アプリケーションの設定に従い ClientRoleIdentifier および ServerRoleIdentifier を変更します。
 
-## <a name="test-the-custom-claims-in-id-token"></a>ID トークン内のカスタムの信頼性情報をテストします。
+## <a name="test-the-custom-claims-in-id-token"></a>ID トークン内のカスタム要求をテストします。
 
-次に、常に信頼性情報にアクセスを使用したコードの同じビットを使用して、確認できます、id_token の一部となるその他の信頼性情報。
-たとえば、.NET MVC サンプル アプリケーションでは、コントローラーのファイルの 1 つ開きを入力しますのようなコードの下。
+次に、常に要求へのアクセスに使用したコードの同じビットを使用して確認できます、id_token の一部となる追加の要求。
+.NET MVC サンプル アプリケーションでは、コント ローラーのファイルのいずれかを開くのようなコードを入力するなどの下。
 
 
 ``` code
@@ -108,17 +109,17 @@ Grant-AdfsApplicationPermission -ClientRoleIdentifier "5db77ce4-cedf-4319-85f7-c
 ```
 
 >[!NOTE]
->Please be aware that the resource parameter is required in the Oauth2 request.
+>Oauth2 要求にリソース パラメーターが必要なことに注意してください。
 >
->Bad example:
+>不適切な使用例:
 >
->**https&#58;//sts.contoso.com/adfs/oauth2/authorize?response_type=id_token&scope=openid&redirect_uri=https&#58;//myportal/auth&nonce=b3ceb943fc756d927777&client_id=6db3ec2a-075a-4c72-9b22-ca7ab60cb4e7&state=42c2c156aef47e8d0870&resource=6db3ec2a-075a-4c72-9b22-ca7ab60cb4e7**
+>**https&#58;//sts.contoso.com/adfs/oauth2/authorize?response_type=id_token & スコープ = openid & redirect_uri = https&#58;//myportal/auth & nonce = b3ceb943fc756d927777 & client_id = 6db3ec2a 075a-4 c 72 9b22 ca7ab60cb4e7(& a) の状態 = 42c2c156aef47e8d0870 & リソース 6db3ec2a 075a-4 c 72 9b22 ca7ab60cb4e7 を =**
 >
->Good example:
+>適切な例:
 >
->**https&#58;//sts.contoso.com/adfs/oauth2/authorize?response_type=id_token&scope=openid&redirect_uri=https&#58;//myportal/auth&nonce=b3ceb943fc756d927777&client_id=6db3ec2a-075a-4c72-9b22-ca7ab60cb4e7&state=42c2c156aef47e8d0870&resource=https&#58;//customidrp1/**
+>**https&#58;//sts.contoso.com/adfs/oauth2/authorize?response_type=id_token & スコープ = openid & redirect_uri = https&#58;//myportal/auth & nonce = b3ceb943fc756d927777 & client_id = 6db3ec2a 075a-4 c 72 9b22 ca7ab60cb4e7(& a) の状態 = 42c2c156aef47e8d0870 & リソース = https&#58;//customidrp1/ & response_mode form_post を =**
 >
->If the resource parameter is not in the request you may recieve an error or a token without any custom claims.
+>要求にリソース パラメーターがない場合、エラーまたはカスタムのクレームなしのトークンを受け取る可能性があります。
 
 ## <a name="next-steps"></a>次の手順
 [AD FS の開発](../../ad-fs/AD-FS-Development.md)  

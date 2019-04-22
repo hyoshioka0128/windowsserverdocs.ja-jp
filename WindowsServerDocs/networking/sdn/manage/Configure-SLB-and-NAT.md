@@ -1,7 +1,7 @@
 ---
-title: 負荷分散ソフトウェア ロード バランサーを構成し、ネットワーク アドレス変換 (NAT)
-description: このトピックでは、テナント ワークロードを管理および Windows Server 2016 での仮想ネットワークに方法について、ソフトウェア定義ネットワーク ガイドの一部です。
-manager: brianlic
+title: 負荷分散およびネットワーク アドレス変換 (NAT) のためのソフトウェア ロード バランサーを構成する
+description: このトピックでは、方法をテナントのワークロードの管理と Windows Server 2016 での仮想ネットワークへのソフトウェアによるネットワーク制御のガイドの一部です。
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,242 +12,291 @@ ms.topic: article
 ms.assetid: 73bff8ba-939d-40d8-b1e5-3ba3ed5439c3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7f0393db564061caa0bc8f18b1d623f24749b46c
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/23/2018
+ms.openlocfilehash: 55847bfbc0362887497514009f6efe1312d79906
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59819353"
 ---
-# <a name="configure-the-software-load-balancer-for-load-balancing-and-network-address-translation-nat"></a>負荷分散ソフトウェア ロード バランサーを構成し、ネットワーク アドレス変換 (NAT)
+# <a name="configure-the-software-load-balancer-for-load-balancing-and-network-address-translation-nat"></a>負荷分散およびネットワーク アドレス変換 (NAT) のためのソフトウェア ロード バランサーを構成する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-このトピックを使用すると、ソフトウェア定義ネットワーク \(SDN\) ソフトウェア ロード バランサーを使用する方法について \(SLB\) 発信ネットワーク アドレス変換 NAT、受信の NAT を提供、またはアプリケーションの複数のインスタンス間の負荷分散します。
+このトピックを使用するには、ソフトウェア定義ネットワークを使用する方法について\(SDN\)ソフトウェア ロード バランサー \(SLB\)発信ネットワーク アドレス変換を提供する\(NAT\)、受信 NAT、またはアプリケーションの複数のインスタンス間の負荷分散します。
 
-このトピックには、次のセクションが含まれています。
+## <a name="software-load-balancer-overview"></a>ソフトウェア ロード バランサーの概要
 
-- [ソフトウェア ロード バランサーの概要](#bkmk_slbover)
-- [例: 負荷分散プールの仮想ネットワーク上の 2 つの Vm のパブリック VIP を作成します。](#bkmk_publicvip)
-- [出力方向の NAT の使用 SLB 例:](#bkmk_obnat)
-- [例: ネットワーク インターフェイスをバックエンド プールに追加します。](#bkmk_backend)
-- [例: トラフィックを転送するため、ソフトウェア ロード バランサーを使用します。](#bkmk_forward)
+SDN ソフトウェア ロード バランサー \(SLB\)をアプリケーションに高可用性とネットワークのパフォーマンスを提供します。 レイヤー 4 は\(TCP、UDP\)ロード バランサーでクラウド サービスまたはロード バランサーのセットで定義されている仮想マシンの正常なサービス インスタンス間で着信トラフィックを分散します。
 
-## <a name="bkmk_slbover"></a>ソフトウェア ロード バランサーの概要
+SLB には、次を構成します。
 
-SDN のソフトウェア ロード バランサー \(SLB\) は、アプリケーションに高可用性とネットワークのパフォーマンスを提供します。 値がレイヤー 4 \ (TCP、UDP\) のロード バランサーがクラウド サービスまたはロード バランサーのセットで定義されている仮想マシンの正常なサービス インスタンス間での着信トラフィックを分散します。
-
-SLB には、次を構成することができます。
-
-* 負荷分散の着信トラフィックの外部の仮想マシン \(VMs\) への仮想ネットワークにします。 これには、パブリック VIP 負荷分散は呼び出されます。
-* 負荷分散着信トラフィック仮想ネットワーク内のバーチャル マシンの間で、クラウド サービスでの Vm 間、または、社内のコンピューターとクロスプレミスの仮想ネットワーク内のバーチャル マシン間でします。 
-* ネットワーク アドレス変換 (NAT) を使用して外部の送信先に仮想ネットワークからの VM ネットワークのトラフィックを転送します。  これは発信 NAT. と呼ばれます
-* 特定の VM に外部のトラフィックを転送します。  これは受信 NAT. と呼ばれます
-
->[!IMPORTANT]
->既知の問題では、NetworkController の Windows PowerShell モジュールでは、ロード バランサー オブジェクトが Windows Server 2016 5 では正しく動作しなくなります。 回避策では、動的なハッシュ テーブルと Invoke-webrequest を代わりに使用します。 このメソッドは、次の例で示されます。
+- 着信トラフィックを負荷分散の仮想マシンに仮想ネットワークの外部\(Vm\)、パブリック VIP の負荷分散とも呼ばれます。
+- 着信トラフィックを負荷分散仮想ネットワーク内の Vm 間、クラウド サービス内の Vm 間、または、オンプレミス コンピューターとクロスプレミス仮想ネットワーク内の Vm の間。 
+- VM ネットワーク トラフィックを仮想ネットワークから送信 NAT. とも呼ばれるネットワーク アドレス変換 (NAT) を使用して外部の送信先に転送します。
+- 受信 NAT. とも呼ばれる特定の VM に外部トラフィックを転送します。
 
 
-## <a name="bkmk_publicvip"></a>例: 負荷分散プールの仮想ネットワーク上の 2 つの Vm のパブリック VIP を作成します。
 
-この例は、VIP を要求を処理するプールのメンバーとしてのパブリック VIP と 2 つの Vm でロード バランサー オブジェクトを作成するを使用することができます。  次のコード例では、プールのメンバーのいずれかが、応答しなくなるかどうかを検出するために HTTP 正常性プローブも追加されます。
 
-###<a name="step-1-prepare-the-load-balancer-object"></a>手順 1: ロード バランサー オブジェクトを準備します。
-次の例を使用すると、ロード バランサー オブジェクトを準備します。
+## <a name="example-create-a-public-vip-for-load-balancing-a-pool-of-two-vms-on-a-virtual-network"></a>以下に例を示します。負荷分散、仮想ネットワーク上の 2 つの Vm のプールのパブリック VIP を作成します。
 
-    $lbresourceId = "LB2"
+この例では VIP に要求を処理するプールのメンバーとしてパブリック VIP と 2 つの Vm とロード バランサーのオブジェクトを作成します。 このコード例では、プール メンバーの 1 つが応答していないかどうかを検出するために、HTTP の正常性プローブも追加します。
 
-    $lbproperties = @{}
-    $lbproperties.frontendipconfigurations = @()
-    $lbproperties.backendAddressPools = @()
-    $lbproperties.probes = @()
-    $lbproperties.loadbalancingRules = @()
-    $lbproperties.OutboundNatRules = @()
+1. ロード バランサー オブジェクトを準備します。
 
-###<a name="step-2-assign-a-front-end-ip"></a>手順 2: は、フロント エンド IP を割り当てる
-フロント エンド IP、一般として仮想 IP (VIP)。  VIP は、以前にロード バランサー マネージャーに割り当てられた IP プールの論理ネットワークのいずれかで未使用の IP から取得する必要があります。
+   ```PowerShell
+    import-module NetworkController
 
-次の例を使用して、フロント エンド IP アドレスを割り当てることができます。
+    $URI = "https://sdn.contoso.com"
 
-    $vipip = "10.127.132.5"
-    $vipln = get-networkcontrollerlogicalnetwork -ConnectionUri $uri -resourceid "f8f67956-3906-4303-94c5-09cf91e7e311"
+    $LBResourceId = "LB2"
 
-    $fe = @{}
-    $fe.resourceId = "FE1"
-    $fe.resourceRef = "/loadBalancers/$lbresourceId/frontendIPConfigurations/$($fe.resourceId)"
-    $fe.properties = @{}
-    $fe.properties.subnet = @{}
-    $fe.properties.subnet.ResourceRef = $vipln.properties.Subnets[0].ResourceRef
-    $fe.properties.privateIPAddress = $vipip
-    $fe.properties.privateIPAllocationMethod = "Static"
-    $lbproperties.frontendipconfigurations += $fe
+    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
+   ```
 
-###<a name="step-3-allocate-a-backend-address-pool"></a>手順 3: バックエンド アドレス プールを割り当てる
-バックエンド アドレス プールには、バーチャル マシンの負荷分散のセットのメンバーを構成する動的 Ip (Dip) が含まれています。 この手順でのみを割り当てる、プール。IP 構成は、後の手順で追加されます。
+2. 一般的に呼ばれる仮想 IP (VIP) として、フロント エンド IP アドレスを割り当てます。<p>未使用の ip アドレスをロード バランサー マネージャーに指定された論理ネットワークの IP プールのいずれかから VIP があります。 
 
-次の例を使用して、バック エンド アドレス プールを割り当てることができます。
- 
-    $backend = @{}
-    $backend.resourceId = "BE1"
-    $backend.resourceRef = "/loadBalancers/$lbresourceId/backendAddressPools/$($backend.resourceId)"
-    $lbproperties.backendAddressPools += $backend
-
-###<a name="step-4-define-a-health-probe"></a>手順 4: 正常性プローブを定義します。
-正常性プローブは、バックエンド プールのメンバーのヘルス状態を確認するロード バランサーで使用されます。 この例では、定義するクエリを実行するための HTTP プローブの RequestPath に"/health.htm"です。  クエリは IntervalInSeconds プロパティによって指定されている、5 秒ごとに実行されます。
-
-正常性プローブが正常にバックエンド IP を考慮すべきプローブの連続するクエリは、11 200 の HTTP 応答コードを受け取る必要があります。 バックエンド IP が正常でない、ロード バランサーは、ip トラフィックを送信しないします。
-
->[!Note]
->プローブの供給元ポイントであるため、アクセス制御リスト バック エンド IP に適用することはブロックしないこと、サブネット内の最初の IP との間のトラフィックが重要です。
-
-次の例を使用して、正常性プローブを定義することができます。
- 
-    $lbprobe = @{}
-    $lbprobe.ResourceId = "Probe1"
-    $lbprobe.resourceRef = "/loadBalancers/$lbresourceId/Probes/$($lbprobe.resourceId)"
-    $lbprobe.properties = @{}
-    $lbprobe.properties.protocol = "HTTP"
-    $lbprobe.properties.port = "80"
-    $lbprobe.properties.RequestPath = "/health.htm"
-    $lbprobe.properties.IntervalInSeconds = 5
-    $lbprobe.properties.NumberOfProbes = 11
-    $lbproperties.probes += $lbprobe
-
-###<a name="step-5-define-a-load-balancing-rule"></a>手順 5: は、負荷分散の規則を定義します。
-この負荷分散のルールは、フロント エンド IP に到着するトラフィックがバックエンド ip アドレスに送信する方法を定義します。  この例では、TCP ポート 80 のトラフィックがバックエンド プールに送信されます。
-
-次の例を使用するには、負荷分散の規則を定義します。
-
-    $lbrule = @{}
-    $lbrule.ResourceId = "webserver1"
-    $lbrule.properties = @{}
-    $lbrule.properties.FrontEndIPConfigurations = @()
-    $lbrule.properties.FrontEndIPConfigurations += $fe
-    $lbrule.properties.backendaddresspool = $backend 
-    $lbrule.properties.protocol = "TCP"
-    $lbrule.properties.frontendPort = 80
-    $lbrule.properties.Probe = $lbprobe
-    $lbproperties.loadbalancingRules += $lbrule
-
-###<a name="step-6-add-the-load-balancer-configuration-to-network-controller"></a>手順 6: ネットワーク コント ローラーにロード バランサーの構成を追加します。
-これまでこの例では、作成されたすべてのオブジェクトは、Windows PowerShell セッションのメモリには。 この手順では、ネットワーク コント ローラーをオブジェクトを追加します。
-
-次の例を使用して、ネットワーク コント ローラーにロード バランサーの構成を追加することができます。
-
-    $lb = @{}
-    $lb.ResourceId = $lbresourceid
-    $lb.properties = $lbproperties
-
-    $body = convertto-json $lb -Depth 100
-
-    Invoke-WebRequest -Headers @{"Accept"="application/json"} -ContentType "application/json; charset=UTF-8" -Method "Put" -Uri "$uri/Networking/v1/loadbalancers/$lbresourceid" -Body $body -DisableKeepAlive -UseBasicParsing
-
-このステップの後は、このバックエンド プールに、ネットワーク インターフェイスを追加する次の例に従う必要があります。
-
-## <a name="bkmk_obnat"></a>出力方向の NAT の使用 SLB 例:
-
-この例を使用すると、SLB、インターネットへの送信に到達するのに仮想ネットワークのプライベート アドレス空間上の VM の送信の NAT 機能を提供するためのバックエンド プールを構成します。
-
-###<a name="step-1-create-the-loadbalancer-properties-front-end-ip-and-backend-pool"></a>手順 1: loadbalancer プロパティ、フロント エンド サーバーの IP とバックエンド プールを作成します。
-Loadbalancer プロパティ、フロント エンド サーバーの IP とバックエンド プールを作成するのに次の例を使用することができます。
-
-    $lbresourceId = "OutboundNATMembers"
-    $vipip = "10.127.132.7"
-
-    $vipln = get-networkcontrollerlogicalnetwork -ConnectionUri $uri -resourceid "f8f67956-3906-4303-94c5-09cf91e7e311"
-
-    $lbproperties = @{}
-    $lbproperties.frontendipconfigurations = @()
-    $lbproperties.backendAddressPools = @()
-    $lbproperties.probes = @()
-    $lbproperties.loadbalancingRules = @()
-    $lbproperties.OutboundNatRules = @()
-
-    $fe = @{}
-    $fe.resourceId = "FE1"
-    $fe.resourceRef = "/loadBalancers/$lbresourceId/frontendIPConfigurations/$($fe.resourceId)"
-    $fe.properties = @{}
-    $fe.properties.subnet = @{}
-    $fe.properties.subnet.ResourceRef = $vipln.properties.Subnets[0].ResourceRef
-    $fe.properties.privateIPAddress = $vipip
-    $fe.properties.privateIPAllocationMethod = "Static"
-    $lbproperties.frontendipconfigurations += $fe
-
-    $backend = @{}
-    $backend.resourceId = "BE1"
-    $backend.resourceRef = "/loadBalancers/$lbresourceId/backendAddressPools/$($backend.resourceId)"
-    $lbproperties.backendAddressPools += $backend
-
-###<a name="step-2-define-the-outbound-nat-rule"></a>手順 2: 送信の NAT 規則を定義します。
-次の例を使用して、送信の NAT 規則を定義することができます。 
-
-    $onat = @{}
-    $onat.ResourceId = "onat1"
-    $onat.properties = @{}
-    $onat.properties.frontendipconfigurations = @()
-    $onat.properties.frontendipconfigurations += $fe
-    $onat.properties.backendaddresspool = $backend
-    $onat.properties.protocol = "ALL"
-    $lbproperties.OutboundNatRules += $onat
-
-###<a name="step-3-add-the-load-balancer-object-in-network-controller"></a>手順 3: ネットワーク コント ローラーで、ロード バランサー オブジェクトを追加します。
-次の例を使用して、ネットワーク コント ローラーで、ロード バランサー オブジェクトを追加することができます。
-
-    $lb = @{}
-    $lb.ResourceId = $lbresourceid
-    $lb.properties = $lbproperties
-
-    $body = convertto-json $lb -Depth 100
-
-    Invoke-WebRequest -Headers @{"Accept"="application/json"} -ContentType "application/json; charset=UTF-8" -Method "Put" -Uri "$uri/Networking/v1/loadbalancers/$lbresourceid" -Body $body -DisableKeepAlive -UseBasicParsing
-
-次の手順では、インターネット アクセスを提供するネットワーク インターフェイスを追加できます。
-
-## <a name="bkmk_backend"></a>例: ネットワーク インターフェイスをバックエンド プールに追加します。
-この例を使用すると、ネットワーク インターフェイスのバックエンド プールに追加します。
-
-この手順を処理できる各ネットワーク インターフェイスの要求が、VIP に行われるを繰り返す必要があります。 また複数のロード バランサー オブジェクトに追加する 1 つのネットワーク インターフェイスでは、このプロセスを繰り返すことができます。 たとえば、Web サーバー VIP のロード バランサー オブジェクトと発信 NAT. を提供する別のロード バランサー オブジェクトがある場合
+   ```PowerShell
+    $VIPIP = "10.127.134.5"
+    $VIPLogicalNetwork = get-networkcontrollerlogicalnetwork -ConnectionUri $uri -resourceid "PublicVIP" -PassInnerException
     
-### <a name="step-1-get-the-load-balancer-object-containing-the-back-end-pool-to-which-you-will-add-a-network-interface"></a>手順 1: ネットワーク インターフェイスを追加するバックエンド プールが含まれているロード バランサー オブジェクトを取得します。
-次の例を使用すると、ロード バランサー オブジェクトを取得します。
+    $FrontEndIPConfig = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
+    $FrontEndIPConfig.ResourceId = "FE1"
+    $FrontEndIPConfig.ResourceRef = "/loadBalancers/$LBResourceId/frontendIPConfigurations/$($FrontEndIPConfig.ResourceId)"
 
-    $lbresourceid = "LB2"
-    $lb = (Invoke-WebRequest -Headers @{"Accept"="application/json"} -ContentType "application/json; charset=UTF-8" -Method "Get" -Uri "$uri/Networking/v1/loadbalancers/$lbresourceid" -DisableKeepAlive -UseBasicParsing).content | convertfrom-json 
+    $FrontEndIPConfig.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfigurationProperties
+    $FrontEndIPConfig.Properties.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
+    $FrontEndIPConfig.Properties.Subnet.ResourceRef = $VIPLogicalNetwork.Properties.Subnets[0].ResourceRef
+    $FrontEndIPConfig.Properties.PrivateIPAddress = $VIPIP
+    $FrontEndIPConfig.Properties.PrivateIPAllocationMethod = "Static"
+      
+    $LoadBalancerProperties.FrontEndIPConfigurations += $FrontEndIPConfig
+   ```
 
-### <a name="step-2-get-the-network-interface-and-add-the-backendaddress-pool-to-the-loadbalancerbackendaddresspools-array"></a>手順 2: は、ネットワーク インターフェイスを取得し、loadbalancerbackendaddresspools 配列に backendaddress プールを追加します。
-次の例を使用して、ネットワーク インターフェイスを取得し、loadbalancerbackendaddresspools 配列に backendaddress プールを追加することができます。
+3. Vm の負荷分散セットのメンバーを構成する動的 Ip (Dip) を含むバック エンド アドレス プールを割り当てます。 
 
-    $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06
-    $nic.properties.IpConfigurations[0].properties.LoadBalancerBackendAddressPools += $lb.properties.backendaddresspools[0]
+   ```PowerShell 
+    $BackEndAddressPool = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
+    $BackEndAddressPool.ResourceId = "BE1"
+    $BackEndAddressPool.ResourceRef = "/loadBalancers/$LBResourceId/backendAddressPools/$($BackEndAddressPool.ResourceId)"
+
+    $BackEndAddressPool.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPoolProperties
+
+    $LoadBalancerProperties.backendAddressPools += $BackEndAddressPool
+   ```
+
+4. ロード バランサーを使用して、バックエンド プール メンバーのヘルス状態を判断する正常性プローブを定義します。<p>クエリを実行する HTTP プローブの RequestPath は、この例で定義する"/health.htm"。  クエリでは、5 秒ごと、IntervalInSeconds プロパティで指定されたを実行します。<p>正常性プローブが正常バック エンド IP を考慮するプローブの連続したクエリを 11 の 200 の HTTP 応答コードを受け取る必要があります。 バック エンド IP が正常でない場合は、ロード バランサーからトラフィックを受け取ることはしません。
+
+   >[!IMPORTANT]
+   >任意のアクセス制御リスト (Acl) のプローブの発生ポイントであるためです: バックエンド IP に適用するため、サブネット内の最初の IP との間のトラフィックをブロックしません。
+
+   次の例を使用すると、正常性プローブを定義します。
+
+   ```PowerShell
+    $Probe = new-object Microsoft.Windows.NetworkController.LoadBalancerProbe
+    $Probe.ResourceId = "Probe1"
+    $Probe.ResourceRef = "/loadBalancers/$LBResourceId/Probes/$($Probe.ResourceId)"
+
+    $Probe.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerProbeProperties
+    $Probe.properties.Protocol = "HTTP"
+    $Probe.properties.Port = "80"
+    $Probe.properties.RequestPath = "/health.htm"
+    $Probe.properties.IntervalInSeconds = 5
+    $Probe.properties.NumberOfProbes = 11
+
+    $LoadBalancerProperties.Probes += $Probe
+   ```
+
+5.  負荷分散をバック エンド IP フロント エンド IP に到着したトラフィックを送信する規則を定義します。  この例では、バックエンド プールは、ポート 80 への TCP トラフィックを受け取ります。<p>負荷分散規則を定義するのにには、次の例を使用します。
+
+   ```PowerShell
+    $Rule = new-object Microsoft.Windows.NetworkController.LoadBalancingRule
+    $Rule.ResourceId = "webserver1"
+
+    $Rule.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancingRuleProperties
+    $Rule.Properties.FrontEndIPConfigurations += $FrontEndIPConfig
+    $Rule.Properties.backendaddresspool = $BackEndAddressPool 
+    $Rule.Properties.protocol = "TCP"
+    $Rule.Properties.FrontEndPort = 80
+    $Rule.Properties.BackEndPort = 80
+    $Rule.Properties.IdleTimeoutInMinutes = 4
+    $Rule.Properties.Probe = $Probe
+
+    $LoadBalancerProperties.loadbalancingRules += $Rule
+   ```
+
+6. ネットワーク コント ローラーには、ロード バランサーの構成を追加します。<p>次の例を使用すると、ネットワーク コント ローラーにロード バランサーの構成を追加します。
+
+   ```PowerShell
+    $LoadBalancerResource = New-NetworkControllerLoadBalancer -ConnectionUri $URI -ResourceId $LBResourceId -Properties $LoadBalancerProperties -Force -PassInnerException
+   ```
+
+7. このバックエンド プールにネットワーク インターフェイスを追加する次の例に従います。
+
+
+## <a name="example-use-slb-for-outbound-nat"></a>以下に例を示します。SLB を使用して、アウト バウンド nat
+
+この例では、インターネットへの送信に到達する仮想ネットワークのプライベート アドレス空間上の VM に対して送信の NAT 機能を提供するためのバックエンド プールを SLB を構成します。 
+
+1. ロード バランサーのプロパティ、フロント エンド IP、およびバック エンド プールを作成します。
+
+   ```PowerShell
+    import-module NetworkController
+    $URI = "https://sdn.contoso.com"
+
+    $LBResourceId = "OutboundNATMMembers"
+    $VIPIP = "10.127.134.6"
+
+    $VIPLogicalNetwork = get-networkcontrollerlogicalnetwork -ConnectionUri $uri -resourceid "PublicVIP" -PassInnerException
+
+    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
+
+    $FrontEndIPConfig = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
+    $FrontEndIPConfig.ResourceId = "FE1"
+    $FrontEndIPConfig.ResourceRef = "/loadBalancers/$LBResourceId/frontendIPConfigurations/$($FrontEndIPConfig.ResourceId)"
+
+    $FrontEndIPConfig.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfigurationProperties
+    $FrontEndIPConfig.Properties.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
+    $FrontEndIPConfig.Properties.Subnet.ResourceRef = $VIPLogicalNetwork.Properties.Subnets[0].ResourceRef
+    $FrontEndIPConfig.Properties.PrivateIPAddress = $VIPIP
+    $FrontEndIPConfig.Properties.PrivateIPAllocationMethod = "Static"
+
+    $LoadBalancerProperties.FrontEndIPConfigurations += $FrontEndIPConfig
+
+    $BackEndAddressPool = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
+    $BackEndAddressPool.ResourceId = "BE1"
+    $BackEndAddressPool.ResourceRef = "/loadBalancers/$LBResourceId/backendAddressPools/$($BackEndAddressPool.ResourceId)"
+    $BackEndAddressPool.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPoolProperties
+
+    $LoadBalancerProperties.backendAddressPools += $BackEndAddressPool
+   ```
+
+2. 送信 NAT 規則を定義します。
+
+   ```PowerShell
+    $OutboundNAT = new-object Microsoft.Windows.NetworkController.LoadBalancerOutboundNatRule
+    $OutboundNAT.ResourceId = "onat1"
     
-### <a name="step-3-put-the-network-interface-to-apply-the-change"></a>手順 3: 配置変更を適用するネットワーク インターフェイス
-次の例を使用すると、変更を適用するのにネットワーク インターフェイスを配置します。
+    $OutboundNAT.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerOutboundNatRuleProperties
+    $OutboundNAT.properties.frontendipconfigurations += $FrontEndIPConfig
+    $OutboundNAT.properties.backendaddresspool = $BackEndAddressPool
+    $OutboundNAT.properties.protocol = "ALL"
 
-    new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06 -properties $nic.properties -force
- 
-## <a name="bkmk_forward"></a>例: トラフィックを転送するため、ソフトウェア ロード バランサーを使用します。
-を個々 のポートを定義することがなく仮想 ip アドレスを仮想ネットワーク上の単一のネットワーク インターフェイスにマップする必要がある場合は、L3 転送ルールを作成できます。  このルールは、割り当て済みの VIP は、PublicIPAddress オブジェクトに含まれている必要があります経由で VM からすべてのトラフィックを転送します。
+    $LoadBalancerProperties.OutboundNatRules += $OutboundNAT
+   ```
 
-VIP と DIP が同じサブネットに定義されている場合、これは、NAT. せず L3 転送を実行するには
+3. ネットワーク コント ローラーで、ロード バランサー オブジェクトを追加します。
+
+   ```PowerShell
+    $LoadBalancerResource = New-NetworkControllerLoadBalancer -ConnectionUri $URI -ResourceId $LBResourceId -Properties $LoadBalancerProperties -Force -PassInnerException
+   ```
+
+4. インターネット アクセスを提供するネットワーク インターフェイスを追加する次の例に従います。
+
+## <a name="example-add-network-interfaces-to-the-back-end-pool"></a>以下に例を示します。バックエンド プールにネットワーク インターフェイスを追加します。
+この例では、バックエンド プールにネットワーク インターフェイスを追加します。  各ネットワーク インターフェイスの VIP に対して行われた要求を処理できるは、この手順を繰り返す必要があります。 
+
+複数のロード バランサーのオブジェクトに追加する 1 つのネットワーク インターフェイスでは、このプロセスを繰り返すこともできます。 たとえば、web サーバーの VIP のロード バランサーのオブジェクトと送信 NAT. を提供する別のロード バランサーのオブジェクトがある場合
+    
+1. ネットワーク インターフェイスを追加するバックエンド プールを含むロード バランサーのオブジェクトを取得します。
+
+   ```PowerShell
+   $lbresourceid = "LB2"
+   $lb = get-networkcontrollerloadbalancer -connectionuri $uri -resourceID $LBResourceId -PassInnerException
+  ```
+
+2. ネットワーク インターフェイスを取得し、loadbalancerbackendaddresspools 配列に backendaddress プールを追加します。
+
+   ```PowerShell
+   $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06 -PassInnerException
+   $nic.properties.IpConfigurations[0].properties.LoadBalancerBackendAddressPools += $lb.properties.backendaddresspools[0]
+   ```  
+
+3. 変更を適用するネットワーク インターフェイスを配置します。 
+
+   ```PowerShell
+   new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06 -properties $nic.properties -force -PassInnerException
+   ``` 
+
+
+## <a name="example-use-the-software-load-balancer-for-forwarding-traffic"></a>以下に例を示します。ソフトウェア ロード バランサーを使用して、トラフィックの転送
+個々 のポートを定義することがなく、仮想 IP を仮想ネットワーク上の 1 つのネットワーク インターフェイスにマップする必要がある場合は、L3 の転送ルールを作成できます。  このルールは、PublicIPAddress オブジェクトに含まれる割り当てられた VIP 経由で VM とのすべてのトラフィックを転送します。
+
+VIP および DIP を定義した場合、同じサブネットとしてし、これに相当 NAT. せず L3 転送を実行します。
 
 >[!NOTE]
->このプロセスでは、ロード バランサー オブジェクトを作成する必要はありません。  ネットワーク インターフェイスに、PublicIPAddress を割り当てることは、その構成を実行するソフトウェア ロード バランサーのための十分な情報です。
+>このプロセスでは、ロード バランサー オブジェクトを作成する必要はありません。  ソフトウェア ロード バランサーの構成を実行するのに十分な情報には、PublicIPAddress をネットワーク インターフェイスに割り当てることです。
 
-###<a name="step-1-create-a-public-ip-object-to-contain-the-vip"></a>手順 1: VIP を格納するパブリック IP オブジェクトを作成します。
-次の例を使用して、パブリック IP オブジェクトを作成することができます。
 
-    $publicIPProperties = new-object Microsoft.Windows.NetworkController.PublicIpAddressProperties
-    $publicIPProperties.ipaddress = "10.127.132.6"
-    $publicIPProperties.PublicIPAllocationMethod = "static"
-    $publicIPProperties.IdleTimeoutInMinutes = 4
-    $publicIP = New-NetworkControllerPublicIpAddress -ResourceId "MyPIP" -Properties $publicIPProperties -ConnectionUri $uri
+1. VIP を格納するパブリック IP オブジェクトを作成します。
 
-####<a name="step-2-assign-the-publicipaddress-to-a-network-interface"></a>手順 2: ネットワーク インターフェイスに、PublicIPAddress を割り当てる
-次の例を使用して、ネットワーク インターフェイスに、PublicIPAddress を割り当てることができます。
+   ```PowerShell
+   $publicIPProperties = new-object Microsoft.Windows.NetworkController.PublicIpAddressProperties
+   $publicIPProperties.ipaddress = "10.127.134.7"
+   $publicIPProperties.PublicIPAllocationMethod = "static"
+   $publicIPProperties.IdleTimeoutInMinutes = 4
+   $publicIP = New-NetworkControllerPublicIpAddress -ResourceId "MyPIP" -Properties $publicIPProperties -ConnectionUri $uri -Force -PassInnerException
+   ```
 
-    $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06
-    $nic.properties.IpConfigurations[0].Properties.PublicIPAddress = $publicIP
-    New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties
+2. ネットワーク インターフェイスには、PublicIPAddress を割り当てます。
 
+   ```PowerShell
+   $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06
+   $nic.properties.IpConfigurations[0].Properties.PublicIPAddress = $publicIP
+   New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties -PassInnerException
+   ```
+
+## <a name="example-use-the-software-load-balancer-for-forwarding-traffic-with-a-dynamically-allocated-vip"></a>以下に例を示します。動的に割り当てられた VIP とトラフィックを転送するためのソフトウェア ロード バランサーの使用します。
+この例の繰り返し操作は、前の例と同じですが、VIP を特定の IP アドレスを指定する代わりに、load balancer で利用可能な Vip プールから自動的に割り当てます。 
+
+1. VIP を格納するパブリック IP オブジェクトを作成します。
+
+   ```PowerShell
+   $publicIPProperties = new-object Microsoft.Windows.NetworkController.PublicIpAddressProperties
+   $publicIPProperties.PublicIPAllocationMethod = "dynamic"
+   $publicIPProperties.IdleTimeoutInMinutes = 4
+   $publicIP = New-NetworkControllerPublicIpAddress -ResourceId "MyPIP" -Properties $publicIPProperties -ConnectionUri $uri -Force -PassInnerException
+   ```
+
+2. IP アドレスの割り当てを判断するために、PublicIPAddress リソースのクエリを実行します。
+
+   ```PowerShell
+    (Get-NetworkControllerPublicIpAddress -ConnectionUri $uri -ResourceId "MyPIP").properties
+   ```
+
+   IpAddress プロパティには、割り当てられたアドレスが含まれています。  出力は、次のようになります。
+   ```
+    Counters                 : {}
+    ConfigurationState       :
+    IpAddress                : 10.127.134.2
+    PublicIPAddressVersion   : IPv4
+    PublicIPAllocationMethod : Dynamic
+    IdleTimeoutInMinutes     : 4
+    DnsSettings              :
+    ProvisioningState        : Succeeded
+    IpConfiguration          :
+    PreviousIpConfiguration  :
+   ```
+ 
+1. ネットワーク インターフェイスには、PublicIPAddress を割り当てます。
+
+   ```PowerShell
+   $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06
+   $nic.properties.IpConfigurations[0].Properties.PublicIPAddress = $publicIP
+   New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties -PassInnerException
+   ```
+## <a name="example-remove-a-publicip-address-that-is-being-used-for-forwarding-traffic-and-return-it-to-the-vip-pool"></a>以下に例を示します。トラフィックを転送するために使用されているパブリック Ip アドレスを削除して、VIP プールに戻します
+この例では、前の例で作成された PublicIPAddress リソースを削除します。  PublicIPAddress が削除されると、ネットワーク インターフェイスからは、PublicIPAddress への参照が自動的に削除する、転送されるトラフィックは停止および IP アドレスが再利用のためのパブリック VIP プールに返されます。  
+
+1. パブリック Ip を削除します。
+
+   ```PowerShell
+   Remove-NetworkControllerPublicIPAddress -ConnectionURI $uri -ResourceId "MyPIP"
+   ```
+
+---
 
 
  

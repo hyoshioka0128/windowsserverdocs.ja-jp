@@ -1,6 +1,6 @@
 ---
-title: "Windows Server Essentials でのコンピューターの監視をトラブルシューティングします。"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: Windows Server Essentials でのコンピューターの監視のトラブルシューティング
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,77 +13,78 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 72fe309e0e7ce6d7227cce8b7f2c5dbf018eb4a1
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59813093"
 ---
-# <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Windows Server Essentials でのコンピューターの監視をトラブルシューティングします。
+# <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Windows Server Essentials でのコンピューターの監視のトラブルシューティング
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-このトピックでは、アラート ビューアーおよび Windows Server Essentials で電子メール通知を介したコンピューターのヘルス状態の監視中に発生する問題のトラブルシューティングを提供します。  
+このトピックでは、アラート ビューアーおよび Windows Server Essentials での電子メール通知を介したコンピューターの正常性状態の監視中に発生する問題のトラブルシューティングを提供します。  
   
 > [!NOTE]
->  Windows Server Essentials コミュニティから最新のトラブルシューティング情報について、ことをお勧めを参照する、[Windows Server Essentials フォーラム](https://social.technet.microsoft.com/Forums/winserveressentials/threads)します。 Windows Server Essentials フォーラムは、ヘルプについては、検索するか、質問をお勧めします。  
+>  Windows Server Essentials コミュニティの最新のトラブルシューティング情報について、お勧めしますをご覧ください、 [Windows Server Essentials フォーラム](https://social.technet.microsoft.com/Forums/winserveressentials/threads)します。 Windows Server Essentials フォーラムは、ヘルプを検索したり、質問したりするために最適な場所です。  
   
-##  <a name="BKMK_TS"></a>アラートの電子メール通知のトラブルシューティング  
- このセクションでは、アラートの電子メール通知を使用する場合に発生する可能性のあるさまざまな問題を示します。  
+##  <a name="BKMK_TS"></a> アラートの電子メール通知のトラブルシューティング  
+ ここではアラート用の電子メール通知を使用する場合に発生する可能性のあるさまざまな問題を示します。  
   
-### <a name="cannot-send-the-test-email-for-the-alert"></a>アラート用のテスト電子メールを送信することはできません。  
- **問題**エラーが発生する、というメッセージがアラート用のテスト電子メールを送信できません。  
+### <a name="cannot-send-the-test-email-for-the-alert"></a>アラート用のテスト電子メールを送信できない  
+ **問題**エラーが発生するメッセージが表示されたら、アラート用のテスト電子メールを送信できません。  
   
- **原因**アラート通知の設定で、次の問題のいずれかによってこのエラーが発生する可能性があります。  
+ **原因** : このエラーは、アラート通知の設定の次のいずれかの問題が原因で発生する可能性があります。  
   
--   正しくない SMTP サーバー名またはポート番号。  
+-   SMTP サーバー名またはポート番号が正しくありません。  
   
--   それが正しく指定されていません、SMTP サーバーが 1 つの Sockets Layer (SSL) 接続が必要であります。  
+-   SMTP サーバーに 1 つの Sockets Layer (SSL) 接続が必要であると誤って指定されています。  
   
--   SMTP サーバーの認証を必要とし、不適切な資格情報を入力します。  
+-   SMTP サーバーで認証を必要とし、正しくない資格情報が入力されました。  
   
- **解決策**電子メール通知設定で、エラーを修正します。  
+ **解決策**: 電子メール通知設定のエラーを修正します。  
   
-##### <a name="to-identify-issues-in-your-email-notification-settings"></a>電子メール通知設定で問題を特定するには  
+##### <a name="to-identify-issues-in-your-email-notification-settings"></a>電子メール通知設定の問題を識別するには  
   
--   正しい SMTP サーバー名、ポート番号、および SSL の使用状況、インターネット サービス プロバイダー (ISP) を要求します。  
+-   正しい SMTP サーバー名、ポート番号、および SSL の使用状況をインターネット サービス プロバイダー (ISP) に尋ねます。  
   
--   サーバーで、この場所に、アラートの電子メール通知のログ ファイルを確認します。  
+-   サーバーの次の場所で、アラートの電子メール通知について、ログ ファイルを確認します。  
   
      %ProgramData%\Microsoft\Windows Server\Logs\SharedServiceHost-AlertServiceConfig.log  
   
     > [!TIP]
-    >  ProgramData フォルダーを見るには、表示される項目を非が表示する必要があります。 T don s リボンで、ProgramData フォルダーを表示する場合は**ビュー** ] タブで、**表示/非表示**グループで、[、**隠し項目を**テキスト ボックス。  
+    >  ProgramData フォルダーを表示するには、隠しファイルを表示させる必要があります。 T don リボン s ProgramData フォルダーを表示する場合は**ビュー** ] タブで、**表示/非表示**グループで、[、**アイテムを非表示**テキスト ボックス。  
   
 ##### <a name="to-update-your-email-notification-setup-for-alerts"></a>アラートの電子メール通知のセットアップを更新するには  
   
-1.  ダッシュ ボードを開くには、アラート ビューアー右上隅にある任意のアラート アイコンをクリックします。  
+1.  ダッシュボードで、右上隅の任意のアラート アイコンをクリックして、アラート ビューアーを開きます。  
   
-2.  アラート ビューアーの下部にある、] をクリックして**アラートの電子メール通知設定**します。  
+2.  アラート ビューアーの下部の **[アラートの電子メール通知のセットアップ]** をクリックします。  
   
-3.  **アラートの電子メール通知設定**ダイアログ ボックスで、をクリックして**を有効にする**します。  
+3.  **[アラートの電子メール通知のセットアップ]** ダイアログ ボックスで、**[有効化]** をクリックします。  
   
-4.  **SMTP 設定**] ダイアログ ボックスで、SMTP 設定を更新し、をクリックして**OK**します。  
+4.  **[SMTP 設定]** ダイアログ ボックスで、SMTP 設定を更新し、**[OK]** をクリックします。  
   
-5.  更新された設定をテストする] をクリックして**適用して送信電子メール**します。  
+5.  更新された設定をテストするには、**[適用して電子メールを送信]** をクリックします。  
   
-6.  テスト電子メールが成功したことを確認したら、クリックして**OK**、更新された設定を保存します。  
+6.  テスト電子メールが成功したことを確認したら、**[OK]** をクリックして、更新された設定を保存します。  
   
-### <a name="test-email-notification-does-not-list-any-alerts"></a>テスト電子メール通知にすべてのアラートが表示されません。  
- **問題**アラート ビューアーに表示されているアラートがある場合でも、アラートのテスト電子メール通知ですべてのアラートが表示されません。  
+### <a name="test-email-notification-does-not-list-any-alerts"></a>テスト電子メール通知にすべてのアラートが表示されない  
+ **問題** : アラート ビューアーにアラートが表示されている場合でも、アラートのテスト電子メール通知にすべてのアラートが表示されません。  
   
- **解決策**アラート ビューアーで報告されるすべてのアラートは、電子メール通知を生成します。 正常性定義ファイル内で電子メール通知として報告するように構成されているアラートだけは、指定した電子メールの受信者に電子メールとして送信されます。  
+ **解決策** : アラート ビューアーで報告されるすべてのアラートで電子メール通知が生成されるとは限りません。 正常性定義ファイル内で、電子メール通知として報告するように構成されているアラートだけが、指定された電子メールの受信者に電子メールとして送信されます。  
   
- クリックすると**適用して送信電子メール**、正常性アラートが表示されているなしでサンプル電子メール通知を受信する通常します。 ただし、このテスト プロセス中に、電子メール通知を送信するように構成された正常性アラートを識別する場合、アラートはテスト電子メールに含まれています。  
+ **[適用して電子メールを送信]** をクリックすると、一般に、正常性アラートが表示されていないサンプル電子メール通知を受信します。 ただし、このテスト プロセス中に、電子メール通知を送信するように構成された正常性アラートが識別された場合、そのアラートがテスト電子メールに記載されます。  
   
-### <a name="active-alerts-are-displayed-for-an-uninstalled-application"></a>アンインストールされたアプリケーションのアクティブなアラートが表示されます。  
- **問題**アプリケーションとその正常性定義ファイルがアンインストールされた場合でも、アプリケーションのアクティブなアラートが表示されます。  
+### <a name="active-alerts-are-displayed-for-an-uninstalled-application"></a>アンインストールされたアプリケーションについてのアクティブなアラートが表示される  
+ **問題**: アプリケーションとその正常性定義ファイルがアンインストールされていても、そのアプリケーションについてのアクティブなアラートが表示されます。  
   
- **解決策**アンインストールされたアプリケーションのアクティブなアラートを手動で削除する必要があります。 アラートを削除するには、次のします。  
+ **解決策**: アンインストールされたアプリケーションのアクティブなアラートを手動で削除する必要があります。 アラートを削除するには、次の手順に従います。  
   
-##### <a name="to-delete-an-alert-from-the-server-by-using-the-dashboard"></a>ダッシュ ボードを使用して、サーバーからアラートを削除するには  
+##### <a name="to-delete-an-alert-from-the-server-by-using-the-dashboard"></a>ダッシュボードを使用して、サーバーからアラートを削除するには  
   
-1.  サーバーからダッシュ ボードを開きます。  
+1.  サーバーからダッシュボードを開きます。  
   
-2.  ナビゲーション ウィンドウで、表示されるアラート アイコン (重大、警告、情報案内のいずれか) をクリックします。 これにより、アラート ビューアーが起動します。  
+2.  ナビゲーション ウィンドウで、表示されているいずれかのアラート アイコン (警告、注意、または情報) をクリックします。 これにより、アラート ビューアーが起動します。  
   
-3.  アラート ビューアーで、削除、およびをクリックするアラートを右クリックして**このアラートを削除**します。
+3.  アラート ビューアーで、削除するアラートを右クリックし、**[このアラートを削除する]** をクリックします。
