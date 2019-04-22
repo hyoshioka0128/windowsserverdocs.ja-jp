@@ -11,13 +11,13 @@ ms.topic: landing-page
 ms.author: billmath
 ms.localizationpriority: high
 ms.openlocfilehash: 161840d86cae6b688e3e7a877c7c44b17aefd432
-ms.sourcegitcommit: c6ac2f70f8fb5f27f6bbe5c9cfc9f76b02f557b5
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "4286174"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59824243"
 ---
-# ID |アクセス
+# <a name="identity--access"></a>ID | アクセス
 
 >[!TIP]
 > 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
@@ -80,7 +80,7 @@ ms.locfileid: "4286174"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>企業における Windows 10 の利用: デバイスを業務に使用する方法</h3><hr />
+                        <h3>エンタープライズ向け Windows 10:デバイスの作業を使用する方法</h3><hr />
                         <p>Windows 10 では、Azure Active Directory を利用できます。 Windows 10 デバイスは Azure AD に接続できるため、ユーザーは Azure AD アカウントを使って Windows にサインインしたり、Azure ID を追加してビジネス アプリやリソースにアクセスしたりすることができます。</p>
                     </div>
                 </div>
@@ -130,8 +130,8 @@ ms.locfileid: "4286174"
 
 ---
 
-## ソリューションとシナリオ ガイド  
-* [任意の場所の任意のデバイスからの企業リソースへのセキュリティで保護されたアクセス](https://technet.microsoft.com/library/dn550982.aspx)  
-*  [任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証](https://technet.microsoft.com/library/dn280945.aspx)  
-* [追加の多要素認証による個人情報アプリケーションのリスク管理](https://technet.microsoft.com/library/dn280949.aspx)  
-* [条件付きアクセス制御によってリスクを管理する](https://technet.microsoft.com/library/dn280937.aspx)
+## <a name="solutions-and-scenario-guides"></a>ソリューションとシナリオ ガイド  
+* [任意の場所の任意のデバイスから会社のリソースに安全にアクセス](https://technet.microsoft.com/library/dn550982.aspx)  
+*  [SSO およびシームレスな第 2 の任意のデバイスから社内への参加要素用アプリケーション間での認証](https://technet.microsoft.com/library/dn280945.aspx)  
+* [機密性の高いアプリケーションの追加の多要素認証によるリスクを管理します。](https://technet.microsoft.com/library/dn280949.aspx)  
+* [条件付きアクセス制御によるリスクを管理します。](https://technet.microsoft.com/library/dn280937.aspx)

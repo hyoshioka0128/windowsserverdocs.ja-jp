@@ -10,15 +10,15 @@ author: cosmosdarwin
 ms.date: 01/11/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 277a676d8e53a7847d54039aab6607be8e5a78c5
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1833434"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59823613"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>記憶域スペース ダイレクトのボリュームの作成
 
->適用先: Windows Server 2016
+>適用先:Windows Server 2016
 
 このトピックでは、PowerShell またはフェールオーバー クラスター マネージャーを使って記憶域スペース ダイレクトでボリュームを作成する方法について説明します。
 
@@ -31,15 +31,15 @@ ms.locfileid: "1833434"
 
 **New-Volume** コマンドレットには、必須のパラメーターが 4 つあります。
 
-- **FriendlyName:** 任意の文字列。*"Volume1"* など
-- **FileSystem:** **CSVFS_ReFS** (推奨) または **CSVFS_NTFS**
-- **StoragePoolFriendlyName:** 記憶域プールの名前。*"S2D on ClusterName"* など
-- **Size:** ボリュームのサイズ。*"10TB"* など
+- **FriendlyName:** 任意の文字列をたとえば *"Volume1"*
+- **ファイル システム:** いずれか**CSVFS_ReFS** (推奨) または**CSVFS_NTFS**
+- **StoragePoolFriendlyName:** たとえば、ストレージの名前がプール *「S2D でクラスター名」*
+- **サイズ:** たとえば、ボリュームのサイズ *"10 TB"*
 
    >[!NOTE]
-   >  Windows (PowerShell を含む) では 2 進数を使ってカウントされますが、ドライブのラベルには 10 進数が使われていることがよくあります。 1,000,000,000,000 バイトと定義される "1 テラバイト" のドライブが、Windows で約 "909 GB" となるのはこのためです。 これは正常です。 **New-Volume** を使ってボリュームを作成するときは、**Size** パラメーターを 2 進数で指定してください。 たとえば、"909GB" または "0.909495TB" と指定すると約 1,000,000,000,000 バイトのボリュームが作成されます。
+   >  Windows (PowerShell を含む) では 2 進数を使ってカウントされますが、ドライブのラベルには 10 進数が使われていることがよくあります。 1,000,000,000,000 バイトと定義される "1 テラバイト" のドライブが、Windows で約 "909 GB" となるのはこのためです。 これは正常な動作です。 **New-Volume** を使ってボリュームを作成するときは、**Size** パラメーターを 2 進数で指定してください。 たとえば、"909GB" または "0.909495TB" と指定すると約 1,000,000,000,000 バイトのボリュームが作成されます。
 
-### <a name="example-with-2-or-3-servers"></a>例: サーバーが 2 台または 3 台の場合
+### <a name="example-with-2-or-3-servers"></a>以下に例を示します。2 または 3 つのサーバー
 
 処理を簡単にするため、展開にサーバーが 2 台しかない場合、記憶域スペース ダイレクトは回復性のために双方向ミラーリングを自動的に使います。 展開にサーバーが 3 台しかない場合、3 方向ミラーリングを自動的に使います。
 
@@ -47,11 +47,11 @@ ms.locfileid: "1833434"
 New-Volume -FriendlyName "Volume1" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB
 ```
 
-### <a name="example-with-4-servers"></a>例: サーバーが 4 台以上の場合
+### <a name="example-with-4-servers"></a>以下に例を示します。4 + サーバー
 
 サーバーが 4 台以上の場合、オプションの **ResiliencySettingName** パラメーターを使って回復性の種類を選択できます。
 
--   **ResiliencySettingName:** **Mirror** または **Parity**。
+-   **ResiliencySettingName:** いずれか**ミラー**または**パリティ**します。
 
 次の例では、*"Volume2"* は 3 方向ミラーリングを使い、*"Volume3"* はデュアル パリティ (多くの場合 "イレイジャー コーディング" と呼ばれます) を使います。
 
@@ -60,7 +60,7 @@ New-Volume -FriendlyName "Volume2" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 New-Volume -FriendlyName "Volume3" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB -ResiliencySettingName Parity
 ```
 
-### <a name="example-using-storage-tiers"></a>例: 記憶域階層の使用
+### <a name="example-using-storage-tiers"></a>以下に例を示します。記憶域階層を使用します。
 
 3 種類のドライブが存在する展開では、1 つのボリュームが SSD 階層と HDD 階層をまたぐことができます。 同様に、サーバーが 4 台以上存在する展開では、1 つのボリュームにミラーリングとデュアル パリティを混在させることができます。
 
@@ -86,7 +86,7 @@ New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 
 主に 3 つの手順があります。
 
-### <a name="step-1-create-virtual-disk"></a>手順 1: 仮想ディスクを作成する
+### <a name="step-1-create-virtual-disk"></a>手順 1:仮想ディスクを作成します。
 
 ![仮想ディスクの新規作成](media/creating-volumes/GUI-Step-1.png)
 
@@ -97,7 +97,7 @@ New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 5. 選択内容を確認し、**[作成]** をクリックします。
 6. 閉じる前に **[このウィザードを閉じるときにボリュームを作成します]** チェック ボックスがオンになっていることを確認してください。
 
-### <a name="step-2-create-volume"></a>手順 2: ボリュームを作成する
+### <a name="step-2-create-volume"></a>手順 2:ボリュームを作成します。
 
 *ボリュームの新規作成ウィザード*が開きます。
 
@@ -107,7 +107,7 @@ New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 10. 使用するファイルシステムを指定して、割り当て単位サイズを *[既定]* のままにし、ボリュームに名前を付けて **[次へ]** をクリックします。
 11. 選択内容を確認し、**[作成]**、**[閉じる]** の順にクリックします。
 
-### <a name="step-3-add-to-cluster-shared-volumes"></a>手順 3: クラスター共有ボリュームに追加する
+### <a name="step-3-add-to-cluster-shared-volumes"></a>手順 3:クラスターの共有ボリュームへの追加します。
 
 ![クラスターの共有ボリュームへの追加](media/creating-volumes/GUI-Step-2.png)
 

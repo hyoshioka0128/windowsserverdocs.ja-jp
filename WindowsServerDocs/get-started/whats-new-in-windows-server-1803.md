@@ -9,15 +9,15 @@ ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
 ms.openlocfilehash: c4f80b668b91e65b6c8bc528e14f52a1d117a3c9
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2061472"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59823093"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Windows Server バージョン 1803 の新機能
 
->適用対象: Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)
 
 <img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;ここでは、Windows Server バージョン 1803 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。 [Windows Server 半期チャネルの更新プログラム](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/)に関するページも参照してください。
 
@@ -39,7 +39,7 @@ Windows Server バージョン 1709 は、半期チャネルの最初のリリ�
 
 半期チャネルと長期サービス チャネルの特定のシナリオは次のとおりです。
 
-|   | 長期サービス チャネル |  半期チャネル |
+|   | Long Term Servicing チャネル |  半期チャネル |
 | ------------- | ------------- | ------------ |
 | 推奨されるシナリオ     | 汎用ファイル サーバー、ファースト パーティおよびサード パーティのワークロード、従来のアプリ、インフラストラクチャの役割、ソフトウェア定義データセンター、およびハイパーコンバージド インフラストラクチャ  | コンテナー化されたアプリケーション、コンテナー ホスト、および迅速なイノベーションを活用するアプリケーション シナリオ |
 | 新しいリリース  | 2 ～ 3 年ごと  | 6 か月ごと |
@@ -50,12 +50,12 @@ Windows Server バージョン 1709 は、半期チャネルの最初のリリ�
 
 ## <a name="application-platform-and-containers"></a>アプリケーション プラットフォームとコンテナー
 
-- 最適化
+- Optimization
     - Server Core 基本コンテナー イメージは、Windows Server バージョン 1709 から 30% 減少します。 
     - また、アプリケーションの互換性が向上し、従来のアプリケーションをコンテナー化するのに役立ちます。
     - さまざまな修正や最適化のおかげでコンテナーの起動パフォーマンスおよび実行時パフォーマンスも向上しています。
-- コンテナーのネットワーク: ローカル ホストと HTTP プロキシのサポートが追加され、コンテナーの拡張性と起動時間が向上しています。
-- ツール: Curl.exe、Tar.exe、および SSH のサポートが強化され、シナリオのビルドおよびデバッグに関して PowerShell を補完しています。
+- コンテナーのネットワーク:Localhost と http プロキシのサポートが追加されたら、およびコンテナーのスケーラビリティとスタートアップ時間が短縮します。
+- ツール:ビルドとデバッグ シナリオ用に PowerShell を補完する Curl.exe、Tar.exe、および SSH のサポートが強化されました。
 
 ### <a name="server-core-container-image"></a>Server Core コンテナー イメージ
 
@@ -75,9 +75,9 @@ WSL によって、サーバーの管理者は Windows Server の Linux から�
 Kubernetes (一般的に K8s と呼ばれます) は、[Cloud Native Computing Foundation](https://www.cncf.io) の管理の下で開発されたコンテナー化されたアプリケーションの展開、スケーリング、管理を自動化するためのオープン ソース システムです。 
 
 Windows Server バージョン 1709 では、ユーザーは次のような Windows ネットワーク機能で Kubernetes を利用することができました。
-- 共有ポッド コンパートメント: インフラストラクチャ ポッドとワーカー ポッドで、ネットワーク コンパートメントを共有できるようになりました (Linux 名前空間と同様)。
-- エンドポイントの最適化: コンパートメントの共有により、コンテナー サービスは以前の半数以上のエンドポイントを追跡する必要があります。
-- データ パスの最適化: 仮想フィルタリング プラットフォームおよびホスト ネットワーク サービスの機能強化により、カーネルに基づく負荷分散が可能になります。
+- ポッドのコンパートメントを共有するには。インフラストラクチャおよび worker ポッドは、ネットワーク コンパートメント (Linux の名前空間に似ています) を共有するようになりました。
+- エンドポイントの最適化:コンパートメントの共有に協力してくれたコンテナー サービスは多くの半数以上のエンドポイントを追跡する必要があります。
+- データ パスの最適化:カーネル ベースの負荷分散仮想フィルタ リング プラットフォームと、ホストのネットワーク サービスの機能強化を許可します。
 
 Windows Server バージョン 1803 のリリースに伴い、次の Kubernetes リリースでより多くの機能が利用できるようになります。 
 - Kubernetes によってオーケストレーションされる Windows コンテナーの[ストレージ プラグイン](https://github.com/Microsoft/K8s-Storage-Plugins)。
@@ -111,4 +111,4 @@ Install-WindowsFeature -Name WDS
 ## <a name="see-also"></a>関連項目
 
 [Windows Server のリリース情報](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)<br>
-[Windows 10 バージョン 1803 の IT 技術者向けコンテンツの新機能](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)
+[新機能については、Windows 10 バージョン 1803 の IT Pro コンテンツです。](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)

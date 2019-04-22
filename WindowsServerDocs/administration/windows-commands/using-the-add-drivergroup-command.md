@@ -1,0 +1,56 @@
+---
+title: 追加 DriverGroup コマンドを使用してください。
+description: 'Windows コマンド」のトピック * * *- '
+ms.custom: na
+ms.prod: windows-server-threshold
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 2a92fe8f-03f9-462a-b99e-f23275259807
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+ms.openlocfilehash: 322a9a671f90bf56f6357289f7727c142a0145cc
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59825093"
+---
+# <a name="using-the-add-drivergroup-command"></a>追加 DriverGroup コマンドを使用してください。
+
+>適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+
+サーバーには、ドライバー グループを追加します。
+このコマンドを使用する方法の例については、次を参照してください。[例](#BKMK_examples)します。
+## <a name="syntax"></a>構文
+```
+wdsutil /add-DriverGroup /DriverGroup:<Group Name>\n\
+[/Server:<Server name>] [/Enabled:{Yes | No}] [/Applicability:{Matched | All}] [/Filtertype:<Filter type> /Policy:{Include | Exclude} /Value:<Value> [/Value:<Value> ...]]
+```
+## <a name="parameters"></a>パラメーター
+|パラメーター|説明|
+|-------|--------|
+|/DriverGroup:<Group Name>|新しいドライバー グループの名前を指定します。|
+|/Server:<Server name>|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
+|か有効になって: {[はい] (& a) #124 文字です。No}|有効またはパッケージを無効にします。|
+|/適用性: {一致する (& a) #124 文字です。すべて}|フィルター条件が満たされた場合は、インストールするパッケージを指定します。 **一致する**クライアントのハードウェアに一致するドライバー パッケージのみをインストールすることを意味します。 **すべて** 手段は、クライアントのハードウェアに関係なくすべてのパッケージをインストールします。|
+|/Filtertype:<Filtertype>|グループに追加するフィルターの種類を指定します。 1 つのコマンドでは、複数のフィルターの種類を指定できます。 各フィルターの種類は続けてください **/policy:enabled** と 1 つ以上 **/value**します。 <Filtertype> 次のいずれかを指定できます。<br /><br />**BiosVendor**<br /><br />**Biosversion**<br /><br />**Chassistype**<br /><br />**Manufacturer**<br /><br />**uuid**<br /><br />**Osversion**<br /><br />**Osedition**<br /><br />**OsLanguage**<br /><br />その他のすべてのフィルターの種類の値を取得する方法の詳細については、次を参照してください。[ドライバー グループのフィルター](https://go.microsoft.com/fwlink/?LinkID=155158) (https://go.microsoft.com/fwlink/?LinkID=155158)します。|
+|[/ポリシー: {含める (& a) #124 文字です。} を除外する]|フィルターを設定するポリシーを指定します。 場合 **/policy:enabled** に設定されている **Include**, 、フィルターに一致するクライアント コンピューターがこのグループのドライバーをインストールを許可します。 場合 **/policy:enabled** に設定されている **除外**, 、このグループのドライバーをインストールするフィルターに一致するクライアント コンピューターは許可されません。|
+|[/値します。<Value>]|対応するクライアントの値を指定します **/Filtertype**します。 1 つの型に複数の値を指定できます。 特定の種類のフィルターの有効な値については、次の一覧を参照してください。 次の属性は**Chassistype**します。 その他のすべてのフィルターの種類の値を取得する方法の詳細については、次を参照してください。[ドライバー グループのフィルター](https://go.microsoft.com/fwlink/?LinkID=155158) (https://go.microsoft.com/fwlink/?LinkID=155158)します。<br /><br />**その他**<br /><br />**UnknownChassis**<br /><br />**デスクトップ**<br /><br />**LowProfileDesktop**<br /><br />**PizzaBox**<br /><br />**ミニタワー**<br /><br />**タワー**<br /><br />**ポータブル**<br /><br />**ラップトップ コンピューター**<br /><br />**ノートブック**<br /><br />**ハンドヘルド**<br /><br />**DockingStation**<br /><br />**AllInOne**<br /><br />**SubNotebook**<br /><br />**SpaceSaving**<br /><br />**LunchBox**<br /><br />**MainSystemChassis**<br /><br />**ExpansionChassis**<br /><br />**SubChassis**<br /><br />**BusExpansionChassis**<br /><br />**PeripheralChassis**<br /><br />**StoraeChassis**<br /><br />**RackmountChassis**<br /><br />**SealedCasecomputer**<br /><br />**MultiSystemChassis**<br /><br />**CompactPci**<br /><br />**AdvancedTca**|
+## <a name="BKMK_examples"></a>例
+ドライバー グループを追加するには、次のいずれかを入力します。
+```
+wdsutil /add-DriverGroup /DriverGroup:printerdrivers /Enabled:Yes
+```
+```
+wdsutil /add-DriverGroup /DriverGroup:printerdrivers /Applicability:All /Filtertype:Manufacturer /Policy:Include /Value:Name1 /Filtertype:Chassistype /Policy:Exclude /Value:Tower /Value:MiniTower
+```
+#### <a name="additional-references"></a>その他の参照
+[コマンドライン構文のポイント](command-line-syntax-key.md)
+[追加 DriverGroupPackage コマンドを使用して](using-the-add-drivergrouppackage-command.md)
+[追加 DriverGroupPackages コマンドを使用して](using-the-add-drivergrouppackages-command.md)
+[追加 DriverGroupFilter コマンドを使用して](using-the-add-drivergroupfilter-command.md)

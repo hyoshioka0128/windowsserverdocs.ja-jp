@@ -1,6 +1,6 @@
 ---
-title: 役割、役割サービス、および Windows Server - Server Core ではなく機能
-description: 役割と Windows Server のサーバーの主要なインストールのオプションに含まれていない機能について説明します。
+title: 役割、役割サービス、および Windows Server の Server Core ではなく機能
+description: 役割と Windows Server の Server Core インストール オプションで含まれていない機能について説明します。
 ms.prod: windows-server-threshold
 ms.mktglfcycl: manage
 ms.sitesec: library
@@ -8,85 +8,85 @@ author: lizap
 ms.localizationpriority: medium
 ms.date: 02/23/2018
 ms.openlocfilehash: 308bc8a5d25e2ec67438f0ee03cbfce6f7411ca2
-ms.sourcegitcommit: 4b9b21ca1f366388a78ead7413cb581f2b23d4c6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "2604790"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59825533"
 ---
-# 役割、役割サービス、および Windows Server - Server Core ではなく機能
+# <a name="roles-role-services-and-features-not-in-windows-server---server-core"></a>役割、役割サービス、および Windows Server の Server Core ではなく機能
 
-> 対象: Windows Server (半年チャネル) および Windows Server 2016
+> 適用対象:Windows Server (半期チャネル) および Windows Server 2016
 
-Windows Server のサーバーの主要なインストールのオプションから、次のような役割、役割サービス、および機能が削除されました。 Server Core オプション動作環境を把握するために、この情報を使用します。
+Windows Server の Server Core インストール オプションから、次の役割、役割サービス、および機能が削除されました。 環境内の Server Core オプションの動作はかどうかを把握するのにには、この情報を使用します。
 
 > [!NOTE]
-> 表示できます、役割、役割サービス、および機能の一覧[Server Core に含まれる](server-core-roles-and-services.md)こと。 これは、非常に大きなリスト、最適な結果を得るには、特定の役割または関心がある機能のリストを検索します。
+> 役割、役割サービスの一覧を表示もでき、機能を[Server Core に含まれる](server-core-roles-and-services.md)します。 これは非常に大きなリストでは、したがって最良の結果を特定の役割または機能に関心があるは、その一覧を検索します。
 
-## Server Core ではなくの役割
+## <a name="roles-not-in-server-core"></a>Server Core ではなくロール
 
 - FAX
 - MultiPointServerRole
 - NPAS
 - WDS
 
-## Server Core ではなく、役割サービス
-ノートである Server Core (接続販売店ライセンス、仮想化ホスト) にいくつかのリモート デスクトップの役割サービスが含まれますが、他のユーザー (ゲートウェイ、RD セッションのホストの Web アクセス)。
+## <a name="role-services-not-in-server-core"></a>Server Core ではなくロール サービス
+ある (接続ブローカー、ライセンス、仮想化ホスト) の Server Core に一部のリモート デスクトップ ロール サービスが含まれますが、他のユーザーに注意してください (ゲートウェイ、RD セッション ホスト、Web アクセス)。
 
-- 印刷からスキャン サーバー
-- インターネットで印刷
+- スキャン サーバーの印刷
+- インターネット印刷
 - RDS ゲートウェイ
-- RDS RD-サーバー
+- RDS-RD サーバー
 - RDS Web アクセス
-- Web の管理-コンソール
+- Web の管理コンソール
 - Web Lgcy 管理コンソール
 - WDS の展開
-- WDS トランスポート *(前の Windows Server バージョン 1803) に、*
+- WDS トランスポート *(前に Windows Server バージョン 1803)*
 
-## Server Core ではなく機能
+## <a name="features-not-in-server-core"></a>Server Core ではなく機能
 
-- ビットの IIS の拡張
+- BITS、IIS-Ext
 - BitLocker NetworkUnlock
 - 直接再生
-- インターネットから印刷クライアント
-- LPR ポート-モニター
+- インターネット印刷のクライアント
+- LPR-Port-Monitor
 - MSMQ マルチキャスト
 - CMAK
 - リモート アシスタンス
-- RSAT SMTP
-- RSAT-機能-ツール-BitLocker-RemoteAdminTool
-- RSAT ビット-サーバー
-- RSAT NLB
-- RSAT SNMP
+- RSAT-SMTP
+- RSAT-Feature-Tools-BitLocker-RemoteAdminTool
+- RSAT-Bits サーバー
+- RSAT-NLB
+- RSAT-SNMP
 - RSAT WINS
-- ハイパー V ツール
+- Hyper V ツール
 - RSAT RDS-ツール
 - RSAT から RDS ゲートウェイ
-- RSAT RDS-ライセンス-診断の UI
+- RSAT の RDS のライセンス-診断-UI
 - RDS ライセンス UI
 - UpdateServices UI
-- RSAT ADC
-- RSAT ADC の管理
-- RSAT-オンライン-応答側
+- RSAT ADCS
+- RSAT ADCS 個の管理
+- オンライン レスポンダーの RSAT
 - RSAT ADRMS
 - RSAT Fax
-- RSAT のサービス ファイル
-- RSAT DFS 管理 Con
-- RSAT FSRM の管理
-- RSAT-NFS の管理
+- RSAT のファイル サービス
+- RSAT-DFS-Mgmt-Con
+- RSAT FSRM 個の管理
+- RSAT の NFS の管理者
 - RSAT NPAS
-- RSAT 印刷-サービス
+- RSAT の印刷サービス
 - RSAT VA-ツール
 - WDS AdminPack
 - SMTP サーバー
 - TFTP クライアント
 - WebDAV リダイレクター
 - 生体認証フレームワーク
-- Windows Defender-Gui
-- Windows の基盤の Id
+- Windows Defender の Gui
+- Windows-Identity-Foundation
 - PowerShell ISE
 - 検索サービス
-- Windows の TIFF-IFilter
+- Windows-TIFF IFilter
 - ワイヤレス ネットワーク
 - XPS ビューアー
 

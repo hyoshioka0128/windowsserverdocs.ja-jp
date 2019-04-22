@@ -1,6 +1,6 @@
 ---
 title: vRSS の問題を解決する
-description: 負荷分散のトラフィックを VM Lp vRSS が表示されない場合は、vRSS 問題を解決します。
+description: 負荷分散トラフィックが VM LPs に vRSS が表示されない場合は、vRSS 問題を解決します。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -11,30 +11,30 @@ ms.author: pashort
 author: shortpatti
 ms.date: 09/04/2018
 ms.openlocfilehash: a2d6eb43149361b4270565b63fc99f483f364f74
-ms.sourcegitcommit: 515b4fd5c40fcbae0e12a2c30090384533972353
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8232521"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59824033"
 ---
-## vRSS の問題を解決する
+## <a name="resolve-vrss-issues"></a>vRSS の問題を解決する
 
-すべての準備の手順を完了したまま、負荷分散のトラフィックを VM Lp vRSS 表示されない場合は、さまざまな考えられる問題があります。
+すべての準備手順を完了しても、vRSS が負荷分散トラフィックが VM LPs に表示されない場合は、さまざまな考えられる問題があります。
 
-1. 準備の手順を実行する前に、vRSS が無効にし、これで、有効にする必要があります。 VM の vRSS を有効にする**設定 VMNetworkAdapter**を実行できます。
+1. 準備手順を実行する前に、vRSS が無効になっているのと、今すぐ有効にする必要があります。 実行することができます**Set-vmnetworkadapter** VM の vRSS を有効にします。
 
    ```PowerShell
    Set-VMNetworkAdapter <VMname> -VrssEnabled $TRUE
    Set-VMNetworkAdapter -ManagementOS -VrssEnabled $TRUE
    ```
 
-2. VM のまたはホスト vNIC RSS が無効です。 既定では Windows Server 2016 により、RSS他のユーザーが無効にします。 
+2. RSS は、VM またはホスト vNIC に無効にされました。 既定では RSS を有効に Windows Server 2016だれかが可能性がありますがこれを無効にします。 
 
-   - 有効になっている = **True**
+   - 有効になっている =**は True。**
 
    **現在の設定を表示するには。** 
 
-   (用で、VM\ vRSS) VM\ で次の PowerShell コマンドレットを実行またはホストで \ (ホスト vNIC vRSS\) 用です。
+   VM で、次の PowerShell コマンドレットを実行\(VM で vRSS を\)またはホストで\(ホスト vNIC vRSS の\)します。
 
    ```PowerShell
    Get-NetAdapterRss
@@ -48,20 +48,20 @@ ms.locfileid: "8232521"
    Enable-NetAdapterRss *
    ```
    
-   RSS を構成する別のシステム全体の方法では、netsh を使用しています。 使用 
+   RSS を構成する別の全体的な方法は、netsh を使用しています。 使用 
    
     ```cmd
    netsh int tcp show global
    ```
    
-   確認してその RSS がないグローバルに無効にします。 必要な場合に有効にします。 この設定によって影響のない *-NetAdapterRSS します。
+   確認するグローバルを RSS で無効はありません。 必要な場合に有効にします。 この設定は変更されません *-NetAdapterRSS します。
 
-3. VMMQ が有効でない vRSS を構成した後場合は、仮想スイッチに接続されている各アダプターでは、次の設定を確認します。
+3. VRSS を構成した後、VMMQ が有効にしない場合は、仮想スイッチに接続されている各アダプターでは、次の設定を確認します。
 
    - VmmqEnabled = **False**
    - VmmqEnabledRequested = **True**
 
-   ![vmmq 有効になっています。](../../media/vmmq-enabled.png)
+   ![vmmq 対応](../../media/vmmq-enabled.png)
 
    **現在の設定を表示するには。** 
 
@@ -75,7 +75,7 @@ ms.locfileid: "8232521"
    Set-NetAdapterAdvancedProperty -Name NICName -DisplayName 'Virtual Switch RSS' -DisplayValue Enabled”
    ```
  
-4. _(Windows Server 2019)_ VMMQ を有効にすることはできません (VmmqEnabled = False) **VrssQueueSchedulingMode**を**動的**に設定します。 VMMQ が有効にすると、VrssQueueSchedulingMode は動的に変更されません。<p>**動的**の**VrssQueueSchedulingMode**では、VMMQ が有効にすると、ドライバーのサポートが必要です。  VMMQ の論理プロセッサ上でパケットの配置のオフロードにして、ように、動的なアルゴリズムを活用するドライバーのサポートが必要です。  NIC のベンダーのドライバーおよびファームウェアの動的な VMMQ をサポートしているをインストールしてください。
+4. _(Windows Server 2019)_ VMMQ を有効にすることはできません (VmmqEnabled = False) の設定中に**VrssQueueSchedulingMode**に**動的**します。 VrssQueueSchedulingMode は VMMQ が有効にすると動的に変更します。<p>**VrssQueueSchedulingMode**の**動的**VMMQ が有効にすると、ドライバーのサポートを必要とします。  VMMQ、オフロードの論理プロセッサ上でパケットの配置は、そのため、動的アルゴリズムを活用するドライバーのサポートが必要です。  NIC ベンダーのドライバーと動的 VMMQ をサポートしているファームウェアをインストールしてください。
 
 
 

@@ -1,6 +1,6 @@
 ---
 ms.assetid: a7c39656-81ee-4c2b-80ef-4d017dd11b07
-title: "ワーク フォルダーの展開の計画"
+title: ワーク フォルダーの展開の計画
 ms.prod: windows-server-threshold
 ms.technology: storage-work-folders
 ms.topic: article
@@ -8,16 +8,17 @@ author: JasonGerend
 manager: dongill
 ms.author: jgerend
 ms.date: 4/5/2017
-description: "システム要件を含めたワーク フォルダーの展開を計画する方法およびネットワーク環境を準備する方法です。"
-ms.openlocfilehash: 877b418439e77e39cbdc6821808e296f977c26dd
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+description: システム要件を含めたワーク フォルダーの展開を計画する方法およびネットワーク環境を準備する方法です。
+ms.openlocfilehash: 2ac52b15f266fce7202df4c9c76e774fca4098cc
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59824643"
 ---
 # <a name="planning-a-work-folders-deployment"></a>ワーク フォルダーの展開の計画
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10、Windows 8.1、Windows 7
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10、Windows 8.1、Windows 7
 
 このトピックでは、ワーク フォルダーの実装の設計プロセスについて説明します。次のような背景知識がある読者を想定しています。  
   
@@ -31,9 +32,9 @@ ms.lasthandoff: 10/17/2017
   
 -   Web リバース プロキシによる内部リソースへの Web アクセスの有効化についての基本的な理解があること  
   
- 以降のセクションは、ワーク フォルダーの実装を設計する際に役立ちます。 ワーク フォルダーの展開については、次のトピック、「[ワーク フォルダーの展開](deploy-work-folders.md)」で説明しています。  
+ 以降のセクションは、ワーク フォルダーの実装を設計する際に役立ちます。 ワーク フォルダーの展開については、次のトピック「 [Deploying Work Folders](deploy-work-folders.md)」で説明します。  
   
-##  <a name="BKMK_SOFT"></a>ソフトウェア要件  
+##  <a name="BKMK_SOFT"></a> ソフトウェアの要件  
 
 ワーク フォルダーには、ファイル サーバーとネットワーク インフラストラクチャについて、次のソフトウェア要件があります。  
   
@@ -47,7 +48,7 @@ ms.lasthandoff: 10/17/2017
 
 -   (省略可能) 複数のファイル サーバーを使用する場合、PC やデバイスでの適切なファイル サーバーの自動参照をサポートする、Windows Server 2012 R2 のスキーマ拡張機能を使用した Active Directory Domain Services フォレスト。 
   
-ユーザーがインターネット経由で同期できるためには、追加の要件があります。  
+ユーザーがインターネット経由で同期できるようにするには、追加の要件があります。  
   
 -   組織のリバース プロキシまたはネットワーク ゲートウェイで公開規則を作成することによって、インターネットからサーバーへのアクセスを可能にする機能。  
   
@@ -81,7 +82,7 @@ ms.lasthandoff: 10/17/2017
   
 -   Windows 7 PC は、組織のドメインに参加する必要があります (ワークグループには参加できません)。  
   
--   NTFS フォーマットされたローカル ドライブ上で、ワーク フォルダー内のすべてのユーザー ファイルを格納するのに十分な空き領域。既定の設定のように、ワーク フォルダーがシステム ドライブ上にある場合は、追加で 6 GB の空き領域。 ワーク フォルダーは、既定で **%USERPROFILE%\Work Folders** を使用します。  
+-   NTFS フォーマットされたローカル ドライブ上で、ワーク フォルダー内のすべてのユーザー ファイルを格納するのに十分な空き領域。既定の設定のように、ワーク フォルダーがシステム ドライブ上にある場合は、追加で 6 GB の空き領域。 ワーク フォルダーは既定で **%USERPROFILE%\Work Folders** を使用します。  
   
      ただし、ユーザーはセットアップ時にこの場所を変更できます (NTFS ファイル システムでフォーマットされた microSD カードや USB ドライブはサポートされている場所ですが、ドライブを取り外すと同期は停止されます)。  
   
@@ -90,7 +91,7 @@ ms.lasthandoff: 10/17/2017
 -   ワーク フォルダーでは、クライアントの仮想マシンについて、仮想マシンの状態のロールバックはサポートされていません。 代わりにシステム イメージ バックアップまたはその他のバックアップ アプリを使って、クライアント仮想マシン内からバックアップと復元処理を実行します。  
   
 > [!NOTE]
->  すべてのワーク フォルダー サーバーおよび Windows 8.1 または Windows Server 2012 R2 を実行しているすべてのクライアント コンピューターに、Windows 8.1 および Windows Server 2012 R2 一般公開用の更新プログラムのロールアップをインストールしていることを確認します。 詳細については、Microsoft サポート技術情報の記事 [2883200](http://support.microsoft.com/kb/2883200) を参照してください。  
+>  すべてのワーク フォルダー サーバーおよび Windows 8.1 または Windows Server 2012 R2 を実行しているすべてのクライアント コンピューターに、Windows 8.1 および Windows Server 2012 R2 一般公開用の更新プログラムのロールアップをインストールしていることを確認します。 詳細については、Microsoft サポート技術情報の記事 [2883200](https://support.microsoft.com/kb/2883200) を参照してください。  
   
 ## <a name="deployment-scenarios"></a>展開シナリオ  
  ワーク フォルダーは、ユーザーの環境内の任意の数のファイル サーバーで実装できます。 これにより、ワーク フォルダーの実装をユーザーのニーズに基づいて拡大、縮小でき、高度に個別化された展開を実現できます。 ただし、ほとんどの展開は、次の 3 種類の基本的なシナリオのいずれかに当てはまります。  
@@ -127,7 +128,7 @@ ms.lasthandoff: 10/17/2017
  また、グループ ポリシーを使用することによって、ワーク フォルダーを強制的にユーザー ベースまたはコンピューター ベースでセットアップすることもできます。ただし、この場合、ユーザーがサインインするすべての PC でワーク フォルダーが同期されるようになったり (ユーザーごとのポリシー設定を使用する場合)、PC 上のワーク フォルダーとして別の場所を指定することができなくなったりします (プライマリ ドライブの領域を節約するために microSD を指定する場合など)。 自動セットアップを強制する前に、ユーザーのニーズを慎重に評価することをお勧めします。  
   
 ### <a name="windows-intune"></a>Windows Intune  
- Windows Intune も、他の方法では表示されない、ドメインに参加していないデバイスにセキュリティと管理のレイヤーを提供します。 Windows Intune を使用すると、インターネット経由でワーク フォルダーに接続する、タブレットなどのユーザーの個人用デバイスを構成および管理できます。 Windows Intune では、使用する同期サーバーの URL をデバイスに提供できます。この機能を使用しない場合、ユーザーは職場の電子メール アドレスを入力して設定を参照するか (パブリック ワーク フォルダーの URL を https://workfolders.*contoso.com* の形式で公開している場合)、同期サーバーの URL を直接入力する必要があります。  
+ Windows Intune も、他の方法では表示されない、ドメインに参加していないデバイスにセキュリティと管理のレイヤーを提供します。 Windows Intune を使用すると、インターネット経由でワーク フォルダーに接続する、タブレットなどのユーザーの個人用デバイスを構成および管理できます。 Windows Intune がデバイスを使用する同期サーバーの URL を提供できます: 設定を参照する職場のメール アドレスを入力する必要がありますそれ以外の場合 (の形式で、パブリック ワーク フォルダーの URL を発行するかどうかは https://workfolders.*contoso.com*)、または直接同期サーバーの URL を入力します。  
   
  Windows Intune を展開していない場合、ユーザーは外部デバイスを手動で構成する必要があり、ヘルプ デスクのスタッフに対する要望が増加する可能性があります。  
   
@@ -138,9 +139,9 @@ ms.lasthandoff: 10/17/2017
  
 ワーク フォルダーは、Web アプリケーション プロキシ、Azure AD アプリケーション プロキシ、またはサード パーティのリバース プロキシ ソリューションの使用をサポートします。 
 
--  Web アプリケーション プロキシは、オンプレミスのリバース プロキシ ソリューションです。 詳細については、「[Windows Server 2016 の Web アプリケーション プロキシ](https://technet.microsoft.com/windows-server-docs/identity/web-application-proxy/web-application-proxy-windows-server)」を参照してください。  
+-  Web アプリケーション プロキシは、オンプレミスのリバース プロキシ ソリューションです。 詳細については、「[Windows Server 2016 の Web アプリケーション プロキシ](https://technet.microsoft.com/windows-server-docs/identity/web-application-proxy/web-application-proxy-windows-server)」を参照してください。  
   
--  Azure AD アプリケーション プロキシは、クラウドのリバース プロキシ ソリューションです。 詳細については、[オンプレミス アプリケーションへの安全なリモート アクセスを実現する方法](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-application-proxy-get-started)」を参照してください
+-  Azure AD アプリケーション プロキシは、クラウドのリバース プロキシ ソリューションです。 詳細については、[オンプレミス アプリケーションへの安全なリモート アクセスを実現する方法](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)」を参照してください
 
 ## <a name="additional-design-considerations"></a>その他の設計の考慮事項  
  これまでに説明した各コンポーネントの理解に加えて、ユーザーは設計する際に、運用する同期サーバーと共有の数、およびフェールオーバー クラスタリングを利用してこれらの同期サーバーでフォールト トレランスを提供するかどうかを時間をかけて考慮する必要があります。  
@@ -154,10 +155,10 @@ ms.lasthandoff: 10/17/2017
   
 -   負荷分散: 大規模な環境では、複数のサーバーでユーザー データを格納すると、サーバーのパフォーマンスや稼働時間が向上する場合があります。  
   
- ワーク フォルダーのサーバーのスケーリングとパフォーマンスについては、[ワーク フォルダーの展開のパフォーマンスに関する考慮事項に関するページ](http://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)を参照してください。  
+ ワーク フォルダーのサーバーのスケーリングとパフォーマンスについては、 [ワーク フォルダーの展開のパフォーマンスに関する考慮事項に関するページ](http://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)を参照してください。  
   
 > [!NOTE]
->  複数の同期サーバーを使用する場合、ユーザーの自動サーバー検出を設定することをお勧めします。 このプロセスは、AD DS でユーザー アカウントごとに属性の構成を使用します。 この属性は **msDS-SyncServerURL** という名前で、Windows Server 2012 R2 のドメイン コントローラーがドメインに追加されるか、または Active Directory スキーマの更新が適用された後、ユーザー アカウントで利用できるようになります。 この属性は、ユーザーが適切な同期サーバーに接続できるように、各ユーザーについて設定してください。 自動サーバー検出を使用することによって、組織では、稼働中の同期サーバーの数に関係なく、*https://workfolders.contoso.com* などの "わかりやすい" URL でワーク フォルダーを公開できます。  
+>  複数の同期サーバーを使用する場合、ユーザーの自動サーバー検出を設定することをお勧めします。 このプロセスは、AD DS でユーザー アカウントごとに属性の構成を使用します。 この属性は **msDS-SyncServerURL** という名前で、Windows Server 2012 R2 のドメイン コントローラーがドメインに追加されるか、または Active Directory スキーマの更新が適用された後、ユーザー アカウントで利用できるようになります。 この属性は、ユーザーが適切な同期サーバーに接続できるように、各ユーザーについて設定してください。 自動サーバー検出を使用すると、組織は発行「わかりやすい」URL でワーク フォルダーなど *https://workfolders.contoso.com*操作での同期サーバーの数に関係なく、します。  
   
 ### <a name="number-of-sync-shares"></a>同期共有の数  
  個々の同期サーバーで、複数の同期共有を管理できます。 これは、次のような理由で役立ちます。  
@@ -194,7 +195,7 @@ ms.lasthandoff: 10/17/2017
   
     -   暗号化など、特定のデバイス ポリシーの要件を持つユーザーはいますか?  
   
-    -   どのクライアント コンピューターやデバイスをサポートする必要がありますか?  (Windows 8.1、Windows RT 8.1、Windows 7)  
+    -   どのクライアント コンピューターやデバイスをサポートする必要がありますか?  (Windows 8.1、Windows RT 8.1、Windows 7)。  
   
          Windows 7 PC がサポートされている際にパスワード ポリシーを使用する場合は、コンピューター アカウントが保存されているドメインをワーク フォルダー パスワード ポリシーから除外し、代わりにそのドメインで、ドメインに参加している PC に対してグループ ポリシー パスワード ポリシーを使用してください。  
   
@@ -234,7 +235,7 @@ ms.lasthandoff: 10/17/2017
   
 -   デバイス アクセス  
   
-    -   インターネット ベースのデバイスにアクセスを提供するためにどのような URL が使用されますか (*メール ベースの自動サーバー検出に必要な既定の URL は workfolders.domainname です*)?  
+    -   インターネット ベースのデバイスにアクセスを提供するためにどのような URL が使用されますか (*メール ベースの自動サーバー検出に必要な既定の URL は workfolders.domainname です*)。  
   
     -   URL は、どのようにインターネットに公開されますか?  
   
@@ -247,12 +248,12 @@ ms.lasthandoff: 10/17/2017
     -   デバイスが接続するために、デバイス登録が必要ですか?  
   
 ## <a name="next-steps"></a>次のステップ  
- ワーク フォルダーの実装を設計したら、ワーク フォルダーを展開します。 詳しくは、「[ワーク フォルダーの展開](deploy-work-folders.md)」をご覧ください。  
+ ワーク フォルダーの実装を設計したら、ワーク フォルダーを展開します。 詳細については、「 [Deploying Work Folders](deploy-work-folders.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  その他の関連情報については、次の情報を参照してください。  
   
 |コンテンツの種類|参考資料|  
 |------------------|----------------|  
-|**製品評価**|-   [ワーク フォルダー](work-folders-overview.md)<br />-   [Windows 7 のワーク フォルダー](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) (ブログ記事)|  
-|**展開**|-   [ワーク フォルダーの実装の設計](plan-work-folders.md)<br />-   [ワーク フォルダーの展開](deploy-work-folders.md)<br />-   [AD FS と Web アプリケーション プロキシ (WAP) を使ったワーク フォルダーの展開](deploy-work-folders-adfs-overview.md)<br />- [Azure AD アプリケーション プロキシを使ったワーク フォルダーの展開](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />-   [ワーク フォルダーの展開のパフォーマンスに関する考慮事項](http://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   [Windows 7 のワーク フォルダー (64 ビット ダウンロード)](http://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Windows 7 のワーク フォルダー (32 ビット ダウンロード)](http://www.microsoft.com/download/details.aspx?id=42559)<br />-   [ワーク フォルダーのテスト ラボの展開](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (ブログ記事)|
+|**製品評価**|-   [ワーク フォルダー](work-folders-overview.md)<br />-   [Windows 7 のフォルダーのワーク](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx)(ブログの投稿)|  
+|**展開**|-   [ワーク フォルダーの実装の設計](plan-work-folders.md)<br />-   [ワーク フォルダーの展開](deploy-work-folders.md)<br />-   [AD FS と Web アプリケーション プロキシ (WAP) を使ったワーク フォルダーを展開します。](deploy-work-folders-adfs-overview.md)<br />- [Azure AD アプリケーション プロキシを使ったワーク フォルダーを展開します。](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />-   [ワーク フォルダーの展開のパフォーマンスに関する考慮事項](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   [Windows 7 用のワーク フォルダー (64 ビット ダウンロード)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Windows 7 用のワーク フォルダー (32 ビット ダウンロード)](https://www.microsoft.com/download/details.aspx?id=42559)<br />-   [ワーク フォルダーのテスト ラボの展開](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx)(ブログの投稿)|

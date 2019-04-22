@@ -1,6 +1,6 @@
 ---
-title: "ターゲット優先順位を設定して紹介順序を上書きする"
-description: "この記事では、ターゲット優先順位を指定して紹介順序を上書きする方法について説明します。"
+title: ターゲット優先順位を設定して紹介順序を上書きする
+description: この記事では、ターゲット優先順位を指定して紹介順序を上書きする方法について説明します。
 ms.date: 6/5/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 10f5e8979ae2f6390da76276dfa193226019e5d3
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 59db08d5ef46b696f550a5fa0738c5c1f9375fda
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59826363"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>ターゲット優先順位を設定して紹介順序を上書きする
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 紹介とは、ユーザーが名前空間のルートにアクセスするか、名前空間内のターゲットを持つフォルダーにアクセスしたときに、クライアント コンピューターがドメイン コントローラーまたは名前空間サーバーから受信する、順序付きのターゲット一覧です。 紹介内の各ターゲットは、名前空間のルートまたはフォルダーの順序指定方法に従って順序付けられています。 
 
@@ -26,7 +27,7 @@ ms.lasthandoff: 10/17/2017
 
 ドメインベースの名前空間のルート ターゲットにターゲット優先順位を設定するには、次の手順を実行します。
 
-1.  [**スタート**] をクリックし、[**管理ツール**] をポイントして、[**DFS 管理**] をクリックします。
+1.  **[スタート]** をクリックし、**[管理ツール]** をポイントして、**[DFS 管理]** をクリックします。
 
 2.  コンソール ツリーの **[名前空間]** ノードで、優先順位を設定するルート ターゲットのドメインベースの名前空間をクリックします。
 
@@ -43,7 +44,7 @@ ms.lasthandoff: 10/17/2017
 
 フォルダー ターゲットにターゲット優先順位を設定するには、次の手順を実行します。
 
-1.  [**スタート**] をクリックし、[**管理ツール**] をポイントして、[**DFS 管理**] をクリックします。
+1.  **[スタート]** をクリックし、**[管理ツール]** をポイントして、**[DFS 管理]** をクリックします。
 
 2.  コンソール ツリーの **[名前空間]** ノードで、優先順位を設定するターゲットのフォルダーをクリックします。
 
@@ -56,5 +57,5 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="see-also"></a>関連項目
 
--   [DFS 名前空間を調整する](tuning-dfs-namespaces.md)
--   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)
+-   [DFS 名前空間のチューニング](tuning-dfs-namespaces.md)
+-   [Delegate Management Permissions for DFS 名前空間](delegate-management-permissions-for-dfs-namespaces.md)

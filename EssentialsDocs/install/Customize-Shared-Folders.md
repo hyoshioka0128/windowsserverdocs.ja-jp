@@ -1,6 +1,6 @@
 ---
-title: "共有フォルダーをカスタマイズします。"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: 共有フォルダーのカスタマイズ
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -12,51 +12,52 @@ ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bcdd43183512bb225dd4afa916f2782c6eb79d7e
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: 552a76ba9c2ff385f1ff09d4869eaeb6613027a7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59823473"
 ---
-# <a name="customize-shared-folders"></a>共有フォルダーをカスタマイズします。
+# <a name="customize-shared-folders"></a>共有フォルダーのカスタマイズ
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-既定では、サーバー フォルダーはディスク 0 の最大のデータ パーティションに作成されます。 パートナーは、場所をカスタマイズおよび、次の手順を使用して追加のサーバー フォルダーを指定できます。  
+既定では、サーバー フォルダーはディスク 0 の最大のデータ パーティションに作成されます。 パートナーは次の手順で、場所をカスタマイズし、追加のサーバー フォルダーを指定できます。  
   
-1.  カスタム パーティション構成を使用して、工場出荷時イメージを作成し、sysprep を使用する前に新しい Storage レジストリ キーを作成します。 初期構成 (IC) 中に、記憶域の IC タスクは、このレジストリ キーを確認します。 存在する場合、既定のサーバー フォルダーが C:\ServerFolders ディレクトリに作成されます。  
+1.  カスタム パーティション構成を使用して、工場出荷時イメージを作成し、sysprep を使用する前に新しい Storage レジストリ キーを作成します。 初期構成 (IC) 中に、記憶域の IC タスクがこのレジストリ キーを確認します。 レジストリ キーが存在する場合、既定のサーバー フォルダーが C:\ServerFolders ディレクトリに作成されます。  
   
     #### <a name="to-create-a-new-storage-registry-key"></a>新しい Storage レジストリ キーを作成するには  
   
-    1.  サーバーで、マウスを移動して、画面の右上隅とクリックして**検索**します。  
+    1.  サーバーで、カーソルを画面の右上隅に移動して、**[検索]** をクリックします。  
   
-    2.  検索ボックスに次のように入力します。**regedit**、クリックして、**Regedit**アプリケーション。  
+    2.  検索ボックスに「**regedit**」と入力して、**[Regedit]** アプリケーションをクリックします。  
   
-    3.  ナビゲーション ウィンドウで [ **HKEY_LOCAL_MACHINE**、展開**ソフトウェア**、し、展開**Microsoft**します。  
+    3.  ナビゲーション ウィンドウで、**[HKEY_LOCAL_MACHINE]**、**[SOFTWARE]**、**[Microsoft]** の順に展開します。  
   
-    4.  右クリック**Windows Server**、] をクリックして**新規**、] をクリックし、**キー**します。  
+    4.  **[Windows Server]** を右クリックし、**[新規]** をクリックし、**[キー]** をクリックします。  
   
-    5.  キーの名前**記憶域**します。  
+    5.  キーの名前を「**Storage**」にします。  
   
-    6.  新しい Storage レジストリ キーをクリックを右クリックし、ナビゲーション ウィンドウで、**新規**、] をクリックし、**DWORD (32 ビット) 値**します。  
+    6.  ナビゲーション ウィンドウで、新しい **Storage**レジストリ キーを右クリックし、**[DWORD (32 ビット) 値]** をクリックします。  
   
-    7.  文字列の名前**CreateFoldersOnSystem**します。  
+    7.  文字列の名前を「**CreateFoldersOnSystem**」にします。  
   
-    8.  右クリック**CreateFoldersOnSystem**、] をクリックし、**変更**します。 **文字列の編集**] ダイアログ ボックスが表示されます。  
+    8.  **[CreateFoldersOnSystem]** を右クリックし、**[修正]** をクリックします。 **[文字列の編集]** ダイアログ ボックスが表示されます。  
   
-    9. この新しいキーの値を設定**1**、] をクリックし、**[OK]**します。  
+    9. この新しいキーの値を **1** に設定し、**[OK]** をクリックします。  
   
-2.  PostIC.cmd スクリプトを使用して、フォルダーを別の場所に移動するか、追加のフォルダーを作成します。 次の例を参照してください:[例 1: カスタム フォルダーを作成し、Windows PowerShell を使用して、PostIC.cmd から新しい場所に、既定のフォルダーを移動](Customize-Shared-Folders.md#BKMK_Example1)します。  
+2.  PostIC.cmd スクリプトを使用して、フォルダーを別の場所に移動するか、追加のフォルダーを作成します。 次の例を参照してください。[例 1:カスタム フォルダーを作成し、Windows PowerShell を使用して、既定のフォルダーを PostIC.cmd から新しい場所に移動](Customize-Shared-Folders.md#BKMK_Example1)します。  
   
-3.  Windows Server Solutions SDK を使用して、フォルダーを別の場所に移動するか、追加のフォルダーを作成します。 次の例を参照してください:[例 2: カスタム フォルダーを作成し、Windows Server Solutions SDK を使用して、既存のフォルダーを移動](Customize-Shared-Folders.md#BKMK_Example2)します。  
+3.  Windows Server Solutions SDK を使用して、フォルダーを別の場所に移動するか、追加のフォルダーを作成します。 次の例を参照してください。[例 2:カスタム フォルダーを作成し、Windows Server Solutions SDK を使用して既存のフォルダーを移動](Customize-Shared-Folders.md#BKMK_Example2)します。  
   
- パートナーが C ドライブにデータ フォルダーを置くことが必要に応じて、これにより、エンド ユーザーまたは再販業者はデータ ドライブのデータ フォルダーのレイアウトを決定できます。  
+ パートナーは必要に応じてデータ フォルダーをドライブ C に残しておくことができます。これにより、エンド ユーザーまたは再販業者はデータ ドライブのデータ フォルダーのレイアウトを決定できるようになります。  
   
-###  <a name="BKMK_Example1"></a>例 1: は、カスタム フォルダーを作成し、Windows PowerShell を使用して、PostIC.cmd から新しい場所に、既定のフォルダーを移動  
+###  <a name="BKMK_Example1"></a> 例 1:Windows PowerShell を使用して、カスタム フォルダーを作成し、既定のフォルダーを PostIC.cmd から新しい場所に移動する  
   
-1.  詳述するよう post 初期構成タスクを実行するための PostIC.cmd ファイルを作成、[PostIC.cmd ファイルを作成する [初期構成の投稿を実行しているタスク](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)セクションです。  
+1.  「 [Create the PostIC.cmd File for Running Post Initial Configuration Tasks](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) 」セクションの説明に従って、初期構成後のタスクを実行するための PostIC.cmd ファイルを作成します。  
   
-2.  という名前のファイルを作成してメモ帳を使って**customizefolders.ps1** C:\Windows\Setup\Scripts フォルダー、および次 Windows PowerShell® コマンド ファイルを貼り付けて (目的の動作に応じて該当する行のマークを解除) します。  
+2.  メモ帳を使用して、 **customizefolders.ps1** という名前のファイルを C:\Windows\Setup\Scripts フォルダー内に作成し、次の Windows PowerShell® コマンドをファイルに貼り付けます (目的の動作に応じて該当する行のマークを解除します)。  
   
     ```  
     # Move the Documents folder to D:\ServerFolders  
@@ -83,7 +84,7 @@ ms.lasthandoff: 07/03/2017
     exit 0  
     ```  
   
-3.  PostIC.cmd ファイルをこのスクリプトを実行するには、次の行を追加します。  
+3.  このスクリプトを実行するために、PostIC.cmd ファイルに次の行を追加します。  
   
     ```  
     REM Lower the execution policy  
@@ -93,13 +94,13 @@ ms.lasthandoff: 07/03/2017
     "%programfiles%\Windows Server\bin\WssPowershell.exe" -NoProfile -Noninteractive -command ". %windir%\setup\scripts\customizefolders.ps1;exit $LASTEXITCODE"  
     Set error_level=%ERRORLEVEL%  
   
-    REM Restore the execution policy to deafult  
+    REM Restore the execution policy to default  
     "%programfiles%\Windows Server\bin\WssPowershell.exe" "Set-ExecutionPolicy Restricted"  
     Set ERRORLEVEL=%error_level%  
     ```  
   
-###  <a name="BKMK_Example2"></a>例 2: カスタム フォルダーを作成し、Windows Server Solutions SDK を使用して、既存のフォルダーを移動します。  
- 作成するコード、実行可能ファイルとしてコンパイルしし、PostIC.cmd ファイルから呼び出すかにインストールされているアドインから直接呼び出すなります。  
+###  <a name="BKMK_Example2"></a> 例 2:Windows Server Solutions SDK を使用して、カスタム フォルダーを作成し、既存のフォルダーを移動する  
+ 作成したコードは、実行可能ファイルとしてコンパイルし、PostIC.cmd ファイルから呼び出すか、インストール済みのアドインから直接呼び出すことができます。  
   
 ```  
 static void Main(string[] args)  
@@ -142,7 +143,7 @@ static void Main(string[] args)
 }  
 ```  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
  [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   
  [追加のカスタマイズ](Additional-Customizations.md)   
  [イメージの展開の準備](Preparing-the-Image-for-Deployment.md)   

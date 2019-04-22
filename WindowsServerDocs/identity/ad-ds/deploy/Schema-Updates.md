@@ -1,27 +1,32 @@
 ---
 ms.assetid: abf69b09-6528-42e0-b164-813c7c2c78e7
-title: "スキーマの更新"
-description: 
+title: Windows Server でのスキーマの更新
+description: オペレーティング システムのバージョンによって adprep によって行われたスキーマの変更
 author: MicrosoftGuyJFlo
 ms.author: joflore
-manager: femila
-ms.date: 11/27/2017
+manager: mtillman
+ms.date: 11/30/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 1604910ed3c3a1db2d5e23fa34cce0798138579b
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 41b9837ab73dc12f134dcdba8b9f2b02a0a86b65
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59822663"
 ---
-# <a name="schema-updates"></a>スキーマの更新
+# <a name="windows-server-active-directory-schema-updates"></a>Windows Server Active Directory スキーマの更新
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server
 
-This topic lists the LDF files that include the changes that Adprep.exe makes.  
+このトピックでは、Adprep.exe が加える変更を含む LDF ファイルを使用します。  
 
-These are the LDF files included in Windows Server 2016:
+これは、Windows Server 2019 に含まれる LDF ファイルです。
+
+-   [Sch88.ldf](#BKMK_Sch88)
+
+Windows Server 2016 に含まれる LDF ファイルを次に示します。
 
 -   [Sch58.ldf](#BKMK_Sch58)
 
@@ -83,7 +88,7 @@ These are the LDF files included in Windows Server 2016:
 
 -   [Sch87.ldf](#BKMK_Sch87)
 
-These are the LDF files included in Windows Server 2012 R2:  
+Windows Server 2012 R2 に含まれる LDF ファイルを次に示します。  
   
 -   [Sch57.ldf](#BKMK_Sch57)  
   
@@ -111,7 +116,7 @@ These are the LDF files included in Windows Server 2012 R2:
   
 -   [Sch69.ldf](#BKMK_Sch69)  
   
-These are the LDF files included in Windows Server 2012:  
+Windows Server 2012 に含まれる LDF ファイルを次に示します。  
   
 -   [Sch48.ldf](#BKMK_Sch48)  
   
@@ -131,9 +136,70 @@ These are the LDF files included in Windows Server 2012:
   
 -   [Sch56.ldf](#BKMK_Sch56)  
 
-## <a name="schema-updates-in-windows-server-2016"></a>Schema Updates in Windows Server 2016  
+## <a name="schema-update-in-windows-server-2019"></a>Windows Server 2019 でスキーマの更新
   
-### <a name="BKMK_Sch58"></a>Sch58.ldf  
+### <a name="BKMK_Sch88"></a>Sch88.ldf
+
+```
+dn: CN=ms-DS-Preferred-Data-Location,CN=schema,CN=configuration,DC=X
+changetype: ntdsSchemaAdd
+objectClass: attributeSchema
+attributeID: 1.2.840.113556.1.4.2366
+attributeSyntax: 2.5.5.12
+adminDisplayName: ms-DS-Preferred-Data-Location
+adminDescription: ms-DS-Preferred-Data-Location
+oMSyntax: 64
+lDAPDisplayName: msDS-preferredDataLocation
+isSingleValued: TRUE
+schemaIDGUID:: 3ooM+pRMEEa6zhgO/e4hQA==
+searchFlags: 0
+showInAdvancedViewOnly: FALSE
+systemFlags: 16
+systemOnly: FALSE
+rangeLower: 1
+rangeUpper: 10
+isMemberOfPartialAttributeSet: TRUE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=User,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsSchemaModify
+add: systemMayContain
+systemMayContain: 1.2.840.113556.1.4.2366
+-
+
+dn: CN=Contact,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsSchemaModify
+add: systemMayContain
+systemMayContain: 1.2.840.113556.1.4.2366
+-
+
+dn: CN=Group,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsSchemaModify
+add: systemMayContain
+systemMayContain: 1.2.840.113556.1.4.2366
+-
+
+dn: CN=Schema,CN=Configuration,DC=X
+changeType: ntdsSchemaModify
+replace: objectVersion
+objectVersion: 88
+-
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+```
+
+## <a name="schema-updates-in-windows-server-2016"></a>Windows Server 2016 でのスキーマの更新
+  
+### <a name="BKMK_Sch58"></a>Sch58.ldf
 
 ```
 dn: CN=ms-DS-Resource-Property-List,CN=Schema,CN=Configuration,DC=X

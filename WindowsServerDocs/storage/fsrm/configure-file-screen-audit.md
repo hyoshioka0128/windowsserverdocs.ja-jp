@@ -1,6 +1,6 @@
 ---
-title: "ファイル スクリーンの監査を構成する"
-description: "この記事では、ファイル スクリーン処理の監査レポートを生成するファイル スクリーンの監査を構成する方法を説明します。"
+title: ファイル スクリーンの監査を構成する
+description: この記事では、ファイル スクリーン処理の監査レポートを生成するファイル スクリーンの監査を構成する方法を説明します。
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 89592a9e1f61374d2d909678a91dc4a06e0b1972
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59824473"
 ---
 # <a name="configure-file-screen-audit"></a>ファイル スクリーンの監査を構成する
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 ファイル サーバー リソース マネージャーを使用することで、監査データベースにファイル スクリーン処理の動作を記録できます。 このデータベースに保存された情報は、ファイル スクリーン処理の監査レポートの生成に使用されます。
 
@@ -25,7 +26,7 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="to-configure-file-screen-audit"></a>ファイル スクリーンの監査を構成するには
 
-1.  コンソール ツリーで、**[ファイル サーバー リソース マネージャー]** を右クリックし、**[オプションの構成]** をクリックします。 **[ファイル サーバー リソース マネージャーのオプション]** ダイアログ ボックスが表示されます。
+1.  コンソール ツリーで、**[ファイル サーバー リソース マネージャー]** を右クリックし、**[オプションの構成]** をクリックします。 **[ファイル サーバー リソース マネージャーのオプション]** ダイアログ ボックスが開きます。
 
 2.  **[ファイル スクリーンの監査]** タブで、**[監査データベースにファイル スクリーン処理の動作状況を記録する]** チェック ボックスをオンにします。
 
@@ -33,5 +34,5 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="see-also"></a>関連項目
 
--   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
+-   [設定ファイル サーバー リソース マネージャーのオプション](setting-file-server-resource-manager-options.md)
 -   [記憶域レポートの管理](storage-reports-management.md)

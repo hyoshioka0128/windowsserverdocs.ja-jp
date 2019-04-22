@@ -1,7 +1,7 @@
 ---
-title: 仮想マシンの自動ライセンス認証
+title: 仮想マシン自動ライセンス認証
 TOCTitle: Automatic VM Activation
-description: Windows Server 2019、Windows Server 2016 および Windows Server 2012 R2 で Vm をアクティブ化する方法
+description: Windows Server 2019、Windows Server 2016、および Windows Server 2012 R2 での Vm をアクティブ化する方法
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,94 +13,94 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.openlocfilehash: 62873140c8e114ba537dc4fd3ff7c44868c33243
-ms.sourcegitcommit: ca5c80bdb903b282e292488172a7cc92546574c0
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4375489"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59822093"
 ---
-# 仮想マシンの自動ライセンス認証
+# <a name="automatic-virtual-machine-activation"></a>仮想マシン自動ライセンス認証
 
-> 適用対象: Windows Server 2019 では、Windows Server 半期チャネルでは、Windows Server 2016、Windows Server 2012 R2
+> 適用対象:Windows Server 2019、Windows Server 半期チャネルでは、Windows Server 2016、Windows Server 2012 R2
 
-自動仮想マシンのアクティブ化 (AVMA) は、支援、製品使用権とマイクロソフト ソフトウェア ライセンス条項に従って、Windows の製品が使用されていることを確認するために、証明メカニズムとして機能します。
+仮想マシンの自動ライセンス認証 (AVMA) は、購入証明メカニズムとして機能し、Windows 製品が製品使用権利およびマイクロソフト ソフトウェア ライセンス条項に従って使用されていることを保証します。
 
-AVMA を使用して、切断された環境であっても各個々 の仮想マシンのプロダクト キーを管理することがなく、適切にアクティブ化された Windows server 仮想マシンをインストールできます。 AVMA では、ライセンスの仮想化のサーバーに仮想マシンのライセンス認証をバインドし、起動時には、仮想マシンをアクティブ化します。 AVMA では、仮想マシンのライセンスの状態の履歴データの使用状況に関するリアルタイム レポートも提供します。 レポートや追跡データは仮想化のサーバーで利用できます。
+AVMA では、適切にライセンス認証されている Windows サーバーに仮想マシンをインストールできます。各仮想マシンのプロダクト キーを管理する必要はありません。インターネットに接続されていない環境でも同様です。 AVMA は仮想マシンのライセンス認証をライセンスを付与する仮想化サーバーにバインドし、起動時に仮想マシンをアクティブにします。 また AVMA では、仮想マシンの使用状況に関するリアルタイムのレポートや仮想マシンのライセンス状態に関する履歴データも提供されます。 レポートの作成やデータの追跡は仮想化サーバーで行うことができます。
 
-## 実際の適用例
+## <a name="practical-applications"></a>実際の適用例
 
-ボリューム ライセンスまたは OEM ライセンスを使用して有効化される仮想化のサーバーでは、AVMA は、いくつかの利点を提供します。
+ボリューム ライセンスまたは OEM ライセンスを使用してライセンス認証されている仮想化サーバー上で、AVMA にはいくつかの利点があります。
 
-サーバーのデータ センターのマネージャーは、以下を実行するのに AVMA を使用できます。
+サーバー データセンター管理者は、AVMA を使用して次の操作を実行できます。
 
-  - リモートの場所で仮想マシンのライセンス認証します。
+  - 遠隔地にある仮想マシンをライセンス認証する
 
-  - 仮想マシンまたはインターネット接続がない場合のライセンス認証します。
+  - インターネット接続の有無にかかわらず仮想マシンをライセンス認証する
 
-  - 仮想化されたシステム上のすべてのアクセス権を必要とせず、仮想化のサーバーから仮想マシンの使用状況とライセンスを追跡します。
+  - 仮想化されたシステムにアクセスする権限をまったく必要とせずに、仮想マシンの使用状況とライセンス状態を仮想化サーバーから追跡する
 
-プロダクト キーを管理して読み取りをサーバーにシールがありません。 仮想マシンがライセンス認証され、仮想化のサーバーの配列に移行しているときでも、作業を継続します。
+サーバー上で管理するプロダクト キーも表示するステッカーもありません。 仮想マシンが仮想化サーバーのアレイ間で移行された場合でも、その仮想マシンはライセンス認証され、引き続き動作します。
 
-サービス プロバイダー ライセンス契約 (SPLA) パートナーおよびその他のホスティング プロバイダーはテナントとプロダクト キーを共有したり、ライセンス認証をテナントの仮想マシンにアクセスする必要はありません。 仮想マシンのライセンス認証は、AVMA を使用すると、テナントに透過的です。 ホスティング プロバイダーをライセンス準拠を確認し、クライアントの使用状況の履歴を追跡する server ログを使用できます。
+Service Provider License Agreement (SPLA) パートナーやその他のホスティング プロバイダーは、テナントとプロダクト キーを共有したり、テナントの仮想マシンにライセンス認証のためにアクセスしたりする必要はありません。 AVMA を使用しているとき、仮想マシンのライセンス認証はテナントに対して透過的に行われます。 ホスティング プロバイダーはサーバーのログを使用して、ライセンスの準拠を確認し、クライアントの使用履歴を追跡できます。
 
-## システム要件
+## <a name="system-requirements"></a>システム要件
 
-AVMA には、Windows Server 2019 Datacenter、Windows Server 2016 Datacenter、または Windows Server 2012 R2 を実行している Microsoft 仮想化のサーバーが必要です。 
+AVMA には、Windows Server 2019 Datacenter、Windows Server 2016 Datacenter または Windows Server 2012 R2 を実行している Microsoft の仮想化サーバーが必要です。 
 
-異なるバージョンのホストをアクティブ化するゲストを以下に示します。
+別のバージョンのホストをアクティブ化するゲストを次に示します。
 
-|サーバーのホストのバージョン|Windows Server 2019|Windows Server 2016|Windows Server 2012 R2|
+|サーバー ホストのバージョン|Windows Server 2019|Windows Server 2016|Windows Server 2012 R2|
 |-|-|-|-|
-|Windows Server 2019|○|○|○|
-|Windows Server 2016| |○|○|
-|Windows Server 2012 R2| ||○|
+|Windows Server 2019|x|X|x|
+|Windows Server 2016| |x|x|
+|Windows Server 2012 R2| ||x|
 
 アクティブ化 (Datacenter、Standard、または Essentials) のすべてのエディションがこれらに注意してください。
 
-このツールは、他のサーバーの仮想化テクノロジとは機能しません。
+このツールは、他の仮想化サーバー テクノロジと機能しません。
 
-## AVMA を実装する方法
+## <a name="how-to-implement-avma"></a>AVMA を実装する方法
 
-1.  Windows Server Datacenter 仮想化のサーバーでは、インストールし、Microsoft HYPER-V サーバーの役割を構成します。 詳細については、 [HYPER-V サーバーのインストール](../virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server.md)を参照してください。
+1.  Windows Server Datacenter の仮想化サーバーにインストールし、Microsoft HYPER-V Server ロールを構成します。 詳細については、次を参照してください。 [Hyper-v サーバーのインストール](../virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server.md)します。
 
-2.  インストールがサポートされているサーバー オペレーティング システムと[仮想マシンを作成](../virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v.md)します。
+2.  [仮想マシンを作成する](../virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v.md)し、サポートされているサーバーのオペレーティング システムをインストールします。
 
-3.  仮想マシンで AVMA キーをインストールします。 管理者特権のコマンド プロンプトから次のコマンドを実行します。
+3.  仮想マシンに AVMA キーをインストールします。 管理者特権のコマンド プロンプトで、次のコマンドを実行します。
     
     ``` 
     slmgr /ipk <AVMA_key>  
     ```
 
-仮想マシンには、仮想化のサーバーに対してライセンスがアクティブに自動的になります。
+仮想マシンは、仮想化サーバーに対して自動的にライセンス認証を実行します。
 
 
 > [!TIP]
-> Unattend.exe セットアップ ファイルで AVMA キーを採用することもできます。
+> また、Unattend.exe セットアップ ファイルで AVMA キーを使用することもできます。
 
 
-## AVMA キー
+## <a name="avma-keys"></a>AVMA キー
 
 次の AVMA キーは、Windows Server 2019 で使用できます。
 
 |エディション|   AVMA キー|
 |-|-|
 |Datacenter|    H3RNG-8C32Q-Q8FRX-6TDXV-WMBMW|
-|標準|  TNK62 RXVTB-4P47B-2 次元の 623 4GF74|
-|基本情報|    2CTP7-NHT64-BP62M-FV6GG-HFV28|
+|Standard|  TNK62-RXVTB-4P47B-2D623-4GF74|
+|Essentials|    2CTP7-NHT64-BP62M-FV6GG-HFV28|
  
-次の AVMA キーは、Windows Server バージョン 1809 で使用できます。
+次の AVMA キーは、Windows Server バージョンは 1809 で使用できます。
 
 |エディション|   AVMA キー|
 |-|-|
 |Datacenter|    H3RNG-8C32Q-Q8FRX-6TDXV-WMBMW|
-|標準|  TNK62 RXVTB-4P47B-2 次元の 623 4GF74|
+|Standard|  TNK62-RXVTB-4P47B-2D623-4GF74|
 
-次の AVMA キーは、Windows Server バージョン 1803 と 1709 で使用できます。
+次の AVMA キーは、Windows Server、バージョン 1803 および 1709 で使用できます。
 
 |エディション|AVMA キー|
 |-|-|
 |Datacenter|TMJ3Y-NTRTM-FJYXT-T22BY-CWG3J|
-|標準|C3RCX-M6NRP-6CXC9-TW2F2-4RHYD|
+|Standard|C3RCX-M6NRP-6CXC9-TW2F2-4RHYD|
 
 
 次の AVMA キーは、Windows Server 2016 で使用できます。
@@ -108,52 +108,52 @@ AVMA には、Windows Server 2019 Datacenter、Windows Server 2016 Datacenter、
 |エディション|AVMA キー|
 |-|-|
 |Datacenter|TMJ3Y-NTRTM-FJYXT-T22BY-CWG3J|
-|標準|C3RCX-M6NRP-6CXC9-TW2F2-4RHYD|
-|基本情報|B4YNW-62DX9-W8V6M-82649-MHBKQ|
+|Standard|C3RCX-M6NRP-6CXC9-TW2F2-4RHYD|
+|Essentials|B4YNW-62DX9-W8V6M-82649-MHBKQ|
 
 
-次の AVMA キーは、Windows Server 2012 R2 で使用できます。
+Windows Server 2012 R2 では、次の AVMA キーを使用できます。
 
 |エディション|AVMA キー|
 |-|-|
 |Datacenter|Y4TGP-NPTV9-HTC2H-7MGQ3-DV4TW|
-|標準|DBGBW-NPF86-BJVTX-K3WKJ-MTB6V|
-|基本情報|K2XGM-NMBT3-2R6Q8-WF2FK-P36R2|
+|Standard|DBGBW-NPF86-BJVTX-K3WKJ-MTB6V|
+|Essentials|K2XGM-NMBT3-2R6Q8-WF2FK-P36R2|
 
-## レポートや追跡
+## <a name="reporting-and-tracking"></a>レポートと追跡
 
-仮想化のサーバーのレジストリ (KVP) は、ゲスト オペレーティング システムのリアルタイムの追跡データを提供します。 レジストリ キーは、仮想マシンに移動したとき、ために、ライセンス情報を取得できます。 既定では、KVP は以下を含む、仮想マシンに関する情報を返します。
+仮想化サーバーのレジストリ (KVP) は、ゲスト オペレーティング システムにリアルタイム追跡データを提供します。 このレジストリ キーは仮想マシンと共に移動するため、ライセンス情報も同様に取得できます。 既定では、KVP は仮想マシンに関する次のような情報を返します。
 
-  - 完全修飾ドメイン名
+  - 完全修飾ドメイン名 (Fully qualified domain name)。
 
-  - オペレーティング システムとサービス パックがインストールされています。
+  - インストールされているオペレーティング システムとサービス パック
 
   - プロセッサ アーキテクチャ
 
-  - IPv4 と IPv6 のネットワーク アドレス
+  - IPv4 および IPv6 のネットワーク アドレス
 
   - RDP アドレス
 
-この情報を取得する方法について詳しくは、以下を参照してください。 [Hyper-v スクリプト: KVP GuestIntrinsicExchangeItems を見ている](http://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx)します。
+この情報を取得する方法の詳細については、次を参照してください。 [Hyper-v スクリプト。KVP guestintrinsicexchangeitems](http://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx)します。
 
 
 > [!NOTE]
-> KVP データが保護されていません。 変更できるし、変更を監視されていません。
+> KVP のデータはセキュリティで保護されません。 変更が可能であり、変更内容も監視されません。
 
 
 
 > [!IMPORTANT]
-> 別のプロダクト キー (製品版、OEM、またはボリューム ライセンス キー) を使って AVMA キーが置き換えられる場合、KVP データを削除する必要があります。
+> AVMA キーが別のプロダクト キー (リテール、OEM、またはボリューム ライセンス キー) に置き換えられた場合、KVP のデータは削除してください。
 
 
-AVMA 要求に関する歴史的データは、仮想化のサーバー (イベント Id 12310) のログ ファイルに利用できます。
+AVMA の要求に関する履歴データは、仮想化サーバー上のログ ファイル (EventID 12310) にあります。
 
-AVMA のライセンス認証プロセスは透明であるために、エラー メッセージは表示されません。 ただし、次のイベントは、仮想マシン (イベント Id 12309) 上のログ ファイルに取り込まれます。
+AVMA のライセンス認証は透過的であるため、エラー メッセージは表示されません。 ただし、次のイベントは、仮想マシン上のログ ファイル (EventID 12309) に記録されます。
 
 |通知|説明|
 |-|-|
-|AVMA の成功|仮想マシンがアクティブ化します。|
-|無効なホスト|仮想化のサーバーは、応答性の高いではありません。 これは、サーバーがサポートされているバージョンの Windows を実行されていないときに発生します。|
-|無効なデータ|通常、この結果、仮想化のサーバーと破損、暗号化、またはデータの不一致により多くの場合、仮想マシン間の通信でエラーが発生からします。|
-|ライセンス認証が拒否されました|仮想化のサーバーには、AVMA ID が一致しないために、ゲスト オペレーティング システムがアクティブにできませんでした。|
+|AVMA Success|仮想マシンがライセンス認証されました。|
+|Invalid Host|仮想化サーバーが応答していません。 この問題は、サーバーがサポートされているバージョンの Windows を実行していない場合に生じることがあります。|
+|Invalid Data|これは通常、破損、暗号化、またはデータの不一致によって、仮想化サーバーと仮想マシンとの通信にエラーが発生したことが原因です。|
+|Activation Denied|AVMA ID が一致しないため、仮想化サーバーはゲスト オペレーティング システムのライセンス認証を行うことができませんでした。|
 

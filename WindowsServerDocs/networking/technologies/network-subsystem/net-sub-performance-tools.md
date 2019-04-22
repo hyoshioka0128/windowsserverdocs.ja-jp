@@ -1,47 +1,49 @@
 ---
 title: ネットワーク ワークロードに関するパフォーマンス ツール
-description: このトピックは、Windows Server 2016 のネットワーク サブシステムのパフォーマンス チューニング ガイドの一部です。
+description: このトピックでは、Windows Server 2016 は、ネットワーク サブシステムのパフォーマンス チューニング ガイドの一部です。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
 ms.assetid: c7789781-87e8-464e-981b-af887d01badd
-manager: brianlic
+manager: dougkim
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 81c31871b3dfa4644690fe074ae15eaaa680d7f2
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 07/16/2018
+ms.openlocfilehash: e71c5f34041145907c30b279dc91a94c03c2abed
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59824933"
 ---
 # <a name="performance-tools-for-network-workloads"></a>ネットワーク ワークロードに関するパフォーマンス ツール
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
 このトピックを使用すると、パフォーマンス ツールについて説明します。
 
-このトピックには、サーバーのトラフィック ツール、TCP/IP ウィンドウ サイズ、および Microsoft Server Performance Advisor のクライアントに関するセクションが含まれています。
+このトピックには、クライアント サーバー トラフィック ツール、TCP/IP ウィンドウのサイズ、および Microsoft Server Performance Advisor に関するセクションが含まれています。
 
-##  <a name="bkmk_tuning"></a>サーバーのトラフィックのツールをクライアント
+##  <a name="bkmk_tuning"></a> クライアント サーバー トラフィック ツールに
 
-サーバーのトラフィック \(ctsTraffic\) ツールに、クライアントは、作成し、ネットワーク トラフィックを検証する機能を提供します。
+クライアント サーバー トラフィックを\(ctsTraffic\)ツールを作成し、ネットワーク トラフィックを確認する機能を提供します。
 
-詳細については、およびツールをダウンロードするには、「[ctsTraffic (クライアントとサーバーのトラフィック)](http://ctstraffic.codeplex.com/)します。
+詳細については、およびツールをダウンロードするには、「 [ctsTraffic (クライアントからサーバーへのトラフィック)](https://github.com/Microsoft/ctsTraffic)します。
   
-##  <a name="bkmk_size"></a>TCP/IP のウィンドウのサイズ
+##  <a name="bkmk_size"></a> TCP/IP のウィンドウのサイズ
 
-1 GB のアダプターを前の表に示すように設定する必要があります提供の良好なスループット NTttcp 64 K に特定の論理プロセッサを既定の TCP ウィンドウ サイズを設定するためオプション \(SO_RCVBUF\) 接続します。 これは、低待機時間のネットワーク上で優れたパフォーマンスを提供します。  
+1 GB アダプターの場合、前の表に示すように設定する必要があります提供に十分なスループット NTttcp 64 K に特定の論理プロセッサ オプションを使用して既定の TCP ウィンドウ サイズを設定するため\(SO_RCVBUF\)接続します。 これは、待機時間の短いネットワーク上で良好なパフォーマンスを提供します。  
 
-これに対し、大規模なネットワークまたは 10 GB のアダプターでは、NTttcp の既定 TCP ウィンドウのサイズの値が得られます最適なパフォーマンスのよりも少ないリソースです。 どちらの場合も、大規模な帯域幅の遅延の製品の許可するように TCP ウィンドウ サイズを調整する必要があります。  
+これに対し、待機時間の長いネットワークまたは 10 GB アダプターでは、NTttcp の既定の TCP ウィンドウ サイズ値が最適なパフォーマンスをより小さい生成されます。 どちらの場合も、大規模な帯域幅遅延積を許可する TCP ウィンドウ サイズを調整する必要があります。  
 
-使用して、大きい値に TCP ウィンドウ サイズを設定できます静的に、**-rb**オプションです。 このオプションは、TCP ウィンドウの自動調整を無効にし、ユーザーについて十分に理解 TCP/IP の動作の結果として変更する場合にのみ使用することをお勧めします。 既定では、TCP ウィンドウのサイズが十分な値に設定されてし、または高待機時間リンク経由では、負荷を調整します。  
+使用して TCP ウィンドウ サイズを大きい値に静的に設定することができます、 **-rb**オプション。 TCP ウィンドウ自動チューニングにより、このオプションを無効にし、ユーザーが完全に TCP/IP 動作の結果の変更を認識する場合にのみ使用することをお勧めします。 します。 既定は、TCP ウィンドウ サイズは、十分な値に設定し、負荷の下でのみ、または待機時間の長いリンクでを調整します。  
 
-##  <a name="bkmk_advisor"></a>Microsoft Server Performance Advisor
+##  <a name="bkmk_advisor"></a> Microsoft Server Performance Advisor
 
-Microsoft Server Performance Advisor \(SPA\) では、IT 管理者が識別、比較、および Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、または Windows Server 2008 の展開で潜在的なパフォーマンスの問題の診断へのメトリックを収集することができます。 
+Microsoft Server Performance Advisor \(SPA\) IT 管理者は、識別するためにメトリックを収集することは、比較、および Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows での潜在的なパフォーマンス問題を診断Server 2008 R2、または Windows Server 2008 の展開。 
 
 SPA は包括的な診断レポートとグラフを生成し、すぐに始めるための推奨事項は、問題を分析し、是正措置を開発を提供します。  
   
- 詳細については、および、アドバイザーをダウンロードするには、「[Microsoft Server Performance Advisor](https://msdn.microsoft.com/library/windows/hardware/dn481522.aspx) Windows ハードウェア デベロッパー センターでします。
+ 詳細については、および、アドバイザーをダウンロードするには、「 [Microsoft Server Performance Advisor](https://msdn.microsoft.com/library/windows/hardware/dn481522.aspx) Windows ハードウェア デベロッパー センターでします。
 
 このガイドのすべてのトピックへのリンクを参照してください。[ネットワーク サブシステムのパフォーマンス チューニング](net-sub-performance-top.md)します。
