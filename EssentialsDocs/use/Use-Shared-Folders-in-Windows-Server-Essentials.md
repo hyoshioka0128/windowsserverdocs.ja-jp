@@ -1,6 +1,6 @@
 ---
-title: "共有フォルダーを Windows Server Essentials での使用"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: Windows Server Essentials での共有フォルダーの使用
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,102 +13,103 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: eda19a5117a70fbaff04ec3fb3b89aa6e212f962
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59816983"
 ---
-# <a name="use-shared-folders-in-windows-server-essentials"></a>共有フォルダーを Windows Server Essentials での使用
+# <a name="use-shared-folders-in-windows-server-essentials"></a>Windows Server Essentials での共有フォルダーの使用
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
   
- Windows Server Essentials では、サーバーで、一元化された場所のすべてのデータおよび格納されている共有フォルダーを使用してファイルを提供します。  
+ Windows Server Essentials では、サーバー上に配置された共有フォルダーを通じて、すべてのデータおよびファイルを 1 つの場所に保存できます。  
   
- Windows Server Essentials での共有フォルダーには、サーバーに接続されているデバイスからアクセスできるいくつかの方法があります。  
+ サーバーに接続されているデバイスから Windows Server Essentials 上の共有フォルダーにアクセスするには、次のようないくつかの方法があります。  
   
 
 -   [Windows Server Essentials スタート パッドを使用します。](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingLaunchpad)  
   
 -   [リモート Web アクセスを使用します。](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingRWA)  
   
--   [Windows Phone の My Server アプリを使用](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
+-   [Windows Phone の My Server アプリを使用します。](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
   
--   [Windows 8 用の My Server アプリの使用](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
+-   [Windows 8 の My Server アプリを使用します。](Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
   
-##  <a name="BKMK_UsingLaunchpad"></a>Windows Server Essentials スタート パッドを使用します。  
- サーバー ウィザードへの接続 [マイ コンピューターを使用して、サーバーに接続されている任意のコンピューターからスタート パッドを使用することができます。 詳細については、コンピューターに接続するサーバーに、次を参照してください。[コンピューター、サーバーに接続](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)します。  
+##  <a name="BKMK_UsingLaunchpad"></a> Windows Server Essentials スタート パッドを使用します。  
+ スタート パッドは、コンピューターをサーバーに接続ウィザードを使用してサーバーに接続されている任意のコンピューターから使用できます。 コンピューターをサーバーに接続するための詳細については、「 [Connect computers to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)」を参照してください。  
 
 -   [Windows Server Essentials スタート パッドを使用します。](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingLaunchpad)  
   
 -   [リモート Web アクセスを使用します。](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_UsingRWA)  
   
--   [Windows Phone の My Server アプリを使用](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
+-   [Windows Phone の My Server アプリを使用します。](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_Phone)  
   
--   [Windows 8 用の My Server アプリの使用](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
+-   [Windows 8 の My Server アプリを使用します。](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md#BKMK_App)  
   
-##  <a name="BKMK_UsingLaunchpad"></a>Windows Server Essentials スタート パッドを使用します。  
- サーバー ウィザードへの接続 [マイ コンピューターを使用して、サーバーに接続されている任意のコンピューターからスタート パッドを使用することができます。 詳細については、コンピューターに接続するサーバーに、次を参照してください。[コンピューター、サーバーに接続](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)します。  
+##  <a name="BKMK_UsingLaunchpad"></a> Windows Server Essentials スタート パッドを使用します。  
+ スタート パッドは、コンピューターをサーバーに接続ウィザードを使用してサーバーに接続されている任意のコンピューターから使用できます。 コンピューターをサーバーに接続するための詳細については、「 [Connect computers to the server](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)」を参照してください。  
 
   
- お使いのコンピューターをサーバーに接続した後は、スタート パッドのショートカットがデスクトップの通知領域に追加されます。 スタート パッド] アイコンをダブルクリックし、スタート パッドを使用して共有フォルダーにアクセスするネットワーク資格情報を入力します。 スタート パッドの共有フォルダーのリンクを使用して、アップロードしたり、ドラッグ アンド ドロップ、ローカル コンピューターと共有フォルダーの間でファイルに記載されている共有フォルダーのいずれかにファイルをダウンロードできます。 共有フォルダー音楽とビデオ、スライド ショーの再生、または、サーバーに接続されている任意のコンピューターにテレビ番組の録画をストリームするかは、画像を表示するスライド ショーを再生できます。  
+ コンピューターをサーバーに接続すると、デスクトップの通知領域にスタート パッドのショートカットが追加されます。 スタート パッドを使用して共有フォルダーにアクセスするには、[スタート パッド] アイコンをダブルクリックして、ネットワーク資格情報を入力します。 スタート パッド上にある共有フォルダーへのリンクを使用すると、ローカル コンピューターと共有フォルダーの間でファイルをドラッグ アンド ドロップして、一覧表示された任意の共有フォルダーに対してファイルのアップロードやダウンロードを実行できます。 共有フォルダーを使用して、サーバーに接続されている任意のコンピューター上で音楽やビデオのストリーミング、スライドショーの再生、テレビ番組の録画を行うことができます。また、スライドショーを再生して画像を表示することもできます。  
   
  スタート パッドの詳細については、次を参照してください。[スタート パッドの概要](../manage/Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)します。  
   
-###  <a name="BKMK_Launchpad"></a>共有ファイルやフォルダーをスタート パッドを使用してコピーまたは移動  
- スタート パッドを使用して Windows Server Essentials 上のファイルを共有にコピーまたは移動する場合、] をクリックして、**共有フォルダー** ] タブで、スタート パッドします。  
+###  <a name="BKMK_Launchpad"></a> 共有ファイルやフォルダーをスタート パッドを使用してコピーまたは移動  
+ スタート パッドを使用して Windows Server Essentials 上の共有ファイルをコピーまたは移動する場合は、スタート パッドの **[共有フォルダー]** タブをクリックします。  
   
- 1 つの場所から別のファイルまたはフォルダーを移動する場合**共有フォルダー**、コンピューター上のファイルとフォルダーを移動すると同じ方法で、ドラッグ アンド ドロップの方法を使用することができます。 ファイルまたはフォルダーを移動することが含まれているフォルダーを開きます。 次に別のウィンドウ内を移動するフォルダーを開きます。 できるように、両方の内容を確認し、最初のフォルダーから 2 つ目のフォルダーにファイルまたはフォルダーをドラッグすることができます、デスクトップで、windows サイド バイ サイドを配置します。  
-  
-> [!NOTE]
->  ドラッグ アンド ドロップを使用する場合があります、ファイルまたはフォルダーが**コピー**、し、それ以外の時間は**移動**します。 同じハード_ディスクに保存されている 2 つのフォルダー間でアイテムをドラッグすると、同じ場所に同じファイルまたはフォルダーの 2 つのコピーが作成されないように、項目が移動します。 別の場所 (別のコンピューターなど) にあるフォルダーまたは USB フラッシュ ドライブなどのリムーバブル メディアに項目をドラッグすると、項目がコピーされます。  
-  
- 1 つの場所から別のファイルやフォルダーをコピーする**共有フォルダー**、コピーを使用して、コンピューター上のファイルをコピーすると同じ方法でメソッドを貼り付けます。 コピーするファイルを含むフォルダーを開きます。 ファイルをコピーして、をクリックするを右クリックして**コピー**します。 クリックして、コピーしたファイルを貼り付けるフォルダーを右クリックして**貼り付けます**します。  
-  
-##  <a name="BKMK_UsingRWA"></a>リモート Web アクセスを使用します。  
-
- リモート Web アクセス web サイトを使用して、共有ファイルやフォルダーを任意のリモート コンピューターからアクセスできます。 サーバー ネットワーク内のコンピューターからリモート Web アクセス web サイトにアクセスするには、インターネット ブラウザーを開きし、https://<servername\>/remote のように入力します。 リモート Web アクセスを使用して、表示および、共有フォルダー上のファイルを管理できます。 手順については、次を参照してください。[リモート Web アクセスの使用](Use-Remote-Web-Access-in-Windows-Server-Essentials.md)します。  
-
- リモート Web アクセス web サイトを使用して、共有ファイルやフォルダーを任意のリモート コンピューターからアクセスできます。 サーバー ネットワーク内のコンピューターからリモート Web アクセス web サイトにアクセスするには、インターネット ブラウザーを開きし、https://<servername\>/remote のように入力します。 リモート Web アクセスを使用して、表示および、共有フォルダー上のファイルを管理できます。 手順については、次を参照してください。[リモート Web アクセスの使用](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)します。  
-
+ **[共有フォルダー]** 内で、ある場所から別の場所にファイルやフォルダーを移動する場合は、コンピューター上でファイルやフォルダーを移動するのと同じようにドラッグ アンド ドロップを使用できます。 移動するファイルまたはフォルダーが含まれているフォルダーを開きます。 次に、移動先のフォルダーを別のウィンドウに開きます。 2 つのウィンドウをデストップに並べて配置し、両方のコンテンツを確認できるようにして、最初のフォルダーから移動先のフォルダーにファイルまたはフォルダーをドラッグします。  
   
 > [!NOTE]
->  リモート Web アクセス web サイトにアクセスするために、サーバー上のリモート Web アクセスをオンにする必要があります。 リモート Web アクセスの管理については、次を参照してください。[リモート Web アクセスの管理](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)します。  
+>  ドラッグ アンド ドロップを使用する際は、ファイルやフォルダーが**コピーされる**場合と**移動される**場合があります。 同じハード ディスク上に保存されている 2 つのフォルダー間で項目をドラッグすると、その項目は移動されます。同じ場所では、元のファイルまたはフォルダーのコピーが作成されることはありません。 異なる場所 (別のコンピューターなど) にあるフォルダーや USB フラッシュ ドライブなどのリムーバブル メディアに項目をドラッグすると、その項目はコピーされます。  
   
-###  <a name="BKMK_2"></a>作成、名前を変更、移動、削除、またはリモート Web アクセスでファイルとフォルダーをコピーします。  
+ **[共有フォルダー]** 内で、ある場所から別の場所にファイルやフォルダーをコピーする場合は、コンピューター上でファイルをコピーするのと同じようにコピーして貼り付ける方法を使用できます。 コピーするファイルが含まれているフォルダーを開きます。 コピーするファイルを右クリックし、 **[コピー]** をクリックします。 コピーしたファイルを貼り付けるフォルダーを右クリックし、 **[貼り付け]** をクリックします。  
+  
+##  <a name="BKMK_UsingRWA"></a> リモート Web アクセスを使用します。  
 
- リモート Web アクセスを使用して、ファイルとフォルダー、ファイルとフォルダーをコピーまたは移動するファイルを削除して、サーバー上のフォルダーの名前を変更する、既存の共有フォルダーに新しいフォルダーを作成することができます。 詳細については、作成する」を参照してください、名前を変更、移動、削除、またはリモート Web アクセスでファイルとフォルダーをコピーしますか。トピックの「[リモート Web アクセスの使用](Use-Remote-Web-Access-in-Windows-Server-Essentials.md)します。  
-  
-###  <a name="BKMK_3"></a>アップロードし、リモート Web アクセスでのファイルのダウンロード  
- リモート Web アクセス**共有フォルダー** ] タブで、アップロードして、ファイルをダウンロードすることができます。 詳細については、アップロードを参照してくださいし、リモート Web アクセスでファイルのダウンロードですか。トピックの「[リモート Web アクセスの使用](Use-Remote-Web-Access-in-Windows-Server-Essentials.md)します。  
+ リモート Web アクセスの Web サイトを使用して、任意のリモート コンピューターから共有ファイルと共有フォルダーにアクセスできます。 サーバー ネットワーク内のコンピューターからリモート Web アクセス web サイトにアクセスするにインターネット ブラウザーを開き https://<servername 入力 \> /リモートです。 リモート Web アクセスを使用して、共有フォルダーのファイルを表示および管理できます。 手順については、次を参照してください。 [Use Remote Web Access](Use-Remote-Web-Access-in-Windows-Server-Essentials.md)します。  
 
- リモート Web アクセスを使用して、ファイルとフォルダー、ファイルとフォルダーをコピーまたは移動するファイルを削除して、サーバー上のフォルダーの名前を変更する、既存の共有フォルダーに新しいフォルダーを作成することができます。 詳細については、作成する」を参照してください、名前を変更、移動、削除、またはリモート Web アクセスでファイルとフォルダーをコピーしますか。トピックの「[リモート Web アクセスの使用](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)します。  
-  
-###  <a name="BKMK_3"></a>アップロードし、リモート Web アクセスでのファイルのダウンロード  
- リモート Web アクセス**共有フォルダー** ] タブで、アップロードして、ファイルをダウンロードすることができます。 詳細については、アップロードを参照してくださいし、リモート Web アクセスでファイルのダウンロードですか。トピックの「[リモート Web アクセスの使用](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)します。  
+ リモート Web アクセスの Web サイトを使用して、任意のリモート コンピューターから共有ファイルと共有フォルダーにアクセスできます。 サーバー ネットワーク内のコンピューターからリモート Web アクセス web サイトにアクセスするにインターネット ブラウザーを開き https://<servername 入力 \> /リモートです。 リモート Web アクセスを使用して、共有フォルダーのファイルを表示および管理できます。 手順については、次を参照してください。 [Use Remote Web Access](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)します。  
 
   
-##  <a name="BKMK_Phone"></a>Windows Phone の My Server アプリを使用  
- 共有フォルダーは、Windows Phone の My Server アプリを使用して、Windows Phone からアクセスできます。 このアプリをダウンロードすることができます、[マーケットプ レースの Windows Phone](http://www.windowsphone.com/apps/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)します。  
+> [!NOTE]
+>  リモート Web アクセスの Web サイトにアクセスするには、サーバー上でリモート Web アクセスを有効にしておく必要があります。 リモート Web アクセスの管理方法の詳細については、次を参照してください。 [Manage Remote Web Access](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)します。  
   
-##  <a name="BKMK_App"></a>Windows 8 用の My Server アプリの使用  
- Windows 8 の My Server アプリを使用して Windows 8 から共有フォルダーにアクセスすることができます。 このアプリをダウンロードすることができます、 [Windows 8 アプリ ストア](https://windows.microsoft.com/windows-8/apps)します。  
+###  <a name="BKMK_2"></a> 作成、変更、移動、削除、またはリモート Web アクセスでファイルとフォルダーをコピー  
+
+ リモート Web アクセスを使用して、既存の共有フォルダーでの新しいフォルダーの作成、ファイルとフォルダーの名前の変更、ファイルとフォルダーの移動またコピー、サーバー上のファイルとフォルダーの削除を実行できます。 詳細については、作成する」を参照してください、名前を変更、移動、削除、またはリモート Web アクセスでファイルとフォルダーをコピーしますか。トピックの[Use Remote Web Access](Use-Remote-Web-Access-in-Windows-Server-Essentials.md)します。  
   
-## <a name="see-also"></a>参照してください。  
+###  <a name="BKMK_3"></a> アップロードして、リモート Web アクセスでファイルをダウンロード  
+ リモート Web アクセスの **[共有フォルダー]** タブで、ファイルのアップロードとダウンロードを実行できます。 詳細については、アップロードを参照してくださいし、リモート Web アクセスでファイルをダウンロードしますか。トピックの[Use Remote Web Access](Use-Remote-Web-Access-in-Windows-Server-Essentials.md)します。  
+
+ リモート Web アクセスを使用して、既存の共有フォルダーでの新しいフォルダーの作成、ファイルとフォルダーの名前の変更、ファイルとフォルダーの移動またコピー、サーバー上のファイルとフォルダーの削除を実行できます。 詳細については、作成する」を参照してください、名前を変更、移動、削除、またはリモート Web アクセスでファイルとフォルダーをコピーしますか。トピックの[Use Remote Web Access](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)します。  
+  
+###  <a name="BKMK_3"></a> アップロードして、リモート Web アクセスでファイルをダウンロード  
+ リモート Web アクセスの **[共有フォルダー]** タブで、ファイルのアップロードとダウンロードを実行できます。 詳細については、アップロードを参照してくださいし、リモート Web アクセスでファイルをダウンロードしますか。トピックの[Use Remote Web Access](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)します。  
+
+  
+##  <a name="BKMK_Phone"></a> Windows Phone の My Server アプリを使用します。  
+ Windows Phone の My Server アプリを使用して、Windows Phone から共有フォルダーにアクセスできます。 このアプリは、 [Marketplace for Windows Phone](http://www.windowsphone.com/apps/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)からダウンロードできます。  
+  
+##  <a name="BKMK_App"></a> Windows 8 の My Server アプリを使用します。  
+ Windows 8 の My Server アプリを使用して、Windows 8 から共有フォルダーにアクセスできます。 このアプリは、 [Windows 8 アプリ ストア](https://windows.microsoft.com/windows-8/apps)からダウンロードできます。  
+  
+## <a name="see-also"></a>関連項目  
   
 -   [サーバー フォルダーを管理します。](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md)  
   
--   [サーバー記憶域を管理します。](../manage/Manage-Server-Storage-in-Windows-Server-Essentials.md)  
+-   [サーバーの記憶域を管理します。](../manage/Manage-Server-Storage-in-Windows-Server-Essentials.md)  
   
 
--   [接続します。](Get-Connected-in-Windows-Server-Essentials.md)  
+-   [接続の確立します。](Get-Connected-in-Windows-Server-Essentials.md)  
   
--   [リモート操作します。](Work-Remotely-in-Windows-Server-Essentials.md)  
+-   [リモートで作業します。](Work-Remotely-in-Windows-Server-Essentials.md)  
   
 -   [デジタル メディアを再生します。](Play-Digital-Media-in-Windows-Server-Essentials.md)
 
--   [接続します。](../use/Get-Connected-in-Windows-Server-Essentials.md)  
+-   [接続の確立します。](../use/Get-Connected-in-Windows-Server-Essentials.md)  
   
--   [リモート操作します。](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
+-   [リモートで作業します。](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
   
 -   [デジタル メディアを再生します。](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)
 

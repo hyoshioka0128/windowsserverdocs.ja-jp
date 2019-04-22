@@ -10,30 +10,30 @@ ms.date: 05/02/2018
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9cf87597-b15d-4f43-8aa1-91e60367f011
-ms.openlocfilehash: c5cd8fbcf8424fa158ad31ca64e3eabe426240a6
-ms.sourcegitcommit: 8e2903c9b58646840eedd63b47a9bba6c6a06bf7
-ms.translationtype: HT
+ms.openlocfilehash: c0a4917d0fdb3e911204601d6137d8c8a296e57a
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1859877"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812283"
 ---
 # <a name="introducing-windows-server-version-1803"></a>Windows Server バージョン 1803 の概要
 
->適用対象: Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)
 
-**Windows Server バージョン 1803 は新しい半期チャネルの現在のリリースです。**
+**Windows Server、バージョン 1803 が新しい場合は半期チャネルの現在のリリース**
 
 
 ## <a name="what-the-semi-annual-channel-is--and-isnt"></a>半期チャネルとは
 Windows Server バージョン 1803 は Windows Server 2016 の "更新プログラム" または "サービス パック" *ではありません*。 これは、変化の激しい開発サイクルへの対応が必要なユーザーなど、"クラウドに適したペース" での進化を希望するユーザーに対応するリリース トラックで行われる、年 2 回のサーバー リリースの現在のリリースです。 このトラックは、最新のアプリケーション、およびコンテナーやマイクロ サービスなどの革新シナリオに最適です。 このトラックの各リリースは、最初のリリースから 18 か月サポートされます。 半期チャネルの詳細および**参加するチャネル (または現在のチャネルを維持すべきかどうか) を決定するためのヒント** については、「[半期チャネルの概要](semi-annual-channel-overview.md)」を参照してください。
 
 
-**Windows Server 2016 は、現在の長期的なサービス チャネル (LTSC) 製品です**。 LTSC は、従来のワークロードやアプリケーションをサポートするために、サーバー オペレーティング システムの長期的な安定性と予測可能性を必要とする場合に最適です。 LTSC を維持する場合は、Windows Server 2016 をインストールする (または使用を継続する) 必要があります。この場合、Server Core モードまたはデスクトップ エクスペリエンス搭載サーバー モードでインストールすることができます。 詳細については、「[Windows Server 2016 の概要](https://docs.microsoft.com/windows-server/get-started/server-basics)」を参照してください。
+**Windows Server 2016 は、現在の長期的なサービス チャネル (LTSC) 製品です。** LTSC は、従来のワークロードやアプリケーションをサポートするために、サーバー オペレーティング システムの長期的な安定性と予測可能性を必要とする場合に最適です。 LTSC を維持する場合は、Windows Server 2016 をインストールする (または使用を継続する) 必要があります。この場合、Server Core モードまたはデスクトップ エクスペリエンス搭載サーバー モードでインストールすることができます。 詳細については、「[Windows Server 2016 の概要](https://docs.microsoft.com/windows-server/get-started/server-basics)」をご覧ください。
 
 
 ## <a name="whats-different-about-windows-server-version-1803"></a>Windows Server のバージョン 1803 の相違点
 
-Windows Server バージョン 1803 は、Server Core モードで実行されます。 Windows Server Core モードには、ハードウェア要件が低い、攻撃対象が非常に少ない、更新プログラムの必要性の削減など、大きな利点があります。 グラフィカル ユーザー インターフェイスがないため、Windows Server Core モードはリモートで最適に管理されます。 Server Core を初めて使用する場合、この環境に慣れるには、「[Server Core サーバーの管理](../administration/server-core/server-core-manage.md)」を参照してください。 「[Windows Server 2016 の管理](../administration/manage-windows-server.md)」では、サーバーをリモートで管理するためのさまざまなオプションを示しています。
+Windows Server バージョン 1803 は、Server Core モードで実行されます。 Windows Server Core モードには、ハードウェア要件が低い、攻撃対象が非常に少ない、更新プログラムの必要性の削減など、大きな利点があります。 グラフィカル ユーザー インターフェイスがないため、Windows Server Core モードはリモートで最適に管理されます。 Server Core を初めて使用する場合、この環境に慣れるには、「[Server Core サーバーの管理](../administration/server-core/server-core-manage.md)」をご覧ください。 「[Windows Server 2016 の管理](../administration/manage-windows-server.md)」では、サーバーをリモートで管理するためのさまざまなオプションを示しています。
 
 「[Windows Server バージョン 1803 の新機能](whats-new-in-windows-server-1803.md)」では、Windows Server バージョン 1803 の新機能と追加された機能について説明します。
 
@@ -57,11 +57,11 @@ Windows Server バージョン 1803 に関する重要な情報を総合的に�
 
 このリリースは、クリーン インストールでインストールする必要があります。
 
-- ボリューム ライセンス サービス センター (VLSC): ボリューム ライセンスのお客様が[ソフトウェア アシュアランス](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx)をご利用の場合は、このリリースを入手できます、[ボリューム ライセンス サービス センター](https://www.microsoft.com/Licensing/servicecenter/default.aspx)に移動して、**[サインイン]** をクリックすることによって、このリリースを入手できます。 次に、**[Downloads and Keys]** (ダウンロードとキー) をクリックし、このリリースを検索します。 
+- ボリューム ライセンス サービス センター (VLSC):ボリューム ライセンスのお客様[ソフトウェア アシュアランス](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx)に移動して、このリリースを取得できます、[ボリューム ライセンス サービス センター](https://www.microsoft.com/Licensing/servicecenter/default.aspx)クリック**サインイン**します。 次に、**[Downloads and Keys]** (ダウンロードとキー) をクリックし、このリリースを検索します。 
 
 - Windows Server バージョン 1803 もまた、[Microsoft Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.WindowsServer?tab=Overview) で使用可能です。
 
-- Visual Studio サブスクリプション: Visual Studio サブスクライバーは、[Visual Studio サブスクライバー ダウンロード ページ](https://my.visualstudio.com/downloads?pid=2347)からダウンロードしてWindows Server バージョン 1803 を入手することができます。 まだサブスクライバーではない場合は、[Visual Studio サブスクリプション](https://www.visualstudio.com/subscriptions/)にサインアップしてから、上記のように [Visual Studio サブスクライバーのダウンロード ページ](https://my.visualstudio.com/downloads?pid=2347)にアクセスします。 Visual Studio サブスクリプション経由で入手したリリースは、開発とテストにのみ利用できます。
+- Visual Studio サブスクリプション:Visual Studio サブスクライバーとして使用できるは、Windows Server、バージョン 1803 からダウンロードして、 [Visual Studio サブスクライバー ダウンロード ページ](https://my.visualstudio.com/downloads?pid=2347)します。 まだサブスクライバーではない場合は、[Visual Studio サブスクリプション](https://www.visualstudio.com/subscriptions/)にサインアップしてから、上記のように [Visual Studio サブスクライバーのダウンロード ページ](https://my.visualstudio.com/downloads?pid=2347)にアクセスします。 Visual Studio サブスクリプション経由で入手したリリースは、開発とテストにのみ利用できます。
 
 
 

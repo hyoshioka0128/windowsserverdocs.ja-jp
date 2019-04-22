@@ -1,6 +1,6 @@
 ---
-title: NPS で処理する同時認証を増やす
-description: このトピックでは、Windows Server 2016 でのネットワーク ポリシー サーバーの同時認証の構成手順について説明します。
+title: NPS で処理する同時認証の数を増やす
+description: このトピックでは、Windows Server 2016 でのネットワーク ポリシー サーバーの同時実行の認証の構成について説明します。
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
@@ -8,28 +8,29 @@ ms.topic: article
 ms.assetid: 2d9cdada-0625-41c8-8248-a32259b03e47
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: aa70c1a26e2c22d26545e1b46a6151d71a2b4095
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: fd930e34a4adf6c55812385b691df3e3575a4280
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59818263"
 ---
-# <a name="increase-concurrent-authentications-processed-by-nps"></a>NPS で処理する同時認証を増やす
+# <a name="increase-concurrent-authentications-processed-by-nps"></a>NPS で処理する同時認証の数を増やす
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-同時認証のネットワーク ポリシー サーバーを構成する手順については、このトピックを使用できます。
+ネットワーク ポリシー サーバーの同時実行の認証を構成する方法については、このトピックを使用できます。
 
-ドメイン コントローラー以外のコンピューターでネットワーク ポリシー サーバー \(NPS\) がインストールされているし、NPS サーバーは 1 秒あたりの認証要求の数が多いを受信して、NPS サーバーとドメイン コントローラー間で許可する同時認証の数を増やすことで NPS のパフォーマンスを改善できます。
+ネットワーク ポリシー サーバーをインストールした場合\(NPS\)ドメイン以外のコンピューターでコント ローラーと NPS が受信して 1 秒あたりの認証要求の数が多いの数を増やすことで NPS のパフォーマンスを向上させることができます同時に行う認証、NPS およびドメイン コント ローラーの間で許可します。
 
 これを行うには、次のレジストリ キーを編集する必要があります。 
 
 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters`
 
-という名前の新しい値を追加**MaxConcurrentApi** 2. ~ 5. から値を割り当てるとします。 
+という名前の新しい値を追加**MaxConcurrentApi** 2 ~ 5 の値を割り当てるとします。 
 
 >[!CAUTION]
->値を割り当てる場合**MaxConcurrentApi**が高すぎる、NPS サーバーは、ドメイン コントローラーに過剰な負荷を配置する可能性があります。
+>値を割り当てる場合**MaxConcurrentApi**が多すぎますドメイン コント ローラーで、NPS が過剰な負荷をかける場合があります。
 
 NPS の管理に関する詳細については、次を参照してください。[ネットワーク ポリシー サーバーの管理](nps-manage-top.md)します。
 

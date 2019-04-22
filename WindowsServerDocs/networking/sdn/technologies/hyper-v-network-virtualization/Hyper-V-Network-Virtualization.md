@@ -13,24 +13,25 @@ ms.topic: article
 ms.assetid: 150976f0-ccd5-487a-a458-92261444a846
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 62fd572fc2bc609f2d4fd10f4cecc38fd8c3b6a4
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: daf8d507258328d2199779b48a7a5c98567c919f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812063"
 ---
 # <a name="hyper-v-network-virtualization"></a>Hyper-V ネットワーク仮想化
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-Windows Server 2012 で導入された、Hyper-V ネットワーク仮想化 (HNV) には、顧客のネットワーク共有の物理ネットワーク インフラストラクチャ上に仮想化が有効にします。 物理ネットワーク ファブリックで必要な最小限の変更、HNV により、サービス プロバイダーを展開し、次の 3 つのクラウド全体でテナント ワークロードを移行して任意の場所の機敏性: サービス プロバイダー クラウド、プライベート クラウド、または Microsoft Azure パブリック クラウドします。  
+Windows Server 2012 で導入された、HYPER-V ネットワーク仮想化 (HNV) を使うと、共有の物理ネットワーク インフラストラクチャ上に顧客のネットワーク仮想化が可能です。 物理ネットワーク ファブリックのために必要な最小限の変更、HNV により、サービス プロバイダーをデプロイし、3 つのクラウド間で任意の場所テナントのワークロードを移行する機敏性: サービス プロバイダーのクラウド、プライベート クラウド、または Microsoft Azure パブリック クラウド。  
   
-詳細については、次のトピックを参照してください。  
+詳しくは、次のトピックをご覧ください。  
   
 -   [Windows Server 2016 で HYPER-V ネットワーク仮想化の概要](../../../sdn/technologies/hyper-v-network-virtualization/hyperv-network-virtualization-overview-windows-server.md)  
   
--   [Windows Server 2016 で HYPER-V ネットワーク仮想化の新機能](../../../sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md)  
+-   [新機能 Windows Server 2016 で HYPER-V ネットワーク仮想化の新機能](../../../sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md)  
   
 |||  
 |-|-|  
-|![クラウド](../../../media/Hyper-V-Network-Virtualization/All_Symbols_Cloud.png)|Microsoft Azure がクラウドに同様の機能を提供することをご存知でしたか。 詳細については[Microsoft Azure の仮想化ソリューション](http://aka.ms/f9bh7g)します。<br /><br />Microsoft Azure でハイブリッド仮想化ソリューションを作成します。<br />- [サイト間 VPN 経由で Azure に、内部設置型のネットワークを接続し、Azure での IaaS VM DC 上に Active Directory の拡張](http://aka.ms/d1dinb)|  
+|![Cloud](../../../media/Hyper-V-Network-Virtualization/All_Symbols_Cloud.png)|Microsoft Azure は同様の機能をクラウドで実現します。 [Microsoft Azure 仮想化ソリューション](https://aka.ms/f9bh7g)の詳細をご覧ください。<br /><br />Microsoft Azure でのハイブリッド仮想化ソリューションの作成:<br />- [サイト間 VPN を使用して Azure にオンプレミス ネットワークを接続し、Active Directory で、Azure IaaS VM の DC 上に拡張](https://aka.ms/d1dinb)|  

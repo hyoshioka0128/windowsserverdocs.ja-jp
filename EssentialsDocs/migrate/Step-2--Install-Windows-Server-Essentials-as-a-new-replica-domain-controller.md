@@ -1,6 +1,6 @@
 ---
-title: "手順 2: インストールの Windows Server Essentials を新しいレプリカ ドメイン コントローラーとして"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: 手順 2:新しいレプリカ ドメイン コント ローラーとして Windows Server Essentials をインストールします。
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,92 +13,93 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 757012b7d1a57a001e3b55cdc0604b63852a3d3c
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59816463"
 ---
-# <a name="step-2-install-windows-server-essentials-as-a-new-replica-domain-controller"></a>手順 2: インストールの Windows Server Essentials を新しいレプリカ ドメイン コントローラーとして
+# <a name="step-2-install-windows-server-essentials-as-a-new-replica-domain-controller"></a>手順 2:新しいレプリカ ドメイン コント ローラーとして Windows Server Essentials をインストールします。
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-このセクションでは、(Windows Server Essentials エクスペリエンス役割を有効になっている) とドメイン コントローラーとして Windows Server Essentials と Windows Server 2012 R2 Standard をインストールする方法について説明します。  
+このセクションでは、(Windows Server Essentials エクスペリエンス役割を有効になっている) をドメイン コント ローラーとして Windows Server Essentials と Windows Server 2012 R2 Standard をインストールする方法について説明します。  
   
- 環境に最大 25 ユーザーおよび 50 台のデバイスでは、ことができます、以前のバージョンの Windows SBS から Windows Server Essentials に移行するには、このガイドの手順に従います。 100 人のユーザーと 200 台のデバイスまでの環境ですることができます同じガイダンスに従って、Windows Server Essentials エクスペリエンス役割がインストールされたでの Windows Server 2012 R2 Standard および Datacenter エディションに移行します。 このドキュメントでは、両方のシナリオを説明します。  
+ 最大 25 ユーザーおよび 50 台のデバイスを使用した環境は、以前のバージョンの Windows SBS から Windows Server Essentials に移行するには、このガイドの手順に従います。 最大 100 人のユーザーと 200 台のデバイスの環境では、Windows Server Essentials エクスペリエンス役割がインストールされた Windows Server 2012 R2 の Standard および Datacenter エディションに移行するのと同じガイダンスに従います。 このドキュメントでは、両方のシナリオについて説明します。  
   
 > [!IMPORTANT]
->  Windows Server Essentials に移行する場合、1 日に、ネットワークから移行元サーバーを削除するまで、21 日の猶予期間中に次のエラー メッセージがイベント ログに追加します。 21 日の猶予期間後は、移行元サーバーをシャット ダウンします。 <br> **FSMO 役割チェックすると、環境内には、ライセンス ポリシーで対応にならなかった条件が検出されました。管理サーバーには、プライマリ ドメイン コントローラーとドメイン名前付けマスターの Active Directory の役割を保持する必要があります。移動してください、Active Directory ロール管理サーバーにできるようになりました。このサーバーは自動的にシャット ダウンこの状態が最初に検出された時点から 21 日以内に問題が修正されない場合**します。   
+>  Windows Server Essentials に移行する場合、ネットワークから移行元サーバーを削除するまで、21 日の猶予期間中毎日、次のエラー メッセージがイベント ログに追加します。 猶予期間の 21 日が経過すると、移行元サーバーはシャットダウンされます。 <br> **FSMO 役割チェックすると、ライセンス ポリシーに準拠していないが環境内で条件が検出されました。Management Server には、プライマリ ドメイン コントローラーと Active Directory ドメイン名前付けマスターの役割が必要です。今すぐ Active Directory の役割を Management Server に移動してください。このサーバーは自動的にシャット ダウンこの条件が最初に検出された時刻から 21 日以内に、問題が解決しない場合**します。   
   
 #### <a name="install-windows-server-essentials-or-windows-server-2012-r2-standard-on-the-destination-server"></a>移行先サーバーで Windows Server Essentials または Windows Server 2012 R2 Standard をインストールします。  
   
-1.  」の手順に従って有効になっている Windows Server Essentials エクスペリエンス役割を持つ Windows Server Essentials または Windows Server 2012 R2 Standard をインストール[Windows Server Essentials の構成とインストール](../install/Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)します。  
+1.  次の手順で有効になっている Windows Server Essentials エクスペリエンス役割を持つ Windows Server Essentials または Windows Server 2012 R2 Standard をインストール[のインストールと Windows Server Essentials の構成](../install/Install-and-Configure-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)します。  
   
     > [!NOTE]
-    >  Windows Server Essentials の構成ウィザードを起動する場合はキャンセルしてください。  
+    >  Windows Server Essentials の構成ウィザードが起動したら、それをキャンセルします。  
   
-2.  移行元サーバーからの FSMO 役割を転送します。  
+2.  移行元サーバーから、FSMO の役割を転送します。  
   
     > [!NOTE]
-    >  場合は、ドメイン内の唯一のドメイン コントローラーを Windows Server Essentials には、FSMO 役割が移行元サーバーを降格するときに、Windows Server Essentials を実行しているサーバーに自動的に移動します。  
+    >  Windows Server Essentials がドメイン内の唯一のドメイン コント ローラーの場合は、FSMO の役割は移行元サーバーを降格するときに、Windows Server Essentials を実行するサーバーに自動的に移動します。  
   
-3.  サーバー マネージャーを開き、追加の役割と機能のウィザードを実行します。  
+3.  サーバー マネージャーを開き、役割と機能の追加ウィザードを実行します。  
   
-4.  インストールされていない場合は、Windows Server Essentials エクスペリエンス役割を追加します。  
+4.  Windows Server Essentials エクスペリエンス役割がインストールされていない場合は追加します。  
   
 5.  Windows Server Essentials エクスペリエンス役割をインストールした後、通知領域に、Windows Server Essentials の構成タスクが表示されます。 Windows Server Essentials の構成ウィザードを起動するタスクをクリックします。  
   
-6.  Windows Server Essentials の構成を完了するための手順に従います。 ウィザードを実行する前に、次の操作を行います。  
+6.  指示に従って、Windows Server Essentials の構成を完了します。 ウィザードを実行する前に、次を実行します。  
   
-    -   Windows Server Essentials の構成ウィザードを完了した後は、名前を変更できないために必要な場合、サーバー名を変更します。  
+    -   Windows Server Essentials の構成ウィザードを実行した後は、サーバー名を変更できないため、必要に応じて、サーバー名を変更します。  
   
     -   サーバーの時刻と設定が正しいことを確認します。  
   
 7.  次のように、インストールを確認します。  
   
-    1.  ダッシュ ボードを開きます。  
+    1.  ダッシュボードを開きます。  
   
-    2.  クリックすると**ユーザー**タブをクリックし、Active Directory 内のユーザー アカウントが表示されていることを確認します。  
+    2.  **[ユーザー]** タブをクリックし、Active Directory 内のユーザー アカウントが一覧表示されていることを確認します。  
   
-### <a name="transfer-the-operations-master-roles"></a>操作マスターの役割を転送します。  
- 操作マスター (フレキシブル シングル マスター操作または FSMO とも呼ばれます) の役割は、その移行先サーバーに移行先サーバーで Windows Server Essentials のインストールの 21 日以内、移行元サーバーから転送する必要があります。  
+### <a name="transfer-the-operations-master-roles"></a>操作マスターの役割の転送  
+ 移行先サーバーには、移行先サーバーに Windows Server Essentials をインストールして 21 日以内操作マスター (フレキシブル シングル マスター操作または FSMO とも呼ばれます) の役割を移行元サーバーから転送する必要があります。  
   
 ##### <a name="to-transfer-the-operations-master-roles"></a>操作マスターの役割を転送するには  
   
-1.  移行先サーバーで、管理者としてコマンド プロンプト ウィンドウを開きます。 参照してください[を開くには、管理者としてコマンド プロンプト ウィンドウ](https://technet.microsoft.com/library/cc947813\(v=WS.10\).aspx)します。  
+1.  移行先サーバーで、管理者としてコマンド プロンプト ウィンドウを開きます。 「 [[コマンド プロンプト] ウィンドウを管理者として開くには](https://technet.microsoft.com/library/cc947813\(v=WS.10\).aspx)」を参照してください。  
   
-2.  コマンド プロンプトで、次のように入力します。**NETDOM QUERY FSMO**、し、Enter キーを押します。  
+2.  コマンド プロンプトで、「 **NETDOM QUERY FSMO**」と入力して Enter キーを押します。  
   
-3.  コマンド プロンプトで、次のように入力します。**ntdsutil**、し、Enter キーを押します。  
+3.  コマンド プロンプトで、「 **ntdsutil**」と入力して Enter キーを押します。  
   
-4.  **Ntdsutil**コマンド プロンプトで次のコマンドを入力します。  
+4.  **ntdsutil** コマンド プロンプトで、次のコマンドを入力します。  
   
-    1.  種類**instance NTDS をアクティブ化**、し、Enter キーを押します。  
+    1.  「**activate instance NTDS**」と入力して、Enter キーを押します。  
   
-    2.  種類**役割**、し、Enter キーを押します。  
+    2.  「**roles**」と入力し、Enter キーを押します。  
   
-    3.  種類**接続**、し、Enter キーを押します。  
+    3.  「 **connections**」と入力し、Enter キーを押します。  
   
-    4.  種類**サーバーへの接続***< ServerName\ >* (ここで*< ServerName\ >*は移行先サーバーの名前です)、し、Enter キーを押します。  
+    4.  型**サーバーに接続する** *< ServerName\>*  (場所 *< ServerName\>* 移行先サーバーの名前を指定します)、し、ENTER キーを押します。  
   
-    5.  コマンド プロンプトで、次のように入力します。**q**、し、Enter キーを押します。  
+    5.  コマンド プロンプトで「 **q**」と入力し、Enter キーを押します。  
   
-        1.  種類**transfer PDC**をクリックし、enter キーを押しながら、**[はい]**で、**役割の転送の確認**] ダイアログ ボックス。  
+        1.  「 **transfer PDC**」と入力し、Enter キーを押して、**[役割の転送の確認]** ダイアログ ボックスで **[はい]** をクリックします。  
   
-        2.  種類**転送インフラストラクチャ マスター**をクリックし、enter キーを押しながら、**[はい]**で、**役割の転送の確認**] ダイアログ ボックス。  
+        2.  「**transfer infrastructure master**」と入力し、Enter キーを押して、**[役割の転送の確認]** ダイアログ ボックスで **[はい]** をクリックします。  
   
-        3.  種類**名前付けマスターの転送**をクリックし、enter キーを押しながら、**[はい]**で、**役割の転送の確認**] ダイアログ ボックス。  
+        3.  「 **transfer naming master**」と入力し、Enter キーを押して、**[役割の転送の確認]** ダイアログ ボックスで **[はい]** をクリックします。  
   
-        4.  種類**転送 RID マスター**をクリックし、enter キーを押しながら、**[はい]**で、**役割の転送の確認**] ダイアログ ボックス。  
+        4.  「 **transfer RID master**」と入力し、Enter キーを押して、**[役割の転送の確認]** ダイアログ ボックスで **[はい]** をクリックします。  
   
-        5.  種類**転送スキーマ マスター**をクリックし、enter キーを押しながら、**[はい]**で、**役割の転送の確認**] ダイアログ ボックス。  
+        5.  「 **transfer schema master**」と入力し、Enter キーを押して、**[役割の転送の確認]** ダイアログ ボックスで **[はい]** をクリックします。  
   
-    6.  種類**q**、コマンド プロンプトに戻るまで Enter キーを押します。  
+    6.  「**q**」と入力し、コマンド プロンプトに戻るまで Enter キーを押します。  
   
 > [!NOTE]
->  ネットワーク上の任意のサーバーから操作マスターの役割が移行先サーバーに転送されたことを確認することができます。 管理者としてコマンド プロンプト ウィンドウを開きます (詳細については、次を参照してください。[を開くには、管理者としてコマンド プロンプト ウィンドウ](https://technet.microsoft.com/library/cc947813\(v=WS.10\).aspx))。 種類**netdom クエリ fsmo**、し、Enter キーを押します。  
+>  ネットワーク上の任意のサーバーから、操作マスターの役割が移行先サーバーに転送されたことを確認できます。 管理者としてコマンド プロンプト ウィンドウを開きます (詳細については、「 [管理者としてコマンド プロンプト ウィンドウを開くには](https://technet.microsoft.com/library/cc947813\(v=WS.10\).aspx)」を参照してください)。 「**netdom query fsmo**」と入力して Enter キーを押します。  
   
-## <a name="next-steps"></a>次の手順  
- Windows Server Essentials を新しいレプリカ ドメイン コントローラーとしてインストールしました。 移動できるようになりました[手順 3: 新しい Windows Server Essentials サーバーにコンピューターを参加させる](Step-3--Join-computers-to-the-new-Windows-Server-Essentials-server.md)します。  
+## <a name="next-steps"></a>次のステップ  
+ Windows Server Essentials を新しいレプリカ ドメイン コント ローラーとしてインストールしたとします。 次に「[手順 3。新しい Windows Server Essentials サーバーにコンピューターを参加させる](Step-3--Join-computers-to-the-new-Windows-Server-Essentials-server.md)します。  
   
-すべての手順を参照してください[Windows Server Essentials への移行](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)します。
+すべての手順を表示するを参照してください。 [Windows Server Essentials への移行](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)します。
 

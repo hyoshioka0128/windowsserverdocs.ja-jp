@@ -1,0 +1,1 @@
+**クライアントからの DirectAccess の構成を削除します。** Microsoft System Center Configuration Manager または Microsoft Intune を正常な VPN 構成の展開を監視します。 次に、デバイス割り当て情報を特定し、各ユーザーに属しているデバイスを検出するレポートを使用します。 ユーザーの移行が正常には、環境から DirectAccess を解除できるようにするに DirectAccess のセキュリティ グループからで自分のデバイスを削除します。

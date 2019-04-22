@@ -1,6 +1,6 @@
 ---
-title: "リモート コンピューターに接続する"
-description: "この記事では、ファイル サーバー リソース マネージャーからリモート コンピューターに接続して、記憶域リソースを管理する方法について説明します。"
+title: リモート コンピューターに接続する
+description: この記事では、ファイル サーバー リソース マネージャーからリモート コンピューターに接続して、記憶域リソースを管理する方法について説明します。
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 93d2be926437b65ed8eb84a828ea0d7da6a51086
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59818863"
 ---
 # <a name="connect-to-a-remote-computer"></a>リモート コンピューターに接続する 
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 ファイル サーバー リソース マネージャーからコンピューターに接続して、リモート コンピューター上の記憶域リソースを管理できます。 接続すると、ファイル サーバー リソース マネージャーを使用して、クォータの管理、ファイルのスクリーン処理、分類の管理、ファイル管理タスクのスケジューリング、およびこれらのリモート リソースについてのレポート生成を実行できます。
 
@@ -46,4 +47,4 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="see-also"></a>関連項目
 
--   [リモートの記憶域リソースを管理する](managing-remote-storage-resources.md)
+-   [リモート記憶域リソースを管理します。](managing-remote-storage-resources.md)

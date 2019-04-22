@@ -1,6 +1,6 @@
 ---
-title: 管理センターの Windows SDK のケース スタディ - 富士通
-description: 管理センターの Windows SDK のケース スタディ - 富士通
+title: Windows Admin Center SDK のケース スタディ - Fujitsu
+description: Windows Admin Center SDK のケース スタディ - Fujitsu
 ms.technology: extend
 ms.topic: article
 author: daniellee-msft
@@ -9,26 +9,26 @@ ms.date: 05/23/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: 6d916920b187dd3c637644a0f40ae9f9cca72b66
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2052376"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59814993"
 ---
-# <a name="fujitsu-serverview-health-and-raid-extensions"></a>富士通 ServerView の正常性と RAID の拡張
+# <a name="fujitsu-serverview-health-and-raid-extensions"></a>Fujitsu ServerView の正常性と RAID の拡張機能
 
-## <a name="bringing-end-to-end-visibility-from-operating-system-to-hardware-into-windows-admin-center"></a>状態のエンドツー エンドの把握、ハードウェア、オペレーティング システムから Windows 管理センター
+## <a name="bringing-end-to-end-visibility-from-operating-system-to-hardware-into-windows-admin-center"></a>ハードウェア、オペレーティング システムから Windows Admin Center にエンド ツー エンドの可視性を取り込む
 
-トップ日本語の情報と通信テクノロジー企業[PRIMERGY](http://www.fujitsu.com/fts/products/computing/servers/primergy/)と[PRIMEQUEST](http://www.fujitsu.com/fts/products/computing/servers/mission-critical/)サーバー製品の製造元、富士通します。 [富士通 ServerView 管理スイート](http://www.fujitsu.com/fts/products/computing/servers/primergy/management/)は、ライフ サイクル管理のハードウェア管理 CIM と PowerShell インターフェイスを提供するサーバー側エージェントを含む、サーバーの包括的なツールセットを提供します。
+Fujitsu は先頭日本情報との通信テクノロジ企業との製造元[PRIMERGY](http://www.fujitsu.com/fts/products/computing/servers/primergy/)と[PRIMEQUEST](http://www.fujitsu.com/fts/products/computing/servers/mission-critical/)サーバー製品です。 [Fujitsu ServerView 管理スイート](http://www.fujitsu.com/fts/products/computing/servers/primergy/management/)サーバー ハードウェア管理のために CIM および PowerShell インターフェイスを提供するサーバー側のエージェントを含むライフ サイクル管理の包括的なツールセットを提供します。
 
-富士通は、サーバー側エージェントと通信する CIM と PowerShell のインターフェイスを提供して、Windows の管理センターを容易に統合するには、営業案件を学習します。 利用可能な UI コンポーネントを使用して Windows 管理センター内の情報を可視化を簡単にエージェントに慣れていた CIM 呼び出しを実装および富士通の開発チームができました。
+Fujitsu は、サーバー側のエージェントと通信する CIM および PowerShell のインターフェイスが提供されるように、Windows Admin Center と簡単に統合する機会を説明しました。 Fujitsu の開発チームは、簡単に、エージェントに慣れていた CIM 呼び出しを実装し、使用可能な UI コンポーネントを使用して、Windows Admin Center 内の情報を視覚化することでした。
 
-![富士通拡張子の正常性のツリー ビュー](../../media/extend-case-study-fujitsu/health-tree.png)
+![Fujitsu 拡張機能 - 正常性のツリー ビュー](../../media/extend-case-study-fujitsu/health-tree.png)
 
-チームが管理センター Windows SDK のようになりました、追加のハードウェア情報を公開する UI を追加するだけでいくつかの HTML コード行ことがよくをすばやく、ハードウェア コンポーネントの概要ビューを表示するように、1 つのツールから展開することができましたドライバーのモニターをシステムのイベント ログの詳細ビューの正常性のプロセッサ、メモリ、ファン、電源、温度、電圧、ビューと RAID 管理用の別のツールもで区切ります。 グリッドと詳細ウィンドウのコントロールに SDK ツリーなどの利用可能な UI コントロールを使用して、ユーザー インターフェイスを簡単に作成すると、Windows 管理センターの残りの部分によく似てと相互作用デザインをチームが有効になります。
+チームが、Windows Admin Center SDK を使い慣れてなって以来、多くの場合、単に、いくつかの HTML コードの行には追加のハードウェア情報を公開する UI を追加してすぐに、ハードウェア コンポーネントの概要ビューを表示するときに 1 つのツールから展開することができました正常性、システム イベント ログには、ドライバーのモニターの詳細なビューでは、プロセッサ、メモリ、ファン、電源、温度、電圧のビューと RAID 管理のための別のツールでもを分離します。 グリッドと詳細ウィンドウのコントロールをツリーなどの SDK で使用できる UI コントロールを使用して、迅速な UI を作成して、Windows Admin Center の残りの部分によく似ています、ビジュアルと対話設計を実現するチームが有効になります。
 
-![富士通拡張子 - RAID ツリー ビュー](../../media/extend-case-study-fujitsu/raid-tree.png)
+![Fujitsu 拡張機能 - RAID ツリー ビュー](../../media/extend-case-study-fujitsu/raid-tree.png)
 
-![富士通拡張子 - RAID ボリュームを表示します。](../../media/extend-case-study-fujitsu/raid-volumes.png)
+![Fujitsu 拡張機能 - RAID ボリュームを表示します。](../../media/extend-case-study-fujitsu/raid-volumes.png)
 
-富士通と Windows 管理センターのチームのパートナーシップ明確に内に表示する値との統合の Windows 管理センターでは、お客様のエンドツー エンド洞察はサーバーの役割およびサービス、オペレーティング システム、ハードウェアの管理を有効にします。.
+Fujitsu と、Windows Admin Center チームの間のパートナーシップ明確に値が表示されます統合の内、Windows Admin Center では、お客様はサーバーの役割とサービスをオペレーティング システムおよびハードウェアの管理に洞察のエンド ツー エンドの有効化.

@@ -9,11 +9,11 @@ ms.date: 05/23/2018
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
 ms.openlocfilehash: bc9f7a601167a7c4508e11d524d451eeb367c217
-ms.sourcegitcommit: 8e2903c9b58646840eedd63b47a9bba6c6a06bf7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1916997"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59811943"
 ---
 ## <a name="microsoft-windows-admin-center---license-terms-for-extensions"></a>Microsoft Windows Admin Center - 拡張機能に関するライセンス条項
 ________________________________________

@@ -1,6 +1,6 @@
 ---
-title: "分類の管理"
-description: "この記事では、分類プロパティに基づいてファイルを分類する方法を説明します。"
+title: 分類の管理
+description: この記事は、分類プロパティに基づいてファイルを分類する方法を説明します
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: bf983fe693af7e5ba3f922b14fd1865a72a88296
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 13323cd380c9df5185a7989721ec2574ea880d4f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59814793"
 ---
 # <a name="classification-management"></a>分類の管理
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 分類プロパティはファイルを分類するために使用され、スケジュールされたファイル管理タスク用のファイルを選択するために使用できます。
 
@@ -24,8 +25,8 @@ ms.lasthandoff: 10/17/2017
 
 ここでは、次のトピックについて説明します。
 
--   [分類プロパティを作成する](create-classification-property.md)
--   [自動分類規則を作成する](create-automatic-classification-rule.md)
+-   [分類プロパティを作成します。](create-classification-property.md)
+-   [自動分類規則を作成します。](create-automatic-classification-rule.md)
 
 
 > [!Note]
@@ -34,4 +35,4 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="see-also"></a>関連項目
 
-[ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
+[設定ファイル サーバー リソース マネージャーのオプション](setting-file-server-resource-manager-options.md)

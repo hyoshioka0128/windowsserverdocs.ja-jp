@@ -1,10 +1,11 @@
 ---
 redirect_url: /windows-server/windows-server
-ms.openlocfilehash: aa1bc1d94f91a2b9584f72398385575d22db33a9
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 6f6e0d21fdf43ce3cf9f713d5731cfea5bb069de
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812273"
 ---
 # <a name="windows-server-2016"></a>Windows Server 2016
 
@@ -13,7 +14,7 @@ ms.lasthandoff: 10/17/2017
 > [!Note] 
 > 次のバージョンの Windows Server は大きく変わります。 Windows Server の新機能の詳細については、「[Windows サーバーの半期チャネルの概要](./get-started/semi-annual-channel-overview.md)」を参照してください。 
 
-[![WWindows Server 2016 の概要ビデオ](media/front-page-video.png)](https://www.youtube.com/embed/V8oF0JpDzaM)
+[![Windows Server 2016 の概要ビデオ](media/front-page-video.png)](https://www.youtube-nocookie.com/embed/V8oF0JpDzaM)
 
 <table border="0" width="100%" align='center'>
   <tr style="text-align:center;">
@@ -25,7 +26,7 @@ ms.lasthandoff: 10/17/2017
     <td align='center' style="width:25%; border:0;">
       <a href="/windows-server/get-started/server-basics">
         <img height=145 src="media/1-getstarted.png" alt="get started icon" title="Windows Server 2016 を使ってみる" /></a>
-      <br/>開始 </td>
+      <br/>はじめに </td>
     <td align='center' style="width:25%; border:0;">
       <a href="/windows-server/administration/index">
         <img height=145 src="media/8-management.png" alt="administer icon" title="Windows Server の管理" /></a>
@@ -62,7 +63,7 @@ ms.lasthandoff: 10/17/2017
       <a href="/windows-server/storage/storage">
         <img height=145 src="media/7-storage.png" alt="Storage icon" title="Windows Server 記憶域" />
       </a>
-      <br/>記憶域 </td>
+      <br/>ストレージ </td>
    <td align='center' style="width:25%; border:0;"><br/>
       <a href="/windows-server/virtualization/virtualization">
         <img height=145 src="media/virtualization.png" alt="virtualization icon" title="Windows Server 仮想化" /></a>
@@ -79,18 +80,18 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="windows-server-2016-editions"></a>Windows Server 2016 の各エディション
 
-Windows Server 2016 のエディションには、Standard、Datacenter、Essentials があります。 Windows Server 2016 Datacenter では、仮想化権限が無制限であることに加えて、ソフトウェアによるデータセンターを構築できる新機能も含まれています。 Windows Server 2016 Standard には、制限付きの仮想化権限とエンタープライズ クラスの機能が備わっています。 Windows Server Essentials は、初めてクラウド接続サーバーを使用する方に最適です。 このエディション向けに[幅広いドキュメント](http://go.microsoft.com/fwlink/?LinkID=827171)が用意されています。ここでは、Standard エディションと Datacenter エディションのみについて説明します。 次の表に、Standard エディションと Datacenter エディションの主要な違いの概要を簡単に示します。
+Windows Server 2016 のエディションには、Standard、Datacenter、Essentials があります。 Windows Server 2016 Datacenter では、仮想化権限が無制限であることに加えて、ソフトウェアによるデータセンターを構築できる新機能も含まれています。 Windows Server 2016 Standard には、制限付きの仮想化権限とエンタープライズ クラスの機能が備わっています。 Windows Server Essentials は、初めてクラウド接続サーバーを使用する方に最適です。 このエディション向けに[幅広いドキュメント](https://go.microsoft.com/fwlink/?LinkID=827171)が用意されています。ここでは、Standard エディションと Datacenter エディションのみについて説明します。 次の表に、Standard エディションと Datacenter エディションの主要な違いの概要を簡単に示します。
 
 |機能|Datacenter|Standard|  
 |-------------------|----------|-----------------------|  
-|Windows Server のコア機能| 必須| 必須|
-|OSE/Hyper-V コンテナー|無制限|   2 で保護されたプロセスとして起動されました|
+|Windows Server のコア機能| ○| ○|
+|OSE/Hyper-V コンテナー|無制限|   2|
 |Windows Server コンテナー|無制限|   無制限|
-|ホスト ガーディアン サービス| 必須| 必須|
-|Nano Server インストール オプション| 必須| 必須|
-|記憶域スペース ダイレクト、記憶域レプリカなどの記憶域機能| 必須| ×|
-|シールドされた仮想マシン| 必須| ×|
-|ソフトウェアによるネットワーク制御インフラストラクチャ (ネットワーク コントローラー、ソフトウェア ロード バランサー、マルチテナント ゲートウェイ)| 必須| ×|
+|ホスト ガーディアン サービス| ○| ○|
+|Nano Server インストール オプション| ○| ○|
+|記憶域スペース ダイレクト、記憶域レプリカなどの記憶域機能| ○| no|
+|シールドされた仮想マシン| ○| no|
+|ソフトウェアによるネットワーク制御インフラストラクチャ (ネットワーク コントローラー、ソフトウェア ロード バランサー、マルチテナント ゲートウェイ)| ○| no|
 
 詳細については、「[Windows Server 2016 の価格およびライセンス体系](https://www.microsoft.com/en-us/cloud-platform/windows-server-pricing)」および「[Windows Server バージョンの機能の比較](https://www.microsoft.com/en-us/cloud-platform/windows-server-comparison)」を参照してください。
 
@@ -113,9 +114,9 @@ Standard エディションおよび Datacenter エディションには、次�
 <table border="0" width="100%" align='center'>
   <tr style="text-align:center;">
     <td align='center' style="width:33%; border:0;">
-      <a  href="/windows-server/get-started/getting-started-with-nano-server"> <img width="175" src="media/nano.png" alt="Icon representing Nano server" title="Nano Server - 最も軽量" /><br/>Nano Server - <br/>最も軽量</a>
+      <a  href="/windows-server/get-started/getting-started-with-nano-server"> <img width="175" src="media/nano.png" alt="Icon representing Nano server" title="Nano Server - 最も軽量" /><br/>Nano Server - <br/>最も明るい重み</a>
     </td>
-    <td align='center' style="width:33%; border:0;"><a href="/windows-server/get-started/getting-started-with-server-core"> <img width="175" src="media/servercore.png" alt="Icon representing the Server Core installation" title="Server Core - おすすめ" /><br/>Server Core - <br/>おすすめ</a></td>
+    <td align='center' style="width:33%; border:0;"><a href="/windows-server/get-started/getting-started-with-server-core"> <img width="175" src="media/servercore.png" alt="Icon representing the Server Core installation" title="Server Core - おすすめ" /><br/>Server Core - <br/>お勧めします</a></td>
    <td align='center' style="width:33%; border:0;"><a href="/windows-server/get-started/getting-started-with-server-with-desktop-experience"><img width="175" src="media/desktop.png" alt="Icon representing the full desktop experience installation option for Windows Server" title="デスクトップ エクスペリエンス - 完全なエクスペリエンス" /><br/>デスクトップ エクスペリエンス - <br/>完全なインターフェイス</a></td>
   </tr>
 </table>
@@ -129,9 +130,7 @@ Standard エディションおよび Datacenter エディションには、次�
 <table border="0" width="100%" align='center'>
   <tr style="text-align:center;">
     <td align='center' style="width:10%; border:0;"></td>
-    <td align='center' style="width:50%; border:0;"><a href="/windows-server/sddc"><img width="400" src="media/sddc/WS16-heading.png" alt="Icon representing SDDC" title="Windows Server ソフトウェア定義データ センター (SDDC)" /><br/>Windows Server ソフトウェア定義データ センター (SDDC)</a></td>
+    <td align='center' style="width:50%; border:0;"><a href="/windows-server/sddc"><img width="400" src="media/sddc/WS16-heading.png" alt="Icon representing SDDC" title="Windows Server ソフトウェア定義データ センター (SDDC)" /><br/>Windows Server ソフトウェアによるデータ センター (SDDC)</a></td>
     <td align='center' style="width:10%; border:0;"></td>
   </tr>
 </table>
-
-必要なコンテンツがまだ見つからない場合は、 [フィードバック Hub](feedback-hub://?referrer=techDocsUcPage&tabid=2&contextid=898&newFeedback=true&topic=Windows-Server-2016.md) で Windows 10 ユーザーの皆様のご意見をお寄せください。 

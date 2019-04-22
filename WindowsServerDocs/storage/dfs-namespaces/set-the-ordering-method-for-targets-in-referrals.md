@@ -1,6 +1,6 @@
 ---
-title: "紹介におけるターゲットの順序指定方法を設定する"
-description: "この記事では、紹介におけるターゲットの順序指定方法を設定する方法について説明します。"
+title: 紹介におけるターゲットの順序指定方法を設定する
+description: この記事では、紹介におけるターゲットの順序指定方法を設定する方法について説明します。
 ms.date: 6/5/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6c67be4b35dd986f14bf7d588d0f3baa88e19171
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 06e7aa1309b453da649537d5ae9b22acce830530
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59816863"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>紹介におけるターゲットの順序指定方法を設定する
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 紹介とは、ユーザーが名前空間のルートにアクセスするか、ターゲットを持つフォルダーにアクセスしたときに、クライアント コンピューターがドメイン コントローラーまたは名前空間サーバーから受信する、順序付きのターゲット一覧です。 クライアントは、紹介を受信した後、一覧の先頭のターゲットにアクセスしようとします。 そのターゲットにアクセスできない場合は、次のターゲットにアクセスしようとします。
 クライアント サイト上のターゲットは常に紹介の最初にリストされます。 クライアント サイト外のターゲットは、順序指定方法に従ってリストされます。
@@ -27,7 +28,7 @@ ms.lasthandoff: 10/17/2017
 
 名前空間ルートにおける順序指定方法を設定するには、次の手順を使用します。
 
-1.  [**スタート**] をクリックし、[**管理ツール**] をポイントして、[**DFS 管理**] をクリックします。
+1.  **[スタート]** をクリックし、**[管理ツール]** をポイントして、**[DFS 管理]** をクリックします。
 
 2.  コンソール ツリーの **[名前空間]** ノードで、名前空間を右クリックし、**[プロパティ]** をクリックします。
 
@@ -39,13 +40,13 @@ ms.lasthandoff: 10/17/2017
    -   **EnableInsiteReferrals** の場合、**"クライアント サイト外のターゲットを除外する"** 順序指定方法が指定されます。
    -   いずれかのパラメーターを省略すると、**"ランダム順序"** の参照順序指定方法が指定されます。 
 
-DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入されました。
+DFSN の Windows PowerShell モジュールは、Windows Server 2012 で導入されました。
    
 ## <a name="to-set-the-ordering-method-for-targets-in-folder-referrals"></a>フォルダー紹介におけるターゲットの順序指定方法を設定するには
 
 ターゲットを持つフォルダーは、名前空間ルートからの順序指定方法を継承します。 順序指定方法は、次の手順を使用して上書きできます。
 
-1.  [**スタート**] をクリックし、[**管理ツール**] をポイントして、[**DFS 管理**] をクリックします。
+1.  **[スタート]** をクリックし、**[管理ツール]** をポイントして、**[DFS 管理]** をクリックします。
 
 2.  コンソール ツリーの **[名前空間]** ノードで、ターゲットを持つフォルダーを右クリックし、**[プロパティ]** をクリックします。
 
@@ -66,7 +67,7 @@ DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入され
 
 この方法では、ターゲットが次のように順序指定されます。
 
-1.  クライアントと同じ Active Directory ディレクトリ サービス (AD DS) サイト内のターゲットは、紹介の一番上にランダムな順序でリストされます。
+1.  クライアントと同じ Active Directory ディレクトリ サービス (AD DS) サイトのターゲットには、紹介の最上部に無作為な順序で表示されます。
 2.  クライアント サイト外部のターゲットは、ランダムな順序でリストされます。
 
 同じサイトのターゲット サーバーがない場合、クライアント コンピューターは、接続のコストやターゲットとの距離に関係なくランダムなターゲット サーバーに紹介されます。
@@ -90,5 +91,5 @@ DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入され
 
 ## <a name="see-also"></a>関連項目 
 
--   [DFS 名前空間を調整する](tuning-dfs-namespaces.md)
--   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)
+-   [DFS 名前空間のチューニング](tuning-dfs-namespaces.md)
+-   [Delegate Management Permissions for DFS 名前空間](delegate-management-permissions-for-dfs-namespaces.md)

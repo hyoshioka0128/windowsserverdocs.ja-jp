@@ -1,6 +1,6 @@
 ---
-title: "継承されたアクセス許可とアクセス ベースの列挙を使う"
-description: "この記事では、継承されたアクセス許可とアクセス ベースの列挙を使う方法について説明します。"
+title: 継承されたアクセス許可とアクセス ベースの列挙を使う
+description: この記事では、継承されたアクセス許可とアクセス ベースの列挙を使う方法について説明します。
 ms.date: 6/5/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,17 +8,18 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e8210a6abede3a8ee5317e5b6b2a90bd17013fc4
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: e6bd7a018a7f3a245581b5a9c63494048c7187a2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812133"
 ---
 # <a name="using-inherited-permissions-with-access-based-enumeration"></a>継承されたアクセス許可とアクセス ベースの列挙を使う
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-既定では、DFS フォルダーに使用されるアクセス許可は、名前空間サーバーのローカル ファイル システムから継承されます。 アクセス許可は、システム ドライブのルート ディレクトリから継承され、DOMAIN\\Users グループに読み取りアクセス許可を付与します。 その結果、アクセス ベースの列挙を有効にした後でも、名前空間内のすべてのフォルダーが引き続きすべてのドメイン ユーザーに表示されます。
+既定では、DFS フォルダーに使用されるアクセス許可は、名前空間サーバーのローカル ファイル システムから継承されます。 アクセス許可のシステム ドライブのルート ディレクトリから継承され、ドメインを許可\\ユーザー グループの読み取り権限。 その結果、アクセス ベースの列挙を有効にした後でも、名前空間内のすべてのフォルダーが引き続きすべてのドメイン ユーザーに表示されます。
 
 ## <a name="advantages-and-limitations-of-inherited-permissions"></a>継承されたアクセス許可の利点と制限事項
 
@@ -41,7 +42,7 @@ DFS 名前空間の継承されたアクセス許可には利点があります�
 
 DFS フォルダーを表示できるユーザーを制限するには、次のいずれかのタスクを実行する必要があります。
 
--   **継承を無効にして、フォルダーの明示的なアクセス許可を設定します。** DFS 管理または **Dfsutil** コマンドを使ってターゲット (リンク) を持つフォルダーに明示的なアクセス許可を設定するには、「[名前空間でアクセス ベースの列挙を有効にする](enable-access-based-enumeration-on-a-namespace.md)」をご覧ください。
+-   **継承を無効にすると、フォルダーの明示的なアクセス許可を設定します。** DFS 管理または **Dfsutil** コマンドを使ってターゲット (リンク) を持つフォルダーに明示的なアクセス許可を設定するには、「[名前空間でアクセス ベースの列挙を有効にする](enable-access-based-enumeration-on-a-namespace.md)」をご覧ください。
 -   **ローカル ファイル システムの親で継承されたアクセス許可を変更します**。 フォルダーで明示的なアクセス許可を既に設定している場合に、ターゲットを持つフォルダーで継承されたアクセス許可を変更するには、次の手順で説明するように、明示的なアクセス許可から継承されたアクセス許可に切り替えます。 その後、エクスプローラーまたは **Icacls** コマンドを使って、ターゲットを持つフォルダーがアクセス許可を継承するフォルダーのアクセス許可を変更します。
 
 > [!NOTE]
@@ -51,7 +52,7 @@ DFS フォルダーを表示できるユーザーを制限するには、次の�
 
 1.  コンソール ツリーの **[名前空間]** ノードの下で、表示を制御するターゲットを含むフォルダーを見つけ、フォルダーを右クリックして **[プロパティ]** をクリックします。
 
-2.  **[詳細設定]** タブをクリックします。
+2.  **[Advanced]** タブをクリックします。
 
 3.  **[ローカル ファイル システムから継承されたアクセス許可を使用する]** をクリックし、**[継承されたアクセス許可の使用を確認する]** ダイアログ ボックスで **[OK]** をクリックします。 こうすると、このフォルダーで明示的に設定されたアクセス許可がすべて削除され、名前空間サーバーのローカル ファイル システムから継承された NTFS アクセス許可が復元されます。
 
@@ -59,4 +60,4 @@ DFS フォルダーを表示できるユーザーを制限するには、次の�
 
 ## <a name="see-also"></a>関連項目
 
--   [DFS 名前空間を作成する](create-a-dfs-namespace.md)
+-   [DFS Namespace を作成します。](create-a-dfs-namespace.md)

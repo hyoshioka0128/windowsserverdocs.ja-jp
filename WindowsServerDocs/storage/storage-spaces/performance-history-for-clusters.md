@@ -1,31 +1,31 @@
 ---
-title: クラスターのパフォーマンスの履歴
+title: クラスターのパフォーマンス履歴
 ms.author: cosdar
 ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
-Keywords: Storage Spaces Direct
+Keywords: 記憶域スペース ダイレクト
 ms.localizationpriority: medium
 ms.openlocfilehash: 68596cbdcf8593cd3017c8ae5d0836891c78229c
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1894321"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59818773"
 ---
-# <a name="performance-history-for-clusters"></a>クラスターのパフォーマンスの履歴
+# <a name="performance-history-for-clusters"></a>クラスターのパフォーマンス履歴
 
-> 対象アプリケーション: Windows Server 内部のプレビュー
+> 適用先:Windows Server Insider Preview
 
-[記憶域スペースの直接のパフォーマンス履歴](performance-history.md)のサブこのトピックでは、クラスターの収集のパフォーマンス履歴について説明します。
+このサブ トピックの[記憶域スペース ダイレクトのパフォーマンスの履歴](performance-history.md)クラスター用に収集されたパフォーマンスの履歴について説明します。
 
-系列クラスター レベルで発生することはありません。 代わりに、サーバー シリーズでは、次のような`clusternode.cpu.usage`、クラスター内のすべてのサーバーに集計されます。 ボリューム シリーズでは、次のような`volume.iops.total`、クラスター内のすべてのボリュームに集計されます。 系列の次のようなドライブと`physicaldisk.size.total`、クラスター内のすべてのドライブに集計されます。
+クラスター レベルで発生する系列がありません。 代わりに、server シリーズなど`clusternode.cpu.usage`クラスター内のすべてのサーバーごとに集計します。 ボリュームの系列など`volume.iops.total`クラスター内のすべてのボリュームごとに集計します。 など、系列をドライブと`physicaldisk.size.total`クラスター内のすべてのドライブごとに集計します。
 
-## <a name="usage-in-powershell"></a>PowerShell での使用
+## <a name="usage-in-powershell"></a>PowerShell での使用法
 
-[Get クラスター](https://docs.microsoft.com/powershell/module/failoverclusters/get-cluster)コマンドレットを使用します。
+使用して、 [Get クラスター](https://docs.microsoft.com/powershell/module/failoverclusters/get-cluster)コマンドレット。
 
 ```PowerShell
 Get-Cluster | Get-ClusterPerf
@@ -33,4 +33,4 @@ Get-Cluster | Get-ClusterPerf
 
 ## <a name="see-also"></a>関連項目
 
-- [記憶域スペースの直接のパフォーマンス履歴](performance-history.md)
+- [記憶域スペース ダイレクトのパフォーマンスの履歴](performance-history.md)

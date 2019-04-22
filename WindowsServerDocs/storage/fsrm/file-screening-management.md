@@ -1,6 +1,6 @@
 ---
-title: "ファイル スクリーンの管理"
-description: "この記事では、ファイル スクリーンの作成、通知の生成、ファイル スクリーン処理のテンプレートの定義、およびファイル スクリーンの例外の作成の方法について説明します。"
+title: ファイル スクリーンの管理
+description: この記事では、ファイル スクリーンの作成、通知の生成、ファイル スクリーン処理のテンプレートの定義、およびファイル スクリーンの例外の作成の方法について説明します。
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 52a08ae7eaee81c00985d5334f9abeaa84e30879
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59814163"
 ---
 # <a name="file-screening-management"></a>ファイル スクリーンの管理
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 ファイル サーバー リソース マネージャー MMC スナップインの **[ファイル スクリーンの管理]** ノードでは、次のタスクを実行できます。
 
@@ -31,17 +32,17 @@ ms.lasthandoff: 10/17/2017
 
 ここでは、次のトピックについて説明します。
 
--   [スクリーン処理のためにファイル グループを定義する](define-file-groups-for-screening.md)
--   [ファイル スクリーンを作成する](create-file-screen.md)
--   [ファイル スクリーンの例外を作成する](create-file-screen-exception.md)
--   [ファイル スクリーン テンプレートを作成する](create-file-screen-template.md)
--   [ファイル スクリーンのテンプレートのプロパティを編集する](edit-file-screen-template-properties.md)
+-   [スクリーン処理のためのファイル グループを定義します。](define-file-groups-for-screening.md)
+-   [ファイル スクリーンを作成します。](create-file-screen.md)
+-   [ファイル スクリーンの例外を作成します。](create-file-screen-exception.md)
+-   [ファイル スクリーン テンプレートを作成します。](create-file-screen-template.md)
+-   [ファイル スクリーン テンプレートのプロパティを編集します。](edit-file-screen-template-properties.md)
 
 > [!Note]
 > 電子メール通知や特定のレポート機能を設定するには、まずファイル サーバー リソース マネージャーの全般的なオプションを設定する必要があります。
 
 ## <a name="see-also"></a>関連項目
 
--   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
+-   [設定ファイル サーバー リソース マネージャーのオプション](setting-file-server-resource-manager-options.md)
 
 
