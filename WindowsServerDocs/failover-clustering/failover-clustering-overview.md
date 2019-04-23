@@ -11,15 +11,15 @@ ms.technology: storage-failover-clustering
 ms.date: 03/08/2019
 ms.localizationpriority: high
 ms.openlocfilehash: 445de065ff5b68b83481ee5bd83ebf18fdd180a7
-ms.sourcegitcommit: b0fece76b871da3fa9d6a996798a5008756f486b
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "9178603"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59848653"
 ---
-# Windows Server のフェールオーバー クラスタリング
+# <a name="failover-clustering-in-windows-server"></a>Windows Server のフェールオーバー クラスタリング
 
-> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 >[!TIP]
 > 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
@@ -47,7 +47,7 @@ ms.locfileid: "9178603"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h2><a href="whats-new-in-failover-clustering.md">フェールオーバー クラスタリングの新機能</a></h2>
+                                        <h2><a href="whats-new-in-failover-clustering.md">フェールオーバー クラスタ リングの新機能</a></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -71,19 +71,19 @@ ms.locfileid: "9178603"
                                         <div class="cardText">
                                         <h3>概要</h3>
 <HR />
-                                        <p><a href="sofs-overview.md">アプリケーション データ用のスケールアウト ファイル サーバー</a></p>
+                                        <p><a href="sofs-overview.md">アプリケーション データ用のスケール アウト ファイル サーバー</a></p>
 <HR />
-                                        <p><a href="../storage/storage-spaces/understand-quorum.md">クラスターとプール クォーラム</a></p>
+                                        <p><a href="../storage/storage-spaces/understand-quorum.md">クラスターとプールのクォーラム</a></p>
 <HR />
-                                        <p><a href="fault-domains.md">フォールト ドメインの認識</a></p>
+                                        <p><a href="fault-domains.md">障害ドメインの認識</a></p>
 <HR />
-                                        <p><a href="smb-multichannel.md">簡略化された SMB マルチチャネルと複数 NIC のクラスター ネットワーク</a></p>
+                                        <p><a href="smb-multichannel.md">簡略化された SMB マルチ チャネルと複数の NIC のクラスター ネットワーク</a></p>
 <HR />
                                         <p><a href="vm-load-balancing-overview.md">VM の負荷分散</a></p>
 <HR />
-                                        <p><a href="../storage/storage-spaces/cluster-sets.md">クラスター セット</a></p>
+                                        <p><a href="../storage/storage-spaces/cluster-sets.md">クラスターの設定</a></p>
 <HR />
-                                        <p><a href="cluster-affinity.md">クラスター アフィニティ</a></p>
+                                        <p><a href="cluster-affinity.md">クラスターのアフィニティ</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -103,11 +103,11 @@ ms.locfileid: "9178603"
                                         <div class="cardText">
                                         <h3>計画</h3>
 <HR />
-                                        <p><a href="clustering-requirements.md">フェールオーバー クラスタリングのハードウェア要件と記憶域オプション</a></p>
+                                        <p><a href="clustering-requirements.md">フェールオーバー クラスタ リングのハードウェア要件と記憶域オプション</a></p>
 <HR />
-                                        <p><a href="failover-cluster-csvs.md">クラスター共有ボリューム (CSV) の使用</a></p>               
+                                        <p><a href="failover-cluster-csvs.md">クラスター共有ボリューム (Csv)</a></p>               
 <HR />
-                                        <p><a href="../storage/storage-spaces/storage-spaces-direct-in-vm.md">ゲスト仮想マシン クラスターで記憶域スペース ダイレクトを使用する</a></p>
+                                        <p><a href="../storage/storage-spaces/storage-spaces-direct-in-vm.md">仮想マシンのゲスト クラスターを使用して、記憶域スペース ダイレクト</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -126,23 +126,23 @@ ms.locfileid: "9178603"
                                         <div class="cardText">
                                         <h3>展開</a></h3> 
 <HR />
-                                        <p><a href="prestage-cluster-adds.md">Active Directory Domain Services でクラスター コンピューター オブジェクトをプレステージする</a></p>
+                                        <p><a href="prestage-cluster-adds.md">Active Directory Domain Services でクラスター コンピューター オブジェクトを事前設定します。</a></p>
 <HR />
                                         <p><a href="create-failover-cluster.md">フェールオーバー クラスターの作成</a></p> 
 <HR />
-                                        <p><a href="deploy-two-node-clustered-file-server.md">2 ノードのファイル サーバーを展開する</a></p> 
+                                        <p><a href="deploy-two-node-clustered-file-server.md">2 ノード ファイル サーバーを展開します。</a></p> 
 <HR />
-                                        <p><a href="manage-cluster-quorum.md">クォーラムと監視を管理する</a></p> 
+                                        <p><a href="manage-cluster-quorum.md">クォーラムと監視サーバーを管理します。</a></p> 
 <HR />
-                                        <p><a href="deploy-cloud-witness.md">クラウド監視を展開する</a></p>
+                                        <p><a href="deploy-cloud-witness.md">クラウド監視を展開します。</a></p>
 <HR />
-                                        <p><a href="file-share-witness.md">ファイル共有監視を展開する</a></p>
+                                        <p><a href="file-share-witness.md">ファイル共有監視をデプロイします。</a></p>
 <HR />
-                                        <p><a href="cluster-operating-system-rolling-upgrade.md">クラスター オペレーティング システムのローリング アップグレード</a></p> 
+                                        <p><a href="cluster-operating-system-rolling-upgrade.md">クラスターのオペレーティング システムのローリング アップグレード</a></p> 
 <HR />
-                                        <p><a href="upgrade-option-same-hardware.md">同じハードウェア上のフェールオーバー クラスターのアップグレード</a></p>
+                                        <p><a href="upgrade-option-same-hardware.md">同じハードウェア上でフェールオーバー クラスターをアップグレードします。</a></p>
 <HR />
-                                        <p><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265970\(v%3dws.11\)">Active Directory からデタッチされたクラスターを展開する</a></p>
+                                        <p><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265970\(v%3dws.11\)">Active Directory のデタッチされたクラスターをデプロイします。</a></p>
                                         </div>
                                     </div>
                                 </div>
@@ -189,7 +189,7 @@ ms.locfileid: "9178603"
                                         <div class="cardText">
                                         <h3>ツールと設定</a></h3>
 <HR />
-                                        <p><a href="https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps">フェールオーバー クラスタリング用 PowerShell コマンドレット</a></p> 
+                                        <p><a href="https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps">フェールオーバー クラスタ リングの PowerShell コマンドレット</a></p> 
 <HR />
                                         <p><a href="https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps">クラスター対応更新の PowerShell コマンドレット</a></p> 
                                         </div>
@@ -210,9 +210,9 @@ ms.locfileid: "9178603"
                                         <div class="cardText">
                                         <h3>コミュニティ リソース</a></h3>
 <HR />
-                                        <p><a href="https://go.microsoft.com/fwlink/p/?LinkId=230641">高可用性 (クラスタリング) フォーラム</a></p> 
+                                        <p><a href="https://go.microsoft.com/fwlink/p/?LinkId=230641">高可用性 (クラスタ リング) フォーラム</a></p> 
 <HR />
-                                        <p><a href="http://blogs.msdn.com/b/clustering/">フェールオーバー クラスタリングおよびネットワークの負荷分散チームによるブログ</a></p> 
+                                        <p><a href="http://blogs.msdn.com/b/clustering/">フェールオーバー クラスタ リングとネットワーク負荷分散のチーム ブログ</a></p> 
                                         </div>
                                     </div>
                                 </div>

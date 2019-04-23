@@ -1,6 +1,6 @@
 ---
-title: "ファイル スクリーンのテンプレートのプロパティを編集する"
-description: "この記事では、ファイル スクリーン テンプレートのプロパティを編集する方法について説明します。"
+title: ファイル スクリーンのテンプレートのプロパティを編集する
+description: この記事では、ファイル スクリーン テンプレートのプロパティを編集する方法について説明します。
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 31ca46707a32d23a5dd9606c57bcaec5d6e53a80
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59846893"
 ---
 # <a name="edit-file-screen-template-properties"></a>ファイル スクリーンのテンプレートのプロパティを編集する
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 ファイル スクリーン テンプレートを変更したときに、過去に元のファイル スクリーン テンプレートから作成されたファイル スクリーンにもその変更を適用することができます。 元のテンプレートと一致するファイル スクリーンのみ変更するか、または、ファイル スクリーンが作成後に変更されているかどうかにかかわらず、元のテンプレートから取得したすべてのファイル スクリーンを変更するかを選択できます。 この機能では、すべての更新を 1 か所で集中的に実行できるため、ファイル スクリーンのプロパティの更新処理が簡略化されます。
 
@@ -27,7 +28,7 @@ ms.lasthandoff: 10/17/2017
 
 1.  **[ファイル スクリーン テンプレート]** で、変更するテンプレートを選択します。
 
-2.  ファイル スクリーン テンプレートを右クリックして **[テンプレートのプロパティの編集]** をクリックするか、**[操作]** ウィンドウで **[選択したファイル スクリーン テンプレート]** の **[テンプレートのプロパティの編集]** をクリックします。**[ファイル スクリーン テンプレートのプロパティ]** ダイアログ ボックスが開きます。
+2.  ファイル スクリーン テンプレートを右クリックし、をクリックして**テンプレートのプロパティの編集**(または、**アクション** ウィンドウで、**ファイル スクリーン テンプレートの選択**を選択します**テンプレートのプロパティを編集**)。開き、 **File Screen Template Properties**  ダイアログ ボックス。
 
 3.  別のテンプレートをコピーし、それを変更して独自のテンプレートを作成する場合は、**[テンプレートからのプロパティのコピー]** ドロップダウン リストから任意のテンプレートを選択します。 次に、**[コピー]** をクリックします。
 
@@ -46,6 +47,6 @@ ms.lasthandoff: 10/17/2017
 ## <a name="see-also"></a>関連項目
 
 -   [ファイル スクリーンの管理](file-screening-management.md)
--   [ファイル スクリーン テンプレートを作成する](create-file-screen-template.md)
+-   [ファイル スクリーン テンプレートを作成します。](create-file-screen-template.md)
 
 

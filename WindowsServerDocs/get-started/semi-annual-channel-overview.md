@@ -11,22 +11,22 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9cf87597-b15d-4f43-8aa1-91e60367f011
 ms.openlocfilehash: 2995fca3085d6611ecce083685dca0e587913f17
-ms.sourcegitcommit: fcc26ec5a2cc73b59c5752377b39c070d288655e
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "8976728"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59841243"
 ---
-# Windows Server の半期チャネルの概要
+# <a name="windows-server-semi-annual-channel-overview"></a>Windows Server の半期チャネルの概要
 
->適用対象: Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)
 
 Windows Server のリリース モデルで、新しいオプションが提供されます。これは、[Windows 10](https://docs.microsoft.com/windows/deployment/update/waas-overview) と [Office 365 ProPlus](https://support.office.com/article/Overview-of-the-upcoming-changes-to-Office-365-ProPlus-update-management-78b33779-9356-4cdf-9d2c-08350ef05cca?ui=en-US&rs=en-US&ad=US) で行われている同様のリリースおよびサービス モデルに連動するためのものです。 Windows 10 または Office 365 ProPlus を使用している場合、今回の新しいモデルは、これらの製品で既に使用されているものです。
 
-**Windows Server のユーザーは、長期サービス チャネルと半期チャネルの 2 つのチャネルを利用できます。** ユーザーはニーズに最も適した方法を選択できます。サーバーを長期サービス チャネル (LTSC) のままにすることも、半期チャネルに移行することも、一部のサーバーをいずれかのトラックで利用することも可能です。
+**2 つの主なリリース チャネルは Windows Server ユーザー、長期的なサービス チャネルと半期チャネルに使用できます。** ユーザーはニーズに最も適した方法を選択できます。サーバーを長期サービス チャネル (LTSC) のままにすることも、半期チャネルに移行することも、一部のサーバーをいずれかのトラックで利用することも可能です。
 
 
-## 長期サービス チャネル (LTSC)
+## <a name="long-term-servicing-channel-ltsc"></a>長期的なサービス チャネル (LTSC)
 以前から使用されているリリース モデルです (旧称、“Long-Term Servicing *Branch*”)。このモデルでは、Windows Server の新しいメジャー バージョンが、2 ～ 3 年ごとにリリースされます。 ユーザーは、5 年間のメインストリーム サポートとそれに続く 5 年間の延長サポートを受けることができます。 このチャネルは、長期のサービス オプションと機能安定性を必要とするシステムに適しています。 Windows Server 2016 およびそれ以前のバージョンの Windows Server の展開環境に対する、新しい半期チャネルのリリースによる影響はありません。 長期的なサービス チャネルでは、引き続きセキュリティ更新プログラムとセキュリティ以外の更新プログラムが提供されますが、新機能は提供されません。
 
 > [!Note]  
@@ -34,7 +34,7 @@ Windows Server のリリース モデルで、新しいオプションが提供�
 
 
 
-## 半期チャネル 
+## <a name="semi-annual-channel"></a>半期チャネル 
 半期チャネルは、アプリケーション (特にコンテナーやマイクロサービスを基盤とするアプリケーション) とソフトウェア定義ハイブリッド データセンターの両方で、オペレーティングシステムの新機能を速いペースで活用して迅速なイノベーションを図るお客様に最適です。 半期チャネルの Windows Server 製品は、年に 2 回、春と秋に新しいリリースが公開されます。 このチャネルの各リリースは、最初のリリースから 18 か月サポートされます。
 
 半期チャネルで提供される機能のほとんどは、Windows Server の次回の長期的なサービス チャネル リリースに含まれます。 各リリースのエディション、機能、およびサポート コンテンツは、ユーザーのフィードバックに応じて異なる場合があります。
@@ -48,7 +48,7 @@ Windows Server のリリース モデルで、新しいオプションが提供�
 
 このモデルでは、Windows Server のリリースが、リリースの年と月によって識別されます。たとえば、2017 年の 9 番目の月 (9 月) のリリースは、**バージョン 1709** となります。 半期チャネルでは、Windows Serverの新しいリリースが毎年 2 回提供されます。 各リリースのサポート ライフサイクルは、18 か月です。
 
-## サーバーを LTSC のまま利用するべきか、半期チャネルに移行すべきか
+## <a name="should-you-keep-servers-on-the-ltsc-or-move-them-to-the-semi-annual-channel"></a>サーバーを LTSC のまま利用するべきか、半期チャネルに移行すべきか
 決定にあたっては、次の重要な相違点を考慮する必要があります。
 
 - 革新的な機能を迅速に取り入れる必要がありますか。 Windows Server の最新機能への早期アクセスが必要ですか。 頻繁に更新されるハイブリッド アプリケーション、DevOps、および Hyper-V ファブリックをサポートする必要がありますか。 そうであれば、[Windows Server バージョン 1803](get-started-with-1803.md) をインストールして、**半期チャネルに参加**することを検討してください。 その場合、このトピックで説明したように、年に 2 回新しいバージョンを受け取り、各リリースのメインストリームの運用サポートは 18 か月になります。 これは、ボリューム ライセンス、Azure、または Visual Studio サブスクリプション サービスを通じて提供されます。 現時点では、製品を運用環境で実行する場合に、半期チャネルのリリースを利用するには、ボリューム ライセンスとソフトウェア アシュアランスが必要です。
@@ -66,33 +66,33 @@ Windows Server のリリース モデルで、新しいオプションが提供�
 | インストール オプション | Server Core とデスクトップ エクスペリエンス搭載サーバー | コンテナー ホストとコンテナー イメージの Server Core および Nano Server コンテナー イメージ |                |
 
 
-## デバイスの互換性
+## <a name="device-compatibility"></a>デバイスの互換性
 特に断りのない限り、半期チャネルのリリースを実行するための最小ハードウェア要件は、Windows Server の最新の長期的なサービス チャネルのリリースと同じです。 たとえば、**長期的なサービス チャネルの現行リリースは、Windows Server 2016 です**。 ほとんどのハードウェア ドライバーは、引き続きこれらのリリースで機能します。
 
-## サービス
+## <a name="servicing"></a>サービス
 セキュリティ更新プログラムとセキュリティ以外の更新プログラムで、長期的なサービス チャネルと半期チャネルの両方のリリースがサポートされます。 ただし、前述のように、サポート期間の長さはリリースによって異なります。
 
-### サービス ツール
-IT 担当者が Windows Server を操作するためのツールは数多く存在します。 機能や制御から、使いやすさや管理要件の緩やかさまで、選択できるツールにはそれぞれ長所と短所があります。 以下に、サービス更新プログラムを管理するために使用できるサービス ツールの例を示します。
+### <a name="servicing-tools"></a>サービス ツール
+IT 担当者が Windows Server を操作するためのツールは数多く存在します。 機能や制御からシンプルさや管理要件の低さまで、各オプションにはそれぞれ長所と短所があります。 以下に、サービス更新プログラムを管理するために使用できるサービス ツールの例を示します。
 
-- **Windows Update (スタンドアロン)**: このオプションは、インターネットに接続されている、Windows Update が有効なサーバーでのみ利用できます。
+- **Windows Update (スタンドアロン)**:このオプションでは、インターネットに接続されていて、Windows Update を有効になっているサーバーで利用できるのみです。
 - **Windows Server Update Services (WSUS)** は、Windows 10 と Windows Server の更新プログラムを詳細に管理することができ、Windows Server オペレーティング システムでネイティブに利用できます。 更新プログラムを延期できることに加えて、更新プログラムの承認層を追加し、準備できるたびに特定のコンピューターまたはコンピューターのグループに展開することを選択できます。
-- **System Center Configuration Manager** では、サービスをきめ細かく制御できます。 IT 担当者は、更新プログラムを延期、承認したり、展開のターゲットを設定したりできるほか、帯域幅の使用と展開回数を管理するための複数のオプションを選択できます。
+- **System Center Configuration Manager** では、サービスをきめ細かく制御できます。 IT 担当者は、更新プログラムを延期、承認することができ、展開のターゲットを設定し、帯域幅の使用と展開回数を管理するための複数のオプションを選択できます。
 
 リソース、スタッフ、および専門知識に基づいて、既に、これらのオプションのいずれか 1 つまたは複数を使用している場合、 半期チャネルのリリースでも、同じプロセスを引き続き使用できます。たとえば、既に更新プログラムの管理に System Center Configuration Manager を使用している場合は、それを使い続けることができます。 同様に、WSUS を使っている場合は、引き続きそれを使うことができます。
 
-## Windows Insider Program を通じてプレビュー リリースを入手します。
+## <a name="obtain-preview-releases-through-the-windows-insider-program"></a>Windows Insider Program を通じてプレビュー リリースを入手します。
 Windows Server の初期ビルドのテストは、問題点をリリース前に発見できる可能性があるため、マイクロソフトとお客様の両方に役立ちます。 またお客様にとっては、製品の機能に直接影響を与える貴重な機会となります。 
 
 ユーザーからのフィードバックは、全開発プロセスを通じて重要な役割を果たしており、マイクロソフトはこれによってできる限り迅速に製品を調整することができます。 事前テストとフィードバックは、迅速なリリース モデルに不可欠です。
 
 Windows Insider Program に参加する方法について詳しくは、「[Windows Insider Program for Server docs (Windows Insider Program for Server のドキュメント)](https://docs.microsoft.com/windows-insider/at-work/)」をご覧ください。
-# 関連トピック
-[Windows Server 2019 サービス チャネル: LTSC と SAC](https://docs.microsoft.com/windows-server/get-started-19/servicing-channels-19)
+# <a name="related-topics"></a>関連トピック
+[Windows Server の 2019 サービス チャネル:LTSC と SAC](https://docs.microsoft.com/windows-server/get-started-19/servicing-channels-19)
 
-[Windows Server 半期チャネルで Nano Server に加えられる変更](nano-in-semi-annual-channel.md)
+[Windows Server 半期チャネルでの Nano Server への変更](nano-in-semi-annual-channel.md)
 
-[Windows Server のサポート ライフサイクル](https://support.microsoft.com/en-us/lifecycle)
+[Windows Server のサポート ライフ サイクル](https://support.microsoft.com/en-us/lifecycle)
 
 [Windows Server 2016 のシステム要件](https://docs.microsoft.com/windows-server/get-started/system-requirements) 
 

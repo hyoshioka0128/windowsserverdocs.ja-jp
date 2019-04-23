@@ -1,6 +1,6 @@
 ---
-title: "Windows Server 用 Windows Defender の概要"
-description: "Windows Server のセキュリティ"
+title: Windows Server 用 Windows Defender の概要
+description: Windows Server のセキュリティ
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,34 +13,35 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: c29f1d2a878ac0a367fd4cb49d893e4eacb1563e
-ms.sourcegitcommit: 8c5837dcfb9690e9984e27446cf4b36a286bbba1
+ms.openlocfilehash: 29506acf9ee7c52e100eb278c53205d03ef472d6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59855623"
 ---
 # <a name="windows-defender-antivirus-for-windows-server"></a>Windows Server 用 Windows Defender ウイルス対策
 
->Windows Server 2016 の適用対象:
+>適用先:Windows Server 2016
 
-Windows Server 2016 には、Windows Defender ウイルス対策が含まれています。 Windows Defender AV は、マルウェア対策をすぐにおよび積極的に既知のマルウェアから Windows Server 2016 を保護し、Windows Update 経由でアンチマルウェアの定義を定期的に更新することができます。
+Windows Server 2016 には、Windows Defender ウイルス対策ソフトウェアが含まれています。 Windows Defender AV は、マルウェア対策をすぐにおよび積極的には、Windows Server 2016 が既知のマルウェアから保護し、Windows Update からマルウェア対策定義を定期的に更新することができます。
 
-参照してください、[Windows 10 で Windows Defender ウイルス対策](https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10)ドキュメント ライブラリの詳細についてはします。
+参照してください、 [Windows 10 で Windows Defender ウイルス対策](https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10)詳細については、ドキュメント ライブラリです。
 
 
-機能、構成、および管理はほぼ同じには、Windows 10 または Windows Server 2016、Windows Defender AV の中には、いくつかの重要な相違点があります。
+Windows 10 でも Windows Server 2016 でも Windows Defender AV の機能、構成、管理の大部分は同じですが、次のような主な違いがあります。
 
-- Windows Server 2016 で[自動除外](https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus)、定義されているサーバーの役割に基づいて適用されます。
-- Windows Server 2016、Windows Defender AV は無効になりません別のウイルス対策製品を実行している場合。
+- Windows Server 2016 では、定義したサーバーの役割に基づいて[自動除外](https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/configure-server-exclusions-windows-defender-antivirus)が適用されます。
+- Windows Server 2016 では、他のウイルス対策製品を実行していても Windows Defender AV は無効になりません。
 
-[Windows Server 2016 で Windows Defender ウイルス対策](https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016)トピックにはのセットが含まれていて、Windows Server 2016 に固有の構成情報する方法を含む。
+[Windows Server 2016 で Windows Defender ウイルス対策](https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016)トピックが含まれているセットと構成情報を Windows Server 2016 では、特定する方法についても。
 
--   [インターフェイスを有効にします。](https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_UsingDef)
+-   [インターフェイスを有効にします。](https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_UsingDef)
 
--   [Windows Defender AV が実行されていることを確認します。]( https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_DefRun)
+-   [Windows Defender AV が実行されていることを確認します。]( https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_DefRun)
 
--   [マルウェア対策定義を更新します。]( https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_UpdateDef)
+-   [マルウェア対策定義を更新します。]( https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_UpdateDef)
 
--   [サンプルを送信します。]( https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_DefSamples)
+-   [サンプルを送信します。]( https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_DefSamples)
 
--   [自動除外を構成します。]( https://docs.microsoft.com/en-us/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_DefExclusions)
+-   [自動除外を構成します。]( https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-on-windows-server-2016#BKMK_DefExclusions)

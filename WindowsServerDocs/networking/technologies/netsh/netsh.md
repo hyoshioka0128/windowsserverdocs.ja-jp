@@ -1,47 +1,42 @@
 ---
-title: ネットワーク シェル (Netsh)
-description: このトピックでは、Windows Server 2016 でのネットワーク シェル (netsh) コマンド ライン ユーティリティの概要を説明します。
+title: ネットワーク シェル (netsh)
+description: このトピックでは、Windows Server 2016 でのネットワーク シェル (netsh) コマンド ライン ユーティリティの概要を示します。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
 ms.assetid: aedef092-8445-4e53-b9d4-525ecd98b02d
-manager: brianlic
+manager: dougkim
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0a23d60bc3f181fee62ade105e546bbb7161c133
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 09/13/2018
+ms.openlocfilehash: 038b21783ef1d27619657ec3f9a472cf3caba68e
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59849363"
 ---
-# <a name="network-shell-netsh"></a>ネットワーク シェル \(Netsh\)
+# <a name="network-shell-netsh"></a>ネットワーク シェル\(Netsh\)
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-ネットワーク シェル (netsh) は、コマンド ライン ユーティリティを構成し、Windows Server 2016 を実行しているコンピューターにインストールされている後に、さまざまなネットワーク通信サーバーの役割およびコンポーネントのステータスを表示することができます。
+ネットワーク シェル (netsh) を構成した後、Windows Server 2016 を実行しているコンピューターにインストールされているさまざまなネットワーク通信サーバーの役割およびコンポーネントのステータスを表示できるようにするコマンド ライン ユーティリティです。
 
->[!NOTE]
->このトピックに加え、次のネットワーク シェル コンテンツは使用できます。
->
-> - [Netsh コマンドの構文、コンテキスト、および書式設定](netsh-contexts.md)
-> - [ネットワーク シェル (Netsh) バッチ ファイルの例](netsh-wins.md)
-> - [Netsh テクニカル リファレンス](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc) 
+動的ホスト構成プロトコルなど、いくつかのクライアント テクノロジ\(DHCP\)クライアントと BranchCache、Windows 10 を実行しているクライアント コンピューターを構成するための netsh コマンドが用意されています。
 
-動的ホスト構成プロトコル \(DHCP\) クライアントと、BranchCache など、一部のクライアント テクノロジには、Windows 10 を実行しているクライアント コンピューターを構成するための netsh コマンドも提供します。
+ほとんどの場合での netsh コマンドは、Microsoft 管理コンソールを使用するときに使用できる同じ機能を提供\(MMC\)スナップ\-で各ネットワークのサーバー ロールまたはネットワーク機能。 たとえば、ネットワーク ポリシー サーバーを構成できる\(NPS\) NPS MMC スナップインまたは netsh コマンドを使用して、 **netsh nps**コンテキスト。
 
-Netsh コマンドが Microsoft 管理コンソール \(MMC\) snap\ を使用する場合に使用できる同じ機能を提供するほとんどの場合、-の各ネットワークのサーバーの役割またはネットワーク機能します。 たとえば、NPS MMC スナップインまたはの netsh コマンドを使用してネットワーク ポリシー サーバー \(NPS\) を構成することができます、**netsh nps**コンテキスト。
-
-さらは、ネットワーク テクノロジ用の netsh コマンドなど、IPv6、ネットワーク ブリッジ、およびリモート プロシージャ コール \(RPC\)、されない MMC スナップインとしての Windows Server で使用できます。
+さらに、ネットワーク テクノロジ用の netsh コマンドなどが IPv6 をネットワーク ブリッジ、およびリモート プロシージャ コールの\(RPC\)は、MMC スナップインとして Windows Server では使用できません。
 
 >[!IMPORTANT]
->ネットワーク テクノロジを管理する Windows PowerShell を使用することをお勧め[Windows Server 2016 および Windows 10](https://technet.microsoft.com/library/mt156917.aspx)ネットワーク シェルのではなく。 ネットワーク シェルは、スクリプトとの互換性ただし、およびその使用がサポートされています。
+>ネットワーク テクノロジを管理する Windows PowerShell を使用することをお勧め[Windows Server 2016 および Windows 10](https://technet.microsoft.com/library/mt156917.aspx)ネットワーク シェルではなく。 ネットワーク シェルは、スクリプトとの互換性ただしとその使用はサポートされています。
 
-## <a name="network-shell-netsh-technical-reference"></a>ネットワーク シェル (Netsh) のテクニカル リファレンス
+## <a name="network-shell-netsh-technical-reference"></a>ネットワーク シェル (Netsh) テクニカル リファレンス
 
-Netsh テクニカル リファレンスでは、構文、パラメーター、および用の netsh コマンドの例を含む包括的な netsh コマンドのリファレンスを提供します。 Netsh テクニカル リファレンスを使用して、ネットワーク テクノロジと Windows 10 の Windows Server 2016 を実行しているコンピューター上のローカルまたはリモート管理用の netsh コマンドを使用して、スクリプトやバッチ ファイルを作成することができます。  
+Netsh テクニカル リファレンスでは、構文、パラメーター、および netsh コマンドの例を含む、包括的な netsh コマンド リファレンスを提供します。 Netsh テクニカル リファレンスを使用すると、Windows Server 2016 および Windows 10 を実行しているコンピューターでのネットワーク テクノロジのローカルまたはリモート管理用の netsh コマンドを使用して、スクリプトやバッチ ファイルをビルドします。  
   
 ### <a name="content-availability"></a>コンテンツの可用性  
   
-ネットワーク シェル テクニカル リファレンスは、TechNet ギャラリーから Windows ヘルプ \(*.chm\) 形式でダウンロード可能な: [Netsh テクニカル リファレンス](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc)  
+ネットワーク シェル テクニカル リファレンスは、Windows のヘルプのダウンロード可能な\(*.chm\) TechNet ギャラリーからの形式。[Netsh テクニカル リファレンス](https://gallery.technet.microsoft.com/Netsh-Technical-Reference-c46523dc)  
   
-
+---

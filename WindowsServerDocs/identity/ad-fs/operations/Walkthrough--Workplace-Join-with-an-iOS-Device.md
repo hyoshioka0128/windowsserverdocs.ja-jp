@@ -1,65 +1,70 @@
 ---
 ms.assetid: 299e4fb9-8f1a-4275-ad7d-dad4f1594657
-title: チュートリアルの iOS デバイスのワークプ レース ジョイン
+title: チュートリアル - iOS デバイスのワークプ レース ジョイン
 description: ''
 author: billmath
 ms.author: billmath
-manager: femila
-ms.date: 05/31/2017
+manager: mtillman
+ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0a8643bab913dfec07c6bbea0c068e1240f16c5b
-ms.sourcegitcommit: a2260c96b0e49519d180c7382b921ce8ddb053fe
+ms.openlocfilehash: c9c66b5bbe5fff83010859abe6ea4759d5bc4be0
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59853633"
 ---
-# <a name="walkthrough-workplace-join-with-an-ios-device"></a>チュートリアル: iOS デバイスでワークプ レースに参加します。
+# <a name="walkthrough-workplace-join-with-an-ios-device"></a>チュートリアル: IOS デバイスのワークプ レース ジョイン
 
->Windows Server 2012 R2 の適用対象:
+>適用先:Windows Server 2012 R2
 
-このトピックでは、ワークプ レース ジョイン、iOS デバイスでします。 手順を完了する必要があります、 [Windows Server 2012 R2 の AD FS のラボ環境を設定](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)セクション前に、このチュートリアルを試すことができます。 アクセスしたのと同じ会社の web アプリケーションにアクセスするデバイスを使用できる[チュートリアル: Windows デバイスでの社内参加](Walkthrough--Workplace-Join-with-a-Windows-Device.md)します。
+> [!IMPORTANT] 
+> このメソッドは、オンプレミスの顧客のみ完全に関連します。 ハイブリッドまたはクラウドのみのお客様は、自分の iOS デバイスを登録するのにこのメソッドを使用する必要があります。 オンプレミスの顧客がクラウドに移行することと、このメソッドに互換性がありません。 デバイスの登録を解除し、クラウドに登録されている必要があります。 
 
-## <a name="join-an-ios-device-with-workplace-join"></a>ワークプ レース ジョインで iOS デバイスを参加させる
+このトピックでは、iOS デバイスでのワークプレース ジョインについて説明します。 手順を完了する必要があります、 [Windows Server 2012 R2 で AD FS のラボ環境をセットアップ](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)セクションの前に、このチュートリアルを試すことができます。 デバイスを使用するには、同じ会社の web アプリケーションにアクセスする[チュートリアル。Windows デバイスのワークプ レース ジョイン](Walkthrough--Workplace-Join-with-a-Windows-Device.md)します。
+
+
+## <a name="join-an-ios-device-with-workplace-join"></a>ワークプレース ジョインによる iOS デバイスの参加
 
 > [!IMPORTANT]
-> IOS デバイスでの Active Directory フェデレーション サービス (AD FS) の構成に使用した、Secure Socket Layer (SSL) 証明書を信頼する必要があります、オンプレミスの DRS が構成されているときに[手順 2: デバイス登録サービスによるフェデレーション サーバー (ADFS1) を構成する](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)、ワークプ レース ジョインを正常にします。
+> IOS デバイスがで Active Directory フェデレーション サービス (AD FS) を構成するために使用した Secure Socket Layer (SSL) 証明書を信頼する必要があります、オンプレミスの DRS が構成されている[手順 2。フェデレーション サーバー (ADFS1) with Device Registration Service に構成する](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4)、ワークプ レース ジョインが成功します。
 > 
-> -   場合は、AD FS の SSL 証明書は、テスト証明機関 (CA) から発行された、iOS デバイスに証明機関の証明書をインストールする必要があります。
-> -   証明機関の証明書が、web サイトで公開されている場合、iOS デバイスから web サイトを参照して証明書をインストールします。
+> -   AD FS の SSL 証明書がテスト用の証明機関 (CA) から発行されたものである場合、その証明機関の証明書を iOS デバイスにインストールする必要があります。
+> -   証明機関の証明書が Web サイトに公開されている場合、iOS デバイスから Web サイトを参照して証明書をインストールできます。
 
-このデモでは、ワークプ レースをデバイスを参加させます。
+ここでは、デバイスを職場に参加させます。
 
-#### <a name="to-join-an-ios-device-to-a-workplace"></a>IOS デバイスを職場に参加させる
+#### <a name="to-join-an-ios-device-to-a-workplace"></a>iOS デバイスを職場に参加させるには
 
-1.  -   **ときに、Azure Active Directory Device Registration サービスは、構成済みの DRS:** Apple Safari を開いて、iOS デバイス用の Azure Active Directory Device Registration サービス Over-the-Air プロファイル エンドポイントに移動し、<`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/<yourdomainname` > で <`yourdomainname`> は Azure Active Directory で構成したドメイン名です。 たとえば、ドメイン名が contoso.com の場合は、URL は次のようになります。 `https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/contoso.com`
+1.  -   **Azure Active Directory Device Registration サービスが構成済みの DRS である場合:** Apple Safari を開いて、iOS デバイス用の Azure Active Directory Device Registration サービス Over-the-Air プロファイル エンドポイントに移動します <`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/<yourdomainname` > ここ <`yourdomainname`> Azure Active Directory で構成したドメイン名です。 たとえば、ドメイン名が contoso.com の場合、URL は次のようになります。`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/contoso.com`
 
-    -   **オンプレミスの DRS が構成済みの DRS がとき**: Apple Safari を開いて、iOS デバイス用のデバイス登録サービス (DRS) Over-the-Air プロファイル エンドポイントに移動`https://adf1s.contoso.com/enrollmentserver/otaprofile`
+    -   **オンプレミスの DRS が構成済みの DRS である場合**:Apple Safari を開いて、iOS デバイス用のデバイス登録サービス (DRS) Over-the-Air プロファイル エンドポイントに移動します `https://adf1s.contoso.com/enrollmentserver/otaprofile`
 
-    この URL をユーザーに通信するためにさまざまな方法があります。 推奨される方法の 1 つは、カスタム アプリケーション アクセスでこの URL を発行する AD FS でのメッセージが拒否されました。 これについては、今後予定されているセクションで説明:[アプリケーション アクセス ポリシーとカスタム アクセス拒否メッセージを作成](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
+    ユーザーにこの URL を伝えるには多くの方法があります。 推奨される方法の 1 つは、AD FS のカスタム アプリケーション アクセス拒否メッセージでこの URL を発行するというものです。 これについては、次のセクションで説明します。[アプリケーションのアクセス ポリシーとカスタム アクセス拒否メッセージを作成します。](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
 
-2.  会社のドメイン アカウントを使用して web ページにログオンします。 ** roberth@contoso.com **とパスワード: ** P@ssword**します。
+2.  会社のドメイン アカウントを使用して web ページにログオン: **roberth@contoso.com**とパスワード:  **P@ssword**します。
 
-3.  プロファイルのインストールを求められます。 **プロファイルのインストール**画面で、[**インストール**します。
+3.  プロファイルのインストールを求められます。 **[プロファイルのインストール]** 画面で、 **[インストール]** をクリックします。
 
-4.  プロファイルのインストールを確認するメッセージが表示されたら、] をクリックして**今すぐインストール**します。
+4.  プロファイルのインストール確認メッセージが表示されたら、 **[今すぐインストール]** をクリックします。
 
-5.  お客様のデバイスには、デバイスのロックを解除するのに PIN が必要とする場合、PIN の入力を求められます。
+5.  デバイスのロック解除にパスコードが必要な場合は、パスコードの入力を求められます。
 
-6.  表示された場合、プロファイルのインストールが完了したら、**プロファイルがインストールされている**画面です。 をクリックして**完了**します。
+6.  プロファイルのインストールが完了すると、 **[インストール完了]** 画面が表示されます。 **[完了]** をクリックします。
 
-    Safari に戻ります。 閉じるか、safari を通知するメッセージが表示されます。
+    Safari に戻ります。 Safari を閉じることができる旨のメッセージが表示されます。
 
 > [!TIP]
-> 表示したり、ワークプ レース ジョイン プロファイルを削除するを参照して**設定**、] をクリックして**全般**、] をクリックし、**プロファイル**、iOS デバイスでします。
+> ワークプレース ジョイン プロファイルを表示または削除するには、iOS デバイスで **[設定]** アイコンをクリックし、 **[一般]**、 **[プロファイル]** の順にクリックします。
 
-## <a name="see-also"></a>参照してください。
+## <a name="see-also"></a>関連項目
 
 
-- [Join to Workplace from 任意のデバイス用の SSO とシームレスな 2 要素認証を企業アプリケーション間で](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
-- [Windows Server 2012 R2 の AD FS のラボ環境を設定します。](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
-- [Windows デバイスのチュートリアル: 職場への参加](Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+- [SSO およびシームレスな第 2 の任意のデバイスから社内への参加要素用アプリケーション間での認証](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
+- [Windows Server 2012 R2 で AD FS のラボ環境のセットアップします。](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+- [チュートリアル: Windows デバイスのワークプ レース ジョイン](Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
 
 

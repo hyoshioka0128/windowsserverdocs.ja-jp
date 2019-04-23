@@ -11,15 +11,15 @@ ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: ミラーリングとパリティを含む記憶域スペース ダイレクトにおける回復性オプションの説明。
 ms.localizationpriority: medium
 ms.openlocfilehash: 4e6a29e82a85ec9570cda827060dfe1cdf192c53
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1284980"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59849573"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>記憶域スペース ダイレクトでのフォールト トレランスと記憶域の効率
 
->適用先: Windows Server 2016
+>適用先:Windows Server 2016
 
 このトピックでは、[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)で利用できる回復オプションを紹介し、規模に関する要件、記憶域の効率、一般的な利点、およびそれぞれのトレードオフの概要について説明します。 また、作業を開始するための使用方法についても説明します。このトピックでは、詳細を確認する際に役立つ優れたドキュメントやブログなどのコンテンツを参照しています。
 
@@ -27,7 +27,7 @@ ms.locfileid: "1284980"
 
 ## <a name="overview"></a>概要
 
-本来、記憶域スペースの目的は、データのフォールト トレランス ("回復性" と呼ばれる場合もあります) を実現することです。 実装方法は RAID に似ていますが、複数のサーバーに分散され、ソフトウェアで実装される点が異なります。
+本来、記憶域スペースの目的は、データのフォールト トレランス ("回復性" と呼ばれる場合もあります) を実現することです。 その実装は RAID に類似していますが、複数のサーバーに分散され、ソフトウェアで実装される点が異なります。
 
 RAID と同様に、記憶域スペースの実装方法には複数の方法があり、それぞれの方法では、フォールト トレランス、記憶域の効率、および計算の複雑さの間で発生するトレードオフが異なります。 これらの方法は、大まかに 2 つのカテゴリ "ミラーリング" と "パリティ" に分類されます。"パリティ" は、"イレイジャー コーディング (消失訂正符号)" と呼ばれる場合もあります。
 
@@ -102,7 +102,7 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 > [!IMPORTANT]
 > ほとんどのパフォーマンスが重視されるワークロードには、ミラーリングを使用することをお勧めします。 ワークロードに応じて、パフォーマンスと容量のバランスを取る方法については詳しくは、[ボリュームの計画](plan-volumes.md#choosing-the-resiliency-type)」をご覧ください。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>概要
 
 このセクションでは、記憶域スペース ダイレクトで利用可能な回復性の種類、それぞれの種類を使用するための最小スケール要件、それぞれの種類で許容できる障害の数、対応する記憶域の効率についてまとめています。
 
@@ -131,7 +131,7 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 次の表は、ハード ディスク ドライブ (HDD) とソリッドステート ドライブ (SSD) の両方が含まれているハイブリッド展開の各スケールでの、デュアル パリティとローカル再構築コードの記憶域効率を示しています。
 
-|    障害ドメイン      |    レイアウト           |    効率   |
+|    障害ドメイン      |    レイアウト           |    効率性   |
 |-----------------------|---------------------|-----------------|
 |    2                  |    –                |    –            |
 |    3                  |    –                |    –            |
@@ -153,7 +153,7 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 次の表は、ソリッドステート ドライブ (SSD) のみが含まれているオールフラッシュ展開の各スケールでの、デュアル パリティとローカル再構築コードの記憶域効率を示しています。 オールフラッシュ構成では、パリティ レイアウトで、より大きいグループ サイズを使用でき、記憶域効率の向上を実現できます。
 
-|    障害ドメイン      |    レイアウト           |    効率   |
+|    障害ドメイン      |    レイアウト           |    効率性   |
 |-----------------------|---------------------|-----------------|
 |    2                  |    –                |    –            |
 |    3                  |    –                |    –            |
@@ -179,18 +179,18 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 次の 6 つの例は、3 方向ミラーリングやデュアル パリティで対処**できる**状態を示しています。
 
-- **1.**    1 つのドライブが失われた (キャッシュ ドライブを含む)
-- **2.**    1 台のサーバーが失われた
+- **1.**  1 つのドライブを紛失 (キャッシュ ドライブを含む)
+- **2.**  1 つのサーバーが失われる
 
 ![fault-tolerance-examples-1-and-2](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-12.png)
 
-- **3.**    1 台のサーバーと 1 つのドライブが失われた
-- **4.**    異なるサーバーの 2 つのドライブが失われた
+- **3.**  1 つのサーバーと 1 つのドライブの紛失
+- **4.**  別のサーバーで 2 つのドライブが失われる
 
 ![fault-tolerance-examples-3-and-4](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-34.png)
 
-- **5.**    2 台を超えるドライブが失われたが、影響を受けるサーバーが最大で 2 台である
-- **6.**    2 台のサーバーが失われた
+- **5.**  複数の 2 つのドライブが失われ、最大で 2 つのサーバーが影響を受ける限り
+- **6.**  2 つのサーバーが失われる
 
 ![fault-tolerance-examples-5-and-6](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-56.png)
 
@@ -200,8 +200,8 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 有効期間中は、記憶域スペースでは任意の数の障害に対応できます。これは、各障害が発生した後で、十分な時間があれば、完全な回復状態に復元されるためです。 ただし、特定の時点で、最大で 2 つの障害ドメインが障害の影響を受けても安全です。 したがって、次に示す例は、3 方向ミラーリングやデュアル パリティでは対処**できない**状態です。
 
-- **7.** 同時に 3 台以上のサーバーでドライブが失われた
-- **8.** 同時に 3 台以上のサーバーが失われた
+- **7.** 次の 3 つまたは複数のサーバーでドライブが一度に失われること
+- **8.** 次の 3 つまたは複数のサーバーが一度に失われる
 
 ![fault-tolerance-examples-7-and-8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
@@ -213,10 +213,10 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 以下のすべてのリンクは、このトピックの本文内に記載されています。
 
-- [Storage Spaces Direct in Windows Server 2016 (Windows Server 2016 の記憶域スペース ダイレクト)](storage-spaces-direct-overview.md)
-- [Fault Domain Awareness in Windows Server 2016 (Windows Server 2016 での障害ドメインの認識)](../../failover-clustering/fault-domains.md)
-- [Erasure Coding in Azure by Microsoft Research (Microsoft Research による Azure でのイレイジャー コーディング)](https://www.microsoft.com/en-us/research/publication/erasure-coding-in-windows-azure-storage/)
-- [Local Reconstruction Codes and Accelerating Parity Volumes (ローカル再構築コードとパリティ ボリュームの高速化)](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
-- [Volumes in the Storage Management API (Storage Management API でのボリューム)](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
-- [Storage Efficiency Demo at Microsoft Ignite 2016 (Microsoft Ignite 2016 での記憶域の効率に関するデモ)](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
-- [Capacity Calculator for Storage Spaces Direct (記憶域スペース ダイレクトの容量計算 (プレビュー版))](http://aka.ms/s2dcalc)
+- [Windows Server 2016 での記憶域スペース ダイレクト](storage-spaces-direct-overview.md)
+- [Windows Server 2016 での障害ドメインの認識](../../failover-clustering/fault-domains.md)
+- [Azure では、Microsoft Research のイレイジャー コーディング](https://www.microsoft.com/en-us/research/publication/erasure-coding-in-windows-azure-storage/)
+- [ローカルの再構築コードと加速度的パリティ ボリューム](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
+- [記憶域管理 API でのボリューム](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
+- [Ignite 2016 の microsoft 記憶域の効率性のデモ](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
+- [容量の計算ツール PREVIEW の記憶域スペース ダイレクト](http://aka.ms/s2dcalc)

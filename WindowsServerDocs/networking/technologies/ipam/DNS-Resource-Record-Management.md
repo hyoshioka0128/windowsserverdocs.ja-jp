@@ -13,20 +13,21 @@ ms.topic: article
 ms.assetid: 7b66c09d-e401-4f70-9a2a-6047dd629bfa
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5ed781ef37243b80ea9da8aad27a29046b8dc8c9
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 2edf0fef80cfcfb2c754cacd53df3b38c3881733
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59844613"
 ---
 # <a name="dns-resource-record-management"></a>DNS リソース レコードの管理
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-このトピックでは、IPAM を使用して DNS リソース レコードの管理に関する情報を提供します。  
+このトピックでは、IPAM を使用して DNS リソース レコードの管理についての情報を提供します。  
   
 > [!NOTE]  
-> このトピックに加えは次の DNS リソース レコードの管理のトピックはこのセクションで利用できます。  
+> このトピックに加えは次の DNS リソース レコードの管理のトピックはこのセクションで使用可能です。  
 >   
 > -   [DNS リソース レコードを追加します。](../../technologies/ipam/Add-a-DNS-Resource-Record.md)  
 > -   [DNS リソース レコードを削除します。](../../technologies/ipam/Delete-DNS-Resource-Records.md)  
@@ -34,16 +35,16 @@ ms.lasthandoff: 03/28/2018
 > -   [特定の IP アドレスの DNS リソース レコードを表示します。](../../technologies/ipam/View-DNS-Resource-Records-for-a-Specific-IP-Address.md)  
   
 ## <a name="resource-record-management-overview"></a>リソース レコードの管理の概要  
-Windows Server 2016 で IPAM を展開するときに、IPAM サーバーの管理コンソールに DHCP サーバーと DNS サーバーを追加するサーバーの検出を行うことができます。 IPAM サーバー、動的に DNS データを収集 6 時間おきように構成されている DNS サーバーから管理します。 IPAM では、この DNS データを保存する場所をローカル データベースを維持します。 IPAM は、1 日と時刻は次の日を知らせるだけでなく、サーバーのデータが収集された DNS サーバーからのデータ収集が実行される時間の通知を提供します。  
+Windows Server 2016 での IPAM を展開するときに、IPAM サーバーの管理コンソールに DHCP および DNS サーバーを追加するサーバーの検出を行うことができます。 IPAM サーバー、動的に DNS からデータを収集 6 時間ごとに構成されている DNS サーバーを管理します。 IPAM では、この DNS データを格納する場所のローカル データベースを保持します。 IPAM は、1 日と、次の日を示すと、サーバーのデータが収集された時刻が DNS サーバーからのデータ収集の発生時の通知を提供します。  
   
-次の図に黄色のステータス バーは、IPAM 通知のユーザー インターフェイスの場所を示します。  
+次の図に黄色のステータス バーには、IPAM の通知のユーザー インターフェイスの場所が表示されます。  
   
 ![IPAM 通知](../../media/DNS-Resource-Record-Management/ipam_DataCollection_01.jpg)  
   
-収集される DNS データには、DNS ゾーンとリソース レコードの情報が含まれます。 優先 DNS サーバーからゾーン情報を収集するための IPAM を構成することができます。  IPAM では、ファイル ベースと Active Directory ゾーンを収集します。  
+収集された DNS データには、DNS ゾーンとリソース レコードの情報が含まれます。 優先 DNS サーバーからゾーンの情報を収集するための IPAM を構成することができます。  IPAM では、ファイル ベースと Active Directory ゾーンを収集します。  
   
 > [!NOTE]  
-> IPAM では、ドメインに参加している Microsoft DNS サーバーからのみデータを収集します。 IPAM では、サード パーティの DNS サーバーと非ドメインに参加しているサーバーがサポートされていません。  
+> IPAM では、ドメインに参加している Microsoft DNS サーバーからのみデータを収集します。 IPAM では、サード パーティの DNS サーバーとドメイン非参加のサーバーがサポートされていません。  
   
 IPAM によって収集される DNS リソース レコードの種類の一覧を次に示します。  
   
@@ -59,7 +60,7 @@ IPAM によって収集される DNS リソース レコードの種類の一覧
   
 -   ホスト A または AAAA  
   
--   ホストの情報  
+-   ホスト情報  
   
 -   ISDN  
   
@@ -71,7 +72,7 @@ IPAM によって収集される DNS リソース レコードの種類の一覧
   
 -   責任者  
   
--   経由してルーティングします。  
+-   経由でルーティングします。  
   
 -   サービスの場所  
   
@@ -79,7 +80,7 @@ IPAM によって収集される DNS リソース レコードの種類の一覧
   
 -   SRV  
   
--   テキスト  
+-   Text  
   
 -   既知のサービス  
   
@@ -89,31 +90,31 @@ IPAM によって収集される DNS リソース レコードの種類の一覧
   
 -   X.25  
   
-Windows Server 2016 では、IPAM は、IP アドレス インベントリ、DNS ゾーン、および DNS リソース レコード間の統合を提供します。  
+Windows Server 2016 では、IPAM は、IP アドレス インベントリ、DNS ゾーンと DNS リソース レコードとの統合を提供します。  
   
--   IPAM を使用するには、IP アドレス インベントリの DNS リソース レコードからを自動的に作成します。  
+-   IPAM を使用すると、自動的に DNS リソース レコードからの IP アドレス インベントリを作成します。  
   
--   DNS の A レコードと AAAA リソースのレコードから IP アドレス インベントリを手動で作成することができます。  
+-   IP アドレス インベントリは、DNS A レコードと AAAA のリソース レコードを手動で作成できます。  
   
--   特定の DNS ゾーンの DNS リソース レコードを表示し、種類、IP アドレス、リソース レコードのデータ、およびその他のフィルタ リング オプションに基づいてレコードをフィルター処理できます。  
+-   特定の DNS ゾーンの DNS リソース レコードを表示し、種類、IP アドレス、リソース レコードのデータ、およびその他のフィルター処理オプションに基づいてレコードをフィルター処理できます。  
   
--   IPAM では、IP アドレスの範囲と DNS 逆引き参照ゾーン間のマッピングが自動的に作成します。  
+-   IPAM では、IP アドレスの範囲と DNS 逆引き参照ゾーン間のマッピングが自動的に作成されます。  
   
--   IPAM では、IP アドレスの逆引き参照ゾーンに存在し、その IP アドレスの範囲に含まれている PTR レコードを作成します。 必要な場合は、このマッピングも手動で変更できます。  
+-   IPAM では、逆引き参照ゾーンに存在し、その IP アドレスの範囲に含まれている PTR レコードの IP アドレスを作成します。 必要な場合にも手動で、このマッピングを変更することができます。  
   
-IPAM では、IPAM コンソールからリソース レコードでは、次の操作を実行することができます。  
+IPAM では、IPAM コンソールからリソース レコードに対して次の操作を実行できます。  
   
 -   DNS リソース レコードを作成します。  
   
 -   DNS リソース レコードを編集します。  
   
--   DNS リソース レコードを削除します。  
+-   DNS リソース レコードの削除  
   
--   関連するリソース レコードを作成します。  
+-   関連付けられたリソース レコードを作成します。  
   
-IPAM では、IPAM コンソールを使用してすべての DNS 構成の変更が自動的に記録されます。  
+IPAM は、IPAM コンソールを使用してすべての DNS 構成変更を自動的に記録します。  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
 [IPAM を管理します。](Manage-IPAM.md)  
   
 

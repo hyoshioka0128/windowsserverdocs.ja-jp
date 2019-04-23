@@ -1,0 +1,65 @@
+---
+title: ボリュームの raid を作成します。
+description: 'Windows コマンド」のトピック * * *- '
+ms.custom: na
+ms.prod: windows-server-threshold
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 9f257950-9240-4d5f-9537-8ad653d48ebf
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+ms.openlocfilehash: 432d661d8c0ce4cae6fe08a2671e8f9d613ce351
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59846783"
+---
+# <a name="create-volume-raid"></a>ボリュームの raid を作成します。
+
+>適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+
+RAID を作成します。\-3 つ以上を使用して 5 つのボリュームはダイナミック ディスクを指定します。  
+  
+> [!IMPORTANT]  
+> この DiskPart コマンドは、Windows Vista のエディションでご利用いただけません。  
+  
+  
+  
+## <a name="syntax"></a>構文  
+  
+```  
+create volume raid [size=<n>] disk=<n>,<n>,<n>[,<n>,...] [align=<n>] [noerr]  
+```  
+  
+## <a name="parameters"></a>パラメーター  
+  
+|パラメーター|説明|  
+|-------|--------|  
+|サイズ\=<n>|メガバイト単位でのディスク領域の量\(MB\)ボリュームが各ディスクで占有します。 かどうかのサイズは指定しないと、最大の可能な RAID\-5 ボリュームが作成されます。 使用可能な連続した空き容量が最小ディスク サイズを決定します raid\-5 ボリュームと同じ大きさの領域が各ディスクから割り当てられます。 実際、RAID の使用可能なディスク領域の量\-5 ボリュームがディスク領域の合計量よりも小さいディスク領域の一部がパリティの場合に必要なためです。|  
+|ディスク\=<n>、<n>、<n>\[、<n>、.\]|ダイナミック ディスクで RAID を作成する\-5 ボリューム。 RAID を作成するには少なくとも 3 つのダイナミック ディスクが必要\-5 ボリューム。 等しい領域の量**サイズ\=<n>** が各ディスクに割り当てられます。|  
+|配置\=<n>|すべてのボリュームのエクステント近いシリンダー境界に揃えて配置します。 ハードウェア RAID の論理ユニット番号で通常使用\(LUN\)パフォーマンスを向上させるために配列。 *n*キロバイト数は、 \(KB\)近いシリンダー境界にディスクの先頭から。|  
+|noerr|スクリプト専用です。 エラーが発生すると、DiskPart は、エラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|  
+  
+## <a name="remarks"></a>注釈  
+  
+-   ボリュームを作成すると、フォーカスは自動的に新しいボリュームに移動します。  
+  
+## <a name="BKMK_examples"></a>例  
+RAID を作成する\-ディスク 1、2、3 の型を使用して、サイズ 1000 のメガバイト数の 5 つのボリューム。  
+  
+```  
+create volume raid size=1000 disk=1,2,3  
+```  
+  
+#### <a name="additional-references"></a>その他の参照  
+[コマンドライン構文キー](command-line-syntax-key.md)  
+  
+
+  
+

@@ -1,6 +1,6 @@
 ---
-title: "ソフトウェアの制限のポリシーをメール ウイルスからコンピューターを保護するために使用します。"
-description: "Windows Server のセキュリティ"
+title: ソフトウェアの制限のポリシーを使用した電子メール ウイルスからのコンピューターの保護
+description: Windows Server のセキュリティ
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,55 +14,56 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: 41b4c2399a86ef96d34b62295eda4a1ce9300609
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59850673"
 ---
-# <a name="use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus"></a>ソフトウェアの制限のポリシーをメール ウイルスからコンピューターを保護するために使用します。
+# <a name="use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus"></a>ソフトウェアの制限のポリシーを使用した電子メール ウイルスからのコンピューターの保護
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-このトピックでは、メール ウイルスから始まる Windows Server 2008 および Windows Vista からコンピューターを保護するために、ソフトウェア制限ポリシー (SRP) を使用してアプリケーション制御の設定方法のポリシー情報を提供します。
+このトピックでは、アプリケーション制御を設定する方法のポリシーに対しても Windows Server 2008 および Windows Vista 電子メール ウイルスからコンピューターを保護するためにソフトウェア制限ポリシー (SRP) を使用して情報を提供します。
 
 ## <a name="introduction"></a>概要
-ソフトウェア制限ポリシー (SRP) は、ドメイン内のコンピューターで実行されているソフトウェア プログラムを指定し、これらのプログラムを実行する機能を制御する、グループ ポリシー ベースの機能です。 厳しく制限されているしたアプリケーションに限って実行を許可する、コンピューターの構成を作成するのにには、ソフトウェアの制限のポリシーを使用します。 これらは、Microsoft Active Directory Domain Services とグループ ポリシーに統合されているが、スタンドアロン コンピューター上で構成することもあります。 SRP の開始点は、次を参照してください。、 [Software Restriction Policies](software-restriction-policies.md)します。
+ソフトウェアの制限のポリシー (SRP) はグループ ポリシー ベースの機能で、ドメイン内のコンピューターで実行されているソフトウェア プログラムを識別し、これらのプログラムを実行する機能を制御します。 ソフトウェアの制限のポリシーを使えば、コンピューターの構成に厳格な制限を加え、指定したアプリケーションに限って実行を許可することができます。 これらは、Microsoft Active Directory Domain Services とグループ ポリシーに統合されますが、スタンドアロン コンピューター上で構成することもできます。 SRP の開始点は、次を参照してください。、[ソフトウェア制限ポリシー](software-restriction-policies.md)します。
 
-Windows Server 2008 R2 および Windows 7 以降、Windows AppLocker を使用できるの代わりに、または SRP と連動してアプリケーション制御戦略の一部を受け取ります。 
+Windows Server 2008 R2 および Windows 7 以降、Windows AppLocker できますの代わりに、または SRP と連携してアプリケーション制御戦略の一部。 
 
-#### <a name="configure-srp-to-help-protect-against-an-e-mail-virus"></a>電子メールのウイルスから保護するために SRP を構成します。
+#### <a name="configure-srp-to-help-protect-against-an-e-mail-virus"></a>電子メールのウイルスから保護するための SRP を構成します。
 
-1.  ソフトウェアの制限のポリシーを SRP のしくみを理解するためのベスト プラクティスを確認します。
+1.  ソフトウェアの制限のポリシー SRP のしくみを理解するためのベスト プラクティスを確認します。
 
     -   [ベスト プラクティス](software-restriction-policies-technical-overview.md#BKMK_Best_Practices)
 
-    -   [ソフトウェアの制限のポリシーのしくみ](https://technet.microsoft.com/library/cc786941(v=WS.10).aspx)
+    -   [ソフトウェア制限ポリシーのしくみ](https://technet.microsoft.com/library/cc786941(v=WS.10).aspx)
 
-2.  ソフトウェアの制限のポリシーを開きます。
+2.  [ソフトウェアの制限のポリシー] を開きます。
 
-    -   [ローカル コンピューターに対して](administer-software-restriction-policies.md#BKMK_1)
+    -   [ローカル コンピューターの](administer-software-restriction-policies.md#BKMK_1)
 
-    -   [ドメインのサイト、または組織単位、使用しているメンバー サーバーまたはドメインに参加しているワークステーション上](administer-software-restriction-policies.md#BKMK_2)
+    -   [ドメインのサイト、または組織単位とする、メンバー サーバーまたはドメインに参加しているワークステーション](administer-software-restriction-policies.md#BKMK_2)
 
-3.  ソフトウェアの制限のポリシーをまだ定義していない場合は、新しいソフトウェアの制限のポリシーを作成します。
+3.  ソフトウェア制限ポリシーをまだ定義していない場合は、新しいソフトウェアの制限のポリシーを作成します。
 
     -   [新しいソフトウェアの制限のポリシーを作成するには](administer-software-restriction-policies.md#BKMK_Create_SRP)
 
-4.  電子メール プログラムを使用して、電子メールの添付ファイルを実行するフォルダーのパスの規則を作成し、セキュリティ設定レベルを**許可しない**します。
+4.  電子メール プログラムを使用して電子メールの添付ファイルを実行するフォルダーのパスの規則を作成し、セキュリティ設定レベルを**許可しない**します。
 
     -   [パスの規則の操作](work-with-software-restriction-policies-rules.md#BKMK_Path_Rules)
 
-5.  規則を適用するファイルの種類を指定します。
+5.  規則が適用されるファイルの種類を指定します。
 
-    -   [追加または指定されたファイルの種類を削除するには](administer-software-restriction-policies.md#BKMK_Add_Del)
+    -   [指定されたファイルの種類を追加、削除します。](administer-software-restriction-policies.md#BKMK_Add_Del)
 
-6.  ユーザーとグループを適用するために、ポリシー設定を変更します。
+6.  ユーザーとグループに適用されるように、ポリシー設定を変更します。
 
-    -   ユーザーまたはグループをたくない、グループ ポリシー オブジェクト (GPO) を指定するポリシー設定を適用します。
+    -   ユーザーまたはグループをたくないグループ ポリシー オブジェクト (GPO) を指定するポリシー設定を適用します。
 
-    -   ローカル管理者を特定のポリシー設定では、グループ ポリシーのソフトウェアの制限のポリシーから除外して、他のグループ ポリシー管理者に適用します。
+    -   ローカルの administrators をグループ ポリシーで特定のポリシー設定のソフトウェア制限ポリシーから除外して、他のグループ ポリシー管理者に適用。
 
-        -   [ソフトウェアの制限のポリシーをローカルの管理者に適用されないようにするには](administer-software-restriction-policies.md#BKMK_Prevent_Admin)
+        -   [ソフトウェア制限ポリシーがローカルの管理者に適用するを防ぐために](administer-software-restriction-policies.md#BKMK_Prevent_Admin)
 
 7.  ポリシーをテストします。
 

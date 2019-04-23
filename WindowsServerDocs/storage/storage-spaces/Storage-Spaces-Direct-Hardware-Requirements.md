@@ -10,98 +10,98 @@ author: eldenchristensen
 ms.date: 04/12/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 84d10ab3e25500720dd13e2ba057dc3c5bf05a6f
-ms.sourcegitcommit: 515b4fd5c40fcbae0e12a2c30090384533972353
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "8232531"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59849323"
 ---
-# 記憶域スペース ダイレクトのハードウェア要件
+# <a name="storage-spaces-direct-hardware-requirements"></a>記憶域スペース ダイレクトのハードウェア要件
 
-> 適用対象: Windows Server 2016、Windows Server Insider Preview
+> 適用対象:Windows Server 2016、Windows Server Insider プレビュー
 
 このトピックでは、記憶域スペース ダイレクトを使用するための最小ハードウェア要件について説明します。
 
-Microsoft、運用環境には、展開ツールと手順が含まれるパートナーからこれらの[Windows Server ソフトウェア定義](https://microsoft.com/wssd)のハードウェア/ソフトウェア製品ことをお勧めします。 オブジェクトは設計、アセンブル、および互換性と取得するための信頼性とすばやく実行していることを確認するには、当社の参照をアーキテクチャに対して検証します。 詳しくは、[https://microsoft.com/wssd](https://microsoft.com/wssd) をご覧ください。
+Microsoft では、運用環境の推奨これら[Windows Server ソフトウェア定義](https://microsoft.com/wssd)展開ツールと手順を含むパートナー ハードウェア/ソフトウェアを提供します。 設計は、アセンブリ、互換性および取得するための信頼性と簡単に実行されているように、参照アーキテクチャの検証にあり。 詳しくは、[https://microsoft.com/wssd](https://microsoft.com/wssd) をご覧ください。
 
 ![Windows Server ソフトウェア定義のパートナーのロゴ](media/hardware-requirements/wssd-partners.png)
 
    > [!TIP]
-   > 記憶域スペース ダイレクトを評価したいが、ハードウェアがないかどうか。 [使用して記憶域スペース ダイレクトでは、ゲスト仮想マシン クラスター](storage-spaces-direct-in-vm.md)で説明したようには、HYPER-V または Azure の仮想マシンを使用します。
+   > 記憶域スペース ダイレクトを評価するたいが、ハードウェアを持っていないでしょうか。 」の説明に従って、HYPER-V または Azure の仮想マシンを使用して[を使用して記憶域スペース ダイレクトでは、仮想マシンのゲスト クラスター](storage-spaces-direct-in-vm.md)します。
 
-## 基本の要件
+## <a name="base-requirements"></a>基本的な要件
 
-システム、コンポーネント、デバイス、およびドライバーは、 **Windows Server 2016 の認定**を[Windows Server Catalog](https://www.windowsservercatalog.com)ごとである必要があります。 さらに、お勧めしますが、サーバー、ドライブ、ホスト バス アダプター、およびネットワーク アダプターある、 **Software-Defined データ センター (SDDC) の標準**や**Software-Defined データ センター (SDDC) Premium**の追加の条件 (AQs) になっている場合は以下に。 SDDC AQs の 1,000 人を超えるコンポーネントがあります。
+システム、コンポーネント、デバイス、およびドライバーである必要があります**Windows Server 2016 認定**ごと、 [Windows Server Catalog](https://www.windowsservercatalog.com)します。 さらに、サーバー、ドライブ、ホスト バス アダプター、およびネットワーク アダプターが推奨、 **Software-Defined データ センター (SDDC) 標準**や**Software-Defined データ センター (SDDC) Premium**追加の制限 (AQs)、下図とがあります。 SDDC AQs と 1,000 を超えるコンポーネントがあります。
 
-![SDDC AQs を示す Windows Server catalog のスクリーン ショット](media/hardware-requirements/sddc-aqs.png)
+![SDDC AQs を示す Windows Server カタログのスクリーン ショット](media/hardware-requirements/sddc-aqs.png)
 
-完全に構成されたクラスター (サーバー、ネットワーク、および記憶域) は、フェールオーバー クラスター マネージャーでまたはウィザードごとにすべての[クラスター検証テスト](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)に渡す必要があります、 `Test-Cluster` PowerShell の[コマンドレット](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)です。
+(サーバー、ネットワーク、および記憶域) は、完全に構成されたクラスターは、すべてを渡す必要があります[クラスター検証テストの](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)ウィザードでは、フェールオーバー クラスター マネージャーまたはにあたり、 `Test-Cluster` [コマンドレット](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)powershell。
 
 さらに、次の要件が適用されます。
 
-## サーバー
+## <a name="servers"></a>サーバー
 
-- 最低 2 台のサーバー、最大 16 台のサーバー
-- すべてのサーバーを同じ製造元とモデルをお勧めします
+- 2 台～ 16 台
+- すべてのサーバーが、同じ製造元とモデルにすることをお勧めします
 
-## CPU
+## <a name="cpu"></a>CPU
 
-- Intel Nehalem または以降の互換プロセッサ。または
-- AMD EPYC または以降の互換プロセッサ
+- Intel Nehalem または後で互換性のあるプロセッサ。または
+- AMD EPYC または互換プロセッサを後で
 
-## メモリ
+## <a name="memory"></a>メモリ
 
-- Windows Server、Vm では、およびその他のアプリやワークロード; メモリプラス
-- 4 GB の RAM ごとの記憶域スペース ダイレクト メタデータの各サーバーで、キャッシュ ドライブ容量テラバイト (TB)
+- Windows Server、Vm、およびその他のアプリまたはワークロード; 用のメモリプラス
+- 4 GB の記憶域スペース ダイレクトのメタデータの各サーバーで、キャッシュ ドライブ容量のテラバイト (TB) あたりの RAM
 
-## Boot
+## <a name="boot"></a>Boot
 
-- [SATADOM が追加されました](https://cloudblogs.microsoft.com/windowsserver/2017/08/30/announcing-support-for-satadom-boot-drives-in-windows-server-2016/)が、Windows Server でサポートされている任意のブート デバイス
-- RAID 1 ミラーは必須では**ありません**が、ブートがサポートされています。
-- 200 GB の最小サイズをお勧めします。
+- Windows Server でサポートされているすべてのブート デバイスを[SATADOM が含まれています](https://cloudblogs.microsoft.com/windowsserver/2017/08/30/announcing-support-for-satadom-boot-drives-in-windows-server-2016/)
+- RAID 1 ミラーが**いない**ブートすることは必須ですが
+- 推奨:200 GB の最小サイズ
 
-## ネットワーク
+## <a name="networking"></a>ネットワーク
 
-(小規模な 2 ~ 3 ノード) 用の最小値
-- 10 Gbps のネットワーク インターフェイス
-- 2 ノードに直接接続 (スイッチレス) がサポートされています。
+最小値 (小規模な 2 ~ 3 ノード)
+- 10 Gbps ネットワーク インターフェイス
+- 2 ノードの直接接続 (スイッチレス ・) がサポートされています
 
-(スケール、または 4 つ以上のノードの展開での高パフォーマンス) をお勧めします。
-- (推奨) iWARP または RoCE のリモート ダイレクト メモリ アクセス (RDMA) 対応である Nic
-- 冗長性とパフォーマンスのための 2 つ以上の Nic
-- 25 Gbps のネットワーク インターフェイス以上
+(高パフォーマンス、スケール、または 4 + ノードのデプロイ) をお勧めします。
+- (推奨) iWARP または RoCE はリモート ダイレクト メモリ アクセス (RDMA) 対応 Nic
+- 冗長性とパフォーマンスのための 2 つまたは複数の Nic
+- 25 Gbps ネットワーク インターフェイスまたはそれ以降
 
-## ドライブ
+## <a name="drives"></a>ドライブ
 
-記憶域スペース ダイレクトの直接接続の SATA、SAS、または NVMe ドライブ 1 台のサーバーに物理的に接続されていると連携します。 ドライブ選択の他のヒントについては、「[ドライブの選択](choosing-drives.md)」をご覧ください。
+直接接続された SATA、SAS、nvme ドライブと 1 台のサーバーに物理的に接続されている記憶域スペース ダイレクトは機能します。 ドライブ選択の他のヒントについては、「[ドライブの選択](choosing-drives.md)」をご覧ください。
 
-- これは、SATA、SAS、NVMe (M.2、U.2、およびカードでの登録) すべてサポートされているドライブ
-- 512n、512 e、および 4 K ネイティブのドライブのすべてをサポートします。
-- ソリッドステート ドライブが[電源障害の保護](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)を提供する必要があります。
-- 同じ数と種類のすべてのサーバーでドライブは、[ドライブの対称性に関する考慮事項](drive-symmetry-considerations.md)を参照してください。
-- NVMe ドライバーは、Microsoft のボックスは、または NVMe ドライバーを更新します。
-- 推奨: データ格納用ドライブの数は、キャッシュ ドライブの数の倍数
-- 推奨: キャッシュ ドライブする必要がありますが高い書き込み耐久性: 3 以上ドライブの書き込み-1 日あたり (DWPD) または日当たりの tbw () – 1 日あたり 4 つ以上のテラバイト[drive writes per day DWPD ()、書き込みテラバイト数 (TBW) の推奨最小を記憶域を参照してくださいスペース ダイレクト](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
+- SATA、SAS、NVMe (M.2、U.2、およびカードでの登録) のドライブはすべてサポートされます。
+- 512n、512 e、および 4 K ネイティブ ドライブのすべてをサポートします。
+- ソリッド ステート ドライブを指定する必要があります[電力喪失の保護](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)
+- 同じ数と種類のすべてのサーバーでドライブを参照してください[ドライブ対称性に関する考慮事項。](drive-symmetry-considerations.md)
+- NVMe ドライバーでは、Microsoft のボックスは、または、NVMe ドライバーを更新します。
+- 推奨:容量のドライブの数は、キャッシュ ドライブの数の倍数
+- 推奨:キャッシュ ドライブの書き込み頻度の高い耐久性がある必要があります: には少なくとも 3 ドライブ書き込み-1 日 (DWPD) または 1 日あたりの (TBW) の記述で少なくとも 4 つのテラバイトを参照してください。[理解ドライブ書き込みます (DWPD) 1 日あたりテラバイトに書き込まれます (TBW) との最小値ストレージをお勧めします。スペース ダイレクト](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 
 記憶域スペース ダイレクトのドライブを接続する方法を次に示します。
 
 1. SATA ドライブの直接接続
-2. 直接接続された最新の NVMe ドライブ
-3. SAS ドライブと SAS ホスト バス アダプター (HBA)
-4. SATA ドライブと SAS ホスト バス アダプター (HBA)
-5. **サポートされていません:** RAID コント ローラー カードまたは SAN (ファイバー チャネル、iSCSI、FCoE) 記憶域。 ホスト バス アダプター (HBA) カードには、単純なパススルー モードを実装する必要があります。
+2. NVMe ドライブの直接接続
+3. SAS ドライブで SAS ホスト バス アダプター (HBA)
+4. SATA ドライブを使用した SAS ホスト バス アダプター (HBA)
+5. **サポートされていません。** RAID コント ローラー カードまたは SAN (ファイバ チャネル、iSCSI、FCoE) ストレージ。 ホスト バス アダプター (HBA) カードでは、単純なパススルー モードを実装する必要があります。
 
-![サポートされているドライブの図が相互接続します。](media/hardware-requirements/drive-interconnect-support-1.png)
+![サポートされているドライブのダイアグラムの相互接続します。](media/hardware-requirements/drive-interconnect-support-1.png)
 
-ドライブは、サーバーに内部または外部の筐体の 1 つだけに接続されているサーバーです。 SCSI エンクロージャ サービス (SES) は、スロット マッピングと識別必要があります。 各外部の筐体には、一意の識別子 (一意の ID) を表示する必要があります。
+ドライブ、サーバーの内部または外部のエンクロージャでは 1 つだけに接続されているサーバー。 SCSI エンクロージャ サービス (SES) は、スロットのマッピングと識別に必要です。 各外部エンクロージャでは、一意の識別子 (一意の ID) を示す必要があります。
 
-1. 内部サーバーのドライブ
-2. 1 台のサーバーに接続されている外部エンクロージャ ("JBOD") でドライブします。
-3. **サポートされていません:** 共有 SAS エンクロージャを複数のサーバーまたは任意の形式のマルチパス IO (MPIO) ドライブに複数のパスを使用してアクセスできる場所に接続されます。
+1. サーバーの内部ドライブ
+2. 1 つのサーバーに接続されている外部エンクロージャ ("JBOD") に存在するドライブします。
+3. **サポートされていません。** 共有の SAS エンクロージャは、複数のサーバーまたは任意の形式のマルチパス IO (MPIO) ドライブが複数のパスによってアクセス可能な場所に接続します。
 
-![サポートされているドライブの図が相互接続します。](media/hardware-requirements/drive-interconnect-support-2.png)
+![サポートされているドライブのダイアグラムの相互接続します。](media/hardware-requirements/drive-interconnect-support-2.png)
 
-### ドライブの最小数 (ブート ドライブを除く)
+### <a name="minimum-number-of-drives-excludes-boot-drive"></a>ドライブの最小数 (ブート ドライブを除く)
 
 - キャッシュとして使用するドライブがある場合、サーバーあたり 2 つ以上のドライブが必要です。
 - サーバーあたり 4 つ以上のデータ格納用 (非キャッシュ) ドライブが必要です。
@@ -116,9 +116,9 @@ Microsoft、運用環境には、展開ツールと手順が含まれるパー�
 | NVMe + SSD + HDD      | 2 つの NVMe + 4 つのそれ以外のドライブ       |
 
    >[!NOTE]
-   > 次の表は、ハードウェア展開では、最小値を提供します。 仮想マシンを展開して、記憶域をなど、Microsoft azure では、仮想化する場合[を使用して記憶域スペース ダイレクトでは、ゲスト仮想マシンのクラスター](storage-spaces-direct-in-vm.md)を参照してください。
+   > この表では、ハードウェアのデプロイの最小値を示します。 仮想化と仮想マシンを展開する場合など、Microsoft Azure storage を参照してください[を使用して記憶域スペース ダイレクトでは、仮想マシンのゲスト クラスター](storage-spaces-direct-in-vm.md)します。
 
-### 最大容量
+### <a name="maximum-capacity"></a>最大容量
 
-- サーバーあたり最大 100 テラバイト (TB) 生の記憶域容量をお勧めします。
-- 最大 1 ペタバイト (1,000 TB) 生の容量、記憶域プール
+- 推奨:サーバーあたり最大 100 tb (テラバイト) 生の記憶域の容量
+- 最大 1 ペタバイト (1,000 TB) 生の記憶域プール容量

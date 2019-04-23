@@ -1,6 +1,6 @@
 ---
-title: ツール拡張機能を iFrame を追加します。
-description: Windows Admin Center SDK (Project Honolulu) ツールの拡張機能の開発 - iFrame をツールの拡張機能を追加します。
+title: ツール拡張機能に iFrame を追加する
+description: 開発ツールの拡張機能 Windows Admin Center SDK (プロジェクト ホノルル) - ツールの拡張機能に iFrame を追加します。
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,32 +8,32 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 7b4a7b688e4b2d9f52e44395c19211b91b964578
-ms.sourcegitcommit: be0144eb59daf3269bebea93cb1c467d67e2d2f1
+ms.openlocfilehash: 7cf1dcec1bc8e187b6db789c5402ca8119ca8b6c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4080929"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59850763"
 ---
-# ツール拡張機能を iFrame を追加します。
+# <a name="add-an-iframe-to-a-tool-extension"></a>ツール拡張機能に iFrame を追加する
 
->適用対象: Windows Admin Center、Windows Admin Center Preview
+>適用先:Windows Admin Center、Windows Admin Center プレビュー
 
-この記事では、Windows Admin Center CLI を使用しましたが、新しい空のツールの拡張機能に、iFrame を追加します。
+この記事では、Windows Admin Center CLI を使用して作成した新しい、空のツールの拡張機能に、iFrame を追加します。
 
-## 環境の準備 ##
+## <a name="prepare-your-environment"></a>環境の準備 ##
 
-まだの場合は、[ツールの拡張機能の開発](..\develop-tool.md)環境を準備して、新しい空のツールの拡張機能を作成するに指示に従います。
+まだインストールしていない場合の手順を実行[ツールの拡張機能を開発](..\develop-tool.md)環境の準備を新規作成は、ツールの拡張機能を空にします。
 
-## モジュールをプロジェクトに追加します。 ##
+## <a name="add-a-module-to-your-project"></a>モジュール プロジェクトへの追加します。 ##
 
-これを次の手順で iFrame を追加しますが、プロジェクトに新しい[空のモジュール](add-module.md)を追加します。  
+新しい追加[空モジュール](add-module.md)を次の手順で iFrame を追加しましたが、プロジェクトにします。  
 
-## IFrame をモジュールに追加します。 ##
+## <a name="add-an-iframe-to-your-module"></a>IFrame をモジュールに追加します。 ##
 
-先ほど作成したが、新しい空のモジュールを iFrame を追加します。
+先ほど作成したその新しい、空のモジュールに iFrame を追加します。
 
-\Src\app\、モジュール フォルダーを参照し、ファイルを開く```{!module-name}.component.html```、次の命名規則で見つかった。
+\Src\app で\,モジュール フォルダーに移動し、ファイルを開く```{!module-name}.component.html```、次の名前付け規則で検出されました。
 
 | 値 | 説明 | ファイル名の例 |
 | ----- | ----------- | ------- |
@@ -47,4 +47,7 @@ ms.locfileid: "4080929"
 </div>
 ```
 
-ですが、iFrame は拡張機能を追加しました。  次に、結果を表示する Windows Admin Center で拡張機能[と側のビルドの負荷](..\develop-tool.md#build-and-side-load-your-extension)をできます。
+これで、拡張機能に iFrame を追加しました。  次に、実行できます[ビルドおよび負荷を側](..\develop-tool.md#build-and-side-load-your-extension)結果を表示する Windows Admin Center で、拡張機能。
+
+> [!Note]
+> コンテンツ セキュリティ ポリシー (CSP) の設定によっては、Windows Admin Center 内で iFrame で表示から一部のサイトができません。 これに関する詳細については、[ここ](https://content-security-policy.com/)します。 
