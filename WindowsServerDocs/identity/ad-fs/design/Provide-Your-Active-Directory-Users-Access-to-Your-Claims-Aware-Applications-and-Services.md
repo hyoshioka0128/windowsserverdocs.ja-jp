@@ -1,7 +1,7 @@
 ---
 ms.assetid: d254fca3-85a1-424d-ac22-d6687ec3798e
-title: "Active Directory ユーザー アクセスを提供する、クレーム対応アプリケーションとサービス"
-description: 
+title: Active Directory ユーザーに要求に対応するアプリケーションとサービスへのアクセスを提供する
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,51 +10,52 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: f6fb37c16c20915c0051e3a24cdb0c147ae92d9c
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59835873"
 ---
-# <a name="provide-your-active-directory-users-access-to-your-claims-aware-applications-and-services"></a>Active Directory ユーザー アクセスを提供する、クレーム対応アプリケーションとサービス
+# <a name="provide-your-active-directory-users-access-to-your-claims-aware-applications-and-services"></a>Active Directory ユーザーに要求に対応するアプリケーションとサービスへのアクセスを提供する
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-管理者は、Active Directory フェデレーション サービス \(AD FS\) 展開は、アカウント パートナー組織と従業員が企業ネットワークにホストされているリソースへのシングル sign\-に対する \(SSO\) アクセスを提供する展開の目的をいます。  
+Active の Directory フェデレーション サービスのアカウント パートナー組織の管理者が\(AD FS\)展開して、1 つを提供する展開の目的をいる\-サインオン\-で\(SSO\)人の従業員が企業ネットワークにホストされているリソースにアクセスします。  
   
--   企業ネットワーク内の Active Directory フォレストにログオンしている従業員は、SSO を使用して、複数のアプリケーションやサービス、自分の組織で境界ネットワークにアクセスします。 これらのアプリケーションとサービスは、AD FS によって保護されます。  
+-   企業ネットワークの Active Directory フォレストにログオンした従業員は、SSO を使用して、管理者の組織内の境界ネットワークの複数のアプリケーションやサービスにアクセスできます。 これらのアプリケーションとサービスは、AD FS によってセキュリティで保護されています。  
   
-    たとえば、Fabrikam が企業ネットワークの社員へのフェデレーション Fabrikam の境界ネットワークでホストされている Web ベース アプリケーションへのアクセスをします。  
+    Fabrikam が企業ネットワーク上の社員へのフェデレーション Web へのアクセスにするなど、\-ベースのアプリケーションの Fabrikam の境界ネットワークでホストされています。  
   
--   Active Directory ドメインにログオンしたリモート従業員は、AD FS\ で保護された Web ベース アプリケーションまたはも、組織内に存在するサービスへのフェデレーション アクセスのために、組織内のフェデレーション サーバーから AD FS トークンを取得できます。  
+-   AD FS にフェデレーション アクセスのために、組織内のフェデレーション サーバーから AD FS トークンを取得できますが、Active Directory ドメインにログオンしたリモート従業員は\-Web をセキュリティで保護された\-ベースのアプリケーションまたはサービスにも存在します。お客様の組織。  
   
--   Active Directory 属性ストア内の情報は、従業員の AD FS トークンに設定できます。  
+-   Active Directory 属性ストアの情報を、従業員の AD FS トークンに設定できます。  
   
-次のコンポーネントは、この展開の目的必要があります。  
+このような展開目標を達成するには、次のコンポーネントが必要です。  
   
--   **Active Directory Domain Services \(AD DS\):** AD DS には、AD FS トークンの生成に使用される従業員のユーザー アカウントが含まれています。 グループのメンバーシップや属性などの情報は、グループ要求およびカスタム要求として AD FS トークンに設定されます。  
+-   **Active Directory Domain Services \(AD DS\):** AD DS には、AD FS トークンの生成に使用される従業員のユーザー アカウントが含まれます。 グループのメンバーシップや属性などの情報は、グループ要求およびカスタム要求として AD FS トークンに設定されます。  
   
     > [!NOTE]  
-    > また、AD FS トークンの生成の ID を格納するため Lightweight Directory Access Protocol \(LDAP\) または構造化照会言語 \(SQL\) を使用することができます。  
+    > ライトウェイト ディレクトリ アクセス プロトコルを使用することもできます。 \(LDAP\)または構造化照会言語\(SQL\)を格納するには、AD FS トークンを生成します。  
   
--   **企業 DNS:**イントラネット クライアントは、アカウント フェデレーション サーバーを見つけられるようにドメイン ネーム システム \(DNS\) のこの実装には、単純なホスト \(A\) リソース レコードが含まれます。 DNS のこの実装では、企業ネットワークに必要なその他の DNS レコードもホスト可能性があります。 詳細については、次を参照してください。[フェデレーション サーバーの名前解決要件](Name-Resolution-Requirements-for-Federation-Servers.md)します。  
+-   **企業 DNS:** ドメイン ネーム システムのこの実装\(DNS\)単純なホストを含む\(A\)リソース レコードのイントラネット クライアントは、アカウント フェデレーション サーバーを特定できるようにします。 DNS のこの実装では、企業ネットワークで必要とされる他の DNS レコードもホストされる可能性があります。 詳細については、「[フェデレーション サーバーの名前解決の要件](Name-Resolution-Requirements-for-Federation-Servers.md)」をご覧ください。  
   
--   **アカウント パートナーのフェデレーション サーバー:**このフェデレーション サーバーが、アカウント パートナー フォレスト内のドメインに参加しています。 これにより、従業員のユーザー アカウントを認証し、AD FS トークンを生成します。 従業員のクライアント コンピューターは、AD FS トークンを生成するには、このフェデレーション サーバーに対して統合 Windows 認証を実行します。 詳細については、次を参照してください。[アカウント パートナーのフェデレーション サーバーの役割を確認する](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)します。  
+-   **アカウント パートナーのフェデレーション サーバー:** このフェデレーション サーバーは、アカウント パートナー フォレスト内のドメインに参加しています。 従業員のユーザー アカウントを認証し、AD FS トークンを生成します。 従業員のクライアント コンピューターでは、AD FS トークンを生成するには、このフェデレーション サーバーに対して Windows 統合認証を実行します。 詳細については、次を参照してください。 [アカウント パートナーのフェデレーション サーバーの役割を検討](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)します。  
   
     アカウント パートナーのフェデレーション サーバーは、次のユーザーを認証できます。  
   
-    -   このドメイン内のユーザー アカウントを持つ従業員  
+    -   このドメインにユーザー アカウントを持つ従業員  
   
-    -   このフォレストの任意の場所でユーザー アカウントを持つ従業員  
+    -   このフォレスト内のどこかにユーザー アカウントを持つ従業員  
   
-    -   Anywhere いるフォレスト内のユーザー アカウントを持つ従業員がこのフォレストによって信頼されている \ (を通じて two\ 方向の Windows trust\)  
+    -   任意の場所にフォレストのユーザー アカウントを持つ従業員がこのフォレストによって信頼されている\(2 を通じて\-Windows 信頼の方法\)  
   
--   **従業員:**従業員が Web ベース サービスにアクセス \(through an application\) または Web ベース アプリケーション \ (サポートされている Web browser\) を通じてそのユーザーがログオン中に、企業ネットワークにします。 企業ネットワーク上の従業員のクライアント コンピューターは、認証用のフェデレーション サーバーと直接通信します。  
+-   **従業員:** 従業員が Web にアクセスする\-ベースのサービス\(アプリケーションを通じて\)または Web\-ベースのアプリケーション\(サポートされている Web ブラウザーを介して\)中に、そのユーザーがログオンして、企業のネットワーク。 企業ネットワーク上の従業員のクライアント コンピューターは、認証用のフェデレーション サーバーと直接通信します。  
   
-後のリンク先のトピックの情報を確認するには、次の手順に従って、この目標のデプロイを開始できます[チェックリスト: Implementing a Federated Web SSO Design](../../ad-fs/deployment/Checklist--Implementing-a-Federated-Web-SSO-Design.md)します。  
+リンク先のトピックの情報を確認した後には、次の手順に従って、この目標の展開を開始できます[チェックリスト。フェデレーション Web SSO 設計を実装する](../../ad-fs/deployment/Checklist--Implementing-a-Federated-Web-SSO-Design.md)します。  
   
-次の図は、この AD FS 展開目標に必要なコンポーネントの各を示します。  
+次の図は、この AD FS 展開の目的に必要なコンポーネントの各を示します。  
   
 ![要求へのアクセスします。](media/31394ea8-fecb-4372-ac3f-cc3cf566ffc9.gif)  
   
-## <a name="see-also"></a>参照してください。
+## <a name="see-also"></a>関連項目
 [Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)

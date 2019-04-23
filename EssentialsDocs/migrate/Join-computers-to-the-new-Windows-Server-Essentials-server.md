@@ -1,6 +1,6 @@
 ---
-title: "新しい Windows Server Essentials server1 にコンピューターを参加させる"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: 新しい Windows Server Essentials の server1 にコンピューターを参加させる
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,40 +13,41 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 1a67cda9e4b04e8d861232b48f45915fb2b460d1
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59836413"
 ---
-# <a name="join-computers-to-the-new-windows-server-essentials-server1"></a>新しい Windows Server Essentials server1 にコンピューターを参加させる
+# <a name="join-computers-to-the-new-windows-server-essentials-server1"></a>新しい Windows Server Essentials の server1 にコンピューターを参加させる
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 ##  <a name="BKMK_JoinComputers"></a>   
- 移行プロセスの次の手順では、クライアント コンピューターを新しい Windows Server Essentials ネットワークに参加し、グループ ポリシー設定を更新します。  
+ 移行プロセスの次の手順では、クライアント コンピューターを新しい Windows Server Essentials ネットワークに参加させるし、グループ ポリシー設定を更新します。  
   
 > [!NOTE]
->  クライアント コンピューターは、移行元サーバーに既に参加して場合、移行先サーバーにコンピューターを接続する前に、クライアント コンピューターでコネクタ ソフトウェアを最初にアンインストールしてください。  
+>  クライアント コンピューターが移行元サーバーに既に参加している場合、コンピューターを移行先サーバーに接続する前に、クライアント コンピューターでコネクタ ソフトウェアをアンインストールする必要があります。  
   
- クライアント コンピューターをサーバーに接続するプロセスは、ドメインに参加している、またはドメインに参加しているコンピューターで同じです。  
+ クライアント コンピューターをサーバーに接続するプロセスは、コンピューターがドメインに参加しているかどうかにかかわらず同じです。  
   
--   参照**http://***移行先サーバー名***/connect**して場合、新しいコンピューターと同じように、Windows Server コネクタ ソフトウェアをインストールします。  
-  
-> [!NOTE]
->  Windows Server コネクタ ソフトウェアは、Windows XP または Windows Vista を実行しているコンピューターをサポートしていません。 既にドメインに参加している Windows XP または Windows Vista を実行しているコンピューターがある場合は、この手順をスキップすることができます。  
-  
-### <a name="ensure-that-group-policy-has-updated"></a>グループ ポリシーが更新されることを確認します。  
+-   参照**http://***先 servername***/connect**と場合、新しいコンピューターと同じように、Windows Server コネクタ ソフトウェアをインストールします。  
   
 > [!NOTE]
->  これは、オプションの手順とのみが、移行元サーバーがフォルダー リダイレクトなどのカスタムのグループ ポリシー設定で構成されているかどうかに必要なです。  
+>  Windows Server コネクタ ソフトウェアは、Windows XP または Windows Vista を実行しているコンピューターはサポートしていません。 既にドメインに参加している Windows XP または Windows Vista を実行しているコンピューターがある場合は、この手順を省略できます。  
   
- 移行元サーバーと移行先サーバーがまだオンライン、中に行う必要がありますをグループ ポリシーの設定がクライアント コンピューターに移行先サーバーからレプリケートします。 各クライアント コンピューターで、次の手順を実行します。  
+### <a name="ensure-that-group-policy-has-updated"></a>グループ ポリシーが更新されたことを確認する  
+  
+> [!NOTE]
+>  これはオプションの手順であり、移行元サーバーがフォルダー リダイレクトなどのカスタム グループ ポリシーの設定で構成されていた場合にのみ必要です。  
+  
+ 移行元サーバーと移行先サーバーがまだオンラインの間に、グループ ポリシーの設定が移行先サーバーからクライアント コンピューターにレプリケートされたことを確認する必要があります。 各クライアント コンピューターで次の手順を実行します。  
   
 1.  コマンド プロンプト ウィンドウを開きます。  
   
-2.  コマンド プロンプトで、次のように入力します。**GPRESULT/R**、し、Enter キーを押します。  
+2.  コマンド プロンプトで「 **GPRESULT /R**」と入力し、Enter キーを押します。  
   
-3.  結果の出力からグループ ポリシーの適用] セクションで確認: など、移行先サーバーが一覧表示することを確認および**DestinationSrv.Domain.local**します。 例えば：  
+3.  グループ ポリシーの適用 セクションの結果の出力を確認してください: ことなど、移行先サーバーの一覧を確認して**DestinationSrv.Domain.local**します。 次に、例を示します。  
   
     ```  
     USER SETTINGS  
@@ -60,12 +61,12 @@ ms.lasthandoff: 07/03/2017
   
     ```  
   
-4.  移行先サーバーが表示されない場合、コマンド プロンプトで入力**gpupdate/force**、し、Enter キーを押して、グループ ポリシー設定を更新します。 前の手順をもう一度実行します。  
+4.  移行先サーバーが一覧に表示されない場合、コマンド プロンプトで「**gpupdate /force**」と入力して Enter キーを押し、グループ ポリシーの設定を更新します。 その後、前の手順を再度実行します。  
   
-5.  移行先サーバーが表示されない場合または可能性があります、グループ ポリシー設定のエラーでこの特定のクライアント コンピューターに適用するエラー。 移行先サーバーが表示されない場合は、次の手順を実行します。  
+5.  移行先サーバーがまだ表示されない場合は、グループ ポリシーの設定またはこの特定のクライアント コンピューターへのポリシーの適用にエラーがある可能性があります。 移行先サーバーが表示されない場合は、次の手順を実行してください。  
   
-    1.  をクリックして**開始**、] をクリックして**実行**、種類**rsop.msc** (ポリシーの結果セット)、し、Enter キーを押します。  
+    1.  **[スタート]** ボタンをクリックし、**[ファイル名を指定して実行]** をクリックし、「 **rsop.msc** 」 (ポリシーの結果セット) と入力して、Enter キーを押します。  
   
-    2.  ノードに移動するまでに x 印が付いたツリーを展開します。  
+    2.  ノードに表示されるまでに X 印が付いたツリーを展開します。  
   
-    3.  ノードを右クリックし、をクリックして**表示エラー**理由についての情報は、グループ ポリシー設定が表示されているコンピューターで失敗しています。
+    3.  ノードを右クリックし、**[エラーの表示]** をクリックして、一覧のコンピューターでグループ ポリシーの設定が失敗する理由についての情報を確認します。

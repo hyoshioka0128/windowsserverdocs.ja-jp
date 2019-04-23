@@ -2,62 +2,50 @@
 ms.assetid: 6086947f-f9ef-4e18-9f07-6c7c81d7002c
 title: Windows タイム サービスのツールと設定
 description: ''
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 05/31/2017
+author: shortpatti
+ms.author: pashort
+manager: dougkim
+ms.date: 10/16/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: 70b7ee4a9955e023d1664a3c29295a22cd5dc75b
-ms.sourcegitcommit: fd6a46b702b235f38d90814dd769106ab37cd61b
+ms.openlocfilehash: 7cf3b3f2bb9a2c9f95c50aa6a7b7690f89cdd0af
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59840663"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows タイム サービスのツールと設定
+>適用対象:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 以降
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+このトピックでは、ツールと Windows タイム サービス (W32Time) の設定について説明します。 
 
-
-**このセクションで**  
+ドメインに参加しているクライアント コンピューターの時刻を同期する場合は、「[自動ドメイン時刻の同期用のクライアント コンピューターを構成](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc816884%28v%3dws.10%29)します。 Windows タイム サービスを構成する方法についての詳細については、次を参照してください。 [Windows タイム サービス構成の情報を検索する場所](https://docs.microsoft.com/windows-server/networking/windows-time-service/windows-time-service-top)します。  
   
--   [Windows タイム サービスのツール](#w2k3tr_times_tools_dyax)  
+>[!CAUTION]  
+>Windows タイム サービスが実行される時間を設定する Net time コマンドを使用する必要があります。  
+>
+>また、古いコンピューターで Windows XP を実行するまたは以前では、コマンドの Net time/querysntp を同期するコンピューターを構成するネットワーク タイム プロトコル (NTP) サーバーの名前が表示されますが、コンピューターのタイム クライアントが場合にのみ、NTP サーバーが使用されます。NTP または AllSync として構成します。 このコマンドはため非推奨とされました。  
   
--   [Windows タイム サービスのレジストリ値](#w2k3tr_times_tools_uhlp)  
-  
--   [Windows タイム サービスのグループ ポリシー設定](#w2k3tr_times_tools_vwtt)  
-  
--   [Windows タイム サービスによって使用されるネットワーク ポート](#w2k3tr_times_tools_suxb)  
-  
--   [関連情報](#w2k3tr_times_tools_qoep)  
-  
-> [!NOTE]  
-> このトピックには、ツールと Windows タイム サービス (W32Time) の設定のみについての情報が含まれています。 If you only want to synchronize time for a domain-joined client computer, see [Configure a client computer for automatic domain time synchronization](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc816884%28v%3dws.10%29). Windows タイム サービスを構成する方法に関するその他のトピックは、セクションのトピックの一覧を参照してください。[Windows タイム サービス構成の情報を検索する場所](https://technet.microsoft.com/library/cc773061.aspx)します。  
-  
-> [!CAUTION]  
-> Net time コマンドを使用し、構成や、Windows タイム サービスが実行されているときに設定しないでください。  
-
-Windows XP またはコマンドの Net time 以前を実行している以前のコンピューターにも /querysntp、同期するコンピューターが構成されているが、その NTP サーバーが NTP または AllSync として、コンピューターのタイム クライアントが構成されている場合にのみに使用されるネットワーク タイム プロトコル (NTP) サーバーの名前を表示します。 そのコマンドは廃止されましたので。  
-  
-ほとんどのドメイン メンバー コンピューターでは、タイム クライアント型の NT5DS で、ドメインの階層からの時間を同期することを意味を持ちます。 一般的なだけの例外は、外部のタイム ソースと時刻を同期するように構成は、通常、フォレスト ルート ドメインのプライマリ ドメイン コントローラー (PDC) エミュレーター操作マスターとして機能するドメイン コントローラーです。 表示するには、タイム クライアント コンピューターの構成の実行 W32tm/query /configuration 以降では、Windows Server 2008、および Windows Vista で管理者特権のコマンド プロンプトからコマンドを読み取り、**種類**コマンドの出力に行。 詳細については、次を参照してください。[Windows タイム サービスのしくみ](https://go.microsoft.com/fwlink/?LinkId=117753)します。 コマンドを実行する**reg クエリ HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters**の値を読み取ると**NtpServer**コマンドの出力にします。  
+ほとんどのドメイン メンバー コンピューターがある NT5DS、ドメインの階層からの時間を同期することを意味するのにクライアントの種類。 のみの一般的な例外は、通常は、外部タイム ソースと時刻を同期する構成は、フォレスト ルート ドメインのプライマリ ドメイン コント ローラー (PDC) エミュレーター操作マスターとして機能するドメイン コント ローラーです。 コンピューターの時刻のクライアント設定を表示する Windows Server 2008、および Windows Vista では、開始時に管理者特権でコマンド プロンプトから W32tm/query 設定コマンドを実行し、読み取る、**型**コマンドの出力に行。 詳細については、次を参照してください。 [Windows タイム サービスの動作方法](https://docs.microsoft.com/windows-server/networking/windows-time-service/How-the-Windows-Time-Service-Works)します。 コマンドを実行する**reg クエリ HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters**の値を読み取ると**NtpServer**コマンドの出力にします。  
   
 > [!IMPORTANT]  
-> Windows Server 2016 では、前に W32Time サービスしない時間の影響を受けやすいアプリケーションのニーズに合わせて設計されました。  ただし、Windows Server 2016 に更新できるようになりましたミリ秒のソリューションを実装する、ドメイン内の正確性。  See [Windows 2016 Accurate Time](accurate-time.md) and  [Support boundary to configure the Windows Time service for high-accuracy environments](https://go.microsoft.com/fwlink/?LinkID=179459) for more information.  
+> Windows Server 2016 では、前に、W32Time サービスが時間を区別するアプリケーションのニーズを満たす設計されていません。  ただし、Windows Server 2016 に更新できるようになりました 1 ミリ秒のソリューションを実装するドメインで精度。  参照してください[Windows 2016 の正確性時間](accurate-time.md)と[高精度の環境の Windows タイム サービスを構成するサポート境界](https://docs.microsoft.com/windows-server/networking/windows-time-service/support-boundary)詳細についてはします。  
   
-## <a name="w2k3tr_times_tools_dyax"></a>Windows タイム サービスのツール  
+## <a name="windows-time-service-tools"></a>Windows タイム サービス ツール  
 次のツールは、Windows タイム サービスに関連付けられます。  
   
-#### <a name="w32tmexe-windows-time"></a>W32tm.exe: Windows タイム  
+#### <a name="w32tmexe-windows-time"></a>W32tm.exe:Windows タイム  
 **カテゴリ**  
 
 このツールは、Windows XP、Windows Vista、Windows 7、Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 の既定のインストールの一部としてインストールされます。  
   
-**バージョン間の互換性**  
+**バージョンの互換性**  
   
-このツールは、Windows XP、Windows Vista、Windows 7、Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 の既定のインストールで動作します。  
+このツールは、Windows XP、Windows Vista、Windows 7、Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 の既定のインストールで機能します。  
   
-W32tm.exe を使用すると、Windows タイム サービスの設定を構成します。 タイム サービスの問題の診断にも使用できます。 W32tm.exe は、構成、監視、または Windows タイム サービスのトラブルシューティングの推奨されるコマンド ライン ツールです。  
+W32tm.exe を使用して、Windows タイム サービスの設定を構成します。 タイム サービスに関する問題の診断に使用できます。 W32tm.exe は、構成、監視、または、Windows タイム サービスのトラブルシューティングの推奨されるコマンド ライン ツールです。  
   
 次の表では、W32tm.exe で使用されるパラメーターについて説明します。  
   
@@ -65,153 +53,169 @@ W32tm.exe を使用すると、Windows タイム サービスの設定を構成�
   
 |パラメーター|説明|  
 |-------------|---------------|  
-|W32tm/ですか?|W32tm コマンド ラインのヘルプ|  
-|W32tm/register|サービスとして実行するタイム サービスを登録し、既定の構成がレジストリに追加します。|  
-|W32tm/unregister|タイム サービスの登録を解除し、レジストリからすべての構成情報を削除します。|  
-|w32tm/monitor<br /><br />[/domain:<domain name>] [/computers:<name>[、<name>[、<name>...]][/Threads:<num>]|ドメインがでは、監視するドメインを指定します。 ドメイン名を指定しないと、コンピューターとドメインのどちらもオプションが指定されている場合、または場合は、既定のドメインが使用されます。 このオプションを複数回使用可能性があります。<br /><br />コンピューターでは、特定のコンピューターの一覧を監視します。 コンピューター名は、スペースなしで、コンマで区切られます。 名前が付いている場合、"*'、PDC と見なされます。 このオプションを複数回使用可能性があります。<br /><br />スレッド - を同時に分析するコンピューターの数を指定します。 既定値は 3 です。 許容範囲は、1 ~ 50 です。|  
-|w32tm /ntte <NT time epoch>|NT のシステム時刻に変換 (10 ^ -7) から 0 h 読みやすい形式、1601 年 1 月 1 - 秒間隔です。|  
-|w32tm /ntpte <NTP time epoch>|NTP 時刻に変換 (2 ^-32) 0 h 1-Jan 1900 読みやすい形式の間隔を秒です。|  
-|w32tm/resync<br /><br />[/computer:<computer>]<br /><br />[/nowait]<br /><br />[/Rediscover]<br /><br />[/Soft]|そのクロックできるだけ早くすべてのエラーを蓄積された統計情報をスローする同期するコンピューターに指示します。<br /><br />コンピューター:<computer> -必要がありますを再同期するコンピューターを指定します。 指定しない場合、ローカル コンピューターが再同期します。<br /><br />Nowait - 発生再同期化待ちません直ちに戻ります。 それ以外の場合、再同期化を返す前に完了するまで待ちます。<br /><br />再検出 - ネットワーク構成を再検出し、ネットワーク ソースを下げて、再同期します。<br /><br />ソフト - エラーの既存の統計を使用して再同期します。 全く役に、互換性のために提供されています。|  
-|w32tm /stripchart<br /><br />/computer:<target><br /><br />[/Period:<refresh>]<br /><br />[/dataonly]<br /><br />[/Samples:<count>]<br/><br/>[/rdtsc]<br/>|このコンピューターや別のコンピューター間のオフセットのストリップのグラフを表示します。<br /><br />コンピューター:<target> -に対してオフセットを測定するコンピューター。<br /><br />期間:<refresh> - 秒単位で、サンプル間の時間。 既定値は、2 秒です。<br /><br />Dataonly - graphics なしデータのみを表示します。<br /><br />サンプル:<count> - 収集<count>し、サンプルを停止します。 指定しない場合、サンプルはまで収集される**ctrl キーを押しながら C**が押されています。<br/><br/>rdtsc: 各サンプルについては、このオプションが印刷と共に RdtscStart、ヘッダーのコンマ区切り値 RdtscEnd、FileTime、RoundtripDelay、テキストの図ではなく NtpOffset します。<br/><ul><li>[RdtscStart – RDTSC (読み取りタイムスタンプ カウンター)](https://en.wikipedia.org/wiki/Time_Stamp_Counter) NTP 要求が生成される直前に値が収集されます。</li><li>RdtscEnd – RDTSC (読み取りタイムスタンプ カウンター) 値を収集しただけで NTP 応答が受信され、処理後にします。</li><li>FileTime – ローカル FILETIME 値の NTP 要求に使用します。</li><li>RoundtripDelay – 時刻は NTP 要求の生成の間の秒経過し、NTP ラウンドト リップの計算に従った計算 NTP 応答を受信したを処理します。</li><li>NTP オフセットの計算に従った NTPOffset – 時間オフセット、ローカル コンピューターと、NTP サーバー間の秒数が計算されます。</li></ul>|
-|w32tm /config<br /><br />[/computer:<target>]<br /><br />[/Update]<br /><br />[/manualpeerlist:<peers>]<br /><br />[/syncfromflags:<source>]<br /><br />[/LocalClockDispersion:<seconds>]<br /><br />[/Reliable: ([はい] (& a) #124 文字です NO)]。<br /><br />[/largephaseoffset:<milliseconds>]|コンピューター:<target> -の構成を調整<target>します。 指定しない場合、既定では、ローカル コンピューターです。<br /><br />更新 - タイム サービス構成が変更された原因で、変更を有効にすることを通知します。<br /><br />manualpeerlist:<peers> -手動ピア リストに設定<peers>、これは、DNS や IP アドレスのスペース区切りのリスト。 複数のピアを指定する場合、このオプションは引用符で囲む必要があります。<br /><br />syncfromflags:<source> -どのようなソースから同期する、NTP クライアントを設定します。 <source> これらのキーワードのコンマ区切りのリストを (いない大文字小文字を区別) する必要があります。<br /><br />手動の手動のピアのリストからピアが含まれます。<br /><br />DOMHIER - ドメイン コントローラー (DC) で、ドメインの階層から同期します。<br /><br />LocalClockDispersion:<seconds> -内部の正確性を構成することから時刻を取得できない場合、W32Time が前提としていますクロックがソースを構成します。<br /><br />信頼性の高い: ([はい] (& a) #124 文字です。NO) - 設定されているかどうか、信頼性の高いタイム ソースは、このコンピューター。<br /><br />この設定は、ドメイン コントローラーで有効のみです。<br /><br />[はい] - このコンピューターは、信頼性の高いタイム サービスです。<br /><br />いいえ - このコンピューターは、信頼性の高いタイム サービスではありません。<br /><br />largephaseoffset:<milliseconds> -ローカル時刻の差を設定し、W32Time がスパイクを検討する時間をネットワークです。|  
+|W32tm/でしょうか。|W32tm コマンドラインのヘルプ|  
+|W32tm/register|サービスとして実行するタイム サービスを登録し、既定の構成をレジストリに追加します。|  
+|W32tm/登録解除|タイム サービスの登録を解除し、すべての構成情報をレジストリから削除します。|  
+|w32tm/monitor<br /><br />[/domain:<domain name>] [/computers:<name>[,<name>[,<name>...]]] [/threads:<num>]|ドメインには、監視するドメインを指定します。 ドメイン名が指定されていない、またはコンピューターもドメイン オプションが指定されて、既定のドメインが使用されます。 このオプションは、複数回使用可能性があります。<br /><br />コンピューター - は、特定のコンピューターの一覧を監視します。 コンピューター名については、スペースなしで、コンマで区切ります。 名前が付いている場合、' *'、PDC として扱われます。 このオプションは、複数回使用可能性があります。<br /><br />スレッド: 同時に分析するコンピューターの数を指定します。 既定値は、3 です。 許容範囲は、1 ~ 50 です。|  
+|w32tm/ntte <NT time epoch>|NT のシステム時刻を変換 (10 ^-7) を 0 h、読みやすい形式に、1601 年 1 月 1 - 秒の間隔。|  
+|w32tm/ntpte <NTP time epoch>|内の NTP 時刻の変換 (2 ^-32) を 0 h 判読可能な形式、1900 年の 1 月 1 - 秒の間隔。|  
+|w32tm/resync<br /><br />[/コンピューター:<computer>]<br /><br />[/nowait]<br /><br />[/rediscover]<br /><br />[/ソフト]|すべての蓄積されたエラーの統計情報が出るまで、できるだけ早くクロック同期するコンピューターに指示します。<br /><br />コンピューター:<computer> -再同期する必要がありますコンピューターを指定します。 指定しない場合、ローカル コンピューターが再同期します。<br /><br />nowait -; が発生する再同期の待機しませんすぐに返されます。 それ以外の場合、再同期を返す前に完了するまで待ちます。<br /><br />再検出 - ネットワーク構成を再検出し、ネットワーク ソースの再検出、再同期します。<br /><br />soft - 既存のエラーの統計情報を使用して再同期します。 有用でない、互換性のために指定します。|  
+|w32tm/stripchart<br /><br />/computer:<target><br /><br />[/period:<refresh>]<br /><br />[/dataonly]<br /><br />[サンプル/:<count>]<br/><br/>[/rdtsc]<br/>|このコンピューターと別のコンピューター間のオフセットのストリップ チャートを表示します。<br /><br />コンピューター:<target> -に対してオフセットを測定するコンピューター。<br /><br />期間:<refresh> - 秒単位でのサンプル間の時間。 既定では 2 秒です。<br /><br />dataonly - 画像なしのデータのみを表示します。<br /><br />サンプル:<count>収集 -<count>し、サンプルを停止します。 指定されていない場合、サンプルはまで収集**Ctrl + C**が押されました。<br/><br/>rdtsc: 各サンプルでは、このオプションは、ヘッダー、RdtscStart と共にのコンマ区切り値を出力します RdtscEnd、FileTime、RoundtripDelay NtpOffset テキスト グラフィックではなく、します。<br/><ul><li>[RdtscStart – RDTSC (読み取りタイムスタンプ カウンター)](https://en.wikipedia.org/wiki/Time_Stamp_Counter) NTP 要求が生成された直前の値が収集されます。</li><li>RdtscEnd – RDTSC (読み取りタイムスタンプ カウンター) の値が収集されただけ NTP 応答が受信および処理します。</li><li>FileTime – ローカル FILETIME 値の NTP 要求に使用します。</li><li>RoundtripDelay – 時刻が NTP 要求を生成する間隔 (秒) 経過し、NTP ラウンドト リップ計算に従って計算処理 NTP 応答を受信しました。</li><li>NTPOffset – ローカル コンピューターで、NTP サーバーまでの秒のタイム オフセットは、オフセットの計算を NTP に従って計算されます。</li></ul>|
+|w32tm/config<br /><br />[/コンピューター:<target>]<br /><br />[/update]<br /><br />[/manualpeerlist:<peers>]<br /><br />[/syncfromflags:<source>]<br /><br />[/LocalClockDispersion:<seconds>]<br /><br />[/reliable: ([はい]&#124;いいえ)]<br /><br />[/largephaseoffset:<milliseconds>]|コンピューター:<target> -の構成を調整します。<target>します。 指定しない場合、既定では、ローカル コンピューターです。<br /><br />更新 - タイム サービスを有効にする変更の原因と、構成が変更されたことを通知します。<br /><br />manualpeerlist:<peers> -手動ピアのリストに設定<peers>、DNS または IP アドレスのスペースで区切られた一覧します。 複数のピアを指定するときに、このオプションは引用符で囲む必要があります。<br /><br />syncfromflags:<source> -設定対象のソースから、NTP クライアントを同期する必要があります。 <source> これらのキーワードのコンマ区切りリストを (いない大文字小文字を区別) にする必要があります。<br /><br />手動 - 手動ピアのリストからのピアが含まれます。<br /><br />DOMHIER - ドメイン階層内のドメイン コント ローラー (DC) から同期します。<br /><br />LocalClockDispersion:<seconds> -W32Time は、構成されているソースから時刻を取得できないと仮定している内部クロックの精度を構成します。<br /><br />信頼性の高い: ([はい]&#124;なし) 設定 - このコンピューターの信頼性の高いタイム ソースがかどうか。<br /><br />この設定では、ドメイン コント ローラーで意味のあるのみです。<br /><br />はい - このコンピューターは、信頼性の高いタイム サービスです。<br /><br />いいえ - このコンピューターは、信頼性の高いタイム サービスではありません。<br /><br />largephaseoffset:<milliseconds> -ローカルとの時差を設定およびネットワーク W32Time は急な増加を考慮する時間。|  
 |w32tm/tz|現在のタイム ゾーン設定を表示します。|  
-|w32tm /dumpreg<br /><br />[/Subkey:<key>]<br /><br />[/computer:<target>]|指定されたレジストリ キーに関連付けられている値を表示します。<br /><br />既定のキーは HKLM\System\CurrentControlSet\Services\W32Time<br /><br />(タイム サービスのルート キー)。<br /><br />サブキー:<key> -サブキーに関連付けられている値を表示する<key>既定のキーのします。<br /><br />コンピューター:<target> -コンピューターのレジストリ設定の照会 <target>|  
-|w32tm/query [/computer:<target>] {/source & #124;/configuration & #124 です。/Peers & #124;/status} [/verbose]|このパラメーターは、Windows Vista、および Windows Server 2008 の Windows タイム クライアント バージョンで利用可能な最初しました。<br /><br />コンピューターの Windows タイム サービスの情報を表示します。<br /><br />**コンピューター:<target>** -の情報を照会**<target>**します。 指定しない場合、既定値は、ローカル コンピューターにします。<br /><br />**ソース**-タイム ソースを表示します。<br /><br />**構成**-実行時間と、設定が由来の構成を表示します。 詳細出力モード、表示、定義されていないか使用されていない設定が多すぎます。<br /><br />**ピア**-ピアおよびそれらの状態の一覧を表示します。<br /><br />**ステータス**-表示 Windows タイム サービスの状態。<br /><br />**詳細な**-詳細情報を表示する詳細出力モードを設定します。|  
-|w32tm/debug {/disable & #124;{/Enable/file:<name> /size:<bytes> /entries:<value> [/truncate]}}|このパラメーターは、Windows Vista、および Windows Server 2008 の Windows タイム クライアント バージョンで利用可能な最初しました。<br /><br />有効にするか、ローカル コンピューターの Windows タイム サービスのプライベート ログを無効にします。<br /><br />**無効にする**-プライベートのログを無効にします。<br /><br />**有効にする**-プライベートのログを有効にします。<br /><br />-   **ファイル:<name>**の絶対ファイル名を指定します。<br />-   **サイズ:<bytes>** -循環ログの最大サイズを指定します。<br />-   **エントリ:<value>** -フラグ、番号で指定されているし、ログに記録する必要があります情報の種類を指定するコンマ区切りのリストが含まれます。 0 ~ 300 が有効です。 番号の範囲は 0-100,103 などの単一の数字だけでなく、有効な 106 します。 値 0 ~ 300 では、すべての情報をログ用です。<br /><br />**切り捨てる**-が存在する場合、ファイルを切り捨てます。|  
+|w32tm /dumpreg<br /><br />[/サブキー:<key>]<br /><br />[/コンピューター:<target>]|特定のレジストリ キーに関連付けられている値を表示します。<br /><br />既定のキーは HKLM\System\CurrentControlSet\Services\W32Time<br /><br />(タイム サービスのルート キー)。<br /><br />サブキー:<key> -サブキーに関連付けられている値を表示します<key>の既定のキー。<br /><br />コンピューター:<target> -コンピューターのレジストリ設定の照会 <target>|  
+|w32tm/query [/コンピューター:<target>] {/source&#124;設定&#124;ピア/ &#124; /status} []、[詳細]|このパラメーターは、Windows Vista、および Windows Server 2008 の Windows タイム クライアント バージョンで使用可能な最初にしました。<br /><br />コンピューターの Windows タイム サービスの情報を表示します。<br /><br />**コンピューター:<target>**  -クエリの情報 **<target>** します。 指定しない場合、既定値は、ローカル コンピューターにします。<br /><br />**ソース**-タイム ソースを表示します。<br /><br />**構成**-設定がどこから取得し、実行時の構成を表示します。 詳細モードで、未定義または未使用の設定も表示します。<br /><br />**ピア**-ピアとその状態の一覧を表示します。<br /><br />**ステータス**-サービスの状態を Windows の時刻を表示します。<br /><br />**詳細な**-詳細情報を表示する詳細モードを設定します。|  
+|w32tm/debug {/無効にする&#124;{//file の有効化:<name> /サイズ:<bytes> /entries:<value> []、[切り捨て]}}|このパラメーターは、Windows Vista、および Windows Server 2008 の Windows タイム クライアント バージョンで使用可能な最初にしました。<br /><br />有効またはローカル コンピューターの Windows タイム サービスのプライベート ログを無効にします。<br /><br />**無効にする**-プライベートのログを無効にします。<br /><br />**有効にする**-プライベートのログを有効にします。<br /><br />-   **ファイル:<name>** の絶対ファイル名を指定します。<br />-   **サイズ:<bytes>**  -循環ログの最大サイズを指定します。<br />-   **エントリ:<value>**  -フラグ、番号で指定され、記録される情報の種類を指定するコンマ区切りの一覧が含まれています。 有効な数字は、0 ~ 300 です。 数値の範囲は 0-100,103 などの 1 つの数字だけでなく、有効な 106。 0 ~ 300 の値では、すべての情報をログに記録します。<br /><br />**truncate** -存在する場合、ファイルを切り捨てます。|  
+
+---  
+詳細については**W32tm.exe**ヘルプとサポート センターで Windows XP、Windows Vista、Windows 7、Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 を参照してください。  
   
-詳細については**W32tm.exe**、ヘルプとサポート センターでは、Windows XP、Windows Vista、Windows 7、Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 を参照してください。  
-  
-## <a name="w2k3tr_times_tools_uhlp"></a>Windows タイム サービスのレジストリ値  
+## <a name="windows-time-service-registry-entries"></a>Windows タイム サービスのレジストリ値  
 次のレジストリ エントリは、Windows タイム サービスに関連付けられます。  
   
-この情報は、トラブルシューティングや、必要な設定が適用されていることの確認で使用するための参照として提供されます。 直接編集しないレジストリ他の手段がない限りをお勧めします。 レジストリに対する変更は検証されません、レジストリ エディターまたは Windows 前に、それらが適用され、その結果、正しくない値を格納できます。 回復不可能なエラーは、システムで、これがあります。  
+この情報は、トラブルシューティングや、必要な設定が適用されていることの確認で使用するための参照として提供されます。 直接編集しないレジストリの他の代替手段がない限りをお勧めします。 レジストリに対する変更は検証されません、レジストリ エディターで、または Windows によって前に、それらを適用し、結果として、不適切な値を格納することができます。 回復不能なエラーは、システムで、これがあります。  
   
-可能であれば、レジストリを直接編集するのではなく、タスクを実行するグループ ポリシーまたは Microsoft 管理コンソール (MMC) など、他の Windows ツールを使用します。 レジストリを編集する必要がある場合、は、細心の注意を使用します。  
+可能であれば、レジストリを直接編集するのではなく、タスクを実行するのにグループ ポリシーまたは Microsoft 管理コンソール (MMC) など、他の Windows ツールを使用します。 レジストリを編集する必要がある場合は、細心の注意が必要です。  
   
 > [!WARNING]  
-> グループ ポリシー オブジェクト (GPO) 設定は既定の対応するレジストリ エントリとは異なるシステム管理用テンプレート ファイル (System.adm) で構成されているプリセット値の一部です。 If you plan to use a GPO to configure any Windows Time setting, be sure that you review [Preset values for the Windows Time service Group Policy settings are different from the corresponding Windows Time service registry entries in Windows Server 2003](https://go.microsoft.com/fwlink/?LinkId=186066). この問題は、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2、および Windows Server 2003 に適用されます。  
+> 一部のグループ ポリシー オブジェクト (GPO) の設定、システム管理用テンプレート ファイル (System.adm) で構成されている既定の値は、対応する既定のレジストリ エントリから異なります。 GPO を使用して、Windows の時刻の設定を構成する場合は、することを確認することを確認して[プリセット値 Windows タイム サービスのグループ ポリシー設定は Windows Server 2003、Windows タイム サービスのレジストリ値が対応する異なる](https://go.microsoft.com/fwlink/?LinkId=186066). この問題は、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2、および Windows Server 2003 に適用されます。  
   
-Windows タイム サービスの多くのレジストリ エントリでは、同じ名前のグループ ポリシー設定と同じです。 グループ ポリシー設定にある同じ名前のレジストリ エントリに対応しています。  
+Windows タイム サービスの多くのレジストリ エントリでは、同じ名前のグループ ポリシー設定と同じです。 グループ ポリシー設定にある同じ名前のレジストリ エントリに対応します。  
   
->**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\\**
+>**HKLM\SYSTEM\CurrentControlSet\Services\W32Time\\**
 
   
 このレジストリの場所には、いくつかのレジストリ キーがあります。 Windows の時刻の設定は、これらのキーのすべての値に格納されます。
-* [パラメーター](#Parameters)
+* [Parameters](#Parameters)
 * [構成](#Configuration)
 * [NtpClient](#NtpClient)
 * [NtpServer](#NtpServer)
   
-> [!NOTE]  
-> レジストリの W32Time セクション内の値の多くはによって内部的に使用 W32Time 情報を格納します。 いつでもこれらの値が手動で変更されていない必要があります。 変更しないでくださいのこのセクションで設定するは、設定を理解して、特定の新しい値が期待どおりに動作する場合を除き、します。 次のレジストリ エントリは、下にあります。
 
->>**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\\**  
-  
-一部のパラメーターはレジストリ内のクロック刻みに格納され、いくつかは、秒単位です。 変換する時間のクロック刻み (秒)。  
+レジストリの W32Time セクション内の値の多くがによって内部的に使用 W32Time 情報を格納します。 いつでもこれらの値は手動で変更しない必要があります。 設定に精通し、新しい値が期待どおりに動作が確かでない限りこのセクションの設定のいずれかの値を変更しないでくださいされません。 次のレジストリ エントリは、下にあります。
+
+**HKLM\SYSTEM\CurrentControlSet\Services\W32Time**  
+
+ポリシーを作成するときに次の場所は、次の場所に優先順位を受け取らない設定が構成されます。
+
+**HKLM\SOFTWARE\Policies\Microsoft\Windows\W32time**
+
+ポリシーには、W32time キーが作成されます。  ポリシーを削除するときに、このキーも削除されます。
+
+その他の既定の場所:
+
+**HKLM\SYSTEM\CurrentControlSet\Services\W32time**
+
+一部のパラメーターは、レジストリのクロック ティックに格納され、いくつかは、秒単位。 クロック ティックから時間を秒に変換。  
   
 -   1 分 = 60 秒  
   
 -   1 秒 = 1000 ミリ秒  
   
--   1 ms = 10,000 clock ticks on a Windows system, as described at [DateTime.Ticks Property](https://msdn.microsoft.com/en-us/library/system.datetime.ticks.aspx).  
+-   1 ミリ秒で説明されている Windows システムで 10,000 のクロック ティックを = [DateTime.Ticks プロパティ](https://docs.microsoft.com/dotnet/api/system.datetime.ticks?redirectedfrom=MSDN&view=netframework-4.7.2#System_DateTime_Ticks)します。  
   
-たとえば、5 分になります 5 * 60\ * 1000\ * 10000 = 3000000000 クロック ティック。 
+たとえば、5 分の 5 * 60 はなります\*1000\*10000 = 3000000000 クロック ティック。 
 
-すべてのバージョンには、Windows 7、Windows 8、Windows 10、Windows Server 2008、および Windows Server 2008 R2、Windows Server 2012、Windows Server 2012R2、Windows Server 2016 が含まれます。  いくつかのエントリを新しいバージョンの Windows でのみ利用できます。
+すべてのバージョンには、Windows 7、Windows 8、Windows 10、Windows Server 2008、および Windows Server 2008 R2、Windows Server 2012、Windows Server 2012R2、Windows Server 2016 が含まれます。  いくつかのエントリで、新しい Windows バージョンでのみ利用します。
 
 
-#### <a name="Parameters"></a>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
-
-|レジストリ エントリ|バージョン|説明|
-|------------------------------------|---------------|----------------------------|
-|AllowNonstandardModeCombinations|すべての|このエントリは、標準モードの組み合わせがピア間の同期で許可されていることを示します。 ドメイン メンバーの既定値は 1 です。 スタンドアロンのクライアントとサーバーの既定値は 1 です。|
-|NtpServer|すべての|このエントリは、1 つ以上の DNS 名または 1 行の IP アドレスで構成されるタイムスタンプは、元のコンピューターの取得先ピアのスペース区切りの一覧を指定します。 各 DNS 名または表示されている IP アドレスは、一意である必要があります。 ドメインに接続されているコンピューターは、公式の米国時間時計より信頼性の高いタイム ソースと同期する必要があります。  <ul><li>0x01 SpecialInterval </li><li>0x02 UseAsFallbackOnly</li><li>0x04 SymmetricActive - For more information about this mode, see [Windows Time Server: 3.3 Modes of Operation](https://go.microsoft.com/fwlink/?LinkId=208012).</li><li>0x08 クライアント</li></ul><br />ドメイン メンバーでこのレジストリ エントリの既定値はありません。 スタンドアロンのクライアントとサーバーに既定値は、time.windows.com、0x1 です。<br /><br />Note: For more information on available NTP Servers, see [Microsoft Knowledge Base article 262680 - A list of the Simple Network Time Protocol (SNTP) time servers that are available on the Internet](https://go.microsoft.com/fwlink/?LinkId=186067)|
-|れた|すべての|このエントリは、W32Time で保持されます。 Windows オペレーティング システムで使用される予約済みのデータが含まれているし、この設定への変更が予期しない結果になることができます。 ドメインのメンバーとスタンドアロン クライアントとサーバーの両方でこの DLL の既定の場所は、%windir%\system32\w32time.dll です。  |
-|ServiceMain|すべての|このエントリは、W32Time で保持されます。 Windows オペレーティング システムで使用される予約済みのデータが含まれているし、この設定への変更が予期しない結果になることができます。 ドメイン メンバーの既定値は、SvchostEntry_W32Time です。 スタンドアロンのクライアントとサーバーに既定値は、SvchostEntry_W32Time です。  "|
-|種類|すべての|このエントリはピアからの同期を受け入れるようになることを示します。  <ul><li>**NoSync**します。 タイム サービスは他のソースと同期されません。</li><li>**NTP します。** タイム サービスの同期がで指定されたサーバーから、 **NtpServer**します。 レジストリ エントリです。</li><li>**NT5DS**します。 タイム サービスは、ドメインの階層から同期します。  </li><li>**AllSync**します。 タイム サービスは、すべての利用可能な同期メカニズムを使用します。  </li></ul>ドメインのメンバー上の既定値は**NT5DS**します。 スタンドアロンのクライアントとサーバーに既定値は**NTP**します。   |
-
-#### <a name="Configuration"></a>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\Config
+#### <a name="hklmsystemcurrentcontrolsetservicesw32timeparameters"></a>HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
 
 |レジストリ エントリ|バージョン|説明|
 |------------------------------------|---------------|----------------------------|
-|AnnounceFlags|すべての|このエントリは、このコンピューターが信頼できるタイム サーバーとしてマークされているかどうかを制御します。 タイム サーバーとしてもマークされている場合を除き、コンピューターは信頼性の高いとマークされていません。<br /> -0x00 タイム サーバーではありません  <br /> -0x01 常にタイム サーバー  <br /> -0x02 自動タイム サーバー  <br /> -0x04 常に信頼できるタイム サーバー  <br /> -0x08 自動の信頼できるタイム サーバー  <br />ドメイン メンバーの既定値は 10 です。 スタンドアロンのクライアントとサーバーの既定値は 10 です。|
-|EventLogFlags|すべての|このエントリは、タイム サービスをログに記録されるイベントを制御します。  <br />-時刻のジャンプ: 0x1  <br />-変更を移行元: 0x2  <br />ドメイン メンバーの既定値は 2 です。 スタンドアロンのクライアントとサーバーに既定値は 2 です。  |
-|FrequencyCorrectRate|すべての|このエントリは、クロックを修正する速度を制御します。 この値が小さすぎる場合は、クロックが安定しないと、overcorrects します。 値が大きすぎる場合、クロック時間が長いを同期します。 ドメイン メンバーの既定値は 4 です。 スタンドアロンのクライアントとサーバーに既定値は 4 です。  <br /><br />0 は FrequencyCorrectRate レジストリ エントリの値は無効であることに注意してください。 Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 コンピューターでは、値が 0 に設定されている場合、Windows タイム サービスは自動的にそれを 1 に変更します。  |
-|HoldPeriod|すべての|このエントリは、検出のスパイク無効であるためにローカルの時計の同期を迅速に時間を制御します。 スパイクは、その時間を示すタイム サンプルを秒数をオフにし適切なタイム サンプルが一貫して返される後に受け取ったは通常です。 ドメイン メンバーの既定値は 5 です。 スタンドアロンのクライアントとサーバーに既定値は 5 です。  |
-|LargePhaseOffset|すべての|このエントリは、時刻より大きいオフセットまたは 10 では、この値に一致することを指定します。<sup>-7</sup>秒がスパイクと見なされます。 大量のトラフィックなど、ネットワーク接続の中断スパイクがあります。 長期間が引き続き発生する場合を除き、スパイクが無視されます。 ドメイン メンバーの既定値は、50000000 です。 スタンドアロンのクライアントとサーバーに既定値は、50000000 です。  |
-|LastClockRate|すべての|このエントリは、W32Time で保持されます。 Windows オペレーティング システムで使用される予約済みのデータが含まれているし、この設定への変更が予期しない結果になることができます。 ドメイン メンバーの既定値は、156250 です。 スタンドアロンのクライアントとサーバーに既定値は、156250 です。  |
-|LocalClockDispersion|すべての|このエントリは制御場合を想定する必要があります (単位: 秒) 分散だけの時間ソースは、組み込みの CMOS クロックします。 ドメイン メンバーの既定値は 10 です。 スタンドアロンのクライアントとサーバーに既定値は 10 です。|
-|MaxAllowedPhaseOffset|すべての|このエントリは、w32time がクロック レートを使用して、コンピューターの時計を調整する (単位: 秒) の [最長オフセットを指定します。 オフセットがこの比率を超えると、W32Time は、コンピューターの時計を直接設定します。 ドメイン メンバーの既定値は、300 です。 スタンドアロンのクライアントとサーバーの既定値は 1 です。  [詳細については、以下をご覧ください](#MaxAllowedPhaseOffset)します。|
-|MaxClockRate|すべての|このエントリは、W32Time で保持されます。 Windows オペレーティング システムで使用される予約済みのデータが含まれているし、この設定への変更が予期しない結果になることができます。 ドメイン メンバーの既定値は、155860 です。 スタンドアロンのクライアントとサーバーの既定値は、155860 です。  |
-|MaxNegPhaseCorrection|すべての|このエントリは、負の時間の最大の修正をサービスでは、秒単位で指定します。 この値より大きな変更が必要であるサービスによって判断された場合は、代わりに、イベントが記録されます。 特殊なケース: 0 xffffffff 時間修正を常に行うことを意味します。 ドメイン メンバーの既定値は、0 xffffffff です。 スタンドアロンのクライアントとサーバーの既定値は 54,000 (15 時間) です。  |
-|MaxPollInterval|すべての|このエントリは、システムのポーリング間隔の許可の log2 秒単位で最大の間隔を指定します。 スケジュールされた間隔] に従ってシステムをポーリングする必要があります、中に、プロバイダーがするように要求されたときに、サンプルを生成する拒否できますを注意してください。 ドメイン コントローラーの既定値は 10 です。 ドメイン メンバーの既定値は、15 です。 スタンドアロンのクライアントとサーバーの既定値は、15 です。  |
-|MaxPosPhaseCorrection|すべての|このエントリは、サービスでは、秒単位で最大の正の時間の修正を指定します。 この値より大きな変更が必要であるサービスによって判断された場合は、代わりに、イベントが記録されます。 特殊なケース: 0 xffffffff 時間修正を常に行うことを意味します。 ドメイン メンバーの既定値は、0 xffffffff です。 スタンドアロンのクライアントとサーバーの既定値は 54,000 (15 時間) です。  |
-|MinClockRate|すべての|このエントリは、W32Time で保持されます。 Windows オペレーティング システムで使用される予約済みのデータが含まれているし、この設定への変更が予期しない結果になることができます。 ドメイン メンバーの既定値は、155860 です。 スタンドアロンのクライアントとサーバーの既定値は、155860 です。  |
-|MinPollInterval|すべての|このエントリは、システムのポーリング間隔の許可の log2 秒単位で最短の間隔を指定します。 システムでサンプルがこれよりも頻繁に要求しないときにプロバイダーは、スケジュールされた間隔の時間帯以外のサンプルを生成することができることに注意してください。 ドメイン コントローラーの既定値は、6 です。 ドメイン メンバーの既定値は 10 です。 スタンドアロンのクライアントとサーバーの既定値は 10 です。  |
-|PhaseCorrectRate|すべての|このエントリは、フェーズ エラーを修正する速度を制御します。 小さい値を指定すると、すばやくフェーズ エラーを修正が不安定になるクロックが発生する可能性があります。 値が大きすぎる場合は、フェーズ エラーを解決するに時間がかかります。 <br /><br />ドメイン メンバーの既定値は 1 です。 スタンドアロンのクライアントとサーバーに既定値は、7 です。<br /><br />注: 0 は、PhaseCorrectRate レジストリ エントリの値が無効です。 Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 コンピューターでは、値が 0 に設定されている場合、Windows タイム サービスに自動的に変更を 1 にされます。  |
-|PollAdjustFactor|すべての|このエントリは、システムのポーリング間隔の増減する意思決定を制御します。 値が大きい、エラーを減らすポーリング間隔の原因となる量は小さくなります。 ドメイン メンバーの既定値は 5 です。 スタンドアロンのクライアントとサーバーに既定値は 5 です。 |
-|SpikeWatchPeriod|すべての|このエントリが疑わしいオフセットを保持する必要があります時間数を指定します (秒) を正しいと便利です前にします。 ドメイン メンバーの既定値は 900 です。 スタンドアロン クライアントおよびワークステーション上の既定値は 900 です。  |
-|TimeJumpAuditOffset|すべての|秒単位で時刻のジャンプ監査しきい値を示す符号なし整数。 タイム サービスは、直接、時計の設定によって、ローカル クロックを調整時間修正は、この値を超える場合は、タイム サービスは監査イベントを記録します。|
-|UpdateInterval|すべての|このエントリは、フェーズ補正の調整の間のクロック ティック数を指定します。 ドメイン コントローラーの既定値は 100 です。 ドメイン メンバーの既定値は、30,000 です。 スタンドアロンのクライアントとサーバーの既定値は、360,000 です。  <br /><br />**注:**: UpdateInterval レジストリ エントリの無効な値は 0 です。 Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 を実行するコンピューターで値が 0 に設定されている場合、Windows タイム サービスに自動的に、1 に変更します。<br /><br />次の 3 つのレジストリ エントリは、W32Time 既定の構成の一部ではないが、増加ログ機能を取得するためにレジストリに追加することができます。 システム イベント ログに記録された情報は、グループ ポリシー オブジェクト エディターで EventLogFlags 設定の値を変更することで変更できます。 既定では、新しいタイム ソースにできることが切り替わるたびに、タイム サービスはイベント ビューアーでログを作成します。<br /><br />**警告**: 一部のグループ ポリシー オブジェクト (GPO) 設定は、対応するとは異なるシステム管理用テンプレート ファイル (System.adm) で構成されているプリセット値の既定のレジストリ エントリ。 If you plan to use a GPO to configure any Windows Time setting, be sure that you review [Preset values for the Windows Time service Group Policy settings are different from the corresponding Windows Time service registry entries in Windows Server 2003](https://go.microsoft.com/fwlink/?LinkId=186066). この問題は、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2、および Windows Server 2003 に適用されます。 |
-|UtilizeSslTimeData|Windows 10 ビルド 1511 を投稿します。|1 のエントリは、W32Time が複数の SSL のタイムスタンプを使用してがきわめて低い正確であるクロックをシードすることを示します。|
-
-次のレジストリ エントリは、W32Time ログ記録を有効にするために追加する必要があります。  
+|AllowNonstandardModeCombinations|すべての|エントリは、ピア間の同期に非標準モードの組み合わせが許可されていることを示します。 ドメイン メンバーの既定値は 1 です。 スタンドアロン クライアントとサーバーの既定値は 1 です。|
+|NtpServer|すべての|エントリには、1 つまたは複数の DNS 名または IP アドレスの 1 行で構成されるタイムスタンプは、元のコンピューターの取得先のピアのスペースで区切られた一覧を指定します。 各 DNS 名または表示される IP アドレスは一意である必要があります。 ドメインに接続されているコンピューターは、公式米国時間時計より信頼性の高いタイム ソースと同期する必要があります。  <ul><li>0x01 SpecialInterval </li><li>0x02 UseAsFallbackOnly</li><li>0x04 SymmetricActive - このモードの詳細については、次を参照してください。 [Windows タイム サーバー。3.3 操作モードを](https://go.microsoft.com/fwlink/?LinkId=208012)します。</li><li>0x08 クライアント</li></ul><br />ドメインのメンバーでは、このレジストリ エントリの既定値はありません。 スタンドアロン クライアントとサーバーでの既定値は、time.windows.com,0x1 です。<br /><br />注:使用可能な NTP サーバーの詳細については、次を参照してください[マイクロソフト サポート技術情報の記事 262680 - インターネットで使用できる単純なネットワーク タイム プロトコル (SNTP) 時間のサーバーの一覧。](https://go.microsoft.com/fwlink/?LinkId=186067)|
+|れた|すべての|エントリは、W32Time で保持されます。 Windows オペレーティング システムで使用される予約済みのデータが含まれているし、この設定に加えた予期しない結果が発生することができます。 ドメインのメンバーとスタンドアロン クライアントとサーバーの両方でこの DLL の既定の場所は、%windir%\system32\w32time.dll です。  |
+|ServiceMain|すべての|エントリは、W32Time で保持されます。 Windows オペレーティング システムで使用される予約済みのデータが含まれているし、この設定に加えた予期しない結果が発生することができます。 ドメインのメンバーでの既定値は、SvchostEntry_W32Time です。 スタンドアロン クライアントとサーバーでの既定値は、SvchostEntry_W32Time です。  "|
+|種類|すべての|エントリからの同期を受け入れるようにピアリングすることを示します。  <ul><li>**NoSync**します。 タイム サービスは、他のソースと同期しません。</li><li>**NTP します。** タイム サービスで指定されたサーバーから同期、 **NtpServer**します。 レジストリ エントリ。</li><li>**NT5DS**します。 タイム サービスは、ドメインの階層から同期します。  </li><li>**AllSync**します。 タイム サービスは、すべての利用可能な同期メカニズムを使用します。  </li></ul>ドメイン メンバーの既定値は**NT5DS**します。 スタンドアロン クライアントとサーバーに既定値は**NTP**します。   |
+---
+#### <a name="hklmsystemcurrentcontrolsetservicesw32timeconfig"></a>HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config
 
 |レジストリ エントリ|バージョン|説明|
 |------------------------------------|---------------|----------------------------|
-|FileLogEntries|すべての|このエントリは、Windows タイムのログ ファイルに作成されるエントリの量を制御します。 既定値は、none、Windows タイムに任意のアクティビティ ログに記録されません。 有効な値は、0 ~ 300 します。 この値では Windows タイムで作成された通常のイベント ログ エントリには影響しません|
-|FileLogName|すべての|このエントリは、Windows タイム ログのファイルの名前と場所を制御します。 既定値が空白、および変更されていない限り必要があります**FileLogEntries**を変更します。 有効な値は、完全なパスとファイル名が、Windows タイムをログ ファイルの作成に使用するにです。 この値は、Windows タイムで作成された通常のイベント ログ エントリには影響しません。  |
-|FileLogSize|すべての|このエントリは、Windows タイムのログ ファイルの循環ログの動作を制御します。 ときに**FileLogEntries**と**FileLogName**が定義されている場合、このエントリは定義のサイズ (バイト単位) を新しいエントリのログの最も古いエントリを上書きする前に到達するログ ファイルを許可するようにします。 任意の正の数値は、有効なと 3000000 をお勧めします。 この値は、Windows タイムで作成された通常のイベント ログ エントリには影響しません。  |
-
-
-
-#### <a name="NtpClient"></a>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient
-
-|レジストリ エントリ|バージョン|説明|
-|------------------------------------|---------------|----------------------------|
-|AllowNonstandardModeCombinations|すべての|このエントリは、標準モードの組み合わせがピア間の同期で許可されていることを示します。 ドメイン メンバーの既定値は 1 です。 スタンドアロンのクライアントとサーバーの既定値は 1 です。|
-|CompatibilityFlags|すべての|このエントリは、次の互換性フラグと値を指定します。 <br /><br />-DispersionInvalid: 0x00000001  <br />-IgnoreFutureRefTimeStamp: 0x00000002  <br /> -AutodetectWin2K: 0x80000000  <br />-AutodetectWin2KStage2: 0x40000000  <br /><br />ドメイン メンバーの既定値は 0x80000000 です。 スタンドアロンのクライアントとサーバーの既定値は 0x80000000 です。  |
-|CrossSiteSyncFlags|すべての|このエントリは、サービスが、コンピューターのドメインの外部の同期パートナーを選択するかどうかを決定します。 オプションと値は。  <br /><br />-なし: 0  <br />-PdcOnly: 1  <br />-All: 2  <br /><br />NT5DS 値が設定されていない場合、この値は無視されます。 ドメイン メンバーの既定値は 2 です。 スタンドアロンのクライアントとサーバーの既定値は 2 です。  |
-|宣言されました。|すべての|このエントリは、タイム プロバイダの DLL の場所を指定します。  <br /><br />ドメインのメンバーとスタンドアロン クライアントとサーバーの両方でこの DLL の既定の場所は、%windir%\system32\w32time.dll です。|
-|有効になっています。|すべての|このエントリは、現在のタイム サービスで NtpClient プロバイダーが有効になっているかどうかを示します。  <br /><ul><li>1 を [はい] します。</li><li>いいえ 0</li></ul>ドメイン メンバーの既定値は 1 です。 スタンドアロンのクライアントとサーバーに既定値は 1 です。|
-|EventLogFlags|すべての|このエントリは、Windows タイム サービスによって記録されたイベントを指定します。<ul><li>0x1 到達可能性によって変更</li><li>0x2 大規模なサンプルずれ (これは Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 に該当するのみ)</li></ul>ドメイン メンバーの既定値は、0x1 です。 スタンドアロンのクライアントとサーバーに既定値は、0x1 です。|
-|InputProvider|すべての|このエントリは、NtpClient プロバイダーが有効になっているかどうかを示します。  <ul><li>1 を [はい] します。  </li><li>いいえ 0 </li></ul>ドメイン メンバーの既定値は 1 です。 スタンドアロンのクライアントとサーバーに既定値は 1 です。  |
-|LargeSampleSkew|すべての|このエントリは、大規模なサンプル スキューを秒単位でログに記録を指定します。 セキュリティと Exchange コミッション (秒) の仕様に準拠して、これは、3 秒に設定する必要があります。 EventLogFlags が大規模なサンプルについて 0x2 ずれ明示的に構成されている場合にのみこの設定のイベントが記録されます。 ドメイン メンバーの既定値は 3 です。 スタンドアロンのクライアントとサーバーに既定値は 3 です。  |
-|ResolvePeerBackOffMaxTimes|すべての|このエントリは、待機が繰り返されたときの 2 倍に時間の最大数が、失敗と同期するピアを検索しようとしています。 を指定します。 値が 0 のでは、待機は、常に最低限ことを意味します。 ドメイン メンバーの既定値は、7 です。 スタンドアロンのクライアントとサーバーに既定値は、7 です。 |
-|ResolvePeerBackoffMinutes|すべての|このエントリは、(分) と同期するピアの検索を試行する前に、待機する最初の間隔を指定します。 ドメイン メンバーの既定値は、15 です。 スタンドアロンのクライアントとサーバーに既定値は、15 です。  |
-|SpecialPollInterval|すべての|このエントリは、手動のピアの秒単位の特別なポーリング間隔を指定します。 0x1 SpecialInterval フラグが有効な場合、W32Time は、ポーリング間隔ではなくこのポーリング間隔を決定オペレーティング システムでします。 ドメイン メンバーの既定値は、3,600 です。 スタンドアロンのクライアントとサーバーに既定値は、604,800 です。<br/><br/>新しいビルド 1702 は、MinPollInterval と MaxPollInterval Config レジストリ値によって SpecialPollInterval が含まれています。|
-|SpecialPollTimeRemaining|すべての|このエントリは、W32Time で保持されます。 Windows オペレーティング システムで使用される予約済みのデータが含まれています。 コンピューターが再起動した後、W32Time が再同期するまでの秒の時間を指定します。 この設定への変更には、予期しない結果を可能性があります。 両方のドメインのメンバーとスタンドアロン クライアントとサーバーの既定値を空白のままになります。  |
-
-#### <a name="NtpServer"></a>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer
+|AnnounceFlags|すべての|エントリは、このコンピューターが、信頼性の高いタイム サーバーとしてマークされているかどうかを制御します。 コンピューターは、タイム サーバーとしてもマークされている場合を除き、信頼性の高いとしてマークされていません。<br /> -0x00 タイム サーバーではありません  <br /> -0x01 常にタイム サーバー  <br /> -0x02 自動タイム サーバー  <br /> -0x04 常に信頼性の高いタイム サーバー  <br /> -0x08 自動の信頼性の高いタイム サーバー  <br />ドメインのメンバーの既定値は、10 です。 スタンドアロン クライアントとサーバーの既定値は、10 です。|
+|EventLogFlags|すべての|エントリは、タイム サービス ログに記録するイベントを制御します。  <br />-時刻のジャンプします。0x1  <br />ソースの変更:0x2  <br />ドメインのメンバーでの既定値は、2 です。 スタンドアロン クライアントとサーバーでの既定値は、2 です。  |
+|FrequencyCorrectRate|すべての|エントリは、クロックを修正する速度を制御します。 この値が小さすぎる場合は、クロックが安定しないと、overcorrects します。 値が大きすぎる場合は、同期する時間がかかるクロック。 ドメイン メンバーの既定値は 4 です。 スタンドアロン クライアントとサーバーに既定値は 4 です。  <br /><br />0 は FrequencyCorrectRate レジストリ エントリの無効な値であることに注意してください。 Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 コンピューターでは、値が 0 に設定されている場合、Windows タイム サービスは自動的に変更が 1 にします。  |
+|HoldPeriod|すべての|エントリは、スパイクの検出がローカル クロックを同期にすばやく取り込むために無効にする時間の期間を制御します。 スパイクはその時間を示すタイム サンプルは秒単位の数値を適切なタイム サンプルが一貫して返された後、通常、受信しました。 ドメインのメンバーでの既定値は、5 です。 スタンドアロン クライアントとサーバーでの既定値は、5 です。  |
+|LargePhaseOffset|すべての|エントリは、時刻はオフセットより大きいまたは、10 では、この値を指定します。<sup>-7</sup>秒がスパイクと見なされます。 ネットワークの停止など、大量のトラフィックの急増があります。 長期間の保持しない限り、スパイクが無視されます。 ドメインのメンバーでの既定値は、50000000 です。 スタンドアロン クライアントとサーバーでの既定値は、50000000 です。  |
+|LastClockRate|すべての|エントリは、W32Time で保持されます。 Windows オペレーティング システムで使用される予約済みのデータが含まれているし、この設定に加えた予期しない結果が発生することができます。 ドメインのメンバーでの既定値は、156250 です。 スタンドアロン クライアントとサーバーでの既定値は、156250 です。  |
+|LocalClockDispersion|すべての|場合を想定する必要があります (秒) での分散を制御するエントリのみにソースが組み込みの CMOS クロック時間。 ドメインのメンバーでの既定値は、10 です。 スタンドアロン クライアントとサーバーでの既定値は、10 です。|
+|MaxAllowedPhaseOffset|すべての|エントリには、w32time がクロック速度を使用して、コンピュータの時計を調整する秒単位で最大オフセットを指定します。 このレートを超えると、オフセット、W32Time は直接、コンピュータの時計を設定します。 ドメインのメンバーの既定値は、300 です。 スタンドアロン クライアントとサーバーの既定値は 1 です。  [詳細については以下をご覧ください](#MaxAllowedPhaseOffset)します。|
+|MaxClockRate|すべての|エントリは、W32Time で保持されます。 Windows オペレーティング システムで使用される予約済みのデータが含まれているし、この設定に加えた予期しない結果が発生することができます。 ドメインのメンバーの既定値は、155860 です。 スタンドアロン クライアントとサーバーの既定値は、155860 です。  |
+|MaxNegPhaseCorrection|すべての|エントリは、サービスでは、秒単位で最大の負の時間の修正を指定します。 サービスは、これより大きい変更が必要である判断された場合、代わりにイベントが記録されます。 特殊なケース:0 xffffffff では、時間の訂正を常に確認を意味します。 ドメインのメンバーの既定値は、0 xffffffff です。 スタンドアロン クライアントとサーバーの既定値は 54,000 (15 時間)。  |
+|MaxPollInterval|すべての|エントリは、システムのポーリング間隔の許可されている場合の log2 秒単位で最大の間隔を指定します。 中、スケジュールされた間隔に従って、システムをポーリングする必要があります、プロバイダーがそのためには要求されたときにサンプルを生成するために拒否できますに注意してください。 ドメイン コント ローラーの既定値は、10 です。 ドメインのメンバーの既定値は、15 です。 スタンドアロン クライアントとサーバーの既定値は、15 です。  |
+|MaxPosPhaseCorrection|すべての|エントリは、サービスでは、秒単位で最大の正の時間の修正を指定します。 サービスは、これより大きい変更が必要である判断された場合、代わりにイベントが記録されます。 特殊なケース:0 xffffffff では、時間の訂正を常に確認を意味します。 ドメインのメンバーの既定値は、0 xffffffff です。 スタンドアロン クライアントとサーバーの既定値は 54,000 (15 時間)。  |
+|MinClockRate|すべての|エントリは、W32Time で保持されます。 Windows オペレーティング システムで使用される予約済みのデータが含まれているし、この設定に加えた予期しない結果が発生することができます。 ドメインのメンバーの既定値は、155860 です。 スタンドアロン クライアントとサーバーの既定値は、155860 です。  |
+|MinPollInterval|すべての|エントリは、システムのポーリング間隔の許可されている場合の log2 (秒単位)、最小の間隔を指定します。 システムでのサンプルがこれよりも頻繁に要求しないときに、プロバイダーは、スケジュールされた間隔とは別のサンプルを生成することができることに注意してください。 ドメイン コント ローラーの既定値は、6 です。 ドメインのメンバーの既定値は、10 です。 スタンドアロン クライアントとサーバーの既定値は、10 です。  |
+|PhaseCorrectRate|すべての|エントリは、フェーズのエラーを修正する速度を制御します。 小さい値を指定すると、フェーズのエラーを迅速に修正しますが、クロックが不安定になる場合があります。 値が大きすぎる場合は、フェーズのエラーを修正する長い時間がかかります。 <br /><br />ドメイン メンバーの既定値は 1 です。 スタンドアロン クライアントとサーバーでの既定値は、7 です。<br /><br />注:0 は、PhaseCorrectRate レジストリ エントリの値が無効です。 Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 コンピューターでは、値が 0 に設定されている場合、Windows タイム サービスに自動的に変更を 1 にされます。  |
+|PollAdjustFactor|すべての|エントリは、システムのポーリング間隔を増減する意思決定を制御します。 値が大きいほど、エラーを軽減するポーリング間隔を原因となるが小さいほどの量。 ドメインのメンバーでの既定値は、5 です。 スタンドアロン クライアントとサーバーでの既定値は、5 です。 |
+|SpikeWatchPeriod|すべての|不審なオフセットが保持する必要がありますを時間数を指定します。 前に、秒単位で正しいと受け入れられます。 ドメインのメンバーでの既定値は、900 です。 スタンドアロンのクライアントおよびワークステーションでの既定値は、900 です。  |
+|TimeJumpAuditOffset|すべての|時刻のジャンプ監査しきい値を秒単位で示します符号なし整数。 タイム サービスでは、直接、時計の設定によってローカル クロックが調整されます時間修正は、この値を超える場合は、タイム サービスは監査イベントを記録します。|
+|UpdateInterval|すべての|エントリには、補正の調整のフェーズの間のクロック ティック数を指定します。 ドメイン コント ローラーの既定値は 100 です。 ドメインのメンバーの既定値は 30,000 行です。 スタンドアロン クライアントとサーバーの既定値は、360,000 です。  <br /><br />**注**:0 は、UpdateInterval レジストリ エントリの値が無効です。 Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 を実行するコンピューターで、値が 0 に設定されている場合、Windows タイム サービスに自動的に変更を 1 にされます。<br /><br />次の 3 つのレジストリ エントリは、W32Time 既定の構成の一部ではないが、増加ログ機能を取得するためにレジストリに追加できます。 EventLogFlags 設定、グループ ポリシー オブジェクト エディターでの値を変更することで、システム イベント ログに記録される情報を変更できます。 既定では、it は新しいタイム ソースに切り替えるたびに、タイム サービスはイベント ビューアーでログを作成します。<br /><br />**警告**:一部のグループ ポリシー オブジェクト (GPO) の設定、システム管理用テンプレート ファイル (System.adm) で構成されている既定の値は、対応する既定のレジストリ エントリから異なります。 GPO を使用して、Windows の時刻の設定を構成する場合は、することを確認することを確認して[プリセット値 Windows タイム サービスのグループ ポリシー設定は Windows Server 2003、Windows タイム サービスのレジストリ値が対応する異なる](https://go.microsoft.com/fwlink/?LinkId=186066). この問題は、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2、および Windows Server 2003 に適用されます。 |
+|UtilizeSslTimeData|Windows 10 ビルド 1511 を投稿します。|1 のエントリは、W32Time が複数の SSL のタイムスタンプを使用してはきわめて不正確なクロックをシードすることを示します。|
+---
+W32Time ログ記録を有効にするには、次のレジストリ エントリを追加する必要があります。  
 
 |レジストリ エントリ|バージョン|説明|
 |------------------------------------|---------------|----------------------------|
-|AllowNonstandardModeCombinations|すべての|このエントリは、標準モードの組み合わせがクライアントとサーバー間の同期で許可されていることを示します。 ドメイン メンバーの既定値は 1 です。 スタンドアロンのクライアントとサーバーの既定値は 1 です。|
-|宣言されました。|すべての|このエントリは、タイム プロバイダの DLL の場所を指定します。<br /><br />ドメインのメンバーとスタンドアロン クライアントとサーバーの両方でこの DLL の既定の場所は、%windir%\system32\w32time.dll です。  |
-|有効になっています。|すべての|このエントリは、現在のタイム サービスで NtpServer プロバイダーが有効になっているかどうかを示します。 <ul><li>1 を [はい] します。</li><li>いいえ 0</li></ul>ドメイン メンバーの既定値は 1 です。 スタンドアロンのクライアントとサーバーに既定値は 1 です。  |
-|InputProvider|すべての|このエントリは、NtpServer プロバイダーが有効になっているかどうかを示します。  <ul><li>1 を [はい] します。  </li><li>いいえ 0 </li></ul>ドメイン メンバーの既定値は 1 です。 スタンドアロンのクライアントとサーバーに既定値は 1 です。  |
+|FileLogEntries|すべての|エントリは、Windows タイムのログ ファイルに作成されたエントリの量を制御します。 既定値は、none、任意の Windows にアクティビティ ログに記録されませんが。 有効な値は、0 ~ 300 です。 この値では通常、Windows タイムで作成、イベント ログ エントリには影響しません|
+|FileLogName|すべての|エントリは、Windows には、ログのファイルの名前と場所を制御します。 既定値は、空白であることとしない限り変更しないでください**FileLogEntries**が変更されました。 有効な値は、完全なパスと Windows の時刻がログ ファイルの作成に使用するファイル名です。 この値は、通常 Windows 時間によって作成されたイベント ログ エントリには影響しません。  |
+|FileLogSize|すべての|エントリは、Windows タイムのログ ファイルの循環ログ動作を制御します。 ときに**FileLogEntries**と**FileLogName**が定義されている場合、エントリ サイズをバイト単位で定義に新しいエントリで、最も古いログ エントリを上書きする前に到達するログ ファイルに許可します。 この設定値 1000000 以上を使用してください。 この値は、通常 Windows 時間によって作成されたイベント ログ エントリには影響しません。  |
 
-#### <a name="MaxAllowedPhaseOffset"></a>MaxAllowedPhaseOffset 情報
-W32Time を徐々 にコンピューターの時計を設定するためには、オフセットは MaxAllowedPhaseOffset 値未満にして、同時に、次の等式を満たしている必要があります。  
+---
+
+#### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpclient"></a>HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient
+
+|レジストリ エントリ|バージョン|説明|
+|------------------------------------|---------------|----------------------------|
+|AllowNonstandardModeCombinations|すべての|エントリは、ピア間の同期に非標準モードの組み合わせが許可されていることを示します。 ドメイン メンバーの既定値は 1 です。 スタンドアロン クライアントとサーバーの既定値は 1 です。|
+|CompatibilityFlags|すべての|エントリには、次の互換性フラグと値を指定します。 <br /><br />-DispersionInvalid:0x00000001  <br />-   IgnoreFutureRefTimeStamp:0x00000002  <br /> -   AutodetectWin2K:0x80000000  <br />-   AutodetectWin2KStage2:0x40000000  <br /><br />ドメインのメンバーの既定値は、0x80000000 です。 スタンドアロン クライアントとサーバーの既定値は、0x80000000 です。  |
+|CrossSiteSyncFlags|すべての|エントリは、サービスがコンピューターのドメインの外部の同期パートナーを選択するかどうかを判断します。 オプションと値は。  <br /><br />-None。0  <br />-PdcOnly:1  <br />-All:2  <br /><br />Type が NT5DS に設定されていない場合、この値は無視されます。 ドメインのメンバーの既定値は、2 です。 スタンドアロン クライアントとサーバーの既定値は、2 です。  |
+|DllName|すべての|タイム プロバイダの DLL の場所を指定します。  <br /><br />ドメインのメンバーとスタンドアロン クライアントとサーバーの両方でこの DLL の既定の場所は、%windir%\system32\w32time.dll です。|
+|有効|すべての|エントリは、現在のタイム サービスで NtpClient プロバイダーが有効になっているかどうかを示します。  <br /><ul><li>1 を [はい] します。</li><li>No 0</li></ul>ドメイン メンバーの既定値は 1 です。 スタンドアロン クライアントとサーバーに既定値は 1 です。|
+|EventLogFlags|すべての|エントリには、Windows タイム サービスによって記録されたイベントを指定します。<ul><li>0x1 の到達可能性の変更</li><li>0x2 大きなサンプル傾斜 (これは Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 に該当するのみ)</li></ul>ドメインのメンバーでの既定値には 0x1 です。 スタンドアロン クライアントとサーバーでの既定値には 0x1 です。|
+|InputProvider|すべての|エントリは、クライアントからの時刻の情報を取得するの InputProvider として NtpClient を有効にするかどうかを示します。 NtpServer は、ローカル クロックを同期するのに便利なタイム サンプルを返すことによって、ネットワーク上のクライアントに要求に応答する時間のサーバーです。 <ul><li>[はい] に 1 を =  </li><li>いいえ = 0 </li></ul><p>ドメインのメンバーとスタンドアロン クライアントの両方の既定値:1  |
+|LargeSampleSkew|すべての|エントリには、秒単位でログ記録の大規模なサンプルの傾斜を指定します。 セキュリティと Exchange 委員会 (秒) の仕様に準拠して、これは、3 秒に設定する必要があります。 EventLogFlags が 0x2 大きなサンプルの傾斜を明示的に構成されている場合にのみこの設定のイベントが記録されます。 ドメインのメンバーでの既定値は、3 です。 スタンドアロン クライアントとサーバーでの既定値は、3 です。  |
+|ResolvePeerBackOffMaxTimes|すべての|回繰り返されたときの待機間隔を 2 倍の最大回数を失敗と同期するピアを検索することを指定します。 値 0 は、待機間隔は、最小値では常を意味します。 ドメインのメンバーでの既定値は、7 です。 スタンドアロン クライアントとサーバーでの既定値は、7 です。 |
+|ResolvePeerBackoffMinutes|すべての|エントリには、分単位と同期するピアを検索する前に待機する初期間隔を指定します。 ドメインのメンバーでの既定値は、15 です。 スタンドアロン クライアントとサーバーでの既定値は、15 です。  |
+|SpecialPollInterval|すべての|エントリは、手動のピアを秒単位で特別なポーリング間隔を指定します。 0x1 SpecialInterval フラグが有効にすると、W32Time のポーリング間隔ではなくこのポーリング間隔は、オペレーティング システムによってに確認します。 ドメインのメンバーでの既定値は、3,600 です。 スタンドアロン クライアントとサーバーでの既定値は、604,800 です。<br/><br/>新しいビルド 1702 では、MinPollInterval と MaxPollInterval Config のレジストリ値によって SpecialPollInterval が含まれています。|
+|SpecialPollTimeRemaining|すべての|エントリは、W32Time で保持されます。 Windows オペレーティング システムで使用される予約済みのデータが含まれています。 コンピューターが再起動した後、W32Time が再同期するまでの秒の時間を指定します。 この設定に加えた予期しない結果が発生することができます。 スタンドアロン クライアントとサーバー両方のドメイン メンバーでは、既定値は空白のままです。  |
+
+---
+
+#### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpserver"></a>HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer
+
+|レジストリ エントリ|バージョン|説明|
+|------------------------------------|---------------|----------------------------|
+|AllowNonstandardModeCombinations|すべての|エントリは、標準モードの組み合わせがクライアントとサーバー間の同期に許可されていることを示します。 ドメイン メンバーの既定値は 1 です。 スタンドアロン クライアントとサーバーの既定値は 1 です。|
+|DllName|すべての|タイム プロバイダの DLL の場所を指定します。<br /><br />ドメインのメンバーとスタンドアロン クライアントとサーバーの両方でこの DLL の既定の場所は、%windir%\system32\w32time.dll です。  |
+|有効|すべての|エントリは、現在のタイム サービスで NtpServer プロバイダーが有効になっているかどうかを示します。 <ul><li>1 を [はい] します。</li><li>No 0</li></ul>ドメイン メンバーの既定値は 1 です。 スタンドアロン クライアントとサーバーに既定値は 1 です。  |
+|InputProvider|すべての|エントリは、クライアントからの時刻の情報を取得するの InputProvider として NtpClient を有効にするかどうかを示します。 NtpServer は、ローカル クロックを同期するのに便利なタイム サンプルを返すことによって、ネットワーク上のクライアントに要求に応答する時間のサーバーです。 <ul><li>[はい] に 1 を =  </li><li>いいえ = 0 </li></ul><p>ドメインのメンバーとスタンドアロン クライアントの両方の既定値:1  |
+
+---
+
+#### <a name="maxallowedphaseoffset-information"></a>MaxAllowedPhaseOffset 情報
+オフセットがある必要があります W32Time コンピューター クロックを徐々 に設定するためより小さい**MaxAllowedPhaseOffset**値し、同時に、次の式を満たします。  
+
 ```  
 |CurrentTimeOffset| / (PhaseCorrectRate*UpdateInterval) < SystemClockRate / 2  
 ``` 
-CurrentTimeOffset はミリ秒 = 10,000 クロック ティック Windows システム上で位置のクロック刻みで測定されます。  
+CurrentTimeOffset は 1 ミリ秒 = 10,000 が Windows システムのタイマー刻みをクロックのクロック ティックで測定されます。  
   
-SystemClockRate と PhaseCorrectRate も、クロック ティック単位で測定されます。 SystemClockRate を取得する、次のコマンドを使用して、クロック ティック秒の数式を使用する時間を秒から変換 * 1000\ * 10000。  
+SystemClockRate と PhaseCorrectRate も、クロック タイマー刻み単位で測定します。 SystemClockRate を取得するには、次のコマンドを使用し、クロック ティック (秒) の数式を使用する秒から変換することができます * 1000\*10000。  
   
 ```  
 W32tm /query /status /verbose  
 ClockRate: 0.0156000s  
 ```  
   
-SystemclockRate では、システムの時計の率です。 156000 (秒) を使用して、例として、SystemclockRate は = 0.0156000 1000 * \ * 10000 = 156000 クロック ティック。  
+SystemclockRate は、システム クロックの速度です。 156000 秒を使用して、例として、SystemclockRate は = 0.0156000 * 1000 \* 10000 = 156000 クロック ティック。  
   
-MaxAllowedPhaseOffset は秒単位でもあります。 クロック ティックは変換、乗算 MaxAllowedPhaseOffset * 1000\ * 10000 です。  
+MaxAllowedPhaseOffset は秒単位でもあります。 クロック ティックに変換、乗算 MaxAllowedPhaseOffset * 1000\*10000 です。  
   
-次の 2 つの例を適用する方法を表示します。  
+次の 2 つの例は、適用する方法を表示します。  
   
-**例 1**: 4 分、時間とは異なります (たとえば、な午前 11 時 05 分の時間と、タイム サンプルが、ピアから受信したし、午前 11時 09分が適切であると考えられる)。  
+**例 1**:時間が 4 分では異なります (たとえば、時間が 11時 05分 AM、タイム サンプル受信され、ピアからが正しいと推定は、午前 11時 09分)。  
 ```
 phasecorrectRate = 1  
   
@@ -227,22 +231,22 @@ Is CurrentTimeOffset < MaxAllowedPhaseOffset?
   
 2400000000 < 6000000000 = TRUE  
 ```
-上記の式が満たしてですか。 
+上記の方程式は満たしてでしょうか。 
 ```
 (|CurrentTimeOffset| / (PhaseCorrectRate*UpdateInterval) < SystemClockRate / 2)  
   
 Is 2,400,000,000 / (30000*1) < 156000/2  
   
-Is 100,000 < 78,000  
+Is 80,000 < 78,000  
   
 NO/FALSE  
 ```  
-したがって W32tm 設定のクロック戻るすぐにします。  
+そのため W32tm はクロックを遅らせて設定直後。  
   
 > [!NOTE]  
-> この場合、戻さクロック速度が遅い場合は、TRUE で式の結果を得るも、PhaseCorrectRate または updateInterval レジストリ内の値を調整する必要があります。  
+> この場合、緩やかに変化戻る時計を設定する場合は TRUE で数式の結果を得ることも、PhaseCorrectRate または updateInterval レジストリ内の値を調整する必要があります。  
   
-**例 2**: 3 分、時間とは異なります。  
+**例 2**:時間は、3 分では異なります。  
 ```  
 phasecorrectRate = 1  
   
@@ -258,7 +262,7 @@ Is CurrentTimeOffset < MaxAllowedPhaseOffset?
   
 1800000000 < 6000000000 = TRUE  
 ```  
-上記の式が満たしてですか。
+上記の方程式は満たしてでしょうか。
 ```
 (|CurrentTimeOffset| / (PhaseCorrectRate*UpdateInterval) < SystemClockRate / 2)  
   
@@ -268,36 +272,36 @@ Is 60,000 < 78,000
   
 YES/TRUE  
 ```  
-ここでは、クロックは戻さ速度が遅い。  
+この場合、クロック戻されます緩やかに変化します。  
   
-## <a name="w2k3tr_times_tools_vwtt"></a>Windows タイム サービスのグループ ポリシー設定  
-ほとんどの W32Time パラメーターは、グループ ポリシー オブジェクト エディターを使用して構成できます。 これは、信頼性の高いタイム ソースにするには、NTPServer または NTPClient、時刻の同期メカニズムを構成して、コンピューターを構成するコンピューターの構成が含まれます。  
+## <a name="windows-time-service-group-policy-settings"></a>Windows タイム サービスのグループ ポリシー設定  
+ほとんどの W32Time パラメーターは、グループ ポリシー オブジェクト エディターを使用して構成できます。 これには、信頼性の高いタイム ソース NTPServer または NTPClient、時の同期メカニズムを構成して、コンピューターの構成であるコンピューターの構成が含まれます。  
   
 > [!NOTE]  
-> Windows タイム サービスのグループ ポリシー設定では、Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 のドメイン コントローラーで構成できます。 でき、Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 を実行しているコンピューターにのみ適用できます。  
+> Windows タイム サービスのグループ ポリシー設定は Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 のドメイン コント ローラー上で構成でき。、Windows Server 2003、Windows Server を実行しているコンピューターにのみ適用できます。2003 R2、Windows Server 2008、および Windows Server 2008 R2。  
   
-設定、グループ ポリシー オブジェクト エディター スナップインで、次の場所で W32Time を構成するために使用するグループ ポリシーを確認することができます。  
+W32Time を次の場所でグループ ポリシー オブジェクト エディター スナップインで構成する設定が使用されるグループ ポリシーをご覧ください。  
   
--   コンピューターの構成 \ 管理 Templates\System\Windows タイム サービス  
+-   コンピューターの構成 \ 管理用 Templates\System\Windows タイム サービス  
   
-    構成**グローバル構成設定**次のとおりです。  
+    構成**グローバル構成設定**ここです。  
   
--   コンピューター構成 \ 管理 Templates\System\Windows タイム Service\Time プロバイダー  
+-   コンピューターの構成 \ 管理用 Templates\System\Windows タイム Service\Time プロバイダー  
   
-    構成**Windows NTP クライアント**設定を次のとおりです。  
+    構成**Windows NTP クライアント**ここで設定します。  
   
-    有効にする**Windows NTP クライアント**次のとおりです。  
+    有効にする**Windows NTP クライアント**ここです。  
   
-    有効にする**Windows NTP サーバー**次のとおりです。  
+    有効にする**Windows NTP サーバー**ここです。  
   
 > [!WARNING]  
-> グループ ポリシー オブジェクト (GPO) 設定は既定の対応するレジストリ エントリとは異なるシステム管理用テンプレート ファイル (System.adm) で構成されているプリセット値の一部です。 If you plan to use a GPO to configure any Windows Time setting, be sure that you review [Preset values for the Windows Time service Group Policy settings are different from the corresponding Windows Time service registry entries in Windows Server 2003](https://go.microsoft.com/fwlink/?LinkId=186066). この問題は、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2、および Windows Server 2003 に適用されます。  
+> 一部のグループ ポリシー オブジェクト (GPO) の設定、システム管理用テンプレート ファイル (System.adm) で構成されている既定の値は、対応する既定のレジストリ エントリから異なります。 GPO を使用して、Windows の時刻の設定を構成する場合は、することを確認することを確認して[プリセット値 Windows タイム サービスのグループ ポリシー設定は Windows Server 2003、Windows タイム サービスのレジストリ値が対応する異なる](https://go.microsoft.com/fwlink/?LinkId=186066). この問題は、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2、および Windows Server 2003 に適用されます。  
   
-次の表は、Windows タイム サービスと各設定に関連付けられている事前に定義された値に関連付けられているグローバル グループ ポリシー設定を示します。 各設定の詳細については、対応するレジストリ エントリを参照してください。"[Windows タイム サービスのレジストリ値](#w2k3tr_times_tools_uhlp)"このトピックで前述しました。 呼ばれる 1 つの GPO で、次の設定が含まれている**グローバル構成設定**します。  
+次の表では、Windows タイム サービスと各設定に関連付けられた事前設定された値に関連付けられているグローバル グループ ポリシー設定が一覧表示します。 各設定の詳細については、対応するレジストリ エントリを参照してください。"[Windows タイム サービスのレジストリ値](#w2k3tr_times_tools_uhlp)"このトピックで前述しました。 次の設定と呼ばれる 1 つの GPO に含まれる**グローバル構成設定**します。  
   
-**Windows タイムに関連付けられているグローバル グループ ポリシーの設定**  
+**Windows の時刻に関連付けられているグローバル グループ ポリシーの設定**  
   
-|グループ ポリシー設定|事前設定の値|  
+|グループ ポリシー設定|事前設定された値|  
 |------------------------|------------------|  
 |AnnounceFlags|10|  
 |EventLogFlags|2|  
@@ -315,28 +319,28 @@ YES/TRUE
 |SpikeWatchPeriod|90|  
 |UpdateInterval|100|  
   
-次の表に、利用可能な設定を**Windows NTP クライアントを構成する**GPO と、Windows タイム サービスに関連付けられている事前設定の値。 各設定の詳細については、対応するレジストリ エントリを参照してください。"[Windows タイム サービスのレジストリ値](#w2k3tr_times_tools_uhlp)"このトピックで前述しました。  
+次の表に、利用可能な設定、 **Windows NTP クライアントを構成する**GPO と、Windows タイム サービスに関連付けられている事前設定された値。 各設定の詳細については、対応するレジストリ エントリを参照してください。"[Windows タイム サービスのレジストリ値](#w2k3tr_times_tools_uhlp)"このトピックで前述しました。  
   
-**Windows タイムに関連付けられている NTP クライアントのグループ ポリシーの設定**  
+**Windows の時刻に関連付けられている NTP クライアントのグループ ポリシーの設定**  
   
 |グループ ポリシー設定|既定値|  
 |------------------------|-----------------|  
-|NtpServer|time.windows.com、0x1|  
-|種類|既定のオプション:<br /><br />-   **NTP します。** ドメインに参加していないコンピューターで使用します。<br />-   **NT5DS です。** ドメインに参加しているコンピューターで使用します。|  
+|NtpServer|time.windows.com,0x1|  
+|種類|既定のオプション:<br /><br />-   **NTP.** ドメインに参加していないコンピューターで使用します。<br />-   **NT5DS です。** ドメインに参加しているコンピューターで使用します。|  
 |CrossSiteSyncFlags|2|  
 |ResolvePeerBackoffMinutes|15|  
 |ResolvePeerBackoffMaxTimes|7|  
 |SpecialPollInterval|3600|  
 |EventLogFlags|0|  
   
-## <a name="w2k3tr_times_tools_suxb"></a>Windows タイム サービスによって使用されるネットワーク ポート  
-Windows タイムには、すべての時間同期通信 UDP ポート 123 の使用を必要とする NTP 仕様が次に示します。 このポートは Windows タイムで予約されているし、予約は常にします。 その時計の同期、コンピューターや、別のコンピューターに時刻を提供するたびに、その通信は、UDP ポート 123 で行われます。  
+## <a name="network-ports-used-by-the-windows-time-service"></a>Windows タイム サービスによって使用されるネットワーク ポート  
+Windows の時刻では、時間の同期通信はすべての UDP ポート 123 の使用を必要とする NTP 仕様に従います。 このポートは Windows タイムで予約されていて、常に予約されたままです。 コンピューターは、そのクロックを同期または別のコンピューターに時刻を提供、されるたびに、その通信は、UDP ポート 123 で実行されます。  
   
 > [!NOTE]  
-> 複数のネットワーク アダプター (マルチホーム コンピューターとも呼ばれます) を備えたコンピューターがあれば、選択的にネットワーク アダプターに基づく Windows タイム サービスを有効にすることはできません。  
+> (マルチホーム コンピューターとも呼ばれます)、複数のネットワーク アダプターを備えたコンピューターがあれば、ネットワーク アダプターに基づく、Windows タイム サービスを選択的に有効にすることはできません。  
   
-## <a name="w2k3tr_times_tools_qoep"></a>関連情報  
-次のリソースには、このセクションに関連する追加の情報が含まれます。  
+## <a name="related-information"></a>関連情報  
+このセクションに関連する追加の情報を以下のリソース。  
   
--   RFC *1305* 、IETF RFC データベースで  
+-   RFC *1305* IETF RFC データベースで  
 

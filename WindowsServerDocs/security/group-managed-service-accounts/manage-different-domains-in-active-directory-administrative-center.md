@@ -1,7 +1,7 @@
 ---
-title: "Active Directory 管理センターでさまざまなドメインを管理します。"
+title: Active Directory 管理センターでさまざまなドメインを管理します。
 ms.prod: windows-server-threshold
-description: "Windows Server のセキュリティ"
+description: Windows Server のセキュリティ
 ms.custom: na
 ms.reviewer: na
 ms.suite: na
@@ -12,84 +12,85 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: 5f253bd4952d8a347e97eafdb38d86fa98024b8d
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59839943"
 ---
 # <a name="manage-different-domains-in-active-directory-administrative-center"></a>Active Directory 管理センターでさまざまなドメインを管理します。
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server 2016 の Windows Server (半期チャネル)
 
-  When you open Active Directory Administrative, the domain that you are currently logged on to on this computer \(the local domain\) appears in the Active Directory Administrative Center navigation pane \(the left pane\). Depending on the rights of your current set of logon credentials, you can view or manage the Active Directory objects in this local domain.
+  Active Directory 管理者をこのコンピューターに現在ログオンしているドメインを開く\(ローカル ドメイン\)Active Directory 管理センターのナビゲーション ウィンドウに表示されます\(の左側のウィンドウ\). 現在のログオン資格情報のセットの権利、に応じて表示またはこのローカル ドメインで Active Directory オブジェクトを管理できます。
 
- You can also use the same set of logon credentials and the same instance of Active Directory Administrative Center to view or manage Active Directory objects in any other domain in the same forest, or a domain in another forest that has an established trust with the local domain. 特定の方向の信頼関係と two\ 方向の信頼関係の両方がサポートされます。
+ 表示または同じフォレスト内の他のドメインまたはローカルでの確立された信頼のある別のフォレスト内のドメインで Active Directory オブジェクトを管理するログオン資格情報と Active Directory 管理センターの同じインスタンスの同じセットを使用することもできます。ドメイン。 両方のいずれか\-方向の信頼関係と 2 つ\-方向の信頼関係がサポートされています。
 
 > [!NOTE]
->  If there is a one\-way trust between Domain A and Domain B through which users in Domain A can access resources in Domain B but users in Domain B cannot access resources in Domain A, if you are running Active Directory Administrative Center on the computer where Domain A is your local domain, you can connect to Domain B with the current set of logon credentials and in the same instance of Active Directory Administrative Center. But if you are running Active Directory Administrative Center on the computer where Domain B is your local domain, you cannot connect to Domain A with the same set of credentials in the same instance of the Active Directory Administrative Center.
+>  1 つがある場合\-方向の信頼間ドメイン A とドメイン B によりドメイン A のユーザーがドメイン B のリソースにアクセスできますが、ドメイン B のユーザーは、コンピューター上の Active Directory 管理センターを実行している場合に、ドメイン A のリソースにアクセスできませんドメイン A が、ローカルのドメインにあると、現在の Active Directory 管理センターの同じインスタンスで、ログオン資格情報のセットとドメイン B に接続できます。 ただし、Active Directory 管理センターは、ドメイン B が、ローカル ドメイン、コンピューターで実行されて場合、は、同じ Active Directory 管理センターの同じインスタンス内の資格情報のセットを持つドメイン A に接続することはできません。
 
- この手順を実行するために必要以上のグループ メンバーシップはありません。
+ この手順を完了するために最低限必要なグループ メンバーシップはありません。
 
-### <a name="windows-server-2012-to-manage-a-foreign-domain-in-the-selected-instance-of-active-directory-administrative-center-using-the-current-set-of-logon-credentials"></a>Windows Server 2012: To manage a foreign domain in the selected instance of Active Directory Administrative Center using the current set of logon credentials
+### <a name="windows-server-2012-to-manage-a-foreign-domain-in-the-selected-instance-of-active-directory-administrative-center-using-the-current-set-of-logon-credentials"></a>Windows Server 2012:現在のログオン資格情報のセットを使用して Active Directory 管理センターの選択したインスタンスの外部ドメインを管理するには
 
-1.  To open Active Directory Administrative Center, in **Server Manager**, click **Tools**, and then click **Active Directory Administrative Center**.
-
-    > [!NOTE]
-    >  Another way to open Active Directory Administrative Center is to click **Start**, and then type **dsac.exe**.
-
-2.  開くには**ナビゲーション ノードの追加**、] をクリックして**管理**、] をクリックし、**ナビゲーション ノードの追加**、次の図に示すようにします。
-
-     ![ショット * * ナビゲーション ノード * * UI の追加](media/ADDS_ADACAddNavNode.gif)
-
-3.  **ナビゲーション ノードの追加**、] をクリックして**他のドメインに接続する**、次の図に示すようにします。
-
-     ![ショット * * ナビゲーション ノード * * UI の追加](media/ADDS_ADACConnectToDomain.gif)
-
-4.  **への接続**、管理する外部ドメインの名前を入力 \ (たとえば、**contoso.com**\)、] をクリックし、**[OK]**します。
-
-5.  When you are successfully connected to the foreign domain, browse through the columns in the **Add Navigation Nodes** window, select the container or containers to add to your Active Directory Administrative Center navigation pane, and then click **OK**.
-
-### <a name="windows-server-2008-r2-to-manage-a-foreign-domain-in-the-selected-instance-of-active-directory-administrative-center-using-the-current-set-of-logon-credentials"></a>Windows Server 2008 R2: To manage a foreign domain in the selected instance of Active Directory Administrative Center using the current set of logon credentials
-
-1.  To open Active Directory Administrative Center, click **Start**, click **Administrative Tools**, and then click **Active Directory Administrative Center**.
+1.  Active Directory 管理センターを開く**サーバー マネージャー**、 をクリックして**ツール**、 をクリックし、 **Active Directory 管理センター**します。
 
     > [!NOTE]
-    >  Another way to open Active Directory Administrative Center is to click **Start**, click **Run**, and then type **dsac.exe**.
+    >  Active Directory 管理センターを開く別の方法は をクリックする**開始**、し、入力**dsac.exe**します。
 
-2.  To open **Add Navigation Nodes**, near the top of the Active Directory Administrative Center window, click **Add Navigation Nodes** as shown in the following illustration.
+2.  開くには**ナビゲーション ノードの追加**、 をクリックして**管理**、 をクリックし、**ナビゲーション ノードの追加**次の図に示すようにします。
 
-     ![ショット * * ナビゲーション ノード * * UI の追加](media/click_add_nav_nodes.gif)
+     ![スクリーン ショット * * ナビゲーション ノード * * UI の追加](media/ADDS_ADACAddNavNode.gif)
+
+3.  **ナビゲーション ノードの追加**、 をクリックして**他のドメインへの接続**次の図に示すようにします。
+
+     ![スクリーン ショット * * ナビゲーション ノード * * UI の追加](media/ADDS_ADACConnectToDomain.gif)
+
+4.  **への接続**、管理する外部ドメインの名前を入力\(など**contoso.com**\)、順にクリックします**OK**します。
+
+5.  外部ドメインに正常に接続されて、列参照、**ナビゲーション ノードの追加**ウィンドウで、または、Active Directory 管理センターのナビゲーション ウィンドウに追加する複数のコンテナーを選択し、クリックして**OK**します。
+
+### <a name="windows-server-2008-r2-to-manage-a-foreign-domain-in-the-selected-instance-of-active-directory-administrative-center-using-the-current-set-of-logon-credentials"></a>Windows Server 2008 R2:現在のログオン資格情報のセットを使用して Active Directory 管理センターの選択したインスタンスの外部ドメインを管理するには
+
+1.  Active Directory 管理センターを開くには、次のようにクリックします。**開始**、 をクリック**管理ツール**、 をクリックし、 **Active Directory 管理センター**します。
 
     > [!NOTE]
-    >  Another way to open **Add Navigation Nodes** is to right\-click anywhere in the empty space in the Active Directory Administrative Center navigation pane, and then click **Add Navigation Nodes**.
+    >  Active Directory 管理センターを開く別の方法は をクリックする**開始**、 をクリックして**実行**、し、入力**dsac.exe**します。
 
-3.  **ナビゲーション ノードの追加**、] をクリックして**他のドメインに接続する**、次の図に示すようにします。
+2.  開くには**ナビゲーション ノードの追加**、Active Directory 管理センター ウィンドウの上部には、次のようにクリックします。**ナビゲーション ノードの追加**次の図に示すようにします。
 
-     ![ショット * * 追加ナビゲーション ノード * * * * 他のドメイン * * UI への接続](media/add_nav_nodes.gif)
+     ![スクリーン ショット * * ナビゲーション ノード * * UI の追加](media/click_add_nav_nodes.gif)
 
-4.  **への接続**、管理する外部ドメインの名前を入力 \ (たとえば、**contoso.com**\)、] をクリックし、**[OK]**します。
+    > [!NOTE]
+    >  別の方法で開く**ナビゲーション ノードの追加**右側には、\-Active Directory 管理センターのナビゲーション ウィンドウで空の領域内をクリックし、クリックして**ナビゲーションノードの追加**.
 
-5.  When you are successfully connected to the foreign domain, browse through the columns in the **Add Navigation Nodes** window, select the container or containers to add to your Active Directory Administrative Center navigation pane, and then click **OK**.
+3.  **ナビゲーション ノードの追加**、 をクリックして**他のドメインへの接続**次の図に示すようにします。
 
- For more information about customizing the Active Directory Administrative Center navigation pane, see [Customize the Active Directory Administrative Center Navigation Pane](customize-the-active-directory-administrative-center-navigation-pane.md).
+     ![スクリーン ショット * * 追加のナビゲーション ノード * * * * その他のドメイン * * UI への接続](media/add_nav_nodes.gif)
 
- You can also open Active Directory Administrative Center by using a set of logon credentials that is different from your current set of logon credentials. The command in the following procedure can be useful if you are logged on to the computer that is running Active Directory Administrative Center with normal user credentials, but you want to use Active Directory Administrative Center on this computer to manage your local domain as an administrator. \(This command can also be useful if you want to use Active Directory Administrative Center to remotely manage a foreign domain that is different from your local domain with a set of credentials that is different from your current set of logon credentials. ただし、外部ドメインのローカル ドメインと信頼が確立されている必要があります \)。
+4.  **への接続**、管理する外部ドメインの名前を入力\(など**contoso.com**\)、順にクリックします**OK**します。
 
- この手順を実行するために必要以上のグループ メンバーシップはありません。
+5.  外部ドメインに正常に接続されて、列参照、**ナビゲーション ノードの追加**ウィンドウで、または、Active Directory 管理センターのナビゲーション ウィンドウに追加する複数のコンテナーを選択し、クリックして**OK**します。
+
+ Active Directory 管理センターのナビゲーション ウィンドウをカスタマイズする方法の詳細については、次を参照してください。 [Active Directory 管理センターのナビゲーション ウィンドウのカスタマイズ](customize-the-active-directory-administrative-center-navigation-pane.md)します。
+
+ 現在のログオン資格情報のセットとは異なるログオン資格情報のセットを使用して、Active Directory 管理センターを開くこともできます。 次の手順で、コマンドは通常のユーザーの資格情報で Active Directory 管理センターを実行しているコンピューターにログオンしている場合に便利ですがこのコンピューターを管理する Active Directory 管理センターを使用する、管理者としてローカル ドメインです。 \(このコマンドは、現在のログオン資格情報のセットとは異なる一連の資格情報でローカル ドメインとは異なる外部ドメインをリモートで管理する Active Directory 管理センターを使用する場合に便利だことができます。 ただし、外部ドメインには、ローカル ドメインでの確立された信頼が必要です。\)
+
+ この手順を完了するために最低限必要なグループ メンバーシップはありません。
 
 ### <a name="to-manage-a-domain-using-logon-credentials-that-are-different-from-the-current-set-of-logon-credentials"></a>現在のログオン資格情報のセットとは異なるログオン資格情報を使用してドメインを管理するには
 
-1.  To open Active Directory Administrative Center, at a command prompt, type the following command, and then press ENTER:
+1.  Active Directory 管理センターでは、コマンド プロンプトを開く、次のコマンドを入力し、ENTER キーを押します。
 
      `runas /user:<domain\user> dsac`
 
-     Where `<domain\user>` is the set of credentials that you want to open Active Directory Administrative Center with and `dsac` is the Active Directory Administrative Center executable file name \(Dsac.exe\).
+     場所`<domain\user>`で Active Directory 管理センターを開きたいする資格情報のセットと`dsac`Active Directory 管理センターの実行可能ファイル名は、 \(Dsac.exe\)。
 
-     たとえば、次のコマンドを入力し、Enter キーを押します。
+     たとえば、次のコマンドを入力して、Enter キーを押します。
 
      `runas /user:contoso\administrator dsac`
 
-2.  When Active Directory Administrative Center is open, browse through the navigation pane to view or manage your Active Directory domain.
+2.  Active Directory 管理センターが開いている場合に、表示または Active Directory ドメインを管理するには、ナビゲーション ウィンドウを参照します。
 
   
 

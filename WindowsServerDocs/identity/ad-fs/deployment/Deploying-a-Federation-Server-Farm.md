@@ -1,7 +1,7 @@
 ---
 ms.assetid: bbb5b68f-00ad-4715-8176-0c2769b706c4
-title: "Windows Server 2012 R2 AD FS 展開ガイドします。"
-description: 
+title: Windows Server 2012 R2 AD FS の展開ガイド
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,33 +10,34 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 05f1ea6830237813e6fd2bd6a172f467e8d81065
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59839083"
 ---
-# <a name="deploying-a-federation-server-farm"></a>フェデレーション サーバー ファームを展開します。
+# <a name="deploying-a-federation-server-farm"></a>フェデレーション サーバー ファームの展開
 
->適用対象: Windows Server 2016、Windows Server 2012 R2
+>適用先:Windows Server 2016、Windows Server 2012 R2
 
-In order to deploy a federation server farm, complete the tasks in this checklist in order. When a reference link takes you to a conceptual topic, return to this checklist after you review the conceptual topic so that you can proceed with the remaining tasks in this checklist.  
+フェデレーション サーバー ファームを展開するためには、このチェックリストのタスクをこの順番で行います。 参照リンクから概念トピックが表示される場合は、概念トピックを参照した後でこのチェックリストに戻り、チェックリストの残りのタスクを完了します。  
   
-![deploying federated server farm](media/2b05dce3-938f-4168-9b8f-1f4398cbdb9b.gif)**Checklist: Deploying a Federation Server Farm**  
+![フェデレーション サーバー ファームを展開する](media/2b05dce3-938f-4168-9b8f-1f4398cbdb9b.gif)**チェックリスト。フェデレーション サーバー ファームのデプロイ**  
   
 ||タスク|リファレンス|  
 |-|--------|-------------|  
-|![deploying federated server farm](media/icon_checkboxo.gif)|Review important concepts and considerations as you prepare to deploy Active Directory Federation Services \(AD FS\). **注:**|![deploying federated server farm](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[AD FS Design Guide in Windows Server 2012 R2](../../ad-fs/design/AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)<br /><br />![deploying federated server farm](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Understanding Key AD FS Concepts](../../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md)|  
-||If you decide to use Microsoft SQL Server for your AD FS configuration store, ensure to deploy a functional instance of SQL Server.|[SQL Server](https://technet.microsoft.com/sqlserver) **Warning:** In Windows Server 2012 R2, if you want to create an AD FS farm and use SQL Server to store your configuration data, you can use SQL Server 2008 and newer versions, including SQL Server 2012.|  
-|![deploying federated server farm](media/icon_checkboxo.gif)|Join your computer to an Active Directory domain.|![deploying federated server farm](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Join a Computer to a Domain](Join-a-Computer-to-a-Domain.md)|  
-|![deploying federated server farm](media/icon_checkboxo.gif)|Enroll a Secure Socket Layer \(SSL\) certificate for AD FS.|![deploying federated server farm](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[Enroll an SSL Certificate for AD FS](Enroll-an-SSL-Certificate-for-AD-FS.md)|  
-|![deploying federated server farm](media/icon_checkboxo.gif)|Install the AD FS role service.|![deploying federated server farm](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[Install the AD FS Role Service](Install-the-AD-FS-Role-Service.md)|  
-|![deploying federated server farm](media/icon_checkboxo.gif)|Configure a federation server.|![deploying federated server farm](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[Configure a Federation Server](Configure-a-Federation-Server.md)|  
-|![deploying federated server farm](media/icon_checkboxo.gif)|Optional step: Configure a federation server with Device Registration Service \(DRS\).|![deploying federated server farm](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Configure a federation server with Device Registration Service](Configure-a-federation-server-with-Device-Registration-Service.md)|  
-|![deploying federated server farm](media/icon_checkboxo.gif)|Add a host \(A\) and alias \(CNAME\) resource record to corporate Domain Name System \(DNS\) for the federation service and DRS.|![deploying federated server farm](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Configure Corporate DNS for the Federation Service and DRS](Configure-Corporate-DNS-for-the-Federation-Service-and-DRS.md)|  
-|![deploying federated server farm](media/icon_checkboxo.gif)|Verify that a federation server is operational.|![deploying federated server farm](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Verify That a Federation Server Is Operational](Verify-That-a-Federation-Server-Is-Operational.md)|  
+|![フェデレーション サーバー ファームを展開します。](media/icon_checkboxo.gif)|Active Directory フェデレーション サービスの展開を準備するときに、重要な概念と考慮事項を確認\(AD FS\)します。 **注:** |![フェデレーション サーバー ファームを展開する](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Windows Server 2012 R2 で AD FS 設計ガイド](../../ad-fs/design/AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)<br /><br />![フェデレーション サーバー ファームを展開する](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[Understanding Key AD FS Concepts](../../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md)|  
+||AD FS の構成ストアに Microsoft SQL Server を使用する場合は、SQL Server の機能するインスタンスを展開する。|[SQL Server](https://technet.microsoft.com/sqlserver) **警告。** Windows Server 2012 R2 では、AD FS ファームを作成し、SQL Server を使用して構成データを格納する場合は、SQL Server 2008 以降のバージョン (SQL Server 2012 を含みます) を使用できます。|  
+|![フェデレーション サーバー ファームを展開します。](media/icon_checkboxo.gif)|コンピューターを Active Directory ドメインに参加させる。|![フェデレーション サーバー ファームを展開する](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[コンピューターをドメインに参加させる](Join-a-Computer-to-a-Domain.md)|  
+|![フェデレーション サーバー ファームを展開します。](media/icon_checkboxo.gif)|Secure Socket Layer を登録\(SSL\) AD FS 用の証明書。|![フェデレーション サーバー ファームを展開する](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[for AD FS の SSL 証明書の登録](Enroll-an-SSL-Certificate-for-AD-FS.md)|  
+|![フェデレーション サーバー ファームを展開します。](media/icon_checkboxo.gif)|AD FS 役割サービスをインストールする。|![フェデレーション サーバー ファームを展開する](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[AD FS 役割サービスのインストール](Install-the-AD-FS-Role-Service.md)|  
+|![フェデレーション サーバー ファームを展開します。](media/icon_checkboxo.gif)|フェデレーション サーバーを構成する。|![フェデレーション サーバー ファームを展開する](media/bc6cea1a-1c6c-4124-8c8f-1df5adfe8c88.gif)[フェデレーション サーバーを構成します。](Configure-a-Federation-Server.md)|  
+|![フェデレーション サーバー ファームを展開します。](media/icon_checkboxo.gif)|省略可能な手順:デバイス登録サービスでフェデレーション サーバーを構成\(DRS\)します。|![フェデレーション サーバー ファームを展開する](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[with Device Registration Service をフェデレーション サーバーを構成します。](Configure-a-federation-server-with-Device-Registration-Service.md)|  
+|![フェデレーション サーバー ファームを展開します。](media/icon_checkboxo.gif)|ホストの追加\(A\)とエイリアス\(CNAME\)リソース レコードを会社のドメイン ネーム システムに\(DNS\)フェデレーション サービスおよび DRS 用です。|![フェデレーション サーバー ファームを展開する](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[フェデレーション サービスおよび DRS 企業 DNS を構成します。](Configure-Corporate-DNS-for-the-Federation-Service-and-DRS.md)|  
+|![フェデレーション サーバー ファームを展開します。](media/icon_checkboxo.gif)|フェデレーション サーバーが正常に動作することを確認する。|![フェデレーション サーバー ファームを展開する](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[いることを確認、フェデレーション サーバーが正常に動作](Verify-That-a-Federation-Server-Is-Operational.md)|  
   
 
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
 [AD FS の展開](../../ad-fs/AD-FS-Deployment.md)  
 
 [Windows Server 2012 R2 AD FS 展開ガイドします。](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  

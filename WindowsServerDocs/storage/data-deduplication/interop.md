@@ -1,6 +1,6 @@
 ---
 ms.assetid: 60fca6b2-f1c0-451f-858f-2f6ab350d220
-title: "データ重複除去の相互運用性"
+title: データ重複除去の相互運用性
 ms.technology: storage-deduplication
 ms.prod: windows-server-threshold
 ms.topic: article
@@ -9,25 +9,26 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
 ms.openlocfilehash: 2a28be1bdd22915182cbdbb2726ab9d37422e889
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59834433"
 ---
 # <a name="data-deduplication-interoperability"></a>データ重複除去の相互運用性
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016
+> 適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-## <a id="supported"></a>サポート対象
+## <a id="supported"></a>サポートされています
 
-### <a id="supported-clusters"></a>フェールオーバー クラスタリング
+### <a id="supported-clusters"></a>フェールオーバー クラスタ リング
 
 クラスター内のすべてのノードに[データ重複除去機能がインストールされている](install-enable.md#install-dedup)場合、[フェールオーバー クラスタリング](../..//failover-clustering/failover-clustering-overview.md)は完全にサポートされます。 その他の重要な注意事項:
 
 * [手動で開始されたデータ重複除去ジョブ](run.md#running-dedup-jobs-manually)はクラスター共有ボリュームの所有者ノードで実行する必要があります。
 * スケジュールされたデータ重複除去ジョブはクラスター タスクに保管されるため、重複除去対象のボリュームを別のノードが引き継いだ場合、スケジュール済みのジョブは次回の予定時間に実施されます。
 * データ重複除去は[クラスター OS のローリング アップグレード](../..//failover-clustering/cluster-operating-system-rolling-upgrade.md)機能と完全に相互運用します。
-* データ重複除去は[記憶域スペース ダイレクト](../storage-spaces/storage-spaces-direct-overview.md)の NTFS フォーマットされたボリューム (ミラーまたはパリティ) で完全にサポートされます。 層が複数あるボリュームでは重複除去はサポートされません。 詳しくは、[ReFS でのデータ重複除去](interop.md#unsupported-refs)に関するセクションをご覧ください。
+* データ重複除去は[記憶域スペース ダイレクト](../storage-spaces/storage-spaces-direct-overview.md)の NTFS フォーマットされたボリューム (ミラーまたはパリティ) で完全にサポートされます。 層が複数あるボリュームでは重複除去はサポートされません。 詳細については、[ReFS でのデータ重複除去](interop.md#unsupported-refs)に関するセクションを参照してください。
 
 ### <a id="supported-storage-replica"></a>記憶域レプリカ
 [記憶域レプリカ](../storage-replica/storage-replica-overview.md)は完全にサポートされています。 データ重複除外は、セカンダリ コピーに対して実行しないように構成する必要があります。
@@ -60,21 +61,21 @@ Windows Server バックアップでは、最適化されたボリュームを�
     wbadmin get versions
     ```
 
-    この出力バージョン ID は、たとえば 08/18/2016-06:22 のような日付と時刻の文字列になります。
+    この出力バージョン ID は、日付と時刻の文字列を例になります。08/18/2016-06:22.
 
 4. ボリューム全体を復元します。
     ```PowerShell
     wbadmin start recovery –version:02/16/2012-06:22 -itemtype:Volume  -items:E: -recoveryTarget:E:
     ```
 
-    **-- または --**  
+    **--または--**  
 
     特定のフォルダー (この場合は、E:\Docs フォルダー) を復元します。
     ```PowerShell
     wbadmin start recovery –version:02/16/2012-06:22 -itemtype:File  -items:E:\Docs  -recursive
     ```
 
-## <a id="unsupported"></a>サポート対象外
+## <a id="unsupported"></a>サポートされていません。
 ### <a id="unsupported-refs"></a>ReFS
 Windows Server 2016 では、ReFS でフォーマットされたボリュームのデータ重複除去はサポートされていません。 [この項目のサポートをご希望の場合は、Windows Server Storage UserVoice の Windows Server vNext で票を投じることができます](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/7962813-support-deduplication-on-refs)。
 
@@ -84,5 +85,5 @@ Windows 10 では、データ重複除去はサポートされていません。
 ### <a id="unsupported-windows-search"></a>Windows Search
 Windows Search では、データ重複除去はサポートされていません。 データ重複除去では再解析ポイントが使用されますが、Windows Search ではこのインデックスを作成できないため、重複除去対象のすべてのファイルをスキップし、インデックスから除外します。 その結果、重複除去されたボリュームでは検索結果が不完全になる場合があります。 [この項目のサポートをご希望の場合は、Windows Server Storage UserVoice の Windows Server vNext で票を投じることができます](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/17888647-make-windows-search-service-work-with-data-dedupli)。
 
-### <a id="unsupported-robocopy"></a>Robocopy
+### <a id="unsupported-robocopy"></a>robocopy
 特定の Robocopy コマンドによってチャンク ストアが破損することがあるため、データ重複除去での Robocopy の実行はお勧めしません。 チャンク ストアは、ボリュームのシステム ボリューム情報フォルダーに格納されます。 データ チャンクは移行先ボリュームにコピーされないため、フォルダーが削除されると、ソース ボリュームからコピーされた最適化済みファイル (再解析ポイント) が破損します。

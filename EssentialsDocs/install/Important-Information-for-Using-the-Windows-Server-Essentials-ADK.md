@@ -1,6 +1,6 @@
 ---
-title: "Windows Server Essentials ADK の使用に関する重要な情報"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: Windows Server Essentials ADK の使用に関する重要な情報
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,30 +13,31 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 4dec1fdf01538ca119b991675f932d2d8ec1e097
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838643"
 ---
 # <a name="important-information-for-using-the-windows-server-essentials-adk"></a>Windows Server Essentials ADK の使用に関する重要な情報
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-ツールの多くを作成し、Windows Server Essentials のイメージのカスタマイズ、使用する、 [Windows 8 ADK](https://go.microsoft.com/fwlink/?LinkId=248647)、Windows 8 ADK と Windows Server Essentials ADK の重要な相違がします。  
+含まれるツールの多くを作成して、Windows Server Essentials のイメージのカスタマイズを使用する、 [Windows 8 ADK](https://go.microsoft.com/fwlink/?LinkId=248647)が、Windows 8 ADK と Windows Server Essentials ADK の重要な相違があります。  
   
  次の重要な相違点に注意する必要があります。  
   
--   一部の設定が変更されて**%windir%\setup\script\SetupComplete.cmd**します。 このコマンドを使用する場合は、追加の cmdlines を追加することができますが、既存の行を削除しないでください。  
+-   **%windir%\setup\script\SetupComplete.cmd** の一部の設定が変更されています。 このコマンドを使用する場合、別のコマンド ラインを追加できますが、既存のコマンド ラインを削除することはできません。  
   
 ## <a name="working-with-passwords"></a>パスワードの操作  
   
--   管理者のパスワードに設定されますAdmin@123され、Install.wim\unattend.xml で自動ログオンが有効にします。 そのため、サーバーの初期構成中に複数回パスワードを再入力する必要はありません。 リムーバブル メディアのルートにカスタマイズされた unattend.xml がある場合は、この設定は上書きされますを設定する必要があります、パスワード、およびログオン時に起動..  
+-   管理者のパスワードに設定されてAdmin@123Install.wim\unattend.xml で自動ログオンが有効になっているとします。 したがって、サーバーの初期構成中にパスワードを何度も入力する必要はありません。 リムーバブル メディアのルートにカスタマイズされた unattend.xml が存在する場合、この設定は上書きされるため、パスワードを設定し、スタートアップ中にログオンする必要があります。  
   
--   初期構成中には、エンドユーザーは新しいアカウントとパスワードを作成するように求めします。 この新しいアカウントでは、オペレーティング システムのネットワーク管理者アカウントになります。 管理者アカウントと自動ログオンは、無効になります。 このプロセスを自動化するには、品質保証テスト用の cfg.ini ファイルを使用します。  
+-   初期構成中、エンド ユーザーは新しいアカウントとパスワードを作成するよう求められます。 この新しいアカウントが、オペレーティング システムのネットワーク管理者アカウントになります。 その後、管理者アカウントと自動ログオンは無効になります。 cfg.ini ファイルを使用すると、品質保証テスト用にこのプロセスを自動化できます。  
   
--   参照してください、 [Windows 8 ADK](https://go.microsoft.com/fwlink/?LinkId=248694) unattend.xml ファイルの作成については詳しくドキュメントです。  
+-   unattend.xml ファイルの作成の詳細については、 [Windows 8 ADK](https://go.microsoft.com/fwlink/?LinkId=248694) のドキュメントを参照してください。  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
 
  [Windows Server Essentials ADK の概要](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   

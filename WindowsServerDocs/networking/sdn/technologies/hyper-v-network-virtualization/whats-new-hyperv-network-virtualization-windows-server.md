@@ -1,6 +1,6 @@
 ---
-title: Windows Server 2016 で HYPER-V ネットワーク仮想化の新機能
-description: このトピックの「Windows Server 2016 で Hyper-V ネットワーク仮想化の新機能に関する情報を提供する
+title: 新機能 Windows Server 2016 で HYPER-V ネットワーク仮想化の新機能
+description: このトピックでは、Windows Server 2016 で HYPER-V ネットワーク仮想化の新機能に関する情報を提供します。
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -14,52 +14,53 @@ ms.assetid: 0254275a-0a77-40a9-b68a-1029284c03fe
 ms.author: pashort
 author: shortpatti
 ms.date: 03/19/2018
-ms.openlocfilehash: 0954768944e44848debfbb7fb752a13ca47031c2
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 24ec9e52be3acdfced35eae4fb5f98f16d8e18f7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59837953"
 ---
-# <a name="whats-new-in-hyper-v-network-virtualization-in-windows-server-2016"></a>Windows Server 2016 で HYPER-V ネットワーク仮想化の新機能
+# <a name="whats-new-in-hyper-v-network-virtualization-in-windows-server-2016"></a>新機能 Windows Server 2016 で HYPER-V ネットワーク仮想化の新機能
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-このトピックでは、Hyper-V ネットワーク仮想化 (HNV) の機能を Windows Server 2016 で追加または変更について説明します。  
+このトピックでは、新しいまたは Windows Server 2016 で変更された HYPER-V ネットワーク仮想化 (HNV) の機能について説明します。  
   
 ## <a name="BKMK_IPAM2012R2"></a>HNV の更新プログラム  
 HNV は、次の領域で拡張サポートを提供します。  
   
-|機能/|新しい、または改良されて|説明|  
+|機能|新機能か強化された機能か|説明|  
 |--------------------------|-------------------|---------------|  
-|[プログラム可能な Hyper-V スイッチ](../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md#SDN)|新機能|HNV のポリシーは、Microsoft ネットワーク コントローラーによってプログラミングできます。|  
-|[VXLAN カプセル化のサポート](../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md#VXLAN)|新機能|HNV では、VXLAN カプセル化できるようになりました。|  
-|[ソフトウェア ロード バランサー (SLB) の相互運用性](../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md#SLB)|新機能|HNV は、Microsoft ソフトウェア ロード バランサーと完全に統合されています。|  
-|[準拠の IEEE イーサネット ヘッダー](../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md#L2)|向上しました|イーサネットの IEEE 標準に準拠|  
+|[プログラミング可能な HYPER-V スイッチ](../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md#SDN)|新規|HNV のポリシーは、Microsoft ネットワーク コント ローラーを使用してプログラミングできます。|  
+|[VXLAN のカプセル化のサポート](../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md#VXLAN)|新規|HNV では、VXLAN のカプセル化できるようになりました。|  
+|[ソフトウェア ロード バランサー (SLB) の相互運用性](../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md#SLB)|新規|HNV は、Microsoft ソフトウェア ロード バランサーに完全に統合します。|  
+|[準拠の IEEE イーサネット ヘッダー](../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/../../../sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md#L2)|強化された機能|イーサネットの IEEE 標準に準拠|  
   
-### <a name="SDN"></a>プログラム可能な Hyper-V スイッチ  
-HNV は、Microsoft の更新されたソフトウェアによるネットワーク制御 (SDN) ソリューションでは、基本的な構成要素し、SDN スタックと完全に統合します。  
+### <a name="SDN"></a>プログラミング可能な HYPER-V スイッチ  
+HNV は、Microsoft の最新のソフトウェア定義ネットワーク (SDN) ソリューションの基本的なビルディング ブロックし、SDN スタックに完全に統合されます。  
   
-Microsoft の新しいネットワーク コントローラーは、Open vSwitch データベース Management Protocol (OVSDB) として、SouthBound Interface (SBI) を使用する各ホストで実行されているホスト エージェントまでの HNV ポリシーをプッシュします。 ホストのエージェントのカスタマイズを使用して、このポリシーを格納する、[VTEP スキーマ](https://github.com/openvswitch/ovs/blob/master/vtep/vtep.ovsschema)と複雑なフロー ルールをプログラムでの Hyper-V スイッチ パフォーマンスの高いフロー エンジンをします。  
+Microsoft の新しいネットワーク コント ローラーは、HNV ポリシーまで Open vSwitch Database Management Protocol (OVSDB) として、SouthBound Interface (SBI) を使用する各ホストで実行されるホスト エージェントをプッシュします。 ホスト エージェントのカスタマイズを使用してこのポリシーを格納する、 [VTEP スキーマ](https://github.com/openvswitch/ovs/blob/master/vtep/vtep.ovsschema)と HYPER-V スイッチでのパフォーマンスの高いフロー エンジンに複雑なフロー ルールをプログラムします。  
   
-Hyper-V スイッチの内部フロー エンジンは、Microsoft Azure で使用される同じエンジン&trade;、Microsoft Azure パブリック クラウドでのハイパー大規模を実証されています。 さらに、SDN スタック全体をネットワーク コントローラー、およびネットワーク リソース プロバイダー (近日公開予定の詳細) を介してと整合性が Microsoft Azure、したがって、企業とホスティング サービス プロバイダーの顧客に Microsoft Azure パブリック クラウドの電源を戻すことです。  
+HYPER-V スイッチ内のフロー エンジンは、Microsoft Azure で使用されるものと同じエンジン&trade;、これが Microsoft Azure パブリック クラウドでのハイパー スケールで実証されています。 さらに、SDN スタック全体をネットワーク コント ローラーとネットワーク リソース プロバイダー (詳細は近日公開予定) は、企業やホスティング サービスを Microsoft Azure パブリック クラウドの能力に引き下げの Microsoft Azure との一貫性プロバイダーの顧客です。  
   
 > [!NOTE]  
-> OVSDB に関する詳細については、次を参照してください。[RFC 7047](http://www.rfc-editor.org/info/rfc7047)します。  
+> OVSDB の詳細については、次を参照してください。 [RFC 7047](https://www.rfc-editor.org/info/rfc7047)します。  
   
-Hyper-V スイッチには、単純なフロー エンジンの 'Microsoft の内で"動作と同じに基づく両方のフローのステートレスとステートフルな規則がサポートしています。  
+HYPER-V スイッチには、単純なフロー エンジンの Microsoft の社内で ' 同じアクション' に基づくステートレスおよびステートフルなフロー ルールの両方がサポートしています。  
  
-![Windows Server 2016 の Hyper-V スイッチ](../../../media/what-s-new-in-hyper-v-network-virtualization-in-windows-server/HNVOverview.png)  
+![Windows Server 2016 の HYPER-V スイッチ](../../../media/what-s-new-in-hyper-v-network-virtualization-in-windows-server/HNVOverview.png)  
   
-### <a name="VXLAN"></a>VXLAN カプセル化のサポート  
-仮想拡張可能なローカル エリア ネットワーク (VXLAN - [RFC 7348](http://www.rfc-editor.org/info/rfc7348)) プロトコルが Cisco、Brocade、Dell、HP および他のユーザーのようなベンダーからのサポートを市場で広く受け入れられます。 HNV はそのテナント オーバーレイ ネットワークの IP アドレス、カスタマー アドレス (CA)、物理アンダーレイ ネットワークの IP アドレスに、プロバイダー アドレス (PA)、Microsoft ネットワーク コントローラー プログラムへのマッピングからを通じて MAC 配布モードを使用してこのカプセル化スキームもサポートします。 サード パーティ ドライバーによるパフォーマンスの向上は、NVGRE と VXLAN タスク オフロードの両方がサポートされています。  
+### <a name="VXLAN"></a>VXLAN のカプセル化のサポート  
+仮想拡張可能なローカル エリア ネットワーク (VXLAN - [RFC 7348](https://www.rfc-editor.org/info/rfc7348)) プロトコルが Cisco、Brocade、Dell、HP などのベンダーからのサポートを市場で広く採用されています。 HNV は、テナント オーバーレイ ネットワークの IP アドレス (カスタマー アドレス、または CA)、物理アンダーレイ ネットワーク IP アドレス (プロバイダーへのプログラムのマッピングに Microsoft ネットワーク コント ローラーから MAC の分散モードを使用してこのカプセル化スキームもサポートしています。アドレス、または PA)。 サード パーティ製のドライバーによるパフォーマンスの向上には、NVGRE と VXLAN タスク オフロードの両方がサポートされています。  
   
 ### <a name="SLB"></a>ソフトウェア ロード バランサー (SLB) の相互運用性  
-Windows Server 2016 には、仮想ネットワーク トラフィックおよび HNV とシームレスな相互作用を完全にサポートをソフトウェア ロード バランサー (SLB) が含まれています。 SLB のスイッチでは、データ平面 v-パフォーマンスの高いフロー エンジンによって実装されとの仮想 IP (VIP)]、[動的、ネットワーク コントローラーで制御されている IP (DIP) マッピングします。  
+Windows Server 2016 には、仮想ネットワークのトラフィックと HNV とのシームレスな対話を完全サポート ソフトウェア ロード バランサー (SLB) が含まれています。 SLB のデータ プレーンの v スイッチで、パフォーマンスの高いフロー エンジンによって実装および仮想 IP (VIP) の/動的にネットワーク コント ローラーによって制御される IP (DIP) のマッピング。  
   
 ### <a name="L2"></a>準拠の IEEE イーサネット ヘッダー  
-HNV は、業界標準プロトコルに依存しているサード パーティ製の仮想および物理アプライアンスと相互運用するための正しい L2 イーサネット ヘッダーを実装します。 Microsoft では、すべての転送されるパケットがあるすべてのフィールドにこの相互運用性を確実に準拠の値を確認します。 さらに、サポートの L2 の物理ネットワーク内のジャンボ フレーム (MTU > 1780) は、パケットは HNV の仮想ネットワークに接続された仮想マシンのゲストを確保しながらカプセル化プロトコル (NVGRE、VXLAN) で導入オーバーヘッドを考慮する必要がありますを維持 1514 MTU します。  
+HNV は、業界標準のプロトコルに依存するサード パーティ製の仮想および物理アプライアンスとの相互運用性を確実に正しい L2 イーサネット ヘッダーを実装します。 Microsoft では、すべての転送されたパケットがあるすべてのフィールドをこの相互運用性を確実に準拠の値により確保されます。 さらに、サポートとしてのジャンボ フレーム (MTU > 1780) L2 の物理ネットワークではオーバーヘッドがゲストの HNV の仮想ネットワークに接続された仮想マシンを維持しながらのプロトコルのカプセル化 (NVGRE、VXLAN) で導入されたパケットのアカウントに必要になります、1514 MTU です。  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
   
 -   [Hyper-V ネットワーク仮想化の概要](hyperv-network-virtualization-overview-windows-server.md)  
   

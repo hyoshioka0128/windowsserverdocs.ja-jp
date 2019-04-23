@@ -12,25 +12,25 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 7f74b35e93d4ddbe39b955daf7f78c4ef693aa9a
-ms.sourcegitcommit: 07ac08dea2b8f2763c2614a999dc7967018aa0b4
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "6121471"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59835183"
 ---
-# Nano Server の更新
+# <a name="updating-nano-server"></a>Nano Server の更新
 
 > [!IMPORTANT]
 > Windows Server バージョン 1709 以降、Nano Server は[コンテナー基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、「[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)」をご覧ください。 
 
-Nano Server を最新の状態に保つには、さまざまな方法が用意されています。 Windows Server の他のインストール オプションに比べて、Nano Server では、Windows 10 に近いアクティブなサービス モデルが採用されています。 このような定期的なリリースは、**Current Branch for Business (CBB)** リリースと呼ばれます。 このアプローチは、もっとすばやく改革を取り入れ、クラウド上での短期間の開発ライフサイクルに対応する必要のあるお客様をサポートするものです。 CBB について詳しくは、[Windows Server ブログの記事](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)をご覧ください。
+Nano Server を最新の状態に保つには、さまざまな方法が用意されています。 Windows Server の他のインストール オプションに比べて、Nano Server では、Windows 10 に近いアクティブなサービス モデルが採用されています。 このような定期的なリリースは、**Current Branch for Business (CBB)** リリースと呼ばれます。 このアプローチは、もっとすばやく改革を取り入れ、クラウド上での短期間の開発ライフサイクルに対応する必要のあるお客様をサポートするものです。 CBB の詳細については、[Windows Server ブログの記事](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)をご覧ください。
 
-**これらの CBB リリースの合間**には、Nano Server は一連の*累積的な更新プログラム*によって最新の状態に維持されます。 たとえば、Nano Server の最初の累積的な更新プログラムは、2016 年 9 月 26 日、 [KB4093120](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120)にリリースされました。 これ以降の累積的な更新プログラムでは、これらの更新プログラムを Nano Server にインストールするためのさまざまな方法が提供されています。 この記事では、KB3192366 の更新プログラムを例として使い、Nano Server の累積的な更新プログラムを取得して適用する方法を説明します。 累積的な更新プログラムのモデルについて詳しくは、[Microsoft Update ブログの記事](https://blogs.technet.microsoft.com/mu/2016/10/25/patching-with-windows-server-2016/) (英語) をご覧ください。
+**これらの CBB リリースの合間**には、Nano Server は一連の*累積的な更新プログラム*によって最新の状態に維持されます。 たとえば、Nano Server の最初の累積的な更新プログラムはで、2016 年 9 月 26 日にリリース[KB4093120](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120)します。 これ以降の累積的な更新プログラムでは、これらの更新プログラムを Nano Server にインストールするためのさまざまな方法が提供されています。 この記事では、KB3192366 の更新プログラムを例として使い、Nano Server の累積的な更新プログラムを取得して適用する方法を説明します。 累積的な更新プログラムのモデルの詳細については、[Microsoft Update ブログの記事](https://blogs.technet.microsoft.com/mu/2016/10/25/patching-with-windows-server-2016/)を参照してください。
 
 > [!NOTE]
 > オプションの Nano Server パッケージをメディアやオンライン リポジトリからインストールする場合、そのパッケージには最近のセキュリティ修正プログラムが含まれていません。 オプションのパッケージとベースのオペレーティング システムの間のバージョンの不一致を避けるためには、オプションのパッケージをインストールした直後に必ず、サーバーを再起動する**前に**、最新の累積的な更新をインストールする必要があります。
 
-Windows Server 2016 の累積的な更新プログラム: September 26, 2016 年 9 月 26 日 ([KB3192366](https://support.microsoft.com/en-us/kb/3192366)) の場合は、必要条件として、まず最新の Windows 10 Version 1607 のサービス スタック更新プログラム: 2016 年 8 月 23 日 ([KB3176936](https://support.microsoft.com/en-us/kb/3176936)) をインストールする必要があります。 以下で説明する方法のほとんどでは、.cab 更新プログラム パッケージを収録した .msu ファイルが必要になります。 それぞれの更新プログラム パッケージをダウンロードするには、Microsoft Update カタログの以下のページにアクセスしてください。
+場合は、累積的な更新プログラムの Windows Server 2016。2016 年 9 月 26 日 ([KB3192366](https://support.microsoft.com/en-us/kb/3192366))、最初、最新のサービス スタック更新プログラムの Windows 10 バージョン 1607 をインストールする必要があります。前提条件として、2016 年 8 月 23 日 ([KB3176936](https://support.microsoft.com/en-us/kb/3176936))。 以下で説明する方法のほとんどでは、.cab 更新プログラム パッケージを収録した .msu ファイルが必要になります。 それぞれの更新プログラム パッケージをダウンロードするには、Microsoft Update カタログの以下のページにアクセスしてください。
 - [https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3192366](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3192366)
 - [https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3176936](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3176936)
 
@@ -52,21 +52,21 @@ Microsoft Update カタログから .msu ファイルをダウンロードした
 > [!NOTE]
 > DISM ツールを使って Nano Server をサービスする場合は、サービスの対象となる Nano Server のバージョンと同じかそれよりも新しいバージョンの DISM を使う必要があります。 そのためには、一致するバージョンの Windows から DISM を実行するか、一致するバージョンの [Windows アセスメント & デプロイメント キット (ADK)](https://developer.microsoft.com/en-us/windows/hardware/windows-assessment-deployment-kit) をインストールするか、または Nano Server 上で DISM を実行します。
 
-## 方法 1: 新しいイメージに累積的な更新プログラムを統合する
+## <a name="option-1-integrate-a-cumulative-update-into-a-new-image"></a>オプション 1:累積更新プログラムを新しいイメージに統合します。
 新しい Nano Server イメージを作成する場合は、最新の累積的な更新プログラムをイメージに直接統合して、初回起動時に更新プログラムが完全に適用されるようにすることができます。
 
 ```powershell
 New-NanoServerImage -ServicingPackagePath 'C:\ServicingPackages_cabs\Windows10.0-KB3176936-x64.cab', 'C:\ServicingPackages_cabs\Windows10.0-KB3192366-x64.cab' -<other parameters>
 ```
 
-## 方法 2: 既存のイメージに累積的な更新プログラムを統合する
+## <a name="option-2-integrate-a-cumulative-update-into-an-existing-image"></a>オプション 2:累積更新プログラムを既存のイメージに統合します。
 Nano Server の特定のインスタンスを作成するために既存の Nano Server イメージをベースラインとして使う場合は、最新の累積的な更新プログラムを既存のベースライン イメージに直接統合して、そのイメージから作成されたマシンの初回起動時に更新プログラムが完全に適用されるようにすることができます。
 
 ```powershell
 Edit-NanoServerImage -ServicingPackagePath 'C:\ServicingPackages_cabs\Windows10.0-KB3176936-x64.cab', 'C:\ServicingPackages_cabs\Windows10.0-KB3192366-x64.cab' -TargetPath .\NanoServer.wim
 ```
 
-## 方法 3: 既存のオフライン VHD または VHDX に累積的な更新プログラムを適用する
+## <a name="option-3-apply-the-cumulative-update-to-an-existing-offline-vhd-or-vhdx"></a>オプション 3:既存のオフライン VHD または VHDX に累積更新プログラムを適用します。
 既に仮想ハード ディスク (VHD または VHDX) がある場合は、DISM ツールを使って仮想ハード ディスクに更新プログラムを適用できます。 ディスクが使用中にならないように、そのディスクを使っているすべての VM をシャットダウンするか、仮想ハード ディスク ファイルのマウントを解除する必要があります。
 
 - PowerShell を使用する
@@ -85,7 +85,7 @@ Edit-NanoServerImage -ServicingPackagePath 'C:\ServicingPackages_cabs\Windows10.
    dism.exe /Unmount-Image /MountDir:C:\MountDir /Commit
    ```
 
-## 方法 4: 実行中の Nano Server に累積的な更新プログラムを適用する
+## <a name="option-4-apply-the-cumulative-update-to-a-running-nano-server"></a>オプション 4:実行中の Nano Server に累積的な更新プログラムを適用します。
 実行中の Nano Server VM または物理ホストがあり、更新プログラムの .cab ファイルをダウンロードした場合は、DISM ツールを使って、オペレーティング システムがオンラインの間に更新プログラムを適用できます。 .cab ファイルは、Nano Server 上にローカルにコピーするか、アクセス可能なネットワーク上の場所にコピーする必要があります。 サービス スタック更新プログラムを適用する場合は、サービス スタック更新プログラムの適用後、他の更新プログラムを適用する前に、必ずサーバーを再起動してください。
 
 > [!NOTE]
@@ -125,7 +125,7 @@ Enter-PSSession $s
    Restart-Computer; exit
    ```
 
-## 方法 5: 累積的な更新プログラムをダウンロードして実行中の Nano Server にインストールする
+## <a name="option-5-download-and-install-the-cumulative-update-to-a-running-nano-server"></a>オプション 5:ダウンロードして実行中の Nano Server に累積更新プログラムのインストール
 
 実行中の Nano Server VM または物理ホストがある場合は、Windows Update WMI プロバイダーを使って、オペレーティング システムがオンラインの間に更新プログラムをダウンロードしてインストールできます。 この方法では、Microsoft Update カタログから .msu ファイルを個別にダウンロードする必要はありません。 WMI プロバイダーにより、利用可能なすべての更新プログラムの検出、ダウンロード、インストールが一度に行われます。
 
@@ -140,7 +140,7 @@ Enter-PSSession -ComputerName (Read-Host "Enter Nano Server IP address") -Creden
    $result.Updates
    ```
 
-- 利用可能なすべての更新プログラムをインストールする
+- 利用可能なすべての更新プログラムのインストール
    ```powershell
    $ci = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassName MSFT_WUOperationsSession
    Invoke-CimMethod -InputObject $ci -MethodName ApplyApplicableUpdates
@@ -154,12 +154,12 @@ Enter-PSSession -ComputerName (Read-Host "Enter Nano Server IP address") -Creden
    $result.Updates
    ```
    
-## 追加オプション
+## <a name="additional-options"></a>追加オプション
 Nano Server のその他の更新方法には、上記の方法と一部が共通していたり、上記の方法を補完したりするものがあります。 このようなオプションとして、Windows Server Update Services (WSUS)、System Center Virtual Machine Manager (VMM)、タスク スケジューラー、または Microsoft 以外のソリューションを使う方法があります。
 - 次のレジストリ キーを設定して、[WSUS 用に Windows Update を構成](https://msdn.microsoft.com/en-us/library/dd939844(v=ws.10).aspx)します。
   - WUServer
   - WUStatusServer (通常は WUServer と同じ値を使います)
   - UseWUServer
   - AUOptions
-- [VMM でファブリックの更新を管理する](https://technet.microsoft.com/library/gg675084(v=sc.12).aspx)
-- [スケジュールされたタスクを登録する](https://technet.microsoft.com/library/jj649811.aspx)
+- [VMM でのファブリックの更新を管理します。](https://technet.microsoft.com/library/gg675084(v=sc.12).aspx)
+- [スケジュールされたタスクの登録](https://technet.microsoft.com/library/jj649811.aspx)

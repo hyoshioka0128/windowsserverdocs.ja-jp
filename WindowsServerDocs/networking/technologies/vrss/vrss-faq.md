@@ -1,6 +1,6 @@
 ---
 title: vRSS よく寄せられる質問
-description: このトピックでは、いくつかよく寄せられる質問と回答 vRSS の使用についてを検索します。
+description: このトピックでは、いくつかについてよく寄せられる質問と回答 vRSS を使用してを紹介します。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -11,58 +11,58 @@ ms.date: 09/05/2018
 ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 3fafe6c39285e65a9d39a76cc6b652dac5c3efbd
-ms.sourcegitcommit: e84e328c13a701e8039b16a4824a6e58a6e59b0b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4133818"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59840243"
 ---
-# vRSS よく寄せられる質問
+# <a name="vrss-frequently-asked-questions"></a>vRSS よく寄せられる質問
 
-このトピックでは、いくつかよく寄せられる質問と回答 vRSS の使用についてを検索します。
+このトピックでは、いくつかについてよく寄せられる質問と回答 vRSS を使用してを紹介します。
 
-## VRSS で使用する物理ネットワーク アダプターの要件を教えてください。
+## <a name="what-are-the-requirements-for-the-physical-network-adapters-that-i-use-with-vrss"></a>VRSS で使用する物理ネットワーク アダプターの要件とは
 
-ネットワーク アダプターは、仮想マシンのキュー \(VMQ\) と互換性のあるである必要があり、10 gbps リンク速度以上必要があります。
+ネットワーク アダプターを仮想マシン キューとの互換性にする必要があります\(VMQ\)リンクの速度は 10 Gbps 以上が必要とします。
 
-詳細については、 [vRSS の使用を計画](vrss-plan.md)を参照してください。
+詳細については、次を参照してください。 [vRSS の使用を計画](vrss-plan.md)します。
 
-## VRSS は hyper\ スレッド プロセッサ コアを搭載した動作しますか。
+## <a name="does-vrss-work-with-hyper-threaded-processor-cores"></a>ハイパーと連携します vRSS\-プロセッサ コアをスレッドですか?
 
-いいえ。 VRSS かつ VMQ hyper\ スレッド プロセッサ コアを無視します。
+いいえ。 VRSS および VMQ の両方を無視ハイパー\-プロセッサ コアをスレッドです。
 
-## VRSS はホスト仮想 Nic \(vNICs\) に動作しますか。
+## <a name="does-vrss-work-for-host-virtual-nics-vnics"></a>使用 vRSS ホスト仮想 Nic \(Vnic\)でしょうか。
 
-はい、できます。 **セット VMNetworkAdapter**の Windows PowerShell コマンドで仮想マシン \(VM\) 名とホスト vNIC を**有効にする NetAdapterRss**ではなく **、ManagementOS**パラメーターを使用します。
+[はい]。 使用して、 **- ManagementOS**仮想マシンではなくパラメーター \(VM\)名を**Set-vmnetworkadapter** Windows PowerShell のコマンドと**有効にする NetAdapterRss**ホスト vNIC の。
 
-詳細については、 [RSS や vRSS 用の Windows PowerShell コマンド](vrss-wps.md)を参照してください。
+詳細については、次を参照してください。 [RSS および vRSS 用 Windows PowerShell コマンド](vrss-wps.md)します。
 
-## VM で vRSS を使用する必要があるの論理プロセッサの数かどうか。
+## <a name="how-many-logical-processors-does-a-vm-need-to-use-vrss"></a>VM で vRSS を使用する必要があるの論理プロセッサの数。
 
-Vm では、2 つまたは複数の論理プロセッサ \(LPs\) vRSS を使用できるようにする必要があります。
+Vm には、2 つ以上の論理プロセッサが必要があります\(LPs\) vRSS を使用できるようにします。
 
-詳細については、 [vRSS の使用を計画](vrss-plan.md)を参照してください。
+詳細については、次を参照してください。 [vRSS の使用を計画](vrss-plan.md)します。
 
-## NIC チーミングと互換性のある vRSS ですか。
+## <a name="is-vrss-compatible-with-nic-teaming"></a>VRSS は NIC チーミングと互換性のあるですか。
 
-はい、できます。 NIC チーミングを使用している場合は、NIC チーミングの設定を操作する VMQ を正しく構成することが重要です。 NIC チーミングの展開と管理の詳細については、 [NIC チーミング](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming)を参照してください。
+[はい]。 NIC チーミングを使用している場合は、NIC チーミングの設定を使用するために VMQ を正しく構成することが重要です。 NIC チーミングの展開と管理の詳細については、次を参照してください。 [NIC チーミング](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/nic-teaming)します。
 
-## vRSS が有効になっているが、知るには機能しているかどうか。 
+## <a name="vrss-is-enabled-but-how-do-i-know-if-it-is-working"></a>vRSS を有効にするが動作しているかどうかを知る方法でしょうか。 
 
-VRSS が動作している仮想マシンで、タスク マネージャーを開くと、仮想プロセッサ使用率を表示するかを確認することができます。 VM に確立された複数の接続がある場合は、使用率が 0% の上の 1 つ以上のコアを確認できます。
+VRSS は VM では、タスク マネージャーを開き、仮想プロセッサ使用率を表示して操作を指示することができます。 VM に確立されている複数の接続がある場合は、0% 使用率の上の 1 つ以上のコアを確認できます。
 
-1 つの TCP セッションには、複数の論理プロセッサ コア全体に負荷分散をすることはできません、ため、VM する必要がありますを受信する複数の TCP vRSS が動作しているかどうかを確認する前に、セッション。
+1 つの TCP セッションでは、複数の論理プロセッサ コア間で負荷分散をすることはできません、ため、VM する必要がありますを受信する複数の TCP vRSS が動作しているかどうかを確認するにはセッション。
 
-複数の TCP セッションを受信して、VM 使用率が 0% の上の 1 つ以上の LP コアが表示されない場合は、すべての[vRSS の使用を計画する](vrss-plan.md)トピックの準備完了したことを確認します。
+VM が複数の TCP セッションを受信して 1 つ以上の LP コア使用率 0% の上に表示されない場合は、すべてのトピックの準備手順を完了したことを確認します[vRSS の使用を計画](vrss-plan.md)します。
 
-## ホストで検索し、すべてのプロセッサが使用されています。 すべての他のいずれかをスキップしてようです。
+## <a name="im-looking-at-the-host-and-not-all-of-the-processors-are-being-used-it-looks-like-every-other-one-is-being-skipped"></a>ホストを監視していますが、使用されていないプロセッサがあります 1 つおきにスキップされていると思われます。
   
-ハイパースレッディングが有効になっているかどうかを確認します。 VMQ と vRSS の両方が hyper\ シングル スレッドのコアをスキップする設計されています。
+ハイパー スレッディングが有効であるかどうかをチェックします。 VMQ と vRSS の両方がスキップするように設計\-ハイパー スレッディング コア。
 
-## RSS や vRSS のさまざまな Windows PowerShell コマンドはありますか。
+## <a name="are-there-different-windows-powershell-commands-for-rss-and-vrss"></a>RSS および vRSS を別の Windows PowerShell コマンドはありますか。
 
-さあ何とも言えません。 ネイティブ ホストで RSS と仮想マシンで RSS の両方に同じコマンドを使用する vRSS も VMQ スイッチ ポートで有効にする物理 NIC - や VM と vRSS を有効にする必要があります。
+さあ何とも言えません。 ネイティブ ホストで RSS と Vm で RSS の両方に同じコマンドを使用して、スイッチ ポートで有効にする - 物理 NIC で、および VM と vRSS を有効にするために VMQ は vRSS も必要です。
 
-詳細については、 [RSS や vRSS 用の Windows PowerShell コマンド](vrss-wps.md)を参照してください。
+詳細については、次を参照してください。 [RSS および vRSS 用 Windows PowerShell コマンド](vrss-wps.md)します。
 
 ---

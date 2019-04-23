@@ -1,6 +1,6 @@
 ---
-title: "リモートの記憶域リソースを管理する"
-description: "この資料では、リモート コンピュータ上の記憶域リソースを管理する方法について説明します。"
+title: リモートの記憶域リソースを管理する
+description: この資料では、リモート コンピュータ上の記憶域リソースを管理する方法について説明します。
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 583c36f399848cf67c6f3a850e62015b224768d9
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59836633"
 ---
 # <a name="managing-remote-storage-resources"></a>リモートの記憶域リソースを管理する
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 リモート コンピューターの記憶域リソースを管理するには、2 とおりの方法があります。
 
@@ -28,12 +29,12 @@ ms.lasthandoff: 10/17/2017
 > [!Note]
 > ファイル サーバー リソース マネージャーでは、ローカル コンピューターまたはリモート コンピューター上のリソースを管理できますが、両方を同時に管理することはできません。
 
-たとえば次のようなことができます。
+たとえば、次のようなことができます。
 
 -   ファイル サーバー リソース マネージャー MMC スナップインを使用して、ドメイン内の別のコンピューターに接続し、このリモート コンピューター上のボリュームやファイルの記憶域使用率を確認する。
 -   ローカル サーバー上にクォータおよびファイル スクリーン テンプレートを作成し、コマンド ライン ツールを使用してこれらのテンプレートをブランチ オフィスのファイル サーバーにインポートする。
 
 ここでは、次のトピックについて説明します。
 
--   [リモート コンピューターに接続する](connect-to-remote-computer.md)
--   [コマンド ライン ツール](command-line-tools.md)
+-   [リモート コンピューターへの接続します。](connect-to-remote-computer.md)
+-   [コマンドライン ツール](command-line-tools.md)

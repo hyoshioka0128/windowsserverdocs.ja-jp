@@ -1,7 +1,7 @@
 ---
 ms.assetid: b035e9f8-517f-432a-8dfb-40bfc215bee5
-title: "アクセス拒否アシスタンス (デモンストレーション手順) の展開します。"
-description: 
+title: Deploy Access-Denied Assistance (Demonstration Steps)
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,68 +10,69 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: 5201441ba884fe4658b917919e60c7d20530341b
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59835583"
 ---
-# <a name="deploy-access-denied-assistance-demonstration-steps"></a>アクセス拒否アシスタンス (デモンストレーション手順) の展開します。
+# <a name="deploy-access-denied-assistance-demonstration-steps"></a>Deploy Access-Denied Assistance (Demonstration Steps)
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-このトピックでは、アクセス拒否アシスタンスを構成し、正しく機能していることを確認する方法について説明します。  
+このトピックでは、アクセス拒否アシスタンスを構成し、それが正しく機能していることを確認する方法について説明します。  
   
 **このドキュメントで**  
   
--   [手順 1: アクセス拒否アシスタンスを構成します。](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_1)  
+-   [ステップ 1: アクセス拒否アシスタンスを構成します。](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_1)  
   
--   [手順 2: 電子メール通知設定を構成します。](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_2)  
+-   [手順 2:電子メール通知の設定を構成します。](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_2)  
   
--   [手順 3: は、アクセス拒否アシスタンスが正しく構成されていることを確認します。](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_3)  
+-   [手順 3:アクセス拒否アシスタンスが正しく構成されていることを確認します。](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_3)  
   
 > [!NOTE]  
-> このトピックには、説明する手順の一部を自動化するのに使用できるサンプル Windows PowerShell コマンドレットが含まれています。 詳細については、次を参照してください。[コマンドレットを使用した](https://go.microsoft.com/fwlink/p/?linkid=230693)します。  
+> このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
   
-## <a name="BKMK_1"></a>手順 1: アクセス拒否アシスタンスを構成します。  
-グループ ポリシーを使用して、ドメイン内でアクセス拒否アシスタンスを構成することができますか、アシスタンスをファイル サーバー リソース マネージャーのコンソールを使用してファイル サーバーごとに個別に構成できます。 ファイル サーバー上の特定の共有フォルダーのアクセス拒否メッセージを変更することもできます。  
+## <a name="BKMK_1"></a>手順 1:アクセス拒否アシスタンスを構成する  
+グループ ポリシーを使用して、ドメイン内でアクセス拒否アシスタンスを構成できます。あるいは、ファイル サーバー リソース マネージャーのコンソールを使用して、ファイル サーバーごとに個別にアシスタンスを構成できます。 ファイル サーバー上の特定の共有フォルダーのアクセス拒否メッセージを変更することもできます。  
   
 次のようにグループ ポリシーを使用して、ドメインのアクセス拒否アシスタンスを構成できます。  
   
-[Do this step using Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
+[Windows PowerShell を使用してこの手順を実行します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
   
 #### <a name="to-configure-access-denied-assistance-by-using-group-policy"></a>グループ ポリシーを使用してアクセス拒否アシスタンスを構成するには  
   
-1.  グループ ポリシーの管理。 サーバー マネージャーで、クリックして**ツール**、] をクリックし、**グループ ポリシーの管理**します。  
+1.  グループ ポリシーの管理を開きます。 サーバー マネージャーで、 **[ツール]** をクリックし、 **[グループ ポリシーの管理]** をクリックします。  
   
-2.  適切なグループ ポリシーを右クリックし、をクリックして**編集**します。  
+2.  該当するグループ ポリシーを右クリックしてから、**[編集]** をクリックします。  
   
-3.  をクリックして**コンピューターの構成**、] をクリックして**ポリシー**、] をクリックして**管理用テンプレート**、] をクリックして**システム**、] をクリックし、**アクセス拒否アシスタンス**します。  
+3.  **[コンピューターの構成]** をクリックし、**[ポリシー]** をクリックし、**[管理用テンプレート]** をクリックし、**[システム]** をクリックしてから、**[アクセス拒否アシスタンス]** をクリックします。  
   
-4.  右クリック**アクセス拒否エラーのメッセージをカスタマイズする**、] をクリックし、**編集**します。  
+4.  **[アクセス拒否エラーのメッセージをカスタマイズする]** を右クリックしてから、**[編集]** をクリックします。  
   
-5.  選択、**有効**オプションです。  
+5.  **[有効]** オプションを選択します。  
   
 6.  次のオプションを構成します。  
   
-    1.  **アクセスが拒否されたユーザーに、次のメッセージを表示**ボックスに、ユーザーがファイルまたはフォルダーへのアクセスが拒否されたときに表示されるメッセージを入力します。  
+    1.  **[アクセスが拒否されたユーザーに次のメッセージを表示する]** ボックスに、ファイルまたはフォルダーへのアクセスが拒否されたときにユーザーに表示されるメッセージを入力します。  
   
-        マクロは、カスタマイズしたテキストを挿入するメッセージを追加できます。 マクロは次のとおりです。  
+        カスタマイズしたテキストを挿入するマクロをメッセージに追加できます。 マクロには次のものが含まれています。  
   
-        -   **[Original File Path]**ユーザーによってアクセスされた元のファイル パス。  
+        -   **[Original File Path]** ユーザーによってアクセスされた元のファイル パス。  
   
-        -   **[Original File Path Folder]**ユーザーによってアクセスされた元のファイル パスの親フォルダー。  
+        -   **[Original File Path Folder]** ユーザーによってアクセスされた元のファイル パスの親フォルダー。  
   
-        -   **[Admin Email]**管理者の電子メール受信者リスト。  
+        -   **[Admin Email]** 管理者の電子メール受信者リスト。  
   
-        -   **[Data Owner Email]**データ所有者の電子メール受信者リスト。  
+        -   **[Data Owner Email]** データ所有者の電子メール受信者リスト。  
   
-    2.  選択、**アシスタンスを要求するユーザーを有効にする**チェック ボックスをオンします。  
+    2.  **[ユーザーがアシスタントを依頼できるようにする]** チェック ボックスを選択します。  
   
-    3.  残りの既定の設定をそのまま使用します。  
+    3.  残りの既定の設定をそのままにします。  
   
-![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド * * *  
+![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
   
-次の Windows PowerShell コマンドレットまたはコマンドレットは、前の手順と同じ機能を実行します。 表示される場合でも可能性があります複数行に改行書式上の制約のためには、各コマンドレットを 1 つの行を入力します。  
+以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
 ```  
 Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\Software\Policies\Microsoft\Windows\ADR\AccessDenied" -ValueName AllowEmailRequests -Type DWORD -value 1  
@@ -85,150 +86,150 @@ Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\Software\Policies\Microsoft\W
   
 ```  
   
-または、ファイル サーバー リソース マネージャーのコンソールを使用して各ファイル サーバーには個別にアクセス拒否アシスタンスを構成できます。  
+あるいは、ファイル サーバー リソース マネージャーのコンソールを使用して、ファイル サーバーごとに個別にアクセス拒否アシスタンスを構成できます。  
   
-[Do this step using Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1a)  
+[Windows PowerShell を使用してこの手順を実行します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1a)  
   
 #### <a name="to-configure-access-denied-assistance-by-using-file-server-resource-manager"></a>ファイル サーバー リソース マネージャーを使用してアクセス拒否アシスタンスを構成するには  
   
-1.  ファイル サーバー リソース マネージャーを開きます。 In Server Manager, click **Tools**, and then click **File Server Resource Manager**.  
+1.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、**[ファイル サーバー リソース マネージャー]** をクリックします。  
   
-2.  右クリック**ファイル サーバー リソース マネージャー (ローカル)**、] をクリックし、**オプションの構成**します。  
+2.  **[ファイル サーバー リソース マネージャー (ローカル)]** をクリックしてから、**[オプションの構成]** をクリックします。  
   
-3.  をクリックして、**アクセス拒否アシスタンス**] タブ。  
+3.  **[アクセス拒否アシスタンス]** タブをクリックします。  
   
-4.  選択、**アクセス拒否アシスタンスを有効にする**チェック ボックスをオンします。  
+4.  **[アクセス拒否アシスタンスを有効にする]** チェック ボックスを選択します。  
   
-5.  **フォルダーまたはファイルへのアクセスが拒否されたユーザーに、次のメッセージを表示**ボックスに、ユーザーがファイルまたはフォルダーへのアクセスが拒否されたときに表示されるメッセージを入力します。  
+5.  **[フォルダーまたはファイルへのアクセスが拒否されたユーザーに次のメッセージを表示]** ボックスに、ファイルまたはフォルダーへのアクセスが拒否されたときにユーザーに表示されるメッセージを入力します。  
   
-    マクロは、カスタマイズしたテキストを挿入するメッセージを追加できます。 マクロは次のとおりです。  
+    カスタマイズしたテキストを挿入するマクロをメッセージに追加できます。 マクロには次のものが含まれています。  
   
-    -   **[Original File Path]**ユーザーによってアクセスされた元のファイル パス。  
+    -   **[Original File Path]** ユーザーによってアクセスされた元のファイル パス。  
   
-    -   **[Original File Path Folder]**ユーザーによってアクセスされた元のファイル パスの親フォルダー。  
+    -   **[Original File Path Folder]** ユーザーによってアクセスされた元のファイル パスの親フォルダー。  
   
-    -   **[Admin Email]**管理者の電子メール受信者リスト。  
+    -   **[Admin Email]** 管理者の電子メール受信者リスト。  
   
-    -   **[Data Owner Email]**データ所有者の電子メール受信者リスト。  
+    -   **[Data Owner Email]** データ所有者の電子メール受信者リスト。  
   
-6.  をクリックして**電子メール要求の構成**を選択、**アシスタンスを要求するユーザーを有効にする**チェック ボックスをオンにし**OK**します。  
+6.  **[電子メール要求の構成]** をクリックし、**[ユーザーがアシスタンスを依頼できるようにする]** チェック ボックスを選択してから、**[OK]** をクリックします。  
   
-7.  をクリックして**プレビュー**エラー メッセージがユーザーにどのように表示する場合。  
+7.  エラー メッセージがユーザーにどのように表示されるのかを確認する場合は、**[プレビュー]** をクリックします。  
   
-8.  をクリックして**OK**します。  
+8.  **[OK]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド * * *  
+![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
   
-次の Windows PowerShell コマンドレットまたはコマンドレットは、前の手順と同じ機能を実行します。 表示される場合でも可能性があります複数行に改行書式上の制約のためには、各コマンドレットを 1 つの行を入力します。
+以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
   
 ```  
 Set-FSRMAdrSetting -Event "AccessDenied" -DisplayMessage "Type the text that the user will see in the error message dialog box." -Enabled:$true -AllowRequests:$true  
 ```  
   
-アクセス拒否アシスタンスを構成した後、グループ ポリシーを使用して有効すべてのファイルの種類の必要があります。  
+アクセス拒否アシスタンスを構成した後に、グループ ポリシーを使用して、すべてのファイルの種類に対してアクセス拒否アシスタンスを有効にする必要があります。  
   
-[Do this step using Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1c)  
+[Windows PowerShell を使用してこの手順を実行します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1c)  
   
-#### <a name="to-configure-access-denied-assistance-for-all-file-types-by-using-group-policy"></a>グループ ポリシーを使用してすべてのファイルの種類についてアクセス拒否アシスタンスを構成するには  
+#### <a name="to-configure-access-denied-assistance-for-all-file-types-by-using-group-policy"></a>グループ ポリシーを使用してすべてのファイルの種類に対してアクセス拒否アシスタンスを構成するには  
   
-1.  グループ ポリシーの管理。 サーバー マネージャーで、クリックして**ツール**、] をクリックし、**グループ ポリシーの管理**します。  
+1.  グループ ポリシーの管理を開きます。 サーバー マネージャーで、 **[ツール]** をクリックし、 **[グループ ポリシーの管理]** をクリックします。  
   
-2.  適切なグループ ポリシーを右クリックし、をクリックして**編集**します。  
+2.  該当するグループ ポリシーを右クリックしてから、**[編集]** をクリックします。  
   
-3.  をクリックして**コンピューターの構成**、] をクリックして**ポリシー**、] をクリックして**管理用テンプレート**、] をクリックして**システム**、] をクリックし、**アクセス拒否アシスタンス**します。  
+3.  **[コンピューターの構成]** をクリックし、**[ポリシー]** をクリックし、**[管理用テンプレート]** をクリックし、**[システム]** をクリックしてから、**[アクセス拒否アシスタンス]** をクリックします。  
   
-4.  右クリック**すべてのファイルの種類については、クライアントでアクセス拒否アシスタンスを有効にする**、] をクリックし、**編集**します。  
+4.  **[クライアントですべてのファイルの種類についてアクセス拒否アシスタンスを有効にする]** を右クリックしてから、**[編集]** をクリックします。  
   
-5.  をクリックして**有効**、] をクリックし、**OK**します。  
+5.  **[有効]** をクリックし、 **[OK]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド * * *  
+![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
   
-次の Windows PowerShell コマンドレットまたはコマンドレットは、前の手順と同じ機能を実行します。 表示される場合でも可能性があります複数行に改行書式上の制約のためには、各コマンドレットを 1 つの行を入力します。 
+以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。 
   
 ```  
 Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explore" -ValueName EnableShellExecuteFileStreamCheck -Type DWORD -value 1  
   
 ```  
   
-ファイル サーバー リソース マネージャーのコンソールを使用して、ファイル サーバー上の各共有フォルダーは個別のアクセス拒否メッセージも指定できます。  
+ファイル サーバー リソース マネージャーのコンソールを使用して、ファイル サーバー上の共有フォルダーごとに個別のアクセス拒否メッセージを指定することもできます。  
   
-[Do this step using Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1b)  
+[Windows PowerShell を使用してこの手順を実行します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1b)  
   
-#### <a name="to-specify-a-separate-access-denied-message-for-a-shared-folder-by-using-file-server-resource-manager"></a>ファイル サーバー リソース マネージャーを使用して別の共有フォルダーのアクセス拒否メッセージを指定するには  
+#### <a name="to-specify-a-separate-access-denied-message-for-a-shared-folder-by-using-file-server-resource-manager"></a>ファイル サーバー リソース マネージャーを使用して共有フォルダーに個別のアクセス拒否メッセージを指定するには  
   
-1.  ファイル サーバー リソース マネージャーを開きます。 In Server Manager, click **Tools**, and then click **File Server Resource Manager**.  
+1.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、**[ファイル サーバー リソース マネージャー]** をクリックします。  
   
-2.  展開**ファイル サーバー リソース マネージャー (ローカル)**、] をクリックし、**分類管理**します。  
+2.  **[ファイル サーバー リソース マネージャー (ローカル)]** を展開してから、**[分類管理]** をクリックします。  
   
-3.  右クリック**分類プロパティ**、] をクリックし、**フォルダー管理プロパティの設定**します。  
+3.  **[分類プロパティ]** を右クリックしてから、**[フォルダー管理プロパティの設定]** をクリックします。  
   
-4.  **プロパティ**ボックスで、をクリックして**アクセス拒否アシスタンス メッセージ**、] をクリックし、**追加**します。  
+4.  **[プロパティ]** ボックスで **[アクセス拒否アシスタンス メッセージ]** をクリックしてから、**[追加]** をクリックします。  
   
-5.  をクリックして**参照**、カスタム アクセス拒否メッセージを持つ必要があるフォルダーを選択します。  
+5.  **[参照]** をクリックしてから、カスタム アクセス拒否メッセージが必要なフォルダーを選択します。  
   
-6.  **値**ボックスに、そのフォルダー内のリソースにアクセスすることはできないときに、ユーザーに表示されるメッセージを入力します。  
+6.  **[値]** ボックスに、当該フォルダー内のリソースにアクセスできない場合にユーザーに表示するメッセージを入力します。  
   
-    マクロは、カスタマイズしたテキストを挿入するメッセージを追加できます。 マクロは次のとおりです。  
+    カスタマイズしたテキストを挿入するマクロをメッセージに追加できます。 マクロには次のものが含まれています。  
   
-    -   **[Original File Path]**ユーザーによってアクセスされた元のファイル パス。  
+    -   **[Original File Path]** ユーザーによってアクセスされた元のファイル パス。  
   
-    -   **[Original File Path Folder]**ユーザーによってアクセスされた元のファイル パスの親フォルダー。  
+    -   **[Original File Path Folder]** ユーザーによってアクセスされた元のファイル パスの親フォルダー。  
   
-    -   **[Admin Email]**管理者の電子メール受信者リスト。  
+    -   **[Admin Email]** 管理者の電子メール受信者リスト。  
   
-    -   **[Data Owner Email]**データ所有者の電子メール受信者リスト。  
+    -   **[Data Owner Email]** データ所有者の電子メール受信者リスト。  
   
-7.  をクリックして**OK**、] をクリックし、**閉じる**します。  
+7.  **[OK]** をクリックし、 **[閉じる]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド * * *  
+![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
   
-次の Windows PowerShell コマンドレットまたはコマンドレットは、前の手順と同じ機能を実行します。 表示される場合でも可能性があります複数行に改行書式上の制約のためには、各コマンドレットを 1 つの行を入力します。 
+以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。 
   
 ```  
 Set-FSRMMgmtProperty -Namespace "folder path" -Name "AccessDeniedMessage_MS" -Value "Type the text that the user will see in the error message dialog box."  
 ```  
   
-## <a name="BKMK_2"></a>手順 2: 電子メール通知設定を構成します。  
-アクセス拒否アシスタンス メッセージを送信する各ファイル サーバーで電子メール通知設定を構成する必要があります。  
+## <a name="BKMK_2"></a>手順 2:電子メール通知設定を構成する  
+アクセス拒否アシスタンス メッセージを送信するファイル サーバーごとに電子メール通知設定を構成する必要があります。  
   
-[Do this step using Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
+[Windows PowerShell を使用してこの手順を実行します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
   
-1.  ファイル サーバー リソース マネージャーを開きます。 In Server Manager, click **Tools**, and then click **File Server Resource Manager**.  
+1.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、**[ファイル サーバー リソース マネージャー]** をクリックします。  
   
-2.  右クリック**ファイル サーバー リソース マネージャー (ローカル)**、] をクリックし、**オプションの構成**します。  
+2.  **[ファイル サーバー リソース マネージャー (ローカル)]** をクリックしてから、**[オプションの構成]** をクリックします。  
   
-3.  をクリックして、**電子メール通知**] タブ。  
+3.  **[電子メールの通知]** タブをクリックします。  
   
 4.  次の設定を構成します。  
   
-    -   **SMTP サーバー名または IP アドレス**ボックスに、組織内の SMTP サーバーの IP アドレスの名前を入力します。  
+    -   **[SMTP サーバー名または IP アドレス]** ボックスに、組織内の SMTP サーバーの IP アドレスの名前を入力します。  
   
-    -   **既定の管理者の受信者**と**既定の '電子メール アドレスのから'**ボックスに、ファイル サーバー管理者の電子メール アドレスを入力します。  
+    -   **既定の管理者の受信者**と**既定の '電子メール アドレスの From'** ボックスに、ファイル サーバー管理者の電子メール アドレスを入力します。  
   
-5.  をクリックして**テスト電子メールの送信**に電子メール通知が正しく構成されていることを確認します。  
+5.  **[テスト電子メールの送信]** をクリックして、電子メール通知が正しく構成されていることを確認します。  
   
-6.  をクリックして**OK**します。  
+6.  **[OK]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド * * *  
+![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
   
-次の Windows PowerShell コマンドレットまたはコマンドレットは、前の手順と同じ機能を実行します。 表示される場合でも可能性があります複数行に改行書式上の制約のためには、各コマンドレットを 1 つの行を入力します。
+以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
   
 ```  
 set-FSRMSetting -SMTPServer "server1" -AdminEmailAddress "fileadmin@contoso.com" -FromEmailAddress "fileadmin@contoso.com"  
 ```  
   
-## <a name="BKMK_3"></a>手順 3: は、アクセス拒否アシスタンスが正しく構成されていることを確認します。  
-共有へのアクセスがない共有またはファイルにアクセスしようと Windows 8 を実行しているユーザーによってアクセス拒否アシスタンスが正しく構成されているを確認することができます。 ときに、アクセス拒否メッセージが表示されたら、ユーザーに表示する必要があります、**サポートの要求**ボタンをクリックします。 サポートの要求] ボタンをクリックすると、ユーザーがアクセスする理由を指定し、フォルダー所有者またはファイル サーバー管理者に電子メールを送信できます。 フォルダーの所有者またはファイル サーバー管理者は、電子メールが到着し、適切な詳細が含まれてするを確認できます。  
+## <a name="BKMK_3"></a>手順 3:アクセス拒否アシスタンスが正しく構成されていることを確認する  
+ないへのアクセスを共有する共有またはファイルにアクセスしようと Windows 8 を実行しているユーザーによってアクセス拒否アシスタンスが正しく構成されているを確認することができます。 アクセス拒否メッセージが表示された場合、ユーザーには、**[サポートの要求]** ボタンが表示されます。 [サポートの要求] ボタンをクリックすると、ユーザーは、アクセス理由を指定してから、フォルダー所有者またはファイル サーバー管理者に電子メールを送信できます。 フォルダー所有者またはファイル サーバー管理者は、到着した電子メールに適切な詳細が含まれているかを確認できます。  
   
 > [!IMPORTANT]  
-> Windows Server 2012 を実行しているユーザーを使用してアクセス拒否アシスタンスを確認する場合、ファイル共有に接続する前にデスクトップ エクスペリエンスをインストールする必要があります。  
+> Windows Server 2012 を実行しているユーザーを使用してアクセス拒否アシスタンスを確認する場合は、ファイル共有に接続する前にデスクトップ エクスペリエンスをインストールする必要があります。  
   
 ## <a name="BKMK_Links"></a>参照してください。  
   
--   [シナリオ: アクセス拒否アシスタンス](Scenario--Access-Denied-Assistance.md)  
+-   [シナリオ:アクセス拒否アシスタンス](Scenario--Access-Denied-Assistance.md)  
   
 -   [アクセス拒否アシスタンスを計画します。](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)  
   
--   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [ダイナミック アクセス制御:シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

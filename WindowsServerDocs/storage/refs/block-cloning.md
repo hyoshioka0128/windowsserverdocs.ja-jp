@@ -1,28 +1,30 @@
 ---
 ms.assetid: fd427da3-3869-428f-bf2a-56c4b7d99b40
-title: "ReFS でのブロックの複製"
-description: 
+title: ReFS でのブロックの複製
+description: ''
 author: gawatu
 ms.author: gawatu
 manager: gawatu
-ms.date: 12/6/2016
+ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-file-systems
-ms.openlocfilehash: 25cc523eaa2ed266e5b07c53ede4bc9e9be20e93
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 54165700209320eee50fc63d98d78cbf4a92d053
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838113"
 ---
 # <a name="block-cloning-on-refs"></a>ReFS でのブロックの複製
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+
+>適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 ブロックの複製によって、アプリケーションの代わりにファイル システムが一定範囲のファイル サイズに応じたファイルのコピーを実行します。この際、コピー先のファイルをコピー元のファイルと同じにしたり、別のファイルにしたりすることができます。 残念ながら、コピー操作にはコストがかかります。これは、コピー操作によって、コストがかかる読み取りや書き込みが基になる物理データに対してトリガーされるためです。 
 
 ただし ReFS のブロックの複製では、ファイル データに対して読み取りや書き込みが実行されるのではなく、低コストのメタデータ操作としてコピーが実行されます。 ReFS を使用すると、複数のファイルが同じ論理クラスター (ボリューム上の物理的な場所) を共有することが可能になるため、コピー操作では、ファイルの領域を個別の物理的な場所に再マップすることだけが必要となります。これにより、コストがかかる物理的な操作ではなく、すばやい論理操作が実行されることになります。 ブロックの複製を利用すると、操作は短時間で完了し、基になる記憶域に対する I/O の数が減少します。 こうしたパフォーマンスの向上により、ブロックの複製操作を使用したときに、.vhdx チェックポイントのマージ操作が大幅に高速化されるため、仮想化ワークロードでもメリットが生じます。 また、複数のファイルが同じ論理クラスターを共有できるため、同一のデータが複数回物理的に格納されることがなくなり、記憶域容量が節約されます。 
   
-## <a name="how-it-works"></a>しくみ 
+## <a name="how-it-works"></a>方法 
 
 ReFS のブロックの複製では、ファイル データの操作ではなくメタデータ操作が実行されます。 この最適化を実現するために、ReFS では、コピー元の領域のメタデータに対して参照カウントが採用されています。 この参照カウントは、同じ物理領域を参照する個々のファイル領域の数を記録します。 これにより、複数のファイルが同じ物理データを共有できるようになります。
 
@@ -63,7 +65,7 @@ ReFS のブロックの複製では、ファイル データの操作ではな�
 ## <a name="see-also"></a>関連項目
 
 -   [ReFS の概要](refs-overview.md)
--   [ReFS 整合性ストリーム](integrity-streams.md)
+-   [ReFS の整合性ストリーム](integrity-streams.md)
 -   [記憶域スペース ダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)
 -   [DUPLICATE_EXTENTS_DATA](https://msdn.microsoft.com/library/windows/desktop/mt590821(v=vs.85).aspx)
 -   [FSCTL_DUPLICATE_EXTENTS_TO_FILE](https://msdn.microsoft.com/library/windows/desktop/mt590823(v=vs.85).aspx)

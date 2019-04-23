@@ -11,13 +11,13 @@ author: shortpatti
 ms.author: pashort
 ms.localizationpriority: high
 ms.openlocfilehash: 1ae36a2e1be1559094dd55dba41fa9a468118260
-ms.sourcegitcommit: 9ed4c9fe04ebf3ef488170503c9a354c992b6fde
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4339460"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59840063"
 ---
-# 仮想化
+# <a name="virtualization"></a>仮想化
 
 >[!TIP]
 > 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
@@ -41,7 +41,7 @@ Windows Server の仮想化は、ソフトウェア定義インフラストラ�
                     <div class="cardText">
                         <h3>保護されたファブリックとシールドされた VM</h3>
 <HR />
-                        <p>クラウド サービス プロバイダーやエンタープライズ プライベート クラウド管理者は、保護されたファブリックを使用して、セキュリティが強化された VM 環境を実現できます。 保護されたファブリックは、通常は 3 ノードのクラスターである 1 つのホスト ガーディアン サービス \(HGS\) と、1 つ以上の保護されたホストおよびシールドされた仮想マシン (VM) のセットで構成されます。</p>
+                        <p>クラウド サービス プロバイダーやエンタープライズ プライベート クラウド管理者は、保護されたファブリックを使用して、セキュリティが強化された VM 環境を実現できます。 保護されたファブリックが 1 つのホスト ガーディアン サービスから成る\(HGS\) -通常、3 つのノードの 1 つまたは複数の保護されたホストのクラスターとの一連のシールドされた Vm。</p>
                      </div>
                   </div>
               </div>
@@ -99,7 +99,7 @@ Windows Server の仮想化は、ソフトウェア定義インフラストラ�
                         </div>
                     </div>
                     <div class="cardText">
-                       <h3>企業における Windows 10 の利用: デバイスを業務に使用する方法</h3>
+                       <h3>エンタープライズ向け Windows 10:デバイスの作業を使用する方法</h3>
 <HR />
                        <p>Hyper-V テクノロジは、ハードウェア仮想化によって、コンピューティング リソースを提供します。 Hyper-V では、ソフトウェア バージョンのコンピューター (仮想マシン) が作成され、それを使用してオペレーティング システムとアプリケーションが実行されます。 複数の仮想マシンを同時に実行でき、必要に応じてそれらを作成および削除できます。</p>
                      </div>
@@ -138,7 +138,7 @@ Windows Server の仮想化は、ソフトウェア定義インフラストラ�
 
 ---
 
-### 関連情報
+### <a name="related"></a>関連
 
 - Hyper-V では、仮想化環境を作成するために特定のハードウェアが必要です。 詳細については、「[Windows Server 2016 の Hyper-V のシステム要件](./hyper-v/system-requirements-for-hyper-v-on-windows.md)」を参照してください。 
 

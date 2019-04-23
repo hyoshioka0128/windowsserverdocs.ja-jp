@@ -1,97 +1,121 @@
 ---
 ms.assetid: 7671e0c9-faf0-40de-808a-62f54645f891
-title: "Windows Server 2016 の AD FS へのアップグレード"
-description: 
+title: Windows Server 2016 での AD FS へのアップグレード
+description: ''
 author: billmath
 manager: femila
-ms.date: 05/31/2017
+ms.date: 04/09/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: ce07398a2d624a1e9b004cd35eb9228d59dc2b5b
-ms.sourcegitcommit: 76e57a5453d6ee9a04dcff6a8cca087132cb1d5f
+ms.openlocfilehash: 39c735e9dde0fd60c7eb9ccfe0af890bdc5a5950
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838323"
 ---
-# <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>WID データベースを使用して Windows Server 2016 での AD FS へのアップグレード
+# <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>WID データベースを使用した、Windows Server 2016 での AD FS へのアップグレード
 
->Windows Server 2016 の適用対象:
+>適用先:Windows Server 2019、Windows Server 2016
 
 
-## <a name="moving-from-a-windows-server-2012-r2-ad-fs-farm-to-a-windows-server-2016-ad-fs-farm"></a>Windows Server 2012 R2 AD FS ファームから Windows Server 2016 の AD FS ファームへの移行  
-次のドキュメントでは、WID データベースを使用しているときに、Windows Server 2016 での AD FS に、AD FS Windows Server 2012 R2 ファームをアップグレードする方法を示します。  
+## <a name="upgrading-a-windows-server-2012-r2-or-2016-ad-fs-farm-to-windows-server-2019"></a>Windows Server 2019 に、Windows Server 2012 R2 または 2016年の AD FS ファームをアップグレードします。 
+次のドキュメントは、WID データベースを使用しているときに、Windows Server 2019 の AD FS を AD FS ファームをアップグレードする方法について説明します。  
 
-### <a name="upgrading-ad-fs-to-windows-server-2016-fbl"></a>AD FS を Windows Server 2016 FBL にアップグレードします。  
-Windows Server 2016 の AD FS では、ファームの動作レベルの機能 (FBL) です。   この機能は、ファーム全体で AD FS ファームを使用できる機能を決定します。   既定では、Windows Server 2012 R2 AD FS ファームで FBL は Windows Server 2012 R2 FBL します。  
+### <a name="ad-fs-farm-behavior-levels-fbl"></a>AD FS ファーム動作レベル (FBL)  
+Windows Server 2016 の AD FS ファーム動作レベル (FBL) が導入されました。 これは、ファーム全体の設定、機能、AD FS ファームで使用できるかを決定します。 
 
-Windows Server 2012 R2 のファームに追加できる Windows Server 2016 の AD FS サーバーと Windows Server 2012 R2 として同じ FBL で動作します。  この方法で動作している Windows Server 2016 の AD FS サーバーがある場合は、ファームを「混在させること」と言います。  ただし、しないことができます、FBL が Windows Server 2016 に発生するまでの Windows Server 2016 の新機能を利用します。  混在ファームの場合。  
-
--   管理者は、新しい、既存の Windows Server 2012 R2 ファームにフェデレーション サーバーを Windows Server 2016 で追加できます。  その結果、ファーム「混在モード」では、Windows Server 2012 R2 ファームレベルの動作の動作します。  ファーム全体で一貫した動作を確認するには、Windows Server 2016 の新機能を構成またはこのモードで使用することはできません。  
-
--   すべての Windows Server 2012 R2 フェデレーション サーバーは、混在モード ファームから削除されているし、WID ファームの場合、新しい Windows Server 2016 のフェデレーション サーバーのいずれかに昇格されているプライマリ ノードの役割、管理者は、Windows Server 2012 R2 から Windows Server 2016 への FBL を増やすことができます。  その結果、新しい AD FS Windows Server 2016 機能し、構成して使用できます。  
-
--   その結果の混在ファームの機能、AD FS Windows Server 2012 R2 の Windows Server 2016 にアップグレードすると考えている組織は、まったく新しいファームを展開する必要はありません、エクスポートし、構成データをインポートします。  代わりに、それがオンライン中に、既存のファームに Windows Server 2016 のノードを追加できのみ FBL 上げるに関連する比較的短いダウンタイムが発生することができます。  
-
-ファームが混在モードで、AD FS ファームがないことの新機能または Windows Server 2016 での AD FS で導入された機能対応に注意してください。  これは、新機能を試したい組織これができない、FBL が発生するまでことを意味します。  その場合は、組織が、FBL rasing する前に新しい機能をテストしようとして、これを行うに個別のファームを展開する必要があります。  
-
-残りの部分は、ドキュメントが Windows Server 2012 R2 環境に Windows Server 2016 のフェデレーション サーバーを追加して、Windows Server 2016 に FBL を発生させるための手順を提供します。  次の手順は、次のアーキテクチャの図で説明されているテスト環境で実行されました。  
+次の表は、Windows Server のバージョンで FBL 値を示します。
+| Windows Server のバージョン  | FBL | AD FS 構成データベース名 |
+| ------------- | ------------- | ------------- |
+| 2012 R2  | 1  | AdfsConfiguration |
+| 2016  | 3  | AdfsConfigurationV3 |
+| 2019  | 4  | AdfsConfigurationV4 |
 
 > [!NOTE]  
-> Windows Server 2016 FBL AD FS に移動するにはすべての Windows 2012 R2 ノードを削除する必要があります。  Windows Server 2016 への Windows Server 2012 R2 の OS のアップグレードし、2016年ノードになることがあるだけできません。  それを削除 2016年の新しいノードを置き換える必要があります。
->
-> 新しい管理データベース"AdfsConfigurationV3"を作成するには、SQL を使用して AD FS の構成を保存するときに、FBL をアップグレードします。
+> 新しい AD FS 構成データベースを作成、FBL をアップグレードします。  各バージョンの Windows Server AD FS と FBL 値用の構成データベースの名前は、上の表を参照してください。
 
-##### <a name="to-upgrade-your-ad-fs-farm-to-windows-server-2016-farm-behavior-level"></a>AD FS ファームを Windows Server 2016 ファーム動作レベルにアップグレードするには  
+### <a name="new-vs-upgraded-farms"></a>新しい vs ファームのアップグレード
+既定では、新しい AD FS ファームで FBL はインストールされている最初のファーム ノードの Windows Server のバージョンの値と一致します。  
 
-1.  Windows Server 2016 でサーバー マネージャーのインストール、Active Directory フェデレーション サービスの役割を使用してください。  
+以降のバージョンの AD FS サーバーは、AD FS 2012 R2 または 2016 ファームに参加させるし、ファームは、既存のノードとして同じ FBL で動作します。 FBL 値、最小バージョンの同じファームで動作している Windows Server のバージョンが複数ある場合は、ファームは「混在」と言います。 ただし、FBL が発生するまで、以降のバージョンの機能を利用することはできません。 混合ファーム。  
 
-2.  AD FS 構成ウィザードを使用して、、既存の AD FS ファームを新しい Windows Server 2016 サーバーを参加させます。  
+-   管理者は、既存の Windows Server 2012 R2 または 2016年ファームに新しい Windows Server 2019 フェデレーション サーバーを追加できます。 結果として、ファームでは、「混合モード」では、し、元のファームと同じファーム動作レベルで動作します。 ファーム全体で一貫した動作を確認するには、新しい Windows Server AD FS のバージョンの機能を構成または使用することはできません。  
+
+- FBL が発生する前に、管理者は、ファームから Windows Server の以前のバージョンの AD FS ノードを削除する必要があります。  WID ファームの場合はこれが必要である新しい Windows Server 2019 フェデレーション サーバー tp のいずれかに注意してください、ファーム内のプライマリ ノードの役割に昇格します。
+
+-   ファーム内のすべてのフェデレーション サーバーは、Windows Server のバージョンが同じでは後、FBL を発生させることができます。  結果として、新しい AD FS Windows Server 2019 機能するように構成し、使用します。
+
+ファームが混在モードで AD FS ファームがいないできる新機能、または Windows Server 2019 で AD FS で導入された機能を認識します。 これは、新しい機能を試す必要があることはできません、FBL が発生するまでことを意味します。 その場合は、組織が、FBL rasing する前に新しい機能をテストしようとして、これを行う別のファームをデプロイする必要があります。  
+
+残りの部分は、Windows Server 2016 または 2012 R2 環境に Windows Server 2019 のフェデレーション サーバーを追加し、Windows Server 2019 に FBL を上げる方法の手順を説明します。 これらの手順は、次のアーキテクチャの図で概説されているテスト環境で実行されました。  
+
+> [!NOTE]  
+> AD FS Windows Server 2019 FBL を移動するには、Windows Server 2016 のすべてまたは 2012 R2 ノードを削除する必要があります。 Windows Server 2019 に、Windows Server 2016 または 2012 R2 の OS をアップグレードおよび 2019年ノードになることがあるだけできません。 解除して、新しい 2019年ノードに置き換える必要があります。
+
+
+
+##### <a name="to-upgrade-your-ad-fs-farm-to-windows-server-2019-farm-behavior-level"></a>Windows Server 2019 ファーム動作レベルに、AD FS ファームをアップグレードするには  
+
+1.  Windows Server の 2019 に Active Directory フェデレーション サービスの役割をインストールするサーバー マネージャーを使用して、 
+
+2.  AD FS 構成ウィザードを使用して、、既存の AD FS ファームを新しい Windows Server 2019 サーバーを参加させます。  
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_1.png)  
 
-3.  Windows Server 2016 のフェデレーション サーバーでは、AD FS 管理を開きます。    ある何も表示されているこのフェデレーション サーバーは、プライマリ サーバーではないために注意してください。  
+3.  Windows Server 2019 のフェデレーション サーバーで AD FS の管理を開きます。 このフェデレーション サーバーがプライマリ サーバーではないためには、管理機能が使用できないことに注意してください。  
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_3.png)  
 
-4.  PowerShell を開きへの参加準備が完了すると、Windows Server 2016 サーバーで、次のコマンドレットを実行しますセット AdfsSyncProperties-役割 PrimaryComputer。  
+4.  Windows Server 2019 サーバーでは、管理者特権の PowerShell コマンド ウィンドウを開き、次のコマンドレットを実行しています。 `Set-AdfsSyncProperties -Role PrimaryComputer`
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_4.png)  
 
-5.  元の AD FS Windows Server 2012 R2 サーバーで PowerShell を開き、次のコマンドレットを実行しますセット AdfsSyncProperties-役割 SecondaryComputer PrimaryComputerName {FQDN}。  
+5.  以前にプライマリとして構成された、AD FS サーバーでは、管理者特権の PowerShell コマンド ウィンドウを開き、次のコマンドレットを実行しています。 `Set-AdfsSyncProperties -Role SecondaryComputer -PrimaryComputerName {FQDN} `
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_5.png)  
 
-6.  Web アプリケーション プロキシ PowerShell を開き、次のコマンドレットを実行します Install-webapplicationproxy CertificateThumbprint {SSLCert} - fsname fsname TrustCred $trustcred。  
+6.  各 Web アプリケーション プロキシを管理者特権でのウィンドウで、次の PowerShell コマンドを実行して、WAP を再構成します。  
+```powershell
+$trustcred = Get-Credential -Message "Enter Domain Administrator credentials"
+Install-WebApplicationProxy -CertificateThumbprint {SSLCert} -fsname fsname -FederationServiceTrustCredential $trustcred  
+```
 
-7.  今すぐ Windows Server 2016 のフェデレーション サーバーでは、AD FS 管理を開きます。  プライマリの役割がこのサーバーに転送されたためのすべてのノードが表示されることを確認します。  
+7.  これで、Windows Server 2016 のフェデレーション サーバーでは、AD FS 管理を開きます。 プライマリ ロールがこのサーバーに転送されているため、すべての管理機能に表示されますに注意してください。  
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_6.png)  
 
-8.  Windows Server 2016 のインストール メディア、コマンド プロンプトを開くし、support\adprep ディレクトリに移動します。  次のコマンド実行: adprep/forestprep します。  
+8.  ファームのアップグレードがある AD スキーマを必要と 2016 または 2019 を 2012 R2 AD FS ファームをアップグレードする場合に少なくとも 85 をレベルします。  スキーマ名、Windows Server 2016 のインストール メディアをアップグレードするには、コマンド プロンプトを開き、support\adprep ディレクトリに移動します。 次を実行します。  `adprep /forestprep`
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)  
 
-9. Adprep/domainprep の実行が完了するとします。  
-
+    実行が完了します。 `adprep/domainprep`
+    >[!NOTE]
+    >次の手順を実行する前に、設定から Windows Update を実行して、Windows Server が現在確認してください。 更新の必要がなくなるまで、このプロセスを続けます。 
+    > 
+    
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_8.png)  
 
-10. 今すぐ Windows Server 2016 サーバーで PowerShell を開き、次のコマンドレットを実行します呼び出す AdfsFarmBehaviorLevelRaise。  
+9. Windows Server 2016 で PowerShell を開き、次のコマンドレットを実行します。
+    >[!NOTE]
+    > 2012 R2 のすべてのサーバーは、次の手順を実行する前に、ファームから削除する必要があります。
+ 
+    `Invoke-AdfsFarmBehaviorLevelRaise`  
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_9.png)  
 
-11. 表示されたら、Y」と入力します。これにより、レベルを上げることが開始されます。  これが完了すると、FBL 正常が生成されます。  
+10. 入力を求められたら、Y を入力します。これにより、レベルを上げることが開始されます。 これが完了すると、FBL 正常が発生します。  
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_10.png)  
 
-> [!NOTE]  
-> 場合は、AD FS サーバーでは、SQL を使用して、構成、新しい manamgement データベースが作成されました"AdfsConfiguraionV3"という名前のします。 
-
-12. これで、AD FS の管理に移動した場合は、Windows Server 2016 の AD FS で追加された新しいノードが表示されます。  
+11. これで、AD FS の管理に移動すると表示されます以降の AD FS のバージョンの新機能が追加されました 
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)  
 
-13. 同様に、PowerShell コマンドレットを使用することができます。 現在 FBL を表示するには、Get-AdfsFarmInformation します。  
+13. 同様に、PowerShell コマンドレットを使用することができます:`Get-AdfsFarmInformation`現在 FBL を表示します。  
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)  
+    
+

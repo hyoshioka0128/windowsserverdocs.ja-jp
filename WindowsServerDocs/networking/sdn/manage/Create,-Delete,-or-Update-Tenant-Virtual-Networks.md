@@ -1,7 +1,7 @@
 ---
 title: 作成、削除、またはテナントの仮想ネットワークの更新
-description: このトピックでは、テナント ワークロードを管理および Windows Server 2016 での仮想ネットワークに方法について、ソフトウェア定義ネットワーク ガイドの一部です。
-manager: brianlic
+description: このトピックでは、作成、削除、およびソフトウェア定義ネットワーク (SDN) を展開した後、HYPER-V ネットワーク仮想化の仮想ネットワークを更新する方法について説明します。 HYPER-V ネットワーク仮想化では、各テナント ネットワークが個別のエンティティをあるように、テナント ネットワークを分離できます。 ワークロードのパブリック アクセスを構成しない限り、各エンティティは相互接続する可能性がありません。
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,40 +12,32 @@ ms.topic: article
 ms.assetid: 6a820826-e829-4ef2-9a20-f74235f8c25b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6ef30dcc31593e15c36f846cf6d64afcd4b85f19
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/24/2018
+ms.openlocfilehash: a125ec220b4769a57a6be30f1425283afb7f0fe6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838353"
 ---
-# <a name="create-delete-or-update-tenant-virtual-networks"></a>作成、削除、またはテナントの仮想ネットワークの更新
+# <a name="create-delete-or-update-tenant-virtual-networks"></a>テナントの仮想ネットワークを作成、削除、または更新する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-このトピックを使用すると、作成、削除、およびソフトウェアによるネットワーク制御 (SDN) を展開した後、HYPER-V ネットワーク仮想化の仮想ネットワークを更新するのに方法について説明します。  
-  
-されるよう各テナント ネットワークを完全に別個のエンティティで相互接続がない可能性へのパブリック アクセス ワークロードを構成しない限りは、HYPER-V ネットワーク仮想化を使用して、テナント ネットワークを分離できます。  
-  
-テナント用に新しい仮想ネットワークを作成することができます、既存の仮想ネットワークを変更することができますおよびテナントが不要になった特定のリソースを必要とする場合、またはテナントは、お客様が不要になった場合は、テナントの仮想ネットワークを削除することができます。  
+このトピックでは、作成、削除、およびソフトウェア定義ネットワーク (SDN) を展開した後、HYPER-V ネットワーク仮想化の仮想ネットワークを更新する方法について説明します。 HYPER-V ネットワーク仮想化では、各テナント ネットワークが個別のエンティティをあるように、テナント ネットワークを分離できます。 ワークロードのパブリック アクセスを構成しない限り、各エンティティは相互接続する可能性がありません。   
   
 ## <a name="create-a-new-virtual-network"></a>新しい仮想ネットワークを作成します。  
-  
-テナントの仮想ネットワークを作成するときに、HYPER-V ホスト上で一意のルーティング ドメイン内に置かれます。  
-  
-新しい仮想ネットワークを作成する手順を次に示します。  
-  
-1. 仮想サブネットを作成する IP アドレス プレフィックスを特定します。   
+テナントの仮想ネットワークを作成すると、HYPER-V ホスト上の一意のルーティング ドメイン内で配置します。 すべての仮想ネットワークでは、下にある少なくとも 1 つの仮想サブネットがあります。 仮想サブネットは、IP プレフィックスで定義を取得し、以前に定義された ACL を参照します。  
+
+新しい仮想ネットワークを作成する手順は次のとおりです。
+
+1. 仮想サブネットを作成する IP アドレスのプレフィックスを特定します。   
 2. テナント トラフィックをトンネリングするプロバイダーの論理ネットワークを識別します。   
-3. 各 IP のプレフィックス手順 1 で定義されているは、少なくとも 1 つの仮想サブネットを作成します。   
-  
->[!NOTE]  
->すべての仮想ネットワークの下にある少なくとも 1 つの仮想サブネットがあります。 仮想サブネットは、IP プレフィックスによって定義され、以前に定義されたアクセス制御リストを参照します。  
-  
-必要に応じて、次の手順を完了した後も、仮想サブネットを以前に作成したアクセス制御リストを追加したり、テナントのゲートウェイ接続を追加できます。    
-  
-次の表には、架空の 2 つのテナント用の例のサブネット Id およびプレフィックスが含まれています。 Contoso テナントがある 3 つの仮想サブネットのときに、テナント Fabrikam は 2 つの仮想サブネットがします。  
-  
-  
+3. 手順 1. で特定した各 IP プレフィックスの少なくとも 1 つの仮想サブネットを作成します。 
+4. (省略可能)仮想サブネットを以前に作成された Acl を追加するか、テナントのゲートウェイの接続を追加します。 
+
+次の表には、架空の 2 つのテナント用の例のサブネット Id とプレフィックスが含まれます。 テナントの Fabrikam の 2 つの仮想サブネットでは、Contoso テナントがある 3 つの仮想サブネットです。  
+ 
   
 テナント名  |仮想サブネット ID  |仮想サブネットのプレフィックス    
 ---------|---------|---------  
@@ -57,7 +49,7 @@ Contoso     | 6003        | 24.30.3.0/24
   
 次のスクリプト例からエクスポートされた Windows PowerShell コマンドを使用して、 **NetworkController** Contoso の仮想ネットワークと 1 つのサブネットを作成するモジュール。   
   
-```  
+```Powershell  
 import-module networkcontroller  
 $URI = "https://ncrest.contoso.local"  
   
@@ -91,15 +83,14 @@ $vnetproperties.LogicalNetwork = $HNVProviderLogicalNetwork
 $vnetproperties.Subnets = @($vsubnet)  
 New-NetworkControllerVirtualNetwork -ResourceId "Contoso_VNet1" -ConnectionUri $uri -Properties $vnetproperties  
   
-  
 ```  
   
 ## <a name="modify-an-existing-virtual-network"></a>既存の仮想ネットワークを変更します。  
 Windows PowerShell を使用して、既存の仮想サブネットまたはネットワークを更新することができます。   
   
-次のスクリプト例を実行すると、更新されたリソースが同じリソース ID を持つネットワーク コント ローラーに簡単に言えば Contoso テナントが仮想ネットワークに新しい仮想サブネット (24.30.2.0/24) を追加しようとすると、ユーザーまたは Contoso 管理者は、次のスクリプトを使用できます。  
+次のサンプル スクリプトを実行すると更新リソースが同じリソース ID を持つネットワーク コント ローラーに簡単に言えば Contoso テナントの仮想ネットワークに新しい仮想サブネット (24.30.2.0/24) を追加する場合、または Contoso の管理者は、次のスクリプトを使用できます。  
   
-```  
+```PowerShell  
 $acllist = Get-NetworkControllerAccessControlList -ConnectionUri $uri -ResourceId "AllowAll"  
   
 $vnet = Get-NetworkControllerVirtualNetwork -ResourceId "Contoso_VNet1" -ConnectionUri $uri  
@@ -122,8 +113,9 @@ New-NetworkControllerVirtualNetwork -ResourceId "Contoso_VNet1" -ConnectionUri $
   
 Windows PowerShell を使用して、仮想ネットワークを削除することができます。  
   
-次の Windows PowerShell の例は、HTTP delete をリソースのリソースの ID の URI に発行することによってテナント仮想ネットワークを削除します。  
-  
-    Remove-NetworkControllerVirtualNetwork -ResourceId "Contoso_Vnet1" -ConnectionUri $uri  
+次の Windows PowerShell の例では、リソースのリソース ID の URI に、HTTP delete を発行してテナント仮想ネットワークを削除します。  
 
+```PowerShell  
+Remove-NetworkControllerVirtualNetwork -ResourceId "Contoso_Vnet1" -ConnectionUri $uri  
+```
 
