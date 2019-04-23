@@ -1,7 +1,7 @@
 ---
-title: "Active Directory 管理センターのナビゲーション ウィンドウをカスタマイズします。"
+title: Active Directory 管理センターのナビゲーション ウィンドウをカスタマイズします。
 ms.prod: windows-server-threshold
-description: "Windows Server のセキュリティ"
+description: Windows Server のセキュリティ
 ms.custom: na
 ms.reviewer: na
 ms.suite: na
@@ -12,41 +12,42 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: e7b1128d93912f724225905bedd38131f8aab0b2
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854843"
 ---
 # <a name="customize-the-active-directory-administrative-center-navigation-pane"></a>Active Directory 管理センターのナビゲーション ウィンドウをカスタマイズします。
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server 2016 の Windows Server (半期チャネル)
 
-  You can browse through the Active Directory Administrative Center navigation pane by using the tree view, which is similar to the Active Directory Users and Computers console tree, or by using the list view.
+  Active Directory ユーザーとコンピューターのコンソール ツリーに類似した、ツリー ビューを使用して、またはリスト ビューを使用して Active Directory 管理センターのナビゲーション ウィンドウを参照できます。
 
- Whether you use the tree view or the list view, you can customize your Active Directory Administrative Center navigation pane anytime by adding various containers from the local domain or any foreign domain \(that is, a domain other than the local domain that has an established trust with the local domain\) to the navigation pane as separate nodes. Customizing the Active Directory Administrative Center navigation pane can provide quicker access to Active Directory objects. 詳細については、次を参照してください。 [Active Directory 管理センターでさまざまなドメインを管理](manage-different-domains-in-active-directory-administrative-center.md)します。
+ ローカル ドメインまたは外部ドメインからのさまざまなコンテナーを追加することで、Active Directory 管理センターのナビゲーション ウィンドウをいつでもカスタマイズできますツリー ビューまたはリスト ビューを使用するかどうか\(ローカル ドメイン以外のドメインは、ローカル ドメインと信頼が確立されている\)ノードとして個別のナビゲーション ウィンドウにします。 Active Directory 管理センターのナビゲーション ウィンドウをカスタマイズすると、Active Directory オブジェクトにすばやくアクセスを提供できます。 詳細については、次を参照してください。 [Active Directory 管理センターでのさまざまなドメインの管理](manage-different-domains-in-active-directory-administrative-center.md)します。
 
- また、ナビゲーション ウィンドウをさらにカスタマイズするには、名前を変更またはこれらの手動で追加のナビゲーション ウィンドウ ノードを削除する、これらのノードの複製を作成したり、ナビゲーション ウィンドウで上下に移動できます。
+ また、手動で追加したこれらのナビゲーション ウィンドウ ノードは、名前を変更したり、削除したり、複製を作成したり、ナビゲーション ウィンドウで上下に移動したりすることで、さらにカスタマイズすることができます。
 
 > [!NOTE]
->  既定のローカル ドメイン ノードをカスタマイズすることはできません。
+>  既定のローカル ドメイン ノードはカスタマイズできません。
 
-### <a name="to-customize-the-active-directory-administrative-center-navigation-pane"></a>To customize the Active Directory Administrative Center navigation pane
+### <a name="to-customize-the-active-directory-administrative-center-navigation-pane"></a>Active Directory 管理センターのナビゲーション ペインをカスタマイズするには
 
-1.  In the Active Directory Administrative Center navigation pane, right\-click the node that you want to modify. 位置や、ノードの名前を変更するかの複製を作成することができます。
+1.  Active Directory 管理センターのナビゲーション ウィンドウで右\-を変更するノードをクリックします。 ノードの位置や名前を変更したり、ノードの複製を作成したりできます。
 
 2.  次のコマンドのいずれかをクリックします。
 
-    -   **名前の変更**
+    -   **Rename**
 
     -   **重複するノードを作成します。**
 
-    -   **削除します。**
+    -   **[削除]**
 
-    -   **上に移動します。**
+    -   **上へ移動します。**
 
     -   **下へ移動します。**
 
- リスト ビューを使用すると、最近使用した \(MRU\) リストの利点を実行できます。 MRU 一覧は、このナビゲーション ノードの少なくとも 1 つのコンテナーにアクセスするときに、ナビゲーション ノードの下に自動的に表示されます。 You can also view the current MRU list by expanding the breadcrumb bar at the top of the Active Directory Administrative Center window. MRU 一覧には、常に特定のナビゲーション ノードにアクセスした最後の 3 つのコンテナーが含まれています。 たびに特定のコンテナーを選択することでは、このコンテナーが MRU 一覧の先頭に追加され、MRU 一覧の最後のコンテナーがから削除されます。
+ リスト ビューを使用して、最近使用した利用を行う\(MRU\)一覧。 MRU 一覧は、このナビゲーション ノード内の少なくとも 1 つのコンテナーにアクセスすると、ナビゲーション ノードの下で自動的に表示されます。 Active Directory 管理センター ウィンドウの上部にある階層リンク バーを展開して、現在の MRU 一覧を表示することもできます。 MRU 一覧には、常に特定のナビゲーション ノードにアクセスした最後の 3 つのコンテナーが含まれています。 特定のコンテナーを選択するたびに、そのコンテナーが MRU 一覧の最上部に追加され、最下部のコンテナーがこの一覧から削除されます。
 
   
 

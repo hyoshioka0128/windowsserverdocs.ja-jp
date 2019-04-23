@@ -1,114 +1,115 @@
 ---
 ms.assetid: fe05e52c-cbf8-428b-8176-63407991042f
-title: "Active Directory レプリケーションおよびトポロジ管理の Windows PowerShell (レベル 200) を使用して高度な"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: Advanced Active Directory Replication and Topology Management Using Windows PowerShell (Level 200)
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 1e05616b4b594ae54fcaa3ec6496c0917ecde38b
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 5454f91394dbdc659db85a675d1c8bfac18b2a86
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59853923"
 ---
-# <a name="advanced-active-directory-replication-and-topology-management-using-windows-powershell-level-200"></a>Active Directory レプリケーションおよびトポロジ管理の Windows PowerShell (レベル 200) を使用して高度な
+# <a name="advanced-active-directory-replication-and-topology-management-using-windows-powershell-level-200"></a>Advanced Active Directory Replication and Topology Management Using Windows PowerShell (Level 200)
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-このトピックでは、新しい AD DS レプリケーションおよびトポロジ管理コマンドレットの詳細については、について説明し、その他の例を示します。 概要については、次を参照してください。 [Introduction to Active Directory レプリケーションおよびトポロジ管理を使用して Windows PowerShell (&) #40 です。Level 100 & #41 です。](../../../ad-ds/manage/powershell/Introduction-to-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-100-.md).  
+このトピックでは、AD DS のレプリケーションとトポロジを管理するための新しいコマンドレットの詳細を説明し、いくつかの例を示します。 概要については、次を参照してください。 [Active Directory レプリケーションおよびトポロジ管理を使用して Windows PowerShell の概要&#40;レベル 100&#41;](../../../ad-ds/manage/powershell/Introduction-to-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-100-.md)します。  
   
-1.  [概要](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_Intro)  
+1.  [はじめに](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_Intro)  
   
 2.  [レプリケーションとメタデータ](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_Repl)  
   
-3.  [Get ADReplicationAttributeMetadata](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_ReplAttrMD)  
+3.  [Get-ADReplicationAttributeMetadata](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_ReplAttrMD)  
   
-4.  [Get ADReplicationPartnerMetadata](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_PartnerMD)  
+4.  [Get-ADReplicationPartnerMetadata](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_PartnerMD)  
   
-5.  [Get ADReplicationFailure](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_ReplFail)  
+5.  [Get-ADReplicationFailure](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_ReplFail)  
   
 6.  [Get-adreplicationqueueoperation および Get-adreplicationuptodatenessvectortable](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_ReplQueue)  
   
-7.  [同期 ADObject](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_Sync)  
+7.  [Sync-ADObject](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_Sync)  
   
 8.  [トポロジ](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_Topo)  
   
 ## <a name="BKMK_Intro"></a>概要  
-Windows Server 2012 では、レプリケーションとフォレスト トポロジを管理する 25 個の新しいコマンドレットでは、Windows PowerShell 用 Active Directory モジュールを拡張します。 これには、前に、された強制的に使用する、汎用**\*-AdObject**名詞または .NET 関数を呼び出す。  
+Windows Server 2012 では、Windows PowerShell の Active Directory モジュールが拡張され、レプリケーションとフォレスト トポロジを管理するための 25 個の新しいコマンドレットが追加されました。 その前に、ジェネリックを使用して、強制された **\*- AdObject**名詞または .NET 関数を呼び出す。  
   
-すべての Active Directory Windows PowerShell コマンドレットと同様にこの新機能のインストールが必要、 [Active Directory 管理ゲートウェイ サービス](https://www.microsoft.com/download/details.aspx?displaylang=en&id=2852)で少なくとも 1 つのドメイン コント ローラー (可能であれば、すべてのドメイン コント ローラー)。  
+すべての Active Directory Windows PowerShell コマンドレットと同様に、この新しい機能を使用するには、 [Active Directory 管理ゲートウェイ サービス](https://www.microsoft.com/download/details.aspx?displaylang=en&id=2852) を 1 つ以上のドメイン コントローラー (可能であれば、すべてのドメイン コントローラー) にインストールする必要があります。  
   
-次の表は、新しいレプリケーションおよびトポロジ コマンドレットが、Active Directory Windows PowerShell モジュールに追加します。  
+次の表に、Active Directory Windows PowerShell モジュールに追加された、レプリケーションおよびトポロジに関する新しいコマンドレットの一覧を示します。  
   
 |||  
 |-|-|  
 |コマンドレット|説明|  
-|Get ADReplicationAttributeMetadata|属性のオブジェクトのレプリケーション メタデータを返します|  
-|Get ADReplicationConnection|ドメイン コント ローラー接続オブジェクトの詳細を返します|  
-|Get ADReplicationFailure|最新のレプリケーション エラーのドメイン コント ローラーを返します|  
-|Get ADReplicationPartnerMetadata|ドメイン コント ローラーのレプリケーション構成を返します|  
-|Get-adreplicationqueueoperation|現在のレプリケーション キューのバックログを返します|  
-|Get ADReplicationSite|サイト情報を返します|  
-|Get ADReplicationSiteLink|サイト リンク情報を返します|  
-|Get ADReplicationSiteLinkBridge|サイト リンク ブリッジ情報を返します|  
-|Get ADReplicationSubnet|AD サブネット情報を返します|  
-|Get-adreplicationuptodatenessvectortable|ドメイン コント ローラーの UTD ベクターを返します|  
-|Get ADTrust|ドメイン間またはフォレスト間の信頼に関する情報を返します|  
-|New-adreplicationsite|新しいサイトを作成します。|  
-|新しい ADReplicationSiteLink|新しいサイト リンクを作成します。|  
-|新しい ADReplicationSiteLinkBridge|新しいサイト リンク ブリッジを作成します。|  
-|新しい ADReplicationSubnet|新しい AD サブネットを作成します。|  
-|削除 ADReplicationSite|サイトを削除します。|  
-|削除 ADReplicationSiteLink|サイト リンクを削除します。|  
-|削除 ADReplicationSiteLinkBridge|サイト リンク ブリッジを削除します。|  
-|削除 ADReplicationSubnet|AD サブネットを削除します。|  
-|セット ADReplicationConnection|接続を変更します。|  
-|セット ADReplicationSite|サイトを変更します。|  
-|セット ADReplicationSiteLink|サイト リンクを変更します。|  
-|セット ADReplicationSiteLinkBridge|サイト リンク ブリッジを変更します。|  
-|セット ADReplicationSubnet|AD サブネットを変更します。|  
-|同期 ADObject|1 つのオブジェクトのレプリケーションを強制します|  
+|Get-ADReplicationAttributeMetadata|オブジェクトの属性レプリケーション メタデータを返します|  
+|Get-ADReplicationConnection|ドメイン コントローラー接続オブジェクトの詳細を返します|  
+|Get-ADReplicationFailure|ドメイン コントローラーの最新のレプリケーション エラーを返します|  
+|Get-ADReplicationPartnerMetadata|ドメイン コントローラーのレプリケーション構成を返します|  
+|Get-ADReplicationQueueOperation|現在のレプリケーション キューのバックログを返します|  
+|Get-ADReplicationSite|サイト情報を返します|  
+|Get-ADReplicationSiteLink|サイト リンク情報を返します|  
+|Get-ADReplicationSiteLinkBridge|サイト リンク ブリッジ情報を返します|  
+|Get-ADReplicationSubnet|AD サブネット情報を返します|  
+|Get-ADReplicationUpToDatenessVectorTable|ドメイン コントローラーの UTD ベクターを返します|  
+|Get-ADTrust|ドメイン間信頼またはフォレスト間信頼に関する情報を返します|  
+|New-ADReplicationSite|新しいサイトを作成します|  
+|New-ADReplicationSiteLink|新しいサイト リンクを作成します|  
+|New-ADReplicationSiteLinkBridge|新しいサイト リンク ブリッジを作成します|  
+|New-ADReplicationSubnet|新しい AD サブネットを作成します|  
+|Remove-ADReplicationSite|サイトを削除します|  
+|Remove-ADReplicationSiteLink|サイト リンクを削除します|  
+|Remove-ADReplicationSiteLinkBridge|サイト リンク ブリッジを削除します|  
+|Remove-ADReplicationSubnet|AD サブネットを削除します|  
+|Set-ADReplicationConnection|接続を変更します|  
+|Set-ADReplicationSite|サイトを変更します|  
+|Set-ADReplicationSiteLink|サイト リンクを変更します|  
+|Set-ADReplicationSiteLinkBridge|サイト リンク ブリッジを変更します|  
+|Set-ADReplicationSubnet|AD サブネットを変更します|  
+|Sync-ADObject|単一オブジェクトのレプリケーションを強制します|  
   
-これらのコマンドレットのほとんどでは、Repadmin.exe で、基準があります。 (表示されていない)、他のコマンドレットは、ダイナミック アクセス制御とグループ管理サービス アカウントなどの機能を処理します。  
+これらのコマンドレットのほとんどは、Repadmin.exe を基に作成されています。 上記の表にない他のコマンドレットは、ダイナミック アクセス制御やグループの管理されたサービス アカウントのような機能を扱います。  
   
-すべての Active Directory Windows PowerShell コマンドレットの完全な一覧は、次のコマンドを実行します。  
+すべての Active Directory Windows PowerShell コマンドレットの一覧を取得するには、次のコマンドを実行します。  
   
 ```  
 Get-command -module ActiveDirectory  
 ```  
   
-すべての Active Directory Windows PowerShell コマンドレットの引数の完全な一覧は、ヘルプを参照します。 例えば：  
+すべての Active Directory Windows PowerShell コマンドレットの引数の一覧については、ヘルプを参照してください。 例:  
   
 ```  
 Get-help New-ADReplicationSite  
   
 ```  
   
-使用して、`Update-Help`コマンドレット ヘルプ ファイルをダウンロードしてインストール  
+ヘルプ ファイルをダウンロードしてインストールするには、`Update-Help` コマンドレットを使用します。  
   
 ### <a name="BKMK_Repl"></a>レプリケーションとメタデータ  
-Repadmin.exe は、正常性と Active Directory レプリケーションの整合性を検証します。 Repadmin.exe には、単純なデータ操作オプションが用意されています - 引数がいくつかサポート CSV 出力では、たとえば - が、オートメーション一般的に必要なテキスト ファイル出力を解析しています。 Windows PowerShell 用 Active Directory モジュールが提供する、返されたデータを実際に制御できるオプションの最初の試行これには、前にスクリプトを作成またはサード パーティ製のツールを使用する必要があります。  
+Repadmin.exe は、Active Directory レプリケーションの正常性と一貫性を検証します。 Repadmin.exe には簡単なデータ操作オプションがあり、たとえば、いくつかの引数では CSV 出力をサポートしていますが、自動処理を行うには、一般にテキスト ファイル出力を通じた解析が必要でした。 Windows PowerShell の Active Directory モジュールが提供するオプションにより、返されるデータを完全に制御できるようになりました。これを行うには、以前はスクリプトを作成するか、サードパーティ製のツールを使用する必要がありました。  
   
-さらに、次のコマンドレットは、の新しいパラメーター セットを実装**ターゲット**、**スコープ**、および**EnumerationServer**:  
+さらに、次のコマンドレットでは、新しいパラメーター セットである **Target**、**Scope**、および **EnumerationServer** が実装されています。  
   
--   **Get ADReplicationFailure**  
+-   **Get-ADReplicationFailure**  
   
--   **Get ADReplicationPartnerMetadata**  
+-   **Get-ADReplicationPartnerMetadata**  
   
--   **Get-adreplicationuptodatenessvectortable**  
+-   **Get-ADReplicationUpToDatenessVectorTable**  
   
-**ターゲット**引数がターゲット サーバー、サイト、ドメイン、またはによって指定されたフォレストを識別する文字列のコンマ区切りのリストを受け入れる、**スコープ**引数。 アスタリスク (\ *) は容認されても、および指定されたスコープ内のすべてのサーバーを意味します。 スコープが指定されていない場合は、現在のユーザーのフォレスト内のすべてのサーバーを意味します。 **スコープ**引数は検索の範囲を指定します。 使用できる値は**サーバー**、**サイト**、**ドメイン**、および**フォレスト**します。 **EnumerationServer**で指定されたドメイン コントローラの一覧を列挙するサーバーを指定**ターゲット**と**スコープ**します。 同じように動作して、**サーバー**引数、指定したサーバーの Active Directory Web サービスを実行する必要があります。  
+**Target** 引数は、**Scope** 引数で指定されたターゲットのサーバー、サイト、ドメイン、またはフォレストを識別する文字列のコンマ区切り一覧を受け入れます。 アスタリスク (\*) ができても、指定されたスコープ内のすべてのサーバーのことを意味します。 スコープが指定されていない場合は、現在のユーザーのフォレスト内のすべてのサーバーを意味します。 **Scope** 引数は検索の範囲を指定します。 指定できる値は、 **Server**、 **Site**、 **Domain**、および **Forest**です。 **EnumerationServer** は、 **Target** および **Scope**で指定されたドメイン コントローラーの一覧を列挙するサーバーを指定します。 **Server** 引数と同じように動作し、指定したサーバーで Active Directory Web サービスが実行されている必要があります。  
   
-新しいコマンドレットを紹介するには、次のとおりいくつかのサンプル シナリオ repadmin.exe; に示す機能が不可能ですこれらの例を利用すれば、管理者の組み合わせが明らかにします。 コマンドレットのヘルプを特定の使用法の要件を確認します。  
+新しいコマンドレットの概要を説明するために、いくつかのサンプル シナリオを通じて repadmin.exe では実行できない機能を示します。これらの例から、コマンドレットで実行できる管理操作を把握することができます。 特定の使用上の要件については、コマンドレットのヘルプを参照してください。  
   
-### <a name="BKMK_ReplAttrMD"></a>Get ADReplicationAttributeMetadata  
-このコマンドレットと同様に**repadmin.exe/showobjmeta**します。 属性が変更された場合、元のドメイン コント ローラー、バージョンおよび USN 情報、および属性データなどのレプリケーション メタデータを返すことができます。 このコマンドレットは、場所を監査し、変更が発生したときに便利です。  
+### <a name="BKMK_ReplAttrMD"></a>Get-ADReplicationAttributeMetadata  
+このコマンドレットは、**repadmin.exe /showobjmeta** と似ています。 属性の変更日時、発信元のドメイン コントローラー、バージョンおよび USN 情報、属性データなどのレプリケーション メタデータを返すことができます。 このコマンドレットは、変更が発生した場所と時間を監査するのに役立ちます。  
   
-Repadmin とは異なり Windows PowerShell では柔軟な検索と出力を制御します。 たとえば、読み取り可能な一覧として注文、Domain Admins オブジェクトのメタデータを出力することができます。  
+Repadmin とは異なり、Windows PowerShell では検索と出力を柔軟に制御することができます。 たとえば、Domain Admins オブジェクトのメタデータを、読みやすい順序に並べた一覧として出力できます。  
   
 ```  
 Get-ADReplicationAttributeMetadata -object "cn=domain admins,cn=users,dc=corp,dc=contoso,dc=com" -server dc1.corp.contoso.com -showalllinkedvalues | format-list  
@@ -117,7 +118,7 @@ Get-ADReplicationAttributeMetadata -object "cn=domain admins,cn=users,dc=corp,dc
   
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplAttrMd.png)  
   
-または、表形式で、repadmin のようにデータを並べ替えることができます。  
+repadmin と同じようにデータを表形式で出力することもできます。  
   
 ```  
 Get-ADReplicationAttributeMetadata -object "cn=domain admins,cn=users,dc=corp,dc=contoso,dc=com" -server dc1.corp.contoso.com -showalllinkedvalues | format-table -wrap  
@@ -126,7 +127,7 @@ Get-ADReplicationAttributeMetadata -object "cn=domain admins,cn=users,dc=corp,dc
   
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplAttrMdTable.png)  
   
-パイプライン処理によって、オブジェクトのクラス全体のメタデータを取得することができます、 **Get-adobject**コマンドレットすべてのグループなどのフィルターを使用しとを組み合わせることが特定の日付。 パイプラインは、データを渡すための複数のコマンドレット間で使用されるチャネルです。 すべてのグループを表示するには、2012 年 1 月 13 日に何らかの方法で変更。  
+オブジェクトのクラス全体のメタデータを取得できます。このためには、**Get-Adobject** コマンドレットですべてのグループなどのフィルターを使用し、パイプラインで結果を渡して、特定の日付と組み合わせます。 パイプラインは、複数のコマンドレット間でデータを渡すときに使用するチャネルです。 2012 年 1 月 13 日に何らかの方法で変更されたグループをすべて表示するには、次のコマンドを実行します。  
   
 ```  
 get-adobject -filter 'objectclass -eq "group"' | Get-ADReplicationAttributeMetadata -server dc1.corp.contoso.com | where-object {$_.lastoriginatingchangetime -like "*1/13/2012*" -and $_.attributename -eq "name"} | format-table object  
@@ -134,9 +135,9 @@ get-adobject -filter 'objectclass -eq "group"' | Get-ADReplicationAttributeMetad
   
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplAttrMdClass.png)  
   
-パイプラインを使用した Windows PowerShell 操作の詳細については、次を参照してください。[パイプ処理と Windows PowerShell でパイプライン](https://technet.microsoft.com/library/ee176927.aspx)します。  
+パイプラインを使用した Windows PowerShell 操作の詳細については、 [Windows PowerShell のパイプ処理とパイプラインに関するページ](https://technet.microsoft.com/library/ee176927.aspx)を参照してください。  
   
-またはを調べるにすべてのグループを持つメンバーとして、およびグループが最後に変更されたときに Tony Wang:  
+メンバーに Tony Wang が含まれるすべてのグループを検索し、それらのグループが最後に変更された日時を表示するには、次のコマンドを実行します。  
   
 ```  
 get-adobject -filter 'objectclass -eq "group"' | Get-ADReplicationAttributeMetadata -server dc1.corp.contoso.com -showalllinkedvalues | where-object {$_.attributevalue -like "*tony wang*"} | format-table object,LastOriginatingChangeTime,version -auto  
@@ -145,7 +146,7 @@ get-adobject -filter 'objectclass -eq "group"' | Get-ADReplicationAttributeMetad
   
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplAttrMdFilter.png)  
   
-または、権限のあるすべてのオブジェクトを検索するを使用して復元システム状態のバックアップ、ドメイン内の人為的に高いバージョンに基づいています。  
+ドメインのシステム状態バックアップを使用して正式に復元されたすべてのオブジェクトを、意図的に指定された高いバージョン番号に基づいて検索するには、次のコマンドを実行します。  
   
 ```  
 get-adobject -filter 'objectclass -like "*"' | Get-ADReplicationAttributeMetadata -server dc1.corp.contoso.com | where-object {$_.version -gt "100000" -and $_.attributename -eq "name"} | format-table object,LastOriginatingChangeTime  
@@ -153,16 +154,16 @@ get-adobject -filter 'objectclass -like "*"' | Get-ADReplicationAttributeMetadat
   
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplAttrMdFilter2.png)  
   
-または、すべてのユーザーのメタデータを Microsoft Excel で後で検証 CSV ファイルに送信するには。  
+すべてのユーザーのメタデータを CSV ファイルに送信し、後から Microsoft Excel で調査できるようにするには、次のコマンドを実行します。  
   
 ```  
 get-adobject -filter 'objectclass -eq "user"' | Get-ADReplicationAttributeMetadata -server dc1.corp.contoso.com -showalllinkedvalues | export-csv allgroupmetadata.csv  
 ```  
   
-### <a name="BKMK_PartnerMD"></a>Get ADReplicationPartnerMetadata  
-このコマンドレットは、構成とすると、監視、インベントリ作成、またはのトラブルシューティングを行うことが、ドメイン コント ローラーのレプリケーションの状態に関する情報を返します。 Repadmin.exe とは異なり Windows PowerShell を使用することを意味する形式では重要なデータのみを参照してください。  
+### <a name="BKMK_PartnerMD"></a>Get-ADReplicationPartnerMetadata  
+このコマンドレットは、ドメイン コントローラーのレプリケーションの構成と状態に関する情報を返すことで、それらの情報の監視、インベントリ作成、トラブルシューティングが可能になります。 Repadmin.exe とは異なり、Windows PowerShell を使用すると、重要なデータのみを希望の形式で表示できます。  
   
-たとえば、1 つのドメイン コント ローラーの読み取り可能なレプリケーションの状態。  
+たとえば、単一のドメイン コントローラーのレプリケーションの状態を読みやすい形式で表示するには、次のコマンドを実行します。  
   
 ```  
 Get-ADReplicationPartnerMetadata -target dc1.corp.contoso.com  
@@ -170,7 +171,7 @@ Get-ADReplicationPartnerMetadata -target dc1.corp.contoso.com
   
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplPartnerMd.png)  
   
-代わりに、前回のドメイン コント ローラー複製の受信し、そのパートナーを表形式で書式設定。  
+ドメイン コントローラーが入力方向に最後にレプリケートされた日時とそのパートナーを表形式で表示するには、次のコマンドを実行します。  
   
 ```  
 Get-ADReplicationPartnerMetadata -target dc1.corp.contoso.com | format-table lastreplicationattempt,lastreplicationresult,partner -auto  
@@ -178,7 +179,7 @@ Get-ADReplicationPartnerMetadata -target dc1.corp.contoso.com | format-table las
   
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplPartnerMdTable.png)  
   
-または、フォレスト内のすべてのドメイン コント ローラーに接続し、表示、何らかの理由が最後に試行されたレプリケーションが失敗しました。  
+フォレスト内のすべてのドメイン コントローラーに接続し、最後に試行されたレプリケーションが何らかの理由で失敗したドメイン コントローラーを表示するには、次のコマンドを実行します。  
   
 ```  
 Get-ADReplicationPartnerMetadata -target * -scope server | where {$_.lastreplicationresult -ne "0"} | ft server,lastreplicationattempt,lastreplicationresult,partner -auto  
@@ -187,10 +188,10 @@ Get-ADReplicationPartnerMetadata -target * -scope server | where {$_.lastreplica
   
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplPartnerMdFail.png)  
   
-### <a name="BKMK_ReplFail"></a>Get ADReplicationFailure  
-レプリケーションで最近のエラーに関する情報を返しますをこのコマンドレットを使用できます。 似ていますが**Repadmin.exe/showreplsum**、もう一度、Windows PowerShell のおかげ制御の詳細と似ています。  
+### <a name="BKMK_ReplFail"></a>Get-ADReplicationFailure  
+このコマンドレットは、最近発生したレプリケーション エラーの情報を返すために使用できます。 **Repadmin.exe /showreplsum**と似ていますが、Windows PowerShell によって細かい制御が可能です。  
   
-たとえば、ドメイン コント ローラーの最新のエラーと接続に失敗したパートナーを返すことができます。  
+たとえば、ドメイン コントローラーの最新のエラーや、接続に失敗したパートナーを返すことができます。  
   
 ```  
 Get-ADReplicationFailure dc1.corp.contoso.com  
@@ -198,7 +199,7 @@ Get-ADReplicationFailure dc1.corp.contoso.com
   
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplFail.png)  
   
-または、特定 AD 論理サイト、簡単に表示すると最も重要なデータのみが含まれている順序ですべてのサーバーに対して表示される表形式が返されます。  
+特定の AD 論理サイトのすべてのサーバーを、最も重要なデータのみが読みやすい順序で表示される表形式で返すには、次のコマンドを実行します。  
   
 ```  
 Get-ADReplicationFailure -scope site -target default-first-site-name | format-table server,firstfailuretime,failurecount,lasterror,partner -auto  
@@ -208,12 +209,12 @@ Get-ADReplicationFailure -scope site -target default-first-site-name | format-ta
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSGetADReplFailScoped.png)  
   
 ### <a name="BKMK_ReplQueue"></a>Get-adreplicationqueueoperation および Get-adreplicationuptodatenessvectortable  
-これらのコマンドレットの両方のドメイン コント ローラーの側面をさらを返すまで"2、保留中のレプリケーションやバージョン ベクターの情報が含まれます。  
+この 2 つのコマンドレットは、ドメイン コントローラーの最新の状態に関する情報を返します。これには、保留中のレプリケーションやバージョン ベクターの情報が含まれます。  
   
 ### <a name="BKMK_Sync"></a>同期 ADObject  
-このコマンドレットは、実行中によく似ています**Repadmin.exe/replsingleobject**します。 問題を修正するには、特に、帯域外レプリケーションが必要な変更を加えると非常に便利です。  
+このコマンドレットは、 **Repadmin.exe /replsingleobject**を実行した場合と似ています。 特に問題を修正するために、帯域外レプリケーションが必要な変更を行う際に役立ちます。  
   
-たとえば、ユーザーが CEO のユーザー アカウントを削除し、Active Directory のごみ箱に復元しました、当てはまらない場合はすぐにすべてのドメイン コント ローラーにレプリケートします。 多くの場合これを行うすべて、その他のオブジェクトに対する変更の; のレプリケーションを強制なし結局のところ、WAN リンクのオーバー ロードを避けるために、レプリケーション スケジュールがあるためにです。  
+たとえば、誰かが CEO のユーザー アカウントを削除してしまい、Active Directory のごみ箱を使用して復元した場合、直ちにすべてのドメイン コントローラーにそれをレプリケートする必要があります。 その際は、変更されている他のすべてのオブジェクトのレプリケーションは適用しないでおく必要があります。WAN リンクに過剰な負荷がかかるのを避けるため、レプリケーション スケジュールが設定されているためです。  
   
 ```  
 Get-ADDomainController -filter * | foreach {Sync-ADObject -object "cn=tony wang,cn=users,dc=corp,dc=contoso,dc=com" -source dc1 -destination $_.hostname}  
@@ -223,13 +224,13 @@ Get-ADDomainController -filter * | foreach {Sync-ADObject -object "cn=tony wang,
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSSyncAD.png)  
   
 ### <a name="BKMK_Topo"></a>トポロジ  
-Repadmin.exe は、サイト、サイト リンク、サイト リンク ブリッジ、および接続のようなレプリケーション トポロジに関する情報を返す得意ですが、変更を行う引数の包括的なセットをありません。 実際には、決してしましたを作成し、AD DS トポロジを変更する管理者向けに設計されたスクリプト可能なインボックス Windows のユーティリティ。 一括する必要が Active Directory を変更するように Active Directory は、何百万ものお客様の環境で完成度が高く、論理的な情報が明らかになります。  
+Repadmin.exe は、サイト、サイト リンク、サイト リンク ブリッジ、および接続のようなレプリケーション トポロジに関する情報を返すには便利ですが、変更を加えるための包括的な引数のセットが用意されていません。 実際、AD DS トポロジを作成および変更する管理者向けに特化して設計された、スクリプトが実行可能な付属の Windows ユーティリティはこれまで存在しませんでした。 Active Directory が普及し、非常に多くのカスタマー環境で利用されるようになったことで、Active Directory の論理情報を一括で変更するニーズが高まっています。  
   
-など、他のユーザーの統合と組み合わせて、新しいブランチ オフィスを迅速に展開した後は、物理的な場所、ネットワークの変更、および新しいキャパシティ要件に基づいて行う 100 サイト変更があります。 変更する場合、Dssites.msc や Adsiedit.msc を使用してではなくを自動化できます。 これは、スプレッドシート形式のネットワークおよび施設のチームが提供されるデータの使用する場合に特に役立ちます。  
+たとえば、新しいブランチ オフィスを迅速に展開した後に、他のオフィスとの統合作業だけでなく、物理的な場所、ネットワークの変更、および新しいキャパシティ要件に基づいて、サイトに多数の変更を加えることが必要になる場合があります。 このような場合、Dssites.msc や Adsiedit.msc を使用して変更を加える代わりに、変更作業を自動化することができます。 これは、ネットワークおよび施設のチームから提供されたスプレッドシート形式のデータを使用する場合に特に役立ちます。  
   
-**取得-Adreplication\ ***コマンドレットは、レプリケーション トポロジに関する情報を返すし、パイプラインをための便利な**設定-Adreplication\ ***コマンドレットに一括でします。 **取得**コマンドレットは、データを変更しないで、データのみを表示または Windows PowerShell を作成するセッション オブジェクトをパイプラインに処理する**設定-Adreplication\ ***コマンドレット。 **新規**と**削除**コマンドレットは、作成または Active Directory トポロジ オブジェクトを削除するのに便利です。  
+**Get Adreplication\*** コマンドレットは、レプリケーション トポロジに関する情報を返すし、パイプラインを利用、**セット Adreplication\*** コマンドレットに一括でします。 **取得**コマンドレットは、データを変更しないで、データのみを表示またはセッションでは Windows PowerShell を作成するオブジェクトにパイプラインを設定することができます**セット Adreplication\*** コマンドレット。 **New** および **Remove** コマンドレットは、Active Directory トポロジ オブジェクトを作成または削除するのに役立ちます。  
   
-たとえば、CSV ファイルを使用して新しいサイトを作成することができます。  
+たとえば、CSV ファイルを使用して新しいサイトを作成できます。  
   
 ```  
 import-csv -path C:\newsites.csv | new-adreplicationsite  
@@ -239,7 +240,7 @@ import-csv -path C:\newsites.csv | new-adreplicationsite
   
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSImportCSV.png)  
   
-また、カスタムのレプリケーション間隔とサイト コストを持つ 2 つの既存のサイト間での新しいサイト リンクを作成します。  
+カスタムのレプリケーション間隔とサイト コストを使用して、既存の 2 つのサイト間に新しいサイト リンクを作成します。  
   
 ```  
 new-adreplicationsitelink -name "chicago<-->waukegan" -sitesincluded chicago,waukegan -cost 50 -replicationfrequencyinminutes 15  
@@ -247,7 +248,7 @@ new-adreplicationsitelink -name "chicago<-->waukegan" -sitesincluded chicago,wau
   
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSNewADReplSite.png)  
   
-また、フォレスト内のすべてのサイトを検索し、置換その**オプション**サイト間を有効にするフラグで属性の変更の通知を圧縮を使用して最大速度でレプリケートするためには。  
+フォレスト内のすべてのサイトを検索し、それらのサイトの **Options** 属性をサイト間変更の通知を有効化するフラグで置き換え、圧縮を使用して最大速度でレプリケートできるようにします。  
   
 ```  
 get-adreplicationsitelink -filter * | set-adobject -replace @{options=$($_.options -bor 1)}  
@@ -256,9 +257,9 @@ get-adreplicationsitelink -filter * | set-adobject -replace @{options=$($_.optio
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSNewADReplSiteLink.gif)  
   
 > [!IMPORTANT]  
-> 設定**-bor 5**もこれらのサイト リンクで圧縮を無効にします。  
+> これらのサイト リンクで圧縮を無効化するには、**-bor 5** を設定します。  
   
-または、これらの場所の実際のサブネットを含むリストを調整するために、サブネットの割り当てがないすべてのサイトを探します。  
+サブネットが割り当てられていないサイトをすべて検索し、出力される一覧に基づいて各サイトの場所の実際のサブネットを設定できるようにします。  
   
 ```  
 get-adreplicationsite -filter * -property subnets | where-object {!$_.subnets -eq "*"} | format-table name  
@@ -266,7 +267,7 @@ get-adreplicationsite -filter * -property subnets | where-object {!$_.subnets -e
   
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSNewADReplSiteFiltrer.png)  
   
-## <a name="see-also"></a>参照してください。  
-[Active Directory レプリケーションおよびトポロジ管理の Windows PowerShell (&) #40; を使用しての概要Level 100 & #41 です。](../../../ad-ds/manage/powershell/Introduction-to-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-100-.md)  
+## <a name="see-also"></a>関連項目  
+[Active Directory レプリケーションおよびトポロジ管理の Windows PowerShell を使用して概要&#40;レベル 100&#41;](../../../ad-ds/manage/powershell/Introduction-to-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-100-.md)  
   
 

@@ -1,6 +1,6 @@
 ---
-title: "タブの設定に追加します。"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: '[設定] へのタブの追加'
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,53 +13,54 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 9eaa1aa5a9c5e8d4c2e36f2000e0adecc83245d9
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854983"
 ---
-# <a name="add-a-tab-to-settings"></a>タブの設定に追加します。
+# <a name="add-a-tab-to-settings"></a>[設定] へのタブの追加
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-ダッシュ ボードの設定にタブを追加するには作成してオペレーティング システムの設定マネージャーによって使用されるコード アセンブリをインストールします。  
+オペレーティング システムの設定マネージャーによって使用されるコード アセンブリを作成しインストールすることで、ダッシュボードの [設定] にタブを追加できます。  
   
-## <a name="add-a-tab-to-settings"></a>タブの設定に追加します。  
- 設定にタブを追加するには、次のタスクを実行します。  
+## <a name="add-a-tab-to-settings"></a>[設定] へのタブの追加  
+ 次のタスクを実行することで、[設定] にタブを追加します。  
   
--   [ISettingsData インターフェイスの実装のアセンブリへの追加](Add-a-Tab-to-Settings.md#BKMK_ISettingsData)します。  
+-   [ISettingsData インターフェイスの実装のアセンブリへの追加](Add-a-Tab-to-Settings.md#BKMK_ISettingsData)。  
   
--   [Authenticode 署名によるアセンブリの署名](Add-a-Tab-to-Settings.md#BKMK_SignAssembly)します。  
+-   [Sign the assembly with an Authenticode signature](Add-a-Tab-to-Settings.md#BKMK_SignAssembly) の順にクリックします。  
   
--   [参照コンピューターで、アセンブリをインストール](Add-a-Tab-to-Settings.md#BKMK_InstallAssembly)します。  
+-   [Install the assembly on the reference computer](Add-a-Tab-to-Settings.md#BKMK_InstallAssembly) の順にクリックします。  
   
-###  <a name="BKMK_ISettingsData"></a>ISettingsData インターフェイスの実装のアセンブリへの追加します。  
- ISettingsData インターフェイスは \Program Files\Windows server \bin にある AdminCommon.dll アセンブリの Microsoft.WindowsServerSolutions.Settings 名前空間に含まれています。  
+###  <a name="BKMK_ISettingsData"></a> ISettingsData インターフェイスの実装のアセンブリへの追加します。  
+ ISettingsData インターフェイスは、\Program Files\Windows Server\Bin にある AdminCommon.dll アセンブリの Microsoft.WindowsServerSolutions.Settings 名前空間に含まれています。  
   
 ##### <a name="to-add-the-isettingsdata-code-to-the-assembly"></a>ISettingsData コードをアセンブリに追加するには  
   
-1.  Visual Studio 2010 でプログラムを右クリックして、管理者として開きます、**開始**メニューを選択して**管理者として実行**します。  
+1.  **[スタート]** メニューのプログラムを右クリックし、**[管理者として実行]** を選択して、Visual Studio 2010 を管理者として開きます。  
   
-2.  をクリックして**ファイル**、] をクリックして**新規**、] をクリックし、**プロジェクト**します。  
+2.  をクリックして**ファイル**、 をクリックして**新規**、クリックして**プロジェクト**です。  
   
-3.  **新しいプロジェクト**ダイアログ ボックスで、] をクリックして**Visual c#**、] をクリックして**クラス ライブラリ**、入力**DashboardSettingsPage**クリックして、ソリューションの名前の**[OK]**します。  
+3.  **[新しいプロジェクト]** ダイアログ ボックスで、**[Visual C#]**、次に **[クラス ライブラリ]** をクリックし、ソリューションの名前に「**DashboardSettingsPage**」と入力して **[OK]** をクリックします。  
   
     > [!IMPORTANT]
-    >  サーバーにインストールされているアセンブリは、DashboardSettingsPage.dll という名前である必要があり、dll を %ProgramFiles%\Windows server \bin\OEM にコピーします。  
+    >  サーバーにインストールされるアセンブリの名前は、DashboardSettingsPage.dll である必要があります。この DLL を %ProgramFiles%\Windows Server\Bin\OEM にコピーします。  
   
-4.  タブで使用するコントロールを作成します。この例では、設定コントロールの名前は mysettingscontrol です。  
+4.  タブで使用するコントロールを作成します。この例では、設定コントロールの名前は MySettingsControl です。  
   
-5.  Class1.cs ファイルの名前を変更します。 たとえば、MySettingTab.cs です。  
+5.  Class1.cs ファイルの名前を変更します。 たとえば、MySettingTab.cs にします。  
   
 6.  AdminCommon.dll ファイルへの参照を追加します。  
   
-7.  次の追加ステートメントを使用します。  
+7.  次の using ステートメントを追加します。  
   
     ```c#  
     using Microsoft.WindowsServerSolutions.Settings;  
     ```  
   
-8.  名前空間とクラス ヘッダーを次の例に示すように変更します。  
+8.  次の例に合わせて、名前空間とクラス ヘッダーを変更します。  
   
     ```  
   
@@ -72,13 +73,13 @@ ms.lasthandoff: 12/12/2017
   
     ```  
   
-9. タブ用に作成したコントロールのインスタンスを作成します。例えば：  
+9. タブ用に作成したコントロールのインスタンスを作成します。次に、例を示します。  
   
     ```c#  
     private MySettingsControl tab;  
     ```  
   
-10. クラスのコンス トラクターを追加します。 次のコード例は、コンス トラクターを示しています。  
+10. クラスのコンストラクターを追加します。 次のコード例は、コンストラクターを示しています。  
   
     ```  
   
@@ -131,7 +132,7 @@ ms.lasthandoff: 12/12/2017
     ```  
   
     > [!NOTE]
-    >  タブの順序を定義するには、0 から始まる数値を使用します。 Microsoft 組み込みの設定タブが最初に表示し、タブが表示されます、定義したタブ オーダーに基づきます。 たとえば、3 つの設定タブがある場合は場合、は、0、1、および 2 が表示されるタブ順序に基づいてとしてタブの順序を指定します。  
+    >  タブの順序を定義するには、0 から始まる数値を使用します。 Microsoft 組み込みの設定タブが最初に表示され、定義したタブの順序に基づいてユーザー タブが表示されます。 たとえば 3 つの設定タブがある場合、表示する順序に基づいてタブの順序を 0、1、2 と指定します。  
   
 15. タブのタイトルを提供する、TabTitle メソッドを追加します。次のコード例は、TabTitle メソッドを示しています。  
   
@@ -144,19 +145,19 @@ ms.lasthandoff: 12/12/2017
     ```  
   
     > [!NOTE]
-    >  タイトルのテキストは、ローカライズのニーズに合わせてリソース ファイルからも取得できます。  
+    >  タイトルのテキストも、ローカライズのニーズに合わせてリソース ファイルから指定できます。  
   
 16. 保存し、ソリューションをビルドします。  
   
-###  <a name="BKMK_SignAssembly"></a>Authenticode 署名によるアセンブリを署名します。  
- オペレーティング システムで使用されるようにアセンブリの Authenticode 署名する必要があります。 アセンブリの署名の詳細については、次を参照してください。[Authenticode によるコードのチェックの署名と](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)します。  
+###  <a name="BKMK_SignAssembly"></a> アセンブリに Authenticode 署名で署名します。  
+ オペレーティング システムで使用するために、アセンブリを Authenticode で署名する必要があります。 アセンブリの署名の詳細については、「 [Authenticode によるコードの署名と確認 (英語の場合があります)](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)」を参照してください。  
   
-###  <a name="BKMK_InstallAssembly"></a>参照コンピューターで、アセンブリをインストールします。  
- ソリューションを正常に作成した後は、参照コンピューターで、次のフォルダーで、DashboardSettingsPage.dll ファイルのコピーを配置します。  
+###  <a name="BKMK_InstallAssembly"></a> 参照コンピューターで、アセンブリをインストールします。  
+ ソリューションを正常にビルドした後、DashboardSettingsPage.dll ファイルのコピーを参照コンピューターの次のフォルダーに配置します。  
   
- **%Programfiles%\Windows server \bin\OEM**  
+ **%Programfiles%\Windows Server\Bin\OEM**  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
  [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   
  [追加のカスタマイズ](Additional-Customizations.md)   
  [イメージの展開の準備](Preparing-the-Image-for-Deployment.md)   

@@ -1,6 +1,6 @@
 ---
-title: "AD FS 2.0 フェデレーション サーバーの移行を準備します。"
-description: "Windows Server 2012 に AD FS サーバーの移行の準備について説明します。"
+title: AD FS 2.0 フェデレーション サーバーの移行準備
+description: Windows Server 2012 に AD FS サーバーの移行の準備について説明します。
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,14 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 605af8221f08f019c3447b17ef333f67ec1c5547
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59853323"
 ---
-# <a name="prepare-to-migrate-the-ad-fs-20-federation-server"></a>AD FS 2.0 フェデレーション サーバーの移行を準備します。
+# <a name="prepare-to-migrate-the-ad-fs-20-federation-server"></a>AD FS 2.0 フェデレーション サーバーの移行準備
 
-このドキュメント内の AD FS 2.0 の移行の準備の開始点は、Windows Server 2012 へのフェデレーション サーバー。  移行のシナリオに最適な 1 つを選択します。 
+このドキュメントは、AD FS 2.0 の移行の準備の開始点を Windows Server 2012 へのフェデレーション サーバー。  移行のシナリオに最適な 1 つを選択します。 
   
 -   [スタンドアロン AD FS フェデレーション サーバーまたは単一ノード AD FS ファームの移行を準備します。](prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md)  
   

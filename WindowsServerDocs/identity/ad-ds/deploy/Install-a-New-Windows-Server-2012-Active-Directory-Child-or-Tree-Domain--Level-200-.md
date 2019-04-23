@@ -1,34 +1,35 @@
 ---
 ms.assetid: e3d55565-ad45-4504-ad73-8103d1a92170
-title: "Windows Server 2012 の新しい Active Directory 子ドメインまたはツリー ドメイン (レベル 200) をインストールします。"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: Windows Server 2012 の新しい Active Directory 子ドメインまたはツリー ドメインをインストールする (レベル 200)
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: fc0eecc44bbc5f7459f22aceb5ebe41cd61948b6
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 7292f76155c2bcb47b6c632b969f54f3afb93d50
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59853703"
 ---
-# <a name="install-a-new-windows-server-2012-active-directory-child-or-tree-domain-level-200"></a>Windows Server 2012 の新しい Active Directory 子ドメインまたはツリー ドメイン (レベル 200) をインストールします。
+# <a name="install-a-new-windows-server-2012-active-directory-child-or-tree-domain-level-200"></a>Windows Server 2012 の新しい Active Directory 子ドメインまたはツリー ドメインをインストールする (レベル 200)
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、サーバー マネージャーまたは Windows PowerShell を使用して、既存の Windows Server 2012 フォレストに子ドメインとツリー ドメインを追加する方法について説明します。  
   
--   [子ドメインとツリー ドメインのワークフロー](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_Workflow)  
+-   [子とツリー ドメインのワークフロー](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_Workflow)  
   
 -   [子ドメインとツリー ドメインの Windows PowerShell](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_PS)  
   
 -   [展開](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_Deployment)  
   
-## <a name="BKMK_Workflow"></a>子ドメインとツリー ドメインのワークフロー  
-次の図は、以前に AD DS の役割をインストールして、Active Directory ドメイン サービス構成ウィザードを既存のフォレストに新しいドメインを作成するサーバー マネージャーを使用してを開始した場合に、Active Directory Domain Services 構成プロセスを示します。  
+## <a name="BKMK_Workflow"></a>子とツリー ドメインのワークフロー  
+以下の図に、既に AD DS 役割をインストール済みで、既存のフォレスト内に新しいドメインを作成するためにサーバー マネージャーを使用して Active Directory ドメイン サービス構成ウィザードを開始した場合の、Active Directory ドメイン サービスの構成プロセスを示します。  
   
 ![新しい AD 子をインストールします。](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/adds_childtreedeploy_beta1.png)  
   
@@ -36,36 +37,36 @@ ms.lasthandoff: 12/12/2017
   
 |||  
 |-|-|  
-|**ADDSDeployment コマンドレット**|引数 (**太字**引数は必須です。 *文字を斜体に*引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます)。|  
-|**Install-addsdomain**|-SkipPreChecks<br /><br />***-NewDomainName***<br /><br />***-ParentDomainName***<br /><br />***-Safemodeadministratorpassword***<br /><br />*-ADPrepCredential*<br /><br />-AllowDomainReinstall<br /><br />-確認します。<br /><br />*-CreateDNSDelegation*<br /><br />***資格情報***<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-NoDNSOnNetwork<br /><br />*DomainMode-*<br /><br />***DomainType-***<br /><br />フォース<br /><br />*-InstallDNS*<br /><br />*-Logpath*<br /><br />*NewDomainNetBIOSName-*<br /><br />*-NoGlobalCatalog*<br /><br />-NoNorebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />*-サイト名*<br /><br />-SkipAutoConfigureDNS<br /><br />*-SYSVOLPath*<br /><br />*-Whatif*|  
+|**ADDSDeployment コマンドレット**|引数 (**太字** の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。)|  
+|**Install-AddsDomain**|-SkipPreChecks<br /><br />***-NewDomainName***<br /><br />***-ParentDomainName***<br /><br />***-SafeModeAdministratorPassword***<br /><br />*-ADPrepCredential*<br /><br />-AllowDomainReinstall<br /><br />-Confirm<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-NoDNSOnNetwork<br /><br />*-DomainMode*<br /><br />***-DomainType***<br /><br />-Force<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />*-NewDomainNetBIOSName*<br /><br />*-NoGlobalCatalog*<br /><br />-NoNorebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />*-SiteName*<br /><br />-SkipAutoConfigureDNS<br /><br />*-SYSVOLPath*<br /><br />*-Whatif*|  
   
 > [!NOTE]  
-> **-Credential**引数は、のみ、Enterprise Admins グループのメンバーとしてログオンしていないときに必要です。**- NewDomainNetBIOSName** DNS ドメイン名のプレフィックスに基づいて自動的に生成される 15 文字の名前を変更する場合、または名前が 15 文字を超える場合は、引数が必要です。  
+> **-credential** 引数は、現在 Enterprise Admins グループのメンバーとしてログオンしていない場合にのみ必須です。 **-NewDomainNetBIOSName** 引数は、DNS ドメイン名のプレフィックスに基づいて自動的に生成される 15 文字の名前を変更する場合と、名前が 15 文字を超えている場合に必須です。  
   
 ## <a name="BKMK_Deployment"></a>展開  
   
-### <a name="deployment-configuration"></a>展開の構成  
-次のスクリーン ショットは、子ドメインを追加するオプションを示します。  
+### <a name="deployment-configuration"></a>展開構成  
+以下のスクリーン ショットに、子ドメインを追加するオプションを示します。  
   
 ![新しい AD 子をインストールします。](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildDeployConfig.png)  
   
-次のスクリーン ショットは、ツリー ドメインを追加するオプションを示します。  
+以下のスクリーン ショットに、ツリー ドメインを追加するオプションを示します。  
   
 ![新しい AD 子をインストールします。](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_TreeDeployConfig.png)  
   
-サーバー マネージャーですべてのドメイン コントローラーの昇格を開始する、**展開構成**ページ。 他のオプションおよび必須フィールドは、このページと選択した展開操作によって、以降のページに変更します。  
+サーバー マネージャーは各ドメイン コントローラーの昇格を **[配置構成]** ページで開始します。 このページおよび以降のページの他のオプションおよび必須フィールドは、選択した展開操作によって異なります。  
   
-このトピックは次の 2 つの個別の操作を組み合わせたもの: 子ドメインの昇格とツリー ドメインの昇格します。 2 つの操作の唯一の違いは、ドメインの種類を作成することです。 すべての他の手順は、2 つの操作の間で同じです。  
+このトピックでは、子ドメインの昇格とツリー ドメインの昇格という 2 つの個別の操作について同時に説明します。 2 つの操作の違いは、作成するドメイン タイプの違いだけです。 それ以外の手順はすべて同じです。  
   
--   新しい子ドメインを作成する] をクリックして**既存のフォレストにドメインを追加**選択および**子ドメイン**します。 **親ドメイン名**を入力するか、親ドメインの名前を選択します。 新しいドメインの名前を入力し、**新しいドメイン名**ボックス。 有効な単一ラベルの子ドメイン名を提供します。名前は、DNS ドメイン名の要件を使用する必要があります。  
+-   新しい子ドメインを作成するには、**[ドメインを既存のフォレストに追加する]** をクリックして **[子ドメイン]** を選択します。 **[親ドメイン名]** として、親ドメインの名前を入力するか選択します。 その後、新しいドメインの名前を **[新しいドメイン名]** ボックスに名前を入力します。 有効な単一ラベルの子ドメイン名を指定します。DNS ドメイン名の要件を満たす必要があります。  
   
--   既存のフォレスト内にツリー ドメインを作成する] をクリックして**既存のフォレストにドメインを追加**選択および**ツリー ドメイン**します。 フォレスト ルート ドメインの名前を入力し、新しいドメインの名前を入力します。 有効な完全修飾ルート ドメイン名を指定します。名前は、単一ラベルをすることはできず、DNS ドメイン名の要件を使用する必要があります。  
+-   既存のフォレスト内にツリー ドメインを作成するには、**[ドメインを既存のフォレストに追加する]** をクリックして **[ツリー ドメイン]** を選択します。 フォレストのルート ドメインの名前を入力し、新しいドメインの名前を入力します。 有効な完全修飾ルート ドメイン名を指定します。単一ラベルは使用できず、DNS ドメイン名の要件を満たす必要があります。  
   
-DNS 名の詳細については、次を参照してください。[の命名規則 Active Directory 内のコンピューター、ドメイン、サイト、および Ou](https://support.microsoft.com/kb/909264)します。  
+DNS 名の詳細については、 [コンピューター、ドメイン、サイト、OU などの Active Directory の命名規則に関する説明](https://support.microsoft.com/kb/909264)を参照してください。  
   
-サーバー マネージャー Active Directory ドメイン サービス構成ウィザードは、ドメイン資格情報の場合は、現在の資格情報がドメインからするように求めます。 をクリックして**変更**を昇格操作のドメイン資格情報を提供します。  
+現在の資格情報がドメインのものではない場合、サーバー マネージャー Active Directory Domain Services 構成ウィザードではドメイン資格情報の入力を求められます。 **[変更]** をクリックして、昇格操作のためのドメイン資格情報を指定します。  
   
-展開構成の ADDSDeployment コマンドレットと引数は。  
+展開構成の ADDSDeployment コマンドレットと引数は以下のとおりです  
   
 ```  
 Install-AddsDomain  
@@ -75,21 +76,21 @@ Install-AddsDomain
 -credential <pscredential>  
 ```  
   
-### <a name="domain-controller-options"></a>ドメイン コント ローラー オプション  
+### <a name="domain-controller-options"></a>ドメイン コントローラー オプション  
 ![新しい AD 子をインストールします。](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_DCOptions_Child.gif)  
   
-**ドメイン コント ローラー オプション**] ページが新しいドメイン コント ローラーのドメイン コント ローラー オプションを指定します。 構成可能なドメイン コント ローラー オプションは**DNS サーバー**と**グローバル カタログ**です。新しいドメインの最初のドメイン コント ローラーとして、読み取り専用ドメイン コント ローラーを構成することはできません。  
+**[ドメイン コントローラー オプション]** ページでは、新しいドメイン コントローラーのドメイン コントローラー オプションを指定します。 構成可能なドメイン コントローラー オプションは **[DNS サーバー]** と **[グローバル カタログ]** であり、読み取り専用ドメイン コントローラーを新しいドメインの最初のドメイン コントローラーとして構成することはできません。  
   
-マイクロソフトでは、すべてのドメイン コントローラが、分散環境での高可用性の DNS と GC サービスを提供することをお勧めします。 GC は常に既定で選択し、現在のドメインが既にその Dc は、スタート画面から権限のクエリに基づく上の DNS をホストしている場合、DNS が既定で選択します。 指定する必要があります、**ドメインの機能レベル**します。 既定の機能レベルが Windows Server 2012、およびその他の現在のフォレストの機能レベル以上の値を選択できます。  
+Microsoft では、分散環境で高可用性を実現するため、すべてのドメイン コントローラーで、DNS と GC サービスを提供することをお勧めします。 GC は常に既定で選択されます。DNS は、現在のドメインが、Start-of-Authority クエリに基づいて既にその DC 上にある DNS をホストする場合に、既定で選択されます。 また、**[ドメインの機能レベル]** を指定する必要があります。 既定の機能レベルは Windows Server 2012 です。現在のフォレストの機能レベルと同じかそれ以上なら、どのような値でも選択できます。  
   
-**ドメイン コント ローラー オプション**] ページでは、適切な Active Directory 論理を選択することもできます**サイト名**、フォレストの構成からです。 既定では、最も適切なサブネットのサイトを選択します。 1 つのサイトがある場合は、自動的に選択されます。  
+**[ドメイン コントローラー オプション]** ページでは、フォレストの構成から適切な Active Directory 論理**サイト名**を選択することもできます。 既定では、最適なサブネットのサイトが選択されます。 サイトが 1 つしかない場合は、それが自動的に選択されます。  
   
 > [!IMPORTANT]  
-> サーバーが Active Directory のサブネットに属していない複数の Active Directory サイトがある場合は、何も選択し、**[次へ]**ボタンは、一覧からサイトを選択するまでは利用できません。  
+> サーバーが Active Directory サブネットに属せず、複数の Active Directory サイトが存在する場合は、何も選択されず、リストからサイトを選択するまでは **[次へ]** ボタンが使用できません。  
   
-指定した**ディレクトリ サービス復元モード パスワード**サーバーに適用されるパスワード ポリシーに従う必要があります。 常に強力で複雑なパスワードまたは可能であれば、パスフレーズを選択します。  
+**[ディレクトリ サービスの復元モード パスワード]** には、サーバーに適用されるパスワード ポリシーに従ったパスワードを指定する必要があります。 常に強力で複雑なパスワードを、または可能であればパスフレーズを選択します。  
   
-**ドメイン コント ローラー オプション**ADDSDeployment コマンドレット引数は。  
+**[ドメイン コントローラー オプション]** の ADDSDeployment コマンドレット引数は以下のとおりです。  
   
 ```  
 -InstallDNS <{$false | $true}>  
@@ -101,23 +102,23 @@ Install-AddsDomain
 ```  
   
 > [!IMPORTANT]  
-> 値として提供されると、サイト名は既に存在して、 **sitename**引数。 **Install-addsdomaincontroller**コマンドレットは、サイト名を作成しません。 使用することができます、**新しい adreplicationsite**コマンドレットに新しいサイトを作成します。  
+> **sitename** 引数の値として指定するサイト名は既に存在している必要があります。 **install-AddsDomainController** コマンドレットはサイト名を作成しません。 新しいサイトを作成するには **new-adreplicationsite** コマンドレットを使用します。  
   
-**Install-addsdomaincontroller**コマンドレットの引数が指定されていない場合はサーバー マネージャーと同じ既定値に従います。  
+**Install-ADDSDomainController** コマンドレット引数は、特に指定しない限り、サーバー マネージャーと同じ既定値を使用します。  
   
-**SafeModeAdministratorPassword**引数の操作は特別な。  
+**SafeModeAdministratorPassword** 引数の操作は特別で、以下のような特徴があります。  
   
--   場合*が指定されていない*を引数としてコマンドレットは、して、マスクされたパスワードの確認入力を求められます。 これは、コマンドレットを対話的に実行するときに、推奨される使用方法です。  
+-   この引数を*指定しない*場合は、マスクされたパスワードの入力と確認入力を求められます。 これは、コマンドレットを対話的に実行する場合に推奨される使用方法です。  
   
-    やなどの新しい子を作成するドメイン Contoso.com フォレスト NorthAmerica という名前と、マスクされたパスワードの確認入力を求めるメッセージが表示されます。  
+    たとえば、NorthAmerica という名前の新しい子ドメインを Contoso.com フォレストに作成し、マスクされたパスワードの入力と確認入力を求められるようにするには、以下のように実行します  
   
     ```  
     Install-ADDSDomain "NewDomainName NorthAmerica "ParentDomainName Contoso.com "DomainType Child  
     ```  
   
--   指定されている場合*値を持つ*、値が、セキュリティで保護された文字列を指定する必要があります。 コマンドレットを対話的に実行するときに推奨される使用方法はありません。  
+-   この引数を *値と共に*指定する場合は、セキュリティで保護された文字列を指定する必要があります。 これは、コマンドレットを対話的に実行する場合に推奨される使用方法ではありません。  
   
-たとえば、手動での入力を求めるパスワードを使用して、**Read-host**コマンドレットをセキュリティで保護された文字列をユーザーに確認します。  
+たとえば、**Read-Host** コマンドレットを使用してユーザーにセキュリティで保護された文字列の入力を求めることにより、手動でパスワードの入力を求めることができます。  
   
 ```  
 -safemodeadministratorpassword (read-host -prompt "Password:" -assecurestring)  
@@ -125,16 +126,16 @@ Install-AddsDomain
 ```  
   
 > [!WARNING]  
-> 前のオプションは、パスワードを確認しない、細心の注意を使用して、: パスワードは表示されません。  
+> この方法ではパスワードの確認入力が行われないため、細心の注意が必要です。パスワードは表示されません。  
   
-これはお勧めはクリア テキストの変換済みの変数として、セキュリティで保護された文字列を提供できます。  
+セキュリティで保護された文字列は、変換されるクリア テキストの変数として指定することもできますが、これはお勧めしません。  
   
 ```  
 -safemodeadministratorpassword (convertto-securestring "Password1" -asplaintext -force)  
   
 ```  
   
-最後に、ファイル、暗号化されたパスワードに格納され、クリア テキストのパスワードが表示されることがなく、後で再する可能性があります。 例えば：  
+最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 次に、例を示します。  
   
 ```  
 $file = "c:\pw.txt"  
@@ -146,9 +147,9 @@ $pw | ConvertFrom-SecureString | Set-Content $file
 ```  
   
 > [!WARNING]  
-> テキストをクリアや暗号化されたパスワードの保存を提供または推奨されません。 スクリプトでこのコマンドを実行しているか、その背後で見てすべてのユーザーは、そのドメイン コントローラーの DSRM パスワードを認識します。  その暗号化されたパスワードを取り消すファイルへのアクセスを持つユーザー可能性があります。 した情報を使って、DSRM で起動された DC にログオンし、最終的にドメイン コントローラー自体は、自分の権限を AD フォレストで最も高いレベルに昇格を偽装します。 追加の手順を使用してセット**System.Security.Cryptography**データはことをお勧めがスコープ外にテキスト ファイルを暗号化します。 パスワードの保存を絶対に避けることをお勧めします。  
+> クリア テキストや暗号化されたテキストのパスワードを指定したり格納したりすることはお勧めしません。 このコマンドをスクリプトで実行する人や入力をそばで見ている人に、そのドメイン コントローラーの DSRM パスワードを知られてしまいます。  そのファイルにアクセスできる人はだれでも、暗号化されたパスワードを元に戻すことができます。 それができると、DSRM で開始された DS にログオンでき、その後ドメイン コントローラー自体を偽装し、アクセス権を AD フォレスト内で最高レベルに昇格することができます。 テキスト ファイル データを暗号化するための **System.Security.Cryptography** の一連の使用手順を読むことが推奨されますが、ここでは取り上げません。 ベスト プラクティスは、パスワードの保存を絶対に避けることです。  
   
-ADDSDeployment モジュールは、DNS クライアント設定、フォワーダー、およびルート ヒントの自動構成をスキップする追加のオプションを提供します。 これはサーバー マネージャーを使用する場合に構成できません。 この引数が重要なは、ドメイン コント ローラーを構成する前に、DNS サーバー サービスが既にインストールされている場合にのみ。  
+ADDSDeployment モジュールには、DNS クライアントの設定、フォワーダー、ルート ヒントの自動構成を省略するオプションがあります。 これは、サーバー マネージャーを使用する場合は構成できません。 この引数は、ドメイン コントローラーを構成する前に DNS サーバー サービスをインストールした場合のみ意味を持ちます。  
   
 ```  
 -SkipAutoConfigureDNS  
@@ -158,39 +159,39 @@ ADDSDeployment モジュールは、DNS クライアント設定、フォワー�
 ### <a name="dns-options-and-dns-delegation-credentials"></a>DNS オプションと DNS 委任資格情報  
 ![新しい AD 子をインストールします。](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildDNSOptions.png)  
   
-**DNS オプション**] ページでは、委任の代替の DNS 管理者資格情報を提供することができます。  
+**[DNS オプション]** ページでは、委任用の別の DNS 管理者資格情報を指定することができます。  
   
-DNS インストールを選択した既存のフォレストに新しいドメインをインストールするときに、**ドメイン コント ローラー オプション**ページ - 任意のオプションを構成することはできません委任は、自動的にれ、変更できませんは発生します。 その構造を更新する権限を持つ別の DNS 管理者資格情報を提供するためのオプションがあります。  
+**[ドメイン コントローラー オプション]** ページで DNS インストールを選択した既存のフォレストに新しいドメインをインストールする場合、オプションを構成することはできません。自動的に委任が行われ、変更できません。 その構造を更新する権利を持つ、別の DNS 管理者資格情報を指定することができます。  
   
-**DNS オプション**ADDSDeployment Windows PowerShell 引数は。  
+**[DNS オプション]** の ADDSDeployment Windows PowerShell 引数は以下のとおりです  
   
 ```  
 -creatednsdelegation   
 -dnsdelegationcredential <pscredential>  
 ```  
   
-DNS 委任の詳細については、次を参照してください。[ゾーンの委任](https://technet.microsoft.com/library/cc771640.aspx)します。  
+DNS 委任の詳細については、「 [Understanding Zone Delegation (ゾーンの委任とは)](https://technet.microsoft.com/library/cc771640.aspx)」を参照してください。  
   
-### <a name="additional-options"></a>その他のオプション  
+### <a name="additional-options"></a>追加オプション  
 ![新しい AD 子をインストールします。](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildAdditionalOptions.png)  
   
-**追加オプション**] ページに、ドメインの NetBIOS 名、およびそれを上書きすることができます。 既定では、NetBIOS ドメイン名は上で提供される完全修飾ドメイン名の一番左のラベルと一致する、**展開構成**ページ。 たとえば、corp.contoso.com の完全修飾ドメイン名を指定した場合、既定の NetBIOS ドメイン名は CORP です。  
+**[追加オプション]** ページには、ドメインの NetBIOS 名が表示されます。この名前は上書きできます。 既定では、NetBIOS ドメイン名は **[配置構成]** ページで指定された完全修飾ドメイン名の一番左のラベルに一致します。 たとえば、完全修飾ドメイン名として corp.contoso.com を指定した場合、既定の NetBIOS ドメイン名は CORP です。  
   
-名前が 15 文字以内と競合しない別の NetBIOS 名では変更します。 別の NetBIOS 名と競合している、名前に、数字が付加されます。 名前が 15 文字以内の場合、ウィザードは、切り捨てられた一意の候補を提供します。 ウィザードの最初の検証どちらの場合、名前が既に WINS 参照で使用されていないおよび NetBIOS ブロードキャストします。  
+15 文字以下で、他の NetBIOS 名と競合していない名前は、変更されません。 他の NetBIOS 名と競合している場合は、番号が付加されます。 15 文字を超えている場合は、一意の、もっと短い名前の候補がウィザードによって示されます。 ウィザードでは、いずれの場合も、WINS 参照および NetBIOS ブロードキャストを介して、名前が既に使用されていないかどうかが最初に検証されます。  
   
-DNS 名の詳細については、次を参照してください。[の命名規則 Active Directory 内のコンピューター、ドメイン、サイト、および Ou](https://support.microsoft.com/kb/909264)します。  
+DNS 名の詳細については、 [コンピューター、ドメイン、サイト、OU などの Active Directory の命名規則に関する説明](https://support.microsoft.com/kb/909264)を参照してください。  
   
-**Install-addsdomain**引数が指定されていない場合はサーバー マネージャーと同じ既定値に従います。 **DomainNetBIOSName**操作は特別な。  
+**Install-ADDSDomainController** コマンドレット引数は、特に指定しない限り、サーバー マネージャーと同じ既定値を使用します。 **SafeModeAdministratorPassword** 引数の操作は特別で、以下のような特徴があります  
   
-1.  場合、 **NewDomainNetBIOSName**引数が NetBIOS ドメイン名と、単一ラベル プレフィックスのドメイン名で指定されていない、 **DomainName**引数が 15 文字以下、自動的に生成された名前で昇格が続行します。  
+1.  NetBIOS ドメイン名に **NewDomainNetBIOSName** 引数が指定されない場合で、 **DomainName** 引数の単一ラベルのプレフィックス ドメイン名が 15 文字以下の場合は、自動的に生成された名前で昇格が続行します。  
   
-2.  場合、 **NewDomainNetBIOSName**引数が NetBIOS ドメイン名と、単一ラベル プレフィックスのドメイン名で指定されていない、 **DomainName**引数が 16 文字以上し、昇格は失敗します。  
+2.  NetBIOS ドメイン名に **NewDomainNetBIOSName** 引数が指定されない場合で、 **DomainName** 引数の単一ラベルのプレフィックス ドメイン名が 16 文字以上の場合は、昇格が失敗します。  
   
-3.  場合、 **NewDomainNetBIOSName**引数が 15 文字以下の NetBIOS ドメイン名と共に指定し、指定された名前で昇格が続行します。  
+3.  **NewDomainNetBIOSName** 引数に 15 文字以下の NetBIOS ドメイン名が指定された場合は、その名前で昇格が続行します。  
   
-4.  場合、 **NewDomainNetBIOSName**引数が NetBIOS ドメイン名が 16 文字以上指定し、昇格は失敗します。  
+4.  **NewDomainNetBIOSName** 引数に 16 文字以上の NetBIOS ドメイン名が指定された場合は、昇格が失敗します。  
   
-**追加オプション**ADDSDeployment コマンドレット引数は。  
+**[追加オプション]** の ADDSDeployment コマンドレットの引数は以下のとおりです。  
   
 ```  
 -newdomainnetbiosname <string>  
@@ -199,9 +200,9 @@ DNS 名の詳細については、次を参照してください。[の命名規
 ### <a name="paths"></a>パス  
 ![新しい AD 子をインストールします。](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_UpgradePaths.png)  
   
-**パス**] ページでは、AD DS データベース、データの基本のトランザクション ログ、および SYSVOL 共有の既定のフォルダーの場所を上書きすることができます。 既定の場所は、常に %systemroot% のサブディレクトリ内にします。  
+**[パス]** ページでは、AD DS データベース、データベース トランザクション ログ、および SYSVOL 共有の既定のフォルダーの場所を上書きできます。 既定の場所は常に %systemroot% のサブディレクトリです。  
   
-**パス**ADDSDeployment コマンドレット引数は。  
+**[ドメイン コントローラー オプション]** の ADDSDeployment コマンドレット引数は以下のとおりです。  
   
 ```  
 -databasepath <string>  
@@ -212,9 +213,9 @@ DNS 名の詳細については、次を参照してください。[の命名規
 ### <a name="review-options-and-view-script"></a>オプションの確認とスクリプトの表示  
 ![新しい AD 子をインストールします。](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildReviewOptions.png)  
   
-**オプションの確認**] ページを使用して設定を確認し、インストールを開始する前に、要件を満たしていることを確認します。 これは、サーバー マネージャーを使っているときに、インストールを停止する最後の機会ではありません。 これは、単に、構成を続行する前に、設定を確認するオプション  
+**[オプションの確認]** ページでは、インストールを開始する前に、設定を確認し、それらが要件を満たしているかどうか確認することができます。 これがサーバー マネージャーの使用中においてインストールを中止する最後の機会ではありません。 構成を続行する前に設定を確認するためのオプションにすぎません。  
   
-**オプションの確認**ページ サーバー マネージャーでも用意されています、省略可能な**スクリプトの表示**を単一の Windows PowerShell スクリプトとして現在の addsdeployment モジュール構成を含む Unicode テキスト ファイルを作成するボタンをクリックします。 これにより、Windows PowerShell 展開スタジオとしてサーバー マネージャーのグラフィカル インターフェイスを使用することができます。 Active Directory ドメイン サービス構成ウィザードを使用して、オプションを構成し、構成をエクスポート、ウィザードをキャンセルします。  このプロセスでは、さらに変更またはダイレクトの使用の有効であり、正しい構文のサンプルを作成します。 例えば：  
+サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。  これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。 例:  
   
 ```  
 #  
@@ -242,63 +243,63 @@ Install-ADDSDomain `
 ```  
   
 > [!NOTE]  
-> サーバー マネージャーは、一般にすべての引数と値のプロモーションおよび (サービス パックまたは Windows の将来のバージョン間で変わる可能性がある) のように既定の設定に依存しないときに入力します。 1 つの例外は、 **-safemodeadministratorpassword**引数です (これは意図的に省略すると、スクリプトから)。 確認プロンプトを強制するには、コマンドレットを対話的に実行するときに値を省略します。  
+> サーバー マネージャーでは通常、昇格時にすべての引数とその値を入力し、既定値に依存しません (既定値は将来のバージョンの Windows 間またはサービス パック間で変わる可能性があるため)。 唯一の例外は **-safemodeadministratorpassword** 引数です (これはあえてスクリプトから除外されています)。 確認プロンプトを強制的に表示するには、コマンドレットを対話的に実行するときに値を省略します。  
   
-オプションを使用して**Whatif**引数を使用、 **Install-addsforest**コマンドレットを構成情報を確認します。 これにより、コマンドレットの引数の明示的および暗黙的な値を表示することができます。  
+構成情報を確認するには、**Install-ADDSForest** コマンドレットと共にオプションの **Whatif** 引数を使用します。 これにより、コマンドレットの引数の明示的および暗黙的な値を見ることができます。  
   
 ![新しい AD 子をインストールします。](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildWhatIf.png)  
   
-### <a name="prerequisites-check"></a>前提条件の確認  
+### <a name="prerequisites-check"></a>前提条件のチェック  
 ![新しい AD 子をインストールします。](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildPrereqCheck.png)  
   
-**前提条件のチェック**AD DS ドメイン構成の新しい機能です。 この新しいフェーズでは、サーバーの構成が新しい AD DS ドメインをサポートできることを検証します。  
+**[前提条件のチェック]** は、AD DS ドメイン構成の新しい機能です。 この新しいフェーズでは、サーバー構成が新しい AD DS ドメインをサポートできるかどうかを検証します。  
   
-新しいフォレスト ルート ドメインをインストールする場合、サーバー マネージャー Active Directory ドメイン サービス構成ウィザードは、一連のモジュラー テストをシリアル化されたを呼び出します。 これらのテストでは、推奨される修復のオプションを使用してアラートです。 必要なだけ何度でもテストを実行することができます。 すべての前提条件のテストまで、ドメイン コントローラーのプロセスを続行できません渡します。  
+新しいフォレスト ルート ドメインをインストールするときに、サーバー マネージャー Active Directory ドメイン サービス構成ウィザードが、シリアル化された一連のモジュラー テストを呼び出します。 これらのテストでは、警告と共に、候補となる修正オプションが提示されます。 テストは必要なだけ何度でも実行できます。 前提条件のテストにすべて合格するまで、ドメイン コントローラー プロセスを続行することはできません。  
   
-**前提条件のチェック**以前のオペレーティング システムに影響を与えるセキュリティの変更といった関連情報も明らかです。  
+**[前提条件のチェック]** では、以前のオペレーティング システムに影響を与えるセキュリティの変更といった関連情報も明らかになります。  
   
-具体的な前提条件チェックの詳細については、次を参照してください。[前提条件のチェック](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)します。  
+具体的な前提条件チェックの詳細については、「[前提条件のチェック](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)」を参照してください。  
   
-バイパスすることはできません、**の前提条件チェック**ときは、サーバー マネージャーを使用して進むことができます、プロセスは次の引数を使用して、AD DS 展開コマンドレットを使用する場合。  
+サーバー マネージャーを使用する場合は **[前提条件のチェック]** を省略することはできませんが、AD DS 展開コマンドレットと以下の引数を使用すると省略できます。  
   
 ```  
 -skipprechecks  
 ```  
   
 > [!WARNING]  
-> Microsoft は、部分的なドメイン コントローラーの昇格につながるまたは AD DS フォレストが破損している前提条件のチェックをスキップすることです。  
+> ただし Microsoft では前提条件のチェックを省略することはお勧めしません。ドメイン コントローラーの昇格が部分的に行われたり、AD DS フォレストに障害が発生したりする恐れがあります。  
   
-をクリックして**インストール**をドメイン コントローラーの昇格プロセスを開始します。 これは、インストールをキャンセルする最後の機会です。 開始されると、昇格プロセスをキャンセルすることはできません。 コンピューターは、昇格の結果に関係なく、昇格プロセスの終了時に自動的に再起動します。  
+ドメイン コントローラーの昇格プロセスを開始するには、**[インストール]** をクリックします。 ここが、インストールをキャンセルする最後のチャンスとなります。 昇格プロセスが開始されると、キャンセルすることはできません。 昇格の結果に関係なく、昇格プロセスの最後でコンピューターが自動的に再起動します。  
   
 ### <a name="installation"></a>インストール  
 ![新しい AD 子をインストールします。](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ChildInstallation.png)  
   
-ときに、**インストール**ページが表示されます、ドメイン コントローラーの構成を開始、停止またはできません取り消されます。 操作の詳しい内容は、このページに表示され、ログに書き込まれます。  
+**[インストール]** ページが表示されると、ドメイン コントローラーの構成が開始され、停止やキャンセルは実行できません。 操作の詳しい内容がこのページに表示され、以下のログに書き込まれます。  
   
 -   %systemroot%\debug\dcpromo.log  
   
 -   %systemroot%\debug\dcpromoui.log  
   
-ADDSDeployment モジュールを使用して新しい Active Directory ドメインをインストールするには、次のコマンドレットを使用します。  
+ADDSDeployment モジュールを使用して新しい Active Directory ドメインをインストールするには、以下のコマンドレットを使用します  
   
 ```  
 Install-addsdomain  
 ```  
   
-参照してください[子ドメインとツリー ドメインの Windows PowerShell](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_PS)必須およびオプションの引数。**Install-addsdomain**コマンドレットはだけです (前提条件のチェックとインストール) の 2 つのフェーズです。 以下の 2 つの図の最低限の必須引数を使用したインストール フェーズを表示する**- domaintype**、 **- newdomainname**、 **- parentdomainname**、および**-credential**します。 注: 同様、サーバー マネージャー、 **Install-addsdomain**昇格プロセスで、サーバーの再起動は自動的にされることを知らせます。  
+必須とオプションの引数については、[子ドメインとツリードメインの Windows PowerShell に関する説明](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md#BKMK_PS)をご覧ください。**Install-addsdomain** コマンドレットのフェーズは 2 つだけです (前提条件のチェックとインストール)。 以下の 2 つの図は、**-domaintype**、 **-newdomainname**、 **-parentdomainname**、**-credential** の最低限の必須引数を使用したインストール フェーズを示しています。 **Install-ADDSDomain** は、サーバー マネージャーと同様、昇格プロセスによって自動的にサーバーが再起動されることを知らせます。  
   
 ![新しい AD 子をインストールします。](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_PSInstallADDSDomain.png)  
   
 ![新しい AD 子をインストールします。](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_PSInstallADDSDomainProgress.png)  
   
-再起動プロンプトを自動的に同意するを使用して、**-強制**または**-ことを確認: $false**いずれかの Windows PowerShell の ADDSDeployment コマンドレットと引数。 サーバーが自動的に昇格の最後に再起動を防ぐには、使用、**- norebootoncompletion**引数。  
+再起動プロンプトを自動的に受け入れるには、ADDSDeployment Windows PowerShell コマンドレットで **-force** または **-confirm:$false** 引数を使用します。 昇格の終了時にサーバーが自動的に再起動されないようにするには、**-norebootoncompletion** 引数を使用します。  
   
 > [!WARNING]  
-> 再起動の上書きはお勧めしません。 正常に機能するドメイン コント ローラーを再起動する必要があります。  
+> 再起動の上書きはお勧めしません。 ドメイン コントローラーを正常に機能させるには、再起動する必要があります。  
   
 ### <a name="results"></a>結果  
 ![新しい AD 子をインストールします。](media/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-/ADDS_SMI_TR_ForestSignOff.png)  
   
-**結果**ページは、の成功または失敗、昇格し、重要な管理情報を示しています。 ドメイン コントローラーは、10 秒後に自動的に再起動します。  
+**[結果]** ページには、昇格の成功または失敗と、重要な管理情報が表示されます。 ドメイン コントローラーは、10 秒後に自動的に再起動します。  
   
 

@@ -1,6 +1,6 @@
 ---
-title: ユーザー アクセスの制御とアクセス許可を構成します。
-description: ユーザー アクセスの制御と Active Directory または Azure AD (Project Honolulu) を使用してアクセス許可を構成する方法について説明します
+title: ユーザー アクセス制御とアクセス許可を構成します。
+description: ユーザー アクセス制御と Active Directory または Azure AD (プロジェクト ホノルル) を使用してアクセス許可を構成する方法について説明します
 ms.technology: manage
 ms.topic: article
 author: haley-rowland
@@ -9,109 +9,109 @@ ms.date: 03/19/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: b19657f4ce1a1a2cfb94f7234f07805ba0abd42c
-ms.sourcegitcommit: 4961576f2891600ef9a760ca7df650d14332e057
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "9152047"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59850573"
 ---
-# ユーザー アクセスの制御とアクセス許可を構成します。
+# <a name="configure-user-access-control-and-permissions"></a>ユーザー アクセス制御とアクセス許可を構成します。
 
->適用対象: Windows Admin Center、Windows Admin Center Preview
+>適用先:Windows Admin Center、Windows Admin Center プレビュー
 
-まだ理解[Windows Admin Center でのユーザー アクセス制御のオプション](../plan/user-access-options.md)
+まだインストールしていない場合について理解するおくと、 [Windows Admin Center でユーザー アクセス制御オプション](../plan/user-access-options.md)
 
 >[!NOTE]
-> ワークグループ環境または信頼関係のないドメイン間では、Windows Admin Center でグループ ベースのアクセスはサポートされていません。
+> ワークグループ環境で、または信頼されていないドメイン間では、Windows Admin Center でのグループ ベースのアクセスはサポートされていません。
 
-## ゲートウェイ アクセス ロールの定義
+## <a name="gateway-access-role-definitions"></a>ゲートウェイへのアクセス ロールの定義
 
 これには、Windows Admin Center ゲートウェイ サービスにアクセスするための 2 つのロールがあります。
 
-**ゲートウェイのユーザー**がそのゲートウェイを介してサーバーを管理する、Windows Admin Center ゲートウェイ サービスに接続できますが、アクセス許可もゲートウェイへの認証に使用される認証メカニズムは変更できません。
+**ゲートウェイのユーザー** 、そのゲートウェイを介してサーバーを管理する Windows Admin Center ゲートウェイ サービスに接続できますが、アクセス許可も、ゲートウェイへの認証に使用する認証メカニズムは変更できません。
 
-**ゲートウェイの管理者**は、ゲートウェイへのユーザーの認証方法と同様のアクセスを取得した構成できます。 管理者のみがゲートウェイでは、表示でき、Windows Admin Center で、アクセスの設定を構成することができます。 ゲートウェイ マシン上のローカル管理者は、Windows Admin Center ゲートウェイ サービスの管理者では常にします。
-
-> [!NOTE]
-> ゲートウェイへのアクセスわけではありません表示されている管理対象サーバーへのアクセス、ゲートウェイによってします。 接続ユーザー ターゲット サーバーを管理するには、(またはを自分で渡される Windows 資格情報**としての管理**アクションを使用して Windows Admin Center セッションで提供されている資格情報を使用) を持つ資格情報の管理アクセスを使う必要があります。そのターゲット サーバー。
-
-## Active Directory またはローカル コンピューター グループ
-
-既定では、Active Directory またはローカル コンピューターのグループはゲートウェイ アクセスの制御に使用します。 ゲートウェイ ユーザーと管理者を管理できる場合は、Active Directory ドメインがある場合は、Windows Admin Center インターフェイス内からアクセスします。
-
-[**ユーザー** ] タブは、ゲートウェイ ユーザーとして Windows Admin Center にアクセスできるユーザーを制御できます。 既定では、ゲートウェイ URL にアクセスするすべてのユーザーがアクセスを持つセキュリティ グループを指定しない場合があるとします。 1 つまたは複数のセキュリティ グループをユーザーの一覧に追加すると、アクセスは、これらのグループのメンバーに制限されます。
-
-アクセスはによって制御されている環境内で Active Directory ドメインを使わない場合、```Users```と```Administrators```Windows Admin Center ゲートウェイ マシン上のローカル グループです。
-
-### スマート カード認証
-
-スマート カード ベースのセキュリティ グループの追加_必須_のグループを指定することで、**スマート カード認証**を適用できます。 スマート カード ベースのセキュリティ グループを追加すると、ユーザーのみサービスにアクセスできます Windows Admin Center のセキュリティ グループのメンバーになっていると、スマート カードのグループは、ユーザーの一覧に含まれている場合。
-
-[**管理者**] タブで、ゲートウェイの管理者として Windows Admin Center にアクセスできるユーザーを制御できます。 コンピューターのローカル administrators グループは、完全な管理者のアクセス権を常にあり、一覧から削除することはできません。 セキュリティ グループを追加すると、それらのグループの特権の Windows Admin Center ゲートウェイ設定を変更するメンバーを提供します。 管理者の一覧は、ユーザーの一覧と同じ方法でスマート カード認証をサポートしています: セキュリティ グループとスマート カードのグループに対して AND 条件とします。
-
-## Azure Active Directory
-
-組織では、Azure Active Directory (Azure AD) を使用している場合は、ゲートウェイにアクセスする Azure AD 認証を要求することで Windows Admin Center に**追加**のセキュリティ層を追加することもできます。 Windows Admin Center にアクセスするために、ユーザーの**Windows アカウント**も必要がありますゲートウェイ サーバーへのアクセス (でも Azure AD authentication を使用)。 Azure AD を使用する場合は、内からではなく、Azure ポータルから Windows Admin Center のユーザーと管理者のアクセス許可を管理するが、Windows Admin Center の UI。
-
-### Windows Admin Center にアクセスする Azure AD 認証を有効にします。
-
-によって、ブラウザーを使用すると、一部のユーザーへのアクセスの Windows Admin Center に構成されている Azure AD 認証は、追加プロンプト受信 **、ブラウザーから**Windows を提供する必要がありますアカウントの資格情報のコンピューターWindows Admin Center をインストールします。 その情報を入力すると、ユーザーは、Azure で Azure AD アプリケーションのアクセスが与えられている Azure アカウントの資格情報を必要と追加 Azure Active Directory の認証プロンプトを取得します。
+**ゲートウェイ管理者**へのアクセスを取得したゲートウェイにユーザーを認証する方法を構成することができます。 ゲートウェイの管理者だけでは、表示でき、Windows Admin Center でのアクセス設定を構成することができます。 ゲートウェイ コンピューター上のローカル管理者は、常に、Windows Admin Center ゲートウェイ サービスの管理者です。
 
 > [!NOTE]
-> ユーザーの Windows アカウントを持つ**管理者権限**をゲートウェイ マシンは、Azure AD 認証を求められません。
+> ゲートウェイへのアクセスは、ゲートウェイが表示される管理対象のサーバーへのアクセスのことを意味しません。 ターゲット サーバーを管理する接続のユーザーが資格情報を使用する必要があります (そのを通じて渡される Windows 資格情報と、Windows Admin Center を使用してセッションで指定された資格情報、**として管理**アクション) があります。ターゲット サーバーへの管理アクセス。
 
-### Windows Admin Center Preview の Azure Active Directory の認証を構成します。
+## <a name="active-directory-or-local-machine-groups"></a>Active Directory またはローカル コンピューターのグループ
 
-Windows Admin Center**の設定**に移動 > **アクセス**し、使用を有効にするトグル スイッチ"を使用して、ゲートウェイにセキュリティのレイヤーを追加する Azure Active Directory"します。 ゲートウェイを Azure が登録されていない場合は、そのためにはこの時点でガイドします。
+既定では、Active Directory またはローカル コンピューターのグループがゲートウェイへのアクセス制御に使用されます。 ゲートウェイのユーザーと管理者を管理することができる場合は、Active Directory ドメインがある場合は、Windows Admin Center インターフェイス内からアクセスします。
 
-既定では、Azure AD テナントのすべてのメンバーは、Windows Admin Center ゲートウェイ サービスに対するユーザー アクセスを必要します。 ローカル管理者のみが、ゲートウェイ マシンで Windows Admin Center ゲートウェイに管理者のアクセス権があります。 ゲートウェイ マシンでローカル管理者の権限を制限することはできません - ローカルの管理者が行う認証に Azure AD を使用するかどうかに関係なく何も注意してください。
+**ユーザー**ゲートウェイのユーザーとして Windows Admin Center にアクセスできるユーザーを制御できます タブ。 既定では、セキュリティ グループを指定しない場合、ゲートウェイの URL にアクセスするすべてのユーザーがアクセス権を持ちます。 1 つまたは複数のセキュリティ グループをユーザーの一覧に追加すると、アクセスは、それらのグループのメンバーに制限されます。
 
-特定の Azure AD ユーザーまたはグループのゲートウェイ ユーザーまたはゲートウェイ管理者が Windows Admin Center サービスにアクセスする場合は、次の操作を行う必要があります。
+によってアクセスを制御環境内で Active Directory ドメインを使用しない場合、```Users```と```Administrators```Windows Admin Center ゲートウェイ コンピューター上のローカル グループです。
 
-1.  アクセスの設定で提供されるハイパーリンクを使用して、Azure portal で、Windows Admin Center Azure AD アプリケーションに移動します。 このハイパーリンクは、Azure Active Directory の認証が有効になっている場合にのみ利用可能なに注意してください。 
-    -   **Azure Active Directory**に移動して、Azure portal で、アプリケーションを検索することもできます > **エンタープライズ アプリケーション** > **すべてのアプリケーション**と検索**WindowsAdminCenter** (Azure AD アプリケーションの名前はWindowsAdminCenter-<gateway name>)。 検索結果を取得する、**すべて**のアプリケーションの設定**を表示する**には、**アプリケーションの状態**が**任意**に設定していない適用] をクリックしてする場合、は、検索してください。 アプリケーションが決まったらが**ユーザーとグループ**に移動します。
-2.  [プロパティ] タブで [はい] に**ユーザーの割り当てが必要な**を設定します。
-    この操作が完了したら、**ユーザーとグループ**] タブに表示されているメンバーだけが Windows Admin Center ゲートウェイにアクセスできるされます。
-3.  [ユーザーとグループ] タブで、**ユーザーの追加**を選択します。 ゲートウェイのユーザーまたはユーザー グループごとに/追加ゲートウェイ管理者ロールを割り当てる必要があります。
+### <a name="smartcard-authentication"></a>スマート カード認証
 
-Azure AD 認証を有効にすると、ゲートウェイ サービスを再起動しては、ブラウザーを更新する必要があります。 Azure portal で、いつでも SME Azure AD アプリケーションのユーザー アクセスを更新することができます。
+適用できます**スマート カード認証**追加を指定して_必要_スマート カード ベースのセキュリティ グループのグループ。 スマート カード ベースのセキュリティ グループを追加した後は、任意のセキュリティ グループのメンバーになっていると、スマート カードのグループがユーザーの一覧に含まれている場合、ユーザーはのみ、Windows Admin Center サービスをアクセスできます。
 
-ユーザーは Windows Admin Center ゲートウェイ URL へのアクセスしようとすると、Azure Active Directory の id を使用してサインインを求められます。 ユーザーが Windows Admin Center にアクセスするゲートウェイ サーバー上のローカル ユーザーのメンバーにある必要がありますも注意してください。
+**管理者**ゲートウェイ管理者として Windows Admin Center にアクセスできるユーザーを制御できます タブ。 コンピューターのローカルの administrators グループは完全な管理者アクセスは常にし、一覧から削除できません。 セキュリティ グループを追加すると、Windows Admin Center ゲートウェイ設定を変更する特権グループのメンバーを提供します。 管理者の一覧は、ユーザーの一覧と同じ方法でスマート カード認証をサポートしています。 スマート カードのグループとセキュリティ グループに対して AND 条件とします。
 
-ユーザーと管理者は、現在ログインしているアカウントを表示しとサインアウトもこの Azure AD のアカウントの Windows の [**アカウント**] タブ管理センターの設定。
+## <a name="azure-active-directory"></a>Azure Active Directory
 
-### Windows Admin Center の Azure Active Directory の認証を構成します。
+組織は、Azure Active Directory (Azure AD) を使用している場合は、追加することもできます、**追加**ゲートウェイにアクセスする Azure AD 認証を要求することで、Windows Admin Center にセキュリティのレイヤー。 Windows Admin Center、ユーザーのアクセスするために**Windows アカウント**(Azure AD 認証を使用) 場合でも、ゲートウェイ サーバーへのアクセスを権も必要です。 内からではなく、Azure Portal から、Windows Admin Center のユーザーと管理者のアクセス許可を管理するが Azure AD を使用すると、Windows Admin Center UI。
 
-[Azure AD の認証を設定する、ゲートウェイを Azure を最初に登録する必要があります。](azure-integration.md)(必要だけこれを行うに 1 回、Windows Admin Center ゲートウェイの) です。 この手順では、ゲートウェイ ユーザーおよびゲートウェイ管理者のアクセスを管理できる Azure AD アプリケーションを作成します。
+### <a name="accessing-windows-admin-center-when-azure-ad-authentication-is-enabled"></a>Azure AD 認証を有効にする Windows Admin Center へのアクセス
 
-特定の Azure AD ユーザーまたはグループのゲートウェイ ユーザーまたはゲートウェイ管理者が Windows Admin Center サービスにアクセスする場合は、次の操作を行う必要があります。
+一部のユーザーが構成されている Azure AD 認証を使用した Windows Admin Center へのアクセス、ブラウザーを使用すると、によって、追加のプロンプトが表示されます**ブラウザーから**のために Windows アカウント資格情報を提供する必要がありますWindows Admin Center がインストールされているコンピューター。 その情報を入力した後、ユーザーが Azure での Azure AD アプリケーションでのアクセスが付与されている Azure アカウントの資格情報が必要追加 Azure Active Directory 認証プロンプトが表示されます。
 
-1.  Azure portal で SME Azure AD アプリケーションに移動します。 
-    -   **アクセス制御の変更**] をクリックし、Windows Admin Center へのアクセスの設定から**Azure Active Directory**を選択すると、Azure portal で Azure AD アプリケーションにアクセスするのに UI で提供されるハイパーリンクを使用できます。 このハイパーリンクは、保存] をクリックして、アクセス制御の id プロバイダーとして Azure AD を選択した後にもアクセスの設定で利用できます。
-    -   **Azure Active Directory**に移動して、Azure portal で、アプリケーションを検索することもできます > **エンタープライズ アプリケーション** > **すべてのアプリケーション**と検索**SME** (Azure AD アプリケーションの名前は SME -<gateway>)。 検索結果を取得する、**すべて**のアプリケーションの設定**を表示する**には、**アプリケーションの状態**が**任意**に設定していない適用] をクリックしてする場合、は、検索してください。 アプリケーションが決まったらが**ユーザーとグループ**に移動します。
-2.  [プロパティ] タブで [はい] に**ユーザーの割り当てが必要な**を設定します。
-    この操作が完了したら、**ユーザーとグループ**] タブに表示されているメンバーだけが Windows Admin Center ゲートウェイにアクセスできるされます。
-3.  [ユーザーとグループ] タブで、**ユーザーの追加**を選択します。 ゲートウェイのユーザーまたはユーザー グループごとに/追加ゲートウェイ管理者ロールを割り当てる必要があります。
+> [!NOTE]
+> Windows のユーザー アカウントが**管理者権限**ゲートウェイ上でマシンは求められません Azure AD 認証。
 
-Azure AD アクセス制御の保存と**アクセス管理の変更**のウィンドウで、ゲートウェイ サービスが開始されるとする必要がありますブラウザーを更新します。 いつでもでも、Azure portal で Windows Admin Center Azure AD アプリケーションのユーザー アクセスを更新することができます。 
+### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center-preview"></a>Windows Admin Center プレビューの Azure Active Directory 認証を構成します。
 
-ユーザーは Windows Admin Center ゲートウェイ URL へのアクセスしようとすると、Azure Active Directory の id を使用してサインインを求められます。 ユーザーが Windows Admin Center にアクセスするゲートウェイ サーバー上のローカル ユーザーのメンバーにある必要がありますも注意してください。 
+Windows Admin Center に移動して**設定** > **アクセス**トグル スイッチを使用して有効にして"を使用して、ゲートウェイにセキュリティ レイヤーを追加する Azure Active Directory"。 Azure へのゲートウェイを登録していない場合、この時点でそのは説明します。
 
-Windows Admin Center の一般的な設定の [ **Azure** ] タブを使用して、ユーザーと管理者表示できる、現在ログインしているアカウント、この Azure AD アカウントのほか、サインアウトします。
+既定では、Azure AD テナントのすべてのメンバーは、Windows Admin Center ゲートウェイ サービスに対するユーザー アクセスを必要です。 ゲートウェイ コンピューターのローカル管理者のみでは、Windows Admin Center ゲートウェイへの管理者アクセスがあります。 ゲートウェイ コンピューター上のローカル管理者の権限を制限することはできません - ローカルの管理者には、認証に Azure AD を使用するかどうかに関係なく何も実行できますに注意してください。
 
-### 条件付きアクセスし、多要素認証
+特定の Azure AD ユーザーまたはグループのゲートウェイのユーザーまたは Windows Admin Center サービスへのゲートウェイの管理者アクセスする場合は、次の操作を行う必要があります。
 
-追加のセキュリティ層と Azure AD を使用して Windows Admin Center ゲートウェイへのアクセスを制御する利点の 1 つは、条件付きアクセスし、多要素認証などの Azure AD の強力なセキュリティ機能を活用することができます。 
+1.  アクセス設定で提供されるハイパーリンクを使用して、Azure portal で、Windows Admin Center の Azure AD アプリケーションに移動します。 このハイパーリンクは、Azure Active Directory 認証が有効になっている場合にのみ使用可能なに注意してください。 
+    -   移動して、Azure portal でアプリケーションを検索することもできます**Azure Active Directory** > **エンタープライズ アプリケーション** > **のすべてのアプリケーション**と検索**WindowsAdminCenter** (Azure AD アプリの名前は WindowsAdminCenter-<gateway name>)。 検索結果を得られない場合は、以下のことを確認**表示**に設定されている**すべてのアプリケーション**、**アプリケーション状態**に設定されている**任意**適用、 をクリック検索を再試行してください。 アプリケーションが見つかったらに移動して**ユーザーとグループ**
+2.  [プロパティ] タブで、次のように設定します。**ユーザー割り当てが必要**[はい] にします。
+    これが完了したら、したらにはメンバーだけが一覧表示、**ユーザーとグループ** タブは、Windows Admin Center ゲートウェイにアクセスできます。
+3.  ユーザーとグループ タブでは、次のように選択します。**ユーザーの追加**します。 ゲートウェイのユーザーまたは各ユーザー/グループがその追加のゲートウェイの管理者ロールを割り当てる必要があります。
 
-[Azure Active Directory の条件付きアクセスの構成について説明します。](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
+Azure AD 認証を有効にすると、ゲートウェイ サービスが再起動しては、ブラウザーを更新する必要があります。 いつでも、Azure portal で Azure AD の SME アプリケーションのユーザー アクセスを更新することができます。
 
-## シングル サインオンを構成します。
+ユーザーは、Windows Admin Center ゲートウェイの URL へのアクセスを試みるときに、Azure Active Directory id を使用してサインインを求められます。 ユーザー Windows Admin Center にアクセスするゲートウェイ サーバー上のローカル ユーザーのメンバーでもあることに注意してください。
 
-**シングル サインオン展開されると Windows Server 上のサービスとして**
+ユーザーと管理者が、現在のログイン アカウントを表示およびからは、この Azure AD アカウントのも、サインアウト、**アカウント**Windows Admin Center の設定のタブ。
 
-Windows 10 で Windows Admin Center をインストールするときは、シングル サインオンを使用する準備が。 Windows Server で Windows Admin Center を使用する場合は、シングル サインオンを使用する前に、いくつかの形式の環境での Kerberos 委任を設定する必要があります。 委任は、ターゲット ノードに委任するには、信頼としてゲートウェイ コンピューターを構成します。 
+### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center"></a>Windows Admin Center を Azure Active Directory 認証を構成します。
 
-環境内で[リソースに基づく制約付き委任](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)を構成するには、次の PowerShell コマンドレットを実行します。 (Windows Server 2012 を実行しているドメイン コント ローラーが必要である対応以降である)。
+[Azure AD 認証を設定するにする必要があります最初に、ゲートウェイを Azure に登録](azure-integration.md)(だけこれを 1 回、Windows Admin Center ゲートウェイを実行する必要があります)。 この手順では、ゲートウェイのユーザーとゲートウェイの管理者アクセスを管理できる Azure AD アプリケーションを作成します。
+
+特定の Azure AD ユーザーまたはグループのゲートウェイのユーザーまたは Windows Admin Center サービスへのゲートウェイの管理者アクセスする場合は、次の操作を行う必要があります。
+
+1.  Azure portal で Azure AD の SME アプリケーションに移動します。 
+    -   クリックすると**変更アクセス制御**選び**Azure Active Directory** Windows Admin Center へのアクセスの設定から、Azure AD へのアクセスに、UI で提供されるハイパーリンクを使用することができますAzure portal でのアプリケーションです。 このハイパーリンクは、保存 をクリックし、アクセス コントロールの id プロバイダーとして Azure AD を選択した後にも、アクセスの設定で使用できます。
+    -   移動して、Azure portal でアプリケーションを検索することもできます**Azure Active Directory** > **エンタープライズ アプリケーション** > **のすべてのアプリケーション**と検索**SME** (Azure AD アプリの名前は SME-<gateway>)。 検索結果を得られない場合は、以下のことを確認**表示**に設定されている**すべてのアプリケーション**、**アプリケーション状態**に設定されている**任意**適用、 をクリック検索を再試行してください。 アプリケーションが見つかったらに移動して**ユーザーとグループ**
+2.  [プロパティ] タブで、次のように設定します。**ユーザー割り当てが必要**[はい] にします。
+    これが完了したら、したらにはメンバーだけが一覧表示、**ユーザーとグループ** タブは、Windows Admin Center ゲートウェイにアクセスできます。
+3.  ユーザーとグループ タブでは、次のように選択します。**ユーザーの追加**します。 ゲートウェイのユーザーまたは各ユーザー/グループがその追加のゲートウェイの管理者ロールを割り当てる必要があります。
+
+保存すると、Azure AD でのアクセス制御、**変更アクセス制御**ウィンドウで、ゲートウェイ サービスを再起動して、ブラウザーを更新する必要があります。 いつでも、Azure portal で、Windows Admin Center の Azure AD アプリケーションのユーザー アクセスを更新することができます。 
+
+ユーザーは、Windows Admin Center ゲートウェイの URL へのアクセスを試みるときに、Azure Active Directory id を使用してサインインを求められます。 ユーザー Windows Admin Center にアクセスするゲートウェイ サーバー上のローカル ユーザーのメンバーでもあることに注意してください。 
+
+使用して、 **Azure** Windows Admin Center の 全般設定、ユーザーおよび管理者のタブは、現在のログイン アカウントを表示できますとも、この Azure AD アカウントのようにサインアウトします。
+
+### <a name="conditional-access-and-multi-factor-authentication"></a>条件付きアクセスと多要素認証
+
+追加のセキュリティ層としての Azure AD を使用して、Windows Admin Center ゲートウェイへのアクセスを制御する利点の 1 つは、条件付きアクセスと多要素認証などの Azure AD の強力なセキュリティ機能を活用することができます。 
+
+[Azure Active Directory で条件付きアクセスの構成に関する詳細について説明します。](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
+
+## <a name="configure-single-sign-on"></a>シングル サインオンを構成する
+
+**シングル サインオンで Windows Server 上のサービスとしてデプロイした場合**
+
+Windows 10 の Windows Admin Center をインストールするときに、シングル サインオンを使用する準備ができては。 Windows Server で Windows Admin Center を使用しようとしている場合は、シングル サインオンを使用する前に、何らかの形式の環境における Kerberos の委任を設定する必要があります。 委任は、ターゲット ノードに委任する信頼済みとしてゲートウェイ コンピューターを構成します。 
+
+構成する[リソースに基づく制約付き委任](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)環境内には、次の PowerShell コマンドレットを実行します。 (Windows Server 2012 を実行するドメイン コント ローラーが必要であるに注意してくださいまたはそれ以降を使用します。)
 
 ```powershell
      $gateway = "WindowsAdminCenterGW" # Machine where Windows Admin Center is installed
@@ -121,69 +121,69 @@ Windows 10 で Windows Admin Center をインストールするときは、シ�
      Set-ADComputer -Identity $nodeObject -PrincipalsAllowedToDelegateToAccount $gatewayObject
 ```
 
-この例では、Windows Admin Center ゲートウェイが**WindowsAdminCenterGW**サーバーにインストールされているし、ターゲット ノード名は**ManagedNode**します。
+サーバーで、この例では、Windows Admin Center ゲートウェイがインストールされている**WindowsAdminCenterGW**、対象のノード名と**ManagedNode**します。
 
-この関係を削除するには、次のコマンドレットを実行します。
+このリレーションシップを削除するには、次のコマンドレットを実行します。
 
 ```powershell
 Set-ADComputer -Identity $nodeObject -PrincipalsAllowedToDelegateToAccount $null
 ```
 
-## ロール ベースのアクセス制御
+## <a name="role-based-access-control"></a>役割ベースのアクセス制御
 
-役割ベースのアクセス制御を使用すると、それらの完全なローカル管理者を作成するのではなく、コンピューターへのアクセス制限をユーザーに提供できます。
-[役割ベースのアクセス制御と使用可能なロールについて詳しくは、します。](../plan/user-access-options.md#role-based-access-control)
+ロール ベース access control では、それらの完全なローカル管理者ではなく、マシンへのアクセス制限をユーザーに提供することができます。
+[ロールベースのアクセス制御と利用可能な役割の詳細。](../plan/user-access-options.md#role-based-access-control)
 
-2 つのステップから成る RBAC の設定: ターゲット コンピューターでのサポートを有効にして、関連する役割をユーザーに割り当てることです。
+RBAC の設定の 2 つの手順で構成されています。 対象コンピューターでのサポートを有効にすると、ユーザーを関連するロールに割り当てます。
 
 > [!TIP]
-> 確認のコンピューターにローカル管理者権限がある役割ベースのアクセス制御のサポートを構成します。
+> コンピューターのローカル管理者権限があることを確認してロールベースのアクセス制御のサポートを構成しているを作成します。
 
-### 役割ベースのアクセス制御を 1 台のコンピューターに適用されます。
+### <a name="apply-role-based-access-control-to-a-single-machine"></a>単一のコンピューターにロールベースのアクセス制御を適用します。
 
-1 台のコンピューター展開モデルは、数台のコンピューターを管理するだけでシンプルな環境に最適です。
-役割ベースのアクセス制御のサポートを使ったコンピューターの構成とすると、次の変更が発生します。
--   Windows Admin Center に必要な関数と PowerShell モジュールをシステム ドライブでのインストールは`C:\Program Files\WindowsPowerShell\Modules`します。 すべてのモジュールが**Microsoft.Sme**で開始されます。
--   目的の状態の構成は、コンピューター、 **Microsoft.Sme.PowerShell**という名前の Just Enough Administration エンドポイントを構成する 1 回限りの構成が実行されます。 このエンドポイントは、Windows Admin Center で使われる 3 つの役割を定義し、ユーザーが接続するときに一時的なローカル管理者として実行します。
--   どのユーザーでは、どのロールに割り当てられたアクセスはコントロールには、3 つの新しいローカル グループが作成されます。
+1 台のマシンのデプロイ モデルでは、一部のコンピューターを管理するだけで単純な環境に最適です。
+ロールベースのアクセス制御対応のマシンを構成すると、次の変更が発生します。
+-   Windows Admin Center で必要な関数での PowerShell モジュールをシステム ドライブ上のインストールは`C:\Program Files\WindowsPowerShell\Modules`します。 開始されますすべてのモジュール**Microsoft.Sme。**
+-   実行という名前のマシンで Just Enough Administration のエンドポイントを構成する 1 回限りの構成を Desired State Configuration **Microsoft.Sme.PowerShell**します。 このエンドポイントは、Windows Admin Center で使用される 3 つのロールを定義し、ユーザーがそれに接続するときに、一時的なローカル管理者として実行されます。
+-   ユーザーは、どのロールにアクセスを割り当てられているコントロールに、3 つの新しいローカル グループが作成されます。
     -   Windows Admin Center 管理者
-    -   Windows Admin Center での HYPER-V の管理者
+    -   Windows Admin Center HYPER-V 管理者
     -   Windows Admin Center リーダー
 
-単一コンピューター上で役割ベースのアクセス制御のサポートを有効にするには、これらの手順に従います。
+1 台のコンピューターでのロールベースのアクセス制御のサポートを有効にするには、次の手順に従います。
 
-1.  Windows Admin Center を起動し、役割ベースのアクセスの制御をターゲット コンピューター上のローカル管理者特権を持つアカウントを使用して構成するコンピューターに接続します。
-2.  **概要**ツールでは、[**設定**] をクリックして > **役割ベースのアクセス制御**します。
-3.  ターゲット コンピューター上で役割ベースのアクセス制御のサポートを有効にする、ページの下部に**適用**] をクリックします。 アプリケーションのプロセスには、ターゲット コンピューター上の PowerShell スクリプトをコピーし、(PowerShell Desired State Configuration を使用して) 構成の呼び出しが含まれます。 完了するには最大 10 分かかりますと WinRM 再起動が発生します。 これにより、Windows Admin Center、PowerShell、および WMI のユーザーが一時的に切断します。
-4.  ページを更新して役割ベースのアクセス制御の状態を確認します。 使用できる状態になりますが、**適用**する状態が変更されます。
+1.  Windows Admin Center を開き、ターゲット コンピューターのローカル管理者特権を持つアカウントを使用してロールベースのアクセス制御を構成するマシンに接続します。
+2.  **概要**ツールで、をクリックして**設定** > **ロール ベース access control**します。
+3.  クリックして**適用**ターゲット コンピューターでのロールベースのアクセス制御のサポートを有効にするページの下部にあります。 アプリケーション プロセスには、ターゲット コンピューターの PowerShell スクリプトをコピーし、(PowerShell Desired State Configuration を使用して) 構成を起動が含まれます。 を完了するまで 10 分かかる場合がありますと WinRM の再起動が発生します。 Windows Admin Center、PowerShell、および WMI のユーザーを一時的に切断します。
+4.  ロールベースのアクセス制御の状態を確認 ページを更新します。 使用できる状態であるときに、状態が変わります**適用**します。
 
 構成が適用されると、ロールにユーザーを割り当てることができます。
 
-1.  **ローカル ユーザーとグループ**のツールを開き、[**グループ**] タブに移動します。
-2.  **Windows Admin Center リーダー**グループを選択します。
-3.  *詳細*ウィンドウで、下部にある、**ユーザーの追加**] をクリックし、Windows Admin Center を通じてサーバーへの読み取り専用のアクセスを付与するユーザーまたはセキュリティ グループの名前を入力します。 ユーザーとグループは、ローカル コンピューターまたは Active Directory ドメインから取得できます。
-4.  **Windows Admin Center で HYPER-V の管理者**と**Windows Admin Center の管理者**グループの手順 2 ~ 3 を繰り返します。
+1.  開く、**ローカル ユーザーとグループ**ツールに移動して、**グループ**タブ。
+2.  選択、 **Windows Admin Center リーダー**グループ。
+3.  *詳細*ペインの下部で、クリックします**ユーザーの追加**Windows Admin Center を通じてサーバーへの読み取り専用アクセスを付与するユーザーまたはセキュリティ グループの名前を入力します。 ユーザーとグループは、ローカル コンピューターまたは Active Directory ドメインから取得できます。
+4.  手順 2 ~ 3 を**Windows Admin Center HYPER-V Administrators**と**Windows Admin Center 管理者**グループ。
 
-[制限付きのグループ ポリシー設定](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29)で、グループ ポリシー オブジェクトを構成することによって、ドメイン間でこれらのグループを一貫して記入することもできます。
+記入することもこれらのグループ一貫して、ドメイン全体で使用して、グループ ポリシー オブジェクトを構成することによって、[制限付きのグループ ポリシー設定](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29)します。
 
-### 複数のコンピューターに役割ベースのアクセス制御を適用します。
+### <a name="apply-role-based-access-control-to-multiple-machines"></a>複数のコンピューターにロールベースのアクセス制御を適用します。
 
-大規模なエンタープライズ展開では、Windows Admin Center ゲートウェイから、構成パッケージをダウンロードして、コンピューターに役割ベースのアクセスの制御機能をプッシュする、既存の自動化ツールを使用することができます。
-PowerShell Desired State Configuration と共に使用して、構成パッケージが設計されていますが、優先するオートメーション ソリューションと連携するように対応することができます。
+大規模なエンタープライズ デプロイでは、Windows Admin Center ゲートウェイから構成パッケージをダウンロードすることによって、コンピューターに、ロールベースのアクセス制御機能をプッシュする、既存のオートメーション ツールを使用できます。
+PowerShell Desired State Configuration で使用する構成パッケージは設計されていますが、推奨される automation ソリューションと連動するように調整できます。
 
-#### 役割ベースのアクセス制御の構成をダウンロードします。
+#### <a name="download-the-role-based-access-control-configuration"></a>ロールベースのアクセス制御の構成をダウンロードします。
 
-役割ベースのアクセス制御の構成パッケージをダウンロードするには、Windows Admin Center と PowerShell プロンプトにアクセスする必要があります。
+ロールベースのアクセス制御の構成パッケージをダウンロードするには、Windows Admin Center や PowerShell プロンプトにアクセスする必要があります。
 
-Windows Server では、サービス モードで Windows Admin Center ゲートウェイを実行している場合、は、構成パッケージをダウンロードする次のコマンドを使用します。
-必ず、環境用の適切なもので、ゲートウェイ アドレスを更新してください。
+Windows Server でサービス モードで、Windows Admin Center ゲートウェイを実行している、次のコマンドを使用して、構成パッケージをダウンロードします。
+環境に適したでゲートウェイのアドレスを更新してください。
 
 ```powershell
 $WindowsAdminCenterGateway = 'https://windowsadmincenter.contoso.com'
 Invoke-RestMethod -Uri "$WindowsAdminCenterGateway/api/nodes/all/features/jea/endpoint/export" -Method POST -UseDefaultCredentials -OutFile "~\Desktop\WindowsAdminCenter_RBAC.zip"
 ```
 
-を、Windows 10 コンピューターで Windows Admin Center ゲートウェイを実行している場合は、代わりに、次のコマンドを実行します。
+Windows 10 コンピューターで Windows Admin Center ゲートウェイを実行している場合は、次のコマンドを実行します。
 
 ```powershell
 $cert = Get-ChildItem Cert:\CurrentUser\My | Where-Object Subject -eq 'CN=Windows Admin Center Client' | Select-Object -First 1
@@ -194,43 +194,43 @@ Zip アーカイブを展開すると、次のフォルダー構造が表示さ�
 - InstallJeaFeatures.ps1
 - JustEnoughAdministration (ディレクトリ)
 - モジュール (ディレクトリ)
-    - Microsoft.SME.\* (ディレクトリ)
+    - Microsoft.SME します。\* (ディレクトリ)
     - WindowsAdminCenter.Jea (ディレクトリ)
 
-ノード上で役割ベースのアクセス制御のサポートを構成するには、次の操作を実行する必要があります。
-1.  JustEnoughAdministration、Microsoft.SME.\*、および WindowsAdminCenter.Jea モジュールは、ターゲット コンピューター上の PowerShell モジュール ディレクトリにコピーします。 通常、これがある`C:\Program Files\WindowsPowerShell\Modules`します。
-2.  RBAC エンドポイントの適切な構成と一致する**InstallJeaFeature.ps1**ファイルを更新します。
+ノードでのロールベースのアクセス制御のサポートを構成するには、次の操作を実行する必要があります。
+1.  JustEnoughAdministration、Microsoft.SME をコピーします。\*、およびターゲット コンピューターの PowerShell モジュールのディレクトリに WindowsAdminCenter.Jea モジュール。 通常、これはある`C:\Program Files\WindowsPowerShell\Modules`します。
+2.  Update **InstallJeaFeature.ps1** RBAC エンドポイントの必要な構成と一致するファイル。
 3.  DSC リソースをコンパイルする InstallJeaFeature.ps1 を実行します。
-4.  すべてのコンピューターの構成を適用するには、DSC 構成を展開します。
+4.  すべてのマシン構成を適用する DSC 構成をデプロイします。
 
-次のセクションでは、PowerShell リモート処理を使ってこれを実行する方法について説明します。
+次のセクションでは、PowerShell リモート処理を使用してこれを行う方法について説明します。
 
-#### 複数のコンピューターでの展開します。
+#### <a name="deploy-on-multiple-machines"></a>複数のコンピューターでのデプロイします。
 
-複数のコンピューターにダウンロードする構成を展開することを必要があります環境内の適切なセキュリティ グループに含める**InstallJeaFeatures.ps1**スクリプトを更新する各コンピューター、ファイルをコピーし、呼び出す、構成スクリプトです。
-この記事では、純粋な PowerShell ベースのアプローチに重点が、これを実現するのに、優先するオートメーション ツールを使用できます。
+複数のコンピューターにダウンロードした構成を展開するには、更新する必要があります、 **InstallJeaFeatures.ps1**スクリプト環境内の適切なセキュリティ グループが含まれて、各コンピューター、ファイルをコピーするには構成スクリプトを呼び出します。
+この記事では純粋な PowerShell ベースのアプローチに重点が、これを実現するのに優先のオートメーション ツールを使用できます。
 
-既定では、設定のスクリプトは、それぞれの役割へのアクセスを制御するコンピューターで、ローカル セキュリティ グループを作成します。
-これはワークグループに適したであり、ドメイン参加しているコンピューターが直接する可能性がありますドメインのみの環境で展開する場合は、各ロールにドメインのセキュリティ グループを関連付けます。
-ドメインのセキュリティ グループを使用して構成を更新するには、 **InstallJeaFeatures.ps1**を開き、次を変更します。
+既定では、構成スクリプトは各ロールへのアクセスを制御するコンピューターのローカル セキュリティ グループを作成します。
+これはワークグループに適したであり、ドメイン参加しているコンピューターが直接する可能性がありますドメイン専用の環境でデプロイする場合は、各ロールに、ドメイン セキュリティ グループを関連付けます。
+ドメイン セキュリティ グループを使用する構成を更新するには、開く**InstallJeaFeatures.ps1**次の変更を行います。
 
-1.  3 つの**グループ**のリソース ファイルから削除します。
+1.  削除、3**グループ**ファイルからリソース。
     1.  「グループ MS リーダー グループ」
-    2.  「グループ MS ・ Hyper V-管理者のグループ」
+    2.  「グループ MS-ハイパー-V の管理者のグループ」
     3.  「グループ MS Administrators グループ」
-2.  JeaEndpoint**によって異なります**プロパティから 3 つのグループのリソースを削除します。
-    1.  「[グループ] MS ・ リーダー グループ」
-    2.  「[グループ] MS ・ Hyper V の管理者のグループ」
-    3.  「[グループ] MS Administrators」
-3.  必要なセキュリティ グループに JeaEndpoint **RoleDefinitions**プロパティ内のグループ名を変更します。 たとえば、ある場合は、セキュリティ グループ*CONTOSO\MyTrustedAdmins* Windows Admin Center の管理者ロールにアクセスを割り当てる必要がありますが、変更`'$env:COMPUTERNAME\Windows Admin Center Administrators'`に`'CONTOSO\MyTrustedAdmins'`します。 更新する必要がある 3 つの文字列は次のとおりです。
-    1.  ' $env: COMPUTERNAME\Windows Admin Center の管理者
-    2.  ' $env: COMPUTERNAME\Windows Admin Center で HYPER-V 管理者
-    3.  ' $env: COMPUTERNAME\Windows Admin Center リーダーの
+2.  3 つのグループのリソースを削除、JeaEndpoint から**DependsOn**プロパティ
+    1.  "[Group] MS-閲覧者グループ"
+    2.  「[グループ] MS-ハイパー-V の管理者のグループ」
+    3.  "[Group] MS Administrators"
+3.  JeaEndpoint 内のグループ名を変更する**RoleDefinitions**プロパティを必要なセキュリティ グループ。 たとえば、セキュリティ グループがある*CONTOSO\MyTrustedAdmins*変更であり、Windows Admin Center の管理者ロールにアクセス権を割り当てるをする必要があります`'$env:COMPUTERNAME\Windows Admin Center Administrators'`に`'CONTOSO\MyTrustedAdmins'`します。 更新する必要がある 3 つの文字列は次のとおりです。
+    1.  ' $env:path: COMPUTERNAME\Windows 管理センターの管理者の
+    2.  ' $env:path: COMPUTERNAME\Windows 管理センター、HYPER-V 管理者
+    3.  ' $env:path: COMPUTERNAME\Windows Admin Center Readers'
 
 > [!NOTE]
-> ロールごとに一意のセキュリティ グループを使用することを確認します。 構成には、同じセキュリティ グループが複数のロールに割り当てられている場合は失敗します。
+> ロールごとに一意なセキュリティ グループを使用してください。 構成は、同じセキュリティ グループが複数のロールに割り当てられている場合は失敗します。
 
-次に、 **InstallJeaFeatures.ps1**ファイルの末尾には、スクリプトの下に次の PowerShell の行を追加します。
+最後に、[次へ]、 **InstallJeaFeatures.ps1**ファイルに、スクリプトの一番下に次の PowerShell の行を追加します。
 
 ```powershell
 Copy-Item "$PSScriptRoot\JustEnoughAdministration" "$env:ProgramFiles\WindowsPowerShell\Modules" -Recurse -Force
@@ -245,8 +245,8 @@ InstallJeaFeature -ConfigurationData $ConfigData | Out-Null
 Start-DscConfiguration -Path "$PSScriptRoot\InstallJeaFeature" -JobName "Installing JEA for Windows Admin Center" -Force
 ```
 
-最後に、モジュール、DSC リソースおよび各ターゲット ノードに構成が含まれているフォルダーをコピーし、 **InstallJeaFeature.ps1**スクリプトを実行できます。
-これを行うにリモートで管理ワークステーションから、次のコマンドを実行できます。
+最後に、モジュール、DSC リソースと各ターゲット ノードに構成を含むフォルダーをコピーし、実行、 **InstallJeaFeature.ps1**スクリプト。
+これを行うリモートで管理ワークステーションから、次のコマンドを実行できます。
 
 ```powershell
 $ComputersToConfigure = 'MyServer01', 'MyServer02'

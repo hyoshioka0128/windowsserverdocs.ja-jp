@@ -1,6 +1,6 @@
 ---
-title: "TLS、SSL (Schannel SSP) の概要"
-description: "Windows Server のセキュリティ"
+title: TLS/SSL (Schannel SSP) の概要
+description: Windows Server のセキュリティ
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,52 +12,46 @@ ms.assetid: 1b7b0432-1bef-4912-8c9a-8989d47a4da9
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.date: 10/12/2016
-ms.openlocfilehash: afd0b70264dba1e720f95e40d3d201c2c5bf1c64
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.date: 05/16/2018
+ms.openlocfilehash: a6571e5e06e07fd62ad4cf39bab322b45c90a9f9
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59848603"
 ---
-# <a name="tls---ssl-schannel-ssp-overview"></a>TLS、SSL (Schannel SSP) の概要
+# <a name="tlsssl-overview-schannel-ssp"></a>TLS/SSL (Schannel SSP) の概要
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows 10
 
-IT プロフェッショナル向けのこのトピックでは、実際の適用例、Microsoft の実装、およびソフトウェア要件、およびその他のリソースの変更の Windows Server 2012 および Windows 8 を記述することで、Schannel セキュリティ サービス プロバイダー (SSP) を使って Windows に TLS と SSL の実装が導入されています。
+このトピックで、IT プロフェッショナルが Windows Schannel セキュリティ サービス プロバイダー (SSP) を使用して、実際の適用を記述することで、TLS と SSL の実装を紹介変更では、Microsoft の実装、およびソフトウェア要件は、plusWindows Server 2012 および Windows 8 の他のリソース。
 
-**Did you mean:**
+## <a name="BKMK_OVER"></a>説明
+Schannel は、インターネットで標準的に用いられている 2 種類の認証プロトコル、Secure Sockets Layer (SSL) とトランスポート層セキュリティ (TLS) を実装するセキュリティ サポート プロバイダー (SSP) です。
 
--   [Schannel セキュリティ パッケージ](https://msdn.microsoft.com/library/ms678421.aspx)
+セキュリティ サポート プロバイダー インターフェイス (SSPI) は、認証など、セキュリティ関係の機能を実行するために Windows システムで用いられる API の 1 種です。 Schannel SSP を含む、いくつかの Ssp を共通のインターフェイスとして SSPI 関数
 
--   [セキュリティで保護されたチャネル](https://msdn.microsoft.com/library/windows/desktop/aa380123.aspx)
+TLS バージョン 1.0、1.1、1.2、SSL バージョン 2.0、3.0、データグラム トランスポート層のセキュリティと\(DTLS\)プロトコル バージョン 1.0、およびプライベート通信トランスポート\(PCT\)プロトコルに基づく公開キーの暗号化。 Schannel 認証プロトコル スイートは、これらのプロトコルを備えています。 どの Schannel プロトコルでも、クライアント/サーバー モデルが使用されています。
 
--   [トランスポート層セキュリティ プロトコル](https://msdn.microsoft.com/library/windows/desktop/aa380516.aspx)
+## <a name="BKMK_APP"></a>アプリケーション
+ネットワークを管理するにあたっての問題の 1 つは、アプリケーション間で信頼できないネットワークを経由して送信されるデータのセキュリティを確保することです。 TLS と SSL を使用するには、サーバーとクライアント コンピューターを認証し、プロトコルを使用して、認証された当事者間でメッセージを暗号化します。
 
-## <a name="BKMK_OVER"></a>Tls \ssl \(Schannel\) 説明
-Schannel は、Secure Sockets Layer \(SSL\) とトランスポート層セキュリティ \(TLS\) を実装するセキュリティ サポート プロバイダー \(SSP\) インターネット標準の認証プロトコルです。
+たとえば、TLS/SSL を使うと次のようなことができます。
 
-セキュリティ サポート プロバイダー インターフェイス \(SSPI\) は、認証を含む security\ に関連する機能を実行する Windows システムで使用される API です。 SSPI は、Schannel SSP を含む、いくつかのセキュリティ サポート プロバイダー \(SSPs\) に共通のインターフェイスとして機能します。
-
-トランスポート層セキュリティ \(TLS\) プロトコル バージョン 1.0、1.1、1.2、Secure Sockets Layer \(SSL\) プロトコルの version 2.0、3.0、データグラム トランスポート層セキュリティ \(DTLS\) バージョン 1.0、および Private 通信トランスポート \(PCT\) プロトコルは、公開キーの暗号化に基づいています。 セキュリティ チャネル \(Schannel\) 認証プロトコル スイートは、これらのプロトコルを提供します。 すべての Schannel プロトコルでは、クライアント/サーバー モデルを使用します。
-
-## <a name="BKMK_APP"></a>実際の適用
-ネットワークを管理するときに問題の 1 つは、信頼されていないネットワーク経由でアプリケーション間で送信されるデータのセキュリティ保護します。 Tls \ssl を使用して、サーバーとクライアント コンピューターを認証し、プロトコルを使用して、認証された当事者間のメッセージを暗号化することができます。
-
-たとえばの tls \ssl を使用できます。
-
--   E\ コマースの Web サイトと SSL\ で保護されたトランザクション
-
--   SSL\ で保護された Web サイトにアクセス クライアントの認証
-
+-   E コマース Web サイトとのトランザクションの SSL による保護
+-   SSL で保護された Web サイトにアクセスするクライアントの認証
 -   リモート アクセス
-
 -   SQL アクセス
+-   [電子メール]
 
--   E\ メール
+## <a name="BKMK_SOFT"></a>要件
+TLS と SSL プロトコルは、クライアント/サーバー モデルを使用され、証明書の認証は、公開キー インフラストラクチャが必要に基づいています。
 
-## <a name="BKMK_SOFT"></a>ソフトウェアの要件
-Tls \ssl プロトコルは、client\server モデルが使用され、証明書の認証は、公開キー インフラストラクチャが必要ですに基づいています。
-
-## <a name="BKMK_INSTALL"></a>サーバー マネージャー情報
+## <a name="BKMK_INSTALL"></a>サーバー マネージャーの情報
 TLS、SSL、Schannel を実装するために必要な構成手順はありません。
 
+## <a name="see-also"></a>関連項目 ##
+
+-   [Schannel セキュリティ パッケージ](https://docs.microsoft.com/windows/desktop/com/schannel)
+-   [セキュリティで保護されたチャネル](https://docs.microsoft.com/windows/desktop/SecAuthN/secure-channel)
+-   [トランスポート層セキュリティ プロトコル](https://docs.microsoft.com/windows/desktop/SecAuthN/transport-layer-security-protocol)

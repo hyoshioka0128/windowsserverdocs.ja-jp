@@ -1,6 +1,6 @@
 ---
-title: "カスタマイズし、Windows Server Essentials の展開"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: カスタマイズし、Windows Server Essentials の展開
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 09/2013/2016
 ms.prod: windows-server-2016-essentials
@@ -13,18 +13,19 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: a02c624efa452b76fc404d58c25b94c310b93628
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854933"
 ---
 # <a name="customize-and-deploy-windows-server-essentials"></a>カスタマイズし、Windows Server Essentials の展開
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
   
- カスタマイズして、Windows Server Essentials の展開、内の情報を使用して、[Windows アセスメント & デプロイメント キット (Windows ADK)](https://www.microsoft.com/download/details.aspx?id=39982)し、[ [Windows Server 2012 R2 での Windows Server Essentials の展開のカスタマイズと](https://technet.microsoft.com/library/dn293241.aspx)します。  
+ Windows Server Essentials をカスタマイズして展開するには、「 [Windows アセスメント &amp; デプロイメント キット (Windows ADK)](https://www.microsoft.com/download/details.aspx?id=39982) 」および「 [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293241.aspx)」の情報を使用してください。  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
   
 -   [Windows 展開ツールのテクニカル リファレンス](https://technet.microsoft.com/library/hh825039.aspx)  
   

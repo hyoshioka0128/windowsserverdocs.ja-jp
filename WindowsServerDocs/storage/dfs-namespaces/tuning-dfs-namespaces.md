@@ -1,6 +1,6 @@
 ---
-title: "DFS 名前空間を調整する"
-description: "この記事では、DFS 名前空間を調整または最適化する方法について説明します。"
+title: DFS 名前空間を調整する
+description: この記事では、DFS 名前空間を調整または最適化する方法について説明します。
 ms.date: 6/5/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,25 +8,26 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 4614441fc54913ba5a8b547bbf1ad3e8ce7ee69b
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: c11bbf65c3baebebe1e5143a5e694ca752500aca
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59844633"
 ---
 # <a name="tuning-dfs-namespaces"></a>DFS 名前空間を調整する
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-名前空間を作成してフォルダーとターゲットを追加した後、次のセクションを参照して、DFS 名前空間が紹介を処理し、Active Directory Domain Services (AD DS) から更新された名前空間データをポーリングする方法を調整または最適化します。
+名前空間を作成し、フォルダーとターゲットを追加した後は、調整や DFS Namespace が紹介を処理する方法と Active Directory Domain Services (AD DS) の名前空間の更新されたデータのポーリングを最適化するのには、次のセクションを参照してください。
 
--   [名前空間でアクセス ベースの列挙を有効にする](enable-access-based-enumeration-on-a-namespace.md)
--   [紹介とクライアント フェールバックを有効または無効にする](enable-or-disable-referrals-and-client-failback.md)
--   [クライアントが紹介をキャッシュする時間の長さを変更する](change-the-amount-of-time-that-clients-cache-referrals.md)
--   [紹介におけるターゲットの順序指定方法を設定する](set-the-ordering-method-for-targets-in-referrals.md)
--   [ターゲット優先順位を設定して紹介順序を上書きする](set-target-priority-to-override-referral-ordering.md)
--   [名前空間のポーリングを最適化する](optimize-namespace-polling.md)
--   [継承されたアクセス許可とアクセス ベースの列挙を使う](using-inherited-permissions-with-access-based-enumeration.md)
+-   [Namespace アクセス ベースの列挙を有効にします。](enable-access-based-enumeration-on-a-namespace.md)
+-   [有効または無効の参照とクライアントのフェールバック](enable-or-disable-referrals-and-client-failback.md)
+-   [クライアントが紹介をキャッシュする時間を変更します。](change-the-amount-of-time-that-clients-cache-referrals.md)
+-   [紹介内のターゲットの順序付け方法を設定します。](set-the-ordering-method-for-targets-in-referrals.md)
+-   [紹介順序を上書きするターゲットの優先順位を設定します。](set-target-priority-to-override-referral-ordering.md)
+-   [Namespace ポーリングを最適化します。](optimize-namespace-polling.md)
+-   [アクセス ベースの列挙で継承されたアクセス許可の使用](using-inherited-permissions-with-access-based-enumeration.md)
 
 > [!NOTE]
 > フォルダーまたはフォルダー ターゲットを検索するには、名前空間を選択して **[検索]** タブをクリックし、テキスト ボックスに検索文字列を入力して **[検索]** をクリックします。

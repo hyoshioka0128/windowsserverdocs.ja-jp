@@ -10,73 +10,73 @@ ms.date: 10/02/2018
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.openlocfilehash: 57ce4c4d7623c2a424efbdf0ff117ede8fad726b
-ms.sourcegitcommit: c5373927c645a4d5e79bfff70666ccd10f034cbe
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "5425196"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59847033"
 ---
-# KMS クライアント セットアップ キー
+# <a name="kms-client-setup-keys"></a>KMS クライアント セットアップ キー
 
->適用対象: Windows Server 2019 では、Windows Server 半期チャネルでは、Windows Server 2016、Windows 10
+>適用先:Windows Server 2019、Windows Server 半期チャネルでは、Windows Server 2016、Windows 10
 
 Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows 7、Windows Server 2008 R2、Windows Vista、and Windows Server 2008 のボリューム ライセンス版が実行されているコンピューターは、既定で、追加の構成が必要ない KMS クライアントとなります。
 
 >[!NOTE]
-> 以下の表で"LTSC"の略「Long-Term Servicing チャネル」中"LTSB"は、"Long-Term Servicing Branch" 
+> 次の表の"LTSC"の略「長期的なサービス チャネル」"LTSB"は"Long-Term Servicing Branch" 
 
-**ここに記載されたキー (GVLK) を使用するには、まず展開で KMS ホストを実行する必要があります。** KMS ホストをまだ構成していない場合は、「[KMS ライセンス認証の展開](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx)」でホストの設定手順を参照してください。
+**ここに記載された次のキー (これは、Gvlk) を使用して、デプロイで実行されている KMS ホストがあります。** まだ KMS ホストを構成していない場合は、「[KMS ライセンス認証の展開](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx)」でホストの設定手順を参照してください。
 
-コンピューターを KMS ホスト、MAK、または製品版の Windows から KMS クライアントに変換する場合は、次の表を参照して、該当するセットアップ キー (GVLK) をインストールします。 クライアント セットアップ キーをインストールするには、クライアントで管理コマンド プロンプトを開き、「**slmgr /ipk \<セットアップ キー\>** と入力して、**Enter** キーを押します。
+コンピューターを KMS ホスト、MAK、または製品版の Windows から KMS クライアントに変換する場合は、次の表を参照して、該当するセットアップ キー (GVLK) をインストールします。 クライアント セットアップ キーをインストールするには、クライアントの種類の管理のコマンド プロンプトを開き**slmgr/ipk\<セットアップ キー\>** しキーを押します**Enter**します。
 
 | 目的の処理                                                                                                                                                                                          | 使用するリソース                                                                                                         |
 |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 | ボリューム ライセンス認証のシナリオ以外で Windows のライセンスを認証する (つまり、製品版の Windows のライセンスを認証する)。**これらのキーは機能しない**。                                                     | 製品版の Windows には次のリンクを使用します。                                                                              |
-| Windows 8.1 または Windows Server 2012 R2 以降のシステムのライセンスを認証するときに発生する “Error: 0xC004F050 ソフトウェア ライセンス サービスで、プロダクト キーは無効であることが報告されました” というエラーを修正する。 | Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012 を実行している場合、KMS ホストに[この更新プログラムをインストールします](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2)。 |
+| Windows 8.1、Windows Server 2012 R2、または新しいシステムをライセンス認証を行うときに発生したこのエラーを修正するには。“Error:0xC004F050 The Software Licensing Service reported that the product key is invalid”… | Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012 を実行している場合、KMS ホストに[この更新プログラムをインストールします](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2)。 |
 
--   [Windows 10 の入手](https://www.microsoft.com/en-us/windows/get-windows-10)
+-   [Windows 10 を入手します。](https://www.microsoft.com/en-us/windows/get-windows-10)
 
--   [新しい Windows プロダクト キーの取得](https://support.microsoft.com/help/10749/windows-product-key)
+-   [新しい Windows プロダクト キーを取得します。](https://support.microsoft.com/help/10749/windows-product-key)
 
--   [正規の Windows のヘルプと使い方](https://support.microsoft.com/help/15087/windows-genuine)
+-   [Genuine Windows ヘルプと使い方](https://support.microsoft.com/help/15087/windows-genuine)
 
 
 >   Windows Server 2008 R2 または Windows 7 を実行している場合は、Windows 10 クライアントの KMS ホストとしてのこれらの使用をサポートする更新プログラムを監視します。
 
 
-## Windows Server の半期チャネルのバージョン
+## <a name="windows-server-semi-annual-channel-versions"></a>Windows Server 半期チャネルのバージョン
 
-### Windows Server バージョン 1809
+### <a name="windows-server-version-1809"></a>Windows Server、バージョン 1809
 | オペレーティング システムのエディション       | KMS クライアント セットアップ キー          |
 |--------------------------------|-------------------------------|
 | Windows Server Datacenter | 6NMRW-2C8FM-D24W7-TQWMY-CWH2D  | 
 | Windows Server Standard | N2KJX-J94YW-TQVFB-DG9YT-724CC  |
 
 
-### Windows Server バージョン 1803
+### <a name="windows-server-version-1803"></a>Windows Server Version 1803
 
 | オペレーティング システムのエディション       | KMS クライアント セットアップ キー          |
 |--------------------------------|-------------------------------|
 | Windows Server Datacenter | 2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG  | 
 | Windows Server Standard   | PTXN8-JFHJM-4WC78-MPCBR-9W4KR  |
 
-### Windows Server バージョン 1709
+### <a name="windows-server-version-1709"></a>Windows Server バージョン 1709
 
 | オペレーティング システムのエディション       | KMS クライアント セットアップ キー          |
 |--------------------------------|-------------------------------|
 | Windows Server Datacenter | 6Y6KB-N82V8-D8CQV-23MJW-BWTG6  | 
 | Windows Server Standard   | DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4  |
 
-## Windows Server LTSC/LTSB バージョン
+## <a name="windows-server-ltscltsb-versions"></a>Windows Server LTSC/LTSB バージョン
 
-### Windows Server 2019
+### <a name="windows-server-2019"></a>Windows Server 2019
 | オペレーティング システムのエディション       | KMS クライアント セットアップ キー          |
 |--------------------------------|-------------------------------|
 | Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG  | 
 | Windows Server 2019 Standard   | N69G4-B89J2-4G8F4-WWYCC-J464C  |
-| Windows Server 2019 Essentials|WVDHN-86M7X-466 P 6-VHXV7-YY726|
+| Windows Server 2019 Essentials|WVDHN-86M7X-466 6-VHXV7-YY726|
 
-### Windows Server 2016
+### <a name="windows-server-2016"></a>Windows Server 2016
 
 | オペレーティング システムのエディション       | KMS クライアント セットアップ キー          |
 |--------------------------------|-------------------------------|
@@ -84,9 +84,9 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 | Windows Server 2016 Standard   | WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY |
 | Windows Server 2016 Essentials | JCKRF-N37P4-C2D82-9YXRT-4M63B |
 
-## Windows 10 では、すべてのサポート半期チャネルのバージョン
+## <a name="windows-10-all-supported-semi-annual-channel-versions"></a>Windows 10 では、すべてのサポート バージョンの場合は半期チャネル
 
-サポートされているバージョンとの終了日のサービスについては、 [Windows のライフ サイクルの実際のシート](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet)を参照してください。
+参照してください、 [Windows ライフ サイクル ファクト シート](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet)についてはサポートされているバージョンとサービスの期間の終了。
 
 | オペレーティング システムのエディション          | KMS クライアント セットアップ キー          |
 |-----------------------------------|-------------------------------|
@@ -103,31 +103,31 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 |Windows 10 Enterprise G|YYVX9-NTFWV-6MDM3-9PT4T-4M68B|
 |Windows 10 Enterprise G N|44RPN-FTY23-9VTTB-MP9BX-T84FV|
 
-## Windows 10 LTSC/LTSB バージョン
+## <a name="windows-10-ltscltsb-versions"></a>Windows 10 LTSC/LTSB バージョン
 
-### Windows 10 LTSC 2019
+### <a name="windows-10-ltsc-2019"></a>Windows 10 LTSC 2019
 
 |オペレーティング システムのエディション|KMS クライアント セットアップ キー|
 |-|-|
 |Windows 10 Enterprise LTSC 2019|M7XTQ-FN8P6-TTKYV-9D4CC-J462D|
 |Windows 10 Enterprise N LTSC 2019|92NFX-8DJQP-P6BBQ-THF9C-7CG2H|
 
-### Windows 10 LTSB 2016
+### <a name="windows-10-ltsb-2016"></a>Windows 10 LTSB 2016
 
 |オペレーティング システムのエディション|KMS クライアント セットアップ キー|
 |-|-|
 |Windows 10 Enterprise LTSB 2016|DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ|
 |Windows 10 Enterprise N LTSB 2016|QFFDN-GRT3P-VKWWX-X7T3R-8B639|
 
-### Windows 10 LTSB 2015 
+### <a name="windows-10-ltsb-2015"></a>Windows 10 LTSB 2015 
 
 | オペレーティング システムのエディション          | KMS クライアント セットアップ キー          |
 |-----------------------------------|-------------------------------|
 | Windows 10 Enterprise 2015 LTSB   | WNMTR-4C88C-JK8YV-HQ7T2-76DF9 |
 | Windows 10 Enterprise 2015 LTSB N | 2F77B-TNFGY-69QQF-B8YKP-D69TJ |
 
-## Windows Server の以前のバージョン
-### Windows Server 2012 R2
+## <a name="earlier-versions-of-windows-server"></a>Windows Server の以前のバージョン
+### <a name="windows-server-2012-r2"></a>Windows Server 2012 R2
 
 | オペレーティング システムのエディション               | KMS クライアント セットアップ キー          |
 |----------------------------------------|-------------------------------|
@@ -135,7 +135,7 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 | Windows Server 2012 R2 Datacenter      | W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9 |
 | Windows Server 2012 R2 Essentials      | KNC87-3J2TX-XB4WP-VCPJV-M4FWM |
 
-### Windows Server 2012
+### <a name="windows-server-2012"></a>Windows Server 2012
 
 | オペレーティング システムのエディション                | KMS クライアント セットアップ キー          |
 |-----------------------------------------|-------------------------------|
@@ -149,7 +149,7 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 | Windows Server 2012 Datacenter          | 48HP8-DN98B-MYWDG-T2DCC-8W83P |
 
 
-### Windows Server 2008 R2
+### <a name="windows-server-2008-r2"></a>Windows Server 2008 R2
 
 | オペレーティング システムのエディション                         | KMS クライアント セットアップ キー          |
 |--------------------------------------------------|-------------------------------|
@@ -160,7 +160,7 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 | Windows Server 2008 R2 Datacenter                | 74YFP-3QFB3-KQT8W-PMXWJ-7M648 |
 | Windows Server 2008 R2 for Itanium-based Systems | GT63C-RJFQ3-4GMB6-BRFB9-CB83V |
 
-### Windows Server 2008
+### <a name="windows-server-2008"></a>Windows Server 2008
 
 | オペレーティング システムのエディション                       | KMS クライアント セットアップ キー          |
 |------------------------------------------------|-------------------------------|
@@ -174,9 +174,9 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 | Windows Server 2008 Datacenter without Hyper-V | 22XQ2-VRXRG-P8D42-K34TD-G3QQC |
 | Windows Server 2008 for Itanium-Based Systems  | 4DWFP-JF3DJ-B7DTH-78FJB-PDRHK |
 
-## Windows の以前のバージョン
+## <a name="earlier-versions-of-windows"></a>以前のバージョンの Windows
 
-### Windows 8.1
+### <a name="windows-81"></a>Windows 8.1
 
 | オペレーティング システムのエディション               | KMS クライアント セットアップ キー          |
 |----------------------------------------|-------------------------------|
@@ -185,7 +185,7 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 | Windows 8.1 Enterprise                 | MHF9N-XY6XB-WVXMC-BTDCT-MKKG7 |
 | Windows 8.1 Enterprise N               | TT4HM-HN7YT-62K67-RGRQJ-JFFXW |
 
-### Windows 8
+### <a name="windows-8"></a>Windows 8
 
 | オペレーティング システムのエディション                | KMS クライアント セットアップ キー          |
 |-----------------------------------------|-------------------------------|
@@ -195,7 +195,7 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 | Windows 8 Enterprise N                  | JMNMF-RHW7P-DMY6X-RF3DR-X2BQT |
 
 
-### Windows 7 
+### <a name="windows-7"></a>Windows 7 
 
 | オペレーティング システムのエディション                         | KMS クライアント セットアップ キー          |
 |--------------------------------------------------|-------------------------------|

@@ -1,6 +1,6 @@
 ---
-title: アプリケーションで負荷分散を地理的な位置認識に DNS ポリシーを使用します。
-description: このトピックでは、DNS ポリシー シナリオ ガイドの Windows Server 2016 の一部
+title: 地理的な場所を認識するアプリケーションの負荷分散に DNS ポリシーを使用する
+description: このトピックは、DNS ポリシー シナリオ ガイドの Windows Server 2016 の一部です。
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-dns
@@ -8,72 +8,73 @@ ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7637d927c7b22b83053e7f9100b07581c11bafc0
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 806c0cdeedb44db44fc0ec5218124f516a6f70e5
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59852553"
 ---
-# <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>アプリケーションで負荷分散を地理的な位置認識に DNS ポリシーを使用します。
+# <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>地理的な場所を認識するアプリケーションの負荷分散に DNS ポリシーを使用する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-このトピックを使用すると、負荷を分散アプリケーションに地理的な場所を認識するのに DNS ポリシーを構成するのに方法について説明します。
+このトピックを使用すると、地理的位置認識と負荷分散アプリケーションに DNS ポリシーを構成するのに方法について説明します。
 
-このガイドでは、前のトピック[アプリケーションの負荷分散に DNS ポリシーを使用して](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb)、例の架空の会社の Contoso ギフト サービス - オンライン gifting を提供するサービスの使用、およびこれが、Web サイト名前 contosogiftservices.com します。Contoso ギフト サービスはオンラインの Web アプリケーションのワシントン州シアトル、イリノイ州シカゴと米国テキサス州ダラスである北アメリカのデータ センター内のサーバー間で分散します。
+このガイドでは、前のトピック[DNS ポリシーを使用するアプリケーションの負荷分散の](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb)、使用してオンライン贈答を提供する架空の会社 Contoso ギフト サービス - の例のサービス、およびという名前の Web サイトを持つcontosogiftservices.com します。 Contoso ギフト サービスはオンラインの Web アプリケーション、ワシントン州シアトル、イリノイ州シカゴ、テキサス州ダラスにあるデータ センターを北米のサーバー間で分散します。
 
 >[!NOTE]
->理解して、「」トピックをお勧め[アプリケーションの負荷分散に DNS ポリシーを使用して](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb)このシナリオで」手順を実行する前にします。
+>理解するおくと、そのトピックには勧め[DNS ポリシーを使用するアプリケーションの負荷分散の](https://technet.microsoft.com/windows-server-docs/networking/dns/deploy/app-lb)このシナリオでは、手順を実行する前にします。
 
-このトピックは、同じ架空の企業とネットワーク インフラストラクチャを地理的な場所を認識が含まれる新しい展開例については基礎として使用します。
+このトピックでは、同じ架空の企業とネットワーク インフラストラクチャを地理的場所の認識を含む新しい展開例については、単位として使用します。
 
-この例では Contoso ギフト サービスが正常に展開されて、プレゼンス世界各地います。
+この例で、Contoso ギフト サービスは、世界各地で存在しているを正常に展開が。
 
-北米と同様に、会社のヨーロッパ データ センターでホストされる web サーバーできます。
+北米と同様に、会社になりましたヨーロッパ データ センターでホストされる web サーバー。
 
-Contoso ギフト サービスの DNS 管理者は、ヨーロッパ データ センターの分散が Dublin、アイルランド、アムステルダム、オランダ、および他の場所に配置されている Web サーバー間で分散アプリケーションのトラフィックと、米国で DNS のポリシーの実装と同様の方法でアプリケーションの負荷を構成するとします。
+Contoso ギフト サービスの DNS 管理者がアプリケーションの負荷に配置されている Web サーバー間で分散アプリケーションのトラフィックを米国で DNS のポリシーの実装と同様の方法でヨーロッパのデータ センターの分散を構成します。アイルランドのダブリン、アムステルダム、オランダ、および他の場所。
 
-DNS 管理者は、すべてのデータ センター間で均等に分散世界の他の場所からのすべてのクエリを必要もあります。
+DNS 管理者は、すべてのデータ センターの間に均等に分散環境で他の場所からすべてのクエリもします。
 
-次のセクションでは、独自のネットワーク上で Contoso の DNS 管理者のような目標を達成する方法を説明します。
+次のセクションでは、独自のネットワーク上の Contoso の DNS 管理者のような目標を達成する方法を学習できます。
 
-## <a name="how-to-configure-application-load-balancing-with-geo-location-awareness"></a>アプリケーションで負荷分散を地理的な場所を認識を構成する方法
+## <a name="how-to-configure-application-load-balancing-with-geo-location-awareness"></a>アプリケーションの負荷分散と地理的場所の認識を構成する方法
 
-次のセクションでは、アプリケーションで負荷分散を地理的な位置認識に DNS ポリシーを構成する方法を説明します。
+次のセクションでは、地理的位置認識と分散アプリケーションの負荷の DNS ポリシーを構成する方法を示します。
 
 >[!IMPORTANT]
->次のセクションでには、多くのパラメーターの値例にはが含まれている Windows PowerShell コマンド例にはが含まれます。 これらのコマンドを実行する前に、展開に適切な値を持つこれらのコマンドで値の例を置き換えることを確認します。
+>次のセクションでには、多くのパラメーターの値例にはが含まれている Windows PowerShell コマンド例にはが含まれます。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。
 
 ###<a name="bkmk_clientsubnets"></a>DNS クライアントのサブネットを作成します。
 
-まず、サブネットまたは IP アドレス空間の北米とヨーロッパの地域を識別する必要があります。
+まず、サブネットまたは北米およびヨーロッパのリージョンの IP アドレス空間を識別する必要があります。
 
-この情報は、地理的な IP のマップから取得できます。 これらの地理的な IP のディストリビューションに基づき、DNS クライアントのサブネットを作成する必要があります。
+この情報は、地理的 IP のマップから取得できます。 これらの地理的 IP のディストリビューションに基づき、DNS クライアントのサブネットを作成する必要があります。
 
-DNS クライアントのサブネットは、DNS サーバーにクエリの送信元 IPv4 または IPv6 サブネットの論理グループです。
+DNS クライアントのサブネットは、クエリが DNS サーバーに送信元 IPv4 または IPv6 サブネットの論理グループです。
 
-次の Windows PowerShell コマンドを使用して、DNS クライアントのサブネットを作成することができます。 
+次の Windows PowerShell コマンドを使用すると、DNS クライアントのサブネットを作成します。 
 
     
     Add-DnsServerClientSubnet -Name "AmericaSubnet" -IPv4Subnet 192.0.0.0/24,182.0.0.0/24
     Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet 141.1.0.0/24,151.1.0.0/24
     
-詳細については、次を参照してください。[追加 DnsServerClientSubnet](https://technet.microsoft.com/library/mt126261.aspx)します。
+詳細については、次を参照してください。 [追加 DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)します。
 
 ###<a name="bkmk_zscopes2"></a>ゾーンのスコープを作成します。
 
-クライアントのサブネットがあると、後に各データ センターの別のゾーン スコープにゾーン contosogiftservices.com のパーティションを作成する必要があります。
+クライアントのサブネットがあると後、各データ センターの別のゾーン スコープにゾーン contosogiftservices.com をパーティション分割する必要があります。
 
-ゾーンのスコープは、ゾーンの一意のインスタンスです。 DNS ゾーンには、複数のゾーンのスコープ、DNS レコードの独自セットが含まれている各ゾーンのスコープを持つことができます。 同じレコードは、別の IP アドレスを持つ複数のスコープまたは同じ IP アドレスに存在することができます。
+ゾーンのスコープは、ゾーンの一意のインスタンスです。 DNS ゾーンは、独自の DNS レコード セットを格納している各ゾーンのスコープを持つ、複数のゾーン スコープを持つことができます。 同じレコードは、別の IP アドレスを持つ、複数のスコープまたは同じ IP アドレスに存在することができます。
 
 >[!NOTE]
->既定では、ゾーンのスコープは、DNS ゾーンに存在します。 このゾーンのスコープは、ゾーンと同じ名前を持つし、従来の DNS 操作は、このスコープで動作します。
+>既定では、ゾーンのスコープは、DNS ゾーンに存在します。 このゾーンのスコープでは、ゾーンと同じ名前と、従来の DNS の機能がこのスコープで動作します。
 
-アプリケーションの負荷分散では、前のシナリオでは、北米でデータ センターの 3 つのゾーンのスコープを構成する方法について説明します。
+アプリケーションの負荷分散では、前のシナリオでは、北米でのデータ センターの次の 3 つのゾーンのスコープを構成する方法を示します。
 
-以下のコマンドを使用してダブリンとアムステルダムのデータ センターの 1 つずつ 2 つの複数ゾーン スコープを作成することができます。 
+次のコマンドでは、ダブリン、アムステルダム データ センターに対して 1 つずつ 2 つの詳細についてゾーン スコープを作成できます。 
 
-これらのゾーンのスコープを変更せず、次の 3 つ既存北アメリカのゾーンのスコープが同じゾーンに追加できます。 さらに、これらのゾーンのスコープを作成した後、DNS サーバーを再起動する必要はありません。
+同じゾーンで 3 つ既存北米ゾーン スコープには、何も変更せずのこれらのゾーン スコープを追加できます。 さらに、これらのゾーンのスコープを作成した後、DNS サーバーを再起動する必要はありません。
 
 次の Windows PowerShell コマンドを使用すると、ゾーンのスコープを作成します。
 
@@ -82,32 +83,32 @@ DNS クライアントのサブネットは、DNS サーバーにクエリの送
     Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AmsterdamZoneScope"
     
 
-詳細については、次を参照してください[追加 DnsServerZoneScope。](https://technet.microsoft.com/library/mt126267.aspx)
+詳細については、次を参照してください [追加 DnsServerZoneScope。](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
 ###<a name="bkmk_records2"></a>レコードをゾーンのスコープに追加します。
 
-ゾーンのスコープに web サーバーのホストを表すレコードを追加する必要がありますようになりました。
+今すぐゾーン スコープに web サーバーのホストを表すレコードを追加する必要があります。
 
-アメリカ データ センターの記録は、前のシナリオで追加されました。 次の Windows PowerShell コマンドを使用すると、ヨーロッパ データ センターのゾーンのスコープにレコードを追加します。
+上記のシナリオでは、アメリカのデータ センターのレコードが追加されました。 次の Windows PowerShell コマンドを使用すると、ヨーロッパ データ センターのゾーンのスコープにレコードを追加します。
  
     
     Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "151.1.0.1" -ZoneScope "DublinZoneScope”
     Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "141.1.0.1" -ZoneScope "AmsterdamZoneScope"
     
 
-詳細については、次を参照してください。[追加 DnsServerResourceRecord](https://technet.microsoft.com/library/jj649925.aspx)します。
+詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
 
 ###<a name="bkmk_policies2"></a>DNS ポリシーを作成します。
 
-パーティション (ゾーン スコープ) を作成したレコードを追加した後、これらのスコープに受信したクエリを分散する DNS ポリシーを作成する必要があります。
+パーティション (ゾーン スコープ) を作成したレコードを追加した後は、着信クエリをこれらのスコープに分散する DNS ポリシーを作成する必要があります。
 
-この例では、さまざまなデータ センター内のアプリケーション サーバーの間でクエリの配布は、次の条件を満たしています。
+この例では、さまざまなデータ センター内のアプリケーション サーバー間でクエリの分布は、次の条件を満たしています。
 
-1. DNS 応答の 50% が、シアトルのデータ センターを指す北アメリカのクライアントのサブネットでは、移行元から DNS クエリが受信したときに、応答の 25% が、シカゴのデータ センターをポイントして、応答の残りの 25% がダラス データ センターをポイントします。
-2. ヨーロッパのクライアントのサブネット内のソースから受信した場合、DNS クエリは、DNS 応答の 50% が Dublin データ センターをポイントし、DNS 応答の 50% がアムステルダムのデータ センターにポイントします。
-3. クエリは、世界中の他の場所からは、DNS 応答が 5 つすべてのデータ センターに分散します。
+1. DNS 応答の 50% が、シアトルのデータ センターを指す北アメリカのクライアントのサブネットでは、ソースから DNS クエリが受信したときに、応答の 25% が、シカゴのデータ センターをポイントし、応答の残りの 25% がダラス データ センターにポイントします。
+2. ヨーロッパのクライアントのサブネット内のソースから受信した場合、DNS クエリは、DNS 応答の 50% が Dublin データ センターをポイントし、DNS 応答の 50% がアムステルダム データ センターにポイントします。
+3. クエリは、その他の場所からの世界では、ときに、DNS 応答は、5 つすべてのデータ センターに分散されます。
 
-次の Windows PowerShell コマンドを使用して、これらの DNS ポリシーを実装することができます。
+これらの DNS ポリシーを実装するために、次の Windows PowerShell コマンドを使用することができます。
 
     
     Add-DnsServerQueryResolutionPolicy -Name "AmericaLBPolicy" -Action ALLOW -ClientSubnet "eq,AmericaSubnet" -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1; TexasZoneScope,1" -ZoneName "contosogiftservices.com" –ProcessingOrder 1
@@ -118,8 +119,8 @@ DNS クライアントのサブネットは、DNS サーバーにクエリの送
     
     
 
-詳細については、次を参照してください。[追加 DnsServerQueryResolutionPolicy](https://technet.microsoft.com/library/mt126273.aspx)します。
+詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
 
-複数の大陸で 5 つの異なるデータ センターに配置されている Web サーバー間で分散アプリケーションの負荷を提供する DNS のポリシーは正常に作成できるようになりました。
+複数の大陸で 5 つの異なるデータ センターに配置されている Web サーバー間で分散アプリケーションの負荷を提供する DNS ポリシーは正常に作成されました。
 
-要件を作成できます何千もの DNS のポリシーに従って、トラフィックの管理、および DNS サーバーを再起動しなくても - 受信したクエリで、すべての新しいポリシーが動的 - 適用します。
+何千もの DNS のポリシーに合わせて作成できます、トラフィック管理の要件、DNS サーバーを再起動しなくても - 受信したクエリで、すべての新しいポリシーが動的 - 適用されます。

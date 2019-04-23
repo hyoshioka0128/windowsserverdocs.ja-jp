@@ -1,5 +1,5 @@
 ---
-title: "AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開 - 手順 3: ワーク フォルダーのセットアップ"
+title: 'AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開 - 手順 3: ワーク フォルダーのセットアップ'
 ms.prod: windows-server-threshold
 ms.technology: storage-work-folders
 ms.topic: article
@@ -9,26 +9,27 @@ author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: 5a43b104-4d02-4d73-a385-da1cfb67e341
 ms.openlocfilehash: 81f30a7a4d50423a68719343fec3032cc6a1602e
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854713"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-3-set-up-work-folders"></a>AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 3: ワーク フォルダーのセットアップ
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-3-set-up-work-folders"></a>AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 3 では、ワーク フォルダーのセットアップ
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
 このトピックでは、Active Directory フェデレーション サービス (AD FS) と Web アプリケーション プロキシを使用して、ワーク フォルダーを展開する 3 番目の手順について説明します。 このプロセスの他の手順は、次のトピックで確認できます。  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 概要](deploy-work-folders-adfs-overview.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。概要](deploy-work-folders-adfs-overview.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 1: AD FS のセットアップ](deploy-work-folders-adfs-step1.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 1、AD FS の設定](deploy-work-folders-adfs-step1.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 2、AD FS の構成後の作業](deploy-work-folders-adfs-step2.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 2 では、AD FS の構成後の作業](deploy-work-folders-adfs-step2.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 4: Web アプリケーション プロキシのセットアップ](deploy-work-folders-adfs-step4.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 4、Web アプリケーション プロキシの設定](deploy-work-folders-adfs-step4.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 5: クライアントのセットアップ](deploy-work-folders-adfs-step5.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 5 では、クライアントをセットアップします。](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
 >   このセクションで説明する手順は、Server 2016 環境を対象としています。 Windows Server 2012 R2 を使用している場合には、[Windows Server 2012 R2 の手順](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx) に従います。
@@ -41,7 +42,7 @@ ms.lasthandoff: 10/17/2017
 このテストの例では、ワーク フォルダーを実行するコンピューターは Contoso ドメイン に参加し、以下のセクションの説明のようにネットワーク インターフェイスをセットアップします。 
 
 ### <a name="set-the-server-ip-address"></a>サーバー IP アドレスの設定  
-サーバーの IP アドレスを静的 IP アドレスに変更します。 テストの例では、IP クラス A を使用し、192.168.0.170 / サブネット マスク: 255.255.0.0 / 既定のゲートウェイ: 192.168.0.1 / 優先 DNS: 192.168.0.150 (ドメイン コントローラーの IP アドレス) とします。 
+サーバーの IP アドレスを静的 IP アドレスに変更します。 テストの例は 192.168.0.170 IP クラス A を使用して/サブネット マスク。255.255.0.0/デフォルト ゲートウェイ。192.168.0.1/DNS を優先します。192.168.0.150 (ドメイン コント ローラーの IP アドレス)。 
   
 ### <a name="create-the-cname-record-for-work-folders"></a>ワーク フォルダーの CNAME レコードの作成  
 ワーク フォルダーの CNAME レコードを作成するには、次の手順を実行します。  
@@ -67,36 +68,36 @@ Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name workfolders -CName  -
 ### <a name="install-the-ad-fs-certificate"></a>AD FS 証明書のインストール  
 次の手順を使用して、AD FS のセットアップ中に作成されたAD FS 証明書を、ローカル コンピューターの証明書ストアにインストールします。  
   
-1.  **[スタート]** をクリックし、**[実行]** をクリックします。  
+1.  **[スタート]** ボタンをクリックして **[ファイル名を指定して実行]** をクリックします。  
   
 2.  「**MMC**」と入力します。  
   
 3.  **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   
-4.  [**利用できるスナップイン**] の一覧で、[**証明書**]、[**追加**] の順に選択します。 証明書スナップイン ウィザードが開始されます。  
+4.  **[利用できるスナップイン]** の一覧で、**[証明書]**、**[追加]** の順に選択します。 証明書スナップイン ウィザードが開始されます。  
   
 5.  **[コンピューター アカウント]** を選択し、**[次へ]** をクリックします。  
   
-6.  **[ローカル コンピュータ (このコンソールを実行しているコンピュータ)]** を選択し、**[完了]** をクリックします。  
+6.  **[ローカル コンピュータ (このコンソールを実行しているコンピュータ)]** を選択し、次に **[完了]** をクリックします。  
   
 7.  **[OK]** をクリックします。  
   
-8.  **[コンソール ルート]\[証明書 \(ローカル コンピューター)]\[個人]\[証明書]** フォルダーを展開します。  
+8.  **[コンソール ルート\証明書 \(ローカル コンピューター)\個人\証明書]** フォルダーを展開します。  
   
 9. **[証明書]** を右クリックし、**[すべてのタスク]**、**[インポート]** の順にクリックします。  
   
 10. AD FS 証明書を含むフォルダーを参照し、ウィザードの指示に従ってファイルをインポートして、証明書ストアに配置します。
 
-11. **[コンソール ルート]\[証明書 \(ローカル コンピューター)]\[信頼されたルート証明機関]\[証明書]** フォルダーを展開します。  
+11. **[コンソール ルート\証明書 \(ローカル コンピューター)\信頼されたルート証明機関\証明書]** フォルダーを展開します。  
   
-12. [**証明書**] を右クリックし、[**すべてのタスク**]、[**インポート**] の順にクリックします。  
+12. **[証明書]** を右クリックし、**[すべてのタスク]**、**[インポート]** の順にクリックします。  
   
 13. AD FS 証明書を含むフォルダーを参照し、ウィザードの指示に従ってファイルをインポートして、信頼されたルート証明機関ストアに配置します。  
   
 ### <a name="create-the-work-folders-self-signed-certificate"></a>ワーク フォルダーの自己署名証明書を作成します。  
 ワーク フォルダーの自己署名証明書を作成するには、次の手順に従います。  
   
-1.  「[AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開](https://blogs.technet.microsoft.com/filecab/2014/03/03/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap)」のブログ記事で提供されているスクリプトをダウンロードし、ファイル makecert.ps1 をワーク フォルダーのコンピューターにコピーします。  
+1.  「[AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開](https://blogs.technet.microsoft.com/filecab/2014/03/03/deploying-work-folders-with-ad-fs-and-web-application-proxy-wap)」のブログ投稿で提供されているスクリプトをダウンロードし、ファイル makecert.ps1 をワーク フォルダーのコンピューターにコピーします。  
   
 2.  管理者特権で Windows PowerShell ウィンドウを開きます。  
   
@@ -151,7 +152,7 @@ Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name workfolders -CName  -
   
 6.  **[機能]** ページで **[次へ]** をクリックします。  
   
-7.  [**確認**] ページで [**インストール**] をクリックします。  
+7.  **[確認]** ページで **[インストール]** をクリックします。  
   
 ## <a name="configure-work-folders"></a>ワーク フォルダーの構成  
 ワーク フォルダーを構成するには、次の手順に従います。  
@@ -188,7 +189,7 @@ Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name workfolders -CName  -
 ### <a name="bind-the-certificate"></a>証明書のバインド  
 ワーク フォルダーは SSL 経由のみで通信し、以前に作成した自己署名証明書 (または証明書機関によって発行されている証明書) をポートにバインドする必要があります。  
   
-証明書をポートにバインドするために Windows PowerShell で使用できる 2 つの方法があります。IIS コマンドレットおよび netsh です。  
+Windows PowerShell を使用してポートに証明書をバインドするために使用できる 2 つの方法はあります。IIS のコマンドレットと netsh します。  
   
 #### <a name="bind-the-certificate-by-using-netsh"></a>netsh を使用した証明書のバインド  
 netsh コマンド ライン スクリプト ユーティリティを Windows PowerShell で使用するには、コマンドを netsh にパイプ処理する必要があります。 次のスクリプト例では、**workfolders.contoso.com** というサブジェクトの証明書を検索し、netsh を使ってそれをポート 443 にバインドします。  
@@ -198,7 +199,7 @@ $subject = "workfolders.contoso.com"
 Try  
 {  
 #In case there are multiple certificates with the same subject, get the latest version   
-$cert = Get-ChildItem CERT:\LocalMachine\My |where {$_.Subject -match $subject} | sort $_.NotAfter -Descending | select -first 1    
+$cert = Get-ChildItem CERT:\LocalMachine\My |where {$_.Subject -match $subject} | sort $_.NotAfter -Descending | select -first 1    
 $thumbprint = $cert.Thumbprint  
 $Command = "http add sslcert ipport=0.0.0.0:443 certhash=$thumbprint appid={CE66697B-3AA0-49D1-BDBD-A25C8359FD5D} certstorename=MY"  
 $Command | netsh  
@@ -249,7 +250,7 @@ AD FS 認証を使用するようにワーク フォルダーを構成するに�
   
 4.  **[ワーク フォルダーの設定]** ウィンドウで、**[Active Directory フェデレーション サービス (AD FS)]** を選択し、フェデレーション サービスの URL を入力します。 **[適用]** をクリックします。  
   
-    このテストの例では、URL は「**https://blueadfs.contoso.com**」です。  
+    テストの例は、URL は **https://blueadfs.contoso.com**します。  
   
 Windows PowerShell で同じタスクを実行するコマンドレットは次のとおりです。  
   
@@ -270,9 +271,9 @@ Set-SyncServerSetting -ADFSUrl "https://blueadfs.contoso.com"
   
 -   ドメインに参加していない Windows クライアント  
   
-証明書をエクスポートするには、以前に AD FS 証明書のエクスポートに使用したものと同じ手順に従います。これは、「[AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 2、AD FS の構成後の作業](deploy-work-folders-adfs-step2.md)」の「AD FS 証明書のエクスポート」で説明されています。  
+証明書をエクスポートする」の説明に従って以前では、AD FS 証明書のエクスポートに使用した同じ手順に従います[AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 2 では、AD FS の構成後の作業](deploy-work-folders-adfs-step2.md)、AD FS 証明書をエクスポートします。  
   
-次の手順: [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 4: Web アプリケーション プロキシのセットアップ](deploy-work-folders-adfs-step4.md)  
+次のステップ:[AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 4、Web アプリケーション プロキシの設定](deploy-work-folders-adfs-step4.md)  
   
 ## <a name="see-also"></a>関連項目  
 [ワーク フォルダーの概要](Work-Folders-Overview.md)  
