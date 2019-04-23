@@ -1,6 +1,6 @@
 ---
-title: "管理されたサービス アカウント向けの新機能"
-description: "Windows Server のセキュリティ"
+title: What's New for Managed Service Accounts
+description: Windows Server のセキュリティ
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,48 +14,49 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: cac55d04a40c84ce160eb3883d6095a7db0ef3be
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59872183"
 ---
-# <a name="what39s-new-for-managed-service-accounts"></a>新; 管理されたサービス アカウントの新しい s
+# <a name="what39s-new-for-managed-service-accounts"></a>どのような&#39;s 管理されたサービス アカウントの新機能
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用先:Windows Server 2016 の Windows Server (半期チャネル)
 
-IT プロフェッショナル向けのこのトピックの変更について説明機能管理されたサービス アカウントのグループの Windows Server 2012 と Windows 8 における管理されたサービス アカウント (gMSA) の導入します。
+IT プロフェッショナル向けのこのトピックで機能について説明します、変更管理されたサービス アカウント グループの Windows Server 2012 と Windows 8 では、管理されたサービス アカウント (gMSA) の導入に伴いします。
 
-管理されたサービス アカウントは、サービスと Windows サービスを手動でのこれらのアカウントのパスワードを管理する管理者の必要性を排除しながら、自分のドメイン アカウントを共有する IIS アプリケーション プールなどのタスクを提供するものです。 これは、パスワードの自動管理を提供する管理対象のドメイン アカウントです。
+管理されたサービス アカウントは、Windows サービスや IIS アプリケーション プールなど、独自のドメイン アカウントを共有するサービスとタスクを提供できるように設計されたものです。管理者にとっては、これらのアカウントのパスワードを手動で管理する必要がなくなります。 管理されたサービス アカウントは、パスワードの自動管理が可能な管理されたドメイン アカウントです。
 
-## <a name="versions"></a>Windows Server 2012 および Windows 8 で管理されたサービス アカウント向けの新機能
-どのような機能が変更された Windows Server 2012 および Windows 8 で MSA を次に示します。
+## <a name="versions"></a>Windows Server 2012 と Windows 8 における管理されたサービス アカウントは新機能
+Windows Server 2012 および Windows 8 における msa の機能には、どのような変更が行われたを次に示します。
 
-### <a name="group-managed-service-accounts"></a>グループ管理サービス アカウントします。
-ドメイン内のサーバーのドメイン アカウントを構成する場合、クライアント コンピューターは認証し、そのサービスに接続します。 以前は、2 つだけのアカウントの種類 id が提供されたパスワードの管理を必要とせずします。 しかし、これらのアカウントの種類の制限があります。
+### <a name="group-managed-service-accounts"></a>グループ管理サービス アカウント
+ドメイン アカウントがドメイン内のサーバーに対して構成されている場合、クライアント コンピューターは、そのサービスに対して認証を行い、接続できます。 これまでは、パスワードを管理しなくても ID が提供されたアカウントは 2 種類だけで、 次のような制限もありました。
 
--   コンピューター アカウントは 1 つのドメイン サーバーに制限され、パスワードはコンピューターによって管理されます。
+-   コンピューター アカウントは、1 つのドメイン サーバーに制限され、パスワードはコンピューターによって管理される
 
--   管理されたサービス アカウントは 1 つのドメイン サーバーに制限し、パスワードはコンピューターによって管理されます。
+-   管理されたサービス アカウントは、1 つのドメイン サーバーに制限され、パスワードはコンピューターによって管理される
 
-これらのアカウントは、複数のシステムで共有することはできません。 したがって、望ましくないパスワードの有効期限を防ぐためには、各システム上の各サービスのアカウントを定期的に維持する必要があります。
+これらのアカウントを複数のシステムで共有することはできません。 したがって、パスワードの有効期限が切れるのを防ぐために、各システムのサービスごとにアカウントを維持する作業が定期的に発生します。
 
-**この変更はどのような値を追加しますか。**
+**この変更の利点**
 
-グループの管理されたサービス アカウントはこの問題を解決ため、アカウントのパスワードは、Windows Server 2012 ドメイン コント ローラーによって管理され、複数の Windows Server 2012 システムして取得できます。 これにより、これらのアカウントのパスワード管理を処理する Windows サービス アカウントの管理オーバーヘッドが最小限に抑えます。
+グループ管理サービス アカウントは、アカウントのパスワードが Windows Server 2012 ドメイン コント ローラーによって管理され、複数の Windows Server 2012 のシステムを取得できるため、この問題を解決します。 Windows でこれらのアカウントのパスワード管理を処理できるようになるため、サービス アカウントの管理にかかわるオーバーヘッドが最小限に抑えられます。
 
 **動作の相違点**
 
-コンピューターで Windows Server 2012 または Windows 8、MSA を作成し、サービス コントロール マネージャを通じてを管理できるように、サービスのさまざまなインスタンスに展開など、サーバー ファームのグループを実行していることができますから管理する 1 つのサーバー。 ツールと管理されたサービス アカウント、IIS アプリケーション プール マネージャーなどを管理するために使用するユーティリティは、グループ管理サービス アカウントで使用できます。 ドメイン管理者は、管理されたサービス アカウントまたはグループの管理されたサービス アカウントのライフ サイクル全体を管理できる、サービス管理者にサービスの管理に委任できます。 既存のクライアント コンピューターは、こうしたサービスへの認証は、どのサービス インスタンスを把握しなくても認証を受けることになります。
+コンピューターで Windows Server 2012 または Windows 8、MSA を作成および管理されるサービス コントロール マネージャーから、サービスの多数のインスタンスなど、サーバー ファーム経由で展開できるようにグループを実行してから管理できる 1 つのサーバー。 管理されたサービス アカウントの管理に使用していたツールとユーティリティ (IIS アプリケーション プール マネージャーなど) は、グループの管理されたサービス アカウントにも使用できます。 ドメイン管理者は、サービスの管理をサービス管理者に委任できます。サービス管理者は、管理されたサービス アカウントまたはグループの管理されたサービス アカウントのライフサイクル全体を管理できます。 既存のクライアント コンピューターは、認証先のサービス インスタンスを把握しなくても、こうしたサービスに対して認証を実行できるようになります。
 
-### <a name="interoperability"></a>削除されたまたは推奨されなくなった機能
-Windows Server 2012、サーバーの管理されたサービス アカウントではなくグループ管理サービス アカウントを管理する Windows PowerShell コマンドレットの既定値です。
+### <a name="interoperability"></a>削除または非推奨の機能
+Windows Server 2012 で、サーバーの管理されたサービス アカウントではなくグループ管理サービス アカウントを管理する Windows PowerShell コマンドレットの既定値。
 
-## <a name="see-also"></a>参照してください。
+## <a name="see-also"></a>関連項目
 
--   [グループの管理されたサービス アカウントの概要](group-managed-service-accounts-overview.md)
+-   [グループ管理サービス アカウントの概要](group-managed-service-accounts-overview.md)
 
--   [Active Directory ドメイン サービスの概要](active-directory-domain-services-overview.md)
+-   [Active Directory Domain Services の概要](active-directory-domain-services-overview.md)
 
--   [管理されたサービス アカウント: 理解、実装、ベスト プラクティス、およびトラブルシューティング](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
+-   [管理されたサービス アカウント。理解、実装、ベスト プラクティス、およびトラブルシューティング](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
 
 
