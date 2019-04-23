@@ -9,13 +9,13 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: high
 ms.openlocfilehash: e6a5357e3e33b3d3318a3e281bbb5c80be842155
-ms.sourcegitcommit: 9ed4c9fe04ebf3ef488170503c9a354c992b6fde
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4339280"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59890513"
 ---
-# 管理
+# <a name="management"></a>管理
 
 
 >[!TIP]
@@ -31,11 +31,11 @@ Windows Server インスタンスの管理に使用するツールは、展開�
 
 | 操作環境   | Windows Admin Center のインストールおよび管理 | Windows Server でのサーバー マネージャーの実行 | Windows 10 での RSAT を使用したサーバー マネージャーの実行 |
 |--------|----------------------|--------------------------------------|------------------------------------------|
-| Windows 10 PC で作業 | ○  |                                      | ○                                        |
-| デスクトップ エクスペリエンスを実行する Windows Server システムで作業 | ○ | ○ | ○ |
-| Server Core を実行する Windows Server システムで作業 |X (Windows 10 上にインストールし、Server Core の管理に使用) | | ○ |
-| Windows Server システムから離れた場所で作業 |○ | | ○ |
-| Windows Server システムから離れた場所で作業するが、デスクトップ エクスペリエンスは実行 |○ | RDS を使用してサーバーにリモート接続し、サーバー マネージャーを使用 | ○ |
+| Windows 10 PC で作業 | x  |                                      | x                                        |
+| デスクトップ エクスペリエンスを実行する Windows Server システムで作業 | x | X | x |
+| Server Core を実行する Windows Server システムで作業 |X (Windows 10 上にインストールし、Server Core の管理に使用) | | x |
+| Windows Server システムから離れた場所で作業 |x | | x |
+| Windows Server システムから離れた場所で作業するが、デスクトップ エクスペリエンスは実行 |x | RDS を使用してサーバーにリモート接続し、サーバー マネージャーを使用 | x |
 
 以下で説明するツールに加え、[リモート デスクトップ サービス](../remote/remote-desktop-services/welcome-to-rds.md)を使用して、オンプレミス サーバー、リモート サーバー、仮想サーバーにアクセスすることもできます。 その後、サーバー マネージャーを使用して管理タスクを実行できます。
 
@@ -54,13 +54,13 @@ Windows Server インスタンスの管理に使用するツールは、展開�
                     <div class="cardText">
                     <h3>Windows Server システムと環境の管理</h3>
 <HR />
-                        <p><h3><a href="../manage/windows-admin-center/overview.md">Windows Admin Center による UI を使用しないオンプレミス システム、リモート システム、およびシステムの管理</a></h3>Azure やクラウドに依存せずに、Windows サーバーのオンプレミス管理を実現する、ブラウザー ベースの管理アプリです。 Windows Admin Center (以前は "Project Honolulu" と呼ばれていました) では、サーバー インフラストラクチャのあらゆる側面を完全に管理できます。特に、インターネットに接続されていないプライベート ネットワークでの管理に便利です。 Windows Admin Center は、Windows 10、ゲートウェイ サーバー、または管理対象の Windows Server システム上に直接インストールできます。</p>
+                        <p><h3><a href="../manage/windows-admin-center/overview.md">オンプレミス システムで、リモート システムは、Windows Admin Center での UI を使わずにシステムを管理します。</a></h3>Azure やクラウドに依存せずに、Windows サーバーのオンプレミス管理を実現する、ブラウザー ベースの管理アプリです。 Windows Admin Center (以前は "Project Honolulu" と呼ばれていました) では、サーバー インフラストラクチャのあらゆる側面を完全に管理できます。特に、インターネットに接続されていないプライベート ネットワークでの管理に便利です。 Windows Admin Center は、Windows 10、ゲートウェイ サーバー、または管理対象の Windows Server システム上に直接インストールできます。</p>
 <HR />
-                        <p><h3><a href="server-manager/server-manager.md">サーバー マネージャーを使用したオンプレミス システムの管理</a></h3>Windows Server のフル インストールに含まれる管理コンソールです  (UI を持たないインストールでは使用できません。サーバー・コアには、サーバー マネージャーが含まれていません)。サーバー マネージャを使用して、サーバー ロールのインストールと削除、リモートサーバーの追加と削除、サービスの開始と停止、環境に関して収集したデータの表示を行うことができます。</p>
+                        <p><h3><a href="server-manager/server-manager.md">サーバー マネージャーによる、オンプレミス システムを管理します。</a></h3>Windows Server のフル インストールに含まれる管理コンソールです  (インストール UI がないのはご利用いただけません - Server Core には、サーバー マネージャーは含まれません)。インストールおよびサーバーの役割を削除するサーバー マネージャーを使用して追加し、リモート サーバー、開始とサービスを停止、およびお客様の環境について収集されるデータの表示を削除します。</p>
 <HR />
-                        <p><h3><a href="../remote/remote-server-administration-tools.md">リモート システムと UI のないシステムの管理には、リモート サーバー管理ツール (RSAT) を使用します。</a></h3>環境に Server Core または リモート サーバー (オンプレミスまたは仮想マシン) のインストールが含まれている場合は、RSAT を使用して、それらのシステムを管理することができます。 RSAT にはサーバー マネージャーが含まれているため、すべてのサーバーの管理に使用できます。 RSAT が Windows 10 で実行されることに注意してください。 Windows Server Core に RSAT をインストールすることはできません。 また、コマンド ラインから Server Core のインストールを管理することもできます。 詳細については、「<a href="server-core/server-core-administer.md">Server Core での基本的な管理タスク」を参照してください。</a>
+                        <p><h3><a href="../remote/remote-server-administration-tools.md">リモート システムとリモート サーバー管理ツール (RSAT) を UI なしのシステムを管理します。</a></h3>環境に Server Core または リモート サーバー (オンプレミスまたは仮想マシン) のインストールが含まれている場合は、RSAT を使用して、それらのシステムを管理することができます。 RSAT にはサーバー マネージャーが含まれているため、すべてのサーバーの管理に使用できます。 RSAT が Windows 10 で実行されることに注意してください。 Windows Server Core に RSAT をインストールすることはできません。 また、コマンド ラインから Server Core のインストールを管理することもできます。 参照してください<a href="server-core/server-core-administer.md">Server Core での基本的な管理タスク</a>
 <HR />
-                        <p><h3><a href="windows-server-update-services/get-started/windows-server-update-services-wsus.md">Windows Server システムの更新プログラムの管理</a></h3>Windows Server 環境内のシステムでの更新プログラムの管理および展開には、Windows Server Update Services (WSUS) を使用します。</p>
+                        <p><h3><a href="windows-server-update-services/get-started/windows-server-update-services-wsus.md">Windows Server システムに更新プログラムを管理します。</a></h3>Windows Server 環境内のシステムでの更新プログラムの管理および展開には、Windows Server Update Services (WSUS) を使用します。</p>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@ Windows Server インスタンスの管理に使用するツールは、展開�
                     <div class="cardText">
                     <h3>環境に関する情報の収集</h3>
 <HR />
-                        <p><h3><a href="get-started-with-setup-and-boot-event-collection.md">セットアップおよびブート イベント収集</a></h3>セットアップおよびブート イベント収集では、"コレクター" コンピューターを指定して、起動時またはセットアップ プロセスの実行時に、他のコンピューターで発生するさまざまな重要イベントを収集できます。 その後、収集されたイベントは、イベント ビューアー、メッセージ アナライザー、Wevtutil、または Windows PowerShell コマンドレットを使用して分析できます。 </p>
+                        <p><h3><a href="get-started-with-setup-and-boot-event-collection.md">セットアップおよび起動イベント コレクション</a></h3>セットアップおよびブート イベント収集では、"コレクター" コンピューターを指定して、起動時またはセットアップ プロセスの実行時に、他のコンピューターで発生するさまざまな重要イベントを収集できます。 その後、収集されたイベントは、イベント ビューアー、メッセージ アナライザー、Wevtutil、または Windows PowerShell コマンドレットを使用して分析できます。 </p>
 <HR />
                         <p><h3><a href="software-inventory-logging/get-started-with-software-inventory-logging.md">ソフトウェア インベントリ ログ (SIL)</a></h3>Windows Server のソフトウェア インベントリ ログは、サーバー管理者が簡単な PowerShell コマンドレットのセットを使用して、サーバーにインストールされた Microsoft ソフトウェアの一覧を取得できる機能です。 また、HTTPS プロトコルを使用して、このデータをネットワーク経由で定期的に収集し、集計のためにターゲット Web サーバーへと転送することもできます。 この機能の管理には、PowerShell コマンドも使用できます (主に毎時の収集と転送のため)。</p>
 <HR />
@@ -100,7 +100,7 @@ Windows Server インスタンスの管理に使用するツールは、展開�
                     <div class="cardText">
                     <h3>Windows Server 環境のパフォーマンスの調整</h3>
 <HR />
-                        <p><h3><a href="performance-tuning/index.md">パフォーマンスの調整ガイドライン</a></h3>Windows Server のサーバー設定を調整し、特に、時間が経過してもワークロードの性質がほとんど変化しない場合に、パフォーマンスを改善して、エネルギー効率を向上させるためのガイドラインを参照してください。</p>
+                        <p><h3><a href="performance-tuning/index.md">パフォーマンス チューニング ガイドライン</a></h3>Windows Server のサーバー設定を調整し、特に、時間が経過してもワークロードの性質がほとんど変化しない場合に、パフォーマンスを改善して、エネルギー効率を向上させるためのガイドラインを参照してください。</p>
 <HR />
                         <p><h3><a href="server-performance-advisor/microsoft-server-performance-advisor.md">Microsoft Server Performance Advisor</a></h3>Microsoft サーバー パフォーマンス アドバイザー (SPA) を使用すると、ソフトウェア エージェントの追加や運用サーバの再構成を行わずに、他に影響を与えずに Windows サーバーのパフォーマンスの問題を診断するためのメトリックを収集できます。 SPA では、推奨事項を記載した包括的なパフォーマンス レポートと履歴チャートが作成されます。</p>
                     </div>
@@ -122,7 +122,7 @@ Windows Server インスタンスの管理に使用するツールは、展開�
 <HR />
                         <p><h3><a href="https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-5.1">Windows PowerShell</a></h3>Windows PowerShell は、管理タスクの迅速な自動化に重点を置いて設計されたコマンド ライン シェル兼スクリプト言語です。 </p>
 <HR />
-                        <p><h3><a href="windows-commands/windows-commands.md">Windows コマンド</a></h3>Windows のコマンド ライン ツールを使用して、Windows の管理タスクを実行できます。 コマンド リファレンスを使用して、コマンドライン ツールを理解し、コマンド シェルについて知識を深めるとともに、バッチ ファイルやスクリプト ツールを使用してコマンド ライン タスクを自動化することができます。</p>
+                        <p><h3><a href="windows-commands/windows-commands.md">Windows のコマンド</a></h3>Windows のコマンド ライン ツールを使用して、Windows の管理タスクを実行できます。 コマンド リファレンスを使用して、コマンドライン ツールを理解し、コマンド シェルについて知識を深めるとともに、バッチ ファイルやスクリプト ツールを使用してコマンド ライン タスクを自動化することができます。</p>
                     </div>
                 </div>
             </div>
@@ -140,7 +140,7 @@ Windows Server インスタンスの管理に使用するツールは、展開�
                     <div class="cardText">
                     <h3>Windows Server の管理の自動化</h3>
 <HR />
-                        <p><h3><a href="..\manage\system-insights\overview.md">システム インサイト</h3></a>ネイティブの予測分析機能が、パフォーマンス カウンターや ETW イベントなどの Windows Server システム データをローカルで分析し、展開されたシステム内で問題のある動作を事前に検出して対処できるよう、IT 管理者を支援します。</p>
+                        <p><h3><a href="..\manage\system-insights\overview.md">システム Insights</h3></a>ネイティブの予測分析ローカル パフォーマンス カウンターと ETW イベントなどの Windows Server システム データの分析、IT 管理者の支援を事前に検出し、展開で問題のある動作に対処します。</p>
                     </div>
                 </div>
             </div>
