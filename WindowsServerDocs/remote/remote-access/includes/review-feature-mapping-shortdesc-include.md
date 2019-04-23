@@ -1,0 +1,1 @@
+**[Always On VPN、DirectAccess の機能の比較について](../vpn/vpn-map-da.md)します。** 多くのセキュリティ、接続、認証、およびその他のオプション、Always On VPN、DirectAccess と同様に、します。

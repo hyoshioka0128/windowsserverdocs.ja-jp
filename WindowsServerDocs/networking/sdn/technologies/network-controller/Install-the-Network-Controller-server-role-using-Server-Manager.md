@@ -1,6 +1,6 @@
 ---
-title: サーバー マネージャーを使用してネットワーク コントローラー サーバーの役割をインストールします。
-description: このトピックは、Windows Server 2016 でサーバー マネージャーを使用して、ネットワーク コントローラー サーバーの役割をインストールする方法について説明します。
+title: サーバー マネージャーを使用してネットワーク コント ローラー サーバーの役割をインストールします。
+description: このトピックでは、Windows Server 2016 でサーバー マネージャーを使用して、ネットワーク コント ローラー サーバーの役割をインストールする方法について説明します。
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-sdn
@@ -9,61 +9,62 @@ ms.topic: get-started-article
 ms.assetid: 3a6e4352-ff62-4290-b8a4-5c83740070fc
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 15cb1ef3bad7038cc97784504807b44b4920def6
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 699e2ca5c4ec33099d0ad948523b6f587ad118e4
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59859063"
 ---
-# <a name="install-the-network-controller-server-role-using-server-manager"></a>サーバー マネージャーを使用してネットワーク コントローラー サーバーの役割をインストールします。
+# <a name="install-the-network-controller-server-role-using-server-manager"></a>サーバー マネージャーを使用してネットワーク コント ローラー サーバーの役割をインストールします。
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-このトピックは、サーバー マネージャーを使用して、ネットワーク コントローラー サーバーの役割をインストールする方法について説明します。
+このトピックでは、サーバー マネージャーを使用して、ネットワーク コント ローラー サーバーの役割をインストールする方法の手順を示します。
 
 >[!IMPORTANT]
->物理ホスト上で、ネットワーク コントローラー サーバーの役割を展開しないでください。 ネットワーク コントローラーを展開するには、Hyper-V 仮想マシンのネットワーク コントローラー サーバーの役割をインストールする必要があります \(VM\) Hyper-V ホストにインストールされています。 Windows PowerShell コマンドを使用してネットワーク コントローラーにホストを追加することでのソフトウェアがネットワーク定義 \(SDN\) Hyper\ V ホストを有効にする必要があります Vm 上で次の 3 つの異なる Hyper\ V ホストでネットワーク コントローラーをインストールした後**新規 NetworkControllerServer**します。 これにより、有効にすると、SDN ソフトウェア ロード バランサーが機能します。 詳細については、次を参照してください。[新規 NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)します。
+>物理ホストでネットワーク コント ローラー サーバーの役割を展開しないでください。 ネットワーク コント ローラーを展開するには、HYPER-V 仮想マシンでネットワーク コント ローラー サーバーの役割をインストールする必要があります\(VM\) HYPER-V ホストにインストールされています。 次の 3 つの異なるハイパースレッディング上の Vm でネットワーク コント ローラーをインストールした後\-V のホスト、ハイパースレッディングが有効にする必要があります\-ソフトウェアによるネットワーク制御の V ホスト\(SDN\)ネットワーク コント ローラーを使用するホストを追加することでWindows PowerShell コマンド**新規 NetworkControllerServer**します。 これにより、関数には、SDN ソフトウェア ロード バランサーを有効にします。 詳細については、次を参照してください。[新規 NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)します。
   
-ネットワーク コントローラーをインストールした後は、追加のネットワーク コントローラー構成の Windows PowerShell コマンドを使用する必要があります。 詳細については、次を参照してください。[展開ネットワーク コントローラーが Windows PowerShell を使用して](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)します。  
+ネットワーク コント ローラーをインストールした後は、追加のネットワーク コント ローラー構成の Windows PowerShell コマンドを使用する必要があります。 詳細については、次を参照してください。 [展開ネットワーク コント ローラーが Windows PowerShell を使用して](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)します。  
   
-### <a name="to-install-network-controller"></a>ネットワーク コントローラーをインストールするには  
+### <a name="to-install-network-controller"></a>ネットワーク コント ローラーをインストールするには  
   
-1.  サーバー マネージャーで、クリックして**管理**、] をクリックし、**追加の役割と機能**します。 追加の役割と機能のウィザードが開きます。 をクリックして**次**します。  
+1.  サーバー マネージャーで、**[管理]** をクリックし、**[役割と機能の追加]** をクリックします。 追加の役割と機能のウィザードが開きます。 **[次へ]** をクリックします。  
   
-2.  **[インストールの種類**既定の設定を維持し、クリックして**次**します。  
+2.  **インストールの種類**, 既定の設定を保持し、クリックして **次**します。  
   
-3.  **移行先サーバーの選択**、クリックして、ネットワーク コントローラーをインストールするサーバーを選択**次**します。  
+3.  **移行先サーバーの選択**, 、ネットワーク コント ローラーをインストールするサーバーを選択して **次**します。  
   
-4.  **サーバーの役割の選択**で、**役割**、] をクリックして**ネットワーク コントローラー**します。  
+4.  **サーバーの役割**, で、 **ロール**, をクリックして **ネットワーク コント ローラー**します。  
   
-    ![ネットワーク コントローラー サーバーの役割](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_07.jpg)  
+    ![ネットワーク コント ローラーのサーバーの役割](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_07.jpg)  
   
-5.  **ネットワーク コントローラーに必要な機能を追加する**] ダイアログ ボックスが開きます。 をクリックして**機能を追加する**します。  
+5.  **ネットワーク コント ローラーに必要な機能を追加**  ダイアログ ボックスが表示されます。 クリックして **機能を追加**します。  
   
-    ![ネットワーク コントローラーの機能を追加します。](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_06.jpg)  
+    ![ネットワーク コント ローラーの機能を追加します。](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_06.jpg)  
   
-6.  **サーバーの役割の選択**、] をクリックして**次**します。  
+6.  **サーバーの役割**, をクリックして **次**します。  
   
     ![[次へ] をクリックします。](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_07.jpg)  
   
-7.  **機能の選択**、] をクリックして**次**します。  
+7.  **機能の選択**, 、クリックして **次**します。  
   
-8.  **ネットワーク コントローラー**クリックして**次**します。  
+8.  **ネットワーク コント ローラー** クリックして **次**します。  
   
-9. **インストール オプションの確認**、選択内容を確認します。 ネットワーク コントローラーのインストールでは、ウィザードを実行した後、コンピューターを再起動する必要があります。 このため、] をクリックして**必要な場合に、移行先サーバーを自動的に再起動**します。 **追加の役割と機能のウィザード**] ダイアログ ボックスが開きます。 をクリックして**はい**します。  
+9. **インストール オプションの確認**, 、選択内容を確認します。 ネットワーク コント ローラーのインストールでは、ウィザードを実行した後、コンピューターを再起動する必要があります。 このため、次のようにクリックします。 **ために必要な場合は、移行先サーバーを自動的に再起動**します。 **追加の役割と機能ウィザード**  ダイアログ ボックスが表示されます。 **[はい]** をクリックします。  
   
-    ![役割と機能のウィザードを追加します。](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_11.jpg)  
+    ![役割および機能の追加ウィザード](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/netc_install_11.jpg)  
   
-10. **インストール オプションの確認**、] をクリックして**インストール**します。  
+10. **[インストール オプションの確認]** で、**[インストール]** をクリックします。  
   
-11. 移行先サーバーで、ネットワーク コントローラー サーバーの役割をインストールし、サーバーを再起動し、します。  
+11. 移行先サーバーにネットワーク コント ローラー サーバーの役割をインストールし、サーバーを再起動します。  
   
-12. コンピューターが再起動したら、コンピューターにログオンし、サーバー マネージャーを表示してネットワーク コントローラーのインストールを確認します。  
+12. コンピューターを再起動した後、コンピューターにログオンし、サーバー マネージャーを表示してネットワーク コント ローラーのインストールを確認します。  
   
     ![サーバー マネージャー](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/nc_013.jpg)  
   
-## <a name="see-also"></a>参照してください。  
-[ネットワーク コントローラー](Network-Controller.md)  
+## <a name="see-also"></a>関連項目  
+[ネットワーク コント ローラー](Network-Controller.md)  
   
 
 
