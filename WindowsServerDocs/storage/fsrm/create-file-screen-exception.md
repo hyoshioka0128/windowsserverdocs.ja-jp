@@ -1,6 +1,6 @@
 ---
-title: "ファイル スクリーンの例外を作成する"
-description: "この記事では、ファイル スクリーンの例外を作成する方法について説明します。"
+title: ファイル スクリーンの例外を作成する
+description: この記事では、ファイル スクリーンの例外を作成する方法について説明します。
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 1f0e93cb2535862b9259d438de00c3b769c2282c
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59866303"
 ---
 # <a name="create-a-file-screen-exception"></a>ファイル スクリーンの例外を作成する
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 ファイル スクリーン処理に対して、例外を許可しなければならない場合があります。 たとえば、ファイル サーバーからのビデオ ファイルをブロックするが、トレーニング グループが、コンピューター ベースのトレーニングに関するビデオ ファイルを保存するだけは許可する必要があるなどの場合です。 他のファイル スクリーンがブロックしているファイルを許可するには、*ファイル スクリーン*の例外を作成します。
 
@@ -39,7 +40,7 @@ ms.lasthandoff: 10/17/2017
 4.  スクリーン処理から除外するファイルを指定するには、次の手順に従います。
 
     -   **[ファイル グループ]** で、ファイル スクリーンから除外する各ファイル グループを選択します。 ファイル グループのチェック ボックスをオンにするには、ファイル グループ ラベルをダブルクリックします。
-    -   ファイル グループで許可される、または除外されるファイルの種類を表示するには、ファイル グループ ラベルをクリックし、**[編集]** をクリックします。
+    -   ファイル グループまたは除外するファイルの種類を表示、ファイル グループのラベルをクリックします をクリックしたい場合 **編集**します。
     -   新しいファイル グループを作成するには、**[作成]** をクリックします。
 
 5.  **[OK]** をクリックします。
@@ -47,6 +48,6 @@ ms.lasthandoff: 10/17/2017
 ## <a name="see-also"></a>関連項目
 
 -   [ファイル スクリーンの管理](file-screening-management.md)
--   [スクリーン処理のためにファイル グループを定義する](define-file-groups-for-screening.md)
+-   [スクリーン処理のためのファイル グループを定義します。](define-file-groups-for-screening.md)
 
 

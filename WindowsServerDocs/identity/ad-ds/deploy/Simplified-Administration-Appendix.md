@@ -1,26 +1,27 @@
 ---
 ms.assetid: c911d6c6-98c6-4532-b1db-5724e1ceb96c
-title: "簡略化された管理の付録"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: '付録: 管理の簡素化'
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 5de7431d0f3fe9a078432b11a63ce996d3abe447
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 36cdacec27e64586c359146b858a9d68750e5026
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59858263"
 ---
-# <a name="simplified-administration-appendix"></a>簡略化された管理の付録
+# <a name="simplified-administration-appendix"></a>付録: 管理の簡素化
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
   
--   [サーバー マネージャーの追加のサーバー] ダイアログ ボックス (Active Directory)](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)  
+-   [サーバー マネージャーの追加のサーバー ダイアログ ボックス (Active Directory)](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)  
   
 -   [サーバー マネージャーのリモート サーバーの状態](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_ServerMgrStatus)  
   
@@ -28,13 +29,13 @@ ms.lasthandoff: 12/12/2017
   
 -   [以前のオペレーティング システムの発行の修正プログラムを削除します。](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_Rid)  
   
--   [Ntdsutil.exe インストール メディアの変更](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)  
+-   [Ntdsutil.exe Install from Media Changes](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)  
   
-## <a name="BKMK_AddServers"></a>サーバー マネージャーの追加のサーバー] ダイアログ ボックス (Active Directory)  
+## <a name="BKMK_AddServers"></a>サーバー マネージャーの追加のサーバー ダイアログ ボックス (Active Directory)  
 
-**サーバーの追加**ダイアログ ボックスでは、ワイルドカードを使用して、オペレーティング システムおよび場所は、サーバーでは、Active Directory を検索します。 ダイアログ ボックスでは、完全修飾ドメイン名またはプレフィックス名で DNS クエリを使用することもできます。 これらの検索は、.NET、つまり、サーバー マネージャーでの接続のドメイン コントローラーは、Windows Server 2003 にも実行できますが、SOAP を介して AD 管理ゲートウェイに対する AD Windows PowerShell いないによって実装され、ネイティブの DNS および LDAP プロトコルを使用します。 プロビジョニングのためのサーバー名を持つファイルをインポートすることもできます。  
+**サーバーの追加** ダイアログ ボックスでは、ワイルドカードを使用してオペレーティング システム、および場所は、サーバーでは、Active Directory を検索します。 ダイアログ ボックスでは、完全修飾ドメイン名またはプレフィックス名で DNS クエリを使用することもできます。 これらの検索では、.NET、つまり、サーバー マネージャーでの接続のドメイン コント ローラーは、Windows Server 2003 にも実行できますが、SOAP を介して AD 管理ゲートウェイに対する AD Windows PowerShell ではなくによって実装され、ネイティブの DNS および LDAP プロトコルを使用します。 プロビジョニングのためのサーバー名を持つファイルをインポートすることもできます。  
   
-Active Directory の検索は、次の LDAP フィルターを使用します。  
+Active Directory の検索では、次の LDAP フィルターを使用します。  
   
 ```  
 (&(ObjectCategory=computer)  
@@ -49,7 +50,7 @@ Active Directory の検索は、次の LDAP フィルターを使用します。
   
 ```  
   
-Active Directory の検索では、次の属性が返されます。  
+Active Directory の検索には、次の属性が返されます。  
   
 ```  
 ( dnsHostName )( operatingSystem )( cn )  
@@ -59,28 +60,28 @@ Active Directory の検索では、次の属性が返されます。
 ## <a name="BKMK_ServerMgrStatus"></a>サーバー マネージャーのリモート サーバーの状態  
 サーバー マネージャーでは、アドレス ルーティング プロトコルを使用してリモート サーバーのユーザー補助をテストします。 プール内にある場合でも、ARP 要求に応答していないすべてのサーバーは表示されません。  
   
-ARP 応答する場合、DCOM と WMI 接続行われますサーバーにステータス情報を返すため。 RPC、DCOM、および WMI がない場合到達可能なサーバー マネージャーは、サーバーを完全に管理することはできません。  
+ARP 応答があった場合、DCOM と WMI に接続できるサーバーにステータス情報を返します。 場合 RPC、DCOM、および WMI では、到達可能なサーバー マネージャーは、サーバーを完全に管理することはできません。  
   
 ## <a name="BKMK_PSLoadModule"></a>Windows PowerShell モジュールの読み込み  
-Windows PowerShell 3.0 では、動的モジュールの読み込みを実装します。 使用して、**Import-module**コマンドレットは通常必要ありません。代わりに、単に、コマンドレット、エイリアス、または関数を呼び出すと、モジュールが読み込まれます。  
+Windows PowerShell 3.0 では、動的モジュールの読み込みを実装します。 使用して、 **Import-module** コマンドレットは通常必要なくなりました。 代わりに、単に、コマンドレット、エイリアス、または関数を呼び出すモジュールを読み込みます。  
   
-読み込まれたモジュールを表示するを使用して、**Get-module**コマンドレット。  
+読み込まれたモジュールを表示するを使用して、 **Get-module** コマンドレットです。  
   
 ```  
 Get-Module  
   
 ```  
   
-![簡略化された管理](media/Simplified-Administration-Appendix/ADDS_PSGetModule.gif)  
+![管理の簡略化](media/Simplified-Administration-Appendix/ADDS_PSGetModule.gif)  
   
-インストールされているすべてのモジュールがエクスポートされた関数とコマンドレットを参照してくださいを使用します。  
+そのエクスポートされた関数とコマンドレットにインストールされているすべてのモジュールを表示するには、次のコマンドを使用します。  
   
 ```  
 Get-Module -ListAvailable  
   
 ```  
   
-使用するためのメインのケース、**モジュールのインポート**コマンドにアクセスする必要がある場合、"AD:"、Windows PowerShell 仮想ドライブが既に読み込まれて、モジュールです。 たとえば、次のコマンドを使用します。  
+使用するためのメインのケース、**モジュールのインポート**コマンドは、アクセスする必要がある場合、"AD:"Windows PowerShell 仮想ドライブとその他に何も既に読み込まれて、モジュール。 たとえば、次のコマンドを使用します。  
   
 ```  
 import-module activedirectory  
@@ -90,22 +91,22 @@ dir
 ```  
   
 ## <a name="BKMK_Rid"></a>以前のオペレーティング システムの発行の修正プログラムを削除します。  
-参照してください[更新プログラムが検出し、Windows Server 2008 R2 を実行しているドメイン コントローラーでグローバル RID プールの過剰消費を防ぐために使用可能な](https://support.microsoft.com/kb/2618669)します。  
+参照してください [を検出し、Windows Server 2008 R2 を実行しているドメイン コント ローラーでグローバル RID プールの過剰消費を防ぐ更新プログラムがある](https://support.microsoft.com/kb/2618669)です。  
   
-## <a name="BKMK_IFM"></a>Ntdsutil.exe インストール メディアからの変更します。  
-Windows Server 2012 では、次の 2 つの追加オプションを追加、Ntdsutil.exe コマンド ライン ツールを**IFM (IFM メディアの作成)**メニュー。 これらによって、エクスポートした NTDS.DIT はデータベース ファイルです。 ディスク領域が非常に高価でできない場合は、これは、IFM を作成する時間を節約できます。  
+## <a name="BKMK_IFM"></a>Ntdsutil.exe Install from Media Changes  
+Windows Server 2012 は、Ntdsutil.exe コマンド ライン ツールを 2 つの追加のオプションを追加、 **IFM (IFM メディアの作成)** メニュー。 これらによって、エクスポートされた NTDS のオフラインでの最適化を実行せずに IFM ストアを作成できます。DIT のデータベース ファイルです。 ディスク領域が非常に高価でできない場合は、これは、IFM を作成する時間を保存します。  
   
-次の表では、次の 2 つの新しいメニュー項目について説明します。  
+次の表では、2 つの新しいメニュー項目について説明します。  
   
 |||  
 |-|-|  
 |メニュー項目|説明|  
-|完全 NoDefrag %s を作成します|完全 AD DC または %s のフォルダーに/ad LDS インスタンスの最適化を行わずに IFM メディアを作成します。|  
-|Sysvol の全 NoDefrag %s を作成します|SYSVOL と %s のフォルダーに完全 AD DC の最適化を行わずに IFM メディアを作成します。|  
+|完全 NoDefrag %s を作成します。|AD のフル DC または %s のフォルダーに/AD LDS インスタンスの最適化を行わずに IFM メディアを作成します。|  
+|Sysvol の全 NoDefrag %s を作成します。|SYSVOL と %s のフォルダーに完全 AD DC の最適化を行わずに IFM メディアを作成します。|  
   
-![簡略化された管理](media/Simplified-Administration-Appendix/ADDS_PSIFM.png)  
+![管理の簡略化](media/Simplified-Administration-Appendix/ADDS_PSIFM.png)  
   
-![簡略化された管理](media/Simplified-Administration-Appendix/ADDS_PSIFMComplete.gif)  
+![管理の簡略化](media/Simplified-Administration-Appendix/ADDS_PSIFMComplete.gif)  
   
 
 

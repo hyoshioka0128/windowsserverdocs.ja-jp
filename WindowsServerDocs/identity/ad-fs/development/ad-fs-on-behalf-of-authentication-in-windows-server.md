@@ -1,7 +1,7 @@
 ---
 ms.assetid: 5052f13c-ff35-471d-bff5-00b5dd24f8aa
-title: "On-Behalf-Of (OBO) AD FS 2016 で OAuth を使用してを使用して、多層アプリケーションを構築します。"
-description: 
+title: On-Behalf-Of (OBO) の AD FS 2016 で OAuth を使用してを使用して、多層アプリケーションを構築します。
+description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,120 +9,121 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 8940cde2b78ce3ead499263e6fba0fbe28aae695
-ms.sourcegitcommit: c16a2bf1b8a48ff267e71ff29f18b5e5cda003e8
+ms.openlocfilehash: 33d0bfa4139f16c90f3d79f5b61188b4d311538b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59858943"
 ---
-# <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016"></a>On-Behalf-Of (OBO) AD FS 2016 で OAuth を使用してを使用して、多層アプリケーションを構築します。
+# <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016"></a>On-Behalf-Of (OBO) の AD FS 2016 で OAuth を使用してを使用して、多層アプリケーションを構築します。
 
->Windows Server 2016 の適用対象:
+>適用先:Windows Server 2016
 
-このチュートリアルでは、上のため (OBO) 認証では、Windows Server 2016 TP5 AD FS を使用して実装するための命令を提供します。  O についてお読みください OBO 認証[開発者向けの AD FS のシナリオ](../../ad-fs/overview/AD-FS-Scenarios-for-Developers.md)
+このチュートリアルではの-(OBO) の認証のため Windows Server 2016 TP5 で AD FS を使用して実装するための命令を提供します。 詳細についてお読みください OBO 認証は[開発者向けの AD FS のシナリオ](../../ad-fs/overview/AD-FS-Scenarios-for-Developers.md)
 
->警告: ここで構築する例は、教育用にのみです。 次に挙げる手順では、モデルの必須の要素を公開する最も簡単な最小限の実装のためです。 この例は、エラー処理のすべての側面を含まない場合がありますおよびその他の関連機能 OBO 認証が成功したの取得にのみ重点を置いています。
+>警告:ここで作成できる例は、教育目的でのみです。 これらの手順では、モデルの必須の要素を公開する最も単純で最低限の実装です。 例では、エラー処理のすべての側面を含まない場合があり、その他の関連機能と OBO 認証の成功の取得にのみ焦点を当てています。
 
 ## <a name="overview"></a>概要
 
-このサンプルでは作成します、中間層 Web サービスは、クライアントにアクセスして、Web サービスが認証されたアクセス トークンを取得するクライアントに代わって動作し、認証フロー。
+このサンプルでから作成していきます、認証フローを中間層の Web サービスにアクセスするクライアントと web サービスへのアクセス トークンを取得する認証済みのクライアントの代理として動作します。
 
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO28.PNG)
+![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO28.png)
 
-サンプルを反映した認証フローを次に示します
-1. クライアントが AD FS 認証の終点に認証され、認証コードを要求します。
-2. エンドポイントの authorization がクライアントに認証コードを返します
-3. クライアントが認証コードを使用して、WebAPI として中間層 Web サービスのアクセス トークンの要求に AD FS トークン エンドポイントに表示
-4. AD FS では、中間層 Web サービスへのアクセス トークンを返します。 中間層サービスは、追加の機能のバックエンド WebAPI へのアクセスに必要があります。
+認証フローが達成できる、サンプルを次に示します
+1. クライアントが AD FS 承認エンドポイントに認証され、承認コード要求
+2. 承認エンドポイントは、クライアントを認証コードを返します。
+3. クライアントが認証コードを使用し、WebAPI としての中間層 Web サービスのアクセス トークンの要求に AD FS のトークン エンドポイントに表示します
+4. AD FS では、中間層 Web サービスにアクセス トークンを返します。 中間層サービスを追加の機能のバックエンド web Api へのアクセスを必要があります。
 5. クライアントは、中間層サービスを使用するのにアクセス トークンを使用します。
-6. 中間層サービスは、AD FS トークン エンドポイントにアクセス トークンを提供し、要求アクセス トークンのバックエンド WebAPI 上のための認証されたユーザー
-7. AD FS は、中間層サービス actiing をバックエンド WebAPI のアクセス トークンをクライアントとして返します
-8. 中間層サービスは手順 7 での AD FS によって提供されたアクセス トークンを使用してクライアントとして WebAPI バックエンドにアクセスし、必要な機能を実行するには
+6. 中間層サービスは、AD FS のトークン エンドポイントにアクセス トークンを提供し、要求へのアクセス トークン - on-behalf-of のバックエンド web Api の認証されたユーザー
+7. AD FS は、クライアントとして中間層サービス actiing にバックエンド web Api のアクセス トークンを返します
+8. 中間層サービスでは、手順 7. で AD FS によって提供されるアクセス トークンを使用して、クライアントとして WebAPI バックエンドへのアクセスを必要な機能を実行します。
 
 ## <a name="sample-structure"></a>サンプルの構造
 
-サンプルを次の 3 つのモジュールを構成します。
+3 つのモジュールのサンプルを構成します。
 
 
 モジュール | 説明
 -------|------------
 ToDoClient | ユーザーが対話するネイティブ クライアント
-ToDoService | 中央層 Web バックエンド WebAPI 用のクライアントとして動作する API
-WebAPIOBO | バックエンド Web ToDoService によってユーザーが、ToDoItem を追加するときに必要な操作を実行するために使用する api
+ToDoService | 中間層 web API バックエンド web Api 用のクライアントとして機能します。
+WebAPIOBO | バックエンド web api ToDoService によってユーザーは、ToDoItem を追加するときに必要な操作を実行するために使用します。
 
 
 
 
-## <a name="setting-up-the-development-box"></a>開発のボックスを設定します。
+## <a name="setting-up-the-development-box"></a>開発ボックスの設定
 
-このチュートリアルでは、Visual Studio 2015 を使用します。 頻度の高いプロジェクトが Active Directory 認証ライブラリ (ADAL) を使用します。 お読みください ADAL について[Active Directory 認証ライブラリ .NET](https://msdn.microsoft.com/library/azure/mt417579.aspx)
+このチュートリアルでは、Visual Studio 2015 を使用します。 プロジェクトは、頻度の高い Active Directory Authentication Library (ADAL) を使用します。 ADAL をお読みくださいについて[Active Directory 認証ライブラリ .NET](https://msdn.microsoft.com/library/azure/mt417579.aspx)
 
-このサンプルでは、SQL LocalDB v11.0 も使用します。 サンプルで作業する前に SQL LocalDB をインストールします。
+このサンプルでは、SQL LocalDB v11.0 も使用します。 サンプルを操作する前に、SQL LocalDB をインストールします。
 
 ## <a name="setting-up-the-environment"></a>環境のセットアップ
-おについては、基本設定を作成します。
+私たちの基本的なセットアップで使用されます。
 
-1. **DC**: AD FS をホストするドメインのドメイン コントローラー
-2. **AD FS サーバー**: ドメインの AD FS サーバー
-3. **開発マシン**: マシンお Visual Studio がインストールされている、サンプルを開発します。
+1. **DC**:AD FS をホストするドメインのドメイン コント ローラー
+2. **AD FS サーバー**:ドメインの AD FS サーバー
+3. **開発用コンピューター**:マシンがある Visual Studio がインストールされているし、サンプルを開発します。
 
-2 つだけのマシンをする場合は、使用、できます。 DC/ADFS と他のサンプルを開発するための 1 つです。
+2 つのマシンをする場合は、使用できます。 DC/ADFS と他のサンプルを開発するための 1 つです。
 
-ドメイン コントローラーと AD FS をセットアップする方法は、この記事の範囲外です。 追加の展開をご覧ください。
+ドメイン コント ローラーと AD FS をセットアップする方法は、この記事の範囲外です。 追加の配置情報を参照してください。
 
 - [AD DS の展開](../../ad-ds/deploy/AD-DS-Deployment.md)
 - [AD FS の展開](../AD-FS-Deployment.md)
 
-このサンプルは、Azure Vittorio Bertocci によって作成されたに対して既存の OBO サンプルに基づいており、利用可能な[ここ](https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof)します。 開発用コンピューターで、プロジェクトの複製操作を開始するサンプルのコピーを作成するための手順に従います。
+このサンプルは、Vittorio Bertocci によって作成された Azure に対する既存の OBO サンプルに基づいており、使用可能な[ここ](https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof)します。 開発用コンピューターにプロジェクトを複製して、操作を開始するサンプルのコピーを作成する手順に従います。
 
-## <a name="clone-or-download-this-repository"></a>複製またはダウンロードこのリポジトリ
+## <a name="clone-or-download-this-repository"></a>複製するか、このリポジトリをダウンロード
 
 シェルまたはコマンド ライン: から
 
     git clone https://github.com/Azure-Samples/active-directory-dotnet-webapi-onbehalfof.git
 
-## <a name="modifying-the-sample"></a>サンプルを変更します。
+## <a name="modifying-the-sample"></a>このサンプルを変更します。
 
-ソリューション WebAPI-OnBehalfOf-DotNet.sln を開くとすぐにわかりますソリューション - に 2 つのプロジェクトがあること
+WebAPI-OnBehalfOf-DotNet.sln ソリューションを開くとすぐに、ソリューションに 2 つのプロジェクトがあることがわかります
 
-* **ToDoListClient**: これは、ユーザーは対話 OpenID クライアントとして動作
-* **ToDoListService**: これは、中間層 WebServer アプリである/service を認証されたユーザーに別のバックエンド WebAPI OBO と対話は
+* **ToDoListClient**:これは、ユーザーが対話する OpenID クライアントとして機能します。
+* **ToDoListService**:中間層の web サーバー アプリケーション/サービスがこれは、認証されたユーザーに別のバックエンド WebAPI OBO で対話が
 
-ご覧のように、おは中間層 ToDoListService によってアクセスされるリソースとして機能し、後でもう 1 つのプロジェクトを追加する必要があります。
+ご覧のように、中間層 ToDoListService によってアクセスされるリソースとして機能するを後でもう 1 つのプロジェクトに追加する必要になります。
 
-### <a name="configuring-ad-fs-for-the-client-and-webserver-app"></a>クライアントと Web サーバー アプリの AD FS を構成します。
+### <a name="configuring-ad-fs-for-the-client-and-webserver-app"></a>クライアントと web サーバー アプリの AD FS を構成します。
 
-サンプルの現在のフォーム認証が Azure AD に対して実行するように構成します。 認証メカニズムを変更して、オンプレミス展開されている AD FS に向けて、ダイレクトします。 これを行うためには、サンプルで、クライアントを認識するように AD FS と Web サーバーのアプリがあるを構成する必要があります。
+サンプルの現在のフォームでは、認証は、Azure AD に対して構成されます。 認証メカニズムを変更して、オンプレミスでデプロイ、AD FS に直接します。 そのために、サンプルのクライアントを認識する AD FS と web サーバー アプリがあるを構成する必要があります。
 
 **アプリケーション グループを作成します。**
 
-[AD FS 管理] mmc スナップインを開き、新しいアプリケーション グループを追加します。 WebAPI-ネイティブ-アプリケーション テンプレートを選択します。
+AD FS の管理 MMC を開き、新しいアプリケーション グループを追加します。 ネイティブのアプリケーションの web Api テンプレートを選択します。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO2.PNG)
 
-[次へ] をクリックして、クライアント アプリに関する情報を提供するためのページに表示されます。 クライアントの AD FS でのアプリに適切な名前を提供します。 クライアントの識別子をコピーし、これは、visual studio でアプリケーションの構成に必要がありますに応じて後でアクセスできる場所に保存します。
+[次へ] をクリックして、クライアント アプリに関する情報を提供するページが表示されます。 適切な名前をクライアントの AD FS でのアプリ クライアント識別子をコピーし、これは、visual studio でアプリケーションの構成で必要になります、後で使用する場所に保存します。
 
->注: URI にリダイレクトすることができます、任意の URI 実際に使用されていないネイティブ クライアントが発生した場合
+>注:実際に使用されていないネイティブ クライアントが発生した場合に、リダイレクト URI は、任意の URI を指定できます。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO11.PNG)
 
-[次へ] をクリックし、WebAPI に関する情報を提供するためのページに表示されます。 WebAPI の AD FS のエントリに対して適切な名前を付けるし、ToDoListService の Visual Studio で「URI としてリダイレクト URI を入力してください
+[次へ] をクリックして、WebAPI についての情報を提供するページが表示されます。 WebAPI の AD FS のエントリの適切な名前を入力し、ToDoListService 用 Visual Studio で参照する URI としてリダイレクト URI を入力します
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO16.PNG)
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO18.PNG)
 
-[次へ] をクリックし、アクセス制御のポリシーの選択] ページが表示されます。 「許可 everyone」[ポリシー] セクションに表示されることを確認します。
+次へ をクリックして、アクセス制御のポリシーの選択 ページが表示されます。 「許可するすべてのユーザー」ポリシー セクションで表示を確認します。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO1.PNG)
 
-[次へ] をクリックし、アプリケーションのアクセス許可の構成] ページに表示されます。 このページでは、(既定で選択) openid や user_impersonation として、許可されているスコープを選択します。 スコープ 'user_impersonation' ができるように正常に AD FS からでのためのアクセス トークンを要求する必要があります。
+次へ をクリックして、アプリケーションのアクセス許可の構成 ページに表示されます。 このページでは、(既定でオン) openid と user_impersonation として許可されているスコープを選択します。 "User_impersonation"スコープでは、正常に AD FS からの on-behalf-of アクセス トークンを要求したりする必要があります。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO12.PNG)
 
-[次へ] をクリックは、[概要] ページが表示されます。 ウィザードの残りの部分を通過し、構成を完了します。
+次へ をクリックは、概要 ページが表示されます。 ウィザードの残りの部分と構成を完了します。
 
-上のための認証を有効にするためには、AD FS に、クライアントにスコープ user_impersonation でアクセス トークンが返されることを確認する必要があります。 次の 3 つのカスタム規則を含める ToDoListServiceWebApi の信頼性情報の発行を変更します。
+On-behalf-of 認証を有効にするためには、AD FS がクライアントにスコープ user_impersonation でアクセス トークンを返すことを確認する必要があります。 次の 3 つのカスタム規則を含める ToDoListServiceWebApi の要求の発行を変更します。
 
     @RuleName = "All claims"
     c:[]
@@ -136,21 +137,21 @@ WebAPIOBO | バックエンド Web ToDoService によってユーザーが、ToD
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO10.PNG)
 
-**アプリケーション グループ内のクライアントとして ToDoListService を追加する方法**
+**アプリケーション グループ内のクライアントとして ToDoListService を追加します。**
 
-この段階では、AD fs とリソースとしてだけでなく、クライアントとして動作する Web サーバー アプリの追加エントリを作成する必要があります。 作成したアプリケーション グループを開き、[アプリケーションの追加] をクリックします。
+この段階では、クライアントとは、リソースとしてだけでなく動作する web サーバー アプリ用に AD FS の追加エントリを作成する必要があります。 作成したアプリケーション グループを開き、[アプリケーションの追加] をクリックします。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO15.PNG)
 
-"MySampleGroup に新しいアプリケーションの追加] ページが表示されます。 そのページで、スタンドアロン アプリケーションとして「サーバーのアプリケーションまたは Web サイト」を選択します
+"MySampleGroup に新しいアプリケーションの追加 ページが表示されます。 そのページで、スタンドアロン アプリケーションとして「サーバーのアプリケーションまたは web サイト」を選択します。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO19.PNG)
 
-[次へ] をアプリケーションの詳細を提供するページが表示されます。 [名前] セクションで構成のエントリの名前を適切なを指定します。 クライアント識別子、ToDoListServiceWebAPI の識別子と同じであることを確認します。
+[次へ] をクリックして、アプリケーションの詳細を提供するページが表示されます。 [名前] セクションの構成エントリの適切な名前を提供します。 クライアント識別子が、ToDoListServiceWebAPI の識別子と同じであることを確認します。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO20.PNG)
 
-[次へ] をクリックしするアプリケーションの資格情報の構成] ページが表示されます。 "共有シークレットを生成する] をクリックします。 自動的に生成されたシークレットが表示されます。 するため、必要な visual studio で、ToDoListService 設定中には、いくつかの場所にシークレットをコピーします。
+[次へ] をクリックして、アプリケーションの資格情報を構成するページが表示されます。 「共有シークレットを生成する」をクリックします。 自動的に生成されたシークレットが表示されます。 Visual studio で、ToDoListService 構成中には、必要これには、いくつかの場所にシークレットをコピーします。
 
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO17.PNG)
@@ -161,17 +162,17 @@ WebAPIOBO | バックエンド Web ToDoService によってユーザーが、ToD
 
 #### <a name="modify-the-application-config"></a>アプリケーション構成を変更します。
 
-[移動先には、ToDoListClient ソリューションのプロジェクトに WebAPI-な-DotNet ができました。 App.config ファイルを開き、次の変更
+移動先では、WebAPI OnBehalfOf-DotNet ソリューションで、ToDoListClient プロジェクトしています。 App.config ファイルを開き、次の変更
 
-* コメント ida: テナント キー エントリ
-* Ida: RedirectURI が AD FS で、MySampleGroup_ClientApplication を構成するときに提供されている任意の URI を入力します。
-* Ida: ClientID キー ID の識別子、MySampleGroup_ClientApplication の構成中に AD FS がなったクライアントを提供します。
-* AD FS で、ToDoListServiceWebApi を構成するときに指定した ida: ToDoListResourceID リソース ID を提供するため
+* コメント ida: テナント キーのエントリ
+* Ida: RedirectURI には、AD FS で、MySampleGroup_ClientApplication を構成するときに指定した任意の URI が」と入力します。
+* Ida: ClientID キーの場合、クライアント ID です。 AD FS は、MySampleGroup_ClientApplication を構成するときに指定を提供します。
+* AD FS で、ToDoListServiceWebApi を構成するときに指定した ida: ToDoListResourceID の場合は、リソース ID
 * コメント キー ida: AADInstance
-* Ida: ToDoListBaseAddress、ToDoListServiceWebApi のリソースの ID を入力します。 これは、ToDoList WebAPI を呼び出すときに使用されます。
-* Ida: 機関キーを追加し、AD FS の URI と値を提供します。
+* Ida: ToDoListBaseAddress、ToDoListServiceWebApi のリソース ID を入力します。 これは、ToDoList web Api の呼び出し中に使用されます。
+* キーの ida: 機関を追加し、AD FS の URI として値を指定します。
 
-**AppSettings** App.Config は次のように確認する必要があります。
+**AppSettings** App.Config では次のように検索する必要があります。
 
     <appSettings>
     <!--<add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.onmicrosoft.com]" />-->
@@ -187,16 +188,16 @@ WebAPIOBO | バックエンド Web ToDoService によってユーザーが、ToD
 
 **MainWindow.xaml.cs**
 
-アプリケーション構成からテナント情報を読み取って、行のコメント
+アプリケーション構成からテナント情報を読み取る行をコメントします。
 
     //private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];
     //private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];
 
-権限を文字列の値を変更します。
+変更する権限を文字列の値
 
     private static string authority = ConfigurationManager.AppSettings["ida:Authority"];
 
-ToDoListResourceId と ToDoListBaseAddress の正しい値を読み取るためのコードを変更します。
+ToDoListResourceId と ToDoListBaseAddress の正しい値を読み取るコードを変更します。
 
     private static string todoListResourceId = ConfigurationManager.AppSettings["ida:TodoListResourceId"];
     private static string todoListBaseAddress = ConfigurationManager.AppSettings["ida:TodoListBaseAddress"];
@@ -205,31 +206,31 @@ ToDoListResourceId と ToDoListBaseAddress の正しい値を読み取るため�
 
     authContext = new AuthenticationContext(authority, false);
 
-### <a name="adding-the-backend-resource"></a>バックエンドのリソースを追加します。
+### <a name="adding-the-backend-resource"></a>バックエンド リソースを追加します。
 
-上のためのフローを完了するためには、上のため、ToDoListService にアクセスするバックエンド リソースを作成する必要があります、認証されたユーザー。 バックエンドのリソースの選択は、要件に従った異なりますが、このサンプルの目的は、基本的な WebAPI を作成することができます。
+On-behalf-of フローを完了するには - on-behalf-of ToDoListService がアクセスするためのバックエンド リソースを作成する必要があります。 認証されたユーザー。 バックエンド リソースの選択、必要に応じて変わります。 ただしこのサンプルの目的は、基本的な web Api を作成することができます。
 
-* ソリューション エクスプ ローラーでソリューション ' WebAPI な DotNet' を右クリックし、[追加] の新しいプロジェクト
+* ソリューション エクスプ ローラーでソリューション ' WebAPI OnBehalfOf DotNet' を右クリックし、[追加] 新しいプロジェクト
 * ASP.NET Web アプリケーション テンプレートを選択します。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO4.PNG)
 
-* '変更認証' のプロンプトをクリックして、[次へ] の
-* 作業学校のアカウントを選択し、[' オンプレミス ' 右ドロップ ダウン リスト
-* AD FS 展開の federationmetadata.xml パスを入力し、アプリの URI を入力して (現時点では、任意の URI を入力して、後で変更されます)、プロジェクトをソリューションに追加するのには、[OK] をクリックします。
+* '認証の変更' で次のプロンプトのクリックで
+* '職場と学校のアカウント を選択し、右のドロップダウン リストで「オンプレミス」を選択します。
+* AD FS の展開に federationmetadata.xml パスを入力して、アプリの URI を入力して (ここでは、任意の URI を提供および後で変更されます)、プロジェクトをソリューションに追加するのには、[ok] をクリックします。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO9.PNG)
 
-* 右クリック コントローラーで新しいプロジェクトの作成 [ソリューション エクスプ ローラーでします。 コントローラー]-> [追加] を選択
-* テンプレートの選択で、"コントローラーの空の Web API 2"を選択し、[OK] をクリックします。
+* 右は、作成した新しいプロジェクトの下の ソリューション エクスプ ローラーで、コント ローラーをクリックします。 コント ローラー-> 追加 を選択
+* テンプレートの選択で、'Web API 2 コント ローラー - 空' を選択し、[ok] をクリックします。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO3.PNG)
 
-* 適切なコントローラーの名前を付ける
+* 適切なコント ローラーの名前を付けます
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO13.PNG)
 
-* コントローラーで、次のコードを追加します。
+* コント ローラーで、次のコードを追加します。
 
 
         using System;
@@ -249,21 +250,21 @@ ToDoListResourceId と ToDoListBaseAddress の正しい値を読み取るため�
             }
         }
 
-このコードは単に返す文字列 WebAPI WebAPIOBO の Get 要求は、すべてのユーザーとき
+WebAPI WebAPIOBO の Get 要求は、すべてのユーザーとは、このコードは、文字列を戻ります。
 
-### <a name="adding-the-new-backend-webapi-to-ad-fs"></a>AD FS に、新しいバックエンド WebAPI を追加します。
+### <a name="adding-the-new-backend-webapi-to-ad-fs"></a>AD FS に、新しいバックエンド web Api を追加します。
 
-MySampleGroup アプリケーション グループを開きます。 追加のアプリケーションや Web API のテンプレートの選択] をクリックし、[次へ] をクリックします。
+MySampleGroup アプリケーション グループを開きます。 追加のアプリケーションと Web API テンプレートの選択 をクリックし、次へ をクリックします。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO6.PNG)
 
-[Web API の構成] ページで、WebAPI エントリと識別子の適切な名前を提供します。 識別子は、visual studio (BackendWebAPIAdfsAdd を行ったに似ています) で WebAPIOBO プロジェクトから SSL URL の値をする必要があります。
+Web API の構成 ページでは、WebAPI エントリと、識別子の適切な名前を指定します。 識別子 (BackendWebAPIAdfsAdd に対して実行したものに類似) が visual studio で SSL URL WebAPIOBO プロジェクトからの値があります。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO8.PNG)
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO7.PNG)
 
-ウィザードの残りの部分を同じとして継続 ToDoListService WebAPI お構成されている場合。 最後に、アプリケーション グループは次のようになります必要があります。
+ウィザードの残りの部分で同じとして継続 ToDoListService web Api を構成するときにします。 最後に、アプリケーション グループは以下のようになる必要があります。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO5.PNG)
 
@@ -275,19 +276,19 @@ MySampleGroup アプリケーション グループを開きます。 追加の�
 * Web.config ファイルを開く
 * 次のキーを変更します。
 
-| キー | 値 |
+| Key | 値 |
 |:-----|:-------|
-|ida: 対象ユーザー| ように指定された AD fs ToDoListService WebAPI を構成するときに https://localhost:44321/ ToDoListService ID|
-|ida: ClientID| ように指定された AD fs ToDoListService WebAPI を構成するときに https://localhost:44321/ ToDoListService ID </br>**Ida: 対象者と ida: ClientID が互いに一致することが非常に重要します。**|
-|ida: ClientSecret| これは、AD FS で ToDoListService クライアントを構成していたときに生成された AD FS シークレット|
-|ida: ADFSMetadata| これは、AD FS のメタデータ、https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml などの URL|
-|ida: OBOWebAPIBase| これは、アドレスが、基本 https://localhost:44300 などのバックエンド API を呼び出すを使用します。|
-|ida: 機関| これは、例 https://fs.anandmsft.com/adfs/、AD FS サービスの URL|
+|ida:Audience| ToDoListService WebAPI を構成するときに AD FS に渡されると ToDoListService の ID https://localhost:44321/|
+|ida: ClientID| ToDoListService WebAPI を構成するときに AD FS に渡されると ToDoListService の ID https://localhost:44321/ </br>**Ida: 対象ユーザーと ida: ClientID が互いに一致することが重要です。**|
+|ida:ClientSecret| これは AD FS で、ToDoListService クライアントを構成するときに AD FS が生成したシークレットです。|
+|ida: ADFSMetadata| これは、AD FS のメタデータの URL の例です。 https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml|
+|ida: OBOWebAPIBase| これは、基本のアドレスなどをバックエンド API を呼び出すために使用します。 https://localhost:44300|
+|ida 機関:| これは、AD FS サービスの URL の例 https://fs.anandmsft.com/adfs/|
 
 
-その他のすべての ida: XXXXXXX キー、**appsettings**ノードをコメント アウトまたは削除されたことができます
+キーを他のすべての ida: XXXXXXX、 **appsettings**ノードをコメント アウトまたは削除できます
 
-#### <a name="change-authentication-from-azure-ad-to-ad-fs"></a>Azure AD に AD FS からの認証を変更します。
+#### <a name="change-authentication-from-azure-ad-to-ad-fs"></a>Azure AD への AD FS からの認証の変更
 
 * Startup.Auth.cs ファイルを開く
 * 次のコードを削除します。
@@ -300,7 +301,7 @@ MySampleGroup アプリケーション グループを開きます。 追加の�
                 TokenValidationParameters = new TokenValidationParameters{ SaveSigninToken = true }
             });
 
-で
+を、次のように置き換えます。
 
         app.UseActiveDirectoryFederationServicesBearerAuthentication(
             new ActiveDirectoryFederationServicesBearerAuthenticationOptions
@@ -313,9 +314,9 @@ MySampleGroup アプリケーション グループを開きます。 追加の�
                 }
             });
 
-#### <a name="modifying-the-todolistcontroller"></a>ToDoListController を変更します。
+#### <a name="modifying-the-todolistcontroller"></a>変更、ToDoListController
 
-System.Web への参照を追加します。拡張機能です。 次のコードを置き換えることにより、クラスのメンバーを変更します。
+System.Web.Extensions への参照を追加します。 次のコードを置き換えることにより、クラスのメンバーを変更します。
 
     //
     // The Client ID is used by the application to uniquely identify itself to Azure AD.
@@ -337,7 +338,7 @@ System.Web への参照を追加します。拡張機能です。 次のコー�
     private static string graphUserUrl = ConfigurationManager.AppSettings["ida:GraphUserUrl"];
     private const string TenantIdClaimType = "https://schemas.microsoft.com/identity/claims/tenantid";
 
-で
+を、次のように置き換えます。
 
     //
     // The Client ID is used by the application to uniquely identify itself to Azure AD.
@@ -350,13 +351,13 @@ System.Web への参照を追加します。拡張機能です。 次のコー�
     // Base address of the WebAPI
     private static string OBOWebAPIBase = ConfigurationManager.AppSettings["ida:OBOWebAPIBase"];
 
-**名で使用して信頼性情報を変更します。**
+**名に使用される、要求を変更します。**
 
-Nmae の要求を発行しました AD FS からが NameIdentifier 要求を発行していないしました。 サンプルでは、ToDo 項目に一意にキーに NameIdentifier を使用します。 わかりやすくするため、コードで名要求の NameIdentifier を安全に削除できます。 検索し、NameIdentifier のすべての出現を名で置き換えてください。
+AD FS から Nmae 要求を発行しましたが、NameIdentifier 要求を発行していないこと。 このサンプルでは、NameIdentifier を使用して、ToDo 項目のキーを一意にします。 わかりやすくするため、コードで名前クレームに NameIdentifier を安全に削除できます。 検索し、NameIdentifier のすべての出現箇所を名前に置き換えます。
 
 **Post および CallGraphAPIOnBehalfOfUser() を変更します。**
 
-コピーおよび ToDoListController.cs で次のコードを貼り付けます Post および CallGraphAPIOnBehalfOfUser コードに置き換えます
+コピーし ToDoListController.cs で次のコードを貼り付けるし、Post および CallGraphAPIOnBehalfOfUser のコードに置き換えます
 
     // POST api/todolist
     public async Task Post(TodoItem todo)
@@ -421,7 +422,7 @@ Nmae の要求を発行しました AD FS からが NameIdentifier 要求を発�
             retry = false;
             try
             {
-                result = authContext.AcquireToken(OBOWebAPIBase, clientCred, userAssertion);
+                result = await authContext.AcquireTokenAsync(...);
                 accessToken = result.AccessToken;
             }
             catch (AdalException ex)
@@ -465,36 +466,36 @@ Nmae の要求を発行しました AD FS からが NameIdentifier 要求を発�
         return (null);
     }
 
-## <a name="running-the-solution"></a>ソリューションを実行しています。
+## <a name="running-the-solution"></a>ソリューションの実行
 
 
-既定で visual studio を実行するデバッグをヒットしたときに、1 つのプロジェクトを実行するように構成します。
+既定では、visual studio はデバッグを実行するに達した場合に、1 つのプロジェクトを実行する構成します。
 
-* ソリューション、[プロパティ] を右クリックします。
-* [プロパティ] ページで複数のスタートアップ プロジェクトを選択し、次の 3 つのすべてのエントリを開始するアクションを変更します。
+* ソリューションと [プロパティ] を右クリックします。
+* [プロパティ] ページで複数のスタートアップ プロジェクトを選択し、3 つすべてのエントリを起動するアクションを変更します。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO14.PNG)
 
-F5 キーを押すし、ソリューションを実行します。
+F5 キーを押すし、ソリューションの実行
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO24.PNG)
 
-[サインイン] ボタンをクリックします。 AD FS を使用してサインインするように求められます
+サインイン ボタンをクリックします。 AD FS を使用してサインインを求められます
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO25.PNG)
 
-後でサインイン、ToDo 項目を一覧に追加します。 バック グラウンドしようとしてこの WebAPIOBO Web API への Post 操作は、さらに ToDoListService に Post 操作を実行します。
+後でサインイン、一覧で、ToDo 項目を追加します。 バック グラウンドでの ToDoListService WebAPIOBO web API へのポストをさらに実行する Post 操作を行うにはでしょう。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO26.PNG)
 
-正常な操作で、項目がバックエンド OBO 認証フローを使用してアクセスされた Web API から、その他のメッセージの一覧に追加されたことが表示されます。
+成功した操作では、OBO 承認のフローを使用してアクセスされた Web API のバックエンドから、項目が追加のメッセージを使用してリストに追加されたことがわかります。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
-Fiddler で詳細なトレースを表示できます。 Fiddler を起動し、HTTPS 復号化を有効にします。 /Adfs/oautincludes エンドポイントに 2 つの要求を行うことを確認できます。
-最初の操作でトークン エンドポイントにアクセス コードを提示して https://localhost:44321/ のアクセス トークンを取得![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
+Fiddler の詳細なトレースを確認できます。 Fiddler を起動し、HTTPS の復号化を有効にします。 /Adfs/oautincludes エンドポイントに 2 つの要求を行ったことを確認できます。
+最初の相互作用の トークン エンドポイントへのアクセス コードし、アクセスのトークンを取得しました https://localhost:44321/ ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
 
-トークンのエンドポイントと 2 つ目の相互作用であることを確認できます**requested_token_use**として設定**on_behalf_of**上のためのトークンを取得するアサーションとして https://localhost:44321/ すなわち、中間層 Web サービスの取得したアクセス トークンを使用するとします。
+トークン エンドポイントに 2 つ目の操作であることを確認できます**requested_token_use**として設定**on_behalf_of** つまり、中間層のwebサービスの取得したアクセストークンを使用していることと https://localhost:44321/ - on-behalf-of トークンを取得するアサーションとして。
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
 ## <a name="next-steps"></a>次の手順

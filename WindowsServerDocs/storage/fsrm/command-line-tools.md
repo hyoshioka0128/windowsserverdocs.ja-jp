@@ -1,6 +1,6 @@
 ---
-title: "ファイル サーバー リソース マネージャー コマンドライン ツール"
-description: "この記事では Windows Server 2016 のコマンド ライン ツールについて説明します。"
+title: ファイル サーバー リソース マネージャー コマンドライン ツール
+description: この記事では Windows Server 2016 のコマンド ライン ツールについて説明します。
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7d36a30ca65ae88afdc11e516968c6f9900a5ae6
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 9b31c133b0ee4382b5b9aeded9b3852c7230d2d8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59858443"
 ---
 # <a name="file-server-resource-manager-command-line-tools"></a>ファイル サーバー リソース マネージャー コマンドライン ツール
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 ファイル サーバー リソース マネージャーによって、[FileServerResourceManager](https://technet.microsoft.com/itpro/powershell/windows/fileserverresourcemanager/fileserverresourcemanager) PowerShell コマンドレットと共に、次のコマンドライン ツールがインストールされます。
 
@@ -26,13 +27,13 @@ ms.lasthandoff: 10/17/2017
 
 これらのツールを使用して、ローカル コンピューターやリモート コンピューター上の記憶域リソースを管理できます。 これらのコマンド ライン ツールの詳細については、次の情報を参照してください。
 
--   **Dirquota**: <http://go.microsoft.com/fwlink/?LinkId=92741>
--   **Filescrn**: <http://go.microsoft.com/fwlink/?LinkId=92742>
--   **Storrept**: <http://go.microsoft.com/fwlink/?LinkId=92743>
+-   **Dirquota**: <https://go.microsoft.com/fwlink/?LinkId=92741>
+-   **Filescrn**: <https://go.microsoft.com/fwlink/?LinkId=92742>
+-   **Storrept**: <https://go.microsoft.com/fwlink/?LinkId=92743>
 
 
 > [!Note]
-> 任意のコマンドについてコマンド構文と利用可能なパラメーターを表示するには、コマンドに <strong>/?</strong>  パラメーターを指定して実行します。
+> 任意のコマンドについてコマンド構文と利用可能なパラメーターを表示するには、コマンドに <strong>/?</strong> パラメーターを指定して実行します。
 
 
 ## <a name="remote-management-using-the-command-line-tools"></a>コマンド ライン ツールを使用したリモート管理
@@ -51,11 +52,11 @@ ms.lasthandoff: 10/17/2017
 コマンド ライン ツールを使用してリモート リソースを管理するには
 
 -   ローカル コンピューターとリモート コンピューターの **Administrators** グループのメンバーであるドメイン アカウントを使用して、ログオンする必要があります。
--   コマンド ライン ツールは、管理者特権の [コマンド プロンプト] ウィンドウから事項する必要があります。 コマンド プロンプト ウィンドウを管理者特権で開くには、**[スタート]**、**[すべてのプログラム]**、**[アクセサリ]** の順にクリックし、**[コマンド プロンプト]** を右クリックして、**[管理者として実行]** をクリックします。
+-   コマンド ライン ツールは、管理者特権の [コマンド プロンプト] ウィンドウから事項する必要があります。 管理者特権のコマンド プロンプト ウィンドウを開くには、次のようにクリックします**開始**、 をポイント**すべてのプログラム**、 をクリック**アクセサリ**、を右クリック**コマンド プロンプト**。、 をクリックし、**管理者として実行**します。
 -   リモート コンピューターで Windows Server が実行され、ファイル サーバー リソース マネージャーがインストールされている必要があります。
 -   リモート コンピューターで、**[リモート ファイル サーバー リソース マネージャー管理]** 例外を有効にする必要があります。 この例外は、[コントロール パネル] の [Windows ファイアウォール] で有効にします。
 
 
 ## <a name="see-also"></a>関連項目
 
--   [リモートの記憶域リソースを管理する](managing-remote-storage-resources.md)
+-   [リモート記憶域リソースを管理します。](managing-remote-storage-resources.md)

@@ -1,6 +1,6 @@
 ---
-title: Vssadmin] ボックスの一覧の影
-description: コマンドをシャドウ vssadmin リストの説明しています。
+title: Vssadmin 一覧の影
+description: Vssadmin リストの説明では、コマンドをシャドウします。
 ms.prod: windows-server-threshold
 ms.topic: article
 author: JasonGerend
@@ -9,17 +9,17 @@ ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 07da36da1473563c3236a4fafc3ceae06259981a
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2082443"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59861153"
 ---
-# <a name="vssadmin-list-shadows"></a>Vssadmin] ボックスの一覧の影
+# <a name="vssadmin-list-shadows"></a>Vssadmin 一覧の影
 
->対象: Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+>適用対象:Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-指定したボリュームのすべての既存シャドウ コピーを一覧表示します。 パラメーターを指定せずには、このコマンドを使用する場合は、**影コピーの設定**で指定された順序でコンピューターのすべてのボリューム シャドウ コピーが表示されます。
+指定されたボリュームの既存のシャドウ コピーをすべて一覧表示します。 指定された順序でコンピューターのすべてのボリューム シャドウ コピーが表示されますパラメーターを指定せずには、このコマンドを使用する場合**シャドウ コピー セット**します。
 
 ## <a name="syntax"></a>構文
 
@@ -31,10 +31,10 @@ vssadmin list shadows [/for=<ForVolumeSpec>] [/shadow=<ShadowID>]
 
 |パラメーター|説明|
 |---|---|
-|=/\ < 指定せず >|影のコピーが表示されますボリュームを指定します。|
-|[影/= \ < ShadowID >|ShadowID が指定した影のコピーを一覧表示します。 影のコピーの ID を取得するには、するには、 **vssadmin] ボックスの一覧の影**] コマンドを使用します。 シャドウ コピー ID を入力するときに各*X*が 16 進数の文字を表すを次の形式に使用します。<br><br>チームの XXXX-XXXX-で入力して|
+|/=\<指定せず >|ボリューム シャドウ コピーは、対象として表示されますを指定します。|
+|/shadow=\<ShadowID>|ShadowID で指定されたシャドウ コピーを一覧表示します。 シャドウ コピー ID を取得する、 **vssadmin 一覧 shadows**コマンド。 次の形式を使用して、シャドウ コピー ID を入力するときに、各*X* 16 進数の文字を表します。<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
 
-## <a name="additional-references"></a>その他の参照
+## <a name="additional-references"></a>その他の参照情報
 
 * [コマンドライン構文キー](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
-* [Vssadmin](vssadmin.md)
+* [vssadmin](vssadmin.md)

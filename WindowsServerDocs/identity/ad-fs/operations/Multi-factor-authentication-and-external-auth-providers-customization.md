@@ -1,6 +1,6 @@
 ---
-title: "多要素認証と外部認証プロバイダーのカスタマイズ"
-description: 
+title: 多要素認証と外部認証プロバイダーのカスタマイズ
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,44 +10,45 @@ ms.prod: windows-server-threshold
 ms.assetid: 08724d45-9be4-4c56-a5f1-2cf40864e136
 ms.technology: identity-adfs
 ms.openlocfilehash: 6d06c017601003e3b93df32f5fa50190ce54541d
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59864803"
 ---
 # <a name="multi-factor-authentication-and-external-authentication-providers-customization"></a>多要素認証と外部認証プロバイダーのカスタマイズ 
 
->適用対象: Windows Server 2016、Windows Server 2012 R2
+>適用先:Windows Server 2016、Windows Server 2012 R2
 
-AD FS では、多要素認証のサポートは out\ of\ the\ ボックスに提供されます。 たとえば、第 2 要素認証として組み込みの証明書の認証を使用する AD FS を構成することができます。 また、外部認証プロバイダーを使用することができます。 このアプローチには、Azure の multi-factor Authentication などの他のサービスと統合する AD FS が有効にすることができますか、独自のプロバイダーを開発することができます。 参照してください[ソリューション ガイド: マルチ要素アクセス制御によるリスク管理](https://technet.microsoft.com/library/dn280937.aspx)詳細については、AD FS を使用して外部認証プロバイダーを登録する方法。  
+AD FS で多要素認証のサポートが提供されている\-の\-、\-ボックス。 AD FS を構成するなど、使用して構築された\-証明書認証では第 2 要素認証として。 また、外部認証プロバイダーを使用することもできます。 このアプローチには、Azure 多要素認証などの他のサービスと統合する AD FS が有効にすることができますか、独自のプロバイダーを開発することができます。 参照してください[ソリューション ガイド。マルチによるリスク管理\-要素アクセス制御](https://technet.microsoft.com/library/dn280937.aspx)AD FS を使用して外部認証プロバイダーを登録する方法の詳細について。  
   
-外部認証プロバイダーが認証 UI を作成する AD FS を提供する .css ファイルで定義されているクラスを使用していることをお勧めします。 既定の Web テーマをエクスポートし、ユーザー インターフェイスのクラスと .css ファイルで定義されている要素を調べるには、次のコマンドレットを使用できます。 .Css ファイルは、外部認証プロバイダーのサインイン ユーザー インターフェイスの開発に使用できます。  
+外部認証プロバイダーが認証 UI を作成する AD FS を提供する .css ファイルで定義されているクラスを使用することをお勧めします。 次のコマンドレットを使用して既定の Web テーマをエクスポートし、.css ファイルに定義されているユーザー インターフェイスのクラスと要素を確認できます。 符号の開発では、.css ファイルを使用できます\-外部認証プロバイダーのユーザー インターフェイスでします。  
   
 
-    Export-AdfsWebTheme -Name default -DirectoryPath C:\theme  
+    Export-AdfsWebTheme -Name default -DirectoryPath C:\theme  
  
   
-外部認証プロバイダーで、赤で強調表示されているサインイン ユーザー インターフェイスの例を次に示します。 ユーザー インターフェイスは、AD FS .css ファイルの UI クラスを使用します。  
+符号の例を次に\-ユーザー インターフェイスでこれが赤色で強調表示、外部認証プロバイダーによって。 ユーザー インターフェイスは、AD FS の .css ファイルの UI クラスを使用します。  
   
 ![AD FS と MFA](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom8.png)  
   
 新しいカスタム認証方法を記述する前に、コンテンツ作成の要件を理解する AD FS のテーマとスタイルの定義を学習することをお勧めします。  
   
--   カスタム認証方法で作成できるは、AD FS サインイン ページとページ全体での HTML セグメントのみです。 AD FS のスタイル定義を使用して、一貫性のある外観と動作を取得する必要があります。  
+-   カスタム認証方法を AD FS のサインインで、HTML セグメント人の作成者のみ\-ページとページ全体ではありません。 AD FS のスタイル定義を使用して、一貫した外観と動作を取得する必要があります。  
   
 ![AD FS と MFA](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom9.png)  
   
--   AD FS 管理者が AD FS のスタイルをカスタマイズできますを注意してください。 . お勧めしませんをハードコーディングする独自のスタイル。 代わりに、使用可能な限り、AD FS スタイルをお勧めします。  
+-   AD FS 管理者が AD FS のスタイルをカスタマイズすることができますに注意します。 . 独自のスタイルをハードコーディングすることはお勧めしません。 代わりに、使用可能な限り、AD FS のスタイルをお勧めします。  
   
--   Out\ of\ のボックスで、1 つのこれから右へと \(LTR\) スタイルと右から左へ記述の 1 つの \(RTL\) AD FS のスタイルを作成します。 管理者は、両方をカスタマイズし、Web テーマの定義を介して言語固有のスタイルを提供することができます。 各スタイル シートには、それぞれにコメントを 3 つのセクションがあります。  
+-   Out\-の\-ボックスで、AD FS のスタイルは、1 つ左ので作成された\-に\-右\(LTR\)スタイルと 1 つの右\-に\-左\(RTL\). 管理者が、両方をカスタマイズし、言語を提供できます\-web テーマの定義を特定のスタイル。 各スタイル シートには次の 3 つのセクションがあり、それぞれにコメントが付いています。  
   
-    -   **テーマ スタイル**\-これらのスタイルがどうかし、は使用できません。 これらのスタイルは、すべてのページでテーマを定義するものです。 定義されている要素 ID によって意図的には再利用しないようにします。  
+    -   **テーマ スタイル**\-これらのスタイルを持たないとは使用できません。 これらのスタイルは、すべてのページでテーマを定義するために用意されています。 各スタイルは要素 ID によって意図的に定義されており、再利用することはできません。  
   
-    -   **一般的なスタイル**\-これらは、スタイル、コンテンツのために使用する必要があります。  
+    -   **共通スタイル**\-スタイル、コンテンツのために使用する必要があります。  
   
-    -   **フォーム ファクター スタイル**\-さまざまなフォーム ファクターのスタイルです。 このセクションのコンテンツで動作するさまざまなフォーム ファクターでは、たとえば、スマート フォンやタブレットを確認するを理解する必要があります。  
+    -   **フォーム ファクター スタイル**\-のさまざまなフォーム ファクター スタイルです。 スマートフォンやタブレットなど、異なるフォーム ファクターでコンテンツが確実に動作するように構成するには、このセクションの内容を理解する必要があります。  
   
-詳細については、次を参照してください。[ソリューション ガイド: マルチ要素アクセス制御によるリスク管理](https://technet.microsoft.com/library/dn280937.aspx)と[ソリューション ガイド: 追加のマルチ要素認証による個人情報アプリケーションのリスク管理](https://tnstage.redmond.corp.microsoft.com/library/dn280949.aspx)します。  
+詳細については、次を参照してください。[ソリューション ガイド。マルチによるリスク管理\-要素アクセス制御](https://technet.microsoft.com/library/dn280937.aspx)と[ソリューション ガイド。その他のマルチによるリスク管理\-Factor Authentication for Sensitive Applications](https://tnstage.redmond.corp.microsoft.com/library/dn280949.aspx)します。  
 
-## <a name="additional-references"></a>その他の参照 
-[AD FS のユーザーのサインイン カスタマイズ](AD-FS-user-sign-in-customization.md) 
+## <a name="additional-references"></a>その他の参照情報 
+[AD FS のユーザー サインイン カスタマイズ](AD-FS-user-sign-in-customization.md) 

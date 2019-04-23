@@ -1,59 +1,61 @@
 ---
-title: AD フォレストの回復 - マルチ ドメイン フォレストで 1 つのドメインの回復
+title: AD フォレストの回復 - マルチ ドメイン フォレストで 1 つのドメインを回復します。
 description: ''
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 07/07/2017
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: mtillman
+ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 267541be-2ea7-4af6-ab34-8b5a3fedee2d
-ms.technology: identity-adfs
-ms.openlocfilehash: 3a1c9d0671a732eee83aa707e061afdbbf106fa5
-ms.sourcegitcommit: f26d2668f57624a3865ca4ffd36a698eea7b503e
+ms.technology: identity-adds
+ms.openlocfilehash: fae2cc40af0b43dd38d72c2622720a6bb17b0a66
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59863473"
 ---
-# <a name="ad-forest-recovery---recovering-a-single-domain-in-a-multidomain-forest"></a>AD フォレストの回復 - マルチ ドメイン フォレストで 1 つのドメインの回復
+# <a name="ad-forest-recovery---recovering-a-single-domain-in-a-multidomain-forest"></a>AD フォレストの回復 - マルチ ドメイン フォレストで 1 つのドメインを回復します。
 
->Windows Server 2016、Windows Server 2012 および 2012 R2、Windows Server 2008 および 2008 の R2 を適用対象:
+>適用先:Windows Server 2016、Windows Server 2012 および 2012 R2、Windows Server 2008 および 2008 R2
 
-フォレストのフル回復ではなく、複数のドメインがあるフォレスト内で 1 つのドメインだけを回復するために必要な場合もあります。 このトピックでは、1 つのドメインとの回復可能な戦略の回復に関する考慮事項について説明します。  
+完全なフォレストの回復ではなく、複数のドメインを持つフォレスト内で 1 つのドメインのみを回復するために必要な場合もあります。 このトピックでは、1 つのドメインと回復を実行できる方法の回復に関する考慮事項について説明します。  
   
- 1 つのドメインの回復は、グローバル カタログ (GC) サーバーを再構築できる一意のチャレンジを表示します。 たとえば、最初のドメイン コントローラー (DC)、ドメインがフォレストの他のすべての Gc が、1 週間前に、作成したバックアップから復元された場合は、復元されたドメイン コントローラーよりもそのドメインの多くの最新の状態データがあります。 GC データの整合性を再確立するには、いくつかのオプションがあります。  
+1 つのドメインの回復は、グローバル カタログ (GC) サーバーを再構築のために独特の課題を表示します。 たとえば、ドメインの最初のドメイン コントローラ (DC) が、フォレスト内の他のすべての Gc 1 週間前に作成されたバックアップから復元した場合より、復元された DC をそのドメインの多くの最新の状態データがあります。 GC データの整合性を再確立するには、いくつかのオプションがあります。  
   
--   Unhost し、同時に復元されたドメインで、ものを除き、フォレスト内のすべての Gc から復元されたドメイン パーティションを再ホストします。  
+- Unhost し、し、同時に復旧のドメインを除く、フォレスト内のすべての Gc から回復したドメイン パーティションを再ホストします。  
+- ドメインを回復するフォレストの回復プロセスに従うし他のドメイン内の Gc から残留オブジェクトを削除します。  
   
--   ドメインを回復するフォレストの回復プロセスに従い、他のドメイン内の Gc から残留オブジェクトを削除します。  
+次のセクションでは、各オプションの一般的な考慮事項を提供します。 異なる Active Directory 環境での回復を実行する必要がある手順の完全なセットが異なります。  
   
- 次のセクションでは、各オプションの一般的な考慮事項を提供します。 異なる Active Directory 環境での回復を実行する必要がある手順の完全なセットが異なります。  
-  
-## <a name="rehost-all-gcs"></a>すべての Gc の再ホストします。  
+## <a name="rehost-all-gcs"></a>すべての Gc をリホストします。  
 
 > [!WARNING]
->  すべてのドメインのドメイン管理者アカウントのパスワードは、問題を GC ログオンのアクセスを防止する場合に使用できる状態である必要があります。  
+> すべてのドメインのドメイン管理者アカウントのパスワードは、問題を GC ログオンのアクセスを防止する場合に使用できる状態である必要があります。  
 
- すべての Gc の再ホストを行う repadmin/unhost と repadmin/rehost コマンドを使用して (repadmin の一部 /experthelp)。 Repadmin コマンドを実行する各ドメインは復元されませんに毎回の GC でします。 必要があることを確認する、すべて Gc 保持しない、復元されたドメインのコピーされなくなります。 これを実現するには、unhost ドメイン パーティション最初にすべてのドメイン コントローラーからなしに復旧のすべてのドメイン、フォレストの間で最初にします。 すべての Gc にはパーティションが含まれて、もはや後、は、再ホストすることができます。 再ホスト、たとえば、フォレストのサイト構造とレプリケーション構造を検討してください、完了前に、そのサイトの他の Dc を再ホスト サイトあたり 1 つの DC の再ホストされます。  
+Gc がすべてのホスト変更を行うことができます repadmin を使用して/unhost とかかるコマンドの repadmin (repadmin/experthelp の一部)。 復旧されていない各ドメインでは、各 GC の repadmin コマンドを実行するとします。 必要なられないようにする Gc がすべて保持しない回復したドメインのコピーできなくなります。 これを実現するには、unhost ドメイン パーティション最初すべてのドメイン コント ローラーからなしに復旧のすべてのドメイン、フォレストの間で最初にします。 すべての Gc では、パーティションをもはや含まない後、は、再ホストすることができます。 、再ホストするときは、たとえば、フォレストのサイト構造とレプリケーション構造を検討してください、そのサイトの他の Dc を再ホストする前に、サイトごとの 1 つの DC の再ホストが終了されます。  
   
- このオプションは利用をドメインごとに、いくつかドメイン コントローラのみを持つ小規模な組織の効率的です。 Gc がすべて金曜日の夜に再構築されます。また、すべて読み取り専用のドメインの完全なレプリケーションがパーティション月曜日の午前中の前に、必要に応じて。 世界各地のサイトをカバーする大規模なドメインを回復する場合は、すべて Gc の読み取り専用ドメイン パーティションを再ホスト他のドメインのことが大幅にへの影響の操作可能性のあるダウンタイムが必要です。  
+このオプションは、ドメインごとに、いくつかドメイン コントローラのみを含む小規模な組織にとって得策です。 金曜日の夜に Gc がすべて再構築する可能性があり、月曜日の朝の前に必要に応じて、すべて読み取り専用のドメインの完全なレプリケーションがパーティション分割します。 世界規模でサイトをカバーする大規模なドメインを回復する必要がある場合すべて Gc の読み取り専用のドメイン パーティションを再ホストの他のドメインを利用する操作の影響は大幅に、可能性のあるダウン タイムが必要です。  
   
-## <a name="remove-lingering-objects"></a>残留オブジェクトを削除します。  
- フォレストの回復プロセスと同様に、1 つの DC バックアップから復元する回復、残りの Dc のメタデータ クリーンアップを実行し、ドメインを構築するための AD DS を再インストールする必要のあるドメインにします。 その他のすべてのドメイン、フォレスト内の Gc では、復元されたドメインの読み取り専用のパーティションの残留オブジェクトを削除します。  
-  
- 残留オブジェクトのクリーンアップのソースは、復元されたドメインの DC である必要があります。 ソース DC の任意のドメイン パーティションの残留オブジェクトがないことを特定するには、GC れていた場合、グローバル カタログを削除することができます。  
-  
- 残留オブジェクトの削除は、大規模な組織の停止時間の他のオプションに関連するリスクを回避便利です。  
-  
- 詳細については、次を参照してください。[残留オブジェクトを削除する使用 Repadmin](https://technet.microsoft.com/library/cc785298.aspx)します。
+## <a name="remove-lingering-objects"></a>残留オブジェクトを削除します。
+
+フォレストの回復プロセスと同様の回復で、残りの Dc のメタデータのクリーンアップを実行し、ドメインを構築するための AD DS を再インストールする必要のあるドメイン内のバックアップから 1 つの DC を復元します。 その他のすべてのドメイン、フォレスト内の Gc では、回復したドメインの読み取り専用のパーティションの残留オブジェクトを削除します。  
+
+残留オブジェクトのクリーンアップのソースには、回復したドメインの DC を指定する必要があります。 ソース DC に任意のドメイン パーティションの残留オブジェクトがないことは、GC があった場合は、グローバル カタログを削除できます。  
+
+残留オブジェクトの削除は、ダウンタイムの他のオプションに関連するリスクを回避する大規模な組織と便利です。  
+
+詳細については、次を参照してください。[残留オブジェクトを削除する使用 Repadmin](https://technet.microsoft.com/library/cc785298.aspx)します。
 
 ## <a name="next-steps"></a>次の手順
--   [AD フォレストの回復の前提条件](AD-Forest-Recovery-Prerequisties.md)  
--   [AD フォレストの回復 - カスタム フォレスト回復計画を立てる](AD-Forest-Recovery-Devising-a-Plan.md)  
--   [AD フォレストの回復 - 問題の特定](AD-Forest-Recovery-Identify-the-Problem.md)
--   [AD フォレストの回復 - を回復する方法を決定します。](AD-Forest-Recovery-Determine-how-to-Recover.md)
--   [AD フォレストの回復 - 最初の回復を実行](AD-Forest-Recovery-Perform-initial-recovery.md)  
--   [AD フォレストの回復の手順](AD-Forest-Recovery-Procedures.md)  
--   [AD フォレストの回復のよく寄せられる質問](AD-Forest-Recovery-FAQ.md)  
--   [AD フォレストの回復であれば、マルチ ドメイン フォレスト内で 1 つのドメインの回復](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
--   [AD フォレストの回復 - Windows Server 2003 ドメイン コントローラーとフォレストの回復](AD-Forest-Recovery-Windows-Server-2003.md)  
+
+- [AD フォレストの回復 - 前提条件](AD-Forest-Recovery-Prerequisties.md)  
+- [AD フォレストの回復 - カスタム フォレスト回復の計画を立てる](AD-Forest-Recovery-Devising-a-Plan.md)  
+- [AD フォレストの回復の問題の特定](AD-Forest-Recovery-Identify-the-Problem.md)
+- [AD フォレストの回復に回復する方法を決定](AD-Forest-Recovery-Determine-how-to-Recover.md)
+- [AD フォレストの回復 - 最初の回復を実行します。](AD-Forest-Recovery-Perform-initial-recovery.md)  
+- [AD フォレストの回復の手順](AD-Forest-Recovery-Procedures.md)  
+- [AD フォレストの回復 - よく寄せられる質問](AD-Forest-Recovery-FAQ.md)  
+- [AD フォレストの回復 - Multidomain フォレスト内の 1 つのドメインを回復します。](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
+- [AD フォレストの回復 - Windows Server 2003 ドメイン コント ローラーとフォレストの回復](AD-Forest-Recovery-Windows-Server-2003.md)  
