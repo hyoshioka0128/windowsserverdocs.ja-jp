@@ -9,15 +9,15 @@ author: lizap
 ms.author: elizapo
 ms.date: 05/10/2018
 ms.openlocfilehash: c80738fe7ceda43a1a73adb0a8b1061bbb24319f
-ms.sourcegitcommit: 4b9b21ca1f366388a78ead7413cb581f2b23d4c6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "2712227"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59886203"
 ---
-# Windows Server バージョン 1803 以降で削除された機能と置換が計画されている機能
+# <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1803"></a>Windows Server バージョン 1803 以降で削除された機能と置換が計画されている機能
 
-> 適用対象: Windows Server バージョン 1803
+> 適用対象:Windows Server Version 1803
 
 Windows Server の各リリースでは新機能が追加されています。同時に、機能が削除される場合もあります。これは、通常、より優れたオプションが追加されたためです。 Windows Server バージョン 1803 で削除した機能の詳細を次に示します。   
 
@@ -25,9 +25,9 @@ Windows Server の各リリースでは新機能が追加されています。�
 > - [Windows Insider プログラム](https://insider.windows.com)に参加することで Windows Server ビルドにいち早くアクセスできます。これは、機能の変更をテストするための最適な方法です。
 > - その他のリリースに関する質問がある場合 [Windows Server 2016](deprecated-features.md) および [Windows Server バージョン 1709](removed-features-1709.md) の詳細を確認してください。
 
-**この一覧は変更される可能性があります。また、影響を受ける機能でこの一覧に含まれていないものもあります。** 
+**一覧は変更される可能性し、すべての影響を受ける機能または機能が含まれません。** 
 
-## このリリースで削除された機能
+## <a name="features-we-removed-in-this-release"></a>このリリースで削除された機能
 
 Windows Server バージョン 1803 でインストールされている製品イメージから次の機能を削除しました。 これらの機能に依存するアプリケーションまたはコードは、別の方法を使用しない限りこのリリースでは機能しません。   
 
@@ -36,7 +36,7 @@ Windows Server バージョン 1803 でインストールされている製品�
 |[ファイル レプリケーション サービス](https://support.microsoft.com/en-us/help/4025991/windows-server-version-1709-no-longer-supports-frs)|Windows Server 2003 R2 で導入されたファイル レプリケーション サービスは、DFS レプリケーションに置き換えられました。 [FRS を使用するドメイン コントローラーを SYSVOL の DFS レプリケーションに移行する](https://blogs.technet.microsoft.com/filecab/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol/)必要があります。|
 |Hyper-V ネットワーク仮想化 (HNV)|[ネットワークの仮想化](../networking/sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md)は、[ソフトウェア定義ネットワーク](../networking/sdn/software-defined-networking.md) (SDN) ソリューションの一部として Windows Server に含まれるようになりました。このソリューションには、ネットワーク コントローラー、ソフトウェア負荷分散、ユーザー定義ルーティング、アクセス制御リストも含まれます。|
 
-## 開発を行っていない機能
+## <a name="features-were-no-longer-developing"></a>開発を行っていない機能
 
 次の機能の開発はアクティブに行っていません。今後の更新プログラムから削除される可能性があります。 他の機能に置き換えられた機能と、現在さまざまなソースから利用可能な機能があります。 
 
@@ -45,7 +45,7 @@ Windows Server バージョン 1803 でインストールされている製品�
 
 提案されているこれらの機能の置換についてフィードバックがある場合は、[フィードバック Hub アプリ](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)を使用できます。 
 
-|機能または役割    |代わりに使用できる機能または役割|
+|機能または役割    |代わりに使用できる機能|
 |-----------|---------------------|
 |ビジネス スキャン (分散スキャン管理 (DSM) とも呼ばれます)|[スキャン管理機能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759124\(v%3dws.11\))は Windows Server 2008 R2 で導入され、セキュリティで保護されたスキャンおよびエンタープライズ内のスキャナーの管理が可能になりました。 この機能への投資は行っておらず、それをサポートするデバイスはありません。|
 |IPv4/6 移行テクノロジ (6to4、ISATAP、および Direct Tunnels)|Windows 10 バージョン 1607 (Anniversary Update) 以降、6to4 は既定で無効になり、Windows 10 バージョン 1703 (Creators Update) 以降、ISATAP は既定で無効になり、Direct Tunnels は常に既定で無効になっています。 代わりに、ネイティブ IPv6 サポートを使用してください。|

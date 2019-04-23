@@ -1,25 +1,26 @@
 ---
 ms.assetid: e6da5984-d99d-4c34-9c11-4a18cd413f06
-title: "レプリカ Windows Server 2012 ドメイン コントローラーを既存のドメイン (レベル 200) のインストールします。"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: Windows Server 2012 のレプリカ ドメイン コントローラーを既存のドメインにインストールする (レベル 200)
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: e3151a8beee2870ecc747a64241df9d562ad4cc2
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: cb4432084386cb3296163f24c801be1c74b379df
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59883043"
 ---
-# <a name="install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain-level-200"></a>レプリカ Windows Server 2012 ドメイン コントローラーを既存のドメイン (レベル 200) のインストールします。
+# <a name="install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain-level-200"></a>Windows Server 2012 のレプリカ ドメイン コントローラーを既存のドメインにインストールする (レベル 200)
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-このトピックでは、サーバー マネージャーまたは Windows PowerShell を使用して、Windows Server 2012 への既存のフォレストまたはドメインのアップグレードに必要な手順について説明します。 既存のドメインに Windows Server 2012 を実行するドメイン コントローラーを追加する方法について説明します。  
+このトピックでは、サーバー マネージャーまたは Windows PowerShell を使用して、既存のフォレスト ドメインを Windows Server 2012 にアップグレードするための手順について説明します。 また Windows Server 2012 を実行するドメイン コントローラーを既存のドメインに追加する方法を説明します。  
   
 -   [アップグレードとレプリカのワークフロー](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md#BKMK_Workflow)  
   
@@ -28,7 +29,7 @@ ms.lasthandoff: 12/12/2017
 -   [展開](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md#BKMK_Dep)  
   
 ## <a name="BKMK_Workflow"></a>アップグレードとレプリカのワークフロー  
-次の図は、以前に AD DS の役割をインストールして、Active Directory ドメイン サービス構成ウィザードを既存のドメインに新しいドメイン コントローラーを作成するサーバー マネージャーを使用してを開始した場合に、Active Directory Domain Services 構成プロセスを示します。  
+以下の図に、既に AD DS 役割をインストール済みで、既存のドメイン内に新しいドメイン コントローラーを作成するためにサーバー マネージャーを使用して Active Directory ドメイン サービス構成ウィザードを開始した場合の、Active Directory ドメイン サービスの構成プロセスを示します。  
   
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/adds_forestupgrade.png)  
   
@@ -36,26 +37,26 @@ ms.lasthandoff: 12/12/2017
   
 |||  
 |-|-|  
-|**ADDSDeployment コマンドレット**|引数 (**太字**引数は必須です。 *文字を斜体に*引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます)。|  
-|Install-AddsDomainController|-SkipPreChecks<br /><br />***-DomainName***<br /><br />*-Safemodeadministratorpassword*<br /><br />*-サイト名*<br /><br />*-ADPrepCredential*<br /><br />-ApplicationPartitionsToReplicate<br /><br />*-AllowDomainControllerReinstall*<br /><br />-確認します。<br /><br />*-CreateDNSDelegation*<br /><br />***資格情報***<br /><br />-CriticalReplicationOnly<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />フォース<br /><br />*-InstallationMediaPath*<br /><br />*-InstallDNS*<br /><br />*-Logpath*<br /><br />-MoveInfrastructureOperationMasterRoleIfNecessary<br /><br />-NoDnsOnNetwork<br /><br />*-NoGlobalCatalog*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />-SkipAutoConfigureDNS<br /><br />-サイト名<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />*-Useexistingaccount*<br /><br />*-Whatif*|  
+|**ADDSDeployment コマンドレット**|引数 (**太字** の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。)|  
+|Install-AddsDomainController|-SkipPreChecks<br /><br />***-DomainName***<br /><br />*-SafeModeAdministratorPassword*<br /><br />*-SiteName*<br /><br />*-ADPrepCredential*<br /><br />-ApplicationPartitionsToReplicate<br /><br />*-AllowDomainControllerReinstall*<br /><br />-Confirm<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />-CriticalReplicationOnly<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-Force<br /><br />*-InstallationMediaPath*<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-MoveInfrastructureOperationMasterRoleIfNecessary<br /><br />-NoDnsOnNetwork<br /><br />*-NoGlobalCatalog*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />-SkipAutoConfigureDNS<br /><br />-SiteName<br /><br />*SystemKey-*<br /><br />*-SYSVOLPath*<br /><br />*-Useexistingaccount*<br /><br />*-Whatif*|  
   
 > [!NOTE]  
-> **-Credential**引数は、のみために必要なかどうかは、既にログオンしていない (フォレストをアップグレードしている) 場合は、[Enterprise Admins および Schema Admins グループまたは Domain Admins グループのメンバーとして (既存のドメインを新しい DC に追加する) 場合。  
+> **-credential** 引数は、フォレストをアップグレードする場合は、Enterprise Admins および Schema Admins グループのメンバーとしてログインしていない場合のみ必須です。新しい DC を既存のドメインに追加する場合は、Domain Admins グループのメンバーとしてログインしていない場合のみ必須です。  
   
 ## <a name="BKMK_Dep"></a>展開  
   
-### <a name="deployment-configuration"></a>展開の構成  
+### <a name="deployment-configuration"></a>展開構成  
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDeployConfig.png)  
   
-サーバー マネージャーですべてのドメイン コントローラーの昇格を開始する、**展開構成**ページ。 他のオプションおよび必須フィールドは、このページと選択した展開操作によって、以降のページに変更します。  
+サーバー マネージャーは各ドメイン コントローラーの昇格を **[配置構成]** ページで開始します。 このページおよび以降のページの他のオプションおよび必須フィールドは、選択した展開操作によって異なります。  
   
-既存のフォレストをアップグレードするか、既存のドメインに書き込み可能なドメイン コントローラーを追加する] をクリックして**ドメイン コントローラーを既存のドメインに追加**] をクリック**選択**に**このドメインのドメイン情報を指定**します。 サーバー マネージャーの入力を要求有効な資格情報が必要な場合です。  
+既存のフォレストをアップグレードする、または既存のドメインに書き込み可能なドメイン コントローラーを追加するには、**[既存のドメインにドメイン コントローラーを追加する]** をクリックし、**[選択]** をクリックして **[このドメインのドメイン情報を指定する]** に進みます。 必要な場合、サーバー マネージャーでは有効な資格情報の入力を求められます。  
   
-フォレストをアップグレードするには、Windows Server 2012 での Enterprise Admins および Schema Admins の両方のグループのグループ メンバーシップを含む資格情報が必要です。 Active Directory ドメイン サービス構成ウィザードが表示されたら後で、現在の資格情報が適切なアクセス許可またはグループのメンバーシップがあるない場合。  
+フォレストをアップグレードするには、Windows Server 2012 の Enterprise Admins および Schema Admins グループのメンバーシップを含む資格情報が必要です。 現在の資格情報に適切なアクセス許可またはグループ メンバーシップがない場合、Active Directory Domain Services 構成ウィザードでは後で入力を求められます。  
   
-自動 Adprep プロセスは、既存の Windows Server 2012 ドメインとドメインのドメイン コントローラーが以前のバージョンの Windows Server を実行するドメイン コントローラーを追加する間のみ運用差です。  
+ドメイン コントローラーの追加先が既存の Windows Server 2012 ドメインである場合と、ドメイン コントローラーが以前のバージョンの Windows Server を実行しているドメインである場合では、操作の違いは自動 Adprep プロセスのみです。  
   
-展開構成の ADDSDeployment コマンドレットと引数は。  
+展開構成の ADDSDeployment コマンドレットと引数は以下のとおりです  
   
 ```  
 Install-AddsDomainController  
@@ -67,21 +68,21 @@ Install-AddsDomainController
   
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeSelectDomain.png)  
   
-後で、個別の前提条件チェックを繰り返す一部の各ページで、特定のテストを実行します。 たとえば、選択したドメインが最低限の機能レベルを満たしていない場合を調べるには、前提条件の確認に昇格まで移動する必要はありません。  
+各ページで特定のテストが実行されます。その内いくつかは、個別の前提条件チェックとして後でまた実行されます。 たとえば、選択したドメインが最低限の機能レベルを満たしていない場合、前提条件のチェック段階まで、昇格のすべてのプロセスをさかのぼる必要はありません。  
   
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeFFLError.png)  
   
-### <a name="domain-controller-options"></a>ドメイン コント ローラー オプション  
+### <a name="domain-controller-options"></a>ドメイン コントローラー オプション  
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDCOptions.png)  
   
-**ドメイン コントローラー オプション**] ページが新しいドメイン コントローラーのドメイン コントローラーの機能を指定します。 構成可能なドメイン コントローラーの機能は**DNS サーバー**、**グローバル カタログ**、および**読み取り専用ドメイン コントローラー**します。 マイクロソフトでは、すべてのドメイン コントローラが、分散環境での高可用性の DNS と GC サービスを提供することをお勧めします。 GC は常に既定で選択し、Start of Authority クエリに基づいて既にその Dc 上の DNS を現在のドメインのホストの場合は、DNS サーバーを既定で選択します。 **ドメイン コント ローラー オプション**] ページでは、適切な Active Directory 論理を選択することもできます**サイト名**、フォレストの構成からです。 既定では、最も適切なサブネットのサイトを選択します。 1 つのサイトがある場合に自動的にその選択されます。  
+**[ドメイン コントローラー オプション]** ページでは、新しいドメイン コントローラーのドメイン コントローラー機能を指定します。 構成可能なドメイン コントローラー機能は、**[DNS サーバー]**、**[グローバル カタログ]**、**[読み取り専用ドメイン コントローラー]** です。 Microsoft では、分散環境で高可用性を実現するため、すべてのドメイン コントローラーで、DNS と GC サービスを提供することをお勧めします。 GC は常に既定で選択されます。DNS サーバーは、現在のドメインが、Start of Authority クエリに基づいて既にその DC 上にある DNS をホストする場合に、既定で選択されます。 **[ドメイン コントローラー オプション]** ページでは、フォレストの構成から適切な Active Directory 論理**サイト名**を選択することもできます。 既定では、最も適切なサブネットのサイトが選択されます。 サイトが 1 つしかない場合は、それが自動的に選択されます。  
   
 > [!NOTE]  
-> サーバーが Active Directory のサブネットに属していない複数の Active Directory サイトがある場合は、何も選択し、**[次へ]**ボタンは、一覧からサイトを選択するまでは利用できません。  
+> サーバーが Active Directory サブネットに属せず、複数の Active Directory サイトが存在する場合は、何も選択されず、リストからサイトを選択するまでは **[次へ]** ボタンが使用できません。  
   
-指定した**ディレクトリ サービス復元モード パスワード**サーバーに適用されるパスワード ポリシーに従う必要があります。 常に強力で複雑なパスワードまたは可能であれば、パスフレーズを選択します。  
+**[ディレクトリ サービスの復元モード パスワード]** には、サーバーに適用されるパスワード ポリシーに従ったパスワードを指定する必要があります。 常に強力で複雑なパスワードを、または可能であればパスフレーズを選択します。  
   
-**ドメイン コントローラー オプション**ADDSDeployment 引数は。  
+**[ドメイン コントローラー オプション]** の ADDSDeployment 引数は以下のとおりです  
   
 ```  
 -InstallDNS <{$false | $true}>  
@@ -91,37 +92,37 @@ Install-AddsDomainController
 ```  
   
 > [!IMPORTANT]  
-> 引数として提供されると、サイト名は既に存在して**sitename**します。 **Install-addsdomaincontroller**コマンドレットは、サイトを作成しません。 コマンドレットを使用する**新しい adreplicationsite**新しいサイトを作成します。  
+> **-sitename** に引数として指定するサイト名は既に存在している必要があります。 **install-AddsDomainController** コマンドレットはサイトを作成しません。 新しいサイトを作成するには **new-adreplicationsite** コマンドレットを使用します。  
   
-**SafeModeAdministratorPassword**引数の操作は特別な。  
+**SafeModeAdministratorPassword** 引数の操作は特別で、以下のような特徴があります。  
   
--   場合*が指定されていない*を引数としてコマンドレットは、して、マスクされたパスワードの確認入力を求められます。 これは、コマンドレットを対話的に実行するときに、推奨される使用方法です。  
+-   この引数を*指定しない*場合は、マスクされたパスワードの入力と確認入力を求められます。 これは、コマンドレットを対話的に実行する場合に推奨される使用方法です。  
   
-    たとえば、treyresearch.net ドメインに追加のドメイン コントローラーを作成して、マスクされたパスワードの確認入力を求め。  
+    たとえば、treyresearch.net ドメイン内に追加のドメイン コントローラーを作成し、マスクされたパスワードの入力と確認入力を求められるようにするには、以下のように実行します  
   
     ```  
     Install-ADDSDomainController "DomainName treyresearch.net "credential (get-credential)  
     ```  
   
--   指定されている場合*値を持つ*、値が、セキュリティで保護された文字列を指定する必要があります。 コマンドレットを対話的に実行するときに推奨される使用方法はありません。  
+-   この引数を *値と共に*指定する場合は、セキュリティで保護された文字列を指定する必要があります。 これは、コマンドレットを対話的に実行する場合に推奨される使用方法ではありません。  
   
-たとえば、手動での入力を求めるパスワードを使用して、**Read-host**コマンドレットをセキュリティで保護された文字列をユーザーに確認します。  
+たとえば、**Read-Host** コマンドレットを使用してユーザーにセキュリティで保護された文字列の入力を求めることにより、手動でパスワードの入力を求めることができます。  
   
 ```  
 -safemodeadministratorpassword (read-host -prompt "Password:" -assecurestring)  
 ```  
   
 > [!WARNING]  
-> 前のオプションは、パスワードを確認しない、細心の注意を使用して、: パスワードは表示されません。  
+> この方法ではパスワードの確認入力が行われないため、細心の注意が必要です。パスワードは表示されません。  
   
-これはお勧めはクリア テキストの変換済みの変数として、セキュリティで保護された文字列を提供できます。  
+セキュリティで保護された文字列は、変換されるクリア テキストの変数として指定することもできますが、これはお勧めしません。  
   
 ```  
 -safemodeadministratorpassword (convertto-securestring "Password1" -asplaintext -force)  
   
 ```  
   
-最後に、ファイル、暗号化されたパスワードに格納され、クリア テキストのパスワードが表示されることがなく、後で再する可能性があります。 例えば：  
+最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 例:  
   
 ```  
 $file = "c:\pw.txt"  
@@ -133,24 +134,24 @@ $pw | ConvertFrom-SecureString | Set-Content $file
 ```  
   
 > [!WARNING]  
-> テキストをクリアや暗号化されたパスワードの保存を提供または推奨されません。 スクリプトでこのコマンドを実行しているか、その背後で見てすべてのユーザーは、そのドメイン コントローラーの DSRM パスワードを認識します。  その暗号化されたパスワードを取り消すファイルへのアクセスを持つユーザー可能性があります。 した情報を使って、DSRM で起動された DC にログオンし、最終的にドメイン コントローラー自体は、自分の権限を Active Directory フォレストで最も高いレベルに昇格を偽装します。 追加の手順を使用してセット**System.Security.Cryptography**データはことをお勧めがスコープ外にテキスト ファイルを暗号化します。 パスワードの保存を絶対に避けることをお勧めします。  
+> クリア テキストや暗号化されたテキストのパスワードを指定したり格納したりすることはお勧めしません。 このコマンドをスクリプトで実行する人や入力をそばで見ている人に、そのドメイン コントローラーの DSRM パスワードを知られてしまいます。  そのファイルにアクセスできる人はだれでも、暗号化されたパスワードを元に戻すことができます。 そのパスワードがわかれば、DSRM で起動された DC にログオンし、最終的にドメイン コントローラーそのものを偽装して、自分の権限を Active Directory フォレストで最も高いレベルに昇格させることができます。 テキスト ファイル データを暗号化するための **System.Security.Cryptography** の一連の使用手順を読むことが推奨されますが、ここでは取り上げません。 ベスト プラクティスは、パスワードの保存を絶対に避けることです。  
   
-ADDSDeployment コマンドレットは、DNS クライアント設定、フォワーダー、およびルート ヒントの自動構成をスキップする追加のオプションを提供します。 サーバー マネージャーを使用する場合、この構成オプションをスキップすることはできません。 この引数が重要なは、ドメイン コントローラーを構成する前に、DNS サーバーの役割をインストールした場合にのみ。  
+ADDSDeployment コマンドレットには、DNS クライアント設定、フォワーダー、およびルート ヒントの自動構成をスキップする追加オプションがあります。 サーバー マネージャーを使用しているときは、この構成オプションをスキップできません。 この引数が重要なのは、ドメイン コントローラーを構成する前に DNS サーバーの役割をインストールした場合だけです。  
   
 ```  
 -SkipAutoConfigureDNS  
 ```  
   
-**ドメイン コントローラー オプション**] ページで、既存のドメイン コントローラーが Windows Server 2003 を実行している場合は、読み取り専用ドメイン コントローラーを作成できません警告が表示されます。 これと、警告を無視することができます。  
+**[ドメイン コントローラー オプション]** ページで、既存のドメイン コントローラーが Windows Server 2003 を実行している場合は読み取り専用のドメイン コントローラーを作成できないことが通知されます。 これは予期される反応です。この警告は無視して問題ありません。  
   
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDCOptionsError.png)  
   
 ### <a name="dns-options-and-dns-delegation-credentials"></a>DNS オプションと DNS 委任資格情報  
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeDNSOptions.png)  
   
-**DNS オプション**] ページでは、選択した場合、DNS 委任を構成することができます、**DNS サーバー** ] オプションを選択、*ドメイン コントローラー オプション*ページ DNS 委任が許可されているゾーンにポイントしている場合。 メンバーであるユーザーの代替の資格情報を提供する必要があります、**DNS Admins**グループ。  
+**[ドメイン コントローラー オプション]** ページで **[DNS サーバー]** オプションを選択し、DNS 委任が許可されるゾーンをポイントしている場合は、[ *DNS オプション* ] ページで、DNS 委任を構成することができます。 **DNS Admins** グループのメンバーである別のユーザーの資格情報を指定しなければならないことがあります。  
   
-**DNS オプション**ADDSDeployment コマンドレット引数は。  
+**[DNS オプション]** の ADDSDeployment コマンドレット引数は以下のとおりです。  
   
 ```  
 -creatednsdelegation   
@@ -159,18 +160,18 @@ ADDSDeployment コマンドレットは、DNS クライアント設定、フォ�
   
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeCreds.png)  
   
-For more information about whether you need to create a DNS delegation, see [Understanding Zone Delegation](https://technet.microsoft.com/library/cc771640.aspx).  
+DNS 委任を作成する必要があるかどうかの詳細については、「 [ゾーンの委任とは](https://technet.microsoft.com/library/cc771640.aspx)」を参照してください。  
   
-### <a name="additional-options"></a>その他のオプション  
+### <a name="additional-options"></a>追加オプション  
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeAdditionalOptions.png)  
   
-**追加オプション**] ページには、構成オプションとして、レプリケーション ソース ドメイン コントローラーに名前を付けるか、レプリケーション ソースとして任意のドメイン コントローラーを使用することができます。  
+**[追加オプション]** ページには、レプリケーション ソースとして特定のドメイン コントローラーを指定するか、またはどのドメイン コントローラーでもレプリケーション ソースとして使用できるかを指定する構成オプションがあります。  
   
-できますをドメイン コント ローラーを使用して、インストールするバックアップ メディア (IFM) オプションからインストールを使用してメディアを作成します。 **メディアからインストール**] チェック ボックスは、参照オプションが選択されているし] をクリックする必要があります**確認**指定されたパスが有効なメディアであることを確認します。 IFM オプションで使用されるメディアは Windows Server バックアップまたは Ntdsutil.exe 別既存 Windows Server 2012 コンピューターからのみ作成します。Windows Server 2008 R2 または以前のオペレーティング システムを使用して、Windows Server 2012 ドメイン コントローラーのメディアを作成することはできません。 IFM の変更の詳細については、次を参照してください。[簡略化された管理付録](../../ad-ds/deploy/Simplified-Administration-Appendix.md)します。 SYSKEY で保護されているメディアを使用して場合、サーバー マネージャーは検証中にイメージのパスワードを要求します。  
+また、メディアからのインストール (IFM) オプションを使用して、バックアップされているメディアからドメイン コントローラーをインストールすることもできます。 **[メディアからのインストール]** チェック ボックスをオンにすると参照オプションが表示されます。指定したパスが有効なメディアであることを示すため **[検証]** をクリックする必要があります。 IFM オプションで使用するメディアは、Windows Server バックアップまたは Ntdsutil.exe を使用して、既存の別の Windows Server 2012 コンピューターからのみ作成します。Windows Server 2008 R2 以前のオペレーティング システムを使用して Windows Server 2012 のドメイン コントローラー用のメディアを作成することはできません。 IFM の変更の詳細については、「 [Simplified Administration Appendix](../../ad-ds/deploy/Simplified-Administration-Appendix.md)」を参照してください。 SYSKEY で保護されているメディアを使用する場合、サーバー マネージャーは確認の間にイメージのパスワードの入力を求めます。  
   
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_NtdsutilIFM.png)  
   
-**追加オプション**ADDSDeployment コマンドレット引数は。  
+**[追加オプション]** の ADDSDeployment コマンドレット引数は以下のとおりです。  
   
 ```  
 -replicationsourcedc <string>  
@@ -181,9 +182,9 @@ For more information about whether you need to create a DNS delegation, see [Und
 ### <a name="paths"></a>パス  
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradePaths.png)  
   
-**パス**および SYSVOL 共有のページでは、AD DS データベース、データベースのトランザクション ログの既定のフォルダーの場所を上書きすることができます。 既定の場所は、常に %systemroot% のサブディレクトリ内にします。  
+**[パス]** ページでは、AD DS データベース、データベース トランザクション ログ、および SYSVOL 共有の既定のフォルダーの場所を上書きできます。 既定の場所は常に %systemroot% のサブディレクトリです。  
   
-Active Directory Paths ADDSDeployment コマンドレット引数は、次のとおりです。  
+Active Directory Paths ADDSDeployment コマンドレット引数は以下のとおりです  
   
 ```  
 -databasepath <string>  
@@ -194,33 +195,33 @@ Active Directory Paths ADDSDeployment コマンドレット引数は、次のと
 ### <a name="preparation-options"></a>準備オプション  
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradePrepOptions.png)  
   
-**準備オプション**ページは、AD DS 構成には、(forestprep) スキーマを拡張して、ドメイン (domainprep) の更新が含まれているを通知します。  のみ、フォレストとドメインで以前の Windows Server 2012 ドメイン コントローラーのインストールまたは手動で Adprep.exe を実行には準備されていない場合は、このページを表示します。 たとえば、Active Directory ドメイン サービス構成ウィザードでは、新しいドメイン コントローラーを既存の Windows Server 2012 フォレスト ルート ドメインに追加する場合にこのページが表示されません。  
+**[準備オプション]** ページでは、AD DS 構成に、スキーマの拡張 (forestprep) とドメインの更新 (domainprep) が含まれることが通知されます。  このページは、フォレストとドメインが、以前の Windows Server 2012 ドメイン コントローラー インストールまたは手動で実行された Adprep.exe で準備されていない場合のみ表示されます。 たとえば、既存の Windows Server 2012 フォレストのルート ドメインに新しいドメイン コントローラーを追加した場合は、Active Directory ドメイン サービス構成ウィザードにこのページが表示されません。  
   
-クリックすると、スキーマを拡張して、ドメインの更新が発生しない**次**します。 これらのイベントは、インストール フェーズ中にのみ発生します。 このページには、インストール後に発生するイベントについて通知だけが表示されます。  
+**[次へ]** をクリックしても、スキーマの拡張やドメインの更新は実行されません。 これらのイベントは、インストール フェーズでのみ発生します。 このページの目的は、インストール中の後の段階で発生するイベントについて通知することだけです。  
   
-このページにスキーマを拡張またはドメインを準備するこれらのグループのメンバーシップが必要なに現在のユーザー資格情報は Schema Admin と Enterprise Admins グループのメンバーあるがも検証します。 をクリックして**変更**ページは、現在の資格情報は、十分なアクセス許可を提供しないことを通知する場合は、適切なユーザー資格情報を提供します。  
+このページでは、現在のユーザーの資格情報が Schema Admin と Enterprise Admins グループのメンバーであるかどうかも確認します。これは、ドメイン準備のためにスキーマを拡張するにはこれらのグループのメンバーシップが必要であるためです。 現在の資格情報に十分なアクセス権がないと表示された場合は、**[変更]** をクリックして適切なユーザー資格情報を指定してください。  
   
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradePrepOptionsCreds.png)  
   
-その他のオプションの ADDSDeployment コマンドレット引数です。  
+[追加オプション] の ADDSDeployment コマンドレットの引数は以下のとおりです。  
   
 ```  
 -adprepcredential <pscredential>  
 ```  
   
 > [!IMPORTANT]  
-> として、Windows Server の以前のバージョンと Windows Server 2012 を実行するドメイン コントローラーの自動ドメイン準備は GPPREP は実行されません。 実行**adprep.exe/gpprep**に準備されていない Windows Server 2003、Windows Server 2008、または Windows Server 2008 R2 のすべてのドメインを手動でします。 アップグレードのたびに、ドメインの履歴に GPPrep 1 回だけを実行する必要があります。 Adprep.exe を実行しない /gpprep の操作で原因になるすべてのファイルとフォルダー、SYSVOL フォルダーをすべてのドメイン コントローラ上で再レプリケートために自動的にします。  
+> 以前のバージョンの Windows Server と同様、Windows Server 2012 を実行するドメイン コントローラーの自動ドメイン準備では GPPREP は実行されません。 Windows Server 2003、Windows Server 2008、Windows Server 2008 R2 用に準備されていないすべてのドメインに対して、**adprep.exe /gpprep** を手動で実行してください。 特定のドメインに対して 1 度だけ (アップグレードのたびにではなく) GPPrep を実行する必要があります。 Adprep.exe は /gpprep を自動的に実行しません。これは、その操作により SYSVOL フォルダー内のすべてのファイルとフォルダーがすべてのドメイン コントローラー上で再レプリケートされる可能性があるためです。  
 >   
-> ドメイン内の最初の非段階的 RODC を昇格したときに、自動 RODCPrep が実行されます。 最初の書き込み可能な Windows Server 2012 ドメイン コントローラーを昇格したときに発生しません。 手動でも実行できます**adprep.exe/rodcprep**読み取り専用ドメイン コントローラーを展開する予定の場合。  
+> 自動 RODCPrep は、ドメイン内で最初の非段階的 RODC を昇格したときに実行されます。 最初の書き込み可能な Windows Server 2012 ドメイン コントローラーを昇格したときには実行されません。 読み取り専用ドメイン コントローラーを展開する予定がある場合は、手動で **adprep.exe /rodcprep** を実行することもできます。  
   
 ### <a name="review-options-and-view-script"></a>オプションの確認とスクリプトの表示  
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeReviewOptions.png)  
   
-**オプションの確認**] ページを使用して設定を確認し、インストールを開始する前に、お客様の要件を満たしていることを確認します。 これは、サーバー マネージャーを使用してインストールを中止する最後の機会ではありません。 単に、このページを使用すると、確認し、構成を続行する前に、設定を確認できます。  
+**[オプションの確認]** ページでは、インストールを開始する前に、設定を検証し、設定が要件を満たしていることを確認できます。 これがサーバー マネージャーを使用するインストールを停止する最後の機会ではありません。 このページでは、構成を続行する前に設定を検討して確認することだけができます。  
   
-**オプションの確認**ページ サーバー マネージャーでも用意されています、省略可能な**スクリプトの表示**を単一の Windows PowerShell スクリプトとして現在の addsdeployment モジュール構成を含む Unicode テキスト ファイルを作成するボタンをクリックします。 これにより、Windows PowerShell 展開スタジオとしてサーバー マネージャーのグラフィカル インターフェイスを使用することができます。 Active Directory ドメイン サービス構成ウィザードを使用して、オプションを構成し、構成をエクスポート、ウィザードをキャンセルします。  このプロセスでは、さらに変更またはダイレクトの使用の有効であり、正しい構文のサンプルを作成します。  
+サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。  これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。  
   
-例えば：  
+次に、例を示します。  
   
 ```  
 #  
@@ -242,24 +243,24 @@ Install-ADDSDomainController `
 ```  
   
 > [!NOTE]  
-> サーバー マネージャーは、一般にすべての引数と値のプロモーションおよび (サービス パックまたは Windows の将来のバージョン間で変わる可能性がある) のように既定の設定に依存しないときに入力します。 1 つの例外は、**-safemodeadministratorpassword**引数。 確認プロンプトがコマンドレットを対話的に実行されている場合、値を省略を強制的に  
+> サーバー マネージャーでは通常、昇格時にすべての引数とその値を入力し、既定値に依存しません (既定値は将来のバージョンの Windows 間またはサービス パック間で変わる可能性があるため)。 唯一の例外は、 **-safemodeadministratorpassword** 引数です。 確認メッセージを強制するには、コマンドレットを対話的に実行する際に値を省略してください。  
 >   
-> オプションを使用して**Whatif**引数を使用、**Install-addsdomaincontroller**コマンドレットを構成情報を確認します。 これにより、コマンドレットの引数の明示的および暗黙的な値を表示することができます。  
+> オプションの **Whatif** 引数を **Install-ADDSDomainController** コマンドレットで使用すると、構成情報を確認することができます。 これにより、コマンドレットの引数の明示的および暗黙的な値を見ることができます。  
   
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSWhatIf.png)  
   
-### <a name="prerequisites-check"></a>前提条件の確認  
+### <a name="prerequisites-check"></a>前提条件のチェック  
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradePrereqCheck.png)  
   
-**前提条件のチェック**AD DS ドメイン構成の新しい機能です。 この新しいフェーズでは、ドメインとフォレストが新しい Windows Server 2012 ドメイン コントローラーをサポートできることを検証します。  
+**[前提条件のチェック]** は、AD DS ドメイン構成の新しい機能です。 この新しいフェーズでは、ドメインとフォレストが新しい Windows Server 2012 ドメイン コントローラーをサポートできるかどうかを検証します。  
   
-新しいドメイン コントローラーをインストールする場合、サーバー マネージャー Active Directory ドメイン サービス構成ウィザードは、一連のモジュラー テストをシリアル化されたを呼び出します。 これらのテストでは、推奨される修復のオプションを使用してアラートです。 必要なだけ何度でもテストを実行することができます。 すべての前提条件のテストまで、ドメイン コントローラーのプロセスを続行できません渡します。  
+新しいドメイン コントローラーをインストールするときに、サーバー マネージャー Active Directory Domain Services 構成ウィザードがシリアル化された一連のモジュラー テストを呼び出します。 これらのテストでは、警告と共に、候補となる修正オプションが提示されます。 テストは必要なだけ何度でも実行できます。 前提条件のテストにすべて合格するまで、ドメイン コントローラー プロセスを続行することはできません。  
   
-**前提条件のチェック**以前のオペレーティング システムに影響を与えるセキュリティの変更といった関連情報も明らかです。  
+**[前提条件のチェック]** では、以前のオペレーティング システムに影響を与えるセキュリティの変更といった関連情報も明らかになります。  
   
-具体的な前提条件チェックの詳細については、次を参照してください。[前提条件のチェック](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)します。  
+特定の前提条件チェックについて詳しくは、[前提条件のチェックに関する説明](../../ad-ds/manage/AD-DS-Simplified-Administration.md#BKMK_PrereuisiteChecking)をご覧ください。  
   
-バイパスすることはできません、**の前提条件チェック**ときは、サーバー マネージャーを使用して進むことができます、プロセスは次の引数を使用して、AD DS 展開コマンドレットを使用する場合。  
+サーバー マネージャーを使用する場合は **[前提条件のチェック]** を省略することはできませんが、AD DS 展開コマンドレットと以下の引数を使用すると省略できます。  
   
 ```  
 -skipprechecks  
@@ -267,14 +268,14 @@ Install-ADDSDomainController `
 ```  
   
 > [!WARNING]  
-> Microsoft は、部分的なドメイン コントローラーの昇格につながるまたは AD DS フォレストが破損している前提条件のチェックをスキップすることです。  
+> ただし Microsoft では前提条件のチェックを省略することはお勧めしません。ドメイン コントローラーの昇格が部分的に行われたり、AD DS フォレストに障害が発生したりする恐れがあります。  
   
-をクリックして**インストール**をドメイン コントローラーの昇格プロセスを開始します。 これは、インストールをキャンセルする最後の機会です。 開始されると、昇格プロセスをキャンセルすることはできません。 コンピューターが自動的に再起動プロモーション results.The**前提条件のチェック**] ページで、問題を解決するためのガイダンスとプロセス中に発生したが表示されます。  
+ドメイン コントローラーの昇格プロセスを開始するには、**[インストール]** をクリックします。 ここが、インストールをキャンセルする最後のチャンスとなります。 昇格プロセスが開始されると、キャンセルすることはできません。 昇格の結果に関係なく、昇格プロセスの最後でコンピューターが自動的に再起動します。プロセス中に発生した問題とその解決に関するガイダンスが **[前提条件のチェック]** ページに表示されます。  
   
 ### <a name="installation"></a>インストール  
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_UpgradeInstallProgress.png)  
   
-ときに、**インストール**ページが表示されます、ドメイン コントローラーの構成を開始、停止またはできません取り消されます。 操作の詳しい内容は、このページに表示され、ログに書き込まれます。  
+**[インストール]** ページが表示されると、ドメイン コントローラーの構成が開始され、停止やキャンセルは実行できません。 操作の詳しい内容がこのページに表示され、以下のログに書き込まれます。  
   
 -   %systemroot%\debug\dcpromo.log  
   
@@ -284,45 +285,45 @@ Install-ADDSDomainController `
   
 -   %systemroot%\debug\netsetup.log (サーバーがワークグループ内にある場合)  
   
-ADDSDeployment モジュールを使用して新しい Active Directory フォレストをインストールするには、次のコマンドレットを使用します。  
+ADDSDeployment モジュールを使って新しい Active Directory フォレストをインストールするには、次のコマンドレットを使用します。  
   
 ```  
 Install-addsdomaincontroller  
 ```  
   
-参照してください[アップグレードとレプリカの Windows PowerShell](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md#BKMK_PS)必須およびオプションの引数。  
+必須およびオプションの引数について詳しくは、[アップグレードとレプリカの Windows PowerShell](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md#BKMK_PS) をご覧ください。  
   
-**Install-addsdomaincontroller**コマンドレットはだけです (前提条件のチェックとインストール) の 2 つのフェーズです。 以下の 2 つの図の最低限の必須引数を使用したインストール フェーズを表示する**- domainname**と**-credential**します。 最初の Windows Server 2012 ドメイン コントローラーを既存の Windows Server 2003 フォレストに追加の一環として Adprep 操作がどのように自動的には注意してください。  
+**Install-AddsDomainController** コマンドレットのフェーズは 2 つだけです (前提条件のチェックとインストール)。 以下の 2 つの図は、 **-domainname** および **-credential**の最低限の必須引数を使用したインストール フェーズを示しています。 Adprep 操作は、最初の Windows Server 2012 ドメイン コントローラーを既存の Windows Server 2003 フォレストに追加するプロセスの一部として自動的に実行されます。  
   
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSGetCred.png)  
   
-注: 同様、サーバー マネージャー、**Install-addsdomaincontroller**昇格プロセスで、サーバーの再起動は自動的にされることを知らせます。 再起動プロンプトを自動的に同意するを使用して、**-強制**または**-ことを確認: $false**いずれかの Windows PowerShell の ADDSDeployment コマンドレットと引数。 サーバーが自動的に昇格の最後に再起動を防ぐには、使用、**- norebootoncompletion**引数。  
+**Install-ADDSDomainController** は、サーバー マネージャーと同様、昇格プロセスによって自動的にサーバーが再起動されることを知らせます。 再起動プロンプトを自動的に受け入れるには、ADDSDeployment Windows PowerShell コマンドレットで **-force** または **-confirm:$false** 引数を使用します。 昇格の終了時にサーバーが自動的に再起動されないようにするには、**-norebootoncompletion** 引数を使用します。  
   
 > [!WARNING]  
-> 再起動の上書きはお勧めします。 正常に機能するドメイン コントローラーを再起動しなければなりません。  
+> 再起動の無効化は推奨されません。 ドメイン コントローラーを正常に機能させるには、再起動する必要があります。  
   
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeConfirm.gif)  
   
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeProgress.png)  
   
-Windows PowerShell を使用してリモートでドメイン コントローラーを構成するのには、ラップ、**インストール adddomaincontroller**コマンドレット*内部*の**呼び出すコマンド**コマンドレット。 これは、中かっこを使用する必要があります。  
+Windows PowerShell を使用してドメイン コントローラーをリモートで構成するには、 **install-adddomaincontroller** コマンドレットを *invoke-command* コマンドレット **内に** ラップします。 これには中かっこが必要です。  
   
 ```  
 invoke-command {install-addsdomaincontroller "domainname <domain> -credential (get-credential)} -computername <dc name>  
 ```  
   
-例えば：  
+次に、例を示します。  
   
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeExample.gif)  
   
 > [!NOTE]  
-> インストールと Adprep プロセスの動作の詳細については、次を参照してください。、[ドメイン コントローラーの展開のトラブルシューティング](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)します。  
+> インストールと Adprep プロセスの動作の詳細については、[ドメイン コントローラーの展開のトラブルシューティング](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)をご覧ください。  
   
 ### <a name="results"></a>結果  
 ![レプリカをインストールします。](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_ForestSignOff.png)  
   
-**結果**ページは、の成功または失敗、昇格し、重要な管理情報を示しています。 成功した場合、ドメイン コントローラーは 10 秒後に自動的に再起動します。  
+**[結果]** ページには、昇格の成功または失敗と、重要な管理情報が表示されます。 正常に昇格された場合、ドメイン コントローラーは、10 秒後に自動的に再起動します。  
   
-Windows Server の以前のバージョンと Windows server 2012 を実行するドメイン コントローラーの自動ドメイン準備で GPPREP は実行されません。 実行**adprep.exe/gpprep**に準備されていない Windows Server 2003、Windows Server 2008、または Windows Server 2008 R2 のすべてのドメインを手動でします。 アップグレードのたびに、ドメインの履歴に GPPrep 1 回だけを実行する必要があります。 Adprep.exe を実行しない /gpprep の操作で原因になるすべてのファイルとフォルダー、SYSVOL フォルダーをすべてのドメイン コントローラ上で再レプリケートために自動的にします。  
+以前のバージョンの Windows Server と同様、Windows Server 2012 を実行するドメイン コントローラーの自動ドメイン準備では GPPREP は実行されません。 Windows Server 2003、Windows Server 2008、Windows Server 2008 R2 用に準備されていないすべてのドメインに対して、**adprep.exe /gpprep** を手動で実行してください。 特定のドメインに対して 1 度だけ (アップグレードのたびにではなく) GPPrep を実行する必要があります。 Adprep.exe は /gpprep を自動的に実行しません。これは、その操作により SYSVOL フォルダー内のすべてのファイルとフォルダーがすべてのドメイン コントローラー上で再レプリケートされる可能性があるためです。  
   
 

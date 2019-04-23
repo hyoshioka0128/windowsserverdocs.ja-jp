@@ -1,6 +1,6 @@
 ---
 ms.assetid: 13210461-1e92-48a1-91a2-c251957ba256
-title: "ドライブのファームウェア更新のトラブルシューティング"
+title: ドライブのファームウェア更新のトラブルシューティング
 ms.prod: windows-server-threshold
 ms.author: toklima
 ms.manager: masriniv
@@ -9,21 +9,22 @@ ms.topic: article
 author: toklima
 ms.date: 04/18/2017
 ms.openlocfilehash: 7ee5c57839f32d71053e983fc14f76c481236779
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59884163"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>ドライブのファームウェア更新のトラブルシューティング
 
->適用対象: Windows 10、Windows Server (半期チャネル)
+>適用対象:Windows 10、Windows Server (半期チャネル)
 
 Windows 10 バージョン 1703 以降と Windows Server (半期チャネル) には、ファームウェア更新可能 AQ (追加修飾子) によって認定済みの HDD と SSD のファームウエアを PowerShell を介して更新する機能が含まれています。
 
 この機能について詳しくは、以下をご覧ください。
 
-- [Windows Server 2016 でドライブのファームウェアを更新する](update-firmware.md)
-- [Update Drive Firmware Without Downtime in Storage Spaces Direct (記憶域スペース ダイレクトでダウンタイムなしにドライブのファームウェアを更新する)](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
+- [Windows Server 2016 でドライブのファームウェアを更新しています](update-firmware.md)
+- [ダウンタイムなしで記憶域スペースのドライブのファームウェアを直接更新します。](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
 
 ファームウェア更新では、さまざまな理由によって障害が発生します。 この記事では、高度なトラブルシューティングに役立つ情報を提供します。
 
@@ -63,7 +64,7 @@ FirmwareVersionInSlot : {0013}
 
 SAS デバイスが、必要なコマンド セットをサポートしているかどうかを確認するには、以下の 2 つの方法があります。
 1.  適切なファームウェア イメージを使って Update-StorageFirmware コマンドレットを実行してみる
-2.  「Windows Server Catalogue」(https://www.windowsservercatalog.com/) を参照して、ファームウェア更新 AQ の取得が確認された SAS デバイスを探す
+2.  SAS デバイスは、FW 更新 AQ (を獲得しましたが正常に識別するために Windows Server カタログを参照してください。 https://www.windowsservercatalog.com/)
 
 ### <a name="remediation-options"></a>考えられる解決方法
 テスト対象のデバイスが適切なコマンド セットをサポートしていない場合、必要なコマンド セットを備えた新しいファームウェアの提供についてベンダーに問い合わせるか、「Windows Server Catalogue」を参照して、適切なコマンド セットを実装する調達可能なデバイスを探します。
@@ -141,7 +142,7 @@ StorAHCI と StorNVMe は、ClassPnP Operational チャネルの情報に加え�
 
 このような詳細なログ エントリを収集するには、ログを有効にしたうえでファームウェア更新時の障害を再現し、診断ログを保存します。
 
-以下では、ダウンロードしたイメージが無効であったために、SATA デバイスのファームウェア更新が失敗した例を示します (イベント ID: 258)。
+イメージをダウンロードするが無効なため、SATA デバイス失敗した場合、上のファームウェア更新の例を示します (イベント ID:258):
 
 ``` 
 EventData
@@ -173,11 +174,11 @@ Parameter8Value 0
 ```
 
 上記のイベントでは、パラメーター値 2 ～ 6 にデバイスの詳細情報が含まれています。 ここで、これらの ATA レジスタ値を検討してみましょう。 Download Microcode コマンドの失敗に関する以下の値は、ATA ACS 仕様を参照して解釈できます。
-- リターン コード: 0 (0000 0000) (該当せず - ペイロードが転送されていないため何も意味しません)
-- 機能: 15 (0000 1111) (ビット1 が "1" に設定されています。これは "中止" されたことを示します)
-- SectorCount: 0 (0000 0000) (該当せず)
-- DriveHead: 160 (1010 0000) (該当せず - 設定されているのは廃止されたビットのみです)
-- コマンド: 146 (1001 0010) (ビット 1 が "1" に設定されています。これはセンス データが利用できることを示します)
+- コードが返されます。0 (0000 0000) (なし - ペイロードが転送されていないので意味のない)
+- 機能:15 (0000 1111) (ビット 1 は、'1' に設定されているし、「中止」を示します)
+- SectorCount:0 (0000 0000) (なし)
+- DriveHead:160 (1010 0000) (該当なし-のみ不使用ビットが設定)
+- コマンド:146 (1001 0010) ('1' センス データの可用性を示すビット 1 が設定されます)
 
 この情報から、ファームウェア更新操作はデバイスによって中止されたことがわかります。
 

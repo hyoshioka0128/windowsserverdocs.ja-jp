@@ -1,6 +1,6 @@
 ---
-title: リモート デスクトップ クライアントでサポートされている構成
-description: リモート デスクトップ クライアントを使用してアクセスできる Pc を学習します。
+title: リモート デスクトップ クライアントでサポートされる構成
+description: リモート デスクトップ クライアントを使用してアクセスできる Pc について説明します
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -15,13 +15,13 @@ ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d38008b6387385917ad21ce7e169b8ff3f4d18ba
-ms.sourcegitcommit: 96e968bbe8dc50ebb1535ae1c8ce92fa73c83171
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1978049"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59884693"
 ---
-# <a name="remote-desktop-client---supported-configuration"></a>リモート デスクトップ クライアントでサポートされている構成
+# <a name="remote-desktop-client---supported-configuration"></a>リモート デスクトップ クライアントでサポートされる構成
 
 ## <a name="supported-pcs"></a>サポートされる PC
 次の Windows オペレーティング システムを実行している Pc に接続することができます。
@@ -38,8 +38,8 @@ ms.locfileid: "1978049"
 - Windows Server 2012
 - Windows Server 2012 R2
 - Windows Server 2016
-- Windows マルチポイント Server 2011
-- Windows マルチポイント Server 2012
+- Windows Multipoint Server 2011
+- Windows Multipoint Server 2012
 - Windows Small Business Server 2008
 - Windows Small Business Server 2011
 
@@ -52,7 +52,7 @@ ms.locfileid: "1978049"
 - Windows Server 2016
 - Windows Small Business Server 2011
 
-次のオペレーティング システムが、RD Web アクセスまたは RemoteApp サーバーとして使用できます。
+次のオペレーティング システムは、RD Web アクセスまたは RemoteApp のサーバーとして使用できます。
 - Windows Server 2008 R2
 - Windows Server 2012
 - Windows Server 2012 R2
@@ -60,15 +60,15 @@ ms.locfileid: "1978049"
 
 ## <a name="unsupported-windows-versions-and-editions"></a>サポートされていない Windows のバージョンとエディション
 
-リモート デスクトップ クライアントはこれらの Windows のバージョンとエディションへの接続できません。
+リモート デスクトップ クライアントは、これらの Windows のバージョンとエディションには接続できません。
 
 - Windows 7 Starter
-- Windows 7 のホーム
-- Windows 8 Home
+- Windows 7 ホーム
+- Windows 8 ホーム
 - Windows 8.1 ホーム
 - Windows 10 Home
 
-Windows のバージョンがインストールされている次のいずれかであるコンピューターにアクセスする場合は、RDP をサポートしている Windows のバージョンにアップグレードすることをお勧めします。
+インストールされている Windows のバージョンの 1 つを持つコンピューターにアクセスする場合は、RDP をサポートする Windows バージョンにアップグレードをお勧めします。
 
-## <a name="rd-gateway-messaging-is-not-supported"></a>RD ゲートウェイ メッセージングはサポートされていません
-リモート デスクトップ クライアントは RD ゲートウェイ メッセージングをサポートしていません。 リモート デスクトップ リソースのアクセス ポリシー (RD 社) RD ゲートウェイ サーバーで**RD ゲートウェイ メッセージングのサポートを持つコンピューターのみを許可する**が指定されていない接続することはできないことを確認します。
+## <a name="rd-gateway-messaging-is-not-supported"></a>RD ゲートウェイ メッセージングがサポートされていません
+リモート デスクトップ クライアントは RD ゲートウェイのメッセージングをサポートしていません。 リモート デスクトップ リソースのアクセス ポリシー (RD RAP)、RD ゲートウェイ サーバーを指定しないことを確認 **RD ゲートウェイのメッセージングをサポートしているコンピューターのみを許可** と接続することはできません。

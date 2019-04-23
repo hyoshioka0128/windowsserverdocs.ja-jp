@@ -1,6 +1,6 @@
 ---
-title: "クライアントが紹介をキャッシュする時間の長さを変更する"
-description: "この記事では、クライアントが紹介をキャッシュする時間の長さを変更する方法について説明します"
+title: クライアントが紹介をキャッシュする時間の長さを変更する
+description: この記事では、クライアントが紹介をキャッシュする時間の長さを変更する方法について説明します
 ms.date: 6/5/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,21 +8,22 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1f70a5a1a6770cc1bead66b5543f02e4b29b8895
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 08a1212c983de6e2492609330c1be222286e9e8f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59888773"
 ---
 # <a name="change-the-amount-of-time-that-clients-cache-referrals"></a>クライアントが紹介をキャッシュする時間の長さを変更する
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 紹介とは、ユーザーが名前空間のルートにアクセスするか、名前空間内のターゲットを持つフォルダーにアクセスしたときに、クライアント コンピューターがドメイン コントローラーまたは名前空間サーバーから受信する、順序付きのターゲット一覧です。 クライアントが紹介をキャッシュしてから新しい紹介を要求するまでの時間を調整できます。
 
 ## <a name="to-change-the-amount-of-time-that-clients-cache-namespace-root-referrals"></a>クライアントが名前空間のルートの紹介をキャッシュする時間の長さを変更するには
 
-1.  [**スタート**] をクリックし、[**管理ツール**] をポイントして、[**DFS 管理**] をクリックします。
+1.  **[スタート]** をクリックし、**[管理ツール]** をポイントして、**[DFS 管理]** をクリックします。
 
 2.  コンソール ツリーの **[名前空間]** ノードで、名前空間を右クリックし、**[プロパティ]** をクリックします。
 
@@ -33,7 +34,7 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="to-change-the-amount-of-time-that-clients-cache-folder-referrals"></a>クライアントがフォルダーの紹介をキャッシュする時間の長さを変更するには
 
-1.  [**スタート**] をクリックし、[**管理ツール**] をポイントして、[**DFS 管理**] をクリックします。
+1.  **[スタート]** をクリックし、**[管理ツール]** をポイントして、**[DFS 管理]** をクリックします。
 
 2.  コンソール ツリーの **[名前空間]** ノードで、ターゲットを持つフォルダーを右クリックし、**[プロパティ]** をクリックします。
 
@@ -41,7 +42,7 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="see-also"></a>関連項目
 
--   [DFS 名前空間を調整する](tuning-dfs-namespaces.md)
--   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)
+-   [DFS 名前空間のチューニング](tuning-dfs-namespaces.md)
+-   [Delegate Management Permissions for DFS 名前空間](delegate-management-permissions-for-dfs-namespaces.md)
 
 

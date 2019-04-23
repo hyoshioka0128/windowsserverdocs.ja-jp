@@ -1,6 +1,6 @@
 ---
-title: "記憶域レポートの管理"
-description: "この記事では、記憶域レポートを生成、スケジュール、および監視する方法について説明します。"
+title: 記憶域レポートの管理
+description: この記事では、記憶域レポートを生成、スケジュール、および監視する方法について説明します。
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: c0d750fd139865daa92319c1d1926dc5d36669b2
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59885773"
 ---
 # <a name="storage-reports-management"></a>記憶域レポートの管理
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 ファイル サーバー リソース マネージャー Microsoft<sup>®</sup> 管理コンソール (MMC) スナップインの **[記憶域レポートの管理]** ノードでは、次のタスクを実行できます。
 
@@ -33,14 +34,14 @@ ms.lasthandoff: 10/17/2017
 
 ここでは、次のトピックについて説明します。
 
--   [レポートのセットをスケジュールする](schedule-set-of-reports.md)
--   [オン デマンドでレポートを生成する](generate-reports-on-demand.md)
+-   [一連のレポートのスケジュール設定します。](schedule-set-of-reports.md)
+-   [オンデマンドでレポートを生成します。](generate-reports-on-demand.md)
 
 > [!Note]
 > 電子メール通知や特定のレポート機能を設定するには、まずファイル サーバー リソース マネージャーの全般的なオプションを設定する必要があります。
 
 ## <a name="see-also"></a>関連項目
 
--   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
+-   [設定ファイル サーバー リソース マネージャーのオプション](setting-file-server-resource-manager-options.md)
 
 

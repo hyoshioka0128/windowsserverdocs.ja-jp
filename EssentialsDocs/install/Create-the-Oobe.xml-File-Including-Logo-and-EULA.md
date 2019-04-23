@@ -1,6 +1,6 @@
 ---
-title: "ロゴおよび EULA を含む Oobe.xml ファイルを作成します。"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: ロゴおよび EULA を含む Oobe.xml ファイルの作成
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,30 +13,31 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: f8f99a2051e114b3c890f1cdac23aebf58689980
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59884653"
 ---
-# <a name="create-the-oobexml-file-including-logo-and-eula"></a>ロゴおよび EULA を含む Oobe.xml ファイルを作成します。
+# <a name="create-the-oobexml-file-including-logo-and-eula"></a>ロゴおよび EULA を含む Oobe.xml ファイルの作成
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-Oobe.xml ファイルを使用して、初期構成を独自のエンド ユーザー ライセンス契約 (EULA) を追加できます。 Oobe.xml は、初期構成、Windows へようこそ、およびその他のページのエンド ユーザーに表示されるテキストと画像を提供するためのファイルです。 エンド ユーザーの言語および国または地域選択に基づいてコンテンツをカスタマイズする複数の Oobe.xml ファイルを追加することができます。 詳細については、次を参照してください。、[Windows アセスメント & デプロイメント キット for Windows 8](https://go.microsoft.com/fwlink/?LinkId=248694)ドキュメントです。  
+Oobe.xml ファイルを使用して独自の使用許諾契約 (EULA) を初期構成に追加できます。 Oobe.xml は、初期構成、Windows へようこそ、およびエンド ユーザーに表示されるその他のページ用に、テキストとイメージを提供するために使用されるファイルです。 複数の Oobe.xml ファイルを追加して、エンド ユーザーの言語および国または地域選択に基づいて内容をカスタマイズできます。 詳細については、「 [Windows 8 用 Windows アセスメント &amp; デプロイメント キット](https://go.microsoft.com/fwlink/?LinkId=248694) 」を参照してください。  
   
- 会社の EULA は、Microsoft EULA に加えて表示されます。 最初の EULA が初期構成エンド ユーザー エクスペリエンス、中に表示される Microsoft EULA がし、使用許諾契約書が表示されます。 サーバーで、使用許諾契約書をどこにでも配置でき、Oobe.xml ファイルの場所を指定します。  
+ 会社の EULA は、Microsoft EULA に加えて表示されます。 Microsoft EULA が初期構成エンド ユーザー エクスペリエンス中に表示される最初の EULA で、次にユーザーの EULA が表示されます。 ユーザーの EULA はサーバーの任意の場所に配置でき、場所は Oobe.xml ファイルに指定します。  
   
 #### <a name="to-add-your-company-eula-and-logo"></a>会社の EULA とロゴを追加するには  
   
 1.  Oobe.xml ファイルをメモ帳などのテキスト エディターで開きます。  
   
-2.  < Logopath\ >< 内/logopath\ > タグに、ロゴ ファイルへの絶対パスを入力してください。 このファイルは、240 x 100 ピクセルである 32 ビット ポータブル ネットワーク グラフィックス (.png) ファイルが含まれている必要があります。  
+2.  内で、< logopath\></logopath\>タグに、ロゴ ファイルへの絶対パスを入力します。 このファイルには、240 x 100 ピクセルの 32 ビット ポータブル ネットワーク グラフィックス (.png) ファイルが含まれます。  
   
-3.  < Eulafilename\ >< 内/eulafilename\ > タグ、EULA ファイルの絶対パスを入力します。 EULA ファイルはリッチ テキスト形式 (.rtf) ファイルである必要があります。  
+3.  内で、< eulafilename\></eulafilename\>タグ、EULA ファイルへの絶対パスを入力します。 EULA ファイルはリッチ テキスト形式 (.rtf) ファイルでなければなりません。  
   
-4.  < 名前 \/>< 内/名前 \/> タグは、会社名を入力します。  
+4.  内で、< 名前\></name\>タグ、会社名を入力します。  
   
-     次の例では、Oobe.xml ファイルにタグを示しています。  
+     次の例は、Oobe.xml ファイル内のタグを示しています。  
   
     ```  
   
@@ -54,39 +55,39 @@ Oobe.xml ファイルを使用して、初期構成を独自のエンド ユー�
   
 5.  ファイルを保存します。  
   
-6.  次の場所のいずれかで、Oobe.xml ファイルを配置します。  
+6.  Oobe.xml ファイルを次のいずれかの場所に配置します。  
   
     |Oobe.xml の場所|場所を決定する条件|  
     |-----------------------|----------------------------------------|  
-    |%windir%\system32\oobe\info\|サーバーは単一の国/地域および単一言語システムで出荷されています。|  
-    |%windir%\system32\oobe\info\default\\ < 言語 >|サーバーは単一の国/地域および多言語システムで出荷されています。|  
-    |%windir%\system32\oobe\info\\ < 国/地域 > \ < 国/地域 > %windir%\system32\oobe\info\\ と \\ < 言語 > \|サーバーは 1 つ以上の国/地域に出荷し、設定は、それぞれ単一言語と国/地域ごとにカスタマイズを必要とします。 ここで < 国/地域 > は、国または地域で、サーバーが展開されている、< 言語 > はロケール識別子 (LCID) の 10 進数バージョンの地理的な場所識別子 (GeoID) の 10 進数バージョンです。|  
+    |%windir%\system32\oobe\info\|サーバーは 1 つの国/地域および単一言語システムで出荷されます。|  
+    |%windir%\system32\oobe\info\default\\< 言語\>|サーバーは、単一の国/地域および多言語システムで出荷されています。|  
+    |%windir%\system32\oobe\info\\< 国/地域 > \ と %windir%\system32\oobe\info\\< 国/地域 >\\< 言語\>\|サーバーは 1 つ以上の国に出荷/リージョンと、設定には、それぞれに 1 つの言語、国/地域ごとにカスタマイズが必要です。 国または、サーバーがデプロイされているリージョンの地理的な場所識別子 (GeoID) の 10 進数バージョンが < 国/地域 > と < 言語\>はロケール識別子 (LCID) の 10 進数のバージョンです。|  
   
- ある場合は白色のテキストで、別の会社のロゴ、フレンドと背景色が青のため、セットアップ フローが表示されます。  レジストリ キーと値を設定して、必要に応じてこのロゴを指定することができます。  
+ 文字が白の会社ロゴがある場合、セットアップ フローは背景色が青であるため、セットアップ フローで表示すると効果的です。  このロゴを任意で指定するには、レジストリ キーと値を設定します。  
   
-#### <a name="to-specify-a-company-logo-by-setting-the-oem-registry-key"></a>OEM レジストリ キー設定によって、会社のロゴを指定するには  
+#### <a name="to-specify-a-company-logo-by-setting-the-oem-registry-key"></a>会社ロゴを指定するため OEM レジストリ キーを設定するには  
   
-1.  サーバーで、マウスを移動して、画面の右上隅とクリックして**検索**します。  
+1.  サーバーで、カーソルを画面の右上隅に移動して、**[検索]** をクリックします。  
   
-2.  検索ボックスに次のように入力します。**regedit**、Regedit アプリケーションをクリックします。  
+2.  検索ボックスに「 **regedit**」と入力して、Regedit アプリケーションをクリックします。  
   
-3.  移動し、ナビゲーション ウィンドウで、**HKEY_LOCAL_MACHINE**、展開**ソフトウェア**、展開**Microsoft**、展開**Windows Server**します。 OEM キーが存在しない場合は、次のように、キーを作成します。  
+3.  ナビゲーション ウィンドウで、**[HKEY_LOCAL_MACHINE]** に移動し、**[SOFTWARE]**、**[Microsoft]**、**[Windows Server]** の順に展開します。 OEM キーが存在しない場合、次の手順でキーを作成します。  
   
-    1.  右クリック**Windows Server**、] をクリックして**新規**、] をクリックし、**キー**します。  
+    1.  **[Windows Server]** を右クリックし、**[新規]** をクリックし、**[キー]** をクリックします。  
   
-    2.  キー名は、次のように入力します。**OEM**します。  
+    2.  キー名に「**OEM**」と入力します。  
   
-4.  (省略可能)ロゴのエントリを作成する場合は、ロゴの言語バージョンを区別するために異なるキーを作成できます。 たとえば、英語とドイツ語の両方のバージョンのロゴがあればを作成、en-キーと de-de キー。 すべてのロゴ ファイルが格納されるため、同じフォルダーに、言語ごとに一意の名前でロゴ イメージ ファイルのインスタンスを提供する必要があります。 たとえば、LogoWithWhiteText_en.png と LogoWithWhiteText_de.png という名前のファイルを作成することができます。  
+4.  (省略可能) ロゴのエントリを作成している場合、ロゴの言語バージョンを区別するために異なるキーを作成できます。 たとえば、英語バージョンのロゴとドイツ語バージョンのロゴを所有する場合、en-us キーと de-de キーを作成できます。 ロゴ ファイルはすべて同じフォルダーに保存されるため、ロゴ イメージ ファイルのインスタンスに、言語ごとに一意の名前を指定する必要があります。 たとえば、LogoWithWhiteText_en.png と LogoWithWhiteText_de.png という名前のファイルを作成します。  
   
-5.  いずれかを右クリック**OEM**または該当する言語キーを右クリックし、クリックすると**新規**、] をクリックし、**文字列値**します。  
+5.  **[OEM]** を右クリックするか、該当する言語キーを右クリックし、**[新規]** をクリックし、**[文字列値]** をクリックします。  
   
-6.  を文字列として「logowithwhitetext」と入力し、、Enter キーを押します。  
+6.  文字列として「LogoWithWhiteText」を入力し、Enter キーを押します。  
   
-7.  新しい文字列を右クリックし、をクリックして**変更**します。  
+7.  新しい文字列を右クリックして、**[変更]** をクリックします。  
   
-8.  ロゴのイメージを含むパスを入力し、[OK] をクリックします。  
+8.  ロゴ イメージを含むパスを入力し、[OK] をクリックします。  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
  [Windows Server Essentials ADK の概要](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   
  [追加のカスタマイズ](Additional-Customizations.md)   

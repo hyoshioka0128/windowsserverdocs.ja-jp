@@ -1,6 +1,6 @@
 ---
-title: "以前のバージョンから Windows Server Essentials または Windows Server Essentials エクスペリエンスに移行します。"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: 以前のバージョンから Windows Server Essentials または Windows Server Essentials エクスペリエンスに移行する
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/20116
 ms.prod: windows-server-2016-essentials
@@ -13,65 +13,66 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 213ee4304d9d4ebdb7580f7f78fdaca78aa454c9
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59883873"
 ---
-# <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>以前のバージョンから Windows Server Essentials または Windows Server Essentials エクスペリエンスに移行します。
+# <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>以前のバージョンから Windows Server Essentials または Windows Server Essentials エクスペリエンスに移行する
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-このガイドでは、インストールされている Windows Server Essentials エクスペリエンスの役割を持つ Windows Server Essentials または Windows Server 2012 R2 を以前のバージョンの Windows Small Business Server と Windows Server Essentials が (Windows Server Essentials、Windows Small Business Server 2011 Standard、Windows Small Business Server 2011 Essentials、Windows Small Business Server 2008、および Windows Small Business Server 2003 を含む) から移行する方法について説明します。  
+このガイドは、以前のバージョンの Windows Small Business Server と (Windows Server Essentials、Windows Small Business Server 2011 Standard、Windows Small Business Server 2011 Essentials、Windows を含む Windows Server Essentials から移行する方法を説明します。Small Business Server 2008、および Windows Small Business Server 2003) Windows Server Essentials または Windows Server 2012 R2、Windows Server Essentials エクスペリエンス役割をインストールします。  
   
- **環境で最大 25 ユーザーおよび 50 デバイス**、以前のバージョンの Windows SBS から Windows Server Essentials に移行するには、このガイドの手順に従うことができます。  
+ **最大 25 ユーザーおよび 50 台のデバイスを使用した環境**、以前のバージョンの Windows SBS から Windows Server Essentials に移行するには、このガイドの手順を行うことができます。  
   
- **最大 100 人のユーザーと 200 台のデバイス環境で**、Windows Server Essentials エクスペリエンス役割がインストールされた Windows Server 2012 R2 Standard または Datacenter エディションに移行する同じガイダンスに従うことができます。  
+ **最大 100 人のユーザーと 200 台のデバイス環境で**、Windows Server Essentials エクスペリエンス役割がインストールされた Windows Server 2012 R2 の Standard または Datacenter エディションに移行するのと同じガイダンスに従うことができます。  
   
 > [!NOTE]
->  移行中に問題が起きないように、移行を開始する前に、このドキュメントを読むことを Windows Server Essentials 製品開発チームは強く推奨します。  
+>  移行中に問題が起きないように、Windows Server Essentials 製品開発チームでは、このドキュメントを読んでから移行を開始することを強くお勧めします。  
   
 ## <a name="terms-and-definitions"></a>用語と定義  
- **ソース サーバー**設定とデータを移行する既存のサーバー。  
+ **移行元サーバー** : 設定とデータを移行する元の既存のサーバー。  
   
- **移行先サーバー**設定とデータを移行する新しいサーバー。  
+ **移行先サーバー** : 設定とデータが移行される先の新しいサーバー。  
   
 ## <a name="migration-process-summary"></a>移行プロセスの概要  
- この移行ガイドには、次の手順が含まれています。  
+ この移行ガイドには次の手順が含まれます。  
   
-1.  [手順 1: Windows Server Essentials で移行元サーバーの移行の準備](Step-1--Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md)します。  移行元サーバーとネットワーク移行の準備ができていることを確認する必要があります。 このセクションでは、を介して移行元サーバーのバックアップ、移行元サーバーのシステム正常性を評価する、最新の service pack と修正プログラム、インストール、およびネットワーク構成を検証する手順について説明します。  
+1.  [ステップ 1: Windows Server Essentials でソース サーバーの移行に向けて準備](Step-1--Prepare-your-Source-Server-for-Windows-Server-Essentials-migration.md)します。  移行元サーバーおよびネットワークが、移行できる状態になっていることを確認する必要があります。 ここでは、移行元サーバーのバックアップ、移行元サーバーのシステム正常性の評価、最新のサービス パックと修正プログラムのインストール、およびネットワーク構成の確認について詳しく説明します。  
   
-2.  [手順 2: インストールの Windows Server Essentials を新しいレプリカ ドメイン コントローラーとして](Step-2--Install-Windows-Server-Essentials-as-a-new-replica-domain-controller.md)します。 このセクションでは、ドメイン コントローラーとして (Windows Server Essentials エクスペリエンス役割を有効になっている) と Windows Server Essentials、または Windows Server 2012 R2 Standard をインストールする方法について説明します。  
+2.  [手順 2:Windows Server Essentials を新しいレプリカ ドメイン コント ローラーとしてインストール](Step-2--Install-Windows-Server-Essentials-as-a-new-replica-domain-controller.md)します。 このセクションでは、ドメイン コント ローラーとして (Windows Server Essentials エクスペリエンス役割を有効になっている) で Windows Server Essentials、または Windows Server 2012 R2 Standard をインストールする方法について説明します。  
   
-3.  [手順 3: 新しい Windows Server Essentials サーバーにコンピューターを参加させる](Step-3--Join-computers-to-the-new-Windows-Server-Essentials-server.md)します。  このセクションでは、Windows Server Essentials を実行しているグループ ポリシー設定を更新、新しいサーバーにクライアント コンピューターを参加させる方法について説明します。  
+3.  [手順 3:新しい Windows Server Essentials サーバーにコンピューターを参加させる](Step-3--Join-computers-to-the-new-Windows-Server-Essentials-server.md)します。  このセクションでは、Windows Server Essentials を実行していると、グループ ポリシー設定を更新して、新しいサーバーにクライアント コンピューターを参加させる方法について説明します。  
   
-4.  [手順 4: Destination Server for Windows Server Essentials 移行の設定とデータの移動](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)します。  このセクションでは、移行元サーバーから移行するデータと設定に関する情報を提供します。  
+4.  [手順 4:Windows Server Essentials の移行先サーバーへの移行の設定とデータの移動](Step-4--Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)します。  ここでは、移行元サーバーからのデータと設定の移行について説明します。  
   
-5.  [手順 5: Windows Server Essentials の移行先サーバーの移行でフォルダー リダイレクトを有効にする](Step-5--Enable-folder-redirection-on-the-Destination-Server-for-Windows-Server-Essentials-migration.md)します。  移行元サーバーでフォルダー リダイレクトが有効である場合、移行先サーバーでフォルダー リダイレクトを有効にし、古いフォルダー リダイレクト グループ ポリシー設定を削除できます。  
+5.  [手順 5:Windows Server Essentials の移行先サーバーの移行でフォルダー リダイレクトを有効にする](Step-5--Enable-folder-redirection-on-the-Destination-Server-for-Windows-Server-Essentials-migration.md)します。  移行元サーバーでフォルダー リダイレクトが有効になっている場合は、移行先サーバーでフォルダー リダイレクトを有効にしてから、以前のフォルダー リダイレクト グループ ポリシー設定を削除できます。  
   
-6.  [手順 6: を降格して新しい Windows Server Essentials ネットワークから移行元サーバーを削除する](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md)します。  ネットワークから移行元サーバーを削除する前に、グループ ポリシーの更新を強制し、移行元サーバーを降格する必要があります。  
+6.  [手順 6:降格して新しい Windows Server Essentials ネットワークから移行元サーバーを削除](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md)します。  移行元サーバーをネットワークから削除する前に、グループ ポリシーの更新を強制し、移行元サーバーを降格する必要があります。  
   
-7.  [手順 7: Windows Server Essentials 移行の移行後のタスクを実行する](Step-7--Perform-post-migration-tasks-for-the-Windows-Server-Essentials-migration.md)します。  Windows Server Essentials へのすべての設定とデータの移行が完了したら、許可されているコンピューターをユーザー アカウントにマップする可能性があります。  
+7.  [手順 7:Windows Server Essentials の移行の移行後のタスクを実行](Step-7--Perform-post-migration-tasks-for-the-Windows-Server-Essentials-migration.md)します。  Windows Server Essentials へのすべての設定とデータの移行が完了したら、ユーザー アカウントに許可されているコンピューターにマップしたい場合があります。  
   
-8.  [手順 8: Windows Server Essentials ベスト プラクティス アナライザーを実行する](Step-8--Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md)します。  設定の移行と Windows Server Essentials へのデータを完了したら、Windows Server Essentials ベスト プラクティス アナライザー (BPA) を実行する必要があります。  
+8.  [手順 8:Windows Server Essentials ベスト プラクティス アナライザー実行](Step-8--Run-the-Windows-Server-Essentials-Best-Practices-Analyzer.md)します。  設定の移行と Windows Server Essentials へのデータを完了したら、Windows Server Essentials ベスト プラクティス アナライザー (BPA) を実行する必要があります。  
   
- いくつかの移行の手順は、管理者としてコマンド プロンプト ウィンドウを開くことが必要です。 次の手順では、これを行う方法を説明します。  
+ いくつかの移行手順では、管理者としてコマンド プロンプト ウィンドウを開く必要があります。 次の手順でこの方法について説明します。  
   
-###  <a name="BKMK_OpenACommandPromptAsAdmin"></a>移行元サーバーでコマンド プロンプト ウィンドウを管理者として開くには  
+###  <a name="BKMK_OpenACommandPromptAsAdmin"></a> 移行元サーバーでコマンド プロンプト ウィンドウを管理者として開くには  
   
-1.  をクリックして**開始**します。  
+1.  **[開始]** をクリックします。  
   
-2.  検索ボックスに次のように入力します。**cmd**します。  
+2.  検索ボックスに「 **cmd**」と入力します。  
   
-3.  右クリックし、結果の一覧で**cmd**、] をクリックし、**管理者として実行**します。  
+3.  結果一覧で **[cmd]** を右クリックし、 **[管理者として実行]** をクリックします。  
   
-#### <a name="to-open-a-command-prompt-window-on-the-destination-server-as-an-administrator"></a>管理者として移行先サーバーでコマンド プロンプト ウィンドウを開くには  
+#### <a name="to-open-a-command-prompt-window-on-the-destination-server-as-an-administrator"></a>移行先サーバーで管理者としてコマンド プロンプト ウィンドウを開くには  
   
-1.  **開始**] 画面で検索ボックスに、種類、**cmd**します。  
+1.  **[スタート]** 画面で、検索ボックスに「**cmd**」と入力します。  
   
-2.  右クリックし、結果の一覧で**cmd**、] をクリックし、**管理者として実行**します。  
+2.  結果一覧で **[cmd]** を右クリックし、 **[管理者として実行]** をクリックします。  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
   
 -   [Windows Server Essentials へのサーバー データを移行します。](Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

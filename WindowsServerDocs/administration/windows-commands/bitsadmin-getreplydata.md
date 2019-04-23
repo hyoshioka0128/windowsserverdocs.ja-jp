@@ -1,0 +1,54 @@
+---
+title: bitsadmin getreplydata
+description: Windows コマンド」のトピック**bitsadmin getreplydata** -16 進形式で、サーバーの応答データを取得します。
+ms.custom: na
+ms.prod: windows-server-threshold
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 819f97d5-b255-4b2d-9f63-0daa73915434
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+ms.openlocfilehash: 78d70a44d6881568c8d92db145fdf22a260ee8af
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59883823"
+---
+# <a name="bitsadmin-getreplydata"></a>bitsadmin getreplydata
+
+16 進形式でサーバーの応答データを取得します。
+
+**1.2 およびそれ以前の BITS**: サポートされません。
+
+## <a name="syntax"></a>構文
+
+```
+bitsadmin /GetReplyData <Job>
+```
+
+## <a name="parameters"></a>パラメーター
+
+|パラメーター|説明|
+|---------|-----------|
+|Job|ジョブの表示名または GUID|
+
+## <a name="remarks"></a>注釈
+
+アップロード応答ジョブに対してのみ有効です。
+
+## <a name="BKMK_examples"></a>例
+
+次の例では、という名前のジョブの応答データを取得する*myDownloadJob*します。
+```
+C:\>bitsadmin /GetReplyData myDownloadJob
+```
+
+#### <a name="additional-references"></a>その他の参照情報
+
+[コマンドライン構文キー](command-line-syntax-key.md)

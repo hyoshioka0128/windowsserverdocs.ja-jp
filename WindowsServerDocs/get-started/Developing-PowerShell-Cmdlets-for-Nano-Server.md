@@ -13,15 +13,15 @@ ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c669db414c4f12b6145a26a75b83449f43e8918
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2082399"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59887683"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>Nano Server 用の PowerShell コマンドレットを開発する
 
->適用対象: Windows Server 2016
+>適用先:Windows Server 2016
 
 > [!IMPORTANT]
 > Windows Server バージョン 1709 以降、Nano Server は[コンテナー基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、「[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)」をご覧ください。 
@@ -36,8 +36,8 @@ ms.locfileid: "2082399"
   
 PowerShell は、バージョン 5.1 以降、機能セットとプラットフォーム互換性が異なるさまざまなエディションが提供されるようになりました。  
   
-- **Desktop Edition:** .NET Framework 上に構築され、Windows の完全フットプリント エディション (Server Core、Windows Desktop など) で実行される PowerShell のバージョンをターゲットとするスクリプトおよびモジュールと互換性があります。  
-- **Core Edition:** .NET Core 上に構築され、Windows のフットプリントが小さいエディション (Nano Server、Windows IoT など) で実行される PowerShell のバージョンをターゲットとするスクリプトおよびモジュールと互換性があります。  
+- **デスクトップ エディション:**.NET Framework 上に構築され、スクリプトおよび Server Core などの Windows と Windows デスクトップの完全エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。  
+- **コア エディション:**.NET Core 上に構築され、スクリプトおよび Nano Server などの Windows や Windows IoT の縮小エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。  
   
 PowerShell の実行中のエディションは、$PSVersionTable の PSEdition プロパティに表示されます。  
 ```powershell  
@@ -110,7 +110,7 @@ At line:1 char:1
 仮想マシンまたは物理マシンに Nano Server をインストールするためのクイックスタートおよび詳細な手順については、このトピックの親トピックである「[Nano Server のインストール](Getting-Started-with-Nano-Server.md)」を参照してください。  
   
 > [!NOTE]  
-> Nano Server 上で開発を行うには、New-NanoServerImage の -Development パラメーターを使用して Nano Server をインストールすると便利です。 これにより、署名されていないドライバーのインストール、デバッガー バイナリのコピー、デバッグ用にポートを開く操作、テスト署名、開発者用ライセンスなしでの AppX パッケージのインストールを行うことができるようになります。 以下に例を示します。  
+> Nano Server 上で開発を行うには、New-NanoServerImage の -Development パラメーターを使用して Nano Server をインストールすると便利です。 これにより、署名されていないドライバーのインストール、デバッガー バイナリのコピー、デバッグ用にポートを開く操作、テスト署名、開発者用ライセンスなしでの AppX パッケージのインストールを行うことができるようになります。 次に、例を示します。  
 >  
 >`New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -Development`  
   
@@ -125,7 +125,7 @@ PowerShell では、コマンドレットに対していくつかの実装の種
 * %windir%\system32\WindowsPowerShell\v1.0\Modules   
 * %ProgramFiles%\WindowsPowerShell\Modules   
 * %UserProfile%\Documents\WindowsPowerShell\Modules   
-* \<製品のインストール場所>   
+* \<製品のインストール場所 >   
     
  次のことを理解したうえでこれらの場所を確認します。  
  * CIM コマンドレットは、拡張子が .cdxml ファイルです。  
@@ -160,11 +160,11 @@ PowerShell Core SDK モジュールを使用するには、Visual Studio 2015 Up
 SDK モジュールを使用する前に Visual Studio のインストールを確認して、これらの前提条件が満たされていることを確認します。 必ず Visual Studio のインストール時に上記の機能をインストールするよう選択するか、または既存の Visual Studio 2015 インストールを変更して上記の機能をインストールしてください。  
   
 PowerShell Core SDK モジュールには、次のコマンドレットが含まれています。  
-- New-NanoCSharpProject: Nano Server の Windows Server 2016 リリースに含まれている CoreCLR と PowerShell Core をターゲットとする新しい Visual Studio C# プロジェクトを作成します。  
-- Show-SdkSetupReadMe: ファイル エクスプローラーで SDK のルート フォルダーを開き、手動セットアップ用の README.txt ファイルを開きます。  
-- Install-RemoteDebugger: Nano Server コンピューターに Visual Studio リモート デバッガーをインストールし、構成します。  
-- Start-RemoteDebugger: Nano Server が実行されているリモート コンピューターでリモート デバッガーを起動します。  
-- Stop-RemoteDebugger: Nano Server が実行されているリモート コンピューターでリモート デバッガーを停止します。  
+- New-nanocsharpproject:新しい Visual Studio を作成します。 C# CoreCLR と Nano Server の Windows Server 2016 リリースに含まれる PowerShell Core をターゲットとするプロジェクト。  
+- Show-sdksetupreadme:ファイル エクスプ ローラーで SDK のルート フォルダーを開き、手動セットアップ用の README.txt ファイルを開きます。  
+- Install-remotedebugger:インストールし、Nano Server コンピューターに Visual Studio リモート デバッガーを構成します。  
+- Start-remotedebugger:Nano Server を実行しているリモート コンピューターでリモート デバッガーを起動します。  
+- Stop-remotedebugger:Nano Server を実行しているリモート コンピューターでリモート デバッガーを停止します。  
   
 これらのコマンドレットの使い方の詳細については、モジュールをインストールしてインポートした後、次のように各コマンドレットに対して Get-Help を実行します。  
   
@@ -175,7 +175,7 @@ PowerShell Core SDK モジュールには、次のコマンドレットが含ま
   
 API カタログ内で .NET Core を検索したり、Core CLR 参照アセンブリを逆アセンブルしたりできます。 .NET API のプラットフォームの移植性の詳細については、「[Platform Portability (プラットフォームの移植性)](https://github.com/Microsoft/dotnet-apiport/blob/master/docs/HowTo/PlatformPortability.md)」を参照してください。  
   
-### <a name="pinvoke"></a>PInvoke  
+### <a name="pinvoke"></a>PInvoke (PInvoke)  
 Nano Server で使用される Core CLR では、kernel32.dll、advapi32.dll などのいくつかの基本的な DLL が多数の API セットに分割されました。そのため、PInvoke が正しい API を参照していることを確認する必要があります。 互換性がない場合は、実行時エラーが発生します。  
   
 Nano Server でサポートされているネイティブ API の一覧については、「[Nano Server APIs (Nano Server の API)](https://msdn.microsoft.com/library/mt588480(v=vs.85).aspx)」を参照してください。  
@@ -242,7 +242,7 @@ $result.RemoteAddress = 1.1.1.1
   
 ### <a name="migrating-from-wmi-net-to-mi-net"></a>WMI .NET から MI .NET への移行  
   
-[WMI .NET](https://msdn.microsoft.com/library/mt481551(v=vs.110).aspx) はサポートされないため、古い API を使用しているすべてコマンドレットを、サポートされている WMI API ([MI.NET](https://msdn.microsoft.com/library/dn387184(v=vs.85).aspx)) に移行する必要があります。 MI .NET には、C# から直接、または CimCmdlets モジュールのコマンドレットを通じてアクセスできます。   
+[WMI .NET](https://msdn.microsoft.com/library/mt481551(v=vs.110).aspx)がサポートされないため、古い API を使用してすべてのコマンドレットがサポートされている WMI API に移行する必要があります。[多重継承します。NET](https://msdn.microsoft.com/library/dn387184(v=vs.85).aspx)) に移行する必要があります。 MI .NET には、C# から直接、または CimCmdlets モジュールのコマンドレットを通じてアクセスできます。   
   
 ### <a name="cimcmdlets-module"></a>CimCmdlets モジュール  
   

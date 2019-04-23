@@ -1,6 +1,6 @@
 ---
-title: "クォータ テンプレートのプロパティを編集する"
-description: "この記事では、クォータ テンプレートのプロパティを編集して、元のクォータ テンプレートから作成されたクォータにも変更を適用する方法を説明します。"
+title: クォータ テンプレートのプロパティを編集する
+description: この記事では、クォータ テンプレートのプロパティを編集して、元のクォータ テンプレートから作成されたクォータにも変更を適用する方法を説明します。
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 0362b30e16dacb354220c770899195240f3e19ee
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59885783"
 ---
 # <a name="edit-quota-template-properties"></a>クォータ テンプレートのプロパティを編集する
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 クォータ テンプレートを変更したときに、過去に元のファイル スクリーン テンプレートから作成されたクォータにもその変更を適用することができます。 元のテンプレートと現在も一致しているクォータのみを変更するか、クォータが作成後に変更されているかどうかにかかわらず、元のテンプレートから取得したすべてのクォータを変更するかを選択できます。 この機能では、すべての更新を 1 か所で集中的に実行できるため、クォータのプロパティの更新処理が簡略化されます。
 
@@ -43,7 +44,7 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="see-also"></a>関連項目
 
--   [クオータの管理](quota-management.md)
--   [クォータ テンプレートを作成する](create-quota-template.md)
+-   [クォータの管理](quota-management.md)
+-   [クォータ テンプレートを作成します。](create-quota-template.md)
 
 

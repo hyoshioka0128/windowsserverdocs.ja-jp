@@ -1,6 +1,6 @@
 ---
-title: "クォータを作成する"
-description: "この記事では、テンプレートに基づいてクォータを作成する方法について説明します。"
+title: クォータを作成する
+description: この記事では、テンプレートに基づいてクォータを作成する方法について説明します。
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: f3c677f5ebf7dda44f4b99a64d0fbf8d2c72b92e
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59883193"
 ---
 # <a name="create-a-quota"></a>クォータを作成する
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 クォータは、テンプレートから作成するか、カスタム プロパティを設定して作成することができます。 次の手順では、テンプレートに基づいてクォータを作成する方法について説明します (推奨される手順)。 カスタム プロパティを設定してクォータを作成する必要がある場合、それらのプロパティをテンプレートとして保存して、後で再利用することができます。
 
@@ -35,7 +36,7 @@ ms.lasthandoff: 10/17/2017
 
 2.  結果のウィンドウで、新しいクォータのベースにするテンプレートを選択します。
 
-3.  このテンプレートを右クリックし、**[テンプレートからのクォータを作成]** をクリックするか、**[操作]** ウィンドウで **[テンプレートからのクォータを作成]** をクリックします。  **[クォータの作成]** ダイアログ ボックスが開き、クォータ テンプレートの概要プロパティが表示されます。
+3.  このテンプレートを右クリックし、**[テンプレートからのクォータを作成]** をクリックするか、**[操作]** ウィンドウで **[テンプレートからのクォータを作成]** をクリックします。 **[クォータの作成]** ダイアログ ボックスが開き、クォータ テンプレートの概要プロパティが表示されます。
 
 4.  **[クォータのパス]** で、クォータを適用するフォルダーへのパスを入力するか、そのフォルダーを参照します。
 
@@ -50,8 +51,8 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="see-also"></a>関連項目
 
--   [クオータの管理](quota-management.md)
--   [自動適用クォータを作成する](create-auto-apply-quota.md)
--   [クォータ テンプレートを作成する](create-quota-template.md)
+-   [クォータの管理](quota-management.md)
+-   [作成、自動適用クォータ](create-auto-apply-quota.md)
+-   [クォータ テンプレートを作成します。](create-quota-template.md)
 
 

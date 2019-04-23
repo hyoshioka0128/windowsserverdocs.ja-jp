@@ -1,6 +1,6 @@
 ---
-title: ソリューション拡張機能の接続プロバイダーを作成します。
-description: Windows Admin Center SDK (Project Honolulu) のソリューション拡張機能の開発 - 接続プロバイダーを作成します。
+title: ソリューションの拡張機能の接続プロバイダーを作成します。
+description: ソリューションの拡張機能 Windows Admin Center SDK (プロジェクト ホノルル) の開発 - 接続プロバイダーを作成します。
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -9,40 +9,40 @@ ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: 883fba96fcb71cb1c6e8162c1564d66924c4e24d
-ms.sourcegitcommit: be0144eb59daf3269bebea93cb1c467d67e2d2f1
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "4081139"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59885653"
 ---
-# ソリューション拡張機能の接続プロバイダーを作成します。
+# <a name="create-a-connection-provider-for-a-solution-extension"></a>ソリューションの拡張機能の接続プロバイダーを作成します。
 
->適用対象: Windows Admin Center、Windows Admin Center Preview
+>適用先:Windows Admin Center、Windows Admin Center プレビュー
 
-接続のプロバイダーは、Windows Admin Center の定義し、は、接続可能なオブジェクトまたはターゲットと通信で重要な役割を果たします。 主に、接続のプロバイダーは、オンラインで利用できる、ターゲットがあることを確認しも接続しているユーザーがターゲットにアクセスする権限を持っていることを確認など、接続が確立されているときにアクションを実行します。
+接続プロバイダーは、Windows Admin Center の定義および接続可能なオブジェクト、またはターゲットとの通信で重要な役割を果たします。 主に、接続プロバイダーは、オンラインで使用できますが、ターゲットがあることを確認しても、接続するユーザーがターゲットにアクセスする権限を持っていることを確認など、接続が確立されているときにアクションを実行します。
 
-既定では、Windows Admin Center は、次の接続プロバイダーが付属します。
+既定では、Windows Admin Center は、次の接続プロバイダーが付属しています。
 
 * Server
 * Windows クライアント
 * フェールオーバー クラスター
 * HCI クラスター
 
-独自のカスタム接続プロバイダーを作成するには、次の手順に従います。
+独自のカスタム接続プロバイダーを作成するには、次の手順を実行します。
 
-* 接続プロバイダーの詳細情報を追加します。 ```manifest.json```
-* 接続状態のプロバイダーを定義します。
-* アプリケーションのレイヤーで接続プロバイダーを実装します。
+* 接続プロバイダーの詳細を追加します。 ```manifest.json```
+* 接続の状態プロバイダーを定義します。
+* アプリケーション層での接続プロバイダーを実装します。
 
-## Manifest.json に接続プロバイダーの詳細を追加します。
+## <a name="add-connection-provider-details-to-manifestjson"></a>接続プロバイダーの詳細を manifest.json に追加します。
 
-プロジェクトの接続のプロバイダーを定義するために知っておくべきについて説明しますので```manifest.json```ファイル。
+プロジェクトの接続プロバイダーを定義するために知っておくべきいきますので```manifest.json```ファイル。
 
-### Manifest.json のエントリを作成します。
+### <a name="create-entry-in-manifestjson"></a>Manifest.json にエントリを作成します。
 
-```manifest.json```ファイル \src フォルダーにあるし、特に、プロジェクトのエントリ ポイントの定義が含まれます。 エントリ ポイントの種類には、ツール、ソリューション、および接続プロバイダーが含まれます。 接続プロバイダーを定義しますがあります。
+```manifest.json```ファイル \src フォルダーにあるし、その他のものをプロジェクトのエントリ ポイントの定義が含まれます。 エントリ ポイントの種類には、ツール、ソリューション、および接続プロバイダーが含まれます。 私たちは接続プロバイダーを定義します。
 
-次に示します manifest.json で接続プロバイダー エントリの例。
+Manifest.json で接続プロバイダーのエントリのサンプルを次に示します。
 
 ``` json
     {
@@ -71,35 +71,35 @@ ms.locfileid: "4081139"
     },
 ```
 
-"ConnnectionProvider"の種類のエントリ ポイントは、接続状態を検証するソリューションによって使用されるプロバイダーに構成されている項目が Windows Admin Center のシェルに示します。 接続プロバイダーのエントリ ポイントには、多数重要なプロパティを以下に定義にはが含まれています。
+"ConnnectionProvider"の種類のエントリ ポイントは Windows Admin Center シェルに構成されている項目は、接続状態を検証するソリューションで使用されるプロバイダーであることを示します。 接続プロバイダーのエントリ ポイントには、さまざまな定義は以下の重要なプロパティが含まれています。
 
 | プロパティ | 説明 |
 | -------- | ----------- |
-| entryPointType | これは、必要なプロパティです。 次の 3 つの有効な値:「ツール」、「ソリューション」および「とき」します。 | 
-| name | ソリューションのスコープ内で接続プロバイダーを識別します。 この値は、完全な Windows Admin Center インスタンス (ソリューションだけでなく) 内で一意である必要があります。 |
-| path | ソリューションで構成されている場合は、接続のため、"追加"UI、URL パスを表します。 この値は、アプリ routing.module.ts ファイルで構成されているルートにマップする必要があります。 接続 rootNavigationBehavior を使用するソリューションのエントリ ポイントを構成すると、このルート シェルによって追加接続 UI を表示するために使用するモジュールが読み込まれます。 利用可能なセクションについて詳しく rootNavigationBehavior します。 |
-| displayName | ここで入力した値は、ユーザーがソリューションの接続] ページが読み込まれると、黒の Windows Admin Center バーの下のシェルの右側に表示されます。 |
-| icon | ソリューションのドロップダウン メニューで、ソリューションを表すために使用するアイコンを表します。 |
+| entryPointType | このプロパティは必須です。 次の 3 つの有効な値:「ツール」、「ソリューション」と「とき」。 | 
+| name | ソリューションのスコープ内で、接続プロバイダーを識別します。 この値は、完全な Windows Admin Center インスタンス (ソリューションだけでなく) 内で一意である必要があります。 |
+| path | ソリューションで構成する場合は、「接続の追加」、UI の URL パスを表します。 この値は、アプリ routing.module.ts ファイルで構成されているルートにマップする必要があります。 接続 rootNavigationBehavior を使用するソリューションのエントリ ポイントが構成されると、このルートは、接続の追加 UI を表示するシェルによって使用されるモジュールを読み込みます。 詳細については、セクションでは rootNavigationBehavior 上。 |
+| displayName | ここに入力した値は、ユーザーには、ソリューションの接続 ページが読み込まれる、黒の Windows Admin Center バーの下のシェルの右側に表示されます。 |
+| アイコン●あいこん○ | ソリューションのドロップダウン メニューで、ソリューションを表すために使用するアイコンを表します。 |
 | description | エントリ ポイントの簡単な説明を入力します。 |
-| クエリ文字列 | プロバイダーが読み込まれます接続の種類を表します。 ここに入力した値は、ソリューションがそれらの接続を読み込むことができることを指定するソリューションのエントリ ポイントにも使用されます。 ここに入力した値は、ツールがこの種類と互換性のあることを示すツールのエントリ ポイントにも使用されます。 ここに入力したこの値は、RPC に送信される接続オブジェクトにも使用される「追加ウィンドウで」、アプリケーション レイヤー実装手順で呼び出します。 |
-| connectionTypeName | 接続の表に、接続のプロバイダーを使用する接続を表すために使用します。 これは型の複数の名前を指定します。 |
-| connectionTypeUrlName | Windows Admin Center は、インスタンスに接続した後、読み込まれたソリューションを表す URL の作成に使用します。 このエントリは、接続後、ターゲットの前に使用されます。 この例では"connectionexample"は、URL にこの値が表示されます。http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com |
-| connectionTypeDefaultSolution | 接続プロバイダーで読み込む必要のある既定のコンポーネントを表します。 この値の組み合わせ: なります; マニフェストの上部で定義されている拡張機能パッケージの名前[b] 感嘆符 (!)。[c] ソリューション エントリ ポイント名。    プロジェクト名拡張子を持つ"msft.sme.mySample-"、および名「例」で、ソリューションのエントリ ポイントは、この値になります"msft.sme.solutionExample 拡張! 例"します。 |
-| connectionTypeDefaultTool | 成功した接続で読み込む必要のあるツールの既定値を表します。 このプロパティの値は、2 つの部分と同様、connectionTypeDefaultSolution に構成されています。 この値の組み合わせ: なります; マニフェストの上部で定義されている拡張機能パッケージの名前[b] 感嘆符 (!)。[c] ツール エントリ ポイント名の最初に読み込む必要のあるツールです。 プロジェクト名拡張子を持つ"msft.sme.solutionExample-"、および名「例」で、ソリューションのエントリ ポイントは、この値になります"msft.sme.solutionExample 拡張! 例"します。 |
-| connectionStatusProvider | 「定義の接続状態プロバイダー」のセクションを参照してください。 |
+| connectionType | 読み込みは、プロバイダー接続の種類を表します。 ここに入力した値も指定するため、ソリューションのエントリ ポイントで、ソリューションがそれらの接続を読み込むことができます。 ここに入力した値は、ツールがこの型と互換性があるツールのエントリ ポイントの使用もします。 ここに入力したこの値は、RPC に送信される接続オブジェクトでは使用も、「追加ウィンドウの」アプリケーション レイヤーの実装の手順で呼び出します。 |
+| connectionTypeName | 接続の表に、接続プロバイダーを使用する接続を表すために使用します。 これは型の複数形の名前を指定します。 |
+| connectionTypeUrlName | URL の作成に使用され、Windows Admin Center がインスタンスに接続した後に読み込まれているソリューションを表します。 このエントリは、ターゲットの前に、接続後に使用されます。 この例では、"connectionexample"は、URL でこの値が表示されます。 http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com |
+| connectionTypeDefaultSolution | 接続プロバイダーによって読み込む必要のある既定のコンポーネントを表します。 この値は、の組み合わせ: [a]; マニフェストの上部にある定義された拡張機能パッケージの名前[b] 感嘆符 (!)。[c]、ソリューションのエントリ ポイント名。    「Msft.sme.mySample - 拡張子名」のプロジェクトと、ソリューションのエントリ ポイント名"example"では、この値になります"msft.sme.solutionExample 拡張機能です。 例"。 |
+| connectionTypeDefaultTool | 既定の接続が成功すると読み込む必要のあるツールを表します。 このプロパティの値は、connectionTypeDefaultSolution のような 2 つの部分で構成されます。 この値は、の組み合わせ: [a]; マニフェストの上部にある定義された拡張機能パッケージの名前[b] 感嘆符 (!)。[c] ツール エントリ ポイント名の最初に読み込む必要のあるツールです。 「Msft.sme.solutionExample - 拡張子名」のプロジェクトと、ソリューションのエントリ ポイント名"example"では、この値になります"msft.sme.solutionExample 拡張機能です。 例"。 |
+| connectionStatusProvider | 「接続の状態プロバイダーの定義」セクションを参照してください。 |
 
-## 接続状態のプロバイダーを定義します。
+## <a name="define-connection-status-provider"></a>接続の状態プロバイダーを定義します。
 
-接続状態のプロバイダーは、ターゲットがオンラインで利用できる、検証するメカニズムも接続しているユーザーがターゲットにアクセスする権限を持っていることを確認します。 現在は、接続状態のプロバイダーの 2 つの種類: PowerShell、および RelativeGatewayUrl します。
+接続の状態プロバイダーも接続しているユーザーがターゲットにアクセスする権限を持っていることを確認をオンラインで使用できますが、ターゲットを検証するメカニズムです。 現在は、接続状態プロバイダーの 2 つの種類があります。PowerShell、および RelativeGatewayUrl します。
 
-*   PowerShell の接続状態のプロバイダー
-    *   ターゲットがオンラインと PowerShell スクリプトを使ってアクセスできるかを判断します。 結果は、以下に定義されている 1 つのプロパティ"status"を持つオブジェクトで返される必要があります。
-*   RelativeGatewayUrl 接続状態のプロバイダー
-    *   ターゲットがオンラインと rest 呼び出しを使ってアクセスできるかを判断します。 結果は、以下に定義されている 1 つのプロパティ"status"を持つオブジェクトで返される必要があります。
+*   PowerShell 接続の状態プロバイダー
+    *   ターゲットがオンラインで PowerShell スクリプトを使用してアクセスできるかを判断します。 結果は、以下に定義された 1 つのプロパティ"status"を持つオブジェクトで返される必要があります。
+*   RelativeGatewayUrl 接続状態プロバイダー
+    *   ターゲットがオンラインで、rest 呼び出しを使用してアクセスできるかを判断します。 結果は、以下に定義された 1 つのプロパティ"status"を持つオブジェクトで返される必要があります。
 
-### 状態を定義します。
+### <a name="define-status"></a>状態を定義します。
 
-接続状態のプロバイダーを 1 つのプロパティを持つオブジェクトを返す必要は```status```次の形式に準拠しています。
+接続の状態プロバイダーを 1 つのプロパティを持つオブジェクトを返す必要は```status```次の形式に準拠しました。
 
 ``` json
 {
@@ -111,33 +111,33 @@ ms.locfileid: "4081139"
 }
 ```
 
-ステータスのプロパティ
+ステータスのプロパティ:
 
 * Label
-    * ステータスの戻り値の型を表すラベル。 実行時にマップできるラベルの値に注意してください。 ランタイムでマッピング値の下のエントリを参照してください。
+    * 状態の戻り値の型を記述するラベル。 ランタイムでラベルの値をマップすることに注意してください。 ランタイム内の値のマッピングの下のエントリを参照してください。
 
 * 種類
-    * ステータス戻り値の型です。 型では、次の列挙値があります。 任意の値を 2 以上、プラットフォームは、接続されているオブジェクトを移動しないと、エラーは、UI に表示されます。
+    * ステータス戻り値の型。 種類は、次の列挙値があります。 任意の値 2 またはそれ以上、プラットフォームは、接続されているオブジェクトに移動しないと、UI でエラーが表示されます。
 
 種類:
 
 | 値 | 説明 |
 | ----- | ----------- |
 | 0 | オンライン |
-| 1 | Warning |
+| 1 | 警告 |
 | 2 | 権限がありません |
 | 3 | エラー |
-| 4 | 重大で致命的です |
+| 4 | 致命的です |
 | 5 | Unknown |
 
 * 詳細
-    * 状態を示す追加の詳細は、型を返します。
+    * 追加の詳細ステータスを記述するには、型が返されます。
 
-### 接続状態プロバイダーの PowerShell スクリプト
+### <a name="powershell-connection-status-provider-script"></a>接続の状態プロバイダーの PowerShell スクリプト
 
-ターゲットは、オンラインと PowerShell スクリプトを使ってアクセスできるかどうかは、接続状態のプロバイダー PowerShell スクリプトを決定します。 結果は、"status"1 つのプロパティを持つオブジェクトで返される必要があります。 スクリプトの例は、次に示します。
+接続状態プロバイダーの PowerShell スクリプトは、ターゲットがオンラインと PowerShell スクリプトを使用してアクセスできるかどうかを判断します。 1 つの"status"プロパティを持つオブジェクトでは、結果を返す必要があります。 スクリプトの例は、以下に示します。
 
-PowerShell スクリプトの例
+PowerShell スクリプトの例:
 
 ``` ts
 ## Get-My-Status ##
@@ -165,9 +165,9 @@ function Get-Status()
 Get-Status
 ```
 
-### RelativeGatewayUrl 接続状態のプロバイダーのメソッドを定義します。
+### <a name="define-relativegatewayurl-connection-status-provider-method"></a>RelativeGatewayUrl 接続状態プロバイダーのメソッドを定義します。
 
-接続状態のプロバイダー```RelativeGatewayUrl```メソッドは、rest API、ターゲットがオンラインでアクセスできるかどうかを呼び出します。 結果は、"status"1 つのプロパティを持つオブジェクトで返される必要があります。 RelativeGatewayUrl の例の manifest.json 接続プロバイダー エントリは、次に示します。
+接続の状態プロバイダー```RelativeGatewayUrl```メソッド呼び出す rest API をターゲットがオンラインでアクセス可能かを判断します。 1 つの"status"プロパティを持つオブジェクトでは、結果を返す必要があります。 RelativeGatewayUrl の例では、manifest.json 接続プロバイダーのエントリは、以下に示します。
 
 ``` json
     {
@@ -194,35 +194,35 @@ Get-Status
     },
 ```
 
-RelativeGatewayUrl の使用に関するメモ:
+RelativeGatewayUrl の使用に関する注意事項:
 
-* "relativeGatewayUrl"では、ゲートウェイ URL からの接続の状態を取得する場所を指定します。 この URI は、/api からの相対します。 URL に $connectionName が見つかった場合、接続の名前で置き換えられます。
-* ホスト ゲートウェイは、ゲートウェイの拡張機能を作成して実行することに対する relativeGatewayUrl のすべてのプロパティを実行する必要があります。
+* "relativeGatewayUrl"では、ゲートウェイの URL からの接続状態を取得する場所を指定します。 この URI は/api からです。 $ConnectionName が URL で見つかった場合は、接続の名前に置き換えられます。
+* RelativeGatewayUrl のすべてのプロパティは、ゲートウェイの拡張機能を作成して実現可能ホスト ゲートウェイに対して実行する必要があります。
 
-### 実行時の値にマップします。
+### <a name="map-values-in-runtime"></a>実行時の値をマップします。
 
-オブジェクトの戻り値の書式設定に状態でラベルと詳細情報の値は、プロバイダーの"defaultValueMap"プロパティのキーと値を含めることによって、時間を調整します。
+返されるオブジェクトの書式設定に状態で、ラベルと詳細値では、プロバイダーの"defaultValueMap"プロパティにキーと値を含めることで時間を調整します。
 
-たとえば、いつでもその"defaultConnection_test"表示ラベルまたは詳細については、のいずれかの値として Windows Admin Center が自動的には、下の値を追加する場合は、構成済みのリソース文字列値でキーを置き換えます。
+たとえば、いつでもその"defaultConnection_test"Windows Admin Center は自動的にラベルまたは詳細は、のいずれかの値としてやって来て、下の値を追加する場合は、構成されているリソースの文字列値でキーを置き換えます。
 
 ``` json
     "defaultConnection_test": "resources:strings:addServer_status_defaultConnection_label"
 ```
 
-## アプリケーションのレイヤーで接続プロバイダーを実装します。
+## <a name="implement-connection-provider-in-application-layer"></a>アプリケーション層での接続プロバイダーを実装します。
 
-OnInit を実装する TypeScript クラスを作成して、アプリケーション レイヤーで接続プロバイダーを実装する行いましょうできるようになりました。 クラスには、次の機能があります。
+今すぐ OnInit を実装する TypeScript クラスを作成して、アプリケーション層で、接続プロバイダーを実装するためになります。 クラスには、次の機能があります。
 
-| 機能 | 説明 |
+| 関数 | 説明 |
 | -------- | ----------- |
-| コンス トラクター (プライベート appContextService: AppContextService、プライベート ルート: ActivatedRoute) |  |
-| パブリック ngOnInit() |  |
-| パブリック onSubmit() | 追加接続しようとしたときにシェルを更新するためのロジックが含まれています |
-| パブリック onCancel() | 追加の接続が取り消されると、シェルを更新するロジックが含まれています |
+| constructor(private appContextService:AppContextService、プライベート ルート:ActivatedRoute) |  |
+| public ngOnInit() |  |
+| public onSubmit() | 追加の接続試行が行われたときに、シェルを更新するロジックが含まれています |
+| public onCancel() | 追加の接続試行が取り消されたときに、シェルを更新するロジックが含まれています |
 
-### OnSubmit を定義します。
+### <a name="define-onsubmit"></a>OnSubmit を定義します。
 
-```onSubmit``` 問題 RPC コールバック「追加接続」のシェルに通知するアプリのコンテキストにします。 基本的な呼び出しは、このような"updateData"を使用します。
+```onSubmit``` 問題、RPC は、「追加の接続」のシェルに通知するアプリのコンテキストにコールバックしています。 基本的な呼び出しでは、このような"updateData"を使用します。
 
 ``` ts
 this.appContextService.rpc.updateData(
@@ -237,7 +237,7 @@ this.appContextService.rpc.updateData(
 );
 ```
 
-結果は、接続のプロパティを次の構造に準拠しているオブジェクトの配列です。
+結果は、次の構造に準拠しているオブジェクトの配列である接続のプロパティです。
 
 ``` ts
 
@@ -306,17 +306,17 @@ export const connectionTypeConstants = {
 };
 ```
 
-### OnCancel を定義します。
+### <a name="define-oncancel"></a>OnCancel を定義します。
 
-```onCancel``` 空の接続の配列を渡すことによって、「接続の追加」試行をキャンセルします。
+```onCancel``` 接続が空の配列を渡すことによって、「接続の追加」の試行をキャンセルします。
 
 ``` ts
 this.appContextService.rpc.updateData(EnvironmentModule.nameOfShell, '##', <RpcUpdateData>{ results: { connections: [] } });
 ```
 
-## 接続プロバイダーの例
+## <a name="connection-provider-example"></a>接続プロバイダーの例
 
-接続のプロバイダーを実装するための完全な TypeScript クラスを下回っています。 注: が「クエリ文字列」文字列と一致する、"クエリ文字列 manifest.json で接続プロバイダーで定義されています。
+接続プロバイダーを実装するための完全な TypeScript クラスが未満です。 "ConnectionType"文字列が、"connectionType manifest.json で接続プロバイダーで定義されていると一致することに注意してください。
 
 ``` ts
 import { Component, OnInit } from '@angular/core';

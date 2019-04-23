@@ -1,6 +1,6 @@
 ---
 title: Windows Admin Center SDK 0.1 ~ 1.0 からの移行します。
-description: このガイドは Windows Admin Center SDK バージョン 1.0 を 0.1 から移行する場合に役立ちます
+description: このガイドでは、Windows Admin Center SDK バージョン 0.1 ~ 1.0 からの移行を利用します。
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -9,66 +9,66 @@ ms.date: 02/26/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: ba0e8cda35c51763b5c10b89c76e2bf07e064dfd
-ms.sourcegitcommit: 10d7606a5c2a1ddb234af597f199b6779b0058d4
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "9116588"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59886473"
 ---
-# Windows Admin Center SDK 0.1 ~ 1.0 からの移行します。
+# <a name="migrate-from-windows-admin-center-sdk-01-to-10"></a>Windows Admin Center SDK 0.1 ~ 1.0 からの移行します。
 
->適用対象: Windows Admin Center Preview
+>適用先:Windows Admin Center Preview
 
-このガイドは Windows Admin Center SDK バージョン 1.0 を 0.1 から移行する場合に役立ちます。  
+このガイドを使用すると、Windows Admin Center SDK 0.1 ~ 1.0 のバージョンから移行できます。  
 
-## 1. デベロッパー ガイド拡張子を持つ新しいコントロールについて説明します。
+## <a name="1-learn-about-new-controls-with-the-dev-guide-extension"></a>1. 開発ガイド拡張子を持つ新しいコントロールの概要について説明します
 
-Windows Admin Center 1902 以降のバージョンには、コントロール (新しく利用可能なコントロールを含む) と、独自の拡張機能を構築するためのシナリオの例を検索するために使用できる**デベロッパー ガイド**拡張機能が含まれています。  開発ガイドには、以前のバージョンの SDK から**開発者ツール**の拡張機能が置き換えられます。
+Windows Admin Center 1902 およびそれ以降のバージョンが含まれています、**開発ガイド**拡張機能は、コントロール (新しく利用可能なコントロールを含む) と、独自の拡張機能を構築するためのシナリオの例を見つけるに使用することができます。  開発ガイドが置き換えられます、 **Developer Tools**以前のバージョンの SDK からの拡張機能。
 
-### Windows Admin Center でデベロッパー ガイドを使用します。
+### <a name="use-the-dev-guide-in-windows-admin-center"></a>Windows Admin Center での開発ガイドを使用します。
 
-デベロッパー ガイドでは、Windows Admin Center バージョン 1902 ソリューションとして利用可能なおよびそれ以降でです。  デベロッパー ガイドは、プレインストールされているが、設定を通じて有効にする必要があります。
+開発ガイドとは、以降では、Windows Admin Center バージョン 1902 ソリューションとして利用可能です。  開発ガイドは、プレインストールされているが、設定を使用して有効にする必要があります。
 
-**Windows Admin Center でデベロッパー ガイドを有効にします。**
+**Windows Admin Center での開発ガイドを有効にします。**
 
-* オープン Windows Admin Center (バージョン 1902 以降)
-* ウィンドウの右上隅にある**設定**アイコンをクリックします。
-* **詳細設定**] タブを選択します。
-* *実験のキー*は、[**追加**を] をクリックします。
-* 新しい値を入力```msft.sme.shell.devguide```で、前の手順で作成された、空のフィールド
-* [**保存して再読み込み**
+* 開く Windows Admin Center (1902 およびそれ以降のバージョン)
+* をクリックして、**設定**ウィンドウの右上隅のアイコン
+* 選択、**詳細** タブ
+* [*実験キー*、] をクリックして**追加**
+* 新しい値を入力```msft.sme.shell.devguide```前の手順で作成された空のフィールドに
+* クリックして**を保存し、再読み込み**
 
-**Windows Admin Center では、デベロッパー ガイドを開きます。**
+**Windows Admin Center での開発ガイドを開きます。**
 
-* オープン Windows Admin Center (バージョン 1902 以降)
-* 左上にあるすべてのソリューションの種類を表示するにはドロップダウンをクリックします。
-* **デベロッパー ガイド**ソリューションを選択します。 
-    * ソリューションの一覧が表示されない場合、は、デベロッパー ガイドが有効になっていることを確認してください (前のセクションをご覧ください)、Windows Admin Center が再読み込みします。
-* タブのいずれかを選択することによってデベロッパー ガイドの内容を参照します。
-    * **ランディング:***[管理*と*通知*のシナリオのコード サンプルが含まれています
-    * **コントロール:** SDK で利用可能な各コントロールの例を示します
-    * **パイプ:** 利用可能なコンバーターとフォーマッタ関数の例が含まれています
-    * **スタイル:** SDK で利用可能な CSS スタイルの例が含まれています
-    * **MsftSme:** 例や高度なシナリオのガイダンスが含まれています 
+* 開く Windows Admin Center (1902 およびそれ以降のバージョン)
+* ソリューションのすべての型の表示を左上のドロップダウンをクリックします。
+* 選択、**開発ガイド**ソリューション 
+    * 表示されているソリューションが表示されない場合、は、開発ガイドが有効になっていることを確認してください (前のセクションを参照してください)、Windows Admin Center が再読み込みします。
+* タブのいずれかを選択して開発ガイドの内容を参照します。
+    * **ランディング:** コード サンプルが含まれます*管理に*と*通知*シナリオ
+    * **コントロール:** SDK の使用可能な各コントロールの例が含まれています
+    * **パイプします。** コンバーターとフォーマッタの使用可能な関数の例が含まれています
+    * **スタイル:** SDK で使用できる CSS スタイルの例が含まれています
+    * **MsftSme:** 例と高度なシナリオのガイダンスが含まれています 
 
-### GitHub でデベロッパー ガイドのソース コードを参照します。
+### <a name="browse-the-source-code-of-dev-guide-on-github"></a>GitHub での開発ガイドのソース コードを参照します。
 
-HTML、CSS、および TypeScript サンプルのコード例を検索する github デベロッパー ガイドの[ソース コード](https://github.com/Microsoft/windows-admin-center-sdk/)を参照することができます。
+参照することができます、[ソース コード](https://github.com/Microsoft/windows-admin-center-sdk/)の例の HTML、CSS、および TypeScript のコード サンプルを見つけるには、GitHub での開発ガイド。
 
-## 2. 最新の SDK の開発環境を準備します。
+## <a name="2-prepare-your-development-environment-for-the-latest-sdk"></a>2. 最新の SDK の開発環境を準備します。
 
-インストールまたは更新 node.js バージョン[10.15.1 LTS またはそれ以降](https://nodejs.org/en/)します。
+Node.js のバージョンの更新のインストールまたは[10.15.1 LTS 以降](https://nodejs.org/en/)します。
 
-Windows Admin Center CLI を最新のバージョンに更新します。
+最新バージョンには、Windows Admin Center CLI を更新します。
 
-[//]: # "npm-g windows-admin-center-cli@next をアンインストールします。"
+[//]: # "npm-g をアンインストールします。 windows-admin-center-cli@next"
 
 ``` cmd
 npm uninstall -g windows-admin-center-cli
 npm install -g windows-admin-center-cli
 ```
 
-これらのバージョンをグローバルの依存関係を更新します。
+これらのバージョンには、グローバルな依存関係を更新します。
 
 ``` cmd
 npm install npm@6.4.1 -g
@@ -78,46 +78,46 @@ npm install typescript@3.1.6 -g
 npm install tslint@5.11.0 -g
 ```
 
-## 3. 最新の SDK を使って新しいプロジェクトを作成します。
+## <a name="3-create-a-new-project-with-the-latest-sdk"></a>3.最新の SDK を使用した新しいプロジェクトを作成します。
 
-ターゲットと新しいプロジェクトを作成する際の Windows Admin Center CLI を使用して、```next```バージョン (SDK 1.0)。
+Windows Admin Center CLI を使用して、新しいプロジェクトのターゲットを作成する、```next```バージョン (SDK 1.0)。
 
-[//]: # "作成した wac--会社 'Contoso Inc-' '管理 Foo 動作'--試験的なバージョンのツール"
+[//]: # "wac create - 会社"Contoso Inc--' ' 管理 Foo Works'--実験的なバージョンのツール"
 
 ``` cmd
 wac create --company "Contoso Inc" --tool "Manage Foo Works" --version next
 ```
 
-次に、先ほど作成したフォルダーにディレクトリを変更し、必要なローカルの依存関係を実行して、インストール```npm install ```します。
+次に、先ほど作成したフォルダーにディレクトリを変更しを実行して必要なローカルの依存関係をインストール```npm install ```します。
 
-## 4. 最新の SDK を使用して既存のプロジェクトを変更します。
+## <a name="4-modify-an-existing-project-to-use-the-latest-sdk"></a>4。最新の SDK を使用して既存のプロジェクトを変更します。
 
-重要: 続行する前に、プロジェクトのバックアップを作成します。
+重要:続行する前に、プロジェクトのバックアップを作成します。
 
 次の行を変更```package.json```ターゲットに、```next```バージョン (SDK 1.0)。
 
-[//]: # "'@microsoft/windows-admin-center-sdk': '試験的な'"
+[//]: # "'@microsoft/windows-admin-center-sdk': 'experimental'"
 
 ``` json
 "@microsoft/windows-admin-center-sdk": "next",
 ```
 
-実行し、 ```npm install``` 、プロジェクト全体で参照を更新します。
+実行して```npm install```プロジェクト全体での参照を更新します。
 
-## 5. SDK CLI を使用して移行の一般的な問題を解決します。
+## <a name="5-use-the-sdk-cli-to-fix-common-migration-issues"></a>5。SDK CLI を使用して、移行の一般的な問題を修正するには
 
-重要: 続行する前に、プロジェクトのバックアップを作成します。
+重要:続行する前に、プロジェクトのバックアップを作成します。
 
-プロジェクトのルート フォルダーから自動的に移行の一般的な問題を解決するプロジェクトで次の CLI コマンドを実行します。
+プロジェクトのルート フォルダーから、プロジェクトの移行の一般的な問題を自動的に解決する、次の CLI コマンドを実行します。
 
 ``` cmd
 wac updateSeven --update
 ```
 
-この CLI コマンドは、次の問題を自動的に説明します。
+この CLI コマンドでは、次の問題を自動的にアドレスします。
 
 * 再生成します。 ```package-lock.json```
-* Angular コンパイル環境でファイルを更新します。
+* Angular のコンパイル環境でのファイルを更新します。
     - ```.gitignore```
     - ```tslint.json```
     - ```tsconfig.json```
@@ -128,66 +128,66 @@ wac updateSeven --update
     - ```src\tsconfig.lib.json```
     - ```src\tsconfig.spec.json```
 
-## 6. SDK CLI を使用して移行の一般的な問題を理解します。
+## <a name="6-use-the-sdk-cli-to-understand-common-migration-issues"></a>6。SDK CLI を使用して、移行の一般的な問題を理解するには
 
-プロジェクトのルート フォルダーから、プロジェクトを監査し、手動で対処する必要がある一般的な移行の問題を見つけるには、次の CLI コマンドを実行します。
+プロジェクトのルート フォルダーからプロジェクトを監査し、手動で対処する必要がある一般的な移行の問題を見つけるには、次の CLI コマンドを実行します。
 
 ``` cmd
 wac updateSeven --audit
 ```
 
-これにより、プロジェクトで次の問題のインスタンスが検索します。
+これにより、プロジェクトで、次の問題のインスタンスが検索します。
 
-### これらの sme クラスに次の CSS クラスの使用状況を置き換えます。
+### <a name="replace-usage-of-the-following-css-classes-with-these-sme-classes"></a>次の CSS クラスの使用状況をこれらの sme クラスに置き換えます。
 
 | 古い CSS クラス | 新しい CSS クラス |
 | -- | -- |
-| .auto 規模柔軟 |  .sme 位置柔軟自動 |
-| .border すべて |  .sme 境界線インセット sm と .sme-境界線の色の基本-90 |
-| .border 下 |  .sme 境界線下部 sm と .sme-border-bottom-color-base-90 |
-| 水平方向の .border |  .sme 境界線水平 sm と .sme-border-horizontal-color-base-90 |
-| .border 左 |  .sme 境界線左 sm と .sme-border-left-color-base-90 |
-| .border 右 |  .sme 境界線右 sm と .sme-border-right-color-base-90 |
-| .border 上部 |  .sme 境界線上部 sm と .sme-border-top-color-base-90 |
-| 垂直方向の .border |  .sme 境界線垂直 sm と .sme-border-vertical-color-base-90 |
-| .break word |  .sme の配置の ws の折り返し |
-| .btn |  .sme ボタンまたはボタン |
-| .btn プライマリ |  .sme button.sme ボタン プライマリ OR.button.sme-ボタン-プライマリ |
-| .color 濃色 |  .sme 色 alt キーを |
-| .color 光 |  .sme ベースの色 |
-| .color-明るい灰色 |  .sme 色 base 90 |
-| .fixed 規模柔軟 |  .sme-位置に柔軟になし |
-| .flex レイアウト |  .sme 配置-スタック--h または .sme 配置-スタック-v |
-| .font 太字 |  .sme-フォント-斜体 1 |
-| .highlight |  .sme 背景色黄色 |
-| .horizontal |  .sme 配置-スタック--h |
-| .no スクロール |  .sme 位置柔軟自動 |
-| .nowrap |  .sme 配置-スタック--h または .sme 配置-スタック-v |
-| .relative |  .sme の相対レイアウト |
-| .relative センター |  絶対レイアウト .sme .sme 位置センター |
-| .reverse |  .sme 配置-スタックの反転 |
-| .stretch 絶対 |  .sme レイアウトの絶対 .sme-位置-インセット-なし |
-| .stretch 固定 |  固定レイアウト .sme .sme-位置-インセット-なし |
-| 垂直方向の .stretch |  .sme 位置 stretch v |
-| .stretch 幅 |  .sme 位置 stretch h |
-| .vertical |  .sme 配置-スタック-v |
-| .vertical スクロールのみ |  .sme-配置-オーバーフローの非表示にする-sme の配置のオーバーフロー-自動-x-y |
-| .wrap |  .sme 配置-wrapstack--h または .sme 配置-wrapstack-v |
+| .auto フレックス-サイズ |  .sme 位置柔軟な自動 |
+| .border すべて |  .sme-border-inset-sm AND .sme-border-color-base-90 |
+| .border 下部 |  .sme-border-bottom-sm AND .sme-border-bottom-color-base-90 |
+| .border 水平 |  .sme-border-horizontal-sm AND .sme-border-horizontal-color-base-90 |
+| .border 左 |  .sme-border-left-sm AND .sme-border-left-color-base-90 |
+| .border 右 |  .sme-border-right-sm AND .sme-border-right-color-base-90 |
+| .border 上部 |  .sme-border-top-sm AND .sme-border-top-color-base-90 |
+| .border 垂直 |  .sme-border-vertical-sm AND .sme-border-vertical-color-base-90 |
+| .break word |  .sme-arrange-ws-wrap |
+| .btn |  .sme ボタン OR ボタン |
+| .btn プライマリ |  .sme button.sme ボタン プライマリ OR.button.sme- ボタン-プライマリ |
+| .color-濃い |  .sme 色 alt キーを |
+| .color ライト |  .sme ベースの色 |
+| .color-淡い灰色 |  .sme-color-base-90 |
+| .fixed フレックス-サイズ |  .sme-position-flex-none |
+| .flex レイアウト |  .sme-arrange-stack-h OR .sme-arrange-stack-v |
+| .font 太字 |  .sme-フォントに斜体 1 |
+| .highlight |  .sme-background-color-yellow |
+| .horizontal |  .sme-arrange-stack-h |
+| されないスクロール |  .sme 位置柔軟な自動 |
+| .nowrap |  .sme-arrange-stack-h OR .sme-arrange-stack-v |
+| .relative |  .sme-layout-relative |
+| .relative-center |  .sme-layout-absolute .sme-position-center |
+| .reverse |  .sme-arrange-stack-reversed |
+| .stretch-absolute |  .sme レイアウトの絶対 .sme-位置-埋め込み-なし |
+| .stretch-fixed |  .sme-layout-fixed .sme-position-inset-none |
+| .stretch-vertical |  .sme-position-stretch-v |
+| .stretch-width |  .sme-position-stretch-h |
+| .vertical |  .sme-arrange-stack-v |
+| .vertical スクロールのみ |  .sme-配置-オーバーフロー-非表示にする-x sme と配置のオーバーフロー-自動-y |
+| .wrap |  .sme-arrange-wrapstack-h OR .sme-arrange-wrapstack-v |
 
-### これらの sme コンポーネントと、次のコンポーネントの使用状況を置き換えます。
+### <a name="replace-usage-of-the-following-components-with-these-sme-components"></a>次のコンポーネントの使用状況をこれらの sme コンポーネントに置き換えます。
 
 | 古いコンポーネント | 新しいコンポーネント |
 | -- | -- |
 | .alert |  sme アラート |
-| .alert 危険 |  sme アラート |
+| .alert 危険性 |  sme アラート |
 | .breadCrumb |  sme アラート |
-| .checkbox |  sme フォーム フィールド [種類] チェック ボックスをオン"=] |
-| .combobox |  sme フォーム フィールド [型 =「選択」] |
-| .dashboard |  sme をレイアウトのコンテンツのゾーンに埋め込まれた sme 配置-スタック--h |
-| .details パネル |  sme プロパティのグリッド |
-| .details からパネル コンテナー |  sme プロパティのグリッド |
-| .details] タブ |  sme プロパティのグリッド OR sme-pivot |
-| .details ラッパー |  sme プロパティのグリッド |
+| .checkbox |  フォーム フィールドの sme [型 ="checkbox"] |
+| .combobox |  sme-form-field[type="select"] |
+| .dashboard |  sme をレイアウト-コンテンツのゾーンに埋め込まれた sme-配置-スタック-h |
+| .details パネル |  sme プロパティ グリッド |
+| .details-panel-container |  sme プロパティ グリッド |
+| .details-tab |  プロパティ グリッドの sme OR sme のピボット |
+| .details-wrapper |  sme プロパティ グリッド |
 | .disabled |  sme 無効 |
 | .form ボタン | sme フォーム フィールド |
 | .form コントロール | sme フォーム フィールド |
@@ -197,56 +197,56 @@ wac updateSeven --audit
 | .form 入力 | sme フォーム フィールド |
 | .form stretch | sme フォーム フィールド |
 | .input ファイル | sme フォーム フィールド |
-| 複数のタブに移動 |  sme ピボット |
-| .radio |  sme フォーム フィールド [型 =「オプション」] |
-| .required 手掛かり | sme フォーム フィールド |
-| .searchbox |  sme フォーム フィールド [型 =「検索」] |
-| .toggle スイッチ |  sme フォーム フィールド [型 =「トグル スイッチ」] |
-| .tool コンテナー |  sme レイアウト コンテンツ ゾーンまたは sme をレイアウトのコンテンツのゾーンに埋め込まれました。 |
+| .nav-tabs |  sme ピボット |
+| .radio |  フォーム フィールドの sme [型 ="radio"] |
+| .required-clue | sme フォーム フィールド |
+| .searchbox |  フォーム フィールドの sme [型 =「検索」] |
+| .toggle スイッチ |  フォーム フィールドの sme [型 =「トグル スイッチ」] |
+| .tool-container |  sme レイアウト コンテンツ ゾーンまたは sme をレイアウト-コンテンツのゾーンに埋め込まれました。 |
 
-### これらの CSS クラスは推奨されなくなり、現在サポートされていません。
+### <a name="these-css-classes-are-deprecated-and-are-no-longer-supported"></a>これらの CSS クラスは非推奨し、現在サポートされていません。
 
 | 古いクラス | 非推奨 |
 | -- | -- |
 | .acceptable | (非推奨) |
-| .color エラー | (非推奨) |
+| .color-error | (非推奨) |
 | .color 情報 | (非推奨) |
 | .color 成功 | (非推奨) |
-| .color 警告 | (非推奨) |
-| .delete ボタン | (非推奨) |
-| .details コンテンツ | (非推奨) |
-| カバー | (非推奨) |
+| .color-warning | (非推奨) |
+| .delete-button | (非推奨) |
+| .details-content | (非推奨) |
+| .error-cover | (非推奨) |
 | メッセージ | (非推奨) |
-| .guided ウィンドウのボタン | (非推奨) |
-| .header コンテナー | (非推奨) |
+| .guided ウィンドウ-ボタン | (非推奨) |
+| .header-container | (非推奨) |
 | .icon win | (非推奨) |
 | .indent | (非推奨) |
 | .invalid | (非推奨) |
-| 追加されて一覧 | (非推奨) |
+| .item 一覧 | (非推奨) |
 | .modal スクロール可能です | (非推奨) |
-| 。 マルチ セクション | (非推奨) |
-| .no-アクション バー | (非推奨) |
+| 。 複数のセクション | (非推奨) |
+| されないアクション-バー | (非推奨) |
 | .overflow 余白 | (非推奨) |
 | .overflow ツール | (非推奨) |
-| .progress カバー | (非推奨) |
-| .right パネル | (非推奨) |
+| .progress-cover | (非推奨) |
+| ですパネル | (非推奨) |
 | .rollup | (非推奨) |
 | .rollup 状態 | (非推奨) |
 | .rollup タイトル | (非推奨) |
 | .rollup 値 | (非推奨) |
-| .searchbox-アクション バー | (非推奨) |
+| .searchbox-操作バー | (非推奨) |
 | .size-h-1 | (非推奨) |
 | .size-h-2 | (非推奨) |
 | .size-h-3 | (非推奨) |
 | .size-h-4 | (非推奨) |
-| .size h"完全" | (非推奨) |
-| 半分半分 h .size | (非推奨) |
+| .size-full h | (非推奨) |
+| .size h-1.5 | (非推奨) |
 | .size-v-1 | (非推奨) |
 | .size-v-2 | (非推奨) |
 | .size-v-3 | (非推奨) |
 | .size-v-4 | (非推奨) |
-| .status アイコン | (非推奨) |
-| .svg 残す | (非推奨) |
+| .status-icon | (非推奨) |
+| .svg-16px | (非推奨) |
 | .table インデント | (非推奨) |
 | .table sm | (非推奨) |
 | .thin | (非推奨) |
@@ -263,35 +263,35 @@ wac updateSeven --audit
 | .tool インボックス ヘッダー | (非推奨) |
 | .tool ウィンドウ | (非推奨) |
 | .usage バー | (非推奨) |
-| .usage バーの領域 | (非推奨) |
-| バック グラウンド バー .usage | (非推奨) |
+| バー領域の .usage | (非推奨) |
+| .usage、バーの背景 | (非推奨) |
 | .usage のタイトル バー | (非推奨) |
-| .usage バリュー バー | (非推奨) |
+| .usage とバーの値 | (非推奨) |
 | .usage グラフ | (非推奨) |
 | .usage メッセージ | (非推奨) |
-| .usage メッセージ領域 | (非推奨) |
-| .usage メッセージのタイトル | (非推奨) |
+| .usage メッセージ-領域 | (非推奨) |
+| .usage メッセージ-タイトル | (非推奨) |
 | .warning | (非推奨) |
 | .white 領域 | (非推奨) |
 
-## 7. 理解し、監視可能なオブジェクトの問題を解決します。
+## <a name="7-understand-and-resolve-issues-with-observable-objects"></a>7.理解し、監視可能なオブジェクトに関する問題を解決するには
 
-### 更新```rxjs```動作の監視可能なオブジェクトの使用
+### <a name="update--rxjs-function-use-for-observable-objects"></a>Update```rxjs```関数の監視可能なオブジェクトの使用
 
-これらは、変更されているいくつかの一般的な関数名、他のユーザーにありますプロジェクトします。
+これらは変更されているいくつかの一般的な関数名、他のユーザーにありますプロジェクト。
 
-* 更新```Observable.empty()```する ```empty()```
-* 更新```Observable.of()```する ```of()```
-* 更新```.switchMap()```する ```.pipe(switchMap())```
-* 更新```.map()```する ```.pipe(map())```
-* 更新```flatMap()```する ```mergeMap()```
+* Update```Observable.empty()```に ```empty()```
+* Update```Observable.of()```に ```of()```
+* Update```.switchMap()```に ```.pipe(switchMap())```
+* Update```.map()```に ```.pipe(map())```
+* Update```flatMap()```に ```mergeMap()```
 
 
-### 実行時の問題を解決する```.map()```と```.filter()```監視可能なオブジェクト上の関数
+### <a name="resolve-runtime-issues-with-map-and-filter-functions-on-observable-objects"></a>ランタイムの問題を解決```.map()```と```.filter()```観測可能なオブジェクトに使用する関数
 
-コンパイラを正しく識別できない場合、```observable```オブジェクトの種類、```.map()```と```.filter()```から機能、```array```オブジェクトは、オブジェクトは、実行時にエラーが発生する代わりにマップする可能性があります。  関数を返すことを確認する```observable```オブジェクトをこの問題を回避するために、明示的なデータ型を指定します。
+コンパイラは正しく識別できない場合、```observable```オブジェクトの種類、```.map()```と```.filter()```から関数、```array```オブジェクトは、オブジェクトは、実行時にエラーが発生する代わりにマップすることがあります。  関数が返すかどうかを確認、```observable```この問題を回避するために、明示的なデータ型を指定するオブジェクト。
 
-```any``` 戻り値の型がこの問題が発生する、これらのパターンを使ったコードを探します。
+```any``` 戻り値の型がこの問題が発生する、これらのパターンを使用したコードを探します。
 
 ``` ts
 public getMyObservable(): any { //any return type can cause issues
@@ -303,31 +303,31 @@ public getMyObservable() { //no return type can cause issues
 }
 ```
 
-## 8. 他の一般的な問題を解決します。
+## <a name="8-resolve-other-common-issues"></a>8.その他の一般的な問題を解決するには
 
-これらの手法は他の一般的な問題の解決に役立ちます。
+これらの手法では、その他の一般的な問題を解決するのに役立ちます。
 
-* 実行```ng lint --fix```柔らかいの一般的な問題を解決するには
-* 実行```gulp build```繰り返しを修正する段階的に問題を```gulp build```自動的に解決することができます
+* 実行```ng lint --fix```lint の一般的な問題を修正するには
+* 実行```gulp build```繰り返し増分を解決する問題```gulp build```自動的に解決することができます
 
-## 9. をビルドし、プロジェクトを提供
+## <a name="9-build-and-serve-your-project"></a>9.構築して、プロジェクトを返します
 
-ビルドし、最新のバージョン (SDK 1.0) で、プロジェクトを提供するには、次のコマンドを実行します。
+ビルド、最新バージョン (SDK 1.0) で、プロジェクトを提供する次のコマンドを実行します。
 
 ``` cmd
 gulp build
 gulp serve --port 4201
 ```
 
-## 10. Windows Admin Center で濃色のテーマを有効にします。
+## <a name="10-turn-on-dark-theme-in-windows-admin-center"></a>10.ダーク テーマでは、Windows Admin Center で有効にします。
 
-1902 以降、Windows Admin Center バージョンで濃色のテーマをオンにするには、次の手順に従います。
+1902 およびそれ以降、Windows Admin Center バージョンにダーク テーマをオンにするには、次の手順に従います。
 
-* オープン Windows Admin Center (バージョン 1902 以降)
-* ウィンドウの右上隅にある**設定**アイコンをクリックします。
-* **詳細設定**] タブを選択します。
-* *実験のキー*は、[**追加**を] をクリックします。
-* 新しい値を入力```msft.sme.shell.personalization```で、前の手順で作成された、空のフィールド
-* [**保存して再読み込み**
-* 新しいタブ]、 **[パーソナル設定]** が設定されます。  このタブを選択します。
-* **ダーク モード (プレビュー)** に**色**の変更します。
+* 開く Windows Admin Center (1902 およびそれ以降のバージョン)
+* をクリックして、**設定**ウィンドウの右上隅のアイコン
+* 選択、**詳細** タブ
+* [*実験キー*、] をクリックして**追加**
+* 新しい値を入力```msft.sme.shell.personalization```前の手順で作成された空のフィールドに
+* クリックして**を保存し、再読み込み**
+* 設定は、新しいタブに今度は**パーソナル化**します。  このタブを選択します。
+* 変更**色**に**ダーク モード (プレビュー)**

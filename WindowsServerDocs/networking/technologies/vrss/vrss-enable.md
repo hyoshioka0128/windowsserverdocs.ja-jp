@@ -1,6 +1,6 @@
 ---
 title: 仮想ネットワーク アダプターで vRSS を有効にします。
-description: このトピックでは、デバイス マネージャーまたは Windows PowerShell を使用して Windows server vRSS を有効にする方法について説明します。
+description: このトピックでは、デバイス マネージャーまたは Windows PowerShell を使用して Windows Server で vRSS を有効にする方法について説明します。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -11,73 +11,73 @@ ms.date: 09/05/2018
 ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 19e8011fb98b84c20e8237792664551d2362d589
-ms.sourcegitcommit: e84e328c13a701e8039b16a4824a6e58a6e59b0b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4133418"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59882683"
 ---
-# 仮想ネットワーク アダプターで vRSS を有効にします。
+# <a name="enable-vrss-on-a-virtual-network-adapter"></a>仮想ネットワーク アダプターで vRSS を有効にします。
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-仮想 RSS \(vRSS\) では、物理アダプターから仮想マシンのキュー \(VMQ\) のサポートが必要です。 VMQ が無効化またはサポートされていない場合、仮想受信側のスケーリングが無効です。 
+仮想 RSS \(vRSS\)仮想マシン キューを必要と\(VMQ\) 、物理アダプターからをサポートします。 VMQ が無効になっているか、サポートされていない場合、Virtual receive-side scaling は無効です。 
 
-詳細については、 [vRSS の使用を計画](vrss-plan.md)を参照してください。
+詳細については、次を参照してください。 [vRSS の使用を計画](vrss-plan.md)します。
 
-## VRSS の vm を有効にします。
+## <a name="enable-vrss-on-a-vm"></a>VM で vRSS を有効にします。
  
 Windows PowerShell またはデバイス マネージャーを使用して vRSS を有効にするのにには、次の手順を使用します。
 
 -   デバイス マネージャー
 -   Windows PowerShell
   
-### デバイス マネージャー
+### <a name="device-manager"></a>デバイス マネージャー
 
-この手順を使用して、デバイス マネージャーを使用して vRSS を有効にすることができます。
+デバイス マネージャーを使用して、vRSS を有効にするのには、この手順を使用することができます。
 
 >[!NOTE]
->この手順で最初の手順は、Windows 10 または Windows Server 2016 を実行している Vm に固有です。 VM が別のオペレーティング システムを実行している場合は、によって最初コントロール パネルを開いて、検索、デバイス マネージャーを開くデバイス マネージャーを開くことができます。
+>この手順では、最初の手順では、Windows 10 または Windows Server 2016 を実行している Vm に固有です。 VM で別のオペレーティング システムが実行されている場合は、最初コントロール パネルを開くを検索し、デバイス マネージャーを開き、デバイス マネージャーを開くことができます。
   
-1.  VM タスク バーで**検索する型をここでは**、**デバイス**を入力します。 
+1.  VM タスク バーで**ここで入力して検索**、型**デバイス**します。 
 
-2.  検索結果には、**デバイス マネージャー**をクリックします。
+2.  検索結果では、次のようにクリックします。**デバイス マネージャー**します。
 
-3.  デバイス マネージャーでは、**ネットワーク アダプター**を展開するクリックします。 
+3.  デバイス マネージャーで、クリックして展開**ネットワーク アダプター**します。 
 
-4.  、構成するネットワーク アダプターを右クリックし、[**プロパティ**] をクリックします。<p>ネットワーク アダプター**のプロパティ**] ダイアログ ボックスが開きます。
+4.  クリックして、構成するネットワーク アダプターを右クリックして**プロパティ**します。<p>ネットワーク アダプター**プロパティ** ダイアログ ボックスが表示されます。
 
-5.  ネットワーク アダプター**のプロパティ**では、**詳細設定**] タブをクリックします。 
+5.  ネットワーク アダプターで**プロパティ**、 をクリックして、**詳細**タブ。 
 
-6.  **プロパティ**、スクロールし、**受信側のスケーリング**をクリックします。 
+6.  **プロパティ**下へスクロールして をクリックして**Receive side scaling**します。 
 
-7.  **値**の選択が**有効になっている**ことを確認します。 
+7.  選択項目で**値**は**有効**します。 
 
 8.  **[OK]** をクリックします。
   
 > [!NOTE]
-> [**詳細設定**] タブで、一部のネットワーク アダプターは、アダプターでサポートされている RSS キューの数を表示します。
+> **詳細** タブで、一部のネットワーク アダプターはまた、アダプターでサポートされている RSS キュー数表示します。
 
 ---
 
-### Windows PowerShell
+### <a name="windows-powershell"></a>Windows PowerShell
 
 Windows PowerShell を使用して vRSS を有効にするのにには、次の手順を使用します。
 
-1. 仮想マシンで**Windows PowerShell**を開きます。
+1. 仮想マシンで開きます**Windows PowerShell**します。
 
-2. *AdapterName*値を交換することを確認して、次のコマンドを入力、 **-名**パラメーターを構成し、ENTER キーを押してするネットワーク アダプターの名前。 
+2. 次のコマンドを交換することを確認入力、 *AdapterName*値、 **-名前**を構成し、enter するネットワーク アダプターの名前を持つパラメーター。 
   
    ```PowerShell
    Enable-NetAdapterRSS -Name "AdapterName"
    ```
 
    >[!TIP]
-   >代わりに、次のコマンドを使用して、vRSS を有効にすることができます。
+   >または、次のコマンドを使用して、vRSS を有効にすることができます。
    >```PowerShell
    >Set-NetAdapterRSS -Name "AdapterName" -Enabled $True  
    >```
 
-詳細については、 [RSS や vRSS 用の Windows PowerShell コマンド](vrss-wps.md)を参照してください。
+詳細については、次を参照してください。 [RSS および vRSS 用 Windows PowerShell コマンド](vrss-wps.md)します。
 
 ---
