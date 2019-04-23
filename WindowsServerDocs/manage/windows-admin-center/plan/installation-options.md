@@ -1,29 +1,26 @@
 ---
-title: インストールの種類に適切な
-description: このトピックでは、Windows Admin Center に複数の管理者によって、Windows 10 PC に使用するための Windows server のインストールなどのさまざまなインストール オプションについて説明します。
+title: インストールの種類が適切な
+description: インストールの種類はどのような適切な Windows Admin Center (プロジェクト ホノルル)。 高可用性と回復性のフェールオーバー クラスターにインストールします。
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.date: 04/12/2019
-ms.openlocfilehash: cc6f9e6c2f2572618c1c5fdae00047d24fbeb3cf
-ms.sourcegitcommit: f1edfc6525e09dd116b106293f9260123a94de0c
-ms.translationtype: MT
+ms.openlocfilehash: fae0305e454cdd10109219c6182ff612f539e9c9
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "9296664"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59868013"
 ---
-# 適切なインストールの種類
+# <a name="what-type-of-installation-is-right-for-you"></a>適切なインストールの種類
 
->適用対象: Windows Admin Center、Windows Admin Center Preview
+>適用先:Windows Admin Center、Windows Admin Center プレビュー
 
-このトピックでは、Windows Admin Center に複数の管理者によって、Windows 10 PC に使用するための Windows server のインストールなどのさまざまなインストール オプションについて説明します。 Azure で VM に Windows Admin Center をインストールするには、 [Azure で Windows Admin Center を展開](../azure/deploy-wac-in-azure.md)を参照してください。
+## <a name="supported-operating-systems-installation"></a>サポートされるオペレーティング システム:インストール
 
-## サポートされているオペレーティング システム: インストール
-
-次の Windows オペレーティング システムで Windows Admin Center を**インストール**を実行できます。
+できます**インストール**次の Windows オペレーティング システムで Windows Admin Center:
 
 | **バージョン** | **インストール モード** |
 |-------------|-----------------------|
@@ -32,54 +29,54 @@ ms.locfileid: "9296664"
 |Windows Server 2016 | ゲートウェイ モード |
 |Windows Server 2019 | ゲートウェイ モード |
 
-**デスクトップ モード:**[スタート] メニューから起動し、それがインストールされている同じコンピューターから Windows Admin Center ゲートウェイに接続 (つまり`https://localhost:6516`)
+**デスクトップ モード:**[スタート] メニューから起動しがインストールされている同じコンピューターから Windows Admin Center ゲートウェイに接続する (つまり`https://localhost:6516`)
 
-**ゲートウェイ モード:** 別のコンピューター上のクライアント ブラウザーから Windows Admin Center ゲートウェイに接続 (つまり`https://servername.contoso.com`) 
+**ゲートウェイ モード:** 別のコンピューターにクライアントのブラウザーから、Windows Admin Center ゲートウェイに接続する (つまり`https://servername.contoso.com`) 
 
 > [!WARNING]
-> ドメイン コント ローラーで Windows Admin Center をインストールすることはサポートされていません。 [ドメイン コント ローラーのセキュリティのベスト プラクティスについて確認してください](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack)。 
+> ドメイン コント ローラーで、Windows Admin Center をインストールすることはサポートされません。 [詳細については、ドメイン コント ローラーのセキュリティのベスト プラクティス](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack)します。 
 
 > [!IMPORTANT]
-> Internet Explorer を使って Windows Admin Center を管理することはできません - 代わりに、[ブラウザーのサポート](../understand/faq.md#which-web-browsers-are-supported-by-windows-admin-center
-)を使用する必要があります。  Windows Server で Windows Admin Center をインストールする場合は、Windows 10 と Edge リモートで接続して管理することをお勧めします。  または、管理できますローカル Windows Server でサポートされているブラウザーをインストールした場合。
+> Internet Explorer を使用して、Windows Admin Center を管理することはできません - 代わりに使用する必要があります、[サポートされているブラウザー](../understand/faq.md#which-web-browsers-are-supported-by-windows-admin-center
+)します。  Windows Server を Windows Admin Center をインストールする Windows 10 とエッジをリモートで接続して管理することをお勧めします。  または、管理できますローカル Windows Server でサポートされているブラウザーをインストールしている場合。
 
-## サポートされているオペレーティング システム: 管理
+## <a name="supported-operating-systems-management"></a>サポートされるオペレーティング システム:管理
 
-できます**管理**Windows Admin Center を使用して次の Windows オペレーティング システム。
+できます**管理**Windows Admin Center を使用して、次の Windows オペレーティング システム。
 
-| バージョン | *サーバー マネージャー*を使用して、*ノードを*管理します。 | *フェールオーバー クラスター マネージャー*を使用して*クラスターを*管理します。 | 管理*HCI クラスター マネージャー*を使用して*HCI*|
+| バージョン | 管理*ノード*を介して*サーバー マネージャー* | 管理*クラスター*を介して*フェールオーバー クラスター マネージャー* | 管理*HCI*を介して*HCI クラスター マネージャー*|
 |-------------------------|---------------|-----|------------------------|
-| Windows 10 バージョン 1709 以降 | [はい] (コンピューターの管理) を介して | なし | なし |
-| Windows Server 半期チャネル | はい | ○ | なし |
-| Windows Server 2019 | はい | はい | 要 |
-| Windows Server 2016 | はい | はい | はい、[最新の累積的な更新プログラム](../use/manage-hyper-converged.md#prepare-your-windows-server-2016-cluster-for-windows-admin-center) |
-| Microsoft Hyper-V Server 2016 | はい | ○ | なし |
-| Windows Server 2012 R2 | はい | ○ | なし |
-| Microsoft Hyper-V Server 2012 R2 | はい | ○ | なし |
-| Windows Server 2012 | 可 | ○ | なし |
-| Windows Server 2008 R2 | はい、制限された機能 | なし | なし |
+| Windows 10 バージョン 1709 以降 | [はい] (コンピューターの管理) 経由 | なし | なし |
+| Windows Server 半期チャネル | 〇 | 〇 | なし |
+| Windows Server 2019 | 〇 | 〇 | 〇 |
+| Windows Server 2016 | 〇 | 〇 | Yes, with[最新の累積的な更新プログラム](../use/manage-hyper-converged.md#prepare-your-windows-server-2016-cluster-for-windows-admin-center) |
+| Microsoft Hyper-V Server 2016 | 〇 | 〇 | なし |
+| Windows Server 2012 R2 | 〇 | 〇 | なし |
+| Microsoft Hyper-V Server 2012 R2 | 〇 | 〇 | なし |
+| Windows Server 2012 | 〇 | 〇 | なし |
+| Windows Server 2008 R2 | はい、機能制限 | なし | なし |
 
 > [!NOTE]
-> Windows Admin Center には、Windows Server 2008 R2、2012 および 2012 R2 に含まれていない PowerShell 機能が必要です。 Windows Admin Center でこれらを管理する場合は、それらのサーバーに Windows Management Framework (WMF) バージョン 5.1 以上をインストールする必要があります。
+> Windows Admin Center では、PowerShell の機能は、Windows Server 2008 R2、2012、および 2012 R2 には含まれていない必要があります。 Windows Admin Center で管理する場合、これらのサーバーで Windows Management Framework (WMF) 5.1 以降のバージョンをインストールする必要があります。
 
 >PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。 
 
->WMF がインストールされていない場合は、 [WMF 5.1 をダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=54616)できます。
+>WMF がインストールされていない場合は、 [WMF 5.1 のダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=54616)します。
 
-## 展開オプション
+## <a name="deployment-options"></a>展開オプション
 
 | ![img](../media/deployment-options/W10.png) | ![img](../media/deployment-options/gateway.png) | ![img](../media/deployment-options/node.png) | ![img](../media/deployment-options/HA.png) |
 |---|---|---|---|
 
-| ローカル クライアント | ゲートウェイ サーバー | 管理対象サーバー | フェールオーバー クラスター |
+| ローカル クライアント | ゲートウェイ サーバー | 管理されたサーバー | フェールオーバー クラスター |
 | --- | --- | --- | --- |
-| 管理対象サーバーへの接続しているローカルの Windows 10 クライアントをインストールします。  クイック スタート、テスト、アドホックまたは小規模なシナリオに最適です。 |指定されたゲートウェイ サーバーをインストールし、ゲートウェイ サーバーに接続された任意のクライアント ブラウザーからアクセスします。  大規模なシナリオに便利です。 | 自体またはメンバー ノードがクラスターを管理するための管理対象サーバーに直接インストールします。  分散シナリオに便利です。 | ゲートウェイ サービスの可用性を有効にするには、フェールオーバー クラスターを展開します。 運用環境の管理サービスの回復性を確認する便利です。 |
+| 管理対象サーバーに接続されているローカルの Windows 10 クライアントをインストールします。  クイック スタートで、テスト、アドホックまたは小規模なシナリオに適しています。 |指定されたゲートウェイ サーバーをインストールし、ゲートウェイ サーバーへの接続に任意のクライアント ブラウザーからアクセスします。  大規模なシナリオに適しています。 | それ自体またはメンバー ノードがクラスターを管理するための管理対象サーバーに直接インストールします。  分散のシナリオに適しています。 | ゲートウェイ サービスの高可用性を有効にするフェールオーバー クラスターにデプロイします。 管理サービスの回復性を確実に運用環境に適しています。 |
 
-## 高可用性
+## <a name="high-availability"></a>高可用性
 
-フェールオーバー クラスターでアクティブ パッシブ モデルでは、Windows Admin Center を展開することによって、ゲートウェイ サービスの可用性を有効にできます。 クラスター内のノードのいずれかが失敗した場合は、Windows Admin Center 適切フェールオーバー別のノードに引き続きシームレスに環境内のサーバーを管理すること。
+フェールオーバー クラスター上のアクティブ/パッシブ モデルで Windows Admin Center を展開することで、ゲートウェイ サービスの高可用性を有効にできます。 クラスター内のノードのいずれかが失敗した場合は場合、Windows Admin Center 適切にフェールオーバー操作が別のノードに引き続きシームレスに環境内のサーバーを管理することができます。
 
-[高可用性を Windows Admin Center を展開する方法について説明します。](../deploy/high-availability.md)
+[高可用性を備えた Windows Admin Center を展開する方法について説明します。](../deploy/high-availability.md)
 
 > [!Tip]
 > Windows Admin Center をインストールする準備はできましたか。 [今すぐダウンロード](https://aka.ms/windowsadmincenter)

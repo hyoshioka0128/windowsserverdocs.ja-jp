@@ -1,6 +1,6 @@
 ---
-title: "ディスクを別のコンピューターに移動する"
-description: "この記事ではディスクを別のコンピューターに移動する方法について説明します。"
+title: ディスクを別のコンピューターに移動する
+description: この記事ではディスクを別のコンピューターに移動する方法について説明します。
 ms.date: 10/12/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 6b235ce8e5b936940629d5977a17bbc729efbe82
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854003"
 ---
 # <a name="move-disks-to-another-computer"></a>ディスクを別のコンピューターに移動する
 
-> **適用対象:** Windows 10、Windows 8.1、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> **適用対象します。** Windows 10、Windows 8.1、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このセクションでは、ディスクを別のコンピューターに移動する場合に実行する手順と関連する考慮事項について説明します。 あるコンピューターから別のコンピューターにディスクを移動する前に、この手順を印刷しておくか、手順を書き留めておくことをお勧めします。
 

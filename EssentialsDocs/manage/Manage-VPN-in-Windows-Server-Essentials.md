@@ -1,6 +1,6 @@
 ---
-title: "Windows Server Essentials での VPN を管理します。"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: Windows Server Essentials での VPN の管理
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -12,79 +12,80 @@ ms.assetid: cc2b264a-b9a8-4114-9f7b-8604f77096e5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 08a08a13d696371420bdfdf89f54320c787636b0
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: ec367337318d12161a250572745d8f303d098ffe
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59849203"
 ---
-# <a name="manage-vpn-in-windows-server-essentials"></a>Windows Server Essentials での VPN を管理します。
+# <a name="manage-vpn-in-windows-server-essentials"></a>Windows Server Essentials での VPN の管理
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象: 
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials 
   
- 仮想プライベート ネットワーク (VPN) 接続では、インターネットなどのパブリック ネットワークによって提供されるインフラストラクチャを使用して、プライベート ネットワーク上のサーバーにアクセスするは、自宅や外出先で作業しているユーザーが有効にします。 使用するには VPN サーバーのリソースにアクセスするためには、次の操作を行う必要があります。  
+ 仮想プライベート ネットワーク (VPN) 接続を使用すると、自宅や外出先で作業をするユーザーが、インターネットなどのパブリック ネットワークによって提供されるインフラストラクチャを使用して、プライベート ネットワーク上のサーバーにアクセスできるようになります。 サーバー リソースへのアクセスに VPN を使用するには、次の手順を完了します。  
   
--   [リモート アクセス サーバーでの VPN を有効にします。](Manage-VPN-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [サーバー上のリモート アクセス VPN を有効にします。](Manage-VPN-in-Windows-Server-Essentials.md#BKMK_1)  
   
 -   [ネットワーク ユーザーに対する VPN アクセス許可を設定します。](Manage-VPN-in-Windows-Server-Essentials.md#BKMK_2)  
   
 -   [クライアント コンピューターをサーバーに接続します。](Manage-VPN-in-Windows-Server-Essentials.md#BKMK_Connect)  
   
--   [VPN を使用して、Windows Server Essentials に接続するには](Manage-VPN-in-Windows-Server-Essentials.md#BKMK_3)  
+-   [VPN を使用して、Windows Server Essentials に接続](Manage-VPN-in-Windows-Server-Essentials.md#BKMK_3)  
   
-##  <a name="BKMK_1"></a>リモート アクセス サーバーでの VPN を有効にします。  
- リモート アクセスを有効にする Windows Server Essentials で VPN を構成するのには、次の手順を実行します。  
+##  <a name="BKMK_1"></a> サーバー上のリモート アクセス VPN を有効にします。  
+ 次の手順を実行して、Windows Server Essentials でリモート アクセスが有効になるように VPN を構成します。  
   
 #### <a name="to-enable-vpn-in-windows-server-essentials"></a>Windows Server Essentials で VPN を有効にするには  
   
-1.  ダッシュ ボードを開きます。  
+1.  ダッシュボードを開きます。  
   
-2.  をクリックして**設定**、クリックして、**Anywhere Access** ] タブ。  
+2.  **[設定]** をクリックし、 **[Anywhere Access]** タブをクリックします。  
   
-3.  をクリックして**構成**します。 セットアップ Anywhere Access ウィザードが表示されます。  
+3.  をクリックして**構成**です。 Anywhere Access のセットアップ ウィザードが表示されます。  
   
-4.  **Anywhere Access 機能の選択を有効にする**] ページで、[、**仮想プライベート ネットワーク**チェック ボックスをオンします。  
+4.  **[有効にする Anywhere Access の機能を選択します]** ページで、 **[仮想プライベート ネットワーク]** チェック ボックスをオンにします。  
   
-5.  ウィザードを完了するための手順に従います。  
+5.  指示に従ってウィザードを完了します。  
   
-##  <a name="BKMK_2"></a>ネットワーク ユーザーに対する VPN アクセス許可を設定します。  
- VPN を使用して、Windows Server Essentials に接続し、サーバーに保存されているすべてのリソースにアクセスすることができます。 これは、VPN 接続経由でホスト型 Windows Server Essentials サーバーに接続するために使用するネットワーク アカウントで設定されているクライアント コンピューターがある場合に特に便利です。 ホスト型 Windows Server Essentials サーバー上のすべての新しく作成されたユーザー アカウントは、最初に、クライアント コンピューターにログオンする VPN を使用する必要があります。  
+##  <a name="BKMK_2"></a> ネットワーク ユーザーに対する VPN アクセス許可を設定します。  
+ VPN を使用すると、Windows Server Essentials に接続し、サーバーに保存されているすべてのリソースにアクセスすることができます。 これが特に役立つのは、クライアント コンピューターに設定されているネットワーク アカウントを使用して、ホストされている Windows Server Essentials サーバーに VPN 経由で接続できる場合です。 ホストされている Windows Server Essentials サーバーで新しく作成されたユーザー アカウントはすべて、クライアント コンピューターへの初回ログオン時に VPN を使用する必要があります。  
   
 #### <a name="to-set-vpn-permissions-for-network-users"></a>ネットワーク ユーザーに対する VPN アクセス許可を設定するには  
   
-1.  ダッシュ ボードを開きます。  
+1.  ダッシュボードを開きます。  
   
-2.  ナビゲーション バーをクリックして**ユーザー**します。  
+2.  ナビゲーション バーで **[ユーザー]** をクリックします。  
   
-3.  ユーザー アカウントの一覧では、デスクトップにリモートでアクセスするアクセス許可を付与するユーザー アカウントを選択します。  
+3.  ユーザー アカウントの一覧から、リモートでデスクトップにアクセスするアクセス許可を付与するユーザー アカウントを選択します。  
   
-4.  **< ユーザー Account\ > タスク**] ウィンドウで、をクリックして**プロパティ**します。  
+4.  **< ユーザー アカウント\>タスク**ウィンドウで、をクリックして**プロパティ**します。  
   
-5.  **< ユーザー Account\ > プロパティ**、] をクリックして、**Anywhere Access** ] タブ。  
+5.  **< ユーザー アカウント\>プロパティ**、クリックして、 **Anywhere Access**タブ。  
   
-6.  **Anywhere Access** ] タブで、VPN を使用して、サーバーに接続するユーザーを許可するように、選択、**許可仮想プライベート ネットワーク (VPN)**チェック ボックスをオンします。  
+6.  VPN を使用してユーザーがサーバーに接続できるようにするには、 **[Anywhere Access]** タブで、 **[仮想プライベート ネットワーク (VPN) を許可する]**  チェック ボックスをオンにします。  
   
-7.  をクリックして**適用**、] をクリックし、**OK**します。  
+7.  **[適用]** をクリックし、**[OK]** をクリックします。  
   
-##  <a name="BKMK_Connect"></a>クライアント コンピューターをサーバーに接続します。  
- リモート アクセス用の Windows Server Essentials を実行しているサーバー上で有効にすると、VPN に接続し、サーバーに保存されているすべてのリソースにアクセス、VPN 接続を使用することができます。 ただし、コンピューターをサーバーに初めて接続する必要があります。 サーバー ウィザードへの接続 [マイ コンピューターを使用してコンピューターをサーバーに接続するときに VPN ネットワーク接続がクライアント コンピューターで自動的に生成し、自宅や外出先で作業中にサーバー リソースにアクセスするために使用することができます。 コンピューターをサーバーに接続する方法の詳細な手順については、次を参照してください。[コンピューター、サーバーに接続](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)します。  
+##  <a name="BKMK_Connect"></a> クライアント コンピューターをサーバーに接続します。  
+ Windows Server Essentials を実行しているサーバーでリモート アクセス用の VPN が有効になったら、VPN 接続を使用して、サーバーに保存されているすべてのリソースに接続してアクセスできます。 ただし、まずコンピューターをサーバーに接続する必要があります。 [サーバーにコンピューターを接続] ウィザードを使用してコンピューターをサーバーに接続すると、クライアント コンピューターで VPN ネットワーク接続が自動的に生成されます。この接続を使用して、自宅や外出先での作業中にサーバー リソースにアクセスできます。 コンピューターをサーバーに接続するための詳細な手順については、「 [Connect computers to the server](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)」を参照してください。  
   
-##  <a name="BKMK_3"></a>VPN を使用して、Windows Server Essentials に接続するには  
- すべての新しく作成されたユーザー アカウント、VPN 接続経由 Windows Server Essentials を実行しているホスト サーバーへの接続に使用できるネットワーク アカウントで設定されているクライアント コンピューターがある場合、ホストされているサーバーは、最初に、クライアント コンピューターにログオンする VPN を使用する必要があります。 サーバーに接続されているクライアント コンピューターから、次の手順を完了します。  
+##  <a name="BKMK_3"></a> VPN を使用して、Windows Server Essentials に接続  
+ Windows Server Essentials を実行しているホステッド サーバーに VPN 接続経由で接続するときに使用できるネットワーク アカウントでクライアント コンピューターを設定している場合、そのホステッド サーバーで新しく作成されたユーザー アカウントはすべて、初めてクライアント コンピューターにログオンするとき、VPN を使用する必要があります。 サーバーに接続されているクライアント コンピューターで、次の手順を完了します。  
   
-#### <a name="to-use-vpn-to-remotely-access-server-resources"></a>サーバーのリソースにリモート アクセスに VPN を使用するには  
+#### <a name="to-use-vpn-to-remotely-access-server-resources"></a>VPN を利用して離れた場所からサーバー リソースにアクセスするには  
   
-1.  キーを押して Ctrl + Alt +、クライアント コンピューターで削除します。  
+1.  クライアント コンピューターで Ctrl + Alt + Del キーを押します。  
   
-2.  をクリックして**ユーザーの切り替え**ログオン画面でします。  
+2.  ログオン画面で **[ユーザーの切り替え]** をクリックします。  
   
-3.  画面の右下隅にあるネットワーク ログオン アイコンをクリックします。  
+3.  画面右下隅にあるネットワーク ログオン アイコンをクリックします。  
   
-4.  ネットワーク ユーザー名とパスワードを使用して、Windows Server Essentials ネットワークにログオンします。  
+4.  ネットワーク ユーザー名とパスワードを利用し、Windows Server Essentials ネットワークにログオンします。  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
   
--   [リモート操作します。](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
+-   [リモートで作業します。](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
   
 -   [Anywhere Access を管理します。](Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   

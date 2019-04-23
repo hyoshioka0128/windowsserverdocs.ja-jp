@@ -15,15 +15,15 @@ ms.topic: article
 ms.assetid: a8c6d5fa-399b-4823-8f10-affec1bbfe65
 ms.localizationpriority: medium
 ms.openlocfilehash: 601261780f64a779d0aa43ea8d14f58fdcb5f502
-ms.sourcegitcommit: 3883eebbba70bfea0221e510863ee1a724a5f926
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5783634"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59874143"
 ---
-# リモート デスクトップ サービスの計画ポスター
+# <a name="remote-desktop-services---planning-poster"></a>リモート デスクトップ サービスの計画ポスター
 
-## Windows Server リモート デスクトップ サービス
+## <a name="remote-desktop-services-in-windows-server"></a>Windows Server リモート デスクトップ サービス
 
 リモート デスクトップ サービス チームは、RDS 環境の計画、構築、および実行を支援するポスターを作成しました。
 
@@ -31,12 +31,12 @@ ms.locfileid: "5783634"
 
 ポスターのコピーを取得するには、画像を右クリックして、ローカル システムに保存してください。
 
-計画について詳しくは、次のトピックをご覧ください。
+計画の詳細については、次のトピックをご覧ください。
 
-- [RDS 展開の計画と設計](rds-plan-and-design.md)
-- [RDS の構築と展開](rds-build-and-deploy.md)
-- [RDS 環境の実行と調整](rds-run-and-tune.md)
+- [計画し、設計の RDS のデプロイ](rds-plan-and-design.md)
+- [構築し、RDS のデプロイ](rds-build-and-deploy.md)
+- [実行し、調整、RDS 環境](rds-run-and-tune.md)
 
-## Windows 仮想デスクトップ
+## <a name="windows-virtual-desktop"></a>Windows 仮想デスクトップ
 
-既にご存知リモート デスクトップの新しい「モダン インフラストラクチャ」について説明します。 おそらくご存知"RDmi"の語句を使用してください。 理解する必要がある語句が「Windows 仮想デスクトップ」 この新しい仮想化が[Microsoft 365 は、Azure の最新デスクトップを追加](https://azure.microsoft.com/blog/microsoft-365-adds-modern-desktop-on-azure/)し、 [Windows デスクトップの仮想 Ignite 2018 プレゼンテーション](https://www.youtube.com/watch?v=_7G37PFYVe4)のソリューションについて説明します。 Windows 仮想デスクトップはプライベート プレビュー中です。
+聞いたかもしれませんが、リモート デスクトップを新しい「最近インフラストラクチャ」について説明します。 おそらくあなたが聞いた"RDmi"という語句を使用 知っておくべき句が「Windows 仮想デスクトップ」 サービス/データをこの新しいの仮想化について説明します[Microsoft 365 では、Azure の最新のデスクトップを追加](https://azure.microsoft.com/blog/microsoft-365-adds-modern-desktop-on-azure/)と[Windows 仮想デスクトップで Ignite 2018 プレゼンテーション](https://www.youtube.com/watch?v=_7G37PFYVe4)します。 Windows 仮想デスクトップは現在プライベート プレビュー段階です。

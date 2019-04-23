@@ -1,6 +1,6 @@
 ---
-title: "データグラム トランスポート層セキュリティ プロトコル"
-description: "Windows Server のセキュリティ"
+title: データグラム トランスポート層セキュリティ プロトコル
+description: Windows Server のセキュリティ
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,27 +12,28 @@ ms.assetid: 57b8873a-ad9c-4f2c-93e0-a2af352c6965
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
-ms.date: 10/12/2016
-ms.openlocfilehash: 31c1cf1f3218c0511a4407b560be30d0c6f86233
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.date: 05/16/2018
+ms.openlocfilehash: b32ebafff5e41d5c3140f008f6f391852f2f3474
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59870793"
 ---
-# データグラム トランスポート層セキュリティ プロトコル
+# <a name="datagram-transport-layer-security-protocol"></a>データグラム トランスポート層セキュリティ プロトコル
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+Windows Server (半期チャネル)、Windows Server 2016、Windows 10
 
-IT プロフェッショナル向けのこのリファレンス トピックでは、データグラム トランスポート層セキュリティ (DTLS) プロトコルは、Schannel セキュリティ サポート プロバイダー (SSP) の一部であるについて説明します。
+IT プロフェッショナル向けのこのリファレンス トピックでは、Schannel セキュリティ サポート プロバイダー (SSP) の一部であるデータグラム トランスポート層セキュリティ (DTLS) プロトコルについて説明します。
 
 ## <a name="BKMK_DTLS"></a>
-Schannel SSP では、Windows Server 2012 および Windows 8 で導入された、DTLS プロトコルは、データグラム プロトコルの通信プライバシーを提供します。 バージョンはバージョンの Windows でサポートされているどの DTLS については、次を参照してください。 [TLS/SSL (Schannel SSP) のプロトコル](https://msdn.microsoft.com/en-us/library/windows/desktop/mt808159(v=vs.85).aspx)します。 このプロトコルには、盗聴、改ざん、メッセージ偽造などを防ぐように設計された方法で通信するために、クライアントとサーバーのアプリケーションができます。 DTLS プロトコルは、トランスポート層セキュリティ (TLS) プロトコルに基づいており、IPsec を使用する必要が少なく、カスタム アプリケーション層のセキュリティ プロトコルを設計または同等のセキュリティ保証を提供します。
+Windows Server 2012 と Windows 8 での Schannel SSP で導入された、DTLS プロトコルは、データグラム プロトコルの通信プライバシーを提供します。 バージョンは、Windows のバージョンでサポートされているどの DTLS については、次を参照してください。 [in TLS/SSL (Schannel SSP) プロトコル](https://msdn.microsoft.com/en-us/library/windows/desktop/mt808159(v=vs.85).aspx)します。 クライアントとサーバーのアプリケーションはこのプロトコルにより、盗聴、改ざん、メッセージ偽造などを防ぐように設計された方法で通信できます。 DTLS プロトコルは、トランスポート層セキュリティ (TLS) プロトコルを基にしたものであり、TLS と同等のセキュリティ保証を提供します。これにより、IPsec を使う必要性が低下すると共に、アプリケーション層のセキュリティ プロトコルのカスタム設計が可能になります。
 
-データグラムは、ゲームまたはセキュリティで保護されたビデオ会議などのメディアをストリーミングで共通です。 開発者は、クライアントとサーバー間の通信をセキュリティで保護する Windows 認証セキュリティ サポート プロバイダー インターフェイス (SSPI) モデルのコンテキスト内で DTLS プロトコルを使用するアプリケーションを開発できます。 DTLS プロトコルは、ユーザー データグラム プロトコル (UDP) 上に構築されています。 DTLS は、新しいセキュリティ発明を最小限に抑えるとコードとインフラストラクチャの再利用の量を最大化することができる限り TLS にする設計されています。
+データグラムは、ストリーミング メディア、ゲームやセキュリティで保護されたビデオ会議などで共通です。 開発者は、クライアントとサーバー間の通信をセキュリティで保護する、Windows 認証セキュリティ サポート プロバイダー インターフェイス (SSPI) モデルのコンテキスト内で DTLS プロトコルを使用するアプリケーションを開発できます。 DTLS プロトコルは、ユーザー データグラム プロトコル (UDP) の上に構築されています。 DTLS はできるだけ最小限に抑える新しいセキュリティ発明と、コードとインフラストラクチャの再利用量を最大化する TLS と同等のように設計されています。
 
-構成可能な暗号スイートでは、ほぼ同様 TLS を構成することができます。 RC4 は許可されていません。 Schannel は引き続き Cryptography Next Generation (CNG) を使用します。 これは、Windows Vista で導入された、FIPS 140 認定の活用します。
+構成で利用可能な暗号スイートとほぼ TLS 用に構成することができます。 RC4 は許可されていません。 Schannel は、Cryptography Next Generation (CNG) を使用し続けます。 これは、Windows Vista で導入された FIPS 140 認定を利用します。
 
-## 参照してください。
+## <a name="see-also"></a>関連項目
 
 [IETF RFC 4347 データグラム トランスポート層セキュリティ](http://tools.ietf.org/html/rfc4347)
 
