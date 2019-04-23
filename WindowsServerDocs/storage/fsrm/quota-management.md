@@ -1,6 +1,6 @@
 ---
-title: "クオータの管理"
-description: "この記事では、クォータの作成方法と管理方法について説明します。"
+title: クオータの管理
+description: この記事では、クォータの作成方法と管理方法について説明します。
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 60436f12e07b8a3f16312829d53a2885c98f30ed
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: febcd6ab0744a7fddd024e1f0afdb93711e8939a
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59829543"
 ---
 # <a name="quota-management"></a>クオータの管理
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 の Windows Server (半期チャネル)
 
 ファイル サーバー リソース マネージャー Microsoft<sup>®</sup> 管理コンソール (MMC) スナップインの **[クォータの管理]** ノードでは、次の作業を実行できます。
 
@@ -26,23 +27,23 @@ ms.lasthandoff: 10/17/2017
 
 たとえば、次のようなことができます。
 
--   200 MB の制限をユーザーの個人用サーバー フォルダーに設定し、記憶域の使用率が 180 MB を超えたときに、管理者に通知を送信する。
--   グループの共有フォルダーに、柔軟な 500 MB のクォータを設定する。 この記憶域制限に達した場合、グループ内のすべてのユーザーはストレージ クォータが一時的に 520 MB まで拡張されたことを電子メールで通知されます。これにより、ユーザーは不要なファイルを削除して、現在の 500 MB のクォータ ポリシーに従うことができます。
+-   180 MB のストレージが制限を超過した場合に、ユーザーに送信される電子メール通知をユーザーの個人用サーバー フォルダーに 200 メガバイト (MB) 制限を設定します。
+-   グループの共有フォルダーで柔軟な 500 MB のクォータを設定します。 この記憶域の上限に達すると、グループ内のすべてのユーザーは、記憶域のクォータが拡張されている一時的に 520 mb まで不要なファイルを削除して、事前設定された 500 MB のクォータ ポリシーに準拠できます電子メールで通知されます。
 -   一時フォルダーの使用量が 2 GB に達した時点で通知を受信するが、サーバーで実行されているサービスに必要であるため、そのフォルダーのクォータを制限しない。
 
 ここでは、次のトピックについて説明します。
 
--   [クォータを作成する](create-quota.md)
--   [自動適用クォータを作成する](create-auto-apply-quota.md)
--   [クォータ テンプレートを作成する](create-quota-template.md)
--   [クォータ テンプレートのプロパティを編集する](edit-quota-template-properties.md)
--   [自動適用クォータのプロパティを編集する](edit-auto-apply-quota-properties.md)
+-   [クォータを作成します。](create-quota.md)
+-   [作成、自動適用クォータ](create-auto-apply-quota.md)
+-   [クォータ テンプレートを作成します。](create-quota-template.md)
+-   [クォータ テンプレートのプロパティを編集します。](edit-quota-template-properties.md)
+-   [編集の自動適用クォータのプロパティ](edit-auto-apply-quota-properties.md)
 
 > [!Note]
 > 電子メール通知やレポート機能を設定するには、まずファイル サーバー リソース マネージャーの全般的なオプションを設定する必要があります。
 
 ## <a name="see-also"></a>関連項目
 
--   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
+-   [設定ファイル サーバー リソース マネージャーのオプション](setting-file-server-resource-manager-options.md)
 
 

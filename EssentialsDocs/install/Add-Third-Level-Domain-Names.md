@@ -1,6 +1,6 @@
 ---
-title: "第 3 レベル ドメイン名を追加します。"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: 第 3 レベル ドメイン名の追加
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,46 +13,47 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 64bf24e45155fdd981e2061b3de7ebce1c53b36c
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59833323"
 ---
-# <a name="add-third-level-domain-names"></a>第 3 レベル ドメイン名を追加します。
+# <a name="add-third-level-domain-names"></a>第 3 レベル ドメイン名の追加
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-ユーザーが、設定 Up Domain Name ウィザードで第 3 レベル ドメイン名を要求する機能を追加することができます。 これを行う作成して、オペレーティング システム内のドメイン マネージャーによって使用されるコード アセンブリをインストールします。  
+ユーザーが Set Up Domain Name ウィザードで第 3 レベル ドメイン名を要求する機能を追加できます。 これには、オペレーティング システムのドメイン マネージャーによって使用されるコード アセンブリを作成してインストールします。  
   
-## <a name="create-a-provider-of-third-level-domain-names"></a>第 3 レベル ドメイン名のプロバイダーを作成します。  
- 第 3 レベル ドメイン名を利用できるようにするには作成して、ウィザードにドメイン名を提供するコード アセンブリをインストールします。 これを行うには、次のタスクを実行します。  
+## <a name="create-a-provider-of-third-level-domain-names"></a>第 3 レベル ドメイン名のプロバイダーの作成  
+ 第 3 レベル ドメイン名を使用できるようにするには、ドメイン名をウィザードに提供するコード アセンブリを作成してインストールします。 これを行うには、次のタスクを完了します。  
   
 -   [IDomainSignupProvider インターフェイスの実装のアセンブリへの追加します。](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)  
   
 -   [IDomainMaintenanceProvider インターフェイスの実装のアセンブリへの追加します。](Add-Third-Level-Domain-Names.md#BKMK_DomainMaintenance)  
   
--   [Authenticode 署名によるアセンブリを署名します。](Add-Third-Level-Domain-Names.md#BKMK_SignAssembly)  
+-   [アセンブリに Authenticode 署名で署名します。](Add-Third-Level-Domain-Names.md#BKMK_SignAssembly)  
   
 -   [参照コンピューターで、アセンブリをインストールします。](Add-Third-Level-Domain-Names.md#BKMK_InstallAssembly)  
   
 -   [Windows Server Domain Name Management サービスを再起動します。](Add-Third-Level-Domain-Names.md#BKMK_RestartService)  
   
-###  <a name="BKMK_DomainSignup"></a>IDomainSignupProvider インターフェイスの実装のアセンブリへの追加します。  
- IDomainSignupProvider インターフェイスを使用して、ウィザードをドメイン サービスを追加します。  
+###  <a name="BKMK_DomainSignup"></a> IDomainSignupProvider インターフェイスの実装のアセンブリへの追加します。  
+ ドメイン サービスをウィザードに追加するには、IDomainSignupProvider インターフェイスが使用されます。  
   
 ##### <a name="to-add-the-idomainsignupprovider-code-to-the-assembly"></a>IDomainSignupProvider コードをアセンブリに追加するには  
   
-1.  Visual Studio 2008 でプログラムを右クリックして、管理者として開きます、**開始**メニューを選択して**管理者として実行**します。  
+1.  **[スタート]** メニューのプログラムを右クリックし、**[管理者として実行]** を選択して、Visual Studio 2008 を管理者として開きます。  
   
-2.  をクリックして**ファイル**、] をクリックして**新規**、] をクリックし、**プロジェクト**します。  
+2.  をクリックして**ファイル**、 をクリックして**新規**、クリックして**プロジェクト**です。  
   
-3.  **新しいプロジェクト**ダイアログ ボックスで、] をクリックして**Visual c#**、] をクリックして**クラス ライブラリ**、ソリューションの名前を入力し、[クリックして**OK**します。  
+3.  **[新しいプロジェクト]** ダイアログ ボックスで、**[Visual C#]**、次に **[クラス ライブラリ]** をクリックし、ソリューションの名前を入力して、**[OK]** をクリックします。  
   
 4.  Class1.cs ファイルの名前を変更します。 たとえば、MyDomainNameProvider.cs  
   
 5.  Wssg.Web.DomainManagerObjectModel.dll、CertManaged.dll、WssgCertMgmt.dll、WssgCommon.dll ファイルへの参照を追加します。  
   
-6.  次の追加のステートメントを使用します。  
+6.  ステートメントを使用して以下を追加します。  
   
     ```c#  
   
@@ -65,7 +66,7 @@ ms.lasthandoff: 12/12/2017
     using Microsoft.Win32;  
     ```  
   
-7.  名前空間とクラス ヘッダーを次の例に示すように変更します。  
+7.  次の例に合わせて、名前空間とクラス ヘッダーを変更します。  
   
     ```c#  
     namespace Microsoft.WindowsServerSolutions.RemoteAccess.Domains  
@@ -76,10 +77,10 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-8.  ウィザードで示されているサービスを定義すると、クラスを Initialize メソッドと必要な変数を追加します。  
+8.  Initialize メソッドと必要な変数をクラスに追加します。これにより、ウィザードで示されているサービスを定義します。  
   
     > [!NOTE]
-    >  Initialize メソッドは、一意である必要があるドメイン プロバイダーの識別子を定義します。 これを行う一般的な方法では、識別子として GUID を定義します。 GUID の作成の詳細については、次を参照してください。[Guid の作成 (guidgen.exe)](https://go.microsoft.com/fwlink/?LinkId=116098)します。  
+    >  Initialize メソッドは、ドメイン プロバイダーの識別子を定義します。識別子は一意でなければなりません。 通常の方法では、識別子として GUID を定義します。 GUID の作成の詳細については、「 [Guid の作成 (guidgen.exe)](https://go.microsoft.com/fwlink/?LinkId=116098)」を参照してください。  
   
      次のコード例は、Initialize メソッドを示します。  
   
@@ -109,7 +110,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-9. 前の手順で初期化された製品の一覧を返す、GetOfferings メソッドを追加します。 次のコード例は、GetOfferings メソッドを示しています。  
+9. 前の手順で初期化されたサービスの一覧を返す、GetOfferings メソッドを追加します。 次のコード例は、GetOfferings メソッドを示します。  
   
     ```c#  
   
@@ -119,7 +120,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-10. 一覧からサービスを返す FindOfferingForDomain メソッドを追加します。 次のコード例は、FindOfferingForDomain メソッドを示します。  
+10. リストからサービスを返す FindOfferingForDomain メソッドを追加します。 次のコード例は、FindOfferingForDomain メソッドを示します。  
   
     ```  
   
@@ -131,7 +132,7 @@ ms.lasthandoff: 12/12/2017
   
     ```  
   
-11. サービスにアクセスするために必要な資格情報を定義する、SetCredentials メソッドを追加します。 次のコード例は、SetCredentials メソッドを示しています。  
+11. サービスにアクセスするために必要な資格情報を定義する、SetCredentials メソッドを追加します。 次のコード例は、SetCredentials メソッドを示します。  
   
     ```c#  
   
@@ -152,7 +153,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-12. SetCredentials で定義されている資格情報を検証する、ValidateCredentials メソッドを追加します。 次のコード例は、ValidateCredentials メソッドを示しています。  
+12. SetCredentials で定義されている資格情報を検証する、ValidateCredentials メソッドを追加します。 次のコード例は、ValidateCredentials メソッドを示します。  
   
     ```c#  
   
@@ -173,7 +174,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-13. 要求で指定されたサービスでサポートされているルート ドメイン名の一覧を返す、GetAvailableDomainRoots メソッドを追加します。 このルート ドメイン名の一覧を空にする必要がありますはできません。 次のコード例は、GetAvailableDomainRoots メソッドを示しています。  
+13. 要求で指定されたサービスによってサポートされるルート ドメイン名の一覧を返す、GetAvailableDomainRoots メソッドを追加します。 このルート ドメイン名の一覧を空にすることはできません。 次のコード例は、GetAvailableDomainRoots メソッドを示します。  
   
     ```c#  
   
@@ -187,7 +188,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-14. 現在のユーザーが既に所有して、現在のサービスを基準にしているドメイン名の一覧を返す、GetUserDomainNames メソッドを追加します。 このリストは空である可能性があります。 次のコード例は、GetUserDomainNames メソッドを示しています。  
+14. 現在のサービスを基準として、現在のユーザーが既に所有しているドメイン名の一覧を返す、GetUserDomainNames メソッドを追加します。 この一覧は空にすることができます。 次のコード例は、GetUserDomainNames メソッドを示します。  
   
     ```c#  
   
@@ -206,7 +207,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-15. 指定したサービスが許可するドメインの最大数を返す、GetUserDomainQuota メソッドを追加します。 最大値が適用されない場合は、このメソッドは 0 を返すはずです。 次の例では、GetUserDomainQuota メソッドを示します。  
+15. 指定されたサービスが許可する最大ドメイン数を返す、GetUserDomainQuota メソッドを追加します。 最大数が適用されない場合、このメソッドは 0 を返します。 次のコード例は、GetUserDomainQuota メソッドを示します。  
   
     ```c#  
   
@@ -216,7 +217,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-16. 要求されたドメイン名の可用性をチェックする、CheckDomainAvailability メソッドを追加し、候補の一覧を返すことができます。 次のコード例は、CheckDomainAvailability メソッドを示しています。  
+16. 要求されたドメイン名の可用性をチェックし、提案の一覧を返すことができる、CheckDomainAvailability メソッドを追加します。 次のコード例は、CheckDomainAvailability メソッドを示します。  
   
     ```c#  
   
@@ -229,7 +230,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-17. 要求されたドメイン名をコミットする、CommitDomain メソッドを追加します。 このメソッドが正常に完了を意味することは、ドメイン名がユーザー アカウントに関連付け、状態が FullyOperational の場合、およびプロバイダーとサービスがアクティブになる場合は、証明書を取得するメンテナンス プロバイダーがすぐに呼び出されます。 次のコード例は、CommitDomain メソッドを示しています。  
+17. 要求されたドメイン名を確定する、CommitDomain メソッドを追加します。 このメソッドが正常に完了すると、ドメイン名がユーザー アカウントに関連付けられ、状態が FullyOperational の場合、証明書を取得するためにメンテナンス プロバイダーが直ちに呼び出され、プロバイダーとサービスがアクティブになります。 次のコード例は、CommitDomain メソッドを示します。  
   
     ```c#  
   
@@ -245,7 +246,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-18. ユーザーがドメイン名の解放することをプロバイダー、ReleaseDomain メソッドを追加します。 次のコード例は、ReleaseDomain メソッドを示しています。  
+18. ユーザーがドメイン名の解放を希望していることをプロバイダーに知らせる、ReleaseDomain メソッドを追加します。 次のコード例は、ReleaseDomain メソッドを示します。  
   
     ```c#  
   
@@ -255,7 +256,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-19. ドメイン サインアップ ワークフローのランディング ページの URL を返す、GetProviderLandingUrl メソッドを追加します。 次のコード例は、GetProviderLandingUrl メソッドを示しています。  
+19. ドメイン サインアップ ワークフローのランディング ページの URL を返す、GetProviderLandingUrl メソッドを追加します。 次のコード例は、GetProviderLandingUrl メソッドを示します。  
   
     ```c#  
   
@@ -265,7 +266,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-20. ドメイン保守タスクに使用される IDomainMaintenanceProvider のインスタンスを返す、GetDomainMaintenanceProvider メソッドを追加します。 このメソッドは、CommitDomain メソッドが成功した後、およびドメイン マネージャーを起動したときに呼び出されます。 次のコード例は、GetDomainMaintenanceProvider メソッドを示しています。  
+20. ドメイン保守タスクに使用される IDomainMaintenanceProvider のインスタンスを返す、GetDomainMaintenanceProvider メソッドを追加します。 このメソッドは、CommitDomain メソッドが成功した後、およびドメイン マネージャーの起動時に呼び出されます。 次のコード例は、GetDomainMaintenanceProvider メソッドを示します。  
   
     ```c#  
   
@@ -275,14 +276,14 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-21. プロジェクトを保存し、終了しませんので、次の手順に追加します。 次の手順を完了するまでプロジェクトをビルドできなきます。  
+21. プロジェクトを保存したら、次の手順でプロジェクトへの追加を行うため、プロジェクトを閉じないでください。 次の手順を完了するまでプロジェクトをビルドすることはできません。  
   
-###  <a name="BKMK_DomainMaintenance"></a>IDomainMaintenanceProvider インターフェイスの実装のアセンブリへの追加します。  
- IDomainMaintenanceProvider が作成した後、ドメインを維持するために使用されます。  
+###  <a name="BKMK_DomainMaintenance"></a> IDomainMaintenanceProvider インターフェイスの実装のアセンブリへの追加します。  
+ 作成した後にドメインを維持するには、IDomainMaintenanceProvider が使用されます。  
   
 ##### <a name="to-add-the-idomainmaintenanceprovider-code-to-the-assembly"></a>IDomainMaintenanceProvider コードをアセンブリに追加するには  
   
-1.  ドメイン メンテナンス プロバイダーのクラス ヘッダーを追加します。 プロバイダーに対して定義した名前が、以前に定義した GetDomainMaintenanceProvider メソッド内の名前と一致することを確認します。  
+1.  ドメイン メンテナンス プロバイダーのクラス ヘッダーを追加します。 プロバイダーに対して定義した名前が、前に定義した GetDomainMaintenanceProvider メソッド内の名前と一致することを確認します。  
   
     ```c#  
   
@@ -291,7 +292,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-2.  アクティブなプロバイダーを設定する、Activate メソッドを追加します。 次のコード例は、Activate メソッドを示しています。  
+2.  アクティブなプロバイダーを設定する、Activate メソッドを追加します。 次のコード例は、Activate メソッドを示します。  
   
     ```c#  
   
@@ -307,7 +308,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-3.  すべてのアクションを非アクティブ化するために使用する、Deactivate メソッドを追加します。 次のコード例は、Deactivate メソッドを示しています。  
+3.  すべてのアクションを無効化するのに使用する、Deactivate メソッドを追加します。 次のコード例は、Deactivate メソッドを示します。  
   
     ```  
   
@@ -318,7 +319,7 @@ ms.lasthandoff: 12/12/2017
   
     ```  
   
-4.  ユーザーの資格情報を更新する、SetCredentials メソッドを追加します。 たとえば、有効でなくなった資格情報を更新するこのメソッドを呼び出すことがあります。 次のコード例は、SetCredentials メソッドを示しています。  
+4.  ユーザーの資格情報を更新する、SetCredentials メソッドを追加します。 たとえば、このメソッドは、有効でなくなった資格情報を更新するために呼び出すことができます。 次のコード例は、SetCredentials メソッドを示します。  
   
     ```c#  
   
@@ -332,7 +333,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-5.  指定された資格情報を検証する、ValidateCredentials メソッドを追加します。 次のコード例は、ValidateCredentials メソッドを示しています。  
+5.  指定された資格情報を検証する、ValidateCredentials メソッドを追加します。 次のコード例は、ValidateCredentials メソッドを示します。  
   
     ```c#  
   
@@ -351,7 +352,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-6.  サーバーの外部 IP アドレスを返す、GetPublicAddress メソッドを追加します。 次のコード例は、GetPublicAddress メソッドを示しています。  
+6.  サーバーの外部 IP アドレスを返す、GetPublicAddress メソッドを追加します。 次のコード例は、GetPublicAddress メソッドを示します。  
   
     ```c#  
   
@@ -387,7 +388,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-7.  現在構成されているドメイン名の証明書の要求を送信する、SubmitCertificateRequest メソッドを追加します。  
+7.  現在構成されているドメイン名の証明書要求を送信する、SubmitCertificateRequest メソッドを追加します。  
   
     ```c#  
   
@@ -403,7 +404,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-8.  ドメインの状態が FullyOperational の場合は、証明書の応答を返す、GetCertificateResponse メソッドを追加します。 両方の新しい証明書要求と証明書更新要求は、このメソッドが呼び出されます。 次のコード例は、GetCertificateResponse メソッドを示しています。  
+8.  ドメインの状態が FullyOperational の場合に証明書応答を返す、GetCertificateResponse メソッドを追加します。 このメソッドは、新しい証明書要求と証明書の更新要求の両方に対して呼び出されます。 次のコード例は、GetCertificateResponse メソッドを示します。  
   
     ```c#  
   
@@ -413,7 +414,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-9. 証明書の更新を処理する、SubmitRenewCertificateRequest メソッドを追加します。 次のコード例は、SubmitRenewCertificateRequest メソッドを示しています。  
+9. 証明書の更新を処理する、SubmitRenewCertificateRequest メソッドを追加します。 次のコード例は、SubmitRenewCertificateRequest メソッドを示します。  
   
     ```c#  
   
@@ -423,7 +424,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-10. プロバイダーによって保存された DNS レコードを更新する、UpdateDNSRecords メソッドを追加します。 次のコード例は、UpdateDNS メソッドを示しています。  
+10. プロバイダーによって保存された DNS レコードを更新する、UpdateDNSRecords メソッドを追加します。 次のコード例は、UpdateDNS メソッドを示します。  
   
     ```c#  
   
@@ -440,7 +441,7 @@ ms.lasthandoff: 12/12/2017
   
     ```  
   
-11. バックエンド サービスへの接続を確立しようとする、TestConnection メソッドを追加します。 このメソッドは、認証を必要とする場合は、適切な例外がスローする必要があります。 次のコード例は、TestConnection メソッドを示しています。  
+11. バックエンド サービスへの接続を確立しようとする、TestConnection メソッドを追加します。 このメソッドに認証が必要な場合は、適切な例外をスローする必要があります。 次のコード例は、TestConnection メソッドを示します。  
   
     ```c#  
   
@@ -452,7 +453,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-12. ドメインの現在の状態を返す、GetDomainState メソッドを追加します。 次のコード例は、GetDomainState メソッドを示しています。  
+12. ドメインの現在の状態を返す、GetDomainState メソッドを追加します。 次のコード例は、GetDomainState メソッドを示します。  
   
     ```c#  
   
@@ -504,7 +505,7 @@ ms.lasthandoff: 12/12/2017
     }  
     ```  
   
-13. 証明書の現在の状態を返す、GetCertificateState メソッドを追加します。 次のコード例は、GetCertificateState メソッドを示しています。  
+13. 証明書の現在の状態を返す、GetCertificateState メソッドを追加します。 次のコード例は、GetCertificateState メソッドを示します。  
   
     ```c#  
   
@@ -516,69 +517,69 @@ ms.lasthandoff: 12/12/2017
   
 14. 保存し、ソリューションをビルドします。  
   
-###  <a name="BKMK_SignAssembly"></a>Authenticode 署名によるアセンブリを署名します。  
- オペレーティング システムで使用されるようにアセンブリの Authenticode 署名する必要があります。 アセンブリの署名の詳細については、次を参照してください。[Authenticode によるコードのチェックの署名と](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)します。  
+###  <a name="BKMK_SignAssembly"></a> アセンブリに Authenticode 署名で署名します。  
+ オペレーティング システムで使用するために、アセンブリを Authenticode で署名する必要があります。 アセンブリの署名の詳細については、「 [Authenticode によるコードの署名と確認 (英語の場合があります)](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)」を参照してください。  
   
-###  <a name="BKMK_InstallAssembly"></a>参照コンピューターで、アセンブリをインストールします。  
- アセンブリは、参照コンピューター上のフォルダーに配置します。 次の手順でレジストリに入力するためメモ、フォルダーのパス。  
+###  <a name="BKMK_InstallAssembly"></a> 参照コンピューターで、アセンブリをインストールします。  
+ アセンブリを参照コンピューターのフォルダーに配置します。 次の手順でレジストリに入力するため、フォルダーのパスをメモしておきます。  
   
-### <a name="add-a-key-to-the-registry"></a>キーをレジストリに追加します。  
- 特性とアセンブリの場所を定義するためにレジストリ エントリを追加します。  
+### <a name="add-a-key-to-the-registry"></a>キーのレジストリへの追加  
+ アセンブリの特性と場所を定義するためにレジストリ エントリを追加します。  
   
-##### <a name="to-add-a-key-to-the-registry"></a>レジストリ キーを追加するには  
+##### <a name="to-add-a-key-to-the-registry"></a>キーをレジストリに追加するには  
   
-1.  参照コンピューターで、をクリックして**開始**、入力**regedit**、キーを押します**Enter**します。  
+1.  参照コンピューターで、**[スタート]** をクリックし、「**regedit**」と入力して、**Enter** キーを押します。  
   
-2.  左側のウィンドウで [ **HKEY_LOCAL_MACHINE**、展開**ソフトウェア**、展開**Microsoft**、展開**Windows Server**、展開**Domain Managers**、し、展開**プロバイダー**します。  
+2.  左のウィンドウで、**[HKEY_LOCAL_MACHINE]**、**[SOFTWARE]**、**[Microsoft]**、**[Windows Server]**、**[Domain Managers]**、**[Providers]** の順に展開します。  
   
-3.  右クリック**プロバイダー**、] をポイント**新規**、] をクリックし、**キー**します。  
+3.  **[Providers]** を右クリックし、**[新規作成]** をクリックして、**[キー]** をクリックします。  
   
-4.  プロバイダーの識別子をキーの名前として入力します。 手順 8 でプロバイダーに対して定義した GUID には、識別子[IDomainSignupProvider インターフェイスの実装のアセンブリへの追加](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)します。  
+4.  プロバイダーの識別子をキーの名前として入力します。 識別子は、「[IDomainSignupProvider インターフェイスの実装のアセンブリへの追加](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)」の手順 8 でプロバイダーに対して定義した GUID です。  
   
-5.  作成したキーを右クリックし、をクリックして**文字列値**します。  
+5.  先ほど作成したキーを右クリックし、**[文字列値]** をクリックします。  
   
-6.  種類**アセンブリ**文字列を検索し、キーを押しますの名前を**Enter**します。  
+6.  文字列の名前に対して「**Assembly**」と入力し、**Enter** キーを押します。  
   
-7.  新しいを右クリックして**アセンブリ**文字列の右側のウィンドウで、クリックして**変更**します。  
+7.  右側のウィンドウで、新しい **Assembly** 文字列を右クリックし、**[変更]** をクリックします。  
   
-8.  をクリックして、以前に作成するアセンブリ ファイルへの完全パスを入力**OK**します。  
+8.  前に作成したアセンブリ ファイルへの完全なパスを入力し、**[OK]** をクリックします。  
   
-9. 再度、キーを右クリックし、をクリックして**文字列値**します。  
+9. キーを再度右クリックし、**[文字列値]** をクリックします。  
   
-10. 種類**有効**文字列を検索し、キーを押しますの名前を**Enter**します。  
+10. 文字列の名前に対して「 **Enabled** 」と入力し、 **Enter**キーを押します。  
   
-11. 新しいを右クリックして**有効**文字列の右側のウィンドウで、クリックして**変更**します。  
+11. 右側のウィンドウで、新しい **Enabled** 文字列を右クリックし、**[変更]** をクリックします。  
   
-12. 種類**True**、] をクリックし、**OK**します。  
+12. 「 **True**」と入力し、**[OK]** をクリックします。  
   
-13. 再度、キーを右クリックし、をクリックして**文字列値**します。  
+13. キーを再度右クリックし、**[文字列値]** をクリックします。  
   
-14. 種類**種類**文字列を検索し、キーを押しますの名前を**Enter**します。  
+14. 文字列の名前に対して「**Type**」と入力し、**Enter** キーを押します。  
   
-15. 新しいを右クリックして**種類**文字列の右側のウィンドウで、クリックして**変更**します。  
+15. 右側のウィンドウで、新しい **Type** 文字列を右クリックし、**[変更]** をクリックします。  
   
-16. アセンブリで定義されているプロバイダーの完全なクラス名を入力し、クリックして**OK**します。  
+16. アセンブリで定義されたプロバイダーの完全なクラス名を入力し、**[OK]** をクリックします。  
   
-###  <a name="BKMK_RestartService"></a>Windows Server Domain Name Management サービスを再起動します。  
- オペレーティング システムに使用可能になるプロバイダーの Windows Server Domain Management サービスを再起動する必要があります。  
+###  <a name="BKMK_RestartService"></a> Windows Server Domain Name Management サービスを再起動します。  
+ プロバイダーがオペレーティング システムに対して使用できるようになるには、Windows Server Domain Management サービスを再起動する必要があります。  
   
-##### <a name="restart-the-service"></a>サービスを再開します  
+##### <a name="restart-the-service"></a>サービスを再起動します。  
   
-1.  をクリックして**開始**、種類**mmc**、キーを押します**Enter**します。  
+1.  **[スタート]** をクリックし、「 **mmc**」と入力して、 **Enter**キーを押します。  
   
-2.  サービス スナップインがコンソールに表示されない場合は、次の手順を実行して追加します。  
+2.  サービス スナップインがコンソールの一覧に表示されていない場合、サービス スナップインを追加するために次の手順を完了します。  
   
-    1.  をクリックして**ファイル**、] をクリックし、**スナップインの追加/削除**します。  
+    1.  **[ファイル]**、 **[スナップインの追加と削除]** の順にクリックします。  
   
-    2.  **利用できるスナップイン**一覧で、クリックして**サービス**、] をクリックし、**追加**します。  
+    2.  **[利用できるスナップイン]** の一覧で、**[サービス]**、**[追加]** の順にクリックします。  
   
-    3.  **サービス**] ダイアログ ボックスで、いることを確認**ローカル コンピューター**をクリックして選択して**完了**します。  
+    3.  **[サービス]** ダイアログ ボックスで、**[ローカル コンピューター]** が選択されていることを確認し、**[完了]** をクリックします。  
   
-    4.  をクリックして**OK**を閉じるには、**スナップインの追加/削除**] ダイアログ ボックス。  
+    4.  **[OK]** をクリックして **[スナップインの追加と削除]** ダイアログ ボックスを閉じます。  
   
-3.  ダブルクリック**サービス**を下へスクロールして、選択**Windows Server Domain Management**、] をクリックし、**サービスを再起動**します。  
+3.  **[サービス]** をダブルクリックし、**[Windows Server Domain Management]** までスクロールして選択し、**[サービスを再開]** をクリックします。  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
  [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   
  [追加のカスタマイズ](Additional-Customizations.md)   
  [イメージの展開の準備](Preparing-the-Image-for-Deployment.md)   

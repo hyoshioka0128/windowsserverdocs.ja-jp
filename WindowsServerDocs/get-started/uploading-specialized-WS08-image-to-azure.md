@@ -11,19 +11,19 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.openlocfilehash: af98a219a4a5aa708df9c648f1b245a21e95f016
-ms.sourcegitcommit: f7113ccc8b664494f664cd4b100dcac06eef5654
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "7012076"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59827813"
 ---
-# Windows Server 2008/2008 R2 に特化されたイメージの Azure へのアップロード 
+# <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>Windows Server 2008/2008 R2 に特化されたイメージの Azure へのアップロード 
 
 ![WS08 イメージ トピックを導入するバナー](media/WS08-image-banner-large.png)
 
 Azure によりクラウド内で Windows Server 2008/2008 R2 VM を実行できるようになりました。 
 
-## Windows Server 2008/2008 R2 に特化されたイメージの準備
+## <a name="prep-the-windows-server-20082008-r2-specialized-image"></a>Windows Server 2008/2008 R2 に特化されたイメージの準備
 画像をアップロードする前に、次の変更を行います。
 
 - Windows Server 2008 Service Pack 2 (SP2) をイメージにまだインストールしていない場合は、ダウンロードしてインストールします。
@@ -43,8 +43,8 @@ Azure によりクラウド内で Windows Server 2008/2008 R2 VM を実行でき
 - Windows ファイアウォールの設定を構成します。   
    1. 管理モードのコマンド プロンプトで、「**wf.msc**」と入力して Windows ファイアウォールとセキュリティの詳細設定を表示します。   
    2. 検出結果を **[ポート]** で並べ替え、**[ポート 3389]** を選択します。   
-     ![Windows ファイアウォール設定の受信ルールのスクリーンショット。](media/3b_inboundrules.png)   
-   3. **[ドメイン]**、**[プライベート]**、**[パブリック]** (上記を参照) のプロパティについてリモート デスクトップ (TCP-IN) を有効にします。
+     ![WIndows ファイアウォールのスクリーン ショットの設定の受信の規則。](media/3b_inboundrules.png)   
+   3. プロファイルのリモート デスクトップ (TCP IN) を有効にします。**ドメイン**、**プライベート**、および**パブリック**(上記参照)。
 
 - すべての設定を保存して、イメージをシャットダウンします。   
 - Hyper-V を使用している場合は、変更を維持するために子 AVHD が親 VHD にマージされていることを確認します。
@@ -55,10 +55,10 @@ Azure によりクラウド内で Windows Server 2008/2008 R2 VM を実行でき
 2. 「**lusrmgr.msc**」と入力します。
 3. [ローカル ユーザーとグループ] で **[ユーザー]** を選択します
 4. **[管理者]** を右クリックし、**[プロパティ]** を選択します
-5. **[パスワードを無期限にする]** を選択し、**[OK]** を選択します
-![管理者プロパティのスクリーンショット。](media/6_adminprops.png)
+5. 選択**パスワードを無期限**選択 **[ok]**
+![管理者のプロパティのスクリーン ショット。](media/6_adminprops.png)
 
-## イメージ VHD のアップロード
+## <a name="uploading-the-image-vhd"></a>イメージ VHD のアップロード
 以下のスクリプトを使用して、VHD をアップロードできます。 これを行う前に、Azure アカウントの公開設定ファイルが必要になります。 [Azure ファイル設定](https://azure.microsoft.com/downloads/)を取得します。
 
 スクリプトは次のとおりです。
@@ -80,7 +80,7 @@ Login-AzureRmAccount
       $urlOfUploadedImageVhd = "<BlobUrl>/<NameForVHD>.vhd"
       Add-AzureRmVhd -ResourceGroupName $rgName -Destination $urlOfUploadedImageVhd -LocalFilePath "<FilePath>"  
 ```
-## Azure でのイメージの展開
+## <a name="deploy-the-image-in-azure"></a>Azure でのイメージの展開
 このセクションでは、Azure でイメージ VHD を展開します。 
 
 > [!IMPORTANT]
@@ -92,15 +92,15 @@ Login-AzureRmAccount
 4.  プロパティから BLOB ストレージの URL をコピーします。
 5.  上で指定されたスクリプトを使用して新しいストレージ BLOB にイメージをアップロードします。
 6.  VHD の[ディスク](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)を作成します。   
-     a. [ディスク] に移動し、**[追加]** をクリックします。  
-     b. ディスクの名前を入力します。 使用するサブスクリプションを選択し、地域を設定して、アカウントの種類を選択します。   
+     a.  [ディスク] に移動し、**[追加]** をクリックします。  
+     b.  ディスクの名前を入力します。 使用するサブスクリプションを選択し、地域を設定して、アカウントの種類を選択します。   
      c. [ソースの種類] で、ストレージを選択します。 スクリプトを使用して作成した BLOB VHD の場所を参照します。  
-     d. Windows OS の種類とサイズを選択します (既定: 1023)。   
+     d. Windows OS の種類とサイズを選択します (既定。1023).   
      e. **[作成]** をクリックします。   
 
 7.  [Disk Created] (作成されたディスク) に移動し、**[VM の作成]** をクリックします。   
-     a. VM に名前を付けます。   
-     b. ディスクをアップロードした 手順 5 で作成した既存のグループを選択します。   
+     a.  VM に名前を付けます。   
+     b.  ディスクをアップロードした 手順 5 で作成した既存のグループを選択します。   
      c. VM のサイズと SKU 計画を選びます。   
      d. 設定ページで、ネットワーク インターフェイスを選択します。 ネットワーク インターフェイスに次の規則が指定されていることを確認します。
  

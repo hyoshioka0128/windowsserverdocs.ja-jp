@@ -1,7 +1,7 @@
 ---
 ms.assetid: 69ec592a-5499-4249-8ba0-afa356a8ff75
-title: "デバイス登録のテクニカル リファレンス"
-description: 
+title: デバイス登録のテクニカル リファレンス
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,80 +10,81 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: fac6437e9b6c3893064769a8279c2cf96cbc47d6
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59833783"
 ---
->適用対象: Windows Server 2016、Windows Server 2012 R2
+>適用先:Windows Server 2016、Windows Server 2012 R2
 
 # <a name="device-registration-technical-reference"></a>デバイス登録のテクニカル リファレンス
-デバイス登録サービス \(DRS\) とは、Windows Server 2012 R2 で Active Directory フェデレーション サービス役割に含まれている新しい Windows サービスです。  DRS をインストールして、すべての AD FS ファームにフェデレーション サーバーに構成されている必要があります。  DRS の展開方法の詳細については、次を参照してください。[デバイス登録サービスによるフェデレーション サーバーを構成する](https://technet.microsoft.com/library/dn486831.aspx)します。  
+デバイス登録サービス\(DRS\)は Windows Server 2012 R2 で Active Directory フェデレーション サービス役割に含まれている新しい Windows サービスです。  DRS は、AD FS ファーム内のすべてのフェデレーション サーバーにインストールし、構成する必要があります。  DRS の展開の詳細については、「 [デバイス登録サービスを使用してフェデレーション サーバーを構成する](https://technet.microsoft.com/library/dn486831.aspx)」を参照してください。  
   
-## <a name="active-directory-objects-created-when-a-device-is-registered"></a>Active Directory オブジェクトをデバイスの登録時に作成  
-デバイス登録サービスの一部として、次の Active Directory オブジェクトが作成されます。  
+## <a name="active-directory-objects-created-when-a-device-is-registered"></a>デバイスの登録時に作成される Active Directory オブジェクト  
+次の Active Directory オブジェクトは、デバイス登録サービス の一部として作成されます。  
   
-### <a name="device-registration-configuration"></a>デバイス登録の構成  
-デバイス登録構成は、Active Directory フォレストの構成名前付けコンテキストに格納されます。 \ (たとえば、**CN\ = Device Registration Configuration, CN\ = Services, < コンテキスト依存 naming\ configuration \ >**\)。 このオブジェクトは、デバイス登録のため、Active Directory フォレストのイニシャルが付けられたときに作成されます。  
+### <a name="device-registration-configuration"></a>デバイス登録構成  
+デバイス登録構成は、Active Directory フォレストの構成名前付けコンテキストに格納されます \(たとえば、 **CN\=Device Registration Configuration, CN\=サービス、< configuration\-名前付け\-コンテキスト >**\)します。 このオブジェクトは、Active Directory フォレストにデバイス登録用のイニシャルが付けられたときに作成されます。  
   
-デバイス登録構成には、次の要素が含まれています。  
+デバイス登録構成には、次の要素が含まれます。  
   
 -   **発行者キー**  
   
-    登録済みデバイスに関連付けられている、公開キーと秘密キー X.509 証明書を発行するために使用します。  秘密キーは DKM で保護します。  
+    登録済みデバイスに関連付けられた X.509 証明書を発行するために使用される、公開キーと秘密キーです。  秘密キーは DKM で保護されます。  
   
 -   **デバイス登録サービスの構成**  
   
     デバイス登録サービスに関連するポリシーです。  
   
 ### <a name="registered-devices-container"></a>登録済みデバイス コンテナー  
-デバイス オブジェクト コンテナーは、Active Directory フォレスト内のドメインの下にあるいずれかでが作成されます。  このオブジェクト コンテナーは、すべての Active Directory フォレストにデバイス オブジェクトが含まれます。  
+デバイス オブジェクト コンテナーは、Active Directory フォレスト内のいずれかのドメイン下に作成されます。  このオブジェクト コンテナーには、Active Directory フォレストのすべてのデバイス オブジェクトが格納されます。  
   
-既定では、AD FS と同じドメイン内のコンテナーが作成されます。  \ (たとえば、**CN\ = RegisteredDevices、DC\ = < コンテキスト依存 naming\ default\ >**\)。このオブジェクトは、デバイス登録のため、Active Directory フォレストのイニシャルが付けられたときに作成されます。  
+既定では、コンテナーは AD FS と同じドメインに作成されます。  \(たとえば、 **CN\=RegisteredDevices, DC\=< 既定\-名前付け\-コンテキスト >**\)します。このオブジェクトは、Active Directory フォレストがデバイスの登録の initialed されるときに作成されます。  
   
 ### <a name="registered-devices"></a>登録済みデバイス  
-デバイス オブジェクトは、Active Directory で新しい、光の重み付けオブジェクトです。  間の関係を表すために使用されます。ユーザー、デバイス、および会社。  デバイス オブジェクトでは、AD FS によって署名された証明書を使用して、物理デバイスを Active Directory 内の論理デバイス オブジェクトを関連付けます。  
+デバイス オブジェクトは、Active Directory 内の新しい軽量オブジェクトです。  ユーザー、デバイス、および会社の関係を表すために使用されます。  デバイス オブジェクトは、AD FS によって署名された証明書を使用して、物理デバイスを Active Directory 内の論理デバイス オブジェクトに関連付けます。  
   
-登録済みデバイスには、次の要素が含まれています。  
+登録済みデバイスには、次の要素が含まれます。  
   
 -   **表示名**  
   
-    デバイスのフレンドリ名。  Windows デバイスでは、これは、コンピューターのホスト名です。  
+    デバイスのフレンドリ名です。  Windows デバイスの場合、これはコンピューターのホスト名です。  
   
 -   **デバイス Id**  
   
-    デバイスの登録サーバーによって生成される GUID です。  
+    デバイス登録サーバーによって生成される GUID です。  
   
 -   **証明書の拇印**  
   
-    登録されたデバイスで使用される X.509 証明書の証明書の拇印。  
+    登録済みデバイスに使用される X.509 証明書の証明書拇印です。  
   
 -   **OS の種類**  
   
-    デバイスのオペレーティング システムの種類。  
+    デバイスのオペレーティング システムの種類です。  
   
--   **OS のバージョン**  
+-   **OS バージョン**  
   
-    デバイス上のオペレーティング システムのバージョン。  
+    デバイスのオペレーティング システムのバージョンです。  
   
 -   **有効になっています。**  
   
-    Active Directory にデバイスが有効になっているかどうかを示すブール値。  サービスへのアクセスには、有効になっているデバイスのみが許可されています。  
+    デバイスが Active Directory で有効になっているかどうかを示すブール値です。  有効になっているデバイスだけがサービスにアクセスできます。  
   
--   **おおよその最終使用時間**  
+-   **おおよその最終使用時刻**  
   
-    リソースにアクセスするデバイスが使用されたおおよその時間。  レプリケーション トラフィックを制限するには、これに 14 日に 1 回は更新のみされます。  
+    リソースへのアクセスにデバイスが使用されたおおよその時間です。  レプリケーション トラフィックを制限するため、この値は 14 日に 1 回だけ更新されます。  
   
 -   **登録済み所有者**  
   
-    このデバイスを職場に参加しているユーザーのセキュリティ ID \(SID\) します。  
+    セキュリティ Id \(SID\)のこのデバイスをワークプ レースに参加しているユーザー。  
   
 ## <a name="ad-fsdrs-server-ssl-certificate-revocation-checking"></a>AD FS\/DRS サーバーの SSL 証明書失効の確認  
-ワークプ レース ジョイン クライアントでは、AD FS サーバーの SSL 証明書の有効性を確認します。  AD FS サーバーの SSL 証明書には、証明書失効リスト \(CRL\) エンドポイントが含まれている場合、クライアントは、証明書の検証を指定されたエンドポイントに到達できる必要があります。  
+ワークプ レース ジョイン クライアントは、AD FS サーバーの SSL 証明書の有効性をチェックします。  AD FS サーバーの SSL 証明書が証明書失効リストを含むかどうか\(CRL\)エンドポイント、クライアントは、証明書の検証を指定されたエンドポイントに到達することである必要があります。  
   
-テスト環境とテスト証明書機関を使用しているかどうか、CA によって発行されたサーバー証明書の CRL のエンドポイントを含めないようにすることもできますし、サーバーに SSL 証明書を発行する \(CA\) します。  これを行うと、CRL チェックをバイパスするワークプ レース ジョイン クライアントが許可されます。  
+テスト環境とテスト証明書機関を使用しているかどうかは\(CA\)されません、CA によって発行されたサーバー証明書に CRL のエンドポイントを含めることができますし、サーバーに SSL 証明書を発行します。  そうすると、ワークプ レース ジョイン クライアントが CRL のチェックをバイパスできるようになります。  
   
 > [!CAUTION]  
-> 運用システムに推奨されることはありません。  
+> これを運用システムで行うことは、絶対にお勧めしません。  
   
 

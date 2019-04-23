@@ -1,6 +1,6 @@
 ---
-title: "Windows Server Essentials をインストールする前に"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: Windows Server Essentials をインストールする前に
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,51 +13,52 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: e7eb1b7bed780b41f1a87589add4ab015f41624a
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59828723"
 ---
 # <a name="before-you-install-windows-server-essentials"></a>Windows Server Essentials をインストールする前に
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-##  <a name="BKMK_BeforeYouBegin"></a>Windows Server Essentials のインストールを開始する前に、次のタスクを実行します。  
+##  <a name="BKMK_BeforeYouBegin"></a> Windows Server Essentials のインストールを開始する前に、次のタスクを実行します。  
 
--   **コンピューターがハードウェアの最小要件を満たしていることを確認**します。 これには、追加のハードウェアが必要なかどうかを決定して、ハードウェアのドライバーが Windows Server Essentials でサポートされていることを確認が含まれます。 詳細については、次を参照してください。[Windows Server Essentials のシステム要件](../get-started/system-requirements.md)します。   
+-   **コンピューターが最小ハードウェア要件を満たしていることを確認します**。 これは、追加のハードウェアが必要なかどうかを決定する、ハードウェアのドライバーは Windows Server Essentials でサポートされていることを確認が含まれます。 詳細については、次を参照してください。 [Windows Server Essentials のシステム要件](../get-started/system-requirements.md)します。   
 
   
     > [!IMPORTANT]
-    >  既存のコンピューターで Windows Server Essentials をインストールする前に、完全にフォーマットし、パーティションの既存のコンピューターのハード _ ディスクを再作成することお勧めします。 書式設定して、ハード ディスク パーティションの再作成、ハード_ディスクに隠しパーティションが残っている可能性が削除されます。  
+    >  既存のコンピューターで Windows Server Essentials をインストールする前に完全にフォーマットし、既存のコンピューターのハード ディスク パーティションに再分割することお勧めします。 ハード ディスクをフォーマットし、パーティションを再分割することで、ハード ディスクに隠しパーティションが残る可能性がなくなります。  
   
--   **ネットワークを準備**に Windows Server Essentials をインストールするネットワークを準備するには、次の操作します。  
+-   **ネットワークを準備**に Windows Server Essentials をインストールするネットワークを準備するには、次の操作を行います。  
     
   
-    -   **クライアント コンピューターにオペレーティング システムをアップグレード**Windows Server Essentials は、次のオペレーティング システムをサポートしています。Windows 8、Windows 7、Windows 10、および Macintosh OS X Lion 以上。 これらのオペレーティング システムでは、必要なセキュリティ機能、信頼性、パフォーマンス、およびローカル ネットワークの機能を提供します。  
+    -   **クライアント コンピューターにオペレーティング システムをアップグレード**Windows Server Essentials は、次のオペレーティング システムをサポートしています。Windows 8、Windows 7、Windows 10、および Macintosh OS X Lion 以上。 これらのオペレーティング システムは、ローカル ネットワークに対して必要なセキュリティ機能、信頼性、パフォーマンスを備えています。  
   
-    -   **ルーターを構成**ルーターが次のように構成されていることを確認します。  
+    -   **ルーターを構成する** ルーターが次のように構成されていることを確認します。  
   
-        -   ルーターで UPnP フレームワークを有効にします。  
+        -   ルーターで UPnP フレームワークが有効になっています。  
   
-        -   LAN の動的ホスト構成プロトコル (DHCP) サーバー サービスを有効または無効になっていることができます。  Windows Server Essentials では、DHCP がサーバーとルーターの両方で実行されていないことを確実ですか。 DHCP がルーターで有効な場合、DHCP は無効で、サーバーのインストール中にです。  
+        -   LAN の動的ホスト構成プロトコル (DHCP) サーバー サービスを有効または無効にできます。  Windows Server Essentials では、DHCP がサーバーとルーターの両方で実行されていないことをによりしますか。 DHCP がルーターで有効な場合、DHCP は無効、サーバーのインストール中にです。  
   
-        -   インターネット サービス プロバイダー (ISP) によって提供される、ルーターの外部インターフェイスの IP アドレスがあります。 IP アドレスを ISP で DHCP サーバー サービスによって動的に割り当てることができます、またはルーター管理コンソールを使用して静的 IP アドレスを手動で構成する必要があります。  
+        -   ルーターの外部インターフェイス用の IP アドレスがあります。これは、インターネット サービス プロバイダー (ISP) から提供されています。 IP アドレスが ISP で DHCP サーバー サービスによって動的に割り当てられているか、ルーター管理コンソールを使用して静的 IP アドレスを手動で構成する必要があります。  
   
-        -   ユーザー名とパスワード、Point-to-Point Protocol over Ethernet (PPPoE) とも呼ばれますが、インターネット接続に必要とする場合は、デバイスが UPnP フレームワークをサポートしている場合でも、ルーターでこれらの設定が構成されます。  
+        -   インターネット接続でユーザー名とパスワードが要求される場合 (PPPoE (Point to Point Protocol over Ethernet) とも呼びます)、デバイスが UPnP フレームワークをサポートしているとしても、ルーター上でこれらの設定が構成されます。  
   
-        -   ルーターが LAN とインターネットに接続されているが入っていること、および適切に機能しています。  
+        -   ルーターが LAN とインターネットに接続されており、電源がオンで、正常に機能しています。  
   
-     ルーターが UPnP フレームワークをサポートしていない場合、またはインストール中にルーターを構成できない場合は、する必要があります手動で構成設定で、ネットワークのします。 次のポートが開いているしは、移行先サーバーの IP アドレスに転送することを確認します。  
+     ルーターが UPnP フレームワークをサポートしない場合、またはインストール中にルーターを構成できない場合、ネットワークの設定を使って手動でルーターを構成する必要があります。 次のポートが開いていて、移行先サーバーの IP アドレスに接続されていることを確認してください。  
   
-    |ポート番号|アプリケーション|  
+    |[ポート番号]|アプリケーション|  
     |-----------------|-----------------|  
     |ポート 80|HTTP Web トラフィック|  
     |ポート 443|HTTPS Web トラフィック|  
   
 
--   **Windows Server Essentials のリリース ノートを読み**します。 リリース ノートには、正しくインストールし、Windows Server Essentials の構成に重要な最新の情報が含まれています。 表示または印刷するリリース ノートには、次を参照してください。[リリース ドキュメント for Windows Server Essentials](../get-started/release-notes.md)します。  
+-   **Windows Server Essentials のリリースに関するドキュメントを読み取る**します。 リリース ノートには、正しくインストールして、Windows Server Essentials を構成する重要な可能性のある最新の情報が含まれています。 を表示または印刷版のドキュメントを参照してください。 [Release Documentation for Windows Server Essentials](../get-started/release-notes.md)します。  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
   
 -   [Windows Server Essentials をインストールします。](Install-Windows-Server-Essentials.md)
 

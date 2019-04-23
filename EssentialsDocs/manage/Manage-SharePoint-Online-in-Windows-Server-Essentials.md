@@ -1,6 +1,6 @@
 ---
-title: "Windows Server Essentials での SharePoint Online の管理します。"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: Windows Server Essentials での SharePoint Online の管理
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,58 +13,59 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: b9b12c138e6166684b4b9e87b794444febd3c247
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59830383"
 ---
-# <a name="manage-sharepoint-online-in-windows-server-essentials"></a>Windows Server Essentials での SharePoint Online の管理します。
+# <a name="manage-sharepoint-online-in-windows-server-essentials"></a>Windows Server Essentials での SharePoint Online の管理
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-Windows Server Essentials サーバーと Office 365 を統合した場合、Office 365 にログインせず、ダッシュ ボードから、SharePoint Online ライブラリとチーム サイトを管理できます。 SharePoint Online ライブラリおよびチーム サイトを任意の Office 365 ビジネス プランが表示されます。 [サーバーと Office 365 を統合する方法をについてください。](Manage-Office-365-in-Windows-Server-Essentials.md)  
+Windows Server Essentials サーバーと Office 365 を統合する場合、Office 365 にサインインしなくても、ダッシュ ボードから、SharePoint Online ライブラリとチーム サイトを管理できます。 SharePoint Online ライブラリおよびチーム サイト、Office 365 ビジネス プランを表示します。 [Office 365 とサーバーを統合する方法を確認します。](Manage-Office-365-in-Windows-Server-Essentials.md)  
   
- さらに、ユーザーは My Server 2012 R2 アプリを使用して、モバイル デバイスまたは Windows phone を使用してどこから SharePoint Online ライブラリ内のファイルにアクセスすることになります。 [My Server アプリはどこで入手できますか。](../use/Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md)  
+ さらに、ユーザーは My Server 2012 R2 アプリを使用して、モバイル デバイスまたは Windows Phone を使用してどこから SharePoint Online ライブラリ内のファイルにアクセスすることになります。 [My Server アプリはどこで入手できますか。](../use/Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md)  
   
- まだ SharePoint を試していないか。 [今すぐ行うことができます。](https://office.microsoft.com/office365-sharepoint-online-enterprise-help/get-started-with-sharepoint-2013-HA102772778.aspx)  
+ SharePoint を試してみましたか。 [ここで行うことができます。](https://office.microsoft.com/office365-sharepoint-online-enterprise-help/get-started-with-sharepoint-2013-HA102772778.aspx)  
   
-## <a name="where-on-the-dashboard-will-i-manage-my-libraries-and-team-sites"></a>ここで、ダッシュ ボードで管理マイ ライブラリとチーム サイトですか。  
- 新しい使います**SharePoint Online** ] タブに追加される、**記憶域**SharePoint Online のリソースを管理するために、サーバーと Office 365 を統合する際にダッシュ ボードの領域です。  
+## <a name="where-on-the-dashboard-will-i-manage-my-libraries-and-team-sites"></a>ダッシュボードのどこでマイ ライブラリとチーム サイトを管理しますか  
+ 新しい使用する**SharePoint Online**  タブに追加される、**ストレージ**SharePoint Online のリソースを管理する、サーバーと Office 365 を統合すると、ダッシュ ボードの領域。  
 
   
-## <a name="what-can-i-manage-from-the-dashboard"></a>ダッシュ ボードから管理したことができます。  
+## <a name="what-can-i-manage-from-the-dashboard"></a>ダッシュボードで何を管理できますか。  
   
-### <a name="manage-your-online-libraries"></a>オンライン ライブラリを管理します。  
+### <a name="manage-your-online-libraries"></a>オンライン ライブラリの管理  
    
 |-|-|  
-|ライブラリの追加 |**SharePoint ライブラリ**] タブで、使用**ライブラリの追加**します。 すべての一般的な選択肢にすることができます。<br /><br /> -チーム サイトとライブラリの種類を選択します。<br />-バージョン管理を使用するかどうかを決定します。<br />アクセス許可を割り当てます。<br /><br /> **ヒント:**アクセス許可を割り当てていない場合、ライブラリが継承どのようなチーム サイトのアクセス許可を確認するには使用**サイトのアクセス許可を表示**. |  
-|ライブラリを開く |ライブラリの内容を操作するには、Office 365 で開く必要があります。 ライブラリを選択し、クリックするだけ**ライブラリを開く**します。 SharePoint Online へのログインに使用する資格情報には依存コンテンツで行うことができます |。  
-|バージョンのコントロールを変更またはアクセス許可 |使用することができます**ライブラリ プロパティの表示**を表示またはバージョン コントロールを変更またはライブラリのアクセス許可にアクセスします |。  
-|ライブラリを削除する |**警告:** SharePoint Online ライブラリを削除する前に、別の場所に保持する必要があるファイルを保存することを確認してください。 SharePoint からライブラリを削除するときにすべての情報が完全に削除します。 復旧する方法はありません。<br /><br /> ライブラリを選択し] をクリックした後、何も後で必要があります、ライブラリに格納されていないことを確認するを確認したら、**ライブラリを削除**. |  
+|ライブラリの追加 |**SharePoint ライブラリ** タブで、使用して**ライブラリを追加**します。 通常の選択肢をすべて選択可能です。<br /><br /> -チーム サイトとライブラリの種類を選択します。<br />-バージョン管理を使用するかどうかを決定します。<br />-アクセス許可を割り当てます。<br /><br /> **クォータを調整する**アクセス許可を割り当てない場合、ライブラリが継承チーム サイト アクセス許可を確認するには使用**サイト アクセス許可を表示**|。  
+|ライブラリを開く |ライブラリの内容を操作するには、Office 365 で開く必要があります。 ライブラリを選択して **[ライブラリを開く]** をクリックします。 SharePoint Online へのサインインに使用する資格情報に依存コンテンツを行うことができます |。  
+|バージョン コントロールを変更またはアクセス許可 |使用することができます**ライブラリ プロパティの表示**いずれかを表示またはバージョン コントロールを変更またはライブラリのアクセス許可にアクセスします |。  
+|ライブラリの削除 |**警告。** SharePoint Online ライブラリを削除する場合は、事前に、維持するファイルを別の場所に保存してください。 SharePoint からライブラリを削除するときにすべてのものが完全に削除されます。 復旧する方法はありません。<br /><br /> 何も後で必要がありますが、ライブラリに格納されていないかどうかを確認後したら、ライブラリを選択し、をクリックして**ライブラリの削除**|。  
   
-### <a name="manage-your-team-sites"></a>チーム サイトを管理します。  
+### <a name="manage-your-team-sites"></a>チームのサイトの管理  
  
 |-|-|  
-|SharePoint チーム サイトの管理 |**チーム サイトの管理**アクションでは、Office 365 にログインし、SharePoint Online のチーム サイトを管理することができます。 Office 365 で行うことができますが、オンライン アカウントでログインするを使用して決定されます。<br /><br /> Office 365 を閉じるし、ダッシュ ボードに戻ったら、] をクリックして**更新**に変更内容を表示します。 |チーム サイトのアクセス許可を表示または |ライブラリは、既定でそのチーム サイトからのアクセス許可を継承、ために、チーム サイトを簡単にアクセスをするおくと便利です。 表示またはチーム サイトのアクセス許可を変更、チーム サイトまたはそのライブラリのいずれかを選択し] をクリックして**サイトのアクセス許可を表示**します。<br /><br /> **ヒント:** SharePoint チーム サイトのアクセス許可の問題点に関するヘルプが必要ですか? 有用[詳細](https://office.microsoft.com/office365-sharepoint-online-enterprise-help/introduction-control-user-access-with-permissions-HA102771919.aspx?CTT=5&origin=HA102771924)チーム サイトのアクセス許可のリンク。  
+|SharePoint チーム サイトの管理 |**チーム サイトの管理**アクションでは、Office 365 にサインインし、SharePoint Online チーム サイトを管理することができます。 Office 365 で行うことができますが、サインインに使用するオンライン アカウントによって決定されます。<br /><br /> Office 365 を終了し、ダッシュ ボードに戻りときに、をクリックして**更新**変更内容を表示します。 |表示またはチーム サイトのアクセス許可の変更 |ライブラリは、既定では、チーム サイトからのアクセス許可を継承、ために、チーム サイトに簡単にアクセスすることをお勧めします。 チーム サイトのアクセス許可の変更を表示またはチーム サイト、またはそのライブラリでは、いずれかを選択し、をクリックして**サイト アクセス許可を表示**します。<br /><br /> **クォータを調整する**SharePoint チーム サイトのアクセス許可に関する詳細はヘルプで確認してください。 チーム サイトのアクセス許可については、便利な [ [詳細](https://office.microsoft.com/office365-sharepoint-online-enterprise-help/introduction-control-user-access-with-permissions-HA102771919.aspx?CTT=5&origin=HA102771924) ] リンクがあります。  
   
 ## <a name="tips"></a>ヒント  
   
--   **Office 365 ポータルで行った最新の変更内容を表示するために更新] をクリックします。** SharePoint Online を管理する Office 365 を開いた後、表示を更新する必要があります。 場合は、ダッシュ ボードを開いておく長期間にわたって、] をクリックして**更新**最新の変更内容を表示していることを確認します。  
+-   **クリックすると、Office 365 ポータルで行われた最新の変更内容を表示します。** SharePoint Online を管理する Office 365 を開いた後、表示を更新する必要があります。 ダッシュボードを長時間、開いたままにしておく場合は、**[更新]** をクリックして、必ず最新の変更内容を表示します。  
   
--   **SharePoint Online で実行できる内容は、ダッシュ ボードまたは Office 365 を作業しているかどうかによって異なります。** ダッシュ ボードの [SharePoint Online は変更 Office 365 統合の管理者アカウントを使用します。 実行できる内容ダッシュ ボードから Office 365 にサインインすると、使用するオンライン アカウントのアクセス許可が決定します。  
+-   **SharePoint Online で行うことができますダッシュ ボードまたは Office 365 を作業しているかどうかによって異なります。** ダッシュ ボードで、Office 365 統合の管理者アカウントを使用して SharePoint Online の変更が行わします。 何ができる、ダッシュ ボードから Office 365 にサインインするときに使用するオンライン アカウントのアクセス許可が決定します。  
   
-     Office 365 統合の管理者アカウントを確認するを開く、**Office 365**ダッシュ ボードのタブ。  
+     Office 365 統合の管理者アカウントを確認するには、開く、 **Office 365**ダッシュ ボード タブ。  
   
-## <a name="other-things-you-might-want-to-do"></a>その他の項目を実行する可能性があります。  
+## <a name="other-things-you-might-want-to-do"></a>その他の推奨操作  
   
--   [My Server アプリを使用して、任意の場所から SharePoint Online ライブラリを使用するには](../use/Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md)  
+-   [My Server アプリを使用して、どこからでも、SharePoint Online ライブラリを使用するには](../use/Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md)  
   
--   [SharePoint チーム サイトのアクセス許可の割り当ての詳細についてください。](https://office.microsoft.com/office365-sharepoint-online-enterprise-help/introduction-control-user-access-with-permissions-HA102771919.aspx?CTT=5&origin=HA102771924)  
+-   [SharePoint チーム サイトのアクセス許可を割り当てる方法については](https://office.microsoft.com/office365-sharepoint-online-enterprise-help/introduction-control-user-access-with-permissions-HA102771919.aspx?CTT=5&origin=HA102771924)  
   
--   [SharePoint 機能を使用して実行できる内容を確認します。](https://office.microsoft.com/office365-sharepoint-online-enterprise-help/get-started-with-sharepoint-2013-HA102772778.aspx)  
+-   [SharePoint の機能でにできることを確認します。](https://office.microsoft.com/office365-sharepoint-online-enterprise-help/get-started-with-sharepoint-2013-HA102772778.aspx)  
   
--   [使用可能な Office 365 ビジネス プランを見てください。](https://office.microsoft.com/business/compare-office-365-for-business-plans-FX102918419.aspx?CR_CC=200061904&WT.srch=1&WT.mc_ID=PS_bing_O365Comm_what-is-office-365-for_Text)  
+-   [使用可能な Office 365 ビジネス プランについて見てください。](https://office.microsoft.com/business/compare-office-365-for-business-plans-FX102918419.aspx?CR_CC=200061904&WT.srch=1&WT.mc_ID=PS_bing_O365Comm_what-is-office-365-for_Text)  
   
--   [サーバーと Office 365 を統合します。](Manage-Office-365-in-Windows-Server-Essentials.md)  
+-   [Office 365、サーバーと統合します。](Manage-Office-365-in-Windows-Server-Essentials.md)  
   
--   [ダッシュ ボードからの他の Microsoft オンライン サービスを管理します。](Manage-Microsoft-Online-Services-in-Windows-Server-Essentials.md)
+-   [ダッシュ ボードからの Microsoft online services を管理します。](Manage-Microsoft-Online-Services-in-Windows-Server-Essentials.md)

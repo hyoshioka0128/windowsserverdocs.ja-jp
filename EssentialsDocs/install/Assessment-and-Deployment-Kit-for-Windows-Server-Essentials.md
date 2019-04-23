@@ -1,6 +1,6 @@
 ---
-title: "アセスメント & デプロイメント キット-Windows Server Essentials"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: Windows Server Essentials 用のアセスメント & デプロイメント キット
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,21 +13,22 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 10f962d4da118d6ffc412a4837d7ad0bd0b2bf39
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59833213"
 ---
-# <a name="assessment-and-deployment-kit-for-windows-server-essentials"></a>アセスメント & デプロイメント キット-Windows Server Essentials
+# <a name="assessment-and-deployment-kit-for-windows-server-essentials"></a>Windows Server Essentials 用のアセスメント & デプロイメント キット
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-[Windows Server® 2012 Essentials アセスメント & デプロイメント キット (ADK) は、ツール、バイナリ、およびカスタマイズ、評価、および Windows Server Essentials を新しいコンピューターに展開に使用できるオペレーティング システム言語パックのコレクションです。 このドキュメントにはにお客様に対して、オペレーティング システムをプレインストールして、次のトピックが含まれていますパートナーに固有の情報が含まれます。  
+Windows Server® 2012 Essentials アセスメント & デプロイメント キット (ADK) は、ツール、バイナリ、およびカスタマイズ、評価、および Windows Server Essentials を新しいコンピューターに展開に使用できるオペレーティング システム言語パックのコレクションです。 このドキュメントには、オペレーティング システムを顧客向けにプレインストールするパートナーに固有の情報が含まれており、以下のトピックがあります。  
   
 
 -   [Windows Server Essentials ADK の概要](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)  
   
-    -   [Windows Server Essentials ADK の使用に関する重要な情報](Important-Information-for-Using-the-Windows-Server-Essentials-ADK.md)  
+    -   [Windows Server Essentials ADK を使用するための重要な情報](Important-Information-for-Using-the-Windows-Server-Essentials-ADK.md)  
   
     -   [ターゲット コンピューターのハードウェア要件](Hardware-Requirements-for-the-Target-Computer.md)  
   
@@ -51,21 +52,21 @@ ms.lasthandoff: 07/03/2017
   
     -   [ダッシュ ボード、リモート Web アクセス、スタート パッドへのブランドを追加します。](Add-Branding-to-the-Dashboard--Remote-Web-Access--and-Launchpad.md)  
   
-    -   [タブの設定に追加します。](Add-a-Tab-to-Settings.md)  
+    -   [タブの設定を追加します。](Add-a-Tab-to-Settings.md)  
   
-    -   [(Macintosh オペレーティング システム) スタート パッドに最上位のカテゴリを追加します。](Add-Top-Level-Categories-to-the-Launchpad--Macintosh-Operating-System-.md)  
+    -   [最上位のカテゴリをスタート パッド (Macintosh オペレーティング システム) に追加します。](Add-Top-Level-Categories-to-the-Launchpad--Macintosh-Operating-System-.md)  
   
     -   [メディア ストリーミング設定を変更します。](Change-Media-Streaming-Settings.md)  
   
     -   [ダッシュ ボードとスタート パッドの配色を変更します。](Change-the-Color-Scheme-of-the-Dashboard-and-Launchpad.md)  
   
-    -   [順序とタブ グループを変更します。](Change-the-Order-and-Grouping-of-Tabs.md)  
+    -   [タブ グループの順序を変更します。](Change-the-Order-and-Grouping-of-Tabs.md)  
   
-    -   [インストールまたは言語パックを削除します。](Install-or-Remove-Language-Packs.md)  
+    -   [インストールまたは言語パックの削除](Install-or-Remove-Language-Packs.md)  
   
     -   [ドメイン名とドメイン名プロバイダーを管理します。](Manage-Domain-Names-and-Domain-Name-Providers.md)  
   
-    -   [Microsoft オンライン バックアップ サービスのタスクのカスタマイズのサインアップ](Customize-Sign-Up-for-Microsoft-Online-Backup-Service-task.md)  
+    -   [Microsoft オンライン バックアップ サービス タスクのサインアップをカスタマイズします。](Customize-Sign-Up-for-Microsoft-Online-Backup-Service-task.md)  
   
     -   [記憶域をカスタマイズします。](Customize-Storage-Spaces.md)  
   
@@ -75,9 +76,9 @@ ms.lasthandoff: 07/03/2017
   
     -   [Microsoft Online Service パートナー契約の登録パートナー情報を追加します。](Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)  
   
-    -   [O365 統合モジュール購入/試用版エンドポイントの URL Microsoft Online Service リセラー契約を置き換える](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)  
+    -   [Microsoft Online Service リセラー契約基づく O365 統合モジュール購入試用エンドポイント URL を置換します。](Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)  
   
-    -   [リモートで管理されるサーバーのサーバー回復 DVD を作成します。](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)  
+    -   [リモートで管理されるサーバー用のサーバー回復 DVD の作成します。](Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)  
   
     -   [複数言語サポート用のサーバー回復 DVD を作成します。](Create-a-Server-Recovery-DVD-for-Multi-Language-Support.md)  
   
@@ -87,7 +88,7 @@ ms.lasthandoff: 07/03/2017
 
 -   [Windows Server Essentials ADK の概要](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)  
   
-    -   [Windows Server Essentials ADK の使用に関する重要な情報](../install/Important-Information-for-Using-the-Windows-Server-Essentials-ADK.md)  
+    -   [Windows Server Essentials ADK を使用するための重要な情報](../install/Important-Information-for-Using-the-Windows-Server-Essentials-ADK.md)  
   
     -   [ターゲット コンピューターのハードウェア要件](../install/Hardware-Requirements-for-the-Target-Computer.md)  
   
@@ -111,21 +112,21 @@ ms.lasthandoff: 07/03/2017
   
     -   [ダッシュ ボード、リモート Web アクセス、スタート パッドへのブランドを追加します。](../install/Add-Branding-to-the-Dashboard--Remote-Web-Access--and-Launchpad.md)  
   
-    -   [タブの設定に追加します。](../install/Add-a-Tab-to-Settings.md)  
+    -   [タブの設定を追加します。](../install/Add-a-Tab-to-Settings.md)  
   
-    -   [(Macintosh オペレーティング システム) スタート パッドに最上位のカテゴリを追加します。](../install/Add-Top-Level-Categories-to-the-Launchpad--Macintosh-Operating-System-.md)  
+    -   [最上位のカテゴリをスタート パッド (Macintosh オペレーティング システム) に追加します。](../install/Add-Top-Level-Categories-to-the-Launchpad--Macintosh-Operating-System-.md)  
   
     -   [メディア ストリーミング設定を変更します。](../install/Change-Media-Streaming-Settings.md)  
   
     -   [ダッシュ ボードとスタート パッドの配色を変更します。](../install/Change-the-Color-Scheme-of-the-Dashboard-and-Launchpad.md)  
   
-    -   [順序とタブ グループを変更します。](../install/Change-the-Order-and-Grouping-of-Tabs.md)  
+    -   [タブ グループの順序を変更します。](../install/Change-the-Order-and-Grouping-of-Tabs.md)  
   
-    -   [インストールまたは言語パックを削除します。](../install/Install-or-Remove-Language-Packs.md)  
+    -   [インストールまたは言語パックの削除](../install/Install-or-Remove-Language-Packs.md)  
   
     -   [ドメイン名とドメイン名プロバイダーを管理します。](../install/Manage-Domain-Names-and-Domain-Name-Providers.md)  
   
-    -   [Microsoft オンライン バックアップ サービスのタスクのカスタマイズのサインアップ](../install/Customize-Sign-Up-for-Microsoft-Online-Backup-Service-task.md)  
+    -   [Microsoft オンライン バックアップ サービス タスクのサインアップをカスタマイズします。](../install/Customize-Sign-Up-for-Microsoft-Online-Backup-Service-task.md)  
   
     -   [記憶域をカスタマイズします。](../install/Customize-Storage-Spaces.md)  
   
@@ -135,9 +136,9 @@ ms.lasthandoff: 07/03/2017
   
     -   [Microsoft Online Service パートナー契約の登録パートナー情報を追加します。](../install/Add-Microsoft-Online-Service-Partner-Agreement-Partner-of-Record-Information.md)  
   
-    -   [O365 統合モジュール購入/試用版エンドポイントの URL Microsoft Online Service リセラー契約を置き換える](../install/Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)  
+    -   [Microsoft Online Service リセラー契約基づく O365 統合モジュール購入試用エンドポイント URL を置換します。](../install/Replace-O365-Integration-Module-Buy-Try-Endpoint-URL-in-Support-of-Microsoft-Online-Service-Reseller-Agreement.md)  
   
-    -   [リモートで管理されるサーバーのサーバー回復 DVD を作成します。](../install/Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)  
+    -   [リモートで管理されるサーバー用のサーバー回復 DVD の作成します。](../install/Create-a-Server-Recovery-DVD-for-Remotely-Administered-Servers.md)  
   
     -   [複数言語サポート用のサーバー回復 DVD を作成します。](../install/Create-a-Server-Recovery-DVD-for-Multi-Language-Support.md)  
   
@@ -147,8 +148,8 @@ ms.lasthandoff: 07/03/2017
 
   
 ## <a name="copyright-information"></a>著作権情報  
- このドキュメントとして提供されるはします。 情報および見解 URL やその他のインターネット Web サイトの参照など、このドキュメントでは、予告なく変更可能性があります。 ここに示した例をいくつかは、のみを目的として提供されており、架空のものです。 なし、実際の関連または接続の目的はまたは推測する必要があります。 このドキュメントではない説明する、マイクロソフト製品の知的財産に対していかなる法的権利。 コピーして、内部、このドキュメントの使用することが目的でを参照します。  
+ このドキュメントは現状のです。 このドキュメントに記載されている情報および見解 (URL 等のインターネット Web サイトに関する情報を含む) は、将来予告なしに変更されることがあります。 ドキュメント内で説明される一部の例は、例示のみを目的として提供される架空のものです。 実在のものとの関連性または関係性は一切ありません。 このドキュメントは、マイクロソフト製品に含まれる知的財産に対していかなる法的権利も付与しません。 お客様は、内部的な参照目的に限り、ドキュメントを複製して使用することができます。  
   
- Active Directory、Microsoft、Windows Live、Windows PowerShell、Windows、および Windows Server は、Microsoft グループの商標です。 その他のすべての商標は各社のします。  
+ Active Directory、Microsoft、Windows Live、Windows PowerShell、Windows、および Windows Server は、米国 Microsoft Corporation および/またはその関連会社の商標です。 その他のすべての商標は、該当する各社が所有しています。  
   
- © 2012 Microsoft します。 予約済みのすべての権利。
+ © 2012 Microsoft. All rights reserved.

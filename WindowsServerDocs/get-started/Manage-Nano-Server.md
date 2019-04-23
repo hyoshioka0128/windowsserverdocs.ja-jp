@@ -13,15 +13,15 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 8973302fc8a0c6bdb5b19f9296e711dcc6465589
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2082403"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59826803"
 ---
 # <a name="manage-nano-server"></a>Nano Server の管理
 
->適用対象: Windows Server 2016
+>適用先:Windows Server 2016
 
 > [!IMPORTANT]
 > Windows Server バージョン 1709 以降、Nano Server は[コンテナー基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、「[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)」をご覧ください。   
@@ -34,13 +34,13 @@ Nano Server はリモートで管理します。 Nano Server にローカル ロ
   
 -   コンピューターにシリアル ケーブルを接続し、EMS を使用する。  
   
--   構成時に Nano Server に割り当てたコンピューター名と ping を使用して、IP アドレスを取得できます。 たとえば、`ping NanoServer-PC /4` のように指定します。  
+-   構成時に Nano Server に割り当てたコンピューター名と ping を使用して、IP アドレスを取得できます。 たとえば、`ping NanoServer-PC /4` と記述します。  
   
 ## <a name="using-windows-powershell-remoting"></a>Windows PowerShell リモート処理を使用する  
 Windows PowerShell リモート処理を使用して Nano Server を管理するには、Nano Server の IP アドレスを管理コンピューターの信頼されたホストの一覧に追加し、使用しているアカウントを Nano Server の管理者に追加する必要があります。CredSSP を使用する場合は、その機能を有効にする必要もあります。  
 
  >[!NOTE]  
-    > 対象の Nano Server と管理コンピューターが同じ AD DS フォレスト (または信頼関係のあるフォレスト) に属している場合、Nano Server を信頼されたホストの一覧に追加する必要はありません。完全修飾ドメイン名を使用して、Nano Server に接続できます。以下に例を示します。PS C:\> Enter-PSSession -ComputerName nanoserver.contoso.com -Credential (Get-Credential)
+    > Nano Server を追加しないでください場合、対象の Nano Server と管理コンピューターは、同じ AD DS フォレスト (または信頼関係を持つフォレスト) には、その完全修飾ドメイン名を使用して、信頼されたホスト一覧に、Nano Server に接続できます例えば：PS C:\>Enter-pssession-ComputerName nanoserver.contoso.com-Credential (Get-credential)
   
   
 Nano Server を信頼されたホストの一覧に追加するには、管理者特権での Windows PowerShell プロンプトで次のコマンドを実行します。  
@@ -60,9 +60,9 @@ Enter-PSSession -ComputerName $ip -Credential $user
 これで、Nano Server で通常どおりに Windows PowerShell コマンドを実行できます。  
   
 > [!NOTE]  
-> このリリースの Nano Server では、一部の Windows PowerShell コマンドを利用できません。 利用できるコマンドを確認するには、次を実行します。 `Get-Command -CommandType Cmdlet`  
+> このリリースの Nano Server では、一部の Windows PowerShell コマンドを利用できません。 利用可能なを表示するには、次のように実行します。 `Get-Command -CommandType Cmdlet`  
   
-リモート セッションを停止するには、次のコマンドを使用します。 `Exit-PSSession`  
+コマンドを使用してリモート セッションを停止します。 `Exit-PSSession`  
   
 ## <a name="using-windows-powershell-cim-sessions-over-winrm"></a>WinRM を介して Windows PowerShell CIM セッションを使用する  
 Windows リモート管理 (WinRM) を介して、Windows PowerShell の CIM セッションとインスタンスを使用して、WMI コマンドを実行できます。  
@@ -77,7 +77,7 @@ $cim = New-CimSession -Credential $user -ComputerName $ip
 ```  
   
   
-セッションが確立されたら、さまざまな WMI コマンドを実行できます。次に例を示します。  
+セッションが確立されたら、さまざまな WMI コマンドを実行できます。以下に例を示します。  
   
   
 ```  
@@ -91,15 +91,15 @@ Windows リモート管理 (WinRM) を使用して、リモートから Nano Ser
   
 **winrm quickconfig**  
   
-**winrm set winrm/config/client @{TrustedHosts="<ip address of Nano Server"}**  
+**winrm winrm/構成/クライアントを設定する @{TrustedHosts ="< Nano Server の ip アドレス"}**  
   
 **chcp 65001**  
   
-これで、リモートから Nano Server でコマンドを実行できます。 以下に例を示します。  
+これで、リモートから Nano Server でコマンドを実行できます。 次に、例を示します。  
   
-**winrs -r:\<Nano Server の IP アドレス> -u:Administrator -p:\<Nano Server の管理者パスワード> ipconfig**  
+**winrs-r:\<Nano Server の IP アドレス >-u: 管理者-p:\<Nano Server の管理者のパスワード > ipconfig**  
   
-Windows リモート管理の詳細については、「[Windows リモート管理 (WinRM) の概要](https://technet.microsoft.com/library/dn265971.aspx)」をご覧ください。  
+Windows リモート管理の詳細については、「[Windows リモート管理 (WinRM) の概要](https://technet.microsoft.com/library/dn265971.aspx)」を参照してください。  
    
    
   
@@ -122,9 +122,9 @@ Stop-NetEventSession [-Name]
   
 多くの場合、サービス パッケージまたは修正プログラムは、.cab ファイルを含む KB 項目としてダウンロードされます。 次の手順に従って、.cab ファイルを抽出します。その後、-ServicingPackagePath パラメーターを使用して、抽出したファイルをインストールできます。  
   
-1.  (関連するサポート技術情報の記事または [Microsoft Update カタログ](https://catalog.update.microsoft.com/v7/site/home.aspx)から) サービス パッケージをダウンロードします。 ローカル ディレクトリまたはネットワーク共有に保存します (例: C:\ServicingPackages)。  
+1.  (関連するサポート技術情報の記事または [Microsoft Update カタログ](https://catalog.update.microsoft.com/v7/site/home.aspx)から) サービス パッケージをダウンロードします。 ローカル ディレクトリまたはネットワーク共有にそれをたとえば保存します。C:\ServicingPackages  
 2.  抽出されたサービス パッケージを保存するフォルダーを作成します。  例: c:\KB3157663_expanded  
-3.  Windows PowerShell コンソールを開き、`Expand` コマンドを使用し、サービス パッケージの .msu ファイルへのパスを指定します。さらに、`-f:*` パラメーターと、サービス パッケージを抽出する場所のパスを含めます。  たとえば、次のように入力します。  `Expand "C:\ServicingPackages\Windows10.0-KB3157663-x64.msu" -f:* "C:\KB3157663_expanded"`  
+3.  Windows PowerShell コンソールを開き、`Expand` コマンドを使用し、サービス パッケージの .msu ファイルへのパスを指定します。さらに、`-f:*` パラメーターと、サービス パッケージを抽出する場所のパスを含めます。  例えば：  `Expand "C:\ServicingPackages\Windows10.0-KB3157663-x64.msu" -f:* "C:\KB3157663_expanded"`  
   
     抽出されたファイルは次のようになります。  
 C:>dir C:\KB3157663_expanded   
@@ -141,7 +141,7 @@ Volume Serial Number is B05B-CC3D
 04/17/2016  12:36 AM           185,818 WSUSSCAN.cab  
                4 File(s)     94,073,136 bytes  
                2 Dir(s)  328,559,427,584 bytes free  
-4.  -ServicingPackagePath パラメーターにこのディレクトリ内の .cab ファイルを指定して、`New-NanoServerImage` を実行します。次に例を示します。 `New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -ServicingPackagePath C:\KB3157663_expanded\Windows10.0-KB3157663-x64.cab`  
+4.  実行`New-NanoServerImage`など、このディレクトリで .cab ファイルを指す-servicingpackagepath パラメーターを使用します。 `New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -ServicingPackagePath C:\KB3157663_expanded\Windows10.0-KB3157663-x64.cab`  
 
 ## <a name="managing-updates-in-nano-server"></a>Nano Server の更新を管理する
 
@@ -158,7 +158,7 @@ $sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassNa
 
 $scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=0";OnlineScan=$true}  
 ```  
-**注:**  
+**注:**   
 利用可能な更新プログラムがない場合、このコマンドでは次のエラーが返されます。  
 ```  
 Invoke-CimMethod : A general error occurred that is not covered by a more specific error code.  
@@ -189,7 +189,7 @@ $scanResults = Invoke-CimMethod -InputObject $sess -MethodName ApplyApplicableUp
 
 Restart-Computer  
 ```  
-**注:**  
+**注:**   
 Windows Defender により、更新プログラムがインストールされません。 この問題を回避するには、Windows Defender をアンインストールし、更新プログラムをインストールしてから、Windows Defender を再インストールします。 または、更新プログラムを別のコンピューターでダウンロードし、Nano Server にコピーしてから、DISM.exe を使用して適用します。  
 
 
@@ -202,7 +202,7 @@ $sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassNa
 $scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=1";OnlineScan=$true}  
 ```  
 
-**注:**  
+**注:**   
 これらのコマンドでは、インストールされている更新プログラムの一覧が返されますが、出力に "インストール済み" とは明記されません。 レポートなどのために、明記された出力が必要な場合は、次を実行できます。  
 ```  
 Get-WindowsPackage--Online  
@@ -224,7 +224,7 @@ Get-WindowsPackage--Online
 
 
 ## <a name="performance-and-event-monitoring-on-nano-server"></a>Nano Server のパフォーマンスおよびイベントを監視する
-[comment]: # (Venkat Yalla します。)
+[comment]: # (Venkat Yalla から。)
 Nano Server では、[Windows イベント トレーシング](https://aka.ms/u2pa0i) (ETW) フレームワークを完全にサポートしています。しかし、トレースとパフォーマンス カウンターを管理するための使い慣れたツールには、Nano Server で現在使用できないものがあります。 ただし、Nano Server には、最も一般的なパフォーマンス分析シナリオを実現するツールとコマンドレットが用意されています。
 
 大まかなワークフローは、どの Window Server インストールでも同じです。オーバーヘッドの少ないトレースをターゲットの (Nano Server) コンピューターで実行し、生成されたトレース ファイルやログを別のコンピューターで [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx) や [Message Analyzer](https://www.microsoft.com/download/details.aspx?id=44226) などのツールを使用してオフラインで後処理します。
@@ -240,7 +240,7 @@ Nano Server では、[Windows イベント トレーシング](https://aka.ms/u2
 wpr.exe -providers
 ```
 
-関心のあるイベントの種類で出力にフィルターを適用できます。 たとえば、次のように入力します。
+関心のあるイベントの種類で出力にフィルターを適用できます。 例:
 ```
 PS C:\> wpr.exe -providers | select-string "Storage"
 
@@ -349,7 +349,7 @@ PS C:\> Remove-AutologgerConfig -Name BootPnpLog
 複数のシステムやディスクなしのシステムでブート トレースとセットアップ トレースを収集するには、[セットアップおよびブート イベント収集](../administration/get-started-with-setup-and-boot-event-collection.md)の使用を検討してください。
 
 ### <a name="capture-performance-counter-data"></a>パフォーマンス カウンター データのキャプチャ
-通常、パフォーマンス カウンター データは Perfmon.exe の GUI で監視します。 Nano Server では、同等の ```Typeperf.exe``` コマンド ラインを使用します。 たとえば、次のように入力します。
+通常、パフォーマンス カウンター データは Perfmon.exe の GUI で監視します。 Nano Server では、同等の ```Typeperf.exe``` コマンド ラインを使用します。 例:
 
 使用可能なカウンターを照会します。出力にフィルターを適用して、関心のあるカウンターを簡単に見つけることができます。
 ```

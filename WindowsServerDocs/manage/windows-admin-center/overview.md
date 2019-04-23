@@ -7,38 +7,38 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: d941e9884dced40ce750645b662d8df73503bc41
-ms.sourcegitcommit: 475292afc919c6d17569f05007a97bc6b92dd225
+ms.openlocfilehash: e23d02fd8da96392f44874ad6ea4d6c40e2be940
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "9267778"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59828203"
 ---
-# Windows Admin Center
+# <a name="windows-admin-center"></a>Windows Admin Center
 
->適用対象: Windows Admin Center、Windows Admin Center Preview
+>適用先:Windows Admin Center、Windows Admin Center プレビュー
 
 Windows Admin Center へようこそ。
 
-**Windows Admin Center** (コードネーム **Project Honolulu**) は Windows Server のインボックス管理ツールの進化形です。ローカルおよびリモート サーバー管理のすべての側面を統合する 1 つのウィンドウです。 ローカルに展開されたブラウザー ベースの管理エクスペリエンスのため、インターネット接続や Azure は必要ありません。 Windows Admin Center では、インターネットに接続されていないプライベート ネットワークを含む、展開のあらゆる側面を完全に管理できます。
+**Windows Admin Center** (コードネーム**プロジェクト ホノルル**) Windows Server 付属の管理ツールの進化版ですが 1 つのローカルとリモート サーバー管理のすべての側面に統合するガラスのウィンドウ。 ローカルに展開されたブラウザー ベースの管理エクスペリエンスのため、インターネット接続や Azure は必要ありません。 Windows Admin Center では、インターネットに接続されていないプライベート ネットワークを含む、展開のあらゆる側面を完全に管理できます。
 
-## 概要
+## <a name="introduction"></a>概要
 
 >[!VIDEO https://www.youtube.com/embed/PcQj6ZklmK0]
 
 ![Windows Admin Center インフォグラフィック](media/WAC1809Poster_thumb.PNG)
 
-[PDF をダウンロード](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1809Poster.pdf)
+[PDF をダウンロードします。](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1809Poster.pdf)
 
-## クイック スタート
+## <a name="quick-start"></a>クイック スタート
 
 環境内で Windows Admin Center を数分で稼働できます。
 
 1. [ダウンロード](https://aka.ms/windowsadmincenter)
 2. [インストール](deploy/install.md)
-3. [使ってみる](use/get-started.md)
+3. [開始するには](use/get-started.md)
 
-## 内容の概要
+## <a name="contents-at-a-glance"></a>内容の概要
 
 <table>
     <tr></tr>
@@ -46,9 +46,9 @@ Windows Admin Center へようこそ。
         <td style="vertical-align: top;">
             <h3>概要</h3>
             <ul>
-            <li><a href="understand/what-is.md">Windows Admin Center とは</a>
+            <li><a href="understand/what-is.md">Windows Admin Center とは何ですか。</a>
             <li><a href="understand/faq.md">FAQ</a>
-            <li><a href="understand/case-studies.md">導入事例</a>
+            <li><a href="understand/case-studies.md">ケース スタディ</a>
             <li><a href="understand/related-management.md">関連する管理製品</a>
             <li><a href="understand/videos.md">ビデオ</a>
             </ul>
@@ -56,30 +56,30 @@ Windows Admin Center へようこそ。
         <td style="vertical-align: top;">
             <h3>プラン</h3>
             <ul>
-            <li><a href="plan/installation-options.md">適切なインストールの種類</a>
+            <li><a href="plan/installation-options.md">インストールの種類は、適切なでしょうか。</a>
             <li><a href="plan/user-access-options.md">ユーザー アクセス オプション</a>
-            <li><a href="plan/azure-integration-options.md">利用できる Azure 統合オプション</a>
+            <li><a href="plan/azure-integration-options.md">どのような Azure 統合オプションにはありますか。</a>
             <br>
             </ul>
         </td>
     </tr>
     <tr>
         <td style="vertical-align: top;">
-            <h3>展開</h3>
+            <h3>配置</h3>
             <ul>
-            <li><a href="deploy/prepare-environment.md">環境の準備</a>
+            <li><a href="deploy/prepare-environment.md">環境を準備します。</a>
             <li><a href="deploy/install.md">Windows Admin Center のインストール</a>
-            <li><a href="deploy/high-availability.md">高可用性の有効化</a>
+            <li><a href="deploy/high-availability.md">高可用性を有効にします。</a>
          </ul>
         </td>
         <td style="vertical-align: top;">
-            <h3>構成</h3>
+            <h3>[構成]</h3>
             <ul>
             <li><a href="configure/settings.md">Windows Admin Center の設定</a>
-            <li><a href="configure/user-access-control.md">ユーザー アクセスの制御とアクセス許可</a>
+            <li><a href="configure/user-access-control.md">ユーザー アクセス制御とアクセス許可</a>
             <li><a href="configure/using-extensions.md">拡張機能</a>
-            <li><a href="configure/azure-integration.md">Azure との統合</a>
-            <li><a href="configure/manage-azure-vms.md">Windows Admin Center の使用による Azure VM の管理</a>
+            <li><a href="configure/azure-integration.md">Azure との統合します。</a>
+            <li><a href="configure/manage-azure-vms.md">Windows Admin Center での Azure Vm を管理します。</a>
             </ul>
         </td>
     </tr>
@@ -87,12 +87,12 @@ Windows Admin Center へようこそ。
         <td style="vertical-align: top;">
             <h3>使用</h3>
             <ul>
-            <li><a href="use/get-started.md">接続の起動と追加</a>
-            <li><a href="use/manage-servers.md">サーバーの管理</a>
-            <li><a href="use/manage-hyper-converged.md">ハイパーコンバージド インフラストラクチャの管理</a>
-            <li><a href="use/manage-failover-clusters.md">フェールオーバー クラスターの管理</a>
-            <li><a href="use/manage-virtual-machines.md">仮想マシンの管理</a>
-            <li><a href="use/azure-services.md">Azure サービスの利用</a>
+            <li><a href="use/get-started.md">起動し、接続の追加</a>
+            <li><a href="use/manage-servers.md">サーバーを管理します。</a>
+            <li><a href="use/manage-hyper-converged.md">ハイパー コンバージド インフラストラクチャを管理します。</a>
+            <li><a href="use/manage-failover-clusters.md">フェールオーバー クラスターを管理します。</a>
+            <li><a href="use/manage-virtual-machines.md">仮想マシンを管理します。</a>
+            <li><a href="use/azure-services.md">Azure サービスを活用します。</a>
             <li><a href="use/troubleshooting.md">一般的なトラブルシューティング手順</a>
             <li><a href="use/logging.md">ログ記録</a>
             <li><a href="use/known-issues.md">既知の問題</a>
@@ -102,22 +102,21 @@ Windows Admin Center へようこそ。
             <h3>拡張</h3>
             <ul>
             <li><a href="extend/extensibility-overview.md">拡張機能の概要</a>
-            <li><a href="extend/understand-extensions.md">拡張機能について</a>
-            <li><a href="extend/developing-extensions.md">拡張機能の開発</a>
+            <li><a href="extend/understand-extensions.md">拡張機能の理解</a>
+            <li><a href="extend/developing-extensions.md">拡張機能を開発します。</a>
             <li><a href="extend/publish-extensions.md">ガイド</a>
-            <li><a href="extend/publish-extensions.md">拡張機能の公開</a>
+            <li><a href="extend/publish-extensions.md">公開の拡張機能</a>
             </ul>
         </td>
     </tr>
 
 </table>
 
-## リリースの履歴
+## <a name="release-history"></a>リリース履歴
 
 次の最新の機能について確認してください。
 
-- Version [1903] (https://aka.ms/wac1903) には、Azure Monitor からのメール通知、Active Directory から Server 接続または PC 接続を追加する機能、新しいツールによる Active Directory、DHCP、DNS の管理などが盛り込まれています。
-- バージョン [1902] (https://aka.ms/wac1902) では、共有接続リストとソフトウェア定義ネットワーク (SDN) 管理への機能強化 (ACL を管理するための新しい SDN ツール、ゲートウェイ接続、論理ネットワークを含む) が追加されました。
+- バージョン [1902] (https://aka.ms/wac1902) Acl、ゲートウェイの接続、および論理ネットワークを管理する新しい SDN ツールなど、ソフトウェア定義ネットワーク (SDN) の管理に機能強化 (&)、共有接続の一覧を追加します。
 - バージョン [1812](https://aka.ms/wac1812) では、濃色テーマ (プレビュー版)、電源構成の設定、BMC 情報、PowerShell による[拡張機能](./configure/using-extensions.md#manage-extensions-with-powershell)と[接続](./use/get-started.md#use-powershell-to-import-or-export-your-connections-with-tags)の管理のサポートが追加されました。
 - バージョン [1809.5](https://aka.ms/wac1809.5) は GA の累積的な更新プログラムで、プラットフォーム全体にわたるさまざまな品質向上、機能強化、バグ修正と、ハイパーコンバージド インフラストラクチャの管理ソリューションに関するいくつかの新機能を含んでいます。
 - バージョン [1809](https://cloudblogs.microsoft.com/windowsserver/2018/09/20/windows-admin-center-1809-and-sdk-now-generally-available/) は、以前にプレビュー版として提供されていた機能を GA チャネルに公開する GA リリースでした。
@@ -132,8 +131,8 @@ Windows Admin Center へようこそ。
 - バージョン [1711](https://cloudblogs.microsoft.com/windowsserver/2017/12/01/1711-update-to-project-honolulu-technical-preview-is-now-available/) では、要望が多かったツール (リモート デスクトップと PowerShell) が追加され、その他の機能が強化されました。
 - バージョン [1709](https://cloudblogs.microsoft.com/windowsserver/2017/09/22/project-honolulu-technical-preview-is-now-available-for-download/) は、最初のパブリック プレビュー リリースとして発売されました。
 
-## 最新情報を受け取る
+## <a name="stay-updated"></a>最新情報に更新
 
-<a target="_blank" class="mscom-link twitter-follow-link" title="Twitter でマイクロソフトをフォローする" aria-label="Follow us on Twitter" data-info="Twitter" href="https://twitter.com/servermgmt"><picture><source srcset="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR" media="(min-width:0)"><img srcset="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR" alt="Follow us on Twitter" src="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR"></picture></a>
+<a target="_blank" class="mscom-link twitter-follow-link" title="Twitter でフォローします。" aria-label="Follow us on Twitter" data-info="Twitter" href="https://twitter.com/servermgmt"><picture><source srcset="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR" media="(min-width:0)"><img srcset="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR" alt="Follow us on Twitter" src="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR"></picture></a>
  | 
 <a target="_blank" class="mscom-link blogs-follow-link" title="このブログを読む" aria-label="Visit our Blogs" data-info="Blogs" href="https://blogs.technet.microsoft.com/servermanagement/"><picture><source srcset="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw" media="(min-width:0)"><img srcset="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw" alt="Follow us on Blogs" src="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw"></picture></a>

@@ -15,18 +15,18 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 08a92188446d018edd36a638abb30745721bd601
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1672463"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59831583"
 ---
 # <a name="recommendations-for-moving-to-windows-server-2016"></a>Windows Server 2016 への移行に関する推奨事項
 
->適用先: Windows Server 2016
+>適用先:Windows Server 2016
 
 
-|使用している Windows オペレーティング システム|Windows Server 2012 R2 または Windows Server 2012|Windows Server2008 R2 または Windows Server 2008|  
+|使用している Windows オペレーティング システム|Windows Server 2012 R2 または Windows Server 2012|Windows Server 2008 R2 または Windows Server 2008|  
 |-------------------|----------|--------------|--------------|---------------------------------------|  
 |**Windows Server の役割のインフラストラクチャ**|[特定の役割のガイダンス](https://technet.microsoft.com/windowsserver/jj554790)に関するページに従って、更新または移行のいずれかを選択します。|- Windows Server 2016 の新機能を利用するには、新しいハードウェアを展開するか、または既存のホスト上のバーチャル マシンに Windows Server 2016 をインストールします。 一部の新機能は、Hyper-V を実行する Windows Server 2016 物理ホストで最適に動作します。 <br>- [特定の役割のガイダンス](https://technet.microsoft.com/windowsserver/jj554790)に関するページを参照してください。|
 |**Microsoft サーバーの管理とアプリケーションのワークロード**|- アプリケーションのアップグレードには Windows Server 2016 への*移行*を含める必要があります。 [互換性リスト](Server-Application-Compatibility.md)を参照してください。 <br>- Windows Server 2016 へのアップグレードのみ (つまり、アプリケーションのアップグレードは行わない) 場合は、アプリケーションに固有のガイダンスを使用する必要があります。|- Windows Server 2016 の新機能を利用するには、新しいハードウェアを展開するか、または既存のホスト上のバーチャル マシンに Windows Server 2016 をインストールします。 一部の新機能は、Hyper-V を実行する Windows Server 2016 物理ホストで最適に動作します。 必要に応じて移行ガイドに従ってください。 <br>- または、現在の OS 上に残り、Windows Server 2016 ホスト上で動作するバーチャル マシン内で、または Microsoft Azure で実行されます。 [ソフトウェア アシュアランス](https://www.microsoft.com/en-us/Licensing/licensing-programs/software-assurance-default.aspx)による拡張サポート オプションについては、EA 販売店、TAM、または Microsoft にお問い合わせください。|
@@ -53,7 +53,7 @@ ms.locfileid: "1672463"
 
 ## <a name="additional-resources"></a>その他の資料
 
-- [Windows Server 2016 で削除された機能または推奨されなくなった機能](deprecated-features.md)
+- [削除された機能または Windows Server 2016 で非推奨とされます。](deprecated-features.md)
 - 一般的なサーバーのアップグレードおよび移行のオプションについては、「[Upgrade and conversion options for Windows Server 2016](Supported-Upgrade-Paths.md)」 (Windows Server 2016 のアップグレードと変換オプション) を参照してください。
 - 製品のライフ サイクルとサポート レベルの詳細については、「[サポート ライフ サイクル ポリシーに関する FAQ](https://support.microsoft.com/help/17140/support-lifecycle-policy-faq)」を参照してください。
 

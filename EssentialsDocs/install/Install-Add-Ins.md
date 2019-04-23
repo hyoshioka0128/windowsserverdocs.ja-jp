@@ -1,6 +1,6 @@
 ---
-title: "Add-Ins をインストールします。"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: アドインのインストール
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,33 +13,34 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: d00cb6886e812ee2b780ad79e1fba44442e279ad
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59833073"
 ---
-# <a name="install-add-ins"></a>Add-Ins をインストールします。
+# <a name="install-add-ins"></a>アドインのインストール
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-イメージを作成する前にそれらをインストールすることによって、すべてのサーバーまたはクライアント コンピューターにアドインを含めることができます。 これらのアドインはそのイメージを使用してレプリケートされたすべてのコンピューターに自動的に含まします。 .Wssx ファイルを実行してアドインをインストールできますか、または」のガイダンスに従って個別のアドイン ファイルをインストールすることができます、[SDK ドキュメント](https://go.microsoft.com/fwlink/?LinkID=248648)アドインの種類ごとにします。 .Wssx ファイルを使用してインストールする場合、アドインをアンインストールできます Add-In マネージャーを通じて。 個々 のファイルをインストールする場合、追加の管理されていない Add-In マネージャーから。  
+イメージを作成する前にアドインをインストールすることで、すべてのサーバーまたはクライアント コンピューターにアドインを含めることができます。 これらのアドインは、そのイメージを使用してレプリケートされたすべてのコンピューターに自動的に含まれます。 1 個のアドインをインストールするには .wssx ファイルを実行します。または、アドインの種類ごとに [SDK ドキュメント](https://go.microsoft.com/fwlink/?LinkID=248648)のガイダンスに従って、個別のアドイン ファイルをインストールします。 .wssx ファイルを使用してインストールすると、アドイン マネージャーを通じてアドインをアンインストールできます。 個別のファイルをインストールする場合、アドインはアドイン マネージャーから管理されません。  
   
 > [!NOTE]
->  あるソフトウェアがインストールされているか (ダッシュ ボードのタブや正常性通知など)、サーバーにダウンロードするには、ローカライズされたインターフェイス、サーバーにインストールされているオペレーティング システムの言語に一致する必要があります。  
+>  サーバーにインストールまたはダウンロードされたソフトウェア (ダッシュボードのタブや正常性通知など) のインターフェイスは、サーバーにインストールされているオペレーティング システムと同じ言語にローカライズされている必要があります。  
   
 #### <a name="to-install-an-add-in"></a>アドインをインストールするには  
   
-1.  (省略可能).Wssx ファイルを使用してアドインをインストールする場合は、次の手順を実行します。  
+1.  (省略可能) .wssx ファイルを使用してアドインをインストールしている場合、次の手順を完了します。  
   
-    1.  参照コンピューターで、< AddinName\ > .wssx ファイルを保存します。  
+    1.  保存、< アドイン名\>.wssx ファイル参照コンピューターにします。  
   
-    2.  Add-in インストール ウィザードを開く .wssx ファイルをダブルクリックします。  
+    2.  .wssx ファイルをダブルクリックして、アドインのインストール ウィザードを開きます。  
   
-    3.  インストールの完了には、ウィザードの指示に従います。  
+    3.  ウィザードの指示に従って、インストールを完了させます。  
   
-2.  (省略可能)アドインの種類ごとに SDK で定義されている適切な場所に個別のアドイン ファイルをインストールします。  
+2.  (省略可能) 個別のアドイン ファイルを、アドインの種類ごとに SDK で定義されたように適切な場所にインストールします。  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
  [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   
  [追加のカスタマイズ](Additional-Customizations.md)   
  [イメージの展開の準備](Preparing-the-Image-for-Deployment.md)   
