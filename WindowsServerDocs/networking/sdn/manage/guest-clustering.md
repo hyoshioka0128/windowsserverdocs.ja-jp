@@ -1,7 +1,7 @@
 ---
-title: ゲストの仮想ネットワークでのクラスタ リング
-description: このトピックでは、テナント ワークロードを管理および Windows Server 2016 での仮想ネットワークに方法について、ソフトウェア定義ネットワーク ガイドの一部です。
-manager: brianlic
+title: 仮想ネットワークでのゲスト クラスタリング
+description: 仮想ネットワークに接続された仮想マシンはネットワーク コント ローラーがネットワークで通信するために割り当てられている IP アドレスを使用するのみ許可されます。  Microsoft フェールオーバー クラスタ リングなど、floating IP アドレスを必要とするクラスタ リング テクノロジでは、正常に機能する特別な手順が必要です。
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,165 +12,176 @@ ms.topic: article
 ms.assetid: 8e9e5c81-aa61-479e-abaf-64c5e95f90dc
 ms.author: grcusanz
 author: shortpatti
-ms.openlocfilehash: 5cab7e7c0ca0af848b4b58362388701cc4357860
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/26/2018
+ms.openlocfilehash: fcd37ebb3739f1d7118ce41dfc61764486c920d3
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59844963"
 ---
-# <a name="guest-clustering-in-a-virtual-network"></a>ゲストの仮想ネットワークでのクラスタ リング
+# <a name="guest-clustering-in-a-virtual-network"></a>仮想ネットワークでのゲスト クラスタリング
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-仮想ネットワークに接続されている仮想マシンは、ネットワーク コント ローラーがネットワーク上で通信するために割り当てられている IP アドレスを使用する限定されます。  これは、クラスタ リング テクノロジ Microsoft フェールオーバー クラスタ リングなど、浮動 IP アドレスが必要、正しく機能するためにいくつか追加の手順を必要とすることを意味します。
+仮想ネットワークに接続された仮想マシンはネットワーク コント ローラーがネットワークで通信するために割り当てられている IP アドレスを使用するのみ許可されます。  Microsoft フェールオーバー クラスタ リングなど、floating IP アドレスを必要とするクラスタ リング テクノロジでは、正常に機能する特別な手順が必要です。
 
-到達可能な浮動 IP を行うためのメソッドは、ソフトウェア ロード バランサー \(SLB\) を使用する仮想 IP \(VIP\) します。  ソフトウェア ロード バランサーは、その IP を現在持っているマシンへのトラフィックを送信する SLB できるように、その ip ポートでの正常性プローブに構成する必要があります。
+到達可能な floating IP を作成する方法は、ソフトウェア ロード バランサーを使用する\(SLB\)仮想 IP \(VIP\)します。  SLB は、現在その IP を持つマシンにトラフィックを送信できるように、その ip ポートでの正常性プローブでソフトウェア ロード バランサーを構成する必要があります。
 
-## <a name="example-load-balancer-configuration"></a>例: ロード バランサーの構成
 
-この例で既に作成した Vm は、クラスター ノードになり、仮想ネットワークに接続されていることを想定しています。  ガイダンスについてを参照してください[バーチャル マシンとテナントの仮想ネットワークまたは VLAN に接続を作成する](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm)します。  
+## <a name="example-load-balancer-configuration"></a>以下に例を示します。ロード バランサーの構成
 
-この例では、浮動、クラスターの IP アドレスを表す仮想 IP アドレス (192.168.2.100) を作成し、TCP ポートのどのノードがアクティブであることを確認する 59999 を監視するヘルス プローブを構成します。
+この例では、クラスター ノードになり、それらを仮想ネットワークに接続する Vm を既に作成したことを前提としています。  ガイダンスについてを参照してください[VM とテナントの仮想ネットワークまたは VLAN への接続を作成](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm)です。  
 
-### <a name="step-1-select-the-vip"></a>手順 1: は、VIP を選択します
-VIP IP アドレスを割り当てるを準備します。  このアドレスは、クラスター ノードとして同じサブネット内の任意の未使用または予約アドレスを指定できます。  VIP は、クラスターの浮動アドレスと一致する必要があります。
+この例では、クラスターの floating IP アドレスを表す仮想 IP アドレス (192.168.2.100) を作成し、TCP ポート 59999 のどのノードがアクティブであることを確認するを監視する正常性プローブを構成します。
 
-    $VIP = "192.168.2.100"
-    $subnet = "Subnet2"
-    $VirtualNetwork = "MyNetwork"
-    $ResourceId = "MyNetwork_InternalVIP"
+1. VIP を選択します。<p>クラスター ノードと同じサブネット内のすべての未使用または予約済みアドレス、VIP の IP アドレスを割り当てることで準備します。  VIP は、クラスターの浮動小数点のアドレスに一致する必要があります。
 
-### <a name="step-2-create-the-load-balancer-properties-object"></a>手順 2: ロード バランサーのプロパティのオブジェクトを作成します。
+   ```PowerShell
+   $VIP = "192.168.2.100"
+   $subnet = "Subnet2"
+   $VirtualNetwork = "MyNetwork"
+   $ResourceId = "MyNetwork_InternalVIP"
+   ```
 
-次のコマンド例を使用して、ロード バランサーのプロパティのオブジェクトを作成することができます。
+2. ロード バランサーのプロパティ オブジェクトを作成します。
 
-    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
+   ```PowerShell
+   $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
+   ```
 
-### <a name="step-3-create-a-front-end-ip-address"></a>手順 3: front\ 終了 IP アドレスを作成します。
+3. 作成、前面\-終了 IP アドレス。
 
-次のコマンド例を使用すると、front\ 終了 IP アドレスを作成します。
+   ```PowerShell
+   $LoadBalancerProperties.frontendipconfigurations += $FrontEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
+   $FrontEnd.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfigurationProperties
+   $FrontEnd.resourceId = "Frontend1"
+   $FrontEnd.resourceRef = "/loadBalancers/$ResourceId/frontendIPConfigurations/$($FrontEnd.resourceId)"
+   $FrontEnd.properties.subnet = new-object Microsoft.Windows.NetworkController.Subnet
+   $FrontEnd.properties.subnet.ResourceRef = "/VirtualNetworks/MyNetwork/Subnets/Subnet2"
+   $FrontEnd.properties.privateIPAddress = $VIP
+   $FrontEnd.properties.privateIPAllocationMethod = "Static"
+   ```
 
-    $LoadBalancerProperties.frontendipconfigurations += $FrontEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
-    $FrontEnd.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfigurationProperties
-    $FrontEnd.resourceId = "Frontend1"
-    $FrontEnd.resourceRef = "/loadBalancers/$ResourceId/frontendIPConfigurations/$($FrontEnd.resourceId)"
-    $FrontEnd.properties.subnet = new-object Microsoft.Windows.NetworkController.Subnet
-    $FrontEnd.properties.subnet.ResourceRef = "/VirtualNetworks/MyNetwork/Subnets/Subnet2"
-    $FrontEnd.properties.privateIPAddress = $VIP
-    $FrontEnd.properties.privateIPAllocationMethod = "Static"
+4. バックアップの作成\-クラスター ノードを格納するプールを終了します。
 
-### <a name="step-4-create-a-back-end-pool-to-contain-the-cluster-nodes"></a>手順 4: クラスター ノードが含まれる back\ エンド プールを作成します。
+   ```PowerShell
+   $BackEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
+   $BackEnd.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPoolProperties
+   $BackEnd.resourceId = "Backend1"
+   $BackEnd.resourceRef = "/loadBalancers/$ResourceId/backendAddressPools/$($BackEnd.resourceId)"
+   $LoadBalancerProperties.backendAddressPools += $BackEnd
+   ```
 
-次のコマンド例を使用するには back\ ツー エンドのプールを作成するには
+5. 浮動小数点のアドレスが上で現在アクティブ クラスター ノードを検出するためにプローブを追加します。 
 
-    $BackEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
-    $BackEnd.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPoolProperties
-    $BackEnd.resourceId = "Backend1"
-    $BackEnd.resourceRef = "/loadBalancers/$ResourceId/backendAddressPools/$($BackEnd.resourceId)"
-    $LoadBalancerProperties.backendAddressPools += $BackEnd
+   >[!NOTE]
+   >以下に定義されたポートでの VM の永続的なアドレスに対してプローブ クエリ。  ポートは、アクティブ ノードでだけ応答する必要があります。 
 
-### <a name="step-5-add-a-probe"></a>手順 5: プローブを追加します。
-プローブは、浮動アドレスはで現在アクティブなクラスター ノードを検出する必要があります。
+   ```PowerShell
+   $LoadBalancerProperties.probes += $lbprobe = new-object Microsoft.Windows.NetworkController.LoadBalancerProbe
+   $lbprobe.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerProbeProperties
 
->[!NOTE]
->以下に定義されているポートでの VM の永続的なアドレスに対してプローブ クエリします。  ポートは、アクティブ ノードでのみ応答する必要があります。 
+   $lbprobe.ResourceId = "Probe1"
+   $lbprobe.resourceRef = "/loadBalancers/$ResourceId/Probes/$($lbprobe.resourceId)"
+   $lbprobe.properties.protocol = "TCP"
+   $lbprobe.properties.port = "59999"
+   $lbprobe.properties.IntervalInSeconds = 5
+   $lbprobe.properties.NumberOfProbes = 11
+   ```
 
-    $LoadBalancerProperties.probes += $lbprobe = new-object Microsoft.Windows.NetworkController.LoadBalancerProbe
-    $lbprobe.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerProbeProperties
+6. 負荷分散規則の TCP ポート 1433 を追加します。<p>プロトコルとポートが必要に応じて変更できます。  できますもこの手順を繰り返します複数回追加のポートとプロトコルでは、この VIP 用です。  この場所に元の VIP を持つノードにパケットを送信するロード バランサーに指示するために、EnableFloatingIP が $true に設定されているが重要です。
 
-    $lbprobe.ResourceId = "Probe1"
-    $lbprobe.resourceRef = "/loadBalancers/$ResourceId/Probes/$($lbprobe.resourceId)"
-    $lbprobe.properties.protocol = "TCP"
-    $lbprobe.properties.port = "59999"
-    $lbprobe.properties.IntervalInSeconds = 5
-    $lbprobe.properties.NumberOfProbes = 11
+   ```PowerShell
+   $LoadBalancerProperties.loadbalancingRules += $lbrule = new-object Microsoft.Windows.NetworkController.LoadBalancingRule
+   $lbrule.properties = new-object Microsoft.Windows.NetworkController.LoadBalancingRuleProperties
+   $lbrule.ResourceId = "Rules1"
 
-### <a name="step-5-add-the-load-balancing-rules"></a>手順 5: 負荷分散の規則を追加します。
-この手順では、負荷分散の TCP ポート 1433 のルールを作成します。  プロトコルとポートを必要に応じて変更できます。  できますまたこの手順を繰り返します複数回追加のポートとプロトコルでは、この VIP します。  これにより、ロード バランサーを元の場所で vip で書き直しますノードにパケットを送信するために、EnableFloatingIP を $true に設定されている必要があります。
+   $lbrule.properties.frontendipconfigurations += $FrontEnd
+   $lbrule.properties.backendaddresspool = $BackEnd 
+   $lbrule.properties.protocol = "TCP"
+   $lbrule.properties.frontendPort = $lbrule.properties.backendPort = 1433 
+   $lbrule.properties.IdleTimeoutInMinutes = 4
+   $lbrule.properties.EnableFloatingIP = $true
+   $lbrule.properties.Probe = $lbprobe
+   ```
 
-    $LoadBalancerProperties.loadbalancingRules += $lbrule = new-object Microsoft.Windows.NetworkController.LoadBalancingRule
-    $lbrule.properties = new-object Microsoft.Windows.NetworkController.LoadBalancingRuleProperties
-    $lbrule.ResourceId = "Rules1"
+7. ネットワーク コント ローラーで、ロード バランサーを作成します。
 
-    $lbrule.properties.frontendipconfigurations += $FrontEnd
-    $lbrule.properties.backendaddresspool = $BackEnd 
-    $lbrule.properties.protocol = "TCP"
-    $lbrule.properties.frontendPort = $lbrule.properties.backendPort = 1433 
-    $lbrule.properties.IdleTimeoutInMinutes = 4
-    $lbrule.properties.EnableFloatingIP = $true
-    $lbrule.properties.Probe = $lbprobe
+   ```PowerShell
+   $lb = New-NetworkControllerLoadBalancer -ConnectionUri $URI -ResourceId $ResourceId -Properties $LoadBalancerProperties -Force
+   ```
 
-### <a name="step-5-create-the-load-balancer-in-network-controller"></a>手順 5: ネットワーク コント ローラーで、ロード バランサーを作成します。
+8. バックエンド プールにクラスター ノードを追加します。<p>クラスターに必要な多くのノードをプールに追加できます。
 
-次のコマンド例を使用して、ロード バランサーを作成することができます。
+   ```PowerShell
+   # Cluster Node 1
 
-    $lb = New-NetworkControllerLoadBalancer -ConnectionUri $URI -ResourceId $ResourceId -Properties $LoadBalancerProperties -Force
-
-### <a name="step-6-add-the-cluster-nodes-to-the-backend-pool"></a>手順 6: バックエンド プールにクラスター ノードを追加します。
-
-この例では、次の 2 つのプール メンバーを追加するが、クラスターに必要な数だけをプールにノードを追加することができます。
-
-    # Cluster Node 1
-
-    $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid "ClusterNode1_Network-Adapter"
-    $nic.properties.IpConfigurations[0].properties.LoadBalancerBackendAddressPools += $lb.properties.backendaddresspools[0]
-    $nic = new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid $nic.resourceid -properties $nic.properties -force
+   $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid "ClusterNode1_Network-Adapter"
+   $nic.properties.IpConfigurations[0].properties.LoadBalancerBackendAddressPools += $lb.properties.backendaddresspools[0]
+   $nic = new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid $nic.resourceid -properties $nic.properties -force
 
     # Cluster Node 2
 
-    $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid "ClusterNode2_Network-Adapter"
-    $nic.properties.IpConfigurations[0].properties.LoadBalancerBackendAddressPools += $lb.properties.backendaddresspools[0]
-    $nic = new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid $nic.resourceid -properties $nic.properties -force
+   $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid "ClusterNode2_Network-Adapter"
+   $nic.properties.IpConfigurations[0].properties.LoadBalancerBackendAddressPools += $lb.properties.backendaddresspools[0]
+   $nic = new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid $nic.resourceid -properties $nic.properties -force
+   ```
 
-ロード バランサーを作成すると、ネットワーク インターフェイスをバックエンド プールに追加した、クラスターを構成することができます。  Microsoft フェールオーバー クラスターを使用している場合は、次の例を続行することができます。 
+   ロード バランサーを作成し、バックエンド プールにネットワーク インターフェイスを追加、したら、クラスターを構成する準備ができます。  
 
-## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>例 2: Microsoft フェールオーバー クラスターを構成します。
+9. (省略可能)Microsoft フェールオーバー クラスターを使用している場合は、次の例を続行します。 
 
-次の手順を使用すると、フェールオーバー クラスターを構成します。
+## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>例 2:Microsoft フェールオーバー クラスターの構成
 
-### <a name="step-1-install-failover-clustering"></a>手順 1: フェールオーバー クラスタ リングをインストールします。
+フェールオーバー クラスターを構成するのには、次の手順を使用することができます。
 
-次の例のコマンドを使用して、インストールし、フェールオーバー クラスターのプロパティを構成することができます。
+1. インストールし、フェールオーバー クラスターのプロパティを構成します。
 
-    add-windowsfeature failover-clustering -IncludeManagementTools
-    Import-module failoverclusters
+   ```PowerShell
+   add-windowsfeature failover-clustering -IncludeManagementTools
+   Import-module failoverclusters
 
-    $ClusterName = "MyCluster"
-   
-    $ClusterNetworkName = "Cluster Network 1"
-    $IPResourceName =  
-    $ILBIP = “192.168.2.100” 
+   $ClusterName = "MyCluster"
+   
+   $ClusterNetworkName = "Cluster Network 1"
+   $IPResourceName =  
+   $ILBIP = “192.168.2.100” 
 
-    $nodes = @("DB1", "DB2")
+   $nodes = @("DB1", "DB2")
+   ```
 
-### <a name="step-2-create-the-cluster-on-one-node"></a>手順 2: 1 つのノードでクラスターを作成します。
+2. 1 つのノードでクラスターを作成します。
 
-次のコマンド例を使用して、ノードでクラスターを作成することができます。
+   ```PowerShell
+   New-Cluster -Name $ClusterName -NoStorage -Node $nodes[0]
+   ```
 
-    New-Cluster -Name $ClusterName -NoStorage -Node $nodes[0]
+3. クラスター リソースを停止します。
 
-### <a name="step-3-stop-the-cluster-resource"></a>手順 3: クラスター リソースを停止します。
+   ```PowerShell
+   Stop-ClusterResource "Cluster Name" 
+   ```
 
-次のコマンド例を使用して、クラスター リソースを停止することができます。
+4. クラスターの ip アドレスとプローブ ポートを設定します。<p>IP アドレスは、前の例で使用されるフロント エンド ip アドレスと一致する必要があり、プローブ ポートは、前の例でプローブ ポートと一致する必要があります。
 
-    Stop-ClusterResource "Cluster Name" 
+   ```PowerShell
+   Get-ClusterResource "Cluster IP Address" | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"="59999";"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
+   ```
 
-### <a name="step-4-set-the-cluster-ip-and-probe-port"></a>手順 4: 設定、クラスター ip アドレスとプローブ ポート
-IP アドレスは、前の例で使用されるフロント エンド ip アドレスと一致する必要があり、プローブ ポートは前の例では、プローブ ポートと一致する必要があります。
+5. クラスター リソースを開始します。
 
-    Get-ClusterResource "Cluster IP Address" | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"="59999";"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
+   ```PowerShell
+    Start-ClusterResource "Cluster IP Address"  -Wait 60 
+    Start-ClusterResource "Cluster Name"  -Wait 60 
+   ```
 
-### <a name="step-5-start-the-cluster-resources"></a>手順 5: クラスター リソースを開始します。
+6. 残りのノードを追加します。
 
-次のコマンド例を使用すると、クラスター リソースを開始します。
+   ```PowerShell
+   Add-ClusterNode $nodes[1]
+   ```
 
-    Start-ClusterResource "Cluster IP Address"  -Wait 60 
-    Start-ClusterResource "Cluster Name"  -Wait 60 
+_**クラスターはアクティブです。**_ トラフィックは、指定したポートで、VIP は、アクティブなノードに送られます。
 
-### <a name="step-6-add-the-remaining-nodes"></a>手順 6: 残りのノードを追加します。
-
-次のコマンド例を使用して、クラスター ノードを追加することができます。
-
-    Add-ClusterNode $nodes[1]
-
-最後の手順を完了したら、クラスターはアクティブです。 VIP しようとして指定したポートでトラフィックは、アクティブ ノードに送信されます。
+---

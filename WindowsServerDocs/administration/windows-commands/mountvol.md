@@ -1,0 +1,73 @@
+---
+title: mountvol
+description: 'Windows コマンド」のトピック * * *- '
+ms.custom: na
+ms.prod: windows-server-threshold
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: fea8ad4d-f04a-4aaa-a3e5-75931e867b39
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 10/16/2017
+ms.openlocfilehash: e31a167d98203b684917aceee2603a29dd478a3e
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59846323"
+---
+# <a name="mountvol"></a>mountvol
+
+
+
+作成、削除、またはボリュームのマウント ポイントを一覧表示されます。
+
+このコマンドを使用する方法の例を参照してください[例](#BKMK_examples)します。
+
+## <a name="syntax"></a>構文
+
+```
+mountvol [<Drive>:]<Path VolumeName>
+mountvol [<Drive>:]<Path> /d
+mountvol [<Drive>:]<Path> /l
+mountvol [<Drive>:]<Path> /p
+mountvol /r
+mountvol [/n | /e]
+mountvol <Drive>: /s
+```
+
+## <a name="parameters"></a>パラメーター
+
+|パラメーター|説明|
+|---------|-----------|
+|[\<ドライブ >:]<Path>|マウント ポイントが存在する既存の NTFS ディレクトリを指定します。|
+|\<VolumeName>|マウント ポイントの対象となっているボリューム名を指定します。 ボリューム名は、次の構文を使用している*GUID*はグローバルに一意の識別子です。</br>`\\\\?\Volume\{GUID}\`</br>角かっこ {} が必要です。|
+|/d|指定したフォルダーから、ボリュームのマウント ポイントを削除します。|
+|/l|指定のフォルダーにマウントされたボリューム名を一覧表示します。|
+|/p|ボリューム マウント ポイントを指定したディレクトリから削除します、ベーシック ボリュームのマウントを解除し、基本的なボリュームをオフラインでマウントを解除します。 他のプロセスは、ボリュームを使用している場合**mountvol**ボリュームのマウントを解除する前に開いているハンドルを閉じます。|
+|/r|ボリューム マウント ポイント ディレクトリとレジストリ設定は自動的にマウントされているを防止、システムで、特定の以前のボリュームのマウント ポイントのシステムに追加されたときにボリュームを削除します。|
+|/n|新しいベーシック ボリュームの自動マウントを無効にします。 システムに追加されたときに、新しいボリュームが自動的にマウントされていません。|
+|/e|新しいベーシック ボリュームの自動マウントを再度有効にします。|
+|/s|指定したドライブで、EFI システム パーティションをマウントします。 Itanium ベースのコンピューターでのみ使用できます。|
+|/?|コマンド プロンプトにヘルプを表示します。|
+
+## <a name="remarks"></a>注釈
+
+-   **Mountvol**ドライブ文字を必要とせずにボリュームをリンクすることができます。
+-   使用してマウント解除されているボリューム **/p** 「いないマウント済み UNTIL A ボリューム マウント ポイントが作成された」ボリュームの一覧に表示されます ボリュームには、複数のマウント ポイントがある場合を使用して、 **/d**を使用する前に他のマウント ポイントを削除する **/p**します。 行うことができます、ベーシック ボリューム マウント可能なもう一度ボリューム マウント ポイントを割り当てることで。
+-   再フォーマットやハード ドライブを交換せず、ボリュームの容量を拡張する必要がある場合は、別のボリュームをマウント パスを追加できます。 1 つのボリュームを使用して、複数のマウント パスでの利点は、すべてのローカル ボリュームを 1 つのドライブ文字を使用してアクセスできること (など`C:`)。 どのドライブ文字に対応しているボリュームを記憶する必要はありません — することもできますが、ローカル ボリュームをマウントし、ドライブ文字を割り当てます。
+
+## <a name="BKMK_examples"></a>例
+
+マウント ポイントを作成するには、次のように入力します。
+```
+mountvol \sysmount \\?\Volume\{2eca078d-5cbc-43d3-aff8-7e8511f60d0e}\
+```
+
+#### <a name="additional-references"></a>その他の参照情報
+
+[コマンドライン構文キー](command-line-syntax-key.md)

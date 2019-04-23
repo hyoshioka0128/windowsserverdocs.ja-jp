@@ -1,5 +1,5 @@
 ---
-title: DNS リソース レコードのビューをフィルター処理します。
+title: DNS リソース レコードの表示をフィルター処理する
 description: このトピックでは、Windows Server 2016 での IP アドレス管理 (IPAM) の管理ガイドの一部です。
 manager: brianlic
 ms.custom: na
@@ -13,53 +13,54 @@ ms.topic: article
 ms.assetid: 5b80294a-7325-476b-84eb-69f0d051e8b2
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 35c0e822daa9f2c8c49ae7e6f2f40ec0411cb6fa
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: fed5e1f923d3560b91f514d1e59d79b847557c8b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59847803"
 ---
-# <a name="filter-the-view-of-dns-resource-records"></a>DNS リソース レコードのビューをフィルター処理します。
+# <a name="filter-the-view-of-dns-resource-records"></a>DNS リソース レコードの表示をフィルター処理する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-このトピックを使用すると、IPAM クライアント コンソール内の DNS リソース レコードのビューをフィルター処理します。  
+このトピックを使用するには、IPAM クライアント コンソールでの DNS リソース レコードのビューをフィルター処理します。  
   
-メンバーシップ**管理者**、相当するものでは、この手順を実行するために必要な最低限またはします。  
+メンバーシップ **管理者**, 、同等の権限をこの手順を実行するために必要な最低限のですか。  
   
-### <a name="to-filter-the-view-of-dns-resource-records"></a>DNS リソース レコードのビューをフィルター処理するには  
+### <a name="to-filter-the-view-of-dns-resource-records"></a>DNS リソース レコードのビューをフィルター処理  
   
-1.  サーバー マネージャーで、クリックして**IPAM**します。 IPAM クライアント コンソールに表示されます。  
+1.  サーバー マネージャーで、クリックして  **IPAM**します。 IPAM クライアント コンソールに表示されます。  
   
-2.  ナビゲーション ウィンドウで、[**監視と管理**、] をクリックして**DNS ゾーン**します。  上部ナビゲーション ウィンドウと下のナビゲーション ウィンドウのナビゲーション ウィンドウに分割します。  
+2.  ナビゲーション ウィンドウで [**監視と管理**、] をクリックして**DNS ゾーン**。  上部のナビゲーション ウィンドウと下のナビゲーション ウィンドウのナビゲーション ウィンドウに分割します。  
   
-3.  下のナビゲーション ウィンドウでをクリックして**前方参照**します。 表示ウィンドウの検索結果では、すべての IPAM で管理されたで DNS 前方参照ゾーンが表示されます。  
+3.  下部のナビゲーション ウィンドウで次のようにクリックします。**前方参照**します。 表示ウィンドウの検索結果には、すべての IPAM で管理されたで DNS 前方参照ゾーンが表示されます。  
   
-4.  ゾーンにレコードを表示およびフィルター処理をクリックします。  
+4.  表示およびフィルター処理レコードがゾーンをクリックします。  
   
-5.  表示ウィンドウで、をクリックして**現在のビュー**、] をクリックし、**リソース レコード**します。 ゾーンのリソース レコードは、表示ウィンドウで表示されます。  
+5.  表示ウィンドウで次のようにクリックします。**現在のビュー**、 をクリックし、**リソース レコード**します。 表示ウィンドウで、ゾーンのリソース レコードが表示されます。  
   
-6.  表示ウィンドウで、をクリックして**条件の追加**します。  
+6.  表示ウィンドウで次のようにクリックします。**条件の追加**します。  
   
-    ![[条件を追加します。](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_01.jpg)  
+    ![条件の追加](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_01.jpg)  
   
-7.  ドロップダウン リストから、条件を選択します。 たとえば、特定のレコードの種類を表示する場合は、クリックして**レコードの種類**します。  
+7.  ドロップダウン リストから条件を選択します。 たとえば、特定のレコードの種類を表示する場合は、クリックして**レコードの種類**します。  
   
-    ![条件を選択します。](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_02.jpg)  
+    ![基準を選択します。](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_02.jpg)  
   
-8.  をクリックして**追加**します。  
+8.  **[追加]** をクリックします。  
   
     ![条件を追加します。](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_03.jpg)  
   
-9. **レコードの種類**検索パラメーターとして追加されます。 検索するレコードの種類のテキストを入力します。 たとえば、SRV レコードのみを表示する場合は、入力**SRV**します。  
+9. **レコードの種類**検索パラメーターとして追加されます。 検索するレコードの種類のテキストを入力します。 たとえば、SRV レコードのみを表示する場合は、「 **SRV**します。  
   
     ![検索するレコードの種類を指定します。](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_04.jpg)  
   
-10. ENTER キーを押します。 DNS リソース レコードは、条件に基づいてフィルター処理されたし、指定した語句を検索します。  
+10. Enter キーを押します。 DNS リソース レコードは、条件に従ってフィルター処理し、指定した語句を検索します。  
   
     ![フィルターを実行します。](../../media/Filter-the-View-of-DNS-Resource-Records/ipam_FilterRR_05.jpg)  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
 [DNS リソース レコードの管理](DNS-Resource-Record-Management.md)  
 [IPAM を管理します。](Manage-IPAM.md)  
   

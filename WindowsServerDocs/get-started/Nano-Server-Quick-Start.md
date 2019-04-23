@@ -12,15 +12,15 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 488d0bed661cf2078d20e491a8c68b2a29a42b73
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2082374"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59859523"
 ---
 # <a name="nano-server-quick-start"></a>Nano Server のクイック スタート
 
->適用対象: Windows Server 2016
+>適用先:Windows Server 2016
 
 > [!IMPORTANT]
 > Windows Server バージョン 1709 以降、Nano Server は[コンテナー基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、「[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)」をご覧ください。 
@@ -29,7 +29,7 @@ DHCP を使用して IP アドレスを取得する Nano Server の基本的な�
 
 これらのクイック スタート手順で基本的な展開を試した後は、独自のカスタム イメージの作成、さまざまな方法によるパッケージ管理、ドメイン操作などの詳細については、「[Nano Server の展開](Deploy-Nano-Server.md)」を参照してください。
   
-**仮想マシンでの Nano Server**  
+**仮想マシンに Nano Server**  
   
 仮想マシンで実行される Nano Server VHD を作成するには、次の手順に従います。  
   
@@ -37,13 +37,13 @@ DHCP を使用して IP アドレスを取得する Nano Server の基本的な�
   
 1.  Windows Server 2016 ISO の \NanoServer フォルダーにある *NanoServerImageGenerator* フォルダーを、お使いのハード ディスクのフォルダーにコピーします。  
   
-2.  管理者として Windows PowerShell を起動します。NanoServerImageGenerator フォルダーを配置したフォルダーに移動し、次を使ってモジュールをインポートします。 `Import-Module .\NanoServerImageGenerator -Verbose`  
+2.  管理者は、ディレクトリを変更して NanoServerImageGenerator フォルダーに配置を使用して、モジュールをインポートし、フォルダーを Windows PowerShell を起動します。 `Import-Module .\NanoServerImageGenerator -Verbose`  
 >[!NOTE]  
->場合によっては Windows PowerShell 実行ポリシーを調整する必要があります。その場合は、 `Set-ExecutionPolicy RemoteSigned` を使います。  
+>場合によっては Windows PowerShell 実行ポリシーを調整する必要があります。その場合は、 `Set-ExecutionPolicy RemoteSigned` うまく機能する必要があります。  
   
 3.  次のコマンドを実行して、コンピューター名を設定し、Hyper-V **ゲスト ドライバー**を含む Standard Edition の VHD を作成します。コマンドを実行すると、新しい VHD の管理者パスワードの入力を求められます。  
   
-    `New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerVM\NanoServerVM.vhd -ComputerName <computer name>` 説明:  
+    `New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerVM\NanoServerVM.vhd -ComputerName <computer name>` どこ  
   
     -   **-MediaPath <path to root of media\>** には、Windows Server 2016 ISO の内容のルートへのパスを指定します。 たとえば、ISO の内容を d:\TP5ISO にコピーした場合は、そのパスを使用します。  
   
@@ -70,7 +70,7 @@ DHCP を使用して IP アドレスを取得する Nano Server の基本的な�
   
 7.  Nano Server 仮想マシンの IP アドレスを取得し、Windows PowerShell リモート処理などのリモート管理ツールを使用して、仮想マシンに接続し、リモートで管理します。  
   
-**物理コンピューターでの Nano Server**  
+**物理コンピューター上の Nano Server**  
   
 プレインストールされているデバイス ドライバーを使用して、物理コンピューターで Nano Server を実行する VHD を作成することもできます。 起動したり、ネットワークに接続したりするためにハードウェアに必要なドライバーが提供されていない場合は、このガイドの「ドライバーの追加」セクションの手順に従ってください。  
   
@@ -78,14 +78,14 @@ DHCP を使用して IP アドレスを取得する Nano Server の基本的な�
   
 1.  Windows Server 2016 ISO の \NanoServer フォルダーにある *NanoServerImageGenerator* フォルダーを、お使いのハード ディスクのフォルダーにコピーします。  
   
-2.  管理者として Windows PowerShell を起動します。NanoServerImageGenerator フォルダーを配置したフォルダーに移動し、次を使ってモジュールをインポートします。 `Import-Module .\NanoServerImageGenerator -Verbose`  
+2.  管理者は、ディレクトリを変更して NanoServerImageGenerator フォルダーに配置を使用して、モジュールをインポートし、フォルダーを Windows PowerShell を起動します。 `Import-Module .\NanoServerImageGenerator -Verbose`  
   
 >[!NOTE]  
->場合によっては Windows PowerShell 実行ポリシーを調整する必要があります。その場合は、 `Set-ExecutionPolicy RemoteSigned` を使います。  
+>場合によっては Windows PowerShell 実行ポリシーを調整する必要があります。その場合は、 `Set-ExecutionPolicy RemoteSigned` うまく機能する必要があります。  
   
 3.  次のコマンドを実行して、コンピューター名を設定し、OEM ドライバーと Hyper-V を含む VHD を作成します。コマンドを実行すると、新しい VHD の管理者パスワードの入力を求められます。  
   
-    `New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerPhysical\NanoServer.vhd -ComputerName <computer name> -OEMDrivers -Compute -Clustering` 説明:  
+    `New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerPhysical\NanoServer.vhd -ComputerName <computer name> -OEMDrivers -Compute -Clustering` どこ  
   
     -   **-MediaPath <path to root of media\>** には、Windows Server 2016 ISO の内容のルートへのパスを指定します。 たとえば、ISO の内容を d:\TP5ISO にコピーした場合は、そのパスを使用します。  
   

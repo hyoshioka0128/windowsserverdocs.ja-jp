@@ -1,0 +1,100 @@
+---
+Title: 記憶域の移行サービスの概要
+description: 検索エンジンの結果についての簡単な説明
+author: jasongerend
+ms.author: jgerend
+manager: elizapo
+ms.date: 09/24/2018
+ms.topic: article
+ms.prod: windows-server-threshold
+ms.technology: storage
+ms.openlocfilehash: edc82c996f6877f770454fc6e27ccf5205a7d540
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59843863"
+---
+# <a name="storage-migration-service-overview"></a>記憶域の移行サービスの概要
+
+記憶域の移行サービスでは、Windows Server の新しいバージョンにサーバーを移行するやすくなります。 サーバー上のデータのインベントリを作成し、新しいサーバーにデータと構成を転送するためのグラフィカル ツールを提供します-アプリやユーザーが何も変更することがなく。
+
+このトピックでは、記憶域の移行サービスを使用する、移行プロセスのしくみ、およびはソースと移行先サーバー用の要件について説明します。
+
+## <a name="why-use-storage-migration-service"></a>記憶域の移行サービスを使用する理由
+
+新しいハードウェアまたは仮想マシンに移行するサーバー (または多数のサーバー) ができましたので、記憶域の移行サービスを使用します。 記憶域の移行サービスは、次の手順に従ってように設計されています。
+
+- 複数のサーバーとそのデータをインベントリします。
+- 移行元サーバーからファイル、ファイル共有、およびセキュリティの構成を迅速に転送します。
+- 必要に応じてユーザーとアプリは、既存のデータへのアクセスに何も変更する必要があるないように、(経由で cutting とも呼ばれます)、ソース サーバーの id を引き継ぐ
+- Windows Admin Center ユーザー インターフェイスから 1 つまたは複数の移行を管理します。
+
+![移行元サーバーから移行先サーバー、Azure Vm、または Azure File Sync の構成 (&)、ファイルを移行する記憶域の移行サービスを示す図。](media\overview\storage-migration-service-diagram.png)
+
+**図 1: 記憶域サービスの移行元および変換先**
+
+## <a name="how-the-migration-process-works"></a>移行プロセスのしくみ
+
+移行では、3 つの手順を示します。
+
+1. **サーバーのインベントリ**ファイルと (図 2 に示されている) 構成に関する情報を収集します。
+2. **(コピー) のデータを転送**移行先サーバーへの移行元サーバーからです。
+3. **新しいサーバーへのカット オーバー** (省略可能)。<br>移行先サーバーは、アプリとユーザーが何も変更する必要があるないようにに、ソース サーバーの元の id を想定します。 <br>移行元サーバーがまだ含まれている、同じメンテナンス状態の入力が常にあるファイル (決してファイルを削除、移行元サーバーから) はユーザーとアプリを使用できません。 都合に合わせて、サーバーを解除できます。
+
+![スキャンする準備ができて、サーバーを示すスクリーン ショット](media/migrate/inventory.png)
+**図 2。記憶域の移行サービスがサーバーのインベントリ**
+
+## <a name="requirements"></a>必要条件
+
+記憶域の移行サービスを使用するには、次のものが必要。
+
+- A**移行元サーバー**ファイルとデータを移行するには
+- A**移行先サーバー**に移行する Windows Server 2019 を実行して、同様に機能が、約 50% が遅くなるは Windows Server 2016 および Windows Server 2012 R2
+- **Orchestrator サーバー**移行を管理する Windows Server 2019 を実行しています。  <br>場合は、いくつかのサーバーのみを移行して、Windows Server 2019 が実行されているサーバーのいずれか、オーケストレーターとしてを使用できます。 多くのサーバーを移行する場合は、別の orchestrator サーバーの使用をお勧めします。
+- A **PC またはを実行するサーバー [Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md)** を PowerShell を使用して、移行を管理する場合を除き、記憶域の移行サービスのユーザー インターフェイスを実行します。 Windows Admin Center と Windows Server 2019 バージョン両方以上でなければなりませんバージョンは 1809 します。 
+
+### <a name="security-requirements"></a>セキュリティ要件
+
+- 移行元コンピューターの管理者である移行アカウントを指定します。
+- 対象のコンピューターの管理者である移行アカウントを指定します。
+- Orchestrator コンピューターのファイルとプリンターの共有 (SMB で) ファイアウォール ルールを有効になっている必要があります*受信*します。
+- ソースと変換先のコンピューターで次のファイアウォール規則を有効になっている必要があります*受信*(ただし、既に有効になっていることを必要があります)。
+  - ファイルとプリンターの共有 (SMB 受信)
+  - Netlogon サービス (NP で)
+  - (DCOM で) Windows Management Instrumentation
+  - Windows Management Instrumentation (WMI-In)
+  
+  > [!TIP]
+  > Windows Server 2019 コンピューターに、記憶域の移行サービスのプロキシ サービスをインストールすると、自動的にコンピューターに必要なファイアウォール ポートを開きます。
+- コンピューターは、Active Directory Domain Services ドメインに属している場合する必要がありますすべてフォレストに属している、同じです。 移行先サーバーも必要があります、移行元サーバーと同じドメイン内にカット オーバーする場合、先に送信元のドメイン名を転送する場合。 カット オーバー技術的には、ドメインにわたってが変換先の完全修飾ドメイン名は、ソースと異なるになります.
+
+### <a name="requirements-for-source-servers"></a>移行元サーバーの要件
+
+移行元サーバーには、次のオペレーティング システムのいずれかを実行する必要があります。
+
+- Windows Server 2019
+- Windows Server 2016
+- Windows Server 2012 R2
+- Windows Server 2012
+- Windows Server 2008 R2
+- Windows Server 2008
+- Windows Server 2003 R2
+- Windows Server 2003
+
+### <a name="requirements-for-destination-servers"></a>移行先サーバーの要件
+
+移行先サーバーには、次のオペレーティング システムのいずれかを実行する必要があります。
+
+- Windows Server 2019
+- Windows Server 2016
+- Windows Server 2012 R2
+
+> [!TIP]
+> Windows Server 2019 を実行している移行先サーバーでは、Windows Server の以前のバージョンの転送のパフォーマンス倍精度浮動小数点があります。 このパフォーマンスの向上では、ポートしていない場合は開くために必要なファイアウォールを開くことも、組み込みの記憶域の移行サービス プロキシ サービスを含めることが原因です。
+
+## <a name="see-also"></a>関連項目
+
+- [記憶域の移行サービスを使用してファイル サーバーを移行します。](migrate-data.md)
+- [よく寄せられる質問 (FAQ) の記憶域の移行サービス](faq.md)
+- [記憶域の移行サービスの既知の問題](known-issues.md)

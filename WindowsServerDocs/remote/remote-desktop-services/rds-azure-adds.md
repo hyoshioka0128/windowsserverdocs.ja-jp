@@ -1,6 +1,6 @@
 ---
-title: Azure AD ドメイン サービスとリモート デスクトップ サービス
-description: Azure AD ドメイン サービスを RDS 展開に統合する方法について説明します。
+title: Azure AD Domain Services とリモート デスクトップ サービス
+description: RDS のデプロイに Azure AD Domain Services を統合する方法について説明します。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,64 +13,64 @@ ms.topic: article
 author: christianmontoya
 ms.localizationpriority: medium
 ms.openlocfilehash: e60cf70f1f91ad87046bedf024fe9afc459075b6
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1614519"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59860513"
 ---
-# <a name="integrate-azure-ad-domain-services-with-your-rds-deployment"></a>RDS 展開と共に Azure AD ドメイン サービスを統合します。
+# <a name="integrate-azure-ad-domain-services-with-your-rds-deployment"></a>RDS 展開と Azure AD Domain Services との統合
 
-Windows Server の Active Directory の代わりに、リモート デスクトップ サービスの展開における[Azure AD ドメイン サービス](/azure/active-directory-domain-services/active-directory-ds-overview)(Azure AD DS) を使用することができます。 Azure AD DS には、従来の Windows ワークロードを使って、既存の Azure AD id を使用することができます。
+使用することができます[Azure AD Domain Services](/azure/active-directory-domain-services/active-directory-ds-overview) (Azure AD DS) で Windows Server Active Directory の代わりに、リモート デスクトップ サービス展開します。 Azure AD DS を使用して、既存のクラシック Windows ワークロードを使用して Azure AD の id を使用できます。
 
-Azure AD DS には、次のことができます。 
-- 生まれた日で-雲の組織のローカルのドメインを使用した Azure 環境を作成します。 
-- サイト間の VPN または ExpressRoute を作成するのにはせずに、オンプレミスとオンライン環境では、使用する同じ id では、独立した Azure 環境を作成します。 
+Azure AD DS は、次のことができます。 
+- Born で-クラウド組織のローカル ドメインと Azure 環境を作成します。 
+- サイト対サイト VPN または ExpressRoute を作成することがなく、オンプレミスとオンラインの環境に使用する同じ id で分離された Azure 環境を作成します。 
 
-Azure AD DS に統合する、リモート デスクトップの展開が完了したら、次のようなものをアーキテクチャになります。
+リモート デスクトップのデプロイに Azure AD DS の統合が完了したら、アーキテクチャは次のようになります。
 
-![Azure AD ds RDS が表示されているアーキテクチャの図](media/aadds-rds.png)
+![Azure AD DS で RDS を示す、アーキテクチャ図](media/aadds-rds.png)
 
-このアーキテクチャを他の RDS 展開シナリオを比較する方法を参照するには、[リモート デスクトップ サービス アーキテクチャ](desktop-hosting-logical-architecture.md)を確認します。
+このアーキテクチャを他の RDS の展開シナリオを比較する方法については、チェック アウト[リモート デスクトップ サービスのアーキテクチャ](desktop-hosting-logical-architecture.md)します。
 
-Azure AD DS の理解を深めるを移動するには、 [Azure AD DS の概要](/azure/active-directory-domain-services/active-directory-ds-overview)と[Azure AD DS が、ユース ケースに適したオプションの決定方法](/azure/active-directory-domain-services/active-directory-ds-comparison)を確認します。
+Azure AD DS の理解を深めるためには、チェック アウト、 [Azure AD DS の概要](/azure/active-directory-domain-services/active-directory-ds-overview)と[Azure AD DS がユース ケースに適したかどうかを判断する方法](/azure/active-directory-domain-services/active-directory-ds-comparison)します。
 
-次の情報を使って RDS に関する Azure の AD DS を展開するには
+次の情報を使用して、RDS に関する Azure の AD DS の展開
 
 ## <a name="prerequisites"></a>前提条件
 
-前に、[ユーザーの id のハッシュ パスワードを保存する Azure AD を構成する](/azure/active-directory-domain-services/active-directory-ds-getting-started-password-sync)RDS 展開で使用する Azure AD からユーザーをインポートできます。 生まれた日で-雲組織は、そのディレクトリで、変更を加える必要はありません。ただし、オンプレミスの組織では、同期化と一部の組織に許容されることができないことがありますが、Azure AD に格納されているパスワード ハッシュを許可する必要があります。 ユーザーは、この設定を変更した後、パスワードを再設定する必要があります。
+する前に、id、RDS デプロイで使用する Azure AD から[、ユーザーの id のハッシュされたパスワードを保存する Azure AD 構成](/azure/active-directory-domain-services/active-directory-ds-getting-started-password-sync)します。 Born で-クラウド組織は、自分のディレクトリで、追加の変更を行う必要はありません。ただし、オンプレミス組織では、パスワード ハッシュを同期し、一部の組織にとって許容できない可能性がありますが、Azure AD に格納できるようにする必要があります。 ユーザーは、この構成の変更を行った後、パスワードをリセットする必要があります。
 
-## <a name="deploy-azure-ad-ds-and-rds"></a>Azure AD DS と RDS を展開します。 
-Azure AD DS と rds. を展開する次の手順を行う
+## <a name="deploy-azure-ad-ds-and-rds"></a>Azure AD DS と RDS をデプロイします。 
+次の手順を使用して、Azure AD DS と rds. をデプロイするには
 
-1. [Azure AD DS](/azure/active-directory-domain-services/active-directory-ds-getting-started)を有効にします。 リンク先の記事は、次のことにご注意ください。
-   - 適切な作成順を追って Azure AD ドメインの管理グループ。
-   - 強制的に自分のアカウントが Azure AD DS で動作するために、ユーザーのパスワードを変更するのには、ユーザーが含まれている可能性がありますが強調表示します。
+1. 有効にする[Azure AD DS](/azure/active-directory-domain-services/active-directory-ds-getting-started)します。 リンクされている記事は、次のことに注意してください。
+   - 適切な作成順を追ってドメイン管理用の Azure AD のグループ。
+   - 強制的にユーザーが自分のアカウントが Azure AD DS で動作するために自分のパスワードを変更する必要がありますと強調表示します。
    
-2. Rds. を設定します。 Azure テンプレートを使用するか、RDS を手動で配置します。
-   - [広告の既存のテンプレート](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/)を使用します。 以下のカスタマイズを確認します。
+2. Rds. をセットアップします。 Azure テンプレートを使用してか、手動で RDS をデプロイします。
+   - 使用して、 [Existing AD テンプレート](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/)します。 以下のカスタマイズをようにします。
    
       - **設定**
-         - **[リソース グループ]**: [リソース グループ] を使用して、RDS のリソースを作成します。
+         - **リソース グループ**:RDS のリソースを作成するリソース グループを使用します。
          > [!NOTE] 
-         > ここでは、Azure リソース マネージャーの仮想ネットワークが存在する同じリソース グループにする必要があります。
+         > ここでは、Azure resource manager 仮想ネットワークが存在する同じリソース グループにする必要があります。
 
-         - **Dns ラベル プレフィックス**: URL を入力してユーザーが RD Web へのアクセスに使用します。
-         - **ドメイン名の ad**: Azure AD インスタンス、たとえば、"contoso.onmicrosoft.com"または"contoso.com"の完全な名前を入力します。
-         - **Ad Vnet の名前**と**Ad サブネットの名前**: Azure リソース マネージャーの仮想ネットワークを作成するときに使用したのと同じ値を入力します。 これは、RDS リソースが接続するサブネットです。
-         - **管理者のユーザー名**と**パスワードの管理**: Azure AD で**AAD DC の管理者**グループのメンバーである管理者ユーザーの資格情報を入力します。
+         - **Dns ラベルのプレフィックス**:URL を入力するユーザー RD Web アクセスに使用します。
+         - **Ad ドメイン名**:"Contoso.onmicrosoft.com"または"contoso.com"など、Azure AD インスタンスの完全名を入力します。
+         - **Ad Vnet 名**と**Ad サブネット名**:Azure resource manager 仮想ネットワークを作成したときに使用したのと同じ値を入力します。 これは、RDS リソースの接続先サブネットです。
+         - **管理者のユーザー名**と**管理者パスワード**:メンバーであるユーザーが管理者の資格情報を入力、 **AAD DC Administrators** Azure AD でグループ化します。
    
       - **テンプレート**
-         - **DnsServers**のすべてのプロパティを削除する:"dnsServers"Azure のクイック スタート テンプレートのページから**編集するテンプレート**を選択すると、検索して、プロパティを削除します。 
+         - すべてのプロパティを削除**dnsServers**: 選択した後**テンプレートの編集**Azure クイック スタート テンプレートのページから"dnsServers"を検索し、プロパティを削除します。 
 
-            たとえば、前に、 **dnsServers**プロパティを削除します。
+            削除する前に、たとえば、 **dnsServers**プロパティ。
       
-            ![DnsSettings プロパティと azure のクイック スタート テンプレート](media/rds-remove-dnssettings-before.png)
+            ![DnsSettings プロパティを使用して azure クイック スタート テンプレート](media/rds-remove-dnssettings-before.png)
 
-            プロパティを削除した後、同じファイルを示します。
+            プロパティを削除した後、同じファイルを次に示します。
 
-            ![削除 dnsSettings プロパティと azure のクイック スタート テンプレート](media/rds-remove-dnssettings-after.png)
+            ![削除 dnsSettings プロパティを使用して azure クイック スタート テンプレート](media/rds-remove-dnssettings-after.png)
    
-   - [展開 RDS 手動で](rds-deploy-infrastructure.md)します。 
+   - [RDS の展開を手動で](rds-deploy-infrastructure.md)します。 
 

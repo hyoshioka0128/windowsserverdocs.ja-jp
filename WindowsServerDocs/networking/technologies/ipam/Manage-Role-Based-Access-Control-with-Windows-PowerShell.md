@@ -1,5 +1,5 @@
 ---
-title: 役割ベースの管理アクセスを Windows PowerShell での制御
+title: Windows PowerShell で役割ベースのアクセス制御を管理する
 description: このトピックでは、Windows Server 2016 での IP アドレス管理 (IPAM) の管理ガイドの一部です。
 manager: brianlic
 ms.custom: na
@@ -13,31 +13,32 @@ ms.topic: article
 ms.assetid: 4f13f78e-0114-4e41-9a28-82a4feccecfc
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: df6fa423a4ec891f1ad3faefad6c6054519542c4
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: e0318db1b2b1b2730ee6dc57b7b9df6d16fe57e8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59841473"
 ---
-# <a name="manage-role-based-access-control-with-windows-powershell"></a>役割ベースの管理アクセスを Windows PowerShell での制御
+# <a name="manage-role-based-access-control-with-windows-powershell"></a>Windows PowerShell で役割ベースのアクセス制御を管理する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-このトピックを使用すると、IPAM を使用して Windows PowerShell で役割ベースのアクセス制御を管理するのに方法について説明します。  
+このトピックを使用すると、IPAM を使用して、Windows PowerShell を使用したロールベースのアクセス制御を管理するのに方法について説明します。  
   
 >[!NOTE]
->IPAM の Windows PowerShell コマンドのリファレンスを参照してください。 [Windows PowerShell の IP アドレス管理 (IPAM) サーバー コマンドレット](https://technet.microsoft.com/library/jj553807.aspx)します。  
+>IPAM の Windows PowerShell コマンドのリファレンスを参照してください、 [Windows PowerShell のコマンドレットは IpamServer](https://docs.microsoft.com/powershell/module/ipamserver/?view=win10-ps)します。  
   
-新しい Windows PowerShell の IPAM のコマンドは、取得し、DNS および DHCP のオブジェクトのアクセス スコープを変更する機能を提供します。 次の表は、IPAM オブジェクトごとに使用する正しいコマンドを示しています。  
+Windows PowerShell の IPAM の新しいコマンドは、取得し、DNS および DHCP のオブジェクトのアクセス スコープを変更する機能を提供します。 次の表は、IPAM オブジェクトごとに使用する適切なコマンドを示しています。  
   
 |IPAM オブジェクト|コマンド|説明|  
 |---------------|-----------|---------------|  
-|DNS サーバー|Get IpamDnsServer|このコマンドレットは、IPAM の DNS サーバー オブジェクトを返します|  
-|DNS ゾーン|Get IpamDnsZone|このコマンドレットは、IPAM の DNS ゾーンのオブジェクトを返します|  
-|DNS リソース レコード|Get IpamResourceRecord|このコマンドレットは、IPAM の DNS リソース レコード オブジェクトを返します|  
-|DNS 条件付きフォワーダ|Get IpamDnsConditionalForwarder|このコマンドレットは、IPAM では、DNS 条件付きフォワーダのオブジェクトを返します|  
-|DHCP サーバー|Get IpamDhcpServer|このコマンドレットは、IPAM で DHCP サーバー オブジェクトを返します|  
-|DHCP スーパースコープ|Get IpamDhcpSuperscope|このコマンドレットは、IPAM で DHCP スーパースコープ オブジェクトを返します|  
+|DNS サーバー|Get-IpamDnsServer|このコマンドレットは、IPAM の DNS サーバー オブジェクトを返します|  
+|DNS ゾーン|Get-IpamDnsZone|このコマンドレットは、IPAM の DNS ゾーン オブジェクトを返します|  
+|DNS リソース レコード|Get-IpamResourceRecord|このコマンドレットは、IPAM の DNS リソース レコードのオブジェクトを返します|  
+|DNS 条件付けフォワーダー|Get-IpamDnsConditionalForwarder|このコマンドレットは、IPAM の DNS 条件付けフォワーダー オブジェクトを返します|  
+|DHCP サーバー|Get-IpamDhcpServer|このコマンドレットは、IPAM で DHCP サーバー オブジェクトを返します|  
+|DHCP スーパースコープ|Get-IpamDhcpSuperscope|このコマンドレットは、IPAM で DHCP スーパースコープ オブジェクトを返します|  
 |DHCP スコープ|Get IpamDhcpScope|このコマンドレットは、IPAM で DHCP スコープのオブジェクトを返します|  
   
 次のコマンドの出力の例で、`Get-IpamDnsZone`コマンドレットを取得、 **dublin.contoso.com** DNS ゾーンです。  
@@ -53,8 +54,8 @@ DynamicUpdateStatus  : None
 ScavengeStaleRecords : False  
 ```  
   
-## <a name="setting-access-scopes-on-ipam-objects"></a>IPAM のオブジェクトに対するアクセス スコープの設定  
-IPAM のオブジェクトに対するアクセス スコープを設定するにを使用して、`Set-IpamAccessScope`コマンド。 使用して、親オブジェクトからアクセス スコープを継承するオブジェクトまたはオブジェクトの特定の値にアクセス スコープを設定するには、このコマンドを使用することができます。 このコマンドを使用して構成可能なオブジェクトを次に示します。  
+## <a name="setting-access-scopes-on-ipam-objects"></a>IPAM のオブジェクトへのアクセス スコープの設定  
+使用して IPAM オブジェクトにアクセス スコープを設定することができます、`Set-IpamAccessScope`コマンド。 このコマンドは、オブジェクトの特定の値にアクセス スコープを設定するかによって親オブジェクトからのアクセス スコープを継承するオブジェクトを使用できます。 このコマンドで構成可能なオブジェクトを次に示します。  
   
 -   DHCP スコープ  
   
@@ -62,7 +63,7 @@ IPAM のオブジェクトに対するアクセス スコープを設定する�
   
 -   DHCP スーパースコープ  
   
--   DNS 条件付きフォワーダ  
+-   DNS 条件付けフォワーダー  
   
 -   DNS リソース レコード  
   
@@ -78,7 +79,7 @@ IPAM のオブジェクトに対するアクセス スコープを設定する�
   
 -   IP アドレス サブネット  
   
-構文を次に示します、`Set-IpamAccessScope`コマンド。  
+構文を次に、`Set-IpamAccessScope`コマンド。  
   
 ```  
 NAME  
@@ -116,7 +117,7 @@ SYNTAX
     Set-IpamAccessScope [-IpamBlock] -InputObject <ciminstance[]> [-AccessScopePath <string>] [-IsInheritedAccessScope] [-PassThru] [-CimSession <CimSession[]>] [-ThrottleLimit <int>] [-AsJob] [-WhatIf] [-Confirm]  [<CommonParameters>]  
 ```  
   
-次の例では、DNS ゾーンのアクセス スコープで**dublin.contoso.com**がから変更された**Dublin**に**ヨーロッパ**します。  
+次の例では、DNS ゾーンのアクセス スコープ**dublin.contoso.com**がから変更された**Dublin**に**ヨーロッパ**します。  
   
 ```  
 PS C:\Users\Administrator.CONTOSO> Get-IpamDnsZone -ZoneType Forward -ZoneName dublin.contoso.com  

@@ -1,26 +1,169 @@
 ---
 ms.assetid: 0f2a7f7b-aca8-4e5d-ad67-4258e88bc52f
-title: "Windows Server での記憶域の新機能"
+title: Windows Server での記憶域の新機能
 ms.prod: windows-server-threshold
 ms.author: jgerend
 ms.manager: dongill
 ms.technology: storage
 ms.topic: article
-author: kumudd
-ms.date: 09/15/2016
-ms.openlocfilehash: 9aab6246f7ddc86629834bf20a7d21cc4ce2ec8f
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+author: jasongerend
+ms.date: 10/22/2019
+ms.openlocfilehash: b8b6b1145e5b921fac64c47cbfb1e7489fa3f41e
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59847243"
 ---
-# <a name="whats-new-in-storage-in-windows-server-2016"></a>Windows Server 2016 での記憶域の新機能
+# <a name="whats-new-in-storage-in-windows-server"></a>新機能 Windows Server での記憶域の新機能
 
->適用対象: Windows Server 2016
+>適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
-このトピックでは、Windows Server 2016 の記憶域での新規または変更された機能について説明します。
+このトピックでは、Windows Server 2019、Windows Server 2016 で記憶域の追加または変更された機能を説明し、Windows Server 半期チャネルの解放します。
 
-## <a name="s2d"></a>記憶域スペース ダイレクト  
+## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1809"></a>新機能 Windows Server 2019 および Windows Server バージョンは 1809 で記憶域の新機能
+
+このリリースの Windows Server では、次の変更とテクノロジを追加します。
+
+### <a name="manage-storage-with-windows-admin-center"></a>Windows Admin Center での記憶域を管理します。
+
+[Windows Admin Center](../manage/windows-admin-center/overview.md)サーバー、クラスター、記憶域スペース ダイレクトと Windows 10 Pc のハイパー コンバージド インフラストラクチャを管理するための新しい、ブラウザー ベースのローカル配置されたアプリです。 Windows 以外の追加コストなしし、実稼働環境の準備ができています。
+
+公平にするには、Windows Admin Center には、Windows Server 2019 と、Windows の他のバージョンで実行されている個別のダウンロードが、それが新しいとするお見逃したくはありませんでした.
+
+### <a name="storage-migration-service"></a>ストレージ移行サービス
+
+ストレージ移行サービスは、Windows Server の新しいバージョンにサーバーを移行しやすくする新しいテクノロジです。 このサービスには、データをサーバーにインベントリし、データと構成を新しいサーバーに転送して、必要に応じて古いサーバーの ID を新しいサーバーに移行するツールが用意されているため、アプリとユーザーは何も変更する必要がありません。 詳細については、「[ストレージ移行サービス](storage-migration-service/overview.md)」を参照してください。
+
+### <a id="storage-spaces-direct"></a>記憶域スペース ダイレクト (Windows Server 2019 のみ)
+
+Storage Spaces Direct in Windows Server 2019 機能強化がいくつか (記憶域スペース ダイレクトに含まれていない、Windows Server 半期チャネル)。
+
+- **重複除去と ReFS ボリュームの圧縮**
+
+    重複除去と圧縮 ReFS ファイル システムを同じボリューム上には、最大 10 倍のデータを格納します。 (が[1 回のクリック](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)Windows Admin Center を有効にします)。省略可能な圧縮を使用して可変サイズのチャンク ストアはマルチ スレッドの処理後のアーキテクチャがパフォーマンスに与える影響を最小限の保持中に削減率を最大化します。 それぞれ 64 TB までのボリューム、1 TB までのファイルがサポートされます。
+
+- **永続的なメモリのネイティブ サポート**
+
+    Intel® Optane™ DC PM や NVDIMM-N を含む永続メモリ モジュールに対するネイティブな記憶域スペース ダイレクト サポートで、類を見ないパフォーマンスが引き出されます。 永続メモリは、アクティブなワーキング セットを加速するためのキャッシュとして使用することも、ミリ秒レベルの低待機時間を保証する容量として使用することもできます。 永続メモリは、他のドライブと同様に PowerShell または Windows Admin Center で管理します。
+
+- **エッジで 2 つのノードのハイパー コンバージド インフラストラクチャの回復性を入れ子になった**
+
+    RAID 5+1 から着想を得たまったく新しいソフトウェア回復性オプションで、2 つのハードウェア障害を一度に回避します。 2 ノードの記憶域スペース ダイレクト クラスターで入れ子の回復性を利用すると、一方のサーバー ノードがダウンして他方のサーバー ノードのドライブに障害が発生した場合でも、継続的にアクセス可能な記憶域をアプリと仮想マシンに提供できます。
+
+- **ミラーリング監視サーバーとしてのフラッシュ ドライブを USB を使用して 2 台のサーバー クラスター**
+
+    2 台のサーバー クラスターにおけるミラーリング監視サーバーとして機能するルーターに接続されている安価な USB フラッシュ ドライブを使用します。 バックアップを USB ドライブ クラスター認識して、サーバーがダウンした場合は、最新のデータがどのサーバーにあります。 詳細については、次を参照してください。、 [at Microsoft のブログ ストレージ](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/)します。
+
+- **Windows Admin Center**
+
+    Windows Admin Center の[目的に特化した新しいダッシュボード](../manage/windows-admin-center/use/manage-hyper-converged.md)とエクスペリエンスで、記憶域スペース ダイレクトを管理および監視できます。 ボリュームを作成する、開く、展開する、削除するといった操作をわずか数クリックで実行できます。 クラスター全体から個々の SSD や HDD まで、IOPS や IO 待機時間などのパフォーマンスを監視できます。 Windows Server 2016 および Windows Server 2019 ではコストを追加することなく使用できます。
+
+- **パフォーマンス履歴**
+
+    [組み込みの履歴情報](storage-spaces/performance-history.md)を使用すると、リソース使用率とパフォーマンスを簡単に可視化できます。 コンピューティング、メモリ、ネットワーク、記憶域のカテゴリにわたる 50 以上の重要なカウンターが自動的に収集され、クラスターに最大 1 年間保存されます。 しかも、この機能を使用するために何かをインストール、構成、起動する必要はありません。 Windows Admin Center で可視化することも、照会や処理を PowerShell で行うこともできます。
+
+- **最大 4 つのスケール クラスターあたり PB**
+
+    メディア、バックアップ、およびアーカイブのユース ケースに最適なマルチペタバイトの拡張性を実現します。 Windows Server 2019 の記憶域スペース ダイレクトでは、記憶域プールあたり最大 4 ペタバイト (PB) = 4,000 テラバイトの未加工容量がサポートされます。 関連する容量ガイドラインも引き上げられています。たとえば、作成できるボリューム数が 2 倍になり (32 から 64 に増加)、それぞれの大きさも従来の 2 倍になっています (32 TB から 64 TB に増加)。 複数のクラスターを結合、[クラスター](storage-spaces/cluster-sets.md)の 1 つのストレージの名前空間内でスケールをさらに大きくなります。 詳細については、次を参照してください。、 [at Microsoft のブログ ストレージ](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap/)します。
+
+- **2 倍の高速ミラー アクセラレータを使用したパリティ**
+
+    ミラーリングによって高速化されたパリティを使用すると、記憶域スペース ダイレクトのボリュームを作成できます。このボリュームでは、RAID-1 と RAID-5/6 の良い部分を組み合わせるような形で、一部がミラー、一部がパリティになっています  (が[、予想より容易に](https://www.youtube.com/watch?v=R72QHudqWpE)Windows Admin Center でします)。Windows Server の 2019 ミラー アクセラレータを使用した同等のパフォーマンスが複数の Windows Server 2016 の基準とした最適化に協力してくれた倍増します。
+
+- **ドライブの外れ値検出の待機時間**
+
+    長期にわたって Microsoft Azure での実績があるアプローチから着想を得て、プロアクティブな監視と組み込みの外れ値検出により、待機時間が異常なドライブを容易に特定します。 平均待機時間であっても、突出した 99 パーセンタイルの待機時間のように微妙な数値であっても、PowerShell と Windows Admin Center では、低速のドライブには自動的に Abnormal Latency という状態のラベルが付けられます。
+
+- **フォールト トレランスを強化するボリュームの割り当てを手動で区切る**
+
+    これにより、手動で記憶域スペース ダイレクトのボリュームの割り当てを区切るために管理者ができます。 そのため、特定の状況では、フォールト トレランスを大幅に増加することができますは、いくつかの追加の管理に関する考慮事項と複雑さです。 詳細については、次を参照してください。[ボリュームの割り当てを区切る](storage-spaces/delimit-volume-allocation.md)します。
+
+### <a name="storage-replica2019"></a>記憶域レプリカ
+
+機能強化がいくつか[記憶域レプリカ](storage-replica/storage-replica-overview.md)このリリースでは。
+
+#### <a name="storage-replica-in-windows-server-standard-edition"></a>Windows Server Standard Edition での記憶域レプリカ
+
+Windows Server Datacenter Edition だけでなく Standard Edition に記憶域レプリカを使えるようになりました。 Windows Server、Standard Edition で実行されている記憶域レプリカでは、次の制限があります。
+
+- 記憶域レプリカは、ボリューム数が無制限ではなく 1 つのボリュームをレプリケートします。
+- ボリュームは、サイズが無制限ではなく、最大で 2 TB のサイズを持つことができます。
+
+#### <a name="storage-replica-log-performance-improvements"></a>記憶域レプリカのログのパフォーマンスの向上
+
+についても強化しました、記憶域レプリカのログが、レプリケーションを追跡する方法にレプリケーションのスループットと待機時間、オール フラッシュ記憶域と記憶域スペース ダイレクト クラスター相互間でレプリケートするには特に向上します。
+
+パフォーマンスの向上を得るためには、レプリケーション グループのすべてのメンバーは Windows Server 2019 を実行する必要があります。
+
+#### <a name="test-failover"></a>テスト フェールオーバー
+
+これで一時的をテストするための移行先サーバーでレプリケートされたストレージのスナップショットをマウントしたり、バックアップの目的です。 詳細については、「[記憶域レプリカについてよく寄せられる質問](https://aka.ms/srfaq)」をご覧ください。
+
+#### <a name="windows-admin-center-support"></a>Windows Admin Center サポート
+
+グラフィカルな管理レプリケーションのサポートは現在 Windows Admin Center でサーバー マネージャー ツールを使用しています。 これには、サーバー間のレプリケーション、クラスター間だけでなくストレッチ クラスター レプリケーションが含まれます。
+
+#### <a name="miscellaneous-improvements"></a>その他の改善
+
+記憶域レプリカでは、次の機能強化も含まれています。
+
+-   今すぐに自動フェールオーバーが発生するように、非同期を変更しますストレッチ クラスターの動作
+-   複数のバグ修正
+
+### <a name="smb"></a>SMB
+
+- **SMB1 とゲスト認証削除**:Windows Server では、既定で、SMB1 クライアントとサーバーが不要になったインストールされます。 さらに、SMB2 以降のゲストとして認証する機能は、既定で無効になっています。 詳細については、[Windows 10 バージョン 1709 および Windows Server 1709 のバージョンで、SMBv1 が 既定でインストールされない問題に関するページ](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)をご覧ください。 
+
+- **SMB2/SMB3 セキュリティおよび互換性**:署名またはクライアントからの接続ごとに暗号化を必要とするほか、従来のアプリケーションの SMB2 + での各 oplock を無効にする機能などのセキュリティとアプリケーションの互換性のための追加のオプションが追加されました。 詳細については、SMBShare PowerShell モジュールのヘルプを確認してください。
+
+### <a name="data-deduplication"></a>データ重複除去
+
+- **データ重複除去を今すぐには、ReFS がサポートしている**:不要になった選択 ReFS の最新のファイル システムの長所とデータ重複除去間する必要があります: ReFS を有効にできる任意の場所にデータ重複除去が有効にできますが、ようになりました。 ReFS によって記憶域の効率が 95% 以上向上します。
+- **重複除去されたボリュームに最適化されたイングレス/エグレスのデータポート API**:開発者では、データ重複除去ボリューム、サーバー間でデータを移動するには、効率的にデータを格納する方法の詳細については、クラスターを効率的にサポート技術情報の今すぐ利用できます。
+
+### <a name="file-server-resource-manager"></a>ファイル サーバー リソース マネージャー
+
+Windows Server 2019 には、サービスの起動時に、すべてのボリュームでファイル サーバー リソース マネージャー サービスが、変更ジャーナル (USN ジャーナルとも呼ばれます) を作成できないようにする機能が含まれます。 これにより、各ボリューム上の領域を節約できますが、リアルタイムのファイル分類は無効になります。 詳細については、「[ファイル サーバー リソース マネージャーの概要](fsrm/fsrm-overview.md)」を参照してください。
+
+## <a name="whats-new-in-storage-in-windows-server-version-1803"></a>新機能 Windows Server、バージョン 1803 で記憶域の新機能
+
+### <a name="file-server-resource-manager"></a>ファイル サーバー リソース マネージャー
+
+Windows Server、バージョン 1803 に機能をファイル サーバー リソース マネージャー サービスが変更ジャーナル (USN ジャーナルとも呼ばれます) を作成するを防ぐためにすべてのボリュームでサービスの起動時に。 これにより、各ボリューム上の領域を節約できますが、リアルタイムのファイル分類は無効になります。 詳細については、「[ファイル サーバー リソース マネージャーの概要](fsrm/fsrm-overview.md)」を参照してください。
+
+## <a name="whats-new-in-storage-in-windows-server-version-1709"></a>新機能 Windows Server バージョン 1709 で記憶域の新機能
+
+Windows Server、バージョン 1709 は半期チャネルで最初の Windows Server リリースです。 半期チャネルは、ソフトウェア アシュアランスの特典では 6 か月ごとの新しいバージョンの 18 か月間には、実稼働環境で完全にサポートします。
+
+詳しくは、「[Windows Server の半期チャネルの概要](../get-started/semi-annual-channel-overview.md)」をご覧ください。
+
+### <a name="storage-replica"></a>記憶域レプリカ
+
+記憶域レプリカによって追加されたディザスター リカバリー保護を含めるように拡張ようになりました。
+
+- **テスト フェールオーバー**: 宛先の記憶域をマウントするオプションが、テスト フェールオーバー機能によって可能になりました。 レプリケートされた記憶域のスナップショットを、宛先ノードで、テストやバックアップの目的で、一時的にマウントすることができます。 詳細については、「[記憶域レプリカについてよく寄せられる質問](https://aka.ms/srfaq)」をご覧ください。
+- **Windows Admin Center サポート**:グラフィカルな管理レプリケーションのサポートは現在 Windows Admin Center でサーバー マネージャー ツールを使用しています。 これには、サーバー間のレプリケーション、クラスター間だけでなくストレッチ クラスター レプリケーションが含まれます。
+
+記憶域レプリカでは、次の機能強化も含まれています。
+
+-   今すぐに自動フェールオーバーが発生するように、非同期を変更しますストレッチ クラスターの動作
+-   複数のバグ修正
+
+### <a name="smb"></a>SMB
+
+- **SMB1 とゲスト認証削除**:Windows Server、バージョン 1709 されなく SMB1 クライアントとサーバーの既定でインストールされます。 さらに、SMB2 以降のゲストとして認証する機能は、既定で無効になっています。 詳細については、[Windows 10 バージョン 1709 および Windows Server 1709 のバージョンで、SMBv1 が 既定でインストールされない問題に関するページ](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)をご覧ください。 
+
+- **SMB2/SMB3 セキュリティおよび互換性**:署名またはクライアントからの接続ごとに暗号化を必要とするほか、従来のアプリケーションの SMB2 + での各 oplock を無効にする機能などのセキュリティとアプリケーションの互換性のための追加のオプションが追加されました。 詳細については、SMBShare PowerShell モジュールのヘルプを確認してください。
+
+### <a name="data-deduplication"></a>データ重複除去
+
+- **データ重複除去を今すぐには、ReFS がサポートしている**:不要になった選択 ReFS の最新のファイル システムの長所とデータ重複除去間する必要があります: ReFS を有効にできる任意の場所にデータ重複除去が有効にできますが、ようになりました。 ReFS によって記憶域の効率が 95% 以上向上します。
+- **重複除去されたボリュームに最適化されたイングレス/エグレスのデータポート API**:開発者では、データ重複除去ボリューム、サーバー間でデータを移動するには、効率的にデータを格納する方法の詳細については、クラスターを効率的にサポート技術情報の今すぐ利用できます。
+
+## <a name="whats-new-in-storage-in-windows-server-2016"></a>Windows Server 2016 での記憶域の新機能
+
+### <a name="s2d"></a>記憶域スペース ダイレクト  
 記憶域スペース ダイレクトでは、ローカル記憶域を持つサーバーを使用して高可用性を備えた拡張性の高い記憶域を作成できます。 ソフトウェア定義ストレージ システムの展開と管理を簡素化し、SATA SSD や NVMe ディスク デバイスなどの新しいクラスのディスク デバイスを使用できるようにします。これは、共有ディスクを使用したクラスター記憶域スペースによるこれまでの環境では実現できませんでした。  
 
 **この変更の利点**  
@@ -32,8 +175,9 @@ ms.lasthandoff: 07/03/2017
 **動作の相違点**  
 この機能は Windows Server 2016 での新規です。  
 
-## <a name="storage-replica"></a>記憶域レプリカ  
-記憶域レプリカでは、サイト間でフェールオーバー クラスターを拡大できるだけでなく、障害復旧用に、サーバー間またはクラスター間で記憶域にとらわれずにブロックレベルで同期レプリケーションを行うことができます。 同期レプリケーションは、クラッシュ前後の整合性が維持されるボリュームを使用した物理サイト内のデータのミラーリングを実現して、ファイル システム レベルでデータがまったく失われないようにします。 非同期レプリケーションは、データが失われる可能性はありますが、大都市圏の範囲を超えてサイトを拡張できます。  
+### <a name="storage-replica"></a>記憶域レプリカ
+
+記憶域レプリカでは、サイト間でフェールオーバー クラスターを拡大できるだけでなく、障害復旧用に、サーバー間またはクラスター間で記憶域にとらわれずにブロックレベルで同期レプリケーションを行うことができます。 同期レプリケーションは、クラッシュ前後の整合性が維持されるボリュームを使用した物理サイト内のデータのミラーリングを実現して、ファイル システム レベルでデータがまったく失われないようにします。 非同期レプリケーションでは、データが失われる可能性はありますが、大都市圏の範囲を超えてサイトを拡張できます。  
 
 **この変更の利点**  
 記憶域レプリケーションでは、次の操作を行うことができます。  
@@ -55,8 +199,8 @@ ms.lasthandoff: 07/03/2017
 **動作の相違点**  
 この機能は Windows Server 2016 での新規です。  
 
-## <a name="storage-qos"></a>記憶域のサービスの品質 (QoS)  
-記憶域のサービスの品質 (QoS) を使用して、Windows Server 2016 でエンドツーエンドの記憶域のパフォーマンスを一元的に監視するとともに、Hyper-V クラスターと CSV クラスターを使用してポリシーを作成できるようになりました。  
+### <a name="storage-qos"></a>記憶域サービスの品質  
+記憶域のサービスの品質 (QoS) を使用して、Windows Server 2016 でエンド ツー エンドの記憶域のパフォーマンスを一元的に監視すると共に、Hyper-V クラスターと CSV クラスターを使用してポリシーを作成できるようになりました。  
 
 **この変更の利点**  
 CSV クラスターで記憶域の QoS ポリシーを作成し、Hyper-V 仮想マシンの仮想ディスク (複数可) にそのポリシーを割り当てることができるようになりました。 記憶域のパフォーマンスは、ワークロードと記憶域の負荷の変動に従って、ポリシーに合わせて自動的に再調整されます。  
@@ -74,17 +218,17 @@ CSV クラスターで記憶域の QoS ポリシーを作成し、Hyper-V 仮想
 
 詳細については、「[記憶域のサービスの品質 (QoS)](storage-qos/storage-qos-overview.md)」を参照してください。
 
-## <a name="dedup"></a>データ重複除去  
-| 機能 | 新機能か更新された機能か | [説明] |
+### <a name="dedup"></a>データ重複除去  
+| 機能 | 新機能か更新された機能か | 説明 |
 |---------------|----------------|-------------|
-| [大量ボリュームのサポート](data-deduplication/whats-new.md#large-volume-support) | 更新済み | Windows Server 2016 の前までは、予期される変更量に合わせてボリュームのサイズを具体的に設定する必要がありました。そして、10 TB 以上のサイズのボリュームは重複除去に適した候補ではありませんでした。 Windows Server 2016 では、データ重複除去は **64 TB まで**のボリューム サイズをサポートしています。 |
-| [大きいファイルのサポート](data-deduplication/whats-new.md#large-file-support) | 更新済み | Windows Server 2016 の前では、1 TB に近いサイズのファイルは重複除去に適した候補ではありませんでした。 Windows Server 2016 では、**1 TB まで**のファイルをは完全にサポートします。 |
+| [大量ボリュームのサポート](data-deduplication/whats-new.md#large-volume-support) | 更新 | Windows Server 2016 の前までは、予期される変更量に合わせてボリュームのサイズを具体的に設定する必要がありました。そして、10 TB 以上のサイズのボリュームは重複除去に適した候補ではありませんでした。 Windows Server 2016 のデータ重複除去では **64 TB まで**のボリューム サイズがサポートされます。 |
+| [大きいファイルのサポート](data-deduplication/whats-new.md#large-file-support) | 更新 | Windows Server 2016 の前では、1 TB に近いサイズのファイルは重複除去に適した候補ではありませんでした。 Windows Server 2016 では、**1 TB まで**のファイルをは完全にサポートします。 |
 | [Nano Server のサポート](data-deduplication/whats-new.md#nano-server-support) | 新規 | Windows Server 2016 の新しい Nano Server 展開オプションでは、データ重複除去が利用可能で、完全にサポートされています。 |
-| [簡略化されたバックアップ サポート](data-deduplication/whats-new.md#simple-backup-support) | 新規 | Windows Server 2012 R2 では、Microsoft の [Data Protection Manager](https://technet.microsoft.com/en-us/library/hh758173.aspx) などの仮想化されたバックアップ アプリケーションは、一連の手動による構成手順を実行することでサポートされていました。 Windows Server 2016 では、仮想化されたバックアップ アプリケーション用にデータ重複除去をシームレスに展開するために、使用法の種類の新しい既定値として "バックアップ" が追加されました。 |
+| [簡略化されたバックアップのサポート](data-deduplication/whats-new.md#simple-backup-support) | 新規 | Windows Server 2012 R2 では、Microsoft の [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx) などの仮想化されたバックアップ アプリケーションは、一連の手動による構成手順を実行することでサポートされていました。 Windows Server 2016 では、仮想化されたバックアップ アプリケーション用にデータ重複除去をシームレスに展開するために、使用法の種類の新しい既定値として "バックアップ" が追加されました。 |
 | [クラスター OS のローリング アップグレードのサポート](data-deduplication/whats-new.md#cluster-upgrade-support) | 新規 | データ重複除去では、Windows Server 2016 の新しい[クラスター OS のローリング アップグレード](..//failover-clustering/cluster-operating-system-rolling-upgrade.md)機能を完全にサポートしています。 |
 
-## <a name="smb-hardening-improvements"></a>SYSVOL と NETLOGON 接続に関する SMB セキュリティ強化の向上  
-Active Directory Domain Servicesへの Windows 10 および Windows Server 2016 のクライアント接続で、ドメイン コント ローラー上の既定の SYSVOL と NETLOGON 共有では、SMB 署名と相互認証 (Kerberos など) を必要とするようになりました。   
+### <a name="smb-hardening-improvements"></a>SMB セキュリティ強化の SYSVOL と NETLOGON 接続用の機能強化  
+Active Directory ドメイン サービスへの Windows 10 および Windows Server 2016 のクライアント接続で、ドメイン コント ローラー上の既定の SYSVOL と NETLOGON 共有では、SMB 署名と相互認証 (Kerberos など) を必要とするようになりました。   
 
 **この変更の利点**  
 この変更は、man-in-the-middle 攻撃の可能性を軽減します。   
@@ -95,20 +239,20 @@ SMB 署名と相互認証が使用できない場合、Windows 10 または Wind
 > [!NOTE]  
 > これらの設定のレジストリ値は既定では存在しませんが、セキュリティ強化の規則は、グループ ポリシーまたはその他のレジストリ値でオーバーライドされるまで引き続き適用されます。  
 
-UNC ハードニングとも呼ばれる、これらのセキュリティ機能強化の詳細については、マイクロソフト サポート技術情報の記事 [3000483](http://support.microsoft.com/kb/3000483) および「[MS15-011 & MS15-014: Hardening Group Policy (MS15-011 & MS15-014: グループ ポリシーのセキュリティ強化)](http://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy)」を参照してください。  
+これらのセキュリティ機能強化の詳細についてに UNC ハードニング、マイクロソフト サポート技術情報の記事を参照してください。 参照も[3000483](https://support.microsoft.com/kb/3000483)と[MS15 011 & MS15 014。セキュリティ強化のグループ ポリシー](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy)します。  
 
-## <a name="work-folders"></a>ワーク フォルダー
-ワーク フォルダー サーバーで Windows Server 2016 を実行し、ワーク フォルダー クライアントでは Windows 10 をしている場合の変更通知が改善されました。
+### <a name="work-folders"></a>ワーク フォルダー
+ワーク フォルダー サーバーには、Windows Server 2016 およびワーク フォルダー クライアントが実行されている場合の強化された変更通知は、Windows 10 です。
 
 **この変更の利点**<br>
-Windows Server 2012 R2 では、ワーク フォルダー サーバーにファイルの変更が同期されるときに、クライアントには変更についての通知が送られず、変更内容が反映されるまでに最大で 10 分かかっていました。  Windows Sever 2016 では、ワーク フォルダー サーバーから Windows 10 クライアントへの通知とファイル変更の同期は即座に行われます。
+Windows Server 2012 R2 では、ワーク フォルダー サーバーにファイルの変更が同期されるときに、クライアントには変更についての通知が送られず、変更内容が反映されるまでに最大で 10 分かかっていました。  ワーク フォルダー サーバーが、Windows 10 クライアントの通知をすぐに Windows Server 2016 を使用する場合と、ファイルの変更がすぐに同期されます。
 
 **動作の相違点**<br>
 この機能は Windows Server 2016 での新規です。 この機能を使用するには、Windows Server 2016 ワーク フォルダー サーバーが必須であり、またクライアントは Windows 10 である必要があります。
 
 古いクライアントを使用しているか、ワーク フォルダー サーバーが Windows Server 2012 R2 である場合、クライアントでは引き続き 10 分ごとに変更を取得します。
 
-## <a name="refs"></a>ReFS 
+### <a name="refs"></a>ReFS 
 新しい ReFS では、データの信頼性、回復性、スケーラビリティを実現し、さまざまなワークロードに対応した大規模な記憶域の展開がサポートされます。     
 
 **この変更の利点**<br>
@@ -116,8 +260,7 @@ ReFS では、以下の点が強化されています。
 
 * ReFS は、新しい記憶域階層の機能を実装しており、高速なパフォーマンスと記憶域容量の増加を実現できます。 この新しい機能では、次のことを実行できます。
     * 同じ仮想ディスクで回復性の種類を複数使用する (たとえば、パフォーマンス階層でミラーリングを使用し、容量階層でパリティを使用します)。
-    * 変動するワーキング セットに対する応答性を向上。 
-    * SMR (シングル磁気記録) メディアのサポート。 
+    * 変動するワーキング セットに対する応答性を向上。  
 * ブロックの複製が導入され、VM の操作 (.vhdx チェックポイントのマージ操作など) のパフォーマンスが大幅に向上します。
 * 新しい ReFS スキャン ツールを使用すると、損傷している記憶域の回復が可能になり、重要な破損からデータを復旧できます。 
 
@@ -125,4 +268,4 @@ ReFS では、以下の点が強化されています。
 これらの機能は、Windows Server 2016 での新機能です。 
 
 ## <a name="see-also"></a>関連項目  
-* [Windows Server 2016 の新機能](../get-started/what-s-new-in-windows-server-2016.md)  
+* [新機能 Windows Server 2016 の新機能](../get-started/what-s-new-in-windows-server-2016.md)  

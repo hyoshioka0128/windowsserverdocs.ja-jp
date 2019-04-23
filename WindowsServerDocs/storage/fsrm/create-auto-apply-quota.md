@@ -1,6 +1,6 @@
 ---
-title: "自動適用クォータを作成する"
-description: "この記事では、クォータ テンプレートに基づいて自動適用クォータを作成する方法について説明します。"
+title: 自動適用クォータを作成する
+description: この記事では、クォータ テンプレートに基づいて自動適用クォータを作成する方法について説明します。
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: e2837df448434252470d783a6c06f0690ba09021
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59847923"
 ---
 # <a name="create-an-auto-apply-quota"></a>自動適用クォータを作成する
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 自動適用クォータを使用すると、クォータのテンプレートを親ボリュームまたは親フォルダーに割り当てることができます。 ファイル サーバー リソース マネージャーが、そのテンプレートに基づくクォータを自動的に生成します。 既存のサブフォルダーだけでなく、今後作成するサブフォルダーにも、クォータが生成されます。
 
@@ -41,5 +42,5 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="see-also"></a>関連項目
 
--   [クオータの管理](quota-management.md)
--   [自動適用クォータのプロパティを編集する](edit-auto-apply-quota-properties.md)
+-   [クォータの管理](quota-management.md)
+-   [編集の自動適用クォータのプロパティ](edit-auto-apply-quota-properties.md)

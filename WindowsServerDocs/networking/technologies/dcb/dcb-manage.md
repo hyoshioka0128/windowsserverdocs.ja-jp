@@ -1,6 +1,6 @@
 ---
 title: データ センター ブリッジング (DCB) の管理します。
-description: このトピックでは、Windows Server 2016 でのデータ センター ブリッジングを管理する Windows PowerShell コマンドを使用する方法について説明します。
+description: このトピックでは、Windows PowerShell コマンドを使用して、Windows Server 2016 でのデータ センター ブリッジングを管理する方法について説明します。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -8,50 +8,51 @@ ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: dbe9e5e4af2ddd834b5b8f38e9ffd1b403e92793
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 3912bb6048a06a4656b5b27ccec8f8fb3f5b114b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59847413"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>データ センター ブリッジング (DCB) の管理します。
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-このトピックでは、Windows PowerShell コマンドを使用して、Windows Server 2016 または Windows 10 のいずれかを実行しているコンピューターにインストールされている DCB\ と互換性のあるネットワーク アダプターのデータ センター ブリッジング \(DCB\) を構成する方法について説明します。
+このトピックでは Windows PowerShell コマンドを使用して、データ センター ブリッジングを構成する方法については\(DCB\) DCB に\-いずれかを実行しているコンピューターにインストールされている互換性のあるネットワーク アダプターWindows Server 2016 または Windows 10。
 
 ## <a name="install-dcb-in-windows-server-2016-or-windows-10"></a>Windows Server 2016 または Windows 10 での DCB をインストールします。
 
-使用して DCB をインストールする方法の前提条件については、次を参照してください。[インストール データ センター ブリッジング (DCB) Windows Server 2016 または Windows 10 で](dcb-install.md)します。
+前提条件を使用して、DCB をインストールする方法については、次を参照してください。[インストール データ センター ブリッジング (DCB) Windows Server 2016 または Windows 10 で](dcb-install.md)します。
 
 
 ## <a name="dcb-configurations"></a>DCB の構成 
 
-Windows Server 2016 では、前にすべての DCB 構成に適用されましたユニバーサル DCB がサポートされているすべてのネットワーク アダプター。 
+Windows Server 2016 では、前に DCB のすべての構成が DCB をサポートされているすべてのネットワーク アダプターに広く適用されます。 
 
-Windows Server 2016 では、グローバル ポリシー ストアまたは個々 のポリシー Store\(s\) DCB 構成を適用できます。 個々 のポリシーの適用時に、すべてのグローバル ポリシー設定が上書きされます。
+Windows Server 2016 では、グローバル ポリシー ストアまたは個々 のポリシー ストアのいずれか、DCB 構成を適用できます\(s\)します。 個々 のポリシーが適用されるときにすべてのグローバル ポリシー設定が上書きされます。
 
-システム レベルでトラフィック クラス、PFC およびアプリケーションの優先順位の割り当ての構成は、次の操作を行うまでネットワーク アダプターでは適用されません。
+システム レベルでトラフィック クラス、PFC およびアプリケーションの優先度の割り当ての構成は、次の操作を行うまでのネットワーク アダプターでは適用されません。
 
-1. False に DCBX 意思ビットを有効にします。
+1. False に DCBX 許容ビットを有効にします。
 
-2. ネットワーク アダプターの DCB を有効にします。 参照してください[を有効にして、ネットワーク アダプターの DCB の設定を表示](#bkmk_enabledcb)します。
+2. ネットワーク アダプターの DCB を有効にします。 参照してください[を有効にして、ディスプレイのネットワーク アダプターの DCB 設定](#bkmk_enabledcb)します。
 
 >[!NOTE]
 >DCBX を通じてスイッチから DCB を構成する場合を参照してください[DCBX 設定。](#BKMK_DCBX_Settings)
 
-DCBX 意思ビットは、DCB 仕様の説明です。 デバイスで許容ビットがセットが true の場合、デバイスでする DCBX を介してリモート デバイスからの構成に対応します。 デバイス上の意思ビットが false に設定されている場合、デバイスがリモート デバイスからすべての構成の試行を拒否して、ローカルの構成のみを実行します。
+DCBX 許容ビットは、DCB 仕様で説明します。 デバイスの許容のビットに設定されているかどうか、デバイスが DCBX を使用してリモート デバイスからの構成を許容できる場合は true、します。 デバイスの許容のビットが false に設定されている場合、デバイスはリモート デバイスからのすべての構成要求を拒否し、ローカルの構成のみを適用します。
 
-DCB は、Windows Server 2016 にインストールされていない場合意思ビットの値は関連する限り、オペレーティング システムは、オペレーティング システムには、ローカル設定のネットワーク アダプターに適用されていないためです。 DCB のインストール後、意思ビットの既定値は true です。 この設計では、リモート ピアから受信したがある可能性があります、どのような構成を保持するネットワーク アダプターを使用します。
+DCB は、Windows Server 2016 にインストールされていない場合、許容されたビットの値は、オペレーティング システムはネットワーク アダプターに適用するローカルの設定があるないため、オペレーティング システムがに関する限りと関係ありません。 DCB をインストールした後、許容されたビットの既定値が true にします。 この設計では、リモート ピアから受け取っている場合は、どのような構成を保持するネットワーク アダプターを使用します。
 
-ネットワーク アダプターが DCBX をサポートしていない場合は、リモート デバイスから構成を受信ことはできません。 それが、構成のオペレーティング システムからの受信が、DCBX した後でのみ可能ビットを false に設定します。
+ネットワーク アダプターが DCBX をサポートしていない場合は、リモート デバイスから構成を受信はことはありません。 オペレーティング システムから構成を受け取ることが、DCBX 後にのみ許容ビットが false に設定します。
 
-## <a name="set-the-willing-bit"></a>意思ビットを設定します。
+## <a name="set-the-willing-bit"></a>許容ビットを設定します。
 
-トラフィック クラス、PFC、およびネットワーク アダプターでアプリケーションの優先順位の割り当てのオペレーティング システムの構成を適用するか、リモート デバイスから構成をオーバーライドするだけで \ — いずれかを使用する必要がある場合 \: 次のコマンドを実行することができます。
+トラフィック クラス、PFC、およびアプリケーションの優先順位の割り当てのネットワーク アダプターでのオペレーティング システムの構成を適用するか、リモート デバイスから構成をオーバーライドするだけで \ などが発生した場合 \: 次のコマンドを実行することができます。
 
 >[!NOTE]
->DCB の Windows PowerShell コマンド名には、名前の文字列に"DCB"ではなく"QoS"が含まれます。 QoS と DCB は、シームレスな QoS 管理エクスペリエンスを提供する Windows Server 2016 に統合されたためにです。
+>DCB の Windows PowerShell のコマンド名には、名前の文字列に"DCB"ではなく"QoS"が含まれます。 QoS と DCB がシームレスな QoS の管理エクスペリエンスを提供する Windows Server 2016 に統合するためです。
 
     
     Set-NetQosDcbxSetting -Willing $FALSE
@@ -62,7 +63,7 @@ DCB は、Windows Server 2016 にインストールされていない場合意�
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
     
 
-設定できるビットの状態を表示するには、次のコマンドを使用できます。
+許容ビット設定の状態を表示するには、次のコマンドを使用できます。
 
     
     Get-NetQosDcbxSetting
@@ -74,19 +75,19 @@ DCB は、Windows Server 2016 にインストールされていない場合意�
 
 ## <a name="dcb-configuration-on-network-adapters"></a>ネットワーク アダプターの DCB 構成
 
-ネットワーク アダプターの DCB を有効にするには、スイッチからネットワーク アダプターに反映される構成を参照することができます。
+ネットワーク アダプターの DCB を有効にするスイッチからネットワーク アダプターに反映される構成を確認することができます。
 
-DCB の構成には、次の手順が含まれます。
+DCB 構成には、次の手順が含まれます。
 
-1.  含まれているシステム レベルでは、DCB 設定を構成します。
+1.  含まれるシステム レベルでは、DCB 設定を構成します。
 
-    します。 トラフィック クラスの管理
+    a.  クラスのトラフィック管理
     
-    B します。 優先度のフロー制御 (PFC) の設定
+    b.  優先度のフロー制御 (PFC) の設定
     
-    C です。 アプリケーションの優先順位の割り当て
+    c. アプリケーションの優先度の割り当て
     
-    D します。 DCBX 設定
+    d. DCBX 設定
 
 2. ネットワーク アダプターの DCB を構成します。
 
@@ -98,7 +99,7 @@ DCB の構成には、次の手順が含まれます。
 
 ### <a name="create-a-traffic-class"></a>トラフィック クラスを作成します。
 
-使用することができます、**新規 NetQosTrafficClass**トラフィック クラスを作成するコマンドです。
+使用することができます、**新規 NetQosTrafficClass**トラフィック クラスを作成するコマンド。
 
     
     New-NetQosTrafficClass -Name SMB -Priority 4 -BandwidthPercentage 30 -Algorithm ETS
@@ -108,15 +109,15 @@ DCB の構成には、次の手順が含まれます。
     SMB  ETS   30   4Global
       
 
-既定では、802.1 p のすべての値は、物理リンクの帯域幅を 100% が既定のトラフィックのクラスにマップされます。 **新規 NetQosTrafficClass**コマンドが新しいトラフィック クラスを作成し、値の 4 802.1p の優先順位のタグが付け、そのパケットにマップされています。 転送の選択アルゴリズム \(TSA\) ETS、帯域幅の 30% です。
+既定では、802.1 p のすべての値は、物理的なリンクの帯域幅の 100% が既定のトラフィックのクラスにマップされます。 **新規 NetQosTrafficClass**コマンドは、新しいトラフィック クラスを作成、マップされているパケット 802.1p の優先順位のタグ付けされている値に 4。 転送の選択アルゴリズム\(TSA\) ETS であり、帯域幅の 30% です。
 
-最大 7 新しいトラフィック クラスを作成することができます。 既定のトラフィック クラスなどがあります最大で 8 トラフィック クラス、システムで。 ただし、DCB 対応のネットワーク アダプターでは、多くトラフィック クラス、ハードウェアでのことができません。 ネットワーク アダプターに対応できるよりも多くのトラフィック クラスを作成する、そのネットワーク アダプターの DCB を有効にした場合は、ミニポート ドライバーは、オペレーティング システムにエラーを報告します。 エラーは、イベント ログに記録されます。
+最大 7 の新しいトラフィック クラスを作成することができます。 既定のトラフィック クラスなどがあります最大 8 トラフィック クラス、システムで。 ただし、DCB 対応のネットワーク アダプターでは、多くトラフィックにハードウェア クラスのことができません。 ネットワーク アダプターに格納できるよりもより多くのトラフィック クラスを作成し、そのネットワーク アダプターの DCB を有効にすると、ミニポート ドライバーはオペレーティング システムにエラーを報告します。 エラーは、イベント ログに記録されます。
 
-作成されたトラフィック クラスのすべての帯域幅予約の合計は、99% の帯域幅を超えない場合があります。 既定のトラフィック クラスには、必ず自体用に予約する帯域幅の 1% 以上があります。
+すべてのトラフィックが作成されたクラスの帯域幅予約の合計帯域幅の 99% を超えないことがあります。 既定のトラフィック クラスは、常に自身の予約済み帯域幅の 1% 以上を持ちます。
 
 ### <a name="display-traffic-classes"></a>トラフィック クラスを表示します。
 
-使用することができます、**Get-netqostrafficclass**トラフィック クラスを表示するコマンドです。
+使用することができます、 **Get-netqostrafficclass**トラフィック クラスを表示するコマンド。
 
     Get-NetQosTrafficClass
     
@@ -127,11 +128,11 @@ DCB の構成には、次の手順が含まれます。
     
 ### <a name="modify-a-traffic-class"></a>トラフィック クラスを変更します。
 
-使用することができます、**セット NetQosTrafficClass**トラフィック クラスを作成するコマンドです。 
+使用することができます、**セット NetQosTrafficClass**トラフィック クラスを作成するコマンド。 
 
     Set-NetQosTrafficClass -Name SMB -BandwidthPercentage 50
 
-使用して、**Get-netqostrafficclass**設定を表示するコマンドです。
+使用することができますし、 **Get-netqostrafficclass**設定を表示するコマンド。
 
     Get-NetQosTrafficClass
     
@@ -143,15 +144,15 @@ DCB の構成には、次の手順が含まれます。
 
 トラフィック クラスを作成した後は、その設定を変更することができますとは独立しています。 変更できる設定は次のとおりです。
 
-1. 帯域幅割り当て \(-BandwidthPercentage\)
+1. 帯域幅割り当て\(-BandwidthPercentage\)
 
-2. TSA (\-Algorithm\)
+2. TSA (\-アルゴリズム\)
 
-3. 優先順位のマッピング \(-Priority\)
+3. 優先度のマッピング\(-優先順位\)
 
 ### <a name="remove-a-traffic-class"></a>トラフィック クラスを削除します。
 
-使用することができます、**削除 NetQosTrafficClass**トラフィック クラスを削除するコマンドです。
+使用することができます、**削除 NetQosTrafficClass**トラフィック クラスを削除するコマンド。
 
 >[!IMPORTANT]
 >既定のトラフィック クラスを削除することはできません。
@@ -159,7 +160,7 @@ DCB の構成には、次の手順が含まれます。
 
     Remove-NetQosTrafficClass -Name SMB
 
-使用して、**Get-netqostrafficclass**設定を表示するコマンドです。
+使用することができますし、 **Get-netqostrafficclass**設定を表示するコマンド。
     
     Get-NetQosTrafficClass
     
@@ -168,13 +169,13 @@ DCB の構成には、次の手順が含まれます。
     [Default]   ETS   100  0-7  Global
     
 
-トラフィック クラスを削除した後、802.1 p の値にマップ トラフィック クラスが既定のトラフィック クラスを再マップされます。 トラフィック クラス用に予約されているすべての帯域幅は、トラフィック クラスを削除すると、既定のトラフィック クラスの割り当てに返されます。
+トラフィック クラスを削除した後、802.1 p 値にマップ トラフィック クラスは既定のトラフィック クラスにリマップします。 トラフィック クラス用に予約されているすべての帯域幅は、トラフィック クラスが削除されると、既定の割り当てをトラフィック クラスに返されます。
 
 ## <a name="per-network-interface-policies"></a>ネットワーク インターフェイスのポリシー
 
 すべての上記の例は、グローバル ポリシーを設定します。 設定し、NIC ごとのポリシーを取得する方法の例を次に示します。 
 
-"PolicySet"フィールドは、グローバルから AdapterSpecific に変更します。 AdapterSpecific ポリシーが表示されますが、インターフェイス インデックス \(ifIndex\) とインターフェイス名 \(ifAlias\) も表示されます。
+"PolicySet"フィールドは、グローバルから AdapterSpecific に変更します。 AdapterSpecific ポリシーが表示されている場合、インターフェイス インデックス\(ifIndex\)インターフェイス名と\(ifAlias\)も表示されます。
 
 ```
 PS C:\> Get-NetQosTrafficClass
@@ -226,9 +227,9 @@ SMBforM1    ETS       30           4                AdapterSpecific  4       M1
 
 ## <a name="priority-flow-control-settings"></a>優先度のフロー制御の設定:
 
-コマンドの優先度のフロー制御の設定の例を次に示します。 これらの設定は、個別のアダプターのも指定することができます。
+優先度のフロー制御の設定コマンドの例を次に示します。 これらの設定は、個別のアダプターに対しても指定できます。
 
-### <a name="enable-and-display-priority-flow-control-for-global-and-interface-specific-use-cases"></a>有効にして表示優先度のフロー制御グローバルとインターフェイスの特定のユース ケース
+### <a name="enable-and-display-priority-flow-control-for-global-and-interface-specific-use-cases"></a>有効にして表示優先度のフロー制御のグローバルおよびインターフェイスの特定のユース ケース
 
 ```
 PS C:\> Enable-NetQosFlowControl -Priority 4
@@ -296,9 +297,9 @@ Priority   Enabled    PolicySet        IfIndex IfAlias
 
 ```
 
-##  <a name="application-priority-assignment"></a>アプリケーションの優先順位の割り当て
+##  <a name="application-priority-assignment"></a>アプリケーションの優先度の割り当て
 
-優先順位の割り当ての例を次に示します。
+優先度の割り当ての例を次に示します。
 
 ### <a name="create-qos-policy"></a>QoS ポリシーを作成します。
 
@@ -314,15 +315,15 @@ PriorityValue  : 4
 
 ```
 
-前のコマンドは、SMB の新しいポリシーを作成します。 – SMB は、TCP ポート 445 (SMB 用に予約) に一致する受信トレイ フィルターです。 TCP ポート 445 802.1p の値は 4 の前に、オペレーティング システムがタグが付けられてにパケットが送信される場合は、パケットがネットワークのミニポート ドライバーに渡されます。
+前のコマンドでは、SMB の新しいポリシーを作成します。 – SMB は、TCP ポート 445 (SMB の予約済み) に一致する受信トレイ フィルターです。 TCP ポート 445、802.1 p の値の前に 4 オペレーティング システムでタグ付けされますにパケットが送信された場合は、パケットがネットワークのミニポート ドライバーに渡されます。
 
-– ISCSI (で、[一致する TCP ポート 3260)、NFS (で、[一致する TCP ポート 2049)、LiveMigration (で、[一致する TCP ポート 6600)、(EtherType 0x8906 に一致する) - FCOE および – NetworkDirect – SMB、だけでなく他の既定のフィルターが含まれます。
+– ISCSI (で、一致する TCP ポート 3260)、NFS (で、一致する TCP ポート 2049)、LiveMigration (で、一致する TCP ポート 6600)、- FCOE (EtherType 0x8906 の一致) および – NetworkDirect – SMB に加えて、他の既定のフィルターが含まれます。
 
-NetworkDirect は、すべてのネットワーク アダプターで RDMA の実装の上に作成の抽象レイヤーです。 – NetworkDirect の後に Network Direct ポートを指定する必要があります。
+NetworkDirect は、抽象層、ネットワーク アダプターの RDMA の実装の上に作成します。 – NetworkDirect の後に Network Direct のポートを指定する必要があります。
 
-既定のフィルターだけでなく (に示すように、最初の例)、アプリケーションの実行可能ファイル名または IP アドレス、ポート、またはプロトコル (のように、2 番目の例) トラフィックを分類できます。
+(例のように、最初次)、アプリケーションの実行可能ファイル名または IP アドレス、ポート、またはプロトコル (2 番目の例で示す) のようにトラフィックを分類するだけでなく、既定のフィルター。
 
-**実行可能ファイル名を**
+**によって実行可能ファイル名**
 
 ```
 PS C:\> New-NetQosPolicy -Name background -AppPathNameMatchCondition "C:\Program files (x86)\backup.exe" -PriorityValue8021Action 1
@@ -421,11 +422,11 @@ Remove-NetQosPolicy -Name "Network Management" -Store GPO:localhost
 
 ## <a name="dcb-configuration-on-network-adapters"></a>ネットワーク アダプターの DCB 構成
 
-ネットワーク アダプターの DCB 構成は、上記で説明した、システム レベルでの DCB 構成依存しません。 
+ネットワーク アダプターの DCB 構成では、上記で説明した、システム レベルでの DCB 構成依存しません。 
 
-Windows Server 2016 で DCB がインストールされているかどうかに関係なく常に、次のコマンドを実行することができます。 
+Windows Server 2016 で DCB をインストールするかどうかに関係なく常に、次のコマンドを実行することができます。 
 
-スイッチから DCB を構成してのネットワーク アダプターに構成して反映されるまで DCBX に依存すると、どのような構成が受信され、ネットワーク アダプターの DCB を有効にした後に、オペレーティング システムの側面からネットワーク アダプターに適用されるを確認することができます。
+スイッチから DCB を構成してネットワーク アダプターに構成を伝達する DCBX に依存して、どのような構成が受信され、ネットワーク アダプターの DCB を有効にした後に、オペレーティング システム側からのネットワーク アダプターに適用を調べることができます。
 
 ###  <a name="bkmk_enabledcb"></a>ネットワーク アダプターの DCB 設定を有効にして表示
 
@@ -471,16 +472,16 @@ Capabilities :                       Hardware     Current
 ```
 ## <a name="bkmk_wps"></a>DCB の Windows PowerShell コマンド
 
-Windows Server 2016 および Windows Server 2012 R2 の両方の DCB の Windows PowerShell コマンドもあります。 Windows Server 2016 での Windows Server 2012 R2 のすべてのコマンドを使用することができます。
+Windows Server 2016 と Windows Server 2012 R2 の両方の DCB Windows PowerShell コマンドもあります。 Windows Server 2016 での Windows Server 2012 R2 のすべてのコマンドを使用できます。
 
-### <a name="windows-server-2016-windows-powershell-commands-for-dcb"></a>DCB の Windows PowerShell コマンドを Windows Server 2016
+### <a name="windows-server-2016-windows-powershell-commands-for-dcb"></a>DCB の Windows Server 2016 の Windows PowerShell のコマンド
 
-Windows Server 2016 用の次のトピックでは、Windows PowerShell コマンドレットの説明と構文すべてのデータ センター ブリッジング \(DCB\) Quality of Service \ (QoS\) \-specific コマンドレット。 先頭のコマンドレットの動詞に基づいてアルファベット順でコマンドレットが一覧表示します。
+Windows Server 2016 の次のトピックでは、すべてのデータ センター ブリッジングの Windows PowerShell コマンドレットの説明と構文を提供します。 \(DCB\)サービスの品質\(QoS\)\-固有コマンドレット。 コマンドレットの先頭の動詞に基づいて、アルファベット順に記載しています。
 
 - [DcbQoS モジュール](https://technet.microsoft.com/itpro/powershell/windows/dcbqos/dcbqos)
 
 ### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>DCB の Windows Server 2012 R2 の Windows PowerShell コマンド
 
-Windows Server 2012 R2 の次のトピックでは、Windows PowerShell コマンドレットの説明と構文すべてのデータ センター ブリッジング \(DCB\) Quality of Service \ (QoS\) \-specific コマンドレット。 先頭のコマンドレットの動詞に基づいてアルファベット順でコマンドレットが一覧表示します。
+Windows Server 2012 R2 の次のトピックでは、すべてのデータ センター ブリッジングの Windows PowerShell コマンドレットの説明と構文を提供します。 \(DCB\)サービスの品質\(QoS\)\-固有コマンドレット。 コマンドレットの先頭の動詞に基づいて、アルファベット順に記載しています。
 
 - [データ センター ブリッジング (DCB) サービスの品質 (QoS) コマンドレットでは、Windows PowerShell](https://technet.microsoft.com/library/hh967440.aspx)
