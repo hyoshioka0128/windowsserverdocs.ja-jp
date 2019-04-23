@@ -1,6 +1,6 @@
 ---
-title: "(Macintosh オペレーティング システム) スタート パッドに最上位のカテゴリを追加します。"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: 最上位のカテゴリをスタートパッドに追加する (Macintosh オペレーティング システム)
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,18 +13,19 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: ae4eb5943d37b4a9d3b554af28cb425420782cf8
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59869963"
 ---
-# <a name="add-top-level-categories-to-the-launchpad-macintosh-operating-system"></a>(Macintosh オペレーティング システム) スタート パッドに最上位のカテゴリを追加します。
+# <a name="add-top-level-categories-to-the-launchpad-macintosh-operating-system"></a>最上位のカテゴリをスタートパッドに追加する (Macintosh オペレーティング システム)
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-Macintosh オペレーティング システムを実行しているコンピューター上のスタート パッドに最上位のカテゴリを追加することができます。 最上位のカテゴリを追加するスタート パッド アドインを作成するには、および使用方法の説明を」のトピックこのページからの情報の組み合わせを使用することができます追加のタスクとカテゴリのスタート パッドをですか?。[Windows Server Solutions SDK](https://go.microsoft.com/fwlink/?LinkID=248648)します。  
+Macintosh オペレーティン グシステムを実行しているコンピューター上のスタート パッドに最上位のカテゴリを追加できます。 最上位のカテゴリを追加するスタート パッド アドインを作成するには、このページおよび」に関する「方法」トピックからの情報の組み合わせを使用できます。 しますタスクとカテゴリをスタート パッドに追加しますか。[Windows Server Solutions SDK](https://go.microsoft.com/fwlink/?LinkID=248648)します。  
   
- 次の例は、.launchpad ファイルで最上位のカテゴリをスタート パッド エントリを指定する方法を示しています。  
+ 次の例は、.launchpad ファイルで最上位のカテゴリにするスタートパッド エントリを指定する方法を示します。  
   
 ```  
   
@@ -39,9 +40,9 @@ Macintosh オペレーティング システムを実行しているコンピュ
 </LaunchPad>  
 ```  
   
- 最上位のカテゴリにするエントリ、カテゴリ要素の ID 属性が"microsoft.launchpad.homecategory"である必要があります。  
+ エントリを最上位のカテゴリにするには、カテゴリ要素の Id 属性が "Microsoft.Launchpad.HomeCategory" でなければなりません。  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
  [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   
  [追加のカスタマイズ](Additional-Customizations.md)   
  [イメージの展開の準備](Preparing-the-Image-for-Deployment.md)   

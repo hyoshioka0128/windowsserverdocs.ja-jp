@@ -1,35 +1,36 @@
 ---
 ms.assetid: de054ac2-a386-43ec-a537-c0de21549741
-title: "サイト リンクのプロパティの設定"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: サイト リンクのプロパティを設定する
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 495ed006ecac5458877191a14060c5fd4b746d96
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.openlocfilehash: 4fa9a1fa8d2a463fe5f361a5a27ee2b9e3edc0f6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59870363"
 ---
-# <a name="setting-site-link-properties"></a>サイト リンクのプロパティの設定
+# <a name="setting-site-link-properties"></a>サイト リンクのプロパティを設定する
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-サイト間レプリケーションは、接続オブジェクトのプロパティに基づいて発生します。 知識整合性チェッカー (KCC) は、接続オブジェクトを作成するときは、サイト リンク オブジェクトのプロパティから、レプリケーション スケジュールを派生します。 各サイト リンク オブジェクトは、次の 2 つまたは複数のサイト間のワイド エリア ネットワーク (WAN) 接続を表します。  
+接続オブジェクトのプロパティに従って、サイト間レプリケーションが発生します。 知識整合性チェッカー (KCC) は、接続オブジェクトを作成するとき、レプリケーション スケジュールをサイト リンク オブジェクトのプロパティから派生します。 各サイト リンク オブジェクトは、2 つまたは複数のサイト間のワイド エリア ネットワーク (WAN) 接続を表します。  
   
-サイト リンク オブジェクトのプロパティを設定すると、次の手順が含まれています。  
+サイト リンク オブジェクトのプロパティを設定するには、次の手順が含まれています。  
   
--   そのレプリケーション パスに関連付けられているコストを決定します。 KCC は、コストを使用して、同じディレクトリ パーティションをレプリケートする 2 つのサイト間のレプリケーションには、少なくとも高価なルートを決定します。  
+-   そのレプリケーション パスに関連付けられているコストを決定します。 KCC は、コストを使用して、同じディレクトリ パーティションをレプリケートする 2 つのサイト間のレプリケーションで最も安価なルートを決定します。  
   
--   サイト間レプリケーション中に時間を定義するスケジュールを決定が発生することができます。  
+-   発生する可能性がどのサイト間のレプリケーション中に時間を定義するスケジュールを決定します。  
   
--   レプリケーションする必要がありますレプリケーションが許可されて時間中に発生する、スケジュールに定義されているどの程度の間隔を定義するレプリケーション間隔を決定します。  
+-   スケジュールで定義されている複製がレプリケーションを許可すると、時間帯に行われる頻度を定義するレプリケーション間隔を決定します。  
   
-## <a name="in-this-guide"></a>このガイドで  
+## <a name="in-this-guide"></a>このガイドについて  
   
 -   [コストを決定します。](../../ad-ds/plan/Determining-the-Cost.md)  
   

@@ -6,100 +6,100 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/07/2018
-Keywords: Storage Spaces Direct
+Keywords: 記憶域スペース ダイレクト
 ms.localizationpriority: medium
 ms.openlocfilehash: 828a3265c9770bab0158067c4f856866d03e3d42
-ms.sourcegitcommit: d31e266130b3b082372f7af4024e6089cb347d74
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "4239259"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59870863"
 ---
-# 記憶域スペース ダイレクトのパフォーマンスの履歴
+# <a name="performance-history-for-storage-spaces-direct"></a>記憶域スペース ダイレクトのパフォーマンスの履歴
 
-> 適用対象: Windows Server 2019
+> 適用先:Windows Server 2019
 
-パフォーマンスの履歴は、ホスト サーバー、ドライブ、ボリューム、仮想マシンをまたがる履歴コンピューティング、メモリ、ネットワーク、および記憶域の測定値を[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)管理者簡単にアクセスを提供する新しい機能です。 パフォーマンスの履歴が自動的に収集され、最大 1 年間のクラスターに保存されています。
+パフォーマンス履歴が提供する新しい機能[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)管理者と、ホスト サーバー、ドライブ、ボリューム、仮想マシン間で、コンピューティング、メモリ、ネットワーク、およびストレージの値を履歴に簡単にアクセスします。 パフォーマンス履歴が自動的に収集され、最大 1 年間、クラスターに格納されています。
 
    > [!IMPORTANT]
-   > この機能は、Windows Server 2019 の新機能です。 Windows Server 2016 で利用可能ではありません。
+   > この機能は、Windows Server 2019 の新機能です。 Windows Server 2016 でご利用いただけません。
 
-## はじめに
+## <a name="get-started"></a>作業開始
 
-記憶域スペース ダイレクトでは、Windows Server 2019 の既定では、パフォーマンスの履歴が収集されます。 インストール、構成、または何かを開始する必要はありません。 インターネット接続が必要ないと、System Center は必要ありません外部データベースが必須ではありません。
+既定では、Storage Spaces Direct in Windows Server 2019 のパフォーマンスの履歴が収集されます。 インストール、構成、または何も起動する必要はありません。 インターネット接続は必要ありません、System Center は必要ありません、および外部のデータベースは必要ありません。
 
-クラスターのパフォーマンスの履歴を視覚的に確認するには、 [Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md)を使用します。
+クラスターのパフォーマンス履歴をグラフィカルに表示するには、次のように使用します[Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md):。
 
-![Windows Admin Center でパフォーマンスの履歴](media/performance-history/perf-history-in-wac.png)
+![Windows Admin Center でのパフォーマンスの履歴](media/performance-history/perf-history-in-wac.png)
 
-クエリを処理をプログラムでは、新しい使用`Get-ClusterPerf`コマンドレットします。 [PowerShell の使用状況](#usage-in-powershell)を参照してください。
+使用してクエリをプログラムで処理は、新しい`Get-ClusterPerf`コマンドレット。 参照してください[PowerShell での使用状況](#usage-in-powershell)します。
 
-## 収集されるもの
+## <a name="whats-collected"></a>収集される情報
 
-7 種類のオブジェクトのパフォーマンスの履歴が収集されます。
+パフォーマンス履歴の 7 種類のオブジェクトが収集されます。
 
 ![オブジェクトの種類](media/performance-history/types-of-object.png)
 
-各オブジェクトの種類が多くシリーズ: たとえば、`ClusterNode.Cpu.Usage`サーバーごとに収集します。
+オブジェクトの種類ごとに多くのシリーズ: たとえば、`ClusterNode.Cpu.Usage`サーバーごとに収集されます。
 
-各オブジェクトの種類について何収集され、それらを解釈する方法の詳細については、これらのサブ トピックを参照してください。
+オブジェクトの種類ごとに収集される情報とその解釈方法の詳細については、これらのサブ トピックを参照してください。
 
 | オブジェクト             | シリーズ                                                                               |
 |--------------------|--------------------------------------------------------------------------------------|
-| ドライブ             | [ドライブの内容が収集されます。](performance-history-for-drives.md)                     |
-| ネットワーク アダプター   | [ネットワーク アダプターの収集がどのような](performance-history-for-network-adapters.md) |
-| サーバー            | [どのようなサーバーを収集します。](performance-history-for-servers.md)                   |
-| 仮想ハード_ディスク | [仮想ハード_ディスクの収集がどのような](performance-history-for-vhds.md)           |
-| バーチャル マシン   | [仮想マシン用に収集される内容](performance-history-for-vms.md)              |
-| ボリューム            | [どのようなボリュームを収集します。](performance-history-for-volumes.md)                   |
-| クラスター           | [クラスターの内容が収集されます。](performance-history-for-clusters.md)                 |
+| ドライブ             | [ドライブの収集される情報](performance-history-for-drives.md)                     |
+| ネットワーク アダプター   | [ネットワーク アダプター用に収集される情報](performance-history-for-network-adapters.md) |
+| サーバー            | [サーバー用に収集される情報](performance-history-for-servers.md)                   |
+| バーチャル ハード ディスク | [仮想ハード_ディスクに対して収集される情報](performance-history-for-vhds.md)           |
+| バーチャル マシン   | [仮想マシン用に収集される情報](performance-history-for-vms.md)              |
+| Volumes            | [ボリュームに対して収集される情報](performance-history-for-volumes.md)                   |
+| クラスター           | [クラスター用に収集される情報](performance-history-for-clusters.md)                 |
 
-一連の多くがピア オブジェクトを親ウィンドウ全体にわたって集計された: たとえば、`NetAdapter.Bandwidth.Inbound`ネットワーク アダプターごとに個別に収集され、全体的なサーバーにわたって集計されました。同様に`ClusterNode.Cpu.Usage`をクラスター全体にわたって集計されました。などなど。
+多くのシリーズは、ピア オブジェクトを親にわたって集計されます: たとえば、`NetAdapter.Bandwidth.Inbound`はネットワーク アダプターごとに個別に収集され、全体的なサーバーに集計されます同様に`ClusterNode.Cpu.Usage`; クラスター全体に集計がこれに。
 
-## 期間
+## <a name="timeframes"></a>期間
 
-パフォーマンスの履歴は、最大で 1 年間の粒度の減少と共に格納されます。 最新の時間の測定値は 10 秒ごとできます。 その後、インテリジェントにマージされます (平均または合計と、必要に応じて) より多くの時間にまたがる細かくシリーズにします。 直近の日付の測定値を利用できます。 5 分ごと最新の週 15 分などなど。
+パフォーマンス履歴は、減少の粒度で最大 1 年間格納されます。 最新の時間の測定値は 10 秒ごとです。 その後、適切にマージされます (平均または合計すること、必要に応じてより多くの時間にわたるシリーズの詳細度の低い。 最新の日の単位が使用可能です。 5 分ごと最新の週。 15 分ごとになどなど。
 
 Windows Admin Center では、右、グラフの上までの期間を選択できます。
 
 ![Windows Admin Center での期間](media/performance-history/timeframes-in-honolulu.png)
 
-PowerShell で、使用、`-TimeFrame`パラメーター。
+PowerShell を使用して、`-TimeFrame`パラメーター。
 
-利用可能な期間を以下に示します。
+使用可能な期間を次に示します。
 
-| 期間   | 測定頻度 | 保持 |
+| タイムフレーム   | 測定の頻度 | 保持されます。 |
 |-------------|-----------------------|--------------|
 | `LastHour`  | 10 秒ごと         | 1 時間       |
 | `LastDay`   | 5 分ごと       | 25 時間     |
 | `LastWeek`  | 15 分ごと      | 8 日       |
-| `LastMonth` | 1 時間ごと          | 35 日      |
-| `LastYear`  | すべての 1 日           | 400 日間     |
+| `LastMonth` | 1 時間ごと          | 35 日間      |
+| `LastYear`  | 1 日ごと           | 400 日間     |
 
-## PowerShell の使用状況
+## <a name="usage-in-powershell"></a>PowerShell での使用法
 
-使用して、`Get-ClusterPerformanceHistory`コマンドレット PowerShell でクエリとプロセスのパフォーマンスの履歴をします。
+使用して、`Get-ClusterPerformanceHistory`コマンドレット PowerShell でのクエリと処理のパフォーマンス履歴を使用します。
 
 ```PowerShell
 Get-ClusterPerformanceHistory
 ```
 
    > [!TIP]
-   > **Get ClusterPerf**エイリアスを使用すると、いくつかのキー入力を保存できます。
+   > 使用して、 **Get ClusterPerf**エイリアスをいくつかのキー入力を保存します。
 
-### 例
+### <a name="example"></a>例
 
-過去 1 時間の仮想マシン*MyVM*の CPU 使用率を取得します。
+仮想マシンの CPU 使用率の取得*MyVM*過去 1 時間。
 
 ```PowerShell
 Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 ```
 
-高度な例については、ピーク時の値を検索、平均を計算、トレンドをプロット、検出、および複数のような特殊なを実行するコードをスターター公開済みの[サンプル スクリプト](performance-history-scripting.md)を参照してください。
+高度な例については、参照、公開された[サンプル スクリプト](performance-history-scripting.md)ピーク値を見つける、平均を計算、傾向線のプロット、外れ値を実行し、検出、スタート コードを提供します。
 
-### オブジェクトを指定します。
+### <a name="specify-the-object"></a>オブジェクトを指定します。
 
-パイプラインによってオブジェクトを指定することができます。 これは、7 種類のオブジェクトで動作します。
+パイプラインによって対象のオブジェクトを指定できます。 これは、7 種類のオブジェクトで動作します。
 
 | パイプラインからオブジェクトします。 | 例     |
 |----------------------|-------------|
@@ -111,122 +111,122 @@ Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 | `Get-Volume`         | <code>Get-Volume -FriendlyName "MyVolume"  &#124; Get-ClusterPerf</code>            |
 | `Get-Cluster`        | <code>Get-Cluster "MyCluster" &#124; Get-ClusterPerf</code>                         |
 
-を指定しない場合は、クラスターの全体的なパフォーマンスの履歴が返されます。
+を指定しない場合は、クラスター全体のパフォーマンス履歴が返されます。
 
-### 一連を指定します。
+### <a name="specify-the-series"></a>系列を指定します。
 
 これらのパラメーターを使用系列を指定できます。
 
 
-| パラメーター                 | 例                       | リスト                                                                                 |
+| パラメーター                 | 例                       | 一覧                                                                                 |
 |---------------------------|-------------------------------|--------------------------------------------------------------------------------------|
-| `-PhysicalDiskSeriesName` | `"PhysicalDisk.Iops.Read"`    | [ドライブの内容が収集されます。](performance-history-for-drives.md)                     |
-| `-NetAdapterSeriesName`   | `"NetAdapter.Bandwidth.Outbound"` | [ネットワーク アダプターの収集がどのような](performance-history-for-network-adapters.md) |
-| `-ClusterNodeSeriesName`  | `"ClusterNode.Cpu.Usage"`     | [どのようなサーバーを収集します。](performance-history-for-servers.md)                   |
-| `-VHDSeriesName`          | `"Vhd.Size.Current"`          | [仮想ハード_ディスクの収集がどのような](performance-history-for-vhds.md)           |
-| `-VMSeriesName`           | `"Vm.Memory.Assigned"`        | [仮想マシン用に収集される内容](performance-history-for-vms.md)              |
-| `-VolumeSeriesName`       | `"Volume.Latency.Write"`      | [どのようなボリュームを収集します。](performance-history-for-volumes.md)                   |
-| `-ClusterSeriesName`      | `"PhysicalDisk.Size.Total"`   | [クラスターの内容が収集されます。](performance-history-for-clusters.md)                 |
+| `-PhysicalDiskSeriesName` | `"PhysicalDisk.Iops.Read"`    | [ドライブの収集される情報](performance-history-for-drives.md)                     |
+| `-NetAdapterSeriesName`   | `"NetAdapter.Bandwidth.Outbound"` | [ネットワーク アダプター用に収集される情報](performance-history-for-network-adapters.md) |
+| `-ClusterNodeSeriesName`  | `"ClusterNode.Cpu.Usage"`     | [サーバー用に収集される情報](performance-history-for-servers.md)                   |
+| `-VHDSeriesName`          | `"Vhd.Size.Current"`          | [仮想ハード_ディスクに対して収集される情報](performance-history-for-vhds.md)           |
+| `-VMSeriesName`           | `"Vm.Memory.Assigned"`        | [仮想マシン用に収集される情報](performance-history-for-vms.md)              |
+| `-VolumeSeriesName`       | `"Volume.Latency.Write"`      | [ボリュームに対して収集される情報](performance-history-for-volumes.md)                   |
+| `-ClusterSeriesName`      | `"PhysicalDisk.Size.Total"`   | [クラスター用に収集される情報](performance-history-for-clusters.md)                 |
 
 
    > [!TIP]
-   > 利用可能な一連の検出にタブ補完を使用します。
+   > 使用可能な系列を検出するのにには、タブ補完を使用します。
 
-を指定しない場合は、指定したオブジェクトで利用可能なすべての系列が返されます。
+を指定しない場合は、指定したオブジェクトの使用可能なすべての系列が返されます。
 
-### 時間枠を指定します。
+### <a name="specify-the-timeframe"></a>時間枠を指定します。
 
-履歴の期間を指定する、`-TimeFrame`パラメーター。
+履歴で希望の時間枠を指定することができます、`-TimeFrame`パラメーター。
 
    > [!TIP]
-   > 利用可能な期間を検出するのにには、タブ補完を使用します。
+   > 使用可能な期間を検出するのにには、タブ補完を使用します。
 
 を指定しない場合、`MostRecent`測定値が返されます。
 
-## 動作の仕組み
+## <a name="how-it-works"></a>方法
 
-### 履歴記憶域のパフォーマンス
+### <a name="performance-history-storage"></a>パフォーマンス履歴ストレージ
 
-記憶域スペース ダイレクトを有効にした後すぐ、約 10 GB ボリュームがという名前`ClusterPerformanceHistory`が作成される拡張可能な記憶域エンジン (Microsoft ジェットとも呼ばれます) のインスタンスがあるプロビジョニングされたとします。 この軽量なデータベースでは、管理者の関与や管理を加えなくてもパフォーマンスの履歴を保存します。
+という名前を約 10 GB のボリュームの記憶域スペース ダイレクトを有効にした後すぐ`ClusterPerformanceHistory`が作成され、Extensible Storage Engine (Microsoft JET とも呼ばれます) のインスタンスのプロビジョニングがあります。 この軽量のデータベースには、管理者の関与または管理なしのパフォーマンスの履歴が格納されます。
 
-![ボリュームのパフォーマンスの履歴のストレージ](media/performance-history/perf-history-volume.png)
+![パフォーマンス履歴の記憶域のボリューム](media/performance-history/perf-history-volume.png)
 
-ボリュームでは、記憶域スペースは、対応し、シンプルで双方向のミラーまたはクラスター内のノードの数に応じて、3 方向ミラーリングの回復性のいずれかを使用します。 後ドライブまたはサーバー エラーと同様に、他の記憶域スペース ダイレクトでボリュームを修復します。
+ボリュームは記憶域スペースでサポートし、シンプルで双方向ミラー、またはクラスター内のノードの数によっては、3 方向ミラー回復性のいずれかを使用します。 ドライブまたはサーバーのエラーと同様に、他の記憶域スペース ダイレクトのボリュームがあると、修復です。
 
-ボリュームは、ReFS を使用して、クラスター グループ所有者ノードでのみが表示されるように、クラスター共有ボリューム (CSV) ではありません。 自動的に作成されている以外は何もありませんこのボリュームについて特別な: 表示、参照、サイズを変更または削除 (非推奨)。 問題が生じた場合は、[トラブルシューティング](#troubleshooting)を参照してください。 
+ボリュームは ReFS を使用するが、クラスター グループの所有者ノードでのみが表示されるように、クラスター共有ボリューム (CSV) ではありません。 自動的に作成されるだけでなく何もないこのボリュームに関する特別な: 表示、参照、サイズを変更または削除 (推奨されません)。 問題が発生した場合は、次を参照してください。[トラブルシューティング](#troubleshooting)します。 
 
-### オブジェクトの検出とデータの収集
+### <a name="object-discovery-and-data-collection"></a>オブジェクトの検出とデータの収集
 
-パフォーマンスの履歴は自動的に任意の場所で、クラスター内の仮想マシンなどの関連するオブジェクトを検出し、パフォーマンス カウンターのストリーミングを開始します。 カウンターにわたって集計された、同期されると、およびデータベースに挿入します。 ストリーミングおり、実行を継続し、最小限のシステムへの影響の最適化されています。
+パフォーマンス履歴は自動的にクラスター内の任意の場所の仮想マシンなどの関連するオブジェクトを検出し、そのパフォーマンス カウンターのストリーミングを開始します。 カウンターの集計、同期、およびデータベースに挿入していること。 ストリーミングでは、継続的に実行され、最小限のシステムへの影響は最適化されています。
 
-コレクションは高度に利用可能なヘルス サービスによって処理されます: が実行されているノードに障害が発生した場合が再開モーメント、クラスター内の後で別のノード。 パフォーマンスの履歴の中に一時的に可能性がありますが、それが自動的に再開されます。 ヘルス サービスとその所有者ノードを実行して確認できます`Get-ClusterResource Health`PowerShell でします。
+コレクションが、これは高可用性、ヘルス サービスによって処理されます。 後でもう 1 つのノード クラスターでモーメントを再開にはが実行されているノードがダウンした場合。 パフォーマンス履歴を簡単に、失効可能性がありますが、自動的に再開します。 ヘルス サービスとその所有者ノードを実行して参照できる`Get-ClusterResource Health`powershell。
 
-### 測定ギャップを処理します。
+### <a name="handling-measurement-gaps"></a>測定値のギャップを処理します。
 
-測定値は[期間](#Timeframes)で説明したようより多くの時間をまたがる細かくシリーズ マージ、不足しているデータの期間は除外されます。 たとえば、サーバーが 30 分間ダウン場合、し、実行されている 50 %cpu 使用率で 30 分間、`ClusterNode.Cpu.Usage`平均時間は 50% (25% ではない) として正しく記録されます。
+」の説明に従って、多くの時間にわたる一連の詳細度の低いに測定値をマージするときに[期間](#Timeframes)、欠落しているデータの期間を除外します。 などの場合は、サーバーは、30 分間ダウンが、実行、50% CPU 30 分間、`ClusterNode.Cpu.Usage`平均時間は 50% (25% ではない) として正しく記録されます。
 
-### 拡張機能とカスタマイズ
+### <a name="extensibility-and-customization"></a>機能拡張とカスタマイズ
 
-パフォーマンスの履歴は、スクリプトの実行に対応します。 PowerShell の使用を自動的にレポートを構築または保管の履歴をエクスポートするアラート、データベースから直接、利用可能な履歴をプル, など、独自の視覚エフェクトをロールバックします。役立つスターター コードについては、公開された[サンプル スクリプト](performance-history-scripting.md)を参照してください。
+パフォーマンス履歴では、スクリプトに適したです。 PowerShell を使用して、プル、使用可能な履歴を自動的にレポートをビルドまたは保管のために履歴をエクスポートするアラート、データベースから直接、独自の視覚エフェクトなどのロールします。パブリッシュされたを参照してください[サンプル スクリプト](performance-history-scripting.md)の便利なスタート コード。
 
 その他のオブジェクト、期間、または一連の履歴を収集することはできません。
 
-測定の頻度と保存期間では、現在構成できません。
+測定の頻度と保有期間では、現在構成できません。
 
-## 開始または停止するパフォーマンスの履歴
+## <a name="start-or-stop-performance-history"></a>開始または停止のパフォーマンスの履歴
 
-### この機能を有効にする方法
+### <a name="how-do-i-enable-this-feature"></a>この機能を有効にする方法
 
-しない限りする`Stop-ClusterPerformanceHistory`、パフォーマンスの履歴が既定で有効にします。
+しない限りする`Stop-ClusterPerformanceHistory`パフォーマンスの履歴が既定で有効にします。
 
-それを再度有効にするには、管理者としてこの PowerShell コマンドレットを実行します。
+これを再度有効にするには、管理者として次の PowerShell コマンドレットを実行します。
 
 ```PowerShell
 Start-ClusterPerformanceHistory
 ```
 
-### この機能を無効にする方法
+### <a name="how-do-i-disable-this-feature"></a>この機能を無効にする方法は?
 
-パフォーマンスの履歴の収集を停止するには、管理者としてこの PowerShell コマンドレットを実行します。
+パフォーマンス履歴の収集を停止するには、管理者として次の PowerShell コマンドレットを実行します。
 
 ```PowerShell
 Stop-ClusterPerformanceHistory
 ```
 
-既存の測定値を削除するのには、使用、`-DeleteHistory`フラグ。
+既存の測定値を削除するには、使用、`-DeleteHistory`フラグ。
 
 ```PowerShell
 Stop-ClusterPerformanceHistory -DeleteHistory
 ```
 
    > [!TIP]
-   > 初期展開中にことを防ぐパフォーマンスの履歴を設定して以降は、`-CollectPerformanceHistory`のパラメーター`Enable-ClusterStorageSpacesDirect`に`$False`します。
+   > 初期のデプロイ時にパフォーマンスの履歴を防ぐ以降を設定してから、`-CollectPerformanceHistory`パラメーターの`Enable-ClusterStorageSpacesDirect`に`$False`します。
 
-## トラブルシューティング
+## <a name="troubleshooting"></a>トラブルシューティング
 
-### このコマンドレットは機能しません
+### <a name="the-cmdlet-doesnt-work"></a>このコマンドレットは機能しません
 
-「*' Get ClusterPerf' がコマンドレットの名前として認識されないという用語は、*」機能を意味するようなエラー メッセージは、利用可能なまたはインストールすることはありません。 Windows Server Insider Preview ビルド 17692 以降、フェールオーバー クラスタ リングを実行している記憶域スペース ダイレクトをインストールしたことを確認します。
+などのエラー メッセージ"*' Get ClusterPerf' という用語は、コマンドレットの名前として認識されません*"機能が利用できないかインストールされていることを意味します。 17692 またはそれ以降の Windows Server Insider プレビュー ビルドが、フェールオーバー クラスタ リング、および実行している記憶域スペース ダイレクトがインストールされたことを確認します。
 
    > [!NOTE]
-   > この機能は、Windows Server 2016 で利用可能なまたはそれ以前ではありません。
+   > この機能は、Windows Server 2016 で使用可能なまたはそれ以前ではありません。
 
-### 利用可能なデータがないです。 
+### <a name="no-data-available"></a>データがありません。 
 
-グラフでは、図「*データがない*」が表示される場合は、トラブルシューティングする方法を以下に示します。
+グラフが表示されている場合"*データがありません*"のトラブルシューティングを行う方法を次に示します図示。
 
-![利用可能なデータがないです。](media/performance-history/no-data-available.png)
+![データがありません。](media/performance-history/no-data-available.png)
 
-1. オブジェクトが新しく追加されたり、作成、するまで待機する (15 分単位) を検出します。
+1. オブジェクトは、新しく追加または作成された場合、するまで待機する (最大 15 分) を検出します。
 
-2. ページを更新するか、次のバック グラウンド更新 (最大 30 秒) を待ちます。
+2. ページを更新するか、[次へ] のバック グラウンド更新 (最大 30 秒) を待ちます。
 
-3. 特定の特別なオブジェクトは、パフォーマンスの履歴: たとえば、クラスター化されていない、仮想マシン、クラスター共有ボリューム (CSV) ファイル システムを使用していないボリュームから除外されます。 オブジェクトの種類などの[ボリュームのパフォーマンスの履歴](performance-history-for-volumes.md), 細かい印刷用のサブ トピックを確認します。
+3. 特定の特殊なオブジェクトは、クラスター化されていない仮想マシンとクラスター共有ボリューム (CSV) ファイル システムを使用していないボリュームなどのパフォーマンス履歴から除外されます。 オブジェクトの種類のサブトピック「のような確認[ボリュームのパフォーマンス履歴](performance-history-for-volumes.md)内蔵マイクの。
 
-4. 問題が解決しない場合は、実行して、管理者として PowerShell を開き、`Get-ClusterPerf`コマンドレットします。 このコマンドレットには、トラブルシューティングの一般的な問題を識別するためのロジックが含まれています。 場合など、ClusterPerformanceHistory ボリュームがないと修復手順について説明します。
+4. 問題が解決しない場合は、実行管理者として PowerShell を開き、`Get-ClusterPerf`コマンドレット。 コマンドレットには、トラブルシューティングの一般的な問題を識別するためのロジックが含まれています。 場合など、ClusterPerformanceHistory ボリュームが見つからないか、と修復の手順について説明します。
 
-5. 前の手順で、コマンドは、何も返された場合を実行して (これは、パフォーマンスの履歴を収集) ヘルス サービスを再起動してみてくださいできる`Stop-ClusterResource Health ; Start-ClusterResource Health`PowerShell でします。
+5. 場合は、前の手順のコマンドは、何も返さないを実行して (これはパフォーマンスの履歴を収集します)、正常性サービスを再起動してみてくださいできます`Stop-ClusterResource Health ; Start-ClusterResource Health`powershell。
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 - [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)

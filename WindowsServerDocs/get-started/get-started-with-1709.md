@@ -10,18 +10,18 @@ ms.date: 12/5/2017
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9cf87597-b15d-4f43-8aa1-91e60367f011
-ms.openlocfilehash: a2da7b8437a9dc7f44fc83837e3ebad93b7fe3ab
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
-ms.translationtype: HT
+ms.openlocfilehash: 96f098457b9bac4541421c7889aefb030e3d8804
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "1410402"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59868803"
 ---
 # <a name="introducing-windows-server-version-1709"></a>Windows Server バージョン 1709 の概要
 
->適用対象: Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)
 
-**Windows Server バージョン 1709 は新しい半期チャネルの最初のリリースです。** 
+**Windows Server、バージョン 1709 は新しい半期チャネルで最初のリリースです。** 
 
 ## <a name="what-the-semi-annual-channel-is--and-isnt"></a>半期チャネルとは
 この新しいチャネルの最初のリリースである Windows Server バージョン 1709 は、Windows Server 2016 の *"更新プログラム" や "サービス パック" ではありません*。 これは、**新しいリリース トラック** で行われる年 2 回のリリースの 1 回目です。半期チャネルのリリースは、変化の激しい開発サイクルへの対応が必要なユーザーや、最新の Hyper-V への投資を活用しようとするホスティング企業など、"クラウドに適したペース" での進化を希望するユーザーに対応するリリース トラックです。 このトラックの各リリースは、最初のリリースから 18 か月サポートされます。 半期チャネルの詳細および**参加するチャネル (または現在のチャネルを維持すべきかどうか) を決定するためのヒント** については、「[半期チャネルの概要](semi-annual-channel-overview.md)」を参照してください。
@@ -56,11 +56,11 @@ Windows Server バージョン 1709 に関する重要な情報を総合的に�
 
 このリリースは、クリーン インストールでインストールする必要があります。
 
-- VLSC: ボリューム ライセンスのお客様が[ソフトウェア アシュアランス](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx)をご利用の場合は、このリリースを入手できます、[ボリューム ライセンス サービス センター](https://www.microsoft.com/Licensing/servicecenter/default.aspx)に移動して、**[サインイン]** をクリックすることによって、このリリースを入手できます。 次に、**[Downloads and Keys]** (ダウンロードとキー) をクリックし、このリリースを検索します。 
+- VLSC:ボリューム ライセンスのお客様[ソフトウェア アシュアランス](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx)に移動して、このリリースを取得できます、[ボリューム ライセンス サービス センター](https://www.microsoft.com/Licensing/servicecenter/default.aspx)クリック**サインイン**します。 次に、**[Downloads and Keys]** (ダウンロードとキー) をクリックし、このリリースを検索します。 
 
 - Windows Server バージョン 1709 もまた、[Microsoft Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.WindowsServer?tab=Overview) で使用可能です。
 
-- **Visual Studio サブスクリプション**の参加者: Visual Studio サブスクリプションに既に参加している場合は、[Visual Studio サブスクライバーのダウンロード ページ](https://my.visualstudio.com/downloads?pid=2347)に移動し、用意されているダウンロードを完了することによって、Windows Server バージョン 1709 を入手できます。 まだサブスクライバーではない場合は、[Visual Studio サブスクリプション](https://www.visualstudio.com/subscriptions/)にサインアップしてから、上記のように [Visual Studio サブスクライバーのダウンロード ページ](https://my.visualstudio.com/downloads?pid=2347)にアクセスします。 Visual Studio サブスクリプション経由で取得したリリースは、開発とテストにのみ利用できます。
+- 内の参加者**Visual Studio サブスクリプション。** Visual Studio サブスクリプションに既に参加している場合は、Windows Server バージョン 1709 に移動して、入手することができます、 [Visual Studio サブスクライバー ダウンロード ページ](https://my.visualstudio.com/downloads?pid=2347)が使用可能なダウンロードを完了するとします。 まだサブスクライバーではない場合は、[Visual Studio サブスクリプション](https://www.visualstudio.com/subscriptions/)にサインアップしてから、上記のように [Visual Studio サブスクライバーのダウンロード ページ](https://my.visualstudio.com/downloads?pid=2347)にアクセスします。 Visual Studio サブスクリプション経由で入手したリリースは、開発とテストにのみ利用できます。
 
 
 

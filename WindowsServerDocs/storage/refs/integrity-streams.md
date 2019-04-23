@@ -1,32 +1,33 @@
 ---
-title: "ReFS 整合性ストリーム"
-description: 
+title: ReFS 整合性ストリーム
+description: ''
 author: gawatu
 ms.author: jgerend
 manager: dmoss
-ms.date: 11/14/2016
+ms.date: 10/16/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.assetid: 1f1215cd-404f-42f2-b55f-3888294d8a1f
-ms.openlocfilehash: d9e14e74591b341048316e9c2e69a312062c3304
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 11f0a696fb843f5cd8b4a7ff3318c28d6c1adeb8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59871343"
 ---
 # <a name="refs-integrity-streams"></a>ReFS 整合性ストリーム
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10
+>適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server (半期チャネル)、Windows 10
 
 整合性ストリームは、チェックサムを使用してデータの整合性を検証および保持する、ReFS のオプション機能です。 ReFS は、常に、メタデータのチェックサムを使用しますが、既定では ReFS はファイル データのチェックサムを生成および検証しません。 整合性ストリームは、ファイル データのチェックサムを利用できるオプションの機能です。 整合性ストリームを有効にすると、データが有効か、破損しているかを ReFS が明確に判別できます。 さらに、ReFS と記憶域スペースの連携によって、破損したメタデータやデータを自動的に修正できます。
 
-## <a name="how-it-works"></a>しくみ 
+## <a name="how-it-works"></a>方法 
 
 整合性ストリームは、個々のファイルやディレクトリまたはボリューム全体について有効にすることができ、整合性ストリームの設定はいつでも切り替えることができます。 さらに、ファイルとディレクトリの整合性ストリームの設定は、その親ディレクトリから継承されます。 
 
 整合性ストリームを有効にすると、ReFS は指定したファイルのメタデータ内にそのファイルのチェックサムを作成して保持します。 このチェックサムによって、ReFS では、データにアクセスする前にデータの整合性を検証できます。 ReFS は、整合性ストリームが有効になっているデータを返す前に、まずそのチェックサムを計算します。
 
-<img src=media/compute-checksum.gif alt="Compute checksum for file data"/>
+![ファイル データのチェックサムを計算します。](media/compute-checksum.gif)
 
 次に、このチェックサムが、ファイルのメタデータに含まれているチェックサムと比較されます。 チェックサムが一致した場合、データは有効とマークされ、ユーザーに返されます。 チェックサムが一致しない場合、データは破損しています。 ボリュームの回復性によって、ReFS で破損に対応する方法が決定されます。
 
@@ -37,7 +38,7 @@ ms.lasthandoff: 10/17/2017
 
 ReFS では、すべての破損がシステム イベント ログに記録され、このログに破損が修正されたかどうかが反映されます。 
 
-<img src=media/corrective-write.gif alt="Corrective write restores data integrity."/>
+![是正書き込みデータの整合性を復元します。](media/corrective-write.gif)
 
 ## <a name="performance"></a>パフォーマンス 
 
@@ -95,5 +96,5 @@ PS C:\> Set-FileIntegrity H:\Docs -Enable $True
 ## <a name="see-also"></a>関連項目
 
 -   [ReFS の概要](refs-overview.md)
--   [ReFS のブロックの複製](block-cloning.md)
+-   [ReFS ブロック複製](block-cloning.md)
 -   [記憶域スペース ダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)

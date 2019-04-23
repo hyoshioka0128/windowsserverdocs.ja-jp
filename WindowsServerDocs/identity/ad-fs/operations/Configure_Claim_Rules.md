@@ -1,7 +1,7 @@
 ---
 ms.assetid: 20d48afc-2623-43e9-8ed9-aeb9a0505630
-title: "要求規則を構成します。"
-description: 
+title: 要求規則を構成します。
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,36 +10,37 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 259e2b266b64a3b34c237cfe209a3558124c8ef2
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59871633"
 ---
-# <a name="configure-claim-rules"></a>要求規則を構成します。
+# <a name="configure-claim-rules"></a>要求規則を構成する
 
->適用対象: Windows Server 2016、Windows Server 2012 R2
+>適用先:Windows Server 2016、Windows Server 2012 R2
 
-Claims\ ベースの id モデルでは、Active Directory フェデレーション サービス (AD FS) フェデレーション サービスとしての機能は、信頼性情報のセットを含むトークンを発行します。 要求規則では、AD FS を発行するクレームに関する決定します。 要求規則とすべてのサーバーの構成データは、AD FS 構成データベースに保存されます。  
+要求で\-ベースの id モデルでは、Active Directory フェデレーション サービス (AD FS) フェデレーション サービスとしての機能は、一連の要求を含むトークンを発行します。 要求規則は、AD FS が発行する要求に関して意思決定をします。 要求規則およびすべてのサーバーの構成データは、AD FS 構成データベースに格納されます。  
   
-AD FS では信頼性情報の形式で提供される id 情報とその他の情報に基づいて発行決定します。 大まかに言うとルールのプロセッサを 1 つを行って信頼性情報の入力として設定、いくつかの変換を実行し、出力として別の信頼性情報のセットを返しますが AD FS には動作します。 
+AD FS では、要求の形で提供される id 情報とその他のコンテキスト情報に基づく発行決定を行います。 大まかに言えば、AD FS が動作するは、1 つ受け取り、ルール プロセッサは、クレームのセットを入力としてし、さまざまな変換を実行しますし、出力として別のクレーム セットを返します。 
 
-次のトピックする際は、AD FS を処理する規則を作成します。 
+次のトピックの支援で AD FS を処理するルールを作成します。 
   
--   [パススルーまたは入力方向の要求をフィルター処理する規則を作成します。](../../ad-fs/operations/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim.md)  
+-   [パススルーまたは入力方向の要求をフィルター処理するルールを作成します。](../../ad-fs/operations/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim.md)  
   
 -   [すべてのユーザーを許可する規則を作成します。](../../ad-fs/operations/Create-a-Rule-to-Permit-All-Users.md)  
   
 -   [許可または入力方向の要求に基づいてユーザーを拒否する規則を作成します。](../../ad-fs/operations/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim.md)  
   
--   [LDAP 属性を要求として送信する規則を作成します。](../../ad-fs/operations/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims.md)  
+-   [要求として LDAP 属性を送信するルールを作成します。](../../ad-fs/operations/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims.md)  
   
--   [要求として送信グループのメンバーシップの規則を作成します。](../../ad-fs/operations/Create-a-Rule-to-Send-Group-Membership-as-a-Claim.md)  
+-   [要求として送信グループ メンバーシップの規則を作成します。](../../ad-fs/operations/Create-a-Rule-to-Send-Group-Membership-as-a-Claim.md)  
   
 -   [入力方向の要求を変換する規則を作成します。](../../ad-fs/operations/Create-a-Rule-to-Transform-an-Incoming-Claim.md)  
   
--   [認証方法の要求を送信する規則を作成します。](../../ad-fs/operations/Create-a-Rule-to-Send-an-Authentication-Method-Claim.md)  
+-   [メソッドの認証要求を送信するルールを作成します。](../../ad-fs/operations/Create-a-Rule-to-Send-an-Authentication-Method-Claim.md)  
   
--   [カスタム規則を使用して要求を送信する規則を作成します。](../../ad-fs/operations/Create-a-Rule-to-Send-Claims-Using-a-Custom-rule.md)  
+-   [カスタム規則を使用して要求を送信するルールを作成します。](../../ad-fs/operations/Create-a-Rule-to-Send-Claims-Using-a-Custom-rule.md)  
 
-## <a name="see-also"></a>参照してください。  
-[AD FS の操作](../../ad-fs/AD-FS-2016-Operations.md) 
+## <a name="see-also"></a>関連項目  
+[AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md) 

@@ -1,7 +1,7 @@
 ---
 ms.assetid: ee008835-7d3b-4977-adcb-7084c40e5918
 title: Deploy Implementing Retention of Information on File Servers (Demonstration Steps)
-description: 
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,140 +10,141 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: e0f79dd72190888340144bc5c109ee31fa301937
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59870803"
 ---
 # <a name="deploy-implementing-retention-of-information-on-file-servers-demonstration-steps"></a>Deploy Implementing Retention of Information on File Servers (Demonstration Steps)
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-You can set retention periods for folders and put files on legal hold by using File Classification Infrastructure and File Server Resource Manager.  
+ファイル分類インフラストラクチャおよびファイル サーバー リソース マネージャーを使用して、フォルダーの保持期間を設定したり、ファイルを訴訟ホールドにしたりすることができます。  
   
 **このドキュメントで**  
   
 -   [前提条件](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Prereqs)  
   
--   [Step 1: Create resource property definitions](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
+-   [ステップ 1: リソース プロパティ定義を作成します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
   
--   [Step 2: Configure notifications](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step2)  
+-   [手順 2:通知を構成します。](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step2)  
   
--   [Step 3: Create a file management task](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step3)  
+-   [手順 3:ファイル管理タスクを作成します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step3)  
   
--   [Step 4: Classify a file manually](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step4)  
+-   [手順 4:ファイルを手動で分類します。](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step4)  
   
 > [!NOTE]  
-> このトピックには、説明する手順の一部を自動化するのに使用できるサンプル Windows PowerShell コマンドレットが含まれています。 詳細については、次を参照してください。[コマンドレットを使用した](https://go.microsoft.com/fwlink/p/?linkid=230693)します。  
+> このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
   
 ## <a name="prerequisites"></a>前提条件  
-The steps in this topic assume you have a SMTP server configured for file expiration notifications.  
+このトピックの手順では、SMTP サーバーがファイル有効期限通知用に構成されていることを前提としています。  
   
-## <a name="BKMK_Step1"></a>Step 1: Create resource property definitions  
-In this step, we enable the Retention Period and Discoverability resource properties so that File Classification Infrastructure can use these resource properties to tag the files that are scanned in a network shared folder.  
+## <a name="BKMK_Step1"></a>手順 1:リソース プロパティ定義を作成する  
+この手順では、Retention Period および Discoverability リソース プロパティを有効にして、ファイル分類インフラストラクチャがこれらのリソース プロパティを使用してネットワーク共有フォルダーでスキャンされたファイルにタグを付けることができるようにします。  
   
-[Do this step using Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
+[Windows PowerShell を使用してこの手順を実行します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
   
-#### <a name="to-create-resource-property-definitions"></a>To create resource property definitions  
+#### <a name="to-create-resource-property-definitions"></a>リソース プロパティ定義を作成するには  
   
-1.  On the domain controller, sign in to the server as a member of the Domain Admins security group.  
+1.  ドメイン コントローラーで、Domain Admins セキュリティ グループのメンバーとしてサーバーにサインインします。  
   
-2.  Open Active Directory Administrative Center. サーバー マネージャーで、クリックして**ツール**、] をクリックし、 **Active Directory 管理センター**します。  
+2.  Active Directory 管理センターを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、**[Active Directory 管理センター]** をクリックします。  
   
-3.  Expand **Dynamic Access Control**, and then click **Resource Properties**.  
+3.  **[ダイナミック アクセス制御]** を展開してから、**[リソース プロパティ]** をクリックします。  
   
-4.  Right-click **Retention Period**, and then click **Enable**.  
+4.  **[保有期間]** を右クリックし、**[有効にする]** をクリックします。  
   
-5.  Right-click **Discoverability**, and then click **Enable**.  
+5.  **[発見可能]** を右クリックし、**[有効にする]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド * * *  
+![ソリューション ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
   
-次の Windows PowerShell コマンドレットまたはコマンドレットは、前の手順と同じ機能を実行します。 表示される場合でも可能性があります複数行に改行書式上の制約のためには、各コマンドレットを 1 つの行を入力します。  
+以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
 ```  
 Set-ADResourceProperty -Enabled:$true -Identity:'CN=RetentionPeriod_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'  
 Set-ADResourceProperty -Enabled:$true -Identity:'CN=Discoverability_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'  
 ```  
   
-## <a name="BKMK_Step2"></a>Step 2: Configure notifications  
-In this step, we use the File Server Resource Manager console to configure the SMTP server, the default administrator email address, and the default email address that the reports are sent from.  
+## <a name="BKMK_Step2"></a>手順 2:通知を構成する  
+この手順では、ファイル サーバー リソース マネージャーのコンソールを使用して、SMTP サーバー、既定の管理者電子メール アドレス、およびレポート送信元の既定の電子メール アドレスを構成します。  
   
-[Do this step using Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
+[Windows PowerShell を使用してこの手順を実行します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
   
-#### <a name="to-configure-notifications"></a>To configure notifications  
+#### <a name="to-configure-notifications"></a>通知を構成するには  
   
-1.  Sign in to the file server as a member of the Administrators security group.  
+1.  Administrators セキュリティ グループのメンバーとしてファイル サーバーにサインインします。  
   
-2.  From the Windows PowerShell command prompt, type **Update-FsrmClassificationPropertyDefinition**, and then press ENTER. This will synchronize the property definitions that are created on the domain controller to the file server.  
+2.  Windows PowerShell コマンド プロンプトで「 **Update-FsrmClassificationPropertyDefinition**」と入力してから、Enter キーを押します。 これにより、ドメイン コントローラーで作成されたプロパティ定義がファイル サーバーに同期されます。  
   
-3.  ファイル サーバー リソース マネージャーを開きます。 In Server Manager, click **Tools**, and then click **File Server Resource Manager**.  
+3.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、**[ファイル サーバー リソース マネージャー]** をクリックします。  
   
-4.  Right-click **File Server Resource Manager (local)**, and then click **Configure Options**.  
+4.  **[ファイル サーバー リソース マネージャー (ローカル)]** をクリックしてから、**[オプションの構成]** をクリックします。  
   
-5.  On the **Email Notifications** tab, configure the following:  
+5.  **[電子メールの通知]** タブで次のように構成します。  
   
-    -   In the **SMTP server name or IP address** box, type the name of the SMTP server on your network.  
+    -   **[SMTP サーバー名または IP アドレス]** ボックスに、ネットワーク上の SMTP サーバーの名前を入力します。  
   
-    -   In the **Default administrator recipients** box, type the email address of the administrator who should get the notification.  
+    -   **[管理者である既定の受信者]** ボックスに、通知を受け取る管理者の電子メール アドレスを入力します。  
   
-    -   In the **Default "From" e-mail address** box, type the email address that should be used to send the notifications.  
+    -   **既定の「差出人」電子メール アドレス**ボックスに、通知の送信に使用する電子メール アドレスを入力します。  
   
-6.  をクリックして**OK**します。  
+6.  **[OK]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド * * *  
+![ソリューション ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
   
-次の Windows PowerShell コマンドレットまたはコマンドレットは、前の手順と同じ機能を実行します。 表示される場合でも可能性があります複数行に改行書式上の制約のためには、各コマンドレットを 1 つの行を入力します。  
+以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
 ```  
 Set-FsrmSetting -SmtpServer IP address of SMTP server -FromEmailAddress "FromEmailAddress" -AdminEmailAddress "AdministratorEmailAddress"  
 ```  
   
-## <a name="BKMK_Step3"></a>Step 3: Create a file management task  
-In this step, we use the File Server Resource Manager console to create a file management task that will run on the last day of the month and expire any files with the following criteria:  
+## <a name="BKMK_Step3"></a>手順 3:ファイル管理タスクを作成する  
+この手順では、ファイル サーバー リソース マネージャーのコンソールを使用して、月の末日に実行されるファイル管理タスクを作成し、次の条件でファイルを有効期限切れにします。  
   
--   The file is not classified as being on legal hold.  
+-   ファイルが訴訟ホールドとして分類されていない。  
   
--   The file is classified as having a long-term retention period.  
+-   ファイルが長期保持期間を持つものとして分類されている。  
   
--   The file has not been modified in the last 10 years.  
+-   ファイルが過去 10 年間に変更されていない。  
   
-[Do this step using Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
+[Windows PowerShell を使用してこの手順を実行します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
   
-#### <a name="to-create-a-file-management-task"></a>To create a file management task  
+#### <a name="to-create-a-file-management-task"></a>ファイル管理タスクを作成するには  
   
-1.  Sign in to the file server as a member of the Administrators security group.  
+1.  Administrators セキュリティ グループのメンバーとしてファイル サーバーにサインインします。  
   
-2.  ファイル サーバー リソース マネージャーを開きます。 In Server Manager, click **Tools**, and then click **File Server Resource Manager**.  
+2.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、**[ファイル サーバー リソース マネージャー]** をクリックします。  
   
-3.  Right-click **File Management Tasks**, and then click **Create File Management Task**.  
+3.  **[ファイル管理タスク]** を右クリックし、 **[ファイル管理タスクの作成]** をクリックします。  
   
-4.  On the **General** tab, in the **Task name** box, type a name for the file management task, such as Retention Task.  
+4.  **[全般]** タブの **[タスク名]** ボックスに、「保持タスク」などのファイル管理タスク名を入力します。  
   
-5.  On the **Scope** tab, click **Add**, and choose the folders that should be included in this rule, such as D:\Finance Documents.  
+5.  **[スコープ]** タブで **[追加]** をクリックし、この規則に含めるフォルダー (D:\Finance Documents など) を選択します。  
   
-6.  On the **Action** tab, in the **Type** box, click **File expiration**. In the **Expiration directory** box, type a path to a folder on the local file server where the expired files will be moved. This folder should have an access control list that grants only file server administrators access.  
+6.  **[操作]** タブの **[種類]** ボックスで **[ファイルの有効期限]** をクリックします。 **[有効期限切れのディレクトリ]** ボックスに、有効期限が切れたファイルを移動するローカル ファイル サーバー上のフォルダーのパスを入力します。 このフォルダーには、ファイル サーバー管理者にのみアクセスを許可するアクセス制御リストがなければなりません。  
   
-7.  On the **Notification** tab, click **Add**.  
+7.  **[通知]** タブで **[追加]** をクリックします。  
   
-    -   Select the **Send e-mail to the following administrators** check box.  
+    -   **[次の管理者に電子メールを送信する]** チェック ボックスを選択します。  
   
-    -   Select the **Send an email to users with affected files** check box, and then click **OK**.  
+    -   **[影響のあるファイルを使用するユーザーに電子メールを送信する]** チェック ボックスを選択してから、**[OK]** をクリックします。  
   
-8.  On the **Condition** tab, click **Add**, and add the following properties:  
+8.  **[条件]** タブで **[追加]** をクリックし、次のプロパティを追加します。  
   
-    -   In the **Property** list, click **Discoverability**. In the **Operator** list, click **Not equal**. In the **Value** list, click **Hold**.  
+    -   **[プロパティ]** リストで **[発見可能]** をクリックします。 **[演算子]** リストで **[等しくない]** をクリックします。 **[値]** リストで **[保留]** をクリックします。  
   
-    -   In the **Property** list, click **Retention Period**. In the **Operator** list, click **Equal**. In the **Value** list, click **Long-Term**.  
+    -   **[プロパティ]** リストで **[保有期間]** をクリックします。 **[演算子]** リストで **[等しい]** をクリックします。 **[値]** リストで **[長期]** をクリックします。  
   
-9. On the **Condition** tab, select the **Days since file was last modified** check box, and then set the value to **3650**.  
+9. **[条件]** タブで **[ファイルの最終変更からの日数]** チェック ボックスを選択してから、値を **3650** に設定します。  
   
-10. On the **Schedule** tab, click the **Monthly** option, and then select the **Last** check box.  
+10. **[スケジュール]** タブで **[毎月]** オプションをクリックしてから、**[最終]** チェック ボックスを選択します。  
   
-11. をクリックして**OK**します。  
+11. **[OK]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド * * *  
+![ソリューション ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
   
-次の Windows PowerShell コマンドレットまたはコマンドレットは、前の手順と同じ機能を実行します。 表示される場合でも可能性があります複数行に改行書式上の制約のためには、各コマンドレットを 1 つの行を入力します。  
+以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
 ```  
 $fmjexpiration = New-FSRMFmjAction -Type 'Expiration' -ExpirationFolder folder  
@@ -157,37 +158,37 @@ $schedule = New-FsrmScheduledTask -Time $date -Monthly @(-1)
 $fmj1=New-FSRMFileManagementJob -Name "Retention Task" -Namespace @('D:\Finance Documents') -Action $fmjexpiration -Schedule $schedule -Notification @($fmjNotification) -Condition @( $fmjCondition1, $fmjCondition2, $fmjCondition3)  
 ```  
   
-## <a name="BKMK_Step4"></a>Step 4: Classify a file manually  
-In this step, we manually classify a file to be on legal hold. The parent folder of this file will be classified with a long-term retention period.  
+## <a name="BKMK_Step4"></a>手順 4:ファイルを手動で分類する  
+この手順では、訴訟ホールドにするファイルを手動で分類します。 このファイルの親フォルダーは、長期保持期間を使用して分類されます。  
   
-#### <a name="to-manually-classify-a-file"></a>To manually classify a file  
+#### <a name="to-manually-classify-a-file"></a>ファイルを手動で分類するには  
   
-1.  Sign in to the file server as a member of the Administrators security group.  
+1.  Administrators セキュリティ グループのメンバーとしてファイル サーバーにサインインします。  
   
-2.  Navigate to the folder that was configured in the scope of the file management task created in Step 3.  
+2.  手順 3 で作成したファイル管理タスクのスコープで構成したフォルダーに移動します。  
   
-3.  Right-click the folder, and then click **Properties**.  
+3.  フォルダーを右クリックし、 **[プロパティ]** をクリックします。  
   
-4.  On the **Classification** tab, click **Retention Period**, click **Long-Term**, and then click **OK**.  
+4.  **[分類]** タブで **[保有期間]** をクリックし、**[長期]** をクリックしてから、**[OK]** をクリックします。  
   
-5.  Right-click a file within that folder, and then click **Properties**.  
+5.  そのフォルダー内のファイルを右クリックしてから、**[プロパティ]** をクリックします。  
   
-6.  On the **Classification** tab, click **Discoverability**, click **Hold**, click **Apply**, and then click **OK**.  
+6.  **[分類]** タブで **[発見可能]** をクリックし、**[保留]** をクリックし、**[適用]** をクリックしてから、**[OK]** をクリックします。  
   
-7.  On the file server, run the file management task by using the File Server Resource Manager console. After the file management task completes, check the folder and ensure the file was not moved to the expiration directory.  
+7.  ファイル サーバーで、ファイル サーバー リソース マネージャーのコンソールを使用してファイル管理タスクを実行します。 ファイル管理タスクが完了した後に、フォルダーを検査し、ファイルが有効期限切れディレクトリに移動されていないことを確認します。  
   
-8.  Right-click the same  file within that folder, and then click **Properties**.  
+8.  そのフォルダー内の同じファイルを右クリックしてから、**[プロパティ]** をクリックします。  
   
-9. On the **Classification** tab, click **Discoverability**, click **Not Applicable**, click **Apply**, and then click **OK**.  
+9. **[分類]** タブで **[発見可能]** をクリックし、**[該当なし]** をクリックし、**[適用]** をクリックしてから、**[OK]** をクリックします。  
   
-10. On the file server, run the file management task again by using the File Server Resource Manager console. After the file management task completes, check the folder and ensure that file was moved to the expiration directory.  
+10. ファイル サーバーで、ファイル サーバー リソース マネージャーのコンソールを使用してファイル管理タスクを再度実行します。 ファイル管理タスクが完了した後に、フォルダーを検査し、ファイルが有効期限切れディレクトリに移動されたことを確認します。  
   
 ## <a name="BKMK_Links"></a>参照してください。  
   
--   [シナリオ: ファイル サーバー上の情報の保持を実装します。](Scenario--Implement-Retention-of-Information-on-File-Servers.md)  
+-   [シナリオ:ファイル サーバー上の情報の保持を実装します。](Scenario--Implement-Retention-of-Information-on-File-Servers.md)  
   
--   [ファイル サーバー上の情報の保持を計画します。](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)  
+-   [ファイル サーバー上の情報の保有期間を計画します。](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)  
   
--   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [ダイナミック アクセス制御:シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

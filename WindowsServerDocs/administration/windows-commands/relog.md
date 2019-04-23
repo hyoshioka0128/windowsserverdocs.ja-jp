@@ -1,0 +1,106 @@
+---
+title: relog
+description: パフォーマンス coutner のログ ファイルからパフォーマンス カウンター情報を抽出する方法について説明します。
+ms.custom: na
+ms.prod: windows-server-threshold
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 7480f6c0-9953-4d70-9b1c-b27e09d8db13
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 07/11/2018
+ms.openlocfilehash: 6804c25af04907edc8180b6a37be7efcc470f259
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59869363"
+---
+# <a name="relog"></a>relog
+
+>適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+
+TSV (タブ区切りのテキスト)、CSV (コンマ区切りのテキスト)、バイナリ、または SQL など、他の形式にパフォーマンス カウンターのログからパフォーマンス カウンターを抽出します。   
+
+## <a name="syntax"></a>構文  
+```  
+relog [<FileName> [<FileName> ...]] [/a] [/c <path> [<path> ...]] [/cf <FileName>] [/f  {bin|csv|tsv|SQL}] [/t <Value>] [/o {OutputFile|DSN!CounterLog}] [/b <M/D/YYYY> [[<HH>:] <MM>:] <SS>] [/e <M/D/YYYY> [[<HH>:] <MM>:] <SS>] [/config {<FileName>|i}] [/q]  
+```  
+
+### <a name="parameters"></a>パラメーター  
+
+|パラメーター|説明|
+|--|--|
+|*ファイル名* [*FileName...*]|既存のパフォーマンス カウンター ログのパス名を指定します。 複数の入力ファイルを指定できます。|
+|-a |出力ファイルを上書きする代わりに追加します。 このオプションは、SQL 形式の既定値は常に追加するには適用されません。  |
+|-c *path* [*path ...*]|ログに記録するパフォーマンス カウンターのパスを指定します。 複数のカウンター パスを指定する、スペースで区切ります、カウンター パスを引用符で囲みます (例: **"* * * Counterpath1* * Counterpath2 ***"**)|  
+|-cf *FileName*|Relog ファイルに含まれるパフォーマンス カウンターの一覧をテキスト ファイルのパス名を指定します。 カウンター パスを入力ファイルで、行ごとに 1 つは、このオプションを使用します。 既定値は、元のログ ファイル内のすべてのカウンターをログします。|  
+|-f {bin\| csv\|tsv\|SQL}|出力ファイルの形式のパス名を指定します。 既定の形式は **bin**します。 出力ファイルで指定して、SQL データベース、 *DSN です。CounterLog*します。 DSN (データベースのシステム名) を構成する ODBC マネージャーを使用して、データベースの場所を指定できます。  |
+|-t*値*|サンプリング間隔を指定"*N*"レコードです。 Relog ファイルにすべての n 番目のデータ ポイントが含まれています。 既定値は、すべてのデータ ポイントです。|  
+|-o {*OutputFile* \| *"SQL:DSN!Counter_Log*} DSN がシステムで定義されている ODMC DSN です。|出力ファイルまたは SQL データベースのカウンターの書き込み先のパス名を指定します。 <br>注:Relog.exe の 64 ビットおよび 32 ビット バージョン、DSN を ODBC データ ソースで定義する必要があります (64 ビットおよび 32 ビットそれぞれ)。|
+|-b \< *M*/*D*/*YYYY*> [*HH*:]*MM*:]*SS*|指定する入力ファイルから最初のレコードのコピー開始時刻。 日付と時刻が正確な形式である必要があります*M***/*** D***/*** YYYYHH ***:*** MM ***:*** SS*.|  
+|-e \<*M*/*D*/*YYYY*> [[*HH*:]*MM*:]*SS* |入力ファイルから最後のレコードのコピーの終了時刻を指定します。 日付と時刻が正確な形式である必要があります*M***/*** D***/*** YYYYHH ***:*** MM ***:*** SS*.|  
+|-config {*FileName* \| *i*}|コマンド ライン パラメーターを含む設定ファイルのパス名を指定します。 使用 *-i* コマンドライン上に配置が入力ファイルの一覧については、プレース ホルダーとして、構成ファイルにします。 コマンド ラインでする必要はありませんを使用する *は*です。 多くの入力ファイルの名前を指定するのに、*.blg を使用することもできます。|  
+|-q|パフォーマンス カウンターと時間範囲のログの入力ファイルで指定されたファイルを表示します。|  
+|-y|"Yes"にすべての質問に答えることによって確認をバイパスします。|  
+|/?|コマンド プロンプトにヘルプを表示します。|
+
+## <a name="remarks"></a>注釈  
+カウンター パスの形式:  
+-   カウンター パスの一般的な形式のとおりです: [\\\<コンピューター >] \\\<オブジェクト > [\<親 >\\< インスタンス #Index >] \\ \<カウンター >] 親、インスタンス、インデックス、および形式のカウンターのコンポーネントが含まれている有効な名前またはワイルドカード文字のいずれか。 コンピューター、親、インスタンス、およびインデックスのコンポーネントでは、すべてのカウンタは必要ありません。  
+-   使用するカウンター パスを決定すると、自体カウンターに基づいています。 LogicalDisk オブジェクトのインスタンスがなど <Index>, ので、< #index > または、ワイルドカードを指定する必要があります。 そのため、次の形式を使用できます: **\LogicalDisk (\*/\*#\*)\\\***  
+-   比較は、プロセス オブジェクトを必要としないインスタンス\<インデックス >。 したがって、次の形式を使用する可能性があります: **\Process (\*) \ID プロセス**  
+-   ワイルドカード文字が、親の名前で指定されている場合は、指定したインスタンスおよびカウンター フィールドに一致する指定したオブジェクトのすべてのインスタンスが返されます。  
+-   インスタンス名にワイルドカード文字を指定すると場合、は、指定したインデックスに対応するすべてのインスタンス名にワイルドカード文字が一致する場合に指定されたオブジェクトと親オブジェクトのすべてのインスタンスが返されます。  
+-   カウンター名にワイルドカード文字を指定すると、指定したオブジェクトのすべてのカウンターが返されます。  
+-   一部のカウンター パス文字列の一致 (たとえば、pro *) がサポートされていません。  
+
+カウンター ファイル:  
+-   カウンター ファイルは、1 つ以上の既存のログでのパフォーマンス カウンターを一覧表示されるテキスト ファイルです。 ログからすべてのカウンターの名前をコピーまたは **/q**で出力\<コンピューター >\\\<オブジェクト >\\\<インスタンス >\\ \<カウンター > の形式。 行ごとに 1 つのカウンター パスを一覧表示します。  
+
+カウンターをコピーするには。  
+-   実行すると、 **relog** コピーは必要な場合の形式の変換の入力ファイルですべてのレコードからカウンターを指定します。 ワイルドカードのパスは、カウンター ファイルで許可されます。  
+保存する入力ファイルのサブセット。  
+-   使用して、 **/t** に入力ファイルを挿入することを指定するパラメーターの出力の間隔でのファイルすべて <n>番目のレコードです。 既定では、すべてのレコードからデータがログされます。  
+使用して **/b** と **/e** ログ ファイルを持つパラメーター  
+-   出力ログの開始時刻より前に、のレコードに含めることを指定することができます (つまり、 **/b**) データを書式設定された値の計算値を必要とするカウンターを指定します。 出力ファイルは、タイムスタンプを使用した入力ファイルから最後のレコードがより小さい **/e** (つまり、終了時刻) のパラメーターです。  
+使用して、 **/config** オプション。  
+-   使用される設定ファイルの内容、 **/config** オプションは、次の形式である必要があります。  
+    -   \<CommandOption >\\\<値 > ここで、 \<CommandOption > コマンド ライン オプションと\<値 > の値を指定します。
+
+組み込みの詳細については**relog**に、Windows Management Instrumentation (WMI) スクリプトに"WMI スクリプト"を参照してください。、 [Microsoft Windows リソース キットの Web サイト](https://go.microsoft.com/fwlink/?LinkId=4665)します。  
+
+## <a name="BKMK_Examples"></a>例  
+既存のトレース ログをリサンプル 30 固定間隔で、カウンター パスの一覧で、ファイルとフォームの出力します。  
+```  
+relog c:\perflogs\daily_trace_log.blg /cf counter_file.txt /o c:\perflogs\reduced_log.csv /t 30 /f csv  
+```  
+既存のトレース ログをリサンプル 30 固定間隔で、カウンター パスと出力ファイルの一覧を表示します。  
+```  
+relog c:\perflogs\daily_trace_log.blg /cf counter_file.txt /o c:\perflogs\reduced_log.blg /t 30  
+```
+データベースの使用に既存のトレース ログをリサンプル。
+```
+relog "c:\perflogs\daily_trace_log.blg" -f sql -o "SQL:sql2016x64odbc!counter_log"
+```
+
+## <a name="additional-references"></a>その他の参照情報  
+-   [コマンドライン構文キー](command-line-syntax-key.md)  
+  
+<!---
+-   The following is a list of the possible formats:  
+    -   \<computer>\\\<Object>(\<Parent>/\<Instance#Index>)\<Counter>  
+    -   \<computer>\<Object>(<Parent>/<Instance>)\\<Counter>  
+    -   \\\\<computer>\\<Object>(<Instance#Index>)\\<Counter>  
+    -   \\\\<computer>\\<Object>(<Instance>)\\<Counter>  
+    -   \\\\<computer>\\<Object>\\<Counter>  
+    -   \\<Object>(<Parent>/<Instance#Index>)\\<Counter>  
+    -   \\<Object>(<Parent>/<Instance>)<Counter>  
+    -   \\<Object>(<Instance#Index>)\\<Counter>  
+    -   \\<Object>(<Instance>)\\<Counter>  
+    -   \\<Object>\\<Counter>  
+--->

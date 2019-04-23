@@ -1,5 +1,5 @@
 ---
-title: "AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 5: クライアントのセットアップ"
+title: 'AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 5: クライアントのセットアップ'
 ms.prod: windows-server-threshold
 ms.technology: storage-work-folders
 ms.topic: article
@@ -9,26 +9,27 @@ author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: f168292b-0dbc-44b9-965f-d480e5134a0c
 ms.openlocfilehash: fa8b2b15ff411a59b28308a329d7ca2341ef0886
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59871943"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 5: クライアントのセットアップ
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 5 では、クライアントのセットアップ
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
 このトピックでは、Active Directory フェデレーション サービス (AD FS) と Web アプリケーション プロキシを使用して、ワーク フォルダーを展開する 5 番目の手順について説明します。 このプロセスの他の手順は、次のトピックで確認できます。  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 概要](deploy-work-folders-adfs-overview.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。概要](deploy-work-folders-adfs-overview.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 1: AD FS のセットアップ](deploy-work-folders-adfs-step1.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 1、AD FS の設定](deploy-work-folders-adfs-step1.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 2、AD FS の構成後の作業](deploy-work-folders-adfs-step2.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 2 では、AD FS の構成後の作業](deploy-work-folders-adfs-step2.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 3: ワーク フォルダーのセットアップ](deploy-work-folders-adfs-step3.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 3 では、ワーク フォルダーの設定](deploy-work-folders-adfs-step3.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 4: Web アプリケーション プロキシのセットアップ](deploy-work-folders-adfs-step4.md)  
+-   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 4、Web アプリケーション プロキシの設定](deploy-work-folders-adfs-step4.md)  
   
 ドメインに参加している Windows クライアントおよびドメインに参加していない Windowsクライアントをセットアップするには、次の手順を使用します。 これらのクライアントを使用して、クライアントのワーク フォルダーの間でファイルが正しく同期されているかどうかをテストすることができます。  
   
@@ -41,7 +42,7 @@ ms.lasthandoff: 10/17/2017
   
 証明書をインストールするには、以下の手順を実行します。  
   
-1.  **[スタート]** をクリックし、**[実行]** をクリックします。  
+1.  **[スタート]** ボタンをクリックして **[ファイル名を指定して実行]** をクリックします。  
   
 2.  「**MMC**」と入力します。  
   
@@ -51,11 +52,11 @@ ms.lasthandoff: 10/17/2017
   
 5.  **[コンピューター アカウント]** を選択し、**[次へ]** をクリックします。  
   
-6.  **[ローカル コンピュータ (このコンソールを実行しているコンピュータ)]** を選択し、**[完了]** をクリックします。  
+6.  **[ローカル コンピュータ (このコンソールを実行しているコンピュータ)]** を選択し、次に **[完了]** をクリックします。  
   
 7.  **[OK]** をクリックします。  
   
-8.  [コンソール ルート]\[証明書 \(ローカル コンピューター)]\[個人]\[証明書] フォルダーを展開します。  
+8.  [コンソール ルート\証明書 \(ローカル コンピューター)\個人\証明書] フォルダーを展開します。  
   
 9. **[証明書]** を右クリックし、**[すべてのタスク]**、**[インポート]** の順にクリックします。  
   
@@ -63,9 +64,9 @@ ms.lasthandoff: 10/17/2017
   
 11. 手順 9 と 10 を繰り返します。今回はワーク フォルダー証明書を参照して、インポートします。  
   
-12. [コンソール ルート]\[証明書 \(ローカル コンピューター)]\[信頼されたルート証明機関]\[証明書] フォルダーを展開します。  
+12. [コンソール ルート\証明書 \(ローカル コンピューター)\信頼されたルート証明機関\証明書] フォルダーを展開します。  
   
-13. [**証明書**] を右クリックし、[**すべてのタスク**]、[**インポート**] の順にクリックします。  
+13. **[証明書]** を右クリックし、**[すべてのタスク]**、**[インポート]** の順にクリックします。  
   
 14. AD FS 証明書を含むフォルダーを参照し、ウィザードの指示に従ってファイルをインポートして、信頼されたルート証明機関ストアに配置します。  
   
@@ -78,7 +79,7 @@ ms.lasthandoff: 10/17/2017
   
 2.  **[ワーク フォルダーのセットアップ]** をクリックします。  
   
-3.  **[勤務先の電子メール アドレスを入力してください]** ページでユーザーのメール アドレス (user@contoso.com など) または ワーク フォルダー URL (このテスト例では、https://workfolders.contoso.com) を入力し、**[次へ]** をクリックします。  
+3.  **職場の電子メール アドレスを入力します。**  ページで、ユーザーの電子メール アドレスを入力します (たとえば、 user@contoso.com) またはワーク フォルダーの URL (テストの例で https://workfolders.contoso.com)、順にクリックします**次へ**。  
   
 4.  ユーザーが企業ネットワークに接続されている場合、Windows 統合認証によって、認証が実行されます。 ユーザーが企業ネットワークに接続されていない場合は、ADFS (OAuth) で認証が実行され、ユーザーは資格情報の入力を求められます。 資格情報を入力して、**[OK]** をクリックします。  
   
@@ -108,7 +109,7 @@ ms.lasthandoff: 10/17/2017
   
 -  enterpriseregistration.ドメイン  
   
-テストの例では、これらの値を使います。  
+テストの例では、以下の値を使います。  
   
 -  **10.0.0.10 workfolders.contoso.com**  
   
