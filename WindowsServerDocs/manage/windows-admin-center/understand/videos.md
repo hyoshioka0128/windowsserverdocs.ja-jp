@@ -1,6 +1,6 @@
 ---
-title: Windows 管理センターのビデオ
-description: 管理センターの Windows ビデオ (Project ホノルル)
+title: Windows Admin Center ビデオ
+description: Windows Admin Center のビデオ (プロジェクト ホノルル)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -9,18 +9,18 @@ ms.date: 06/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: b5e712d5b6284517547e6ce4dea87f066f7e6cb4
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2074253"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59877003"
 ---
-# <a name="windows-admin-center-videos"></a>Windows 管理センターのビデオ
+# <a name="windows-admin-center-videos"></a>Windows Admin Center ビデオ
 
->対象アプリケーション: Windows 管理センター、Windows の管理センターのプレビュー
+>適用先:Windows Admin Center、Windows Admin Center プレビュー
 
-## <a name="introduction-to-windows-admin-center"></a>Windows 管理センターの概要
+## <a name="introduction-to-windows-admin-center"></a>Windows Admin Center の概要
 >[!VIDEO https://www.youtube.com/embed/WCWxAp27ERk]
 
-## <a name="how-to-get-started-with-windows-admin-center"></a>Windows 管理センターの使用を開始する方法
+## <a name="how-to-get-started-with-windows-admin-center"></a>Windows Admin Center を使用する方法
 >[!VIDEO https://www.youtube.com/embed/PcQj6ZklmK0]

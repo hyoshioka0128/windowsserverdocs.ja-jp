@@ -1,7 +1,7 @@
 ---
 ms.assetid: dc24adb7-385d-4a92-ab81-78ba73df0118
-title: "フェデレーション サーバー プロキシの証明書の要件"
-description: 
+title: フェデレーション サーバー プロキシの証明書の要件
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,29 +10,30 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: e7fb8e71afed1c0eb6b55857835d95f2dd0ec9d5
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59875723"
 ---
 # <a name="certificate-requirements-for-federation-server-proxies"></a>フェデレーション サーバー プロキシの証明書の要件
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-Active Directory フェデレーション サービス \(AD FS\) でフェデレーション サーバー プロキシの役割で実行しているサーバーは、Secure Sockets Layer \(SSL\) サーバー認証証明書を使用する必要があります。 フェデレーション サーバー プロキシは、Web クライアントと Web サーバーのトラフィック通信をセキュリティで保護するのに SSL サーバー認証証明書を使用します。  
+Active Directory フェデレーション サービスでは、フェデレーション サーバー プロキシ ロールで実行されているサーバー \(AD FS\) Secure Sockets Layer を使用するために必要な\(SSL\)サーバー認証証明書。 フェデレーション サーバー プロキシは、SSL サーバー認証証明書を使用して、Web クライアントとの Web サーバーのトラフィック通信をセキュリティ保護します。  
   
-通常、フェデレーション サーバー プロキシは、エンタープライズ公開キー インフラストラクチャに含まれていないインターネット上のコンピューターに公開 \(PKI\) します。 そのため、パブリック \(third\-party\) 証明機関によって発行されたサーバー認証証明書を使用して \(CA\)、VeriSign などです。  
+フェデレーション サーバー プロキシは通常、エンタープライズ公開キー インフラストラクチャに含まれないインターネット上のコンピューターに公開\(PKI\)します。 そのため、パブリックによって発行されたサーバー認証証明書を使用して、 \(3 番目\-パーティ\)証明機関\(CA\)、たとえば、VeriSign します。  
   
-フェデレーション サーバー プロキシ ファームがある場合は、すべてのフェデレーション サーバー プロキシ コンピューターは、同じサーバー認証証明書を使用する必要があります。 詳細については、次を参照してください。[フェデレーション サーバー プロキシ ファームを作成するときに](When-to-Create-a-Federation-Server-Proxy-Farm.md)します。  
+フェデレーション サーバー プロキシ ファームを使用すると、すべてのフェデレーション サーバー プロキシ コンピューターが同じサーバー認証証明書を使用する必要があります。 詳細については、「 [When to Create a Federation Server Proxy Farm](When-to-Create-a-Federation-Server-Proxy-Farm.md)」を参照してください。  
   
-ことが重要で、サーバー認証証明書のサブジェクト名の AD FS 管理スナップインで指定されているフェデレーション サービス名の値と一致していることを確認します。 この値を見つけるを開き、スナップイン、右クリック**サービス**、] をクリックして**フェデレーション サービスのプロパティの編集**、し、値を検索**フェデレーション サービス名**テキスト ボックスです。  
+AD FS 管理スナップインで、フェデレーション サービス名の値がサーバー認証証明書の一致にサブジェクト名が指定されていることを確認することが重要\-でします。 この値を検索するには、スナップインを開きます\-、右\-クリックして**サービス**、 をクリックして**フェデレーション サービス プロパティの編集**、しの値を検索**フェデレーションサービス名**テキスト ボックス。  
   
-詳細については、SSL 証明書を使用して、IIS 7.0 で Secure Sockets Layer の構成を参照してください \ ([http:///\/go.microsoft.com\/fwlink\/ですか?。LinkID\ = 108544](https://go.microsoft.com/fwlink/?LinkID=108544)\) と IIS 7.0 でサーバー証明書の構成 \ ([http:///\/go.microsoft.com\/fwlink\/ ですか?LinkID\ = 108545](https://go.microsoft.com/fwlink/?LinkID=108545)\)。  
+SSL 証明書の使用の詳細については、IIS 7.0 で Secure Sockets Layer の構成を参照してください。 \( [http:\/\/go.microsoft.com\/fwlink\/でしょうか。LinkID\=108544](https://go.microsoft.com/fwlink/?LinkID=108544) \) Configuring Server Certificates in IIS 7.0 と\( [http:\/\/go.microsoft.com\/fwlink\/?LinkID\=108545](https://go.microsoft.com/fwlink/?LinkID=108545)\)します。  
   
 > [!NOTE]  
 > クライアント認証証明書は、AD FS フェデレーション サーバー プロキシの必要はありません。  
   
-使用する任意の証明書の証明書失効リスト \(CRLs\) 場合は、構成された証明書で、サーバーは、Crl を配布するサーバーに接続できる必要があります。 CRL の種類は、どのようなポートが使用を決定します。  
+証明書のいずれかをする場合の使用は、証明書失効リスト\(Crl\)、構成された証明書を使用して、サーバーは、Crl を配布するサーバーに接続できる必要があります。 CRL の種類によって、使用するポートが決まります。  
   
-## <a name="see-also"></a>参照してください。
+## <a name="see-also"></a>関連項目
 [Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)

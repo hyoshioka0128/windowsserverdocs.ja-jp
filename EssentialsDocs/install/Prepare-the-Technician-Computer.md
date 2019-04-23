@@ -1,6 +1,6 @@
 ---
-title: "テクニシャン コンピューターを準備します。"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: テクニシャン コンピューターの準備
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,22 +13,23 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 4c3570c593966b5f3cc703011aaa16a07a4e8610
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59875413"
 ---
-# <a name="prepare-the-technician-computer"></a>テクニシャン コンピューターを準備します。
+# <a name="prepare-the-technician-computer"></a>テクニシャン コンピューターの準備
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-テクニシャン コンピューターにはツールと Windows アセスメント & デプロイメント キット (ADK) のドキュメントが含まれていて、展開する予定のオペレーティング システムのイメージをカスタマイズすることをお勧めします。 テクニシャン コンピューターを準備するのには、次を実行します。  
+テクニシャン コンピューターには、Windows アセスメント & デプロイメント キット (ADK) のツールとドキュメントが含まれています。テクニシャン コンピューターは、展開しようとするオペレーティング システムのイメージのカスタマイズに使用します。 以下の手順を完了してテクニシャン コンピューターを準備します。  
   
--   Windows 7、Windows 8 または Windows 10 でのコンピューターを準備します。  
+-   Windows 7、Windows 8 または Windows 10 を使用しているコンピューターを準備します。  
   
--   Windows 7、Windows 8 または Windows 10 からを実行しているコンピューターに Windows ADK をインストール、[Microsoft Web サイト](https://go.microsoft.com/fwlink/?LinkID=248647)します。  
+-   Windows 7、Windows 8 または Windows 10 からを実行しているコンピューターに Windows ADK をインストール、 [Microsoft web サイト](https://go.microsoft.com/fwlink/?LinkID=248647)します。  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
 
  [Windows Server Essentials ADK の概要](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   

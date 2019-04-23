@@ -1,6 +1,6 @@
 ---
-title: ネットワーク シェル (Netsh) バッチ ファイルの例
-description: このトピックを使用すると、Windows Server 2016 では、Netsh を使用して複数のタスクを実行するバッチ ファイルを作成するのに方法について説明します。
+title: ネットワーク シェル (Netsh) のサンプル バッチ ファイル
+description: このトピックを使用すると、Windows Server 2016 で Netsh を使用して複数のタスクを実行するバッチ ファイルを作成するのに方法について説明します。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -9,34 +9,35 @@ manager: brianlic
 ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: b0528cfaef201ba30e00e30f56a763be39a6b828
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59880173"
 ---
-# <a name="network-shell-netsh-example-batch-file"></a>ネットワーク シェル \(Netsh\) バッチ ファイルの例
+# <a name="network-shell-netsh-example-batch-file"></a>ネットワーク シェル\(Netsh\)バッチ ファイルの例
 
-Windows Server 2016 の適用対象:
+適用先:Windows Server 2016
 
-このトピックを使用すると、Windows Server 2016 では、Netsh を使用して複数のタスクを実行するバッチ ファイルを作成するのに方法について説明します。 この例のバッチ ファイルで、**netsh wins**コンテキストを使用します。
+このトピックを使用すると、Windows Server 2016 で Netsh を使用して、複数のタスクを実行するバッチ ファイルを作成するのに方法について説明します。 この例のバッチ ファイルで、 **netsh wins**コンテキストが使用されます。
 
 ## <a name="example-batch-file-overview"></a>バッチ ファイルの例の概要
 
-タスクを自動化するのにバッチ ファイルでの Windows インターネット ネーム サービス \(WINS\) 用の Netsh コマンドとその他のスクリプトを使用することができます。 バッチ ファイルの次の例では、WINS 用の Netsh コマンドを使用して、さまざまな関連するタスクを実行する方法について説明します。
+Windows インターネット ネーム サービス用の Netsh コマンドを使用する\(WINS\)でバッチ ファイルやその他のスクリプト タスクを自動化します。 次のバッチ ファイルの例では、WINS の Netsh コマンドを使用して、さまざまな関連タスクを実行する方法を示します。
 
-この例のバッチ ファイルで WINS\ A は 192.168.125.30 IP アドレスを持つ WINS サーバーで、WINS\ B は 192.168.0.189 IP アドレスを持つ WINS サーバーです。
+この例のバッチ ファイルで WINS\-A は、IP アドレス 192.168.125.30 と WINS の WINS サーバー\-B が 192.168.0.189 IP アドレスを持つ WINS サーバー。
 
-バッチ ファイルの例では、次のタスクが実現しています。
+バッチ ファイルの例では、次のタスクを実現します。
 
-- 追加すると、動的な名前 192.168.0.205 の IP アドレス レコードの MY\_RECORD \[04h\]、WINS\ に
-- WINS\ A のプッシュまたはプル レプリケーション パートナーとして WINS\ B の設定します。
-- で WINS\ B に接続し、設定 WINS\ に WINS\ B のプッシュまたはプル レプリケーション パートナーとしては、
-- WINS\ A から WINS\ B へのプッシュ レプリケーションを開始します。
-- WINS\-b MY\_RECORD、新しいレコードが正常にレプリケートされていることを確認するには接続します。
+- 動的な名前レコードを追加で IP アドレス、192.168.0.205 MY\_レコード\[04 h\]、WINS に\-A
+- WINS 設定\-WINS のプッシュ/プル レプリケーション パートナーとして B\-A
+- WINS に接続する\-B、および、セットの WINS\-WINS のプッシュ/プル レプリケーション パートナーとして A\-B
+- WINS からプッシュ レプリケーションを開始します\-wins A\-B
+- WINS に接続する\-B ことを確認する新しいレコード、MY\_レコードが正常にレプリケートされました。
 
 ## <a name="netsh-example-batch-file"></a>Netsh バッチ ファイルの例
 
-次のサンプル バッチ ファイルのコメントが含まれている行が付きます"rem、"の注釈。 Netsh では、コメントを無視します。
+次の例のバッチ ファイルでコメントを含む行が"rem、"で注釈の前します。 Netsh では、コメントは無視されます。
 
     rem: Begin example batch file.
     
@@ -68,14 +69,14 @@ Windows Server 2016 の適用対象:
     
     rem 6. End example batch file.
 
-## <a name="netsh-wins-commands-used-in-the-example-batch-file"></a>WINS コマンドをバッチ ファイルの例で使用されます。
+## <a name="netsh-wins-commands-used-in-the-example-batch-file"></a>バッチ ファイルの例で使用される、Netsh WINS コマンド
 
-次のセクションのリスト、**netsh wins**この例の手順で使用されるコマンドです。
+次のセクションの一覧、 **netsh wins**この例の手順で使用されるコマンド。
 
-- **サーバー**します。 現在の WINS コマンド ライン コンテキストを名前または IP アドレスで指定されたサーバーに移動します。
+- **server**します。 現在の WINS コマンドをシフト\-行コンテキスト、名前または IP アドレスで指定されたサーバーにします。
 - **名前を追加**します。 WINS サーバーの名前を登録します。
-- **パートナーを追加する**します。 WINS サーバー上のレプリケーション パートナーを追加します。
-- **init プッシュ**します。 開始し、WINS サーバーにプッシュ トリガーを送信します。
-- **名前を表示する**します。 WINS サーバーのデータベースの特定のレコードの詳細情報を表示します。  
+- **パートナーを追加する**します。 WINS サーバーのレプリケーション パートナーを追加します。
+- **init プッシュ**します。 開始し、プッシュ トリガーを WINS サーバーに送信します。
+- **名前を表示する**します。 WINS サーバー データベースの特定のレコードの詳細な情報を表示します。  
 
 詳細については、次を参照してください。[ネットワーク シェル (Netsh)](netsh.md)します。

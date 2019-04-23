@@ -1,61 +1,61 @@
 ---
 title: 設定
-description: Windows Admin Center (Project Honolulu) の設定について説明します。 ユーザーの設定では、ユーザーがその言語/地域およびその他の設定を変更できるようにします。 ゲートウェイの設定では、管理者は、ゲートウェイを構成することができます。
+description: Windows Admin Center (プロジェクト ホノルル) の設定について説明します。 ユーザー設定では、ユーザーの言語/地域およびその他の設定を変更できるようにします。 ゲートウェイの設定は、管理者は、ゲートウェイの構成を使用できます。
 ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
-ms.date: 04/12/2018
+ms.date: 09/19/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: d67a2c743900792353141186112cd09dbf780309
-ms.sourcegitcommit: f1edfc6525e09dd116b106293f9260123a94de0c
-ms.translationtype: MT
+ms.openlocfilehash: 1e1231500733f70ddfcbd4f8a847047b73f24a00
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "9296624"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59882383"
 ---
-# Windows Admin Center の設定
+# <a name="settings"></a>設定
 
-> Windows Admin Center の適用対象:
+> 適用先:Windows Admin Center
 
-Windows Admin Center の設定は、ユーザー レベルとゲートウェイ レベルの設定で構成されます。 ユーザー レベルの設定の変更では、ゲートウェイ レベルの設定の変更は、Windows Admin Center ゲートウェイ上のすべてのユーザーに影響中に、現在のユーザーのプロファイルのみ影響します。
+Windows Admin Center の設定は、ユーザー レベルおよびゲートウェイのレベルの設定で構成されます。 ユーザー レベルの設定の変更では、Windows Admin Center ゲートウェイ上のすべてのユーザーに影響を与えますゲートウェイ レベル設定に変更中に現在のユーザーのプロファイルのみ影響します。
 
-## ユーザーの設定
+## <a name="user-settings"></a>ユーザー設定
 
-ユーザー レベルの設定では、次のセクションで構成されます。
+ユーザー レベルの設定は、次のセクションで構成されます。
 
-- Account
-- Personalization
+- アカウント
 - 言語/地域
 - おすすめ
-- 詳細
 
-[**アカウント**] タブで、ユーザーが Windows Admin Center への認証に使用がそれらの資格情報を確認できます。 Azure AD が id プロバイダーに構成されている場合は、ユーザーがこのタブで、Azure AD アカウントからログインできます。
+**アカウント** タブで、ユーザーには、Windows Admin Center の認証に使用した資格情報を確認できます。 Azure AD は、id プロバイダーとして構成されている場合、ユーザーがこのタブから、Azure AD アカウントからログインできます。
 
-**[パーソナル設定]** タブで、ユーザーは、濃色 UI テーマに切り替えることができます。
+**言語/地域** タブで、ユーザーは、Windows Admin Center で表示される言語と地域の形式を変更できます。
 
-**言語/地域**] タブで、ユーザーは、Windows Admin Center で表示される言語と地域の形式を変更できます。
+**提案** タブで、ユーザーが Azure サービスと新機能に関する提案を切り替えることができます。
 
-[**候補**] タブで、ユーザーは Azure サービスと新しい機能に関する提案を切り替えることができます。
+### <a name="dark-theme"></a>ダーク テーマ
 
-**詳細設定**] タブは、追加の機能を Windows Admin Center 拡張機能の開発者に提供します。
+> 適用先:Windows Admin Center Preview
 
-## ゲートウェイの設定
+Windows Admin Center プレビューでロックを解除できる追加**パーソナル化**セクションでは、ダーク UI テーマを切り替えるオプションが含まれています。 有効にする、**パーソナル化**セクションに、入力```msft.sme.shell.personalization```実験キーとして。
 
-ゲートウェイ レベルの設定では、次のセクションで構成されます。
+>[!IMPORTANT]
+> ダーク テーマは進行中の作業で、この時点でバグを報告してください。
+
+## <a name="gateway-settings"></a>ゲートウェイの設定
+
+ゲートウェイのレベルの設定は、次のセクションで構成されます。
 
 - 拡張機能
-- Access
+- アクセス権
 - Azure
-- 共有接続
 
-ゲートウェイ管理者のみを確認し、これらの設定を変更できます。 これらの設定への変更は、ゲートウェイの構成を変更し、Windows Admin Center ゲートウェイのすべてのユーザーに影響します。
+ゲートウェイの管理者のみが表示およびこれらの設定を変更できるようにします。 これらの設定を変更は、ゲートウェイの構成を変更し、Windows Admin Center ゲートウェイのすべてのユーザーに影響します。
 
-**拡張機能**] タブで、管理者できますインストール、アンインストール、またはゲートウェイの拡張機能を更新します。 [拡張機能について説明します。](using-extensions.md)
+**拡張** タブで、管理者は、インストール、アンインストール、またはゲートウェイの拡張機能を更新します。 [拡張機能について説明します。](using-extensions.md)
 
-**アクセス**] タブには、管理者のユーザーを認証するために使用する id プロバイダーと同様に、Windows Admin Center ゲートウェイにアクセスできるユーザーを構成することができます。 [ゲートウェイへのアクセスを制御することについて説明します。](user-access-control.md)
+**アクセス** タブで管理者ユーザーを認証するために使用する id プロバイダーと同様に、Windows Admin Center ゲートウェイにアクセスできるユーザーを構成できます。 [ゲートウェイへのアクセス制御について説明します。](user-access-control.md)
 
-**Azure** ] タブで、管理者は、Azure を Windows Admin Center での[Azure 統合機能](azure-integration.md)を有効にすると、ゲートウェイを登録できます。
-
-**共有の接続**] タブを使用して、管理者は、Windows Admin Center ゲートウェイのすべてのユーザー間で共有への接続の 1 つの一覧を構成できます。 [ゲートウェイのすべてのユーザーに対して 1 回の接続の構成について説明します。](shared-connections.md)
+**Azure**  タブで、管理者はゲートウェイを Azure に登録を有効にするのに[Azure との統合機能](azure-integration.md)Windows Admin Center でします。

@@ -1,163 +1,164 @@
 ---
 ms.assetid: 6416d125-bcaf-433d-971a-2f0283bca2c2
-title: "クラスター対応更新のよく寄せられる質問"
+title: クラスター対応更新 - よく寄せられる質問
 ms.topic: article
-ms.prod: storage-failover-clustering
+ms.prod: windows-server-threshold
 manager: dongill
 ms.author: jgerend
 author: JasonGerend
-ms.date: 4/28/2017
-description: "Windows Server でのクラスター対応更新に関するよく寄せられる質問に対する回答。"
-ms.openlocfilehash: 8417ea8b6b76e16c3f4db3bac5062d90a8da3ff2
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.date: 04/28/2017
+description: Windows server クラスター対応更新の詳細についてよく寄せられる質問に対する回答。
+ms.openlocfilehash: f9009811093823554f16295cc1205f1b99ead93f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59882523"
 ---
-# <a name="cluster-aware-updating-frequently-asked-questions"></a>クラスター対応更新: よく寄せられる質問
+# <a name="cluster-aware-updating-frequently-asked-questions"></a>クラスター対応更新:よく寄せられる質問
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-[クラスター対応更新](cluster-aware-updating.md)\(CAU\) はクラスター ノードの計画フェールオーバーかどうかをサービスの可用性に影響を与えないように、フェールオーバー クラスター内のすべてのサーバー上でソフトウェアの更新を調整する機能。 一部のアプリケーションで継続的可用性機能 \ CAU など (Hyper\-v とライブ マイグレーション、) または SMB 3.x のファイル サーバーと SMB 透過 Failover\、サービスの可用性に影響を及ぼさずのクラスターの自動更新をコーディネートできます。
+[クラスター対応更新](cluster-aware-updating.md) \(CAU\)より、計画的フェールオーバー クラスター ノードのサービスの可用性に影響を与えない方法でフェールオーバー クラスター内のすべてのサーバー上で更新プログラム ソフトウェアを調整する機能です。 一部のアプリケーションを継続的可用性を特徴と\(ハイパースレッディングなど\-V は、ライブ マイグレーション、または SMB 3.x ファイル サーバーと SMB 透過フェールオーバーを使った\)CAU が影響を及ぼさずにクラスターの自動更新を調整することができますサービスの可用性。
 
-## <a name="does-cau-support-updating-storage-spaces-direct-clusters"></a>CAU は記憶域スペース ダイレクト クラスターの更新をサポートしますか。  
-うん。 CAU の更新をサポートしている[記憶域スペース ダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md)クラスター展開の種類に関係なく: ハイパー コンバージドまたはハイパーコンバージドします。 具体的には、CAU の指揮、基礎となるクラスター化された記憶域スペースの正常な状態にする各クラスター ノードを一時停止が待機するを確認します。
+## <a name="does-cau-support-updating-storage-spaces-direct-clusters"></a>CAU は、記憶域スペース ダイレクト クラスターの更新をサポートしますか。  
+[はい]。 CAU の更新をサポートしている[記憶域スペース ダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md)クラスター展開の種類に関係なく: ハイパー コンバージドまたは集約型します。 具体的には、CAU のオーケストレーションは、正常な状態にする基になるクラスター化された記憶域スペースを各クラスター ノードの中断が待機するようにします。
 
-## <a name="does-cau-work-with-windows-server-2008-r2-or-windows-7"></a>Windows Server 2008 R2 または Windows 7 で CAU を使用しますか。  
-違います。 CAU は、クラスターの操作を Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Windows 8.1、または Windows 8 を実行しているコンピューターからのみの更新を調整します。 更新されているフェールオーバー クラスターには、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行する必要があります。
+## <a name="does-cau-work-with-windowsserver-2008r2-or-windows7"></a>Windows Server 2008 R2 または Windows 7 で CAU を使用できますか。  
+いいえ。 CAU は、クラスターの更新の Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10、Windows 8.1、または Windows 8 を実行しているコンピューターからのみ操作を調整します。 更新されているフェールオーバー クラスターには、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行する必要があります。
   
-## <a name="is-cau-limited-to-specific-clustered-applications"></a>CAU は特定のクラスター化されたアプリケーションに制限されているか。  
-違います。 CAU はクラスター化されたアプリケーションの種類に依存しません。 CAU は、上層クラスタ リング API と PowerShell のコマンドレットに位置する外部 cluster\ 更新ソリューションです。 そのため、CAU は、Windows Server フェールオーバー クラスターで構成されているあらゆるクラスター化アプリケーションの更新をコーディネートできます。  
+## <a name="is-cau-limited-to-specific-clustered-applications"></a>CAU は、特定のクラスター化されたアプリケーションに制限されますか。  
+いいえ。 CAU は、クラスター化アプリケーションの種類を選びません。 CAU は、外部のクラスター\-クラスタ リング Api と PowerShell コマンドレットの上に構築されたソリューションを更新します。 そのため、CAU では、Windows Server フェールオーバー クラスターで構成されているあらゆるクラスター化アプリケーションの更新を調整できます。  
   
 > [!NOTE]  
-> 現時点では、次のクラスター化されたワークロードがテストされ、認定が CAU の: SMB、Hyper\ V、DFS レプリケーション、DFS 名前空間、iSCSI、および NFS します。  
+> 現時点では、次のクラスター化されたワークロードがテストされ、CAU 用に認定。SMB、ハイパースレッディング\-V、DFS レプリケーション、DFS 名前空間、iSCSI、および NFS です。  
   
-## <a name="does-cau-support-updates-from-microsoft-update-and-windows-update"></a>CAU は、Microsoft Update から更新プログラムと Windows Update をサポートしますか。  
-うん。 既定では、CAU は、プラグインでは、クラスター ノードで Windows Update エージェント \(WUA\) ユーティリティ API を使用するように構成します。 更新プログラムのソースとして Microsoft Update と Windows Update、または Windows Server Update Services \(WSUS\) を指してに WUA インフラストラクチャを構成できます。  
+## <a name="does-cau-support-updates-from-microsoft-update-and-windows-update"></a>CAU は、Microsoft Update や Windows Update からの更新プログラムをサポートしていますか。  
+[はい]。 プラグがある、既定では、CAU が構成されている\-を使用して、Windows Update エージェント\(WUA\)クラスター ノードでユーティリティ Api。 WUA インフラストラクチャは、Windows Server Update Services または Microsoft Update と Windows Update をポイントするように構成できる\(WSUS\)更新プログラムのソースとして。  
   
 ## <a name="does-cau-support-wsus-updates"></a>CAU は WSUS 更新プログラムをサポートしますか。  
-うん。 既定では、CAU は、プラグインでは、クラスター ノードで Windows Update エージェント \(WUA\) ユーティリティ API を使用するように構成します。 WUA インフラストラクチャは、更新プログラムのソースとして、ローカルの Windows Server Update Services \(WSUS\) サーバーまたは Microsoft Update と Windows Update をポイントするように構成できます。  
+[はい]。 プラグがある、既定では、CAU が構成されている\-を使用して、Windows Update エージェント\(WUA\)クラスター ノードでユーティリティ Api。 WUA インフラストラクチャは、ローカルの Windows Server Update Services または Microsoft Update と Windows Update をポイントするように構成できる\(WSUS\)サーバー更新プログラムのソースとして。  
   
-## <a name="can-cau-apply-limited-distribution-release-updates"></a>CAU は限定配布リリースの更新プログラムを適用できますか。  
-うん。 限定配布リリース \(LDR\) 更新プログラム、修正プログラムとも呼ばれるは Microsoft Update や Windows Update で公開されないため、Windows Update エージェント \(WUA\) plug\ でダウンロードすることができません-ことで、既定で CAU を使用します。  
+## <a name="can-cau-apply-limited-distribution-release-updates"></a>CAU で Limited Distribution Release の更新プログラムは適用されますか。  
+[はい]。 限定配布リリース\(LDR\) Microsoft Update や Windows Update では、Windows Update エージェントをダウンロードすることができないため、修正プログラムとも呼ばれる、更新プログラムは公開されない\(WUA\) プラグイン\-ことで、既定で CAU を使用します。  
   
-ただし、CAU は、次にプラグインに含まれる修正プログラムの更新プログラムを適用するように選択できます。 この修正プログラム プラグインでは、Microsoft 以外のドライバー、ファームウェア、および BIOS の更新プログラムを適用するもカスタマイズできます。  
+ただし、CAU には、2 番目のプラグインが含まれます。\-ことで、修正プログラムの更新の適用を選択することができます。 この修正プログラム プラグイン\-でカスタマイズすることも非適用\-Microsoft ドライバー、ファームウェア、および BIOS の更新プログラム。  
   
 ## <a name="can-i-use-cau-to-apply-cumulative-updates"></a>CAU を使用して、累積的な更新プログラムを適用できますか。  
-うん。 場合は、累積的な更新プログラムは、一般配布リリースの更新プログラムまたは LDR 更新プログラムには、CAU によって適用できます。  
+[はい]。 累積的更新プログラムが一般配布リリースの更新プログラムまたは LDR 更新プログラムである場合、CAU によって適用できます。  
   
 ## <a name="can-i-schedule-updates"></a>更新プログラムをスケジュールすることができますか。  
-うん。 CAU は、どちらも更新をスケジューリングするを許可する、以下の更新モードをサポートしています。  
+[はい]。 CAU は以下の更新モードをサポートしており、どちらの場合も更新をスケジューリングすることができます。  
   
-**自己更新**により、クラスターは自動的に更新される定義済みプロファイルと定期的なスケジュールに従ってなど、毎月のメンテナンス期間中にします。 必要に応じていつでも上で、自己更新実行を開始することもできます。 自己更新モードを有効にするには、クラスターに CAU のクラスター化された役割を追加する必要があります。 CAU 自己更新機能は、その他のクラスター化されたワークロードと同じようと、更新コーディネーター コンピューターの計画済みおよび計画外フェールオーバーとシームレスに連携できます。  
+**Self\-更新**自己更新する定義済みのプロファイルと定期的なスケジュールに従ってなど、月次のメンテナンス期間中にクラスターを使用します。 自己を開始することもできます。\-、いつでもオンデマンドで実行を更新しています。 自己を有効にする\-モードを更新する必要があります、CAU のクラスター化された役割クラスターに追加します。 CAU 自己\-などその他のクラスター化されたワークロードを実行機能を更新し、シームレスに、更新コーディネーター コンピューターのフェールオーバーや計画外フェールオーバーで使用します。  
   
-**Remote\ 更新**Windows または Windows Server を実行するコンピューターからいつでも更新実行を開始することができます。 更新またはを使用して、クラスター対応更新] ウィンドウの実行を開始することができます、**Invoke\ CauRun** PowerShell コマンドレット。 Remote\ 更新は、既定の cau 更新モードです。 タスク スケジューラを使用してを実行することができます、[Invoke-caurun](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/invoke-caurun)コマンドレットを 1 つのクラスター ノードではないリモート コンピューターから目的のスケジュールします。  
+**リモート\-更新**Windows または Windows Server を実行するコンピューターからいつでも更新実行を開始することができます。 更新またはを使用して、クラスター対応更新 ウィンドウから実行を開始することができます、 **Invoke\-CauRun** PowerShell コマンドレット。 リモート\-の CAU 更新モードの既定の更新です。 クラスター ノードに属していないリモート コンピューターから、タスク スケジューラを使って、 [Invoke-CauRun](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/invoke-caurun) コマンドレットを目的のスケジュールで実行できます。  
   
 ## <a name="can-i-schedule-updates-to-apply-during-a-backup"></a>バックアップ中に適用する更新プログラムをスケジュールすることができますか。  
-うん。 CAU が適用されません制約はすべてこの点です。 ただし、ソフトウェアの更新を実行するサーバーで \ (関連付けられている潜在的な restarts\) で、サーバーのバックアップ中に進行状況は IT のベスト プラクティスです。 CAU は、クラスタ リング リソースのフェールオーバーとフェールバック; 決定 API でのみことに注意してください。したがって、CAU では、サーバー バックアップの状態の認識しません。  
+[はい]。 CAU は、この点ですべての制約を適用しません。 ただし、ソフトウェア更新プログラムを実行するサーバーで\(関連付けられている可能性があります再起動\)進行状況が IT のベスト プラクティスではないサーバーのバックアップ中にします。 CAU によるリソースのフェールオーバーとフェールバックの判断は、クラスタリング API だけで実現されている点に注意してください。CAU は、サーバーのバックアップ ステータスを関知しません。  
   
-## <a name="can-cau-work-with-system-center-configuration-manager"></a>CAU は System Center Configuration Manager でを使用できますか。  
-CAU はクラスター ノード上のソフトウェアの更新を調整するためのツールと Configuration Manager もサーバーのソフトウェア更新プログラムを実行します。 ことが重要などのさまざまな Windows Server Update Services サーバーを使用して、任意のデータ センター展開内の同じサーバーのカバレッジが重複している必要があるないように、これらのツールを構成します。 これにより、せっかくの CAU いないおろそかにする、クラスターが認識を組み込む構成 Manager\ 駆動を更新しないためです。  
+## <a name="can-cau-work-with-system-center-configuration-manager"></a>CAU は System Center Configuration Manager を操作できますか。  
+CAU はクラスター ノードでソフトウェア更新プログラムを調整するツールと Configuration Manager では、サーバー ソフトウェアの更新も実行します。 別の Windows Server Update Services サーバーを使用するなど、任意のデータ センター展開内の同じサーバーのカバレッジの重複があるないように、これらのツールを構成するのには重要です。 これにより、CAU を使用して、目的がおろそかにするではないことため、Configuration Manager\-クラスターの認識は取り込まれません駆動型を更新しています。  
   
-## <a name="do-i-need-administrative-credentials-to-run-cau"></a>CAU を実行する管理者の資格情報が必要ですか。  
-うん。 CAU CAU ツールを実行するためには、ローカル サーバーに管理者の資格情報が必要なまたは、必要な**認証後にクライアントを偽装**ユーザー権限をローカル サーバーまたはが実行されているクライアント コンピューター。 ただし、CAU のクラスター ノードにソフトウェアの更新を調整するすべてのノードに対するクラスター管理者の資格情報が必要です。 資格情報がない、CAU UI を起動できるをプレビューまたは適用更新プログラムのクラスタ インスタンスに接続するときにクラスターの管理者資格情報を要求されます。  
+## <a name="do-i-need-administrative-credentials-to-run-cau"></a>CAU を実行するために管理者の資格情報は必要ですか。  
+[はい]。 CAU ツールを実行するためには、ローカル サーバーに対する管理者の資格情報か、ツールが実行されるローカル サーバー (またはクライアント コンピューター) の **認証後にクライアントを偽装** というユーザー権利が必要です。 ただし、クラスター ノードでのソフトウェア更新を調整するには、すべてのノードに対するクラスター管理者の資格情報が CAU に必要です。 CAU UI は、資格情報がなくても起動できます、プレビューまたは更新プログラムの適用、クラスター インスタンスに接続するときに、クラスター管理者の資格情報の要求されます。  
   
-## <a name="can-i-script-cau"></a>CAU のスクリプトはできますか。  
-うん。 CAU 豊富なスクリプト オプションを提供する PowerShell コマンドレットが用意されています。 これらは、同じコマンドレット、CAU UI が CAU のアクションを実行するために呼び出すことです。  
+## <a name="can-i-script-cau"></a>CAU をスクリプトすることができますか。  
+[はい]。 CAU 機能豊富なスクリプト作成オプションのセットを提供する PowerShell コマンドレットが付属します。 CAU の UI が CAU のアクションを実行するときにも、同じコマンドレットが呼び出されます。  
 
-## <a name="what-happens-to-active-clustered-roles"></a>アクティブなクラスター化された役割はどうなりますか。
+## <a name="what-happens-to-active-clustered-roles"></a>アクティブなクラスター化された役割はどうなるか
 
-クラスター化された役割 \ (アプリケーションとサービスと呼ばれていました) ノード上でアクティブである、ソフトウェアの更新を開始する前に、その他のノードにフェールオーバーします。 CAU はメンテナンス モードは一時停止されて、ドレインのすべてのアクティブなクラスター化された役割のノードを使用してこれらのフェールオーバーを調整します。 ソフトウェアの更新が完了すると、CAU は、ノードを再開し、クラスター化された役割は、更新済みのノードにフェールバックします。 これにより、ノードを基準にして、クラスター化された役割の配分は変わりません、CAU Updating run を実行するクラスター間でします。  
+クラスター化された役割\(アプリケーションとサービスと呼ばれていました\)ノード上でアクティブには、ソフトウェアの更新を開始する前に、その他のノードにフェールオーバーします。 CAU はメンテナンス モードを使ってこれらのフェールオーバーを調整し、すべてのクラスター化されたアクティブな役割のノードは一時停止されて、ドレインされます。 ソフトウェアの更新処理が完了すると、CAU によってノードが再開され、クラスター化された役割は、更新済みのノードにフェールバックされます。 これにより、ノードに対してクラスター化された役割の配分は、クラスターに対して CAU Updating Run を実行した後も同じように維持されます。  
   
 ## <a name="how-does-cau-select-target-nodes-for-clustered-roles"></a>CAU のクラスター化された役割のターゲット ノードへの選択
 
-CAU は、クラスタ リング API、フェールオーバーを調整するために依存します。 クラスタ リング API の実装では、ターゲット ノードを選択内部的なメトリックとインテリジェント配置のヒューリスティックに依存して \ (ワークロード levels\) など、ターゲット ノード間します。  
+CAU は、クラスタリング API を使って、フェールオーバーを調整します。 クラスタ リング API の実装は、内部的なメトリックとインテリジェントな配置のヒューリスティックに依存することにより、ターゲット ノードを選択します\(ワークロード レベルなど\)ターゲット ノード間で。  
   
-## <a name="does-cau-load-balance-the-clustered-roles"></a>負荷分散クラスター化された役割は行わですか。
+## <a name="does-cau-load-balance-the-clustered-roles"></a>負荷は、クラスター化された役割を分散しますか。
 
-CAU 負荷を分散クラスターのノードがクラスター化された役割の配分を保持するしようとしません。 試行が失敗する CAU では、クラスター ノードの更新が完了したら、背面にそのノードへのクラスター化された役割がホストされていた。 CAU は、クラスタ リング API を一時停止プロセスの最初のリソースをフェールバックします。 したがっての計画外フェールオーバーおよび優先所有者の設定がない場合、クラスター化された役割の配分は変化します。  
+CAU に負荷分散クラスターのノードがクラスター化された役割の配分を保持しようを使用しません。 クラスター ノードの更新が完了すると、更新前にホストされていたクラスター化された役割のそのノードへのフェールバックが試みられます。 CAU は、クラスタリング API を使って、一時停止プロセスの最初の状態に、リソースをフェールバックします。 したがって、計画外のフェールオーバーおよび優先所有者の設定がない場合は、クラスター化された役割の配分は変化しません。  
   
-## <a name="how-does-cau-select-the-order-of-nodes-to-update"></a>CAU がノードの更新順序を選択する方法  
-既定では、CAU は、アクティビティのレベルに基づいてノードの更新順序で選択します。 最小限のクラスター化された役割をホストしているノードが最初に更新します。 ただし、管理者は、CAU UI で更新実行のパラメーターを指定するか、PowerShell コマンドレットを使用して、ノードの更新の特定の順序を指定することができます。  
+## <a name="how-does-cau-select-the-order-of-nodes-to-update"></a>ノードの更新順序はどのようにして決まるのですか。  
+既定では、アクティビティのレベルに基づいてノードの更新順序が選択されます。 ホストしているクラスター化された役割の少ないノードから先に更新されます。 ただし、管理者は、CAU UI で更新実行のパラメーターを指定することで、または PowerShell コマンドレットを使用して、ノードを更新するための特定の順序を指定できます。  
   
-## <a name="what-happens-if-a-cluster-node-is-offline"></a>クラスター ノードがオフラインにするとどうなりますか。
+## <a name="what-happens-if-a-cluster-node-is-offline"></a>クラスター ノードがオフラインとどうなりますか。
 
-更新実行が開始した管理者は、使用可能なしきい値をオフラインにできるノードの数を指定できます。 そのため、更新実行を続行できます、クラスターの場合でも、すべてのクラスター ノードがオンラインではありません。  
+更新実行を開始する管理者は、オフラインを許容するノード数のしきい値を指定できます。 したがって、クラスター ノードの一部がオフラインだったとしても、クラスターに対する CAU 更新実行は続行できます。  
   
 ## <a name="can-i-use-cau-to-update-only-a-single-node"></a>CAU を使用して、1 つのノードのみを更新するのにことができますか。  
-違います。 CAU は、cluster\ スコープ更新ツール、ため、クラスターを更新する] を選択することのみできます。 1 つのノードを更新するには、CAU とは別のツールの更新の既存のサーバーを使用することができます。  
+いいえ。 CAU はクラスター\-スコープを更新するクラスターを選択することのみできますので、ツールを更新します。 単一のノードを更新する場合は、CAU は使わずに、既存のサーバー更新ツールを利用できます。  
   
-## <a name="can-cau-report-updates-that-are-initiated-from-outside-cau"></a>CAU が CAU 以外から開始する更新プログラムを報告できますか。  
-違います。 CAU には、のみレポート Updating run を実行 CAU 内から開始することができます。 ただし、以降 CAU 更新実行を開始すると、CAU 以外の方法でインストールされた更新プログラムきちんと考慮されます。各クラスター ノードに適用される可能性のある追加の更新プログラムを確認します。  
+## <a name="can-cau-report-updates-that-are-initiated-from-outside-cau"></a>CAU は外部 CAU から開始する更新プログラムを報告できますか。  
+いいえ。 CAU が生成できるレポートの対象は、CAU 内から実行された Updating Run に限られます。 ただし、後続 CAU 更新実行が起動したときに、非でインストールされた更新\-CAU メソッドは適切に各クラスター ノードに該当する可能性がある追加の更新プログラムを確認すると見なされます。  
   
-## <a name="can-cau-support-my-unique-it-process-needs"></a>CAU のサポート [抱える IT プロセスが必要なことができますか?  
-うん。 CAU には、企業のお客様の一意の IT プロセスのニーズに合わせて柔軟に次のディメンションが用意されています。  
+## <a name="can-cau-support-my-unique-it-process-needs"></a>CAU のサポート、一意の IT プロセスの必要があることができますか?  
+[はい]。 それぞれの企業ユーザーが抱える IT プロセスのニーズを満たすために、CAU には次の手段が用意されています。  
   
-**スクリプト**ファイル更新の PowerShell スクリプトと post\ 更新 PowerShell スクリプトを指定、更新実行できます。 ファイル更新スクリプトは、ノードが一時停止前に、各クラスター ノードで実行されます。 Post\ 更新スクリプトは、ノードの更新プログラムのインストール後に、各クラスター ノードで実行されます。  
+**スクリプト**更新実行では、プリトリガーを指定できます\-PowerShell スクリプトと、投稿を更新\-PowerShell スクリプトを更新します。 前の\-ノードが一時停止する前に、各クラスター ノードの更新スクリプトが実行されます。 投稿\-ノードの更新プログラムをインストールした後、各クラスター ノードの更新スクリプトが実行されます。  
   
 > [!NOTE]  
-> .NET framework 4.6 または 4.5 および PowerShell は、ファイルの更新および post\ 更新スクリプトを実行する各クラスター ノードにインストールする必要があります。 クラスター ノード上で PowerShell リモート処理を有効にする必要があります。 詳しいシステム要件は、次を参照してください。[要件とクラスター対応更新のベスト プラクティス](cluster-aware-updating-requirements.md)します。  
+> 前を実行する各クラスター ノードでは、.NET framework 4.6 または 4.5 と PowerShell をインストールする必要が\-更新し、投稿\-スクリプトを更新します。 また、クラスター ノード上で PowerShell リモート処理を有効にする必要があります。 詳細なシステム要件は、次を参照してください。[要件とクラスター対応更新のベスト プラクティス](cluster-aware-updating-requirements.md)します。  
   
-**更新実行オプションを高度な**、管理者は、多数の各ノードに更新プロセスを再試行の最大回数などの高度な更新実行オプションのセットを追加指定できます。 CAU UI または CAU の PowerShell コマンドレットを使用してこれらのオプションを指定することができます。 これらのカスタム設定を更新実行プロファイルに保存し、以降の更新実行に再利用します。  
+**更新実行オプションを高度な**管理者は、多くの各ノードで、更新プロセスが再試行される最大回数などの高度な更新実行オプションを追加指定できます。 CAU UI または CAU の PowerShell コマンドレットを使用して、これらのオプションを指定できます。 カスタム設定は、更新実行プロファイルに保存し、以降の更新実行に再利用することができます。  
   
-**公開プラグインをアーキテクチャ**CAU には、登録、登録解除、機能が含まれますと選択プラグイン該当 CAU 付属して 2 つの既定のプラグインを使用します。いずれかの座標を各クラスター ノードで Windows Update エージェント \(WUA\) API。2 つ目には、クラスター ノードからアクセスできるファイル共有に手動でコピーされる修正プログラムが適用されます。 これら 2 つのプラグインのプラグインで満たすことができない独自のニーズを企業には、企業は、公開されている API 仕様に従ってプラグインに新しい CAU を構築できます。 詳細については、次を参照してください。[Cluster\ 対応更新プラグインのリファレンス](http://msdn.microsoft.com/library/hh418084(VS.85).aspx)します。  
+**パブリック プラグ\-アーキテクチャで**CAU には、登録、登録解除、機能が含まれていて、選択プラグイン\-アドイン。CAU は、2 つの既定のプラグインが付属しています\-ins: 1 つの座標、Windows Update エージェント\(WUA\) Api では、各クラスター ノードは、2 つ目は、クラスター ノードにアクセスできるファイル共有に手動でコピーされる修正プログラムを適用します。 プラグインに 2 つの企業は独自のニーズを満たすことはできません\-、アドイン、企業は新しい CAU プラグインを構築できます\-でパブリック API 仕様に従っています。 詳細については、次を参照してください。[クラスター\-対応更新プラグイン\-リファレンス](https://msdn.microsoft.com/library/hh418084(VS.85).aspx)します。  
   
-構成して、CAU のカスタマイズについてはさまざまなをサポートするプラグイン アドイン更新シナリオを参照してください[プラグイン プラグインのしくみ](assetId:///847b571b-12b3-473c-953f-75a5a1f51333)します。  
+プラグインを構成して、CAU のカスタマイズについて\-さまざまなサポートをアドイン シナリオでは、更新を参照してください[方法プラグイン\-アドイン機能](assetId:///847b571b-12b3-473c-953f-75a5a1f51333)。  
   
-## <a name="how-can-i-export-the-cau-preview-and-update-results"></a>CAU のプレビューをエクスポートし、結果を更新する方法は?  
-CAU には、コマンド ライン インターフェイスと UI からエクスポート オプションが用意されています。  
+## <a name="how-can-i-export-the-cau-preview-and-update-results"></a>CAU のプレビュー結果や更新結果をエクスポートするにはどうすればよいですか。  
+CAU は、コマンドを使用してオプションをエクスポートする\-ライン インターフェイスと UI を使用します。  
   
-**コマンド ライン インターフェイスのオプション:**  
+**コマンド\-ライン インターフェイスのオプション。**  
   
--   PowerShell コマンドレットを使用して結果をプレビュー **Invoke\ CauScan |ConvertTo\ Xml**します。 出力: XML  
+-   PowerShell コマンドレットを使用して、結果をプレビュー **Invoke\-CauScan |ConvertTo\-Xml**します。 出力:XML  
   
--   PowerShell コマンドレットを使用して結果を報告**Invoke\ CauRun |ConvertTo\ Xml**します。 出力: XML  
+-   PowerShell コマンドレットを使用して結果を報告**Invoke\-CauRun |ConvertTo\-Xml**します。 出力:XML  
   
--   PowerShell コマンドレットを使用して結果を報告**Get\ CauReport |では CauReport**します。 出力結果: HTML、CSV  
+-   PowerShell コマンドレットを使用して結果を報告**取得\-CauReport |エクスポート\-CauReport**します。 出力:HTML、CSV  
   
 **UI オプション:**  
   
--   コピーからレポートの結果、**更新プログラムのプレビュー**画面です。 出力: CSV  
+-   **[更新プログラムのプレビュー]** 画面からレポートの結果をコピーする。 出力:CSV  
   
--   コピーからレポートの結果、**レポートを生成する**画面です。 出力: CSV  
+-   **[レポートの作成]** 画面からレポートの結果をコピーする。 出力:CSV  
   
--   レポートの結果をエクスポート、**レポートを生成する**画面です。 出力: HTML  
+-   **[レポートの作成]** 画面からレポートの結果をエクスポートする。 出力:HTML (HTML)  
   
-## <a name="how-do-i-install-cau"></a>CAU のインストール方法  
-CAU のインストールは、フェールオーバー クラスタ リング機能にシームレスに統合されています。 CAU は次の手順としてインストールされます。  
+## <a name="how-do-i-install-cau"></a>CAU はどうすればインストールできますか。  
+CAU のインストールは、フェールオーバー クラスタリング機能にシームレスに統合されています。 CAU は次のようにインストールされます。  
   
--   クラスター ノードには、フェールオーバー クラスタ リングをインストールするときに、CAU Windows Management Instrumentation \(WMI\) プロバイダーが自動的にインストールします。  
+-   CAU Windows Management Instrumentation、クラスター ノードにフェールオーバー クラスタ リングのインストールと\(WMI\)プロバイダーが自動的にインストールします。  
   
--   フェールオーバー クラスタ リング ツール機能がサーバーまたはクライアント コンピューターにインストールされると、クラスター対応更新の UI と PowerShell のコマンドレットが自動的にインストールします。
+-   フェールオーバー クラスタ リング ツールの機能は、サーバーまたはクライアント コンピューターにインストールするときに、クラスター対応更新の UI と PowerShell コマンドレットが自動的にインストールします。
   
-## <a name="does-cau-need-components-running-on-the-cluster-nodes-that-are-being-updated"></a>CAU には更新されているクラスター ノードで実行されているコンポーネントが必要か。  
-CAU のクラスター ノードで実行されているサービスを必要はありません。 ただし、CAU には、ソフトウェア コンポーネント必要があります。\ (WMI プロバイダー) は、クラスター ノードにインストールします。 このコンポーネントには、フェールオーバー クラスタ リング機能がインストールされます。  
+## <a name="does-cau-need-components-running-on-the-cluster-nodes-that-are-being-updated"></a>CAU が更新されているクラスター ノードで実行されているコンポーネントを必要がありますか。  
+CAU のクラスター ノードで実行されているサービスを必要はありません。 ただし、CAU には、ソフトウェアのコンポーネント必要があります。 \(WMI プロバイダー\)クラスター ノードにインストールします。 このコンポーネントは、フェールオーバー クラスタリング機能と一緒にインストールされます。  
   
-自己更新モードを有効にするには、CAU のクラスター化された役割をクラスターに追加もする必要があります。  
+自己を有効にする\-モードを更新するには、CAU のクラスター化された役割する必要があります追加することも、クラスターにします。  
   
-## <a name="what-is-the-difference-between-using-cau-and-vmm"></a>CAU と VMM の使用の違いは何ですか。  
+## <a name="what-is-the-difference-between-using-cau-and-vmm"></a>CAU と VMM の使用方法の違いは何ですか。  
   
--   CAU Hyper\ V クラスターも含め、サポートされているフェールオーバー クラスターの任意の型を更新できますが、system Center Virtual Machine Manager \(VMM\) が唯一の Hyper\ V クラスターを更新する方法のフォーカスしています。  
+-   System Center Virtual Machine Manager \(VMM\)更新のみハイパーにフォーカスがある\-V クラスター、CAU は、ハイパースレッディングを含め、サポートされているフェールオーバー クラスターの任意の型を更新できますが、\-V クラスター。  
   
--   VMM は、CAU は、すべての Windows Server のライセンスは、追加のライセンスを要求します。 CAU の機能、ツール、および UI は、フェールオーバー クラスタ リングのコンポーネントと共にインストールされます。  
+-   VMM は、CAU は、すべての Windows Server のライセンスが、追加のライセンスでは、必要です。 CAU の機能、ツール、UI は、フェールオーバー クラスタリングのコンポーネントと一緒にインストールされます。  
   
--   System Center のライセンスを既に所有している場合、VMM を使用して、統合された管理とソフトウェア更新エクスペリエンスが提供されるため、Hyper\ V クラスターを更新する続行することができます。  
+-   System Center ライセンスを既に所有している場合は、VMM を使用してハイパースレッディングを更新する続行することができます\-V クラスターのため、統合の管理とソフトウェアの更新エクスペリエンスを提供します。  
   
--   CAU は、Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 を実行しているクラスターでのみサポートされます。 VMM では、Windows Server 2008 R2 および Windows Server 2008 を実行するコンピューターで Hyper\ V クラスターもサポートします。  
+-   CAU は、Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 を実行しているクラスターでのみサポートされます。 VMM は、ハイパースレッディングもサポートしています。\-V は、Windows Server 2008 R2 および Windows Server 2008 を実行するコンピューターでクラスター。  
   
-## <a name="can-i-use-remote-updating-on-a-cluster-that-is-configured-for-self-updating"></a>使用できます remote\ 更新に構成されているクラスターの自己更新しますか。  
-うん。 更新プログラムを自動的にインストールする Windows Update が構成されている場合でも、コンピューターで Windows Update スキャンはいつでもを強制でき、同様、remote\ 更新オンデマンド、を通じて自己更新の構成でフェールオーバー クラスターを更新できます。 ただし、こと、更新実行されていない場合の進行状況を確認する必要があります。  
+## <a name="can-i-use-remote-updating-on-a-cluster-that-is-configured-for-self-updating"></a>使用できますリモート\-セルフ用に構成されたクラスターで更新\-を更新していますか?  
+[はい]。 フェールオーバー クラスターの自動\-構成の更新は、リモートで更新できます\-で更新\-に Windows Update が構成されている場合でも、コンピューターには、いつでも Windows の更新プログラムのスキャンを強制でき、同様、需要更新プログラムを自動的にインストールします。 ただし、更新実行が実行されていないことを確認する必要はあります。  
   
-## <a name="can-i-reuse-my-cluster-update-settings-across-clusters"></a>クラスター間でクラスター更新設定再利用できますか。  
-うん。 CAU には、クラスターを更新するときの動作、Updating Run を決定する更新実行オプションの数がサポートしています。 これらのオプションは、更新実行プロファイル、として保存することし、他のクラスターで再利用することができます。 保存する更新と同様のニーズを持つフェールオーバー クラスター全体の設定を再利用することをお勧めします。 たとえば、「Business\ クリティカルな SQL Server クラスター更新実行プロファイル」business\ 重要なサービスをサポートするすべての Microsoft SQL Server クラスターを作成する場合があります。  
+## <a name="can-i-reuse-my-cluster-update-settings-across-clusters"></a>クラスター更新設定を複数のクラスターで再利用することはできますか。  
+[はい]。 CAU には、クラスター更新時の Updating Run の動作を決める更新実行オプションが多数あります。 これらのオプションは更新実行プロファイルとして保存でき、他のクラスターで再利用することができます。 更新に関して同様のニーズを持つフェールオーバー クラスターには、保存しておいた設定を再利用することをお勧めします。 たとえば、作成する、"ビジネス\-クリティカルな SQL Server クラスター更新実行プロファイル"ビジネスをサポートするすべての Microsoft SQL Server クラスターの\-重要なサービスです。  
   
-## <a name="where-is-the-cau-plug-in-specification"></a>CAU プラグインを仕様はどこでしょう?  
+## <a name="where-is-the-cau-plug-in-specification"></a>CAU プラグインが\-仕様のでしょうか。  
   
--   [Cluster\ 対応更新プラグインのリファレンス](http://msdn.microsoft.com/library/hh418084(VS.85).aspx)  
+-   [クラスター\-対応更新プラグイン\-リファレンス](https://msdn.microsoft.com/library/hh418084(VS.85).aspx)  
   
--   [クラスター対応更新プラグインのサンプル](http://code.msdn.microsoft.com/windowsdesktop/Cluster-Aware-Updating-6a8854c9)  
+-   [クラスター対応更新プラグイン\-サンプル](https://code.msdn.microsoft.com/windowsdesktop/Cluster-Aware-Updating-6a8854c9)  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
   
--   [Cluster\ 対応更新の概要](cluster-aware-updating.md)  
+-   [クラスター\-対応更新の概要](cluster-aware-updating.md)  
   

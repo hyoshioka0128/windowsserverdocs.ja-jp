@@ -15,11 +15,11 @@ ms.author: elizapo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d14ccf734d5242301030bbb6e3c2489e1a0266a
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2082392"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59876353"
 ---
 # <a name="windows-server---it-administrator-content-for-current-and-previous-releases"></a>Windows Server - 現在と以前のリリースに関する IT 管理者向けコンテンツ
 
@@ -34,36 +34,36 @@ Windows Server は、ワークグループからデータ センターに至る�
 
 ## <a name="windows-server-2016"></a>Windows Server 2016
 
-[Windows Server 2016 技術コンテンツ](windows-server-2016.md)
+[Windows Server 2016 の技術コンテンツ](windows-server-2016.md)
 
 ## <a name="windows-server-2012-r2-and-windows-server-2012"></a>Windows Server 2012 R2 および Windows Server 2012
 
 [Windows Server 2012 R2 および Windows Server 2012 テクニカル ライブラリ](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/) 
 
-[Windows Server 2012 R2 デベロッパー ライブラリ (MSDN)](https://msdn.microsoft.com/library/dn609939(v=vs.85).aspx) 
+[Msdn の Windows Server 2012 R2 デベロッパー ライブラリ](https://msdn.microsoft.com/library/dn609939(v=vs.85).aspx) 
 
 ## <a name="windows-server-2008-r2-and-windows-server-2008"></a>Windows Server 2008 R2 および Windows Server 2008
 
 [Windows Server 2008 R2 および Windows Server 2008 テクニカル ライブラリ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008)
  
-[Windows Server 2008 デベロッパー ライブラリ (MSDN)](https://msdn.microsoft.com/library/hh738539.aspx) 
+[Msdn の Windows Server 2008 デベロッパー ライブラリ](https://msdn.microsoft.com/library/hh738539.aspx) 
 
 ## <a name="windows-server-2003"></a>Windows Server 2003
 
 [Windows Server 2003 テクニカル ライブラリ](https://www.microsoft.com/download/details.aspx?id=53314) - アーカイブされたコンテンツの PDF 版のダウンロード
 
-[Windows Server 2003 デベロッパー ライブラリ (MSDN)](https://msdn.microsoft.com/library/dn792549.aspx)
+[MSDN の Windows Server 2003 開発者ライブラリ](https://msdn.microsoft.com/library/dn792549.aspx)
 
 
 ## <a name="product-evaluations"></a>製品評価
 
-[Windows Server 2016 評価版のダウンロード](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016?i=1) 
+[Windows Server 2016 評価版をダウンロードします。](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016?i=1) 
 
-[Windows Server 2012 R2 試用版のダウンロード](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2) 
+[Windows Server 2012 R2 評価版をダウンロードします。](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2) 
 
 
 ## <a name="related-links"></a>関連リンク
-[Windows Server 2016 製品情報](https://www.microsoft.com/cloud-platform/windows-server) 
+[Windows Server 2016 の製品情報](https://www.microsoft.com/cloud-platform/windows-server) 
 
 <br>
 

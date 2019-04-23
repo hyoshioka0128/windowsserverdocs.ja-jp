@@ -1,7 +1,7 @@
 ---
 ms.assetid: 208928eb-bb17-4984-a312-23fff43133e3
-title: "Windows Server 2016 の AD FS の監査機能強化"
-description: 
+title: Windows Server 2016 での AD FS の監査機能の強化
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,51 +10,52 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 3d622686a3cc34316f0cf5187839785195c2f104
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59880233"
 ---
-# <a name="auditing-enhancements-to-ad-fs-in-windows-server-2016"></a>Windows Server 2016 の AD FS の監査機能強化
+# <a name="auditing-enhancements-to-ad-fs-in-windows-server-2016"></a>Windows Server 2016 での AD FS の監査機能の強化
 
->Windows Server 2016 の適用対象:
+>適用先:Windows Server 2016
 
-現時点では、AD FS Windows Server 2012 R2 があるは 1 つの要求の生成された多数の監査イベントおよび関連するログインまたはトークンの発行アクティビティについては、存在しないか、一部のバージョンの AD FS) の「または複数の監査イベントの間で分散します。 既定では、AD FS の詳細な性質、監査イベントが無効になります。  
-    リリースでは、Windows Server 2016 での AD FS の監査になりより合理化された出力を少なくします。  
+現時点では、AD FS を Windows Server 2012 R2 は、1 つの要求と、ログ内の関連情報が生成された多数の監査イベントまたはトークンの発行アクティビティが存在しないか、(でいくつかのバージョンの AD FS) または複数のイベントの監査に分散します。 AD FS の既定で、詳細な性質により、イベントの監査が無効になっています。  
+    Windows Server 2016 での AD FS のリリースでは、監査は効率となりに少なくなります。  
   
 ## <a name="auditing-levels-in-ad-fs-for-windows-server-2016"></a>Windows Server 2016 の AD FS の監査レベル  
-既定では、Windows Server 2016 での AD FS には基本的な監査を有効にします。  基本の監査では、管理者に 1 つの要求の 5 つのイベントが表示されます。  これは、管理者を見て、1 つの要求を確認するためにイベントの数が大幅に低下をマークします。   監査レベルが発生する可能性がまたは PowerShell コマンドレットを使用して落とされました: Set-AdfsProperties AuditLevel します。  次の表では、利用可能な監査レベルについて説明します。  
+既定では、Windows Server 2016 での AD FS が、基本的な監査を有効にします。  基本的な監査では、管理者は 1 つの要求の 5 個以下のイベントに表示されます。  これは、管理者が参照、1 つの要求を表示するにはイベントの数が大幅に低下をマークします。   監査レベルが発生するまたは PowerShell コマンドレットを使用します。Set-adfsproperties-AuditLevel します。  次の表では、利用可能な監査レベルについて説明します。  
   
 ||||  
 |-|-|-|  
 |監査レベル|PowerShell の構文|説明|  
-|[なし]|Set-AdfsProperties - AuditLevel なし|監査が無効になっているし、イベントがログに記録されません。|  
-|Basic (既定)|Set-AdfsProperties - AuditLevel Basic|1 つの要求の 5 つ以内のイベントが記録されます。|  
-|詳細です|Set-AdfsProperties - Verbose AuditLevel|すべてのイベントをログに記録されます。  大量の要求ごとに情報を記録します。|  
+|なし|Set-adfsproperties - AuditLevel なし|監査が無効になっているし、イベントは記録されません。|  
+|Basic (既定値)|Set-adfsproperties - AuditLevel Basic|1 つの要求の 5 つ以上のイベントが記録されます。|  
+|Verbose|Set-adfsproperties - AuditLevel 詳細|すべてのイベントが記録されます。  これにより、大量の要求ごとの情報が記録されます。|  
   
-表示するには、現在の監査レベルは、PowerShell コマンドレットを使用することができます: Get-AdfsProperties します。  
+現在の監査レベルを表示するには、PowerShell コマンドレットを使用できます。Get-adfsproperties します。  
   
-![監査の強化](media/Auditing-Enhancements-to-AD-FS-in-Windows-Server-2016/ADFS_Audit_1.PNG)  
+![audit の機能強化](media/Auditing-Enhancements-to-AD-FS-in-Windows-Server-2016/ADFS_Audit_1.PNG)  
   
-監査レベルが発生する可能性がまたは PowerShell コマンドレットを使用して落とされました: Set-AdfsProperties AuditLevel します。  
+監査レベルが発生するまたは PowerShell コマンドレットを使用します。Set-adfsproperties-AuditLevel します。  
   
-![監査の強化](media/Auditing-Enhancements-to-AD-FS-in-Windows-Server-2016/ADFS_Audit_2.png)  
+![audit の機能強化](media/Auditing-Enhancements-to-AD-FS-in-Windows-Server-2016/ADFS_Audit_2.png)  
   
 ## <a name="types-of-audit-events"></a>監査イベントの種類  
-AD FS の監査イベントには、AD FS によって処理された要求の種類に基づいて、さまざまな種類を指定できます。 監査イベントの種類ごとには、関連付けられている特定のデータがあります。  システムの要求 (サーバーの呼び出しがフェッチ構成情報など) とログイン要求 (つまりトークン要求) の間での監査イベントの種類を区別できます。    
-  次の表では、基本的な種類の監査イベントについて説明します。  
+AD FS の監査イベントは、AD FS によって処理された要求の種類に基づいて、さまざまな種類の指定できます。 それぞれの監査イベントの種類は、関連付けられている特定のデータを持ちます。  監査イベントの種類は、システムの要求 (サーバーの呼び出しの構成情報のフェッチなど) と、ログイン要求 (つまりトークン要求) の間で区別できます。    
+  次の表では、監査イベントの基本型について説明します。  
   
 ||||  
 |-|-|-|  
 |監査イベントの種類|イベント ID|説明|  
-|新しい資格情報の検証の成功|1202|ここで、新しい資格情報は、フェデレーション サービスによって正常に検証の要求。 これにより、Ws-trust、Ws-federation、SAML-p が含まれます (SSO を生成する最初の脚) と OAuth の承認エンドポイント。|  
-|新しい資格情報の検証エラー|1203|フェデレーション サービスで新しい資格情報の検証が失敗した要求します。 Ws-trust、これが含まれています WS が取り込ま、SAML P (SSO を生成する最初の脚) と OAuth の承認エンドポイント。|  
-|アプリケーション トークンの成功|1200|フェデレーション サービスによってのセキュリティ トークンの正常の発行要求します。 Ws-federation、SAML P この SSO 成果物に要求が処理されるときに記録されます。 (など、SSO の Cookie)。|  
-|アプリケーション トークンの失敗|1201|フェデレーション サービスのセキュリティ トークンの発行要求に失敗しました。 Ws-federation、SAML P この SSO 成果物に要求が処理されるときに記録されます。 (など、SSO の Cookie)。|  
-|パスワードの変更要求の成功|1204|パスワード変更要求のトランザクションは、フェデレーション サービスによって正常に処理されました。|  
-|パスワードの変更要求エラー|1205|パスワード変更要求のトランザクションは、フェデレーション サービスによって処理に失敗しました。| 
-|成功からサインアウトします。|1206|要求が成功するサインアウトについて説明します。|  
-|サインインに失敗しました|1207|失敗したサインアウト要求をについて説明します。|  
+|新しい資格情報の検証の成功|1202|場所、新しい資格情報は、フェデレーション サービスによって正常に検証の要求です。 これには、Ws-trust、Ws-federation、SAML-p が含まれます (SSO を生成する最初の段階) と OAuth 承認エンドポイント。|  
+|新しい資格情報の検証エラー|1203|フェデレーション サービスで新しい資格情報の検証が失敗した場所の要求です。 Ws-trust、これが含まれています、Ws-fed、SAML P (SSO を生成する最初の段階) と OAuth 承認エンドポイント。|  
+|アプリケーション トークンの成功率|1200|セキュリティ トークンが正常にフェデレーション サービスによってに発行された場所の要求です。 Ws-federation、SAML P SSO アーティファクトを要求が処理されるときに記録されます。 (、SSO cookie など)。|  
+|アプリケーション トークンのエラー|1201|フェデレーション サービスでセキュリティ トークンの発行要求が失敗しました。 Ws-federation、SAML P SSO アーティファクトを要求の処理時に記録されます。 (、SSO cookie など)。|  
+|パスワード変更要求の成功|1204|パスワード変更要求、トランザクションが、フェデレーション サービスによって正常に処理します。|  
+|パスワードの変更要求エラー|1205|フェデレーション サービスによって処理されるパスワードの変更要求、トランザクションが失敗しました。| 
+|成功をサインアウトします。|1206|サインアウト要求が成功した場合について説明します。|  
+|サインインに失敗しました|1207|サインアウト要求の失敗について説明します。|  
 
   
 

@@ -6,63 +6,63 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
-Keywords: Storage Spaces Direct
+Keywords: 記憶域スペース ダイレクト
 ms.localizationpriority: medium
 ms.openlocfilehash: d162275a885dac79e7efe749328ebdca471fcad1
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1589757"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879193"
 ---
 # <a name="performance-history-for-drives"></a>ドライブのパフォーマンス履歴
 
-> 対象アプリケーション: Windows Server 内部のプレビュー
+> 適用先:Windows Server Insider Preview
 
-[記憶域スペースの直接のパフォーマンス履歴](performance-history.md)のサブこのトピックは、ドライブのパフォーマンスの履歴を収集するために詳しく説明します。 クラスター記憶域サブシステムのバスに関係なく、すべてのドライブに利用可能なパフォーマンスの履歴を使用するか、メディアの種類します。 ただし、OS 起動ドライブに対応はありません。
+このサブ トピックの[記憶域スペース ダイレクトのパフォーマンスの履歴](performance-history.md)ドライブ用に収集されたパフォーマンスの履歴の詳細について説明します。 パフォーマンス履歴がバスに関係なく、クラスターの記憶域サブシステム内の各ドライブの使用可能なまたはメディアの種類します。 ただし、OS ブート ドライブのご利用いただけません。
 
    > [!NOTE]
-   > 下にあるサーバーのドライブにパフォーマンスの履歴を収集することはできません。 コレクションとサーバーが復帰自動的に再開します。
+   > 停止しているサーバーのドライブのパフォーマンスの履歴を収集できません。 コレクションは、ときに、サーバーが復帰自動的に再開されます。
 
-## <a name="series-names-and-units"></a>系列の名前と単位
+## <a name="series-names-and-units"></a>系列名とユニット
 
-すべての有効なドライブには、これらの連続データが収集されます。
+これらの系列は、すべての対象となるドライブに収集されます。
 
-| 連続データ                          | Unit             |
+| シリーズ                          | Unit             |
 |---------------------------------|------------------|
-| `physicaldisk.iops.read`        | 1 秒間       |
-| `physicaldisk.iops.write`       | 1 秒間       |
-| `physicaldisk.iops.total`       | 1 秒間       |
-| `physicaldisk.throughput.read`  | バイト/秒 |
-| `physicaldisk.throughput.write` | バイト/秒 |
-| `physicaldisk.throughput.total` | バイト/秒 |
+| `physicaldisk.iops.read`        | 1 秒あたり       |
+| `physicaldisk.iops.write`       | 1 秒あたり       |
+| `physicaldisk.iops.total`       | 1 秒あたり       |
+| `physicaldisk.throughput.read`  | 1 秒あたりのバイト数 |
+| `physicaldisk.throughput.write` | 1 秒あたりのバイト数 |
+| `physicaldisk.throughput.total` | 1 秒あたりのバイト数 |
 | `physicaldisk.latency.read`     | 秒数          |
 | `physicaldisk.latency.write`    | 秒数          |
 | `physicaldisk.latency.average`  | 秒数          |
-| `physicaldisk.size.total`       |  バイト            |
-| `physicaldisk.size.used`        |  バイト            |
+| `physicaldisk.size.total`       | バイト数            |
+| `physicaldisk.size.used`        | バイト数            |
 
-## <a name="how-to-interpret"></a>内容を理解する方法
+## <a name="how-to-interpret"></a>解釈する方法
 
-| 連続データ                          | 内容を理解する方法                                                            |
+| シリーズ                          | 解釈する方法                                                            |
 |---------------------------------|-----------------------------------------------------------------------------|
-| `physicaldisk.iops.read`        | 2 番目のドライブに完了したあたりの読み取り操作の数です。                |
-| `physicaldisk.iops.write`       | 1 秒間のドライブに完了した書き込み処理の数です。               |
-| `physicaldisk.iops.total`       | 数の合計の読み取りまたは書き込み操作/秒ドライブを完了します。 |
-| `physicaldisk.throughput.read`  | データの量は、1 秒間ドライブからお読みください。                            |
-| `physicaldisk.throughput.write` | 1 秒間ドライブに書き込まれたデータの量。                           |
-| `physicaldisk.throughput.total` | 読み取り/書き込み/秒ドライブのデータ量の合計。        |
+| `physicaldisk.iops.read`        | ドライブによって完了した 1 秒あたりの読み取り操作の数。                |
+| `physicaldisk.iops.write`       | ドライブによって完了した 1 秒あたりの書き込み操作の数。               |
+| `physicaldisk.iops.total`       | 合計数は、読み取りまたは書き込みドライブによって完了した 1 秒あたりの操作。 |
+| `physicaldisk.throughput.read`  | データの量は、1 秒あたりのディスクから読み取る。                            |
+| `physicaldisk.throughput.write` | 1 秒あたりのドライブに書き込まれたデータの量。                           |
+| `physicaldisk.throughput.total` | データの読み取りまたは書き込みを 1 秒あたりのドライブの合計数量。        |
 | `physicaldisk.latency.read`     | ドライブからの読み取り操作の平均待機時間。                          |
-| `physicaldisk.latency.write`    | ドライブへの書き込み処理の平均待機時間。                           |
-| `physicaldisk.latency.average`  | ドライブのすべての操作の平均待機時間。                     |
-| `physicaldisk.size.total`       | ドライブの合計ストレージ容量。                                    |
-| `physicaldisk.size.used`        | ドライブの使用されているストレージ容量。                                     |
+| `physicaldisk.latency.write`    | ドライブへの書き込み操作の平均待機時間。                           |
+| `physicaldisk.latency.average`  | ドライブとの間のすべての操作の平均待機時間。                     |
+| `physicaldisk.size.total`       | ドライブの記憶域の合計容量。                                    |
+| `physicaldisk.size.used`        | ドライブの使用されているストレージの容量。                                     |
 
-## <a name="where-they-come-from"></a>どこから取得します。
+## <a name="where-they-come-from"></a>来た
 
-`iops.*`、`throughput.*`と`latency.*`系列がから収集された、`Physical Disk`パフォーマンス ドライブが接続されているサーバーの設定、ドライブごとに 1 つのインスタンスします。 これらのカウンター評価`partmgr.sys`Windows ソフトウェア スタックの量やネットワーク ホップが含まれていません。 ハードウェア デバイスのパフォーマンスの代表者いること。
+`iops.*`、 `throughput.*`、および`latency.*`シリーズがから収集された、`Physical Disk`ドライブが接続されているサーバーで設定するパフォーマンス カウンター、ドライブあたりの 1 つのインスタンス。 これらのカウンターによって測定は`partmgr.sys`Windows ソフトウェア スタックの多くも任意のネットワーク ホップが含まれていません。 デバイス ハードウェアのパフォーマンスの代表です。
 
-| 連続データ                          | ソース反対           |
+| シリーズ                          | ソースのカウンター           |
 |---------------------------------|--------------------------|
 | `physicaldisk.iops.read`        | `Disk Reads/sec`         |
 | `physicaldisk.iops.write`       | `Disk Writes/sec`        |
@@ -75,18 +75,18 @@ ms.locfileid: "1589757"
 | `physicaldisk.latency.average`  | `Avg. Disk sec/Transfer` |
 
    > [!NOTE]
-   > カウンターがないサンプル、全体の間隔で表されます。 たとえば、ドライブがアイドル状態の場合は 9 秒ですが 30 IOs で完了 10 の 2 番目は、その`physicaldisk.iops.total`この 10 秒間隔で平均/秒の 3 つの IOs として記録されます。 これにより、そのパフォーマンス履歴は、すべての作業を収集し、ノイズ堅牢なされます。
+   > カウンターは、サンプリングされなかった、全体の間隔で測定されます。 たとえば、ドライブがアイドル状態の場合は 9 秒が完了すると 30 IOs 10 日の 2 番目の`physicaldisk.iops.total`この 10 秒間に平均で 1 秒あたりの 3 つの IOs として記録されます。 これにより、そのパフォーマンス履歴がすべてのアクティビティをキャプチャしがノイズに堅牢になりました。
 
-`size.*`系列がから収集された、 `MSFT_PhysicalDisk` WMI では、ドライブごとに 1 つのインスタンスのクラスします。
+`size.*`シリーズがから収集された、 `MSFT_PhysicalDisk` WMI、ドライブあたりの 1 つのインスタンスのクラス。
 
-| 連続データ                          | Source プロパティ        |
+| シリーズ                          | Source プロパティ        |
 |---------------------------------|------------------------|
 | `physicaldisk.size.total`       | `Size`                 |
 | `physicaldisk.size.used`        | `VirtualDiskFootprint` |
 
-## <a name="usage-in-powershell"></a>PowerShell での使用
+## <a name="usage-in-powershell"></a>PowerShell での使用法
 
-[Get PhysicalDisk](https://docs.microsoft.com/powershell/module/storage/get-physicaldisk)コマンドレットを使用します。
+使用して、 [Get-physicaldisk](https://docs.microsoft.com/powershell/module/storage/get-physicaldisk)コマンドレット。
 
 ```PowerShell
 Get-PhysicalDisk -SerialNumber <SerialNumber> | Get-ClusterPerf
@@ -94,4 +94,4 @@ Get-PhysicalDisk -SerialNumber <SerialNumber> | Get-ClusterPerf
 
 ## <a name="see-also"></a>関連項目
 
-- [記憶域スペースの直接のパフォーマンス履歴](performance-history.md)
+- [記憶域スペース ダイレクトのパフォーマンスの履歴](performance-history.md)

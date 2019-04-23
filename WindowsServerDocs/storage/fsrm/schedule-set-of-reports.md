@@ -1,6 +1,6 @@
 ---
-title: "レポートのセットをスケジュールする"
-description: "この記事では、一連のレポートを定期的なスケジュール生成する方法について説明します。"
+title: レポートのセットをスケジュールする
+description: この記事では、一連のレポートを定期的なスケジュール生成する方法について説明します。
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 15b69e723af3a30375beae73782ab122c68f8880
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879723"
 ---
 # <a name="schedule-a-set-of-reports"></a>レポートのセットをスケジュールする
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 一連のレポートを定期的に生成するには、*レポート タスク*をスケジュールします。 レポート タスクでは、生成するレポートと使用するパラメーター、レポートするボリュームとフォルダー、レポートを生成する頻度、およびレポートを保存するファイル形式が指定されます。
 
@@ -46,7 +47,7 @@ ms.lasthandoff: 10/17/2017
     -   レポート ラベルをクリックし、**[パラメーターの編集]** をクリックします。
     -   **[パラメーターのレポート]** ダイアログ ボックスで必要に応じてパラメーターを編集し、**[OK]** をクリックします。
 
-    -   選択したすべてのレポートのパラメーターの一覧を表示するには、**[選択したレポートの表示]** をクリックします。 次に、**[閉じる]** をクリックします。
+    -   選択したすべてのレポートのパラメーターの一覧を表示するには、**[選択したレポートの表示]** をクリックします。 次に、 **[閉じる]** をクリックします。
 
 5.  レポートの保存形式を指定するには
 
@@ -55,7 +56,7 @@ ms.lasthandoff: 10/17/2017
 6.  レポートのコピーを電子メールで管理者に送信するには
 
     - **[配信]** タブで、**[次の管理者にレポートを送信する]** チェック ボックスをオンにし、レポートを受け取る管理アカウントの名前を入力します。 
-    - *account@domain* の形式を使用し、複数のアカウントはセミコロンで区切ります。
+    - *account@domain*  の形式を使用し、複数のアカウントはセミコロンで区切ります。
 
 7.  レポートをスケジュールするには
 
@@ -79,6 +80,6 @@ ms.lasthandoff: 10/17/2017
 ## <a name="see-also"></a>関連項目
 
 -   [記憶域レポートの管理](storage-reports-management.md)
--   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
+-   [設定ファイル サーバー リソース マネージャーのオプション](setting-file-server-resource-manager-options.md)
 
 

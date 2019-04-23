@@ -1,6 +1,6 @@
 ---
-title: "自動適用クォータのプロパティを編集する"
-description: "この記事では自動適用クォータのプロパティを編集する方法について説明します。"
+title: 自動適用クォータのプロパティを編集する
+description: この記事では自動適用クォータのプロパティを編集する方法について説明します。
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: aa2155268d42293ade925d53da5e29142d13aae4
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59878063"
 ---
 # <a name="edit-auto-apply-quota-properties"></a>自動適用クォータのプロパティを編集する
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 自動適用クォータを変更する場合、自動適用クォータ パス内の既存のクォータにもこれらの変更を適用することができます。 元の自動適用クォータと一致するクォータのみ変更するか、クォータが作成後に変更されているかどうかにかかわらず、自動適用クォータ パス内のすべてのクォータを変更するかを選択できます。 この機能では、すべての更新を 1 か所で集中して実行できるため、自動適用クォータから取得されたクォータのプロパティの更新処理が簡略化されます。
 
@@ -43,7 +44,7 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="see-also"></a>関連項目
 
--   [クオータの管理](quota-management.md)
--   [自動適用クォータを作成する](create-auto-apply-quota.md)
+-   [クォータの管理](quota-management.md)
+-   [作成、自動適用クォータ](create-auto-apply-quota.md)
 
 

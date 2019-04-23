@@ -1,7 +1,7 @@
 ---
 ms.assetid: ad61c586-ba8a-4534-8824-b45994d60c6b
-title: "フェデレーション サーバーが動作可能であることを確認します。"
-description: 
+title: フェデレーション サーバーが正常に動作していることを確認する
+description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -10,44 +10,45 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: 2034b4c35061879a64004486395d0887c59087b2
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59877713"
 ---
-# <a name="verify-that-a-federation-server-is-operational"></a>フェデレーション サーバーが動作可能であることを確認します。
+# <a name="verify-that-a-federation-server-is-operational"></a>フェデレーション サーバーが正常に動作していることを確認する
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-次の手順を使用するには、フェデレーション サーバーが運用; であることを確認するにはつまり、同じネットワーク上のどのクライアントが新しいフェデレーション サーバーに到達できること。  
+以下の手順を使用して、フェデレーション サーバーが動作可能であること (つまり、同じネットワーク上のクライアントから新しいフェデレーション サーバーにアクセスできること) を確認します。  
   
-メンバーシップ**ユーザー**、 **Backup Operators**、 **Power Users**、**管理者**相当するもので、ローカル コンピューターでは、この手順を完了するために必要な最低限またはします。  適切なアカウントの使用に関する詳細を確認し、グループ メンバーシップ[ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
+この手順を実行するには、少なくとも **Users**、 **Backup Operators**、 **Power Users**、または **Administrators** グループのメンバーであるか、そのメンバーと同等の権限が必要になります。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
-### <a name="procedure-1-to-verify-that-a-federation-server-is-operational"></a>手順 1: フェデレーション サーバーが動作可能であることを確認するには  
+### <a name="procedure-1-to-verify-that-a-federation-server-is-operational"></a>手順 1:フェデレーション サーバーが正常に動作していることを確認するには  
   
-1.  フェデレーション サーバーで、インターネット インフォメーション サービス \(IIS\) が正しく構成されていることを確認するには、フェデレーション サーバーと同じフォレストに配置されているクライアント コンピューターにログオンします。  
+1.  インターネット インフォメーション サービスのことを確認する\(IIS\)フェデレーション サーバーでは、フェデレーション サーバーと同じフォレストにあるクライアント コンピューターにログオンが正しく構成されています。  
   
-2.  ブラウザー ウィンドウを開き、アドレス バーの種類、フェデレーション サーバーの DNS ホスト名、およびし/adfs/fs/federationserverservice.asmx に追加して、新しいフェデレーション サーバーの例。  
+2.  ブラウザー ウィンドウを開きで、アドレス バーの種類、フェデレーション サーバーの DNS ホスト名、およびしの/adfs/fs/federationserverservice.asmx を追加、新しいフェデレーション サーバーの例。  
   
     **https://fs1.fabrikam.com/adfs/fs/federationserverservice.asmx**  
   
-3.  キーを押しし、フェデレーション サーバー コンピューターで、次の手順を完了します。 メッセージが表示された場合**この web サイトのセキュリティ証明書に問題がある**、] をクリックして**この web サイトにあっても続行**します。  
+3.  Enter キーを押し、フェデレーション サーバー コンピューターの次の手順を完了します。 メッセージが表示された場合**この web サイトのセキュリティ証明書に問題がある**、 をクリックして**このサイトの閲覧を続行する**します。  
   
-    想定される出力は、サービスの説明のドキュメントと XML の表示です。 このページが表示されたら、サービスを提供して、運用上のページが正常には、フェデレーション サーバーの IIS です。  
+    期待される表示出力は、サービス内容に関する XML ドキュメントです。 このページが表示されたら、フェデレーション サーバーの IIS は動作可能であり、正常にページを提供します。  
   
-メンバーシップ**管理者**、相当するもので、ローカル コンピューターでは、この手順を完了するために必要な最低限またはします。  適切なアカウントの使用に関する詳細を確認し、グループ メンバーシップ[ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
+この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
-### <a name="procedure-2-to-verify-that-a-federation-server-is-operational"></a>手順 2: フェデレーション サーバーが動作可能であることを確認するには  
+### <a name="procedure-2-to-verify-that-a-federation-server-is-operational"></a>手順 2:フェデレーション サーバーが正常に動作していることを確認するには  
   
 1.  新しいフェデレーション サーバーに管理者としてログオンします。  
   
 2.  **開始**画面で「**イベント ビューアー**し、ENTER キーを押します。  
   
-3.  詳細ウィンドウで、ダブルクリック**アプリケーションとサービス ログ**をダブルクリック**AD FS イベント**、] をクリックし、 **Admin**します。  
+3.  詳細ウィンドウでダブルクリック\-クリックして**Applications and Services Logs**、二重\- をクリックして**AD FS Eventing**、順にクリックします**管理者**。  
   
-4.  **イベント ID**列で、イベント ID が 100 を探します。 新しいイベントを参照してください、フェデレーション サーバーが正しく構成されている場合、イベント ビューアーのアプリケーション ログに: イベント ID が 100 にします。 このイベントは、フェデレーション サーバーが、フェデレーション サービスと正常に通信できたことを確認します。  
+4.  **イベント ID**列で、イベント ID 100 を探します。 新しいイベントを参照してください、フェデレーション サーバーが正しく構成されている場合: イベント ビューアーのアプリケーション ログ: イベント ID 100。 このイベントは、フェデレーション サーバーがフェデレーション サービスと正常に通信できることを確認します。  
   
-## <a name="additional-references"></a>その他の参照  
-[チェックリスト: フェデレーション サーバーのセットアップ](Checklist--Setting-Up-a-Federation-Server.md)  
+## <a name="additional-references"></a>その他の参照情報  
+[チェックリスト:フェデレーション サーバーを設定します。](Checklist--Setting-Up-a-Federation-Server.md)  
   
 

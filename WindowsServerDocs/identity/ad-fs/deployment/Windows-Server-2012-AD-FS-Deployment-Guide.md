@@ -1,7 +1,7 @@
 ---
 ms.assetid: e2ad9e80-a036-4bac-a4fb-afa83756aa1f
-title: "Windows Server 2012 AD FS 展開ガイド"
-description: 
+title: Windows Server 2012 AD FS の展開ガイド
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,66 +10,67 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 3e555d1003878e12320cb8557bd205ac24e1bbb3
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59882443"
 ---
-# <a name="windows-server-2012-ad-fs-deployment-guide"></a>Windows Server 2012 AD FS 展開ガイド
+# <a name="windows-server-2012-ad-fs-deployment-guide"></a>Windows Server 2012 AD FS の展開ガイド
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-Windows Server® 2012 オペレーティング システムで Active Directory® フェデレーション サービス \(AD FS\) を使って、組織やプラットフォームの境界を越えて、分散識別、認証、および承認サービスを Web ベース アプリケーションを拡張するフェデレーション ID 管理ソリューションを構築できます。 AD FS を展開して、インターネットに、組織の既存の ID 管理機能を拡張できます。  
+Active Directory® フェデレーション サービスを使用する\(AD FS\)分散の識別を拡張するフェデレーション id 管理ソリューションをビルドする Windows Server® 2012 オペレーティング システムで、認証と承認サービスを Web\-組織やプラットフォームの境界を越えてベースのアプリケーション。 AD FS を展開することで、組織の既存の ID 管理機能をインターネットにまで拡張できます。  
   
-AD FS を展開できます。  
+AD FS を展開すると、次のことが可能になります。  
   
--   内部でホストされる Web サイトやサービスへのリモート アクセスを必要があるときに Web ベース、シングル sign\-で \(SSO\) 体験従業員または顧客を提供します。  
+-   従業員または顧客を備えた Web\-シングル、\-サインオン\-で\(SSO\)エクスペリエンスへのリモート アクセスを内部的に必要なときには、Web サイトやサービスがホストされています。  
   
--   クロス組織の Web サイトやネットワークのファイアウォール内からサービスにアクセスするときに、Web ベースの sso で従業員または顧客を提供します。  
+-   従業員または顧客を備えた Web\-、SSO が発生する間にアクセスするときに\-組織の Web サイトやネットワークのファイアウォール内からサービス。  
   
--   従業員または顧客が複数回ログオンを必要とせず、インターネット上のフェデレーション パートナー組織内の Web ベースのリソースにシームレスなアクセス権を持つ従業員または顧客を提供します。  
+-   シームレスなアクセス権を持つ従業員または顧客を Web に提供\-複数回ログオンするには、従業員または顧客を必要とせず、インターネット上でフェデレーション パートナー組織内のリソースのベースします。  
   
--   その他の sign\ にプロバイダーを使用せず、従業員または顧客の ID を完全に制御を保持 \ (Windows Live ID、Liberty Alliance などと others\)。  
+-   その他の記号を使用せず、従業員または顧客の id を完全に制御を保持\-プロバイダー \(Windows Live ID、Liberty Alliance など、およびその他のユーザー\)します。  
   
 ## <a name="about-this-guide"></a>このガイドについて  
-このガイドは、システム管理者とシステム エンジニアが対象読者です。 または、組織内のインフラストラクチャ専門家やシステム アーキテクトによって事前に選択された AD FS 設計を展開するための詳しいガイダンスを提供します。  
+本ガイドはシステム管理者とシステム エンジニアによる使用を意図しています。 これは、ユーザーまたは組織内のインフラストラクチャ専門家やシステム アーキテクトによって事前に選択されている AD FS 設計の展開に関する詳しいガイダンスを提供します。  
   
-設計のオプションを確認した後まで、このガイドの指示に従って待機することをお勧め設計が選択されていない場合、 [Windows Server 2012 で AD FS 設計ガイド](https://technet.microsoft.com/library/dd807036.aspx)組織にとって最適な設計を選択しているとします。 選択された設計では、このガイドの使用に関する詳細については、次を参照してください。 [AD FS 設計の計画を実装する](Implementing-Your-AD-FS-Design-Plan.md)します。  
+までには、このガイドの指示に従って設計オプションを確認した後に待機することをお勧めするデザインが選択されていない場合、 [Windows Server 2012 で AD FS 設計ガイド](https://technet.microsoft.com/library/dd807036.aspx)と、最も選択しました。組織の適切な設計します。 既に選択されているデザインでこのガイドの使用に関する詳細については、次を参照してください。 [AD FS 設計の計画を実装する](Implementing-Your-AD-FS-Design-Plan.md)します。  
   
-設計のガイドから設計を選択し、信頼性情報、トークンの種類、属性ストア、およびその他の項目に関する必要な情報を収集した後、実稼働環境で AD FS 設計を展開するのにこのガイドを使用することができます。 このガイドでは、次の主な AD FS 設計のいずれかを展開するための手順を説明します。  
+設計ガイドから設計を選択して要求、トークンの種類、属性ストア、およびその他の項目に関する必要な情報を収集して後、は、実稼働環境で AD FS 設計を展開するのにこのガイドを使用できます。 このガイドでは、次のプライマリ AD FS 設計のいずれかを展開するための手順を説明します。  
   
 -   Web SSO  
   
 -   フェデレーション Web SSO  
   
-チェックリストを使用して[AD FS 設計の計画を実装する](Implementing-Your-AD-FS-Design-Plan.md)、特定の設計を展開するこのガイドの手順を使用する最善の方法を特定します。 AD FS を展開するためのハードウェアおよびソフトウェア要件については、次を参照してください。、[付録 a: 確認 AD FS の要件](https://technet.microsoft.com/library/ff678034.aspx)AD FS 設計ガイドにします。  
+」のチェックリストを使用して、 [AD FS 設計の計画を実装する](Implementing-Your-AD-FS-Design-Plan.md)にこのガイドで指示を使用して、特定の設計を展開する最善の方法を決定します。 AD FS を展開するためのハードウェアとソフトウェアの要件については、次を参照してください、[付録 a:。AD FS の要件の確認](https://technet.microsoft.com/library/ff678034.aspx)で AD FS 設計ガイド。  
   
-### <a name="what-this-guide-does-not-provide"></a>このガイドで説明としていない新機能  
-このガイドでは提供されません。  
+### <a name="what-this-guide-does-not-provide"></a>このガイドで説明されていないもの  
+このガイドでは、次の内容は説明されていません。  
   
--   既存のネットワーク インフラストラクチャにフェデレーション サーバー、フェデレーション サーバー プロキシ、または Web サーバーを配置する場所についてのガイダンスです。 この情報は、次を参照してください。[フェデレーション サーバーの配置の計画](https://technet.microsoft.com/library/dd807069.aspx)と[フェデレーション サーバー プロキシの配置を計画](https://technet.microsoft.com/library/dd807130.aspx)AD FS 設計ガイドにします。  
+-   既存のネットワーク インフラストラクチャにフェデレーション サーバー、フェデレーション サーバー プロキシ、または Web サーバーを配置するタイミングと場所に関するガイダンスです。 詳細については、次を参照してください。[フェデレーション サーバーの配置の計画](https://technet.microsoft.com/library/dd807069.aspx)と[フェデレーション サーバー プロキシの配置の計画](https://technet.microsoft.com/library/dd807130.aspx)で、AD FS 設計ガイド。  
   
--   証明機関 \(CAs\) を使用して AD FS をセットアップするためのガイダンス  
+-   証明機関の使用に関するガイダンス\(Ca\) AD FS を設定するには  
   
--   設定または特定の Web ベース アプリケーションを構成するためのガイダンス  
+-   設定するか、特定の Web の構成に関するガイダンス\-ベースのアプリケーション  
   
--   テスト ラボ環境を設定する指示をセットアップします。  
+-   テスト ラボ環境を設定する手順。  
   
--   フェデレーション ログオン画面、Web.config ファイル、または構成データベースをカスタマイズする方法に関する情報。  
+-   フェデレーション ログオン画面、web.config ファイル、または構成データベースのカスタマイズ方法に関する情報。  
   
-## <a name="in-this-guide"></a>このガイドで  
+## <a name="in-this-guide"></a>このガイドについて  
   
 -   [AD FS の展開を計画するには](Planning-to-Deploy-AD-FS.md)  
   
--   [設計計画の AD FS を実装します。](Implementing-Your-AD-FS-Design-Plan.md)  
+-   [AD FS を実装する計画の設計](Implementing-Your-AD-FS-Design-Plan.md)  
   
--   [チェックリスト: Web SSO 設計の実装](Checklist--Implementing-a-Web-SSO-Design.md)  
+-   [チェックリスト:Web SSO 設計の実装](Checklist--Implementing-a-Web-SSO-Design.md)  
   
--   [チェックリスト: フェデレーション Web SSO 設計の実装](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  
+-   [チェックリスト:フェデレーション Web SSO 設計の実装](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  
   
 -   [パートナー組織の構成](Configuring-Partner-Organizations.md)  
   
--   [要求規則の構成](Configuring-Claim-Rules.md)  
+-   [要求規則を構成します。](Configuring-Claim-Rules.md)  
   
 -   [フェデレーション サーバーを展開します。](Deploying-Federation-Servers.md)  
   

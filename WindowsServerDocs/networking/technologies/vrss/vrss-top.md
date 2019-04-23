@@ -1,6 +1,6 @@
 ---
 title: Virtual Receive Side Scaling (vRSS)
-description: Windows Server とトラフィックの負荷分散着信ネットワーク VM で複数の論理プロセッサ コアを仮想ネットワーク アダプターを構成する方法、Virtual Receive Side Scaling (vRSS) について説明します。 ホストの複数の物理コアを構成することもできます。 仮想ネットワーク インターフェイス カード (vNIC)。
+description: Windows Server および VM で複数の論理プロセッサ コア間で負荷を受信ネットワーク トラフィックを分散する仮想ネットワーク アダプターを構成する方法は、仮想 Receive Side Scaling (vRSS) について説明します。 ホストの複数の物理コアを構成することもできます。 仮想ネットワーク インターフェイス カード (vNIC)。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -11,82 +11,82 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 0c1cb11cb8ce69463a31cfa5061290f79d8dda91
-ms.sourcegitcommit: e84e328c13a701e8039b16a4824a6e58a6e59b0b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4133688"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59875233"
 ---
-# 仮想受信側 \(vRSS\) のスケーリング
+# <a name="virtual-receive-side-scaling-vrss"></a>仮想 Receive Side Scaling \(vRSS\)
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
-このトピックでは、Virtual Receive Side Scaling (vRSS) とトラフィックの負荷分散着信ネットワーク VM で複数の論理プロセッサ コアを仮想ネットワーク アダプターを構成する方法について説明します。 ホストの仮想ネットワーク インターフェイス カード \(vNIC\) の複数の物理コアを構成するのに vRSS を使用することもできます。
+このトピックでは、仮想 Receive Side Scaling (vRSS) および VM で複数の論理プロセッサ コア間で負荷を受信ネットワーク トラフィックを分散する仮想ネットワーク アダプターを構成する方法について説明します。 ホストの複数の物理コアを構成する、vRSS を使用することもできます。 仮想ネットワーク インターフェイス カード\(vNIC\)します。
 
-この構成では、負荷分散される仮想マシンで複数の仮想プロセッサの仮想ネットワーク アダプターから \(VM\) より多くのネットワーク トラフィックを 1 つの論理プロセッサを搭載したことよりも迅速に処理する VM を許可します。
+この構成により、負荷分散される仮想マシンで複数の仮想プロセッサの仮想ネットワーク アダプターから\(VM\)より多くのネットワーク トラフィックを 1 つをより迅速に処理する VM を許可します。論理プロセッサ。
 
 >[!TIP]
->Vm で vRSS を使用するには、1 つの複数のプロセッサが複数のコア プロセッサが hyper \-v ホストで複数のコア プロセッサがインストールされているし、VM 用に構成された 1 つ以上またはします。
+>VRSS を使用するにはハイパースレッディング上の Vm で\-を複数のプロセッサ、1 つの複数のコア プロセッサを持つ V ホストまたは複数のコア プロセッサがインストールされ構成された VM を使用する 1 つ以上。
 
-vRSS は、その他の hyper \-v ネットワーク テクノロジはすべてと互換性が。 vRSS では、hyper \-v ホストの仮想マシンのキュー \(VMQ\) と RSS VM またはホスト vNIC に依存します。
+vRSS は他のすべてのハイパースレッディングと互換性のある\-V ネットワーク テクノロジ。 vRSS は仮想マシン キューに依存\(VMQ\) Hyper で\-V ホストとホスト vNIC のまたは VM で RSS です。
 
-既定では、Windows Server により、vRSS が Windows PowerShell を使用して VM で無効ことができます。 詳細については、[管理 vRSS](vrss-manage.md)し、 [RSS や vRSS 用の Windows PowerShell コマンド](vrss-wps.md)を参照してください。
+既定では vRSS、により、Windows Server が Windows PowerShell を使用して、VM で無効ことができます。 詳細については、次を参照してください。[管理 vRSS](vrss-manage.md)と[RSS および vRSS 用 Windows PowerShell コマンド](vrss-wps.md)します。
 
 
 
-## オペレーティング システムの互換性
+## <a name="operating-system-compatibility"></a>オペレーティング システムの互換性
 
-任意のマルチプロセッサまたはマルチコア コンピューターまたは vRSS マルチプロセッサまたはマルチコア VM - Windows Server 2016 を実行しているのでは、RSS を使用できます。
+RSS は、任意のマルチプロセッサまたはマルチコア コンピューターまたはマルチプロセッサまたはマルチコア VM - Windows Server 2016 を実行しているで vRSS で使用できます。
 
-マルチプロセッサまたはマルチコア以下の Microsoft のオペレーティング システムを実行している Vm も vRSS をサポートします。
+マルチプロセッサまたはマルチコア次の Microsoft オペレーティング システムを実行している Vm も vRSS をサポートします。
 
 - Windows Server 2016
 - Windows 10 Pro または Enterprise
 - Windows Server 2012 R2
 - Windows 8.1 Pro または Enterprise
-- Windows Server 2012 R2 の統合コンポーネントがインストールされた Windows Server 2012 です。
-- Windows Server 2012 R2 の統合コンポーネントがインストールされた Windows 8 します。
+- Windows Server 2012 R2 の統合コンポーネントがインストールされた Windows Server 2012。
+- Windows 8、Windows Server 2012 R2 統合コンポーネントがインストールされているとします。
 
-HYPER-V でゲスト オペレーティング システムとして FreeBSD または Linux を実行して Vm の vRSS サポートについては、 [Windows 上の HYPER-V のサポートされる Linux と FreeBSD の仮想マシン](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows)を参照してください。
+ゲスト オペレーティング システムとして、HYPER-V で FreeBSD または Linux を実行する仮想マシンに対する vRSS のサポートについては、次を参照してください。 [Windows 上の Hyper-v ではサポートされている Linux および FreeBSD の仮想マシン](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows)します。
   
-## ハードウェア要件
+## <a name="hardware-requirements"></a>ハードウェア要件
 
 VRSS のハードウェア要件を次に示します。
  
-- 物理ネットワーク アダプターには、仮想マシンのキュー \(VMQ\) をサポートする必要があります。 VMQ が無効またはサポートされていない場合は、hyper \-v ホストとホストで構成されているすべての Vm の vRSS が無効です。
-- ネットワーク アダプターは、10 gbps リンク速度以上が必要です。
-- Hyper \-v ホストは、複数のプロセッサまたは vRSS を使用する 1 つ以上の multi\ コア プロセッサで構成する必要があります。
-- 仮想マシン \(VMs\) は、2 つまたは複数の論理プロセッサを使用するように構成する必要があります。
+- 物理ネットワーク アダプターが仮想マシン キューをサポートする必要があります\(VMQ\)します。 VRSS が、ハイパースレッディングを無効になっているかどうかは、VMQ が無効またはサポートされていない、\-V ホストとホストで構成されているすべての Vm。
+- ネットワーク アダプターは、10 Gbps のリンク速度以上が必要です。
+- ハイパー\-V ホストは、複数のプロセッサまたは少なくとも 1 つのマルチで構成する必要があります\-コア vRSS を使用するプロセッサ。
+- 仮想マシン\(Vm\) 2 つ以上の論理プロセッサを使用するように構成する必要があります。
 
 
-## 使用事例
+## <a name="use-case-scenarios"></a>ユース ケース シナリオ
 
-次の 2 つの使用事例では、プロセッサの負荷分散とソフトウェア負荷分散 vRSS の一般的な使用量を表します。
+次の 2 つのユース ケース シナリオは、vRSS プロセッサの負荷分散とソフトウェアの負荷分散の一般的な使用方法を示しています。
 
-### プロセッサの負荷分散
+### <a name="processor-load-balancing"></a>プロセッサの負荷分散
   
-仮想化の 1 つのルート入力出力 \(SR\-IOV\) をサポートする 2 つのネットワーク アダプターで、新しい HYPER-V ホストをアンソニー、ネットワーク管理者が設定されています。 彼は、VM のファイル サーバーをホストする Windows Server 2016 を展開します。
+Anthony は、ネットワーク管理者は、単一ルート入出力仮想化をサポートする 2 つのネットワーク アダプターで新しい HYPER-V ホストをセットアップしている\(SR\-IOV\)します。 彼は、Windows Server 2016 VM のファイル サーバーをホストにデプロイします。
 
-ハードウェアとソフトウェアをインストールした後は、アンソニーは、8 つの仮想プロセッサを使用する VM と 4096 MB のメモリを構成します。 残念ながら、アンソニーには、自分の Vm は、hyper \-v 仮想スイッチ マネージャーで作成した仮想スイッチを介したポリシーの適用に依存するために、SR\ IOV を有効にするオプションはありません。 このため、代わりに使う vRSS SR\ IOV アンソニーを決定します。
+ハードウェアとソフトウェアをインストールした後は、Anthony は、8 つの仮想プロセッサを使用する VM と 4096 MB のメモリを構成します。 残念ながら、Anthony には記憶域レプリカを有効にするオプションがない\-IOV 彼の Vm は、ハイパースレッディングで作成した仮想スイッチを通じてポリシーの適用に依存するので\-仮想スイッチの V マネージャー。 このため、Anthony は記憶域レプリカではなく vRSS を使用する決定\-IOV します。
 
-最初に、アンソニーは vRSS で使用するために利用可能な Windows PowerShell を使用して、4 つの仮想プロセッサを割り当てます。 1 週間後、ファイル サーバーの使用は、アンソニー VM のパフォーマンスを確認するために、非常に一般的に表示されます。  彼は、4 つの仮想プロセッサの完全な使用率を検出します。
+最初に、Anthony は、vRSS で使用できるように Windows PowerShell を使用して 4 つの仮想プロセッサを割り当てます。 1 週間後、ファイル サーバーの使用は、非常に一般的になるため、Anthony は、VM のパフォーマンスを確認します。 表示されていました。  彼は、次の 4 つの仮想プロセッサを最大限に利用します。
 
-このため、vRSS を使用するため、VM をプロセッサを追加するアンソニーを決定します。  彼は、vRSS 大規模なネットワークの負荷を処理するために自動的に提供すると、VM に 2 つ以上の仮想プロセッサを割り当てます。 作業が発生するネットワーク トラフィックの負荷を効率的に処理 6 つのプロセッサを搭載した VM ファイル サーバーのパフォーマンスが向上します。
-
-
-### ソフトウェア負荷分散
-
-平野、ネットワーク管理者は、ソフトウェア ロード バランサーとして動作する、1 つのパフォーマンスの高い VM を自分のシステムのいずれかの設定です。 この 1 つの VM には、利用可能なすべての論理プロセッサが割り当てられます。
-
-Windows Server をインストールすると、彼女を使って vRSS VM 内の複数の論理プロセッサで処理並列のネットワーク トラフィックを取得します。 Windows Server では、vRSS できますが、構成を変更する平野はありません。
+このため、Anthony は、vRSS で使用するため、VM にプロセッサを追加するが決定します。  彼は、大きなネットワーク負荷の処理に役立つ vRSS を自動的に利用すると、VM に 2 つの仮想プロセッサを割り当てます。 作業は、ネットワーク トラフィックの負荷を効率的に処理する 6 つのプロセッサを搭載した VM のファイル サーバーのパフォーマンスが向上結果します。
 
 
-## 関連トピック
+### <a name="software-load-balancing"></a>ソフトウェア負荷分散
+
+ある Sandra は、ネットワーク管理者は、ソフトウェア ロード バランサーとして機能するシステムのいずれかで 1 つの高パフォーマンス VM の設定は。 使用可能なすべての論理プロセッサは、この 1 つの VM に割り当てられた彼女が。
+
+Windows Server をインストールすると、彼女は、vRSS を使用、VM 内の複数の論理プロセッサで処理を並列のネットワーク トラフィックを取得します。 Windows Server では、vRSS できますが、構成変更を加える Sandra はありません。
+
+
+## <a name="related-topics"></a>関連トピック
 
 - [VRSS の使用を計画します。](vrss-plan.md)
 - [仮想ネットワーク アダプターで vRSS を有効にします。](vrss-enable.md)
 - [VRSS を管理します。](vrss-manage.md)
 - [vRSS よく寄せられる質問](vrss-faq.md)
-- [RSS および vRSS 用の Windows PowerShell コマンド](vrss-wps.md)
+- [RSS および vRSS 用 Windows PowerShell コマンド](vrss-wps.md)
 
 ---

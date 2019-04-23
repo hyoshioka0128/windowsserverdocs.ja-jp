@@ -1,7 +1,7 @@
 ---
 ms.assetid: aca4a4fa-b12c-4eed-a499-f9aedb7d2fd6
-title: "フェデレーション サービスと DRS 用に会社の DNS を構成します。"
-description: 
+title: 企業 DNS をフェデレーション サービスと DRS 用に構成する
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,52 +10,53 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 9b66bed99cbc2ac2cdf116579adaea282c45fabe
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59876393"
 ---
-# <a name="configure-corporate-dns-for-the-federation-service-and-drs"></a>フェデレーション サービスと DRS 用に会社の DNS を構成します。
+# <a name="configure-corporate-dns-for-the-federation-service-and-drs"></a>企業 DNS をフェデレーション サービスと DRS 用に構成する
 
->適用対象: Windows Server 2016、Windows Server 2012 R2
+>適用先:Windows Server 2016、Windows Server 2012 R2
   
-## <a name="step-6-add-a-host-a-and-alias-cname-resource-record-to-corporate-dns-for-the-federation-service-and-drs"></a>手順 6: ホストの追加を企業の DNS にフェデレーション サービスと DRS \(A\) とエイリアスの \(CNAME\) リソース レコード  
-フェデレーション サービスの企業のドメイン ネーム システム \(DNS\) と前の手順で構成されているデバイス登録サービスを次のリソース レコードを追加する必要があります。  
+## <a name="step-6-add-a-host-a-and-alias-cname-resource-record-to-corporate-dns-for-the-federation-service-and-drs"></a>手順 6:ホストの追加\(A\)とエイリアス\(CNAME\)をフェデレーション サービスおよび DRS の会社の DNS リソース レコード  
+会社のドメイン ネーム システムに次のリソース レコードを追加する必要があります\(DNS\) federation service と前の手順で構成されているデバイス登録サービス。  
   
-|エントリ|種類|アドレス|  
+|入力|種類|Address|  
 |---------|--------|-----------|  
-|federation\_service\_name|\(A\) のホスト|AD FS サーバーまたは AD FS サーバー ファームの前に構成されているロード バランサーの IP アドレスの IP アドレス|  
-|enterpriseregistration|エイリアス \(CNAME\)|federation\_server\_name.contoso.com|  
+|フェデレーション\_サービス\_名|ホスト\(A\)|AD FS サーバーまたは AD FS サーバー ファームの前に構成されているロード バランサーの IP アドレスの IP アドレス|  
+|enterpriseregistration|エイリアス\(CNAME\)|フェデレーション\_server\_name.contoso.com|  
   
-会社の DNS にフェデレーション サーバーおよびデバイス登録サービスにホスト \(A\) とエイリアス \(CNAME\) リソース レコードを追加するのに、次の手順を使用することができます。  
+次の手順を使用するには、ホストを追加する\(A\)とエイリアス\(CNAME\)リソース レコードを会社の DNS にフェデレーション サーバーとデバイス登録サービス。  
   
-メンバーシップ**管理者**、またはそれと同等が最小要件を次の手順を完了します。  適切なアカウントの使用に関する詳細を確認し、グループ メンバーシップ[ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
+メンバーシップ**管理者**、またはそれと同等がこの手順を実行する最小要件です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
-#### <a name="to-add-a-host-a-and-alias-cname-resource-records-to-dns-for-your-federation-server"></a>フェデレーション サーバーの DNS にホスト \(A\) とエイリアス \(CNAME\) リソース レコードを追加するには  
+#### <a name="to-add-a-host-a-and-alias-cname-resource-records-to-dns-for-your-federation-server"></a>ホストを追加する\(A\)とエイリアス\(CNAME\)フェデレーション サーバーの dns リソース レコード  
   
-1.  ドメイン コント ローラーで、サーバー マネージャーで、上、**ツール**] メニューのをクリックして**DNS** 、DNS スナップインを開きます。  
+1.  ドメイン コント ローラーで、サーバー マネージャーで、上、**ツール** メニューのをクリックして**DNS** DNS スナップインを開く\-で。  
   
-2.  コンソール ツリーで、展開、 **domain\_controller\_name** ] ノードを展開**前方参照ゾーン**、右クリック**domain\_name**、] をクリックし、**新しいホスト \(A or AAAA\)**します。  
+2.  コンソール ツリーで、展開、**ドメイン\_コント ローラー\_名前**ノード、展開**前方参照ゾーン**、右\-クリックして**ドメイン\_名前**、 をクリックし、**新しいホスト\(A または AAAA\)** します。  
   
-3.  **名**ボックスに、AD FS ファームに使用する名前を入力します。  
+3.  **名前**ボックスに、AD FS ファーム用に使用する名前を入力します。  
   
-4.  **IP アドレス**ボックスに、フェデレーション サーバーの IP アドレスを入力します。 をクリックして**ホストの追加**します。  
+4.  **[IP アドレス]** ボックスに、フェデレーション サーバーの IP アドレスを入力します。 **[ホストの追加]** をクリックします。  
   
-5.  右クリック、 **domain\_name**ノード、およびクリック**新しいエイリアス \(CNAME\)**します。  
+5.  右\- をクリックして、**ドメイン\_名前**ノード、およびクリック**新しいエイリアス\(CNAME\)** します。  
   
-6.  **新しいリソース レコード**] ダイアログ ボックスで、「 **enterpriseregistration**で、**エイリアス名**ボックス。  
+6.  **[新しいリソース レコード]** ダイアログ ボックスで、**[エイリアス名]** ボックスに「**enterpriseregistration**」と入力します。  
   
-7.  完全修飾ドメイン名をターゲット ホスト ボックスの種類の \(FQDN\) **federation\_service\_farm\_name.domain\_name.com**、] をクリックし、 **OK**します。  
+7.  完全修飾ドメイン名で\(FQDN\) 、ターゲット ホスト ボックスの次のように入力します**フェデレーション\_サービス\_ファーム\_name.domain\_名.com**、し、。クリックして**OK**します。  
   
     > [!IMPORTANT]  
-    > 現実の世界展開では、複数のユーザー プリンシパル名 \(UPN\) サフィックスがある企業作成する必要が複数の CNAME レコード DNS 内の各 UPN サフィックスごと。  
+    > 現実世界のデプロイで複数のユーザー プリンシパル名がある企業\(UPN\)サフィックス、DNS の UPN サフィックスのごとに複数の CNAME レコードを作成する必要があります。  
   
-## <a name="see-also"></a>参照してください。 
+## <a name="see-also"></a>関連項目 
 
 [AD FS の展開](../../ad-fs/AD-FS-Deployment.md)  
 
 [Windows Server 2012 R2 AD FS 展開ガイドします。](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  
-[フェデレーション サーバー ファームを展開します。](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
+[フェデレーション サーバー ファームのデプロイ](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
   
 

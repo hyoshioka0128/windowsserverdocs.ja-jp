@@ -1,6 +1,6 @@
 ---
 ms.assetid: d11acbc2-40c6-4ab2-9514-2bc3ad81499a
-title: "データ重複除去の新機能"
+title: データ重複除去の新機能
 ms.technology: storage-deduplication
 ms.prod: windows-server-threshold
 ms.topic: article
@@ -9,14 +9,15 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: 4a69221548d9defff5a45413ccfe824f9788755a
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59876453"
 ---
 # <a name="whats-new-in-data-deduplication"></a>データ重複除去の新機能
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016
+> 適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
 Windows Server 2016 の[データ重複除去](overview.md)は、プライベート クラウド スケールで高いパフォーマンスと柔軟性、および高度な管理を実現するために最適化されました。 Windows Server 2016 でのソフトウェア定義型記憶域スタックの詳細については、「[Windows Server 2016 での記憶域の新機能](../whats-new-in-storage.md)」を参照してください 。
 
@@ -24,11 +25,11 @@ Windows Server 2016 のデータ重複除去は次のように機能強化され
 
 | 機能 | 新規/更新 | 説明 |
 |---------------|----------------|-------------|
-| [大量ボリュームのサポート](whats-new.md#large-volume-support) | 更新済み | Windows Server 2016 以前では、想定されるチャーンに合わせてボリュームのサイズを具体的に設定する必要があり、10 TB を超えるサイズのボリュームは重複除去に適していませんでした。 Windows Server 2016 のデータ重複除去では、最大 64 TB のボリューム サイズがサポートされます。 |
-| [大きいファイルのサポート](whats-new.md#large-file-support) | 更新済み | Windows Server 2016 の前では、1 TB に近いサイズのファイルは重複除去に適した候補ではありませんでした。 Windows Server 2016 では、1 TB までのファイルが完全にサポートされます。 |
+| [大量ボリュームのサポート](whats-new.md#large-volume-support) | 更新 | Windows Server 2016 以前では、想定されるチャーンに合わせてボリュームのサイズを具体的に設定する必要があり、10 TB を超えるサイズのボリュームは重複除去に適していませんでした。 Windows Server 2016 のデータ重複除去では、最大 64 TB のボリューム サイズがサポートされます。 |
+| [大きいファイルのサポート](whats-new.md#large-file-support) | 更新 | Windows Server 2016 の前では、1 TB に近いサイズのファイルは重複除去に適した候補ではありませんでした。 Windows Server 2016 では、1 TB までのファイルが完全にサポートされます。 |
 | [Nano Server のサポート](whats-new.md#nano-server-support) | 新規 | Windows Server 2016 の新しい Nano Server 展開オプションでは、データ重複除去が利用可能で、完全にサポートされています。 |
-| [バックアップ サポートの簡略化](whats-new.md#simple-backup-support) | 新規 | Windows Server 2012 R2 では、Microsoft の [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx) などの仮想化バックアップ アプリケーションをサポートするには、一連の手動による構成手順を実行する必要がありました。 Windows Server 2016 では、仮想化バックアップ アプリケーションに対してデータ重複除去をシームレスに展開するために、使用法の種類の新しい既定値 (バックアップ) が追加されました。|
-| [クラスター OS のローリング アップグレードのサポート](whats-new.md#cluster-upgrade-support) | 新規 | データ重複除去では、Windows Server 2016 の新機能である、[クラスター OS のローリング アップグレード](../..//failover-clustering/cluster-operating-system-rolling-upgrade.md)が完全にサポートされています。 |
+| [簡略化されたバックアップのサポート](whats-new.md#simple-backup-support) | 新規 | Windows Server 2012 R2 では、Microsoft の [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx) などの仮想化バックアップ アプリケーションをサポートするには、一連の手動による構成手順を実行する必要がありました。 Windows Server 2016 では、仮想化バックアップ アプリケーションに対してデータ重複除去をシームレスに展開するために、使用法の種類の新しい既定値 (バックアップ) が追加されました。|
+| [クラスター OS のローリング アップグレードのサポート](whats-new.md#cluster-upgrade-support) | 新規 | データ重複除去では、Windows Server 2016 の新しい[クラスター OS のローリング アップグレード](../..//failover-clustering/cluster-operating-system-rolling-upgrade.md)機能を完全にサポートしています。 |
 
 ## <a name="large-volume-support"></a>大量ボリュームのサポート
 

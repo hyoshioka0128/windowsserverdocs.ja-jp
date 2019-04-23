@@ -1,6 +1,6 @@
 ---
-title: "AD FS Web エージェントを移行します。"
-description: "AD FS Web エージェントの Windows Server 2012 の情報を提供します。"
+title: AD FS web エージェントを移行します。
+description: Windows Server 2012 に AD FS web エージェントの情報を提供します。
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,25 +9,26 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 945a5f4cf0e6c491479b095671ff5e77416c6fa3
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59877593"
 ---
-# <a name="migrate-the-ad-fs-web-agent"></a>AD FS Web エージェントを移行します。
+# <a name="migrate-the-ad-fs-web-agent"></a>AD FS web エージェントを移行します。
 
-移行 AD FS 1.1 Windows トークン ベース エージェントまたは AD FS 1.1 要求に対応するエージェントが Windows Server 2008 R2 または Windows Server 2012、Windows Server 2008 にインストールされているが Windows Server 2012 へのいずれかのエージェントをホストするコンピューターのオペレーティング システムのインプレース アップグレードを実行します。 詳細については、次を参照してください。[Windows Server 2012 のインストール](https://technet.microsoft.com/library/jj134246.aspx)します。 これ以上の構成は必要ありません。  
+移行する AD FS 1.1 Windows トークン ベース エージェントまたは AD FS 1.1 クレーム認識エージェントは Windows Server 2008 R2 または Windows Server 2012、Windows Server 2008 と共にインストールされるエージェント ホストしているコンピューターのオペレーティング システムのインプレース アップグレードを実行します。Windows server 2012。 詳細については、「[Windows Server 2012 のインストール](https://technet.microsoft.com/library/jj134246.aspx)」を参照してください。 これ以上の構成は必要ありません。  
   
 > [!IMPORTANT]
->  移行された AD FS 1.1 Windows トークン ベースのエージェントの関数が Windows Server 2008 R2 または Windows Server 2008 にインストールされている AD FS 1.1 フェデレーション サービスでのみです。 詳細については、次を参照してください。[Interoperating with AD FS 1.x](Interoperating-with-AD-FS-1.x.md)します。  
+>  移行された AD FS 1.1 Windows トークン ベース エージェントは、Windows Server 2008 R2 または Windows Server 2008 にインストールされている AD FS 1.1 フェデレーション サービスでのみ機能します。 詳細については、「 [Interoperating with AD FS 1.x](Interoperating-with-AD-FS-1.x.md)」を参照してください。  
 >   
->  移行された AD FS 1.1 クレーム認識 Web、次のようにエージェントの機能。  
+>  移行された AD FS 1.1 クレーム認識 Web エージェントは、次のサービスで機能します。  
 >   
 >  -   Windows Server 2008 R2 または Windows Server 2008 にインストールされている AD FS 1.1 フェデレーション サービス  
 > -   Windows Server 2008 R2 または Windows Server 2008 にインストールされている AD FS 2.0 フェデレーション サービス  
-> -   Windows Server 2012 にインストールされている AD FS フェデレーション サービス  
+> -   Windows Server 2012 で AD FS フェデレーション サービスがインストールされています。  
 >   
->  詳細については、次を参照してください。[Interoperating with AD FS 1.x](Interoperating-with-AD-FS-1.x.md)します。  
+>  詳細については、「 [Interoperating with AD FS 1.x](Interoperating-with-AD-FS-1.x.md)」を参照してください。  
   
   
 ## <a name="next-steps"></a>次の手順

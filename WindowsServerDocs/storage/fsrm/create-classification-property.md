@@ -1,6 +1,6 @@
 ---
-title: "分類プロパティを作成する"
-description: "この記事では、指定したフォルダーまたはボリューム内のファイルに値を割り当てるために使用される分類プロパティについて説明します。"
+title: 分類プロパティを作成する
+description: この記事では、指定したフォルダーまたはボリューム内のファイルに値を割り当てるために使用される分類プロパティについて説明します。
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,14 +9,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: aa1f1a2ab4422f4bb36a737e47894b22b60160e1
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59880653"
 ---
 # <a name="create-a-classification-property"></a>分類プロパティを作成する
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 分類プロパティは、指定したフォルダーまたはボリューム内のファイルに値を割り当てるために使用されます。 必要に応じて選択できる多数のプロパティの種類があります。 使用できるプロパティの種類を次の表に示します。
 
@@ -26,7 +27,7 @@ ms.lasthandoff: 10/17/2017
 | 日付/時刻 | 単純な日付/時刻プロパティ。 分類時に、またはファイル コンテンツから複数の値を組み合わせる場合、競合する値があると再分類できません。 |
 | 数値 | 単純な数値プロパティ。 分類時に、またはファイル コンテンツから複数の値を組み合わせる場合、競合する値があると再分類できません。 |
 | 順序指定された一覧 | 固定値の一覧。 1 つのプロパティには、1 度に 1 つの値だけを割り当てることができます。 分類時に、またはファイルの内容から複数の値を組み合わせる場合、一覧の中で最も大きな値が使用されます。 |
-| 文字列 | 単純な文字列プロパティ。 分類時に、またはファイル コンテンツから複数の値を組み合わせる場合、競合する値があると再分類できません。 |
+| String | 単純な文字列プロパティ。 分類時に、またはファイル コンテンツから複数の値を組み合わせる場合、競合する値があると再分類できません。 |
 | 複数の選択肢リスト | プロパティに割り当てることができる値の一覧。 一度に複数の値をプロパティに割り当てることができます。 分類時に、またはファイル コンテンツから、複数の値を組み合わせる場合、一覧の各値が使用されます。 |
 | 複数の文字列 | プロパティに割り当てることができる文字列の一覧。 一度に複数の値をプロパティに割り当てることができます。 分類時に、またはファイル コンテンツから、複数の値を組み合わせる場合、一覧の各値が使用されます。 |
 
@@ -50,5 +51,5 @@ ms.lasthandoff: 10/17/2017
 
 ## <a name="see-also"></a>関連項目
 
--   [自動分類規則を作成する](create-automatic-classification-rule.md)
+-   [自動分類規則を作成します。](create-automatic-classification-rule.md)
 -   [分類の管理](classification-management.md)

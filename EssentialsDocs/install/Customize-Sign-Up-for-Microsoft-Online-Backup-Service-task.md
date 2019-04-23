@@ -1,6 +1,6 @@
 ---
-title: "Microsoft オンライン バックアップ サービスのタスクのカスタマイズのサインアップ"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: Microsoft オンライン バックアップ サービスへの新規登録タスクのカスタマイズ
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,24 +13,25 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: cd148e0e58cd80dbff7f7884ead95dc1e46b6257
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879933"
 ---
-# <a name="customize-sign-up-for-microsoft-online-backup-service-task"></a>Microsoft オンライン バックアップ サービスのタスクのカスタマイズのサインアップ
+# <a name="customize-sign-up-for-microsoft-online-backup-service-task"></a>Microsoft オンライン バックアップ サービスへの新規登録タスクのカスタマイズ
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象:
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-既定で、 **Microsoft オンライン バックアップ サービスにサインアップ**タスクで、**デバイス**ダッシュ ボードのタブは、Microsoft オンライン バックアップ サービスの Web サイトを開きます。 Web サイトは、サービスに関する情報を提供し、サービスをサブスクライブし、必要なソフトウェアをダウンロードするのに役立ちます。  
+既定では、ダッシュボードの **[デバイス]** タブの **[Microsoft オンライン バックアップ サービスへの新規登録]** タスクで、Microsoft オンライン バックアップ サービスの Web サイトが開きます。 この Web サイトには、サービスに関する情報があり、サービスに加入する場合や必要なソフトウェアをダウンロードする場合に役立ちます。  
   
- カスタマイズすることができます、 **Microsoft オンライン バックアップ サービスにサインアップ**2 つの方法で作業します。  
+ **[Microsoft オンライン バックアップ サービスへの新規登録]** タスクのカスタマイズ方法は、次の 2 とおりあります。  
   
--   カスタム ユーザー エクスペリエンスを表す URL を使用して、既定の Web サイトの URL を置き換えることができます。 既定の URL を置き換えるには、レジストリ エディターを開き、レジストリ キーを作成します。 **HKEY_LOCAL_MACHINE \software\microsoft\Windows Server \onlinebackup\linkurl**、キーの値としてカスタム URL を割り当てます。  
+-   カスタム ユーザー エクスペリエンスを表す URL で既定の Web サイトの URL を置き換えることができます。 既定の URL を置き換えるには、レジストリ エディターを開いて、レジストリ キー**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\LinkUrl** を作成して、キーの値としてカスタム URL を割り当てます。  
   
--   タスクを非表示にすることができます。 タスクを非表示には、レジストリ エディターを開いて、レジストリ キーの作成: **HKEY_LOCAL_MACHINE \software\microsoft\Windows Server \onlinebackup\onlinebackupinstalled**します。  
+-   タスクを非表示にできます。 タスクを非表示にするには、レジストリ エディターを開いて、レジストリ キー**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\OnlineBackupInstalled** を作成します。  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
  [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   
  [追加のカスタマイズ](Additional-Customizations.md)   
  [イメージの展開の準備](Preparing-the-Image-for-Deployment.md)   

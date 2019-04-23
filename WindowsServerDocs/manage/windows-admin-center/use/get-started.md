@@ -8,151 +8,142 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 02/15/2019
-ms.openlocfilehash: f4fd9f69e75ed80bbdb345b4041c2337c65ec2e6
-ms.sourcegitcommit: f1edfc6525e09dd116b106293f9260123a94de0c
-ms.translationtype: MT
+ms.openlocfilehash: 61fdd70e53a49b704e11f71f0e5eb3176c31c378
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "9296654"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59876013"
 ---
-# Windows Admin Center を概要します。
+# <a name="get-started-with-windows-admin-center"></a>Windows Admin Center を概要します。
 
->適用対象: Windows Admin Center、Windows Admin Center Preview
+>適用先:Windows Admin Center、Windows Admin Center プレビュー
 
 > [!Tip]
 > Windows Admin Center を初めて使用する場合
 > [Windows Admin Center についての詳細を確認する](../understand/windows-admin-center.md)か、[今すぐダウンロード](https://aka.ms/windowsadmincenter)してください。
 
-## Windows 10 にインストールされている Windows Admin Center
+## <a name="windows-admin-center-installed-on-windows-10"></a>Windows 10 にインストールされている Windows Admin Center
 
 > [!IMPORTANT]
-> Windows 10 で Windows Admin Center を使用するローカル管理者のグループのメンバーである必要があります。
+> Windows 10 で Windows Admin Center を使用するローカル管理者のグループのメンバーがあります。
 
-### クライアント証明書の選択
+### <a name="selecting-a-client-certificate"></a>クライアント証明書の選択
 
-初めての Windows 10 で Windows Admin Center を開くことを確認 (それ以外の場合「このページに取得することはできません」という HTTP 403 エラーを取得します)、 *Windows Admin Center のクライアント*証明書を選択します。
+Windows 10、Windows Admin Center では、最初に開いた際に、ことを選択することを確認して、 *Windows Admin Center クライアント*証明書を (それ以外の場合、「このページを取得できません」という HTTP 403 エラーが表示されます)。
 
-Microsoft Edge の場合、このダイアログ ボックスが表示されたら: で
+Microsoft edge では、このダイアログ ボックスが表示されたら。
  
-1. **多くの選択肢**をクリックします。
+1. クリックして**より多くの選択肢**
 
     ![](../media/launch-cert-1.png)
 
-2. というラベルの付いた**Windows Admin Center のクライアント**証明書を選択し、 **[ok]** をクリックしてください
+2. というラベルの付いた証明書を選択**Windows Admin Center クライアント**クリック**OK**
 
     ![](../media/launch-cert-2.png)
 
-3. **常に許可するアクセス**が選択されているかどうかを確認し、**許可する**] をクリックしてください
+3. 必ず**アクセスを常に許可する**が選択されているし、をクリックして**許可します。**
 
     ![](../media/launch-cert-3.png)
 
-## 管理対象のノードとクラスターへの接続
+## <a name="connecting-to-managed-nodes-and-clusters"></a>管理対象ノードとクラスターに接続します。
 
-Windows Admin Center のインストールを完了すると後、は、サーバーまたはクラスターをメインの概要ページから管理を追加できます。
+Windows Admin Center のインストールを完了すると後、は、サーバーまたは、メイン概要ページから管理するクラスターを追加できます。
 
- **1 台のサーバーまたはクラスター管理ノードとして追加します。**
+ **管理対象ノードとして 1 台のサーバーまたはクラスターを追加します。**
 
- 1. **すべての接続**[ **+ 追加]** をクリックします。
+ 1. をクリックして **+ 追加****すべて接続**します。
 
     ![](../media/launch/addserver0.png)
 
- 2. 選択すると、サーバー、フェールオーバー クラスターまたはハイパーコンバージド クラスターの接続を追加します。
+ 2. 選択すると、サーバー、フェールオーバー クラスターまたは Hyper-Converged クラスター接続を追加します。
     
     ![](../media/launch/addserver1.png)
 
- 3. サーバーまたはクラスターを管理し、**送信**] をクリックしての名前を入力します。 サーバーまたはクラスターは、概要ページで、接続の一覧に追加されます。
+ 3. サーバーまたは管理 をクリックしてクラスターの名前を入力**送信**します。 サーバーまたはクラスターは、[概要] ページで、接続リストに追加されます。
 
     ![](../media/launch/addserver2.png)
 
-   **-- または --**
+   **--または--**  
 
-**一括インポートの複数のサーバー**
+**複数のサーバーを一括インポートします。**
 
- 1. **サーバー接続の追加**] ページで、**インポート サーバー** ] タブを選択します。
+ 1. **サーバー接続の追加**ページで、選択、**インポート サーバー**タブ。
 
     ![](../media/launch/import-servers.png)
 
- 2. [**参照**] をクリックし、コンマ、または新しい行の区切りを追加するサーバーの Fqdn の一覧を含むテキスト ファイルを選択します。
+ 2. クリックして**参照**コンマを含むテキスト ファイルを選択するか、新しい行区切りを追加するサーバーの Fqdn の一覧。
 
-    **-- または --**
+## <a name="authenticate-with-the-managed-node"></a>管理対象ノードでの認証します。 ##
 
-**Active Directory を検索してサーバーを追加する.**
-
- 1. **サーバー接続の追加**] ページで、 **Active Directory を検索**] タブを選択します。
-
-    ![](../media/launch/search-ad.png)
-
- 2. 検索条件を入力し、[**検索**] をクリックします。 ワイルドカード (*) がサポートされています。
-
- 3. 検索が完了すると、結果の 1 つ以上選択、必要に応じてタグを追加し、**追加**] をクリックします。
-
-## 管理ノードを使用して認証します。 ##
-
-Windows Admin Center は、管理ノードで認証するためのいくつかのメカニズムをサポートします。 シングル サインオンの既定値です。
+Windows Admin Center には、管理対象ノードを認証するためのいくつかのメカニズムがサポートされています。 シングル サインオンが既定値です。
 
 **シングル サインオン**
 
-現在の Windows 資格情報を使用すると、管理ノードを使用して認証します。 これは、既定のし、Windows Admin Center は、サーバーを追加する場合、サインオンしようとします。 
+現在の Windows 資格情報は、管理対象ノードでの認証に使用できます。 これは、既定値と、Windows Admin Center は、サーバーを追加するときに、サインオンしようとします。 
 
-**シングル サインオン展開されると Windows Server 上のサービスとして**
+**シングル サインオンで Windows Server 上のサービスとしてデプロイした場合**
 
-Windows Server に Windows Admin Center をインストールしている場合は、追加の構成がシングル サインオンが必要です。  [委任用の環境を構成します。](..\configure\user-access-control.md)
+Windows Server に Windows Admin Center をインストールした場合は、追加の構成が必要でシングル サインオンです。  [委任用に環境を構成します。](..\configure\user-access-control.md)
 
-**-- または --**
+**--または--**
 
-**指定の資格情報を*管理に*使用します。**
+**使用*管理に*資格情報を指定する**
 
-[**すべての接続**] リストからサーバーを選択し、**管理に**管理ノードへの認証に使用する資格情報を指定する選択します。
+**すべて接続**、一覧からサーバーを選択および選択**管理に**管理ノードへの認証に使用する資格情報を指定します。
 
 ![](../media/launch-use-6.png)
 
-Windows Admin Center は Windows Server でサービス モードで実行されている場合は、Kerberos 委任を構成する必要はありませんは、Windows 資格情報を再入力する必要があります。
+Windows Admin Center は、Windows Server でサービス モードで実行されている Kerberos 委任が構成されていない場合、Windows 資格情報を再入力する必要があります。
 
 ![](../media/launch-use-7.png)
 
-その特定のブラウザー セッションでキャッシュのすべての接続には、資格情報を適用することがあります。 お使いのブラウザーを再読み込みする場合は、**管理に**資格情報を再入力する必要があります。
+その特定のブラウザー セッションのキャッシュのすべての接続に資格情報を適用することがあります。 再入力する必要がありますが、ブラウザーを再読み込みする場合、**管理に**資格情報。
 
 **ローカル管理者のパスワード ソリューション (LAPS)**
 
-お客様の環境では、 [LAPS](https://technet.microsoft.com/mt227395.aspx)を使用する場合は、管理ノードを使用して認証を LAPS 資格情報を使用できます。 **このシナリオをください使用する場合**[フィードバックを提供](http://aka.ms/WACFeedback)します。
+環境内で使用する場合[LAPS](https://technet.microsoft.com/mt227395.aspx)、LAPS 資格情報を使用すると、管理対象ノードで認証できます。 **このシナリオを使用する場合は、次のようにしてください。** [フィードバック](http://aka.ms/WACFeedback)します。
 
-## タグを使用して、接続を整理するには
+## <a name="using-tags-to-organize-your-connections"></a>タグを使用して、接続を整理するには
 
-タグを使用して、識別し、接続の一覧に関連するサーバーをフィルター処理することができます。  これにより、接続の一覧で、サーバーのサブセットを表示できます。  これは、多数の接続がある場合に特に便利です。
+特定し、接続の一覧で関連するサーバーをフィルター処理、タグを使用することができます。  これにより、接続の一覧で、サーバーのサブセットを表示できます。  これは、多くの接続がある場合に特に便利です。
 
-### タグを編集します。
+### <a name="edit-tags"></a>タグを編集します。
 
 * すべての接続の一覧で、サーバーまたは複数のサーバーを選択します。
-* **すべての接続**] の下の [**タグの編集**] をクリックします
+* [**すべて接続**、] をクリックして**タグの編集**
 
 ![](../media/launch/tags-5.png)
 
-**接続のタグを編集**ウィンドウでは、変更、追加、または、選択した接続からタグを削除できます。
+**接続タグの編集**ウィンドウでは、変更、追加、または、選択した接続からタグを削除することができます。
 
-* 選択した接続には、新しいタグを追加するには、**タグの追加**を選択し、使用するには、タグ名を入力します。
+* 新しいタグを選択した接続を追加するには、選択**タグを追加**を使用したいタグ名を入力します。
 
-* 既存のタグの名前を選択した接続のタグを付けるためには、適用するタグ名の横のボックスを確認します。
+* 既存のタグ名との接続を選択したタグを適用するタグ名の横にあるボックスを確認します。
 
-* タグを削除する、選択したすべての接続から、削除するタグの横にあるチェック ボックスをオフにします。
+* 選択したすべての接続からタグを削除するには、削除するタグの横にあるボックスをオフにします。
 
-* 選択した接続のサブセットにタグを適用する場合は、中間の状態にチェック ボックスが表示されます。 確認して、オフにし、選択したすべての接続から、タグの削除をもう一度クリックして、または選択したすべての接続にタグを適用するボックスをオンにすることができます。
+* 選択した接続のサブセットにタグを適用する場合は、チェック ボックスが中間の状態で表示されます。 チェックし、選択したすべての接続にタグを適用またはそれをオフにし、選択したすべての接続から、タグの削除をもう一度クリックするボックスをクリックすることができます。
 
 ![](../media/launch/tags-6.png)
 
-### タグで接続をフィルター処理します。
+### <a name="filter-connections-by-tag"></a>タグを使用して接続をフィルター処理します。
 
-タグは、1 つまたは複数のサーバー接続を追加したら、接続の一覧にタグを表示し、タグを使用して接続の一覧をフィルター処理できます。
+タグを 1 つまたは複数のサーバー接続を追加すると、接続の一覧で、タグを表示し、タグを使用して接続の一覧をフィルター処理できます。
 
-* タグをでフィルター処理するには、検索ボックスの横にあるフィルター アイコンを選択します。
+* タグでフィルターするには、検索ボックスの横にあるフィルター アイコンを選択します。
 ![](../media/launch/tags-7.png)
-* 選択することができます「または」、「と」、または選択したタグのフィルターの動作を変更するには、「いない」です。
+* 選択することができます「または」、"and"、または、選択されたタグのフィルターの動作を変更するには、"not"。
 ![](../media/launch/tags-8.png)
 
-## PowerShell を使用してインポートまたはエクスポート タグの接続
+## <a name="use-powershell-to-import-or-export-your-connections-with-tags"></a>PowerShell を使用して、インポートまたはエクスポート (タグ) で接続する
 
-> 適用対象: Windows Admin Center Preview
+> 適用先:Windows Admin Center Preview
 
-Windows Admin Center Preview には、PowerShell モジュール インポートまたはエクスポート、接続の一覧にはが含まれます。
+Windows Admin Center Preview には、インポートまたは接続一覧をエクスポートする PowerShell モジュールが含まれています。
+
+>[!IMPORTANT]
+>PowerShell モジュールとの接続のインポートとエクスポートは、Windows Admin Center は、Windows server ゲートウェイのサービスとしてデプロイされている場合にのみサポートします。
 
 ```powershell
 # Load the module
@@ -165,42 +156,40 @@ Export-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
 Import-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
 ```
 
-### 接続のインポートの CSV ファイルの形式
+### <a name="csv-file-format-for-importing-connections"></a>接続をインポートするための CSV ファイルの形式
 
-CSV ファイルの形式は次の 4 つの見出しで始まる```"name","type","tags","groupId"```、その後に新しい行には、各接続します。
+CSV ファイルの形式は、3 つのヘッダーで始まる: ```"name","type","tags"```、その後に新しい行に各接続します。
 
-**名前**は、接続の FQDN
+**名前**は、接続の FQDN です
 
-**型**は、接続の種類です。 Windows Admin Center に含まれている既定の接続で、次のいずれかを使用します。
+**型**は、接続の種類。 、Windows Admin Center に付属の既定の接続には、次のいずれかを使用します。
 
 | 接続の種類 | 接続文字列 |
 |------|-------------------------------|
-| Windows Server | msft.sme.connection type.server |
-| Windows 10 PC | msft.sme.connection から type.windows クライアント |
-| フェールオーバー クラスター | msft.sme.connection type.cluster |
-| ハイパーコンバージド クラスター | msft.sme.connection-type.hyper 集約型のクラスター |
+| Windows Server | msft.sme.connection-type.server |
+| Windows 10 PC | msft.sme.connection-type.windows-client |
+| フェールオーバー クラスター | msft.sme.connection-type.cluster |
+| ハイパー コンバージド クラスター | msft.sme.connection-type.hyper-converged-cluster |
 
-**タグ**は、パイプ文字で区切られました。
+**タグ**はパイプで区切られました。
 
-**groupId**は、共有の接続に使用されます。 値を使用して```global```接続を共有するには、この列にします。
-
-### 接続のインポートの CSV ファイルの例
+### <a name="example-csv-file-for-importing-connections"></a>接続のインポートの CSV ファイルの例
 
 ```
-"name","type","tags","groupId"
+"name","type","tags"
 "myServer.contoso.com","msft.sme.connection-type.server","hyperv"
 "myDesktop.contoso.com","msft.sme.connection-type.windows-client","hyperv"
-"teamcluster.contoso.com","msft.sme.connection-type.cluster","legacyCluster|WS2016","global"
+"mycluster.contoso.com","msft.sme.connection-type.cluster","legacyCluster|WS2016"
 "myHCIcluster.contoso.com,"msft.sme.connection-type.hyper-converged-cluster","myHCIcluster|hyperv|JIT|WS2019"
-"teamclusterNode.contoso.com","msft.sme.connection-type.server","legacyCluster|WS2016","global"
+"myclusterNode.contoso.com","msft.sme.connection-type.server","legacyCluster|WS2016"
 "myHCIclusterNode.contoso.com","msft.sme.connection-type.server","myHCIcluster|hyperv|JIT|WS2019"
 ```
 
-## インポート RDCman 接続
+## <a name="import-rdcman-connections"></a>インポートの RDCman 接続
 
-[RDCman](https://blogs.technet.microsoft.com/rmilne/2014/11/19/remote-desktop-connection-manager-download-rdcman-2-7/)で保存された接続をファイルにエクスポートするのには、次のスクリプトを使用します。 ファイルにインポート Windows Admin Center では、タグを使って、RDCMan グループ階層を維持します。 試してみましょう。
+保存された接続をエクスポートする次のスクリプトを使用して[RDCman](https://blogs.technet.microsoft.com/rmilne/2014/11/19/remote-desktop-connection-manager-download-rdcman-2-7/)ファイル。 ことができますし、ファイルをインポート、Windows Admin Center では、タグを使用して、RDCMan グループ階層を維持します。 試してみましょう。
 
-1. コピーし、PowerShell セッションに以下のコードを貼り付けます。
+1. コピーして PowerShell セッションに次のコードを貼り付けます。
 
    ```powershell
    #Helper function for RdgToWacCsv
@@ -281,10 +270,10 @@ CSV ファイルの形式は次の 4 つの見出しで始まる```"name","type"
    RdgToWacCsv -RDGfilepath "path\to\myRDCManfile.rdg"
    ```
 
-3. その結果をインポートします。Windows Admin Center を CSV ファイルと、すべての RDCMan グループ化階層は、接続の一覧にタグを使用して表されます。 詳細については、 [PowerShell をインポートまたはエクスポート タグの接続を使って](#use-powershell-to-import-or-export-your-connections-with-tags)を参照してください。
+3. 結果をインポートします。内の CSV ファイルには、Windows Admin Center と、すべての RDCMan グループ階層は、接続の一覧でタグを使用して表されます。 詳細については、次を参照してください。 [PowerShell インポートまたはエクスポート (タグ) で接続を使用して](#use-powershell-to-import-or-export-your-connections-(with-tags))します。
 
-## Windows Admin Center で使用されている PowerShell スクリプトを表示します。
+## <a name="view-powershell-scripts-used-in-windows-admin-center"></a>Windows Admin Center で使用される PowerShell スクリプトを表示します。
 
-サーバー、クラスター、または PC に接続したら後を見ることができます PowerShell スクリプトその電源 UI の操作を利用可能な Windows Admin Center でします。 ツール内で最上位のアプリケーション バーの PowerShell のアイコンをクリックします。 関心のあるコマンドを対応する PowerShell スクリプトへの移動にドロップダウン リストから選択します。
+をサーバー、クラスター、または PC に接続した後に確認できる PowerShell スクリプトは、その電源 UI アクションを使用できます Windows Admin Center。 ツールで、上部アプリケーション バーの PowerShell アイコンをクリックします。 ドロップダウン リストで、対応する PowerShell スクリプトに移動するには、関心のあるコマンドを選択します。
 
 ![](../media/launch/showscript.png)
