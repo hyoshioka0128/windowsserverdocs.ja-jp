@@ -3,7 +3,4 @@
 ## [記憶域スペース ダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md)
 ## [フェールオーバー クラスタリング](../failover-clustering/failover-clustering-overview.md)
 ## [ソフトウェア定義ネットワーク](https://docs.microsoft.com/windows-server/networking/sdn/)
-## [Windows Admin Center](../manage/windows-admin-center/overview.md)
-## [Azure への接続](../azure-hybrid-services/index.md)
-## [Azure Stack HCI](../azure-stack-hci/index.md)
 ## [Windows Server ソフトウェア定義 (WSSD)](https://www.microsoft.com/en-us/cloud-platform/software-defined-datacenter)

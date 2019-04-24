@@ -10,13 +10,13 @@ ms.author: coreyp
 manager: dougkim
 ms.localizationpriority: high
 ms.openlocfilehash: e714f7d296a85ee9b3aad71230e62ac2c1673138
-ms.sourcegitcommit: 23e0a68e21985d709e029e7771d3c52d6815bcb4
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "6507728"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59891453"
 ---
-# リモート
+# <a name="remote"></a>リモート
 
 >[!TIP]
 > 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
@@ -38,7 +38,7 @@ ms.locfileid: "6507728"
                                         </div>
                                         <div class="cardText">
                                             <h3>リモート デスクトップ サービス</h3><hr />
-                                            <p>リモート デスクトップ サービスを使用すると、ユーザーはリモート デスクトップ セッション ホスト (RD セッション ホスト) サーバーにインストールされている Windows ベースのプログラム、または Windows デスクトップ全体にアクセスできます。 また、リモート デスクトップ サービスを使用することで、企業ネットワーク内またはインターネットから RD セッション ホスト サーバーにアクセスできます。</p>
+                                            <p>リモート デスクトップ サービスを使用すると、ユーザーはリモート デスクトップ セッション ホスト (RD セッション ホスト) サーバーにインストールされている Windows ベースのプログラム、または Windows デスクトップ全体にアクセスできます。 また、リモート デスクトップ サービスを使用することで、企業ネットワーク内またはインターネットから RD セッション ホストにアクセスできます。</p>
                                         </div>
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@ ms.locfileid: "6507728"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Multipoint Services</h3><hr />
+                                            <h3>MultiPoint Services</h3><hr />
                                             <p>このブログ記事では、Microsoft のテクノロジを使用して、データ センターとクラウドへの投資を新たな脅威からどのように保護できるかについて説明しています。  </p>
                                         </div>
                                     </div>
