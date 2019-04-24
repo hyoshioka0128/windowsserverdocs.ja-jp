@@ -1,92 +1,93 @@
 ---
 ms.assetid: ae241ed8-ef19-40a9-b2d5-80b8391551ff
-title: "Active Directory ドメイン サービス (レベル 100) のインストールします。"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: Active Directory Domain Services をインストールする (レベル 100)
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: f76aa1e5200a9fc2f47a559c4a318aa619d31557
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
-ms.translationtype: MT
+ms.openlocfilehash: fcb6d90832ed032302ceb0b3c4ec6a0eaff7d807
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59886873"
 ---
-# <a name="install-active-directory-domain-services-level-100"></a>Active Directory ドメイン サービス (レベル 100) のインストールします。
+# <a name="install-active-directory-domain-services-level-100"></a>Active Directory Domain Services をインストールする (レベル 100)
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-このトピックでは、次の方法のいずれかを使用して、Windows Server 2012 で AD DS をインストールする方法について説明します。  
+このトピックでは、次の方法のいずれかを使用して Windows Server 2012 で AD DS をインストールする方法について説明します。  
   
--   [資格情報の Adprep.exe を実行して Active Directory ドメイン サービスをインストールするための要件](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)  
+-   [Adprep.exe を実行して Active Directory Domain Services をインストールする資格情報の要件](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)  
   
 -   [Windows PowerShell を使用して AD DS をインストールします。](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PS)  
   
 -   [サーバー マネージャーを使用して AD DS をインストールします。](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_GUI)  
   
--   [グラフィカル ユーザー インターフェイスを使用してステージング RODC インストールを実行します。](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_UIStaged)  
+-   [グラフィカル ユーザー インターフェイスを使用して段階的な RODC インストールを実行します。](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_UIStaged)  
   
-## <a name="BKMK_Creds"></a>資格情報の Adprep.exe を実行して Active Directory ドメイン サービスをインストールするための要件  
-次の資格情報は、Adprep.exe を実行し、AD DS をインストールする必要があります。  
+## <a name="BKMK_Creds"></a>Adprep.exe を実行して Active Directory Domain Services をインストールする資格情報の要件  
+Adprep.exe を実行して AD DS をインストールするには、次の資格情報が必要です。  
   
--   新しいフォレストをインストールするには、コンピューターのローカル管理者としてログオンする必要があります。  
+-   新しいフォレストをインストールするには、対象のコンピューターにローカルの Administrator としてログオンしている必要があります。  
   
--   新しい子ドメインまたは新しいドメイン ツリーをインストールするには、Enterprise Admins グループのメンバーとしてログオンする必要があります。  
+-   新しい子ドメインまたは新しいドメイン ツリーをインストールするには、Enterprise Admins グループのメンバーとしてログオンしている必要があります。  
   
--   既存のドメインで、追加のドメイン コントローラーをインストールするには、Domain Admins グループのメンバーがあります。  
+-   既存のドメインに追加のドメイン コントローラーをインストールするには、Domain Admins グループのメンバーである必要があります。  
   
     > [!NOTE]  
-    > Adprep.exe コマンドを個別に実行しないし、既存のドメインまたはフォレスト内の Windows Server 2012 を実行している最初のドメイン コントローラーをインストールして、Adprep コマンドを実行する資格情報を入力するように求められます。 資格情報の要件は次のとおりです。  
+    > Adprep.exe コマンドを個別に実行しない、既存のドメインまたはフォレストで Windows Server 2012 を実行する最初のドメイン コント ローラーをインストールする場合は、Adprep コマンドを実行する資格情報を指定促されます。 その資格情報の要件は次のとおりです。  
     >   
-    > -   フォレストの最初の Windows Server 2012 ドメイン コントローラーを導入するには、Enterprise Admins グループ、Schema Admins グループのメンバーの資格情報を指定する必要がありますを Domain Admins グループ、ドメインをホストする、スキーマ マスターできます。  
-    > -   ドメインの最初の Windows Server 2012 ドメイン コントローラーを導入するには、Domain Admins グループのメンバーの資格情報を指定する必要があります。  
-    > -   最初読み取り専用ドメイン コントローラー (RODC) フォレストを紹介するには、Enterprise Admins グループのメンバーの資格情報を指定する必要があります。  
+    > -   フォレストの最初の Windows Server 2012 ドメイン コント ローラーを導入するには、Enterprise Admins グループ、Schema Admins グループのメンバーの資格情報を指定する必要があると、Domain Admins グループ、ドメインをホストするスキーマ マスター。  
+    > -   最初の Windows Server 2012 ドメイン コント ローラーを導入するには、Domain Admins グループのメンバーの資格情報を指定する必要があります。  
+    > -   フォレストの最初の読み取り専用ドメイン コントローラー (RODC) を導入するには、Enterprise Admins グループのメンバーの資格情報を入力する必要があります。  
     >   
     >     > [!NOTE]  
-    >     > Adprep を実行して既に場合 /rodcprep Windows Server 2008 または Windows Server 2008 R2 では Windows Server 2012 の再度実行する必要はありません。  
+    >     > Windows Server 2008 または Windows Server 2008 R2 で adprep/rodcprep を実行済みである場合は、Windows Server 2012 用にもう一度実行する必要はありません。  
   
 ## <a name="BKMK_PS"></a>Windows PowerShell を使用して AD DS をインストールします。  
-Windows Server 2012 以降では、Windows PowerShell を使用して AD DS をインストールすることができます。 Dcpromo.exe は以降、Windows Server 2012 では推奨されなくなりましたが、応答ファイルを使用して引き続き dcpromo.exe を実行できます (dcpromo/unattend:<answerfile> dcpromo/answer または:<answerfile>)。 応答ファイルを使って dcpromo.exe の実行を継続することは、dcpromo.exe から Windows PowerShell に自動化を変換する既存の自動化時間に投資のリソースを持つ組織を提供します。 For more information about running dcpromo.exe with an answer file, see [https://support.microsoft.com/kb/947034](https://support.microsoft.com/kb/947034).  
+Windows Server 2012 以降、Windows PowerShell を使用して AD DS をインストールできます。 Dcpromo.exe は、Windows Server 2012 以降非推奨とされますが、応答ファイルを使用して dcpromo.exe を実行することもできます (dcpromo/unattend:<answerfile>または dcpromo/answer:<answerfile>)。 このように、応答ファイルを使用して引き続き dcpromo.exe を実行できるため、既存の自動化にリソースを投資した組織で、dcpromo.exe から Windows PowerShell に自動化を移行するための時間を確保できます。 応答ファイルを使用した dcpromo.exe の実行の詳細については、次を参照してください。 [ https://support.microsoft.com/kb/947034](https://support.microsoft.com/kb/947034)します。  
   
-Windows PowerShell を使用して AD DS の削除の詳細については、次を参照してください。[Windows PowerShell を使用して AD DS を削除する](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c#BKMK_RemovePS)します。  
+Windows PowerShell を使用した AD DS の削除の詳細については、「[Windows PowerShell を使用して AD DS を削除する](assetId:///99b97af0-aa7e-41ed-8c81-4eee6c03eb4c#BKMK_RemovePS)」を参照してください。  
   
-Windows PowerShell を使用して、役割の追加を開始します。 このコマンドは、AD DS サーバー役割をインストールし、AD DS および AD LDS サーバー管理ツール、Active Directory ユーザーとコンピューターなど、GUI ベースのツールなど、dcdia.exe などのコマンド ライン ツールをインストールします。 Windows PowerShell を使用すると、サーバー管理ツールは既定ではインストールされません。 You need to specify **"IncludeManagementTools** to manage the local server or install [Remote Server Administration Tools](https://www.microsoft.com/download/details.aspx?id=28972) to manage a remote server.  
+最初に、Windows PowerShell を使用して AD DS の役割を追加します。 次のコマンドは、AD DS のサーバーの役割と、AD DS と AD LDS のサーバー管理ツール ("Active Directory ユーザーとコンピューター" などの GUI ベースのツールと、dcdia.exe などのコマンド ライン ツール) をインストールします。 Windows PowerShell を使用する場合、サーバー管理ツールは既定ではインストールされません。 指定する必要がある **"IncludeManagementTools**をローカル サーバーを管理またはインストール[リモート サーバー管理ツール](https://www.microsoft.com/download/details.aspx?id=28972)リモート サーバーを管理します。  
   
 ```  
 Install-windowsfeature -name AD-Domain-Services -IncludeManagementTools  
 <<Windows PowerShell cmdlet and arguments>>  
 ```  
   
-再起動が AD DS のインストールが完了した後まで必要はありません。  
+AD DS のインストールが完了するまで再起動は要求されません。  
   
-ADDSDeployment モジュールで利用可能なコマンドレットを表示するには、このコマンドを実行できます。  
+インストールの完了後に次のコマンドを実行すると、ADDSDeployment モジュールで使用できるコマンドレットを確認できます。  
   
 ```  
 Get-Command -Module ADDSDeployment
 ```  
   
-コマンドレットと構文を指定可能な引数の一覧を表示するには。  
+特定のコマンドレットの引数と構文を確認するには、次のように入力します。  
   
 ```  
 Get-Help <cmdlet name>  
 ```  
   
-たとえば、使用されていない読み取り専用ドメイン コントローラー (RODC) アカウントを作成するための引数を表示するには、次のように入力します。  
+たとえば、使用されていない読み取り専用ドメイン コントローラー (RODC) アカウントを作成するための引数を確認するには、次のように入力します。  
   
 ```  
 Get-Help Add-ADDSReadOnlyDomainControllerAccount
 ```  
   
-省略可能な引数は角かっこで表示されます。  
+省略可能な引数は角かっこで囲まれています。  
   
-最新のヘルプの例と Windows PowerShell コマンドレットの概念をダウンロードすることもできます。 For more information, see [about_Updatable_Help](https://technet.microsoft.com/library/hh847735.aspx).  
+Windows PowerShell コマンドレットの最新のヘルプの例と概念説明をダウンロードすることもできます。 詳しくは、「[about_Updatable_Help](https://technet.microsoft.com/library/hh847735.aspx)」をご覧ください。  
   
-リモート サーバーに対して Windows PowerShell コマンドレットを実行することができます。  
+Windows PowerShell コマンドレットは、リモート サーバーに対して実行できます。  
   
--   Windows PowerShell で ADDSDeployment コマンドレットと共に Invoke-Command を使用します。 たとえば、リモート サーバーに AD DS をインストールするという名前の ConDC3 contoso.com ドメインで、種類。  
+-   Windows PowerShell で ADDSDeployment コマンドレットを使用した Invoke-command を使用します。 たとえば、contoso.com ドメインの ConDC3 というリモート サーバーに AD DS をインストールするには、次のように入力します。  
   
     ```  
     Invoke-Command { Install-ADDSDomainController -DomainName contoso.com -Credential (Get-Credential) } -ComputerName ConDC3  
@@ -94,34 +95,34 @@ Get-Help Add-ADDSReadOnlyDomainControllerAccount
   
 - または -  
   
--   サーバー マネージャーでは、リモート サーバーが含まれるサーバー グループを作成します。 リモート サーバーの名前を右クリックし、をクリックして**Windows PowerShell**します。  
+-   サーバー マネージャーで、リモート サーバーを含むサーバー グループを作成します。 リモート サーバーの名前を右クリックし、**[Windows PowerShell]** をクリックします。  
   
-次のセクションでは、AD DS をインストールする ADDSDeployment モジュールのコマンドレットを実行する方法について説明します。  
+以降では、ADDSDeployment モジュールのコマンドレットを実行して AD DS をインストールする方法について説明します。  
   
 -   [ADDSDeployment コマンドレット引数](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Params)  
   
--   [Windows PowerShell 資格情報を指定します。](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PSCreds)  
+-   [Windows PowerShell 資格情報の指定](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PSCreds)  
   
 -   [テスト コマンドレットを使用します。](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_TestCmdlets)  
   
 -   [Windows PowerShell を使用して、新しいフォレスト ルート ドメインをインストールします。](../../ad-ds/deploy/../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PSForest)  
   
--   [Windows PowerShell を使用して新しい子ドメインまたはツリー ドメインをインストールします。](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PSDomain)  
+-   [Windows PowerShell を使用して、新しい子ドメインまたはツリー ドメインをインストールします。](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PSDomain)  
   
--   [Windows PowerShell を使用して追加の (レプリカ) ドメイン コントローラーをインストールします。](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PSReplica)  
+-   [Windows PowerShell を使用して追加の (レプリカ) ドメイン コント ローラーのインストール](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_PSReplica)  
   
 ### <a name="BKMK_Params"></a>ADDSDeployment コマンドレット引数  
-次の表は、Windows PowerShell の ADDSDeployment コマンドレットの引数を示します。 太字の引数が必要です。 Windows PowerShell で異なるという名前が場合、かっこで囲まれた dcpromo.exe の対応する引数のとおりです。  
+次の表は、Windows PowerShell の ADDSDeployment コマンドレットの引数の一覧です。 太字の引数は必須です。 dcpromo.exe の対応する引数の名前が Windows PowerShell とは異なる場合は、その名前がかっこ内に示されています。  
   
-Windows PowerShell のスイッチでは、引数 $TRUE または $FALSE を受け入れます。 既定で $TRUE の引数を指定する必要はありません。  
+Windows PowerShell のスイッチは、引数として $TRUE または $FALSE を受け取ります。 引数には、既定では $TRUE を指定する必要はありません。  
   
-既定値を上書きするには、値を $False に引数を指定できます。 たとえば、ため**- installdns**ことを指定しない場合、する唯一の方法の新しいフォレストのインストールが自動的に実行*防止*新しいフォレストをインストールするときに、DNS のインストールは、使用します。  
+既定値を上書きするには、値を $False にして引数を指定します。 たとえば、**-installdns** は、新しいフォレストのインストール時に指定しないと自動的に実行されるため、新しいフォレストのインストール時に実行されないようにするには、次のように指定する必要があります。**  
   
 ```  
 -InstallDNS:$false  
 ```  
   
-同様に、ため**"installdns**環境では、Windows Server DNS をホストしていないドメイン コントローラーをインストールする場合は、既定の値を $False を持つサーバー、DNS サーバーをインストールするために次の引数を指定する必要があります。  
+同様に、ため **"installdns** Windows Server DNS をホストしていない環境でドメイン コント ローラーをインストールする場合は、$False の既定値を持つサーバー、DNS サーバーをインストールするには、次の引数を指定する必要があります。  
   
 ```  
 -InstallDNS:$true  
@@ -129,413 +130,413 @@ Windows PowerShell のスイッチでは、引数 $TRUE または $FALSE を受�
   
 |引数|説明|  
 |------------|---------------|  
-|**ADPrepCredential <PS Credential>****注:**ドメイン内の最初の Windows Server 2012 ドメイン コントローラーをインストールするかどうか、またはフォレストと、現在のユーザーの資格情報が不十分である操作を実行するために必要なです。|Specifies the account with Enterprise Admins and Schema Admins group membership that can prepare the forest, according to the rules of [Get-Credential](https://technet.microsoft.com/library/dd315327.aspx) and a PSCredential object.<br /><br />値が指定されていない場合の値、**"credential**引数を使用します。|  
-|AllowDomainControllerReinstall|同じ名前の別の書き込み可能なドメイン コントローラー アカウントが認識されているにもかかわらず、この書き込み可能なドメイン コントローラーのインストールを続行するかどうかを指定します。<br /><br />使用**$True**アカウントが現在は別の書き込み可能なドメイン コントローラーで使用しないことを確認する場合にのみです。<br /><br />既定値は**$False**します。<br /><br />この引数は、RODC に対して有効ではありません。|  
-|AllowDomainReinstall|既存のドメインが再作成するかどうかを指定します。<br /><br />既定値は**$False**します。|  
-|AllowPasswordReplicationAccountName < string[] >|ユーザー アカウント、グループ アカウント、およびパスワードが当該 RODC にレプリケートできるコンピューター アカウントの名前を指定します。 空の文字列を使用して""、値を空のままにする場合。 既定でのみ、許可されている RODC Password Replication Group が許可され、それが最初に作成した空です。<br /><br />文字列の配列として値を指定します。 例えば：<br /><br />-AllowPasswordReplicationAccountName"JSmith"、"JSmithPC"、"ブランチ Users"をコードします。|  
-|ApplicationPartitionsToReplicate < string[] >**注:** UI に等価のオプションはありません。 UI を使用または IFM を使用してをインストールする場合はすべてのアプリケーション パーティションがレプリケートされます。|アプリケーション ディレクトリ パーティションをレプリケートするように指定します。 この引数が指定した場合にのみ適用される、**- InstallationMediaPath**メディア (IFM) からインストールする引数です。 既定では、パーティションをレプリケートするすべてのアプリケーションは、それぞれのスコープに基づいています。<br /><br />文字列の配列として値を指定します。 例えば：<br /><br />コード-<br /><br />-ApplicationPartitionsToReplicate「パーティション 1」、"partition2"、"partition3"|  
-|確認|このコマンドレットを実行する前に確認を求めます。|  
-|CreateDnsDelegation**注:** Add-ADDSReadOnlyDomainController コマンドレットを実行すると、この引数を指定することはできません。|ドメイン コントローラーと共にインストールする新しい DNS サーバーを参照する DNS 委任を作成するかどうかを示します。 有効なは、Active Directory"統合された DNS のみです。 委任レコードは、オンラインでアクセス可能である Microsoft DNS サーバーでのみ作成できます。 直下 .com、.gov、.biz、.edu または .nz、.au などの 2 文字の国コード ドメインなどの最上位のドメインにあるドメインの委任レコードを作成することはできません。<br /><br />既定値は、環境に基づいて自動的に計算されます。|  
-|**Credential <PS Credential>****注:**、現在のユーザーの資格情報が不十分である操作を実行するかどうかにのみ必須です。|Specifies the domain account that can logon to the domain, according to the rules of [Get-Credential](https://technet.microsoft.com/library/dd315327.aspx) and a PSCredential object.<br /><br />値が指定されていない場合は、現在のユーザーの資格情報が使用されます。|  
-|CriticalReplicationOnly|AD DS のインストール操作が重要なレプリケーションだけ再起動の前に実行して、続行するかどうかを指定します。 ではないレプリケーションについては、コンピューターを再起動して、インストールが完了した後に発生します。<br /><br />この引数を使用することは推奨されません。<br /><br />ユーザー インターフェイス (UI) には、このオプションに相当するものはありません。|  
-|DatabasePath <string>|完全修飾指定以外"データベースを含むドメイン、たとえば、ローカル コンピューターの固定ディスク上のディレクトリへの汎用名前付け規則 (UNC) パス**C:\Windows\NTDS します。**<br /><br />既定値は**%SYSTEMROOT%\NTDS**します。 **重要:** Resilient File System (ReFS) でフォーマットされたボリューム上の AD DS データベースとログ ファイルを保存することができます、ReFS では AD DS をホストするために特に利点はありませんが、すべてのデータを ReFS でホストしているため回復性の通常の利点以外。|  
-|DelegatedAdministratorAccountName <string>|ユーザーまたはインストールし、RODC を管理グループの名前を指定します。<br /><br />既定では、Domain Admins グループのメンバーのみが RODC を管理できます。|  
-|DenyPasswordReplicationAccountName < string[] >|ユーザー アカウント、グループ アカウント、およびパスワードが当該 RODC にレプリケートされないが、コンピューター アカウントの名前を指定します。 空の文字列を使用して""任意のユーザーまたはコンピューターの資格情報のレプリケーションを拒否したくない場合。 既定では、Administrators、Server Operators、Backup Operators、Account Operators、および Denied RODC Password Replication Group が拒否されます。 既定では、Denied RODC Password Replication Group が含まれています Cert Publishers、Domain Admins、Enterprise Admins、Enterprise のドメイン コントローラー、Enterprise Read-Only ドメイン コントローラー、Group Policy Creator Owners、krbtgt アカウント、および Schema Admins します。<br /><br />文字列の配列として値を指定します。 例えば：<br /><br />コード-<br /><br />-DenyPasswordReplicationAccountName"RegionalAdmins"、"AdminPCs"|  
-|DnsDelegationCredential <PS Credential>**注:** Add-ADDSReadOnlyDomainController コマンドレットを実行すると、この引数を指定することはできません。|Specifies the user name and password for creating DNS delegation, according to the rules of [Get-Credential](https://technet.microsoft.com/library/dd315327.aspx) and a PSCredential object.|  
-|DomainMode <DomainMode> {Win2003 & #124 です。Win2008 & #124;Win2008R2 & #124;Win2012 & #124;Win2012R2}<br /><br />または<br /><br />DomainMode <DomainMode> {2 & #124; 3 & #124; 4 & #124; 5 & #124; 6}|新しいドメインの作成中には、ドメインの機能レベルを指定します。<br /><br />ドメインの機能レベルは、フォレストの機能レベルよりも低いすることはできませんより高いことができます。<br /><br />既定値が自動的に計算され、既存のフォレストの機能レベルまたはに設定されている値に設定されて**- ForestMode**します。|  
-|**ドメイン名**<br /><br />Install-ADDSForest と Install-ADDSDomainController コマンドレットで必須です。|追加のドメイン コントローラーをインストールするドメインの FQDN を指定します。|  
-|**DomainNetbiosName <string>**<br /><br />Install-ADDSForest FQDN のプレフィックス名が 15 文字より長い場合に必須です。|Install-ADDSForest で使用します。 新しいフォレスト ルート ドメインに NetBIOS 名を割り当てます。|  
-|DomainType <DomainType> {ChildDomain & #124 です。TreeDomain} または {子 & #124; ツリー}|作成するドメインの種類を示します: フォレストの既存の新しいドメイン ツリー、既存のドメイン、または新しいフォレストの子です。<br /><br />DomainType の既定値は ChildDomain です。|  
-|Force|ときに、コマンドレットを最後まで実行を許可するように、ドメイン コントローラーの追加とインストール中に通常表示されるすべての警告が表示されなくなりますこのパラメーターを指定します。 このパラメーターをインストール スクリプトを作成するときに含めることができます。|  
-|ForestMode <ForestMode> {Win2003 & #124 です。Win2008 & #124;Win2008R2 & #124;Win2012 & #124;Win2012R2}<br /><br />または<br /><br />ForestMode <ForestMode> {2 & #124; 3 & #124; 4 & #124; 5 & #124; 6}|新しいフォレストを作成するときは、フォレストの機能レベルを指定します。<br /><br />既定値は Win2012 です。|  
-|InstallationMediaPath|新しいドメイン コントローラーをインストールするために使用するインストール メディアの場所を示します。|  
-|InstallDns|DNS サーバー サービスをインストールして、ドメイン コントローラーで構成されているかどうかを指定します。<br /><br />既定では、新しいフォレストの**$True**、DNS サーバーをインストールします。<br /><br />新しい子ドメインまたはドメイン ツリーには、親ドメイン (またはドメイン ツリーのフォレスト ルート ドメイン) 既にホストおよびドメインの DNS 名が格納されている場合、このパラメーターの既定値は $True です。<br /><br />既存のドメインにドメイン コントローラーのインストールの場合、このパラメーターは、左に指定されていないと、現在のドメインが既にホストして、このパラメーターの既定値は、ドメインの DNS 名が格納されて**$True**します。 それ以外の場合、DNS ドメイン名が Active Directory の外部でホストされている場合、既定値は**$False**し、DNS サーバーがインストールされていません。|  
-|LogPath <string>|たとえば、ドメインのログ ファイルが含まれていますが、ローカル コンピューターの固定ディスク上、ディレクトリへの完全修飾 UNC パスを指定します。**C:\Windows\Logs**します。<br /><br />既定値は**%SYSTEMROOT%\NTDS**します。 **重要:** Resilient File System (ReFS) でフォーマットされたデータ ボリュームに Active Directory ログ ファイルを格納しないでください。|  
-|MoveInfrastructureOperationMasterRoleIfNecessary|"で現在グローバル カタログ サーバーでホストされている場合は"を作成して、ドメイン コントローラーにする予定がないドメイン コントローラーにインフラストラクチャ マスター操作マスターの役割 (とも呼ばれるフレキシブル シングル マスター操作または FSMO) を転送するかどうかを指定します、グローバル カタログ サーバーを作成することです。 転送が必要な場合に作成しているドメイン コントローラーにインフラストラクチャ マスターの役割を転送するには、このパラメーターを指定します。この場合は、指定の**NoGlobalCatalog**インフラストラクチャ マスターの役割を現在が発生する場合は、オプションです。|  
-|**NewDomainName <string>****注:** Install-ADDSDomain でのみ必須です。|新しいドメインの単一のドメイン名を指定します。<br /><br />たとえば、という名前の新しい子ドメインを作成する**emea.corp.fabrikam.com**を指定する必要があります**emea**この引数の値として。|  
-|**NewDomainNetbiosName <string>**<br /><br />Install-ADDSDomain FQDN のプレフィックス名が 15 文字より長い場合に必須です。|Install-ADDSDomain で使用します。 新しいドメインに NetBIOS 名を割り当てます。 既定値がの値から派生した**"NewDomainName**します。|  
-|NoDnsOnNetwork|DNS サービスが、ネットワーク上で使用できないことを指定します。 このパラメーターは、名前解決に DNS サーバーの名前でこのコンピューターのネットワーク アダプターの IP 設定が構成されていない場合にのみ使用されます。 これは、DNS サーバーを名前解決のためには、このコンピューターにインストールすることを示します。 それ以外の場合、ネットワーク アダプターの IP 設定は、最初の DNS サーバー アドレスを持つ構成する必要があります。<br /><br />(既定) このパラメーターを省略すると、DNS サーバーに接続するこのサーバーのコンピューター上のネットワーク アダプターの TCP/IP クライアント設定が使用されることを示します。 そのため、このパラメーターを指定しない場合は、TCP/IP クライアント設定が優先 DNS サーバー アドレスで最初に構成されていることを確認します。|  
-|NoGlobalCatalog|ドメイン コントローラーをグローバル カタログ サーバーにしないことを指定します。<br /><br />既定では、Windows Server 2012 を実行するドメイン コントローラーはグローバル カタログを使用してインストールします。 つまり、これが自動的に実行せず、計算を指定しない限り。<br /><br />コード-<br /><br />-NoGlobalCatalog|  
-|NoRebootOnCompletion|成功した場合に関係なく、コマンドの完了時にコンピューターを再起動するかどうかを指定します。 既定では、コンピューターが再起動します。 サーバーが再起動しないようにするには、次のように指定します。<br /><br />コード-<br /><br />-NoRebootOnCompletion: $True<br /><br />ユーザー インターフェイス (UI) には、このオプションに相当するものはありません。|  
-|**ParentDomainName <string>****注:** Install-ADDSDomain コマンドレット必須|既存の親ドメインの FQDN を指定します。 子ドメインまたは新しいドメイン ツリーをインストールするときに、この引数を使用します。<br /><br />たとえば、という名前の新しい子ドメインを作成する**emea.corp.fabrikam.com**を指定する必要があります**corp.fabrikam.com**この引数の値として。|  
+|**ADPrepCredential <PS Credential>**  **に注意してください。** ドメインで最初の Windows Server 2012 ドメイン コント ローラーをインストールするか、フォレストと現在のユーザーの資格情報は、操作を実行するのには不十分なかどうかに必要です。|規則に従って準備するには、フォレスト、Enterprise Admins および Schema Admins のグループのメンバーシップを持つアカウントを指定します。 [Get-credential](https://technet.microsoft.com/library/dd315327.aspx)と PSCredential オブジェクトです。<br /><br />値が指定されていない場合の値、 **"資格情報**引数を使用します。|  
+|AllowDomainControllerReinstall|同じ名前を持つ別の書き込み可能ドメイン コントローラー アカウントが検出された場合でも、この書き込み可能ドメイン コントローラーのインストールを続行するかどうかを指定します。<br /><br />**$True** を使用するのは、そのアカウントが現在別の書き込み可能ドメイン コントローラーによって使用されていないことがわかっている場合だけにしてください。<br /><br />既定値は **$False** です。<br /><br />この引数は、RODC に対しては無効です。|  
+|AllowDomainReinstall|既存ドメインを作成し直すかどうかを指定します。<br /><br />既定値は **$False** です。|  
+|AllowPasswordReplicationAccountName <文字列 []>|パスワードを当該 RODC にレプリケートできるユーザー アカウント、グループ アカウント、およびコンピューター アカウントの名前を指定します。 値を空にしておく場合は、空の文字列 "" を使用します。 既定では、Allowed RODC Password Replication Group のみが許可されます。このグループは、最初は空です。<br /><br />値は、文字列の配列として指定します。 次に、例を示します。<br /><br />Code -AllowPasswordReplicationAccountName "JSmith","JSmithPC","Branch Users"|  
+|ApplicationPartitionsToReplicate < string[] >**に注意してください。** UI には、これに対応するオプションはありません。 UI または IFM を使用してインストールする場合は、すべてのアプリケーション パーティションがレプリケートされます。|レプリケートするアプリケーション ディレクトリ パーティションを指定します。 この引数が適用されるのは、**-InstallationMediaPath** 引数を指定してメディアからのインストール (IFM) を行う場合だけです。 既定では、すべてのアプリケーション パーティションがそれぞれのスコープに基づいてレプリケートされます。<br /><br />値は、文字列の配列として指定します。 例:<br /><br />コード-<br /><br />-ApplicationPartitionsToReplicate "partition1","partition2","partition3"|  
+|Confirm|コマンドレットを実行する前に、ユーザーに確認を求めます。|  
+|CreateDnsDelegation**に注意してください。** この引数は、Add-ADDSReadOnlyDomainController コマンドレットを実行する際には指定できません。|ドメイン コントローラーと共にインストールする新しい DNS サーバーを参照する DNS 委任を作成するかどうかを指定します。 Active Directory"統合 DNS のみのため無効です。 委任レコードを作成できるのは、オンラインかつアクセス可能な Microsoft DNS サーバーだけです。 また、トップレベル ドメイン (.com、.gov、.biz、.edu など) または 2 文字の国コード ドメイン (.nz、.au など) のすぐ下にあるドメインの委任レコードは作成できません。<br /><br />既定値は、環境に基づいて自動的に計算されます。|  
+|**資格情報<PS Credential>**  **に注意してください。** 現在のユーザーにその操作を実行するための十分な資格情報がない場合にのみ必須。|規則に従って、ドメインにログオンできるドメイン アカウントを指定します。 [Get-credential](https://technet.microsoft.com/library/dd315327.aspx)と PSCredential オブジェクトです。<br /><br />値を指定しない場合は、現在のユーザーの資格情報が使用されます。|  
+|CriticalReplicationOnly|AD DS のインストール操作が再起動の前にのみ重要なレプリケーションを実行し、続いてかどうかを指定します。 重要ではないレプリケーションについては、インストールが完了し、コンピューターが再起動してから実行されます。<br /><br />この引数を使用することはお勧めしません。<br /><br />ユーザー インターフェイス (UI) には、このオプションに対応するものはありません。|  
+|DatabasePath <string>|完全修飾を示す非"など、ドメイン データベースを含むローカル コンピューターの固定ディスク上のディレクトリへの汎用名前付け規則 (UNC) パス**C:\Windows\NTDS します。**<br /><br />既定値は **%SYSTEMROOT%\NTDS** です。 概要AD DS データベースおよびログ ファイルを Resilient File System (ReFS) でフォーマットされたボリュームに格納することはできますが、AD DS を ReFS でホストしても、データを ReFS でホストすると回復性が得られるという通常の利点以外に特に利点はありません。|  
+|DelegatedAdministratorAccountName <string>|RODC のインストールおよび管理を実行できるユーザーまたはグループの名前を指定します。<br /><br />既定では、Domain Admins グループのメンバーのみが RODC を管理できます。|  
+|DenyPasswordReplicationAccountName <文字列 []>|パスワードが当該 RODC にレプリケートされないユーザー アカウント、グループ アカウント、およびコンピューター アカウントの名前を指定します。 いずれのユーザーやコンピューターについても資格情報のレプリケーションを拒否しない場合は、空の文字列 "" を使用します。 既定では、Administrators、Server Operators、Backup Operators、Account Operators、および Denied RODC Password Replication Group が拒否されます。 Denied RODC Password Replication Group には、Cert Publishers、Domain Admins、Enterprise Admins、Enterprise Domain Controllers、Enterprise Read-Only Domain Controllers、Group Policy Creator Owners、krbtgt アカウント、Schema Admins が既定で含まれます。<br /><br />値は、文字列の配列として指定します。 例:<br /><br />コード-<br /><br />-DenyPasswordReplicationAccountName"RegionalAdmins"、"AdminPCs"|  
+|DnsDelegationCredential <PS Credential> **に注意してください。** この引数は、Add-ADDSReadOnlyDomainController コマンドレットを実行する際には指定できません。|規則に従って、DNS 委任を作成するためのパスワードとユーザー名を指定します[Get-credential](https://technet.microsoft.com/library/dd315327.aspx)と PSCredential オブジェクトです。|  
+|DomainMode <DomainMode> {Win2003 &#124; Win2008 &#124; Win2008R2 &#124; Win2012 &#124; Win2012R2}<br /><br />または<br /><br />DomainMode <DomainMode> {2 &#124; 3 &#124; 4 &#124; 5 &#124; 6}|新しいドメインの作成時にドメインの機能レベルを指定します。<br /><br />ドメインの機能レベルは、フォレストの機能レベルより低くすることはできませんが、それより高くすることはできます。<br /><br />既定値は自動的に計算され、既存のフォレストの機能レベルか、**-ForestMode** に設定されている値に設定されます。|  
+|**DomainName**<br /><br />Install-ADDSForest コマンドレットと Install-ADDSDomainController コマンドレットで必須。|追加のドメイン コントローラーをインストールするドメインの FQDN を指定します。|  
+|**DomainNetbiosName <string>**<br /><br />FQDN のプレフィックス名が 15 文字を超えている場合に Install-ADDSForest で必須。|Install-ADDSForest で使用します。 新しいフォレスト ルート ドメインに NetBIOS 名を割り当てます。|  
+|DomainType <DomainType> {ChildDomain &#124; TreeDomain} or {child &#124; tree}|作成するドメインの種類を指定します (既存のフォレストの新しいドメイン ツリー、既存のドメインの子、または新しいフォレスト)。<br /><br />DomainType の既定値は ChildDomain です。|  
+|Force|このパラメーターを指定すると、ドメイン コントローラーのインストールおよび追加の際に通常表示される警告が表示されなくなるため、コマンドレットを最後まで実行できます。 スクリプトでインストールを実行する場合に便利です。|  
+|ForestMode <ForestMode> {Win2003 &#124; Win2008 &#124; Win2008R2 &#124; Win2012 &#124; Win2012R2}<br /><br />または<br /><br />ForestMode <ForestMode> {2 &#124; 3 &#124; 4 &#124; 5 &#124; 6}|新しいフォレストの作成時にフォレストの機能レベルを指定します。<br /><br />既定値は Win2012 です。|  
+|InstallationMediaPath|新しいドメイン コントローラーのインストールに使用されるインストール メディアの場所を指定します。|  
+|InstallDns|ドメイン コントローラーに DNS サーバー サービスをインストールして構成するかどうかを指定します。<br /><br />新しいフォレストにおける既定値は **$True** で、DNS サーバーがインストールされます。<br /><br />新しい子ドメインまたはドメイン ツリーにおける既定値は、そのドメインの DNS 名が既に親ドメイン (ドメイン ツリーの場合はフォレスト ルート ドメイン) でホストおよび格納されている場合は $True です。<br /><br />既存のドメインにドメイン コントローラーをインストールする場合の既定値は、ドメインの DNS 名が既に現在のドメインでホストおよび格納されている場合は **$True** です。 DNS ドメイン名が Active Directory の外部でホストされている場合の既定値は **$False** で、DNS サーバーはインストールされません。|  
+|LogPath <string>|ローカル コンピューターの固定ディスク上にある、ドメイン ログ ファイルを含んだディレクトリの UNC 表記ではない、完全修飾パスを指定します。たとえば、**C:\Windows\Logs** のように指定します。<br /><br />既定値は **%SYSTEMROOT%\NTDS** です。 概要Resilient File System (ReFS) でフォーマットされたデータ ボリュームに Active Directory ログ ファイルを格納しないでください。|  
+|MoveInfrastructureOperationMasterRoleIfNecessary|「ケースで現在ホストされているグローバル カタログ サーバーに」を作成しする予定がないこと、ドメイン コント ローラーにインフラストラクチャ マスター操作マスターの役割 (とも呼ばれますフレキシブル シングル マスター操作または FSMO) を転送するかどうかを指定しますグローバル カタログ サーバーを作成しているドメイン コント ローラーを作成します。 作成するドメイン コントローラーにインフラストラクチャ マスターの役割を必要に応じて転送する場合は、このパラメーターを指定します。その場合、インフラストラクチャ マスターの役割を現在の場所に残すには **NoGlobalCatalog** オプションを指定します。|  
+|**NewDomainName <string>** **Note:** Install-ADDSDomain でのみ必須。|新しいドメインの単一のドメイン名を指定します。<br /><br />たとえば、**emea.corp.fabrikam.com** という名前の新しい子ドメインを作成する場合は、この引数の値として **emea** を指定します。|  
+|**NewDomainNetbiosName <string>**<br /><br />FQDN のプレフィックス名が 15 文字を超えている場合に Install-ADDSDomain で必須。|Install-ADDSDomain で使用します。 新しいドメインに NetBIOS 名を割り当てます。 既定値の値から派生 **"NewDomainName**します。|  
+|NoDnsOnNetwork|ネットワーク上で DNS サービスが利用できないことを指定します。 このパラメーターは、当該コンピューターのネットワーク アダプターの IP 設定に、名前解決用の DNS サーバーの名前が構成されていない場合にのみ使用されます。 このパラメーターを指定すると、名前解決用に、このコンピューター上に DNS サーバーがインストールされます。 このパラメーターを指定しない場合は、先にネットワーク アダプターの IP 設定に DNS サーバーのアドレスを指定する必要があります。<br /><br />このパラメーターを省略すると (既定値)、当該サーバー コンピューターのネットワーク アダプターの TCP/IP クライアント設定が DNS サーバーとの通信に使用されます。 したがって、このパラメーターを指定しない場合は、先に TCP/IP クライアント設定に優先 DNS サーバーのアドレスを指定する必要があります。|  
+|NoGlobalCatalog|ドメイン コントローラーをグローバル カタログ サーバーにしないように指定します。<br /><br />Windows Server 2012 を実行するドメイン コント ローラーは、既定でグローバル カタログと共にインストールされます。 したがって、次のように指定しない限り、その操作が計算なしで自動的に実行されます。<br /><br />コード-<br /><br />-NoGlobalCatalog|  
+|NoRebootOnCompletion|コマンドが正常に終了したかどうかにかかわらず、完了時にコンピューターを再起動するかどうかを指定します。 既定では、コンピューターが再起動します。 サーバーが再起動しないようにするには、次のように指定します。<br /><br />コード-<br /><br />-NoRebootOnCompletion:$True<br /><br />ユーザー インターフェイス (UI) には、このオプションに対応するものはありません。|  
+|**ParentDomainName <string>** **Note:** Install-ADDSDomain コマンドレットで必須|既存の親ドメインの FQDN を指定します。 この引数は、子ドメインまたは新しいドメイン ツリーをインストールするときに使用します。<br /><br />たとえば、**emea.corp.fabrikam.com** という名前の新しい子ドメインを作成する場合は、この引数の値として **corp.fabrikam.com** を指定します。|  
 |ReadOnlyReplica|読み取り専用ドメイン コントローラー (RODC) をインストールするかどうかを指定します。|  
-|ReplicationSourceDC <string>|元のドメイン情報をレプリケートするパートナー ドメイン コントローラーの FQDN を示します。 既定値は自動的に計算します。|  
-|**SafeModeAdministratorPassword <securestring>**|セーフ モードまたはそれに準ずるディレクトリ サービス復元モードなどのセーフ モードでコンピューターを起動すると、管理者アカウントのパスワードを提供します。<br /><br />既定では空のパスワードです。 パスワードを指定する必要があります。 Read-host-assecurestring や ConvertTo-SecureString によって提供されるものなど、System.Security.SecureString 形式では、パスワードを指定する必要があります。<br /><br />SafeModeAdministratorPassword 引数の操作は特別な: 引数としてを指定しない場合、コマンドレットと、マスクされたパスワードの確認入力を求められます。 これは、interactively.If が指定されているコマンドレットに指定されたその他の引数がない場合は、コマンドレットでは、確認なし、マスクされたパスワードを入力するように求められます。 interactively.If 指定値を持つ場合、値はセキュリティで保護された文字列である必要があります。 interactively.For 例では、手動での入力を求めるパスワードを使用して、Read-Host コマンドレットをセキュリティで保護された文字列を求めるダイアログ:-safemodeadministratorpassword (ホスト-読み取り - プロンプト"パスワード:"- assecurestring) 提供することも、セキュリティで保護された文字列としてクリア テキストの変換済みの変数が、これはお勧めします。 -safemodeadministratorpassword (convertto securestring"Password1"- asplaintext-強制)|  
-|**サイト名 <string>**<br /><br />Add-addsreadonlydomaincontrolleraccount コマンドレット必須|ドメイン コントローラーをインストールするサイトを指定します。 あるない**"sitename**引数を実行するときに**Install-addsforest**作成された最初のサイトは Default-First-Site-Name のためです。<br /><br />引数として提供されると、サイト名は既に存在して**sitename**します。 このコマンドレットでは、サイトは作成されません。|  
-|SkipAutoConfigureDNS|DNS クライアント設定、フォワーダー、およびルート ヒントの自動構成をスキップします。 この引数は、DNS サーバー サービスが既にインストールされているまたはで自動的にインストールされているかどうかでは有効でのみ**- InstallDNS**します。|  
-|SystemKey <string>|データのレプリケートに使用するメディアのシステム キーを指定します。<br /><br />既定値は**none**します。<br /><br />データは、read-host-assecurestring や ConvertTo-SecureString によって提供される形式である必要があります。|  
-|SysvolPath <string>|たとえば、ローカル コンピューターの固定ディスク上、ディレクトリへの完全修飾 UNC パスを指定**C:\Windows\SYSVOL**します。<br /><br />既定値は**%SYSTEMROOT%\SYSVOL**します。 **重要:** Resilient File System (ReFS) でフォーマットされたデータ ボリュームに SYSVOL を格納することはできません。|  
-|SkipPreChecks|インストールを開始する前に前提条件のチェックは実行されません。 この設定を使用することはお勧めできません。|  
-|WhatIf|コマンドレットを実行するどうなるかを示しています。 このコマンドレットは実行されません。|  
+|ReplicationSourceDC <string>|ドメイン情報のレプリケート元とするパートナー ドメイン コントローラーの FQDN を指定します。 既定値は自動的に計算されます。|  
+|**SafeModeAdministratorPassword <securestring>**|セーフ モードまたはそれに準ずるディレクトリ サービス復元モードなどでコンピューターを起動したときの管理者アカウントのパスワードを指定します。<br /><br />既定値は空のパスワードで、 パスワードを指定する必要があります。 パスワードは、System.Security.SecureString 形式 (read-host -assecurestring や ConvertTo-SecureString によって提供される形式) で指定する必要があります。<br /><br />SafeModeAdministratorPassword 引数の操作は特殊です。この引数を指定しない場合は、マスクされたパスワードの入力と確認入力を求められます。 これは、コマンドレットを対話的に実行する場合に推奨される使用方法です。この引数を値なしで指定して、ほかに引数を指定しない場合は、マスクされたパスワードの入力を求められますが、確認入力は求められません。 これは、コマンドレットを対話的に実行する場合に推奨される使用方法ではありません。この引数を値と共に指定する場合は、セキュリティで保護された文字列を指定する必要があります。 これは、コマンドレットを対話的に実行する場合に推奨される使用方法ではありません。たとえば、Read-Host コマンドレットを使用してユーザーにセキュリティで保護された文字列の入力を求めることにより、手動でパスワードの入力を求めることができます (-safemodeadministratorpassword (read-host -prompt "Password:" -assecurestring))。セキュリティで保護された文字列を、変換されるクリア テキストの変数として指定することもできますが、この方法はお勧めしません (-safemodeadministratorpassword (convertto-securestring "Password1" -asplaintext -force))。|  
+|**サイト名 <string>**<br /><br />Add-addsreadonlydomaincontrolleraccount コマンドレットで必須|ドメイン コントローラーのインストール先となるサイトを指定します。 ない **"sitename**引数を実行すると**Install-addsforest**既定最初-サイト名である最初のサイトを作成します。<br /><br />**-sitename** に引数として指定するサイト名は既に存在している必要があります。 コマンドレットでは作成されません。|  
+|SkipAutoConfigureDNS|DNS クライアント設定、フォワーダー、ルート ヒントの自動構成を省略します。 この引数が有効になるのは、DNS サーバー サービスが既にインストールされているか、**-InstallDNS** で自動的にインストールされる場合だけです。|  
+|SystemKey <string>|データのレプリケート元とするメディアのシステム キーを指定します。<br /><br />既定値は **none** です。<br /><br />データは、read-host -assecurestring や ConvertTo-SecureString によって提供される形式である必要があります。|  
+|SysvolPath <string>|ローカル コンピューターの固定ディスク上にあるディレクトリの UNC 表記ではない完全修飾パスを指定します。たとえば、**C:\Windows\SYSVOL** のように指定します。<br /><br />既定値は **%SYSTEMROOT%\SYSVOL** です。 概要Resilient File System (ReFS) でフォーマットされたデータ ボリュームに SYSVOL を格納することはできません。|  
+|SkipPreChecks|インストールを開始する前に前提条件のチェックを実行しません。 この設定を使用することはお勧めしません。|  
+|Whatif|コマンドレットを実行するとどのような結果になるかを表示します。 コマンドレットは実行されません。|  
   
-### <a name="BKMK_PSCreds"></a>Windows PowerShell 資格情報を指定します。  
-You can specify credentials without revealing them in plain text on screen by using [Get-credential](https://technet.microsoft.com/library/dd315327.aspx).  
+### <a name="BKMK_PSCreds"></a>Windows PowerShell 資格情報の指定  
+資格情報を指定するにはそれらを画面にプレーン テキストでを使用して公開することがなく[get-credential](https://technet.microsoft.com/library/dd315327.aspx)します。  
   
--Safemodeadministratorpassword 引数と LocalAdministratorPassword 引数の操作は特殊です。  
+-SafeModeAdministratorPassword 引数と LocalAdministratorPassword 引数の操作は特殊です。  
   
--   引数として指定されていない場合、コマンドレットでは、入力し、マスクされたパスワードを確認するように求められます。 これは、コマンドレットを対話的に実行するときに、推奨される使用方法です。  
+-   この引数を指定しない場合は、マスクされたパスワードの入力と確認入力を求められます。 これは、コマンドレットを対話的に実行する場合に推奨される使用方法です。  
   
--   値を指定して、値がセキュリティで保護された文字列にあります。 コマンドレットを対話的に実行するときに推奨される使用方法はありません。  
+-   この引数を値と共に指定する場合は、セキュリティで保護された文字列を指定する必要があります。 これは、コマンドレットを対話的に実行する場合に推奨される使用方法ではありません。  
   
-たとえば、手動での入力を求めるパスワードを使用して、**Read-host**コマンドレットをセキュリティで保護された文字列を求めるダイアログ  
+たとえば、 **Read-Host** コマンドレットを使用してユーザーにセキュリティで保護された文字列の入力を求めることにより、手動でパスワードの入力を求めることができます。  
   
 ```  
 -SafeModeAdministratorPassword (Read-Host -Prompt "DSRM Password:" -AsSecureString)
 ```  
   
 > [!WARNING]  
-> 前のオプションは、パスワードを確認しない、細心の注意を使用して、: パスワードは表示されません。  
+> この方法ではパスワードの確認入力が行われないため、細心の注意が必要です。パスワードは表示されません。  
   
-これはお勧めはクリア テキストの変換済みの変数としてセキュリティで保護された文字列を提供できます。  
+セキュリティで保護された文字列を、変換されるクリア テキストの変数として指定することもできますが、この方法はお勧めしません。  
   
 ```  
 -SafeModeAdministratorPassword (ConvertTo-SecureString "Password1" -AsPlainText -Force)
 ```  
   
 > [!WARNING]  
-> 提供するかクリア テキストのパスワードを保存するは推奨されません。 スクリプトでこのコマンドを実行しているか、その背後で見てすべてのユーザーは、そのドメイン コントローラーの DSRM パスワードを認識します。 した情報を使って、ドメイン コントローラーそのものを偽装し、自分の権限を Active Directory フォレストで最も高いレベルに昇格します。  
+> クリア テキストのパスワードを指定したり格納したりすることはお勧めしません。 このコマンドをスクリプトで実行する人や入力をそばで見ている人に、そのドメイン コントローラーの DSRM パスワードを知られてしまいます。 ドメイン コントローラーの DSRM パスワードがわかれば、ドメイン コントローラーそのものを偽装して、自分の権限を Active Directory フォレストで最も高いレベルに昇格させることができます。  
   
 ### <a name="BKMK_TestCmdlets"></a>テスト コマンドレットを使用します。  
-各 ADDSDeployment コマンドレットには、対応するコマンドレットをテストします。 テスト コマンドレットの実行、インストール操作の前提条件の確認のみインストールの設定が構成されていません。 各テスト コマンドレットの引数は、対応するインストール コマンドレットと同じが**"SkipPreChecks**テスト コマンドレットでは使用できません。  
+各 ADDSDeployment コマンドレットには、対応するテスト コマンドレットがあります。 テスト コマンドレットでは、そのインストール操作の前提条件のチェックのみが実行されます。インストール設定は構成されません。 各テスト コマンドレットの引数は、対応するインストール コマンドレットと同じが **"SkipPreChecks**テスト コマンドレットでは使用できません。  
   
 |テスト コマンドレット|説明|  
 |---------------|---------------|  
-|テスト ADDSForestInstallation|新しい Active Directory フォレストをインストールするための前提条件を実行します。|  
-|テスト ADDSDomainInstallation|Active Directory で新しいドメインをインストールするための前提条件を実行します。|  
-|テスト ADDSDomainControllerInstallation|Active Directory 内のドメイン コントローラーのインストールの前提条件を実行します。|  
-|テスト ADDSReadOnlyDomainControllerAccountCreation|読み取り専用ドメイン コントローラーを追加するための前提条件 (RODC) アカウントを実行します。|  
+|Test-ADDSForestInstallation|新しい Active Directory フォレストをインストールするための前提条件を確認します。|  
+|Test-ADDSDomainInstallation|Active Directory の新しいドメインをインストールするための前提条件を確認します。|  
+|Test-ADDSDomainControllerInstallation|Active Directory のドメイン コントローラーをインストールするための前提条件を確認します。|  
+|Test-ADDSReadOnlyDomainControllerAccountCreation|読み取り専用ドメイン コントローラー (RODC) アカウントを追加するための前提条件を確認します。|  
   
 ### <a name="BKMK_PSForest"></a>Windows PowerShell を使用して、新しいフォレスト ルート ドメインをインストールします。  
-新しいフォレストをインストールするためのコマンド構文は次のとおりです。 省略可能な引数は角かっこで囲ま表示されます。  
+新しいフォレストをインストールするためのコマンド構文を次に示します。 省略可能な引数は角かっこで囲まれています。  
   
 ```  
 Install-ADDSForest [-SkipPreChecks] -DomainName <string> -SafeModeAdministratorPassword <SecureString> [-CreateDNSDelegation] [-DatabasePath <string>] [-DNSDelegationCredential <PS Credential>] [-NoDNSOnNetwork] [-DomainMode <DomainMode> {Win2003 | Win2008 | Win2008R2 | Win2012}] [-DomainNetBIOSName <string>] [-ForestMode <ForestMode> {Win2003 | Win2008 | Win2008R2 | Win2012}] [-InstallDNS] [-LogPath <string>] [-NoRebootOnCompletion] [-SkipAutoConfigureDNS] [-SYSVOLPath] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]  
 ```  
   
 > [!NOTE]  
-> DNS ドメイン名のプレフィックスに基づいて自動的に生成される 15 文字名を変更する場合、または名前が 15 文字を超える場合、-domainnetbiosname 引数が必要です。  
+> -DomainNetBIOSName 引数は、DNS ドメイン名のプレフィックスに基づいて自動的に生成される 15 文字の名前を変更する場合と、名前が 15 文字を超えている場合に必須です。  
   
-たとえば、corp.contoso.com という名前の新しいフォレストをインストールして、DSRM パスワードを入力するように求められます安全に、次のように入力します。  
+たとえば、corp.contoso.com という名前の新しいフォレストをインストールし、安全な方法で DSRM パスワードの入力を求めるには、次のように入力します。  
   
 ```  
 Install-ADDSForest -DomainName "corp.contoso.com"   
 ```  
   
 > [!NOTE]  
-> Install-ADDSForest を実行すると、DNS サーバーは既定でインストールされます。  
+> Install-ADDSForest を実行すると、既定で DNS サーバーがインストールされます。  
   
-ディレクトリ サービス復元モード パスワードと種類を指定するように求めをインストール corp.contoso.com という名前の新しいフォレスト、contoso.com ドメインに DNS 委任を作成、Windows Server 2008 R2 にドメインの機能レベルを設定し、Windows Server 2008 にフォレストの機能レベルを設定、Active Directory データベースと SYSVOL を D:\ ドライブにインストール、ログ ファイルを E:\ ドライブにインストールします。:  
+corp.contoso.com という名前の新しいフォレストをインストールし、contoso.com ドメインに DNS 委任を作成し、ドメインの機能レベルを Windows Server 2008 R2 に、フォレストの機能レベルを Windows Server 2008 に設定し、Active Directory データベースと SYSVOL を D:\ ドライブに、ログ ファイルを E:\ ドライブにインストールし、ディレクトリ サービス復元モードのパスワードの入力を求めるには、次のように入力します。  
   
 ```  
 Install-ADDSForest -DomainName corp.contoso.com -CreateDNSDelegation -DomainMode Win2008 -ForestMode Win2008R2 -DatabasePath "d:\NTDS" -SYSVOLPath "d:\SYSVOL" -LogPath "e:\Logs"   
 ```  
   
-### <a name="BKMK_PSDomain"></a>Windows PowerShell を使用して新しい子ドメインまたはツリー ドメインをインストールします。  
-新しいドメインをインストールするためのコマンド構文は次のとおりです。 省略可能な引数は角かっこで囲ま表示されます。  
+### <a name="BKMK_PSDomain"></a>Windows PowerShell を使用して、新しい子ドメインまたはツリー ドメインをインストールします。  
+新しいドメインをインストールするためのコマンド構文を次に示します。 省略可能な引数は角かっこで囲まれています。  
   
 ```  
 Install-ADDSDomain [-SkipPreChecks] -NewDomainName <string> -ParentDomainName <string> -SafeModeAdministratorPassword <SecureString> [-ADPrepCredential <PS Credential>] [-AllowDomainReinstall] [-CreateDNSDelegation] [-Credential <PS Credential>] [-DatabasePath <string>] [-DNSDelegationCredential <PS Credential>] [-NoDNSOnNetwork] [-DomainMode <DomainMode> {Win2003 | Win2008 | Win2008R2 | Win2012}] [DomainType <DomainType> {Child Domain | TreeDomain} [-InstallDNS] [-LogPath <string>] [-NoGlobalCatalog] [-NewDomainNetBIOSName <string>] [-NoRebootOnCompletion] [-ReplicationSourceDC <string>] [-SiteName <string>] [-SkipAutoConfigureDNS] [-Systemkey <SecureString>] [-SYSVOLPath] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]  
 ```  
   
 > [!NOTE]  
-> **-Credential**引数は、のみ、Enterprise Admins グループのメンバーとしてログオンしていないときに必要です。  
+> **-credential** 引数は、現在 Enterprise Admins グループのメンバーとしてログオンしていない場合にのみ必須です。  
 >   
-> **- NewDomainNetBIOSName** DNS ドメイン名のプレフィックスに基づいて自動的に生成される 15 文字の名前を変更する場合、または名前が 15 文字を超える場合は、引数が必要です。  
+> **-NewDomainNetBIOSName** 引数は、DNS ドメイン名のプレフィックスに基づいて自動的に生成される 15 文字の名前を変更する場合と、名前が 15 文字を超えている場合に必須です。  
   
-たとえば、child.corp.contoso.com という名前の新しい子ドメインを作成、DNS サーバーをインストール、corp.contoso.com ドメインに DNS 委任を作成、Windows Server 2003 ドメイン機能レベルを設定、ヒューストンという名前のサイトでグローバル カタログ サーバーをドメイン コントローラーに行った corp\EnterpriseAdmin1 の資格情報を使用するレプリケーション ソース ドメイン コントローラーとして DC1.corp.contoso.com を使用して、Active Directory データベースと SYSVOL を D:\ ドライブにインストール、ログ ファイルを E:\ ドライブにインストールし、ディレクトリ サービス復元モード パスワードを指定するが、コマンドの確認を求めないを入力するように求められます。  
+たとえば、corp\EnterpriseAdmin1 の資格情報を使用して child.corp.contoso.com という名前の新しい子ドメインを作成し、DNS サーバーをインストールし、corp.contoso.com ドメインに DNS 委任を作成し、ドメインの機能レベルを Windows Server 2003 に設定し、ドメイン コントローラーを Houston というサイトのグローバル カタログ サーバーにし、DC1.corp.contoso.com をレプリケーション ソース ドメイン コントローラーとして使用し、Active Directory データベースと SYSVOL を D:\ ドライブに、ログ ファイルを E:\ ドライブにインストールし、ディレクトリ サービス復元モードのパスワードの入力のみを求めて確認入力は求めない場合は、次のように入力します。  
   
 ```  
 Install-ADDSDomain -SafeModeAdministratorPassword -Credential (get-credential corp\EnterpriseAdmin1) -NewDomainName child -ParentDomainName corp.contoso.com -InstallDNS -CreateDNSDelegation -DomainMode Win2003 -ReplicationSourceDC DC1.corp.contoso.com -SiteName Houston -DatabasePath "d:\NTDS" "SYSVOLPath "d:\SYSVOL" -LogPath "e:\Logs" -Confirm:$False  
 ```  
   
-### <a name="BKMK_PSReplica"></a>Windows PowerShell を使用して追加の (レプリカ) ドメイン コントローラーをインストールします。  
-追加のドメイン コントローラーをインストールするためのコマンド構文は次のとおりです。 省略可能な引数は角かっこで囲ま表示されます。  
+### <a name="BKMK_PSReplica"></a>Windows PowerShell を使用して追加の (レプリカ) ドメイン コント ローラーのインストール  
+追加のドメイン コントローラーをインストールするためのコマンド構文を次に示します。 省略可能な引数は角かっこで囲まれています。  
   
 ```  
 Install-ADDSDomainController -DomainName <string> [-SkipPreChecks] -SafeModeAdministratorPassword <SecureString> [-ADPrepCredential <PS Credential>] [-AllowDomainControllerReinstall] [-ApplicationPartitionsToReplicate <string[]>] [-CreateDNSDelegation] [-Credential <PS Credential>] [-CriticalReplicationOnly] [-DatabasePath <string>] [-DNSDelegationCredential <PS Credential>] [-NoDNSOnNetwork] [-NoGlobalCatalog] [-InstallationMediaPath <string>] [-InstallDNS] [-LogPath <string>] [-MoveInfrastructureOperationMasterRoleIfNecessary] [-NoRebootOnCompletion] [-ReplicationSourceDC <string>] [-SiteName <string>] [-SkipAutoConfigureDNS] [-SystemKey <SecureString>] [-SYSVOLPath <string>] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]  
 ```  
   
-corp.contoso.com ドメインのドメイン コントローラーと DNS サーバーをインストールして、ドメイン管理者の資格情報と DSRM パスワードを指定するように求められます、次のように入力します。  
+corp.contoso.com ドメインにドメイン コントローラーと DNS サーバーをインストールし、ドメイン管理者の資格情報と DSRM パスワードの入力を求めるには、次のように入力します。  
   
 ```  
 Install-ADDSDomainController -Credential (Get-Credential CORP\Administrator) -DomainName "corp.contoso.com"
 ```  
   
-コンピューターが既にドメインに参加していると Domain Admins グループのメンバーである、使用することができます。  
+コンピューターが既にドメインに参加していて、ユーザーが Domain Admins グループのメンバーになっている場合は、次のコマンドを使用できます。  
   
 ```  
 Install-ADDSDomainController -DomainName "corp.contoso.com"  
 ```  
   
-ドメイン名の入力が要求される次のように入力します。  
+ドメイン名の入力を求めるには、次のように入力します。  
   
 ```  
 Install-ADDSDomainController -Credential (Get-Credential) -DomainName (Read-Host "Domain to promote into")
 ```  
   
-次のコマンドは、資格情報を使用 Contoso\EnterpriseAdmin1 のボストンという名前のサイトで書き込み可能ドメイン コントローラーとグローバル カタログ サーバーをインストール、DNS サーバーをインストール、contoso.com ドメインに DNS 委任を作成、c:\ADDS IFM フォルダーに格納されているメディアからのインストール、Active Directory データベースと SYSVOL を D:\ ドライブにインストール、ログ ファイルを E:\ ドライブにインストール、がサーバーに自動的に再起動後、AD DS のインストールが完了し、ディレクトリ サービス復元モード パスワードを入力するように求められます。  
+次のコマンドは、Contoso\EnterpriseAdmin1 の資格情報を使用して Boston という名前のサイトに書き込み可能ドメイン コントローラーとグローバル カタログ サーバーをインストールし、DNS サーバーをインストールし、contoso.com ドメインに DNS 委任を作成し、c:\ADDS IFM フォルダーに格納されているメディアからのインストールを実行し、Active Directory データベースと SYSVOL を D:\ ドライブに、ログ ファイルを E:\ ドライブにインストールし、AD DS のインストールが完了したらサーバーを自動的に再起動し、ディレクトリ サービス復元モードのパスワードの入力を求めます。  
   
 ```  
 Install-ADDSDomainController -Credential (Get-Credential CONTOSO\EnterpriseAdmin1) -CreateDNSDelegation -DomainName corp.contoso.com -SiteName Boston -InstallationMediaPath "c:\ADDS IFM" -DatabasePath "d:\NTDS" -SYSVOLPath "d:\SYSVOL" -LogPath "e:\Logs"   
 ```  
   
-### <a name="performing-a-staged-rodc-installation-using-windows-powershell"></a>Windows PowerShell を使用して段階的 RODC インストールを実行します。  
-RODC アカウントを作成するコマンドの構文は次のとおりです。 省略可能な引数は角かっこで囲ま表示されます。  
+### <a name="performing-a-staged-rodc-installation-using-windows-powershell"></a>Windows PowerShell を使用して RODC の段階的なインストールを実行する  
+RODC アカウントを作成するためのコマンド構文を次に示します。 省略可能な引数は角かっこで囲まれています。  
   
 ```  
 Add-ADDSReadOnlyDomainControllerAccount [-SkipPreChecks] -DomainControllerAccuntName <string> -DomainName <string> -SiteName <string> [-AllowPasswordReplicationAccountName <string []>] [-NoGlobalCatalog] [-Credential <PS Credential>] [-DelegatedAdministratorAccountName <string>] [-DenyPasswordReplicationAccountName <string []>] [-InstallDNS] [-ReplicationSourceDC <string>] [-Force] [-WhatIf] [-Confirm] [<Common Parameters>]  
 ```  
   
-サーバーを RODC アカウントにアタッチするコマンドの構文は次のとおりです。 省略可能な引数は角かっこで囲ま表示されます。  
+サーバーを RODC アカウントに関連付けるためのコマンド構文を次に示します。 省略可能な引数は角かっこで囲まれています。  
   
 ```  
 Install-ADDSDomainController -DomainName <string> [-SkipPreChecks] -SafeModeAdministratorPassword <SecureString> [-ADPrepCredential <PS Credential>] [-ApplicationPartitionsToReplicate <string[]>] [-Credential <PS Credential>] [-CriticalReplicationOnly] [-DatabasePath <string>] [-NoDNSOnNetwork] [-InstallationMediaPath <string>] [-InstallDNS] [-LogPath <string>] [-MoveInfrastructureOperationMasterRoleIfNecessary] [-NoRebootOnCompletion] [-ReplicationSourceDC <string>] [-SkipAutoConfigureDNS] [-SystemKey <SecureString>] [-SYSVOLPath <string>] [-UseExistingAccount] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]  
 ```  
   
-たとえば、RODC アカウントを作成する RODC1 という名前の。  
+たとえば、RODC1 という名前の RODC アカウントを作成するには、次のように入力します。  
   
 ```  
 Add-ADDSReadOnlyDomainControllerAccount -DomainControllerAccountName RODC1 -DomainName corp.contoso.com -SiteName Boston DelegatedAdministratoraccountName PilarA  
 ```  
   
-RODC1 アカウントにアタッチするサーバーで、次のコマンドを実行します。 サーバーは、ドメインに参加することはできません。 最初に、AD DS サーバー役割と管理ツールをインストールします。  
+次に、RODC1 アカウントに関連付けるサーバーで、次のコマンドを実行します。 このサーバーをドメインに参加させることはできません。 最初に、AD DS サーバーの役割と管理ツールをインストールします。  
   
 ```  
 Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
 ```  
   
-RODC を作成する次のコマンドを実行します。  
+次のコマンドを実行して RODC を作成します。  
   
 ```  
 Install-ADDSDomainController -DomainName corp.contoso.com -SafeModeAdministratorPassword (Read-Host -Prompt "DSRM Password:" -AsSecureString) -Credential (Get-Credential Corp\PilarA) -UseExistingAccount
 ```  
   
-キーを押して**Y**を含めるかを確認、**"ことを確認**確認プロンプトを防ぐための引数。  
+キーを押して**Y**をことを確認するか、含める、 **"ことを確認します**確認プロンプトを回避する引数。  
   
 ## <a name="BKMK_GUI"></a>サーバー マネージャーを使用して AD DS をインストールします。  
-サーバー マネージャーで、新しい Windows Server 2012 以降は、Active Directory ドメイン サービス構成ウィザード、続けて役割の追加ウィザードを使用して、Windows Server 2012 で AD DS をインストールできます。 Active Directory ドメイン サービス インストール ウィザード (dcpromo.exe) は、以降では、Windows Server 2012 は推奨されなくなりました。  
+サーバー マネージャーで、後に、Active Directory ドメイン サービス構成ウィザードで、これは、Windows Server 2012 以降の新しい役割の追加ウィザードを使用して、Windows Server 2012 で AD DS をインストールできます。 Windows Server 2012 以降で、Active Directory ドメイン サービス インストール ウィザード (dcpromo.exe) は推奨されません。  
   
-次のセクションをインストールして複数のサーバーに AD DS を管理するためにサーバー プールを作成する方法と、ウィザードを使用して AD DS をインストールする方法について説明します。  
+以降では、AD DS を複数のサーバーにインストールして管理するためにサーバー プールを作成する方法と、ウィザードを使用して AD DS をインストールする方法について説明します。  
   
 ### <a name="BKMK_ServerPools"></a>サーバー プールの作成  
-サーバー マネージャーは、サーバー マネージャーを実行しているコンピューターからアクセス可能である限り、ネットワーク上の他のサーバーをプールことができます。 プール、それらのサーバーのリモート インストール AD DS またはサーバー マネージャー内で使用できる構成オプションを選択します。 サーバー マネージャーを自動的に実行しているコンピューター プールされます。 For more information about server pools, see [Add Servers to Server Manager](https://technet.microsoft.com/library/hh831453.aspx).  
+サーバー マネージャーでは、ネットワーク上の他のサーバーをプールすることができます (サーバー マネージャーを実行しているコンピューターからアクセスできる場合)。 プールしたサーバーは、AD DS のリモート インストールなど、サーバー マネージャーで使用できる構成オプションの対象として選択できます。 サーバー マネージャーを実行しているコンピューターは自動的にプールされます。 サーバー プールの詳細については、次を参照してください。[サーバー マネージャーへのサーバーの追加](https://technet.microsoft.com/library/hh831453.aspx)します。  
   
 > [!NOTE]  
-> ワークグループ サーバー、またはその逆にサーバー マネージャーを使用してドメインに参加しているコンピューターを管理するためには、追加の構成手順が必要です。 For more information, see "Add and manage servers in workgroups" in [Add Servers to Server Manager](https://technet.microsoft.com/library/hh831453.aspx).  
+> ワークグループ サーバーでサーバー マネージャーを利用してドメインに参加しているコンピューターを管理するには、またはその逆を行うには、追加の構成手順が必要です。 詳細については、次を参照してください。"追加し、ワークグループのサーバーを管理"で[サーバー マネージャーへのサーバーの追加](https://technet.microsoft.com/library/hh831453.aspx)します。  
   
 ### <a name="BKMK_installADDSGUI"></a>AD DS をインストールします。  
 **管理者の資格情報**  
   
-AD DS をインストールするための資格情報の要件は、選択する配置構成によって異なります。 詳細については、次を参照してください。[資格情報の Adprep.exe を実行して Active Directory ドメイン サービスをインストールするための要件](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)します。  
+AD DS をインストールするための資格情報の要件は、選択する配置構成によって変わります。 詳細については、「 [Credential requirements to run Adprep.exe and install Active Directory Domain Services](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)」を参照してください。  
   
-GUI の方法を使用して AD DS をインストールするのにには、次の手順を使用します。 手順は、ローカルまたはリモートで実行できます。 次の手順の詳細については、次のトピックを参照してください。  
+GUI の方法を使用して AD DS をインストールするには、次の手順を実行します。 これらの手順は、ローカルでもリモートでも実行できます。 これらの手順の詳細については、以下のトピックを参照してください。  
   
--   [サーバー マネージャーでフォレストを展開します。](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_SMForest)  
+-   [サーバー マネージャーで、フォレストを展開します。](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md#BKMK_SMForest)  
   
--   [既存のドメイン (&) #40; でレプリカ Windows Server 2012 ドメイン コントローラーをインストールします。レベル 200 & #41 です。](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)  
+-   [既存のドメインにレプリカ Windows Server 2012 ドメイン コント ローラーをインストール&#40;レベル 200&#41;](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)  
   
--   [Windows Server 2012 の新しい Active Directory 子またはツリー ドメイン (&) #40; をインストールします。レベル 200 & #41 です。](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)  
+-   [インストール、Windows Server 2012 の新しい Active Directory 子ドメインまたはツリー ドメイン&#40;レベル 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)  
   
--   [Windows Server 2012 の Active Directory インストール Read-Only ドメイン コントローラー (&) #40 です。RODC & #41 です。& #40 です。レベル 200 & #41 です。](../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md)  
+-   [Windows Server 2012 の Active Directory 読み取り専用ドメイン コント ローラー インストール&#40;RODC&#41; &#40;レベル 200&#41;](../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md)  
   
 ##### <a name="to-install-ad-ds-by-using-server-manager"></a>サーバー マネージャーを使用して AD DS をインストールするには  
   
-1.  サーバー マネージャーで、クリックして**管理**] をクリック**追加の役割と機能**を役割の追加ウィザードを開始します。  
+1.  サーバー マネージャーで、**[管理]** をクリックし、**[役割と機能の追加]** をクリックして、役割の追加ウィザードを起動します。  
   
-2.  **開始する前に**] ページで [**次**します。  
+2.  **[開始する前に]** ページで、 **[次へ]** をクリックします。  
   
-3.  **インストールの種類の選択**] ページで [**役割ベースまたは機能ベースのインストール**] をクリックし、**[次へ]**します。  
+3.  **[インストールの種類の選択]** ページで **[役割ベースまたは機能ベースのインストール]** をクリックし、**[次へ]** をクリックします。  
   
-4.  **対象サーバーの選択**] ページで [**サーバー プールからサーバーを選択**、クリックして、AD DS をインストールするサーバーの名前をクリックして**[次へ]**します。  
+4.  **[対象サーバーの選択]** ページで **[サーバー プールからサーバーを選択]** をクリックし、AD DS をインストールするサーバーの名前をクリックしてから、**[次へ]** をクリックします。  
   
-    リモート サーバーを選択するには、まずサーバー プールを作成し、リモート サーバーを追加します。 For more information about creating server pools, see [Add Servers to Server Manager](https://technet.microsoft.com/library/hh831453.aspx).  
+    リモート サーバーを選択するには、先にサーバー プールを作成し、そこにリモート サーバーを追加します。 サーバー プールの作成の詳細については、次を参照してください。[サーバー マネージャーへのサーバーの追加](https://technet.microsoft.com/library/hh831453.aspx)します。  
   
-5.  **サーバーの役割の選択**] ページで [ **Active Directory ドメイン サービス**、次に、**追加の役割と機能のウィザード**ダイアログ ボックスで、] をクリックして**機能の追加**、] をクリックし、**[次へ]**します。  
+5.  **[サーバーの役割の選択]** ページで **[Active Directory ドメイン サービス]** をクリックし、**[役割と機能の追加ウィザード]** ダイアログ ボックスで **[機能の追加]** をクリックして、**[次へ]** をクリックします。  
   
-6.  **機能の選択**] ページで、追加機能をインストールし] をクリックする選択**次**します。  
+6.  **[機能の選択]** ページで、インストールする追加機能を選択し、**[次へ]** をクリックします。  
   
-7.  **Active Directory Domain Services** ] ページで情報を確認してをクリックして**次**します。  
+7.  **[Active Directory ドメイン サービス]** ページの情報を確認し、**[次へ]** をクリックします。  
   
-8.  **インストール オプションの確認**] ページで [**インストール**します。  
+8.  **[インストール オプションの確認]** ページで、**[インストール]** をクリックします。  
   
-9. **結果**] ページで、インストールが成功したことを確認] をクリックして**このサーバーのドメイン コントローラーを昇格**を Active Directory ドメイン サービス構成ウィザードを開始します。  
+9. **[結果]** ページで、インストールが成功したことを確認し、**[このサーバーをドメイン コントローラーに昇格する]** をクリックして Active Directory ドメイン サービス構成ウィザードを起動します。  
   
-    ![AD DS をインストールします。](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_SMPromotes.gif)  
+    ![AD DS のインストール](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_SMPromotes.gif)  
   
     > [!IMPORTANT]  
-    > 役割の追加ウィザードこの時点でを閉じるには、Active Directory ドメイン サービス構成ウィザードを起動しなくても、サーバー マネージャーでのタスク] をクリックして再開できます。  
+    > Active Directory ドメイン サービス構成ウィザードを起動せずにこの時点で役割の追加ウィザードを閉じる場合、後からウィザードを再開するには、サーバー マネージャーで [タスク] をクリックします。  
   
-    ![AD DS をインストールします。](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_Tasks.gif)  
+    ![AD DS のインストール](media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_Tasks.gif)  
   
-10. **展開構成**] ページで、次のオプションのいずれかを選択します。  
+10. **[配置構成]** ページで、次のいずれかのオプションを選択します。  
   
-    -   既存のドメインで、追加のドメイン コントローラーをインストールする場合はクリックして**ドメイン コントローラーを既存のドメインに追加**、ドメイン (たとえば、emea.corp.contoso.com) の名前を入力するかをクリックして**を選択しています.**ドメイン、および資格情報を選択する (たとえば、Domain Admins グループのメンバーであるアカウントを指定する)] をクリックし、**次**します。  
+    -   既存のドメインに、追加のドメイン コント ローラーをインストールする場合にクリックします**ドメイン コント ローラーを既存のドメインに追加**、ドメイン (emea.corp.contoso.com など) の名前を入力するか、クリックして**を選択します...** ドメイン、および資格情報を選択する (たとえば、Domain Admins グループのメンバーであるアカウントを指定する) をクリックし、 **次へ**します。  
   
         > [!NOTE]  
-        > 現在のユーザー資格情報およびドメインの名前は、コンピューターがドメインに参加していて、ローカル インストールを実行する場合にのみ、既定で提供されます。 リモート サーバーに AD DS をインストールする場合は、設計によって、資格情報を指定する必要があります。 現在のユーザー資格情報がない場合、インストールを実行するための十分な] をクリックして**変更しています.**別の資格情報を指定するためにします。  
+        > ドメインの名前と現在のユーザーの資格情報が既定で指定されるのは、コンピューターがドメインに参加していて、ローカル インストールを実行している場合だけです。 リモート サーバーに AD DS をインストールする場合は、資格情報を指定する必要があります。これは仕様です。 現在のユーザー資格情報が、インストールを実行するだけで十分でない場合は、クリックして**変更しています.** 別の資格情報を指定するためにします。  
   
-        詳細については、次を参照してください[レプリカ Windows Server 2012 ドメイン コントローラーを既存のドメイン (&) #40; でインストール。レベル 200 & #41 です。](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md).  
+        詳細については、次を参照してください。[レプリカ Windows Server 2012 ドメイン コント ローラーを既存のドメインにインストール&#40;レベル 200&#41;](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)します。  
   
-    -   新しい子ドメインをインストールする場合、以下の] をクリックして**既存のフォレストに新しいドメインを追加**の**ドメインの種類の選択**[**子ドメイン**入力、または親ドメインの DNS 名 (たとえば、corp.contoso.com) の名前を参照、相対的な新しい子ドメイン (emea など) を使用して、新しいドメインを作成し、をクリックする種類の資格情報の名前を入力**[次へ]**します。  
+    -   新しい子ドメインをインストールする場合は、**[新しいドメインを既存のフォレストに追加する]** をクリックします。**[ドメインの種類を選択]** で **[子ドメイン]** を選択して、親ドメインの DNS 名 (corp.contoso.com など) を入力するか参照し、新しい子ドメインの相対名 (emea など) を入力します。新しいドメインを作成するために使用する資格情報を入力し、**[次へ]** をクリックします。  
   
-        詳細については、次を参照してください[、新しい Windows Server 2012 Active Directory 子またはツリー ドメイン (&) #40; をインストールする。レベル 200 & #41 です。](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md).  
+        詳細については、次を参照してください。[新しい Windows Server 2012 Active Directory 子またはツリー ドメインをインストール&#40;レベル 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)します。  
   
-    -   を新しいドメイン ツリーをインストールする場合はクリックして**を既存のフォレストに新しいドメインを追加**、の**ドメインの種類の選択**、選択**ツリー ドメイン**(たとえば、corp.contoso.com) のルート ドメインの名前を入力し、新しいドメイン (たとえば、fabrikam.com) を使用して、新しいドメインを作成し、をクリックする種類の資格情報の DNS 名**[次へ]**します。  
+    -   新しいドメイン ツリーをインストールする場合は、**[新しいドメインを既存のフォレストに追加する]** をクリックします。**[ドメインの種類を選択]** で **[ツリー ドメイン]** を選択して、ルート ドメインの名前 (corp.contoso.com など) を入力し、新しいドメインの DNS 名 (fabrikam.com など) を入力します。新しいドメインを作成するために使用する資格情報を入力し、**[次へ]** をクリックします。  
   
-        詳細については、次を参照してください[、新しい Windows Server 2012 Active Directory 子またはツリー ドメイン (&) #40; をインストールする。レベル 200 & #41 です。](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md).  
+        詳細については、次を参照してください。[新しい Windows Server 2012 Active Directory 子またはツリー ドメインをインストール&#40;レベル 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)します。  
   
-    -   を新しいフォレストをインストールする場合はクリックして**新しいフォレストの追加**し (たとえば、corp.contoso.com) のルート ドメインの名前を入力します。  
+    -   新しいフォレストをインストールする場合は、**[新しいフォレストを追加する]** をクリックし、ルート ドメインの名前 (corp.contoso.com など) を入力します。  
   
-        詳細については、次を参照してください[、新しい Windows Server 2012 Active Directory フォレスト (&) #40; をインストールする。レベル 200 & #41 です。](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md).  
+        詳細については、次を参照してください。 [、新しい Windows Server 2012 Active Directory フォレストをインストール&#40;レベル 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md)します。  
   
-11. **ドメイン コントローラー オプション**] ページで、次のオプションのいずれかを選択します。  
+11. **[ドメイン コントローラー オプション]** ページで、次のいずれかのオプションを選択します。  
   
-    -   新しいフォレストまたはドメインを作成する場合、ドメインおよびフォレストの機能レベルを選択] をクリックして**ドメイン ネーム システム (DNS) サーバー**、DSRM パスワードを指定し、[クリックして**次**します。  
+    -   新しいフォレストまたはドメインを作成する場合は、ドメインとフォレストの機能レベルを選択し、**[ドメイン ネーム システム (DNS) サーバー]** をクリックします。DSRM パスワードを指定し、**[次へ]** をクリックします。  
   
-    -   既存のドメインにドメイン コントローラーを追加する場合はクリックして**ドメイン ネーム システム (DNS) サーバー**、**グローバル カタログ (GC)**、または**読み取りのみドメイン コントローラー (RODC)**必要に応じて、サイトの名前を選択、DSRM パスワードを入力し、クリックして**[次へ]**します。  
+    -   既存のドメインにドメイン コントローラーを追加する場合は、**[ドメイン ネーム システム (DNS) サーバー]**、**[グローバル カタログ (GC)]**、または **[読み取り専用ドメイン コントローラー (RODC)]** を必要に応じてクリックし、サイト名を選択します。DSRM パスワードを入力し、**[次へ]** をクリックします。  
   
-    このページのオプションは、または別の条件下で利用できないについての詳細については、次を参照してください。[ドメイン コントローラー オプション](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_DCOptionsPage)します。  
+    さまざまな条件の下で利用できる、または利用できない本ページのオプションの詳細については、「[ドメイン コントローラー オプション](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_DCOptionsPage)」を参照してください。  
   
-12. **DNS オプション**(表示される DNS サーバーをインストールする場合にのみ)] ページで [ **DNS 委任を更新**必要に応じてします。 その場合は、親 DNS ゾーンに DNS 委任レコードを作成するアクセス許可のある資格情報を提供します。  
+12. **[DNS オプション]** ページ (DNS サーバーをインストールする場合にのみ表示されます) で、必要に応じて **[DNS 委任を更新する]** をクリックします。 クリックした場合は、親 DNS ゾーン内に DNS 委任レコードを作成するアクセス許可がある資格情報を指定します。  
   
-    親ゾーンをホストする DNS サーバーに接続できない場合、**DNS 委任を更新**オプションは使用できません。  
+    親ゾーンをホストする DNS サーバーに接続できない場合、**[DNS 委任を更新する]** オプションは利用できません。  
   
-    For more information about whether you need to update the DNS delegation, see [Understanding Zone Delegation](https://technet.microsoft.com/library/cc771640.aspx). DNS 委任を更新し、エラーが発生しを参照してくださいしようとする場合[DNS オプション](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_DNSOptionsPage)します。  
+    DNS 委任を更新する必要があるかどうかについての詳細については、次を参照してください。 [Understanding Zone Delegation](https://technet.microsoft.com/library/cc771640.aspx)します。 DNS 委任を更新しようとしてエラーが表示された場合は、「[DNS のオプション](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_DNSOptionsPage)」を参照してください。  
   
-13. **RODC オプション**(が RODC をインストールする場合にのみが表示されます)] ページでは、RODC を管理、または、許可または拒否パスワード レプリケーション グループから、アカウントを削除し、をクリックするアカウントを追加したユーザーまたはグループの名前を指定**次**します。  
+13. **[RODC オプション]** ページ (RODC をインストールする場合にのみ表示されます) で、この RODC を管理するグループまたはユーザーの名前を指定し、Allowed password replication グループまたは Denied password replication グループのアカウントを追加または削除して、**[次へ]** をクリックします。  
   
-    For more information, see [Password Replication Policy](https://technet.microsoft.com/library/cc730883(v=ws.10)).  
+    詳細については、次を参照してください。[パスワード レプリケーション ポリシー](https://technet.microsoft.com/library/cc730883(v=ws.10))します。  
   
-14. **追加オプション**] ページで、次のオプションのいずれかを選択します。  
+14. **[追加オプション]** ページで、次のいずれかのオプションを選択します。  
   
-    -   新しい NetBIOS 名を入力新しいドメインを作成する場合は場合、や、ドメインの既定の NetBIOS 名を確認し、をクリックして**次**します。  
+    -   新しいドメインを作成する場合は、ドメインの新しい NetBIOS 名を入力するか、既定の NetBIOS 名を確認し、**[次へ]** をクリックします。  
   
-    -   既存のドメインにドメイン コントローラーを追加する場合は、(またはウィザードに任意のドメイン コントローラーを選択) から AD DS インストール データをレプリケートするドメイン コントローラーを選択します。 メディアからインストールする場合は、クリックして**メディア パスからインストール**入力し、インストール ソース ファイルへのパスを確認し、クリックして**次**します。  
+    -   既存のドメインにドメイン コントローラーを追加する場合は、AD DS インストール データのレプリケート元となるドメイン コントローラーを選択します (またはウィザードに任意のドメイン コントローラーを選択させます)。 メディアからインストールする場合は、**[メディアからのインストール パス]** をクリックし、インストール ソース ファイルのパスを入力および確認して、**[次へ]** をクリックします。  
   
-        使用することはできません (IFM) をドメインの最初のドメイン コントローラーのインストール メディアからインストールします。 IFM は、別のオペレーティング システム バージョン間では機能しません。 つまり、IFM を使用して Windows Server 2012 を実行する追加のドメイン コントローラーをインストールするために、Windows Server 2012 ドメイン コントローラーでバックアップ メディアを作成する必要があります。 For more information about IFM, see [Installing an Additional Domain Controller by Using IFM](https://technet.microsoft.com/library/cc816722(WS.10).aspx).  
+        メディアからのインストール (IFM) は、ドメインの最初のドメイン コントローラーのインストールには使用できません。 IFM は、バージョンが異なるオペレーティング システム間では機能しません。 つまり、IFM を使用して Windows Server 2012 を実行している追加のドメイン コント ローラーをインストールするには、Windows Server 2012 ドメイン コント ローラーのバックアップ メディアを作成する必要があります。 IFM の詳細については、次を参照してください。 [IFM を使用した追加ドメイン コント ローラーをインストールする](https://technet.microsoft.com/library/cc816722(WS.10).aspx)します。  
   
-15. **パス**ページ、Active Directory データベース、ログ ファイル、および SYSVOL フォルダーの場所を入力 (または既定の場所を受け入れて)] をクリック**次**します。  
+15. **[パス]** ページで、Active Directory データベース、ログ ファイル、および SYSVOL フォルダーの場所を入力し (または既定の場所を受け入れて)、**[次へ]** をクリックします。  
   
     > [!IMPORTANT]  
     > Resilient File System (ReFS) でフォーマットされたデータ ボリュームに Active Directory データベース、ログ ファイル、または SYSVOL フォルダーを格納しないでください。  
   
-16. **準備オプション**ページで、adprep を実行するのに十分な種類の資格情報。 詳細については、次を参照してください。[資格情報の Adprep.exe を実行して Active Directory ドメイン サービスをインストールするための要件](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)します。  
+16. **[準備オプション]** ページで、adprep を実行するのに十分な資格情報を入力します。 詳細については、「 [Credential requirements to run Adprep.exe and install Active Directory Domain Services](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md#BKMK_Creds)」を参照してください。  
   
-17. **オプションの確認**] ページでクリックし、選択内容を確認**スクリプトの表示**クリックして、Windows PowerShell スクリプトの設定をエクスポートする場合**[次へ]**します。  
+17. **[オプションの確認]** ページで選択内容を確認し、設定を Windows PowerShell スクリプトにエクスポートする場合は **[スクリプトの表示]** をクリックして、**[次へ]** をクリックします。  
   
-18. **前提条件のチェック**] ページでその前提条件の検証が完了したことを確認してをクリックして**インストール**します。  
+18. **[前提条件のチェック]** ページで、前提条件の検証が完了していることを確認し、**[インストール]** をクリックします。  
   
-19. **結果**ページで、サーバーがドメイン コントローラーとして正しく構成されたことを確認します。 サーバーは、AD DS のインストールを完了する自動的に再起動されます。  
+19. **[結果]** ページで、サーバーがドメイン コントローラーとして正しく構成されたことを確認します。 サーバーは、AD DS のインストールを完了するために自動的に再起動します。  
   
-## <a name="BKMK_UIStaged"></a>グラフィカル ユーザー インターフェイスを使用してステージング RODC インストールを実行します。  
-段階的 RODC のインストールでは、2 つのステージで RODC を作成することができます。 最初のステージでは、Domain Admins グループのメンバーは、RODC アカウントを作成します。 2 番目の段階で、サーバーを RODC アカウントに接続します。 2 番目の段階は、Domain Admins グループまたは委任されたドメイン ユーザーまたはグループのメンバーで完了できます。  
+## <a name="BKMK_UIStaged"></a>グラフィカル ユーザー インターフェイスを使用して段階的な RODC インストールを実行します。  
+RODC の段階的なインストールを使用すると、RODC を 2 段階に分けて作成できます。 1 番目の段階では、Domain Admins グループのメンバーが RODC アカウントを作成します。 2 番目の段階では、その RODC アカウントにサーバーを関連付けます。 2 番目の段階は、Domain Admins グループのメンバーか、委任されたドメイン ユーザーまたはグループが実行できます。  
   
 #### <a name="to-create-an-rodc-account-by-using-the-active-directory-management-tools"></a>Active Directory 管理ツールを使用して RODC アカウントを作成するには  
   
-1.  Active Directory 管理センターまたは Active Directory ユーザーとコンピューターを使用して RODC アカウントを作成することができます。  
+1.  Active Directory 管理センターまたは Active Directory ユーザーとコンピューターを使用して RODC アカウントを作成できます。  
   
-    1.  をクリックして**開始**、] をクリックして**管理ツール**、] をクリックし、**Active Directory 管理センター**します。  
+    1.  **[スタート]** ボタンをクリックし、**[管理ツール]**、**[Active Directory 管理センター]** の順にクリックします。  
   
-    2.  ナビゲーション ウィンドウ (左側のウィンドウ) では、ドメインの名前をクリックします。  
+    2.  ナビゲーション ウィンドウ (左側のウィンドウ) で、ドメインの名前をクリックします。  
   
-    3.  管理の一覧 (中央のウィンドウ)] をクリックして、**ドメイン コントローラー** OU です。  
+    3.  管理の一覧 (中央のウィンドウ) で、**[Domain Controllers]** OU をクリックします。  
   
-    4.  作業ウィンドウ (右側のウィンドウ) で、をクリックして**読み取り専用ドメイン コントローラー アカウントの事前作成**します。  
+    4.  [タスク] ウィンドウ (右側のウィンドウ) で、**[読み取り専用ドメイン コントローラー アカウントの事前作成]** をクリックします。  
   
     - または -  
   
-    1.  をクリックして**開始**、] をクリックして**管理ツール**、] をクリックし、 **Active Directory ユーザーとコンピューター**します。  
+    1.  **[スタート]**、**[管理ツール]** の順にクリックし、**[Active Directory ユーザーとコンピュータ]** をクリックします。  
   
-    2.  いずれかを右クリックし、**ドメイン コントローラー**組織単位 (OU) または] をクリック、**ドメイン コントローラー** OU、] をクリックし、**アクション**します。  
+    2.  **[Domain Controllers]** 組織単位 (OU) を右クリックするか、**[Domain Controllers]** OU をクリックして **[操作]** をクリックします。  
   
-    3.  をクリックして**の事前作成 Read-only ドメイン コントローラー アカウント**します。  
+    3.  **[読み取り専用ドメイン コントローラー アカウントの事前作成]** をクリックします。  
   
-2.  **Active Directory ドメイン サービス インストール ウィザードへようこそ**] ページで、既定のパスワード レプリケーション ポリシー (PRP)、選択を変更する**詳細モード インストールを使用して**、] をクリックし、**[次へ]**します。  
+2.  **[Active Directory ドメイン サービス インストール ウィザードの開始]** ページで、既定のパスワード レプリケーション ポリシー (PRP) を変更する場合は **[詳細モード インストールを使用する]** チェック ボックスをオンにし、**[次へ]** をクリックします。  
   
-3.  **ネットワーク資格情報**ページで、**を使用して、インストールを実行するアカウントの資格情報を指定**、] をクリックして**[現在のログオン資格情報**] をクリックしてまたは**代替の資格情報**、] をクリックし、**設定**します。 **Windows セキュリティ**] ダイアログ ボックスで、追加のドメイン コントローラーをインストールできるアカウントのユーザー名とパスワードを入力します。 追加のドメイン コントローラーをインストールするには、Enterprise Admins グループまたは Domain Admins グループのメンバーがあります。 資格情報の提供が終了したら、クリックして**次**します。  
+3.  **[ネットワーク資格情報]** ページの **[インストールを実行するために使用するアカウントの資格情報を指定してください]** で、**[現在のログオン資格情報]** または **[代替の資格情報]** をクリックし、**[設定]** をクリックします。 **[Windows セキュリティ]** ダイアログ ボックスで、追加のドメイン コントローラーをインストールできるアカウントのユーザー名およびパスワードを指定します。 追加のドメイン コントローラーをインストールするには、Enterprise Admins グループまたは Domain Admins グループのメンバーである必要があります。 資格情報の入力が完了したら、クリックして **次**します。  
   
-4.  **コンピューター名を指定**] ページで、RODC となるサーバーのコンピューター名を入力します。  
+4.  **[コンピューター名の指定]** ページで、RODC となるサーバーのコンピューター名を入力します。  
   
-5.  **サイトを選択して**] ページで、一覧からサイトを選択または、ウィザードを実行しているコンピューターの IP アドレスに対応するサイトにドメイン コントローラーをインストールするオプションを選択してをクリックして**次**します。  
+5.  **[サイトの選択]** ページで、一覧からサイトを選択するか、ウィザードを実行しているコンピューターの IP アドレスに対応するサイト内にドメイン コントローラーをインストールするオプションを選択し、**[次へ]** をクリックします。  
   
-6.  **追加のドメイン コントローラー オプション**ページ、次の選択を行い、をクリックして**次**:  
+6.  **[追加のドメイン コントローラー オプション]** ページで、次の項目を適宜選択してから **[次へ]** をクリックします。  
   
-    -   **DNS サーバー**: ドメイン コントローラーがドメイン ネーム システム (DNS) サーバーとして機能できるように、既定でこのオプションを選択します。 ドメイン コントローラー、DNS サーバーをしたくない場合は、このオプションをオフにします。 ただし、RODC し、RODC 上の DNS サーバーの役割は、ブランチ オフィス内の唯一のドメイン コントローラーをインストールしていない場合は、ブランチ オフィス内のユーザーは、ハブ サイトへのワイド エリア ネットワーク (WAN) がオフラインのときに、名前解決を実行できません。  
+    -   **DNS サーバー**:ドメイン コント ローラーがドメイン ネーム システム (DNS) サーバーとして機能できるように、このオプションは既定で選択されます。 ドメイン コントローラーを DNS サーバーとして使用しない場合はオフにします。 ただし、RODC 上に DNS サーバーの役割をインストールしない場合、ブランチ オフィス内にあるドメイン コントローラーがその RODC のみであると、ハブ サイトへのワイド エリア ネットワーク (WAN) がオフラインのときはブランチ オフィス内のユーザーが名前の解決を実行できません。  
   
-    -   **グローバル カタログ**: 既定でこのオプションを選択します。 これにより、グローバル カタログ検索機能と、グローバル カタログ ドメイン コントローラーに読み取り専用のディレクトリ パーティションを追加します。 ドメイン コントローラーをグローバル カタログ サーバーをしたくない場合は、このオプションをオフにします。 ただし、ブランチ オフィス内のグローバル カタログ サーバーをインストールしたり、RODC を含んだサイトに対してユニバーサル グループ メンバーシップのキャッシュを有効にするをしない場合、ブランチ オフィス内のユーザーされません、ハブ サイトへの WAN がオフラインのときに、ドメインにログオンできません。  
+    -   **グローバル カタログ**:既定では、このオプションはオンです。 これにより、グローバル カタログ、読み取り専用ディレクトリ パーティションがドメイン コントローラーに追加され、グローバル カタログ検索機能が有効になります。 ドメイン コントローラーをグローバル カタログ サーバーにしない場合は、このオプションをオフにします。 ただし、ブランチ オフィス内にグローバル カタログ サーバーを 1 つもインストールしない場合や、該当する RODC を含んだサイトに対してユニバーサル グループ メンバーシップのキャッシュを有効にする場合、ハブ サイトへの WAN がオフラインのときはブランチ オフィス内のユーザーがドメインにログオンできません。  
   
-    -   **読み取り専用ドメイン コントローラー**します。 RODC アカウントを作成するときに既定では、このオプションが選択されているし、オフにすることはできません。  
+    -   **[読み取り専用ドメイン コントローラー]**: RODC アカウントを作成する場合、このオプションは既定でオンになっており、オフにはできません。  
   
-7.  選択した場合、**詳細モード インストールを使用して**チェック ボックスをオン、**ようこそ**] ページで、**パスワード レプリケーション ポリシーを指定する**ページが表示されます。 既定では、アカウントのパスワードは、RODC にレプリケートされませんし (Domain Admins グループのメンバー) などのセキュリティの機密性の高いアカウントはパスワードを RODC にレプリケートされることから明示的に拒否します。  
+7.  **[Active Directory ドメイン サービス インストール ウィザードの開始]** ページで **[詳細モード インストールを使用する]** チェック ボックスをオンにした場合は、**[パスワード レプリケーション ポリシーの指定]** ページが表示されます。 既定では、アカウントのパスワードは RODC には一切レプリケートされず、セキュリティ上機密性の高いアカウント (Domain Admins グループのメンバーなど) のパスワードが RODC にレプリケートされることは、明示的に拒否されます。  
   
-    ポリシーに他のアカウントを追加する] をクリックして**追加**、] をクリックし、**、当該 RODC にレプリケートするアカウントのパスワードを許可する**] をクリックしてまたは**当該 RODC にレプリケートするアカウントのパスワードを拒否**し、アカウントを選択します。  
+    ポリシーにその他のアカウントを追加するには、**[追加]** をクリックし、**[この RODC に対するアカウントのパスワードのレプリケートを許可する]** をクリックするか、**[この RODC に対するアカウントのパスワードのレプリケートを拒否する]** をクリックしてから、アカウントを選択します。  
   
-    完了すると (または既定の設定を受け入れるように)、] をクリックして**次**します。  
+    完了したら (または既定の設定をそのまま使用する場合は)、**[次へ]** をクリックします。  
   
-8.  **委任の RODC のインストールと管理**] ページで、ユーザーまたはサーバーの関連付けを作成している RODC アカウントに、グループの名前を入力します。 1 つだけのセキュリティ プリンシパルの名前を入力することができます。  
+8.  **[RODC のインストールと管理の委任]** ページで、作成している RODC アカウントに対するサーバーの関連付けを実行するユーザーまたはグループの名前を入力します。 ここで入力できるセキュリティ プリンシパルの名前は 1 つだけです。  
   
-    特定のユーザーまたはグループのディレクトリを検索するをクリックして**設定**します。 **[ユーザーまたはグループ**、またはグループのユーザーの名前を入力します。 RODC のインストールとグループの管理に委任することをお勧めします。  
+    特定のユーザーまたはグループをディレクトリで検索するには、**[設定]** をクリックします。 **[ユーザーまたはグループの選択]** に、ユーザーまたはグループの名前を入力します。 RODC のインストールと管理については、グループに委任することをお勧めします。  
   
-    このユーザーまたはグループも必要がローカルの管理者権限 RODC で、インストール後にあります。 ユーザーまたはグループを指定しない場合、Domain Admins グループまたは Enterprise Admins グループのメンバーだけは、アカウントに、サーバーをアタッチすることになります。  
+    このユーザーまたはグループに、インストール後、当該 RODC 上のローカル管理者権限も付与されます。 ユーザーまたはグループを指定しない場合は、Domain Admins グループまたは Enterprise Admins グループのメンバーだけがサーバーをアカウントに関連付けできます。  
   
-    操作が完了したら、クリックして**次**します。  
+    終了したら **[次へ]** をクリックします。  
   
-9. **概要**] ページで、選択内容を確認します。 をクリックして**戻る**を必要に応じて、選択した内容を変更します。  
+9. **[概要]** ページで、選択内容を確認します。 選択内容を変更する場合は、**[戻る]** をクリックします。  
   
-    以降の AD DS 操作を自動化は、[使用できる応答ファイルを選択した設定を保存する**設定のエクスポート**します。 応答ファイルの名前を入力し、クリックして**保存**します。  
+    選択した設定を 以降の AD DS 操作を自動化するのに使用できる応答ファイルに保存する**設定のエクスポート**します。 応答ファイルの名前を入力し、**[保存]** をクリックします。  
   
-    選択内容が正確であることを確認したら、クリックして**次**RODC アカウントを作成します。  
+    選択した内容が正しいことを確認したら、**[次へ]** をクリックして RODC アカウントを作成します。  
   
 10. **Active Directory ドメイン サービス インストール ウィザードの完了**] ページで [**完了**します。  
   
-RODC アカウントが作成されたら、RODC のインストールを完了するアカウントにサーバーをアタッチすることができます。 RODC を配置するブランチ オフィスでは、この 2 番目の段階を完了できます。 この手順を実行するサーバーをドメインに参加していない必要があります。 Windows Server 2012 以降では、する役割の追加ウィザードでサーバー マネージャーを使って、サーバーを RODC アカウントにアタッチします。  
+RODC アカウントの作成が完了したら、サーバーをアカウントに関連付けて RODC のインストールを完了できます。 この 2 番目の段階は、RODC を配置するブランチ オフィスで実行できます。 この手順を実行するサーバーは、ドメインに参加していない必要があります。 Windows Server 2012 以降では、使用する役割の追加ウィザード サーバー マネージャーでサーバーを RODC アカウントにアタッチします。  
   
-#### <a name="to-attach-a-server-to-an-rodc-account-using-server-manager"></a>サーバー マネージャーを使用して RODC アカウントに、サーバーをアタッチするには  
+#### <a name="to-attach-a-server-to-an-rodc-account-using-server-manager"></a>サーバー マネージャーを使用してサーバーを RODC アカウントに関連付けるには  
   
-1.  ローカル管理者としてログオンします。  
+1.  ローカルの Administrator としてログオンします。  
   
-2.  サーバー マネージャーで、クリックして**役割と機能の追加**します。  
+2.  サーバー マネージャーで **[役割と機能の追加]** をクリックします。  
   
-3.  **開始する前に**] ページで [**次**します。  
+3.  **[開始する前に]** ページで、 **[次へ]** をクリックします。  
   
-4.  **インストールの種類の選択**] ページで [**役割ベースまたは機能ベースのインストール**] をクリックし、**[次へ]**します。  
+4.  **[インストールの種類の選択]** ページで **[役割ベースまたは機能ベースのインストール]** をクリックし、**[次へ]** をクリックします。  
   
-5.  **対象サーバーの選択**] ページで [**サーバー プールからサーバーを選択**、クリックして、AD DS をインストールするサーバーの名前をクリックして**[次へ]**します。  
+5.  **[対象サーバーの選択]** ページで **[サーバー プールからサーバーを選択]** をクリックし、AD DS をインストールするサーバーの名前をクリックしてから、**[次へ]** をクリックします。  
   
-6.  **サーバーの役割の選択**] ページで [ **Active Directory Domain Services**、] をクリックして**機能の追加**] をクリックし、**[次へ]**します。  
+6.  **[サーバーの役割の選択]** ページで **[Active Directory Domain Services]** をクリックし、**[機能の追加]** をクリックして、**[次へ]** をクリックします。  
   
-7.  **機能の選択**] ページで、追加機能をインストールし] をクリックする選択**次**します。  
+7.  **[機能の選択]** ページで、インストールする追加機能を選択し、**[次へ]** をクリックします。  
   
-8.  **Active Directory Domain Services** ] ページで情報を確認してをクリックして**次**します。  
+8.  **[Active Directory ドメイン サービス]** ページの情報を確認し、**[次へ]** をクリックします。  
   
-9. **インストール オプションの確認**] ページで [**インストール**します。  
+9. **[インストール オプションの確認]** ページで、**[インストール]** をクリックします。  
   
-10. **結果**] ページで、確認**インストールに成功しました**、] をクリック**このサーバーのドメイン コントローラーを昇格**を Active Directory ドメイン サービス構成ウィザードを開始します。  
+10. **[結果]** ページで、インストールが成功したことを確認し****、**[このサーバーをドメイン コントローラーに昇格する]** をクリックして Active Directory Domain Services 構成ウィザードを起動します。  
   
     > [!IMPORTANT]  
-    > 役割の追加ウィザードこの時点でを閉じるには、Active Directory ドメイン サービス構成ウィザードを起動しなくても、サーバー マネージャーでのタスク] をクリックして再開できます。  
+    > Active Directory ドメイン サービス構成ウィザードを起動せずにこの時点で役割の追加ウィザードを閉じる場合、後からウィザードを再開するには、サーバー マネージャーで [タスク] をクリックします。  
   
     (media/Install-Active-Directory-Domain-Services--Level-100-/ADDS_SMI_Tasks.gif)  
   
-11. **展開構成**] ページで [**ドメイン コントローラーを既存のドメインに追加**、ドメイン (たとえば、emea.contoso.com) の名前を入力し、資格情報 (たとえば、管理し、RODC のインストールを委任されているアカウント) を指定し、をクリックして**[次へ]**します。  
+11. **[配置構成]** ページで、**[既存のドメインにドメイン コントローラーを追加する]** をクリックして、ドメインの名前 (emea.contoso.com など) と資格情報 (RODC の管理とインストールを委任されているアカウントなど) を入力し、**[次へ]** をクリックします。  
   
-12. **ドメイン コントローラー オプション**ページで、[**既存の RODC アカウントを使用して**のように入力し、ディレクトリ サービス復元モード パスワードを確認し、[クリックして**次**します。  
+12. **[ドメイン コントローラー オプション]** ページで、**[既存の RODC アカウントを使用する]** をクリックして、ディレクトリ サービス復元モードのパスワードを入力および確認入力し、**[次へ]** をクリックします。  
   
-13. **追加オプション**] ページで、メディアからインストールする] をクリックして**メディア パスからインストール**のように入力し、インストール ソース ファイルへのパスを確認する、(またはウィザードに任意のドメイン コントローラーを選択) から AD DS インストール データをレプリケートするドメイン コントローラーを選択し、をクリックして**[次へ]**します。  
+13. **[追加オプション]** ページで、メディアからインストールする場合は、**[メディアからのインストール パス]** をクリックし、インストール ソース ファイルのパスを入力および確認します。AD DS インストール データのレプリケート元となるドメイン コントローラーを選択し (またはウィザードに任意のドメイン コントローラーを選択させ)、**[次へ]** をクリックします。  
   
-14. **パス**] ページで Active Directory データベース、ログ ファイル、および SYSVOL フォルダーの場所を入力または既定の場所を受け入れて、をクリックして**次**します。  
+14. **[パス]** ページで、Active Directory データベース、ログ ファイル、および SYSVOL フォルダーの場所を入力し (または既定の場所を受け入れて)、**[次へ]** をクリックします。  
   
-15. **オプションの確認**] ページでクリックし、選択内容を確認**スクリプトの表示**、Windows PowerShell スクリプトに、設定をエクスポートし、をクリックして**次**します。  
+15. **[オプションの確認]** ページで選択内容を確認し、設定を Windows PowerShell スクリプトにエクスポートする場合は **[スクリプトの表示]** をクリックして、**[次へ]** をクリックします。  
   
-16. **前提条件のチェック**] ページでその前提条件の検証が完了したことを確認してをクリックして**インストール**します。  
+16. **[前提条件のチェック]** ページで、前提条件の検証が完了していることを確認し、**[インストール]** をクリックします。  
   
-    AD DS のインストールを完了するには、サーバーは自動的に再起動します。  
+    サーバーは、AD DS のインストールを完了するために自動的に再起動します。  
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
 [ドメイン コント ローラーの展開のトラブルシューティング](Troubleshooting-Domain-Controller-Deployment.md)  
-[Windows Server 2012 の新しい Active Directory フォレスト (&) #40; をインストールします。レベル 200 & #41 です。](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md)  
-[Windows Server 2012 の新しい Active Directory 子またはツリー ドメイン (&) #40; をインストールします。レベル 200 & #41 です。](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)  
-[既存のドメイン (&) #40; でレプリカ Windows Server 2012 ドメイン コントローラーをインストールします。レベル 200 & #41 です。](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)  
+[Windows Server 2012 の新しい Active Directory フォレストをインストール&#40;レベル 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-.md)  
+[インストール、Windows Server 2012 の新しい Active Directory 子ドメインまたはツリー ドメイン&#40;レベル 200&#41;](../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)  
+[既存のドメインにレプリカ Windows Server 2012 ドメイン コント ローラーをインストール&#40;レベル 200&#41;](../../ad-ds/deploy/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-.md)  
   
 
 
