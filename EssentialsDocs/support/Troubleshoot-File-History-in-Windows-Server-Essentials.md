@@ -1,6 +1,6 @@
 ---
-title: "Windows Server Essentials でのファイル履歴に関するトラブルシューティングします。"
-description: "Windows Server Essentials を使用する方法について説明します。"
+title: Windows Server Essentials のファイル履歴に関するトラブルシューティング
+description: Windows Server Essentials を使用する方法について説明します
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,77 +13,78 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 34442565b54b089064c1fa19317a24f591e44fda
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59868603"
 ---
-# <a name="troubleshoot-file-history-in-windows-server-essentials"></a>Windows Server Essentials でのファイル履歴に関するトラブルシューティングします。
+# <a name="troubleshoot-file-history-in-windows-server-essentials"></a>Windows Server Essentials のファイル履歴に関するトラブルシューティング
 
->Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials での Windows Server 2012 Essentials を適用対象: 
+>適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials 
   
-## <a name="troubleshoot-issues-with-user-file-history-backups"></a>ユーザーのファイル履歴のバックアップに関する問題をトラブルシューティングします。  
- ユーザーまたは Windows Server Essentials を実行するサーバーに追加されたコンピューターのファイル履歴のバックアップの管理中に、次の問題が発生します。  
+## <a name="troubleshoot-issues-with-user-file-history-backups"></a>ユーザーのファイル履歴のバックアップに関する問題のトラブルシューティング  
+ Windows Server Essentials が実行されているサーバーに追加されたユーザーまたはコンピューターのファイル履歴のバックアップを管理するときに、次の問題が生じる場合があります。  
   
-### <a name="file-history-data-is-not-automatically-deleted"></a>ファイル履歴データが自動的に削除されません。  
- ファイル履歴データ可能性がありますいない取得場合自動的に削除します。  
+### <a name="file-history-data-is-not-automatically-deleted"></a>ファイル履歴が自動削除されない  
+ 次の場合に、ファイル履歴データが自動的に削除されない可能性があります。  
   
--   ユーザー アカウントを削除するには、するされません s ファイル履歴データ、ユーザー アカウントの削除を選択し、データを手動で削除することを選択します。  
+-   ユーザー アカウントを削除するときに、s ファイル履歴データ、ユーザー アカウントは削除を選択し、データを手動で削除することを選択します。  
   
--   ファイル履歴データを削除するときに、ファイル履歴データは、他のプロセスが使用します。  
+-   ファイル履歴データを削除するときに、そのファイル履歴データが他のプロセスで使用中の場合。  
   
- この問題を解決するのには、手動で、次の手順を使用して、ファイル履歴を削除する必要があります。  
+ この問題を解決するには、次の手順を実行してファイル履歴を手動で削除しなければなりません。  
   
-####  <a name="BKMK_manuallyDelete"></a>ユーザーまたはコンピューターのファイル履歴のバックアップを手動で削除するには  
+####  <a name="BKMK_manuallyDelete"></a> ユーザーまたはコンピューターのファイル履歴のバックアップを手動で削除するには  
   
 1.  管理者としてサーバーにログオンします。  
   
-2.  ファイル エクスプ ローラーを管理者として実行します。  
+2.  管理者としてエクスプローラーを実行します。  
   
-3.  File History Backups フォルダーに移動します。 既定の場所は、C:\ServerFolders\File History Backups です。  
+3.  File History Backups フォルダーに移動します。 既定の場所は C:\ServerFolders\File History Backups です。  
   
-4.  ファイル履歴バックアップを格納する共有フォルダーを削除します。  
+4.  File History Backups に格納されている共有フォルダーを次のようにして削除します。  
   
-    -   ユーザーのファイル履歴を削除するには、ユーザーの名前を持つファイル History backup 子フォルダーを削除します。  
+    -   ユーザーのファイル履歴を削除するには、ユーザーの名前を持つ File History backup 子フォルダーを削除します。  
   
-    -   コンピューターのファイル履歴を削除するには、コンピューター名を持つファイル History backup 子フォルダーを削除します。 たとえば、ユーザーは、新しいラップトップ コンピューター < MyComputer02\ > で作業を開始した後、< MyComputer01\ > をインベントリから削除する場合を削除する C:\ServerFolders\File 履歴 Backups\\ < MyAccount\ > \\ < MyComputer01\ > を新しいラップトップすべてのファイルとフォルダーが転送し、不要になったファイル履歴が将来彼女のユーザーに確認した後です。  
+    -   コンピューターのファイル履歴を削除する場合には、そのコンピューター名の File History backup 子フォルダーを削除します。 たとえば、ユーザーが提供終了 < MyComputer01\>新しいラップトップ コンピューターで作業を開始後に < MyComputer02\>、C:\ServerFolders\File History Backups を削除する\\< MyAccount\> \\< MyComputer01\>ことはすべてのファイルとフォルダーを新しいラップトップ コンピューターに転送が必要としないファイル履歴の今後のユーザーに確認した後。  
   
-### <a name="cannot-apply-file-history-setting-to-a-new-user"></a>新しいユーザーにファイル履歴の設定を適用することはできません。  
- ユーザー名が Windows Server Essentials から削除されたユーザーのユーザー名と同じですが、新しいユーザーを追加する場合、新しいユーザーのファイル履歴構成可能性があります Windows Server Essentials は、新しいユーザーのファイル履歴を保存するフォルダーを作成しようとすると名前付けの競合のため失敗します。 この問題を解決するには、削除されたユーザーのファイル履歴フォルダーに名前を変更することができます。  
+### <a name="cannot-apply-file-history-setting-to-a-new-user"></a>新しいユーザーにファイル履歴の設定を適用できない  
+ 新しいユーザーを追加する場合に、そのユーザー名が、Windows Server Essentials から削除したことがあるユーザーのユーザー名と同じであると、新しいユーザーのファイル履歴構成で障害が生じる可能性があります。Windows Server Essentials によって新しいユーザーのファイル履歴を格納するためのフォルダーの作成が試行されるときに、名前付けの競合が生じるためです。 この問題を解決するには、削除したファイル履歴フォルダーの名前を変更できます。  
   
-##### <a name="to-locate-user-file-history-on-the-server"></a>サーバー上のファイル履歴のユーザーを検索するには  
-  
-1.  管理者としてサーバーにログオンします。  
-  
-2.  Windows Server Essentials ダッシュ ボード] をクリックして**記憶域**します。  
-  
-3.  **サーバー フォルダー** ] タブで、File History Backups フォルダーの場所に注意してください。 既定の場所は、%SystemDrive%\ServerFolders\File 履歴 Backups\\ です。  
-  
-##### <a name="to-resolve-file-history-issues-for-a-new-user-with-a-name-conflict"></a>名前の競合している新しいユーザーのファイル履歴問題を解決するのには  
+##### <a name="to-locate-user-file-history-on-the-server"></a>サーバー上にあるユーザーのファイル履歴の場所を特定するには  
   
 1.  管理者としてサーバーにログオンします。  
   
-2.  ファイル エクスプ ローラーを管理者として実行します。  
+2.  Windows Server Essentials ダッシュボードで、 **[記憶域]** をクリックします。  
   
-3.  File History Backups フォルダーに移動します。 既定の場所は、C:\ServerFolders\File History Backups です。  
+3.  **[サーバー フォルダー]** タブで、File History Backups フォルダーの場所に注目します。 既定の場所は %SystemDrive%\ServerFolders\File History Backups\\します。  
   
-     File History Backups フォルダーは、Windows Server Essentials に追加されたユーザー アカウントごとにサブフォルダーを持ちます。 たとえば、ユーザー John Smith のファイル履歴は、サブフォルダー File History backups \johnsmith に保存されます。  
+##### <a name="to-resolve-file-history-issues-for-a-new-user-with-a-name-conflict"></a>名前が競合している新しいユーザーのファイル履歴問題を解決するには  
   
-4.  たとえば、削除したユーザーのサブフォルダーの名前**<*UserName*> _Deleted * * します。 ユーザーのファイル履歴が不要になった必要がある場合は、フォルダーを削除することができます。  
+1.  管理者としてサーバーにログオンします。  
+  
+2.  管理者としてエクスプローラーを実行します。  
+  
+3.  File History Backups フォルダーに移動します。 既定の場所は C:\ServerFolders\File History Backups です。  
+  
+     File History Backups フォルダーには、Windows Server Essentials に追加された各ユーザー アカウントのサブフォルダーが含まれています。 たとえば、ユーザー John Smith のファイル履歴は、サブフォルダー File History Backups\JohnSmith に格納されます。  
+  
+4.  たとえば、削除したユーザーのサブフォルダーの名前を変更 **< *UserName*> _Deleted**します。 ユーザーのファイル履歴が不要な場合には、そのフォルダーを削除できます。  
   
 
-5.  新しいユーザーを追加できます。 手順については、ユーザー アカウントの追加を参照してください。[ユーザー アカウントの管理](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)します。  
+5.  これで、新しいユーザーを追加できます。 手順については、ユーザー アカウントの追加を参照してください。[ユーザー アカウントを管理する](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)します。  
   
-### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>ユーザー アカウントは削除されましたが、ユーザーのファイル履歴が残っています。  
- 場合によっては、ユーザーまたはコンピューター、サーバーから削除するが、将来の使用に備えてバックアップ ファイルの履歴を保存するネットワーク管理者こともできます。 ファイル履歴が不要になった必要がある場合は、サーバー上の共有フォルダーから、ユーザーまたはコンピューターの File History Backups フォルダーを削除します。 これを行うには、次を参照してください。[ユーザーまたはコンピューターのファイル履歴のバックアップを手動で削除](Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)します。  
+### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>ユーザー アカウントは削除したものの、ユーザーのファイル履歴が残っている  
+ ネットワーク管理者がサーバーからユーザーまたはコンピューターの削除を選択したものの、将来の使用に備えてファイル履歴のバックアップの保持を選択することがあります。 対象のファイル履歴が不要な場合には、対象ユーザーまたはコンピューターの File History Backups フォルダーを、サーバー上の共有フォルダーから削除します。 その方法については、「 [To manually delete File History backups for a user or a computer](Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)」をご覧ください。  
 
-5.  新しいユーザーを追加できます。 手順については、ユーザー アカウントの追加を参照してください。[ユーザー アカウントの管理](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)します。  
+5.  これで、新しいユーザーを追加できます。 手順については、ユーザー アカウントの追加を参照してください。[ユーザー アカウントを管理する](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)します。  
   
-### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>ユーザー アカウントは削除されましたが、ユーザーのファイル履歴が残っています。  
- 場合によっては、ユーザーまたはコンピューター、サーバーから削除するが、将来の使用に備えてバックアップ ファイルの履歴を保存するネットワーク管理者こともできます。 ファイル履歴が不要になった必要がある場合は、サーバー上の共有フォルダーから、ユーザーまたはコンピューターの File History Backups フォルダーを削除します。 これを行うには、次を参照してください。[ユーザーまたはコンピューターのファイル履歴のバックアップを手動で削除](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)します。  
+### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>ユーザー アカウントは削除したものの、ユーザーのファイル履歴が残っている  
+ ネットワーク管理者がサーバーからユーザーまたはコンピューターの削除を選択したものの、将来の使用に備えてファイル履歴のバックアップの保持を選択することがあります。 対象のファイル履歴が不要な場合には、対象ユーザーまたはコンピューターの File History Backups フォルダーを、サーバー上の共有フォルダーから削除します。 その方法については、「 [To manually delete File History backups for a user or a computer](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)」をご覧ください。  
 
   
-## <a name="see-also"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
   
 -   [クライアント バックアップを管理します。](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)  
   
