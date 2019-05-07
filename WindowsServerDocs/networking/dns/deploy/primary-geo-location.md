@@ -10,7 +10,7 @@ ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 110014adf1e23be574f23efc01e8a4d69397e547
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59831983"
@@ -50,7 +50,7 @@ DNS クエリを実行するクライアントの物理的な場所に基づい�
   
 Contoso クラウド サービスとは、米国とヨーロッパに 2 つのデータ センターです。 ヨーロッパのデータ センターでは、woodgrove.com 用のポータルを順序付け食品をホストします。   
   
-Woodgrove.com お客様が企業の web サイトから応答性の高いエクスペリエンスを入手することを確認、Woodgrove では、ヨーロッパのデータ センターに送られますヨーロッパ言語のクライアントと u. s. データ センターに送られますアメリカのクライアントを希望しています。 世界中の他の場所にあるお客様は、データ センターのいずれかに送信できます。   
+Woodgrove.com お客様が企業の web サイトから応答性の高いエクスペリエンスを入手することを確認、Woodgrove では、ヨーロッパのデータ センターに送られますヨーロッパ言語のクライアントと u. s. データ センターに送られますアメリカ合衆国のクライアントを希望しています。 世界中の他の場所にあるお客様は、データ センターのいずれかに送信できます。   
   
 次の図は、このシナリオを示しています。  
   

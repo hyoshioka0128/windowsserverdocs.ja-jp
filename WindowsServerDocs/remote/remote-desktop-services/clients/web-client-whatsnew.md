@@ -15,7 +15,7 @@ ms.date: 02/22/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 2746127c15753ac8f4f6067eef068fe97b425829
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59844553"
@@ -37,7 +37,7 @@ ms.locfileid: "59844553"
 *公開日:1/24/2019*
 
 - 内部ネットワーク上でオフラインで使用がサポートされているようになりました。
-- Microsoft 以外の Edge ブラウザーで表示が改善されました。
+- Microsoft 以外の Microsoft Edge ブラウザーで表示が改善されました。
 - フィードの取得の再試行の実装の制限は、DoS を防ぐために試行します。
 - 固定のユーザー補助バグ、視覚障碍を持つユーザーは、web クライアントを使用できるようにします。
 - フィードのエラーをユーザーに表示されるエラー メッセージの改善。
