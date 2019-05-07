@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ms.date: 02/20/2018
 ms.openlocfilehash: 08229e458d0aa0c8e8397f0f053f37a207a1aea5
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59885603"
@@ -71,7 +71,7 @@ UI なしに加えて Server Core とも異なりますデスクトップ エク
 | タスク バー                            | 利用不可   | available (利用可能)                      |
 | タスク バーの通知              | 利用不可   | available (利用可能)                      |
 | タスク マネージャー                            | available (利用可能)       | available (利用可能)                      |
-| Internet Explorer または Edge          | 利用不可   | available (利用可能)                      |
+| Internet Explorer または Microsoft Edge          | 利用不可   | available (利用可能)                      |
 | 組み込みのヘルプ システム               | 利用不可   | available (利用可能)                      |
 | Windows 10 のシェル                   | 利用不可   | available (利用可能)                      |
 | Windows Media Player               | 利用不可   | available (利用可能)                      |

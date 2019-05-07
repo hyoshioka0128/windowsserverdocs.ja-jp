@@ -10,7 +10,7 @@ ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 806c0cdeedb44db44fc0ec5218124f516a6f70e5
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59852553"
@@ -89,7 +89,7 @@ DNS クライアントのサブネットは、クエリが DNS サーバーに�
 
 今すぐゾーン スコープに web サーバーのホストを表すレコードを追加する必要があります。
 
-上記のシナリオでは、アメリカのデータ センターのレコードが追加されました。 次の Windows PowerShell コマンドを使用すると、ヨーロッパ データ センターのゾーンのスコープにレコードを追加します。
+上記のシナリオでは、アメリカ合衆国のデータ センターのレコードが追加されました。 次の Windows PowerShell コマンドを使用すると、ヨーロッパ データ センターのゾーンのスコープにレコードを追加します。
  
     
     Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "151.1.0.1" -ZoneScope "DublinZoneScope”

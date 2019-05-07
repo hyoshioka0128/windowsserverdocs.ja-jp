@@ -10,7 +10,7 @@ ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 33fd9447a79346127714a5e5e73977611eba483c
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59829473"
@@ -127,9 +127,9 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 これらの DNS のポリシーを構成した後、DNS サーバーの動作は次に示します。  
   
 1. ヨーロッパの DNS クライアントは、その DNS クエリの応答で Dublin データ センターの Web サーバーの IP アドレスを受け取ります。  
-2. アメリカの DNS クライアントは、シアトルのデータ センターの DNS クエリの応答での Web サーバーの IP アドレスを受け取ります。  
+2. アメリカ合衆国の DNS クライアントは、シアトルのデータ センターの DNS クエリの応答での Web サーバーの IP アドレスを受け取ります。  
 3. 、午後 6 時とダブリンの午後 9 時の間は、ヨーロッパのクライアントからのクエリの 20% は、シアトルのデータ センターの DNS クエリの応答での Web サーバーの IP アドレスを受け取ります。  
-4. 、午後 6 時とシアトルの午後 9 時の間は、アメリカのクライアントからのクエリの 20% は、その DNS クエリの応答で Dublin データ センターの Web サーバーの IP アドレスを受け取ります。  
+4. 、午後 6 時とシアトルの午後 9 時の間は、アメリカ合衆国のクライアントからのクエリの 20% は、その DNS クエリの応答で Dublin データ センターの Web サーバーの IP アドレスを受け取ります。  
 5. シアトルのデータ センターの IP アドレスを受信、その他の国からのクエリの半分と残りの半分が Dublin データ センターの IP アドレスを受信します。  
   
   

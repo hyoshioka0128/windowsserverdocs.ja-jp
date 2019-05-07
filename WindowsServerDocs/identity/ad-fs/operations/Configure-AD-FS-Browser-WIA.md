@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: f71680bb721635bd37197dca9d3ae4726099525f
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59845483"
@@ -20,7 +20,7 @@ ms.locfileid: "59845483"
 
 既定では、Windows 統合認証 (WIA) が Active Directory フェデレーション サービス (AD FS) で Windows Server 2012 R2 を使用するアプリケーションに組織の内部ネットワーク (イントラネット) 内で発生する認証要求で有効にします。その認証のためのブラウザーです。
 
-AD FS 2016 では、WIA を行う Windows Phone のない、また、(正しく)、キャッチも中に、Edge ブラウザーのできる強化された既定の設定があります。
+AD FS 2016 では、WIA を行う Windows Phone のない、また、(正しく)、キャッチも中に、Microsoft Edge ブラウザーのできる強化された既定の設定があります。
 
     =~Windows\s*NT.*Edge
 
