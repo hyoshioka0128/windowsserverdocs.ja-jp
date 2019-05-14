@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: b60127cf957a30d147c9992c74c01e37e5b8bf89
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59871923"
@@ -44,7 +44,7 @@ sc [<ServerName>] delete [<ServiceName>]
 
 ## <a name="remarks"></a>注釈
 
-使用 **プログラム追加と削除** に **コントロール パネルの ** DHCP、DNS、またはその他の組み込みのオペレーティング システム サービスを削除します。 なお **プログラム追加と削除** のみ、サービスのレジストリ サブキーは削除されませんが、サービスをアンインストール、ショートカットを削除ができます。
+使用 **プログラム追加と削除** に **コントロール パネルの** DHCP、DNS、またはその他の組み込みのオペレーティング システム サービスを削除します。 なお **プログラム追加と削除** のみ、サービスのレジストリ サブキーは削除されませんが、サービスをアンインストール、ショートカットを削除ができます。
 
 ## <a name="BKMK_examples"></a>例
 

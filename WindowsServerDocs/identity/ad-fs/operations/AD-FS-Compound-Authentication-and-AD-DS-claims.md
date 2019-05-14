@@ -10,7 +10,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 270fb6efd63e6355c410ee45d09e6fd16b14222b
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59867993"
@@ -44,7 +44,7 @@ Active Directory Domain Services (AD DS) を使用してフェデレーション
 1.  サーバー マネージャーで、選択ツール、 **Group Policy Management**します。
 2.  下に移動し、**既定のドメイン コント ローラー ポリシー**を右クリックし、**編集**します。
 ![グループ ポリシーの管理](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc1.png)
-3.  **グループ ポリシー管理エディター****コンピューターの構成**、展開**ポリシー**、展開**管理用テンプレート**、展開**システム**、選び**KDC**します。
+3.  **グループ ポリシー管理エディター** **コンピューターの構成**、展開**ポリシー**、展開**管理用テンプレート**、展開**システム**、選び**KDC**します。
 4.  右側のウィンドウでダブルクリック**KDC で信頼性情報、複合認証、および Kerberos 防御をサポート**します。
 ![グループ ポリシーの管理](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc2.png)
 5.  新しいダイアログ ウィンドウにセットの要求を KDC サポート**有効**します。
@@ -71,8 +71,8 @@ Active Directory Domain Services (AD DS) を使用してフェデレーション
 ### <a name="step-4-configure-the-primary-authentication-provider"></a>手順 4:プライマリ認証プロバイダーを構成します。
 
 1. プライマリ認証プロバイダーを設定**Windows 認証**for AD FS のイントラネット設定します。
-2. AD FS の管理 **認証ポリシー**を選択します**プライマリ認証****グローバル設定** をクリックして**編集**します。
-3. **グローバル認証ポリシーの編集****イントラネット**選択**Windows 認証**します。
+2. AD FS の管理 [**認証ポリシー**を選択します**プライマリ認証** **グローバル設定**] をクリックして**編集**します。
+3. **グローバル認証ポリシーの編集** **イントラネット**選択**Windows 認証**します。
 4. クリックして**適用**と**Ok**します。
 
 ![グループ ポリシーの管理](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc5.png)
@@ -139,7 +139,7 @@ CompoundIdentitySupported を無効にして、再有効化は、ADFS サービ�
 ### <a name="step-8-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>手順 8:'WindowsDeviceGroup' 要求が予想される証明書利用者のパーティでは、'パススルー' または '変換' のような要求規則を追加します。
 2.  **AD FS 管理**、 をクリックして**証明書利用者信頼**と右側のウィンドウで右クリックして、RP と選択**要求規則の編集**します。
 3.  **発行変換規則**クリックして**規則の追加**します。
-4.  **変換要求規則追加ウィザード**選択**パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
+4.  **変換要求規則追加ウィザード**選択 **パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
 5.  表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
 6.  **[Finish]**(完了) をクリックします。  クリックして**適用**と**Ok**します。
 ![クレームの説明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc8.png)
@@ -151,7 +151,7 @@ CompoundIdentitySupported を無効にして、再有効化は、ADFS サービ�
 ### <a name="step-1--enable-kdc-support-for-claims-compound-authentication-and-kerberos-armoring-on-the-default-domain-controller-policy"></a>手順 1:KDC 信頼性情報、複合認証、および既定のドメイン コント ローラー ポリシーでの Kerberos 防御をサポートを有効にします。
 1.  サーバー マネージャーで、選択ツール、 **Group Policy Management**します。
 2.  下に移動し、**既定のドメイン コント ローラー ポリシー**を右クリックし、**編集**します。
-3.  **グループ ポリシー管理エディター****コンピューターの構成**、展開**ポリシー**、展開**管理用テンプレート**、展開**システム**、選び**KDC**します。
+3.  **グループ ポリシー管理エディター** **コンピューターの構成**、展開**ポリシー**、展開**管理用テンプレート**、展開**システム**、選び**KDC**します。
 4.  右側のウィンドウでダブルクリック**KDC で信頼性情報、複合認証、および Kerberos 防御をサポート**します。
 5.  新しいダイアログ ウィンドウにセットの要求を KDC サポート**有効**します。
 6.  [オプション] の選択**サポートされている**クリックしてドロップダウン メニューから**適用**と**OK**。
@@ -159,7 +159,7 @@ CompoundIdentitySupported を無効にして、再有効化は、ADFS サービ�
 
 ### <a name="step-2-enable-kerberos-client-support-for-claims-compound-authentication-and-kerberos-armoring-on-computers-accessing-federated-applications"></a>手順 2:信頼性情報、複合認証、およびフェデレーション アプリケーションにアクセスするコンピューターでの Kerberos 防御の Kerberos クライアント サポートを有効にします。
 
-1.  フェデレーションのアプリケーションにアクセスするコンピューターに適用されるグループ ポリシーで、**グループ ポリシー管理エディター****コンピューターの構成**、展開**ポリシー**、展開**管理用テンプレート**、展開**システム**、選び**Kerberos**します。
+1.  フェデレーションのアプリケーションにアクセスするコンピューターに適用されるグループ ポリシーで、**グループ ポリシー管理エディター** **コンピューターの構成**、展開**ポリシー**、展開**管理用テンプレート**、展開**システム**、選び**Kerberos**します。
 2.  グループ ポリシー管理エディター ウィンドウの右側のウィンドウでダブルクリック**信頼性情報、複合認証、および Kerberos 防御の Kerberos クライアント サポートします。**
 3.  新しいダイアログ ウィンドウに Kerberos クライアント サポートを設定**有効** をクリック**適用**と**OK**。
 4.  グループ ポリシー管理エディターを閉じます。
@@ -167,8 +167,8 @@ CompoundIdentitySupported を無効にして、再有効化は、ADFS サービ�
 ### <a name="step-3-configure-the-primary-authentication-provider"></a>手順 3:プライマリ認証プロバイダーを構成します。
 
 1. プライマリ認証プロバイダーを設定**Windows 認証**for AD FS のイントラネット設定します。
-2. AD FS の管理 **認証ポリシー**を選択します**プライマリ認証****グローバル設定** をクリックして**編集**します。
-3. **グローバル認証ポリシーの編集****イントラネット**選択**Windows 認証**します。
+2. AD FS の管理 [**認証ポリシー**を選択します**プライマリ認証** **グローバル設定**] をクリックして**編集**します。
+3. **グローバル認証ポリシーの編集** **イントラネット**選択**Windows 認証**します。
 4. クリックして**適用**と**Ok**します。
 5. PowerShell を使用することができますを使用して、**セット AdfsGlobalAuthenticationPolicy**コマンドレット。
 
@@ -202,7 +202,7 @@ CompoundIdentitySupported を無効にして、再有効化は、ADFS サービ�
 1. AD FS の要求プロバイダー信頼の 'WindowsDeviceGroup' 要求の次の 'パススルー' の要求規則を含めるように Active Directory を更新します。
 2.  **AD FS 管理**、 をクリックして**要求プロバイダー信頼**と右側のウィンドウで右クリックして**Active Directory**選択**要求規則の編集**.
 3.  **Active Director の要求規則の編集**クリックして**規則の追加**します。
-4.  **変換要求規則追加ウィザード**選択**パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
+4.  **変換要求規則追加ウィザード**選択 **パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
 5.  表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
 6.  **[Finish]**(完了) をクリックします。  クリックして**適用**と**Ok**します。 
 
@@ -210,7 +210,7 @@ CompoundIdentitySupported を無効にして、再有効化は、ADFS サービ�
 ### <a name="step-6-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>手順 6:'WindowsDeviceGroup' 要求が予想される証明書利用者のパーティでは、'パススルー' または '変換' のような要求規則を追加します。
 2.  **AD FS 管理**、 をクリックして**証明書利用者信頼**と右側のウィンドウで右クリックして、RP と選択**要求規則の編集**します。
 3.  **発行変換規則**クリックして**規則の追加**します。
-4.  **変換要求規則追加ウィザード**選択**パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
+4.  **変換要求規則追加ウィザード**選択 **パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
 5.  表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
 6.  **[Finish]**(完了) をクリックします。  クリックして**適用**と**Ok**します。
 

@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: ac2b1643ed151e94c3815abca9a57eb3706c845a
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59871133"
@@ -59,7 +59,7 @@ ms.locfileid: "59871133"
 12. **[グローバル ファイルの SACL の監査エントリ]** ボックスで、**[アクセス許可]** ボックスの **[フル コントロール]** をクリックします。  
   
 13. **[条件の追加]** セクションで **[条件の追加]** をクリックし、ドロップダウン リストで   
-    **[リソース]****[部署]****[次のいずれか]****[値]****[財務]** を選択します。  
+    **[リソース]** **[部署]** **[次のいずれか]** **[値]** **[財務]** を選択します。  
   
 14. **[OK]** を 3 回クリックして、グローバル オブジェクト アクセス監査ポリシー設定の構成を完了します。  
   

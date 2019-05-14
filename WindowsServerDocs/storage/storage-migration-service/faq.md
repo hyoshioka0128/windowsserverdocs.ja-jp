@@ -10,7 +10,7 @@ ms.prod: windows-server-threshold
 ms.technology: storage
 ms.openlocfilehash: df03f722b7b36a163693f675a2eaade2fabeb82f
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59860913"
@@ -24,7 +24,7 @@ ms.locfileid: "59860913"
 記憶域の移行サービスには、Windows オペレーションに干渉する可能性がわかっているファイルやフォルダーを転送しません。 具体的には、ここでは、どのようなしません転送 PreExistingData フォルダーに、先に移動します。
 
 - Windows では、プログラム ファイル、Program Files (x86)、Program Data, ユーザー
-- $Recycle.bin、recycler、Recycled、システム ボリューム情報、$UpgDrv$、$SysReset、$Windows ~ $Windows。 bt によって ~ %.*ls、Windows.old、ブート、回復、Documents and Settings。
+- $Recycle.bin、recycler、Recycled、システム ボリューム情報、$UpgDrv$、$SysReset、$Windows ~ $Windows。 bt によって ~ %.ls、Windows.old、ブート、回復、Documents and Settings。
 - pagefile.sys, hiberfil.sys, swapfile.sys, winpepge.sys, config.sys, bootsect.bak, bootmgr, bootnxt
 - ファイルやフォルダーと競合する移行元サーバーで、変換先のフォルダーを除外します。 <br>たとえば、N:\Windows フォルダーがソースであるし、C:\ にマップされます。ボリューム、先に転送されませんの取得-含まれるものに関係なく — ため先に C:\Windows システム フォルダーに影響すること。
 

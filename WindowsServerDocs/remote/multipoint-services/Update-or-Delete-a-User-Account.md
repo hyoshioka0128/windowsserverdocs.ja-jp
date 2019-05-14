@@ -15,7 +15,7 @@ manager: dongill
 ms.author: elizapo
 ms.openlocfilehash: 4b8631af3278daaf1ee005616e7922ee7febeacf
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59857313"
@@ -27,7 +27,7 @@ MultiPoint Services システムで管理ユーザーとしてログオンして
   
 2.  **[ユーザー]** 列で、変更するアカウントをクリックします。  
   
-3.  *ユーザー名***タスク**、適切なタスクをクリックします。  
+3.  *ユーザー名* **タスク**、適切なタスクをクリックします。  
   
     |選択可能なタスク項目|説明|  
     |----------------------|---------------|  

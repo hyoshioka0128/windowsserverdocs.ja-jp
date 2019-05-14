@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: 51e503f55ee0fca1f1a53339de555fd213c69296
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59870683"
@@ -84,7 +84,7 @@ Active Directory 内の各ドメインの管理者アカウントがドメイン
 
     2.  をクリックして、**アカウント**タブ。  
 
-    3.   **Account options**を選択します**アカウントは重要なので委任できない**の次のスクリーン ショットに示すようにフラグを設定し、をクリックして**OK**します。  
+    3.  **Account options**を選択します**アカウントは重要なので委任できない**の次のスクリーン ショットに示すようにフラグを設定し、をクリックして**OK**します。  
 
         ![組み込みの管理者アカウントをセキュリティで保護します。](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_24.gif)  
 

@@ -15,7 +15,7 @@ manager: dongill
 ms.author: elizapo
 ms.openlocfilehash: 07490e34517ec607070e2cb3014367d103b8d938
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59856033"
@@ -27,7 +27,7 @@ ms.locfileid: "59856033"
   
 1.  ステーション モードで MultiPoint マネージャーを開き、クリックして、 **ホーム**  タブをクリックします。  
   
-2.  [*コンピューター名***タスク**、] をクリックして**MultiPoint サーバーを追加または削除する**します。 **MultiPoint サーバーの削除の追加または**画面が開き MultiPoint マネージャーで管理できるローカル ネットワークのサブネット上の他のサーバーの検出が開始されます。  
+2.  [*コンピューター名* **タスク**、] をクリックして**MultiPoint サーバーを追加または削除する**します。 **MultiPoint サーバーの削除の追加または**画面が開き MultiPoint マネージャーで管理できるローカル ネットワークのサブネット上の他のサーバーの検出が開始されます。  
   
 3.  次のいずれかの操作を行います。  
   

@@ -11,7 +11,7 @@ ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: 2a89bab2fd1af1a1d7234da29f2025b4b12d6774
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59861803"
@@ -82,7 +82,7 @@ ms.locfileid: "59861803"
     > [!NOTE]  
     > エンドポイントの Url は、フェデレーション サーバー プロキシ サービスの既定では有効になっていません。 新しいフェデレーション サーバーのインストールを構成する場合はフェデレーション サーバー プロキシ サービスのエンドポイントを最初に有効にする必要があります。 この手順の例を参照するすべてのエンドポイントを有効にしたにプロキシを AD FS 管理スナップインで選択する前提となりますが、\-でを選択し、**プロキシを有効にする**します。  
   
-3.  そのため、フェデレーション サーバー プロキシでの IIS インストールを更新する Security Assertion Markup Language \(SAML\)と WS\-エンドポイントが更新されたポート番号を反映するように構成されている信頼します。 これを行うで systemdrive % にある Web.config ファイルは、次の変更にメモ帳を使用できる\\inetpub\\adfs\\%.*ls\\フェデレーション サーバー プロキシ コンピューターにします。 たとえば、sts1.contoso.com という名前のフェデレーション サーバーがあり、新しいポート番号が 444 と仮定を参照し、フェデレーション サーバー プロキシ コンピューターでメモ帳で Web.config ファイルを開き、次のセクションを探します、としてポート番号を変更以下に示す、および保存してメモ帳を終了します。  
+3.  そのため、フェデレーション サーバー プロキシでの IIS インストールを更新する Security Assertion Markup Language \(SAML\)と WS\-エンドポイントが更新されたポート番号を反映するように構成されている信頼します。 これを行うで systemdrive % にある Web.config ファイルは、次の変更にメモ帳を使用できる\\inetpub\\adfs\\%.ls\\フェデレーション サーバー プロキシ コンピューターにします。 たとえば、sts1.contoso.com という名前のフェデレーション サーバーがあり、新しいポート番号が 444 と仮定を参照し、フェデレーション サーバー プロキシ コンピューターでメモ帳で Web.config ファイルを開き、次のセクションを探します、としてポート番号を変更以下に示す、および保存してメモ帳を終了します。  
   
     ```  
     <securityTokenService samlProtocolEndpoint="https://sts1.contoso.com:444/adfs/services/trust/samlprotocol/proxycertificatetransport"  

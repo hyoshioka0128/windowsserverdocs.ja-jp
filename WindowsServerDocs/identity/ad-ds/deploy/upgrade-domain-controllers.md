@@ -10,7 +10,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: fe6fb196c996d4d95c6b58d1ab77591602e143d9
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59868423"
@@ -126,7 +126,7 @@ Windows 10 用のリモート サーバー管理ツールを使用すると、�
 1.  新しい Windows Server 2016 をフォレストに参加させます。 入力を求められたら再起動します。 
 ![アップグレード](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade2.png)
 2.  ドメイン管理者アカウントで新しい Windows Server 2016 にサインインします。
-3.  **サーバー マネージャー****追加の役割と機能の**、インストール**Active Directory Domain Services**新しい Windows Server 2016 でします。 Adprep が 2012 R2 のフォレストとドメインに自動的に実行されます。
+3.  **サーバー マネージャー** **追加の役割と機能の**、インストール**Active Directory Domain Services**新しい Windows Server 2016 でします。 Adprep が 2012 R2 のフォレストとドメインに自動的に実行されます。
 ![アップグレード](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade3.png) 
 4.  **サーバー マネージャー**を黄色の三角形をクリックし、ドロップダウン リストから次のようにクリックします。**サーバーのドメイン コント ローラーに昇格させる**します。 
 ![アップグレード](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade4.png)
@@ -144,7 +144,7 @@ Windows 10 用のリモート サーバー管理ツールを使用すると、�
    ```
 
    ![アップグレード](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade7.png)</br>
-11. Windows Server 2016 サーバーに移動して、役割が移動されたことを確認**サーバー マネージャー****ツール**、 **Active Directory Module for Windows PowerShell**。 使用して、`Get-ADDomain`と`Get-ADForest`FSMO の役割所有者を表示するコマンドレットです。
+11. Windows Server 2016 サーバーに移動して、役割が移動されたことを確認**サーバー マネージャー** **ツール**、 **Active Directory Module for Windows PowerShell**。 使用して、`Get-ADDomain`と`Get-ADForest`FSMO の役割所有者を表示するコマンドレットです。
 ![アップグレード](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade8.png)
 ![アップグレード](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade9.png)
 12. 降格し、Windows Server 2012 R2 のドメイン コント ローラーを削除します。 Dc を降格する方法の詳細については、次を参照してください[を降格するドメイン コント ローラーとドメイン。](../../ad-ds/deploy/Demoting-Domain-Controllers-and-Domains--Level-200-.md)
