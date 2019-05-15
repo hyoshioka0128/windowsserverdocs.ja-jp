@@ -14,7 +14,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: cc24893b1a227501959002ea2d81c62813855d4a
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59883633"
