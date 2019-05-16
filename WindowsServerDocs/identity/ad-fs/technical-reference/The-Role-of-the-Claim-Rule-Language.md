@@ -11,7 +11,7 @@ ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
 ms.openlocfilehash: 05728f04f6fb924cf3793bc843df3832c7c383f7
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59855693"
@@ -75,7 +75,7 @@ AD FS では、定義済みのクレームの発行とクレームの一般的�
   
 |条件の説明|条件の構文の例|  
 |-------------------------|----------------------------|  
-|このルールは 2 つの入力要求は、それぞれに、指定された要求の種類を確認するための条件 ("http://test/name「と」 http://test/email")。 規則に一致する 2 つの要求が入力要求に含まれている場合、その名前要求が出力要求セットにコピーされます。|``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );```|  
+|このルールは 2 つの入力要求は、それぞれに、指定された要求の種類を確認するための条件 ("http://test/name 「と」 http://test/email")。 規則に一致する 2 つの要求が入力要求に含まれている場合、その名前要求が出力要求セットにコピーされます。|``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );```|  
   
 #### <a name="regular--condition-examples"></a>通常の条件の例  
 次の表は、正規表現の例-ベースの条件。  

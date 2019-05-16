@@ -17,7 +17,7 @@ ms.date: 09/01/2016
 ms.author: anandy;billmath
 ms.openlocfilehash: 4af0386ef97694baa9ba7f1e5e7163554d79734a
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59874123"
@@ -55,7 +55,7 @@ ms.locfileid: "59874123"
 ### <a name="deploying-azure-traffic-manager"></a>Azure Traffic Manager を展開します。
 Traffic manager プロファイルを作成するのには、次の手順に従います。 詳細については、参照することもを[Azure Traffic Manager プロファイルの管理](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-manage-profiles)します。
 
-1. **Traffic Manager プロファイルを作成します。** Traffic manager プロファイルの一意な名前を付けます。 プロファイルのこの名前の DNS 名の一部であり、Traffic Manager ドメイン名のラベルのプレフィックスとして機能します。 名前にプレフィックスを追加/。.trafficmanager.net に DNS ラベルを、トラフィック マネージャーを作成します。 次のスクリーン ショット、traffic manager DNS プレフィックスがためとして設定されると、結果として得られる DNS ラベルは mysts.trafficmanager.net になります。 
+1. **Traffic Manager プロファイルを作成します。** Traffic manager プロファイルの一意な名前を付けます。 プロファイルのこの名前の DNS 名の一部であり、Traffic Manager ドメイン名のラベルのプレフィックスとして機能します。 名前にプレフィックスを追加/。trafficmanager.net に DNS ラベルを、トラフィック マネージャーを作成します。 次のスクリーン ショット、traffic manager DNS プレフィックスがためとして設定されると、結果として得られる DNS ラベルは mysts.trafficmanager.net になります。 
    
     ![Traffic Manager プロファイルの作成](./media/active-directory-adfs-in-azure-with-azure-traffic-manager/trafficmanager01.png)
 2. **トラフィック ルーティング方法。** 次の 3 つのルーティング オプションを traffic manager で利用できるがあります。
