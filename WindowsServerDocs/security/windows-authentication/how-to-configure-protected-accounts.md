@@ -14,7 +14,7 @@ manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: 5dab9ff9924d8afe05bd6b033ca513172d9aaeff
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59829503"
@@ -191,7 +191,7 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
   
 1.  既定のドメイン コントローラー ポリシーで、[コンピューターの構成]、[管理用テンプレート]、[システム]、[KDC] の順に展開し、**[有効]** をクリックして **[要求、複合認証、および Kerberos 防御のキー配布センター (KDC) クライアント サポート]** を有効化します。  
   
-    ![既定のドメイン コント ローラー ポリシー] をクリックして * * 有効 * 有効にする * * 信頼性情報、複合認証および Kerberos 防御のキー配布センター (KDC) クライアント サポート * * [コンピューターの構成 |管理用テンプレート |システム |KDC](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_EnableKDCClaims.gif)  
+    ![既定のドメイン コント ローラー ポリシー をクリックして * * 有効 * 有効にする * * 信頼性情報、複合認証および Kerberos 防御のキー配布センター (KDC) クライアント サポート * *コンピューターの構成 |管理用テンプレート |システム |KDC](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_EnableKDCClaims.gif)  
   
 2.  **[オプション]** のドロップダウン リスト ボックスで、 **[常に信頼性情報を提供する]** を選択します。  
   

@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 216af933aee643ee56feff71c59d9ecc2e62998c
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59842993"
@@ -213,7 +213,7 @@ Exchange Online のインフラストラクチャに関連する IP アドレス
 >IP アドレスは、文字列と数ではなくとして扱われます。
 
 
-このルールは次のように分割されます \b192\.168\.1。\.
+このルールは次のように分割されます \b192\.168\.1\.
 
 これには、192. 168.1 始まる任意の値と一致します。
 
