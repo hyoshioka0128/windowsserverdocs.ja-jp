@@ -11,7 +11,7 @@ ms.date: 01/18/2019
 description: Microsoft Azure を使用して、クラウドでの Windows Server フェールオーバー クラスターのミラーリング監視サーバーをホストする方法、クラウドのミラーリング監視サーバーをデプロイする方法とも呼ばれます。
 ms.openlocfilehash: f7e1c84e54f08044a772f06e591588c1add33026
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59857983"
@@ -121,7 +121,7 @@ Azure ポータルでストレージ アカウントに移動 をクリックし
 ### <a name="to-configure-cloud-witness-as-a-quorum-witness"></a>クラウド監視をクォーラム監視として構成するには
 1. フェールオーバー クラスター マネージャーを起動します。
 2. クラスター -> を右クリックして**その他のアクション** -> **クラスター クォーラム設定の構成**(図 6 参照)。 これは、クラスター クォーラムの構成ウィザードを起動します。  
-    ![フェールオーバー クラスター マネージャーの UI でのクラスター クォーラム設定の構成] メニューの [パスのスナップショット](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_7.png)**図 6。クラスター クォーラムの設定**
+    ![フェールオーバー クラスター マネージャーの UI でのクラスター クォーラム設定の構成 メニューの パスのスナップショット](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_7.png)**図 6。クラスター クォーラムの設定**
 
 3. **クォーラム構成の選択**] ページで [**クォーラム監視を選択する**(図 7 を参照してください)。  
 
