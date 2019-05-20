@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 18a49f2e4629b1410a1cec40fe77077c2988dce2
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59836123"
@@ -41,7 +41,7 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
 |logging|ログ記録を有効にします。 ログ ファイルが設定されていない場合、エラー メッセージが表示されます。|  
 |{コンソールと #124; 画面} モード|操作モードを設定します。|  
 |ntlm|NTLM 認証を有効にします。|  
-|{ansi & #124; vt100 & #124; vt52 & #124; vtnt} 用語|端末の種類を設定します。|  
+|{ansi &#124; vt100 &#124; vt52 &#124; vtnt} 用語|端末の種類を設定します。|  
 |?|このコマンドのヘルプを表示します。|  
 ## <a name="remarks"></a>注釈  
 1.  使用することができます、 **未設定** コマンドに設定されているオプションをオフにします。  

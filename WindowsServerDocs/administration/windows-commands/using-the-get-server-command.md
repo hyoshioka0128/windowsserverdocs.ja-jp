@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: da8bf0fc6e31bd8d0079933f1d7c529c4fe96f42
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59870983"
@@ -33,7 +33,7 @@ wdsutil [Options] /Get-Server [/Server:<Server name>] /Show:{Config | Images | A
 |パラメーター|説明|
 |-------|--------|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
-|/表示: {Config & #124 文字です。イメージと #124 文字です。すべて}|返される情報の種類を指定します。<br /><br />-   **Config**構成情報を返します。<br />-   **イメージ**イメージ グループ、ブート イメージ、およびインストール イメージに関する情報を返します。<br />-   **すべて**構成情報とイメージ情報を返します。|
+|/表示: {Config &#124 文字です。イメージと #124 文字です。すべて}|返される情報の種類を指定します。<br /><br />-   **Config**構成情報を返します。<br />-   **イメージ**イメージ グループ、ブート イメージ、およびインストール イメージに関する情報を返します。<br />-   **すべて**構成情報とイメージ情報を返します。|
 |[/詳細]|このオプションを使用することができます **/Show:Images** または **/Show:All** を指定する各イメージからすべてのイメージのメタデータを返す必要があります。 場合、**詳細/** オプションが使用されない場合、既定の動作は、イメージの名前、説明、およびファイル名を返すには。|
 ## <a name="BKMK_examples"></a>例
 サーバーに関する情報を表示するには、次のように入力します。

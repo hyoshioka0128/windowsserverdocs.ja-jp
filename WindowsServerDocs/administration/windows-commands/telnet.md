@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 6439a91d82d6d199666629e333d8130bf65a384b
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59858563"
@@ -36,7 +36,7 @@ telnet [/a] [/e <EscapeChar>] [/f <FileName>] [/l <UserName>] [/t {vt100 | vt52 
 |/e \<EscapeChar >|Telnet クライアント プロンプトを入力するために使用する文字をエスケープします。|
 |/f \<FileName>|クライアント側のログ記録に使用するファイル名。|
 |/l\<ユーザー名 >|リモート コンピューター上でログオンするユーザー名を指定します。|
-|/t {vt100 & #124; vt52 & #124; ansi & #124; vtnt}|端末の種類を指定します。 サポートされている種類の端末は、vt52、vt100、ansi、および vtnt です。|
+|/t {vt100 &#124; vt52 &#124; ansi &#124; vtnt}|端末の種類を指定します。 サポートされている種類の端末は、vt52、vt100、ansi、および vtnt です。|
 |\<ホスト > [\<ポート >]|ホスト名またはリモートのコンピューターに、接続して、必要に応じて使用する TCP ポートの IP アドレスを指定します (既定では TCP ポート 23)。|
 |/?|コマンド プロンプトにヘルプを表示します。 または、/h を入力することができます。|
 

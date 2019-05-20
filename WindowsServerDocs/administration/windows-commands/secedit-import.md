@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: f24cf173d1bacd70d92b325bfe7b342d0589a490
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59874283"
@@ -49,7 +49,7 @@ Secedit /import /db <database file name> /cfg <configuration file name> [/overwr
 
 別のコンピュータに、.inf ファイルをインポートする前にデータベースに対してコマンド secedit/generaterollback で実行、インポートに実行されると secedit、整合性を検証するインポート ファイルを検証/です。
 
-ログ ファイルのパス指定しない場合は、既定のログ ファイル (*systemroot*\Documents and Settings\*& #93;*\My Documents\Security\Logs\*DatabaseName*します。ログ) が使用されます。
+ログ ファイルのパス指定しない場合は、既定のログ ファイル (*systemroot*\Documents and Settings\*&#93;*\My Documents\Security\Logs\*DatabaseName*します。ログ) が使用されます。
 
 Windows Server 2008 で `Secedit /refreshpolicy` に置き換えられました `gpupdate`します。 セキュリティ設定を更新する方法については、次を参照してください。 [Gpupdate](gpupdate.md)します。
 

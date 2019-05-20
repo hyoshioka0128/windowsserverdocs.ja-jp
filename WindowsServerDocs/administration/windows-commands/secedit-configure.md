@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 8285c22c3c64b4f056124d8a1bb02297c7aea3c8
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59853393"
@@ -45,7 +45,7 @@ Secedit /configure /db <database file name> [/cfg <configuration file name>] [/o
 
 ## <a name="remarks"></a>注釈
 
-ログ ファイルのパス指定しない場合は、既定のログ ファイル (*systemroot*\Users \*& #93;*\My Documents\Security\Logs\*DatabaseName*.log) が使用されます。
+ログ ファイルのパス指定しない場合は、既定のログ ファイル (*systemroot*\Users \*&#93;*\My Documents\Security\Logs\*DatabaseName*.log) が使用されます。
 
 Windows Server 2008 で始まる `Secedit /refreshpolicy` に置き換えられました `gpupdate`します。 セキュリティ設定を更新する方法については、次を参照してください。 [Gpupdate](gpupdate.md)します。
 

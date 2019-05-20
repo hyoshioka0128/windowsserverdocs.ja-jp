@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 80bb9144936cf493784603bcbdb8a0d1e5c870bd
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59848063"
@@ -34,12 +34,12 @@ wdsutil [Options] /Set-Device /Device:<Device name> [/ID:<UUID | MAC address>] [
 |パラメーター|説明|
 |-------|--------|
 |/デバイス:<computer name>|コンピューター (SAM アカウント名) の名前を指定します。|
-|[/Id: < UUID & #124 文字です。MAC アドレス >]|GUID/UUID またはコンピューターの MAC アドレスのいずれかを指定します。 この値は、次の 3 つの形式のいずれかである必要があります。<br /><br />-バイナリ文字列: **/ID:ACEFA3E81F20694E953EB2DAA1E8B1B6**<br />文字列の GUID/UUID:/id:**E8A3EFAC-201F-4E69-953E-B2DAA1E8B1B6**<br />MAC アドレス:**00B056882FDC** (ダッシュ) または**00-B0-56-88-2F-DC** (ダッシュ付き) を含む|
+|[/Id: < UUID &#124 文字です。MAC アドレス >]|GUID/UUID またはコンピューターの MAC アドレスのいずれかを指定します。 この値は、次の 3 つの形式のいずれかである必要があります。<br /><br />-バイナリ文字列: **/ID:ACEFA3E81F20694E953EB2DAA1E8B1B6**<br />文字列の GUID/UUID:/id:**E8A3EFAC-201F-4E69-953E-B2DAA1E8B1B6**<br />MAC アドレス:**00B056882FDC** (ダッシュ) または**00-B0-56-88-2F-DC** (ダッシュ付き) を含む|
 |[/ReferralServer:<Server name>]|簡易のファイル転送プロトコル (tftp) を使用してネットワーク ブート プログラムとブート イメージをダウンロードする接続先サーバーの名前を指定します。|
 |[/BootProgram:<Relative path>]|RemoteInstall フォルダーから、指定されたコンピューターが受信するネットワーク ブート プログラムへの相対パスを指定します。 例: **boot\x86\pxeboot.com**|
 |[/WdsClientUnattend:<Relative path>]|Windows 展開サービス クライアントのインストール画面を自動化する無人セットアップ ファイルを remoteInstall フォルダーからの相対パスを指定します。|
 |[/User:<Domain\User &#124; User@Domain>]|指定したユーザー、コンピューターをドメインに参加させるために必要な権限を与えるコンピューター アカウント オブジェクトのアクセス許可を設定します。|
-|[/JoinRights: {JoinOnly & #124 文字です。完全}]|ユーザーに割り当てられる権限の種類を指定します。<br /><br />-   **JoinOnly**ユーザーでコンピューターをドメインに参加する前に、コンピューター アカウントをリセットするには、管理者が必要です。<br />-   **完全な**コンピューターをドメインに参加する権限を含め、ユーザーへのフル アクセスを提供します。|
+|[/JoinRights: {JoinOnly &#124 文字です。完全}]|ユーザーに割り当てられる権限の種類を指定します。<br /><br />-   **JoinOnly**ユーザーでコンピューターをドメインに参加する前に、コンピューター アカウントをリセットするには、管理者が必要です。<br />-   **完全な**コンピューターをドメインに参加する権限を含め、ユーザーへのフル アクセスを提供します。|
 |[/JoinDomain: {[はい] (& a) #124 文字です。No}]|ドメインに、Windows 展開サービスのインストール中のこのコンピューター アカウントとコンピューターを参加する必要があるかどうかを指定します。 既定の設定は **はい**します。|
 |[/BootImagepath:<Relative path>]|コンピューターが使用するブート イメージには、remoteInstall フォルダーからの相対パスを指定します。|
 |[/ドメイン:<Domain>]|事前登録されたコンピューターを検索するドメインを指定します。 既定値は、ローカル ドメインです。|

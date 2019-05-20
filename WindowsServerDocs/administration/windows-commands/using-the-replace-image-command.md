@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: e396ee678e22885a50c02800d77ecea1cc5ef8ba
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59819653"
@@ -55,7 +55,7 @@ wdsutil [Options] /replace-Imagmedia:<Image name> [/Server:<Server name>]
 メディア:<Image name>|置換されるイメージの名前を指定します。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
 メディアの種類: {ブート&#124;インストール}|置換されるイメージの種類を指定します。|
-|/アーキテクチャ: {x86 & #124; ia64 & #124; x64}|置換されるイメージのアーキテクチャを指定します。 さまざまなアーキテクチャのさまざまなブート イメージで同じイメージの名前を指定することも可能であるため、アーキテクチャを指定する適切なイメージを置き換えることにより、します。|
+|/アーキテクチャ: {x86 &#124; ia64 &#124; x64}|置換されるイメージのアーキテクチャを指定します。 さまざまなアーキテクチャのさまざまなブート イメージで同じイメージの名前を指定することも可能であるため、アーキテクチャを指定する適切なイメージを置き換えることにより、します。|
 |[/ファイル名:<File name>]|イメージは、名前によって一意に識別できない、このオプションを使用して、ファイル名を指定する必要があります。|
 |/replacementImage|交換用のイメージの設定を指定します。 次のオプションを使用してこれらの設定を設定します。<br /><br />-mediaFile: <file path> -名と、新しい .wim ファイルの場所 (完全パス) を指定します。<br />-[/SourceImage: <image name>]-.wim ファイルには、複数のイメージが含まれている場合に使用するイメージを指定します。 このオプションは、インストール イメージにのみ適用されます。<br />-[/Name:<Image name>] イメージの表示名を設定します。<br />-[/説明:<Image description>]-イメージの説明を設定します。|
 ## <a name="BKMK_examples"></a>例

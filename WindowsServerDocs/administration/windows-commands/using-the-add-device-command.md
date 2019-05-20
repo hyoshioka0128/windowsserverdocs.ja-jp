@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 85e9ef4445b4dabbe85c2397d62b06756e17879d
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59878543"
@@ -40,7 +40,7 @@ wdsutil /add-Device /Device:<Device name> /ID:<UUID | MAC address> [/ReferralSer
 |[/BootProgram:<Relative path>]|RemoteInstall フォルダーからこのコンピューターが受け取る必要のあるネットワーク ブート プログラムへの相対パスを指定します。 例:"boot\x86\pxeboot.com"|
 |[/WdsClientUnattend:<Relative path>]|Windows 展開サービス クライアントのインストール画面を自動化する無人インストール ファイルを remoteInstall フォルダーからの相対パスを指定します。|
 |[/User:<Domain\User &#124; User@Domain>]|指定したユーザー、コンピューターをドメインに参加させるために必要な権限を与えるコンピューター アカウント オブジェクトのアクセス許可を設定します。|
-|[/JoinRights: {JoinOnly & #124 文字です。完全}]|ユーザーに割り当てられる権限の種類を指定します。<br /><br />-   **JoinOnly**ユーザーでコンピューターをドメインに参加する前に、コンピューター アカウントをリセットするには、管理者が必要です。<br />-   **完全な**へのフル アクセスは、ユーザー、コンピューターをドメインに参加する権限が含まれます。|
+|[/JoinRights: {JoinOnly &#124 文字です。完全}]|ユーザーに割り当てられる権限の種類を指定します。<br /><br />-   **JoinOnly**ユーザーでコンピューターをドメインに参加する前に、コンピューター アカウントをリセットするには、管理者が必要です。<br />-   **完全な**へのフル アクセスは、ユーザー、コンピューターをドメインに参加する権限が含まれます。|
 |[/JoinDomain: {[はい] (& a) #124 文字です。No}]|ドメインに、オペレーティング システムのインストール中のこのコンピューター アカウントとコンピューターを参加する必要があるかどうかを指定します。 既定値は **はい**します。|
 |[/BootImagepath:<Relative path>]|このコンピューターが使用するブート イメージには、remoteInstall フォルダーからの相対パスを指定します。|
 |[/OU:<DN of OU>]|コンピューター アカウント オブジェクトを作成する必要が組織単位の識別名。 次に、例を示します。**OU = MyOU, CN テスト, DC = Domain, DC = com を =** します。 既定の場所は、既定のコンピュータのコンテナーです。|

@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 324da8de153a5487c9d71872cd154928cc24c285
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59848823"
@@ -46,7 +46,7 @@ Secedit /analyze /db <database file name> [/cfg <configuration file name>] [/ove
 
 分析結果は、データベースの独立した領域には保存され、セキュリティの構成と分析スナップインを MMC で表示できます。
 
-ログ ファイルのパス指定しない場合は、既定のログ ファイル (*systemroot*\Documents and Settings\*& #93;*\My Documents\Security\Logs\*DatabaseName*します。ログ) が使用されます。
+ログ ファイルのパス指定しない場合は、既定のログ ファイル (*systemroot*\Documents and Settings\*&#93;*\My Documents\Security\Logs\*DatabaseName*します。ログ) が使用されます。
 
 Windows Server 2008 で `Secedit /refreshpolicy` に置き換えられました `gpupdate`します。 セキュリティ設定を更新する方法については、次を参照してください。 [Gpupdate](gpupdate.md)します。
 
