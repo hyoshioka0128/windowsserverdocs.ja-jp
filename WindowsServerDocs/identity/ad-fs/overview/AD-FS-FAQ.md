@@ -223,7 +223,7 @@ ADFS の userinfo エンドポイントは、OpenID 標準で指定されてい�
 4.  **クリックして**高度な。 **クリックして**を追加します。 **クリックして**プリンシパルを選択します。
 5.  [ユーザー、コンピューター、サービス アカウントまたはグループ] ダイアログ ボックスが表示されます。  テキスト ボックスに入力オブジェクトの名前、キーの管理グループを入力します。  [OK] をクリックします。
 6.  [適用先] ボックスの一覧で選択**子孫ユーザー オブジェクト**します。
-7.  スクロール バーを使用して、ページの下部までスクロールし、 ** をクリックして**すべてクリアします。
+7.  スクロール バーを使用して、ページの下部までスクロールし、 **をクリックして** すべてクリアします。
 8.  **プロパティ**セクションで、 **msDS KeyCredentialLink を読み取る**と**書き込み msDS KeyCredentialLink**します。
 
 ### <a name="why-does-modern-authentication-from-android-devices-fail-if-the-server-does-not-send-all-the-intermediate-certificates-in-the-chain-with-the-ssl-cert"></a>Android デバイスからの最新の認証が失敗する理由、サーバーが SSL 証明書チェーン内すべての中間証明書を送信しない場合ですか。

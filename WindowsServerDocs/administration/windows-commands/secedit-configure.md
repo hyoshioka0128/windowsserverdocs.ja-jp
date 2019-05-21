@@ -45,7 +45,7 @@ Secedit /configure /db <database file name> [/cfg <configuration file name>] [/o
 
 ## <a name="remarks"></a>注釈
 
-ログ ファイルのパス指定しない場合は、既定のログ ファイル (*systemroot*\Users \*&#93;*\My Documents\Security\Logs\*DatabaseName*.log) が使用されます。
+ログ ファイルのパスを指定しない場合、既定のログ ファイル (*systemroot*\Users \**UserAccount\*\My Documents\Security\Logs*DatabaseName.log) を使用します。
 
 Windows Server 2008 で始まる `Secedit /refreshpolicy` に置き換えられました `gpupdate`します。 セキュリティ設定を更新する方法については、次を参照してください。 [Gpupdate](gpupdate.md)します。
 

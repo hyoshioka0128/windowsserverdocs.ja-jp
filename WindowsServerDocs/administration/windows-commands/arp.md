@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 5cd84269a5ac1a85d4b6cf359cc97f478a500c4f
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59825983"
@@ -32,7 +32,7 @@ arp [/a [<Inetaddr>] [/n <ifaceaddr>]] [/g [<Inetaddr>] [-n <ifaceaddr>]] [/d <I
 ### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-|/a [<Inetaddr>] [/n <ifaceaddr>]|すべてのインターフェイスの現在の arp キャッシュ テーブルが表示されます。 /N パラメーターは大文字小文字を区別します。<br /><br />特定の IP アドレスの arp キャッシュ エントリを表示する使用**arp/a**で、 *Inetaddr*パラメーター、場所*Inetaddr* IP アドレスです。 場合*Inetaddr*が指定されていない、最初に適用可能なインターフェイスを使用します。<br /><br />Arp キャッシュ テーブルの特定のインターフェイスを表示するを使用して、**n/* * * ifaceaddr*パラメーターと組み合わせて、 **/a**パラメーター場所*ifaceaddr*は IP アドレスですインターフェイスに割り当てられます。|
+|/a [<Inetaddr>] [/n <ifaceaddr>]|すべてのインターフェイスの現在の arp キャッシュ テーブルが表示されます。 /N パラメーターは大文字小文字を区別します。<br /><br />特定の IP アドレスの arp キャッシュ エントリを表示する使用**arp/a**で、 *Inetaddr*パラメーター、場所*Inetaddr* IP アドレスです。 場合*Inetaddr*が指定されていない、最初に適用可能なインターフェイスを使用します。<br /><br />Arp キャッシュ テーブルの特定のインターフェイスを表示するを使用して、**n/***ifaceaddr* パラメーターと組み合わせて、 **/a**パラメーター場所*ifaceaddr*は IP アドレスですインターフェイスに割り当てられます。|
 |/g [<Inetaddr>] [/n <ifaceaddr>]|同じ **/a**します。|
 |[/d <Inetaddr> [<ifaceaddr>]|特定の IP アドレスを持つエントリを削除します。 ここ*Inetaddr*は IP アドレスです。<br /><br />特定のインターフェイス用のテーブルにエントリを削除するには使用、 *ifaceaddr*パラメーター、 *ifaceaddr*インターフェイスに割り当てられている IP アドレスです。<br /><br />すべてのエントリを削除するには、アスタリスクを使用 (\*) の代わりにワイルドカード文字*Inetaddr*します。|
 |/s <Inetaddr> <Etheraddr> [<ifaceaddr>]|IP アドレスを解決するための arp キャッシュに静的なエントリを追加します。 *Inetaddr*物理アドレスに*Etheraddr*します。<br /><br />特定のインターフェイスのテーブルには、静的 arp キャッシュ エントリを追加するには、使用、 *ifaceaddr*パラメーター、 *ifaceaddr*インターフェイスに割り当てられている IP アドレスです。|

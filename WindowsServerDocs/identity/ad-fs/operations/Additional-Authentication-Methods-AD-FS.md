@@ -10,7 +10,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 68cd67dc14d3407985579a49e2f8603634fafdb7
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59824433"
@@ -75,7 +75,7 @@ PS C:\> Set-AdfsGlobalAuthenticationPolicy -AllowAdditionalAuthenticationAsPrima
 AD FS サービスを有効にするか、プライマリと追加の認証を無効にすると再起動する必要があります。
 
 ### <a name="using-the-ad-fs-management-console"></a>AD FS 管理コンソールを使用します。
-AD FS 管理コンソールで **サービス** -> **認証方法****プライマリ認証方法**編集 をクリックして
+AD FS 管理コンソールで [**サービス** -> **認証方法** **プライマリ認証方法**編集] をクリックして
 
 チェック ボックスをクリックします。**プライマリと追加の認証プロバイダーを許可する**します。
 

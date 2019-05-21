@@ -46,7 +46,7 @@ Secedit /analyze /db <database file name> [/cfg <configuration file name>] [/ove
 
 分析結果は、データベースの独立した領域には保存され、セキュリティの構成と分析スナップインを MMC で表示できます。
 
-ログ ファイルのパス指定しない場合は、既定のログ ファイル (*systemroot*\Documents and Settings\*&#93;*\My Documents\Security\Logs\*DatabaseName*します。ログ) が使用されます。
+ログ ファイルのパスを指定しない場合、既定のログ ファイル (*systemroot*\Documents and 設定\**UserAccount\*\My Documents\Security\Logs*DatabaseName.log) を使用します。
 
 Windows Server 2008 で `Secedit /refreshpolicy` に置き換えられました `gpupdate`します。 セキュリティ設定を更新する方法については、次を参照してください。 [Gpupdate](gpupdate.md)します。
 

@@ -11,7 +11,7 @@ ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: 59b761e69da5b1c1e27fea71b32447b19d2b83c6
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59812083"
@@ -69,7 +69,7 @@ Windows Server 2016 の AD FS サーバーは、Windows Server 2012 R2 ファー
 >[!NOTE]
 >セット AdfsSyncProperties を使用して、プライマリ AD FS サーバーを設定する必要はありません-ロール、データベースとして SQL を使用する場合。  これは、この構成ではプライマリのすべてのノードと見なされるためにです。
 
-1.  サーバー マネージャーの使用中の Windows Server 2012 R2 AD FS サーバーで**役割の削除と機能****管理**します。 
+1.  サーバー マネージャーの使用中の Windows Server 2012 R2 AD FS サーバーで**役割の削除と機能**  **管理**します。 
 ![サーバーを削除します。](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove1.png)
 2.  **[開始する前に]** 画面で、**[次へ]** をクリックします。
 3.  **サーバーの選択** 画面で、をクリックして**次**。

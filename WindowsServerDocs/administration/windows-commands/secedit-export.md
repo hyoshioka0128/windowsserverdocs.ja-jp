@@ -48,7 +48,7 @@ Secedit /export /db <database file name> [/mergedpolicy] /cfg <configuration fil
 
 このコマンドを使用して、別のコンピューターに、設定をインポートするだけでなく、ローカル コンピューターで、セキュリティ ポリシーをバックアップできます。
 
-ログ ファイルのパス指定しない場合は、既定のログ ファイル (*systemroot*\Documents and Settings\*&#93;*\My Documents\Security\Logs\*DatabaseName*します。ログ) が使用されます。
+ログ ファイルのパスを指定しない場合、既定のログ ファイル (*systemroot*\Documents and 設定\**UserAccount\*\My Documents\Security\Logs*DatabaseName.log) を使用します。
 
 Windows Server 2008 で `Secedit /refreshpolicy` に置き換えられました `gpupdate`します。 セキュリティ設定を更新する方法については、次を参照してください。 [Gpupdate](gpupdate.md)します。
 
