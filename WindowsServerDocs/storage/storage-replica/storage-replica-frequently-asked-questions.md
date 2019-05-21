@@ -223,7 +223,7 @@ Test-srtopology のツールを実行して、ログのサイズ変更の推奨�
 必要があります、*インストール*ソースと宛先の両方のサーバーでデータ重複除去 (を参照してください[のインストールとデータ重複除去を有効にする](../data-deduplication/install-enable.md))、ない重要なに*を有効にする*移行先サーバーでデータ重複除去します。 記憶域レプリカには、移行元サーバー上のみの書き込みができます。 データ重複除去がボリュームに書き込みするためは、移行元サーバーでのみ実行する必要があります。 
 
 ## <a name="FAQ17"></a> 記憶域レプリカやこのガイドには問題を報告する方法を教えてください。  
-記憶域レプリカの技術的サポートが必要な場合は、[Microsoft TechNet フォーラム](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=WinServerPreview)から投稿できます。 記憶域レプリカに関する質問や、このドキュメントに関する問題は、srfeed@microsoft.com に電子メールを送信することもできます。 https://windowsserver.uservoice.comアイデアについては、サポートとフィードバックを提供する、他のお客様が許可されている、サイトが設計変更要求、優先的に使用します。
+記憶域レプリカの技術的サポートが必要な場合は、[Microsoft TechNet フォーラム](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=WinServerPreview)から投稿できます。 記憶域レプリカに関する質問や、このドキュメントに関する問題は、srfeed@microsoft.com に電子メールを送信することもできます。  https://windowsserver.uservoice.com アイデアについては、サポートとフィードバックを提供する、他のお客様が許可されている、サイトが設計変更要求、優先的に使用します。
 
 
 
