@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 02/15/2019
-ms.openlocfilehash: 61fdd70e53a49b704e11f71f0e5eb3176c31c378
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: f4fd9f69e75ed80bbdb345b4041c2337c65ec2e6
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876013"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63742558"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Windows Admin Center を概要します。
 
@@ -64,7 +64,7 @@ Windows Admin Center のインストールを完了すると後、は、サー�
 
     ![](../media/launch/addserver2.png)
 
-   **--または--**  
+   **--または--**
 
 **複数のサーバーを一括インポートします。**
 
@@ -73,6 +73,18 @@ Windows Admin Center のインストールを完了すると後、は、サー�
     ![](../media/launch/import-servers.png)
 
  2. クリックして**参照**コンマを含むテキスト ファイルを選択するか、新しい行区切りを追加するサーバーの Fqdn の一覧。
+
+    **--または--**
+
+**サーバーを追加するには、Active Directory の検索**
+
+ 1. **サーバー接続の追加**ページで、選択、 **Active Directory を検索**タブ。
+
+    ![](../media/launch/search-ad.png)
+
+ 2. 検索条件を入力し、クリックして**検索**します。 ワイルドカード (*) がサポートされています。
+
+ 3. 検索が完了すると、結果の 1 つ以上選択、必要に応じてタグを追加、およびクリックして**追加**します。
 
 ## <a name="authenticate-with-the-managed-node"></a>管理対象ノードでの認証します。 ##
 
@@ -142,9 +154,6 @@ Windows Admin Center は、Windows Server でサービス モードで実行さ�
 
 Windows Admin Center Preview には、インポートまたは接続一覧をエクスポートする PowerShell モジュールが含まれています。
 
->[!IMPORTANT]
->PowerShell モジュールとの接続のインポートとエクスポートは、Windows Admin Center は、Windows server ゲートウェイのサービスとしてデプロイされている場合にのみサポートします。
-
 ```powershell
 # Load the module
 Import-Module "$env:ProgramFiles\windows admin center\PowerShell\Modules\ConnectionTools"
@@ -158,7 +167,7 @@ Import-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
 
 ### <a name="csv-file-format-for-importing-connections"></a>接続をインポートするための CSV ファイルの形式
 
-CSV ファイルの形式は、3 つのヘッダーで始まる: ```"name","type","tags"```、その後に新しい行に各接続します。
+CSV ファイルの形式は次の 4 つの見出しで始まる```"name","type","tags","groupId"```、その後に新しい行に各接続します。
 
 **名前**は、接続の FQDN です
 
@@ -173,15 +182,17 @@ CSV ファイルの形式は、3 つのヘッダーで始まる: ```"name","type
 
 **タグ**はパイプで区切られました。
 
+**groupId**共有接続のために使用します。 値を使用して```global```接続を共有するには、この列にします。
+
 ### <a name="example-csv-file-for-importing-connections"></a>接続のインポートの CSV ファイルの例
 
 ```
-"name","type","tags"
+"name","type","tags","groupId"
 "myServer.contoso.com","msft.sme.connection-type.server","hyperv"
 "myDesktop.contoso.com","msft.sme.connection-type.windows-client","hyperv"
-"mycluster.contoso.com","msft.sme.connection-type.cluster","legacyCluster|WS2016"
+"teamcluster.contoso.com","msft.sme.connection-type.cluster","legacyCluster|WS2016","global"
 "myHCIcluster.contoso.com,"msft.sme.connection-type.hyper-converged-cluster","myHCIcluster|hyperv|JIT|WS2019"
-"myclusterNode.contoso.com","msft.sme.connection-type.server","legacyCluster|WS2016"
+"teamclusterNode.contoso.com","msft.sme.connection-type.server","legacyCluster|WS2016","global"
 "myHCIclusterNode.contoso.com","msft.sme.connection-type.server","myHCIcluster|hyperv|JIT|WS2019"
 ```
 
@@ -270,7 +281,7 @@ CSV ファイルの形式は、3 つのヘッダーで始まる: ```"name","type
    RdgToWacCsv -RDGfilepath "path\to\myRDCManfile.rdg"
    ```
 
-3. 結果をインポートします。内の CSV ファイルには、Windows Admin Center と、すべての RDCMan グループ階層は、接続の一覧でタグを使用して表されます。 詳細については、次を参照してください。 [PowerShell インポートまたはエクスポート (タグ) で接続を使用して](#use-powershell-to-import-or-export-your-connections-(with-tags))します。
+3. 結果をインポートします。内の CSV ファイルには、Windows Admin Center と、すべての RDCMan グループ階層は、接続の一覧でタグを使用して表されます。 詳細については、次を参照してください。 [PowerShell インポートまたはエクスポート (タグ) で接続を使用して](#use-powershell-to-import-or-export-your-connections-with-tags)します。
 
 ## <a name="view-powershell-scripts-used-in-windows-admin-center"></a>Windows Admin Center で使用される PowerShell スクリプトを表示します。
 

@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: d7a55ddc3caea1002ab51ce4f992b36673ea312b
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59825643"
@@ -44,7 +44,7 @@ Secedit /generaterollback /db <database file name> /cfg <configuration file name
 
 ## <a name="remarks"></a>注釈
 
-ログ ファイルのパス指定しない場合は、既定のログ ファイル (*systemroot*\Users \*& #93;*\My Documents\Security\Logs\*DatabaseName*.log) が使用されます。
+ログ ファイルのパス指定しない場合は、既定のログ ファイル (*systemroot*\Users \*&#93;*\My Documents\Security\Logs\*DatabaseName*.log) が使用されます。
 
 Windows Server 2008 で始まる `Secedit /refreshpolicy` に置き換えられました `gpupdate`します。 セキュリティ設定を更新する方法については、次を参照してください。 [Gpupdate](gpupdate.md)します。
 

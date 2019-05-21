@@ -6,17 +6,17 @@ ms.technology: storage-failover-clustering
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 2fcc6047a0e85170754d8f05d10f728a4c529049
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 454783a13b834ef705bd896155195750de2b183c
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871963"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772718"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>Active Directory でクラスターのアカウントを構成する
 
 
-適用先:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、および Windows Server 2008
+適用先:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、および Windows Server 2008
 
 Windows Server、フェールオーバー クラスターを作成して、クラスター化されたサービスまたはアプリケーションを構成する場合、フェールオーバー クラスター ウィザードが、必要な Active Directory コンピューター アカウント (コンピューター オブジェクトとも呼ばれます) を作成し、特定のアクセス許可を付与します。 ウィザードは、例外を HYPER-V 仮想マシン、クラスター自体のコンピューター アカウント (このアカウントとも、クラスター名オブジェクト CNO) とクラスター化されたサービスとアプリケーションのほとんどの種類のコンピューター アカウントを作成します。 これらのアカウントのアクセス許可は、フェールオーバー クラスター ウィザードによって自動的に設定されます。 アクセス許可を変更する場合は、クラスターの要件に一致するように戻す変更する必要があります。 このガイドは、これらの Active Directory アカウントとアクセス許可について説明しますには、重要な理由の背景を提供および構成し、アカウントを管理するための手順について説明します。
       
@@ -113,7 +113,7 @@ Windows Server、フェールオーバー クラスターを作成して、ク�
 
 ### <a name="planning-ahead-for-password-resets-and-other-account-maintenance"></a>パスワードのリセットやその他のアカウント メンテナンスの事前の計画
 
-フェールオーバー クラスターの管理者は、クラスター名アカウントのパスワードをリセットする必要もあります。 このアクションには、特定のアクセス許可が必要です、**パスワードのリセット**権限。 そのため、ベスト プラクティス (Active Directory ユーザーとコンピューター スナップインを使用) して、クラスター名アカウントのアクセス許可を編集するのには、クラスターの管理者に提供する、**パスワードのリセット**クラスターのアクセス許可アカウントの名前。 詳細については、次を参照してください。[名アカウント クラスター パスワードに関する問題のトラブルシューティング手順](#steps_for_troubleshooting_password_problems_with_the_cluster_name_account)、このガイドで後述します。
+フェールオーバー クラスターの管理者は、クラスター名アカウントのパスワードをリセットする必要もあります。 このアクションには、特定のアクセス許可が必要です、**パスワードのリセット**権限。 そのため、ベスト プラクティス (Active Directory ユーザーとコンピューター スナップインを使用) して、クラスター名アカウントのアクセス許可を編集するのには、クラスターの管理者に提供する、**パスワードのリセット**クラスターのアクセス許可アカウントの名前。 詳細については、次を参照してください。[名アカウント クラスター パスワードに関する問題のトラブルシューティング手順](#steps-for-troubleshooting-password-problems-with-the-cluster-name-account)、このガイドで後述します。
 
 ## <a name="steps-for-configuring-the-account-for-the-person-who-installs-the-cluster"></a>クラスターをインストールするユーザーのアカウントを構成する手順
 

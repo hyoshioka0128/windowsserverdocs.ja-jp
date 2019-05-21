@@ -152,8 +152,8 @@ NLB をインストールする Windows PowerShell を使用して、実行、�
   
 |コンテンツの種類|参考資料|  
 |----------------|--------------|  
-|展開|[ネットワーク負荷分散展開ガイド](https://technet.microsoft.com/library/cc754833(WS.10).aspx) & #124; [ネットワーク負荷分散ターミナル サービスの構成](https://technet.microsoft.com/library/cc771300(v=WS.10).aspx)|  
-|操作|[ネットワーク負荷分散クラスターを管理する](https://technet.microsoft.com/library/cc753954(WS.10).aspx) & #124; [ネットワーク負荷分散パラメーターの設定](https://technet.microsoft.com/library/cc731619(WS.10).aspx) & #124; [ネットワーク負荷分散クラスター上のホストを制御します。](https://technet.microsoft.com/library/cc770870(WS.10).aspx)|  
-|トラブルシューティング|[ネットワーク負荷分散クラスターのトラブルシューティング](https://technet.microsoft.com/library/cc732592(WS.10).aspx) & #124; [NLB クラスターのイベントとエラー](https://technet.microsoft.com/library/cc731678(WS.10).aspx)|
+|展開|[ネットワーク負荷分散展開ガイド](https://technet.microsoft.com/library/cc754833(WS.10).aspx) &#124; [ネットワーク負荷分散ターミナル サービスの構成](https://technet.microsoft.com/library/cc771300(v=WS.10).aspx)|  
+|操作|[ネットワーク負荷分散クラスターを管理する](https://technet.microsoft.com/library/cc753954(WS.10).aspx) &#124; [ネットワーク負荷分散パラメーターの設定](https://technet.microsoft.com/library/cc731619(WS.10).aspx) &#124; [ネットワーク負荷分散クラスター上のホストを制御します。](https://technet.microsoft.com/library/cc770870(WS.10).aspx)|  
+|トラブルシューティング|[ネットワーク負荷分散クラスターのトラブルシューティング](https://technet.microsoft.com/library/cc732592(WS.10).aspx) &#124; [NLB クラスターのイベントとエラー](https://technet.microsoft.com/library/cc731678(WS.10).aspx)|
 |ツールと設定|[ネットワーク負荷分散の Windows PowerShell コマンドレット](https://go.microsoft.com/fwlink/p/?LinkId=238123)|
 |コミュニティ リソース|[高可用性\(クラスタ リング\)フォーラム](https://go.microsoft.com/fwlink/p/?LinkId=230641)
