@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: f8d23cc1bb5739b47c755d90c927cbcf82b8da7f
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59825023"
@@ -44,7 +44,7 @@ color [[<B>]<F>]
 
 ## <a name="remarks"></a>注釈
 
--   次の表に、有効な 16 進数の値として使用できる*B*と*F*します。  
+-   次の表に、有効な 16 進数の値として使用できる*B*と*F*します。   
     |Value|色|
     |-----|-----|
     |0|黒|
