@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 7aed2b88823c117a7424a4d90edd86829a53f786
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59822883"
@@ -511,7 +511,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /d {1 - 31} [/m {JAN -
 
 #### <a name="to-schedule-a-task-for-the-first-day-of-every-month"></a>毎月の最初の日にタスクをスケジュールするには
 
-次のコマンドは、毎月の最初の日に実行する MyApp プログラムをスケジュールします。 既定の修飾子は、[なし] (修飾子なし) であるため、既定の日は、1 日と既定の月は毎月、コマンドでは、その他のパラメーターは必要はありません。
+次のコマンドは、毎月の最初の日に実行する MyApp プログラムをスケジュールします。 既定の修飾子は、[なし]\(修飾子なし) であるため、既定の日は、1 日と既定の月は毎月、コマンドでは、その他のパラメーターは必要はありません。
 ```
 schtasks /create /tn "My App" /tr c:\apps\myapp.exe /sc monthly
 ```

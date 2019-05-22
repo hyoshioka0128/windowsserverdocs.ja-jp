@@ -76,7 +76,7 @@ fsutil usn [readjournal] [c= <chunk-size> s=<file-size-threshold>] <volumepath>
 
     変更ジャーナルは、この対象の値よりも大きくできますが、変更ジャーナルがこの値より小さくする次の NTFS のチェックポイントで切り捨てられます。 NTFS が、変更ジャーナルに調べの値を超えた場合、トリム*MaxSize*の値プラス*AllocationDelta*します。 NTFS のチェックポイントでは、オペレーティング システムは、どのような処理は、障害から復旧するために必要かを判断する NTFS を有効にする NTFS ログ ファイルにレコードを書き込みます。
 
--   使用して****
+-   使用して ****
 
     変更ジャーナルの複数の値の合計の拡張可能*MaxSize*と*AllocationDelta*を削除する対象の前にします。
 
