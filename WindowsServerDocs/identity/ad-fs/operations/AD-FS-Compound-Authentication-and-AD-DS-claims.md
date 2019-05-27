@@ -53,7 +53,7 @@ Active Directory Domain Services (AD DS) を使用してフェデレーション
 
 ### <a name="step-2-enable-kerberos-client-support-for-claims-compound-authentication-and-kerberos-armoring-on-computers-accessing-federated-applications"></a>手順 2:信頼性情報、複合認証、およびフェデレーション アプリケーションにアクセスするコンピューターでの Kerberos 防御の Kerberos クライアント サポートを有効にします。
 
-1.  フェデレーションのアプリケーションにアクセスするコンピューターに適用されるグループ ポリシーで、**グループ ポリシー管理エディター****コンピューターの構成**、展開**ポリシー**、展開**管理用テンプレート**、展開**システム**、選び**Kerberos**します。
+1.  フェデレーションのアプリケーションにアクセスするコンピューターに適用されるグループ ポリシーで、**グループ ポリシー管理エディター** **コンピューターの構成**、展開**ポリシー**、展開**管理用テンプレート**、展開**システム**、選び**Kerberos**します。
 2.  グループ ポリシー管理エディター ウィンドウの右側のウィンドウでダブルクリック**信頼性情報、複合認証、および Kerberos 防御の Kerberos クライアント サポートします。**
 3.  新しいダイアログ ウィンドウに Kerberos クライアント サポートを設定**有効** をクリック**適用**と**OK**。
 ![グループ ポリシーの管理](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc4.png)
@@ -121,7 +121,7 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 2.  ADFS サービスを再起動します。
 
 >[!NOTE]
->新しいサーバー (2012R2/2016) 障害が発生した次のエラー – 同じ gMSA の true の場合、インストールに設定すると、'CompoundIdentitySupported' **Install-adserviceaccount:サービス アカウントをインストールすることはできません。エラー メッセージ :' 指定されたコンテキストが一致しません、ターゲット。 '**.
+>新しいサーバー (2012R2/2016) 障害が発生した次のエラー – 同じ gMSA の true の場合、インストールに設定すると、'CompoundIdentitySupported' **Install-adserviceaccount:サービス アカウントをインストールすることはできません。エラー メッセージ :' 指定されたコンテキストが一致しません、ターゲット。 '** .
 >
 >**解決方法**:一時的に CompoundIdentitySupported を $false に設定します。 この手順では ADFS WindowsDeviceGroup 要求の発行を停止します。 Set-adserviceaccount-Identity 'ADFS サービス アカウント' - CompoundIdentitySupported: $false が、新しいサーバーで、gMSA をインストールし、CompoundIdentitySupported を $True に有効にします。
 CompoundIdentitySupported を無効にして、再有効化は、ADFS サービスの再起動は必要ありません。
@@ -133,7 +133,7 @@ CompoundIdentitySupported を無効にして、再有効化は、ADFS サービ�
 3.  **Active Director の要求規則の編集**クリックして**規則の追加**します。
 4.  **変換要求規則追加ウィザード**選択**パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
 5.  表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
-6.  **[Finish]**(完了) をクリックします。  クリックして**適用**と**Ok**します。 
+6.  **[Finish]** (完了) をクリックします。  クリックして**適用**と**Ok**します。 
 ![クレームの説明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc7.png)
 
 ### <a name="step-8-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>手順 8:'WindowsDeviceGroup' 要求が予想される証明書利用者のパーティでは、'パススルー' または '変換' のような要求規則を追加します。
@@ -141,7 +141,7 @@ CompoundIdentitySupported を無効にして、再有効化は、ADFS サービ�
 3.  **発行変換規則**クリックして**規則の追加**します。
 4.  **変換要求規則追加ウィザード**選択 **パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
 5.  表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
-6.  **[Finish]**(完了) をクリックします。  クリックして**適用**と**Ok**します。
+6.  **[Finish]** (完了) をクリックします。  クリックして**適用**と**Ok**します。
 ![クレームの説明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc8.png)
 
 
@@ -192,7 +192,7 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 2.  ADFS サービスを再起動します。
 
 >[!NOTE]
->新しいサーバー (2012R2/2016) 障害が発生した次のエラー – 同じ gMSA の true の場合、インストールに設定すると、'CompoundIdentitySupported' **Install-adserviceaccount:サービス アカウントをインストールすることはできません。エラー メッセージ :' 指定されたコンテキストが一致しません、ターゲット。 '**.
+>新しいサーバー (2012R2/2016) 障害が発生した次のエラー – 同じ gMSA の true の場合、インストールに設定すると、'CompoundIdentitySupported' **Install-adserviceaccount:サービス アカウントをインストールすることはできません。エラー メッセージ :' 指定されたコンテキストが一致しません、ターゲット。 '** .
 >
 >**解決方法**:一時的に CompoundIdentitySupported を $false に設定します。 この手順では ADFS WindowsDeviceGroup 要求の発行を停止します。 Set-adserviceaccount-Identity 'ADFS サービス アカウント' - CompoundIdentitySupported: $false が、新しいサーバーで、gMSA をインストールし、CompoundIdentitySupported を $True に有効にします。
 CompoundIdentitySupported を無効にして、再有効化は、ADFS サービスの再起動は必要ありません。
@@ -204,7 +204,7 @@ CompoundIdentitySupported を無効にして、再有効化は、ADFS サービ�
 3.  **Active Director の要求規則の編集**クリックして**規則の追加**します。
 4.  **変換要求規則追加ウィザード**選択 **パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
 5.  表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
-6.  **[Finish]**(完了) をクリックします。  クリックして**適用**と**Ok**します。 
+6.  **[Finish]** (完了) をクリックします。  クリックして**適用**と**Ok**します。 
 
 
 ### <a name="step-6-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>手順 6:'WindowsDeviceGroup' 要求が予想される証明書利用者のパーティでは、'パススルー' または '変換' のような要求規則を追加します。
@@ -212,7 +212,7 @@ CompoundIdentitySupported を無効にして、再有効化は、ADFS サービ�
 3.  **発行変換規則**クリックして**規則の追加**します。
 4.  **変換要求規則追加ウィザード**選択 **パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
 5.  表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
-6.  **[Finish]**(完了) をクリックします。  クリックして**適用**と**Ok**します。
+6.  **[Finish]** (完了) をクリックします。  クリックして**適用**と**Ok**します。
 
 ## <a name="validation"></a>［確認］
 'WindowsDeviceGroup' 要求のリリースを検証、テストを作成するには、.Net 4.6 を使用して対応するアプリケーションを要求します。 WIF sdk 4.0。
