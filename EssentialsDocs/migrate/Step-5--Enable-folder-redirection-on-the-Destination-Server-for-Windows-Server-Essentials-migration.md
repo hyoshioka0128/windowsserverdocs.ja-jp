@@ -14,7 +14,7 @@ ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 613ff4c80a80ed4f3207cb0c1ead6db12c723e85
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59815383"
@@ -43,7 +43,7 @@ ms.locfileid: "59815383"
   
 1.  移行先サーバーで、**[グループ ポリシーの管理]** 管理ツールを開きます。  
   
-2.  **Group Policy Management**、展開 **フォレスト: * * * ネットワーク ドメイン名*、展開**ドメイン**、展開*ネットワーク ドメイン名*、の順に展開および**グループ ポリシー オブジェクト**します。  
+2.  **Group Policy Management**、展開 **フォレスト:*** ネットワーク ドメイン名*、展開**ドメイン**、展開*ネットワーク ドメイン名*、の順に展開および **グループ ポリシー オブジェクト** します。  
   
 3.  削除するポリシーを右クリックして、**[削除]** をクリックします。  
   

@@ -15,7 +15,7 @@ manager: scottman
 ms.author: evas
 ms.openlocfilehash: 9d60a62d38149e1ceed1c05e013c41f7bdb819be
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59877673"
@@ -23,7 +23,7 @@ ms.locfileid: "59877673"
 # <a name="set-the-date-time-and-time-zone"></a>日付、時刻、タイム ゾーンを設定する
 デバイス ドライバーのインストールが完了したら、MultiPoint サーバー上の日付、時刻、タイム ゾーンを設定します。  
   
-1.  **開始**オープン MultiPoint server の画面**コントロール パネルの **します。  
+1.  **開始** オープン MultiPoint server の画面 **コントロール パネルの**します。  
   
 2.  [**時計、言語および地域**、] をクリックして**セット時刻と日付**します。  
   

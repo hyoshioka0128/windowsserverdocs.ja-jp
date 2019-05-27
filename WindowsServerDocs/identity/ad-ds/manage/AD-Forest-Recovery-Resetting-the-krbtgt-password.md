@@ -11,7 +11,7 @@ ms.assetid: 3bd6c1d0-d316-4b03-b7b4-557d4537635c
 ms.technology: identity-adds
 ms.openlocfilehash: 1ac0dcb9da1d10a417c128cb8498a5d8362d9a9f
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59883743"
@@ -29,7 +29,7 @@ ms.locfileid: "59883743"
   
 ## <a name="to-reset-the-krbtgt-password"></a>Krbtgt パスワードをリセットするには  
   
-1. をクリックして**開始**、 をポイント**コントロール パネルの **、 をポイント**管理ツール**、順にクリックします**Active Directory ユーザーとコンピューター**します。
+1. をクリックして**開始**、 をポイント**コントロール パネルの** 、 をポイント**管理ツール**、順にクリックします**Active Directory ユーザーとコンピューター**します。
 2. クリックして**ビュー**、 をクリックし、**高度な機能**します。
 3. コンソール ツリーで ドメインのコンテナーをダブルクリックし、クリックして**ユーザー**します。
 4. 詳細ペインで右クリックし、 **krbtgt**ユーザー アカウント、およびクリック**パスワードのリセット**します。

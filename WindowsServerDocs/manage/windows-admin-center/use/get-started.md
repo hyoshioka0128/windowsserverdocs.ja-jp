@@ -10,7 +10,7 @@ ms.prod: windows-server-threshold
 ms.date: 02/15/2019
 ms.openlocfilehash: f4fd9f69e75ed80bbdb345b4041c2337c65ec2e6
 ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/24/2019
 ms.locfileid: "63742558"
@@ -52,7 +52,7 @@ Windows Admin Center のインストールを完了すると後、は、サー�
 
  **管理対象ノードとして 1 台のサーバーまたはクラスターを追加します。**
 
- 1. をクリックして **+ 追加****すべて接続**します。
+ 1. をクリックして **+ 追加** **すべて接続**します。
 
     ![](../media/launch/addserver0.png)
 

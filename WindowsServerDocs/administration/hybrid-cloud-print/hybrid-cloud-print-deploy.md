@@ -14,7 +14,7 @@ manager: dongill
 ms.date: 3/15/2018
 ms.openlocfilehash: 6e9833489277c84739d489da34d352db8f565663
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59881843"
@@ -172,7 +172,7 @@ ms.locfileid: "59881843"
     - WAP コンピューターがドメインに、オンプレミスの Active Directory に参加しているかどうかを確認します。
 3. 移動し、Active Directory マシン**ツール]、[ユーザーとコンピューター**
     - アプリケーション プロキシ コネクタを実行しているマシンを選択します
-    - 右クリックして**プロパティの委任-> **  タブ
+    - 右クリックして**プロパティの委任** -> タブ
     - 選択**指定されたサービスのみへの委任でこのコンピューターを信頼します。**
     - 選択**任意の認証プロトコルを使用します。**
     - **このアカウントが委任された資格情報を提示できるサービス**

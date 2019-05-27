@@ -13,7 +13,7 @@ ms.author: kathydav
 ms.date: 10/07/2016
 ms.openlocfilehash: 1a658b611b68d7ecde64bdf0f8a318cc1af2804c
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59880263"
@@ -42,7 +42,7 @@ Windows server、HYPER-V の詳細については、次の表の各トピック�
 
 |テクノロジ|説明|
 |--------------|---------------|
-|[クライアント Hyper-v](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index)|Windows 8、Windows 8.1 およびを使ってインストールできる Windows 10 に含まれている仮想化テクノロジ **プログラムと機能** で、 **コントロール パネルの **します。|
+|[クライアント Hyper-v](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index)|Windows 8、Windows 8.1 およびを使ってインストールできる Windows 10 に含まれている仮想化テクノロジ **プログラムと機能** で、 **コントロール パネルの**します。|
 |[フェールオーバー クラスタ リング](https://docs.microsoft.com/windows-server/failover-clustering/whats-new-in-failover-clustering)|HYPER-V ホストとバーチャル マシンの高可用性を提供する Windows Server 機能です。|
 |[Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/overview)|仮想化されたデータ センターの管理ソリューションを提供する system Center コンポーネント。 構成して作成および仮想マシンとサービスを作成したプライベート クラウドに展開できるように、仮想化ホスト、ネットワーク、および記憶域リソースを管理します。|
 |[Windows コンテナー](https://docs.microsoft.com/virtualization/windowscontainers/)|Windows Server と HYPER-V のコンテナーを使用して、開発、テスト、および運用チームのための標準化された環境を提供します。|

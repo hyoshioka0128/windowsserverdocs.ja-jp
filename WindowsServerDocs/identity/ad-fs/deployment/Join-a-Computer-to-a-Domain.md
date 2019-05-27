@@ -11,7 +11,7 @@ ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: 811f5296143637974cf82e59d57665f8a96f1c8c
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59884113"
@@ -28,7 +28,7 @@ Web サーバーが要求をホストしている場合は、Web サーバーを
   
 ### <a name="to-join-a-computer-to-a-domain"></a>コンピューターをドメインに参加させる  
   
-1.  **開始**画面で「**コントロール パネルの **し、ENTER キーを押します。  
+1.  **開始**画面で「**コントロール パネルの** し、ENTER キーを押します。  
   
 2.  移動します**システムとセキュリティ**、 をクリックし、**システム**します。  
   

@@ -14,7 +14,7 @@ ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: d2005b72adede72b718fa5b49b93435f5fbac1bd
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59882503"
@@ -66,7 +66,7 @@ ms.locfileid: "59882503"
   
 2.  管理者として Windows PowerShell を開き、次のコマンドを実行します。  
   
-     **dism /online /set-edition:ServerStandard /accepteula /productkey:***プロダクト キー*  
+     **dism /online /set-edition:ServerStandard /accepteula /productkey:** *プロダクト キー*  
   
      場所*プロダクト キー*は Windows Server 2012 Standard のコピーのプロダクト キー。  
   

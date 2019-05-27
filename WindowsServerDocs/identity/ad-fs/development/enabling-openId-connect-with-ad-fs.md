@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 74a493e6568b71a05116140ec67586d36f439aa8
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59882663"
@@ -48,7 +48,7 @@ Windows Server 2012 R2 で AD FS での初期の Oauth サポートに基づき�
   
     ![AD FS の OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_2.PNG)  
   
-5.  **アプリケーション資格情報の構成**画面で、チェック ボックスをオンに**共有シークレットを生成**し、シークレットをコピーします。  **[次へ]** をクリックします。  
+5.  **アプリケーション資格情報の構成**画面で、チェック ボックスをオンに**共有シークレットを生成**し、シークレットをコピーします。 **[次へ]** をクリックします。  
   
     ![AD FS の OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_3.PNG)  
   

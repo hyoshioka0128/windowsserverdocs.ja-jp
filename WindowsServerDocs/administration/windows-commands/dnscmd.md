@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 39478e9b7dd8e8c69ed07f5d431486a7ed96b9cb
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59815503"
@@ -721,7 +721,7 @@ dnscmd [<ServerName>]/resetforwarders [<IPaddress> [、<IPaddress>]...][/タイ�
 IP アドレス、FQDN、またはホスト名によって表されるを管理する DNS サーバーを指定します。 このパラメーターを省略した場合は、ローカル サーバーが使用されます。  
 **<IPaddress>**  
 DNS サーバーが解決されていないクエリを転送する IP アドレスを一覧表示します。  
-* */タイムアウト <timeOut>**  
+**/タイムアウト <timeOut>**  
 DNS サーバーがフォワーダーからの応答を待機する秒数を設定します。 既定では、この値は 5 秒です。  
 **/slave|/noslave**  
 クエリを解決するのには、フォワーダーが失敗した場合、DNS サーバーが独自の反復的なクエリを実行するかどうかを決定します。  
@@ -814,11 +814,11 @@ IP アドレス、FQDN、またはホスト名によって表されるを管理�
 作成するゾーンの種類を指定します。 各ゾーンの種類では、他の必要なパラメーターがあります。  
 **/dsprimary**  
 active directory 統合ゾーンを作成します。  
-* */プライマリ/file <FileName>**  
+**/プライマリ/file <FileName>**  
 標準のプライマリ ゾーンを作成し、ゾーン情報を格納するファイルの名前を指定します。  
-* */セカンダリ<MasterIPaddress>[<MasterIPaddress>...]**  
+**/セカンダリ<MasterIPaddress>[<MasterIPaddress>...]**  
 標準のゾーンのセカンダリを作成します。  
-* */スタブ<MasterIPaddress>[<MasterIPaddress>...] ファイル <FileName>**  
+**/スタブ<MasterIPaddress>[<MasterIPaddress>...] ファイル <FileName>**  
 ファイルに格納されたスタブ ゾーンを作成します。  
 **/dsstub <MasterIPaddress> [<MasterIPaddress>...]**  
 active directory 統合スタブ ゾーンを作成します。  
@@ -869,14 +869,14 @@ AD DS からゾーンを削除します。
 **/f**  
 確認を求めずにコマンドを実行します。 ### 例を参照してください[例 9: DNS サーバーからゾーンを削除](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx)します。  
 ### <a name="BKMK_25"></a>dnscmd /zoneexport  
-指定されたゾーンのリソース レコードを一覧表示するテキスト ファイルを作成します。 ### 構文 'dnscmd [<ServerName>]/zoneexport <ZoneName> <ZoneExportFile>' ### パラメーター * *<ServerName>**  
+指定されたゾーンのリソース レコードを一覧表示するテキスト ファイルを作成します。 ### 構文 'dnscmd [<ServerName>]/zoneexport <ZoneName> <ZoneExportFile>' ### パラメーター **<ServerName>**  
 を管理する DNS サーバーの指定は、ローカル コンピューターの構文、IP アドレス、FQDN、またはホスト名で表されます。 このパラメーターを省略した場合は、ローカル サーバーが使用されます。  
 **<ZoneName>**  
 ゾーンの名前を指定します。  
 **<ZoneExportFile>**  
 作成するファイルの名前を指定します。 ### 解説 -、 **zoneexport**操作は、トラブルシューティングのために、active directory 統合ゾーンのリソース レコードのファイルを作成します。 既定では、このコマンドが作成したファイルは %systemroot%/System32/Dns ディレクトリに既定では DNS ディレクトリに配置されます。 ### 例を参照してください[例 10。ゾーン リソース レコードの一覧をファイルにエクスポート](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx)します。  
 ### <a name="BKMK_26"></a>dnscmd /zoneinfo  
-指定されたゾーンのレジストリのセクションから設定が表示されます * * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters\Zones\\<ZoneName>* * ### 構文```  
+指定されたゾーンのレジストリのセクションから設定が表示されます **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters\Zones\\<ZoneName>** ### 構文```  
 dnscmd [<ServerName>]/zoneinfo <ZoneName> [<Setting>。] ```  
 #### Parameters  
 **<ServerName>**  
@@ -884,7 +884,7 @@ IP アドレス、FQDN、またはホスト名によって表されるを管理�
 **<ZoneName>**  
 ゾーンの名前を指定します。  
 **<Setting>**  
-個別にあるすべての設定を指定できます、 **zoneinfo**コマンドを返します。 設定を指定しない場合は、すべての設定が返されます。 ### 解説 -、 **zoneinfo**コマンドでは、レベルは、DNS ゾーンではレジストリ設定を表示します。 * * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters\Zones\\<ZoneName>* *。 、サーバー レベルのレジストリ設定を表示するには使用、[情報](#BKMK_12)コマンド。 、このコマンドで表示できる設定の一覧を表示するには次を参照してください。、 [config](#BKMK_3)コマンド。 ### 例を参照してください[例 11。レジストリから RefreshInterval 設定を表示する](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx)または[例 12。レジストリから設定をエージング表示](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx)します。  
+個別にあるすべての設定を指定できます、 **zoneinfo**コマンドを返します。 設定を指定しない場合は、すべての設定が返されます。 ### 解説 -、 **zoneinfo**コマンドでは、レベルは、DNS ゾーンではレジストリ設定を表示します。 **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters\Zones\\<ZoneName>**。 、サーバー レベルのレジストリ設定を表示するには使用、[情報](#BKMK_12)コマンド。 、このコマンドで表示できる設定の一覧を表示するには次を参照してください。、 [config](#BKMK_3)コマンド。 ### 例を参照してください[例 11。レジストリから RefreshInterval 設定を表示する](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx)または[例 12。レジストリから設定をエージング表示](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx)します。  
 ### <a name="BKMK_27"></a>dnscmd/zonepause  
 クエリ要求を無視し、指定されたゾーンを一時停止します。 ### 構文```  
 dnscmd [<ServerName>]/zonepause <ZoneName> ```  
@@ -985,15 +985,15 @@ dnscmd [<ServerName>]/zoneresettype <ZoneName> <Zonetype> [//overwrite_mem |/ove
 作成するゾーンの種類を指定します。 各種類では、他の必要なパラメーターがあります。  
 **/dsprimary**  
 active directory 統合ゾーンを作成します。  
-* */プライマリ/file <FileName>**  
+**/プライマリ/file <FileName>**  
 標準プライマリ ゾーンを作成します。  
 **/secondary <MasterIPaddress> [,<MasterIPaddress>...]**  
 標準のゾーンのセカンダリを作成します。  
-* */スタブ<MasterIPaddress>[、<MasterIPaddress>...] ファイル <FileName>**  
+**/スタブ<MasterIPaddress>[、<MasterIPaddress>...] ファイル <FileName>**  
 ファイルに格納されたスタブ ゾーンを作成します。  
 **/dsstub <MasterIPaddress>[,<MasterIPaddress>...]**  
 active directory 統合スタブ ゾーンを作成します。  
-* */フォワーダー <MasterIPaddress[,<MasterIPaddress>].../ファイル<FileName>**  
+**/フォワーダー <MasterIPaddress[,<MasterIPaddress>].../ファイル<FileName>**  
 作成されたゾーンが別の DNS サーバーに未解決のクエリを転送することを指定します。  
 **/dsforwarder**  
 作成した active directory 統合ゾーンが別の DNS サーバーに未解決のクエリを転送することを指定します。  

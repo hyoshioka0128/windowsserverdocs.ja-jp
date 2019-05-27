@@ -14,7 +14,7 @@ ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: f8cf1b12a8fffe2a6e3389aad518ac96bc136cc9
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59872173"
@@ -314,13 +314,13 @@ ms.locfileid: "59872173"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>モバイル デバイスからリモート Web アクセスにログオンするには  
   
-1.  Web ブラウザーを開き**https://***< YourDomainName\>***/リモート**アドレス バーにします。  Https で、s を含めることを確認します。  
+1.  Web ブラウザーを開き**https://***<YourDomainName\>***/リモート**アドレス バーにします。  Https で、s を含めることを確認します。  
   
 2.  リモート Web アクセスのログオン ページで、テキスト ボックスに、ユーザー名とパスワードを入力し、矢印をクリックします。 リモート Web アクセスのモバイル バージョンにログオンされます。  
   
 ##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>リモート Web アクセスのデスクトップ バージョンに切り替えるには  
   
-1.  Web ブラウザーを開き**https://***< YourDomainName\>***/リモート**アドレス バーにします。  Https で、s を含めることを確認します。  
+1.  Web ブラウザーを開き**https://***<YourDomainName\>***/リモート**アドレス バーにします。  Https で、s を含めることを確認します。  
   
 2.  リモート Web アクセスのログオン ページで、テキスト ボックスに、ユーザー名とパスワードを入力、 をクリックして**デスクトップ バージョンを表示**、矢印をクリックします。 リモート Web アクセスのデスクトップ バージョンにログオンされます。  
   
@@ -328,7 +328,7 @@ ms.locfileid: "59872173"
   
 1.  ログオフします。  
   
-2.  Web ブラウザーを開き**https://***< YourDomainName\>*** m/リモート**アドレス バーにします。 Https で、s を含めることを確認します。  
+2.  Web ブラウザーを開き**https://***<YourDomainName\>*** m/リモート**アドレス バーにします。 Https で、s を含めることを確認します。  
   
 3.  リモート Web アクセスのモバイル バージョンが表示されます。 リモート Web アクセスのログオン ページで、テキスト ボックスに、ユーザー名とパスワードを入力し、矢印をクリックします。 リモート Web アクセスのモバイル バージョンにログオンしています。  
   
