@@ -8,16 +8,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 57951787b1ac7694cacca170b376087a60e34543
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c8cd5cbe2ce0c7985a56f8444edfa7c71ee17c2d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844053"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192347"
 ---
 # <a name="checklist-setting-up-a-federation-server-proxy"></a>チェックリスト:フェデレーション サーバー プロキシのセットアップ
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 このチェックリストには、Active Directory フェデレーション サービスでフェデレーション サーバー プロキシ役割用の Windows Server® 2012 を実行するサーバーを準備するための展開タスクが含まれています。 \(AD FS\)します。  
   

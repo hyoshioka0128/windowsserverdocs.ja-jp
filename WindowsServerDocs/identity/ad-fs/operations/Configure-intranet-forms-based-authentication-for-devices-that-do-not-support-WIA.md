@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: cddc5d890114dec7e0053b16701db6f03c3cbbdf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c79524a011336d676fa2e80936e1254a8d2dd6b2
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889853"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189691"
 ---
 # <a name="configuring-intranet-forms-based-authentication-for-devices-that-do-not-support-wia"></a>WIA をサポートしないデバイス用のイントラネット フォーム ベース認証を構成します。
 
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 既定では、Windows 統合認証 (WIA) が Active Directory フェデレーション サービス (AD FS) で Windows Server 2012 R2 を使用するアプリケーションに組織の内部ネットワーク (イントラネット) 内で発生する認証要求で有効にします。その認証のためのブラウザーです。 たとえば、Ws-federation を使用するブラウザー ベースのアプリケーションまたは OAuth プロトコルを使用する SAML のプロトコルとリッチ アプリケーションがあるこれらができます。 WIA では、自分の資格情報を手動で入力しなくても、アプリケーションへのシームレスなログオンを持つエンドユーザーを提供します。 ただし、一部のデバイスとブラウザーに WIA をサポートしていることはできませんし、その結果、これらのデバイスからの認証要求が失敗します。 また、NTLM をネゴシエートする特定のブラウザーでのエクスペリエンスは望ましくありません。 このようなデバイスおよびブラウザーのフォーム ベースの認証にフォールバックすることをお勧めします。
 

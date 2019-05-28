@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 225e6b52ed46eef6f2ccacb5b0d9c6e6d880f475
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1f3b2e1ce901df1df1a232dfba51c292c8e1c29c
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847173"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192183"
 ---
 # <a name="deploying-federation-servers"></a>フェデレーション サーバーの展開
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory フェデレーション サービスでフェデレーション サーバーを展開する\(AD FS\)、それぞれのタスクの完了[チェックリスト。フェデレーション サーバーを設定する](Checklist--Setting-Up-a-Federation-Server.md)します。  
   

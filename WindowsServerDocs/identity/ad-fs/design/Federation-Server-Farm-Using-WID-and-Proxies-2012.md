@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4bd815daccdd72a8c612b9b728ce12378c1926e7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 19e73e43a863ec60fbc9da09b24173220bb331ed
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817623"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191357"
 ---
 # <a name="federation-server-farm-using-wid-and-proxies"></a>WID とプロキシを使用するフェデレーション サーバー ファーム
-
->適用先:Windows Server 2012
 
 Active Directory フェデレーション サービスの場合は、この配置トポロジ\(AD FS\)が Windows Internal Database のフェデレーション サーバー ファームと同じ\(WID\)がトポロジでは、フェデレーション サーバー プロキシを追加します。外部ユーザーをサポートするために境界ネットワーク。 フェデレーション サーバー プロキシは、フェデレーション サーバー ファームに、企業ネットワーク外から取得したクライアントの認証要求をリダイレクトします。  
   
@@ -51,4 +49,4 @@ Active Directory フェデレーション サービスの場合は、この配�
 フェデレーション サーバーまたはフェデレーション サーバー プロキシを使用するため、ネットワーク環境を構成する方法の詳細については、のいずれかの操作を参照して[フェデレーション サーバーの名前解決要件](Name-Resolution-Requirements-for-Federation-Servers.md)または[名フェデレーション サーバー プロキシの解決の要件](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)します。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

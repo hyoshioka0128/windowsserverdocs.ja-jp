@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 498b399818fb8c9e463f9990fa13c87648c0a33d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2d15f680f28c54da75100a03f7b85e880442d9be
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822153"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191738"
 ---
-# <a name="ad-fs-design-guide-in-windows-server-2012-r2"></a>Windows Server 2012 R2 での AD FS 設計ガイド
-
->適用先:Windows Server 2016、Windows Server 2012 R2
+# <a name="ad-fs-design-guide-in-windows-server"></a>Windows Server で AD FS 設計ガイドします。 
 
 Active Directory フェデレーション サービス\(AD FS\)シンプルで安全な id フェデレーションと Web シングル サインオンを提供します\-で\(SSO\)アプリケーションへのアクセスを希望するエンドユーザー向け機能。AD FS 内\-enterprise、またはクラウドでフェデレーション パートナー組織では、セキュリティで保護します。  
   
@@ -31,9 +29,9 @@ Windows Server 2012 R2 の AD FS によって保護されたアプリケーシ�
   
 ## <a name="in-this-guide"></a>このガイドについて  
   
--   [AD FS 展開目標を識別します。](Identify-Your-AD-FS-Deployment-Goals.md)  
+-   [AD FS 展開目標の特定](Identify-Your-AD-FS-Deployment-Goals.md)  
   
--   [AD FS 展開トポロジを計画します。](Plan-Your-AD-FS-Deployment-Topology.md)  
+-   [AD FS 展開トポロジの計画](Plan-Your-AD-FS-Deployment-Topology.md)  
   
 -   [AD FS の要件](AD-FS-Requirements.md)  
   

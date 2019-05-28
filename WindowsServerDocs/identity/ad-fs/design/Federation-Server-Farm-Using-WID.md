@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 41c2179cbd8bf2c6032f233335099b512c02f880
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 067461b90ed5ce03d9470a450917dcbb93cf653a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832503"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191311"
 ---
 # <a name="federation-server-farm-using-wid"></a>WID を使用するフェデレーション サーバー ファーム
-
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 Active Directory フェデレーション サービスの既定のトポロジ\(AD FS\) Windows Internal Database を使用して、フェデレーション サーバー ファームは、 \(WID\)します。 このトポロジでは、AD FS は、WID をファームに参加しているすべてのフェデレーション サーバーの AD FS 構成データベースのストアとして使用します。 ファームでは、構成データベースのフェデレーション サービス データがファーム内の各サーバー間で複製されて管理されます。 Windows Server 2012 R2 で AD FS では、100 以下証明書利用者信頼を最大 30 台のサーバーを WID を使用するフェデレーション サーバー ファームを構成できます。  
   
@@ -80,7 +78,7 @@ NLB ホストには、個々 のフェデレーション サーバーにクラ�
 フェデレーション サーバーを使用するため、ネットワーク環境を構成する方法の詳細については、名前解決の要件」セクションを参照してください。 [AD FS の要件](AD-FS-Requirements.md)します。  
   
 ## <a name="see-also"></a>関連項目  
-[AD FS 展開トポロジを計画します。](Plan-Your-AD-FS-Deployment-Topology.md)  
-[Windows Server 2012 R2 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[AD FS 展開トポロジの計画](Plan-Your-AD-FS-Deployment-Topology.md)  
+[Windows Server 2012 R2 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

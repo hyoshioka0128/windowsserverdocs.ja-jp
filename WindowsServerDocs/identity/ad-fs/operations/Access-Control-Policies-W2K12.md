@@ -9,16 +9,15 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6e56c95bb3284615d8cc9487e70ca32abbb0f22b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 13969958c9b4e0539993142d680cb6c34dc10750
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855563"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190255"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Windows Server 2012 R2 および Windows Server 2012 の AD FS でのアクセス制御ポリシー
 
->適用先:Windows Server 2012 R2 および Windows Server 2012 
 
 この記事で説明されているポリシーの要求の 2 種類の使用  
   
@@ -26,7 +25,7 @@ ms.locfileid: "59855563"
   
 2.  AD FS の要求が HTTP ヘッダーとして AD FS にクライアントによって転送される情報に基づいて作成します  
   
->**重要な**:以下に示すように、ポリシーは Windows 10 ドメイン参加をブロックし、次の追加のエンドポイントへのアクセスを必要とするシナリオのサインオン
+>**重要**: 以下に示すように、ポリシーは Windows 10 ドメイン参加をブロックし、次の追加のエンドポイントへのアクセスを必要とするシナリオのサインオン
 
 Windows 10 ドメインに参加し、サインオンに必要な AD FS のエンドポイント
 - [フェデレーション サービス名]/adfs/services/信頼/2005/windowstransport
@@ -80,7 +79,7 @@ Windows 10 ドメインに参加し、サインオンに必要な AD FS のエ�
   
 5.  **規則の構成**] ページ [**要求規則名**、例では、この規則の表示名「場合、目的の範囲外の任意の IP 要求拒否」の種類。 **Custom rule**を入力するか、次の要求規則言語構文 ("x-ms-転送-クライアントの ip"IP の有効な式では、その上の値を置き換えてください) を貼り付けます。  
 `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
-6.  **[Finish]**(完了) をクリックします。 新しい規則が、既定値にする前に発行承認規則の一覧に表示されることを確認します。**にすべてのユーザー アクセスを許可**ルール (拒否規則が優先一覧の前に表示される場合でも)。  既定のアクセス規則の許可がない場合に、次のように、要求規則言語を使用して、一覧の最後に 1 つを追加できます。  </br>
+6.  **[Finish]** (完了) をクリックします。 新しい規則が、既定値にする前に発行承認規則の一覧に表示されることを確認します。**にすべてのユーザー アクセスを許可**ルール (拒否規則が優先一覧の前に表示される場合でも)。  既定のアクセス規則の許可がない場合に、次のように、要求規則言語を使用して、一覧の最後に 1 つを追加できます。  </br>
     
     `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true"); ` 
 
@@ -105,7 +104,7 @@ Windows 10 ドメインに参加し、サインオンに必要な AD FS のエ�
     
     `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 
-6.  **[Finish]**(完了) をクリックします。 新しい規則が表示されることを確認、**発行承認規則の**一覧。  
+6.  **[Finish]** (完了) をクリックします。 新しい規則が表示されることを確認、**発行承認規則の**一覧。  
   
 7.  次に、**要求規則の編集**] ダイアログ ボックスの [、**発行承認規則の**] タブで [**規則の追加**要求規則のウィザードをもう一度開始します。  
   
@@ -116,7 +115,7 @@ Windows 10 ドメインに参加し、サインオンに必要な AD FS のエ�
 
     `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application", Value != "Microsoft.Exchange.ActiveSync"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
   
-10. **[Finish]**(完了) をクリックします。 新しい規則が表示されることを確認、**発行承認規則の**一覧。  
+10. **[Finish]** (完了) をクリックします。 新しい規則が表示されることを確認、**発行承認規則の**一覧。  
   
 11. 次に、**要求規則の編集**] ダイアログ ボックスの [、**発行承認規則の**] タブで [**規則の追加**要求規則のウィザードをもう一度開始します。  
   
@@ -128,7 +127,7 @@ Windows 10 ドメインに参加し、サインオンに必要な AD FS のエ�
     NOT EXISTS([Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"]) => add(Type = "http://custom/xmsapplication", Value = "fail");  
     ```  
   
-14. **[Finish]**(完了) をクリックします。 新しい規則が表示されることを確認、**発行承認規則の**一覧。  
+14. **[Finish]** (完了) をクリックします。 新しい規則が表示されることを確認、**発行承認規則の**一覧。  
   
 15. 次に、**要求規則の編集**] ダイアログ ボックスの [、**発行承認規則の**] タブで [**規則の追加**要求規則のウィザードをもう一度開始します。  
   
@@ -137,7 +136,7 @@ Windows 10 ドメインに参加し、サインオンに必要な AD FS のエ�
 17. **規則の構成**] ページ [**要求規則名**、この規則の表示名を入力、たとえば「拒否 ipoutsiderange true およびアプリケーションを持つユーザーの失敗」。 **Custom rule**を入力するか、次の要求規則言語構文貼り付けます。  
   
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/xmsapplication", Value == "fail"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`</br>  
-18. **[Finish]**(完了) をクリックします。 以前のルールの下、新しい規則がすぐに表示されますを確認し、(、この拒否規則が優先一覧の前に表示される場合でも) 発行承認規則の一覧でルールを既定値のすべてのユーザーにアクセスを許可する前にします。  </br>既定のアクセス規則の許可がない場合に、次のように、要求規則言語を使用して、一覧の最後に 1 つを追加できます。</br></br>      `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
+18. **[Finish]** (完了) をクリックします。 以前のルールの下、新しい規則がすぐに表示されますを確認し、(、この拒否規則が優先一覧の前に表示される場合でも) 発行承認規則の一覧でルールを既定値のすべてのユーザーにアクセスを許可する前にします。  </br>既定のアクセス規則の許可がない場合に、次のように、要求規則言語を使用して、一覧の最後に 1 つを追加できます。</br></br>      `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
 19. 新しい規則を保存する、**要求規則の編集** ダイアログ ボックスで、ok をクリックします。 結果のリストは、次のようになります。  
   
      ![発行承認ルール](media/Access-Control-Policies-W2K12/clientaccess2.png )  
@@ -156,7 +155,7 @@ Windows 10 ドメインに参加し、サインオンに必要な AD FS のエ�
   
 5.  **規則の構成**] ページ [**要求規則名**例「、目的の範囲外の任意の IP 要求がある場合の問題を ipoutsiderange 要求」のこの規則の表示名を入力します。 **Custom rule**を入力するか、次の要求規則言語構文 ("x-ms-転送-クライアントの ip"IP の有効な式では、その上の値を置き換えてください) を貼り付けます。  </br>
 `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`   
-6.  **[Finish]**(完了) をクリックします。 新しい規則が表示されることを確認、**発行承認規則の**一覧。  
+6.  **[Finish]** (完了) をクリックします。 新しい規則が表示されることを確認、**発行承認規則の**一覧。  
   
 7.  次に、**要求規則の編集**] ダイアログ ボックスの [、**発行承認規則の**] タブで [**規則の追加**要求規則のウィザードをもう一度開始します。  
   
@@ -167,7 +166,7 @@ Windows 10 ドメインに参加し、サインオンに必要な AD FS のエ�
  
     `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
   
-10. **[Finish]**(完了) をクリックします。 新しい規則が、既定値にする前に発行承認規則の一覧に表示されることを確認します。**にすべてのユーザー アクセスを許可**ルール (拒否規則が優先一覧の前に表示される場合でも)。  </br></br> 既定のアクセス規則の許可がない場合に、次のように、要求規則言語を使用して、一覧の最後に 1 つを追加できます。  
+10. **[Finish]** (完了) をクリックします。 新しい規則が、既定値にする前に発行承認規則の一覧に表示されることを確認します。**にすべてのユーザー アクセスを許可**ルール (拒否規則が優先一覧の前に表示される場合でも)。  </br></br> 既定のアクセス規則の許可がない場合に、次のように、要求規則言語を使用して、一覧の最後に 1 つを追加できます。  
   
     `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`
   
@@ -193,7 +192,7 @@ Windows 10 ドメインに参加し、サインオンに必要な AD FS のエ�
       
     `c1:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] && c2:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 
-6.  **[Finish]**(完了) をクリックします。 新しい規則が表示されることを確認、**発行承認規則の**一覧。  
+6.  **[Finish]** (完了) をクリックします。 新しい規則が表示されることを確認、**発行承認規則の**一覧。  
   
 7.  次に、**要求規則の編集**] ダイアログ ボックスの [、**発行承認規則の**] タブで [**規則の追加**要求規則のウィザードをもう一度開始します。  
   
@@ -203,7 +202,7 @@ Windows 10 ドメインに参加し、サインオンに必要な AD FS のエ�
    
     `NOT EXISTS([Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-100"]) => add(Type = "http://custom/groupsid", Value = "fail");`  
 
-10. **[Finish]**(完了) をクリックします。 新しい規則が表示されることを確認、**発行承認規則の**一覧。  
+10. **[Finish]** (完了) をクリックします。 新しい規則が表示されることを確認、**発行承認規則の**一覧。  
   
 11. 次に、**要求規則の編集**] ダイアログ ボックスの [、**発行承認規則の**] タブで [**規則の追加**要求規則のウィザードをもう一度開始します。  
   
@@ -213,7 +212,7 @@ Windows 10 ドメインに参加し、サインオンに必要な AD FS のエ�
    
     `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/groupsid", Value == "fail"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 
-14. **[Finish]**(完了) をクリックします。 以前のルールの下、新しい規則がすぐに表示されますを確認し、(、この拒否規則が優先一覧の前に表示される場合でも) 発行承認規則の一覧でルールを既定値のすべてのユーザーにアクセスを許可する前にします。  </br></br>既定のアクセス規則の許可がない場合に、次のように、要求規則言語を使用して、一覧の最後に 1 つを追加できます。  
+14. **[Finish]** (完了) をクリックします。 以前のルールの下、新しい規則がすぐに表示されますを確認し、(、この拒否規則が優先一覧の前に表示される場合でも) 発行承認規則の一覧でルールを既定値のすべてのユーザーにアクセスを許可する前にします。  </br></br>既定のアクセス規則の許可がない場合に、次のように、要求規則言語を使用して、一覧の最後に 1 つを追加できます。  
    
     `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`  
 

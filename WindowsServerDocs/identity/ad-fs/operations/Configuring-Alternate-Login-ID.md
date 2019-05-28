@@ -9,16 +9,15 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 615faf4153949aa4ad989f017068d1809fca26b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5bc43717f37fb3b14ac7f384a061ee64c734222d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820873"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189657"
 ---
 # <a name="configuring-alternate-login-id"></a>代替ログイン ID を構成する
 
->適用先:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
 ## <a name="what-is-alternate-login-id"></a>代替ログイン ID とは何ですか。
 ほとんどのシナリオでは、ユーザーは自分のアカウントにログインするため、UPN (ユーザー プリンシパル名) を使用します。 ただし、企業のポリシーや、オンプレミスの基幹業務アプリケーションの依存関係が原因の一部の環境では、ユーザーがサインイン用の他の何らかの形式を使用して可能性があります。 
@@ -39,7 +38,7 @@ Active Directory フェデレーション サービス (AD FS) フェデレー�
 ## <a name="end-user-experience-with-alternate-login-id"></a>代替ログイン ID のエンドユーザー エクスペリエンス
 エンド ユーザー エクスペリエンスは、代替ログイン id を使用する認証方法によって異なります。現在この代替ログイン id を使用して実現する 3 つの方法があります。  それらは以下のとおりです。
 
-- **標準の認証 (レガシ)**-基本認証プロトコルを使用します。
+- **標準の認証 (レガシ)** -基本認証プロトコルを使用します。
 - **先進認証**-アプリケーションには、Active Directory 認証ライブラリ (ADAL) ベース サインインが表示されます。 これにより、サインイン機能で多要素認証 (MFA) など、サード パーティ Id プロバイダーの SAML に基づいた Office クライアント アプリケーションは、スマート カードと証明書ベースの認証とします。
 - **ハイブリッド先進認証**- 最新の認証のメリットをすべて提供し、クラウドから取得した承認トークンを使用して、オンプレミス アプリケーションにアクセスする機能を提供します。
 
@@ -127,18 +126,19 @@ SSO の代替 id を使用する代替の id を持つ、ディレクトリを�
 
 次の追加の構成では、ユーザー エクスペリエンスが大幅に向上し、組織の代替 id のユーザーの認証の 0 個のプロンプトの近くに実現できます。
 
-##### <a name="step-1-update-to-required-office-version"></a>手順 1. 必要な office のバージョンに更新するには
-Office バージョン 1712 (8827.2148 ビルドなし) され、上記の代替 id のシナリオを処理するために認証ロジックが更新されました。 新しいロジックを利用するために、クライアント コンピューターは、(8827.2148 ビルドなし) の office バージョン 1712 以降に更新する必要があります。
+##### <a name="step-1-update-to-required-office-version"></a>手順 1. Office のバージョンに必要な更新します。
+Office バージョン 1712 (8827.2148 ビルドなし) され、上記の代替 id のシナリオを処理するために認証ロジックが更新されました。 新しいロジックを利用するために、クライアント コンピューターは、(8827.2148 ビルドなし) の Office バージョン 1712 以降に更新する必要があります。
 
-##### <a name="step-2-configure-registry-for-impacted-users-using-group-policy"></a>手順 2.  グループ ポリシーを使用して、影響を受けるユーザーのレジストリを構成します。
+##### <a name="step-2-update-to-required-windows-version"></a>手順 2.  更新するために必要な Windows バージョン
+Windows バージョン 1709 以降の更新が代替 id のシナリオを処理するために認証ロジック。 新しいロジックを利用するために、クライアント コンピューターは、Windows バージョン 1709 以降に更新する必要があります。
+
+##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>手順 3. グループ ポリシーを使用して、影響を受けるユーザーのレジストリを構成します。
 Office アプリケーションは、代替 id の環境を識別するために、ディレクトリ管理者によってプッシュされる情報に依存します。 次のレジストリ キーは、office アプリケーションを追加のプロンプトを表示することがなく代替 id を持つユーザーを認証するように構成する必要があります。
 
 |レジストリ キーを追加するには|レジストリ キーのデータの名前、種類、および値|Windows 7/8|Windows 10|説明|
 |-----|-----|-----|-----|-----|
 |HKEY_CURRENT_USER\Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|必須|必須|このレジストリ キーの値は、組織のテナントで検証済みカスタム ドメイン名です。 たとえば、Contoso corp は、Contoso.com が Contoso.onmicrosoft.com のテナントで検証済みのカスタム ドメイン名のいずれかである場合、このレジストリ キーには、Contoso.com の値を指定できます。|
 HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|Outlook 2016 ProPlus に必要な|Outlook 2016 ProPlus に必要な|このレジストリ キーの値は 1 を指定できます/0 を Outlook のアプリケーションに強化された代替 id の認証ロジックを連携する必要があるかどうかを示します。|
-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Common\Identity|DisableADALatopWAMOverride</br>REG_DWORD</br>1|該当なし|必須。|これにより、その Office で使用されない WAM WAM で alt キー id がサポートされていません。|
-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Common\Identity|DisableAADWAM</br>REG_DWORD</br>1|該当なし|必須。|これにより、その Office で使用されない WAM WAM で alt キー id がサポートされていません。|
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|必須|必須|STS をインターネットの設定で信頼済みゾーンとして設定するのには、このレジストリ キーを使用できます。 ADFS の標準の展開は、Internet Explorer のローカル イントラネット ゾーンの ADFS 名前空間を追加することをお勧めします|
 
 ## <a name="new-authentication-flow-after-additional-configuration"></a>追加の構成後に新しい認証フロー
@@ -157,21 +157,21 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 ### <a name="non-exchange-and-skype-for-business-clients"></a>非 Exchange と Skype for Business クライアント
 |クライアント|サポートに関する声明|注釈|
 | ----- | -----|-----|
-|Microsoft Teams|サポートされている|<li>Microsoft Teams は、AD FS をサポートしています (SAML-P、Ws-fed、Ws-trust、および OAuth) と最新の認証。</li><li> 代替ログイン ID を持つコア Microsoft Teams のチャネル、チャット、およびファイルの機能などの機能します。</li><li>1 番目と 3 番目のパーティのアプリは、顧客が個別に調べる必要があります。 これは、ため、各アプリケーションには、独自のサポートの認証プロトコルです。</li>|     
+|Microsoft Teams|サポート対象|<li>Microsoft Teams は、AD FS をサポートしています (SAML-P、Ws-fed、Ws-trust、および OAuth) と最新の認証。</li><li> 代替ログイン ID を持つコア Microsoft Teams のチャネル、チャット、およびファイルの機能などの機能します。</li><li>1 番目と 3 番目のパーティのアプリは、顧客が個別に調べる必要があります。 これは、ため、各アプリケーションには、独自のサポートの認証プロトコルです。</li>|     
 |OneDrive for Business|サポートされています - クライアント側のレジストリ キーをお勧めします |構成されている代替 id は、検証フィールドに、オンプレミスの UPN があらかじめ設定されているを参照してください。 これは、使用されている代替 Id に変更する必要があります。 この記事に記載されているクライアント側のレジストリ キーの使用をお勧めします。Office 2013 および Lync 2013 は、SharePoint Online、OneDrive、および Lync Online に資格情報を定期的に要求します。|
-|OneDrive for Business モバイル クライアント|サポートされている|| 
+|OneDrive for Business モバイル クライアント|サポート対象|| 
 |Office 365 Pro Plus のアクティブ化 ページ|サポートされています - クライアント側のレジストリ キーをお勧めします|構成されている代替 id は、検証フィールドに、オンプレミスの UPN があらかじめ設定されているを参照してください。 これは、使用されている代替 Id に変更する必要があります。 この記事に記載されているクライアント側のレジストリ キーを使用してをお勧めします。Office 2013 および Lync 2013 は、SharePoint Online、OneDrive、および Lync Online に資格情報を定期的に要求します。|
 
 ### <a name="exchange-and-skype-for-business-clients"></a>Exchange と Skype for Business クライアント
 
 |クライアント|サポートに関する声明 - ときなどに|サポートに関する声明 - ときなどなし|
 | ----- |----- | ----- |
-|Outlook|サポートされている、全くのプロンプト|サポートされている</br></br>**先進認証**の Exchange Online:サポートされている</br></br>**正規認証**Exchange online:次の注意事項でサポートされています。</br><li>企業ネットワークに接続してドメイン参加済みコンピューターである必要があります。 </li><li>代替 ID は、メールボックスのユーザーの外部アクセスを許可しない環境でのみ使用できます。 これは、ユーザー認証できることがのみのメールボックスにサポートされている方法で接続されていると、vpn、企業ネットワークに参加しているまたはマシンに直接アクセス、を介して接続されているが、Outlook プロファイルを構成するときに、いくつかの余分なプロンプトを取得するときにことを意味します。| 
-|ハイブリッドのパブリック フォルダー|サポートされている、いいえ余分なプロンプト。|**先進認証**の Exchange Online:サポートされている</br></br>**正規認証**Exchange online:サポートされない</br></br><li>ハイブリッドのパブリック フォルダーは、代替 ID を使用しする必要がありますいないため、現在標準の認証方法と場合を拡張することはできません。|
+|Outlook|サポートされている、全くのプロンプト|サポート対象</br></br>**先進認証**の Exchange Online:サポート対象</br></br>**正規認証**Exchange online:次の注意事項でサポートされています。</br><li>企業ネットワークに接続してドメイン参加済みコンピューターである必要があります。 </li><li>代替 ID は、メールボックスのユーザーの外部アクセスを許可しない環境でのみ使用できます。 これは、ユーザー認証できることがのみのメールボックスにサポートされている方法で接続されていると、vpn、企業ネットワークに参加しているまたはマシンに直接アクセス、を介して接続されているが、Outlook プロファイルを構成するときに、いくつかの余分なプロンプトを取得するときにことを意味します。| 
+|ハイブリッドのパブリック フォルダー|サポートされている、いいえ余分なプロンプト。|**先進認証**の Exchange Online:サポート対象</br></br>**正規認証**Exchange online:サポートされない</br></br><li>ハイブリッドのパブリック フォルダーは、代替 ID を使用しする必要がありますいないため、現在標準の認証方法と場合を拡張することはできません。|
 |オンプレミスの委任をクロスします。|参照してください[ハイブリッド展開でメールボックスの委任されたアクセス許可をサポートするために Exchange を構成します。](https://technet.microsoft.com/library/mt784505.aspx)|参照してください[ハイブリッド展開でメールボックスの委任されたアクセス許可をサポートするために Exchange を構成します。](https://technet.microsoft.com/library/mt784505.aspx)|
 |アーカイブのメールボックスへのアクセス (メールボックス、オンプレミス、クラウドでのアーカイブ)|サポートされている、全くのプロンプト|サポートされています - ユーザーが、アーカイブにアクセスするときに、資格情報の追加のプロンプトを表示には、入力を求められたら、代替 ID を指定する必要あります。| 
-|Outlook Web Access|サポートされている|サポートされている|
-|Android、IOS、および Windows Phone 用の outlook モバイル アプリ|サポートされている|サポートされている|
+|Outlook Web Access|サポート対象|サポート対象|
+|Android、IOS、および Windows Phone 用の outlook モバイル アプリ|サポート対象|サポート対象|
 |Skype for Business/Lync|余分なプロンプトなしでサポートします。|サポートされています (前述のようを除く) がユーザーの混乱が発生する可能性があります。</br></br>モバイル クライアントは、別の Id がサポートされている場合にのみの SIP アドレスの電子メール アドレスを = = 代替 id。</br></br> ユーザーがオンプレミスの UPN を使用する方法と、代替の ID を使用して、ビジネスのデスクトップ クライアントを Skype に 2 回のサインインする必要があります。 (「サインイン アドレス」が実際に「ユーザー名」と同じである可能性がありますいないは多くの場合は、SIP アドレスに注意してください。) 最初にユーザー名の入力を求め、ときに、ユーザーは、場合でも、それは正しくであらかじめ設定されていない代替 ID または SIP アドレス、UPN を入力する必要があります。 サインインして、UPN、ユーザー名のプロンプトが再表示されます、UPN を使用してあらかじめ入力されています。 この時間をクリックした後、ユーザーにします。 今度は、ユーザーがこれを代替 ID で置き換えます、をクリックする必要がありますが、サインイン プロセスを完了にサインインするとします。 モバイル クライアントでユーザーする必要があります、オンプレミス ユーザー ID を入力 [詳細設定] ページで、SAM スタイルの形式 (domain \username)、UPN 形式ではなくを使用します。</br></br>成功したサインイン後に「Exchange には、資格情報が必要がある、」が Skype for Business または Lync の場合必要があります、メールボックスが有効な資格情報を提供します。 メールボックスがクラウド内にある場合は、代替の ID を提供する必要があります。 メールボックスが、オンプレミスの場合は、オンプレミスの UPN を提供する必要があります。| 
  
 ## <a name="additional-details--considerations"></a>追加の詳細と考慮事項

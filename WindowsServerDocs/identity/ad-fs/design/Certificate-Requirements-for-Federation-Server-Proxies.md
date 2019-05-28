@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e7fb8e71afed1c0eb6b55857835d95f2dd0ec9d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ca0b25480eedfc6471837ab8ae83b0d1d522e61e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875723"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191659"
 ---
 # <a name="certificate-requirements-for-federation-server-proxies"></a>フェデレーション サーバー プロキシの証明書の要件
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory フェデレーション サービスでは、フェデレーション サーバー プロキシ ロールで実行されているサーバー \(AD FS\) Secure Sockets Layer を使用するために必要な\(SSL\)サーバー認証証明書。 フェデレーション サーバー プロキシは、SSL サーバー認証証明書を使用して、Web クライアントとの Web サーバーのトラフィック通信をセキュリティ保護します。  
   
@@ -36,4 +34,4 @@ SSL 証明書の使用の詳細については、IIS 7.0 で Secure Sockets Laye
 証明書のいずれかをする場合の使用は、証明書失効リスト\(Crl\)、構成された証明書を使用して、サーバーは、Crl を配布するサーバーに接続できる必要があります。 CRL の種類によって、使用するポートが決まります。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)
