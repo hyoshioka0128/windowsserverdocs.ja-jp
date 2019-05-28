@@ -12,12 +12,12 @@ ms.assetid: 0d115697-532b-48c2-a659-9f889e235326
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 91175836e4453860b17d2655e6a5a831645de410
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 008e614ca7ae202d575d2c3e5976ed3d5544b6ea
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873453"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63720702"
 ---
 # <a name="manage-user-accounts-in-windows-server-essentials"></a>Windows Server Essentials でのユーザー アカウントの管理
 
@@ -92,7 +92,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
 4.  **< ユーザー アカウント\>タスク**ウィンドウで、をクリックして**ユーザー アカウントを削除**します。 ユーザー アカウントの削除ウィザードが表示されます。  
   
-5.  **ファイルを保持するか。** ページ、ウィザードのファイル履歴のバックアップと、ユーザー アカウントのリダイレクトされたフォルダーを含む、ユーザーのファイルを削除する選択できます。 S ファイルをユーザーが引き続き、チェック ボックスを空のままにします。 選択した場合、**[次へ]** をクリックします。  
+5.  **ファイルを保持するか。** ページ、ウィザードのファイル履歴のバックアップと、ユーザー アカウントのリダイレクトされたフォルダーを含む、ユーザーのファイルを削除する選択できます。 S ファイルをユーザーが引き続き、チェック ボックスを空のままにします。 選択した場合、 **[次へ]** をクリックします。  
   
 6.  **[アカウントの削除]** をクリックします。  
   
@@ -420,7 +420,7 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
 3.  現在、ネットワーク管理者のアカウントでドメイン コント ローラーの DSRM パスワードを同期するには、次のように入力します。  
   
-     **ドメイン アカウントから同期** *< current_network_administrator_account >*、し、Enter キーを押します。  
+     **ドメイン アカウントから同期** *< current_network_administrator_account >* 、し、Enter キーを押します。  
   
  ネットワーク管理者のパスワードは定期的に変更されるため、DSRM パスワードが常にネットワーク管理者の現在のパスワードと同じになるように、DSRM パスワードをネットワーク管理者のパスワードと毎日自動的に同期させるスケジュール タスクを作成することをお勧めします。  
   
@@ -630,6 +630,6 @@ Windows Server Essentials ダッシュボードの [ユーザー] ページで�
   
 -   [接続の確立します。](../use/Get-Connected-in-Windows-Server-Essentials.md)  
   
--   [Windows Server Essentials を使用します。](../use/Use-Windows-Server-Essentials.md)  
+-   [Windows Server Essentials の使用](../use/Use-Windows-Server-Essentials.md)  
   
--   [Windows Server Essentials を管理します。](Manage-Windows-Server-Essentials.md)
+-   [Windows Server Essentials の管理](Manage-Windows-Server-Essentials.md)

@@ -12,12 +12,12 @@ ms.assetid: 441c2d6c-435a-42cb-90f2-6d680d279d34
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 727dd74e4bddc52f735969f216914b9d76d1f413
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4fb34e05b00c35156a8451ffb0d8b914fcc73cf5
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831933"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63720289"
 ---
 # <a name="set-up-or-customize-server-backup"></a>サーバー バックアップのセットアップまたはカスタマイズ
 
@@ -100,7 +100,7 @@ ms.locfileid: "59831933"
   
     #### <a name="to-stop-sharing-on-a-server-folder-from-the-dashboard"></a>ダッシュボードからサーバー フォルダーの共有を停止するには  
   
-    1.  ダッシュボードの **[記憶域]** をクリックし、**[サーバー フォルダー]** をクリックします。  
+    1.  ダッシュボードの **[記憶域]** をクリックし、 **[サーバー フォルダー]** をクリックします。  
   
     2.  共有を停止するフォルダーを選択し、タスク ウィンドウで **[停止]** をクリックします。  
   
@@ -111,9 +111,9 @@ ms.locfileid: "59831933"
 >   
 >  1.  コントロール パネルの **[システムとセキュリティ]** を開きます。  
 > 2.  **[管理ツール]** の **[ハード ディスク パーティションの作成とフォーマット]** をクリックします。  
-> 3.  ドライブを右クリックし、**[ドライブ文字とパスの変更]** をクリックします。  
+> 3.  ドライブを右クリックし、 **[ドライブ文字とパスの変更]** をクリックします。  
 > 4.  **[追加]** をクリックします。  
-> 5.  [ドライブ文字またはパスの追加] ダイアログ ボックスで、割り当てるドライブ文字を選択します。 (同じドライブ文字を再割り当てすることができます。)**[OK]** をクリックします。  
+> 5.  [ドライブ文字またはパスの追加] ダイアログ ボックスで、割り当てるドライブ文字を選択します。 (同じドライブ文字を再割り当てすることができます。) **[OK]** をクリックします。  
 >   
 >      ドライブは直ちにダッシュボードに表示されます。  
   
@@ -139,6 +139,6 @@ ms.locfileid: "59831933"
   
 -   [バックアップの管理と復元](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)  
   
--   [Windows Server Essentials を管理します。](Manage-Windows-Server-Essentials.md)  
+-   [Windows Server Essentials の管理](Manage-Windows-Server-Essentials.md)  
   
--   [Windows Server Essentials を使用します。](../use/Use-Windows-Server-Essentials.md)
+-   [Windows Server Essentials の使用](../use/Use-Windows-Server-Essentials.md)

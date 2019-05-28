@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 74701cbaa403611b081942f016b21db1c0b3ff70
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2776cc29b8c9ede884a6b304cd541f700f516ca
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845463"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191262"
 ---
 # <a name="name-resolution-requirements-for-federation-servers"></a>フェデレーション サーバーの名前解決の要件
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 企業ネットワーク上のクライアント コンピューターが Active Directory フェデレーション サービスによって保護されている Web サービスまたはアプリケーションにアクセスしようとした場合に\(AD FS\)、まずフェデレーション サーバーを認証する必要があります。 認証する方法の 1 つでは、会社のネットワーク クライアントが Windows 統合認証を通じて、ローカルのフェデレーション サーバーにアクセスします。  
   
@@ -37,4 +35,4 @@ NLB を使用する FQDN をクラスターまたはクラスターの IP アド
   
 
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

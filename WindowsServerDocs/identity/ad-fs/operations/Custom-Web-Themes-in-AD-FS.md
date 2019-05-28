@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 300c9fda84285ddfc52a4f47ea0198deb6fd33ef
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2bce52a5704706ad72799d00879e2f4e48f9d703
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882293"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189246"
 ---
 # <a name="custom-web-themes-in-ad-fs"></a>AD FS でのカスタム Web テーマ 
-
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 同梱されているテーマ\-の\-、\-ボックスは既定値と呼ばれます。 既定のテーマをエクスポートして使用すると、カスタマイズを簡単に開始できます。 カスタマイズできるのは外観と動作です.css ファイルを変更してレイアウトを調整し、変更済みの新しいテーマをインポートして適用すると、カスタマイズされた外観と動作を使用できるようになります。 .css ファイルを使用することで、Web デザイナーとの共同作業も容易になります。  
   

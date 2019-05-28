@@ -9,16 +9,15 @@ ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
 ms.author: billmath
 ms.assetId: 7b9f9a4f-888c-4358-bacd-3237661b1935
-ms.openlocfilehash: 0ab10e61135a26b62605ed8e0a76ab6e53fdc82c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cf3d7513dd02bdb578bffd2f3ef8bdb29d8f983d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824293"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192170"
 ---
 # <a name="setup-geographic-redundancy-with-sql-server-replication"></a>地理的冗長化を SQL Server レプリケーションのセットアップ
 
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 > [!IMPORTANT]  
 > AD FS ファームを作成して構成データを格納する SQL Server を使用する場合は、SQL Server 2008 以降を使用することができます。
@@ -90,7 +89,7 @@ AD FS 構成データベースとして SQL Server を使用する場合は、ge
 ![地理的冗長性を設定します。](media\Set-up-Geographic-Redundancy-with-SQL-Server-Replication\sql18.png) </br>   
 SQL エージェントのドメイン アカウントを作成する必要があります。 」の手順に従って[ドメイン アカウント CONTOSO 用の構成の SQL ログイン\\sqlagent](Set-up-Geographic-Redundancy-with-SQL-Server-Replication.md#sqlagent)をこの新しい AD ユーザー用の SQL ログインを作成し、特定のアクセス許可を割り当てます。  
   
-13. **エージェントのセキュリティ**] ページで [**セキュリティ設定**し、ユーザー名を入力します\/ドメイン アカウントのパスワード\(GMSA ではない\)SQL エージェントの作成とクリックして**OK**します。  **[次へ]** をクリックします。  
+13. **エージェントのセキュリティ**] ページで [**セキュリティ設定**し、ユーザー名を入力します\/ドメイン アカウントのパスワード\(GMSA ではない\)SQL エージェントの作成とクリックして**OK**します。   **[次へ]** をクリックします。  
 ![地理的冗長性を設定します。](media\Set-up-Geographic-Redundancy-with-SQL-Server-Replication\sql19.png) </br>  
 
 14. **ウィザードのアクション**] ページで [**次**します。   
@@ -108,7 +107,7 @@ SQL エージェントのドメイン アカウントを作成する必要があ
 ## <a name="create-subscription-settings-on-the-replica-sql-server"></a>SQL Server レプリカのサブスクリプション設定を作成します。  
 上記で説明したとおり、最初の SQL server パブリッシャーの設定を作成したことかどうかを確認し、次の手順を実行します。  
   
-1.  SQL Server Management studio で、レプリカ、SQL Server で **レプリケーション**を右クリックして**ローカル サブスクリプション**選択**新しいサブスクリプション.**.![地理的冗長性を設定します。](media\Set-up-Geographic-Redundancy-with-SQL-Server-Replication\sql24.png) </br>  
+1.  SQL Server Management studio で、レプリカ、SQL Server で **レプリケーション**を右クリックして**ローカル サブスクリプション**選択**新しいサブスクリプション.** .![地理的冗長性を設定します。](media\Set-up-Geographic-Redundancy-with-SQL-Server-Replication\sql24.png) </br>  
 
 2.  **サブスクリプションの新規作成ウィザード**] ページで [**次**します。
 ![地理的冗長性を設定します。](media\Set-up-Geographic-Redundancy-with-SQL-Server-Replication\sql25.png) </br>   
@@ -116,7 +115,7 @@ SQL エージェントのドメイン アカウントを作成する必要があ
 3.  **パブリケーション** ページで、ドロップダウン リストから、パブリッシャーを選択します。  展開**AdfsConfigurationV3**上記で作成したパブリケーションの名前を選択し、クリックして**次**します。  
 ![地理的冗長性を設定します。](media\Set-up-Geographic-Redundancy-with-SQL-Server-Replication\sql26.png) </br> 
   
-4.  **マージ エージェントの場所**] ページで、[**サブスクライバーで各エージェントを実行する\(プル サブスクリプション\)** \(既定\)をクリックします。**[次へ]** します。  
+4.  **マージ エージェントの場所**] ページで、[**サブスクライバーで各エージェントを実行する\(プル サブスクリプション\)** \(既定\)をクリックします。 **[次へ]** します。  
 ![地理的冗長性を設定します。](media\Set-up-Geographic-Redundancy-with-SQL-Server-Replication\sql27.png) </br> これは、と共に、以下のサブスクリプションの種類を決定します競合の解決ロジック。 \(詳細については、次を参照してください。 [Detect and Resolve Merge Replication Conflicts して](https://technet.microsoft.com/library/ms151191.aspx)します。 </br>
  
 5.  **サブスクライバー** ] ページで、[ **AdfsConfigurationV3**サブスクライバー データベースをクリックします**次**します。  

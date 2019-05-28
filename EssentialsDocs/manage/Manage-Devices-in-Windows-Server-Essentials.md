@@ -12,12 +12,12 @@ ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 288d62a3fe4d9073ba2c0e3fdff385d8317f20d4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d740b71a2c3b9ed8ddb0ecfae6da2cf7d4f689a5
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815113"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63720411"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>Windows Server Essentials でのデバイスの管理
 
@@ -102,7 +102,7 @@ ms.locfileid: "59815113"
   
 4.  **< ユーザー アカウント\>タスク**ウィンドウで、をクリックして**アカウント プロパティの表示**します。 ユーザー アカウントの **[プロパティ]** ページが表示されます。  
   
-5.  **[コンピューター アクセス]** タブで、このユーザーがリモートでアクセスできるコンピューターを選択し、**[OK]** をクリックします。  
+5.  **[コンピューター アクセス]** タブで、このユーザーがリモートでアクセスできるコンピューターを選択し、 **[OK]** をクリックします。  
   
 ##  <a name="BKMK_3"></a> コンピューターをサーバーから削除します。  
  ダッシュボードを使用して Windows Server Essentials を実行しているサーバーから削除されたコンピューターは、サーバーによって管理されなくなります。 その結果、サーバーは、ネットワークから削除されたコンピューターのバックアップの作成や状態の監視を停止します。  
@@ -116,7 +116,7 @@ ms.locfileid: "59815113"
   
 2.  ナビゲーション バーで、 **[デバイス]** タブをクリックします。  
   
-3.  コンピューターの一覧で、ネットワークから削除するコンピューターを右クリックし、**[コンピューターの削除]** をクリックします。  
+3.  コンピューターの一覧で、ネットワークから削除するコンピューターを右クリックし、 **[コンピューターの削除]** をクリックします。  
   
 ##  <a name="BKMK_5"></a> フォルダー リダイレクトおよびセキュリティ用グループ ポリシー設定を構成します。  
  Windows Server Essentials ダッシュボードを使用して、グループ ポリシーを構成し、Windows Server Essentials ネットワーク内のコンピューターにそのポリシーを展開できます。 Windows Server Essentials のグループ ポリシーには、Windows Update、Windows Defender、およびネットワーク ファイアウォールに影響を与えるフォルダー リダイレクトとセキュリティの設定が含まれます。  
@@ -127,15 +127,15 @@ ms.locfileid: "59815113"
   
 2.  ナビゲーション バーで、 **[デバイス]** をクリックします。  
   
-3.  Windows Server essentials の場合。グローバルの **[ユーザー タスク]** ウィンドウで、**[グループ ポリシーの実装]** をクリックします。  
+3.  Windows Server essentials の場合。グローバルの **[ユーザー タスク]** ウィンドウで、 **[グループ ポリシーの実装]** をクリックします。  
   
-     Windows Server essentials の場合。グローバルの **[デバイス タスク]** ウィンドウで、**[グループ ポリシーの実装]** をクリックします。  
+     Windows Server essentials の場合。グローバルの **[デバイス タスク]** ウィンドウで、 **[グループ ポリシーの実装]** をクリックします。  
   
 4.  グループ ポリシーの実装ウィザードが開きます。  
   
 5.  ウィザードの **[フォルダー リダイレクト グループ ポリシーを有効にする]** ページで、リダイレクトするユーザー フォルダーを選択できます。  
   
-6.  ウィザードの **[セキュリティ ポリシー設定を有効にする]** ページで、**[Windows Update]**、**[Windows Defender]**、および **[ネットワーク ファイアウォール]** のグループ ポリシー設定を有効にすることができます。  
+6.  ウィザードの **[セキュリティ ポリシー設定を有効にする]** ページで、 **[Windows Update]** 、 **[Windows Defender]** 、および **[ネットワーク ファイアウォール]** のグループ ポリシー設定を有効にすることができます。  
   
 7.  **[完了]** をクリックして、グループ ポリシー設定を実装します。  
   
@@ -167,7 +167,7 @@ ms.locfileid: "59815113"
   
 1.  Windows Server Essentials ダッシュボードを開きます。  
   
-2.  メイン ナビゲーション バーで、**[デバイス]** をクリックします。  
+2.  メイン ナビゲーション バーで、 **[デバイス]** をクリックします。  
   
 3.  ダッシュボードには、現在のコンピューターの一覧が表示されます。  
   
@@ -189,6 +189,6 @@ ms.locfileid: "59815113"
   
 -   [ダッシュ ボードを使用してユーザー アカウントを管理します。](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage8)  
   
--   [Windows Server Essentials を管理します。](Manage-Windows-Server-Essentials.md)  
+-   [Windows Server Essentials の管理](Manage-Windows-Server-Essentials.md)  
   
--   [Windows Server Essentials を使用します。](../use/Use-Windows-Server-Essentials.md)
+-   [Windows Server Essentials の使用](../use/Use-Windows-Server-Essentials.md)

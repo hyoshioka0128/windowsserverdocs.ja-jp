@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ef1eee97e40b9d3d131cef01722a0d42660b609
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 1893c0d2689657a5213b2d59e8d83cea0fc3a0db
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838063"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63722719"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>パフォーマンス チューニングのリモート デスクトップ仮想化ホスト
 

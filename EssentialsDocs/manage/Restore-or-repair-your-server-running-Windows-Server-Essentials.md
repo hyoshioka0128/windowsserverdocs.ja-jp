@@ -12,12 +12,12 @@ ms.assetid: 27bf6f24-30c4-4935-9b24-069eb43e22f4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e1ebc539928d13b0d34dfe5a0ee57ce6e98088e9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 15d9a10daec0b72eb41092dbd9fa87f989ebedb8
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862353"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63720661"
 ---
 # <a name="restore-or-repair-your-server-running-windows-server-essentials"></a>Windows Server Essentials を実行しているサーバーの復元または修復
 
@@ -141,7 +141,7 @@ ms.locfileid: "59862353"
   
 6.  **[システム イメージ バックアップの選択]** ページでは、最新のバックアップを使用するように選択することも、以前のバックアップを選択することもできます。 システムは、システムの復元または修復の目的で選択したバックアップの時点の状態に復元されます。 バックアップが保存された後にデータを追加した場合または設定を変更した場合は、そのデータや設定を再作成する必要があります。  
   
-     次のいずれかのオプションを選択し、**[次へ]** をクリックします。  
+     次のいずれかのオプションを選択し、 **[次へ]** をクリックします。  
   
     -   **利用可能なシステム イメージのうち最新のものを使用する (推奨)**  
   
@@ -233,7 +233,7 @@ ms.locfileid: "59862353"
   
 5.  クリックして**参照**に移動します *< ドライブ\>\\< ServerName\>* \ServerFolders (たとえば*d:\Contoso\ServerFolders*) をクリックして、共有するフォルダーを選択します**OK**します。  
   
-6.  **[次へ]** をクリックします。  
+6.   **[次へ]** をクリックします。  
   
 7.  ステップ 2 で書き留めたアクセス許可を指定し、 **[フォルダーの追加]** をクリックします。  
   
@@ -247,6 +247,6 @@ ms.locfileid: "59862353"
   
 -   [バックアップの管理と復元](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)  
   
--   [Windows Server Essentials を管理します。](Manage-Windows-Server-Essentials.md)  
+-   [Windows Server Essentials の管理](Manage-Windows-Server-Essentials.md)  
   
--   [Windows Server Essentials を使用します。](../use/Use-Windows-Server-Essentials.md)
+-   [Windows Server Essentials の使用](../use/Use-Windows-Server-Essentials.md)

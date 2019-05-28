@@ -9,16 +9,14 @@ ms.date: 02/01/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 37b8c4b9b07e3111fce1bfc0a9aae10c8754bb3a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6612c05e664b50c5a50b10b712b91715cc85d230
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884633"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189883"
 ---
 # <a name="configure-ad-fs-extranet-lockout-protection"></a>AD FS エクストラネット ロックアウト保護を構成します。
-
->適用先:Windows Server 2012 R2
 
 Windows Server 2012 R2 で AD FS でエクストラネットのロックアウトと呼ばれるセキュリティ機能が導入されました。  この機能により、AD FS が「停止」一定期間の外部から「悪意のある」ユーザー アカウントを認証します。  これは、ユーザー アカウントが Active Directory でロックアウトされていることを防ぎます。  アカウントのロックアウトが AD からユーザーを保護できるだけでなく AD FS のエクストラネット ロックアウトも保護ブルート フォース パスワード推測攻撃から
 
@@ -95,7 +93,7 @@ AD ロックアウト ポリシーの確認を最初見てみましょう。 AD 
 
 ## <a name="additional-references"></a>その他の参照情報  
 - [Active Directory フェデレーション サービスをセキュリティで保護するためのベスト プラクティス](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
-- [管理者以外のユーザーを AD FS の Powershell コマンドレットのアクセスを委任します。](delegate-ad-fs-pshell-access.md)
+- [管理者以外のユーザーへの AD FS Powershell コマンドレットのアクセスの委任](delegate-ad-fs-pshell-access.md)
 - [Set-adfsproperties](https://technet.microsoft.com/itpro/powershell/windows/adfs/set-adfsproperties)
 
 [AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md)

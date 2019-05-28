@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 781e83615d44a4adb20fd85fe5ce6ebc7c2d4966
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 09f3f738d5a7ba7f7c40cb4eb2ce043856b378cc
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818833"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63718266"
 ---
 # <a name="msdt"></a>msdt
 
