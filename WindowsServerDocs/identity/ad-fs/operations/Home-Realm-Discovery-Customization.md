@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1198d8b76f2ecdad728e2de6ce7a5c0d053f779f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e91306ecd8ef08dd6af9173ead314a39dd5d2eff
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868933"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189130"
 ---
 # <a name="home-realm-discovery-customization"></a>ホーム領域検出のカスタマイズ
 
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 AD FS クライアントは、まず、リソースを要求する場合、リソース フェデレーション サーバーには、クライアントの領域に関する情報がありません。 リソースのフェデレーション サーバーが AD FS のクライアントには、 **クライアント領域の検出**  ページで、一覧から、ユーザーが、ホーム領域を選択します。 この一覧の値は、要求プロバイダー信頼の表示名プロパティから取得されます。 次の Windows PowerShell コマンドレットを使用して、変更および AD FS ホーム領域検出エクスペリエンスをカスタマイズします。  
   

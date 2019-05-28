@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 50f50cd4e096b107a2b58ac05328ff8ed413f2dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: be20996d1df3898b8ff23422759e810a4b333b3d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860273"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189539"
 ---
 # <a name="create-a-rule-to-pass-through-or-filter-an-incoming-claim"></a>パススルーまたは入力方向の要求をフィルター処理するルールを作成します。
-
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 パススルーを使用して、Active Directory フェデレーション サービスで、入力方向の要求規則テンプレートをフィルター処理または\(AD FS\)、選択したクレームの種類ですべての着信要求を渡すことができます。 入力方向の要求の値は、選択したクレームの種類でフィルターすることもできます。 たとえば、この規則テンプレートを使用して、グループのすべての着信要求を送信するルールを作成することができます。 ユーザー プリンシパル名のみを送信するこのルールを使用することもできます。 \(UPN\)で終わる要求@fabrikamします。  
   
@@ -39,7 +37,7 @@ ms.locfileid: "59860273"
 4.  **要求発行ポリシーの編集**ダイアログ ボックスで、**発行変換規則** をクリックして**規則の追加**ルール ウィザードを開始します。 
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から**次へ**.  
+5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から **次へ** .  
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
 
 6.  **規則の構成**ページ**要求規則名**で、この規則の表示名を入力**着信要求の種類**一覧で、要求の種類を選択しのいずれかを選択します次のオプションを組織のニーズによって異なります。  
@@ -70,7 +68,7 @@ ms.locfileid: "59860273"
 4.  **要求規則の編集**ダイアログ ボックスで、**受け入れ変換規則** をクリックして**規則の追加**ルール ウィザードを開始します。
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から**次へ**.  
+5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から **次へ** .  
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
 
 6.  **規則の構成**ページ**要求規則名**で、この規則の表示名を入力**着信要求の種類**一覧で、要求の種類を選択しのいずれかを選択します次のオプションを組織のニーズによって異なります。  
@@ -108,7 +106,7 @@ ms.locfileid: "59860273"
     -   **委任承認規則**  
 ![ルールを作成します。](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)    
 
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から**次へ**.  
+5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から **次へ** .  
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule7.PNG)    
 
 6.  **規則の構成**ページ**要求規則名**で、この規則の表示名を入力**着信要求の種類**一覧で、要求の種類を選択しのいずれかを選択します次のオプションを組織のニーズによって異なります。  
@@ -130,7 +128,7 @@ ms.locfileid: "59860273"
 
   
 ## <a name="additional-references"></a>その他の参照情報  
-[要求規則を構成します。](Configure-Claim-Rules.md)  
+[要求規則を構成する](Configure-Claim-Rules.md)  
   
 [パススルーを使用する場合、or Filter Claim Rule](../../ad-fs/technical-reference/When-to-Use-a-Pass-Through-or-Filter-Claim-Rule.md)  
   

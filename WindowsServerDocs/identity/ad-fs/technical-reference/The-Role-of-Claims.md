@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: df35348cb51a9021f4aaa2fc6516cb119bdb8b8f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 542d7a24e29b52dd3fa0d7ea6a9b2d27fb620d8d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849433"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188503"
 ---
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
-
 # <a name="the-role-of-claims"></a>要求の役割
 要求に\-ベースの id モデルでは、要求はフェデレーション プロセスで重要な役割を再生する、これによって、重要なコンポーネントはすべての Web の結果\-ベースの認証および承認要求が決定されます。 このモデルを使用することで、組織はデジタル ID とアクセス権、つまり*要求*をセキュリティや企業の境界を越えて、標準化された方法で安全に提示できるようになります。  
   

@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f618add4c4803142b3bd7278908834a412f30999
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2b881553431be873ed9883da67a7989527d7d288
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862573"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191267"
 ---
 # <a name="identify-your-ad-fs-deployment-goals"></a>AD FS 展開目標の特定
-
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 Active Directory フェデレーション サービスを正しく特定する\(AD FS\)展開の目標は、AD FS の設計プロジェクトの成功に不可欠です。 優先順位を付けるし、場合によっては、結合、展開の目標、設計し、反復的なアプローチを使用して AD FS を展開することができます。 文書化、および AD FS のデザインに関連して、状況に応じて実用的な解決策を開発する AD FS 展開目標の定義済みの既存の利用できます。  
   
@@ -93,6 +91,6 @@ AD FS の以前のバージョンは、次を実現するためにデプロイ�
 -   ユーザー認証の選択 (複数の認証プロバイダーが使用可能な場合)。  
   
 ## <a name="see-also"></a>関連項目  
-[Windows Server 2012 R2 で AD FS 設計ガイドします。](../../ad-fs/design/AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[Windows Server 2012 R2 での AD FS 設計ガイド](../../ad-fs/design/AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

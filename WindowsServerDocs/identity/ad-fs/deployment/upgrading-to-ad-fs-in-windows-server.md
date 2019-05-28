@@ -9,23 +9,22 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 39c735e9dde0fd60c7eb9ccfe0af890bdc5a5950
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c8e72f1075b984506f9f992cd45cf853b50bddeb
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838323"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191920"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>WID データベースを使用した、Windows Server 2016 での AD FS へのアップグレード
 
->適用先:Windows Server 2019、Windows Server 2016
 
 
-## <a name="upgrading-a-windows-server-2012-r2-or-2016-ad-fs-farm-to-windows-server-2019"></a>Windows Server 2019 に、Windows Server 2012 R2 または 2016年の AD FS ファームをアップグレードします。 
+## <a name="upgrading-a-windows-server-2012-r2-or-2016-ad-fs-farm-to-windows-server-2019"></a>Windows Server 2019 に、Windows Server 2012 R2 または 2016年の AD FS ファームをアップグレードします。
 次のドキュメントは、WID データベースを使用しているときに、Windows Server 2019 の AD FS を AD FS ファームをアップグレードする方法について説明します。  
 
 ### <a name="ad-fs-farm-behavior-levels-fbl"></a>AD FS ファーム動作レベル (FBL)  
-Windows Server 2016 の AD FS ファーム動作レベル (FBL) が導入されました。 これは、ファーム全体の設定、機能、AD FS ファームで使用できるかを決定します。 
+Windows Server 2016 の AD FS ファーム動作レベル (FBL) が導入されました。 これは、ファーム全体の設定、機能、AD FS ファームで使用できるかを決定します。
 
 次の表は、Windows Server のバージョンで FBL 値を示します。
 | Windows Server のバージョン  | FBL | AD FS 構成データベース名 |
@@ -59,7 +58,7 @@ Windows Server 2016 の AD FS ファーム動作レベル (FBL) が導入され�
 
 ##### <a name="to-upgrade-your-ad-fs-farm-to-windows-server-2019-farm-behavior-level"></a>Windows Server 2019 ファーム動作レベルに、AD FS ファームをアップグレードするには  
 
-1.  Windows Server の 2019 に Active Directory フェデレーション サービスの役割をインストールするサーバー マネージャーを使用して、 
+1.  Windows Server の 2019 に Active Directory フェデレーション サービスの役割をインストールするサーバー マネージャーを使用して、
 
 2.  AD FS 構成ウィザードを使用して、、既存の AD FS ファームを新しい Windows Server 2019 サーバーを参加させます。  
 
@@ -77,45 +76,56 @@ Windows Server 2016 の AD FS ファーム動作レベル (FBL) が導入され�
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_5.png)  
 
-6.  各 Web アプリケーション プロキシを管理者特権でのウィンドウで、次の PowerShell コマンドを実行して、WAP を再構成します。  
-```powershell
-$trustcred = Get-Credential -Message "Enter Domain Administrator credentials"
-Install-WebApplicationProxy -CertificateThumbprint {SSLCert} -fsname fsname -FederationServiceTrustCredential $trustcred  
-```
-
-7.  これで、Windows Server 2016 のフェデレーション サーバーでは、AD FS 管理を開きます。 プライマリ ロールがこのサーバーに転送されているため、すべての管理機能に表示されますに注意してください。  
+6.  これで、Windows Server 2016 のフェデレーション サーバーでは、AD FS 管理を開きます。 プライマリ ロールがこのサーバーに転送されているため、すべての管理機能に表示されますに注意してください。  
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_6.png)  
 
-8.  ファームのアップグレードがある AD スキーマを必要と 2016 または 2019 を 2012 R2 AD FS ファームをアップグレードする場合に少なくとも 85 をレベルします。  スキーマ名、Windows Server 2016 のインストール メディアをアップグレードするには、コマンド プロンプトを開き、support\adprep ディレクトリに移動します。 次を実行します。  `adprep /forestprep`
+7.  ファームのアップグレードがある AD スキーマを必要と 2016 または 2019 を 2012 R2 AD FS ファームをアップグレードする場合に少なくとも 85 をレベルします。  スキーマ名、Windows Server 2016 のインストール メディアをアップグレードするには、コマンド プロンプトを開き、support\adprep ディレクトリに移動します。 次を実行します。  `adprep /forestprep`
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)  
 
     実行が完了します。 `adprep/domainprep`
     >[!NOTE]
-    >次の手順を実行する前に、設定から Windows Update を実行して、Windows Server が現在確認してください。 更新の必要がなくなるまで、このプロセスを続けます。 
-    > 
-    
+    >次の手順を実行する前に、設定から Windows Update を実行して、Windows Server が現在確認してください。 更新の必要がなくなるまで、このプロセスを続けます。
+    >
+
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_8.png)  
 
-9. Windows Server 2016 で PowerShell を開き、次のコマンドレットを実行します。
+8. Windows Server 2016 で PowerShell を開き、次のコマンドレットを実行します。
     >[!NOTE]
     > 2012 R2 のすべてのサーバーは、次の手順を実行する前に、ファームから削除する必要があります。
- 
+
     `Invoke-AdfsFarmBehaviorLevelRaise`  
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_9.png)  
 
-10. 入力を求められたら、Y を入力します。これにより、レベルを上げることが開始されます。 これが完了すると、FBL 正常が発生します。  
+9. 入力を求められたら、Y を入力します。これにより、レベルを上げることが開始されます。 これが完了すると、FBL 正常が発生します。  
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_10.png)  
 
-11. これで、AD FS の管理に移動すると表示されます以降の AD FS のバージョンの新機能が追加されました 
+10. これで、AD FS の管理に移動すると表示されます以降の AD FS のバージョンの新機能が追加されました
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)  
 
-13. 同様に、PowerShell コマンドレットを使用することができます:`Get-AdfsFarmInformation`現在 FBL を表示します。  
+11. 同様に、PowerShell コマンドレットを使用することができます:`Get-AdfsFarmInformation`現在 FBL を表示します。  
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)  
-    
 
+12. WAP サーバーを各 Web アプリケーション プロキシを最新のレベルにアップグレードするには、管理者特権でのウィンドウで、次の PowerShell コマンドを実行して、WAP を再構成します。  
+    ```powershell
+    $trustcred = Get-Credential -Message "Enter Domain Administrator credentials"
+    Install-WebApplicationProxy -CertificateThumbprint {SSLCert} -fsname fsname -FederationServiceTrustCredential $trustcred  
+    ```
+    クラスターから以前のサーバーを削除して、のみ WAP 最新のサーバー バージョンを実行しているサーバー上で、次の Powershell コマンドレットを実行して再構成されたを保持します。
+    ```powershell
+    Set-WebApplicationProxyConfiguration -ConnectedServersName WAPServerName1, WAPServerName2
+    ```
+    Get WebApplicationProxyConfiguration commmandlet を実行して、WAP の構成を確認します。 ConnectedServersName 前のコマンドからを実行するサーバーが反映されます。
+    ```powershell
+    Get-WebApplicationProxyConfiguration
+    ```
+    WAP サーバーの ConfigurationVersion をアップグレードするには、次の Powershell コマンドを実行します。
+    ```powershell
+    Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
+    ```
+    WAP サーバーのアップグレードを完了します。

@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: ed66800aa6bbfdf85816a992ee8eb39799efebb6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6e78c52f1928a3401c0532ab7c25616b012a1d8b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865233"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192102"
 ---
 # <a name="install-the-federation-service-proxy-role-service"></a>フェデレーション サービス プロキシ役割サービスをインストールする
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory フェデレーション サービスのフェデレーション サービス プロキシ役割サービスをインストールする準備が整ったら、前提条件のアプリケーションと証明書とコンピューターを構成した後\(AD FS\)します。 次の手順を使用すると、フェデレーション サービス プロキシ役割サービスをインストールします。 コンピューターで、フェデレーション サービス プロキシ役割サービスをインストールするときにそのコンピューターは、フェデレーション サーバー プロキシになります。  
   
@@ -45,7 +43,7 @@ Active Directory フェデレーション サービスのフェデレーショ�
 
 8. **[インストール オプションの確認]** ページの情報を確認し、 **[必要に応じて対象サーバーを自動的に再起動する]** チェック ボックスをオンにして、 **[インストール]** をクリックします。  
   
-13. **[インストールの進行状況]** ページで、すべてが正常にインストールされたことを確認し、**[閉じる]** をクリックします。  
+13. **[インストールの進行状況]** ページで、すべてが正常にインストールされたことを確認し、 **[閉じる]** をクリックします。  
 
 ### <a name="to-install-the-federation-service-proxy-role-service-using-powershell"></a>PowerShell を使用して、フェデレーション サービス プロキシ役割サービスをインストールするには
 
@@ -59,8 +57,8 @@ Active Directory フェデレーション サービスのフェデレーショ�
 
   
 ## <a name="additional-references"></a>その他の参照情報  
-[チェックリスト:フェデレーション サーバーを設定します。](Checklist--Setting-Up-a-Federation-Server.md)  
+[チェックリスト:フェデレーション サーバーのセットアップ](Checklist--Setting-Up-a-Federation-Server.md)  
   
-[チェックリスト:フェデレーション サーバー プロキシを設定します。](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[チェックリスト:フェデレーション サーバー プロキシのセットアップ](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 

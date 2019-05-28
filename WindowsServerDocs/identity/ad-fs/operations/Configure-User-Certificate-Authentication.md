@@ -9,16 +9,15 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d5c2d84c263517a4c81622ca02538796ccd9da71
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2d819ea036029fbe7cfde9ad5a445db6b2b42c96
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817503"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189697"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>AD FS ユーザー証明書認証の構成
 
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 X509 ユーザー証明書の認証モードのいずれかの方法が記載の AD FS を構成することができます[今回](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)します。 この機能を使用できる[と Azure Active Directory](https://blogs.msdn.microsoft.com/samueld/2016/07/19/adfs-certauth-aad-o365/)自体でクライアントとデバイスを有効にするがプロビジョニングに AD FS にアクセスするユーザーの証明書、イントラネットまたはエクストラネットからリソース。
 
@@ -43,7 +42,7 @@ Chrome 用に構成の詳細については、これを参照してください[
 
 
 ## <a name="troubleshooting"></a>トラブルシューティング
-- HTTP 204 で証明書の認証要求が失敗する場合は"No Content から https://certauth.fs.contoso.com"応答では、ルートおよび中間 CA 証明書がインストールされていること、それぞれ、信頼されたルート CA と中間 CA が証明書のすべてのストアを確認しますフェデレーション サーバー。
+- HTTP 204 と証明書の認証要求が失敗した場合"https からのコンテンツはありません:\//certauth.fs.contoso.com"応答、ルートおよび中間 CA 証明書がインストールされていること、それぞれ、信頼されたルート CA をことを確認し、中間 CA 証明書は、すべてのフェデレーション サーバーに保存します。
 - 不明な理由は、証明書の認証要求が失敗する場合、.cer ファイルに、クライアント証明書をエクスポートし、コマンドを実行 
 
 `certutil -f -urlfetch -verify certificatefilename.cer`

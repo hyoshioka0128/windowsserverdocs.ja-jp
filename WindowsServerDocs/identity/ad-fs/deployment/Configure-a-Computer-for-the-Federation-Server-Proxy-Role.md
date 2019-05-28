@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 2a89bab2fd1af1a1d7234da29f2025b4b12d6774
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: b01e2ae567155cd3d53d6d7972bfd0b9ec0cf51b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861803"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192280"
 ---
 # <a name="configure-a-computer-for-the-federation-server-proxy-role"></a>フェデレーション サーバー プロキシの役割用にコンピューターを構成する
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 後で必要な証明書を持つコンピューターを構成して、フェデレーション サービス プロキシ役割サービスがインストールされているは、フェデレーション サーバー プロキシにするコンピューターを構成する準備が完了したら。 コンピューターがフェデレーション サーバー プロキシの役割を実行できるようにするには、以下の手順を使用します。  
   
@@ -102,6 +100,6 @@ ms.locfileid: "59861803"
     フェデレーション サーバーと、フェデレーション サーバー プロキシ コンピューターの両方で、前のコマンドを実行する必要があります。  
   
 ## <a name="additional-references"></a>その他の参照情報  
-[チェックリスト:フェデレーション サーバー プロキシを設定します。](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[チェックリスト:フェデレーション サーバー プロキシのセットアップ](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 

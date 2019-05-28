@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 71119174c7fc5929eb4e1982183ba0aed7eb1735
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 83074017e4ae412cf0aec654f6ab5901ad8039e2
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847093"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63706627"
 ---
 # <a name="vssadmin-delete-shadows"></a>Vssadmin delete シャドウ
 

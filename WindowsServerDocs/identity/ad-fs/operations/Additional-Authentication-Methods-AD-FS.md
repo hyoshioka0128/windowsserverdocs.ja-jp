@@ -8,16 +8,15 @@ ms.date: 09/19/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 68cd67dc14d3407985579a49e2f8603634fafdb7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: b0d5754a4622df9ca26a80bd4e32c355dda0f684
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824433"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190064"
 ---
-# <a name="configure-3rd-party-authenticaiton-providers-as-primary-authentication-in-ad-fs-2019"></a>AD FS 2019 でプライマリ認証としてサード パーティの認証プロバイダーを構成します。
+# <a name="configure-3rd-party-authentication-providers-as-primary-authentication-in-ad-fs-2019"></a>AD FS 2019 でプライマリ認証としてサード パーティの認証プロバイダーを構成します。
 
->適用先:Windows Server 2019
 
 ブルート フォース攻撃をしようとする攻撃が発生している組織、侵害、またはそれ以外の場合、パスワード ベースの認証要求を送信してユーザー アカウントをロックします。  セキュリティ侵害から企業を保護するため、AD FS に「スマート」エクストラネットのロックアウトや IP アドレス ベースのブロックなどの機能が導入されました。  
 

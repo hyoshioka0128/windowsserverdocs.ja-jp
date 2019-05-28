@@ -9,16 +9,16 @@ ms.date: 12/05/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0ee22afd6fdec96ab69d915e4730bb834d2ab8ad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e9d6161666be89673cff6ef1a975d3205fa4b5c9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855523"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189091"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証
 
->適用先:Windows Server 2012 R2
+
 
 コンシューマー デバイスの数が急速に増加し、時間と場所を問わずに情報にアクセスできるようになった現在、人々のテクノロジに対する考え方も変化しています。 情報技術を一日中使用し続けるようになり、情報に簡単にアクセスできるようになったことで、従来の仕事とプライベートの区別はあいまいなものになっています。 信念を伴うこのようなテクノロジを選択し、ユーザーの個性、活動、およびスケジュールに合わせてカスタマイズされたその個人のワークプ レースに拡張する必要があります。 個人用のコンシューマー デバイスを企業ネットワークに接続したいという多数の要望に応えるため、Microsoft では次のような価値提供を行っています。
 
@@ -54,11 +54,11 @@ ms.locfileid: "59855523"
 
 このソリューション ガイドでは、次のチュートリアル手順が用意されています。
 
-1.  [チュートリアル: Windows デバイスのワークプ レース ジョイン](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+1.  [チュートリアル: Workplace Join で Windows デバイスをワークプレースに参加させる](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
-2.  [チュートリアル: IOS デバイスのワークプ レース ジョイン](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+2.  [チュートリアル: Workplace Join で iOS デバイスをワークプレースに参加させる](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
-3.  [チュートリアル: Android デバイスでワークプ レース ジョイン](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
+3.  [チュートリアル: Workplace Join で Android デバイスをワークプレースに参加させる](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
 
 ## <a name="see-also"></a>関連項目
 [デバイス登録サービスによるフェデレーション サーバーを構成します。](../deployment/configure-a-federation-server-with-device-registration-service.md)

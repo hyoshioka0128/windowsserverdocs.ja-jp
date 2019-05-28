@@ -9,22 +9,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 79bf9fd21cc61ba41a22caa11d4e5a920b509720
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a145e6c10cd5bd9ebf259bdd2c15404345fbd10a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865323"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191153"
 ---
 # <a name="planning-federation-server-proxy-placement"></a>フェデレーション サーバー プロキシの配置の計画
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
-
 Active Directory フェデレーション サービスを設計に使用するすべての情報を収集した後\(AD FS\)インフラストラクチャを配置するタイミングと場所を計画することができます、フェデレーション サーバーと Web サーバーの戦略を計画した後、新しい設計でのフェデレーション サーバー プロキシ。 次のトピックの情報は、状況にフェデレーション サーバー プロキシとアカウント用に構成するかどうかパートナーの役割またはリソース パートナーの役割を判断するのに役立ちます。  
   
--   [アカウント パートナーのフェデレーション サーバーの役割を確認します。](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
+-   [アカウント パートナー内のフェデレーション サーバーの役割を確認する](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
   
--   [リソース パートナーのフェデレーション サーバー プロキシの役割を確認します。](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Resource-Partner.md)  
+-   [リソース パートナー内のフェデレーション サーバー プロキシの役割を確認する](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Resource-Partner.md)  
   
 -   [フェデレーション サーバー プロキシを作成する場合](When-to-Create-a-Federation-Server-Proxy.md)  
   
@@ -42,6 +40,6 @@ Active Directory フェデレーション サービスを設計に使用する�
 2 つのプライマリ AD FS のいずれかで、フェデレーション サーバー プロキシを配置する方法の例では、シナリオを設計、参照してください[AD FS 設計への展開の目標をマッピング](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md)します。  
 
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)
   
 

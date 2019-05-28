@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c520cbe22739f2bde263e133c7feb681d824d251
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 80a6cb2bc8e6f0fdb1a777a42f5d245f98ac3dee
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883713"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192091"
 ---
 # <a name="install-the-federation-service-role-service"></a>フェデレーション サービス役割サービスをインストールする
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory フェデレーション サービスのフェデレーション サービス役割サービスをインストールする準備が完了したら、前提条件のアプリケーションと証明書で、コンピューターを正しく構成されている、できた\(AD FS\)します。 コンピューターで、フェデレーション サービスをインストールするときにそのコンピューターがフェデレーション サーバーになります。  
   
@@ -57,10 +55,10 @@ SSL 証明書を秘密キーを既にインストールされているまたは�
   
 10. **Web サーバーの役割\(IIS\)**  ] ページで [**次**します。  
   
-11. **[役割サービスの選択]** ページで、**[次へ]** をクリックします。  
+11. **[役割サービスの選択]** ページで、 **[次へ]** をクリックします。  
   
 12. **[インストール オプションの確認]** ページの情報を確認し、 **[必要に応じて対象サーバーを自動的に再起動する]** チェック ボックスをオンにして、 **[インストール]** をクリックします。  
   
-13. **[インストールの進行状況]** ページで、すべてが正常にインストールされたことを確認し、**[閉じる]** をクリックします。  
+13. **[インストールの進行状況]** ページで、すべてが正常にインストールされたことを確認し、 **[閉じる]** をクリックします。  
   
 

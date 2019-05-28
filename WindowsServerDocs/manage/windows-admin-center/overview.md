@@ -5,20 +5,19 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
+ms.date: 04/12/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: e23d02fd8da96392f44874ad6ea4d6c40e2be940
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 3208c20e8bf9f4cfab4340aa33b24175bbc72dda
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828203"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188330"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
 >適用先:Windows Admin Center、Windows Admin Center プレビュー
-
-Windows Admin Center へようこそ。
 
 **Windows Admin Center** (コードネーム**プロジェクト ホノルル**) Windows Server 付属の管理ツールの進化版ですが 1 つのローカルとリモート サーバー管理のすべての側面に統合するガラスのウィンドウ。 ローカルに展開されたブラウザー ベースの管理エクスペリエンスのため、インターネット接続や Azure は必要ありません。 Windows Admin Center では、インターネットに接続されていないプライベート ネットワークを含む、展開のあらゆる側面を完全に管理できます。
 
@@ -58,7 +57,6 @@ Windows Admin Center へようこそ。
             <ul>
             <li><a href="plan/installation-options.md">インストールの種類は、適切なでしょうか。</a>
             <li><a href="plan/user-access-options.md">ユーザー アクセス オプション</a>
-            <li><a href="plan/azure-integration-options.md">どのような Azure 統合オプションにはありますか。</a>
             <br>
             </ul>
         </td>
@@ -78,8 +76,6 @@ Windows Admin Center へようこそ。
             <li><a href="configure/settings.md">Windows Admin Center の設定</a>
             <li><a href="configure/user-access-control.md">ユーザー アクセス制御とアクセス許可</a>
             <li><a href="configure/using-extensions.md">拡張機能</a>
-            <li><a href="configure/azure-integration.md">Azure との統合します。</a>
-            <li><a href="configure/manage-azure-vms.md">Windows Admin Center での Azure Vm を管理します。</a>
             </ul>
         </td>
     </tr>
@@ -92,13 +88,29 @@ Windows Admin Center へようこそ。
             <li><a href="use/manage-hyper-converged.md">ハイパー コンバージド インフラストラクチャを管理します。</a>
             <li><a href="use/manage-failover-clusters.md">フェールオーバー クラスターを管理します。</a>
             <li><a href="use/manage-virtual-machines.md">仮想マシンを管理します。</a>
-            <li><a href="use/azure-services.md">Azure サービスを活用します。</a>
-            <li><a href="use/troubleshooting.md">一般的なトラブルシューティング手順</a>
             <li><a href="use/logging.md">ログ記録</a>
-            <li><a href="use/known-issues.md">既知の問題</a>
             </ul>
         </td>
         <td style="vertical-align: top;">
+            <h3>Azure への接続します。</h3>
+            <ul>
+            <li><a href="azure/index.md">Azure のハイブリッド サービス</a></li>
+            <li><a href="azure/azure-integration.md">Windows Admin Center を Azure に接続します。</a></li>
+            <li><a href="azure/deploy-wac-in-azure.md">Azure で Windows Admin Center を展開します。</a></li>
+            <li><a href="azure/manage-azure-vms.md">Windows Admin Center の使用による Azure VM の管理</a></li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+            <td style="vertical-align: top;">
+            <h3>サポート</h3>
+            <ul>
+            <li><a href="support/index.md">サポート ポリシー</a>
+            <li><a href="support/troubleshooting.md">一般的なトラブルシューティング手順</a>
+            <li><a href="support/known-issues.md">既知の問題</a>
+            </ul>
+        </td>
+            <td style="vertical-align: top;">
             <h3>拡張</h3>
             <ul>
             <li><a href="extend/extensibility-overview.md">拡張機能の概要</a>
@@ -116,7 +128,9 @@ Windows Admin Center へようこそ。
 
 次の最新の機能について確認してください。
 
-- バージョン [1902] (https://aka.ms/wac1902) Acl、ゲートウェイの接続、および論理ネットワークを管理する新しい SDN ツールなど、ソフトウェア定義ネットワーク (SDN) の管理に機能強化 (&)、共有接続の一覧を追加します。
+- バージョン[1904](https://aka.ms/wac1904)は、Azure Hybrid Services ツールを紹介しは、GA チャネルのプレビューに含まれていた機能を提供する最新の GA リリース。
+- バージョン[1903](https://aka.ms/wac1903) Azure Monitor では、Active Directory、DHCP、DNS を管理するには、Active Directory、および新しいツールからサーバーや PC の接続を追加する機能から電子メール通知が表示されます。
+- バージョン[1902](https://aka.ms/wac1902) Acl、ゲートウェイの接続、および論理ネットワークを管理する新しい SDN ツールなど、ソフトウェア定義ネットワーク (SDN) の管理に機能強化 (&)、共有接続の一覧を追加します。
 - バージョン [1812](https://aka.ms/wac1812) では、濃色テーマ (プレビュー版)、電源構成の設定、BMC 情報、PowerShell による[拡張機能](./configure/using-extensions.md#manage-extensions-with-powershell)と[接続](./use/get-started.md#use-powershell-to-import-or-export-your-connections-with-tags)の管理のサポートが追加されました。
 - バージョン [1809.5](https://aka.ms/wac1809.5) は GA の累積的な更新プログラムで、プラットフォーム全体にわたるさまざまな品質向上、機能強化、バグ修正と、ハイパーコンバージド インフラストラクチャの管理ソリューションに関するいくつかの新機能を含んでいます。
 - バージョン [1809](https://cloudblogs.microsoft.com/windowsserver/2018/09/20/windows-admin-center-1809-and-sdk-now-generally-available/) は、以前にプレビュー版として提供されていた機能を GA チャネルに公開する GA リリースでした。
@@ -133,6 +147,6 @@ Windows Admin Center へようこそ。
 
 ## <a name="stay-updated"></a>最新情報に更新
 
-<a target="_blank" class="mscom-link twitter-follow-link" title="Twitter でフォローします。" aria-label="Follow us on Twitter" data-info="Twitter" href="https://twitter.com/servermgmt"><picture><source srcset="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR" media="(min-width:0)"><img srcset="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR" alt="Follow us on Twitter" src="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR"></picture></a>
- | 
-<a target="_blank" class="mscom-link blogs-follow-link" title="このブログを読む" aria-label="Visit our Blogs" data-info="Blogs" href="https://blogs.technet.microsoft.com/servermanagement/"><picture><source srcset="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw" media="(min-width:0)"><img srcset="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw" alt="Follow us on Blogs" src="//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw"></picture></a>
+![ ](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR)[Twitter でフォローします。](https://twitter.com/servermgmt)
+
+![ ](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw)[このブログを読む](https://blogs.technet.microsoft.com/servermanagement/)

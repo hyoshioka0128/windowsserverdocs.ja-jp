@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e26b7cac971f472bc8b5e48e3dc8cd2592dc22ce
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 585d0195b096056ba769f4e9a08d5c4d2156b96a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814783"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191450"
 ---
 # <a name="federation-server-farm-using-sql-server"></a>SQL Server を使用するフェデレーション サーバー ファーム
-
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 Active Directory フェデレーション サービスのこのトポロジ\(AD FS\) Windows Internal Database を使用してフェデレーション サーバー ファームとは異なります\(WID\)展開トポロジでデータを複製されません。ファームの各フェデレーション サーバー。 代わりに、ファーム内のすべてのフェデレーション サーバーは、読み取りし、は、企業ネットワークにある Microsoft SQL Server を実行しているサーバーに格納されている一般的なデータベースにデータを書き込みます。  
   
@@ -162,7 +160,7 @@ AlwaysOn 可用性グループで、AD FS ファームを構成するには、AD
 SQL Server マージ レプリケーションを使用する AD FS を構成する方法の詳細な手順は、「[地理的冗長化を SQL Server レプリケーション セットアップ](https://technet.microsoft.com/library/dn632406.aspx)します。  
   
 ## <a name="see-also"></a>関連項目  
-[AD FS 展開トポロジを計画します。](Plan-Your-AD-FS-Deployment-Topology.md)  
-[Windows Server 2012 R2 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[AD FS 展開トポロジの計画](Plan-Your-AD-FS-Deployment-Topology.md)  
+[Windows Server 2012 R2 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

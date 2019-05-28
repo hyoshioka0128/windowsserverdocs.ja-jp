@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 4900d8621b94a514a07bba55b2f7f3df5dd36353
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 26b0ae4f331607d83c6b94a2655ddc9eded8a356
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814623"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191868"
 ---
 # <a name="verify-that-a-federation-server-proxy-is-operational"></a>フェデレーション サーバー プロキシが正常に動作していることを確認する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 次の手順を使用するには、フェデレーション サーバー プロキシは、Active Directory フェデレーション サービスでフェデレーション サービスと通信できることを確認する\(AD FS\)します。 実行した後、この手順を実行する、 **AD FS フェデレーション サーバー プロキシ構成ウィザード**フェデレーション サーバー プロキシ ロールで実行するコンピューターを構成します。 このウィザードを実行する方法の詳細については、次を参照してください。 [、フェデレーション サーバー プロキシ ロール用コンピューターの構成](Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)します。  
   
@@ -40,6 +39,6 @@ ms.locfileid: "59814623"
     フェデレーション サーバー プロキシが正しく構成されている場合、イベント ID 198 のイベント ビューアーのアプリケーション ログに新しいイベントを参照してください。 このイベントは、フェデレーション サーバー プロキシ サービスが正常に開始し、現在はオンラインことを確認します。  
   
 ## <a name="additional-references"></a>その他の参照情報  
-[チェックリスト:フェデレーション サーバー プロキシを設定します。](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[チェックリスト:フェデレーション サーバー プロキシのセットアップ](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 

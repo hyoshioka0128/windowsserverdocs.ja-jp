@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 46692653ba10558a9236bd321127591bc7c8a275
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d2af0950e52d800202235bf674545f6c47e9cd88
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838383"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190784"
 ---
 # <a name="using-ad-ds-claims-with-ad-fs"></a>AD DS の要求を AD FS と共に使用する
   
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
   
 Active Directory Domain Services を使用してフェデレーション アプリケーションの高度なアクセス制御を有効にすることができます\(AD DS\)\-と共に Active Directory フェデレーション サービスのユーザーとデバイスの要求を発行\(AD FS\).  
   
@@ -80,4 +79,4 @@ AD DS vs から発行されるクレームを理解するために重要な 2 �
 AD DS が発行されたクレームの AD FS と連動するために必要なクレーム ルールを作成する方法の詳細については、次を参照してください。 [入力方向の要求を変換するルールを作成する](../../ad-fs/operations/Create-a-Rule-to-Transform-an-Incoming-Claim.md)です。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

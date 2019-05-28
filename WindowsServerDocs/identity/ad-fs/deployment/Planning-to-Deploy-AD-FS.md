@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: ca9e53d7d98f3ae5e6b7b329e52d4979e8c10215
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1459cade5071374ca39d453b9915a68e4bcfe539
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831693"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192041"
 ---
 # <a name="planning-to-deploy-ad-fs"></a>AD FS の展開計画
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 
 環境に関する情報を収集し、Active の Directory フェデレーション サービスを決定後\(AD FS\)設計のガイダンスに従って、 [Windows Server 2012 で AD FS 設計ガイド](https://technet.microsoft.com/library/dd807036.aspx)、組織の AD FS 設計の展開の計画を開始することができます。 完成した設計と、このトピックの情報をお客様の組織で AD FS を展開するために実行するタスクを指定できます。  
@@ -28,7 +26,7 @@ ms.locfileid: "59831693"
   
 -   企業ネットワークまたは境界ネットワークにフェデレーション サーバーを配置するのに最適な物理トポロジを決定するための設計チームの戦略。 展開チームは、AD FS の設計ガイドでは、次のトピックを確認してこのテーマに関するドキュメントを参照できます。  
   
-    -   [AD FS 構成データベースのロール](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)  
+    -   [AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)  
   
     -   [フェデレーション サーバーの配置の計画](https://technet.microsoft.com/library/dd807069.aspx)  
   

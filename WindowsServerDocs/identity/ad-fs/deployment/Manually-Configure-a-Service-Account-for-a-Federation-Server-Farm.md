@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 7d215c80c03236df9479aff8046981741dfc83e2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b027bff4645203c44e228f11c651b767fa4502e0
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838153"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192062"
 ---
 # <a name="manually-configure-a-service-account-for-a-federation-server-farm"></a>フェデレーション サーバー ファームのサービス アカウントを手動で構成する
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory フェデレーション サービスでフェデレーション サーバー ファーム環境を構成する場合\(AD FS\)を作成し、Active Directory Domain Services の専用のサービス アカウントを構成する必要があります\(AD DS\) 、ファームが存在します。 次に、このアカウントを使用するために、ファーム内の各フェデレーション サーバーを構成します。 Windows 統合認証を使用して、AD FS ファームにフェデレーション サーバーのいずれかの認証に企業ネットワーク上のクライアント コンピューターをできるようにする場合に、組織内で、次のタスクを行う必要があります。  
 

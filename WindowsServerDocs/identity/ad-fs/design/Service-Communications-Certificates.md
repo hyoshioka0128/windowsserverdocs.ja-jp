@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 32e60f2c2d9e4fced04061ace44882b792e1a3bc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b781d6fe99864b13d6e7f8ab65f3a14d205c2aa6
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825653"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190799"
 ---
 # <a name="service-communications-certificates"></a>サービス通信証明書
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 フェデレーション サーバーでは、WCF メッセージ セキュリティが使用されているシナリオのサービス通信証明書の使用が必要です。  
   

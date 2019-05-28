@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d5cfb5de77843eebfc152b9c79ac55bab1fa7727
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5e90df713f08dd387a2438b34839d16efe6e470f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818173"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191692"
 ---
 # <a name="appendix-a-reviewing-ad-fs-requirements"></a>付録 A:AD FS 要件の確認
-
->適用先:Windows Server 2012
 
 Active Directory フェデレーション サービス (AD FS) 配置内で組織パートナーが正常に共同作業できる、ようにする必要があります最初に確認する、企業ネットワーク インフラストラクチャが構成されているアカウントの AD FS の要件をサポートする名前を付ける解像度、および証明書。 AD FS では、次の種類の要件があります。  
   
@@ -182,4 +180,4 @@ AD FS は、認証 (パスワード、SSL クライアント認証、または W
 特定の認証強度が求められるシナリオをサポートするために、ユーザーがどのように認証されたかを示すクレームを作成するように AD FS を構成することも可能です。 証明書利用者は、このクレームを使用して権限付与に関する決定を行うことができます。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 484dd08edef85b91e777f8963f175a6172c75430
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0191c822ec068c5486a1b0d5da4c1ae2ee9e4d31
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847393"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191102"
 ---
 # <a name="planning-for-ad-fs-server-capacity"></a>AD FS サーバーの容量計画
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
   
 > [!NOTE]  
@@ -36,9 +35,9 @@ Active Directory フェデレーション サービスのキャパシティ プ�
   
 |推奨されるタスク|説明|リファレンス|  
 |--------------------|---------------|-------------|  
-|AD FS フェデレーション サーバーとフェデレーション サーバー プロキシの展開の要件を理解します。|フェデレーション サーバーとフェデレーション サーバー プロキシを展開するために必要な、ハードウェアとソフトウェアに関する重要な要件を確認します。|[付録 a:AD FS の要件の確認](Appendix-A--Reviewing-AD-FS-Requirements.md)|  
+|AD FS フェデレーション サーバーとフェデレーション サーバー プロキシの展開の要件を理解します。|フェデレーション サーバーとフェデレーション サーバー プロキシを展開するために必要な、ハードウェアとソフトウェアに関する重要な要件を確認します。|[付録 A: AD FS 要件の確認](Appendix-A--Reviewing-AD-FS-Requirements.md)|  
 |組織で展開する AD FS 構成データベースの種類を選択します|最初に AD FS 構成を確認する必要があるこのセクションでのキャパシティ プランニングのデータの使用を開始するには、前にデータベースの種類を展開するか Windows Internal Database \(WID\)または構造化照会言語\(SQL\)データベース。|[AD FS 構成データベースのロール](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md);<br /><br />[AD FS 展開トポロジに関する考慮事項](AD-FS-Deployment-Topology-Considerations.md)|  
-|選択した新しい AD FS 構成データベースと共に使用するトポロジ レイアウトのタイプを決定する|展開内で使用する AD FS 構成データベースのタイプを決定したら、運用環境内でのフェデレーション サーバーとフェデレーション サーバー プロキシの配置に関して、どの展開トポロジが最も要望に近いかを検討する必要があります。|[AD FS 展開トポロジを決定します。](Determine-Your-AD-FS-Deployment-Topology.md)|  
+|選択した新しい AD FS 構成データベースと共に使用するトポロジ レイアウトのタイプを決定する|展開内で使用する AD FS 構成データベースのタイプを決定したら、運用環境内でのフェデレーション サーバーとフェデレーション サーバー プロキシの配置に関して、どの展開トポロジが最も要望に近いかを検討する必要があります。|[AD FS 展開トポロジの決定](Determine-Your-AD-FS-Deployment-Topology.md)|  
 |キー AD FS に関連するキャパシティ プランニング用語を理解します。|共通のキャパシティ プランニングは AD FS キャパシティ プランニングの説明で使用する用語の定義を確認します。|このトピックの「[AD FS キャパシティ プランニングの用語](Planning-for-AD-FS-Server-Capacity.md#bk_terms)」をご覧ください。|  
   
 前の表に示したコンテンツの確認が完了したら、次の表に示す、前提条件となるタスクを行ってください。  
@@ -98,9 +97,9 @@ Active Directory フェデレーション サービスのキャパシティ プ�
 ## <a name="continue-reading-more-about-ad-fs-capacity-planning"></a>AD FS キャパシティ プランニングに関して次に参照するコンテンツ  
 推奨されるに必要な AD FS サーバーの数を判断するのに役立つコンテンツを計画する次の追加の容量を使用するには前提条件となるタスクが完了して関連する契約条件とハードウェア要件を理解した後、展開:  
   
--   [フェデレーション サーバーのキャパシティ プランニング](Planning-for-Federation-Server-Capacity.md)  
+-   [フェデレーション サーバーの容量計画](Planning-for-Federation-Server-Capacity.md)  
   
--   [フェデレーション サーバー プロキシの容量を計画します。](Planning-for-Federation-Server-Proxy-Capacity.md)  
+-   [フェデレーション サーバー プロキシの容量計画](Planning-for-Federation-Server-Proxy-Capacity.md)  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

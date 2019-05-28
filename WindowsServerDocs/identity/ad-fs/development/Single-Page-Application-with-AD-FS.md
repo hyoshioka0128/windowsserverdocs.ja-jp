@@ -1,5 +1,5 @@
 ---
-title: OAuth および ADAL を使用して 1 つのページの web アプリケーションをビルドします。AD FS 2016 と JS
+title: OAuth および ADAL を使用して 1 つのページの web アプリケーションをビルドします。AD FS 2016 以降で JS
 description: AngularJS をセキュリティで保護する JavaScript 用 ADAL を使用して AD FS に対して認証を行うための手順を提供するチュートリアル ベースのシングル ページ アプリケーション
 author: billmath
 ms.author: billmath
@@ -8,16 +8,14 @@ ms.date: 06/12/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 78ab9f5d7c3e75650a4efb171d3b9281c56c63d3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1292c7e6cd1dec6926516880c34fe60fb97a9ec8
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865303"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190503"
 ---
-# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016"></a>OAuth および ADAL を使用して 1 つのページの web アプリケーションをビルドします。AD FS 2016 と JS
-
->適用先:Windows Server 2016
+# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>OAuth および ADAL を使用して 1 つのページの web アプリケーションをビルドします。AD FS 2016 以降で JS
 
 このチュートリアルでは、AngularJS をセキュリティで保護する JavaScript 用 ADAL を使用して AD FS に対して認証するための命令ベースのシングル ページ アプリケーション、ASP.NET Web API バックエンドで実装を提供します。
 
@@ -52,8 +50,8 @@ ADAL は、認証するためのトリガーを見て場合、アプリケーシ
 
 ドメイン コント ローラーと AD FS をセットアップする方法は、この記事の範囲外です。 追加の配置情報を参照してください。
 
-- [AD DS の展開](../../ad-ds/deploy/AD-DS-Deployment.md) 
-- [AD FS の展開](../AD-FS-Deployment.md)
+- [AD DS 展開](../../ad-ds/deploy/AD-DS-Deployment.md) 
+- [AD FS 展開](../AD-FS-Deployment.md)
 
 
 
@@ -157,7 +155,7 @@ ADAL JS を構成します。
 ## <a name="running-the-solution"></a>ソリューションの実行
 ソリューションのクリーンで、ソリューションをリビルドして実行します。 詳細なトレースを表示するには、Fiddler を起動し、HTTPS 復号化を有効にします。
 
-ブラウザーは、SPA を読み込むし、次の画面が表示されます。
+ブラウザー (Chrome ブラウザーを使用) は、SPA を読み込むし、次の画面が表示されます。
 
 ![クライアントを登録します。](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
 

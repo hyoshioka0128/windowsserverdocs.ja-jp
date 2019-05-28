@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a047b94906cf703bb934c93f517b8874af91e092
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9db69cfb2eb42af90b392433a6e05eaab9978160
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864063"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190807"
 ---
 # <a name="token-signing-certificates"></a>トークン署名証明書
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 フェデレーション サーバーは、トークンを要求するよう\-を攻撃者が改ざんまたはフェデレーション リソースに不正にアクセスするためにセキュリティ トークンを偽造を防ぐために証明書に署名します。 プライベート\/トークンを使用してペアリングされる公開キーが使用される\-これらのキーは、セキュリティ トークンが有効なパートナーによって発行されたことを確認するため、フェデレーション パートナーシップの最も重要な検証機構は、証明書の署名フェデレーション サーバーと、トークンが転送中に変更されていません。  
   
@@ -75,4 +73,4 @@ AD FS ファームを展開するときにトークン\-署名証明書は、サ
 自動インストールする方法について\-署名証明書を参照してください[IIS 7.0。自動作成\-IIS 7.0 でサーバー証明書を署名](https://go.microsoft.com/fwlink/?LinkID=108271)します。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

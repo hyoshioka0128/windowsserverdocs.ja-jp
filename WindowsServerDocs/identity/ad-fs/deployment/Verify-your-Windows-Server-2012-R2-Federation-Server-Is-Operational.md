@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 2df8a00a953196d7ca19ea0d164abbbf6eefd829
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7cab415cc599f388c2bb5966d45998874ce56987
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840743"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191838"
 ---
 # <a name="verify-your-windows-server-2012-r2-federation-server-is-operational"></a>Windows Server 2012 R2 フェデレーション サーバーが稼働中であることを確認します。
 
->適用先:Windows Server 2016、Windows Server 2012 R2
+
 
 以下の手順を使用して、フェデレーション サーバーが動作可能であること (つまり、同じネットワーク上のクライアントから新しいフェデレーション サーバーにアクセスできること) を確認します。  
   
@@ -50,11 +50,11 @@ ms.locfileid: "59840743"
   
 ## <a name="see-also"></a>関連項目 
 
-[AD FS の展開](../../ad-fs/AD-FS-Deployment.md)  
+[AD FS 展開](../../ad-fs/AD-FS-Deployment.md)  
 
 [Windows Server 2012 R2 AD FS 展開ガイドします。](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  
-[フェデレーション サーバー ファームのデプロイ](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
+[フェデレーション サーバー ファームの展開](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
    
   
 

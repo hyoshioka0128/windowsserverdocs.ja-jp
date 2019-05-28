@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: bdfb086c8177e72c074ac5b5b1a38aac49c4082c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e28d050a9aa40c015af16a665e90535cb810b4ff
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886753"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192330"
 ---
 # <a name="configure-client-computers-to-trust-the-account-federation-server"></a>アカウント フェデレーション サーバーを信頼するクライアント コンピューターを構成します。
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 クライアント コンピューターが Active Directory フェデレーション サービスを使用してフェデレーション アプリケーションを正常にアクセスできるように\(AD FS\)ブラウザーの信頼できるように各クライアント コンピューターで Internet Explorer の設定に構成すること最初にする必要がありますアカウント フェデレーション サーバー。 行うことができますこの手動またはグループ ポリシーによって管理好みに応じて、次の手順のいずれかを実行しています。  
   
@@ -35,7 +33,7 @@ ms.locfileid: "59886753"
   
 3.  **セキュリティ**タブをクリックし、**ローカル イントラネット** アイコンをクリック**サイト**します。  
   
-4.  をクリックして**詳細設定**、および**この Web サイトをゾーンに追加**、型の完全なドメイン ネーム システム\(DNS\)アカウント フェデレーション サーバーの名前\(https など:\/\/fs1.fabrikam.com\)、 をクリックし、**追加**します。  
+4.  をクリックして **詳細設定** 、および**この Web サイトをゾーンに追加**、型の完全なドメイン ネーム システム\(DNS\)アカウント フェデレーション サーバーの名前\(https など:\/\/fs1.fabrikam.com\)、 をクリックし、**追加**します。  
   
 5.  **[OK]** を 3 回クリックします。  
   

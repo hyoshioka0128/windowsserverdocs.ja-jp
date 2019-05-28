@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3a668659f375f7fe96d676e7018e9e9315e35be5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bf21860603b3055c2ef2c9e7b77bb106eb06e238
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814443"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191625"
 ---
 # <a name="deploying-ad-fs-in-the-account-partner-organization"></a>アカウント パートナー組織での AD FS の展開
-
->適用先:Windows Server 2012
 
 Active Directory フェデレーション サービスのアカウント パートナー \(AD FS\)サポートされている属性ストアでユーザー アカウントを物理的に格納するフェデレーションの信頼関係内の組織を表します。 ストアがサポートされている属性の詳細については、次を参照してください。 [The Role of Attribute Stores](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)します。  
   
@@ -30,11 +28,11 @@ Active Directory フェデレーション サービスのアカウント パー�
   
 ## <a name="in-this-section"></a>このセクションの内容  
   
--   [アカウント パートナーのフェデレーション サーバーの役割を確認します。](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
+-   [アカウント パートナー内のフェデレーション サーバーの役割を確認する](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
   
--   [アカウント パートナーのフェデレーション サーバー プロキシの役割を確認します。](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Account-Partner.md)  
+-   [アカウント パートナー内のフェデレーション サーバー プロキシの役割を確認する](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Account-Partner.md)  
   
 -   [アカウント パートナー内のクライアント コンピューターを準備します。](Prepare-Client-Computers-in-the-Account-Partner.md)  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

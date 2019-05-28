@@ -9,16 +9,15 @@ ms.date: 01/16/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: ef30df61c28eb8302c94cf756ba8c8a7b5849520
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 73ff3fc6df872edd29735ee96c0918144250d5f1
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850773"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190045"
 ---
 # <a name="advanced-customization-of-ad-fs-sign-in-pages"></a>AD FS サインイン ページのカスタマイズの詳細
 
->適用先:Windows Server 2016、Windows Server 2012 R2
   
 ## <a name="advanced-customization-of-ad-fs-sign-in-pages"></a>AD FS のサインインのカスタマイズを高度な\-ページ  
 Windows Server 2012 R2 で AD FS は、ビルドを提供します。\-符号をカスタマイズするためのサポートの\-エクスペリエンス。 これらのシナリオは、組み込みの大半\-コマンドレットでは Windows PowerShell では必要なのです。  組み込みを使用することをお勧め\-AD FS の標準的な要素をカスタマイズする Windows PowerShell コマンドでは、サインイン\-エクスペリエンスが可能な場合。  参照してください[AD FS のユーザーのサインイン カスタマイズ](AD-FS-user-sign-in-customization.md)詳細についてはします。  

@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d878134824ea14a511ad59520d8f6522a14693b3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ffd7131f7f3772ab47b62c9755008fe3b1c4b274
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854243"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192068"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>オンプレミスのデバイス ベースの条件付きアクセスを計画する
 
->適用先:Windows Server 2016
 
 このドキュメントでは、内部設置型ディレクトリが Azure AD Connect を使用して Azure AD に接続されているハイブリッド シナリオでのデバイスに基づいて条件付きアクセス ポリシーについて説明します。     
 

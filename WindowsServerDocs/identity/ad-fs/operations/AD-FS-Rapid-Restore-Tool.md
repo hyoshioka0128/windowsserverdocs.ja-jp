@@ -5,20 +5,18 @@ description: ''
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 09/19/2018
+ms.date: 04/01/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6fb023529ac8857f7c2eb35586be497f0c809a51
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: a831154a8b1e84f5ed879375980882e208c33d73
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874173"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190352"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>AD FS の迅速な復元ツール
-
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 ## <a name="overview"></a>概要
 今すぐ AD FS は、AD FS ファームを設定して高可用性実現されます。 一部の組織し 1 台のサーバーの AD FS デプロイする方法、複数の AD FS サーバーとネットワーク負荷も一部ことができますが、インフラストラクチャを分散する必要がなくなりますサービス保証場合に復元できる迅速に問題があります。
@@ -215,6 +213,16 @@ RngCryptoServiceProvider を使用して、AES および Rfc2898DeriveBytes ク�
 > 追加の認証プロバイダーの概要を含む PostRestore_Instructions ファイルが作成される可能性がある復元を実行するには、属性を格納し、ローカルの要求プロバイダー信頼と AD FS サービスを開始する前に手動でインストールする場合。
 
 ## <a name="version-release-history"></a>バージョン リリース履歴
+
+### <a name="version-10810"></a>バージョン:1.0.81.0
+リリース:2019 年 4 月
+
+**修正された問題:**
+
+
+- 証明書のバックアップと復元のバグの修正
+- 別のトレース情報をログ ファイル
+
 
 ### <a name="version-10750"></a>バージョン:1.0.75.0
 リリース:2018 年 8 月

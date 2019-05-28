@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f0eef89e651585d48ba87d14bc782efa49087669
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ade2a8304288d102608c81a0c29155478e5a4b7b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824833"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189433"
 ---
 # <a name="create-a-rule-to-send-claims-using-a-custom-rule"></a>カスタム規則を使用して要求を送信する規則を作成する
 
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 使用して、**カスタム規則を使用して要求を送信する**Active Directory フェデレーション サービス (AD FS) のテンプレートは、の要件は、標準的な規則テンプレートに満たしていない場合のカスタム要求規則を作成することができます、組織。 カスタム要求規則は、要求規則言語で記述し、にコピーし、 **Custom rule**規則セットを使用するテキスト ボックス。 高度なルールの構文を構築する方法の詳細については、次を参照してください。[要求規則言語の役割](../../ad-fs/technical-reference/The-Role-of-the-Claim-Rule-Language.md)します。  
   
@@ -41,13 +40,13 @@ ms.locfileid: "59824833"
 4.  **要求発行ポリシーの編集**ダイアログ ボックスで、**発行変換規則** をクリックして**規則の追加**ルール ウィザードを開始します。 
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**カスタム規則を使用して要求を送信する** をクリックし、一覧から**次へ**.  
+5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**カスタム規則を使用して要求を送信する** をクリックし、一覧から **次へ** .  
 ![ルールを作成します。](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom3.PNG)   
   
 6.  **規則の構成**] ページ [**要求規則名**、この規則の表示名を入力します。 **Custom rule**を入力するか、このルールに使用する要求規則言語構文貼り付けます。  
 ![ルールを作成します。](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom4.PNG)     
 
-7.  **[Finish]**(完了) をクリックします。  
+7.  **[Finish]** (完了) をクリックします。  
   
 8.  **要求規則の編集**ダイアログ ボックスで、をクリックして **[ok]** ルールを保存します。   
   
@@ -64,13 +63,13 @@ ms.locfileid: "59824833"
 4.  **要求規則の編集**ダイアログ ボックスで、**受け入れ変換規則** をクリックして**規則の追加**ルール ウィザードを開始します。
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**カスタム規則を使用して要求を送信する** をクリックし、一覧から**次へ**.  
+5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**カスタム規則を使用して要求を送信する** をクリックし、一覧から **次へ** .  
 ![ルールを作成します。](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom3.PNG)   
   
 6.  **規則の構成**] ページ [**要求規則名**、この規則の表示名を入力します。 **Custom rule**を入力するか、このルールに使用する要求規則言語構文貼り付けます。  
 ![ルールを作成します。](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom4.PNG)     
 
-7.  **[Finish]**(完了) をクリックします。  
+7.  **[Finish]** (完了) をクリックします。  
   
 8.  **要求規則の編集**ダイアログ ボックスで、をクリックして **[ok]** ルールを保存します。   
 
@@ -112,22 +111,22 @@ ms.locfileid: "59824833"
     -   **委任承認規則**  
 ![ルールを作成します。](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
   
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**カスタム規則を使用して要求を送信する** をクリックし、一覧から**次へ**.  
+5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**カスタム規則を使用して要求を送信する** をクリックし、一覧から **次へ** .  
 ![ルールを作成します。](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom1.PNG)   
   
 6.  **規則の構成**] ページ [**要求規則名**、この規則の表示名を入力します。 **Custom rule**を入力するか、このルールに使用する要求規則言語構文貼り付けます。  
 ![ルールを作成します。](media/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule/custom2.PNG)     
 
-7.  **[Finish]**(完了) をクリックします。  
+7.  **[Finish]** (完了) をクリックします。  
   
 8.  **要求規則の編集**ダイアログ ボックスで、をクリックして **[ok]** ルールを保存します。  
 
 ## <a name="additional-references"></a>その他の参照情報 
-[要求規則を構成します。](Configure-Claim-Rules.md)  
+[要求規則を構成する](Configure-Claim-Rules.md)  
  
-[チェックリスト:A Relying Party Trust の要求規則を作成します。](https://technet.microsoft.com/library/ee913578.aspx)  
+[チェックリスト:証明書利用者信頼の要求規則の作成](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[チェックリスト:要求規則の作成要求プロバイダー信頼します。](https://technet.microsoft.com/library/ee913564.aspx)  
+[チェックリスト:要求プロバイダー信頼の要求規則の作成](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [承認要求規則を使用する場合](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 080e8cc81949df3bf74ae846eee7f32c5e145f53
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3be14b824038e9424b86c40bfd657dd988fa99e9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834363"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189868"
 ---
 # <a name="configure-ad-fs-to-send-password-expiry-claims"></a>パスワードの有効期限クレームを送信するように AD FS を構成する
 
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 ADFS で保護されている証明書利用者のパーティ信頼 (アプリケーション) にパスワードの有効期限クレームを送信する Active の Directory フェデレーション サービス (AD FS) を構成することができます。 これらの要求を使用する方法は、アプリケーションによって異なります。 たとえば、証明書利用者として Office 365 を更新プログラムが実装されましたがすぐに-する-有効期限切れのパスワードのフェデレーション ユーザーに通知するには、Exchange と Outlook に。
 

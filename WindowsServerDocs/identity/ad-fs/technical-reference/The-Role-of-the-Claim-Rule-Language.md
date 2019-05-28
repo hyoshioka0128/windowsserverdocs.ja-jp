@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
-ms.openlocfilehash: 05728f04f6fb924cf3793bc843df3832c7c383f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: bf36f12803b8ba621f2249b53ad868fcd8f6c4a7
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855693"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188459"
 ---
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
-
 # <a name="the-role-of-the-claim-rule-language"></a>要求規則言語の役割
 Active Directory フェデレーション サービス (AD FS) 要求規則言語は、要求エンジンは、要求規則言語のロジックの処理エンジンとして機能し、着信および発信のクレームの動作の管理の構成要素として機能します。カスタムの規則を定義します。 要求エンジンですべてのルールを処理する方法の詳細についてを参照してください [要求エンジンの役割](The-Role-of-the-Claims-Engine.md)します。  
   
@@ -160,6 +158,6 @@ exists([issuer == "MSFT"])
 規則の本文には、発行ステートメントを 1 つだけ含めることができます。 Exists 関数を指定せずに条件を使用した場合、その条件部分が満たされるたびに規則の本文が 1 回実行されます。  
   
 ## <a name="additional-references"></a>その他の参照情報  
-[カスタム規則を使用して要求を送信するルールを作成します。](https://technet.microsoft.com/library/dd807049.aspx)  
+[カスタム規則を使用して要求を送信する規則を作成する](https://technet.microsoft.com/library/dd807049.aspx)  
   
 

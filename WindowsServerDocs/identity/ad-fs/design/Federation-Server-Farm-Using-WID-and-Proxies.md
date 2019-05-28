@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e372f066fc82b9857d438234b491732a177e24fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d49ae34d83d4a0b912bd92dbb9de16e18cc5b7ff
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860393"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191342"
 ---
 # <a name="federation-server-farm-using-wid-and-proxies"></a>WID とプロキシを使用するフェデレーション サーバー ファーム
-
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 Active Directory フェデレーション サービスの場合は、この配置トポロジ\(AD FS\)が Windows Internal Database のフェデレーション サーバー ファームと同じ\(WID\)トポロジをプロキシ コンピューターを追加します、。外部ユーザーをサポートするために境界ネットワーク。 これらのプロキシでは、フェデレーション サーバー ファームに、企業ネットワーク外から取得したクライアントの認証要求をリダイレクトします。 AD FS の以前のバージョンでこれらのプロキシにフェデレーション サーバー プロキシが呼び出されました。  
   
@@ -66,7 +64,7 @@ Active Directory フェデレーション サービスの場合は、この配�
 フェデレーション サーバーまたは web アプリケーション プロキシを使用するため、ネットワーク環境を構成する方法の詳細については、「名前解決の要件」を参照してください。 セクション[AD FS の要件](AD-FS-Requirements.md)と[Web の計画アプリケーション プロキシ インフラストラクチャ (WAP)](https://technet.microsoft.com/library/dn383648.aspx)します。  
   
 ## <a name="see-also"></a>関連項目  
-[AD FS 展開トポロジを計画します。](Plan-Your-AD-FS-Deployment-Topology.md)  
-[Windows Server 2012 R2 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[AD FS 展開トポロジの計画](Plan-Your-AD-FS-Deployment-Topology.md)  
+[Windows Server 2012 R2 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

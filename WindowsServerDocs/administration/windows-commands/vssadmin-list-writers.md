@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ca4a82fb1664f35d696752ee444326899d9a5dc4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3bd77d844ed6b613659d095d7ef07b9e5f40f61
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884303"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63706991"
 ---
 # <a name="vssadmin-list-writers"></a>Vssadmin 一覧ライター
 

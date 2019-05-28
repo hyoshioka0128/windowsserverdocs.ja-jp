@@ -9,16 +9,15 @@ ms.prod: windows-server-threshold
 ms.assetid: 70f279bf-aea1-4f4f-9ab3-e9157233e267
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 59b761e69da5b1c1e27fea71b32447b19d2b83c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 8ada2ae5c9fcdb77f35200581848041f222ed7f3
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812083"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191956"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-with-sql-server"></a>SQL Server と Windows Server 2016 の AD FS へのアップグレード
 
->適用先:Windows Server 2016
 
 
 ## <a name="moving-from-a-windows-server-2012-r2-ad-fs-farm-to-a-windows-server-2016-ad-fs-farm"></a>Windows Server 2012 R2 AD FS ファームから Windows Server 2016 の AD FS ファームへの移行  
@@ -44,7 +43,7 @@ Windows Server 2016 の AD FS サーバーは、Windows Server 2012 R2 ファー
 
 次のアーキテクチャ図を検証し、次の手順を記録するために使用されたセットアップを示しています。
 
-![Architecture](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/arch.png) 
+![Architecture](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/arch.png)
 
 
 #### <a name="join-the-windows-2016-ad-fs-server-to-the-ad-fs-farm"></a>Windows 2016 の AD FS サーバーを AD FS ファームに参加させる
@@ -53,23 +52,23 @@ Windows Server 2016 の AD FS サーバーは、Windows Server 2012 R2 ファー
 
 2.  AD FS 構成ウィザードを使用して、、既存の AD FS ファームを新しい Windows Server 2016 サーバーを参加させます。  **ようこそ**画面をクリック**次**します。
  ![ファームへの追加します。](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure1.png)  
-3.  **Active Directory Domain Services に接続する** 画面で、s**管理者アカウントの指定、お**フェデレーション サービスの構成を実行し、をクリックしてアクセス許可を持つ**次へ**.
+3.  **Active Directory Domain Services に接続する** 画面で、s**管理者アカウントの指定、お**フェデレーション サービスの構成を実行し、をクリックしてアクセス許可を持つ **次へ** .
 4.  **Specify Farm**画面で、SQL server とインスタンスの名前を入力してクリックして **[次へ]** します。
 ![ファームへの追加します。](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure3.png)
 5.  **SSL 証明書の指定**画面で、証明書を指定してをクリックして**次**します。
 ![ファームへの追加します。](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure4.png)
-6.  **サービス アカウントの指定**画面で、サービス アカウントを指定してをクリックして**次**します。 
-7.  **オプションの確認**画面で、オプションをクリックします**次**します。 
+6.  **サービス アカウントの指定**画面で、サービス アカウントを指定してをクリックして**次**します。
+7.  **オプションの確認**画面で、オプションをクリックします**次**します。
 8.  **の前提条件チェック**画面で、前提条件チェックのすべてが成功し、をクリックすることを確認、**構成**。
 9.  **結果**画面で、そのサーバーが正常に構成されていることを確認してクリックして**閉じる**します。
- 
-   
+
+
 #### <a name="remove-the-windows-server-2012-r2-ad-fs-server"></a>Windows Server 2012 R2 AD FS サーバーを削除します。
 
 >[!NOTE]
 >セット AdfsSyncProperties を使用して、プライマリ AD FS サーバーを設定する必要はありません-ロール、データベースとして SQL を使用する場合。  これは、この構成ではプライマリのすべてのノードと見なされるためにです。
 
-1.  サーバー マネージャーの使用中の Windows Server 2012 R2 AD FS サーバーで**役割の削除と機能**  **管理**します。 
+1.  サーバー マネージャーの使用中の Windows Server 2012 R2 AD FS サーバーで**役割の削除と機能**  **管理**します。
 ![サーバーを削除します。](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove1.png)
 2.  **[開始する前に]** 画面で、**[次へ]** をクリックします。
 3.  **サーバーの選択** 画面で、をクリックして**次**。
@@ -78,12 +77,12 @@ Windows Server 2016 の AD FS サーバーは、Windows Server 2012 R2 ファー
 5.  **機能** 画面で、をクリックして**次**します。
 6.  **確認** 画面で、をクリックして**削除**します。
 7.  これが完了すると、サーバーを再起動します。
-     
+
 #### <a name="raise-the-farm-behavior-level-fbl"></a>(FBL) ファーム動作レベルを上げる
 この手順の前に、forestprep および domainprep が Active Directory 環境で実行されていることと、Active Directory は、Windows Server 2016 のスキーマであることを確認する必要があります。  このドキュメントでは、Windows 2016 のドメイン コント ローラーの使用を開始し、AD をインストールしたときに実行されたため、これらを実行する必要ありませんでした。
 
 >[!NOTE]
->以下のプロセスを開始する前に、設定を Windows Update を実行して、Windows Server 2016 は現在を確認します。  更新の必要がなくなるまで、このプロセスを続けます。 
+>以下のプロセスを開始する前に、設定を Windows Update を実行して、Windows Server 2016 は現在を確認します。  更新の必要がなくなるまで、このプロセスを続けます。
 
 1. Windows Server 2016 サーバーのようになりましたで PowerShell を開き、次を実行して: **$cred = Get-credential**し、enter キーを押します。
 2. SQL Server で管理者特権のある資格情報を入力します。
@@ -93,3 +92,24 @@ Windows Server 2016 の AD FS サーバーは、Windows Server 2012 R2 ファー
 3. ここで、AD FS の管理に移動する場合は、Windows Server 2016 の AD FS で追加された新しいノードが表示されます。  
 4. 同様に、PowerShell コマンドレットを使用することができます。Get AdfsFarmInformation 現在 FBL を表示します。  
 ![更新プログラムを終了します。](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish2.png)
+
+#### <a name="upgrade-the-configuration-version-of-existing-wap-servers"></a>既存の WAP サーバーの構成のバージョンをアップグレードします。
+1. 各 Web アプリケーション プロキシを管理者特権でのウィンドウで、次の PowerShell コマンドを実行して、WAP を再構成します。  
+    ```powershell
+    $trustcred = Get-Credential -Message "Enter Domain Administrator credentials"
+    Install-WebApplicationProxy -CertificateThumbprint {SSLCert} -fsname fsname -FederationServiceTrustCredential $trustcred  
+    ```
+2. クラスターから以前のサーバーを削除して、のみ WAP 最新のサーバー バージョンを実行しているサーバー上で、次の Powershell コマンドレットを実行して再構成されたを保持します。
+    ```powershell
+    Set-WebApplicationProxyConfiguration -ConnectedServersName WAPServerName1, WAPServerName2
+    ```
+3. Get WebApplicationProxyConfiguration commmandlet を実行して、WAP の構成を確認します。 ConnectedServersName 前のコマンドからを実行するサーバーが反映されます。
+    ```powershell
+    Get-WebApplicationProxyConfiguration
+    ```
+4. WAP サーバーの ConfigurationVersion をアップグレードするには、次の Powershell コマンドを実行します。
+    ```powershell
+    Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
+    ```
+5. Get WebApplicationProxyConfiguration Powershell コマンドを使用して、ConfigurationVersion がアップグレードされていることを確認します。
+    

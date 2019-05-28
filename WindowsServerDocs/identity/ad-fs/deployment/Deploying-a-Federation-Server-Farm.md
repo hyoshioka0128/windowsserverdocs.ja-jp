@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 05f1ea6830237813e6fd2bd6a172f467e8d81065
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c0f8dca425f644952c36a289ec72651f6383e846
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839083"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192186"
 ---
 # <a name="deploying-a-federation-server-farm"></a>フェデレーション サーバー ファームの展開
 
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 フェデレーション サーバー ファームを展開するためには、このチェックリストのタスクをこの順番で行います。 参照リンクから概念トピックが表示される場合は、概念トピックを参照した後でこのチェックリストに戻り、チェックリストの残りのタスクを完了します。  
   
@@ -38,7 +37,7 @@ ms.locfileid: "59839083"
   
 
 ## <a name="see-also"></a>関連項目  
-[AD FS の展開](../../ad-fs/AD-FS-Deployment.md)  
+[AD FS 展開](../../ad-fs/AD-FS-Deployment.md)  
 
 [Windows Server 2012 R2 AD FS 展開ガイドします。](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
   

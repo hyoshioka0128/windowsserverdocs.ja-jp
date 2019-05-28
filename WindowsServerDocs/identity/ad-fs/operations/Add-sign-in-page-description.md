@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 553cdcf2ac98b23d06cc43a64220cf8433117fc8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 94ad9889ce78ba77f016210ee478a301babdf307
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814013"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190049"
 ---
 # <a name="add-sign-in-page-description"></a>記号を追加\-でページの説明
 
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 ## <a name="to-add-sign-in-page-description"></a>追加の署名を\-でページの説明  
 記号を追加する\-、サインオン ページの説明で\- ページで、次の Windows PowerShell コマンドレットと構文を使用します。  

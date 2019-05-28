@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: bb4e5f88f3d62511b185a2b4317416169717c860
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f0f3d8c70a41d512e7cd33282524bc401ce84600
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851403"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191434"
 ---
 # <a name="federation-server-farm-using-wid"></a>WID を使用するフェデレーション サーバー ファーム
-
->適用先:Windows Server 2012
 
 Active Directory フェデレーション サービスの既定のトポロジ\(AD FS\) Windows Internal Database を使用して、フェデレーション サーバー ファームは、 \(WID\)、最大 5 台のフェデレーション サーバーをホストしているので構成される、組織のフェデレーション サービス。 このトポロジでは、AD FS は、WID をファームに参加しているすべてのフェデレーション サーバーの AD FS 構成データベースのストアとして使用します。 ファームでは、構成データベースのフェデレーション サービス データがファーム内の各サーバー間で複製されて管理されます。  
   
@@ -75,4 +73,4 @@ NLB ホストには、個々 のフェデレーション サーバーにクラ�
 フェデレーション サーバーを使用するため、ネットワーク環境を構成する方法の詳細については、次を参照してください。[フェデレーション サーバーの名前解決要件](Name-Resolution-Requirements-for-Federation-Servers.md)で、AD FS 設計ガイド。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

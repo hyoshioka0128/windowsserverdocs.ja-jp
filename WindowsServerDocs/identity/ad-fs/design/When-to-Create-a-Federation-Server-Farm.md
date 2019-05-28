@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 2e7c991cf87bc0e6914e158f0878bcadbede3c22
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 91a0122198639bf75e9e43e9da9edf68dd0453d9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816233"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190681"
 ---
 # <a name="when-to-create-a-federation-server-farm"></a>フェデレーション サーバー ファームを作成するのに適した状況
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory フェデレーション サービスでフェデレーション サーバー ファームの作成を検討\(AD FS\)ときがある大規模な AD FS の配置とフォールト トレランス、負荷を実行する\-分散、またはにスケーラビリティ、組織のフェデレーション サービス。 同じネットワーク内の 2 つ以上のフェデレーション サーバーを作成し、それぞれ同じフェデレーション サービスを使用するを設定し、各サーバーの公開キーのトークンを追加する act\-署名証明書を AD FS 管理スナップイン\-でフェデレーション サーバー ファームを作成します。  
   
@@ -55,4 +53,4 @@ Active Directory フェデレーション サービスでフェデレーショ�
 |同じ SQL Server インスタンスを参照する|場合は、AD FS 構成データベースは、SQL database では、新しいフェデレーション サーバーは、新しいサーバーがファームに参加できるように、ファーム内の他のフェデレーション サーバーによって使用される同じ SQL Server インスタンスをポイントする必要があります。|  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

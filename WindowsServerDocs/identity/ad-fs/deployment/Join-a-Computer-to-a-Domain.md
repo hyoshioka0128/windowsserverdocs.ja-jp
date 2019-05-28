@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 811f5296143637974cf82e59d57665f8a96f1c8c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 02df9659ee3a1121c0cee3f7c5fa21b91c36b87c
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884113"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192052"
 ---
 # <a name="join-a-computer-to-a-domain"></a>コンピューターをドメインに参加させる
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory フェデレーション サービスの\(AD FS\)に機能するようにフェデレーション サーバーをドメインに参加する必要がありますが機能する各コンピューターにします。 フェデレーション サーバー プロキシは、ドメインに参加させることがありますが、これは必須ではありません。  
   
@@ -41,8 +39,8 @@ Web サーバーが要求をホストしている場合は、Web サーバーを
 6.  をクリックして**OK**、コンピューターを再起動します。  
   
 ## <a name="additional-references"></a>その他の参照情報  
-[チェックリスト:フェデレーション サーバーを設定します。](Checklist--Setting-Up-a-Federation-Server.md)  
+[チェックリスト:フェデレーション サーバーのセットアップ](Checklist--Setting-Up-a-Federation-Server.md)  
   
-[チェックリスト:フェデレーション サーバー プロキシを設定します。](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[チェックリスト:フェデレーション サーバー プロキシのセットアップ](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 

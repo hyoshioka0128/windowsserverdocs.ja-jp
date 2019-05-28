@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1711e7d7de871c9ae9b1b7ea7b21f6e75ae15220
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2b5c7228094305759344d5094cffa7f24a0da7a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868473"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190023"
 ---
 # <a name="change-the-company-name-on-the-ad-fs-sign-in-page"></a>AD FS サインイン ページに会社名を変更します。
-
->適用先:Windows Server 2016、Windows Server 2012 R2
  
 記号が表示される会社の名前を変更する\- ページで、次の Windows PowerShell コマンドレットと構文を使用します。 この値には、セットアップ時に入力したフェデレーション サービスの表示名が既定で設定されています。  
 

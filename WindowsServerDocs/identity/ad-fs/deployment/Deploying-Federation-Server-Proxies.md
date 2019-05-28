@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: b914141a0445febd3961b688aadc2f444b2eee7b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 02311522ee229eeaf0b27ce8d39090a9529b99ae
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816263"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192199"
 ---
 # <a name="deploying-federation-server-proxies"></a>フェデレーション サーバー プロキシの展開
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory フェデレーション サービスでフェデレーション サーバー プロキシをデプロイする\(AD FS\)、それぞれのタスクの完了[チェックリスト。フェデレーション サーバー プロキシを設定する](Checklist--Setting-Up-a-Federation-Server-Proxy.md)します。  
   

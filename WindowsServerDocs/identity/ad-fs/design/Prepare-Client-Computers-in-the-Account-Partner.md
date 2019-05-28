@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0c5bdcb0a80b15a1905109229ddd20ee642a8dd7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3a746ec003cf312ffe0b9804f84a55c98aa8089
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868523"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190989"
 ---
 # <a name="prepare-client-computers-in-the-account-partner"></a>アカウント パートナー内のクライアント コンピューターを準備する
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 管理者アカウントでの最も簡単な方法を Active Directory フェデレーション サービスにアクセスするためのクライアント コンピューターを準備する組織のパートナー \(AD FS\)フェデレーション アプリケーションは、グループ ポリシーを使用します。 グループ ポリシーは、フェデレーションに必要な特定の証明書と設定を、フェデレーション アプリケーションへのアクセスに使用されるすべてのクライアント コンピューターにプッシュするための便利な方法を提供します。  
   
@@ -34,4 +32,4 @@ ms.locfileid: "59868523"
   
 
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

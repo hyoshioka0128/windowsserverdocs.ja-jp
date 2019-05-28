@@ -9,16 +9,14 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0b0d4d085a94631b70df81fd53bff974d8425611
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f3719277c80eae2bf2a4d923146920d17546601d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877763"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188730"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS のシングル サインオンの設定
-
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 シングル サインオン (SSO) では、1 回認証を追加の資格情報を入力することがなく複数のリソースにアクセスできます。  この記事では、この動作をカスタマイズするための構成設定と、SSO、既定の AD FS の動作について説明します。  
 
