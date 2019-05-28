@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/06/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 556110fe7bed1aed002ef6d985324ff5171e770e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f85e321381adcf607c3504005a0a3448ab0f098a
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885373"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63738447"
 ---
 # <a name="ntfs-overview"></a>NTFS の概要
 

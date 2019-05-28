@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 9b1fa833-4325-48a8-bf34-46265f40c001
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 73beb1539420f4b4aad818ffe0b0bdaabe901748
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 63037dd7e32320b6e640396e20344e5678ed91dd
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870263"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034431"
 ---
 # <a name="migrate-your-remote-desktop-services-deployment-to-windows-server-2016"></a>Windows Server 2016 へのリモート デスクトップ サービス展開を移行します。
 
@@ -28,8 +28,8 @@ Windows Server 2016 を実行している移行先サーバーへの Windows Ser
 
 アップグレード プロセスと要件の詳細については、次を参照してください。 [、リモート デスクトップ サービス展開を Windows Server 2016 にアップグレードする](upgrade-to-rds-2016.md)します。
 
-リモート デスクトップ サービス デプロイを移行するのにには、次の手順を使用します。 
-- [RD 接続ブローカー サーバーを移行します。](#migrate-rd-connection-broker-servers) 
+リモート デスクトップ サービス デプロイを移行するのにには、次の手順を使用します。
+- [RD 接続ブローカー サーバーを移行します。](#migrate-rd-connection-broker-servers)
 - [セッション コレクションを移行します。](#migrate-session-collections)
 - [仮想デスクトップ コレクションを移行します。](#migrate-virtual-desktop-collections)
 - [RD Web アクセス サーバーを移行します。](#migrate-rd-web-access-servers)
@@ -54,7 +54,7 @@ Windows Server 2016 を実行している移行先サーバーへの Windows Ser
 
 Windows Server 2016 でのセッション コレクションに Windows Server 2012 R2 でのセッション コレクションを移行する手順に従います。
 > [!IMPORTANT] 
-> 前の手順を正常に完了した後にのみ、セッション コレクションを移行[移行 RD 接続ブローカー サーバー](#Migrate-RD-Connection-Broker-servers)します。
+> 前の手順を正常に完了した後にのみ、セッション コレクションを移行[移行 RD 接続ブローカー サーバー](#migrate-rd-connection-broker-servers)します。
 
 1. [セッション コレクションをアップグレード](Upgrade-to-RDSH-2016.md)から Windows Server 2016 を Windows Server 2012 R2。
 2. セッション コレクションに Windows Server 2016 を実行している新しい RD セッション ホスト サーバーを追加します。
@@ -69,7 +69,7 @@ Windows Server 2016 でのセッション コレクションに Windows Server 2
 Windows Server 2016 を実行している移行先サーバーに Windows Server 2012 R2 を実行している移行元サーバーから仮想デスクトップ コレクションを移行する手順に従います。
 
 > [!IMPORTANT] 
-> 前の手順を正常に完了した場合にのみ仮想デスクトップ コレクションを移行[移行 RD 接続ブローカー サーバー](#Migrate-RD-Connection-Broker-servers)します。
+> 前の手順を正常に完了した場合にのみ仮想デスクトップ コレクションを移行[移行 RD 接続ブローカー サーバー](#migrate-rd-connection-broker-servers)します。
 
 1. [仮想デスクトップ コレクションのアップグレード](Upgrade-to-RDVH-2016.md)サーバーから Windows Server 2016 を Windows Server 2012 R2 を実行します。
 2. 仮想デスクトップ コレクションに新しい Windows Server 2016 の RD 仮想化ホスト サーバーを追加します。
@@ -85,14 +85,14 @@ Windows Server 2016 を実行している移行先サーバーに Windows Server
 RD Web アクセス サーバーを移行するこれらの手順に従います。
 - リモート デスクトップ サービス展開を Windows Server 2016 を実行している移行先サーバーを参加させるし、RD Web ロールのインストール
 - 使用[IIS Web 配置ツール](https://www.iis.net/)RD Web web サイトの設定を現在の RD Web アクセス サーバーから Windows Server 2016 を実行している移行先サーバーに移行します。
-- [証明書を移行](#Migrate-certificates)移行先サーバーに Windows Server 2016 を実行します。
+- [証明書を移行](#migrate-certificates)移行先サーバーに Windows Server 2016 を実行します。
 - リモート デスクトップ サービス展開から移行元サーバーを削除します。  
 
 ## <a name="migrate-rdgateway-servers"></a>RD ゲートウェイ サーバーを移行する
 RD ゲートウェイ サーバーを移行するこれらの手順に従います。
 - リモート デスクトップ サービス展開を Windows Server 2016 を実行している移行先サーバーを参加させるし、RD ゲートウェイの役割のインストール
 - 使用[IIS Web 配置ツール](https://www.iis.net/)現在の RD ゲートウェイ サーバーから Windows Server 2016 を実行している移行先サーバーに RD ゲートウェイ エンドポイントの設定を移行します。
-- [証明書を移行](#Migrate-certificates)移行先サーバーに Windows Server 2016 を実行します。
+- [証明書を移行](#migrate-certificates)移行先サーバーに Windows Server 2016 を実行します。
 - リモート デスクトップ サービス展開から移行元サーバーを削除します。  
 
 ## <a name="migrate-rdlicensing-servers"></a>RD ライセンス サーバーを移行する

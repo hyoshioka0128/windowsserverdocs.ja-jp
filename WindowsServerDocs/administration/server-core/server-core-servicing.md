@@ -7,12 +7,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: f51ffae5ed8f91cca386eb209e7a1d8cc664ceeb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b19512a6f34e13469433aba6051f1232824beb0e
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817353"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034158"
 ---
 # <a name="patch-a-server-core-installation"></a>Server Core インストールのパッチ
 
@@ -66,7 +66,7 @@ Windows Update が使用可能なすべての更新プログラムを即座に�
 Wuauclt /detectnow 
 ```
 
-インストールされる更新プログラムによっては、コンピューターの再起動が必要になる場合があります。ただし、これはシステムから通知されません。 インストール プロセスが完了したかどうかを判断することを確認するタスク マネージャーを使用して、 **Wuauclt**または**Trusted Installer**プロセスがアクティブに実行されていません。 内のメソッドを使用することもできます。 [、Server Core サーバーにインストールされている更新プログラムを表示](#view-the-updates-installed-on-your-Server-Core-server)にインストールされた更新プログラムの一覧を確認します。
+インストールされる更新プログラムによっては、コンピューターの再起動が必要になる場合があります。ただし、これはシステムから通知されません。 インストール プロセスが完了したかどうかを判断することを確認するタスク マネージャーを使用して、 **Wuauclt**または**Trusted Installer**プロセスがアクティブに実行されていません。 内のメソッドを使用することもできます。 [、Server Core サーバーにインストールされている更新プログラムを表示](#view-the-updates-installed-on-your-server-core-server)にインストールされた更新プログラムの一覧を確認します。
 
 ## <a name="patch-the-server-with-wsus"></a>Wsus サーバーの修正プログラムを適用します。 
 

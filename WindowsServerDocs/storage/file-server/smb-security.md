@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 831ca8266c3ec18ffb83227dcb2d39b3f953ad1a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b1586c8c63e46452075b4106c944670395734142
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838053"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034401"
 ---
 # <a name="smb-security-enhancements"></a>SMB セキュリティ拡張機能
 
@@ -73,7 +73,7 @@ SMB 暗号化は、中間の攻撃から保護する機密データが必要な�
 Set-SmbServerConfiguration –RejectUnencryptedAccess $false
 ```
 
-次のセクションで説明されているセキュリティで保護された言語のネゴシエーションの機能で中間者攻撃が SMB 3.0 から SMB 2.0 (これは暗号化されていないアクセスを使用して) への接続のダウン グレードできなくなります。 ただし、これも、ダウン グレード SMB 1.0 は、暗号化されていないアクセスにもなります。 SMB 3.0 クライアントが、暗号化された共有にアクセスする、SMB 暗号化を常に使用することを保証するには、SMB 1.0 サーバーを無効にする必要があります。 (手順については、セクションをご覧ください[SMB 1.0 の無効化](#disabling-smb-1.0)。)。場合、 **– RejectUnencryptedAccess**設定は既定の設定のまま **$true**、のみの暗号化に対応の SMB 3.0 クライアントがファイル共有 (SMB 1.0 クライアントは拒否も) へのアクセス許可されます。
+次のセクションで説明されているセキュリティで保護された言語のネゴシエーションの機能で中間者攻撃が SMB 3.0 から SMB 2.0 (これは暗号化されていないアクセスを使用して) への接続のダウン グレードできなくなります。 ただし、これも、ダウン グレード SMB 1.0 は、暗号化されていないアクセスにもなります。 SMB 3.0 クライアントが、暗号化された共有にアクセスする、SMB 暗号化を常に使用することを保証するには、SMB 1.0 サーバーを無効にする必要があります。 (手順については、セクションをご覧ください[SMB 1.0 の無効化](#disabling-smb-10)。)。場合、 **– RejectUnencryptedAccess**設定は既定の設定のまま **$true**、のみの暗号化に対応の SMB 3.0 クライアントがファイル共有 (SMB 1.0 クライアントは拒否も) へのアクセス許可されます。
 
 >[!NOTE]
 >* SMB 暗号化は、Advanced Encryption Standard (AES) を使用して、CCM アルゴリズムを暗号化し、データを復号化します。 AES CCM は、暗号化されたファイル共有では、SMB 署名の設定に関係なく (署名) データの整合性の検証も提供します。 SMB 暗号化を使用せずに署名を有効にする場合は、これを行うこともできます。 詳細については、次を参照してください。 [、基本の SMB 署名](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/)します。
@@ -84,7 +84,7 @@ Set-SmbServerConfiguration –RejectUnencryptedAccess $false
 
 ## <a name="secure-dialect-negotiation"></a>セキュリティで保護された言語のネゴシエーション
 
-SMB 3.0 は、SMB 2.0 または SMB 3.0 プロトコルまたはクライアントとサーバーをネゴシエートする機能をダウン グレードしようとする中間の攻撃を検出することができます。 クライアントまたはサーバーによってこのような攻撃が検出されると、接続が切断されているし、イベント ID 1005 は Microsoft Windows-SmbServer/操作イベント ログに記録されます。 言語をセキュリティで保護のネゴシエーションが検出または SMB 1.0 に SMB 2.0 または 3.0 からダウン グレードを防止することはできません。 このため、および SMB 暗号化の機能をフル活用するためには、SMB 1.0 サーバーを無効にすることを強くお勧めします。 詳細については、次を参照してください。 [SMB 1.0 を無効にすると](#disabling-smb-1.0)します。
+SMB 3.0 は、SMB 2.0 または SMB 3.0 プロトコルまたはクライアントとサーバーをネゴシエートする機能をダウン グレードしようとする中間の攻撃を検出することができます。 クライアントまたはサーバーによってこのような攻撃が検出されると、接続が切断されているし、イベント ID 1005 は Microsoft Windows-SmbServer/操作イベント ログに記録されます。 言語をセキュリティで保護のネゴシエーションが検出または SMB 1.0 に SMB 2.0 または 3.0 からダウン グレードを防止することはできません。 このため、および SMB 暗号化の機能をフル活用するためには、SMB 1.0 サーバーを無効にすることを強くお勧めします。 詳細については、次を参照してください。 [SMB 1.0 を無効にすると](#disabling-smb-10)します。
 
 次のセクションで説明されているセキュリティで保護された言語ネゴシエーションの機能は、SMB 3 から (は暗号化されていないアクセスを使用) する SMB 2; への接続のダウン グレードからで中間者攻撃を防ぐことただし、これもダウン グレードを SMB 1 は、暗号化されていないアクセスにもなります。 SMB の Windows 以外の実装前と潜在的な問題の詳細については、次を参照してください。、[マイクロソフト サポート技術情報](http://support.microsoft.com/kb/2686098)します。
 

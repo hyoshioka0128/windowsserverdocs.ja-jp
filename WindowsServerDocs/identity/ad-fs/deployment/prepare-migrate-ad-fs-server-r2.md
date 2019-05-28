@@ -8,18 +8,18 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4d0ff53b9118db1dd6ba5af94b3e627bf1597e0c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b5658676d08318d88ddee44a0589db5873b4660b
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889023"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034292"
 ---
 # <a name="prepare-to-migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>AD FS 2.0 フェデレーション サーバーを Windows Server 2012 R2 で AD FS に移行を準備します。
 
 このドキュメントでは、Windows Server 2012 R2 AD FS ファーム、AD FS 2.0 または Windows Server 2012 のフェデレーション サーバー ファームを移行する方法について説明します。  手順は、基になるデータベースとして WID または SQL Server のいずれかを使用して AD FS ファームで使用できます。  
   
--   [移行プロセスの概要](prepare-migrate-ad-fs-server-r2.md#migrate-process-outline)  
+-   [移行プロセスの概要](prepare-migrate-ad-fs-server-r2.md#migration-process-outline)  
   
 -   [Windows Server 2012 R2 AD FS の新機能](prepare-migrate-ad-fs-server-r2.md#new-ad-fs-functionality-in-windows-server-2012-r2)  
   
@@ -29,7 +29,8 @@ ms.locfileid: "59889023"
   
 -   [その他の移行タスクおよび考慮事項](prepare-migrate-ad-fs-server-r2.md#other-migration-tasks-and-considerations)  
   
-##  <a name="migration-process-outline"></a>移行プロセスの概要  
+##  <a name="migration-process-outline"></a>移行プロセスの概要
+
  AD FS フェデレーション サーバー ファームから Windows Server 2012 R2 への移行を完了するには、ここで示しているタスクを完了する必要があります。  
   
 1.  既存の AD FS ファームで以下の構成データをエクスポート、記録、バックアップします。 これらのタスクの完了方法の詳細については、「[AD FS フェデレーション サーバーの移行](migrate-ad-fs-fed-server-r2.md)」を参照してください。  

@@ -1,21 +1,23 @@
 ---
 Title: 記憶域の移行サービスの概要
-description: 検索エンジンの結果についての簡単な説明
+description: 記憶域の移行サービスでは、Windows Server の新しいバージョンにサーバーを移行するやすくなります。 サーバー上のデータのインベントリを作成し、新しいサーバーにデータと構成を転送するためのグラフィカル ツールを提供します-アプリやユーザーが何も変更することがなく。
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 09/24/2018
+ms.date: 05/21/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: edc82c996f6877f770454fc6e27ccf5205a7d540
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: fd99058036a5b8041e4c65ca120c6a7e68b2df8d
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843863"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976653"
 ---
 # <a name="storage-migration-service-overview"></a>記憶域の移行サービスの概要
+
+>適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server (半期チャネル)
 
 記憶域の移行サービスでは、Windows Server の新しいバージョンにサーバーを移行するやすくなります。 サーバー上のデータのインベントリを作成し、新しいサーバーにデータと構成を転送するためのグラフィカル ツールを提供します-アプリやユーザーが何も変更することがなく。
 
@@ -45,19 +47,21 @@ ms.locfileid: "59843863"
 ![スキャンする準備ができて、サーバーを示すスクリーン ショット](media/migrate/inventory.png)
 **図 2。記憶域の移行サービスがサーバーのインベントリ**
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 記憶域の移行サービスを使用するには、次のものが必要。
 
 - A**移行元サーバー**ファイルとデータを移行するには
 - A**移行先サーバー**に移行する Windows Server 2019 を実行して、同様に機能が、約 50% が遅くなるは Windows Server 2016 および Windows Server 2012 R2
 - **Orchestrator サーバー**移行を管理する Windows Server 2019 を実行しています。  <br>場合は、いくつかのサーバーのみを移行して、Windows Server 2019 が実行されているサーバーのいずれか、オーケストレーターとしてを使用できます。 多くのサーバーを移行する場合は、別の orchestrator サーバーの使用をお勧めします。
-- A **PC またはを実行するサーバー [Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md)** を PowerShell を使用して、移行を管理する場合を除き、記憶域の移行サービスのユーザー インターフェイスを実行します。 Windows Admin Center と Windows Server 2019 バージョン両方以上でなければなりませんバージョンは 1809 します。 
+- A **PC またはを実行するサーバー [Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md)** を PowerShell を使用して、移行を管理する場合を除き、記憶域の移行サービスのユーザー インターフェイスを実行します。 Windows Admin Center と Windows Server 2019 バージョン両方以上でなければなりませんバージョンは 1809 します。
+
+強くお勧めする orchestrator および変換先のコンピューターは、少なくとも 2 つのコアまたは 2 つの Vcpu と少なくとも 2 GB のメモリがあります。 インベントリと転送の操作は、複数のプロセッサとメモリをはるかに高速です。
 
 ### <a name="security-requirements"></a>セキュリティ要件
 
-- 移行元コンピューターの管理者である移行アカウントを指定します。
-- 対象のコンピューターの管理者である移行アカウントを指定します。
+- 移行元コンピューターと orchestrator コンピューターの管理者である移行アカウントを指定します。
+- セットアップ先のコンピューターと orchestrator コンピューターの管理者である移行アカウントを指定します。
 - Orchestrator コンピューターのファイルとプリンターの共有 (SMB で) ファイアウォール ルールを有効になっている必要があります*受信*します。
 - ソースと変換先のコンピューターで次のファイアウォール規則を有効になっている必要があります*受信*(ただし、既に有効になっていることを必要があります)。
   - ファイルとプリンターの共有 (SMB 受信)
@@ -73,6 +77,7 @@ ms.locfileid: "59843863"
 
 移行元サーバーには、次のオペレーティング システムのいずれかを実行する必要があります。
 
+- Windows Server 半期チャネル
 - Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
@@ -82,16 +87,34 @@ ms.locfileid: "59843863"
 - Windows Server 2003 R2
 - Windows Server 2003
 
+オーケストレーターは、Windows Server バージョンが 1903 以降を実行している場合は、次の追加のソースの種類を移行できます。
+
+- フェールオーバー クラスター
+- Samba を使用して Linux サーバー。 次のテストしました。
+    - 7.6 の red Hat Enterprise Linux、CentOS 7、8 Debian、Ubuntu 16.04 および 12.04.5、SUSE Linux Enterprise Server (SLES) 11 SP4
+    - Samba 4.x, 3.6.x
+
 ### <a name="requirements-for-destination-servers"></a>移行先サーバーの要件
 
 移行先サーバーには、次のオペレーティング システムのいずれかを実行する必要があります。
 
+- Windows Server 半期チャネル
 - Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 
 > [!TIP]
-> Windows Server 2019 を実行している移行先サーバーでは、Windows Server の以前のバージョンの転送のパフォーマンス倍精度浮動小数点があります。 このパフォーマンスの向上では、ポートしていない場合は開くために必要なファイアウォールを開くことも、組み込みの記憶域の移行サービス プロキシ サービスを含めることが原因です。
+> Windows Server 2019 または Windows Server を実行している移行先サーバー、半期チャネルは 1809 またはそれ以降のバージョンでは、Windows Server の以前のバージョンの転送のパフォーマンス倍精度浮動小数点があります。 このパフォーマンスの向上では、ポートしていない場合は開くために必要なファイアウォールを開くことも、組み込みの記憶域の移行サービス プロキシ サービスを含めることが原因です。
+
+## <a name="whats-new-in-storage-migration-service"></a>記憶域の移行サービスの新機能新機能
+
+Windows Server、バージョンが 1903 が orchestrator サーバー上で実行すると、次の新機能を追加します。
+
+- 新しいサーバーにローカル ユーザーとグループを移行します。
+- フェールオーバー クラスターから記憶域を移行します。
+- Samba を使用する Linux サーバーから記憶域を移行します。
+- Azure File Sync を使用して Azure に移行された共有をより簡単に同期します。
+- Azure などの新しいネットワークへの移行します。
 
 ## <a name="see-also"></a>関連項目
 

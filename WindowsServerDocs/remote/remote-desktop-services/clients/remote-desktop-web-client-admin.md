@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 2cb819a7f91646c61b84c3ee70550af6033ba340
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bf10f7f7444967247e51065bc6138fc0afd5ed1a
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865973"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976782"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>ユーザー用にリモート デスクトップ Web クライアントをセットアップする
 
@@ -249,6 +249,35 @@ RD セッション ホスト サーバーが RD ブローカー サーバーと�
     > RD セッション ホスト、RD ブローカー サーバーの両方に、同じコンピューターを共有している場合は、RD ブローカー サーバー証明書のみを設定します。 RD セッション ホスト、RD ブローカー サーバーは、さまざまなマシンを使用して、一意の証明書両方構成する必要があります。
 
 * **サブジェクト代替名 (SAN)** にマシンの各証明書を設定する必要があります**完全修飾ドメイン名 (FQDN)** します。 **共通名 (CN)** 各証明書の SAN に一致する必要があります。
+
+## <a name="how-to-pre-configure-settings-for-remote-desktop-web-client-users"></a>Web クライアントのリモート デスクトップ ユーザーの設定を事前に構成する方法
+このセクションでは、PowerShell を使用して、リモート デスクトップ web クライアントの展開の設定を構成する方法を説明します。 これら PowerShell コマンドレットの制御の設定を変更するユーザーの機能は、組織のセキュリティに関する注意事項に基づくまたはワークフローを対象としています。 次の設定はすべてにある、**設定**web クライアントのサイド パネル。 
+
+### <a name="suppress-telemetry"></a>製品利用統計情報を表示しません。
+既定では、ユーザーを有効または Microsoft に送信されるテレメトリ データの収集を無効にできます。 Microsoft が収集テレメトリ データについてでリンクを使用して、プライバシーに関する声明を参照してください、**について**サイド パネル。
+
+管理者は、次の PowerShell コマンドレットを使用して、デプロイのテレメトリの収集を抑制する選択できます。
+
+   ```PowerShell
+    Set-RDWebClientDeploymentSetting -SuppressTelemetry $true
+   ```
+
+既定では、ユーザーを有効またはテレメトリを無効にする選択可能性があります。 ブール値 **$false**は、既定のクライアント動作と一致します。 ブール値 **$true**テレメトリを無効にし、テレメトリを有効にすると、ユーザーを制限します。
+
+### <a name="remote-resource-launch-method"></a>リモート リソースの起動方法
+既定では、ユーザーは、ブラウザーで (1) または (2) コンピューターにインストールされている他のクライアントで処理するために、.rdp ファイルをダウンロードしてリモート リソースを起動する選択可能性があります。 管理者は、次の Powershell コマンドを使用して、デプロイ用のリモート リソースの起動方法を制限できます。
+
+   ```PowerShell
+    Set-RDWebClientDeploymentSetting -LaunchResourceInBrowser ($true|$false)
+   ```
+ 既定では、ユーザーは、いずれかの起動方法を選択できます。 ブール値 **$true**ユーザーは、ブラウザー内のリソースを起動します。 ブール値 **$false**により、ユーザーをローカルにインストールされた RDP クライアントで処理するために、.rdp ファイルをダウンロードすることによってリソースを起動します。
+
+### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>既定値に RDWebClientDeploymentSetting 構成をリセットします。
+すべての配置レベルの web クライアント設定を既定の構成をリセットするには、次の PowerShell コマンドレットを実行します。
+
+   ```PowerShell
+    Reset-RDWebClientDeploymentSetting 
+   ```
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
