@@ -7,18 +7,18 @@ ms.topic: article
 author: RobHindman
 ms.author: robhind
 ms.date: 09/15/2016
-ms.openlocfilehash: 45d8364adf9d3db24a8e6d8f7bc91178ce7d1551
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1b9271ceac99ac9b21cbfac902ba133d66815df4
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881133"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476121"
 ---
 # <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a>簡略化された SMB マルチチャネルと複数 NIC のクラスター ネットワーク
 
-> 適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+> 適用対象:Windows Server 2019、Windows Server 2016
 
-簡略化された SMB マルチ チャネルおよびマルチ<abbr title="ネットワーク インターフェイス カード">NIC</abbr>クラスター ネットワークが、同じクラスターのネットワークのサブネット上の複数の Nic の使用を有効にし、SMB マルチ チャネルを自動的に有効にする Windows Server 2016 の新機能です。  
+簡略化された SMB マルチ チャネルおよびマルチ<abbr title="ネットワーク インターフェイス カード">NIC</abbr>クラスター ネットワークは、同じクラスターのネットワークのサブネット上の複数の Nic の使用を有効にし、SMB マルチ チャネルを自動的に有効にする機能です。
 
 簡略化された SMB マルチ チャネルと複数 NIC のクラスター ネットワークは、次の利点を提供します。  
 - すべての Nic を同じスイッチを使用しているノードで自動的に認識フェールオーバー クラスタ リング]、[同じサブネットの追加構成が必要ないです。  
@@ -31,7 +31,7 @@ ms.locfileid: "59881133"
 -   同じスイッチを使用して、サーバーごとの複数の Nic/サブネット。  
 
 ## <a name="how-to-take-advantage-of-multi-nic-clusters-networks-and-simplified-smb-multichannel"></a>クラスター ネットワークと簡略化された SMB マルチ チャネルを複数の NIC を活用する方法  
-このセクションでは、Windows Server 2016 での新しい複数 NIC のクラスター ネットワークと簡略化された SMB マルチ チャネル機能を活用する方法について説明します。  
+このセクションでは、新しい複数 NIC のクラスター ネットワークと簡略化された SMB マルチ チャネル機能を活用する方法について説明します。  
 
 ### <a name="use-at-least-two-networks-for-failover-clustering"></a>フェールオーバー クラスタ リングに少なくとも 2 つのネットワークを使用します。   
 まれですが、ネットワーク スイッチが失敗する-フェールオーバー クラスタ リングに少なくとも 2 つのネットワークを使用するがベスト プラクティスとしています。 クラスター ハートビートにあるすべてのネットワークが使用されます。 単一障害点を回避するために、フェールオーバー クラスターの 1 つのネットワークを使用しないでください。 理想的には、必要があります複数の物理的な通信パスと、クラスター内のノードとなしの単一障害点の間。  
@@ -58,7 +58,7 @@ ms.locfileid: "59881133"
 **図 4:自動アドレスが IPv6 リンク ローカル (fe 80) リソースの構成**  
 
 ## <a name="throughput-and-fault-tolerance"></a>スループットとフォールト トレランス  
-Windows Server 2016 は、自動的に NIC 機能を検出し、考えられる最速の構成で各 NIC の使用を試みます。 Nic チーミングは、RSS を使用して Nic および RDMA 機能を使用して Nic をすべて使用できます。 次の表は、これらのテクノロジを使用する場合、上のトレードオフをまとめたものです。 複数の RDMA 対応の Nic を使用する場合、最大のスループットが実現されます。 詳細については、次を参照してください。 [SMB Mutlichannel の基本](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/)します。
+Windows Server 2019 および Windows Server 2016 は、NIC 機能を検出し、最速の考えられる構成で各 NIC を使用するときに自動的に。 Nic チーミングは、RSS を使用して Nic および RDMA 機能を使用して Nic をすべて使用できます。 次の表は、これらのテクノロジを使用する場合、上のトレードオフをまとめたものです。 複数の RDMA 対応の Nic を使用する場合、最大のスループットが実現されます。 詳細については、次を参照してください。 [SMB Mutlichannel の基本](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/)します。
 
 ![NIC の構成がさまざまなスループットとフォールト トレランスの図解](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig5.png)  
 **図 5:さまざまな NIC conifigurations のスループットおよびフォールト トレランス**   

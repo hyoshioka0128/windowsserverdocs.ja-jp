@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c0d750fd139865daa92319c1d1926dc5d36669b2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 62215aa802e2509be5305aef53069ae9643562f1
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885773"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476100"
 ---
 # <a name="storage-reports-management"></a>記憶域レポートの管理
 
-> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 ファイル サーバー リソース マネージャー Microsoft<sup>®</sup> 管理コンソール (MMC) スナップインの **[記憶域レポートの管理]** ノードでは、次のタスクを実行できます。
 
@@ -34,14 +34,14 @@ ms.locfileid: "59885773"
 
 ここでは、次のトピックについて説明します。
 
--   [一連のレポートのスケジュール設定します。](schedule-set-of-reports.md)
--   [オンデマンドでレポートを生成します。](generate-reports-on-demand.md)
+-   [レポートのセットをスケジュールする](schedule-set-of-reports.md)
+-   [オン デマンドでレポートを生成する](generate-reports-on-demand.md)
 
 > [!Note]
 > 電子メール通知や特定のレポート機能を設定するには、まずファイル サーバー リソース マネージャーの全般的なオプションを設定する必要があります。
 
 ## <a name="see-also"></a>関連項目
 
--   [設定ファイル サーバー リソース マネージャーのオプション](setting-file-server-resource-manager-options.md)
+-   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
 
 

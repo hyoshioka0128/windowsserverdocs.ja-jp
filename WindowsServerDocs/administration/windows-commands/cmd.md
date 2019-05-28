@@ -13,16 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 966ac7f70984dff6d26265e07a26a6eebcde9fb6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7d9b99dbe7e26190e87c5dfc9de29980b9cb2f43
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874393"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192589"
 ---
 # <a name="cmd"></a>Cmd
-
-
 
 コマンド インタープリター、Cmd.exe の新しいインスタンスを開始します。 パラメーターを指定せずに使用されている場合**cmd**オペレーティング システムのバージョンおよび著作権情報が表示されます。
 
@@ -55,7 +53,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
 次の表に、有効な 16 進数の値として使用できる\<B\>と\<F\>
 
-|値|色|
+|Value|色|
 |-----|-----|
 |0|黒|
 |1|青|
@@ -104,6 +102,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
 > [!CAUTION]
 > レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリを変更する前に、コンピューター上の重要なデータのバックアップを作成する必要があります。
+
 -   有効にして、コマンド拡張機能を無効化
 
     Windows XP では既定では、コマンド拡張機能が有効にします。 無効にできますの特定のプロセスを使用して **/e: オフ**します。 有効にしたり、すべての拡張機能を無効にする**cmd** 、次を設定して、コンピューターまたはユーザーのセッションでコマンド ライン オプション**REG_DWORD**値。
@@ -114,34 +113,35 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
     設定、 **REG_DWORD**いずれかの値**0 × 1** (有効) または**0 × 0** (無効)、レジストリで Regedit.exe を使用しています。 ユーザーが指定した設定は、コンピューターの設定より優先し、コマンド ライン オプションのレジストリ設定より優先します。
 
->     [!CAUTION]
->     Incorrectly editing the registry may severely damage your system. Before making changes to the registry, you should back up any valued data on the computer.
+> [!CAUTION]
+> レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリを変更する前に、コンピューター上の重要なデータのバックアップを作成する必要があります。
 
     When you enable command extensions, the following commands are affected:  
-    -   **assoc**
-    -   **call**
-    -   **chdir (cd)**
-    -   **color**
-    -   **del (erase)**
-    -   **endlocal**
-    -   **for**
-    -   **ftype**
-    -   **goto**
-    -   **if**
-    -   **mkdir (md)**
-    -   **popd**
-    -   **prompt**
-    -   **pushd**
-    -   **set**
-    -   **setlocal**
-    -   **shift**
-    -   **start** (also includes changes to external command processes)
+    -  **assoc**
+    -  **call**
+    -  **chdir (cd)**
+    -  **color**
+    -  **del (erase)**
+    -  **endlocal**
+    -  **for**
+    -  **ftype**
+    -  **goto**
+    -  **if**
+    -  **mkdir (md)**
+    -  **popd**
+    -  **prompt**
+    -  **pushd**
+    -  **set**
+    -  **setlocal**
+    -  **shift**
+    -  **start** (also includes changes to external command processes)
+
 -   遅延環境変数の拡張を有効にします。
 
     遅延環境変数の拡張を有効にした場合は、実行時に環境変数の値を代わりに感嘆符文字を使用できます。
 -   ファイルとディレクトリ名の補完機能を有効にします。
 
-    既定では、ファイルとディレクトリ名の補完機能が有効になっていません。 有効にまたはの特定のプロセスのファイル名の補完機能を無効にすることができます、 **cmd**コマンドと **/f:**{**で**|**オフ**}. 有効にまたはすべてのプロセスのファイルとディレクトリ名の補完を無効にすることができます、 **cmd**コマンドのコンピューター上で、次を設定して、ユーザーのログオン セッション用または**REG_DWORD**値。
+    既定では、ファイルとディレクトリ名の補完機能が有効になっていません。 有効にまたはの特定のプロセスのファイル名の補完機能を無効にすることができます、 **cmd**コマンドと **/f:** {**で**|**オフ**}. 有効にまたはすべてのプロセスのファイルとディレクトリ名の補完を無効にすることができます、 **cmd**コマンドのコンピューター上で、次を設定して、ユーザーのログオン セッション用または**REG_DWORD**値。
 
     **次のレジストリ Processor\CompletionChar\REG_DWORD**
 
@@ -170,4 +170,4 @@ CTRL + D または ctrl キーを押しながら F キーを押す**cmd**ファ�
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

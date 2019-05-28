@@ -13,20 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82ba51cdb49501492c1fa38c6c93933f4aee90d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ea306127be9497c21a5b8efa9fd3f0fa2433014c
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890463"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192672"
 ---
 # <a name="findstr"></a>findstr
 
-
-
 ファイル内のテキストのパターンを検索します。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+このコマンドを使用する方法の例については、[例](#examples)を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -66,7 +64,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 -   正規表現では、リテラル文字とメタ文字の両方を使用して、正確な文字列ではなく、テキストのパターンを見つけます。 リテラル文字が正規表現の構文で特別な意味を持たない文字など、出現する文字と一致します。 たとえば、文字と数字は、リテラル文字です。 メタ文字は、正規表現の構文で (演算子または区切り記号) の特別な意味を持つ記号のことです。
 
     次の表は、メタ文字を**findstr**受け入れます。  
-    |メタ文字|値|
+    |メタ文字|Value|
     |-------------|-----|
     |.|ワイルドカード: 任意の文字|
     |*|前の文字またはクラスの繰り返し: 0 個以上の出現回数|
@@ -88,7 +86,7 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
     b.*ing
     ```
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
 スペースを使用して、引数が付いていない場合は、複数の検索文字列を区切る **/c**します。
 
@@ -127,4 +125,4 @@ findstr /s /i /m "\<comp.*" *.*
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

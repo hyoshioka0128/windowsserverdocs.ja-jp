@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 38de2bca413ce7f8aeda2af4392f9a616641b189
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 958bf8455d03ddc04395fafe83e70a49c7659c96
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873073"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192443"
 ---
 ## <a name="best-practices-for-securing-active-directory-federation-services"></a>Active Directory フェデレーション サービスをセキュリティで保護するためのベスト プラクティス
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 このドキュメントでは、セキュリティで保護の計画と Active Directory フェデレーション サービス (AD FS) と Web アプリケーション プロキシの展開のベスト プラクティスを提供します。  これらのコンポーネントと組織の特定のユース ケースとセキュリティ要件には追加のセキュリティ構成に関する推奨事項の既定の動作に関する情報が含まれています。
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1aa2e22f74323bb6cabfc644ca67e17a7fcbd3fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 8ec9748056b296bb0c74250b36c762fb86fa90ad
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851023"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564649"
 ---
 # <a name="pwlauncher"></a>pwlauncher
 
@@ -44,7 +44,7 @@ Pwlauncher {/enable | /disable}
 
 ## <a name="remarks"></a>注釈
 
-Windows To Go を使用しようとしているユーザーの最大の障壁が USB からブートするコンピューターを取得しています。 これは従来、ファームウェアを入力し、コンピューターが正しく構成されるまで、さまざまな構成オプションをしようとして行います。 これはほとんどのユーザーに対して単純な作業でないし、は非常に危険なファームウェアには、レンダリング システムが正しく使用されている場合に使用できないオプションが含まれています。 以降のオペレーティング システムには Windows 8and、この問題を軽減するためには"Windows To Go スタートアップ オプションと呼ばれる機能が含まれますですか。 Windows 内から USB からブートするには、そのコンピューターを構成するユーザーを可能に: ファームウェアをこれまで入力なしの USB からブート ファームウェアをサポートしている限りです。 最初に、常に USB からブートするシステムを有効にするとがへの影響を考慮する必要があります。 たとえば、マルウェアを含む USB デバイスは、システムを侵害する誤って起動でしたまたはブートの競合が発生する、複数の USB ドライブにプラグインできるようにします。 このため、既定の構成は、Windows To Go スタートアップ オプション既定で無効になっています。 さらに、Windows To Go スタートアップ オプションを構成するのには、管理者特権が必要です。 Pwlauncher コマンド ライン ツールを使用して、Windows To Go スタートアップ オプションを有効にしたかどうか、または**変更 Windows To Go スタートアップ オプション**アプリは前に、コンピューターに挿入する任意の USB デバイスからブートするコンピューターを試みます開始します。
+Windows To Go を使用しようとしているユーザーの最大の障壁が USB からブートするコンピューターを取得しています。 これは従来、ファームウェアを入力し、コンピューターが正しく構成されるまで、さまざまな構成オプションをしようとして行います。 これはほとんどのユーザーに対して単純な作業でないし、は非常に危険なファームウェアには、レンダリング システムが正しく使用されている場合に使用できないオプションが含まれています。 以降のオペレーティング システムが「Windows To Go スタートアップ オプション」と呼ばれる機能を含む Windows 8and、この問題を軽減するために Windows 内から USB からブートするには、そのコンピューターを構成するユーザーを可能に-これまでに限り、ファームウェアを入力しなくても、ファームウェアでは、USB からブートをサポートします。 最初に、常に USB からブートするシステムを有効にするとがへの影響を考慮する必要があります。 たとえば、マルウェアを含む USB デバイスは、システムを侵害する誤って起動でしたまたはブートの競合が発生する、複数の USB ドライブにプラグインできるようにします。 このため、既定の構成は、Windows To Go スタートアップ オプション既定で無効になっています。 さらに、Windows To Go スタートアップ オプションを構成するのには、管理者特権が必要です。 Pwlauncher コマンド ライン ツールを使用して、Windows To Go スタートアップ オプションを有効にしたかどうか、または**変更 Windows To Go スタートアップ オプション**アプリは前に、コンピューターに挿入する任意の USB デバイスからブートするコンピューターを試みます開始します。
 
 ## <a name="BKMK_examples"></a>例
 
@@ -55,4 +55,4 @@ Pwlauncher /enable
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

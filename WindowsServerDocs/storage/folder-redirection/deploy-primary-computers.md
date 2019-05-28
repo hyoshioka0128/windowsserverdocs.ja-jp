@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b3c87597e07102d00fc068b7ecd5744e4ba366f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 39b790f39a2bf9c6334eb2176aa2e5f2e0196c0c
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854013"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475964"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>フォルダー リダイレクトと移動ユーザー プロファイル用のプライマリ コンピューターを展開します。
 
->適用対象:Windows 10、Windows 8、Windows 8.1、Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
+>適用対象:Windows 10、Windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2012 R2
 
 このトピックでは、プライマリ コンピューターのサポートを有効にして、ユーザーのプライマリ コンピューターを指定する方法について説明します。 これにより、フォルダー リダイレクトおよび移動ユーザー プロファイルを使用して、コンピューターのコントロールにします。
 
@@ -31,7 +31,7 @@ ms.locfileid: "59854013"
 プライマリ コンピューターのサポートには、次の要件があります。
 
 - Active Directory Domain Services (AD DS) スキーマを更新して、Windows Server 2012 スキーマを追加する必要があります (Windows Server 2012 ドメイン コント ローラーのインストールを自動的にスキーマを更新します)。 AD DS スキーマを更新する方法の詳細については、次を参照してください。 [Adprep.exe の統合](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>)と[Adprep.exe](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>)します。
-- クライアント コンピューターには、Windows 10、Windows 8.1、Windows 8、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行する必要があります。
+- クライアント コンピューターには、Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行する必要があります。
 
 >[!TIP]
 >フォルダー リダイレクトを構成している Gpo を有効にする前にプライマリ コンピューターのサポートを設定することをお勧めプライマリ コンピューターのサポートには、最初にこれらのテクノロジを展開する場合は、フォルダー リダイレクトや移動ユーザー プロファイルが必要ですと移動ユーザー プロファイル。 これにより、プライマリ コンピューターのサポートが有効にされる前に、ユーザー データがプライマリでないコンピューターにコピーされることを防ぎます。 構成については、次を参照してください。[展開フォルダーのリダイレクト](deploy-folder-redirection.md)と[移動ユーザー プロファイルの展開](deploy-roaming-user-profiles.md)します。
@@ -54,7 +54,7 @@ ms.locfileid: "59854013"
 7. 移動し、**ユーザー** 、適切なドメイン内のコンテナーは、コンピューターの割り当てを選択しユーザーを右クリックして**プロパティ**します。
 8. ナビゲーション ウィンドウで選択**拡張**します。
 9. 選択、**属性エディター** ] タブで [ **msDs PrimaryComputer**選び**編集**。 [複数値の文字列エディター] ダイアログ ボックスが表示されます。
-10. テキスト ボックスを右クリックして**貼り付け**を選択します**追加**を選択します**ok**、し、 **OK**もう一度。
+10. テキスト ボックスを右クリックして**貼り付け**を選択します**追加**を選択します **ok** 、し、 **OK**もう一度。
 
 ## <a name="step-2-optionally-enable-primary-computers-for-folder-redirection-in-group-policy"></a>手順 2:必要に応じて、フォルダー リダイレクト グループ ポリシーのプライマリ コンピューターを有効にします。
 
@@ -115,6 +115,6 @@ ms.locfileid: "59854013"
 ## <a name="more-information"></a>詳細情報
 
 - [フォルダー リダイレクト オフライン ファイルを展開します。](deploy-folder-redirection.md)
-- [移動ユーザー プロファイルを展開します。](deploy-roaming-user-profiles.md)
+- [移動ユーザー プロファイルを展開する](deploy-roaming-user-profiles.md)
 - [フォルダー リダイレクト、オフライン ファイル、および移動ユーザー プロファイルの概要](folder-redirection-rup-overview.md)
 - [Windows 8 のプライマリ コンピューターについて少し詳しく説明](https://blogs.technet.com/b/askds/archive/2012/10/23/digging-a-little-deeper-into-windows-8-primary-computer.aspx)

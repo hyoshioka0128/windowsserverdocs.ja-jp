@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3cf32cd718b906f16fc09901284d8520177df8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ad44ba4bbe0b31f423a4ae4593e349571d838de2
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824283"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475915"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>フォルダー リダイレクト、オフライン ファイル、移動ユーザー プロファイルの概要
 
->適用対象:Windows 10、Windows 8、Windows 8.1、Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
+>適用対象:Windows 10、Windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2012 R2
 
 このトピックでは、フォルダー リダイレクト、オフライン ファイル (クライアント サイド キャッシュまたは CSC)、および新機能と追加情報を検索する場所を含む、移動ユーザー プロファイル (RUP とも呼ばれる) テクノロジについて説明します。
 
@@ -76,7 +76,7 @@ Windows 8、Windows Server 2012 では、前にユーザーがネットワーク
 コスト意識型同期により、ユーザーが 4G モバイル ネットワークなどの従量制課金接続を使用していて、使用中の帯域幅が加入者の上限値に近づくかそれを超えたか、別のプロバイダーのネットワークでローミングしている場合、バックグラウンド同期が無効になります。
 
 >[!NOTE]
->従量制ネットワーク接続には、通常はオフライン (低速接続) モードには、Windows 8、Windows Server 2012、および Windows Server 2016 への移行の既定の 35 ミリ秒の待機時間値よりも低速のラウンドト リップ ネットワーク待ち時間があります。 そのため、このような接続では通常、オフライン (低速接続) モードに自動的に切り替わります。
+>従量制課金接続では、オフライン (低速接続) モードでは、Windows 8、Windows Server 2019、Windows Server 2016、および Windows Server 移行する際の既定の 35 ミリ秒の待機時間値よりも低速のラウンドト リップ ネットワーク待ち時間は、通常があります。2012。 そのため、このような接続では通常、オフライン (低速接続) モードに自動的に切り替わります。
 
 ### <a name="what-value-does-cost-aware-synchronization-add"></a>コスト意識型同期はどのような値を追加しますか。
 
@@ -107,7 +107,7 @@ Windows 8 および Windows Server 2012 では、前に、従量制課金接続�
 
 プライベート ユーザー データのダウンロードをプライマリ コンピューターだけに制限する目的から、ユーザーがコンピューターにサインインするときにはフォルダー リダイレクトと移動ユーザー プロファイルの機能によって次のロジック チェックを実行します。
 
-1. Windows オペレーティング システムによって新しいグループ ポリシー設定 (**[プライマリ コンピューターにのみ移動プロファイルをダウンロードする]** と **[プライマリ コンピューターでのみフォルダーをリダイレクトする]**) がチェックされ、ユーザーのプロファイルのローミングの判定とフォルダー リダイレクトの適用の判定に Active Directory Domain Services (AD DS) の **msDS-Primary-Computer** 属性が影響を及ぼすかどうかが決定されます。
+1. Windows オペレーティング システムによって新しいグループ ポリシー設定 ( **[プライマリ コンピューターにのみ移動プロファイルをダウンロードする]** と **[プライマリ コンピューターでのみフォルダーをリダイレクトする]** ) がチェックされ、ユーザーのプロファイルのローミングの判定とフォルダー リダイレクトの適用の判定に Active Directory Domain Services (AD DS) の **msDS-Primary-Computer** 属性が影響を及ぼすかどうかが決定されます。
 2. ポリシー設定でプライマリ コンピューターのサポートが有効な場合、AD DS スキーマで **msDS-Primary-Computer** 属性がサポートされるかどうかが確認されます。 この属性がサポートされる場合、次の手順で、ユーザーがログオンしているコンピューターがユーザーのプライマリ コンピューターとして指定されているかどうかが確認されます。
     1. コンピューターがユーザーのプライマリ コンピューターの 1 つである場合、移動ユーザー プロファイルとフォルダー リダイレクトの設定が適用されます。
     2. コンピューターがユーザーのプライマリ コンピューターの 1 つでない場合、ユーザーのキャッシュされたローカル プロファイルが読み込まれるか (存在する場合)、または新しいローカル プロファイルが作成されます。 さらに、ローカル フォルダー リダイレクト構成に格納されている、以前に適用されたグループ ポリシー設定に指定された削除動作に従って、既存のリダイレクトされたフォルダーが削除されます。
@@ -123,7 +123,7 @@ Windows 8 および Windows Server 2012 では、前に、従量制課金接続�
 プライマリ コンピューターを指定するには、環境が次の要件を満たす必要があります。
 
 - Windows Server 2012 スキーマおよび条件を含む Active Directory Domain Services (AD DS) スキーマを更新する必要があります (Windows Server 2012 またはそれ以降のドメイン コント ローラーを自動的にインストールするスキーマを更新します)。 AD DS スキーマのアップグレードの詳細については、次を参照してください。[ドメイン コント ローラーを Windows Server 2016 にアップグレード](../../identity/ad-ds/deploy/upgrade-domain-controllers.md)します。
-- クライアント コンピューターでは、Windows 10、Windows 8.1、Windows 8、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行する必要があり、管理している Active Directory ドメインに参加させることができます。
+- クライアント コンピューターでは、Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行する必要があり、管理している Active Directory ドメインに参加させることができます。
 
 ## <a name="more-information"></a>詳細情報
 

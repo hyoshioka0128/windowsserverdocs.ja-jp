@@ -11,12 +11,12 @@ ms.assetid: 18eface5-7518-4c6b-9282-93e2e3e87492
 author: KBDAzure
 ms.author: kathyDav
 ms.date: 12/06/2016
-ms.openlocfilehash: 196a32d57877662ccd73647835e16af9348135c8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a7e465313c68ee793715aba045cc56a2ca5fd1de
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845293"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222841"
 ---
 # <a name="use-local-resources-on-hyper-v-virtual-machine-with-vmconnect"></a>Use local resources on Hyper-V virtual machine with VMConnect
 
@@ -24,11 +24,11 @@ ms.locfileid: "59845293"
 
 仮想マシン接続 (VMConnect) を使用して、リムーバブル USB フラッシュ ドライブやプリンターなど、仮想マシンでは、コンピューターのローカル リソースを使用できます。 拡張セッション モードを使用して、VMConnect ウィンドウのサイズを変更することもできます。 この記事ではどのホストを構成し、ローカル リソースに仮想マシンのアクセスを提供します。
 
-拡張セッション モードとクリップボードのテキストを入力は、最新の Windows オペレーティング システムを実行する仮想マシンでのみ使用できます。 \(参照してください[ローカル リソースを使用するための要件](#BKMK_NEW)、後述します。\) 
+拡張セッション モードとクリップボードのテキストを入力は、最新の Windows オペレーティング システムを実行する仮想マシンでのみ使用できます。 \(参照してください[ローカル リソースを使用するための要件](#requirements-for-using-local-resources)、後述します。\) 
 
 Ubuntu を実行する仮想マシンでは、次を参照してください。 [Hyper-v VM の Ubuntu 画面の解像度を変更する](https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/09/19/changing-ubuntu-screen-resolution-in-a-hyper-v-vm/)です。 
   
-## <a name="BKMK_OVER"></a>HYPER-V ホストで拡張セッション モードを有効にします。  
+## <a name="turn-on-enhanced-session-mode-on-a-hyper-v-host"></a>HYPER-V ホストで拡張セッション モードを有効にします。  
 場合は、HYPER-V ホストには、Windows 10 または Windows 8.1 が実行される、拡張セッション モードは既定で、ため、これをスキップして次のセクションに移動することができます。 ホストは、Windows Server 2016 または Windows Server 2012 R2 を実行する場合が最初に実行します。 
   
 拡張セッション モードを有効にします。
@@ -61,7 +61,7 @@ Ubuntu を実行する仮想マシンでは、次を参照してください。 
   
 ## <a name="choose-a-local-resource"></a>ローカル リソースを選択します。
 
-ローカル リソースには、プリンターには、クリップボード、VMConnect を実行しているコンピューター上のローカル ドライブが含まれます。 詳細については、次を参照してください。[ローカル リソースを使用するための要件](#BKMK_NEW)、後述します。  
+ローカル リソースには、プリンターには、クリップボード、VMConnect を実行しているコンピューター上のローカル ドライブが含まれます。 詳細については、次を参照してください。[ローカル リソースを使用するための要件](#requirements-for-using-local-resources)、後述します。  
   
 ローカル リソースを選択。
   
@@ -81,7 +81,7 @@ Ubuntu を実行する仮想マシンでは、次を参照してください。 
   
     ![[詳細] ボタンを呼び出すスクリーン ショット。](media/HyperV-VMConnect-DisplayConfig-LocalResourcesMore.png)  
   
-6.  仮想マシンで使用するドライブを選択し、**[OK]** をクリックします。  
+6.  仮想マシンで使用するドライブを選択し、 **[OK]** をクリックします。  
   
     ![ローカル リソースおよび選択したドライブを示すスクリーン ショット。](media/HyperV-VMConnect-Settings-LocalResourcesDrives.png)  
   
@@ -97,7 +97,7 @@ Windows PowerShell またはコマンド プロンプトで次のコマンドを
   
 `VMConnect.exe <ServerName> <VMName> /edit`  
   
-## <a name="BKMK_NEW"></a>ローカル リソースを使用するための要件
+## <a name="requirements-for-using-local-resources"></a>ローカル リソースを使用するための要件
 
 仮想マシン上のコンピューターのローカル リソースを使用できるようにするには。  
   
@@ -125,7 +125,7 @@ Windows PowerShell またはコマンド プロンプトで次のコマンドを
   
 -   サポートされているプラグ アンド プレイ デバイス  
   
-## <a name="BKMK_APP"></a>コンピューターのローカル リソースを使用する理由
+## <a name="why-use-a-computers-local-resources"></a>コンピューターのローカル リソースを使用する理由
 コンピューターのローカル リソースを使用して行います。  
   
 -   仮想マシンへのネットワーク接続がない状態で仮想マシンをトラブルシューティングする。  

@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: d67f4c252ad25a05f11b88771f12fd01d13137d4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 040caf6395b7c70313de900d522241f97699a999
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880393"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192504"
 ---
 # <a name="add-a-federation-server-to-a-federation-server-farm"></a>フェデレーション サーバー ファームにフェデレーション サーバーを追加する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 フェデレーション サービス役割サービスをインストールし、コンピューターに必要な証明書を構成した後、コンピューターをフェデレーション サーバーを構成する準備が整いました。 以下の手順を使用して、コンピューターを新しいフェデレーション サーバー ファームに参加させます。  
   
@@ -37,7 +36,7 @@ ms.locfileid: "59880393"
   
     -   いつでもにセットアップ ウィザードが開き、完全な Windows のエクスプ ローラーと、移動、 **c:\\Windows\\ADFS**フォルダー、および二重\-クリックして**FsConfigWizard.exe**.  
   
-2.  **へようこそ**ことを確認します ページで、**既存のフェデレーション サービスにフェデレーション サーバーを追加**が選択されているし、をクリックし、 **次へ**します。  
+2.  **へようこそ** ことを確認します ページで、**既存のフェデレーション サービスにフェデレーション サーバーを追加**が選択されているし、をクリックし、 **次へ** します。  
   
 3.  既に選択されている AD FS データベースが存在する場合、 **Existing AD FS 構成データベース検出**ページが表示されます。 発生する場合はクリックして**データベースの削除**、順にクリックします**次**します。  
   
@@ -54,6 +53,6 @@ ms.locfileid: "59880393"
 6.  **[構成結果]** ページで、結果を確認します。 すべての構成手順が終了したら、 **[閉じる]**  をクリックしてウィザードを終了します。  
   
 ## <a name="additional-references"></a>その他の参照情報  
-[チェックリスト:フェデレーション サーバーを設定します。](Checklist--Setting-Up-a-Federation-Server.md)  
+[チェックリスト:フェデレーション サーバーのセットアップ](Checklist--Setting-Up-a-Federation-Server.md)  
   
 

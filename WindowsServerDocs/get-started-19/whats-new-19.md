@@ -4,25 +4,30 @@ description: デスクトップ エクスペリエンス、ストレージ移行
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
 ms.localizationpriority: high
-ms.openlocfilehash: 4c454fc397b662e313d5cfb7ed02a83dc7059207
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.date: 05/21/2019
+ms.openlocfilehash: af887c0e1c66a017ee091fb2cab2dc61fa9ac1dc
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871843"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976554"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 の新機能
 
-このトピックでは、Windows Server 2019 の新機能の一部について説明します。 Windows Server 2019 は Windows Server 2016 の強力な基盤上に構築し、により、さまざまな技術革新を 4 つの主要なテーマで。ハイブリッド クラウド、セキュリティ、アプリケーション プラットフォーム、およびハイパー コンバージド インフラストラクチャ (HCI)。 Windows Server Version 1809 の新機能については、「[Windows Server Version 1809 の新機能](../get-started/whats-new-in-windows-server-1809.md)」を参照してください。
+> 適用対象:Windows Server 2019
+
+このトピックでは、Windows Server 2019 の新機能の一部について説明します。 Windows Server 2019 は Windows Server 2016 の強力な基盤上に構築し、により、さまざまな技術革新を 4 つの主要なテーマで。ハイブリッド クラウド、セキュリティ、アプリケーション プラットフォーム、およびハイパー コンバージド インフラストラクチャ (HCI)。
+
+Windows Server 半期チャネル リリースの新機能についてを参照してください[Windows Server で新](../get-started/whats-new-in-windows-server.md)します。 
 
 ## <a name="general"></a>全般的な情報
 
 ### <a name="desktop-experience"></a>デスクトップ エクスペリエンス
 
-Windows Server 2019 は長期サービス チャネル (LTSC) リリースであるため、<b>デスクトップ エクスペリエンス</b>が含まれています。 (半期チャネルのため、Windows Server、バージョン 1709、Windows Server、バージョン 1803、または Windows Server バージョンは 1809 には含まれません\(SAC\)リリースにはしない設計によって、デスクトップ エクスペリエンスが含まれますこれらは厳密に、サーバー。Core と Nano Server のコンテナー イメージを解放します。)Windows Server 2016 の場合と同様、オペレーティング システムのセットアップ時に選択できます Server Core インストールまたは Server 間でデスクトップ エクスペリエンスのインストールで。
+Windows Server 2019 は長期サービス チャネル (LTSC) リリースであるため、<b>デスクトップ エクスペリエンス</b>が含まれています。 (半期チャネル\(SAC\)リリースにはしない設計によって、デスクトップ エクスペリエンスが含まれます厳密には Server Core と Nano Server コンテナー イメージを解放します。)。Windows Server 2016 の場合と同様、オペレーティング システムのセットアップ時に選択できます Server Core インストールまたは Server 間でデスクトップ エクスペリエンスのインストールで。
 
 ### <a name="system-insights"></a>システム インサイト
 
@@ -132,7 +137,7 @@ Windows Server 2019 でストレージに行った変更の一部を次に示し
 
 フェールオーバー クラスタリングの新機能の一覧を次に示します。 詳細については、「[フェールオーバー クラスタリングの新機能](../failover-clustering/whats-new-in-failover-clustering.md)」を参照してください。
 
-- **クラスターの設定**
+- **クラスター セット**
 - **Azure 対応のクラスター**
 - **クロス ドメインのクラスターの移行**
 - **USB のミラーリング監視サーバー**
@@ -148,7 +153,7 @@ Windows Server 2019 でストレージに行った変更の一部を次に示し
 
 同じコンテナー ホストで同じ Docker デーモンを使用して、Windows および Linux ベースのコンテナーを実行できるようになりました。 これにより、異種コンテナーのホスト環境を持ちつつ、アプリケーション開発者に柔軟性を提供できます。
 
-### <a name="building-support-for-kubernetes"></a>Kubernetes サポートの構築
+### <a name="built-in-support-for-kubernetes"></a>Kubernetes 用の組み込みのサポート
 
 Windows Server 2019 では、Windows で Kubernetes をサポートするために必要な半期チャネル リリースから、計算、ネットワーク、および記憶域への機能強化が続行されます。 詳細は、今後の Kubernetes リリースで公開されます。
 

@@ -4,21 +4,22 @@ description: Windows Server Version 1809 の新機能
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
+ms.date: 05/21/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 32868a4a5044360bf596e26d497138bccf6692bc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d268550112236daecbe3dc1a9d9da21bc8ec67fb
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834413"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976640"
 ---
 # <a name="whats-new-in-windows-server-version-1809"></a>Windows Server Version 1809 の新機能
 
 >適用先:Windows Server (半期チャネル)
 
-このトピックでは、Windows Server Version 1809 の新機能の一部について説明します。 Windows Server 2019 の新機能については、「[Windows Server 2019 の新機能](../get-started-19/whats-new-19.md)」を参照してください。
+Windows では、最新の機能については、次を参照してください。 [Windows Server で新](whats-new-in-windows-server.md)します。 このトピックでは、Windows Server Version 1809 の新機能の一部について説明します。
 
 ## <a name="container-networking-with-kubernetes"></a>Kubernetes を使用したコンテナー ネットワーク
 
@@ -41,7 +42,7 @@ Windows Server Version 1809 の新機能のほか、[Windows Server 2019](../get
 * Windows 上の Linux コンテナー
 * [余分な遅延の低いバック グラウンド トランスポート (LEDBAT)](https://blogs.technet.microsoft.com/networking/2018/07/25/ledbat/)
 * 仮想ワークロードに関するネットワーク パフォーマンスの向上
-* [サーバーのコア アプリケーションの互換性機能 (FOD) をオンデマンドで ](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19)
+* [サーバーのコア アプリケーションの互換性機能 (FOD) をオンデマンドで](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19)
 * [記憶域の移行サービス (SMS)](../storage/whats-new-in-storage.md#storage-spaces-direct)
 * 記憶域レプリカ
 * システム インサイト 

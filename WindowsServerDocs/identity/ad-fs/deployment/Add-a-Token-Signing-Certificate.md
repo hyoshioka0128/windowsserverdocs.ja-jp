@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 8a94e0724d6fd2a04e2fbfc22b3054b49d87f440
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ac9f9b95ad6226a8e3b7012e317899f1d48c60c9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826153"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192466"
 ---
 # <a name="add-a-token-signing-certificate"></a>トークン署名証明書を追加する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory フェデレーション サービス内のフェデレーション サーバー \(AD FS\)トークンを必要と\-を攻撃者が改ざんまたは不正にアクセスするためにセキュリティ トークンを偽造を防ぐために証明書の署名リソースのフェデレーションにします。 すべてのトークン\-秘密キーの暗号化とデジタル署名に使用される公開キー署名証明書が含まれています\(、秘密キーによって\)セキュリティ トークン。 後で、パートナーのフェデレーション サーバーでこれらのキーが受信されると、検証信頼性\(、公開キーによって\)の暗号化されたセキュリティ トークン。  
   
@@ -40,7 +39,7 @@ Active Directory フェデレーション サービス内のフェデレーシ�
 4.  **証明書ファイルの参照** ダイアログ ボックスで、追加、証明書ファイルを選択し、をクリックしたい証明書ファイルを移動**オープン**します。  
   
 ## <a name="additional-references"></a>その他の参照情報  
-[チェックリスト:フェデレーション サーバーを設定します。](Checklist--Setting-Up-a-Federation-Server.md)  
+[チェックリスト:フェデレーション サーバーのセットアップ](Checklist--Setting-Up-a-Federation-Server.md)  
   
 [フェデレーション サーバーの証明書の要件](https://technet.microsoft.com/library/dd807040.aspx)  
   

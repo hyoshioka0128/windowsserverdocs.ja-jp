@@ -13,12 +13,12 @@ ms.assetid: 063783cd-d748-489e-b175-46eadc993f7a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 60d2e1fedc018136f5668d55a8afb2e0574d94de
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: da27467efb842368167b7a315056506e99331e8d
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845073"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034591"
 ---
 # <a name="multipoint-services-site-planning"></a>MultiPoint Services のサイトの計画
 MultiPoint サービスと関連付けられているそのステーションを実行している 1 つまたは複数のコンピューターが配置される場所を考慮する必要があります。  
@@ -86,11 +86,11 @@ LAN クライアントの物理的な距離の制限事項はありません。 
 ## <a name="using-additional-hubs"></a>その他のハブを使用します。  
 追加のハブは、インストールを簡単に使用できます。 MultiPoint Services システムで使用されるハブの 3 つの種類があります。  
   
--   [ステーション ハブ](#Station-hubs)  
+-   [ステーション ハブ](#station-hubs)  
   
--   [中間のハブ](#Intermediate-hubs)  
+-   [中間のハブ](#intermediate-hubs)  
   
--   [ダウン ストリーム ハブ](#Downstream-hubs)  
+-   [ダウン ストリーム ハブ](#downstream-hubs)  
   
 ### <a name="station-hubs"></a>ステーション ハブ  
 ステーション ハブは、MultiPoint Services ステーションに関連付けられている外部のハブです。 最低でも、ステーション ハブにキーボードをで接続があります。 その他の周辺機器が接続されていることもあります。 ステーション ハブは、USB 2.0 またはそれ以降の仕様に準拠している汎用の USB ハブを指定できます。 ステーション ハブは、高性能のデバイスがプラグインに場合外部で起動する必要があります。  

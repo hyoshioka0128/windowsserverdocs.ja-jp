@@ -10,12 +10,12 @@ ms.topic: article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 5c1c64336af9c72b97539d2ded750ee4414fccb7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 71b56a0bc4f53879ebaf3610f60dded39484375b
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868183"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222353"
 ---
 # <a name="get-started-with-windows-server-2016"></a>Windows Server 2016 の概要
 
@@ -24,7 +24,7 @@ ms.locfileid: "59868183"
 >[!TIP]
 > 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
 
-<img src="../media/landing-icons/getstarted.png" style='float:left; padding:.5em;' alt="Icon showing a box with a checkmark"> このコレクション記事に記載されている詳細情報は、自分の環境で Windows Server 2016 にすぐに移行できるかどうかを判断する際に役立ちます。 Windows Server 2016 への移行に関するシステム要件、アップグレード オプション、およびその他の情報を確認したら、[Windows Server 2016](Windows-Server-2016.md) のメイン ページに戻り、ニーズに最も適したエディションとインストール オプションをインストールするための手順に進みます。 
+![チェック マークの付いたボックスを表示するアイコン](../media/landing-icons/getstarted.png)このコレクションには、Windows Server 2016 に移行する準備ができたかどうかを判断するのに役立つ詳細な情報が含まれています。 Windows Server 2016 への移行に関するシステム要件、アップグレード オプション、およびその他の情報を確認したら、[Windows Server 2016](Windows-Server-2016.md) のメイン ページに戻り、ニーズに最も適したエディションとインストール オプションをインストールするための手順に進みます。 
 
 >[!Note]
 > Windows Server 2016 をダウンロードするを参照してください。 [Windows Server の評価](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)します。

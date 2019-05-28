@@ -1,6 +1,6 @@
 ---
 title: フェールオーバー クラスターを作成する
-description: Windows Server 2012 R2、Windows Server 2012、および Windows Server 2016 フェールオーバー クラスターを作成する方法。
+description: Windows Server 2012 R2、Windows Server 2012、Windows Server 2016、および Windows Server 2019 のフェールオーバー クラスターを作成する方法。
 ms.prod: windows-server-threshold
 ms.topic: article
 author: JasonGerend
@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f919e69488c4f2272ddd07e535ba4e2248ddf79c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4122375a48cae17e5f3ebcd7e9f3ce1fad28a105
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843293"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222492"
 ---
 # <a name="create-a-failover-cluster"></a>フェールオーバー クラスターを作成する
 
->適用対象:Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
+>適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012
 
 このトピックでは、フェールオーバー クラスター マネージャー スナップインまたは Windows PowerShell を使用してフェールオーバー クラスターを作成する方法について説明します。 このトピックは、Active Directory ドメイン サービス (AD DS) でクラスターおよび関連するクラスター化された役割のコンピューター オブジェクトを作成する一般的な展開を対象としています。 記憶域スペース ダイレクト クラスターをデプロイする場合が代わりに参照してください[記憶域スペース ダイレクトの展開](../storage/storage-spaces/deploy-storage-spaces-direct.md)します。
 
@@ -62,10 +62,10 @@ Active Directory からデタッチされたクラスターをデプロイする
 1. サーバー マネージャーを起動します。
 2. **管理**メニューの **追加の役割と機能の**します。
 3. **開始する前に**] ページで、[**次**します。
-4. **インストールの種類を選択します。**  ページで **役割ベースまたは機能ベースのインストール**、し、 **次へ**。
+4. **インストールの種類を選択します。**  ページで **役割ベースまたは機能ベースのインストール**、し、 **次へ** 。
 5. **対象サーバーの選択**、機能をインストールし、選択するサーバーの選択 ページで、**次**します。
 6. **サーバーの役割の選択**ページで、選択**次**します。
-7. **[機能の選択]** ページで、**[フェールオーバー クラスタリング]** チェック ボックスをオンにします。
+7. **[機能の選択]** ページで、 **[フェールオーバー クラスタリング]** チェック ボックスをオンにします。
 8. フェールオーバー クラスターの管理ツールをインストールするには、選択**機能の追加**、し、**次**します。
 9. **インストール オプションの確認**] ページで、[**インストール**します。
 <br>フェールオーバー クラスタリング機能の場合はサーバーの再起動は必要ありません。
@@ -117,7 +117,7 @@ Active Directory からデタッチされたクラスターをデプロイする
     
     >[!NOTE]
     >検証を実行した後にクラスターを作成した場合、[構成プロシージャの検証](#validate-the-configuration)は表示されません、**サーバーの選択**ページ。 検証済みのノードはクラスターの作成ウィザードに自動的に追加されるため、それらをもう一度入力する必要はありません。
-6. 検証を省略した場合、**[検証の警告]** ページが表示されます。 クラスター検証を実行することを強くお勧めします。 Microsoft によってサポートされるのは、すべての検証テストに合格したクラスターのみです。 検証テストを実行する次のように選択します。**はい**、し、**次**。 」の説明に従って、構成の検証ウィザードを完了[構成を検証する](#validate-the-configuration)します。
+6. 検証を省略した場合、 **[検証の警告]** ページが表示されます。 クラスター検証を実行することを強くお勧めします。 Microsoft によってサポートされるのは、すべての検証テストに合格したクラスターのみです。 検証テストを実行する次のように選択します。**はい**、し、**次**。 」の説明に従って、構成の検証ウィザードを完了[構成を検証する](#validate-the-configuration)します。
 7. **[クラスター管理用のアクセス ポイント]** ページで、次の手順に従います。
     
     1. **[クラスター名]** ボックスに、クラスターを管理するために使用する名前を入力します。 この操作の前に、次の情報を参照してください。
@@ -152,75 +152,27 @@ Active Directory からデタッチされたクラスターをデプロイする
     
     次の表に、高可用性ウィザードで構成できるクラスター化された役割と、前提条件としてインストールする必要がある関連するサーバーの役割または機能を示します。
     
-    <table>
-    <thead>
-    <tr class="header">
-    <th>クラスター化された役割</th>
-    <th>役割または機能の前提条件</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-    <td>DFS 名前空間サーバー</td>
-    <td>DFS 名前空間 (ファイル サーバーの役割の一部)</td>
-    </tr>
-    <tr class="even">
-    <td>DHCP サーバー</td>
-    <td>DHCP サーバーの役割</td>
-    </tr>
-    <tr class="odd">
-    <td>分散トランザクション コーディネーター (DTC)</td>
-    <td>なし</td>
-    </tr>
-    <tr class="even">
-    <td>ファイル サーバー</td>
-    <td>ファイル サーバーの役割</td>
-    </tr>
-    <tr class="odd">
-    <td>汎用アプリケーション</td>
-    <td>該当なし</td>
-    </tr>
-    <tr class="even">
-    <td>汎用スクリプト</td>
-    <td>該当なし</td>
-    </tr>
-    <tr class="odd">
-    <td>汎用サービス</td>
-    <td>該当なし</td>
-    </tr>
-    <tr class="even">
-    <td>Hyper-V レプリカ ブローカー</td>
-    <td>Hyper-V の役割</td>
-    </tr>
-    <tr class="odd">
-    <td>iSCSI ターゲット サーバー</td>
-    <td>iSCSI ターゲット サーバー (ファイル サーバーの役割の一部)</td>
-    </tr>
-    <tr class="even">
-    <td>iSNS サーバー</td>
-    <td>iSNS サーバー サービスの機能</td>
-    </tr>
-    <tr class="odd">
-    <td>メッセージ キューイング (Message Queuing)</td>
-    <td>メッセージ キュー サービスの機能</td>
-    </tr>
-    <tr class="even">
-    <td>他のサーバー</td>
-    <td>なし</td>
-    </tr>
-    <tr class="odd">
-    <td>仮想マシン</td>
-    <td>Hyper-V の役割</td>
-    </tr>
-    <tr class="even">
-    <td>WINS サーバー</td>
-    <td>WINS サーバーの機能</td>
-    </tr>
-    </tbody>
-    </table>
+
+|クラスター化された役割  |役割または機能の前提条件  |
+|---------|---------|
+|Namespace サーバー     |   名前空間 (ファイル サーバーの役割の一部)       |
+|DFS 名前空間サーバー     |  DHCP サーバーの役割       |
+|分散トランザクション コーディネーター (DTC)     | なし        |
+|ファイル サーバー     |  ファイル サーバーの役割       |
+|汎用アプリケーション     |  該当なし       |
+|汎用スクリプト     |   該当なし      |
+|汎用サービス     |   該当なし      |
+|Hyper-V レプリカ ブローカー     |   Hyper-V の役割      |
+|iSCSI ターゲット サーバー     |    iSCSI ターゲット サーバー (ファイル サーバーの役割の一部)     |
+|iSNS サーバー     |  iSNS サーバー サービスの機能       |
+|メッセージ キューイング (Message Queuing)     |  メッセージ キュー サービスの機能       |
+|他のサーバー     |  なし       |
+|仮想マシン     |  Hyper-V の役割       |
+|WINS サーバー     |   WINS サーバーの機能      |
+
 2. フェールオーバー クラスター マネージャーでクラスター名を展開し、右クリックして**ロール**、し、**役割の構成**します。
 3. 高可用性ウィザードの手順に従って、クラスター化された役割を作成します。
-4。 クラスター化された役割が作成されたことを検証するには、 **[役割]** ウィンドウで、役割の状態が **[実行中]** であることを確認します。 [役割] ウィンドウには、所有者ノードも表示されます。 フェールオーバーをテストするには、ロールを右クリックして**移動**、し、 **ノードの**します。 **クラスター化された役割の移動**ダイアログ ボックスで、目的のクラスター ノードを選択し、 **OK**します。 **[所有者ノード]** 列で、所有者ノードが変更されたことを確認します。
+4. クラスター化された役割が作成されたことを検証するには、 **[役割]** ウィンドウで、役割の状態が **[実行中]** であることを確認します。 [役割] ウィンドウには、所有者ノードも表示されます。 フェールオーバーをテストするには、ロールを右クリックして**移動**、し、 **ノードの**します。 **クラスター化された役割の移動**ダイアログ ボックスで、目的のクラスター ノードを選択し、 **OK**します。 **[所有者ノード]** 列で、所有者ノードが変更されたことを確認します。
 
 ## <a name="create-a-failover-cluster-by-using-windows-powershell"></a>Windows PowerShell を使用してフェールオーバー クラスターをインストールする
 
@@ -266,7 +218,7 @@ New-Cluster -Name CN=MyCluster,OU=Cluster,DC=Contoso,DC=com -Node Server1, Serve
 
 ## <a name="more-information"></a>詳細情報
 
-  - [フェールオーバー クラスタ リング](failover-clustering.md)
+  - [フェールオーバー クラスタリング](failover-clustering.md)
   - [HYPER-V クラスターをデプロイします。](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj863389(v%3dws.11)>)
   - [アプリケーション データ用のスケール アウト ファイル サーバー](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831349(v%3dws.11)>)
   - [Active Directory からデタッチされたクラスターをデプロイします。](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))

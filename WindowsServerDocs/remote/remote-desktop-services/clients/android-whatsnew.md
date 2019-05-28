@@ -11,25 +11,67 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 07/06/2018
+ms.date: 05/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0722ee739a9e2ed429018d3a311cceeeb4ec2d9b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: e2b79a1f914bdbc971299493ca00680e2504fbd3
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827303"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476029"
 ---
 # <a name="whats-new-for-the-remote-desktop-client-on-android"></a>Android 上のリモート デスクトップ クライアントの新機能
 
 定期的に更新、 [Android 用のリモート デスクトップ クライアント](remote-desktop-android.md)、新しい機能を追加および問題を修正します。 以下の最新の更新プログラムを確認します。
 
+## <a name="updates-for-version-8170"></a>バージョン 8.1.70 用更新プログラム
+
+*公開日:05/06/2019*
+
+- ノッチ ディスプレイを使用したデバイスで、セッションはサイズ変更にコンテンツを正しく原因となった問題を解決します。
+- 問題を修正しました、Enter キーが Chromebook デバイスによっては動作しませんでした。
+- いくつかリモート リソース フィード URL がロードされなかった問題を修正しました。
+
+## <a name="updates-for-version-8169"></a>バージョン 8.1.69 用更新プログラム
+
+*公開日:04/22/2019*
+
+- 軽微なバグの修正と機能強化。
+
+## <a name="updates-for-version-8168"></a>バージョン 8.1.68 用更新プログラム
+
+*公開日:04/15/2019*
+
+- リモート リソースのフィードの URL がロードされなかった問題を修正しました。
+- アプリが電話サイズ 9.0 の Android を実行している Samsung DeX で最初の起動時に起動した問題を修正しました。
+- アプリのアイコンを更新します。
+- 追加のバグ修正。
+
+## <a name="updates-for-version-8167"></a>バージョン 8.1.67 用更新プログラム
+
+*公開日:03/28/2019*
+
+- キーの押下がリモート セッションで入力したときに反復された問題を修正しました。
+
+## <a name="updates-for-version-8166"></a>バージョン 8.1.66 用更新プログラム
+
+*公開日:03/19/2019*
+
+- 初期サポートが追加されました[Windows 仮想デスクトップ](https://aka.ms/wvd)します。
+- Chromebook デバイスおよび DeX シナリオの一部で、画面の下部に表示される黒い領域の原因となった問題を修正しました。
+- Samsung DeX、下部にあるタスク バーを非表示のイマーシブ モードのサポートを追加します。
+- Samsung DeX のリモート セッションには、物理キーボードからメタデータおよび Alt キーを送信するためのサポートが追加されました。
+- リモート セッション (Android 7.0 以降) の内容に基づいて、マウス ポインター今すぐ更新プログラム
+- 追加のバグ修正。
+
 ## <a name="updates-for-version-8161"></a>バージョン 8.1.61 用更新プログラム
+
 *公開日:07/05/2018*
 
 - Samsung DeX (Android 8.0 以降) の初期サポートが追加されました。
 
 ## <a name="updates-for-version-8160"></a>バージョン 8.1.60 用更新プログラム
+
 *公開日:04/30/2018*
 
 - CredSSP 暗号化 oracle の修復 CVE-2018-0886 で説明されているアドレスを更新します。

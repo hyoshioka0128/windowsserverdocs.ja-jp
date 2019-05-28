@@ -13,12 +13,12 @@ ms.assetid: b9552054-4eb9-48db-a6ce-f36ae55addcd
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 6d31cde5252cd7f7e8d286d6f8886f779d17735d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b76019232be5091440c3e0cf5ad85569cbe0d4dc
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875813"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034484"
 ---
 # <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>テナントの仮想ネットワークに仮想ゲートウェイを追加する 
 
@@ -100,7 +100,7 @@ Windows PowerShell スクリプトの例とこのトピックのコマンドは�
 4. Ipsec、GRE、サイト対サイト VPN 接続を作成またはレイヤー 3 の (L3) 転送します。  
 
    >[!TIP]
-   >必要に応じて、前の手順をすべての結合でき、すべての 3 つの接続オプションを使用してテナントの仮想ゲートウェイを構成できます。  詳細については、次を参照してください。[すべて次の 3 つの接続の種類 (IPsec、GRE、L3) でゲートウェイを構成すると、BGP](#configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp)します。
+   >必要に応じて、前の手順をすべての結合でき、すべての 3 つの接続オプションを使用してテナントの仮想ゲートウェイを構成できます。  詳細については、次を参照してください。[すべて次の 3 つの接続の種類 (IPsec、GRE、L3) でゲートウェイを構成すると、BGP](#optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp)します。
   
    **IPsec VPN サイト対サイトのネットワーク接続**
   

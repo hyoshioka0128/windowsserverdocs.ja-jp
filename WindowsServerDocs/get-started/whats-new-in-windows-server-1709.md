@@ -7,25 +7,25 @@ ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d63721dde484756e67b68bcff078257c130ae36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 32ce591a8b50c6e35c3fde4fedb177b6d76fccdd
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825493"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976734"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server バージョン 1709 の新機能
 
 >適用先:Windows Server (半期チャネル)
 
-<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;ここでは、Windows Server バージョン 1709 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。 [Windows Server バージョン 1709 に関するブログの記事](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)もご覧ください。
+<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;Windows では、最新の機能については、次を参照してください。 [Windows Server で新](whats-new-in-windows-server.md)します。 ここでは、Windows Server バージョン 1709 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。 [Windows Server バージョン 1709 に関するブログの記事](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)もご覧ください。
    
 
 ## <a name="new-cadence-of-releases"></a>新しいリリースのペース
 
 今回のリリース以降、Windows Server の機能更新プログラムを入手するためのオプションは 2 つになります。
-- **長期的なサービス チャネル (LTSC)**:これは、ビジネス 5 年間の主流サポートおよび 5 年間の拡張サポートを通常どおりです。 過去 20 年間サポートされてきた方法と同じ方法で、2 ～ 3 年ごとに次の LTSC リリースにアップグレードするオプションが提供されます。
-- **半期チャネル (SAC)**:これはソフトウェア アシュアランスの特典であり、運用環境では完全にサポートします。 違いは、サポートされる期間が 18 か月間で、6 か月ごとに新しいバージョンがリリースされる点です。
+- **長期的なサービス チャネル (LTSC)** :これは、ビジネス 5 年間の主流サポートおよび 5 年間の拡張サポートを通常どおりです。 過去 20 年間サポートされてきた方法と同じ方法で、2 ～ 3 年ごとに次の LTSC リリースにアップグレードするオプションが提供されます。
+- **半期チャネル (SAC)** :これはソフトウェア アシュアランスの特典であり、運用環境では完全にサポートします。 違いは、サポートされる期間が 18 か月間で、6 か月ごとに新しいバージョンがリリースされる点です。
 
 リリース チャネルについては、以下の表で説明しています。
 
@@ -36,7 +36,7 @@ ms.locfileid: "59825493"
 | 対象  | ソフトウェア アシュアランスまたは Azure (クラウドでホストされている場合)  | すべてのチャンネル |
 | 名称に関する規則  | Windows Server バージョン YYMM  | Windows Server YYYY |
 
-詳しくは、「[Windows Server の半期チャネルの概要](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview)」をご覧ください。
+詳細については、次を参照してください。[サービス チャネルの比較](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview)します。
 
 ## <a name="application-containers-and-micro-services"></a>アプリケーションのコンテナーとマイクロサービス
 
@@ -115,7 +115,7 @@ Project Honolulu には、PC、Windows サーバー、フェールオーバー �
 **Windows Kubernetes 用の Linux と同等のネットワークの**:Windows、Linux に従ったネットワー キングの観点から。 お客様は、OS が混在する Kubernetes クラスターを、Azure、オンプレミス、サード パーティ製クラウド スタックなどのあらゆる環境で展開でき、回避策やスイッチ拡張機能を使用することなく、Linux でサポートされているものと同じネットワーク プリミティブおよびトポロジを活用できます。
 
 **コア ネットワーク スタック**:コア ネットワーク スタックのいくつかの機能が向上します。 これらの機能の詳細については、[Windows 10 の Creators Update の中心的なネットワーク スタック機能に関するページ](https://blogs.technet.microsoft.com/networking/2017/07/13/core-network-stack-features-in-the-creators-update-for-windows-10/)をご覧ください。
-- **TCP 高速 Open (TFO)**:TCP 3 ウェイ ハンドシェイク プロセスを最適化するために、テスト フェールオーバーのサポートが追加されました。 TFO は、標準的な 3 方向のハンドシェイクを使用して最初の接続でセキュリティで保護された TFO Cookie を確立します。  同じサーバーへの以降の接続では、ラウンド トリップ時間ゼロで接続するために、3 方向のハンドシェイクではなく、TFO Cookie を使用します。
+- **TCP 高速 Open (TFO)** :TCP 3 ウェイ ハンドシェイク プロセスを最適化するために、テスト フェールオーバーのサポートが追加されました。 TFO は、標準的な 3 方向のハンドシェイクを使用して最初の接続でセキュリティで保護された TFO Cookie を確立します。  同じサーバーへの以降の接続では、ラウンド トリップ時間ゼロで接続するために、3 方向のハンドシェイクではなく、TFO Cookie を使用します。
 - **三次**:3 次の Windows の実験用のネイティブ実装、TCP の輻輳のコントロールのアルゴリズムは、使用可能です。 次のコマンドはそれぞれ CUBIC を有効または無効にします。
 
     ```
@@ -140,7 +140,7 @@ Project Honolulu には、PC、Windows サーバー、フェールオーバー �
     ```
 
     - **ISATAP と 6to4**:一歩将来非推奨として Creators Update が既定で無効になっています。 これらのテクノロジがあります。
-- **配信不能のゲートウェイの検出 (DGD)**:DGD アルゴリズムに自動的に遷移接続経由で別のゲートウェイに現在のゲートウェイに到達できないときにします。 このリリースでは、ネットワーク環境を定期的に再プローブするようにアルゴリズムが強化されています。
+- **配信不能のゲートウェイの検出 (DGD)** :DGD アルゴリズムに自動的に遷移接続経由で別のゲートウェイに現在のゲートウェイに到達できないときにします。 このリリースでは、ネットワーク環境を定期的に再プローブするようにアルゴリズムが強化されています。
 - [Test-NetConnection](https://technet.microsoft.com/itpro/powershell/windows/nettcpip/test-netconnection) は、さまざまなネットワークの診断を実行する Windows PowerShell の組み込みのコマンドレットです。  このリリースでは、接続元アドレスの選択だけでなく、ルートの選択に関する詳細情報を提供するように、コマンドレットが強化されました。
 
 **ソフトウェア定義ネットワーク**

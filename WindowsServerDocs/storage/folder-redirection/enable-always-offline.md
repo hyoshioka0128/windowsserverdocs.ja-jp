@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bc54b1e33d09e7f2b9eea01e4f09fb83f13dc1af
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8684926beb0f0c911ac384970d15ba7d25f84079
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832883"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475932"
 ---
 # <a name="enable-always-offline-mode-for-faster-access-to-files"></a>ファイルへのアクセス速度の常時オフライン モードを有効にします。
 
->適用対象:Windows 10、Windows 8、Windows 8.1、Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
+>適用対象:Windows 10、Windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2012 R2、および Windows (半期チャネル)
 
 このドキュメントでは、オフライン ファイルの常時オフライン モードを使用して、キャッシュされたファイルやリダイレクトされたフォルダーへのアクセス速度を提供する方法について説明します。 常にオフラインでもユーザーは常にオフラインで作業ため、高速ネットワーク接続を介して接続するときにも帯域幅使用量を削減する用意されています。
 

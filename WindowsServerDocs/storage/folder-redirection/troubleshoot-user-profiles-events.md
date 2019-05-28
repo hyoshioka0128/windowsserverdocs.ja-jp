@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6099dac7d77e37b761785b4f58b6106472e5ba1e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: f30bfcd531731e3a0d14350536ddf418c50f3ea0
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827953"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475948"
 ---
 # <a name="troubleshoot-user-profiles-with-events"></a>イベントとユーザー プロファイルに関するトラブルシューティングします。
 
->適用対象:Windows 10、Windows 8、Windows 8.1、Windows Server 2012、Windows Server 2012 R2、および Windows Server 2016。
+>適用対象:Windows 10、Windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、および Windows Server (半期チャネル)
 
 このトピックでは、イベントとトレース ログを使用して読み込みに関する問題のトラブルシューティングを行う方法とアンロードのユーザー プロファイルについて説明します。 次のセクションでは、ユーザー プロファイル情報を記録する 3 つのイベント ログを使用する方法について説明します。
 
@@ -58,7 +58,7 @@ ms.locfileid: "59827953"
 1. **アクション**のイベント ビューアーでは、選択ペイン**ビュー**、し、 **分析およびデバッグ ログ**します。
 2. 移動します**Applications and Services Logs**、し**Microsoft**、し**Windows**、し**User Profile Service**、し**診断**します。
 3. 選択**ログの有効化**選び**はい**。 これにより、診断のログは、ログ記録を開始できます。
-4. さらに詳しい情報が必要な場合は、次を参照してください。[手順 4。作成して、トレースをデコード](#step-4:-creating-and-decoding-a-trace)トレース ログを作成する方法の詳細について。
+4. さらに詳しい情報が必要な場合は、次を参照してください。[手順 4。作成して、トレースをデコード](#step-4-creating-and-decoding-a-trace)トレース ログを作成する方法の詳細について。
 5. 移動し、問題のトラブルシューティングが完了したら、**診断**ログで、**ログの無効化**を選択します**ビュー**し、オフ、**を表示します。分析およびデバッグ ログ**分析を非表示にし、デバッグ ログのチェック ボックスをオンします。
 
 ## <a name="step-4-creating-and-decoding-a-trace"></a>手順 4:作成して、トレースをデコード
@@ -70,7 +70,7 @@ ETL トレースを使用する場合は、最適な方法では、まず考え�
 作成し、ユーザー プロファイル サービスのトレースをデコードする方法を次に示します。
 
 1. 場所、ユーザーは問題が発生して、ローカルの Administrators グループのメンバーであるアカウントを使用してコンピューターにサインオンします。
-2. 管理者特権でコマンド プロンプトから次のコマンドを入力します。 ここ*\<パス\>* ローカル フォルダーに以前作成した例 c: パス\\ログ。
+2. 管理者特権でコマンド プロンプトから次のコマンドを入力します。 ここ *\<パス\>* ローカル フォルダーに以前作成した例 c: パス\\ログ。
         
     ```PowerShell
     logman create trace -n RUP -o <Path>\RUP.etl -ets
@@ -93,4 +93,4 @@ ETL トレースを使用する場合は、最適な方法では、まず考え�
 
 ## <a name="more-information"></a>詳細情報
 
-* [移動ユーザー プロファイルを展開します。](deploy-roaming-user-profiles.md)
+* [移動ユーザー プロファイルを展開する](deploy-roaming-user-profiles.md)

@@ -13,12 +13,12 @@ ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: befd784f4a2179c121992057e298d4ea9068c11b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0aa81ef3633adf27a25b45b3b7c00082d83bf0bb
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862083"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034625"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>ステーション用の Windows 10 Enterprise の仮想デスクトップを作成する
 必須アプリケーションがクライアントのオペレーティング システムの独自インスタンスを必要と各ユーザーの状況の MultiPoint Services でこのオプションの構成は主にします。 例には、アプリケーションを Windows サーバーにインストールすることはできませんし、同じホスト コンピューターで複数のインスタンスが実行されないアプリケーションが含まれます。  
@@ -29,7 +29,7 @@ ms.locfileid: "59862083"
 ## <a name="prerequisites"></a>前提条件  
 仮想デスクトップ ステーションを作成することを確認して、MultiPoint Services を準備するには、システムは、次の要件を満たします。      
   
-|ハードウェア|必要条件|         |
+|ハードウェア|要件|         |
 |------------|----------------|----------------| 
 |CPU (マルチ メディア)|1 つのコアまたは仮想マシンあたりのスレッド|  
 |ソリッド ステート ドライブ (SSD)|容量 > = ステーションあたり 20 GB + 40 GB、MultiPoint Services のホスト オペレーティング システム<br /><br />ランダムな読み取り\/書き込み IOPS > ステーションごとに 3 つの K を =|  
@@ -44,13 +44,13 @@ ms.locfileid: "59862083"
 ## <a name="procedures"></a>手順  
 以下の手順を使用して次のことを行います。  
   
--   [仮想デスクトップ用のテンプレートを作成します。](#a-namebkmkcreateatemplateacreate-a-template-for-virtual-desktops)  
+-   [仮想デスクトップ用のテンプレートを作成します。](#create-a-template-for-virtual-desktops)  
   
--   [テンプレートから仮想デスクトップを作成します。](#BKMK_CreateVirtualDesktopsfromTemplate)  
+-   [テンプレートから仮想デスクトップを作成します。](#create-virtual-machine-desktops-from-the-template)  
   
--   [既存の仮想デスクトップ テンプレートをコピーします。](#BKMK_CopyExiistingVirtualDesktopTemplate)  
+-   [既存の仮想デスクトップ テンプレートをコピーします。](#copy-an-existing-virtual-desktop-template)  
   
-### <a name="BKMK_CreateaTemplate"></a>仮想デスクトップ用のテンプレートを作成します。  
+### <a name="create-a-template-for-virtual-desktops"></a>仮想デスクトップ用のテンプレートを作成します。  
 テンプレートを作成するには、仮想デスクトップを前に、MultiPoint Server の仮想デスクトップ機能を有効にする必要があります。  
   
 ##### <a name="to-enable-the-virtual-desktop-feature"></a>仮想デスクトップ機能を有効にするには  
@@ -59,7 +59,7 @@ ms.locfileid: "59862083"
   
 2.  **開始**画面で MultiPoint マネージャーを開きます。  
   
-3.  をクリックして、**仮想デスクトップ**] タブで [**仮想デスクトップを有効にする**、順にクリックします **[ok]**、し、システムを再起動するまで待ちます。  
+3.  をクリックして、**仮想デスクトップ**] タブで [**仮想デスクトップを有効にする**、順にクリックします **[ok]** 、し、システムを再起動するまで待ちます。  
   
 次の手順では、仮想デスクトップ テンプレートを作成します。 文字どおり MultiPoint マネージャーの仮想デスクトップのステーションを作成するテンプレートとして使用できる仮想ハード_ディスク (VHD) ファイルを作成します。 Windows の物理的なインストール メディアを使用することができますか、または。ISO イメージ ファイルをソースとしてのテンプレート。 使用することもできます、します。Windows のインストールの VHD。 物理的なインストール ディスクを使用する必要があります挿入ディスク ウィザードを開始する前に注意してください。  
   
@@ -98,7 +98,7 @@ ms.locfileid: "59862083"
 4.  カスタマイズするには、をクリックするテンプレートを選択します。**カスタマイズ テンプレート**、順にクリックします**OK**します。  
   
     > [!NOTE]  
-    > 仮想デスクトップ ステーションの作成に使用されていない、テンプレートにのみ利用できます。 既に使用されているテンプレートを更新する場合を使用して、テンプレートのコピーを作成する必要があります、**テンプレートのインポート**、後で説明されているタスクで[既存の仮想デスクトップ テンプレートをコピーして](#BKMK_CopyExiistingVirtualDesktopTemplate)します。  
+    > 仮想デスクトップ ステーションの作成に使用されていない、テンプレートにのみ利用できます。 既に使用されているテンプレートを更新する場合を使用して、テンプレートのコピーを作成する必要があります、**テンプレートのインポート**、後で説明されているタスクで[既存の仮想デスクトップ テンプレートをコピーして](#copy-an-existing-virtual-desktop-template)します。  
   
     テンプレートは、HYPER-V でが開きます**VM 接続**ウィンドウ、および自動ログオンの組み込みの管理者アカウントを使用しては実行します。  
   
@@ -111,7 +111,7 @@ ms.locfileid: "59862083"
   
 6.  システム構成が完了したらをダブルクリック、 **CompleteCustomization**を Sysprep を実行し、テンプレートをシャット ダウンし、管理者のデスクトップ上のショートカットです。 Sysprep ツールでは、カスタマイズするときにイメージを作成するには、Windows インストールを準備するすべてのシステム固有の情報を削除します。  
   
-### <a name="BKMK_CreateVirtualDesktopsfromTemplate"></a>テンプレートから仮想マシンのデスクトップを作成します。  
+### <a name="create-virtual-machine-desktops-from-the-template"></a>テンプレートから仮想マシンのデスクトップを作成します。  
 仮想デスクトップ テンプレートを構成するには、仮想デスクトップの作成を開始する準備が完了したら、デスクトップを方法。 各ステーション MultiPoint Server コンピューターに接続されている仮想デスクトップが作成されます。 次回ユーザーが、ステーションにログオンする前に表示されていたセッション ベースのデスクトップではなく仮想デスクトップが表示されます。  
   
 > [!NOTE]  
@@ -141,7 +141,7 @@ ms.locfileid: "59862083"
 > [!NOTE]  
 > ユーザー アカウントをいずれかのローカル ステーションにログオンした場合は、ステーションにステーションを新しく作成された仮想デスクトップのいずれかに接続を取得するセッションからログアウトする必要があります。  
   
-### <a name="BKMK_CopyExiistingVirtualDesktopTemplate"></a>既存の仮想デスクトップ テンプレートをコピーします。  
+### <a name="copy-an-existing-virtual-desktop-template"></a>既存の仮想デスクトップ テンプレートをコピーします。  
 カスタマイズして使用する既存の仮想デスクトップ テンプレートのコピーを作成するのにには、次の手順を使用します。 これは、次の状況で役立ちます。  
   
 -   マスターからは、仮想デスクトップ ステーションをすることによって、MultiPoint Server のホスト コンピューターにネットワーク共有からマスター テンプレートをコピーするには、テンプレートを作成します。  

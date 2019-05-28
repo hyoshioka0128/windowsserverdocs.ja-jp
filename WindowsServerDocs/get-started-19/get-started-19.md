@@ -10,190 +10,23 @@ ms.topic: landing-page
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: 5604edf201213f8758b697dc683717f312941e0f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a36a9a4dfbb26c24047a937c6cb0434ba724d649
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878333"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192602"
 ---
 # <a name="get-started-with-windows-server-2019"></a>Windows Server 2019 を概要します。
 
 >適用先:Windows Server 2019
 
+|       |       |
+|   -   |   -   |
+| ![新機能](../media/i-whats-new.svg) | [**新機能**<br>新機能については、Windows Server 2019 の新機能](whats-new-19.md)|
 
-<hr />
-<ul class="cardsF panelContent">
-<li>
- <a href="whats-new-19.md">
-                            <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="../media/i-whats-new.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                            <h3>最新情報</h3>
-                                            <p>新機能については、Windows Server 2019 の新機能</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </li>
-</ul>
-<hr />
-<ul class="cardsF panelContent">
-<li>
-      <a href="servicing-channels-19.md">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-get-started.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>サービス チャネル</h3>
-                        <p>適切な配置とスケジュールについて、Long Term Servicing チャネル (LTSB) と半期チャネル (SAC) 間の差のリリースで修正プログラムの適用の計画を作成します。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>
-    </li><hr /><li>
-        <a href="install-upgrade-migrate-19.md">
-          <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                             <img src="../media/i-get-started.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>インストール | アップグレード | 移行</h3>
-                        <p>Windows Server 2019 には、さまざまな方法を移動できます。 インストールする、インプレースでのアップグレード、またはアプリケーションとサーバーの役割の移行を新しくは、かどうかは、ここでの最適なアプローチを検出します。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-       </a>
-    </li><hr />
-<li>
-        <a href="rel-notes-19.md">
-          <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                             <img src="../media/i-get-started.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>リリース ノート</h3>
-                        <p>回避や対処を行わないと深刻な問題につながる可能性のある問題について。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-       </a>
-     </li><hr />
-<li>
-      <a href="sys-reqs-19.md">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                             <img src="../media/i-get-started.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>システム要件</h3>
-                        <p>インストールして Windows Server 2019 を実行するハードウェアの最小要件です。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-       </a>
-    </li><hr />
-<li>
-      <a href="activation-19.md">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                             <img src="../media/i-get-started.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>ライセンス認証</h3>
-                        <p>自体は、Windows Server 2019 のアクティブ化の基本的な情報と Windows Server 2019 を使用して、他のオペレーティング システム。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>
-    </li><hr />
-<li>
-      <a href="app-compat-19.md">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                             <img src="../media/i-get-started.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Windows Server 2019 および Microsoft サーバー アプリケーションの互換性</h3>
-                        <p>SQL Server 2019 の Windows で作業を取得または交換を実行する手順を検索する必要がありますか。 このトピックでは、互換性のある Microsoft アプリケーションのドキュメントをリンクしています。</p>                    </div>
-                </div>
-            </div>
-        </div>
-      </a>
-    </li><hr />
-<li>
-      <a href="install-fod-19.md">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                             <img src="../media/i-get-started.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>オンデマンド機能</h3>
-                        <p>オンデマンド (FODs) 機能は、いつでも追加できる Windows Server の機能パッケージです。 </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>
-    </li><hr />
-<li>
-      <a href="editions-comparison-19.md">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                             <img src="../media/i-get-started.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Standard | Datacenter エディションの比較</h3>
-                        <p>Windows Server Standard edition と Datacenter Edition は、さまざまな機能を持ちます。 必要があるかを確認します。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </a>
-    </li>
-</ul>
+|       |        |        |     |       |        |
+|   -   |   -    |   -    |  -  |  -    |   -    |
+| ![サービス チャネル](../media/i-get-started.svg)  | [**サービス チャネル**<br>適切な展開計画を作成し、スケジュール、Long Term Servicing チャネル (LTSB) と半期チャネル (SAC) の違いを理解することで修正プログラムの適用を解放します。](servicing-channels-19.md)  | ![インストールのアップグレードを移行します。](../media/i-get-started.svg) | [**インストール、アップグレード、移行** <br>Windows Server 2019 さまざまな方法に移動できます。インストールする、インプレースでのアップグレード、またはアプリケーションとサーバーの役割の移行を新しくは、かどうかは、ここでの最適なアプローチを検出します。](install-upgrade-migrate-19.md)  | ![リリース ノート](../media/i-get-started.svg) |[**リリース ノート**<br>回避またはそれらを回避するにはない場合は、重大な問題を引き起こす可能性のある問題です。](rel-notes-19.md)   |
+| ![システム要件](../media/i-get-started.svg) | [**システム要件**<br>ハードウェアの最小要件をインストールして Windows Server 2019 を実行します。](sys-reqs-19.md) |  ![ライセンス認証](../media/i-get-started.svg)|[**アクティブ化**<br>自体には、Windows Server 2019 のアクティブ化の基本的な情報と Windows Server 2019 を使用して、他のオペレーティング システム。](activation-19.md)  |  ![アプリケーションの互換性](../media/i-get-started.svg)|[**Windows Server 2019 および Microsoft サーバー アプリケーションの互換性**<br>SQL Server 2019 の Windows で作業を取得または交換を実行する手順を検索する必要がありますか。このトピックでは、互換性のある Microsoft アプリケーションのドキュメントをリンクしています。](app-compat-19.md) |
+| ![オンデマンド機能 <](../media/i-get-started.svg) | [**オンデマンド機能**<br>(FODs) のオンデマンド機能は Windows Server の機能パッケージをいつでも追加できます。](install-fod-19.md) |  ![Standard または Datacenter の各エディションの比較](../media/i-get-started.svg) | [**Standard または Datacenter の各エディションの比較**<br>Windows Server Standard および Datacenter の各エディションがあるさまざまな機能。必要があるかを確認します。](editions-comparison-19.md) |

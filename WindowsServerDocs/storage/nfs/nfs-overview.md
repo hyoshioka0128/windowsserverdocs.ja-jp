@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fb31cff44cac6bd66f9aa5b7234ff3fd3b215ccf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9b0d339df588c784f8fe46f7dd0e6ce2975d0c48
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876303"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034653"
 ---
 # <a name="network-file-system-overview"></a>ネットワーク ファイル システムの概要
 
@@ -51,7 +51,7 @@ NFS を使用するいくつかの方法を次に示します。
 
 |機能|新規/更新|説明|
 |---|---|---|
-|[NFS バージョン 4.1](#nfs-version-4.1)|新規|セキュリティの強化、パフォーマンス、および相互運用性の NFS version 3 と比較します。|
+|[NFS バージョン 4.1](#nfs-version-41)|新規|セキュリティの強化、パフォーマンス、および相互運用性の NFS version 3 と比較します。|
 |[NFS インフラストラクチャ](#nfs-infrastructure)|更新|展開と管理容易性を向上し、セキュリティが向上します。|
 |[NFS version 3 の継続的な可用性](#nfs-version-3-continuous-availability)|更新|NFS version 3 のクライアントでの継続的な可用性が向上します。|
 |[展開と管理の容易性の向上](#deployment-and-manageability-improvements)|更新|使用すると、簡単にデプロイし、新しい Windows PowerShell コマンドレットと新しい WMI プロバイダーで NFS を管理できます。|
@@ -116,6 +116,6 @@ Windows Server 2012 での NFS は、NFS の具体的にはいくつかの新し
 
 |コンテンツの種類|参考資料|
 |---|---|
-|展開|[ネットワーク ファイル システムを展開します。](deploy-nfs.md)|
+|展開|[ネットワーク ファイル システムの展開](deploy-nfs.md)|
 |操作|[Windows PowerShell で NFS コマンドレット](https://docs.microsoft.com/powershell/module/nfs/?view=win10-ps)|
 |関連テクノロジ|[Windows Server でのストレージ](../storage.md)|

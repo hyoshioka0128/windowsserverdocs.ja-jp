@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 29b7b61f7edc20edda7bc18b82db17447badc0f2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c20e2da3e629743ab4d4d4cf1da16a6e69093ecf
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834253"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192584"
 ---
 # <a name="extend-a-basic-volume"></a>ベーシック ボリュームを拡張する
 
@@ -25,30 +25,26 @@ ms.locfileid: "59834253"
 
 ## <a name="extending-a-basic-volume"></a>ベーシック ボリュームを拡張する
 
--   [Windows インターフェイスを使用します。](#BKMK_WINUI)
--   [コマンドラインを使用](#BKMK_CMD)
+-   [Windows インターフェイスを使用します。](#to-extend-a-basic-volume-using-the-windows-interface)
+-   [コマンドラインを使用](#to-extend-a-basic-volume-using-a-command-line)
 
-<a href="" id="BKMK_WINUI"></a>
 #### <a name="to-extend-a-basic-volume-using-the-windows-interface"></a>Windows インターフェイスを使用してベーシック ボリュームを拡張するには
 
-1.  ディスク マネージャーで、拡張するベーシック ボリュームを右クリックします。
+1. ディスク マネージャーで、拡張するベーシック ボリュームを右クリックします。
 
-2.  **[ボリュームの拡張]** をクリックします。
+2. **[ボリュームの拡張]** をクリックします。
 
-3.  画面に表示される手順に従って操作します。
+3. 画面に表示される手順に従って操作します。
 
-<a href="" id="BKMK_CMD"></a>
 #### <a name="to-extend-a-basic-volume-using-a-command-line"></a>コマンド ラインを使用してベーシック ボリュームを拡張するには
 
-1.  コマンド プロンプトを開き、「`diskpart`」と入力します。
+1. コマンド プロンプトを開き、「`diskpart`」と入力します。
 
-2.  **DISKPART** プロンプトで、「`list volume`」と入力します。 拡張するベーシック ボリュームを書き留めておきます。
+2. **DISKPART** プロンプトで、「`list volume`」と入力します。 拡張するベーシック ボリュームを書き留めておきます。
 
-3.  **DISKPART** プロンプトで、「`select volume <volumenumber>`」と入力します。 これにより、同じディスク上の連続する空の領域に拡張するベーシック ボリューム *volumenumber* が選択されます。
+3. **DISKPART** プロンプトで、「`select volume <volumenumber>`」と入力します。 これにより、同じディスク上の連続する空の領域に拡張するベーシック ボリューム *volumenumber* が選択されます。
 
-4.  **DISKPART** プロンプトで、「`extend [size=<size>]`」と入力します。 これにより、選択したボリュームが *size* で指定したメガバイト (MB) 単位のサイズだけ拡張されます。
-
-<br />
+4. **DISKPART** プロンプトで、「`extend [size=<size>]`」と入力します。 これにより、選択したボリュームが *size* で指定したメガバイト (MB) 単位のサイズだけ拡張されます。
 
 | Value | 説明 |
 | --- | --- |
@@ -64,5 +60,3 @@ ms.locfileid: "59834253"
 ## <a name="see-also"></a>関連項目
 
 -   [コマンドライン構文の表記規則](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
-
-

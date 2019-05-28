@@ -1,23 +1,26 @@
 ---
-title: 同じ Azure リージョン内でクラスター間の記憶域レプリカを構成する
-description: Azure で同じリージョン内でクラスターにクラスター ストレージのレプリケーション
+title: Azure で同じリージョン内で記憶域レプリカをクラスターにクラスター
+description: クラスターを Azure で同じリージョン内のクラスター ストレージのレプリケーション
 keywords: 記憶域レプリカ、サーバー マネージャー、Windows Server、Azure、クラスター、同じリージョン
 author: arduppal
 ms.author: arduppal
-ms.date: 12/19/2017
+ms.date: 04/26/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 8dbfab96404f5c98b9861476c0bc654af1bda775
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4371192d44878d3c953374b8d307b4d5612869f5
+ms.sourcegitcommit: 7e54a1bcd31cd2c6b18fd1f21b03f5cfb6165bf3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829143"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65461976"
 ---
-# <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>同じ Azure リージョン内でクラスター間の記憶域レプリカを構成する
-Azure では、同じリージョン内でクラスターをクラスターに記憶域レプリカを構成できます。 次の例では、2 つのノードを使用しますが、クラスターをクラスターに記憶域レプリカは 2 つのノードに制限はありません。 次の図は、相互に通信できる 2 つのノードの記憶域スペース ダイレクト クラスターが同じドメインおよび同じリージョン内で。
+# <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Azure で同じリージョン内で記憶域レプリカをクラスターにクラスター
+
+> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+
+Azure では、同じリージョン内でクラスターをクラスターに記憶域レプリケーションを構成できます。 次の例では、2 つのノードを使用しますが、クラスターをクラスターに記憶域レプリカは 2 つのノードに制限はありません。 次の図は、相互に通信できる 2 つのノードの記憶域スペース ダイレクト クラスターが同じドメインおよび同じリージョン内で。
 
 プロセスの詳しいチュートリアルについては、以下のビデオをご覧ください。
 
@@ -57,10 +60,10 @@ Azure では、同じリージョン内でクラスターをクラスターに�
     
 9. クラスターの作成 (**SRAZC1**、 **SRAZC2**)。 この例の PowerShell コマンドを次に示します
 ```PowerShell
-    New-Cluster -Name SRAZC1 -Node az2az1,az2az2 – StaticAddress 10.3.0.100
+    New-Cluster -Name SRAZC1 -Node az2az1,az2az2 –StaticAddress 10.3.0.100
 ```
 ```PowerShell
-    New-Cluster -Name SRAZC2 -Node az2az3,az2az4 – StaticAddress 10.3.0.101
+    New-Cluster -Name SRAZC2 -Node az2az3,az2az4 –StaticAddress 10.3.0.101
 ```
 10. 記憶域スペース ダイレクトを有効にします。
 ```PowerShell

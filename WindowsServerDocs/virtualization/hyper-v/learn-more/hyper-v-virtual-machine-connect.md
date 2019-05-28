@@ -13,12 +13,12 @@ ms.assetid: deae35b9-7647-42b8-b6bf-45645a44c9c4
 author: KBDAzure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: e1f3260fdbbd82a97c3b0949936afc6a04ec5e5a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a3c0fd18ded0621c550546a2f0108b573cc67767
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887843"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222510"
 ---
 # <a name="hyper-v-virtual-machine-connection"></a>HYPER-V 仮想マシン接続
 
@@ -48,9 +48,9 @@ ms.locfileid: "59887843"
 |DVD イメージへの接続\(.iso ファイル\)またはバーチャル フロッピー ディスク\(.vfd ファイル\)|選択**メディア**します。<br /><br />第 2 世代仮想マシンでは、バーチャル フロッピー ディスクはサポートされていません。 詳細については、次を参照してください。 [、Hyper-v でジェネレーション 1 または 2 仮想マシンを作成する必要がありますか?](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)します。|  
 |ハイパースレッディングでホストのローカル リソースを使用して\-USB フラッシュ ドライブと同様に、V 仮想マシン|HYPER-V ホスト上の拡張セッション モードを有効に、仮想マシンに接続する VMConnect を使用して、接続する前に使用するローカル リソースを選択します。 特定の手順では、次を参照してください。[ハイパースレッディングを使用するローカル リソース\-VMConnect を使って仮想マシン](Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)します。|  
 |変更は、仮想マシンの VMConnect の設定を保存|Windows PowerShell またはコマンド プロンプトで次のコマンドを実行します。<br /><br />`VMConnect.exe <ServerName> <VMName> \/edit`|  
-|VMConnect のユーザーが別のユーザーの VMConnect セッション経由で取得するを防ぐ|[HYPER-V ホスト上の拡張セッション モードを有効に](Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md#BKMK_OVER)します。<br /><br />拡張セッション モードをオンになってもいませんと、セキュリティとプライバシーのリスクが生じる場合があります。 ユーザーが接続されており、ログオンしている場合は、VMConnect と別の権限を持つユーザーを使用して仮想マシンが同じ仮想マシンに接続して 2 番目のユーザー引き継いだセッションは最初のユーザーは、セッションが失われます。 2 番目のユーザーは最初のユーザーのデスクトップ、ドキュメント、およびアプリケーションを表示することになります。|
+|VMConnect のユーザーが別のユーザーの VMConnect セッション経由で取得するを防ぐ|[HYPER-V ホスト上の拡張セッション モードを有効に](Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md#turn-on-enhanced-session-mode-on-a-hyper-v-host)します。<br /><br />拡張セッション モードをオンになってもいませんと、セキュリティとプライバシーのリスクが生じる場合があります。 ユーザーが接続されており、ログオンしている場合は、VMConnect と別の権限を持つユーザーを使用して仮想マシンが同じ仮想マシンに接続して 2 番目のユーザー引き継いだセッションは最初のユーザーは、セッションが失われます。 2 番目のユーザーは最初のユーザーのデスクトップ、ドキュメント、およびアプリケーションを表示することになります。|
 |Integration services またはコンポーネントが HYPER-V ホストと通信する VM を管理します。| Windows 10 または Windows Server 2016 を実行する HYPER-V ホストでは、VMConnect を使って統合サービスを管理できません。 これらのトピックを参照してください。 <br />- [オンにする]、[HYPER-V ホストから統合サービスをオフにします。](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/managing_ics) <br />- [オンにする]、[Windows 仮想マシンから統合サービスをオフにします。](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/managing_ics#manage-integration-services-from-guest-os-windows)<br />- [オン/Linux 仮想マシンから統合サービスをオフにします。](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/managing_ics#manage-integration-services-from-guest-os-linux) <br />- [仮想マシンの更新の統合サービスを維持します。](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/managing_ics#integration-service-maintenance)  <br />Windows Server 2012 または Windows Server 2012 R2 を実行するホストの場合は、次を参照してください。 [Integration Services](https://technet.microsoft.com/library/dn798297(v=ws.11).aspx)します。|
-|VMConnect ウィンドウのサイズ変更します。|第 2 世代仮想マシン、Windows オペレーティング システムを実行するの VMConnect ウィンドウのサイズを変更することができます。 これを行うには、HYPER-V ホストで拡張セッション モードを有効にする必要があります。 詳細については、次を参照してください。 [、Hyper-v ホスト上の拡張セッション モードを有効に](Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md#BKMK_OVER)します。 Ubuntu を実行する仮想マシンでは、次を参照してください。 [Hyper-v VM の Ubuntu 画面の解像度を変更する](https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/09/19/changing-ubuntu-screen-resolution-in-a-hyper-v-vm/)です。|
+|VMConnect ウィンドウのサイズ変更します。|第 2 世代仮想マシン、Windows オペレーティング システムを実行するの VMConnect ウィンドウのサイズを変更することができます。 これを行うには、HYPER-V ホストで拡張セッション モードを有効にする必要があります。 詳細については、次を参照してください。 [、Hyper-v ホスト上の拡張セッション モードを有効に](Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md#turn-on-enhanced-session-mode-on-a-hyper-v-host)します。 Ubuntu を実行する仮想マシンでは、次を参照してください。 [Hyper-v VM の Ubuntu 画面の解像度を変更する](https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/09/19/changing-ubuntu-screen-resolution-in-a-hyper-v-vm/)です。|
 
 
 ## <a name="keyboard-shortcuts"></a>キーボード ショートカット  

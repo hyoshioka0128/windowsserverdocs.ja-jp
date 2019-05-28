@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61131d2bf253c66d93408bc66b78d1dca2502087
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d358c47bd278cf11c4bab6887302bf6d053529ec
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840593"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192657"
 ---
 # <a name="gpupdate"></a>gpupdate
 
 
 
-グループ ポリシー設定を更新します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+グループ ポリシー設定を更新します。 このコマンドの使用方法の例については、次を参照してください。 [例](#examples)します。
 
 ## <a name="syntax"></a>構文
 
@@ -48,7 +48,7 @@ gpupdate [/target:{Computer | User}] [/force] [/wait:<VALUE>] [/logoff] [/boot] 
 
 -   **Gpupdate**コマンドは Windows Server 2008 R2、Windows Server 2008、Windows 7 Ultimate、Windows 7 Professional、Windows Vista Ultimate、Windows Vista Enterprise、および Windows Vista Business で使用できます。
 
-## <a name="BKMK_Examples"></a>例
+## <a name="examples"></a>例
 
 変更されたかどうかに関係なく、すべてのグループ ポリシー設定のバック グラウンドの更新を強制します。
 ```
@@ -58,4 +58,4 @@ gpupdate /force
 #### <a name="additional-references"></a>その他の参照情報
 
 -   [グループ ポリシーの TechCenter](https://go.microsoft.com/fwlink/?LinkID=145531)
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

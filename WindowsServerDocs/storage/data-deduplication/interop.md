@@ -8,18 +8,21 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
-ms.openlocfilehash: 2a28be1bdd22915182cbdbb2726ab9d37422e889
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9453811b0f76b249c245990293ba82cf5a6e0867
+ms.sourcegitcommit: 29ad32b9dea298a7fe81dcc33d2a42d383018e82
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834433"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65624632"
 ---
 # <a name="data-deduplication-interoperability"></a>データ重複除去の相互運用性
 
-> 適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2019
 
 ## <a id="supported"></a>サポートされています
+
+### <a id="supported-ReFS"></a>ReFS
+データ重複除去は Windows Server 2019 の時点でサポートされています。 
 
 ### <a id="supported-clusters"></a>フェールオーバー クラスタ リング
 
@@ -76,8 +79,6 @@ Windows Server バックアップでは、最適化されたボリュームを�
     ```
 
 ## <a id="unsupported"></a>サポートされていません。
-### <a id="unsupported-refs"></a>ReFS
-Windows Server 2016 では、ReFS でフォーマットされたボリュームのデータ重複除去はサポートされていません。 [この項目のサポートをご希望の場合は、Windows Server Storage UserVoice の Windows Server vNext で票を投じることができます](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/7962813-support-deduplication-on-refs)。
 
 ### <a id="unsupported-windows-client"></a>Windows 10 (クライアント OS)
 Windows 10 では、データ重複除去はサポートされていません。 Windows コミュニティの人気ブログの中には、Windows Server 2016 からバイナリを削除して Windows 10 をインストールする方法を説明した記事がいくつかありますが、これはデータ重複除去の開発の一部として検証されたシナリオではありません。 [この項目のサポートをご希望の場合は、Windows Server Storage UserVoice の Windows 10 vNext で票を投じることができます](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/9011008-add-deduplication-support-to-client-os)

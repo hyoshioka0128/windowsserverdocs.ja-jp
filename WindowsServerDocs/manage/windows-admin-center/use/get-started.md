@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 02/15/2019
-ms.openlocfilehash: f4fd9f69e75ed80bbdb345b4041c2337c65ec2e6
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
-ms.translationtype: HT
+ms.openlocfilehash: ff1f949c764473a63eafa25346949d710699dbd1
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63742558"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222720"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Windows Admin Center を概要します。
 
@@ -114,7 +114,7 @@ Windows Admin Center は、Windows Server でサービス モードで実行さ�
 
 **ローカル管理者のパスワード ソリューション (LAPS)**
 
-環境内で使用する場合[LAPS](https://technet.microsoft.com/mt227395.aspx)、LAPS 資格情報を使用すると、管理対象ノードで認証できます。 **このシナリオを使用する場合は、次のようにしてください。** [フィードバック](http://aka.ms/WACFeedback)します。
+環境内で使用する場合[LAPS](https://technet.microsoft.com/mt227395.aspx)、Windows Admin Center の Windows 10 PC にインストールされている必要があるとは、管理ノードでの認証に LAPS 資格情報を使用することができます。 **このシナリオを使用する場合は、次のようにしてください。** [フィードバック](http://aka.ms/WACFeedback)します。
 
 ## <a name="using-tags-to-organize-your-connections"></a>タグを使用して、接続を整理するには
 

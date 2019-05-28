@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1ae755b9c41d66ce5f907f600be17547398acc1a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c42cffec0ddc1ae480ae67982147e9f186f0e50a
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839583"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222861"
 ---
 # <a name="convert-a-gpt-disk-into-an-mbr-disk"></a>GPT ディスクを MBR ディスクに変換します。
 
@@ -29,23 +29,19 @@ ms.locfileid: "59839583"
 > [!NOTE]
 > 以下の手順を実行するには、少なくとも **Backup Operators** または **Administrators** グループのメンバーである必要があります。
 
-<a id="BKMK_WINUI"></a>
-
 ## <a name="converting-using-the-windows-interface"></a>Windows インターフェイスを使用して変換します。
 
 1.  MBR ディスクに変換するベーシック GPT ディスク上のすべてのボリュームをバックアップまたは移動します。
 
-2.  ディスクにパーティションまたはボリュームが含まれている場合、それぞれを右クリックし、**[ボリュームの削除]** をクリックします。
+2.  ディスクにパーティションまたはボリュームが含まれている場合、それぞれを右クリックし、 **[ボリュームの削除]** をクリックします。
 
-3.  MBR ディスクに変換する GPT ディスクを右クリックし、**[MBR ディスクに変換]** をクリックします。
-
-<a id="BKMK_CMD"></a>
+3.  MBR ディスクに変換する GPT ディスクを右クリックし、 **[MBR ディスクに変換]** をクリックします。
 
 ## <a name="converting-using-a-command-line"></a>コマンドラインを使用して変換します。
 
 1.  MBR ディスクに変換するベーシック GPT ディスク上のすべてのボリュームをバックアップまたは移動します。
 
-2.  **[コマンド プロンプト]** を右クリックし、**[管理者として実行]** を選択して、管理者特権でコマンド プロンプトを開きます。
+2.  **[コマンド プロンプト]** を右クリックし、 **[管理者として実行]** を選択して、管理者特権でコマンド プロンプトを開きます。
 
 3. 「`diskpart`. ディスクにパーティションやボリュームが含まれていない場合は、手順 6. に進みます。
 
@@ -62,7 +58,7 @@ ms.locfileid: "59839583"
 
 <br />
 
-| 値 | 説明 |
+| Value | 説明 |
 | --- | --- |
 | <p>**ディスクの一覧**</p> | <p>ディスクとディスクに関する情報を一覧表示します。ディスクのサイズ、利用可能な空き領域の容量、ディスクがベーシック ディスクとダイナミック ディスクのどちらであるか、ディスクでマスター ブート レコード (MBR) と GUID パーティション テーブル (GPT) のどちらのパーティション スタイルが使用されているかなどの情報が表示されます。 アスタリスク (*) でマークされているディスクにフォーカスがあります。</p> |
 | <p>**ディスクを選択します。**</p> | <p><em>disknumber</em> がディスク番号である指定されたディスクを選択し、そのディスクにフォーカスを移動します。</p> | <p>**クリーンアップ**</p> | <p>フォーカスのあるディスクからすべてのパーティションまたはボリュームを削除します。</p> |

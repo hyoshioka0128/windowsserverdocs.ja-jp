@@ -11,12 +11,12 @@ ms.assetid: fdc8063c-47ce-4448-b445-d7ff9894dc17
 author: KBDAzure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: e7c43a1b9173d347a3b6d6e1f8bd9127c62bd081
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2668f9fa21c8efbad455d82c7e110ff89b729187
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880223"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222877"
 ---
 # <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>HYPER-V 仮想マシン用の仮想スイッチを作成します。
 
@@ -24,9 +24,9 @@ ms.locfileid: "59880223"
   
 仮想スイッチは、他のコンピューターと通信するために、HYPER-V ホストで作成された仮想マシンを使用します。 Windows server、Hyper-v の役割を初めてインストールすると、仮想スイッチを作成できます。 その他の仮想スイッチを作成するには、HYPER-V マネージャーまたは Windows PowerShell を使用します。 仮想スイッチの詳細については、次を参照してください。 [、Hyper-v 仮想スイッチ](../../hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md)します。  
   
-仮想マシンのネットワークには、複雑な件名を指定できます。 ように使用するいくつかの新しい仮想スイッチ機能があると[スイッチ埋め込みチーミング (SET)](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md#bkmk_sswitchembedded)します。 基本的なネットワー キングはかなり簡単に実行できます。 このトピックでは、hyper-v ネットワークの仮想マシンを作成できるようにするのに十分なだけについて説明します。 ネットワーク インフラストラクチャを設定する方法の詳細については、確認、[ネットワーク](../../../networking/Networking.md)ドキュメント。   
+仮想マシンのネットワークには、複雑な件名を指定できます。 ように使用するいくつかの新しい仮想スイッチ機能があると[スイッチ埋め込みチーミング (SET)](../../hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md#switch-embedded-teaming-set)します。 基本的なネットワー キングはかなり簡単に実行できます。 このトピックでは、hyper-v ネットワークの仮想マシンを作成できるようにするのに十分なだけについて説明します。 ネットワーク インフラストラクチャを設定する方法の詳細については、確認、[ネットワーク](../../../networking/Networking.md)ドキュメント。   
   
-## <a name="BKMK_HyperVMan"></a>HYPER-V マネージャーを使用して仮想スイッチを作成します。  
+## <a name="create-a-virtual-switch-by-using-hyper-v-manager"></a>HYPER-V マネージャーを使用して仮想スイッチを作成します。  
   
 1.  HYPER-V マネージャーを開き、HYPER-V ホストのコンピューター名を選択します。  
   
@@ -65,7 +65,7 @@ ms.locfileid: "59880223"
   
     ![「保留中の変更可能性がありますが中断されるネットワーク接続」メッセージを示すスクリーン ショット](../media/Hyper-V-NewVSwitch-DisruptNetwork.png)  
   
-## <a name="BKMK_WPS"></a>Windows PowerShell を使用して仮想スイッチを作成します。  
+## <a name="create-a-virtual-switch-by-using-windows-powershell"></a>Windows PowerShell を使用して仮想スイッチを作成します。  
   
 1.  Windows デスクトップ上で、[スタート] ボタンをクリックし、**Windows PowerShell** という名前の一部を入力します。  
   
@@ -99,7 +99,7 @@ Windows Server 2016 で強化されたか、新しい仮想スイッチ機能に
 
   
 ## <a name="next-step"></a>次の手順  
-[HYPER-V で仮想マシンを作成します。](Create-a-virtual-machine-in-Hyper-V.md)  
+[Hyper-V で仮想マシンを作成する](Create-a-virtual-machine-in-Hyper-V.md)  
   
 
 

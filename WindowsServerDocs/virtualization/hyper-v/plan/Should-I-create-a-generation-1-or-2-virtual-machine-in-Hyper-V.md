@@ -11,19 +11,19 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: 48319e057da9c815a77349bba34996f89973d85a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3c88ef5ee700bb3906746402bf6cc8916976800
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850503"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192772"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>HYPER-V でジェネレーション 1 または 2 の仮想マシンを作成するか。
 
 >適用先:Windows 10、Windows Server 2016、Microsoft HYPER-V Server 2016、Windows Server 2019、Microsoft HYPER-V Server 2019
 
-> [!WARNING]
-> これまで、オンプレミスから Microsoft Azure への Windows 仮想のマシン (VM) をアップロードする予定の場合**第 1 世代の Vm のみ**VHD ファイルの形式であり、固定サイズのディスクがあるがサポートされています。 Windows VHD または VHDX をアップロードする方法の詳細については、次を参照してください。 [Azure にアップロードするには、Windows VHD または VHDX を準備する](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/prepare-for-upload-vhd-image)します。
+> [!NOTE]
+> Microsoft Azure、第 1 世代と第 2 世代 Vm VHD ファイルの形式で、オンプレミスからこれまで Windows 仮想マシン (VM) をアップロードする予定がある場合、固定サイズのディスクがサポートされています。 参照してください[Azure を第 2 世代 Vm](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2)を Azure でサポートされている第 2 世代の機能の詳細を参照してください。 Windows VHD または VHDX をアップロードする方法の詳細については、次を参照してください。 [Azure にアップロードするには、Windows VHD または VHDX を準備する](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)します。
 
 第 1 世代または第 2 世代バーチャル マシンを作成するために選択を選んでいるゲスト オペレーティング システムのインストールと仮想マシンを展開に使用するブート方法です。 次のステートメントのいずれかが true でない限り、セキュア ブートのような機能を活用する第 2 世代バーチャル マシンを作成することをお勧めします。  
 

@@ -8,16 +8,16 @@ author: bhattacharyaz
 manager: eldenc
 ms.author: subhatt
 ms.date: 09/19/2016
-ms.openlocfilehash: 8b8ecee16c778ed26953be325fb88748fc458176
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 125dd7421cc1876c07983016498a9689d8a507ac
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867753"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475988"
 ---
 # <a name="virtual-machine-load-balancing-overview"></a>仮想マシンの負荷分散の概要
 
-> 適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+> 適用対象:Windows Server 2019、Windows Server 2016
 
 プライベート クラウド展開向けの重要な考慮事項は、設備投資 (<abbr title="設備投資">資本支出</abbr>) を運用環境に移動するために必要です。 運用環境でのトラフィックのピーク時に容量の不足を回避するためにプライベート クラウド環境に冗長性を追加する非常に一般的ですが、これにより<abbr title="設備投資">資本支出</abbr>します。 冗長性の必要性は、いくつかのノードが複数の仮想マシンをホストが不均衡のプライベート クラウドによって決まります (<abbr title="仮想マシン">Vm</abbr>) (再起動されたばかりのサーバー) など他のユーザーは過小使用とします。
 
@@ -25,7 +25,7 @@ ms.locfileid: "59867753"
 > [!VIDEO https://channel9.msdn.com/Blogs/windowsserver/Virtual-Machine-Load-Balancing-in-Windows-Server-2016/player]
 
 ## <a id="what-is-vm-load-balancing"></a>仮想マシンの負荷分散とは
-<abbr title="仮想マシン">VM</abbr>負荷分散は、Windows Server 2016 フェールオーバー クラスター内のノードの使用率を最適化するための新しい組み込みの機能です。 "過剰コミット"ノードを識別し、再配布<abbr title="仮想マシン">Vm</abbr> コミット済みのノードにこれらのノードから。 この機能の主要な特徴のいくつか次に示します。
+<abbr title="仮想マシン">VM</abbr>負荷分散は、組み込みの機能では、Windows Server 2019 および Windows Server 2016 のフェールオーバー クラスター内のノードの使用率を最適化することができます。 "過剰コミット"ノードを識別し、再配布<abbr title="仮想マシン">Vm</abbr> コミット済みのノードにこれらのノードから。 この機能の主要な特徴のいくつか次に示します。
 
 * *ダウンタイムのソリューションは*:<abbr title="仮想マシン">Vm</abbr>アイドル状態のノードにライブ移行されます。
 * *既存のクラスター環境とのシームレスな統合*:失敗ポリシーなどのアンチ アフィニティ、障害ドメインおよび実行可能な所有者が受け入れられます。
@@ -56,5 +56,5 @@ ms.locfileid: "59867753"
 
 ## <a name="see-also"></a>関連項目
 * [仮想マシンの負荷分散の詳細](vm-load-balancing-deep-dive.md)
-* [フェールオーバー クラスタ リング](failover-clustering-overview.md)
+* [フェールオーバー クラスタリング](failover-clustering-overview.md)
 * [HYPER-V の概要](../virtualization/hyper-v/Hyper-V-on-Windows-Server.md)

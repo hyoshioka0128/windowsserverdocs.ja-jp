@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: adc93906cb7ff958fc1db7b00abdc557623e764e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b006742c9256c357d9aff3fb1b765dbed087383a
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834203"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475883"
 ---
 # <a name="disable-offline-files-on-individual-redirected-folders"></a>個々 のリダイレクトされたフォルダーのオフライン ファイルを無効にします。
 
->適用対象:Windows 10、Windows 8、Windows 8.1、Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
+>適用対象:Windows 10、Windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2012 R2、Windows (半期チャネル)
 
 このトピックでは、オフライン ファイル キャッシュ フォルダーのリダイレクトを使用してネットワーク共有にリダイレクトされた個々 のフォルダーを無効にする方法について説明します。 これにより、ローカル キャッシュから除外するフォルダーを指定できる、オフライン ファイルを同期するオフライン ファイル キャッシュの削減サイズと時間必要です。
 
@@ -29,7 +29,7 @@ ms.locfileid: "59834203"
 特定のリダイレクトされたフォルダーのオフライン ファイルのキャッシュを無効にするには、環境は、次の前提条件を満たす必要があります。
 
 - ドメインに参加しているクライアント コンピューターとの Active Directory Domain Services (AD DS) ドメイン。 フォレストまたはドメインの機能レベル要件やスキーマの要件はありません。
-- Windows 10、Windows 8.1、Windows 8、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行しているクライアント コンピューター。
+- Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 または Windows (半期チャネル) を実行しているクライアント コンピューター。
 - グループ ポリシー管理がインストールされているコンピューター。
 
 ## <a name="disabling-offline-files-on-individual-redirected-folders"></a>個々 のリダイレクトされたフォルダーのオフライン ファイルを無効にします。
@@ -68,7 +68,7 @@ Set-GPRegistryValue –Name "Offline Files Settings" –Key
 |AppData(Roaming)|{3EB685DB-65F9-4CF6-A03A-E3EF65729F3D}|
 |Desktop|{B4BFCC3A-DB2C-424C-B029-7FE99A87C641}|
 |スタート メニュー|{625B53C3-AB48-4EC1-BA1F-A1EF4146FC19}|
-|ドキュメント|{FDD39AD0-238F-46AF-ADB4-6C85480369C7}|
+|Documents|{FDD39AD0-238F-46AF-ADB4-6C85480369C7}|
 |画像|{33E28130-4E1E-4676-835A-98395C3BC3BB}|
 |音楽|{4BD8D571-6D19-48D3-BE97-422220080E43}|
 |ビデオ|{18989B1D-99B5-455B-841C-AB7C74E4DDFC}|

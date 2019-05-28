@@ -8,22 +8,22 @@ manager: dongill
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: b4fa59aa62acba5c89f20c191da2c3c1b776b1ca
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3c0792347aaa70fe80d346cc51cbc44b73c42f39
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884753"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476021"
 ---
 # <a name="whats-new-in-failover-clustering"></a>フェールオーバー クラスタリングの新機能
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+> 適用対象:Windows Server 2019、Windows Server 2016
 
-このトピックでは、フェールオーバー クラスタ リングの Windows Server 2019、Windows Server 2016 で追加または変更された機能を説明し、Windows Server 半期チャネルの解放します。
+このトピックでは、フェールオーバー クラスタ リングの Windows Server 2019 および Windows Server 2016 の新しいおよび変更された機能について説明します。
 
 ## <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 の新機能
 
-- **クラスターの設定**
+- **クラスター セット**
 
     クラスターのセットを使用すると、クラスターの現在の制限を超える単一ソフトウェア定義のデータ センター (SDDC) ソリューションのサーバーの数を増やすことができます。 これは、クラスター set - 複数のフェールオーバー クラスターの疎結合のグループに複数のクラスターにグループ化によって実現されます: コンピューティング、ストレージおよびハイパー コンバージドの両方します。
     クラスターのセットでは、オンラインの仮想マシンを移動できます (ライブ マイグレーション)、クラスター内のクラスター間で設定します。

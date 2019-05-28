@@ -8,23 +8,41 @@ ms.technology: storage-failover-clustering
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/16/2016
-ms.openlocfilehash: f5c64bb8f8b7d4b8d13c76c4e94cfcf52ee32c30
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 18b7a932cc8a22c356fde89baa316c0532ebc374
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821473"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476001"
 ---
-# <a name="fault-domain-awareness-in-windows-server-2016"></a>Windows Server 2016 での障害ドメインの認識
+# <a name="fault-domain-awareness"></a>フォールト ドメインの認識
 
-> 適用対象:Windows Server 2016
+> 適用対象:Windows Server 2019 と Windows Server 2016
 
-フェールオーバー クラスタリングでは、複数のサーバーが連携して高可用性 (言い換えれば、ノードのフォールト トレランス) を実現できます。 今日の企業が、インフラストラクチャからさらに高い可用性を要求します。 クラウドのようなアップタイムを達成するには、シャーシの障害、ラックの停止、自然災害など、発生する可能性が極めて低い事態であっても対策を講じる必要があります。 その理由はシャーシ、ラック、およびサイトのフォールト トレランスも Windows Server 2016 のフェールオーバー クラスタ リングが導入されています。
+フェールオーバー クラスタリングでは、複数のサーバーが連携して高可用性 (言い換えれば、ノードのフォールト トレランス) を実現できます。 今日の企業が、インフラストラクチャからさらに高い可用性を要求します。 クラウドのようなアップタイムを達成するには、シャーシの障害、ラックの停止、自然災害など、発生する可能性が極めて低い事態であっても対策を講じる必要があります。 その理由はシャーシ、ラック、およびサイトのフォールト トレランスも導入された Windows Server 2016 のフェールオーバー クラスタ リングします。
+
+## <a name="fault-domain-awareness"></a>フォールト ドメインの認識
 
 障害ドメインとフォールト トレランスは、密接に関連する概念です。 障害ドメインとは、単一障害点を共有するハードウェア コンポーネントのセットです。 特定のレベルのフォールト トレランスを実現するには、そのレベルに複数の障害ドメインが必要です。 たとえば、ラックのフォールト トレランスを実現するには、サーバーとデータが複数のラックに分散されている必要があります。
 
 この短いビデオでは、Windows Server 2016 での障害ドメインの概要を示します。  
 [![Windows Server 2016 での障害ドメインの概要を見るには、この画像をクリックします。](media/Fault-Domains-in-Windows-Server-2016/Part-1-Fault-Domains-Overview.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-1-Overview)
+
+### <a name="fault-domain-awareness-in-windows-server-2019"></a>Windows Server 2019 の障害ドメインの認識
+
+障害ドメインの認識は Windows Server 2019 で使用できますが、既定で無効にし、Windows レジストリを使用して有効にする必要があります。
+
+Windows Server 2019 の障害ドメインの認識を有効にするには、Windows レジストリに移動し、(Get クラスター) を設定します。レジストリ キーを AutoAssignNodeSite を 1 にします。
+
+```Registry
+    (Get-Cluster).AutoAssignNodeSite=1
+```
+
+Windows 2019 の障害ドメインの認識を無効にするには、Windows レジストリに移動し、(Get クラスター) を設定します。AutoAssignNodeSite のレジストリ キーを 0 にします。
+
+```Registry
+    (Get-Cluster).AutoAssignNodeSite=0
+```
 
 ## <a name="benefits"></a>利点
 - **記憶域スペースを含む記憶域スペース ダイレクトでは、障害ドメインを使用して、データの安全性を最大化します。**  
@@ -103,7 +121,7 @@ Remove-ClusterFaultDomain -Name "Rack A"
 ```
 
 ### <a name="defining-fault-domains-with-xml-markup"></a>XML マークアップによる障害ドメインの定義
-XML を基にした構文を使用して、障害ドメインを指定できます。 Visual Studio Code (*[こちら](https://code.visualstudio.com/)* から無料で入手できます) やメモ帳など、使い慣れたテキスト エディターを使用して、保存して再利用できる XML ドキュメントを作成することをお勧めします。  
+XML を基にした構文を使用して、障害ドメインを指定できます。 Visual Studio Code ( *[こちら](https://code.visualstudio.com/)* から無料で入手できます) やメモ帳など、使い慣れたテキスト エディターを使用して、保存して再利用できる XML ドキュメントを作成することをお勧めします。  
 
 このショート ビデオでは、障害ドメインを指定するための XML マークアップの使用法を説明します。
 
@@ -176,5 +194,6 @@ Set-ClusterFaultDomainXML -XML $xml
 [![クリックすると、障害ドメインに location 記述子を追加する値を示す短いビデオを参照してください。](media/Fault-Domains-in-Windows-Server-2016/part-4-location-description.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-4-Location-Description)
 
 ## <a name="see-also"></a>関連項目  
--   [Windows Server 2016](../get-started/windows-server-2016.md)  
--   [Windows Server 2016 での記憶域スペース ダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md) 
+- [Windows Server 2019 の概要](https://docs.microsoft.com/windows-server/get-started-19/get-started-19)  
+- [Windows Server 2016 を概要します。](https://docs.microsoft.com/windows-server/get-started/server-basics)  
+-   [記憶域スペース ダイレクトの概要](../storage/storage-spaces/storage-spaces-direct-overview.md) 

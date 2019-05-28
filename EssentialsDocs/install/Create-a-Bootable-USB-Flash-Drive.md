@@ -12,12 +12,12 @@ ms.assetid: 2fe8e35c-69f9-40b3-a270-22e2402510d8
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2716ffb7ce8f74d7c729565064de91e0598d0753
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cb62a460c09fdb2874bcc051176a05e88cee19e7
+ms.sourcegitcommit: 7cb939320fa2613b7582163a19727d7b77debe4b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884683"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65621282"
 ---
 # <a name="create-a-bootable-usb-flash-drive"></a>ブート可能な USB フラッシュ ドライブの作成
 
@@ -31,9 +31,9 @@ ms.locfileid: "59884683"
   
  ブート可能な USB フラッシュ ドライブを作成または使用する可能性のあるその他のシナリオについては、次のトピックを参照してください。  
   
--   [既存のクライアント コンピューター バックアップからの完全なシステムを復元します。](../manage/restore-a-full-system-from-an-existing-client-computer-backup.md)  
+-   [既存のクライアント コンピューターのバックアップからシステム全体を復元する](../manage/restore-a-full-system-from-an-existing-client-computer-backup.md)  
   
--   [復元または Windows Server Essentials を実行しているサーバーの修復](../manage/restore-or-repair-your-server-running-windows-server-essentials.md)  
+-   [Windows Server Essentials を実行しているサーバーの復元または修復](../manage/restore-or-repair-your-server-running-windows-server-essentials.md)  
 
   
 ### <a name="to-create-a-bootable-usb-flash-drive"></a>起動可能な USB フラッシュ ドライブを作成するには  
@@ -50,9 +50,9 @@ ms.locfileid: "59884683"
   
 6.  「 `clean`」と入力して、Enter キーを押します。 このコマンドは、USB フラッシュ ドライブからすべてのデータを削除します。  
   
-7.  USB フラッシュ ドライブに新しいプライマリ パーティションを作成するには、「 `create part pri`」と入力し、Enter キーを押します。  
+7.  USB フラッシュ ドライブに新しいプライマリ パーティションを作成するには、「 `create partition primary`」と入力し、Enter キーを押します。  
   
-8.  作成したパーティションを選択するには、「 `select part 1`」と入力し、Enter キーを押します。  
+8.  作成したパーティションを選択するには、「 `select partition 1`」と入力し、Enter キーを押します。  
   
 9. パーティションをフォーマットするには、「 `format fs=ntfs quick`」と入力し、Enter キーを押します。  
   

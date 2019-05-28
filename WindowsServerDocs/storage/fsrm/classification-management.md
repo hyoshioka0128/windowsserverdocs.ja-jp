@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 13323cd380c9df5185a7989721ec2574ea880d4f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d7ea1f6f5d99ef1b55e919af3b8ebe391486ed50
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814793"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475896"
 ---
 # <a name="classification-management"></a>分類の管理
 
-> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 分類プロパティはファイルを分類するために使用され、スケジュールされたファイル管理タスク用のファイルを選択するために使用できます。
 
@@ -25,8 +25,8 @@ ms.locfileid: "59814793"
 
 ここでは、次のトピックについて説明します。
 
--   [分類プロパティを作成します。](create-classification-property.md)
--   [自動分類規則を作成します。](create-automatic-classification-rule.md)
+-   [分類プロパティを作成する](create-classification-property.md)
+-   [自動分類規則を作成する](create-automatic-classification-rule.md)
 
 
 > [!Note]
@@ -35,4 +35,4 @@ ms.locfileid: "59814793"
 
 ## <a name="see-also"></a>関連項目
 
-[設定ファイル サーバー リソース マネージャーのオプション](setting-file-server-resource-manager-options.md)
+[ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)

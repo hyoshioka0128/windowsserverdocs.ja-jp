@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 1d9e91ec8f4c998f34e324b5d551a387eba5a310
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5717fcc9e1732b6273620e633c140c6df58ec8b7
+ms.sourcegitcommit: 29ad32b9dea298a7fe81dcc33d2a42d383018e82
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823633"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65624654"
 ---
 # <a name="create-os-specialization-answer-file"></a>OS 特殊化応答ファイルの作成
 
@@ -38,10 +38,8 @@ Install-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0
 - [基本的な Windows 応答ファイル](#basic-windows-answer-file)
 - [Windows は、ドメイン参加のファイルを回答します。](#windows-answer-file-with-domain-join)
 - [静的 IPv4 アドレスでの Windows 応答ファイル](#windows-answer-file-with-static-ipv4-addresses)
-- [カスタム ロケールでの Windows 応答ファイル](#windows-answer-file-with-custom-locale)
+- [カスタム ロケールでの Windows 応答ファイル](#windows-answer-file-with-a-custom-locale)
 - [基本的な Linux 応答ファイル](#basic-linux-answer-file)
-
-確認することも、[関数パラメーター](#function-parameters)、このトピックで後述します。
 
 ## <a name="basic-windows-answer-file"></a>基本的な Windows 応答ファイル
 
@@ -51,7 +49,7 @@ VM のネットワーク アダプターは DHCP を使用して、IP アドレ�
 ビルトイン Administrator アカウントを構成する場合は、ユーザー名の「管理者」を使用します。
 
 ```powershell
-$adminCred = Get-Credential -Prompt "Local administrator account"
+$adminCred = Get-Credential -Message "Local administrator account"
 
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials $adminCred
 ```
@@ -69,8 +67,8 @@ VM のネットワーク アダプターでは、DHCP を使用して、IP ア�
 値を変更することを確認する、"-DomainName"パラメーターを Active Directory ドメインの FQDN。
 
 ```powershell
-$adminCred = Get-Credential -Prompt "Local administrator account"
-$domainCred = Get-Credential -Prompt "Domain join credentials"
+$adminCred = Get-Credential -Message "Local administrator account"
+$domainCred = Get-Credential -Message "Domain join credentials"
 
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials $adminCred -DomainName 'my.contoso.com' -DomainJoinCredentials $domainCred
 ```
@@ -97,7 +95,7 @@ Virtual Machine Manager は、IP プールを使用して静的 IP アドレス�
 次に、使用、`-StaticIPPool`パラメーターを応答ファイルで静的 IP の要素が含まれます。 パラメーター `@IPAddr-1@`、 `@NextHop-1-1@`、および`@DNSAddr-1-1@`の回答でファイルは、置き換えられます Virtual Machine Manager でデプロイ時に指定する実際の値。
 
 ```powershell
-$adminCred = Get-Credential -Prompt "Local administrator account"
+$adminCred = Get-Credential -Message "Local administrator account"
 
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials $adminCred -StaticIPPool IPv4Address
 ```
@@ -110,8 +108,8 @@ New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials
 ビルトイン Administrator アカウントを構成する場合は、ユーザー名の「管理者」を使用します。
 
 ```powershell
-$adminCred = Get-Credential -Prompt "Local administrator account"
-$domainCred = Get-Credential -Prompt "Domain join credentials"
+$adminCred = Get-Credential -Message "Local administrator account"
+$domainCred = Get-Credential -Message "Domain join credentials"
 
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials $adminCred -Locale es-ES
 ```
@@ -132,5 +130,5 @@ New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -RootPassword $ro
 
 ## <a name="see-also"></a>関連項目
 
-- [シールドされた Vm をデプロイします。](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
-- [保護されたファブリックとシールドされた Vm](guarded-fabric-and-shielded-vms-top-node.md)
+- [シールドされた VMの展開](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

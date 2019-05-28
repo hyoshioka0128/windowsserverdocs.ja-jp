@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 98fd5d50645ad454204dcf9dabf58e97c246ab1a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7bdf30a4f721568add4e7902245da2a803b72db1
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853993"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475866"
 ---
 # <a name="enable-optimized-moves-of-redirected-folders"></a>リダイレクトされたフォルダーの移動を最適化を有効にします。
 
->適用対象:Windows 10、Windows 8、Windows 8.1、Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
+>適用対象:Windows 10、Windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server (半期チャネル)
 
 このトピックでは、リダイレクトされたフォルダー (フォルダー リダイレクト) の新しいファイル共有への最適な移行を実行する方法について説明します。 管理者は、リダイレクトされたフォルダーをホストしているファイル共有に移動し、グループ ポリシーのリダイレクトされたフォルダーのターゲット パスを更新するときに、このポリシー設定を有効にした場合、キャッシュされたコンテンツをローカルのオフライン ファイル キャッシュの遅延なしで名称またはユーザーのデータ損失の可能性。
 
@@ -28,7 +28,7 @@ ms.locfileid: "59853993"
 最適化された移動では、次の要件があります。
 
 - フォルダー リダイレクトは、セットアップである必要があります。 詳細については、次を参照してください。[オフライン ファイルとフォルダー リダイレクトを展開](deploy-folder-redirection.md)します。
-- クライアント コンピューターには、Windows 10、Windows 8.1、Windows 8、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行する必要があります。
+- クライアント コンピューターには、Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 または Windows Server (半期チャネル) を実行する必要があります。
 
 ## <a name="step-1-enable-optimized-move-in-group-policy"></a>手順 1:グループ ポリシーでの移動の最適化を有効にします。
 
@@ -75,5 +75,5 @@ ms.locfileid: "59853993"
 ## <a name="more-information"></a>詳細情報
 
 * [フォルダー リダイレクト オフライン ファイルを展開します。](deploy-folder-redirection.md)
-* [移動ユーザー プロファイルを展開します。](deploy-roaming-user-profiles.md)
+* [移動ユーザー プロファイルを展開する](deploy-roaming-user-profiles.md)
 * [フォルダー リダイレクト、オフライン ファイル、および移動ユーザー プロファイルの概要](folder-redirection-rup-overview.md)

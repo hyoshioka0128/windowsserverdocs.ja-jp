@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3f62208d6576890529be80b1c6cb3cc073a2b4e6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 579b0772e4642389b90aa370dad80a3eebea9d34
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853363"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564717"
 ---
 # <a name="ksetupremoverealm"></a>ksetup:removerealm
 
@@ -40,13 +40,13 @@ ksetup /removerealm <RealmName>
 
 ## <a name="remarks"></a>注釈
 
-領域名は、レジストリ内の 2 つの場所に格納されます。**HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001**と**\CurrentControlSet\Control\Lsa\Kerberos**します。
+領域名は、レジストリ内の 2 つの場所に格納されます。**HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001**と **\CurrentControlSet\Control\Lsa\Kerberos**します。
 
 これは、DNS 情報をリセットし、削除する場合があります、ドメイン コント ローラーを使用できないようにするために、ドメイン コント ローラーから既定の領域名を削除できません。
 
 ## <a name="BKMK_Examples"></a>例
 
-スペルミスで領域名を誤って設定"。COM でしょうか。 CORP. をローカル コンピューターCONTOSO です。CON
+誤って領域名".COM"のスペルが間違ってによって、ローカル コンピューター上に設定 corp.CONTOSO です。CON
 ```
 ksetup /setrealm CORP.CONTOSO.CON
 ```
@@ -59,5 +59,5 @@ ksetup /removerealm CORP.CONTOSO.CON
 #### <a name="additional-references"></a>その他の参照情報
 
 -   [Ksetup](ksetup.md)
--   [ksetup:setrealm](ksetup-setrealm.md)
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [Ksetup:setrealm](ksetup-setrealm.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,33 +1,32 @@
 ---
 title: Windows Server 2016 で削除された機能または推奨されなくなった機能
-description: リリースで削除済みまたは削除予定の機能です。
-ms.custom: na
+description: 機能の現在のリリースで製品から削除されたか、または潜在的な削除 (非推奨) 以降のリリースでの Windows Server 2016 での機能の一覧。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。
 ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 05/02/2017
+ms.date: 05/21/2019
 ms.assetid: 5d10c5f9-ebac-49a0-b808-c0b1702e0437
-author: jaimeo
-ms.author: jaimeo
+author: jasongerend
+ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 20178a3be14c076623f647fa139e013528de9a69
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 83855cf7e4fa86a932298dd15735dc5bf7277dfb
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858163"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976603"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Windows Server 2016 で削除された機能または推奨されなくなった機能
 
->適用先:Windows Server 2016
+>適用対象:Windows Server 2016
 
-次の一覧に、Windows Server 2016 の機能のうち、現在のリリースで製品から削除された機能および今後のリリースで削除が検討されている機能 (推奨されなくなった機能) を示します。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。 この一覧は、今後のリリースで変更される可能性があります。また、使用が推奨されなくなった機能でこの一覧に含まれていないものもあります。 特定の機能とそれに置き換わる機能の詳細については、該当する機能のドキュメントを参照してください。  
+次の一覧に、Windows Server 2016 の機能のうち、現在のリリースで製品から削除された機能および今後のリリースで削除が検討されている機能 (推奨されなくなった機能) を示します。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。 この一覧は、今後のリリースで変更される可能性があります。また、使用が推奨されなくなった機能でこの一覧に含まれていないものもあります。 特定の機能とそれに置き換わる機能の詳細については、該当する機能のドキュメントを参照してください。
 
-## <a name="features-removed-from-windows-server-2016"></a>Windows Server 2016 から削除された機能 
+どのような削除または新しいバージョンで非推奨とされたについては、次を参照してください。[削除された機能または開始 Windows サーバー 2019 交換の計画的な](../get-started-19/removed-features-19.md)します。
+
+## <a name="features-removed-from-windows-server-2016"></a>Windows Server 2016 から削除された機能
+
 以下の機能は、このリリースの Windows Server 2016 で削除されました。 このリリースでは、別の方法を使用しない限り、これらの機能に依存するアプリケーション、コード、使用法は機能しません。  
 
 > [!NOTE]  

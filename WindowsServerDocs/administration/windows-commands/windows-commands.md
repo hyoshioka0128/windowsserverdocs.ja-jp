@@ -13,12 +13,12 @@ ms.author: coreyp
 manager: dongill
 ms.date: 05/22/2018
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 4cc9bc5c288eb063f333fa598dbb3511f7be5966
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5c8df2abd826df2745e10ed773ef50d6cf45c60b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820473"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192694"
 ---
 # <a name="windows-commands"></a>Windows コマンド
 
@@ -28,34 +28,32 @@ Windows (サーバーとクライアント) のサポートされているすべ
 
 次の A ~ Z のメニューで、特定のコマンドに関する情報を検索するには、コマンドを使用すると、開始する文字をクリックし、コマンド名をクリックします。
 
-[A](#BKMK_a) |
-[B](#BKMK_b) | 
-[C](#BKMK_c) | 
-[D](#BKMK_d) | 
-[E](#BKMK_e)  | 
- [F](#BKMK_f) | 
-[G](#BKMK_g) | 
-[H](#BKMK_h) | 
-[は](#BKMK_i) |
- [J](#BKMK_j) | 
-[K](#BKMK_k) | 
-[L](#BKMK_l) | 
-[M](#BKMK_m) | 
-[N](#BKMK_n) | 
- [O](#BKMK_o) | 
-[P](#BKMK_p) | 
-[Q](#BKMK_q) | 
-[R](#BKMK_r)  | 
-[S](#BKMK_s) | 
-[T](#BKMK_t) | 
-[U](#BKMK_u) | 
-[V](#BKMK_v) | 
- [W](#BKMK_w) | 
-[X](#BKMK_x) | 
-[Y](#BKMK_y) | 
-[Z](#BKMK_z)
+[A](#a) |
+[B](#b) | 
+[C](#c) | 
+[D](#d) | 
+[E](#e)  | 
+ [F](#f) | 
+[G](#g) | 
+[H](#h) | 
+[は](#i) |
+ [J](#j) | 
+[K](#k) | 
+[L](#l) | 
+[M](#m) | 
+[N](#n) | 
+ [O](#o) | 
+[P](#p) | 
+[Q](#q) | 
+[R](#r)  | 
+[S](#s) | 
+[T](#t) | 
+[U](#u) | 
+[V](#v) | 
+ [W](#w) | 
+[X](#x) |Y |Z
 
-## <a name="BKMK_PREREQ"></a>前提条件
+## <a name="prerequisites"></a>前提条件
 この PDF に含まれる情報に適用されます。
 
 -   Windows Server 2019
@@ -68,7 +66,7 @@ Windows (サーバーとクライアント) のサポートされているすべ
 -   Windows 10
 -   Windows 8.1
 
-### <a name="BKMK_OVR"></a>コマンド シェルの概要
+### <a name="command-shell-overview"></a>コマンド シェルの概要
 コマンド シェルでは、バッチ (.bat) ファイルでユーザー アカウントの管理または夜間のバックアップなどの日常的なタスクを自動化する Windows に組み込まれている最初のシェルをしました。 Windows スクリプト ホストでは、コマンド シェルでより高度なスクリプトを実行できます。 詳細については、次を参照してください。 [cscript](cscript.md)または[wscript](wscript.md)します。 ユーザー インターフェイスを使用するよりも、スクリプトを使用して、操作をより効率的に実行できます。 スクリプトは、コマンドラインで使用できるすべてのコマンドをそのまま使用します。
 
 Windows では、2 つのコマンド シェルがあります。コマンド シェルと[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)します。 各シェルとして、オペレーティング システムまたは IT 操作を自動化するための環境を提供する、アプリケーションの間の直接の通信を提供するソフトウェア プログラムです。
@@ -89,38 +87,36 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 > 
 > 設定する、 **reg_DWOrd**値には、特定の機能の制御文字の 16 進数の値を使用して (たとえば、 **0 9**  タブと**0 08** backspace キーが)。 ユーザーが指定した設定は、コンピューターの設定より優先し、コマンド ライン オプションのレジストリ設定より優先します。
 
-## <a name="BKMK_CmdRef"></a>コマンド ライン リファレンス A ~ Z
+## <a name="command-line-reference-a-z"></a>コマンド ライン リファレンス A ~ Z
 次の A ~ Z のメニューで、特定の Windows コマンドに関する情報を検索するには、コマンドを使用すると、開始する文字をクリックし、コマンド名をクリックします。
 
-[A](#BKMK_a) |
-[B](#BKMK_b) | 
-[C](#BKMK_c) | 
-[D](#BKMK_d) | 
-[E](#BKMK_e)  | 
- [F](#BKMK_f) | 
-[G](#BKMK_g) | 
-[H](#BKMK_h) | 
-[は](#BKMK_i) |
- [J](#BKMK_j) | 
-[K](#BKMK_k) | 
-[L](#BKMK_l) | 
-[M](#BKMK_m) | 
-[N](#BKMK_n) | 
- [O](#BKMK_o) | 
-[P](#BKMK_p) | 
-[Q](#BKMK_q) | 
-[R](#BKMK_r)  | 
-[S](#BKMK_s) | 
-[T](#BKMK_t) | 
-[U](#BKMK_u) | 
-[V](#BKMK_v) | 
- [W](#BKMK_w) | 
-[X](#BKMK_x) | 
-[Y](#BKMK_y) | 
-[Z](#BKMK_z)
+[A](#a) |
+[B](#b) | 
+[C](#c) | 
+[D](#d) | 
+[E](#e)  | 
+ [F](#f) | 
+[G](#g) | 
+[H](#h) | 
+[は](#i) |
+ [J](#j) | 
+[K](#k) | 
+[L](#l) | 
+[M](#m) | 
+[N](#n) | 
+ [O](#o) | 
+[P](#p) | 
+[Q](#q) | 
+[R](#r)  | 
+[S](#s) | 
+[T](#t) | 
+[U](#u) | 
+[V](#v) | 
+ [W](#w) | 
+[X](#x) |Y |Z)
 
-### <a name="BKMK_a"></a>A
--   [追加](append.md)
+### <a name="a"></a>A
+-   [append](append.md)
 -   [arp](arp.md)
 -   [assoc](assoc.md)
 -   [at](at.md)
@@ -131,7 +127,7 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [autoconv](autoconv.md)
 -   [autofmt](autofmt.md)
 
-### <a name="BKMK_b"></a>B
+### <a name="b"></a>B
 -   [bcdboot](bcdboot.md)
 -   [bcdedit](bcdedit.md)
 -   [bdehdcfg](bdehdcfg.md)
@@ -139,9 +135,9 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
   -   [bitsadmin addfile](bitsadmin-addfile.md)
   -   [bitsadmin addfileset](bitsadmin-addfileset.md)
   -   [bitsadmin addfilewithranges](bitsadmin-addfilewithranges.md)
-  -   [bitsadmin キャンセル](bitsadmin-cancel.md)
-  -   [完全な bitsadmin](bitsadmin-complete.md)
-  -   [bitsadmin を作成します。](bitsadmin-create.md)
+  -   [bitsadmin cancel](bitsadmin-cancel.md)
+  -   [bitsadmin complete](bitsadmin-complete.md)
+  -   [bitsadmin create](bitsadmin-create.md)
   -   [bitsadmin getaclflags](bitsadmin-getaclflags.md)
   -   [bitsadmin getbytestotal](bitsadmin-getbytestotal.md)
   -   [bitsadmin getbytestransferred](bitsadmin-getbytestransferred.md)
@@ -169,17 +165,17 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
   -   [bitsadmin getreplyprogress](bitsadmin-getreplyprogress.md)
   -   [bitsadmin getstate](bitsadmin-getstate.md)
   -   [bitsadmin gettype](bitsadmin-gettype.md)
-  -   [bitsadmin ヘルプ](bitsadmin-help.md)
-  -   [bitsadmin 情報](bitsadmin-info.md)
-  -   [bitsadmin 一覧](bitsadmin-list.md)
-  -   [bitsadmin/listfiles という](bitsadmin-listfiles.md)
-  -   [bitsadmin モニター](bitsadmin-monitor.md)
+  -   [bitsadmin help](bitsadmin-help.md)
+  -   [bitsadmin info](bitsadmin-info.md)
+  -   [bitsadmin list](bitsadmin-list.md)
+  -   [bitsadmin listfiles](bitsadmin-listfiles.md)
+  -   [bitsadmin monitor](bitsadmin-monitor.md)
   -   [bitsadmin nowrap](bitsadmin-nowrap.md)
   -   [bitsadmin rawreturn](bitsadmin-rawreturn.md)
   -   [bitsadmin removecredentials](bitsadmin-removecredentials.md)
   -   [bitsadmin replaceremoteprefix](bitsadmin-replaceremoteprefix.md)
-  -   [bitsadmin リセット](bitsadmin-reset.md)
-  -   [bitsadmin の再開](bitsadmin-resume.md)
+  -   [bitsadmin reset](bitsadmin-reset.md)
+  -   [bitsadmin resume](bitsadmin-resume.md)
   -   [bitsadmin setaclflag](bitsadmin-setaclflag.md)
   -   [bitsadmin setcredentials](bitsadmin-setcredentials.md)
   -   [bitsadmin setdescription](bitsadmin-setdescription.md)
@@ -191,35 +187,35 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
   -   [bitsadmin setpriority](bitsadmin-setpriority.md)
   -   [bitsadmin setproxysettings](bitsadmin-setproxysettings.md)
   -   [bitsadmin setreplyfilename](bitsadmin-setreplyfilename.md)
-  -   [bitsadmin 中断します。](bitsadmin-suspend.md)
+  -   [bitsadmin suspend](bitsadmin-suspend.md)
   -   [bitsadmin takeownership](bitsadmin-takeownership.md)
   -   [bitsadmin 転送](bitsadmin-transfer.md)
-  -   [bitsadmin ユーティリティ](bitsadmin-util.md)
-  -   [bitsadmin ラップ](bitsadmin-wrap.md)
+  -   [bitsadmin util](bitsadmin-util.md)
+  -   [bitsadmin wrap](bitsadmin-wrap.md)
 -   [bootcfg](bootcfg.md)
   -   [bootcfg addsw](bootcfg-addsw.md)
-  -   [bootcfg コピー](bootcfg-copy.md)
+  -   [bootcfg copy](bootcfg-copy.md)
   -   [bootcfg dbg1394](bootcfg-dbg1394.md)
-  -   [bootcfg デバッグ](bootcfg-debug.md)  
-  -   [bootcfg 既定](bootcfg-default.md)
+  -   [bootcfg debug](bootcfg-debug.md)  
+  -   [bootcfg default](bootcfg-default.md)
   -   [bootcfg delete](bootcfg-delete.md)
   -   [bootcfg ems](bootcfg-ems.md)
   -   [bootcfg query](bootcfg-query.md)
-  -   [bootcfg 生](bootcfg-raw.md)
+  -   [bootcfg raw](bootcfg-raw.md)
   -   [bootcfg rmsw](bootcfg-rmsw.md)
-  -   [bootcfg タイムアウト](bootcfg-timeout.md)
+  -   [bootcfg timeout](bootcfg-timeout.md)
 -   [break](break_1.md)
 
-### <a name="BKMK_c"></a>C
+### <a name="c"></a>C
 -   [cacls](cacls_1.md)
 -   [call](call.md)
 -   [cd](cd.md)
 -   [certreq](certreq_1.md)
 -   [certutil](certutil.md)
 -   [change](change.md)
-  -   [ログオン時に変更します。](change-logon.md)
-  -   [ポートを変更します。](change-port.md)
-  -   [ユーザーを変更します。](change-user.md)
+  -   [change logon](change-logon.md)
+  -   [change port](change-port.md)
+  -   [change user](change-user.md)
 -   [chcp](chcp.md)
 -   [chdir](chdir_1.md)
 -   [chglogon](chglogon.md)
@@ -227,22 +223,22 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [chgusr](chgusr.md)
 -   [chkdsk](chkdsk.md)
 -   [chkntfs](chkntfs.md)
--   [選択しました。](choice.md)
--   [暗号](cipher.md)
--   [クリップ](clip.md)
+-   [choice](choice.md)
+-   [cipher](cipher.md)
+-   [clip](clip.md)
 -   [cls](cls.md)
--   [cmd](Cmd.md)
+-   [Cmd](Cmd.md)
 -   [cmdkey](cmdkey.md)
 -   [cmstp](cmstp.md)
--   [色](color.md)
+-   [color](color.md)
 -   [comp](comp.md)
--   [Compact](compact.md)
--   [変換](convert.md)
--   [コピー](copy.md)
+-   [compact](compact.md)
+-   [convert](convert.md)
+-   [copy](copy.md)
 -   [cprofile](cprofile.md)
 -   [cscript](cscript.md)
 
-### <a name="BKMK_d"></a>D
+### <a name="d"></a>D
 -   [date](date.md)
 -   [dcgpofix](dcgpofix.md)
 -   [defrag](defrag.md)
@@ -261,66 +257,66 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [doskey](doskey.md)
 -   [driverquery](driverquery.md)
 
-### <a name="BKMK_e"></a>E
+### <a name="e"></a>E
 -   [echo](echo.md)
 -   [edit](edit.md)
 -   [endlocal](endlocal.md)
 -   [erase](erase.md)
 -   [eventcreate](eventcreate.md)
 -   [eventquery](eventquery.md)
--   [eventtrigger](eventtriggers.md)
+-   [eventtriggers](eventtriggers.md)
 -   [evntcmd](Evntcmd.md)
--   [終了](exit_2.md)
--   [展開](expand.md)
--   [抽出](extract.md)
+-   [exit](exit_2.md)
+-   [expand](expand.md)
+-   [extract](extract.md)
 
-### <a name="BKMK_f"></a>F
+### <a name="f"></a>F
 -   [fc](fc.md)
--   [検索](find.md)
+-   [find](find.md)
 -   [findstr](findstr.md)
--   [指](finger.md)
+-   [finger](finger.md)
 -   [flattemp](flattemp.md)
 -   [fondue](fondue.md)
--   [の](for.md)
--   [ファイルを探す](forfiles.md)
+-   [for](for.md)
+-   [forfiles](forfiles.md)
 -   [format](format.md)
 -   [freedisk](freedisk.md)
--   [Fsutil](fsutil.md)
+-   [fsutil](fsutil.md)
   -   [fsutil 8dot3name](fsutil-8dot3name.md) 
-  -   [fsutil の動作](fsutil-behavior.md) 
-  -   [fsutil ファイル](fsutil-file.md)
+  -   [fsutil behavior](fsutil-behavior.md) 
+  -   [fsutil file](fsutil-file.md)
   -   [fsutil fsinfo](fsutil-fsinfo.md)
   -   [fsutil hardlink](fsutil-hardlink.md)
-  -   [fsutil の objectid](fsutil-objectid.md)
-  -   [Fsutil クォータ](fsutil-quota.md)
-  -   [fsutil の修復](fsutil-repair.md)
+  -   [fsutil objectid](fsutil-objectid.md)
+  -   [fsutil quota](fsutil-quota.md)
+  -   [fsutil repair](fsutil-repair.md)
   -   [fsutil reparsepoint](fsutil-reparsepoint.md)
-  -   [fsutil リソース](fsutil-resource.md)
-  -   [fsutil スパース](fsutil-sparse.md)
-  -   [fsutil の階層制御](fsutil-tiering.md)
-  -   [fsutil トランザクション](fsutil-transaction.md)
+  -   [fsutil resource](fsutil-resource.md)
+  -   [fsutil sparse](fsutil-sparse.md)
+  -   [fsutil tiering](fsutil-tiering.md)
+  -   [fsutil transaction](fsutil-transaction.md)
   -   [fsutil usn](fsutil-usn.md)
-  -   [fsutil ボリューム](fsutil-volume.md)
+  -   [fsutil volume](fsutil-volume.md)
   -   [fsutil wim](fsutil-wim.md)
 -   [ftp](ftp.md)
 -   [ftype](ftype.md)
 -   [fveupdate](fveupdate.md)
 
-### <a name="BKMK_g"></a>G
+### <a name="g"></a>G
 -   [getmac](getmac.md)
 -   [gettype](gettype.md)
 -   [goto](goto.md)
 -   [gpfixup](gpfixup.md)
 -   [gpresult](gpresult.md)
 -   [gpupdate](gpupdate.md)
--   [与えます](graftabl.md)
+-   [graftabl](graftabl.md)
 
-### <a name="BKMK_h"></a>H
+### <a name="h"></a>H
 -   [help](help.md)
 -   [helpctr](helpctr.md)
 -   [hostname](hostname.md)
 
-### <a name="BKMK_i"></a>私
+### <a name="i"></a>I
 -   [icacls](icacls.md)
 -   [if](if.md)
 -   [inuse](inuse.md)
@@ -328,10 +324,10 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [ipxroute](ipxroute.md)
 -   [irftp](irftp.md)
 
-### <a name="BKMK_j"></a>J
+### <a name="j"></a>J
 -   [jetpack](jetpack.md)
 
-### <a name="BKMK_k"></a>K
+### <a name="k"></a>K
 -   [klist](klist.md)
 -   [ksetup](ksetup.md)
   -   [ksetup:setrealm](ksetup-setrealm.md)
@@ -359,12 +355,12 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [ktmutil](ktmutil.md)
 -   [ktpass](ktpass.md)
 
-### <a name="BKMK_l"></a>L
+### <a name="l"></a>L
 -   [label](label.md)
 -   [lodctr](lodctr.md)
 -   [logman](logman.md)
-  -   [logman を作成します。](logman-create.md)
-  -   [logman クエリ](logman-query.md)
+  -   [logman create](logman-create.md)
+  -   [logman query](logman-query.md)
   -   [logman start & #124;停止](logman-start-stop.md)
   -   [logman delete](logman-delete.md)
   -   [logman update](logman-update.md)
@@ -373,7 +369,7 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [lpq](lpq.md)
 -   [lpr](lpr.md)
 
-### <a name="BKMK_m"></a>M
+### <a name="m"></a>M
 -   [macfile](macfile.md)
 -   [makecab](makecab.md)
 -   [manage-bde](manage-bde.md)
@@ -396,13 +392,13 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
   -   [manage-bde: upgrade](manage-bde-upgrade.md)
   -   [manage-bde:WipeFreeSpace](manage-bde-wipefreespace.md)
 -   [mapadmin](mapadmin.md)
--   [md](Md.md)
+-   [Md](Md.md)
 -   [mkdir](mkdir.md)
 -   [mklink](mklink.md)
 -   [mmc](mmc.md)
 -   [mode](mode.md)
--   [もっとその](more.md)
--   [マウント](mount.md)
+-   [more](more.md)
+-   [mount](mount.md)
 -   [mountvol](mountvol.md)
 -   [move](move.md)
 -   [mqbkup](mqbkup.md)
@@ -414,12 +410,12 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [msinfo32](msinfo32.md)
 -   [mstsc](mstsc.md)
 
-### <a name="BKMK_n"></a>N
+### <a name="n"></a>N
 -   [nbtstat](nbtstat.md)
 -   [netcfg](netcfg.md)
 -   [netsh](netsh.md)
 -   [netstat](netstat.md)
--   [Net の印刷](net-print.md)
+-   [Net print](net-print.md)
 -   [nfsadmin](nfsadmin.md)
 -   [nfsshare](nfsshare.md)
 -   [nfsstat](nfsstat.md)
@@ -427,36 +423,36 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [nslookup](nslookup.md)
   -   [nslookup exit コマンド](nslookup-exit-command.md)
   -   [本の指で nslookup コマンド](nslookup-finger-command.md)
-  -   [nslookup のヘルプ](nslookup-help.md)
-  -   [nslookup %.*ls](nslookup-ls.md)
+  -   [nslookup help](nslookup-help.md)
+  -   [nslookup ls](nslookup-ls.md)
   -   [nslookup lserver](nslookup-lserver.md)
-  -   [nslookup ルート](nslookup-root.md)
-  -   [nslookup サーバー](nslookup-server.md)
-  -   [nslookup セット](nslookup-set.md)
-  -   [nslookup のすべての設定](nslookup-set-all.md)
-  -   [nslookup set クラス](nslookup-set-class.md)
+  -   [nslookup root](nslookup-root.md)
+  -   [nslookup server](nslookup-server.md)
+  -   [nslookup set](nslookup-set.md)
+  -   [nslookup set all](nslookup-set-all.md)
+  -   [nslookup set class](nslookup-set-class.md)
   -   [nslookup set d2](nslookup-set-d2.md)
-  -   [nslookup デバッグの設定](nslookup-set-debug.md)
-  -   [nslookup でドメインを設定](nslookup-set-domain.md)
-  -   [nslookup ポートを設定します。](nslookup-set-port.md)
-  -   [nslookup querytype を設定します。](nslookup-set-querytype.md)
-  -   [nslookup recurse の設定](nslookup-set-recurse.md)
-  -   [nslookup 再試行の設定](nslookup-set-retry.md)
-  -   [nslookup ルートの設定](nslookup-set-root.md)
-  -   [nslookup セットの検索](nslookup-set-search.md)
-  -   [nslookup srchlist を設定します。](nslookup-set-srchlist.md)
-  -   [nslookup のタイムアウトを設定します。](nslookup-set-timeout.md)
-  -   [nslookup の種類を設定します。](nslookup-set-type.md)
+  -   [nslookup set debug](nslookup-set-debug.md)
+  -   [nslookup set domain](nslookup-set-domain.md)
+  -   [nslookup set port](nslookup-set-port.md)
+  -   [nslookup set querytype](nslookup-set-querytype.md)
+  -   [nslookup set recurse](nslookup-set-recurse.md)
+  -   [nslookup set retry](nslookup-set-retry.md)
+  -   [nslookup set root](nslookup-set-root.md)
+  -   [nslookup set search](nslookup-set-search.md)
+  -   [nslookup set srchlist](nslookup-set-srchlist.md)
+  -   [nslookup set timeout](nslookup-set-timeout.md)
+  -   [nslookup set type](nslookup-set-type.md)
   -   [nslookup set vc](nslookup-set-vc.md)
-  -   [nslookup ビュー](nslookup-view.md)
+  -   [nslookup view](nslookup-view.md)
 -   [ntbackup](ntbackup.md)
 -   [ntcmdprompt](ntcmdprompt.md)
 -   [ntfrsutl](ntfrsutl.md)
 
-### <a name="BKMK_o"></a>O
+### <a name="o"></a>O
 -   [openfiles](openfiles.md)
 
-### <a name="BKMK_p"></a>P
+### <a name="p"></a>P
 -   [pagefileconfig](pagefileconfig.md)
 -   [パス](path.md)
 -   [pathping](pathping.md)
@@ -464,13 +460,13 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [pbadmin](pbadmin.md)
 -   [pentnt](pentnt.md)
 -   [perfmon](perfmon.md)
--   [Ping](ping.md)
+-   [ping](ping.md)
 -   [pnpunattend](pnpunattend.md)
 -   [pnputil](pnputil.md)
 -   [popd](popd.md)
 -   [PowerShell](PowerShell.md)
 -   [PowerShell_ise](PowerShell_ise.md)
--   [印刷](print.md)
+-   [print](print.md)
 -   [prncnfg](prncnfg.md)
 -   [prndrvr](prndrvr.md)
 -   [prnjobs](prnjobs.md)
@@ -482,14 +478,14 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [pushd](pushd.md)
 -   [pushprinterconnections](pushprinterconnections.md)
 
-### <a name="BKMK_q"></a>Q
+### <a name="q"></a>Q
 -   [qappsrv](qappsrv.md)
 -   [qprocess](qprocess.md)
--   [query](query.md)
+-   [クエリ](query.md)
 -   [quser](quser.md)
 -   [qwinsta](qwinsta.md)
 
-### <a name="BKMK_r"></a>R
+### <a name="r"></a>R
 -   [rcp](rcp.md)
 -   [rd](rd.md)
 -   [rdpsign](rdpsign.md)
@@ -514,7 +510,7 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [rename](rename.md)
 -   [repair-bde](repair-bde.md)
 -   [replace](replace.md)
--   [セッションをリセットします。](reset-session.md)
+-   [reset session](reset-session.md)
 -   [rexec](rexec.md)
 -   [risetup](risetup.md)
 -   [rmdir](rmdir.md)
@@ -526,7 +522,7 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [rundll32](rundll32.md)
 -   [rwinsta](rwinsta.md)
 
-### <a name="BKMK_s"></a>S
+### <a name="s"></a>S
 -   [schtasks](schtasks.md)
 -   [scwcmd](Scwcmd.md)
   -   [scwcmd: 分析](scwcmd-analyze.md)
@@ -553,14 +549,14 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [shift](shift.md)
 -   [showmount](showmount.md)
 -   [shutdown](shutdown.md)
--   [並べ替え](sort.md)
+-   [sort](sort.md)
 -   [start](start.md)
 -   [subst](subst.md)
 -   [sxstrace](sxstrace.md)
 -   [sysocmgr](sysocmgr.md)
 -   [systeminfo](systeminfo.md)
 
-### <a name="BKMK_t"></a>T
+### <a name="t"></a>T
 -   [takeown](takeown.md)
 -   [tapicfg](tapicfg.md)
 -   [taskkill](taskkill.md)
@@ -575,7 +571,7 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [tpmvscmgr](tpmvscmgr.md)
 -   [tracerpt](tracerpt_1.md)
 -   [tracert](tracert.md)
--   [ツリー](tree.md)
+-   [tree](tree.md)
 -   [tscon](tscon.md)
 -   [tsdiscon](tsdiscon.md)
 -   [tsecimp](tsecimp_1.md)
@@ -585,17 +581,17 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [typeperf](typeperf.md)
 -   [tzutil](tzutil.md)
 
-### <a name="BKMK_u"></a>U
+### <a name="u"></a>U
 -   [unlodctr](unlodctr_1.md)
 
-### <a name="BKMK_v"></a>V
+### <a name="v"></a>V
 -   [ver](ver.md)
--   [検証方法](verifier.md)
--   [確認します](verify_1.md)
+-   [verifier](verifier.md)
+-   [verify](verify_1.md)
 -   [vol](vol.md)
 -   [vssadmin](vssadmin.md)- 
 
-### <a name="BKMK_w"></a>W
+### <a name="w"></a>W
 -   [waitfor](waitfor.md)
 -   [wbadmin](wbadmin.md)
   -   [wbadmin バックアップの有効化](wbadmin-enable-backup.md)
@@ -623,8 +619,8 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [winpop](winpop.md)
 -   [winrs](winrs.md)
 -   [wlbs](wlbs_1.md)
--   [Wmic](wmic.md)
+-   [wmic](wmic.md)
 -   [wscript](wscript.md)
 
-### <a name="BKMK_x"></a>X
+### <a name="x"></a>x
 -   [xcopy](xcopy.md)

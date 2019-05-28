@@ -2,22 +2,22 @@
 title: DFS 名前空間の概要
 ms.prod: windows-server-threshold
 ms.author: jgerend
-ms.manager: brianlic
+ms.manager: daveba
 ms.technology: storage
 ms.topic: article
 author: jasongerend
-ms.date: 10/15/2018
+ms.date: 05/09/2019
 description: このトピックでは、DFS 名前空間について説明します。DFS 名前空間は、複数のサーバー上に配置されている共有フォルダーを、論理的に構造化された 1 つ以上の名前空間にグループ化できる Windows Server の役割サービスです。
-ms.openlocfilehash: 0f80e5a25254513702c25ce895a28c4cb1e0f2b4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 33b5a36c9f13179286a95735621272f79983231c
+ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844253"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65613190"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 名前空間の概要
 
-> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows Server (半期チャネル)
 
 DFS 名前空間は、複数のサーバー上に配置されている共有フォルダーを、論理的に構造化された 1 つ以上の名前空間にグループ化できる Windows Server の役割サービスです。 これにより、ユーザーに対して共有フォルダーを仮想的に表示し、複数のサーバー上にあるファイルを 1 つのパスで表すことができます (次の図を参照)。
 
@@ -42,11 +42,12 @@ DFS の管理の実行または DFS 名前空間の使用には、その他の�
 
 次のオペレーティング システムを実行するサーバーは、複数のドメインベースの名前空間と、単一のスタンドアロンの名前空間をホストできます。 
 
-- Windows Server (半期チャネル)
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2012
-- Windows Server 2008 R2 Datacenter または Enterprise
+- Windows Server 2008 R2 Datacenter edition および Enterprise Edition
+- Windows Server (半期チャネル)
 
 次のオペレーティング システムを実行するサーバーは、単一のスタンドアロンの名前空間をホストできます。
 
@@ -68,15 +69,15 @@ DFS 名前空間および DFS レプリケーションは、ファイル サー�
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>サーバー マネージャーを使用して DFS をインストールするには
 
-1. サーバー マネージャーを開き、**[管理]** をクリックし、**[役割と機能の追加]** をクリックします。 役割と機能の追加ウィザードが表示されます。
+1. サーバー マネージャーを開き、 **[管理]** をクリックし、 **[役割と機能の追加]** をクリックします。 役割と機能の追加ウィザードが表示されます。
 
 2. **[サーバーの選択]** ページで、DFS をインストールするオフライン仮想マシンのサーバーまたは仮想ハード ディスク (VHD) を選択します。
 
 3. インストールする役割サービスおよび機能を選択します。
 
-    - DFS 名前空間サービスをインストールするには、**[サーバーの役割]** ページで、**[DFS 名前空間]** をクリックします。
+    - DFS 名前空間サービスをインストールするには、 **[サーバーの役割]** ページで、 **[DFS 名前空間]** をクリックします。
 
-    - DFS 管理ツールのみをインストールするには、**[機能]** ページで、**[リモート サーバー管理ツール]**、**[役割管理ツール]**、**[ファイル サービス ツール]** の順に展開し、**[DFS 管理ツール]** をクリックします。
+    - DFS 管理ツールのみをインストールするには、 **[機能]** ページで、 **[リモート サーバー管理ツール]** 、 **[役割管理ツール]** 、 **[ファイル サービス ツール]** の順に展開し、 **[DFS 管理ツール]** をクリックします。
 
          **[DFS 管理ツール]** では DFS 管理スナップイン、Windows PowerShell 用の DFS 名前空間モジュール、およびコマンド ライン ツールがインストールされますが、DFS サービスはサーバーにインストールされません。
 
@@ -126,5 +127,5 @@ Azure 仮想マシンを使い始める方法については、[Azure 仮想マ�
 |**運用**|[DFS 名前空間:よく寄せられる質問](https://technet.microsoft.com/library/ee404780.aspx)|
 |**コミュニティ リソース**|[ファイル サービスとストレージに関する TechNet フォーラム](https://social.technet.microsoft.com/forums/winserverfiles/threads/)|
 |**プロトコル**|[ファイル サービスの Windows server プロトコル](https://msdn.microsoft.com/en-us/library/cc239318.aspx)(非推奨)|
-|**関連テクノロジ**| [フェールオーバー クラスタ リング](../../failover-clustering/failover-clustering-overview.md)|
+|**関連テクノロジ**| [フェールオーバー クラスタリング](../../failover-clustering/failover-clustering-overview.md)|
 |**サポート**|[Windows IT プロフェッショナル向けのサポート](https://www.microsoft.com/itpro/windows/support)|

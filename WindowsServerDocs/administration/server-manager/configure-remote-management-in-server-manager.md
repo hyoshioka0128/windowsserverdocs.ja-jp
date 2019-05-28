@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a66fe7a274756de9bed9f6b14f5b9e491e5b623
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 63d90d52b55357b5de823f2ca5e0a9fa2a3468e6
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819583"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222996"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>サーバー マネージャーでリモート管理を構成します。
 
@@ -38,35 +38,35 @@ Windows Server 2016 より古い Windows Server リリースを実行してい�
 
 ワークグループ内にある管理、またはサーバー マネージャーを実行しているワークグループ コンピューターからリモート サーバーの管理サーバーを追加する方法の詳細については、次を参照してください。[サーバーを追加するには、サーバー マネージャーに](add-servers-to-server-manager.md)します。
 
-## <a name="BKMK_remote"></a>有効化またはリモート管理を無効にします。
+## <a name="enabling-or-disabling-remote-management"></a>リモート管理を有効または無効にする
 Windows Server 2016 では、リモート管理は既定で有効にします。 サーバー マネージャーを使用してリモートで Windows Server 2016 を実行されているコンピューターに接続するには、無効になっている場合、対象のコンピューターでサーバー マネージャーのリモート管理を有効にする必要があります。 このセクションの手順では、リモート管理を無効にする方法、およびリモート管理が無効になっている場合に再度有効にする方法について説明します。 サーバー マネージャー コンソールで、ローカル サーバーのリモート管理の状態が表示される、**プロパティ**の領域、**ローカル サーバー**ページ。
 
 リモート管理が有効になっている場合でも、ビルトイン Administrator アカウント以外のローカル管理者アカウントには、サーバーをリモートで管理するための権限がないことがあります。 リモート ユーザー アカウント制御 (UAC) **LocalAccountTokenFilterPolicy**レジストリ設定は、リモートで管理する組み込みの administrator アカウント以外の Administrators グループのローカル アカウントを許可するように構成する必要があります、サーバー。
 
-Windows Server 2016 では、サーバー マネージャーは、Windows リモート管理 (WinRM) とリモート通信に分散コンポーネント オブジェクト モデル (DCOM) に依存します。 設定によって制御されている、**リモート管理を構成する** ダイアログ ボックスでは、サーバー マネージャーおよび Windows PowerShell のリモート通信に WinRM を使用する部分のみに影響します。 パーツ サーバー マネージャーのリモート通信に DCOM を使用するには影響しません。 たとえば、サーバー マネージャーの Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行しているリモート サーバーとの通信に WinRM を使用して、Windows Server 2008 を実行しているサーバーと Windows Server 2008 R2 との通信に DCOM を使用ない、 [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)または[Windows Management Framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019)更新を適用します。 Microsoft 管理コンソール (mmc) とその他の従来の管理ツールは、DCOM を使用します。 これらの設定を変更する方法の詳細については、次を参照してください。 [DCOM を介して mmc またはその他のツールのリモート管理を構成する](#BKMK_dcom)このトピックの「します。
+Windows Server 2016 では、サーバー マネージャーは、Windows リモート管理 (WinRM) とリモート通信に分散コンポーネント オブジェクト モデル (DCOM) に依存します。 設定によって制御されている、**リモート管理を構成する** ダイアログ ボックスでは、サーバー マネージャーおよび Windows PowerShell のリモート通信に WinRM を使用する部分のみに影響します。 パーツ サーバー マネージャーのリモート通信に DCOM を使用するには影響しません。 たとえば、サーバー マネージャーの Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行しているリモート サーバーとの通信に WinRM を使用して、Windows Server 2008 を実行しているサーバーと Windows Server 2008 R2 との通信に DCOM を使用ない、 [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)または[Windows Management Framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019)更新を適用します。 Microsoft 管理コンソール (mmc) とその他の従来の管理ツールは、DCOM を使用します。 これらの設定を変更する方法の詳細については、次を参照してください。 [DCOM を介して mmc またはその他のツールのリモート管理を構成する](#to-configure-mmc-or-other-tool-remote-management-over-dcom)このトピックの「します。
 
 > [!NOTE]
 > このセクションの手順は、Windows Server を実行しているコンピューターでのみ実行することができます。 有効にするかはサーバー マネージャーを使用して、クライアント オペレーティング システムを管理することはできませんので、これらの手順を使用して Windows 10 を実行するコンピューターでリモート管理を無効にすることはできません。
 
 -   WinRM のリモート管理を有効にするには、次のいずれかの手順を選択してください。
 
-    -   [Windows インターフェイスを使用してサーバー マネージャーのリモート管理を有効にするには](#BKMK_windows)
+    -   [Windows インターフェイスを使用してサーバー マネージャーのリモート管理を有効にするには](#to-enable-server-manager-remote-management-by-using-the-windows-interface)
 
-    -   [Windows PowerShell を使用してサーバー マネージャーのリモート管理を有効にするには](#BKMK_ps)
+    -   [Windows PowerShell を使用してサーバー マネージャーのリモート管理を有効にするには](#to-enable-server-manager-remote-management-by-using-windows-powershell)
 
-    -   [コマンドラインを使用してサーバー マネージャーのリモート管理を有効にするには](#BKMK_cmdline)
+    -   [コマンドラインを使用してサーバー マネージャーのリモート管理を有効にするには](#to-enable-server-manager-remote-management-by-using-the-command-line)
 
-    -   [サーバー マネージャーおよび Windows PowerShell リモート管理を以前のリリースの Windows Server を有効にするには](#BKMK_old)
+    -   [サーバー マネージャーおよび Windows PowerShell リモート管理を以前のリリースの Windows Server を有効にするには](#to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server)
 
 -   WinRM とサーバー マネージャーのリモート管理を無効にするには、次の手順のいずれかを選択します。
 
-    -   [グループ ポリシーを使用してリモート管理を無効にするには](#BKMK_disableGP)
+    -   [グループ ポリシーを使用してリモート管理を無効にするには](#to-disable-remote-management-by-using-group-policy)
 
-    -   [無人インストール中に、応答ファイルを使用してリモート管理を無効にするには](#BKMK_unattend)
+    -   [無人インストール中に、応答ファイルを使用してリモート管理を無効にするには](#to-disable-remote-management-by-using-an-answer-file-during-unattended-installation)
 
--   DCOM のリモート管理を構成するには、「[DCOM のリモート管理を構成するには](#BKMK_dcom)」を参照してください。
+-   DCOM のリモート管理を構成するには、「[DCOM のリモート管理を構成するには](#to-configure-mmc-or-other-tool-remote-management-over-dcom)」を参照してください。
 
-### <a name="BKMK_windows"></a>Windows インターフェイスを使用してサーバー マネージャーのリモート管理を有効にするには
+### <a name="to-enable-server-manager-remote-management-by-using-the-windows-interface"></a>Windows インターフェイスを使用してサーバー マネージャーのリモート管理を構成するには
 
 1.  > [!NOTE]
     > 設定によって制御されている、**リモート管理を構成する**ダイアログ ボックスで部分サーバー マネージャーのリモート通信に DCOM を使用するには影響しません。
@@ -81,7 +81,7 @@ Windows Server 2016 では、サーバー マネージャーは、Windows リモ
 
     -   このコンピューターをサーバー マネージャーまたは Windows PowerShell を使用してリモートで管理できるように、次のように選択します。**他のコンピューターからこのサーバーのリモート管理を有効にする**します。
 
-### <a name="BKMK_ps"></a>Windows PowerShell を使用してサーバー マネージャーのリモート管理を有効にするには
+### <a name="to-enable-server-manager-remote-management-by-using-windows-powershell"></a>Windows PowerShell を使用してサーバー マネージャーのリモート管理を有効にするには
 
 1.  をリモートで管理するコンピューターには、管理者特権で Windows PowerShell セッションを開くには、次のいずれかを実行します。
 
@@ -93,7 +93,7 @@ Windows Server 2016 では、サーバー マネージャーは、Windows リモ
 
     **構成 SMremoting.exe-有効にします。**
 
-### <a name="BKMK_cmdline"></a>コマンドラインを使用してサーバー マネージャーのリモート管理を有効にするには
+### <a name="to-enable-server-manager-remote-management-by-using-the-command-line"></a>コマンド ラインを使用してサーバー マネージャーのリモート管理を有効にするには
 
 1.  リモート管理対象のコンピューターで、管理者特権でコマンド プロンプト セッションを開きます。 これを実行する、**開始**画面で「 **cmd**、を右クリックし、**コマンド プロンプト**タイルが表示されたら、**アプリ**結果とアプリ バーでクリックして**管理者として実行**します。
 
@@ -109,21 +109,21 @@ Windows Server 2016 では、サーバー マネージャーは、Windows リモ
 
     -   現在のリモート管理設定を表示するには、次のように入力します。 **SMremoting.exe-取得**、し、ENTER キーを押します。
 
-### <a name="BKMK_old"></a>サーバー マネージャーおよび Windows PowerShell リモート管理を以前のリリースの Windows Server を有効にするには
+### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server"></a>Windows Server の以前のリリースでサーバー マネージャーおよび Windows PowerShell のリモート管理を有効にするには
 
 -   次のいずれかの操作を行います。
 
-    -   Windows Server 2012 を実行しているサーバーでリモート管理を有効にするのを参照してください。 [Windows インターフェイスを使用してサーバー マネージャーのリモート管理を有効にする](#BKMK_windows)このトピックの「します。
+    -   Windows Server 2012 を実行しているサーバーでリモート管理を有効にするのを参照してください。 [Windows インターフェイスを使用してサーバー マネージャーのリモート管理を有効にする](#to-enable-server-manager-remote-management-by-using-the-windows-interface)このトピックの「します。
 
     -   Windows Server 2008 R2 を実行しているサーバーでリモート管理を有効にするのを参照してください。[サーバー マネージャーによるリモート管理](https://go.microsoft.com/fwlink/?LinkID=137378)、Windows Server 2008 R2 ヘルプ。
 
     -   Windows Server 2008 を実行しているサーバーでリモート管理を有効にするのを参照してください。[を有効にすると、Windows PowerShell のリモート コマンドを使用して](https://go.microsoft.com/fwlink/p/?LinkId=242565)します。
 
-### <a name="BKMK_dcom"></a>DCOM を介して mmc またはその他のツールのリモート管理を構成するには
+### <a name="to-configure-mmc-or-other-tool-remote-management-over-dcom"></a>DCOM を介して mmc またはその他のツールのリモート管理を構成するには
 
 1.  次のいずれかの操作を行い、セキュリティが強化された Windows ファイアウォール スナップインを開きます。
 
-    -   **プロパティ**の領域、**ローカル サーバー**サーバー マネージャーでのページで、ハイパー テキスト値をクリックして、 **Windows ファイアウォール**プロパティ、およびクリック**詳細設定**します。
+    -   **プロパティ**の領域、**ローカル サーバー**サーバー マネージャーでのページで、ハイパー テキスト値をクリックして、 **Windows ファイアウォール**プロパティ、およびクリック **詳細設定**します。
 
     -   **開始**画面で「 **WF.msc**、に表示されるときにスナップイン タイルをクリックしてして、**アプリ**結果。
 
@@ -143,7 +143,7 @@ Windows Server 2016 では、サーバー マネージャーは、Windows リモ
 
 5.  セキュリティが強化された Windows ファイアウォール スナップインを閉じます。
 
-### <a name="BKMK_disableGP"></a>グループ ポリシーを使用してリモート管理を無効にするには
+### <a name="to-disable-remote-management-by-using-group-policy"></a>グループ ポリシーを使用してリモート管理を無効にするには
 
 1.  ローカル グループ ポリシー エディターを開くには、次のいずれかの操作を行います。
 
@@ -157,7 +157,7 @@ Windows Server 2016 では、サーバー マネージャーは、Windows リモ
 
 4.  **[WinRM によるリモート サーバー管理を許可する]** ポリシー設定のダイアログ ボックスで、 **[無効]** をクリックしてリモート管理を無効にします。 **[OK]** をクリックして変更内容を保存し、ポリシー設定のダイアログ ボックスを閉じます。
 
-### <a name="BKMK_unattend"></a>無人インストール中に、応答ファイルを使用してリモート管理を無効にするには
+### <a name="to-disable-remote-management-by-using-an-answer-file-during-unattended-installation"></a>応答ファイルを使用して無人インストール中にリモート管理を無効にするには
 
 1.  Windows システム イメージ マネージャー (Windows SIM) を使用して、Windows Server 2016 のインストール用の無人インストール応答ファイルを作成します。 応答ファイルを作成して、Windows SIM を使用する方法の詳細については、次を参照してください。 [Windows System Image Manager とは何ですか?](https://technet.microsoft.com/library/cc766347.aspx)と[ステップ バイ ステップ。IT プロフェッショナル向けの基本的な Windows 展開](https://technet.microsoft.com/library/dd349348.aspx)します。
 
@@ -166,7 +166,7 @@ Windows Server 2016 では、サーバー マネージャーは、Windows リモ
 3.  既定では、応答ファイルを適用するすべてのサーバー上でサーバー マネージャーのリモート管理を無効にする設定**Microsoft-Windows-Web-Services-for-Management-Core \EnableServerremoteManagement**に**False**.
 
     > [!NOTE]
-    > この設定は、オペレーティング システムのセットアップ プロセスの一環としてリモート管理を無効にします。 この設定を構成しても、管理者から、オペレーティング システムのセットアップが完了したら、サーバー上のサーバー マネージャーのリモート管理を有効にします。 管理者は、サーバー マネージャーのリモート管理を使用して、もう一度手順を有効にできます[Windows インターフェイスを使用してサーバー マネージャーのリモート管理を構成する](#BKMK_windows)または[を使用してサーバー マネージャーのリモート管理を有効にするにはWindows PowerShell](#BKMK_ps)このトピックの「します。
+    > この設定は、オペレーティング システムのセットアップ プロセスの一環としてリモート管理を無効にします。 この設定を構成しても、管理者から、オペレーティング システムのセットアップが完了したら、サーバー上のサーバー マネージャーのリモート管理を有効にします。 管理者は、サーバー マネージャーのリモート管理を使用して、もう一度手順を有効にできます[Windows インターフェイスを使用してサーバー マネージャーのリモート管理を構成する](#to-enable-server-manager-remote-management-by-using-the-windows-interface)または[を使用してサーバー マネージャーのリモート管理を有効にするにはWindows PowerShell](#to-enable-server-manager-remote-management-by-using-windows-powershell)このトピックの「します。
     > 
     > 既定では、無人インストールの一環としてリモート管理を無効にしてインストールした後、サーバーでリモート管理を有効にしない場合、サーバー マネージャーを使用して、この応答ファイルを適用するサーバーを完全に管理されてことはできません。 Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 で実行されている (および、既定で無効になっているリモート管理がある) サーバーは、サーバー マネージャーのサーバーに追加された後、サーバー マネージャー コンソールで管理容易性の状態のエラーを生成します。プール。
 

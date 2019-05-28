@@ -10,12 +10,12 @@ ms.topic: article
 author: adagashe
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 24890b191db8bc6934132857e830d4f77c394b02
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 66d4796a6ffb453f6edb5fed20dba29b70f7ec4b
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879973"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476105"
 ---
 # <a name="understanding-cluster-and-pool-quorum"></a>クラスターとプールのクォーラムを理解します。
 
@@ -27,7 +27,7 @@ ms.locfileid: "59879973"
 
 クォーラムは、クラスターが残っているオンライン中に維持できるエラーの数を決定します。 クォーラムは、複数のサーバーを同時に、リソース グループをホストし、同時に同じディスクに書き込むくださいようにサブセットのクラスター ノードの間の通信に問題がある場合に、シナリオを処理するために設計されています。 このクォーラムの概念をさせて、クラスターはクラスター サービスが特定のリソース グループの 1 つだけの場合は true。 所有者があることを確認するノードのサブセットのいずれかで停止するを強制します。 停止しているノードは、ノードのメインのグループと通信できるもう一度とクラスターに再度参加し、クラスター サービスを開始しますが、自動的に。
 
-Windows Server 2016 では、独自のメカニズムのクォーラムがあるシステムの 2 つのコンポーネントがあります。
+Windows Server 2019 および Windows Server 2016 では、独自のメカニズムのクォーラムがあるシステムの 2 つのコンポーネントがあります。
 
 - <strong>クラスターのクォーラム</strong>:クラスター レベルで動作し (つまりノードが失われるしてクラスターを入手できます)
 - <strong>プールのクォーラム</strong>:記憶域スペース ダイレクトが有効な場合に、プール レベルで動作し (つまりノードおよびドライブが失われるしてプールを入手できます)。 記憶域プールがクラスター化および非クラスター化の両方のシナリオで使用するために設計されてさまざまなクォーラムがあるためにです。
@@ -41,7 +41,7 @@ Windows Server 2016 では、独自のメカニズムのクォーラムがある
 | 2            | 50/50                               | X                                                | X                                                 |
 | 2 + ミラーリング監視サーバー  | 〇                                 | X                                                | X                                                 |
 | 3            | 〇                                 | 50/50                                             | X                                                 |
-| 3 + ミラーリング監視サーバー  | 〇                                 | 〇                                               | いいえ                                                 |
+| 3 + ミラーリング監視サーバー  | 〇                                 | 〇                                               | X                                                 |
 | 4            | 〇                                 | 〇                                               | 50/50                                              |
 | 4 + ミラーリング監視サーバー  | 〇                                 | 〇                                               | 〇                                                |
 | 5 以降  | 〇                                 | 〇                                               | 〇                                                |
@@ -229,5 +229,5 @@ Windows Server 2016 では、独自のメカニズムのクォーラムがある
 
 ## <a name="more-information"></a>詳細情報
 
-- [構成し、クォーラムの管理](../../failover-clustering/manage-cluster-quorum.md)
+- [クォーラムを構成および管理する](../../failover-clustering/manage-cluster-quorum.md)
 - [クラウド監視を展開します。](../../failover-clustering/deploy-cloud-witness.md)

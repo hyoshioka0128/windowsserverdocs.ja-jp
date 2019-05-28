@@ -8,16 +8,16 @@ author: cosmosdarwin
 ms.date: 09/07/2018
 Keywords: 記憶域スペース ダイレクト
 ms.localizationpriority: medium
-ms.openlocfilehash: 828a3265c9770bab0158067c4f856866d03e3d42
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1916d2d5e4d1fc846bec19826437b200afe36f42
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870863"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772215"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>記憶域スペース ダイレクトのパフォーマンスの履歴
 
-> 適用先:Windows Server 2019
+> 適用対象:Windows Server 2019
 
 パフォーマンス履歴が提供する新しい機能[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)管理者と、ホスト サーバー、ドライブ、ボリューム、仮想マシン間で、コンピューティング、メモリ、ネットワーク、およびストレージの値を履歴に簡単にアクセスします。 パフォーマンス履歴が自動的に収集され、最大 1 年間、クラスターに格納されています。
 
@@ -153,7 +153,7 @@ Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 
 ボリュームは記憶域スペースでサポートし、シンプルで双方向ミラー、またはクラスター内のノードの数によっては、3 方向ミラー回復性のいずれかを使用します。 ドライブまたはサーバーのエラーと同様に、他の記憶域スペース ダイレクトのボリュームがあると、修復です。
 
-ボリュームは ReFS を使用するが、クラスター グループの所有者ノードでのみが表示されるように、クラスター共有ボリューム (CSV) ではありません。 自動的に作成されるだけでなく何もないこのボリュームに関する特別な: 表示、参照、サイズを変更または削除 (推奨されません)。 問題が発生した場合は、次を参照してください。[トラブルシューティング](#troubleshooting)します。 
+ボリュームは ReFS を使用するが、クラスター グループの所有者ノードでのみが表示されるように、クラスター共有ボリューム (CSV) ではありません。 自動的に作成されるだけでなく何もないこのボリュームに関する特別な: 表示、参照、サイズを変更または削除 (推奨されません)。 問題が発生した場合は、次を参照してください。[トラブルシューティング](#troubleshooting)します。
 
 ### <a name="object-discovery-and-data-collection"></a>オブジェクトの検出とデータの収集
 
@@ -163,7 +163,7 @@ Get-VM "MyVM" | Get-ClusterPerf -VMSeriesName "VM.Cpu.Usage" -TimeFrame LastHour
 
 ### <a name="handling-measurement-gaps"></a>測定値のギャップを処理します。
 
-」の説明に従って、多くの時間にわたる一連の詳細度の低いに測定値をマージするときに[期間](#Timeframes)、欠落しているデータの期間を除外します。 などの場合は、サーバーは、30 分間ダウンが、実行、50% CPU 30 分間、`ClusterNode.Cpu.Usage`平均時間は 50% (25% ではない) として正しく記録されます。
+」の説明に従って、多くの時間にわたる一連の詳細度の低いに測定値をマージするときに[期間](#timeframes)、欠落しているデータの期間を除外します。 などの場合は、サーバーは、30 分間ダウンが、実行、50% CPU 30 分間、`ClusterNode.Cpu.Usage`平均時間は 50% (25% ではない) として正しく記録されます。
 
 ### <a name="extensibility-and-customization"></a>機能拡張とカスタマイズ
 
@@ -206,7 +206,7 @@ Stop-ClusterPerformanceHistory -DeleteHistory
 
 ### <a name="the-cmdlet-doesnt-work"></a>このコマンドレットは機能しません
 
-などのエラー メッセージ"*' Get ClusterPerf' という用語は、コマンドレットの名前として認識されません*"機能が利用できないかインストールされていることを意味します。 17692 またはそれ以降の Windows Server Insider プレビュー ビルドが、フェールオーバー クラスタ リング、および実行している記憶域スペース ダイレクトがインストールされたことを確認します。
+などのエラー メッセージ" *' Get ClusterPerf' という用語は、コマンドレットの名前として認識されません*"機能が利用できないかインストールされていることを意味します。 17692 またはそれ以降の Windows Server Insider プレビュー ビルドが、フェールオーバー クラスタ リング、および実行している記憶域スペース ダイレクトがインストールされたことを確認します。
 
    > [!NOTE]
    > この機能は、Windows Server 2016 で使用可能なまたはそれ以前ではありません。

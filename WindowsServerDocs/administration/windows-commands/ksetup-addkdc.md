@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d3e0d38bdec11618561ee4acaa32ffdd06695fab
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 0466bee0b357e896bd971152a56da57612472672
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868533"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564729"
 ---
 # <a name="ksetupaddkdc"></a>ksetup:addkdc
 
@@ -53,7 +53,7 @@ Windows 以外の KDC サーバーとワークステーションを使用する�
 ```
 ksetup /addkdc CORP.CONTOSO.COM mitkdc.contoso.com
 ```
-Ksetup ツールを実行ローカル コンピューター アカウントのパスワードを設定する前のコマンドのように、同じコンピューターのコマンド ライン"p@sswrd1%? です。 コンピューターを再起動します。
+Ksetup ツールを実行ローカル コンピューター アカウントのパスワードを設定する前のコマンドのように、同じコンピューターのコマンド ライン"p@sswrd1%"です。 コンピューターを再起動します。
 ```
 Ksetup /setcomputerpassword p@sswrd1%
 ```
@@ -61,5 +61,5 @@ Ksetup /setcomputerpassword p@sswrd1%
 #### <a name="additional-references"></a>その他の参照情報
 
 -   [Ksetup](ksetup.md)
--   [ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

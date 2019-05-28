@@ -11,12 +11,12 @@ ms.assetid: 7ec0e14c-4498-4bd9-8fe6-b94260198efc
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 3506c00651951aa2a62637cae6cc4989f9edf1fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d7b6d3adb4841ea827c56309307549c911a439ea
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819003"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222811"
 ---
 # <a name="supported-suse-virtual-machines-on-hyper-v"></a>HYPER-V でサポートされている SUSE 仮想マシン
 
@@ -30,7 +30,7 @@ SUSE では、HYPER-V 用の組み込みの SUSE Linux Enterprise Service ドラ
 
 * **組み込みの**-LIS がこの Linux ディストリビューションの一部として含まれています。Microsoft 提供の LIS のダウンロード パッケージは、インストールしないように、この配布は機能しません。組み込みの LIS のカーネル モジュールのバージョン番号 (に示す**lsmod**など)、Microsoft 提供の LIS のダウンロード パッケージにバージョン番号とは異なります。 組み込みの LIS の項目が古いことに不一致が示されません。
 
-* & #10004 です。の機能使用
+* &#10004 です。の機能使用
 
 * (*空白*) の機能は使用できません
 
@@ -39,9 +39,9 @@ SLES12 + は 64 ビットのみです。
 |**機能**|**Windows Server オペレーティング システムのバージョン**|**SLES 15**|**SLES 12 SP3 と SP4**|**SLES 12 SP2**|**SLES 12 SP1**|**SLES 11 SP4**|**SLES 11 SP3**|
 |-|-|-|-|-|-|-|-|
 |**可用性**||組み込み|組み込み|組み込み|組み込み|組み込み|組み込み|
-|**[コア](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_core)**|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
+|**[コア](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |Windows Server 2016 の正確な時刻|2019, 2016|&#10004;|&#10004;|&#10004;||||
-|**[ネットワー キング](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Networking)**||||||||
+|**[ネットワー キング](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**||||||||
 |Jumbo Frame|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |VLAN タグ付け、トランキング|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |ライブ マイグレーション|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
@@ -49,28 +49,28 @@ SLES12 + は 64 ビットのみです。
 |vRSS|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|||
 |TCP セグメント化およびチェックサム オフロード|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |SR-IOV|2019, 2016|&#10004;|&#10004;|&#10004;||||
-|**[ストレージ](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Storage)**||||||||
+|**[ストレージ](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**||||||||
 |VHDX のサイズ変更|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |仮想ファイバー チャネル|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |ライブの仮想マシンのバックアップ|2019、2016、2012 R2|& #10004 です。2、3、8 に注意してください。|& #10004 です。2、3、8 に注意してください。|& #10004 です。2、3、8 に注意してください。|& #10004 です。2、3、8 に注意してください。|& #10004 です。2、3、8 に注意してください。|& #10004 です。2、3、8 に注意してください。|
 |TRIM のサポート|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |SCSI WWN|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;||||
-|**[メモリ](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Memory)**||||||||
+|**[メモリ](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**||||||||
 |PAE カーネル サポート|2019、2016、2012 R2、2012、2008 R2|なし|なし|なし|なし|&#10004;|&#10004;|
 |MMIO の間隔の構成|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|動的メモリでホット アド|2019、2016、2012 R2、2012|& #10004 です。注 5、6|& #10004 です。注 5、6|& #10004 です。注 5、6|& #10004 です。注 5、6|& #10004 です。4, 5, 6 に注意してください。|& #10004 です。4, 5, 6 に注意してください。|
-|動的メモリ - バルーニング|2019、2016、2012 R2、2012|& #10004 です。注 5、6|& #10004 です。注 5、6|& #10004 です。注 5、6|& #10004 です。注 5、6|& #10004 です。4, 5, 6 に注意してください。|& #10004 です。4, 5, 6 に注意してください。|
-|ランタイムのメモリのサイズ変更|2019, 2016|& #10004 です。注 5、6|& #10004 です。注 5、6|& #10004 です。注 5、6||||
-|**[ビデオ](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Video)**||||||||
+|動的メモリでホット アド|2019、2016、2012 R2、2012|&#10004 です。注 5、6|&#10004 です。注 5、6|&#10004 です。注 5、6|&#10004 です。注 5、6|&#10004 です。4, 5, 6 に注意してください。|&#10004 です。4, 5, 6 に注意してください。|
+|動的メモリ - バルーニング|2019、2016、2012 R2、2012|&#10004 です。注 5、6|&#10004 です。注 5、6|&#10004 です。注 5、6|&#10004 です。注 5、6|&#10004 です。4, 5, 6 に注意してください。|&#10004 です。4, 5, 6 に注意してください。|
+|ランタイムのメモリのサイズ変更|2019, 2016|&#10004 です。注 5、6|&#10004 です。注 5、6|&#10004 です。注 5、6||||
+|**[ビデオ](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**||||||||
 |ハイパー V 固有ビデオ デバイス|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
-|**[その他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_Misc)**||||||||
-|キー/値ペア|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|& #10004 です。注 7|& #10004 です。注 7|
+|**[その他](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**||||||||
+|キー/値ペア|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004 です。注 7|&#10004 です。注 7|
 |マスク不可能割り込み|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;|
 |ホスト ゲストからファイル コピー|2019、2016、2012 R2|&#10004;|&#10004;|&#10004;|&#10004;|&#10004;||
 |lsvmbus コマンド|2019、2016、2012 R2、2012、2008 R2|&#10004;|&#10004;|&#10004;||||
 |Hyper V ソケット|2019, 2016|&#10004;|&#10004;|||||
 |PCI パススルー/DDA|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|||
-|**[第 2 世代仮想マシン](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#BKMK_gen2)**||||||||
+|**[第 2 世代仮想マシン](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**||||||||
 |UEFI を使用してブートします。|2019、2016、2012 R2|& #10004 です。注 9|& #10004 です。注 9|& #10004 です。注 9|& #10004 です。注 9|& #10004 です。注 9||
 |セキュア ブート|2019, 2016|&#10004;|&#10004;|&#10004;|&#10004;|||
 
@@ -109,7 +109,7 @@ SLES12 + は 64 ビットのみです。
 
 * [CentOS をサポートし、HYPER-V 上の Red Hat Enterprise Linux 仮想マシン](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
-* [HYPER-V でサポートされている Debian の仮想マシン](Supported-Debian-virtual-machines-on-Hyper-V.md)
+* [Hyper-V でサポートされている Debian 仮想マシン](Supported-Debian-virtual-machines-on-Hyper-V.md)
 
 * [HYPER-V でサポートされている Oracle Linux 仮想マシン](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
 

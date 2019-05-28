@@ -13,12 +13,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 47d90c32f705157af60b1d8ca38122b3c6363c0f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 28f6393d57daaa04c15aa7c56dacc2c4d65dc2a3
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866783"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976742"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>Windows Server バージョン 1709 以降で削除された機能と置換が計画されている機能
 
@@ -29,7 +29,7 @@ ms.locfileid: "59866783"
 ## <a name="features-removed-from-windows-server-version-1709"></a>Windows Server バージョン 1709 から削除された機能
 Windows Server バージョン 1709 には、Windows Server 2016 と同じ機能が含まれています。 ただし、このリリースでは、Windows Server 2016 とは異なるインストール オプションが提供されます。
 
-- 半期チャネルのリリースでは、Windows Server バージョン 1709 は Server Core インストール オプションのみを提供します。 詳しくは、「[Windows Server の半期チャネルの概要](semi-annual-channel-overview.md)」をご覧ください。
+- 半期チャネルのリリースでは、Windows Server バージョン 1709 は Server Core インストール オプションのみを提供します。 詳細については、次を参照してください。[サービス チャネルの比較](..\get-started-19\servicing-channels-19.md)します。
 - このリリース以降、Nano Server はインストール可能なホスト オペレーティング システムとして使用できません。 代わりに、Nano Server は、コンテナー オペレーティング システムとして使用できます。 「[Windows Server バージョン 1709 で Nano Server に加えられる変更](nano-in-semi-annual-channel.md)」をご覧ください。
 - 以降このリリースでは、既定ではサーバー メッセージ ブロック (SMB) バージョン 1 はインストールされません。 詳細については、次を参照してください。 [SMBv1 が既定では Windows 10 Fall Creators Update と Windows Server、バージョン 1709 以降のバージョンでインストールされていない](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows)します。
 

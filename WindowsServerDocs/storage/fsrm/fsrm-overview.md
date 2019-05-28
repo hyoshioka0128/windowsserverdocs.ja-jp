@@ -8,16 +8,16 @@ ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: ファイル サーバー リソース マネージャー (FSRM) とは、Windows Server ファイル サーバー上のデータ管理および分類することができるツールです。
-ms.openlocfilehash: 107d08f247fc56720ccc3d11a3db88c77377257c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8488c7418ac03be53db7164678fad353bc7c637d
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870723"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476125"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>ファイル サーバー リソース マネージャー (FSRM) の概要
 
-> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server (半期チャネル) 
 
 ファイル サーバー リソース マネージャー (FSRM) は、ファイル サーバーに保存されたデータを管理者が管理および分類できる機能セットを備えています。 ファイル サーバー リソース マネージャーを使用して、自動的にファイルを分類、これらの分類に基づいてタスクを実行、フォルダーのクォータを設定および記憶域使用率を監視するレポートを作成することができます。
 
@@ -90,7 +90,7 @@ ms.locfileid: "59870723"
        ```
     2. バックアップでレジストリ エディターを右クリックし、 **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings**キーを選び**新規** > **複数行文字列値**します。
     3. 値に名前を`SkipUSNCreationForVolumes`します。
-    4. 各ボリュームをスキップする、変更ジャーナルを作成する別の行に各パスを配置するパスを入力します。 次に、例を示します。
+    4. 各ボリュームをスキップする、変更ジャーナルを作成する別の行に各パスを配置するパスを入力します。 例:
 
         ```
         \\?\Volume{8d3c9e8a-0000-0000-0000-100000000000}\

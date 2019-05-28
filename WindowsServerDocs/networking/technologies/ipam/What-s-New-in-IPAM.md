@@ -13,12 +13,12 @@ ms.topic: get-started-article
 ms.assetid: f2f2f1a5-ac2f-41b7-a495-98ad0e2a9b20
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 1305f889339fb4ca6815912924ba2232cfaf4cab
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 04838cba63805d20ba31629ed9c8e95290046320
+ms.sourcegitcommit: 29ad32b9dea298a7fe81dcc33d2a42d383018e82
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880753"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65624678"
 ---
 # <a name="whats-new-in-ipam"></a>IPAM の新機能
 
@@ -43,7 +43,7 @@ Windows Server 2016 での IPAM の新機能と更新機能を次に示します
 ### <a name="EIP"></a>IP アドレス管理の強化  
 次の機能には、IPAM のアドレスの管理機能が向上します。  
 >[!NOTE]
->IPAM の Windows PowerShell コマンドのリファレンスを参照してください。 [Windows PowerShell を使用した IP アドレス管理 (IPAM) サーバー コマンドレット](https://technet.microsoft.com/library/jj553807.aspx)します。  
+>IPAM の Windows PowerShell コマンドのリファレンスを参照してください。 [Windows PowerShell を使用した IP アドレス管理 (IPAM) サーバー コマンドレット](https://docs.microsoft.com/en-us/powershell/module/ipamserver/)します。  
   
 #### <a name="support-for-31-32-and-128-subnets"></a>31、/32、および/128 サポート サブネット  
 ここで 31、/32、および/128 をサポートするサブネットの Windows Server 2016 での IPAM します。 たとえば、2 つのアドレスのサブネット (/31 IPv4) のスイッチ間でのポイント ツー ポイント リンクに必要な場合があります。 一部のスイッチが 1 つのループバック アドレスにも、必要があります (/32 ipv4、IPv6 の/128)。  
@@ -57,7 +57,7 @@ Windows Server 2016 での IPAM の新機能と更新機能を次に示します
 >[!NOTE]
 >この関数は実際には、サブネットを割り当てられません、その可用性を報告するだけです。 コマンドレットの出力をパイプするただし、**追加 IpamSubnet**サブネットを作成するコマンド。  
   
-詳細については、次を参照してください。[検索 IpamFreeSubnet](https://technet.microsoft.com/library/mt712782.aspx)します。  
+詳細については、次を参照してください。[検索 IpamFreeSubnet](https://docs.microsoft.com/en-us/powershell/module/ipamserver/Find-IpamFreeSubnet)します。  
   
 #### <a name="find-free-address-ranges-with-find-ipamfreerange"></a>**検索 IpamFreeRange で無料のアドレス範囲を検索します。**  
   
@@ -68,7 +68,7 @@ Windows Server 2016 での IPAM の新機能と更新機能を次に示します
 > [!NOTE]
 > この関数は実際には、範囲を割り当てられません、その可用性を報告するだけです。 コマンドレットの出力をパイプするただし、**追加 IpamRange**範囲を作成するコマンド。  
   
-詳細については、次を参照してください。[検索 IpamFreeRange](https://technet.microsoft.com/library/mt712772.aspx)します。  
+詳細については、次を参照してください。[検索 IpamFreeRange](https://docs.microsoft.com/en-us/powershell/module/ipamserver/Find-IpamFreeRange)します。  
   
 ### <a name="EDNS"></a>DNS サービス管理の強化  
 Windows Server 2016 での IPAM で、IPAM が実行されている Active Directory フォレストでドメインに参加している、ファイル ベースの DNS サーバーの検出できるようになりました。  
@@ -129,5 +129,5 @@ Windows PowerShell を使用して、ロールベースのアクセス制御を�
   
 -   DHCP スコープ  
   
-詳細については、次を参照してください。[ロール ベース アクセス制御の管理 Windows PowerShell を使用した](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md)と[Windows PowerShell を使用した IP アドレス管理 (IPAM) サーバー コマンドレット](https://technet.microsoft.com/library/jj553807.aspx)します。  
+詳細については、次を参照してください。[ロール ベース アクセス制御の管理 Windows PowerShell を使用した](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md)と[Windows PowerShell を使用した IP アドレス管理 (IPAM) サーバー コマンドレット](https://docs.microsoft.com/en-us/powershell/module/ipamserver/)します。  
 

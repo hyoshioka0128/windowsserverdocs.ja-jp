@@ -8,21 +8,21 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4706372b06d0554196b692c3ddcda145dee5bae5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6eb6f2acd420ae657a5c1b698e9733751378552
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848173"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476085"
 ---
 # <a name="failover-clustering-hardware-requirements-and-storage-options"></a>フェールオーバー クラスタ リングのハードウェア要件と記憶域オプション
 
-適用対象:Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
+適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 フェールオーバー クラスターを作成するには、次のハードウェアが必要です。 Microsoft でサポートされるために、すべてのハードウェアが実行している Windows Server のバージョン用に認定されている必要があり、フェールオーバー クラスター ソリューション全体が構成の検証ウィザードのすべてのテストに合格する必要があります。 フェールオーバー クラスターの検証の詳細については、「 [Validate Hardware for a Failover Cluster](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)>)」を参照してください。
 
 - **サーバー**:同一または類似したコンポーネントで構成された一連のコンピューターを使用することをお勧めします。
-- **ネットワーク アダプターおよびケーブル (ネットワーク通信用)**:iSCSI を使用する場合は、各ネットワーク アダプターを、ネットワーク通信と iSCSI の両方ではなく、いずれか専用にする必要があります。
+- **ネットワーク アダプターおよびケーブル (ネットワーク通信用)** :iSCSI を使用する場合は、各ネットワーク アダプターを、ネットワーク通信と iSCSI の両方ではなく、いずれか専用にする必要があります。
 
     クラスター ノードを接続するネットワーク インフラストラクチャでは、単一障害点を回避する必要があります。 たとえば、複数の個別のネットワークを使用してクラスター ノードを接続する方法があります。 または、チーム化されたネットワーク アダプター、冗長なスイッチ、冗長なルーター、または単一障害点を除去するハードウェアで作成されますが、1 つのネットワークとクラスター ノードを接続できます。
 
@@ -73,6 +73,6 @@ Hyper-V の役割の詳細については、「 [Hyper-V の概要](<https://doc
 
 ## <a name="more-information"></a>詳細情報
 
-- [フェールオーバー クラスタ リング](failover-clustering.md)
+- [フェールオーバー クラスタリング](failover-clustering.md)
 - [記憶域スペース](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831739(v%3dws.11)>)
 - [ゲスト クラスタ リングの高可用性を使用します。](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn440540(v%3dws.11)>)

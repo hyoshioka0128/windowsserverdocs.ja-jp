@@ -1,6 +1,6 @@
 ---
 title: アプリケーション データ用のスケールアウト ファイル サーバーの概要
-description: Windows Server 201 R2、Windows Server 2012、および Windows Server 2016 のスケール アウト ファイル サーバー機能の概要です。
+description: Windows Server 201 R2 および Windows Server 2012 のスケール アウト ファイル サーバー機能の概要です。
 ms.prod: windows-server-threshold
 ms.topic: article
 author: JasonGerend
@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 04e25e9c69062611d9d14c220614f148ac5de770
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3e6d67eee496d19b216a4366af51ab5736229cf0
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884773"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476152"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>アプリケーション データ用のスケールアウト ファイル サーバーの概要
 
->適用対象:Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
+>適用対象:Windows Server 2012 R2、Windows Server 2012
 
 スケールアウト ファイル サーバーは、ファイル ベースのサーバー アプリケーション記憶域用に継続的に使用可能なスケールアウト ファイル共有を提供するように設計された機能です。 スケールアウト ファイル共有では、同じクラスターの複数のノードから同じフォルダーを共有できる機能が提供されます。 このシナリオでは、スケールアウト ファイル サーバーの計画および展開方法に焦点を当てます。
 
@@ -129,7 +129,7 @@ ms.locfileid: "59884773"
 <td>ファイル管理</td>
 <td>データ重複除去 (Windows Server 2012)</td>
 <td>〇</td>
-<td>いいえ</td>
+<td>X</td>
 </tr>
 <tr class="odd">
 <td>ファイル管理</td>
@@ -153,13 +153,13 @@ ms.locfileid: "59884773"
 <td>ファイル管理</td>
 <td>DFS レプリケーション (DFSR)</td>
 <td>〇</td>
-<td>いいえ</td>
+<td>X</td>
 </tr>
 <tr class="odd">
 <td>ファイル管理</td>
 <td>ファイル サーバー リソース マネージャー (画面とクォータ)</td>
 <td>〇</td>
-<td>いいえ</td>
+<td>X</td>
 </tr>
 <tr class="even">
 <td>ファイル管理</td>
@@ -201,7 +201,7 @@ ms.locfileid: "59884773"
 <td>ファイル管理</td>
 <td>ワーク フォルダー</td>
 <td>〇</td>
-<td>いいえ</td>
+<td>X</td>
 </tr>
 <tr class="odd">
 <td>NFS</td>
@@ -255,7 +255,7 @@ ms.locfileid: "59884773"
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="failover-clustering.md">フェールオーバー クラスタ リング</a></td>
+<td><a href="failover-clustering.md">フェールオーバー クラスタリング</a></td>
 <td>フェールオーバー クラスターでは、スケール アウト ファイル サーバーをサポートするために Windows Server 2012 では、次の機能が追加されます。分散ネットワーク名、スケール アウト ファイル サーバー リソースの種類、クラスター共有ボリューム (CSV) 2、およびスケール アウト ファイル サーバー高可用性役割。 これらの機能に関する詳細については、次を参照してください。<a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">新機能 [リダイレクト]、Windows Server 2012 のフェールオーバー クラスタ リングの新</a>します。</td>
 </tr>
 <tr class="even">

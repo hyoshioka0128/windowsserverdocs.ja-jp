@@ -7,21 +7,27 @@ ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
-ms.date: 09/15/2016
-ms.openlocfilehash: 4a69221548d9defff5a45413ccfe824f9788755a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.date: 04/17/2019
+ms.openlocfilehash: 44a08443312d4e48b8fa518755e2a9b7aa50643c
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876453"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476093"
 ---
 # <a name="whats-new-in-data-deduplication"></a>データ重複除去の新機能
 
-> 適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
-Windows Server 2016 の[データ重複除去](overview.md)は、プライベート クラウド スケールで高いパフォーマンスと柔軟性、および高度な管理を実現するために最適化されました。 Windows Server 2016 でのソフトウェア定義型記憶域スタックの詳細については、「[Windows Server 2016 での記憶域の新機能](../whats-new-in-storage.md)」を参照してください 。
+[データ重複除去](overview.md)Windows Server ではパフォーマンス、柔軟性が高く、管理しやすいプライベート クラウド規模である高度に適しています。 Windows server ソフトウェア定義記憶域スタックの詳細についてを参照してください[Windows Server での記憶域の新](../whats-new-in-storage.md)します。
 
-Windows Server 2016 のデータ重複除去は次のように機能強化されました。
+データ重複除去では、Windows Server 2019 に次の拡張機能があります。
+
+| 機能 | 新規/更新 | 説明 |
+|---------------|----------------|-------------|
+| ReFS のサポート  | 新規            | 重複除去と圧縮 ReFS ファイル システムを同じボリューム上には、最大 10 倍のデータを格納します。 (が[1 回のクリック](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)Windows Admin Center を有効にします)。省略可能な圧縮を使用して可変サイズのチャンク ストアはマルチ スレッドの処理後のアーキテクチャがパフォーマンスに与える影響を最小限の保持中に削減率を最大化します。 ボリュームをサポートしている最大 64 TB は各ファイルの最初の 4 TB の重複除去とします。|
+
+データ重複除去では、Windows Server 2016 以降、次の機能強化があります。
 
 | 機能 | 新規/更新 | 説明 |
 |---------------|----------------|-------------|

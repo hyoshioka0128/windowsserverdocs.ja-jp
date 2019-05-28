@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 923710fac426f63d2c38d9b9a68c92427783abb1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 413cf51e5ceb1c4507b71fb77ee6005807a0ff13
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890013"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476178"
 ---
 # <a name="troubleshooting-file-server-resource-manager"></a>ファイル サーバー リソース マネージャーのトラブルシューティング
 
-> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 ここでは、ファイル サーバー リソース マネージャーの使用時によく発生する問題を紹介します。
 
@@ -59,5 +59,5 @@ ms.locfileid: "59890013"
 
 -   **原因**:入れ子になったクォータのサブフォルダーのクォータがその親フォルダーのクォータからより厳しい制限を派生する必要があります。 たとえば、親フォルダーに 100 MB のクォータの制限が適用され、そのサブフォルダーのそれぞれに 200 MB のクォータが別途適用されている場合を考えてみましょう。 親フォルダーに合計 50 MBのデータ (サブフォルダーに格納されているデータの合計) が格納されている場合、各サブフォルダーの利用可能な容量は 50 MB と表示されます。
 
--   **解決方法**:[**クォータの管理**、] をクリックして**クォータ**します。 **[結果]** ウィンドウで、トラブルシューティングを行うクォータ エントリを選択します。 **[操作]** ウィンドウで、**[フォルダーに影響するクォータの表示]** をクリックし、親フォルダーに適用されているクォータを確認します。 これにより、選択したクォータよりも小さい記憶域制限が設定されている親フォルダーのクォータを特定できます。
+-   **解決方法**:[**クォータの管理**、] をクリックして**クォータ**します。 **[結果]** ウィンドウで、トラブルシューティングを行うクォータ エントリを選択します。 **[操作]** ウィンドウで、 **[フォルダーに影響するクォータの表示]** をクリックし、親フォルダーに適用されているクォータを確認します。 これにより、選択したクォータよりも小さい記憶域制限が設定されている親フォルダーのクォータを特定できます。
 

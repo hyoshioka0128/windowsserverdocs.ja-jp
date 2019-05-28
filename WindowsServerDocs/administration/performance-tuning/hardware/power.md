@@ -7,22 +7,22 @@ ms.topic: article
 ms.author: Qizha;TristanB
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5261c856a0a29f9f58526e4f9580a16bbed5be56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5fe91888188796c96d5da80e8f9bd3ed627b9d43
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874303"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564740"
 ---
 # <a name="server-hardware-power-considerations"></a>サーバー ハードウェアの電源に関する考慮事項
 
 Enterprise およびデータ センター環境でエネルギー効率の向上の重要性を認識する重要です。 高パフォーマンスと低エネルギーの使用状況は多くの場合、競合する目標は、サーバー コンポーネントを慎重に選択するには、適切なバランスを実現できます。 次のセクションでは、電源の特性と機能のサーバーのハードウェア コンポーネントのためのガイドラインを一覧表示します。
 
-## <a name="processor-recommendations"></a>プロセッサの推奨事項
+## <a name="processor-recommendations"></a>プロセッサに関する推奨事項
 
 頻度、電圧、キャッシュ サイズ、およびプロセスのテクノロジの動作では、プロセッサの電力消費量に影響します。 その他のモデルの基準としたエネルギー消費量の基本の明示 (TDP) 評価ポイント熱設計になっているプロセッサ。
 
-一般に、最下位のパフォーマンスの目標を満たす TDP プロセッサを選択します。 また、新しい世代のプロセッサは一般的に、エネルギー効率が高い、Windows の電源管理アルゴリズムの複数の電源状態を失う可能性がありますが、パフォーマンスのすべてのレベルより優れた電源管理を有効にします。 いくつかの新しい"共同を使用することがありますか。 ハードウェアの製造元とのパートナーシップで Microsoft が開発した電源管理手法です。
+一般に、最下位のパフォーマンスの目標を満たす TDP プロセッサを選択します。 また、新しい世代のプロセッサは一般的に、エネルギー効率が高い、Windows の電源管理アルゴリズムの複数の電源状態を失う可能性がありますが、パフォーマンスのすべてのレベルより優れた電源管理を有効にします。 または、ハードウェア メーカーと共同でマイクロソフトが開発した新しい「協調」の電源管理の手法の一部を使用することががあります。
 
 協調電源管理の手法の詳細についてで共同作業のプロセッサ パフォーマンスの制御をという名前のセクションを参照してください、 [Advanced Configuration and Power Interface Specification](http://www.uefi.org/sites/default/files/resources/ACPI_5_1release.pdf)します。
 
@@ -70,5 +70,5 @@ Enterprise およびデータ センター環境でエネルギー効率の向�
 ## <a name="see-also"></a>関連項目
 - [サーバー ハードウェアのパフォーマンスに関する考慮事項](index.md)
 - [電源とパフォーマンスのチューニング](power/power-performance-tuning.md)
-- [プロセッサの電源管理の調整](power/processor-power-management-tuning.md)
-- [バランスの取れたプラン パラメーターをお勧めします。](power/recommended-balanced-plan-parameters.md)
+- [プロセッサの電源管理チューニング](power/processor-power-management-tuning.md)
+- [推奨されるバランスのプラン パラメーター](power/recommended-balanced-plan-parameters.md)

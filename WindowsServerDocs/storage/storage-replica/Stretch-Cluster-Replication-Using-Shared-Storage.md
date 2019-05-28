@@ -6,18 +6,18 @@ ms.author: nedpyle
 ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
-ms.date: 10/26/2016
+ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: 18c3c694e1d2e21a7068877ba22786862824bea6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fc49674d518756424acc02bd5b830c361c7400df
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888373"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772426"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>共有記憶域を使用したストレッチ クラスター レプリケーション
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 この評価の例では、単一のストレッチ クラスター内にこれらのコンピューターとその記憶域を構成します。ここでは、2 つのノードがストレージの 1 つのセットを共有し、2 つのノードが別のストレージのセットを共有し、レプリケーションはクラスター内のミラー化された両方のストレージのセットを維持して、直ちにフェールオーバーできるようにします。 これらのノードとその記憶域は個別の物理サイトに配置することをお勧めしますが、必須ではありません。 サンプルのシナリオに示すように、Hyper-V とファイル サーバー クラスターで別々の作成手順があります。  
 
@@ -40,7 +40,7 @@ ms.locfileid: "59888373"
 
 ## <a name="prerequisites"></a>前提条件  
 -   Active Directory Domain Services フォレスト (Windows Server 2016 を実行する必要はありません)。  
--   Windows Server 2016 Datacenter Edition がインストールされている少なくとも 2 つのサーバー。 最大 2 つの 64 ノード クラスターをサポート。  
+-   Windows Server 2019 または Windows Server 2016 Datacenter Edition を実行している 2 から 64 サーバー。 [Ok] を 1 つのボリュームだけをレプリケートする場合に、代わりに Standard Edition を使用する Windows Server 2019 を実行している場合に最大 2 TB のサイズ。 
 -   SAS JBOD (記憶域スペースなどを搭載)、ファイバー チャネル SAN、共有 VHDX、または iSCSI ターゲットを使用する 2 セットの共有記憶域。 記憶域は、HDD と SSD メディアの混在を含み、永続的な予約をサポートしている必要があります。 各記憶域セットを 2 つのサーバーのみが使用できるようにすることができます (非対称)。  
 -   各記憶域セットでは、2 つ以上の仮想ディスク (レプリケートされたデータ用とログ用) を作成できる必要があります。 物理記憶域のセクター サイズは、すべてのデータ ディスクで同じである必要があります。 物理記憶域のセクター サイズは、すべてのログ ディスクで同じである必要があります。  
 -   同期レプリケーションのために各サーバーで少なくとも 1 つの 1 GbE 接続 (可能であれば RDMA)。   
@@ -53,7 +53,7 @@ ms.locfileid: "59888373"
 
 ## <a name="provision-operating-system-features-roles-storage-and-network"></a>オペレーティング システム、機能、役割、記憶域、およびネットワークのプロビジョニング  
 
-1.  Windows Server 2016 Datacenter Edition をすべてのサーバー ノードにインストールします。 Standard Edition が利用可能でも、これには記憶域レプリカが含まれていないため選択しないでください。 Windows Server Desktop Experience、Core、Nano インストール モードはすべてサポートされます。  
+1.  デスクトップ エクスペリエンスのインストール オプションを使用して、Server Core またはサーバーを使用して、すべてのサーバー ノードで Windows Server をインストールします。  
     > [!IMPORTANT]
     > この時点以降、すべてのサーバーのビルトイン Administrator グループのメンバーであるドメイン ユーザーとして常にログオンします。 今後、グラフィカルなサーバーのインストールまたは Windows 10 コンピューターで実行するとき、PowerShell および CMD プロンプトを昇格してください。
 
@@ -76,7 +76,7 @@ ms.locfileid: "59888373"
 
     -   **グラフィカルな方法**  
 
-        **ServerManager.exe** を実行し、**[管理]**、**[サーバーの追加]** をクリックしてすべてのサーバー ノードを追加します。  
+        **ServerManager.exe** を実行し、 **[管理]** 、 **[サーバーの追加]** をクリックしてすべてのサーバー ノードを追加します。  
 
         > [!IMPORTANT]
         > **フェールオーバー クラスタリング**と**記憶域レプリカ**の役割と機能を各ノードでインストールし、再起動します。 Hyper-V、ファイル サーバーなどの役割を使用する予定の場合は、この時点でそれらもインストールできます。  
@@ -92,7 +92,7 @@ ms.locfileid: "59888373"
 
         ```  
 
-        詳細については、「[役割、役割サービス、または機能のインストールまたはアンインストール](https://technet.microsoft.com/library/hh831809.aspx)」を参照してください。  
+        詳細については、「[役割、役割サービス、または機能のインストールまたはアンインストール](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md)」を参照してください。  
 
 
 8. 記憶域を次のように構成します。  
@@ -114,13 +114,13 @@ ms.locfileid: "59888373"
 
         1.  ペアリングされた各サーバー ノードのセットがそのサイトのストレージ格納装置 (つまり非対称記憶域) のみを参照できることと、SAS 接続が正しく構成されていることを確認します。  
 
-        2.  記憶域スペースを使用して記憶域をプロビジョニングします。これには、「[スタンドアロン サーバーに記憶域スペースを展開する](https://technet.microsoft.com/library/jj822938.aspx)」の**手順 1 - 3** に従い、Windows PowerShell またはサーバー マネージャーを使用します。  
+        2.  記憶域スペースを使用して記憶域をプロビジョニングします。これには、「[スタンドアロン サーバーに記憶域スペースを展開する](../storage-spaces/deploy-standalone-storage-spaces.md)」の**手順 1 - 3** に従い、Windows PowerShell またはサーバー マネージャーを使用します。  
 
     -   **ISCSI ストレージの場合。**  
 
         1.  ペアリングされた各サーバー ノードのセットがそのサイトのストレージ格納装置 (つまり非対称記憶域) のみを参照できることを確認します。 iSCSI を使用する場合は、複数の単一ネットワーク アダプターを使用する必要があります。  
 
-        2.  ベンダーのドキュメントを参照して記憶域をプロビジョニングします。 Windows ベースの iSCSI ターゲットを使用する場合は、「[iSCSI ターゲット ブロック記憶域: 操作方法](https://technet.microsoft.com/library/hh848268.aspx)」を参照してください。  
+        2.  ベンダーのドキュメントを参照して記憶域をプロビジョニングします。 Windows ベースの iSCSI ターゲットを使用する場合は、「[iSCSI ターゲット ブロック記憶域: 操作方法](../iscsi/iscsi-target-server.md)」を参照してください。  
 
     -   **FC SAN ストレージ。**  
 
@@ -139,7 +139,7 @@ ms.locfileid: "59888373"
 >[!NOTE]
 > Hyper-V クラスターではなくファイル サーバー クラスターを作成する場合は、このセクションをスキップして、「[汎用クラスター用のファイル サーバーを構成する](#BKMK_FileServer)」セクションに進んでください。  
 
-次に、通常のフェールオーバー クラスターを作成します。 構成、検証、テストを完了した後で、記憶域レプリカを使用して拡大します。 次のすべての手順は、クラスター ノード上で直接実行することも、Windows Server 2016 RSAT 管理ツールをインストール済みのリモート管理コンピューターから実行することもできます。  
+次に、通常のフェールオーバー クラスターを作成します。 構成、検証、テストを完了した後で、記憶域レプリカを使用して拡大します。 クラスター ノードを直接または Windows Server のリモート サーバー管理ツールを含むリモート管理コンピューターから、すべての次の手順を実行することができます。  
 
 #### <a name="graphical-method"></a>グラフィカルな方法  
 
@@ -150,19 +150,19 @@ ms.locfileid: "59888373"
     > [!NOTE]  
     > 非対称ストレージ使用のために起こる、クラスター検証からのストレージ エラーを予測する必要があります。  
 
-3.  Hyper-V コンピューター クラスターを作成します。 クラスター名が 15 文字以下であることを確認します。 以下で使用する例は、SR-SRVCLUS です。 ノードは、異なるサブネット内に存在するもの場合、は、サブネットごとに、クラスター名の IP アドレスを作成を「または」依存関係を使用する必要があります。  詳細をご覧[IP アドレスの構成とマルチ サブネット クラスター – 第 4 部の依存関係](https://blogs.msdn.microsoft.com/clustering/2011/08/31/configuring-ip-addresses-and-dependencies-for-multi-subnet-clusters-part-iii/)します。  
+3.  Hyper-V コンピューター クラスターを作成します。 クラスター名が 15 文字以下であることを確認します。 以下で使用する例は、SR-SRVCLUS です。 ノードは、異なるサブネット内に存在するもの場合、は、サブネットごとに、クラスター名の IP アドレスを作成を「または」依存関係を使用する必要があります。  詳細をご覧[IP アドレスの構成とマルチ サブネット クラスター – 第 4 部の依存関係](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698)します。  
 
 4.  サイトの停止が発生した場合に、クォーラムを提供するために、ファイル共有監視またはクラウド監視を構成します。  
 
     > [!NOTE]  
-    > Windows Server 2016 では、クラウド (Azure) ベースの監視オプションも追加されました。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。  
+    > WIndows Server ではクラウド (Azure) のオプションが含まれるようになりました-ベースの監視。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。  
 
     > [!WARNING]  
-    > クォーラム構成の詳細については、[「Windows Server 2012 フェールオーバー クラスターでクォーラムを構成および管理する」の「監視の構成」](https://technet.microsoft.com/library/jj612870.aspx)を参照してください。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](https://technet.microsoft.com/library/hh847275.aspx)」を参照してください。  
+    > クォーラム構成の詳細については、[「Windows Server 2012 フェールオーバー クラスターでクォーラムを構成および管理する」の「監視の構成」](https://technet.microsoft.com/library/jj612870.aspx)を参照してください。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。  
 
 5.  「[Windows Server 2012 の HYPER-V クラスターのネットワークの推奨事項](https://technet.microsoft.com/library/dn550728.aspx)」を確認し、クラスター ネットワークが最適に構成されていることを確認します。  
 
-6.  Redmond サイトでクラスター CSV に 1 台のディスクを追加します。 これを行うには、**[記憶域]** セクションの **[ディスク]** ノードでソース ディスクを右クリックして、**[クラスターの共有ボリュームへの追加]** をクリックします。  
+6.  Redmond サイトでクラスター CSV に 1 台のディスクを追加します。 これを行うには、 **[記憶域]** セクションの **[ディスク]** ノードでソース ディスクを右クリックして、 **[クラスターの共有ボリュームへの追加]** をクリックします。  
 
 7.  「[Hyper-V クラスターを展開する](https://technet.microsoft.com/library/jj863389.aspx)」ガイドを使用し、**Redmond** サイトの手順 7 ～ 10 に従って、テスト仮想マシンを作成し、最初のテスト サイトでストレージを共有する 2 つのノード内で、クラスターが通常動作していることを確認します。  
 
@@ -179,10 +179,10 @@ ms.locfileid: "59888373"
     4. すべての利用可能な記憶域を **SR-SRV03** に移動します。
     5. フェールオーバー クラスター マネージャーの **[役割]** セクションで **[空の役割の作成]** をクリックします。
     6. 空の **[新しい役割 (2)]** を **SR-SRV03** に移動します。
-    7. オンライン記憶域をこの空の役割に追加し、「**新しい役割 (2)**」という名前を付けます。
+    7. オンライン記憶域をこの空の役割に追加し、「**新しい役割 (2)** 」という名前を付けます。
     8. これで、ドライブ文字を付けてすべての記憶域をマウントしたため、`Test-SRTopology` を使用してクラスターを評価できます。
 
-        次に、例を示します。
+        例:
 
             MD c:\temp  
 
@@ -242,22 +242,23 @@ ms.locfileid: "59888373"
     > [!NOTE]
     >  非対称ストレージ使用のために起こる、クラスター検証からのストレージ エラーを予測する必要があります。  
 
-2.  HYPER-V 計算クラスターを作成します (クラスターで使用する独自の静的 IP アドレスを指定する必要があります)。 クラスター名が 15 文字以下であることを確認します。  ノードは、異なるサブネットに存在する場合、追加のサイトの IP アドレスよりも作成しなければなりません"OR"依存関係を使用します。 詳細をご覧[IP アドレスの構成とマルチ サブネット クラスター – 第 4 部の依存関係](https://blogs.msdn.microsoft.com/clustering/2011/08/31/configuring-ip-addresses-and-dependencies-for-multi-subnet-clusters-part-iii/)します。
+2.  HYPER-V 計算クラスターを作成します (クラスターで使用する独自の静的 IP アドレスを指定する必要があります)。 クラスター名が 15 文字以下であることを確認します。  ノードは、異なるサブネットに存在する場合、追加のサイトの IP アドレスよりも作成しなければなりません"OR"依存関係を使用します。 詳細をご覧[IP アドレスの構成とマルチ サブネット クラスター – 第 4 部の依存関係](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698)します。
 ```PowerShell  
 New-Cluster -Name SR-SRVCLUS -Node SR-SRV01, SR-SRV02, SR-SRV03, SR-SRV04 -StaticAddress <your IP here>  
 Add-ClusterResource -Name NewIPAddress -ResourceType “IP Address” -Group “Cluster Group”
 Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Cluster IP Address] or [NewIPAddress]”
 ```  
-3.  ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 次に、例を示します。  
+
+3.  ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 例:  
 
     ```PowerShell  
     Set-ClusterQuorum -FileShareWitness \\someserver\someshare  
     ```  
 
     > [!NOTE]
-    > Windows Server 2016 では、クラウド (Azure) ベースの監視オプションも追加されました。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。  
+    > WIndows Server ではクラウド (Azure) のオプションが含まれるようになりました-ベースの監視。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。  
     
-    クォーラム構成の詳細については、[「Windows Server 2012 フェールオーバー クラスターでクォーラムを構成および管理する」の「監視の構成」](https://technet.microsoft.com/library/jj612870.aspx)を参照してください。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](https://technet.microsoft.com/library/hh847275.aspx)」を参照してください。  
+    クォーラム構成の詳細については、[「Windows Server 2012 フェールオーバー クラスターでクォーラムを構成および管理する」の「監視の構成」](https://technet.microsoft.com/library/jj612870.aspx)を参照してください。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。  
 
 4.  「[Windows Server 2012 の HYPER-V クラスターのネットワークの推奨事項](https://technet.microsoft.com/library/dn550728.aspx)」を確認し、クラスター ネットワークが最適に構成されていることを確認します。  
 
@@ -304,7 +305,7 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
 >[!NOTE]
 > 「[HYPER-V フェールオーバー クラスターを構成する](#BKMK_HyperV)」の説明に従って既に HYPER-V フェールオーバー クラスターを構成している場合は、このセクションをスキップしてください。  
 
-次に、通常のフェールオーバー クラスターを作成します。 構成、検証、テストを完了した後で、記憶域レプリカを使用して拡大します。 次のすべての手順は、クラスター ノード上で直接実行することも、Windows Server 2016 RSAT 管理ツールをインストール済みのリモート管理コンピューターから実行することもできます。  
+次に、通常のフェールオーバー クラスターを作成します。 構成、検証、テストを完了した後で、記憶域レプリカを使用して拡大します。 クラスター ノードを直接または Windows Server のリモート サーバー管理ツールを含むリモート管理コンピューターから、すべての次の手順を実行することができます。  
 
 #### <a name="graphical-method"></a>グラフィカルな方法  
 
@@ -313,13 +314,13 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
 2.  提案されたクラスターを検証し、結果を分析して、続行できることを確認します。  
     >[!NOTE]
     >非対称ストレージ使用のために起こる、クラスター検証からのストレージ エラーを予測する必要があります。   
-3. 汎用記憶域クラスター用のファイル サーバーを作成します。 クラスター名が 15 文字以下であることを確認します。 以下で使用する例は、SR-SRVCLUS です。  ノードは、異なるサブネット内に存在するもの場合、は、サブネットごとに、クラスター名の IP アドレスを作成を「または」依存関係を使用する必要があります。  詳細をご覧[IP アドレスの構成とマルチ サブネット クラスター – 第 4 部の依存関係](https://blogs.msdn.microsoft.com/clustering/2011/08/31/configuring-ip-addresses-and-dependencies-for-multi-subnet-clusters-part-iii/)します。  
+3. 汎用記憶域クラスター用のファイル サーバーを作成します。 クラスター名が 15 文字以下であることを確認します。 以下で使用する例は、SR-SRVCLUS です。  ノードは、異なるサブネット内に存在するもの場合、は、サブネットごとに、クラスター名の IP アドレスを作成を「または」依存関係を使用する必要があります。  詳細をご覧[IP アドレスの構成とマルチ サブネット クラスター – 第 4 部の依存関係](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698)します。  
 
 4.  サイトの停止が発生した場合に、クォーラムを提供するために、ファイル共有監視またはクラウド監視を構成します。  
     >[!NOTE]
-    > Windows Server 2016 では、クラウド (Azure) ベースの監視オプションも追加されました。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。                                                                                                                                                                             
+    > WIndows Server ではクラウド (Azure) のオプションが含まれるようになりました-ベースの監視。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。                                                                                                                                                                             
     >[!NOTE]
-    >  クォーラム構成の詳細については、[「Windows Server 2012 フェールオーバー クラスターでクォーラムを構成および管理する」の「監視の構成」](https://technet.microsoft.com/library/jj612870.aspx)を参照してください。 Set-ClusterQuorum コマンドレットについて詳しくは、「[Set-ClusterQuorum](https://technet.microsoft.com/library/hh847275.aspx)」をご覧ください。 
+    >  クォーラム構成の詳細については、[「Windows Server 2012 フェールオーバー クラスターでクォーラムを構成および管理する」の「監視の構成」](https://technet.microsoft.com/library/jj612870.aspx)を参照してください。 Set-ClusterQuorum コマンドレットについて詳しくは、「[Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)」をご覧ください。 
 
 5.  2 ノード ストレッチ クラスターを作成する場合は、作業を続行する前にすべての記憶域を追加する必要があります。 これを行うには、クラスター ノードで管理者権限を使用して PowerShell セッションを開き、コマンド `Get-ClusterAvailableDisk -All | Add-ClusterDisk` を実行します。
 
@@ -329,19 +330,19 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
     >[!NOTE]
     > 次の手順に進む前に、ファイル サーバーの役割をすべてのノードにインストールする必要があります。   |  
 
-7.  **[役割]** で、**[役割の構成]** をクリックします。 **[開始する前に]** を確認し、**[次へ]** をクリックします。  
+7.  **[役割]** で、 **[役割の構成]** をクリックします。 **[開始する前に]** を確認し、 **[次へ]** をクリックします。  
 
-8.  **[ファイル サーバー]** を選択し、**[次へ]** をクリックします。  
+8.  **[ファイル サーバー]** を選択し、 **[次へ]** をクリックします。  
 
-9.  **[汎用ファイル サーバー]** が選択されたままにし、**[次へ]** をクリックします。  
+9.  **[汎用ファイル サーバー]** が選択されたままにし、 **[次へ]** をクリックします。  
 
-10.  **クライアント アクセス ポイント**名 (15 文字以下) を指定し、**[次へ]** をクリックします。  
+10.  **クライアント アクセス ポイント**名 (15 文字以下) を指定し、 **[次へ]** をクリックします。  
 
 11.  データ ボリュームにするディスクを選択して **[次へ]** をクリックします。  
 
-12.  設定を確認して、**[次へ]** をクリックします。 **[Finish]**(完了) をクリックします。  
+12.  設定を確認して、 **[次へ]** をクリックします。 **[Finish]** (完了) をクリックします。  
 
-13.  新しいファイル サーバーの役割を右クリックし、**[ファイル共有の追加]** をクリックします。 共有を構成するウィザードを実行します。  
+13.  新しいファイル サーバーの役割を右クリックし、 **[ファイル共有の追加]** をクリックします。 共有を構成するウィザードを実行します。  
 
 14.  省略可能: このサイトで他のストレージを使用する別のファイル サーバーの役割を追加します。  
 
@@ -365,33 +366,40 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
 
 16.  (省略可能) DNS サイトの高速フェール オーバーのためにクラスター ネットワークと Active Directory を構成します。 拡大された VLAN、ネットワーク抽象化デバイス、短くした DNS の TTL、およびその他の一般的な手法を使用することができます。  
 
-    詳細については、Microsoft Ignite セッション「[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](http://channel9.msdn.com/events/ignite/2015/brk3487)」(Windows Server vNext でのフェールオーバー クラスターの拡大と記憶域レプリカの使用) およびブログ記事「[Enable Change Notifications between Sites - How and Why?](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)」(サイト間での変更通知の有効化 - 方法とこれを行う理由) を参照してください。    
+詳細については、Microsoft Ignite セッション「[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](http://channel9.msdn.com/events/ignite/2015/brk3487)」(Windows Server vNext でのフェールオーバー クラスターの拡大と記憶域レプリカの使用) およびブログ記事「[Enable Change Notifications between Sites - How and Why?](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)」(サイト間での変更通知の有効化 - 方法とこれを行う理由) を参照してください。    
 
-#### <a name="powershell-method"></a>PowerShell による方法  
+#### <a name="powershell-method"></a>PowerShell による方法
+
 1. 提案されたクラスターをテストし、結果を分析して、続行できることを確認します。    
 
-        Test-Cluster SR-SRV01, SR-SRV02, SR-SRV03, SR-SRV04  
+    ```PowerShell
+    Test-Cluster SR-SRV01, SR-SRV02, SR-SRV03, SR-SRV04
+    ```
 
     > [!NOTE]
     >  非対称ストレージ使用のために起こる、クラスター検証からのストレージ エラーを予測する必要があります。   
 
-2.  HYPER-V 計算クラスターを作成します (クラスターで使用する独自の静的 IP アドレスを指定する必要があります)。 クラスター名が 15 文字以下であることを確認します。  ノードは、異なるサブネットに存在する場合、追加のサイトの IP アドレスよりも作成しなければなりません"OR"依存関係を使用します。 詳細をご覧[IP アドレスの構成とマルチ サブネット クラスター – 第 4 部の依存関係](https://blogs.msdn.microsoft.com/clustering/2011/08/31/configuring-ip-addresses-and-dependencies-for-multi-subnet-clusters-part-iii/)します。  
+2.  HYPER-V 計算クラスターを作成します (クラスターで使用する独自の静的 IP アドレスを指定する必要があります)。 クラスター名が 15 文字以下であることを確認します。  ノードは、異なるサブネットに存在する場合、追加のサイトの IP アドレスよりも作成しなければなりません"OR"依存関係を使用します。 詳細をご覧[IP アドレスの構成とマルチ サブネット クラスター – 第 4 部の依存関係](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698)します。  
 
-        New-Cluster -Name SR-SRVCLUS -Node SR-SRV01, SR-SRV02, SR-SRV03, SR-SRV04 -StaticAddress <your IP here> 
+    ```PowerShell
+    New-Cluster -Name SR-SRVCLUS -Node SR-SRV01, SR-SRV02, SR-SRV03, SR-SRV04 -StaticAddress <your IP here> 
 
-        Add-ClusterResource -Name NewIPAddress -ResourceType “IP Address” -Group “Cluster Group”
+    Add-ClusterResource -Name NewIPAddress -ResourceType “IP Address” -Group “Cluster Group”
 
-        Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Cluster IP Address] or [NewIPAddress]”
+    Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Cluster IP Address] or [NewIPAddress]”
+    ```
 
 
-3. ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 次に、例を示します。  
+3. ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 例:  
 
-       Set-ClusterQuorum -FileShareWitness \\someserver\someshare  
+    ```PowerShell
+    Set-ClusterQuorum -FileShareWitness \\someserver\someshare
+    ```
 
     >[!NOTE]
-    > Windows Server 2016 では、クラウド (Azure) ベースの監視オプションも追加されました。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。  
+    > Windows Server には、Azure を使用してクラウド監視するためのオプションが含まれています。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。  
 
-   クォーラム構成の詳細については、[「Windows Server 2012 フェールオーバー クラスターでクォーラムを構成および管理する」の「監視の構成」](https://technet.microsoft.com/library/jj612870.aspx)を参照してください。 Set-ClusterQuorum コマンドレットについて詳しくは、「[Set-ClusterQuorum](https://technet.microsoft.com/library/hh847275.aspx)」をご覧ください。   
+   クォーラム構成の詳細については、次を参照してください。、[理解とプールのクラスターのクォーラム](../storage-spaces/understand-quorum.md)します。 Set-ClusterQuorum コマンドレットについて詳しくは、「[Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)」をご覧ください。
 
 4.  2 ノード ストレッチ クラスターを作成する場合は、作業を続行する前にすべての記憶域を追加する必要があります。 これを行うには、クラスター ノードで管理者権限を使用して PowerShell セッションを開き、コマンド `Get-ClusterAvailableDisk -All | Add-ClusterDisk` を実行します。
 
@@ -399,16 +407,16 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
 
 5. クラスター ネットワークが最適に構成されていることを確認します。  
 
-6.  ファイル サーバーの役割を構成します。 次に、例を示します。   
+6.  ファイル サーバーの役割を構成します。 次に、例を示します。
 
-        ```PowerShell  
-        Get-ClusterResource  
-        Add-ClusterFileServerRole -Name SR-CLU-FS2 -Storage "Cluster Disk 4"  
+    ```PowerShell  
+    Get-ClusterResource  
+    Add-ClusterFileServerRole -Name SR-CLU-FS2 -Storage "Cluster Disk 4"  
 
-        MD e:\share01  
+    MD e:\share01  
 
-        New-SmbShare -Name Share01 -Path f:\share01 -ContinuouslyAvailable $false  
-        ```
+    New-SmbShare -Name Share01 -Path f:\share01 -ContinuouslyAvailable $false  
+    ```
 
 7. ストレッチ クラスター サイトの認識を構成し、サーバー SR SRV01 と SR SRV02 がサイト Redmond に含まれ、SR SRV03 と SR SRV04 がサイト Bellevue に含まれ、Redmond がソース記憶域と仮想マシンのノードの所有権で優先されるようにします。  
 
@@ -430,7 +438,7 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
     詳細については、Microsoft Ignite セッション「[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](http://channel9.msdn.com/events/ignite/2015/brk3487)」(Windows Server vNext でのフェールオーバー クラスターの拡大と記憶域レプリカの使用) およびブログ記事「[Enable Change Notifications between Sites - How and Why?](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)」(サイト間での変更通知の有効化 - 方法とこれを行う理由) を参照してください。
 
 ### <a name="configure-a-stretch-cluster"></a>ストレッチ クラスターを構成する  
-ここでは、フェールオーバー クラスター マネージャーまたは Windows PowerShell を使用してストレッチ クラスターを構成します。 次のすべての手順は、クラスター ノード上で直接実行することも、Windows Server 2016 RSAT 管理ツールをインストール済みのリモート管理コンピューターから実行することもできます。  
+ここでは、フェールオーバー クラスター マネージャーまたは Windows PowerShell を使用してストレッチ クラスターを構成します。 クラスター ノードを直接または Windows Server のリモート サーバー管理ツールを含むリモート管理コンピューターから、すべての次の手順を実行することができます。  
 
 #### <a name="failover-cluster-manager-method"></a>フェールオーバー クラスター マネージャーを使用する方法  
 
@@ -439,20 +447,20 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
 
     ![フェールオーバー クラスター マネージャーの表示画面](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_OnlineDisks2.png)  
 
-2.  CSV ディスクまたは役割がアタッチされたディスクを右クリックし、**[レプリケーション]** をクリックして **[有効]** をクリックします。  
+2.  CSV ディスクまたは役割がアタッチされたディスクを右クリックし、 **[レプリケーション]** をクリックして **[有効]** をクリックします。  
 
-3.  適切なレプリケーション先のデータ ボリュームを選択し、**[次へ]** をクリックします。 表示されるレプリケーション先ディスクには、選択したレプリケーション元ディスクと同じサイズのボリュームがあります。 これらのウィザードのダイアログ間を移動するときには、使用可能な記憶域が自動的に移動し、必要に応じてバックグラウンドでオンラインになります。  
+3.  適切なレプリケーション先のデータ ボリュームを選択し、 **[次へ]** をクリックします。 表示されるレプリケーション先ディスクには、選択したレプリケーション元ディスクと同じサイズのボリュームがあります。 これらのウィザードのダイアログ間を移動するときには、使用可能な記憶域が自動的に移動し、必要に応じてバックグラウンドでオンラインになります。  
 
     ![記憶域レプリカの構成ウィザードの [レプリケーション先データ ディスクの選択] ページの表示画面](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_SelectDestinationDataDisk2.png)  
 
-4.  適切なレプリケーション元のログ ディスクを選択し、**[次へ]** をクリックします。 レプリケーション元ログ ボリュームは、回転ディスクではなく SSD または同様の高速なメディアを使用するディスク上に置かれている必要があります。  
+4.  適切なレプリケーション元のログ ディスクを選択し、 **[次へ]** をクリックします。 レプリケーション元ログ ボリュームは、回転ディスクではなく SSD または同様の高速なメディアを使用するディスク上に置かれている必要があります。  
 
 5.  適切なレプリケーション先のログ ボリュームを選択し、[次へ] をクリックします。 表示されるレプリケーション先ログ ディスクには、選択したレプリケーション元ログ ディスクと同じサイズのボリュームがあります。  
 
-6.  レプリケーション先ボリュームに、レプリケーション元サーバーからのデータの以前のコピーが含まれていない場合は、**[Overwrite Volume]** (ボリュームを上書き) の値を **[レプリケーション先ボリュームを上書き]** のままにします。 最近のバックアップまたは以前のレプリケーションからの類似したデータがレプリケーション先ボリュームに含まれている場合は、**[シードされたレプリケーション先ディスク]** を選択し、**[次へ]** をクリックします。  
+6.  レプリケーション先ボリュームに、レプリケーション元サーバーからのデータの以前のコピーが含まれていない場合は、 **[Overwrite Volume]** (ボリュームを上書き) の値を **[レプリケーション先ボリュームを上書き]** のままにします。 最近のバックアップまたは以前のレプリケーションからの類似したデータがレプリケーション先ボリュームに含まれている場合は、 **[シードされたレプリケーション先ディスク]** を選択し、 **[次へ]** をクリックします。  
 
-7.  ゼロ PRO レプリケーションを使用する場合は、**[レプリケーション モード]** の値を **[同期レプリケーション]** のままにします。 待機時間が長いネットワーク上でクラスターを拡大する場合やプライマリ サイト ノード上で IO 待機時間を短縮する必要がある場合は、**[非同期レプリケーション]** に変更します。  
-8.  レプリケーション グループ内で追加のディスクペアを使用して書き込み順序指定を後で使用する場合は、**[整合性グループ]** の値を **[最も高いパフォーマンス]** のままにします。 このレプリケーション グループにディスクを追加し、保証された書き込み順序指定が必要な場合は、**[書き込み順序を有効にする]** を選択し、**[次へ]** をクリックします。  
+7.  ゼロ PRO レプリケーションを使用する場合は、 **[レプリケーション モード]** の値を **[同期レプリケーション]** のままにします。 待機時間が長いネットワーク上でクラスターを拡大する場合やプライマリ サイト ノード上で IO 待機時間を短縮する必要がある場合は、 **[非同期レプリケーション]** に変更します。  
+8.  レプリケーション グループ内で追加のディスクペアを使用して書き込み順序指定を後で使用する場合は、 **[整合性グループ]** の値を **[最も高いパフォーマンス]** のままにします。 このレプリケーション グループにディスクを追加し、保証された書き込み順序指定が必要な場合は、 **[書き込み順序を有効にする]** を選択し、 **[次へ]** をクリックします。  
 
 9.  **[次へ]** をクリックし、レプリケーションとストレッチ クラスターのフォーメーションを構成します。  
 
@@ -468,9 +476,9 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
 
     2.  **eventvwr.exe** を起動します。  
 
-        1.  レプリケーション元サーバー上で、**[アプリケーションとサービス]、[Microsoft]、[Windows]、[記憶域レプリカ]、[管理]** の順に移動し、イベント 5015、5002、5004、1237、5001、2200 を調べます。  
+        1.  レプリケーション元サーバー上で、 **[アプリケーションとサービス]、[Microsoft]、[Windows]、[記憶域レプリカ]、[管理]** の順に移動し、イベント 5015、5002、5004、1237、5001、2200 を調べます。  
 
-        2.  レプリケーション先サーバー上で、**[アプリケーションとサービス]、[Microsoft]、[Windows]、[記憶域レプリカ]、[操作可]** の順に移動し、イベント 1215 を待機します。 このイベントでは、コピーされたバイト数およびかかった時間が示されます。 以下に例を示します。  
+        2.  レプリケーション先サーバー上で、 **[アプリケーションとサービス]、[Microsoft]、[Windows]、[記憶域レプリカ]、[操作可]** の順に移動し、イベント 1215 を待機します。 このイベントでは、コピーされたバイト数およびかかった時間が示されます。 以下に例を示します。  
 
             ```  
             Log Name:      Microsoft-Windows-StorageReplica/Operational  
@@ -497,7 +505,7 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
             Elapsed Time (ms): 140  
             ```  
 
-        3.  レプリケーション元サーバー上で、**[アプリケーションとサービス]、[Microsoft]、[Windows]、[記憶域レプリカ]、[管理]** の順に移動し、イベント 5009、1237、5001、5015、5005、2200 を調べ、処理の進行状況を確認します。 このシーケンスではエラーの警告が存在しない必要があります。 イベント 1237 が多くあります。これは進行状況を示します。  
+        3.  レプリケーション元サーバー上で、 **[アプリケーションとサービス]、[Microsoft]、[Windows]、[記憶域レプリカ]、[管理]** の順に移動し、イベント 5009、1237、5001、5015、5005、2200 を調べ、処理の進行状況を確認します。 このシーケンスではエラーの警告が存在しない必要があります。 イベント 1237 が多くあります。これは進行状況を示します。  
 
             > [!WARNING]
             > CPU とメモリ使用率は、初期同期が完了するまでは通常より高くなる可能性があります。  
@@ -622,7 +630,7 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
     ```  
 
 ### <a name="manage-stretched-cluster-replication"></a>ストレッチ クラスターのレプリケーションを管理する  
-次に、ストレッチ クラスターを管理よおよび操作します。 次のすべての手順は、クラスター ノード上で直接実行することも、Windows Server 2016 RSAT 管理ツールをインストール済みのリモート管理コンピューターから実行することもできます。  
+次に、ストレッチ クラスターを管理よおよび操作します。 クラスター ノードを直接または Windows Server のリモート サーバー管理ツールを含むリモート管理コンピューターから、すべての次の手順を実行することができます。  
 
 #### <a name="graphical-tools-method"></a>グラフィカル ツールによる方法  
 
@@ -644,9 +652,9 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
 
 3.  ストレッチ クラスター内のレプリケーションのソースと宛先を変更するには、次の方法を使用します。  
 
-    1.  同じサイト内のノード間でソースのレプリケーションを移動するには、ソース CSV を右クリックし、**[Move Storage]** (記憶域の移動) をクリックして、**[ノードの選択]** をクリックし、同じサイト内のノードを選択します。 ディスクに割り当てられた役割に対して CSV 以外の記憶域を使用している場合は、役割を移動する必要があります。  
+    1.  同じサイト内のノード間でソースのレプリケーションを移動するには、ソース CSV を右クリックし、 **[Move Storage]** (記憶域の移動) をクリックして、 **[ノードの選択]** をクリックし、同じサイト内のノードを選択します。 ディスクに割り当てられた役割に対して CSV 以外の記憶域を使用している場合は、役割を移動する必要があります。  
 
-    2.  ソースのレプリケーションを 1 つのサイトから別のサイトに移動するには、ソース CSV を右クリックし、**[Move Storage]** (記憶域の移動) をクリックして、**[ノードの選択]** をクリックし、別のサイト内のノードを選択します。 優先されるサイトを構成した場合は、使用可能な最善のノードを使用してレプリケーション元ストレージを優先サイト内のノードに常に移動することができます。 ディスクに割り当てられた役割に対して CSV 以外の記憶域を使用している場合は、役割を移動する必要があります。  
+    2.  ソースのレプリケーションを 1 つのサイトから別のサイトに移動するには、ソース CSV を右クリックし、 **[Move Storage]** (記憶域の移動) をクリックして、 **[ノードの選択]** をクリックし、別のサイト内のノードを選択します。 優先されるサイトを構成した場合は、使用可能な最善のノードを使用してレプリケーション元ストレージを優先サイト内のノードに常に移動することができます。 ディスクに割り当てられた役割に対して CSV 以外の記憶域を使用している場合は、役割を移動する必要があります。  
 
     3.  1 つのサイトから別のサイトへのレプリケーションの方向で予定されたフェールオーバーを実行するには、**ServerManager.exe** または **SConfig** を使用して 1 つのサイトで両方のノードをシャットダウンします。  
 
@@ -658,12 +666,12 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
         > [!NOTE]
         > 記憶域レプリカは、宛先ボリュームをマウント解除します。 これは仕様です。  
 
-4.  Windows Server 2016 でログ サイズを既定の 8 GB から変更するには、ソースと宛先の両方のログ ディスクを右クリックし、**[レプリケーション ログ]** タブをクリックして、両方のディスク上でサイズが一致するように変更します。  
+4.  ログ サイズを既定の 8 GB から変更をソースと宛先の両方のログ ディスクを右クリックしてをクリックして、**レプリケーション ログ**] タブの [その後、一致するように、両方のディスク上のサイズを変更します。  
 
     > [!NOTE]  
     > 既定のログのサイズは、8 GB です。 `Test-SRTopology` コマンドレットの結果に応じて、より大きい値または小さい値を指定して `-LogSizeInBytes` を使用することを検討してください。  
 
-5.  別のレプリケーションされるディスクのペアを既存のレプリケーション グループに追加するには、使用可能な記憶域内に少なくとも 1 つの余分なディスクがあることを確認する必要があります。 その後で、ソース ディスクを右クリックし、**[Add replication partnership]** (レプリケーション パートナーシップの追加) を選択します。  
+5.  別のレプリケーションされるディスクのペアを既存のレプリケーション グループに追加するには、使用可能な記憶域内に少なくとも 1 つの余分なディスクがあることを確認する必要があります。 その後で、ソース ディスクを右クリックし、 **[Add replication partnership]** (レプリケーション パートナーシップの追加) を選択します。  
     > [!NOTE]  
     > 使用可能記憶域でこの追加の "ダミー" ディスクが必要なのは回帰のためであり、意図しているものではありません。 以前は、フェールオーバー クラスター マネージャーでは通常、ディスクの追加がサポートされており、今後のリリースでも再びサポートされるようになります。  
 
@@ -672,7 +680,7 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
 
     1.  **cluadmin.msc** を起動します。  
 
-    2.  ソース CSV ディスクを右クリックし、**[レプリケーション]** をクリックして、**[削除]** をクリックします。 警告メッセージを受け入れます。  
+    2.  ソース CSV ディスクを右クリックし、 **[レプリケーション]** をクリックして、 **[削除]** をクリックします。 警告メッセージを受け入れます。  
 
     3.  必要に応じて、将来のテスト用に CSV から記憶域を削除し、使用可能な記憶域に戻します。  
 
@@ -737,7 +745,7 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
 
     -   \Storage Replica Statistics(*)\Number of Messages Sent  
 
-    Windows PowerShell でのパフォーマンス カウンターの詳細については、「[Get-Counter](https://technet.microsoft.com/library/hh849685.aspx)」を参照してください。  
+    Windows PowerShell でのパフォーマンス カウンターの詳細については、「[Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter)」を参照してください。  
 
 3.  ストレッチ クラスター内のレプリケーションのソースと宛先を変更するには、次の方法を使用します。  
 
@@ -762,7 +770,7 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
         > [!NOTE]  
         > 記憶域レプリカは、宛先ボリュームをマウント解除します。 これは仕様です。  
 
-4.  Windows Server 2016 でログのサイズを既定の 8 GB から変更するには、ソースとレプリケーション先の両方の記憶域レプリカ グループで **Set-SRGroup** を使用します。   たとえば、すべてのログを 2GB に設定するには、次の手順を実行します。  
+4.  既定の 8 GB からログのサイズを変更するを使用して、 **Set-srgroup**ソースと宛先の両方の記憶域レプリカ グループにします。   たとえば、すべてのログを 2GB に設定するには、次の手順を実行します。  
 
     ```PowerShell  
     Get-SRGroup | Set-SRGroup -LogSizeInBytes 2GB  

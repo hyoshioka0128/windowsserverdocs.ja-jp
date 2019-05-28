@@ -13,12 +13,12 @@ ms.assetid: 2448d381-55aa-4c14-997a-202c537c6727
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 31c1579dc840f6f4eb805ac4e10f51192a6b4c99
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d671d044896ae9e71edad8302f06f2a21fe50772
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816193"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034556"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>Windows PowerShell を使用してネットワーク コントローラーを展開する
 
@@ -31,19 +31,19 @@ ms.locfileid: "59816193"
 
 このトピックは次のセクションで構成されます。
 
-- [ネットワーク コント ローラー サーバーの役割をインストールします。](#bkmk_role)
+- [ネットワーク コント ローラー サーバーの役割をインストールします。](#install-the-network-controller-server-role)
 
-- [ネットワーク コント ローラー クラスターを構成します。](#bkmk_configure)
+- [ネットワーク コント ローラー クラスターを構成します。](#configure-the-network-controller-cluster)
 
-- [ネットワーク コント ローラー アプリケーションを構成します。](#bkmk_app)
+- [ネットワーク コント ローラー アプリケーションを構成します。](#configure-the-network-controller-application)
 
-- [ネットワーク コント ローラーの展開の検証](#bkmk_validation)
+- [ネットワーク コント ローラーの展開の検証](#network-controller-deployment-validation)
 
-- [ネットワーク コント ローラーの追加の Windows PowerShell コマンド](#bkmk_ps)
+- [ネットワーク コント ローラーの追加の Windows PowerShell コマンド](#additional-windows-powershell-commands-for-network-controller)
 
-- [ネットワーク コント ローラー構成のサンプル スクリプト](#bkmk_script)
+- [ネットワーク コント ローラー構成のサンプル スクリプト](#sample-network-controller-configuration-script)
 
-- [Kerberos 以外のデプロイのデプロイ後の手順](#bkmk_nonkerb)
+- [Kerberos 以外のデプロイのデプロイ後の手順](#post-deployment-steps-for-non-kerberos-deployments)
 
 ## <a name="install-the-network-controller-server-role"></a>ネットワーク コント ローラー サーバーの役割をインストールします。
 

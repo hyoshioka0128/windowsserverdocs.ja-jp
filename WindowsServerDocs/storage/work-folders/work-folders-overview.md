@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 6/11/2017
 description: ワーク フォルダーの概要 - PC やデバイスから作業ファイルにアクセスするための一貫した方法をユーザーに提供する、Windows Server のサーバーの役割です。
-ms.openlocfilehash: dd32b84e6442ec55414da27ea94ef16eeab769eb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3e3c86efb2f781dc88cac6851ea22f19c6ae812
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890483"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222856"
 ---
 # <a name="work-folders-overview"></a>ワーク フォルダーの概要
 
@@ -24,18 +24,18 @@ ms.locfileid: "59890483"
   
 Windows 10、Windows 7、または Android または iOS デバイスでワーク フォルダーを使用して、ダウンロードしたり探しの場合は、次を参照してください。
 
--   [Windows 10 用のワーク フォルダー](https://support.microsoft.com/help/12370/windows-10-work-folders)
--   [Windows 7 用のワーク フォルダー (64 ビット ダウンロード)](https://www.microsoft.com/download/details.aspx?id=42558)
--   [Windows 7 用のワーク フォルダー (32 ビット ダウンロード)](https://www.microsoft.com/download/details.aspx?id=42559)
+- [Windows 10 用のワーク フォルダー](https://support.microsoft.com/help/12370/windows-10-work-folders)
+- [Windows 7 用のワーク フォルダー (64 ビット ダウンロード)](https://www.microsoft.com/download/details.aspx?id=42558)
+- [Windows 7 用のワーク フォルダー (32 ビット ダウンロード)](https://www.microsoft.com/download/details.aspx?id=42559)
 - [IOS 用のワーク フォルダー](https://itunes.apple.com/app/work-folders/id950878067)
 - [Android 用のワーク フォルダー](https://play.google.com/store/apps/details?id=com.microsoft.workfolders)
 
-##  <a name="BKMK_OVER"></a> ロールの説明  
+## <a name="role-description"></a>役割の説明  
  ワークロード フォルダーを使用すると、ユーザーは会社用の PC に加えて、個人用のコンピューターやデバイスにも作業ファイルを保存してアクセスできるようになります。これは、BYOD (bring-your-own device) とも呼ばれます。 ユーザーは、アクセスしやすい場所に作業ファイルを保存し、そのファイルにはどこからでもアクセスできます。 組織は、一元管理されたファイル サーバーにファイルを格納し、必要に応じてユーザーのデバイス ポリシー (暗号化とロック画面のパスワードなど) を指定することで、企業のデータを管理します。  
   
  ワーク フォルダーは、フォルダー リダイレクト、オフライン ファイル、およびホーム フォルダーの既存の展開を使って、展開できます。 ワーク フォルダーでは、サーバー上の*同期共有*と呼ばれるフォルダーに、ユーザー ファイルを保存します。 既にユーザー データを含むフォルダーを指定することができるため、サーバーやデータを移行することなく、ワーク フォルダーを採用できます。また既存のソリューションを速やかに停止することもできます。  
   
-##  <a name="BKMK_APP"></a> 実際の適用  
+## <a name="practical-applications"></a>実際の適用例  
  管理者は、ワーク フォルダーを使用して、一元的なストレージと組織のデータの制御を維持しながら、作業ファイルへのアクセスをユーザーに提供することができます。 具体的には、ワーク フォルダーを次のように使うことができます。  
   
 -   ユーザーの会社用と個人用の PC やデバイスから、作業ファイルにアクセスする、単一ポイントを提供します  
@@ -50,7 +50,8 @@ Windows 10、Windows 7、または Android または iOS デバイスでワー�
   
 -   ワーク フォルダーでフェールオーバー クラスタ リングを使用して、高可用性ソリューションを提供できます。  
   
-##  <a name="BKMK_NEW"></a> 重要な機能  
+## <a name="important-functionality"></a>重要な機能
+
  ワーク フォルダーには、次の機能が含まれています。  
   
 |機能|対象|説明|  
@@ -60,7 +61,8 @@ Windows 10、Windows 7、または Android または iOS デバイスでワー�
 |ワーク フォルダーと Windows の統合|Windows 10<br /><br /> Windows 8.1<br /><br /> Windows RT 8.1<br /><br /> Windows 7 (ダウンロードが必要)|ワーク フォルダーは Windowsコンピューターで次の機能を提供します:<br /><br /> -   ワーク フォルダーの設定と監視を行うコントロール パネルの項目<br />-   エクスプローラーとの統合による、ワーク フォルダーのファイルへの容易なアクセス<br />-   バッテリー残量とシステム パフォーマンスを最大化しながら、集中ファイル サーバーとの間でファイルを転送する同期エンジン|  
 |デバイス用のワーク フォルダー アプリ|Android<br /><br /> Apple iPhone および iPad®|よく使われるデバイスからワーク フォルダー内のファイルにアクセスできるアプリ|  
   
-##  <a name="BKMK_New"></a> 新規または変更された機能  
+## <a name="new-and-changed-functionality"></a>新機能と変更された機能
+  
  ワーク フォルダーの主な変更点を次の表に示します。  
   
 |機能|新規/更新|説明|  
@@ -70,7 +72,7 @@ Windows 10、Windows 7、または Android または iOS デバイスでワー�
 |Windows 情報保護 (WIP) との統合|Windows 10 バージョン 1607 に追加|管理者が WIP を展開すると、ワーク フォルダーは PC 上のデータを暗号化してデータ保護を適用できます。 暗号化には、エンタープライズ ID に関連付けられているキーが使用されます。これは Microsoft Intuneなど、サポート対象のモバイル デバイス管理パッケージを使用して、リモート消去することができます。|  
 |Microsoft Office との統合|Windows 10 バージョン 1511 に追加|Windows 8.1 では、Office アプリ内から [PC] をクリックまたはタップして、PC 上のワーク フォルダーの場所に移動して、ワーク フォルダーを使用できます。 Windows 10 では、Office がファイルを保存したり開いたりする場所のリストにワークフォルダーを追加して、より容易にワーク フォルダーを使えるようにできます。 詳しくは、「[Windows 10 のワーク フォルダー](https://windows.microsoft.com/windows-10/work-folders-in-windows-10)」および「[Microsoft Office でワークフォルダーを場所として使用する場合のトラブルシューティング](https://social.technet.microsoft.com/wiki/contents/articles/32881.troubleshooting-using-work-folders-as-a-place-in-microsoft-office.aspx)」をご覧ください。|  
   
-##  <a name="BKMK_SOFT"></a> ソフトウェアの要件  
+## <a name="software-requirements"></a>ソフトウェア要件
 
 ワーク フォルダーには、ファイル サーバーとネットワーク インフラストラクチャについて、次のソフトウェア要件があります。  
   
@@ -126,7 +128,7 @@ Windows 10、Windows 7、または Android または iOS デバイスでワー�
   
 -   ワーク フォルダーでは、クライアントの仮想マシンについて、仮想マシンの状態のロールバックはサポートされていません。 代わりにシステム イメージ バックアップまたはその他のバックアップ アプリを使って、クライアント仮想マシン内からバックアップと復元処理を実行します。  
   
-##  <a name="BKMK_Comparison"></a> ワーク フォルダーの他の同期テクノロジと比較  
+## <a name="work-folders-compared-to-other-sync-technologies"></a>ワーク フォルダーと他の同期テクノロジの比較  
 
 次の表は、Microsoft のさまざまな同期テクノロジの特徴と、それぞれを使用する場合について説明しています。  
   
@@ -141,7 +143,7 @@ Windows 10、Windows 7、または Android または iOS デバイスでワー�
 > [!NOTE]
 >  前の表に記載された同期テクノロジ以外にも、Microsoft は他のレプリケーション テクノロジを提供しています。たとえば、サーバー間のレプリケーション向けに設計された DFSレプリケーション、支社 WAN アクセラレーション テクノロジとして設計されている BranchCacheなどがあります。 詳しくは、「[DFS 名前空間と DFS レプリケーション](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx)」および「[BranchCache の概要](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)」をご覧ください。  
   
-##  <a name="BKMK_INSTALL"></a> サーバー マネージャーの情報  
+## <a name="server-manager-information"></a>サーバー マネージャー情報  
 
 ワーク フォルダーは、ファイル サービスと記憶域サービスの役割の一部です。 [役割と機能の追加] ウィザードまたは `Install-WindowsFeature` コマンドレットを使用して、ワーク フォルダーをインストールできます。 いずれの方法でも、下記を行うことができます。  
   
@@ -151,12 +153,13 @@ Windows 10、Windows 7、または Android または iOS デバイスでワー�
   
 -   サーバー上のワーク フォルダーを管理する、Windows PowerShell モジュール SyncShare をインストールする  
   
-##  <a name="BKMK_Azure"></a> Windows Azure 仮想マシンとの相互運用  
+## <a name="interoperability-with-windows-azure-virtual-machines"></a>Windows Azure Virtual Machines との相互運用性
+
  この Windows Server ロール サービスは、Windows Azure の仮想マシンで実行できます。 このシナリオは、Windows Server 2012 R2 および Windows Server 2016 でテストされました。  
   
 Windows Azure 仮想マシンを使い始める方法については、[Windows Azure の Web サイト](http://www.windowsazure.com/documentation/services/virtual-machines)を参照してください。  
   
-##  <a name="BKMK_LINKS"></a> 参照してください。  
+## <a name="see-also"></a>関連項目  
  その他の関連情報については、次の情報を参照してください。  
   
 |コンテンツの種類|参考資料|  
