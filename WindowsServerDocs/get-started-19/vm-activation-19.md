@@ -12,12 +12,12 @@ ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
-ms.openlocfilehash: 62873140c8e114ba537dc4fd3ff7c44868c33243
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 18e20433050371dc02782fb8630a885e53ae31ad
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822093"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63688702"
 ---
 # <a name="automatic-virtual-machine-activation"></a>仮想マシン自動ライセンス認証
 
