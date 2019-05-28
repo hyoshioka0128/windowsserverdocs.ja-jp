@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 67b122353ca9dff3a4df6cbfac56b16bed52b539
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: df1afc77afffd9b737965215a5c9d96f278c8129
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848083"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191671"
 ---
 # <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>AD FS のセキュリティを考慮した設計と展開のベスト プラクティス
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、計画し、Active Directory フェデレーション サービス (AD FS) の展開を設計するときに、セキュリティを評価するのに役立つベスト プラクティス情報を提供します。 このトピックでは、開始点を確認し、AD FS の使用の全体的なセキュリティに影響する考慮事項を評価します。 このトピックの情報は、既存のセキュリティ計画と他の設計のベスト プラクティスを補完および強化することを意図しています。  
   
@@ -146,4 +145,4 @@ ms.locfileid: "59848083"
     サービスとデータの分離をより確実にするために、すべての属性ストア参照コマンドのためにストアド プロシージャを作成できます。 次に、ストアド プロシージャを実行する権限を付与するデータベースの役割を作成できます。 このデータベース ロールには、AD FS Windows サービスのサービス id を割り当てます。 AD FS Windows サービスは、属性参照に使用される適切なストアド プロシージャ以外の他の SQL ステートメントを実行する必要がありますできません。 このような方法で SQL Server データベースへのアクセスをロックダウンすることで、特権の昇格攻撃のリスクが低減されます。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

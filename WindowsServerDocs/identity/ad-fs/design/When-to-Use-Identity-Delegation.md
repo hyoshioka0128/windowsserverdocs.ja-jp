@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: af227d9e87ddb73f194dd46c8ce45fcdf12a34cf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 2544001b871a1eda2c03005c384a99d5209e7282
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872553"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190546"
 ---
 # <a name="when-to-use-identity-delegation"></a>ID 委任が必要になるシナリオ
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
   
 ## <a name="what-is-identity-delegation"></a>ID 委任はどのような場合に必要になるか  
 Id 委任は、Active Directory フェデレーション サービスの機能\(AD FS\)管理者できる\-ユーザーの権限を借用するアカウントを指定します。 ユーザーの権限を借用するアカウントを、 *代理人と呼びます*。 この委任機能は、元の要求の承認チェーン内にある各アプリケーション、データベース、またはサービスに対して、一連のアクセス制御チェックを順次行う必要がある、多くの分散アプリケーションにおいて非常に重要です。 多くの現実\-世界のシナリオの存在を"フロント エンドの Web アプリケーションがより安全な「バックエンド」、Microsoft SQL Server データベースに接続されている Web サービスなどからデータを取得する必要があります。  
@@ -61,4 +59,4 @@ Id 委任を構成するには、AD FS 管理スナップインで信頼する�
 開発者が Web フロントを適切にプログラムを使用できるいくつかのオプションがある\-AD FS コンピューターに委任要求をリダイレクトするには、アプリケーションまたはサービスを終了します。 Web アプリケーションをカスタマイズして ID 委任と連携させる方法の詳細については、「 [Windows Identity Foundation SDK](https://go.microsoft.com/fwlink/?LinkId=122266)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

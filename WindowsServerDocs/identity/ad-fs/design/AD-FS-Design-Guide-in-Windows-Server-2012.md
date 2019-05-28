@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e660c1dabcc5a683fa74068ea148fd4efbeee569
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3f2a6df6a9c9a5cbdfa9c64bc6521e92f4982a15
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890213"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191734"
 ---
-# <a name="ad-fs-design-guide-in-windows-server-2012"></a>Windows Server 2012 での AD FS 設計ガイド
+# <a name="ad-fs-design-guide-in-windows-server"></a>Windows Server で AD FS 設計ガイドします。 
 
->適用先:Windows Server 2012
+
   
 > [!NOTE]  
 > Windows Server 2012 R2 で AD FS をデプロイする方法については、次を参照してください。 [Windows Server 2012 R2 AD FS 展開ガイド](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)します。  
@@ -40,9 +40,9 @@ Active Directory® フェデレーション サービスを使用する\(AD FS\)
   
 -   [AD FS 展開目標の特定](Identifying-Your-AD-FS-Deployment-Goals.md)  
   
--   [AD FS 設計への展開の目標](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md)  
+-   [展開目標の AD FS 設計への反映](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md)  
   
--   [AD FS 展開トポロジを決定します。](Determine-Your-AD-FS-Deployment-Topology.md)  
+-   [AD FS 展開トポロジの決定](Determine-Your-AD-FS-Deployment-Topology.md)  
   
 -   [展開の計画](Planning-Your-Deployment.md)  
   
@@ -52,6 +52,6 @@ Active Directory® フェデレーション サービスを使用する\(AD FS\)
   
 -   [AD FS サーバーの容量計画](Planning-for-AD-FS-Server-Capacity.md)  
   
--   [付録 a:AD FS の要件の確認](Appendix-A--Reviewing-AD-FS-Requirements.md)  
+-   [付録 A: AD FS 要件の確認](Appendix-A--Reviewing-AD-FS-Requirements.md)  
   
 

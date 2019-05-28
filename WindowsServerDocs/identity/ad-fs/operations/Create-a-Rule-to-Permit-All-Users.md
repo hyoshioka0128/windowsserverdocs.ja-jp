@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: de85af27e699242977054420178dd3c424b2ddb3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: abb00e14dd0b3ce7b06efba816fbd7452e7bf0f1
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822593"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189406"
 ---
 # <a name="create-a-rule-to-permit-all-users"></a>すべてのユーザーを許可する規則を作成する
-
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 Windows Server 2016 で使用することができます、**アクセス制御ポリシー**ルールはすべてのユーザーにアクセスできるように、証明書利用者を作成します。  Windows Server 2012 R2 でを使用して、**すべてのユーザーを許可**規則テンプレートの Active Directory フェデレーション サービスで\(AD FS\)はすべてのユーザーにアクセスできるように、証明書利用者する承認規則を作成します。パーティです。 
 
@@ -59,9 +57,9 @@ Windows Server 2016 で使用することができます、**アクセス制御�
 7.  **要求規則の編集**ダイアログ ボックスで、をクリックして **[ok]** ルールを保存します。  
 
 ## <a name="additional-references"></a>その他の参照情報 
-[要求規則を構成します。](Configure-Claim-Rules.md)  
+[要求規則を構成する](Configure-Claim-Rules.md)  
  
-[チェックリスト:A Relying Party Trust の要求規則を作成します。](https://technet.microsoft.com/library/ee913578.aspx)  
+[チェックリスト:証明書利用者信頼の要求規則の作成](https://technet.microsoft.com/library/ee913578.aspx)  
   
 [承認要求規則を使用する場合](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

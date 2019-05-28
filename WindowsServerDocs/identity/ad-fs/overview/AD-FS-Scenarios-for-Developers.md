@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a2a88608f3989522b1ec1c123f29bd679db7e318
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3a3156eefc4af52fb7daefb618c689b78fef5efc
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877943"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188819"
 ---
 # <a name="ad-fs-scenarios-for-developers"></a>開発者向けの AD FS のシナリオ
 
->適用先:Windows Server 2016
 
 Windows Server 2016 AD FS 2016 での AD FS を使用すると、業界標準の OpenID Connect と OAuth 2.0 ベースの認証と承認を開発しているアプリケーションを追加し、それらのアプリケーションが AD FS に対して直接ユーザーを認証できます。    
   
@@ -127,14 +126,14 @@ redirect_uri|アプリケーション グループでネイティブ アプリ�
   
 **承認要求の応答:**  
 ユーザーが署名されていない場合する前に、資格情報の入力が求められます。    
-AD FS は、redirect_uri のクエリ コンポーネントでの"code"パラメーターとして、認証コードを返すことで応答します。  次に、例を示します。Http/1.1 302 検出場所:  **http://redirect_uri:80/?code=&lt; コード&gt;します。**  
+AD FS は、redirect_uri のクエリ コンポーネントでの"code"パラメーターとして、認証コードを返すことで応答します。  例:Http/1.1 302 検出場所:  **http://redirect_uri:80/?code=&lt; コード&gt;します。**  
   
 2.  ネイティブ クライアントは、次のパラメーターと共に、コードを AD FS のトークン エンドポイントに送信します。  
   
 **トークンの要求:**  
 投稿 https://fs.contoso.com/adfs/oauth2/token  
   
-パラメーター|値  
+パラメーター|Value  
 ---------|---------  
 grant_type|"authorization_code" 
 code|1 から認証コード  
@@ -182,7 +181,7 @@ refresh_token|最初のトークン要求に対する応答の AD FS によっ�
 **承認要求**:  
 取得 https://fs.contoso.com/adfs/oauth2/authorize?  
   
-パラメーター|値  
+パラメーター|Value  
 ---------|---------  
 response_type|「コード」  
 resource|アプリケーション グループ内の Web API の RP ID (識別子)  
@@ -199,7 +198,7 @@ AD FS は、たとえば、redirect_uri のクエリ コンポーネントでの
 **トークンの要求:**  
 投稿 https://fs.contoso.com/adfs/oauth2/token  
   
-パラメーター|値  
+パラメーター|Value  
 ---------|---------  
 grant_type|"authorization_code"  
 code|上記の 2 から認証コード  
@@ -248,7 +247,7 @@ client_secret|アプリケーション グループで、web アプリ (サー�
 **承認要求:**  
 取得 https://fs.contoso.com/adfs/oauth2/authorize?  
   
-パラメーター|値  
+パラメーター|Value  
 ---------|---------  
 response_type|"code+id_token"  
 response_mode|"form_post"  
@@ -270,7 +269,7 @@ AD FS が HTTP 200 とフォームを含む応答、として非要素の下。
   
   
   
-パラメーター|値  
+パラメーター|Value  
 ---------|---------  
 grant_type|"authorization_code"  
 code|上記の承認コード  

@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 376cec7f3a4fb1f988ac5d458b05220c7b9de970
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b883126f60950c0015b3a21e2ca5abc251b25b84
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857693"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190456"
 ---
 # <a name="where-to-place-a-federation-server"></a>フェデレーション サーバーを配置する場所
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory フェデレーション サービスの場所のセキュリティのベスト プラクティスとして\(AD FS\)ファイアウォールの前に、フェデレーション サーバーと、インターネットからの影響を防ぐため、企業ネットワークに接続します。 これは、機能は、フェデレーション サーバーがある完全な権限をセキュリティ トークンを付与するため重要です。 そのため、ドメイン コント ローラーと同様に保護する必要があります。 悪意のあるユーザーがすべての Web アプリケーションや Active Directory フェデレーション サービスによって保護されているフェデレーション サーバーに対するフル アクセス トークンを発行する機能を持つフェデレーション サーバーが侵害された場合、 \(AD FS\)ですべてのリソースパートナー組織。  
   
@@ -40,4 +38,4 @@ AD FS を使用するためのファイアウォール サーバーを構成す�
 境界ネットワーク内でのサーバー公開を構成する方法の詳細については、「 [Where to Place a Federation Server Proxy](Where-to-Place-a-Federation-Server-Proxy.md)」を参照してください。 サーバーを公開する ISA Server を構成する方法については、次を参照してください。[セキュリティで保護された Web 公開ルールを作成](https://go.microsoft.com/fwlink/?LinkId=75182)です。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

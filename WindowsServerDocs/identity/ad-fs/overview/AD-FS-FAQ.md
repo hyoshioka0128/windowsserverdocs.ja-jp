@@ -5,38 +5,37 @@ description: AD FS 2016 のよく寄せられる質問
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 12/07/2018
+ms.date: 04/17/2019
 ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d8014cd72e66642ea9200afd6cd4266cbccba30c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: fdd31a8b7c2c6ef87d1d22d901b5c6ca69b5c70d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826813"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188718"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS のよく寄せられる質問 (FAQ)
 
->適用先:Windows Server 2016
 
 次のドキュメントは、Active Directory フェデレーション サービスに関してよく寄せられる質問へのホームです。  ドキュメントは、質問の種類に基づくグループに分割されています。
 
-## <a name="deployment"></a>展開 
+## <a name="deployment"></a>展開
 
 ### <a name="how-can-i-upgrademigrate-from-previous-versions-of-ad-fs"></a>移行する方法をアップグレード/AD FS の以前のバージョンから
 次のいずれかを使用して AD FS をアップグレードすることができます。
 
 
 - Windows Server 2016 AD FS を Windows Server 2012 R2 AD FS
-    - [AD FS WID データベースを使用して Windows Server 2016 にアップグレードします。](../deployment/Upgrading-to-AD-FS-in-Windows-Server-2016.md)
-    - [SQL database を使用して Windows Server 2016 での AD FS へのアップグレード](../deployment/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL.md)
+    - [WID データベースを使用した、Windows Server 2016 での AD FS へのアップグレード](../deployment/Upgrading-to-AD-FS-in-Windows-Server-2016.md)
+    - [SQL データベースを使用した、Windows Server 2016 での AD FS へのアップグレード](../deployment/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL.md)
 - Windows Server 2012 AD FS を Windows Server 2012 R2 AD FS
     - [Windows Server 2012 R2 で AD FS への移行します。](https://technet.microsoft.com/library/dn486815.aspx)
 - Windows Server 2012 の AD FS には、AD FS 2.0
     - [Windows Server 2012 で AD FS への移行します。](https://technet.microsoft.com/library/jj647765.aspx)
-- AD FS 1.x と AD FS 2.0 
+- AD FS 1.x と AD FS 2.0
     - [AD FS からのアップグレードに AD FS 2.0 1.x](https://technet.microsoft.com/library/ff678035.aspx)
 
 AD FS 2.0 または 2.1 (Windows Server 2008 R2 または Windows Server 2012) からアップグレードする必要がある場合は、(C:\Windows\ADFS にある) ボックスにスクリプトを使用する必要があります。
@@ -54,29 +53,29 @@ Windows Server 2016 で http/2 サポートが追加されましたが、クラ�
 1. Azure AD は、フェデレーション メタデータにアクセスできないために、トークン署名証明書の更新を手動で管理する必要があります。 トークン署名証明書を手動で更新の詳細については、読み取る[Office 365 と Azure Active Directory のフェデレーション証明書の更新](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs)
 2. レガシー認証フロー (例: ExO プロキシ認証フロー) を利用することはできません。
 
-### <a name="what-are-load-balancing-requirements-for-ad-fs-and-wap-servers"></a>AD FS および WAP サーバーの負荷分散の要件とは 
+### <a name="what-are-load-balancing-requirements-for-ad-fs-and-wap-servers"></a>AD FS および WAP サーバーの負荷分散の要件とは
 
-AD FS は、ステートレスなシステムです。 そのため、負荷分散はログインの非常に単純です。 負荷分散システムの主な推奨事項を次に示します。 
+AD FS は、ステートレスなシステムです。 そのため、負荷分散はログインの非常に単純です。 負荷分散システムの主な推奨事項を次に示します。
 
 
 - ロード バランサーは、IP アフィニティを使用して構成されていない必要があります。 過度の負荷を配置すると、Exchange Online の特定のシナリオで、サーバーのサブセットにこの可能性があります。
-- ロード バランサーは必要がありますいない HTTPS 接続を終了し、ADFS サーバーへの新しい接続を再実行します。 
-- ロード バランサーは、ADFS に送信されるときに、接続元 IP アドレスが HTTP パケットのソース ip アドレスと変換することを確認してください。 ロード バランサーは、HTTP パケットで送信元 ip アドレスを送信することはできません、こと、ロード バランサーする必要があります追加 (または既存が発生した場合の追加)、x のヘッダーに IP アドレス。 これは、機能は、特定の IP の適切な処理が関連機能 (IP の禁止されているため、エクストラネット スマート ロックアウト、...) と、正しく構成されていない場合、セキュリティが低下する可能性が必要です。 
+- ロード バランサーは必要がありますいない HTTPS 接続を終了し、ADFS サーバーへの新しい接続を再実行します。
+- ロード バランサーは、ADFS に送信されるときに、接続元 IP アドレスが HTTP パケットのソース ip アドレスと変換することを確認してください。 ロード バランサーは、HTTP パケットで送信元 ip アドレスを送信することはできません、こと、ロード バランサーする必要があります追加 (または既存が発生した場合の追加)、x のヘッダーに IP アドレス。 これは、機能は、特定の IP の適切な処理が関連機能 (IP の禁止されているため、エクストラネット スマート ロックアウト、...) と、正しく構成されていない場合、セキュリティが低下する可能性が必要です。
 - ロード バランサーには、SNI をサポートする必要があります。 イベントのそうでない、SNI が非対応クライアントを処理するために HTTPS バインドを作成する AD FS が構成されていることを確認します。
-- ロード バランサーでは、AD FS WAP サーバーが稼働して、200 OK が返されない場合にそれらを除外するかどうかを検出するために、AD FS の HTTP の正常性プローブのエンドポイントを使用する必要があります。 
+- ロード バランサーでは、AD FS WAP サーバーが稼働して、200 OK が返されない場合にそれらを除外するかどうかを検出するために、AD FS の HTTP の正常性プローブのエンドポイントを使用する必要があります。
 
-### <a name="what-multi-forest-configurations-are-supported-by-ad-fs"></a>AD FS によっては、どのような複数フォレスト構成がサポートされていますか。 
+### <a name="what-multi-forest-configurations-are-supported-by-ad-fs"></a>AD FS によっては、どのような複数フォレスト構成がサポートされていますか。
 
-AD FS では、複数のマルチ フォレスト構成をサポートしているし、複数の信頼領域間のユーザーを認証する基礎となる AD DS 信頼ネットワークに依存しています。 双方向のフォレストの信頼は、これは問題なく信頼サブシステムが正しく動作するために単純なセットアップ強く推奨します。 かつ 
+AD FS では、複数のマルチ フォレスト構成をサポートしているし、複数の信頼領域間のユーザーを認証する基礎となる AD DS 信頼ネットワークに依存しています。 双方向のフォレストの信頼は、これは問題なく信頼サブシステムが正しく動作するために単純なセットアップ強く推奨します。 かつ
 
-- パートナー id を格納している DMZ フォレストなど方法の 1 つのフォレストの信頼が発生した場合は、corp フォレスト内の ad FS を展開して、LDAP 経由で接続されている別のローカルの要求プロバイダー信頼と DMZ フォレストを扱うことを勧めします。 このオプションを追求することはできません、イベントには、「信頼」、"信頼されているフォレスト"を「信頼」フォレスト内のユーザーへのフル アクセスを持つサービス アカウントを使用してフォレストで ad FS を実行する必要があります。
-- ドメイン レベルの信頼はサポートされており、操作できるは、フォレスト レベルの信頼モデルに移行することを強くお勧めします。 さらに、UPN がルーティングと名の NETBIOS 名前解決が正確にさせる必要があることを確認する必要があります。 
+- パートナー id を格納している DMZ フォレストなど方法の 1 つのフォレストの信頼が発生した場合は、corp フォレスト内の ad FS を展開して、LDAP 経由で接続されている別のローカルの要求プロバイダー信頼と DMZ フォレストを扱うことを勧めします。 ここで Windows 統合認証は、DMZ フォレストのユーザーに対して動作はしないと、LDAP のサポートされている唯一のメカニズムであるために、パスワード認証を実行する必要がありますがします。 このオプションを追求することはできません、イベントには、DMZ フォレストでもう 1 つの ADFS を設定し、要求プロバイダー信頼の ADFS の corp フォレスト内に追加する必要があります。 ユーザーがホーム領域検出の実行する必要がありますが、Windows 統合認証およびパスワード認証の両方は動作します。 適切に変更してください ADFS は DMZ フォレスト内で発行規則のように、corp フォレスト内の ADFS は DMZ フォレストからユーザーに関する追加のユーザー情報を取得できません。
+- ドメイン レベルの信頼はサポートされており、操作できるは、フォレスト レベルの信頼モデルに移行することを強くお勧めします。 さらに、UPN がルーティングと名の NETBIOS 名前解決が正確にさせる必要があることを確認する必要があります。
 
 
 
 ## <a name="design"></a>設計
 
-### <a name="what-third-party-multi-factor-authentication-providers-are-available-for-ad-fs"></a>AD FS の使用可能などのようなサード パーティの多要素認証プロバイダー 
+### <a name="what-third-party-multi-factor-authentication-providers-are-available-for-ad-fs"></a>AD FS の使用可能などのようなサード パーティの多要素認証プロバイダー
 認識しています、サード パーティ プロバイダーの一覧を次に示します。  についてわからないことと、それらについて説明します一覧を更新しましたが、使用可能なプロバイダー常にあります。
 
 - [Gemalto アイデンティティ & セキュリティ サービス](http://www.gemalto.com/identity)
@@ -85,7 +84,7 @@ AD FS では、複数のマルチ フォレスト構成をサポートしてい�
 - [Microsoft Active Directory フェデレーション サービス用には、RSA SecurID 認証エージェント](http://www.emc.com/security/rsa-securid/rsa-authentication-agents/microsoft-ad-fs.htm)
 - [SafeNet Authentication Service (SAS) エージェント for AD FS](http://www.safenet-inc.com/resources/integration-guide/data-protection/Safenet_Authentication_Service/SafeNet_Authentication_Service__AD_FS_Agent_Configuration_Guide/?langtype=1033)
 - [Swisscom 社 Mobile ID 認証サービス](http://swisscom.ch/mid)
-- [Symantec の検証と ID 保護サービス (VIP)](http://www.symantec.com/vip-authentication-service) 
+- [Symantec の検証と ID 保護サービス (VIP)](http://www.symantec.com/vip-authentication-service)
 
 ### <a name="are-third-party-proxies-supported-with-ad-fs"></a>サード パーティ製プロキシは、AD FS でサポートされますか。
 はい、サード パーティ製プロキシは、Web アプリケーション プロキシは、前に配置することができますが、任意のサード パーティ製プロキシをサポートする必要があります、 [MS ADFSPIP プロトコル](https://msdn.microsoft.com/library/dn392811.aspx)Web アプリケーション プロキシの代わりに使用されます。
@@ -107,14 +106,14 @@ Apple では、一連の AD FS に対して認証する iOS アプリからの�
 
 有効にして、SSL 2.0、3.0、TLS バージョン 1.0、1.1、1.2 を無効にすることができますを使用して[AD FS での SSL プロトコルの管理](../operations/Manage-SSL-Protocols-in-AD-FS.md)します。
 
-AD FS と WAP サーバーが ATP をサポートする唯一の TLS 暗号スイートをネゴシエート、されていないすべての暗号スイートを無効にすることができます、 [ATP 準拠の暗号スイートの一覧](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57)します。  これを行うには、使用、 [Windows TLS の PowerShell コマンドレット](https://technet.microsoft.com/itpro/powershell/windows/tls/index)します。 
+AD FS と WAP サーバーが ATP をサポートする唯一の TLS 暗号スイートをネゴシエート、されていないすべての暗号スイートを無効にすることができます、 [ATP 準拠の暗号スイートの一覧](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57)します。  これを行うには、使用、 [Windows TLS の PowerShell コマンドレット](https://technet.microsoft.com/itpro/powershell/windows/tls/index)します。
 
 ## <a name="developer"></a>Developer
 
 ### <a name="when-generating-an-idtoken-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-idtoken"></a>AD に対して認証されたユーザーには、ADFS を使用した id_token を生成するときに、"sub"要求の生成方法、id_token に含まれるでしょうか。
 "Sub"要求の値は、クライアント ID のハッシュ + アンカー要求の値。
 
-### <a name="what-is-the-lifetime-of-the-refresh-tokenaccess-token-when-the-user-logs-in-via-a-remote-claims-provider-trust-over-ws-fedsaml-p"></a>更新トークンやアクセス トークンの有効期間は、ユーザーがログインすると、リモートの要求プロバイダー信頼を使用して WS Fed/SAML-P 経由で何ですか。 
+### <a name="what-is-the-lifetime-of-the-refresh-tokenaccess-token-when-the-user-logs-in-via-a-remote-claims-provider-trust-over-ws-fedsaml-p"></a>更新トークンやアクセス トークンの有効期間は、ユーザーがログインすると、リモートの要求プロバイダー信頼を使用して WS Fed/SAML-P 経由で何ですか。
 更新トークンの有効期間は、ADFS をリモート要求プロバイダー信頼から取得したトークンの有効期間になります。 アクセス トークンの有効期間は、アクセス トークンを発行する証明書利用者のトークンの有効期間になります。
 
 ### <a name="i-need-to-return-profile-and-email-scopes-as-well-in-addition-to-the-openid-scope-can-i-obtain-additional-information-using-scopes-how-to-do-it-in-ad-fs"></a>OpenId スコープだけでなくもプロファイルと電子メールのスコープを返す必要があります。 スコープを使用して追加の情報を入手できますか。 AD FS で行う方法は?
@@ -131,19 +130,29 @@ AD FS と WAP サーバーが ATP をサポートする唯一の TLS 暗号ス�
 
     "array_in_json":{"Items":[{"Name":"Apple","Price":12.3},{"Name":"Grape","Price":3.21}],"Date":"21/11/2010"}
 
-### <a name="can-i-pass-resource-value-as-part-of-the-scope-value-like-how-requests-are-done-against-azure-ad"></a>Azure AD に対して要求を実行する方法のように、スコープの値の一部としてリソースの値を渡すか。 
+### <a name="can-i-pass-resource-value-as-part-of-the-scope-value-like-how-requests-are-done-against-azure-ad"></a>Azure AD に対して要求を実行する方法のように、スコープの値の一部としてリソースの値を渡すか。
 2019 のサーバーで AD FS、スコープのパラメーターに埋め込まれたリソースの値を渡すことができますようになりました。 スコープのパラメーターは、リソース/スコープとして構造体の各エントリのスペースで区切られた一覧としてここで整理できます。 次に例を示します。  
 **< サンプルの有効な要求の作成 >**
 
 ### <a name="does-ad-fs-support-pkce-extension"></a>AD FS は PKCE の拡張機能をサポートしますか。
-AD FS サーバー 2019年の Proof Key for コード Exchange (による PKCE) のサポート OAuth 承認コード付与フロー 
+AD FS サーバー 2019年の Proof Key for コード Exchange (による PKCE) のサポート OAuth 承認コード付与フロー
+
+### <a name="what-permitted-scopes-are-supported-by-ad-fs"></a>許可されているどのようなスコープは、AD FS でサポートされるでしょうか。
+- aza - を使用して場合[ブローカーのクライアントの OAuth 2.0 プロトコルの拡張](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)と、サーバーが新しいプライマリ更新トークンを発行し、応答と設定の refresh_token フィールドに設定、スコープのパラメーターに"aza"スコープが含まれている場合1 つの場合は、新しいプライマリ更新トークンの有効期間 refresh_token_expires_in フィールドが適用されます。
+- openid の OpenID Connect 認証プロトコルの使用を要求するアプリケーションを使用します。
+- logon_cert - logon_cert スコープにより、ログオン証明書を要求、認証されたユーザーを対話的にログオンするために使用できるアプリケーションです。 AD FS サーバーでは、応答から access_token パラメーターを省略し、代わりに CMS、base64 でエンコードされた証明書チェーンまたは CMC の完全な PKI 応答を提供します。 詳細については、使用可能な[ここ](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)します。 
+- user_impersonation - user_impersonation スコープは、正常に AD FS からの on-behalf-of アクセス トークンを要求する必要があります。 このスコープを使用する方法の詳細について参照してください[On-Behalf-Of (OBO) の AD FS 2016 で OAuth を使用してを使用して、多層アプリケーションをビルド](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md)します。
+- vpn_cert - vpn_cert スコープにより、VPN 証明書を要求、EAP-TLS 認証を使用して VPN 接続を確立するために使用できるアプリケーションです。 これはもはやサポートされていません。
+- 電子メール - アプリケーションにサインインしているユーザーの電子メール要求を要求できるようにします。 これはもはやサポートされていません。 
+- プロファイル - プロファイルを要求するアプリケーションは、サインイン ユーザーの要求に関連します。 これはもはやサポートされていません。 
+
 
 ## <a name="operations"></a>操作
 
-### <a name="how-do-i-replace-the-ssl-certificate-for-ad-fs"></a>AD FS の SSL 証明書を交換する方法 
+### <a name="how-do-i-replace-the-ssl-certificate-for-ad-fs"></a>AD FS の SSL 証明書を交換する方法
 AD FS SSL 証明書は、AD FS 管理スナップインで見つかった AD FS サービス通信証明書と同じではありません。  AD FS SSL 証明書を変更するには、PowerShell を使用する必要があります。 以下の記事のガイダンスに従います。
 
-[AD FS と WAP 2016 での SSL 証明書の管理](../operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
+[AD FS と WAP 2016で SSL 証明書を管理する](../operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
 
 ### <a name="how-can-i-enable-or-disable-tlsssl-settings-for-ad-fs"></a>または方法は有効にする AD FS の TLS または SSL の設定を無効にします。
 無効にするか、SSL プロトコルを有効にして暗号スイートを次の手順に従います。
@@ -160,6 +169,9 @@ AD FS SSL 証明書は、AD FS 管理スナップインで見つかった AD FS 
 
 ### <a name="how-can-i-configure-promptlogin-behavior-for-ad-fs"></a>プロンプトを構成する方法の AD FS ログインの動作を = ですか?
 プロンプトを構成する方法については、ログイン = を参照してください[Active Directory フェデレーション サービスの要求パラメーターのログインのサポートを =](../operations/AD-FS-Prompt-Login.md)します。
+
+### <a name="how-can-i-change-the-ad-fs-service-account"></a>AD FS サービス アカウントを変更する方法はありますか
+AD FS サービス アカウントを変更する AD FS のツールボックスを使用して指示に従って[サービス アカウントの Powershell モジュール](https://github.com/Microsoft/adfsToolbox/tree/master/serviceAccountModule)します。 
 
 ### <a name="how-can-i-configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>AD FS で Windows 統合認証 (WIA) を使用するブラウザーを構成する方法はありますか
 
@@ -213,11 +225,11 @@ WAP の前に、SSL 終了を行うには推奨されません。 場合は、WA
 ADFS の userinfo エンドポイントは、OpenID 標準で指定されているサブジェクト要求を常に返します。 AD FS では、UserInfo エンドポイント経由で要求される追加の要求は提供されません。 ID トークン内の他の要求が必要な場合を参照してください[AD FS でのカスタム ID トークン](../development/custom-id-tokens-in-ad-fs.md)します。
 
 ### <a name="why-do-i-see-a-lot-of-1021-errors-on-my-ad-fs-servers"></a>自分の AD FS サーバーで、多くの 1021 のエラーが参照する理由
-このイベントは、通常はリソース 00000003-0000-0000-c000-000000000000 の AD FS での無効なリソース アクセス用に記録されます。 このエラーは、Azure AD Graph サービスのアクセス トークンを取得しようとする、クライアントのエラー動作によって発生します。 リソースが AD FS に存在しないために、この AD FS サーバーでイベント ID 1021 の結果します。 警告または AD fs リソース 00000003-0000-0000-c000-000000000000 のエラーを無視しても安全になります。 
+このイベントは、通常はリソース 00000003-0000-0000-c000-000000000000 の AD FS での無効なリソース アクセス用に記録されます。 このエラーは、Azure AD Graph サービスのアクセス トークンを取得しようとする、クライアントのエラー動作によって発生します。 リソースが AD FS に存在しないために、この AD FS サーバーでイベント ID 1021 の結果します。 警告または AD fs リソース 00000003-0000-0000-c000-000000000000 のエラーを無視しても安全になります。
 
 ### <a name="why-am-i-seeing-a-warning-for-failure-to-add-the-ad-fs-service-account-to-the-enterprise-key-admins-group"></a>エンタープライズ Key Admins グループに、AD FS サービス アカウントを追加するエラーの警告が表示されるはなぜですか。
 このグループが作成されるは、PDC の FSMO の役割を持つ Windows 2016 のドメイン コント ローラーがドメインに存在する場合のみです。 エラーを解決するには、グループを手動で作成およびに従って、サービス アカウント グループのメンバーとして追加した後は必要なアクセス許可を与える以下。
-1.  **[Active Directory ユーザーとコンピューター]** を開きます。 
+1.  **[Active Directory ユーザーとコンピューター]** を開きます。
 2.  **右クリック**ナビゲーション ウィンドウから、ドメイン名と**クリックして**プロパティ。
 3.  **クリックして**セキュリティ (セキュリティ タブがない場合に高度な機能の表示 メニューから)。
 4.  **クリックして**高度な。 **クリックして**を追加します。 **クリックして**プリンシパルを選択します。
@@ -230,15 +242,15 @@ ADFS の userinfo エンドポイントは、OpenID 標準で指定されてい�
 
 Android ADAL ライブラリ失敗を使用するアプリの Azure AD 認証をフェデレーション ユーザーがあります。 アプリが表示されます、 **AuthenticationException**ログイン ページを表示しようとします。 Chrome の場合、AD FS ログイン ページという危険とします。
 
-Android - すべてのバージョンとのすべてのデバイス間ではサポートしていませんから追加の証明書のダウンロード、 **authorityInformationAccess**証明書のフィールド。 これは、Chrome ブラウザーを同様の場合は true。 中間証明書が不足している任意のサーバー認証証明書は、AD FS からは、全体の証明書チェーンが渡されない場合もこのエラーになります。 
+Android - すべてのバージョンとのすべてのデバイス間ではサポートしていませんから追加の証明書のダウンロード、 **authorityInformationAccess**証明書のフィールド。 これは、Chrome ブラウザーを同様の場合は true。 中間証明書が不足している任意のサーバー認証証明書は、AD FS からは、全体の証明書チェーンが渡されない場合もこのエラーになります。
 
-この問題を適切なソリューションでは、必要な中間証明書と SSL 証明書を送信する AD FS と WAP サーバーを構成します。 
+この問題を適切なソリューションでは、必要な中間証明書と SSL 証明書を送信する AD FS と WAP サーバーを構成します。
 
-コンピューターの個人用ストア、AD FS と WAP サーバーの場合にインポートする 1 つのマシンから SSL 証明書をエクスポートする秘密キーと選択をエクスポートすることを確認して**Personal Information Exchange - PKCS #12**します。 
+コンピューターの個人用ストア、AD FS と WAP サーバーの場合にインポートする 1 つのマシンから SSL 証明書をエクスポートする秘密キーと選択をエクスポートすることを確認して**Personal Information Exchange - PKCS #12**します。
 
-チェック ボックスをする重要な**可能であれば、証明書のパスにすべての証明書を含む**がチェックされ、だけでなく**すべての拡張プロパティをエクスポート**します。 
+チェック ボックスをする重要な**可能であれば、証明書のパスにすべての証明書を含む**がチェックされ、だけでなく**すべての拡張プロパティをエクスポート**します。  
 
-Windows サーバー上で certlm.msc を実行し、インポート、*。コンピューターの個人証明書ストアに PFX です。 これをサーバー全体の証明書チェーンを ADAL ライブラリに渡すとなります。 
+Windows サーバー上で certlm.msc を実行し、インポート、*。コンピューターの個人証明書ストアに PFX です。 これをサーバー全体の証明書チェーンを ADAL ライブラリに渡すとなります。
 
 >[!NOTE]
 > 証明書ストアのネットワーク ロード バランサーは、存在する場合は、全体の証明書チェーンを含めるも更新する必要があります。
@@ -264,9 +276,9 @@ WAP サーバーのセット WebApplicationProxySslCertificate を引き続き�
 4.  新しい証明書を追加します。
 
     a.  netsh http 追加 sslcert hostnameport=fs.contoso.com:443 certhash CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices を =
-    
+
     b.  netsh http 追加 sslcert hostnameport localhost:443 certhash = CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices を =
-    
+
     c. netsh http 追加 sslcert hostnameport=fs.contoso.com:49443 certhash CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices を =
 
 5. 選択したサーバーでの ADFS サービスを再起動します。
@@ -277,9 +289,9 @@ WAP サーバーのセット WebApplicationProxySslCertificate を引き続き�
     a.  Set-WebApplicationProxySslCertificate -Thumbprint " CERTTHUMBPRINT"
 
 9. 選択の WAP サーバー上でサービスを再起動します。
-10. 運用環境に戻り、選択した WAP と AD FS サーバーを配置します。 
-    
-AD FS の残りの部分と同様に、WAP サーバーの更新プログラムを実行します。 
+10. 運用環境に戻り、選択した WAP と AD FS サーバーを配置します。
+
+AD FS の残りの部分と同様に、WAP サーバーの更新プログラムを実行します。
 
 ### <a name="is-adfs-supported-when-web-application-proxy-wap-servers-are-behind-azure-web-application-firewallwaf"></a>Web アプリケーション プロキシ (WAP) サーバーが Azure の Web アプリケーションの Firewall(WAF) の背後にあるときに ADFS がサポートされますか。
 ADFS と Web アプリケーション サーバーは、エンドポイントで SSL 終了を実行しないすべてのファイアウォールをサポートします。 さらに、ad FS/WAP サーバーがクロスサイト スクリプティング、ADFS プロキシなどの一般的な web 攻撃を防止しで定義されているすべての要件を満たすためのメカニズムに構築された、 [MS ADFSPIP プロトコル](https://msdn.microsoft.com/library/dn392811.aspx)します。

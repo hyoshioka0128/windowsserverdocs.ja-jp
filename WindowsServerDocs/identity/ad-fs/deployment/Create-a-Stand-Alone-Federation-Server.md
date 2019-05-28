@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: fd075c5b7d1bfce89cc27c4917a016e7e5037ce5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4b70b0b048f66f9a8ba19cd7990dde57e0655ae4
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888293"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192230"
 ---
 # <a name="create-a-stand-alone-federation-server"></a>スタンドアロン フェデレーション サーバーを作成する
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 フェデレーション サービス役割サービスをインストールし、コンピューターに必要な証明書を構成した後、コンピューターをフェデレーション サーバーを構成する準備が整いました。 スタンドアロン コンピューターを設定する、次の手順を使用する\-単独でフェデレーション サーバー。 スタンドアロンの作成の act\-単独でフェデレーション サーバーでは、新しいフェデレーション サービスも作成されます。 フェデレーション サーバーを作成すると、AD FS フェデレーション サーバー構成ウィザードを使用しないでください。  
   
@@ -59,6 +57,6 @@ ms.locfileid: "59888293"
 7.  **[構成結果]** ページで、結果を確認します。 すべての構成手順が終了したら、 **[閉じる]**  をクリックしてウィザードを終了します。  
   
 ## <a name="additional-references"></a>その他の参照情報  
-[チェックリスト:フェデレーション サーバーを設定します。](Checklist--Setting-Up-a-Federation-Server.md)  
+[チェックリスト:フェデレーション サーバーのセットアップ](Checklist--Setting-Up-a-Federation-Server.md)  
   
 

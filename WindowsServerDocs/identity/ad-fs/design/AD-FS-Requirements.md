@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1310792158995608e8f477b6df9d6cf7c0284571
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c6aa91956f4a90b32b82e6c970e68b3164c732f0
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822253"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191712"
 ---
 # <a name="ad-fs-requirements"></a>AD FS の要件
-
->適用先:Windows Server 2012 R2
 
 AD FS を展開するときに準拠する必要があるさまざまな要件を次に示します。  
   
@@ -334,7 +332,7 @@ AD FS では、自分のデバイスを参加させる、エンド ユーザー 
 |TripleDES – 既定 192 \(192 ~ 256 のサポート\) \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#tripledes\-cbc](http://www.w3.org/2001/04/xmlenc)|>\= 192|セキュリティ トークンの復号化のサポートされているアルゴリズムです。 このアルゴリズムでセキュリティ トークンを暗号化することはサポートされていません。|  
 |AES128 \- http:\/\/www.w3.org\/2001\/04\/xmlenc\#aes128\-cbc|128|セキュリティ トークンの復号化のサポートされているアルゴリズムです。 このアルゴリズムでセキュリティ トークンを暗号化することはサポートされていません。|  
 |AES192 \- http:\/\/www.w3.org\/2001\/04\/xmlenc\#aes192\-cbc|192|セキュリティ トークンの復号化のサポートされているアルゴリズムです。 このアルゴリズムでセキュリティ トークンを暗号化することはサポートされていません。|  
-|AES256 \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#aes256\-cbc](http://www.w3.org/2001/04/xmlenc)|256|**[既定]**。 セキュリティ トークンを暗号化するためのサポートされているアルゴリズムです。|  
+|AES256 \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#aes256\-cbc](http://www.w3.org/2001/04/xmlenc)|256|**[既定]** 。 セキュリティ トークンを暗号化するためのサポートされているアルゴリズムです。|  
 |(Tripledeskeywrap) \- http:\/\/www.w3.org\/2001\/04\/xmlenc\#kw\-tripledes|.NET 4.0 でサポートされるすべてのキー サイズ\+|セキュリティ トークンを暗号化する対称キーの暗号化アルゴリズムがサポートされています。|  
 |(Aes128keywrap) \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#kw\-aes128](http://www.w3.org/2001/04/xmlenc)|128|セキュリティ トークンを暗号化する対称キーの暗号化アルゴリズムがサポートされています。|  
 |AES192KeyWrap \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#kw\-aes192](http://www.w3.org/2001/04/xmlenc)|192|セキュリティ トークンを暗号化する対称キーの暗号化アルゴリズムがサポートされています。|  
@@ -348,6 +346,6 @@ AD FS では、自分のデバイスを参加させる、エンド ユーザー 
 インストールと AD FS の初期構成を実行する管理者では、ローカル ドメインのドメイン管理者のアクセス許可が必要\(に、フェデレーション サーバーが参加しているドメインつまり、します。\)  
   
 ## <a name="see-also"></a>関連項目  
-[Windows Server 2012 R2 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[Windows Server 2012 R2 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

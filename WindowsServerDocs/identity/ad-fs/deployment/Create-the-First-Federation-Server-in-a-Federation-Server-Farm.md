@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: af0aa61f0d16d4ca567b140c95d74445d09f1cf3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e16289142ea2e53adba52a4ed8f6c01a929a530d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879303"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192225"
 ---
 # <a name="create-the-first-federation-server-in-a-federation-server-farm"></a>フェデレーション サーバー ファーム内に最初のフェデレーション サーバーを作成する
-
- >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 フェデレーション サービス役割サービスをインストールし、コンピューターに必要な証明書を構成した後、コンピューターをフェデレーション サーバーを構成する準備が整いました。 次の手順を使用すると、AD FS フェデレーション サーバー構成ウィザードを使用して、新しいフェデレーション サーバー ファームの最初のフェデレーション サーバーにコンピューターをセットアップします。  
   
@@ -66,6 +64,6 @@ ms.locfileid: "59879303"
     > セキュリティで保護された展開を行うため、AD FS フェデレーション サーバー構成ウィザードを使ってフェデレーション サーバー ファームを構成するときは、アーティファクト解決および応答検出は無効にされます。 このウィザードでは、サービス構成データを格納するための Windows Internal Database が自動的に構成されます。 可能性があります、ただし、誤って変更元に戻すこのいずれかを使用して、アーティファクト解像度エンドポイントを有効にすると、**エンドポイント**ノード AD FS 管理スナップインで\-でまたは有効にする\-ADFSEndpoint コマンドレットWindows PowerShell。 フェデレーション サーバー ファームと Windows Internal Database を一緒に使用するときにこのエンドポイントを無効のままにするため、既定の設定を再構成しないように注意してください。  
   
 ## <a name="additional-references"></a>その他の参照情報  
-[チェックリスト:フェデレーション サーバーを設定します。](Checklist--Setting-Up-a-Federation-Server.md)  
+[チェックリスト:フェデレーション サーバーのセットアップ](Checklist--Setting-Up-a-Federation-Server.md)  
   
 

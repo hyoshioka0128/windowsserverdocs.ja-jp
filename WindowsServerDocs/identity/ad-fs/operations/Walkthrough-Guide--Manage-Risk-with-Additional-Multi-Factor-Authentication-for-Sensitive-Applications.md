@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 414f37e86f0072863e5fa2f107c39e5518e560ec
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bd21f2d6e8dcb167aa2c614d096807305a7728d6
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860863"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188889"
 ---
 # <a name="walkthrough-guide-manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>チュートリアル ガイド:追加の多要素認証による個人情報アプリケーションのリスク管理
 
->適用先:Windows Server 2012 R2
+
 
 
 ## <a name="about-this-guide"></a>このガイドについて
@@ -55,9 +55,9 @@ AD FS での MFA と認証メカニズムの詳細については、次を参照
 このような環境を設定する方法については、次を参照してください。 [Windows Server 2012 R2 の AD FS のラボ環境を設定](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)します。
 
 ## <a name="BKMK_2"></a>手順 2:AD FS での既定の認証メカニズムを確認する
-この手順では、AD FS の既定のアクセス制御メカニズム (エクストラネットの場合は **[フォーム認証]**、イントラネットの場合は **[Windows 認証]**) により、ユーザーが AD FS のサインイン ページにリダイレクトされ、有効な資格情報を入力するとアプリケーションへのアクセスが許可されることを確認します。 使用することができます、 **Robert Hatley** AD アカウントと **claimapp** サンプル アプリケーションで構成した [Windows Server 2012 R2 の AD FS のラボ環境を設定](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)します。
+この手順では、AD FS の既定のアクセス制御メカニズム (エクストラネットの場合は **[フォーム認証]** 、イントラネットの場合は **[Windows 認証]** ) により、ユーザーが AD FS のサインイン ページにリダイレクトされ、有効な資格情報を入力するとアプリケーションへのアクセスが許可されることを確認します。 使用することができます、 **Robert Hatley** AD アカウントと **claimapp** サンプル アプリケーションで構成した [Windows Server 2012 R2 の AD FS のラボ環境を設定](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)します。
 
-1.  クライアント コンピューターに、ブラウザー ウィンドウを開くし、サンプル アプリケーションに移動します:  **https://webserv1.contoso.com/claimapp**します。
+1.  クライアント コンピューターに、ブラウザー ウィンドウを開くし、サンプル アプリケーションに移動します:  **https://webserv1.contoso.com/claimapp** します。
 
     この操作により、要求がフェデレーション サーバーの役割に自動的にリダイレクトされた後、ユーザー名とパスワードでサインインするように求められます。
 
@@ -84,9 +84,9 @@ MFA を設定するには、追加の認証方法を選択する必要があり�
 
 ###### <a name="to-configure-certificate-authentication-as-an-additional-authentication-method-via-the-ad-fs-management-console"></a>AD FS 管理コンソールを使用して追加の認証方法として証明書の認証を構成するには
 
-1.  フェデレーション サーバーで、AD FS 管理コンソールの **[認証ポリシー]** ノードに移動し、**[多要素認証]** セクションで **[グローバル設定]** サブセクションの横にある **[編集]** リンクをクリックします。
+1.  フェデレーション サーバーで、AD FS 管理コンソールの **[認証ポリシー]** ノードに移動し、 **[多要素認証]** セクションで **[グローバル設定]** サブセクションの横にある **[編集]** リンクをクリックします。
 
-2.  **[グローバル認証ポリシーの編集]** ウィンドウで、追加の認証方法として **[証明書の認証]** を選択し、**[OK]** をクリックします。
+2.  **[グローバル認証ポリシーの編集]** ウィンドウで、追加の認証方法として **[証明書の認証]** を選択し、 **[OK]** をクリックします。
 
 ###### <a name="to-configure-certificate-authentication-as-an-additional-authentication-method-via-windows-powershell"></a>Windows PowerShell を使用して追加の認証方法として証明書の認証を構成するには
 
@@ -119,9 +119,9 @@ MFA を設定するには、追加の認証方法を選択する必要があり�
 
 3.  [Active Directory] ページで、1 番上にある **[Multi-Factor Authentication プロバイダー]** を選択します。  その後、1 番下にある **[新規]** をクリックします。
 
-4.  **[アプリケーション サービス] -> [Active Directory]** で **[Multi-Factor Authentication プロバイダー]**、**[簡易作成]** の順に選択します。
+4.  **[アプリケーション サービス] -> [Active Directory]** で **[Multi-Factor Authentication プロバイダー]** 、 **[簡易作成]** の順に選択します。
 
-5.  **[アプリケーション サービス]** で、**[アクティブな認証プロバイダー]**、**[簡易作成]** の順に選択します。
+5.  **[アプリケーション サービス]** で、 **[アクティブな認証プロバイダー]** 、 **[簡易作成]** の順に選択します。
 
 6.  次のフィールドに入力し、 **[作成]** を選択します。
 
@@ -143,7 +143,7 @@ MFA を設定するには、追加の認証方法を選択する必要があり�
 
 ##### <a name="BKMK_b"></a>Windows Azure Multi-factor Authentication Server をダウンロードします。
 
-1.  Windows Azure ポータルに Administrator としてログオンし、前に示した手順で作成した多要素認証プロバイダーをクリックします。 その後、**[管理]** ボタンをクリックします。
+1.  Windows Azure ポータルに Administrator としてログオンし、前に示した手順で作成した多要素認証プロバイダーをクリックします。 その後、 **[管理]** ボタンをクリックします。
 
     これにより **Windows Azure の Multi-Factor Authentication** ポータルが開きます。
 
@@ -155,11 +155,11 @@ Windows Azure の Multi-Factor Authentication Server の実行可能ファイル
 
 1.  Windows Azure の Multi-Factor Authentication Server の実行可能ファイルをダウンロードしてダブルクリックします。  これによりインストールが開始されます。
 
-2.  [使用許諾契約書] 画面で契約書を読んだら、**[同意します]** を選択し、**[次へ]** をクリックします。
+2.  [使用許諾契約書] 画面で契約書を読んだら、 **[同意します]** を選択し、 **[次へ]** をクリックします。
 
-3.  インストール先のフォルダーが正しいことを確認したら、**[次へ]** をクリックします。
+3.  インストール先のフォルダーが正しいことを確認したら、 **[次へ]** をクリックします。
 
-4.  インストールが完了したら、**[完了]** をクリックします。
+4.  インストールが完了したら、 **[完了]** をクリックします。
 
 これで、フェデレーション サーバーにインストールした Windows Azure の Multi-Factor Authentication Server を起動し、追加の認証方法として構成する準備ができました。
 
@@ -176,11 +176,11 @@ Windows Azure の Multi-Factor Authentication Server の実行可能ファイル
 
 4.  **Multi-Factor Authentication Server** のユーザー インターフェイスで、 **[ユーザー]** アイコンを選択し、 **[Active Directory からインポート]** をクリックします。次に、Windows Azure の Multi-Factor Authentication でプロビジョニングする **Robert Hatley** アカウントを選択して、 **[インポート]** をクリックします。
 
-5.  **[ユーザー]** ボックスの一覧で、**Robert Hatley** アカウントを選択し、**[編集]** をクリックします。**[ユーザーの編集]** ウィンドウで、このアカウントの携帯電話番号を入力します。**[有効]** チェック ボックスがオンになっていることを確認し、**[適用]** をクリックします。
+5.  **[ユーザー]** ボックスの一覧で、**Robert Hatley** アカウントを選択し、 **[編集]** をクリックします。 **[ユーザーの編集]** ウィンドウで、このアカウントの携帯電話番号を入力します。 **[有効]** チェック ボックスがオンになっていることを確認し、 **[適用]** をクリックします。
 
-6.  **[ユーザー]** ボックスの一覧で、**Robert Hatley** アカウントを選択し、**[テスト]** をクリックします。 **[ユーザーのテスト]** ウィンドウで、 **Robert Hatley** アカウントの資格情報を入力します。 携帯電話の呼び出し回数がキーを押してアカウント認証を完了するには、' #' です。
+6.  **[ユーザー]** ボックスの一覧で、**Robert Hatley** アカウントを選択し、 **[テスト]** をクリックします。 **[ユーザーのテスト]** ウィンドウで、 **Robert Hatley** アカウントの資格情報を入力します。 携帯電話の呼び出し回数がキーを押してアカウント認証を完了するには、' #' です。
 
-7.  **Multi-Factor Authentication Server** のユーザー インターフェイスで、**[AD FS]** アイコンを選択し、**[ユーザー登録を許可する]**、**[ユーザーに認証方法の選択を許可する]** (**[電話]** や **[テキスト メッセージ]** など)、**[代替認証にセキュリティの質問を使用する]**、**[ログを有効にする]** のチェック ボックスがオンになっていることを確認します。**[AD FS アダプターのインストール]** をクリックし、**Multi-Factor Authentication AD FS アダプター**のインストール ウィザードの手順を完了します。
+7.  **Multi-Factor Authentication Server** のユーザー インターフェイスで、 **[AD FS]** アイコンを選択し、 **[ユーザー登録を許可する]** 、 **[ユーザーに認証方法の選択を許可する]** ( **[電話]** や **[テキスト メッセージ]** など)、 **[代替認証にセキュリティの質問を使用する]** 、 **[ログを有効にする]** のチェック ボックスがオンになっていることを確認します。 **[AD FS アダプターのインストール]** をクリックし、**Multi-Factor Authentication AD FS アダプター**のインストール ウィザードの手順を完了します。
 
     > [!NOTE]
     > **Multi-Factor Authentication AD FS アダプター**のインストール ウィザードにより、Active Directory で **PhoneFactor Admins** というセキュリティ グループが作成され、このグループにフェデレーション サービスの AD FS サービス アカウントが追加されます。
@@ -193,7 +193,7 @@ Windows Azure の Multi-Factor Authentication Server の実行可能ファイル
 
 8.  フェデレーション サービスにアダプターを登録するには、フェデレーション サーバーで Windows PowerShell コマンド ウィンドウを開き、 `\Program Files\Multi-Factor Authentication Server\Register-MultiFactorAuthenticationAdfsAdapter.ps1`コマンドを実行します。 これで、アダプターは **WindowsAzureMultiFactorAuthentication**として登録されました。  登録を有効にするには、AD FS サービスを再起動する必要があります。
 
-9. Windows Azure の Multi-Factor Authentication を追加の認証方法として構成するには、AD FS 管理コンソールで **[認証ポリシー]** ノードに移動し、**[多要素認証]** セクションで **[グローバル設定]** サブセクションの横にある **[編集]** リンクをクリックします。 **[グローバル認証ポリシーの編集]** ウィンドウで、追加の認証方法として **[多要素認証]** を選択し、**[OK]** をクリックします。
+9. Windows Azure の Multi-Factor Authentication を追加の認証方法として構成するには、AD FS 管理コンソールで **[認証ポリシー]** ノードに移動し、 **[多要素認証]** セクションで **[グローバル設定]** サブセクションの横にある **[編集]** リンクをクリックします。 **[グローバル認証ポリシーの編集]** ウィンドウで、追加の認証方法として **[多要素認証]** を選択し、 **[OK]** をクリックします。
 
     > [!NOTE]
     > Windows Azure の Multi-Factor Authentication の名前と説明はカスタマイズできます。サード パーティの認証方法も同様です。この名前と説明は **Set-AdfsAuthenticationProviderWebContent** コマンドレット実行することで AD FS の UI に表示されます。 詳細については、次を参照してください。 [https://technet.microsoft.com/library/dn479401.aspx](https://technet.microsoft.com/library/dn479401.aspx)
@@ -205,11 +205,11 @@ AD FS 管理コンソールまたは Windows PowerShell のいずれかを使用
 
 ##### <a name="to-configure-the-mfa-policy-based-on-users-group-membership-data-for-claimapp--via-the-ad-fs-management-console"></a>AD FS 管理コンソールを使用して 'claimapp' 用のユーザーのグループ メンバーシップ データに基づく MFA ポリシーを構成するには
 
-1.  フェデレーション サーバーで、AD FS 管理コンソールの **[認証ポリシー]**\\**証明書利用者信頼ごと** ノードに移動し、サンプル アプリケーション (**と サンプル アプリケーション**) を表す証明書利用者信頼を選択します。
+1.  フェデレーション サーバーで、AD FS 管理コンソールの **[認証ポリシー]** \\**証明書利用者信頼ごと** ノードに移動し、サンプル アプリケーション (**と サンプル アプリケーション**) を表す証明書利用者信頼を選択します。
 
 2.  **[操作]** ページで、または **[claimapp]** を右クリックして、 **[カスタム多要素認証の編集]** を選択します。
 
-3.  **[claimapp の証明書利用者信頼の編集]** ウィンドウで、**[ユーザー/グループ]** ボックスの一覧の横にある **[追加]** ボタンをクリックします。 入力 **Finance** で作成した AD グループの名前を [Windows Server 2012 R2 の AD FS のラボ環境を設定](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md), 、 をクリック **名前の確認**, 、名前が解決できたら、以下の をクリック **[ok]** します。
+3.  **[claimapp の証明書利用者信頼の編集]** ウィンドウで、 **[ユーザー/グループ]** ボックスの一覧の横にある **[追加]** ボタンをクリックします。 入力 **Finance** で作成した AD グループの名前を [Windows Server 2012 R2 の AD FS のラボ環境を設定](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md), 、 をクリック **名前の確認**, 、名前が解決できたら、以下の をクリック **[ok]** します。
 
 4.  **[claimapp の証明書利用者信頼の編集]** ウィンドウで **[OK]** をクリックします。
 
@@ -235,7 +235,7 @@ AD FS 管理コンソールまたは Windows PowerShell のいずれかを使用
 ## <a name="BKMK_4"></a>手順 4:MFA メカニズムを確認する
 この手順では、前の手順で設定した MFA 機能を確認します。 次の手順を使用して、AD ユーザー **Robert Hatley** がサンプル アプリケーションにアクセスできることを確認できますが、今回は MFA を受ける必要があります。このユーザーは **Finance** グループに属しているためです。
 
-1.  クライアント コンピューターに、ブラウザー ウィンドウを開くし、サンプル アプリケーションに移動します:  **https://webserv1.contoso.com/claimapp**します。
+1.  クライアント コンピューターに、ブラウザー ウィンドウを開くし、サンプル アプリケーションに移動します:  **https://webserv1.contoso.com/claimapp** します。
 
     この操作により、要求がフェデレーション サーバーの役割に自動的にリダイレクトされた後、ユーザー名とパスワードでサインインするように求められます。
 

@@ -9,12 +9,12 @@ ms.assetid: 9c7a67e0-0953-479c-8736-ccb356230bde
 ms.author: pashort
 author: shortpatti
 ms.date: 06/20/2018
-ms.openlocfilehash: c76483031bdca184e0943738a8c921776440d1fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0439c0f45a604f6b3ef90369f5fe77a59568d9d7
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829033"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222585"
 ---
 # <a name="network-policy-server-nps"></a>ネットワーク ポリシー サーバー (NPS)
 
@@ -39,10 +39,10 @@ ms.locfileid: "59829033"
 
 NPS では一元的に構成して、ネットワーク アクセスの認証、承認、およびアカウンティングを次の機能を管理することができます。
 
-- **RADIUS サーバー**します。 NPS は、ワイヤレス、認証スイッチ、リモート アクセス ダイヤルアップと仮想プライベート ネットワーク (VPN) 接続に対して、一元化された認証、承認、およびアカウンティングを実行します。 NPS を RADIUS サーバーとして使用する場合、ワイヤレス アクセス ポイントや VPN サーバーなどのネットワーク アクセス サーバーを NPS の RADIUS クライアントして構成します。 また、NPS が接続要求を承認するために使用するネットワーク ポリシーを構成して、NPS がアカウンティング情報をローカル ハード ディスク上のログ ファイルまたは Microsoft SQL Server データベースに記録するように RADIUS アカウンティングを構成できます。 詳細については、次を参照してください。 [RADIUS サーバー](#bkmk_server)します。
-- **RADIUS プロキシ**します。 NPS を RADIUS プロキシとして使用する場合は、他の RADIUS サーバーと接続要求を転送する RADIUS サーバーに転送する接続要求の NPS に指示する接続要求ポリシーを構成します。 アカウンティング データを転送して、リモート RADIUS サーバー グループの 1 つ以上のコンピューターに記録されるように構成することもできます。 RADIUS プロキシ サーバーとしては、NPS を構成するには、次のトピックを参照してください。 詳細については、次を参照してください。 [RADIUS プロキシ](#bkmk_proxy)します。
+- **RADIUS サーバー**します。 NPS は、ワイヤレス、認証スイッチ、リモート アクセス ダイヤルアップと仮想プライベート ネットワーク (VPN) 接続に対して、一元化された認証、承認、およびアカウンティングを実行します。 NPS を RADIUS サーバーとして使用する場合、ワイヤレス アクセス ポイントや VPN サーバーなどのネットワーク アクセス サーバーを NPS の RADIUS クライアントして構成します。 また、NPS が接続要求を承認するために使用するネットワーク ポリシーを構成して、NPS がアカウンティング情報をローカル ハード ディスク上のログ ファイルまたは Microsoft SQL Server データベースに記録するように RADIUS アカウンティングを構成できます。 詳細については、次を参照してください。 [RADIUS サーバー](#radius-server)します。
+- **RADIUS プロキシ**します。 NPS を RADIUS プロキシとして使用する場合は、他の RADIUS サーバーと接続要求を転送する RADIUS サーバーに転送する接続要求の NPS に指示する接続要求ポリシーを構成します。 アカウンティング データを転送して、リモート RADIUS サーバー グループの 1 つ以上のコンピューターに記録されるように構成することもできます。 RADIUS プロキシ サーバーとしては、NPS を構成するには、次のトピックを参照してください。 詳細については、次を参照してください。 [RADIUS プロキシ](#radius-proxy)します。
     - [接続要求ポリシーを構成します。](nps-crp-configure.md)
-- **RADIUS アカウンティング**します。 ローカルのログ ファイルに、または Microsoft SQL Server のローカルまたはリモート インスタンスにイベントを記録する NPS を構成することができます。 詳細については、次を参照してください。 [NPS ログ](#bkmk_logging)します。
+- **RADIUS アカウンティング**します。 ローカルのログ ファイルに、または Microsoft SQL Server のローカルまたはリモート インスタンスにイベントを記録する NPS を構成することができます。 詳細については、次を参照してください。 [NPS ログ](#nps-logging)します。
 
 >[!IMPORTANT]
 >ネットワーク アクセス保護\(NAP\)、正常性登録機関\(HRA\)、および Host Credential Authorization Protocol \(HCAP\) Windows Server 2012 R2 で非推奨とされました。Windows Server 2016 では使用できません。 Windows Server 2016 より前のオペレーティング システムを使用して、NAP 展開した場合は、Windows Server 2016 に NAP の展開を移行できません。
@@ -66,7 +66,7 @@ Windows Server 2016 Standard または Datacenter では、NPS を RADIUS クラ
 
 NPS は、RADIUS サーバー、RADIUS プロキシ、またはその両方として使用することができます。
 
-### <a name="bkmk_server"></a>RADIUS サーバー
+### <a name="radius-server"></a>RADIUS サーバー
 
 NPS は RADIUS 標準を指定して、Internet Engineering Task Force の Microsoft 実装\(IETF\) Rfc 2865 および 2866 でします。 NPS を RADIUS サーバーとしては、一元化された接続の認証、承認、およびアカウンティングのさまざまな種類のネットワーク アクセス、ワイヤレス接続、認証スイッチ、ダイヤルアップ、および仮想プライベート ネットワークの操作を実行します\(VPN\)リモートアクセス、およびルーターに接続します。
 
@@ -97,7 +97,7 @@ NPS を RADIUS サーバーとして使用することができる場合。
 
 ![RADIUS サーバーとして機能する NPS](../../media/Nps-Server/Nps-Server.jpg)
 
-### <a name="bkmk_proxy"></a>RADIUS プロキシ
+### <a name="radius-proxy"></a>RADIUS プロキシ
 
 RADIUS プロキシとして NPS は NPS および他の RADIUS サーバーを認証およびアカウンティング メッセージを転送します。 NPS を使用するには、RADIUS のルーティングを提供する RADIUS プロキシが RADIUS クライアントの間でメッセージとして\(ネットワーク アクセス サーバーとも呼ばれます\)とユーザー認証、承認、およびアカウンティングを実行する RADIUS サーバー、。接続しようとしました。 
 
@@ -169,8 +169,8 @@ NPS を RADIUS サーバーとして構成するには、RADIUS クライアン�
 
 これらの構成を行う方法の詳細については、次のトピックを参照してください。
 
-- [RADIUS クライアントを構成します。](nps-radius-clients-configure.md)
-- [ネットワーク ポリシーを構成します。](nps-np-configure.md)
+- [RADIUS クライアントを構成する](nps-radius-clients-configure.md)
+- [ネットワーク ポリシーを構成する](nps-np-configure.md)
 - [ネットワーク ポリシー サーバーのアカウンティングを構成します。](nps-accounting-configure.md)
 
 #### <a name="configure-radius-proxy"></a>RADIUS プロキシを構成します。
@@ -179,11 +179,11 @@ NPS を RADIUS プロキシとして構成するには、RADIUS クライアン�
 
 これらの構成を行う方法の詳細については、次のトピックを参照してください。
 
-- [RADIUS クライアントを構成します。](nps-radius-clients-configure.md)
+- [RADIUS クライアントを構成する](nps-radius-clients-configure.md)
 - [リモート RADIUS サーバー グループを構成します。](nps-crp-rrsg-configure.md)
 - [接続要求ポリシーを構成します。](nps-crp-configure.md)
 
-## <a name="bkmk_logging"></a>NPS ログ
+## <a name="nps-logging"></a>NPS ログ
 
 NPS のログは、RADIUS アカウンティングとも呼ばれます。 NPS は NPS を RADIUS サーバー、プロキシ、またはこれらの構成の任意の組み合わせとして使用しているかどうか、要件にログを構成します。
 

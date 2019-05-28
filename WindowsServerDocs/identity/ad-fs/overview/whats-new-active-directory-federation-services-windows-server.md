@@ -5,29 +5,27 @@ description: ''
 author: billmath
 ms.author: billmath
 manager: daveba
-ms.date: 02/26/2019
+ms.date: 04/23/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: faa0590dc38921a56952aa54bf38243b6ff84d82
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fbb289c16d82da79aded49e3af4134ac7f6df325
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867713"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188697"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Active Directory フェデレーション サービス (AD FS) の新機能
 
-
->適用先:Windows Server 2019、Windows Server 2016
 
 ## <a name="whats-new-in-active-directory-federation-services-for-windows-server-2019"></a>Active Directory フェデレーション サービスの Windows Server 2019 の新機能新機能
 
 ### <a name="protected-logins"></a>保護されたログイン
 保護されたログインの AD FS 2019 で使用可能な更新プログラムの簡単な概要を次に示します。
-- **プライマリと外部認証プロバイダー** -顧客が最初の要素としてサード パーティの認証製品を使用するようになりましたし、最初の要素としてのパスワードは表示されません。 開かずに外部認証プロバイダーが 2 つの要因を証明できる場合は、MFA を要求にできます。 
+- **プライマリと外部認証プロバイダー** -顧客が最初の要素としてサード パーティの認証製品を使用するようになりましたし、最初の要素としてのパスワードは表示されません。 外部認証プロバイダーが 2 つの要因を証明できる場合は、MFA を要求にできます。 
 - **追加の認証としてパスワード認証**-顧客だけ少ないオプション、パスワードの後に、追加の考慮が最初の要素として使用されるパスワードを使用する受信トレイを完全にサポートされているオプションがあります。 これにより、お客様が現状サポートされている github アダプターをダウンロードしなければ ADFS 2016 のカスタマー エクスペリエンスが向上します。 
-- **プラグ可能な脅威モジュール Framework** -顧客が事前認証段階中に特定の種類の要求をブロックするモジュールが独自のプラグインを構築できます。 これにより、簡単に Identity protection などのクラウド インテリジェンスを使用して、リスクの高いユーザーやリスクの高いトランザクションのログインをブロックします。
+- **プラグ可能なリスクの評価モジュール**-顧客が事前認証段階中に特定の種類の要求をブロックするモジュールが独自のプラグインを構築できます。 これにより、簡単に Identity protection などのクラウド インテリジェンスを使用して、リスクの高いユーザーやリスクの高いトランザクションのログインをブロックします。  詳細については、次を参照してください[プラグインを AD FS 2019 リスク評価のモデルの構築。](../../ad-fs/development/ad-fs-risk-assessment-model.md) 
 - **ESL 改善**-は次の機能を追加することで、2016年で ESL QFE の向上
     - 監査モードでは ADFS 2012R2 以降で使用可能 'クラシック' のエクストラネット ロックアウト機能によって保護されているができます。 現在 2016 顧客がない監査モードで保護します。 
     - 場所の独立したロックアウトのしきい値を有効にします。 これにより、ロール オーバー、最小限の影響では、パスワードに共通のサービス アカウントで実行されているアプリの複数のインスタンス。 
@@ -142,7 +140,7 @@ AD FS 2016 磨き多要素認証 (MFA) 機能の Windows Server 2012 R2 で AD F
 * イントラネットまたはエクストラネット、またはすべてのアクセス制御ポリシーの一部として、azure MFA を構成することができます。
 
 AD FS での Azure MFA の詳細については
-*  [AD FS 2016 と Azure MFA を構成します。](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa)  
+*  [AD FS 2016 と Azure MFA を構成する](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa)  
 
 ### <a name="password-less-access-from-compliant-devices"></a>準拠しているデバイスからのパスワードのないアクセス
 AD FS 2016 はサインオンを有効にする前のデバイス登録機能を基盤し、アクセス制御ベースのデバイス コンプライアンスの状態。 ユーザーがデバイスの資格情報を使用してサインオンでき、コンプライアンスが再評価されてデバイスの属性を変更するときにポリシーの適用を常に確認できるようにします。  ポリシーを行うこの

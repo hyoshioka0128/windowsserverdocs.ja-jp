@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 553ff059693c7b0c0e6f0364d82c1adbca661097
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3e3d1e5d86afbef2fdabd211047f513d31a40300
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887253"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190322"
 ---
 # <a name="ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication"></a>AD FS での証明書認証のための代替ホスト名バインドのサポート
-
->適用先:Windows Server 2016
 
 多くのネットワークのローカル ファイアウォール ポリシーは、非標準ポート 49443 などを通じてトラフィックを許可可能性があります。 これは、Windows Server 2016 での AD FS の前に AD FS で証明書認証を実行しようとするときで、問題になりました。 同じホスト上のデバイスの認証とユーザー証明書認証ごとに異なるバインドができなかったためにです。 既定のポート 443 では、デバイスの証明書を受信はバインドされ、同じチャネルで複数のバインドをサポートするために変更することはできません。 結果は、スマート カード認証が機能しないと、ユーザーが実際に変更点を示す値が存在しないためにの変更点の認識していなかったことでした。  
   

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 26aad48db4a5f0a593dfcb29160031a0c9f3dc75
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9c5272ba0a5ff7c0a30f61631bb6c8dac6552ef0
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886863"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192611"
 ---
 # <a name="chkdsk"></a>chkdsk
 
@@ -35,7 +35,7 @@ ms.locfileid: "59886863"
 > [!IMPORTANT]
 > **注:** Chkdsk は、ローカル ディスクに対してのみ使用できます。 コマンドは、ネットワーク経由でリダイレクトされているローカル ドライブ文字では使用できません。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+このコマンドを使用する方法の例については、[例](#examples)を参照してください。
 
 ##<a name="syntax"></a>構文
 
@@ -60,7 +60,7 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
 |/b|NTFS 専用です。ボリューム上の不良クラスターの一覧をクリアし、エラーのすべての割り当てや解放クラスターを再スキャンします。 **/b**の機能が含まれています **/r**します。 新しいハード ディスク ドライブにボリュームをイメージングの後に、このパラメーターを使用します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-##<a name="remarks"></a>注釈
+## <a name="remarks"></a>注釈
 
 -   ボリュームのチェックをスキップしています
 
@@ -114,7 +114,7 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
 -   **Chkdsk**コマンドで他のパラメーターは、回復コンソールから利用できます。
 -   再起動が頻度の低いサーバーを使用する可能性があります、 **chkntfs**または**fsutil ダーティ クエリ**ビットが既にボリュームのダーティかどうかを判別するためのコマンドは、chkdsk を実行する前に設定します。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
 D ドライブでディスクをチェックして、Windows のエラーを修正する場合は、次のように入力します。
 ```
@@ -131,4 +131,4 @@ chkdsk *.*
 **Chkdsk**を状態レポートを表示し、非連続ブロックを持つファイルの仕様に一致するファイルを表示します。
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

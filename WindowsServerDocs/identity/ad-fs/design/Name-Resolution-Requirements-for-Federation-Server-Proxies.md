@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a94e4de181cd8794d479bbd6695a94658aba0f86
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8aef8b3d8f1e6dde4f960a3bee5a93964d07c72b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855023"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191276"
 ---
 # <a name="name-resolution-requirements-for-federation-server-proxies"></a>フェデレーション サーバー プロキシの名前解決の要件
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 インターネット上のクライアント コンピューターが Active Directory フェデレーション サービスで保護されているアプリケーションにアクセスしようとした場合に\(AD FS\)、最初のフェデレーション サーバーを認証する必要があります。 ほとんどの場合、フェデレーション サーバーは通常ありません、インターネットから直接アクセスです。 そのため、インターネット クライアント コンピューターがリダイレクトされるよう、フェデレーション サーバー プロキシを代わりにします。 正常なリダイレクトを実行するには、適切なドメイン ネーム システムを追加する \(DNS\) またはインターネットが直面する複数の DNS ゾーンのレコードです。  
   
@@ -69,4 +67,4 @@ ms.locfileid: "59855023"
 境界ネットワークとインターネットの DNS ゾーンを変更する方法の詳細については、次を参照してください。 [DNS ゾーンことはどちらも、境界ネットワークとインターネット クライアントでのフェデレーション サーバー プロキシの名前解決を構成する](../../ad-fs/deployment/Configure-Name-Resolution-for-a-Federation-Server-Proxy-in-a-DNS-Zone-That-Serves-Both-the-Perimeter-Network-and-Internet-Clients.md)です。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

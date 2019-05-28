@@ -9,16 +9,15 @@ ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c9c66b5bbe5fff83010859abe6ea4759d5bc4be0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 42b71667758f392d641c5262e34322f8b21cfad9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853633"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188915"
 ---
 # <a name="walkthrough-workplace-join-with-an-ios-device"></a>チュートリアル: IOS デバイスのワークプ レース ジョイン
 
->適用先:Windows Server 2012 R2
 
 > [!IMPORTANT] 
 > このメソッドは、オンプレミスの顧客のみ完全に関連します。 ハイブリッドまたはクラウドのみのお客様は、自分の iOS デバイスを登録するのにこのメソッドを使用する必要があります。 オンプレミスの顧客がクラウドに移行することと、このメソッドに互換性がありません。 デバイスの登録を解除し、クラウドに登録されている必要があります。 
@@ -44,7 +43,7 @@ ms.locfileid: "59853633"
 
     ユーザーにこの URL を伝えるには多くの方法があります。 推奨される方法の 1 つは、AD FS のカスタム アプリケーション アクセス拒否メッセージでこの URL を発行するというものです。 これについては、次のセクションで説明します。[アプリケーションのアクセス ポリシーとカスタム アクセス拒否メッセージを作成します。](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
 
-2.  会社のドメイン アカウントを使用して web ページにログオン: **roberth@contoso.com**とパスワード:  **P@ssword**します。
+2.  会社のドメイン アカウントを使用して web ページにログオン: **roberth@contoso.com**とパスワード:  **P@ssword** します。
 
 3.  プロファイルのインストールを求められます。 **[プロファイルのインストール]** 画面で、 **[インストール]** をクリックします。
 
@@ -57,14 +56,14 @@ ms.locfileid: "59853633"
     Safari に戻ります。 Safari を閉じることができる旨のメッセージが表示されます。
 
 > [!TIP]
-> ワークプレース ジョイン プロファイルを表示または削除するには、iOS デバイスで **[設定]** アイコンをクリックし、 **[一般]**、 **[プロファイル]** の順にクリックします。
+> ワークプレース ジョイン プロファイルを表示または削除するには、iOS デバイスで **[設定]** アイコンをクリックし、 **[一般]** 、 **[プロファイル]** の順にクリックします。
 
 ## <a name="see-also"></a>関連項目
 
 
 - [SSO およびシームレスな第 2 の任意のデバイスから社内への参加要素用アプリケーション間での認証](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
-- [Windows Server 2012 R2 で AD FS のラボ環境のセットアップします。](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
-- [チュートリアル: Windows デバイスのワークプ レース ジョイン](Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+- [Windows Server 2012 R2 で AD FS 用のラボ環境をセットアップする](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+- [チュートリアル: Workplace Join で Windows デバイスをワークプレースに参加させる](Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
 
 

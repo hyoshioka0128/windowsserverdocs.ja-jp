@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 709bb8ae7135126b53ce426c981ee16705234cd9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9d36bb79dd1b71bc435ba9a9af9977e886d58d61
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862533"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190228"
 ---
 # <a name="ad-fs-user-sign-in-customization"></a>AD FS のユーザー サインインのカスタマイズ
 
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 AD FS 数に合わせて、企業の管理者をカスタマイズおよびエンド ユーザー エクスペリエンスを調整するためのオプションを提供する必要があります。  次のページは、カスタマイズの中央の場所として使用されます。  カスタマイズのオプションを見つけるには、次の表を使用できます。
 

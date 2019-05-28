@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 7e41f7728c42912ec6ce680e1ed0c6a906a33392
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 00c43a56d9b57a2ae2c8b9aeca56807fe1d1841f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821713"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191178"
 ---
 # <a name="plan-your-ad-fs-deployment-topology"></a>AD FS 展開トポロジの計画
-
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 Active Directory フェデレーション サービスの展開の計画の最初の手順\(AD FS\)は、組織のニーズに合わせて適切な展開トポロジを決定します。  
   
@@ -40,7 +38,7 @@ AD FS 構成を格納するデータベースを使用して、場合によっ�
 |AD FS の機能|SAML アーティファクト解決 </br></br>**注:** この機能は、Microsoft Online Services、Microsoft Office 365、Microsoft Exchange、Microsoft Office SharePoint のシナリオには不要です。|X|〇  
 |AD FS の機能|SAML\/WS\-フェデレーション トークン リプレイ検出|X|〇  
 |データベースの機能|1 または読み取りをホストするサーバーをレプリケーションでは、基本的なデータベースの冗長性を使用してプル\-読み取りをホストしている移行元サーバーで行われた変更をデータベースで要求の唯一のコピー\/データベースのコピーを作成|〇|X 
-|データベースの機能|高を使用してデータベースの冗長性\-フェールオーバー クラスタ リングやミラーリングなどの可用性ソリューション\(データベース層のみ\)**に注意してください。** すべての AD FS 展開トポロジは、AD FS サービス層でのクラスタ リングをサポートします。|いいえ|〇  
+|データベースの機能|高を使用してデータベースの冗長性\-フェールオーバー クラスタ リングやミラーリングなどの可用性ソリューション\(データベース層のみ\)**に注意してください。** すべての AD FS 展開トポロジは、AD FS サービス層でのクラスタ リングをサポートします。|X|〇  
 
   
 ## <a name="sql-server-considerations"></a>SQL Server に関する考慮事項  
@@ -71,13 +69,13 @@ AD FS を使用するためのファイアウォール サーバーを構成す�
 ## <a name="supported-deployment-topologies"></a>サポートされる展開トポロジ  
 次のトピックでは、AD FS で使用できるさまざまな展開トポロジについて説明します。 また、特定のビジネスのニーズに最適なトポロジを選択できるよう、各展開トポロジに関連する利点と制約事項についても説明します。  
   
--   [WID を使用してフェデレーション サーバー ファーム](Federation-Server-Farm-Using-WID.md)  
+-   [WID を使用するフェデレーション サーバー ファーム](Federation-Server-Farm-Using-WID.md)  
   
--   [WID とプロキシを使用してフェデレーション サーバー ファーム](Federation-Server-Farm-Using-WID-and-Proxies.md)  
+-   [WID とプロキシを使用するフェデレーション サーバー ファーム](Federation-Server-Farm-Using-WID-and-Proxies.md)  
   
--   [SQL Server を使用してフェデレーション サーバー ファーム](Federation-Server-Farm-Using-SQL-Server.md)  
+-   [SQL Server を使用するフェデレーション サーバー ファーム](Federation-Server-Farm-Using-SQL-Server.md)  
   
 ## <a name="see-also"></a>関連項目  
-[Windows Server 2012 R2 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[Windows Server 2012 R2 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

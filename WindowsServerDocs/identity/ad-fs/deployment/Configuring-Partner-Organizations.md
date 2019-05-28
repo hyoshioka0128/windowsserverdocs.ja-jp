@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 5494f3bd8d012bf1ecc240439ff880d1bb52c280
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3d7389ce806a5e3aebf4fe166b10e5262df0be8a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875183"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192238"
 ---
 # <a name="configuring-partner-organizations"></a>パートナー組織の構成
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory フェデレーション サービスで新しい取引先組織をデプロイする\(AD FS\)、いずれかでタスクを完了[チェックリスト。Configuring the Resource Partner Organization](Checklist--Configuring-the-Resource-Partner-Organization.md)または[チェックリスト。アカウント パートナー組織の構成](Checklist--Configuring-the-Account-Partner-Organization.md)、AD FS 設計によって異なります。  
   

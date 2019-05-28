@@ -9,14 +9,17 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 41f435c3d537cbfd204dfa869d750b22200deb33
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d9999f786639ff4aa303ed34ade14849cda8feec
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891133"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475911"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Azure リージョンを超えてクラスター間の記憶域レプリカを構成する
+
+> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+
 Azure では、リージョンをまたがるアプリケーションをクラスターにクラスターの記憶域レプリカを構成できます。 次の例では、2 つのノードを使用しますが、クラスターをクラスターに記憶域レプリカは 2 つのノードに制限はありません。 次の図は、2 つのノードの記憶域スペース ダイレクト クラスターを互いと通信できる、同じドメインには、リージョンをまたがるです。
 
 プロセスの詳しいチュートリアルについては、以下のビデオをご覧ください。
@@ -31,7 +34,7 @@ Azure では、リージョンをまたがるアプリケーションをクラ�
 
     たとえば、 **SR AZ2AZ**で**米国西部 2**と**SR AZCROSS**で**米国中西部**、上記のようです。
 
-2. 2 つ作成[可用性セット](https://ms.portal.azure.com/#create/Microsoft.AvailabilitySet-ARM)、各クラスターのリソース グループごとに 1 つ
+2. 2 つ作成[可用性セット](https://ms.portal.azure.com/#create/Microsoft.AvailabilitySet-ARM)、各クラスターのリソース グループごとに 1 つ。
     - 可用性セット (**az2azAS1**) で (**SR AZ2AZ**)
     - 可用性セット (**azcross-AS**) で (**SR AZCROSS**)
 
@@ -41,7 +44,7 @@ Azure では、リージョンをまたがるアプリケーションをクラ�
 
 4. 2 つのネットワーク セキュリティ グループを作成します。
    - 作成、[ネットワーク セキュリティ グループ](https://ms.portal.azure.com/#create/Microsoft.NetworkSecurityGroup-ARM)(**az2az NSG**) 最初のリソース グループ内 (**SR AZ2AZ**)。
-   - 作成、[ネットワーク セキュリティ グループ](https://ms.portal.azure.com/#create/Microsoft.NetworkSecurityGroup-ARM)(**azcross NSG**) 2 つ目のリソース グループ内 (**SR AZCROSS**)。 
+   - 作成、[ネットワーク セキュリティ グループ](https://ms.portal.azure.com/#create/Microsoft.NetworkSecurityGroup-ARM)(**azcross NSG**) 2 つ目のリソース グループ内 (**SR AZCROSS**)。
 
    両方のネットワーク セキュリティ グループに RDP:3389 の 1 つの受信セキュリティ規則を追加します。 セットアップが完了したら、このルールを削除することができます。
 
@@ -72,10 +75,10 @@ Azure では、リージョンをまたがるアプリケーションをクラ�
 
    たとえば、PowerShell コマンドを次に示します
    ```powershell
-      New-Cluster -Name SRAZC1 -Node az2az1,az2az2 – StaticAddress 10.3.0.100
+      New-Cluster -Name SRAZC1 -Node az2az1,az2az2 –StaticAddress 10.3.0.100
    ```
    ```powershell
-      New-Cluster -Name SRAZCross -Node azcross1,azcross2 – StaticAddress 10.0.0.10
+      New-Cluster -Name SRAZCross -Node azcross1,azcross2 –StaticAddress 10.0.0.10
    ```
 
 7. 記憶域スペース ダイレクトを有効にします。
@@ -172,7 +175,7 @@ Azure では、リージョンをまたがるアプリケーションをクラ�
    ```powershell
      Grant-SRAccess -ComputerName az2az1 -Cluster SRAZCross
    ```
-このコマンドを実行するも Windows Server 2016 を使用する: 場合
+Windows Server 2016 を使用している場合は、このコマンドを実行しても。
 
    ```powershell
      Grant-SRAccess -ComputerName azcross1 -Cluster SRAZC1

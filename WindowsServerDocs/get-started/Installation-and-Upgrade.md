@@ -1,29 +1,27 @@
 ---
 title: Windows Server のインストールとアップグレード
-description: ''
-ms.custom: na
+description: インストール、アップグレード、または Windows Server の新しいバージョンに移行する方法。
 ms.prod: windows-server
-ms.reviewer: na
-ms.suite: na
-ms.date: 07/12/2018
+ms.date: 05/14/2019
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 98f876bd-63ff-4c3a-95d4-a8dd8d0d119c
-author: jaimeo
-ms.author: jaimeo
+author: jasongerend
+ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: c3b9070fc6cb9227ccfa445e23983d9e91fe5c82
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f859253188c46d3e34e7a6ae504bf3eeafbae75c
+ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859193"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65613173"
 ---
 # <a name="windows-server-installation-and-upgrade"></a>Windows Server のインストールとアップグレード
 
->適用先:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+>適用対象:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+
+Windows Server 2019 探しですか。 参照してください[インストール、アップグレード、または Windows Server 2019 への移行](../get-started-19/install-upgrade-migrate-19.md)します。
 
 > [!IMPORTANT]
 > Windows Server 2008 R2 と Windows Server 2008 の延長サポートは 2020 年 1月で終了します。 [アップグレードのオプションについて説明します](#upgrading-from-windows-server-2008-r2-or-windows-server-2008)します。
@@ -31,13 +29,14 @@ ms.locfileid: "59859193"
 Windows Server の新しいバージョンへ移行する場合、 現在実行しているバージョンに応じて、豊富なオプションを使用できます。
 
 ## <a name="installation"></a>インストール
+
 同じハードウェアで Windows Server の新しいバージョンに移動する場合、確実に移行できる方法の 1 つが**クリーン インストール**です。この方法では、同じハードウェア上の既存のバージョンの上に新しいオペレーティング システムを直接インストールし、これによって既存のオペレーティング システムを削除します。 これは最も簡単な方法ですが、まずデータをバックアップし、アプリケーションを再インストールする必要があります。 たとえばシステム要件など、いくつか注意すべき点があるため、必ず [Windows Server 2016](https://go.microsoft.com/fwlink/?LinkID=825558)、[Windows Server 2012 R2](https://technet.microsoft.com/library/dn303418)、[Windows Server 2012](https://technet.microsoft.com/library/jj134246.aspx) の詳細を確認してください。
 
 プレリリース版 (Windows Server 2016 Technical Preview など) から製品版 (Windows Server 2016) への移行には、常にクリーン インストールが必要です。
 
 ## <a name="migration-recommended-for-windows-server-2016"></a>移行 (Windows Server 2016 への移行で推奨される手順)
 
-Windows Server の (移行) ドキュメントは、Windows Server を実行する移行元のコンピューターから、同じバージョンまたは新しいバージョンを実行する別の移行先コンピューターに、役割や機能を一度に 1 つずつ移行する場合について記載されています。 これらのドキュメントで "移行" とは、同じコンピューター上でのアップグレードではなく、役割や機能、データを別のコンピューターに移動することを指します。 既存のワークロードやデータを新しいバージョンの Windows Server に移行する場合には、この方法が推奨されます。 移行する場合は、まず「[Windows Server 2016 向けのサーバーの役割のアップグレードと移行に関する一覧表](https://go.microsoft.com/fwlink/?LinkId=828595)」をご確認ください。
+Windows Server の移行に関するドキュメントでは、同じまたは新しいバージョンの Windows Server を実行している別のコンピューターに Windows Server を実行しているソース コンピューターから一度に 1 つの役割または機能を移行するのに役立ちます。 これらのドキュメントで "移行" とは、同じコンピューター上でのアップグレードではなく、役割や機能、データを別のコンピューターに移動することを指します。 既存のワークロードやデータを新しいバージョンの Windows Server に移行する場合には、この方法が推奨されます。 最初に、確認、[サーバー ロールのアップグレードと移行に関する一覧表](https://go.microsoft.com/fwlink/?LinkId=828595)for Windows Server。
 
 ## <a name="cluster-os-rolling-upgrade"></a>クラスター OS のローリング アップグレード
 クラスター OS のローリング アップグレードは Windows Server 2016 の新機能です。管理者はこの機能を利用して、Hyper-V やスケールアウト ファイル サーバーのワークロードを停止することなく、クラスター ノードのオペレーティング システムを Windows Server 2012 R2 から Windows Server 2016 にアップグレードできます。 この機能により、サービス レベル アグリーメントに影響する可能性のあるダウンタイムが回避できます。 この新機能の詳細は、「[Cluster operating system rolling upgrade (クラスター オペレーティング システムのローリング アップグレード)](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)」で説明されています。
@@ -139,7 +138,7 @@ Windows Server 2012 Standard の評価版は、Windows Server 2012 Standard (製
 
 」の説明に従って[アップグレードの Windows Server 2008 および Windows Server 2008 R2](modernize-windows-server-2008.md)、Windows Server 2008 R2 および Windows Server 2008 の延長サポートは 2020 の年 1 月で終了します。 サポートにギャップがないことを確認するには、Windows Server のサポートされているバージョンにアップグレードまたは移行することによって、Azure で再ホストする必要があります[Windows Server 2008 R2 の Vm を特殊化された](uploading-specialized-WS08-image-to-azure.md)します。 チェック アウト、 [Windows Server の移行ガイド](https://go.microsoft.com/fwlink/?linkid=872689)情報と、移行/アップグレードの計画に関する考慮事項。
 
-オンプレミス サーバーでは、Windows Server 2016 以降、Windows Server 2008 R2 からの直接のアップグレード パスはありません。 代わりに、まず Windows Server 2012 r2 にアップグレードし、 [Windows Server 2016 にアップグレードする](#Upgrading-to-Windows-Server-2016)します。
+オンプレミス サーバーでは、Windows Server 2016 以降、Windows Server 2008 R2 からの直接のアップグレード パスはありません。 代わりに、まず Windows Server 2012 r2 にアップグレードし、 [Windows Server 2016 にアップグレードする](#upgrading-to-windows-server-2016)します。
 
 アップグレードを計画するいるとは、Windows Server 2012 R2 へのアップグレードの中間の手順を次のガイドラインを把握します。
 

@@ -11,18 +11,34 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 02/22/2019
+ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2746127c15753ac8f4f6067eef068fe97b425829
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 15218af2f084e9c998d89250aace1d763d03b42a
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844553"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976328"
 ---
 # <a name="whats-new-for-the-remote-desktop-web-client"></a>リモート デスクトップ web クライアントの新しい何ですか。
 
 定期的に更新、[リモート デスクトップ web クライアント](remote-desktop-web-client.md)、新しい機能を追加および問題を修正します。 以下の最新の更新プログラムを確認します。
+
+   >[!NOTE]
+    >Web クライアントのバージョン管理システムが変更されました。 バージョン 1.0.18.0 以降、すべての web クライアントのリリース バージョンでは (": W.X.Y.Z"の形式) 内の数値が含まれます。 リモート デスクトップ web クライアントのリリース番号が 0 (たとえば、W.X.Y.0) 常になります。 各リリースの Windows 仮想デスクトップ web クライアントは、次のリモート デスクトップ web クライアント リリース (たとえば、1.0.18.1) まで、最後の桁に変更されます。
+
+## <a name="updates-for-version-10180"></a>バージョン 1.0.18.0 用更新プログラム
+*公開日:5/14/2019*
+
+- リソースは、ブラウザーで開く、または他のクライアントで処理するために、.rdp ファイルをダウンロードするユーザーを有効にすると [設定] タブで追加のリソースを起動方法の構成。 管理者によってこの設定を構成することがあります。この機能が記載されての管理者の構成に関する詳細に、 [web クライアント セットアップ ドキュメント](remote-desktop-web-client-admin.md)します。
+- リモート セッションで固定の色を有効にすると、問題をより鮮明な表示の色します。
+- リモート リソースがフィードのエラーに関連する変更後のエラー メッセージ。 
+- 詳細 office などのショートカットを貼り付け (Ctrl + Alt + V) のサポートが追加されました。
+- リモート セッション (Alt + F3) で、Windows キーを呼び出すユーザーの追加のキーボード ショートカット
+- 期限切れのパスワードを使用して認証を試行しているユーザーの更新されたエラー メッセージ。
+- すべてのリソース ページでフィード UI 更新。
+- セッション中に発生した解決の重複する仲間に再接続します。
+- リソースのタスク バーで、リモート リソース アイコンのサイズ変更を修正しました。 
 
 ## <a name="updates-for-version-1011"></a>バージョン 1.0.11 用更新プログラム
 *公開日:2/22/2019*
@@ -37,7 +53,7 @@ ms.locfileid: "59844553"
 *公開日:1/24/2019*
 
 - 内部ネットワーク上でオフラインで使用がサポートされているようになりました。
-- Microsoft 以外の Microsoft Edge ブラウザーで表示が改善されました。
+- Microsoft 以外の Edge ブラウザーで表示が改善されました。
 - フィードの取得の再試行の実装の制限は、DoS を防ぐために試行します。
 - 固定のユーザー補助バグ、視覚障碍を持つユーザーは、web クライアントを使用できるようにします。
 - フィードのエラーをユーザーに表示されるエラー メッセージの改善。

@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4f55eaacec8ee0eb41e1980f1aa15c6256f8b979
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4148614ba35ce29f567edb08b94e115d3f9152e9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818733"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189104"
 ---
 # <a name="improved-interoperability-with-saml-20"></a>SAML 2.0 との相互運用性の向上
 
->適用先:Windows Server 2016
+
 
   
 Windows Server 2016 での AD FS には、複数のエンティティが格納されたメタデータに基づく信頼をインポートするためのサポートを含むその他の SAML プロトコルのサポートが含まれています。  これにより、confederations InCommon フェデレーションと eGov 2.0 標準に準拠している他の実装などに参加する AD FS を構成することができます。   

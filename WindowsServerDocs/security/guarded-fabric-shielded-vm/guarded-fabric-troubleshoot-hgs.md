@@ -7,12 +7,12 @@ ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 2dc9a612fa9760a6ca5f05efe1c287fd0872a1d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 05888ce57b5b922fc330d9deab430d329fede69b
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861253"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222532"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>ホスト ガーディアン サービスのトラブルシューティング
 
@@ -93,7 +93,7 @@ $cert.Acl = $cert.Acl | Add-AccessRule $gMSA Read Allow
 HSM ブランド/シリーズ      | 推奨事項
 ----------------------|-------------
 Gemalto SafeNet       | 署名と暗号化に使用する証明書を許可する 0xa0 とに、証明書要求ファイルのキー使用法プロパティが設定を確認します。 さらに、gMSA アカウントを付与する必要があります*読み取り*ローカル証明書マネージャー ツールを使用して秘密キーへのアクセス (上記の手順を参照してください)。
-Thales nShield        | HGS の各ノードは、署名および暗号化キーを格納しているセキュリティ ワールドにアクセスすることを確認します。 GMSA 固有のアクセス許可を構成する必要はありません。
+nCipher nShield        | HGS の各ノードは、署名および暗号化キーを格納しているセキュリティ ワールドにアクセスすることを確認します。 GMSA 固有のアクセス許可を構成する必要はありません。
 務めて CryptoServers | 暗号化、復号化、および署名に使用する証明書を許可する 0x13 に証明書要求ファイルのキー使用法プロパティが設定を確認します。
 
 ### <a name="certificate-requests"></a>証明書の要求

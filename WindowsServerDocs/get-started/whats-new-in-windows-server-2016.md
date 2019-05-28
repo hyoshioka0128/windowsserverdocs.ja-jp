@@ -5,34 +5,30 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.date: 01/05/2017
+ms.date: 05/21/2019
 ms.technology: server-general
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2827f332-44d4-4785-8b13-98429087dcc7
-author: jaimeo
-ms.author: jaimeo
+author: jasongerend
+ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: b504c3396200502a09467ae97a36f9de613e4820
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8d36961558066197a54f42d27a3560d653bd81f2
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830333"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976630"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 の新機能
 
->適用先:Windows Server 2016
+>適用対象:Windows Server 2016
 
-<img src="media/whats-new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">ここでは、Windows Server&reg; 2016 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。  
-   
-<br>
-<br>
-<br>
-<br>
-<br>
-## <a name="computevirtualizationvirtualizationmd"></a>[コンピューティング](../virtualization/virtualization.md)  
+<img src="media/whats-new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">Windows では、最新の機能については、次を参照してください。 [Windows Server で新](whats-new-in-windows-server.md)します。 ここでは、Windows Server&reg; 2016 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。  
+
+## <a name="computevirtualizationvirtualizationmd"></a>[コンピューティング](../virtualization/virtualization.md)
+
 仮想領域には、Windows Server を設計、展開、および保守する IT プロフェッショナル向けの仮想化製品と機能が含まれます。  
 
 ### <a name="general"></a>全般的な情報  
@@ -67,7 +63,7 @@ Windows Server 2016 には、不正に使用されているファブリックか
 
 シールドされた仮想マシンを使用するための詳細および手順については、[シールドされた VM と保護されたファブリックの検証ガイド: Windows Server 2016 (TPM)](https://aka.ms/shieldedvms) に関する記事を参照してください。  
 
-## <a name="identity-and-accessidentityidentity-and-accessmd"></a>[Id およびアクセス](../identity/Identity-and-Access.md)  
+## <a name="identity-and-accessidentityidentity-and-accessmd"></a>[ID およびアクセス](../identity/Identity-and-Access.md)  
 ID での新機能では、組織が Active Directory 環境をセキュリティで保護する機能が強化され、クラウドのみの展開およびハイブリッドの展開に移行するために役立ちます。ハイブリッドの展開では、一部のアプリケーションとサービスはクラウドでホストされ、残りはオンプレミスでホストされます。  
 
 ### <a name="active-directory-certificate-services"></a>Active Directory 証明書サービス  
@@ -162,7 +158,7 @@ Windows Server 2016 の記憶域には、ソフトウェアによる記憶域と
 
 詳細については、「[記憶域のサービスの品質](../storage/storage-qos/storage-qos-overview.md)」を参照してください。
 
-## <a name="failover-clusteringfailover-clusteringwhats-new-in-failover-clusteringmd"></a>[フェールオーバー クラスタ リング](../failover-clustering/whats-new-in-failover-clustering.md)
+## <a name="failover-clusteringfailover-clusteringwhats-new-in-failover-clusteringmd"></a>[フェールオーバー クラスタリング](../failover-clustering/whats-new-in-failover-clustering.md)
 
 Windows Server 2016 には、フェールオーバー クラスタリング機能を使用して 1 つのフォールト トレラント クラスターにグループ化される、複数のサーバーに対する新機能と強化機能が多数用意されています。 追加機能のいくつかを以下に紹介します。詳細については、「[What's New in Failover Clustering in Windows Server 2016 (Windows Server 2016 のフェールオーバー クラスタリングの新機能)](../failover-clustering/whats-new-in-failover-clustering.md)」を参照してください。
 

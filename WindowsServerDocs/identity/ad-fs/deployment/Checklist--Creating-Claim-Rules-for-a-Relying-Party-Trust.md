@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 9c75cd4ccbafefdda83cba4551fd6b9af63c4822
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 47c4913a09fb38c20752bdbc2a9e17ad0af93e01
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817403"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192376"
 ---
 # <a name="checklist-creating-claim-rules-for-a-relying-party-trust"></a>チェックリスト:A Relying Party Trust の要求規則を作成します。
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 このチェックリストには、設計、計画、必要なタスクが含まれています。 および要求 Active Directory フェデレーション サービスでの、証明書利用者信頼に関連付けられている規則を展開する\(AD FS\)します。  
   

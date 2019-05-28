@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 11d2d567f9264dca53a3426263a172649d7d7c11
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f034c2eeafe9d52569e8181bbbb2e582b1059d51
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826653"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188862"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>チュートリアル ガイド:条件付きアクセス制御によってリスクを管理する
 
->適用先:Windows Server 2012 R2
+
 
 
 ## <a name="about-this-guide"></a>このガイドについて
@@ -57,7 +57,7 @@ ms.locfileid: "59826653"
 
 #### <a name="to-verify-the-default-ad-fs-access-control-mechanism"></a>AD FS の既定のアクセス制御メカニズムを確認するには
 
-1.  クライアント コンピューターに、ブラウザー ウィンドウを開くし、サンプル アプリケーションに移動します:  **https://webserv1.contoso.com/claimapp**します。
+1.  クライアント コンピューターに、ブラウザー ウィンドウを開くし、サンプル アプリケーションに移動します:  **https://webserv1.contoso.com/claimapp** します。
 
     この操作により、要求がフェデレーション サーバーの役割に自動的にリダイレクトされた後、ユーザー名とパスワードでサインインするように求められます。
 
@@ -72,13 +72,13 @@ AD FS 管理コンソールまたは Windows PowerShell のいずれかを使用
 
 #### <a name="to-configure-conditional-access-control-policy-based-on-user-data-via-the-ad-fs-management-console"></a>AD FS 管理コンソールを使用して、ユーザー データに基づく条件付きアクセス制御ポリシーを構成するには
 
-1.  AD FS 管理コンソールで、**[信頼関係]**、**[証明書利用者信頼]** の順に移動します。
+1.  AD FS 管理コンソールで、 **[信頼関係]** 、 **[証明書利用者信頼]** の順に移動します。
 
-2.  サンプル アプリケーション (**claimapp**) を表す証明書利用者信頼を選択し、**[操作]** ウィンドウで、またはこの証明書利用者信頼を右クリックして、**[要求規則の編集]** を選択します。
+2.  サンプル アプリケーション (**claimapp**) を表す証明書利用者信頼を選択し、 **[操作]** ウィンドウで、またはこの証明書利用者信頼を右クリックして、 **[要求規則の編集]** を選択します。
 
 3.  **[claimapp の要求規則の編集]** ウィンドウで、 **[発行承認規則]** タブを選択し、 **[規則の追加]** をクリックします。
 
-4.  **発行承認要求規則の追加ウィザード**の **[規則テンプレートの選択]** ページで、**[入力方向の要求に基づいてユーザーを許可または拒否]** 要求規則テンプレートを選択し、**[次へ]** をクリックします。
+4.  **発行承認要求規則の追加ウィザード**の **[規則テンプレートの選択]** ページで、 **[入力方向の要求に基づいてユーザーを許可または拒否]** 要求規則テンプレートを選択し、 **[次へ]** をクリックします。
 
 5.  **[規則の構成]** ページで、次のすべての操作を実行してから、 **[完了]** をクリックします。
 

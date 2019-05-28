@@ -8,16 +8,16 @@ ms.date: 04/24/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 2da0dc79e63381846a296b41305a9e2424044e74
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 93d0f892fe6fc5ceae8d8afaaa280b9202179d86
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839133"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188561"
 ---
 # <a name="user-privacy-and-ad-fs"></a>ユーザー プライバシーと AD FS
 
->適用先:Windows Server 2016、Windows Server 2012 R2
+
 
 >[!Note] 
 > この記事では、デバイスから個人データを削除する方法について説明し、GDPR の下でお客様の義務をサポートするために使用できます。 GDPR に関する一般的な情報を探している場合を参照してください、[サービス セキュリティ センターの GDPR セクション](https://www.microsoft.com/en-us/TrustCenter/Privacy/gdpr/default.aspx)します。

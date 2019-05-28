@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 5076a686b5d0b9a539f6cad8594aaf84dccc3edb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7891f1d0b96df84e8ac4f3eb670f30350d3c194c
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887063"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188440"
 ---
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
-
 # <a name="the-role-of-the-claims-pipeline"></a>要求パイプラインの役割
 Active Directory フェデレーション サービスで要求がパイプライン\(AD FS\)に発行する前に、フェデレーション サービスで要求が従う必要があるパスを表します。 フェデレーション サービス全体の最後で管理される\-に\-もクレーム ルール エンジンによって要求規則の処理を含む要求パイプラインのさまざまな段階でフローの要求のプロセスを終了します。  
   

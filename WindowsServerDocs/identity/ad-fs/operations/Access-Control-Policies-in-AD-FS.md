@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 101cab68d7c79bb107f1d6ef73900d9a4475b6ea
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c690f81620f97622a2f068b07c36e0a6c59e90d4
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861303"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190339"
 ---
 # <a name="access-control-policies-in-windows-server-2016-ad-fs"></a>Windows Server 2016 AD FS のアクセス制御ポリシー
-
->適用先:Windows Server 2016
 
   
 ## <a name="access-control-policy-templates-in-ad-fs"></a>AD FS でのアクセス制御ポリシー テンプレート  
@@ -100,7 +98,7 @@ AD FS には、いくつかの組み込みのアクセス制御ポリシー テ�
   
 1.  左側の AD FS の管理からアクセス制御ポリシーを選択し、右側の [アクセス制御ポリシーの追加] をクリックします。  
   
-2.  名前と説明を入力します。  次に、例を示します。特定の要求でユーザーを許可します。  
+2.  名前と説明を入力します。  例:特定の要求でユーザーを許可します。  
   
 3.  [**次の規則のいずれかが満たされた場合は、アクセスを許可**、] をクリックして**追加**します。  
   
@@ -123,7 +121,7 @@ AD FS には、いくつかの組み込みのアクセス制御ポリシー テ�
   
 1.  左側の AD FS の管理からアクセス制御ポリシーを選択し、右側の [アクセス制御ポリシーの追加] をクリックします。  
   
-2.  名前と説明を入力します。  例:持つユーザーの許可は、デバイスの認証が管理されていません。  
+2.  名前と説明を入力します。  次に、例を示します。持つユーザーの許可は、デバイスの認証が管理されていません。  
   
 3.  [**次の規則のいずれかが満たされた場合は、アクセスを許可**、] をクリックして**追加**します。  
   
@@ -150,7 +148,7 @@ AD FS には、いくつかの組み込みのアクセス制御ポリシー テ�
   
 1.  左側の AD FS の管理からアクセス制御ポリシーを選択し、右側の [アクセス制御ポリシーの追加] をクリックします。  
   
-2.  名前と説明を入力します。  次に、例を示します。特定の要求とは特定のグループからユーザーを許可します。  
+2.  名前と説明を入力します。  例:特定の要求とは特定のグループからユーザーを許可します。  
   
 3.  [**次の規則のいずれかが満たされた場合は、アクセスを許可**、] をクリックして**追加**します。  
   

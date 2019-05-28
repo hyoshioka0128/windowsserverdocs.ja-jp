@@ -4,16 +4,16 @@ description: 既知の問題と、Microsoft サポートにログを収集する
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 02/27/2019
+ms.date: 05/14/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: f5fefab2c1b7ba8b62ffd6734217eab9a13ae95e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: e1cfd2b0ea3bc4d7802cb4a6d2a8c1493d5511a1
+ms.sourcegitcommit: 0099873d69bd23495d275d7bcb464594de09ee3c
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888873"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65699694"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域の移行サービスの既知の問題
 
@@ -54,7 +54,7 @@ Windows Admin Center では、この問題を解決するのには下を見て**
 
 この問題を回避するには、目的のターゲットではない Windows Server 2019 コンピューターで、記憶域の移行サービスをインストール Windows Admin Center でそのサーバーに接続し、移行を実行します。
 
-Windows Server の今後のリリースでこの問題を解決する予定です。 使用してサポート ケースを開いてください[Microsoft サポート](https://support.microsoft.com)バックポートこの修正プログラムの作成を要求します。
+Windows Server の今後のリリースでこれを修正しました。 使用してサポート ケースを開いてください[Microsoft サポート](https://support.microsoft.com)バックポートこの修正プログラムの作成を要求します。
 
 ## <a name="storage-migration-service-isnt-included-in-windows-server-2019-evaluation-edition"></a>記憶域の移行サービスは、Windows Server 2019 Evaluation edition に含まれていません。
 
@@ -103,14 +103,82 @@ Windows Server 2019 の今後のリリースでは、この動作を変更する
 
 ## <a name="cutover-fails-when-migrating-between-networks"></a>ネットワークの間で移行するときにカット オーバーが失敗します。
 
-接続先の VM に移行する場合、Azure IaaS インスタンスなど、ソースとは異なるネットワークで実行されているカット オーバーに失敗、ソースは、静的 IP アドレスを使用していたときに完了します。 
+Azure IaaS インスタンスなど、ソースとは異なるネットワークで実行されている対象コンピューターに移行するときにカット オーバーが失敗したソースは、静的 IP アドレスを使用していたときに完了します。 
 
 この動作はユーザー、アプリケーション、および IP アドレスを使用して接続するスクリプトからの移行後の接続の問題を防ぐために、仕様です。 IP アドレスを新しい変換先のターゲットに古いソース コンピューターから移動すると、新しいネットワークのサブネットの情報とおそらく DNS と WINS に一致しません。
 
 この問題を回避するには、同じネットワーク上のコンピューターへの移行を実行します。 そのコンピューターを新しいネットワークに移動し、その IP 情報を再割り当てください。 たとえば、Azure IaaS に移行する場合最初、ローカルの VM に移行し、Azure Migrate を使用して、VM を Azure にシフトします。  
 
-Windows Server 2019 の今後のリリースでこの問題を修正しました。 移行先サーバーのネットワーク設定を変更しない移行を指定することをできるようになりましたが。 通常の月次更新サイクルの一環として Windows Server 2019 の既存のバージョンに更新プログラムがリリースされます。 
+Windows Admin Center の今後のリリースでこの問題を修正しました。 移行先サーバーのネットワーク設定を変更しない移行を指定することをできるようになりましたが。 リリースされたときに、更新された拡張機能をここに表示されます。 
 
+## <a name="validation-warnings-for-destination-proxy-and-credential-administrative-privileges"></a>変換先のプロキシと資格情報の管理特権の検証の警告
+
+転送ジョブを検証するときに、次の警告を参照してください。
+
+ > **資格情報は、管理者特権を持ちます。**
+ > 警告:操作をリモートで使用できません。
+ > **変換先のプロキシが登録されます。**
+ > 警告:変換先のプロキシが見つかりませんでした。
+
+Windows Server 2019 対象のコンピューターで、記憶域の移行サービスのプロキシ サービスがインストールされていない、または少数のコンピューターが Windows Server 2016 または Windows Server 2012 R2 には、この動作は仕様です。 パフォーマンスを大幅に向上した転送用にインストールされたプロキシを使用した Windows Server 2019 コンピューターへの移行をお勧めします。  
+
+## <a name="certain-files-do-not-inventory-or-transfer-error-5-access-is-denied"></a>エラー 5「アクセスが拒否されました」、特定のファイルがインベントリいない、または転送しないでください。
+
+インベントリまたはソースからの対象コンピューターにファイルを転送すると、移行する元となる、ユーザーが Administrators グループのアクセス許可を削除するファイルが失敗します。 記憶域の移行サービスのプロキシのデバッグを調べることを示しています。
+
+  ログ名:    Microsoft、Windows、StorageMigrationService-プロキシ/デバッグのソース:      Microsoft Windows StorageMigrationService プロキシ日:        2/26/2019 午前 9時 00分: 04 イベント ID:    10000 タスク カテゴリ:None レベルします。       エラー キーワード:      
+  ユーザー:        サービス コンピューターのネットワーク: srv1.contoso.com 説明:
+
+  02/26/2019-09:00:04.860 [Erro] Transfer error for \\srv1.contoso.com\public\indy.png:(5) アクセスが拒否されました。
+Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.OpenFile (ファイル名の文字列、DesiredAccess desiredAccess、共有の共有、CreationDisposition creationDisposition、FlagsAndAttributes flagsAndAttributes) でスタック トレース。Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetTargetFile (FileInfo ファイル) である Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetTargetFile (String path)Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.Transfer() で Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.InitializeSourceFileInfo()Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.TryTransfer() [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs::TryTransfer::55]
+
+
+この問題は、バックアップ特権が呼び出されるされていない記憶域移行サービスでのコードの欠陥によって発生します。 
+
+この問題を解決するには、インストール[Windows 更新プログラム、2019 年 4 月 2日 — KB4490481 (OS ビルド 17763.404)](https://support.microsoft.com/help/4490481/windows-10-update-kb4490481) orchestrator コンピューターと、プロキシ サービスがインストールされている場合は、展開先コンピューターにします。 ソースの移行のユーザー アカウントが、ソース コンピューターと記憶域の移行サービス オーケストレーターでローカル管理者であることを確認します。 コピー先の移行のユーザー アカウントがセットアップ先のコンピューターと記憶域の移行サービスの orchestrator のローカル管理者であることを確認します。 
+
+## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>記憶域の移行サービスを使用してデータをプレシードする場合、DFSR ハッシュが一致しません
+
+記憶域の移行サービスを使用して、新しい変換先にファイルを転送する、presseded レプリケーションまたは DFSR データベースを複製するには、すべてのファイル experiemce ハッシュを既存の DFSR サーバーとそのデータのレプリケートに DFS レプリケーション (DFSR) を構成し、不一致され再レプリケートされます。 SMS を使用して、それらを転送した後に完全に一致するのには、データ ストリーム、セキュリティ ストリーム、サイズ、および属性はすべてが表示されます。 Examing ICACLS でファイルや、DFSR データベース複製デバッグ ログが表示されます。
+
+ソース ファイル:
+
+  icacls d:\test\Source:
+
+  icacls d:\test\thatcher.png /save out.txt /t thatcher.png D:AI(A;;FA;;;BA)(A;;0x1200a9;;;DD)(A;;0x1301bf;;;DU)(A;ID;FA;;;BA)(A;ID;FA;;;SY)(A;ID;0x1200a9;;;BU)
+
+コピー先ファイル:
+
+  icacls d:\test\thatcher.png /save out.txt /t thatcher.png D:AI(A;;FA;;;BA)(A;;0x1301bf;;;DU)(A;;0x1200a9;;;DD)(A;ID;FA;;;BA)(A;ID;FA;;;SY)(A;ID;0x1200a9;;;BU)**S:PAINO_ACCESS_CONTROL**
+
+DFSR は、ログをデバッグします。
+
+  20190308 10:18:53.116 3948 DBCL 4045 [WARN] DBClone::IDTableImportUpdate 不一致レコードが見つかりました。 
+
+  ローカルの ACL のハッシュ: 1BCDFE03-A18BCE01-D1AE9859-23A0A5F6 LastWriteTime:20190308 18:09:44.876 FileSizeLow:1131654 FileSizeHigh:0属性: 32 
+
+  ACL のハッシュを複製:**DDC4FCE4 DDF329C4 977CED6D F4D72A5B** LastWriteTime:20190308 18:09:44.876 FileSizeLow:1131654 FileSizeHigh:0属性: 32 
+
+この問題は、セキュリティ監査 Acl (SACL) を設定する記憶域の移行サービスで使用するライブラリ コードの欠陥によって発生します。 SACL が空で、先頭のハッシュが一致しないを正しく識別するために、DFSR ときに null 以外の SACL は意図せず設定されます。 
+
+この問題を回避するには、Robocopy の使用を続行[事前シード処理の DFSR および DFSR データベースが複製操作](../dfs-replication/preseed-dfsr-with-robocopy.md)記憶域の移行サービスの代わりにします。 この問題を調査している Windows Server と、場合によっては移植された Windows 更新プログラム以降のバージョンでこの問題を解決する予定しています。 
+
+## <a name="error-404-when-downloading-csv-logs"></a>CSV をダウンロードするときに 404 エラー ログします。
+
+転送操作の最後に、転送またはエラー ログをダウンロードしようとすると、エラーが表示されます。
+
+  $jobname :ログを転送します ajax エラー 404。
+
+Orchestrator サーバー上の [ファイルとプリンターの共有 (SMB で)] のファイアウォール規則を有効にしていない場合は、このエラーがあります。 Windows Admin Center ファイルのダウンロードには、接続されたコンピューター上のポート TCP/445 (SMB) が必要です。  
+
+## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transfering-from-windows-server-2008-r2"></a>エラー"でした transfer ストレージ エンドポイントのいずれかで"と Windows Server 2008 R2 からの転送
+
+Windows Server 2008 R2 のソース コンピューターからデータを転送しようとすると、データなし trasnfers とするには、エラーが発生します。  
+
+  エンドポイントのいずれかで記憶域を転送することができませんでした。
+0x9044
+
+Windows Server 2008 R2 コンピューターが完全に Windows Update からすべての重大、重要な更新プログラムを適用されていない場合は、このエラーがあります。 記憶域の移行サービスに関係なく常にお勧め修正プログラムの適用、セキュリティのための Windows Server 2008 R2 コンピューターとそのオペレーティング システムが新しいバージョンの Windows Server のセキュリティの強化が含まれていません。
 
 ## <a name="see-also"></a>関連項目
 

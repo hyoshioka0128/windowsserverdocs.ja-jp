@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 2e4d463f5f25fe85dc95d767c9c75b722e60b012
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b5aa22ad99529d99e2d7381a434916e8e749f185
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852033"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188763"
 ---
 # <a name="ad-fs-customization-in-windows-server-2016"></a>Windows Server 2016 で AD FS のカスタマイズ
 
->適用先:Windows Server 2016
 
 AD FS を使用して組織からのフィードバックに応答して、ユーザーをカスタマイズするその他のツールは、AD FS によって保護されている個々 のアプリケーションのエクスペリエンスにサインインを追加されています。  
 今すぐ説明のテキストとリンクなど、アプリケーションごとの web コンテンツを指定するだけでなくは、1 つのアプリケーション全体の web テーマを指定できます。  これには、ロゴ、図、スタイル シート、または、全体の onload.js ファイルが含まれます。  

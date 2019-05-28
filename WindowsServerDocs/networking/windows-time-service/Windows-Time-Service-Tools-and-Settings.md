@@ -9,12 +9,12 @@ ms.date: 10/16/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: 7cf3b3f2bb9a2c9f95c50aa6a7b7690f89cdd0af
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7426c3ede013905ba65a659baead928d3e2bbadf
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840663"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034566"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows タイム サービスのツールと設定
 >適用対象:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 以降
@@ -70,7 +70,7 @@ W32tm.exe を使用して、Windows タイム サービスの設定を構成し�
 ---  
 詳細については**W32tm.exe**ヘルプとサポート センターで Windows XP、Windows Vista、Windows 7、Windows Server 2003、Windows Server 2003 R2、Windows Server 2008、および Windows Server 2008 R2 を参照してください。  
   
-## <a name="windows-time-service-registry-entries"></a>Windows タイム サービスのレジストリ値  
+## <a name="windows-time-service-registry-entries"></a>Windows タイム サービスのレジストリ値
 次のレジストリ エントリは、Windows タイム サービスに関連付けられます。  
   
 この情報は、トラブルシューティングや、必要な設定が適用されていることの確認で使用するための参照として提供されます。 直接編集しないレジストリの他の代替手段がない限りをお勧めします。 レジストリに対する変更は検証されません、レジストリ エディターで、または Windows によって前に、それらを適用し、結果として、不適切な値を格納することができます。 回復不能なエラーは、システムで、これがあります。  
@@ -86,11 +86,11 @@ Windows タイム サービスの多くのレジストリ エントリでは、�
 
   
 このレジストリの場所には、いくつかのレジストリ キーがあります。 Windows の時刻の設定は、これらのキーのすべての値に格納されます。
-* [Parameters](#Parameters)
-* [構成](#Configuration)
-* [NtpClient](#NtpClient)
-* [NtpServer](#NtpServer)
-  
+
+* [Parameters](#hklmsystemcurrentcontrolsetservicesw32timeparameters)
+* [構成](#hklmsystemcurrentcontrolsetservicesw32timeconfig)
+* [NtpClient](#hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpclient)
+* [NtpServer](#hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpserver)
 
 レジストリの W32Time セクション内の値の多くがによって内部的に使用 W32Time 情報を格納します。 いつでもこれらの値は手動で変更しない必要があります。 設定に精通し、新しい値が期待どおりに動作が確かでない限りこのセクションの設定のいずれかの値を変更しないでくださいされません。 次のレジストリ エントリは、下にあります。
 
@@ -114,10 +114,9 @@ Windows タイム サービスの多くのレジストリ エントリでは、�
   
 -   1 ミリ秒で説明されている Windows システムで 10,000 のクロック ティックを = [DateTime.Ticks プロパティ](https://docs.microsoft.com/dotnet/api/system.datetime.ticks?redirectedfrom=MSDN&view=netframework-4.7.2#System_DateTime_Ticks)します。  
   
-たとえば、5 分の 5 * 60 はなります\*1000\*10000 = 3000000000 クロック ティック。 
+たとえば、5 分の 5 はなります\*60\*1000\*10000 = 3000000000 クロック ティック。 
 
 すべてのバージョンには、Windows 7、Windows 8、Windows 10、Windows Server 2008、および Windows Server 2008 R2、Windows Server 2012、Windows Server 2012R2、Windows Server 2016 が含まれます。  いくつかのエントリで、新しい Windows バージョンでのみ利用します。
-
 
 #### <a name="hklmsystemcurrentcontrolsetservicesw32timeparameters"></a>HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
 
@@ -140,7 +139,7 @@ Windows タイム サービスの多くのレジストリ エントリでは、�
 |LargePhaseOffset|すべての|エントリは、時刻はオフセットより大きいまたは、10 では、この値を指定します。<sup>-7</sup>秒がスパイクと見なされます。 ネットワークの停止など、大量のトラフィックの急増があります。 長期間の保持しない限り、スパイクが無視されます。 ドメインのメンバーでの既定値は、50000000 です。 スタンドアロン クライアントとサーバーでの既定値は、50000000 です。  |
 |LastClockRate|すべての|エントリは、W32Time で保持されます。 Windows オペレーティング システムで使用される予約済みのデータが含まれているし、この設定に加えた予期しない結果が発生することができます。 ドメインのメンバーでの既定値は、156250 です。 スタンドアロン クライアントとサーバーでの既定値は、156250 です。  |
 |LocalClockDispersion|すべての|場合を想定する必要があります (秒) での分散を制御するエントリのみにソースが組み込みの CMOS クロック時間。 ドメインのメンバーでの既定値は、10 です。 スタンドアロン クライアントとサーバーでの既定値は、10 です。|
-|MaxAllowedPhaseOffset|すべての|エントリには、w32time がクロック速度を使用して、コンピュータの時計を調整する秒単位で最大オフセットを指定します。 このレートを超えると、オフセット、W32Time は直接、コンピュータの時計を設定します。 ドメインのメンバーの既定値は、300 です。 スタンドアロン クライアントとサーバーの既定値は 1 です。  [詳細については以下をご覧ください](#MaxAllowedPhaseOffset)します。|
+|MaxAllowedPhaseOffset|すべての|エントリには、w32time がクロック速度を使用して、コンピュータの時計を調整する秒単位で最大オフセットを指定します。 このレートを超えると、オフセット、W32Time は直接、コンピュータの時計を設定します。 ドメインのメンバーの既定値は、300 です。 スタンドアロン クライアントとサーバーの既定値は 1 です。  [詳細については以下をご覧ください](#maxallowedphaseoffset-information)します。|
 |MaxClockRate|すべての|エントリは、W32Time で保持されます。 Windows オペレーティング システムで使用される予約済みのデータが含まれているし、この設定に加えた予期しない結果が発生することができます。 ドメインのメンバーの既定値は、155860 です。 スタンドアロン クライアントとサーバーの既定値は、155860 です。  |
 |MaxNegPhaseCorrection|すべての|エントリは、サービスでは、秒単位で最大の負の時間の修正を指定します。 サービスは、これより大きい変更が必要である判断された場合、代わりにイベントが記録されます。 特殊なケース:0 xffffffff では、時間の訂正を常に確認を意味します。 ドメインのメンバーの既定値は、0 xffffffff です。 スタンドアロン クライアントとサーバーの既定値は 54,000 (15 時間)。  |
 |MaxPollInterval|すべての|エントリは、システムのポーリング間隔の許可されている場合の log2 秒単位で最大の間隔を指定します。 中、スケジュールされた間隔に従って、システムをポーリングする必要があります、プロバイダーがそのためには要求されたときにサンプルを生成するために拒否できますに注意してください。 ドメイン コント ローラーの既定値は、10 です。 ドメインのメンバーの既定値は、15 です。 スタンドアロン クライアントとサーバーの既定値は、15 です。  |
@@ -209,7 +208,7 @@ W32tm /query /status /verbose
 ClockRate: 0.0156000s  
 ```  
   
-SystemclockRate は、システム クロックの速度です。 156000 秒を使用して、例として、SystemclockRate は = 0.0156000 * 1000 \* 10000 = 156000 クロック ティック。  
+SystemclockRate は、システム クロックの速度です。 で例として 156000 秒を使用して、SystemclockRate は = 0.0156000 \* 1000 \* 10000 = 156000 クロック ティック。  
   
 MaxAllowedPhaseOffset は秒単位でもあります。 クロック ティックに変換、乗算 MaxAllowedPhaseOffset * 1000\*10000 です。  
   
@@ -297,7 +296,7 @@ W32Time を次の場所でグループ ポリシー オブジェクト エディ
 > [!WARNING]  
 > 一部のグループ ポリシー オブジェクト (GPO) の設定、システム管理用テンプレート ファイル (System.adm) で構成されている既定の値は、対応する既定のレジストリ エントリから異なります。 GPO を使用して、Windows の時刻の設定を構成する場合は、することを確認することを確認して[プリセット値 Windows タイム サービスのグループ ポリシー設定は Windows Server 2003、Windows タイム サービスのレジストリ値が対応する異なる](https://go.microsoft.com/fwlink/?LinkId=186066). この問題は、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2、および Windows Server 2003 に適用されます。  
   
-次の表では、Windows タイム サービスと各設定に関連付けられた事前設定された値に関連付けられているグローバル グループ ポリシー設定が一覧表示します。 各設定の詳細については、対応するレジストリ エントリを参照してください。"[Windows タイム サービスのレジストリ値](#w2k3tr_times_tools_uhlp)"このトピックで前述しました。 次の設定と呼ばれる 1 つの GPO に含まれる**グローバル構成設定**します。  
+次の表では、Windows タイム サービスと各設定に関連付けられた事前設定された値に関連付けられているグローバル グループ ポリシー設定が一覧表示します。 各設定の詳細については、対応するレジストリ エントリを参照してください。 [Windows タイム サービスのレジストリ値](#windows-time-service-registry-entries)このトピックで前述しました。 次の設定と呼ばれる 1 つの GPO に含まれる**グローバル構成設定**します。  
   
 **Windows の時刻に関連付けられているグローバル グループ ポリシーの設定**  
   
@@ -319,7 +318,7 @@ W32Time を次の場所でグループ ポリシー オブジェクト エディ
 |SpikeWatchPeriod|90|  
 |UpdateInterval|100|  
   
-次の表に、利用可能な設定、 **Windows NTP クライアントを構成する**GPO と、Windows タイム サービスに関連付けられている事前設定された値。 各設定の詳細については、対応するレジストリ エントリを参照してください。"[Windows タイム サービスのレジストリ値](#w2k3tr_times_tools_uhlp)"このトピックで前述しました。  
+次の表に、利用可能な設定、 **Windows NTP クライアントを構成する**GPO と、Windows タイム サービスに関連付けられている事前設定された値。 各設定の詳細については、対応するレジストリ エントリを参照してください。 [Windows タイム サービスのレジストリ値](#windows-time-service-registry-entries)このトピックで前述しました。  
   
 **Windows の時刻に関連付けられている NTP クライアントのグループ ポリシーの設定**  
   
