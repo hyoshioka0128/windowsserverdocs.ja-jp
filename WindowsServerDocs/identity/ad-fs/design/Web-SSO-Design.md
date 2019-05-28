@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1b8344594c9fc477ed8424c716ec8d7f7fd91ef3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 29d50a4d1855e609b6ac9ee627256201074a5033
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852803"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190723"
 ---
 # <a name="web-sso-design"></a>Web SSO 設計
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Web シングル\-サインオン\-で\(SSO\) Active Directory フェデレーション サービスの設計\(AD FS\)、ユーザーは複数の AD FS にアクセスするには 1 回だけ認証する必要があります\-セキュリティで保護されたアプリケーションまたはサービス。 この設計では、すべてのユーザーが外部ユーザーであり、パートナー組織が存在しないため、フェデレーションの信頼はありません。 通常、次の図に示すように、インターネット経由で 1 つ以上の AD FS で保護されたサービスまたはアプリケーションを個々 の顧客または顧客のアクセスを提供する場合に、この設計を展開します。  
   
@@ -33,4 +31,4 @@ Web SSO 設計で組織通常をホストする AD FS\-セキュリティで保�
 計画および Web SSO 設計を展開するのに使用できる詳細なタスクの一覧は、次を参照してください。[チェックリスト。Web SSO 設計を実装する](../../ad-fs/deployment/Checklist--Implementing-a-Web-SSO-Design.md)します。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

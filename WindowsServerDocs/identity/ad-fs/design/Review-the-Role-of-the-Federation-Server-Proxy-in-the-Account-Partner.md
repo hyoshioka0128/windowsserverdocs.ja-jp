@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d2b60ce593c2ca7eb902595ee6a42850cb7605d9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dbceb19d31738bdc5b628a9a2b069e5d3022d145
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870843"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190953"
 ---
 # <a name="review-the-role-of-the-federation-server-proxy-in-the-account-partner"></a>アカウント パートナー内のフェデレーション サーバー プロキシの役割を確認する
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory フェデレーション サービスのアカウント パートナー組織の境界ネットワーク内のフェデレーション サーバー プロキシの主な役割\(AD FS\)でログオンするクライアント コンピューターから認証資格情報を収集するにはインターネット経由でと、フェデレーション サーバーにそれらの資格情報を渡すには、アカウント パートナー組織の企業ネットワーク内に配置されました。 クライアント コンピューターのアカウントは、アカウント パートナーの属性ストアに格納されます。  
   
@@ -35,4 +33,4 @@ Active Directory フェデレーション サービスのアカウント パー�
   
 
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

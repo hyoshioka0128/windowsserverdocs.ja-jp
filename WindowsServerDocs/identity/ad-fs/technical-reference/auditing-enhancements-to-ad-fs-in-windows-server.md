@@ -9,16 +9,15 @@ ms.date: 10/25/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3d622686a3cc34316f0cf5187839785195c2f104
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2f6e4abb4255281be85b7fa928566f681bcf2de2
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880233"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188364"
 ---
 # <a name="auditing-enhancements-to-ad-fs-in-windows-server-2016"></a>Windows Server 2016 での AD FS の監査機能の強化
 
->適用先:Windows Server 2016
 
 現時点では、AD FS を Windows Server 2012 R2 は、1 つの要求と、ログ内の関連情報が生成された多数の監査イベントまたはトークンの発行アクティビティが存在しないか、(でいくつかのバージョンの AD FS) または複数のイベントの監査に分散します。 AD FS の既定で、詳細な性質により、イベントの監査が無効になっています。  
     Windows Server 2016 での AD FS のリリースでは、監査は効率となりに少なくなります。  

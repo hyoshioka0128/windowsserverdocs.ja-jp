@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 05f8b8991e664a84c3f2b3200de4068af8d1476a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bef2cac726b1c4ea9b30f9a2086e3a2670339228
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846613"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189826"
 ---
 # <a name="configure-ad-fs-to-authenticate-users-stored-in-ldap-directories"></a>LDAP ディレクトリに保存されたユーザーを認証するように AD FS を構成する
-
->適用先:Windows Server 2016
 
 次のトピックでは、id が、ライトウェイト ディレクトリ アクセス プロトコル (LDAP) v3 に準拠しているディレクトリに格納されているユーザーを認証する、AD FS インフラストラクチャを有効にするために必要な構成について説明します。
 

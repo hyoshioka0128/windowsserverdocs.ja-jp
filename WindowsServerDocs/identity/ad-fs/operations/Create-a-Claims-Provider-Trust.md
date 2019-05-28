@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: fbc8bb63435211a92cb7fc6aa05b1413aef939c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1c47986cda3f091033274aa2c59a656ec861a98f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854233"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189714"
 ---
 # <a name="create-a-claims-provider-trust"></a>要求プロバイダー信頼を作成する
-
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 AD FS 管理スナップインを使用して要求プロバイダー信頼の追加、新しい\-でを手動で設定を構成、リソース パートナー組織でリソース パートナーのフェデレーション サーバーで次の手順を実行します。  
   
@@ -34,25 +32,25 @@ AD FS 管理スナップインを使用して要求プロバイダー信頼の�
 3.  **[ようこそ]** ページで、 **[開始]** をクリックします。 
 ![要求プロバイダー信頼](media/Create-a-Claims-Provider-Trust/addclaim2.PNG)    
   
-4.  **[データ ソースの選択]** ページで、**[要求プロバイダー信頼のデータを手動で入力する]** をクリックし、**[次へ]** をクリックします。  
+4.  **[データ ソースの選択]** ページで、 **[要求プロバイダー信頼のデータを手動で入力する]** をクリックし、 **[次へ]** をクリックします。  
 ![要求プロバイダー信頼](media/Create-a-Claims-Provider-Trust/addclaim3.PNG)     
 
-5.  **[表示名の指定]** ページで、**[表示名]** に表示名を入力し、**[注意事項]** にこの要求プロバイダー信頼の説明を入力して、**[次へ]** をクリックします。  
+5.  **[表示名の指定]** ページで、 **[表示名]** に表示名を入力し、 **[注意事項]** にこの要求プロバイダー信頼の説明を入力して、 **[次へ]** をクリックします。  
 ![要求プロバイダー信頼](media/Create-a-Claims-Provider-Trust/addclaim4.PNG)     
 
 6.  **URL の構成**ページで、指定、 **Ws-federation パッシブ URL**該当する場合 をクリック**次**します。
 ![要求プロバイダー信頼](media/Create-a-Claims-Provider-Trust/addclaim5.PNG)     
 
-8. **[識別子の構成]** ページの **[要求プロバイダー信頼の識別子]** に、適切な識別子を入力し、**[次へ]** をクリックします。  
+8. **[識別子の構成]** ページの **[要求プロバイダー信頼の識別子]** に、適切な識別子を入力し、 **[次へ]** をクリックします。  
 ![要求プロバイダー信頼](media/Create-a-Claims-Provider-Trust/addclaim6.PNG)    
 
-9. **[証明書の構成]** ページで **[追加]** をクリックして、証明書ファイルを参照し、それを証明書の一覧に追加した後、**[次へ]** をクリックします。  
+9. **[証明書の構成]** ページで **[追加]** をクリックして、証明書ファイルを参照し、それを証明書の一覧に追加した後、 **[次へ]** をクリックします。  
 ![要求プロバイダー信頼](media/Create-a-Claims-Provider-Trust/addclaim7.PNG)    
 
 10. **[信頼の追加の準備完了]** ページで **[次へ]** をクリックして、要求プロバイダー信頼情報を保存します。  
 ![要求プロバイダー信頼](media/Create-a-Claims-Provider-Trust/addclaim8.PNG)    
 
-11. **[完了]** ページで、**[閉じる]** をクリックします。 これにより、自動的に **[要求規則の編集]** ダイアログ ボックスが表示されます。 追加する方法の詳細についての要求規則がこの要求プロバイダー信頼の次の他の参照を参照してください。  
+11. **[完了]** ページで、 **[閉じる]** をクリックします。 これにより、自動的に **[要求規則の編集]** ダイアログ ボックスが表示されます。 追加する方法の詳細についての要求規則がこの要求プロバイダー信頼の次の他の参照を参照してください。  
 ![要求プロバイダー信頼](media/Create-a-Claims-Provider-Trust/addclaim9.PNG)
 
 ## <a name="to-create-a-claims-provider-trust-using-federation-metadata"></a>フェデレーション メタデータを使用して要求プロバイダー信頼を作成するには
@@ -69,7 +67,7 @@ AD FS 管理スナップインを使用して要求プロバイダー信頼の�
 3.  **[ようこそ]** ページで、 **[開始]** をクリックします。 
 ![要求プロバイダー信頼](media/Create-a-Claims-Provider-Trust/addclaim2.PNG)    
   
-4.  **[データ ソースの選択]** ページで、**[オンラインまたはローカル ネットワークで公開されている要求プロバイダーについてのデータをインポートする]** をクリックします。 フェデレーション メタデータのアドレス (ホスト名または URL) を入力、**フェデレーション メタデータ URL**またはホスト パートナーは、名前を指定し、をクリックし、**次**。
+4.  **[データ ソースの選択]** ページで、 **[オンラインまたはローカル ネットワークで公開されている要求プロバイダーについてのデータをインポートする]** をクリックします。 フェデレーション メタデータのアドレス (ホスト名または URL) を入力、**フェデレーション メタデータ URL**またはホスト パートナーは、名前を指定し、をクリックし、**次**。
 ![要求プロバイダー信頼](media/Create-a-Claims-Provider-Trust/addclaim10.PNG)    
 
 5.  表示名の指定] ページの種類、**表示名**ノートでこの要求プロバイダー信頼に説明を入力し、[クリックして**次**します。
@@ -84,7 +82,7 @@ AD FS 管理スナップインを使用して要求プロバイダー信頼の�
 ## <a name="additional-references"></a>その他の参照情報  
 [チェックリスト:リソース パートナー組織の構成](../../ad-fs/deployment/Checklist--Configuring-the-Resource-Partner-Organization.md)  
   
-[チェックリスト:要求規則の作成要求プロバイダー信頼します。](../../ad-fs/deployment/Checklist--Creating-Claim-Rules-for-a-Claims-Provider-Trust.md)  
+[チェックリスト:要求プロバイダー信頼の要求規則の作成](../../ad-fs/deployment/Checklist--Creating-Claim-Rules-for-a-Claims-Provider-Trust.md)  
   
 ## <a name="see-also"></a>関連項目  
 [AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md) 

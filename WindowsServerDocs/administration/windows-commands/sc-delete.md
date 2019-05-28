@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b60127cf957a30d147c9992c74c01e37e5b8bf89
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 68af5f118b2cc9d7941abddccd2a1bc7fde4c6d0
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871923"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222935"
 ---
 # <a name="sc-delete"></a>Sc delete
 
@@ -26,7 +26,7 @@ ms.locfileid: "59871923"
 
 レジストリからサービス サブキーを削除します。 サービスが実行されている場合、または別のプロセスにサービスへの開いているハンドルがある場合は、サービスが削除対象としてマークします。
 
-このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
+このコマンドを使用する方法の例については、[例](#examples)を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -46,7 +46,7 @@ sc [<ServerName>] delete [<ServiceName>]
 
 使用 **プログラム追加と削除** に **コントロール パネルの** DHCP、DNS、またはその他の組み込みのオペレーティング システム サービスを削除します。 なお **プログラム追加と削除** のみ、サービスのレジストリ サブキーは削除されませんが、サービスをアンインストール、ショートカットを削除ができます。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
 サービス サブキーを削除する **NewServ** 、ローカル コンピューター上のレジストリから入力します。
 ```
@@ -55,4 +55,4 @@ sc delete newserv
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

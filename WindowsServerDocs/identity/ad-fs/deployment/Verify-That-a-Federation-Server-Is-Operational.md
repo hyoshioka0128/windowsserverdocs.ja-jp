@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 2034b4c35061879a64004486395d0887c59087b2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b9498451e8f6d7701e9ed4b3ac7d61f19d2dcdb4
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877713"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191893"
 ---
 # <a name="verify-that-a-federation-server-is-operational"></a>フェデレーション サーバーが正常に動作していることを確認する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 以下の手順を使用して、フェデレーション サーバーが動作可能であること (つまり、同じネットワーク上のクライアントから新しいフェデレーション サーバーにアクセスできること) を確認します。  
   
@@ -49,6 +48,6 @@ ms.locfileid: "59877713"
 4.  **イベント ID**列で、イベント ID 100 を探します。 新しいイベントを参照してください、フェデレーション サーバーが正しく構成されている場合: イベント ビューアーのアプリケーション ログ: イベント ID 100。 このイベントは、フェデレーション サーバーがフェデレーション サービスと正常に通信できることを確認します。  
   
 ## <a name="additional-references"></a>その他の参照情報  
-[チェックリスト:フェデレーション サーバーを設定します。](Checklist--Setting-Up-a-Federation-Server.md)  
+[チェックリスト:フェデレーション サーバーのセットアップ](Checklist--Setting-Up-a-Federation-Server.md)  
   
 

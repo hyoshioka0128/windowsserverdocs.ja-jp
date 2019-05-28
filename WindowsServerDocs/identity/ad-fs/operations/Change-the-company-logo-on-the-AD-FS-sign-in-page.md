@@ -9,16 +9,14 @@ ms.date: 03/08/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6e0271ae3d7ac120e510a2fb81fb55c8d10b3c87
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fe5c138466ea288b5dfb8c7c284603150ab9d874
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813583"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190030"
 ---
 # <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>AD FS サインイン ページに会社のロゴを変更します。
-
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 #### <a name="change-company-logo"></a>会社ロゴの変更  
 記号が表示される会社のロゴを変更する\- ページで、次の PowerShell の Windows PowerShell コマンドレットと構文を使用します。  

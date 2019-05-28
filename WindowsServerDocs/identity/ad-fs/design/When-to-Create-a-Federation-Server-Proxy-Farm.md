@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 8935760cad272d5b82edb675cda85caf0456565f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c33475d7420383448439e2b769562e55127c7b0e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859443"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190632"
 ---
 # <a name="when-to-create-a-federation-server-proxy-farm"></a>フェデレーション サーバー プロキシ ファームを作成するのに適した状況
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 大規模な Active Directory フェデレーション サービスがある場合、追加のフェデレーション サーバー プロキシのインストールを検討\(AD FS\)展開し、フォールト トレランス、負荷を\-分散、およびスケーラビリティをプロキシの展開。 同じ境界ネットワーク内の 2 つ以上のフェデレーション サーバー プロキシを作成し、それぞれ同じ AD FS フェデレーション サービスを保護するための構成は、フェデレーション サーバー プロキシ ファームを作成します。  
   
@@ -39,4 +37,4 @@ Microsoft の NLB テクノロジを使用してクラスターの FQDN を構�
 フェデレーション サーバー プロキシ ファームを作成する新しいフェデレーション サーバー プロキシを追加する方法の詳細については、次を参照してください。[チェックリスト。フェデレーション サーバー プロキシを設定する](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md)します。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

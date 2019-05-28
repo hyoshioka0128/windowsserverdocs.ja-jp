@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 13ce514dc5f3f70217a26c898cde6fe24d4967c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d2f597994aa74f453903e09f7d3eefd83f26faba
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847383"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192268"
 ---
 # <a name="configure-a-federation-server"></a>フェデレーション サーバーを構成する
-
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 Active Directory フェデレーション サービスをインストールした後\(AD FS\)役割サービスをこのコンピューターをフェデレーション サーバーを構成する準備がコンピューターにします。 次のいずれかの操作を行うことができます。  
   
@@ -33,15 +31,15 @@ Active Directory フェデレーション サービスをインストールし�
 > [!NOTE]  
 > ドメイン管理者のアクセス許可を持っているか、この手順を実行する前にドメイン管理者の資格情報が使用可能ながあることを確認します。  
   
-1.  サーバー マネージャーの **[ダッシュボード]** ページで、**[通知]** フラグをクリックし、**[このサーバーにフェデレーション サービスを構成します]** をクリックします。  
+1.  サーバー マネージャーの **[ダッシュボード]** ページで、 **[通知]** フラグをクリックし、 **[このサーバーにフェデレーション サービスを構成します]** をクリックします。  
   
     **Active Directory フェデレーション サービス構成ウィザード**が開きます。  
   
 2.  **[ようこそ]** ページで、 **[フェデレーション サーバー ファームに最初のフェデレーション サーバーを作成します]** を選択し、 **[次へ]** をクリックします。  
   
-3.  **AD DS への接続** ページで、Active Directory のドメイン管理者のアクセス許可を使用してアカウントを指定\(AD\)クリックしてこのコンピューターが参加しているドメイン**次へ**.  
+3.  **AD DS への接続** ページで、Active Directory のドメイン管理者のアクセス許可を使用してアカウントを指定\(AD\)クリックしてこのコンピューターが参加しているドメイン **次へ** .  
   
-4.  **[サービスのプロパティの指定]** ページで次の操作を実行してから、**[次へ]** をクリックします。  
+4.  **[サービスのプロパティの指定]** ページで次の操作を実行してから、 **[次へ]** をクリックします。  
   
     -   Secure Socket Layer を含む .pfx ファイルをインポート\(SSL\)証明書と以前取得したキー。 [手順 2。AD FS の SSL 証明書を登録](../../ad-fs/deployment/Enroll-an-SSL-Certificate-for-AD-FS.md)、この証明書を取得して、フェデレーション サーバーとして構成するコンピューターにコピーします。 ウィザードを使用して .pfx ファイルをインポートするには、次のようにクリックします。**インポート**、し、ファイルの場所を参照します。 求められたら、.pfx ファイルのパスワードを入力します。  
   
@@ -141,7 +139,7 @@ Active Directory フェデレーション サービスをインストールし�
   
 ### <a name="to-add-a-federation-server-to-an-existing-federation-server-farm-via-the-active-directory-federation-service-configuration-wizard"></a>Active Directory フェデレーション サービスの構成ウィザードを使用して既存のフェデレーション サーバー ファームにフェデレーション サーバーを追加するには  
   
-1.  サーバー マネージャーの **[ダッシュボード]** ページで、**[通知]** フラグをクリックし、**[このサーバーにフェデレーション サービスを構成します]** をクリックします。  
+1.  サーバー マネージャーの **[ダッシュボード]** ページで、 **[通知]** フラグをクリックし、 **[このサーバーにフェデレーション サービスを構成します]** をクリックします。  
   
     **Active Directory フェデレーション サービス構成ウィザード**が開きます。  
   
@@ -221,10 +219,10 @@ Active Directory フェデレーション サービスをインストールし�
   
 ## <a name="see-also"></a>関連項目 
 
-[AD FS の展開](../../ad-fs/AD-FS-Deployment.md)  
+[AD FS 展開](../../ad-fs/AD-FS-Deployment.md)  
 
 [Windows Server 2012 R2 AD FS 展開ガイドします。](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  
-[フェデレーション サーバー ファームのデプロイ](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
+[フェデレーション サーバー ファームの展開](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
   
 

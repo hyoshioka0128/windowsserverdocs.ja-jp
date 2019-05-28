@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 129cd83be4cd8302bd170ba87aad58c50f636006
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f1d38e23d7f1671f729b03b7e6f8000471d2e9f9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815853"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188653"
 ---
 # <a name="determine-the-type-of-claim-rule-template-to-use"></a>使用する要求規則テンプレートの種類を決定する
 
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 Active の Directory フェデレーション サービスの設計の重要な部分\(AD FS\)インフラストラクチャが要求規則の完全なセットを決定する: 要求規則テンプレートの作成に使用する必要がありますの対応して、パートナーごとにお客様の組織とのフェデレーションに参加します。 AD FS 管理スナップインで要求規則テンプレートを使用して規則を作成する\-でします。  
   

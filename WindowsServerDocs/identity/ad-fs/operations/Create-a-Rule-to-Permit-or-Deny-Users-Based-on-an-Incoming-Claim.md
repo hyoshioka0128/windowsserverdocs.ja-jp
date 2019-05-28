@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 167e43d49c08d0e39549bf46888118f985e3876d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 72fe425b040f83a217a144976265c7754830c91b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863773"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189505"
 ---
 # <a name="create-a-rule-to-permit-or-deny-users-based-on-an-incoming-claim"></a>入力方向の要求に基づいてユーザーを許可または拒否する規則を作成する 
 
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 Windows Server 2016 で使用することができます、**アクセス制御ポリシー**を許可または入力方向の要求に基づいてユーザーを拒否する規則を作成します。  Windows Server 2012 r2 を使用して、**を許可または拒否する入力方向の要求に基づくユーザー**規則テンプレートの Active Directory フェデレーション サービスで\(AD FS\)を許可する承認規則を作成することができますか型と、入力方向の要求の値に基づいて証明書利用者のパーティには、ユーザーのアクセスを拒否します。 
 
@@ -101,7 +100,7 @@ Windows Server 2016 で使用することができます、**アクセス制御�
 4.  **要求規則の編集**ダイアログ ボックスで、をクリックして、**発行承認規則の** タブまたは**委任承認規則**タブ\(の種類に基づく必要な承認規則\)、 をクリックし、**規則の追加**を開始する、**承認の要求規則の追加ウィザード**。  
 ![ルールを作成します。](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**を許可または拒否する入力方向の要求に基づくユーザー**  をクリックし、一覧から**次へ**します。  
+5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**を許可または拒否する入力方向の要求に基づくユーザー**  をクリックし、一覧から **次へ** します。  
 ![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny1.PNG)
 
 6.  **規則の構成**ページ**要求規則名**で、この規則の表示名を入力**着信要求の種類**一覧で、要求の種類を選択**方向の要求値**値を入力するか、参照ボタン クリックして\(入手可能になった場合\)値を選択し、組織のニーズに応じて、次のオプションのいずれかを選択。  
@@ -110,14 +109,14 @@ Windows Server 2016 で使用することができます、**アクセス制御�
   
     -   **この着信要求でユーザー アクセスを拒否します。**  
 ![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny2.PNG)  
-7.  **[Finish]**(完了) をクリックします。  
+7.  **[Finish]** (完了) をクリックします。  
   
 8.  **要求規則の編集**ダイアログ ボックスで、をクリックして **[ok]** ルールを保存します。  
 
 ## <a name="additional-references"></a>その他の参照情報 
-[要求規則を構成します。](Configure-Claim-Rules.md)  
+[要求規則を構成する](Configure-Claim-Rules.md)  
  
-[チェックリスト:A Relying Party Trust の要求規則を作成します。](https://technet.microsoft.com/library/ee913578.aspx)  
+[チェックリスト:証明書利用者信頼の要求規則の作成](https://technet.microsoft.com/library/ee913578.aspx)  
   
 [承認要求規則を使用する場合](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

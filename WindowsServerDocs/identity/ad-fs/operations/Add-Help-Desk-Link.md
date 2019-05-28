@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1654add6a81169b3d4831d6ebba320402e0734c5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fb186c3ba5cfb3acb9bfd0c3139b09b992fb8863
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849863"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190209"
 ---
 # <a name="add-help-desk-link"></a>ヘルプ デスク リンクの追加 
-
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 
 ## <a name="to-add-a-help-desk-link"></a>ヘルプ デスク リンクを追加するには  

@@ -9,17 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3745a0ab9d313223c611e58864dd6b4d747f0624
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c87b76224d1ac5dbe3befc837fad8879d0b9a1ef
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881043"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189402"
 ---
 # <a name="create-a-rule-to-send-an-ad-fs-1x-compatible-claim"></a>AD FS 1.x の互換性のある要求を送信するルールを作成します。
-
->適用先:Windows Server 2016、Windows Server 2012 R2
-
 
 Active Directory フェデレーション サービスを使用している状況で\(AD FS\) AD FS 1.0 を実行しているフェデレーション サーバーによって受信する要求を問題に\(Windows Server 2003 R2\)または AD FS 1.1 \(Windows Server 2008 または Windows Server 2008 R2\)次を行う必要があります。  
   
@@ -62,7 +59,7 @@ Active Directory フェデレーション サービスを使用している状�
 4.  **要求発行ポリシーの編集**ダイアログ ボックスで、**発行変換規則** をクリックして**規則の追加**ルール ウィザードを開始します。 
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から**次へ**.  
+5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から **次へ** .  
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
 
 6.  **規則の構成**ページで、要求規則の名前を入力します。  
@@ -104,7 +101,7 @@ Active Directory フェデレーション サービスを使用している状�
 4.  **要求規則の編集**ダイアログ ボックスで、**受け入れ変換規則** をクリックして**規則の追加**ルール ウィザードを開始します。
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から**次へ**.  
+5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から **次へ** .  
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
 
 6.  **規則の構成**ページで、要求規則の名前を入力します。  
@@ -252,7 +249,7 @@ Active Directory フェデレーション サービスを使用している状�
     -   **委任承認規則**  
 ![ルールを作成します。](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)    
 
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から**次へ**.  
+5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から **次へ** .  
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule7.PNG)  
   
 6.  **規則の構成**ページで、要求規則の名前を入力します。  
@@ -330,11 +327,11 @@ Active Directory フェデレーション サービスを使用している状�
 11. をクリックして**完了**、順にクリックします**OK**ルールを保存します。  
 
 ## <a name="additional-references"></a>その他の参照情報 
-[要求規則を構成します。](Configure-Claim-Rules.md)  
+[要求規則を構成する](Configure-Claim-Rules.md)  
  
-[チェックリスト:A Relying Party Trust の要求規則を作成します。](https://technet.microsoft.com/library/ee913578.aspx)  
+[チェックリスト:証明書利用者信頼の要求規則の作成](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[チェックリスト:要求規則の作成要求プロバイダー信頼します。](https://technet.microsoft.com/library/ee913564.aspx)  
+[チェックリスト:要求プロバイダー信頼の要求規則の作成](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [承認要求規則を使用する場合](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

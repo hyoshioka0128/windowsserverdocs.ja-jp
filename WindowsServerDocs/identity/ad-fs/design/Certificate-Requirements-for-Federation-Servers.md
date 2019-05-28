@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 369c0e9e7ab1ef25baee1c35379cc66b886f20d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ce301f6320ed3347b1ee802f57c2b2ebd4394970
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827103"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191640"
 ---
 # <a name="certificate-requirements-for-federation-servers"></a>フェデレーション サーバーの証明書の要件
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 任意の Active Directory フェデレーション サービスで\(AD FS\)デザイン、通信を保護し、インターネット クライアントとのフェデレーション サーバー間のユーザー認証を容易にさまざまな証明書を使用する必要があります。 各フェデレーション サーバーは、サービス通信証明書とトークンが必要\-AD FS の通信に参加する前に証明書に署名します。 次の表では、フェデレーション サーバーに関連付けられている証明書の種類について説明します。  
   
@@ -55,4 +53,4 @@ CA から証明書を受け取ったら、すべての証明書がローカル �
 使用するいずれかの証明書に CRL が指定されている場合、構成済みの証明書が存在するサーバーは CRL を配布するサーバーと通信できる必要があります。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

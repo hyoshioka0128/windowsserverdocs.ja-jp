@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3e555d1003878e12320cb8557bd205ac24e1bbb3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6be56c25cc6f639f73842f57cdf48a6339dccf9c
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882443"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191855"
 ---
 # <a name="windows-server-2012-ad-fs-deployment-guide"></a>Windows Server 2012 AD FS の展開ガイド
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory® フェデレーション サービスを使用する\(AD FS\)分散の識別を拡張するフェデレーション id 管理ソリューションをビルドする Windows Server® 2012 オペレーティング システムで、認証と承認サービスを Web\-組織やプラットフォームの境界を越えてベースのアプリケーション。 AD FS を展開することで、組織の既存の ID 管理機能をインターネットにまで拡張できます。  
   
@@ -60,9 +59,9 @@ AD FS を展開すると、次のことが可能になります。
   
 ## <a name="in-this-guide"></a>このガイドについて  
   
--   [AD FS の展開を計画するには](Planning-to-Deploy-AD-FS.md)  
+-   [AD FS の展開計画](Planning-to-Deploy-AD-FS.md)  
   
--   [AD FS を実装する計画の設計](Implementing-Your-AD-FS-Design-Plan.md)  
+-   [AD FS 設計計画の実装](Implementing-Your-AD-FS-Design-Plan.md)  
   
 -   [チェックリスト:Web SSO 設計の実装](Checklist--Implementing-a-Web-SSO-Design.md)  
   
@@ -70,10 +69,10 @@ AD FS を展開すると、次のことが可能になります。
   
 -   [パートナー組織の構成](Configuring-Partner-Organizations.md)  
   
--   [要求規則を構成します。](Configuring-Claim-Rules.md)  
+-   [要求規則の構成](Configuring-Claim-Rules.md)  
   
--   [フェデレーション サーバーを展開します。](Deploying-Federation-Servers.md)  
+-   [フェデレーション サーバーの展開](Deploying-Federation-Servers.md)  
   
--   [フェデレーション サーバー プロキシを展開します。](Deploying-Federation-Server-Proxies.md)  
+-   [フェデレーション サーバー プロキシの展開](Deploying-Federation-Server-Proxies.md)  
   
--   [Interoperating with AD FS 1.x](Interoperating-with-AD-FS-1.x.md)  
+-   [AD FS 1.x との相互運用](Interoperating-with-AD-FS-1.x.md)  

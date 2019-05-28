@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: fe113eb7fe5cb096ff1e94150b929682d137b24b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8e05043d029636ddeb3a24349897ac61a713b2a7
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871953"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034111"
 ---
 # <a name="perform-initial-recovery"></a>最初の回復を実行します。  
 
@@ -22,9 +22,9 @@ ms.locfileid: "59871953"
 
 このセクションには、次の手順が含まれています。  
 
-- [各ドメイン内の最初の書き込み可能ドメイン コント ローラーを復元します。](#Restore-the-first-writeable-domain-controller-in-each-domain)  
-- [各復元された書き込み可能なドメイン コントローラがネットワークに再接続します。](#Reconnect-each-restored-writeable-domain-controller-to-a-common-network)  
-- [フォレスト ルート ドメインのドメイン コント ローラーにグローバル カタログを追加します。](#Add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain)  
+- [各ドメイン内の最初の書き込み可能ドメイン コント ローラーを復元します。](#restore-the-first-writeable-domain-controller-in-each-domain)  
+- [各復元された書き込み可能なドメイン コントローラがネットワークに再接続します。](#reconnect-each-restored-writeable-domain-controller-to-a-common-network)  
+- [フォレスト ルート ドメインのドメイン コント ローラーにグローバル カタログを追加します。](#add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain)  
 
 ## <a name="restore-the-first-writeable-domain-controller-in-each-domain"></a>各ドメイン内の最初の書き込み可能ドメイン コント ローラーを復元します。  
 
@@ -156,7 +156,7 @@ ms.locfileid: "59871953"
 - [AD フォレストの回復の問題の特定](AD-Forest-Recovery-Identify-the-Problem.md)
 - [AD フォレストの回復に回復する方法を決定](AD-Forest-Recovery-Determine-how-to-Recover.md)
 - [AD フォレストの回復 - 最初の回復を実行します。](AD-Forest-Recovery-Perform-initial-recovery.md)  
-- [AD フォレストの回復の手順](AD-Forest-Recovery-Procedures.md)  
+- [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md)  
 - [AD フォレストの回復 - よく寄せられる質問](AD-Forest-Recovery-FAQ.md)  
 - [AD フォレストの回復 - Multidomain フォレスト内の 1 つのドメインを回復します。](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
 - [AD フォレストの回復 - Windows Server 2003 ドメイン コント ローラーとフォレストの回復](AD-Forest-Recovery-Windows-Server-2003.md)  

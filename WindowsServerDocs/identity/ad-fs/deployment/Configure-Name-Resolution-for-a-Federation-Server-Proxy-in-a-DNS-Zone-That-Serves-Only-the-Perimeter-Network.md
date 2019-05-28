@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 32b8e3cc133ce95872881115608bb8cfb17b2427
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7d046c720c5c6250b6efa03e068aa66e2a6bbe3d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816013"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192296"
 ---
 # <a name="configure-name-resolution-for-a-federation-server-proxy-in-a-dns-zone-that-serves-only-the-perimeter-network"></a>境界ネットワークのみを対象とする DNS ゾーンでフェデレーション サーバー プロキシの名前解決を構成する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active の Directory フェデレーション サービスでフェデレーション サーバーの名前解決が正常に作業できるように\(AD FS\)シナリオを 1 つまたは複数のドメイン名システム\(DNS\)ゾーン境界のみを提供します。ネットワークを次のタスクを完了する必要があります。  
   
@@ -67,7 +66,7 @@ Active の Directory フェデレーション サービスでフェデレーシ�
 5.  **[ホストの追加]** をクリックします。  
   
 ## <a name="additional-references"></a>その他の参照情報  
-[チェックリスト:フェデレーション サーバー プロキシを設定します。](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[チェックリスト:フェデレーション サーバー プロキシのセットアップ](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 [フェデレーション サーバー プロキシの名前解決の要件](https://technet.microsoft.com/library/dd807055.aspx)  
   

@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f46675ff4c471af743fd8782c1e3036e7c546256
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cdd0b32b50f676007a6cc922bc15b95bb61323be
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839343"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189668"
 ---
 # <a name="create-a-non-claims-aware-relying-party-trust"></a>要求対応の証明書利用者のパーティの信頼を作成します。
 
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 AD FS 管理スナップインで\-以外で\-クレーム\-証明書利用者の信頼は、フェデレーション サービスと 1 つの web の間の信頼を表すために作成されたオブジェクトに注意してください\-ベースでないアプリケーションクレーム\-対応 Web アプリケーション プロキシ経由でアクセスされるとします。  
   
@@ -37,7 +36,7 @@ AD FS 管理スナップインで\-以外で\-クレーム\-証明書利用者�
 3.  **ようこそ**ページで、選択**以外の要求に対応** をクリック**開始**します。  
 ![証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon1.PNG) 
   
-4.  **表示名の指定**に名前を入力] ページで、**表示名**[**ノート**この証明書利用者のパーティの信頼の説明を入力し、クリックして **[次へ]**.  
+4.  **表示名の指定**に名前を入力] ページで、**表示名**[**ノート**この証明書利用者のパーティの信頼の説明を入力し、クリックして **[次へ]** .  
 ![証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon2.PNG)
 
 5. **[識別子の構成]** ページで、この証明書利用者の識別子を 1 つ以上指定し、**[追加]** をクリックして一覧に追加したら、**[次へ]** をクリックします。  
@@ -49,7 +48,7 @@ AD FS 管理スナップインで\-以外で\-クレーム\-証明書利用者�
 7. **[信頼の追加の準備完了]** ページで、設定を確認し、**[次へ]** をクリックして、証明書利用者信頼情報を保存します。  
    ![証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon5.PNG) 
 
-8. **[完了]** ページで、**[閉じる]** をクリックします。 これにより、自動的に **[要求規則の編集]** ダイアログ ボックスが表示されます。  
+8. **[完了]** ページで、 **[閉じる]** をクリックします。 これにより、自動的に **[要求規則の編集]** ダイアログ ボックスが表示されます。  
 ![証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon6.PNG)  
   
 ## <a name="see-also"></a>関連項目  

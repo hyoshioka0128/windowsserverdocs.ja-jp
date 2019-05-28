@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: fac6437e9b6c3893064769a8279c2cf96cbc47d6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f2e373f45088105a7ac9ca5cb43fbebc6452ccb9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833783"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188578"
 ---
->適用先:Windows Server 2016、Windows Server 2012 R2
-
 # <a name="device-registration-technical-reference"></a>デバイス登録のテクニカル リファレンス
 デバイス登録サービス\(DRS\)は Windows Server 2012 R2 で Active Directory フェデレーション サービス役割に含まれている新しい Windows サービスです。  DRS は、AD FS ファーム内のすべてのフェデレーション サーバーにインストールし、構成する必要があります。  DRS の展開の詳細については、「 [デバイス登録サービスを使用してフェデレーション サーバーを構成する](https://technet.microsoft.com/library/dn486831.aspx)」を参照してください。  
   
@@ -25,7 +23,7 @@ ms.locfileid: "59833783"
 次の Active Directory オブジェクトは、デバイス登録サービス の一部として作成されます。  
   
 ### <a name="device-registration-configuration"></a>デバイス登録構成  
-デバイス登録構成は、Active Directory フォレストの構成名前付けコンテキストに格納されます \(たとえば、 **CN\=Device Registration Configuration, CN\=サービス、< configuration\-名前付け\-コンテキスト >**\)します。 このオブジェクトは、Active Directory フォレストにデバイス登録用のイニシャルが付けられたときに作成されます。  
+デバイス登録構成は、Active Directory フォレストの構成名前付けコンテキストに格納されます \(たとえば、 **CN\=Device Registration Configuration, CN\=サービス、< configuration\-名前付け\-コンテキスト >** \)します。 このオブジェクトは、Active Directory フォレストにデバイス登録用のイニシャルが付けられたときに作成されます。  
   
 デバイス登録構成には、次の要素が含まれます。  
   
@@ -40,7 +38,7 @@ ms.locfileid: "59833783"
 ### <a name="registered-devices-container"></a>登録済みデバイス コンテナー  
 デバイス オブジェクト コンテナーは、Active Directory フォレスト内のいずれかのドメイン下に作成されます。  このオブジェクト コンテナーには、Active Directory フォレストのすべてのデバイス オブジェクトが格納されます。  
   
-既定では、コンテナーは AD FS と同じドメインに作成されます。  \(たとえば、 **CN\=RegisteredDevices, DC\=< 既定\-名前付け\-コンテキスト >**\)します。このオブジェクトは、Active Directory フォレストがデバイスの登録の initialed されるときに作成されます。  
+既定では、コンテナーは AD FS と同じドメインに作成されます。  \(たとえば、 **CN\=RegisteredDevices, DC\=< 既定\-名前付け\-コンテキスト >** \)します。このオブジェクトは、Active Directory フォレストがデバイスの登録の initialed されるときに作成されます。  
   
 ### <a name="registered-devices"></a>登録済みデバイス  
 デバイス オブジェクトは、Active Directory 内の新しい軽量オブジェクトです。  ユーザー、デバイス、および会社の関係を表すために使用されます。  デバイス オブジェクトは、AD FS によって署名された証明書を使用して、物理デバイスを Active Directory 内の論理デバイス オブジェクトに関連付けます。  

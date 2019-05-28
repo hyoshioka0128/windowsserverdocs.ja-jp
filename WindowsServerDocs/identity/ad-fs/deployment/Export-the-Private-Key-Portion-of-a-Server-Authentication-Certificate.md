@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c968f0702d56b56d0a80459e5cf0c9e658c56741
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c3a39f9d51ed8243118522ae37bc7d205a7ea416
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857193"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192140"
 ---
 # <a name="export-the-private-key-portion-of-a-server-authentication-certificate"></a>サーバー認証証明書の秘密キーの部分をエクスポートする
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active の Directory フェデレーション サービス内のすべてのフェデレーション サーバー \(AD FS\)ファームにサーバー認証証明書の秘密キーにアクセスする必要があります。 フェデレーション サーバーまたは Web サーバーのサーバー ファームを実装する場合は、1 つの認証証明書が必要です。 エンタープライズ証明機関によってこの証明書を発行する必要があります\(CA\)、エクスポートの秘密キーが必要とします。 サーバー認証証明書の秘密キーは、ファーム内のすべてのサーバーが利用できるように、エクスポート可能である必要があります。  
   
@@ -55,9 +53,9 @@ Active の Directory フェデレーション サービス内のすべてのフ�
 9. フェデレーション サービスをインストールする前に、新しいサーバー上の証明書ストアにサーバー認証証明書をインポートします。 証明書をインポートする方法については、サーバー証明書のインポートを参照してください。 \( [http:\/\/go.microsoft.com\/fwlink\/でしょうか。LinkId\=108283](https://go.microsoft.com/fwlink/?LinkId=108283)\)します。  
   
 ## <a name="additional-references"></a>その他の参照情報  
-[チェックリスト:フェデレーション サーバーを設定します。](Checklist--Setting-Up-a-Federation-Server.md)  
+[チェックリスト:フェデレーション サーバーのセットアップ](Checklist--Setting-Up-a-Federation-Server.md)  
   
-[チェックリスト:フェデレーション サーバー プロキシを設定します。](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[チェックリスト:フェデレーション サーバー プロキシのセットアップ](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 [フェデレーション サーバーの証明書の要件](https://technet.microsoft.com/library/dd807040.aspx)  
   

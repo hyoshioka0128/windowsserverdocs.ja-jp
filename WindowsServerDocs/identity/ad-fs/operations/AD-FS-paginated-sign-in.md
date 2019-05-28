@@ -8,16 +8,15 @@ ms.date: 09/19/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 2b11454427a65e37604b430a63b5ed745f4a2bb1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 946e99448d13bf6782c10bce5a0b8566da4deb17
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864453"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190376"
 ---
 # <a name="ad-fs-paginated-sign-in"></a>AD FS がサインインに改ページ調整されました。
 
->適用先:Windows Server 2019
 
 Ad FS 2019、サインイン UI 再設計しました。  ここで、AD FS サインインは、Azure AD の同じのルック アンド フィールがあります。  ユーザーより一貫したサインイン エクスペリエンスを中央揃えと改ページ調整されたユーザー フローを組み込むこれ提供されます。 
 
@@ -60,4 +59,4 @@ AD FS に新しい顧客の場合は、既定では、新しいデザインを�
 
 AD FS 2019 に、サーバーをアップグレードする予定がないせずに、新しいデザイン場合方のため •:[Active Directory フェデレーション サービスで Azure AD のユーザー エクスペリエンスの Web テーマを使用します。](azure-ux-web-theme-in-ad-fs.md)
 
-• カスタマイズの中央の場所:[AD FS ユーザーのサインインのカスタマイズ](ad-fs-user-sign-in-customization.md)
+• カスタマイズの中央の場所:[AD FS のユーザー サインインのカスタマイズ](ad-fs-user-sign-in-customization.md)

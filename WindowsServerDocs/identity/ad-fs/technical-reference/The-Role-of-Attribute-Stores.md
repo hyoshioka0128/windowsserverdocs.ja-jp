@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 730411ed7efbb9cf0db3d7e94a486cec4c363849
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bec3ebf1bd12b260dbbb245a6a905277ff0d749f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860413"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188540"
 ---
- >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
-
 # <a name="the-role-of-attribute-stores"></a>属性ストアの役割
 Active Directory フェデレーション サービスは、「属性ストア」という用語を使用すると、ディレクトリや組織がそのユーザー アカウントとその関連付けられた属性値の格納に使用するデータベースを参照してください。 AD FS がストアからこれらの属性値を取得できる Web アプリケーションまたはサービス証明書利用者のパーティ組織でホストされているように、適切な情報に基づくクレームを作成と、id プロバイダー組織で構成が完了後承認決定されるたびに、フェデレーション ユーザー \(id プロバイダー組織にアカウントが格納されているユーザー\)アプリケーションまたはサービスにアクセスしようとしています。  
   

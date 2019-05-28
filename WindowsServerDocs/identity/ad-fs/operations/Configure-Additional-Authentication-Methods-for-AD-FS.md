@@ -9,16 +9,14 @@ ms.date: 10/04/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 73de8908677b3f74651b10c29ef2abe62e484694
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 88c4d976b9808d254dc1681ce9eee3ca556824ab
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868413"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189793"
 ---
 # <a name="configure-additional-authentication-methods-for-ad-fs"></a>AD FS の追加の認証方法の構成
-
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 多要素認証 (MFA) を有効にするには、追加の認証方法を少なくとも 1 つ選択する必要があります。 Windows Server 2012 R2 で Active の Directory フェデレーション サービス (AD FS) で既定に追加の認証方法として証明書認証 (つまり、スマート カード ベースの認証) を選択できます。
 
@@ -39,7 +37,7 @@ Microsoft Azure は同様の機能をクラウドで実現します。 [Microsof
 |Gemalto|Gemalto アイデンティティ & セキュリティ サービス|[http://www.gemalto.com/identity](http://www.gemalto.com/identity)|
 |inWebo Technologies|inWebo エンタープライズ認証サービス|[inWebo Enterprise Authentication](http://www.inwebo.com)|
 |Login People|AD FS 2012 R2 用 Login People MFA API コネクタ (パブリック ベータ版)|[https://www.loginpeople.com](https://www.loginpeople.com)|
-|Microsoft|Microsoft Azure MFA|[チュートリアル ガイド:追加の多要素認証による個人情報アプリケーションのリスク管理](https://technet.microsoft.com/library/dn280946.aspx) (手順 3 を参照)|
+|Microsoft|Microsoft Azure MFA|[チュートリアル ガイド: 追加の多要素認証による個人情報アプリケーションのリスク管理](https://technet.microsoft.com/library/dn280946.aspx) (手順 3 を参照)|
 Mideye | ADFS の mideye 認証プロバイダー | [Microsoft Active Directory フェデレーション サービスで mideye 2 要素認証](https://www.mideye.com/support/administrators/documentation/integration/microsoft-adfs/)|
 |Okta | Active Directory フェデレーション サービスの Okta MFA | [Okta の MFA の Active Directory フェデレーション サービス (ADFS)](https://help.okta.com/en/prod/Content/Topics/integrations/adfs-okta-int.htm)|
 |One Identity| Starling 2 fa AD FS|[Starling 2 fa AD FS アダプター](https://www.oneidentity.com/products/starling-two-factor-authentication/)|

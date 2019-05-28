@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: bd15df5360a50e417881d83319344dbdf48f35fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2af1bfc295469d43e59593d69d4ba88f476e427
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829643"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034141"
 ---
 # <a name="ad-forest-recovery---windows-server-2003-recovery"></a>AD フォレストの回復 - Windows Server 2003 の回復
 
@@ -22,9 +22,9 @@ ms.locfileid: "59829643"
 
 このトピックでは、Windows Server 2003 を実行するドメイン コント ローラー (Dc) のフォレストの回復手順を説明します。 フォレストの回復に関する一般的なプロセスは、Windows Server 2003 Dc と変わりませんが、さまざまなツールのための具体的な手順の異なる可能性があります。 たとえば、バックアップおよび Windows Server バックアップまたは Wbadmin.exe が使用される Windows Server 2008 を実行しているドメイン コント ローラーまたはそれ以降は、Windows Server 2003 Dc を実行している Dc を復元する Ntdsutil.exe を使用できます。  
   
-- [システム状態データをバックアップします。](#Backing-up-the-System-State-data)  
-- [権限のない復元を実行します。](#Performing-a-nonauthoritative restore)  
-- [インストールして、DNS サーバー サービスの構成](#Install-and-configure-the-DNS-Server-service)  
+- [システム状態データをバックアップします。](#backing-up-the-system-state-data)  
+- [権限のない復元を実行します。](#performing-a-nonauthoritative-restore)  
+- [インストールして、DNS サーバー サービスの構成](#install-and-configure-the-dns-server-service)
 
 ## <a name="backing-up-the-system-state-data"></a>システム状態データをバックアップします。
 Windows Server 2003 を実行している DC の現在のバックアップ操作用に選択した他のデータと共に、システム状態データをバックアップするには、次の手順を使用します。 Windows Server 2003 には、システム状態データをバックアップするために使用できる Ntbackup ツールが含まれています。  
@@ -93,14 +93,14 @@ Windows Server 2003 を実行している DC の権限のない状態の復元�
    - クリックして**Windows コンポーネントの追加/削除**します。  
 
 2. **コンポーネント**を選択、**ネットワーク サービス**チェック ボックスをオンにして**詳細**します。  
-3. **ネットワーク サービスのサブコンポーネント**を選択、**ドメイン ネーム システム (DNS)**  チェック ボックスをクリックします**ok**、順にクリックします**次**します。  
+3. **ネットワーク サービスのサブコンポーネント**を選択、**ドメイン ネーム システム (DNS)**  チェック ボックスをクリックします **ok** 、順にクリックします**次**します。  
 4. 求められた場合**ファイルのコピー元**、配布ファイルの完全なパスを入力し、クリックして**OK**します。  
 
    インストール後、DNS サーバーを構成するには、次の手順を完了します。  
 
 5. クリックして**開始**、 をポイント**すべてのプログラム**、 をポイント**管理ツール**、順にクリックします**DNS**します。  
 6. 重要な誤動作する前に、DNS サーバーにホストされていた同じ DNS ドメイン名の DNS ゾーンを作成します。 詳細については、Add a Forward Lookup Zone を参照してください ([https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574))。  
-7. 重要な誤動作する前に存在していた DNS データを構成します。 次に、例を示します。  
+7. 重要な誤動作する前に存在していた DNS データを構成します。 例:  
 
    - AD DS に格納される DNS ゾーンを構成します。 詳細については、変更、ゾーンの種類を参照してください ([https://go.microsoft.com/fwlink/?LinkId=74579](https://go.microsoft.com/fwlink/?LinkId=74579))。  
    - 安全な動的更新を許可するドメイン コント ローラー ロケーター (DC ロケーター) リソース レコードに対する権限のある DNS ゾーンを構成します。 詳細については、許可 Only Secure Dynamic Updates を参照してください ([https://go.microsoft.com/fwlink/?LinkId=74580](https://go.microsoft.com/fwlink/?LinkId=74580))。  
@@ -124,7 +124,7 @@ Windows Server 2003 を実行している DC の権限のない状態の復元�
 - [AD フォレストの回復の問題の特定](AD-Forest-Recovery-Identify-the-Problem.md)
 - [AD フォレストの回復に回復する方法を決定](AD-Forest-Recovery-Determine-how-to-Recover.md)
 - [AD フォレストの回復 - 最初の回復を実行します。](AD-Forest-Recovery-Perform-initial-recovery.md)  
-- [AD フォレストの回復の手順](AD-Forest-Recovery-Procedures.md)  
+- [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md)  
 - [AD フォレストの回復 - よく寄せられる質問](AD-Forest-Recovery-FAQ.md)  
 - [AD フォレストの回復 - Multidomain フォレスト内の 1 つのドメインを回復します。](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
 - [AD フォレストの回復 - Windows Server 2003 ドメイン コント ローラーとフォレストの回復](AD-Forest-Recovery-Windows-Server-2003.md) 

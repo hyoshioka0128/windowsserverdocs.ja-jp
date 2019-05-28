@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 27282c6b88b0457af3b4cf031fdadced7b40268c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ac666539170bb7aabf0b7f58a7ef003ebe87c2a8
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878133"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188394"
 ---
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
-
 # <a name="understanding-key-ad-fs-concepts"></a>AD FS の主要な概念
 Active Directory フェデレーション サービスの重要な概念について説明し、その機能セットに慣れることをお勧めします。  
   
@@ -52,7 +50,7 @@ AD fs で組織は、信頼関係を提供することでセカンダリの資�
   
 -   [属性ストアの役割](The-Role-of-Attribute-Stores.md)  
   
--   [AD FS 構成データベースのロール](The-Role-of-the-AD-FS-Configuration-Database.md)  
+-   [AD FS 構成データベースの役割](The-Role-of-the-AD-FS-Configuration-Database.md)  
   
 -   [要求の役割](The-Role-of-Claims.md)  
   
@@ -66,6 +64,6 @@ AD fs で組織は、信頼関係を提供することでセカンダリの資�
   
 -   [使用する要求規則テンプレートの種類を決定します。](Determine-the-Type-of-Claim-Rule-Template-to-Use.md)  
   
--   [AD FS での Uri を使用する方法](How-URIs-Are-Used-in-AD-FS.md)  
+-   [AD FS での URI の使用](How-URIs-Are-Used-in-AD-FS.md)  
   
 

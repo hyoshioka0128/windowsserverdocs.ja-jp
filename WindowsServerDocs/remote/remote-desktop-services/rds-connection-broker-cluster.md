@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 2f4fc63c6ff7c1254fda630a8f34188d8fedc8e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: e20b4960faac0ef40ad68271fa907394344e9c47
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825043"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034425"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>RD 接続ブローカー サーバーを展開に追加し、高可用性を構成する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 可用性と、リモート デスクトップ サービス インフラストラクチャのスケールを向上させるためにリモート デスクトップ接続ブローカー (RD 接続ブローカー) クラスターを展開することができます。 
 
@@ -37,7 +37,7 @@ ms.locfileid: "59825043"
     1. Azure portal のをクリックして**参照 > リソース グループ**デプロイ用のリソース グループをクリックします。   
     2. (たとえば、CB DB1) 作成した SQL データベースを選択します。   
     3. クリックして**設定 > のプロパティ > データベース接続文字列の表示**します。   
-    4. 接続文字列をコピー **ODBC (Node.js を含む)**、するようになります。   
+    4. 接続文字列をコピー **ODBC (Node.js を含む)** 、するようになります。   
       
         ドライバー {0} SQL Server Native Client 13.0} を = です。サーバー = tcp:cb-sqls1.database.windows.net,1433; Database = CB DB1 です。Uid =sqladmin@contoso;Pwd {your_password_here} を = です。暗号化 = yes;TrustServerCertificate = はありません。接続タイムアウト = 30 です。   
   
@@ -62,7 +62,7 @@ ms.locfileid: "59825043"
 
 ## <a name="step-2-configure-load-balancing-on-the-rd-connection-brokers"></a>手順 2:RD 接続ブローカーの負荷分散を構成します。 
 
-Azure インフラストラクチャを使用している場合を作成、 [Azure ロード バランサー](#create-a-load-balancer)かどうか、設定できるは最大[DNS ラウンド ロビン](#configure-dns-round--robin)します。 
+Azure インフラストラクチャを使用している場合を作成、 [Azure ロード バランサー](#create-a-load-balancer)かどうか、設定できるは最大[DNS ラウンド ロビン](#configure-dns-round-robin)します。
 
 ### <a name="create-a-load-balancer"></a>ロード バランサーを作成します。  
 1. Azure ロード バランサーを作成します。   
@@ -80,7 +80,7 @@ Azure インフラストラクチャを使用している場合を作成、 [Azu
       1. **設定**、 をクリックして**バックエンド アドレス プール > 追加**します。   
       2. 名前 (たとえば、CBBackendPool) を入力し、をクリックして**仮想マシンの追加**します。  
       3. 可用性セット (たとえば、CbAvSet) を選択し、クリックして**OK**します。   
-      3. をクリックして**仮想マシンを選択**、各仮想マシンを選択し、クリックして**選択 > ok > ok**します。   
+      3. をクリックして**仮想マシンを選択**、各仮想マシンを選択し、クリックして**選択 > ok > ok** します。   
 4. RDP の負荷分散規則を作成します。   
       1. **設定**、 をクリックして**負荷分散規則**、 をクリックし、**追加**します。   
       2. 名前を入力します (たとえば、RDP) を選択します**TCP**の**プロトコル**、入力**3389**両方の**ポート**と**バックエンド ポート**、 をクリック**OK**します。   
@@ -90,7 +90,7 @@ Azure インフラストラクチャを使用している場合を作成、 [Azu
       3. 左側のウィンドウで  **DNS**DNS マシンをクリックします。 をクリックし、**前方参照ゾーン**、ドメイン名 (Contoso.com など) を順にクリックします。 (については、DNS サーバーにクエリを処理するまでに数秒をかかる場合があります。)  
       4. クリックして**アクション > 新しいホスト (A または AAAA)** します。   
       9. 名前 (たとえば、hacb) と (たとえば、10.0.0.32) 前に指定した IP アドレスを入力します。   
-  
+
 ### <a name="configure-dns-round-robin"></a>DNS ラウンド ロビンを構成します。  
   
 次の手順は、Azure 内部ロード バランサーを作成する代わりにします。   

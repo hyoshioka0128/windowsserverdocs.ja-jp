@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1f0253dfb5a690371dae1a2bfcb6b7520077d473
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b41c2194940c85e39e5a3724f747dd12c2544259
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883203"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190637"
 ---
 # <a name="when-to-create-a-federation-server-proxy"></a>フェデレーション サーバー プロキシを作成する状況
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory フェデレーション サービスに追加のセキュリティ レイヤーを追加、組織のフェデレーション サーバー プロキシを作成する\(AD FS\)展開します。 組織の境界ネットワーク内のフェデレーション サーバー プロキシを展開するときに検討してください。  
   
@@ -38,4 +36,4 @@ AD FS フェデレーション サーバー プロキシ構成ウィザードま
 フェデレーション サーバー プロキシの展開に必要なすべての前提条件を設定する方法についての概要については、次を参照してください。[チェックリスト。フェデレーション サーバー プロキシを設定する](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md)します。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)
