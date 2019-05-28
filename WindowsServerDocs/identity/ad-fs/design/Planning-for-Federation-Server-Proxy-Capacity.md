@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 2e57f34b173c10e9e753c7f3b8dcd88d7bf6742c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c3efbb4081336ebfdfe9d3ab8a2b91412aa82dee
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888903"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191081"
 ---
 # <a name="planning-for-federation-server-proxy-capacity"></a>フェデレーション サーバー プロキシの容量計画
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 フェデレーション サーバー プロキシのキャパシティ プランニングを予測するのに役立ちます。  
   
@@ -38,7 +36,7 @@ ms.locfileid: "59888903"
 ## <a name="estimate-the-number-of-federation-server-proxies-required-for-your-organization"></a>フェデレーション サーバー プロキシが組織に必要な数を見積もり  
 数を見積もることが前に AD FS フェデレーション サーバー プロキシ コンピューターに必要な組織で展開するフェデレーション サーバーの合計数を決定する必要があります。 これを行う方法の詳細については、次を参照してください。[フェデレーション サーバーのキャパシティ プランニング](Planning-for-Federation-Server-Capacity.md)します。  
   
-決まったら、フェデレーション サーバーの数で乗算外部ユーザーから行われると予想されるこの着信フェデレーション認証の割合でサーバーの数の要求\(企業ネットワーク外にあります。\). この計算の値を提供する外部ユーザーの認証要求を処理するフェデレーション サーバー プロキシの推定数。  
+決まったら、フェデレーション サーバーの数で乗算外部ユーザーから行われると予想されるこの着信フェデレーション認証の割合でサーバーの数の要求\(企業ネットワーク外にあります\)。 この計算の値を提供する外部ユーザーの認証要求を処理するフェデレーション サーバー プロキシの推定数。  
   
 たとえば、推奨されるフェデレーション サーバーの数は 3 であり、期待される場合外部ユーザーから行われる認証要求の合計数になります、フェデレーション認証要求の合計数の約 60%、1.8 と等しくなる計算\(3 X.60\)丸めることができますが最大 2 つです。  そのため、ここでは、ことになる 3 つのフェデレーション サーバーの外部ユーザーの認証要求の負荷を処理する 2 つのフェデレーション サーバー プロキシ マシンをデプロイします。  
   
@@ -47,4 +45,4 @@ AD FS 製品チームによって実行されるテストでは、各フェデ�
 ただし、フォールト トレランスのための展開する各フェデレーション サーバー ファームの 2 つのフェデレーション サーバー プロキシの最小値お勧めします。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

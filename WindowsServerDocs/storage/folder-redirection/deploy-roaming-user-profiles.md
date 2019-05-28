@@ -8,30 +8,30 @@ author: JasonGerend
 manager: brianlic
 ms.date: 07/09/2018
 ms.author: jgerend
-ms.openlocfilehash: b977af31663b675a56c65e06a2a0d60b1d2ad811
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c662b8c44e3603ec972e06f3fb0ddbd55e1af904
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857143"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192721"
 ---
 # <a name="deploying-roaming-user-profiles"></a>移動ユーザー プロファイルを展開します。
 
->適用対象:Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+>適用対象:Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 このトピックでは、Windows Server を使用してデプロイする方法を説明します。[移動ユーザー プロファイル](folder-redirection-rup-overview.md)Windows クライアント コンピューターにします。 移動ユーザー プロファイルのユーザーが、同じオペレーティング システムと複数のコンピューターでアプリケーションの設定を受け取れるように、ユーザー プロファイルをファイル共有にリダイレクトします。
 
 このトピックに対する最近の変更の一覧は、次を参照してください。、[変更履歴](#change-history)このトピックの「します。
 
 >[!IMPORTANT]
->セキュリティの変更により[MS16 072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016)、更新された[手順 4。必要に応じて移動ユーザー プロファイルの GPO を作成](#step-4:-optionally-create-a-gpo-for-roaming-user-profiles)このトピックの「その Windows をできるように正しく移動ユーザー プロファイル ポリシーを適用 (影響受ける Pc でローカル ポリシーを元に戻されません)。
+>セキュリティの変更により[MS16 072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016)、更新された[手順 4。必要に応じて移動ユーザー プロファイルの GPO を作成](#step-4-optionally-create-a-gpo-for-roaming-user-profiles)このトピックの「その Windows をできるように正しく移動ユーザー プロファイル ポリシーを適用 (影響受ける Pc でローカル ポリシーを元に戻されません)。
 
 > [!IMPORTANT]
 >  開始するユーザーのカスタマイズは、次の構成の OS、インプレース アップグレード後に失われます。
 > - ユーザーのローミング プロファイルを構成します。
 > - 許可されている変更を開始する
 >
-> その結果、[スタート] メニューは、OS インプレース アップグレード後に、新しい OS のバージョンの既定値にリセットされます。 回避策は、次を参照してください[付録 c:。作業は、アップグレード後に [スタート] メニューのレイアウトをリセットする約](#appendix-c-workaround)します。
+> その結果、[スタート] メニューは、OS インプレース アップグレード後に、新しい OS のバージョンの既定値にリセットされます。 回避策は、次を参照してください[付録 c:。作業は、アップグレード後に [スタート] メニューのレイアウトをリセットする約](#appendix-c-working-around-reset-start-menu-layouts-after-upgrades)します。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -54,7 +54,7 @@ ms.locfileid: "59857143"
     - ファイル共有で DFS レプリケーションを使用して、コンテンツを別のサーバーにレプリケートする場合、ユーザーのさまざまなサーバーへの編集の競合を防ぐため、ユーザーはソース サーバーにのみアクセスできる必要があります。
     - ファイル共有がクラスター化されている場合は、パフォーマンスの問題を回避するため、ファイル共有での継続的可用性を無効にします。
 - プライマリ コンピューターのサポートを使用して、移動ユーザー プロファイルには、追加のクライアント コンピューターと Active Directory スキーマの要件があります。 詳細については、次を参照してください。[フォルダー リダイレクトと移動ユーザー プロファイル用のプライマリ コンピューターの展開](deploy-primary-computers.md)します。
-- ユーザーの [スタート] メニューが Windows 10 または Windows Server 2016 で移動されない 1 つ以上の PC、リモート デスクトップ セッション ホスト、または仮想デスクトップ インフラストラクチャ (VDI) サーバーを使用している場合のレイアウト。 この問題を回避するには、このトピックの説明に従って、スタート画面のレイアウトを指定できます。 行うことができます、または正しくリモート デスクトップ セッション ホスト サーバーまたは VDI サーバーと共に使用する場合の開始 メニューの設定をローミング ユーザー プロファイルのディスクを使用します。 詳細については、次を参照してください。 [Windows Server 2012 でのユーザー プロファイル ディスクのユーザー データの管理を容易に](https://blogs.technet.microsoft.com/enterprisemobility/2012/11/13/easier-user-data-management-with-user-profile-disks-in-windows-server-2012/)します。
+- ユーザーの [スタート] メニューが Windows 10、Windows Server 2019、または Windows Server 2016 に移動されない 1 つ以上の PC、リモート デスクトップ セッション ホスト、または仮想デスクトップ インフラストラクチャ (VDI) サーバーを使用している場合のレイアウト。 この問題を回避するには、このトピックの説明に従って、スタート画面のレイアウトを指定できます。 行うことができます、または正しくリモート デスクトップ セッション ホスト サーバーまたは VDI サーバーと共に使用する場合の開始 メニューの設定をローミング ユーザー プロファイルのディスクを使用します。 詳細については、次を参照してください。 [Windows Server 2012 でのユーザー プロファイル ディスクのユーザー データの管理を容易に](https://blogs.technet.microsoft.com/enterprisemobility/2012/11/13/easier-user-data-management-with-user-profile-disks-in-windows-server-2012/)します。
 
 ### <a name="considerations-when-using-roaming-user-profiles-on-multiple-versions-of-windows"></a>複数の Windows のバージョンで移動ユーザー プロファイルを使用する場合の考慮事項
 
@@ -65,7 +65,7 @@ ms.locfileid: "59857143"
 - 移動ユーザー プロファイルに十分な記憶域を割り当てます。 2 つのオペレーティング システムのバージョンをサポートする場合、オペレーティング システム バージョンごとに個別のプロファイルを維持するため、プロファイルの数 (したがって消費される合計の領域) が倍になります。
 - Windows Vista および Windows Server 2008 と Windows 7/Windows Server 2008 R2 を実行しているコンピューター間で移動ユーザー プロファイルを使用しないでください。 これらのオペレーティング システムのバージョン間のローミングはそれらのプロファイル バージョンの非互換性が原因でサポートされていません。
 - ユーザーに、一方のオペレーティング システム バージョンで行った変更は他方のオペレーティング システム バージョンに移動されないことを通知してください。
-- 別のプロファイル バージョンを使用する Windows のバージョンを環境内を移動する場合 (たとえば、Windows 10 バージョン 1607 を Windows 10 の利用から-を参照してください[付録 b:プロファイル バージョン参照情報](#appendix-b:-profile-version-reference-information)一覧については)、ユーザーは、空の新しいローミング ユーザー プロファイルを受信します。 一般的なフォルダーをリダイレクトするフォルダーのリダイレクトを使用して新しいプロファイルの取得の影響を最小限に抑えることができます。 移行する移動ユーザー プロファイルの 1 つのプロファイルのバージョンから別のサポートされているメソッドはありません。
+- 別のプロファイル バージョンを使用する Windows のバージョンを環境内を移動する場合 (たとえば、Windows 10 バージョン 1607 を Windows 10 の利用から-を参照してください[付録 b:プロファイル バージョン参照情報](#appendix-b-profile-version-reference-information)一覧については)、ユーザーは、空の新しいローミング ユーザー プロファイルを受信します。 一般的なフォルダーをリダイレクトするフォルダーのリダイレクトを使用して新しいプロファイルの取得の影響を最小限に抑えることができます。 移行する移動ユーザー プロファイルの 1 つのプロファイルのバージョンから別のサポートされているメソッドはありません。
 
 ## <a name="step-1-enable-the-use-of-separate-profile-versions"></a>手順 1:個別のプロファイル バージョンの使用を有効にする
 
@@ -105,7 +105,7 @@ Windows 8.1、Windows 8、Windows Server 2012 R2、または Windows Server 2012
     - **グループのスコープ**を選択します**セキュリティ**、し、 **Global**します。
 5. **メンバー**セクションで、**追加**します。 [ユーザー、連絡先、コンピューター、サービス アカウントまたはグループの選択] ダイアログ ボックスが表示されます。
 6. セキュリティ グループにコンピューター アカウントを含める場合は、**オブジェクトの種類**を選択します、**コンピューター**チェック ボックスをオンにし、選択**OK**します。
-7. ユーザー、グループ、または移動ユーザー プロファイルを配置コンピューターの名前を入力**ok**、し、 **OK**もう一度です。
+7. ユーザー、グループ、または移動ユーザー プロファイルを配置コンピューターの名前を入力 **ok** 、し、 **OK**もう一度です。
 
 ## <a name="step-3-create-a-file-share-for-roaming-user-profiles"></a>手順 3:移動ユーザー プロファイルのファイル共有を作成する
 
@@ -125,7 +125,7 @@ Windows Server でファイル共有を作成する方法を次に示します�
     >[!TIP]
     >共有を作成するときに、配置することで、共有を非表示に、```$```共有名の後にします。 これにより、共有が通常のブラウザーから非表示になります。
 6. **[他の設定]** ページで、**[継続的可用性を有効にする]** チェック ボックスをオフにし (ある場合)、必要に応じて **[アクセスベースの列挙を有効にする]** および **[データ アクセスの暗号化]** チェック ボックスをオンにします。
-7. **権限**] ページで、[**アクセス許可をカスタマイズしています.**. [セキュリティの詳細設定] ダイアログ ボックスが表示されます。
+7. **権限**] ページで、[**アクセス許可をカスタマイズしています**. [セキュリティの詳細設定] ダイアログ ボックスが表示されます。
 8. 選択**継承を無効にする**、し、**変換には、このオブジェクトを明示的なアクセス許可にアクセス許可が継承されて**します。
 9. アクセス許可の説明に従って設定[移動ユーザー プロファイルをホストしているファイルの必要なアクセス許可の共有](#required-permissions-for-the-file-share-hosting-roaming-user-profiles)され、次のスクリーン ショットでは、一覧にないグループおよびアカウントのアクセス許可を削除し、追加の表示を特別な手順 1. で作成した Roaming User Profiles Users and Computers グループにアクセスを許可します。
     
@@ -138,44 +138,14 @@ Windows Server でファイル共有を作成する方法を次に示します�
 
 ### <a name="required-permissions-for-the-file-share-hosting-roaming-user-profiles"></a>必要なアクセス許可、ファイル共有ホスティング移動ユーザー プロファイル
 
-<table>
-<tbody>
-<tr class="odd">
-<td>ユーザー アカウント</td>
-<td>アクセス権</td>
-<td>適用対象</td>
-</tr>
-<tr class="even">
-<td>System</td>
-<td>フル コントロール</td>
-<td>このフォルダー、サブフォルダー、およびファイル</td>
-</tr>
-<tr class="odd">
-<td>管理者</td>
-<td>フル コントロール</td>
-<td>このフォルダーのみ</td>
-</tr>
-<tr class="even">
-<td>作成者/所有者</td>
-<td>フル コントロール</td>
-<td>サブフォルダーとファイルのみ</td>
-</tr>
-<tr class="odd">
-<td>データを共有に置く必要があるユーザーのセキュリティ グループ (Roaming User Profiles Users and Computers)</td>
-<td>フォルダーの一覧表示/データの読み取り<sup>1</sup><br />
-<br />
-フォルダーの作成/データの追加<sup>1</sup></td>
-<td>このフォルダーのみ</td>
-</tr>
-<tr class="even">
-<td>その他のグループおよびアカウント</td>
-<td>なし (削除)</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-1 高度なアクセス許可
+|       |       |       |
+|   -   |   -   |   -   |
+| ユーザー アカウント | アクセス権 | 対象 |
+|   System    |  フル コントロール     |  このフォルダー、サブフォルダー、およびファイル     |
+|  管理者     |  フル コントロール     |  このフォルダーのみ     |
+|  作成者/所有者     |  フル コントロール     |  サブフォルダーとファイルのみ     |
+| データを共有に置く必要があるユーザーのセキュリティ グループ (Roaming User Profiles Users and Computers)      |  フォルダーの一覧/データの読み取り *(アクセス許可の詳細)* <br />フォルダーの作成/データの追加 *(アクセス許可の詳細)* |  このフォルダーのみ     |
+| その他のグループおよびアカウント   |  なし (削除)     |       |
 
 ## <a name="step-4-optionally-create-a-gpo-for-roaming-user-profiles"></a>手順 4:オプションで移動ユーザー プロファイルの GPO を作成する
 
@@ -186,12 +156,12 @@ Windows Server でファイル共有を作成する方法を次に示します�
 1. グループ ポリシー管理がインストールされたコンピューターでサーバー マネージャーを開きます。
 2. **ツール**メニューの  **Group Policy Management**します。 グループ ポリシー管理が表示されます。
 3. ドメインまたは OU の移動ユーザー プロファイルをセットアップしを選択するを右クリックして**このドメインに GPO を作成し、リンクする**します。
-4. **新しい GPO** ] ダイアログ ボックスで、GPO の名前を入力します (たとえば、 **Roaming User Profile Settings**)、し、[ **[ok]**。
+4. **新しい GPO** ] ダイアログ ボックスで、GPO の名前を入力します (たとえば、 **Roaming User Profile Settings**)、し、[ **[ok]** 。
 5. 新しく作成した GPO を右クリックし、**[リンクの有効化]** チェックボックスをオフにします。 これにより、GPO の構成が完了するまで、それが適用されるのを防ぎます。
 6. GPO を選択します。 **セキュリティ フィルター処理**のセクション、**スコープ** タブで  **Authenticated Users**、し、**削除**GPO を回避するにはすべてのユーザーに適用されないようにします。
 7. **セキュリティ フィルター処理**セクションで、**追加**します。
-8. **ユーザーの選択、コンピューター、またはグループ**ダイアログ ボックスで、手順 1. で作成したグループの名前、セキュリティの種類 (たとえば、 **Roaming User Profiles Users とコンピューター**)、し、 **ok**.
-9. 選択、**委任** タブで **追加**、型**Authenticated Users**を選択します**ok**、し、 **ok**もう一度既定値をそのまま使用するには、読み取りのアクセス許可。
+8. **ユーザーの選択、コンピューター、またはグループ**ダイアログ ボックスで、手順 1. で作成したグループの名前、セキュリティの種類 (たとえば、 **Roaming User Profiles Users とコンピューター**)、し、 **ok** .
+9. 選択、**委任** タブで **追加**、型**Authenticated Users**を選択します **ok** 、し、 **ok** もう一度既定値をそのまま使用するには、読み取りのアクセス許可。
     
     この手順でセキュリティの変更のために必要[MS16 072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14%2c-2016)します。
 
@@ -200,7 +170,7 @@ Windows Server でファイル共有を作成する方法を次に示します�
 
 ## <a name="step-5-optionally-set-up-roaming-user-profiles-on-user-accounts"></a>手順 5:オプションでユーザー アカウントに移動ユーザー プロファイルを設定する
 
-移動ユーザー プロファイルをユーザー アカウントに展開する場合、次の手順を使用して、Active Directory ドメイン サービスでユーザー アカウントに移動ユーザー プロファイルを指定します。 したリモート デスクトップ サービスまたは仮想デスクトップ展開では、代わりに使用してで説明する手順の通常行われるように、コンピューターに移動ユーザー プロファイルを展開する場合[手順 6。コンピューターで、移動ユーザー プロファイルを必要に応じてセットアップ](#step-6:-optionally-set-up-roaming-user-profiles-on-computers)します。
+移動ユーザー プロファイルをユーザー アカウントに展開する場合、次の手順を使用して、Active Directory ドメイン サービスでユーザー アカウントに移動ユーザー プロファイルを指定します。 したリモート デスクトップ サービスまたは仮想デスクトップ展開では、代わりに使用してで説明する手順の通常行われるように、コンピューターに移動ユーザー プロファイルを展開する場合[手順 6。コンピューターで、移動ユーザー プロファイルを必要に応じてセットアップ](#step-6-optionally-set-up-roaming-user-profiles-on-computers)します。
 
 >[!NOTE]
 >移動ユーザー プロファイルを Active Directory を使用してユーザー アカウントに設定し、さらにグループ ポリシーを使用してコンピューターに設定した場合、コンピューターベースのポリシー設定が優先されます。
@@ -223,9 +193,9 @@ Windows Server でファイル共有を作成する方法を次に示します�
 
 ## <a name="step-6-optionally-set-up-roaming-user-profiles-on-computers"></a>手順 6:オプションでコンピューターに移動ユーザー プロファイルを設定する
 
-一般に、リモート デスクトップ サービスや仮想デスクトップの展開で行われるように、移動ユーザー プロファイルをコンピューターに展開する場合は、次の手順に従います。 ユーザー アカウントに移動ユーザー プロファイルを展開する場合で説明する手順を使用して代わりに[手順 5。ユーザー アカウントに、移動ユーザー プロファイルを必要に応じて設定](#step-5:-optionally-set-up-roaming-user-profiles-on-user-accounts)します。
+一般に、リモート デスクトップ サービスや仮想デスクトップの展開で行われるように、移動ユーザー プロファイルをコンピューターに展開する場合は、次の手順に従います。 ユーザー アカウントに移動ユーザー プロファイルを展開する場合で説明する手順を使用して代わりに[手順 5。ユーザー アカウントに、移動ユーザー プロファイルを必要に応じて設定](#step-5-optionally-set-up-roaming-user-profiles-on-user-accounts)します。
 
-グループ ポリシーを使用して、Windows 8.1、Windows 8、Windows 7、Windows Vista、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、または Windows Server 2008 を実行しているコンピューターに移動ユーザー プロファイルを適用することができます。
+グループ ポリシーを使用して、Windows 8.1、Windows 8、Windows 7、Windows Vista、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、または Windows Server 2008 を実行しているコンピューターに移動ユーザー プロファイルを適用することができます。
 
 >[!NOTE]
 >移動ユーザー プロファイルをグループ ポリシーを使用してコンピューターに設定し、さらに Active Directory を使用してユーザー アカウントに設定した場合、コンピューターベースのポリシー設定が優先されます。
@@ -238,9 +208,9 @@ Windows Server でファイル共有を作成する方法を次に示します�
 4. グループ ポリシー管理エディター] ウィンドウで、**[コンピューターの構成]**、次に **[ポリシー]**、次に **[管理用テンプレート]**、次に **[システム]**、次に **[ユーザー プロファイル]** に移動します。
 5. 右クリック**このコンピューターにログオンするすべてのユーザーの移動プロファイル パスを設定**選び**編集**します。
     > [!TIP]
-    > ユーザーのホーム フォルダーは、構成されている場合、Windows PowerShell などの一部のプログラムによって使用される既定のフォルダーです。 AD DS のユーザー アカウントのプロパティーの **[ホーム フォルダー]** セクションを使用して、ユーザー単位で、代替のローカルまたはネットワークの場所を構成できます。 仮想デスクトップ環境で Windows 8.1、Windows 8、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行するコンピューターのすべてのユーザーのホーム フォルダーの場所を構成するには、有効にする、**ユーザー ホーム フォルダーを設定**ポリシーの設定し、マップの (またはローカル フォルダーを指定) にファイル共有とドライブ文字を指定します。 環境変数や省略記号を使用しないでください。 ユーザーのサインオン時に指定されたパスの最後にユーザーのエイリアスが追加されます。
+    > ユーザーのホーム フォルダーは、構成されている場合、Windows PowerShell などの一部のプログラムによって使用される既定のフォルダーです。 AD DS のユーザー アカウントのプロパティーの **[ホーム フォルダー]** セクションを使用して、ユーザー単位で、代替のローカルまたはネットワークの場所を構成できます。 Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、または仮想デスクトップ環境で Windows Server 2012 を実行するコンピューターのすべてのユーザー ホーム フォルダーの場所を構成するには、有効にする、**ユーザー ホーム フォルダーを設定**ポリシーの設定し、マップの (またはローカル フォルダーを指定) にファイル共有とドライブ文字を指定します。 環境変数や省略記号を使用しないでください。 ユーザーのサインオン時に指定されたパスの最後にユーザーのエイリアスが追加されます。
 6. **プロパティ**ダイアログ ボックスで、**有効**
-7. **このコンピューターにログオンしているユーザーは、この移動プロファイル パスを使用する必要があります**ボックスに、後に、ユーザーのローミング ユーザー プロファイルを保存するファイル共有へのパスを入力`%username%`(これは自動的に置き換えられますユーザー名の最初の時間と、ユーザーがサインイン)。 次に、例を示します。
+7. **このコンピューターにログオンしているユーザーは、この移動プロファイル パスを使用する必要があります**ボックスに、後に、ユーザーのローミング ユーザー プロファイルを保存するファイル共有へのパスを入力`%username%`(これは自動的に置き換えられますユーザー名の最初の時間と、ユーザーがサインイン)。 例:
 
     `\\fs1.corp.contoso.com\User Profiles$\%username%`
 
@@ -259,43 +229,18 @@ Windows Server でファイル共有を作成する方法を次に示します�
 3. グループ ポリシーを使用すると、移動ユーザー プロファイル用に作成した GPO をカスタマイズしたスタートのレイアウトを適用できます。 これを行うを参照してください。[ドメインでカスタマイズされたスタート レイアウトを適用するグループ ポリシーを使って](https://docs.microsoft.com/windows/configuration/customize-windows-10-start-screens-by-using-group-policy#bkmk-domaingpodeployment)します。
 4. グループ ポリシーを使用して、Windows 10 Pc で次のレジストリ値を設定します。 これを行うを参照してください。[レジストリ項目を構成する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753092(v=ws.11)>)します。
 
-    <table>
-    <thead>
-    <tr class="header">
-    <th>アクション</th>
-    <th>更新</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-    <td>［ハイブ］</td>
-    <td><strong>HKEY_LOCAL_MACHINE</strong></td>
-    </tr>
-    <tr class="even">
-    <td>キーのパス</td>
-    <td><strong>Software\Microsoft\Windows\CurrentVersion\Explorer</strong></td>
-    </tr>
-    <tr class="odd">
-    <td>値の名前</td>
-    <td><strong>SpecialRoamingOverrideAllowed</strong></td>
-    </tr>
-    <tr class="even">
-    <td>[値の型]</td>
-    <td><strong>REG_DWORD</strong></td>
-    </tr>
-    <tr class="odd">
-    <td>[値] に</td>
-    <td><strong>1</strong> (または<strong>0</strong>を無効にする)</td>
-    </tr>
-    <tr class="even">
-    <td>基本</td>
-    <td><strong>10 進数</strong></td>
-    </tr>
-    </tbody>
-    </table>
+| **操作** | **Update** |
+|------------|------------|
+|［ハイブ］|**HKEY_LOCAL_MACHINE**|
+|キーのパス|**Software\Microsoft\Windows\CurrentVersion\Explorer**|
+|値の名前|**SpecialRoamingOverrideAllowed**|
+|[値の型]|**REG_DWORD**|
+|[値] に|**1** (または**0**を無効にする)|
+|基本|**10 進数**|
+
 5. (省略可能)高速ユーザーをサインインさせる初回ログオンの最適化を有効にします。 これを行うを参照してください。[サインインの時間を短縮するポリシーを適用する](https://docs.microsoft.com/windows/client-management/mandatory-user-profile#apply-policies-to-improve-sign-in-time)します。
-6。 (省略可能)クライアント Pc の展開に使用する Windows 10 の基本イメージから不要なアプリを削除することによって、サインイン時間をさらに軽減します。 Windows Server 2016 は、サーバー イメージにこの手順をスキップするように、事前プロビジョニング済みのすべてのアプリにすることがありません。
-、アプリを削除するには使用、[削除 AppxProvisionedPackage](https://docs.microsoft.com/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps)で、次のアプリケーションをアンインストールする Windows PowerShell コマンドレット。 Pc が既にデプロイされている場合を使用してこれらのアプリの削除のスクリプトを作成することができます、[削除 AppxPackage](https://docs.microsoft.com/powershell/module/appx/remove-appxpackage?view=win10-ps)します。
+6. (省略可能)クライアント Pc の展開に使用する Windows 10 の基本イメージから不要なアプリを削除することによって、サインイン時間をさらに軽減します。 Windows Server 2019 および Windows Server 2016 がないすべての事前プロビジョニング済みのアプリのためサーバー イメージに、この手順をスキップすることができます。
+    - アプリを削除するには、使用、[削除 AppxProvisionedPackage](https://docs.microsoft.com/powershell/module/dism/remove-appxprovisionedpackage?view=win10-ps)で、次のアプリケーションをアンインストールする Windows PowerShell コマンドレット。 Pc が既にデプロイされている場合を使用してこれらのアプリの削除のスクリプトを作成することができます、[削除 AppxPackage](https://docs.microsoft.com/powershell/module/appx/remove-appxpackage?view=win10-ps)します。
     
       - Microsoft.windowscommunicationsapps\_8wekyb3d8bbwe
       - Microsoft.BingWeather\_8wekyb3d8bbwe
@@ -369,7 +314,7 @@ Windows Server でファイル共有を作成する方法を次に示します�
 |Windows 10|```\\<servername>\<fileshare>\<username>.V5```|
 |Windows 10、バージョン 1703 およびバージョン 1607|```\\<servername>\<fileshare>\<username>.V6```|
 
-## <a id="appendix-c-workaround"></a>付録 c:作業は、アップグレード後に [スタート] メニューのレイアウトをリセットする約
+## <a name="appendix-c-working-around-reset-start-menu-layouts-after-upgrades"></a>付録 C作業は、アップグレード後に [スタート] メニューのレイアウトをリセットする約
 
 スタート メニューのレイアウトが、インプレース アップグレード後にリセットを回避する方法を次に示します。
 
@@ -394,17 +339,18 @@ Windows Server でファイル共有を作成する方法を次に示します�
 
 |日付|説明 |Reason|
 |--- |---         |---   |
+|2019 年 5 月 1 日、|2019 のアップデートを追加|
 |2018 年 4 月 10 日より、|ときに開始するユーザーのカスタマイズは失われます、OS、インプレース アップグレード後の説明を追加|引き出しが既知の問題です。|
 |2018 年 3 月 13 日 |Windows Server 2016 の更新 | 以前のバージョンのライブラリ外に移動し、Windows Server の現在のバージョンが更新されました。|
 |2017 年 4 月 13 日|Windows 10 バージョン 1703 のプロファイル情報を追加し、オペレーティング システムをアップグレードする場合は、ローミング プロファイルのバージョンの作業を明記しました — を参照してください[移動ユーザー プロファイルを複数のバージョンの Windows を使用する際の考慮事項](#considerations-when-using-roaming-user-profiles-on-multiple-versions-of-windows)します。|カスタマー フィードバック。|
-|2017 年 3 月 14 日|Windows 10 Pc での必須のスタート画面のレイアウトを指定する省略可能な手順を追加した[付録 a:移動ユーザー プロファイルの展開のチェックリスト](#appendix-a:-checklist-for-displaying-roaming-user-profiles)します。|機能の最新の Windows 更新プログラムで変更します。|
-|2017 年 1 月 23 日|追加するステップを[手順 4。必要に応じて移動ユーザー プロファイルの GPO を作成](#step-4:-optionally-create-a-gpo-for-roaming-user-profiles)現在 Authenticated Users に読み取りアクセス許可を委任するグループ ポリシーのセキュリティ更新プログラムのために必要です。|セキュリティは、グループ ポリシーの処理に変更します。|
-|2016 年 12 月 29 日|内のリンクを追加[手順 7。ローミング ユーザー プロファイル GPO を有効にする](#step-7:-enable-the-roaming-user-profiles-gpo)プライマリ コンピューターのグループ ポリシーを設定する方法に関する情報を取得しやすくします。 手順 5. と 6. 番号のある問題をいくつかの参照も修正しました。|カスタマー フィードバック。|
+|2017 年 3 月 14 日|Windows 10 Pc での必須のスタート画面のレイアウトを指定する省略可能な手順を追加した[付録 a:移動ユーザー プロファイルの展開のチェックリスト](#appendix-a-checklist-for-deploying-roaming-user-profiles)します。|機能の最新の Windows 更新プログラムで変更します。|
+|2017 年 1 月 23 日|追加するステップを[手順 4。必要に応じて移動ユーザー プロファイルの GPO を作成](#step-4-optionally-create-a-gpo-for-roaming-user-profiles)現在 Authenticated Users に読み取りアクセス許可を委任するグループ ポリシーのセキュリティ更新プログラムのために必要です。|セキュリティは、グループ ポリシーの処理に変更します。|
+|2016 年 12 月 29 日|内のリンクを追加[手順 8。ローミング ユーザー プロファイル GPO を有効にする](#step-8-enable-the-roaming-user-profiles-gpo)プライマリ コンピューターのグループ ポリシーを設定する方法に関する情報を取得しやすくします。 手順 5. と 6. 番号のある問題をいくつかの参照も修正しました。|カスタマー フィードバック。|
 |2016 年 12 月 5 日|追加情報が問題のローミングの開始] メニューの [設定の説明です。|カスタマー フィードバック。|
-|2016 年 7 月 6 日|Windows 10 プロファイル バージョン サフィックスを追加[付録 b:プロファイル バージョン参照情報](#appendix-b:-profile-version-reference-information)します。 Windows XP および Windows Server 2003 をサポートされるオペレーティング システムの一覧からも削除されます。|Windows、および削除の詳細についてはサポートされなくなった Windows のバージョンの新しいバージョンを更新します。|
+|2016 年 7 月 6 日|Windows 10 プロファイル バージョン サフィックスを追加[付録 b:プロファイル バージョン参照情報](#appendix-b-profile-version-reference-information)します。 Windows XP および Windows Server 2003 をサポートされるオペレーティング システムの一覧からも削除されます。|Windows、および削除の詳細についてはサポートされなくなった Windows のバージョンの新しいバージョンを更新します。|
 |2015 年 7 月 7 日|クラスター化されたファイル サーバーを使用するときに継続的可用性を無効にする要件と手順を追加しました。|継続的可用性が無効になっていると、クラスター化されたファイル共有は小さい書き込み (移動ユーザー プロファイルでは一般的) でのパフォーマンスが向上します。|
-|2014 年 3 月 19 日|プロファイル バージョン サフィックス (します。V2、します。V3、します。V4) で[付録 b:プロファイル バージョン参照情報](#appendix-b:-profile-version-reference-information)します。|Windows は大文字と小文字を区別しない、NFS ファイル共有を使用する場合は、正しい (大文字) 大文字と小文字のプロファイルのサフィックスがある必要があります。|
-|2013 年 10 月 9 日|Windows Server 2012 R2 および Windows 8.1 では、いくつかの点を明確化され、追加の変更、[移動ユーザー プロファイルを複数のバージョンの Windows を使用する際の考慮事項](#considerations-when-using-roaming-user-profiles-on-multiple-versions-of-windows)と[付録 b:プロファイル バージョン参照情報](#appendix-b:-profile-version-reference-information)セクション。|新しいバージョンの更新プログラムカスタマー フィードバック。|
+|2014 年 3 月 19 日|プロファイル バージョン サフィックス (します。V2、します。V3、します。V4) で[付録 b:プロファイル バージョン参照情報](#appendix-b-profile-version-reference-information)します。|Windows は大文字と小文字を区別しない、NFS ファイル共有を使用する場合は、正しい (大文字) 大文字と小文字のプロファイルのサフィックスがある必要があります。|
+|2013 年 10 月 9 日|Windows Server 2012 R2 および Windows 8.1 では、いくつかの点を明確化され、追加の変更、[移動ユーザー プロファイルを複数のバージョンの Windows を使用する際の考慮事項](#considerations-when-using-roaming-user-profiles-on-multiple-versions-of-windows)と[付録 b:プロファイル バージョン参照情報](#appendix-b-profile-version-reference-information)セクション。|新しいバージョンの更新プログラムカスタマー フィードバック。|
 
 ## <a name="more-information"></a>詳細情報
 
