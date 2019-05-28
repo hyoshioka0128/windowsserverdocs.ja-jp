@@ -4,21 +4,21 @@ description: KMS サーバーから Windows 製品をアクティブ化するた
 ms.prod: windows-server-threshold
 ms.mktglfcycl: manage
 ms.sitesec: library
-author: jaimeo
+author: jasongerend
+ms.author: jgerend
 ms.localizationpriority: medium
-ms.date: 10/02/2018
-ms.tgt_pltfrm: na
+ms.date: 05/21/2019
 ms.topic: get-started-article
-ms.openlocfilehash: 57ce4c4d7623c2a424efbdf0ff117ede8fad726b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2aac6db7bb9e118d672190c95f0d73294474f75
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847033"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976526"
 ---
 # <a name="kms-client-setup-keys"></a>KMS クライアント セットアップ キー
 
->適用先:Windows Server 2019、Windows Server 半期チャネルでは、Windows Server 2016、Windows 10
+>適用対象:Windows Server 2019、Windows Server 半期チャネルでは、Windows Server 2016、Windows 10
 
 Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows 7、Windows Server 2008 R2、Windows Vista、and Windows Server 2008 のボリューム ライセンス版が実行されているコンピューターは、既定で、追加の構成が必要ない KMS クライアントとなります。
 
@@ -29,9 +29,9 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 
 コンピューターを KMS ホスト、MAK、または製品版の Windows から KMS クライアントに変換する場合は、次の表を参照して、該当するセットアップ キー (GVLK) をインストールします。 クライアント セットアップ キーをインストールするには、クライアントの種類の管理のコマンド プロンプトを開き**slmgr/ipk\<セットアップ キー\>** しキーを押します**Enter**します。
 
-| 目的の処理                                                                                                                                                                                          | 使用するリソース                                                                                                         |
-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| ボリューム ライセンス認証のシナリオ以外で Windows のライセンスを認証する (つまり、製品版の Windows のライセンスを認証する)。**これらのキーは機能しない**。                                                     | 製品版の Windows には次のリンクを使用します。                                                                              |
+| 目的の処理    | 使用するリソース   |
+|--------------------|------------------------|
+| ボリューム ライセンス認証のシナリオ以外で Windows のライセンスを認証する (つまり、製品版の Windows のライセンスを認証する)。**これらのキーは機能しない**。 | 製品版の Windows には次のリンクを使用します。 |
 | Windows 8.1、Windows Server 2012 R2、または新しいシステムをライセンス認証を行うときに発生したこのエラーを修正するには。“Error:0xC004F050 The Software Licensing Service reported that the product key is invalid”… | Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012 を実行している場合、KMS ホストに[この更新プログラムをインストールします](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2)。 |
 
 -   [Windows 10 を入手します。](https://www.microsoft.com/en-us/windows/get-windows-10)
@@ -43,15 +43,14 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 
 >   Windows Server 2008 R2 または Windows 7 を実行している場合は、Windows 10 クライアントの KMS ホストとしてのこれらの使用をサポートする更新プログラムを監視します。
 
-
 ## <a name="windows-server-semi-annual-channel-versions"></a>Windows Server 半期チャネルのバージョン
 
-### <a name="windows-server-version-1809"></a>Windows Server、バージョン 1809
-| オペレーティング システムのエディション       | KMS クライアント セットアップ キー          |
-|--------------------------------|-------------------------------|
-| Windows Server Datacenter | 6NMRW-2C8FM-D24W7-TQWMY-CWH2D  | 
-| Windows Server Standard | N2KJX-J94YW-TQVFB-DG9YT-724CC  |
+### <a name="windows-server-version-1903-and-windows-server-version-1809"></a>Windows Server、バージョンが 1903 および Windows Server バージョンは 1809
 
+| オペレーティング システムのエディション  | KMS クライアント セットアップ キー          |
+|---------------------------|-------------------------------|
+| Windows Server Datacenter | 6NMRW-2C8FM-D24W7-TQWMY-CWH2D |
+| Windows Server Standard   | N2KJX-J94YW-TQVFB-DG9YT-724CC |
 
 ### <a name="windows-server-version-1803"></a>Windows Server Version 1803
 

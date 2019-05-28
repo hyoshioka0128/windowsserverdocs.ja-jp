@@ -9,22 +9,21 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 38c1962c2814a28adaf776d409bfd2b8129389ad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 541ad987b81e7192c565c5be5ac93ef37db4d19b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867113"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192539"
 ---
 # <a name="ad-fs-technical-reference"></a>AD FS テクニカル リファレンス
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-- [AD FS と証明書 KeySpec プロパティ情報](../ad-fs/technical-reference/AD-FS-and-KeySpec-Property.md)
-- [Windows server AD FS の監査機能強化](../ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server.md)
--   [重要な AD FS の概念を理解します。](../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md)
+- [AD FS と証明書の KeySpec プロパティの情報](../ad-fs/technical-reference/AD-FS-and-KeySpec-Property.md)
+- [Windows Server 2016 での AD FS の監査機能の強化](../ad-fs/technical-reference/auditing-enhancements-to-ad-fs-in-windows-server.md)
+-   [AD FS の主要な概念](../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md)
 -   [デバイス登録のテクニカル リファレンス](../ad-fs/technical-reference/Device-Registration-Technical-Reference.md)
--   [AD FS パスワード攻撃に対する保護](../ad-fs/technical-reference/ad-fs-password-protection.md)
+-   [パスワード攻撃に対する AD FS での保護](../ad-fs/technical-reference/ad-fs-password-protection.md)
 -   [ユーザー プライバシーと AD FS](../ad-fs/technical-reference/GDPR-and-AD-FS-Compliance.md)
 
 > [!TIP]

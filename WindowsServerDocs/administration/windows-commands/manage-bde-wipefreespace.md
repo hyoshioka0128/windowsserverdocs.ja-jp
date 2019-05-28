@@ -13,23 +13,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8750094e7357a3aefa307d24abd1470fbf8d2a71
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 7cf99a9124f78189de223018608d9864e51d7897
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867173"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564692"
 ---
 # <a name="manage-bde-wipefreespace"></a>manage-bde:WipeFreeSpace
 
 
 
-空間に存在するデータの断片を削除するボリュームに空き領域を消去します。 "使用領域のみを使用して暗号化されたボリュームにこのコマンドを実行しますか? 暗号化方法は、同じレベルの"フル ボリューム暗号化として保護を提供します。? 暗号化方法。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+空間に存在するデータの断片を削除するボリュームに空き領域を消去します。 このコマンドを"使用済み領域のみ"の暗号化メソッドを使用して暗号化されたボリュームで実行されている同じレベルの「フル ボリューム暗号化」の暗号化方法として、保護を提供します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
 
 ## <a name="syntax"></a>構文
 
 ```
-manage-bde –WipeFreeSpace|-w [<Drive>] [-Cancel] [-computername <Name>] [{-?|/?}] [{-help|-h}]
+manage-bde -WipeFreeSpace|-w [<Drive>] [-Cancel] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
 ### <a name="parameters"></a>パラメーター
@@ -49,12 +49,12 @@ manage-bde –WipeFreeSpace|-w [<Drive>] [-Cancel] [-computername <Name>] [{-?|/
 ```
 manage-bde -w C:
 ```
-使用して、次の例に示す、 **-w** コマンドと組み合わせて、 **– キャンセル** C ドライブの空き領域のクリーン インストールをキャンセルするパラメーター
+次の例を使用して、 **-w**コマンドと、 **-キャンセル**パラメーター C ドライブの空き領域のクリーン インストールをキャンセルするには
 ```
 manage-bde -w -Cancel C:
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

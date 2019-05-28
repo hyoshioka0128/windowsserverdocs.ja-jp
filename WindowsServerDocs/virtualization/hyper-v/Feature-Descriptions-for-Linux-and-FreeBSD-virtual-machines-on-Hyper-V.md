@@ -11,12 +11,12 @@ ms.assetid: a9ee931d-91fc-40cf-9a15-ed6fa6965cb6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 944f8e9d902953ab4d6da0750603a2c40fa9e96d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a574275f6d3495a9cc9bff36fa785f28a7cd8d6f
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844893"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222885"
 ---
 # <a name="feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v"></a>HYPER-V で Linux および FreeBSD の仮想マシンの機能の説明
 
@@ -24,7 +24,7 @@ ms.locfileid: "59844893"
 
 この記事では、仮想マシンで Linux および FreeBSD を使用する場合、コア、ネットワーク、ストレージ、およびメモリなどのコンポーネントで使用できる機能が説明します。
 
-## <a name="BKMK_core"></a>コア
+## <a name="core"></a>Core
 
 |**機能**|**説明**|
 |-|-|
@@ -37,7 +37,7 @@ ms.locfileid: "59844893"
 |HYPER-V で特定のストレージ デバイス|この機能は、仮想マシンにアタッチされている記憶域デバイスへの高パフォーマンスのアクセスを付与します。|
 |HYPER-V で特定のネットワーク デバイス|この機能は、仮想マシンにアタッチされているネットワーク アダプターに高パフォーマンスのアクセスを付与します。|
 
-## <a name="BKMK_Networking"></a>ネットワーク
+## <a name="networking"></a>ネットワーク
 
 |**機能**|**説明**|
 |-|-|
@@ -50,7 +50,7 @@ ms.locfileid: "59844893"
 |大規模なオフロード (LRO) が表示されます。|CPU のオーバーヘッドを減らすより大きなバッファーに複数のパケットを集約することによって、高帯域幅接続の受信スループットを増加します。|
 |SR-IOV|シングル ルート I/O デバイスでは、待機時間の短縮とスループットを向上させることができます。 特定の NIC カードの一部へのゲスト アクセスを許可するのに DDA を使用します。 SR-IOV には、ホスト上の最新物理機能 (PF) ドライバーと、ゲスト上の仮想機能 (VF) ドライバーが必要です。|
 
-## <a name="BKMK_Storage"></a>ストレージ
+## <a name="storage"></a>ストレージ
 
 |**機能**|**説明**|
 |-|-|
@@ -60,7 +60,7 @@ ms.locfileid: "59844893"
 |TRIM のサポート|トリムのヒントは、ドライブを以前に割り当てられた特定の部門が、アプリでは不要になったと消去できますを通知します。 このプロセスは、アプリ、ファイルを使用して大規模な領域の割り当てし、し、自動管理、ファイルに割り当てなどの仮想ハード ディスク ファイルに通常使用されます。|
 |SCSI WWN|Storvsc ドライバーは、ポートと仮想マシンに接続されているデバイスのノードからワールド ワイド名 (WWN) 情報を抽出し、適切な sysfs ファイルを作成します。 |
 
-## <a name="BKMK_Memory"></a>メモリ
+## <a name="memory"></a>メモリ
 
 |**機能**|**説明**|
 |-|-|
@@ -70,13 +70,13 @@ ms.locfileid: "59844893"
 |動的メモリ - バルーニング|ホストが動的に増やすまたは操作では、仮想マシンに使用可能なメモリの量を減らすことです。 、プロビジョニングする前に、管理者は、仮想マシンの設定パネルで動的メモリを有効し、仮想マシンの起動メモリ、メモリの最小および最大のメモリを指定します。 仮想マシンの場合は、操作が動的メモリを無効にすることはできませんと最小値と最大値の設定を変更できます。 (これは、128 MB の倍数としてこれらのメモリ サイズを指定することをお勧めです)。<br /><br />メモリと等しい、仮想マシンが使用可能な最初が起動されると、**起動メモリ**します。 アプリケーション ワークロードのためのメモリの需要の増加に応じて、HYPER-V は、ホット アド メカニズム (上記) を使用して仮想マシンに多くのメモリを動的に割り当てることがあります。 メモリ要求が減少したら、HYPER-V バルーン メカニズムを使用して仮想マシンからメモリをプロビジョニング解除に自動的に可能性があります。 以下のメモリをプロビジョニング解除は、HYPER-V、**最小メモリ**パラメーター。<br /><br />仮想マシンに割り当てられたメモリの量を HYPER-V マネージャーの [メモリ] タブが表示されますが、割り当てられたメモリの最大量を仮想マシン内のメモリ統計情報が表示されます。<br /><br />詳細については、次を参照してください。 [Hyper-v 動的メモリの概要](https://technet.microsoft.com/library/hh831766.aspx)します。<br /><br />|
 |ランタイムのメモリのサイズ変更|管理者では、(「ホット アド」) のメモリを増加または減少 (「ホット削除」) しのいずれかに仮想マシンに操作中に使用可能なメモリの量を設定できます。 Hyper-v バルーン ドライバーを使用してメモリが返されます (「動的メモリ-バルーニング」を参照してください)。 バルーン ドライバーでは、最小限の空きメモリ バルーニング、"floor"と呼ばれるようにメモリを割り当てた後は、現在の需要とこのフロア金額より小さくことはできませんを保持します。 仮想マシンに割り当てられたメモリの量を HYPER-V マネージャーの [メモリ] タブが表示されますが、割り当てられたメモリの最大量を仮想マシン内のメモリ統計情報が表示されます。 (これは、128 MB の倍数としてメモリの値を指定することをお勧めです)。|
 
-## <a name="BKMK_Video"></a>ビデオ
+## <a name="video"></a>Video
 
 |**機能**|**説明**|
 |-|-|
 |ハイパー V 固有ビデオ デバイス|この機能は、仮想マシンの高パフォーマンスのグラフィックと優れた解決策を提供します。 このデバイスでは、拡張セッション モードまたは RemoteFX 機能は提供されません。|
 
-## <a name="BKMK_Misc"></a>その他
+## <a name="miscellaneous"></a>その他
 
 |**機能**|**説明**|
 |-|-|
@@ -87,7 +87,7 @@ ms.locfileid: "59844893"
 |Hyper V ソケット|これは、ホストとゲスト オペレーティング システムの間で、追加の通信チャネルです。 読み込み、HYPER-V ソケットのカーネル モジュールを使用する、次を参照してください。[ことを、独自の統合サービス](https://msdn.microsoft.com/virtualization/hyperv_on_windows/develop/make_mgmt_service)します。|
 |PCI パススルー/DDA|Windows Server 2016 では、管理者はデバイスの割り当てが不連続のメカニズムを使用して PCI Express デバイスを通過できます。 一般的なデバイスは、ネットワーク カード、グラフィックス カード、および特殊なストレージ デバイスです。 仮想マシンには、公開されているハードウェアを使用する適切なドライバーが必要です。 ハードウェアは、使用するのには、仮想マシンに割り当てる必要があります。<br /><br />詳細については、次を参照してください。[説明およびバック グラウンドで-デバイスの割り当てが不連続](https://blogs.technet.microsoft.com/virtualization/2015/11/19/discrete-device-assignment-description-and-background/)します。<br /><br />DDA は SR-IOV ネットワー キングの前提条件です。 バーチャル ポートは、仮想マシンに割り当てられる必要があり、仮想マシンは、デバイスを多重化を適切な仮想機能 (VF) ドライバーを使用する必要があります。|
 
-## <a name="BKMK_gen2"></a>第 2 世代仮想マシン
+## <a name="generation-2-virtual-machines"></a>第 2 世代仮想マシン
 
 |**機能**|**説明**|
 |-|-|
@@ -98,7 +98,7 @@ ms.locfileid: "59844893"
 
 * [CentOS をサポートし、HYPER-V 上の Red Hat Enterprise Linux 仮想マシン](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
-* [HYPER-V でサポートされている Debian の仮想マシン](Supported-Debian-virtual-machines-on-Hyper-V.md)
+* [Hyper-V でサポートされている Debian 仮想マシン](Supported-Debian-virtual-machines-on-Hyper-V.md)
 
 * [HYPER-V でサポートされている Oracle Linux 仮想マシン](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
 

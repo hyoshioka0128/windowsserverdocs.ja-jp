@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4b7466c616bed4d4c0adb0d3066689c2faf8d047
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6af0dd0fe88099c04bca291a7b3351aa8e83d253
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824593"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192559"
 ---
 # <a name="ad-fs-design"></a>AD FS の設計
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
   
 -   [AD FS 設計ガイド](../ad-fs/design/AD-FS-Design-Guide.md)

@@ -6,17 +6,17 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: f1d77b6640bc0d6a5832a5a19c80d9d0af5d2b00
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3782667e54f5e6b52c07645704b95fc9e7409a27
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832663"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476073"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS レプリケーション: よく寄せられる質問 (FAQ)
 
 
-更新:2013 年 10 月 9 日
+更新:2019 年 4 月 30日
 
 適用先:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
@@ -443,7 +443,7 @@ RDC はファイルが最小サイズのしきい値を超えた場合に使用�
 </tr>
 <tr class="even">
 <td><p>Windows Server 2008 R2</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 </tr>
@@ -451,13 +451,13 @@ RDC はファイルが最小サイズのしきい値を超えた場合に使用�
 <td><p>Windows Server 2008</p></td>
 <td><p>X</p></td>
 <td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 </tr>
 <tr class="even">
 <td><p>Windows Server 2003 R2</p></td>
 <td><p>X</p></td>
 <td><p>〇</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 </tr>
 </tbody>
 </table>

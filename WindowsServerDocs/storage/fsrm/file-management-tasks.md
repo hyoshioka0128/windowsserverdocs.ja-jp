@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e83d0b79117144d42a0aff748f482f3c181cb300
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d8d798611a00e29337a5d45979947a51f03bcdee
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874053"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475892"
 ---
 # <a name="file-management-tasks"></a>ファイル管理タスク
 
-> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 ファイル管理タスクは、サーバー上のファイルのサブセットの検出と簡単なコマンドを適用するプロセスを自動化します。 繰り返しの手間を減らすために、これらのタスクを定期的に行うようにスケジュールすることができます。 ファイル管理タスクによって処理できるファイルは、次のプロパティを使用して定義できます。
 
@@ -35,14 +35,14 @@ ms.locfileid: "59874053"
 <br />
 ここでは、次のトピックについて説明します。
 
--   [ファイルの有効期限タスクを作成します。](create-file-expiration-task.md)
--   [カスタム ファイル管理タスクを作成します。](create-custom-file-management-task.md)
+-   [ファイルの有効期限タスクを作成する](create-file-expiration-task.md)
+-   [カスタム ファイル管理タスクを作成する](create-custom-file-management-task.md)
 
 > [!Note]
 > 電子メール通知や特定のレポート機能を設定するには、まずファイル サーバー リソース マネージャーの全般的なオプションを設定する必要があります。
 
 ## <a name="see-also"></a>関連項目
 
--   [設定ファイル サーバー リソース マネージャーのオプション](setting-file-server-resource-manager-options.md)
+-   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
 
 

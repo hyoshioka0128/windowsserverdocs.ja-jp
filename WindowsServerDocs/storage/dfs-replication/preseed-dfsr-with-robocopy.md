@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a7a14b1a1e0f91002b201869e4c68187ffaf3f8f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: eaec563157a77fd4e782842a81e5b59e49a5ea09
+ms.sourcegitcommit: 7cb939320fa2613b7582163a19727d7b77debe4b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865083"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65621303"
 ---
 # <a name="use-robocopy-to-preseed-files-for-dfs-replication"></a>Robocopy を使用して、DFS レプリケーション用にファイルをプレシード
 
@@ -28,9 +28,9 @@ Robocopy (堅牢なファイル コピー) コマンド ライン ユーティ�
 
 Robocopy を使用して、DFS レプリケーション用にファイルをプレシードする、次の手順に従います。
 
-1. [ダウンロードして、Robocopy の最新バージョンをインストールします。](#step-1:-download-and-install-the-latest-version-of-robocopy)
-2. [レプリケートされるファイルを安定化します。](#step-2:-stabilize-files-that-will-be-replicated)
-3. [移行先サーバーにレプリケートされたファイルをコピーします。](#step-3:-copy-the-replicated-files-to-the-destination-server)
+1. [ダウンロードして、Robocopy の最新バージョンをインストールします。](#step-1-download-and-install-the-latest-version-of-robocopy)
+2. [レプリケートされるファイルを安定化します。](#step-2-stabilize-files-that-will-be-replicated)
+3. [移行先サーバーにレプリケートされたファイルをコピーします。](#step-3-copy-the-replicated-files-to-the-destination-server)
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -38,7 +38,7 @@ Robocopy を使用して、DFS レプリケーション用にファイルをプ�
 
 - ソースと宛先の両方のサーバー上でローカルの Administrators グループのメンバーであるアカウントが必要です。
 
-- Robocopy の最新バージョンを使用するファイルをコピーするサーバーにインストール、移行元サーバーまたは対象サーバーのいずれかオペレーティング システムのバージョンの最新バージョンをインストールする必要があります。 手順については、次を参照してください。[手順 2。レプリケートされるファイルを安定化](#step-2:-stabilize-files-that-will-be-replicated)します。 Windows Server 2003 R2 を実行しているサーバーからファイルを事前シード処理は、しない限り、ソースまたは移行先サーバーで Robocopy を実行できます。 通常より新しいオペレーティング システムのバージョンを移行先サーバーでは、Robocopy の最新バージョンにアクセスできます。
+- Robocopy の最新バージョンを使用するファイルをコピーするサーバーにインストール、移行元サーバーまたは対象サーバーのいずれかオペレーティング システムのバージョンの最新バージョンをインストールする必要があります。 手順については、次を参照してください。[手順 2。レプリケートされるファイルを安定化](#step-2-stabilize-files-that-will-be-replicated)します。 Windows Server 2003 R2 を実行しているサーバーからファイルを事前シード処理は、しない限り、ソースまたは移行先サーバーで Robocopy を実行できます。 通常より新しいオペレーティング システムのバージョンを移行先サーバーでは、Robocopy の最新バージョンにアクセスできます。
 
 - インストール先ドライブ上に十分な記憶域があることを確認します。 パスにコピーするには、フォルダーを作成できません。Robocopy には、ルート フォルダーを作成する必要があります。
     
@@ -105,7 +105,7 @@ Robocopy の最新バージョンをサーバーにインストールした後�
     |"\<先フォルダーのパスをレプリケートする\>"|Preseeded ファイルを保存するフォルダーへのパスを指定します。<br><br>コピー先のフォルダーは、移行先サーバーに既に存在する必要があります。 一致するファイルのハッシュを取得するには、とき、ファイルを preseeds Robocopy がルート フォルダーを作成する必要があります。|
     |/e|サブディレクトリのファイルと空のサブディレクトリにコピーします。|
     |/b|Backup モードでファイルをコピーします。|
-    |/copyal|すべてのファイルは、データ、属性、タイムスタンプ、NTFS アクセス制御リスト (ACL)、所有者情報、および監査情報をコピーします。|
+    |/copyall|すべてのファイルは、データ、属性、タイムスタンプ、NTFS アクセス制御リスト (ACL)、所有者情報、および監査情報をコピーします。|
     |/r:6|エラーが発生したときに 6 回の操作を再試行します。|
     |/w:5|5 秒間再試行を待機します。|
     |MT:64|64 のファイルを同時にコピーします。|

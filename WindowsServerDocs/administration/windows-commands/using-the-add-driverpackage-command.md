@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d00b020269bb47ba23810883941be1a9ebfe4e1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a7e96391ee8dce0b77f00f51d7cb78ff9b8bf242
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828063"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564660"
 ---
 # <a name="using-the-add-driverpackage-command"></a>追加 DriverPackage コマンドを使用してください。
 
@@ -49,10 +49,10 @@ WDSUTIL /Add-DriverPackage /InfFile:<Inf File path> [/Server:<Server name>] [/Ar
 WDSUTIL /verbose /Add-DriverPackage /InfFile:"C:\Temp\Display.inf"
 ```
 ```
-WDSUTIL /Add-DriverPackage /Server:MyWDSServer /InfFile:"C:\Temp\Display.inf" /Architecture:x86 /DriverGroup:x86Drivers /Name:"Display Driver�?
+WDSUTIL /Add-DriverPackage /Server:MyWDSServer /InfFile:"C:\Temp\Display.inf" /Architecture:x86 /DriverGroup:x86Drivers /Name:"Display Driver"
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
 

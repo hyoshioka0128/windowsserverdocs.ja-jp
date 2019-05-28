@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 1245b88a42b80218b5557dc89f2b97b5d0059d44
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 25ed17d964f12c2f497ccde443dad9f8bc253b20
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852543"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034676"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>シールドされた Vm のテナントでシールドされた VM を定義するシールド データの作成
 
@@ -35,7 +35,7 @@ ms.locfileid: "59852543"
 
 シールド データ ファイルを作成します。
 
-- [シールド データ ファイルを作成し、保護者を追加](#create-a-shielding-data-file-and-add-guardians)
+- [シールド データ ファイルを作成し、保護者を追加](#create-a-shielding-data-file-and-add-guardians-using-the-shielding-data-file-wizard)
 
 
 ## <a name="obtain-a-certificate-for-remote-desktop-connection"></a>リモート デスクトップ接続の証明書を取得します。
@@ -211,7 +211,7 @@ New-HgsGuardian -Name "Owner" -GenerateCertificates
 所有者の証明書と仮想マシンを unshield、ようにこれらに対応する秘密キーが必要証明書がバックアップされ、盗難から保護します。
 所有者の証明書にアクセスできる攻撃者は、それらを使用、シールドされた仮想マシンを起動またはセキュリティの構成を変更できます。
 
-ごとに、次のコマンドを実行する仮想マシン (、プライマリ データ センター、バックアップ データ センターなど) を実行する保護されたファブリックからガーディアンの情報をインポートする必要がある場合[メタデータ ファイルを取得して、保護されたファブリックから](#Select-trusted-fabrics).
+ごとに、次のコマンドを実行する仮想マシン (、プライマリ データ センター、バックアップ データ センターなど) を実行する保護されたファブリックからガーディアンの情報をインポートする必要がある場合[メタデータ ファイルを取得して、保護されたファブリックから](#select-trusted-fabrics).
 
 ```powershell
 Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
@@ -220,7 +220,7 @@ Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
 > [!TIP]
 > 自己署名証明書や登録されている証明書を使用した場合は、HGS が期限切れを使用する必要があります、`-AllowUntrustedRoot`や`-AllowExpired`セキュリティ チェックをバイパスするインポート HgsGuardian コマンドを使用したフラグ。
 
-必要がありますも[ボリューム署名カタログを取得](#Get-the-volume-signature-catalog-file)このシールド データ ファイルを使用するテンプレート ディスクごとに、[シールド データファイル応答](#Create-an-answer-file)オペレーティング システムが完了するその特殊化は自動的にタスクします。
+必要がありますも[ボリューム署名カタログを取得](#get-the-volume-signature-catalog-file)このシールド データ ファイルを使用するテンプレート ディスクごとに、[シールド データファイル応答](#create-an-answer-file)オペレーティング システムが完了するその特殊化は自動的にタスクします。
 最後に、VM をシールドされた完全または vTPM が有効なだけするかを決定します。
 使用`-Policy Shielded`完全にシールドされた vm または`-Policy EncryptionSupported`vTPM で基本的なコンソールの接続を許可する VM と PowerShell ダイレクトが有効になっています。
 
@@ -242,5 +242,5 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 
 ## <a name="see-also"></a>関連項目
 
-- [シールドされた Vm をデプロイします。](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
-- [保護されたファブリックとシールドされた Vm](guarded-fabric-and-shielded-vms-top-node.md)
+- [シールドされた VMの展開](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

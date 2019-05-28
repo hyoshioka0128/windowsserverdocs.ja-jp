@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: d018b417aeba21e2b1303fd9e72b58b4e2fc334f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e7655ca78868d40d354b5260fa99fcfa3a21d0de
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836053"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192747"
 ---
 # <a name="change-a-dynamic-disk-back-to-a-basic-disk"></a>ダイナミック ディスクからベーシック ディスクへの再変換
 
@@ -26,22 +26,20 @@ ms.locfileid: "59836053"
 
 ## <a name="changing-a-dynamic-disk-back-to-a-basic-disk"></a>ダイナミック ディスクからベーシック ディスクに再変換する
 
--   [Windows インターフェイスを使用します。](#BKMK_WINUI)
--   [コマンドラインを使用](#BKMK_CMD)
+-   [Windows インターフェイスを使用します。](#to-change-a-dynamic-disk-back-to-a-basic-disk-using-the-windows-interface)
+-   [コマンドラインを使用](#to-change-a-dynamic-disk-back-to-a-basic-disk-using-a-command-line)
 
 > [!NOTE]
 > 以下の手順を実行するには、少なくとも **Backup Operators** または **Administrators** グループのメンバーである必要があります。
 
-<a href="" id="BKMK_WINUI"></a>
 #### <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-using-the-windows-interface"></a>Windows インターフェイスを使用してダイナミック ディスクをベーシック ディスクに再変換するには
+
 1.  ダイナミックからベーシックに変換するディスク上のすべてのボリュームをバックアップします。
 
-2.  [ディスクの管理] で、ベーシック ディスクに変換するダイナミック ディスク上の各ボリュームを右クリックし、**[ボリュームの削除]** をクリックします。
+2.  [ディスクの管理] で、ベーシック ディスクに変換するダイナミック ディスク上の各ボリュームを右クリックし、 **[ボリュームの削除]** をクリックします。
 
-3.  ディスク上のすべてのボリュームが削除されたら、ディスクを右クリックし、**[ベーシック ディスクに変換する]** をクリックします。
+3.  ディスク上のすべてのボリュームが削除されたら、ディスクを右クリックし、 **[ベーシック ディスクに変換する]** をクリックします。
 
-
-<a href="" id="BKMK_CMD"></a>
 #### <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-using-a-command-line"></a>コマンド ラインを使用してダイナミック ディスクをベーシック ディスクに再変換するには
 
 1.  ダイナミックからベーシックに変換するディスク上のすべてのボリュームをバックアップします。
@@ -62,7 +60,7 @@ ms.locfileid: "59836053"
  
 <br /> <br />
 
-| 値  | 説明 |
+| Value  | 説明 |
 | --- |---|
 | <p>**ディスクの一覧**</p>                         | <p>ディスクとディスクに関する情報を一覧表示します。ディスクのサイズ、利用可能な空き領域の容量、ディスクがベーシック ディスクとダイナミック ディスクのどちらであるか、ディスクでマスター ブート レコード (MBR) と GUID パーティション テーブル (GPT) のどちらのパーティション スタイルが使用されているかなどの情報が表示されます。 アスタリスク (*) でマークされているディスクにフォーカスがあります。</p> |
 | <p>**ディスクを選択して** <em>disknumber</em></p>   | <p><em>disknumber</em> がディスク番号である指定されたディスクを選択し、そのディスクにフォーカスを移動します。</p>  |

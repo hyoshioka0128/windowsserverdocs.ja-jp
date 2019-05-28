@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: febcd6ab0744a7fddd024e1f0afdb93711e8939a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6effaf7c2d197c08b4930e09c3ada96462b17d6f
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829543"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476188"
 ---
 # <a name="quota-management"></a>クオータの管理
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 の Windows Server (半期チャネル)
+> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 ファイル サーバー リソース マネージャー Microsoft<sup>®</sup> 管理コンソール (MMC) スナップインの **[クォータの管理]** ノードでは、次の作業を実行できます。
 
@@ -33,17 +33,17 @@ ms.locfileid: "59829543"
 
 ここでは、次のトピックについて説明します。
 
--   [クォータを作成します。](create-quota.md)
--   [作成、自動適用クォータ](create-auto-apply-quota.md)
+-   [クォータを作成する](create-quota.md)
+-   [自動適用クォータを作成する](create-auto-apply-quota.md)
 -   [クォータ テンプレートを作成します。](create-quota-template.md)
--   [クォータ テンプレートのプロパティを編集します。](edit-quota-template-properties.md)
--   [編集の自動適用クォータのプロパティ](edit-auto-apply-quota-properties.md)
+-   [クォータ テンプレートのプロパティを編集する](edit-quota-template-properties.md)
+-   [自動適用クォータのプロパティを編集する](edit-auto-apply-quota-properties.md)
 
 > [!Note]
 > 電子メール通知やレポート機能を設定するには、まずファイル サーバー リソース マネージャーの全般的なオプションを設定する必要があります。
 
 ## <a name="see-also"></a>関連項目
 
--   [設定ファイル サーバー リソース マネージャーのオプション](setting-file-server-resource-manager-options.md)
+-   [ファイル サーバー リソース マネージャーのオプションを設定する](setting-file-server-resource-manager-options.md)
 
 
