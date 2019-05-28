@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3a015c27f784d5b1f488f984450612820d4a06b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8bcc653cc9eb9adb6d31331463d01774d4faec1a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828983"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189218"
 ---
 # <a name="custom-error-messages-for-ad-fs-sign-in-page"></a>AD FS サインイン ページのカスタム エラー メッセージ  
 
->適用先:Windows Server 2016、Windows Server 2012 R2
 
 組織の要件に合わせてカスタム エラー メッセージを構成できます。 次の図に、カスタマイズしたエラー ページの説明と一般エラー メッセージを示します。 エラー メッセージをカスタマイズするには、次の Windows PowerShell コマンドレットを使用します。  
   

@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: aca47658cc5a20f63dbd59a26ebe135dd04def92
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 15a6c095648795badfae6f68f1ba2f9270219db8
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59811933"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191462"
 ---
 # <a name="determine-your-federated-application-strategy-in-the-resource-partner"></a>リソース パートナーでのフェデレーション アプリケーション戦略を決定する
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 新しい Active Directory フェデレーション サービスの設計の重要な部分\(AD FS\)リソース パートナー組織のインフラストラクチャには、アプリケーションとサービスに参加するために使用する完全なセットが決定することが、フェデレーションとどのアカウント パートナーはこれらのリソースの受信者になります。 フェデレーション アプリケーションおよびサービスの戦略を設計する前に、以下の質問について調査します。  
   
@@ -34,14 +32,14 @@ ms.locfileid: "59811933"
   
 これらの質問に答えること堅実な AD FS 設計を計画する際に役立ちます。 また、コスト効果が高くリソース効率に優れたフェデレーション アプリケーションおよびサービスの作成にも役立ちます。 組織にとって最も適切なフェデレーション アプリケーションおよびサービスを設計する方法の詳細については、このガイドの次のトピックを参照してください。  
   
--   [クレーム対応アプリケーションとサービスに、Active Directory ユーザーのアクセスを提供します。](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
+-   [Active Directory ユーザーに要求に対応するアプリケーションとサービスへのアクセスを提供する](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
   
--   [アプリケーションと他の組織のサービスに、Active Directory ユーザーのアクセスを提供します。](Provide-Your-Active-Directory-Users-Access-to-the-Applications-and-Services-of-Other-Organizations.md)  
+-   [Active Directory ユーザーに他の組織のアプリケーションとサービスへのアクセスを提供する](Provide-Your-Active-Directory-Users-Access-to-the-Applications-and-Services-of-Other-Organizations.md)  
   
--   [クレーム対応アプリケーションとサービスをユーザーに別の組織のアクセスを提供します。](Provide-Users-in-Another-Organization-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
+-   [要求に対応するアプリケーションやサービスへのアクセスを別の組織のユーザーに提供する](Provide-Users-in-Another-Organization-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
   
 詳細については、要求を作成する方法の詳細について\-対応の ASP.NET アプリケーションまたは WCF サービスを参照してください[Windows Identity Foundation SDK](https://go.microsoft.com/fwlink/?LinkId=122266)します。  
   
 ## <a name="see-also"></a>関連項目
-[Windows Server 2012 で AD FS 設計ガイドします。](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

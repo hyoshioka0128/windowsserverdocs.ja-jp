@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d566113a7579805c8ae9b558a145878557de0958
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6b852a580bdc0ea02643d478dc51b5cbcd2eac4b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872333"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188312"
 ---
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
-
 # <a name="when-to-use-an-authorization-claim-rule"></a>承認要求規則を使用するタイミング
 この規則を使用するには Active Directory フェデレーション サービスで\(AD FS\)受信要求の種類を受け取りし、ユーザーを許可するかのアクセスを拒否するかどうかを判別するためのアクションを適用する必要がある場合、値に基づいてそのします。このルールで指定します。 この規則を使用する場合、次の規則ロジックと一致する要求を、規則で構成するオプションに基づいてパススルーまたは変換します。  
   

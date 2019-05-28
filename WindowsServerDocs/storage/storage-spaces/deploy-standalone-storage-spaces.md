@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage-spaces
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 40265e767ac9aca05386c0893def259aca3a5633
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7090657a0936aed0f4b2e79007f69d7b082b0b8f
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868273"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63750653"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>スタンドアロン サーバーに記憶域スペースを展開する
 

@@ -9,23 +9,25 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ecf3cb5703a90976dce15abbd0c9fdd1d4aa24ec
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 48099ad15465b885ccaf562bcf94b4bafdeff388
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812633"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772629"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>直接記憶域スペースをトラブルシューティングします。
+
+> 適用対象:Windows Server 2019、Windows Server 2016
 
 記憶域スペース ダイレクト展開のトラブルシューティングを行うには、次の情報を使用します。
 
 一般に、次の手順を開始します。
 
-1. SSD の型/モデルは、Windows Server カタログを使用して Windows Server 2016 の認定を確認します。 仕入先でドライブが記憶域スペース ダイレクトのサポートされていることを確認します。
+1. SSD の型/モデルの certified for Windows Server 2016 と Windows Server カタログを使用して Windows Server 2019 を確認します。 仕入先でドライブが記憶域スペース ダイレクトのサポートされていることを確認します。
 2. 障害のある、すべてのドライブのストレージを検査します。 記憶域の管理ソフトウェアを使用して、ドライブの状態を確認します。 障害のある、ベンダーと連携して、ドライブの場合は。 
 3. 記憶域を更新し、必要に応じて、ドライブのファームウェアします。
-   最新の Windows 更新プログラムがすべてのノードにインストールされていることを確認します。 Windows Server 2016 の最新の更新プログラムを取得できる[ https://aka.ms/update2016](https://aka.ms/update2016)します。
+   最新の Windows 更新プログラムがすべてのノードにインストールされていることを確認します。 Windows Server 2016 の最新の更新プログラムを取得できます[更新履歴の Windows 10 および Windows Server 2016](https://aka.ms/update2016)およびから Windows Server 2019[更新履歴の Windows 10 および Windows Server 2019](https://support.microsoft.com/help/4464619)します。
 4. ネットワーク アダプターのドライバーとファームウェアを更新します。
 5. クラスター検証を実行し、記憶域スペース ダイレクトのセクションを確認して、キャッシュに使用されるドライブが正しく報告されることを確認し、エラーはありません。
 
@@ -195,7 +197,8 @@ Volume Name:
     
 ## <a name="event-5120-with-statusiotimeout-c00000b5"></a>イベント 5120 STATUS_IO_TIMEOUT c00000b5 を 
 
->[!重要な} 以下の記憶域メンテナンス モードの手順を使用してインストールする修正プログラムと更新プログラムの適用中にこれらの現象が発生している可能性を減らすためには、推奨は、 [2018 年 10 月 18 日、Windows Server 2016 用の累積更新プログラム](https://support.microsoft.com/help/4462928)以降のバージョンを使用しているノードは現在からリリースされた Windows Server 2016 累積的な更新をインストールしているときに[2018 年 5 月 8 日](https://support.microsoft.com/help/4103723)に[、2018 年 10 月 9 日](https://support.microsoft.com/help/KB4462917)します。
+> [!Important]
+> **Windows server 2016 の場合。** 次の記憶域メンテナンス モードの手順を使用してインストールする、修正プログラムと更新プログラムの適用中にこれらの現象が発生する可能性を減らすためには、推奨は、 [2018 年 10 月 18 日の累積更新プログラムの Windows Server 2016](https://support.microsoft.com/help/4462928)以降のバージョンを使用しているノードは現在からリリースされた Windows Server 2016 累積的な更新をインストールしているときに[2018 年 5 月 8 日](https://support.microsoft.com/help/4103723)に[、2018 年 10 月 9 日](https://support.microsoft.com/help/KB4462917)します。
 
 リリースされた累積更新プログラムには、Windows Server 2016 でノードを再起動した後は、イベント 5120 STATUS_IO_TIMEOUT c00000b5 を得られる[2018 年 5 月 8 日 KB 4103723](https://support.microsoft.com/help/4103723)に[2018 年 10 月 9 日 KB 4462917](https://support.microsoft.com/help/4462917)をインストールします。
 
@@ -217,11 +220,7 @@ Event ID: 1135
 Description: Cluster node 'NODENAME'was removed from the active failover cluster membership. The Cluster service on this node may have stopped. This could also be due to the node having lost communication with other active nodes in the failover cluster. Run the Validate a Configuration wizard to check your network configuration. If the condition persists, check for hardware or software errors related to the network adapters on this node. Also check for failures in any other network components to which the node is connected such as hubs, switches, or bridges.
 ```
 
-変更は、記憶域スペース ダイレクト クラスター内の SMB ネットワーク セッションの SMB の回復力のある処理を追加する、2018 年 5 月 8 日の累積的な更新で導入されました。 これは、一時的なネットワーク障害に対する回復力と RoCE でのネットワークの輻輳の処理方法向上のために行われました。
-
-ノードを再起動するとに、SMB 接続が再接続するときのタイムアウトとタイムアウトを待機これらの機能強化も誤って増加します。 これらの問題がストレス条件下でシステムに影響を与えることができます。 計画外のダウンタイム中に最大 60 秒間の IO の一時停止も観測されましたシステムが待機するタイムアウトへの接続中。
-
-この問題を解決するには、インストール、 [2018 年 10 月 18 日、Windows Server 2016 用の累積更新プログラム](https://support.microsoft.com/help/4462928)以降のバージョン。
+記憶域スペース ダイレクト クラスター内の SMB ネットワーク セッションの SMB の回復力のある処理を追加する累積更新プログラムが Windows Server 2016 では、2018 年 5 月 8 日で導入された変更。 これは、一時的なネットワーク障害に対する回復力と RoCE でのネットワークの輻輳の処理方法向上のために行われました。 ノードを再起動するとに、SMB 接続が再接続するときのタイムアウトとタイムアウトを待機これらの機能強化も誤って増加します。 これらの問題がストレス条件下でシステムに影響を与えることができます。 計画外のダウンタイム中に最大 60 秒間の IO の一時停止も観測されましたシステムが待機するタイムアウトへの接続中。この問題を解決するには、インストール、 [2018 年 10 月 18 日、Windows Server 2016 用の累積更新プログラム](https://support.microsoft.com/help/4462928)以降のバージョン。
 
 *注*この更新プログラムは、CSV のタイムアウトとこの問題を解決する SMB 接続のタイムアウトを揃えて配置します。 回避策」セクションで説明されているライブのダンプの生成を無効にする変更は実装しません。
     
@@ -455,4 +454,4 @@ Azure Vm で実行している場合は、このイベントを無視できま�
 >[!NOTE]
 > 個々 の Oem 固有のファームウェア バージョン文字列を含む NVMe デバイスの Intel P3x00 ファミリに基づくデバイスがあります。 最新のファームウェアのバージョンの詳細については、OEM にお問い合わせください。
 
-利用可能な最新のファームウェアをすぐに適用することをお勧め、Intel P3x00 ファミリ NVMe デバイスに基づいて、デプロイのハードウェアを使用する場合 (少なくともメンテナンス リリース 8)。 これは、 [Microsoft サポート記事](https://support.microsoft.com/en-us/help/4052341/slow-performance-or-lost-communication-io-error-detached-or-no-redunda)この問題に関する追加情報を提供します。 
+利用可能な最新のファームウェアをすぐに適用することをお勧め、Intel P3x00 ファミリ NVMe デバイスに基づいて、デプロイのハードウェアを使用する場合 (少なくともメンテナンス リリース 8)。 これは、 [Microsoft サポート記事](https://support.microsoft.com/help/4052341/slow-performance-or-lost-communication-io-error-detached-or-no-redunda)この問題に関する追加情報を提供します。 

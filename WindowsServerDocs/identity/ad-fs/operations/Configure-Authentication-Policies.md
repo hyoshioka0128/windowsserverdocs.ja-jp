@@ -3,22 +3,20 @@ ms.assetid: 8e7015bc-c489-4ec7-8b6e-3ece90f72317
 title: 認証ポリシーを構成する
 description: ''
 author: billmath
-ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 7faffb7ccbb4b0ea3c65329d18f915d7dafcd46f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.author: billmath
+ms.openlocfilehash: 9345f995af2f256dddcbcbd7d05c4bf6170b563e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861793"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189861"
 ---
 # <a name="configure-authentication-policies"></a>認証ポリシーを構成する
-
->適用先:Windows Server 2012 R2
 
 Windows Server 2012 R2 での AD FS で両方のアクセス制御と認証メカニズムに強化され、ユーザー、デバイス、場所、および認証データを含む複数の要素。 これらの拡張機能を有効にするには、ユーザー インターフェイスまたは AD FS にアクセス許可の付与のリスクを管理する、Windows PowerShell のいずれか\-マルチ経由でアプリケーションをセキュリティで保護された\-要素アクセス制御とマルチ\-要素認証にユーザー id またはグループのメンバーシップ、ネットワークの場所、デバイスのデータが職場に基づく\-参加している場合、認証状態とマルチ\-authentication \(MFA\)実行されました。  
   
@@ -27,7 +25,7 @@ MFA と複数の詳細については\-Active Directory フェデレーション
 
 -   [SSO およびシームレスな第 2 の任意のデバイスから社内への参加要素用アプリケーション間での認証](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 
--   [条件付きアクセス制御によるリスクを管理します。](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
+-   [条件付きアクセス制御によってリスクを管理する](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 
 -   [機密性の高いアプリケーションの追加の多要素認証によるリスクを管理します。](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 

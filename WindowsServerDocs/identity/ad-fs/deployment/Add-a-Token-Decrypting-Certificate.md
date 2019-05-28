@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 0eba51521e7ef88542bccf93d92d2e783d800b5e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cf89972120f3f0effa3eb1cf0fee6d29dbc8ed4e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842213"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192484"
 ---
 # <a name="add-a-token-decrypting-certificate"></a>トークン暗号化解除証明書を追加する
-
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 フェデレーション サーバーは、トークンを使用して\-復号化証明書と証明書利用者のパーティのフェデレーション サーバーが、新しい証明書をプライマリ暗号化解除証明書として設定した後、古い証明書によって発行されたトークンの暗号化を解除する必要があります。 Active Directory フェデレーション サービス\(AD FS\) Secure Sockets Layer を使用して\(SSL\)インターネット インフォメーション サービスの証明書\(IIS\)として、既定の復号化証明書。  
   
@@ -40,7 +38,7 @@ ms.locfileid: "59842213"
 4.  **証明書ファイルの参照** ダイアログ ボックスで、追加、証明書ファイルを選択し、をクリックしたい証明書ファイルを移動**オープン**します。  
   
 ## <a name="additional-references"></a>その他の参照情報  
-[チェックリスト:フェデレーション サーバーを設定します。](Checklist--Setting-Up-a-Federation-Server.md)  
+[チェックリスト:フェデレーション サーバーのセットアップ](Checklist--Setting-Up-a-Federation-Server.md)  
   
 [フェデレーション サーバーの証明書の要件](https://technet.microsoft.com/library/dd807040.aspx)  
   

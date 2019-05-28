@@ -8,16 +8,15 @@ ms.date: 06/28/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: b8ff87a1043b589e83faa875467ddced536291b5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 01ef992554a1e0961d8d795e9baa7730a1a1d682
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867513"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189889"
 ---
 # <a name="ad-fs-and-banned-ip-addresses"></a>AD FS と禁止された IP アドレスします。
 
->適用先:Windows Server 2016
 
 2018 年 6 月に、Windows Server 2016 での AD FS が導入された**Ip の禁止**と AD FS の 2018 年 6 月の更新します。  この更新プログラムを使用する AD FS でグローバルに一連の IP アドレスを構成またはこれらの IP アドレスからの要求にこれらの IP アドレスがあるように、 **x-転送-の**または**x ms-転送-クライアントの ip**ヘッダーは、AD FS によってブロックされます。
 

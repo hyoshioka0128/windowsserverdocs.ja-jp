@@ -9,16 +9,16 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 08724d45-9be4-4c56-a5f1-2cf40864e136
 ms.technology: identity-adfs
-ms.openlocfilehash: 6d06c017601003e3b93df32f5fa50190ce54541d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 347b4783e82a6561334f8757029b1fddec6a85a3
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864803"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189085"
 ---
 # <a name="multi-factor-authentication-and-external-authentication-providers-customization"></a>多要素認証と外部認証プロバイダーのカスタマイズ 
 
->適用先:Windows Server 2016、Windows Server 2012 R2
+
 
 AD FS で多要素認証のサポートが提供されている\-の\-、\-ボックス。 AD FS を構成するなど、使用して構築された\-証明書認証では第 2 要素認証として。 また、外部認証プロバイダーを使用することもできます。 このアプローチには、Azure 多要素認証などの他のサービスと統合する AD FS が有効にすることができますか、独自のプロバイダーを開発することができます。 参照してください[ソリューション ガイド。マルチによるリスク管理\-要素アクセス制御](https://technet.microsoft.com/library/dn280937.aspx)AD FS を使用して外部認証プロバイダーを登録する方法の詳細について。  
   
