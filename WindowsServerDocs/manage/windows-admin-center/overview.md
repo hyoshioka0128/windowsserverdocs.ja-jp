@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 04/12/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 3208c20e8bf9f4cfab4340aa33b24175bbc72dda
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: ee3c4ba5d6c3dc911ab318ade9a46b279317496f
+ms.sourcegitcommit: 39ab8041d166e6817a95417d6aa30bc7abeeef54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188330"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66260256"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -128,6 +128,7 @@ ms.locfileid: "66188330"
 
 次の最新の機能について確認してください。
 
+- バージョン 1904.1 - メンテナンスは、ゲートウェイのプラグインの安定性を向上させるために更新します。
 - バージョン[1904](https://aka.ms/wac1904)は、Azure Hybrid Services ツールを紹介しは、GA チャネルのプレビューに含まれていた機能を提供する最新の GA リリース。
 - バージョン[1903](https://aka.ms/wac1903) Azure Monitor では、Active Directory、DHCP、DNS を管理するには、Active Directory、および新しいツールからサーバーや PC の接続を追加する機能から電子メール通知が表示されます。
 - バージョン[1902](https://aka.ms/wac1902) Acl、ゲートウェイの接続、および論理ネットワークを管理する新しい SDN ツールなど、ソフトウェア定義ネットワーク (SDN) の管理に機能強化 (&)、共有接続の一覧を追加します。

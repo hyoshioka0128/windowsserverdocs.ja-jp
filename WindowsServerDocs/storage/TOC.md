@@ -136,13 +136,7 @@
 #### [サーバーの削除](storage-spaces/remove-servers.md)
 #### [ドライブ ファームウェアの更新](update-firmware.md)
 #### [ボリュームの拡張](storage-spaces/resize-volumes.md)
-### トラブルシューティング
-#### [トラブルシューティング シナリオ](storage-spaces/troubleshooting-storage-spaces.md)
-#### [正常性と動作状態](storage-spaces/storage-spaces-states.md)
-#### [データの収集](storage-spaces/data-collection.md)
-#### [よく寄せられる質問](storage-spaces/storage-spaces-direct-faq.md)
-### Insider Preview
-#### [クラスター セット](storage-spaces/cluster-sets.md)
+#### [ボリュームの削除](storage-spaces/delete-volumes.md)
 #### [パフォーマンス履歴](storage-spaces/performance-history.md)
 ##### [ドライブ](storage-spaces/performance-history-for-drives.md)
 ##### [ネットワーク アダプター](storage-spaces/performance-history-for-network-adapters.md)
@@ -153,6 +147,12 @@
 ##### [Clusters](storage-spaces/performance-history-for-clusters.md)
 ##### [スクリプトのサンプル](storage-spaces/performance-history-scripting.md)
 #### [ボリュームの割り当てを区切る](storage-spaces/delimit-volume-allocation.md)
+#### [Azure Monitor で監視する](storage-spaces/configure-azure-monitor.md)
+### トラブルシューティング
+#### [トラブルシューティング シナリオ](storage-spaces/troubleshooting-storage-spaces.md)
+#### [正常性と動作状態](storage-spaces/storage-spaces-states.md)
+#### [データの収集](storage-spaces/data-collection.md)
+#### [よく寄せられる質問](storage-spaces/storage-spaces-direct-faq.md)
 ## [ワーク フォルダー](work-folders/work-folders-overview.md)
 ### [ワーク フォルダーの実装の設計](work-folders/plan-work-folders.md)
 ### [ワーク フォルダーの展開](work-folders/deploy-work-folders.md)

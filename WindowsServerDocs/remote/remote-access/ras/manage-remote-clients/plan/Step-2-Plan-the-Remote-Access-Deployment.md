@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: cc9f02b9-8ddd-4cae-b397-a832996144dd
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4ad399e62e1aa76b76b6109e28845b2615efa0fe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fb940effaae7989dec397e539b64160c87828d5a
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882283"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266707"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>手順 2 リモート アクセスの展開を計画します。
 
@@ -31,11 +31,11 @@ DirectAccess クライアントのリモート管理のため、単一のリモ�
   
 |タスク|説明|  
 |----|--------|  
-|[クライアントの展開戦略を計画します。](#bkmk_21client)|DirectAccess クライアントとして構成する管理対象のコンピューターを決定します。|  
-|[リモート アクセス サーバーの展開戦略を計画します。](#bkmk_22server)|リモート アクセス サーバーの展開方法を計画します。|  
-|[インフラストラクチャ サーバーの構成を計画します。](#bkmk_23Infservers)|DirectAccess ネットワーク ロケーション サーバー、DNS サーバー、DirectAccess 管理サーバーなど、リモート アクセスの展開でインフラストラクチャ サーバーを計画します。|  
+|[クライアントの展開戦略を計画します。](#plan-a-client-deployment-strategy)|DirectAccess クライアントとして構成する管理対象のコンピューターを決定します。|  
+|[リモート アクセス サーバーの展開戦略を計画します。](#plan-a-remote-access-server-deployment-strategy)|リモート アクセス サーバーの展開方法を計画します。|  
+|[インフラストラクチャ サーバーの構成を計画します。](#plan-the-infrastructure-servers-configurations)|DirectAccess ネットワーク ロケーション サーバー、DNS サーバー、DirectAccess 管理サーバーなど、リモート アクセスの展開でインフラストラクチャ サーバーを計画します。|  
   
-## <a name="bkmk_21client"></a>クライアントの展開戦略を計画します。  
+## <a name="plan-a-client-deployment-strategy"></a>クライアントの展開戦略を計画します。  
 クライアント展開を計画しているときに、決定すべきことが 3 つあります。  
   
 1.  DirectAccess または使用できるをモバイル コンピューターにのみ、指定したセキュリティ グループ内のすべてのコンピューターにでしょうか。  
@@ -70,7 +70,7 @@ DirectAccess クライアントのリモート管理のため、単一のリモ�
   
         クライアントでは、ローカル名を解決する手段が必要です。 DirectAccess クライアントにローカルでの名前解決を許可すると、エンド ユーザーはローカル DNS サーバーを使用して名前を解決できます。 エンドユーザーは、名前解決のためのローカルの DNS サーバーを使用する場合に、DirectAccess は単一ラベル名の解決要求を企業内部の DNS サーバーに送信しません。 ローカルの名前解決は、(を使用して、リンク ローカル マルチキャスト名前解決 (LLMNR) と NetBios over TCP/IP プロトコル) 代わりに、使用します。  
   
-## <a name="bkmk_22server"></a>リモート アクセス サーバーの展開戦略を計画します。  
+## <a name="plan-a-remote-access-server-deployment-strategy"></a>リモート アクセス サーバーの展開戦略を計画します。  
 リモート アクセス サーバーの展開を計画している場合に必要な決定事項は次のとおりです。  
   
 -   **ネットワーク トポロジ**  
@@ -110,7 +110,7 @@ DirectAccess クライアントのリモート管理のため、単一のリモ�
   
     リモート アクセスを構成する前に、リモート クライアントに VPN アクセスを提供しようとしているかどうかを決定します。 DirectAccess の接続をサポートしていない組織内のクライアント コンピューターがある場合は、VPN アクセスを提供する必要があります (たとえば、管理されていないまたは DirectAccess がサポートされていないオペレーティング システムを実行する)。 リモート アクセス サーバーのセットアップ ウィザードを使用すると、(DHCP を使用して、または静的アドレス プールから) の IP アドレスの割り当て方法と、(Active Directory または RADIUS サーバーを使用) して VPN クライアントを認証する方法を構成できます。  
   
-## <a name="bkmk_23Infservers"></a>インフラストラクチャ サーバーの構成を計画します。  
+## <a name="plan-the-infrastructure-servers-configurations"></a>インフラストラクチャ サーバーの構成を計画します。  
 リモート アクセスでは、次の 3 つの種類のインフラストラクチャ サーバーが必要です。  
   
 -   **ネットワーク ロケーション サーバー**  
@@ -119,9 +119,9 @@ DirectAccess クライアントのリモート管理のため、単一のリモ�
   
 -   **管理サーバー** 
   
-## <a name="BKMK_Links"></a>参照してください。  
+## <a name="see-also"></a>関連項目  
   
--   [ステップ 1: リモート アクセス インフラストラクチャを計画します。](Step-1-Plan-the-Remote-Access-Infrastructure.md)  
+-   [ステップ 1: リモート アクセス インフラストラクチャを計画する](Step-1-Plan-the-Remote-Access-Infrastructure.md)  
   
 
 

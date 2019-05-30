@@ -8,12 +8,12 @@ ms.date: 06/12/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 1292c7e6cd1dec6926516880c34fe60fb97a9ec8
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 24a9caba7a2745973d7c69c3bd7bc42717e7a06c
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190503"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266691"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>OAuth および ADAL を使用して 1 つのページの web アプリケーションをビルドします。AD FS 2016 以降で JS
 
@@ -78,13 +78,19 @@ ADAL は、認証するためのトリガーを見て場合、アプリケーシ
 ## <a name="registering-the-public-client-in-ad-fs"></a>AD FS でのパブリック クライアントの登録
 サンプルでは、WebAPI はでリッスンする構成 https://localhost:44326/します。 アプリケーション グループ**web アプリケーションにアクセスする Web ブラウザー**暗黙的な許可フローのアプリケーションを構成するために使用できます。
 
-1. AD FS 管理コンソールを開き、をクリックして**アプリケーション グループの追加**します。 **アプリケーション グループの追加ウィザード**アプリケーション、説明、および select の名前を入力、 **web アプリケーションにアクセスする Web ブラウザー**テンプレートから、**クライアント サーバーアプリケーション**次に示すセクション  <br>![新しいアプリケーション グループを作成します。](media/Single-Page-Application-with-AD-FS/appgroup_step1.png)
+1. AD FS 管理コンソールを開き、をクリックして**アプリケーション グループの追加**します。 **アプリケーション グループの追加ウィザード**アプリケーション、説明、および select の名前を入力、 **web アプリケーションにアクセスする Web ブラウザー**テンプレートから、**クライアント サーバーアプリケーション**次に示すセクション
 
-2. 次のページで**ネイティブ アプリケーション**アプリケーション クライアント id を指定し、リダイレクト URI を次に示すよう、  <br>![新しいアプリケーション グループを作成します。](media/Single-Page-Application-with-AD-FS/appgroup_step2.png)
+    ![新しいアプリケーション グループを作成します。](media/Single-Page-Application-with-AD-FS/appgroup_step1.png)
+
+2. 次のページで**ネイティブ アプリケーション**アプリケーション クライアント id を指定し、リダイレクト URI を次に示すよう、
+
+    ![新しいアプリケーション グループを作成します。](media/Single-Page-Application-with-AD-FS/appgroup_step2.png)
 
 3. 次のページで**アクセス制御ポリシーの適用**とアクセス許可のままに*のすべてのユーザーを許可*
 
-4. [概要] ページに次のようになります  <br>![新しいアプリケーション グループを作成します。](media/Single-Page-Application-with-AD-FS/appgroup_step3.png)
+4. [概要] ページに次のようになります
+
+    ![新しいアプリケーション グループを作成します。](media/Single-Page-Application-with-AD-FS/appgroup_step3.png)
 
 5. をクリックして**次**をアプリケーション グループの追加を完了し、ウィザードを閉じます。
 

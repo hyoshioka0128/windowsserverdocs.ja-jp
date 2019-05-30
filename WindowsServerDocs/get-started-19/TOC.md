@@ -1,5 +1,6 @@
 # [Windows Server 2019 の概要](get-started-19.md) 
 ## [Windows Server 2019 の新機能](whats-new-19.md)
+## [Windows Server バージョン 1903 の新機能](whats-new-in-windows-server-1903.md)
 ## [サービス チャネルの比較](servicing-channels-19.md)
 ## [インストール | アップグレード | 移行](install-upgrade-migrate-19.md)
 ## [リリース ノート:Windows Server 2019 に関する重要な問題](rel-notes-19.md)
@@ -10,15 +11,5 @@
 ## [Server Core アプリ互換性オンデマンド機能 (FOD)](install-fod-19.md)
 ## [Standard | Datacenter エディションの比較](editions-comparison-19.md)
 ## [Windows Server 2019 以降で削除される機能と置換が計画されている機能](removed-features-19.md)
-
-
-
-
-
-
-
-
-
-
-
-
+## [Windows Server バージョン 1903 以降で削除される機能と置換が計画されている機能](removed-features-1903.md)
+## [Windows Server のリリース情報](../get-started/windows-server-release-info.md)

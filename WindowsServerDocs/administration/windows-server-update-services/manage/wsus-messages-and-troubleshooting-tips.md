@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cc24893b1a227501959002ea2d81c62813855d4a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 77a4702ddab987cb3adda7627badb790e3102952
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883633"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308547"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>WSUS メッセージとトラブルシューティングのヒント
 
@@ -57,7 +57,7 @@ WSUS サーバーの更新サービスを開こうとすると、次のエラー
 
 > WSUS サーバーに接続しようとしたときにエラーが発生しました。 このエラーは、さまざまな理由から発生することができます。 問題が解決しない場合は、ネットワーク管理者に問い合わせてください。 [リセット] をクリックして、サーバーに再度接続するサーバーのノード。
 
-上記のほか、WSUS 管理 web サイトの URL にアクセスを試みる (つまり、 http://CM12CAS:8530)エラーで失敗します。
+上記のほか、WSUS 管理 web サイトの URL にアクセスを試みる (つまり、 `http://CM12CAS:8530`) エラーで失敗します。
 
 > HTTP エラー 503。 サービスをご利用いただけません
 

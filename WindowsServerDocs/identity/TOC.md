@@ -38,6 +38,7 @@
 ##### [仮想化ドメイン コントローラーのテクニカル リファレンス (レベル 300)](ad-ds/deploy/virtual-dc/Virtualized-Domain-Controller-Technical-Reference--Level-300-.md)
 ###### [仮想化ドメイン コントローラーのアーキテクチャ](ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md)
 ###### [仮想化ドメイン コントローラーの展開と構成](ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Deployment-and-Configuration.md)
+###### [Azure Vm で Active Directory を実行する](ad-ds/deploy/virtual-dc/adds-on-azure-vm.md)
 ###### [Hyper-V によるドメイン コントローラーの仮想化](ad-ds/get-started/virtual-dc/virtualized-domain-controllers-hyper-v.md)
 ###### [仮想化ドメイン コントローラーのトラブルシューティング](ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md)
 ###### [仮想化ドメイン コントローラーのテクニカル リファレンスの付録](ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-appendix.md)
@@ -365,6 +366,9 @@
 
 
 ### [AD FS の開発](ad-fs/AD-FS-Development.md)
+
+#### [AD FS のカスタム認証方法を構築する](ad-fs/development/ad-fs-build-custom-auth-method.md)
+#### [AD FS 2019 リスク評価モデルでプラグインを構築する](ad-fs/development/ad-fs-risk-assessment-model.md)
 #### [AD FS のカスタム ID トークン](ad-fs/development/Custom-Id-Tokens-in-AD-FS.md)
 #### [Windows Server 2016 の AD FS On-behalf-of 認証](ad-fs/development/AD-FS-On-behalf-of-Authentication-in-Windows-Server.md)
 #### [AD FS 2016 で OpenId 接続を有効にする](ad-fs/development/Enabling-OpenId-Connect-with-AD-FS.md)

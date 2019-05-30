@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d4f6ab2e52284895d2e7918364c24bbb69f2b1c9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 81bb333e2bb776bc75789b52ab41d7ef64016f51
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853513"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266464"
 ---
 # <a name="bitsadmin-util-and-setieproxy"></a>bitsadmin util と setieproxy
 
@@ -47,7 +47,7 @@ bitsadmin /Util /SetIEProxy <Account> <Usage>[/Conn <ConnectionName>]
 > [!IMPORTANT]
 > このコマンドは、正常に完了するための管理者特権でコマンド プロンプトから実行する必要があります。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
 次の例では、NETWORK SERVICE アカウントに対するプロキシの使用を設定します。
 
@@ -64,4 +64,4 @@ bitsadmin /util /setieproxy localsystem MANUAL_PROXY proxy1:80 ""
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

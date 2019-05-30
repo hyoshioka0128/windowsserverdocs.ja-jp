@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69b402195f90977aa63299c1a2a550ba310a4513
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 081e5caeb7fb458b367f035b9995929de84a5528
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832343"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266569"
 ---
 # <a name="bitsadmin-addfilewithranges"></a>bitsadmin addfilewithranges
 
@@ -48,7 +48,7 @@ bitsadmin /AddFileWithRanges <Job> <RemoteURL> <LocalName> <RangeList>
 
     回避策: は、長さ 0 の範囲を最初は指定できません。 例: bitsadmin/addfilewithranges j2 http://bitsdc/dload/1k.zip c:\1k.zip 100:5、100:0 します。
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
 次の例からのオフセット 0、100 バイト オフセットの 2000 から 100 バイトが転送には BITS およびから残りのバイト オフセット 5000 ファイルの末尾にします。
 ```
@@ -57,4 +57,4 @@ C:\>bitsadmin /addfilewithranges http://downloadsrv/10mb.zip c:\10mb.zip "0:100,
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

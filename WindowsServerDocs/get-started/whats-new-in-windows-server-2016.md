@@ -14,20 +14,20 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d36961558066197a54f42d27a3560d653bd81f2
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 8526d86c03f895d5bc8e0776aa958c627e78dfd9
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976630"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266809"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 の新機能
 
 >適用対象:Windows Server 2016
 
-<img src="media/whats-new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">Windows では、最新の機能については、次を参照してください。 [Windows Server で新](whats-new-in-windows-server.md)します。 ここでは、Windows Server&reg; 2016 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。  
+![新聞のことを示すアイコン](media/whats-new.png)Windows では、最新の機能については、次を参照してください。 [Windows Server で新](whats-new-in-windows-server.md)します。 ここでは、Windows Server&reg; 2016 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。
 
-## <a name="computevirtualizationvirtualizationmd"></a>[コンピューティング](../virtualization/virtualization.md)
+## <a name="computevirtualizationvirtualizationmd"></a>[Compute](../virtualization/virtualization.md)
 
 仮想領域には、Windows Server を設計、展開、および保守する IT プロフェッショナル向けの仮想化製品と機能が含まれます。  
 

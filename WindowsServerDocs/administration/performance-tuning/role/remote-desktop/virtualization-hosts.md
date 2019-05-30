@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 1893c0d2689657a5213b2d59e8d83cea0fc3a0db
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 0aa359644f5e9bf85f4e013e6571276716ed0218
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63722719"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266612"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>パフォーマンス チューニングのリモート デスクトップ仮想化ホスト
 
@@ -40,14 +40,14 @@ Windows Server 2016 では、仮想デスクトップ、個人用仮想デスク
 
 Windows Server 2012 R2 で導入された、データ重複除去は、開いているファイルの最適化をサポートします。 重複除去されたボリュームで実行されている仮想マシンを使用するには、仮想マシンのファイルは、HYPER-V ホストから別のホストに保存する必要があります。 Hyper-v ホストと重複除去は、同じコンピューターで実行している、2 つの機能はシステム リソースの競合し、全体的なパフォーマンスに悪影響を与えます。
 
-ボリュームは、"仮想デスクトップ インフラストラクチャ (VDI) を使用する構成も必要があります? 重複除去の最適化の種類。 サーバー マネージャーを使用してこれを構成することができます (**File and Storage Services**  - &gt; **ボリューム** - &gt; **の重複除去設定**)または、次の Windows PowerShell を使用してコマンドします。
+ボリュームは、"仮想デスクトップ インフラストラクチャ (VDI)"の重複除去の最適化タイプを使用するようにも構成する必要があります。 サーバー マネージャーを使用してこれを構成することができます (**File and Storage Services**  - &gt; **ボリューム** - &gt; **の重複除去設定**)または、次の Windows PowerShell を使用してコマンドします。
 
 ``` syntax
 Enable-DedupVolume <volume> -UsageType HyperV
 ```
 
-**注**  開いているファイルのデータ重複除去の最適化は、SMB 3.0 経由でリモート記憶域を使用して HYPER-V の VDI シナリオに対してのみサポートされます。
-
+> [!Note]
+> 開いているファイルのデータ重複除去の最適化は、HYPER-V が SMB 3.0 経由でリモート記憶域を使用すると VDI シナリオに対してのみサポートされています。
 
 ### <a name="memory"></a>メモリ
 

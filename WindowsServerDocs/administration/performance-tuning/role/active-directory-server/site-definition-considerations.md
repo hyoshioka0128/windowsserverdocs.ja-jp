@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e5c5f8b7cf5c028fbfa5d72c4bc1218565d4087
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e1652e45f51500ceeb0026b8892fbe9c54ff38f3
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814023"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266635"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>適切に配置のドメイン コント ローラーとサイトに関する考慮事項
 
@@ -64,7 +64,7 @@ ms.locfileid: "59814023"
 
     -   DnsAvoidRegisterRecords を使用すると、低いパフォーマンスまたは待機時間の長い、ドメイン コント ローラー汎用ロケーターに広告からのサテライト サイトにあるように削除できます。 詳細については、次を参照してください。[ドメイン コント ローラーまたはクライアントのサイト外にあるグローバル カタログの場所を最適化する方法](https://support.microsoft.com/kb/306602)します。
 
-        **注**  クライアントが使用できるドメイン コント ローラーの数に約 50 の実用的な制限があります。 サイト最適かつ最も高い容量にするドメイン コント ローラー。
+        > [!Note]   クライアントが使用できるドメイン コント ローラーの数に約 50 の実質的な制限があります。 サイト最適かつ最も高い容量にするドメイン コント ローラー。
 
          
 
@@ -78,7 +78,7 @@ ms.locfileid: "59814023"
 
 ## <a name="see-also"></a>関連項目
 - [Active Directory サーバーのチューニング パフォーマンス](index.md)
-- [ハードウェアの考慮事項](hardware-considerations.md)
-- [LDAP の考慮事項](ldap-considerations.md)
-- [ADDS のパフォーマンスのトラブルシューティング](troubleshoot.md) 
+- [ハードウェアに関する考慮事項](hardware-considerations.md)
+- [LDAP に関する考慮事項](ldap-considerations.md)
+- [ADDS パフォーマンスのトラブルシューティング](troubleshoot.md) 
 - [Active Directory Domain Services のキャパシティ プランニング](https://go.microsoft.com/fwlink/?LinkId=324566)

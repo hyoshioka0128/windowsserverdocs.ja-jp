@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 3bba28d4-23e2-449f-8319-7d2190f68d56
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 83dd3c737c616574750fecf51184996aba5703f4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 31209b3770fb910c843b6fd39d6e76b8672088a9
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845303"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266755"
 ---
 # <a name="step-2-plan-advanced-directaccess-deployments"></a>DirectAccess 展開を高度な手順 2 の計画
 
@@ -28,13 +28,13 @@ DirectAccess インフラストラクチャの計画後、IPv4 と IPv6 を使�
   
 |タスク|説明|  
 |----|--------|  
-|[2.1 クライアント展開を計画](#bkmk_21client)|DirectAccess を使用して、クライアント コンピューターに接続を許可する方法を計画します。 DirectAccess クライアントとして構成する管理対象のコンピューターを決定し、クライアント コンピューターへの Network Connectivity Assistant または DirectAccess Connectivity Assistant の展開を計画します。|  
-|[2.2 DirectAccess サーバー展開を計画します。](#bkmk_22server)|DirectAccess サーバーの展開方法を計画します。|  
-|[2.3 インフラストラクチャ サーバーを計画します。](#bkmk_23Infservers)|DirectAccess ネットワーク ロケーション サーバー、ドメイン ネーム システム (DNS) サーバー、DirectAccess 管理サーバーを含む、DirectAccess 展開向けのインフラストラクチャ サーバーを計画します。|  
-|[2.4 アプリケーション サーバーを計画します。](#bkmk_AppServers)|IPv4 および IPv6 アプリケーション サーバーを計画し、必要に応じて、DirectAccess クライアント コンピューターと内部アプリケーション サーバーの間にエンド ツー エンド認証が必要かどうかを検討します。|  
-|[2.5 DirectAccess とサードパーティ VPN クライアントを計画します。](#bkmk_DAandVPN)|サードパーティ VPN クライアントで DirectAccess を展開する場合、レジストリ値を設定して、2 つのリモート アクセス ソリューションのシームレスな共存を有効にする必要がある場合があります。|  
+|[2.1 クライアント展開を計画](#21-plan-for-client-deployment)|DirectAccess を使用して、クライアント コンピューターに接続を許可する方法を計画します。 DirectAccess クライアントとして構成する管理対象のコンピューターを決定し、クライアント コンピューターへの Network Connectivity Assistant または DirectAccess Connectivity Assistant の展開を計画します。|  
+|[2.2 DirectAccess サーバー展開を計画します。](#22-plan-for-directaccess-server-deployment)|DirectAccess サーバーの展開方法を計画します。|  
+|[2.3 インフラストラクチャ サーバーを計画します。](#23-plan-infrastructure-servers)|DirectAccess ネットワーク ロケーション サーバー、ドメイン ネーム システム (DNS) サーバー、DirectAccess 管理サーバーを含む、DirectAccess 展開向けのインフラストラクチャ サーバーを計画します。|  
+|[2.4 アプリケーション サーバーを計画します。](#24-plan-application-servers)|IPv4 および IPv6 アプリケーション サーバーを計画し、必要に応じて、DirectAccess クライアント コンピューターと内部アプリケーション サーバーの間にエンド ツー エンド認証が必要かどうかを検討します。|  
+|[2.5 DirectAccess とサードパーティ VPN クライアントを計画します。](#25-plan-directaccess-and-third-party-vpn-clients)|サードパーティ VPN クライアントで DirectAccess を展開する場合、レジストリ値を設定して、2 つのリモート アクセス ソリューションのシームレスな共存を有効にする必要がある場合があります。|  
   
-## <a name="bkmk_21client"></a>2.1 クライアント展開を計画  
+## <a name="21-plan-for-client-deployment"></a>2.1 クライアント展開を計画する  
 クライアント展開を計画しているときに、決定すべきことが 3 つあります。  
   
 1.  DirectAccess をモバイル コンピューターのみから使用できるようにするか、すべてのコンピューターから使用できるようにするか  
@@ -43,7 +43,7 @@ DirectAccess インフラストラクチャの計画後、IPv4 と IPv6 を使�
   
 2.  どのセキュリティ グループに DirectAccess クライアント コンピューターを含めるか  
   
-    DirectAccess クライアント設定は、DirectAccess クライアント GPO に含まれています。 GPO は、DirectAccess クライアントのセットアップ ウィザードで指定したセキュリティ グループに含まれるコンピューターに適用されます。 セキュリティ グループは、サポートされるドメインに含まれるように指定できます。 詳細については、セクションを参照してください。 [1.7 計画 Active Directory Domain Services](da-adv-plan-s1-infrastructure.md#bkmk_16AD)します。  
+    DirectAccess クライアント設定は、DirectAccess クライアント GPO に含まれています。 GPO は、DirectAccess クライアントのセットアップ ウィザードで指定したセキュリティ グループに含まれるコンピューターに適用されます。 セキュリティ グループは、サポートされるドメインに含まれるように指定できます。 詳細については、セクションを参照してください。 [1.7 計画 Active Directory Domain Services](da-adv-plan-s1-infrastructure.md#17-plan-active-directory-domain-services)します。  
   
     DirectAccess を構成する前に、セキュリティ グループを作成する必要があります。 DirectAccess 展開を完了した後で、コンピューターをセキュリティ グループに追加できますが、セキュリティ グループとは別のドメインにあるクライアント コンピューターを追加する場合、クライアント GPO はこれらのクライアントには適用されません。 たとえば、DirectAccess クライアントに対して、ドメイン A で SG 1 を作成し、ドメイン B からのクライアントを後でこのグループに追加した場合、クライアント GPO はドメイン B からのクライアントには適用されません。この問題を回避するには、DirectAccess クライアント コンピューターを含む各ドメイン向けに新しいクライアント セキュリティ グループを作成します。 または、新しいセキュリティ グループを作成しない場合は、Windows PowerShell コマンドレット **Add-DAClient** を新しいドメインの新しい GPO の名前で実行します。  
   
@@ -71,7 +71,7 @@ DirectAccess インフラストラクチャの計画後、IPv4 と IPv6 を使�
   
         クライアントには名前をローカルで解決する方法が必要です。 DirectAccess クライアントにローカルでの名前解決を許可すると、エンド ユーザーはローカル DNS サーバーを使用して名前を解決できます。 エンド ユーザーが名前解決にローカル DNS サーバーの使用を選択すると、DirectAccess は単一のラベル名に対する解決要求を企業内部 DNS サーバーに送信しません。 代わりに (リンク ローカル マルチキャスト名前解決 (LLMNR) と NetBIOS over TCP/IP プロトコルを使用して) ローカルの名前解決を使用します。  
   
-## <a name="bkmk_22server"></a>2.2 DirectAccess サーバー展開を計画します。  
+## <a name="22-plan-for-directaccess-server-deployment"></a>2.2 DirectAccess サーバー展開を計画する  
 DirectAccess サーバーの展開を計画している場合は、次の決定項目を考慮してください。  
   
 -   **ネットワーク トポロジ**  
@@ -82,7 +82,7 @@ DirectAccess サーバーの展開を計画している場合は、次の決定�
   
     -   **1 つのネットワーク アダプター**: この構成では、DirectAccess サーバーはファイアウォールやルーターなどのエッジ デバイスの内側にインストールされます。 ネットワーク アダプターは内部ネットワークに接続します。  
   
-    デプロイのトポロジを選択する方法についての詳細については、次を参照してください。 [1.1 ネットワーク トポロジの計画と設定](da-adv-plan-s1-infrastructure.md#bkmk_11Networksvrtopsettings)します。  
+    デプロイのトポロジを選択する方法についての詳細については、次を参照してください。 [1.1 ネットワーク トポロジの計画と設定](da-adv-plan-s1-infrastructure.md#11-plan-network-topology-and-settings)します。  
   
 -   **ConnectTo アドレス**  
   
@@ -98,15 +98,15 @@ DirectAccess サーバーの展開を計画している場合は、次の決定�
   
 -   **IPv6 プレフィックス**  
   
-    リモート アクセス サーバーのセットアップ ウィザードで、ネットワーク アダプターに IPv6 が展開されていることが検出された場合、内部ネットワーク向けの IPv6 プレフィックス、DirectAccess クライアント コンピューターに割り当てられる IPv6 プレフィックス、VPN クライアント コンピューターに割り当てられる IPv6 プレフィックスが自動的に設定されます。 自動的に生成されたプレフィックスがネイティブ IPv6 インフラストラクチャ向けに適切でない場合は、手動で変更する必要があります。 詳細については、次を参照してください。 [1.1 ネットワーク トポロジの計画と設定](da-adv-plan-s1-infrastructure.md#bkmk_11Networksvrtopsettings)します。  
+    リモート アクセス サーバーのセットアップ ウィザードで、ネットワーク アダプターに IPv6 が展開されていることが検出された場合、内部ネットワーク向けの IPv6 プレフィックス、DirectAccess クライアント コンピューターに割り当てられる IPv6 プレフィックス、VPN クライアント コンピューターに割り当てられる IPv6 プレフィックスが自動的に設定されます。 自動的に生成されたプレフィックスがネイティブ IPv6 インフラストラクチャ向けに適切でない場合は、手動で変更する必要があります。 詳細については、次を参照してください。 [1.1 ネットワーク トポロジの計画と設定](da-adv-plan-s1-infrastructure.md#11-plan-network-topology-and-settings)します。  
   
 -   **[認証]**  
   
     DirectAccess クライアントが DirectAccess サーバーを認証する方法を決定します。  
   
-    -   **[ユーザー認証]**: ユーザーが Active Directory 資格情報、または 2 要素認証を使用して認証できるようにします。 2 要素認証を使用した認証の詳細については、次を参照してください。 [OTP 認証を使用したリモート アクセスの展開](https://technet.microsoft.com/library/hh831379.aspx)します。  
+    -   **[ユーザー認証]** : ユーザーが Active Directory 資格情報、または 2 要素認証を使用して認証できるようにします。 2 要素認証を使用した認証の詳細については、次を参照してください。 [OTP 認証を使用したリモート アクセスの展開](https://technet.microsoft.com/library/hh831379.aspx)します。  
   
-    -   **コンピューター認証**: コンピューター認証を構成して証明書を使用、またはクライアントの代わりに、Kerberos プロキシとして DirectAccess サーバーを使用できます。 詳細については、次を参照してください。 [1.3 プラン証明書の要件](da-adv-plan-s1-infrastructure.md#bkmk_12CAsandCerts)します。  
+    -   **コンピューター認証**: コンピューター認証を構成して証明書を使用、またはクライアントの代わりに、Kerberos プロキシとして DirectAccess サーバーを使用できます。 詳細については、次を参照してください。 [1.3 プラン証明書の要件](da-adv-plan-s1-infrastructure.md#13-plan-certificate-requirements)します。  
   
     -   **Windows 7 クライアント**します。 既定では、Windows 7 を実行しているクライアント コンピューターは、Windows Server 2012 R2 または Windows Server 2012 の DirectAccess の展開に接続できません。 、Windows 7 を実行している、組織内のクライアントがあり、内部リソースへのリモート アクセスが必要な場合は、それらの接続を許可できます。 内部リソースへのアクセスを許可するクライアント コンピューターは、DirectAccess クライアントのセットアップ ウィザードで指定したセキュリティ グループのメンバーである必要があります。  
   
@@ -117,16 +117,16 @@ DirectAccess サーバーの展開を計画している場合は、次の決定�
   
     DirectAccess を構成する前に、VPN アクセスを DirectAccess 対応でないリモート クライアントに提供するかどうかを決定します。 組織に Direct Access 接続をサポートしていないクライアント コンピューターがある場合 (管理されていない。または DirectAccess がサポートされていないオペレーティング システムで実行されているため)、VPN アクセスを提供する必要があります。 リモート アクセス サーバーのセットアップ ウィザードでは、IP アドレスを (DHCP を使用して、または静的アドレス プールから) 割り当てる方法と、Active Directory またはリモート認証ダイヤルイン ユーザー サービス (RADIUS) サーバーを使用して VPN クライアントを認証する方法を構成できます。  
   
-## <a name="bkmk_23Infservers"></a>2.3 インフラストラクチャ サーバーを計画します。  
+## <a name="23-plan-infrastructure-servers"></a>2.3 インフラストラクチャ サーバーを計画する  
 DirectAccess には、次の 3 種類のインフラストラクチャ サーバーが必要です。  
   
--   **DNS サーバー**: 詳細については、「[1.4 DNS 要件を計画する](da-adv-plan-s1-infrastructure.md#bkmk_14Dns)」を参照してください。  
+-   **DNS サーバー**: 詳細については、「[1.4 DNS 要件を計画する](da-adv-plan-s1-infrastructure.md#14-plan-dns-requirements)」を参照してください。  
   
--   **ネットワーク ロケーション サーバー**: 詳細については、「[1.5 ネットワーク ロケーション サーバーを計画する](da-adv-plan-s1-infrastructure.md#bkmk_14NLS)」を参照してください。  
+-   **ネットワーク ロケーション サーバー**: 詳細については、「[1.5 ネットワーク ロケーション サーバーを計画する](da-adv-plan-s1-infrastructure.md#15-plan-the-network-location-server)」を参照してください。  
   
--   **管理サーバー**: 詳細については、「[1.6 管理サーバーを計画する](da-adv-plan-s1-infrastructure.md#bkmk_15mgmtservers)」を参照してください。  
+-   **管理サーバー**: 詳細については、「[1.6 管理サーバーを計画する](da-adv-plan-s1-infrastructure.md#16-plan-management-servers)」を参照してください。  
   
-## <a name="bkmk_AppServers"></a>2.4 アプリケーション サーバーを計画します。  
+## <a name="24-plan-application-servers"></a>2.4 アプリケーション サーバーを計画する  
 アプリケーション サーバーとは、企業ネットワークに置かれ、DirectAccess 接続でクライアント コンピューターによってアクセス可能なサーバーです。 アプリケーション サーバーは、セキュリティ グループに追加して識別されます。 そして、アプリケーション サーバー GPO がそのグループのサーバーに適用されます。  
   
 > [!NOTE]  
@@ -136,7 +136,7 @@ DirectAccess クライアントと選択した内部アプリケーション サ
   
 既定では、認証をアプリケーション サーバーに拡張すると、DirectAccess クライアントとアプリケーション サーバーとの間のデータ ペイロードが暗号化されます。 トラフィックを暗号化せずに、認証のみを使用する選択も可能です。 ただし、これは、認証と暗号化を使用するよりも安全性の低いと、これは、Windows Server 2008 R2、または Windows Server 2012 オペレーティング システムを実行しているアプリケーション サーバーに対してのみ。  
   
-## <a name="bkmk_DAandVPN"></a>2.5 DirectAccess とサードパーティ VPN クライアントを計画します。  
+## <a name="25-plan-directaccess-and-third-party-vpn-clients"></a>2.5 DirectAccess とサードパーティ VPN クライアントを計画する  
 一部のサードパーティ VPN クライアントでは、ネットワーク接続フォルダーで接続が作成されません。 このため、VPN 接続が確立され、イントラネットへの接続が存在しても、DirectAccess はイントラネット接続がないと判断する可能性があります。 これは、サードパーティ VPN クライアントが Network Device Interface Specification (NDIS) エンドポイントの種類として定義して、インターフェイスを登録するときに発生します。 DirectAccess クライアントで次のレジストリ値を 1 に設定して、これらの種類の VPN クライアントとの共存を有効にできます。  
   
 **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces (REG_DWORD)**  
@@ -149,7 +149,7 @@ VPN 接続で、既定のゲートウェイが空、またはすべてゼロ (0.
   
 **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ EnableNoGatewayLocationDetection (REG_DWORD)**  
   
-## <a name="BKMK_Links"></a>前の手順  
+## <a name="previous-step"></a>前のステップ  
   
 -   [ステップ 1: DirectAccess インフラストラクチャを計画します。](da-adv-plan-s1-infrastructure.md)  
   

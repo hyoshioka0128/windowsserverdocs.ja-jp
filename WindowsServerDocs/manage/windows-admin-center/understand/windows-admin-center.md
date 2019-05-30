@@ -8,12 +8,12 @@ ms.author: harowl
 ms.date: 04/12/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 618d9a51c0411fb2cbf4c51661a92eed9c9636a1
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: db69ad3021850552e92c4aa653dfd9bd9110c06d
+ms.sourcegitcommit: 39ab8041d166e6817a95417d6aa30bc7abeeef54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188227"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66260283"
 ---
 # <a name="hello-windows-admin-center"></a>Windows Admin Center の概要
 
@@ -28,14 +28,11 @@ Windows Admin Center は、サーバー、クラスター、ハイパーコン�
 
 - [Windows Admin Center Preview 1906](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) - Includes the latest feature updates.
 -  -->
-[Windows Admin Center (バージョン 1904)](https://aka.ms/WACDownload) <!--Broadly validated & generally available.-->
+[Windows Admin Center (バージョン 1904.1)](https://aka.ms/WACDownload) <!--Broadly validated & generally available.-->
 
 [新機能](../overview.md#release-history)
 
 Microsoft Update を使用して、または手動でインストールすることで、Windows Admin Center の非プレビュー バージョンを更新できます。 Windows Admin Center の各非プレビュー バージョンは、[次へ] の非プレビュー バージョンがリリースされた後、30 日までサポートされます。 参照してください、[サポート ポリシー](../support/index.md)の詳細。
-
-> [!IMPORTANT]
-> Lenovo XClarity インテグレーターのユーザーを読んでほしい[既知の問題](../support/known-issues.md)Windows Admin Center 1904 のバージョンをインストールする前にします。
 
 ********************
 

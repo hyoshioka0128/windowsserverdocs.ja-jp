@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/31/2018
-ms.openlocfilehash: 4b9deb4fc7fbfccf569250e965274009764054f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a98e1a876c972b0f146ff37aff0a77399b684e99
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849333"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308560"
 ---
 # <a name="bitsadmin-examples"></a>bitsadmin 例
 
@@ -28,7 +28,7 @@ ms.locfileid: "59849333"
 
 **/転送**スイッチは下記のタスクを実行するためのショートカットです。 このスイッチにジョブを作成、ジョブにファイルが追加されます、転送キュー内のジョブがアクティブになります、およびジョブが完了するとします。 BITSAdmin、転送が完了するか、エラーが発生するまで、MS-DOS ウィンドウに進行状況に関する情報を表示し続けます。
 
-**bitsadmin/transfer myDownloadJob/download/priority 通常 https://downloadsrv/10mb.zipc:\\10mb.zip**
+**bitsadmin/transfer myDownloadJob/download/priority 通常 `https://downloadsrv/10mb.zip c:\\10mb.zip`**
 
 ## <a name="create-a-download-job"></a>ダウンロード ジョブを作成します。
 
@@ -97,7 +97,7 @@ NOTIFICATION COMMAND LINE: none
 
 ## <a name="monitoring-jobs-in-the-transfer-queue"></a>転送キュー内のジョブの監視
 
-使用して、 **/list**、**監視/**、または **/info**転送キュー内のジョブを監視するスイッチ。 **/List**スイッチは、キュー内のすべてのジョブの情報を提供します。
+使用して、 **/list**、**監視/** 、または **/info**転送キュー内のジョブを監視するスイッチ。 **/List**スイッチは、キュー内のすべてのジョブの情報を提供します。
 
 **bitsadmin/list**
 

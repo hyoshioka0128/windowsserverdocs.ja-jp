@@ -7,22 +7,24 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7619d2e2ce394c7f06826d6ebe36bccfa43344ad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 70b27d45acbfb046d52271a50ca7deffb226b8d0
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842573"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266728"
 ---
 # <a name="performance-tuning-remote-desktop-gateways"></a>パフォーマンス チューニングのリモート デスクトップ ゲートウェイ
 
-**注**   Windows 8 以降および Windows Server 2012 R2 以降で、リモート デスクトップ ゲートウェイ (RD ゲートウェイ) では、TCP、UDP、および従来の RPC トランスポートがサポートしています。 次のデータのほとんどはについては、従来の RPC トランスポート。 従来の RPC トランスポートが使用されていない場合はこのセクションでは適用されません。
+> [!Note]
+> Windows 8 以降、Windows Server 2012 R2 以降では、リモート デスクトップ ゲートウェイ (RD ゲートウェイ) は、TCP、UDP、および従来の RPC トランスポートをサポートします。 次のデータのほとんどはについては、従来の RPC トランスポート。 従来の RPC トランスポートが使用されていない場合はこのセクションでは適用されません。
 
 このトピックでは、顧客の展開のパフォーマンスを向上させるのに役立つパフォーマンスに関連するパラメーターと、顧客のネットワークの使用パターンに依存するチューニングについて説明します。
 
 基本的には、RD ゲートウェイは、多くのパケットがリモート デスクトップ接続のインスタンスと、お客様のネットワーク内の RD セッション ホスト サーバー インスタンス間での操作の転送を実行します。
 
-**注**   RPC トランスポートのみに、次のパラメーターが適用されます。
+> [!Note]
+> 次のパラメーターは、RPC トランスポートのみに適用されます。
 
 インターネット インフォメーション サービス (IIS) と RD ゲートウェイ、RD ゲートウェイでのシステム パフォーマンスを向上させるのには、次のレジストリ パラメーターをエクスポートします。
 

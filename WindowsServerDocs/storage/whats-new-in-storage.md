@@ -7,19 +7,49 @@ ms.manager: dongill
 ms.technology: storage
 ms.topic: article
 author: jasongerend
-ms.date: 10/22/2019
-ms.openlocfilehash: b8b6b1145e5b921fac64c47cbfb1e7489fa3f41e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.date: 05/29/2019
+ms.openlocfilehash: 5469d663f64fdb453e03863f409b675473d3f6aa
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847243"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308570"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>新機能 Windows Server での記憶域の新機能
 
 >適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 このトピックでは、Windows Server 2019、Windows Server 2016 で記憶域の追加または変更された機能を説明し、Windows Server 半期チャネルの解放します。
+
+## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1903"></a>新機能 Windows Server 2019 および Windows Server バージョンが 1903 で記憶域の新機能
+
+このリリースの Windows Server では、次の変更とテクノロジを追加します。
+
+### <a name="storage-migration-service-now-migrates-local-accounts-clusters-and-linux-servers"></a>記憶域の移行サービスはローカル アカウント、クラスター、および Linux サーバーを移行します。
+
+記憶域の移行サービスでは、Windows Server の新しいバージョンにサーバーを移行するやすくなります。 サーバー上のデータのインベントリを作成し、新しいサーバーにデータと構成を転送するためのグラフィカル ツールを提供します-アプリやユーザーが何も変更することがなく。
+
+このバージョンの Windows Server を使用して、移行を調整する、次の機能が追加されました。
+
+- 新しいサーバーにローカル ユーザーとグループを移行します。
+- フェールオーバー クラスターから記憶域を移行します。
+- Samba を使用する Linux サーバーから記憶域を移行します。
+- Azure File Sync を使用して Azure に移行された共有をより簡単に同期します。
+- Azure などの新しいネットワークへの移行します。
+
+記憶域の移行サービスに関する詳細については、次を参照してください。[記憶域の移行サービスの概要](storage-migration-service/overview.md)します。
+
+### <a name="system-insights-disk-anomaly-detection"></a>システム Insights ディスク異常検出
+
+[システム Insights](../manage/system-insights/overview.md)予測分析機能をローカルで Windows Server システム データを分析し、サーバーの機能に関する洞察を提供します。 さまざまな組み込みの機能が付属しますが、ディスクの異常検出以降 Windows Admin Center を使用して追加の機能をインストールする機能が追加されました。
+
+異常検出のディスクはディスクが動作しているときに強調表示する新機能*異なる*通常よりもします。 異なるは必ずしも中には、システム上の問題のトラブルシューティングを行うこれらの異常な瞬間を表示、悪いが役に立ちます。
+
+この機能も Windows Server 2019 を実行しているサーバーを使用できます。
+
+### <a name="windows-admin-center-enhancements"></a>Windows Admin Center の機能強化
+
+Windows Admin Center の新しいリリースは、Windows Server に新しい機能を追加します。 最新の機能については、次を参照してください。 [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md)します。
 
 ## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1809"></a>新機能 Windows Server 2019 および Windows Server バージョンは 1809 で記憶域の新機能
 
@@ -41,7 +71,7 @@ Storage Spaces Direct in Windows Server 2019 機能強化がいくつか (記憶
 
 - **重複除去と ReFS ボリュームの圧縮**
 
-    重複除去と圧縮 ReFS ファイル システムを同じボリューム上には、最大 10 倍のデータを格納します。 (が[1 回のクリック](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)Windows Admin Center を有効にします)。省略可能な圧縮を使用して可変サイズのチャンク ストアはマルチ スレッドの処理後のアーキテクチャがパフォーマンスに与える影響を最小限の保持中に削減率を最大化します。 それぞれ 64 TB までのボリューム、1 TB までのファイルがサポートされます。
+    重複除去と圧縮 ReFS ファイル システムを同じボリューム上には最大 10 倍多くのデータを格納します。 (が[1 回のクリック](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)Windows Admin Center を有効にします)。省略可能な圧縮を使用して可変サイズのチャンク ストアはマルチ スレッドの処理後のアーキテクチャがパフォーマンスに与える影響を最小限の保持中に削減率を最大化します。 ボリュームをサポートしている最大 64 TB は各ファイルの最初の 4 TB の重複除去とします。
 
 - **永続的なメモリのネイティブ サポート**
 
@@ -268,4 +298,4 @@ ReFS では、以下の点が強化されています。
 これらの機能は、Windows Server 2016 での新機能です。 
 
 ## <a name="see-also"></a>関連項目  
-* [新機能 Windows Server 2016 の新機能](../get-started/what-s-new-in-windows-server-2016.md)  
+* [Windows Server 2016 の新機能](../get-started/what-s-new-in-windows-server-2016.md)  

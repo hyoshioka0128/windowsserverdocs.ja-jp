@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 460837c79c0e0d2c48331ddaaffcd118fd16ebc1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 55dd38c966fea8448231b06cde9c1dd63b024197
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870613"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266768"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>認証ポリシーと認証ポリシー サイロ
 
@@ -230,7 +230,7 @@ Protected Users セキュリティ グループは、デバイスと Windows Ser
 
 これらのイベントは、"アプリケーションとサービス ログ" (**Microsoft\Windows\Authentication**) に記録されます。
 
-これらのイベントを使用するトラブルシューティング手順については、「[認証ポリシーのトラブルシューティング](how-to-configure-protected-accounts.md#BKMK_TroubleshootAuthnPolicies)」と「[Protected Users 関連のイベントのトラブルシューティング](how-to-configure-protected-accounts.md#BKMK_TrubleshootingEvents)」をご覧ください。
+これらのイベントを使用するトラブルシューティング手順については、「[認証ポリシーのトラブルシューティング](how-to-configure-protected-accounts.md#troubleshoot-authentication-policies)」と「[Protected Users 関連のイベントのトラブルシューティング](how-to-configure-protected-accounts.md#troubleshoot-events-related-to-protected-users)」をご覧ください。
 
 |イベント ID とログ|説明|
 |----------|--------|
@@ -241,7 +241,7 @@ Protected Users セキュリティ グループは、デバイスと Windows Ser
 |306<br /><br />**AuthenticationPolicyFailures-DomainController**|理由: サーバーに対する認証がそのユーザーまたはデバイスに許可されていないことが理由で Kerberos 制限不適合が発生する可能性があります。<br /><br />監査モードでは、情報イベントがドメイン コントローラーのログに記録されます。これは、ユーザーとデバイスの一方または両方がアクセス制御制限に適合していないことが理由で Kerberos サービス チケットが拒否されることを示すものです。<br /><br />デバイス、ポリシー、およびサイロの名前が表示されます。|
 
 ## <a name="see-also"></a>関連項目
-[保護されたアカウントを構成する方法](how-to-configure-protected-accounts.md)
+[保護されるアカウントの構成方法](how-to-configure-protected-accounts.md)
 
 [資格情報の保護と管理](credentials-protection-and-management.md)
 

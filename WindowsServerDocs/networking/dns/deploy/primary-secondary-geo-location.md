@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b11064e6b3bd2590d5712afdb7afc69de1ed83f4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 6869ee5f39f1719a3c71025207ef9ffe740492ff
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889703"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266787"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>プライマリ-セカンダリの展開での地理的な場所ベースのトラフィック管理に DNS ポリシーを使用する
 
@@ -28,7 +28,7 @@ ms.locfileid: "59889703"
 >[!NOTE]
 >AXFR に関する詳細については、インターネット技術標準化委員会 (IETF) を参照してください。 [コメント 5936 要求](https://tools.ietf.org/rfc/rfc5936.txt)します。 IXFR に関する詳細については、インターネット技術標準化委員会 (IETF) を参照してください。 [コメント 1995 の要求](https://tools.ietf.org/html/rfc1995)します。  
   
-## <a name="bkmk_example"></a>プライマリ セカンダリ地理的場所ベースのトラフィック管理の例  
+## <a name="primary-secondary-geo-location-based-traffic-management-example"></a>プライマリ セカンダリ地理的な場所ベースのトラフィック管理の例  
 DNS クエリを実行するクライアントの物理的な場所に基づいてトラフィックのリダイレクトを実現するために、プライマリ セカンダリ配置で DNS のポリシーを使用する方法の例を次に示します。  
   
 この例は架空の 2 つの会社の Contoso クラウド サービスは、web とドメイン ホスティング ソリューションを提供Woodgrove 食品サービス、世界中で複数の市区町村の食品の配信サービスを提供し、Web サイトを持つ woodgrove.com の名前します。  
@@ -45,14 +45,14 @@ Contoso の DNS 展開には、2 つのセカンダリ サーバーが含まれ�
   
 ![プライマリ セカンダリ地理的な場所ベースのトラフィック管理の例](../../media/Dns-Policy_PS1/dns_policy_primarysecondary1.jpg)  
    
-## <a name="bkmk_works"></a>DNS プライマリ セカンダリ システムのしくみ
+## <a name="how-the-dns-primary-secondary-system-works"></a>DNS のプライマリ セカンダリ システムの動作
 
 プライマリ-セカンダリ DNS 展開での地理的な場所ベースのトラフィック管理を展開するときに、ゾーン転送をスコープ レベルについて学習する前に転送を行う方法の通常のプライマリ セカンダリ ゾーンを理解する必要があります。 次のセクションでは、ゾーンとゾーン転送をスコープ レベルについてを説明します。  
   
-- [DNS プライマリ セカンダリ展開でゾーン転送](#bkmk_zone)  
-- [ゾーン転送をスコープ レベル DNS プライマリ セカンダリ展開](#bkmk_scope)  
+- [DNS プライマリ セカンダリ展開でゾーン転送](#zone-transfers-in-a-dns-primary-secondary-deployment)  
+- [ゾーン転送をスコープ レベル DNS プライマリ セカンダリ展開](#zone-scope-level-transfers-in-a-dns-primary-secondary-deployment)  
   
-### <a name="bkmk_zone"></a>DNS プライマリ セカンダリ展開でゾーン転送
+### <a name="zone-transfers-in-a-dns-primary-secondary-deployment"></a>プライマリ-セカンダリの DNS 展開でゾーン転送
 
 DNS プライマリ セカンダリ展開を作成して、次の手順でゾーンを同期することができます。  
 1. DNS をインストールするときにプライマリ DNS サーバーにプライマリ ゾーンを作成します。  
@@ -62,7 +62,7 @@ DNS プライマリ セカンダリ展開を作成して、次の手順でゾー
 5. 必要な場合、プライマリ サーバーはゾーンの更新はセカンダリ サーバーに通知を送信します。  
 6. セカンダリ サーバーでは、増分ゾーン転送要求 (IXFR) を作成します。 このため、セカンダリ サーバーは、プライマリ サーバーと同期を保ちます。   
   
-### <a name="bkmk_scope"></a>ゾーン転送をスコープ レベル DNS プライマリ セカンダリ展開
+### <a name="zone-scope-level-transfers-in-a-dns-primary-secondary-deployment"></a>スコープ レベルのゾーンを DNS プライマリ セカンダリ配置の転送します。
 
 トラフィック管理のシナリオでは、別のゾーンのスコープのゾーンに分割する追加の手順が必要です。 このため、追加の手順は、セカンダリ サーバーにゾーンのスコープ内のデータを転送し、ポリシーおよび DNS クライアントのサブネットのセカンダリ サーバーに転送する必要があります。   
   
@@ -78,7 +78,7 @@ OPT RR の値は、要求が送信されるゾーンのスコープの名前で�
   
 ゾーンのスコープでさらに、更新プログラムは、同じ OPT RR で、セカンダリ サーバーへ IXFR 通知が送信されます。 通知を受けるゾーンのスコープは、その選択 RR を含む IXFR request と同じように上記で説明した次のとおりです。  
   
-## <a name="bkmk_config"></a>プライマリ セカンダリ地理的場所ベースのトラフィック管理用の DNS のポリシーを構成する方法
+## <a name="how-to-configure-dns-policy-for-primary-secondary-geo-location-based-traffic-management"></a>プライマリ-セカンダリの地理的な場所ベースのトラフィック管理用の DNS のポリシーを構成する方法
 
 開始する前に、すべてのトピックの手順を完了したことを確認 [のプライマリ サーバーの地理的な場所ベースのトラフィック管理用の DNS ポリシーを使用して](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md), 、ゾーン、ゾーンのスコープ、DNS クライアントのサブネット、および DNS のポリシーで、プライマリ DNS サーバーが構成されているとします。  
   
@@ -87,11 +87,11 @@ OPT RR の値は、要求が送信されるゾーンのスコープの名前で�
   
 プライマリ-セカンダリの地理的な場所ベースのクエリ応答の DNS のポリシーを構成するには、次の手順を実行する必要があります。  
   
-- [セカンダリ ゾーンを作成します。](#bkmk_secondary)  
-- [プライマリ ゾーンのゾーン転送設定を構成します。](#bkmk_zonexfer)  
-- [DNS クライアントのサブネットをコピーします。](#bkmk_client)  
-- [セカンダリ サーバー上のゾーンのスコープを作成します。](#bkmk_zonescopes)  
-- [DNS のポリシーを構成します。](#bkmk_dnspolicy)  
+- [セカンダリ ゾーンを作成します。](#create-the-secondary-zones)  
+- [プライマリ ゾーンのゾーン転送設定を構成します。](#configure-the-zone-transfer-settings-on-the-primary-zone)  
+- [DNS クライアントのサブネットをコピーします。](#copy-the-dns-client-subnets)  
+- [セカンダリ サーバー上のゾーンのスコープを作成します。](#create-the-zone-scopes-on-the-secondary-server)  
+- [DNS のポリシーを構成します。](#configure-dns-policy)  
   
 次のセクションでは、詳細な構成手順を説明します。  
   
@@ -99,7 +99,7 @@ OPT RR の値は、要求が送信されるゾーンのスコープの名前で�
 >次のセクションでには、多くのパラメーターの値例にはが含まれている Windows PowerShell コマンド例にはが含まれます。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。  
 ><br>メンバーシップ **DnsAdmins**, 、または同等の権限が必要で、次の手順を実行します。  
   
-### <a name="bkmk_secondary"></a>セカンダリ ゾーンを作成します。
+### <a name="create-the-secondary-zones"></a>セカンダリ ゾーンを作成します。
 
 SecondaryServer1 と SecondaryServer2 にレプリケートするゾーンのセカンダリ コピーを作成することができます (コマンドレットと仮定して実行されているリモートから 1 つの管理クライアントから)。   
   
@@ -115,7 +115,7 @@ SecondaryServer1 と SecondaryServer2 にレプリケートするゾーンのセ
 
 詳細については、次を参照してください。 [追加 DnsServerSecondaryZone](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserversecondaryzone?view=win10-ps)します。  
   
-### <a name="bkmk_zonexfer"></a>プライマリ ゾーンのゾーン転送設定を構成します。
+### <a name="configure-the-zone-transfer-settings-on-the-primary-zone"></a>プライマリ ゾーンのゾーン転送設定を構成します。
 
 プライマリ ゾーンの設定を構成する必要がありますようにします。
 
@@ -134,7 +134,7 @@ SecondaryServer1 と SecondaryServer2 にレプリケートするゾーンのセ
 詳細については、次を参照してください。 [セット デモンストレーション](https://docs.microsoft.com/powershell/module/dnsserver/set-dnsserverprimaryzone?view=win10-ps)します。  
   
   
-### <a name="bkmk_client"></a>DNS クライアントのサブネットをコピーします。
+### <a name="copy-the-dns-client-subnets"></a>DNS クライアントのサブネットをコピーします。
 
 セカンダリ サーバーには、プライマリ サーバーから DNS クライアントのサブネットをコピーする必要があります。
   
@@ -148,7 +148,7 @@ SecondaryServer1 と SecondaryServer2 にレプリケートするゾーンのセ
 
 詳細については、次を参照してください。 [追加 DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)します。  
   
-### <a name="bkmk_zonescopes"></a>セカンダリ サーバー上のゾーンのスコープを作成します。
+### <a name="create-the-zone-scopes-on-the-secondary-server"></a>セカンダリ サーバーでゾーンのスコープを作成します。
 
 セカンダリ サーバーでは、ゾーンのスコープを作成する必要があります。 DNS では、xfr 可能をプライマリ サーバーから要求をゾーンのスコープも起動します。 プライマリ サーバー上のゾーンのスコープの変更、ゾーンのスコープ情報を含む通知はセカンダリ サーバーに送信されます。 セカンダリ サーバーは、増分の変更で、ゾーンのスコープを更新できます。  
   
@@ -165,7 +165,7 @@ SecondaryServer1 と SecondaryServer2 にレプリケートするゾーンのセ
   
 詳細については、次を参照してください。 [追加 DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)します。  
   
-### <a name="bkmk_dnspolicy"></a>DNS のポリシーを構成します。
+### <a name="configure-dns-policy"></a>DNS のポリシーを構成します。
 
 サブネットを作成した後は、しパーティション (ゾーン スコープ) には、レコードを追加した、サブネット、およびパーティションに接続しているポリシーは、DNS クライアントのサブネットのいずれかのソースから、クエリの結果が、クエリの応答が、ゾーンの正しい範囲から返されます。 を作成する必要があります。 ポリシーの既定のゾーンのスコープをマッピングするため必要はありません。  
   

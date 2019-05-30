@@ -7,12 +7,12 @@ ms.topic: article
 author: phstee
 ms.author: NedPyle; Danlo; DKruse
 ms.date: 4/14/2017
-ms.openlocfilehash: d6dc2739ae45b29bdfd854c1b81b0c8962c8f107
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ed9e9c6e2280aa69408455a111eddb3af7f88750
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891413"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266695"
 ---
 # <a name="performance-tuning-for-file-servers"></a>ファイル サーバーのパフォーマンス チューニング
 
@@ -94,7 +94,7 @@ ms.locfileid: "59891413"
 
     既定は 10 秒です。 これは、ディレクトリ キャッシュのタイムアウトです。
 
-    **注**   このパラメーターは、ディレクトリのリースがない場合のディレクトリ メタデータのキャッシュを制御します。
+    > [!Note]   このパラメーターは、ディレクトリのリースがない場合のディレクトリ メタデータのキャッシュを制御します。
 
      
 

@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9032988c65581ea602451d224f40719b932ab7f5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 79f95c88c49d384f8a13b8808c63a0dc00de53cb
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821693"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266631"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>LDAP ADDS パフォーマンス チューニングに関する考慮事項
 
@@ -49,7 +49,7 @@ MSDN で正しく書き込み、構造、および Active Directory に対して
 
     -   **NTDS\\要求の待機時間**– 要求がプロセスにはどのくらいの期間の対象になります。 Active Directory が 120 秒 (既定) 後にタイムアウトになる要求、ただし、大部分がより速く実行する必要があり、全体的な数値に隠れてしまう極端に長いクエリを実行する必要があります。 絶対しきい値ではなくこの基準での変更を探します。
 
-        **注**  値が大きい場合は、ここには、インジケーター"のでしょうか。 プロキシの遅延のことができます。 その他のドメインと CRL チェックを要求します。
+        > [!Note]   値が大きい場合は、ここでは、その他のドメインと CRL チェックの「プロキシ」要求で遅延のインジケーターはこともできます。
 
 
     -   **NTDS\\推定処理の遅延**– これが最適なパフォーマンスを 0 に近いする必要がありますが理想的です、これは、要求が提供されるを待機する時間をかけていないことを意味します。
@@ -64,7 +64,7 @@ MSDN で正しく書き込み、構造、および Active Directory に対して
 
 -   [Microsoft Server Performance Advisor](../../../server-performance-advisor/microsoft-server-performance-advisor.md) Active Directory Advisor パック
 
--   以外の任意のフィルターを使用して検索"(objectClass =\*) でしょうか。 先祖のインデックスを使用するとします。
+-   以外の任意のフィルターを使用して検索"(objectClass =\*)"の先祖のインデックスを使用します。
 
 ### <a name="other-index-considerations"></a>その他のインデックスに関する考慮事項
 
@@ -101,7 +101,7 @@ MSDN で正しく書き込み、構造、および Active Directory に対して
 
 ## <a name="see-also"></a>関連項目
 - [Active Directory サーバーのチューニング パフォーマンス](index.md)
-- [ハードウェアの考慮事項](hardware-considerations.md)
-- [適切に配置のドメイン コント ローラーとサイトに関する考慮事項](site-definition-considerations.md)
-- [ADDS のパフォーマンスのトラブルシューティング](troubleshoot.md) 
+- [ハードウェアに関する考慮事項](hardware-considerations.md)
+- [ドメイン コントローラーとサイトの適切な配置に関する考慮事項](site-definition-considerations.md)
+- [ADDS パフォーマンスのトラブルシューティング](troubleshoot.md) 
 - [Active Directory Domain Services のキャパシティ プランニング](https://go.microsoft.com/fwlink/?LinkId=324566)

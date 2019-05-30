@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d3eba4f62842fa7f862cd4eaea6830e6a08397a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 848c57736c3530e296cffb970237149b4634de67
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868133"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266519"
 ---
 # <a name="bitsadmin-replaceremoteprefix"></a>bitsadmin replaceremoteprefix
 
@@ -40,13 +40,13 @@ bitsadmin /ReplaceRemotePrefix <Job> <OldPrefix> <NewPrefix
 |OldPrefix|既存の URL プレフィックス|
 |NewPrefix|新しい URL プレフィックス|
 
-## <a name="BKMK_examples"></a>例
+## <a name="examples"></a>例
 
-次の例では、という名前のジョブのすべてのファイルを変更する*myDownloadJob*リモート URL から始まりますが*http://stageserver*に *http://prodserver*します。
+次の例では、という名前のジョブのすべてのファイルを変更する*myDownloadJob*リモート URL から始まりますが *http://stageserver* に *http://prodserver* します。
 ```
 C:\>bitsadmin /ReplaceRemotePrefix myDownloadJob http://stageserver http://prodserver
 ```
 
 ## <a name="additional-information"></a>追加情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

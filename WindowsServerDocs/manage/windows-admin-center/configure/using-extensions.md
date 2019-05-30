@@ -7,12 +7,12 @@ author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 6091edd7aa7f790f6029ca6b6ae402bf1b7e61ca
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: c775dd5a3011115bbb031c0b9e4e24a8911d378e
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877023"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63748407"
 ---
 # <a name="install-and-manage-extensions"></a>インストールして、拡張機能の管理
 
@@ -85,9 +85,6 @@ $feedUrlBase = "https://aka.ms/sme-extension-feed"
 >適用先:Windows Admin Center、Windows Admin Center プレビュー
 
 Windows Admin Center プレビューには、ゲートウェイの拡張機能を管理する PowerShell モジュールが含まれています。
-
->[!IMPORTANT]
->PowerShell モジュールを使用してゲートウェイの拡張機能の管理と、Windows Admin Center は、Windows server ゲートウェイのサービスとしてデプロイされている場合にのみサポートされます。
 
 ```powershell
 # Add the module to the current session

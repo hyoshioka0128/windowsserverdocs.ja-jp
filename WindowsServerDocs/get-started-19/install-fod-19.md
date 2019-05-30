@@ -9,13 +9,13 @@ author: jasongerend
 ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.date: 05/24/2019
-ms.openlocfilehash: c9af38720df79918bed3404995e81a7f93a10744
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.date: 05/29/2019
+ms.openlocfilehash: e76b7862549814d5453717c40cec45e341141d7a
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222896"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308602"
 ---
 # <a name="server-core-app-compatibility-feature-on-demand-fod"></a>Server Core アプリ互換性オンデマンド機能 (FOD)
 
@@ -156,7 +156,7 @@ Windows Server を実行しているサーバー、1903 およびそれ以降の
 1. Windows コンピューター上のローカル フォルダーには、Windows Server および Server FOD ISO イメージ ファイルをダウンロードします。
 
    - ボリューム ライセンスがある場合から Windows Server および Server FOD ISO イメージ ファイルをダウンロードすることができます、[ボリューム ライセンス サービス センター](https://www.microsoft.com/Licensing/servicecenter/default.aspx)します。
-   - Server FOD ISO イメージ ファイルはできるも、 [Microsoft Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server)か、または、 [Visual Studio ポータル](https://visualstudio.microsoft.com)サブスクライバー。
+   - Server FOD ISO イメージ ファイルは、長期的なサービス チャネルのリリースにも使用可能な[Microsoft Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server)か、または、 [Visual Studio ポータル](https://visualstudio.microsoft.com)サブスクライバー。
 
 2. 管理者として PowerShell セッションを開き、ドライブとしてイメージ ファイルをマウントし、次のコマンドを使用します。
 

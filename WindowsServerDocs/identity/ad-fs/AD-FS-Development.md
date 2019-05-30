@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 984ba6993f63aa5bf22a25e4276f6d1b5e7d14ab
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: b0a829cd8dd69d2e3080435ba0e4d1f56fe0e14e
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192548"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308586"
 ---
 # <a name="ad-fs-development"></a>AD FS の開発
 
@@ -22,6 +22,7 @@ ms.locfileid: "66192548"
 このドキュメントには、すべての AD FS の開発については、ドキュメントのチュートリアルの一覧が含まれています。 これには、次のデータが含まれます。  
   
  
+- [AD FS のカスタム認証方法を構築します。](../ad-fs/development/ad-fs-build-custom-auth-method.md)
 
 - [AD FS 2019 リスク評価のモデルでは、プラグインのビルドします。](../ad-fs/development/ad-fs-risk-assessment-model.md)
   

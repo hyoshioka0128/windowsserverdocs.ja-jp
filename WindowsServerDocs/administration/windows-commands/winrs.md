@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9224e2572d7d5efded149cd113730dabc1624299
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: c54a747f4dde1113fa735c1408f48dbfaf2e74dc
+ms.sourcegitcommit: 39ab8041d166e6817a95417d6aa30bc7abeeef54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843613"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66260271"
 ---
 # <a name="winrs"></a>winrs
 
@@ -32,10 +32,10 @@ winrs [/<parameter>[:<value>]] <command>
 ### <a name="parameters"></a>パラメーター  
 |パラメーター|説明|  
 |-------|--------|  
-|[/remote]:\<endpoint>|NetBIOS 名または標準の接続を使用して、ターゲット エンドポイントを指定します。<br /><br />-   <url>: [\<トランスポート >://]\<ターゲット > [:\<ポート >]<br /><br />指定しない場合、 **/r:localhost**使用されます。|  
-|/暗号化されていない]|リモート シェルにメッセージは暗号化されませんを指定します。 これはトラブルシューティングや、ネットワーク トラフィックが暗号化を使用して既にときに役立ちます。 **ipsec**、物理的なセキュリティを適用するタイミングまたはします。<br /><br />既定では、Kerberos または NTLM のキーを使用して、メッセージが暗号化されます。<br /><br />このコマンド ライン オプションには、HTTPS トランスポートを選択した場合は無視されます。|  
-|/username]:\<username>|コマンドラインでユーザー名を指定します。<br /><br />指定しない場合、ツールは、名前のネゴシエート認証またはプロンプトが使用されます。<br /><br />場合 **/username**が指定されている **/password**も指定する必要があります。|  
-|/password]:\<password>|コマンドラインでパスワードを指定します。<br /><br />場合 **/password**が指定されていませんが、 **/username**は、ツールでは、パスワードが求められます。<br /><br />場合 **/password**が指定されている **/username**も指定する必要があります。|  
+|/remote:\<endpoint>|NetBIOS 名または標準の接続を使用して、ターゲット エンドポイントを指定します。<br /><br />-   <url>: [\<トランスポート >://]\<ターゲット > [:\<ポート >]<br /><br />指定しない場合、 **/r:localhost**使用されます。|  
+|暗号化されていない/|リモート シェルにメッセージは暗号化されませんを指定します。 これはトラブルシューティングや、ネットワーク トラフィックが暗号化を使用して既にときに役立ちます。 **ipsec**、物理的なセキュリティを適用するタイミングまたはします。<br /><br />既定では、Kerberos または NTLM のキーを使用して、メッセージが暗号化されます。<br /><br />このコマンド ライン オプションには、HTTPS トランスポートを選択した場合は無視されます。|  
+|/username:\<username>|コマンドラインでユーザー名を指定します。<br /><br />指定しない場合、ツールは、名前のネゴシエート認証またはプロンプトが使用されます。<br /><br />場合 **/username**が指定されている **/password**も指定する必要があります。|  
+|/password:\<password>|コマンドラインでパスワードを指定します。<br /><br />場合 **/password**が指定されていませんが、 **/username**は、ツールでは、パスワードが求められます。<br /><br />場合 **/password**が指定されている **/username**も指定する必要があります。|  
 |/timeout:\<seconds>|このオプションは非推奨とされます。|  
 |/directory:\<path>|リモート シェルを開始するディレクトリを指定します。<br /><br />リモート シェルは、環境変数で定義されているユーザーのホーム ディレクトリで開始されている指定しない場合、 **%userprofile%** します。|  
 |/environment:\<文字列 > =<value>|シェルのシェルを起動する既定の環境の変更を許可する場合に設定される 1 つの環境変数を指定します。<br /><br />このスイッチの複数の発生は、複数の環境変数を指定するために使用する必要があります。|  
@@ -87,5 +87,5 @@ winrs /r:myserver /ad /u:administrator /p:$%fgh7 dir \\anotherserver\share
 ```  
 
 ## <a name="additional-references"></a>その他の参照情報  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  
   
