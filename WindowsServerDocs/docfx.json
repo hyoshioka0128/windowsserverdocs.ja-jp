@@ -8,6 +8,7 @@
         ],
         "exclude": [
           "**/obj/**",
+          "**/includes/**",
           "windows-server/**"
         ]
       }
@@ -30,15 +31,15 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-        "uhfHeaderId": "MSDocsHeader-WindowsIT", 
-		"breadcrumb_path": "/windows-server/breadcrumbs/toc.json",
-    "extendBreadcrumb":  true,
-		"_op_documentIdPathDepotMapping": {
-			"./": {
-			  "depot_name": "WS.WindowsServerDocs"
-			}
-		}
-	},
+      "uhfHeaderId": "MSDocsHeader-WindowsIT",
+      "breadcrumb_path": "/windows-server/breadcrumbs/toc.json",
+      "extendBreadcrumb": true,
+      "_op_documentIdPathDepotMapping": {
+        "./": {
+          "depot_name": "WS.WindowsServerDocs"
+        }
+      }
+    },
     "fileMetadata": {
       "feedback_product_url": {
         "manage/windows-admin-center/*.md": "http://aka.ms/wacfeedback",
@@ -48,7 +49,6 @@
     "template": [
       null
     ],
-    "dest": "windows-server",
-    "markdownEngineName": "dfm"
+    "dest": "windows-server"
   }
 }
