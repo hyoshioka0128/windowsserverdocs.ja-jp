@@ -10,12 +10,12 @@ ms.date: 03/16/2018
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: 1a4d28e168e7ce328ac125d12a07cb0c133e2d0e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fc87bf87a79f5f7e13069ad1a58be0dc940a558e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852123"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447778"
 ---
 # <a name="top-support-solutions-for-windows-server"></a>Windows Server 向けの上位のサポート ソリューション
 
@@ -84,10 +84,9 @@ Microsoft では Windows Server 用の更新プログラムとソリューショ
                         <p><a href="https://technet.microsoft.com/library/ee939272.aspx">キー管理サービス (KMS) のトラブルシューティングを行う方法</a></p>
 <hr>
                         <p><a href="https://technet.microsoft.com/library/ff793439.aspx">ボリューム ライセンス認証のトラブルシューティング</a></p>
-<hr>                       
-                        <p><a href="https://technet.microsoft.com/library/ff793399.aspx">ライセンス認証エラー コード</a></p>
+<hr><br/>                        <p><a href="https://technet.microsoft.com/library/ff793399.aspx">ライセンス認証エラー コード</a></p>
 <hr>
-                        <p><a href="https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess">Windows のインストールが失敗エラーで"入力されたプロダクト キーと一致しませんインストール可能な Windows イメージのいずれか。別のプロダクト キーを入力してください"</a></p>
+                        <p><a href="https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess">Windows のインストールがエラーで失敗する&quot;入力されたプロダクト キーはインストール可能な Windows イメージのいずれか一致しません。別のプロダクト キーを入力します。&quot;</a></p>
                     </div>
                 </div>
             </div>
@@ -113,7 +112,7 @@ Microsoft では Windows Server 用の更新プログラムとソリューショ
 <hr>
                         <p><a href="https://support.microsoft.com/kb/255504">Ntdsutil.exe を使用して、ドメイン コント ローラーに FSMO の役割を強制または転送するには</a></p>
 <hr>
-                        <p><a href="../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md">ドメイン コント ローラーの展開のトラブルシューティング</a></p>
+                        <p><a href="../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md">ドメイン コントローラーの展開のトラブルシューティング</a></p>
 <hr>
                         <p><a href="https://msdn.microsoft.com/library/bb727058.aspx">Active Directory インストール ウィザードの問題のトラブルシューティング</a></p>
 <hr>
@@ -138,10 +137,9 @@ Microsoft では Windows Server 用の更新プログラムとソリューショ
                         <a href="/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup">Azure Active Directory での Windows ドメイン参加済みデバイスの自動登録を構成する方法</a>
 <hr>
                         <p><a href="/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup#step-2-setup-issuance-of-claims">要求の発行をセットアップします。</a></p>
-<hr>  
-                        <p><a href="../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md">LDAP ディレクトリに格納されているユーザーの認証に AD FS を構成します。</a></p>
+<hr><br/>                        <p><a href="../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md">LDAP ディレクトリに保存されたユーザーを認証するように AD FS を構成する</a></p>
 <hr>
-                        <p><a href="../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md">AD FS で証明書の認証の代替ホスト名バインドのサポートします。</a></p>
+                        <p><a href="../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md">AD FS での証明書認証のための代替ホスト名バインドのサポート</a></p>
 <hr>
                         <p><a href="https://blogs.technet.microsoft.com/tspring/2017/01/20/federated-to-microsoft-cloud-and-account-lockouts/">パスワード攻撃から保護</a>
                         <a href="../identity/ad-fs/deployment/upgrading-to-ad-fs-in-windows-server-2016.md">WID データベースを使用して Windows Server 2016 での AD FS へのアップグレード</a></p>

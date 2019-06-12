@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a907da52e773f85f0495681c21a55b3a8013e34e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8b77bb80238ee63cc0d71d88592d75850720e33b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889823"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440524"
 ---
 # <a name="using-the-get-allnamespaces-command"></a>Get AllNamespaces コマンドを使用してください。
 
@@ -35,29 +35,31 @@ Windows Server 2008 R2:
 wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/details:Clients] [/ExcludedeletePending]
 ```
 ## <a name="parameters"></a>パラメーター
-|パラメーター|Windows Server 2008|Windows Server 2008 R2|
-|-------|------------|-------------|
-|[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。||
-|[/ContentProvider:<name>]|名前空間が、指定したコンテンツ プロバイダーに対してのみ表示されます。||
-|[/ショー: クライアント]|Windows Server 2008 のみサポートされます。 名前空間に接続されているクライアント コンピューターに関する情報を表示します。||
-|[/details:Clients]|Windows Server 2008 R2 のみサポートされます。 名前空間に接続されているクライアント コンピューターに関する情報を表示します。||
-|[/ExcludedeletePending]|一覧から任意の非アクティブ化された転送を除外します。||
+
+|         パラメーター         |                                                                               Windows Server 2008                                                                               | Windows Server 2008 R2 |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
+|  [/Server:<Server name>]  | サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。 |                        |
+| [/ContentProvider:<name>] |                                                        名前空間が、指定したコンテンツ プロバイダーに対してのみ表示されます。                                                         |                        |
+|      [/ショー: クライアント]      |                            Windows Server 2008 のみサポートされます。 名前空間に接続されているクライアント コンピューターに関する情報を表示します。                             |                        |
+|    [/details:Clients]     |                           Windows Server 2008 R2 のみサポートされます。 名前空間に接続されているクライアント コンピューターに関する情報を表示します。                           |                        |
+|  [/ExcludedeletePending]  |                                                              一覧から任意の非アクティブ化された転送を除外します。                                                              |                        |
+
 ## <a name="BKMK_examples"></a>例
 すべての名前空間を表示するには、次のように入力します。
 ```
 wdsutil /Get-AllNamespaces
 ```
 非アクティブ化するものを除くすべての名前空間を表示するには、次のように入力します。
--   Windows Server 2008
-    ```
-    wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:"MyContentProv" /Show:Clients /ExcludedeletePending
-    ```
--   Windows Server 2008 R2
-    ```
-    wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:"MyContentProv" /details:Clients /ExcludedeletePending
-    ```
-#### <a name="additional-references"></a>その他の参照
-[コマンドライン構文のポイント](command-line-syntax-key.md)
-[新しい名前空間のコマンドを使用して](using-the-new-namespace-command.md)
-[名前空間の削除 コマンドを使用して](using-the-remove-namespace-command.md)
-[サブコマンド: 名前空間の開始](subcommand-start-namespace.md)
+- Windows Server 2008
+  ```
+  wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:"MyContentProv" /Show:Clients /ExcludedeletePending
+  ```
+- Windows Server 2008 R2
+  ```
+  wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:"MyContentProv" /details:Clients /ExcludedeletePending
+  ```
+  #### <a name="additional-references"></a>その他の参照
+  [コマンドライン構文のポイント](command-line-syntax-key.md)
+  [新しい名前空間のコマンドを使用して](using-the-new-namespace-command.md)
+  [名前空間の削除 コマンドを使用して](using-the-remove-namespace-command.md)
+  [サブコマンド: 名前空間の開始](subcommand-start-namespace.md)

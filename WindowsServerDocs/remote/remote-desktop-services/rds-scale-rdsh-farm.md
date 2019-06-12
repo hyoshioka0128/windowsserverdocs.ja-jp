@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: d243994a68c0bf4f0584f68475a185acb9cb73d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 0e3852b4ea5f1080a3798c0806e5c87ca808c3be
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865493"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446524"
 ---
 # <a name="scale-out-your-remote-desktop-services-deployment-by-adding-an-rd-session-host-farm"></a>RD セッション ホスト ファームを追加してスケール アウト、リモート デスクトップ サービス展開
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 リモート デスクトップ セッション ホスト (RDSH) ファームを追加することによって、RDS デプロイのスケールと可用性を向上できます。   
   
@@ -39,8 +39,8 @@ ms.locfileid: "59865493"
    3. ドメイン管理者の資格情報を入力します。 
    4. サーバーまたは vm を再起動します。
 4. ファームに新しい RD セッション ホストを追加します。
->[!NOTE] 
-> 手順 1、RDM の仮想マシンのパブリック IP アドレスを作成、RDM の vm を使用している場合、割り当てられた IP アドレスが既にがない場合にのみ必要です。
+   >[!NOTE] 
+   > 手順 1、RDM の仮想マシンのパブリック IP アドレスを作成、RDM の vm を使用している場合、割り当てられた IP アドレスが既にがない場合にのみ必要です。
    
    1. リモート デスクトップ管理サービス (RDM) を実行する仮想マシンのパブリック IP アドレスを作成します。 RDM の仮想マシンは、RD 接続ブローカーの役割の最初のインスタンスを実行する仮想マシンを通常になります。  
        1. Azure portal のをクリックして**参照 > リソース グループ**展開のリソース グループ をクリックしておよび RDM 仮想マシン (たとえば、Contoso-Cb1) をクリックします。  

@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: e3b44dbc1c869680db91f5e9732a50504d80e7b8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6dda30bd15bedab8ea5ca8ca2e9597e1cc196e43
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877503"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443055"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>ドメイン コントローラーを Windows Server 2012 R2 または Windows Server 2012 にアップグレードする
 
@@ -76,7 +76,7 @@ Windows Update は Windows 8 および Windows Server 2012 の自動メンテナ
 |-----------|---------------|  
 |[ワークプ レース ジョイン](https://technet.microsoft.com/library/dn280945.aspx)|インフォメーション ワーカーが企業のリソースとサービスにアクセスするために、個人のデバイスを社内コンピューターの一部として参加させることができるようにします。|  
 |[Web アプリケーション プロキシ](https://technet.microsoft.com/library/dn280942.aspx)|新しいリモート アクセス役割サービスを使って Web アプリケーションへのアクセスを提供します。|  
-|[Active Directory フェデレーション サービス](https://technet.microsoft.com/library/hh831502.aspx)|AD FS では、展開が簡素化され、ユーザーが個人のデバイスからリソースにアクセスできるようにすると共に、IT 部門がアクセス制御を行うことを支援できるようにするための機能が強化されています。|  
+|[Active Directory フェデレーション サービス (AD FS)](https://technet.microsoft.com/library/hh831502.aspx)|AD FS では、展開が簡素化され、ユーザーが個人のデバイスからリソースにアクセスできるようにすると共に、IT 部門がアクセス制御を行うことを支援できるようにするための機能が強化されています。|  
 |[SPN と UPN の一意性](https://technet.microsoft.com/library/dn535779.aspx)|Windows Server 2012 R2 搭載のドメイン コントローラーは、重複するサービス プリンシパル名 (SPN) とユーザー プリンシパル名 (UPN) の作成をブロックします。|  
 |[Winlogon 自動再起動サインオン (ARSO)](https://technet.microsoft.com/library/dn535772.aspx)|Windows 8.1 デバイス上でロック画面アプリケーションを再起動して利用できるようにします。|  
 |[TPM キーの構成証明](https://technet.microsoft.com/library/dn581921.aspx)|証明書要求者の秘密キーがトラステッド プラットフォーム モジュール (TPM) によって実際に保護されることを、発行済みの証明書において CA が暗号によって証明できるようにします。|  
@@ -127,7 +127,7 @@ Windows Update は Windows 8 および Windows Server 2012 の自動メンテナ
 |**Scenario**|**推奨される構成**|  
 |**WSUS の管理**<br /><br />-毎週 1 回の更新プログラムをインストールします。<br />-午後 11 時で金曜日を再起動します。|コンピューターを自動インストールに設定し、希望の時間まで自動再起動を禁止する<br /><br />**ポリシー**:自動更新を構成する (有効)<br /><br />自動更新の構成:4 - 自動ダウンロードしインストール日時を指定<br /><br />**ポリシー**:ログオンしているユーザー (無効) に自動的に再起動しません。<br /><br />**WSUS 期限**: 金曜日の 23:00 に設定する|  
 |**WSUS の管理**<br /><br />-異なる時間/日の間でのインストールをずらす|一緒に更新する必要のあるさまざまなコンピューター グループのターゲット グループを設定する<br /><br />前のシナリオに対して上記の手順を使用する<br /><br />さまざまなターゲット グループに対して異なる期限を設定する|  
-|**WSUS で管理されていない - 期限のサポートなし**<br /><br />-異なる時点でのインストールをずらす|**ポリシー**:自動更新を構成する (有効)<br /><br />自動更新の構成:4 - 自動ダウンロードしインストール日時を指定<br /><br />**レジストリ キー:** Microsoft サポート技術情報の記事で説明されているレジストリ キーを有効にする[2835627](https://support.microsoft.com/kb/2835627)<br /><br />**ポリシー:** 自動メンテナンス ランダム遅延 (有効)<br /><br />次の動作になるように、**[定期メンテナンス ランダム遅延]** を [PT6H] (6 時間のランダム遅延) に設定する。<br /><br />-更新プログラムが構成されたメンテナンス時間を足したものランダムな遅延にインストールされます。<br /><br />-各マシン実行ちょうど 3 日後の再起動します。<br /><br />または、コンピューターのグループごとに異なるメンテナンス時刻を設定する|  
+|**WSUS で管理されていない - 期限のサポートなし**<br /><br />-異なる時点でのインストールをずらす|**ポリシー**:自動更新を構成する (有効)<br /><br />自動更新の構成:4 - 自動ダウンロードしインストール日時を指定<br /><br />**レジストリ キー:** Microsoft サポート技術情報の記事で説明されているレジストリ キーを有効にする[2835627](https://support.microsoft.com/kb/2835627)<br /><br />**ポリシー:** 自動メンテナンス ランダム遅延 (有効)<br /><br />次の動作になるように、 **[定期メンテナンス ランダム遅延]** を [PT6H] (6 時間のランダム遅延) に設定する。<br /><br />-更新プログラムが構成されたメンテナンス時間を足したものランダムな遅延にインストールされます。<br /><br />-各マシン実行ちょうど 3 日後の再起動します。<br /><br />または、コンピューターのグループごとに異なるメンテナンス時刻を設定する|  
 
 Windows エンジニアリング チームがこれらの変更点を実装した理由の詳細については、 [Windows Update での自動更新後の再起動の最小化](http://blogs.msdn.com/b/b8/archive/2011/11/14/minimizing-restarts-after-automatic-updating-in-windows-update.aspx)に関する投稿を参照してください。  
 
@@ -150,8 +150,8 @@ AD DS に関連する変更がいくつかあります。
    - Adprep.exe のバージョンは 1 つだけになりました。Windows Server 2008 以降を搭載の 64 ビットのサーバーで、必要に応じて実行できます。 リモートで実行することもでき、対象の操作マスターの役割が 32 ビットのオペレーティング システムまたは Windows Server 2003 でホストされている場合は、リモートで実行する必要があります。  
 - **Dcpromo.exe の廃止**
    - Windows Server 2012 でのみ実行できます応答ファイル、またはコマンド ライン パラメーターを新しい Windows PowerShell インストール オプションへの移行に期間を設けるが、Dcpromo は非推奨です。  
--   **ユーザー アカウントに対する LMHash の無効化にします。**
-   - Windows Server 2008、Windows Server 2008 R2、および Windows Server 2012 のセキュリティ テンプレートに用意されているセキュリティの既定値では、Windows 2000 および Windows Server 2003 ドメイン コントローラーのセキュリティ テンプレートで無効になっている NoLMHash ポリシーが有効になります。 LMHash に依存するクライアントについては、サポート技術情報の記事 [946405](https://support.microsoft.com/kb/946405)に記載されている手順に従い、必要に応じて NoLMHash ポリシーを無効にしてください。  
+- **ユーザー アカウントに対する LMHash の無効化にします。**
+  - Windows Server 2008、Windows Server 2008 R2、および Windows Server 2012 のセキュリティ テンプレートに用意されているセキュリティの既定値では、Windows 2000 および Windows Server 2003 ドメイン コントローラーのセキュリティ テンプレートで無効になっている NoLMHash ポリシーが有効になります。 LMHash に依存するクライアントについては、サポート技術情報の記事 [946405](https://support.microsoft.com/kb/946405)に記載されている手順に従い、必要に応じて NoLMHash ポリシーを無効にしてください。  
 
 Windows Server 2008 以降では、ドメイン コント ローラーはまた、Windows Server 2003 または Windows 2000 を実行するドメイン コント ローラーと比べ、次の既定のセキュリティ設定をあります。
 

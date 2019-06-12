@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38582706dfa5db2b5069415b81dafc533c8a89b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a5ed2ef8b1d0238a3608dabdd165a255855a304d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822103"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440876"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -68,102 +68,101 @@ tsecimp /d
         各**行**要素を設定できます、**削除**属性。 この属性を設定する場合は、ユーザーにその回線デバイスが不要になった割り当てられます。 この属性が設定されていない場合、ユーザーはその回線デバイスへのアクセスを取得します。 回線デバイスがユーザーに使用できない場合、エラーは表示されません。
 
 ## <a name="examples"></a>例
--   次のサンプル XML のコード セグメントでは、上記で定義された要素の正しい使用法について説明します。  
-    -   次のコードは、User1 に割り当てられたすべての回線デバイスを削除します。  
-        ```
-        <UserList>
-          <User NoMerge="1">
-            <DomainUser>domain1\user1</DomainUser>
-          </User>
-        </UserList>
-        ```  
-    -   次のコードは、アドレス 99999 の回線が 1 つを割り当てる前に、User1 に割り当てられているすべての回線デバイスを削除します。 User1 には、割り当てられているすべての回線デバイスが以前に割り当てられたかどうかに関係なく、他の回線デバイスはありません。  
-        ```
-        <UserList>
-          <User NoMerge="1">
-            <DomainUser>domain1\user1</DomainUser>
-            <FriendlyName>User1</FriendlyName>
-            <LineList>
-              <Line>
-                <Address>99999</Address>
-              </Line>
-            </LineList>
-          </User>
-        </UserList>
-        
-        ```  
-    -   次のコードでは、以前に割り当てられた回線デバイスを削除することがなく、User1 の 1 つの回線デバイスを追加します。  
-        ```
-        <UserList>
-          <User>
-            <DomainUser>domain1\user1</DomainUser>
-            <FriendlyName>User1</FriendlyName>
-            <LineList>
-              <Line>
-                <Address>99999</Address>
-              </Line>
-            </LineList>
-          </User>
-        </UserList>
-        
-        ```  
-    -   次のコードでは、回線アドレス 99999 を追加し、User1 のアクセスから回線アドレス 88888 を削除します。  
-        ```
-        <UserList>
-          <User>
-            <DomainUser>domain1\user1</DomainUser>
-            <FriendlyName>User1</FriendlyName>
-            <LineList>
-              <Line>
-                <Address>99999</Address>
-              </Line>
-              <Line Remove="1">
-                <Address>88888</Address>
-              </Line>
-            </LineList>
-          </User>
-        </UserList>
-        
-        ```  
-    -   次のコードでは、永続的なデバイス 1000 を追加し、User1 のアクセスから 88888 を削除します。  
-        ```
-        <UserList>
-          <User>
-            <DomainUser>domain1\user1</DomainUser>
-            <FriendlyName>User1</FriendlyName>
-            <LineList>
-              <Line>
-                <PermanentID>1000</PermanentID>
-              </Line>
-              <Line Remove="1">
-                <Address>88888</Address>
-              </Line>
-            </LineList>
-          </User>
-        </UserList>
-        
-        
-        ```  
--   後に、次のサンプル出力が表示されます、 **/d** TAPI の現在の構成を表示するコマンド ライン オプションを指定します。 テレフォニー プロバイダーごとに、関連付けられた回線デバイスと、アドレスと各回線デバイスに関連付けられているユーザーは表示します。  
+- 次のサンプル XML のコード セグメントでは、上記で定義された要素の正しい使用法について説明します。  
+  - 次のコードは、User1 に割り当てられたすべての回線デバイスを削除します。  
+    ```
+    <UserList>
+      <User NoMerge="1">
+        <DomainUser>domain1\user1</DomainUser>
+      </User>
+    </UserList>
+    ```  
+  - 次のコードは、アドレス 99999 の回線が 1 つを割り当てる前に、User1 に割り当てられているすべての回線デバイスを削除します。 User1 には、割り当てられているすべての回線デバイスが以前に割り当てられたかどうかに関係なく、他の回線デバイスはありません。  
+    ```
+    <UserList>
+      <User NoMerge="1">
+        <DomainUser>domain1\user1</DomainUser>
+        <FriendlyName>User1</FriendlyName>
+        <LineList>
+          <Line>
+            <Address>99999</Address>
+          </Line>
+        </LineList>
+      </User>
+    </UserList>
+    ```  
+  - 次のコードでは、以前に割り当てられた回線デバイスを削除することがなく、User1 の 1 つの回線デバイスを追加します。  
+    ```
+    <UserList>
+      <User>
+        <DomainUser>domain1\user1</DomainUser>
+        <FriendlyName>User1</FriendlyName>
+        <LineList>
+          <Line>
+            <Address>99999</Address>
+          </Line>
+        </LineList>
+      </User>
+    </UserList>
+    ```  
+  - 次のコードでは、回線アドレス 99999 を追加し、User1 のアクセスから回線アドレス 88888 を削除します。  
+    ```
+    <UserList>
+      <User>
+        <DomainUser>domain1\user1</DomainUser>
+        <FriendlyName>User1</FriendlyName>
+        <LineList>
+          <Line>
+            <Address>99999</Address>
+          </Line>
+          <Line Remove="1">
+            <Address>88888</Address>
+          </Line>
+        </LineList>
+      </User>
+    </UserList>
+    ```  
+  - 次のコードでは、永続的なデバイス 1000 を追加し、User1 のアクセスから 88888 を削除します。  
+    ```
+    <UserList>
+      <User>
+        <DomainUser>domain1\user1</DomainUser>
+        <FriendlyName>User1</FriendlyName>
+        <LineList>
+          <Line>
+            <PermanentID>1000</PermanentID>
+          </Line>
+          <Line Remove="1">
+            <Address>88888</Address>
+          </Line>
+        </LineList>
+      </User>
+    </UserList>
+
+
+~~~
+    ```  
+~~~
+-   The following sample output appears after the **/d** command-line option is specified to display the current TAPI configuration. For each telephony provider, the associated line devices are listed, as well as the addresses and users associated with each line device.  
     ```
     NDIS Proxy TAPI Service Provider
             Line: "WAN Miniport (L2TP)"
                     Permanent ID: 12345678910
-    
+
     NDIS Proxy TAPI Service Provider
             Line: "LPT1DOMAIN1\User1"
                     Permanent ID: 12345678910
-    
+
     Microsoft H.323 Telephony Service Provider
             Line: "H323 Line"
                     Permanent ID: 123456
                     Addresses:
                             BLDG1-TAPI32
-    
+
     ```
 
-#### <a name="additional-references"></a>その他の参照情報
+#### Additional references
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[Command-Line Syntax Key](command-line-syntax-key.md)
 
-[コマンド シェルの概要](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)
+[Command shell overview](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)

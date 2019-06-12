@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e6d67eee496d19b216a4366af51ab5736229cf0
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: e38c53c3458c3f66f24ea2ddaa66febf508c4568
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476152"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442448"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>アプリケーション データ用のスケールアウト ファイル サーバーの概要
 
@@ -177,25 +177,25 @@ ms.locfileid: "65476152"
 <td>ファイル管理</td>
 <td>フォルダー リダイレクト</td>
 <td>〇</td>
-<td>非推奨*</td>
+<td>推奨されません。<em></td>
 </tr>
 <tr class="odd">
 <td>ファイル管理</td>
 <td>オフライン ファイル (クライアント側キャッシュ)</td>
 <td>〇</td>
-<td>非推奨*</td>
+<td>非推奨</em></td>
 </tr>
 <tr class="even">
 <td>ファイル管理</td>
 <td>移動ユーザー プロファイル</td>
 <td>〇</td>
-<td>非推奨*</td>
+<td>推奨されません。<em></td>
 </tr>
 <tr class="odd">
 <td>ファイル管理</td>
 <td>ホーム ディレクトリ</td>
 <td>〇</td>
-<td>非推奨*</td>
+<td>非推奨</em></td>
 </tr>
 <tr class="even">
 <td>ファイル管理</td>
@@ -256,13 +256,13 @@ ms.locfileid: "65476152"
 <tbody>
 <tr class="odd">
 <td><a href="failover-clustering.md">フェールオーバー クラスタリング</a></td>
-<td>フェールオーバー クラスターでは、スケール アウト ファイル サーバーをサポートするために Windows Server 2012 では、次の機能が追加されます。分散ネットワーク名、スケール アウト ファイル サーバー リソースの種類、クラスター共有ボリューム (CSV) 2、およびスケール アウト ファイル サーバー高可用性役割。 これらの機能に関する詳細については、次を参照してください。<a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">新機能 [リダイレクト]、Windows Server 2012 のフェールオーバー クラスタ リングの新</a>します。</td>
+<td>フェールオーバー クラスターでは、スケール アウト ファイル サーバーをサポートするために Windows Server 2012 では、次の機能が追加されます。分散ネットワーク名、スケール アウト ファイル サーバー リソースの種類、クラスター共有ボリューム (CSV) 2、およびスケール アウト ファイル サーバー高可用性役割。 これらの機能に関する詳細については、次を参照してください。<a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">何&#39;[リダイレクト]、Windows Server 2012 のフェールオーバー クラスタ リングの新</a>します。</td>
 </tr>
 <tr class="even">
 <td><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">サーバー メッセージ ブロック</a></td>
 <td>SMB 3.0 には、スケール アウト ファイル サーバーをサポートするために Windows Server 2012 では、次の機能が追加されます。SMB 透過フェールオーバー、SMB マルチ チャネルおよび SMB ダイレクトします。<br />
 <br />
-Windows Server 2012 R2 での SMB の新機能と変更された機能の詳細については、次を参照してください。 <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">Windows Server での SMB の新</a>します。</td>
+Windows Server 2012 R2 での SMB の新機能と変更された機能の詳細については、次を参照してください。<a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">何&#39;Windows Server での SMB の新</a>します。</td>
 </tr>
 </tbody>
 </table>

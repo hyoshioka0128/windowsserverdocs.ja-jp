@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08a9fad482930d353eff1c09923155a510791c9a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 99ac8736ca8223a1a444784c4cf605a973a9e4dd
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818433"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436546"
 ---
 # <a name="nslookup-set"></a>nslookup set
 
@@ -30,11 +30,13 @@ ms.locfileid: "59818433"
 set <KeyWord>[=<Value>]
 ```
 ## <a name="parameters"></a>パラメーター
-|パラメーター|説明|
-|-------|--------|
-|<KeyWord>|派生したサブコマンドを識別、**設定**サブコマンドします。 サブコマンドなど**d2 設定**のキーワードが **[ありません]** **d2**。 派生したサブコマンドの一覧については、**設定**サブコマンドを他の参照情報を参照してください。|
-|<Value>|各サブコマンド nslookup 構成設定値を指定します。|
-|{help &#124; ?}|簡単な概要を表示します。 **nslookup**サブコマンドします。|
+
+|    パラメーター    |                                                                                                                    説明                                                                                                                    |
+|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    <KeyWord>    | 派生したサブコマンドを識別、**設定**サブコマンドします。 サブコマンドなど**d2 設定**のキーワードが **[ありません]** **d2**。 派生したサブコマンドの一覧については、**設定**サブコマンドを他の参照情報を参照してください。 |
+|     <Value>     |                                                                                      各サブコマンド nslookup 構成設定値を指定します。                                                                                      |
+| {help &#124; ?} |                                                                                               簡単な概要を表示します。 **nslookup**サブコマンドします。                                                                                               |
+
 ## <a name="remarks"></a>注釈
 使用**すべて設定**現在の設定の一覧を表示します。
 ## <a name="additional-references"></a>その他の参照

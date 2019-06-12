@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 940b0931671d5f3c2137fafe4ae73b7cecd0160e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1e4b9cde10e11558aaa95edda94921144dac1f86
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821193"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441802"
 ---
 # <a name="repair"></a>修復
 
@@ -36,11 +36,11 @@ repair disk=<n> [align=<n>] [noerr]
   
 ## <a name="parameters"></a>パラメーター  
   
-|パラメーター|説明|  
-|-------|--------|  
-|ディスク\=<n>|失敗したディスク領域を置き換えるダイナミック ディスクを指定します。|  
-|配置\=<n>|すべてのボリュームまたはパーティション範囲近いシリンダー境界に揃えて配置します。 *n*キロバイト数は、 \(KB\)近いシリンダー境界にディスクの先頭から。|  
-|noerr|スクリプト専用です。 エラーが発生すると、DiskPart は、エラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|  
+| パラメーター  |                                                                                             説明                                                                                              |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ディスク\=<n>  |                                                                 失敗したディスク領域を置き換えるダイナミック ディスクを指定します。                                                                 |
+| 配置\=<n> |          すべてのボリュームまたはパーティション範囲近いシリンダー境界に揃えて配置します。 *n*キロバイト数は、 \(KB\)近いシリンダー境界にディスクの先頭から。           |
+|   noerr    | スクリプト専用です。 エラーが発生すると、DiskPart は、エラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
   
 ## <a name="remarks"></a>注釈  
   
@@ -56,7 +56,7 @@ repair disk=4
 ```  
   
 #### <a name="additional-references"></a>その他の参照  
-[コマンドライン構文キー](command-line-syntax-key.md)  
+[コマンド ライン構文の記号](command-line-syntax-key.md)  
   
 
   

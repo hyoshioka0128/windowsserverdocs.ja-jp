@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: e00322186ea34784048366bf17881af742cb4444
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: d9f07d2e6e93d4f8d198c2fc3b62c28c940bdefb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853693"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447512"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Windows シールドされた VM テンプレート ディスクを作成します。
 
@@ -98,9 +98,9 @@ VMM を使用する場合は VMM でのシールドされた VM テンプレー�
 
 3. 次に、テンプレート ディスクにインストールされているオペレーティング システムに関する情報を VMM を提供します。
 
-    a.  ライブラリ サーバーに、新しくインポートされたテンプレート ディスクを見つけ、**ライブラリ**ワークスペース。
+    a. ライブラリ サーバーに、新しくインポートされたテンプレート ディスクを見つけ、**ライブラリ**ワークスペース。
 
-    b.  ディスクを右クリックし、をクリックし、**プロパティ**します。
+    b. ディスクを右クリックし、をクリックし、**プロパティ**します。
 
     c. **オペレーティング システム**一覧を展開し、ディスクにインストールされているオペレーティング システムを選択します。 オペレーティング システムの選択を VMM に示して、VHDX が空でないこと。
 
@@ -163,10 +163,10 @@ Save-VolumeSignatureCatalog -TemplateDiskPath 'C:\temp\MyLinuxTemplate.vhdx' -Vo
 
 ## <a name="next-step"></a>次の手順
 
->[!div class="nextstepaction"]
-[シールド データ ファイルを作成します。](guarded-fabric-tenant-creates-shielding-data.md)
+> [!div class="nextstepaction"]
+> [シールド データ ファイルを作成します。](guarded-fabric-tenant-creates-shielding-data.md)
 
 ## <a name="see-also"></a>関連項目
 
 - [保護されたホストとシールドされた Vm のサービス プロバイダーの構成手順をホストしています。](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
-- [保護されたファブリックとシールドされた Vm](guarded-fabric-and-shielded-vms-top-node.md)
+- [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

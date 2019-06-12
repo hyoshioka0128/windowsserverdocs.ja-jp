@@ -12,12 +12,12 @@ ms.assetid: e427c66f-9571-4b8c-b65d-e7370d91544d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f5d3e352cd022853a1602c67c3aaf2530cfc696
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e832d35f1ae3bbdba256b3531a22f93b69cadbb3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813643"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443391"
 ---
 # <a name="troubleshooting-nano-server"></a>Nano Server のトラブルシューティング
 
@@ -43,8 +43,8 @@ Nano Server は回復コンソールを備え、ネットワーク構成エラ�
 -   一部の画面には追加機能があり、画面の最後の行に表示されています。 たとえば、ネットワーク アダプターを表示している場合、F4 キーを押すとネットワーク アダプターが無効になります。  
   
 回復コンソールでは、ネットワーク アダプターと TCP/IP の設定、ファイアウォール規則を確認して構成できます。
-> [!NOTE]  
-    > 回復コンソールでは、基本的なキーボード機能のみがサポートされます。 キーボードのライト、テンキー セクション、およびキーボード レイアウトの切り替え (CapsLock キーや NumLock キーなど) はサポートされません。 英語キーボードと英語文字セットのみがサポートされています。
+> [!NOTE]
+> 回復コンソールでは、基本的なキーボード機能のみがサポートされます。 キーボードのライト、テンキー セクション、およびキーボード レイアウトの切り替え (CapsLock キーや NumLock キーなど) はサポートされません。 英語キーボードと英語文字セットのみがサポートされています。
 
 ## <a name="accessing-nano-server-over-a-serial-port-with-emergency-management-services"></a>緊急管理サービスを使用したシリアル ポート経由での Nano Server へのアクセス  
 緊急管理サービス (EMS) では、シリアル ポート経由でターミナル エミュレーターを使用することにより、基本的なトラブルシューティングの実施、ネットワーク ステータスの取得、コンソール セッション (CMD/PowerShell を含む) の開始ができます。 このため、サーバーのトラブルシューティングを実施するうえでキーボードとモニターは不要になります。 EMS の詳細については、「[Emergency Management Services Technical Reference (緊急管理サービスのテクニカル リファレンス)](https://technet.microsoft.com/library/cc784411(v=ws.10).aspx)」を参照してください。

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f629d0879958496d1dfbedd516de1783bb0fd357
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ec47dea822c338dfe1b809c662d1e31e9a5a9703
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837013"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441333"
 ---
 # <a name="set-verbose"></a>詳細設定します。
 
@@ -34,9 +34,9 @@ set verbose {on | off}
 
 ## <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|{0} の | オフ}|詳細出力モードを有効または無効にします。|
+| パラメーター | 説明 |
+|-----------|-------------|
+|    {0} の    |    オフ}     |
 
 ## <a name="remarks"></a>注釈
 
@@ -44,4 +44,4 @@ set verbose {on | off}
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

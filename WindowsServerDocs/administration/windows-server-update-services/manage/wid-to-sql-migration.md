@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: ed6f695947fc17d2e96b5282b3a67a221bb0140d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9015bbc54a4c4bda0f691b79dbb7d3ba8ddbc4a1
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858033"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439894"
 ---
 >適用対象:Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
 
@@ -55,8 +55,8 @@ SQL Server のローカルまたはリモート インスタンスに、Windows 
 
 > [!IMPORTANT]
 > 次の手順を使用して Windows Internal Database インスタンスから、WSUS データベース (SUSDB) を切断する方法を表示する、 **sqlcmd**ユーティリティ。 詳細については、 **sqlcmd**ユーティリティを参照してください[sqlcmd ユーティリティ](https://go.microsoft.com/fwlink/?LinkId=81183)します。
-1. 管理者特権でコマンド プロンプトを開きます
-2. 使用して Windows Internal Database インスタンスからデタッチ WSUS データベース (SUSDB) には、次の SQL コマンドを実行、 **sqlcmd**ユーティリティ。
+> 1. 管理者特権でコマンド プロンプトを開きます
+> 2. 使用して Windows Internal Database インスタンスからデタッチ WSUS データベース (SUSDB) には、次の SQL コマンドを実行、 **sqlcmd**ユーティリティ。
 
 ```batchfile
         sqlcmd -S \\.\pipe\Microsoft##WID\tsql\query
@@ -70,7 +70,7 @@ SQL Server のローカルまたはリモート インスタンスに、Windows 
 
 ### <a name="copy-the-susdb-files-to-the-sql-server"></a>SUSDB ファイルを SQL Server にコピーします。
 
-1. コピー **SUSDB.mdf**と**SUSDB\_log.ldf** WID データ フォルダーから (**%systemdrive%**\** * * Windows\WID\Data) SQL インスタンスのデータフォルダー。
+1. コピー **SUSDB.mdf**と**SUSDB\_log.ldf** WID データ フォルダーから ( **%systemdrive%** \** * * Windows\WID\Data) SQL インスタンスのデータフォルダー。
 
 > [!TIP]
 > たとえば、SQL インスタンスのフォルダーが**C:\Program files \microsoft SQL Server\MSSQL12 します。MSSQLSERVER\MSSQL**、WID データ フォルダーと**C:\Windows\WID\Data、** SUSDB ファイルのコピー **C:\Windows\WID\Data**に**C:\Program files \microsoft SQL Server\MSSQL12. します。MSSQLSERVER\MSSQL\Data**
@@ -111,7 +111,7 @@ SQL Server のローカルまたはリモート インスタンスに、Windows 
 **NT authority \network SERVICE**アカウントの一覧を表示する必要があります。 そうでない場合は、新しいログイン名を追加することで追加する必要があります。
 
 > [!IMPORTANT]
-> 形式で、WSUS サーバーのコンピューター アカウントを一覧表示する SQL インスタンスが WSUS から別のコンピューター上にある場合は、 **[FQDN]\\[WSUSComputerName] $** します。  場合は、次の手順を使用して、追加することができます、置き換える**NT authority \network SERVICE** 、WSUS サーバーのコンピューター アカウントを使用して (**[FQDN]\\[WSUSComputerName] $**)なります***に加えて***に権限を付与**NT authority \network SERVICE**
+> 形式で、WSUS サーバーのコンピューター アカウントを一覧表示する SQL インスタンスが WSUS から別のコンピューター上にある場合は、 **[FQDN]\\[WSUSComputerName] $** します。  場合は、次の手順を使用して、追加することができます、置き換える**NT authority \network SERVICE** 、WSUS サーバーのコンピューター アカウントを使用して ( **[FQDN]\\[WSUSComputerName] $** )なります***に加えて***に権限を付与**NT authority \network SERVICE**
 
 ##### <a name="adding-nt-authoritynetwork-service-and-granting-it-rights"></a>NT authority \network SERVICE を追加して、許可の権限します。
 
@@ -150,7 +150,7 @@ SQL Server のローカルまたはリモート インスタンスに、Windows 
     > ![Image11](images/image11.png)
 
 4. **ユーザー マッピング**] ページで、[、 **SUSDB**下データベース **「このログインにマップされたユーザー」**
-5. 確認**webservice**下、 **"データベース ロールのメンバーシップ。SUSDB"**: ![image12](images/image12.png)
+5. 確認**webservice**下、 **"データベース ロールのメンバーシップ。SUSDB"** : ![image12](images/image12.png)
 6. クリックして**OK**設定を保存します。
     > [!NOTE]
     > 変更を有効にする SQL サービスを再起動する必要があります。
@@ -160,7 +160,7 @@ SQL Server のローカルまたはリモート インスタンスに、Windows 
 > [!IMPORTANT]
 > 慎重にこのセクションの手順に従います。 誤ってレジストリを変更すると、重大な問題が発生する可能性があります。 変更する前に[復元するためのレジストリをバックアップする](https://support.microsoft.com/en-us/help/322756)問題が発生した場合。
 
-1. **[スタート]** ボタンをクリックし、**[ファイル名を指定して実行]** をクリックして、「**regedit**」と入力し、**[OK]** をクリックします。
+1. **[スタート]** ボタンをクリックし、 **[ファイル名を指定して実行]** をクリックして、「**regedit**」と入力し、 **[OK]** をクリックします。
 2. 次のキーを探します。**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\UpdateServices\Server\Setup\SqlServerName**
 3. **値**テキスト ボックスに「 **[ServerName]\\[インスタンス名]** をクリックし、 **OK**。 インスタンス名が既定のインスタンスの場合は、入力 **[ServerName]** します。
 4. 次のキーを探します。**Hkey_local_machine Services\Server\Setup\Installed ロール Services\UpdateServices WidDatabase** ![image13](images/image13.png)
@@ -184,7 +184,7 @@ SQL Server のローカルまたはリモート インスタンスに、Windows 
 ## <a name="uninstalling-the-wid-role-not-recommended"></a>(非推奨)、WID の役割をアンインストールします。
 
 > [!WARNING]
-> WID の役割を削除するデータベース フォルダーを削除しても (**%SystemDrive%\Program \update Services\Database**) WSUSUtil.exe に必要なインストール後のタスク用のスクリプトを格納しています。 WID の役割をアンインストールする場合は、必ずバックアップ、 **%SystemDrive%\Program \update Services\Database**事前フォルダー。
+> WID の役割を削除するデータベース フォルダーを削除しても ( **%SystemDrive%\Program \update Services\Database**) WSUSUtil.exe に必要なインストール後のタスク用のスクリプトを格納しています。 WID の役割をアンインストールする場合は、必ずバックアップ、 **%SystemDrive%\Program \update Services\Database**事前フォルダー。
 
 PowerShell を使用します。
 

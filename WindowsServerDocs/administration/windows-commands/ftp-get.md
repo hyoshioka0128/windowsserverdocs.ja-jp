@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 798317f3921cd0e5ff12b69b972e2ea423fa6b3f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 28961ccf0ae04b52586728f9c68a9b2ca3e69b1d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816733"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438768"
 ---
 # <a name="ftp-get"></a>ftp: 取得
 
@@ -30,10 +30,12 @@ ms.locfileid: "59816733"
 get <remoteFile> [<LocalFile>]  
 ```  
 ### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
-|-------|--------|  
-|<remoteFile>|コピーするリモート ファイルを指定します。|  
-|[<LocalFile>]|ローカル コンピューターで使用するファイルの名前を指定します。 場合*ローカルファイル*が指定されていない、ファイルが指定された、 *remoteFile*名。|  
+
+|   パラメーター   |                                                              説明                                                               |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| <remoteFile>  |                                                   コピーするリモート ファイルを指定します。                                                   |
+| [<LocalFile>] | ローカル コンピューターで使用するファイルの名前を指定します。 場合*ローカルファイル*が指定されていない、ファイルが指定された、 *remoteFile*名。 |
+
 ## <a name="remarks"></a>注釈  
 **取得**コマンドと同じ、 **recv**コマンド。  
 ## <a name="BKMK_Examples"></a>例  
@@ -48,4 +50,4 @@ Get test.txt test1.txt
 ## <a name="additional-references"></a>その他の参照  
 -   [ftp: ascii](ftp-ascii.md)  
 -   [ftp: バイナリ](ftp-binary.md)  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  

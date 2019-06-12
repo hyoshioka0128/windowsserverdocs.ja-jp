@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e9a2b2162fcf11385a5a866372e57338df87c541
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7e9a5b397127e9eb88352fb4d7bc28955023d4b7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850593"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447214"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>名前空間でアクセス ベースの列挙を有効にする
 
@@ -43,7 +43,7 @@ DFS 名前空間でアクセス ベースの列挙を使うには、以下の手
 
 ## <a name="to-enable-access-based-enumeration-by-using-the-windows-interface"></a>Windows インターフェイスを使ってアクセス ベースの列挙を有効にするには
 
-1.  コンソール ツリーの **[名前空間]** ノードで、該当する名前空間を右クリックし、**[プロパティ]** をクリックします。
+1.  コンソール ツリーの **[名前空間]** ノードで、該当する名前空間を右クリックし、 **[プロパティ]** をクリックします。
 
 2.  **[詳細設定]** タブをクリックして **[この名前空間のアクセス ベースの列挙を有効にする]** チェック ボックスをオンにします。
 
@@ -68,25 +68,25 @@ Windows インターフェイスを使うかコマンド ラインを使って�
 
 2.  **[Advanced]** タブをクリックします。
 
-3.  **[DFS フォルダーに明示的なアクセス許可の表示を設定する]**、**[アクセス許可の表示を構成する]** の順にクリックします。
+3.  **[DFS フォルダーに明示的なアクセス許可の表示を設定する]** 、 **[アクセス許可の表示を構成する]** の順にクリックします。
 
 4.  **[追加]** または **[削除]** をクリックして、グループやユーザーを追加または削除します。
 
-5.  ユーザーが DFS フォルダーを表示できるようにするには、グループまたはユーザーを選択し、**[許可]** チェック ボックスをオンにします。
+5.  ユーザーが DFS フォルダーを表示できるようにするには、グループまたはユーザーを選択し、 **[許可]** チェック ボックスをオンにします。
 
-    グループまたはユーザーからフォルダーを非表示にするには、グループまたはユーザーを選択し、**[拒否]** チェック ボックスをオンにします。
+    グループまたはユーザーからフォルダーを非表示にするには、グループまたはユーザーを選択し、 **[拒否]** チェック ボックスをオンにします。
 
 ## <a name="to-control-folder-visibility-by-using-a-command-line"></a>コマンド ラインを使ってフォルダーの表示を制御するには
 
-1.  **分散ファイル システム**の役割サービスまたは**分散ファイル システム ツール**機能がインストールされたサーバーでコマンド プロンプト ウィンドウを開きます。
+1. **分散ファイル システム**の役割サービスまたは**分散ファイル システム ツール**機能がインストールされたサーバーでコマンド プロンプト ウィンドウを開きます。
 
-2.  次のコマンドでは、入力場所*&lt;DFSPath&gt;* DFS フォルダー (リンク) のパスは、 *< ドメイン\\アカウント >* グループまたはユーザー アカウントの名前を指定します *([...])* は追加のアクセス制御エントリ (Ace) に置き換えられます。
+2. 次のコマンドでは、入力場所 *&lt;DFSPath&gt;* DFS フォルダー (リンク) のパスは、 *< ドメイン\\アカウント >* グループまたはユーザー アカウントの名前を指定します *([...])* は追加のアクセス制御エントリ (Ace) に置き換えられます。
 
-    ```
-    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
-    ```
+   ```
+   dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
+   ```
 
-    たとえば、アクセス許可を持つ既存のアクセス許可を置換することができるようにする、Domain Admins と CONTOSO\\へのアクセスをトレーナー グループ Read (R)、 \\contoso.office\public\training フォルダーでは、次のコマンドを入力します。
+   たとえば、アクセス許可を持つ既存のアクセス許可を置換することができるようにする、Domain Admins と CONTOSO\\へのアクセスをトレーナー グループ Read (R)、 \\contoso.office\public\training フォルダーでは、次のコマンドを入力します。
 
    ```
    dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace 
@@ -103,7 +103,7 @@ Windows インターフェイスを使うかコマンド ラインを使って�
 
 ## <a name="see-also"></a>関連項目
 
--   [DFS Namespace を作成します。](create-a-dfs-namespace.md)
--   [Delegate Management Permissions for DFS 名前空間](delegate-management-permissions-for-dfs-namespaces.md)
+-   [DFS 名前空間を作成する](create-a-dfs-namespace.md)
+-   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)
 -   [DFS をインストールします。](https://technet.microsoft.com/library/cc731089(v=ws.11).aspx)
 -   [アクセス ベースの列挙で継承されたアクセス許可の使用](using-inherited-permissions-with-access-based-enumeration.md)

@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: ba547dff862a283b68ff105a14b14ed367891745
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fb84720b94746a3c5757037ceb5c9bc8c965ff7f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816343"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447167"
 ---
 # <a name="create-a-security-group-for-guarded-hosts-and-register-the-group-with-hgs"></a>保護されたホストのセキュリティ グループを作成し、HGS をグループに登録
 
@@ -53,8 +53,8 @@ ms.locfileid: "59816343"
 
 ## <a name="next-step"></a>次の手順
 
->[!div class="nextstepaction"]
-[構成証明書を確認します。](guarded-fabric-confirm-hosts-can-attest-successfully.md)
+> [!div class="nextstepaction"]
+> [構成証明を確認する](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 
 ## <a name="see-also"></a>関連項目

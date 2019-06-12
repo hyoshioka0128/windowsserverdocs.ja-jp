@@ -8,12 +8,12 @@ ms.prod: windows-server-threshold
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 769a4165cfd82056a904c79c41e96fb666d05e43
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2d4cdcd11e0eb334064ddefec0eda775ffccff2c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842273"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446473"
 ---
 # <a name="deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>802.1 X 有線および無線展開のサーバー証明書を展開する
 
@@ -66,8 +66,8 @@ ms.locfileid: "59842273"
 このガイドは、Windows Server 2016 で AD CS および Web サーバー (IIS) サーバーの役割を使用して、サーバー証明書をデプロイする方法について説明します。 このガイドの手順を実行するための前提条件を次に示します。  
 
 - Windows Server 2016 コア ネットワーク ガイドを使用して、コア ネットワークをデプロイする必要があります。 または既にインストールされているし、正しく機能しているネットワーク上のコア ネットワーク ガイドで提供されるテクノロジが必要です。 これらのテクノロジは、TCP/IP v4、DHCP、Active Directory ドメインのサービス (AD DS)、DNS、および NPS。  
->[!NOTE]
->Windows Server 2016 コア ネットワーク ガイドは、Windows Server 2016 テクニカル ライブラリで使用できます。 詳細については、次を参照してください。[コア ネットワーク ガイド](../../../core-network-guide/Core-Network-Guide.md)します。
+  >[!NOTE]
+  >Windows Server 2016 コア ネットワーク ガイドは、Windows Server 2016 テクニカル ライブラリで使用できます。 詳細については、次を参照してください。[コア ネットワーク ガイド](../../../core-network-guide/Core-Network-Guide.md)します。
 
 - 展開を実行する前にこの展開する準備は、このガイドの計画セクションを参照する必要があります。  
 - このガイドに記載されている順序で手順を行う必要があります。 先に進んだりしないようにし、サーバー、または、展開の展開に至るまでの手順を実行すると失敗せずに、CA を展開します。  

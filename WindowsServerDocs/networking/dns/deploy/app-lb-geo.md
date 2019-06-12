@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 806c0cdeedb44db44fc0ec5218124f516a6f70e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 9f76163e6b064ac3225ab4d755afd548e1cb720b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852553"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446412"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>地理的な場所を認識するアプリケーションの負荷分散に DNS ポリシーを使用する
 
@@ -45,7 +45,7 @@ DNS 管理者は、すべてのデータ センターの間に均等に分散環
 >[!IMPORTANT]
 >次のセクションでには、多くのパラメーターの値例にはが含まれている Windows PowerShell コマンド例にはが含まれます。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。
 
-###<a name="bkmk_clientsubnets"></a>DNS クライアントのサブネットを作成します。
+### <a name="bkmk_clientsubnets"></a>DNS クライアントのサブネットを作成します。
 
 まず、サブネットまたは北米およびヨーロッパのリージョンの IP アドレス空間を識別する必要があります。
 
@@ -61,7 +61,7 @@ DNS クライアントのサブネットは、クエリが DNS サーバーに�
     
 詳細については、次を参照してください。 [追加 DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)します。
 
-###<a name="bkmk_zscopes2"></a>ゾーンのスコープを作成します。
+### <a name="bkmk_zscopes2"></a>ゾーンのスコープを作成します。
 
 クライアントのサブネットがあると後、各データ センターの別のゾーン スコープにゾーン contosogiftservices.com をパーティション分割する必要があります。
 
@@ -85,11 +85,11 @@ DNS クライアントのサブネットは、クエリが DNS サーバーに�
 
 詳細については、次を参照してください [追加 DnsServerZoneScope。](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-###<a name="bkmk_records2"></a>レコードをゾーンのスコープに追加します。
+### <a name="bkmk_records2"></a>レコードをゾーンのスコープに追加します。
 
 今すぐゾーン スコープに web サーバーのホストを表すレコードを追加する必要があります。
 
-上記のシナリオでは、アメリカ合衆国のデータ センターのレコードが追加されました。 次の Windows PowerShell コマンドを使用すると、ヨーロッパ データ センターのゾーンのスコープにレコードを追加します。
+上記のシナリオでは、アメリカのデータ センターのレコードが追加されました。 次の Windows PowerShell コマンドを使用すると、ヨーロッパ データ センターのゾーンのスコープにレコードを追加します。
  
     
     Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "151.1.0.1" -ZoneScope "DublinZoneScope”
@@ -98,7 +98,7 @@ DNS クライアントのサブネットは、クエリが DNS サーバーに�
 
 詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
 
-###<a name="bkmk_policies2"></a>DNS ポリシーを作成します。
+### <a name="bkmk_policies2"></a>DNS ポリシーを作成します。
 
 パーティション (ゾーン スコープ) を作成したレコードを追加した後は、着信クエリをこれらのスコープに分散する DNS ポリシーを作成する必要があります。
 

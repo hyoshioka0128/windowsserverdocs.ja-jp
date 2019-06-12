@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: faec70ac-88c0-4b0a-85c7-f0fe21e28257
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: beecef692b2ac01e6cb6c36892fec16e55b08209
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f3b2eb55c11348c3abcb1ef9e234cd19ba727758
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835173"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446591"
 ---
 # <a name="step-2-configure-the-multisite-infrastructure"></a>手順 2 は、マルチサイトのインフラストラクチャを構成します。
 
@@ -61,7 +61,7 @@ ms.locfileid: "59835173"
   
 8.  Active Directory サイトとサービスを閉じます。  
   
-![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -129,9 +129,9 @@ New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"
             > [!NOTE]  
             > DNS サーバーをインストールするオプションを選択した場合に、DNS サーバーの DNS 委任を作成できませんでしたし、信頼性の高い名前解決できるように DNS サーバーに DNS 委任を手動で作成する必要がありますを示すメッセージが表示される可能性があります。 フォレスト ルート ドメインまたはツリーのルート ドメインのいずれかで、追加のドメイン コント ローラーをインストールする場合、DNS 委任を作成することはありません。 この場合は、クリックして **はい** と、メッセージは無視します。  
   
-        -   **グローバル カタログ (GC)**"既定ではこのオプションを選択します。 これにより、グローバル カタログ、読み取り専用ディレクトリ パーティションがドメイン コントローラーに追加され、グローバル カタログ検索機能が有効になります。  
+        -   **グローバル カタログ (GC)** "既定ではこのオプションを選択します。 これにより、グローバル カタログ、読み取り専用ディレクトリ パーティションがドメイン コントローラーに追加され、グローバル カタログ検索機能が有効になります。  
   
-        -   **読み取り専用ドメイン コント ローラー (RODC)**"既定では、このオプションが選択されていません。 読み取り専用です。 追加のドメイン コント ローラーになりますつまり、RODC のドメイン コント ローラー アプリケーションはします。  
+        -   **読み取り専用ドメイン コント ローラー (RODC)** "既定では、このオプションが選択されていません。 読み取り専用です。 追加のドメイン コント ローラーになりますつまり、RODC のドメイン コント ローラー アプリケーションはします。  
   
     2.  **サイト名**, 、一覧からサイトを選択します。  
   
@@ -170,7 +170,7 @@ New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"
   
 8.  必要に応じてすべてのエントリ ポイントのセキュリティ グループを作成するには、この手順を繰り返します。  
   
-![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -301,7 +301,7 @@ Add-ADGroupMember -Identity Win7_Clients_Entrypoint1 -Members CLIENT2$
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)  
   
 ### <a name="ConfigDistOptimization"></a>構成の配布の最適化  
-構成の変更を行うときに、変更は、サーバーの Gpo はリモート アクセス サーバーに伝達した後にのみ適用されます。 構成配布の時間を減らすためには、リモート アクセスを自動的に選択ハイパーリンクである書き込み可能なドメイン コント ローラー"https://technet.microsoft.com/library/cc978016.aspx"リモート アクセス サーバーのサーバーの GPO を作成するときに最も近い。  
+構成の変更を行うときに、変更は、サーバーの Gpo はリモート アクセス サーバーに伝達した後にのみ適用されます。 構成配布の時間を減らすためには、リモート アクセスを自動的に選択ハイパーリンクである書き込み可能なドメイン コント ローラー"<https://technet.microsoft.com/library/cc978016.aspx>"リモート アクセス サーバーのサーバーの GPO を作成するときに最も近い。  
   
 一部のシナリオでは、構成の配布にかかる時間を最適化するために、サーバーの GPO を管理するドメイン コント ローラーを手動で変更が必要があります。  
   

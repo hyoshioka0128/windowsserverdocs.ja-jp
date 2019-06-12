@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c7a9e95ebd36209d5729f81b7eae9e2660b3606
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3f934d8c65da939fb60c564b375699f411b7c9ac
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890693"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440837"
 ---
 # <a name="using-the-add-alldriverpackages-subcommand"></a>追加 AllDriverPackages サブコマンドを使用します。
 
@@ -34,12 +34,12 @@ WDSUTIL /Add-AllDriverPackages /FolderPath:<Folder Path> [/Server:<Server name>]
 
 ## <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|/FolderPath:\<フォルダーのパス >|ドライバ パッケージの .inf ファイルを含むフォルダーへの完全パスを指定します。|
-|[/Server:\<サーバー名 >]|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
-|[/アーキテクチャ: {x86 | ia64 | x64}]|追加するドライバー パッケージのアーキテクチャを指定します。 他のアーキテクチャ用のドライバー パッケージは無視されます。|
-|[/DriverGroup:\<グループ名 >]|パッケージの追加先となるドライバー グループの名前を指定します。|
+|          パラメーター           |                                                              説明                                                              |
+|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+|  /FolderPath:\<フォルダーのパス >  |                      ドライバ パッケージの .inf ファイルを含むフォルダーへの完全パスを指定します。                      |
+|   [/Server:\<サーバー名 >]   | サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。 |
+|     [/アーキテクチャ: {x86      |                                                                 ia64                                                                  |
+| [/DriverGroup:\<グループ名 >] |                             パッケージの追加先となるドライバー グループの名前を指定します。                             |
 
 ## <a name="BKMK_examples"></a>例
 
@@ -53,6 +53,6 @@ WDSUTIL /Add-AllDriverPackages /FolderPath:"C:\Temp\Drivers\Printers" /DriverGro
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
 
 [Add-WdsDriverPackage](https://technet.microsoft.com/library/dn283440.aspx)

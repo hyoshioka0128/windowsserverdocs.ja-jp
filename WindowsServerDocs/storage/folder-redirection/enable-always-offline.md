@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8684926beb0f0c911ac384970d15ba7d25f84079
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: ddf6a816e417c2eddff090df8dba841a894a3255
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475932"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447675"
 ---
 # <a name="enable-always-offline-mode-for-faster-access-to-files"></a>ファイルへのアクセス速度の常時オフライン モードを有効にします。
 
@@ -44,7 +44,7 @@ ms.locfileid: "65475932"
 6. **[有効]** を選びます。
 7. **オプション**ボックスで、**表示**します。 **内容の表示ウィンドウ**が表示されます。
 8. **値名**ボックスで、常にオフライン モードを有効にするファイル共有を指定します。
-9. すべてのファイル共有の常時オフライン モードを有効にするには入力 **\*** します。
+9. すべてのファイル共有の常時オフライン モードを有効にする次のように入力します。 * *\\* * *。
 10. **値**ボックスに、入力**待機時間 = 1**を 1 ミリ秒、待機時間のしきい値を設定し、選択する**OK**します。
 
 >[!NOTE]

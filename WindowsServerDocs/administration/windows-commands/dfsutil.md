@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 245f8fb2e6419d22da3e2e76eebd9f801ab90664
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 45545b4e12d31c293ead5b18b83efd50d7bc37bb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821483"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439653"
 ---
 # <a name="dfsutil"></a>dfsutil
 
@@ -53,13 +53,13 @@ command </parameter> </param2>
 オブジェクトを指定した場合\(名前空間サーバーなど\)ほとんどのコマンドがパラメーターやコマンドは、さらに必要とせず、オブジェクトに関する情報を表示するコマンドの最後に、します。 たとえば、dfsutil Root コマンドを使用する場合は、ルートに関する情報を表示するコマンドに名前空間のルートを追加できます。
 
 ## <a name="BKMK_Examples"></a>例
-<Here is where you put a detailed description of your example.>
+&lt;次に、例の詳細な説明を配置する場所を示します。&gt;
 
 ```
 This /is /the /example /of /calling /command /with /parameters
 ```
 
-<Here is where you put a detailed description of another example.>
+&lt;別の例の詳細な説明を配置する場所を示します。&gt;
 
 ```
 This /is /a:different /example
@@ -67,6 +67,6 @@ This /is /a:different /example
 
 ## <a name="additional-references"></a>その他の参照
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 

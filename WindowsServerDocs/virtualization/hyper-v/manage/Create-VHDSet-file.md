@@ -11,12 +11,12 @@ ms.technology: compute-hyper-v
 ms.assetid: 444e1496-9e5a-41cf-bfbc-306e2ed8e00a
 audience: IT Pros
 ms.reviewer: kathydav
-ms.openlocfilehash: 61f2450857cbeaffd7f75f7b259e9f9de06ba5c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a5a6f79d362b9058ca29d979457a1dcdfc0c9f82
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870403"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445691"
 ---
 # <a name="create-hyper-v-vhd-set-files"></a>HYPER-V VHD 設定ファイルを作成します。
 ファイルの VHD の設定は、Windows Server 2016 でのゲスト クラスター用の新しい共有仮想ディスク モデルです。 ファイルの VHD の設定を共有の仮想ディスクのオンライン サイズ変更をサポート、HYPER-V レプリカをサポート、およびアプリケーション整合性のチェックポイントに含めることができます。 
@@ -27,7 +27,7 @@ HYPER-V がチェックポイントのチェーンを管理するすべての側
 
 ## <a name="create-a-vhd-set-file-from-hyper-v-manager"></a>HYPER-V マネージャーから VHD の設定ファイルを作成します。
 
-1.  Hyper-V マネージャーを開きます。 **[スタート]** ボタンをクリックし、**[管理ツール]** をポイントして **[Hyper-V マネージャー]** をクリックします。
+1.  Hyper-V マネージャーを開きます。 **[スタート]** ボタンをクリックし、 **[管理ツール]** をポイントして **[Hyper-V マネージャー]** をクリックします。
 2.  操作ウィンドウで次のようにクリックします。**新規**、順にクリックします**ハード_ディスク**します。
 3.  **ディスク フォーマットの選択**] ページで、[ **VHD 設定**バーチャル ハード ディスクのフォーマットとします。
 4.  仮想ハード_ディスクをカスタマイズするウィザードの各ページの手順を続行します。 クリックすることができます**次**間を移動するか、ウィザードの各ページの左側のウィンドウにそのページに直接移動するページの名前をクリックできます。
@@ -45,20 +45,20 @@ PS c:\>New-VHD -Path c:\base.vhds -SizeBytes 10GB
 
 VHD に既存の共有 VHDX を移行するには、VM をオフラインにする必要があります。 これは、Windows PowerShell を使用して、推奨されるプロセスです。
 
-1.  VHDX を VM から削除します。 たとえばを実行します。 
-  ``` PowerShell
-  PS c:\>Remove-VMHardDiskDrive existing.vhdx
-  ```
+1. VHDX を VM から削除します。 たとえばを実行します。 
+   ``` PowerShell
+   PS c:\>Remove-VMHardDiskDrive existing.vhdx
+   ```
   
-2.  VHDX を VHD に変換します。 たとえばを実行します。
-  ``` PowerShell
-  PS c:\>Convert-VHD existing.vhdx new.vhds
-  ```
+2. VHDX を VHD に変換します。 たとえばを実行します。
+   ``` PowerShell
+   PS c:\>Convert-VHD existing.vhdx new.vhds
+   ```
   
-3.  VM に VHD を追加します。 たとえばを実行します。
-  ``` PowerShell
-  PS c:\>Add-VMHardDiskDrive new.vhds
-  ```
+3. VM に VHD を追加します。 たとえばを実行します。
+   ``` PowerShell
+   PS c:\>Add-VMHardDiskDrive new.vhds
+   ```
   
 
 

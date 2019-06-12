@@ -6,12 +6,12 @@ ms.author: joflore
 ms.date: 04/19/2018
 ms.topic: article
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 684f3418bf336af4959282e7a8c2088d22a8c8dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8a1775a40761e4a489cc39535514d75174edffa5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865133"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442991"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>HYPER-V を使用してドメイン コント ローラーの仮想化
 
@@ -191,19 +191,19 @@ Rodc の利点の 1 つ、物理的なセキュリティ保証できないなど
 
 など、HYPER-V の仮想化プラットフォームでは、さまざまな管理、保守、バックアップ、およびコンピュータを簡単に移行する便利な機能を提供します。 ただし、次の一般的な展開のプラクティスと機能は適していない仮想ドメイン コント ローラー。
 
-   - Active Directory の書き込みの耐久性を確実に展開しないでください仮想ドメイン コント ローラーのデータベース ファイル (Active Directory データベース (NTDS します。DIT)、ログ、SYSVOL) 仮想 IDE ディスクにします。 代わりに、仮想 SCSI コント ローラーに接続された 2 つ目の VHD を作成し、データベース、ログ、および SYSVOL をドメイン コント ローラーのインストール時の仮想マシンの SCSI ディスクに配置がいることを確認します。  
-   - ドメイン コント ローラーとして構成している仮想マシンでは、差分ディスク仮想ハード ディスク (Vhd) を実装しません。 これにより、以前のバージョンに戻すには簡単すぎるとパフォーマンスも低下します。 VHD の種類の詳細については、次を参照してください。[新しい仮想ハード_ディスクの作成ウィザード](https://go.microsoft.com/fwlink/?linkid=137279)します。  
-   - 新しい Active Directory ドメインとフォレスト システム準備ツール (Sysprep) を使用してにまず準備されていない Windows Server オペレーティング システムのコピーでは展開しないでください。 Sysprep を実行する方法の詳細については、次を参照してください[Sysprep (システム準備) の概要。](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)
+- Active Directory の書き込みの耐久性を確実に展開しないでください仮想ドメイン コント ローラーのデータベース ファイル (Active Directory データベース (NTDS します。DIT)、ログ、SYSVOL) 仮想 IDE ディスクにします。 代わりに、仮想 SCSI コント ローラーに接続された 2 つ目の VHD を作成し、データベース、ログ、および SYSVOL をドメイン コント ローラーのインストール時の仮想マシンの SCSI ディスクに配置がいることを確認します。  
+- ドメイン コント ローラーとして構成している仮想マシンでは、差分ディスク仮想ハード ディスク (Vhd) を実装しません。 これにより、以前のバージョンに戻すには簡単すぎるとパフォーマンスも低下します。 VHD の種類の詳細については、次を参照してください。[新しい仮想ハード_ディスクの作成ウィザード](https://go.microsoft.com/fwlink/?linkid=137279)します。  
+- 新しい Active Directory ドメインとフォレスト システム準備ツール (Sysprep) を使用してにまず準備されていない Windows Server オペレーティング システムのコピーでは展開しないでください。 Sysprep を実行する方法の詳細については、次を参照してください[Sysprep (システム準備) の概要。](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)
 
-      > [!WARNING]
-      > ドメイン コント ローラーで Sysprep を実行することはできません。
+   > [!WARNING]
+   > ドメイン コント ローラーで Sysprep を実行することはできません。
 
-   - 潜在的な更新シーケンス番号 (USN) ロールバック状況を防ぐために、追加のドメイン コント ローラーをデプロイ、既にデプロイされているドメイン コント ローラーを表す VHD ファイルのコピーを使用しないでください。 USN ロールバックの詳細については、 [USN および USN ロールバックに関するページ](#usn-and-usn-rollback)をご覧ください。
-      - Windows Server 2012 以降では、管理者は追加のドメイン コント ローラーをデプロイするときに、適切に準備する場合は、ドメイン コント ローラーのイメージを複製するには
-   - ドメイン コント ローラーを実行している仮想マシンをエクスポートする HYPER-V のエクスポート機能を使わないでください。
-      - Windows Server 2012 以降で、エクスポートとインポートのドメイン コント ローラーの仮想ゲストは非 authoritative restore のようなとして処理生成 ID の変更を検出して、複製用に構成されていません。
-      - もはやにエクスポートしたゲストを使用していないことを確認します。
-  - HYPER-V レプリケーションを使用して、ドメイン コント ローラーの 2 つ目の非アクティブなコピーを保持することがあります。 レプリケートされたイメージを起動する場合は、DC のゲスト イメージをエクスポートした後、ソースを使用するいないと同じ理由から、適切にクリーンアップを実行する必要があります。
+- 潜在的な更新シーケンス番号 (USN) ロールバック状況を防ぐために、追加のドメイン コント ローラーをデプロイ、既にデプロイされているドメイン コント ローラーを表す VHD ファイルのコピーを使用しないでください。 USN ロールバックの詳細については、 [USN および USN ロールバックに関するページ](#usn-and-usn-rollback)をご覧ください。
+   - Windows Server 2012 以降では、管理者は追加のドメイン コント ローラーをデプロイするときに、適切に準備する場合は、ドメイン コント ローラーのイメージを複製するには
+- ドメイン コント ローラーを実行している仮想マシンをエクスポートする HYPER-V のエクスポート機能を使わないでください。
+  - Windows Server 2012 以降で、エクスポートとインポートのドメイン コント ローラーの仮想ゲストは非 authoritative restore のようなとして処理生成 ID の変更を検出して、複製用に構成されていません。
+  - もはやにエクスポートしたゲストを使用していないことを確認します。
+    - HYPER-V レプリケーションを使用して、ドメイン コント ローラーの 2 つ目の非アクティブなコピーを保持することがあります。 レプリケートされたイメージを起動する場合は、DC のゲスト イメージをエクスポートした後、ソースを使用するいないと同じ理由から、適切にクリーンアップを実行する必要があります。
 
 ## <a name="physical-to-virtual-migration"></a>物理-バーチャル移行
 
@@ -244,23 +244,23 @@ HYPER-V の時刻同期プロバイダーを無効にするには、VM をシャ
 
 ドメイン コント ローラー仮想マシンのパフォーマンスを最適化し、Active Directory の書き込みの耐久性、するには、オペレーティング システム、Active Directory、および VHD ファイルを格納するため、次の推奨事項を使用します。
 
-   - **ゲスト記憶域**します。 Active Directory データベース ファイル (Ntds.dit)、ログ ファイル、およびオペレーティング システムのファイルから別の仮想ディスク上の SYSVOL のファイルを格納します。 仮想 SCSI コント ローラーに接続された 2 つ目の VHD を作成し、仮想マシンの仮想 SCSI ディスク上のデータベース、ログ、および SYSVOL を格納します。 仮想 SCSI ディスクが仮想 IDE と比較してパフォーマンスの向上を提供し、強制 Unit Access (FUA) をサポートします。 FUA により、オペレーティング システムが書き込むし、すべてのキャッシュ メカニズムをバイパスして、メディアから直接データを読み取ります。
+- **ゲスト記憶域**します。 Active Directory データベース ファイル (Ntds.dit)、ログ ファイル、およびオペレーティング システムのファイルから別の仮想ディスク上の SYSVOL のファイルを格納します。 仮想 SCSI コント ローラーに接続された 2 つ目の VHD を作成し、仮想マシンの仮想 SCSI ディスク上のデータベース、ログ、および SYSVOL を格納します。 仮想 SCSI ディスクが仮想 IDE と比較してパフォーマンスの向上を提供し、強制 Unit Access (FUA) をサポートします。 FUA により、オペレーティング システムが書き込むし、すべてのキャッシュ メカニズムをバイパスして、メディアから直接データを読み取ります。
 
-   > [!NOTE]
-   > 仮想 DC のゲストに Bitlocker を使用しようとしている場合は、追加のボリュームが「自動ロックを解除」用に構成されているかどうかを確認する必要があります。
-   > 自動構成の詳細についてはロック解除で見つかる[有効にする BitLockerAutoUnlock](https://docs.microsoft.com/powershell/module/bitlocker/enable-bitlockerautounlock)
+  > [!NOTE]
+  > 仮想 DC のゲストに Bitlocker を使用しようとしている場合は、追加のボリュームが「自動ロックを解除」用に構成されているかどうかを確認する必要があります。
+  > 自動構成の詳細についてはロック解除で見つかる[有効にする BitLockerAutoUnlock](https://docs.microsoft.com/powershell/module/bitlocker/enable-bitlockerautounlock)
 
-   - **VHD ファイルの記憶域ホスト**します。 推奨事項:VHD ファイルの記憶域の推奨事項アドレス記憶域をホストするには。 パフォーマンスを高めるためには、他のサービスや、ホストの Windows オペレーティング システムがインストールされているシステム ディスクなどのアプリケーションで頻繁に使用されるディスクに VHD ファイルを格納しないでください。 ホストのオペレーティング システムから別のパーティションには、各 VHD ファイルとその他の VHD ファイルを格納します。 理想的な構成では、別の物理ドライブ上の各 VHD ファイルを格納します。  
+- **VHD ファイルの記憶域ホスト**します。 推奨事項:VHD ファイルの記憶域の推奨事項アドレス記憶域をホストするには。 パフォーマンスを高めるためには、他のサービスや、ホストの Windows オペレーティング システムがインストールされているシステム ディスクなどのアプリケーションで頻繁に使用されるディスクに VHD ファイルを格納しないでください。 ホストのオペレーティング システムから別のパーティションには、各 VHD ファイルとその他の VHD ファイルを格納します。 理想的な構成では、別の物理ドライブ上の各 VHD ファイルを格納します。  
 
-    ホストの物理ディスク システムが満たす必要がありますも**に少なくとも 1 つ**の仮想化されたワークロード データの整合性の要件を満たすために、次の条件。  
+  ホストの物理ディスク システムが満たす必要がありますも**に少なくとも 1 つ**の仮想化されたワークロード データの整合性の要件を満たすために、次の条件。  
 
-      - システムでは、サーバー クラスのディスク (SCSI、ファイバー チャネル) を使用します。  
-      - システムは、バッテリ バックアップ キャッシュ ホスト バス アダプター (HBA) に、ディスクが接続されていることを確認します。  
-      - システムでは、記憶装置として記憶域コント ローラー (たとえば、RAID システムなど) を使用します。  
-      - システムにより、ディスクの電源が無停電電源装置 (UPS) によって保護されていることを確認します。  
-      - システムにより、ディスクの書き込みキャッシュ機能が無効になっていることを確認します。  
+   - システムでは、サーバー クラスのディスク (SCSI、ファイバー チャネル) を使用します。  
+   - システムは、バッテリ バックアップ キャッシュ ホスト バス アダプター (HBA) に、ディスクが接続されていることを確認します。  
+   - システムでは、記憶装置として記憶域コント ローラー (たとえば、RAID システムなど) を使用します。  
+   - システムにより、ディスクの電源が無停電電源装置 (UPS) によって保護されていることを確認します。  
+   - システムにより、ディスクの書き込みキャッシュ機能が無効になっていることを確認します。  
 
-   - **パススルー ディスクと VHD を固定**します。 ストレージ仮想マシンを構成する方法はたくさんあります。 VHD ファイルを使用している場合が作成されるときに、固定サイズの Vhd のメモリが割り当てられているため、固定サイズの Vhd は動的 Vhd よりも効率的です。 パススルー ディスクをどの仮想マシンは、物理記憶域メディアへのアクセスに使用できるよりでパフォーマンスを最適化します。 パススルー ディスクは、物理ディスクまたは仮想マシンにアタッチされている論理ユニット番号 (Lun) では本質的にします。 パススルー ディスクでは、スナップショット機能はサポートされません。 したがって、パススルー ディスクは、ドメイン コント ローラーとスナップショットの使用は推奨されませんので、推奨されるハード_ディスクの構成です。  
+- **パススルー ディスクと VHD を固定**します。 ストレージ仮想マシンを構成する方法はたくさんあります。 VHD ファイルを使用している場合が作成されるときに、固定サイズの Vhd のメモリが割り当てられているため、固定サイズの Vhd は動的 Vhd よりも効率的です。 パススルー ディスクをどの仮想マシンは、物理記憶域メディアへのアクセスに使用できるよりでパフォーマンスを最適化します。 パススルー ディスクは、物理ディスクまたは仮想マシンにアタッチされている論理ユニット番号 (Lun) では本質的にします。 パススルー ディスクでは、スナップショット機能はサポートされません。 したがって、パススルー ディスクは、ドメイン コント ローラーとスナップショットの使用は推奨されませんので、推奨されるハード_ディスクの構成です。  
 
 Active Directory データの破損の可能性を減らすためには、仮想 SCSI コント ローラーを使用します。
 
@@ -320,11 +320,11 @@ Windows Server 2016 HYPER-V は「運用環境のスナップショット」の�
 
 次の図に、プロセスを使用して、仮想化ドメイン コント ローラーを復元する最善の方法を決定します。
 
-![](media\virtualized-domain-controller-architecture\Dd363553.85c97481-7b95-4705-92a7-006e48bc29d0(WS.10).gif)
+![](media/virtualized-domain-controller-architecture/Dd363553.85c97481-7b95-4705-92a7-006e48bc29d0(WS.10).gif)
 
 Rodc で、復元処理と意思決定は簡単です。
 
-![](media\virtualized-domain-controller-architecture\Dd363553.4c5c5eda-df95-4c6b-84e0-d84661434e5d(WS.10).gif)
+![](media/virtualized-domain-controller-architecture/Dd363553.4c5c5eda-df95-4c6b-84e0-d84661434e5d(WS.10).gif)
 
 ## <a name="restoring-the-system-state-backup-of-a-virtual-domain-controller"></a>仮想ドメイン コント ローラーのシステム状態バックアップを復元します。
 
@@ -355,27 +355,27 @@ Rodc で、復元処理と意思決定は簡単です。
 ## <a name="to-restore-a-previous-version-of-a-virtual-domain-controller-vhd-without-system-state-data-backup"></a>システム状態データのバックアップなし仮想ドメイン コント ローラー VHD の以前のバージョンを復元するには
 
 1. 前のセクションに従って、DSRM で仮想ドメイン コント ローラーを開始する前の VHD を使用して、します。 通常モードで起動するドメイン コント ローラーは許可されません。 ドメイン コント ローラーが通常モードで起動する開始して、Windows ブート マネージャの画面が欠落する、仮想マシンの起動を完了するをオフにします。 DSRM を入力するための詳細な手順については、前のセクションを参照してください。
-2. レジストリ エディターを開きます。 レジストリ エディターを開くには、次のようにクリックします。**開始**、 をクリック**実行**、型**regedit**、ok をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、**[はい]** をクリックします。 レジストリ エディターでは、次のパスを展開します。**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス\\NTDS\\パラメーター**します。 という名前の値を探して**DSA 以前の復元数**します。 値が存在する場合は、設定のメモしてをおきます。 値がない場合は、設定は、既定値は、ゼロにします。 表示されない 1 つある場合は、値を追加しないでください。
+2. レジストリ エディターを開きます。 レジストリ エディターを開くには、次のようにクリックします。**開始**、 をクリック**実行**、型**regedit**、ok をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。 レジストリ エディターでは、次のパスを展開します。**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\サービス\\NTDS\\パラメーター**します。 という名前の値を探して**DSA 以前の復元数**します。 値が存在する場合は、設定のメモしてをおきます。 値がない場合は、設定は、既定値は、ゼロにします。 表示されない 1 つある場合は、値を追加しないでください。
 3. 右クリックし、**パラメーター**キー**新規**、順にクリックします**DWORD (32 ビット) 値**します。
 4. 新しい名前を入力**バックアップから復元されたデータベース**、し、ENTER キーを押します。
 5. 開きます作成した値をダブルクリックして、**編集 DWORD (32 ビット) 値**ダイアログ ボックスと入力し、 **1**で、**値データ**ボックス。 **エントリのバックアップから復元されたデータベース**オプションは、Windows 2000 Server Service Pack 4 (SP4)、Windows Server 2003 に含まれている更新プログラムを実行しているドメイン コント ローラーで使用可能な[を検出する方法Windows Server 2003、Windows Server 2008、および Windows Server 2008 R2 で USN ロールバックから回復し、](https://go.microsoft.com/fwlink/?linkid=137182)インストールされている、マイクロソフト サポート技術情報と Windows Server 2008 でします。
 6. 通常モードでは、ドメイン コント ローラーを再起動します。
-7. ドメイン コント ローラーを再起動すると、イベント ビューアーを開きます。 イベント ビューアーを開くには、**[スタート]** ボタンをクリックし、**[コントロール パネル]** をクリックします。次に、**[管理ツール]** をダブルクリックし、**[イベント ビューアー]** をダブルクリックします。
+7. ドメイン コント ローラーを再起動すると、イベント ビューアーを開きます。 イベント ビューアーを開くには、 **[スタート]** ボタンをクリックし、 **[コントロール パネル]** をクリックします。次に、 **[管理ツール]** をダブルクリックし、 **[イベント ビューアー]** をダブルクリックします。
 8. 展開**アプリケーションとサービス ログ**、 をクリックし、 **Directory Services**ログ。 詳細ウィンドウでイベントが表示されることを確認します。
 9. 右クリックし、 **Directory Services**ログ、クリックして**検索**します。 **検索**、型**1109**、 をクリックし、**次を検索**します。
 10. 少なくとも 1 つのイベント ID 1109 エントリが表示されます。 このエントリが表示されない場合は、次の手順に進みます。 それ以外の場合、エントリをダブルクリックし、InvocationID を更新が行われたことを確認するテキストを確認します。
 
-   ```
-   Active Directory has been restored from backup media, or has been configured to host an application partition. 
-   The invocationID attribute for this directory server has been changed. 
-   The highest update sequence number at the time the backup was created is <time>
+    ```
+    Active Directory has been restored from backup media, or has been configured to host an application partition. 
+    The invocationID attribute for this directory server has been changed. 
+    The highest update sequence number at the time the backup was created is <time>
 
-   InvocationID attribute (old value):<Previous InvocationID value>
-   InvocationID attribute (new value):<New InvocationID value>
-   Update sequence number:<USN>
+    InvocationID attribute (old value):<Previous InvocationID value>
+    InvocationID attribute (new value):<New InvocationID value>
+    Update sequence number:<USN>
 
-   The InvocationID is changed when a directory server is restored from backup media or is configured to host a writeable application directory partition.
-   ```
+    The InvocationID is changed when a directory server is restored from backup media or is configured to host a writeable application directory partition.
+    ```
 
 11. イベント ビューアーを閉じます。
 12. 値をことを確認するレジストリ エディターを使用して**DSA 以前の復元数**が 1 を足した前の値と等しい。 これは、適切な値ではありません、イベント ビューアーでイベント ID 1109 のエントリが見つからない場合は、ドメイン コント ローラーのサービス パックが現在ことを確認します。 同じ VHD でもう一度、この手順を試行することはできません。 VHD または手順 1 で最初からやり直して通常モードで開始されていない別の VHD のコピーを再実行することができます。
@@ -418,7 +418,7 @@ Usn に加えてドメイン コント ローラーをソース レプリケー�
 
 たとえば、VDC1 と DC2 が同じドメイン内の 2 つのドメイン コント ローラーであるとします。 次の図は、invocationID 値が適切な復元のような状況でリセットされると、DC2 VDC1 についての認識を示します。
 
-![](media\virtualized-domain-controller-architecture\Dd363553.ca71fc12-b484-47fb-991c-5a0b7f516366(WS.10).gif)
+![](media/virtualized-domain-controller-architecture/Dd363553.ca71fc12-b484-47fb-991c-5a0b7f516366(WS.10).gif)
 
 ## <a name="usn-rollback"></a>USN のロールバック
 
@@ -445,7 +445,7 @@ Windows Server 2008 および Windows Server 2003 SP1 では、以前に使用�
 
 次の図は、USN ロールバックが VDC2、仮想マシンで実行されている変換先のドメイン コント ローラーで検出されたときに発生するイベントの順序を示します。 この図で USN ロールバックの検出 VDC2 で検出すると発生レプリケーション パートナー VDC2 が VDC2 のデータベースがロールバックすることを示します宛先ドメイン コントローラに以前に表示された最新の USN 値を送信します。時間で不適切です。
 
-![](media\virtualized-domain-controller-architecture\\Dd363553.373b0504-43fc-40d0-9908-13fdeb7b3f14(WS.10).gif)
+![](media/virtualized-domain-controller-architecture/Dd363553.373b0504-43fc-40d0-9908-13fdeb7b3f14(WS.10).gif)
 
 ディレクトリ サービス イベント ログでは、イベント ID 2095 を報告する場合は、すぐに、次の手順を完了します。
 
@@ -470,7 +470,7 @@ USN のロールバックは、2 つの状況のいずれかで検出されな�
 
 2 番目の状況では、Usn の範囲は 2 つのさまざまな変更セットに適用されます。 これは、検出されることがなく長時間にわたって続行できます。 その時間中に作成されたオブジェクトが変更されるたびに、残留オブジェクトが検出され、イベント ビューアーでイベント ID 1988 として報告します。 次の図は、USN ロールバックがこのような状況での検出をされていない可能性がある方法を示します。
 
-![](media\virtualized-domain-controller-architecture\Dd363553.63565fe0-d970-4b4e-b5f3-9c76bc77e2d4(WS.10).gif)
+![](media/virtualized-domain-controller-architecture/Dd363553.63565fe0-d970-4b4e-b5f3-9c76bc77e2d4(WS.10).gif)
 
 ## <a name="read-only-domain-controllers"></a>読み取り専用ドメイン コント ローラー
 

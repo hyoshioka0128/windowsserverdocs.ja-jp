@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd11880b6e733850b522c3a06152ac7ce7a28841
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8c30f9ef375bdf368f81f5a69961746851a2aac8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889663"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440437"
 ---
 # <a name="using-the-get-namespace-command"></a>名前空間の get コマンドを使用してください。
 
@@ -35,22 +35,24 @@ Windows Server 2008 R2
 wdsutil /Get-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/details:Clients]
 ```
 ## <a name="parameters"></a>パラメーター
-|パラメーター|説明|
-|-------|--------|
-|/Namespace:<Namespace name>|名前空間の名前を指定します。 これは、フレンドリ名ではない、一意である必要があることに注意してください。<br /><br />展開サーバー:名前空間名の構文は/Namspace:WDS:<ImageGroup>/<ImageName>/<Index>します。 次に、例を示します。**WDS:ImageGroup1/install.wim/1**<br />-トランスポート サーバー:この値は、サーバー上で作成されたときに、名前空間に付けた名前と一致する必要があります。|
-|[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
-|[/ショー: クライアント] または [/詳細情報: クライアント]|指定した名前空間に接続されているクライアント コンピューターに関する情報を表示します。|
+
+|               パラメーター               |                                                                                                                                                                                         説明                                                                                                                                                                                          |
+|---------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|      /Namespace:<Namespace name>      | 名前空間の名前を指定します。 これは、フレンドリ名ではない、一意である必要があることに注意してください。<br /><br />展開サーバー:名前空間名の構文は/Namspace:WDS:<ImageGroup>/<ImageName>/<Index>します。 例:**WDS:ImageGroup1/install.wim/1**<br />-トランスポート サーバー:この値は、サーバー上で作成されたときに、名前空間に付けた名前と一致する必要があります。 |
+|        [/Server:<Server name>]        |                                                                                                             サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。                                                                                                              |
+| [/ショー: クライアント] または [/詳細情報: クライアント] |                                                                                                                                                  指定した名前空間に接続されているクライアント コンピューターに関する情報を表示します。                                                                                                                                                  |
+
 ## <a name="BKMK_examples"></a>例
 名前空間に関する情報を表示するには、次のように入力します。
 ```
 wdsutil /Get-Namespace /Namespace:"Custom Auto 1"
 ```
 名前空間と接続されているクライアントに関する情報を表示するには、次のいずれかを入力します。
--   Windows Server 2008: `wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:"Custom Auto 1" /Show:Clients`
--   Windows Server 2008 R2: `wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:"Custom Auto 1" /details:Clients`
-#### <a name="additional-references"></a>その他の参照
-[コマンドライン構文のポイント](command-line-syntax-key.md)
-[get AllNamespaces コマンドを使用して](using-the-get-allnamespaces-command.md)
-[新しい名前空間のコマンドを使用して](using-the-new-namespace-command.md)
-[名前空間の削除 コマンドを使用して](using-the-remove-namespace-command.md)
-[サブコマンド: 名前空間の開始](subcommand-start-namespace.md)
+- Windows Server 2008: `wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:"Custom Auto 1" /Show:Clients`
+- Windows Server 2008 R2: `wdsutil /Get-Namespace /Server:MyWDSServer /Namespace:"Custom Auto 1" /details:Clients`
+  #### <a name="additional-references"></a>その他の参照
+  [コマンドライン構文のポイント](command-line-syntax-key.md)
+  [get AllNamespaces コマンドを使用して](using-the-get-allnamespaces-command.md)
+  [新しい名前空間のコマンドを使用して](using-the-new-namespace-command.md)
+  [名前空間の削除 コマンドを使用して](using-the-remove-namespace-command.md)
+  [サブコマンド: 名前空間の開始](subcommand-start-namespace.md)

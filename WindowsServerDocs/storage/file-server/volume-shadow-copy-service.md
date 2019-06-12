@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 7b61a0494b8a63168b40bfaed42dedf0fff40c35
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d67f15d65feb28fb05fc056fd3c34c04cee80d09
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887263"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447758"
 ---
 # <a name="volume-shadow-copy-service"></a>ボリューム シャドウ コピー サービス
 
@@ -97,7 +97,7 @@ VSS の完全なソリューションでは、次の基本的な部分すべて�
 > ライターが 60 秒またはプロバイダーがシャドウ コピーをコミットする 10 秒より長くかかるかどうかよりも長く保持状態に保持した場合は、シャドウ コピーの作成を中止することができます。 
 <br>
 
-9.  依頼者は、プロセス (手順 1 に戻す移動) を再試行できますか、後で再試行するには、管理者に通知します。  
+9. 依頼者は、プロセス (手順 1 に戻す移動) を再試行できますか、後で再試行するには、管理者に通知します。  
       
 10. シャドウ コピーが正常に作成すると、ボリューム シャドウ コピー サービスは、要求元にシャドウ コピーの場所の情報を返します。 場合によっては、シャドウ コピー一時的に使用できる読み取り/書き込みボリュームとしてので、シャドウ コピーが完了する前に、その VSS と 1 つまたは複数のアプリケーションからシャドウ コピーの内容に変更することができます。 VSS と、アプリケーションは、その変更を行った後、シャドウ コピーは、読み取り専用に作成されます。 このフェーズは、自動復旧と呼ばれ、ファイル システムまたはアプリケーション トランザクションのシャドウ コピー ボリューム シャドウ コピーを作成する前に完了しなかったを元に戻すために使用されます。  
       
@@ -160,7 +160,7 @@ VSS の完全なソリューションでは、次の基本的な部分すべて�
 </tbody>
 </table>
 
-**表 1.**   シャドウ コピーを作成するコピー オン ライト メソッド
+**表 1.**    シャドウ コピーを作成するコピー オン ライト メソッド
 
 コピー オン ライト メソッドが変更されたデータのみをコピーするためのシャドウ コピーを作成するためのクイック方法です。 差分領域で、コピーした要素は、前に、変更のいずれかの状態にボリュームを復元する元のボリュームに変更されたデータと組み合わせることができます。 多くの変更がある場合は、コピー オン ライト メソッドは高価になります。
 
@@ -201,7 +201,7 @@ VSS の完全なソリューションでは、次の基本的な部分すべて�
 </tbody>
 </table>
 
-**表 2.**   シャドウ コピーの作成の書き込み時のリダイレクト メソッド
+**表 2.**    シャドウ コピーの作成の書き込み時のリダイレクト メソッド
 
 データへの変更のみをコピーするため、コピー オン ライトのメソッドと同様は、書き込み時のリダイレクト メソッドは、シャドウ コピーを作成するためクイック メソッドです。 差分領域で、コピーした要素は、データの最新の完全なコピーを作成する元のボリュームに変更されていないデータと組み合わせることができます。 多くの読み取り I/O 要求がある場合は、書き込み時のリダイレクト メソッドは高価になります。
 
@@ -376,12 +376,12 @@ VSS はボリューム全体のシャドウ コピーを作成する設計され
 
 > [!NOTE]
 > <STRONG>FilesNotToSnapshot</STRONG>レジストリ キーは、アプリケーションでのみ使用するためのものです。 これを使用しようとするユーザーには、次の制限事項が発生します。
-<br>
-<UL>
-<LI>Windows Server の以前のバージョンの機能を使用して作成されたシャドウ コピーからファイルを削除できません。<BR><BR>
-<LI>共有フォルダーのシャドウ コピーからファイルを削除できません。<BR><BR>
-<LI>使用して作成されたシャドウ コピーからファイルを削除できますが、 [Diskshadow](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow)ユーティリティを使用して作成されたシャドウ コピーからファイルを削除できません、 [Vssadmin](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin)ユーティリティ。<BR><BR>
-<LI>ベスト エフォートでシャドウ コピーからファイルが削除されます。 つまり、削除するのには保証されません。<BR><BR></LI></UL>
+> <br>
+> <UL>
+> <LI>Windows Server の以前のバージョンの機能を使用して作成されたシャドウ コピーからファイルを削除できません。<BR><BR>
+> <LI>共有フォルダーのシャドウ コピーからファイルを削除できません。<BR><BR>
+> <LI>使用して作成されたシャドウ コピーからファイルを削除できますが、 <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow)">Diskshadow</a>ユーティリティを使用して作成されたシャドウ コピーからファイルを削除できません、 <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin)">Vssadmin</a>ユーティリティ。<BR><BR>
+> <LI>ベスト エフォートでシャドウ コピーからファイルが削除されます。 つまり、削除するのには保証されません。<BR><BR></LI></UL>
 
 
 詳細については、次を参照してください。[シャドウ コピーからファイルの除外](http://go.microsoft.com/fwlink/?linkid=180904)(http://go.microsoft.com/fwlink/?LinkId=180904) msdn です。

@@ -8,12 +8,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
-ms.openlocfilehash: 4376dbb2c172a82c4ab64dc63acefbc37457110f
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: bf346844337740f7585070ff78de4e7f61f25624
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476040"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447262"
 ---
 # <a name="data-deduplication-overview"></a>データ重複除去の概要
 
@@ -69,7 +69,7 @@ ms.locfileid: "65476040"
                     <li><b>リモート アクセス</b>:ユーザーは、自宅のコンピューター、キオスク、低いハードウェア、および Windows 以外のオペレーティング システムなどのデバイスからエンタープライズ アプリケーションにアクセスできます。</li>
                     <li><b>ブランチ オフィス アクセス</b>:VDI の展開では、オフィスの従業員の一元的なデータ ストアへのアクセスを必要とする分岐のアプリケーションのパフォーマンスを向上を提供できます。 データ負荷の高いアプリケーションは、低速な接続用に最適化されたクライアント/サーバー プロトコルに対応していないことがあります。</li>
                 </ul>
-VDI 展開では、ユーザー用にリモート デスクトップを駆動する仮想ハード ディスクが実質的に同じであるためデータ重複除去の有力候補です。 さらに、データ重複除去は、いわゆる「*VDI ブート ストーム*」を軽減できます。VDI ブート ストームとは、多くのユーザーが 1 日の始まりに同時に自分のデスクトップにログオンして記憶域のパフォーマンスが低下する状況です。
+VDI 展開では、ユーザー用にリモート デスクトップを駆動する仮想ハード ディスクが実質的に同じであるためデータ重複除去の有力候補です。 さらに、データ重複除去は、いわゆる「<em>VDI ブート ストーム</em>」を軽減できます。VDI ブート ストームとは、多くのユーザーが 1 日の始まりに同時に自分のデスクトップにログオンして記憶域のパフォーマンスが低下する状況です。
             </td>
         </tr>
         <tr>
@@ -83,7 +83,7 @@ VDI 展開では、ユーザー用にリモート デスクトップを駆動す
             <td style="text-align:center;min-width:150px;vertical-align:center;"><img src="media/overview-other.png" alt="Illustration of other workloads" /></td>
             <td style="vertical-align:top">
                 <b>その他のワークロード</b><br />
-                [その他のワークロードもデータ重複除去の有力候補になります](install-enable.md#enable-dedup-candidate-workloads)。
+                <a href="install-enable.md#enable-dedup-candidate-workloads" data-raw-source="[Other workloads may also be excellent candidates for Data Deduplication](install-enable.md#enable-dedup-candidate-workloads)">その他のワークロードもデータ重複除去の有力候補になります</a>。
             </td>
         </tr>
     </tbody>

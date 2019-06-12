@@ -8,12 +8,12 @@ ms.date: 11/09/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d66cfde20060229844c34abeea85dd83b802ddad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: f52d3d237573e4ed0028e228ff80273862a0aaf2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822823"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444645"
 ---
 # <a name="device-authentication-controls-in-ad-fs"></a>AD FS でデバイス認証の制御
 次のドキュメントでは、Windows Server 2016 と 2012 R2 でデバイス認証の制御を有効にする方法を示します。
@@ -43,7 +43,7 @@ PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
 次の値があります。
  - SignedToken:PRT のみ
  - PKeyAuth:PRT + PKeyAuth
- - ClientTLS は:PRT + し clientTLS 
+ - ClientTLS は:PRT + し clientTLS
  - すべて:上記以外のすべて
 
 ご覧のとおり、PRT の一部であるすべてのデバイス認証方法は常に既定の方法に影響する場合に有効になっている`DeviceAuthenticationEnabled`に設定されている`$true`します。
@@ -53,6 +53,14 @@ PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
 ``` powershell
 PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
 ```
+
+>[!NOTE]
+> ADFS の 2019年で`DeviceAuthenticationMethod`で使用できる、`Set-AdfsRelyingPartyTrust`コマンド。
+
+``` powershell
+PS:\>Set-AdfsRelyingPartyTrust -DeviceAuthenticationMethod ClientTLS
+```
+
 >[!NOTE]
 > デバイス認証を有効にする (設定`DeviceAuthenticationEnabled`に`$true`) ことを意味、`DeviceAuthenticationMethod`に暗黙的に設定されている`SignedToken`に相当する**PRT**します。
 
@@ -60,8 +68,8 @@ PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
 ``` powershell
 PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationMethod All
 ```
->[!NOTE]
->既定のデバイスの認証方法は`SignedToken`します。  他の値は**PKeyAuth、* * *、し、ClientTLS**と**すべて**します。
+> [!NOTE]
+> 既定のデバイスの認証方法は`SignedToken`します。  他の値は**PKeyAuth、** <strong>し ClientTLS、</strong>と**すべて**します。
 
 意味、 `DeviceAuthenticationMethod` AD FS 2016 がリリースされてから、値が若干変更されました。  更新プログラムのレベルに応じて、各値の意味は、以下の表を参照してください。
 

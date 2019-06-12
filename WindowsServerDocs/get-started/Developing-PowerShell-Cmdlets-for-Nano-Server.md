@@ -12,12 +12,12 @@ author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c669db414c4f12b6145a26a75b83449f43e8918
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c3376d03a2e9f02b20aba608de0228efd7dfddea
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887683"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443618"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>Nano Server 用の PowerShell コマンドレットを開発する
 
@@ -36,8 +36,8 @@ ms.locfileid: "59887683"
   
 PowerShell は、バージョン 5.1 以降、機能セットとプラットフォーム互換性が異なるさまざまなエディションが提供されるようになりました。  
   
-- **デスクトップ エディション:**.NET Framework 上に構築され、スクリプトおよび Server Core などの Windows と Windows デスクトップの完全エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。  
-- **コア エディション:**.NET Core 上に構築され、スクリプトおよび Nano Server などの Windows や Windows IoT の縮小エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。  
+- **デスクトップ エディション:** .NET Framework 上に構築され、スクリプトおよび Server Core などの Windows と Windows デスクトップの完全エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。  
+- **コア エディション:** .NET Core 上に構築され、スクリプトおよび Nano Server などの Windows や Windows IoT の縮小エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。  
   
 PowerShell の実行中のエディションは、$PSVersionTable の PSEdition プロパティに表示されます。  
 ```powershell  
@@ -110,7 +110,7 @@ At line:1 char:1
 仮想マシンまたは物理マシンに Nano Server をインストールするためのクイックスタートおよび詳細な手順については、このトピックの親トピックである「[Nano Server のインストール](Getting-Started-with-Nano-Server.md)」を参照してください。  
   
 > [!NOTE]  
-> Nano Server 上で開発を行うには、New-NanoServerImage の -Development パラメーターを使用して Nano Server をインストールすると便利です。 これにより、署名されていないドライバーのインストール、デバッガー バイナリのコピー、デバッグ用にポートを開く操作、テスト署名、開発者用ライセンスなしでの AppX パッケージのインストールを行うことができるようになります。 次に、例を示します。  
+> Nano Server 上で開発を行うには、New-NanoServerImage の -Development パラメーターを使用して Nano Server をインストールすると便利です。 これにより、署名されていないドライバーのインストール、デバッガー バイナリのコピー、デバッグ用にポートを開く操作、テスト署名、開発者用ライセンスなしでの AppX パッケージのインストールを行うことができるようになります。 例:  
 >  
 >`New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -Development`  
   
@@ -127,9 +127,9 @@ PowerShell では、コマンドレットに対していくつかの実装の種
 * %UserProfile%\Documents\WindowsPowerShell\Modules   
 * \<製品のインストール場所 >   
     
- 次のことを理解したうえでこれらの場所を確認します。  
- * CIM コマンドレットは、拡張子が .cdxml ファイルです。  
- * .NET コマンドレットは、拡張子が .dll ファイル拡張子です。または、アセンブリが、.psd1 ファイルの RootModule、ModuleToProcess、または NestedModules フィールドの下に記載されている GAC にインストールされています。  
+  次のことを理解したうえでこれらの場所を確認します。  
+  * CIM コマンドレットは、拡張子が .cdxml ファイルです。  
+  * .NET コマンドレットは、拡張子が .dll ファイル拡張子です。または、アセンブリが、.psd1 ファイルの RootModule、ModuleToProcess、または NestedModules フィールドの下に記載されている GAC にインストールされています。  
 * PowerShell スクリプトのコマンドレットは、拡張子が .psm1 または .ps1 のファイル拡張子です。   
   
 ## <a name="porting-cim-cmdlets"></a>CIM コマンドレットの移植  
@@ -182,7 +182,7 @@ Nano Server でサポートされているネイティブ API の一覧につい
   
 ### <a name="building-c-for-nano-server"></a>Nano Server 向けの C# のビルド  
   
-Visual Studio 2015 で `New-NanoCSharpProject` を使用して作成した C# プロジェクトをビルドするには、**[ビルド]** メニューをクリックし、**[プロジェクトのビルド]** または **[ソリューションのビルド]** を選択します。 アセンブリは、Nano Server に付属する正しい CoreCLR および PowerShell Core をターゲットとして生成されます。そのため、Nano Server を実行しているコンピューターにコピーするだけでこのアセンブリを使用できます。  
+Visual Studio 2015 で `New-NanoCSharpProject` を使用して作成した C# プロジェクトをビルドするには、 **[ビルド]** メニューをクリックし、 **[プロジェクトのビルド]** または **[ソリューションのビルド]** を選択します。 アセンブリは、Nano Server に付属する正しい CoreCLR および PowerShell Core をターゲットとして生成されます。そのため、Nano Server を実行しているコンピューターにコピーするだけでこのアセンブリを使用できます。  
   
 ### <a name="building-managed-c-cppcli-for-nano-server"></a>Nano Server 向けのマネージ型 C++ (CPP/CLI) のビルド  
 マネージ型 C++ は CoreCLR ではサポートされていません。 CoreCLR に移植するには、マネージ型 C++ コードを C# で書き直し、すべてのネイティブ呼び出しを PInvoke 経由で行います。  

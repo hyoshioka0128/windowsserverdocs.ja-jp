@@ -10,12 +10,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 241b2b776a68cf5aec68a4d331201a07f0e5ea53
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f9aafaa34d5c16e45681e88b1ce60e99a9ad2842
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844653"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447095"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>パフォーマンス カウンターを使用して、リモート デスクトップ セッション ホストでのアプリ パフォーマンスの問題を診断するには
 
@@ -25,11 +25,11 @@ ms.locfileid: "59844653"
 
 次の図は、クライアントからアプリケーションにユーザー入力のフローの大まかな表現を示します。
 
-![リモート デスクトップ-アプリケーションにユーザーのリモート デスクトップ クライアントからのユーザー入力フロー](.\media\rds-user-input.png)
+![リモート デスクトップ-アプリケーションにユーザーのリモート デスクトップ クライアントからのユーザー入力フロー](./media/rds-user-input.png)
 
 ユーザーの入力遅延カウンタ (内の時間間隔) 入力キューに登録されるアプリで取得される場合と最大デルタを測定する、[従来のメッセージ ループ](https://msdn.microsoft.com/library/windows/desktop/ms644927.aspx#loop)次のフロー チャートのように。
 
-![リモート デスクトップ - ユーザー入力の遅延のパフォーマンス カウンターのフロー](.\media\rds-user-input-delay.png)
+![リモート デスクトップ - ユーザー入力の遅延のパフォーマンス カウンターのフロー](./media/rds-user-input-delay.png)
 
 このカウンターの 1 つの重要な詳細は、構成可能な時間内で最大のユーザーの入力遅延を報告します。 これは、入力に、アプリケーションは、入力などの重要なと表示の操作の速度に影響する可能性に到達するためにかかる最長時間。
 
@@ -52,13 +52,13 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 次に、サーバーを再起動します。 パフォーマンス モニターを開きし、次のスクリーン ショットに示すように、プラス記号 (+) を選択します。
 
-![リモート デスクトップのユーザーを追加する方法を示すスクリーン ショットは、遅延のパフォーマンス カウンターを入力](.\media\rds-add-user-input-counter-screen.png)
+![リモート デスクトップのユーザーを追加する方法を示すスクリーン ショットは、遅延のパフォーマンス カウンターを入力](./media/rds-add-user-input-counter-screen.png)
 
 その後、必要がありますカウンターの追加ダイアログ ボックスが表示、選択できる**プロセスごとのユーザーの入力遅延**または**セッションごとのユーザーの入力遅延**します。
 
-![リモート デスクトップのセッションごとのユーザーの入力遅延を追加する方法を示すスクリーン ショット](.\media\rds-user-delay-per-session.png)
+![リモート デスクトップのセッションごとのユーザーの入力遅延を追加する方法を示すスクリーン ショット](./media/rds-user-delay-per-session.png)
 
-![リモート デスクトップのプロセスごとのユーザーの入力遅延を追加する方法を示すスクリーン ショット](.\media\rds-user-delay-per-process.png)
+![リモート デスクトップのプロセスごとのユーザーの入力遅延を追加する方法を示すスクリーン ショット](./media/rds-user-delay-per-process.png)
 
 選択した場合**プロセスごとのユーザーの入力遅延**が表示されます、 **、選択したオブジェクトのインスタンス**(つまり、プロセス) で```SessionID:ProcessID <Process Image>```形式。
 
@@ -69,7 +69,7 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 カウンターは、ユーザー入力の遅延を追加するとすぐにレポートを開始します。 既定では、最大の小数点以下桁数が 100 (ミリ秒) に設定に注意してください。 
 
-![リモート デスクトップのユーザーの入力遅延パフォーマンス モニターでプロセスごとのアクティビティの例](.\media\rds-sample-user-input-delay-perfmon.png)
+![リモート デスクトップのユーザーの入力遅延パフォーマンス モニターでプロセスごとのアクティビティの例](./media/rds-sample-user-input-delay-perfmon.png)
 
 次に、見て、**セッションごとのユーザーの入力遅延**します。 各セッション ID のインスタンスがあるし、カウンターは、指定したセッション内で任意のプロセスのユーザーの入力遅延を表示します。 さらに、"Max"(、最大ユーザー入力の遅延のすべてのセッション間で)"と"Average"(平均 acorss すべてのセッション)"という 2 つのインスタンスがあります。
 
@@ -89,7 +89,7 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 
 これで何が表示レポートでアプリのパフォーマンスが低下した場合を見てみましょう。 次のグラフは、Microsoft Word でリモートで作業しているユーザーの測定値を示しています。 この場合は、RDSH サーバーのパフォーマンスがより多くのユーザーのログインと時間の経過と共に低下します。
 
-![リモート デスクトップの Microsoft Word を実行している RDSH サーバーのパフォーマンス グラフの例](.\media\rds-user-input-perf-graph.png)
+![リモート デスクトップの Microsoft Word を実行している RDSH サーバーのパフォーマンス グラフの例](./media/rds-user-input-perf-graph.png)
 
 グラフの行を読み取る方法を次に示します。
 
@@ -104,7 +104,7 @@ CPU のスパイクとユーザー入力の遅延の間の相関関係がある�
 
 既定では 1,000 ミリ秒、間隔でユーザー入力の遅延をレポートには、このパフォーマンス カウンターを使用する際に重要なことです。 パフォーマンス カウンターのサンプル間隔のプロパティ (ように設定する次のスクリーン ショットで) 別に、報告された値は正しいされません。
 
-![リモート デスクトップのパフォーマンス モニターのプロパティ](.\media\rds-user-input-perfmon-properties.png)
+![リモート デスクトップのパフォーマンス モニターのプロパティ](./media/rds-user-input-perfmon-properties.png)
 
 これを解決するには、使用する間隔 (ミリ秒単位) を一致するように、次のレジストリ キーを設定できます。 たとえばを 5 秒にサンプル x 秒ごとを変更した場合このキーを 5000 ミリ秒に設定する必要があります。
 
@@ -125,7 +125,7 @@ CPU のスパイクとユーザー入力の遅延の間の相関関係がある�
 
 これは、何両方のキーが有効にするように見えます。
 
-![リモート デスクトップ-で両方のキーを持つパフォーマンス モニター](.\media\rds-user-input-delay-with-two-counters.png)
+![リモート デスクトップ-で両方のキーを持つパフォーマンス モニター](./media/rds-user-input-delay-with-two-counters.png)
 
 ## <a name="using-the-new-counters-with-non-microsoft-tools"></a>Microsoft 以外のツールを使用して、新しいカウンターを使用してください。
 

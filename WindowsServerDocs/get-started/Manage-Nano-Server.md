@@ -12,12 +12,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 8973302fc8a0c6bdb5b19f9296e711dcc6465589
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cc535934705878c7f2b7fdc4e655ab5c853e4f96
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826803"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443531"
 ---
 # <a name="manage-nano-server"></a>Nano Server の管理
 
@@ -39,8 +39,8 @@ Nano Server はリモートで管理します。 Nano Server にローカル ロ
 ## <a name="using-windows-powershell-remoting"></a>Windows PowerShell リモート処理を使用する  
 Windows PowerShell リモート処理を使用して Nano Server を管理するには、Nano Server の IP アドレスを管理コンピューターの信頼されたホストの一覧に追加し、使用しているアカウントを Nano Server の管理者に追加する必要があります。CredSSP を使用する場合は、その機能を有効にする必要もあります。  
 
- >[!NOTE]  
-    > Nano Server を追加しないでください場合、対象の Nano Server と管理コンピューターは、同じ AD DS フォレスト (または信頼関係を持つフォレスト) には、その完全修飾ドメイン名を使用して、信頼されたホスト一覧に、Nano Server に接続できます例えば：PS C:\>Enter-pssession-ComputerName nanoserver.contoso.com-Credential (Get-credential)
+> [!NOTE]
+> Nano Server を追加しないでください場合、対象の Nano Server と管理コンピューターは、同じ AD DS フォレスト (または信頼関係を持つフォレスト) には、その完全修飾ドメイン名を使用して、信頼されたホスト一覧に、Nano Server に接続できます例えば：PS C:\>Enter-pssession-ComputerName nanoserver.contoso.com-Credential (Get-credential)
   
   
 Nano Server を信頼されたホストの一覧に追加するには、管理者特権での Windows PowerShell プロンプトで次のコマンドを実行します。  
@@ -51,7 +51,7 @@ Nano Server を信頼されたホストの一覧に追加するには、管理�
   
   
 ```  
-$ip = "\<IP address of Nano Server>"  
+$ip = "<IP address of Nano Server>"  
 $user = "$ip\Administrator"  
 Enter-PSSession -ComputerName $ip -Credential $user  
 ```  
@@ -72,7 +72,7 @@ CIM セッションを開始するには、Windows PowerShell プロンプトで
   
 ```  
 $ip = "<IP address of the Nano Server\>"  
-$ip\Administrator  
+$user = $ip\Administrator  
 $cim = New-CimSession -Credential $user -ComputerName $ip  
 ```  
   
@@ -89,15 +89,17 @@ Get-CimInstance -CimSession $Cim -Query "SELECT * from Win32_Process WHERE name 
 ## <a name="windows-remote-management"></a>Windows リモート管理  
 Windows リモート管理 (WinRM) を使用して、リモートから Nano Server でプログラムを実行できます。 WinRM を使用するには、まず、管理者特権でのコマンド プロンプトで次のコマンドを使用して、サービスを構成し、コード ページを設定します。  
   
-**winrm quickconfig**  
-  
-**winrm winrm/構成/クライアントを設定する @{TrustedHosts ="< Nano Server の ip アドレス"}**  
-  
-**chcp 65001**  
+```
+winrm quickconfig
+winrm set winrm/config/client @{TrustedHosts="<ip address of Nano Server>"}
+chcp 65001
+```
   
 これで、リモートから Nano Server でコマンドを実行できます。 次に、例を示します。  
-  
-**winrs-r:\<Nano Server の IP アドレス >-u: 管理者-p:\<Nano Server の管理者のパスワード > ipconfig**  
+
+```
+winrs -r:<IP address of Nano Server> -u:Administrator -p:<Nano Server administrator password> ipconfig
+```
   
 Windows リモート管理の詳細については、「[Windows リモート管理 (WinRM) の概要](https://technet.microsoft.com/library/dn265971.aspx)」を参照してください。  
    
@@ -115,7 +117,7 @@ Stop-NetEventSession [-Name]
 ```  
 これらのコマンドレットの詳細については、「[Network Event Packet Capture Cmdlets in Windows PowerShell (Windows PowerShell のネットワーク イベント パケット キャプチャ コマンドレット)](https://technet.microsoft.com/library/dn268520(v=wps.630).aspx)」を参照してください。  
 
-##<a name="installing-servicing-packages"></a>サービス パッケージをインストールする  
+## <a name="installing-servicing-packages"></a>サービス パッケージをインストールする  
 サービス パッケージをインストールする場合は、-ServicingPackagePath パラメーターを使用します (.cab ファイルへのパスの配列を渡すことができます)。  
   
 `New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -ServicingPackagePath \\path\to\kb123456.cab`  
@@ -134,7 +136,7 @@ Volume Serial Number is B05B-CC3D
       Directory of C:\KB3157663_expanded  
    
       04/19/2016  01:17 PM    \<DIR>          .  
-      04/19/2016  01:17 PM    \<DIR>          ..  
+      04/19/2016  01:17 PM    \<DIR&gt;          .  
         04/17/2016  12:31 AM               517 Windows10.0-KB3157663-x64-pkgProperties.txt  
 04/17/2016  12:30 AM        93,886,347 Windows10.0-KB3157663-x64.cab  
 04/17/2016  12:31 AM               454 Windows10.0-KB3157663-x64.xml  
@@ -158,7 +160,7 @@ $sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassNa
 
 $scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=0";OnlineScan=$true}  
 ```  
-**注:**   
+**注:**  
 利用可能な更新プログラムがない場合、このコマンドでは次のエラーが返されます。  
 ```  
 Invoke-CimMethod : A general error occurred that is not covered by a more specific error code.  
@@ -189,7 +191,7 @@ $scanResults = Invoke-CimMethod -InputObject $sess -MethodName ApplyApplicableUp
 
 Restart-Computer  
 ```  
-**注:**   
+**注:**  
 Windows Defender により、更新プログラムがインストールされません。 この問題を回避するには、Windows Defender をアンインストールし、更新プログラムをインストールしてから、Windows Defender を再インストールします。 または、更新プログラムを別のコンピューターでダウンロードし、Nano Server にコピーしてから、DISM.exe を使用して適用します。  
 
 
@@ -202,7 +204,7 @@ $sess = New-CimInstance -Namespace root/Microsoft/Windows/WindowsUpdate -ClassNa
 $scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -Arguments @{SearchCriteria="IsInstalled=1";OnlineScan=$true}  
 ```  
 
-**注:**   
+**注:**  
 これらのコマンドでは、インストールされている更新プログラムの一覧が返されますが、出力に "インストール済み" とは明記されません。 レポートなどのために、明記された出力が必要な場合は、次を実行できます。  
 ```  
 Get-WindowsPackage--Online  
@@ -240,7 +242,7 @@ Nano Server では、[Windows イベント トレーシング](https://aka.ms/u2
 wpr.exe -providers
 ```
 
-関心のあるイベントの種類で出力にフィルターを適用できます。 例:
+関心のあるイベントの種類で出力にフィルターを適用できます。 次に、例を示します。
 ```
 PS C:\> wpr.exe -providers | select-string "Storage"
 
@@ -349,7 +351,7 @@ PS C:\> Remove-AutologgerConfig -Name BootPnpLog
 複数のシステムやディスクなしのシステムでブート トレースとセットアップ トレースを収集するには、[セットアップおよびブート イベント収集](../administration/get-started-with-setup-and-boot-event-collection.md)の使用を検討してください。
 
 ### <a name="capture-performance-counter-data"></a>パフォーマンス カウンター データのキャプチャ
-通常、パフォーマンス カウンター データは Perfmon.exe の GUI で監視します。 Nano Server では、同等の ```Typeperf.exe``` コマンド ラインを使用します。 例:
+通常、パフォーマンス カウンター データは Perfmon.exe の GUI で監視します。 Nano Server では、同等の ```Typeperf.exe``` コマンド ラインを使用します。 次に、例を示します。
 
 使用可能なカウンターを照会します。出力にフィルターを適用して、関心のあるカウンターを簡単に見つけることができます。
 ```

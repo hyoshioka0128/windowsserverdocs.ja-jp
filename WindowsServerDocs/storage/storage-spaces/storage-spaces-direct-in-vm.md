@@ -9,12 +9,12 @@ author: eldenchristensen
 ms.date: 10/25/2017
 description: 仮想マシンのゲスト クラスターで - たとえば、Microsoft Azure で記憶域スペース ダイレクトをデプロイする方法。
 ms.localizationpriority: medium
-ms.openlocfilehash: a741475d09ab7f7ab29f158ef55378ca9a37beac
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b99e750b78654df48ad3b412269511d047e3057c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841023"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447809"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>仮想マシンのゲスト クラスターでの記憶域スペース ダイレクトの使用
 
@@ -30,7 +30,7 @@ ms.locfileid: "59841023"
 
 <iframe src="https://channel9.msdn.com/Series/Microsoft-Hybrid-Cloud-Best-Practices-for-IT-Pros/Step-by-Step-Deploy-Windows-Server-2016-Storage-Spaces-Direct-S2D-Cluster-in-Microsoft-Azure/player" width="960" height="540" allowfullscreen></iframe>
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 仮想化環境で記憶域スペース ダイレクトを展開するときに、次の考慮事項が適用されます。
 

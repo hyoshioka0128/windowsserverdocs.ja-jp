@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: ''
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b86726fd6e9ee37dbfd43357d8040b43b8dfb200
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7fb7b5f7ae6e10d1007317949a42c48b4765f35c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853343"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446063"
 ---
-#<a name="step-1-plan-the-basic-directaccess-infrastructure"></a>手順 1. プラン DirectAccess インフラストラクチャを基本的です
+# <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>手順 1. プラン DirectAccess インフラストラクチャを基本的です
 単一のサーバー上の基本的な DirectAccess 展開の最初の手順では、計画、展開に必要なインフラストラクチャを実行します。 このトピックでは、インフラストラクチャの計画手順を説明します。  
   
 |タスク|説明|  
@@ -116,7 +116,7 @@ DirectAccess 展開では、次のことについて DNS が必要です。
   
 -   **DirectAccess クライアント要求**。 内部ネットワークに配置されていない DirectAccess クライアント コンピューターからの要求を解決するためには、DNS が使用されます。 DirectAccess クライアントは、自身がインターネットと企業ネットワークのどちらに配置されているか判断するために、DirectAccess ネットワーク ロケーション サーバーへの接続を試みます。接続に成功した場合、クライアントはイントラネット上にあると判断され、DirectAccess は使用されません。クライアント要求は、クライアント コンピューターのネットワーク アダプター上で構成された DNS サーバーを使って解決されます。 接続に失敗した場合、クライアントはインターネット上にあると見なされます。 DirectAccess クライアントが名前解決ポリシー テーブルを使用して\(NRPT\)名要求を解決するときに使用する DNS サーバーを決定します。 クライアントが名前解決に DirectAccess DNS64 または代替の内部 DNS サーバーを使用するように指定することができます。 名前解決の実行時、NRPT が DirectAccess クライアントによって使用されて、要求の処理方法が特定されます。 クライアント要求の FQDN または単一\-http などのラベル名:\/\/内部。 場合、1 つ\-ラベル名は、要求、DNS サフィックスが追加されて FQDN になります。 DNS クエリが NRPT 内のエントリに一致し、そのエントリに対して DNS4 またはイントラネット DNS サーバーが指定されている場合、そのクエリは指定されたサーバーを使って名前解決のために送信されます。 一致するエントリはあっても DNS サーバーが指定されていない場合は、除外規則を意味しているので、通常の名前解決が適用されます。  
   
-    DirectAccess 管理コンソール内の NRPT に新しいサフィックスを追加するとき、そのサフィックスの既定の DNS サーバーを自動的に検出するには、**[検出]** をクリックします。 自動検出のしくみは次のとおりです。  
+    DirectAccess 管理コンソール内の NRPT に新しいサフィックスを追加するとき、そのサフィックスの既定の DNS サーバーを自動的に検出するには、 **[検出]** をクリックします。 自動検出のしくみは次のとおりです。  
   
     1.  場合は、企業ネットワークが IPv4\-ベース、または IPv4 と IPv6 の場合、既定のアドレスは DirectAccess サーバーの内部アダプターの DNS64 アドレスです。  
   
@@ -253,5 +253,5 @@ DirectAccess サーバー、クライアント、またはアプリケーショ�
   
 ### <a name="BKMK_Links"></a>次の手順  
   
--   [手順 2:基本的な DirectAccess 展開を計画します。](da-basic-plan-s2-deployment.md)  
+-   [手順 2:基本的な DirectAccess 展開を計画する](da-basic-plan-s2-deployment.md)  
   

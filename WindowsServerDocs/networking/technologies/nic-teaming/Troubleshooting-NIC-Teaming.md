@@ -14,12 +14,12 @@ ms.assetid: fdee02ec-3a7e-473e-9784-2889dc1b6dbb
 ms.author: pashort
 author: shortpatti
 ms.date: 09/13/2018
-ms.openlocfilehash: d39dc6a4dcf5dca8186b0599fb479ed5ae684e0f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a6af3cbd038e97d889269b83d72c77c50680e513
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856253"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446174"
 ---
 # <a name="troubleshooting-nic-teaming"></a>NIC チーミングのトラブルシューティング
 
@@ -44,7 +44,7 @@ ms.locfileid: "59856253"
 
 失敗する NIC チームの一般的な理由は、チーム インターフェイスが無効になっていると、意図しない一連のコマンドを実行するときに、多くの場合。  この特定の一連のコマンドには、すべての Nic の基になる物理メンバーを無効にすると、NIC チーム インターフェイスが削除されるため無効になっている NetAdapters はすべて有効にしません。 
 
-この場合は、NIC チームのインターフェイスは表示されなくなります Get-netadapter ではこのため、**有効にする NetAdapter \***  NIC チームを有効にしません。 **有効にする NetAdapter \*** コマンドには、メンバー、Nic チーム インターフェイスを再作成し (後短時間) が、ただし、有効にします。 チーム インターフェイスまで"disabled"状態のまま残す再び有効に、ネットワーク トラフィックのフローを開始することができます。 
+この場合は、NIC チームのインターフェイスは表示されなくなります Get-netadapter ではこのため、**有効にする NetAdapter \\** * は、NIC チームを有効になりません。 **有効にする NetAdapter \\** * コマンドには、メンバー、Nic チーム インターフェイスを再作成し (後短時間) が、ただし、有効にします。 チーム インターフェイスまで"disabled"状態のまま残す再び有効に、ネットワーク トラフィックのフローを開始することができます。 
 
 次の Windows PowerShell のコマンド シーケンスは、意図しないチーム インターフェイスを無効にすることがあります。  
   

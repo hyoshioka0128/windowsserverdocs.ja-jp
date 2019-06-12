@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4ec4bc8e77e8411101b9a2b83a85ad5e1a0765b2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c74bb2ee2f1647716c8c38e392434a5b7f01805f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873503"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446395"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>分割 DNS ポリシーを使用する\-ブレイン DNS 展開
 
@@ -33,7 +33,7 @@ ms.locfileid: "59873503"
 - [DNS スプリット ブレイン展開の例](#bkmk_sbexample)
 - [DNS オプションを選択再帰コントロールの例](#bkmk_recursion)
 
-##<a name="bkmk_sbexample"></a>DNS スプリット ブレイン展開の例
+## <a name="bkmk_sbexample"></a>DNS スプリット ブレイン展開の例
 DNS のポリシーを使用して、スプリット ブレイン DNS の既に説明したシナリオを実現する方法の例を次に示します。
 
 ここでは、次のトピックについて説明します。
@@ -57,7 +57,7 @@ DNS ポリシーを使用してこれらのゾーンできますでホストさ�
 ![スプリット ブレイン DNS 展開](../../media/DNS-Split-Brain/Dns-Split-Brain-01.jpg)  
 
 
-##<a name="bkmk_sbhow"></a>DNS スプリット ブレイン展開のしくみ
+## <a name="bkmk_sbhow"></a>DNS スプリット ブレイン展開のしくみ
 
 必要な DNS ポリシーで、DNS サーバーを構成すると、各名前解決の要求は、DNS サーバー上のポリシーに対して評価されます。
 
@@ -67,7 +67,7 @@ DNS ポリシーを使用してこれらのゾーンできますでホストさ�
 
 そのため、この例ではプライベート ip アドレス (10.0.0.56) で受信した www.career.contoso.com に関する DNS クエリ DNS 応答を受信する内部の IP アドレスを含むパブリック ネットワーク インターフェイスで受信 DNS クエリ応答を受信する DNS ゾーンの既定のスコープ (これは通常のクエリの解決策と同じ) のパブリック IP アドレスを含みます。  
 
-##<a name="bkmk_sbconfigure"></a>DNS スプリット ブレイン展開を構成する方法
+## <a name="bkmk_sbconfigure"></a>DNS スプリット ブレイン展開を構成する方法
 DNS のポリシーを使用して DNS Split-Brain 展開を構成するには、次の手順を使用する必要があります。
 
 - [ゾーンのスコープを作成します。](#bkmk_zscopes)  
@@ -79,12 +79,12 @@ DNS のポリシーを使用して DNS Split-Brain 展開を構成するには�
 >[!IMPORTANT]
 >次のセクションでには、多くのパラメーターの値例にはが含まれている Windows PowerShell コマンド例にはが含まれます。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。 
 
-###<a name="bkmk_zscopes"></a>ゾーンのスコープを作成します。
+### <a name="bkmk_zscopes"></a>ゾーンのスコープを作成します。
 
 ゾーンのスコープは、ゾーンの一意のインスタンスです。 DNS ゾーンは、独自の DNS レコード セットを格納している各ゾーンのスコープを持つ、複数のゾーン スコープを持つことができます。 同じレコードは、別の IP アドレスを持つ、複数のスコープまたは同じ IP アドレスに存在することができます。 
 
->[!NOTE]
->既定では、ゾーンのスコープは、DNS ゾーンに存在します。 このゾーンのスコープでは、ゾーンと同じ名前と、従来の DNS の機能がこのスコープで動作します。 この既定のゾーンのスコープは、www.career.contoso.com の外部のバージョンをホストします。
+> [!NOTE]
+> 既定では、ゾーンのスコープは、DNS ゾーンに存在します。 このゾーンのスコープでは、ゾーンと同じ名前と、従来の DNS の機能がこのスコープで動作します。 この既定のゾーンのスコープは、www.career.contoso.com の外部のバージョンをホストします。
 
 次のコマンド例は、内部ゾーン スコープを作成するのにゾーン スコープ contoso.com のパーティション分割に使用できます。 内部のゾーンのスコープは、www.career.contoso.com の内部バージョンを保持するのには使用されます。
 
@@ -92,11 +92,11 @@ DNS のポリシーを使用して DNS Split-Brain 展開を構成するには�
 
 詳細については、次を参照してください [追加 DnsServerZoneScope。](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-###<a name="bkmk_records"></a>レコードをゾーンのスコープに追加します。
+### <a name="bkmk_records"></a>レコードをゾーンのスコープに追加します。
 
 次の手順では、(外部クライアント向け)、2 つのゾーン スコープの内部に Web サーバーのホストと既定値を表すレコードを追加します。 
 
-内部ゾーン スコープ内でレコード **www.career.contoso.com** 追加 10.0.0.39 で、プライベート IP アドレスは、IP アドレスを使用し、ゾーンの既定のスコープで同じレコードを **www.career.contoso.com**, 、65.55.39.10 の IP アドレスを追加します。
+内部ゾーン スコープ内でレコード <strong>www.career.contoso.com</strong> 追加 10.0.0.39 で、プライベート IP アドレスは、IP アドレスを使用し、ゾーンの既定のスコープで同じレコードを <strong>www.career.contoso.com</strong>, 、65.55.39.10 の IP アドレスを追加します。
 
 いいえ **– ゾーン範囲ゾーン** レコードがゾーンの既定のスコープに追加される場合に、次の例のコマンドにパラメーターが含まれています。 これは、バニラのゾーンにレコードを追加すると似ています。
 
@@ -109,7 +109,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
 
-###<a name="bkmk_policies"></a>DNS ポリシーを作成します。
+### <a name="bkmk_policies"></a>DNS ポリシーを作成します。
 
 外部ネットワークおよび内部ネットワーク用のサーバー インターフェイスを識別する、ゾーンのスコープを作成した後は、内部および外部のゾーンのスコープを接続する DNS ポリシーを作成する必要があります。
 

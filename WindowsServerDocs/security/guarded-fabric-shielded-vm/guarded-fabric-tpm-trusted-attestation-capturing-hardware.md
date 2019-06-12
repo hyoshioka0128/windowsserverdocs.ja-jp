@@ -7,13 +7,13 @@ ms.assetid: 915b1338-5085-481b-8904-75d29e609e93
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 12/12/2018
-ms.openlocfilehash: 82171eee10a06cad6bb3ac30e8f771086975c242
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.date: 04/01/2019
+ms.openlocfilehash: 61f56eea59d11264047a9c7b8b6734617ad1802f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841663"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447333"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>TPM ベースの構成証明を使用して保護されたホストを承認します。
 
@@ -99,8 +99,11 @@ CI ポリシーを変更することがなくサーバーで、同じ公開元�
 
 3.  参照をホストする CI ポリシーが適用されます。
 
-    1.  バイナリの CI ポリシー ファイル (HW1CodeIntegrity.p7b) を参照ホスト (ファイル名が正確に一致) では、次の場所にコピーします。<br>
-        **C:\\Windows\\System32\\CodeIntegrity\\SIPolicy.p7b**
+    1.  CI ポリシーを使用するマシンを構成するには、次のコマンドを実行します。 CI ポリシーを展開することもできます。[グループ ポリシー](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy)または[System Center Virtual Machine Manager](https://docs.microsoft.com/en-us/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm)します。
+
+        ```powershell
+        Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }
+        ```
 
     2.  ポリシーを適用するホストを再起動します。
 
@@ -117,8 +120,8 @@ CI ポリシーを変更することがなくサーバーで、同じ公開元�
 5.  次のコマンドを使用してすべての (同じハードウェアとソフトウェアの構成) をホストする CI ポリシーが適用されます。
 
     ```powershell
-    Copy-Item -Path '<Path to HW1CodeIntegrity\_enforced.p7b>' -Destination 'C:\Windows\System32\CodeIntegrity\SIPolicy.p7b'
-
+    Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }
+    
     Restart-Computer
     ```
 
@@ -167,5 +170,5 @@ TPM ベースラインは、ハードウェア、データ センター ファ�
 
 ## <a name="next-step"></a>次の手順
 
->[!div class="nextstepaction"]
-[構成証明書を確認します。](guarded-fabric-confirm-hosts-can-attest-successfully.md)
+> [!div class="nextstepaction"]
+> [構成証明を確認する](guarded-fabric-confirm-hosts-can-attest-successfully.md)

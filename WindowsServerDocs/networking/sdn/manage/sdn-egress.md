@@ -1,6 +1,6 @@
 ---
 title: 仮想ネットワークの使用状況測定の送信
-description: クラウド ネットワークの収益化の基本的な側面では、ネットワーク帯域幅のエグレスです。 たとえば、送信データは、Microsoft Azure でビジネス モデルを転送します。 送信データは、特定の請求サイクルで、インターネット経由での Azure データ センターから移動するデータの合計量に基づいて課金されます。
+description: クラウド ネットワークの収益化の基本的な側面では、ネットワーク帯域幅のエグレスです。 たとえば、送信データは、Microsoft Azure でビジネス モデルを転送します。 送信データは、特定の請求サイクルで、インターネット経由での Azure データ センターから移動するデータの合計量に基づいて課金されます。
 manager: dougkim
 ms.prod: windows-server-threshold
 ms.technology: networking-hv-switch
@@ -9,19 +9,19 @@ ms.assetid: ''
 ms.author: pashort
 author: shortpatti
 ms.date: 10/02/2018
-ms.openlocfilehash: ad1bed11308420e271b8e06410d5a4548181314a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 50aee16b0b5797f28ebcdf61494b09669699873f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876423"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446321"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>仮想ネットワークの使用状況測定の送信
 
 >適用対象:Windows Server 2019
 
 
-クラウド ネットワークの収益化の基本的な側面は、ネットワーク帯域幅の使用率別の請求にできることです。 送信データは、特定の請求サイクルで、インターネット経由で、データ センターから移動するデータの合計量に基づいて課金されます。
+クラウド ネットワークの収益化の基本的な側面は、ネットワーク帯域幅の使用率別の請求にできることです。 送信データは、特定の請求サイクルで、インターネット経由で、データ センターから移動するデータの合計量に基づいて課金されます。
 
 Windows Server 2019 の SDN ネットワーク トラフィックの使用状況測定エグレス送信データ転送の使用状況メーターを提供する機能を使用できます。 データ センター内に維持されますが、各仮想ネットワークがネットワーク トラフィックを追跡できますとは別にため、これは、課金の計算から除外できます。 送信データ転送の請求と未請求のアドレス範囲のいずれかに含まれていない宛先 IP アドレスにバインドされているパケットが追跡されます。
 
@@ -61,7 +61,7 @@ Windows Server 2019 の SDN ネットワーク トラフィックの使用状況
     $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceID "VNet1"
     $vnet.Properties.UnbilledAddressRanges = "10.10.2.0/24,10.10.3.0/24"
     ```
-    
+
     >[!TIP]
     >複数の IP サブネットを追加する場合は、各 IP サブネットの間にコンマを使用します。  コンマの前後にスペースを含めないでください。
 
@@ -78,55 +78,57 @@ Windows Server 2019 の SDN ネットワーク トラフィックの使用状況
     'Microsoft.Windows.NetworkController.VirtualNetwork' via
     'https://sdn.contoso.com/networking/v3/virtualNetworks/VNet1'. Are you sure you want to continue?
     [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
-    
-    
-    Tags             :
-    ResourceRef      : /virtualNetworks/VNet1
-    InstanceId       : 29654b0b-9091-4bed-ab01-e172225dc02d
-    Etag             : W/"6970d0a3-3444-41d7-bbe4-36327968d853"
-    ResourceMetadata :
-    ResourceId       : VNet1
-    Properties       : Microsoft.Windows.NetworkController.VirtualNetworkProperties
-    ```
 
 
-3.  仮想ネットワークを構成済みの確認**UnbilledAddressRanges**します。
+~~~
+Tags             :
+ResourceRef      : /virtualNetworks/VNet1
+InstanceId       : 29654b0b-9091-4bed-ab01-e172225dc02d
+Etag             : W/"6970d0a3-3444-41d7-bbe4-36327968d853"
+ResourceMetadata :
+ResourceId       : VNet1
+Properties       : Microsoft.Windows.NetworkController.VirtualNetworkProperties
+```
+~~~
 
-    ```PowerShell
-    (Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceID "VNet1").properties
-    ```
 
-    出力は次のようになります。
-    ```
-    AddressSpace           : Microsoft.Windows.NetworkController.AddressSpace
-    DhcpOptions            :
-    UnbilledAddressRanges  : 10.10.2.0/24,192.168.2.0/24
-    ConfigurationState     :
-    ProvisioningState      : Succeeded
-    Subnets                : {21e71701-9f59-4ee5-b798-2a9d8c2762f0, 5f4758ef-9f96-40ca-a389-35c414e996cc,
-                         29fe67b8-6f7b-486c-973b-8b9b987ec8b3}
-    VirtualNetworkPeerings :
-    EncryptionCredential   :
-    LogicalNetwork         : Microsoft.Windows.NetworkController.LogicalNetwork
-    ```
+3. Check the Virtual Network to see the configured **UnbilledAddressRanges**.
 
-## <a name="check-the-billed-the-unbilled-egress-usage-of-a-virtual-network"></a>確認料金請求が発生、仮想ネットワークのエグレス未請求の使用状況
+   ```PowerShell
+   (Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceID "VNet1").properties
+   ```
 
-構成した後、 **UnbilledAddressRanges**プロパティ、仮想ネットワーク内の各サブネットのエグレスの課金と未請求の使用状況を確認することができます。 エグレス トラフィックは、4 つ分に 1 で、課金と未請求の範囲の合計バイト数を更新します。
+   Your output will now look similar to this:
+   ```
+   AddressSpace           : Microsoft.Windows.NetworkController.AddressSpace
+   DhcpOptions            :
+   UnbilledAddressRanges  : 10.10.2.0/24,192.168.2.0/24
+   ConfigurationState     :
+   ProvisioningState      : Succeeded
+   Subnets                : {21e71701-9f59-4ee5-b798-2a9d8c2762f0, 5f4758ef-9f96-40ca-a389-35c414e996cc,
+                        29fe67b8-6f7b-486c-973b-8b9b987ec8b3}
+   VirtualNetworkPeerings :
+   EncryptionCredential   :
+   LogicalNetwork         : Microsoft.Windows.NetworkController.LogicalNetwork
+   ```
 
-各仮想サブネットに使用できるは、次のプロパティです。
+## Check the billed the unbilled egress usage of a virtual network
 
--   **UnbilledEgressBytes**をこの仮想サブネットに接続されているネットワーク インターフェイスから送信された未請求のバイト数が表示されます。 未請求のバイトが含まれているアドレスの範囲に送信バイト、 **UnbilledAddressRanges**親仮想ネットワークのプロパティ。
+After you configure the **UnbilledAddressRanges** property, you can check the billed and unbilled egress usage of each subnet within a virtual network. Egress traffic updates every four minutes with the total bytes of the billed and unbilled ranges.
 
--   **BilledEgressBytes**をこの仮想サブネットに接続されているネットワーク インターフェイスによって送信される課金対象のバイト数が表示されます。 課金対象のバイトはないアドレス範囲に送信されたバイトの一部、 **UnbilledAddressRanges**親仮想ネットワークのプロパティ。
+The following properties are available for each virtual subnet:
 
-クエリの送信の使用状況を次の例を使用します。
+-   **UnbilledEgressBytes** shows the number of unbilled bytes sent by network interfaces connected to this virtual subnet. Unbilled bytes are bytes sent to address ranges that are part of the **UnbilledAddressRanges** property of the parent virtual network.
+
+-   **BilledEgressBytes** shows Number of billed bytes sent by network interfaces connected to this virtual subnet. Billed bytes are bytes sent to address ranges that are not part of the **UnbilledAddressRanges** property of the parent virtual network.
+
+Use the following example to query egress usage:
 
 ```PowerShell
 (Get-NetworkControllerVirtualNetwork -ConnectionURI $URI -ResourceId "VNet1").properties.subnets.properties | ft AddressPrefix,BilledEgressBytes,UnbilledEgressBytes
 ```
 
-出力は次のようになります。
+Your output will look similar to this:
 ```
 AddressPrefix BilledEgressBytes UnbilledEgressBytes
 ------------- ----------------- -------------------
@@ -134,6 +136,6 @@ AddressPrefix BilledEgressBytes UnbilledEgressBytes
 10.0.2.0/24           781733019                   0
 10.0.4.0/24                   0                   0
 ```
-    
+
 
 ---

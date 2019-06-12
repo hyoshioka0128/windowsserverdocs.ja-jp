@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: d63726e7046896c9ef7aa0c3b3d85237bc3f788d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8e1ef34370b1459cd55705bc0069b49a572de303
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879063"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447533"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>保護されたファブリックの展開のクイック スタートします。
 
@@ -165,5 +165,5 @@ VMM または Windows Azure Pack のようなオプションの管理情報を�
 
 ## <a name="next-step"></a>次の手順
 
->[!div class="nextstepaction"]
-[HGS の前提条件](guarded-fabric-prepare-for-hgs.md)
+> [!div class="nextstepaction"]
+> [HGS の前提条件](guarded-fabric-prepare-for-hgs.md)

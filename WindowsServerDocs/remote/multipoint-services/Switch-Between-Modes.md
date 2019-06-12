@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 77700eb5f82ea36cd484e80bd59b9296e1290177
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a9c00d65ad1c59e91f4011ab932bf9f921957c59
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851173"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446149"
 ---
 # <a name="switch-between-modes"></a>モードの切り替え
 MultiPoint マネージャーには、さまざまな種類の MultiPoint サービス システムの管理を実行するのには、次のモードが含まれています。  
@@ -27,9 +27,9 @@ MultiPoint マネージャーには、さまざまな種類の MultiPoint サー
   
 -   *コンソール モード*:コンソール モードで MultiPoint Services システムがある場合とインストールにソフトウェアとドライバーを更新またはその他のメンテナンス タスクを実行します。 システムがコンソール モードの場合、他のコンピューター ユーザーから使用できる*ステーション*はありません。 MultiPoint マネージャーでは、このようなステーションは表示されません。 サーバーに直接接続されているすべてのモニターは、このコンピューターのシステムの表示として扱われます。   
   
-> [!NOTE]  
+> [!NOTE]
 > サーバーの設定で既定値を変更して、コンソール モードでシステムを起動することを強制できます。  
-## <a name="to-switch-from-station-mode-to-console-mode"></a>ステーション モードからコンソール モードに切り替えるには  
+> ## <a name="to-switch-from-station-mode-to-console-mode"></a>ステーション モードからコンソール モードに切り替えるには  
   
 1.  ステーション モードで MultiPoint マネージャーを開き、クリックして、 **ホーム**  タブをクリックします。  
   
@@ -46,4 +46,4 @@ MultiPoint マネージャーには、さまざまな種類の MultiPoint サー
 3.  [*コンピューター名***タスク**、] をクリックして**ステーション モードに切り替える**します。 コンピューターが再起動し、すべてのステーションが使用できるようになります。  
   
 ## <a name="see-also"></a>関連項目  
-[MultiPoint マネージャーを使用してシステム タスクを管理します。](Manage-System-Tasks-Using-MultiPoint-Manager.md)
+[MultiPoint マネージャーを使用したシステム タスクの管理](Manage-System-Tasks-Using-MultiPoint-Manager.md)

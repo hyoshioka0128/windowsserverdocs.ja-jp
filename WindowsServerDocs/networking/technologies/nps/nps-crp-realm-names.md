@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: d011eaad-f72a-4a83-8099-8589c4ee8994
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0257c4d15db4fc54e55ef430f6f2eea9cea2ec4d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 65a272873a60d74efcf417a16fdc84670f5878da
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882823"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447005"
 ---
 # <a name="realm-names"></a>領域名
 
@@ -28,7 +28,7 @@ User-name RADIUS 属性には、ユーザー名が含まれている場合、別
 
 - **Example \user1**します。 この例では、領域名で**例**; プレフィックスであり、Active Directory の名前も&reg;Domain Services \(AD DS\)ドメイン。
 
-- **user1@example.com**. この例では、領域名で**example.com**サフィックスは、DNS ドメイン名または AD DS ドメインの名前のいずれかになります。
+- <strong>user1@example.com</strong>. この例では、領域名で**example.com**サフィックスは、DNS ドメイン名または AD DS ドメインの名前のいずれかになります。
 
 設計および RADIUS インフラストラクチャの展開中に、接続要求ポリシーで構成されている領域名を使用するは RADIUS サーバーに、ネットワーク アクセス サーバーとも呼ばれます。 RADIUS クライアントから接続要求がルーティングされることを確認するには認証し、接続要求を承認します。
 

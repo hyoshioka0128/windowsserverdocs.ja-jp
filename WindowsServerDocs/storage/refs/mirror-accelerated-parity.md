@@ -8,12 +8,12 @@ ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: ba7454f58255ba7a66624a5c59b062da9f871063
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0f4fb73941c5d6667d3c13356b6f29178d73788f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865943"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447685"
 ---
 # <a name="mirror-accelerated-parity"></a>ミラーリングによって高速化されたパリティ
 
@@ -100,12 +100,12 @@ ReFS の圧縮は、ホット データ用にミラー内の領域を解放す�
 ### <a name="performance-counters"></a>パフォーマンス カウンター
 
 ReFS には、ミラーリングによって高速化されたパリティのパフォーマンスを評価できるようにパフォーマンス カウンターが保持されています。 
--   前述の「パリティに書き込み」で説明したように、ReFS はミラーに空き領域が見つからないとパリティに直接書き込みます。 一般に、これはミラーリングされた階層が早くいっぱいになって ReFS がデータをパリティにローテーションできないときに発生します。 つまり、ReFS のローテーションが取り込み速度に追いつかない場合です。 以下のパフォーマンス カウンターは、ReFS がいつパリティに直接書き込むかを識別します。
-```
-ReFS\Data allocations slow tier/sec
-ReFS\Metadata allocations slow tier/sec
-```
--   これらのカウンターが 0 以外の場合、ReFS がデータをミラーからローテーションする速度が十分でないことを示します。 これを軽減するには、ローテーションの積極性を変更するか、ミラーリングされた階層のサイズを大きくすることができます。
+- 前述の「パリティに書き込み」で説明したように、ReFS はミラーに空き領域が見つからないとパリティに直接書き込みます。 一般に、これはミラーリングされた階層が早くいっぱいになって ReFS がデータをパリティにローテーションできないときに発生します。 つまり、ReFS のローテーションが取り込み速度に追いつかない場合です。 以下のパフォーマンス カウンターは、ReFS がいつパリティに直接書き込むかを識別します。
+  ```
+  ReFS\Data allocations slow tier/sec
+  ReFS\Metadata allocations slow tier/sec
+  ```
+- これらのカウンターが 0 以外の場合、ReFS がデータをミラーからローテーションする速度が十分でないことを示します。 これを軽減するには、ローテーションの積極性を変更するか、ミラーリングされた階層のサイズを大きくすることができます。
 
 ### <a name="rotation-aggressiveness"></a>回転の強度
 
@@ -116,7 +116,7 @@ ReFS は、ミラーが指定された容量しきい値に達するとデータ
 ReFS には、このしきい値を調整するための調整可能なパラメーターが導入されており、レジストリ キーを使って構成できます。 このレジストリ キーは、**記憶域スペース ダイレクト展開内の各ノード**で構成する必要があり、変更を有効にするには再起動が必要です。 
 -   **キー:** HKEY_LOCAL_MACHINE\System\CurrentControlSet\Policies
 -   **ValueName (DWORD):** DataDestageSsdFillRatioThreshold
--   **ValueType:**[割合]
+-   **ValueType:** [割合]
 
 このレジストリ キーが設定されていない場合、ReFS は 85% の既定値を使います。  この既定値はほとんどの展開に推奨され、50% 未満の値は推奨されません。 次の PowerShell コマンドは、値を 75% にしてこのレジストリ キーを設定する方法を示しています。 
 ```PowerShell

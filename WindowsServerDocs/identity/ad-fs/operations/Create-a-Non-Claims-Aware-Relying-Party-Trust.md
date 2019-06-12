@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: cdd0b32b50f676007a6cc922bc15b95bb61323be
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: e94b07d7fa654732526d0b43daadc9ad0ad4f3a8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189668"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444931"
 ---
 # <a name="create-a-non-claims-aware-relying-party-trust"></a>要求対応の証明書利用者のパーティの信頼を作成します。
 
@@ -27,7 +27,7 @@ AD FS 管理スナップインで\-以外で\-クレーム\-証明書利用者�
   
 この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
-##<a name="to-create-a-non-claims-aware-relying-party-trust-manually"></a>手動で要求に非対応証明書利用者の信頼を作成するには 
+## <a name="to-create-a-non-claims-aware-relying-party-trust-manually"></a>手動で要求に非対応証明書利用者の信頼を作成するには 
 1. サーバー マネージャーで、**ツール**、し、 **AD FS 管理**します。  
   
 2.  [**アクション**、] をクリックして**証明書利用者信頼の追加**します。  
@@ -39,13 +39,13 @@ AD FS 管理スナップインで\-以外で\-クレーム\-証明書利用者�
 4.  **表示名の指定**に名前を入力] ページで、**表示名**[**ノート**この証明書利用者のパーティの信頼の説明を入力し、クリックして **[次へ]** .  
 ![証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon2.PNG)
 
-5. **[識別子の構成]** ページで、この証明書利用者の識別子を 1 つ以上指定し、**[追加]** をクリックして一覧に追加したら、**[次へ]** をクリックします。  
+5. **[識別子の構成]** ページで、この証明書利用者の識別子を 1 つ以上指定し、 **[追加]** をクリックして一覧に追加したら、 **[次へ]** をクリックします。  
 ![証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon3.PNG)
 
 6.  **へのアクセス制御ポリシーの選択**ポリシーを選択し、をクリックして**次**します。  アクセス制御ポリシーの詳細については、次を参照してください。 [AD FS でのアクセス制御ポリシー](Access-Control-Policies-in-AD-FS.md)します。 
 ![証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon4.PNG)
 
-7. **[信頼の追加の準備完了]** ページで、設定を確認し、**[次へ]** をクリックして、証明書利用者信頼情報を保存します。  
+7. **[信頼の追加の準備完了]** ページで、設定を確認し、 **[次へ]** をクリックして、証明書利用者信頼情報を保存します。  
    ![証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon5.PNG) 
 
 8. **[完了]** ページで、 **[閉じる]** をクリックします。 これにより、自動的に **[要求規則の編集]** ダイアログ ボックスが表示されます。  

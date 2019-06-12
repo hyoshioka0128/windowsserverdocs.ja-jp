@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/12/2018
-ms.openlocfilehash: a58d1e14dc8f543f25ef241f2a65054599136031
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 98857a5a6d665728c1aab2a6a2df64997d4166b0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817393"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446223"
 ---
 # <a name="software-and-hardware-sh-integrated-features-and-technologies"></a>ソフトウェアとハードウェア (SH) の統合された機能とテクノロジ
 
@@ -51,11 +51,12 @@ DCB には、Windows Server は優先度に基づくフロー制御 (PFC)、IEEE
 
 ## <a name="hyper-v-network-virtualization"></a>Hyper-V ネットワーク仮想化
 
-| | |
-|---|---|
-| **v1 (HNVv1)**             | Windows Server 2012 で導入された、HYPER-V ネットワーク仮想化 (HNV) は、共有の物理ネットワーク インフラストラクチャ上に顧客のネットワーク仮想化を有効します。 物理ネットワーク ファブリックのために必要な最小限の変更、HNV により、サービス プロバイダーをデプロイし、3 つのクラウド間で任意の場所テナントのワークロードを移行する機敏性: サービス プロバイダーのクラウド、プライベート クラウド、または Microsoft Azure パブリック クラウド。                                         |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       **v1 (HNVv1)**       |                     Windows Server 2012 で導入された、HYPER-V ネットワーク仮想化 (HNV) は、共有の物理ネットワーク インフラストラクチャ上に顧客のネットワーク仮想化を有効します。 物理ネットワーク ファブリックのために必要な最小限の変更、HNV により、サービス プロバイダーをデプロイし、3 つのクラウド間で任意の場所テナントのワークロードを移行する機敏性: サービス プロバイダーのクラウド、プライベート クラウド、または Microsoft Azure パブリック クラウド。                     |
 | **v2 NVGRE (HNVv2 NVGRE)** | Windows Server 2016 および System Center Virtual Machine Manager では、Microsoft は、RAS ゲートウェイ、ソフトウェアの負荷分散、ネットワーク コント ローラー、および詳細を含むエンド ツー エンドのネットワーク仮想化ソリューションを提供します。 詳細については、次を参照してください。 [Windows Server 2016 で Hyper-v ネットワーク仮想化の概要](https://technet.microsoft.com/windows-server-docs/networking/sdn/technologies/hyper-v-network-virtualization/hyperv-network-virtualization-overview-windows-server)します。 |
-| **v2 VxLAN (HNVv2 VxLAN)** | Windows Server 2016 で、ネットワーク コント ローラーから管理する SDN-拡張の一部です。    |
+| **v2 VxLAN (HNVv2 VxLAN)** |                                                                                                                                                                                        Windows Server 2016 で、ネットワーク コント ローラーから管理する SDN-拡張の一部です。                                                                                                                                                                                        |
+
 ---
 
 ## <a name="ipsec-task-offload-ipsecto"></a>IPsec タスク オフロード (IPsecTO) 

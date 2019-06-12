@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 82bf5fed-93b3-4fa6-8e71-522146eccdb1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fc0abf849d43c8ba6ec86e17b9ed86fce573ed47
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9983fb475143109d191f3b6d69afef48d109472a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813383"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446951"
 ---
 # <a name="step-2-configure-the-basic-directaccess-server"></a>手順 2 は、基本的な DirectAccess サーバーを構成します。
 
@@ -52,9 +52,9 @@ ms.locfileid: "59813383"
   
 6.  をクリックして **機能の追加**, 、 をクリックして **次**, 、 をクリックし、 **インストール**します。  
   
-7.  **[インストールの進行状況]** ダイアログで、インストールが正常に完了したことを確認し、**[閉じる]** をクリックします。  
+7.  **[インストールの進行状況]** ダイアログで、インストールが正常に完了したことを確認し、 **[閉じる]** をクリックします。  
   
-![Windows PowerShell](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![Windows PowerShell](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 次の Windows PowerShell コマンドレットまたはコマンドレットは、リモート アクセスの役割をインストールします。 
 
@@ -96,11 +96,11 @@ ms.locfileid: "59813383"
     > [!NOTE]  
     > 作業の開始ウィザードでは、既定で、WMI フィルターをクライアント設定の GPO に適用して、ドメイン内のすべてのノート PC とノートブック コンピューターに DirectAccess を展開します。  
   
-5.  **[Finish]**(完了) をクリックします。  
+5.  **[Finish]** (完了) をクリックします。  
   
 6.  この展開には PKI が使用されていないため、証明書が見つからない場合は、ウィザードによって、自動的に IP-HTTPS およびネットワーク ロケーション サーバー用の自己署名証明書がプロビジョニングされ、Kerberos プロキシが有効になります。 IPv4 のみの環境では、プロトコル変換のために NAT64 と DNS64 も有効になります。 ウィザードでは、構成の適用が完了したら、クリックして **閉じる**します。  
   
-7.  リモート アクセス管理コンソールのコンソール ツリーで、**[操作の状況]** を選択します。 すべてのモニターの状態が "動作中" と表示されるまで待ちます。 [タスク] ウィンドウの [監視] で、**[最新の情報に更新]** を定期的にクリックして、表示を更新します。  
+7.  リモート アクセス管理コンソールのコンソール ツリーで、 **[操作の状況]** を選択します。 すべてのモニターの状態が "動作中" と表示されるまで待ちます。 [タスク] ウィンドウの [監視] で、 **[最新の情報に更新]** を定期的にクリックして、表示を更新します。  
   
 ## <a name="update-clients-with-the-directaccess-configuration"></a>DirectAccess 構成を使用したクライアントの更新  
   
@@ -122,7 +122,7 @@ ms.locfileid: "59813383"
   
 ## <a name="BKMK_Links"></a>前の手順  
   
--   [ステップ 1: DirectAccess インフラストラクチャを構成します。](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
+-   [ステップ 1: DirectAccess インフラストラクチャを構成する](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
   
 ## <a name="next-step"></a>次の手順  
   

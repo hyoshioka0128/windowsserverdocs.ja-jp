@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 77a4702ddab987cb3adda7627badb790e3102952
-ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
+ms.openlocfilehash: 4acc5e284d5ca7a62335a1c52f341cda3dfb547e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66308547"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439732"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>WSUS メッセージとトラブルシューティングのヒント
 
@@ -48,13 +48,13 @@ ms.locfileid: "66308547"
 
 ## <a name="message-id-6703---wsus-synchronization-failed"></a>メッセージ ID 6703 - WSUS の同期に失敗しました
 > メッセージ: HTTP ステータス 503 で要求が失敗しました。サービスを使用できません。
-
+> 
 > ソース:Microsoft.UpdateServices.Administration.AdminProxy.createUpdateServer します。
 
 WSUS サーバーの更新サービスを開こうとすると、次のエラーが表示されます。
 
 > エラー:接続エラー
-
+> 
 > WSUS サーバーに接続しようとしたときにエラーが発生しました。 このエラーは、さまざまな理由から発生することができます。 問題が解決しない場合は、ネットワーク管理者に問い合わせてください。 [リセット] をクリックして、サーバーに再度接続するサーバーのノード。
 
 上記のほか、WSUS 管理 web サイトの URL にアクセスを試みる (つまり、 `http://CM12CAS:8530`) エラーで失敗します。
@@ -88,8 +88,8 @@ WSUS セットアップでは、インストールを実行するのに Microsof
 
 - **SQL サービス:** Selfupdate サービスを除くすべてのサービスでは、SQL サービスが実行されていることが必要です。 SQL 接続の問題を示すログ ファイルのいずれかの場合は、まず、SQL サービスを確認します。 SQL サービスにアクセスするには、クリックして**開始**、 をポイント**管理ツール**、 をクリックして**サービス**、次のいずれかの確認。
     
-    -   **MSSQLSERver** (WMSDE と MSDE を使用する場合または SQL Server を使用し、インスタンス名の既定のインスタンス名を使用している場合など)
+  - **MSSQLSERver** (WMSDE と MSDE を使用する場合または SQL Server を使用し、インスタンス名の既定のインスタンス名を使用している場合など)
     
-    -   **MSSQL$ WSUS** (かどうかは SQL Server データベースを使用して、データベース インスタンス"WSUS"をという名前が)
+  - **MSSQL$ WSUS** (かどうかは SQL Server データベースを使用して、データベース インスタンス"WSUS"をという名前が)
     
     サービスを右クリックし、をクリックし、**開始**サービスが実行されていない場合または**再起動**が実行されている場合、サービスを更新します。

@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 1a1182a6-4462-4a13-806e-0e642a0d5db2
 ms.technology: identity-adds
-ms.openlocfilehash: 6f600ade3d07130d4e1fb3b1a254cb1073f592e9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9cf89c9f4875f602abea89e366cadfba8d0599c3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874233"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443011"
 ---
 # <a name="ad-forest-recovery---performing-a-full-server-recovery"></a>AD フォレストの回復 - サーバーの完全回復を実行します。 
 
@@ -52,7 +52,7 @@ Windows Server 2016、2012 R2、または 2012 用のサーバーの完全回復
    -  選択解除、**詳細**ディスク エラーを自動的に再起動して確認の機能です。 既定ではこれらを有効にします。
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore6.png)
 8. **[次へ]** をクリックします。
-9. **[Finish]**(完了) をクリックします。 続行することを確認して確認を求められます。 **[はい]** をクリックします。 
+9. **[Finish]** (完了) をクリックします。 続行することを確認して確認を求められます。 **[はい]** をクリックします。 
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore11.png) 
 10. これが完了」の説明に従って、SYSVOL の authoritative restore を実行[DFSR でレプリケートされた SYSVOL の権限のある同期の実行 - AD フォレストの回復](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)します。
 
@@ -69,15 +69,15 @@ Windows Server 2016、2012 R2、または 2012 用のサーバーの完全回復
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore8.png)
 8. バックアップ共有の場所への UNC パスを入力 (たとえば、 \\\server1\backups) をクリック**OK**します。 など、ターゲット サーバーの IP アドレスを入力することもできます。 \\\192.168.1.3\backups します。 
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore9.png)
-10. 共有へのアクセスし、[ok] をクリックします。 必要な資格情報を入力します。 
-11. 今すぐ**を復元するには、日付と時刻システム イメージの選択** をクリック**次**します。
-12. ためのオプションを提供するようになりましたされます。
-   - ディスクをフォーマットしてパーティションを再作成
-   - ドライバーをインストールします。
-   - 選択解除、**詳細**ディスク エラーを自動的に再起動して確認の機能です。 既定ではこれらを有効にします。
-13. **[次へ]** をクリックします。
-14. **[Finish]**(完了) をクリックします。 続行することを確認して確認を求められます。 **[はい]** をクリックします。  
-15. これが完了」の説明に従って、SYSVOL の authoritative restore を実行[DFSR でレプリケートされた SYSVOL の権限のある同期の実行 - AD フォレストの回復](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)します。
+9. 共有へのアクセスし、[ok] をクリックします。 必要な資格情報を入力します。 
+10. 今すぐ**を復元するには、日付と時刻システム イメージの選択** をクリック**次**します。
+11. ためのオプションを提供するようになりましたされます。
+    - ディスクをフォーマットしてパーティションを再作成
+    - ドライバーをインストールします。
+    - 選択解除、**詳細**ディスク エラーを自動的に再起動して確認の機能です。 既定ではこれらを有効にします。
+12. **[次へ]** をクリックします。
+13. **[Finish]** (完了) をクリックします。 続行することを確認して確認を求められます。 **[はい]** をクリックします。  
+14. これが完了」の説明に従って、SYSVOL の authoritative restore を実行[DFSR でレプリケートされた SYSVOL の権限のある同期の実行 - AD フォレストの回復](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)します。
 
 ## <a name="enabling-the-network-adapter-for-a-network-backup"></a>ネットワークのバックアップ用のネットワーク アダプターを有効にします。
 
@@ -120,7 +120,7 @@ Windows Server 2016、2012 R2、または 2012 用のサーバーの完全回復
    set address "Name of Network Adapter" static IPv4 Address SubnetMask IPv4 Gateway Address 1  
    ```  
 
-   例:  
+   次に、例を示します。  
   
    ```  
    set address "Local Area Connection" static 192.168.1.2 255.0.0.0 192.168.1.1 1  
@@ -133,4 +133,4 @@ Windows Server 2016、2012 R2、または 2012 用のサーバーの完全回復
 ## <a name="next-steps"></a>次の手順
 
 - [AD フォレストの回復ガイド](AD-Forest-Recovery-Guide.md)
-- [AD フォレストの回復の手順](AD-Forest-Recovery-Procedures.md)
+- [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md)

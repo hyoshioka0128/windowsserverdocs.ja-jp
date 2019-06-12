@@ -12,12 +12,12 @@ ms.assetid: a455c6b4-b29f-4f76-8c6b-1578b6537717
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b44b395a39a53194b73a0d503c2310edcbe53a2c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 94d4040b65a63fe64e5d49d55f82c4deead5a121
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876073"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433586"
 ---
 # <a name="deploy-windows-server-essentials-experience-as-a-hosted-server"></a>Windows Server Essentials Experience をホストされたサーバーとして配置
 
@@ -116,35 +116,35 @@ ms.locfileid: "59876073"
   
  ここでは、2 つの代表的なサーバー側のネットワーク トポロジと、VPN およびリモート Web アクセスの構成方法を示します。  
   
--   **トポロジ 1** (これは、優先されるトポロジで、すべてのサーバーと VPN の IP 範囲を同じサブネットに配置します):  
+- **トポロジ 1** (これは、優先されるトポロジで、すべてのサーバーと VPN の IP 範囲を同じサブネットに配置します):  
   
-    -   ネットワーク アドレス変換 (NAT) デバイスの下で、個別の仮想ネットワークにサーバーをセットアップします。  
+  -   ネットワーク アドレス変換 (NAT) デバイスの下で、個別の仮想ネットワークにサーバーをセットアップします。  
   
-    -   仮想ネットワークで DHCP サービスを有効にするか、サーバーに静的 IP アドレスを割り当てます。  
+  -   仮想ネットワークで DHCP サービスを有効にするか、サーバーに静的 IP アドレスを割り当てます。  
   
-    -   ルーターのパブリック IP ポート 443 をサーバーのローカル ネットワーク アドレスに転送します。  
+  -   ルーターのパブリック IP ポート 443 をサーバーのローカル ネットワーク アドレスに転送します。  
   
-    -   ポート 443 の VPN パススルーを許可します。  
+  -   ポート 443 の VPN パススルーを許可します。  
   
-    -   サーバーのアドレスと同じサブネット範囲に、VPN IPv4 アドレス プールを設定します。  
+  -   サーバーのアドレスと同じサブネット範囲に、VPN IPv4 アドレス プールを設定します。  
   
-    -   2 台目のサーバーに、同じサブネット内だが、VPN アドレス プールの外部の静的 IP アドレスを割り当てます。  
+  -   2 台目のサーバーに、同じサブネット内だが、VPN アドレス プールの外部の静的 IP アドレスを割り当てます。  
   
--   **トポロジ 2**:  
+- **トポロジ 2**:  
   
-    -   サーバーにプライベート IP アドレスを割り当てます。  
+  -   サーバーにプライベート IP アドレスを割り当てます。  
   
-    -   サーバーのポート 443 がパブリック ポート 443 IP アドレスに到達することを許可します。  
+  -   サーバーのポート 443 がパブリック ポート 443 IP アドレスに到達することを許可します。  
   
-    -   ポート 443 の VPN パススルーを許可します。  
+  -   ポート 443 の VPN パススルーを許可します。  
   
-    -   VPN IPv4 アドレス プールとサーバーのアドレスに別の範囲を割り当てます。  
+  -   VPN IPv4 アドレス プールとサーバーのアドレスに別の範囲を割り当てます。  
   
- トポロジ 2 では、同じドメインに別のサーバーを追加できないため、2 台目のサーバーのシナリオはサポートされません。  
+  トポロジ 2 では、同じドメインに別のサーバーを追加できないため、2 台目のサーバーのシナリオはサポートされません。  
   
- Windows PowerShell スクリプトを使用して、無人展開時に VPN を有効にすることができます。または、初期構成後に、ウィザードで構成できます。  
+  Windows PowerShell スクリプトを使用して、無人展開時に VPN を有効にすることができます。または、初期構成後に、ウィザードで構成できます。  
   
- Windows PowerShell を使用して VPN を有効にするには、Windows Server Essentials を実行しているサーバーで、管理者特権で次のコマンドを実行し、必要なすべての情報を提供します。  
+  Windows PowerShell を使用して VPN を有効にするには、Windows Server Essentials を実行しているサーバーで、管理者特権で次のコマンドを実行し、必要なすべての情報を提供します。  
   
 ```  
 ##  
@@ -177,19 +177,19 @@ Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyT
   
  このキーが 0x1 に設定されている場合、一部のオンプレミス機能の動作が変更されます。 これらの機能の変更は、次のとおりです。  
   
--   **クライアント バックアップ**: 新しく参加したクライアント コンピューターに対して、クライアント バックアップが既定でオフになります。  
+- **クライアント バックアップ**: 新しく参加したクライアント コンピューターに対して、クライアント バックアップが既定でオフになります。  
   
--   **クライアント復元サービス**: クライアント復元サービスが無効にされ、その UI はダッシュボードに表示されません。  
+- **クライアント復元サービス**: クライアント復元サービスが無効にされ、その UI はダッシュボードに表示されません。  
   
--   **ファイル履歴**: 新しく作成されたユーザー アカウントのファイル履歴設定は、サーバーで自動的に管理されません。  
+- **ファイル履歴**: 新しく作成されたユーザー アカウントのファイル履歴設定は、サーバーで自動的に管理されません。  
   
--   **サーバー バックアップ**: サーバー バックアップ サービスが無効にされ、サーバー バックアップ UI はダッシュボードに表示されません。  
+- **サーバー バックアップ**: サーバー バックアップ サービスが無効にされ、サーバー バックアップ UI はダッシュボードに表示されません。  
   
--   **記憶域スペース**: 記憶域スペースの作成または管理のための UI はダッシュボードに表示されません。  
+- **記憶域スペース**: 記憶域スペースの作成または管理のための UI はダッシュボードに表示されません。  
   
--   **Anywhere Access** : Anywhere Access のセットアップ ウィザードを実行すると、既定でルーターと VPN の構成がスキップされます。  
+- **Anywhere Access** : Anywhere Access のセットアップ ウィザードを実行すると、既定でルーターと VPN の構成がスキップされます。  
   
- 示されている各機能の動作を制御したい場合は、それぞれの対応するレジストリ キーを設定できます。 レジストリ キーを設定する方法については、「 [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293241.aspx)」を参照してください。  
+  示されている各機能の動作を制御したい場合は、それぞれの対応するレジストリ キーを設定できます。 レジストリ キーを設定する方法については、「 [Windows Server 2012 R2 での Windows Server Essentials のカスタマイズと展開](https://technet.microsoft.com/library/dn293241.aspx)」を参照してください。  
   
 ##  <a name="BKMK_AutomateDeployment"></a> Windows Server Essentials エクスペリエンスの展開を自動化します。  
  展開を自動化するには、まずオペレーティング システムを展開し、Windows Server Essentials エクスペリエンス役割をインストールして必要があります。  
@@ -217,9 +217,9 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
   
 > [!NOTE]
 >  移行元サーバーと移行先サーバーを同じサブネットに配置することをお勧めします。 それが無理な場合、次の点を確認する必要があります。  
->   
->  -   移行元サーバーと移行先サーバーは互いにアクセス"セント s 内部 DNS 名。  
-> -   すべての必要なポートが開いている。  
+> 
+> - 移行元サーバーと移行先サーバーは互いにアクセス"セント s 内部 DNS 名。  
+>   -   すべての必要なポートが開いている。  
   
  移行後、ライセンスをアップグレードして、ロックと制限を削除することができます。 詳細については、次を参照してください。 [Windows Server Essentials から Windows Server 2012 Standard への移行](https://technet.microsoft.com/library/jj247582.aspx)します。  
   
@@ -406,6 +406,6 @@ New-ItemProperty "HKLM:\Software\Microsoft\Windows Server\Setup"Ã‚Â  -Name 
   
 -   [新機能 Windows Server Essentials の新機能](../get-started/what-s-new.md)  
 
--   [Windows Server Essentials をインストールします。](Install-Windows-Server-Essentials.md)  
+-   [Windows Server Essentials のインストール](Install-Windows-Server-Essentials.md)  
 
--   [Windows Server Essentials を概要します。](../get-started/get-started.md)
+-   [Windows Server Essentials の概要](../get-started/get-started.md)

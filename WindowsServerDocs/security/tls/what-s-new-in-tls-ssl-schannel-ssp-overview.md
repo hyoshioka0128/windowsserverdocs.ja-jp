@@ -13,12 +13,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 05/16/2018
-ms.openlocfilehash: 48dabb5ad83b82f0a93992ad8c24456a8a8e7ef5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b1af556200c9dd497bac835f1480479cca075dab
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873093"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447285"
 ---
 # <a name="overview-of-tls---ssl-schannel-ssp"></a>TLS、SSL (Schannel SSP) の概要
 
@@ -31,7 +31,7 @@ Schannel は、SSL、TLS、および DTLS という標準的なインターネ�
 Schannel SSP に TLS と SSL の Microsoft の実装の詳細については、次を参照してください。、 [TLS/SSL のテクニカル リファレンス (2003)](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx)します。
 
 
-##<a name="tlsssl-schannel-ssp-features"></a>TLS/SSL (Schannel SSP) の機能
+## <a name="tlsssl-schannel-ssp-features"></a>TLS/SSL (Schannel SSP) の機能
 Schannel SSP に TLS の機能を次に示します
 
 ### <a name="tls-session-resumption"></a>TLS セッションの再開

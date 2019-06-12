@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7dc041c8a6c85b46913904ce80494f54cb818ca8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7cdae81694a916905f36cdd9e941015e3ce5f15c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878343"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440083"
 ---
 # <a name="winsat-mem"></a>winsat メモリ最適化
 
@@ -55,15 +55,15 @@ winsat mem <parameters>
 
 ## <a name="BKMK_examples"></a>例
 
--   次の例では、少なくとも 4 秒と 32 MB のバッファー サイズを使用して、結果を XML 形式でファイルに保存、12 秒を超えて評価を実行する**memtest.xml**します。  
-    ```
-    winsat mem -mint 4.0 -maxt 12.0 -buffersize 32MB -xml memtest.xml
-    ```
+- 次の例では、少なくとも 4 秒と 32 MB のバッファー サイズを使用して、結果を XML 形式でファイルに保存、12 秒を超えて評価を実行する**memtest.xml**します。  
+  ```
+  winsat mem -mint 4.0 -maxt 12.0 -buffersize 32MB -xml memtest.xml
+  ```
 
 ## <a name="remarks"></a>注釈
 
 -   ローカルの Administrators グループ、またはそれと同等のメンバーシップが使用するために必要な最低限**winsat**します。 コマンドは、管理者特権でコマンド プロンプト ウィンドウから実行する必要があります。
--   管理者特権でコマンド プロンプト ウィンドウを開くには、次のようにクリックします**開始**、 をクリック**アクセサリ**、を右クリック**コマンド プロンプト**、 をクリック**を管理者として実行。**.
+-   管理者特権でコマンド プロンプト ウィンドウを開くには、次のようにクリックします**開始**、 をクリック**アクセサリ**、を右クリック**コマンド プロンプト**、 をクリック**を管理者として実行。** .
 
 #### <a name="additional-references"></a>その他の参照情報
 

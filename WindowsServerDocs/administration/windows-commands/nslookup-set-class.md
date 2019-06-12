@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e02a6f473a7c2dc6d6b66eb5b23fded930bc817
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7953f450c17afdee849515f8d8945631a30f4b98
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856353"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436845"
 ---
 # <a name="nslookup-set-class"></a>nslookup set class
 
@@ -34,11 +34,11 @@ set class=<Class>
 
 ## <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|\<Class>|既定のクラスは、in です。 このコマンドの有効な値を次に示します。</br>インします。インターネット クラスを指定します。</br>-混乱します。Chaos クラスを指定します。</br>-HESIOD:MIT アテナ Hesiod クラスを指定します。</br>-すべて。上記のワイルドカードのいずれかを指定します。|
-|{0} のヘルプ | ?}|簡単な概要を表示します。 **nslookup**サブコマンドします。|
+| パラメーター |                                                                                                                                    説明                                                                                                                                    |
+|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| \<Class>  | 既定のクラスは、in です。 このコマンドの有効な値を次に示します。</br>インします。インターネット クラスを指定します。</br>-混乱します。Chaos クラスを指定します。</br>-HESIOD:MIT アテナ Hesiod クラスを指定します。</br>-すべて。上記のワイルドカードのいずれかを指定します。 |
+|   {0} のヘルプ   |                                                                                                                                        ?}                                                                                                                                         |
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

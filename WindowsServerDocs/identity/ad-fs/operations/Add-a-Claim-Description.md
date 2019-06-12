@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 454d261aa520778a6129ac9809f53894937b036a
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 1023ca7da02d2a1f6af42f68892dc4c5c8f1a2bf
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190144"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444369"
 ---
 # <a name="add-a-claim-description"></a>要求記述を追加する
 
@@ -31,27 +31,29 @@ ms.locfileid: "66190144"
 
 1. サーバー マネージャーで、**ツール**、し、 **AD FS 管理**します。 
 
-2.  展開**サービス**で右クリック**要求記述の追加**します。
-![クレームの説明を追加します。](media\Add-a-Claim-Description\claimdesc1.png)
+2. 展開**サービス**で右クリック**要求記述の追加**します。
+   ![クレームの説明を追加します。](media/Add-a-Claim-Description/claimdesc1.png)
 
-3.  追加要求記述 ダイアログ ボックスの**表示名**、グループまたはこの要求のロールを識別する一意の名前を入力します。
+3. 追加要求記述 ダイアログ ボックスの**表示名**、グループまたはこの要求のロールを識別する一意の名前を入力します。
 
-4.  追加、**名の短い**します。
+4. 追加、**名の短い**します。
 
-5.  **要求識別子**に関連付けられたグループまたはロールを使用するクレームの URI を入力します。
+5. **要求識別子**に関連付けられたグループまたはロールを使用するクレームの URI を入力します。
 
-6.  **説明**、この要求の目的に最も近いテキストを入力します。
+6. **説明**、この要求の目的に最も近いテキストを入力します。
 
-7.  、組織のニーズに応じてこの要求をフェデレーション メタデータに公開する、必要に応じて、次のチェック ボックスのいずれかを選択します。
+7. 、組織のニーズに応じてこの要求をフェデレーション メタデータに公開する、必要に応じて、次のチェック ボックスのいずれかを選択します。
 
 
-    - パートナーがこのサーバーがこの要求を受け入れることを認識させるには、この要求を発行する をクリックして**このフェデレーション サービスが受け入れることができる要求の種類としてこの要求をフェデレーション メタデータで公開**します。
-    - パートナーがこのサーバーがこの要求を発行できることを認識させるには、この要求を発行する をクリックして**このフェデレーション サービスを送信できる要求の種類としてこの要求をフェデレーション メタデータで公開**します。
+~~~
+- To publish this claim to make partners aware that this server can accept this claim, click **Publish this claim in federation metadata as a claim type that this Federation Service can accept**.
+- To publish this claim to make partners aware that this server can issue this claim, click **Publish this claim in federation metadata as a claim type that this Federation Service can send**.
+~~~
 
-8.  **[OK]** をクリックします。
+8. **[OK]** をクリックします。
 
-![クレームの説明を追加します。](media\Add-a-Claim-Description\claimdesc2.png)
+![クレームの説明を追加します。](media/Add-a-Claim-Description/claimdesc2.png)
 
-  
+
 ## <a name="see-also"></a>関連項目  
 [AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md) 

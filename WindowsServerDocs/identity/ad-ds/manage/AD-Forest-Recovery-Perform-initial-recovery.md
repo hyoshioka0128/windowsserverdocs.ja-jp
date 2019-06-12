@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: 8e05043d029636ddeb3a24349897ac61a713b2a7
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: 9883d337520c3920f8638ddfe5f6bd393e31fd2f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034111"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442863"
 ---
 # <a name="perform-initial-recovery"></a>最初の回復を実行します。  
 
@@ -126,7 +126,7 @@ ms.locfileid: "65034111"
 
 - 名前解決を解決するには、DNS 委任レコードを作成し、DNS 転送やルート ヒントに応じてを構成します。 実行**repadmin/replsum** Dc 間のレプリケーションを確認します。 
 - 復元された DC は直接のレプリケーション パートナーではない場合、レプリケーションの回復はそれらの間の一時的な接続オブジェクトを作成してにずっと速くなります。 
-- メタデータのクリーンアップを検証するには、次のように実行します。 **Repadmin/viewlist \*** フォレスト内のすべての Dc の一覧についてはします。 実行**Nltest/DCList:** *< ドメイン\>* ドメイン内のすべての Dc の一覧についてはします。 
+- メタデータのクリーンアップを検証するには、次のように実行します。 **Repadmin/viewlist \\** *、フォレスト内のすべての Dc の一覧についてはします。 実行**Nltest/DCList:** *< ドメイン\>* ドメイン内のすべての Dc の一覧についてはします。 
 - DC および DNS の正常性を確認するには、フォレスト内のすべての Dc でエラーを報告する DCDiag/v を実行します。 
 
 ## <a name="add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain"></a>フォレスト ルート ドメインのドメイン コント ローラーにグローバル カタログを追加します。

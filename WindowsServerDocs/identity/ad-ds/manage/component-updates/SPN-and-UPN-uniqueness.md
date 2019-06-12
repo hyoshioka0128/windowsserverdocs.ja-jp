@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: c9a769fdd9fb7d13c47da465b25bc59e7f55237f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 13259f7f12a37c4ceb8bdd2e35ae2fe131ec35cf
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856743"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442815"
 ---
 # <a name="spn-and-upn-uniqueness"></a>SPN と UPN の一意性
 
@@ -81,7 +81,7 @@ Upn と Spn の一意性の要件の詳細については、次を参照して�
   
 **図 SEQ 図\\\*エラー 8648 アラビア語の 2 イベント ID 2974**  
   
-イベント 2974 では、ブロックされていた値とその値がまだ含まれている (最大 10) 1 つまたは複数のオブジェクトの一覧を示します。  次の図でその UPN 属性の値を確認できます***dhunt@blue.contoso.com***他の 4 つのオブジェクトに既に存在します。  これが Windows Server 2012 R2 の新機能であるため、ダウンレベルのドメイン コント ローラーの書き込み試行の処理時に混在環境で重複する UPN と Spn の偶発的な作成がまだ発生します。  
+イベント 2974 では、ブロックされていた値とその値がまだ含まれている (最大 10) 1 つまたは複数のオブジェクトの一覧を示します。  次の図でその UPN 属性の値を確認できます **<em>dhunt@blue.contoso.com</em>** 他の 4 つのオブジェクトに既に存在します。  これが Windows Server 2012 R2 の新機能であるため、ダウンレベルのドメイン コント ローラーの書き込み試行の処理時に混在環境で重複する UPN と Spn の偶発的な作成がまだ発生します。  
   
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig05_Event2974ShowAllDups.gif)  
   

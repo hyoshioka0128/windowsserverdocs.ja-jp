@@ -8,12 +8,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: 15cfc054810a2cab85aae9a04d6195c3ae6fe0b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: af977519b5e77eb768fdf8de1e6a34f7c8274666
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861213"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447241"
 ---
 # <a name="advanced-data-deduplication-settings"></a>高度なデータ重複除去の設定
 
@@ -97,7 +97,7 @@ ms.locfileid: "59861213"
                     <li>低</li>
                 </ul>
             </td>
-            <td>この値は、CPU 時間が割り当てられる方法を決定するのに役立ちます。 *[高]* は多くの CPU 時間を使用し、*[低]* は使用する CPU 時間がそれより少なくなります。</td>
+            <td>この値は、CPU 時間が割り当てられる方法を決定するのに役立ちます。 <em>[高]</em> は多くの CPU 時間を使用し、<em>[低]</em> は使用する CPU 時間がそれより少なくなります。</td>
         </tr>
         <tr>
             <td>Days</td>
@@ -123,7 +123,7 @@ ms.locfileid: "59861213"
             <td>DurationHours</td>
             <td>ジョブの実行が許容される最大時間数。</td>
             <td>正の整数</td>
-            <td>ワークロードの非アイドル時間にジョブが実行されるのを阻止するため</td>
+            <td>ワークロードを実行するためのジョブを防ぐために&#39;s 非アイドル時間</td>
         </tr>
         <tr>
             <td>有効</td>
@@ -141,7 +141,7 @@ ms.locfileid: "59861213"
             <td>InputOutputThrottle</td>
             <td>ジョブに適用される入力/出力の調整の量の指定</td>
             <td>(パーセントを示す) 整数 0 ~ 100</td>
-            <td>調整により、ジョブが他の I/O 集中型のプロセスに干渉しなくなります。</td>
+            <td>調整により、そのジョブ don&#39;t O 集中型の他のプロセスに干渉します。</td>
         </tr>
         <tr>
             <td>メモリ</td>
@@ -164,8 +164,8 @@ ms.locfileid: "59861213"
         <tr>
             <td>開始</td>
             <td>ジョブを開始する時刻の指定</td>
-            <td>`System.DateTime`</td>
-            <td>*Start* に提供される `System.Datetime` の*日付*部分は (過去日付である限り) 使用されませんが、*時間*部分はジョブを開始する時間を指定します。</td>
+            <td><code>System.DateTime</code></td>
+            <td><em>日付</em>の一部、<code>System.Datetime</code>に提供される<em>開始</em>は関係ありません (ほど&#39;過去の s) が、<em>時間</em>部分では、ジョブが開始する必要がありますを指定します.</td>
         </tr>
         <tr>
             <td>StopWhenSystemBusy</td>
@@ -208,9 +208,9 @@ ms.locfileid: "59861213"
     <tbody>
         <tr>
             <td>ChunkRedundancyThreshold</td>
-            <td>チャンクがチャンク ストアのホット スポット セクションに複製される前に参照される回数。 ホット スポット セクションの値は、頻繁に参照され、アクセス時間を向上させるために複数のアクセス パスを持つ、いわゆる "ホット" チャンクの値です。</td>
+            <td>チャンクがチャンク ストアのホット スポット セクションに複製される前に参照される回数。 ホット スポット セクションの値がそのいわゆる&quot;ホット&quot;頻繁に参照されるチャンクは、アクセス時間を向上させるために複数のアクセス パスを持ちます。</td>
             <td>正の整数</td>
-            <td>この数を変更する主な理由は、重複率の高いボリュームの削減率を上げることです。 一般に、既定値 (100) が推奨設定であり、この値を変更する必要はありません。</td>
+            <td>この数を変更する主な理由は、重複率の高いボリュームの削減率を上げることです。 既定値 (100) は、一般に、推奨設定、および避けるべき&#39;t は、これを変更する必要があります。</td>
         </tr>
         <tr>
             <td>ExcludeFileType</td>
@@ -228,18 +228,18 @@ ms.locfileid: "59861213"
             <td>InputOutputScale</td>
             <td>後処理ジョブ中にボリュームに使用するデータの重複除去の IO の並列化 (IO キュー) のレベルの指定</td>
             <td>1~36 の正の整数</td>
-            <td>この値を変更する主な理由は、データ重複除去がボリュームに使用できる IO キューの数を制限して、高い IO ワークロードのパフォーマンスへの影響を軽減することです。 既定からこの設定を変更すると、データ重複除去の後処理ジョブの速度が遅くなることがあります。</td>
+            <td>この値を変更する主な理由は、データ重複除去がボリュームに使用できる IO キューの数を制限して、高い IO ワークロードのパフォーマンスへの影響を軽減することです。 既定値からこの設定を変更することが原因があるデータ重複除去に注意してください。&#39;s 処理後の実行速度が遅いジョブ。</td>
         </tr>
         <tr>
             <td>MinimumFileAgeDays</td>
             <td>ファイルが最適化のポリシー内であるとみなされる前にファイルが作成されてから経過した日数</td>
             <td>正の整数 (0 を含む)</td>
-            <td>**Default** と **HyperV** 使用法の種類はこの値を 3 に設定して、ホットまたは最近作成されたファイルのパフォーマンスを最大化します。 データ重複除去がより積極的に行われるようにする場合、または重複除去に関連してさらに待機時間が増えるのを避ける場合は、この値を変更しても構いません。</td>
+            <td><strong>Default</strong> と <strong>HyperV</strong> 使用法の種類はこの値を 3 に設定して、ホットまたは最近作成されたファイルのパフォーマンスを最大化します。 データ重複除去がより積極的に行われるようにする場合、または重複除去に関連してさらに待機時間が増えるのを避ける場合は、この値を変更しても構いません。</td>
         </tr>
         <tr>
             <td>MinimumFileSize</td>
             <td>ファイルが最適化のポリシー内であるとみなされる必要がある最小ファイル サイズ</td>
-            <td>32 KB より大きい正の整数 (バイト) </td>
+            <td>32 KB より大きい正の整数 (バイト)</td>
             <td>この値を変更する主な理由は、最適化の値が限られている可能性のある小さなファイルを除外することによって、コンピューティング時間を節約することです。</td>
         </tr>
         <tr>
@@ -258,7 +258,7 @@ ms.locfileid: "59861213"
             <td>OptimizeInUseFiles</td>
             <td>有効な場合は、最適化のためのポリシーとしてこれらに対してアクティブなハンドルを持つファイルと見なされます。</td>
             <td>true または false</td>
-            <td>ワークロードによってファイルが長期間開かれたままとなっている場合、この設定を有効にします。 この設定が有効でない場合、ワークロードに開いているハンドルがある場合は、このハンドルがまれにデータを最後に追加するだけであっても、ファイルが最適化されません。</td>
+            <td>ワークロードによってファイルが長期間開かれたままとなっている場合、この設定を有効にします。 この設定が有効でない場合、ファイルが最適化されません、ワークロード、開いているハンドルがある場合場合でも、&#39;s ごくまれにしか、最後にデータを追加します。</td>
         </tr>
         <tr>
             <td>OptimizePartialFiles</td>
@@ -310,9 +310,9 @@ ms.locfileid: "59861213"
         </tr>
         <tr>
             <td>DeepGCInterval</td>
-            <td>この設定により、通常のガベージ コレクション ジョブが[完全なガベージ コレクション ジョブ](advanced-settings.md#faq-full-v-regular-gc)になる間隔が構成されます。 設定が n の場合、n <sup>回</sup>ごとにジョブがフル ガベージ コレクション ジョブになります。 [バックアップ使用法の種類](understand.md#usage-type-backup)を含むボリュームでは、常にフル ガベージ コレクションが無効になる (レジストリ値に関係なく) 点に注意してください。 `Start-DedupJob -Type GarbageCollection -Full` フル ガベージ コレクションがバックアップ ボリュームに必要な場合に使用できます。</td>
+            <td>この設定により、通常のガベージ コレクション ジョブが<a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">完全なガベージ コレクション ジョブ</a>になる間隔が構成されます。 設定が n の場合、n <sup>回</sup>ごとにジョブがフル ガベージ コレクション ジョブになります。 <a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">バックアップ使用法の種類</a>を含むボリュームでは、常にフル ガベージ コレクションが無効になる (レジストリ値に関係なく) 点に注意してください。 <code>Start-DedupJob -Type GarbageCollection -Full</code> フル ガベージ コレクションがバックアップ ボリュームに必要な場合に使用できます。</td>
             <td>整数 (-1 は無効を示します)</td>
-            <td>[このよく寄せられる質問](advanced-settings.md#faq-why-disable-full-gc)を参照してください。</td>
+            <td><a href="advanced-settings.md#faq-why-disable-full-gc" data-raw-source="[this frequently asked question](advanced-settings.md#faq-why-disable-full-gc)">このよく寄せられる質問</a>を参照してください。</td>
         </tr>
     </tbody>
 </table>

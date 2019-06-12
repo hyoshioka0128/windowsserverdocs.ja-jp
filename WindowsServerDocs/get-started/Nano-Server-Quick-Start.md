@@ -11,12 +11,12 @@ ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 488d0bed661cf2078d20e491a8c68b2a29a42b73
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7c1623e365be71cac2fd58da5444ce4358d75309
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859523"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443558"
 ---
 # <a name="nano-server-quick-start"></a>Nano Server のクイック スタート
 
@@ -35,40 +35,40 @@ DHCP を使用して IP アドレスを取得する Nano Server の基本的な�
   
 ## <a name="to-quickly-deploy-nano-server-in-a-virtual-machine"></a>仮想マシンに Nano Server をすばやく展開するには  
   
-1.  Windows Server 2016 ISO の \NanoServer フォルダーにある *NanoServerImageGenerator* フォルダーを、お使いのハード ディスクのフォルダーにコピーします。  
+1. Windows Server 2016 ISO の \NanoServer フォルダーにある *NanoServerImageGenerator* フォルダーを、お使いのハード ディスクのフォルダーにコピーします。  
   
-2.  管理者は、ディレクトリを変更して NanoServerImageGenerator フォルダーに配置を使用して、モジュールをインポートし、フォルダーを Windows PowerShell を起動します。 `Import-Module .\NanoServerImageGenerator -Verbose`  
->[!NOTE]  
->場合によっては Windows PowerShell 実行ポリシーを調整する必要があります。その場合は、 `Set-ExecutionPolicy RemoteSigned` うまく機能する必要があります。  
+2. 管理者は、ディレクトリを変更して NanoServerImageGenerator フォルダーに配置を使用して、モジュールをインポートし、フォルダーを Windows PowerShell を起動します。 `Import-Module .\NanoServerImageGenerator -Verbose`  
+   >[!NOTE]  
+   >場合によっては Windows PowerShell 実行ポリシーを調整する必要があります。その場合は、 `Set-ExecutionPolicy RemoteSigned` うまく機能する必要があります。  
   
-3.  次のコマンドを実行して、コンピューター名を設定し、Hyper-V **ゲスト ドライバー**を含む Standard Edition の VHD を作成します。コマンドを実行すると、新しい VHD の管理者パスワードの入力を求められます。  
+3. 次のコマンドを実行して、コンピューター名を設定し、Hyper-V **ゲスト ドライバー**を含む Standard Edition の VHD を作成します。コマンドを実行すると、新しい VHD の管理者パスワードの入力を求められます。  
   
-    `New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerVM\NanoServerVM.vhd -ComputerName <computer name>` どこ  
+   `New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerVM\NanoServerVM.vhd -ComputerName <computer name>` どこ  
   
-    -   **-MediaPath <path to root of media\>** には、Windows Server 2016 ISO の内容のルートへのパスを指定します。 たとえば、ISO の内容を d:\TP5ISO にコピーした場合は、そのパスを使用します。  
+   -   **-MediaPath <path to root of media\>** には、Windows Server 2016 ISO の内容のルートへのパスを指定します。 たとえば、ISO の内容を d:\TP5ISO にコピーした場合は、そのパスを使用します。  
   
-    -   **-BasePath** (省略可能) には、Nano Server WIM とパッケージのコピー先として作成するフォルダーを指定します。  
+   -   **-BasePath** (省略可能) には、Nano Server WIM とパッケージのコピー先として作成するフォルダーを指定します。  
   
-    -   **-TargetPath** には、VHD または VHDX を作成する場所のパスを指定します。ファイル名と拡張子を含めます。  
+   -   **-TargetPath** には、VHD または VHDX を作成する場所のパスを指定します。ファイル名と拡張子を含めます。  
   
-    -   **Computer_name** には、作成する Nano Server 仮想マシンのコンピューター名を指定します。  
+   -   **Computer_name** には、作成する Nano Server 仮想マシンのコンピューター名を指定します。  
   
-    **例:** `New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -BasePath .\Base -TargetPath .\Nano1\Nano.vhd -ComputerName Nano1`  
+   **例:** `New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -BasePath .\Base -TargetPath .\Nano1\Nano.vhd -ComputerName Nano1`  
   
-    この例では、f:\\ としてマウントされている ISO から VHD を作成します。 VHD を作成する際に、New-NanoServerImage を実行したのと同じディレクトリ内の Base というフォルダーを使用します。また、コマンドを実行したフォルダー内の Nano1 というフォルダーに VHD (Nano.vhd) を配置します。 コンピューター名は Nano1 になります。 作成された VHD には Windows Server 2016 Standard Edition が含まれており、Hyper-V 仮想マシンの展開に適しています。 第 1 世代仮想マシンが必要な場合は、-TargetPath に **.vhd** 拡張子を指定して、VHD イメージを作成します。 第 2 世代仮想マシンの場合は、-TargetPath に **.vhdx** 拡張子を指定して、VHDX イメージを作成します。 -TargetPath に **.wim** 拡張子を指定して、WIM ファイルを直接生成することもできます。  
+   この例では、f:\\ としてマウントされている ISO から VHD を作成します。 VHD を作成する際に、New-NanoServerImage を実行したのと同じディレクトリ内の Base というフォルダーを使用します。また、コマンドを実行したフォルダー内の Nano1 というフォルダーに VHD (Nano.vhd) を配置します。 コンピューター名は Nano1 になります。 作成された VHD には Windows Server 2016 Standard Edition が含まれており、Hyper-V 仮想マシンの展開に適しています。 第 1 世代仮想マシンが必要な場合は、-TargetPath に **.vhd** 拡張子を指定して、VHD イメージを作成します。 第 2 世代仮想マシンの場合は、-TargetPath に **.vhdx** 拡張子を指定して、VHDX イメージを作成します。 -TargetPath に **.wim** 拡張子を指定して、WIM ファイルを直接生成することもできます。  
   
-    > [!NOTE]  
-    > New-NanoServerImage は、Windows 8.1、Windows 10、Windows Server 2012 R2、および Windows Server 2016 でサポートされます。  
+   > [!NOTE]  
+   > New-NanoServerImage は、Windows 8.1、Windows 10、Windows Server 2012 R2、および Windows Server 2016 でサポートされます。  
   
-4.  Hyper-V マネージャーで、新しい仮想マシンを作成し、手順 3. で作成した VHD を使用します。  
+4. Hyper-V マネージャーで、新しい仮想マシンを作成し、手順 3. で作成した VHD を使用します。  
   
-5.  仮想マシンを起動し、Hyper-V マネージャーで仮想マシンに接続します。  
+5. 仮想マシンを起動し、Hyper-V マネージャーで仮想マシンに接続します。  
   
-6.  手順 3. のスクリプトを実行したときに指定した管理者とパスワードを使用して、回復コンソールにログオンします (このガイドの「Nano Server 回復コンソール」を参照してください)。  
- > [!NOTE]  
-    > 回復コンソールでは、基本的なキーボード機能のみがサポートされます。 キーボードのライト、テンキー セクション、およびキーボード レイアウトの切り替え (CapsLock キーや NumLock キーなど) はサポートされません。
+6. 手順 3. のスクリプトを実行したときに指定した管理者とパスワードを使用して、回復コンソールにログオンします (このガイドの「Nano Server 回復コンソール」を参照してください)。  
+   > [!NOTE]  
+   > 回復コンソールでは、基本的なキーボード機能のみがサポートされます。 キーボードのライト、テンキー セクション、およびキーボード レイアウトの切り替え (CapsLock キーや NumLock キーなど) はサポートされません。
   
-7.  Nano Server 仮想マシンの IP アドレスを取得し、Windows PowerShell リモート処理などのリモート管理ツールを使用して、仮想マシンに接続し、リモートで管理します。  
+7. Nano Server 仮想マシンの IP アドレスを取得し、Windows PowerShell リモート処理などのリモート管理ツールを使用して、仮想マシンに接続し、リモートで管理します。  
   
 **物理コンピューター上の Nano Server**  
   
@@ -83,36 +83,36 @@ DHCP を使用して IP アドレスを取得する Nano Server の基本的な�
 >[!NOTE]  
 >場合によっては Windows PowerShell 実行ポリシーを調整する必要があります。その場合は、 `Set-ExecutionPolicy RemoteSigned` うまく機能する必要があります。  
   
-3.  次のコマンドを実行して、コンピューター名を設定し、OEM ドライバーと Hyper-V を含む VHD を作成します。コマンドを実行すると、新しい VHD の管理者パスワードの入力を求められます。  
+3. 次のコマンドを実行して、コンピューター名を設定し、OEM ドライバーと Hyper-V を含む VHD を作成します。コマンドを実行すると、新しい VHD の管理者パスワードの入力を求められます。  
   
-    `New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerPhysical\NanoServer.vhd -ComputerName <computer name> -OEMDrivers -Compute -Clustering` どこ  
+   `New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerPhysical\NanoServer.vhd -ComputerName <computer name> -OEMDrivers -Compute -Clustering` どこ  
   
-    -   **-MediaPath <path to root of media\>** には、Windows Server 2016 ISO の内容のルートへのパスを指定します。 たとえば、ISO の内容を d:\TP5ISO にコピーした場合は、そのパスを使用します。  
+   -   **-MediaPath <path to root of media\>** には、Windows Server 2016 ISO の内容のルートへのパスを指定します。 たとえば、ISO の内容を d:\TP5ISO にコピーした場合は、そのパスを使用します。  
   
-    -   **BasePath** には、Nano Server WIM とパッケージのコピー先として作成するフォルダーを指定します。 このパラメーターは省略可能です。  
+   -   **BasePath** には、Nano Server WIM とパッケージのコピー先として作成するフォルダーを指定します。 このパラメーターは省略可能です。  
   
-    -   **TargetPath** には、VHD または VHDX を作成する場所のパスを指定します。ファイル名と拡張子を含めます。  
+   -   **TargetPath** には、VHD または VHDX を作成する場所のパスを指定します。ファイル名と拡張子を含めます。  
   
-    -   **Computer_name** は、作成する Nano Server のコンピューター名です。  
+   -   **Computer_name** は、作成する Nano Server のコンピューター名です。  
   
-    **例:**`New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath F:\ -BasePath .\Base -TargetPath .\Nano1\NanoServer.vhd -ComputerName Nano-srv1 -OEMDrivers -Compute -Clustering`  
+   **例:** `New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath F:\ -BasePath .\Base -TargetPath .\Nano1\NanoServer.vhd -ComputerName Nano-srv1 -OEMDrivers -Compute -Clustering`  
   
-    この例では、F:\\ としてマウントされている ISO から VHD を作成します。 VHD を作成する際に、New-NanoServerImage を実行したのと同じディレクトリ内の Base というフォルダーを使用します。また、コマンドを実行したフォルダー内の Nano1 というフォルダーに VHD を配置します。 コンピューター名は Nano-srv1 になり、最も一般的なハードウェアの OEM ドライバーがインストールされ、Hyper-V の役割とクラスタリング機能が有効になります。 Nano Standard Edition が使用されます。  
+   この例では、F:\\ としてマウントされている ISO から VHD を作成します。 VHD を作成する際に、New-NanoServerImage を実行したのと同じディレクトリ内の Base というフォルダーを使用します。また、コマンドを実行したフォルダー内の Nano1 というフォルダーに VHD を配置します。 コンピューター名は Nano-srv1 になり、最も一般的なハードウェアの OEM ドライバーがインストールされ、Hyper-V の役割とクラスタリング機能が有効になります。 Nano Standard Edition が使用されます。  
   
-4.  Nano Server VHD を実行する物理サーバーに管理者としてログインします。  
+4. Nano Server VHD を実行する物理サーバーに管理者としてログインします。  
   
-5.  このスクリプトで作成された VHD を物理コンピューターにコピーし、この新しい VHD から起動するように構成します。 これを行うには、次の手順に従います。  
+5. このスクリプトで作成された VHD を物理コンピューターにコピーし、この新しい VHD から起動するように構成します。 これを行うには、次の手順に従います。  
   
-    1.  生成された VHD をマウントします。 この例では、D:\\ にマウントされます。  
+   1.  生成された VHD をマウントします。 この例では、D:\\ にマウントされます。  
   
-    2.  **bcdboot d:\windows** を実行します。  
+   2.  **bcdboot d:\windows** を実行します。  
   
-    3.  VHD のマウントを解除します。  
+   3.  VHD のマウントを解除します。  
   
-6.  Nano Server VHD から物理コンピューターを起動します。  
+6. Nano Server VHD から物理コンピューターを起動します。  
   
-7.  手順 3. のスクリプトを実行したときに指定した管理者とパスワードを使用して、回復コンソールにログオンします (このガイドの「Nano Server 回復コンソール」を参照してください)。
-> [!NOTE]  
-    > 回復コンソールでは、基本的なキーボード機能のみがサポートされます。 キーボードのライト、テンキー セクション、およびキーボード レイアウトの切り替え (CapsLock キーや NumLock キーなど) はサポートされません。 
+7. 手順 3. のスクリプトを実行したときに指定した管理者とパスワードを使用して、回復コンソールにログオンします (このガイドの「Nano Server 回復コンソール」を参照してください)。
+   > [!NOTE]  
+   > 回復コンソールでは、基本的なキーボード機能のみがサポートされます。 キーボードのライト、テンキー セクション、およびキーボード レイアウトの切り替え (CapsLock キーや NumLock キーなど) はサポートされません。 
   
-8.  Nano Server コンピューターの IP アドレスを取得し、Windows PowerShell リモート処理などのリモート管理ツールを使用して、仮想マシンに接続し、リモートで管理します。  
+8. Nano Server コンピューターの IP アドレスを取得し、Windows PowerShell リモート処理などのリモート管理ツールを使用して、仮想マシンに接続し、リモートで管理します。  

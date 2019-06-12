@@ -9,12 +9,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 2da1e33d24fa6d68815f4fbc0891be0616004856
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dd9b89f34a3b4af8bb98d2399a524790aa65de0e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817473"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447478"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-new-shielded-vm-on-premises-and-moving-it-to-a-guarded-fabric"></a>オンプレミスに VM と保護されたファブリックに移動してテナント - 新しいを作成するためのシールドされた Vm のシールドされました。
 
@@ -76,66 +76,66 @@ ms.locfileid: "59817473"
 
 シールド データ ファイル内の要素には、キーの保護機能を示す図解は、次を参照してください。[シールド データを使用するものが、なぜ必要ですか?](guarded-fabric-and-shielded-vms.md#what-is-shielding-data-and-why-is-it-necessary)します。
 
-1.  HYPER-V ホスト、テナントで新しい第 2 世代仮想マシンを作成する次のコマンドを実行します。
+1. HYPER-V ホスト、テナントで新しい第 2 世代仮想マシンを作成する次のコマンドを実行します。
 
-    &lt;ShieldedVMname&gt;、たとえば、VM の名前を指定します。**ShieldVM1**
+   &lt;ShieldedVMname&gt;、たとえば、VM の名前を指定します。**ShieldVM1**
     
-    &lt;VHDPath&gt;、たとえば、VM の VHDX を格納する場所を指定します。**C:\\Vm\\ShieldVM1\\ShieldVM1.vhdx**
+   &lt;VHDPath&gt;、たとえば、VM の VHDX を格納する場所を指定します。**C:\\Vm\\ShieldVM1\\ShieldVM1.vhdx**
     
-    &lt;NnGB&gt;、たとえば、VHDX のサイズを指定します。**60 GB**
+   &lt;NnGB&gt;、たとえば、VHDX のサイズを指定します。**60 GB**
 
-        New-VM -Generation 2 -Name "<ShieldedVMname>" -NewVHDPath <VHDPath>.vhdx -NewVHDSizeBytes <nnGB>
+       New-VM -Generation 2 -Name "<ShieldedVMname>" -NewVHDPath <VHDPath>.vhdx -NewVHDSizeBytes <nnGB>
 
-2.  サポートされているオペレーティング システムをインストール (Windows Server 2012 以降、Windows 8 クライアント以上)、VM で、リモート デスクトップ接続と対応するファイアウォール規則を有効にするとします。 VM の IP アドレスや DNS 名を記録します。リモート接続に必要になります。
+2. サポートされているオペレーティング システムをインストール (Windows Server 2012 以降、Windows 8 クライアント以上)、VM で、リモート デスクトップ接続と対応するファイアウォール規則を有効にするとします。 VM の IP アドレスや DNS 名を記録します。リモート接続に必要になります。
 
-3.  RDP を使用して、リモート VM に接続し、RDP とファイアウォールが正しく構成されていることを確認します。 シールドのプロセスの一環として、HYPER-V によって仮想マシンへのコンソール アクセスは無効になります、ため、ネットワーク経由でシステムをリモートで管理できることを確認することが重要です。
+3. RDP を使用して、リモート VM に接続し、RDP とファイアウォールが正しく構成されていることを確認します。 シールドのプロセスの一環として、HYPER-V によって仮想マシンへのコンソール アクセスは無効になります、ため、ネットワーク経由でシステムをリモートで管理できることを確認することが重要です。
 
-4.  (このセクションの冒頭に示した) 新しいキー プロテクターを作成するには、次のコマンドを実行します。
+4. (このセクションの冒頭に示した) 新しいキー プロテクターを作成するには、次のコマンドを実行します。
 
-    &lt;GuardianName&gt;、たとえば、前の手順で指定した名前を使用します。**HostingProvider1**
+   &lt;GuardianName&gt;、たとえば、前の手順で指定した名前を使用します。**HostingProvider1**
 
-    含める **- AllowUntrustedRoot**自己署名証明書を許可します。
+   含める **- AllowUntrustedRoot**自己署名証明書を許可します。
 
-        $Guardian = Get-HgsGuardian -Name '<GuardianName>'
+       $Guardian = Get-HgsGuardian -Name '<GuardianName>'
 
-        $Owner = New-HgsGuardian -Name 'Owner' -GenerateCertificates
+       $Owner = New-HgsGuardian -Name 'Owner' -GenerateCertificates
 
-        $KP = New-HgsKeyProtector -Owner $Owner -Guardian $Guardian -AllowUntrustedRoot
+       $KP = New-HgsKeyProtector -Owner $Owner -Guardian $Guardian -AllowUntrustedRoot
 
-    1 つ以上のデータ センターのシールドされた VM (たとえば、ディザスター リカバリー サイトおよびパブリック クラウド プロバイダー) を実行できるようにする場合に保護者の一覧を行うことができます、 **-ガーディアン**パラメーター。 詳細については、[新規 HgsKeyProtector] を参照してください (https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-psします。
+   1 つ以上のデータ センターのシールドされた VM (たとえば、ディザスター リカバリー サイトおよびパブリック クラウド プロバイダー) を実行できるようにする場合に保護者の一覧を行うことができます、 **-ガーディアン**パラメーター。 詳細については、[新規 HgsKeyProtector] を参照してください (https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-psします。
 
-5.  キーの保護機能を使用して vTPM を有効にするには、次のコマンドを実行します。 &lt;ShieldedVMname&gt;、前の手順で使用される同じ VM 名を使用します。
+5. キーの保護機能を使用して vTPM を有効にするには、次のコマンドを実行します。 &lt;ShieldedVMname&gt;、前の手順で使用される同じ VM 名を使用します。
 
-        $VMName="<ShieldedVMname>"
+       $VMName="<ShieldedVMname>"
 
-        Stop-VM -Name $VMName -Force
+       Stop-VM -Name $VMName -Force
 
-        Set-VMKeyProtector -VMName $VMName -KeyProtector $KP.RawData
+       Set-VMKeyProtector -VMName $VMName -KeyProtector $KP.RawData
 
-        Set-VMSecurityPolicy -VMName $VMName -Shielded $true
+       Set-VMSecurityPolicy -VMName $VMName -Shielded $true
 
-        Enable-VMTPM -VMName $VMName
+       Enable-VMTPM -VMName $VMName
 
-6.  ローカルの所有者の証明書とキー保護機能が動作していることを確認するには、次のように VM を開始するには、次のコマンドを実行します。
+6. ローカルの所有者の証明書とキー保護機能が動作していることを確認するには、次のように VM を開始するには、次のコマンドを実行します。
 
-        Start-VM -Name $VMName
+       Start-VM -Name $VMName
 
-7.  VM を HYPER-V コンソールで開始されたことを確認します。
+7. VM を HYPER-V コンソールで開始されたことを確認します。
 
-8.  リモート VM に接続し、シールドされた VM にアタッチされているすべての Vhdx のすべてのパーティションで BitLocker を有効にするには、RDP を使用します。
+8. リモート VM に接続し、シールドされた VM にアタッチされているすべての Vhdx のすべてのパーティションで BitLocker を有効にするには、RDP を使用します。
 
-    > [!IMPORTANT]
-    > 次の手順に進む前に BitLocker 暗号化を有効にした、すべてのパーティションに終了するまで待ちます。
+   > [!IMPORTANT]
+   > 次の手順に進む前に BitLocker 暗号化を有効にした、すべてのパーティションに終了するまで待ちます。
 
-9.  保護されたファブリックに移動する準備ができたら、VM をシャット ダウンします。
+9. 保護されたファブリックに移動する準備ができたら、VM をシャット ダウンします。
 
-10.  テナント、HYPER-V サーバーでは、(Windows PowerShell または HYPER-V マネージャー) に好みのツールを使用して VM をエクスポートします。 ホスティング プロバイダーまたはエンタープライズ データ センターによって管理される保護されたホストにコピーするファイルを配置します。
+10. テナント、HYPER-V サーバーでは、(Windows PowerShell または HYPER-V マネージャー) に好みのツールを使用して VM をエクスポートします。 ホスティング プロバイダーまたはエンタープライズ データ センターによって管理される保護されたホストにコピーするファイルを配置します。
 
-11.  **ホスティング プロバイダーまたはエンタープライズ データ センターの**:
+11. **ホスティング プロバイダーまたはエンタープライズ データ センターの**:
 
     HYPER-V マネージャーまたは Windows PowerShell を使用して、シールドされた VM をインポートします。 VM を起動するには、VM 所有者から VM の構成ファイルをインポートする必要があります。 これは、キー保護機能と、VM の仮想 TPM が構成ファイルに格納されているためにです。 保護されたファブリック上で実行する VM を構成する場合、正常に起動できる必要があります。
 
 ## <a name="see-also"></a>関連項目
 
 - [保護されたホストとシールドされた Vm のサービス プロバイダーの構成手順をホストしています。](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
-- [保護されたファブリックとシールドされた Vm](guarded-fabric-and-shielded-vms-top-node.md)
+- [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

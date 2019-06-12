@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0c4e1ed4697666062bb90f4a9c65054a3dd73661
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2f2f787915f2b941d6c098d44de1bb0e04dbd491
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848053"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436916"
 ---
 # <a name="nslookup-lserver"></a>nslookup lserver
 
@@ -30,12 +30,14 @@ ms.locfileid: "59848053"
 lserver <DNSDomain> 
 ```
 ## <a name="parameters"></a>パラメーター
-|パラメーター|説明|
-|-------|--------|
-|<DNSDomain>|新しい DNS ドメインは、既定のサーバーを指定します。|
-|{help &#124; ?}|簡単な概要を表示します。 **nslookup**サブコマンドします。|
+
+|    パラメーター    |                      説明                      |
+|-----------------|-------------------------------------------------------|
+|   <DNSDomain>   | 新しい DNS ドメインは、既定のサーバーを指定します。  |
+| {help &#124; ?} | 簡単な概要を表示します。 **nslookup**サブコマンドします。 |
+
 ## <a name="remarks"></a>注釈
--   **Lserver**コマンドは最初のサーバーを使用して、指定した DNS ドメインについての情報を確認します。 これとは対照的に、 **server**コマンドで、現在の既定のサーバーを使用します。
-## <a name="additional-references"></a>その他の参照
-[コマンドライン構文のポイント](command-line-syntax-key.md)
-[nslookup サーバー](nslookup-server.md)
+- **Lserver**コマンドは最初のサーバーを使用して、指定した DNS ドメインについての情報を確認します。 これとは対照的に、 **server**コマンドで、現在の既定のサーバーを使用します。
+  ## <a name="additional-references"></a>その他の参照
+  [コマンドライン構文のポイント](command-line-syntax-key.md)
+  [nslookup サーバー](nslookup-server.md)

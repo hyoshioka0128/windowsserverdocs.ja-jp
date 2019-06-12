@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: c71b96f6c44cfc2b14b4c5d203f876e55cc728ec
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e90c2c075ba2dc2b63e9a18c9eba192116265b90
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855633"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443525"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>付録 i:Active Directory 内の保護されたアカウントとグループ アカウントの管理の作成
 
@@ -60,7 +60,7 @@ ms.locfileid: "59855633"
   
     ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_116.png)  
   
-3.  作成したばかりのグループを右クリックし、**[プロパティ]** をクリックし、**[オブジェクト]** タブをクリックします。グループの**オブジェクト プロパティ**ダイアログ ボックスで、**オブジェクトを誤って削除されないように保護**、これのみ防ぐことはできません、承認済みユーザー、グループから削除、移動することからも別の OU 属性が最初にない場合は選択解除。  
+3.  作成したばかりのグループを右クリックし、 **[プロパティ]** をクリックし、 **[オブジェクト]** タブをクリックします。グループの**オブジェクト プロパティ**ダイアログ ボックスで、**オブジェクトを誤って削除されないように保護**、これのみ防ぐことはできません、承認済みユーザー、グループから削除、移動することからも別の OU 属性が最初にない場合は選択解除。  
   
     ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_117.png)  
   
@@ -150,35 +150,35 @@ ms.locfileid: "59855633"
   
 10. **オブジェクト**] タブで [**オブジェクトを誤って削除されないように保護**します。 これはのみができないオブジェクト (承認されたユーザーの場合) によっても削除されないというされますが、AD DS 階層内の別の OU に移動してからない場合は、属性を変更する権限を持つユーザーでは、チェック ボックスはオフ最初。  
 
-   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_125.png)  
+    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_125.png)  
 
 11. をクリックして、**リモート_コントロール**タブ。  
 
 12. クリア、**リモート_コントロールを有効にする**フラグ。 サポート スタッフに修正を実装するためにこのアカウントのセッションへの接続に必要になることはありません必要があります。  
 
-   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_126.png)  
+    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_126.png)  
 
-   > [!NOTE]  
-   > 」の説明に従って、Active Directory のすべてのオブジェクトを指定された IT 所有者と、指定のビジネス所有者が必要[侵害対策を計画](../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md)します。 (外部データベース) ではなく Active Directory の AD DS オブジェクトの所有権を追跡している場合は、このオブジェクトのプロパティで適切な所有権情報を入力する必要があります。  
-   >
-   > この場合は、ビジネス オーナーは、IT 部門ではほとんどの場合、返しにも IT 所有者されているビジネス オーナーの禁止はありません。 オブジェクトの所有権を確立するポイントでは、変更する必要があります、オブジェクトにおそらく年最初の作成から連絡先を特定することを許可します。  
+    > [!NOTE]  
+    > 」の説明に従って、Active Directory のすべてのオブジェクトを指定された IT 所有者と、指定のビジネス所有者が必要[侵害対策を計画](../../../ad-ds/plan/security-best-practices/Planning-for-Compromise.md)します。 (外部データベース) ではなく Active Directory の AD DS オブジェクトの所有権を追跡している場合は、このオブジェクトのプロパティで適切な所有権情報を入力する必要があります。  
+    >
+    > この場合は、ビジネス オーナーは、IT 部門ではほとんどの場合、返しにも IT 所有者されているビジネス オーナーの禁止はありません。 オブジェクトの所有権を確立するポイントでは、変更する必要があります、オブジェクトにおそらく年最初の作成から連絡先を特定することを許可します。  
 
 13. をクリックして、**組織**タブ。  
 
 14. AD DS オブジェクトの基準で必要なすべての情報を入力します。  
 
-   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_127.png)  
+    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_127.png)  
 
 15. をクリックして、**ダイヤルイン**タブ。  
 
 16. **ネットワーク アクセス許可**フィールドで、**アクセスを拒否する**します。このアカウントは必要がありますしないリモート接続で接続する必要があります。  
 
-   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_128.png)  
+    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_128.png)  
 
-   > [!NOTE]  
-   > このアカウントが環境内で読み取り専用ドメイン コント ローラー (Rodc) にログオンに使用されること可能性が高いことはできません。 ただし、必要がありますの状況がログオンするアカウント、RODC にログオンする必要がありますアカウントを追加するこの Denied RODC Password Replication Group にそのパスワードが RODC にキャッシュされないようにします。  
-   >
-   > 使用後に、アカウントのパスワードをリセットするか、アカウントを無効にする、この設定を実装しても、アカウントに有害な影響はありませんし、アカウントのリセットを管理者が忘れた場合の状況でわかりやすくなりますパスワードは無効にします。  
+    > [!NOTE]  
+    > このアカウントが環境内で読み取り専用ドメイン コント ローラー (Rodc) にログオンに使用されること可能性が高いことはできません。 ただし、必要がありますの状況がログオンするアカウント、RODC にログオンする必要がありますアカウントを追加するこの Denied RODC Password Replication Group にそのパスワードが RODC にキャッシュされないようにします。  
+    >
+    > 使用後に、アカウントのパスワードをリセットするか、アカウントを無効にする、この設定を実装しても、アカウントに有害な影響はありませんし、アカウントのリセットを管理者が忘れた場合の状況でわかりやすくなりますパスワードは無効にします。  
 
 17. **[所属するグループ]** タブをクリックします。  
 
@@ -188,42 +188,42 @@ ms.locfileid: "59855633"
 
 20. **[OK]** をクリックします。  
 
-   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_129.png)  
+    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_129.png)  
 
 21. をクリックして、**セキュリティ** タブでをクリックし、**詳細**します。  
 
 22. **セキュリティの詳細設定**ダイアログ ボックスで、をクリックして**継承を無効にする**として明示的なアクセス許可、継承されたアクセス許可をコピーしをクリックし、**追加**。  
 
-   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_130.png)  
+    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_130.png)  
 
 23. **[アカウント] のアクセス許可エントリ**ダイアログ ボックスで、をクリックして**プリンシパルの選択**し、前の手順で作成したグループに追加します。 ダイアログ ボックスの一番下までスクロールし、をクリックして**すべてクリア**すべて既定のアクセス許可を削除します。  
 
-   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_131.png)  
+    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_131.png)  
 
 24. ページのトップへのスクロール、**アクセス許可エントリ** ダイアログ ボックス。 いることを確認、**型**にドロップダウン リストが設定されている**許可**、し、**に適用されます**ドロップダウン リストで、**このオブジェクトのみ**します。  
 
 25. **権限**フィールドで、**すべてのプロパティを読み取る**、**読み取りアクセス許可**と**パスワードのリセット**します。  
 
-   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_132.png)  
+    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_132.png)  
 
 26. **プロパティ**フィールドで、 **userAccountControl を読み取る**と**userAccountControl を書き込む**します。  
 
 27. をクリックして**ok**、 **OK**で再度、**セキュリティの詳細設定** ダイアログ ボックス。  
 
-   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_133.png)  
+    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_133.png)  
 
-   > [!NOTE]  
-   > **UserAccountControl**属性は複数のアカウントの構成オプションを制御します。 属性に対する書き込み権限を付与する場合は、構成オプションの一部のみを変更するアクセス許可を付与することはできません。  
+    > [!NOTE]  
+    > **UserAccountControl**属性は複数のアカウントの構成オプションを制御します。 属性に対する書き込み権限を付与する場合は、構成オプションの一部のみを変更するアクセス許可を付与することはできません。  
 
 28. **グループまたはユーザー名**のフィールド、**セキュリティ** タブで、アクセスしたり、アカウントの管理を許可する必要がありますすべてのグループを削除します。 Everyone グループと SELF 計算アカウントなど、Deny Ace で構成されているすべてのグループを削除しないでください (その ACE が設定されたときに、**ユーザーがパスワードを変更できない**フラグが、アカウントの作成時に有効になっています。 また、グループを追加した、システム アカウント、または EA、DA、BA、または、Windows Authorization Access Group などのグループは削除しないでください。  
 
-   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_134.png)  
+    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_134.png)  
 
 29. クリックして**詳細**し、セキュリティの詳細設定 ダイアログ ボックスは次のスクリーン ショットのようなことを確認します。  
 
 30. をクリックして**OK**、および**OK**アカウントのプロパティ ダイアログ ボックスを閉じます。  
 
-   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_135.png)  
+    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_135.png)  
 
 31. 最初の管理アカウントのセットアップが完了しました。 後の手順では、アカウントをテストします。  
 
@@ -251,56 +251,56 @@ SIEM ソリューション (たとえば、イベント ログ、アプリケー
   
 この場合、それらを読み取るとグループ オブジェクトで、メンバーの属性の書き込みを許可する、新しく作成された管理アカウント許可しているされます。 ただし、AdminSDHolder オブジェクトは、グループ オブジェクトではないと、グループの属性は、グラフィカル ACL エディターでは公開されません。 このため、Dsacls コマンド ライン ユーティリティを使用してアクセス許可の変更を実装することがあります。 (無効) の管理の保護グループのメンバーシップを変更するアカウントのアクセス許可を付与するには、次の手順を実行します。  
   
-1.  可能であれば、ドメイン コント ローラー、PDC エミュレーター (PDCE) の役割をドメイン内のデータ グループのメンバーが作成されているユーザー アカウントの資格情報を保持しているドメイン コント ローラーにログオンします。  
+1. 可能であれば、ドメイン コント ローラー、PDC エミュレーター (PDCE) の役割をドメイン内のデータ グループのメンバーが作成されているユーザー アカウントの資格情報を保持しているドメイン コント ローラーにログオンします。  
   
-    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_136.png)  
+   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_136.png)  
   
-2.  右クリックし、管理者特権でコマンド プロンプトを開く**コマンド プロンプト**クリック**管理者として実行**します。  
+2. 右クリックし、管理者特権でコマンド プロンプトを開く**コマンド プロンプト**クリック**管理者として実行**します。  
   
-    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_137.gif)  
+   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_137.gif)  
   
-3.  昇格を承認するメッセージが表示されたら、クリックして**はい**します。  
+3. 昇格を承認するメッセージが表示されたら、クリックして**はい**します。  
   
-    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_138.gif)  
+   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_138.gif)  
   
-    > [!NOTE]  
-    > Windows で使用した昇格とユーザー アカウント制御 (UAC) の詳細については、次を参照してください。 [UAC プロセスとの対話](https://technet.microsoft.com/library/dd835561(v=WS.10).aspx)TechNet web サイト。  
+   > [!NOTE]  
+   > Windows で使用した昇格とユーザー アカウント制御 (UAC) の詳細については、次を参照してください。 [UAC プロセスとの対話](https://technet.microsoft.com/library/dd835561(v=WS.10).aspx)TechNet web サイト。  
   
-4.  コマンド プロンプト (、ドメイン固有の情報を置き換える) の種類で**Dsacls [自分のドメイン内の AdminSDHolder オブジェクトの識別名]/G [管理アカウント UPN]: RPWP; メンバー**します。  
+4. コマンド プロンプト (、ドメイン固有の情報を置き換える) の種類で**Dsacls [自分のドメイン内の AdminSDHolder オブジェクトの識別名]/G [管理アカウント UPN]: RPWP; メンバー**します。  
   
-    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_139.gif)  
+   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_139.gif)  
   
-    (これは大文字小文字を区別しない) 前のコマンドはように動作します。  
+   (これは大文字小文字を区別しない) 前のコマンドはように動作します。  
   
-    -   Dsacls を設定またはディレクトリ オブジェクトの Ace を表示します。  
+   - Dsacls を設定またはディレクトリ オブジェクトの Ace を表示します。  
   
-    -   CN AdminSDHolder、CN = System, DC = = 含ま, DC = msft が変更されるオブジェクトを識別します  
+   - CN AdminSDHolder、CN = System, DC = = 含ま, DC = msft が変更されるオブジェクトを識別します  
   
-    -   /G の許可 ACE が構成されていることを示します  
+   - /G の許可 ACE が構成されていることを示します  
   
-    -   PIM001@tailspintoys.msft Ace を許可するセキュリティ プリンシパルのユーザー プリンシパル名 (UPN) は、します。  
+   - PIM001@tailspintoys.msft Ace を許可するセキュリティ プリンシパルのユーザー プリンシパル名 (UPN) は、します。  
   
-    -   プロパティを読み取りし、書き込みのアクセス許可を RPWP 許可  
+   - プロパティを読み取りし、書き込みのアクセス許可を RPWP 許可  
   
-    -   メンバーは、アクセス許可を設定するプロパティ (属性) の名前が、します。  
+   - メンバーは、アクセス許可を設定するプロパティ (属性) の名前が、します。  
   
-    使用の詳細については**Dsacls**、コマンド プロンプト パラメーターを指定せず、Dsacls を入力します。  
+   使用の詳細については**Dsacls**、コマンド プロンプト パラメーターを指定せず、Dsacls を入力します。  
   
-    ドメインの複数の管理アカウントを作成した場合は、アカウントごとに Dsacls コマンドを実行する必要があります。 AdminSDHolder オブジェクトの ACL 構成が完了したら、SDProp 実行、またはスケジュールされた実行が完了するまでの待機を強制する必要があります。 実行する SDProp の強制の詳細についてを参照してください「を実行している SDProp 手動で」[付録 c:Active Directory のアカウントとグループの保護](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)します。  
+   ドメインの複数の管理アカウントを作成した場合は、アカウントごとに Dsacls コマンドを実行する必要があります。 AdminSDHolder オブジェクトの ACL 構成が完了したら、SDProp 実行、またはスケジュールされた実行が完了するまでの待機を強制する必要があります。 実行する SDProp の強制の詳細についてを参照してください「を実行している SDProp 手動で」[付録 c:Active Directory のアカウントとグループの保護](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)します。  
   
-    SDProp が実行すると、保護対象のグループ、ドメイン内の AdminSDHolder オブジェクトに加えた変更が適用されたことを確認できます。 これは前に説明した理由の AdminSDHolder オブジェクトの ACL を表示して確認することはできませんが、保護グループの Acl を表示することによって、アクセス許可が適用されていることを確認できます。  
+   SDProp が実行すると、保護対象のグループ、ドメイン内の AdminSDHolder オブジェクトに加えた変更が適用されたことを確認できます。 これは前に説明した理由の AdminSDHolder オブジェクトの ACL を表示して確認することはできませんが、保護グループの Acl を表示することによって、アクセス許可が適用されていることを確認できます。  
   
-5.  **Active Directory ユーザーとコンピューター**、有効にしたことを確認**高度な機能**します。 これを行うには、次のようにクリックします。**ビュー**、検索、 **Domain Admins**グループ化、グループを右クリックおよびクリック**プロパティ**します。  
+5. **Active Directory ユーザーとコンピューター**、有効にしたことを確認**高度な機能**します。 これを行うには、次のようにクリックします。**ビュー**、検索、 **Domain Admins**グループ化、グループを右クリックおよびクリック**プロパティ**します。  
   
-6.  をクリックして、**セキュリティ** タブでをクリックし、 **詳細設定**を開く、 **Advanced Security Settings for Domain Admins**  ダイアログ ボックス。  
+6. をクリックして、**セキュリティ** タブでをクリックし、 **詳細設定**を開く、 **Advanced Security Settings for Domain Admins**  ダイアログ ボックス。  
   
-    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_140.gif)  
+   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_140.gif)  
   
-7.  選択**管理アカウントを許可する ACE**  をクリック**編集**します。 アカウントがのみ与えられていることを確認**メンバーを読み取る**と**メンバーの書き込み** をクリックし、DA グループに対するアクセス許可**OK**します。  
+7. 選択**管理アカウントを許可する ACE**  をクリック**編集**します。 アカウントがのみ与えられていることを確認**メンバーを読み取る**と**メンバーの書き込み** をクリックし、DA グループに対するアクセス許可**OK**します。  
   
-8.  をクリックして**ok**で、**セキュリティの詳細設定** ダイアログ ボックスをクリックします**OK** DA グループのプロパティ ダイアログ ボックスを閉じます。  
+8. をクリックして**ok**で、**セキュリティの詳細設定** ダイアログ ボックスをクリックします**OK** DA グループのプロパティ ダイアログ ボックスを閉じます。  
   
-    ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_141.gif)  
+   ![管理アカウントを作成します。](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_141.gif)  
   
 9. ドメインの他の保護グループの前の手順を繰り返すことができます。アクセス許可は、すべての保護グループに対して同じになります。 このドメイン内の保護グループの管理アカウントの作成と構成が完了しました。  
   

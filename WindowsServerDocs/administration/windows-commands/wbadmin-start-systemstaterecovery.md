@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c99a934987e320baaec0e56c69f36eda5a32819
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4282da2011c39daec0315a7f3836d5517f29debb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852683"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440205"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>wbadmin start systemstaterecovery
 
@@ -74,17 +74,17 @@ wbadmin start systemstaterecovery
 
 ## <a name="BKMK_examples"></a>例
 
--   午前 9時 00分を 03/31/2013 からシステム状態のバックアップの回復を実行するには、次のように入力します。  
-    ```
-    wbadmin start systemstaterecovery -version:03/31/2013-09:00
-    ```  
--   午前 9時 00分 04/30/2013 からシステム状態のバックアップの回復を実行するには 共有リソース上に格納される\\ \\servername\share server01、種類。  
-    ```
-    wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
-    ```
+- 午前 9時 00分を 03/31/2013 からシステム状態のバックアップの回復を実行するには、次のように入力します。  
+  ```
+  wbadmin start systemstaterecovery -version:03/31/2013-09:00
+  ```  
+- 午前 9時 00分 04/30/2013 からシステム状態のバックアップの回復を実行するには 共有リソース上に格納される\\ \\servername\share server01、種類。  
+  ```
+  wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
+  ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   [開始 WBSystemStateRecovery](https://technet.microsoft.com/library/jj902449.aspx)コマンドレット

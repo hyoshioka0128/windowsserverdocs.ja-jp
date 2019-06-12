@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 94be02aa25867845436b83d052c4990ff9212975
-ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.openlocfilehash: 8aee4ecca85c7d5f46ee79f3ad928b746c02e7bb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65564684"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439979"
 ---
 # <a name="writer"></a>ライター
 
@@ -35,11 +35,11 @@ writer exclude [<Writer> | <Component>]
 
 ## <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|verify|バックアップまたは復元の手順で、指定したライターまたはコンポーネントが含まれることを確認します。 バックアップまたは復元の手順は、ライターまたはコンポーネントが含まれていない場合は失敗します。|
-|exclude|バックアップまたは復元の手順から、指定したライターまたはコンポーネントを除外します。|
-|[\<ライター > | <Component>]|確認するか、除外するには、ライターまたはコンポーネントを指定します。 ライターが指定したは、ライター GUID またはライターの名前、「システム ライター」などです。|
+| パラメーター  |                                                                                      説明                                                                                      |
+|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   verify   | バックアップまたは復元の手順で、指定したライターまたはコンポーネントが含まれることを確認します。 バックアップまたは復元の手順は、ライターまたはコンポーネントが含まれていない場合は失敗します。 |
+|  exclude   |                                                   バックアップまたは復元の手順から、指定したライターまたはコンポーネントを除外します。                                                    |
+| [\<ライター > |                                                                                     <Component>]                                                                                      |
 
 ## <a name="BKMK_examples"></a>例
 

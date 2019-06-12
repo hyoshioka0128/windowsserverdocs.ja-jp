@@ -13,12 +13,12 @@ ms.assetid: 8e9e5c81-aa61-479e-abaf-64c5e95f90dc
 ms.author: grcusanz
 author: shortpatti
 ms.date: 08/26/2018
-ms.openlocfilehash: fcd37ebb3739f1d7118ce41dfc61764486c920d3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 97c20fd07d06b609686daf4d6308a9f248873036
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844963"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446341"
 ---
 # <a name="guest-clustering-in-a-virtual-network"></a>仮想ネットワークでのゲスト クラスタリング
 
@@ -143,7 +143,7 @@ ms.locfileid: "59844963"
    Import-module failoverclusters
 
    $ClusterName = "MyCluster"
-   
+   
    $ClusterNetworkName = "Cluster Network 1"
    $IPResourceName =  
    $ILBIP = “192.168.2.100” 
@@ -182,6 +182,6 @@ ms.locfileid: "59844963"
    Add-ClusterNode $nodes[1]
    ```
 
-_**クラスターはアクティブです。**_ トラフィックは、指定したポートで、VIP は、アクティブなノードに送られます。
+_**クラスターはアクティブです。** _ トラフィックは、指定したポートで、VIP は、アクティブなノードに送られます。
 
 ---

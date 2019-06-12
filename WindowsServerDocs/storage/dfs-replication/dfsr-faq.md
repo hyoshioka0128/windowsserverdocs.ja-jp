@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 3782667e54f5e6b52c07645704b95fc9e7409a27
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 280104977e295ce0c9ccb05b806442ccaa73667b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476073"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447233"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS レプリケーション: よく寄せられる質問 (FAQ)
 
@@ -41,7 +41,7 @@ DFS レプリケーションでは新しい方法の詳細については、次�
 
 ### <a name="can-dfs-replication-communicate-with-frs"></a>DFS レプリケーションは、FRS と通信できますか。
 
-いいえ。 DFS レプリケーションでは、ファイル レプリケーション サービス (FRS) は通信しません。 DFS レプリケーションと FRS と同時に、同じサーバー上に実行できますが、データの損失が発生することができますので、同じフォルダーまたはサブフォルダーをレプリケートするように構成することはありません必要があります。
+No. DFS レプリケーションでは、ファイル レプリケーション サービス (FRS) は通信しません。 DFS レプリケーションと FRS と同時に、同じサーバー上に実行できますが、データの損失が発生することができますので、同じフォルダーまたはサブフォルダーをレプリケートするように構成することはありません必要があります。
 
 ### <a name="can-dfs-replication-replace-frs-for-sysvol-replication"></a>置き換えることが DFS レプリケーション FRS の SYSVOL のレプリケーション
 
@@ -82,7 +82,7 @@ DFS レプリケーションは、Windows Server オペレーティング シス
 
 ### <a name="does-dfs-replication-replicate-mailboxes-hosted-on-microsoft-exchange-server"></a>DFS レプリケーションは、Microsoft Exchange Server にホストされているメールボックスをレプリケートしますか。
 
-いいえ。 DFS レプリケーションを使用して、Microsoft Exchange Server にホストされているメールボックスをレプリケートすることはできません。
+No. DFS レプリケーションを使用して、Microsoft Exchange Server にホストされているメールボックスをレプリケートすることはできません。
 
 ### <a name="does-dfs-replication-support-file-screens-created-by-file-server-resource-manager"></a>DFS レプリケーションは、ファイル サーバー リソース マネージャーによって作成されたファイル スクリーンをサポートしますか。
 
@@ -139,7 +139,7 @@ Windows® SharePoint® Services に DFS レプリケーションはないファ�
 
 ### <a name="can-dfs-replication-replicate-files-encrypted-with-the-encrypting-file-system"></a>DFS レプリケーションは暗号化ファイル システムで暗号化されたファイルをレプリケートできますか。
 
-いいえ。 DFS レプリケーションは、ファイルや暗号化ファイル システム (EFS) を使用して暗号化されているフォルダーにはレプリケートされません。 ユーザーがレプリケートされていたファイルを暗号化する場合、DFS レプリケーションはレプリケーション グループの他のすべてのメンバーからファイルを削除します。 これにより、ファイルののみ使用可能なコピーがサーバー上の暗号化されたバージョンであります。
+No. DFS レプリケーションは、ファイルや暗号化ファイル システム (EFS) を使用して暗号化されているフォルダーにはレプリケートされません。 ユーザーがレプリケートされていたファイルを暗号化する場合、DFS レプリケーションはレプリケーション グループの他のすべてのメンバーからファイルを削除します。 これにより、ファイルののみ使用可能なコピーがサーバー上の暗号化されたバージョンであります。
 
 ### <a name="can-dfs-replication-replicate-outlook-pst-or-microsoft-office-access-database-files"></a>DFS レプリケーションに Outlook の .pst ファイルまたは Microsoft Office Access データベース ファイルをレプリケートできますか。
 
@@ -152,7 +152,7 @@ DFS レプリケーションはレプリケーションを安全に Microsoft Ou
 
 ### <a name="can-i-use-dfs-replication-in-a-workgroup"></a>ワークグループで DFS レプリケーションを使用することができますか。
 
-いいえ。 DFS レプリケーションは、構成に対する Active Directory® ドメイン サービスに依存します。 ドメイン内にのみ機能します。
+No. DFS レプリケーションは、構成に対する Active Directory® ドメイン サービスに依存します。 ドメイン内にのみ機能します。
 
 ### <a name="can-more-than-one-folder-be-replicated-on-a-single-server"></a>1 台のサーバーでは、複数のフォルダーをレプリケートできますか。
 
@@ -160,11 +160,11 @@ DFS レプリケーションはレプリケーションを安全に Microsoft Ou
 
 ### <a name="does-dfs-replication-require-dfs-namespaces"></a>DFS レプリケーションは DFS 名前空間が必要ですか。
 
-いいえ。 DFS レプリケーションと DFS 名前空間は、個別にまたは組み合わせて使用できます。 DFS レプリケーションを使用して、FRS. でできることではないスタンドアロン DFS 名前空間をレプリケートするさらに、
+No. DFS レプリケーションと DFS 名前空間は、個別にまたは組み合わせて使用できます。 DFS レプリケーションを使用して、FRS. でできることではないスタンドアロン DFS 名前空間をレプリケートするさらに、
 
 ### <a name="does-dfs-replication-require-time-synchronization-between-servers"></a>DFS レプリケーションはサーバー間で時刻の同期が必要ですか。
 
-いいえ。 DFS レプリケーションは、サーバー間の時刻同期を明示的に要求されません。 ただし、DFS レプリケーションでは、サーバーのクロックを近づける必要。 サーバーのクロックは、Kerberos 認証を正常に機能 (既定) には、それぞれの 5 分以内で設定する必要があります。 たとえば、DFS レプリケーションでは、タイムスタンプを使用して、どのファイルが優先の競合が発生した場合を判断します。 正確な時間もガベージ コレクション、スケジュール、およびその他の機能にとって重要です。
+No. DFS レプリケーションは、サーバー間の時刻同期を明示的に要求されません。 ただし、DFS レプリケーションでは、サーバーのクロックを近づける必要。 サーバーのクロックは、Kerberos 認証を正常に機能 (既定) には、それぞれの 5 分以内で設定する必要があります。 たとえば、DFS レプリケーションでは、タイムスタンプを使用して、どのファイルが優先の競合が発生した場合を判断します。 正確な時間もガベージ コレクション、スケジュール、およびその他の機能にとって重要です。
 
 ### <a name="does-dfs-replication-support-replicating-an-entire-volume"></a>DFS レプリケーションはボリューム全体をレプリケートするか。
 
@@ -179,7 +179,7 @@ DFS レプリケーションはレプリケーションを安全に Microsoft Ou
 
 ### <a name="does-dfs-replication-support-rpc-over-http"></a>DFS レプリケーションは、HTTP 経由で RPC をサポートしますか。
 
-いいえ。
+No.
 
 ### <a name="does-dfs-replication-work-across-wireless-networks"></a>DFS レプリケーションは、ワイヤレス ネットワークの間で動作しますか。
 
@@ -187,7 +187,7 @@ DFS レプリケーションはレプリケーションを安全に Microsoft Ou
 
 ### <a name="does-dfs-replication-work-on-refs-or-fat-volumes"></a>DFS レプリケーションは、ReFS ボリュームまたは FAT ボリュームに動作しますか。
 
-いいえ。 DFS レプリケーションのみで、NTFS ファイル システムでフォーマットされたボリュームをサポートしていますResilient File System (ReFS) および FAT ファイル システムはサポートされていません。 DFS レプリケーションでは、NTFS の変更ジャーナルを使用しており、その他の機能、NTFS ファイル システムのために NTFS が必要です。
+No. DFS レプリケーションのみで、NTFS ファイル システムでフォーマットされたボリュームをサポートしていますResilient File System (ReFS) および FAT ファイル システムはサポートされていません。 DFS レプリケーションでは、NTFS の変更ジャーナルを使用しており、その他の機能、NTFS ファイル システムのために NTFS が必要です。
 
 ### <a name="does-dfs-replication-work-with-sparse-files"></a>DFS レプリケーションは、スパース ファイルで動作しますか。
 
@@ -195,7 +195,7 @@ DFS レプリケーションはレプリケーションを安全に Microsoft Ou
 
 ### <a name="do-i-need-to-log-in-as-administrator-to-replicate-files"></a>ファイルをレプリケートするには管理者としてログインする必要がありますか。
 
-いいえ。 DFS レプリケーションは、レプリケートするには管理者としてログインする必要はありませんので、ローカル システム アカウントで実行されるサービスです。 ただし、DFS レプリケーションの構成を変更するには、ドメイン管理者または影響を受けるファイル サーバーのローカルの管理者をする必要があります。
+No. DFS レプリケーションは、レプリケートするには管理者としてログインする必要はありませんので、ローカル システム アカウントで実行されるサービスです。 ただし、DFS レプリケーションの構成を変更するには、ドメイン管理者または影響を受けるファイル サーバーのローカルの管理者をする必要があります。
 
 詳細についてで「DFS レプリケーションのセキュリティ要件と委任」を参照、 [DFS レプリケーションを管理する権限を委任](http://go.microsoft.com/fwlink/?linkid=182294)(http://go.microsoft.com/fwlink/?LinkId=182294)します。
 
@@ -213,7 +213,7 @@ Windows および DFS レプリケーションは、最大 32 桁の文字を含
 
 ### <a name="must-members-of-a-replication-group-reside-in-the-same-domain"></a>レプリケーション グループのメンバーは同じドメイン内にする必要がありますか。
 
-いいえ。 レプリケーション グループは、別のフォレスト全体ではなくが、1 つのフォレスト内のドメイン間にまたがることができます。
+No. レプリケーション グループは、別のフォレスト全体ではなくが、1 つのフォレスト内のドメイン間にまたがることができます。
 
 ### <a name="what-are-the-supported-limits-of-dfs-replication"></a>DFS レプリケーションのサポートされている制限とは
 
@@ -290,7 +290,7 @@ DFS の管理は、Windows Server 2012 R2、Windows Server 2012、Windows Server
 
 ### <a name="do-ultrasound-and-sonar-work-with-dfs-replication"></a>Ultrasound と Sonar うまく DFS レプリケーションを使用しますか。
 
-いいえ。 DFS レプリケーションには、監視および診断ツールの独自セットがあります。 Ultrasound と Sonar が FRS. を監視できるのみ
+No. DFS レプリケーションには、監視および診断ツールの独自セットがあります。 Ultrasound と Sonar が FRS. を監視できるのみ
 
 ### <a name="how-can-files-be-recovered-from-the-conflictanddeleted-or-preexisting-folders"></a>ファイルは、ConflictAndDeleted または PreExisting フォルダーからどのように回復できるでしょうか。
 
@@ -319,7 +319,7 @@ DFS レプリケーションではダイヤルアップの速度で動作する�
 
 ### <a name="does-dfs-replication-perform-bandwidth-sensing"></a>DFS レプリケーションは、帯域幅の検出を実行しますか。
 
-いいえ。 DFS レプリケーションでは、帯域幅の検出は実行されません。 (帯域幅の調整) 接続ごとに帯域幅の制限の量を使用する、DFS レプリケーションを構成することができます。 ただし、DFS レプリケーションはさらに縮小されません帯域幅使用率、ネットワーク インターフェイスが飽和し、短い時間では、DFS レプリケーションにより、リンクが飽和状態ことができる場合。 DFS レプリケーションは RPC 呼び出しの調整によって調整される帯域幅の調整のため、帯域幅調整の DFS レプリケーションでは完全に正確ではありません。 その結果、RPC を含むネットワーク スタックの下位レベルでのさまざまなバッファーが干渉し、ネットワーク トラフィックの急激な増加の原因します。
+No. DFS レプリケーションでは、帯域幅の検出は実行されません。 (帯域幅の調整) 接続ごとに帯域幅の制限の量を使用する、DFS レプリケーションを構成することができます。 ただし、DFS レプリケーションはさらに縮小されません帯域幅使用率、ネットワーク インターフェイスが飽和し、短い時間では、DFS レプリケーションにより、リンクが飽和状態ことができる場合。 DFS レプリケーションは RPC 呼び出しの調整によって調整される帯域幅の調整のため、帯域幅調整の DFS レプリケーションでは完全に正確ではありません。 その結果、RPC を含むネットワーク スタックの下位レベルでのさまざまなバッファーが干渉し、ネットワーク トラフィックの急激な増加の原因します。
 
 ### <a name="does-dfs-replication-throttle-bandwidth-per-schedule-per-server-or-per-connection"></a>DFS レプリケーションは、スケジュール、サーバー、または 1 つの接続の帯域幅を調整しますか。
 
@@ -327,7 +327,7 @@ DFS レプリケーションではダイヤルアップの速度で動作する�
 
 ### <a name="does-dfs-replication-use-active-directory-domain-services-to-calculate-site-links-and-connection-costs"></a>DFS レプリケーションは、サイト リンクと接続のコストを計算するのに Active Directory Domain Services を使用しますか。
 
-いいえ。 DFS レプリケーションは、これはサイト コストを Active Directory Domain Services に依存しないと、管理者によって定義されたトポロジを使用します。
+No. DFS レプリケーションは、これはサイト コストを Active Directory Domain Services に依存しないと、管理者によって定義されたトポロジを使用します。
 
 ### <a name="how-can-i-improve-replication-performance"></a>レプリケーションのパフォーマンスを向上させる方法は?
 
@@ -387,7 +387,7 @@ Windows Server の Standard エディションをサポートしていない RDC
 
 ### <a name="is-rdc-true-block-level-replication"></a>RDC は true。 ブロック レベルのレプリケーションとは
 
-いいえ。 RDC は、ファイル転送の圧縮の汎用プロトコルです。 DFS レプリケーションは、RDC を使用して、ディスクのブロック レベルではなくファイル レベルでブロックします。 RDC は、ファイルをブロックに分割します。 ファイル内の各ブロックに対してより大きなブロックを表すことのできるバイト数が少ないのは、署名を計算します。 一連のシグネチャは、サーバーからクライアントに転送されます。 クライアントでは、独自にサーバーの署名と比較します。 クライアントを要求、サーバーが既にクライアントではない署名のデータのみを送信します。
+No. RDC は、ファイル転送の圧縮の汎用プロトコルです。 DFS レプリケーションは、RDC を使用して、ディスクのブロック レベルではなくファイル レベルでブロックします。 RDC は、ファイルをブロックに分割します。 ファイル内の各ブロックに対してより大きなブロックを表すことのできるバイト数が少ないのは、署名を計算します。 一連のシグネチャは、サーバーからクライアントに転送されます。 クライアントでは、独自にサーバーの署名と比較します。 クライアントを要求、サーバーが既にクライアントではない署名のデータのみを送信します。
 
 ### <a name="what-happens-if-i-rename-a-file"></a>ファイルの名前を変更するとどうなりますか。
 
@@ -431,9 +431,9 @@ RDC はファイルが最小サイズのしきい値を超えた場合に使用�
 <tbody>
 <tr class="even">
 <td><p>Windows Server 2012 R2</p></td>
-<td><p>○*</p></td>
+<td><p>うん<em></p></td>
 <td><p>使用できません</p></td>
-<td><p>○*</p></td>
+<td><p>〇</em></p></td>
 </tr>
 <tr class="odd">
 <td><p>Windows Server 2012</p></td>
@@ -468,7 +468,7 @@ RDC はファイルが最小サイズのしきい値を超えた場合に使用�
 
 ### <a name="can-i-change-the-path-for-a-replicated-folder-after-it-is-created"></a>作成した後、レプリケート フォルダーのパスを変更できますか。
 
-いいえ。 レプリケート フォルダーのパスを変更する必要がある場合を DFS の管理では削除し、新しいレプリケート フォルダーとして再度追加する必要があります。 DFS レプリケーションは、Remote Differential Compression (RDC) を使用して、データが送信と受信メンバーで同じかどうかを判別する同期を実行します。 フォルダー内のすべてのデータをもう一度レプリケートにはされません。
+No. レプリケート フォルダーのパスを変更する必要がある場合を DFS の管理では削除し、新しいレプリケート フォルダーとして再度追加する必要があります。 DFS レプリケーションは、Remote Differential Compression (RDC) を使用して、データが送信と受信メンバーで同じかどうかを判別する同期を実行します。 フォルダー内のすべてのデータをもう一度レプリケートにはされません。
 
 ### <a name="can-i-configure-which-file-attributes-are-replicated"></a>レプリケートされるファイル属性を構成できますか。
 
@@ -550,7 +550,7 @@ DFS レプリケーションは、ファイルをレプリケートしません\
 
 ### <a name="does-dfs-replication-replicate-files-in-chronological-order"></a>DFS レプリケーションは、時系列内のファイルをレプリケートしますか。
 
-いいえ。 誤順序のファイルをレプリケートする場合があります。
+No. 誤順序のファイルをレプリケートする場合があります。
 
 ### <a name="does-dfs-replication-replicate-files-that-are-being-used-by-another-application"></a>DFS レプリケーションは、別のアプリケーションによって使用されているファイルをレプリケートしますか。
 
@@ -591,7 +591,7 @@ DFS レプリケーションは、競合がある場合、ファイルをマー�
 
 ### <a name="is-it-possible-to-disable-the-use-of-encrypted-rpc"></a>暗号化された RPC の使用を無効にすることはできますか。
 
-いいえ。 DFS レプリケーション サービスでは、TCP 経由でリモート プロシージャ コール (RPC) を使用して、データをレプリケートします。 認証レベルの定数を常に使用する、DFS レプリケーション サービスを設計、インターネット経由でデータ転送をセキュリティで保護`RPC_C_AUTHN_LEVEL_PKT_PRIVACY`します。 これにより、インターネット経由で RPC 通信が常に暗号化されています。 そのため、DFS レプリケーション サービスによって暗号化された RPC の使用を無効にすることはできません。
+No. DFS レプリケーション サービスでは、TCP 経由でリモート プロシージャ コール (RPC) を使用して、データをレプリケートします。 認証レベルの定数を常に使用する、DFS レプリケーション サービスを設計、インターネット経由でデータ転送をセキュリティで保護`RPC_C_AUTHN_LEVEL_PKT_PRIVACY`します。 これにより、インターネット経由で RPC 通信が常に暗号化されています。 そのため、DFS レプリケーション サービスによって暗号化された RPC の使用を無効にすることはできません。
 
 詳細については、次の Microsoft Web サイトを参照してください。
 
@@ -614,7 +614,7 @@ DFS レプリケーションは、競合がある場合、ファイルをマー�
 
 ### <a name="is-it-possible-to-configure-a-quiet-time-between-replications-for-files-that-change-frequently"></a>頻繁に変更されるファイルのレプリケーションの間の待ち時間を構成することはできますか。
 
-いいえ。 スケジュールが開いている場合、それらを認識すると、DFS レプリケーションは変更をレプリケートします。 ファイルの時間帯を構成する方法はありません。
+No. スケジュールが開いている場合、それらを認識すると、DFS レプリケーションは変更をレプリケートします。 ファイルの時間帯を構成する方法はありません。
 
 ### <a name="is-it-possible-to-configure-one-way-replication-with-dfs-replication"></a>DFS レプリケーションと一方向のレプリケーションを構成することはできますか。
 
@@ -631,7 +631,7 @@ Windows Server 2008 または Windows Server 2003 R2 を使用している場合
 
 ### <a name="is-there-a-way-to-force-a-complete-replication-of-all-files-including-unchanged-files"></a>未変更のファイルを含むすべてのファイルの完全なレプリケーションを強制する方法はありますか。
 
-いいえ。 DFS レプリケーションは、同じファイルを考慮する場合にレプリケートされません。 変更されたファイルがレプリケートされていない場合は、DFS レプリケーションは自動的にこれらをレプリケートするように構成されている場合。 構成されたスケジュールを上書きするには、WMI メソッドを使用して**ForceReplicate()** します。 ただし、これはのみ、スケジュールを変更して、変更されていない、または同一のファイルのレプリケーションを強制しません。
+No. DFS レプリケーションは、同じファイルを考慮する場合にレプリケートされません。 変更されたファイルがレプリケートされていない場合は、DFS レプリケーションは自動的にこれらをレプリケートするように構成されている場合。 構成されたスケジュールを上書きするには、WMI メソッドを使用して**ForceReplicate()** します。 ただし、これはのみ、スケジュールを変更して、変更されていない、または同一のファイルのレプリケーションを強制しません。
 
 ### <a name="what-happens-if-the-primary-member-suffers-a-database-loss-during-initial-replication"></a>プライマリ メンバーは、初期レプリケーション中にデータベースの損失を悪化するとどうなりますか。
 
@@ -670,11 +670,11 @@ DFS レプリケーションは、競合を検出した、最後に保存され�
 
 ### <a name="does-dfs-replication-continue-staging-files-when-replication-is-disabled-by-a-schedule-or-bandwidth-throttling-quota-or-when-a-connection-is-manually-disabled"></a>DFS レプリケーションは、スケジュールまたは帯域幅クォータの調整によってレプリケーションが無効にした場合、または接続を手動で無効にするファイルのステージングを続行しますか。
 
-いいえ。 帯域幅調整のクォータを超過した場合、または接続が無効にした場合は、DFS レプリケーションはスケジュールされたレプリケーションの時間、外部ファイルのステージングには続行されません。
+No. 帯域幅調整のクォータを超過した場合、または接続が無効にした場合は、DFS レプリケーションはスケジュールされたレプリケーションの時間、外部ファイルのステージングには続行されません。
 
 ### <a name="does-dfs-replication-prevent-other-applications-from-accessing-a-file-during-staging"></a>DFS レプリケーションは他のアプリケーションがステージング中に、ファイルへのアクセスを防止しますか。
 
-いいえ。 DFS レプリケーションは、ユーザーや、レプリケーション フォルダーでファイルを開くアプリケーションをブロックしない方法でファイルを開きます。 このメソッドは「便宜的ロック」と呼ばれます
+No. DFS レプリケーションは、ユーザーや、レプリケーション フォルダーでファイルを開くアプリケーションをブロックしない方法でファイルを開きます。 このメソッドは「便宜的ロック」と呼ばれます
 
 ### <a name="is-it-possible-to-change-the-location-of-the-staging-folder-with-the-dfs-management-tool"></a>DFS 管理ツールを使用してステージング フォルダーの場所を変更することはできますか。
 

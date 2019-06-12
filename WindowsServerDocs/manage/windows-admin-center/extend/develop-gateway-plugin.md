@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 93cee5b8e3611a264119947103d22d9aa3b9a56b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 66e36a349fc6bd38a77ccf4f00d380788ea4b422
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834393"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445955"
 ---
 # <a name="develop-a-gateway-plugin"></a>ゲートウェイ プラグインの開発
 
@@ -69,7 +69,7 @@ Windows の管理プロセスを再起動した後は、GET を発行するこ�
 
 ### <a name="optional-attach-to-plugin-for-debugging"></a>省略可能: デバッグ用のプラグインにアタッチします。
 
-Visual Studio 2017 でのデバッグ メニューから"プロセスにアタッチ を選択します。 次のウィンドウでは、使用可能なプロセスの一覧をスクロールして、「SMEDesktop.exe、を選択し、"Attach"をクリックします。 1 回、デバッガーが開始することができますにブレークポイントを設定、機能のコードと、上記の URL 形式を演習します。 このサンプル プロジェクトの (機能名。"サンプル Uno") の URL です:"http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno"
+Visual Studio 2017 でのデバッグ メニューから"プロセスにアタッチ を選択します。 次のウィンドウでは、使用可能なプロセスの一覧をスクロールして、「SMEDesktop.exe、を選択し、"Attach"をクリックします。 1 回、デバッガーが開始することができますにブレークポイントを設定、機能のコードと、上記の URL 形式を演習します。 このサンプル プロジェクトの (機能名。"サンプル Uno") の URL です:"<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>"
 
 ## <a name="create-a-tool-extension-with-the-windows-admin-center-cli"></a>Windows Admin Center CLI を使用したツールの拡張機能を作成します。 ##
 
@@ -79,7 +79,7 @@ Visual Studio 2017 でのデバッグ メニューから"プロセスにアタ�
 wac create --company "{!Company Name}" --tool "{!Tool Name}"
 ```
 
-| 値 | 説明 | 例 |
+| Value | 説明 | 例 |
 | ----- | ----------- | ------- |
 | ```{!Company Name}``` | (スペース) を会社名 | ```Contoso Inc``` |
 | ```{!Tool Name}``` | (スペース) を含む、ツール名 | ```Manage Foo Works``` |
@@ -104,8 +104,8 @@ npm install
 
 Windows Admin Center CLI を使用した拡張機能を作成するのでは、次の手順に従って、ツールの拡張機能をカスタム ゲートウェイ プラグインに接続する準備が完了したら。
 
-- 追加、[空のモジュール](guides\add-module.md)
-- 使用して、[カスタム ゲートウェイ プラグイン](guides\use-custom-gateway-plugin.md)ツールの拡張機能
+- 追加、[空のモジュール](guides/add-module.md)
+- 使用して、[カスタム ゲートウェイ プラグイン](guides/use-custom-gateway-plugin.md)ツールの拡張機能
  
 ## <a name="build-and-side-load-your-extension"></a>ビルドと側は、拡張機能を読み込む
 

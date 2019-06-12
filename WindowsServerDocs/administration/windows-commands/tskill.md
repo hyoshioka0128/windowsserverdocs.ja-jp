@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 59958481a7c832aca7bc25d7d4d3ebbf4e8ef80c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b582334d7b79b2badbb86818be1093b6a5f55080
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835043"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440815"
 ---
 # <a name="tskill"></a>tskill
 
@@ -36,6 +36,7 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 ```
 
 ## <a name="parameters"></a>パラメーター
+
 |パラメーター|説明|
 |-------|--------|
 |\<ProcessID>|終了するプロセスの ID を指定します。|
@@ -47,19 +48,19 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 |/?|コマンド プロンプトにヘルプを表示します。|
 
 ## <a name="remarks"></a>注釈
--   使用することができます**tskill**管理者である場合を除きに属しているプロセスのみを終了します。 管理者は、すべてにフル アクセス権を持つ**tskill**関数およびその他のユーザーのセッションで実行されているプロセスを終了することができます。
--   セッションで実行されているすべてのプロセスが終了すると、セッションが終了します。
--   使用する場合、 *ProcessName*と **/server: * * * ServerName*パラメーター、いずれかを指定する必要があります、**/id: * * * SessionID*または **/a**パラメーター。
+- 使用することができます**tskill**管理者である場合を除きに属しているプロセスのみを終了します。 管理者は、すべてにフル アクセス権を持つ**tskill**関数およびその他のユーザーのセッションで実行されているプロセスを終了することができます。
+- セッションで実行されているすべてのプロセスが終了すると、セッションが終了します。
+- 使用する場合、 *ProcessName*と **/server:** <em>ServerName</em>パラメーター、いずれかを指定する必要があります、 **/id:** <em>SessionID</em>または **/a**パラメーター。
 
 ## <a name="BKMK_examples"></a>例
--   6543 プロセスを終了するには、次のように入力します。
-    ```
-    tskill 6543
-    ```
--   セッション 5 で実行されているプロセス"explorer"を終了するには、次のように入力します。
-    ```
-    tskill explorer /id:5
-    ```
-#### <a name="additional-references"></a>その他の参照情報
-[コマンドライン構文キー](command-line-syntax-key.md)
-[リモート デスクトップ サービスと #40 です。ターミナル サービスと #41 です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+- 6543 プロセスを終了するには、次のように入力します。
+  ```
+  tskill 6543
+  ```
+- セッション 5 で実行されているプロセス"explorer"を終了するには、次のように入力します。
+  ```
+  tskill explorer /id:5
+  ```
+  #### <a name="additional-references"></a>その他の参照情報
+  [コマンドライン構文キー](command-line-syntax-key.md)
+  [リモート デスクトップ サービスと #40 です。ターミナル サービスと #41 です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)

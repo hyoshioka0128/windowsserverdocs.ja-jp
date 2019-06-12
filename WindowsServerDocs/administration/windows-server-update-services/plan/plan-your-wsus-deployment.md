@@ -10,12 +10,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 4e4da87e5a2a4cd80e748a05596da3f23b5ac85f
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: a568324ba69b13c7016f4715d3c37f991ae4c1ad
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222907"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439719"
 ---
 # <a name="plan-your-wsus-deployment"></a>WSUS 展開を計画する
 
@@ -94,19 +94,19 @@ WSUS のインストール処理中に、既定では、次のものがインス
 
 WSUS を使用して更新できるように (サーバーを含む) クライアント コンピューターを構成する場合は、次の制限に注意してください。
 
-1.  オンデマンド機能の使用によりペイロードが削除されたサーバーの役割を、Microsoft Update でオンデマンドでインストールすることはできません。 このようなサーバーの役割をインストールしようとする時に、インストール ソースを指定するかグループ ポリシーでのオンデマンド機能のソースを構成する必要があります。
+1. オンデマンド機能の使用によりペイロードが削除されたサーバーの役割を、Microsoft Update でオンデマンドでインストールすることはできません。 このようなサーバーの役割をインストールしようとする時に、インストール ソースを指定するかグループ ポリシーでのオンデマンド機能のソースを構成する必要があります。
 
-2.  Windows クライアントの各エディションでは、Web からオンデマンドで .NET 3.5 をインストールすることはできません。 .NET 3.5 には、サーバーの役割と同じ考慮事項が適用されます。
+2. Windows クライアントの各エディションでは、Web からオンデマンドで .NET 3.5 をインストールすることはできません。 .NET 3.5 には、サーバーの役割と同じ考慮事項が適用されます。
 
-    > [!NOTE]
-    > 必要に応じてインストール ソースで、機能の構成では、WSUS は関与しません。 機能を構成する方法については、「 [Windows Server でのオンデマンド機能の構成](https://technet.microsoft.com/library/jj127275.aspx)」を参照してください。
+   > [!NOTE]
+   > 必要に応じてインストール ソースで、機能の構成では、WSUS は関与しません。 機能を構成する方法については、「 [Windows Server でのオンデマンド機能の構成](https://technet.microsoft.com/library/jj127275.aspx)」を参照してください。
 
 3. Windows 10 バージョン 1709 またはバージョン 1803 を実行しているエンタープライズ デバイスは、WSUS から直接、必要に応じて任意の機能をインストールすることはできません。 オンデマンドで機能をインストールする[機能ファイル (サイド バイ サイド ストア) を作成する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store)または、次のソースのいずれかから必要に応じてパッケージの機能を取得します。
-    - [ボリューム ライセンス サービス センター](https://www.microsoft.com/licensing/servicecenter) (VLSC) のボリューム ライセンスへのアクセスが必要です
-    - OEM ポータル - OEM へのアクセスが必要です。
-    - MSDN ダウンロードする - MSDN サブスクリプションが必要です。
+   - [ボリューム ライセンス サービス センター](https://www.microsoft.com/licensing/servicecenter) (VLSC) のボリューム ライセンスへのアクセスが必要です
+   - OEM ポータル - OEM へのアクセスが必要です。
+   - MSDN ダウンロードする - MSDN サブスクリプションが必要です。
 
-    使用してインストールできます必要に応じてパッケージの機能を個別に取得した[DISM コマンド ライン オプション](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options)します。
+     使用してインストールできます必要に応じてパッケージの機能を個別に取得した[DISM コマンド ライン オプション](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options)します。
 
 ### <a name="wsus-database-requirements"></a>WSUS データベースの要件
 WSUS では、次のいずれかのデータベースが必要です。
@@ -319,7 +319,7 @@ WSUS 構成ウィザードの **[言語の選択]** ページを使用すると�
 > [!NOTE]
 > ダウンストリーム サーバーでアップストリーム サーバーと同じ言語をダウンロードする必要がある場合でも、この操作は必要です。
 
-2.  すべての言語の更新プログラム ファイルをダウンロードするようにアップストリーム サーバーが構成されている場合:WSUS の構成ウィザードで、 **[アップストリーム サーバーでサポートされているすべての言語の更新プログラムをダウンロードする]** をクリックします。
+2. すべての言語の更新プログラム ファイルをダウンロードするようにアップストリーム サーバーが構成されている場合:WSUS の構成ウィザードで、 **[アップストリーム サーバーでサポートされているすべての言語の更新プログラムをダウンロードする]** をクリックします。
 
 > [!NOTE]
 > ダウンストリーム サーバーでアップストリーム サーバーと同じ言語をダウンロードする必要がある場合でも、この操作は必要です。 この設定を選んだ場合は、アップストリーム サーバーにすべての言語の更新プログラムがダウンロードされます (アップストリーム サーバーに対して構成されていなかった言語を含む)。 アップストリーム サーバーに言語を追加する場合は、そのレプリカ サーバーに新しい更新プログラムをコピーする必要があります。

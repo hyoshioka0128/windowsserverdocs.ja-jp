@@ -9,12 +9,12 @@ ms.prod: windows-server-threshold
 ms.assetid: a5307da5-02ff-4c31-80f0-47cb17a87272
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: db58fcce054f34c4b0a3f6725456badae9fd0468
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 32b0d08f678e9e612bb0ce9cc38d254564bd9b2f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879313"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444090"
 ---
 # <a name="ad-fs-and-certificate-keyspec-property-information"></a>AD FS と証明書 KeySpec プロパティ情報
 キーの仕様 ("KeySpec") は、証明書とキーに関連付けられているプロパティです。 これは、署名、暗号化、またはその両方の証明書に関連付けられている秘密キーを使用できるかどうかを指定します。   
@@ -53,8 +53,8 @@ KeySpec @property **1**、または**AT_KEYEXCHANGE**、署名と暗号化に使
 ### <a name="example"></a>例
 従来の CSP の例では、Microsoft Enhanced Cryptographic Provider です。 
 
-Microsoft RSA CSP キー blob 形式か、アルゴリズム識別子を含む**CALG_RSA_KEYX**または**CALG_RSA_SIGN**をそれぞれのいずれかのサービス要求に * * AT_KEYEXCHANGE * * または**する at _署名**キー。
-  
+Microsoft RSA CSP キー blob 形式か、アルゴリズム識別子を含む**CALG_RSA_KEYX**または**CALG_RSA_SIGN**をそれぞれのいずれかのサービス要求に<strong>AT_KEYEXCHANGE * * または * * する at _署名</strong>キー。
+
 RSA キー アルゴリズムの識別子がよう KeySpec 値にマップします。
 
 | プロバイダーがサポートされているアルゴリズム| CAPI 呼び出しの値をキーの仕様 |
@@ -82,21 +82,22 @@ CALG_RSA_SIGN :RSA 署名キーのみ |AT_SIGNATURE (または KeySpec = 2)|
 
 
 1. **プロバイダーの種類:** これはレガシ暗号化ストレージ プロバイダー (CSP) を使用する証明書またはキー記憶域プロバイダー ベースの新しい証明書 Next Generation (CNG) Api のかどうかを示します。  0 以外の値では、従来のプロバイダーを示します。
-2.  **KeySpec:** 以下は、AD FS の証明書の有効な KeySpec 値です。
+2. **KeySpec:** 以下は、AD FS の証明書の有効な KeySpec 値です。
 
-    レガシ CSP プロバイダー (ProviderType を 0 に等しくない):
-    
-    |AD FS 証明書の目的|有効な KeySpec 値|
-    | --- | --- |
-    |サービスの通信|1|
-    |トークン暗号化解除|1|
-    |トークンの署名|1 と 2|
-    |SSL (SSL)|1|
+   レガシ CSP プロバイダー (ProviderType を 0 に等しくない):
 
-    CNG プロバイダー (プロバイダーの種類 = 0)。
-    |AD FS 証明書の目的|有効な KeySpec 値|
-    | --- | --- |   
-    |SSL (SSL)|0|
+   |AD FS 証明書の目的|有効な KeySpec 値|
+   | --- | --- |
+   |サービスの通信|1|
+   |トークン暗号化解除|1|
+   |トークンの署名|1 と 2|
+   |SSL (SSL)|1|
+
+   CNG プロバイダー (プロバイダーの種類 = 0)。
+
+   |AD FS 証明書の目的|有効な KeySpec 値|
+   | --- | --- |   
+   |SSL (SSL)|0|
 
 ## <a name="how-to-change-the-keyspec-for-your-certificate-to-a-supported-value"></a>証明書の keyspec をサポートされている値に変更する方法
 KeySpec 値を変更する場合は再生成または再証明機関によって発行される証明書は必要ありません。  次の手順を使用して、証明書ストアに、完全な証明書と秘密キーを PFX ファイルからを再インポートすることは、KeySpec を変更できます。

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2033cbc9b3d9127249656c3e0dcf95d872229797
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a1b5fca329864ebed9eab66671a17493f0fc3ca8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842543"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440914"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
@@ -36,6 +36,7 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 ```
 
 ## <a name="parameters"></a>パラメーター
+
 |パラメーター|説明|
 |-------|--------|
 |\<SessionId>|切断するセッションの ID を指定します。|
@@ -52,18 +53,18 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 -   コンソール セッションは切断されることはできません。
 
 ## <a name="BKMK_examples"></a>例
--   現在のセッションを切断するには、次のように入力します。
-    ```
-    tsdiscon
-    ```
--   10 のセッションを切断するには、次のように入力します。
-    ```
-    tsdiscon 10
-    ```
--   TERM04 をという名前のセッションを切断するには、次のように入力します。
-    ```
-    tsdiscon TERM04
-    ```
-#### <a name="additional-references"></a>その他の参照情報
-[コマンドライン構文キー](command-line-syntax-key.md)
-[リモート デスクトップ サービスと #40 です。ターミナル サービスと #41 です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+- 現在のセッションを切断するには、次のように入力します。
+  ```
+  tsdiscon
+  ```
+- 10 のセッションを切断するには、次のように入力します。
+  ```
+  tsdiscon 10
+  ```
+- TERM04 をという名前のセッションを切断するには、次のように入力します。
+  ```
+  tsdiscon TERM04
+  ```
+  #### <a name="additional-references"></a>その他の参照情報
+  [コマンドライン構文キー](command-line-syntax-key.md)
+  [リモート デスクトップ サービスと #40 です。ターミナル サービスと #41 です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)

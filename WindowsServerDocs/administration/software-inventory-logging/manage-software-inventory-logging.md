@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 095cd2ad799857b789943b4f477aa9e6a8c3ae50
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 506072251b77362f3dc35faa0c976f396f7f6034
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815183"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435484"
 ---
 # <a name="manage-software-inventory-logging"></a>ソフトウェア インベントリ ログの管理
 
@@ -97,7 +97,7 @@ SIL ログ記録の開始にはある程度の計画や先見性が含まれま�
 ログのソフトウェア インベントリ、Windows Server 2012 R2 を実行するコンピューターでは、ソフトウェア インベントリ ログ毎日の収集とネットワーク経由の転送を有効にする必要があります。  
   
 > [!NOTE]  
->  **[Get-SilLogging](https://technet.microsoft.com/library/dn283396.aspx)** PowerShell コマンドレットを使用して、ソフトウェア インベントリ ログ サービスに関する情報 (実行中か停止しているかなど) を取得できます。  
+> **[Get-SilLogging](https://technet.microsoft.com/library/dn283396.aspx)** PowerShell コマンドレットを使用して、ソフトウェア インベントリ ログ サービスに関する情報 (実行中か停止しているかなど) を取得できます。  
   
 #### <a name="to-start-software-inventory-logging"></a>ソフトウェア インベントリ ログを開始するには  
   
@@ -121,7 +121,7 @@ SIL ログ記録の開始にはある程度の計画や先見性が含まれま�
 ## <a name="configuring-software-inventory-logging"></a>ソフトウェア インベントリ ログを構成する  
 時間の経過と共にデータを集計サーバーに転送するため、ソフトウェア インベントリ ログを構成する方法には、3 つの手順があります。  
   
-1.  使用**Set-sillogging – TargetUri** ("https://? で開始する必要があります)、集計サーバーの web アドレスを指定します。  
+1.  使用**Set-sillogging – TargetUri** ("https://"で開始する必要があります)、集計サーバーの web アドレスを指定します。  
   
 2.  **Set-SilLogging –CertificateThumbprint** を使用し、集計サーバーへのデータの送信を承認するため、正しい SSL 証明書の拇印ハッシュを指定します (集計サーバーは、ハッシュを受け入れるように構成されている必要があります)。  
   
@@ -140,17 +140,17 @@ SIL フレームワークの全体的な設定の包括的なガイドとして�
 ## <a name="BKMK_Step3"></a>ソフトウェア インベントリ ログのデータを表示します。  
 前のセクションで説明した PowerShell コマンドレットに加えて、さらに 6 つのコマンドレットをソフトウェア インベントリ ログのデータ収集に使用できます。  
   
--   **[Get-SilComputer](https://technet.microsoft.com/library/dn283392.aspx)**:特定のサーバーのある時点での値とオペレーティング システム関連のデータ、物理ホストの FQDN またはホスト名 (使用可能な場合) を表示します。  
+-   **[Get-SilComputer](https://technet.microsoft.com/library/dn283392.aspx)** :特定のサーバーのある時点での値とオペレーティング システム関連のデータ、物理ホストの FQDN またはホスト名 (使用可能な場合) を表示します。  
   
--   **[Get-SilComputerIdentity (KB 3000850)](https://technet.microsoft.com/library/dn858074.aspx)**:SIL が使用する、個々のサーバーの識別子を表示します。  
+-   **[Get-SilComputerIdentity (KB 3000850)](https://technet.microsoft.com/library/dn858074.aspx)** :SIL が使用する、個々のサーバーの識別子を表示します。  
   
--   **[Get-SilData](https://technet.microsoft.com/library/dn283388.aspx)**:ソフトウェア インベントリ ログのすべてのデータのある時点でのコレクションを表示します。  
+-   **[Get-SilData](https://technet.microsoft.com/library/dn283388.aspx)** :ソフトウェア インベントリ ログのすべてのデータのある時点でのコレクションを表示します。  
   
--   **[Get-silsoftware](https://technet.microsoft.com/library/dn283397.aspx)**:その時点でコンピューターにインストールされているすべてのソフトウェアの ID を表示します。  
+-   **[Get-silsoftware](https://technet.microsoft.com/library/dn283397.aspx)** :その時点でコンピューターにインストールされているすべてのソフトウェアの ID を表示します。  
   
--   **[Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx)**:サーバーに対する 2 日前からのクライアントの一意のデバイス要求とユーザー要求の合計数を表示します。  
+-   **[Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx)** :サーバーに対する 2 日前からのクライアントの一意のデバイス要求とユーザー要求の合計数を表示します。  
   
--   **[Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx)**:その時点でコンピューターにインストールされているすべての Windows 更新プログラムの一覧を表示します。  
+-   **[Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx)** :その時点でコンピューターにインストールされているすべての Windows 更新プログラムの一覧を表示します。  
   
 ソフトウェア インベントリ ログのコマンドレットの代表的なユース ケース シナリオは、管理者が [Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)を使用して、ある時点でのソフトウェア インベントリ ログのすべてのデータのコレクションについてクエリを実行する場合です。  
   
@@ -206,13 +206,13 @@ SystemManufacturer        : Microsoft Corporation
   
 #### <a name="to-delete-data-logged-by-software-inventory-logging"></a>ソフトウェア インベントリ ログで記録されたデータを削除するには  
   
-1.  PowerShell で、 **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)** コマンドを使用してソフトウェア インベントリ ログを停止します。  
+1. PowerShell で、 **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)** コマンドを使用してソフトウェア インベントリ ログを停止します。  
   
-2.  エクスプローラーを開きます。  
+2. エクスプローラーを開きます。  
   
-3.  Go to **\Windows\System32\Logfiles\SIL\**  
+3. 移動して **\Windows\System32\Logfiles\SIL\\**  
   
-4.  フォルダー内のすべてのファイルを削除します。  
+4. フォルダー内のすべてのファイルを削除します。  
   
 ## <a name="BKMK_Step5"></a>バックアップおよびソフトウェア インベントリ ログで記録されたデータを復元します。  
 ネットワーク経由の転送が失敗した場合、1 時間ごとのデータのコレクションが一時的に保存されます。 ログ ファイルの保存場所は \Windows\System32\LogFiles\SIL\ ディレクトリです。 定期的にスケジュールされたサーバー バックアップを使用して、このソフトウェア インベントリ ログのデータのバックアップを作成できます。  
@@ -237,9 +237,9 @@ Windows Server 上にローカルに保存されているすべてのデータ (
   
 -   [Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay を使用して SIL ログ記録の実行時刻を設定する場合は、日付と時刻を指定する必要があります。 カレンダーの日付が設定され、ローカル システム時刻でその日付に到達するまでログ記録は実行されません。  
   
--   使用する場合[Get-silsoftware](https://technet.microsoft.com/library/dn283397.aspx)、または[Get-silwindowsupdate](https://technet.microsoft.com/library/dn283393.aspx)、"InstallDate でしょうか。 12時 00分: 00 AM、意味のない値を常に表示されます。  
+-   使用する場合[Get-silsoftware](https://technet.microsoft.com/library/dn283397.aspx)、または[Get-silwindowsupdate](https://technet.microsoft.com/library/dn283393.aspx)、"InstallDate"は 12時 00分: 00 AM、意味のない値を常に表示されます。  
   
--   使用する場合[Get-silualaccess](https://technet.microsoft.com/library/dn283389.aspx)、"SampleDate でしょうか。 11時 59分: 00 PM、意味のない値を常に表示されます。  日付は、これらのコマンドレットのクエリの関連データです。  
+-   使用する場合[Get-silualaccess](https://technet.microsoft.com/library/dn283389.aspx)、"SampleDate"は、11時 59分: 00 PM、意味のない値を常に表示されます。  日付は、これらのコマンドレットのクエリの関連データです。  
   
 ## <a name="BKMK_Step10"></a>有効にして、ソフトウェア インベントリ ログでマウントされた仮想ハード_ディスクを構成します。  
 ソフトウェア インベントリ ログは、オフラインの仮想マシンでの構成と有効化もサポートしています。 この機能の実際の用途は、データ センター全体にまたがる展開に対する "ゴールド イメージ" の設定と、社内からクラウド展開までのエンド ユーザー イメージの構成の両方に対応するためのものです。  
@@ -248,7 +248,7 @@ Windows Server 上にローカルに保存されているすべてのデータ (
   
 |||||  
 |-|-|-|-|  
-|**関数**|**値の名前**|**Data**|**対応するコマンドレット (実行中の OS でのみ使用できます)**|  
+|**関数**|**値の名前**|**データ**|**対応するコマンドレット (実行中の OS でのみ使用できます)**|  
 |機能の開始と停止|CollectionState|1 または 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx)、 [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|  
 |ネットワーク上のターゲット集計ポイントの指定|TargetUri|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|  
 |ターゲット Web サーバーに対する SSL 認証に使用される証明書の拇印または証明書のハッシュを指定します。|CertificateThumbprint|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|  
@@ -256,13 +256,13 @@ Windows Server 上にローカルに保存されているすべてのデータ (
   
 オフラインの VHD (VM OS が実行されていない) でこれらの値を変更するには、最初に VHD をマウントする必要があります。その後、次のコマンドを使用して変更を加えることができます。  
   
--   [Reg ロード](https://technet.microsoft.com/library/cc742053.aspx)  
+-   [Reg load](https://technet.microsoft.com/library/cc742053.aspx)  
   
 -   [Reg delete](https://technet.microsoft.com/library/cc742145.aspx)  
   
--   [Reg を追加します。](https://technet.microsoft.com/library/cc742162.aspx)  
+-   [Reg add](https://technet.microsoft.com/library/cc742162.aspx)  
   
--   [Reg アンロード](https://technet.microsoft.com/library/cc742043.aspx)  
+-   [Reg unload](https://technet.microsoft.com/library/cc742043.aspx)  
   
 ソフトウェア インベントリ ログは OS の起動時にこれらの値を確認し、適切に実行します。  
   

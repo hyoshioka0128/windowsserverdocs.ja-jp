@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c45e26f6578510837f190ae20e3140e619dc59cb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6abf8466f90ac29846f2e1ee7d305e7e4280231e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841763"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438630"
 ---
 # <a name="ftp-ls1"></a>ftp: ls_1
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
-
-
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 
+> 
+> 適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ファイルと、リモート コンピューターからのサブディレクトリの省略版リストを表示します。   
 ## <a name="syntax"></a>構文  
@@ -33,10 +33,12 @@ ms.locfileid: "59841763"
 ls [<remotedirectory>] [<LocalFile>]  
 ```  
 ### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
-|-------|--------|  
-|[<remotedirectory>]|一覧を表示するディレクトリを指定します。 ディレクトリが指定されていない場合は、リモート コンピューター上の現在の作業ディレクトリが使用されます。|  
-|[<LocalFile>]|一覧を格納するローカル ファイルを指定します。 ローカル ファイルが指定されていない場合は、結果が画面に表示されます。|  
+
+|      パラメーター      |                                                                       説明                                                                        |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [<remotedirectory>] | 一覧を表示するディレクトリを指定します。 ディレクトリが指定されていない場合は、リモート コンピューター上の現在の作業ディレクトリが使用されます。 |
+|    [<LocalFile>]    |               一覧を格納するローカル ファイルを指定します。 ローカル ファイルが指定されていない場合は、結果が画面に表示されます。               |
+
 ## <a name="BKMK_Examples"></a>例  
 ファイルと、リモート コンピューターからのサブディレクトリの省略版リストを表示します。  
 ```  
@@ -47,4 +49,4 @@ ls
 ls dir1 dirlist.txt   
 ```  
 ## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  

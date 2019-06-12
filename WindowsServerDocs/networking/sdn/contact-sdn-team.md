@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: pashort
 author: kallie-b
-ms.openlocfilehash: ff102fc02208bc12b99b50c3b16e3dc51f397d76
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dd67fe27c048a15903d18dca43cf331a025933b3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884493"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446383"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>データセンターおよびクラウド ネットワーク チームへのお問い合わせ
 
@@ -37,8 +37,8 @@ Microsoft teams との連絡を多くの手段があるし、可能な限りす�
 [コンテナーのネットワークに関するドキュメント](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)で確認できます[Microsoft Docs (docs.microsoft.com)](https://docs.microsoft.com/)、ある**コメント機能が組み込まれて**します。 ままにする、またはを参照する Microsoft のドキュメントのページの一番下までスクロールでだけで、サインインに Microsoft Docs でのコメントに返信するは、作成しがコメントを送信します。
 
 > [Microsoft Docs](https://docs.microsoft.com/)は Microsoft の新しい統一されたドキュメント サイトです。 私たちのチームの大部分[SDN ドキュメント](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking)は、TechNet 上に保持、[コンテナーのネットワークに関するドキュメント](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)Microsoft Docs のようになりましたが。
-
->*一般に、質問をスパークを離れたりする必要がある詳細を Microsoft Docs でトピックに実行する場合だけにコメントを残してフィードバックに役立つ Microsoft チームと共有するには、そのページ。*
+> 
+> *一般に、質問をスパークを離れたりする必要がある詳細を Microsoft Docs でトピックに実行する場合だけにコメントを残してフィードバックに役立つ Microsoft チームと共有するには、そのページ。*
 
 ## <a name="container-specific-forums"></a>コンテナーに固有のフォーラム
 このページで任意の手段を使用して、コンテナーとコンテナーのネットワークに関連するフィードバックを提供するもかまいません。 ただし、必要な場合は、Microsoft の主なフォーラムのコンテナーのコミュニティの具体的は、以下を参照します。

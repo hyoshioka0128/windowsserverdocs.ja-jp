@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 02/05/2019
-ms.openlocfilehash: 6b67208176b426f52d3c5106f8de09ad334d3b01
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 87878eba785c0e1cc50454a74b2af4a159e88e12
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829533"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443661"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>保護されたホストを証明できることを確認します。 
 
@@ -52,16 +52,16 @@ ms.locfileid: "59829533"
         Get-HgsTrace -RunDiagnostics -Detailed
 
     > [!IMPORTANT]
-    > Windows Server 2019 または Windows 10、バージョンは 1809 を使用しているコードの整合性ポリシーを使用している場合`Get-HgsTrace`のエラーを返す可能性があります、**コード整合性ポリシー Active**診断します。
+    > Windows Server 2019 または Windows 10、バージョンは 1809 を使用しているコードの整合性ポリシーを使用している場合`Get-HgsTrace`のエラーを返し、**コード整合性ポリシー Active**診断します。
     > だけ失敗した診断がある場合に、この結果を無視してかまいません。
 
 ## <a name="next-step"></a>次の手順
 
->[!div class="nextstepaction"]
-[シールドされた Vm をデプロイします。](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+> [!div class="nextstepaction"]
+> [シールドされた VMの展開](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 
 ## <a name="see-also"></a>関連項目
 
 - [ホスト ガーディアン サービス (HGS) のデプロイします。](guarded-fabric-deploying-hgs-overview.md)
-- [シールドされた Vm をデプロイします。](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+- [シールドされた VMの展開](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 

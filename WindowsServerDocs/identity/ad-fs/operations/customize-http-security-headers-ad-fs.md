@@ -9,12 +9,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 54b0e055d6cfde5e5c69540ac804a38cbceb1e59
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 231c8783032f51f607565922d90ea7f7eb877cfd
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188766"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444689"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>AD FS 2019 HTTP セキュリティ応答ヘッダーをカスタマイズします。 
  
@@ -39,7 +39,7 @@ ms.locfileid: "66188766"
 ## <a name="http-security-response-headers"></a>セキュリティの HTTP 応答ヘッダー 
 AD FS によって、web ブラウザーに送信される出力方向の HTTP 応答には、応答ヘッダーが含まれます。 使用して、ヘッダーを表示することができます、`Get-AdfsResponseHeaders`コマンドレットを次に示すよう。  
 
-![応答のヘッダー](media\customize-http-security-headers-ad-fs\header1.png)
+![応答のヘッダー](media/customize-http-security-headers-ad-fs/header1.png)
 
 `ResponseHeaders`上のスクリーン ショットで属性がセキュリティ ヘッダーに含まれるすべての HTTP 応答での AD FS によってを識別します。 場合にのみ応答ヘッダーが送信されます`ResponseHeadersEnabled`に設定されている`True`(既定値)。 値を設定できます`False`を AD FS のセキュリティ ヘッダーのいずれかの HTTP 応答などを防ぐためにします。 ただしこれは推奨されません。  実行するには、次を使用します。
 
@@ -218,7 +218,7 @@ Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderV
 
 設定すると、この新しいヘッダーは、AD FS 応答 (次のスニペット fiddler) で送信されます。  
  
-![Fiddler](media\customize-http-security-headers-ad-fs\header2.png)
+![Fiddler](media/customize-http-security-headers-ad-fs/header2.png)
 
 ## <a name="web-browswer-compatibility"></a>Web ブラウザの互換性
 どの web ブラウザーが各セキュリティ応答ヘッダーとの互換性を判断するのにには、次の表とリンクを使用します。

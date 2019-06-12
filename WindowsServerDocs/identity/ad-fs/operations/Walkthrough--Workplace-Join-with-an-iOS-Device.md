@@ -9,12 +9,12 @@ ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 42b71667758f392d641c5262e34322f8b21cfad9
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 979802469737066612bc6242f942fd3acd077479
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188915"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444792"
 ---
 # <a name="walkthrough-workplace-join-with-an-ios-device"></a>チュートリアル: IOS デバイスのワークプ レース ジョイン
 
@@ -37,23 +37,23 @@ ms.locfileid: "66188915"
 
 #### <a name="to-join-an-ios-device-to-a-workplace"></a>iOS デバイスを職場に参加させるには
 
-1.  -   **Azure Active Directory Device Registration サービスが構成済みの DRS である場合:** Apple Safari を開いて、iOS デバイス用の Azure Active Directory Device Registration サービス Over-the-Air プロファイル エンドポイントに移動します <`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/<yourdomainname` > ここ <`yourdomainname`> Azure Active Directory で構成したドメイン名です。 たとえば、ドメイン名が contoso.com の場合、URL は次のようになります。`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/contoso.com`
+1. -   **Azure Active Directory Device Registration サービスが構成済みの DRS である場合:** Apple Safari を開いて、iOS デバイス用の Azure Active Directory Device Registration サービス Over-the-Air プロファイル エンドポイントに移動します <`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/<yourdomainname` > ここ <`yourdomainname`> Azure Active Directory で構成したドメイン名です。 たとえば、ドメイン名が contoso.com の場合、URL は次のようになります。`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/contoso.com`
 
-    -   **オンプレミスの DRS が構成済みの DRS である場合**:Apple Safari を開いて、iOS デバイス用のデバイス登録サービス (DRS) Over-the-Air プロファイル エンドポイントに移動します `https://adf1s.contoso.com/enrollmentserver/otaprofile`
+   -   **オンプレミスの DRS が構成済みの DRS である場合**:Apple Safari を開いて、iOS デバイス用のデバイス登録サービス (DRS) Over-the-Air プロファイル エンドポイントに移動します `https://adf1s.contoso.com/enrollmentserver/otaprofile`
 
-    ユーザーにこの URL を伝えるには多くの方法があります。 推奨される方法の 1 つは、AD FS のカスタム アプリケーション アクセス拒否メッセージでこの URL を発行するというものです。 これについては、次のセクションで説明します。[アプリケーションのアクセス ポリシーとカスタム アクセス拒否メッセージを作成します。](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
+   ユーザーにこの URL を伝えるには多くの方法があります。 推奨される方法の 1 つは、AD FS のカスタム アプリケーション アクセス拒否メッセージでこの URL を発行するというものです。 これについては、次のセクションで説明します。[アプリケーションのアクセス ポリシーとカスタム アクセス拒否メッセージを作成します。](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
 
-2.  会社のドメイン アカウントを使用して web ページにログオン: **roberth@contoso.com**とパスワード:  **P@ssword** します。
+2. 会社のドメイン アカウントを使用して web ページにログオン: <strong>roberth@contoso.com</strong>とパスワード:  <strong>P@ssword</strong>します。
 
-3.  プロファイルのインストールを求められます。 **[プロファイルのインストール]** 画面で、 **[インストール]** をクリックします。
+3. プロファイルのインストールを求められます。 **[プロファイルのインストール]** 画面で、 **[インストール]** をクリックします。
 
-4.  プロファイルのインストール確認メッセージが表示されたら、 **[今すぐインストール]** をクリックします。
+4. プロファイルのインストール確認メッセージが表示されたら、 **[今すぐインストール]** をクリックします。
 
-5.  デバイスのロック解除にパスコードが必要な場合は、パスコードの入力を求められます。
+5. デバイスのロック解除にパスコードが必要な場合は、パスコードの入力を求められます。
 
-6.  プロファイルのインストールが完了すると、 **[インストール完了]** 画面が表示されます。 **[完了]** をクリックします。
+6. プロファイルのインストールが完了すると、 **[インストール完了]** 画面が表示されます。 **[完了]** をクリックします。
 
-    Safari に戻ります。 Safari を閉じることができる旨のメッセージが表示されます。
+   Safari に戻ります。 Safari を閉じることができる旨のメッセージが表示されます。
 
 > [!TIP]
 > ワークプレース ジョイン プロファイルを表示または削除するには、iOS デバイスで **[設定]** アイコンをクリックし、 **[一般]** 、 **[プロファイル]** の順にクリックします。

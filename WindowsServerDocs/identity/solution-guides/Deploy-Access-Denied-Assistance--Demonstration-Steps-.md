@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 5201441ba884fe4658b917919e60c7d20530341b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 441dad92611e1a4a1135bd15bbcdfd05f38c1be3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835583"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445819"
 ---
 # <a name="deploy-access-denied-assistance-demonstration-steps"></a>Deploy Access-Denied Assistance (Demonstration Steps)
 
@@ -44,11 +44,11 @@ ms.locfileid: "59835583"
   
 1.  グループ ポリシーの管理を開きます。 サーバー マネージャーで、 **[ツール]** をクリックし、 **[グループ ポリシーの管理]** をクリックします。  
   
-2.  該当するグループ ポリシーを右クリックしてから、**[編集]** をクリックします。  
+2.  該当するグループ ポリシーを右クリックしてから、 **[編集]** をクリックします。  
   
-3.  **[コンピューターの構成]** をクリックし、**[ポリシー]** をクリックし、**[管理用テンプレート]** をクリックし、**[システム]** をクリックしてから、**[アクセス拒否アシスタンス]** をクリックします。  
+3.  **[コンピューターの構成]** をクリックし、 **[ポリシー]** をクリックし、 **[管理用テンプレート]** をクリックし、 **[システム]** をクリックしてから、 **[アクセス拒否アシスタンス]** をクリックします。  
   
-4.  **[アクセス拒否エラーのメッセージをカスタマイズする]** を右クリックしてから、**[編集]** をクリックします。  
+4.  **[アクセス拒否エラーのメッセージをカスタマイズする]** を右クリックしてから、 **[編集]** をクリックします。  
   
 5.  **[有効]** オプションを選択します。  
   
@@ -70,7 +70,7 @@ ms.locfileid: "59835583"
   
     3.  残りの既定の設定をそのままにします。  
   
-![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -92,9 +92,9 @@ Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\Software\Policies\Microsoft\W
   
 #### <a name="to-configure-access-denied-assistance-by-using-file-server-resource-manager"></a>ファイル サーバー リソース マネージャーを使用してアクセス拒否アシスタンスを構成するには  
   
-1.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、**[ファイル サーバー リソース マネージャー]** をクリックします。  
+1.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、 **[ファイル サーバー リソース マネージャー]** をクリックします。  
   
-2.  **[ファイル サーバー リソース マネージャー (ローカル)]** をクリックしてから、**[オプションの構成]** をクリックします。  
+2.  **[ファイル サーバー リソース マネージャー (ローカル)]** をクリックしてから、 **[オプションの構成]** をクリックします。  
   
 3.  **[アクセス拒否アシスタンス]** タブをクリックします。  
   
@@ -112,13 +112,13 @@ Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\Software\Policies\Microsoft\W
   
     -   **[Data Owner Email]** データ所有者の電子メール受信者リスト。  
   
-6.  **[電子メール要求の構成]** をクリックし、**[ユーザーがアシスタンスを依頼できるようにする]** チェック ボックスを選択してから、**[OK]** をクリックします。  
+6.  **[電子メール要求の構成]** をクリックし、 **[ユーザーがアシスタンスを依頼できるようにする]** チェック ボックスを選択してから、 **[OK]** をクリックします。  
   
-7.  エラー メッセージがユーザーにどのように表示されるのかを確認する場合は、**[プレビュー]** をクリックします。  
+7.  エラー メッセージがユーザーにどのように表示されるのかを確認する場合は、 **[プレビュー]** をクリックします。  
   
 8.  **[OK]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
   
@@ -134,15 +134,15 @@ Set-FSRMAdrSetting -Event "AccessDenied" -DisplayMessage "Type the text that the
   
 1.  グループ ポリシーの管理を開きます。 サーバー マネージャーで、 **[ツール]** をクリックし、 **[グループ ポリシーの管理]** をクリックします。  
   
-2.  該当するグループ ポリシーを右クリックしてから、**[編集]** をクリックします。  
+2.  該当するグループ ポリシーを右クリックしてから、 **[編集]** をクリックします。  
   
-3.  **[コンピューターの構成]** をクリックし、**[ポリシー]** をクリックし、**[管理用テンプレート]** をクリックし、**[システム]** をクリックしてから、**[アクセス拒否アシスタンス]** をクリックします。  
+3.  **[コンピューターの構成]** をクリックし、 **[ポリシー]** をクリックし、 **[管理用テンプレート]** をクリックし、 **[システム]** をクリックしてから、 **[アクセス拒否アシスタンス]** をクリックします。  
   
-4.  **[クライアントですべてのファイルの種類についてアクセス拒否アシスタンスを有効にする]** を右クリックしてから、**[編集]** をクリックします。  
+4.  **[クライアントですべてのファイルの種類についてアクセス拒否アシスタンスを有効にする]** を右クリックしてから、 **[編集]** をクリックします。  
   
 5.  **[有効]** をクリックし、 **[OK]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。 
   
@@ -157,13 +157,13 @@ Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\SOFTWARE\Policies\Microsoft\W
   
 #### <a name="to-specify-a-separate-access-denied-message-for-a-shared-folder-by-using-file-server-resource-manager"></a>ファイル サーバー リソース マネージャーを使用して共有フォルダーに個別のアクセス拒否メッセージを指定するには  
   
-1.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、**[ファイル サーバー リソース マネージャー]** をクリックします。  
+1.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、 **[ファイル サーバー リソース マネージャー]** をクリックします。  
   
-2.  **[ファイル サーバー リソース マネージャー (ローカル)]** を展開してから、**[分類管理]** をクリックします。  
+2.  **[ファイル サーバー リソース マネージャー (ローカル)]** を展開してから、 **[分類管理]** をクリックします。  
   
-3.  **[分類プロパティ]** を右クリックしてから、**[フォルダー管理プロパティの設定]** をクリックします。  
+3.  **[分類プロパティ]** を右クリックしてから、 **[フォルダー管理プロパティの設定]** をクリックします。  
   
-4.  **[プロパティ]** ボックスで **[アクセス拒否アシスタンス メッセージ]** をクリックしてから、**[追加]** をクリックします。  
+4.  **[プロパティ]** ボックスで **[アクセス拒否アシスタンス メッセージ]** をクリックしてから、 **[追加]** をクリックします。  
   
 5.  **[参照]** をクリックしてから、カスタム アクセス拒否メッセージが必要なフォルダーを選択します。  
   
@@ -181,7 +181,7 @@ Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\SOFTWARE\Policies\Microsoft\W
   
 7.  **[OK]** をクリックし、 **[閉じる]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。 
   
@@ -194,9 +194,9 @@ Set-FSRMMgmtProperty -Namespace "folder path" -Name "AccessDeniedMessage_MS" -Va
   
 [Windows PowerShell を使用してこの手順を実行します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
   
-1.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、**[ファイル サーバー リソース マネージャー]** をクリックします。  
+1.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、 **[ファイル サーバー リソース マネージャー]** をクリックします。  
   
-2.  **[ファイル サーバー リソース マネージャー (ローカル)]** をクリックしてから、**[オプションの構成]** をクリックします。  
+2.  **[ファイル サーバー リソース マネージャー (ローカル)]** をクリックしてから、 **[オプションの構成]** をクリックします。  
   
 3.  **[電子メールの通知]** タブをクリックします。  
   
@@ -210,7 +210,7 @@ Set-FSRMMgmtProperty -Namespace "folder path" -Name "AccessDeniedMessage_MS" -Va
   
 6.  **[OK]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![ソリューション ガイド](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
   
@@ -219,17 +219,17 @@ set-FSRMSetting -SMTPServer "server1" -AdminEmailAddress "fileadmin@contoso.com"
 ```  
   
 ## <a name="BKMK_3"></a>手順 3:アクセス拒否アシスタンスが正しく構成されていることを確認する  
-ないへのアクセスを共有する共有またはファイルにアクセスしようと Windows 8 を実行しているユーザーによってアクセス拒否アシスタンスが正しく構成されているを確認することができます。 アクセス拒否メッセージが表示された場合、ユーザーには、**[サポートの要求]** ボタンが表示されます。 [サポートの要求] ボタンをクリックすると、ユーザーは、アクセス理由を指定してから、フォルダー所有者またはファイル サーバー管理者に電子メールを送信できます。 フォルダー所有者またはファイル サーバー管理者は、到着した電子メールに適切な詳細が含まれているかを確認できます。  
+ないへのアクセスを共有する共有またはファイルにアクセスしようと Windows 8 を実行しているユーザーによってアクセス拒否アシスタンスが正しく構成されているを確認することができます。 アクセス拒否メッセージが表示された場合、ユーザーには、 **[サポートの要求]** ボタンが表示されます。 [サポートの要求] ボタンをクリックすると、ユーザーは、アクセス理由を指定してから、フォルダー所有者またはファイル サーバー管理者に電子メールを送信できます。 フォルダー所有者またはファイル サーバー管理者は、到着した電子メールに適切な詳細が含まれているかを確認できます。  
   
 > [!IMPORTANT]  
 > Windows Server 2012 を実行しているユーザーを使用してアクセス拒否アシスタンスを確認する場合は、ファイル共有に接続する前にデスクトップ エクスペリエンスをインストールする必要があります。  
   
 ## <a name="BKMK_Links"></a>参照してください。  
   
--   [シナリオ:アクセス拒否アシスタンス](Scenario--Access-Denied-Assistance.md)  
+-   [シナリオ: アクセス拒否アシスタンス](Scenario--Access-Denied-Assistance.md)  
   
 -   [アクセス拒否アシスタンスを計画します。](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)  
   
--   [ダイナミック アクセス制御:シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

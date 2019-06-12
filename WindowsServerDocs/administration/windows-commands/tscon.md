@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8267a35aefc279ff57ce3d200415e16e431775f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d8cac59b2f5524df5a82e9c83424fd781f0ef7c8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883063"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440928"
 ---
 # <a name="tscon"></a>tscon
 
@@ -35,9 +35,10 @@ ms.locfileid: "59883063"
 tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /password:*] [/v]  
 ```  
 ## <a name="parameters"></a>パラメーター  
+
 |パラメーター|説明|  
 |-------|--------|  
-|\<SessionID>|接続するセッションの ID を指定します。 オプションを使用する場合 **/dest:**<*SessionName*> パラメーターで接続するセッションの ID です。|  
+|\<SessionID>|接続するセッションの ID を指定します。 オプションを使用する場合 **/dest:** <*SessionName*> パラメーターで接続するセッションの ID です。|  
 |\<SessionName>|接続するセッションの名前を指定します。|  
 |/dest:\<SessionName>|現在のセッションの名前を指定します。 新しいセッションに接続するときに、このセッションは切断されます。|  
 |/password:\<pw>|接続するセッションを所有するユーザーのパスワードを指定します。 接続のユーザーがセッションを所有していないときに、このパスワードが必要です。|  
@@ -47,23 +48,23 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
 
 ## <a name="remarks"></a>注釈  
 -   フル コントロール アクセス許可があるか、別のセッションに接続するための特別なアクセス許可を接続する必要があります。  
--   **/Dest:**<*SessionName*> パラメーターでは、別のセッションに別のユーザーのセッションを接続することができます。  
+-   **/Dest:** <*SessionName*> パラメーターでは、別のセッションに別のユーザーのセッションを接続することができます。  
 -   パスワードを指定しない場合、<*パスワード*> パラメーター、および対象のセッションが現在のもの以外のユーザーに属している**tscon**は失敗します。  
 -   コンソール セッションに接続することはできません。  
 
 ## <a name="BKMK_examples"></a>例  
--   現在の rd セッション ホスト サーバー上のセッション 12 への接続を現在のセッションの切断は、次のように入力します。  
-    ```  
-    tscon 12  
-    ```  
--   Mypass というパスワードを使用して、現在の rd セッション ホスト サーバー上のセッション 23 に接続を現在のセッションの切断は、次のように入力します。  
-    ```  
-    tscon 23 /password:mypass  
-    ```  
--   TERM05、という名前のセッションに TERM03 をという名前のセッションの接続を TERM05、セッションを切断が接続されている場合は、次のように入力します。  
-    ```  
-    tscon TERM03 /v /dest:TERM05  
-    ```  
-#### <a name="additional-references"></a>その他の参照情報  
-[コマンドライン構文キー](command-line-syntax-key.md)  
-[リモート デスクトップ サービス&#40;ターミナル サービス&#41;コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)  
+- 現在の rd セッション ホスト サーバー上のセッション 12 への接続を現在のセッションの切断は、次のように入力します。  
+  ```  
+  tscon 12  
+  ```  
+- Mypass というパスワードを使用して、現在の rd セッション ホスト サーバー上のセッション 23 に接続を現在のセッションの切断は、次のように入力します。  
+  ```  
+  tscon 23 /password:mypass  
+  ```  
+- TERM05、という名前のセッションに TERM03 をという名前のセッションの接続を TERM05、セッションを切断が接続されている場合は、次のように入力します。  
+  ```  
+  tscon TERM03 /v /dest:TERM05  
+  ```  
+  #### <a name="additional-references"></a>その他の参照情報  
+  [コマンド ライン構文の記号](command-line-syntax-key.md)  
+  [リモート デスクトップ サービス&#40;ターミナル サービス&#41;コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)  

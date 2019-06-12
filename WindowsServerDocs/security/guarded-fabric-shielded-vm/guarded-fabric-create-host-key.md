@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 82a561d51e9a396dcdc86ee3e37a8d7ffb8efd6e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0526831fb0648e7f8f6fb1a081180f2e2aa9f09f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870783"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447488"
 ---
 # <a name="create-a-host-key-and-add-it-to-hgs"></a>ホスト キーを作成し、HGS に追加します。
 
@@ -63,8 +63,8 @@ Add-HgsAttestationHostKey -Name MyHost01 -Path "C:\temp\MyHost01-HostKey.cer"
 
 ## <a name="next-step"></a>次の手順
 
->[!div class="nextstepaction"]
-[ホストが正常に証明できることを確認します。](guarded-fabric-confirm-hosts-can-attest-successfully.md)
+> [!div class="nextstepaction"]
+> [ホストが正常に証明できることを確認します。](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 ## <a name="see-also"></a>関連項目
 

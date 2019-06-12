@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a7e96391ee8dce0b77f00f51d7cb78ff9b8bf242
-ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.openlocfilehash: 893bcd3b28aaa5d501017fe65b7b5205e9452693
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65564660"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440692"
 ---
 # <a name="using-the-add-driverpackage-command"></a>追加 DriverPackage コマンドを使用してください。
 
@@ -34,13 +34,13 @@ WDSUTIL /Add-DriverPackage /InfFile:<Inf File path> [/Server:<Server name>] [/Ar
 
 ## <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|InfFile:\<Inf ファイルのパス >|追加する .inf ファイルの完全なパスを指定します。|
-|/Server:\<サーバー名 >|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
-|/アーキテクチャ: {x86 | ia64 | x64}|ドライバー パッケージのアーキテクチャを指定します。|
-|[/DriverGroup:\<グループ名 >]|パッケージの追加先となるドライバー グループの名前を指定します。|
-|[/Name:\<フレンドリ名 >]|ドライバー パッケージのフレンドリ名を示しています。|
+|          パラメーター           |                                                              説明                                                              |
+|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+|   InfFile:\<Inf ファイルのパス >   |                                           追加する .inf ファイルの完全なパスを指定します。                                            |
+|    /Server:\<サーバー名 >    | サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。 |
+|      /アーキテクチャ: {x86      |                                                                 ia64                                                                  |
+| [/DriverGroup:\<グループ名 >] |                             パッケージの追加先となるドライバー グループの名前を指定します。                              |
+|   [/Name:\<フレンドリ名 >]   |                                           ドライバー パッケージのフレンドリ名を示しています。                                            |
 
 ## <a name="BKMK_examples"></a>例
 

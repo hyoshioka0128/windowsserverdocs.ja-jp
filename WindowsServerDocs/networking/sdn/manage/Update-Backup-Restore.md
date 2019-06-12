@@ -9,12 +9,12 @@ ms.assetid: e9a8f2fd-48fe-4a90-9250-f6b32488b7a4
 ms.author: grcusanz
 author: shortpatti
 ms.date: 08/27/2018
-ms.openlocfilehash: 3374d1b79b84edd78dca3b61c73ea2db1dff9561
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7916377f58261d0ccaa3fa24f135fccca3d5e79b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854463"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446332"
 ---
 # <a name="upgrade-backup-and-restore-sdn-infrastructure"></a>アップグレード、バックアップ、および復元の SDN インフラストラクチャ
 
@@ -51,9 +51,9 @@ SDN インフラストラクチャは、Windows Server 2019 に Windows Server 2
 
 6. HYPER-V ホストと以降では、RAS ゲートウェイが含まれているホストでは、RAS ゲートウェイを更新**スタンバイ**モード。<p>テナントの接続を失うことがなく、RAS ゲートウェイの Vm をライブ移行できません。 更新プログラムのサイクル中にする必要がある回数を最小限に抑える新しい RAS ゲートウェイへの接続のフェールオーバーのテナントします。 ホストと RAS ゲートウェイの更新プログラムを調整することで、各テナントは最大で失敗を 1 回、します。
 
-    a.  ライブ マイグレーションの対応する Vm のホストを退避します。<p>RAS ゲートウェイ Vm は、ホスト上に残る必要があります。
+    a. ライブ マイグレーションの対応する Vm のホストを退避します。<p>RAS ゲートウェイ Vm は、ホスト上に残る必要があります。
 
-    b.  このホスト上の各ゲートウェイ VM には、更新プログラムをインストールします。
+    b. このホスト上の各ゲートウェイ VM には、更新プログラムをインストールします。
 
     c. 更新プログラムには、ゲートウェイ VM の再起動が必要な場合は、VM を再起動します。  
 
@@ -75,7 +75,7 @@ SDN インフラストラクチャは、Windows Server 2019 に Windows Server 2
 - NCNode3.contoso.com = Up
 
 >[!IMPORTANT]
->ノードへの変更の状態まで数分を待機する必要があります_**を**_ 、一度に 1 つずつ追加ノードを更新する前にします。
+>ノードへの変更の状態まで数分を待機する必要があります _**を**_ 、一度に 1 つずつ追加ノードを更新する前にします。
 
 すべてのネットワーク コント ローラーのノードを更新して、ネットワーク コント ローラーは 1 時間以内に、ネットワーク コント ローラーがクラスター内で実行されているマイクロ サービスを更新します。 
 
@@ -131,18 +131,18 @@ NetworkControllerClusterVersion NetworkControllerVersion
 
 **手順:**
 
-1.  任意の VM のバックアップ方法を使用して、または HYPER-V を使用して、各ネットワーク コント ローラー VM のコピーをエクスポートします。<p>ネットワーク コント ローラー VM のバックアップにより、データベースの復号化のために必要な証明書が存在します。  
+1. 任意の VM のバックアップ方法を使用して、または HYPER-V を使用して、各ネットワーク コント ローラー VM のコピーをエクスポートします。<p>ネットワーク コント ローラー VM のバックアップにより、データベースの復号化のために必要な証明書が存在します。  
 
-2.  System Center Virtual Machine Manager (SCVMM) を使用する場合は、SCVMM サービスを停止し、SQL Server を使用してバックアップを作成します。<p>ここでの目的では、更新プログラムを取得行われていないことを SCVMM にこの時点では、ネットワーク コント ローラーのバックアップおよび SCVMM の間に不整合が生じる可能性の中に確認します。  
+2. System Center Virtual Machine Manager (SCVMM) を使用する場合は、SCVMM サービスを停止し、SQL Server を使用してバックアップを作成します。<p>ここでの目的では、更新プログラムを取得行われていないことを SCVMM にこの時点では、ネットワーク コント ローラーのバックアップおよび SCVMM の間に不整合が生じる可能性の中に確認します。  
 
    >[!IMPORTANT]
    >再始めないでください SCVMM サービス、ネットワーク コント ローラーのバックアップが完了するまでです。
 
-3.  ネットワーク コント ローラーのデータベースをバックアップ、`new-networkcontrollerbackup`コマンドレット。
+3. ネットワーク コント ローラーのデータベースをバックアップ、`new-networkcontrollerbackup`コマンドレット。
 
-4.  完了と成功した場合、バックアップの確認、`get-networkcontrollerbackup`コマンドレット。
+4. 完了と成功した場合、バックアップの確認、`get-networkcontrollerbackup`コマンドレット。
 
-5.  SCVMM を使用する場合は、SCVMM サービスを開始します。
+5. SCVMM を使用する場合は、SCVMM サービスを開始します。
 
 
 

@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 0305467b-ce39-4532-a05a-2cc5ff946f55
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: bb122990c1baf1db8a2edbbbecba8b8cdf8a264d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fa82ba8e2fc3fe19b9e73f602605d3ef76f4b9a5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833763"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446900"
 ---
 # <a name="generate-a-usage-report-for-remote-clients-using-historical-data"></a>履歴データを使ってリモート クライアントの使用状況レポートを生成する
 
@@ -49,7 +49,7 @@ ms.locfileid: "59833763"
   
 2.  クリックして **レポート** に移動する **リモート アクセス レポート** で、 **リモート アクセス管理コンソール**します。  
   
-3.  中央のペインで、レポートの期間を選択するカレンダーの日付をクリックして **開始日:** と **終了日:**, 、クリックして **レポートの生成**します。  
+3.  中央のペインで、レポートの期間を選択するカレンダーの日付をクリックして **開始日:** と **終了日:** , 、クリックして **レポートの生成**します。  
   
 4.  選択した時間とそれらについての詳細な統計情報内で、リモート アクセス サーバーに接続されているユーザーの一覧が表示されます。 一覧の最初の行をクリックします。 行を選択すると、リモート ユーザーの活動は、プレビュー ウィンドウに表示されます。 選択して、 **サーバー負荷の統計情報** 、サーバー上の履歴の負荷を表示するプレビュー ウィンドウにタブをクリックします。  
   
@@ -60,7 +60,7 @@ ms.locfileid: "59833763"
 >   
 > リモート アクセスのアカウンティングがの概念に基づく **セッション**します。 異なり、 **接続**, 、 **セッション** はリモート クライアントの IP アドレスとユーザー名の組み合わせによって一意に識別します。 たとえば、リモートのクライアントでは、Client1 というコンピューター トンネルが形成される場合、セッションが作成されアカウンティング データベースに格納されています。 名前付きの User1 がしばらくしてからのクライアントから接続するユーザーが渡されます (ただし、コンピューター トンネルがアクティブのまま)、セッションが別のセッションとして記録されます。 セッションの違いは、コンピューター トンネルとユーザーのトンネルの違いを保持します。  
   
-![Windows PowerShell](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![Windows PowerShell](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   

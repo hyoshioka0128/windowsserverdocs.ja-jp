@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: ebc9c2a3cac85ab998075d784111808b3d590d46
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3f9083d749ba9251ba47ecb64b7cb3d7c6290f1d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854143"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443770"
 ---
 # <a name="configure-dns-forwarding-in-the-hgs-domain-and-a-one-way-trust-with-the-fabric-domain"></a>ファブリックのドメインとの一方向の信頼と HGS のドメインの DNS の転送を構成します。
 
@@ -37,5 +37,5 @@ ms.locfileid: "59854143"
 
 ## <a name="next-step"></a>次の手順 
 
->[!div class="nextstepaction"]
-[HTTPS を構成します。](guarded-fabric-configure-hgs-https.md)
+> [!div class="nextstepaction"]
+> [HTTPS の構成](guarded-fabric-configure-hgs-https.md)

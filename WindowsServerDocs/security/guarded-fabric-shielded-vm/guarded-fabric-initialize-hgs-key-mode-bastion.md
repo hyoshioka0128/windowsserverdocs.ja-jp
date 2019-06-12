@@ -7,20 +7,20 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9abbf85ef28ff20506558fba7dd3f5e5ee603a70
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e785ee17bf68c07d965816480baa0d59062fc434
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879143"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447423"
 ---
 # <a name="initialize-the-hgs-cluster-using-key-mode-in-an-existing-bastion-forest"></a>キーのモードを使用して、既存の要塞フォレストの HGS クラスターを初期化します。
 
->適用対象:Windows Server 2019
-
->[!div class="step-by-step"]
-[«HGS を新しいフォレストのインストール](guarded-fabric-install-hgs-in-a-bastion-forest.md)
-[ホスト キーの作成»](guarded-fabric-create-host-key.md)
+> 適用対象:Windows Server 2019
+> 
+> [!div class="step-by-step"]
+> [«HGS を新しいフォレストのインストール](guarded-fabric-install-hgs-in-a-bastion-forest.md)
+> [ホスト キーの作成»](guarded-fabric-create-host-key.md)
 
 Active Directory Domain Services は、コンピューターにインストールされますが、構成されていないままにする必要があります。
 

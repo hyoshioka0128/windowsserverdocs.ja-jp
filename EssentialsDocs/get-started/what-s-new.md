@@ -12,20 +12,20 @@ ms.assetid: affff774-5fa6-4944-887a-9bfde05f6a3f
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7fed7e71f7ac163437fe5d32da7c867f93fbcf00
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bc83686f76c49773203d63a88894841f65ffd1d9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869973"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433763"
 ---
-#<a name="whats-new-in-windows-server-2016-essentials"></a>Windows Server 2016 Essentials の新機能
+# <a name="whats-new-in-windows-server-2016-essentials"></a>Windows Server 2016 Essentials の新機能
 
 > 適用先:Windows Server 2016 Essentials
 
 次に新しい Windows Server 2016 Essentials での機能強化されたとします。
 
-##<a name="integration-with-azure-site-recovery-servicesazure-site-recovery-services-integrationmd"></a>[Azure Site Recovery サービスとの統合](azure-site-recovery-services-integration.md)
+## <a name="integration-with-azure-site-recovery-servicesazure-site-recovery-services-integrationmd"></a>[Azure Site Recovery サービスとの統合](azure-site-recovery-services-integration.md)
 
 **それが何**--は仮想マシンの保護が失敗したか失敗した場合、Azure Site Recovery Services でのフェールオーバーで保護された仮想マシンが実行されているホスト サーバーにオンプレミスの仮想マシンまでのビジネス継続性の保持またはホスト サーバーは修復された利用できます。 
 
@@ -40,7 +40,7 @@ ms.locfileid: "59869973"
 
 
 
-##<a name="support-for-larger-deploymentssupport-for-larger-deploymentsmd"></a>[大規模な展開のサポート](support-for-larger-deployments.md) 
+## <a name="support-for-larger-deploymentssupport-for-larger-deploymentsmd"></a>[大規模な展開のサポート](support-for-larger-deployments.md) 
 
 いくつかの大規模な小規模企業では、機能性と容量を Windows Server Essentials を効果的に実装する必要があります。 Windows Server 2016 Essentials で大規模な展開のサポートを追加することで、ドメイン、ユーザーとデバイスの管理の容易性が向上を提供します。                                                                                                                                                                                                 
 
@@ -52,4 +52,4 @@ ms.locfileid: "59869973"
 <a name="see-also"></a>関連項目
 --------
 
-[Windows Server Essentials を概要します。](get-started.md)
+[Windows Server Essentials の概要](get-started.md)

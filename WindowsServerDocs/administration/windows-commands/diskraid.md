@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a565a1d5fa1bc3ff57d1578fb54cfa4553e3bb26
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7ebd65fb56114bff9e6ae4b6a76376561c686dfa
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818873"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439567"
 ---
 # <a name="diskraid"></a>diskraid
 
@@ -47,7 +47,7 @@ RAID は、標準化およびフォールト トレラントなディスク シ�
 -   [delete](#BKMK_7)
 -   [詳細](#BKMK_8)
 -   [dissociate](#BKMK_9)
--   [終了](#BKMK_10)
+-   [exit](#BKMK_10)
 -   [extend](#BKMK_11)
 -   [flushcache](#BKMK_12)
 -   [help](#BKMK_13)
@@ -95,7 +95,7 @@ add tpgroup tportal=n [noerr]
 > [!CAUTION]
 > プレックスとして追加されている LUN 上のすべてのデータは削除されます。
 
-**tpgroup tportal = * * * n*
+**tpgroup tportal =** <em>n</em>
 
 現在選択されている iSCSI ターゲット ポータル グループに追加するには、iSCSI ターゲット ポータル番号を指定します。
 
@@ -742,7 +742,7 @@ login target iadapter=<iadapter> [type={manual | persistent | boot}] [chap={none
 
 **永続的な**- 自動的にコンピューターを再起動すると、同じログインを使用します。
 
-**ブート**-(このオプションは将来の開発のため、現在使用されていない *.*)
+**ブート**-(このオプションは将来の開発のため、現在使用されていない<em>.</em>)
 
 **chap**
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/07/2018
-ms.openlocfilehash: 5b9343dc2f6b4c74da5a9d89a2ea804b702248cc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: aadb3a77cda7f1403cd2f04ced12c17617f046df
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841173"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439569"
 ---
 # <a name="diskcopy"></a>diskcopy
 
@@ -84,9 +84,9 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
 
 > [!NOTE]
 > 使用することはできません**xcopy**起動ディスクをコピーします。
--   理解**機能**終了コード
+> -   理解**機能**終了コード
 
-    次の表では、終了コードについて説明します。  
+    The following table explains each exit code.  
     |終了コード|説明|
     |---------|-----------|
     |0|コピー操作は成功しました|
@@ -94,7 +94,7 @@ diskcopy [<Drive1>: [<Drive2>:]] [/v]
     |3|致命的なエラーが発生しました|
     |4|初期化エラーが発生しました|
 
-    によって返される終了コードを処理する**あれば**、使用することができます、 *ERRORLEVEL*で環境変数、**場合**バッチ プログラム内でコマンドライン。
+    To process the exit codes that are returned by **diskcomp**, you can use the *ERRORLEVEL* environment variable on the **if** command line in a batch program.
 
 ## <a name="BKMK_examples"></a>例
 
@@ -108,4 +108,4 @@ diskcopy b: a:
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

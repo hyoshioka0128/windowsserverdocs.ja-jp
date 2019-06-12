@@ -9,16 +9,16 @@ ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: Microsoft Azure を使用して、クラウドでの Windows Server フェールオーバー クラスターのミラーリング監視サーバーをホストする方法、クラウドのミラーリング監視サーバーをデプロイする方法とも呼ばれます。
-ms.openlocfilehash: f7e1c84e54f08044a772f06e591588c1add33026
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 64fd39a37c63d24f8fc0eb4f45c8a7e9f6089013
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857983"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439782"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>フェールオーバー クラスターのクラウド監視を展開する
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+> 適用対象:Windows Server 2019、Windows Server 2016
 
 クラウド監視には、Microsoft Azure を使用してクラスター クォーラムの投票を提供するフェールオーバー クラスター クォーラム監視の一種です。 このトピックでは、クラウド監視機能、サポートされるシナリオとフェールオーバー クラスターのクラウド監視を構成する方法についての概要を示します。
 
@@ -134,14 +134,14 @@ Azure ポータルでストレージ アカウントに移動 をクリックし
     **図 8。クォーラム監視を選択します。**  
 
 5. **クラウド監視の構成**ページで、次の情報を入力します。  
-    1. (必須のパラメーター)Azure ストレージ アカウント名。  
-    2. (必須のパラメーター)ストレージ アカウントに対応するキーにアクセスします。  
-        1. を初めて作成する場合は、プライマリ アクセス キーを使用して (図 5 参照)  
-        2. プライマリ アクセス キーのローテーションを行う場合は、セカンダリ アクセス キーを使用して (図 5 参照)  
-    3. (省略可能なパラメーター)別の Azure サービス エンドポイント (たとえば中国で Microsoft Azure サービス) を使用する場合は、エンドポイントのサーバー名を更新します。  
+   1. (必須のパラメーター)Azure ストレージ アカウント名。  
+   2. (必須のパラメーター)ストレージ アカウントに対応するキーにアクセスします。  
+       1. を初めて作成する場合は、プライマリ アクセス キーを使用して (図 5 参照)  
+       2. プライマリ アクセス キーのローテーションを行う場合は、セカンダリ アクセス キーを使用して (図 5 参照)  
+   3. (省略可能なパラメーター)別の Azure サービス エンドポイント (たとえば中国で Microsoft Azure サービス) を使用する場合は、エンドポイントのサーバー名を更新します。  
 
-    ![クラスター クォーラム ウィザードで、クラウド監視の構成ウィンドウのスナップショット](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_10.png)  
-    **図 9:クラウド監視を構成します。**
+      ![クラスター クォーラム ウィザードで、クラウド監視の構成ウィンドウのスナップショット](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_10.png)  
+      **図 9:クラウド監視を構成します。**
 
 6. クラウド監視の正常な構成時にリソースを表示できます、新しく作成されたミラーリング監視サーバー、フェールオーバー クラスター マネージャー スナップイン (図 10 参照)。
 

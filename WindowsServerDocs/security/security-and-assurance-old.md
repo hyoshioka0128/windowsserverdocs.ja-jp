@@ -11,12 +11,12 @@ ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: b32b4879ad454d1154c3d65dbf690cdaae73d76c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fed0587b74873005f14a216bac22f952bcc65a4f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827223"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447290"
 ---
 # <a name="security-and-assurance-in-windows-server"></a>Windows Server のセキュリティおよび保証 
 
@@ -87,10 +87,10 @@ Windows Server セキュリティ チームによるこのブログ記事では�
 Just Enough Administration のデモ チュートリアルです。                                                                                                                  
 ## <a name="credential-protection"></a>資格情報の保護
 
-### <a name="protect-derived-domain-credentials-with-credential-guardhttpsdocsmicrosoftcomwindowssecurityidentity-protectioncredential-guardcredential-guard"></a>[Credential Guard で派生ドメイン資格情報を保護します。](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)
+### <a name="protect-derived-domain-credentials-with-credential-guardhttpsdocsmicrosoftcomwindowssecurityidentity-protectioncredential-guardcredential-guard"></a>[Credential Guard によるドメインの派生資格情報の保護](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)
 Credential Guard は、特権を持つシステム ソフトウェアだけがシークレットにアクセスできるように、仮想化ベースのセキュリティを使用してシークレットを分離します。 これらのシークレットへの未承認のアクセスは、Pass-the-Hash や Pass-the-Ticket など、資格情報の盗難攻撃につながる可能性があります。 Credential Guard は、NTLM パスワード ハッシュや Kerberos チケット保証チケットを保護することでこれらの攻撃を防ぎます。
 
-### <a name="protect-remote-desktop-credentials-with-remote-credential-guardhttpsdocsmicrosoftcomwindowssecurityidentity-protectionremote-credential-guard"></a>[Credential Guard をリモートでのリモート デスクトップ資格情報を保護します。](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard)
+### <a name="protect-remote-desktop-credentials-with-remote-credential-guardhttpsdocsmicrosoftcomwindowssecurityidentity-protectionremote-credential-guard"></a>[Remote Credential Guard によるリモート デスクトップ資格情報の保護](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard)
 Remote Credential Guard は、接続を要求しているデバイスに Kerberos 要求をリダイレクトすることにより、リモート デスクトップ接続での資格情報を保護するのに役立ちます。 リモート デスクトップ セッションでシングル サインオンのエクスペリエンスも提供します。                                                                                                        |
 ### <a name="credential-guard-demo-videohttpswwwyoutubecomwatchveupkogsl7yk"></a>[Credential Guard のデモ ビデオ](https://www.youtube.com/watch?v=eUpKOGSl7yk)
 この 5 分のビデオでは、Credential Guard と Remote Credential Guard のデモを行います。         
@@ -111,7 +111,7 @@ Device Guard は、WDAC とハイパーバイザーで保護されているコ�
 ### <a name="windows-defenderhttpstechnetmicrosoftcomwindows-server-docssecuritywindows-defenderwindows-defender-overview-windows-server"></a>[Windows Defender](https://technet.microsoft.com/windows-server-docs/security/windows-defender/windows-defender-overview-windows-server)
 Windows Defender は、アクティブな検出機能を提供して既知のマルウェアをブロックします。 Windows Defender は既定では有効になっており、Windows Server でさまざまなサーバーの役割をサポートするために最適化されています。
 
-##<a name="detecting-and-responding-to-threats"></a>脅威の検出と対応
+## <a name="detecting-and-responding-to-threats"></a>脅威の検出と対応
 ### <a name="security-threat-analysis-using-microsoft-operations-management-suitehttpschannel9msdncomeventsignite2015brk3464"></a>[Microsoft Operations Management Suite を使用してセキュリティの脅威の分析](https://channel9.msdn.com/events/ignite/2015/brk3464)
 この Ignite プレゼンテーションでは、Operational Insights を使用して、どのようにセキュリティ上の脅威の分析を実行できるかについて説明されています。
 

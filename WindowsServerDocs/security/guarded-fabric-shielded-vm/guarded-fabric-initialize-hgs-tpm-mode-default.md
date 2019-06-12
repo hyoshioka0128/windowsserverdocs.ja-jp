@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 6d4232b0b248aba8b64f31ac28db1480c14db53d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f2fb970cdc215df06dd9dee2e20b5466d7e42dcb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863873"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447412"
 ---
 # <a name="initialize-the-hgs-cluster-using-tpm-mode-in-a-new-dedicated-forest-default"></a>TPM のモードを使用して、新しい専用フォレスト (既定値) での HGS クラスターを初期化します。
 
@@ -45,6 +45,6 @@ ms.locfileid: "59863873"
 
 ## <a name="next-step"></a>次の手順
 
->[!div class="nextstepaction"]
-[TPM のルート証明書をインストールします。](guarded-fabric-install-trusted-tpm-root-certificates.md)
+> [!div class="nextstepaction"]
+> [TPM ルート証明書のインストール](guarded-fabric-install-trusted-tpm-root-certificates.md)
   

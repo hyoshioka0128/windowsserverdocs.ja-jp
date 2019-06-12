@@ -12,12 +12,12 @@ ms.assetid: 0c82a6cb-d652-429c-9c3d-0f568c78d54b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimps
-ms.openlocfilehash: 50151a322f1ccde2be927de31b0e5c30732b278e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 04fb86d813049dc5f0aa6d4fba51e45dccbd1b80
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813953"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440182"
 ---
 # <a name="wecutil"></a>wecutil
 
@@ -94,32 +94,32 @@ wecutil  [{es | enum-subscription}]
 > [!IMPORTANT]
 > "RPC サーバーが使用できます、メッセージを受信する場合か。wecutil を実行しようとすると、Windows イベント コレクター (wecsvc) サービスを開始する必要があります。 Wecsvc を開始するには、管理者特権でコマンド プロンプトで net wecsvc に開始します。
 
--   次の例は、構成ファイルの内容を示しています。  
-    ```
-    <Subscription xmlns="https://schemas.microsoft.com/2006/03/windows/events/subscription">
-    <Uri>https://schemas.microsoft.com/wbem/wsman/1/windows/EventLog</Uri>
-    <!-- Use Normal (default), Custom, MinLatency, MinBandwidth -->
-    <ConfigurationMode>Normal</ConfigurationMode>
-    <Description>Forward Sample Subscription</Description>
-    <SubscriptionId>SampleSubscription</SubscriptionId>
-    <Query><![CDATA[
-    <QueryList>
-    <Query Path="Application">
-    <Select>*</Select>
-    </Query>
-    </QueryList>
-    ]]></Query>
-    <EventSources>
-    <EventSource Enabled="true">
-    <Address>mySource.myDomain.com</Address>
-    <UserName>myUserName</UserName>
-    <Password>*</Password>
-    </EventSource>
-    </EventSources>
-    <CredentialsType>Default</CredentialsType>
-    <Locale Language="EN-US"></Locale>
-    </Subscription>
-    ```
+- 次の例は、構成ファイルの内容を示しています。  
+  ```
+  <Subscription xmlns="https://schemas.microsoft.com/2006/03/windows/events/subscription">
+  <Uri>https://schemas.microsoft.com/wbem/wsman/1/windows/EventLog</Uri>
+  <!-- Use Normal (default), Custom, MinLatency, MinBandwidth -->
+  <ConfigurationMode>Normal</ConfigurationMode>
+  <Description>Forward Sample Subscription</Description>
+  <SubscriptionId>SampleSubscription</SubscriptionId>
+  <Query><![CDATA[
+  <QueryList>
+  <Query Path="Application">
+  <Select>*</Select>
+  </Query>
+  </QueryList>
+  ]]></Query>
+  <EventSources>
+  <EventSource Enabled="true">
+  <Address>mySource.myDomain.com</Address>
+  <UserName>myUserName</UserName>
+  <Password>*</Password>
+  </EventSource>
+  </EventSources>
+  <CredentialsType>Default</CredentialsType>
+  <Locale Language="EN-US"></Locale>
+  </Subscription>
+  ```
 
 ## <a name="BKMK_examples"></a>例
 
@@ -166,4 +166,4 @@ wecutil ds sub1
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
