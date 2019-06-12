@@ -8,12 +8,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 03/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4faadb811927626c26a5b01e2ce0598d40792b68
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7ae87b12997aa3cb3ae3fe290c9243995b30d6b0
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846763"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452820"
 ---
 # <a name="manage-windows-server"></a>Windows Server の管理
 
@@ -66,7 +66,7 @@ Windows Server インスタンスの管理に使用するツールは、展開�
 >Windows Admin Center は、旧称 "Project Honolulu" の正式名です。
 
 ### <a name="manage-on-premises-systems-with-server-manager"></a>サーバー マネージャーを使用したオンプレミス システムの管理
-[サーバー マネージャー](server-manager/server-manager.md)は、Windows Server のフル インストールに含まれる管理コンソールです  (インストール UI がないのはご利用いただけません - Server Core には、サーバー マネージャーは含まれません)。インストールおよびサーバーの役割を削除するサーバー マネージャーを使用して追加し、リモート サーバー、開始とサービスを停止、およびお客様の環境について収集されるデータの表示を削除します。
+[サーバー マネージャー](server-manager/server-manager.md)は、Windows Server のフル インストールに含まれる管理コンソールです (インストール UI がないのはご利用いただけません - Server Core には、サーバー マネージャーは含まれません)。インストールおよびサーバーの役割を削除するサーバー マネージャーを使用して追加し、リモート サーバー、開始とサービスを停止、およびお客様の環境について収集されるデータの表示を削除します。
 
 ### <a name="manage-remote-systems-and-systems-without-ui-with-remote-server-administration-tools-rsat"></a>リモート システムと UI のないシステムの管理には、リモート サーバー管理ツール (RSAT) を使用します。
 環境に Server Core または リモート サーバー (オンプレミスまたは仮想マシン) のインストールが含まれている場合は、[リモート サーバー管理ツール (RSAT)](../remote/remote-server-administration-tools.md) を使用して、それらのシステムを管理することができます。 RSAT にはサーバー マネージャーが含まれているため、すべてのサーバーの管理に使用できます。
@@ -113,10 +113,10 @@ Windows Server には、管理タスクを自動化するために使用でき�
 ### <a name="windows-powershellpowershellscriptingpowershell-scriptingviewpowershell-51"></a>[Windows PowerShell](/powershell/scripting/powershell-scripting?view=powershell-5.1)
 Windows PowerShell は、管理タスクの迅速な自動化に重点を置いて設計されたコマンド ライン シェル兼スクリプト言語です。 
 
-### <a name="windows-commandswindows-commandswindows-commandsmd"></a>[Windows のコマンド](windows-commands/windows-commands.md)
+### <a name="windows-commandswindows-commandswindows-commandsmd"></a>[Windows コマンド](windows-commands/windows-commands.md)
 
 Windows のコマンド ライン ツールを使用して、Windows の管理タスクを実行できます。 コマンド リファレンスを使用して、コマンドライン ツールを理解し、コマンド シェルについて知識を深めるとともに、バッチ ファイルやスクリプト ツールを使用してコマンド ライン タスクを自動化することができます。
 
 ## <a name="windows-server-insider-preview"></a>Windows Server Insider Preview
-### <a name="system-insightsmanagesystem-insightsoverviewmd"></a>[システム Insights](..\manage\system-insights\overview.md)
+### <a name="system-insightsmanagesystem-insightsoverviewmd"></a>[システム インサイト](../manage/system-insights/overview.md)
 システム インサイトは、Windows Server でネイティブの予測分析を行う新しい機能です。 これらの予測機能は、パフォーマンス カウンターや ETW イベントなどの Windows Server システム データをローカルで分析し、展開されたシステム内で問題のある動作を事前に検出して対処できるよう、IT 管理者を支援します。 

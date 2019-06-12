@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 092a97c1166f1090dd7c556f1ab86d42a1f46ee4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 31d8dbd3df4c44b6e0a3780b022dfbd9fffdffec
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889273"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452580"
 ---
 # <a name="develop-a-tool-extension"></a>ツール拡張機能の開発
 
@@ -38,7 +38,7 @@ ms.locfileid: "59889273"
 wac create --company "{!Company Name}" --tool "{!Tool Name}"
 ```
 
-| 値 | 説明 | 例 |
+| Value | 説明 | 例 |
 | ----- | ----------- | ------- |
 | ```{!Company Name}``` | (スペース) を会社名 | ```Contoso Inc``` |
 | ```{!Tool Name}``` | (スペース) を含む、ツール名 | ```Manage Foo Works``` |
@@ -63,8 +63,8 @@ npm install
 
 Windows Admin Center CLI を使用した拡張機能を作成するので、コンテンツをカスタマイズする準備が整いました。  例については、何ができるは、これらのガイドを参照してください。
 
-- 追加、[空のモジュール](guides\add-module.md)
-- 追加、 [iFrame](guides\add-iframe.md)
+- 追加、[空のモジュール](guides/add-module.md)
+- 追加、 [iFrame](guides/add-iframe.md)
  
 さらに多くの例を参照して、 [SDK の GitHub サイト](https://aka.ms/wacsdk):
 -  [開発者ツール](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools)Windows Admin Center にサイドロードできる完全に機能の拡張機能は、サンプルの機能とツール例を参照して、独自の拡張機能で使用できますの豊富なコレクションが含まれています。
@@ -77,7 +77,7 @@ Windows Admin Center CLI を使用した拡張機能を作成するので、コ�
 "icon": "{!icon-uri}",
 ```
 
-| 値 | 説明 | Uri の例 |
+| Value | 説明 | Uri の例 |
 | ----- | ----------- | ------- |
 | ```{!icon-uri}``` | アイコン リソースの場所 | ```assets/foo-icon.svg``` |
 

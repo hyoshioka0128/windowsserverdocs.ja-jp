@@ -1,11 +1,11 @@
 ---
 redirect_url: /windows-server/windows-server
-ms.openlocfilehash: 6f6e0d21fdf43ce3cf9f713d5731cfea5bb069de
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a852dfdda87aa37b403176483ea85f9bdb059e68
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812273"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436003"
 ---
 # <a name="windows-server-2016"></a>Windows Server 2016
 
@@ -19,54 +19,40 @@ ms.locfileid: "59812273"
 <table border="0" width="100%" align='center'>
   <tr style="text-align:center;">
     <td align='center' style="width:25%; border:0;">
-      <a href="/windows-server/get-started/what-s-new-in-windows-server-2016">
-        <img height=145 src="media/whats-new-highlight.png" alt="What's new icon" title="Windows Server 2016 の新機能"/></a>
-        <br/>新機能
+      <a href="/windows-server/get-started/what-s-new-in-windows-server-2016"> &lt;img 高さ = 145 src =&quot;メディア/機能-新しい-highlight.png&quot; alt =&quot;何&#39;s の新しいアイコン&quot;タイトル =&quot;Windows Server 16 における新機能ですか?&quot;/&gt;</a>
+        <br/>どのような&#39;s 新しいですか?
     </td>
     <td align='center' style="width:25%; border:0;">
-      <a href="/windows-server/get-started/server-basics">
-        <img height=145 src="media/1-getstarted.png" alt="get started icon" title="Windows Server 2016 を使ってみる" /></a>
+      <a href="/windows-server/get-started/server-basics"> &lt;img 高さ = 145 src =&quot;メディア/1-getstarted.png&quot; alt =&quot;開始の取得 アイコン&quot;タイトル =&quot;Windows Server 16 の概要&quot; /&gt;</a>
       <br/>はじめに </td>
     <td align='center' style="width:25%; border:0;">
-      <a href="/windows-server/administration/index">
-        <img height=145 src="media/8-management.png" alt="administer icon" title="Windows Server の管理" /></a>
+      <a href="/windows-server/administration/index"> &lt;img 高さ = 145 src =&quot;メディア/8-management.png&quot; alt =&quot;管理アイコン&quot;タイトル =&quot;Windows Server の管理&quot; /&gt;</a>
       <br/>管理 </td>
     <td align='center' style="width:25%; border:0;">
-      <a href="/windows-server/failover-clustering/failover-clustering-overview">
-        <img height=145 src="media/3-failover.png" alt="Failover clustering icon" title="Windows Server フェールオーバー クラスタリング" /></a>
+      <a href="/windows-server/failover-clustering/failover-clustering-overview"> &lt;img 高さ = 145 src =&quot;メディア/3-failover.png&quot; alt =&quot;フェールオーバー クラスタ リング アイコン&quot;タイトル =&quot;Windows Server フェールオーバー クラスタ リング&quot; /&gt;</a>
       <br/>フェールオーバー クラスタリング </td>
   </tr>
   <tr style="text-align:center;">
     <td align='center' style="width:25%; border:0;"><br/>
-      <a href="/windows-server/identity/identity-and-access">
-        <img height=145 src="media/4-identity.png" alt="Identity and access icon" title="Windows サーバーの ID およびアクセス" /></a>
+      <a href="/windows-server/identity/identity-and-access"> &lt;img 高さ = 145 src =&quot;メディア/4-identity.png&quot; alt =&quot;Id およびアクセスのアイコン&quot;タイトル =&quot;Windows サーバーの Id とアクセス&quot; /&gt;</a>
       <br>ID およびアクセス </td>
     <td align='center' style="width:25%; border:0;"><br/>
-      <a href="/windows-server/networking/networking">
-        <img height=145 src="media/6-networking.png" alt="Networking icon" title="Windows Server のネットワーク" />
-        </a>
+      <a href="/windows-server/networking/networking"> &lt;img 高さ = 145 src =&quot;メディア/6-networking.png&quot; alt =&quot;のネットワーク アイコン&quot;タイトル =&quot;Windows Server ネットワーク&quot; /&gt; </a>
       <br/>ネットワーク </td>
     <td align='center' style="width:25%; border:0;"><br/>
-      <a href="/windows-server/remote/index">
-        <img height=145 src="media/remote.png" alt="remote icon" title="リモート アクセスおよびサーバー管理" />
-        </a>
+      <a href="/windows-server/remote/index"> &lt;img 高さ = 145 src =&quot;media/remote.png&quot; alt =&quot;リモート アイコン&quot;タイトル =&quot;アクセスとサーバーをリモート管理&quot; /&gt; </a>
       <br/>リモート アクセス </td>
     <td align='center' style="width:25%; border:0;"><br/>
-      <a href="/windows-server/security/security-and-assurance">
-        <img height=145 src="media/5-security.png" alt="Security icon" title="Windows Server のセキュリティおよび保証" />
-      </a>
+      <a href="/windows-server/security/security-and-assurance"> &lt;img 高さ = 145 src =&quot;メディア/5-security.png&quot; alt =&quot;セキュリティ アイコン&quot;タイトル =&quot;Windows Server のセキュリティおよび保証&quot; /&gt; </a>
       <br/>セキュリティおよび保証 </td>
   </tr>
   <tr style="text-align:center;">
     <td align='center' style="width:25%; border:0;">&nbsp;</td>
     <td align='center' style="width:25%; border:0;"><br>
-      <a href="/windows-server/storage/storage">
-        <img height=145 src="media/7-storage.png" alt="Storage icon" title="Windows Server 記憶域" />
-      </a>
+      <a href="/windows-server/storage/storage"> &lt;img 高さ = 145 src =&quot;メディア/7-storage.png&quot; alt =&quot;ストレージ アイコン&quot;タイトル =&quot;Windows Server 記憶域&quot; /&gt; </a>
       <br/>ストレージ </td>
    <td align='center' style="width:25%; border:0;"><br/>
-      <a href="/windows-server/virtualization/virtualization">
-        <img height=145 src="media/virtualization.png" alt="virtualization icon" title="Windows Server 仮想化" /></a>
+      <a href="/windows-server/virtualization/virtualization"> &lt;img 高さ = 145 src =&quot;media/virtualization.png&quot; alt =&quot;仮想化アイコン&quot;タイトル =&quot;Windows Server Virtualization&quot; /&gt;</a>
       <br/>仮想化 </td>
     <td align='center' style="width:25%; border:0;">&nbsp; </td>
   </tr>

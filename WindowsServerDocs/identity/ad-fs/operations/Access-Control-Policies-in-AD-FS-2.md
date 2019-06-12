@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 216af933aee643ee56feff71c59d9ecc2e62998c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 036d6d0543687e7f82caf3dfd2c3bb0b4a981181
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842993"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445051"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>AD FS 2.0 でのクライアント アクセス制御ポリシー
 Active Directory フェデレーション サービス 2.0 内のクライアント アクセス ポリシーを使用すると、リソースへのアクセスをユーザーに許可または制限できます。  このドキュメントでは、AD FS 2.0 でのクライアント アクセス ポリシーを有効にする方法と、最も一般的なシナリオを構成する方法について説明します。
@@ -52,11 +52,13 @@ Active Directory の要求プロバイダー信頼では、新しい要求コン
     `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`
 
 
-    `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`
+~~~
+`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`
 
-    `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`
+`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`
 
-    `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
+`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
+~~~
 
 ### <a name="step-3-update-the-microsoft-office-365-identity-platform-relying-party-trust"></a>手順 3:パーティの信頼証明書利用者 Microsoft Office 365 Id プラットフォームの更新します。
 
@@ -160,16 +162,16 @@ Active Directory の要求プロバイダー信頼では、新しい要求コン
 
 ### <a name="descriptions-of-the-claim-rule-language-syntax-used-in-the-above-scenarios"></a>上記のシナリオで使用する要求規則言語構文の説明
 
-|説明|要求規則言語の構文|
-|-----|-----| 
-|すべてのユーザーにアクセスを許可する既定の AD FS 規則。 このルールは、発行承認規則のリストの信頼証明書利用者 Microsoft Office 365 Id プラットフォームに既に存在する必要があります。|=> issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");| 
-|新しいカスタム ルールにこの句を追加するには、要求がフェデレーション サーバー プロキシから取得することを指定します (x-ms-プロキシ ヘッダーを持つなど)
-この属性のすべてのルールを含めることをお勧めします。|exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"])| 
-|Ip アドレスに定義された許容範囲を使用するクライアントから要求がであるを確立するために使用されます。|NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value=~"customer-provided public ip address regex"])| 
-|この句は、アクセスされるアプリケーションは、Microsoft.Exchange.ActiveSync ではない場合、要求拒否することを指定に使用されます。|存在しない ([型 = ="https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"、Value=="Microsoft.Exchange.ActiveSync"])| 
-|このルールでは、呼び出しは、Web ブラウザーを使用し、拒否されていないかどうかを判断できます。|NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value == "/adfs/ls/"])| 
-|このルールは、唯一のユーザー (SID 値に基づいて) 特定の Active Directory グループを拒否することを示しています。 このステートメントにない追加場所に関係なく、ユーザーのグループが許可されますを意味します。|存在する ([型 = ="https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid"、値 = ~"{グループ許可されている AD グループの SID 値}"])| 
-|これは、上記のすべての条件が満たされたときに、拒否を発行するために必要な句です。|=> issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "true");|
+|                                                                                                   説明                                                                                                   |                                                                     要求規則言語の構文                                                                     |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|              すべてのユーザーにアクセスを許可する既定の AD FS 規則。 このルールは、発行承認規則のリストの信頼証明書利用者 Microsoft Office 365 Id プラットフォームに既に存在する必要があります。              |                                  => issue(Type = "<https://schemas.microsoft.com/authorization/claims/permit>", Value = "true");                                   |
+|                               新しいカスタム ルールにこの句を追加するには、要求がフェデレーション サーバー プロキシから取得することを指定します (x-ms-プロキシ ヘッダーを持つなど)                                |                                                                                                                                                                    |
+|                                                                                 この属性のすべてのルールを含めることをお勧めします。                                                                                  |                                    exists([Type == "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy>"])                                    |
+|                                                         Ip アドレスに定義された許容範囲を使用するクライアントから要求がであるを確立するために使用されます。                                                         | NOT exists([Type == "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip>", Value=~"customer-provided public ip address regex"]) |
+|                                    この句は、アクセスされるアプリケーションは、Microsoft.Exchange.ActiveSync ではない場合、要求拒否することを指定に使用されます。                                     |       存在しない ([型 = ="<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application>"、Value=="Microsoft.Exchange.ActiveSync"])        |
+|                                                      このルールでは、呼び出しは、Web ブラウザーを使用し、拒否されていないかどうかを判断できます。                                                      |              NOT exists([Type == "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path>", Value == "/adfs/ls/"])               |
+| このルールは、唯一のユーザー (SID 値に基づいて) 特定の Active Directory グループを拒否することを示しています。 このステートメントにない追加場所に関係なく、ユーザーのグループが許可されますを意味します。 |             存在する ([型 = ="<https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid>"、値 = ~"{グループ許可されている AD グループの SID 値}"])              |
+|                                                                これは、上記のすべての条件が満たされたときに、拒否を発行するために必要な句です。                                                                 |                                   => issue(Type = "<https://schemas.microsoft.com/authorization/claims/deny>", Value = "true");                                    |
 
 ### <a name="building-the-ip-address-range-expression"></a>IP アドレス範囲の式の構築
 
@@ -271,4 +273,4 @@ AD FS トレース イベントは、AD FS 2.0 のデバッグ ログに記録�
 
 ## <a name="related"></a>関連
 新しいクレームの種類の詳細については、次を参照してください。 [AD FS のクレームの種類](AD-FS-Claims-Types.md)します。
- 
+

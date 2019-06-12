@@ -12,12 +12,12 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d003c6a45159548f7e34d86ca242f74868659d2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ba5c0de9d8689c63c95ea3410a74fc9a7289aeab
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877993"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435993"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>Windows Server Essentials Log Collector の使用
 
@@ -28,9 +28,9 @@ ms.locfileid: "59877993"
  Log Collector は、プログラム ログ、イベント レビュー担当者のログ、および関連する環境情報を指定された場所で 1 つの ZIP ファイルにコピーします。 サーバーまたはネットワーク上のコンピューターから、またはコンピューターへのリモート接続を使用して、Log Collector を実行できます。  
   
 > [!NOTE]
->  -   Log Collector がネットワークの問題を分析したり、サーバーやネットワーク上のコンピューターに変更を加えることはありません。 ネットワークの問題をトラブルシューティングする方法の詳細については、サーバー製品のヘルプ ドキュメントを参照してください。  
-> -   このガイドでは、サーバー以外のネットワーク上のコンピューターを"ネットワーク コンピューター"と呼びます。  
-> -   [Windows Server Essentials Log Collector インストール パッケージをダウンロード](https://go.microsoft.com/fwlink/?LinkID=266341)します。  
+> - Log Collector がネットワークの問題を分析したり、サーバーやネットワーク上のコンピューターに変更を加えることはありません。 ネットワークの問題をトラブルシューティングする方法の詳細については、サーバー製品のヘルプ ドキュメントを参照してください。  
+>   -   このガイドでは、サーバー以外のネットワーク上のコンピューターを"ネットワーク コンピューター"と呼びます。  
+>   -   [Windows Server Essentials Log Collector インストール パッケージをダウンロード](https://go.microsoft.com/fwlink/?LinkID=266341)します。  
   
  Log Collector をインストールし実行するには、次のトピックの手順を実行します。  
   

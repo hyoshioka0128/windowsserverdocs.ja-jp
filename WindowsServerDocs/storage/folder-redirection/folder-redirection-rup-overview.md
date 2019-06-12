@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ad44ba4bbe0b31f423a4ae4593e349571d838de2
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 89506d0f7445f0df230945f45a31d4f58390c5c1
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475915"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812420"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>フォルダー リダイレクト、オフライン ファイル、移動ユーザー プロファイルの概要
 
@@ -46,11 +46,11 @@ ms.locfileid: "65475915"
 
 次の表では、このリリースでフォルダー リダイレクト、オフライン ファイル、および移動ユーザー プロファイルに加えられた主な変更点について説明します。
 
-|機能|新規/更新|説明|
-|---|---|---|
-|常時オフライン モード|新規|高速ネットワーク接続によって接続している場合でも、常時オフラインで作業することによりファイルへのアクセス速度を高め、帯域幅の使用量を抑制できます。|
-|コスト意識型同期|新規|使用量に制限のある従量制課金接続を使っている場合や、別のプロバイダーのネットワーク上でローミングしている場合に、ユーザーが同期によるデータ使用コストの増加を回避できます。|
-|プライマリ コンピューターのサポート|新規|フォルダー リダイレクトと移動ユーザー プロファイルのいずれかまたは両方の使用をユーザーのプライマリ コンピューターだけに制限できます。|
+| 機能 | 新規/更新 | 説明 |
+| --- | --- | --- |
+| 常時オフライン モード | 新規 | 高速ネットワーク接続によって接続している場合でも、常時オフラインで作業することによりファイルへのアクセス速度を高め、帯域幅の使用量を抑制できます。 |
+| コスト意識型同期 | 新規 | 使用量に制限のある従量制課金接続を使っている場合や、別のプロバイダーのネットワーク上でローミングしている場合に、ユーザーが同期によるデータ使用コストの増加を回避できます。 |
+| プライマリ コンピューターのサポート | 新規 | フォルダー リダイレクトと移動ユーザー プロファイルのいずれかまたは両方の使用をユーザーのプライマリ コンピューターだけに制限できます。 |
 
 ## <a name="always-offline-mode"></a>常時オフライン モード
 
@@ -67,7 +67,7 @@ Windows 8 および Windows Server 2012 以降、管理者は、常にオフラ�
 
 Windows 8、Windows Server 2012 では、前にユーザーがネットワークの可用性と低速リンク モード (低速接続モードとも呼ばれます) が有効になっており、1 ミリ秒に設定する際にも、状況に応じて、オンラインとオフライン モードの間で移行は待機時間のしきい値。
 
-常時オフライン モードでコンピューター決してに移行します。 オンライン モードと、**低速リンク モードを構成**グループ ポリシー設定を構成、**待機時間**しきい値パラメーターが 1 ミリ秒に設定します。 既定では、変更はバックグラウンドで 120 分ごとに同期されますが、**[Configure Background Sync]** グループ ポリシー設定を使えば同期を構成できます。
+常時オフライン モードでコンピューター決してに移行します。 オンライン モードと、**低速リンク モードを構成**グループ ポリシー設定を構成、**待機時間**しきい値パラメーターが 1 ミリ秒に設定します。 既定では、変更はバックグラウンドで 120 分ごとに同期されますが、 **[Configure Background Sync]** グループ ポリシー設定を使えば同期を構成できます。
 
 詳細については、「 [Enable the Always Offline Mode to Provide Faster Access to Files](enable-always-offline.md)」を参照してください。
 
@@ -75,8 +75,8 @@ Windows 8、Windows Server 2012 では、前にユーザーがネットワーク
 
 コスト意識型同期により、ユーザーが 4G モバイル ネットワークなどの従量制課金接続を使用していて、使用中の帯域幅が加入者の上限値に近づくかそれを超えたか、別のプロバイダーのネットワークでローミングしている場合、バックグラウンド同期が無効になります。
 
->[!NOTE]
->従量制課金接続では、オフライン (低速接続) モードでは、Windows 8、Windows Server 2019、Windows Server 2016、および Windows Server 移行する際の既定の 35 ミリ秒の待機時間値よりも低速のラウンドト リップ ネットワーク待ち時間は、通常があります。2012。 そのため、このような接続では通常、オフライン (低速接続) モードに自動的に切り替わります。
+> [!NOTE]
+> 従量制課金接続では、オフライン (低速接続) モードでは、Windows 8、Windows Server 2019、Windows Server 2016、および Windows Server 移行する際の既定の 35 ミリ秒の待機時間値よりも低速のラウンドト リップ ネットワーク待ち時間は、通常があります。2012。 そのため、このような接続では通常、オフライン (低速接続) モードに自動的に切り替わります。
 
 ### <a name="what-value-does-cost-aware-synchronization-add"></a>コスト意識型同期はどのような値を追加しますか。
 
@@ -129,10 +129,10 @@ Windows 8 および Windows Server 2012 では、前に、従量制課金接続�
 
 その他の関連情報については、次の情報を参照してください。
 
-|コンテンツの種類|参考資料|
-|---|---|
-|製品評価|[信頼性の高いファイル サービスと記憶域によるインフォメーション ワーカーのサポート](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[オフライン ファイルの内容が新しい](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>)(Windows 7 および Windows Server 2008 R2)<br>[新しい Windows Vista のオフライン ファイルには](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Windows Vista でオフライン ファイルの変更](<https://technet.microsoft.com/library/2007.11.offline.aspx>)(TechNet マガジン)|
-|展開|[フォルダー リダイレクト、オフライン ファイル、および移動ユーザー プロファイルを展開します。](deploy-folder-redirection.md)<br>[エンド ユーザー データの一元化ソリューションを実装するには。フォルダー リダイレクトとオフライン ファイル テクノロジの検証と展開](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[ローミング ユーザー データの展開ガイドの管理](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Windows 7 コンピューターのステップ バイ ステップ ガイド機能オフライン新しい構成ファイルします。](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[フォルダー リダイレクトを使用します。](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[フォルダー リダイレクトを実装する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>)(Windows Server 2003)|
-|ツールと設定|[MSDN のオフライン ファイル](https://msdn.microsoft.com/library/cc296092.aspx)<br>[オフライン ファイルのグループ ポリシーのリファレンス](https://msdn.microsoft.com/library/ms878937.aspx)(Windows 2000)|
-|コミュニティ リソース|[ファイル サービスおよびストレージ フォーラム](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[Hey, Scripting Guy!Windows でオフライン ファイル機能で機能させる方法](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[Hey, Scripting Guy!有効にしてオフライン ファイルを無効にする方法は?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)|
-関連テクノロジ|[Windows Server で id とアクセス](../../identity/identity-and-access.md)<br>[Windows Server でのストレージ](../storage.md)<br>[リモート アクセスとサーバーの管理](../../remote/index.md)|
+| コンテンツの種類 | 参考資料 |
+| --- | --- |
+| 製品評価 | [信頼性の高いファイル サービスと記憶域によるインフォメーション ワーカーのサポート](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[オフライン ファイルの内容が新しい](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>)(Windows 7 および Windows Server 2008 R2)<br>[新しい Windows Vista のオフライン ファイルには](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Windows Vista でオフライン ファイルの変更](<https://technet.microsoft.com/library/2007.11.offline.aspx>)(TechNet マガジン) |
+| 展開 | [フォルダー リダイレクト、オフライン ファイル、および移動ユーザー プロファイルを展開します。](deploy-folder-redirection.md)<br>[エンド ユーザー データの一元化ソリューションを実装するには。フォルダー リダイレクトとオフライン ファイル テクノロジの検証と展開](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[ローミング ユーザー データの展開ガイドの管理](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Windows 7 コンピューターのステップ バイ ステップ ガイド機能オフライン新しい構成ファイルします。](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[フォルダー リダイレクトを使用します。](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[フォルダー リダイレクトを実装する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>)(Windows Server 2003) |
+| ツールと設定 | [MSDN のオフライン ファイル](https://msdn.microsoft.com/library/cc296092.aspx)<br>[オフライン ファイルのグループ ポリシーのリファレンス](https://msdn.microsoft.com/library/ms878937.aspx)(Windows 2000) |
+| コミュニティ リソース | [ファイル サービスおよびストレージ フォーラム](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[Hey, Scripting Guy!Windows でオフライン ファイル機能で機能させる方法](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[Hey, Scripting Guy!有効にしてオフライン ファイルを無効にする方法は?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
+| 関連テクノロジ|[Windows Server で id とアクセス](../../identity/identity-and-access.md)<br>[Windows Server でのストレージ](../storage.md)<br>[リモート アクセスとサーバーの管理](../../remote/index.md) |

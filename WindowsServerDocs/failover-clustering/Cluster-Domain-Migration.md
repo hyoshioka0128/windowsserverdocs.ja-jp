@@ -8,16 +8,16 @@ author: johnmarlin-msft
 ms.date: 01/18/2019
 description: この記事では、1 つのドメインから別の Windows Server 2019 クラスターの移動について説明します
 ms.localizationpriority: medium
-ms.openlocfilehash: bcfd458c94d33820f434cde3313dc069fc42ffd9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1054de942e807f00586903683faeaf695ec2f033
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875943"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452932"
 ---
 # <a name="failover-cluster-domain-migration"></a>フェールオーバー クラスターのドメインの移行
 
-> 適用先:Windows Server 2019、Windows Server 2016
+> 適用対象:Windows Server 2019、Windows Server 2016
 
 このトピックでは、別に 1 つのドメインからクラスターの移動の Windows Server フェールオーバーの概要を説明します。
 
@@ -46,7 +46,7 @@ Windows Server 2016 以降では、クラスター サービスには、1 つの
 
 最初のオプションは、クラスターを破棄して、新しいドメインでそれを再構築する必要があります。
 
-![破棄および再構築](media\Cross-Domain-Cluster-Migration\Cross-Cluster-Domain-Migration-1.gif)
+![破棄および再構築](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-1.gif)
 
 このオプションは、手順に破壊的なアニメーションが示すようにします。
 
@@ -56,7 +56,7 @@ Windows Server 2016 以降では、クラスター サービスには、1 つの
 
 2 番目のオプションは、小さい破壊的なは、新しいクラスターを新しいドメインをビルドする必要がある追加のハードウェアが必要です。  クラスターを新しいドメインには、リソースを移行するクラスターの移行ウィザードを実行します。 このデータを移行しないこと、-など、データを移行する別のツールを使用する必要がありますに注意してください[記憶域の移行サービス](../storage/storage-migration-service/overview.md)(したら、クラスターのサポートが追加されます)。
 
-![ビルドおよび移行](media\Cross-Domain-Cluster-Migration\Cross-Cluster-Domain-Migration-2.gif)
+![ビルドおよび移行](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-2.gif)
 
 アニメーションが示すように、このオプションは破壊的なではありませんは、別のハードウェアまたは既存のクラスターからノードのいずれかが削除されているよりも必要があります。
 
@@ -76,7 +76,7 @@ Windows Server 2019、クラスターのクロス ドメインの移行機能を
 
 これを実現するプロセスでは、ワークグループには、新しいドメインには、1 つのドメインからクラスターを変更します。  クラスターの破棄、クラスターを再構築、アプリケーションなどをインストールする必要がある要件ではありません。 たとえば、このようなことになります。
 
-![移行](media\Cross-Domain-Cluster-Migration\Cross-Cluster-Domain-Migration-3.gif)
+![移行](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-3.gif)
 
 ## <a name="migrating-a-cluster-to-a-new-domain"></a>新しいドメインにクラスターの移行
 

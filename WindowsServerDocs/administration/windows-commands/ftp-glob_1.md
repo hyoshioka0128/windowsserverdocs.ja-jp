@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 249e9546bec467f92991b15a3d65df173036e464
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8824fab77c3cc10828b31abbe2f9034778c39c47
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857373"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438745"
 ---
 # <a name="ftp-glob1"></a>ftp: glob_1
 
@@ -32,12 +32,12 @@ glob
 ### <a name="parameters"></a>パラメーター  
 なし  
 ## <a name="remarks"></a>注釈  
--   既定でグロビングはオンです。  
--   グロビングでは、ローカル ファイルまたはパス名にワイルドカード文字としてアスタリスク (*) と疑問符 (?) の使用を許可します。  
-## <a name="BKMK_Examples"></a>例  
-ローカル ファイル名のワイルドカードの展開を切り替えます。  
-```  
-glob  
-```  
-## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+- 既定でグロビングはオンです。  
+- グロビングでは、ローカル ファイルまたはパス名にワイルドカード文字としてアスタリスク (*) と疑問符 (?) の使用を許可します。  
+  ## <a name="BKMK_Examples"></a>例  
+  ローカル ファイル名のワイルドカードの展開を切り替えます。  
+  ```  
+  glob  
+  ```  
+  ## <a name="additional-references"></a>その他の参照  
+- [コマンド ライン構文の記号](command-line-syntax-key.md)  

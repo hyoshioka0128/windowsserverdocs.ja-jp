@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1160ec742dde318141da720bd35b7d60ab805bb1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e43bf8b6e7067a31b3ec51336b0b43845ab88f63
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888423"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438602"
 ---
 # <a name="ftp-mget"></a>ftp: mget
 
@@ -30,9 +30,11 @@ ms.locfileid: "59888423"
 mget <remoteFile>[ ]  
 ```  
 ### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
-|-------|--------|  
-|<remoteFile>|ローカル コンピューターにコピーするリモート ファイルを指定します。|  
+
+|  パラメーター   |                        説明                        |
+|--------------|-----------------------------------------------------------|
+| <remoteFile> | ローカル コンピューターにコピーするリモート ファイルを指定します。 |
+
 ## <a name="BKMK_Examples"></a>例  
 リモート ファイルをコピー **a.exe**と**b.exe**現在のファイル転送の種類を使用してローカル コンピューターにします。  
 ```  
@@ -41,4 +43,4 @@ mget a.exe b.exe
 ## <a name="additional-references"></a>その他の参照  
 -   [ftp: ascii](ftp-ascii.md)  
 -   [ftp: バイナリ](ftp-binary.md)  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  

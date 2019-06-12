@@ -9,16 +9,16 @@ ms.topic: article
 author: vpetter
 ms.date: 03/27/2018
 ms.localizationpriority: ''
-ms.openlocfilehash: 55167d0f4c838af5f6f79432ede2dd45eac848a5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6e301b8c46041f107739bbcdb09c2eb0c8252ebb
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853863"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452904"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Windows エラー報告を使用してフェールオーバー クラスターのトラブルシューティング 
 
-> 適用対象:Windows Server 2016、Windows Server
+> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server
 
 Windows エラー報告 (WER) は、上級管理者、3 層のサポートを Windows が検出できるハードウェアおよびソフトウェアの問題に関する情報を収集したりするよう設計された柔軟なイベントに基づくフィードバック インフラストラクチャを Microsoft に情報を報告使用可能なソリューションをユーザーに提供します。 これは、[参照](https://docs.microsoft.com/powershell/module/windowserrorreporting/)WindowsErrorReporting のすべてのコマンドレットの説明と構文を示します。
 
@@ -317,15 +317,15 @@ PS C:\Windows\system32> (Get-ClusterResourceType -Name "Physical Disk").DumpLogQ
 
 Message Analyzer を使用すると、キャプチャ、表示、およびプロトコル メッセージング トラフィックを分析できます。 トレースおよびシステム イベントと Windows のコンポーネントからその他のメッセージを評価することもできます。 ダウンロードできる[ここから Microsoft Message Analyzer](https://www.microsoft.com/download/details.aspx?id=44226)します。 Message Analyzer からログを読み込むときに、次のプロバイダーとログ チャネルからのメッセージが表示されます。
 
-![Message Analyzer にログを読み込む](media\troubleshooting-using-WER-reports\loading-logs-into-message-analyzer.png)
+![Message Analyzer にログを読み込む](media/troubleshooting-using-WER-reports/loading-logs-into-message-analyzer.png)
 
 次のビューを取得するプロバイダーもグループ化できます。
 
-![ログ プロバイダーによってグループ化](media\troubleshooting-using-WER-reports\logs-grouped-by-providers.png)
+![ログ プロバイダーによってグループ化](media/troubleshooting-using-WER-reports/logs-grouped-by-providers.png)
 
 ディスクが失敗した理由を特定するには、下にあるイベントに移動**リング/診断**と**リング/DiagnosticVerbose**します。 次のクエリを実行します。**EventLog.EventData["LogString"] は、「クラスター ディスク 10」を含む**します。  これにより、次の出力を表示します。
 
-![ログ クエリの実行の出力](media\troubleshooting-using-WER-reports\output-of-running-log-query.png)
+![ログ クエリの実行の出力](media/troubleshooting-using-WER-reports/output-of-running-log-query.png)
 
 
 ### <a name="physical-disk-timed-out"></a>物理ディスクがタイムアウトをしました
@@ -423,7 +423,7 @@ DynamicSig[29].Value=10008
 
 ハングが発生した理由を特定するには、dum ファイルを開きます。 次のクエリを実行します。**EventLog.EventData["LogString"]「クラスター ディスク 10」が含まれています**これにより、次の出力を表示します。
 
-![ログ クエリの実行 2 の出力](media\troubleshooting-using-WER-reports\output-of-running-log-query-2.png)
+![ログ クエリの実行 2 の出力](media/troubleshooting-using-WER-reports/output-of-running-log-query-2.png)
 
 スレッドに cross-examine このことができます、 **memory.hdmp**ファイル。
 

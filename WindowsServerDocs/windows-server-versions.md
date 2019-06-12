@@ -14,12 +14,12 @@ author: lizap
 ms.author: elizapo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d14ccf734d5242301030bbb6e3c2489e1a0266a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f9a4e4e0dde0c2c6178629f0dee744448edc72dd
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876353"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812601"
 ---
 # <a name="windows-server---it-administrator-content-for-current-and-previous-releases"></a>Windows Server - 現在と以前のリリースに関する IT 管理者向けコンテンツ
 
@@ -29,7 +29,7 @@ Windows Server は、ワークグループからデータ センターに至る�
 
 > [!IMPORTANT]
 > お使いの PC で Windows は実行されていますか。 Windows 10、Windows 8、または 8.1 ですか。 Windows 7 ですか。 問題はありますか。 [Microsoft サポート](https://support.microsoft.com)にアクセスし、検索バーに問題を入力するだけです。 Windows、Office、Skype に関するあらゆる情報が収められています。 
-
+> 
 > 以下の情報は Windows **Server** に関する情報*のみ*です。
 
 ## <a name="windows-server-2016"></a>Windows Server 2016
@@ -54,18 +54,14 @@ Windows Server は、ワークグループからデータ センターに至る�
 
 [MSDN の Windows Server 2003 開発者ライブラリ](https://msdn.microsoft.com/library/dn792549.aspx)
 
-
 ## <a name="product-evaluations"></a>製品評価
 
 [Windows Server 2016 評価版をダウンロードします。](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016?i=1) 
 
 [Windows Server 2012 R2 評価版をダウンロードします。](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2) 
 
-
 ## <a name="related-links"></a>関連リンク
 [Windows Server 2016 の製品情報](https://www.microsoft.com/cloud-platform/windows-server) 
-
-<br>
 
 > [!TIP]
 > 問題がありますか? [Microsoft サポート](https://support.microsoft.com)にアクセスし、検索バーに問題を入力するだけです。 Windows、Office、Skype に関するあらゆるヘルプが見つかります。 

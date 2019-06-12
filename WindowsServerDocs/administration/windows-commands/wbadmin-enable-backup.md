@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6fd0bea5da83ca9351d5ea1028c94392bdb40422
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 08a9754b6bb11c50e21ba0d30543761be1866326
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845543"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440250"
 ---
 # <a name="wbadmin-enable-backup"></a>wbadmin バックアップの有効化
 
@@ -76,7 +76,6 @@ wbadmin enable backup
 [-password:<Password>]
 [-quiet] 
 [-allowDeleteOldBackups]
-
 ```
 
 ## <a name="parameters"></a>パラメーター
@@ -109,28 +108,28 @@ wbadmin enable backup
 次の例に示す方法、 **wbadmin には、バックアップが有効にする**コマンドは、さまざまなバックアップ シナリオで使用できます。
 
 シナリオ 1
--   ハード ディスク ドライブのバックアップをスケジュール e:、d:\mountpoint、および\\ \\? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
--   ディスク Id のディスクにファイルを保存します。
--   午前 9時 00分に毎日のバックアップを実行します。 午後 6 時まで 
-```
-wbadmin enable backup -addtarget:DiskID -schedule:09:00,18:00 -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
-```
-2 番目のシナリオ
--   ネットワークの場所にフォルダー d:\documents のバックアップをスケジュール\\ \\backupshare\backup1
--   バックアップ管理者、ネットワーク共有へのアクセスを認証する CONTOSOEAST ドメインのメンバーである Aaren Ekelund (aekel) のネットワーク資格情報を使用します。 Aaren のパスワードが *$3 hM 9 ^ 5lp*します。
--   午前 12時 00分に毎日のバックアップを実行します。 午後 7時 00分
-```
-wbadmin enable backup –addtarget:\\backupshare\backup1 –include: d:\documents –user:CONTOSOEAST\aekel –password:$3hM9^5lp –schedule:00:00,19:00
-```
-シナリオ 3
--   ドライブ h: にボリューム t: とフォルダーの d:\documents のバックアップはスケジュールが除外フォルダー d:\documents\~tmp
--   ボリューム シャドウ コピー サービスを使用して完全バックアップを実行します。
--   午前 1時 00分に毎日のバックアップを実行します。
-```
-wbadmin enable backup –addtarget:H: –include T:,D:\documents –exclude D:\documents\~tmp –vssfull –schedule:01:00
-```
+- ハード ディスク ドライブのバックアップをスケジュール e:、d:\mountpoint、および\\ \\? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
+- ディスク Id のディスクにファイルを保存します。
+- 午前 9時 00分に毎日のバックアップを実行します。 午後 6 時まで
+  ```
+  wbadmin enable backup -addtarget:DiskID -schedule:09:00,18:00 -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
+  ```
+  2 番目のシナリオ
+- ネットワークの場所にフォルダー d:\documents のバックアップをスケジュール\\ \\backupshare\backup1
+- バックアップ管理者、ネットワーク共有へのアクセスを認証する CONTOSOEAST ドメインのメンバーである Aaren Ekelund (aekel) のネットワーク資格情報を使用します。 Aaren のパスワードが *$3 hM 9 ^ 5lp*します。
+- 午前 12時 00分に毎日のバックアップを実行します。 午後 7時 00分
+  ```
+  wbadmin enable backup –addtarget:\\backupshare\backup1 –include: d:\documents –user:CONTOSOEAST\aekel –password:$3hM9^5lp –schedule:00:00,19:00
+  ```
+  シナリオ 3
+- ドライブ h: にボリューム t: とフォルダーの d:\documents のバックアップはスケジュールが除外フォルダー d:\documents\~tmp
+- ボリューム シャドウ コピー サービスを使用して完全バックアップを実行します。
+- 午前 1時 00分に毎日のバックアップを実行します。
+  ```
+  wbadmin enable backup –addtarget:H: –include T:,D:\documents –exclude D:\documents\~tmp –vssfull –schedule:01:00
+  ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

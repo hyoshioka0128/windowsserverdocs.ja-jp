@@ -6,16 +6,16 @@ ms.manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 03/26/2019
+ms.date: 06/07/2019
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: 記憶域スペース ダイレクト、クラスターのサーバーの内部記憶域にソフトウェア定義記憶域ソリューションに使用する Windows Server の機能の概要。
 ms.localizationpriority: medium
-ms.openlocfilehash: 87e7f2549578ba1ceb62772ca7ed156aed115c5f
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 1ff63794de25565a9ade7eb4e8b66cf1e394c14a
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192783"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812700"
 ---
 # <a name="storage-spaces-direct-overview"></a>記憶域スペース ダイレクトの概要
 
@@ -29,9 +29,9 @@ ms.locfileid: "66192783"
 
 |       |       |
 |   -   |   -   |
-|**理解します。**<br><ul><li>概要 (このページ)</li><li>[キャッシュについて](understand-the-cache.md)</li><li>[フォールト トレランスと記憶域の効率](storage-spaces-fault-tolerance.md)<li>[ドライブの対称性に関する考慮事項](drive-symmetry-considerations.md)</li><li>[記憶域の再同期を理解して管理する](understand-storage-resync.md)</li><li>[クラスターとプール クォーラムの概要](understand-quorum.md)</li><li>[クラスター セット](cluster-sets.md)</li>|**計画**<br><ul><li>[ハードウェア要件](storage-spaces-direct-hardware-requirements.md)</li><li>[CSV のメモリ内読み取りキャッシュを使用する](csv-cache.md)</li><li>[ドライブの選択](choosing-drives.md)</li><li>[ボリュームの計画](plan-volumes.md)</li><li>[ゲスト VM クラスターの使用](storage-spaces-direct-in-vm.md)</li><li>[ディザスター リカバリー](storage-spaces-direct-disaster-recovery.md)</li>|
-|**展開**<br><ul><li>[記憶域スペース ダイレクトの展開](deploy-storage-spaces-direct.md)</li><li>[ボリュームの作成](create-volumes.md)</li><li>[入れ子の回復性](nested-resiliency.md)</li><li>[クォーラムの構成](../../failover-clustering/manage-cluster-quorum.md)</li><li>[記憶域スペース ダイレクト クラスターを Windows Server 2019 にアップグレードする](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li>|**管理**<br><ul><li>[Windows Admin Center による管理](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[サーバーまたはドライブの追加](add-nodes.md)</li><li>[メンテナンスのためサーバーをオフラインにする](maintain-servers.md)</li><li>[サーバーの削除](remove-servers.md)</li><li>[ボリュームの拡張](resize-volumes.md)</li><li>[ボリュームを削除します。](delete-volumes.md)</li><li>[ドライブ ファームウェアの更新](../update-firmware.md)</li><li>[パフォーマンス履歴](performance-history.md)</li><li>[ボリュームの割り当てを区切る](delimit-volume-allocation.md)</li><li>[Azure Monitor を使用して、ハイパーコンバージド クラスター](configure-azure-monitor.md)</li>|
-|**トラブルシューティング**<br><ul><li>[正常性と操作状態をトラブルシューティングします。](storage-spaces-states.md)</li><li>[記憶域スペース ダイレクトの診断データを収集します。](data-collection.md)</li>|**最近投稿されたブログ**<br><ul><li>[記憶域スペース ダイレクト 13.7 件 IOPS: ハイパー コンバージド インフラストラクチャの新しい業界レコード](https://blogs.technet.microsoft.com/filecab/2018/10/30/windows-server-2019-and-intel-optane-dc-persistent-memory/)</li><li>[Windows Server 2019 - ハイパー コンバージド インフラストラクチャ、カウント ダウンのクロックは今すぐ開始!](https://blogs.technet.microsoft.com/filecab/2018/10/02/hci-the-countdown-clock-starts-now/)</li><li>[Windows Server Summit から 5 つの大きなお知らせ](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap)</li><li>[10,000 の記憶域スペース ダイレクト クラスターとカウントしています.](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/)</li>|
+| **理解します。**<br><ul><li>概要 (このページ)</li><li>[キャッシュについて](understand-the-cache.md)</li><li>[フォールト トレランスと記憶域の効率](storage-spaces-fault-tolerance.md)<li>[ドライブの対称性に関する考慮事項](drive-symmetry-considerations.md)</li><li>[記憶域の再同期を理解して管理する](understand-storage-resync.md)</li><li>[クラスターとプール クォーラムの概要](understand-quorum.md)</li><li>[クラスター セット](cluster-sets.md)</li> | **計画**<br><ul><li>[ハードウェア要件](storage-spaces-direct-hardware-requirements.md)</li><li>[CSV のメモリ内読み取りキャッシュを使用する](csv-cache.md)</li><li>[ドライブの選択](choosing-drives.md)</li><li>[ボリュームの計画](plan-volumes.md)</li><li>[ゲスト VM クラスターの使用](storage-spaces-direct-in-vm.md)</li><li>[ディザスター リカバリー](storage-spaces-direct-disaster-recovery.md)</li> |
+| **展開**<br><ul><li>[記憶域スペース ダイレクトの展開](deploy-storage-spaces-direct.md)</li><li>[ボリュームの作成](create-volumes.md)</li><li>[入れ子の回復性](nested-resiliency.md)</li><li>[クォーラムの構成](../../failover-clustering/manage-cluster-quorum.md)</li><li>[記憶域スペース ダイレクト クラスターを Windows Server 2019 にアップグレードする](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li> | **管理**<br><ul><li>[Windows Admin Center による管理](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[サーバーまたはドライブの追加](add-nodes.md)</li><li>[メンテナンスのためサーバーをオフラインにする](maintain-servers.md)</li><li>[サーバーの削除](remove-servers.md)</li><li>[ボリュームの拡張](resize-volumes.md)</li><li>[ボリュームの削除](delete-volumes.md)</li><li>[ドライブ ファームウェアの更新](../update-firmware.md)</li><li>[パフォーマンス履歴](performance-history.md)</li><li>[ボリュームの割り当てを区切る](delimit-volume-allocation.md)</li><li>[Azure Monitor を使用して、ハイパーコンバージド クラスター](configure-azure-monitor.md)</li> |
+| **トラブルシューティング**<br><ul><li>[正常性と操作状態をトラブルシューティングします。](storage-spaces-states.md)</li><li>[記憶域スペース ダイレクトの診断データを収集します。](data-collection.md)</li> | **最近投稿されたブログ**<br><ul><li>[記憶域スペース ダイレクト 13.7 件 IOPS: ハイパー コンバージド インフラストラクチャの新しい業界レコード](https://blogs.technet.microsoft.com/filecab/2018/10/30/windows-server-2019-and-intel-optane-dc-persistent-memory/)</li><li>[Windows Server 2019 - ハイパー コンバージド インフラストラクチャ、カウント ダウンのクロックは今すぐ開始!](https://blogs.technet.microsoft.com/filecab/2018/10/02/hci-the-countdown-clock-starts-now/)</li><li>[Windows Server Summit から 5 つの大きなお知らせ](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap)</li><li>[10,000 の記憶域スペース ダイレクト クラスターとカウントしています.](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/)</li> |
 
 ## <a name="videos"></a>ビデオ
 
@@ -55,12 +55,12 @@ ms.locfileid: "66192783"
 
 |       |       |
 |   -   |   -   |
-|![シンプルさ](media/storage-spaces-direct-in-windows-server-2016/simplicity-icon.png)   |**わかりやすくするためです。** Windows Server 2016 を実行する業界標準のサーバーから、最初の記憶域スペース ダイレクト クラスターに移行するまでにかかる時間は 15 分未満です。 System Center ユーザーの場合、1 個のチェックボックスのみで展開が完了します。       |
-|![優れたパフォーマンス](media/storage-spaces-direct-in-windows-server-2016/performance-icon.png)   | **優れたパフォーマンス。** 記憶域スペース ダイレクトは、すべてフラッシュでもハイブリッドでも、一貫性があり、低遅延で、[サーバーあたりの混合 4K ランダム IOPS が 150,000 回](https://blogs.technet.microsoft.com/filecab/2016/07/26/storage-iops-update-with-storage-spaces-direct/)を軽々と超えます。これは、ハイパーバイザーが組み込まれているアーキテクチャ、その組み込みの読み取り/書き込みキャッシュ、PCIe バスに直接マウントされた最新の NVMe ドライブのサポートの利点です。      |
-|![フォールト トレランス](media/storage-spaces-direct-in-windows-server-2016/fault-tolerance-icon.png)   |**フォールト トレランス。** 組み込みの回復機能によって、可用性を維持したまま、ドライブ、サーバー、またはコンポーネントのエラーが処理されます。 [シャーシおよびラックのフォールト トレランス](../../failover-clustering/fault-domains.md)向けに大規模な展開も構成できます。 ハードウェアで障害が発生した場合は、交換するだけで済みます。ソフトウェアは自己修復されるので、複雑な管理手順は必要ありません。       |
-|![リソースの効率](media/storage-spaces-direct-in-windows-server-2016/efficiency-icon.png)   |**リソースの効率。** イレイジャー コーディングは、ローカル再構築コードや ReFS リアルタイム階層などの独自の新技術で記憶域の効率を最大 2.4x に向上し、そのメリットをハード ディスク ドライブや混合ホット/コールド ワークロードにまで広げています。さらに、CPU 使用量が最小限に抑えられるので、最もリソースが必要な場所、つまり VM にリソースを戻すことができます。       |
-|![管理状態](media/storage-spaces-direct-in-windows-server-2016/manageability-icon.png)   | **管理の容易性**します。 [記憶域 QoS 制御](../storage-qos/storage-qos-overview.md)で、VM ごとの IOPS の下限値と上限値を使用して、負荷が高い VM を監視します。 [ヘルス サービス](../../failover-clustering/health-service-overview.md)は継続的な組み込みの監視機能とアラート機能を提供します。また、新しい API を使用して、高機能でクラスター全体のパフォーマンスおよび容量メトリックを簡単に収集できます。      |
-|![スケーラビリティ](media/storage-spaces-direct-in-windows-server-2016/scalability-icon.png)   |**スケーラビリティ**。 最大 16 台のサーバー、400 台を超えるドライブで、クラスターあたり最大 1 ペタバイト (1,000 テラバイト) の記憶域を実現できます。 スケール アウトするには、単にドライブを追加するか、サーバーを追加します。記憶域スペース ダイレクトによって新しいドライブが自動的に追加され、使用されるようになります。 記憶域の効率とパフォーマンスは、規模に応じた予測どおりに改善されます。       |
+| ![シンプルさ](media/storage-spaces-direct-in-windows-server-2016/simplicity-icon.png)   | **わかりやすくするためです。** Windows Server 2016 を実行する業界標準のサーバーから、最初の記憶域スペース ダイレクト クラスターに移行するまでにかかる時間は 15 分未満です。 System Center ユーザーの場合、1 個のチェックボックスのみで展開が完了します。       |
+| ![優れたパフォーマンス](media/storage-spaces-direct-in-windows-server-2016/performance-icon.png)   | **優れたパフォーマンス。** 記憶域スペース ダイレクトは、すべてフラッシュでもハイブリッドでも、一貫性があり、低遅延で、[サーバーあたりの混合 4K ランダム IOPS が 150,000 回](https://blogs.technet.microsoft.com/filecab/2016/07/26/storage-iops-update-with-storage-spaces-direct/)を軽々と超えます。これは、ハイパーバイザーが組み込まれているアーキテクチャ、その組み込みの読み取り/書き込みキャッシュ、PCIe バスに直接マウントされた最新の NVMe ドライブのサポートの利点です。      |
+| ![フォールト トレランス](media/storage-spaces-direct-in-windows-server-2016/fault-tolerance-icon.png)   | **フォールト トレランス。** 組み込みの回復機能によって、可用性を維持したまま、ドライブ、サーバー、またはコンポーネントのエラーが処理されます。 [シャーシおよびラックのフォールト トレランス](../../failover-clustering/fault-domains.md)向けに大規模な展開も構成できます。 ハードウェアで障害が発生した場合は、交換するだけで済みます。ソフトウェアは自己修復されるので、複雑な管理手順は必要ありません。       |
+| ![リソースの効率](media/storage-spaces-direct-in-windows-server-2016/efficiency-icon.png)   | **リソースの効率。** イレイジャー コーディングは、ローカル再構築コードや ReFS リアルタイム階層などの独自の新技術で記憶域の効率を最大 2.4x に向上し、そのメリットをハード ディスク ドライブや混合ホット/コールド ワークロードにまで広げています。さらに、CPU 使用量が最小限に抑えられるので、最もリソースが必要な場所、つまり VM にリソースを戻すことができます。       |
+| ![管理状態](media/storage-spaces-direct-in-windows-server-2016/manageability-icon.png)   | **管理の容易性**します。 [記憶域 QoS 制御](../storage-qos/storage-qos-overview.md)で、VM ごとの IOPS の下限値と上限値を使用して、負荷が高い VM を監視します。 [ヘルス サービス](../../failover-clustering/health-service-overview.md)は継続的な組み込みの監視機能とアラート機能を提供します。また、新しい API を使用して、高機能でクラスター全体のパフォーマンスおよび容量メトリックを簡単に収集できます。      |
+| ![スケーラビリティ](media/storage-spaces-direct-in-windows-server-2016/scalability-icon.png)   | **スケーラビリティ**。 最大 16 台のサーバー、400 台を超えるドライブで、クラスターあたり最大 1 ペタバイト (1,000 テラバイト) の記憶域を実現できます。 スケール アウトするには、単にドライブを追加するか、サーバーを追加します。記憶域スペース ダイレクトによって新しいドライブが自動的に追加され、使用されるようになります。 記憶域の効率とパフォーマンスは、規模に応じた予測どおりに改善されます。       |
 
 ## <a name="deployment-options"></a>展開オプション
 

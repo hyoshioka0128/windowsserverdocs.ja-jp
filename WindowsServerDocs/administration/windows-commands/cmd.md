@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d9b99dbe7e26190e87c5dfc9de29980b9cb2f43
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 581e9a3bad8323c79839a4487b7da045e9cfec21
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192589"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811239"
 ---
 # <a name="cmd"></a>Cmd
 
@@ -76,10 +76,12 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
 -   複数のコマンドを使用します。
 
-    複数のコマンドを使用する\<文字列 >、コマンドの区切り記号で区切ります**&&** 引用符で囲みます。 次に、例を示します。  
+    複数のコマンドを使用する\<文字列 >、コマンドの区切り記号で区切ります **&&** 引用符で囲みます。 例:
+
     ```
     "<Command>&&<Command>&&<Command>"
-    ```  
+    ``` 
+ 
 -   引用符の処理
 
     指定した場合 **/c**または **/k**、 **cmd**の残りの部分を処理*文字列、* すべて場合にのみ、引用符は保持されるので、次の条件が満たされたとします。  

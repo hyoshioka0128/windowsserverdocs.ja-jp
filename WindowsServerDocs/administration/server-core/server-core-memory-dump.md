@@ -7,12 +7,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: bd22378ec7ce5a1ff4e39546246e6e85ca859c45
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 235df6f681de51a12f82b9fad019dd2db45fd486
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828843"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435551"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>Server Core インストールのメモリ ダンプ ファイルを構成します。
 
@@ -39,7 +39,7 @@ wmic computersystem set AutomaticManagedPagefile=False
 3. **[編集]、[新規]、[文字列値]** の順にクリックします。
 4. 新しい値に名前を**DedicatedDumpFile**、し、ENTER キーを押します。
 5. 右クリックして**DedicatedDumpFile**、 をクリックし、**変更**します。
-6. **値データ**型**\<ドライブ\>:\\\<Dedicateddumpfile.sys\>**、順にクリックします**OK**.
+6. **値データ**型 **\<ドライブ\>:\\\<Dedicateddumpfile.sys\>** 、順にクリックします**OK**.
 
    >[!NOTE] 
    > 置換\<ドライブ\>、ページング ファイルの場所し、置き換えるための十分なディスクのあるドライブに\<Dedicateddumpfile.dmp\>専用のファイルへの完全なパス。
@@ -49,8 +49,8 @@ wmic computersystem set AutomaticManagedPagefile=False
 9. 右クリックして**DumpFileSize**、 をクリックし、**変更**します。
 10. **DWORD 値の編集**[**ベース**、] をクリックして**Decimal**します。
 11. **値のデータ**に、適切な値を入力して、クリックして**OK**します。
-   >[!NOTE]
-   > メガバイト (MB) では、ダンプ ファイルのサイズです。
+    >[!NOTE]
+    > メガバイト (MB) では、ダンプ ファイルのサイズです。
 12. レジストリ エディターを終了します。
 
 メモリ ダンプのパーティションの場所を決定したら、ページのファイルの保存先を構成します。 ページのファイルの現在の変換先のパスを表示するには、次のコマンドを実行します。

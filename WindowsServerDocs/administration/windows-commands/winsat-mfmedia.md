@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69ce4fac127a6af8a94f3800d62c45989cf7020b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2c63682e474311a49b01dc8078b023547e1fb170
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845433"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440025"
 ---
 # <a name="winsat-mfmedia"></a>winsat mfmedia
 
@@ -54,15 +54,15 @@ winsat mfmedia <parameters>
 
 ## <a name="BKMK_examples"></a>例
 
--   次の例では、評価を実行中で使用される入力ファイルを使用して、**正式な winsat** Media Foundation 保護されたメディア パイプライン (MFPMP)、c:\windows の場所のコンピューターに採用することなしの評価Windows のフォルダーです。  
-    ```
-    winsat mfmedia -input c:\windows\performance\winsat\winsat.wmv -nopmp
-    ```
+- 次の例では、評価を実行中で使用される入力ファイルを使用して、**正式な winsat** Media Foundation 保護されたメディア パイプライン (MFPMP)、c:\windows の場所のコンピューターに採用することなしの評価Windows のフォルダーです。  
+  ```
+  winsat mfmedia -input c:\windows\performance\winsat\winsat.wmv -nopmp
+  ```
 
 ## <a name="remarks"></a>注釈
 
 -   ローカルの Administrators グループ、またはそれと同等のメンバーシップが使用するために必要な最低限**winsat**します。 コマンドは、管理者特権でコマンド プロンプト ウィンドウから実行する必要があります。
--   管理者特権でコマンド プロンプト ウィンドウを開くには、次のようにクリックします**開始**、 をクリック**アクセサリ**、を右クリック**コマンド プロンプト**、 をクリック**を管理者として実行。**.
+-   管理者特権でコマンド プロンプト ウィンドウを開くには、次のようにクリックします**開始**、 をクリック**アクセサリ**、を右クリック**コマンド プロンプト**、 をクリック**を管理者として実行。** .
 
 #### <a name="additional-references"></a>その他の参照情報
 

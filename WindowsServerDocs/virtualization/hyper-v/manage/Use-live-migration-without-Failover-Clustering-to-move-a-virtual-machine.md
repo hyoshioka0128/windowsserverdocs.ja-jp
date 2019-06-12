@@ -11,12 +11,12 @@ ms.assetid: 75c32e42-97f7-48df-aac9-1d82d34825e1
 author: KBDAzure
 ms.author: kathydav
 ms.date: 01/17/2017
-ms.openlocfilehash: a33912e09d664296f6eda964c40177353718d49c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9be61fbc860e9d8c5cbc020d6dd4082722e32509
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851543"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812101"
 ---
 # <a name="use-live-migration-without-failover-clustering-to-move-a-virtual-machine"></a>フェールオーバー クラスタ リングのないライブ マイグレーションを使用して仮想マシンを移動するには
 
@@ -28,11 +28,13 @@ ms.locfileid: "59851543"
 
 - ローカル HYPER-V Administrators グループまたはソースと宛先の両方のコンピューターの Administrators グループのメンバーであるユーザー アカウント。 
   
-- Windows Server 2016 または Windows Server 2012 R2 で HYPER-V ロールでは、元と移行先サーバーにインストールされているし、ライブ マイグレーション用に設定します。 仮想マシンは、少なくとも場合は、Windows Server 2016 および Windows Server 2012 R2 を実行しているホスト間のライブ マイグレーションを行うことができますバージョン 5。 <br>バージョンのアップグレード手順については、次を参照してください。 [Windows 10 または Windows Server 2016 での Hyper-v で仮想マシンのアップグレード バージョン](..\deploy\Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)します。 インストール手順については、次を参照してください。[ライブ マイグレーションのホスト設定](../deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md)します。 
-  
+- Windows Server 2016 または Windows Server 2012 R2 で HYPER-V ロールでは、元と移行先サーバーにインストールされているし、ライブ マイグレーション用に設定します。 仮想マシンは、少なくとも場合は、Windows Server 2016 および Windows Server 2012 R2 を実行しているホスト間のライブ マイグレーションを行うことができますバージョン 5。
+
+    バージョンのアップグレード手順については、次を参照してください。 [Windows 10 または Windows Server 2016 での Hyper-v で仮想マシンのアップグレード バージョン](../deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)します。 インストール手順については、次を参照してください。[ライブ マイグレーションのホスト設定](../deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md)します。
+
 - 送信元または送信先のサーバーで、ツールがインストールされていない場合は、Windows Server 2016 または Windows 10 を実行しているコンピューターにインストールされている HYPER-V 管理ツールは、そこからそれらを実行します。  
    
-## <a name="BKMK_Step3"></a>HYPER-V マネージャーを使用して、実行中の仮想マシンを移動するには  
+## <a name="use-hyper-v-manager-to-move-a-running-virtual-machine"></a>HYPER-V マネージャーを使用して、実行中の仮想マシンを移動  
   
 1.  Hyper-V マネージャーを開きます。 (サーバー マネージャーで、クリックして **ツールの** >>**Hyper V マネージャー**.)  
   
@@ -42,7 +44,7 @@ ms.locfileid: "59851543"
   
 4.  ウィザードのページを使用すると、移動、移行先サーバー、およびオプションの種類を選択できます。
   
-5.  **[要約]** ページで、選択を確認し、**[完了]** をクリックします。  
+5.  **[要約]** ページで、選択を確認し、 **[完了]** をクリックします。  
 
 ## <a name="use-windows-powershell-to-move-a-running-virtual-machine"></a>Windows PowerShell を使用して、実行中の仮想マシンを移動するには
   
@@ -76,8 +78,8 @@ PS C:\> Move-VM LMTest TestServer02 -IncludeStorage -DestinationStoragePath D:\L
 3. 確認 **異なるプロセッサ バージョンがコンピューターへ移行する**です。
 4. **[OK]** をクリックします。
  
- Windows PowerShell を使用する、 [Set-vmprocessor](https://technet.microsoft.com/library/hh848533.aspx) コマンドレット。
+   Windows PowerShell を使用する、 [Set-vmprocessor](https://technet.microsoft.com/library/hh848533.aspx) コマンドレット。
  
-  ```
-  PS C:\> Set-VMProcessor TestVM -CompatibilityForMigrationEnabled $true
-  ```
+   ```
+   PS C:\> Set-VMProcessor TestVM -CompatibilityForMigrationEnabled $true
+   ```

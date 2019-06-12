@@ -7,16 +7,16 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 79f95c88c49d384f8a13b8808c63a0dc00de53cb
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 7ac9453159fe97dc15ecbb2ab858214664a2a197
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266631"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811527"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>LDAP ADDS パフォーマンス チューニングに関する考慮事項
 
->[!Important]
+> [!IMPORTANT]
 > サーバー ハードウェアでさらに詳しくは、「Active Directory ワークロードを最適化するためには、主な推奨事項と考慮事項概要次に、 [Active Directory Domain Services のキャパシティ プランニング](https://go.microsoft.com/fwlink/?LinkId=324566)記事。 リーダーは、確認を強くお勧め[Active Directory Domain Services のキャパシティ プランニング](https://go.microsoft.com/fwlink/?LinkId=324566)技術に関する理解を深めると、これらの推奨事項の影響。
 
 ## <a name="verify-ldap-queries"></a>LDAP クエリを確認します。
@@ -45,14 +45,14 @@ MSDN で正しく書き込み、構造、および Active Directory に対して
 
 -   クエリでは、長い時間がかかると、カバーのインデックスの不足しているため、クライアントに、許容される時間が完了しません。
 
--   使用量と ATQ LDAP スレッドの枯渇、膨大な量の高い期間を持つクエリが原因となっています。 次のパフォーマンス カウンターを監視します。
+- 使用量と ATQ LDAP スレッドの枯渇、膨大な量の高い期間を持つクエリが原因となっています。 次のパフォーマンス カウンターを監視します。
 
-    -   **NTDS\\要求の待機時間**– 要求がプロセスにはどのくらいの期間の対象になります。 Active Directory が 120 秒 (既定) 後にタイムアウトになる要求、ただし、大部分がより速く実行する必要があり、全体的な数値に隠れてしまう極端に長いクエリを実行する必要があります。 絶対しきい値ではなくこの基準での変更を探します。
+    - **NTDS\\要求の待機時間**– 要求がプロセスにはどのくらいの期間の対象になります。 Active Directory が 120 秒 (既定) 後にタイムアウトになる要求、ただし、大部分がより速く実行する必要があり、全体的な数値に隠れてしまう極端に長いクエリを実行する必要があります。 絶対しきい値ではなくこの基準での変更を探します。
 
-        > [!Note]   値が大きい場合は、ここでは、その他のドメインと CRL チェックの「プロキシ」要求で遅延のインジケーターはこともできます。
+        > [!NOTE]
+        > 値が大きい場合は、ここでは、その他のドメインと CRL チェックの「プロキシ」要求で遅延のインジケーターはこともできます。
 
-
-    -   **NTDS\\推定処理の遅延**– これが最適なパフォーマンスを 0 に近いする必要がありますが理想的です、これは、要求が提供されるを待機する時間をかけていないことを意味します。
+    - **NTDS\\推定処理の遅延**– これが最適なパフォーマンスを 0 に近いする必要がありますが理想的です、これは、要求が提供されるを待機する時間をかけていないことを意味します。
 
 これらのシナリオは、次の方法の 1 つ以上を使用して検出できます。
 
@@ -98,8 +98,8 @@ MSDN で正しく書き込み、構造、および Active Directory に対して
 
 -   [インデックス付けされた属性](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-
 ## <a name="see-also"></a>関連項目
+
 - [Active Directory サーバーのチューニング パフォーマンス](index.md)
 - [ハードウェアに関する考慮事項](hardware-considerations.md)
 - [ドメイン コントローラーとサイトの適切な配置に関する考慮事項](site-definition-considerations.md)

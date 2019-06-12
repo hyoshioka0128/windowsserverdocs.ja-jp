@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: c9b2e9201d58472286b42a9c89a36423f40d143d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 348ebf5b99de7f582a3edf57b0a190f87f1c4a5b
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834513"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452601"
 ---
 # <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>ツール拡張機能でカスタムのゲートウェイ プラグインを使用する
 
@@ -23,7 +23,7 @@ ms.locfileid: "59834513"
 
 ## <a name="prepare-your-environment"></a>環境の準備 ##
 
-まだインストールしていない場合の手順を実行[ツールの拡張機能を開発](..\develop-tool.md)環境の準備を新規作成は、ツールの拡張機能を空にします。
+まだインストールしていない場合の手順を実行[ツールの拡張機能を開発](../develop-tool.md)環境の準備を新規作成は、ツールの拡張機能を空にします。
 
 ## <a name="add-a-module-to-your-project"></a>モジュール プロジェクトへの追加します。 ##
 
@@ -62,6 +62,9 @@ export class PluginService {
 ```
 
 参照を変更する```Sample Uno```と```Sample%20Uno```に応じて、機能名にします。
+
+[!WARNING]
+> 推奨するで組み込み```this.appContextService.node```カスタム ゲートウェイ プラグインで定義されている任意の API を呼び出すために使用します。 これは、ようにする資格情報が適切に処理ゲートウェイ プラグイン内で必要な場合。
 
 ### <a name="modify-modulets"></a>Module.ts を変更します。
 
@@ -142,4 +145,4 @@ import { PluginService } from './plugin.service';
 
 ## <a name="build-and-side-load-your-extension"></a>ビルドと側は、拡張機能を読み込む
 
-準備ができましたに[ビルドおよび負荷の側](..\develop-tool.md#build-and-side-load-your-extension)Windows Admin Center で、拡張機能。
+準備ができましたに[ビルドおよび負荷の側](../develop-tool.md#build-and-side-load-your-extension)Windows Admin Center で、拡張機能。

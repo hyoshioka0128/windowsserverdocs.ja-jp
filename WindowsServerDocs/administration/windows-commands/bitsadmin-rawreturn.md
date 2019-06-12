@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 80eef106452a45ac4f071446ec8d427b757c443d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e12c8e621021d35ac618b4592515fe38c36be0e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817023"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434891"
 ---
 # <a name="bitsadmin-rawreturn"></a>bitsadmin rawreturn
 
@@ -34,7 +34,7 @@ bitsadmin /RawReturn
 
 ストリップの改行文字と、出力の書式設定します。
 
-組み合わせてこのコマンドを使用する、通常、**作成**と**取得\*** 値のみを受け取るスイッチ。 その他のスイッチの前に、このスイッチを指定する必要があります。
+組み合わせてこのコマンドを使用する、通常、**作成**と**取得\\** * 値のみを受け取るスイッチ。 その他のスイッチの前に、このスイッチを指定する必要があります。
 
 ## <a name="BKMK_examples"></a>例
 
@@ -45,4 +45,4 @@ C:\>bitsadmin /RawReturn /GetState myDownloadJob
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

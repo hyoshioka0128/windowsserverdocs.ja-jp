@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: e20b4960faac0ef40ad68271fa907394344e9c47
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: b1e5726e3976527278b11f105007a32548da0bc4
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034425"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805154"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>RD 接続ブローカー サーバーを展開に追加し、高可用性を構成する
 
@@ -27,7 +27,7 @@ ms.locfileid: "65034425"
 
 ## <a name="pre-requisites"></a>前提条件
 
-2 つ目の RD 接続ブローカー - として機能するサーバーをセットアップできます物理サーバーまたは VM のいずれか。
+2 つ目の RD 接続ブローカーとして機能するサーバーのセットアップ-物理サーバーまたは VM のいずれかに指定できます。
 
 接続ブローカーのデータベースを設定します。 使用することができます[Azure SQL Database](https://azure.microsoft.com/documentation/articles/sql-database-get-started/#create-a-new-aure-sql-database)インスタンスまたはローカルの環境での SQL Server。 以下、Azure SQL を使用する方法について説明しますが、手順は、SQL Server にも適用されます。 データベースの接続文字列を検索し、適切な ODBC ドライバーがあるかどうかを確認する必要があります。
 
@@ -36,21 +36,23 @@ ms.locfileid: "65034425"
 1. 作成したデータベースの接続文字列を見つける - 両方に、後で、自体 (ステップ 3)、接続ブローカーを構成しているときにこれを保存文字列で参照できます簡単に別の場所の ODBC ドライバーのバージョンを識別する必要があります。 Azure SQL の接続文字列を検索する方法を次に示します。  
     1. Azure portal のをクリックして**参照 > リソース グループ**デプロイ用のリソース グループをクリックします。   
     2. (たとえば、CB DB1) 作成した SQL データベースを選択します。   
-    3. クリックして**設定 > のプロパティ > データベース接続文字列の表示**します。   
+    3. クリックして**設定** > **プロパティ** > **データベース接続文字列の表示**します。   
     4. 接続文字列をコピー **ODBC (Node.js を含む)** 、するようになります。   
       
-        ドライバー {0} SQL Server Native Client 13.0} を = です。サーバー = tcp:cb-sqls1.database.windows.net,1433; Database = CB DB1 です。Uid =sqladmin@contoso;Pwd {your_password_here} を = です。暗号化 = yes;TrustServerCertificate = はありません。接続タイムアウト = 30 です。   
+        ```
+        Driver={SQL Server Native Client 13.0};Server=tcp:cb-sqls1.database.windows.net,1433;Database=CB-DB1;Uid=sqladmin@contoso;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
+        ```
   
     5. "Your_password_here"を実際のパスワードに置き換えます。 データベースに接続するときに、含まれるパスワードがこの文字列全体を使用します。 
 2. 新しい接続ブローカーの ODBC ドライバーをインストールします。 
    1. 接続ブローカーの VM を使用する場合は、最初の RD 接続ブローカーのパブリック IP アドレスを作成します。 (だけがある場合は、RDM の仮想マシンに RDP 接続を許可するパブリック IP アドレスを既にがあるない場合。)
-       1. Azure portal のをクリックして**参照 > リソース グループ**の展開、リソース グループ をクリックしておよび最初の RD 接続ブローカーの仮想マシン (たとえば、Contoso-Cb1) をクリックします。
+       1. Azure portal のをクリックして**参照** > **リソース グループ**や、展開、リソース グループをクリックします (たとえば、RD 接続ブローカーの最初の仮想マシンをクリックしますContoso-Cb1)。
        2. クリックして**設定 > ネットワーク インターフェイス**、対応するネットワーク インターフェイスを順にクリックします。
        3. クリックして**設定 > IP アドレス**します。
        4. **パブリック IP アドレス**を選択します**有効**、 をクリックし、 **IP アドレス**します。
        5. 使用する既存のパブリック IP アドレスがある場合は、一覧から選択します。 それ以外の場合、をクリックして**新規作成**、名前を入力し、をクリックし、 **OK**し**保存**します。
    2. 最初の RD 接続ブローカーに接続します。
-       1. Azure portal のをクリックして**参照 > リソース グループ**の展開、リソース グループ をクリックしておよび最初の RD 接続ブローカーの仮想マシン (たとえば、Contoso-Cb1) をクリックします。
+       1. Azure portal のをクリックして**参照** > **リソース グループ**や、展開、リソース グループをクリックします (たとえば、RD 接続ブローカーの最初の仮想マシンをクリックしますContoso-Cb1)。
        2. をクリックして**Connect > を開く**をリモート デスクトップ クライアントを開きます。
        3. クライアントで、次のようにクリックします。 **Connect**、 をクリックし、**別のユーザー アカウントを使用して、** します。 ドメイン管理者アカウントのユーザー名とパスワードを入力します。
        4. をクリックして**はい**とき、証明書に関する警告が表示されます。
@@ -80,7 +82,7 @@ Azure インフラストラクチャを使用している場合を作成、 [Azu
       1. **設定**、 をクリックして**バックエンド アドレス プール > 追加**します。   
       2. 名前 (たとえば、CBBackendPool) を入力し、をクリックして**仮想マシンの追加**します。  
       3. 可用性セット (たとえば、CbAvSet) を選択し、クリックして**OK**します。   
-      3. をクリックして**仮想マシンを選択**、各仮想マシンを選択し、クリックして**選択 > ok > ok** します。   
+      3. をクリックして**仮想マシンを選択**、各仮想マシンを選択し、クリックして**選択 > ok > ok**します。   
 4. RDP の負荷分散規則を作成します。   
       1. **設定**、 をクリックして**負荷分散規則**、 をクリックし、**追加**します。   
       2. 名前を入力します (たとえば、RDP) を選択します**TCP**の**プロトコル**、入力**3389**両方の**ポート**と**バックエンド ポート**、 をクリック**OK**します。   

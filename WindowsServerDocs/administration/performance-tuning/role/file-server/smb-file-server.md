@@ -7,12 +7,12 @@ ms.topic: article
 author: phstee
 ms.author: NedPyle; Danlo; DKruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 337716792a4bb3cf730b723df3abe1029631426b
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 87ad8058f7353c938087b1211e0f17820f0bd2ae
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222503"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435649"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>SMB ファイル サーバーのパフォーマンス チューニング
 
@@ -93,22 +93,22 @@ Windows Server 2012 で導入された次の SMB のパフォーマンス カウ
 
 次の REG\_DWORD のレジストリ設定の SMB ファイル サーバーのパフォーマンスに影響することができます。
 
--   **Smb2CreditsMin**と**Smb2CreditsMax**
+- **Smb2CreditsMin**と**Smb2CreditsMax**
 
-    ```
-    HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\Smb2CreditsMin
-    ```
+  ```
+  HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\Smb2CreditsMin
+  ```
 
-    ```
-    HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\Smb2CreditsMax
-    ```
+  ```
+  HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\Smb2CreditsMax
+  ```
 
-    既定値は、それぞれ 512 および 8192 です。 これらのパラメーターでは、サーバーで動的に指定された境界内のクライアント操作の同時実行をスロットルすることができるようにします。 一部のクライアントは、高帯域幅、待機時間の長いリンク経由でファイルをコピーより高い同時実行制限は、たとえば、スループットの向上を実現可能性があります。
+  既定値は、それぞれ 512 および 8192 です。 これらのパラメーターでは、サーバーで動的に指定された境界内のクライアント操作の同時実行をスロットルすることができるようにします。 一部のクライアントは、高帯域幅、待機時間の長いリンク経由でファイルをコピーより高い同時実行制限は、たとえば、スループットの向上を実現可能性があります。
     
-    >[!TIP]
-    > Windows 10 および Windows Server 2016 では、前に、クライアントに付与されるクレジット数変化に動的に Smb2CreditsMin とネットワーク待機時間に基づいて最適なクレジットを付与する数を判断しようとしています。 アルゴリズムに基づいて Smb2CreditsMax の間証明書やクレジットの使用量。 Windows 10 および Windows Server 2016 では、SMB サーバーは、クレジットの最大数は構成済みの要求時にクレジットを無条件に付与に変更されました。 この変更の一環として、制限メカニズムで、サーバーがメモリ不足の場合は、各接続のクレジットのウィンドウのサイズを軽減しますが、クレジットが削除されました。 サーバーがメモリ不足ためときの調整をトリガーした、カーネルのメモリ不足イベントが通知のみ (< は数 MB) に役に立ちません。 サーバーが不要になったクレジットの windows を縮小するため Smb2CreditsMin 設定は不要になったし、は無視されます。
-
-    > SMB クライアント共有を監視する\\クレジット失速数/秒をクレジットに問題があるかどうかを参照してください。
+  > [!TIP]
+  > Windows 10 および Windows Server 2016 では、前に、クライアントに付与されるクレジット数変化に動的に Smb2CreditsMin とネットワーク待機時間に基づいて最適なクレジットを付与する数を判断しようとしています。 アルゴリズムに基づいて Smb2CreditsMax の間証明書やクレジットの使用量。 Windows 10 および Windows Server 2016 では、SMB サーバーは、クレジットの最大数は構成済みの要求時にクレジットを無条件に付与に変更されました。 この変更の一環として、制限メカニズムで、サーバーがメモリ不足の場合は、各接続のクレジットのウィンドウのサイズを軽減しますが、クレジットが削除されました。 サーバーがメモリ不足ためときの調整をトリガーした、カーネルのメモリ不足イベントが通知のみ (< は数 MB) に役に立ちません。 サーバーが不要になったクレジットの windows を縮小するため Smb2CreditsMin 設定は不要になったし、は無視されます。
+  > 
+  > SMB クライアント共有を監視する\\クレジット失速数/秒をクレジットに問題があるかどうかを参照してください。
 
 - **AdditionalCriticalWorkerThreads**
 
@@ -121,27 +121,28 @@ Windows Server 2012 で導入された次の SMB のパフォーマンス カウ
     >[!TIP]
     > 値がキャッシュ マネージャーの量のデータのダーティの場合に増やす必要があります (キャッシュのパフォーマンス カウンター\\ダーティ ページ) は拡大して大部分 (約 25% を超える) の使用にメモリの読み取り I/o のシステムが多くの同期を行っているかどうかまたはします。
 
--   **MaxThreadsPerQueue**
+- **MaxThreadsPerQueue**
 
-    ```
-    HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\MaxThreadsPerQueue
-    ```
+  ```
+  HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\MaxThreadsPerQueue
+  ```
 
-    既定値は 20 です。 この値を増やすと、ファイル サーバーは、サービスの同時実行要求に使用できるスレッドの数が発生します。 アクティブな接続の数が多いを処理する必要があり、ストレージ帯域幅などのハードウェア リソースが十分な場合は、サーバーのスケーラビリティ、パフォーマンス、および応答時間が向上して値を大きくできます。
+  既定値は 20 です。 この値を増やすと、ファイル サーバーは、サービスの同時実行要求に使用できるスレッドの数が発生します。 アクティブな接続の数が多いを処理する必要があり、ストレージ帯域幅などのハードウェア リソースが十分な場合は、サーバーのスケーラビリティ、パフォーマンス、および応答時間が向上して値を大きくできます。
 
-    >[!TIP]
-    > 値を大きく必要があることを示していますが、SMB2 作業キューが非常に大きな増大かどうか (パフォーマンス カウンター 'サーバー ワーク キュー\\キューの長さ\\SMB2 非ブロッキング\*' ~ 100 を超えた状態が)。
+  >[!TIP]
+  > 値を大きく必要があることを示していますが、SMB2 作業キューが非常に大きな増大かどうか (パフォーマンス カウンター 'サーバー ワーク キュー\\キューの長さ\\SMB2 非ブロッキング\*' ~ 100 を超えた状態が)。
 
-    >[!Note]
-    >Windows 10 および Windows Server 2016 で MaxThreadsPerQueue は使用できません。 スレッド プールのスレッドの数になります"20 * NUMA ノード内のプロセッサの数"です。  
+  >[!Note]
+  >Windows 10 および Windows Server 2016 で MaxThreadsPerQueue は使用できません。 スレッド プールのスレッドの数になります"20 * NUMA ノード内のプロセッサの数"です。
+     
 
--   **AsynchronousCredits**
+- **AsynchronousCredits**
 
-    ``` 
-    HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\AsynchronousCredits
-    ```
+  ``` 
+  HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\AsynchronousCredits
+  ```
 
-    既定値は 512 文字です。 このパラメーターは、1 つの接続で許可される同時実行の非同期 SMB コマンドの数を制限します。 場合によっては (場合など、バック エンドの IIS サーバーとフロント エンド サーバーがある) (のファイルは、具体的には、通知要求を変更) は、大量の同時実行を必要とします。 このような場合をサポートするためにこのエントリの値を増やすことができます。
+  既定値は 512 文字です。 このパラメーターは、1 つの接続で許可される同時実行の非同期 SMB コマンドの数を制限します。 場合によっては (場合など、バック エンドの IIS サーバーとフロント エンド サーバーがある) (のファイルは、具体的には、通知要求を変更) は、大量の同時実行を必要とします。 このような場合をサポートするためにこのエントリの値を増やすことができます。
 
 ### <a name="smb-server-tuning-example"></a>SMB サーバーのチューニングの例
 

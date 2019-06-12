@@ -14,12 +14,12 @@ ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
 ms.author: pashort
 author: shortpatti
 ms.date: 09/10/2018
-ms.openlocfilehash: 367de10e8c77490ff27be81ddc05239f931ad1f4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cf58956ead8e8a47b8ec6d189bf23e5c576d5f15
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860473"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812185"
 ---
 # <a name="nic-teaming"></a>NIC チーミング
 
@@ -27,8 +27,8 @@ ms.locfileid: "59860473"
 
 このトピックでは、するネットワーク インターフェイス カード (NIC) チーミングの概要 Windows Server 2016 でします。 NIC チーミングを使用すると、1 ~ 32 でグループに 1 つまたは複数のソフトウェア ベースの仮想ネットワーク アダプターの物理イーサネット ネットワーク アダプター。 これらの仮想ネットワーク アダプターは、高速なパフォーマンスに加え、ネットワーク アダプターに障害が発生した場合のフォールト トレランスを提供します。  
   
->[!IMPORTANT]
->同じ物理ホスト コンピューターで NIC チームのメンバーのネットワーク アダプターをインストールする必要があります。 
+> [!IMPORTANT]
+> 同じ物理ホスト コンピューターで NIC チームのメンバーのネットワーク アダプターをインストールする必要があります。 
 
 > [!TIP]  
 > 1 つだけのネットワーク アダプターを含む NIC チームには、負荷分散とフェールオーバーを提供できません。 ただし、1 つのネットワーク アダプターでは、行えます NIC チーミング ネットワーク トラフィックの分離の仮想ローカル エリア ネットワーク (Vlan) も使用する場合。  

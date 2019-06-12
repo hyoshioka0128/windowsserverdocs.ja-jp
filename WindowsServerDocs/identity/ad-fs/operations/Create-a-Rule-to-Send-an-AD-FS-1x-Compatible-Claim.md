@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c87b76224d1ac5dbe3befc837fad8879d0b9a1ef
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: bda071be6668710361205643125fc8ad44246012
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189402"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453023"
 ---
 # <a name="create-a-rule-to-send-an-ad-fs-1x-compatible-claim"></a>AD FS 1.x の互換性のある要求を送信するルールを作成します。
 
@@ -43,9 +43,6 @@ Active Directory フェデレーション サービスを使用している状�
 > [!NOTE]  
 > 期待どおりに動作するには、この規則のことを証明書利用者の信頼またはこのルールを作成する要求プロバイダー信頼が使用する構成されていることを確認して、 **AD FS 1.0 および 1.1 プロファイル**します。 
 
-
-
-
 ## <a name="to-create-a-rule-to-issue-an-adfs1x-name-id-claim-using-the-pass-through-or-filter-an-incoming-claim-rule-template-on-a-relying-party-trust-in-windows-server-2016"></a>AD FS 1 を発行するルールを作成します。*x*名前 ID 要求のパススルーを使用してまたは証明書利用者の信頼を Windows Server 2016 で、入力方向の要求規則テンプレートをフィルター処理 
 
 1.  サーバー マネージャーで、**ツール**、し、 **AD FS 管理**します。  
@@ -59,7 +56,7 @@ Active Directory フェデレーション サービスを使用している状�
 4.  **要求発行ポリシーの編集**ダイアログ ボックスで、**発行変換規則** をクリックして**規則の追加**ルール ウィザードを開始します。 
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から **次へ** .  
+5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から**次へ**.  
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
 
 6.  **規則の構成**ページで、要求規則の名前を入力します。  
@@ -101,7 +98,7 @@ Active Directory フェデレーション サービスを使用している状�
 4.  **要求規則の編集**ダイアログ ボックスで、**受け入れ変換規則** をクリックして**規則の追加**ルール ウィザードを開始します。
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から **次へ** .  
+5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から**次へ**.  
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
 
 6.  **規則の構成**ページで、要求規則の名前を入力します。  
@@ -125,11 +122,10 @@ Active Directory フェデレーション サービスを使用している状�
     -   **特定の電子メール サフィックスの値に一致する要求値のみをパススルーします。**  
   
     -   **特定の値で始まる要求値のみをパススルーします。**  
-![ルールを作成します。](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs3.PNG)   
+![ルールを作成します。](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs3.PNG)
 
 10. をクリックして**完了**、順にクリックします**OK**ルールを保存します。  
 
-  
 
 ## <a name="to-create-a-rule-to-transform-an-incoming-claim-on-a-relying-party-trust-in-windows-server-2016"></a>証明書利用者の信頼を Windows Server 2016 での入力方向の要求を変換する規則を作成するには 
 
@@ -139,13 +135,13 @@ Active Directory フェデレーション サービスを使用している状�
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
 3.  右\-選択の信頼をクリックし、クリックして**要求発行ポリシーの編集**します。
-![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
+![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
   
 4.  **要求発行ポリシーの編集**ダイアログ ボックスで、**発行変換規則** をクリックして**規則の追加**ルール ウィザードを開始します。 
-![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
+![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
 
 5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**入力方向の要求を変換** をクリックし、一覧から**次**.  
-![ルールを作成します。](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)      
+![ルールを作成します。](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
 
 6.  **規則の構成**ページで、要求規則の名前を入力します。  
   
@@ -168,7 +164,7 @@ Active Directory フェデレーション サービスを使用している状�
     -   **入力方向の要求値を別の送信要求の値に置き換えます**  
   
     -   **受信した電子メールを置き換える\-メールで新しい電子メール サフィックス要求\-メール サフィックス**  
-![ルールを作成します。](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)    
+![ルールを作成します。](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)
 
 11. をクリックして**完了**、順にクリックします**OK**ルールを保存します。  
 
@@ -249,7 +245,7 @@ Active Directory フェデレーション サービスを使用している状�
     -   **委任承認規則**  
 ![ルールを作成します。](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)    
 
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から **次へ** .  
+5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**パススルーまたはフィルター処理の入力方向の要求** をクリックし、一覧から**次へ**.  
 ![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule7.PNG)  
   
 6.  **規則の構成**ページで、要求規則の名前を入力します。  
@@ -273,7 +269,7 @@ Active Directory フェデレーション サービスを使用している状�
     -   **特定の電子メール サフィックスの値に一致する要求値のみをパススルーします。**  
   
     -   **特定の値で始まる要求値のみをパススルーします。**  
-![ルールを作成します。](media/\Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs1.PNG)   
+![ルールを作成します。](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs1.PNG)
 
 10. をクリックして**完了**、順にクリックします**OK**ルールを保存します。  
 

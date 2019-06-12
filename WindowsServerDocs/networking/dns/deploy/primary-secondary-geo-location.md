@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6869ee5f39f1719a3c71025207ef9ffe740492ff
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: cf66a306c7f023852cec93d6458e74a99c46c831
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266787"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812104"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>プライマリ-セカンダリの展開での地理的な場所ベースのトラフィック管理に DNS ポリシーを使用する
 
@@ -25,8 +25,8 @@ ms.locfileid: "66266787"
   
 セカンダリ サーバーは、要求およびプライマリ DNS サーバー上のゾーンへの新しい変更を含むゾーンの更新を受信する権限を持つ転送 (AXFR) と増分ゾーン転送 (IXFR) は、ゾーン転送のプロトコルを使用します。   
   
->[!NOTE]
->AXFR に関する詳細については、インターネット技術標準化委員会 (IETF) を参照してください。 [コメント 5936 要求](https://tools.ietf.org/rfc/rfc5936.txt)します。 IXFR に関する詳細については、インターネット技術標準化委員会 (IETF) を参照してください。 [コメント 1995 の要求](https://tools.ietf.org/html/rfc1995)します。  
+> [!NOTE]
+> AXFR に関する詳細については、インターネット技術標準化委員会 (IETF) を参照してください。 [コメント 5936 要求](https://tools.ietf.org/rfc/rfc5936.txt)します。 IXFR に関する詳細については、インターネット技術標準化委員会 (IETF) を参照してください。 [コメント 1995 の要求](https://tools.ietf.org/html/rfc1995)します。  
   
 ## <a name="primary-secondary-geo-location-based-traffic-management-example"></a>プライマリ セカンダリ地理的な場所ベースのトラフィック管理の例  
 DNS クエリを実行するクライアントの物理的な場所に基づいてトラフィックのリダイレクトを実現するために、プライマリ セカンダリ配置で DNS のポリシーを使用する方法の例を次に示します。  
@@ -82,7 +82,7 @@ OPT RR の値は、要求が送信されるゾーンのスコープの名前で�
 
 開始する前に、すべてのトピックの手順を完了したことを確認 [のプライマリ サーバーの地理的な場所ベースのトラフィック管理用の DNS ポリシーを使用して](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md), 、ゾーン、ゾーンのスコープ、DNS クライアントのサブネット、および DNS のポリシーで、プライマリ DNS サーバーが構成されているとします。  
   
->[!NOTE]
+> [!NOTE]
 > DNS のプライマリ サーバーからセカンダリの DNS サーバーに DNS クライアントのサブネット、ゾーンのスコープ、および DNS のポリシーをコピーするは、このトピックの手順は、最初の DNS 設定と検証です。 今後、DNS クライアントのサブネット、ゾーンのスコープ、およびプライマリ サーバー上のポリシー設定を変更することができます。 このような状況では、セカンダリ サーバーをプライマリ サーバーと同期を保つために自動化スクリプトを作成できます。  
   
 プライマリ-セカンダリの地理的な場所ベースのクエリ応答の DNS のポリシーを構成するには、次の手順を実行する必要があります。  
@@ -95,9 +95,10 @@ OPT RR の値は、要求が送信されるゾーンのスコープの名前で�
   
 次のセクションでは、詳細な構成手順を説明します。  
   
->[!IMPORTANT]
->次のセクションでには、多くのパラメーターの値例にはが含まれている Windows PowerShell コマンド例にはが含まれます。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。  
-><br>メンバーシップ **DnsAdmins**, 、または同等の権限が必要で、次の手順を実行します。  
+> [!IMPORTANT]
+> 次のセクションでには、多くのパラメーターの値例にはが含まれている Windows PowerShell コマンド例にはが含まれます。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。  
+> 
+> メンバーシップ **DnsAdmins**, 、または同等の権限が必要で、次の手順を実行します。  
   
 ### <a name="create-the-secondary-zones"></a>セカンダリ ゾーンを作成します。
 
@@ -124,8 +125,8 @@ SecondaryServer1 と SecondaryServer2 にレプリケートするゾーンのセ
   
 次の Windows PowerShell コマンドを使用して、プライマリ ゾーンのゾーン転送設定を構成することができます。
   
->[!NOTE]
->次の例のコマンドをパラメーターで **-通知** プライマリ サーバーから更新プログラムに関する通知をセカンダリの選択リストに送信されるかを指定します。  
+> [!NOTE]
+> 次の例のコマンドをパラメーターで **-通知** プライマリ サーバーから更新プログラムに関する通知をセカンダリの選択リストに送信されるかを指定します。  
   
     
     Set-DnsServerPrimaryZone -Name "woodgrove.com" -Notify Notify -SecondaryServers "10.0.0.2,10.0.0.3" -SecureSecondaries TransferToSecureServers -ComputerName PrimaryServer  
@@ -160,8 +161,8 @@ SecondaryServer1 と SecondaryServer2 にレプリケートするゾーンのセ
     Get-DnsServerZoneScope -ZoneName "woodgrove.com" -ComputerName PrimaryServer|Add-DnsServerZoneScope -ZoneName "woodgrove.com" -ComputerName SecondaryServer2 -ErrorAction Ignore  
   
 
->[!NOTE]
->これらの例のコマンドで、 **-erroraction を無視する** すべてのゾーンに既定のゾーンのスコープが存在するために、パラメーターが含まれています。 既定のゾーンのスコープを作成または削除することはできません。 そのスコープを作成するためのパイプライン処理が発生しは失敗します。 また、2 つのセカンダリ ゾーンの既定以外のゾーンのスコープを作成できます。  
+> [!NOTE]
+> これらの例のコマンドで、 **-erroraction を無視する** すべてのゾーンに既定のゾーンのスコープが存在するために、パラメーターが含まれています。 既定のゾーンのスコープを作成または削除することはできません。 そのスコープを作成するためのパイプライン処理が発生しは失敗します。 また、2 つのセカンダリ ゾーンの既定以外のゾーンのスコープを作成できます。  
   
 詳細については、次を参照してください。 [追加 DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)します。  
   

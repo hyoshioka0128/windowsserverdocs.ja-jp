@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91fceb429ca00b1b3d9d36d01f5e97cfd464ccb9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 179d540371870075906bbcbf8ff912e1b883915d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825163"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433935"
 ---
 # <a name="dcgpofix"></a>dcgpofix
 
@@ -34,11 +34,11 @@ DCGPOFix [/ignoreschema] [/target: {Domain | DC | Both}] [/?]
 
 ### <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|再度作成します|Active Directory® スキーマの mc のバージョンは無視されます。</br>このコマンドを実行するとします。 それ以外の場合、コマンドは、コマンドが出荷された Windows バージョンと同じスキーマ バージョンでのみ機能します。|
-|/target {ドメイン | DC | 両方}|復元するには、どの GPO を指定します。 既定のドメイン ポリシー GPO、ドメイン コント ローラーの既定の GPO、またはその両方を復元することができます。|
-|/?|コマンド プロンプトでヘルプを表示します。|
+|    パラメーター    |                                                                                                 説明                                                                                                 |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  再度作成します  | Active Directory® スキーマの mc のバージョンは無視されます。</br>このコマンドを実行するとします。 それ以外の場合、コマンドは、コマンドが出荷された Windows バージョンと同じスキーマ バージョンでのみ機能します。 |
+| /target {ドメイン |                                                                                                     DC                                                                                                      |
+|       /?        |                                                                                    コマンド プロンプトでヘルプを表示します。                                                                                     |
 
 ## <a name="remarks"></a>注釈
 
@@ -59,4 +59,4 @@ dcgpofix /ignoreschema /target:DC
 #### <a name="additional-references"></a>その他の参照情報
 
 -   [グループ ポリシーの TechCenter](https://go.microsoft.com/fwlink/?LinkID=145531)
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -8,16 +8,16 @@ author: johnmarlin-msft
 ms.date: 01/24/2019
 description: ファイル共有監視サーバーを使用すると、ファイル共有を使用してクラスター クォーラムの投票できます。 このトピックでは、ファイル共有監視サーバーとファイル共有監視として、ルーターに接続されている USB ドライブの使用など、新しい機能について説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 1888142f96208800a0417c9caeea89e8a0472e88
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 47371be946c08cac2f271138d701922fc340a89d
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831753"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453039"
 ---
 # <a name="deploy-a-file-share-witness"></a>ファイル共有監視をデプロイします。
 
-> 適用先:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ファイル共有監視は、クラスター クォーラムの投票としてフェールオーバー クラスターを使用する SMB 共有です。 このトピックでは、テクノロジと Windows Server 2019、ファイル共有監視として、ルーターに接続されている USB ドライブの使用などの新機能の概要を示します。
 
@@ -61,26 +61,26 @@ ms.locfileid: "59831753"
 
 [Microsoft Ignite 2018](https://azure.microsoft.com/ignite/)、[データ ストレージ](http://www.dataonstorage.com/)キオスク分野の記憶域スペース ダイレクト クラスターを必要があります。  このクラスターが接続されていた、 [NetGear](https://www.netgear.com) Nighthawk X4S WiFi ルーターが USB ポートを使用して、ファイルとしては、次のようにミラーリング監視サーバーを共有します。
 
-![NetGear ミラーリング監視サーバー](media\File-Share-Witness\FSW1.png)
+![NetGear ミラーリング監視サーバー](media/File-Share-Witness/FSW1.png)
 
 この特定のルーター上の USB デバイスを使用してファイル共有監視を作成する手順は、以下に示します。  その他のルーターと NAS アプライアンス上の手順はさまざまで、仕入先を使用して実行することことに注意してくださいでは、方向を指定します。
 
 
 1. ルーター接続されている USB デバイスにログインします。
 
-   ![NetGear インターフェイス](media\File-Share-Witness\FSW2.png)
+   ![NetGear インターフェイス](media/File-Share-Witness/FSW2.png)
 
 2. オプションの一覧で、共有を作成できるは ReadySHARE を選択します。
 
-   ![NetGear ReadySHARE](media\File-Share-Witness\FSW3.png)
+   ![NetGear ReadySHARE](media/File-Share-Witness/FSW3.png)
 
 3. ファイル共有監視の基本的な共有とは、必要なことです。  編集 ボタンを選択すると、USB デバイス上の共有を作成できます ダイアログ表示されます。
 
-   ![NetGear 共有インターフェイス](media\File-Share-Witness\FSW4.png)
+   ![NetGear 共有インターフェイス](media/File-Share-Witness/FSW4.png)
 
 4. [適用] ボタンを選択すると、共有が作成され、一覧で確認できます。
 
-   ![NetGear 共有](media\File-Share-Witness\FSW5.png)
+   ![NetGear 共有](media/File-Share-Witness/FSW5.png)
 
 5. 共有が作成されたら、PowerShell を使用したはクラスターのファイル共有監視の作成が行われます。
 

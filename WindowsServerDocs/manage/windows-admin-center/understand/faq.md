@@ -6,17 +6,18 @@ ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 39f862485cf938981aae37e352f3448998b7c9c0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5c306dd181d4db400e6ab5bab919399fdebca9f3
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829573"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811668"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center についてよく寄せられる質問
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+> 適用対象:Windows Admin Center、Windows Admin Center プレビュー
 
 ここでは、Windows Admin Center についてよく寄せられる質問に対する回答を示します。
 
@@ -26,7 +27,9 @@ Windows Admin Center は、IT 管理者が Windows Server および Windows 10 �
 
 ## <a name="can-i-use-windows-admin-center-in-production-environments"></a>運用環境で Windows Admin Center を使用できますか。
 
-[はい]。 Windows Admin Center は一般公開されており、広範な使用法および運用環境の展開で利用可能です。 継続的に成長し成熟するプラットフォームとして、プレビューの終了は、現在のプラットフォーム機能と主要なツールが Microsoft の標準リリースの基準と、ユーザビリティ、信頼性、パフォーマンス、アクセシビリティ、セキュリティ、導入の品質基準を満たしていることを意味します。
+[はい]。 Windows Admin Center は一般公開されており、広範な使用法および運用環境の展開で利用可能です。 現在のプラットフォーム機能と core ツールは、Microsoft の標準的なリリース条件と使いやすさ、信頼性、パフォーマンス、アクセシビリティ、セキュリティ、および導入の品質基準を満たしています。
+
+[!INCLUDE [support-policy](../includes/support-policy.md)]
 
 ## <a name="how-much-does-it-cost-to-use-windows-admin-center"></a>Windows Admin Center を使用するにはいくらかかりますか。
 
@@ -38,7 +41,7 @@ Windows Server 2019 のリリースでの主要なテーマを有効にする Wi
 
 ## <a name="is-windows-admin-center-a-complete-replacement-for-all-traditional-in-box-and-rsat-tools"></a>Windows Admin Center は、すべての従来のインボックス ツールや RSAT ツールに完全に置き換わるものですか。
 
-いいえ。 Windows Admin Center は多くの一般的なシナリオを管理できますが、従来のすべての Microsoft 管理コンソール (MMC) ツールに完全に置き換わるものではありません。 どのようなツールは Windows Admin Center では、付属について詳しく説明では、詳細をご覧くださいの[サーバーを管理する](..\use\manage-servers.md)ドキュメント。 Windows Admin Center は、サーバー マネージャー ソリューションに次の主要な機能を備えています。
+No. Windows Admin Center は多くの一般的なシナリオを管理できますが、従来のすべての Microsoft 管理コンソール (MMC) ツールに完全に置き換わるものではありません。 どのようなツールは Windows Admin Center では、付属について詳しく説明では、詳細をご覧くださいの[サーバーを管理する](../use/manage-servers.md)ドキュメント。 Windows Admin Center は、サーバー マネージャー ソリューションに次の主要な機能を備えています。
 
 * リソースとリソース使用率の表示
 * 証明書の管理
@@ -75,11 +78,11 @@ Active Directory、DHCP、DNS、IIS などの役割には、Windows Admin Center
 
 ## <a name="can-i-deploy-windows-admin-center-on-a-windows-10-computer"></a>Windows 10 のコンピューターで Windows Admin Center を展開することができますか。
 
-はい、Windows Admin Center はデスクトップ モードで実行される Windows 10 (バージョン 1709 以降) にインストールできます。  Windows Admin Center では、ゲートウェイ モードで Windows Server 2016 でサーバーにインストールされている以上にすることもでき、Windows 10 コンピューターからの web ブラウザー経由でアクセスします。 [インストール オプションの詳細については、こちらを参照してください](..\plan\installation-options.md)。
+はい、Windows Admin Center はデスクトップ モードで実行される Windows 10 (バージョン 1709 以降) にインストールできます。  Windows Admin Center では、ゲートウェイ モードで Windows Server 2016 でサーバーにインストールされている以上にすることもでき、Windows 10 コンピューターからの web ブラウザー経由でアクセスします。 [インストール オプションの詳細については、こちらを参照してください](../plan/installation-options.md)。
 
 ## <a name="ive-heard-that-windows-admin-center-uses-powershell-under-the-hood-can-i-see-the-actual-scripts-that-it-uses"></a>耳にして、Windows Admin Center は PowerShell を使用して内部的を使用して実際のスクリプトを表示できますか。
 
-うん！ [Showscript 機能](..\use\get-started.md#view-powershell-scripts-used-in-windows-admin-center)Windows Admin Center プレビュー 1806 で追加されており、GA のチャネルに追加されました。
+うん！ [Showscript 機能](../use/get-started.md#view-powershell-scripts-used-in-windows-admin-center)Windows Admin Center プレビュー 1806 で追加されており、GA のチャネルに追加されました。
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-windows-server-2008-r2-or-earlier"></a>Windows Admin Center が Windows Server 2008 R2 以前を管理できるようになる予定はありますか。
 
@@ -91,11 +94,24 @@ Windows Admin Center のようになりました**限定**Windows Server 2008 R2
 
 ## <a name="which-web-browsers-are-supported-by-windows-admin-center"></a>Windows Admin Center でサポートされているのはどの Web ブラウザーですか。
 
-最新バージョンの Microsoft Edge (Windows 10 バージョン 1709 以降) および Google Chrome のブラウザーが Windows 10 でテストおよびサポートされています。 [ビュー ブラウザー固有の既知の問題](..\use\known-issues.md#browser-specific-issues)します。 その他の最新の web ブラウザーやその他のプラットフォームは、現在、テストのマトリックスの一部ではないとできないためです*正式に*サポートされています。
+最新バージョンの Microsoft Edge (Windows 10 バージョン 1709 以降) および Google Chrome のブラウザーが Windows 10 でテストおよびサポートされています。 [ビュー ブラウザー固有の既知の問題](../support/known-issues.md#browser-specific-issues)します。 その他の最新の web ブラウザーやその他のプラットフォームは、現在、テストのマトリックスの一部ではないとできないためです*正式に*サポートされています。
 
 ## <a name="how-does-windows-admin-center-handle-security"></a>Windows Admin Center ではセキュリティをどのように処理していますか。
 
 ブラウザーから Windows Admin Center ゲートウェイへのトラフィックは、HTTPS を使用します。 ゲートウェイから管理対象サーバーへのトラフィックは標準の PowerShell および WMI over WinRM です。 Microsoft は、LAPS (Local Administrator Password Solution)、リソース ベースの制約付き委任、AD または Azure AD を使用したゲートウェイ アクセス制御、および対象サーバーを管理するための役割ベースのアクセス制御をサポートしています。
+
+## <a name="does-windows-admin-center-use-credssp"></a>Windows Admin Center は、CredSSP を使用しますか。
+
+はい、Windows Admin Center いくつかのケースで CredSSP が必要です。 これは、管理のための特定の対象としているサーバー以外のマシンに認証用の資格情報を渡す必要です。 たとえば、上の仮想マシンを管理している場合**サーバー B**、によってホストされているファイル共有にこれらの仮想マシンの vhdx ファイルを保存したい**サーバー C**、Windows Admin Center に CredSSP を使用する必要があります認証**サーバー C**ファイル共有にアクセスします。
+
+Windows Admin Center では、同意を確認した後に自動的に CredSSP の構成を処理します。 CredSSP を構成する前に Windows Admin Center は、システムが最近の CredSSP を持っているかどうかを確認する確認[更新](https://support.microsoft.com/help/4093492/credssp-updates-for-cve-2018-0886-march-13-2018)します。 サーバーの概要と、それを無効にするオプションでバッジがあります、CredSSP が有効になっています。
+
+![CredSSP をサーバーの概要](../media/CredSSP-overview.png)
+
+CredSSP は、次の領域で使用されています。
+
+- 仮想マシンのツール (上記の例です。) での SMB 記憶域を使用して細分類
+- 更新プログラムを使用してツール フェールオーバーまたはハイパーコンバージド クラスター管理ソリューションを実行する[クラスター対応更新](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating) 
 
 ## <a name="are-there-any-cloud-dependencies"></a>クラウド依存関係はありますか。
 
@@ -107,15 +123,15 @@ Windows Admin Center は、Windows 10 Fall Anniversary Update (1709) 以降、�
 
 ## <a name="what-about-extensibility-and-3rd-party-support"></a>機能拡張およびサード パーティのサポートはどうなりますか。
 
-Windows Admin Center では、使用可能な SDK を持っているすべてのユーザーが独自の拡張機能を書き込めるようにします。 プラットフォームとして、エコシステムを拡大し、パートナーの拡張性を有効にすることは、当初から最優先でした。 [Windows Admin Center SDK の詳細については、こちらを参照してください](..\extend\extensibility-overview.md)。
+Windows Admin Center では、使用可能な SDK を持っているすべてのユーザーが独自の拡張機能を書き込めるようにします。 プラットフォームとして、エコシステムを拡大し、パートナーの拡張性を有効にすることは、当初から最優先でした。 [Windows Admin Center SDK の詳細については、こちらを参照してください](../extend/extensibility-overview.md)。
 
 ## <a name="can-i-manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Windows Admin Center でハイパーコンバージド インフラストラクチャを管理することができますか。
 
-[はい]。 Windows Admin Center では、Windows Server 2016 または Windows Server 2019 を実行するハイパー コンバージド クラスターの管理をサポートします。 Windows Admin Center でのハイパー コンバージド クラスター マネージャー ソリューションは以前のプレビューでしたが、ここでは、**一般**、いくつかの新しいプレビュー機能とします。 詳細については、[ハイパーコンバージド インフラストラクチャの管理について確認してください](..\use\manage-hyper-converged.md)。
+[はい]。 Windows Admin Center では、Windows Server 2016 または Windows Server 2019 を実行するハイパー コンバージド クラスターの管理をサポートします。 Windows Admin Center でのハイパー コンバージド クラスター マネージャー ソリューションは以前のプレビューでしたが、ここでは、**一般**、いくつかの新しいプレビュー機能とします。 詳細については、[ハイパーコンバージド インフラストラクチャの管理について確認してください](../use/manage-hyper-converged.md)。
 
 ## <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center に System Center は必要ですか。
 
-いいえ。 Windows Admin Center は、System Center を補完するものですが、System Center は必要ありません。 [Windows Admin Center および System Center について読む](related-management.md#system-center)します。
+No. Windows Admin Center は、System Center を補完するものですが、System Center は必要ありません。 [Windows Admin Center および System Center について読む](related-management.md#system-center)します。
 
 ## <a name="can-windows-admin-center-replace-system-center-virtual-machine-manager-scvmm"></a>Windows Admin Center で System Center Virtual Machine Manager (SCVMM) を置き換えることができますか。
 
@@ -127,15 +143,18 @@ Windows Admin Center と SCVMM は互いを補完する関係にあります。W
 
 ### <a name="windows-admin-center"></a>Windows Admin Center
 
-* 頻繁に更新できないか、または実稼働環境で使用するリリースの検証時間がさらに必要な IT 管理者には、このバージョンが適しています。 現在、一般 (公開 GA) リリースでは、Windows Admin Center 1809.5 です。
-* 最新の GA リリースを入手するには、[こちらでダウンロード](https://aka.ms/WACDownload)してください。
-
-* Windows Admin Center GA リリースも継続的に、サポートされる Microsoft のに基づいて[モダン ライフ サイクル ポリシー](https://support.microsoft.com/help/30881/modern-lifecycle-policy)します。 これは、Windows Admin Center GA の最新リリース バージョンが処理され、サポートされている場合、ユーザーにのみ「最新」アップグレードすることで、最新の Windows Admin Center GA リリースの可用性を維持する 30 日以内にサポートされていることを意味します。 このポリシーは、Windows Admin Center プラットフォーム自体とは GA で、Windows Admin Center の拡張機能をフィードで公開されている任意の Microsoft 拡張機能の両方に適用されます。 一部の拡張機能が Windows Admin Center GA リリース間で、他よりも頻繁に更新することに注意してください。
+* 頻繁に更新できないか、または実稼働環境で使用するリリースの検証時間がさらに必要な IT 管理者には、このバージョンが適しています。 現在、一般 (公開 GA) リリースでは、Windows Admin Center 1904 です。
+* [!INCLUDE [support-policy](../includes/support-policy.md)]
+* 最新のリリースを取得する[ここからダウンロード](https://aka.ms/WACDownload)します。
 
 ### <a name="windows-admin-center-preview"></a>Windows Admin Center Preview
 
+> [!NOTE]
+> 現在の GA バージョン (Windows Admin Center 1904) には、すべての以前のプレビュー機能が含まれています。
+> Insider Preview は、今後数か月で返します。
+
 * 一定間隔で最新かつ最大の機能を必要とする IT 管理者には、このバージョンが最適です。 自分の意図は、毎月のリリース以降の更新を提供することです。 そのため、または。 コア プラットフォームは引き続き実稼働レベルであり、ライセンスにより製品の使用権が提供されます。 ただし、明確に PREVIEW としてマークされた新しいツールや機能が導入されており、評価やテストに適しています。
-* 最新の Preview リリースを入手するには、登録済みの Insider は [Windows Server Insider Preview ダウンロード ページ](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)の [Additional Downloads] (追加のダウンロード) ドロップダウンから直接 Windows Admin Center Preview をダウンロードできます。 まだ Insider として登録していない場合は、Windows Insiders for Business ポータルの [Windows Server の概要](https://insider.windows.com/en-us/for-business-getting-started-server/)に関するページを参照してください。
+* 最新の Insider Preview リリースを取得するには、登録されている内部関係者から直接 Windows Admin Center プレビューをダウンロードして可能性があります、 [Windows Server Insider プレビューのダウンロード ページ](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)、その他のダウンロードのドロップダウン リスト。 まだ Insider として登録していない場合は、Windows Insiders for Business ポータルの [Windows Server の概要](https://insider.windows.com/en-us/for-business-getting-started-server/)に関するページを参照してください。
 
 ## <a name="why-was-windows-admin-center-chosen-as-the-final-name-for-project-honolulu"></a>"Project Honolulu" の最終的な名前として "Windows Admin Center" が選択されたのはなぜですか。
 
@@ -147,8 +166,8 @@ Microsoft の[起動画面](https://aka.ms/WindowsAdminCenter)は出発点とし
 
 ## <a name="what-is-the-version-history-of-windows-admin-center"></a>Windows Admin Center のバージョン履歴とは何ですか。
 
-[ここで、バージョン履歴を表示します。](..\overview.md#release-history)
+[ここで、バージョン履歴を表示します。](../overview.md#release-history)
 
 ## <a name="im-having-an-issue-with-windows-admin-center-where-can-i-get-help"></a>Windows Admin Center で問題が発生していますが、どこでサポート情報を入手できますか。
 
-[トラブルシューティング ガイド](..\use\troubleshooting.md)および[既知の問題](..\use\known-issues.md)の一覧を参照してください。
+[トラブルシューティング ガイド](../use/troubleshooting.md)および[既知の問題](../use/known-issues.md)の一覧を参照してください。

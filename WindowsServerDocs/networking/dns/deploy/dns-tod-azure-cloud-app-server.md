@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 4846b548-8fbc-4a7f-af13-09e834acdec0
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ed6ac2ebc8839d0e7ecee682d7644251f8a59381
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 68f30973ef58b64006181990425e6ca84c39c059
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829073"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812039"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>Azure クラウド アプリケーション サーバーを使用した 1 日の時間に基づく DNS 応答
 
@@ -23,10 +23,10 @@ ms.locfileid: "59829073"
 
 このシナリオでは、別のタイム ゾーンに配置されている、Microsoft Azure でホストされている Web サーバーなどの別のアプリケーション サーバーを 1 つのタイム ゾーンでトラフィックを転送する場合に便利です。 これにより、トラフィックを負荷分散アプリケーションのインスタンス間でのピーク時のトラフィックがプライマリ サーバーが、いつ過負荷の期間します。 
 
->[!NOTE]
->Azure を使用せず、インテリジェント DNS 応答に DNS のポリシーを使用する方法についてを参照してください。[インテリジェント DNS 応答に基づく 1 日の時間の DNS のポリシーを使用して](Scenario--Use-DNS-Policy-for-Intelligent-DNS-Responses-Based-on-the-Time-of-Day.md)します。 
+> [!NOTE]
+> Azure を使用せず、インテリジェント DNS 応答に DNS のポリシーを使用する方法についてを参照してください。[インテリジェント DNS 応答に基づく 1 日の時間の DNS のポリシーを使用して](Scenario--Use-DNS-Policy-for-Intelligent-DNS-Responses-Based-on-the-Time-of-Day.md)します。 
 
-## <a name="bkmk_azureexample"></a>Azure のクラウド アプリのサーバーの 1 日の時間に基づくインテリジェント DNS 応答の例
+## <a name="example-of-intelligent-dns-responses-based-on-the-time-of-day-with-azure-cloud-app-server"></a>Azure のクラウド アプリのサーバーの 1 日の時間に基づくインテリジェント DNS 応答の例
 
 1 日の時間に基づくアプリケーションのトラフィックを分散する DNS ポリシーを使用する方法の例を次に示します。
 
@@ -44,8 +44,8 @@ Contoso ギフト サービスは、サイト分析を実行し、毎晩、現�
 
 Contoso ギフト サービス Azure から VM (192.68.31.44) のパブリック IP アドレスを取得し、毎日 on Azure の間で 5-10 PM、1 時間のコンティンジェンシー期間のことができます、Web サーバーを展開するオートメーションを開発します。
 
->[!NOTE]
->Azure Vm の詳細については、次を参照してください[Virtual Machines のドキュメント。](https://azure.microsoft.com/documentation/services/virtual-machines/) 
+> [!NOTE]
+> Azure Vm の詳細については、次を参照してください[Virtual Machines のドキュメント。](https://azure.microsoft.com/documentation/services/virtual-machines/) 
 
 DNS サーバーは、5 ~ 9 PM 毎日、間のクエリの 30% が Azure で実行されている Web サーバーのインスタンスに送信されるように、ゾーンのスコープおよび DNS のポリシーで構成されます。
 
@@ -53,7 +53,7 @@ DNS サーバーは、5 ~ 9 PM 毎日、間のクエリの 30% が Azure で実�
 
 ![DNS のポリシーの 1 日の応答時間を](../../media/DNS-Policy-Tod2/dns_policy_tod2.jpg)  
 
-## <a name="bkmk_azurehow"></a>アプリ サーバーが動作する Azure の 1 日の時間に基づくインテリジェント DNS 応答方法
+## <a name="how-intelligent-dns-responses-based-on-time-of-day-with-azure-app-server-works"></a>アプリ サーバーが動作する Azure の 1 日の時間に基づくインテリジェント DNS 応答方法
  
 この記事で 2 つの別のアプリケーション サーバーの IP アドレスの DNS クエリに応答する DNS サーバーを構成する 1 つの web サーバーは、シアトルおよび、Azure データ センターでは、その他の方法を示します。
 
@@ -63,29 +63,29 @@ DNS サーバーが、シアトルの Web サーバーの IP アドレスを格�
 
 Azure のレコードに 10 分間の TTL は、VM が Azure から削除される前に、LDNS キャッシュからレコードが期限切れようにします。 このようなスケーリングの利点の 1 つは、DNS で、オンプレミス、データを保持することができ、維持にスケール アウトする Azure 需要に応じてことです。
 
-## <a name="bkmk_azureconfigure"></a>アプリの Azure サーバーの時刻に基づくインテリジェント DNS 応答の DNS のポリシーを構成する方法
+## <a name="how-to-configure-dns-policy-for-intelligent-dns-responses-based-on-time-of-day-with-azure-app-server"></a>アプリの Azure サーバーの時刻に基づくインテリジェント DNS 応答の DNS のポリシーを構成する方法
+
 分散アプリケーションの負荷を 1 日の時間ベースのクエリの応答の DNS のポリシーを構成するには、次の手順を実行する必要があります。
 
+- [ゾーンのスコープを作成します。](#create-the-zone-scopes)
+- [レコードをゾーンのスコープに追加します。](#add-records-to-the-zone-scopes)
+- [DNS ポリシーを作成します。](#create-the-dns-policies)
 
-- [ゾーンのスコープを作成します。](#bkmk_zscopes)
-- [レコードをゾーンのスコープに追加します。](#bkmk_records)
-- [DNS ポリシーを作成します。](#bkmk_policies)
-
-
->[!NOTE]
->構成する場合、ゾーンに対して権限のある DNS サーバーでは、これらの手順を実行する必要があります。 次の手順を実行するには、DnsAdmins、またはそれと同等のメンバーシップが必要です。 
+> [!NOTE]
+> 構成する場合、ゾーンに対して権限のある DNS サーバーでは、これらの手順を実行する必要があります。 次の手順を実行するには、DnsAdmins、またはそれと同等のメンバーシップが必要です。 
 
 次のセクションでは、詳細な構成手順を説明します。
 
->[!IMPORTANT]
->次のセクションでには、多くのパラメーターの値例にはが含まれている Windows PowerShell コマンド例にはが含まれます。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。 
+> [!IMPORTANT]
+> 次のセクションでには、多くのパラメーターの値例にはが含まれている Windows PowerShell コマンド例にはが含まれます。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。 
 
 
-### <a name="bkmk_zscopes"></a>ゾーンのスコープを作成します。
+### <a name="create-the-zone-scopes"></a>ゾーンのスコープを作成します。
+
 ゾーンのスコープは、ゾーンの一意のインスタンスです。 DNS ゾーンは、独自の DNS レコード セットを格納している各ゾーンのスコープを持つ、複数のゾーン スコープを持つことができます。 同じレコードは、別の IP アドレスを持つ、複数のスコープまたは同じ IP アドレスに存在することができます。 
 
->[!NOTE]
->既定では、ゾーンのスコープは、DNS ゾーンに存在します。 このゾーンのスコープでは、ゾーンと同じ名前と、従来の DNS の機能がこのスコープで動作します。 
+> [!NOTE]
+> 既定では、ゾーンのスコープは、DNS ゾーンに存在します。 このゾーンのスコープでは、ゾーンと同じ名前と、従来の DNS の機能がこのスコープで動作します。 
 
 次の例のコマンドを使用すると、Azure のレコードをホストするのにゾーン スコープを作成します。
 
@@ -95,7 +95,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AzureZoneScope
 
 詳細については、次を参照してください [追加 DnsServerZoneScope。](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-### <a name="bkmk_records"></a>レコードをゾーンのスコープに追加します。
+### <a name="add-records-to-the-zone-scopes"></a>レコードをゾーンのスコープに追加します。
 次の手順では、ゾーンのスコープに Web サーバーのホストを表すレコードを追加します。 
 
 AzureZoneScope では、Azure パブリック クラウドにある 192.68.31.44、IP アドレスを持つレコード www.contosogiftservices.com が追加されます。 
@@ -114,7 +114,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 
 詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。  
 
-### <a name="bkmk_policies"></a>DNS ポリシーを作成します。 
+### <a name="create-the-dns-policies"></a>DNS のポリシーを作成します。 
 ゾーンのスコープが作成された後は、次のようにできるように、これらのスコープの間で着信クエリを配布する DNS ポリシーを作成できます。
 
 1. クライアントの午後 9 時 1 日、30% を午後 6 時からのクライアントの 70% が、シアトル、オンプレミスの Web サーバーの IP アドレスを受信中に、DNS 応答での Azure データ センターで Web サーバーの IP アドレスが表示されます。

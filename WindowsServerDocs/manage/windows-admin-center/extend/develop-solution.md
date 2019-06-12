@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: ed5ecddbaef91f127846825e408a9a6ec65ff741
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 268a7d2833f73e9fab006501e9b3dc261d1b1d9e
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825473"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452579"
 ---
 # <a name="develop-a-solution-extension"></a>ソリューション拡張機能の開発
 
@@ -45,7 +45,7 @@ Windows Admin Center の [接続] ページからの接続を選択してその�
 wac create --company "{!Company Name}" --solution "{!Solution Name}" --tool "{!Tool Name}"
 ```
 
-| 値 | 説明 | 例 |
+| Value | 説明 | 例 |
 | ----- | ----------- | ------- |
 | ```{!Company Name}``` | (スペース) を会社名 | ```Contoso Inc``` |
 | ```{!Solution Name}``` | (スペース) を含む、ソリューションの名前 | ```Contoso Foo Works Suite``` |
@@ -71,10 +71,10 @@ npm install
 
 Windows Admin Center CLI を使用した拡張機能を作成するので、コンテンツをカスタマイズする準備が整いました。  例については、何ができるは、これらのガイドを参照してください。
 
-- 追加、[空のモジュール](guides\add-module.md)
-- 追加、 [iFrame](guides\add-iframe.md)
-- 作成、[カスタム接続プロバイダー](guides\create-connection-provider.md)
-- 変更[ナビゲーションの動作をルート](guides\modify-root-navigation.md)
+- 追加、[空のモジュール](guides/add-module.md)
+- 追加、 [iFrame](guides/add-iframe.md)
+- 作成、[カスタム接続プロバイダー](guides/create-connection-provider.md)
+- 変更[ナビゲーションの動作をルート](guides/modify-root-navigation.md)
  
 さらに多くの例を参照して、 [SDK の GitHub サイト](https://aka.ms/wacsdk):
 -  [開発者ツール](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools)Windows Admin Center にサイドロードできる完全に機能の拡張機能は、サンプルの機能とツール例を参照して、独自の拡張機能で使用できますの豊富なコレクションが含まれています。

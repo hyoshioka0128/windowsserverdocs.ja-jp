@@ -7,15 +7,15 @@ ms.technology: storage-spaces
 ms.topic: get-started-article
 ms.assetid: 20fee213-8ba5-4cd3-87a6-e77359e82bc0
 author: stevenek
-ms.date: 8/16/2018
+ms.date: 06/07/2019
 description: ハイパー コンバージド インフラストラクチャまたは収束 (細分類とも呼ばれます) のインフラストラクチャのいずれかとして Storage Spaces Direct in Windows Server でのソフトウェア定義記憶域を展開する詳細な手順。
 ms.localizationpriority: medium
-ms.openlocfilehash: 55cfa0e066506d7174f9e5b1e61cc0aa290706d7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a4159c85be23025ef57084b47dcc77d4f749888f
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865413"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812358"
 ---
 # <a name="deploy-storage-spaces-direct"></a>記憶域スペース ダイレクトの展開
 
@@ -24,7 +24,7 @@ ms.locfileid: "59865413"
 このトピックでデプロイする手順について説明します[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)します。
 
 > [!Tip]
-> Hyper-Converged インフラストラクチャを取得しようとしていますか。 マイクロソフトでは、これらをお勧め[Windows Server ソフトウェア定義](https://microsoft.com/wssd)パートナーからソリューションです。 設計は、アセンブリ、互換性および取得するための信頼性と簡単に実行されているように、参照アーキテクチャの検証にあり。
+> Hyper-Converged インフラストラクチャを取得しようとしていますか。 検証済みハードウェア/ソフトウェア ソリューションをデプロイ ツールと手順を含むパートナーから購入することをお勧めします。 これらのソリューションの設計、アセンブル、および互換性と取得するための信頼性と簡単に実行されているように、参照アーキテクチャの検証にしていること。 Windows Server 2019 ソリューションでは、次を参照してください。、 [solutions の web サイトを Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci)します。 Windows Server 2016 のソリューションの詳細については、について説明します。 [Windows Server ソフトウェア定義](https://microsoft.com/wssd)します。
 
 > [!Tip]
 > Microsoft Azure におけるなど、HYPER-V 仮想マシンを使用する[ハードウェアなし記憶域スペース ダイレクトを評価](storage-spaces-direct-in-vm.md)します。 便利なを確認することも[Windows Server ラボの迅速な配置スクリプト](https://aka.ms/wslab)トレーニングのために使用します。
@@ -51,7 +51,7 @@ ms.locfileid: "59865413"
 
 最初の手順では、クラスターに追加するすべてのサーバーで Windows Server をインストールします。 記憶域スペース ダイレクトでは、Windows Server 2016 Datacenter Edition が必要です。 デスクトップ エクスペリエンス搭載、Server Core インストール オプション、またはサーバーを使用することができます。
 
-セットアップ ウィザードを使用して Windows Server をインストールするときのことができます*Windows Server* (Server Core を参照する) と*Windows Server (デスクトップ エクスペリエンス搭載サーバー)*、これは、相当です*完全*インストール オプションの Windows Server 2012 R2 で使用できます。 ない場合は、Server Core インストール オプションが表示されます。 詳細については、次を参照してください。 [Windows Server 2016 のインストール オプション](../../get-started/Windows-Server-2016.md)します。
+セットアップ ウィザードを使用して Windows Server をインストールするときのことができます*Windows Server* (Server Core を参照する) と*Windows Server (デスクトップ エクスペリエンス搭載サーバー)* 、これは、相当です*完全*インストール オプションの Windows Server 2012 R2 で使用できます。 ない場合は、Server Core インストール オプションが表示されます。 詳細については、次を参照してください。 [Windows Server 2016 のインストール オプション](../../get-started/Windows-Server-2016.md)します。
 
 ### <a name="step-12-connect-to-the-servers"></a>手順 1.2:サーバーに接続します。
 
@@ -62,7 +62,7 @@ ms.locfileid: "59865413"
 - 同じドメインまたは完全に信頼されたドメインに参加しています。
 - Hyper-V およびフェールオーバー クラスタリング用のリモート サーバー管理ツール (RSAT) と PowerShell モジュール。 RSAT ツールと PowerShell モジュールは Windows Server で使用でき、その他の機能をインストールしなくてもインストールできます。 インストールすることも、[リモート サーバー管理ツール](https://www.microsoft.com/download/details.aspx?id=45520)Windows 10 PC の管理にします。
 
-管理システムで、フェールオーバー クラスターと Hyper-V 管理ツールをインストールします。 この操作は、サーバー マネージャーで**役割と機能の追加**ウィザードを使用して行うことができます。 **[機能]** ページで、**[リモート サーバー管理ツール]** を選択し、インストールするツールを選択します。
+管理システムで、フェールオーバー クラスターと Hyper-V 管理ツールをインストールします。 この操作は、サーバー マネージャーで**役割と機能の追加**ウィザードを使用して行うことができます。 **[機能]** ページで、 **[リモート サーバー管理ツール]** を選択し、インストールするツールを選択します。
 
 PS セッションを開始し、接続するノードのサーバー名または IP アドレスを使用します。 きっとこのコマンドを実行した後、パスワードの入力を求め、Windows セットアップ時に指定した管理者パスワードを入力してください。
 
@@ -229,14 +229,14 @@ Test-Cluster –Node <MachineName1, MachineName2, MachineName3, MachineName4> �
 
 詳細については、以下のトピックを参照してください。
 
-- [構成し、クォーラムの管理](../../failover-clustering/manage-cluster-quorum.md)
+- [クォーラムを構成および管理する](../../failover-clustering/manage-cluster-quorum.md)
 - [フェールオーバー クラスターのクラウド監視をデプロイします。](../../failover-clustering/deploy-cloud-witness.md)
 
 ### <a name="step-35-enable-storage-spaces-direct"></a>手順 3.5:記憶域スペース ダイレクトを有効にする
 
 クラスターを作成した後、 `Enable-ClusterStorageSpacesDirect` PowerShell コマンドレットに渡して、記憶域システムを記憶域スペース ダイレクト モードに設定され、自動的に、次の操作を行います。
 
--   **プールを作成します。**"S2D on Cluster1"などの名前を持つ単一の大きなプールを作成します。
+-   **プールを作成します。** "S2D on Cluster1"などの名前を持つ単一の大きなプールを作成します。
 
 -   **記憶域スペース ダイレクトのキャッシュを構成します。** できます (読み取りし、書き込みでは、ほとんどの場合) のキャッシュ デバイスとして最も高速な 1 つ以上のメディア (ドライブ) の種類が記憶域スペース ダイレクトの使用可能な場合
 
@@ -297,15 +297,15 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
 
 #### <a name="to-create-a-scale-out-file-server-role-by-using-server-manager"></a>サーバー マネージャーを使用してスケール アウト ファイル サーバーの役割を作成するには
 
-1.  フェールオーバー クラスター マネージャーでは、クラスターを選択しに移動して、**ロール**、順にクリックします**役割の構成.**.<br>高可用性ウィザードが表示されます。
-2.  **役割の選択**] ページで [**ファイル サーバー**します。
-3.  **ファイル サーバーの種類**] ページで [**アプリケーション データ用のスケール アウト ファイル サーバー**します。
-4.  **クライアント アクセス ポイント** ページで、スケール アウト ファイル サーバーの名前を入力します。
-5.  ロールが正常に設定されているに移動して確認**ロール**いることを確認し、**状態**列には**を実行している**、作成したクラスター化されたファイル サーバーの役割の横にあります。図 1 に示す。
+1. フェールオーバー クラスター マネージャーでは、クラスターを選択しに移動して、**ロール**、順にクリックします**役割の構成.** .<br>高可用性ウィザードが表示されます。
+2. **役割の選択**] ページで [**ファイル サーバー**します。
+3. **ファイル サーバーの種類**] ページで [**アプリケーション データ用のスケール アウト ファイル サーバー**します。
+4. **クライアント アクセス ポイント** ページで、スケール アウト ファイル サーバーの名前を入力します。
+5. ロールが正常に設定されているに移動して確認**ロール**いることを確認し、**状態**列には**を実行している**、作成したクラスター化されたファイル サーバーの役割の横にあります。図 1 に示す。
 
-    ![スケール アウト ファイル サーバー フェールオーバー クラスター マネージャーのスクリーン ショット](media\Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016\SOFS_in_FCM.png "スケール アウト ファイル サーバー フェールオーバー クラスター マネージャー")
+   ![スケール アウト ファイル サーバー フェールオーバー クラスター マネージャーのスクリーン ショット](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "スケール アウト ファイル サーバー フェールオーバー クラスター マネージャー")
 
-     **図 1**フェールオーバー クラスター マネージャーの実行中の状態でスケール アウト ファイル サーバーの表示
+    **図 1**フェールオーバー クラスター マネージャーの実行中の状態でスケール アウト ファイル サーバーの表示
 
 > [!NOTE]
 >  クラスター化された役割を作成するには、後にある可能性がありますいくつかのネットワークから数分後に、または長い可能性があることでファイル共有の作成を妨げる可能性のある伝達の遅延。  

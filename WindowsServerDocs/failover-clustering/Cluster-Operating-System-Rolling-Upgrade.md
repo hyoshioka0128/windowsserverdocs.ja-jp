@@ -7,16 +7,16 @@ ms.assetid: 6e102c1f-df26-4eaa-bc7a-d0d55d3b82d5
 author: jasongerend
 ms.author: jgerend
 ms.date: 03/27/2018
-ms.openlocfilehash: 60dacf63f1a355b961f84169060dbd7122a6fd32
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f56c036768de7c1afcf3327135a7ff7d7a690a8b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842733"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440147"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>クラスターのオペレーティング システムのローリング アップグレード
 
-> 適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+> 適用対象:Windows Server 2019、Windows Server 2016
 
 クラスター OS のローリング アップグレードすると、管理者は、HYPER-V やスケール アウト ファイル サーバーのワークロードを停止することがなく、クラスター ノードのオペレーティング システムをアップグレードするができます。 この機能を使用すると、サービス レベル アグリーメント (SLA) でのダウンタイムに対するペナルティを回避できます。
 
@@ -45,7 +45,7 @@ Windows Server 2016 では、次のシナリオがサポートされていませ
 
 クラスター OS のローリング アップグレードすると、System Center Virtual Machine Manager (SCVMM) 2016 では完全にサポートします。 SCVMM 2016 を使用している場合は、次を参照してください。 [VMM で Windows Server 2016 に Hyper-v ホスト クラスターのローリング アップグレード実行](https://docs.microsoft.com/system-center/vmm/hyper-v-rolling-upgrade?view=sc-vmm-1807)ガイダンスについては、クラスターをアップグレードすると、このドキュメントで説明されている手順を自動化します。  
 
-## <a name="requirements"></a>必要条件  
+## <a name="requirements"></a>要件  
 クラスター OS のローリング アップグレード プロセスを開始する前に、次の要件を完了します。
 
 - Windows Server (半期チャネル)、Windows Server 2016 または Windows Server 2012 R2 を実行するフェールオーバー クラスターを起動します。
@@ -226,12 +226,12 @@ Update ClusterFunctionalLevelcmdlet を実行すると、クラスターは「4 
         ![Get VMHostSupportedVersion コマンドレットの出力を示すスクリーン ショット](media/Cluster-Operating-System-Rolling-Upgrade/Clustering_GetVMHostSupportVersion.png)  
         **図 21:ホストでサポートされている HYPER-V VM の構成バージョンを表示します。**  
 
-   3.  各 HYPER-V ホストのノードでクラスターには、ユーザーと簡単なメンテナンス期間のスケジュール設定、バックアップ、バーチャル マシンをオフにすると、および実行されているを HYPER-V VM の構成のバージョンをアップグレードできる、 [ `Update-VMVersion` ](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps)コマンドレット (を参照してください図 22)。 仮想マシンのバージョンに更新され、HYPER-V 統合コンポーネント (IC) の今後の更新する必要がなくなります、HYPER-V の新機能を有効にされます。 このコマンドレットは、VM をホストしている HYPER-V ノードから実行することができます、または`-ComputerName`パラメーターを使用して、VM バージョンをリモートで更新することです。 この例では、ここでバージョンにアップグレード構成 VM1 の 5.0 からこの VM 構成のバージョンなど、実稼働のチェックポイント (アプリケーション整合性バックアップ) とバイナリの VM に関連付けられている多くの新しい HYPER-V 機能を活用するために 7.0構成ファイルです。  
+   3. 各 HYPER-V ホストのノードでクラスターには、ユーザーと簡単なメンテナンス期間のスケジュール設定、バックアップ、バーチャル マシンをオフにすると、および実行されているを HYPER-V VM の構成のバージョンをアップグレードできる、 [ `Update-VMVersion` ](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps)コマンドレット (を参照してください図 22)。 仮想マシンのバージョンに更新され、HYPER-V 統合コンポーネント (IC) の今後の更新する必要がなくなります、HYPER-V の新機能を有効にされます。 このコマンドレットは、VM をホストしている HYPER-V ノードから実行することができます、または`-ComputerName`パラメーターを使用して、VM バージョンをリモートで更新することです。 この例では、ここでバージョンにアップグレード構成 VM1 の 5.0 からこの VM 構成のバージョンなど、実稼働のチェックポイント (アプリケーション整合性バックアップ) とバイナリの VM に関連付けられている多くの新しい HYPER-V 機能を活用するために 7.0構成ファイルです。  
 
-        ![アクションで更新 VMVersion コマンドレットを示すスクリーン ショット](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_StopVM.png)  
-        **図 22:更新 VMVersion PowerShell コマンドレットを使用して VM のバージョンをアップグレードします。**  
+       ![アクションで更新 VMVersion コマンドレットを示すスクリーン ショット](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_StopVM.png)  
+       **図 22:更新 VMVersion PowerShell コマンドレットを使用して VM のバージョンをアップグレードします。**  
 
-4.  使用して記憶域プールをアップグレードすることができます、 [Update-storagepool](https://docs.microsoft.com/powershell/module/storage/Update-StoragePool?view=win10-ps) PowerShell コマンドレット - これはオンライン操作です。  
+6. 使用して記憶域プールをアップグレードすることができます、 [Update-storagepool](https://docs.microsoft.com/powershell/module/storage/Update-StoragePool?view=win10-ps) PowerShell コマンドレット - これはオンライン操作です。  
 
 具体的には、HYPER-V プライベート クラウドのシナリオを対象としているし、任意のクラスター ロールのスケール アウト ファイル サーバー クラスターは、クラスター OS のローリング アップグレード プロセスのダウンタイムなくアップグレードできますを使用できます。  
 
@@ -254,7 +254,7 @@ Update ClusterFunctionalLevelcmdlet を実行すると、クラスターは「4 
     はい、クラスター OS のローリング アップグレード プロセスを開始する前に最新のソフトウェア更新プログラムすべてのクラスター ノードが更新されることを確認します。  
 
 **実行することができます、 [ `Update-ClusterFunctionalLevel` ](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)コマンドレット ノードがオフまたは一時停止中ですか?**  
-    いいえ。 すべてのクラスター ノードとのメンバーシップがアクティブである必要があります、 [ `Update-ClusterFunctionalLevel` ](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)コマンドレットを実行します。  
+    No. すべてのクラスター ノードとのメンバーシップがアクティブである必要があります、 [ `Update-ClusterFunctionalLevel` ](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)コマンドレットを実行します。  
 
 **クラスター OS のローリング アップグレードの機能のすべてのクラスター ワークロードについてSQL Server の機能**  
     はい、クラスター OS のローリング アップグレードでは、すべてのクラスター ワークロードに対して機能します。 ただし、HYPER-V とスケール アウト ファイル サーバー クラスターにのみ、ダウンタイムを勧めします。 その他のほとんどのワークロード ダウンタイムが発生するいくつか (通常は、いくつかの分単位) 場合、フェールオーバー、およびフェールオーバーが必要なクラスター OS のローリング アップグレード プロセス中に少なくとも 1 回です。  
@@ -279,5 +279,5 @@ Update ClusterFunctionalLevelcmdlet を実行すると、クラスターは「4 
 
 ## <a name="see-also"></a>関連項目  
 -   [リリース ノート:Windows Server 2016 に関する重要な問題](../get-started/Release-Notes--Important-Issues-in-Windows-Server-2016-Technical-Preview.md)  
--   [新機能 Windows Server 2016 の新機能](../get-started/What-s-New-in-windows-server-2016.md)  
+-   [Windows Server 2016 の新機能](../get-started/What-s-New-in-windows-server-2016.md)  
 -   [新機能では、Windows Server フェールオーバー クラスタ リングの新機能](whats-new-in-failover-clustering.md)  

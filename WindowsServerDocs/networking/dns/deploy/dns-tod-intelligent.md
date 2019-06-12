@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 161446ff-a072-4cc4-b339-00a04857ff3a
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 33fd9447a79346127714a5e5e73977611eba483c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: c36475dacb8664352f4ab270878357118d281c60
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829473"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446423"
 ---
 # <a name="use-dns-policy-for-intelligent-dns-responses-based-on-the-time-of-day"></a>1 日の時間に基づくインテリジェントなDNS 応答に DNS ポリシーを使用する
 
@@ -107,7 +107,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScop
 #### <a name="bkmk_records"></a>レコードをゾーンのスコープに追加します。  
 2 つのゾーンのスコープに web サーバーのホストを表すレコードを追加する必要があります。  
   
-たとえば、 **SeattleZoneScope**, 、レコード **www.contosogiftservices.com** はシアトルのデータ センターにある IP アドレス、192.0.0.1 で追加します。 同様に、 **DublinZoneScope**, 、レコード **www.contosogiftservices.com** Dublin データ センター内の IP アドレス 141.1.0.3 の追加  
+たとえば、 **SeattleZoneScope**, 、レコード <strong>www.contosogiftservices.com</strong> はシアトルのデータ センターにある IP アドレス、192.0.0.1 で追加します。 同様に、 **DublinZoneScope**, 、レコード <strong>www.contosogiftservices.com</strong> Dublin データ センター内の IP アドレス 141.1.0.3 の追加  
   
 次の Windows PowerShell コマンドを使用して、レコードをゾーンのスコープに追加することができます。  
   

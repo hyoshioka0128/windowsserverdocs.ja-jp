@@ -1,23 +1,23 @@
 ---
 title: 新しいディスクの初期化
 description: ディスク管理では、準備を使用して、新しいディスクを初期化する方法。 トラブルシューティングの問題へのリンクも表示されます。
-ms.date: 10/24/2018
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e009780d83220b528ba7dac6e2561be36e662f71
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 7a275c372e1486b26821f797a7663eecbc3e8784
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192761"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812428"
 ---
 # <a name="initialize-new-disks"></a>新しいディスクの初期化
 
-> **適用対象します。** Windows 10、Windows 8.1、Windows 7、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> **適用対象します。** Windows 10、Windows 8.1、Windows 7、Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 お使いのコンピューターに新しいディスクを追加し、ファイル エクスプ ローラーに表示されないことの場合には必要[ドライブ文字を追加](change-a-drive-letter.md)、または使用する前に初期化します。 書式指定されていないドライブのみ初期化できます。 ディスクの初期化では、すべての機能を消去しをフォーマットし、上のファイルを保存している Windows で使用するために準備します。
 
@@ -35,12 +35,12 @@ ms.locfileid: "66192761"
 
      一部の USB ドライブを初期化するオプションはありませんは、これらだけ形式を取得し、[ドライブ文字](change-a-drive-letter.md)します。
 
-    ![ディスクの管理と表示されるディスクの初期化のショートカット メニューを未フォーマットのディスクを表示](media\uninitialized-disk.PNG)
+    ![ディスクの管理と表示されるディスクの初期化のショートカット メニューを未フォーマットのディスクを表示](media/uninitialized-disk.PNG)
 2. **ディスクの初期化**(表示) ダイアログ ボックスで、正しいディスクが選択されていることを確認し、クリックしてチェック**OK**を既定のパーティション スタイルを受け入れるようにします。 パーティション スタイル (GPT または MBR) 参照を変更する必要がある場合[パーティション スタイルの GPT と MBR の](#about-partition-styles---gpt-and-mbr)します。
 
      ディスクの状態を簡単に変更**初期化**とし、さらに、**オンライン**状態。 何らかの理由が失敗を初期化する場合は、次を参照してください。[ディスクの状態が初期化されていないか、ディスクが不足している完全](troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing)します。
 
-    ![GPT パーティション スタイルが選択されているディスクの初期化 ダイアログ ボックス](media\initialize-disk.PNG)
+    ![GPT パーティション スタイルが選択されているディスクの初期化 ダイアログ ボックス](media/initialize-disk.PNG)
 
 ## <a name="about-partition-styles---gpt-and-mbr"></a>パーティションのスタイルの GPT と MBR について
 

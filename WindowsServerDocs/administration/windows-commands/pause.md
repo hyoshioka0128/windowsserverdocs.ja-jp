@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 109d162e8d5c4bdd59871a21f16b6f568df4fbd6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e5805fcc14d6874d95ba90537d72b560229ba99b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861663"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436313"
 ---
 # <a name="pause"></a>pause
 
@@ -44,16 +44,16 @@ pause
 
 ## <a name="remarks"></a>注釈
 
--   実行すると、 **を一時停止** コマンドを次のメッセージが表示されます。  
-    ```
-    Press any key to continue . . .
-    ```  
--   バッチ プログラムを停止するには、CTRL + C を押すと、次のメッセージが表示されます。  
-    ```
-    Terminate batch job (Y/N)?
-    ```  
-    Y (yes) キーを押して、このメッセージに応答をバッチ プログラムが終了し、制御がオペレーティング システムに戻ります。
--   挿入することができます、 **を一時停止** コマンドを処理したくないバッチ ファイルのセクションまでにします。 **を一時停止** を一時停止バッチ ファイルの処理には、ctrl キーを押しながら C キーを押してしてバッチ プログラムを停止するには Y キーを押します。
+- 実行すると、 **を一時停止** コマンドを次のメッセージが表示されます。  
+  ```
+  Press any key to continue . . .
+  ```  
+- バッチ プログラムを停止するには、CTRL + C を押すと、次のメッセージが表示されます。  
+  ```
+  Terminate batch job (Y/N)?
+  ```  
+  Y (yes) キーを押して、このメッセージに応答をバッチ プログラムが終了し、制御がオペレーティング システムに戻ります。
+- 挿入することができます、 **を一時停止** コマンドを処理したくないバッチ ファイルのセクションまでにします。 **を一時停止** を一時停止バッチ ファイルの処理には、ctrl キーを押しながら C キーを押してしてバッチ プログラムを停止するには Y キーを押します。
 
 ## <a name="BKMK_examples"></a>例
 
@@ -70,4 +70,4 @@ goto begin
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

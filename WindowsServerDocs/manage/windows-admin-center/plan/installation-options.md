@@ -1,35 +1,38 @@
 ---
 title: インストールの種類が適切な
-description: インストールの種類はどのような適切な Windows Admin Center (プロジェクト ホノルル)。 高可用性と回復性のフェールオーバー クラスターにインストールします。
+description: このトピックでは、複数の管理者によって、Windows 10 PC 上で使用するための Windows server のインストールを含む、Windows Admin Center のさまざまなインストール オプションについて説明します。
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: fae0305e454cdd10109219c6182ff612f539e9c9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.date: 06/07/2019
+ms.openlocfilehash: 9b26ce28d8b3f74c26adab87e68b9985f2be5361
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868013"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811816"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>適切なインストールの種類
 
 >適用先:Windows Admin Center、Windows Admin Center プレビュー
 
+このトピックでは、複数の管理者によって、Windows 10 PC 上で使用するための Windows server のインストールを含む、Windows Admin Center のさまざまなインストール オプションについて説明します。 Azure 内の VM では、Windows Admin Center をインストールするを参照してください。 [Azure でデプロイ Windows Admin Center](../azure/deploy-wac-in-azure.md)します。
+
 ## <a name="supported-operating-systems-installation"></a>サポートされるオペレーティング システム:インストール
 
 できます**インストール**次の Windows オペレーティング システムで Windows Admin Center:
 
-| **バージョン** | **インストール モード** |
-|-------------|-----------------------|
-|Windows 10 バージョン 1709 以降 | デスクトップ モード |
-|Windows Server 半期チャネル | ゲートウェイ モード |
-|Windows Server 2016 | ゲートウェイ モード |
-|Windows Server 2019 | ゲートウェイ モード |
+| **バージョン**  | **インストール モード** |
+| -------------| -----------------------|
+| Windows 10 バージョン 1709 以降 | デスクトップ モード |
+| Windows Server 半期チャネル | ゲートウェイ モード |
+| Windows Server 2016 | ゲートウェイ モード |
+| Windows Server 2019 | ゲートウェイ モード |
 
-**デスクトップ モード:**[スタート] メニューから起動しがインストールされている同じコンピューターから Windows Admin Center ゲートウェイに接続する (つまり`https://localhost:6516`)
+**デスクトップ モード:** [スタート] メニューから起動しがインストールされている同じコンピューターから Windows Admin Center ゲートウェイに接続する (つまり`https://localhost:6516`)
 
 **ゲートウェイ モード:** 別のコンピューターにクライアントのブラウザーから、Windows Admin Center ゲートウェイに接続する (つまり`https://servername.contoso.com`) 
 
@@ -44,8 +47,8 @@ ms.locfileid: "59868013"
 
 できます**管理**Windows Admin Center を使用して、次の Windows オペレーティング システム。
 
-| バージョン | 管理*ノード*を介して*サーバー マネージャー* | 管理*クラスター*を介して*フェールオーバー クラスター マネージャー* | 管理*HCI*を介して*HCI クラスター マネージャー*|
-|-------------------------|---------------|-----|------------------------|
+| バージョン | 管理*ノード*を介して*サーバー マネージャー* | 管理*クラスター*を介して*フェールオーバー クラスター マネージャー* | 管理*HCI*を介して*HCI クラスター マネージャー* |
+| ------------------------- |--------------- | ----- | ------------------------ |
 | Windows 10 バージョン 1709 以降 | [はい] (コンピューターの管理) 経由 | なし | なし |
 | Windows Server 半期チャネル | 〇 | 〇 | なし |
 | Windows Server 2019 | 〇 | 〇 | 〇 |
@@ -58,15 +61,16 @@ ms.locfileid: "59868013"
 
 > [!NOTE]
 > Windows Admin Center では、PowerShell の機能は、Windows Server 2008 R2、2012、および 2012 R2 には含まれていない必要があります。 Windows Admin Center で管理する場合、これらのサーバーで Windows Management Framework (WMF) 5.1 以降のバージョンをインストールする必要があります。
-
->PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。 
-
->WMF がインストールされていない場合は、 [WMF 5.1 のダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=54616)します。
+> 
+> PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。 
+> 
+> WMF がインストールされていない場合は、 [WMF 5.1 のダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=54616)します。
 
 ## <a name="deployment-options"></a>展開オプション
 
 | ![img](../media/deployment-options/W10.png) | ![img](../media/deployment-options/gateway.png) | ![img](../media/deployment-options/node.png) | ![img](../media/deployment-options/HA.png) |
-|---|---|---|---|
+| --------------------------------------------- | ------------------------------------------------- |----------------------------------------------|-------------------------------------------- |
+|                                             |                                                 |                                              |                                            |
 
 | ローカル クライアント | ゲートウェイ サーバー | 管理されたサーバー | フェールオーバー クラスター |
 | --- | --- | --- | --- |

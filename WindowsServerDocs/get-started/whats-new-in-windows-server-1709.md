@@ -7,19 +7,23 @@ ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: 32ce591a8b50c6e35c3fde4fedb177b6d76fccdd
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.date: 06/03/2019
+ms.openlocfilehash: e17a636c5bf06d194abd1bfe9b6d20970773e993
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976734"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501404"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server バージョン 1709 の新機能
 
 >適用先:Windows Server (半期チャネル)
 
 <img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;Windows では、最新の機能については、次を参照してください。 [Windows Server で新](whats-new-in-windows-server.md)します。 ここでは、Windows Server バージョン 1709 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。 [Windows Server バージョン 1709 に関するブログの記事](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)もご覧ください。
-   
+
+> [!IMPORTANT]
+> Windows Server、バージョン 1709 は、2019 年 4 月 9 日の時点でのサポート対象外です。
+
 
 ## <a name="new-cadence-of-releases"></a>新しいリリースのペース
 
@@ -126,20 +130,20 @@ Project Honolulu には、PC、Windows サーバー、フェールオーバー �
 - **受信ウィンドウ自動調整**:TCP の自動調整ロジックは、TCP 接続の「受信ウィンドウ」パラメーターを計算します。  高速で遅延の大きい接続で良好なパフォーマンス特性を実現するには、このアルゴリズムが必要です。  このリリースでは、特定の接続の最大受信ウィンドウの値を、ステップ関数を使用して収束させるようにアルゴリズムが変更されています。
 - **TCP stats API**:新しい API が導入された SIO_TCP_INFO と呼ばれます。  SIO_TCP_INFO によって、開発者はソケット オプションを使用して個々 の TCP 接続に関する豊富な情報を照会できます。
 - **IPv6**:このリリースでは IPv6 では複数の機能強化があります。
-    - **RFC 6106**サポートします。RFC 6106 ルーター アドバタイズ (RAs) での DNS 構成を可能にします。 次のコマンドを使用して、RFC 6106 のサポートを有効または無効にすることができます。
+  - **RFC 6106**サポートします。RFC 6106 ルーター アドバタイズ (RAs) での DNS 構成を可能にします。 次のコマンドを使用して、RFC 6106 のサポートを有効または無効にすることができます。
 
     ```
     netsh int ipv6 set interface <ifindex> rabaseddnsconfig=<enabled | disabled>
     ```
 
-    - **ラベルをフロー**:このフィールドに、5 タプル (ソース IP、Dst IP、発信元ポート、Dst ポート) のハッシュの設定を ipv6 パケットがある TCP および UDP 送信 Creators Update 以降します。  これにより、IPv6 のみのデータ センターでの負荷分散またはフロー分類がより効率的に実行されます。 フローラベルを有効にするには:
+  - **ラベルをフロー**:このフィールドに、5 タプル (ソース IP、Dst IP、発信元ポート、Dst ポート) のハッシュの設定を ipv6 パケットがある TCP および UDP 送信 Creators Update 以降します。  これにより、IPv6 のみのデータ センターでの負荷分散またはフロー分類がより効率的に実行されます。 フローラベルを有効にするには:
 
     ```
     netsh int ipv6 set flowlabel=[disabled|enabled] (enabled by default)
     netsh int ipv6 set global flowlabel=<enabled | disabled>
     ```
 
-    - **ISATAP と 6to4**:一歩将来非推奨として Creators Update が既定で無効になっています。 これらのテクノロジがあります。
+  - **ISATAP と 6to4**:一歩将来非推奨として Creators Update が既定で無効になっています。 これらのテクノロジがあります。
 - **配信不能のゲートウェイの検出 (DGD)** :DGD アルゴリズムに自動的に遷移接続経由で別のゲートウェイに現在のゲートウェイに到達できないときにします。 このリリースでは、ネットワーク環境を定期的に再プローブするようにアルゴリズムが強化されています。
 - [Test-NetConnection](https://technet.microsoft.com/itpro/powershell/windows/nettcpip/test-netconnection) は、さまざまなネットワークの診断を実行する Windows PowerShell の組み込みのコマンドレットです。  このリリースでは、接続元アドレスの選択だけでなく、ルートの選択に関する詳細情報を提供するように、コマンドレットが強化されました。
 

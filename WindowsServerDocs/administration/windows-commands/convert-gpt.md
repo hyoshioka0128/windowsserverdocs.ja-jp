@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e838f68162b6faabf2ecbc7dea2ce840235890c0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 433e30efeecec4e4ec51d67c40c14cacf986d12e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859113"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434227"
 ---
 # <a name="convert-gpt"></a>convert gpt
 
@@ -44,8 +44,8 @@ convert gpt [noerr]
 
 > [!IMPORTANT]
 > ディスクを GPT ディスクに変換する空にする必要があります。 データのバックアップし、ディスクを変換する前にすべてのパーティションまたはボリュームを削除します。
--   GPT への変換の必要な最小ディスク サイズは、128 メガバイトです。
--   この操作を成功させるのには、ベーシック MBR ディスクを選択してください。 使用して、 **select ディスク**コマンドをベーシック ディスクを選択し、それにフォーカスをします。
+> -   GPT への変換の必要な最小ディスク サイズは、128 メガバイトです。
+> -   この操作を成功させるのには、ベーシック MBR ディスクを選択してください。 使用して、 **select ディスク**コマンドをベーシック ディスクを選択し、それにフォーカスをします。
 
 ## <a name="BKMK_examples"></a>例
 
@@ -56,5 +56,5 @@ convert gpt
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
 

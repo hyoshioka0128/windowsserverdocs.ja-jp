@@ -1,23 +1,25 @@
 ---
 title: Windows Admin Center のインストール
-description: Windows Admin Center のインストール
+description: 複数のユーザーがアクセスできるように Windows Admin Center の web ブラウザーを使用して Windows PC またはサーバーに Windows Admin Center をインストールする方法。
 ms.technology: manage
 ms.topic: article
 author: jwwool
 ms.author: jeffrew
-ms.date: 03/07/2019
+ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 94ac1281ca94a49ae54ce28d86dd4d95ff1d5574
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: a9eb7944cd35dfa68e3c36cdc6c016f483a9f1e1
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866923"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811956"
 ---
 # <a name="install-windows-admin-center"></a>Windows Admin Center のインストール
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+> 適用対象:Windows Admin Center、Windows Admin Center プレビュー
+
+このトピックでは、複数のユーザーがアクセスできるように Windows Admin Center の web ブラウザーを使用して Windows PC またはサーバーに Windows Admin Center をインストールする方法について説明します。
 
 > [!Tip]
 > Windows Admin Center を初めて使用する場合
@@ -25,25 +27,25 @@ ms.locfileid: "59866923"
 
 ## <a name="determine-your-installation-type"></a>インストールの種類を決定します。
 
-レビュー、[インストール オプション](..\plan\installation-options.md)が含まれています、[サポートされるオペレーティング システム](..\plan\installation-options.md#supported-operating-systems-installation)します。
+レビュー、[インストール オプション](../plan/installation-options.md)が含まれています、[サポートされるオペレーティング システム](../plan/installation-options.md#supported-operating-systems-installation)します。 Azure 内の VM では、Windows Admin Center をインストールするを参照してください。 [Azure でデプロイ Windows Admin Center](../azure/deploy-wac-in-azure.md)します。
 
 ## <a name="install-on-windows-10"></a>Windows 10 へのインストール
 
 Windows 10 に Windows Admin Center をインストールする場合、既定でポート 6515 が使用されますが、別のポートを指定することもできます。 また、デスクトップ ショートカットを作成したり、Windows Admin Center を使用して TrustedHosts を管理したりすることもできます。
 
 > [!NOTE]
-> ワークグループ環境の場合、またはドメイン内でローカル管理者の資格情報を使用する場合は、TrustedHosts を変更する必要があります。 この設定を行わなかった場合は、[TrustedHosts を手動で構成する](../use/troubleshooting.md#configure-trustedhosts)必要があります。
+> ワークグループ環境の場合、またはドメイン内でローカル管理者の資格情報を使用する場合は、TrustedHosts を変更する必要があります。 この設定を行わなかった場合は、[TrustedHosts を手動で構成する](../support/troubleshooting.md#configure-trustedhosts)必要があります。
 
 **[スタート]** メニューから Windows Admin Center を起動すると、既定のブラウザーで開きます。
 
-初めて Windows Admin Center を起動したときに、デスクトップの通知領域にアイコンが表示されます。 このアイコンを右クリックし、**[開く]** を選択して既定のブラウザーでツールを開くか、**[終了]** を選択してバックグラウンド プロセスを終了します。
+初めて Windows Admin Center を起動したときに、デスクトップの通知領域にアイコンが表示されます。 このアイコンを右クリックし、 **[開く]** を選択して既定のブラウザーでツールを開くか、 **[終了]** を選択してバックグラウンド プロセスを終了します。
 
 ## <a name="install-on-windows-server-with-desktop-experience"></a>Windows Server (デスクトップ エクスペリエンスあり) へのインストール
 
 Windows Server では、Windows Admin Center がネットワーク サービスとしてインストールされます。 サービスがリッスンするポートを指定する必要があり、それには HTTPS 用の証明書が必要です。 インストーラーは、テスト用の自己署名証明書を作成するか、コンピューターに既にインストールされている証明書のサムプリントを提供することができます。 生成された証明書を使用する場合は、証明書がサーバーの DNS 名と一致する必要があります。 独自の証明書を使用することを確認します証明書に指定された名前と一致する場合、コンピューター名 (ワイルドカード証明書はサポートされていません。)また、Windows Admin Center が、TrustedHosts を管理できるようにする選択も付与されます。
 
 > [!NOTE]
-> ワークグループ環境の場合、またはドメイン内でローカル管理者の資格情報を使用する場合は、TrustedHosts を変更する必要があります。 この設定を行わなかった場合は、[TrustedHosts を手動で構成する](../use/troubleshooting.md#configure-trustedhosts)必要があります。
+> ワークグループ環境の場合、またはドメイン内でローカル管理者の資格情報を使用する場合は、TrustedHosts を変更する必要があります。 この設定を行わなかった場合は、[TrustedHosts を手動で構成する](../support/troubleshooting.md#configure-trustedhosts)必要があります。
 
 インストールが完了すると、リモート コンピューターからブラウザーを開き、インストーラーの最後の手順で示されている URL に移動します。
 
@@ -73,5 +75,7 @@ msiexec /i <WindowsAdminCenterInstallerName>.msi /qn /L*v log.txt SME_PORT=<port
 > PowerShell からドットとスラッシュによる相対パス表記 (`.\<WindowsAdminCenterInstallerName>.msi` など) を使用して `msiexec` を起動しないでください。 その表記はサポートされていないため、インストールが失敗します。 `.\`プレフィックスを削除するか、MSI への完全パスを指定してください。
 
 ## <a name="updating-windows-admin-center"></a>Windows Admin Center を更新しています
+
+Microsoft Update を使用して、または手動でインストールすることで、Windows Admin Center の非プレビュー バージョンを更新できます。 
 
 設定は、Windows Admin Center の新しいバージョンにアップグレードするときに保持されます。 Windows Admin Center のアップグレードの Insider Preview バージョンは正式にサポートされていません - - クリーン インストールを行う方が優れていると思いますが、それをブロックしません。

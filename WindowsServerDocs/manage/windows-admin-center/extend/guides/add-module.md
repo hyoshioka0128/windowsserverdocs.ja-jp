@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: e6978ce20a7c6da8addb217de8d30f733b40d261
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d8d901097eb280679a388ff66161e3514befcd13
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834403"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452654"
 ---
 # <a name="add-a-module-to-a-tool-extension"></a>ツール拡張機能にモジュールを追加する
 
@@ -23,7 +23,7 @@ ms.locfileid: "59834403"
 
 ## <a name="prepare-your-environment"></a>環境の準備
 
-まだインストールしていない場合、手順を実行では、開発、[ツール](..\develop-tool.md)(または[ソリューション](..\develop-solution.md)) 環境を準備し、新しい空のツールの拡張機能を作成する拡張機能。
+まだインストールしていない場合、手順を実行では、開発、[ツール](../develop-tool.md)(または[ソリューション](../develop-solution.md)) 環境を準備し、新しい空のツールの拡張機能を作成する拡張機能。
 
 ## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>Angular CLI を使用して、モジュール (およびコンポーネント) を作成するには
 
@@ -41,7 +41,7 @@ ng generate module {!ModuleName}
 ng generate component {!ModuleName}
 ```
 
-| 値 | 説明 | 例 |
+| Value | 説明 | 例 |
 | ----- | ----------- | ------- |
 | ```{!ModuleName}``` | モジュール名 (スペースを削除) | ```ManageFooWorksPortal``` |
 
@@ -103,7 +103,7 @@ Angular に慣れていない場合は、Angular のルーティングとナビ�
 
 * 作成したファイル内の値を目的の値に置き換えます。
 
-    | 値 | 説明 | 例 |
+    | Value | 説明 | 例 |
     | ----- | ----------- | ------- |
     | ```{!ModuleName}``` | モジュール名 (スペースを削除) | ```ManageFooWorksPortal``` |
     | ```{!module-name}``` | モジュール名 (小文字、スペースをダッシュに置換) | ```manage-foo-works-portal``` |
@@ -124,7 +124,7 @@ Angular に慣れていない場合は、Angular のルーティングとナビ�
 
 * 追加したコンテンツ内の値を目的の値に置き換えます。
 
-    | 値 | 説明 | 例 |
+    | Value | 説明 | 例 |
     | ----- | ----------- | ------- |
     | ```{!module-name}``` | モジュール名 (小文字、スペースをダッシュに置換) | ```manage-foo-works-portal``` |
 
@@ -140,7 +140,7 @@ Angular に慣れていない場合は、Angular のルーティングとナビ�
 
 次の命名規則で見つかったファイル ```{!module-name}.component.ts``` を開きます。
 
-| 値 | 説明 | ファイル名の例 |
+| Value | 説明 | ファイル名の例 |
 | ----- | ----------- | ------- |
 | ```{!module-name}``` | モジュール名 (小文字、スペースをダッシュに置換) | ```manage-foo-works-portal.component.ts``` |
     
@@ -159,7 +159,7 @@ public ngOnInit() {
 
 ファイルを開く```app-routing.module.ts```、および作成した新しいモジュールが読み込まれますので、既定のパスを変更します。  エントリを探します```path: ''```、および更新```loadChildren```既定モジュールではなく、モジュールを読み込めません。
 
-| 値 | 説明 | 例 |
+| Value | 説明 | 例 |
 | ----- | ----------- | ------- |
 | ```{!ModuleName}``` | モジュール名 (スペースを削除) | ```ManageFooWorksPortal``` |
 | ```{!module-name}``` | モジュール名 (小文字、スペースをダッシュに置換) | ```manage-foo-works-portal``` |
@@ -181,4 +181,4 @@ public ngOnInit() {
 
 ## <a name="build-and-side-load-your-extension"></a>ビルドと側は、拡張機能を読み込む
 
-拡張機能にモジュールを追加したようになりました。  次に、実行できます[ビルドおよび負荷を側](..\develop-tool.md#build-and-side-load-your-extension)結果を表示する Windows Admin Center で、拡張機能。
+拡張機能にモジュールを追加したようになりました。  次に、実行できます[ビルドおよび負荷を側](../develop-tool.md#build-and-side-load-your-extension)結果を表示する Windows Admin Center で、拡張機能。

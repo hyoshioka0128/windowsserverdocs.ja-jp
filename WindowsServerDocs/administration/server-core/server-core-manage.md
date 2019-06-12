@@ -7,12 +7,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: 6836e5db36727294d215f7f98e0faeede55a612a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 761bfc681d7e39059884977cd99997ea9996268b
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869303"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811357"
 ---
 # <a name="manage-a-server-core-server"></a>Server Core サーバーを管理します。
  
@@ -61,15 +61,17 @@ MMC スナップインを使用して、ドメイン メンバーである Serve
 MMC スナップインを使用している Server Core サーバーを管理する*いない*ドメイン メンバー。 
 
 1. リモート コンピューターでコマンド プロンプトで次のコマンドを入力して、Server Core コンピューターへの接続に使用する代替の資格情報を設定します。
+1. 
    ```
    cmdkey /add:<ServerName> /user:<UserName> /pass:<password>
    ```
+
    パスワードを要求する場合は、省略、 **渡す/** オプション。
 
 2. メッセージが表示されたら、指定したユーザー名のパスワードを入力します。
    MMC スナップインの接続に許可する Server Core サーバーのファイアウォールが構成されていない場合は MMC スナップインを許可する Windows ファイアウォールを構成する次の手順に従います。 手順 3 に進みます。
 3. 別のコンピューターに MMC スナップインなど起動**コンピュータの管理**します。
-4. 左側のウィンドウで、スナップインを右クリックし、クリックして**別のコンピューターへの接続**します。 (たとえば、コンピューターの管理の例では右クリックした**コンピューターの管理 (ローカル)**)。
+4. 左側のウィンドウで、スナップインを右クリックし、クリックして**別のコンピューターへの接続**します。 (たとえば、コンピューターの管理の例では右クリックした**コンピューターの管理 (ローカル)** )。
 5. **別のコンピューター**の Server Core サーバーのコンピューター名を入力し、 **OK**します。 これで、MMC スナップインを使用して、Windows Server オペレーティング システムを実行している他のコンピューターと同じように Server Core サーバーを管理できるようになります。
 
 ### <a name="to-configure-windows-firewall-to-allow-mmc-snap-ins-to-connect"></a>MMC スナップインの接続を許可するように Windows ファイアウォールを構成するには
@@ -120,14 +122,17 @@ cscript C:\Windows\System32\Scregedit.wsf /ar 0
 ハードウェアを Server Core サーバーを追加するには、新しいハードウェアをインストールするため、ハードウェア ベンダーの指示に従います。 
 
 ハードウェアがプラグ アンド プレイでない場合は、ドライバーを手動でインストールする必要があります。 サーバーで、一時的な場所にドライバー ファイルをコピーし、次のコマンドを実行します。
+
 ```
 pnputil –i –a <driverinf>
 ```
+
 場所*driverinf*ドライバーの .inf ファイルのファイルの名前です。
 
 ダイアログが表示されたら、コンピューターを再起動します。
 
 どのようなドライバーがインストールされているを表示するには、次のコマンドを実行します。 
+
 ```
 sc query type= driver
 ```
@@ -135,7 +140,8 @@ sc query type= driver
 > [!NOTE] 
 > コマンドを正常に完了するには、等号の後にスペースを入れる必要があります。
 
-デバイス ドライバーを無効にするには、次の手順を実行します。 
+デバイス ドライバーを無効にするには、次の手順を実行します。
+
 ```
 sc delete <service_name>
 ```

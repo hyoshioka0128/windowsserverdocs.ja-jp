@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6bd107aca6c6f33cdf5f88e5b48a52fdea8d2086
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: a29406880481f0e4e257105e94bc1a33ee661164
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189344"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444445"
 ---
 # <a name="create-a-rule-to-transform-an-incoming-claim"></a>入力方向の要求を変換する規則を作成する
 
@@ -130,9 +130,9 @@ ms.locfileid: "66189344"
 >   
 > ダイナミック アクセス制御シナリオの詳細については、次を参照してください。[ダイナミック アクセス制御: コンテンツ ロードマップ](../../solution-guides/dynamic-access-control--scenario-overview.md)または[と AD FS を使用して AD DS 信頼性情報](https://technet.microsoft.com/library/hh831504.aspx)します。  
   
-7.  **[Finish]** (完了) をクリックします。  
+7. **[Finish]** (完了) をクリックします。  
   
-8.  **要求規則の編集**ダイアログ ボックスで、をクリックして **[ok]** ルールを保存します。  
+8. **要求規則の編集**ダイアログ ボックスで、をクリックして **[ok]** ルールを保存します。  
 
 ## <a name="additional-references"></a>その他の参照情報 
 [要求規則を構成する](Configure-Claim-Rules.md)  

@@ -11,12 +11,12 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: e3c88ef5ee700bb3906746402bf6cc8916976800
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 95ececde8a1b8c591ea2baf367a93f63ee55a6e3
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192772"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811986"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>HYPER-V でジェネレーション 1 または 2 の仮想マシンを作成するか。
 
@@ -35,25 +35,25 @@ ms.locfileid: "66192772"
 
 作成した後、バーチャル マシンの世代を変更することはできません。 そのため、ことを確認する際の考慮事項は、ここでは、だけでなく、オペレーティング システム、ブートの方法と、世代を選択する前に使用する機能の選択を勧めします。  
 
-## <a name="BKMK_OS"></a>ゲスト オペレーティング システムがサポートされていますか。
+## <a name="which-guest-operating-systems-are-supported"></a>ゲスト オペレーティング システムがサポートされますか。
 
 第 1 世代バーチャル マシンは、ほとんどのゲスト オペレーティング システムをサポートします。 第 2 世代バーチャル マシンは、最も 64 ビット バージョンの Windows および Linux および FreeBSD オペレーティング システムの最新のバージョンをサポートします。 次のセクションを使用して、仮想マシンのサポートをインストールするゲスト オペレーティング システムを参照してください。  
 
-- [Windows ゲスト オペレーティング システムのサポート](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_Windows)  
+- [Windows ゲスト オペレーティング システムのサポート](#windows-guest-operating-system-support)  
 
-- [CentOS と Red Hat Enterprise Linux ゲスト オペレーティング システムのサポート](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_CentOS)  
+- [CentOS と Red Hat Enterprise Linux ゲスト オペレーティング システムのサポート](#centos-and-red-hat-enterprise-linux-guest-operating-system-support)  
 
-- [Debian ゲスト オペレーティング システムのサポート](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_Debian)  
+- [Debian ゲスト オペレーティング システムのサポート](#debian-guest-operating-system-support)  
 
-- [FreeBSD ゲスト オペレーティング システムのサポート](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_FreeBSD)  
+- [FreeBSD ゲスト オペレーティング システムのサポート](#freebsd-guest-operating-system-support)  
 
-- [Oracle Linux ゲスト オペレーティング システムのサポート](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_Oracle)  
+- [Oracle Linux ゲスト オペレーティング システムのサポート](#oracle-linux-guest-operating-system-support)  
 
-- [SUSE のゲスト オペレーティング システムのサポート](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_SUSE)  
+- [SUSE のゲスト オペレーティング システムのサポート](#suse-guest-operating-system-support)  
 
-- [Ubuntu のゲスト オペレーティング システムのサポート](Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md#BKMK_Ubuntu)  
+- [Ubuntu のゲスト オペレーティング システムのサポート](#ubuntu-guest-operating-system-support)  
 
-### <a name="BKMK_Windows"></a>Windows ゲスト オペレーティング システムのサポート
+### <a name="windows-guest-operating-system-support"></a>Windows ゲスト オペレーティング システムのサポート
 
 次の表では、Windows の 64 ビット バージョンとして使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代バーチャル マシンを示します。  
 
@@ -79,7 +79,7 @@ ms.locfileid: "66192772"
 |Windows 8|&#10004;| &#10006;|  
 |Windows 7|&#10004;| &#10006;|  
 
-### <a name="BKMK_CentOS"></a>CentOS と Red Hat Enterprise Linux ゲスト オペレーティング システムのサポート
+### <a name="centos-and-red-hat-enterprise-linux-guest-operating-system-support"></a>CentOS、Red Hat Enterprise Linux ゲスト オペレーティング システムのサポート
 
 次の表に、Red Hat Enterprise Linux のバージョン\(RHEL\) CentOS として使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代仮想マシンとします。
 
@@ -91,7 +91,7 @@ ms.locfileid: "66192772"
 
 詳細については、次を参照してください。 [CentOS、Red Hat Enterprise Linux 仮想マシンを Hyper-v](../Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)します。  
 
-### <a name="BKMK_Debian"></a>Debian ゲスト オペレーティング システムのサポート  
+### <a name="debian-guest-operating-system-support"></a>Debian ゲスト オペレーティング システムのサポート  
 
 Debian のバージョンとして使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代バーチャル マシンを次の表に示します。
 
@@ -102,7 +102,7 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 
 詳細については、次を参照してください。 [Debian の仮想マシンを Hyper-v](../Supported-Debian-virtual-machines-on-Hyper-V.md)します。  
 
-### <a name="BKMK_FreeBSD"></a>FreeBSD ゲスト オペレーティング システムのサポート
+### <a name="freebsd-guest-operating-system-support"></a>FreeBSD ゲスト オペレーティング システムのサポート
 
 次の表では、FreeBSD のバージョンとして使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代バーチャル マシンを示します。  
 
@@ -114,7 +114,7 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 
 詳細については、次を参照してください。 [Hyper-v 上のバーチャル マシンを FreeBSD](../Supported-FreeBSD-virtual-machines-on-Hyper-V.md)します。  
 
-### <a name="BKMK_Oracle"></a>Oracle Linux ゲスト オペレーティング システムのサポート  
+### <a name="oracle-linux-guest-operating-system-support"></a>Oracle Linux ゲスト オペレーティング システムのサポート  
 
 次の表では、Red Hat 互換カーネル シリーズのバージョンとして使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代バーチャル マシンを示します。  
 
@@ -133,7 +133,7 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 
 詳細については、次を参照してください。 [Hyper-v 上の Oracle Linux 仮想マシン](../Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)します。  
 
-### <a name="BKMK_SUSE"></a>SUSE のゲスト オペレーティング システムのサポート
+### <a name="suse-guest-operating-system-support"></a>SUSE のゲスト オペレーティング システムのサポート
 
 次の表では、SUSE のどのバージョンとして使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代仮想マシンを示します。
 
@@ -145,7 +145,7 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 
 詳細については、次を参照してください。 [Hyper-v 上のバーチャル マシンを SUSE](../Supported-SUSE-virtual-machines-on-Hyper-V.md)します。  
 
-### <a name="BKMK_Ubuntu"></a>Ubuntu のゲスト オペレーティング システムのサポート
+### <a name="ubuntu-guest-operating-system-support"></a>Ubuntu のゲスト オペレーティング システムのサポート
 
 次の表では、Ubuntu のバージョンとして使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代バーチャル マシンを示します。
 
@@ -156,7 +156,7 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 
 詳細については、次を参照してください。 [Ubuntu 仮想マシンを Hyper-v で](../Supported-Ubuntu-virtual-machines-on-Hyper-V.md)します。  
 
-## <a name="BKMK_Boot"></a>仮想マシンを起動する方法は?
+## <a name="how-can-i-boot-the-virtual-machine"></a>仮想マシンを起動する方法は?
 
 次の表は、メソッドは第 1 世代と第 2 世代仮想マシンでサポートされているブートを示します。  
 
@@ -168,7 +168,7 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 |IDE コント ローラーのバーチャル ハード_ディスクからブート (します。VHD) またはバーチャル DVD (します。ISO)|&#10004;| &#10006;|  
 |フロッピーからの起動 (します。VFD)|&#10004;| &#10006;|  
 
-## <a name="BKMK_Advantages"></a>第 2 世代仮想マシンを使用する利点とは
+## <a name="what-are-the-advantages-of-using-generation-2-virtual-machines"></a>第 2 世代バーチャル マシンを使用する利点とは
 
 第 2 世代バーチャル マシンを使用する場合のメリットの一部を次に示します。  
 - **セキュア ブート**これは、ブート ローダーが承認されていないファームウェア、オペレーティング システム、または UEFI ドライバーがブート時に実行されていることを防ぐために、UEFI データベースで信頼されている機関によって署名されたことを確認する機能です。 セキュア ブートは、第 2 世代仮想マシンでは既定で有効になります。 セキュア ブートでサポートされていないゲスト オペレーティング システムを実行する必要がある場合に、バーチャル マシンの作成後に無効にできます。  詳細については、次を参照してください。 [セキュア ブート](https://technet.microsoft.com/library/dn486875.aspx)します。  
@@ -177,9 +177,9 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 
 - **ブート ボリュームの大きい**第 2 世代仮想マシンの最大のブート ボリュームは 64 TB です。 これは、最大ディスク サイズでサポートされているのです。VHDX します。 第 1 世代バーチャル マシンの最大のブート ボリュームは用に 2 TB をします。VHDX と 2040 gb 以上、します。VHD です。 詳細については、次を参照してください。 [Hyper-v 仮想ハード ディスク フォーマットに関するテクニカル プレビュー](https://technet.microsoft.com/library/hh831446.aspx)します。  
 
- 第 2 世代仮想マシンで仮想マシンのブートとインストール時間にわずかな改善を表示することもあります。
+  第 2 世代仮想マシンで仮想マシンのブートとインストール時間にわずかな改善を表示することもあります。
 
-## <a name="BKMK_DeviceCompare"></a> デバイスのサポートの違いは何ですか。
+## <a name="whats-the-difference-in-device-support"></a>デバイスのサポートの違いは何ですか。
 
 次の表では、第 1 世代と第 2 世代仮想マシン間で使用可能なデバイスを比較します。  
 
@@ -200,7 +200,7 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 |Programmable Interval Timer (PIT)|必要ありません|なし|  
 |スーパー I/O デバイス|必要ありません|なし|  
 
-## <a name="BKMK_More"></a> 第 2 世代仮想マシンの詳細
+## <a name="more-about-generation-2-virtual-machines"></a>第 2 世代バーチャル マシンの詳細について
 
 第 2 世代仮想マシンの使用に関するいくつかその他のヒントを次に示します。
 
@@ -230,7 +230,7 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6  
 ```  
 
-## <a name="BKMK_Debug"></a>カーネル デバッグ用に COM ポートを追加します。
+## <a name="add-a-com-port-for-kernel-debugging"></a>カーネル デバッグ用に COM ポートを追加します。
 
 COM ポートは、それらを追加するまで第 2 世代仮想マシンでは使用されません。 Windows PowerShell または Windows Management Instrumentation (WMI) で、これを行うことができます。 次の手順では、Windows PowerShell を使用する方法を示します。
 

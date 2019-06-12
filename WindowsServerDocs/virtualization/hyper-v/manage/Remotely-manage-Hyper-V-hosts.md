@@ -11,12 +11,12 @@ ms.assetid: 2d34e98c-6134-479b-8000-3eb360b8b8a3
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/06/2016
-ms.openlocfilehash: df66f308ee7999f97fe7e57a8b52256f2561faa2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d4d9f2dd3727e196bb6893fd5041fa3f08c30796
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870233"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453179"
 ---
 # <a name="remotely-manage-hyper-v-hosts-with-hyper-v-manager"></a>HYPER-V マネージャーと HYPER-V ホストをリモートで管理します。
 
@@ -24,7 +24,7 @@ ms.locfileid: "59870233"
 
 この記事では、HYPER-V ホストと HYPER-V マネージャーのバージョンのサポートされる組み合わせの一覧を表示し、それらを管理できるように、リモートとローカルの HYPER-V ホストに接続する方法について説明します。 
 
-HYPER-V マネージャーを使用して、リモートとローカルの両方の HYPER-V ホストの数が少ないを管理できます。 インストールされて、行うことができます、HYPER-V 管理ツールをインストールするときに完全な使用するか、HYPER-V をインストールまたはツールのみのインストール。 ツールのみのインストール方法を行うと、ホスト、HYPER-V のハードウェア要件を満たしていないコンピューターで、ツールを使用できます。 HYPER-V ホストのハードウェアに関する詳細については、次を参照してください。[システム要件](..\System-requirements-for-Hyper-V-on-Windows.md)します。
+HYPER-V マネージャーを使用して、リモートとローカルの両方の HYPER-V ホストの数が少ないを管理できます。 インストールされて、行うことができます、HYPER-V 管理ツールをインストールするときに完全な使用するか、HYPER-V をインストールまたはツールのみのインストール。 ツールのみのインストール方法を行うと、ホスト、HYPER-V のハードウェア要件を満たしていないコンピューターで、ツールを使用できます。 HYPER-V ホストのハードウェアに関する詳細については、次を参照してください。[システム要件](../System-requirements-for-Hyper-V-on-Windows.md)します。
 
 HYPER-V マネージャーがインストールされていない場合は、次を参照してください。、[指示](#install-hyper-v-manager)以下。
 
@@ -59,8 +59,8 @@ HYPER-V マネージャーには、ローカル コンピューターを含め�
 
 接続することはできません。 場合、
 
-* HYPER-V ツールのみがインストールされていることができます。 HYPER-V プラットフォームがインストールされていることを確認するには、仮想マシン管理サービスを探します。 \(サービスのデスクトップ アプリを開く: をクリックして**開始**、 をクリックして、**検索の開始**ボックスに「 **services.msc**、しキーを押します **」と入力**します。 仮想マシン管理サービスが表示されていない場合は、次の手順で、HYPER-V プラットフォームをインストール[インストール HYPER-V](..\get-started\Install-the-Hyper-V-role-on-Windows-Server.md)します。\)
-* ご使用のハードウェア要件を満たしていることを確認します。 参照してください[システム要件](..\System-requirements-for-Hyper-V-on-Windows.md)します。
+* HYPER-V ツールのみがインストールされていることができます。 HYPER-V プラットフォームがインストールされていることを確認するには、仮想マシン管理サービスを探します。 /(サービスのデスクトップ アプリを開く: をクリックします**開始**、 をクリックして、**検索の開始**ボックスに「 **services.msc**、およびキーを押します **」と入力**します。 仮想マシン管理サービスが表示されていない場合は、次の手順で、HYPER-V プラットフォームをインストール[インストール HYPER-V](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md)します。
+* ご使用のハードウェア要件を満たしていることを確認します。 参照してください[システム要件](../System-requirements-for-Hyper-V-on-Windows.md)します。
 * ユーザー アカウントが Administrators グループまたは HYPER-V Administrators グループに属していることを確認します。
 
 ## <a name="manage-hyper-v-hosts-remotely"></a>HYPER-V ホストをリモート管理します。  
@@ -171,5 +171,5 @@ add-windowsfeature rsat-hyper-v-tools
 
 ## <a name="see-also"></a>関連項目  
  
-[HYPER-V をインストールします。](..\get-started\Install-the-Hyper-V-role-on-Windows-Server.md) 
+[Hyper-V をインストールする](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md) 
 

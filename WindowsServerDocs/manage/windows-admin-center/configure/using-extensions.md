@@ -7,12 +7,12 @@ author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: c775dd5a3011115bbb031c0b9e4e24a8911d378e
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 9038fd480ed105aed3949b0c48dffc7eab94f970
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63748407"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445894"
 ---
 # <a name="install-and-manage-extensions"></a>インストールして、拡張機能の管理
 
@@ -58,7 +58,7 @@ Windows Admin Center は、インターネットに接続されていない、�
 
 1. インターネットに接続された別のコンピューターで web ブラウザーを開き、次の URL に移動します。 [https://msft-sme.myget.org/gallery/windows-admin-center-feed](https://msft-sme.myget.org/gallery/windows-admin-center-feed) 
 
-  * Msft sme.myget.org と拡張機能パッケージを表示するログインにアカウントを作成する必要があります。
+   * Msft sme.myget.org と拡張機能パッケージを表示するログインにアカウントを作成する必要があります。
 
 2. パッケージ詳細ページを表示するをインストールするパッケージの名前をクリックします。
 3. をクリックして、**ダウンロード**パッケージ詳細ページの右側のペインのリンクし、拡張機能の .nupkg ファイルをダウンロードします。

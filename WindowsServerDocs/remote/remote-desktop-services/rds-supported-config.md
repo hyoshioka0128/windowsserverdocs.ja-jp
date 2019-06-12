@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: 894ea8b134ae5b871a2978e3f72e683c12346fe5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8571c2220f804a27e4e1a6b744e8e15e38bd53a3
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850203"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453078"
 ---
 # <a name="supported-configurations-for-remote-desktop-services-in-windows-server-2016"></a>Windows Server 2016 でのリモート デスクトップ サービスでサポートされる構成
 
@@ -48,18 +48,18 @@ Windows Server 2016 は、リモート デスクトップ仮想化ホスト (RDV
 
 | HA で 3 + 接続ブローカー              | RDSH 2016 | RDVH 2016 | RDSH 2012 R2  | RDVH 2012 R2  |
 |------------------------------------------|-----------|-----------|---------------|---------------|
-| Windows Server 2016 の接続ブローカー    | サポートされている | サポート対象 | サポート対象     | サポートされている     |
-| Windows Server 2012 R2 接続ブローカー | なし       | なし       | サポートされている     | サポートされている     |
+| Windows Server 2016 の接続ブローカー    | サポート対象 | サポート対象 | サポート対象     | サポート対象     |
+| Windows Server 2012 R2 接続ブローカー | なし       | なし       | サポート対象     | サポート対象     |
 
 ## <a name="support-for-gpu-acceleration-with-hyper-v"></a>Hyper V と GPU アクセラレーションのサポート
 次の表では、仮想マシンに GPU アクセラレータのサポートについて説明します。 参照してください[グラフィックス仮想化テクノロジが適切な?](rds-graphics-virtualization.md)確認する必要がある手助けをします。 DDA の詳細については、チェック アウト[の個別のデバイスの割り当ての展開を計画](../../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md)します。
 
 |VM のゲスト OS  |Windows Server 2012 R2 または Windows Server 2016<br> HYPER-V の RemoteFX vGPU (Gen 1 VM) |  Windows Server 2016 HYPER-V の RemoteFX vGPU (Gen 2 VM) |  Windows Server 2016 HYPER-V の個別のデバイスの割り当て (第 2 世代 VM) |
 |-----------------------------|------------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------------|
-| Windows 7 SP1               | 〇                                                        | X                                                     | いいえ                                                                  |
-| Windows 8.1                 | 〇                                                        | X                                                     | いいえ                                                                  |
+| Windows 7 SP1               | 〇                                                        | X                                                     | X                                                                  |
+| Windows 8.1                 | 〇                                                        | X                                                     | X                                                                  |
 | Windows 10 1511 Update      | 〇                                                        | 〇                                                    | 〇                                                                 |
-| Windows Server 2012 R2      | 〇                                                        | いいえ                                                     | はい (KB 3133690 が必要)                                           |
+| Windows Server 2012 R2      | 〇                                                        | X                                                     | はい (KB 3133690 が必要)                                           |
 | Windows Server 2016         | 〇                                                        | 〇                                                    | 〇                                                                 |
 | Windows Server 2012 R2 の RDSH | X                                                         | X                                                     | はい (KB 3133690 が必要)                                           |
 | Windows Server 2016 の RDSH    | X                                                         | X                                                     | 〇                                                                 |
@@ -90,7 +90,7 @@ Windows Server 2016 の RDS は、2 つの主な SSO エクスペリエンスを
  - アプリ (Windows、iOS、Android、および Mac でリモート デスクトップ アプリケーション)
  - Web SSO
  
-リモート デスクトップ アプリケーションを使用することができます資格情報を格納、接続情報の一部として ([Mac](clients\remote-desktop-mac.md)) または管理アカウントの一部として ([iOS](clients\remote-desktop-ios.md#manage-your-user-accounts)、 [Android](clients\remote-desktop-android.md#manage-your-user-accounts)Windows)各 OS に固有のメカニズムを通じて安全に。
+リモート デスクトップ アプリケーションを使用することができます資格情報を格納、接続情報の一部として ([Mac](clients/remote-desktop-mac.md)) または管理アカウントの一部として ([iOS](clients/remote-desktop-ios.md#manage-your-user-accounts)、 [Android](clients/remote-desktop-android.md#manage-your-user-accounts)Windows)各 OS に固有のメカニズムを通じて安全に。
 
 Windows 上の受信トレイのリモート デスクトップ接続クライアントをデスクトップと SSO と Remoteapp に接続するには、Internet Explorer を使用して RD Web ページに接続する必要があります。 サーバー側では、次の構成オプションが必要です。 Web SSO の他の構成はサポートされていません。
 

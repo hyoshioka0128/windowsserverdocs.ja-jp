@@ -10,23 +10,23 @@ ms.topic: article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 71b56a0bc4f53879ebaf3610f60dded39484375b
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: e7ff669b1a1ca3bed5d7c827c40bc46e81ea3f02
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222353"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810601"
 ---
 # <a name="get-started-with-windows-server-2016"></a>Windows Server 2016 の概要
 
 >適用先:Windows Server 2016
 
->[!TIP]
+> [!TIP]
 > 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
 
 ![チェック マークの付いたボックスを表示するアイコン](../media/landing-icons/getstarted.png)このコレクションには、Windows Server 2016 に移行する準備ができたかどうかを判断するのに役立つ詳細な情報が含まれています。 Windows Server 2016 への移行に関するシステム要件、アップグレード オプション、およびその他の情報を確認したら、[Windows Server 2016](Windows-Server-2016.md) のメイン ページに戻り、ニーズに最も適したエディションとインストール オプションをインストールするための手順に進みます。 
 
->[!Note]
+> [!Note]
 > Windows Server 2016 をダウンロードするを参照してください。 [Windows Server の評価](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)します。
 
 
@@ -49,7 +49,7 @@ Windows Server 2016 から既に削除されている機能や今後削除され
 特定のサーバーの役割を Windows Server 2016 に移行するために必要な追加手順についての情報。
 
 ## <a name="server-application-compatibility-tableserver-application-compatibilitymd"></a>[サーバー アプリケーションの互換性表](Server-Application-Compatibility.md)
-SQL は Windows Server 2016 上で動作するか?  Exchange を動作させるために必要な手順とは?  このトピックで詳しい手順を説明します。
+SQL は Windows Server 2016 上で動作するか? Exchange を動作させるために必要な手順とは? このトピックで詳しい手順を説明します。
 
 ## <a name="server-activation-guideserver-2016-activationmd"></a>[サーバーのライセンス認証ガイド](Server-2016-activation.md)
 Windows Server 2016 を使った Windows Server 2016 自体と他のオペレーティング システムのライセンス認証に関する基本的な情報。

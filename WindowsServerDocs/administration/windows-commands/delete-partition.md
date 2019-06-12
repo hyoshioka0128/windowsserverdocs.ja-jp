@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf9f456ad6ab3010493154da843b2b519754e250
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3b47338b74cf71a4754b7320d6b3842f342d324d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816333"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436142"
 ---
 # <a name="delete-partition"></a>パーティションを削除します。
 
@@ -43,8 +43,8 @@ delete partition [noerr] [override]
 
 > [!CAUTION]
 > ダイナミック ディスク上のパーティションを削除するため、任意のデータは破棄され、ディスクは破損状態のままになります、ディスク上のすべてのダイナミック ボリュームを削除できます。 ダイナミック ボリュームを削除するには、常に使用して、**ボリュームを削除する**コマンドを代わりにします。 パーティションはダイナミック ディスクから削除できますが、作成する必要がありますされません。 たとえば、ダイナミック GPT ディスク上の認識されない GUID パーティション テーブル (GPT) パーティションを削除することです。 このようなパーティションを削除しても、空き領域を使用可能になるには発生しません。 このコマンドは、緊急の場合に、破損したオフライン ダイナミック ディスク上の reclame 領域には、場所、**クリーン**diskpart コマンドを使用することはできません。
--   システム パーティション、ブート パーティション、またはアクティブなページング ファイルやクラッシュ ダンプ情報を含むパーティションを削除することはできません。
--   この操作を成功させるのには、パーティションを選択してください。 使用して、**パーティションを選択**コマンドをパーティションを選択し、それにフォーカスをします。
+> -   システム パーティション、ブート パーティション、またはアクティブなページング ファイルやクラッシュ ダンプ情報を含むパーティションを削除することはできません。
+> -   この操作を成功させるのには、パーティションを選択してください。 使用して、**パーティションを選択**コマンドをパーティションを選択し、それにフォーカスをします。
 
 ## <a name="BKMK_examples"></a>例
 
@@ -55,5 +55,5 @@ delete partition
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
 

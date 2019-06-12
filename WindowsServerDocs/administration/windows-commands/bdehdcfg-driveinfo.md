@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4aa041c27b1797e7d00476212887a7dc6dbc1880
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b2dd62e34f8205e0b5d395ba759fff4b4937b0ad
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889063"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435043"
 ---
 # <a name="bdehdcfg-driveinfo"></a>bdehdcfg: driveinfo
 
@@ -30,9 +30,11 @@ ms.locfileid: "59889063"
 bdehdcfg -driveinfo <DriveLetter>
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|説明|
-|-------|--------|
-|<DriveLetter>|コロンの後にドライブ文字を指定します。|
+
+|   パラメーター   |                  説明                  |
+|---------------|-----------------------------------------------|
+| <DriveLetter> | コロンの後にドライブ文字を指定します。 |
+
 ## <a name="remarks"></a>注釈
 このコマンドは情報ですし、ドライブに変更は行われない。
 ## <a name="BKMK_Examples"></a>例
@@ -41,5 +43,5 @@ bdehdcfg -driveinfo <DriveLetter>
 bdehdcfg  driveinfo C:
 ```
 ## <a name="additional-references"></a>その他の参照
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [bdehdcfg](bdehdcfg.md)

@@ -1,25 +1,21 @@
 ---
 title: Windows Server 2016 の新機能
 description: コンピューティング、ID、管理、自動化、ネットワーク、セキュリティ、記憶域の新機能について。
-ms.custom: na
 ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
 ms.date: 05/21/2019
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2827f332-44d4-4785-8b13-98429087dcc7
 author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 8526d86c03f895d5bc8e0776aa958c627e78dfd9
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 2546322d6c6dbc4d64f18fc62366c698885108d8
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266809"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810624"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 の新機能
 

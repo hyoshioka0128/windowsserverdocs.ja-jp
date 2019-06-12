@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e5e55ad492439fcb7150469d9a35b639f5ff9a2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: baea091482818c581414ba1d9c1c01db2a52e3d7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830513"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435665"
 ---
 # <a name="hyper-v-configuration"></a>Hyper-V の構成
 
@@ -76,30 +76,30 @@ HYPER-V では、仮想化サーバーの動作の特徴やリソースの使用
 
 常に、HYPER-V ハイパーバイザーの論理プロセッサのパフォーマンス カウンターを使用して、物理システムの CPU 使用率を測定する必要があります。 CPU 使用率カウンター、ルートでそのタスク マネージャー、およびパフォーマンス モニターのレポートと、子パーティションでは、実際の物理 CPU 使用率が反映されていません。 パフォーマンスを監視するのにには、次のパフォーマンス カウンターを使用します。
 
--   **HYPER-V ハイパーバイザーの論理プロセッサ (\*)\\合計実行時間の割合**論理プロセッサの合計の非アイドル時間
+- **HYPER-V ハイパーバイザーの論理プロセッサ (\*)\\合計実行時間の割合**論理プロセッサの合計の非アイドル時間
 
--   **HYPER-V ハイパーバイザーの論理プロセッサ (\*)\\ゲストの実行時間の割合**ゲストまたはホスト内で実行中のサイクルにかかった時間
+- **HYPER-V ハイパーバイザーの論理プロセッサ (\*)\\ゲストの実行時間の割合**ゲストまたはホスト内で実行中のサイクルにかかった時間
 
--   **HYPER-V ハイパーバイザーの論理プロセッサ (\*)\\ハイパーバイザーの実行時間の割合**ハイパーバイザー内で実行中に費やした時間
+- **HYPER-V ハイパーバイザーの論理プロセッサ (\*)\\ハイパーバイザーの実行時間の割合**ハイパーバイザー内で実行中に費やした時間
 
--   **HYPER-V ハイパーバイザーのルートの仮想プロセッサ (\*)\\ \*** ルート パーティションの CPU 使用率を測定します。
+- **HYPER-V ハイパーバイザーのルートの仮想プロセッサ (\*)\\\\** * ルート パーティションの CPU 使用率を測定します。
 
--   **HYPER-V ハイパーバイザーの仮想プロセッサ (\*)\\ \*** ゲスト パーティションの CPU 使用率を測定します。
+- **HYPER-V ハイパーバイザーの仮想プロセッサ (\*)\\\\** * ゲスト パーティションの CPU 使用率を測定します。
 
 
 ## <a name="see-also"></a>関連項目
 
--   [HYPER-V 用語](terminology.md)
+-   [Hyper-V の用語](terminology.md)
 
--   [HYPER-V のアーキテクチャ](architecture.md)
+-   [Hyper-V のアーキテクチャ](architecture.md)
 
--   [HYPER-V のプロセッサのパフォーマンス](processor-performance.md)
+-   [Hyper-V プロセッサのパフォーマンス](processor-performance.md)
 
--   [HYPER-V でメモリのパフォーマンス](memory-performance.md)
+-   [Hyper-V メモリのパフォーマンス](memory-performance.md)
 
--   [HYPER-V ストレージの I/O パフォーマンス](storage-io-performance.md)
+-   [Hyper-V 記憶域の I/O のパフォーマンス](storage-io-performance.md)
 
--   [HYPER-V ネットワークの I/O パフォーマンス](network-io-performance.md)
+-   [Hyper-V ネットワークの I/O のパフォーマンス](network-io-performance.md)
 
 -   [仮想化環境のボトルネックの検出](detecting-virtualized-environment-bottlenecks.md)
 

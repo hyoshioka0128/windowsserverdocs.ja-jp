@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 591ff7caa554a892bda0bc0e888bd89a87d8b0ef
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d98ba295b2a76baf98e85a01a02677d57922877d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863553"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440265"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>wbadmin start systemstatebackup
 
@@ -43,10 +43,10 @@ wbadmin start systemstatebackup
 
 ## <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|-backuptarget|バックアップを格納する場所を指定します。 記憶域の場所は、ドライブ文字または形式の GUID ベースのボリュームが必要です: \\ \\? \Volume {*GUID*}。</br>Windows Server 2008 を実行するコンピューターでは、共有ネットワーク フォルダーへのシステム状態のバックアップはサポートされていません。 サーバーには、Windows Server 2008 R2 が実行されているか、後でコマンドを使用することができる場合 **-backuptarget:\\\\servername\sharedFolder\** システム状態のバックアップを格納します。|
-|-通知の停止|ユーザーにプロンプトなしで、サブコマンドを実行します。|
+|   パラメーター   |                                                                                                                                                                                                                      説明                                                                                                                                                                                                                      |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -backuptarget | バックアップを格納する場所を指定します。 記憶域の場所は、ドライブ文字または形式の GUID ベースのボリュームが必要です: \\ \\? \Volume {*GUID*}。</br>Windows Server 2008 を実行するコンピューターでは、共有ネットワーク フォルダーへのシステム状態のバックアップはサポートされていません。 サーバーには、Windows Server 2008 R2 が実行されているか、後でコマンドを使用することができる場合 **-backuptarget:\\\\servername\sharedFolder\\** システム状態のバックアップを格納します。 |
+|    -通知の停止     |                                                                                                                                                                                                   ユーザーにプロンプトなしで、サブコマンドを実行します。                                                                                                                                                                                                    |
 
 ## <a name="remarks"></a>注釈
 
@@ -61,6 +61,6 @@ wbadmin start systemstatebackup -backupTarget:f:
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
 -   [開始 WBBackup](https://technet.microsoft.com/library/jj902459.aspx)コマンドレット

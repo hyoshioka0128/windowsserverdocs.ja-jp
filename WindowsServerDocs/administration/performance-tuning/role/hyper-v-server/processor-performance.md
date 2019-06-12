@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a49fdaba89a01c8daf6483f72dbc88daa91452b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f16ee9cff9c244a8c579e008bced1e90b1a20673
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843243"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435591"
 ---
 # <a name="hyper-v-processor-performance"></a>Hyper V のプロセッサのパフォーマンス
 
@@ -69,19 +69,19 @@ Microsoft SQL Server は、NUMA 対応のアプリケーションの例です。
 
 仮想 NUMA の詳細については、次を参照してください。 [、Hyper-v 仮想 NUMA の概要](https://technet.microsoft.com/library/dn282282.aspx)します。
 
-##<a name="see-also"></a>関連項目
+## <a name="see-also"></a>関連項目
 
--   [HYPER-V 用語](terminology.md)
+-   [Hyper-V の用語](terminology.md)
 
--   [HYPER-V のアーキテクチャ](architecture.md)
+-   [Hyper-V のアーキテクチャ](architecture.md)
 
--   [HYPER-V サーバーの構成](configuration.md)
+-   [Hyper-V サーバーの構成](configuration.md)
 
--   [HYPER-V でメモリのパフォーマンス](memory-performance.md)
+-   [Hyper-V メモリのパフォーマンス](memory-performance.md)
 
--   [HYPER-V ストレージの I/O パフォーマンス](storage-io-performance.md)
+-   [Hyper-V 記憶域の I/O のパフォーマンス](storage-io-performance.md)
 
--   [HYPER-V ネットワークの I/O パフォーマンス](network-io-performance.md)
+-   [Hyper-V ネットワークの I/O のパフォーマンス](network-io-performance.md)
 
 -   [仮想化環境のボトルネックの検出](detecting-virtualized-environment-bottlenecks.md)
 

@@ -6,14 +6,14 @@ ms.author: helohr
 ms.date: 11/01/2017
 ms.topic: article
 author: Heidilohr
-ms.openlocfilehash: c1ef71dbc589cfdeac63b46d720c4bdd0a44dbaa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8d1aaf8b61142155ea7b2a5391367cc677596ebe
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815403"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435603"
 ---
-#<a name="what-is-server-core-2008"></a>Server Core 2008 とは何ですか。
+# <a name="what-is-server-core-2008"></a>Server Core 2008 とは何ですか。
 >適用先:Windows Server 2008
 
 >[!NOTE]
@@ -24,6 +24,7 @@ Server Core オプションは、Windows Server 2008 の Standard、Enterprise�
 入る前にさらに、「インストール オプション」という語句を説明する必要があります。 通常、Windows Server 2008 のコピーを購入すると、特定のエディションや在庫管理単位 (Sku) を使用するライセンスを購入します。 表 1-1 には、使用可能な Windows Server 2008 のさまざまなエディションが一覧表示します。 また、各エディションのインストール オプション (フル、Server Core、またはその両方) が利用も示します。
 
 **表 1-1** Windows Server 2008 のエディションとインストール オプションのサポート
+
 | エディション       | 完全          | Server Core  |
 | ------------- | :-------------: | :------------: |
 | Windows Server 2008 Standard (x86 および x64)       | x | x        |
@@ -44,14 +45,14 @@ Server Core オプションは、Windows Server 2008 の Standard、Enterprise�
 
 図 1-1 では、ボリューム ライセンス (または製品版メディア用のプロダクト キー) の方が 2 つのインストール オプションから選択できます 2 番目のオプション (、完全なインストールの Windows Server 2008 Enterprise) と 5 番目のオプション (、Server Core インストールの Windows。Server 2008 Enterprise の場合)、この例で選択されている後者でします。 
 
-##<a name="full-vs-server-core"></a>完全な vs します。Server Core 
+## <a name="full-vs-server-core"></a>完全な vs します。Server Core 
 Microsoft Windows プラットフォームの初期の段階から、Windows を使用していた基本的に「すべて」、うちいくつか使用する機能が実際には、ネットワーク環境でのすべての種類が含まれているサーバー。 たとえば、システムで Windows Server 2003 をインストールしたときにルーティングとリモート アクセス サービス (RRAS) のバイナリ インストールされたサーバー上でもがあるない場合にこのサービスが必要 (ただし、まだ構成して、その前に、RRAS を有効にする必要がある)。 Windows Server 2008 では、以前のバージョンがサーバーでその特定のロールをインストールする場合にのみ、サーバーの役割で必要なバイナリをインストールすることで向上します。 ただし、Windows Server 2008 のフル インストール オプションは、多くのサービスおよび特定の使用シナリオのために必要な多くの場合、その他のコンポーネントをまだインストールされます。 
 
 Microsoft は、2 番目のインストール オプションを作成する理由です: Server Core-Windows Server 2008: すべてのサービスと不要な特定のサポートが一般的にサーバーの役割を使用するその他の機能を排除します。 たとえば、ドメイン ネーム システム (DNS) サーバーを本当に必要はありませんはセキュリティ上の理由から、DNS サーバーから Web を閲覧するためにインストールされている Windows Internet Explorer。 DNS サーバーは、グラフィカル ユーザー インターフェイス (GUI) を必要もありません、DNS のほぼすべての側面を管理するため、強力な Dnscmd.exe コマンドを使用またはリモートで DNS Microsoft 管理コンソール (MMC) を使用して、コマンドラインからいずれかのスナップインです。
 
 これを回避するには、Microsoft の決定が Active Directory Domain Services (AD DS)、DNS、動的ホスト構成プロトコル (DHCP)、ファイルおよび印刷などのコア ネットワークのサービスを実行するため絶対に不可欠な Windows Server 2008 からのすべてのものを削除して、他のいくつかのサーバー ロール。 役割と機能の限られた数のみをサポートするサーバーを作成するために使用できる新しい Server Core インストール オプションになります。 
 
-##<a name="the-server-core-gui"></a>Server Core GUI
+## <a name="the-server-core-gui"></a>Server Core GUI
 最初にシステムとのログで Server Core のインストールが完了したら、あなた少し驚きでした。 図 1-2 では、最初のログオン後、Server Core のユーザー インターフェイスを示しています。
 
 ![Server Core のユーザー インターフェイス](../media/what-is-server-core-2008/Fig1-2.png)
@@ -69,6 +70,7 @@ Netsh.exe、Dfscmd.exe、Dnscmd.exe などのコマンド ライン ツールを
 表 1-2 には、その実行可能ファイル、Server Core インストールで利用できると共に、メインの GUI アプリケーションが一覧表示します。
 
 **表 1-2** Server Core インストールで使用可能な GUI アプリケーション
+
 | GUI アプリケーション | パスの実行可能ファイル |
 | -------------   | -------------       | 
 | コマンド プロンプト | %WINDIR%\System32\Cmd.exe |
@@ -93,10 +95,11 @@ Netsh.exe、Dfscmd.exe、Dnscmd.exe などのコマンド ライン ツールを
 >[!NOTE]
 >Windows PowerShell には、.NET Framework が必要であるために、Server Core 上に Windows PowerShell をインストールすることはできません。 ただし、PowerShell WMI コマンドのみを使用するように Windows PowerShell を使用してリモートで Server Core インストールを管理することができます。
 
-##<a name="supported-server-roles"></a>サポートされているサーバーの役割 
+## <a name="supported-server-roles"></a>サポートされているサーバーの役割 
 Server Core インストールには、Windows Server 2008 のフル インストールと比較して、サーバーの役割の制限の数のみが含まれています。 表 1-3 は、Windows Server 2008 Enterprise Edition の完全と Server Core の両方がインストールされて利用可能な役割を比較します。 
 
 **表 1-3**の Windows Server 2008 Enterprise Edition のインストールをフル インストール オプションと Server Core サーバーの役割の比較
+
 | サーバーの役割  | フル インストールで利用可能  | Server Core で使用できます。  |
 | ------------- | :-------------: | :------------: |
 | Active Directory 証明書サービス (AD CS)  | x |  |
@@ -124,7 +127,7 @@ Server Core の使用可能な役割は、アーキテクチャ (x86 または x
 * Server Core でストリーミング メディア サービスの役割をインストールすることができます、前にする必要がありますをダウンロードして、適切な Microsoft 更新プログラム スタンドアロン パッケージ (.msu ファイル)、サーバーのアーキテクチャ (x86 または x64) をインストール、Microsoft ダウンロード センターから。
 * Web サーバー (IIS) ロールは、ASP.NET をサポートしていません。 これは、.NET Framework が Server Core の Web サーバーで行うことができますを制限する Server Core でサポートされていないためにです。 
 
-##<a name="supported-optional-features"></a>サポートされているオプション機能
+## <a name="supported-optional-features"></a>サポートされているオプション機能
 Server Core インストールは、Windows Server 2008 のフル インストールにも使用できる機能の一部のサブセットのみをサポートします。 表 1-4 は、Windows Server 2008 Enterprise Edition の完全と Server Core の両方がインストールされて利用可能な機能を比較します。
 
 **表 1-4**の Windows Server 2008 Enterprise Edition のインストールをフル インストール オプションと Server Core の機能の比較
@@ -171,7 +174,7 @@ Server Core インストールは、Windows Server 2008 のフル インスト�
 * 一部の機能は、Server Core で正しく (またはまったく) に機能する特殊なハードウェアを必要があります。 これらの機能には、BitLocker ドライブ暗号化、フェールオーバー クラスタ リング、マルチパス IO、ネットワーク負荷分散、およびリムーバブル記憶域が含まれます。 
 * フェールオーバー クラスタ リングでは、Standard Edition では使用できません。
 
-##<a name="server-core-architecture"></a>Server Core のアーキテクチャ
+## <a name="server-core-architecture"></a>Server Core のアーキテクチャ
 Server Core に詳細を理解、について簡単に見てみましょう Windows Server 2008 の Server Core インストールのアーキテクチャのフル インストールと比較しています。 最初に、Server Core は、異なるバージョンの Windows Server 2008 が、システムに Windows Server 2008 をインストールするときに選択可能なインストール オプションだけではないことに注意してください。 これは、次を意味します。
 * Server Core インストールでのカーネルとは、同じハードウェア アーキテクチャ (x86 または x64) とエディションのフル インストールで検出されたものと同じです。 
 * バイナリが Server Core インストール上に存在する場合は、同じハードウェア アーキテクチャ (x86 または x64) とエディションのフル インストールでは (後で説明する 2 つの例外) をその特定のバイナリの同じバージョンがあります。 
@@ -185,7 +188,7 @@ Server Core に詳細を理解、について簡単に見てみましょう Wind
 
 **図 1-3** Server Core とフル インストールのアーキテクチャ
 
-##<a name="driver-support"></a>ドライバーのサポート
+## <a name="driver-support"></a>ドライバーのサポート
 図 1-3 に示すように、Server Core のアーキテクチャの図は明らかに簡略化されます。表示されないことの 1 つは、Server Core とフル インストールの間でデバイス ドライバーのサポート差です。 Windows Server 2008 のフル インストールには、何千も異なるハードウェア構成のさまざまな製品をインストールすることを可能にするには、デバイスのさまざまな種類のインボックス ドライバーにはが含まれています。 (など、Windows Vista クライアント オペレーティング システムはデジタル カメラやスキャナーは、通常はサーバーで使用されるなどのデバイスをサポートするためにさらに多くのドライバーを含む)。 
 
 新しいデバイスに接続されている (またはにインストールされている) Windows Server 2008 のフル インストールは、プラグ アンド プレイ (PnP) サブシステムはまずデバイス用のインボックス ドライバーが存在するかどうか。 互換性のあるインボックス ドライバーが見つかると、PnP サブシステムが、自動的とデバイスのドライバーをインストールし、動作します。 Windows Server 2008 のフル インストールで、ドライバーがインストールされて、デバイスが使用できることを示す、ポップアップ通知のバルーンを表示可能性があります。 
@@ -201,7 +204,7 @@ Server Core インストールでは、ドライバーのインストール プ�
 
 そこで皆さんは、印刷サービスの役割を Server Core インストールに追加して、プリンターをインストールするときにでしょうか。 サーバーにプリンター ドライバーを手動で追加する、Server Core には、ボックスの印刷ドライバーがありません。
 
-##<a name="service-footprint"></a>サービスのフット プリント
+## <a name="service-footprint"></a>サービスのフット プリント
 Server Core は、最小限のインストールであるため、同じハードウェア アーキテクチャとエディションの場合は、対応する完全インストールよりもには、小規模なシステム サービス フット プリントがあります。 たとえば、約 75 台のシステム サービスが自動的に開始する約 50 が構成されている、Windows Server 2008 のフル インストールに既定でインストールされます。 これに対し、Server Core のみ約 70 サービスがインストールされて、これらの開始よりも少ない 40、既定で自動的にします。 
 
 表 1. ~ 5. のスタートアップ モードの Server Core インストールで既定でインストールされているサービスの一覧し、アカウントは、各サービスで使用されます。

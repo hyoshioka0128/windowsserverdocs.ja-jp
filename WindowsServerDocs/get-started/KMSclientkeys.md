@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 05/21/2019
 ms.topic: get-started-article
-ms.openlocfilehash: e2aac6db7bb9e118d672190c95f0d73294474f75
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: c0d85da8a51a43acd7765957b34220829a43b086
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976526"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810706"
 ---
 # <a name="kms-client-setup-keys"></a>KMS クライアント セットアップ キー
 
@@ -22,7 +22,7 @@ ms.locfileid: "65976526"
 
 Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows 7、Windows Server 2008 R2、Windows Vista、and Windows Server 2008 のボリューム ライセンス版が実行されているコンピューターは、既定で、追加の構成が必要ない KMS クライアントとなります。
 
->[!NOTE]
+> [!NOTE]
 > 次の表の"LTSC"の略「長期的なサービス チャネル」"LTSB"は"Long-Term Servicing Branch" 
 
 **ここに記載された次のキー (これは、Gvlk) を使用して、デプロイで実行されている KMS ホストがあります。** まだ KMS ホストを構成していない場合は、「[KMS ライセンス認証の展開](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx)」でホストの設定手順を参照してください。

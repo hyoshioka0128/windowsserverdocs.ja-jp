@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 453579589f3fd3cc2c9fa835b50bfb59e33bc3dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 86b56386ba9bed2486cdf8cdbb4486fcec6c6265
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872583"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435153"
 ---
 # <a name="auditpol-clear"></a>auditpol オフ
 
@@ -31,10 +31,12 @@ ms.locfileid: "59872583"
 auditpol /clear [/y]
 ```
 ## <a name="parameters"></a>パラメーター
-|パラメーター|説明|
-|-------|--------|
-|/y|すべての監査ポリシーの設定をクリアするかどうかの確認メッセージを抑制します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+
+| パラメーター |                                   説明                                    |
+|-----------|----------------------------------------------------------------------------------|
+|    /y     | すべての監査ポリシーの設定をクリアするかどうかの確認メッセージを抑制します。 |
+|    /?     |                       コマンド プロンプトにヘルプを表示します。                       |
+
 ## <a name="remarks"></a>注釈
 ユーザーごとのポリシーおよびシステム ポリシーのクリア操作で、記述する必要がありますがまたはそのオブジェクトに対するフル コントロール権限がセキュリティ記述子に設定します。 所有することによって、消去操作を実行することも、**監査とセキュリティ ログの管理**(SeSecurityPrivilege) ユーザー権利。 ただし、この権限は、消去操作を実行する必要はありません、追加のアクセスを許可します。
 ## <a name="BKMK_examples"></a>例
@@ -48,5 +50,5 @@ auditpol /clear /y
 ```
 > [!NOTE]
 > 前の例は、この操作を実行するスクリプトを使用する場合に便利です。
-#### <a name="additional-references"></a>その他の参照
-[コマンドライン構文キー](command-line-syntax-key.md)
+> #### <a name="additional-references"></a>その他の参照
+> [コマンド ライン構文の記号](command-line-syntax-key.md)

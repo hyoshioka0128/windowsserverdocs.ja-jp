@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7cced9a930b63baa79b4addb429c562c38d6da01
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 298df36b856cba97ec19126f77456785e5eb6f50
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843883"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810929"
 ---
 # <a name="wsus-and-the-catalog-site"></a>WSUS とカタログ サイト
 
@@ -64,7 +64,7 @@ WSUS 管理者、Microsoft Update カタログ サイトからダウンロード
 
     -   選択**Windows 認証** をクリック**を有効にする**で、**アクション**右側のウィンドウ。
 
-2.  修正プログラムは、必要なコンピューターの WSUS ターゲット グループを作成し、グループに追加します。 コンピューターおよびグループの詳細については、次を参照してください。 [WSUS クライアントを管理するコンピューターおよび WSUS コンピューター グループ](managing-wsus-client-computers-and-wsus-computer-groups.md)このガイドでは、とセクション[3.3 です。WSUS コンピューター グループを構成する](../deploy/2-configure-wsus.md#BKMK_ConfigcomputerGroups)手順 3。WSUS 展開ガイドでは、WSUS を構成します。
+2.  修正プログラムは、必要なコンピューターの WSUS ターゲット グループを作成し、グループに追加します。 コンピューターおよびグループの詳細については、次を参照してください。 [WSUS クライアントを管理するコンピューターおよび WSUS コンピューター グループ](managing-wsus-client-computers-and-wsus-computer-groups.md)このガイドでは、とセクション[3.3 です。WSUS コンピューター グループを構成する](../deploy/2-configure-wsus.md#23-configure-wsus-computer-groups)手順 3。WSUS 展開ガイドでは、WSUS を構成します。
 
 3.  修正プログラムのファイルをダウンロードします。
 

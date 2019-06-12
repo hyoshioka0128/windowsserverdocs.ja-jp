@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 7469171005164d9ff823dad7de230d877c874dc9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 486c11ebd46c6fd23b3bd16cd90463f8d607287e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840883"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443538"
 ---
 # <a name="migrating-roles-and-features-in-windows-server"></a>Windows Server の役割と機能を移行する
 
@@ -36,7 +36,7 @@ Windows Server 2012 R2 と Windows Server 2012 の移行ガイドは、電子書
 
 >[!NOTE]
 >Windows Server のどのバージョンに移行またはアップグレードする場合も、[サポート ライフサイクル ポリシー](https://support.microsoft.com/lifecycle)および対象バージョンのサポート期間を確認し把握したうえで、それに応じて計画を立てる必要があります。 特定の Windows Server リリースのライフサイクルについては、[こちらでご検索ください](https://support.microsoft.com/lifecycle)。
- 
+ 
 ## <a name="windows-server-2016"></a>Windows Server 2016
 
 ### <a name="migration-guides"></a>移行ガイド
@@ -46,7 +46,7 @@ Windows Server 2016 用の新しい移行ガイドは、現在開発中です。
 - [Web サーバー (IIS)](https://www.iis.net/downloads/microsoft/web-deploy)
 - [Windows Server Update Services](https://technet.microsoft.com/library/hh852339.aspx)
 - [MultiPoint Services](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/multipoint-services/multipoint-services-migrate)
- 
+ 
 ## <a name="windows-server-2012-r2"></a>Windows Server 2012 R2
 
 ### <a name="migration-guides"></a>移行ガイド
@@ -63,14 +63,14 @@ Windows Server 2003、Windows Server 2008、Windows Server 2008 R2、Windows Ser
 - [Windows Server 2012 R2 への Windows Server Update Services を移行します。](https://technet.microsoft.com/library/hh852339.aspx)
 - [Windows Server 2012 R2 へのクラスターの役割を移行します。](https://technet.microsoft.com/library/dn530779.aspx)
 - [Windows Server 2012 R2 への DHCP サーバーを移行します。](https://technet.microsoft.com/library/dn495425.aspx)
- 
+ 
 ## <a name="windows-server-2012"></a>Windows Server 2012
 
 ### <a name="migration-guides"></a>移行ガイド
 Windows Server 2003、Windows Server 2008、Windows Server 2008 R2、Windows Server 2012 のいずれかを実行しているサーバーの役割と機能を Windows Server 2012 に移行する場合は、以下のガイドの手順に従ってください。 Windows Server 2012 の Windows Server 移行ツールでは、クロス サブネットの移行がサポートされています。
 
 - [インストール、使用、および Windows Server 移行ツールを削除します。](https://technet.microsoft.com/library/jj134202)
-- [Windows Server 2012 への Active Directory フェデレーション サービス役割サービスを移行します。](https://technet.microsoft.com/library/jj647765)
+- [Windows Server 2012 への Active Directory フェデレーション サービス (AD FS) 役割サービスの移行](https://technet.microsoft.com/library/jj647765)
 - [Windows Server 2012 への正常性登録機関を移行します。](https://technet.microsoft.com/library/hh831513)
 - [Windows Server 2008 R2 から Windows Server 2012 への HYPER-V の移行します。](https://technet.microsoft.com/library/jj574113)
 - [Windows Server 2012 への IP 構成を移行します。](https://technet.microsoft.com/library/jj574133)
@@ -80,7 +80,7 @@ Windows Server 2003、Windows Server 2008、Windows Server 2008 R2、Windows Ser
 - [Windows Server 2012 への Windows Server Update Services を移行します。](https://technet.microsoft.com/library/hh852339)
 - [Active Directory ドメイン コント ローラーを Windows Server 2012 にアップグレードします。](https://technet.microsoft.com/library/hh994618.aspx)
 - [クラスター化されたサービスとアプリケーションを Windows Server 2012 に移行します。](https://technet.microsoft.com/library/dn486790.aspx)
- 
+ 
 
 移行に関するその他の資料については、「[Windows Server への役割と機能の移行](https://technet.microsoft.com/library/jj134039)」をご覧ください。
 
@@ -104,5 +104,6 @@ Windows Server 2003、Windows Server 2008、Windows Server 2008 R2 のいずれ�
 - [リモート デスクトップ サービス移行ガイド](https://technet.microsoft.com/library/ff849223)
 - [RRAS の移行ガイド](https://technet.microsoft.com/library/ee822825)
 - [Windows Server 移行の一般的なタスクと情報](https://technet.microsoft.com/library/ff400258)
-- [Windows Server Update Services 3.0 SP2 移行ガイド](https://technet.microsoft.com/library/ee822826)  
+- [Windows Server Update Services 3.0 SP2 移行ガイド](https://technet.microsoft.com/library/ee822826)
+ 
 移行に関するその他の資料については、「[Migrate Roles and Features to Windows Server 2008 R2 (Windows Server 2008 R2 への役割と機能の移行)](https://technet.microsoft.com/library/dd365353)」をご覧ください。

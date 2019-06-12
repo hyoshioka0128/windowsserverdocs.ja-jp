@@ -9,12 +9,12 @@ ms.assetid: 9c7a67e0-0953-479c-8736-ccb356230bde
 ms.author: pashort
 author: shortpatti
 ms.date: 06/20/2018
-ms.openlocfilehash: 0439c0f45a604f6b3ef90369f5fe77a59568d9d7
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 515012a21ba6e90abe2c4db2150fd1feaad06677
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222585"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812371"
 ---
 # <a name="network-policy-server-nps"></a>ネットワーク ポリシー サーバー (NPS)
 
@@ -22,8 +22,8 @@ ms.locfileid: "66222585"
 
 このトピックでは、Windows Server 2016 および Windows Server 2019 でネットワーク ポリシー サーバーの概要については使用できます。 Windows Server 2016 および Server 2019 でネットワーク ポリシーとアクセス サービス (NPAS) 機能をインストールするときに、NPS がインストールされます。
 
->[!NOTE]
->このトピックに加え、次の NPS のドキュメントは使用できます。
+> [!NOTE]
+> このトピックに加え、次の NPS のドキュメントは使用できます。
 > - [ネットワーク ポリシー サーバーのベスト プラクティス](nps-best-practices.md)
 > - [ネットワーク ポリシー サーバーの概要](nps-getstart-top.md)
 > - [ネットワーク ポリシー サーバーを計画します。](nps-plan-top.md)
@@ -44,8 +44,8 @@ NPS では一元的に構成して、ネットワーク アクセスの認証、
     - [接続要求ポリシーを構成します。](nps-crp-configure.md)
 - **RADIUS アカウンティング**します。 ローカルのログ ファイルに、または Microsoft SQL Server のローカルまたはリモート インスタンスにイベントを記録する NPS を構成することができます。 詳細については、次を参照してください。 [NPS ログ](#nps-logging)します。
 
->[!IMPORTANT]
->ネットワーク アクセス保護\(NAP\)、正常性登録機関\(HRA\)、および Host Credential Authorization Protocol \(HCAP\) Windows Server 2012 R2 で非推奨とされました。Windows Server 2016 では使用できません。 Windows Server 2016 より前のオペレーティング システムを使用して、NAP 展開した場合は、Windows Server 2016 に NAP の展開を移行できません。
+> [!IMPORTANT]
+> ネットワーク アクセス保護\(NAP\)、正常性登録機関\(HRA\)、および Host Credential Authorization Protocol \(HCAP\) Windows Server 2012 R2 で非推奨とされました。Windows Server 2016 では使用できません。 Windows Server 2016 より前のオペレーティング システムを使用して、NAP 展開した場合は、Windows Server 2016 に NAP の展開を移行できません。
 
 これらの機能の任意の組み合わせでは、NPS を構成できます。 たとえば、VPN 接続用の RADIUS サーバーとして、接続要求の一部を別のドメインで認証と承認のリモート RADIUS サーバー グループのメンバーに転送する RADIUS プロキシとしても、1 つの NPS を構成できます。
 
@@ -57,8 +57,8 @@ NPS をインストールする Windows Server のエディションによって
 
 Windows Server 2016 Standard または Datacenter では、NPS を RADIUS クライアントとリモート RADIUS サーバー グループの無制限の数を構成できます。 さらに、IP アドレスの範囲を指定して RADIUS クライアントを構成することができます。
 
->[!NOTE]
->WIndows ネットワーク ポリシーとアクセス サービスの機能は、Server Core インストール オプションでインストールされているシステムでご利用いただけません。
+> [!NOTE]
+> WIndows ネットワーク ポリシーとアクセス サービスの機能は、Server Core インストール オプションでインストールされているシステムでご利用いただけません。
 
 次のセクションでは、RADIUS サーバーおよびプロキシとして NPS に関する詳細な情報を提供します。
 
@@ -70,15 +70,15 @@ NPS は、RADIUS サーバー、RADIUS プロキシ、またはその両方と�
 
 NPS は RADIUS 標準を指定して、Internet Engineering Task Force の Microsoft 実装\(IETF\) Rfc 2865 および 2866 でします。 NPS を RADIUS サーバーとしては、一元化された接続の認証、承認、およびアカウンティングのさまざまな種類のネットワーク アクセス、ワイヤレス接続、認証スイッチ、ダイヤルアップ、および仮想プライベート ネットワークの操作を実行します\(VPN\)リモートアクセス、およびルーターに接続します。
 
->[!NOTE]
->NPS を RADIUS サーバーとして展開する方法の詳細については、次を参照してください。[ネットワーク ポリシー サーバーの展開](nps-deploy.md)します。
+> [!NOTE]
+> NPS を RADIUS サーバーとして展開する方法の詳細については、次を参照してください。[ネットワーク ポリシー サーバーの展開](nps-deploy.md)します。
 
 NPS では、異種の一連のワイヤレス、スイッチ、リモート アクセス、または VPN 機器を使用できるようにします。 Windows Server 2016 で使用可能なリモート アクセス サービスと、NPS を使用することができます。
 
 NPS は、Active Directory Domain Services を使用して\(AD DS\)ドメインまたはローカル セキュリティ アカウント マネージャー (SAM) のユーザー アカウントのデータベース接続の試行中にユーザーの資格情報を認証します。 NPS を実行しているサーバー、AD DS ドメインのメンバーでは時に、NPS はそのユーザー アカウント データベースとしてディレクトリ サービスを使用して、シングル サインオン ソリューションの一部です。 ネットワーク アクセス制御の資格情報の同じセットが使用される\(の認証とネットワークへのアクセスを承認\)AD DS ドメインにログオンするとします。
 
->[!NOTE]
->NPS は接続を承認するのにユーザー アカウントとネットワーク ポリシーのダイヤルイン プロパティを使用します。
+> [!NOTE]
+> NPS は接続を承認するのにユーザー アカウントとネットワーク ポリシーのダイヤルイン プロパティを使用します。
 
 インターネット サービス プロバイダー \(Isp\)ネットワーク アクセスを管理する組織があるすべての種類のネットワーク アクセスを管理する単一のネットワーク アクセスの種類に関係なく、管理ポイントからの大きな課題と使用する機器。 RADIUS 標準では、均一で異種の両方の環境でこの機能をサポートしています。 RADIUS は、認証およびアカウンティング要求を RADIUS サーバーに送信する (RADIUS クライアントとして使用される) のネットワーク アクセス機器を可能にするクライアント/サーバー プロトコルです。
 
@@ -116,7 +116,6 @@ NPS を RADIUS プロキシとして使用することができる場合。
 次の図は、RADIUS クライアントと RADIUS サーバー間の RADIUS プロキシとして NPS を示しています。
 
 ![RADIUS プロキシとして機能する NPS](../../media/Nps-Proxy/Nps-Proxy.jpg)
-
 
 Nps、組織はリモート アクセス インフラストラクチャをサービス プロバイダーをユーザー認証、承認、およびアカウンティングの制御を維持しながらもアウトソーシングできます。
 

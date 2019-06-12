@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 03/29/2018
 description: この記事は、現時点 (記憶域スペース ダイレクト) の Microsoft HCI のディザスター リカバリーのシナリオを説明します
 ms.localizationpriority: medium
-ms.openlocfilehash: 32bbf02ca78d5c6a2147162768c984d0e0b27e36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c844c56c3a1717658bcdb970e78d45b5cdda861c
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879593"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453124"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>記憶域スペース ダイレクトでのディザスター リカバリー
 
@@ -41,7 +41,7 @@ ms.locfileid: "59879593"
 
 このシナリオでは、2 つの個別の独立クラスターを使用します。 HCI の間の記憶域レプリカを構成するための手順を利用できる[クラスター-クラスター記憶域レプリケーション](../storage-replica/cluster-to-cluster-storage-replication.md)します。
 
-![ストレージ レプリケーションのダイアグラム](media\storage-spaces-direct-disaster-recovery\Disaster-Recovery-Figure1.png)
+![ストレージ レプリケーションのダイアグラム](media/storage-spaces-direct-disaster-recovery/Disaster-Recovery-Figure1.png)
 
 記憶域レプリカをデプロイするときに、次の考慮事項が適用されます。 
 
@@ -56,7 +56,7 @@ ms.locfileid: "59879593"
 
 [HYPER-V レプリカ](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica)ハイパー コンバージド インフラストラクチャでのディザスター リカバリーのための仮想マシン レベルのレプリケーションを提供します。 HYPER-V レプリカで実行できますが、仮想マシンを (レプリカ) を Azure またはセカンダリ サイトにレプリケートします。 セカンダリ サイトから、HYPER-V レプリカにレプリケートできます仮想マシン 3 つ目の (拡張レプリカ)。
 
-![HYPER-V レプリケーションのダイアグラム](media\storage-spaces-direct-disaster-recovery\Disaster-Recovery-Figure2.png)
+![HYPER-V レプリケーションのダイアグラム](media/storage-spaces-direct-disaster-recovery/Disaster-Recovery-Figure2.png)
 
 HYPER-V レプリカに、レプリケーションは隠メ諶 HYPER-V。 最初に仮想マシンのレプリケーションを有効にすると、対応するレプリカ クラスターに送信される初期コピーする方法の 3 つの選択肢があります。
 

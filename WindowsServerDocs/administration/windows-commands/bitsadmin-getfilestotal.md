@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21240cfa1f0fa1f8e8fc3d2acf83f5df80812816
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b5f6d32b3410b182c510cf40b9def5370efafdc4
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857463"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435119"
 ---
 # <a name="bitsadmin-getfilestotal"></a>bitsadmin getfilestotal
 
@@ -45,6 +45,6 @@ bitsadmin /GetFilesTotal <Job>
 C:\>bitsadmin /GetFilesTotal myDownloadJob
 ```
 
-##
+# #
 
 [コマンドライン構文キー](command-line-syntax-key.md)も参照してください

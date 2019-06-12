@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 647389aaac06d1eb109052548c1b24f7579bde2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a832e8f3d21681f67a4486df33c387e5a8456718
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851243"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434872"
 ---
 # <a name="bitsadmin-setvalidationstate"></a>bitsadmin setvalidationstate
 
@@ -34,11 +34,11 @@ bitsadmin /SetValidationState <Job> <file index> <true|false>
 
 ## <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|Job|ジョブの表示名または GUID|
-|ファイルのインデックス|0 から始まります|
-|True|False|TRUE に設定する場合は、ファイルの内容が有効な場合は、それ以外の場合を FALSE に設定|
+| パラメーター  |          説明           |
+|------------|--------------------------------|
+|    Job     | ジョブの表示名または GUID |
+| ファイルのインデックス |         0 から始まります          |
+|    True    |             False              |
 
 ## <a name="BKMK_examples"></a>例
 
@@ -49,4 +49,4 @@ C:\>bitsadmin /SetValidationState myJob 2 TRUE
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

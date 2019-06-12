@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3307ba71e7b3c8b4113f9ed29ab06660dafa5f6f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4d602c685b7eac5d18c88bc0f6709b189cc61a77
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868743"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438467"
 ---
 # <a name="ftp-put"></a>ftp: 配置
 
@@ -30,23 +30,25 @@ ms.locfileid: "59868743"
 put <LocalFile> [<remoteFile>]  
 ```  
 ### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
-|-------|--------|  
-|<LocalFile>|コピーするローカル ファイルを指定します。|  
-|[<remoteFile>]|リモート コンピューターで使用する名前を指定します。|  
+
+|   パラメーター    |                    説明                    |
+|----------------|---------------------------------------------------|
+|  <LocalFile>   |         コピーするローカル ファイルを指定します。         |
+| [<remoteFile>] | リモート コンピューターで使用する名前を指定します。 |
+
 ## <a name="remarks"></a>注釈  
--   **配置** コマンドと同じ、 **送信** コマンドです。  
--   場合*remoteFile*が指定されていない、ファイルが指定された、*ローカルファイル*名。  
-## <a name="BKMK_Examples"></a>例  
-ローカル ファイルをコピー **test.txt**名前を付けます**test1.txt**リモート コンピューター。  
-```  
-put test.txt test1.txt  
-```  
-ローカル ファイルをコピー **program.exe**リモート コンピューターにします。  
-```  
-put program.exe  
-```  
-## <a name="additional-references"></a>その他の参照  
--   [ftp: ascii](ftp-ascii.md)  
--   [ftp: バイナリ](ftp-binary.md)  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+- **配置** コマンドと同じ、 **送信** コマンドです。  
+- 場合*remoteFile*が指定されていない、ファイルが指定された、*ローカルファイル*名。  
+  ## <a name="BKMK_Examples"></a>例  
+  ローカル ファイルをコピー **test.txt**名前を付けます**test1.txt**リモート コンピューター。  
+  ```  
+  put test.txt test1.txt  
+  ```  
+  ローカル ファイルをコピー **program.exe**リモート コンピューターにします。  
+  ```  
+  put program.exe  
+  ```  
+  ## <a name="additional-references"></a>その他の参照  
+- [ftp: ascii](ftp-ascii.md)  
+- [ftp: バイナリ](ftp-binary.md)  
+- [コマンド ライン構文の記号](command-line-syntax-key.md)  

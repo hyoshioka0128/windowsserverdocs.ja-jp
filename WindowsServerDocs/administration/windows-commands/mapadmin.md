@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 007256fffde11899d930c9197cade6d3bf9be42c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3ad9f55ba130014227326f4abe8540c78755f6c5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868783"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437372"
 ---
 # <a name="mapadmin"></a>mapadmin
 
@@ -52,7 +52,7 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 
 &lt;コンピューター&gt;を管理するユーザー名マッピング サービスを実行しているリモート コンピューターを指定します。 Windows インターネット ネーム サービス (WINS) または、ドメイン ネーム システム (DNS) 名を使用してコンピューターを指定したり、インターネット プロトコル (IP) によって対処できます。
 
--u&lt;ユーザー&gt;資格情報を使用するユーザーのユーザー名を指定します。 フォームのユーザー名にドメイン名を追加する必要があります*ドメイン***\\***ユーザー名*します。
+-u&lt;ユーザー&gt;資格情報を使用するユーザーのユーザー名を指定します。 フォームのユーザー名にドメイン名を追加する必要があります<em>ドメイン</em> **\\** <em>ユーザー名</em>します。
 
 -p&lt;パスワード&gt;ユーザーのパスワードを指定します。 指定した場合、 **-u**オプションは、省略、 **-p**オプション、ユーザーのパスワードを求められます。
 特定のアクションを**mapadmin**実行を指定するコマンド引数によって異なります。
@@ -66,7 +66,7 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 
 ### <a name="config"></a>構成
 ユーザー名マッピングの全般設定を指定します。 このコマンドの引数では、次のオプション: **-r &lt;dddd&gt;:&lt;hh&gt;:&lt;mm&gt;**  -の更新間隔を指定します日、時間、および分単位では、Windows および NIS データベースから更新しています。 間隔の最小値は、5 分です。
-**-i {[はい] | ありません}** -単純なマッピングをオンにする (**[はい]**) かオフ (**ありません**)。 既定では、単純なマッピングはでは。
+**-i {[はい] | ありません}** -単純なマッピングをオンにする ( **[はい]** ) かオフ (**ありません**)。 既定では、単純なマッピングはでは。
 **追加**-新しいユーザーまたはグループのマッピングを作成します。 次のオプションは、このコマンドの引数で使用できます。
 
 |オプション|定義|
@@ -114,7 +114,7 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 |オプション|定義|
 |-----|-------|
 |-d &lt;WindowsDomain&gt;|マップされることを Windows ドメインを指定します。|
-|-y &lt;NISdomain&gt;|マップを NIS ドメインを指定します。&lt;br/&gt;&lt;br/&gt;**-n** &lt;nis サーバー&gt; NIS サーバーで指定された NIS ドメインを指定します、 **-y**オプション。|
+|-y &lt;NISdomain&gt;|マップを NIS ドメインを指定します。&lt;br/&gt;&lt;br/&gt; **-n** &lt;nis サーバー&gt; NIS サーバーで指定された NIS ドメインを指定します、 **-y**オプション。|
 |-f&lt;パス&gt;|マップするパスワードとグループ ファイルを含むディレクトリの完全修飾パスを指定します。 ファイルは、管理されているコンピューターに存在する必要があり、使用することはできません**mapadmin**パスワードとグループ ファイルに基づいてマップを設定するリモート コンピューターを管理します。|
 
 **removedomainmap** -Windows ドメインと NIS ドメインの間の単純なマップを削除します。 次のオプションと引数は、このコマンドの引数です。
@@ -136,4 +136,4 @@ mapadmin [<computer>] [-u <user> [-p <password>]] listdomainmaps
 -   UNIX グループの場合は、フォームを使用して&lt;NISdomain&gt;\\&lt;groupname&gt;、 &lt;groupname&gt;@&lt;NISdomain&gt;、 &lt;groupname&gt;@PCNFS、または PCNFS\\&lt;groupname&gt;
 
 ## <a name="additional-references"></a>その他の参照
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

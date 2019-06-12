@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a5aef930689e809b9b697e5f428177610ff723b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: df1f999499154366304d59e0573ba921ab1af83d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862403"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434243"
 ---
 # <a name="convert-basic"></a>convert basic
 
@@ -44,7 +44,7 @@ convert basic [noerr]
 
 > [!IMPORTANT]
 > ディスクをベーシック ディスクに変換する空にする必要があります。 データのバックアップし、ディスクを変換する前にすべてのパーティションまたはボリュームを削除します。
--   この操作を成功させるのには、ダイナミック ディスクを選択してください。 使用して、 **select ディスク**コマンドをダイナミック ディスクを選択し、それにフォーカスをします。
+> -   この操作を成功させるのには、ダイナミック ディスクを選択してください。 使用して、 **select ディスク**コマンドをダイナミック ディスクを選択し、それにフォーカスをします。
 
 ## <a name="BKMK_examples"></a>例
 
@@ -55,5 +55,5 @@ convert basic
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
 

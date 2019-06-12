@@ -9,12 +9,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: 67c3471a726df354e0faa9e3aced491c4084e9e3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9e4131c28a18a50f3312e5e0201a0ed9529d4555
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864343"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812396"
 ---
 # <a name="how-the-windows-time-service-works"></a>Windows タイム サービスのしくみ
 
@@ -22,13 +22,13 @@ ms.locfileid: "59864343"
 
 **このセクションでは**  
   
--   [Windows タイム サービスのアーキテクチャ](#w2k3tr_times_how_rrfo)  
+-   [Windows タイム サービスのアーキテクチャ](#windows-time-service-architecture)  
   
--   [Windows タイム サービス時間プロトコル](#w2k3tr_times_how_ekoc)  
+-   [Windows タイム サービス時間プロトコル](#windows-time-service-time-protocols)  
   
--   [Windows タイム サービスのプロセスとの相互作用](#w2k3tr_times_how_izcr)  
+-   [Windows タイム サービスのプロセスとの相互作用](#windows-time-service-processes-and-interactions)  
   
--   [Windows タイム サービスによって使用されるネットワーク ポート](#w2k3tr_times_how_ydum)  
+-   [Windows タイム サービスによって使用されるネットワーク ポート](#network-ports-used-by-windows-time-service)  
   
 > [!NOTE]  
 > このトピックでは、Windows タイム サービス (W32Time) の動作方法のみを説明します。 Windows タイム サービスを構成する方法については、次を参照してください。[高精度のシステムを構成する](configuring-systems-for-high-accuracy.md)します。
@@ -57,7 +57,7 @@ Windows タイム サービスを実行しているすべてのコンピュー�
   
 W32Time Manager タイム サンプルが受け取ると、タイム サンプルの使用に最も適したは NTP で特殊なアルゴリズムを使っています。 タイム サービスでは、構成された時間のソースは、最も正確なアルゴリズムの別のセットも使用します。 タイム サービスは、どのタイム サンプルが最適だと判断が、上記の基準に基づいて、速度を調整しますローカル クロックを正しい時刻にまとめることができます。 ローカル クロックと選択した正確な時刻 (もという名前のサンプルの時間ずれ) との時差がローカル クロック速度を調整して修正するのには大きすぎる場合は、タイム サービスは、ローカル クロックを正しい時刻に設定します。 この調整のクロック周波数または直接クロック時間の変更は、クロック統制と呼ばれます。  
   
-## <a name="w2k3tr_times_how_rrfo"></a>Windows タイム サービスのアーキテクチャ  
+## <a name="windows-time-service-architecture"></a>Windows タイム サービスのアーキテクチャ  
 Windows タイム サービスは、次のコンポーネントで構成されます。  
   
 -   サービス コントロール マネージャ  
@@ -88,7 +88,7 @@ Windows タイム サービスは、次のコンポーネントで構成され�
   
 場合は、コンピューターは、タイム サーバーとして指定されている、このプロセスのどの時点で時刻の同期を要求している任意のコンピューターにログオン時間を送信することができます。  
   
-## <a name="w2k3tr_times_how_ekoc"></a>Windows タイム サービス時間プロトコル  
+## <a name="windows-time-service-time-protocols"></a>Windows タイム サービス時間プロトコル  
 
 時間プロトコルがどの程度 2 台のコンピューターを決定の時計が同期されます。 タイム プロトコルは、最適な使用可能な時間に関する情報の確認および維持するため、一貫性のある時間は、別のシステム クロックの収束を担当します。  
   
@@ -144,7 +144,7 @@ Windows タイム サービスは、Windows 2000 または Windows Server 2003 �
   
 Windows NT 4.0 では、Windows タイム サービスは使用してよりも時間の同期をより単純なメカニズムを使用します。 そのため、ネットワークの正確な時刻の同期を確実には、Windows 2000 または Windows Server 2003 には、Windows NT 4.0 ドメイン コント ローラーをアップグレードすることをお勧めします。  
   
-## <a name="w2k3tr_times_how_izcr"></a>Windows タイム サービスのプロセスとの相互作用  
+## <a name="windows-time-service-processes-and-interactions"></a>Windows タイム サービスのプロセスとの対話  
 
 Windows タイム サービスは、ネットワーク上のコンピューターのクロックの同期に設計されています。 時間収束とも呼ばれます、ネットワークに同期プロセスより正確なタイム サーバーから各コンピューターへのアクセス時間として、ネットワーク全体で発生します。 時間の収束には、権限のあるサーバーが NTP のパケットの形式でクライアント コンピューターに現在の時刻を提供するプロセスが含まれます。 パケット内で提供される情報より正確なサーバーと同期されているように、コンピューターの現在のクロック時間に修正する調整が必要かどうかを示します。  
   
@@ -252,7 +252,7 @@ Windows タイム サービスは、それが可能なハイスコアでドメ�
 ### <a name="disabling-the-windows-time-service"></a>Windows タイム サービスを無効にします。  
 Windows タイム サービス (W32Time) を完全に無効にすることができます。 NTP を使用しているサード パーティ製の時間同期製品を実装する場合は、Windows タイム サービスを無効にする必要があります。 NTP サーバーのすべてのユーザー データグラム プロトコル (UDP) ポート 123 へのアクセスとポート 123 は Windows タイムで予約されている Windows タイム サービスが Windows Server 2003 オペレーティング システムで実行されている限りためにです。  
   
-## <a name="w2k3tr_times_how_ydum"></a>Windows タイム サービスによって使用されるネットワーク ポート  
+## <a name="network-ports-used-by-windows-time-service"></a>Windows タイム サービスによって使用されるネットワーク ポート  
 Windows タイム サービスは、信頼性の高いタイム ソースを特定、時刻情報の取得、および他のコンピューターに時間の情報を提供するネットワーク上で通信します。 NTP と SNTP Rfc で定義されている、このような通信を実行します。  
   
 **Windows タイム サービスのポートの割り当て**  

@@ -5,21 +5,21 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 04/12/2019
+ms.date: 06/07/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: ee3c4ba5d6c3dc911ab318ade9a46b279317496f
-ms.sourcegitcommit: 39ab8041d166e6817a95417d6aa30bc7abeeef54
+ms.openlocfilehash: 2314e336cbf9ad44b07f3f94d7a866b48b5e9bff
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66260256"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811808"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+> 適用対象:Windows Admin Center、Windows Admin Center プレビュー
 
-**Windows Admin Center** (コードネーム**プロジェクト ホノルル**) Windows Server 付属の管理ツールの進化版ですが 1 つのローカルとリモート サーバー管理のすべての側面に統合するガラスのウィンドウ。 ローカルに展開されたブラウザー ベースの管理エクスペリエンスのため、インターネット接続や Azure は必要ありません。 Windows Admin Center では、インターネットに接続されていないプライベート ネットワークを含む、展開のあらゆる側面を完全に管理できます。
+**Windows Admin Center** (以前のコードネーム**プロジェクト ホノルル**) Windows Server 付属の管理ツールの進化版ですが 1 つのローカルとリモート サーバー管理のすべての側面に統合するガラスのウィンドウ。 ローカルに展開されたブラウザー ベースの管理エクスペリエンスのため、インターネット接続や Azure は必要ありません。 Windows Admin Center では、インターネットに接続されていないプライベート ネットワークを含む、展開のあらゆる側面を完全に管理できます。
 
 ## <a name="introduction"></a>概要
 
@@ -75,6 +75,7 @@ ms.locfileid: "66260256"
             <ul>
             <li><a href="configure/settings.md">Windows Admin Center の設定</a>
             <li><a href="configure/user-access-control.md">ユーザー アクセス制御とアクセス許可</a>
+            <li><a href="configure/shared-connections.md">共有接続</a>
             <li><a href="configure/using-extensions.md">拡張機能</a>
             </ul>
         </td>
@@ -92,7 +93,7 @@ ms.locfileid: "66260256"
             </ul>
         </td>
         <td style="vertical-align: top;">
-            <h3>Azure への接続します。</h3>
+            <h3>Azure に接続する</h3>
             <ul>
             <li><a href="azure/index.md">Azure のハイブリッド サービス</a></li>
             <li><a href="azure/azure-integration.md">Windows Admin Center を Azure に接続します。</a></li>

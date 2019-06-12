@@ -9,12 +9,12 @@ ms.date: 07/17/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: e85a97fa08e4c77588b17aee08ee03e0b897a74c
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 15bb6f1e39f64ff19ebb5515188ee944e277d3b7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976850"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445479"
 ---
 # <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>AD FS 2016 で OAuth パブリック クライアントを使用してアプリケーションまたはそれ以降のネイティブ クライアントを構築します。
 
@@ -41,7 +41,7 @@ ms.locfileid: "65976850"
 
 1. AD FS の管理 を右クリックし**アプリケーション グループ**選択**アプリケーション グループの追加**します。
 
-2. アプリケーション グループ ウィザードで、名前 NativeToDoListAppGroup など、必要に応じて名前を入力します。 選択、 **web API にアクセスするネイティブ アプリケーション**テンプレート。  **[次へ]** をクリックします。
+2. アプリケーション グループ ウィザードで、名前 NativeToDoListAppGroup など、必要に応じて名前を入力します。 選択、 **web API にアクセスするネイティブ アプリケーション**テンプレート。 **[次へ]** をクリックします。
  ![アプリケーション グループを追加します。](media/native-client-with-ad-fs-2016/addapplicationgroup1.png)
 
 3. **ネイティブ アプリケーション**] ページの [AD FS によって生成される id に注意してください。 これは、AD FS がパブリック クライアント アプリを認識する id です。 コピー、**クライアント識別子**値。 後の値として使用する**ida: ClientId**アプリケーション コードにします。 する場合は、ここで、カスタムの識別子を指定できます。 リダイレクト URI は、任意の値、例では、配置 https://ToDoListClient![ネイティブ アプリ](media/native-client-with-ad-fs-2016/addapplicationgroup2.png)
@@ -163,7 +163,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-native-deskto
 
 この手順で、ネイティブ アプリケーションが AD FS にリダイレクトされ、Web API の ID トークンとアクセス トークンを取得しました
 
-3.  入力、項目のテキスト ボックスに行い、[項目の追加] をクリックします。 この手順でアプリケーションへの到達追加する Web API の todo 項目をそのためは、AD FS から取得した web Api にアクセス トークンを提示します。 Web API では、トークンのためのものし、フェデレーション メタデータから情報を使用してトークンの署名を検証するかどうかを確認する対象ユーザーの値と一致します。
+3. 入力、項目のテキスト ボックスに行い、[項目の追加] をクリックします。 この手順でアプリケーションへの到達追加する Web API の todo 項目をそのためは、AD FS から取得した web Api にアクセス トークンを提示します。 Web API では、トークンのためのものし、フェデレーション メタデータから情報を使用してトークンの署名を検証するかどうかを確認する対象ユーザーの値と一致します。
 
 ![サインイン](media/native-client-with-ad-fs-2016/clienttodoadd.png)
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1365373097cf7280c4475514107a940f46e65893
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1c8af4beb83b789be1456d5556a0aa07749590fb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840073"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438725"
 ---
 # <a name="ftp-delete"></a>ftp: 削除
 
@@ -30,13 +30,15 @@ ms.locfileid: "59840073"
 delete <remoteFile>  
 ```  
 ### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
-|-------|--------|  
-|<remoteFile>|削除するファイルを指定します。|  
+
+|  パラメーター   |          説明          |
+|--------------|-------------------------------|
+| <remoteFile> | 削除するファイルを指定します。 |
+
 ## <a name="BKMK_Examples"></a>例  
 リモート コンピューターにファイル test.txt を削除します。  
 ```  
 delete test.txt  
 ```  
 ## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  

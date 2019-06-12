@@ -9,16 +9,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 01/10/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e2d9e6828584f4027aa32cec26572c2290098ab6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c68444be5662480293cee630970d5eb76b52268a
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830103"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453187"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>記憶域スペース ダイレクトのボリュームの計画
 
-> 適用先:Windows Server 2016、Windows Server 2019
+> 適用対象:Windows Server 2019、Windows Server 2016
 
 このトピックでは、ファイルシステム、回復性の種類、サイズの選択など、ワークロードのパフォーマンスや容量のニーズを満たすように記憶域スペース ダイレクトでボリュームを計画する方法について説明します。
 
@@ -31,7 +31,7 @@ ms.locfileid: "59830103"
 
 ![ボリュームとはvolumes](media/plan-volumes/what-are-volumes.png)
 
-すべてのボリュームには、クラスター内のすべてのサーバーが同時にアクセスできます。 作成されると、すべてのサーバーの **C:\ClusterStorage\** に表示されます。
+すべてのボリュームには、クラスター内のすべてのサーバーが同時にアクセスできます。 作成後に表示**C:\ClusterStorage\\** すべてのサーバー。
 
 ![csv フォルダーのスクリーンショット](media/plan-volumes/csv-folder-screenshot.png)
 
@@ -87,9 +87,9 @@ ReFS がまだサポートしていない機能がワークロードに必要な
 
 | **回復性の種類**| **容量の効率性**| **速度**| **ワークロード**
 |--------------------|--------------------------------|--------------------------------|--------------------------
-| **ミラー**         | ![33% の記憶域の効率性の表示](media\plan-volumes\3-way-mirror-storage-efficiency.png)<br>3 方向ミラーの場合:33% <br>双-方向ミラー:50%     |![100% のパフォーマンスの表示](media\plan-volumes\three-way-mirror-perf.png)<br> 最高のパフォーマンス  | 仮想化されたワークロード<br> データベース<br>その他の高パフォーマンス ワークロード |
-| **ミラー アクセラレータを使用したパリティ** |![記憶域の効率が約 50% を示す](media\plan-volumes\mirror-accelerated-parity-storage-efficiency.png)<br> ミラーおよびパリティの割合によって異なります | ![約 20% を示すパフォーマンス](media\plan-volumes\mirror-accelerated-parity-perf.png)<br>非常に遅い、ミラーしますが、2 回にデュアル パリティとして高速セットアップ<br> 大量のシーケンシャル書き込みと読み取りに最も適した | アーカイブとバックアップ<br> 仮想デスクトップ インフラストラクチャ     |
-| **デュアル パリティ**               | ![約 80% を示す記憶域の効率](media\plan-volumes\dual-parity-storage-efficiency.png)<br>4 台のサーバー:50% <br>16 台のサーバー: 最大 80% | ![約 10% を示すパフォーマンス](media\plan-volumes\dual-parity-perf.png)<br>最高の I/O 待機時間と書き込みの CPU 使用率<br> 大量のシーケンシャル書き込みと読み取りに最も適した | アーカイブとバックアップ<br> 仮想デスクトップ インフラストラクチャ  |
+| **ミラー**         | ![33% の記憶域の効率性の表示](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>3 方向ミラーの場合:33% <br>双-方向ミラー:50%     |![100% のパフォーマンスの表示](media/plan-volumes/three-way-mirror-perf.png)<br> 最高のパフォーマンス  | 仮想化されたワークロード<br> データベース<br>その他の高パフォーマンス ワークロード |
+| **ミラーリングによって高速化されたパリティ** |![記憶域の効率が約 50% を示す](media/plan-volumes/mirror-accelerated-parity-storage-efficiency.png)<br> ミラーおよびパリティの割合によって異なります | ![約 20% を示すパフォーマンス](media/plan-volumes/mirror-accelerated-parity-perf.png)<br>非常に遅い、ミラーしますが、2 回にデュアル パリティとして高速セットアップ<br> 大量のシーケンシャル書き込みと読み取りに最も適した | アーカイブとバックアップ<br> 仮想デスクトップ インフラストラクチャ     |
+| **デュアル パリティ**               | ![約 80% を示す記憶域の効率](media/plan-volumes/dual-parity-storage-efficiency.png)<br>4 台のサーバー:50% <br>16 台のサーバー: 最大 80% | ![約 10% を示すパフォーマンス](media/plan-volumes/dual-parity-perf.png)<br>最高の I/O 待機時間と書き込みの CPU 使用率<br> 大量のシーケンシャル書き込みと読み取りに最も適した | アーカイブとバックアップ<br> 仮想デスクトップ インフラストラクチャ  |
 
 #### <a name="when-performance-matters-most"></a>パフォーマンスが最も重要な場合
 
@@ -199,4 +199,4 @@ SQL Server データベースやパフォーマンスが重視される Hyper-V 
 
 - [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)
 - [記憶域スペース ダイレクトのドライブを選択します。](choosing-drives.md)
-- [フォールト トレランスと記憶域の効率性](storage-spaces-fault-tolerance.md)
+- [フォールト トレランスと記憶域の効率](storage-spaces-fault-tolerance.md)

@@ -12,12 +12,12 @@ ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 781ed17fb07d2aecd4bb0b7bc672056096ab8060
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e94659c62db574dc8779c8246d471ab401414ddb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837063"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435798"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>セットアップおよびブート イベント収集を使用する
 
@@ -148,7 +148,7 @@ Windows PowerShell のリモート処理を設定できない場合は、いつ�
   
 ##### <a name="to-specify-a-network-adapter"></a>ネットワーク アダプターを指定するには  
   
-1.  対象のコンピューターで、デバイス マネージャーを開き、**[ネットワーク アダプター]** を展開し、使用するネットワーク アダプターを見つけて右クリックします。  
+1.  対象のコンピューターで、デバイス マネージャーを開き、 **[ネットワーク アダプター]** を展開し、使用するネットワーク アダプターを見つけて右クリックします。  
   
 2.  表示されたメニュー、**プロパティ**、順にクリックします、**詳細**タブ。メニューには、展開、**プロパティ**フィールドにスクロールして**場所情報**(一覧はおそらくないアルファベット順に)、クリックします。 形式の文字列になります**PCI バス X、Y のデバイス、機能 Z**します。X.Y.Z; メモしてをおきますこれらは、必要な次のコマンド バス パラメーターです。  
   
@@ -171,7 +171,7 @@ Windows PowerShell のリモート処理を設定できない場合は、いつ�
   
 -   DHCP = yes  
   
-また、**/debug** と **/event** は相互に排他的であるため、**bcdedit /event** を有効にしたことを確認してください。 どちらか一方のみ実行できます。 同様に、/eventsettings と /debug、または /dbgsettings と /event を混在させることはできません。  
+また、 **/debug** と **/event** は相互に排他的であるため、**bcdedit /event** を有効にしたことを確認してください。 どちらか一方のみ実行できます。 同様に、/eventsettings と /debug、または /dbgsettings と /event を混在させることはできません。  
   
 イベント コレクションをシリアル ポートに設定した場合は機能しないことにも注意してください。  
   
@@ -286,7 +286,7 @@ Nano Server で提供される最小限のインターフェイスを使用す�
   
 3.  診断メッセージの送信を有効にするには AutoLogger レジストリ キーを追加します。 これを行うには、手順 1 で作成した Nano Server VHD をマウントし、レジストリ ハイブをロードして、特定のレジストリ キーを追加します。 この例では、Nano Server イメージが C:\NanoServer にあります。パスは異なる場合があるので、適宜手順を調整してください。  
   
-    1.  コレクター コンピューターで、**..\Windows\System32\WindowsPowerShell\v1.0\Modules\BootEventCollector** フォルダーをコピーし、Nano Server VHD を変更するために使用しているコンピューターの **..\Windows\System32\WindowsPowerShell\v1.0\Modules** ディレクトリに貼り付けます。  
+    1.  コレクター コンピューターで、 **..\Windows\System32\WindowsPowerShell\v1.0\Modules\BootEventCollector** フォルダーをコピーし、Nano Server VHD を変更するために使用しているコンピューターの **..\Windows\System32\WindowsPowerShell\v1.0\Modules** ディレクトリに貼り付けます。  
   
     2.  管理者特権のアクセス許可を使って Windows PowerShell コンソールを起動し、`Import-Module BootEventCollector` を実行します。  
   
@@ -299,7 +299,7 @@ Nano Server で提供される最小限のインターフェイスを使用す�
 ## <a name="starting-the-event-collector-service"></a>イベント コレクター サービスの開始  
 コレクター コンピューターに有効な構成ファイルが保存され、対象のコンピューターが構成されたら、対象のコンピューターが再起動されるとすぐに、コレクターへの接続が確立され、イベントが収集されます。  
   
-コレクター サービス自体のログ (サービスによって収集されたセットアップおよびブート データとは異なります) は、Microsoft-Windows-BootEvent-Collector/Admin の下にあります。 イベントのグラフィカル インターフェイスには、イベント ビューアーを使用します。 新しいビューを作成し、**[アプリケーションとサービス ログ]**、**[Microsoft]** 、**[Windows]** の順に展開します **[BootEvent-Collector]** を見つけて展開し、**[管理者]** を見つけます。  
+コレクター サービス自体のログ (サービスによって収集されたセットアップおよびブート データとは異なります) は、Microsoft-Windows-BootEvent-Collector/Admin の下にあります。 イベントのグラフィカル インターフェイスには、イベント ビューアーを使用します。 新しいビューを作成し、 **[アプリケーションとサービス ログ]** 、 **[Microsoft]** 、 **[Windows]** の順に展開します **[BootEvent-Collector]** を見つけて展開し、 **[管理者]** を見つけます。  
 
 -   Windows powershell: `Get-WinEvent -LogName Microsoft-Windows-BootEvent-Collector/Admin`  
   
@@ -335,23 +335,23 @@ Windows PowerShell プロンプトの場合: `Get-WinEvent -LogName Microsoft-Wi
       
  **コレクターのトラブルシューティングに推奨される方法:**  
    
- 1. まず、次のコマンドで、コレクターがターゲットからの接続を受信したことを確認します (ターゲットがメッセージの送信を開始したときにのみファイルが作成されます)。   
-```  
-Get-SbecForwarding  
-```  
-このターゲットからの接続があることが返された場合、自動ロガーの設定に問題がある可能性があります。 何も返されなかった場合は、開始する KDNET 接続に問題があります。 KDNET 接続の問題を診断するためには、両方の側 (つまり、コレクターとターゲットの両方) からの接続を確認してみてください   
+1. まず、次のコマンドで、コレクターがターゲットからの接続を受信したことを確認します (ターゲットがメッセージの送信を開始したときにのみファイルが作成されます)。   
+   ```  
+   Get-SbecForwarding  
+   ```  
+   このターゲットからの接続があることが返された場合、自動ロガーの設定に問題がある可能性があります。 何も返されなかった場合は、開始する KDNET 接続に問題があります。 KDNET 接続の問題を診断するためには、両方の側 (つまり、コレクターとターゲットの両方) からの接続を確認してみてください  
   
 2. コレクターからの診断機能の強化を確認するには、これを追加、\<コレクター > 構成ファイルの要素。  
-\<collector ... minlog="verbose">  
-これにより、各受信パケットに関するメッセージが有効になります。  
+   \<collector ... minlog="verbose">  
+   これにより、各受信パケットに関するメッセージが有効になります。  
 3. パケットが受信されているかどうかを確認します。 必要に応じて、ETW 経由ではなく、詳細モードでログを直接ファイルに書き込むこともできます。 これを行うには、これを追加、\<コレクター > 構成ファイルの要素。  
-\<collector ... minlog="verbose" log="c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt">  
+   \<collector ... minlog="verbose" log="c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt">  
       
 4. イベント ログで受信パケットに関するメッセージを確認します。 パケットが受信されているかどうかを確認します。 パケットが受信されているが、正しくない場合は、イベントのメッセージで詳細を確認します。  
 5. ターゲット側からは、KDNET は、いくつかの診断情報をレジストリに書き込みます。 ファイルの場所します。   
-**HKLM\SYSTEM\CurrentControlSet\Services\kdnet** でメッセージがないか確認します。  
-  KdInitStatus (DWORD) は、成功した場合は 0、エラー時にエラー コードを表示します  
-  KdInitErrorString はエラーの説明です (エラーがない場合は、情報メッセージも含まれます)  
+   **HKLM\SYSTEM\CurrentControlSet\Services\kdnet** でメッセージがないか確認します。  
+   KdInitStatus (DWORD) は、成功した場合は 0、エラー時にエラー コードを表示します  
+   KdInitErrorString はエラーの説明です (エラーがない場合は、情報メッセージも含まれます)  
   
 6. ターゲットで Ipconfig.exe を実行し、報告されるデバイス名を確認します。 KDNET が適切に読み込まれると、デバイス名は元のベンダーのカード名ではなく、"kdnic" のような名前になります。  
 7. ターゲットの DHCP が構成されているかどうかを確認してください。 KDNET には DHCP が不可欠です。  

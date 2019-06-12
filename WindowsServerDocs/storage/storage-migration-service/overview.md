@@ -8,12 +8,12 @@ ms.date: 05/21/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: fd99058036a5b8041e4c65ca120c6a7e68b2df8d
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: ce4cbdc291d98a180ee6f5b597d322620fa1b19f
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976653"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453172"
 ---
 # <a name="storage-migration-service-overview"></a>記憶域の移行サービスの概要
 
@@ -32,7 +32,7 @@ ms.locfileid: "65976653"
 - 必要に応じてユーザーとアプリは、既存のデータへのアクセスに何も変更する必要があるないように、(経由で cutting とも呼ばれます)、ソース サーバーの id を引き継ぐ
 - Windows Admin Center ユーザー インターフェイスから 1 つまたは複数の移行を管理します。
 
-![移行元サーバーから移行先サーバー、Azure Vm、または Azure File Sync の構成 (&)、ファイルを移行する記憶域の移行サービスを示す図。](media\overview\storage-migration-service-diagram.png)
+![移行元サーバーから移行先サーバー、Azure Vm、または Azure File Sync の構成 (&)、ファイルを移行する記憶域の移行サービスを示す図。](media/overview/storage-migration-service-diagram.png)
 
 **図 1: 記憶域サービスの移行元および変換先**
 
@@ -47,7 +47,7 @@ ms.locfileid: "65976653"
 ![スキャンする準備ができて、サーバーを示すスクリーン ショット](media/migrate/inventory.png)
 **図 2。記憶域の移行サービスがサーバーのインベントリ**
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 記憶域の移行サービスを使用するには、次のものが必要。
 

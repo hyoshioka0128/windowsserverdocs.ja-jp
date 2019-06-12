@@ -7,16 +7,16 @@ ms.topic: article
 author: johnmarlin-msft
 ms.date: 02/01/2019
 description: この記事では、2 ノード ファイル サーバー クラスターの作成について説明します
-ms.openlocfilehash: fbfde60f60df64514a6a0f514cbabd005544af84
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9f50470b379bd0ab05834eb3c5a35be0f5e9e93a
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846413"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453003"
 ---
 # <a name="deploying-a-two-node-clustered-file-server"></a>2 つのノードのクラスター化されたファイル サーバーを展開します。
 
-> 適用先:Windows Server 2019、Windows Server 2016
+> 適用対象:Windows Server 2019、Windows Server 2016
 
 フェールオーバー クラスターとは、アプリケーションやサービスの可用性を向上するために、互いに連携する独立したコンピューターで構成されるグループを指します。 クラスター サーバー (ノード) は、物理ケーブルとソフトウェアにより接続されます。 クラスター ノードの 1 つに障害が発生すると、他のノードがサービスの提供を開始します (フェールオーバーと呼ばれる処理)。 ユーザーには、サービスの中断の最小値が発生します。
 
@@ -28,11 +28,11 @@ ms.locfileid: "59846413"
 
 フェールオーバー クラスターには、記憶域の指定したボリュームが、一度に 1 つのサーバーでアクセスのみが、クラスター内のすべてのサーバーに物理的に接続されている記憶域ユニットが含まれています。 次の図は、記憶域ユニットに接続されている 2 ノード フェールオーバー クラスターを示します。
 
-![2 ノード クラスター](media\Cluster-File-Server\Cluster-FS-Overview.png)
+![2 ノード クラスター](media/Cluster-File-Server/Cluster-FS-Overview.png)
 
 記憶域ボリュームまたはクラスター内のノードに公開されている論理ユニット番号 (Lun) を別のクラスターにサーバーを含む、他のサーバーに公開されませんする必要があります。 次の図は、これを示しています。
 
-![記憶域の Lun](media\Cluster-File-Server\Cluster-FS-LUNs.png)
+![記憶域の Lun](media/Cluster-File-Server/Cluster-FS-LUNs.png)
 
 任意のサーバーの最大の可用性にサーバーの管理のベスト プラクティスに従う必要に注意してください — たとえば、完全に実装するには、前にソフトウェアの変更をテスト サーバーの物理環境を慎重に管理、慎重に。ソフトウェア更新プログラムとすべてのクラスター化されたサーバーの構成の変更の追跡。
 
@@ -167,7 +167,7 @@ Microsoft によって正式にサポートされている、ソリューショ�
 
 1. 開いている**サーバー マネージャー**下で、**管理**ドロップダウンを選択します**追加の役割と機能の**します。
 
-   ![機能を追加します。](media\Cluster-File-Server\Cluster-FS-Add-Feature.png)
+   ![機能を追加します。](media/Cluster-File-Server/Cluster-FS-Add-Feature.png)
 
 2. 場合、**開始する前に**ウィンドウが開き、選択**次**します。
 
@@ -177,11 +177,11 @@ Microsoft によって正式にサポートされている、ソリューショ�
 
 5. サーバーの役割、役割の一覧から開く**ファイル サービス**を選択します**ファイル サーバー**と**次**します。
 
-   ![ロールを追加します。](media\Cluster-File-Server\Cluster-FS-Add-FS-Role-1.png)
+   ![ロールを追加します。](media/Cluster-File-Server/Cluster-FS-Add-FS-Role-1.png)
 
 6. 機能は、機能の一覧から、次のように選択します。**フェールオーバー クラスタ リング**します。  インストールされても、管理ツールの一覧を示すポップアップ ダイアログが表示されます。  すべて選択されている、選択**機能の追加**と**次**。
 
-   ![機能を追加します。](media\Cluster-File-Server\Cluster-FS-Add-WSFC-1.png)
+   ![機能を追加します。](media/Cluster-File-Server/Cluster-FS-Add-WSFC-1.png)
 
 7. [確認] ページで、インストールを選択します。
 
@@ -315,7 +315,7 @@ Microsoft によって正式にサポートされている、ソリューショ�
 
 7. ファイル サーバーの種類を選択**汎用ファイル サーバー**と**次**します。<br>詳細については、スケール アウト ファイル サーバーは、次を参照してください。[スケール アウト ファイル サーバーの概要](sofs-overview.md)します。
 
-   ![ファイル サーバーの種類](media\Cluster-File-Server\Cluster-FS-File-Server-Type.png)
+   ![ファイル サーバーの種類](media/Cluster-File-Server/Cluster-FS-File-Server-Type.png)
 
 8. **クライアント アクセス ポイント**ウィンドウで、使用する場合は、ファイル サーバーの名前を入力します。  クラスターの名前ではないことに注意してください。  これは、ファイルの接続を共有します。  たとえばに接続する場合\\サーバー、サーバーが入力された名前にするとします。
 

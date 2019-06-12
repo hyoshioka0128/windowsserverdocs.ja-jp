@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 09b2ffabcea414dd4717a2ffa1f6e860a17f3653
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2ac602506960b92333750e7a37692c44c92aae22
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871703"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440268"
 ---
 # <a name="wbadmin-start-backup"></a>wbadmin start backup
 
@@ -87,27 +87,27 @@ Wbadmin start backup
 次の例に示す方法、 **wbadmin start backup**コマンドは、さまざまなバックアップ シナリオで使用できます。
 
 シナリオ 1
--   ボリュームのバックアップを作成 e:、d:\mountpoint、および\\ \\? \Volume{cc566d14-4410-11d9-9d93-806e6f6e6963}
--   ボリューム f: をバックアップを保存します。
-```
-wbadmin start backup -backupTarget:f: -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
-```
-2 番目のシナリオ
--   1 回限りのバックアップを実行*f:\folder1*と*h:\folder2*ボリュームに*d:* します。
--   システム状態のバックアップ
--   通常のスケジュールの差分バックアップに影響が及ばないように、コピー バックアップを作成します。
-```
-wbadmin start backup –backupTarget:d: -include:g\folder1,h:\folder2 –systemstate -vsscopy
-```
-シナリオ 3
--   1 回限りのバックアップを実行*d:\folder1*非再帰的にバックアップする必要があります。
--   ネットワークの場所にフォルダーをバックアップ *\\ \\backupshare\backup1*
--   メンバーへのバックアップへのアクセス制限、**管理者**または**Backup Operators**グループ。
-```
-wbadmin start backup –backupTarget: \\backupshare\backup1 -noinheritacl -nonrecurseinclude:d:\folder1
-```
+- ボリュームのバックアップを作成 e:、d:\mountpoint、および\\ \\? \Volume{cc566d14-4410-11d9-9d93-806e6f6e6963}
+- ボリューム f: をバックアップを保存します。
+  ```
+  wbadmin start backup -backupTarget:f: -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
+  ```
+  2 番目のシナリオ
+- 1 回限りのバックアップを実行*f:\folder1*と*h:\folder2*ボリュームに*d:* します。
+- システム状態のバックアップ
+- 通常のスケジュールの差分バックアップに影響が及ばないように、コピー バックアップを作成します。
+  ```
+  wbadmin start backup –backupTarget:d: -include:g\folder1,h:\folder2 –systemstate -vsscopy
+  ```
+  シナリオ 3
+- 1 回限りのバックアップを実行*d:\folder1*非再帰的にバックアップする必要があります。
+- ネットワークの場所にフォルダーをバックアップ *\\ \\backupshare\backup1*
+- メンバーへのバックアップへのアクセス制限、**管理者**または**Backup Operators**グループ。
+  ```
+  wbadmin start backup –backupTarget: \\backupshare\backup1 -noinheritacl -nonrecurseinclude:d:\folder1
+  ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)

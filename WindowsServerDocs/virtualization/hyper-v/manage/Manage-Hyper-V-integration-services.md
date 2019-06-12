@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.service: na
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: b049efc61d5060791574f20fcdd8b369a26f0507
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2c14e471abb9af7a9182100969a8dd94a17205a
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890253"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812194"
 ---
 >適用先:Windows 10、Windows Server 2016、Windows Server 2019
 
@@ -25,8 +25,8 @@ HYPER-V 統合サービスは仮想マシンのパフォーマンスを強化し
 
 各統合サービスに関する詳細については、次を参照してください。 [Hyper-v 統合サービス](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services)します。
 
->[!IMPORTANT]
->使用する各サービスは、機能するために、ホストとゲストの両方で有効にする必要があります。 「HYPER-V ゲスト サービス インターフェイス」を除くすべての integration services では、Windows ゲスト オペレーティング システムでは既定でです。 サービスを有効または無効に個別にします。 方法については、次のセクションで説明します。
+> [!IMPORTANT]
+> 使用する各サービスは、機能するために、ホストとゲストの両方で有効にする必要があります。 「HYPER-V ゲスト サービス インターフェイス」を除くすべての integration services では、Windows ゲスト オペレーティング システムでは既定でです。 サービスを有効または無効に個別にします。 方法については、次のセクションで説明します。
 
 ## <a name="turn-an-integration-service-on-or-off-using-hyper-v-manager"></a>オンまたはオフ、HYPER-V マネージャーを使用して、統合サービスを有効にします。
 
@@ -47,6 +47,7 @@ Integration Services ウィンドウには、HYPER-V ホストで、使用可能
     ``` PowerShell
     Get-VMIntegrationService -VMName "DemoVM"
     ```
+
 1. 出力は次のようになります。
 
     ``` PowerShell
@@ -84,12 +85,13 @@ Integration Services ウィンドウには、HYPER-V ホストで、使用可能
 ```
 REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesVersion
 ```
+
 以前のゲスト オペレーティング システムのすべての利用可能なサービスではありません。 たとえば、Windows Server 2008 R2 ゲストでは、「HYPER-V ゲスト サービス インターフェイス」を含めることはできません。
 
 ## <a name="start-and-stop-an-integration-service-from-a-windows-guest"></a>開始および停止から Windows ゲスト統合サービス
 統合サービスを完全に機能させるためには、その対応するサービスは、ホストで有効にされているだけでなく、ゲスト内で実行する必要があります。 Windows ゲストでは、各統合サービスは、標準の Windows サービスとして一覧表示されます。 コントロール パネルまたは PowerShell でのサービス アプレットを使用して、停止し、これらのサービスを開始できます。
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > 統合サービスを停止すると、仮想マシンを管理するホストの機能に大きく影響可能性があります。 正常に機能するには、ホストとゲストの両方で使用する各統合サービスを有効にする必要があります。
 > ベスト プラクティスとして、上記の手順を使用して HYPER-V から統合サービスを制御する必要がありますだけです。 ゲスト オペレーティング システムに一致するサービスを停止または HYPER-V では、その状態を変更すると、自動的に開始します。
 > ゲスト オペレーティング システムでサービスを開始する、HYPER-V で無効になっている場合は、サービスは停止します。 HYPER-V で有効になっているゲスト オペレーティング システムでサービスを停止した場合、HYPER-V 最終的に再び開始されます。 ゲスト サービスを無効にした場合、HYPER-V は起動できません。
@@ -104,7 +106,6 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 
 1. 開始または停止サービスを右クリックします。 目的のアクションをクリックします。
 
-
 ### <a name="use-windows-powershell-to-start-or-stop-an-integration-service-within-a-windows-guest"></a>Windows PowerShell を使用して開始または Windows ゲスト内で統合サービスを停止するには
 
 1. Integration services の一覧を取得するには、次のコマンドを実行します。
@@ -112,6 +113,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     ```
     Get-Service -Name vm*
     ```
+
 1.  出力は次のようになります。
 
     ```PowerShell
@@ -137,13 +139,13 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 
 一般的に、Linux 統合サービスは Linux カーネルで提供されます。 Linux 統合サービス ドライバーの名前は**hv_utils**します。
 
-1.  確認する**hv_utils**が読み込まれる場合は、このコマンドを使用します。
+1. 確認する**hv_utils**が読み込まれる場合は、このコマンドを使用します。
 
-    ``` BASH
-    lsmod | grep hv_utils
-    ``` 
+   ``` BASH
+   lsmod | grep hv_utils
+   ``` 
   
-1. 出力は次のようになります。  
+2. 出力は次のようになります。  
   
     ``` BASH
     Module                  Size   Used by
@@ -151,13 +153,13 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     hv_vmbus               61440   8 hv_balloon,hyperv_keyboard,hv_netvsc,hid_hyperv,hv_utils,hyperv_fb,hv_storvsc
     ```
 
-1. 必要なデーモンが実行されているかどうかに検索するには、このコマンドを使用します。
+3. 必要なデーモンが実行されているかどうかに検索するには、このコマンドを使用します。
   
     ``` BASH
     ps -ef | grep hv
     ```
   
-1. 出力は次のようになります。 
+4. 出力は次のようになります。 
   
     ```BASH
     root       236     2  0 Jul11 ?        00:00:00 [hv_vmbus_con]
@@ -170,13 +172,13 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     scooley  43774 43755  0 21:20 pts/0    00:00:00 grep --color=auto hv          
     ```
 
-1. 使用できるデーモンを表示するには、次を実行します。
+5. 使用できるデーモンを表示するには、次を実行します。
 
     ``` BASH
     compgen -c hv_
     ```
   
-1. 出力は次のようになります。
+6. 出力は次のようになります。
   
     ``` BASH
     hv_vss_daemon
@@ -187,10 +189,10 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     hv_fcopy_daemon     
     ```
   
- 表示される統合サービス デーモンは、次に示します。 いずれかが存在しない場合は、システムでサポートされる可能性がありますいないまたは、インストールできない可能性があります。 詳細については、「 [Windows 上の HYPER-V ではサポートされている Linux および FreeBSD の仮想マシン](https://technet.microsoft.com/library/dn531030.aspx)します。  
-  - **hv_vss_daemon**:Linux 仮想マシンのライブ バックアップを作成するには、このデーモンが必要です。
-  - **hv_kvp_daemon**:このデーモンは、設定および照会の組み込みと外部キー値のペアを使用できます。
-  - **hv_fcopy_daemon**:このデーモンは、ファイル サービス、ホストとゲスト間のコピーを実装します。  
+   表示される統合サービス デーモンは、次に示します。 いずれかが存在しない場合は、システムでサポートされる可能性がありますいないまたは、インストールできない可能性があります。 詳細については、「 [Windows 上の HYPER-V ではサポートされている Linux および FreeBSD の仮想マシン](https://technet.microsoft.com/library/dn531030.aspx)します。  
+   - **hv_vss_daemon**:Linux 仮想マシンのライブ バックアップを作成するには、このデーモンが必要です。
+   - **hv_kvp_daemon**:このデーモンは、設定および照会の組み込みと外部キー値のペアを使用できます。
+   - **hv_fcopy_daemon**:このデーモンは、ファイル サービス、ホストとゲスト間のコピーを実装します。  
 
 ### <a name="examples"></a>例
 
@@ -306,7 +308,7 @@ Linux ゲストの詳細については、次を参照してください。 [Win
   
 2.  仮想マシンに接続します。 仮想マシンを右クリックし、をクリックして**Connect**します。  
   
-3.  [仮想マシン接続] の [操作] メニューで、**[統合サービス セットアップ ディスクの挿入]** をクリックします。 この操作により、仮想 DVD ドライブにセットアップ ディスクが読み込まれます。 ゲスト オペレーティング システムによっては、手動でインストールを開始する必要があります。  
+3.  [仮想マシン接続] の [操作] メニューで、 **[統合サービス セットアップ ディスクの挿入]** をクリックします。 この操作により、仮想 DVD ドライブにセットアップ ディスクが読み込まれます。 ゲスト オペレーティング システムによっては、手動でインストールを開始する必要があります。  
   
 4.  インストールが完了すると、すべての統合サービスを使用できるようになります。
 

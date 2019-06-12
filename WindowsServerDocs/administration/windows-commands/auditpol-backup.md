@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 78594c0445ae482e49d47b3b67bb867e53866017
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7de5e6dc6d205b7e6749d38ac822e31a78788c6e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867953"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435212"
 ---
 # <a name="auditpol-backup"></a>auditpol バックアップ
 
@@ -31,10 +31,12 @@ ms.locfileid: "59867953"
 auditpol /backup /file:<filename>
 ```
 ## <a name="parameters"></a>パラメーター
-|パラメーター|説明|
-|-------|--------|
-|/file|監査ポリシーのバックアップ先ファイルの名前を指定します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+
+| パラメーター |                                 説明                                 |
+|-----------|-----------------------------------------------------------------------------|
+|   /file   | 監査ポリシーのバックアップ先ファイルの名前を指定します。 |
+|    /?     |                    コマンド プロンプトにヘルプを表示します。                     |
+
 ## <a name="remarks"></a>注釈
 ユーザーごとのポリシーおよびシステム ポリシーのバックアップ操作を記述する必要がありますがまたはセキュリティ記述子でそのオブジェクトに対するフル コントロール アクセス許可を設定します。 所有することによって、バックアップ操作を実行することも、**監査とセキュリティ ログの管理**(SeSecurityPrivilege) ユーザー権利。 ただし、この権限は、リスト操作を実行する必要はありません、追加のアクセスを許可します。
 ## <a name="BKMK_examples"></a>例
@@ -44,6 +46,6 @@ auditpol /backup /file:C:\auditpolicy.csv
 ```
 > [!NOTE]
 > ドライブが指定されていない場合は、現在のディレクトリが使用されます。
-#### <a name="additional-references"></a>その他の参照
-[コマンドライン構文のポイント](command-line-syntax-key.md)
-[auditpol 復元](auditpol-restore.md)
+> #### <a name="additional-references"></a>その他の参照
+> [コマンドライン構文のポイント](command-line-syntax-key.md)
+> [auditpol 復元](auditpol-restore.md)

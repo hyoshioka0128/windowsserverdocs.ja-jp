@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0aa359644f5e9bf85f4e013e6571276716ed0218
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: da528a742a7f49513c50b22a25970d65b9e1885f
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266612"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811375"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>パフォーマンス チューニングのリモート デスクトップ仮想化ホスト
 
@@ -23,11 +23,11 @@ Windows Server 2016 では、仮想デスクトップ、個人用仮想デスク
 
 **このトピックの内容:**
 
--   [一般的な考慮事項](#general)
+-   [一般的な考慮事項](#general-considerations)
 
--   [パフォーマンスの最適化](#perfopt)
+-   [パフォーマンスの最適化](#performance-optimizations)
 
-## <a href="" id="general"></a>一般的な考慮事項
+## <a name="general-considerations"></a>全般的な考慮事項
 
 
 ### <a name="storage"></a>ストレージ
@@ -46,7 +46,7 @@ Windows Server 2012 R2 で導入された、データ重複除去は、開いて
 Enable-DedupVolume <volume> -UsageType HyperV
 ```
 
-> [!Note]
+> [!NOTE]
 > 開いているファイルのデータ重複除去の最適化は、HYPER-V が SMB 3.0 経由でリモート記憶域を使用すると VDI シナリオに対してのみサポートされています。
 
 ### <a name="memory"></a>メモリ
@@ -175,8 +175,7 @@ GPU リソースがリソース不足のとき、通常は読み取りし、書�
 
 RemoteFX 仮想 GPU パフォーマンス カウンターに加えて、ビデオ メモリ使用量と GPU 使用率を示しています。 プロセス エクスプ ローラーを使用して GPU 使用率を測定することもできます。
 
-## <a href="" id="perfopt"></a>パフォーマンスの最適化
-
+## <a name="performance-optimizations"></a>パフォーマンスの最適化
 
 ### <a name="dynamic-memory"></a>動的メモリ
 
@@ -220,13 +219,11 @@ Windows の機能と永続的な状態に依存するサービスをオフにか
 | ホーム グループ プロバイダー                          | コンシューマー中心のサービス                                                                                                                                                                                  |
 | インターネット接続の共有                  | コンシューマー中心のサービス                                                                                                                                                                                  |
 | Media Center サービスを拡張します。               | コンシューマー中心のサービス                                                                                                                                                                                  |
+> [!NOTE]
+> この一覧は、目的の目標とシナリオは、すべての変更が影響するので、完全な一覧には行われません。 詳細については、次を参照してください。[ホット ニュース、手、、Windows 8 の VDI 最適化スクリプト PFE の特例!](http://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx)します。
 
- 
+ 
+> [!NOTE]
+> Windows 8 では、superFetch は、既定で有効です。 VDI に対応し、無効にすることです。 SuperFetch は VDI にとって有益であるページが共有メモリ、メモリ消費をさらに削減できます。 プールされた仮想デスクトップが Windows 7 を実行して、SuperFetch を無効にする必要があります、が、個人用仮想デスクトップが Windows 7 を実行して、残すか。
 
-**注**  この一覧は意図するもの一覧については、意図した目的とシナリオが影響する変更を加えたので。 詳細については、次を参照してください。[ホット ニュース、手、、Windows 8 の VDI 最適化スクリプト PFE の特例!](http://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx)します。
-
- 
-
-**注**   SuperFetch Windows 8 では、既定で有効です。 VDI に対応し、無効にすることです。 SuperFetch は VDI にとって有益であるページが共有メモリ、メモリ消費をさらに削減できます。 プールされた仮想デスクトップが Windows 7 を実行して、SuperFetch を無効にする必要があります、が、個人用仮想デスクトップが Windows 7 を実行して、残すか。
-
- 
+ 
