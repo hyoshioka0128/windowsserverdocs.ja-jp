@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 5f2c3ec4b2c434ea945d86c4b1593e2e416a5123
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 40c0f6df31061268b1e1ef8c15b0a02b0f50b0de
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819233"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447474"
 ---
 # <a name="prerequisites-for-guarded-hosts"></a>保護されたホストの前提条件
 
@@ -45,15 +45,15 @@ TPM のモードを使用して保護されたホストは、次の前提条件�
 > Host Guardian HYPER-V サポート機能は、一部のデバイスと互換性がない可能性があります、コードの整合性の仮想化ベースの保護を使用できます。 この機能を有効にする前に、ラボでこの構成のテストを強くお勧めします。 そうしないと、データ損失やブルー スクリーン エラー (Stop エラーとも呼ばれます) などを含む予期しないエラーが発生することがあります。 詳細については、次を参照してください。[コードの整合性の Windows Server 仮想化ベースの保護との互換性のあるハードウェア](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)します。
 
 **次の手順:** 
->[!div class="nextstepaction"]
-[TPM の情報をキャプチャします。](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
+> [!div class="nextstepaction"]
+> [TPM の情報をキャプチャします。](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
 
 ## <a name="host-key-attestation"></a>ホスト キーの構成証明
 
 ホスト キーの構成証明を使用して保護されたホストは、次の前提条件を満たす必要があります。
 
 - **ハードウェア**:Windows Server 2019 で HYPER-V の先頭を実行できる任意のサーバー
-- **オペレーティング システム**:Windows Server 2019 Datacenter edition
+- **オペレーティング システム**:Windows Server 2019 Datacenter Edition
 - **役割と機能**:HYPER-V の役割と Host Guardian HYPER-V サポート機能 
 
 ホストは、ドメインまたはワークグループに参加することができます。 
@@ -61,8 +61,8 @@ TPM のモードを使用して保護されたホストは、次の前提条件�
 ホスト キーの構成証明は、HGS を Windows Server 2019 を実行していると v2 の構成証明で動作する必要があります。 詳細については、次を参照してください。 [HGS の前提条件](guarded-fabric-prepare-for-hgs.md#prerequisites)します。 
 
 **次の手順:** 
->[!div class="nextstepaction"]
-[キーのペアを作成します。](guarded-fabric-create-host-key.md)
+> [!div class="nextstepaction"]
+> [キーのペアを作成します。](guarded-fabric-create-host-key.md)
 
 ## <a name="admin-trusted-attestation"></a>管理者によって信頼された構成証明
 
@@ -84,5 +84,5 @@ HYPER-V ホストには、AD モードの次の前提条件を満たす必要が
 > Host Guardian HYPER-V サポート機能は、一部のデバイスと互換性がない可能性があります、コードの整合性の仮想化ベースの保護を使用できます。 この機能を有効にする前に、ラボでこの構成のテストを強くお勧めします。 そうしないと、データ損失やブルー スクリーン エラー (Stop エラーとも呼ばれます) などを含む予期しないエラーが発生することがあります。 詳細については、次を参照してください。[コードの整合性の Windows Server 2016 の仮想化ベースの保護との互換性のあるハードウェア](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)します。
 
 **次の手順:** 
->[!div class="nextstepaction"]
-[セキュリティ グループに保護されたホストを配置します。](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)
+> [!div class="nextstepaction"]
+> [セキュリティ グループに保護されたホストを配置します。](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)

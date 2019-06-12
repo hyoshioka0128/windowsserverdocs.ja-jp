@@ -9,12 +9,12 @@ ms.prod: windows-server-hyper-v
 ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: 7af6d68b02367d349580eacb27405c6f37e97ff8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c0c2f85fbbeca9e8ac5d40bbcb71f286fabfb65c
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871993"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501668"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>HYPER-V ハイパーバイザーのスケジューラの種類を管理します。
 
@@ -141,7 +141,7 @@ Windows Server 2016 の HYPER-V では、既定では、クラシックのハイ
 
 ## <a name="windows-server-2019-hyper-v-defaults-to-using-the-core-scheduler"></a>Windows Server 2019 の HYPER-V の既定値は、コアのスケジューラを使用します。
 
-HYPER-V ホストが最適なセキュリティ構成で展開されていることを確認するには、Windows Server 2019 HYPER-V は主要なハイパーバイザーのスケジューラのモデルを既定で使用する、ようになりました。 ホストの管理者は、クラシック レガシ scheduler を使用してホストを必要に応じて構成可能性があります。 管理者を読み取る必要がありますは十分に理解し、スケジューラの種類ごとでは、セキュリティとスケジューラの種類の既定の設定を上書きする前に仮想化ホストのパフォーマンスに影響を検討してください。 は。  参照してください[HYPER-V スケジューラの種類の選択](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/understanding-hyper-v-scheduler-type-selection)詳細についてはします。
+HYPER-V ホストが最適なセキュリティ構成で展開されていることを確認するには、Windows Server 2019 の HYPER-V は、中核となるハイパーバイザー スケジューラ モデルを既定で使用するはようになりました。 ホストの管理者は、クラシック レガシ scheduler を使用してホストを必要に応じて構成可能性があります。 管理者を読み取る必要がありますは十分に理解し、スケジューラの種類ごとでは、セキュリティとスケジューラの種類の既定の設定を上書きする前に仮想化ホストのパフォーマンスに影響を検討してください。 は。  参照してください[HYPER-V スケジューラの種類の選択](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/understanding-hyper-v-scheduler-type-selection)詳細についてはします。
 
 ### <a name="required-updates"></a>必要な更新プログラム
 
@@ -169,6 +169,7 @@ HYPER-V ホストが最適なセキュリティ構成で展開されているこ
 
 * クラシック
 * Core
+* ルート
 
 変更を有効にするハイパーバイザー スケジューラ型をシステムを再起動する必要があります。
 
@@ -177,7 +178,7 @@ HYPER-V ホストが最適なセキュリティ構成で展開されているこ
 
 ## <a name="determining-the-current-scheduler-type"></a>現在のスケジューラの種類を決定します。
 
-ハイパーバイザーの起動時に構成されているハイパーバイザー スケジューラの種類のレポートが最新のハイパーバイザー起動イベント ID が 2、イベント ビューアーのシステム ログを調べることで使用中では、現在のハイパーバイザー スケジューラ型を指定できます。 ハイパーバイザーの起動イベントは、Windows イベント ビューアー、または PowerShell を使用して取得できます。
+ハイパーバイザーの起動時に構成されているハイパーバイザー スケジューラの種類を報告する、最新のハイパーバイザー起動イベント ID が 2 のイベント ビューアーのシステム ログを調べることで使用中の現在のハイパーバイザー スケジューラ型を指定できます。 ハイパーバイザーの起動イベントは、Windows イベント ビューアー、または PowerShell を使用して取得できます。
 
 ハイパーバイザーの起動イベント ID 2 は、ハイパーバイザー スケジューラ型を示す場所。
 

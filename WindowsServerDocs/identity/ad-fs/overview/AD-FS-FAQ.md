@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: fdd31a8b7c2c6ef87d1d22d901b5c6ca69b5c70d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: f3f84a5c18589d38606825ee064cfb729003a05d
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188718"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719685"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS のよく寄せられる質問 (FAQ)
 
@@ -120,7 +120,7 @@ AD FS と WAP サーバーが ATP をサポートする唯一の TLS 暗号ス�
 カスタマイズされた id_token を使用すると、自体 id_token に含まれる関連情報を追加します。 詳細については、この記事を参照してください。 [id_token に出力する要求をカスタマイズ](../development/Custom-Id-Tokens-in-AD-FS.md)します。
 
 ### <a name="how-to-issue-json-blobs-inside-jwt-tokens"></a>JWT トークン内の json blob を発行する方法でしょうか。
-特殊な値型 ("http://www.w3.org/2001/XMLSchema#json") と AD FS 2016 で追加されたこの character(\x22) をエスケープします。 発行規則とアクセス トークンから最終的な出力の下のサンプルをしてください。
+特殊な値型 ("<http://www.w3.org/2001/XMLSchema#json>") と AD FS 2016 で追加されたこの character(\x22) をエスケープします。 発行規則とアクセス トークンから最終的な出力の下のサンプルをしてください。
 
 サンプルの発行ルール:
 
@@ -171,13 +171,13 @@ AD FS SSL 証明書は、AD FS 管理スナップインで見つかった AD FS 
 プロンプトを構成する方法については、ログイン = を参照してください[Active Directory フェデレーション サービスの要求パラメーターのログインのサポートを =](../operations/AD-FS-Prompt-Login.md)します。
 
 ### <a name="how-can-i-change-the-ad-fs-service-account"></a>AD FS サービス アカウントを変更する方法はありますか
-AD FS サービス アカウントを変更する AD FS のツールボックスを使用して指示に従って[サービス アカウントの Powershell モジュール](https://github.com/Microsoft/adfsToolbox/tree/master/serviceAccountModule)します。 
+AD FS サービス アカウントを変更する AD FS のツールボックスを使用して指示に従って[サービス アカウントの Powershell モジュール](https://github.com/Microsoft/adfsToolbox/tree/master/serviceAccountModule)します。
 
 ### <a name="how-can-i-configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>AD FS で Windows 統合認証 (WIA) を使用するブラウザーを構成する方法はありますか
 
 ブラウザーを構成する方法については、次を参照してください。 [AD FS で Windows 統合認証 (WIA) を使用するブラウザーを構成する](../operations/Configure-AD-FS-Browser-WIA.md)します。
 
-### <a name="can-i-trun-off-browserssoenabled"></a>BrowserSsoEnabled の電源を切りますをできますか。
+### <a name="can-i-turn-off-browserssoenabled"></a>BrowserSsoEnabled をオフにできますか。
 ADFS; を使用してビジネスの証明書登録用の ADFS や Windows こんにちはデバイスに基づいてアクセス制御ポリシーがあるない場合BrowserSsoEnabled オフにすることができます。 BrowserSsoEnabled は、デバイス情報を含むクライアントから PRT (プライマリ更新トークン) を収集する ADFS を使用できます。 そのデバイスがなくても ADFS の認証は、Windows 10 デバイスでは機能しません。
 
 ### <a name="how-long-are-ad-fs-tokens-valid"></a>有効な AD FS トークンは、どのくらいの時間のでしょうか。
@@ -271,13 +271,13 @@ WAP サーバーのセット WebApplicationProxySslCertificate を引き続き�
 2. 1 で選択されているサーバー、MMC を使用して新しい証明書をインポートします。
 3. 既存の証明書を削除します。
 
-    a.  netsh http delete sslcert hostnameport=fs.contoso.com:443 b。 netsh http delete sslcert hostnameport = localhost:443 c。 netsh http delete sslcert hostnameport=fs.contoso.com:49443
+    a. netsh http delete sslcert hostnameport=fs.contoso.com:443 b。 netsh http delete sslcert hostnameport = localhost:443 c。 netsh http delete sslcert hostnameport=fs.contoso.com:49443
 
 4.  新しい証明書を追加します。
 
-    a.  netsh http 追加 sslcert hostnameport=fs.contoso.com:443 certhash CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices を =
+    a. netsh http 追加 sslcert hostnameport=fs.contoso.com:443 certhash CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices を =
 
-    b.  netsh http 追加 sslcert hostnameport localhost:443 certhash = CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices を =
+    b. netsh http 追加 sslcert hostnameport localhost:443 certhash = CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices を =
 
     c. netsh http 追加 sslcert hostnameport=fs.contoso.com:49443 certhash CERTTHUMBPRINT appid = {5d89a20c-beab-4389-9447-324788eb944a} certstorename = MY sslctlstorename = AdfsTrustedDevices を =
 
@@ -286,7 +286,7 @@ WAP サーバーのセット WebApplicationProxySslCertificate を引き続き�
 7. 選択した WAP サーバー MMC を使用して新しい証明書をインポートします。
 8. コマンドレットを使用して WAP での新しい証明書を設定します。
 
-    a.  Set-WebApplicationProxySslCertificate -Thumbprint " CERTTHUMBPRINT"
+    a. Set-WebApplicationProxySslCertificate -Thumbprint " CERTTHUMBPRINT"
 
 9. 選択の WAP サーバー上でサービスを再起動します。
 10. 運用環境に戻り、選択した WAP と AD FS サーバーを配置します。
@@ -295,3 +295,8 @@ AD FS の残りの部分と同様に、WAP サーバーの更新プログラム�
 
 ### <a name="is-adfs-supported-when-web-application-proxy-wap-servers-are-behind-azure-web-application-firewallwaf"></a>Web アプリケーション プロキシ (WAP) サーバーが Azure の Web アプリケーションの Firewall(WAF) の背後にあるときに ADFS がサポートされますか。
 ADFS と Web アプリケーション サーバーは、エンドポイントで SSL 終了を実行しないすべてのファイアウォールをサポートします。 さらに、ad FS/WAP サーバーがクロスサイト スクリプティング、ADFS プロキシなどの一般的な web 攻撃を防止しで定義されているすべての要件を満たすためのメカニズムに構築された、 [MS ADFSPIP プロトコル](https://msdn.microsoft.com/library/dn392811.aspx)します。
+
+### <a name="i-am-seeing-an-event-441-a-token-with-a-bad-token-binding-key-was-found-what-should-i-do-to-resolve-this"></a>表示される、"441 イベント。無効なトークンのバインド キーを持つトークンが見つかりました。" これを解決するにはどうすればでしょうか。
+AD FS 2016 では、トークンのバインドは自動的に有効にし、プロキシとフェデレーションのシナリオでの複数の既知の問題を結果が このエラーが発生します。 これを解決するには、次の Powershell コマンドを実行し、トークンのバインドのサポートを削除します。
+
+`Set-AdfsProperties -IgnoreTokenBinding $true`

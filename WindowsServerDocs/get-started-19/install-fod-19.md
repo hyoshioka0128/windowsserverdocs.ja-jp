@@ -9,13 +9,13 @@ author: jasongerend
 ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.date: 05/29/2019
-ms.openlocfilehash: e76b7862549814d5453717c40cec45e341141d7a
-ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
+ms.date: 06/07/2019
+ms.openlocfilehash: 747258601aa05885d209aacde6947eb7b05e8121
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66308602"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810793"
 ---
 # <a name="server-core-app-compatibility-feature-on-demand-fod"></a>Server Core アプリ互換性オンデマンド機能 (FOD)
 
@@ -64,7 +64,7 @@ Server Core のアプリケーション互換性 FOD の一部が含まれるの
 
         -   フェールオーバー クラスター マネージャーを実行する入力**cluadmin**コマンド プロンプトでします。
 
-Windows Server を実行しているサーバー、1903 およびそれ以降のバージョンは、次のコンポーネントもサポートします。
+Windows Server を実行しているサーバー、1903 およびそれ以降のバージョンもサポート、次のコンポーネント (アプリケーションの互換性 FOD の同じバージョンを使用) する場合。
 
 - Hyper V マネージャー (virtmgmt.msc)
 - タスク スケジューラ (taskschd.msc)
@@ -104,7 +104,7 @@ Windows Server を実行しているサーバー、1903 およびそれ以降の
 
 8. 進行状況バーが完了したら後、は、オペレーティング システムを再起動します。
 
- DISM コマンドの詳細については、次を参照してください[Windows PowerShell の DISM の使用。](https://docs.microsoft.com/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14)
+   DISM コマンドの詳細については、次を参照してください[Windows PowerShell の DISM の使用。](https://docs.microsoft.com/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14)
 
 ## <a name="to-optionally-add-internet-explorer-11-to-server-core-after-adding-the-server-core-app-compatibility-fod"></a>(Server Core のアプリケーション互換性 FOD の追加) した後、Internet Explorer 11 を Server Core 必要に応じて追加するには
 
@@ -148,8 +148,8 @@ Windows Server を実行しているサーバー、1903 およびそれ以降の
 
 - ガイダンスについては、サーバー上のアプリのインストールのコア (これらの省略可能なパッケージの有無にかかわらず)、時の一般的なポイントでは、サイレント インストール オプションと手順を使用する必要な場合があります。 
     
- - 例として、SQL Server 2016 および SQL Server 2017 の SQL Server Management Studio は Server Core にインストールすることができ、アプリの互換性 FOD が存在する場合は、完全に機能します。  参照してください、[コマンド プロンプトから SQL Server インストール](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-from-the-command-prompt?view=sql-server-2017)します。
- - SQL Server Management Studio が望ましくない場合、必要はありませんサーバー コア アプリ互換性 FOD をインストールします。  参照してください、 [Server Core での SQL Server のインストール](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-on-server-core?view=sql-server-2017)します。
+  - 例として、SQL Server 2016 および SQL Server 2017 の SQL Server Management Studio は Server Core にインストールすることができ、アプリの互換性 FOD が存在する場合は、完全に機能します。  参照してください、[コマンド プロンプトから SQL Server インストール](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-from-the-command-prompt?view=sql-server-2017)します。
+  - SQL Server Management Studio が望ましくない場合、必要はありませんサーバー コア アプリ互換性 FOD をインストールします。  参照してください、 [Server Core での SQL Server のインストール](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-on-server-core?view=sql-server-2017)します。
 
 ## <a name="a-idadd-capabilities-adding-capabilities-and-optional-packages-to-an-offline-wim-server-core-image"></a><a id="add-capabilities"> オフラインの Server Core の WIM イメージへの機能とオプションのパッケージの追加
 

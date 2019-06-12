@@ -4,16 +4,16 @@ description: AngularJS をセキュリティで保護する JavaScript 用 ADAL 
 author: billmath
 ms.author: billmath
 manager: mtillman
-ms.date: 06/12/2018
+ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 24a9caba7a2745973d7c69c3bd7bc42717e7a06c
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: f8a8d6b81f63a691954eecf02dba4e33215a462a
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266691"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811749"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>OAuth および ADAL を使用して 1 つのページの web アプリケーションをビルドします。AD FS 2016 以降で JS
 
@@ -21,7 +21,8 @@ ms.locfileid: "66266691"
 
 このシナリオで、ユーザーがサインインするときに、JavaScript フロント エンドは[Active の Directory Authentication Library for JavaScript (ADAL します。JS)](https://github.com/AzureAD/azure-activedirectory-library-for-js)と Azure AD から ID トークン (id_token) を取得する暗黙的な認証付与します。 トークンがキャッシュ クライアントに接続されると、要求、ベアラー トークンとして OWIN ミドルウェアを使用して保護されているバックエンド Web API を呼び出すとき。
 
->警告:ここで作成できる例は、教育目的でのみです。 これらの手順では、モデルの必須の要素を公開する最も単純で最低限の実装です。 例では、エラー処理のすべての側面を含まない場合があり、その他の機能に関連します。
+>[!IMPORTANT]
+>ここで作成できる例は、教育目的でのみです。 これらの手順では、モデルの必須の要素を公開する最も単純で最低限の実装です。 例では、エラー処理のすべての側面を含まない場合があり、その他の機能に関連します。
 
 >[!NOTE]
 >このチュートリアルでは、該当する**のみ**2016 以降の AD FS サーバー 
@@ -50,7 +51,7 @@ ADAL は、認証するためのトリガーを見て場合、アプリケーシ
 
 ドメイン コント ローラーと AD FS をセットアップする方法は、この記事の範囲外です。 追加の配置情報を参照してください。
 
-- [AD DS 展開](../../ad-ds/deploy/AD-DS-Deployment.md) 
+- [AD DS 展開](../../ad-ds/deploy/AD-DS-Deployment.md)
 - [AD FS 展開](../AD-FS-Deployment.md)
 
 
@@ -109,14 +110,14 @@ ADAL JS を構成します。
         $httpProvider
         );
 
-|構成|説明
-|--------|--------
-|インスタンス (instance)|お客様の STS URL では、例。 https://fs.contoso.com/
-|テナント (tenant)|"Adfs"のまま
-|クライアント Id|これは、シングル ページ アプリケーションのパブリック クライアントを構成するときに指定したクライアント ID です。
+|構成|説明|
+|--------|--------|
+|インスタンス (instance)|お客様の STS URL では、例。 https://fs.contoso.com/|
+|テナント (tenant)|"Adfs"のまま|
+|クライアント Id|これは、シングル ページ アプリケーションのパブリック クライアントを構成するときに指定したクライアント ID です。|
 
 ## <a name="configure-webapi-to-use-ad-fs"></a>AD FS を使用する web Api を構成します。
-開く、 **Startup.Auth.cs**サンプル ファイルを開き、先頭に次のコードを追加します。 
+開く、 **Startup.Auth.cs**サンプル ファイルを開き、先頭に次のコードを追加します。
 
     using System.IdentityModel.Tokens;
 
@@ -143,11 +144,11 @@ ADAL JS を構成します。
     }
     );
 
-|パラメーター|説明
-|--------|--------
-|ValidAudience|これは、'audience' の値を構成しますトークンに対して確認されます。
-|ValidIssuer|これが構成の値 ' に対してチェックされるトークンの発行者
-|MetadataEndpoint|これは、STS のメタデータ情報を指します
+|パラメーター|説明|
+|--------|--------|
+|ValidAudience|これは、'audience' の値を構成しますトークンに対して確認されます。|
+|ValidIssuer|これが構成の値 ' に対してチェックされるトークンの発行者|
+|MetadataEndpoint|これは、STS のメタデータ情報を指します|
 
 ## <a name="add-application-configuration-for-ad-fs"></a>AD FS の構成をアプリケーションを追加します。
 次に示すよう appsettings を変更します。

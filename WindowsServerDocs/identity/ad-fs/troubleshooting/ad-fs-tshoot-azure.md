@@ -8,12 +8,12 @@ ms.date: 03/01/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6f85c447ac0816c46e07145dbe9a491a29e17c0f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 228ef34ab25276c1cf98f9b2b64e997390023c87
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846473"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444012"
 ---
 # <a name="ad-fs-troubleshooting---azure-ad"></a>AD FS のトラブルシューティング - Azure AD
 クラウドの増加、多くの企業が Azure AD のさまざまなアプリやサービスを使用する外してきました。  Azure AD とのフェデレーションと、多くの組織の標準的な手法になっています。  このドキュメントは、このフェデレーションで発生する問題のトラブルシューティングの側面のいくつかについて説明します。  このドキュメントは単なる仕様と Azure AD にフォーカスすることが Azure とのフェデレーションに関するいくつかの一般的なトラブルシューティング ドキュメントのトピックと AD FS の相互作用します。
@@ -31,11 +31,11 @@ ms.locfileid: "59846473"
 
 ![](media/ad-fs-tshoot-azure/azure2.png)
 
-   2.  Azure portal でのフェデレーションの横にあるドメインをクリックして、カスタム ドメインを確認することを確認します。
-![](media/ad-fs-tshoot-azure/azure3.png)
+1. Azure portal でのフェデレーションの横にあるドメインをクリックして、カスタム ドメインを確認することを確認します。
+   ![](media/ad-fs-tshoot-azure/azure3.png)
 
-   3. 最後に、確認したい[DNS](ad-fs-tshoot-dns.md)し、AD FS サーバーまたは WAP サーバーがインターネットから解決することを確認します。  これが解決されると、それに移動できることを確認します。
-   4. PowerShell コマンドレットを使用することもできます。`Get-AzureADDomain`もこの情報を取得します。
+2. 最後に、確認したい[DNS](ad-fs-tshoot-dns.md)し、AD FS サーバーまたは WAP サーバーがインターネットから解決することを確認します。  これが解決されると、それに移動できることを確認します。
+3. PowerShell コマンドレットを使用することもできます。`Get-AzureADDomain`もこの情報を取得します。
 
 ![](media/ad-fs-tshoot-azure/azure6.png)
 
@@ -48,14 +48,14 @@ Azure からリダイレクトされる、AuthnContext が AD FS または STS �
 - 、Ws-federation の WAUTH クエリ文字列を使用して、強制的に推奨される認証方法。
 
 - SAML2.0 の次の手順に従います。
-```
-<saml:AuthnContext>
-<saml:AuthnContextClassRef>
-urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport
-</saml:AuthnContextClassRef>
-</saml:AuthnContext>
-```
-適用される認証方法が正しくない値では、送信されたときに、または AD FS または STS でその認証方法がサポートされていない場合は、認証を行う前にエラー メッセージが表示されます。
+  ```
+  <saml:AuthnContext>
+  <saml:AuthnContextClassRef>
+  urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport
+  </saml:AuthnContextClassRef>
+  </saml:AuthnContext>
+  ```
+  適用される認証方法が正しくない値では、送信されたときに、または AD FS または STS でその認証方法がサポートされていない場合は、認証を行う前にエラー メッセージが表示されます。
 
 |必要な認証方法|wauth URI|
 |-----|-----|

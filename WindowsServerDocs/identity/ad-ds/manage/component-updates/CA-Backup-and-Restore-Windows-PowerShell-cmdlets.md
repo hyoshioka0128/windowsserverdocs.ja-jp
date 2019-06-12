@@ -9,20 +9,20 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: a4bbeeedfb40e789a799103f9a29a848a2b32324
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6055d9b694f72a6a874acdcb5135fde61bcf0d76
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877353"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442751"
 ---
 # <a name="ca-backup-and-restore-windows-powershell-cmdlets"></a>CA のバックアップと復元の Windows PowerShell コマンドレット
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
->
-**作成者**:Justin Turner、シニア サポート エスカレーション エンジニア、Windows グループ  
-  
-> [!NOTE]  
+> 適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+> 
+> **作成者**:Justin Turner、シニア サポート エスカレーション エンジニア、Windows グループ  
+> 
+> [!NOTE]
 > この内容は Microsoft カスタマー サポート エンジニアによって作成され、TechNet が通常提供しているトピックよりも詳細な Windows Server 2012 R2 の機能やソリューションの技術的説明を求めている、経験豊かな管理者とシステム設計者を対象としています。 ただし、TechNet と同様の編集過程は実施されていないため、言語によっては通常より洗練されていない文章が見られる場合があります。  
   
 ## <a name="overview"></a>概要  
@@ -84,7 +84,7 @@ Convertto-securestring 関数は、Backup-caroleservice の使用中に失敗し
   
 |アクション|エラー|Comment|  
 |----------|---------|-----------|  
-|**Restore-CARoleService C:\ADCSBackup**|Restore-caroleservice:プロセスはファイルにアクセスできません。 (HRESULT からの例外: <br /><br />0x80070020)|Restore-caroleservice コマンドレットを実行する前に Active Directory Certificate Services サービスを停止します|  
+|**Restore-CARoleService C:\ADCSBackup**|Restore-caroleservice:プロセスはファイルにアクセスできません。 (HRESULT からの例外:<br /><br />0x80070020)|Restore-caroleservice コマンドレットを実行する前に Active Directory Certificate Services サービスを停止します|  
 |**Restore-CARoleService C:\ADCSBackup**|Restore-caroleservice:ディレクトリが空ではありません。 (HRESULT からの例外: 0x80070091)|使用して既存のキーを上書きする-force パラメーター|  
 |**Backup-CARoleService C:\ADCSBackup -Password (Read-Host -Prompt "Password:" -AsSecureString) -DatabaseOnly**|Backup-caroleservice:パラメーター セットを解決できない、指定した名前付きパラメーター。|パスワード パラメーターは、秘密キーを保護し、有効でないためをバックアップしているないときにのみパスワードを使用|  
 |**Restore-CARoleService C:\ADCSBack15 -Password (Read-Host -Prompt "Password:" -AsSecureString) -DatabaseOnly**|Restore-caroleservice:パラメーター セットを解決できない、指定した名前付きパラメーター。|パスワード パラメーターは、秘密キーを保護し、有効でないために復元しない場合にのみパスワードを使用|  

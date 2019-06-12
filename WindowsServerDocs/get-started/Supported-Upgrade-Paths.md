@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 796ee001e20cff5587c5409f7571d223ff7900a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 299cf420b44e4a15985d00489edf84784316540d
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857943"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810576"
 ---
 # <a name="upgrade-and-conversion-options-for-windows-server-2016"></a>Windows Server 2016 のアップグレード オプションと変換オプション
 
@@ -93,7 +93,7 @@ Windows Server 2016 Standard の評価版は、Windows Server 2016 Standard (製
 
 - 管理者特権のコマンド プロンプトで **slmgr.vbs /dlv**を実行します。評価版の場合は、出力に "EVAL" と表示されます。
 
-- スタート画面で、**[コントロール パネル]** を開きます。 **[システムとセキュリティ]** を開き、**[システム]** を開きます。 **[システム]** ページの Windows のライセンス認証の領域に Windows のライセンス認証の状態が表示されます。 **[Windows ライセンス認証の詳細を表示]** をクリックすると、Windows のライセンス認証の状態に関する詳しい情報が表示されます。
+- スタート画面で、 **[コントロール パネル]** を開きます。 **[システムとセキュリティ]** を開き、 **[システム]** を開きます。 **[システム]** ページの Windows のライセンス認証の領域に Windows のライセンス認証の状態が表示されます。 **[Windows ライセンス認証の詳細を表示]** をクリックすると、Windows のライセンス認証の状態に関する詳しい情報が表示されます。
 
 既に Windows のライセンス認証が済んでいる場合は、デスクトップに評価期間の残りの期間が表示されます。
 
@@ -109,7 +109,8 @@ Windows Server 2016 Standard の評価版は、Windows Server 2016 Standard (製
 
 Windows Server 2016 Standard の評価版の場合は、同じコマンドと該当するプロダクト キーを使用して、1 回の操作で Windows Server 2016 Datacenter の製品版に変換することもできます。
 
-> Dism.exe について詳しくは、「[DISM コマンド ライン オプション](https://go.microsoft.com/fwlink/?LinkId=192466)」をご覧ください。
+> [!TIP] 
+> Dism.exe の詳細については、次を参照してください。 [DISM コマンド ライン オプション](https://go.microsoft.com/fwlink/?LinkId=192466)します。
 
 ## <a name="converting-a-current-retail-edition-to-a-different-current-retail-edition"></a>現在の製品版から異なる現在の製品版への変換
 
@@ -125,7 +126,3 @@ Windows Server 2016 をインストールした後、いつでも自由に製品
 変換を行うには、管理者特権でのコマンド プロンプトから、**slmgr /ipk \<key\>** を実行します。
 
 \<key\> は、適切なボリューム ライセンス、製品、または OEM のプロダクト キーです。
-
-
- 
-

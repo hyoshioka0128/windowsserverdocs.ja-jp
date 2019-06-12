@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 18ce084ec7d1b602dfca913372d6a0e279671a6e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a2eb6c670e704564bed49486b8950dab96da8a80
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867413"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444570"
 ---
 # <a name="migrate-the-active-directory-federation-services-proxy-server-to-windows-server-2012-r2"></a>Windows Server 2012 R2 への Active Directory フェデレーション サービス プロキシ サーバーを移行します。
 
@@ -26,15 +26,15 @@ Windows Server 2012 R2 で、Active Directory フェデレーション サービ
   
 Web アプリケーション プロキシの展開を計画するには、次のトピックの情報を確認できます。  
   
--   [Web アプリケーション プロキシ インフラストラクチャを計画します。](https://technet.microsoft.com/library/dn383648.aspx)  
+- [Web アプリケーション プロキシ インフラストラクチャを計画します。](https://technet.microsoft.com/library/dn383648.aspx)  
   
--   [Web アプリケーション プロキシ サーバーを計画します。](https://technet.microsoft.com/library/dn383647.aspx)  
+- [Web アプリケーション プロキシ サーバーを計画します。](https://technet.microsoft.com/library/dn383647.aspx)  
   
- Web アプリケーション プロキシを展開するには、次のトピックの手順を実行できます。  
+  Web アプリケーション プロキシを展開するには、次のトピックの手順を実行できます。  
   
--   [Web アプリケーション プロキシ インフラストラクチャを構成します。](https://technet.microsoft.com/library/dn383644.aspx)  
+- [Web アプリケーション プロキシ インフラストラクチャを構成します。](https://technet.microsoft.com/library/dn383644.aspx)  
   
--   [インストールして、Web アプリケーション プロキシ サーバーの構成](https://technet.microsoft.com/library/dn383662.aspx)  
+- [インストールして、Web アプリケーション プロキシ サーバーの構成](https://technet.microsoft.com/library/dn383662.aspx)  
   
 ## <a name="next-steps"></a>次の手順
  [Windows Server 2012 R2 への Active Directory フェデレーション サービス役割サービスを移行します。](migrate-ad-fs-service-role-to-windows-server-r2.md)   

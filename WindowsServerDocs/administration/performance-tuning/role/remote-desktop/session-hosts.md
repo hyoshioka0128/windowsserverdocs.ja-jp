@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e45d1abb545ad46e654c811a0347c589bd12adf0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e95671718616fc7c81977434e83a227c858fca17
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863243"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811420"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>パフォーマンス チューニングのリモート デスクトップ セッション ホスト
 
@@ -21,13 +21,13 @@ ms.locfileid: "59863243"
 
 **このトピックの内容:**
 
--   [パフォーマンスのための適切なハードウェアを選択します。](#hw)
+-   [パフォーマンスのための適切なハードウェアを選択します。](#selecting-the-proper-hardware-for-performance)
 
--   [リモート デスクトップ セッション ホスト用のアプリケーションのチューニング](#apps)
+-   [リモート デスクトップ セッション ホスト用のアプリケーションのチューニング](#tuning-applications-for-remote-desktop-session-host)
 
--   [リモート デスクトップ セッション ホストがチューニング パラメーター](#host)
+-   [リモート デスクトップ セッション ホストがチューニング パラメーター](#remote-desktop-session-host-tuning-parameters)
 
-## <a href="" id="hw"></a>パフォーマンスのための適切なハードウェアを選択します。
+## <a name="selecting-the-proper-hardware-for-performance"></a>パフォーマンスのための適切なハードウェアの選択
 
 
 RD セッション ホスト サーバー展開では、ハードウェアの選択は、アプリケーション設定とユーザーがそれらを使用する方法によって制御されます。 ユーザーと経験の数に影響する主な要因は、CPU、メモリ、ディスク、およびグラフィックスです。 このセクションでは、RD セッション ホスト サーバーに固有の追加のガイドラインについて説明し、RD セッション ホスト サーバーのマルチ ユーザー環境に関連するほとんどの場合。
@@ -72,7 +72,7 @@ RD セッション ホスト サーバーのネットワーク使用率には、
 
     ボリュームとネットワーク トラフィックのプロファイルは、各デプロイに固有です。
 
-## <a href="" id="apps"></a>リモート デスクトップ セッション ホスト用のアプリケーションのチューニング
+## <a name="tuning-applications-for-remote-desktop-session-host"></a>リモート デスクトップ セッション ホスト用のアプリケーションのチューニング
 
 
 RD セッション ホスト サーバーの CPU 使用率の大部分は、アプリによって駆動されます。 通常、デスクトップ アプリはユーザーの要求に応答するアプリケーションにかかる時間を最小限に抑えることを目標としての応答性に最適化されます。 ただし、サーバー環境に悪影響を及ぼす他のセッションに影響を回避するために操作が完了するために必要な CPU 使用率の合計量を最小限に抑えることです。
@@ -111,7 +111,7 @@ RD セッション ホスト サーバーで使用するアプリを構成する
 
     可能であれば、他の同様の実行エンジンを同様の手法を適用します。
 
-## <a href="" id="host"></a>リモート デスクトップ セッション ホストがチューニング パラメーター
+## <a name="remote-desktop-session-host-tuning-parameters"></a>リモート デスクトップ セッション ホストがチューニング パラメーター
 
 
 ### <a name="page-file"></a>ページのファイル

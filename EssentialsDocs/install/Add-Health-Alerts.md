@@ -12,12 +12,12 @@ ms.assetid: 270e0aac-dc42-46f3-a20b-a68ffbded06d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cf0c062b92c687f5f7b33b419eafdca2dd3bbbfc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8c3ba4746211690ad52f775b8bdc1ccf9b6c74b7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828513"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433720"
 ---
 # <a name="add-health-alerts"></a>正常性アラートの追加
 
@@ -32,13 +32,13 @@ ms.locfileid: "59828513"
   
 #### <a name="to-install-the-xml-files-on-the-server"></a>XML ファイルをサーバーにインストールするには  
   
-1.  **%ProgramFiles%\Windows Server\Bin\Feature Definitions** フォルダーで、 **MyHealthAddIn**という名前の新しいフォルダーを作成します。 このフォルダーには、任意の名前を付けることができます。 フォルダーの名前は、機能名と同じにすることを推奨します。  
+1. **%ProgramFiles%\Windows Server\Bin\Feature Definitions** フォルダーで、 **MyHealthAddIn**という名前の新しいフォルダーを作成します。 このフォルダーには、任意の名前を付けることができます。 フォルダーの名前は、機能名と同じにすることを推奨します。  
   
-2.  Definition.xml ファイルと Definition.xml.config ファイルを新しいフォルダーにコピーします。  
+2. Definition.xml ファイルと Definition.xml.config ファイルを新しいフォルダーにコピーします。  
   
-3.  条件または操作用にバイナリ ファイルを作成した場合、これらのファイルも **%ProgramFiles%\Windows Server\Bin**にコピーする必要があります。  
+3. 条件または操作用にバイナリ ファイルを作成した場合、これらのファイルも **%ProgramFiles%\Windows Server\Bin**にコピーする必要があります。  
   
- クライアント コンピューターが、XML ファイルを適切な場所に抽出するスケジュールされたタスクを 6 時間ごとに実行します。 クライアント コンピューターとサーバーを強制的に同期させるには、このタスクを手動で実行します。  
+   クライアント コンピューターが、XML ファイルを適切な場所に抽出するスケジュールされたタスクを 6 時間ごとに実行します。 クライアント コンピューターとサーバーを強制的に同期させるには、このタスクを手動で実行します。  
   
 #### <a name="to-install-the-xml-files-on-the-client-computer"></a>XML ファイルをクライアント コンピューターにインストールするには  
   

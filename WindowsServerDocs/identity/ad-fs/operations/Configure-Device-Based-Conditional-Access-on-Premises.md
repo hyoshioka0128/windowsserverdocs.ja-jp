@@ -9,12 +9,12 @@ ms.date: 08/11/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0df290248f049b3f8a823e902cefa860fa074091
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: bcb6c415aae33b9742d7a7080ec169ca947098b9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189853"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445001"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>登録済みデバイスを使用して、構成、オンプレミスの条件付きアクセス
 
@@ -92,11 +92,11 @@ AD FS ファームがまだデバイス認証用に構成されていない場�
 
 ![デバイスの登録](media/Configure-Device-Based-Conditional-Access-on-Premises/device2.png)
   
-2.  AD FS プライマリ サーバーでは Enterprise Admin (EA) 特権を持つ AD DS ユーザーとしてログインし、管理者特権で powershell プロンプトを開くを確認します。  次に、次の PowerShell コマンドを実行します。  
+2. AD FS プライマリ サーバーでは Enterprise Admin (EA) 特権を持つ AD DS ユーザーとしてログインし、管理者特権で powershell プロンプトを開くを確認します。  次に、次の PowerShell コマンドを実行します。  
     
-    `Import-module activedirectory`  
-    `PS C:\> Initialize-ADDeviceRegistration -ServiceAccountName "<your service account>" ` 
-3.  ポップアップ ウィンドウで、[はい] をクリックします。
+   `Import-module activedirectory`  
+   `PS C:\> Initialize-ADDeviceRegistration -ServiceAccountName "<your service account>" ` 
+3. ポップアップ ウィンドウで、[はい] をクリックします。
 
 >注:AD FS サービスが GMSA アカウントを使用するように構成されている場合、アカウント名を「domain \accountname$」の形式で入力します。
 
@@ -111,7 +111,7 @@ AD FS ファームがまだデバイス認証用に構成されていない場�
 
 ![デバイスの登録](media/Configure-Device-Based-Conditional-Access-on-Premises/device4.png)  
 
-4.  これが完了すると、正常に完了したことを示すメッセージが表示されます。
+4. これが完了すると、正常に完了したことを示すメッセージが表示されます。
 
 ![デバイスの登録](media/Configure-Device-Based-Conditional-Access-on-Premises/device5.png) 
 
@@ -131,9 +131,9 @@ AD FS ファームがまだデバイス認証用に構成されていない場�
 
 ![デバイスの登録](media/Configure-Device-Based-Conditional-Access-on-Premises/device7.png) 
 
-3.  次の PowerShell コマンドを実行します。 
+3. 次の PowerShell コマンドを実行します。 
 
-    `PS C:>Initialize-ADSyncDomainJoinedComputerSync -AdConnectorAccount [AD connector account name] -AzureADCredentials $aadAdminCred ` 
+   `PS C:>Initialize-ADSyncDomainJoinedComputerSync -AdConnectorAccount [AD connector account name] -AzureADCredentials $aadAdminCred ` 
 
 ここで、[AD connector account name] は、オンプレミス AD DS ディレクトリを追加するときに、Azure AD Connect で構成したアカウントの名前です。
   
@@ -180,7 +180,7 @@ AD DS オブジェクトおよびコンテナーが Azure AD からのデバイ�
 - CN=&lt;guid&gt;, CN=Device Registration の serviceConnectionpoint 型のオブジェクト
 
 - Configuration,CN=Services,CN=Configuration,DC=&lt;ドメイン&gt;  
- - 新しいオブジェクトで指定された AD コネクタ アカウント名への読み取り/書き込みアクセス権</br></br> 
+  - 新しいオブジェクトで指定された AD コネクタ アカウント名への読み取り/書き込みアクセス権</br></br> 
 
 
 - オブジェクトの CN で型 msDS-DeviceRegistrationServiceContainer Device Registration Services, CN = Device Registration Configuration, CN = Services, CN = Configuration, DC = = (& a) ltdomain >  

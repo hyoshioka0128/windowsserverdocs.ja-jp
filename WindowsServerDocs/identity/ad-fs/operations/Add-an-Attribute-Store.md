@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 103ee707c88f4e88b231a833f739cf75b6503e18
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 8d3027c419e85d1aec4b3b0308926a86bb37620d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190099"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445088"
 ---
 # <a name="add-an-attribute-store"></a>属性ストアを追加する
 
@@ -33,20 +33,20 @@ ms.locfileid: "66190099"
 
 ![属性ストアを追加します。](media/Add-an-Attribute-Store/addstore1.PNG)
   
-3.  **属性ストアを追加** ダイアログ ボックスで、属性ストアに追加するは、次のプロパティを構成します。  
+3. **属性ストアを追加** ダイアログ ボックスで、属性ストアに追加するは、次のプロパティを構成します。  
   
-    -   **表示名**、属性ストアを識別するために使用する名前を入力します。  
+   -   **表示名**、属性ストアを識別するために使用する名前を入力します。  
   
-    -   **属性ストアの種類**、サポートされている属性ストアの種類を**Active Directory**、 **LDAP**、または**SQL**します。  
+   -   **属性ストアの種類**、サポートされている属性ストアの種類を**Active Directory**、 **LDAP**、または**SQL**します。  
   
-    -   **接続文字列**か、ライトウェイト ディレクトリ アクセス プロトコルを選択した場合、 \(LDAP\)ストアまたは構造化照会言語\(SQL\)ストア、文字列を入力します属性ストアへの接続を確立するために使用することです。 Active Directory 属性ストアの場合、接続文字列は必要ありません。そのため、このフィールドは無効になります。  
+   -   **接続文字列**か、ライトウェイト ディレクトリ アクセス プロトコルを選択した場合、 \(LDAP\)ストアまたは構造化照会言語\(SQL\)ストア、文字列を入力します属性ストアへの接続を確立するために使用することです。 Active Directory 属性ストアの場合、接続文字列は必要ありません。そのため、このフィールドは無効になります。  
   
-        > [!NOTE]  
-        > AD FS の既定の設定では、Active Directory 属性ストアが自動的に作成されます。  
+       > [!NOTE]  
+       > AD FS の既定の設定では、Active Directory 属性ストアが自動的に作成されます。  
  
 ![属性ストアを追加します。](media/Add-an-Attribute-Store/addstore2.PNG) 
 
-4.  **[OK]** をクリックします。  
+4. **[OK]** をクリックします。  
   
 ## <a name="additional-references"></a>その他の参照情報  
 

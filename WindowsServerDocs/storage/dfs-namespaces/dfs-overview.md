@@ -6,14 +6,14 @@ ms.manager: daveba
 ms.technology: storage
 ms.topic: article
 author: jasongerend
-ms.date: 05/09/2019
+ms.date: 06/07/2019
 description: このトピックでは、DFS 名前空間について説明します。DFS 名前空間は、複数のサーバー上に配置されている共有フォルダーを、論理的に構造化された 1 つ以上の名前空間にグループ化できる Windows Server の役割サービスです。
-ms.openlocfilehash: 33b5a36c9f13179286a95735621272f79983231c
-ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
+ms.openlocfilehash: b16d8145d766cbb9b12feaaa2e5e9443813a69f2
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613190"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812577"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 名前空間の概要
 
@@ -55,11 +55,11 @@ DFS の管理の実行または DFS 名前空間の使用には、その他の�
 
 次の表では、名前空間をホストするサーバーを選択する場合に考慮すべきその他の事項について説明します。
 
-|スタンドアロンの名前空間をホストするサーバー|ドメインベースの名前空間をホストするサーバー|
-|---|---|
-|名前空間をホストするための NTFS ボリュームを含める必要があります。|名前空間をホストするための NTFS ボリュームを含める必要があります。|
-|メンバー サーバーまたはドメイン コントローラーを指定できます。|名前空間が構成されているドメインのメンバー サーバーまたはドメイン コントローラーである必要があります。 この要件は、特定のドメインベースの名前空間をホストしているすべての名前空間サーバーに適用されます。|
-|フェールオーバー クラスターでホストして、名前空間の可用性を高めることができます。|名前空間には、フェールオーバー クラスター内のクラスター化されたリソースを指定することはできません。 ただし、名前空間をそのサーバーのローカルのリソースとしてのみ構成する場合は、フェールオーバー クラスター内のノードとしても機能するサーバー上に名前空間を置くことができます。|
+| スタンドアロンの名前空間をホストするサーバー | ドメインベースの名前空間をホストするサーバー |
+| ---                                   |        ---                                |
+| 名前空間をホストするための NTFS ボリュームを含める必要があります。|名前空間をホストするための NTFS ボリュームを含める必要があります。 |
+| メンバー サーバーまたはドメイン コントローラーを指定できます。|名前空間が構成されているドメインのメンバー サーバーまたはドメイン コントローラーである必要があります。 この要件は、特定のドメインベースの名前空間をホストしているすべての名前空間サーバーに適用されます。 |
+| フェールオーバー クラスターでホストして、名前空間の可用性を高めることができます。|名前空間には、フェールオーバー クラスター内のクラスター化されたリソースを指定することはできません。 ただし、名前空間をそのサーバーのローカルのリソースとしてのみ構成する場合は、フェールオーバー クラスター内のノードとしても機能するサーバー上に名前空間を置くことができます。 |
 
 ## <a name="installing-dfs-namespaces"></a>DFS 名前空間をインストールする
 
@@ -89,10 +89,10 @@ DFS 名前空間および DFS レプリケーションは、ファイル サー�
 Install-WindowsFeature <name>
 ```
 
-|役割サービスまたは機能|名前|
-|---|---|
-|DFS 名前空間|`FS-DFS-Namespace`|
-|DFS 管理ツール|`RSAT-DFS-Mgmt-Con`|
+| 役割サービスまたは機能 | 名前 |
+| ----------------------- | ---- |
+| DFS 名前空間          | `FS-DFS-Namespace` |
+| DFS 管理ツール    | `RSAT-DFS-Mgmt-Con` |
 
 たとえば、リモート サーバー管理ツール機能の分散ファイル システム ツール部分をインストールするには、次のように入力します。
 
@@ -120,12 +120,12 @@ Azure 仮想マシンを使い始める方法については、[Azure 仮想マ�
 
 その他の関連情報については、次の情報を参照してください。
 
-|コンテンツの種類|参考資料|
-|------------------|----------------|
-|**製品評価**|[DFS 名前空間と Windows Server での DFS レプリケーションの新します。](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx)|
-|**展開**|[DFS Namespace スケーラビリティに関する考慮事項](http://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx)|
-|**運用**|[DFS 名前空間:よく寄せられる質問](https://technet.microsoft.com/library/ee404780.aspx)|
-|**コミュニティ リソース**|[ファイル サービスとストレージに関する TechNet フォーラム](https://social.technet.microsoft.com/forums/winserverfiles/threads/)|
-|**プロトコル**|[ファイル サービスの Windows server プロトコル](https://msdn.microsoft.com/en-us/library/cc239318.aspx)(非推奨)|
-|**関連テクノロジ**| [フェールオーバー クラスタリング](../../failover-clustering/failover-clustering-overview.md)|
-|**サポート**|[Windows IT プロフェッショナル向けのサポート](https://www.microsoft.com/itpro/windows/support)|
+| コンテンツの種類        | 参考資料 |
+| ------------------  | ----------------|
+| **製品評価** | [DFS 名前空間と Windows Server での DFS レプリケーションの新します。](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
+| **展開**    | [DFS Namespace スケーラビリティに関する考慮事項](http://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
+| **運用**    | [DFS 名前空間:よく寄せられる質問](https://technet.microsoft.com/library/ee404780.aspx) |
+| **コミュニティ リソース** | [ファイル サービスとストレージに関する TechNet フォーラム](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
+| **プロトコル**        | [ファイル サービスの Windows server プロトコル](https://msdn.microsoft.com/en-us/library/cc239318.aspx)(非推奨) |
+| **関連テクノロジ** | [フェールオーバー クラスタリング](../../failover-clustering/failover-clustering-overview.md)|
+| **サポート** | [Windows IT プロフェッショナル向けのサポート](https://www.microsoft.com/itpro/windows/support)|

@@ -13,12 +13,12 @@ ms.author: jgerend
 manager: jasgro
 ms.date: 05/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 820dfed8a0a58d3ccc64023325c373b761461ba8
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 597da91aa40d9af4526b5358a88128b52d040645
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "65976518"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501437"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-windows-server-2019"></a>削除された機能または開始 Windows サーバー 2019 交換の計画
 
@@ -54,5 +54,5 @@ Windows Server の各リリースでは新機能が追加されています。�
 | 信頼されたプラットフォーム モジュール (TPM) 管理コンソール|TPM 管理コンソールで以前に使用できる情報が追加されました、 [**デバイスのセキュリティ**](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-security-center/wdsc-device-security)ページで、 [Windows Defender セキュリティ センター](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-security-center/windows-defender-security-center)します。 |
 | ホスト ガーディアン サービスの Active Directory の構成証明モード|ホスト ガーディアン サービスの Active Directory の構成証明モードを不要になった開発中、代わりに、新しい構成証明モードが追加されました -[ホスト キーの構成証明](../security/guarded-fabric-shielded-vm/guarded-fabric-create-host-key.md)、はるかに簡単で Active Directory ベース均等の互換性構成証明書。  この新しいモードでは、セットアップ エクスペリエンスを簡単に管理 Active Directory の構成証明書よりも少ないインフラストラクチャの依存関係と同等の機能を提供します。 既存のすべてのシステムは新しいモードと互換性を保つために、ホスト キーの構成証明は必要に応じて、どのような Active Directory の構成証明を超えた追加のハードウェア要件がありません。 参照してください[保護されたホストの展開](../security/guarded-fabric-shielded-vm/guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)詳細については、構成証明書オプション。 |
 | OneSync サービス|OneSync サービスは、メール、カレンダー、およびユーザーのアプリのデータを同期します。 同期エンジンが同じ同期を提供する Outlook アプリに追加されました。 |
-| リモートの差分圧縮 API サポート|リモートの差分圧縮 API サポートは、圧縮テクノロジは、ネットワーク経由で送信されるデータ量を最小化を使用してリモート ソースとデータの同期を有効になります。 このサポートは、任意の Microsoft 製品で現在使用されていません。 |
+| リモートの差分圧縮 API サポート|リモートの差分圧縮 API サポートは、圧縮テクノロジは、ネットワーク経由で送信されるデータ量を最小化を使用してリモート ソースとデータの同期を有効になります。 |
 | WFP ライトウェイト フィルター スイッチ拡張機能|WFP ライトウェイト フィルターのスイッチ拡張機能を構築する開発者は[単純なネットワーク パケットが HYPER-V 仮想スイッチ拡張機能をフィルタ リング](https://docs.microsoft.com/en-us/windows-hardware/drivers/network/using-virtual-switch-filtering)します。 完全なフィルター拡張機能を作成して、同じ機能を実現できます。 そのため、私たちを削除するこの拡張機能、将来。 |

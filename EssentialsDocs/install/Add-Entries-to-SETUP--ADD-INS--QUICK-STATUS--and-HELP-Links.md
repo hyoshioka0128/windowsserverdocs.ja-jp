@@ -12,132 +12,132 @@ ms.assetid: c0a8f10d-fd85-4c8d-b9bb-176cb1db1f46
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6d3303f2c6d84932ad9d5dee8a547cd478447732
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f0a66d0d36a3012369a9bc26c513dad069235ad8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864393"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433794"
 ---
 # <a name="add-entries-to-setup-add-ins-quick-status-and-help-links"></a>セットアップ リンク、アドイン リンク、簡単な状態リンク、ヘルプ リンクへのエントリの追加
 
 >適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-**[セットアップ]**、**[アドイン]**、**[簡単な状態]** タスク一覧にタスクを追加でき、ダッシュボードのホーム ページの [コミュニティ リンク] セクションにリンクを追加できます。 タスクやリンクをこれらの一覧とセクションに追加するには、OEMHomePageContent.home ファイルという名前の XML ファイルまたは OEMHomePageContent.dll という名前の埋め込みリソース ファイルを %ProgramFiles%\Windows Server\Bin\Addins\Home に配置します。 埋め込みリソース ファイルを使用して、追加したタスクとリンクのテキストをローカライズできます。 .home ファイルには、タスクとリンクの XML 定義が含まれます。  
+**[セットアップ]** 、 **[アドイン]** 、 **[簡単な状態]** タスク一覧にタスクを追加でき、ダッシュボードのホーム ページの [コミュニティ リンク] セクションにリンクを追加できます。 タスクやリンクをこれらの一覧とセクションに追加するには、OEMHomePageContent.home ファイルという名前の XML ファイルまたは OEMHomePageContent.dll という名前の埋め込みリソース ファイルを %ProgramFiles%\Windows Server\Bin\Addins\Home に配置します。 埋め込みリソース ファイルを使用して、追加したタスクとリンクのテキストをローカライズできます。 .home ファイルには、タスクとリンクの XML 定義が含まれます。  
   
 ## <a name="adding-tasks-to-the-setup-add-ins-quick-status-task-lists-and-adding-links-to-help-task"></a>セットアップ、アドイン、簡単な状態タスク一覧にタスクを追加し、ヘルプ タスクにリンクを追加する  
- **[セットアップ]**、**[アドイン]**、**[簡単な状態]** タスク一覧にタスクを追加し、**[ヘルプ]** タスクにリンクを追加するには、XML を使用してタスクとリンクを定義し、任意で埋め込みリソース ファイルを作成して、ファイルをサーバーにインストールします。 XML ファイルをリソース ファイルなしでサーバーにインストールする場合、OEMHomePageContent.home という名前にする必要があります。 アセンブリが XML ファイルとリソース ファイルのインストールに使用されている場合、OEMHomePageContent.dll という名前にし、Authenticode 署名する必要があります。  
+ **[セットアップ]** 、 **[アドイン]** 、 **[簡単な状態]** タスク一覧にタスクを追加し、 **[ヘルプ]** タスクにリンクを追加するには、XML を使用してタスクとリンクを定義し、任意で埋め込みリソース ファイルを作成して、ファイルをサーバーにインストールします。 XML ファイルをリソース ファイルなしでサーバーにインストールする場合、OEMHomePageContent.home という名前にする必要があります。 アセンブリが XML ファイルとリソース ファイルのインストールに使用されている場合、OEMHomePageContent.dll という名前にし、Authenticode 署名する必要があります。  
   
 ### <a name="define-the-tasks-and-links"></a>タスクとリンクの定義  
  メモ帳などのテキスト エディターを使用して .home ファイルを作成できます。埋め込みリソース ファイルも作成している場合は、Visual Studio 2010 以上を使用してファイルを定義できます。 次の手順では、Visual Studio 2010 以降を使用してファイルを作成する方法を示します。  
   
 ##### <a name="to-define-the-tasks-and-links"></a>タスクとリンクを定義するには  
   
-1.  スタート] メニューのプログラムを右クリックし、**[管理者として実行]** を選択して、Visual Studio 2010 以降を管理者として開きます。  
+1. スタート メニューのプログラムを右クリックし、**管理者として実行** を選択して、Visual Studio 2010 以降を管理者として開きます。  
   
-2.  をクリックして**ファイル**、 をクリックして**新規**、クリックして**プロジェクト**です。  
+2. をクリックして**ファイル**、 をクリックして**新規**、クリックして**プロジェクト**です。  
   
-3.  **[テンプレート]** ウィンドウで、**[クラス ライブラリ]** をクリックし、**[名前]** ボックスに「 **OEMHomePageContent** 」と入力して、**[OK]** をクリックします。  
+3. **[テンプレート]** ウィンドウで、 **[クラス ライブラリ]** をクリックし、 **[名前]** ボックスに「 **OEMHomePageContent** 」と入力して、 **[OK]** をクリックします。  
   
-4.  Class1.cs ファイルを削除します。  
+4. Class1.cs ファイルを削除します。  
   
-5.  新しいプロジェクトを右クリックし、**[追加]** をクリックし、**[新しい項目]** をクリックします。  
+5. 新しいプロジェクトを右クリックし、 **[追加]** をクリックし、 **[新しい項目]** をクリックします。  
   
-6.  **[テンプレート]** ウィンドウで **[XML ファイル]** をクリックし、**[名前]** ボックスに「 **OEMHomePageContent.home** 」と入力して、**[追加]** をクリックします。  
+6. **[テンプレート]** ウィンドウで **[XML ファイル]** をクリックし、 **[名前]** ボックスに「 **OEMHomePageContent.home** 」と入力して、 **[追加]** をクリックします。  
   
-    > [!NOTE]
-    >  XML ファイルをリソース ファイルなしでインストールする場合、OEMHomePageContent.home という名前にする必要があります。 アセンブリに含める場合は、拡張子が .home である限り、任意の名前を指定できます。  
+   > [!NOTE]
+   >  XML ファイルをリソース ファイルなしでインストールする場合、OEMHomePageContent.home という名前にする必要があります。 アセンブリに含める場合は、拡張子が .home である限り、任意の名前を指定できます。  
   
-7.  次の XML コードを OEMHomePageContent.home ファイルに追加します。  
+7. 次の XML コードを OEMHomePageContent.home ファイルに追加します。  
   
-    ```  
+   ```  
   
-    <Tasks version=?2.0? xmlns=?https://schemas.microsoft.com/WindowsServerSolutions/2010/01/Dashboard>  
-       <SetupMyServerTasks>  
-          <Task name="MyTask"  
-             description="MyTaskDescription"  
-             id="GUID">  
-                  <Action   
-                  name=?MyAction1Name?   
-                  image=?IconForAction1?  
-                  type=?TaskType?  
-                  exelocation=?ActionExeLocation? />  
-                  <Action   
-                  name=?MyAction2Name?   
-                  image=?IconForAction2?  
-                  type=?TaskType?  
-                  exelocation=?ActionExeLocation? />  
-                   ¦  
-           </Task>  
-                   ¦  
-        </SetupMyServerTasks>  
-    <MailServiceTasks>  
-         <!-- Same schema as in œSetupMyServerTasks? but the tasks are shown in œConnect to Email Service? category. -->  
-    </MailServiceTasks>  
-    <LineOfBusinessTasks>  
-         <!-- Same schema as in œSetupMyServerTasks? but the tasks are shown in œAdd-ins? category. -->  
+   <Tasks version=?2.0? xmlns=?https://schemas.microsoft.com/WindowsServerSolutions/2010/01/Dashboard>  
+      <SetupMyServerTasks>  
+         <Task name="MyTask"  
+            description="MyTaskDescription"  
+            id="GUID">  
+                 <Action   
+                 name=?MyAction1Name?   
+                 image=?IconForAction1?  
+                 type=?TaskType?  
+                 exelocation=?ActionExeLocation? />  
+                 <Action   
+                 name=?MyAction2Name?   
+                 image=?IconForAction2?  
+                 type=?TaskType?  
+                 exelocation=?ActionExeLocation? />  
+                  ¦  
+          </Task>  
+                  ¦  
+       </SetupMyServerTasks>  
+   <MailServiceTasks>  
+        <!-- Same schema as in œSetupMyServerTasks? but the tasks are shown in œConnect to Email Service? category. -->  
+   </MailServiceTasks>  
+   <LineOfBusinessTasks>  
+        <!-- Same schema as in œSetupMyServerTasks? but the tasks are shown in œAdd-ins? category. -->  
   
-    <GetQuickStatusTasks>  
-          <Task name="MyQuickStatusTask1"  
-             description="MyQuickStatusTask1Desc   "  
-             id="GUID"  
-             assembly="AssemblyName of quick status query implementation"  
-             class="ClassName of quick status query implementation"           
-             replaceid="GUID"/>  
-               <!--  Same schema as Actions in œSetupMyServerTasks? -->   
-             </Task>  
-    </GetQuickStatusTasks>  
-       <Links>  
-          <Link  
-             ID=?GUID?  
-             Title="Displayed text of the link"  
-             Description="A very short description"  
-             ShellExecPath="Path to the application or URL"/>  
-       </Links>  
-    </Tasks>  
-    ```  
+   <GetQuickStatusTasks>  
+         <Task name="MyQuickStatusTask1"  
+            description="MyQuickStatusTask1Desc   "  
+            id="GUID"  
+            assembly="AssemblyName of quick status query implementation"  
+            class="ClassName of quick status query implementation"           
+            replaceid="GUID"/>  
+              <!--  Same schema as Actions in œSetupMyServerTasks? -->   
+            </Task>  
+   </GetQuickStatusTasks>  
+      <Links>  
+         <Link  
+            ID=?GUID?  
+            Title="Displayed text of the link"  
+            Description="A very short description"  
+            ShellExecPath="Path to the application or URL"/>  
+      </Links>  
+   </Tasks>  
+   ```  
   
-     各項目の意味は次のとおりです。  
+    各項目の意味は次のとおりです。  
   
-    |属性|説明|  
-    |---------------|-----------------|  
-    |Name (Task)|一覧のタスクに表示される名前です。 埋め込みリソース ファイルを作成する場合、この属性の値は文字列リソースです。|  
-    |description (Task)|タスクの説明です。 埋め込みリソース ファイルを作成する場合、この属性の値は文字列リソースです。|  
-    |id (Task)|タスクの識別子です。 この識別子は、GUID でなければなりません。 **exe** タスクには新しい GUID を作成しますが、 **グローバル** タスクには、サブタブの作業ウィンドウに対してタスクを定義したときに作成した GUID を使用します。GUID の作成の詳細については、「 [Guid の作成 (guidgen.exe)](https://go.microsoft.com/fwlink/?LinkId=116098)」を参照してください。|  
-    |image|このフィールドは無視されます。|  
-    |Name (Action)|タスクの名前を表示します。|  
-    |Type (Action)|タスクの種類を説明します。 タスクは、 **グローバル** タスク、 **exe**、または URL タスクのいずれかです。 **グローバル** タスクは、サブタブの作業ウィンドウに対してタスクを定義したときに作成したグローバル タスクと同じグローバル タスクです。サブタブの作業ウィンドウとホーム ページの作業の開始タスクまたは共通タスクのリストで使用できるグローバル タスクの作成の詳細については、サポート クラスの œCreating を参照してください。内に œHow:サブ タブを作成しますか。[Windows Server Solutions SDK](https://go.microsoft.com/fwlink/?LinkID=248648)します。 **exe** タスクは、作業の開始タスク一覧または共通タスク一覧からアプリケーションを実行するために使用できます。|  
-    |exelocation|タスクに関連付けられているアプリケーションへのパスです。 この属性は、 **exe** タスクに対してのみ使用されます。|  
-    |replaceid|このタスクに置き換えられるタスクの識別子です。|  
-    |アセンブリ (assembly)|簡単な状態のクエリを実装するためのクラスを提供するアセンブリの AssemblyName。 アセンブリは、Program files \ windows server \bin に配置する必要がある\\します。|  
-    |クラス|クラスの名前で簡単な状態のクエリを実装します。 このクラスは、**ITaskStatusQuery** インターフェイスを実装する必要があります。|  
-    |Title (link)|リンクに表示されるテキストです。 埋め込みリソース ファイルを作成する場合、この属性の値は文字列リソースです。|  
-    |Description (link)|リンク先の説明です。 埋め込みリソース ファイルを作成する場合、この属性の値は文字列リソースです。|  
-    |ShellExecPath|アプリケーションへのパスまたは URL です。<br /><br /> **注:** 環境変数が ShellExecPath 属性でサポートされます。|  
+   |属性|説明|  
+   |---------------|-----------------|  
+   |Name (Task)|一覧のタスクに表示される名前です。 埋め込みリソース ファイルを作成する場合、この属性の値は文字列リソースです。|  
+   |description (Task)|タスクの説明です。 埋め込みリソース ファイルを作成する場合、この属性の値は文字列リソースです。|  
+   |id (Task)|タスクの識別子です。 この識別子は、GUID でなければなりません。 **exe** タスクには新しい GUID を作成しますが、 **グローバル** タスクには、サブタブの作業ウィンドウに対してタスクを定義したときに作成した GUID を使用します。GUID の作成の詳細については、「 [Guid の作成 (guidgen.exe)](https://go.microsoft.com/fwlink/?LinkId=116098)」を参照してください。|  
+   |image|このフィールドは無視されます。|  
+   |Name (Action)|タスクの名前を表示します。|  
+   |Type (Action)|タスクの種類を説明します。 タスクは、 **グローバル** タスク、 **exe**、または URL タスクのいずれかです。 **グローバル** タスクは、サブタブの作業ウィンドウに対してタスクを定義したときに作成したグローバル タスクと同じグローバル タスクです。サブタブの作業ウィンドウとホーム ページの作業の開始タスクまたは共通タスクのリストで使用できるグローバル タスクの作成の詳細については、サポート クラスの œCreating を参照してください。内に œHow:サブ タブを作成しますか。[Windows Server Solutions SDK](https://go.microsoft.com/fwlink/?LinkID=248648)します。 **exe** タスクは、作業の開始タスク一覧または共通タスク一覧からアプリケーションを実行するために使用できます。|  
+   |exelocation|タスクに関連付けられているアプリケーションへのパスです。 この属性は、 **exe** タスクに対してのみ使用されます。|  
+   |replaceid|このタスクに置き換えられるタスクの識別子です。|  
+   |アセンブリ (assembly)|簡単な状態のクエリを実装するためのクラスを提供するアセンブリの AssemblyName。 アセンブリは、Program files \ windows server \bin に配置する必要がある\\します。|  
+   |クラス|クラスの名前で簡単な状態のクエリを実装します。 このクラスは、**ITaskStatusQuery** インターフェイスを実装する必要があります。|  
+   |Title (link)|リンクに表示されるテキストです。 埋め込みリソース ファイルを作成する場合、この属性の値は文字列リソースです。|  
+   |Description (link)|リンク先の説明です。 埋め込みリソース ファイルを作成する場合、この属性の値は文字列リソースです。|  
+   |ShellExecPath|アプリケーションへのパスまたは URL です。<br /><br /> **注:** 環境変数が ShellExecPath 属性でサポートされます。|  
   
-     次のコード例は、アプリケーションへのリンクの定義方法を示しています。  
+    次のコード例は、アプリケーションへのリンクの定義方法を示しています。  
   
-    ```  
-    <Links>  
-       <Link Title="Calc" Description="Launches Calc" ShellExecPath="%windir%\system32\calc.exe" />  
-    </Links>  
-    ```  
+   ```  
+   <Links>  
+      <Link Title="Calc" Description="Launches Calc" ShellExecPath="%windir%\system32\calc.exe" />  
+   </Links>  
+   ```  
   
-     次のコード例は、Web ページへのリンクの定義方法を示しています。  
+    次のコード例は、Web ページへのリンクの定義方法を示しています。  
   
-    ```  
-    <Links>  
-       <Link Title="Browser" Description="Open browser" ShellExecPath="http://www.adventureworks.com/" />  
-    </Links>  
-    ```  
+   ```  
+   <Links>  
+      <Link Title="Browser" Description="Open browser" ShellExecPath="http://www.adventureworks.com/" />  
+   </Links>  
+   ```  
   
-8.  タスクまたはリンクを表すように属性値を変更します。  
+8. タスクまたはリンクを表すように属性値を変更します。  
   
-9. **ソリューション エクスプローラー**で、**[OEMHomePageContent.home]** を右クリックし、**[プロパティ]** をクリックします。  **[プロパティ]** ウィンドウで、**[ビルド アクション]** の下にある **[埋め込まれたリソース]** を選択します。  
+9. **ソリューション エクスプローラー**で、 **[OEMHomePageContent.home]** を右クリックし、 **[プロパティ]** をクリックします。  **[プロパティ]** ウィンドウで、 **[ビルド アクション]** の下にある **[埋め込まれたリソース]** を選択します。  
   
 10. OEMHomePageContent.home ファイルを保存します。  
   
- 簡単な状態のクエリを実装する方法については、 [Windows Server Solutions SDK](https://go.microsoft.com/fwlink/?LinkID=248648)のドキュメントとサンプルを参照してください。  
+    簡単な状態のクエリを実装する方法については、 [Windows Server Solutions SDK](https://go.microsoft.com/fwlink/?LinkID=248648)のドキュメントとサンプルを参照してください。  
   
 #### <a name="change-the-status-of-a-setupadd-ins-task"></a>セットアップ/アドイン タスクのステータスの変更  
  [セットアップ] と [アドイン] の一覧に表示されるタスクのステータスを、完了 (アドイン用に構成されています) と完了していません (アドイン用に構成されていません) で切り替えることができます。  
@@ -167,9 +167,9 @@ ms.locfileid: "59864393"
   
 ###### <a name="to-create-the-resource-file"></a>リソース ファイルを作成するには  
   
-1.  タスク用に作成したプロジェクトを右クリックし、**[追加]** をクリックし、**[新しい項目]** をクリックします。  
+1.  タスク用に作成したプロジェクトを右クリックし、 **[追加]** をクリックし、 **[新しい項目]** をクリックします。  
   
-2.  **[テンプレート]** ウィンドウで、**[リソース ファイル]** をクリックし、**[名前]** ボックスに「 **OEMHomePageContent.home.resx** 」と入力して、**[追加]** をクリックします。  
+2.  **[テンプレート]** ウィンドウで、 **[リソース ファイル]** をクリックし、 **[名前]** ボックスに「 **OEMHomePageContent.home.resx** 」と入力して、 **[追加]** をクリックします。  
   
     > [!NOTE]
     >  リソース ファイルには、拡張子が .home.resx である限り、任意の名前を指定できます。  

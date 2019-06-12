@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 938adb3d-71ab-488b-b2f2-57b29df210d7
 author: evaseydl
 manager: scottman
-ms.openlocfilehash: d1b8ca872af2fd99fc3ea4727271ad9d90c1dc21
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 413f958201597d8f857bc0becd9ae0ab43499b79
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881373"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805105"
 ---
 # <a name="additional-remote-desktop-resources"></a>その他のリモート デスクトップ リソース
 

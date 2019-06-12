@@ -9,24 +9,21 @@ ms.localizationpriority: medium
 ms.date: 12/20/2018
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7cb60bdc6d6f3ff074f04827aa95c9e8e8abf35b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 533f0273f6802be209ae5ad79b57f46dd6775149
+ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859623"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749469"
 ---
 # <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>Windows Server および Windows 10 の always On VPN 展開
 
->適用先:Windows Server 2016、Windows Server 2012 R2、Windows 10 の Windows Server (半期チャネル)
+>適用対象:Windows Server 2016、Windows Server 2012 R2、Windows 10 の Windows Server (半期チャネル)
 
-&#171;  [**先の：** リモート アクセス](../../../Remote-Access.md)<br>
-&#187;[ **[次へ]。** Always On VPN 機能と機能について説明します](../../vpn-map-da.md)
+- [**先の：** リモート アクセス](../../../Remote-Access.md)<br>
+- [**次に：** Always On VPN 機能と機能について説明します](../../vpn-map-da.md)
 
-
-Always On VPN リモート アクセスをサポートするドメインに参加している 1 つのまとまりのあるソリューション、非ドメインに参加している (ワークグループ)、または Azure AD に参加してデバイスも個人所有のデバイスを提供します。  Always On VPN、接続の種類がユーザーまたはデバイスのみにする必要はありませんが、両方の組み合わせを指定できます。 など、リモート デバイスの管理用のデバイス認証を有効にし、会社の内部サイトとサービスへの接続をユーザーの認証を有効に可能性があります。
-
-
+Always On VPN リモート アクセスをサポートするドメインに参加している 1 つのまとまりのあるソリューション、非ドメインに参加している (ワークグループ)、または Azure AD に参加してデバイスも個人所有のデバイスを提供します。 Always On VPN では、接続の種類がユーザーまたはデバイス専用である必要はなく、両方の組み合わせにすることができます。 たとえば、リモート デバイス管理用のデバイス認証を有効にし、会社の内部サイトとサービスへの接続に対するユーザー認証を有効にすることができます。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -43,39 +40,32 @@ Always On VPN リモート アクセスをサポートするドメインに参�
 - 使用されているテクノロジのそれぞれの設計と展開のガイドを確認します。 これらのガイドでは、展開シナリオが、サービスと、組織のネットワークに必要な構成を提供するかどうかを判断できます。 詳細については、次を参照してください。 [VPN 技術概要で常に](../always-on-vpn-technology-overview.md)します。
 - CSP は、ベンダー固有ではないため、Always On VPN 構成をデプロイするため、任意の管理プラットフォームです。
 
-
 >[!IMPORTANT]
 >この展開では、Active Directory Domain Services、Active Directory 証明書サービス、およびネットワーク ポリシー サーバーを実行しているコンピューターなど、インフラストラクチャ サーバーが Windows Server 2016 を実行していることを要件が違います。 インフラストラクチャ サーバーとリモート アクセスを実行しているサーバーの以前のバージョンの Windows Server、Windows Server 2012 R2 などを使用することができます。
 >
->仮想マシンにリモート アクセスの展開をしないで\(VM\) Microsoft Azure でします。 Microsoft Azure でのリモート アクセスの使用はサポートされていません、リモート アクセス VPN と DirectAccess の両方を含むです。 詳細については、次を参照してください。 [Microsoft Azure 仮想マシンのマイクロソフト サーバー ソフトウェア サポート](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)します。
+>Microsoft Azure で仮想マシン (VM) 上のリモート アクセスの展開しようとしないでください。 Microsoft Azure でのリモート アクセスの使用はサポートされていません、リモート アクセス VPN と DirectAccess の両方を含むです。 詳細については、次を参照してください。 [Microsoft Azure 仮想マシンのマイクロソフト サーバー ソフトウェア サポート](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)します。
 
+## <a name="about-this-deployment"></a>この展開について
 
-## <a name="bkmk_about"></a>この展開について
-
-指示のポイントの 1 つのテナント RAS ゲートウェイの VPN とリモート アクセスの展開手順\-に\-サイトの Windows を実行しているリモート クライアント コンピューターについて以下に説明したシナリオのいずれかを使用して、VPN 接続10。 既存のインフラストラクチャのデプロイの一部を変更する手順についても表示されます。 またこの展開では、全体に VPN 接続のプロセス、構成するサーバーをそれを ProfileXML VPNv2 CSP ノード、および Always On VPN を展開するには、その他のテクノロジの詳細について役立つリンクがあります。
+指示には、シングル テナントとして RAS ゲートウェイの VPN、ポイント対サイト VPN 接続用の Windows 10 を実行しているリモート クライアント コンピューターに、以下に説明するシナリオのいずれかを使用してリモート アクセスを配置する方法を説明します。 既存のインフラストラクチャのデプロイの一部を変更する手順についても表示されます。 またこの展開では、全体に VPN 接続のプロセス、構成するサーバーをそれを ProfileXML VPNv2 CSP ノード、および Always On VPN を展開するには、その他のテクノロジの詳細について役立つリンクがあります。
 
 **Always On VPN 展開シナリオ:**
 
 1. 常を展開 VPN のみです。
 2. Azure AD を使用して VPN 接続用の条件付きアクセスには、Always On VPN をデプロイします。
 
-
 詳細と、シナリオのワークフローは、次を参照してください。[デプロイ Always On VPN](always-on-vpn-deploy-deployment.md)します。
 
-
-## <a name="bkmk_not"></a>この展開で何が指定されていません。
+## <a name="what-isnt-provided-in-this-deployment"></a>このデプロイにどのような指定されていません
 
 このデプロイは、手順を提供しません。
 
-- Active Directory Domain Services \(AD DS\)します。
-- Active Directory 証明書サービス\(AD CS\)および公開キー基盤\(PKI\)します。
-- 動的ホスト構成プロトコル\(DHCP\)します。 
+- Active Directory Domain Services (AD DS)。
+- Active Directory 証明書サービス (AD CS) と公開キー基盤 (PKI)。
+- 動的ホスト構成プロトコル (DHCP)。
 - イーサネット ケーブルの接続、ファイアウォール、スイッチ、およびハブなどのハードウェアをネットワークします。
 - Always On VPN 接続経由でリモート ユーザーがアクセスできるアプリケーションおよびファイル サーバーなどの追加のネットワーク リソース。
 - インターネット接続または Azure AD を使用してインターネット接続の条件付きアクセス。 詳細については、次を参照してください。 [Azure Active Directory の条件付きアクセス](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)します。
-
-
-
 
 ## <a name="next-steps"></a>次のステップ
 
@@ -88,6 +78,3 @@ Always On VPN リモート アクセスをサポートするドメインに参�
 - [Always On VPN テクノロジについて詳しく説明します](../always-on-vpn-technology-overview.md)
 
 - [Always On VPN 展開の計画を開始します。](always-on-vpn-deploy-deployment.md)
-
-
----

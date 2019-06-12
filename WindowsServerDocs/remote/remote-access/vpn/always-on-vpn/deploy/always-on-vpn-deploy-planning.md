@@ -9,29 +9,27 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.date: 11/05/2018
-ms.openlocfilehash: d629f04abda0ce22deb75e487f5b485f50a60a53
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: db309f451eb9187463f71dfd85a82d214c464e2b
+ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881913"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749455"
 ---
-# <a name="step-1-plan-the-always-on-vpn-deployment"></a>手順 1. Always On VPN 展開を計画します。
+# <a name="step-1-plan-the-always-on-vpn-deployment"></a>手順 1. Always On VPN 展開を計画する
 
->適用先:Windows Server 2016、Windows Server 2012 R2、Windows 10 の Windows Server (半期チャネル)
+>適用対象:Windows Server 2016、Windows Server 2012 R2、Windows 10 の Windows Server (半期チャネル)
 
+- [**先の：** Always On VPN を展開するためのワークフローについて説明します](always-on-vpn-deploy-deployment.md)
+- [**次に：** 手順 2. サーバー インフラストラクチャを構成します。](vpn-deploy-server-infrastructure.md)
 
-&#171;  [**先の：** Always On VPN を展開するためのワークフローについて説明します](always-on-vpn-deploy-deployment.md)<br>
-&#187;  [**次に：** 手順 2. サーバー インフラストラクチャを構成します。](vpn-deploy-server-infrastructure.md)
-
-この手順では、計画し、Always On VPN 展開の準備を開始します。 VPN サーバーとして使用してを予定しているコンピューターのリモート アクセス サーバーの役割をインストールする前に、次のタスクを実行します。 適切な計画の後で、Always On VPN を展開し、必要に応じて Azure AD を使用して VPN 接続の条件付きアクセスを構成します。 
+この手順では、計画し、Always On VPN 展開の準備を開始します。 VPN サーバーとして使用してを予定しているコンピューターのリモート アクセス サーバーの役割をインストールする前に、次のタスクを実行します。 適切な計画の後で、Always On VPN を展開し、必要に応じて Azure AD を使用して VPN 接続の条件付きアクセスを構成します。
 
 [!INCLUDE [always-on-vpn-standard-config-considerations-include](../../../includes/always-on-vpn-standard-config-considerations-include.md)]
 
-
 ## <a name="prepare-the-remote-access-server"></a>リモート アクセス サーバーを準備します。
 
-VPN サーバーとして使用するコンピューターに、次を行う必要があります。 
+VPN サーバーとして使用するコンピューターに、次を行う必要があります。
 
 - **VPN サーバーのソフトウェアとハードウェアの構成が正しいことを確認**します。 リモート アクセス VPN サーバーとして使用する予定のコンピューターで Windows Server 2016 をインストールします。 このサーバーは、2 つの物理ネットワーク アダプターがインストールされている外部境界ネットワークに接続するため、内部の境界ネットワークに接続が必要です。
 
@@ -61,19 +59,18 @@ VPN クライアントに構成した静的アドレス プールからのアド
 
 - **パブリック DNS ゾーンを編集できることを確認**します。 VPN インフラストラクチャをサポートするパブリック DNS ドメインに DNS レコードを追加します。 
 
-- **すべての VPN ユーザーが Active Directory ユーザーのユーザー アカウントを持っているかどうかを確認\(AD DS\)** します。 ユーザーは、VPN 接続を使用してネットワークに接続できる、前に、AD DS でユーザー アカウントが必要です。
+- **VPN のすべてのユーザーが Active Directory ユーザー (AD DS) でユーザー アカウントを持っているかどうかを確認**します。 ユーザーは、VPN 接続を使用してネットワークに接続できる、前に、AD DS でユーザー アカウントが必要です。
 
 ## <a name="prepare-routing-and-firewall"></a>ルーティングの準備し、ファイアウォール 
 
 内部および外部境界ネットワークに、境界ネットワークに分割する境界ネットワーク内で VPN サーバーをインストールします。 ネットワーク環境によっては、いくつかのルーティング変更を加える必要があります。
 
-- **\(省略可能な\)ポート フォワーディングを構成します。** エッジ ファイアウォールは、ポートとプロトコル、IKEv2 VPN に関連付けられている Id を開くし、VPN サーバーに転送する必要があります。 ほとんどの環境でが求めポート フォワーディングを構成することです。 ユニバーサル データグラム プロトコル (UDP) ポート 500 と 4500 を VPN サーバーにリダイレクトします。
+- **(省略可能)ポート フォワーディングを構成します。** エッジ ファイアウォールは、ポートとプロトコル、IKEv2 VPN に関連付けられている Id を開くし、VPN サーバーに転送する必要があります。 ほとんどの環境でが求めポート フォワーディングを構成することです。 ユニバーサル データグラム プロトコル (UDP) ポート 500 と 4500 を VPN サーバーにリダイレクトします。
 
-- **DNS サーバーおよび VPN サーバーがインターネットに接続できるようにルーティング構成**します。 このデプロイは IKEv2 とネットワーク アドレス変換を使用して\(NAT\)します。 VPN サーバーでは、すべての必要な内部ネットワークとネットワーク リソースにアクセスできることを確認します。 任意のネットワークまたは VPN サーバーから到達できないリソースにも到達できません遠隔地から VPN 接続経由で。
+- **DNS サーバーおよび VPN サーバーがインターネットに接続できるようにルーティング構成**します。 この展開では、IKEv2 およびネットワーク アドレス変換 (NAT) を使用します。 VPN サーバーでは、すべての必要な内部ネットワークとネットワーク リソースにアクセスできることを確認します。 任意のネットワークまたは VPN サーバーから到達できないリソースにも到達できません遠隔地から VPN 接続経由で。
 
 ほとんどの環境での新しい内部境界ネットワークに到達するにはエッジ ファイアウォールと VPN サーバーで静的ルートを調整します。 複雑な環境でただし、する必要があります内部ルーターに静的ルートを追加したり、VPN サーバーと VPN クライアントに関連付けられている IP アドレスのブロックの内部ファイアウォール ルールを調整します。
 
-## <a name="next-step"></a>次の手順
-[手順 2 です。サーバー インフラストラクチャを構成する](vpn-deploy-server-infrastructure.md):この手順では、インストールし、VPN をサポートするために必要なサーバー側コンポーネントを構成します。 サーバー側コンポーネントには、ユーザー、VPN サーバー、および NPS サーバーで使用される証明書を配布するための PKI の構成が含まれます。 
+## <a name="next-steps"></a>次のステップ
 
----
+[手順 2.サーバー インフラストラクチャを構成する](vpn-deploy-server-infrastructure.md):この手順では、インストールし、VPN をサポートするために必要なサーバー側コンポーネントを構成します。 サーバー側コンポーネントには、ユーザー、VPN サーバー、および NPS サーバーで使用される証明書を配布するための PKI の構成が含まれます。

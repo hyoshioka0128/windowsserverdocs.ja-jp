@@ -13,16 +13,16 @@ ms.topic: article
 ms.assetid: 3bba28d4-23e2-449f-8319-7d2190f68d56
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 31209b3770fb910c843b6fd39d6e76b8672088a9
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: bdb40e39b69e9cc0df805e351e6ed077e14e6872
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266755"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805049"
 ---
 # <a name="step-2-plan-advanced-directaccess-deployments"></a>DirectAccess 展開を高度な手順 2 の計画
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
 DirectAccess インフラストラクチャの計画後、IPv4 と IPv6 を使用した単一サーバーでの高度な DirectAccess 展開の次の手順は、リモート アクセスのセットアップ ウィザードの設定の計画です。  
   
@@ -100,7 +100,7 @@ DirectAccess サーバーの展開を計画している場合は、次の決定�
   
     リモート アクセス サーバーのセットアップ ウィザードで、ネットワーク アダプターに IPv6 が展開されていることが検出された場合、内部ネットワーク向けの IPv6 プレフィックス、DirectAccess クライアント コンピューターに割り当てられる IPv6 プレフィックス、VPN クライアント コンピューターに割り当てられる IPv6 プレフィックスが自動的に設定されます。 自動的に生成されたプレフィックスがネイティブ IPv6 インフラストラクチャ向けに適切でない場合は、手動で変更する必要があります。 詳細については、次を参照してください。 [1.1 ネットワーク トポロジの計画と設定](da-adv-plan-s1-infrastructure.md#11-plan-network-topology-and-settings)します。  
   
--   **[認証]**  
+-   **\[認証]**  
   
     DirectAccess クライアントが DirectAccess サーバーを認証する方法を決定します。  
   

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e381316372e68d2a43203b8fc90a243af5f40b02
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5fdfaaf1af2b74fe15530095700005a422b64986
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869213"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719628"
 ---
 # <a name="setting-up-update-synchronizations"></a>更新プログラムの同期を設定する
 
@@ -60,18 +60,6 @@ WSUS サーバーには、指定された言語に基づく更新がダウンロ
 
 ### <a name="synchronizing-updates-from-the-microsoft-update-catalog"></a>Microsoft Update カタログから更新を同期します。
 Microsoft Update カタログ サイトから更新プログラムの同期の詳細については、次を参照してください。[WSUS とカタログ サイト](wsus-and-the-catalog-site.md)します。
-
-### <a name="synchronizing-device-updates-by-inventory-inventory-based-synchronization"></a>在庫 (在庫に基づく同期) によってデバイスの更新を同期します。
-特定の製品カテゴリと分類 (例: ドライバー) は、大量の更新プログラムの数を含むし、WSUS サーバーにこれらの全体カテゴリを同期することは推奨しません。 これは、パフォーマンスの問題や継続的なメンテナンスの課題につながります。 WSUS の在庫管理システムでは、クライアント デバイスから非識別情報を収集し、インベントリ情報を使用して、Microsoft Update からのに十分な更新プログラムのメタデータを取得します。 このメカニズムは、WSUS が自動的に、Microsoft Update カタログを検索するとほぼ同等で検出されたデバイスの更新のみをインポートする管理対象のデバイス。
-
-このインベントリ機能を有効にするとは、特定のデバイスのファームウェアと Microsoft Update カタログに発行されていないモデルに基づくサービス セットを取得する唯一サポートされている方法です。
-
-この方法で同期されている更新プログラムが確認して、他の更新と同じように承認されも同じの自動承認規則に従います置き換えと有効期限、およびその他の動作に関連付けられている従来の更新プログラムです。
-
-WSUS では、クライアントが特定のドライバーとファームウェアの更新プログラム、インベントリでインポートされている更新プログラムなどを要求した場合、サーバー側がフィルター処理を実行します。 したがって、クライアント コンピューターまたはデバイスはメタデータと detectoids ドライバーとドライバーの更新プログラムを実際には、そのデバイスに接続されているデバイスにのみに表示されます。 この動作は、クライアントのスキャン時間を最小限にし、クライアントと WSUS サーバーの間で転送されるデータが減少します。
-
-> [!NOTE]
-> WSUS が、デバイスごとでは、デバイスのインベントリを保持するインベントリ ベースの同期を有効にすると、上流の WSUS サーバーに送信のみ概要ロールアップ (Id の重複のリスト)。 アップ ストリーム WSUS サーバーでは、デバイスは、どのコンピューターに関連付けられても、WSUS 階層内で特定のデバイスの数のインスタンスが存在する情報は表示されません。 一般に、この概要ロールアップは、識別やカウントの WSUS で管理されたネットワーク上のデバイスには使用できません。
 
 ## <a name="configuring-proxy-server-settings"></a>プロキシ サーバー設定の構成
 上流のサーバーまたは Microsoft Update との同期中にプロキシ サーバーを使用するように WSUS サーバーを構成することができます。 この設定は、WSUS サーバーの同期の実行時にのみ適用されます。 既定では、WSUS サーバーをアップ ストリーム サーバーまたは Microsoft Update に直接接続する試みます。

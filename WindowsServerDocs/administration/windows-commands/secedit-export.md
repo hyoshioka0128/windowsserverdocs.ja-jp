@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f9d6268777d0791dbc0cdca2d4318399378698b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 398d2fa47f2418aec910569c2eb85aec408ad482
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813493"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441592"
 ---
 # <a name="seceditexport"></a>secedit:export
 
@@ -30,7 +30,6 @@ ms.locfileid: "59813493"
 
 ```
 Secedit /export /db <database file name> [/mergedpolicy] /cfg <configuration file name> [/areas [securitypolicy | group_mgmt | user_rights | regkeys | filestore | services]] [/log <log file name>] [/quiet]
-
 ```
 
 ### <a name="parameters"></a>パラメーター
@@ -48,7 +47,7 @@ Secedit /export /db <database file name> [/mergedpolicy] /cfg <configuration fil
 
 このコマンドを使用して、別のコンピューターに、設定をインポートするだけでなく、ローカル コンピューターで、セキュリティ ポリシーをバックアップできます。
 
-ログ ファイルのパスを指定しない場合、既定のログ ファイル (*systemroot*\Documents and 設定\**UserAccount\*\My Documents\Security\Logs*DatabaseName.log) を使用します。
+ログ ファイルのパスを指定しない場合、既定のログ ファイル (*systemroot*\Documents and 設定\*<em>UserAccount\*\My Documents\Security\Logs</em>DatabaseName.log) を使用します。
 
 Windows Server 2008 で `Secedit /refreshpolicy` に置き換えられました `gpupdate`します。 セキュリティ設定を更新する方法については、次を参照してください。 [Gpupdate](gpupdate.md)します。
 
@@ -67,4 +66,4 @@ Secedit /import /db C:\Security\FY12\SecDbContoso.sdb /cfg SecContoso.inf /log C
 
 -   [Secedit:import](secedit-import.md)
 -   [Secedit](secedit.md)
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

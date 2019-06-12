@@ -7,22 +7,22 @@ author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
-ms.date: 05/09/2019
-ms.openlocfilehash: d7c842a9b393f67c482dadeaa4090627887a67a3
-ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
+ms.date: 06/06/2019
+ms.openlocfilehash: 85eca06a5d8c103851596055099876cb53a902ad
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613217"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810559"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>記憶域スペース ダイレクトのボリュームの作成
 
->適用対象:Windows Server 2019、Windows Server 2016
+> 適用対象:Windows Server 2019、Windows Server 2016
 
 このトピックでは、Windows Admin Center、PowerShell、またはフェールオーバー クラスター マネージャーを使用して、記憶域スペース ダイレクト クラスターでボリュームを作成する方法を説明します。
 
-   >[!TIP]
-   >  まだボリュームを計画していない場合は、まず「[記憶域スペース ダイレクトのボリュームの計画](plan-volumes.md)」をご覧ください。
+> [!TIP]
+> まだボリュームを計画していない場合は、まず「[記憶域スペース ダイレクトのボリュームの計画](plan-volumes.md)」をご覧ください。
 
 ## <a name="create-a-three-way-mirror-volume"></a>3 方向ミラー ボリュームを作成します。
 
@@ -105,14 +105,14 @@ Windows Admin Center でミラー アクセラレータを使用したパリテ�
 - **StoragePoolFriendlyName:** たとえば、ストレージの名前がプール *「S2D でクラスター名」*
 - **サイズ:** たとえば、ボリュームのサイズ *"10 TB"*
 
-   >[!NOTE]
-   >  Windows (PowerShell を含む) では 2 進数を使ってカウントされますが、ドライブのラベルには 10 進数が使われていることがよくあります。 1,000,000,000,000 バイトと定義される "1 テラバイト" のドライブが、Windows で約 "909 GB" となるのはこのためです。 これは正常な動作です。 **New-Volume** を使ってボリュームを作成するときは、**Size** パラメーターを 2 進数で指定してください。 たとえば、"909GB" または "0.909495TB" と指定すると約 1,000,000,000,000 バイトのボリュームが作成されます。
+   > [!NOTE]
+   > Windows (PowerShell を含む) では 2 進数を使ってカウントされますが、ドライブのラベルには 10 進数が使われていることがよくあります。 1,000,000,000,000 バイトと定義される "1 テラバイト" のドライブが、Windows で約 "909 GB" となるのはこのためです。 これは正常な動作です。 **New-Volume** を使ってボリュームを作成するときは、**Size** パラメーターを 2 進数で指定してください。 たとえば、"909GB" または "0.909495TB" と指定すると約 1,000,000,000,000 バイトのボリュームが作成されます。
 
 ### <a name="example-with-2-or-3-servers"></a>以下に例を示します。2 または 3 つのサーバー
 
 処理を簡単にするため、展開にサーバーが 2 台しかない場合、記憶域スペース ダイレクトは回復性のために双方向ミラーリングを自動的に使います。 展開にサーバーが 3 台しかない場合、3 方向ミラーリングを自動的に使います。
 
-```
+```PowerShell
 New-Volume -FriendlyName "Volume1" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB
 ```
 
@@ -124,7 +124,7 @@ New-Volume -FriendlyName "Volume1" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 
 次の例では、 *"Volume2"* は 3 方向ミラーリングを使い、 *"Volume3"* はデュアル パリティ (多くの場合 "イレイジャー コーディング" と呼ばれます) を使います。
 
-```
+```PowerShell
 New-Volume -FriendlyName "Volume2" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB -ResiliencySettingName Mirror
 New-Volume -FriendlyName "Volume3" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB -ResiliencySettingName Parity
 ```
@@ -137,7 +137,7 @@ New-Volume -FriendlyName "Volume3" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 
 **Get-StorageTier** コマンドレットを実行すると、それらのドライブを表示できます。
 
-```
+```PowerShell
 Get-StorageTier | Select FriendlyName, ResiliencySettingName, PhysicalDiskRedundancy
 ```
 
@@ -145,7 +145,7 @@ Get-StorageTier | Select FriendlyName, ResiliencySettingName, PhysicalDiskRedund
 
 階層ボリュームを作成する場合は、**New-Volume** コマンドレットの **StorageTierFriendlyNames** パラメーターと **StorageTierSizes** パラメーターを使用して、これらの階層テンプレートを参照してください。 たとえば、次のコマンドレットは 30:70 の比率で 3 方向ミラーリングとデュアル パリティが混在した 1 つのボリュームを作成します。
 
-```
+```PowerShell
 New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes 300GB, 700GB
 ```
 

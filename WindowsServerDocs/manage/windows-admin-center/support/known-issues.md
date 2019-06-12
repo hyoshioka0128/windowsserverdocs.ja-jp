@@ -7,21 +7,22 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.date: 04/12/2019
-ms.openlocfilehash: 7bf23c5af5620241574864babd07fd852115a450
-ms.sourcegitcommit: 39ab8041d166e6817a95417d6aa30bc7abeeef54
+ms.date: 06/07/2019
+ms.openlocfilehash: e7cf6fc6a4fae2eee76409bd6af4ef2ff6ed35a3
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66260276"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811782"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center の既知の問題
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+> 適用対象:Windows Admin Center、Windows Admin Center プレビュー
 
 このページで説明されている問題が発生した場合は、[お知らせください](http://aka.ms/WACfeedback)。
 
 ## <a name="lenovo-xclarity-integrator"></a>Lenovo XClarity インテグレーター
+
 Windows Admin Center 1904.1 のバージョンでは、Windows Admin Center バージョン 1904、Lenovo XClarity インテグレーターの拡張機能の公開された以前の非互換性の問題は解決されています。 Windows Admin Center のサポートされている最新のバージョンに更新することを強くお勧めします。
 
 - Lenovo XClarity インテグレーター拡張機能のバージョン 1.1 は Windows Admin Center 1904.1 と完全な互換性です。 Windows Admin Center および Lenovo の拡張機能の最新バージョンに更新することを強くお勧めします。
@@ -50,8 +51,8 @@ Windows Admin Center 1904.1 のバージョンでは、Windows Admin Center バ�
 
 - ゲートウェイとしてインストールされている Windows Admin Center がありが破損していた接続一覧が表示される場合は、次の手順を実行します。
 
->[!WARNING]
->これは、接続の一覧と、ゲートウェイ上のすべての Windows Admin Center ユーザーの設定に削除されます。
+   > [!WARNING]
+   >これは、接続の一覧と、ゲートウェイ上のすべての Windows Admin Center ユーザーの設定に削除されます。
 
   1. Windows Admin Center をアンインストールします
   2. **C:\Windows\ServiceProfiles\NetworkService\AppData\Roaming\Microsoft** にある **Server Management Experience** フォルダーを削除します
@@ -82,7 +83,7 @@ Windows Admin Center 1904.1 のバージョンでは、Windows Admin Center バ�
 
 - Azure Active Directory を ID プロバイダーとして使用していて、Windows Admin Center が自己署名証明書またはその他の信頼されていない証明書で構成されている場合は、Microsoft Edge で AAD 認証を完了することはできません。  [15968377]
 
-- サービスとしてデプロイされている Windows Admin Center があり、お使いのブラウザーとして Microsoft Edge を使用している場合、ゲートウェイを Azure に接続する、新しいブラウザー ウィンドウを起動した後は失敗します。 追加することで、この問題を回避しようとしています。 https://login.microsoftonline.com、 https://login.live.com、として、ゲートウェイの URL が信頼済みサイトとクライアント側のブラウザーでポップアップ ブロックの設定のサイトを許可されているとします。 この問題の修正の詳細について、[トラブルシューティング ガイド](troubleshooting.md#azlogin)します。 [17990376]
+- サービスとしてデプロイされている Windows Admin Center があり、お使いのブラウザーとして Microsoft Edge を使用している場合、ゲートウェイを Azure に接続する、新しいブラウザー ウィンドウを起動した後は失敗します。 追加することで、この問題を回避しようとしています。 https://login.microsoftonline.com、 https://login.live.com、として、ゲートウェイの URL が信頼済みサイトとクライアント側のブラウザーでポップアップ ブロックの設定のサイトを許可されているとします。 この問題の修正の詳細について、[トラブルシューティング ガイド](troubleshooting.md#azure-features-dont-work-properly-in-edge)します。 [17990376]
 
 - デスクトップ モードでインストールされている Windows Admin Center があれば、Microsoft edge ブラウザーのタブは、favicon に表示されません。 [17665801]
 
@@ -100,8 +101,6 @@ Windows Admin Center は、Mozilla Firefox でテストされていませんが�
 
 - Windows 10 のインストール:インポートする必要がありますので、Mozilla Firefox は、独自の証明書ストア、```Windows Admin Center Client```証明書を Firefox では Windows 10、Windows Admin Center を使用します。
 
-<a id="websockets"></a>
-
 ## <a name="websocket-compatibility-when-using-a-proxy-service"></a>プロキシ サービスを使用するときに WebSocket 互換性
 
 Windows Admin Center のリモート デスクトップ、PowerShell、およびイベント モジュールでは、WebSocket プロトコルを利用します。多くの場合、このプロトコルはプロキシ サービスを使用するときにサポートされていません。 Azure AD アプリケーション プロキシの互換性における WebSocket サポートは[プレビュー](https://blogs.technet.microsoft.com/applicationproxyblog/2018/03/28/limited-websocket-support-now-in-public-preview/)の段階であり、互換性に関するフィードバックを必要としています。
@@ -114,8 +113,6 @@ Windows Admin Center のリモート デスクトップ、PowerShell、および
 PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。
 
 インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://www.microsoft.com/en-us/download/details.aspx?id=54616)できます。
-
-<a id="rbacknownissues"></a>
 
 ## <a name="role-based-access-control-rbac"></a>ロールベースのアクセス制御 (RBAC)
 
@@ -141,7 +138,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 ### <a name="events"></a>イベント
 
-- イベントは、[プロキシ サービスを使用する場合に WebSocket の互換性](#websockets)に影響を受けます。
+- イベントは、[プロキシ サービスを使用する場合に WebSocket の互換性](#websocket-compatibility-when-using-a-proxy-service)に影響を受けます。
 
 - 大きいログ ファイルをエクスポートするときに、“パケット サイズ” を参照するエラーが表示される場合があります。 [16630279]
 
@@ -153,7 +150,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 ### <a name="powershell"></a>PowerShell
 
-- PowerShell は、[プロキシ サービスを使用する場合に WebSocket の互換性](#websockets)に影響を受けます。
+- PowerShell は、[プロキシ サービスを使用する場合に WebSocket の互換性](#websocket-compatibility-when-using-a-proxy-service)に影響を受けます。
 
 - デスクトップの PowerShell コンソールと同じように 1 回の右クリックで貼り付けしても機能しません。 代わりに、ブラウザーのコンテキスト メニューが表示され、ここで貼り付けを選択できます。 Ctrl + V も機能します。
 
@@ -173,7 +170,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 - いくつかの構成には、グループ ポリシーを使用してリモート デスクトップ クライアントを Windows Admin Center をブロックできます。 これが発生した場合に有効にする```Allow users to connect remotely by using Remote Desktop Services```下 ```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
 
-- リモート デスクトップによって影響を受ける[websocket 互換性。](#websockets)
+- リモート デスクトップによって影響を受ける[websocket 互換性。](#websocket-compatibility-when-using-a-proxy-service)
 
 - リモート デスクトップ ツールは現在、ローカル デスクトップとリモート セッションの間のテキスト、イメージ、またはファイルのコピー/貼り付けをサポートしていません。
 

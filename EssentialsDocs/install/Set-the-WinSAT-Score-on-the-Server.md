@@ -12,12 +12,12 @@ ms.assetid: 911dc494-0f8f-4723-93d6-2106f914b906
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 77866acccac13ac48da8779700c8654f2c7f3277
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e5ce037c7a8c802419cd980fc0272c4f687c6a6
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819953"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433451"
 ---
 # <a name="set-the-winsat-score-on-the-server"></a>サーバーでの WinSAT スコアの設定
 
@@ -30,19 +30,19 @@ ms.locfileid: "59819953"
   
 #### <a name="to-obtain-the-winsat-cpu-score"></a>WinSAT CPU スコアを取得するには  
   
-1.  コピー、Resources\WinServerSAT\\* ADK メディアの参照コンピューターにします。  
+1. コピー、Resources\WinServerSAT\\* ADK メディアの参照コンピューターにします。  
   
-2.  参照コンピューター上で、昇格した [コマンド プロンプト] ウィンドウを開きます。  
+2. 参照コンピューター上で、昇格した [コマンド プロンプト] ウィンドウを開きます。  
   
-3.  %ProgramFiles%\Windows Server\Bin\OEM フォルダーがない場合は、次のコマンドを入力して Enter キーを押します。  
+3. %ProgramFiles%\Windows Server\Bin\OEM フォルダーがない場合は、次のコマンドを入力して Enter キーを押します。  
   
-     **mkdir "%ProgramFiles%\Windows Server\Bin\OEM"**  
+    **mkdir "%ProgramFiles%\Windows Server\Bin\OEM"**  
   
-4.  次のコマンドを入力して Enter キーを押します。  
+4. 次のコマンドを入力して Enter キーを押します。  
   
-     **WinServerSAT.exe "%ProgramFiles%\Windows Server\Bin\OEM\WinServerSAT.xml"**  
+    **WinServerSAT.exe "%ProgramFiles%\Windows Server\Bin\OEM\WinServerSAT.xml"**  
   
- 次の例では、作成される WinServerSAT.xml ファイルの XML コンテンツを示します。  
+   次の例では、作成される WinServerSAT.xml ファイルの XML コンテンツを示します。  
   
 ```  
   

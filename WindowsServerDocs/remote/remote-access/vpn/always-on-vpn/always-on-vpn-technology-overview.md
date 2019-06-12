@@ -8,18 +8,19 @@ ms.date: 11/05/2018
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: fd3f7c6ca8555e270aabf04bbee6800ed284080c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 65a575b24ea3c70ad7eedd95fe287d955ccaeea6
+ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821263"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749673"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Always On VPN テクノロジの概要
->適用先:Windows Server 2016、Windows Server 2012 R2、Windows 10 の Windows Server (半期チャネル)
 
-&#171;  [**先の：** Always On VPN の機能強化について説明します](always-on-vpn-enhancements.md)<br>
-&#187;  [**次に：** Always On VPN の高度な機能について説明します](deploy/always-on-vpn-adv-options.md)
+>適用対象:Windows Server 2016、Windows Server 2012 R2、Windows 10 の Windows Server (半期チャネル)
+
+- [**先の：** Always On VPN の機能強化について説明します](always-on-vpn-enhancements.md)
+- [**次に：** Always On VPN の高度な機能について説明します](deploy/always-on-vpn-adv-options.md)
 
 この展開のする必要があります、Windows Server 2016 を実行している新しいリモート アクセス サーバーをインストールするだけでなく、既存のインフラストラクチャのデプロイの一部を変更します。
 
@@ -33,7 +34,7 @@ ms.locfileid: "59821263"
 
 2. DNS によって返された IP アドレスを使用して、VPN クライアントは、VPN ゲートウェイに接続要求を送信します。
 
-3. VPN ゲートウェイが、リモート認証ダイヤルイン ユーザー サービスとしても構成されている\(RADIUS\)クライアントは、VPN RADIUS クライアントは、接続要求の処理の組織/企業の NPS サーバーに接続要求を送信します。
+3. VPN ゲートウェイが、リモート認証ダイヤルイン ユーザー サービス (RADIUS) クライアントとして構成されていますVPN RADIUS クライアントは、接続要求を処理/企業組織の NPS サーバーに接続要求を送信します。
 
 4. NPS サーバーでは、承認、および認証の実行など、接続要求を処理し、許可するか、接続要求を拒否するかどうかを決定します。
 
@@ -52,11 +53,8 @@ ms.locfileid: "59821263"
 
 詳細については[ドメイン ネーム システム (DNS)](../../../../networking/dns/dns-top.md)または[コア ネットワーク ガイド](../../../../networking/core-network-guide/core-network-guide.md)します。
 
-
-
-
->[!NOTE] 
->その他の DNS スプリット ブレインの DNS (を使用して、同じドメイン名内部および外部で個別の DNS ゾーンで) などのデザインまたは関係のない内部と外部ドメイン (contoso.local と contoso.com など) も考えられます。 スプリット ブレイン DNS 展開の詳細については、次を参照してください。[分割/ブレイン DNS 展開の DNS ポリシーを使用する](../../../../networking/dns/deploy/split-brain-DNS-deployment.md)します。
+>[!NOTE]
+>その他の DNS スプリット ブレインの DNS (を使用して、同じドメイン名内部および外部で個別の DNS ゾーンで) などのデザインまたは関係のない内部と外部ドメイン (contoso.local と contoso.com など) も考えられます。 スプリット ブレイン DNS 展開の詳細については、次を参照してください。 [Split-Brain DNS の展開の DNS ポリシーを使用する](../../../../networking/dns/deploy/split-brain-DNS-deployment.md)します。
 
 ## <a name="firewalls"></a>ファイアウォール
 
@@ -70,11 +68,9 @@ ms.locfileid: "59821263"
 
 IKEv2 は、VPN トンネリング プロトコルのコメント 7296 Internet Engineering Task Force の要求で説明します。 IKEv2 の主な利点は、基になるネットワーク接続の中断が許容できることです。 たとえば、接続が一時的に失われた場合、または、ユーザーでは、1 つのネットワークからクライアント コンピューターを移動する場合は、IKEv2 によって自動的に復元 VPN 接続のネットワーク接続が再度確立される: ユーザーの介入なしですべてです。
 
-RAS ゲートウェイを使用して、組織のネットワークおよびリソースへのリモート アクセスでエンドユーザーに提供する VPN 接続を展開できます。 リモート コンピューターがインターネットに接続するたびに、クライアントと、組織のネットワークの間で永続的な接続を維持する Always On VPN を展開します。 RAS ゲートウェイを使用しても、プライマリ オフィスとブランチ オフィス間など、異なる場所にある 2 つのサーバー間のサイト対サイト VPN 接続を作成およびネットワーク アドレス変換を使用することができます\(NAT\)ように内部のユーザー、ネットワークは、インターネットなどの外部リソースにアクセスできます。 また、RAS ゲートウェイは、リモート オフィスの場所では、BGP をサポートするエッジ ゲートウェイもがある場合は、動的ルーティング サービスを提供するボーダー ゲートウェイ プロトコル (BGP) をサポートします。
+RAS ゲートウェイを使用して、組織のネットワークおよびリソースへのリモート アクセスでエンドユーザーに提供する VPN 接続を展開できます。 リモート コンピューターがインターネットに接続するたびに、クライアントと、組織のネットワークの間で永続的な接続を維持する Always On VPN を展開します。 RAS ゲートウェイを使用しても、主要オフィスとブランチ オフィス間など、さまざまな場所にある 2 つのサーバー間のサイト対サイト VPN 接続を作成および外部ネットワーク内のユーザーがアクセスできるように、ネットワーク アドレス変換 (NAT) を使用することができます。インターネットなどのリソース。 また、RAS ゲートウェイは、リモート オフィスの場所では、BGP をサポートするエッジ ゲートウェイもがある場合は、動的ルーティング サービスを提供するボーダー ゲートウェイ プロトコル (BGP) をサポートします。
 
 Windows PowerShell コマンドとリモート アクセス Microsoft 管理コンソール (MMC) を使用して、リモート アクセス サービス (RAS) ゲートウェイを管理できます。
-
-
 
 ## <a name="network-policy-server-nps"></a>ネットワーク ポリシー サーバー (NPS)
 
@@ -84,7 +80,6 @@ NPS を作成し、接続要求の認証と承認のため、組織全体のネ�
 
 詳細については、次を参照してください。[ネットワーク ポリシー サーバー (NPS)](../../../../networking/technologies/nps/nps-top.md)します。
 
-
 ## <a name="active-directory-certificate-services"></a>Active Directory 証明書サービス
 
 証明機関 (CA) サーバーでは、Active Directory Certificate Services を実行している証明機関です。 VPN 構成には、Active Directory ベースの公開キー基盤 (PKI) が必要です。
@@ -93,23 +88,23 @@ NPS を作成し、接続要求の認証と承認のため、組織全体のネ�
 
 デプロイの完了時に、CA で次の証明書テンプレートを構成します。
 
--   ユーザー認証証明書テンプレート
+- ユーザー認証証明書テンプレート
 
--   VPN サーバー認証証明書テンプレート
+- VPN サーバー認証証明書テンプレート
 
--   NPS サーバー認証証明書テンプレート
+- NPS サーバー認証証明書テンプレート
 
 ### <a name="certificate-templates"></a>証明書テンプレート
 
 証明書テンプレートは、証明機関 (CA) の管理タスクを選択したタスクのあらかじめ構成されている証明書を発行することで簡略化が大幅にできます。 証明書テンプレート MMC スナップインで、次のタスクを実行することができます。
 
--   各証明書テンプレートのプロパティを表示します。
+- 各証明書テンプレートのプロパティを表示します。
 
--   コピーして、証明書テンプレートを変更します。
+- コピーして、証明書テンプレートを変更します。
 
--   ユーザーを制御し、コンピューターがテンプレートの読み取りし、証明書を登録します。
+- ユーザーを制御し、コンピューターがテンプレートの読み取りし、証明書を登録します。
 
--   証明書テンプレートに関連するその他の管理タスクを実行します。
+- 証明書テンプレートに関連するその他の管理タスクを実行します。
 
 証明書テンプレートは、エンタープライズ証明機関 (CA) の不可欠な部分です。 これらは、一連のルールと証明書の登録、使用、および管理の形式では、環境の証明書ポリシーの重要な要素です。
 
@@ -121,11 +116,11 @@ NPS を作成し、接続要求の認証と承認のため、組織全体のネ�
 
 デジタル サーバー証明書、ネットワーク上のコンピューター間の認証を使用する場合、証明書を提供します。
 
-1.  暗号化による機密性。
+1. 暗号化による機密性。
 
-2.  デジタル署名によって整合性。
+2. デジタル署名によって整合性。
 
-3.  コンピューター ネットワーク上のコンピューター、ユーザー、またはデバイス アカウントと証明書のキーを関連付けることによって認証されます。
+3. コンピューター ネットワーク上のコンピューター、ユーザー、またはデバイス アカウントと証明書のキーを関連付けることによって認証されます。
 
 詳細については、次を参照してください。 [AD CS のステップ バイ ステップ ガイド。2 層 PKI 階層の展開](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx)します。
 
@@ -135,17 +130,15 @@ AD DS では、分散データベースにより、ネットワーク リソー�
 
 AD DS には、ユーザー アカウント、コンピューター アカウント、およびユーザーの資格情報を認証し、VPN 接続要求の承認を評価するによって保護されている拡張認証プロトコル (PEAP) に必要なアカウントのプロパティが含まれています。 AD DS の展開方法の詳細については、Windows Server 2016 を参照してください。[コア ネットワーク ガイド](../../../../networking/core-network-guide/Core-Network-Guide.md)します。
 
-
-
 この展開の手順の完了時に、ドメイン コント ローラーで、次の項目を構成します。
 
--   コンピューターとユーザーのグループ ポリシーで証明書の自動登録を有効にします。
+- コンピューターとユーザーのグループ ポリシーで証明書の自動登録を有効にします。
 
--   VPN ユーザーのグループを作成します。
+- VPN ユーザーのグループを作成します。
 
--   VPN サーバーのグループを作成します。
+- VPN サーバーのグループを作成します。
 
--   NPS サーバーのグループを作成します。
+- NPS サーバーのグループを作成します。
 
 ### <a name="active-directory-users-and-computers"></a>Active Directory ユーザーとコンピューター
 
@@ -155,14 +148,11 @@ Active Directory ユーザーとコンピューターは、コンピューター
 
 詳細については、次を参照してください。[無視ユーザーのアカウントのダイヤルイン プロパティを構成する NPS](../../../../networking/technologies/nps/nps-np-configure.md#configure-nps-to-ignore-user-account-dial-in-properties)します。
 
-
-
 ### <a name="group-policy-management"></a>グループ ポリシーの管理
 
 グループ ポリシーの管理は、セキュリティとユーザーの情報を含む、ユーザーとコンピューターの設定の変更と構成をディレクトリ ベースで管理できます。 グループ ポリシーを使用して、ユーザーとコンピューターのグループの構成を定義します。
 
 グループ ポリシーとは、レジストリ エントリ、セキュリティ、ソフトウェアのインストール、スクリプト、フォルダー リダイレクト、リモート インストール サービス、および Internet Explorer のメンテナンスの設定を指定できます。 作成したグループ ポリシー設定は、グループ ポリシー オブジェクト (GPO) 内に格納されます。 GPO を選択した Active Directory システム コンテナーに関連付けることによって、サイト、ドメイン、および Ou、ユーザーとこれらの Active Directory コンテナー内のコンピューターに GPO の設定を適用することができます。 企業全体にわたるグループ ポリシー オブジェクトを管理するには、グループ ポリシー管理エディター Microsoft 管理コンソール (MMC) を使用することができます。
-
 
 ## <a name="windows-10-vpn-clients"></a>Windows 10 の VPN クライアント
 
@@ -173,16 +163,15 @@ Windows 10 の VPN クライアントは、高い構成可能な多くのオプ�
 
 表 1. VPN の機能とこのデプロイで説明されている構成
 
-| **VPN 機能** | **展開シナリオの構成**         |
+| VPN 機能     |     展開シナリオの構成         |
 |-----------------|-----------------------------------------------|
-| 接続の種類 | ネイティブの IKEv2                                  |
-| ルーティング         | 分割トンネリング                               |
-| 名前解決 | ドメイン名情報一覧と DNS サフィックス   |
-| トリガーします。      | 常にオンおよび信頼されたネットワーク検出       |
+| 接続の種類 |                 ネイティブの IKEv2                  |
+|     ルーティング     |                分割トンネリング                |
+| 名前解決 |  ドメイン名情報一覧と DNS サフィックス  |
+|   トリガーします。    |    常にオンおよび信頼されたネットワーク検出    |
 | 認証  | TPM で保護されたユーザー証明書と共に PEAP-TLS で |
----
 
->[!NOTE] 
+>[!NOTE]
 >PEAP-TLS と TPM の「保護されている拡張認証プロトコルとトランスポート層セキュリティ」と「トラステッド プラットフォーム モジュール」をそれぞれされます。
 
 ### <a name="vpnv2-csp-nodes"></a>VPNv2 CSP ノード
@@ -195,18 +184,14 @@ Windows 10 の VPN クライアントは、高い構成可能な多くのオプ�
 
 Windows 10 には、多くの Csp が提供していますが、VPNv2 CSP を使用して、VPN クライアントを構成するこの展開に重点を置いています。 VPNv2 CSP 一意 CSP ノードで Windows 10 の各 VPN プロファイルの設定の構成を許可します。 という名前のノードは、VPNv2 CSP にも含まれている*それを ProfileXML*、すべての設定を構成することのできる 1 つのノードではなく、個別にします。 それを ProfileXML の詳細については、このデプロイでは後で「それを ProfileXML の概要」セクションを参照してください。 詳細については、各 VPNv2 CSP ノードは、次を参照してください。、 [VPNv2 CSP](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp)します。
 
-
-
 ## <a name="next-steps"></a>次のステップ
 
 - [高度な Always On VPN 機能の一部について説明します](deploy/always-on-vpn-adv-options.md)
 
 - [Always On VPN 展開の計画を開始します。](deploy/always-on-vpn-deploy-deployment.md)
 
-
----
-
 ## <a name="related-topics"></a>関連トピック
+
 - [Microsoft Azure 仮想マシンのマイクロソフト サーバー ソフトウェア サポート](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines):この記事では、Microsoft Azure の仮想マシン環境 (インフラストラクチャとしてのサービス) で Microsoft サーバー ソフトウェアを実行するためのサポート ポリシーについて説明します。
 
 - [リモート アクセス](../../Remote-Access.md):このトピックでは、Windows Server 2016 でのリモート アクセス サーバーの役割の概要を示します。
@@ -215,7 +200,7 @@ Windows 10 には、多くの Csp が提供していますが、VPNv2 CSP を使
 
 - [コア ネットワーク ガイド](../../../../networking/core-network-guide/Core-Network-Guide.md):このガイドは、計画およびネットワークが完全に機能し、新しいフォレスト内の新しい Active Directory ドメインに必要なコア コンポーネントを展開する方法について説明します。
 
-- [ドメイン ネーム システム (DNS)](../../../../networking/dns/dns-top.md):このトピックでは、ドメイン ネーム システム (DNS) の概要を示します。 Windows Server 2016 では、DNS とは、サーバー マネージャーまたは Windows PowerShell コマンドを使用して、インストール可能なサーバーの役割です。 新しい Active Directory フォレストおよびドメインをインストールする場合に自動的に DNS がインストールされていると Active Directory フォレストおよびドメインのグローバル カタログ サーバーとして。 
+- [ドメイン ネーム システム (DNS)](../../../../networking/dns/dns-top.md):このトピックでは、ドメイン ネーム システム (DNS) の概要を示します。 Windows Server 2016 では、DNS とは、サーバー マネージャーまたは Windows PowerShell コマンドを使用して、インストール可能なサーバーの役割です。 新しい Active Directory フォレストおよびドメインをインストールする場合に自動的に DNS がインストールされていると Active Directory フォレストおよびドメインのグローバル カタログ サーバーとして。
 
 - [Active Directory 証明書サービスの概要](https://technet.microsoft.com/library/hh831740.aspx):このドキュメントでは、Active Directory 証明書サービス (AD CS) で Windows Server® 2012 の概要を示します。 AD CS は、公開キー基盤 (PKI) を構築し、公開キーの暗号化、デジタル証明書、およびデジタル署名機能を組織に提供するサーバーの役割です。
 
@@ -223,6 +208,4 @@ Windows 10 には、多くの Csp が提供していますが、VPNv2 CSP を使
 
 - [AD CS のステップ バイ ステップ ガイド:2 層 PKI 階層の展開](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx):このステップ バイ ステップ ガイドでは、ラボ環境で Active Directory® 証明書サービス (AD CS) の基本的な構成を設定するために必要な手順について説明します。 Windows Server® 2008 R2 の AD CS では、作成および公開キー テクノロジを使用して、ソフトウェア セキュリティ システムで使用される公開キー証明書を管理するためのカスタマイズ可能なサービスを提供します。
 
-- [ネットワーク ポリシー サーバー (NPS)](../../../../networking/technologies/nps/nps-top.md):このトピックでは、Windows Server 2016 でネットワーク ポリシー サーバーの概要を示します。 ネットワーク ポリシー サーバー (NPS) を使用すると、接続要求の認証と承認を行うための組織全体のネットワーク アクセス ポリシーを作成して適用できます。 
-
----
+- [ネットワーク ポリシー サーバー (NPS)](../../../../networking/technologies/nps/nps-top.md):このトピックでは、Windows Server 2016 でネットワーク ポリシー サーバーの概要を示します。 ネットワーク ポリシー サーバー (NPS) を使用すると、接続要求の認証と承認を行うための組織全体のネットワーク アクセス ポリシーを作成して適用できます。

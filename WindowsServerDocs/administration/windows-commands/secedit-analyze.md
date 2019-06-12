@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 324da8de153a5487c9d71872cd154928cc24c285
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 9122c5c0fa8c42b0ccfc77ceb3f2d337b44ee5dc
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848823"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441560"
 ---
 # <a name="seceditanalyze"></a>secedit: 分析
 
@@ -46,7 +46,7 @@ Secedit /analyze /db <database file name> [/cfg <configuration file name>] [/ove
 
 分析結果は、データベースの独立した領域には保存され、セキュリティの構成と分析スナップインを MMC で表示できます。
 
-ログ ファイルのパスを指定しない場合、既定のログ ファイル (*systemroot*\Documents and 設定\**UserAccount\*\My Documents\Security\Logs*DatabaseName.log) を使用します。
+ログ ファイルのパスを指定しない場合、既定のログ ファイル (*systemroot*\Documents and 設定\*<em>UserAccount\*\My Documents\Security\Logs</em>DatabaseName.log) を使用します。
 
 Windows Server 2008 で `Secedit /refreshpolicy` に置き換えられました `gpupdate`します。 セキュリティ設定を更新する方法については、次を参照してください。 [Gpupdate](gpupdate.md)します。
 
@@ -64,4 +64,4 @@ Secedit /analyze /db C:\Security\FY11\SecDbContoso.sdb /cfg SecContoso.inf /over
 #### <a name="additional-references"></a>その他の参照情報
 
 -   [Secedit](secedit.md)
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

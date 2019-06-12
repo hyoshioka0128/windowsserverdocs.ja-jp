@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: cc9f02b9-8ddd-4cae-b397-a832996144dd
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fb940effaae7989dec397e539b64160c87828d5a
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 7aec08a19759c98150cf7518643f634947c5133d
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266707"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66804998"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>手順 2 リモート アクセスの展開を計画します。
 
@@ -56,7 +56,7 @@ DirectAccess クライアントのリモート管理のため、単一のリモ�
   
     -   **接続検証方法**  
   
-        クライアントが内部ネットワークへの接続の検証に使用する既定の Web プローブが作成されます。 既定の名前は https://directaccess-WebProbeHost.<domain_name>します。 この名前は手動で DNS に登録する必要があります。 HTTP または PING 経由で他の web アドレスを使用するその他の接続検証方法を作成することができます。 接続検証方法ごとに、DNS エントリが存在している必要があります。  
+        クライアントが内部ネットワークへの接続の検証に使用する既定の Web プローブが作成されます。 既定の名前は`https://directaccess-WebProbeHost.<domain_name>`します。 この名前は手動で DNS に登録する必要があります。 HTTP または PING 経由で他の web アドレスを使用するその他の接続検証方法を作成することができます。 接続検証方法ごとに、DNS エントリが存在している必要があります。  
   
     -   **ヘルプ デスクの電子メール アドレス**  
   
@@ -93,7 +93,7 @@ DirectAccess クライアントのリモート管理のため、単一のリモ�
   
     リモート アクセス サーバーのセットアップ ウィザードで、ネットワーク アダプターに IPv6 が展開されていることが検出された場合、内部ネットワーク向けの IPv6 プレフィックス、DirectAccess クライアント コンピューターに割り当てられる IPv6 プレフィックス、VPN クライアント コンピューターに割り当てられる IPv6 プレフィックスが自動的に設定されます。 自動的に生成されたプレフィックスがネィティブ IPv6 または ISATAP インフラストラクチャに正しくない場合は、それらを手動で変更する必要があります。  
   
--   **[認証]**  
+-   **\[認証]**  
   
     リモート アクセス サーバーに DirectAccess クライアントを認証するために、次のメソッドのいずれかを選択できます。  
   

@@ -12,12 +12,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 02/28/2019
-ms.openlocfilehash: 0d618d465ee45245e98fbc6aa58b32b974be08e8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 32068319aae7545675e126eed6e1ab4c914bcbcf
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880883"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812634"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>トランスポート層セキュリティ (TLS) レジストリ設定
 
@@ -25,9 +25,13 @@ ms.locfileid: "59880883"
 
 IT プロフェッショナル向けのこのリファレンス トピックには、トランスポート層セキュリティ (TLS) プロトコルと、Schannel セキュリティ サポートを通じて、Secure Sockets Layer (SSL) プロトコルの Windows 実装に対するサポートされているレジストリ設定の情報が含まれています。プロバイダー (SSP) です。 レジストリ サブキーとエントリを管理し、Schannel SSP をトラブルシューティングするこのトピックに関するヘルプについて具体的には、TLS と SSL プロトコル。 
 
->[!Caution]
->この情報は、トラブルシューティングを行うとき、または必要な設定が適用されていることを確認するときに参照してください。 他の手段がない限り、レジストリは直接編集しないことをお勧めします。
->レジストリに対する変更は、レジストリ エディターまたは Windows オペレーティング システムによる検証は行われずに適用されます。 このため、不適切な値が設定される場合があり、これにより回復不能なシステム エラーが発生することがあります。 可能な場合は、レジストリを直接編集するのではなく、グループ ポリシー、Microsoft 管理コンソール (MMC) などの Windows ツールを使用して作業を行います。 レジストリを編集する必要がある場合は、細心の注意が必要です。 
+> [!CAUTION]
+> この情報は、トラブルシューティングを行うとき、または必要な設定が適用されていることを確認するときに参照してください。
+> 他の手段がない限り、レジストリは直接編集しないことをお勧めします。
+> レジストリに対する変更は、レジストリ エディターまたは Windows オペレーティング システムによる検証は行われずに適用されます。
+> このため、不適切な値が設定される場合があり、これにより回復不能なシステム エラーが発生することがあります。
+> 可能な場合は、レジストリを直接編集するのではなく、グループ ポリシー、Microsoft 管理コンソール (MMC) などの Windows ツールを使用して作業を行います。
+> レジストリを編集する必要がある場合は、細心の注意が必要です。
 
 ## <a name="certificatemappingmethods"></a>CertificateMappingMethods 
 
@@ -57,7 +61,7 @@ TLS/SSL 暗号は、暗号の順位を構成することで制御する必要が
 
 Schannel SSP で使用される既定の暗号スイートの順序については、次を参照してください。 [in TLS/SSL (Schannel SSP) 暗号スイート](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx)します。 
 
-##<a name="ciphersuites"></a>CipherSuites
+## <a name="ciphersuites"></a>CipherSuites
 
 TLS/SSL 暗号の構成を行う必要があるグループ ポリシーを MDM または PowerShell を使用して参照してください[TLS 暗号スイートの順序の構成](manage-tls.md#configuring-tls-cipher-suite-order)詳細についてはします。
 
@@ -100,8 +104,8 @@ Windows Server 2008 および Windows Vista 以降、既定のクライアント
 
 "EnableOcspStaplingForSni"dword:00000000 を =
 
->[!NOTE] 
->このレジストリ キーを有効にするには、潜在的なパフォーマンスに影響があります。
+> [!NOTE] 
+> このレジストリ キーを有効にするには、潜在的なパフォーマンスに影響があります。
 
 ## <a name="fipsalgorithmpolicy"></a>FIPSAlgorithmPolicy
 

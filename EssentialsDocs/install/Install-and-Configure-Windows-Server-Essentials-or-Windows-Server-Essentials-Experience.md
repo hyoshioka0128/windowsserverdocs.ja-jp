@@ -12,12 +12,12 @@ ms.assetid: 48ea6cd4-3955-4aaf-9236-2515a6c3e730
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8a2310b178663c6ca32a4e07d11656f1aaf2a11b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f5593c21b99f4f8cb22979d5dc201a38e54be84c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844413"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433478"
 ---
 # <a name="install-and-configure-windows-server-essentials-or-windows-server-essentials-experience"></a>Windows Server Essentials または Windows Server Essentials エクスペリエンスのインストールと構成
 
@@ -73,28 +73,28 @@ Windows Server Essentials または、Essentials Experience 役割をインス�
   
 ##### <a name="to-configure-windows-server-essentials-on-a-physical-server"></a>物理サーバーで Windows Server Essentials を構成するには  
   
-1.  Windows **[ようこそ]** ページの後、**Windows Server Essentials の構成ウィザード**がデスクトップに表示されます。  
+1. Windows **[ようこそ]** ページの後、**Windows Server Essentials の構成ウィザード**がデスクトップに表示されます。  
   
-2.  次のように、指示に従ってウィザードを完了します。  
+2. 次のように、指示に従ってウィザードを完了します。  
   
-    1.  **[Windows Server Essentials の構成]** ページで、**[次へ]** をクリックします。  
+   1.  **[Windows Server Essentials の構成]** ページで、 **[次へ]** をクリックします。  
   
-    2.  **[時刻の設定]** で、日付、時刻、タイム ゾーンが正しいことを確認し、**[次へ]** をクリックします。  
+   2.  **[時刻の設定]** で、日付、時刻、タイム ゾーンが正しいことを確認し、 **[次へ]** をクリックします。  
   
-    3.  **[会社についての情報]** に、「 **Contoso,Ltd.**」などの会社名を入力し、**[次へ]** をクリックします。 オプションで、内部ドメイン名とサーバー名を変更することができます。  
+   3.  **[会社についての情報]** に、「 **Contoso,Ltd.** 」などの会社名を入力し、 **[次へ]** をクリックします。 オプションで、内部ドメイン名とサーバー名を変更することができます。  
   
-    4.  **[ネットワーク管理者の作成]** で、新しい管理者アカウント名とパスワードを入力します。  
+   4.  **[ネットワーク管理者の作成]** で、新しい管理者アカウント名とパスワードを入力します。  
   
-        > [!NOTE]
-        >  既定の **Administrator** アカウント名とパスワードは使用しないでください。  
+       > [!NOTE]
+       >  既定の **Administrator** アカウント名とパスワードは使用しないでください。  
   
-    5.  をクリックして**構成**です。  
+   5.  をクリックして**構成**です。  
   
-3.  構成プロセス中にサーバーが複数回再起動し、構成が完了するまで、ログオンが自動的に行われます。 このプロセスには約 20 分かかります。  
+3. 構成プロセス中にサーバーが複数回再起動し、構成が完了するまで、ログオンが自動的に行われます。 このプロセスには約 20 分かかります。  
   
-4.  デスクトップで、ダッシュボード アイコンをクリックし、サーバーを起動します。 **[ホーム]** ページで、**[セットアップ]** タブに表示されている **[作業の開始]** タスクを実行します。  
+4. デスクトップで、ダッシュボード アイコンをクリックし、サーバーを起動します。 **[ホーム]** ページで、 **[セットアップ]** タブに表示されている **[作業の開始]** タスクを実行します。  
   
- サーバーの構成を完了すると、Windows Server Essentials を実行しているサーバーがドメイン コントローラーとして設定されます。  
+   サーバーの構成を完了すると、Windows Server Essentials を実行しているサーバーがドメイン コントローラーとして設定されます。  
   
 ###  <a name="BKMK_DeployWSERole"></a> Windows Server 2012 R2 Standard および Datacenter で Windows Server Essentials エクスペリエンス役割を展開します。  
  サーバー マネージャーを使用して、有効にして、次の手順を使用して Windows Server 2012 R2 Standard または Windows Server 2012 R2 Datacenter、Windows Server Essentials エクスペリエンス役割を構成することができます。  
@@ -103,19 +103,19 @@ Windows Server Essentials または、Essentials Experience 役割をインス�
   
 1.  ローカル管理者としてサーバーにログオンします。  
   
-2.  **サーバー マネージャー**を開いて、**[役割と機能の追加]** をクリックします。  
+2.  **サーバー マネージャー**を開いて、 **[役割と機能の追加]** をクリックします。  
   
-3.  **[サーバーの役割の選択]** で、**[Windows Server Essentials エクスペリエンス]** 役割を選択します。 ダイアログ ボックスで、**[機能の追加]** をクリックし、**[次へ]** をクリックします。  
+3.  **[サーバーの役割の選択]** で、 **[Windows Server Essentials エクスペリエンス]** 役割を選択します。 ダイアログ ボックスで、 **[機能の追加]** をクリックし、 **[次へ]** をクリックします。  
   
-4.  **[機能]** で、**[次へ]** をクリックします。  
+4.  **[機能]** で、 **[次へ]** をクリックします。  
   
-5.  **[Windows Server Essentials エクスペリエンス]** 役割の説明を確認して、**[次へ]** をクリックします。  
+5.  **[Windows Server Essentials エクスペリエンス]** 役割の説明を確認して、 **[次へ]** をクリックします。  
   
-6.  次のページで **[次へ]** をクリックし、確認ページで、**[インストール]** をクリックします。  
+6.  次のページで **[次へ]** をクリックし、確認ページで、 **[インストール]** をクリックします。  
   
 7.  インストールが完了したら、Windows Server Essentials エクスペリエンスがサーバー マネージャーでサーバーの役割として表示されます。  
   
-8.  サーバー マネージャーのフラグ通知領域で、フラグをクリックし、**[Windows Server Essentials の構成]** をクリックします。  
+8.  サーバー マネージャーのフラグ通知領域で、フラグをクリックし、 **[Windows Server Essentials の構成]** をクリックします。  
   
 9. (省略可能) 必要に応じて、サーバー名を変更します。  
   
@@ -151,19 +151,19 @@ Windows Server Essentials または、Essentials Experience 役割をインス�
   
 4.  サーバー マネージャーを開いて、[**役割と機能の追加]** をクリックします。  
   
-5.  次のページで、**[次へ]** をクリックします。  
+5.  次のページで、 **[次へ]** をクリックします。  
   
-6.  **[サーバーの役割の選択]** で、**[Windows Server Essentials エクスペリエンス]** を選択します。 ダイアログ ボックスで、**[機能の追加]** をクリックし、**[次へ]** をクリックします。  
+6.  **[サーバーの役割の選択]** で、 **[Windows Server Essentials エクスペリエンス]** を選択します。 ダイアログ ボックスで、 **[機能の追加]** をクリックし、 **[次へ]** をクリックします。  
   
-7.  **[機能]** で、**[次へ]** をクリックします。  
+7.  **[機能]** で、 **[次へ]** をクリックします。  
   
-8.  **[Windows Server Essentials エクスペリエンス]** の説明を確認して、**[次へ]** をクリックします。  
+8.  **[Windows Server Essentials エクスペリエンス]** の説明を確認して、 **[次へ]** をクリックします。  
   
-9. 次のページで **[次へ]** をクリックし、確認ページで、**[インストール]** をクリックします。  
+9. 次のページで **[次へ]** をクリックし、確認ページで、 **[インストール]** をクリックします。  
   
 10. インストールが完了したら、Windows Server Essentials エクスペリエンスは、サーバー マネージャーでサーバーの役割として表示されます。  
   
-11. **サーバー マネージャー**のフラグ通知領域で、フラグをクリックし、**[Windows Server Essentials の構成]** をクリックします。  
+11. **サーバー マネージャー**のフラグ通知領域で、フラグをクリックし、 **[Windows Server Essentials の構成]** をクリックします。  
   
 12. ウィザードに従って、Windows Server Essentials を構成します。 Active Directory 構成に応じて、Windows Server Essentials をドメイン コントローラー上に構成しているか、またはドメイン メンバーとして構成しているかどうかが通知されます。 **[構成]** をクリックして、構成を開始します。 構成プロセスが完了するまで、約 10 分かかります。  
   
@@ -220,6 +220,6 @@ Windows Server Essentials または、Essentials Experience 役割をインス�
   
 -   [新機能 Windows Server Essentials の新機能](../get-started/what-s-new.md)  
   
--   [Windows Server Essentials をインストールします。](Install-Windows-Server-Essentials.md)  
+-   [Windows Server Essentials のインストール](Install-Windows-Server-Essentials.md)  
   
 -   [Windows Server Essentials を概要します。](../get-started/get-started.md)

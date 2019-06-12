@@ -15,19 +15,19 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: ac59c554c69a6138a106a648c3fab3ed4fe05b7b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 781239f45b9b260b7d374c2a6972cdb8faad2879
+ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836423"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749600"
 ---
-# <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>手順 7.1.  証明書失効リスト (CRL) が無視されるように EAP-TLS を構成する
+# <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>手順 7.1. 証明書失効リスト (CRL) が無視されるように EAP-TLS を構成する
 
->適用先:Windows Server 2016、Windows Server 2012 R2、Windows 10 の Windows Server (半期チャネル)
+>適用対象:Windows Server 2016、Windows Server 2012 R2、Windows 10 の Windows Server (半期チャネル)
 
-&#171;  [**先の：** 手順 7.(省略可能)Azure AD を使用して VPN 接続用の条件付きアクセス](ad-ca-vpn-connectivity-windows10.md)<br>
-&#187;[ **[次へ]。** 手順 7.2. Azure AD での VPN 認証用のルート証明書を作成します。](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
+- [**先の：** 手順 7.(省略可能)Azure AD を使用して VPN 接続用の条件付きアクセス](ad-ca-vpn-connectivity-windows10.md)
+- [**次に：** 手順 7.2. Azure AD で VPN 認証のルート証明書を作成する](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
 
 >[!IMPORTANT]
 >このレジストリの変更を実装するためにエラーによって PEAP が失敗し、クラウドの証明書の使用の IKEv2 接続が、オンプレミスで CA から発行されたクライアント認証証明書を使用する IKEv2 接続は継続して動作します。
@@ -47,11 +47,11 @@ NPS サーバーの証明書チェーン (ルート証明書を含む) の失効
 
 2. 移動します**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\13**します。
 
-3. をクリックして**編集 > 新規**選択と**DWORD (32 ビット) 値**と種類**IgnoreNoRevocationCheck**。
+3. 選択**編集 > 新規**選択と**DWORD (32 ビット) 値**入力と**IgnoreNoRevocationCheck**。
 
 4. ダブルクリック**IgnoreNoRevocationCheck**に値のデータを設定および**1**します。
 
-5. をクリックして**OK**サーバーを再起動します。 RRAS および NPS サービスを再起動するだけでは不十分です。
+5. 選択**OK**サーバーを再起動します。 RRAS および NPS サービスを再起動するだけでは不十分です。
 
 詳細については、次を参照してください。[を有効にするか、クライアントで証明書失効確認 (CRL) を無効にする方法](https://technet.microsoft.com/library/bb680540.aspx)します。
 
@@ -62,8 +62,6 @@ NPS サーバーの証明書チェーン (ルート証明書を含む) の失効
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\25     |PEAP         |
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\26     |EAP-MSCHAP v2         |
 
-## <a name="next-step"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-[手順 7.2 です。Azure AD での VPN 認証用のルート証明書の作成](vpn-create-root-cert-for-vpn-auth-azure-ad.md):この手順では、テナントに自動的に VPN サーバーのクラウド アプリを作成する Azure AD に VPN 認証用のルート証明書の条件付きアクセスを構成します。 
-
----
+[手順 7.2.Azure AD での VPN 認証用のルート証明書の作成](vpn-create-root-cert-for-vpn-auth-azure-ad.md):この手順では、テナントに自動的に VPN サーバーのクラウド アプリを作成する Azure AD に VPN 認証用のルート証明書の条件付きアクセスを構成します。

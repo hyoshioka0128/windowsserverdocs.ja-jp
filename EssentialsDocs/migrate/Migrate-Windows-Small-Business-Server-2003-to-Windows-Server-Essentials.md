@@ -12,12 +12,12 @@ ms.assetid: 119a7fbc-2c76-4aa3-8a7f-c7073d461b5b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 83a7f45e91516621400e94c873d59d7cb6976702
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4c89a508745c8db36272aa8d6c646878618656f6
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846603"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432884"
 ---
 # <a name="migrate-windows-small-business-server-2003-to-windows-server-essentials"></a>Windows Small Business Server 2003 から Windows Server Essentials への移行
 
@@ -27,14 +27,14 @@ ms.locfileid: "59846603"
   
 > [!IMPORTANT]
 >   Windows Server Essentials では、64 ビット環境が必要です。  Windows Server Essentials では、32 ビット環境がサポートされません。  
-  
+> 
 > [!NOTE]
 >  移行中に問題を回避するために、移行を開始する前に、このドキュメントを読むことを Windows Server Essentials 製品開発チームは強く推奨します。  
-  
+> 
 > [!NOTE]
-
+> 
 >  サーバー データを Windows Server Essentials の最新バージョンに移行する、次を参照してください。 [Windows Server Essentials への移行](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)します。  
-
+> 
 >  サーバー データを Windows Server Essentials の最新バージョンに移行する、次を参照してください。 [Windows Server Essentials への移行](../migrate/Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)します。  
 
   

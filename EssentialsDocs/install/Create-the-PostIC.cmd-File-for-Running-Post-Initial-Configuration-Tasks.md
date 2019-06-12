@@ -12,12 +12,12 @@ ms.assetid: 99e258bc-0695-48c9-b694-a7f3cbe2a2d0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f5042204cd189e3101f5e0126fd98e786a49032d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e15cb8591fc701094dde884d0a55e08d2cf422bb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844123"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433604"
 ---
 # <a name="create-the-posticcmd-file-for-running-post-initial-configuration-tasks"></a>初期構成後のタスクを実行するための PostIC.cmd ファイルの作成
 
@@ -25,13 +25,13 @@ ms.locfileid: "59844123"
 
 独自のコードを記述して、そのコードを PostIC.cmd というスクリプト ファイルから呼び出すことで、初期構成後のカスタマイズを追加できます。 PostIC.cmd ファイルを使用する場合、次のガイドラインに従う必要があります。  
   
--   カスタム コードは、サイレント モードで実行する必要があります (ユーザー インターフェイスを表示できません)。  
+- カスタム コードは、サイレント モードで実行する必要があります (ユーザー インターフェイスを表示できません)。  
   
--   カスタム コードは、サーバーの再起動を開始できません。 初期構成で、最後のタスクとして、サーバーが再起動されます。  
+- カスタム コードは、サーバーの再起動を開始できません。 初期構成で、最後のタスクとして、サーバーが再起動されます。  
   
--   カスタム コードを 3 分以内に実行する必要があります。  
+- カスタム コードを 3 分以内に実行する必要があります。  
   
- コードが正常に実行された場合に 0 を返すように PostIC.cmd ファイルを定義します。 それ以外の値が返された場合、オペレーティング システムは [SetupFailure.cmd](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md#BKMK_SetupFailure)という名前のファイルを探します。このファイルには、PostIC.cmd ファイル内のコードが正常に実行されなかった場合に実行する必要のあるコードが含まれています。 PostIC.cmd ファイルと SetupFailure.cmd ファイルはどちらも C:\Windows\Setup\Scripts に存在する必要があります。  
+  コードが正常に実行された場合に 0 を返すように PostIC.cmd ファイルを定義します。 それ以外の値が返された場合、オペレーティング システムは [SetupFailure.cmd](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md#BKMK_SetupFailure)という名前のファイルを探します。このファイルには、PostIC.cmd ファイル内のコードが正常に実行されなかった場合に実行する必要のあるコードが含まれています。 PostIC.cmd ファイルと SetupFailure.cmd ファイルはどちらも C:\Windows\Setup\Scripts に存在する必要があります。  
   
 #### <a name="to-define-post-initial-configuration-customizations"></a>初期構成後のカスタマイズを定義するには  
   

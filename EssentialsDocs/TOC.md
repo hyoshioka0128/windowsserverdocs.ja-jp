@@ -76,7 +76,7 @@
 ### [Windows Server Essentials への移行のために設定とデータを移行先サーバーに移動する](migrate/Move-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)
 ### [Windows SBS 2003 の設定とデータを Windows Server Essentials 移行の移行先サーバーに移動する](migrate/Move-Windows-SBS-2003-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)
 ### [Windows SBS 2008 の設定とデータを Windows Server Essentials 移行の移行先サーバーに移動する](migrate/Move-Windows-SBS-2008-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)
-### [Windows SBS 2011 Essentials の設定とデータを Windows Server Essentials 移行の移行先サーバーに移動する](migrate/Move-Windows-SBS-2011-Essentials-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)
+### [Windows SBS 2011 Essentials の設定とデータを Windows Server Essentials 移行の移行先サーバーに移動する](migrate/Move-Windows-SBS-2011-Essentials-to-the-Destination-Server-for-migration.md)
 ### [Windows SBS 2011 Standard の設定とデータを Windows Server Essentials 移行の移行先サーバーに移動する](migrate/Move-Windows-SBS-2011-Standard-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)
 ### [Windows Server 2008 Foundation の設定とデータを Windows Server Essentials 移行の移行先サーバーに移動する](migrate/Move-Windows-Server-2008-Foundation-settings-and-data-to-the-Destination-Server-for-Windows-Server-Essentials-migration.md)
 ### [Windows Server Essentials への移行のために移行後のタスクを実行する](migrate/Perform-post-migration-tasks-for-Windows-Server-Essentials-migration.md)

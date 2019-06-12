@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 11/03/2018
-ms.openlocfilehash: 2f800dfa01077287f8200dd8abea0be899776683
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 70f6f8c2db742361deecaa216b053d8b1d057a3d
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866693"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812606"
 ---
 # <a name="setting-up-the-host-guardian-service-for-always-encrypted-with-secure-enclaves-in-sql-server"></a>SQL Server のセキュリティで保護された enclaves での Always Encrypted のホスト ガーディアン サービスの設定 
 
@@ -39,8 +39,8 @@ ms.locfileid: "59866693"
 
 - HGS を実行する 1 ~ 3 のサーバー。 
 
-  >[!NOTE]
-  >HGS サーバーが 1 つだけでは、テストまたは実稼働前環境必要があります。
+  > [!NOTE]
+  > HGS サーバーが 1 つだけでは、テストまたは実稼働前環境必要があります。
 
   これらのサーバーは、どのコンピューターがセキュリティで保護された enclaves で Always Encrypted を使用して、SQL Server インスタンスを実行を制御するので慎重に保護する必要があります。 
   別の管理者が HGS クラスターを管理し、または別の仮想化ファブリックまたは Azure サブスクリプションでは、インフラストラクチャの残りの部分から分離された物理ハードウェアでは、HGS を実行することをお勧めします。
@@ -110,11 +110,13 @@ Get-CimInstance -ClassName Win32_Tpm -Namespace root/cimv2/Security/MicrosoftTpm
    HgsServiceName した DNN を指定します。
 
    TPM のモード。
+
    ```powershell
    Initialize-HgsAttestation -HgsServiceName 'hgs' -TrustTpm
    ```
 
    ホスト キーのモード。
+
    ```powershell
    Initialize-HgsAttestation -HgsServiceName 'hgs' -TrustHostKey 
    ```
@@ -148,13 +150,13 @@ Get-CimInstance -ClassName Win32_Tpm -Namespace root/cimv2/Security/MicrosoftTpm
 
 既定では、HGS サーバーを初期化するときに、HTTP のみの通信用の IIS web サイトが構成します。
 
->[!NOTE]
->よく知られていて、信頼された HGS サーバー証明書を使用して HTTPS を構成して、中間の攻撃を回避する必要が、運用環境のデプロイのためお勧めします。
+> [!NOTE]
+> よく知られていて、信頼された HGS サーバー証明書を使用して HTTPS を構成して、中間の攻撃を回避する必要が、運用環境のデプロイのためお勧めします。
 
 [!INCLUDE [Configure HTTPS](../../includes/configure-hgs-for-https.md)] 
 
->[!NOTE]
->セキュリティで保護された enclaves で Always Encrypted、SSL 証明書は、SQL Server を実行する両方のホスト マシンで信頼されている必要があるし、database クライアント アプリケーションを実行するマシンは、HGS を問い合わせる必要があります。 
+> [!NOTE]
+> セキュリティで保護された enclaves で Always Encrypted、SSL 証明書は、SQL Server を実行する両方のホスト マシンで信頼されている必要があるし、database クライアント アプリケーションを実行するマシンは、HGS を問い合わせる必要があります。 
 
 ## <a name="collect-attestation-info-from-the-host-machines"></a>ホスト マシンから構成証明情報を収集します。
 
@@ -197,6 +199,7 @@ TPM のモードを使用している場合は、構成証明のサポートを�
    ```powershell
    Get-ComputerInfo -Property DeviceGuard* 
    ```
+
 5. TPM の識別子と基準を収集します。
 
    ```powershell 
@@ -216,6 +219,7 @@ TPM のモードを使用している場合は、構成証明のサポートを�
    Add-HgsAttestationTpmPolicy -Name ServerA-Baseline -Path C:\temp\TpmBaseline-ServerA.tcglog 
    Add-HgsAttestationCiPolicy -Name AllowMicrosoft-Audit -Path C:\temp\AllowMicrosoft-Audit.bin 
    ```
+
 9. 最初のサーバーは、証言する準備ができました! 
    ホスト コンピューターには、(HGS クラスターの DNS 名、通常は使用 HGS のドメイン名と組み合わせて HGS サービス名の変更) を証明する場所を指示する次のコマンドを実行します。 
    HostUnreachable エラーが発生した場合は、解決し、HGS サーバーの DNS 名に対して ping を実行を確認します。 
@@ -231,8 +235,8 @@ TPM のモードを使用している場合は、構成証明のサポートを�
 
 ### <a name="collecting-host-keys"></a>ホスト キーの収集 
 
->[!NOTE] 
->ホスト キーの構成証明はテスト環境での使用のみ推奨されます。 TPM 構成証明は、VBS enclaves が SQL Server で機密データの処理は、信頼されたコードを実行しているし、マシンが、推奨されるセキュリティ設定で構成されていることの最も強力な保証を提供します。 
+> [!NOTE] 
+> ホスト キーの構成証明はテスト環境での使用のみ推奨されます。 TPM 構成証明は、VBS enclaves が SQL Server で機密データの処理は、信頼されたコードを実行しているし、マシンが、推奨されるセキュリティ設定で構成されていることの最も強力な保証を提供します。 
 
 ホスト キーの構成証明モードでの HGS の設定を選択した場合は、生成およびキーの各ホスト コンピューターから収集し、ホスト ガーディアン サービスに登録する必要があります。 
 

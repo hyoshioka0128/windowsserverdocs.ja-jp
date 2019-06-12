@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: bf10f7f7444967247e51065bc6138fc0afd5ed1a
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 45164e9eca0873c82148aa3b7baa179a3f626dd7
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976782"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66804975"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>ユーザー用にリモート デスクトップ Web クライアントをセットアップする
 
@@ -216,7 +216,7 @@ Web クライアント、インターネット接続がない RD Web アクセ�
     >
     > 、SSL 証明書のバインドの一覧でポート 3392 に正しい証明書がバインドされていることを確認します。
 
-3. 開き、Windows レジストリ (regedit) を nagivate```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp```キーを検索および**WebSocketURI**します。 値を設定する必要があります **https://+:3392/rdp/** します。
+3. 開き、Windows レジストリ (regedit) を nagivate```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp```キーを検索および**WebSocketURI**します。 値を設定する必要があります <strong>https://+:3392/rdp/</strong>します。
 
 ### <a name="setting-up-the-rd-session-host"></a>RD セッション ホストの設定
 RD セッション ホスト サーバーが RD ブローカー サーバーと異なる場合は、次の手順に従います。
@@ -238,7 +238,7 @@ RD セッション ホスト サーバーが RD ブローカー サーバーと�
     >
     > 、SSL 証明書のバインドの一覧でポート 3392 に正しい証明書がバインドされていることを確認します。
 
-3. 開き、Windows レジストリ (regedit) を nagivate```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp```キーを検索および**WebSocketURI**します。 値を設定する必要があります **https://+:3392/rdp/** します。
+3. 開き、Windows レジストリ (regedit) を nagivate```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp```キーを検索および**WebSocketURI**します。 値を設定する必要があります<https://+:3392/rdp/>します。
 
 ### <a name="general-observations"></a>一般的な所見
 

@@ -12,12 +12,12 @@ ms.assetid: fd7196ac-cfa6-46a5-ba77-6962b47a825e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 808a4b1e120fa559d603b34ad006b18de6b94378
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 74c40cc0f06d73a922a3d7fb819f7e71b47ac088
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847693"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432964"
 ---
 # <a name="install-windows-server-essentials-in-migration-mode1"></a>移行モード 1 の場合の Windows Server Essentials をインストールします。
 
@@ -47,25 +47,25 @@ Windows Server Essentials を実行しているネットワークに 1 つだけ
   
 #### <a name="to-install-windows-server-essentials-on-the-destination-server"></a>移行先サーバーで Windows Server Essentials をインストールするには  
   
-1.  移行先サーバーで有効にして、Windows Server Essentials の DVD1 を DVD ドライブに挿入します。 CD または DVD から起動するかどうかを確認するメッセージが表示されたら、任意のキーを押してそうします。  
+1. 移行先サーバーで有効にして、Windows Server Essentials の DVD1 を DVD ドライブに挿入します。 CD または DVD から起動するかどうかを確認するメッセージが表示されたら、任意のキーを押してそうします。  
   
-    > [!NOTE]
-    >  使用することができます、移行先サーバーでは、USB フラッシュ ドライブからブートをサポートする場合、 **Windows 7 USB/DVD Download Tool** Windows Server Essentials の ISO ファイルから起動可能な USB フラッシュ ドライブを作成します。 USB フラッシュ ドライブの方が DVD-ROM ドライブよりデータ読み取り速度がはるかに速いので、フラッシュ ドライブを使用するとインストール プロセスの時間を大幅に短縮できます。 起動可能な USB フラッシュ ドライブを作成した後、応答ファイルをフラッシュ ドライブに追加できます。 できます[Windows 7 USB/DVD Download Tool をダウンロード](https://go.microsoft.com/fwlink/p/?LinkId=248282)Microsoft Store の web サイトは無料です。  
+   > [!NOTE]
+   >  使用することができます、移行先サーバーでは、USB フラッシュ ドライブからブートをサポートする場合、 **Windows 7 USB/DVD Download Tool** Windows Server Essentials の ISO ファイルから起動可能な USB フラッシュ ドライブを作成します。 USB フラッシュ ドライブの方が DVD-ROM ドライブよりデータ読み取り速度がはるかに速いので、フラッシュ ドライブを使用するとインストール プロセスの時間を大幅に短縮できます。 起動可能な USB フラッシュ ドライブを作成した後、応答ファイルをフラッシュ ドライブに追加できます。 できます[Windows 7 USB/DVD Download Tool をダウンロード](https://go.microsoft.com/fwlink/p/?LinkId=248282)Microsoft Store の web サイトは無料です。  
   
-    > [!NOTE]
-    >  移行先サーバーが DVD から起動しない場合は、コンピューターを再起動し、BIOS Setup の起動シーケンスで **DVD-ROM** が一覧の最初に表示されていることを確認します。 BIOS Setup の起動シーケンスを変更する方法の詳細については、ハードウェア メーカーのドキュメントを参照してください。  
+   > [!NOTE]
+   >  移行先サーバーが DVD から起動しない場合は、コンピューターを再起動し、BIOS Setup の起動シーケンスで **DVD-ROM** が一覧の最初に表示されていることを確認します。 BIOS Setup の起動シーケンスを変更する方法の詳細については、ハードウェア メーカーのドキュメントを参照してください。  
   
-2.  **[新規インストール]** をクリックします。  
+2. **[新規インストール]** をクリックします。  
   
-3.  一覧に表示されない内蔵ハード ドライブがある場合は、**[ドライバーの読み込み]** をクリックし、必要なドライバーをインストールしてから続行します。  
+3. 一覧に表示されない内蔵ハード ドライブがある場合は、 **[ドライバーの読み込み]** をクリックし、必要なドライバーをインストールしてから続行します。  
   
-4.  プライマリ ハード ドライブのすべてのファイルとフォルダーが削除されることを確認するチェック ボックスをオンにして、**[インストール]** をクリックします。  
+4. プライマリ ハード ドライブのすべてのファイルとフォルダーが削除されることを確認するチェック ボックスをオンにして、 **[インストール]** をクリックします。  
   
-5.  **[サーバー インストール モードの選択]** ページで、**[サーバーの移行]** をクリックし、必要な移行情報を指定します。  
+5. **[サーバー インストール モードの選択]** ページで、 **[サーバーの移行]** をクリックし、必要な移行情報を指定します。  
   
-6.  **[サーバーは正常に移行されます]** というメッセージが表示されたら、**[閉じる]** をクリックします。  
+6. **[サーバーは正常に移行されます]** というメッセージが表示されたら、 **[閉じる]** をクリックします。  
   
- インストールが終了すると、移行応答ファイルで指定した管理者ユーザー アカウントとパスワードで自動的にログオンします。  
+   インストールが終了すると、移行応答ファイルで指定した管理者ユーザー アカウントとパスワードで自動的にログオンします。  
   
 > [!NOTE]
 >  デスクトップのロックを解除して、Windows Server Essentials のインストール中に、ビルトイン administrator アカウントを使用して、およびパスワードを空白のままにします。  

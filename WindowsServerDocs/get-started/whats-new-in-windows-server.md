@@ -2,18 +2,18 @@
 title: Windows Server の新機能
 description: コンピューティング、ID、管理、自動化、ネットワーク、セキュリティ、記憶域の新機能について。
 ms.prod: windows-server
-ms.date: 05/21/2019
+ms.date: 06/03/2019
 ms.technology: server-general
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: c39336dfa02e798a609fd5b16f5f844442f32c89
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 8e19c7a51ef1f50f974dc380e00315f9980da560
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976667"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501363"
 ---
 # <a name="whats-new-in-windows-server"></a>新機能 Windows Server の新機能
 
@@ -23,7 +23,7 @@ ms.locfileid: "65976667"
 
 長期的なサービス チャネル (LTSC) を解放します。
 
-- [新機能 Windows Server 2019 の新機能](../get-started-19/whats-new-19.md)
+- [Windows Server 2019 の新機能](../get-started-19/whats-new-19.md)
 - [Windows Server 2016 の新機能](whats-new-in-windows-server-2016.md)
 
 半期チャネル リリース:
@@ -31,7 +31,9 @@ ms.locfileid: "65976667"
 - [Windows Server バージョンが 1903 では新機能](../get-started-19/whats-new-in-windows-server-1903.md)
 - [Windows Server バージョン 1809 の新機能](whats-new-in-windows-server-1809.md)
 - [Windows Server バージョン 1803 の新機能](whats-new-in-windows-server-1803.md)
-- [Windows Server バージョン 1709 の新機能](whats-new-in-windows-server-1709.md)
+- [Windows Server バージョン 1709 で新](whats-new-in-windows-server-1709.md)(サポート対象外、2019 年 4 月 9 日の時点で)
+
+Windows Server 半期チャネル リリースより速いペースで新しいオペレーティング システムの機能を提供します。 新しいリリースでは、6 か月ごとに登場され、18 か月間サポートされます。 確認[Windows Server リリースの情報](windows-server-release-info.md)と[ライフ サイクル サポート ページ](https://support.microsoft.com/lifecycle)の日付をサポートし、常に可能であれば、最新のリリースを使用します。
 
 ## <a name="see-also"></a>関連項目
 

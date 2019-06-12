@@ -5,15 +5,15 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 09/18/2018
+ms.date: 06/06/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 883fba96fcb71cb1c6e8162c1564d66924c4e24d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b79e832ee45990d18baf4c211ab68b907134ceb7
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885653"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811839"
 ---
 # <a name="create-a-connection-provider-for-a-solution-extension"></a>ソリューションの拡張機能の接続プロバイダーを作成します。
 
@@ -83,19 +83,17 @@ Manifest.json で接続プロバイダーのエントリのサンプルを次に
 | description | エントリ ポイントの簡単な説明を入力します。 |
 | connectionType | 読み込みは、プロバイダー接続の種類を表します。 ここに入力した値も指定するため、ソリューションのエントリ ポイントで、ソリューションがそれらの接続を読み込むことができます。 ここに入力した値は、ツールがこの型と互換性があるツールのエントリ ポイントの使用もします。 ここに入力したこの値は、RPC に送信される接続オブジェクトでは使用も、「追加ウィンドウの」アプリケーション レイヤーの実装の手順で呼び出します。 |
 | connectionTypeName | 接続の表に、接続プロバイダーを使用する接続を表すために使用します。 これは型の複数形の名前を指定します。 |
-| connectionTypeUrlName | URL の作成に使用され、Windows Admin Center がインスタンスに接続した後に読み込まれているソリューションを表します。 このエントリは、ターゲットの前に、接続後に使用されます。 この例では、"connectionexample"は、URL でこの値が表示されます。 http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com |
-| connectionTypeDefaultSolution | 接続プロバイダーによって読み込む必要のある既定のコンポーネントを表します。 この値は、の組み合わせ: [a]; マニフェストの上部にある定義された拡張機能パッケージの名前[b] 感嘆符 (!)。[c]、ソリューションのエントリ ポイント名。    「Msft.sme.mySample - 拡張子名」のプロジェクトと、ソリューションのエントリ ポイント名"example"では、この値になります"msft.sme.solutionExample 拡張機能です。 例"。 |
-| connectionTypeDefaultTool | 既定の接続が成功すると読み込む必要のあるツールを表します。 このプロパティの値は、connectionTypeDefaultSolution のような 2 つの部分で構成されます。 この値は、の組み合わせ: [a]; マニフェストの上部にある定義された拡張機能パッケージの名前[b] 感嘆符 (!)。[c] ツール エントリ ポイント名の最初に読み込む必要のあるツールです。 「Msft.sme.solutionExample - 拡張子名」のプロジェクトと、ソリューションのエントリ ポイント名"example"では、この値になります"msft.sme.solutionExample 拡張機能です。 例"。 |
+| connectionTypeUrlName | URL の作成に使用され、Windows Admin Center がインスタンスに接続した後に読み込まれているソリューションを表します。 このエントリは、ターゲットの前に、接続後に使用されます。 この例では、"connectionexample"は、URL でこの値が表示されます。 `http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com` |
+| connectionTypeDefaultSolution | 接続プロバイダーによって読み込む必要のある既定のコンポーネントを表します。 この値は、組み合わせです。 <br>[a]; マニフェストの上部にある定義された拡張機能パッケージの名前 <br>[b] 感嘆符 (!)。 <br>[c]、ソリューションのエントリ ポイント名。    <br>「Msft.sme.mySample - 拡張子名」のプロジェクトと、ソリューションのエントリ ポイント名"example"では、この値になります"msft.sme.solutionExample 拡張機能です。 例"。 |
+| connectionTypeDefaultTool | 既定の接続が成功すると読み込む必要のあるツールを表します。 このプロパティの値は、connectionTypeDefaultSolution のような 2 つの部分で構成されます。 この値は、組み合わせです。 <br>[a]; マニフェストの上部にある定義された拡張機能パッケージの名前 <br>[b] 感嘆符 (!)。 <br>[c] ツール エントリ ポイント名の最初に読み込む必要のあるツールです。 <br>「Msft.sme.solutionExample - 拡張子名」のプロジェクトと、ソリューションのエントリ ポイント名"example"では、この値になります"msft.sme.solutionExample 拡張機能です。 例"。 |
 | connectionStatusProvider | 「接続の状態プロバイダーの定義」セクションを参照してください。 |
 
 ## <a name="define-connection-status-provider"></a>接続の状態プロバイダーを定義します。
 
 接続の状態プロバイダーも接続しているユーザーがターゲットにアクセスする権限を持っていることを確認をオンラインで使用できますが、ターゲットを検証するメカニズムです。 現在は、接続状態プロバイダーの 2 つの種類があります。PowerShell、および RelativeGatewayUrl します。
 
-*   PowerShell 接続の状態プロバイダー
-    *   ターゲットがオンラインで PowerShell スクリプトを使用してアクセスできるかを判断します。 結果は、以下に定義された 1 つのプロパティ"status"を持つオブジェクトで返される必要があります。
-*   RelativeGatewayUrl 接続状態プロバイダー
-    *   ターゲットがオンラインで、rest 呼び出しを使用してアクセスできるかを判断します。 結果は、以下に定義された 1 つのプロパティ"status"を持つオブジェクトで返される必要があります。
+*   <strong>PowerShell 接続の状態プロバイダー</strong> -ターゲットとは、オンラインおよび PowerShell スクリプトを使用してアクセスできるかどうかを決定します。 結果は、以下に定義された 1 つのプロパティ"status"を持つオブジェクトで返される必要があります。
+*   <strong>RelativeGatewayUrl 接続状態プロバイダー</strong> -ターゲットとは、オンラインで、rest 呼び出しを使用してアクセスできるかどうかを決定します。 結果は、以下に定義された 1 つのプロパティ"status"を持つオブジェクトで返される必要があります。
 
 ### <a name="define-status"></a>状態を定義します。
 
@@ -113,25 +111,22 @@ Manifest.json で接続プロバイダーのエントリのサンプルを次に
 
 ステータスのプロパティ:
 
-* Label
-    * 状態の戻り値の型を記述するラベル。 ランタイムでラベルの値をマップすることに注意してください。 ランタイム内の値のマッピングの下のエントリを参照してください。
+* <strong>ラベル</strong>- 状態の戻り値の型を記述するラベル。 ランタイムでラベルの値をマップすることに注意してください。 ランタイム内の値のマッピングの下のエントリを参照してください。
 
-* 種類
-    * ステータス戻り値の型。 種類は、次の列挙値があります。 任意の値 2 またはそれ以上、プラットフォームは、接続されているオブジェクトに移動しないと、UI でエラーが表示されます。
+* <strong>型</strong>-状態の戻り型。 種類は、次の列挙値があります。 任意の値 2 またはそれ以上、プラットフォームは、接続されているオブジェクトに移動しないと、UI でエラーが表示されます。
 
-種類:
+   種類:
 
-| 値 | 説明 |
-| ----- | ----------- |
-| 0 | オンライン |
-| 1 | 警告 |
-| 2 | 権限がありません |
-| 3 | エラー |
-| 4 | 致命的です |
-| 5 | Unknown |
+  | Value | 説明 |
+  | ----- | ----------- |
+  | 0 | オンライン |
+  | 1 | 警告 |
+  | 2 | 権限がありません |
+  | 3 | エラー |
+  | 4 | 致命的です |
+  | 5 | Unknown |
 
-* 詳細
-    * 追加の詳細ステータスを記述するには、型が返されます。
+* <strong>詳細</strong>- 状態の戻り値の型を記述する追加の詳細。
 
 ### <a name="powershell-connection-status-provider-script"></a>接続の状態プロバイダーの PowerShell スクリプト
 
@@ -139,7 +134,7 @@ Manifest.json で接続プロバイダーのエントリのサンプルを次に
 
 PowerShell スクリプトの例:
 
-``` ts
+```PowerShell
 ## Get-My-Status ##
 
 function Get-Status()

@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c42cffec0ddc1ae480ae67982147e9f186f0e50a
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 5cd345230ce5c0fc556bfd8b421d866bd827507b
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222861"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812447"
 ---
 # <a name="convert-a-gpt-disk-into-an-mbr-disk"></a>GPT ディスクを MBR ディスクに変換します。
 
-> **適用対象します。** Windows 10、Windows 8.1、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> **適用対象します。** Windows 10、Windows 8.1、Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 マスター ブート レコード (MBR) ディスクは、標準 BIOS パーティション テーブルを使用します。 GUID パーティション テーブル (GPT) ディスクは、Unified Extensible Firmware Interface (UEFI) を使用します。 MBR ディスクでは、各ディスク上で 4 つを超えるパーティションをサポートしていません。 2 テラバイト (TB) より大きいディスクでは、MBR パーティション方式はお勧めできません。
 
@@ -56,16 +56,12 @@ ms.locfileid: "66222861"
 
 7.  **DISKPART** プロンプトで、「`convert mbr`」と入力します。
 
-<br />
-
-| Value | 説明 |
-| --- | --- |
-| <p>**ディスクの一覧**</p> | <p>ディスクとディスクに関する情報を一覧表示します。ディスクのサイズ、利用可能な空き領域の容量、ディスクがベーシック ディスクとダイナミック ディスクのどちらであるか、ディスクでマスター ブート レコード (MBR) と GUID パーティション テーブル (GPT) のどちらのパーティション スタイルが使用されているかなどの情報が表示されます。 アスタリスク (*) でマークされているディスクにフォーカスがあります。</p> |
-| <p>**ディスクを選択します。**</p> | <p><em>disknumber</em> がディスク番号である指定されたディスクを選択し、そのディスクにフォーカスを移動します。</p> | <p>**クリーンアップ**</p> | <p>フォーカスのあるディスクからすべてのパーティションまたはボリュームを削除します。</p> |
-| <p>**mbr を変換します。**</p> | <p>GUID パーティション テーブル (GPT) パーティション スタイルの空のベーシック ディスクをマスター ブート レコード (MBR) パーティション スタイルのベーシック ディスクに変換します。</p>
+|                Value                  |      説明   |
+| ------------------------------------- | -----------------  |
+|  <strong>ディスクの一覧</strong>  | ディスクとディスクに関する情報を一覧表示します。ディスクのサイズ、利用可能な空き領域の容量、ディスクがベーシック ディスクとダイナミック ディスクのどちらであるか、ディスクでマスター ブート レコード (MBR) と GUID パーティション テーブル (GPT) のどちらのパーティション スタイルが使用されているかなどの情報が表示されます。 アスタリスクでマークされているディスク (\*) にフォーカスがあります。 |
+| <strong>ディスクを選択します。</strong> |                                                                                                          <em>disknumber</em> がディスク番号である指定されたディスクを選択し、そのディスクにフォーカスを移動します。                                                                                                           |
+| <strong>mbr を変換します。</strong> |                                                                               GUID パーティション テーブル (GPT) パーティション スタイルの空のベーシック ディスクをマスター ブート レコード (MBR) パーティション スタイルのベーシック ディスクに変換します。                                                                                |
 
 ## <a name="see-also"></a>関連項目
 
 -   [コマンドライン構文の表記規則](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
-
-

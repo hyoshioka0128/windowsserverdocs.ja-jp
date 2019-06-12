@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 648b179f5b2feb8a7585c815aee47804e3bf1532
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9e35d3a3e85ed046fb658bbf5a97ab5fc5eec6d3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882273"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442012"
 ---
 # <a name="rdpsign"></a>rdpsign
 
@@ -36,6 +36,7 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 ```
 
 ## <a name="parameters"></a>パラメーター
+
 |パラメーター|説明|
 |-------|--------|
 |/sha1 \<hash>|これは、セキュア ハッシュ アルゴリズム 1 (SHA1) ハッシュ、証明書ストアに含まれている署名証明書の拇印を指定します。|
@@ -55,20 +56,20 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 -   .rdp ファイルのいずれかは、読み取りまたは書き込みをすることはできない場合は、複数のファイルが指定されている場合に、ツールは次のファイルに引き続き。
 
 ## <a name="BKMK_examples"></a>例
--   File1.rdp の名前は、.rdp ファイルをサインインするには、.rdp ファイルを保存したフォルダーに移動し、し、次のように入力します。
-    ```
-    rdpsign /sha1 hash file1.rdp
-    ```
-    > [!NOTE]
-    > *ハッシュ* 値はスペースを含めないの SHA1 証明書の拇印を表します。
--   .Rdp ファイルを実際には、ファイルへの署名せずにデジタル署名が成功したかどうかをテストするには、次のように入力します。
-    ```
-    rdpsign /sha1 hash /l file1.rdp
-    ```
--   複数の .rdp ファイルを署名するには、スペースを使用して、ファイル名を区切ります。 たとえば、File1.rdp、File2.rdp、および File3.rdp という複数の .rdp ファイルをサインインするには、次のように入力します。
-    ```
-    rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
-    ```
-## <a name="see-also"></a>関連項目
-[コマンドライン構文キー](command-line-syntax-key.md)
-[リモート デスクトップ サービスと #40 です。ターミナル サービスと #41 です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+- File1.rdp の名前は、.rdp ファイルをサインインするには、.rdp ファイルを保存したフォルダーに移動し、し、次のように入力します。
+  ```
+  rdpsign /sha1 hash file1.rdp
+  ```
+  > [!NOTE]
+  > *ハッシュ* 値はスペースを含めないの SHA1 証明書の拇印を表します。
+- .Rdp ファイルを実際には、ファイルへの署名せずにデジタル署名が成功したかどうかをテストするには、次のように入力します。
+  ```
+  rdpsign /sha1 hash /l file1.rdp
+  ```
+- 複数の .rdp ファイルを署名するには、スペースを使用して、ファイル名を区切ります。 たとえば、File1.rdp、File2.rdp、および File3.rdp という複数の .rdp ファイルをサインインするには、次のように入力します。
+  ```
+  rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
+  ```
+  ## <a name="see-also"></a>関連項目
+  [コマンドライン構文キー](command-line-syntax-key.md)
+  [リモート デスクトップ サービスと #40 です。ターミナル サービスと #41 です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)

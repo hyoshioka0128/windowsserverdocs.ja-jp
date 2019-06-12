@@ -12,16 +12,16 @@ ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 748010e80cf2b54926ca226a7af8c49f1aa16800
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 30ca0a1e8a2f17f54a8f05d7270bf9512be7a8dc
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192644"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805169"
 ---
 # <a name="remote-server-administration-tools"></a>リモート サーバー管理ツール
 
->適用先:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、リモート サーバー管理ツールの Windows 10 をサポートします。
 
@@ -97,30 +97,30 @@ Windows 10 で開く、**設定**アプリに移動して**省略可能な機能
 
 ##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-after-rsat-package-install"></a>(RSAT パッケージのインストール) した後、Windows 10 のリモート サーバー管理ツールをアンインストールするには
 
-1.  デスクトップで、 **[スタート]** 、 **[すべてのアプリ]** 、 **[Windows システム]** 、 **[コントロール パネル]** の順にクリックします。
+1. デスクトップで、 **[スタート]** 、 **[すべてのアプリ]** 、 **[Windows システム]** 、 **[コントロール パネル]** の順にクリックします。
 
-2.  **[プログラム]** の **[プログラムのアンインストール]** をクリックします。
+2. **[プログラム]** の **[プログラムのアンインストール]** をクリックします。
 
-3.  **[インストールされた更新プログラムを表示]** をクリックします。
+3. **[インストールされた更新プログラムを表示]** をクリックします。
 
-4.  **[Microsoft Windows (KB2693643) の更新プログラム]** を右クリックし、 **[アンインストール]** をクリックします。
+4. **[Microsoft Windows (KB2693643) の更新プログラム]** を右クリックし、 **[アンインストール]** をクリックします。
 
-5.  更新プログラムをアンインストールするかどうかを確認するメッセージが表示されたら、 **[はい]** をクリックします。
-S
-##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>特定のツールをオフに (後、RSAT のパッケージをインストール)
+5. 更新プログラムをアンインストールするかどうかを確認するメッセージが表示されたら、 **[はい]** をクリックします。
+   S
+   ##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>特定のツールをオフに (後、RSAT のパッケージをインストール)
 
-1.  デスクトップで、 **[スタート]** 、 **[すべてのアプリ]** 、 **[Windows システム]** 、 **[コントロール パネル]** の順にクリックします。
+6. デスクトップで、 **[スタート]** 、 **[すべてのアプリ]** 、 **[Windows システム]** 、 **[コントロール パネル]** の順にクリックします。
 
-2.  **[プログラム]** をクリックし、 **[プログラムと機能]** の **[Windows の機能の有効化または無効化]** をクリックします。
+7. **[プログラム]** をクリックし、 **[プログラムと機能]** の **[Windows の機能の有効化または無効化]** をクリックします。
 
-3.  **[Windows の機能]** ダイアログ ボックスで、 **[リモート サーバー管理ツール]** を展開し、 **[役割管理ツール]** または **[機能管理ツール]** を展開します。
+8. **[Windows の機能]** ダイアログ ボックスで、 **[リモート サーバー管理ツール]** を展開し、 **[役割管理ツール]** または **[機能管理ツール]** を展開します。
 
-4.  無効にするツールのチェック ボックスをオフにします。
+9. 無効にするツールのチェック ボックスをオフにします。
 
-    > [!NOTE]
-    > サーバー マネージャーをオフにすると、コンピューターを再起動する必要があります、そのからアクセスできたツールを **ツール** からサーバー マネージャーのメニューを開く必要がある、 **管理ツール** フォルダーです。
+   > [!NOTE]
+   > サーバー マネージャーをオフにすると、コンピューターを再起動する必要があります、そのからアクセスできたツールを **ツール** からサーバー マネージャーのメニューを開く必要がある、 **管理ツール** フォルダーです。
 
-5.  使用しないツールの無効化が完了したら、 **[OK]** をクリックします。
+10. 使用しないツールの無効化が完了したら、 **[OK]** をクリックします。
 
 ### <a name="run-remote-server-administration-tools"></a>リモート サーバー管理ツールの実行
 
@@ -158,7 +158,7 @@ S
 ### <a name="issue-rsat-fod-installation-fails-with-error-code-0x800f0954"></a>**問題**:エラー コード 0x800f0954 RSAT FOD インストールに失敗します。
 
 > **影響**:Windows 10 1809 RSAT FODs (2018 の年 10 月更新) WSUS または SCCM 環境で
-
+> 
 > **解像度**:FODs を WSUS または SCCM から更新プログラムを受信するドメインに参加している PC にインストールするには Windows Update またはローカル共有から直接ダウンロード FODs を有効にするグループ ポリシー設定を変更する必要があります。 詳細についての詳細とその設定を変更する方法については、次を参照してください。[機能需要と言語パックで使用できるようにする WSUS または SCCM を使用している方法](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)します。
 
 ---
@@ -166,7 +166,7 @@ S
 ### <a name="issue-rsat-fod-installation-via-settings-app-does-not-show-statusprogress"></a>**問題**:[設定] アプリを使用して RSAT FOD インストールは状態/の進行状況を表示しません。
 
 > **影響**:Windows 10 1809 (2018 の年 10 月更新) 上で RSAT FODs
-
+> 
 > **解像度**:インストールの進行状況を表示するには、をクリックして、**戻る**のステータスを表示するボタン、**省略可能な機能を管理する**ページ。
 
 ---
@@ -174,7 +174,7 @@ S
 ### <a name="issue-rsat-fod-uninstallation-via-settings-app-may-fail"></a>**問題**:[設定] アプリを使用して RSAT FOD アンインストールが失敗します。
 
 > **影響**:Windows 10 1809 (2018 の年 10 月更新) 上で RSAT FODs
-
+> 
 > **解像度**:場合によっては、アンインストールの失敗の依存関係を手動でアンインストールする必要がある原因です。 具体的には、RSAT ツール A が B の RSAT ツールで必要な場合 RSAT ツール A のアンインストールを選択しは失敗 RSAT ツール B がまだインストールされている場合。 この場合、最初に、RSAT ツール B をアンインストールし、RSAT ツール A. をアンインストール依存関係を含む RSAT FODs の一覧を参照してください。
 
 ---
@@ -182,7 +182,7 @@ S
 ### <a name="issue-rsat-fod-uninstallation-appears-to-succeed-but-the-tool-is-still-installed"></a>**問題**:RSAT FOD アンインストールが失敗するに表示されますが、ツールがまだインストールされています。
 
 > **影響**:Windows 10 1809 (2018 の年 10 月更新) 上で RSAT FODs
-
+> 
 > **解像度**:PC を再起動すると、ツールの削除を完了します。
 
 ---
@@ -190,7 +190,7 @@ S
 ### <a name="issue-rsat-missing-after-windows-10-upgrade"></a>**問題**:Windows 10 にアップグレードした後に不足している RSAT
 
 > **影響**:任意の RSAT します。自動的に再インストール (より前の RSAT FODs) MSU パッケージのインストール
-
+> 
 > **解像度**:RSAT が原因の OS のアップグレードでは、RSAT のインストールを保存できません。MSU Windows 更新プログラム パッケージとして配信されています。 Windows 10 をアップグレードした後、RSAT をインストールしてください。 この制限は、以降では、Windows 10 1809 FODs に移行したした理由のいずれかに注意してください。 インストールされている RSAT FODs は、今後の Windows 10 バージョンのアップグレードの間で保持されます。
 
 ## <a name="see-also"></a>関連項目

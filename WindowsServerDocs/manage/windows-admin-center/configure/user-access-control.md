@@ -5,23 +5,23 @@ ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
-ms.date: 03/19/2019
+ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: b19657f4ce1a1a2cfb94f7234f07805ba0abd42c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 96d09b25ddb2f473fb4fe22c0cf716bfcf8becaa
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850573"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811929"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>ユーザー アクセス制御とアクセス許可を構成します。
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+> 適用対象:Windows Admin Center、Windows Admin Center プレビュー
 
 まだインストールしていない場合について理解するおくと、 [Windows Admin Center でユーザー アクセス制御オプション](../plan/user-access-options.md)
 
->[!NOTE]
+> [!NOTE]
 > ワークグループ環境で、または信頼されていないドメイン間では、Windows Admin Center でのグループ ベースのアクセスはサポートされていません。
 
 ## <a name="gateway-access-role-definitions"></a>ゲートウェイへのアクセス ロールの定義
@@ -41,7 +41,7 @@ ms.locfileid: "59850573"
 
 **ユーザー**ゲートウェイのユーザーとして Windows Admin Center にアクセスできるユーザーを制御できます タブ。 既定では、セキュリティ グループを指定しない場合、ゲートウェイの URL にアクセスするすべてのユーザーがアクセス権を持ちます。 1 つまたは複数のセキュリティ グループをユーザーの一覧に追加すると、アクセスは、それらのグループのメンバーに制限されます。
 
-によってアクセスを制御環境内で Active Directory ドメインを使用しない場合、```Users```と```Administrators```Windows Admin Center ゲートウェイ コンピューター上のローカル グループです。
+によってアクセスを制御環境内で Active Directory ドメインを使用しない場合、`Users`と`Administrators`Windows Admin Center ゲートウェイ コンピューター上のローカル グループです。
 
 ### <a name="smartcard-authentication"></a>スマート カード認証
 
@@ -143,6 +143,7 @@ RBAC の設定の 2 つの手順で構成されています。 対象コンピ�
 
 1 台のマシンのデプロイ モデルでは、一部のコンピューターを管理するだけで単純な環境に最適です。
 ロールベースのアクセス制御対応のマシンを構成すると、次の変更が発生します。
+
 -   Windows Admin Center で必要な関数での PowerShell モジュールをシステム ドライブ上のインストールは`C:\Program Files\WindowsPowerShell\Modules`します。 開始されますすべてのモジュール**Microsoft.Sme。**
 -   実行という名前のマシンで Just Enough Administration のエンドポイントを構成する 1 回限りの構成を Desired State Configuration **Microsoft.Sme.PowerShell**します。 このエンドポイントは、Windows Admin Center で使用される 3 つのロールを定義し、ユーザーがそれに接続するときに、一時的なローカル管理者として実行されます。
 -   ユーザーは、どのロールにアクセスを割り当てられているコントロールに、3 つの新しいローカル グループが作成されます。
@@ -191,6 +192,7 @@ Invoke-RestMethod -Uri "https://localhost:6516/api/nodes/all/features/jea/endpoi
 ```
 
 Zip アーカイブを展開すると、次のフォルダー構造が表示されます。
+
 - InstallJeaFeatures.ps1
 - JustEnoughAdministration (ディレクトリ)
 - モジュール (ディレクトリ)
@@ -198,6 +200,7 @@ Zip アーカイブを展開すると、次のフォルダー構造が表示さ�
     - WindowsAdminCenter.Jea (ディレクトリ)
 
 ノードでのロールベースのアクセス制御のサポートを構成するには、次の操作を実行する必要があります。
+
 1.  JustEnoughAdministration、Microsoft.SME をコピーします。\*、およびターゲット コンピューターの PowerShell モジュールのディレクトリに WindowsAdminCenter.Jea モジュール。 通常、これはある`C:\Program Files\WindowsPowerShell\Modules`します。
 2.  Update **InstallJeaFeature.ps1** RBAC エンドポイントの必要な構成と一致するファイル。
 3.  DSC リソースをコンパイルする InstallJeaFeature.ps1 を実行します。

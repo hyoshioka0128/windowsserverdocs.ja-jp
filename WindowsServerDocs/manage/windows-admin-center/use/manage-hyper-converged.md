@@ -5,15 +5,15 @@ ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
-ms.date: 02/11/2019
+ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 4d849120d2daaa40cb797cc5e7d4c23c74da5bb7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: fe00072932d9c7f283ebd887a5292ac9a9d0e37f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874263"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446031"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Windows Admin Center でのハイパー コンバージド インフラストラクチャを管理します。
 
@@ -21,7 +21,7 @@ ms.locfileid: "59874263"
 
 ## <a name="what-is-hyper-converged-infrastructure"></a>Hyper-Converged インフラストラクチャします。
 
-ハイパー コンバージド インフラストラクチャでは、ソフトウェアによるコンピューティング、ストレージ、および高パフォーマンス、コスト効率に優れたを提供する 1 つのクラスターに簡単に拡張できる仮想化ネットワークを統合します。 この機能は、Windows Server 2016 で導入された[記憶域スペース ダイレクト](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)と[HYPER-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)します。
+ハイパー コンバージド インフラストラクチャでは、ソフトウェアによるコンピューティング、ストレージ、および高パフォーマンス、コスト効率に優れたを提供する 1 つのクラスターに簡単に拡張できる仮想化ネットワークを統合します。 この機能は、Windows Server 2016 で導入された[記憶域スペース ダイレクト](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)、[ソフトウェアによるネットワーク制御](https://docs.microsoft.com/en-us/windows-server/networking/sdn/software-defined-networking)と[HYPER-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)します。
 
 > [!Tip]
 > Hyper-Converged インフラストラクチャを取得しようとしていますか。 マイクロソフトでは、これらをお勧め[Windows Server ソフトウェア定義](https://microsoft.com/wssd)パートナーからソリューションです。 設計は、アセンブリ、互換性および取得するための信頼性と簡単に実行されているように、参照アーキテクチャの検証にあり。
@@ -31,7 +31,7 @@ ms.locfileid: "59874263"
 
 ## <a name="what-is-windows-admin-center"></a>Windows Admin Center とは
 
-[Windows Admin Center](../understand/windows-admin-center.md)次世代の管理ツールを Windows Server、Server Manager などの従来の「ボックス」ツールの後継です。 無料とインストールされているし、インターネット接続なしで使用できます。 Windows Admin Center を使用して、管理および Windows Server 2016 または Windows Server 2019 の Insider Preview ビルドを実行している Hyper-Converged インフラストラクチャを監視することができます。
+[Windows Admin Center](../understand/windows-admin-center.md)次世代の管理ツールを Windows Server、Server Manager などの従来の「ボックス」ツールの後継です。 無料とインストールされているし、インターネット接続なしで使用できます。 Windows Admin Center を使用して、管理および Windows Server 2016 または Windows Server 2019 実行 Hyper-Converged インフラストラクチャを監視することができます。
 
 ![ハイパー コンバージド クラスター ダッシュ ボード](../media/manage-hyper-converged/hci-dashboard-v1809.png)
 
@@ -42,13 +42,13 @@ Hyper-Converged インフラストラクチャ用の Windows Admin Center の主
 - **統一された単一ウィンドウ-の-ガラスのコンピューティング、ストレージ、およびネットワークのすぐにします。** 仮想マシン、ホスト サーバー、ボリューム、ドライブ、および 1 つの専用に作成された、一貫性のある、相互接続されたエクスペリエンス内で詳細を表示します。
 - **作成し、記憶域スペースと HYPER-V の仮想マシンを管理します。** 極めて簡単なワークフローを作成するには、開く、サイズ、および、; のボリュームを削除作成、起動への接続、および仮想マシンを移動その他さまざまな。
 - **強力なクラスター全体を監視します。** メモリと CPU 使用率、記憶域容量、IOPS、スループット、および待機時間がグラフで、ダッシュ ボード、問題が生じているときにアラートをクリアして、クラスター内の各サーバーではリアルタイムです。
-- **ソフトウェア定義ネットワーク (SDN) のサポート。(Windows Admin Center プレビュー) の新機能**管理と監視の仮想ネットワーク、サブネット、仮想ネットワーク、および SDN インフラストラクチャの監視に仮想マシンを接続します。
+- **ソフトウェア定義ネットワーク (SDN) のサポート。** 管理し、仮想ネットワークの監視、サブネット、仮想ネットワーク、および SDN インフラストラクチャの監視に仮想マシンを接続します。
 
 Hyper-Converged インフラストラクチャ用の Windows Admin Center Microsoft が積極的に開発中です。 既存の機能を向上させ、新しい機能の追加を頻繁に更新プログラムを受け取ります。
 
 ## <a name="before-you-start"></a>開始前の作業
 
-Windows Admin Center で Hyper-Converged インフラストラクチャとして、クラスターを管理する Windows Server 2016 または Windows Server の 2019 のプレビュー ビルドを実行している必要があり、Hyper-v ホストと記憶域スペース ダイレクトを有効にします。
+Windows Admin Center で Hyper-Converged インフラストラクチャとして、クラスターを管理する Windows Server 2016 または Windows Server 2019、実行されている必要があり、Hyper-v ホストと記憶域スペース ダイレクトを有効にします。 必要に応じて、有効になっており、Windows Admin Center を使用して管理、ソフトウェアによるネットワーク制御も、かまいません。
 
 > [!Tip]
 > Windows Admin Center では、汎用的な管理は、Windows Server 2012 以降使用可能なすべてのワークロードをサポートしている任意のクラスターのエクスペリエンスも提供します。 Windows Admin Center をクラスターを追加するより適したのように聞こえるこの場合は、選択[**フェイル オーバー クラスター** ](manage-failover-clusters.md)の代わりに**Hyper-Converged クラスター**します。
@@ -67,14 +67,9 @@ Hyper-Converged インフラストラクチャ用の Windows Admin Center は、
 > [!Tip]
 > のみ、任意のサーバー クラスターに 1 回、コマンドレットを実行する必要があります。 Windows PowerShell でローカルで実行または Credential Security Service Provider (CredSSP) を使用して、リモートで実行することができます。 構成によっては、Windows Admin Center 内からこのコマンドレットを実行することはできません。
 
-> [!Important]
-> 英語以外のロケールでの展開では、Windows Admin Center を (初回のみ) を読み込んでから、ダッシュ ボードを妨げるのバージョン 1804 で既知の問題があります。 実行を回避するには`Add-ClusterResource -Name 'SDDC Management' -Group 'Cluster Group' -ResourceType 'SDDC Management'`交換 *'クラスター グループ'* ローカライズされた名前を持つ *'グループ du クラスター'* フランス語でします。 この問題は、次の更新で対処されます。
->
-> **更新プログラム:** これはこれで、Windows Admin Center プレビュー バージョン 1806 で修正します。
-
 ### <a name="prepare-your-windows-server-2019-cluster-for-windows-admin-center"></a>Windows Admin Center の Windows Server 2019 クラスターを準備します。
 
-クラスターは、Windows Server 2019、Insider Preview ビルドを実行する場合は上記の手順は必要ありません。 次のセクションで説明した Windows Admin Center をクラスターに追加し、移動する準備が整いました。 [Windows Server 2019 の最新のプレビュー ビルドをダウンロードして](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)します。
+クラスターは、Windows Server 2019 を実行する場合は上記の手順は必要ありません。 次のセクションで説明した Windows Admin Center をクラスターに追加し、移動する準備が整いました。
 
 ### <a name="configure-software-defined-networking-optional"></a>ソフトウェア定義ネットワーク (省略可能) を構成します。 ###
 
@@ -84,9 +79,9 @@ Hyper-Converged インフラストラクチャ用の Windows Admin Center は、
 2. すべての SDN の Express から下にあるファイルとフォルダーをダウンロード[ https://github.com/Microsoft/SDN/tree/master/SDNExpress](https://github.com/Microsoft/SDN/tree/master/SDNExpress)します。
 3. 展開コンソールを使用して別の VM を準備します。 この VM は、SDN のホストにアクセスできる必要があります。 また、VM には、インストールされている RSAT HYPER-V ツールが必要です。
 4. VM の展開コンソールに SDN Express をダウンロードしたすべてのものをコピーします。 これを共有および**SDNExpress**フォルダー。 すべてのホストがアクセスできるように、 **SDNExpress** 8 構成ファイルの行で定義されているフォルダーを共有します。
-```
+   ```
     \\$env:Computername\SDNExpress
-```
+   ```
 5. OS の VHD をコピーして、**イメージ**の下のフォルダー、 **SDNExpress**展開コンソール VM 上のフォルダー。
 6. 環境のセットアップで、SDN Express の構成を変更します。 環境の情報に基づいて、SDN Express の構成を変更した後は、次の 2 つの手順を完了します。
 7. SDN を展開する管理者特権で PowerShell を実行します。
@@ -138,9 +133,9 @@ Hyper-Converged インフラストラクチャをデプロイすると、Windows
 
 ## <a name="frequently-asked-questions"></a>よく寄せられる質問
 
-### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019-insider-preview"></a>Windows Server 2016 および Windows Server 2019 Insider プレビューの管理の違いはありますか。
+### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019"></a>Windows Server 2016 および Windows Server 2019 の管理の違いはありますか。
 
-[はい]。 Hyper-Converged インフラストラクチャ用の Windows Admin Center では、Windows Server 2016 と Windows Server 2019 Insider Preview の両方のエクスペリエンスを向上させる頻繁に更新プログラムを受信します。 ただし、一部の新機能では、Insider Preview – たとえば、トグル スイッチを重複除去と圧縮の使用のみです。
+[はい]。 Hyper-Converged インフラストラクチャ用の Windows Admin Center では、Windows Server 2016 と Windows Server 2019 の両方のエクスペリエンスを向上させる、頻繁に更新プログラムを受信します。 ただし、一部の新機能では、Windows Server 2019 – たとえば、トグル スイッチを重複除去と圧縮の使用のみです。
 
 ### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>他のユース ケース (いないハイパー コンバージドの両方)、集約型のスケール アウト ファイル サーバー (SoFS) または Microsoft SQL Server などの記憶域スペース ダイレクトを管理するのに Windows Admin Center を使用できますか。
 
@@ -152,7 +147,7 @@ Hyper-Converged インフラストラクチャ用の Windows Admin Center では
 
 - **フェイル オーバー クラスター接続**フェールオーバー クラスター マネージャーのデスクトップ アプリの後継です。 Microsoft SQL Server を含む、すべてのワークロードをサポートしている任意のクラスターの使い慣れた、汎用的な管理エクスペリエンスを提供します。 以降を Windows Server 2012 の利用可能になります。
 
-- **Hyper-Converged クラスター接続**記憶域スペース ダイレクトと HYPER-V 向け、まったく新しいエクスペリエンスに調整されます。 ダッシュ ボードを備えており、監視のためのグラフとアラートが強調されます。 Windows Server 2016 の使用可能になるし、プレビューが Windows Server 2019 のビルドします。
+- **Hyper-Converged クラスター接続**記憶域スペース ダイレクトと HYPER-V 向け、まったく新しいエクスペリエンスに調整されます。 ダッシュ ボードを備えており、監視のためのグラフとアラートが強調されます。 Windows Server 2016 および Windows Server 2019 の使用可能になります。
 
 ### <a name="why-do-i-need-the-latest-cumulative-update-for-windows-server-2016"></a>Windows Server 2016 の最新の累積的な更新プログラムが必要する理由
 
@@ -166,11 +161,11 @@ Windows Admin Center には、Windows 以外の追加コストはありません
 
 ### <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center に System Center は必要ですか。
 
-いいえ。
+No.
 
 ### <a name="does-it-require-an-internet-connection"></a>インターネット接続が必要ですか。
 
-いいえ。
+No.
 
 Windows Admin Center、強力で、Microsoft Azure クラウドでは、中心的な管理および Hyper-Converged インフラストラクチャの監視のエクスペリエンスとの便利な統合は、完全にオンプレミスにします。 インストールして、インターネット接続なしで使用できます。
 

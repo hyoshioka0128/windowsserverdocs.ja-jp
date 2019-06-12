@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e1652e45f51500ceeb0026b8892fbe9c54ff38f3
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 9861703e5ae88dcaec5e76d9fab426b928d0cb9a
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266635"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811498"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>適切に配置のドメイン コント ローラーとサイトに関する考慮事項
 
@@ -64,11 +64,11 @@ ms.locfileid: "66266635"
 
     -   DnsAvoidRegisterRecords を使用すると、低いパフォーマンスまたは待機時間の長い、ドメイン コント ローラー汎用ロケーターに広告からのサテライト サイトにあるように削除できます。 詳細については、次を参照してください。[ドメイン コント ローラーまたはクライアントのサイト外にあるグローバル カタログの場所を最適化する方法](https://support.microsoft.com/kb/306602)します。
 
-        > [!Note]   クライアントが使用できるドメイン コント ローラーの数に約 50 の実質的な制限があります。 サイト最適かつ最も高い容量にするドメイン コント ローラー。
+        > [!NOTE]
+        > クライアントが使用できるドメイン コント ローラーの数に約 50 の実質的な制限があります。 サイト最適かつ最も高い容量にするドメイン コント ローラー。
 
-         
-
-    -   物理的に同じ場所で信頼できる、信頼する側のドメインからドメイン コント ローラーを配置することを検討してください。
+    
+    -  物理的に同じ場所で信頼できる、信頼する側のドメインからドメイン コント ローラーを配置することを検討してください。
 
 すべての信頼のシナリオは、資格情報が認証要求で指定されたドメインに従ってルーティングされます。 これは、LookupAccountName と LsaLookupNames するクエリの場合は true も (他のユーザー、およびこれら単に最もよく使用されます) の Api。 これらの Api ドメイン パラメーターが NULL 値が指定されたドメイン コント ローラーは使用可能なすべての信頼されたドメインで指定されたアカウント名を検索しようとします。
 

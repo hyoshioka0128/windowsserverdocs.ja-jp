@@ -9,16 +9,18 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c8e72f1075b984506f9f992cd45cf853b50bddeb
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 6f3cdc34ee03fab1a8fb1d42ebed2d2f76e2618d
+ms.sourcegitcommit: ccc802338b163abdad2e53b55f39addcfea04603
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191920"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66687404"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>WID データベースを使用した、Windows Server 2016 での AD FS へのアップグレード
 
 
+> [!NOTE]  
+> のみ完了の計画的な明確なタイム フレームでアップグレードを開始します。 これは、混在モードの状態にしたままの AD FS ファームに問題が発生する可能性があります、長期間の混在モードの状態で AD FS を保持する推奨されません。
 
 ## <a name="upgrading-a-windows-server-2012-r2-or-2016-ad-fs-farm-to-windows-server-2019"></a>Windows Server 2019 に、Windows Server 2012 R2 または 2016年の AD FS ファームをアップグレードします。
 次のドキュメントは、WID データベースを使用しているときに、Windows Server 2019 の AD FS を AD FS ファームをアップグレードする方法について説明します。  
@@ -27,6 +29,7 @@ ms.locfileid: "66191920"
 Windows Server 2016 の AD FS ファーム動作レベル (FBL) が導入されました。 これは、ファーム全体の設定、機能、AD FS ファームで使用できるかを決定します。
 
 次の表は、Windows Server のバージョンで FBL 値を示します。
+
 | Windows Server のバージョン  | FBL | AD FS 構成データベース名 |
 | ------------- | ------------- | ------------- |
 | 2012 R2  | 1  | AdfsConfiguration |

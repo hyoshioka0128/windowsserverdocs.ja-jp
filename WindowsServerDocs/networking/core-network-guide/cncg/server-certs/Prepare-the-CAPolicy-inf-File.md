@@ -8,12 +8,12 @@ ms.prod: windows-server-threshold
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 80c7155224502379e2e9618ceb38709c5051a6b7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 19a87df7c4f165d3b0e6c5add4bc40ff97cc87cb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857843"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446461"
 ---
 # <a name="capolicyinf-syntax"></a>CAPolicy.inf の構文
 >   適用先:Windows Server 2016 の Windows Server (半期チャネル)
@@ -206,53 +206,53 @@ AD CS をインストールする前に、固有の設定で、展開の CAPolic
 
 **前提条件:** Administrators グループのメンバーがあります。
 
-1.  Windows PowerShell を開き、AD CS のインストールを計画しているコンピューターで「**メモ帳 c:\CAPolicy.inf** ENTER キーを押します。
+1. Windows PowerShell を開き、AD CS のインストールを計画しているコンピューターで「**メモ帳 c:\CAPolicy.inf** ENTER キーを押します。
 
-2.  新しいファイルを作成するかどうかを確認するメッセージが表示されたら、**[はい]** をクリックします。
+2. 新しいファイルを作成するかどうかを確認するメッセージが表示されたら、 **[はい]** をクリックします。
 
-3.  ファイルに次の内容を入力します。
+3. ファイルに次の内容を入力します。
    ```
    [Version]  
-    Signature="$Windows NT$"  
-    [PolicyStatementExtension]  
-    Policies=InternalPolicy  
-    [InternalPolicy]  
-    OID=1.2.3.4.1455.67.89.5  
-    Notice="Legal Policy Statement"  
-    URL=https://pki.corp.contoso.com/pki/cps.txt  
-    [Certsrv_Server]  
-    RenewalKeyLength=2048  
-    RenewalValidityPeriod=Years  
-    RenewalValidityPeriodUnits=5  
-    CRLPeriod=weeks  
-    CRLPeriodUnits=1  
-    LoadDefaultTemplates=0  
-    AlternateSignatureAlgorithm=1  
-    [CRLDistributionPoint]  
-    [AuthorityInformationAccess]
+   Signature="$Windows NT$"  
+   [PolicyStatementExtension]  
+   Policies=InternalPolicy  
+   [InternalPolicy]  
+   OID=1.2.3.4.1455.67.89.5  
+   Notice="Legal Policy Statement"  
+   URL=https://pki.corp.contoso.com/pki/cps.txt  
+   [Certsrv_Server]  
+   RenewalKeyLength=2048  
+   RenewalValidityPeriod=Years  
+   RenewalValidityPeriodUnits=5  
+   CRLPeriod=weeks  
+   CRLPeriodUnits=1  
+   LoadDefaultTemplates=0  
+   AlternateSignatureAlgorithm=1  
+   [CRLDistributionPoint]  
+   [AuthorityInformationAccess]
    ```
-1.  クリックして**ファイル**、 をクリックし、**名前を付けて保存**します。
+4. クリックして**ファイル**、 をクリックし、**名前を付けて保存**します。
 
-2.  %Systemroot% フォルダーに移動します。
+5. %Systemroot% フォルダーに移動します。
 
-3.  次の内容を確認します。
+6. 次の内容を確認します。
 
-    -   **[ファイル名]** が **CAPolicy.inf** に設定されている。
+   -   **[ファイル名]** が **CAPolicy.inf** に設定されている。
 
-    -   **[ファイルの種類]** が **[すべてのファイル]** に設定されている。
+   -   **[ファイルの種類]** が **[すべてのファイル]** に設定されている。
 
-    -   **[文字コード]** が **[ANSI]** に設定されている。
+   -   **[文字コード]** が **[ANSI]** に設定されている。
 
-4.  **[保存]** をクリックします。
+7. **[保存]** をクリックします。
 
-5.  ファイルを上書きするかどうかをたずねるメッセージが表示されたら、**[はい]** をクリックします。
+8. ファイルを上書きするかどうかをたずねるメッセージが表示されたら、 **[はい]** をクリックします。
 
-    ![CAPolicy.inf ファイルの名前を付けて保存場所](../../../media/Prepare-the-CAPolicy-inf-File/001-SaveCAPolicyORCA1.gif)
+   ![CAPolicy.inf ファイルの名前を付けて保存場所](../../../media/Prepare-the-CAPolicy-inf-File/001-SaveCAPolicyORCA1.gif)
 
-    >   [!CAUTION]  
-    >   拡張子 inf を付けて CAPolicy.inf を保存してください。 ファイル名の末尾に **.inf** を指定しないで上記のオプションを選択した場合、ファイルはテキスト ファイルとして保存され、CA のインストール時に使用されなくなります。
+   > [!CAUTION]
+   >   拡張子 inf を付けて CAPolicy.inf を保存してください。 ファイル名の末尾に **.inf** を指定しないで上記のオプションを選択した場合、ファイルはテキスト ファイルとして保存され、CA のインストール時に使用されなくなります。
 
-6.  メモ帳を閉じます。
+9. メモ帳を閉じます。
 
->   [!IMPORTANT]  
+> [!IMPORTANT]
 >   CAPolicy.inf をで URL を指定する行があるを参照できます https://pki.corp.contoso.com/pki/cps.txtします。 この CAPolicy.inf の InternalPolicy セクションは、認証実施規定 (CPS) の場所を指定する方法の例として示されています。 このガイドでは、認証実施規定 (CPS) を作成する指示されたされません。

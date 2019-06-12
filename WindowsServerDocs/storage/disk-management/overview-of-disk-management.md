@@ -1,23 +1,23 @@
 ---
 title: ディスクの管理の概要
 description: ディスクの管理は、新しいドライブの初期化、ボリュームの拡張、パーティションの圧縮、およびドライブ文字を変更するなどの高度なストレージ タスクを実行することができる Windows のシステム ユーティリティです。
-ms.date: 4/2/2018
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 2a467c64a3e0ff38b5165b9e001fc2deb2d92148
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a3885ae6b09ad431fd1ea5e4c593e02c7bb274d9
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819283"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812550"
 ---
 # <a name="overview-of-disk-management"></a>ディスクの管理の概要
 
-> **適用対象します。** Windows 10、Windows 8.1、Windows 7、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> **適用対象します。** Windows 10、Windows 8.1、Windows 7、Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ディスクの管理は、高度なストレージ タスクを実行することができる Windows のシステム ユーティリティです。 ディスクの管理に適しています事項の一部を次に示します。
 
@@ -51,8 +51,8 @@ Windows に通常メイン ドライブ (通常は、C:\ の 3 つのパーテ�
 
 ## <a name="see-also"></a>関連項目
 
-- [ディスクを管理します。](manage-disks.md)
-- [ベーシック ボリュームを管理します。](manage-basic-volumes.md)
+- [ディスクを管理する](manage-disks.md)
+- [ベーシック ボリュームを管理する](manage-basic-volumes.md)
 - [ディスクの管理のトラブルシューティング](troubleshooting-disk-management.md)
 - [Windows 10 での回復オプション](https://support.microsoft.com/help/12415/windows-10-recovery-options)
 - [Windows 10 への更新後の失われたファイルを検索します。](https://support.microsoft.com/help/12386/windows-10-find-lost-files-after-update)

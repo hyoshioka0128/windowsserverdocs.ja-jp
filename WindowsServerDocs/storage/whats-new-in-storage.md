@@ -8,12 +8,12 @@ ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
-ms.openlocfilehash: 5469d663f64fdb453e03863f409b675473d3f6aa
-ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
+ms.openlocfilehash: f72156b050aa943cfafaf1fa2539911d6d1e089e
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66308570"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501479"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>新機能 Windows Server での記憶域の新機能
 
@@ -21,7 +21,7 @@ ms.locfileid: "66308570"
 
 このトピックでは、Windows Server 2019、Windows Server 2016 で記憶域の追加または変更された機能を説明し、Windows Server 半期チャネルの解放します。
 
-## <a name="whats-new-in-storage-in-windows-server-2019-and-windows-server-version-1903"></a>新機能 Windows Server 2019 および Windows Server バージョンが 1903 で記憶域の新機能
+## <a name="whats-new-in-storage-in-windows-server-version-1903"></a>新機能 Windows Server バージョンが 1903 で記憶域の新機能
 
 このリリースの Windows Server では、次の変更とテクノロジを追加します。
 
@@ -99,7 +99,7 @@ Storage Spaces Direct in Windows Server 2019 機能強化がいくつか (記憶
 
 - **2 倍の高速ミラー アクセラレータを使用したパリティ**
 
-    ミラーリングによって高速化されたパリティを使用すると、記憶域スペース ダイレクトのボリュームを作成できます。このボリュームでは、RAID-1 と RAID-5/6 の良い部分を組み合わせるような形で、一部がミラー、一部がパリティになっています  (が[、予想より容易に](https://www.youtube.com/watch?v=R72QHudqWpE)Windows Admin Center でします)。Windows Server の 2019 ミラー アクセラレータを使用した同等のパフォーマンスが複数の Windows Server 2016 の基準とした最適化に協力してくれた倍増します。
+    ミラーリングによって高速化されたパリティを使用すると、記憶域スペース ダイレクトのボリュームを作成できます。このボリュームでは、RAID-1 と RAID-5/6 の良い部分を組み合わせるような形で、一部がミラー、一部がパリティになっています (が[、予想より容易に](https://www.youtube.com/watch?v=R72QHudqWpE)Windows Admin Center でします)。Windows Server の 2019 ミラー アクセラレータを使用した同等のパフォーマンスが複数の Windows Server 2016 の基準とした最適化に協力してくれた倍増します。
 
 - **ドライブの外れ値検出の待機時間**
 

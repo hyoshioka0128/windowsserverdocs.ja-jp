@@ -7,22 +7,22 @@ ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 04/12/2018
+ms.date: 06/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 84d10ab3e25500720dd13e2ba057dc3c5bf05a6f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f2031afada302c0f73621a75f572c8547620db16
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849323"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501659"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>記憶域スペース ダイレクトのハードウェア要件
 
-> 適用対象:Windows Server 2016、Windows Server Insider プレビュー
+> 適用対象:Windows Server 2019、Windows Server 2016
 
 このトピックでは、記憶域スペース ダイレクトを使用するための最小ハードウェア要件について説明します。
 
-Microsoft では、運用環境の推奨これら[Windows Server ソフトウェア定義](https://microsoft.com/wssd)展開ツールと手順を含むパートナー ハードウェア/ソフトウェアを提供します。 設計は、アセンブリ、互換性および取得するための信頼性と簡単に実行されているように、参照アーキテクチャの検証にあり。 詳しくは、[https://microsoft.com/wssd](https://microsoft.com/wssd) をご覧ください。
+運用環境で検証済みハードウェア/ソフトウェア ソリューションをパートナーから購入をお勧めは、展開ツールと手順がこれが含まれます。 これらのソリューションの設計、アセンブル、および互換性と取得するための信頼性と簡単に実行されているように、参照アーキテクチャの検証にしていること。 Windows Server 2019 ソリューションでは、次を参照してください。、 [solutions の web サイトを Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci)します。 Windows Server 2016 のソリューションの詳細については、について説明します。 [Windows Server ソフトウェア定義](https://microsoft.com/wssd)します。
 
 ![Windows Server ソフトウェア定義のパートナーのロゴ](media/hardware-requirements/wssd-partners.png)
 
@@ -79,25 +79,27 @@ Microsoft では、運用環境の推奨これら[Windows Server ソフトウェ
 - 512n、512 e、および 4 K ネイティブ ドライブのすべてをサポートします。
 - ソリッド ステート ドライブを指定する必要があります[電力喪失の保護](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)
 - 同じ数と種類のすべてのサーバーでドライブを参照してください[ドライブ対称性に関する考慮事項。](drive-symmetry-considerations.md)
+- キャッシュ デバイスは 32 GB である必要がありますまたはそれ以上
+- キャッシュ デバイスとして永続的なメモリ デバイスを使用する場合は、NVMe または SSD の容量デバイス (Hdd を使用することはできません) を使用する必要があります。
 - NVMe ドライバーでは、Microsoft のボックスは、または、NVMe ドライバーを更新します。
 - 推奨:容量のドライブの数は、キャッシュ ドライブの数の倍数
 - 推奨:キャッシュ ドライブの書き込み頻度の高い耐久性がある必要があります: には少なくとも 3 ドライブ書き込み-1 日 (DWPD) または 1 日あたりの (TBW) の記述で少なくとも 4 つのテラバイトを参照してください。[理解ドライブ書き込みます (DWPD) 1 日あたりテラバイトに書き込まれます (TBW) との最小値ストレージをお勧めします。スペース ダイレクト](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 
 記憶域スペース ダイレクトのドライブを接続する方法を次に示します。
 
-1. SATA ドライブの直接接続
-2. NVMe ドライブの直接接続
-3. SAS ドライブで SAS ホスト バス アダプター (HBA)
-4. SATA ドライブを使用した SAS ホスト バス アダプター (HBA)
-5. **サポートされていません。** RAID コント ローラー カードまたは SAN (ファイバ チャネル、iSCSI、FCoE) ストレージ。 ホスト バス アダプター (HBA) カードでは、単純なパススルー モードを実装する必要があります。
+- SATA ドライブの直接接続
+- NVMe ドライブの直接接続
+- SAS ドライブで SAS ホスト バス アダプター (HBA)
+- SATA ドライブを使用した SAS ホスト バス アダプター (HBA)
+- **サポートされていません。** RAID コント ローラー カードまたは SAN (ファイバ チャネル、iSCSI、FCoE) ストレージ。 ホスト バス アダプター (HBA) カードでは、単純なパススルー モードを実装する必要があります。
 
 ![サポートされているドライブのダイアグラムの相互接続します。](media/hardware-requirements/drive-interconnect-support-1.png)
 
 ドライブ、サーバーの内部または外部のエンクロージャでは 1 つだけに接続されているサーバー。 SCSI エンクロージャ サービス (SES) は、スロットのマッピングと識別に必要です。 各外部エンクロージャでは、一意の識別子 (一意の ID) を示す必要があります。
 
-1. サーバーの内部ドライブ
-2. 1 つのサーバーに接続されている外部エンクロージャ ("JBOD") に存在するドライブします。
-3. **サポートされていません。** 共有の SAS エンクロージャは、複数のサーバーまたは任意の形式のマルチパス IO (MPIO) ドライブが複数のパスによってアクセス可能な場所に接続します。
+- サーバーの内部ドライブ
+- 1 つのサーバーに接続されている外部エンクロージャ ("JBOD") に存在するドライブします。
+- **サポートされていません。** 共有の SAS エンクロージャは、複数のサーバーまたは任意の形式のマルチパス IO (MPIO) ドライブが複数のパスによってアクセス可能な場所に接続します。
 
 ![サポートされているドライブのダイアグラムの相互接続します。](media/hardware-requirements/drive-interconnect-support-2.png)
 
@@ -108,8 +110,10 @@ Microsoft では、運用環境の推奨これら[Windows Server ソフトウェ
 
 | 存在するドライブの種類   | 必要な最小数 |
 |-----------------------|-------------------------|
+| すべての永続的なメモリ (同じモデル) | 4 つの永続的なメモリ |
 | すべて NVMe (同じモデル) | 4 つの NVMe                  |
 | すべて SSD (同じモデル)  | 4 つの SSD                   |
+| または、永続的なメモリ + NVMe SSD | 2 つの永続的なメモリ + 4 NVMe または SSD |
 | NVMe + SSD            | 2 つの NVMe + 4 つの SSD          |
 | NVMe + HDD            | 2 つの NVMe + 4 つの HDD          |
 | SSD + HDD             | 2 つの SSD + 4 つの HDD           |
@@ -120,5 +124,7 @@ Microsoft では、運用環境の推奨これら[Windows Server ソフトウェ
 
 ### <a name="maximum-capacity"></a>最大容量
 
-- 推奨:サーバーあたり最大 100 tb (テラバイト) 生の記憶域の容量
-- 最大 1 ペタバイト (1,000 TB) 生の記憶域プール容量
+| 最大値                | Windows Server 2019  | Windows Server 2016  |
+| ---                     | ---------            | ---------            |
+| サーバーごとの生の容量 | 100 TB               | 100 TB               |
+| プールの容量           | 4 PB (4,000 TB)      | 1 PB                 |

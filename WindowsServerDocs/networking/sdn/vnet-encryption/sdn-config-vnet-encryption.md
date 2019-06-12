@@ -9,12 +9,12 @@ ms.assetid: 378213f5-2d59-4c9b-9607-1fc83f8072f1
 ms.author: pashort
 author: shortpatti
 ms.date: 08/08/2018
-ms.openlocfilehash: 90fb33eb4c4b63fdd5c84bf3ffc2447fd52a809b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: d2c09c83a227c5a75ff5b1b39b2ef6d1286bbfc8
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845493"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501557"
 ---
 # <a name="configure-encryption-for-a-virtual-subnet"></a>仮想サブネット用の暗号化を構成します。
 
@@ -107,89 +107,108 @@ ms.locfileid: "59845493"
     84857CBBE7A1C851A80AE22391EB2C39BF820CE7  CN=MyNetwork
     5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
 
-2.  証明書をファイルにエクスポートします。<p>2 つのコピーと秘密キーとなしの証明書の必要があります。
+2. 証明書をファイルにエクスポートします。<p>2 つのコピーと秘密キーとなしの証明書の必要があります。
 
-    $subjectName = "EncryptedVirtualNetworks" $cert = Get-ChildItem cert:\localmachine\my | ? {$_.Subject -eq "CN=$subjectName"} [System.io.file]::WriteAllBytes("c:\$subjectName.pfx", $cert.Export("PFX", "secret")) Export-Certificate -Type CERT -FilePath "c:\$subjectName.cer" -cert $cert
+```
+   $subjectName = "EncryptedVirtualNetworks"
+   $cert = Get-ChildItem cert:\localmachine\my | ? {$_.Subject -eq "CN=$subjectName"}
+   [System.io.file]::WriteAllBytes("c:\$subjectName.pfx", $cert.Export("PFX", "secret"))
+   Export-Certificate -Type CERT -FilePath "c:\$subjectName.cer" -cert $cert
+```
 
-3.  Hyper-v ホストの各証明書をインストールします。 
+3. Hyper-v ホストの各証明書をインストールします。 
 
-    PS c:\> dir c:\$subjectname.*
-
-
-        Directory: C:\
-
-
-    モード LastWriteTime 長さ名
-    ----                -------------         ------ ----
-    -a----        9/22/2017   4:54 PM            543 EncryptedVirtualNetworks.cer -a----        9/22/2017   4:54 PM           1706 EncryptedVirtualNetworks.pfx
-
-4.  HYPER-V ホストにインストールします。
-
-    $server = "Server01"
-
-    $subjectname ="EncryptedVirtualNetworks"コピーの c:\$SubjectName.* \\$server\c$ 呼び出しコマンド-computername $server-argumentlist $subjectname、「シークレット」{param ([string] $SubjectName、[string] $Secret) $certFullPath ="c:\$SubjectName.cer"
-
-        # create a representation of the certificate file
-        $certificate = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
-        $certificate.import($certFullPath)
-
-        # import into the store
-        $store = new-object System.Security.Cryptography.X509Certificates.X509Store("Root", "LocalMachine")
-        $store.open("MaxAllowed")
-        $store.add($certificate)
-        $store.close()
-
-        $certFullPath = "c:\$SubjectName.pfx"
-        $certificate = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
-        $certificate.import($certFullPath, $Secret, "MachineKeySet,PersistKeySet")
-
-        # import into the store
-        $store = new-object System.Security.Cryptography.X509Certificates.X509Store("My", "LocalMachine")
-        $store.open("MaxAllowed")
-        $store.add($certificate)
-        $store.close()
-
-        # Important: Remove the certificate files when finished
-        remove-item C:\$SubjectName.cer
-        remove-item C:\$SubjectName.pfx
-    }    
-
-5.  環境内の各サーバーについて繰り返します。<p>サーバーごとに繰り返し後、は、ルートと各 HYPER-V ホストの my ストアにインストールされている証明書が必要です。 
-
-6.  証明書のインストールを確認します。<p>内容をチェックして、証明書を確認します。、、および証明書ストアのルート。
-
-    PS c:\>入力 pssession Server1
-
-    [Server1]:PS c:\> get-childitem cert://localmachine/my、cert://localmachine/root | か? {$_.Subject -eq "CN=EncryptedVirtualNetworks"}
-
-    PSParentPath:Microsoft.PowerShell.Security\Certificate::localmachine\my
-
-    拇印の件名
-    ----------                                -------
-    5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
+   PS c:\> dir c:\$subjectname.*
 
 
-    PSParentPath:Microsoft.PowerShell.Security\Certificate::localmachine\root
+~~~
+    Directory: C:\
 
-    拇印の件名
-    ----------                                -------
-    5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
 
-7.  拇印をメモしてをおきます。<p>ネットワーク コント ローラーで証明書の資格情報オブジェクトを作成する必要があるため、拇印をメモしてを行う必要があります。
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        9/22/2017   4:54 PM            543 EncryptedVirtualNetworks.cer
+-a----        9/22/2017   4:54 PM           1706 EncryptedVirtualNetworks.pfx
+~~~
 
-## <a name="step-2-create-the-certificate-credential"></a>手順 2.  証明書資格情報を作成します。
+4. HYPER-V ホストにインストールします。
+
+```
+   $server = "Server01"
+
+   $subjectname = "EncryptedVirtualNetworks"
+   copy c:\$SubjectName.* \\$server\c$
+   invoke-command -computername $server -ArgumentList $subjectname,"secret" {
+       param (
+           [string] $SubjectName,
+           [string] $Secret
+       )
+       $certFullPath = "c:\$SubjectName.cer"
+
+       # create a representation of the certificate file
+       $certificate = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
+       $certificate.import($certFullPath)
+
+       # import into the store
+       $store = new-object System.Security.Cryptography.X509Certificates.X509Store("Root", "LocalMachine")
+       $store.open("MaxAllowed")
+       $store.add($certificate)
+       $store.close()
+
+       $certFullPath = "c:\$SubjectName.pfx"
+       $certificate = new-object System.Security.Cryptography.X509Certificates.X509Certificate2
+       $certificate.import($certFullPath, $Secret, "MachineKeySet,PersistKeySet")
+
+       # import into the store
+       $store = new-object System.Security.Cryptography.X509Certificates.X509Store("My", "LocalMachine")
+       $store.open("MaxAllowed")
+       $store.add($certificate)
+       $store.close()
+
+       # Important: Remove the certificate files when finished
+       remove-item C:\$SubjectName.cer
+       remove-item C:\$SubjectName.pfx
+   }
+```
+
+5. 環境内の各サーバーについて繰り返します。<p>サーバーごとに繰り返し後、は、ルートと各 HYPER-V ホストの my ストアにインストールされている証明書が必要です。 
+
+6. 証明書のインストールを確認します。<p>内容をチェックして、証明書を確認します。、、および証明書ストアのルート。
+
+   PS c:\>入力 pssession Server1
+
+~~~
+[Server1]: PS C:\> get-childitem cert://localmachine/my,cert://localmachine/root | ? {$_.Subject -eq "CN=EncryptedVirtualNetworks"}
+
+PSParentPath: Microsoft.PowerShell.Security\Certificate::localmachine\my
+
+Thumbprint                                Subject
+----------                                -------
+5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
+
+
+PSParentPath: Microsoft.PowerShell.Security\Certificate::localmachine\root
+
+Thumbprint                                Subject
+----------                                -------
+5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6  CN=EncryptedVirtualNetworks
+~~~
+
+7. 拇印をメモしてをおきます。<p>ネットワーク コント ローラーで証明書の資格情報オブジェクトを作成する必要があるため、拇印をメモしてを行う必要があります。
+
+## <a name="step-2-create-the-certificate-credential"></a>手順 2. 証明書資格情報を作成します。
 
 ネットワーク コント ローラーに接続されている HYPER-V ホストの各証明書をインストールした後は、それを使用するネットワーク コント ローラーを構成する必要がありますようになりました。  これを行うには、インストールされているネットワーク コント ローラーの PowerShell モジュールをコンピューターから証明書の拇印を含む資格情報オブジェクトを作成する必要があります。 
 
 
     # Replace with thumbprint from your certificate
     $thumbprint = "5EFF2CE51EACA82408572A56AE1A9BCC7E0843C6"  
-    
+
     # Replace with your Network Controller URI
     $uri = "https://nc.contoso.com"
 
     Import-module networkcontroller
-    
+
     $credproperties = new-object Microsoft.Windows.NetworkController.CredentialProperties
     $credproperties.Type = "X509Certificate"
     $credproperties.Value = $thumbprint
@@ -223,7 +242,7 @@ ms.locfileid: "59845493"
     New-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId $vnet.ResourceId -Properties $vnet.Properties -force
 
 
-_**おめでとうございます!**_ 次の手順を完了すると完了します。 
+_**おめでとうございます!** _ 次の手順を完了すると完了します。 
 
 
 ## <a name="next-steps"></a>次のステップ

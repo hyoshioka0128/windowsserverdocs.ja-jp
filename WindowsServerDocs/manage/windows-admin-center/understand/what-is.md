@@ -7,16 +7,17 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 76427cc6d86a3d61dcf2d66cdf47ded9ba9be848
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.date: 06/07/2019
+ms.openlocfilehash: 99f1a9a32ef69ba8322b2dba902003f8a750a4d2
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829043"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811647"
 ---
 # <a name="what-is-windows-admin-center"></a>Windows Admin Center とは
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+> 適用対象:Windows Admin Center、Windows Admin Center プレビュー
 
 Windows Admin Center は、Azure またはクラウドに依存せずに、Windows サーバーの管理を実現する、ローカルに展開されたブラウザー ベースの新しい管理ツール セットです。 Windows Admin Center では、サーバー インフラストラクチャのあらゆる側面を完全に管理できます。特に、インターネットに接続されていないプライベート ネットワークでのサーバーの管理に便利です。
 

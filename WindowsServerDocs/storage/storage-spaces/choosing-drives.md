@@ -9,16 +9,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 227906685d77c31587c66d1c292f20ca94775058
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d16a9ddea96760b41c6cd2e4239b9bb51c8b3b38
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881053"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501638"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>記憶域スペース ダイレクト用のドライブの選択
 
->適用先:Windows Server 2016
+>適用対象:Windows 2019、Windows Server 2016
 
 このトピックでは、パフォーマンスや容量の要件を満たすように[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)でドライブを選ぶ方法のガイダンスについて説明します。
 
@@ -116,7 +116,7 @@ ms.locfileid: "59881053"
 
 サーバーごとの合計記憶域容量は、約 100 テラバイト (TB) に制限することをお勧めします。 サーバーごとの記憶域容量がこれよりも多くなると、ソフトウェア更新プログラムを適用する場合など、ダウンタイムや再起動の後でデータを再同期する際に必要となる時間が長くなります。
 
-記憶域プールごとの現在の最大サイズは、1 ペタバイト (PB) (1,000 テラバイト) です。
+記憶域プールあたりの現在の最大サイズは、Windows Server の 2019 のペタバイト (PB) (4,000 TB) 4 または Windows Server 2016 用の 1 ペタバイトが。
 
 ## <a name="see-also"></a>関連項目
 
@@ -124,4 +124,4 @@ ms.locfileid: "59881053"
 - [記憶域スペース ダイレクトでは、キャッシュを理解します。](understand-the-cache.md)
 - [記憶域スペース ダイレクトのハードウェア要件](storage-spaces-direct-hardware-requirements.md)
 - [記憶域スペース ダイレクトのボリュームの計画](plan-volumes.md)
-- [フォールト トレランスと記憶域の効率性](storage-spaces-fault-tolerance.md)
+- [フォールト トレランスと記憶域の効率](storage-spaces-fault-tolerance.md)

@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: f9533204-ad7e-4e49-81c1-559324a16aeb
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7a5761cafff0a4bf148958a7f14aeaf311075b2e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 66931d2196b741e469cb726929f7b58985b8d0cd
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839783"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812150"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-in-active-directory"></a>Active Directory でスプリット ブレイン DNS に DNS ポリシーを使用する
 
@@ -25,7 +25,7 @@ DNS のポリシーのサポートの拡張 Active Directory に Windows Server 
 
 以前は、このシナリオは、DNS 管理者の管理 2 台の DNS サーバー、各内部および外部のユーザーのセットごとにサービスを提供することが必要です。 ゾーン内のいくつかのレコードが分割された場合のみ\-brained またはゾーン (内部および外部) の両方のインスタンスが委任された同じ親ドメインになり、管理の難点です。
 
->[!NOTE]
+> [!NOTE]
 > - DNS 展開を分割\-脳の 1 つのゾーンの 2 つのバージョン、組織のイントラネット上の内部ユーザー用の 1 つのバージョンとは、通常、インターネット上のユーザー – 外部ユーザー向けの 1 つのバージョンがある場合。
 > - トピック[Split-Brain DNS の展開の DNS のポリシーを使用して](split-brain-DNS-deployment.md)DNS のポリシーとゾーンのスコープを使用して、デプロイを分割する方法について説明します。\-脳は単一の Windows Server 2016 の DNS サーバー上の DNS システム。
 
@@ -124,8 +124,8 @@ Active Directory 統合ゾーンでこの新しいゾーンのスコープを追
     
     Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4Address "10.0.0.39”
 
->[!NOTE]
->**– ゾーン範囲ゾーン**パラメーターは、レコードがゾーンの既定のスコープに追加されたときに含まれません。 このアクションは、標準のゾーンにレコードを追加することと同じです。
+> [!NOTE]
+> **– ゾーン範囲ゾーン**パラメーターは、レコードがゾーンの既定のスコープに追加されたときに含まれません。 このアクションは、標準のゾーンにレコードを追加することと同じです。
 
 詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
 
@@ -133,18 +133,18 @@ Active Directory 統合ゾーンでこの新しいゾーンのスコープを追
 
 外部ネットワークおよび内部ネットワーク用のサーバー インターフェイスを識別する、ゾーンのスコープを作成した後は、内部および外部のゾーンのスコープを接続する DNS ポリシーを作成する必要があります。
 
->[!NOTE]
->この例は、サーバーのインターフェイスを使用して\(次の例のコマンドで - ServerInterface パラメーター\)内部および外部のクライアントを区別する検索条件として。 内部および外部のクライアントを区別するために別の方法では、クライアントのサブネットを使用して、条件として、です。 内部のクライアントが属するサブネットを特定する場合は、クライアントのサブネットに基づいて区別するために DNS のポリシーを構成できます。 クライアントのサブネットの条件を使用したトラフィック管理を構成する方法については、次を参照してください。 [のプライマリ サーバーの地理的な場所ベースのトラフィック管理用の DNS ポリシーを使用して](primary-geo-location.md)します。
+> [!NOTE]
+> この例は、サーバーのインターフェイスを使用して\(次の例のコマンドで - ServerInterface パラメーター\)内部および外部のクライアントを区別する検索条件として。 内部および外部のクライアントを区別するために別の方法では、クライアントのサブネットを使用して、条件として、です。 内部のクライアントが属するサブネットを特定する場合は、クライアントのサブネットに基づいて区別するために DNS のポリシーを構成できます。 クライアントのサブネットの条件を使用したトラフィック管理を構成する方法については、次を参照してください。 [のプライマリ サーバーの地理的な場所ベースのトラフィック管理用の DNS ポリシーを使用して](primary-geo-location.md)します。
 
 DNS クエリがパブリック インターフェイスで受信したときに、ポリシーを構成した後は、ゾーンの外部スコープから、応答が返されます。 
 
->[!NOTE]
->ポリシーの既定の内部ゾーン スコープをマッピングするため必要はありません。 
+> [!NOTE]
+> ポリシーの既定の内部ゾーン スコープをマッピングするため必要はありません。 
 
     Add-DnsServerQueryResolutionPolicy -Name "SplitBrainZonePolicy" -Action ALLOW -ServerInterface "eq,208.84.0.53" -ZoneScope "external,1" -ZoneName contoso.com
 
->[!NOTE]
->208.84.0.53 は、パブリック ネットワーク インターフェイスの IP アドレスです。
+> [!NOTE]
+> 208.84.0.53 は、パブリック ネットワーク インターフェイスの IP アドレスです。
 
 詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
 

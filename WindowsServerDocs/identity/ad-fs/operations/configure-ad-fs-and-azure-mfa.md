@@ -9,12 +9,12 @@ ms.date: 01/28/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 33b782ded2ae1bdd8b00c08b81e4e0ee7f885899
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 62b366b8fa388319a758ab853d28d1c49cb1bf06
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188828"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719722"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>Azure MFA と AD FS の認証プロバイダーとして構成します。
 
@@ -65,17 +65,14 @@ Set-AdfsClaimsProviderTrust -AnchorClaimType "http://schemas.xmlsoap.org/ws/2005
 Azure MFA と AD FS 認証を使用したときに、次の前提条件が必要です。  
   
 - [Azure サブスクリプションと Azure Active Directory](https://azure.microsoft.com/pricing/free-trial/)します。  
-- [Azure Multi-factor Authentication](https://azure.microsoft.com/documentation/articles/multi-factor-authentication/)  
-- Web アプリケーション プロキシはポート 80 と 443 経由で、次と通信できません。
-
-    - https://adnotifications.windowsazure.com
-    - https://login.microsoftonline.com
+- [Azure Multi-factor Authentication](https://azure.microsoft.com/documentation/articles/multi-factor-authentication/) 
 
 
 > [!NOTE]
 > Azure AD と Azure MFA は Azure AD Premium や Enterprise Mobility Suite (EMS) に含まれます。  これらのいずれかがある場合、個別のサブスクリプションは必要ありません。
+
 - Windows Server 2016 の AD FS のオンプレミス環境。  
-   - サーバーは、ポート 80 と 443 経由で、次の Url と通信できる必要があります。
+   - サーバーは、ポート 443 経由で、次の Url と通信できる必要があります。
       - https://adnotifications.windowsazure.com
       - https://login.microsoftonline.com
 - お使いのオンプレミス環境が[Azure AD とフェデレーションします。](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-get-started-custom/#configuring-federation-with-ad-fs)  

@@ -12,12 +12,12 @@ ms.assetid: a14689e3-2310-4229-bd3e-dafc0e739e02
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d371e24b17310c0687666185f56fe07a135ff91f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ca36533af169c899865789f153960bf5f0dda684
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840083"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432553"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-r2-standard"></a>Windows Server Essentials から Windows Server 2012 R2 Standard への移行
 
@@ -52,29 +52,29 @@ Windows Server 2016 とは、クラウド コンピューティングへの移�
 ## <a name="transition-to--windows-server-2012-r2-standard"></a>Windows Server 2012 R2 Standard への移行  
  移行します。 Windows Server Essentials から Windows Server 2012 R2 Standard、完全な 2 つの手順を決定したら。  
   
-1.  Windows Server 2012 R2 Standard、およびユーザーやデバイスのクライアント アクセス ライセンスのお客様の環境の適切な数のライセンスを購入します。  
+1. Windows Server 2012 R2 Standard、およびユーザーやデバイスのクライアント アクセス ライセンスのお客様の環境の適切な数のライセンスを購入します。  
   
-     小売店、ディストリビューター、または利用して、Windows Server 2012 R2 Standard のライセンスを購入することができます、 [Microsoft パートナー](https://pinpoint.microsoft.com/SelectCulture.aspx)します。  
+    小売店、ディストリビューター、または利用して、Windows Server 2012 R2 Standard のライセンスを購入することができます、 [Microsoft パートナー](https://pinpoint.microsoft.com/SelectCulture.aspx)します。  
   
-    > [!NOTE]
-    >  Windows Server 2012 R2 Standard を最初に購入し、2 つの仮想インスタンスのいずれかとして Windows Server Essentials をインストールするにダウン グレード権を行使する場合は、何も追加購入する必要はありません。  
-    >   
-    >  ボリューム ライセンス チャネルを通じて Windows Server 2012 R2 Standard を購入する場合は、Windows Server 2012 R2 Standard ボリューム ライセンス サービス センター (VLSC) からの ISO イメージとプロダクト キーをダウンロードできます。  
-    >   
-    >  ISO イメージと評価版のプロダクト キーをダウンロードから Windows Server Essentials の他のチャネルから Windows Server 2012 R2 Standard を購入した場合、 [TechNet Evaluation Center](https://technet.microsoft.com/evalcenter/jj659306.aspx)します。 次の手順に記載されている移行操作を実行すると、評価版の製品がフル ライセンス版のサポート対象製品に変換されます。  
+   > [!NOTE]
+   >  Windows Server 2012 R2 Standard を最初に購入し、2 つの仮想インスタンスのいずれかとして Windows Server Essentials をインストールするにダウン グレード権を行使する場合は、何も追加購入する必要はありません。  
+   >   
+   >  ボリューム ライセンス チャネルを通じて Windows Server 2012 R2 Standard を購入する場合は、Windows Server 2012 R2 Standard ボリューム ライセンス サービス センター (VLSC) からの ISO イメージとプロダクト キーをダウンロードできます。  
+   >   
+   >  ISO イメージと評価版のプロダクト キーをダウンロードから Windows Server Essentials の他のチャネルから Windows Server 2012 R2 Standard を購入した場合、 [TechNet Evaluation Center](https://technet.microsoft.com/evalcenter/jj659306.aspx)します。 次の手順に記載されている移行操作を実行すると、評価版の製品がフル ライセンス版のサポート対象製品に変換されます。  
   
-2.  管理者として Windows PowerShell を開き、次のコマンドを実行します。  
+2. 管理者として Windows PowerShell を開き、次のコマンドを実行します。  
   
-     **dism /online /set-edition:ServerStandard /accepteula /productkey:***プロダクト キー* (場所*プロダクト キー*は Windows Server 2012 R2 Standard のコピーのプロダクト キー)。  
+    **dism /online /set-edition:ServerStandard /accepteula /productkey:** *プロダクト キー* (場所*プロダクト キー*は Windows Server 2012 R2 Standard のコピーのプロダクト キー)。  
   
-     サーバーが再起動すると、移行プロセスが完了します。  
+    サーバーが再起動すると、移行プロセスが完了します。  
   
- 切り替えた後は、Windows Server Essentials の機能は、サーバー上に残ります、最大 100 人のユーザーと 200 台のデバイスのサポートされています。  
+   切り替えた後は、Windows Server Essentials の機能は、サーバー上に残ります、最大 100 人のユーザーと 200 台のデバイスのサポートされています。  
   
 ## <a name="see-also"></a>関連項目  
   
 
--   [Windows Server Essentials へのサーバー データを移行します。](Migrate-Server-Data-to-Windows-Server-Essentials.md)
+-   [サーバー データの Windows Server Essentials への移行](Migrate-Server-Data-to-Windows-Server-Essentials.md)
 
--   [Windows Server Essentials へのサーバー データを移行します。](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
+-   [サーバー データの Windows Server Essentials への移行](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

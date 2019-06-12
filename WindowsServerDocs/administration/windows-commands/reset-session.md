@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 6510f8b21186b856eb489c1add0674b8984b0e56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5a0991c76ba890bb94b0dcf258df6207ed228e72
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857093"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441796"
 ---
 # <a name="reset-session"></a>reset session
 
@@ -36,6 +36,7 @@ reset session {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 ```  
 
 ## <a name="parameters"></a>パラメーター  
+
 |パラメーター|説明|  
 |-------|--------|  
 |\<SessionName>|リセットするセッションの名前を指定します。 セッションの名前を確認するのには、使用、 **クエリ セッション** コマンドです。|  
@@ -51,15 +52,15 @@ reset session {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 -   **/Server** パラメーターは、使用する場合にのみ必要 **セッションをリセット** リモート サーバーからです。  
 
 ## <a name="BKMK_examples"></a>例  
--   Rdp-tcp 6 を指定されたセッションをリセットするには、次のように入力します。  
-    ```  
-    reset session rdp-tcp#6  
-    ```  
--   セッション ID が 3 を使用して、セッションをリセットするには、次のように入力します。  
-    ```  
-    reset session 3  
-    ```  
+- Rdp-tcp 6 を指定されたセッションをリセットするには、次のように入力します。  
+  ```  
+  reset session rdp-tcp#6  
+  ```  
+- セッション ID が 3 を使用して、セッションをリセットするには、次のように入力します。  
+  ```  
+  reset session 3  
+  ```  
 
 #### <a name="additional-references"></a>その他の参照情報  
-[コマンドライン構文キー](command-line-syntax-key.md)  
+[コマンド ライン構文の記号](command-line-syntax-key.md)  
 [リモート デスクトップ サービス&#40;ターミナル サービス&#41;コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)  

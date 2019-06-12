@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a985df9fea31e5ee180caef4e69899ae8468ff71
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: f51bfb1c767c0eee3aed64df9879dd0a97f2f7b1
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865263"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446163"
 ---
 # <a name="use-regular-expressions-in-nps"></a>NPS で正規表現を使用する
 
@@ -25,37 +25,38 @@ ms.locfileid: "59865263"
 
 パターン マッチング構文を使用して正規表現を作成するときに、次の表を参照元として使用できます。
 
-|文字|説明|例|
-|---------|-----------|-------|
-|`\`  |次の文字を一致する文字としてマークします。 |`/n/ matches the character "n". The sequence /\n/ matches a line feed or newline character.`  |
-|`^`  |入力または行の先頭に一致します。 | &nbsp; |
-|`$`  |入力または行の末尾に一致します。 | &nbsp; |
-|`*`  |直前の文字を 0 回以上一致します。 |`/zo*/ matches either "z" or "zoo."` |
-|`+`  |直前の文字を 1 回以上一致します。 |`/zo+/ matches "zoo" but not "z."` |
-|`?`  |前の文字は 0 または 1 回を一致します。 |`/a?ve?/ matches the "ve" in "never."` |
-|`.`  |改行文字を除く任意の 1 文字と一致します。  | &nbsp; |
-|`(pattern)`  |「パターン」と一致して、一致を記憶します。<br />リテラル文字に一致する`(`と`)`(かっこ) を使用して、`\(`または`\)`します。   | &nbsp;  |
-|`x|y `  |X または y のいずれかと一致します。  |`/z|food?/ matches "zoo" or "food."` |
-|`{n} `  |正確に n 回の繰り返しと一致する\(n は、非\-負の整数\)します。  |`/o{2}/ does not match the "o" in "Bob," but matches the first two instances of the letter o in "foooood."`  |
-|`{n,}`  |N 回以上と一致する\(n は、非\-負の整数\)します。  |`/o{2,}/ does not match the "o" in "Bob" but matches all of the instances of the letter o in "foooood." /o{1,}/ is equivalent to /o+/.`  |
-|`{n,m}`  |N 以上 m 回の繰り返しと一致する\(m と n は非\-負の整数\)します。  |`/o{1,3}/ matches the first three instances of the letter o in "fooooood."`  |
-|`[xyz]`  |囲まれた文字列のいずれかと一致する\(文字セット\)します。  |`/[abc]/ matches the "a" in "plain."`  |
-|`[^xyz]`  |囲まれていない任意の文字と一致する\(負の文字セット\)します。  |`/[^abc]/ matches the "p" in "plain."`  |
-|`\b`  |ワード境界と一致する\(スペースなど、\)します。  |`/ea*r\b/ matches the "er" in "never early."`  |
-|`\B`  |単語の境界と一致します。  |`/ea*r\B/ matches the "ear" in "never early."`  |
-|`\d`  |数字の文字と一致する\(0 ~ 9 桁の数字に相当\)します。  | &nbsp; |
-|`\D`  |数字以外の文字と一致する\(等しく`[^0-9]`\)します。  | &nbsp; |
-|`\f`  |フォーム フィード文字に一致します。  | &nbsp; |
-|`\n`  |ライン フィード文字に一致します。  | &nbsp; |
-|`\r`  |キャリッジ リターン文字と一致します。  | &nbsp; |
-|`\s`  |スペース、タブ、フォーム フィードなど、任意の空白文字と一致する\(等しく`[ \f\n\r\t\v]`\)します。  | &nbsp; |
-|`\S`  |空白以外の任意の文字と一致する\(等しく`[^ \f\n\r\t\v]`\)します。  | &nbsp; |
-|`\t`  |タブ文字と一致します。  | &nbsp; |
-|`\v`  |垂直タブ文字と一致します。  | &nbsp; |
-|`\w`  |アンダー スコアを含む、任意の単語文字と一致する\(等しく`[A-Za-z0-9_]`\)します。  | &nbsp; |
-|`\W`  |以外の一致\-単語文字、アンダー スコアを除く\(等しく`[^A-Za-z0-9_]`\)します。  | &nbsp; |
-|`\num`  |記憶された文字を指す\( `?num`、num は正の整数\)します。  このオプションでのみ使用できます、**置換**属性の操作を構成するときに、テキスト ボックス。| `\1` 記憶されている最初の一致に格納されているものに置き換えます。  |
-|`/n/ `  |正規表現に ASCII コードを挿入できるように\( `?n`n は 8 進数、16 進数、または 10 進数のエスケープ値を\)します。  | &nbsp; |
+
+|  文字  |                                                                                 説明                                                                                  |                                                                 例                                                                 |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+|     `\`     |                                                              次の文字を一致する文字としてマークします。                                                               |                      `/n/ matches the character "n". The sequence /\n/ matches a line feed or newline character.`                       |
+|     `^`     |                                                                 入力または行の先頭に一致します。                                                                  |                                                                 &nbsp;                                                                  |
+|     `$`     |                                                                    入力または行の末尾に一致します。                                                                     |                                                                 &nbsp;                                                                  |
+|     `*`     |                                                             直前の文字を 0 回以上一致します。                                                              |                                                  `/zo*/ matches either "z" or "zoo."`                                                   |
+|     `+`     |                                                              直前の文字を 1 回以上一致します。                                                              |                                                   `/zo+/ matches "zoo" but not "z."`                                                    |
+|     `?`     |                                                              前の文字は 0 または 1 回を一致します。                                                              |                                                 `/a?ve?/ matches the "ve" in "never."`                                                  |
+|     `.`     |                                                           改行文字を除く任意の 1 文字と一致します。                                                           |                                                                 &nbsp;                                                                  |
+| `(pattern)` |                         「パターン」と一致して、一致を記憶します。<br />リテラル文字に一致する`(`と`)`(かっこ) を使用して、`\(`または`\)`します。                         |                                                                 &nbsp;                                                                  |
+|     \`x     |                                                                                     y \`                                                                                     |                                                         X または y のいずれかと一致します。                                                          |
+|   `{n} `    |                                                          正確に n 回の繰り返しと一致する\(n は、非\-負の整数\)します。                                                           |               `/o{2}/ does not match the "o" in "Bob," but matches the first two instances of the letter o in "foooood."`               |
+|   `{n,}`    |                                                          N 回以上と一致する\(n は、非\-負の整数\)します。                                                          | `/o{2,}/ does not match the "o" in "Bob" but matches all of the instances of the letter o in "foooood." /o{1,}/ is equivalent to /o+/.` |
+|   `{n,m}`   |                                                N 以上 m 回の繰り返しと一致する\(m と n は非\-負の整数\)します。                                                |                               `/o{1,3}/ matches the first three instances of the letter o in "fooooood."`                               |
+|   `[xyz]`   |                                                       囲まれた文字列のいずれかと一致する\(文字セット\)します。                                                        |                                                  `/[abc]/ matches the "a" in "plain."`                                                  |
+|  `[^xyz]`   |                                                  囲まれていない任意の文字と一致する\(負の文字セット\)します。                                                  |                                                 `/[^abc]/ matches the "p" in "plain."`                                                  |
+|    `\b`     |                                                              ワード境界と一致する\(スペースなど、\)します。                                                               |                                              `/ea*r\b/ matches the "er" in "never early."`                                              |
+|    `\B`     |                                                                         単語の境界と一致します。                                                                          |                                             `/ea*r\B/ matches the "ear" in "never early."`                                              |
+|    `\d`     |                                                       数字の文字と一致する\(0 ~ 9 桁の数字に相当\)します。                                                        |                                                                 &nbsp;                                                                  |
+|    `\D`     |                                                           数字以外の文字と一致する\(等しく`[^0-9]`\)します。                                                           |                                                                 &nbsp;                                                                  |
+|    `\f`     |                                                                        フォーム フィード文字に一致します。                                                                        |                                                                 &nbsp;                                                                  |
+|    `\n`     |                                                                        ライン フィード文字に一致します。                                                                        |                                                                 &nbsp;                                                                  |
+|    `\r`     |                                                                     キャリッジ リターン文字と一致します。                                                                     |                                                                 &nbsp;                                                                  |
+|    `\s`     |                                   スペース、タブ、フォーム フィードなど、任意の空白文字と一致する\(等しく`[ \f\n\r\t\v]`\)します。                                   |                                                                 &nbsp;                                                                  |
+|    `\S`     |                                                  空白以外の任意の文字と一致する\(等しく`[^ \f\n\r\t\v]`\)します。                                                   |                                                                 &nbsp;                                                                  |
+|    `\t`     |                                                                           タブ文字と一致します。                                                                           |                                                                 &nbsp;                                                                  |
+|    `\v`     |                                                                      垂直タブ文字と一致します。                                                                       |                                                                 &nbsp;                                                                  |
+|    `\w`     |                                              アンダー スコアを含む、任意の単語文字と一致する\(等しく`[A-Za-z0-9_]`\)します。                                              |                                                                 &nbsp;                                                                  |
+|    `\W`     |                                           以外の一致\-単語文字、アンダー スコアを除く\(等しく`[^A-Za-z0-9_]`\)します。                                           |                                                                 &nbsp;                                                                  |
+|   `\num`    | 記憶された文字を指す\( `?num`、num は正の整数\)します。  このオプションでのみ使用できます、**置換**属性の操作を構成するときに、テキスト ボックス。 |                                       `\1` 記憶されている最初の一致に格納されているものに置き換えます。                                       |
+|   `/n/ `    |                      正規表現に ASCII コードを挿入できるように\( `?n`n は 8 進数、16 進数、または 10 進数のエスケープ値を\)します。                       |                                                                 &nbsp;                                                                  |
 
 ## <a name="examples-for-network-policy-attributes"></a>ネットワーク ポリシー属性の例
 
@@ -81,7 +82,7 @@ ms.locfileid: "59865263"
 
 - 次の内容
 
-**置換する*user@example.microsoft.com*で*example.microsoft.com\user***
+**置換する<em>user@example.microsoft.com</em>で*example.microsoft.com\user***
 
 - 検索:`(.*)@(.*)`
 
@@ -97,7 +98,7 @@ ms.locfileid: "59865263"
 
 
 
-**置換する*ユーザー*で *user@specific_domain***
+<strong>置換する*ユーザー*で *user@specific_domain</strong>*
 
 - 検索:`$`
 

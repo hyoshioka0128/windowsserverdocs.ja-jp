@@ -12,12 +12,12 @@ ms.assetid: fda5628c-ad23-49de-8d94-430a4f253802
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1b78432ca92028bc96b2cbfc9fa40196f61e8bf8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dded002df4ed0bbd70c549a8841b769a77f2fd6a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833703"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433545"
 ---
 # <a name="hosted-windows-server-essentials"></a>ホスト型 Windows Server Essentials
 
@@ -45,89 +45,89 @@ ms.locfileid: "59833703"
   
  次の点に注意を払う必要があります。  
   
-1.  SkipIC.txt ファイルを任意のドライブのルートに追加することにより、初期構成 (IC) をスキップする必要があります。 サーバーをインストールした後、IC の前に、Shift キーを押しながら F10 を押してコマンド プロンプト ウィンドウを起動し、C:/ ドライブの下に SkipIC.txt ファイルを作成します。 カスタマイズ後、この SkipIC.txt ファイルを必ず削除する必要があります。  
+1. SkipIC.txt ファイルを任意のドライブのルートに追加することにより、初期構成 (IC) をスキップする必要があります。 サーバーをインストールした後、IC の前に、Shift キーを押しながら F10 を押してコマンド プロンプト ウィンドウを起動し、C:/ ドライブの下に SkipIC.txt ファイルを作成します。 カスタマイズ後、この SkipIC.txt ファイルを必ず削除する必要があります。  
   
-2.  90 GB より小さいディスク上の Windows Server Essentials を展開する必要がある場合は、sysprep の前にレジストリ キーを追加する必要があります。  
+2. 90 GB より小さいディスク上の Windows Server Essentials を展開する必要がある場合は、sysprep の前にレジストリ キーを追加する必要があります。  
   
-    ```  
-    %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v HWRequirementChecks /t REG_DWORD /d 0 /f  
-    ```  
+   ```  
+   %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v HWRequirementChecks /t REG_DWORD /d 0 /f  
+   ```  
   
- sysprep 後、sysprep 済みのディスク イメージを使用するか、または新しいデプロイメント用に Install.wim に再シールできます。  
+   sysprep 後、sysprep 済みのディスク イメージを使用するか、または新しいデプロイメント用に Install.wim に再シールできます。  
   
- Virtual Machine Manager を使用している場合、実行中のインスタンスを使用してテンプレートを作成できます。 テンプレートを作成すると、インスタンスが sysprep され、サーバーがシャットダウンします。 ライブラリに格納した後、インスタンスをケースバイケースで起動できます。  
+   Virtual Machine Manager を使用している場合、実行中のインスタンスを使用してテンプレートを作成できます。 テンプレートを作成すると、インスタンスが sysprep され、サーバーがシャットダウンします。 ライブラリに格納した後、インスタンスをケースバイケースで起動できます。  
   
 ##  <a name="BKMK_automatedeployment"></a> デプロイメントを自動化する方法は?  
  カスタマイズしたイメージを取得したら、独自のイメージを使ってデプロイメントを実行できます。 半無人インストールを実行するには、WinPE セットアップ用の unattend.xml を提供/展開する必要があります。 完全な無人インストールには、Windows Server Essentials の初期構成の cfg.ini ファイルを提供する必要があります。  
   
-1.  無人 WinPE セットアップのみを実行します。 これにより、WinPE セットアップのみが自動化されます。初期構成前にインストールを停止し、エンド ユーザーが RDP 後に自分で会社、ドメイン、管理者情報をサーバー セッションに提供できるようにします。 これには、次の手順を実行します。  
+1. 無人 WinPE セットアップのみを実行します。 これにより、WinPE セットアップのみが自動化されます。初期構成前にインストールを停止し、エンド ユーザーが RDP 後に自分で会社、ドメイン、管理者情報をサーバー セッションに提供できるようにします。 これには、次の手順を実行します。  
   
-    1.  Windows unattend.xml ファイルを提供します。 に従って、 [Windows 8.1 ADK](https://go.microsoft.com/fwlink/?LinkId=248694)をファイルを生成し、サーバー名、プロダクト キー、および管理者のパスワードを含むすべての必要な情報を提供します。 Unattend.xml ファイルの「Microsoft Windows のセットアップ」セクション次に示す情報を提供します。  
+   1.  Windows unattend.xml ファイルを提供します。 に従って、 [Windows 8.1 ADK](https://go.microsoft.com/fwlink/?LinkId=248694)をファイルを生成し、サーバー名、プロダクト キー、および管理者のパスワードを含むすべての必要な情報を提供します。 Unattend.xml ファイルの「Microsoft Windows のセットアップ」セクション次に示す情報を提供します。  
   
-        ```  
-        <InstallFrom>  
-                 <MetaData>  
-                     <Key>IMAGE/WINDOWS/EDITIONID</Key>  
-                     <Value>ServerSolution</Value>  
-                 </MetaData>  
-                 <MetaData>  
-                     <Key>IMAGE/WINDOWS/INSTALLATIONTYPE</Key>  
-                     <Value>Server</Value>  
-                 </MetaData>  
-           </InstallFrom>  
-        ```  
+       ```  
+       <InstallFrom>  
+                <MetaData>  
+                    <Key>IMAGE/WINDOWS/EDITIONID</Key>  
+                    <Value>ServerSolution</Value>  
+                </MetaData>  
+                <MetaData>  
+                    <Key>IMAGE/WINDOWS/INSTALLATIONTYPE</Key>  
+                    <Value>Server</Value>  
+                </MetaData>  
+          </InstallFrom>  
+       ```  
   
-    2.  顧客は初期構成を完了管理者と、サーバーに rdp で接続する unattend.xml ファイルで指定されたパスワードを使用できるように、パブリック IP の RDP ポート 3389 を開く必要があります。  
+   2.  顧客は初期構成を完了管理者と、サーバーに rdp で接続する unattend.xml ファイルで指定されたパスワードを使用できるように、パブリック IP の RDP ポート 3389 を開く必要があります。  
   
-    > [!NOTE]
-    >  既定のパスワードを変更しない場合、サーバー インストールはパスワードの入力を求める画面で停止します。**注** エンド ユーザーは、既定の管理者アカウントを使用してサーバーにログオンし、初期構成を実行する必要があります。  
+   > [!NOTE]
+   >  既定のパスワードを変更しない場合、サーバー インストールはパスワードの入力を求める画面で停止します。**注** エンド ユーザーは、既定の管理者アカウントを使用してサーバーにログオンし、初期構成を実行する必要があります。  
   
- Virtual Machine Manager を使用している場合、テンプレートから新しいインストールを作成したときに、コンソールで管理者パスワードを指定できます。  
+   Virtual Machine Manager を使用している場合、テンプレートから新しいインストールを作成したときに、コンソールで管理者パスワードを指定できます。  
   
-1.  無人初期構成を含む、完全無人セットアップを実行します。 これには、次の手順を実行します。  
+2. 無人初期構成を含む、完全無人セットアップを実行します。 これには、次の手順を実行します。  
   
-    1.  デプロイメントを WinPE セットアップから開始した場合、上で実行した方法で unattend.xml ファイルを指定します。  
+   1.  デプロイメントを WinPE セットアップから開始した場合、上で実行した方法で unattend.xml ファイルを指定します。  
   
-    2.  Windows Server Essentials ADK セクションを参照して[Cfg.ini ファイルの作成](https://technet.microsoft.com/library/jj200150)cfg.ini を生成します。  
+   2.  Windows Server Essentials ADK セクションを参照して[Cfg.ini ファイルの作成](https://technet.microsoft.com/library/jj200150)cfg.ini を生成します。  
   
-    3.  [InitialConfiguration] に情報を指定します。  
+   3.  [InitialConfiguration] に情報を指定します。  
   
-        ```  
-        WebDomainName=yourdomainname  
-        TrustedCertFileName=c:\cert\a.pfx  
-        TrustedCertPassword=Enteryourpassword  
-        EnableVPN=true  
-        EnableRWA=true  
-        ; Provide all information so that after setup is complete, your customer can use your domain name to visit the server directly with the admin/user information you provide in the [InitialConfiguration] section.  
+       ```  
+       WebDomainName=yourdomainname  
+       TrustedCertFileName=c:\cert\a.pfx  
+       TrustedCertPassword=Enteryourpassword  
+       EnableVPN=true  
+       EnableRWA=true  
+       ; Provide all information so that after setup is complete, your customer can use your domain name to visit the server directly with the admin/user information you provide in the [InitialConfiguration] section.  
   
-        VpnIPv4StartAddress=<IPV4Address>  
-        VpnIPv4EndAddress=<IPV4Address>  
-        VpnBaseIPv6Address=<IPV6Address>  
-        VpnIPv6PrefixLength=<number>  
-        ; Provide this information. IPv4StartAddress and IPv4Endaddress are required so that your VPN client can acquire valid IP through this range.  
+       VpnIPv4StartAddress=<IPV4Address>  
+       VpnIPv4EndAddress=<IPV4Address>  
+       VpnBaseIPv6Address=<IPV6Address>  
+       VpnIPv6PrefixLength=<number>  
+       ; Provide this information. IPv4StartAddress and IPv4Endaddress are required so that your VPN client can acquire valid IP through this range.  
   
-        IPv4DNSForwarder=<IPV4Address,IPV4Address,Â¦>  
-        IPv6DNSForwarder=<IPV6Address,IPV6Address,Â¦>  
-        ; Provide this information as needed according to your network environment settings.  
-        ```  
+       IPv4DNSForwarder=<IPV4Address,IPV4Address,Â¦>  
+       IPv6DNSForwarder=<IPV6Address,IPV6Address,Â¦>  
+       ; Provide this information as needed according to your network environment settings.  
+       ```  
   
-    4.  [PostOSInstall] に情報を指定します。  
+   4.  [PostOSInstall] に情報を指定します。  
   
-        ```  
-        IsHosted=true   
-        ; Must have, this will prevent Initial Configure webpage available for other computers under same subnet.  
+       ```  
+       IsHosted=true   
+       ; Must have, this will prevent Initial Configure webpage available for other computers under same subnet.  
   
-        StaticIPv4Address=<IPV4Address>  
-        StaticIPv4Gateway=<IPV4Address>  
-        StaticIPv6Address=<IPV6Address>  
-        StaticIPv6SubnetPrefixLength=<number>  
-        StaticIPv6Gateway=<IPV6Address>  
-        ; All these are optional if you have DHCP Server Service on the subnet, otherwise provide static IP here.  
-        ```  
+       StaticIPv4Address=<IPV4Address>  
+       StaticIPv4Gateway=<IPV4Address>  
+       StaticIPv6Address=<IPV6Address>  
+       StaticIPv6SubnetPrefixLength=<number>  
+       StaticIPv6Gateway=<IPV6Address>  
+       ; All these are optional if you have DHCP Server Service on the subnet, otherwise provide static IP here.  
+       ```  
   
-    5.  WebDomainName パラメーターを指定する場合は、サーバーのパブリック IP をポイントする DNS レコードも更新されていることを確認してください。  
+   5.  WebDomainName パラメーターを指定する場合は、サーバーのパブリック IP をポイントする DNS レコードも更新されていることを確認してください。  
   
-    6.  上の WebDomainName 情報を指定しなかった場合、ポート 3389 を開いて、顧客が RDP を使用してサーバーに接続し、VPN 構成を終了できるようにします。  
+   6.  上の WebDomainName 情報を指定しなかった場合、ポート 3389 を開いて、顧客が RDP を使用してサーバーに接続し、VPN 構成を終了できるようにします。  
   
 > [!NOTE]
 >  VM のホスト サーバーと Windows Server Essentials の VM のタイム ゾーン設定が同じであることを確認します。 同じでないと、さまざまなエラーが発生する可能性があります (証明書関連タスクで初期構成が失敗する、証明書がインストール後に数時間機能しない、デバイス情報が正しく更新されない、など)。  
@@ -140,61 +140,61 @@ ms.locfileid: "59833703"
  VPN の有効化は、Windows PowerShell スクリプトを介して無人デプロイメント中に実行できます。または、初期構成後にウィザードを使って構成できます。  
   
 
--   無人デプロイメント中に VPN を有効にするには、このドキュメントの「 [How do I automate the deployment?](Hosted-Windows-Server-Essentials.md#BKMK_automatedeployment) 」を参照してください。  
+- 無人デプロイメント中に VPN を有効にするには、このドキュメントの「 [How do I automate the deployment?](Hosted-Windows-Server-Essentials.md#BKMK_automatedeployment) 」を参照してください。  
 
--   無人デプロイメント中に VPN を有効にするには、このドキュメントの「 [How do I automate the deployment?](../install/Hosted-Windows-Server-Essentials.md#BKMK_automatedeployment) 」を参照してください。  
+- 無人デプロイメント中に VPN を有効にするには、このドキュメントの「 [How do I automate the deployment?](../install/Hosted-Windows-Server-Essentials.md#BKMK_automatedeployment) 」を参照してください。  
 
   
--   Windows PowerShell 経由で VPN を有効にするには、管理者権限で次のコマンドレットを実行し、必要なすべての情報を指定します。  
+- Windows PowerShell 経由で VPN を有効にするには、管理者権限で次のコマンドレットを実行し、必要なすべての情報を指定します。  
   
-    ```  
-    ##  
-    ## To configure external domain and SSL certificate (if not yet done in unattended Initial Configuration).  
-    ##  
+  ```  
+  ##  
+  ## To configure external domain and SSL certificate (if not yet done in unattended Initial Configuration).  
+  ##  
   
-    $myExternalDomainName = 'remote.contoso.com';   ## corresponds to A or AAAA DNS record(s) that can be resolved on Internet and routed to the server  
-    $mySslCertificateFile = 'C:\ssl.pfx';   ## full path to SSL certificate file  
-    $mySslCertificatePassword = ConvertTo-SecureString '******';   ## password for private key of the SSL certificate  
-    $skipCertificateVerification = $true;   ## whether or not, skip verification for the SSL certificate  
+  $myExternalDomainName = 'remote.contoso.com';   ## corresponds to A or AAAA DNS record(s) that can be resolved on Internet and routed to the server  
+  $mySslCertificateFile = 'C:\ssl.pfx';   ## full path to SSL certificate file  
+  $mySslCertificatePassword = ConvertTo-SecureString '******';   ## password for private key of the SSL certificate  
+  $skipCertificateVerification = $true;   ## whether or not, skip verification for the SSL certificate  
   
-    Add-Type -AssemblyName 'Wssg.Web.DomainManagerObjectModel';  
-    [Microsoft.WindowsServerSolutions.RemoteAccess.Domains.DomainConfigurationHelper]::SetDomainNameAndCertificate($myExternalDomainName,$mySslCertificateFile,$mySslCertificatePassword,$skipCertificateVerification);  
-    ##  
-    ## To install VPN with static IPv4 pool (and allow all existing users to establish VPN).  
-    ##  
+  Add-Type -AssemblyName 'Wssg.Web.DomainManagerObjectModel';  
+  [Microsoft.WindowsServerSolutions.RemoteAccess.Domains.DomainConfigurationHelper]::SetDomainNameAndCertificate($myExternalDomainName,$mySslCertificateFile,$mySslCertificatePassword,$skipCertificateVerification);  
+  ##  
+  ## To install VPN with static IPv4 pool (and allow all existing users to establish VPN).  
+  ##  
   
-    Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyToExistingUsers;  
-    ```  
+  Install-WssVpnServer -IPv4AddressRange ('192.168.0.160','192.168.0.240') -ApplyToExistingUsers;  
+  ```  
   
- サーバーを顧客に渡す前に VPN 接続を提供できない場合、サーバー ポート 3389 がインターネットに到達可能であることを確認し、エンド ユーザーが RDP を使用してサーバーに接続し、自分たちで構成を実行できるようにします。  
+  サーバーを顧客に渡す前に VPN 接続を提供できない場合、サーバー ポート 3389 がインターネットに到達可能であることを確認し、エンド ユーザーが RDP を使用してサーバーに接続し、自分たちで構成を実行できるようにします。  
   
- ここでは、2 つの代表的なサーバー側のネットワーク トポロジと、VPN/リモート Web アクセス (RWA) の構成のしかたを示します。  
+  ここでは、2 つの代表的なサーバー側のネットワーク トポロジと、VPN/リモート Web アクセス (RWA) の構成のしかたを示します。  
   
--   トポロジ 1 (推奨)  
+- トポロジ 1 (推奨)  
   
-    -   サーバーは、別の仮想ネットワークの NAT デバイスの下に存在します。  
+  -   サーバーは、別の仮想ネットワークの NAT デバイスの下に存在します。  
   
-    -   DHCP サービスが仮想ネットワークで有効になっているか、サーバーが静的 IP アドレスを使って割り当てられています。  
+  -   DHCP サービスが仮想ネットワークで有効になっているか、サーバーが静的 IP アドレスを使って割り当てられています。  
   
-    -   サーバー ポート 443 に、パブリック IP ポート 443 から到達可能です。  
+  -   サーバー ポート 443 に、パブリック IP ポート 443 から到達可能です。  
   
-    -   VPN パススルーが、ポート 443 に対して許可されています。  
+  -   VPN パススルーが、ポート 443 に対して許可されています。  
   
-    -   VPN IPv4 アドレス プールの範囲は、サーバー アドレスの同じサブネット内である必要があります。  
+  -   VPN IPv4 アドレス プールの範囲は、サーバー アドレスの同じサブネット内である必要があります。  
   
-    -   2 番目のサーバーには、同じサブネット内の、VPN アドレス プールの外にある静的 IP アドレスを割り当てる必要があります。  
+  -   2 番目のサーバーには、同じサブネット内の、VPN アドレス プールの外にある静的 IP アドレスを割り当てる必要があります。  
   
--   トポロジ 2:  
+- トポロジ 2:  
   
-    -   サーバーは、プライベート IP アドレスを所有しています。  
+  -   サーバーは、プライベート IP アドレスを所有しています。  
   
-    -   サーバー上のポート 443 は、パブリック IP アドレスのポート 443 から到達可能です。  
+  -   サーバー上のポート 443 は、パブリック IP アドレスのポート 443 から到達可能です。  
   
-    -   VPN パススルーが、ポート 443 に対して許可されています。  
+  -   VPN パススルーが、ポート 443 に対して許可されています。  
   
-    -   VPN IPv4 アドレス プールは、異なる範囲のサーバー アドレスに存在します。  
+  -   VPN IPv4 アドレス プールは、異なる範囲のサーバー アドレスに存在します。  
   
- トポロジ 2 では、2 つ目のサーバーのシナリオはサポートされていません。  
+  トポロジ 2 では、2 つ目のサーバーのシナリオはサポートされていません。  
   
 ## <a name="how-do-i-perform-common-tasks-via-windows-powershell"></a>Windows PowerShell を経由して共通のタスクを実行する方法  
  **リモート Web アクセスを有効にします。**  
@@ -308,11 +308,11 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
   
  **オンプレミス バックアップ** では、別のディスクにブロックレベルの増分バックアップを定期的に実行できます。 ホストとして、Windows Server Essentials の VM に仮想ディスクを接続してサーバー バックアップをこの仮想ディスクを構成します。 仮想ディスクは、Windows Server Essentials の VM とは別の物理ディスクに配置する必要があります。  
   
--   オフにして、Windows Server Essentials からすべての関連ユーザー インターフェイスを削除する可能性があります、Windows Server Essentials の VM をバックアップする別のメカニズムがあり、ユーザーに、Windows Server Essentials のネイティブ サーバー バックアップ機能を表示したくない場合ダッシュ ボード。 詳細については、のサーバー バックアップのカスタマイズ」セクションを参照してください、 [ADK ドキュメント](https://go.microsoft.com/fwlink/p/?LinkID=249124)します。  
+- オフにして、Windows Server Essentials からすべての関連ユーザー インターフェイスを削除する可能性があります、Windows Server Essentials の VM をバックアップする別のメカニズムがあり、ユーザーに、Windows Server Essentials のネイティブ サーバー バックアップ機能を表示したくない場合ダッシュ ボード。 詳細については、のサーバー バックアップのカスタマイズ」セクションを参照してください、 [ADK ドキュメント](https://go.microsoft.com/fwlink/p/?LinkID=249124)します。  
   
- **オフプレミス バックアップ** では、サーバー データをクラウド サービスに定期的にバックアップできます。 ダウンロードしてインストール、Microsoft Azure Backup 統合モジュールの Windows Server Essentials を Microsoft によって提供される Azure Backup を利用できます。  
+  **オフプレミス バックアップ** では、サーバー データをクラウド サービスに定期的にバックアップできます。 ダウンロードしてインストール、Microsoft Azure Backup 統合モジュールの Windows Server Essentials を Microsoft によって提供される Azure Backup を利用できます。  
   
- 別のクラウド サービスを希望する場合、次を実行する必要があります。  
+  別のクラウド サービスを希望する場合、次を実行する必要があります。  
   
 1.  既定の Azure Backup ではなく、希望のクラウド サービスへのリンクを提供するように、Windows Server Essentials ダッシュ ボードのユーザー インターフェイスを更新します。 詳細については、 [ADK ドキュメント](https://go.microsoft.com/fwlink/p/?LinkID=249124)の「イメージのカスタマイズ」セクションを参照してください。  
   
@@ -328,17 +328,17 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
   
  次に、フル クライアント バックアップの注意事項を示します。  
   
--   パフォーマンス: 初期クライアント バックアップは、アップロードするデータ量が多いため、時間がかかる可能性があります。  
+- パフォーマンス: 初期クライアント バックアップは、アップロードするデータ量が多いため、時間がかかる可能性があります。  
   
--   安定性: クライアント側のインターネット接続が安定しない場合があります。 クライアント バックアップは、再開できるように設計されています。既定のチェックポイントは 40 GB です (クライアント バックアップ データベースで、40 GB のデータがバックアップされるたびにチェックポイントが作成されます)。 インターネット接続の信頼性が低いことが予測される場合、この値を小さい値に変更できます。  
+- 安定性: クライアント側のインターネット接続が安定しない場合があります。 クライアント バックアップは、再開できるように設計されています。既定のチェックポイントは 40 GB です (クライアント バックアップ データベースで、40 GB のデータがバックアップされるたびにチェックポイントが作成されます)。 インターネット接続の信頼性が低いことが予測される場合、この値を小さい値に変更できます。  
   
-    -   チェックポイント ジョブを有効にするには、サーバーで、レジストリ キー HKLM\Software\Microsoft\Windows Server\Backup\GetCheckPointJobs を 1 に設定します。  
+  -   チェックポイント ジョブを有効にするには、サーバーで、レジストリ キー HKLM\Software\Microsoft\Windows Server\Backup\GetCheckPointJobs を 1 に設定します。  
   
-    -   チェックポイントしきい値を変更するには、クライアントで、HKLM\Software\Microsoft\Windows Server\Backup\CheckPointThreshold を既定値 (40 GB) から変更します。  
+  -   チェックポイントしきい値を変更するには、クライアントで、HKLM\Software\Microsoft\Windows Server\Backup\CheckPointThreshold を既定値 (40 GB) から変更します。  
   
--   クライアント ベア メタル回復: Windows プレインストール環境では VPN 接続をサポートしないため、クライアント ベア メタル回復はサポートされません。  
+- クライアント ベア メタル回復: Windows プレインストール環境では VPN 接続をサポートしないため、クライアント ベア メタル回復はサポートされません。  
   
- **ファイル履歴**がネットワーク共有へのプロファイル データ (ライブラリ、デスクトップ、連絡先、お気に入り) をバックアップするための Windows 8.1 の機能です。 Windows Server Essentials での Windows Server Essentials に参加しているすべての Windows 8.1 クライアントのファイル履歴設定を一元管理できます。 バックアップ データは、Windows Server Essentials を実行しているサーバーに保存されます。 オフにできますこの機能の作成手順の「Cfg.ini ファイルのセクション、 [ADK ドキュメント](https://technet.microsoft.com/library/jj200150)します。  
+  **ファイル履歴**がネットワーク共有へのプロファイル データ (ライブラリ、デスクトップ、連絡先、お気に入り) をバックアップするための Windows 8.1 の機能です。 Windows Server Essentials での Windows Server Essentials に参加しているすべての Windows 8.1 クライアントのファイル履歴設定を一元管理できます。 バックアップ データは、Windows Server Essentials を実行しているサーバーに保存されます。 オフにできますこの機能の作成手順の「Cfg.ini ファイルのセクション、 [ADK ドキュメント](https://technet.microsoft.com/library/jj200150)します。  
   
 ### <a name="storage-management"></a>記憶域の管理  
  [新しい記憶域機能](https://technet.microsoft.com/library/hh831739.aspx) により、異種ハード ドライブの物理記憶域容量の集計、ハード ドライブの動的な追加、復元レベルを指定したデータ ボリュームの作成が可能となりました。 記憶域を拡張する Windows Server Essentials に iSCSI ディスクを接続することもできます。  
@@ -348,61 +348,61 @@ $Add-WssFolder -Name "MyTestFolder" -Path "C:\ServerFolders\MyTestFolder"
   
  **サーバーの展開**  
   
--   ラボ環境で Windows Server Essentials サーバーをデプロイします。  
+- ラボ環境で Windows Server Essentials サーバーをデプロイします。  
   
--   必要に応じて Windows Server Essentials イメージをカスタマイズします。  
+- 必要に応じて Windows Server Essentials イメージをカスタマイズします。  
   
--   無人セットアップ ファイルと cfg.ini と Windows Server Essentials の展開を自動化します。  
+- 無人セットアップ ファイルと cfg.ini と Windows Server Essentials の展開を自動化します。  
   
--   オンプレミス Windows SBS をホスト型 Windows Server Essentials に移行します。  
+- オンプレミス Windows SBS をホスト型 Windows Server Essentials に移行します。  
   
--   Windows Server Essentials から Windows Server 2012 にアップグレードします。  
+- Windows Server Essentials から Windows Server 2012 にアップグレードします。  
   
- **サーバーの構成**  
+  **サーバーの構成**  
   
--   Anywhere Access (VPN、リモート Web アクセス、DirectAccess) を構成します。  
+- Anywhere Access (VPN、リモート Web アクセス、DirectAccess) を構成します。  
   
--   記憶域とサーバー フォルダーを構成します。  
+- 記憶域とサーバー フォルダーを構成します。  
   
--   (適用できる場合) サーバー バックアップ、オンライン バックアップ、クライアント バックアップ、ファイル履歴を構成します。  
+- (適用できる場合) サーバー バックアップ、オンライン バックアップ、クライアント バックアップ、ファイル履歴を構成します。  
   
--   (適用できる場合) 記憶域を構成し、管理します。  
+- (適用できる場合) 記憶域を構成し、管理します。  
   
--   (適用できる場合) 電子メール ソリューション統合 (Office 365、ホスト型 Exchange など) を構成します。  
+- (適用できる場合) 電子メール ソリューション統合 (Office 365、ホスト型 Exchange など) を構成します。  
   
--   (適用できる場合) メディア サーバーを構成します。  
+- (適用できる場合) メディア サーバーを構成します。  
   
- **サーバーの管理**  
+  **サーバーの管理**  
   
--   ユーザーを管理します。  
+- ユーザーを管理します。  
   
--   アラートの電子メール通知を構成し、受信します。  
+- アラートの電子メール通知を構成し、受信します。  
   
--   エラー/警告の場合、BPA を実行します。  
+- エラー/警告の場合、BPA を実行します。  
   
--   System Center の監視パックを構成します。  
+- System Center の監視パックを構成します。  
   
--   破損の場合、サーバー回復を構成します。  
+- 破損の場合、サーバー回復を構成します。  
   
- **クライアント エクスペリエンス**  
+  **クライアント エクスペリエンス**  
   
--   インターネット経由でのクライアントの展開 (パーソナル コンピューターまたは Mac OS)。  
+- インターネット経由でのクライアントの展開 (パーソナル コンピューターまたは Mac OS)。  
   
--   クライアントのスタート パッドを使用して、共有フォルダーにアクセスします。  
+- クライアントのスタート パッドを使用して、共有フォルダーにアクセスします。  
   
--   リモート Web アクセス経由でさまざまなデバイス (パーソナル コンピューター、電話、タブレット) からサーバー資産にアクセスします。  
+- リモート Web アクセス経由でさまざまなデバイス (パーソナル コンピューター、電話、タブレット) からサーバー資産にアクセスします。  
   
--   Windows Phone 用のマイ サーバー アプリ。  
+- Windows Phone 用のマイ サーバー アプリ。  
   
--   (適用できる場合) ファイル履歴、クライアント バックアップ、復元 (BMR なし)、フォルダー リダイレクション。  
+- (適用できる場合) ファイル履歴、クライアント バックアップ、復元 (BMR なし)、フォルダー リダイレクション。  
   
--   (適用できる場合) 電子メール統合エクスペリエンス。  
+- (適用できる場合) 電子メール統合エクスペリエンス。  
   
 ## <a name="where-can-i-get-more-support"></a>サポートの入手場所  
  下のリンクから SDK ドキュメントと ADK ドキュメントを入手できます。  
   
--   [SDK](https://go.microsoft.com/fwlink/p/?LinkID=248648)  
+- [SDK](https://go.microsoft.com/fwlink/p/?LinkID=248648)  
   
--   [ADK](https://go.microsoft.com/fwlink/p/?LinkID=249124)  
+- [ADK](https://go.microsoft.com/fwlink/p/?LinkID=249124)  
   
- [接続] を使って、バグを機能チームに報告できます。 ログを生成するには、サーバーと、サーバーに参加しているクライント上のフォルダーC:\ProgramData\Microsoft\Windows Server\Logs の ZIP ファイルを作成します。
+  [接続] を使って、バグを機能チームに報告できます。 ログを生成するには、サーバーと、サーバーに参加しているクライント上のフォルダーC:\ProgramData\Microsoft\Windows Server\Logs の ZIP ファイルを作成します。

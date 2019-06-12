@@ -12,12 +12,12 @@ ms.assetid: 51bcf124-c215-4e9d-9fa8-a90fa2c2fa22
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d2005b72adede72b718fa5b49b93435f5fbac1bd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 445472822de09263b84821e552c931ca19f14b2b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882503"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432533"
 ---
 # <a name="transition-from-windows-server-essentials-to-windows-server-2012-standard"></a>Windows Server Essentials から Windows Server 2012 Standard への移行
 
@@ -53,28 +53,28 @@ ms.locfileid: "59882503"
 ## <a name="transition-to--windows-server-2012-standard"></a>Windows Server 2012 Standard への移行  
  移行します。 Windows Server Essentials から Windows Server 2012 Standard、完全な 2 つの手順を決定したら。  
   
-1.  Windows Server 2012 Standard および環境内のユーザーまたはデバイスのクライアント アクセス ライセンスの適切な数のライセンスを購入します。  
+1. Windows Server 2012 Standard および環境内のユーザーまたはデバイスのクライアント アクセス ライセンスの適切な数のライセンスを購入します。  
   
-     小売店、ディストリビューター、または利用して、Windows Server 2012 Standard のライセンスを購入することができます、 [Microsoft パートナー](https://pinpoint.microsoft.com/SelectCulture.aspx)します。  
+    小売店、ディストリビューター、または利用して、Windows Server 2012 Standard のライセンスを購入することができます、 [Microsoft パートナー](https://pinpoint.microsoft.com/SelectCulture.aspx)します。  
   
-    > [!NOTE]
-    >  最初に Windows Server 2012 Standard 購入し、2 つの仮想インスタンスのいずれかとして Windows Server Essentials をインストールするにダウン グレード権を行使する場合は、何も追加購入する必要はありません。  
-    >   
-    >  ボリューム ライセンス チャネルを通じて Windows Server 2012 Standard を購入する場合は、Windows Server 2012 Standard ボリューム ライセンス サービス センター (VLSC) からの ISO イメージとプロダクト キーをダウンロードできます。  
-    >   
-    >  他のすべてのチャネルから Windows Server 2012 Standard を購入する場合は、ダウンロードできます ISO イメージと評価版のプロダクト キーから Windows Server essentials、 [TechNet Evaluation Center](https://technet.microsoft.com/evalcenter/jj659306.aspx)します。 次の手順に記載されている移行操作を実行すると、評価版の製品がフル ライセンス版のサポート対象製品に変換されます。  
+   > [!NOTE]
+   >  最初に Windows Server 2012 Standard 購入し、2 つの仮想インスタンスのいずれかとして Windows Server Essentials をインストールするにダウン グレード権を行使する場合は、何も追加購入する必要はありません。  
+   >   
+   >  ボリューム ライセンス チャネルを通じて Windows Server 2012 Standard を購入する場合は、Windows Server 2012 Standard ボリューム ライセンス サービス センター (VLSC) からの ISO イメージとプロダクト キーをダウンロードできます。  
+   >   
+   >  他のすべてのチャネルから Windows Server 2012 Standard を購入する場合は、ダウンロードできます ISO イメージと評価版のプロダクト キーから Windows Server essentials、 [TechNet Evaluation Center](https://technet.microsoft.com/evalcenter/jj659306.aspx)します。 次の手順に記載されている移行操作を実行すると、評価版の製品がフル ライセンス版のサポート対象製品に変換されます。  
   
-2.  管理者として Windows PowerShell を開き、次のコマンドを実行します。  
+2. 管理者として Windows PowerShell を開き、次のコマンドを実行します。  
   
-     **dism /online /set-edition:ServerStandard /accepteula /productkey:** *プロダクト キー*  
+    **dism /online /set-edition:ServerStandard /accepteula /productkey:** *プロダクト キー*  
   
-     場所*プロダクト キー*は Windows Server 2012 Standard のコピーのプロダクト キー。  
+    場所*プロダクト キー*は Windows Server 2012 Standard のコピーのプロダクト キー。  
   
-     サーバーが再起動すると、移行プロセスが完了します。  
+    サーバーが再起動すると、移行プロセスが完了します。  
   
- 切り替えた後は、Windows Server Essentials の機能は、サーバー上に残ります、最大で 75 人のユーザーと 75 台のデバイスのサポートされています。 これらの制限のいずれかを超過した場合は、ユーザー アカウントとデバイスを管理する Windows Server 2012 Standard ネイティブ ツールを使用する必要があります。  
+   切り替えた後は、Windows Server Essentials の機能は、サーバー上に残ります、最大で 75 人のユーザーと 75 台のデバイスのサポートされています。 これらの制限のいずれかを超過した場合は、ユーザー アカウントとデバイスを管理する Windows Server 2012 Standard ネイティブ ツールを使用する必要があります。  
   
- さらに、Windows Server 2012 Standard への移行には後の Windows Server Essentials メディア機能は無効になります。 これには、リモート Web アクセスのメディア機能と、ダッシュボードのメディア設定が含まれます。  
+   さらに、Windows Server 2012 Standard への移行には後の Windows Server Essentials メディア機能は無効になります。 これには、リモート Web アクセスのメディア機能と、ダッシュボードのメディア設定が含まれます。  
   
 ## <a name="turn-off--windows-server-essentials-features"></a>Windows Server Essentials の機能を無効にします。  
  場合は、サーバーを管理するには、Windows Server Essentials ダッシュ ボードまたはその他の付加価値機能が不要になったは、機能をオフにして、サーバーから削除します。  
@@ -97,22 +97,22 @@ ms.locfileid: "59882503"
   
 #### <a name="from-the-get-help-and-support-pane"></a>[ヘルプとサポートを参照する] ウィンドウからの操作  
   
-1.  [ホーム] ページで、[ヘルプとサポートを参照する] をクリックします。  
+1. [ホーム] ページで、[ヘルプとサポートを参照する] をクリックします。  
   
-2.  クリックして**Windows Server Essentials 機能のウィザードをオフに**します。  
+2. クリックして**Windows Server Essentials 機能のウィザードをオフに**します。  
   
- いくつかのタスクによって実行されたことことができます、 **Windows Server Essentials 機能のウィザードをオフに**は正常に完了しません。 場合によっては、これが原因でダッシュボードを実行できなくなることもあります。 この問題が発生した場合は、次のファイルを実行することで手動でウィザードを起動できます。  
+   いくつかのタスクによって実行されたことことができます、 **Windows Server Essentials 機能のウィザードをオフに**は正常に完了しません。 場合によっては、これが原因でダッシュボードを実行できなくなることもあります。 この問題が発生した場合は、次のファイルを実行することで手動でウィザードを起動できます。  
   
- **%systemdrive%\Program files \windows Server\Bin\TurnOffFeaturesWizard.exe**  
+   **%systemdrive%\Program files \windows Server\Bin\TurnOffFeaturesWizard.exe**  
   
 ## <a name="see-also"></a>関連項目  
   
 
 -   [Windows Server 2012 R2 Standard への移行](Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  
   
--   [Windows Server Essentials へのサーバー データを移行します。](Migrate-Server-Data-to-Windows-Server-Essentials.md)
+-   [サーバー データの Windows Server Essentials への移行](Migrate-Server-Data-to-Windows-Server-Essentials.md)
 
 -   [Windows Server 2012 R2 Standard への移行](../migrate/Transition-from-Windows-Server-2012-R2-Essentials-to-Windows-Server-2012-R2-Standard.md)  
   
--   [Windows Server Essentials へのサーバー データを移行します。](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
+-   [サーバー データの Windows Server Essentials への移行](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)
 

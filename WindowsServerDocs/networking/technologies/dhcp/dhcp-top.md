@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 0ff29ef3-c458-4432-9065-e50a7de5b4b9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 08b07e902486ae633b30949270e15f8bf94afaaf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7828d75d58ff328e826cb685899a76347ce56953
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857493"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812204"
 ---
 # <a name="dynamic-host-configuration-protocol-dhcp"></a>動的ホスト構成プロトコル (DHCP)
 
@@ -21,11 +21,11 @@ ms.locfileid: "59857493"
 
 Windows Server 2016 での DHCP の簡単な概要については、このトピックを使用できます。
 
->[!NOTE]
->このトピックに加え、次の DHCP のドキュメントは使用できます。
+> [!NOTE]
+> このトピックに加え、次の DHCP のドキュメントは使用できます。
 >
->- [新機能 DHCP の新機能](What-s-New-in-DHCP.md)
->- [Windows PowerShell を使用した DHCP を展開します。](dhcp-deploy-wps.md)
+> - [新機能 DHCP の新機能](What-s-New-in-DHCP.md)
+> - [Windows PowerShell を使用した DHCP を展開します。](dhcp-deploy-wps.md)
 
 動的ホスト構成プロトコル (DHCP) とは、自動的にその IP アドレスとサブネット マスク、デフォルト ゲートウェイなどの他の関連する構成情報をインターネット プロトコル (IP) のホストに提供するクライアント/サーバー プロトコルです。 Rfc 2131 および 2132 DHCP として、インターネット技術標準化委員会 (IETF) 標準ベースのブートス トラップ プロトコル (BOOTP)、DHCP が多くの実装の詳細を共有するプロトコルを定義します。 DHCP では、ホストの DHCP サーバーから必要な TCP/IP 構成情報を取得できるようにします。
 

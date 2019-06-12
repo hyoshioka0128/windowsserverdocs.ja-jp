@@ -7,14 +7,14 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 03/25/2019
+ms.date: 06/04/2019
 description: IT プロフェッショナル向け Windows Server のオンプレミスの storage のドキュメントで新規および更新されたトピック。
-ms.openlocfilehash: fa3da6e14c36fecfa48c3688a36518babb257920
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 3245e6bc5320cc0ffae01817a8f7b9caeaa6c685
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192678"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501489"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server のストレージ トピックの変更履歴
 
@@ -22,13 +22,19 @@ ms.locfileid: "66192678"
 
 このトピックでは、新規および更新されたトピックを示しています、[ストレージ](storage.md)Windows Server のドキュメント。
 
-> 更新履歴 Windows Server のように探している場合は、次を参照してください。[更新履歴の Windows 10 および Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)します。
+> 更新履歴 Windows Server のように探している場合は、次を参照してください。[更新履歴の Windows 10 および Windows Server 2019](https://support.microsoft.com/help/4464619)または[Windows Server 2016 の更新履歴](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)します。
+
+## <a name="june-2019"></a>6 月 2019
+
+| 新しいトピックまたは変更されたトピック                                        | 説明|
+| ---                                                         | ---           |
+| [記憶域移行サービスについての FAQ](storage-migration-service/faq.md#consolidate-servers) | パフォーマンスの最適化の情報を追加します。 |
 
 ## <a name="may-2019"></a>2019 年 5 月
 
 |新しいトピックまたは変更されたトピック                                        |説明|
 |---                                                         |---           |
-|[ボリュームを削除します。](storage-spaces/delete-volumes.md)| 新規        |
+|[ボリュームの削除](storage-spaces/delete-volumes.md)| 新規        |
 |[ボリュームの作成](storage-spaces/create-volumes.md)| 追加の手順と Windows Admin Center でボリュームを作成するためのビデオ。|
 |[ボリュームの拡張](storage-spaces/resize-volumes.md)| 追加の手順のビデオを Windows Admin Center でのボリュームのサイズを変更します。|
 
@@ -36,7 +42,7 @@ ms.locfileid: "66192678"
 
 |新しいトピックまたは変更されたトピック                                        |説明|
 |---                                                         |---           |
-|[Azure Monitor で監視します。](storage-spaces/configure-azure-monitor.md)| 新規|
+|[Azure Monitor で監視する](storage-spaces/configure-azure-monitor.md)| 新規|
 |[記憶域スペース ダイレクト クラスターを Windows Server 2019 にアップグレードする](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| 新規        |
 |[DFS レプリケーション](dfs-replication/dfsr-overview.md)        | 移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))ライブラリ|
 
@@ -105,7 +111,7 @@ ms.locfileid: "66192678"
 |[スタンドアロン サーバーに記憶域スペースを展開する](storage-spaces/deploy-standalone-storage-spaces.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。|
 |[NTFS の概要](file-server/ntfs-overview.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。|
 |[DFS レプリケーションの Robocopy を使用してプレシード ファイル](dfs-replication/preseed-dfsr-with-robocopy.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。|
-|[Vssadmin - 以前のバージョンのコマンド ライン ツール](..\administration\windows-commands\vssadmin.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。|
+|[Vssadmin - 以前のバージョンのコマンド ライン ツール](../administration/windows-commands/vssadmin.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。|
 |[ファイル サーバー リソース マネージャーの概要](fsrm/fsrm-overview.md)| Windows Server 2016 バージョン 1803 で新しいレジストリ設定に関する追加情報です。|
 |[サーバー間の記憶域レプリケーション](storage-replica/server-to-server-storage-replication.md)|Windows Admin Center の使用に関する追加情報です。|
 |[記憶域レプリカの既知の問題](storage-replica/storage-replica-known-issues.md)|新しい情報を追加しました。|
@@ -195,13 +201,13 @@ ms.locfileid: "66192678"
 
 ## <a name="may-2017"></a>2017 年 5 月
 
-|新しいトピックまたは変更されたトピック|説明|
-|---|---|
-|[データ重複除去の概要](data-deduplication/overview.md)および <br>[データ重複除去をインストールします。](data-deduplication/install-enable.md)|システム要件を更新して、新しいソフトウェア更新プログラムを追加しました。 |
-|[ワーク フォルダーの展開](work-folders/deploy-work-folders.md)|Azure AD アプリケーション プロキシのサポートと必要な手順についての情報を追加しました。|
-|[記憶域スペース ダイレクトを展開します。](storage-spaces/deploy-storage-spaces-direct.md)|手順 1.3 と必要な機能を追加し、Enable-NetAdapterQos の古いパラメータを修正しました。||[記憶域レプリカの概要](storage-replica/storage-replica-overview.md)(およびその他の記憶域レプリカのトピック)|推奨事項として、記憶域レプリカのログに高速で排他的な記憶域を使用することを追加しました。|
-|[記憶域レプリカについてよく寄せられる質問](storage-replica/storage-replica-frequently-asked-questions.md)|さまざまなレプリケーション トポロジから選択する方法についての情報を追加しました。|
-|[記憶域スペース ダイレクトのハードウェア要件](storage-spaces/storage-spaces-direct-hardware-requirements.md)|キャッシュ デバイスのドライブに関する耐久性の要件を変更しました。|
+|                                                           新しいトピックまたは変更されたトピック                                                           |                                          説明                                           |
+|------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| [データ重複除去の概要](data-deduplication/overview.md)および <br>[データ重複除去をインストールします。](data-deduplication/install-enable.md) |              システム要件を更新して、新しいソフトウェア更新プログラムを追加しました。               |
+|                                      [ワーク フォルダーの展開](work-folders/deploy-work-folders.md)                                       |         Azure AD アプリケーション プロキシのサポートと必要な手順についての情報を追加しました。          |
+|                            [記憶域スペース ダイレクトを展開します。](storage-spaces/deploy-storage-spaces-direct.md)                             | 手順 1.3 と必要な機能を追加し、Enable-NetAdapterQos の古いパラメータを修正しました。 |
+|               [記憶域レプリカについてよく寄せられる質問](storage-replica/storage-replica-frequently-asked-questions.md)                |             さまざまなレプリケーション トポロジから選択する方法についての情報を追加しました。              |
+|               [記憶域スペース ダイレクトのハードウェア要件](storage-spaces/storage-spaces-direct-hardware-requirements.md)               |                    キャッシュ デバイスのドライブに関する耐久性の要件を変更しました。                     |
 
 ## <a name="april-2017"></a>2017 年 4 月
 

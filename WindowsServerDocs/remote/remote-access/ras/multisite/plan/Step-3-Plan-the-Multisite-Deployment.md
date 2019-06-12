@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6024b118504a233e9e7483711df4e0a05b632d5a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 29d52e57a18bf956d135179b503255efd256b35e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869443"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446852"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>手順 3 の計画、マルチサイト展開
 
@@ -151,39 +151,39 @@ ms.locfileid: "59869443"
 ### <a name="routing"></a>ルーティング  
 マルチサイト展開では対称ルーティングが適用される Teredo、IP-HTTPS を使用しています。 企業ネットワークで IPv6 が展開されているときに、次に注意してください。  
   
-1.  各エントリ ポイントの Teredo および IP-HTTPS プレフィックスは、関連付けられているリモート アクセス サーバーに企業ネットワーク経由でルーティング可能である必要があります。  
+1. 各エントリ ポイントの Teredo および IP-HTTPS プレフィックスは、関連付けられているリモート アクセス サーバーに企業ネットワーク経由でルーティング可能である必要があります。  
   
-2.  企業ネットワークのルーティング インフラストラクチャでは、ルートを構成する必要があります。  
+2. 企業ネットワークのルーティング インフラストラクチャでは、ルートを構成する必要があります。  
   
-3.  各エントリ ポイントがあります 1 ~ 3 個のルート、内部ネットワーク内。  
+3. 各エントリ ポイントがあります 1 ~ 3 個のルート、内部ネットワーク内。  
   
-    1.  IP-HTTPS プレフィックスこのプレフィックスはによって選択された管理者の追加、エントリ ポイント ウィザード。  
+   1. IP-HTTPS プレフィックスこのプレフィックスはによって選択された管理者の追加、エントリ ポイント ウィザード。  
   
-    2.  VPN IPv6 プレフィックス (省略可能)。 エントリ ポイントに VPN を有効にした後、このプレフィックスを選択できます。  
+   2. VPN IPv6 プレフィックス (省略可能)。 エントリ ポイントに VPN を有効にした後、このプレフィックスを選択できます。  
   
-    3.  Teredo プレフィックス (省略可能)。 このプレフィックスは、リモート アクセス サーバーが 2 つ連続するパブリック IPv4 アドレスを持つ外部アダプターで構成されている場合にのみ該当します。 プレフィックスは、アドレスのペアの最初のパブリック IPv4 アドレスに基づきます。 たとえば、外部アドレスがある場合。  
+   3. Teredo プレフィックス (省略可能)。 このプレフィックスは、リモート アクセス サーバーが 2 つ連続するパブリック IPv4 アドレスを持つ外部アダプターで構成されている場合にのみ該当します。 プレフィックスは、アドレスのペアの最初のパブリック IPv4 アドレスに基づきます。 たとえば、外部アドレスがある場合。  
   
-        1.  www.xxx.yyy.zzz  
+      1. www.xxx.yyy.zzz  
   
-        2.  www.xxx.yyy.zzz+1  
+      2. www.xxx.yyy.zzz+1  
   
-        構成する Teredo プレフィックスは 2001:0:WWXX:YYZZ::/64、IPv4 アドレスの www.xxx.yyy.zzz の 16 進数表現というが。  
+      構成する Teredo プレフィックスは 2001:0:WWXX:YYZZ::/64、IPv4 アドレスの www.xxx.yyy.zzz の 16 進数表現というが。  
   
-        Teredo プレフィックスを計算する、次のスクリプトを使用することに注意してください。  
+      Teredo プレフィックスを計算する、次のスクリプトを使用することに注意してください。  
   
-        ```  
-        $TeredoIPv4 = (Get-NetTeredoConfiguration).ServerName # Use for a Remote Access server that is already configured  
-        $TeredoIPv4 = "20.0.0.1" # Use for an IPv4 address  
+      ```  
+      $TeredoIPv4 = (Get-NetTeredoConfiguration).ServerName # Use for a Remote Access server that is already configured  
+      $TeredoIPv4 = "20.0.0.1" # Use for an IPv4 address  
   
-            [Byte[]] $TeredoServerAddressBytes = `  
-            [System.Net.IPAddress]::Parse("2001::").GetAddressBytes()[0..3] + `  
-            [System.Net.IPAddress]::Parse($TeredoIPv4).GetAddressBytes() + `  
-            [System.Net.IPAddress]::Parse("::").GetAddressBytes()[0..7]  
+          [Byte[]] $TeredoServerAddressBytes = `  
+          [System.Net.IPAddress]::Parse("2001::").GetAddressBytes()[0..3] + `  
+          [System.Net.IPAddress]::Parse($TeredoIPv4).GetAddressBytes() + `  
+          [System.Net.IPAddress]::Parse("::").GetAddressBytes()[0..7]  
   
-        Write-Host "The server's Teredo prefix is $([System.Net.IPAddress]$TeredoServerAddressBytes)/64"  
-        ```  
+      Write-Host "The server's Teredo prefix is $([System.Net.IPAddress]$TeredoServerAddressBytes)/64"  
+      ```  
   
-    4.  すべての上記のルート、リモート アクセス サーバーの内部アダプターの IPv6 アドレスにルーティングする必要があります (またはエントリ ポイントを分散する負荷の内部仮想 IP (VIP) アドレス)。  
+   4. すべての上記のルート、リモート アクセス サーバーの内部アダプターの IPv6 アドレスにルーティングする必要があります (またはエントリ ポイントを分散する負荷の内部仮想 IP (VIP) アドレス)。  
   
 > [!NOTE]  
 > DirectAccess は、Teredo 用のルート経由でリモート実行は、企業ネットワークとリモート アクセス サーバーの管理で IPv6 が展開されている場合と、他のすべてのエントリ ポイントの IP-HTTPS プレフィックスは、トラフィックができるように、各リモート アクセス サーバーを追加する必要があります。内部ネットワークに転送します。  

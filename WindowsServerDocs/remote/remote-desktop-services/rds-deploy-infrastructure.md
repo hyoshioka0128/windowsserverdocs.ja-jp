@@ -13,16 +13,16 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: acfdd99fa67e218f58fe650de5607f2a5ba97bf8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5b9ce1bb87a7a2ad8819235edc412fd095bc2985
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833833"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805130"
 ---
 # <a name="deploy-your-remote-desktop-environment"></a>リモート デスクトップ環境を展開する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 次の手順を使用すると、環境内のリモート デスクトップ サーバーを展開できます。 物理マシンまたはに応じてかどうかを作成する、オンプレミス、クラウド ベースの仮想マシンまたはハイブリッド環境にサーバーの役割をインストールすることができます。 
 
@@ -30,11 +30,11 @@ ms.locfileid: "59833833"
   
   
 1.  リモート デスクトップ サービスを Server Manager を使用しようとしているすべてのサーバーを追加します。  
-    1.  サーバー マネージャーで**管理 > サーバーの追加**します。  
+    1.  サーバー マネージャーで、**管理** > **サーバーの追加**します。  
     2.  **[Find Now]** をクリックします。  
     3.  (たとえば、Contoso Cb1、Contoso WebGw1、および Contoso Sh1)、展開内の各サーバーをクリックし、をクリックして**OK**します。  
 2.  リモート デスクトップ サービス コンポーネントを展開する、セッション ベースの展開を作成します。  
-    1.  サーバー マネージャーで、**管理 > 追加の役割と機能の**します。  
+    1.  サーバー マネージャーで、**管理** > **追加の役割と機能の**します。  
     2.  クリックして**リモート デスクトップ サービスのインストール**、**標準の展開**、および**セッション ベースのデスクトップ展開**します。  
     3.  RD 接続ブローカー サーバー、RD Web アクセス サーバー、および RD セッション ホスト サーバーの適切なサーバーを選択します (たとえば、Contoso Cb1、Contoso WebGw1 と Contoso SH1、それぞれ)。  
     4.  選択**必要な場合に、移行先サーバーを自動的に再起動**、 をクリックし、**デプロイ**。  
@@ -79,7 +79,7 @@ ms.locfileid: "59833833"
     5.  同意に到達するまでに、証明書のエクスポート ウィザードで既定のオプションが既定値を受け入れ、**エクスポートするファイル**ページ。  
     6.  証明書、たとえば \Contoso-Cb1\Certificates 用に作成した共有フォルダーに移動します。  
     7.  たとえば ContosoCbClientCert、ファイル名を入力し、クリックして**保存**します。  
-    8.  **[次へ]** をクリックし、**[完了]** をクリックします。  
+    8.  **[次へ]** をクリックし、 **[完了]** をクリックします。  
     9.  エクスポートした証明書を適切なファイル名をなどの提供、RD ゲートウェイと Web 証明書、(たとえば contoso.westus.cloudapp.azure.com) の手順 1 ~ 8 を繰り返します**ContosoWebGwClientCert**します。  
     10. ファイル エクスプ ローラーでは、たとえば \Contoso-Cb1\Certificates 証明書が格納されているフォルダーに移動します。  
     11. 2 つのエクスポートしたクライアント証明書を選択し、右クリックして、をクリックして**コピー**します。  

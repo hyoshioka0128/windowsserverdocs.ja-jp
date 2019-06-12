@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c8070268fdf58fbbb71c159a7360b488222ef740
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1e2ccf6187e4480f94b30632b6f8f9f092052541
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852183"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811077"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -31,22 +31,31 @@ Windows PowerShell は、タスク ベースのコマンド ライン シェル�
 使用することができます、 **PowerShell.exe** コマンド ライン ツールをコマンド プロンプト ウィンドウで、Windows PowerShell セッションを開始します。
 
 - コマンド プロンプト ウィンドウで、Windows PowerShell セッションを開始するには、入力`PowerShell`します。 A **PS** プレフィックスは、Windows PowerShell セッションであることを示すために、コマンド プロンプトに追加します。
-- 特定の実行ポリシーを使用してセッションを開始するには、 **ExecutionPolicy** パラメーター。  
+
+- 特定の実行ポリシーを使用してセッションを開始するには、 **ExecutionPolicy** パラメーター。
+
     ```
     PowerShell.exe -ExecutionPolicy Restricted
-    ```  
-- Windows PowerShell プロファイルいない Windows PowerShell セッションを開始するには使用、 **NoProfile** パラメーター。  
+    ```
+
+- Windows PowerShell プロファイルいない Windows PowerShell セッションを開始するには使用、 **NoProfile** パラメーター。
+
     ```
     PowerShell.exe -NoProfile
-    ```  
-- セッションを開始するには、 **ExecutionPolicy** パラメーター。  
+    ```
+  
+- セッションを開始するには、 **ExecutionPolicy** パラメーター。
+
     ```
     PowerShell.exe -ExecutionPolicy Restricted
-    ```  
+    ```
+  
 - PowerShell.exe のヘルプ ファイルを表示するには、次のコマンド形式を使用します。  
+    
     ```
     PowerShell.exe -help, -?, /?
-    ```  
+    ```
+
 - コマンド プロンプト ウィンドウで、Windows PowerShell セッションを終了するには、入力 `exit`します。 一般的なコマンド プロンプトに戻ります。
 
 完全な一覧については、 **PowerShell.exe** コマンド ライン パラメーターを参照して [about_PowerShell.Exe](https://go.microsoft.com/fwlink/?LinkID=113439)します。

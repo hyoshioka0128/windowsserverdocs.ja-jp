@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 93da32a204c42b3f4fb503349ff732c9c050db31
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: b972ab05c192dca9a9a0a2bda4f083d2906acadb
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192631"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812473"
 ---
 # <a name="change-a-drive-letter"></a>ドライブ文字を変更します。
 
-> **適用対象します。** Windows 10、Windows 8.1、Windows 7、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> **適用対象します。** Windows 10、Windows 8.1、Windows 7、Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ドライブに割り当てられたドライブ文字に満足できない、またはドライブ文字がまだでするドライブがある場合、ディスク管理を使用してこれを変更することができます。
 
@@ -37,6 +37,6 @@ ms.locfileid: "66192631"
 1. ドライブ文字を変更するには、選択**変更**します。 ドライブを持っていない場合、1 つ選択してをドライブ文字を追加する**追加**します。
 
     ![変更のドライブ文字とパスのダイアログ](media/change-drive-letter2.png)
-1. 新しいドライブ文字を選択して、 **ok** 、し、**はい**どのドライブ文字に依存するプログラムが正しく動作しない可能性がありますの入力を求められたらします。
+1. 新しいドライブ文字を選択して、 **ok**、し、**はい**どのドライブ文字に依存するプログラムが正しく動作しない可能性がありますの入力を求められたらします。
 
     ![ドライブ文字の変更を表示する変更のドライブ文字またはパスのダイアログ](media/change-drive-letter3.png)

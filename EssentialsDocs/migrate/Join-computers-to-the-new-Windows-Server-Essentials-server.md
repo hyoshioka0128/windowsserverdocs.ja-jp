@@ -12,12 +12,12 @@ ms.assetid: cdfa9504-9881-4265-b308-c7ee8721bfaa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1a67cda9e4b04e8d861232b48f45915fb2b460d1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0240abfff58baedd79ab038af93b107dbb898eb2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836413"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432941"
 ---
 # <a name="join-computers-to-the-new-windows-server-essentials-server1"></a>新しい Windows Server Essentials の server1 にコンピューターを参加させる
 
@@ -31,7 +31,7 @@ ms.locfileid: "59836413"
   
  クライアント コンピューターをサーバーに接続するプロセスは、コンピューターがドメインに参加しているかどうかにかかわらず同じです。  
   
--   参照**http://***先 servername***/connect**と場合、新しいコンピューターと同じように、Windows Server コネクタ ソフトウェアをインストールします。  
+- **http://** <em>destination-servername</em> **/connect** を参照し、新しいコンピューターの場合と同じように Windows Server コネクタ ソフトウェアをインストールします。  
   
 > [!NOTE]
 >  Windows Server コネクタ ソフトウェアは、Windows XP または Windows Vista を実行しているコンピューターはサポートしていません。 既にドメインに参加している Windows XP または Windows Vista を実行しているコンピューターがある場合は、この手順を省略できます。  
@@ -47,7 +47,7 @@ ms.locfileid: "59836413"
   
 2.  コマンド プロンプトで「 **GPRESULT /R**」と入力し、Enter キーを押します。  
   
-3.  グループ ポリシーの適用 セクションの結果の出力を確認してください: ことなど、移行先サーバーの一覧を確認して**DestinationSrv.Domain.local**します。 次に、例を示します。  
+3.  グループ ポリシーの適用 セクションの結果の出力を確認してください: ことなど、移行先サーバーの一覧を確認して**DestinationSrv.Domain.local**します。 例:  
   
     ```  
     USER SETTINGS  
@@ -65,8 +65,8 @@ ms.locfileid: "59836413"
   
 5.  移行先サーバーがまだ表示されない場合は、グループ ポリシーの設定またはこの特定のクライアント コンピューターへのポリシーの適用にエラーがある可能性があります。 移行先サーバーが表示されない場合は、次の手順を実行してください。  
   
-    1.  **[スタート]** ボタンをクリックし、**[ファイル名を指定して実行]** をクリックし、「 **rsop.msc** 」 (ポリシーの結果セット) と入力して、Enter キーを押します。  
+    1.  **[スタート]** ボタンをクリックし、 **[ファイル名を指定して実行]** をクリックし、「 **rsop.msc** 」 (ポリシーの結果セット) と入力して、Enter キーを押します。  
   
     2.  ノードに表示されるまでに X 印が付いたツリーを展開します。  
   
-    3.  ノードを右クリックし、**[エラーの表示]** をクリックして、一覧のコンピューターでグループ ポリシーの設定が失敗する理由についての情報を確認します。
+    3.  ノードを右クリックし、 **[エラーの表示]** をクリックして、一覧のコンピューターでグループ ポリシーの設定が失敗する理由についての情報を確認します。

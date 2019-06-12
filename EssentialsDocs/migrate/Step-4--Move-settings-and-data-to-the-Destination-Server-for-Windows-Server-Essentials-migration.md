@@ -12,12 +12,12 @@ ms.assetid: e143df43-e227-4629-a4ab-9f70d9bf6e84
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e5a8db44f80c333d589e0c1664174c394701f90d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fa6ab8e2108e569b7cef6bfbf0d20af4fa31016d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835683"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432569"
 ---
 # <a name="step-4-move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>手順 4:Windows Server Essentials への移行のために設定とデータを移行先サーバーに移動する
 
@@ -42,45 +42,45 @@ ms.locfileid: "59835683"
   
 -   **[クライアント コンピューターのバックアップ]** フォルダーは移行先サーバーに移行できません。 サーバーの移行の前に、すべてのクライアント コンピューターが正常な状態であることを確認します。 サーバーの移行後に、すべての重要なクライアント コンピューターのデータがバックアップされるように、クライアント コンピューターのバックアップを構成して、起動することをお勧めします。  
   
--   **File History Backups**フォルダーは、Windows Server Essentials でのフォルダー構造とバックアップ メタデータの変更のため、移行先サーバーに直接移行することはできません。 ただし、特定のコンピューター上の特定のユーザーの **[ファイル履歴のバックアップ]** フォルダーを移行することは可能です。 そうするには、**[ファイル履歴のバックアップ]** フォルダーで、そのユーザーとコンピューターの **[データ]** フォルダーを見つけて、その **[データ]** フォルダーを移行先サーバーの **[ファイル履歴のバックアップ]** フォルダーにコピーします。  
+-   **File History Backups**フォルダーは、Windows Server Essentials でのフォルダー構造とバックアップ メタデータの変更のため、移行先サーバーに直接移行することはできません。 ただし、特定のコンピューター上の特定のユーザーの **[ファイル履歴のバックアップ]** フォルダーを移行することは可能です。 そうするには、 **[ファイル履歴のバックアップ]** フォルダーで、そのユーザーとコンピューターの **[データ]** フォルダーを見つけて、その **[データ]** フォルダーを移行先サーバーの **[ファイル履歴のバックアップ]** フォルダーにコピーします。  
   
 #### <a name="to-copy-data-from-the-source-server-to-the-destination-server"></a>移行元サーバーから移行先サーバーにデータをコピーするには  
   
-1.  ドメイン管理者として移行先サーバーにサインインし、コマンド プロンプト ウィンドウまたは Windows PowerShell コマンド プロンプトを開きます。  
+1. ドメイン管理者として移行先サーバーにサインインし、コマンド プロンプト ウィンドウまたは Windows PowerShell コマンド プロンプトを開きます。  
   
-2.  コマンド プロンプト ウィンドウを使用する場合は、次のコマンドを入力し、Enter キーを押します。  
+2. コマンド プロンプト ウィンドウを使用する場合は、次のコマンドを入力し、Enter キーを押します。  
   
-    `robocopy \\<SourceServerName>\<SharedSourceFolderName> "<PathOfTheDestination>\<SharedDestinationFolderName>" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`
+   `robocopy \\<SourceServerName>\<SharedSourceFolderName> "<PathOfTheDestination>\<SharedDestinationFolderName>" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`
   
-     各項目の意味は次のとおりです。  
+    各項目の意味は次のとおりです。  
   
-    -   \<SourceServerName\>移行元サーバーの名前を指定します  
+   - \<SourceServerName\>移行元サーバーの名前を指定します  
   
-    -   \<SharedSourceFolderName\>移行元サーバー上の共有フォルダーの名前を指定します  
+   - \<SharedSourceFolderName\>移行元サーバー上の共有フォルダーの名前を指定します  
   
-    -   \<PathOfTheDestination\>フォルダーを移動する絶対パスです  
+   - \<PathOfTheDestination\>フォルダーを移動する絶対パスです  
   
-    -   \<SharedDestinationFolderName\>データをコピーする移行先サーバー上のフォルダーです  
+   - \<SharedDestinationFolderName\>データをコピーする移行先サーバー上のフォルダーです  
   
      例:  `robocopy \\sourceserver\MyData "d:\ServerFolders\MyData" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`。  
   
-3.  Windows PowerShell を使用する場合は、次のコマンドを入力して、Enter キーを押します。  
+3. Windows PowerShell を使用する場合は、次のコマンドを入力して、Enter キーを押します。  
   
-     `Add-Wssfolder  Path \ -Name  -KeepPermission`  
+    `Add-Wssfolder  Path \ -Name  -KeepPermission`  
   
-4.  移行元サーバーから移行する共有フォルダーごとに、このプロセスを繰り返します。  
+4. 移行元サーバーから移行する共有フォルダーごとに、このプロセスを繰り返します。  
   
 ##  <a name="BKMK_Network"></a> ネットワークを構成します。  
   
 #### <a name="to-configure-the-network"></a>ネットワークを構成するには  
   
-1.  移行先サーバーでダッシュボードを開きます。  
+1. 移行先サーバーでダッシュボードを開きます。  
   
-2.  ダッシュボードの **[ホーム]** ページで、**[セットアップ]**、**[Anywhere Access のセットアップ]** の順にクリックし、**[クリックして Anywhere Access を構成する]** オプションを選択します。  
+2. ダッシュボードの **[ホーム]** ページで、 **[セットアップ]** 、 **[Anywhere Access のセットアップ]** の順にクリックし、 **[クリックして Anywhere Access を構成する]** オプションを選択します。  
   
-3.  Anywhere Access のセットアップ ウィザードが表示されます。 ウィザードの指示に従って、ルーターとドメインの名前を構成します。  
+3. Anywhere Access のセットアップ ウィザードが表示されます。 ウィザードの指示に従って、ルーターとドメインの名前を構成します。  
   
- ルーターが UPnP フレームワークをサポートしていない場合、または UPnP フレームワークが無効になっている場合は、黄色の警告アイコンがルーター名の隣に表示されることがあります。 以下のポートが開かれていて、移行先サーバーの IP アドレスに向いていることを確認します。  
+   ルーターが UPnP フレームワークをサポートしていない場合、または UPnP フレームワークが無効になっている場合は、黄色の警告アイコンがルーター名の隣に表示されることがあります。 以下のポートが開かれていて、移行先サーバーの IP アドレスに向いていることを確認します。  
   
 -   ポート 80:HTTP Web トラフィック  
   
@@ -96,13 +96,13 @@ ms.locfileid: "59835683"
   
 1.  Windows Server Essentials ダッシュ ボードを開きます。  
   
-2.  ナビゲーション バーで、**[ユーザー]** をクリックします。  
+2.  ナビゲーション バーで、 **[ユーザー]** をクリックします。  
   
-3.  ユーザー アカウントの一覧で、ユーザー アカウントを右クリックして、**[アカウント プロパティの表示]** をクリックします。  
+3.  ユーザー アカウントの一覧で、ユーザー アカウントを右クリックして、 **[アカウント プロパティの表示]** をクリックします。  
   
-4.  **[Anywhere Access]** タブをクリックし、**[リモート Web アクセスを許可し、Web サービス アプリケーションにアクセスする]** をクリックします。  
+4.  **[Anywhere Access]** タブをクリックし、 **[リモート Web アクセスを許可し、Web サービス アプリケーションにアクセスする]** をクリックします。  
   
-5.  **[共有フォルダー]**、**[コンピューター]**、**[ホームページ リンク]** の順にクリックし、**[適用]** をクリックします。  
+5.  **[共有フォルダー]** 、 **[コンピューター]** 、 **[ホームページ リンク]** の順にクリックし、 **[適用]** をクリックします。  
   
 6.  **[コンピューター アクセス]** タブをクリックし、アクセスを許可するコンピューターの名前をクリックします。  
   

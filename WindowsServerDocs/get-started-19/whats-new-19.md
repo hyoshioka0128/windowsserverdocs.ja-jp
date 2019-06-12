@@ -7,13 +7,13 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
-ms.date: 05/21/2019
-ms.openlocfilehash: af887c0e1c66a017ee091fb2cab2dc61fa9ac1dc
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.date: 06/04/2019
+ms.openlocfilehash: 7110fe78982fec616174a93514d86fb2e1cf9fa5
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976554"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810768"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 の新機能
 
@@ -21,9 +21,17 @@ ms.locfileid: "65976554"
 
 このトピックでは、Windows Server 2019 の新機能の一部について説明します。 Windows Server 2019 は Windows Server 2016 の強力な基盤上に構築し、により、さまざまな技術革新を 4 つの主要なテーマで。ハイブリッド クラウド、セキュリティ、アプリケーション プラットフォーム、およびハイパー コンバージド インフラストラクチャ (HCI)。
 
-Windows Server 半期チャネル リリースの新機能についてを参照してください[Windows Server で新](../get-started/whats-new-in-windows-server.md)します。 
+Windows Server 半期チャネル リリースの新機能についてを参照してください[Windows Server で新](../get-started/whats-new-in-windows-server.md)します。
 
 ## <a name="general"></a>全般的な情報
+
+### <a name="windows-admin-center"></a>Windows Admin Center
+
+Windows Admin Center は、サーバー、クラスター、ハイパーコンバージド インフラストラクチャ、Windows 10 PC を管理するための、ローカルに展開されるブラウザー ベースのアプリです。 Windows 以外の追加費用は必要なく、実稼働環境で使用できます。
+
+Windows Server 2019 だけでなく Windows 10 および Windows と Windows Server の以前のバージョンで Windows Admin Center をインストールしてサーバーと Windows Server 2008 R2 を実行しているクラスターの管理に使用して、後でします。
+
+詳細については、次を参照してください。 [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md)します。
 
 ### <a name="desktop-experience"></a>デスクトップ エクスペリエンス
 
@@ -60,8 +68,6 @@ ATP のディープ プラットフォーム センサーおよび対応アク�
 -   [フォルダー アクセスの制御](https://cloudblogs.microsoft.com/microsoftsecure/2017/10/23/stopping-ransomware-where-it-counts-protecting-your-data-with-controlled-folder-access/?ocid=cx-blog-mmpc?source=mmpc)では、信頼されていないプロセスから保護されたフォルダーへのアクセスをブロックすることで、機密データをランサムウェアから保護します。
 
 -   [Exploit Protection](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/exploit-protection-exploit-guard) は、脆弱性の悪用に対する軽減策のセット (EMET を置き換える機能) で、システムおよびアプリケーションの保護のために簡単に構成できます。
-
-
 
 [Windows Defender アプリケーション制御](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) はコード整合性 (CI) ポリシーとも呼ばれており、Windows Server 2016 でリリースされた機能です。
 この機能については、コンセプトは優れているが展開が難しいというフィードバックがお客様から寄せられました。
@@ -111,7 +117,7 @@ Windows Server 2019 でストレージに行った変更の一部を次に示し
 
 ### <a name="storage-spaces-direct"></a>記憶域スペース ダイレクト
 
-記憶域スペース ダイレクトの新機能の一覧を次に示します。 詳細については、「[記憶域スペース ダイレクトの新機能](../storage/whats-new-in-storage.md#storage-spaces-direct)」を参照してください。
+記憶域スペース ダイレクトの新機能の一覧を次に示します。 詳細については、「[記憶域スペース ダイレクトの新機能](../storage/whats-new-in-storage.md#storage-spaces-direct)」を参照してください。 参照してください[Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview)情報を取得するのには、記憶域スペース ダイレクトのシステムを検証します。
 
 - **重複除去と ReFS ボリュームの圧縮**
 - **永続的なメモリのネイティブ サポート**

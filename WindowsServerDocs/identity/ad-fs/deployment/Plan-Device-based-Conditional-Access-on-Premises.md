@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: ffd7131f7f3772ab47b62c9755008fe3b1c4b274
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 3a78334f64d9e51515757b01f2d788bf87f67a35
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192068"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501610"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>オンプレミスのデバイス ベースの条件付きアクセスを計画する
 
@@ -30,7 +30,7 @@ AD FS では、ハイブリッド シナリオで条件付きアクセス ポリ
 ### <a name="types-of-registered-devices"></a>登録済みデバイスの種類  
 Azure AD でデバイス オブジェクトとして表されもオンプレミスの AD FS による条件付きアクセスのために使用するすべての登録済みのデバイスの 3 つの種類があります。  
 
-| |作業を追加または学校のアカウント  |Azure AD への参加  |Windows 10 Domian 結合    
+| |作業を追加または学校のアカウント  |Azure AD への参加  |Windows 10 ドメイン参加    
 | --- | --- |--- | --- |
 |説明    |  ユーザーは、作業内容を追加または学校のアカウントを BYOD デバイスを対話的にします。  **注:** 職場または学校アカウントは、ワークプ レース ジョイン Windows 8/8.1 で置換を追加       | ユーザーは、その作業の Windows 10 デバイスを Azure AD に参加します。|Windows 10 ドメインに参加したデバイスは、Azure AD に自動的に登録します。|           
 |デバイスへのユーザーのログオン     |  職場または学校のアカウントとしての windows ログインはありません。  Microsoft アカウントを使用してログインします。       |   デバイスの登録 (職場または学校) のアカウントとして Windows にログインします。      |     AD のアカウントを使用してログインします。|      

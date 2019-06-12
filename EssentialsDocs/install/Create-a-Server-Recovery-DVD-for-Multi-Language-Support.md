@@ -12,12 +12,12 @@ ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 4author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ac547f97b48e4cd0ebf87e0935cadc2c539b4d0b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2bbc7bf7af71c671153bf7ba3356ddc08dcc38b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855003"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433634"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>複数言語サポート用のサーバー回復 DVD の作成
 
@@ -30,20 +30,20 @@ ms.locfileid: "59855003"
   
  セットアップには、Windows プレインストール環境 (Windows PE) と初期構成という 2 つのフェーズがあります。 既定では、初期構成には言語選択ページは表示されません。  
   
--   OEM リモート管理インストールまたは OEM プレインストール シナリオでは、次のコマンドを使用してレジストリ キーを追加し、初期構成で言語選択ページを表示する必要があります。  
+- OEM リモート管理インストールまたは OEM プレインストール シナリオでは、次のコマンドを使用してレジストリ キーを追加し、初期構成で言語選択ページを表示する必要があります。  
   
-    ```  
-    %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v ShowPreinstallPages /t REG_SZ /d true /f  
-    ```  
+  ```  
+  %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v ShowPreinstallPages /t REG_SZ /d true /f  
+  ```  
   
-    > [!IMPORTANT]
-    >  OEM は実験環境でイメージを作成する際、セットアップの Windows PE フェーズで言語として **英語** を選択する必要があります。  
+  > [!IMPORTANT]
+  >  OEM は実験環境でイメージを作成する際、セットアップの Windows PE フェーズで言語として **英語** を選択する必要があります。  
   
--   ROK (Reseller Option Kit) シナリオでは、顧客には DVD と場合によりハードウェアが納品されます。 顧客は、Windows PE セットアップ中に言語を選択できるため、初期構成中に言語選択ページは表示されません。  
+- ROK (Reseller Option Kit) シナリオでは、顧客には DVD と場合によりハードウェアが納品されます。 顧客は、Windows PE セットアップ中に言語を選択できるため、初期構成中に言語選択ページは表示されません。  
   
- 複数の言語を含む 1 枚の 2 層 DVD の出荷を選択することができます。  
+  複数の言語を含む 1 枚の 2 層 DVD の出荷を選択することができます。  
   
- ここでは、言語サポートを Windows セットアップに追加する方法について説明します。 Windows PE 3.0 をカスタマイズするための主要なツールは、展開イメージのサービスと管理 (DISM) というコマンド ライン ツールです。 このソリューションでは、次のシナリオが可能になります。  
+  ここでは、言語サポートを Windows セットアップに追加する方法について説明します。 Windows PE 3.0 をカスタマイズするための主要なツールは、展開イメージのサービスと管理 (DISM) というコマンド ライン ツールです。 このソリューションでは、次のシナリオが可能になります。  
   
 1.  多言語インストールの作成  
   

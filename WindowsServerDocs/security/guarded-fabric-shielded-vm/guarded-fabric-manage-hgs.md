@@ -7,12 +7,12 @@ ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: ed3a3d4c5d0e55126f4dae8ecaf0ba1f32e46317
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dab27e71e42970507f321271edda90f6d161c691
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820223"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447394"
 ---
 # <a name="managing-the-host-guardian-service"></a>ホスト ガーディアン サービスの管理
 
@@ -221,7 +221,7 @@ Get-HgsKeyProtectionCertificate | Where-Object { $_.CertificateData.GetType().Na
 これらの設定とは、一貫性を保つのために重要ですが、障害発生後の HGS のクラスターをオンラインに戻すの取得に重要でないです。
 
 HGS のサービスの名前をキャプチャするには、次のように実行します。`Get-HgsServer`し、構成証明とキー保護の Url でフラットな名前をメモします。
-たとえば、次の構成証明 URL は"http://hgs.contoso.com/Attestation"、"hgs"は、HGS サービス名。
+たとえば、次の構成証明 URL は"<http://hgs.contoso.com/Attestation>"、"hgs"は、HGS サービス名。
 
 その他の Active Directory ドメインのように HGS によって使用される Active Directory ドメインを管理する必要があります。
 HGS を復元するには、障害発生後、必要はありません必ずしもを現在のドメインに存在する厳密なオブジェクトを再作成します。
@@ -702,10 +702,10 @@ HGS ノードでは、新しい暗号化と署名証明書のペアを登録す�
 10. コピー ホスティング ファブリックに更新された KP
 11. 元の VM に、KP が適用されます。
 
-    ```powershell
-    $updatedKP = Get-Content -Path .\updatedVM001.kp
-    Set-VMKeyProtector -VMName VM001 -KeyProtector $updatedKP
-    ```
+   ```powershell
+   $updatedKP = Get-Content -Path .\updatedVM001.kp
+   Set-VMKeyProtector -VMName VM001 -KeyProtector $updatedKP
+   ```
 12. 最後に、VM を起動し、正常に実行することを確認します。
 
 > [!NOTE]
@@ -718,10 +718,10 @@ HGS ノードでは、新しい暗号化と署名証明書のペアを登録す�
 
 14. 次のコマンドを実行して、各証明書を無効にします。  
 
-    ```powershell
-    Set-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint> -IsEnabled $false
-    Set-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint> -IsEnabled $false
-    ```
+   ```powershell
+   Set-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint> -IsEnabled $false
+   Set-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint> -IsEnabled $false
+   ```
 
 15. Vm が最初にできないことを確認した後は、無効にすると、証明書は、次のコマンドを実行して、証明書を HGS から削除します。
 

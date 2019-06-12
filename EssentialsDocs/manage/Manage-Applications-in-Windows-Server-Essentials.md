@@ -12,12 +12,12 @@ ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e98d661ac71697bc0e38b6a25fe2f9d2b0b7254f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1a60a9e7fd958d447b4770431a69546f0ad6f229
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860173"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433348"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>Windows Server Essentials でのアプリケーションの管理
 
@@ -32,21 +32,21 @@ ms.locfileid: "59860173"
 ##  <a name="BKMK_1"></a> ダッシュ ボードでのアプリケーション管理タスク  
  ダッシュボードの **[アプリケーション]** 管理ページには、次の項目が表示されます。  
   
--   次の情報を含む、インストールされているアドインの一覧  
+- 次の情報を含む、インストールされているアドインの一覧  
   
-    -   オンライン サービスまたはアドインの名前  
+  -   オンライン サービスまたはアドインの名前  
   
-    -   アドインの更新状態  
+  -   アドインの更新状態  
   
-    -   アドインのサブスクリプション状態  
+  -   アドインのサブスクリプション状態  
   
-    -   アドインを利用可能にする会社または発行元の名前  
+  -   アドインを利用可能にする会社または発行元の名前  
   
--   選択したアドインを管理するための一連のタスクが含まれる作業ウィンドウ  
+- 選択したアドインを管理するための一連のタスクが含まれる作業ウィンドウ  
   
--   Microsoft Pinpoint からダウンロードしてインストールできるアドインの一覧  
+- Microsoft Pinpoint からダウンロードしてインストールできるアドインの一覧  
   
- 次の表は、サーバー ダッシュボードで利用できるさまざまなアドインの管理タスクについて説明しています。 一部のタスクはアドインに固有であり、一覧からアドインを選択した場合にのみ表示されます。  
+  次の表は、サーバー ダッシュボードで利用できるさまざまなアドインの管理タスクについて説明しています。 一部のタスクはアドインに固有であり、一覧からアドインを選択した場合にのみ表示されます。  
   
 |タスク名|説明|  
 |---------------|-----------------|  
@@ -93,7 +93,7 @@ ms.locfileid: "59860173"
   
 3.  **[アドイン]** タブで、削除するアドインを選択し、 **[アドインの削除]** をクリックします。  
   
-4.  **[アドインの削除]** ウィンドウで、**[削除]** をクリックします。  
+4.  **[アドインの削除]** ウィンドウで、 **[削除]** をクリックします。  
   
     > [!NOTE]
     >  アドインを完全に削除するには、ダッシュボードの再起動が必要な場合があります。  
@@ -102,4 +102,4 @@ ms.locfileid: "59860173"
   
 -   [ダッシュ ボードの概要](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)  
   
--   [Windows Server Essentials を管理します。](Manage-Windows-Server-Essentials.md)
+-   [Windows Server Essentials の管理](Manage-Windows-Server-Essentials.md)

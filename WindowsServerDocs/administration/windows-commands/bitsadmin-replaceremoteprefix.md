@@ -13,16 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 848c57736c3530e296cffb970237149b4634de67
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 25c0f997ea0b9f97051baa291bdf87c84b6b1cbb
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266519"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811300"
 ---
 # <a name="bitsadmin-replaceremoteprefix"></a>bitsadmin replaceremoteprefix
-
-
 
 ジョブのすべてのファイルをリモート URL が始まる*OldPrefix*を使用する変更は*NewPrefix*します。
 
@@ -43,6 +41,7 @@ bitsadmin /ReplaceRemotePrefix <Job> <OldPrefix> <NewPrefix
 ## <a name="examples"></a>例
 
 次の例では、という名前のジョブのすべてのファイルを変更する*myDownloadJob*リモート URL から始まりますが *http://stageserver* に *http://prodserver* します。
+
 ```
 C:\>bitsadmin /ReplaceRemotePrefix myDownloadJob http://stageserver http://prodserver
 ```

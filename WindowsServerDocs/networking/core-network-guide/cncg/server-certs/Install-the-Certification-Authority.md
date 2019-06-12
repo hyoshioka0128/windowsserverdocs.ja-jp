@@ -8,12 +8,12 @@ ms.prod: windows-server-threshold
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 84e4b2fe0b59820b9e51229335f3539bcbeeec90
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1774d235703bd75d810f2649cb8ed3f2f92622d5
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860743"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811594"
 ---
 # <a name="install-the-certification-authority"></a>証明機関をインストールする
 
@@ -38,21 +38,21 @@ ms.locfileid: "59860743"
   
 ### <a name="to-install-active-directory-certificate-services"></a>Active Directory Certificate Services をインストールするには  
 
->[!TIP]
->Active Directory Certificate Services をインストールするを参照してください、Windows PowerShell を使用したい場合[Install-adcscertificationauthority](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcscertificationauthority?view=win10-ps)コマンドレットおよび省略可能なパラメーター。
+> [!TIP]
+> Active Directory Certificate Services をインストールするを参照してください、Windows PowerShell を使用したい場合[Install-adcscertificationauthority](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcscertificationauthority?view=win10-ps)コマンドレットおよび省略可能なパラメーター。
   
 1.  Enterprise Admins グループとルート ドメインの Domain Admins グループの両方のメンバーとしてログオンします。  
   
-2.  サーバー マネージャーで、**[管理]** をクリックし、**[役割と機能の追加]** をクリックします。 役割と機能の追加ウィザードが起動されます。  
+2.  サーバー マネージャーで、 **[管理]** をクリックし、 **[役割と機能の追加]** をクリックします。 役割と機能の追加ウィザードが起動されます。  
   
 3.  **開始する前に**, 、クリックして **次**します。  
   
     > [!NOTE]  
-    > 以前、役割と機能の追加ウィザードの実行時に **[既定でこのページを表示しない]** をクリックした場合、**[開始する前に]** ページは表示されません。  
+    > 以前、役割と機能の追加ウィザードの実行時に **[既定でこのページを表示しない]** をクリックした場合、 **[開始する前に]** ページは表示されません。  
   
-4.  **[インストールの種類の選択]** で **[役割ベースまたは機能ベースのインストール]** が選択されていることを確認して、**[次へ]** をクリックします。  
+4.  **[インストールの種類の選択]** で **[役割ベースまたは機能ベースのインストール]** が選択されていることを確認して、 **[次へ]** をクリックします。  
   
-5.  **[対象サーバーの選択]** で、**[サーバー プールからサーバーを選択]** が選択されていることを確認します。 **[サーバー プール]** で、ローカル コンピューターが選択されていることを確認します。 **[次へ]** をクリックします。  
+5.  **[対象サーバーの選択]** で、 **[サーバー プールからサーバーを選択]** が選択されていることを確認します。 **[サーバー プール]** で、ローカル コンピューターが選択されていることを確認します。 **[次へ]** をクリックします。  
   
 6.  **サーバーの役割**, で、 **ロール**,  **Active Directory Certificate Services**します。 必要な機能を追加するメッセージが表示されたら、クリックして **機能の追加**, 、 をクリックし、 **次**します。  
   
@@ -60,7 +60,7 @@ ms.locfileid: "59860743"
   
 8.  **Active Directory Certificate Services**, 、提供された情報を読み取り、およびクリックして **次**します。  
   
-9. **[インストール オプションの確認]** で、**[インストール]** をクリックします。 インストール プロセス中に、ウィザードを閉じないでください。 インストールが完了したら、クリックして **、移行先サーバーに Active Directory Certificate Services を構成する**です。 AD CS の構成ウィザードが開きます。 資格情報を読み取るし、必要な場合は、Enterprise Admins グループのメンバーであるアカウントの資格情報を指定します。 **[次へ]** をクリックします。  
+9. **[インストール オプションの確認]** で、 **[インストール]** をクリックします。 インストール プロセス中に、ウィザードを閉じないでください。 インストールが完了したら、クリックして **、移行先サーバーに Active Directory Certificate Services を構成する**です。 AD CS の構成ウィザードが開きます。 資格情報を読み取るし、必要な場合は、Enterprise Admins グループのメンバーであるアカウントの資格情報を指定します。 **[次へ]** をクリックします。  
   
 10. **役割サービスの**, 、 をクリックして **証明機関**, 、 をクリックし、 **次**します。  
   

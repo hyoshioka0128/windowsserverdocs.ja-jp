@@ -11,12 +11,12 @@ ms.assetid: 897f2454-5aee-445c-a63e-f386f514a0f6
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/22/2019
-ms.openlocfilehash: 1d19b3dc7000a4bf5558f351ce67ce7406b3d5d8
-ms.sourcegitcommit: b190fac4bfa5599751a60d3fc3b4c4a64dd9afd7
+ms.openlocfilehash: 160adc0e838cb732ba792cbdd7fd9fa200c68794
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66009075"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810511"
 ---
 # <a name="upgrade-virtual-machine-version-in-hyper-v-on-windows-10-or-windows-server"></a>Windows 10 または Windows Server、HYPER-V で仮想マシンのバージョンをアップグレードします。
 
@@ -53,7 +53,7 @@ Windows PowerShell を使用して仮想マシンの構成バージョンをア�
 Update-VMVersion <vmname>
 ```
 
-## <a name="BKMK_SupportedConfigVersions"></a>サポートされている仮想マシンの構成のバージョン
+## <a name="supported-virtual-machine-configuration-versions"></a>サポートされている仮想マシンの構成のバージョン
 
 PowerShell コマンドレットを実行[Get VMHostSupportedVersion](https://docs.microsoft.com/powershell/module/hyper-v/get-vmhostsupportedversion)を HYPER-V ホストがサポートしている仮想マシン構成バージョンを参照してください。 仮想マシンを作成するときに、既定の構成のバージョンで作成されます。 既定値とは何を表示するには、次のコマンドを実行します。
 

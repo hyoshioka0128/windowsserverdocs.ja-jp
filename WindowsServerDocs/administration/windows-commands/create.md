@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8cd58fdc1ae05cf2ca812dbaad32b6830f4dd000
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8cccf47a38fc61cdb225a44c08ba7d68d21b4fc3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868073"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433961"
 ---
 # <a name="create"></a>作成
 
@@ -36,5 +36,7 @@ create vdisk
 
 ## <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
+| パラメーター | 説明 |
+|-----------|-------------|
+|           |             |
+

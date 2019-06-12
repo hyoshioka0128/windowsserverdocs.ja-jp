@@ -8,12 +8,12 @@ ms.date: 02/21/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 91f252f5b0eca0f4c44e0b1a4564037298bf023c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9703a8652b0e0bbafe48858cbfbcc8aa9aa31ef8
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814063"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812049"
 ---
 # <a name="ad-fs-troubleshooting---integrated-windows-authentication"></a>統合 Windows 認証の AD FS のトラブルシューティング
 統合 Windows 認証では、エクスペリエンス シングル サインオン (SSO)、Kerberos または NTLM を使用して、Windows 資格情報でログインすることができます。
@@ -24,7 +24,7 @@ ms.locfileid: "59814063"
     - チャネル バインディング トークン
     - Internet Explorer の構成
 
-## <a name="spn-misonfiguration"></a>SPN misonfiguration
+## <a name="spn-misconfiguration"></a>SPN の構成が正しくないです。
 サービス プリンシパル名 (SPN) は、サービス インスタンスの一意の識別子です。 Spn は、サービスのログオン アカウントにサービス インスタンスを関連付けるの Kerberos 認証で使用されます。 これにより、クライアントは、アカウント名を持っていない場合でも、サービスがアカウントを認証することを要求するクライアント アプリケーションができます。
 
 方法の例で、SPN が使用されます AD FS のとおりです。
@@ -67,13 +67,14 @@ SPN は、AD FS サービス アカウントのプロパティを調べること
 
 Happeing からこれを妨げる可能性のある 2 つの主な点があります。
    - 統合 Windows 認証を有効には、IE のプロパティではチェックされません。  [詳細設定]-> [インターネット オプション] の下にあるこのセキュリティ]-> [です。
-![integrated](media/ad-fs-tshoot-iwa/iwa4.png)
+   
+   ![統合](media/ad-fs-tshoot-iwa/iwa4.png)
    
    - セキュリティ ゾーンが正しく構成されていません
        - Fqdn はイントラネット ゾーンではありません。
        - AD FS の URL は、イントラネット ゾーンではありません。
 
-![統合](media/ad-fs-tshoot-iwa/iwa5.png)
+      ![統合](media/ad-fs-tshoot-iwa/iwa5.png)
 ## <a name="next-steps"></a>次の手順
 
 - [AD FS のトラブルシューティング](ad-fs-tshoot-overview.md)

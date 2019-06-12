@@ -9,12 +9,12 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 235030ea913f2fe1860efaa00bdb4641ac56750d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: e62032533b15ec3d93896d242273612faafdca58
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188683"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444101"
 ---
 # <a name="ad-fs-requirements"></a>AD FS の要件
 
@@ -191,16 +191,16 @@ AD FS 構成データベースを SQL Server を使用している場合は、�
 ## <a name="BKMK_6"></a>ブラウザーの要件  
 ブラウザーまたはブラウザー コントロールを使用して AD FS の認証が実行されると、お使いのブラウザーは、次の要件に従う必要があります。  
   
--   JavaScript を有効にする必要があります。  
+- JavaScript を有効にする必要があります。  
   
--   シングル サインオンは、cookie を許可するクライアントのブラウザーを構成する必要があります。  
+- シングル サインオンは、cookie を許可するクライアントのブラウザーを構成する必要があります。  
   
--   Server Name Indication \(SNI\)サポートする必要があります  
+- Server Name Indication \(SNI\)サポートする必要があります  
   
--   ブラウザーは、ユーザー証明書とデバイス証明書の認証、SSL クライアント証明書認証をサポートする必要があります。  
+- ブラウザーは、ユーザー証明書とデバイス証明書の認証、SSL クライアント証明書認証をサポートする必要があります。  
 
--   Windows 統合認証、フェデレーション サービス名を使用してシームレスなサインオン (https など:\/\/fs.contoso.com) ローカル イントラネット ゾーンまたは信頼済みサイト ゾーンで構成する必要があります。
-## <a name="BKMK_7"></a>ネットワークの要件  
+- Windows 統合認証、フェデレーション サービス名を使用してシームレスなサインオン (https など:\/\/fs.contoso.com) ローカル イントラネット ゾーンまたは信頼済みサイト ゾーンで構成する必要があります。
+  ## <a name="BKMK_7"></a>ネットワークの要件  
  
 **ファイアウォールの要件**  
   
@@ -210,7 +210,7 @@ Web アプリケーション プロキシとフェデレーション サーバ�
 
 ハイブリッド ポートに関する追加情報の要件を参照してください[Hybrid Identity ポートとプロトコル](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-ports)します。 
 
-追加情報を参照してください[Active Directory フェデレーション サービスをセキュリティで保護するためのベスト プラクティス。](..\deployment\Best-Practices-Securing-AD-FS.md)
+追加情報を参照してください[Active Directory フェデレーション サービスをセキュリティで保護するためのベスト プラクティス。](../deployment/Best-Practices-Securing-AD-FS.md)
   
 **DNS の要件**  
   

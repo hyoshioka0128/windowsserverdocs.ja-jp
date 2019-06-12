@@ -12,12 +12,12 @@ ms.assetid: 2e6ff6e4-8d68-4d49-9e38-8088bc8bf95e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d4c547c2fec8e2b11e5c1d9bde46e55e91c9d6fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c2345726a17a074fc7022c8c4dc9b2443e9ad384
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884623"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433645"
 ---
 # <a name="automate-installation-of-add-ins-during-setup"></a>セットアップ時のアドインのインストールの自動化
 
@@ -69,13 +69,13 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
   
  カスタマイズされたアンインストール手順は次のいずれかの目的で使用できます。  
   
--   組み込みの確認ダイアログの置換。  
+- 組み込みの確認ダイアログの置換。  
   
--   アンインストール前のカスタマイズされたダイアログの事前設定。  
+- アンインストール前のカスタマイズされたダイアログの事前設定。  
   
--   アンインストール前の特定タスクの実行。  
+- アンインストール前の特定タスクの実行。  
   
- アンインストール手順を実行するには、次の内容をパッケージ直下の addin.xml に追加します。  
+  アンインストール手順を実行するには、次の内容をパッケージ直下の addin.xml に追加します。  
   
 ```  
 <Package xmlns="https://schemas.microsoft.com/WindowsServerSolutions/2010/03/Addins" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">  
@@ -103,19 +103,19 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
   
  exefile は、このフェーズで次のタスクを実行できます。  
   
--   ユーザーの操作中におけるダイアログの表示。  
+- ユーザーの操作中におけるダイアログの表示。  
   
--   バックグラウンド タスクの実行。  
+- バックグラウンド タスクの実行。  
   
- この実行可能ファイルの終了コードによって、次のようにアンインストール プロセスの続行方法が決定されます。  
+  この実行可能ファイルの終了コードによって、次のようにアンインストール プロセスの続行方法が決定されます。  
   
--   0: アンインストール プロセスは、ユーザーの確認が完了している場合と同様に、組み込みの確認ダイアログを事前に設定することなく続行されます。 (このアプローチは、組み込みの確認ダイアログを置換するために使用できます。)  
+- 0: アンインストール プロセスは、ユーザーの確認が完了している場合と同様に、組み込みの確認ダイアログを事前に設定することなく続行されます。 (このアプローチは、組み込みの確認ダイアログを置換するために使用できます。)  
   
--   1: アンインストール プロセスは取り消され、最終的にユーザーに取り消しのメッセージが表示されます。 すべての設定が変更されずに残ります。  
+- 1: アンインストール プロセスは取り消され、最終的にユーザーに取り消しのメッセージが表示されます。 すべての設定が変更されずに残ります。  
   
--   その他: アンインストール プロセスは、カスタマイズされたアンインストール手順が存在しない場合と同様に、組み込みの確認ダイアログを使用して続行されます。  
+- その他: アンインストール プロセスは、カスタマイズされたアンインストール手順が存在しない場合と同様に、組み込みの確認ダイアログを使用して続行されます。  
   
- exefile の起動に失敗した場合は、exefile が 0 または 1 以外のコードを返した場合と同じ動作になります。  
+  exefile の起動に失敗した場合は、exefile が 0 または 1 以外のコードを返した場合と同じ動作になります。  
   
 ## <a name="see-also"></a>関連項目  
  [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   

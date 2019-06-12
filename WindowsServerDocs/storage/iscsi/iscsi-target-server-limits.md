@@ -8,12 +8,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 9514392da133911c900f68fc8f1be260b6c91138
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d912047ab0e3136c6dc05064f3a28aaaafd36c79
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873033"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447725"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>iSCSI ターゲット サーバーのスケーラビリティの制限
 
@@ -42,7 +42,7 @@ ms.locfileid: "59873033"
 <tr class="odd">
 <td><p>iSCSI ターゲット サーバーごとに iSCSI ターゲット インスタンス</p></td>
 <td><p>256</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -73,7 +73,7 @@ ms.locfileid: "59873033"
 <td><p>ローカルにマウントされた仮想ディスクまたは記憶域アプライアンスごとのスナップショット</p></td>
 <td><p>32</p></td>
 <td><p>〇</p></td>
-<td><p>ローカルにマウントされた仮想ディスクは提供していませんが、iSCSI 固有の機能、非推奨 - 詳細についてを参照してください<a href="https://technet.microsoft.com/library/dn303411.aspx">Features Removed or Deprecated in Windows Server 2012 R2</a>します。</p></td>
+<td><p>Don の仮想ディスクをローカルにマウントされた&#39;、iSCSI 固有の機能は非推奨とされます-詳細については、t のプランを参照してください<a href="https://technet.microsoft.com/library/dn303411.aspx">Features Removed or Deprecated in Windows Server 2012 R2</a>します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -99,13 +99,13 @@ ms.locfileid: "59873033"
 <tr class="odd">
 <td><p>フェールオーバー クラスター ノード</p></td>
 <td><p>8 (Windows Server 2012 では 5)</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>複数のアクティブなクラスター ノード</p></td>
-<td><p>サポートされている</p></td>
-<td> 
+<td><p>サポート対象</p></td>
+<td> 
 <p>なし</p></td>
 <td><p>フェールオーバー クラスター内のアクティブな各ノードでは、実行可能な所有者ノードとして機能する他のノードでさまざまな iSCSI ターゲット サーバーのクラスター化されたインスタンスを所有しています。</p></td>
 </tr>
@@ -129,14 +129,14 @@ ms.locfileid: "59873033"
 </tr>
 <tr class="even">
 <td><p>マルチパスの入力/出力 (MPIO)</p></td>
-<td><p>サポートされている</p></td>
+<td><p>サポート対象</p></td>
 <td><p>なし</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>MPIO パス</p></td>
 <td><p>4</p></td>
-<td><p>いいえ</p></td>
+<td><p>X</p></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -186,44 +186,43 @@ ms.locfileid: "59873033"
 </tr>
 <tr class="even">
 <td><p>IPv4</p></td>
-<td><p>サポートされている</p></td>
+<td><p>サポート対象</p></td>
 <td><p>なし</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>IPv6</p></td>
-<td><p>サポートされている</p></td>
+<td><p>サポート対象</p></td>
 <td><p>なし</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>TCP オフロード</p></td>
-<td><p>サポートされている</p></td>
+<td><p>サポート対象</p></td>
 <td><p>なし</p></td>
 <td><p>大量の送信 (セグメント化)、チェックサム、割り込み節度、および RSS のオフロードを利用します。</p></td>
 </tr>
 <tr class="odd">
 <td><p>iSCSI オフロード</p></td>
 <td><p>サポートされていません</p></td>
-<td>              
-<p>なし</p></td>
+<td><br/><p>なし</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>Jumbo Frame</p></td>
-<td><p>サポートされている</p></td>
+<td><p>サポート対象</p></td>
 <td><p>なし</p></td>
 <td></td>
 </tr>
 <tr class="odd">
 <td><p>IPSec</p></td>
-<td><p>サポートされている</p></td>
+<td><p>サポート対象</p></td>
 <td><p>なし</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>CRC オフロード</p></td>
-<td><p>サポートされている</p></td>
+<td><p>サポート対象</p></td>
 <td><p>なし</p></td>
 <td></td>
 </tr>
@@ -249,7 +248,7 @@ ms.locfileid: "59873033"
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>仮想ディスクをベーシック ディスクからダイナミック ディスクに変換する、iSCSI イニシエーターから </p></td>
+<td><p>仮想ディスクをベーシック ディスクからダイナミック ディスクに変換する、iSCSI イニシエーターから </p></td>
 <td><p>〇</p></td>
 <td><p>X</p></td>
 <td></td>
@@ -291,13 +290,13 @@ ms.locfileid: "59873033"
 </tr>
 <tr class="odd">
 <td><p>固定形式の VHD</p></td>
-<td><p>サポートされている</p></td>
+<td><p>サポート対象</p></td>
 <td><p>X</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>差分の形式の VHD</p></td>
-<td><p>サポートされている</p></td>
+<td><p>サポート対象</p></td>
 <td><p>X</p></td>
 <td><p>差分 VHD ベースの iSCSI 仮想ディスクのスナップショットを作成することはできません。</p></td>
 </tr>
@@ -312,7 +311,7 @@ ms.locfileid: "59873033"
 <td><p>.vhdx:〇</p>
 <p>.vhd:はい (Windows Server 2012 ではいいえ)</p></td>
 <td><p>〇</p></td>
-<td><p>マップ解除はサポートされていません。</p></td>
+<td><p>マップ解除&#39;サポートされていません。</p></td>
 </tr>
 <tr class="odd">
 <td><p>exFAT/FAT32 または FAT (VHD のボリュームをホストしている)</p></td>
@@ -328,13 +327,13 @@ ms.locfileid: "59873033"
 </tr>
 <tr class="odd">
 <td><p>ReFS</p></td>
-<td><p>サポートされている</p></td>
+<td><p>サポート対象</p></td>
 <td><p>なし</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>NTFS</p></td>
-<td><p>サポートされている</p></td>
+<td><p>サポート対象</p></td>
 <td><p>なし</p></td>
 <td></td>
 </tr>
@@ -348,7 +347,7 @@ ms.locfileid: "59873033"
 <td><p>仮想プロビジョニング</p></td>
 <td><p>X</p></td>
 <td><p>なし</p></td>
-<td><p>動的 Vhd はサポートされますが、マッピング解除はサポートされていません。</p></td>
+<td><p>動的 Vhd はサポートされますはマップ解除&#39;サポートされていません。</p></td>
 </tr>
 <tr class="odd">
 <td><p>論理ユニットの圧縮</p></td>
@@ -383,12 +382,12 @@ ms.locfileid: "59873033"
 <tbody>
 <tr class="odd">
 <td><p>スナップショットを作成します。</p></td>
-<td><p>サポートされている</p></td>
+<td><p>サポート対象</p></td>
 <td></td>
 </tr>
 <tr class="even">
 <td><p>スナップショットの復元</p></td>
-<td><p>サポートされている</p></td>
+<td><p>サポート対象</p></td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -423,7 +422,7 @@ ms.locfileid: "59873033"
 </tr>
 <tr class="odd">
 <td><p>ローカル マウント</p></td>
-<td><p>サポートされている</p></td>
+<td><p>サポート対象</p></td>
 <td><p>ローカルにマウントされた iSCSI 仮想ディスクは非推奨の詳細については、「 <a href="https://technet.microsoft.com/library/dn303411.aspx">Features Removed or Deprecated in Windows Server 2012 R2</a>します。 ダイナミック ディスクのスナップショットは、ローカルにマウントすることはできません。</p></td>
 </tr>
 </tbody>
@@ -542,9 +541,9 @@ ISCSI ターゲット サーバー ソフトウェアは、次の iSCSI イニ�
 
 iSCSI ターゲット サーバーと関連テクノロジに関するその他のリソースを次に示します。
 
-  - [iSCSI ターゲット ブロック記憶域の概要](iscsi-target-server.md)
+- [iSCSI ターゲット ブロック記憶域の概要](iscsi-target-server.md)
 
-  - [iSCSI Target ブートの概要](iscsi-boot-overview.md)
+- [iSCSI Target ブートの概要](iscsi-boot-overview.md)
 
-  - [Windows Server でのストレージ](..\storage.md)
+- [Windows Server でのストレージ](../storage.md)
 

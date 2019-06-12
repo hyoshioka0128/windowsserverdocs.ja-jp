@@ -9,12 +9,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f3719277c80eae2bf2a4d923146920d17546601d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 97e1fa441c5fe4fb7d23743387392732663326de
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188730"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501585"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS のシングル サインオンの設定
 
@@ -56,7 +56,7 @@ AD FS では、シングル サインオン エクスペリエンスのいくつ
 
 
 ## <a name="ad-fs-2016---single-sign-on-and-authenticated-devices"></a>AD FS 2016 でのシングル サインオン、認証済みのデバイス
-AD FS 2016 は、最大 90 日間に増やすことが、14 日間の期間 (デバイスの使用状況 ウィンドウ) 内、authenticvation を必要とする登録済みのデバイスから要求元を認証するときに、PSSO を変更します。
+AD FS 2016 は、最大 90 日間に増やすことが、14 日間の期間 (デバイスの使用状況 ウィンドウ) 内で認証を必要とする登録済みのデバイスから要求元を認証するときに、PSSO を変更します。
 資格情報を提供する、最初に、後に既定で登録済みデバイスを持つユーザーでシングル サインオンの取得 90 日間の最大期間に 14 日間に少なくとも 1 回を AD FS のリソースにアクセスするデバイスを使用します。  資格情報の提供後 15 日間、待機する場合ユーザーが求められることの資格情報。  
 
 永続的な SSO は既定で有効にします。 無効の場合、PSSO cookie は書き込まれません |。  
@@ -103,23 +103,23 @@ Set-AdfsProperties –KmsiLifetimeMins <Int32\>
 ## <a name="psso-revocation"></a>PSSO 失効  
  セキュリティ保護のため、AD FS では、次の条件が満たされたときに事前に発行したすべての永続的な SSO cookie を拒否します。 AD FS を使用した再認証するために、資格情報を提供するユーザーが必要になります。 
   
--   ユーザーがパスワードを変更  
+- ユーザーがパスワードを変更  
   
--   AD FS で永続的な SSO の設定は無効です。  
+- AD FS で永続的な SSO の設定は無効です。  
   
--   デバイスが紛失または盗難にあった場合、管理者によって無効になっています  
+- デバイスが紛失または盗難にあった場合、管理者によって無効になっています  
   
--   AD FS が登録済みユーザーがユーザーに発行される永続的な SSO cookie を受信するか、またはデバイスがもはやに登録されていません  
+- AD FS が登録済みユーザーがユーザーに発行される永続的な SSO cookie を受信するか、またはデバイスがもはやに登録されていません  
   
--   AD FS が登録されているユーザーの永続的な SSO cookie を受け取りますが、ユーザーが再登録  
+- AD FS が登録されているユーザーの永続的な SSO cookie を受け取りますが、ユーザーが再登録  
   
--   AD FS の受信「サインインしたまま」、「サインアウト」の結果として発行される永続的な SSO cookie で AD FS の設定は無効です  
+- AD FS の受信「サインインしたまま」、「サインアウト」の結果として発行される永続的な SSO cookie で AD FS の設定は無効です  
   
--   AD FS が登録されているユーザーに対して発行される永続的な SSO cookie を受け取りますが、認証時にデバイスの証明書が見つからないか、変更されました。  
+- AD FS が登録されているユーザーに対して発行される永続的な SSO cookie を受け取りますが、認証時にデバイスの証明書が見つからないか、変更されました。  
   
--   AD FS の管理者が永続的な SSO の終了時刻を設定します。 この時刻より前に発行されたすべての永続的な SSO cookie が構成されて、AD FS は拒否します  
+- AD FS の管理者が永続的な SSO の終了時刻を設定します。 この時刻より前に発行されたすべての永続的な SSO cookie が構成されて、AD FS は拒否します  
   
- 終了時刻を設定するには、次の PowerShell コマンドレットを実行します。  
+  終了時刻を設定するには、次の PowerShell コマンドレットを実行します。  
   
 
 ``` powershell
@@ -163,7 +163,7 @@ c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
     <th>使用可能</th>
   </tr>
  <tr align="center">
-    <td>SSO = > トークン更新を設定 = ></td>
+    <td>SSO =&gt;更新トークン設定 =&gt;</td>
     <td>8 時間以内</td>
     <td>なし</td>
     <td>なし</td>
@@ -174,7 +174,7 @@ c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
   </tr>
 
  <tr align="center">
-    <td>PSSO = > トークン更新を設定 = ></td>
+    <td>PSSO =&gt;更新トークン設定 =&gt;</td>
     <td>なし</td>
     <td>24 時間以内</td>
     <td>7 日間</td>

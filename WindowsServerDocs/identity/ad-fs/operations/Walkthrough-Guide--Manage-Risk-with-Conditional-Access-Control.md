@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f034c2eeafe9d52569e8181bbbb2e582b1059d51
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 7e6e1c97ccc903ca3aff558354941e6a84d3fb79
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188862"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444736"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>チュートリアル ガイド:条件付きアクセス制御によってリスクを管理する
 
@@ -97,14 +97,18 @@ AD FS 管理コンソールまたは Windows PowerShell のいずれかを使用
 1.  フェデレーション サーバーで、Windows PowerShell コマンド ウィンドウを開き、次のコマンドを実行します。
 
 
-    `$rp = Get-AdfsRelyingPartyTrust -Name claimapp`
+~~~
+`$rp = Get-AdfsRelyingPartyTrust -Name claimapp`
+~~~
 
 
-2.  同じ Windows PowerShell コマンド ウィンドウで、次のコマンドを実行します。
+2. 同じ Windows PowerShell コマンド ウィンドウで、次のコマンドを実行します。
 
 
-    `$GroupAuthzRule = '@RuleTemplate = "Authorization" @RuleName = "Foo" c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value =~ "^(?i)<group_SID>$"] =>issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");'
-    Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $GroupAuthzRule`
+~~~
+`$GroupAuthzRule = '@RuleTemplate = "Authorization" @RuleName = "Foo" c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value =~ "^(?i)<group_SID>$"] =>issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");'
+Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $GroupAuthzRule`
+~~~
 
 > [!NOTE]
 > <group_SID> を必ず AD グループ **Finance** の SID の値に置き換えます。

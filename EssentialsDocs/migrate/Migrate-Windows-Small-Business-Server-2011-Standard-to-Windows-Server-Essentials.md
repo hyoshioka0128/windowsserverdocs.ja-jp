@@ -12,12 +12,12 @@ ms.assetid: c8325f87-fd79-471b-bf70-3f052692c383
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 5ee0dd816354cb5acc31305de39062e558af1146
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e16026b897a24c15e7a0506fe9e64c688bf363b6
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842763"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432803"
 ---
 # <a name="migrate-windows-small-business-server-2011-standard-to-windows-server-essentials"></a>Windows Small Business Server 2011 Standard から Windows Server Essentials への移行
 
@@ -27,11 +27,11 @@ ms.locfileid: "59842763"
   
 > [!NOTE]
 >  移行中に問題を回避するために、移行を開始する前に、このドキュメントを読むことを Windows Server Essentials 製品開発チームは強く推奨します。  
-  
+> 
 > [!NOTE]
-
+> 
 >  サーバー データを Windows Server Essentials の最新バージョンに移行する、次を参照してください。 [Windows Server Essentials への移行](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)します。  
-
+> 
 >  サーバー データを Windows Server Essentials の最新バージョンに移行する、次を参照してください。 [Windows Server Essentials への移行](../migrate/Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md)します。  
 
   

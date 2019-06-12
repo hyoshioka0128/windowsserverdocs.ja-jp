@@ -8,12 +8,12 @@ ms.date: 01/12/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 60ecf94b72e58aed4d3718b19f6007cdad1c9578
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6410d510085d1772ca6d8ced47226e00239a1a02
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840953"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443902"
 ---
 # <a name="troubleshooting-ad-fs"></a>AD FS のトラブルシューティング
 AD FS は、多数の変動要素がある、さまざまなことに触れておよび多くのさまざまな依存関係があります。  当然ながら、さまざまな問題に上昇を与えることがこれです。  このドキュメントは、これらの問題のトラブルシューティングを開始するために設計されています。  このドキュメントでは、追加情報、および問題を追跡するために使用できるさまざまなツールの機能を有効にする方法に注意すべき一般的な領域に紹介します。  
@@ -27,7 +27,7 @@ AD FS は、多数の変動要素がある、さまざまなことに触れて�
 - **DNS 構成**-フェデレーション サービスの名前を解決することができますか?  これは、いずれか、ロード バランサーの IP アドレスまたは AD FS サーバー ファーム内の 1 つの IP アドレスに解決する必要があります。  詳細については、次を参照してください。 [AD FS のトラブルシューティング - DNS](ad-fs-tshoot-dns.md)します。
 - **AD FS エンドポイント**-AD FS のエンドポイントを参照することができますか?  これを参照して、AD FS web サーバーが要求に応答するかどうかを判断できます。  、このファイルを表示する場合、AD FS が要求を処理うまく 443 をしたがわかります。  詳細については、次を参照してください。 [AD FS エンドポイントのトラブルシューティング -](ad-fs-tshoot-endpoints.md)します。
 - **Idp によって開始されたサインオン**-できるログインし、Idp-Initiated へのサインオン ページを使用して認証しますか?  既定で無効になっているため、このページが有効になっていることを確認する必要があります。  使用`Set-AdfsProperties -EnableIdPInitiatedSignOn $true`ページを有効にします。  サインインして認証する知ってこの領域で、AD FS が動作するいるとします。  詳細については、次を参照してください。 [AD FS のトラブルシューティング - サインオン](ad-fs-tshoot-initiatedsignon.md)します。
-##  <a name="common-troubleshooting-areas"></a>トラブルシューティングの一般的な領域
+  ##  <a name="common-troubleshooting-areas"></a>トラブルシューティングの一般的な領域
 
 |名前|説明|
 |-----|-----|

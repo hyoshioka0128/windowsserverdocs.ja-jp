@@ -12,12 +12,12 @@ ms.assetid: 198d16cb-3d07-4706-be89-ad14a5f7dc47
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9c240320d990652a4669499d99c1fc3eba9e06fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4dd32d57f6f36bdbf94c763fe0cbd1f37ff990b8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883593"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433113"
 ---
 # <a name="overview-of-the-launchpad-in-windows-server-essentials"></a>Windows Server Essentials のスタート パッドの概要
 
@@ -29,20 +29,20 @@ Windows Server Essentials スタート パッドは、コンピューターが�
   
  次の Windows オペレーティング システムは、Windows Server Essentials スタート パッドの使用をサポートしています。  
   
--   **Windows 8**:すべてのエディション。  
+- **Windows 8**:すべてのエディション。  
   
--   **Windows 7**:すべてのエディション。  
--   **Windows 10**:すべてのエディション。 
+- **Windows 7**:すべてのエディション。  
+- **Windows 10**:すべてのエディション。 
   
- 次のオペレーティング システムは、Windows Server Essentials スタート パッドの使用をサポートしていません。  
+  次のオペレーティング システムは、Windows Server Essentials スタート パッドの使用をサポートしていません。  
   
--   **追加のサーバー**:Windows Server オペレーティング システムを実行する追加のコンピューターで、Windows Server Essentials スタート パッドを実行することはできません。  
+- **追加のサーバー**:Windows Server オペレーティング システムを実行する追加のコンピューターで、Windows Server Essentials スタート パッドを実行することはできません。  
   
- このトピックの内容:  
+  このトピックの内容:  
   
--   [スタート パッドを使用します。](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Launchpad)  
+- [スタート パッドを使用します。](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Launchpad)  
   
--   [Mac コンピューターで、スタート パッドを使用してください。](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Mac)  
+- [Mac コンピューターで、スタート パッドを使用してください。](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Mac)  
   
 ##  <a name="BKMK_Launchpad"></a> スタート パッドを使用します。  
  次のリンクと情報は、Windows Server Essentials スタート パッドで使用できます。  
@@ -50,13 +50,13 @@ Windows Server Essentials スタート パッドは、コンピューターが�
 ### <a name="backup"></a>バックアップ  
  **[バックアップ]** をクリックして、コンピューターの **[バックアップ プロパティ]** を開きます。 **[バックアップ プロパティ]** ページでは、以下のことができます。  
   
--   バックアップの開始と停止  
+- バックアップの開始と停止  
   
--   最新のバックアップの状態と詳細の表示  
+- 最新のバックアップの状態と詳細の表示  
   
--   バックアップ実行中のコンピューターの電源管理方法の指定  
+- バックアップ実行中のコンピューターの電源管理方法の指定  
   
- スタート パッドを使用して、コンピューターをバックアップする方法については、次を参照してください。 [Manage Client Backup](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)します。  
+  スタート パッドを使用して、コンピューターをバックアップする方法については、次を参照してください。 [Manage Client Backup](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)します。  
   
 ### <a name="remote-web-access"></a>リモート Web アクセス  
  **[リモート Web アクセス]** をクリックして、Web ブラウザーを開いて、リモート Web アクセス サイトにアクセスします。 リモート Web アクセス サイトでは、他のコンピューターに接続して、インターネット対応のコンピューターを使って、オフィス内やオフィスから離れたどこからでも、一部のネットワーク リソースにアクセスすることができます。 リモート Web アクセスの詳細については、次を参照してください。 [Manage Remote Web Access](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)します。  
@@ -100,6 +100,6 @@ Windows Server Essentials スタート パッドは、コンピューターが�
   
 -   [接続の確立します。](../use/Get-Connected-in-Windows-Server-Essentials.md)  
   
--   [Windows Server Essentials を使用します。](../use/Use-Windows-Server-Essentials.md)  
+-   [Windows Server Essentials の使用](../use/Use-Windows-Server-Essentials.md)  
   
--   [Windows Server Essentials を管理します。](Manage-Windows-Server-Essentials.md)
+-   [Windows Server Essentials の管理](Manage-Windows-Server-Essentials.md)

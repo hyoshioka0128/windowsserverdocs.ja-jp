@@ -9,12 +9,12 @@ ms.date: 07/30/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 0b937debf2d9156c50f3c0ae51fdab8bd2a2bf2d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c245c5a6b2165385096f32713a92916236cdddfb
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863483"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719698"
 ---
 # <a name="appendix-l-events-to-monitor"></a>付録 l:監視するイベント
 
@@ -174,7 +174,7 @@ ms.locfileid: "59863483"
 |4707|611|低|ドメインの信頼が削除されました。|  
 |4709|なし|低|IPsec サービスが開始されました。|  
 |4710|なし|低|IPsec サービスが無効になりました。|  
-|4711|なし|低|次のいずれかが含まれている可能性があります。PAStore エンジンは、Active Directory 記憶域の IPsec ポリシーのローカルにキャッシュされたコピーをコンピューターに適用されます。PAStore エンジンは、コンピューターに Active Directory 記憶域の IPsec ポリシーを適用します。PAStore エンジンは、コンピューターのローカル レジストリ ストレージの IPsec ポリシーを適用します。PAStore エンジンは、Active Directory 記憶域の IPsec ポリシーのローカルにキャッシュされたコピーをコンピューターに適用できませんでした。PAStore エンジンは、コンピューターの Active Directory 記憶域の IPsec ポリシーを適用できませんでした。PAStore エンジンは、コンピューターのローカル レジストリ ストレージの IPsec ポリシーを適用できませんでした。PAStore エンジンは、コンピューターのアクティブな IPsec ポリシーの一部のルールを適用できませんでした。PAStore エンジンは、directory 記憶域、コンピューターの IPsec ポリシーを読み込めませんでした。PAStore エンジンには、directory 記憶域、コンピューターの IPsec ポリシーが読み込まれます。PAStore エンジンは、記憶域がローカル コンピューターの IPsec ポリシーを読み込めませんでした。PAStore エンジンには、記憶域がローカル コンピューターの IPsec ポリシーが読み込まれます。PAStore エンジンは、アクティブな IPsec ポリシーへの変更をポーリングし、変更は検出されません。|  
+|4711|なし|低|次のいずれかが含まれている可能性があります。PAStore エンジンは、Active Directory 記憶域の IPsec ポリシーのローカルにキャッシュされたコピーをコンピューターで適用しました。 PAStore エンジンは、Active Directory 記憶域の IPsec ポリシーをコンピューターで適用しました。 PAStore エンジンは、ローカル レジストリ記憶域の IPsec ポリシーをコンピューターで適用しました。 PAStore エンジンは、Active Directory 記憶域の IPsec ポリシーのローカルにキャッシュされたコピーをコンピューターで適用できませんでした。 PAStore エンジンは、Active Directory 記憶域の IPsec ポリシーをコンピューターで適用できませんでした。 PAStore エンジンは、ローカル レジストリ記憶域の IPsec ポリシーをコンピューターで適用できませんでした。 PAStore エンジンは、アクティブな IPsec ポリシーの一部のルールをコンピューターで適用できませんでした。 PAStore エンジンは、ディレクトリ記憶域の IPsec ポリシーをコンピューターで読み込むことができませんでした。 PAStore エンジンは、ディレクトリ記憶域の IPsec ポリシーをコンピューターで読み込みました。 PAStore エンジンは、ローカル記憶域の IPsec ポリシーをコンピューターで読み込むことができませんでした。 PAStore エンジンには、記憶域がローカル コンピューターの IPsec ポリシーが読み込まれます。PAStore エンジンは、アクティブな IPsec ポリシーへの変更をポーリングし、変更は検出されません。 |  
 |4712|なし|低|IPsec サービスは、重大なエラーの可能性を検出しました。|  
 |4717|621|低|アカウントに、システムのセキュリティ アクセスが許可されました。|  
 |4718|622|低|アカウントから、システムのセキュリティ アクセスが削除されました。|  

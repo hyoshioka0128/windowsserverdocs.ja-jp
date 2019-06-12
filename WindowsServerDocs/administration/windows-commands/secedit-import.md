@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f24cf173d1bacd70d92b325bfe7b342d0589a490
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 305b915a0d7e8ab152b072ff131854f56b9b0386
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874283"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441535"
 ---
 # <a name="seceditimport"></a>Secedit:import
 
@@ -30,7 +30,6 @@ ms.locfileid: "59874283"
 
 ```
 Secedit /import /db <database file name> /cfg <configuration file name> [/overwrite] [/areas [securitypolicy | group_mgmt | user_rights | regkeys | filestore | services]] [/log <log file name>] [/quiet]
-
 ```
 
 ### <a name="parameters"></a>パラメーター
@@ -41,15 +40,15 @@ Secedit /import /db <database file name> /cfg <configuration file name> [/overwr
 |overwrite|(省略可能)。</br>/Cfg パラメーターで、セキュリティ テンプレートがテンプレートまたは格納されているテンプレートに追加する代わりにデータベースに格納されている複合のテンプレートを上書きするかどうかを指定します。</br>このコマンド ライン オプションは有効な場合に、 `/cfg \<configuration file name>` パラメーターと共に使用します。 これが指定されていない場合、/cfg パラメーター内のテンプレートが格納されているテンプレートに追加されます。|
 |cfg|必須。</br>分析用のデータベースにインポートするセキュリティ テンプレートのパスとファイル名を指定します。</br>この/cfg オプションを使用すると、 `/db \<database file name>` パラメーター。 これが指定されていない場合、データベースに既に格納されている構成に対して分析を実行します。|
 |overwrite|(省略可能)。</br>/Cfg パラメーターで、セキュリティ テンプレートがテンプレートまたは格納されているテンプレートに追加する代わりにデータベースに格納されている複合のテンプレートを上書きするかどうかを指定します。</br>このコマンド ライン オプションは有効な場合に、 `/cfg \<configuration file name>` パラメーターと共に使用します。 これが指定されていない場合、/cfg パラメーター内のテンプレートが格納されているテンプレートに追加されます。|
-|領域|任意。</br>システムに適用するセキュリティ領域を指定します。 このパラメーターが指定されていない場合は、データベースで定義されているすべてのセキュリティ設定が、システムに適用されます。 複数の領域を構成するには、各領域をスペースで区切ります。 次のセキュリティの領域がサポートされています。</br>-SecurityPolicy</br>    ローカル ポリシーおよびアカウント ポリシーを含む、システムのドメイン ポリシーは、ポリシーやセキュリティ オプションを監査します。</br>-Group_Mgmt</br>    セキュリティ テンプレートで指定されたすべてのグループのグループの設定が制限されています。</br>-User_Rights</br>    ユーザーのログオン権限と特権の付与します。</br>-レジストリ</br>    ローカル レジストリ キーのセキュリティ。</br>-FileStore</br>    ローカル ファイル ストレージでのセキュリティ。</br>-サービス</br>    定義されているすべてのサービスのセキュリティ。|
+|領域|(省略可能)。</br>システムに適用するセキュリティ領域を指定します。 このパラメーターが指定されていない場合は、データベースで定義されているすべてのセキュリティ設定が、システムに適用されます。 複数の領域を構成するには、各領域をスペースで区切ります。 次のセキュリティの領域がサポートされています。</br>-SecurityPolicy</br>    ローカル ポリシーおよびアカウント ポリシーを含む、システムのドメイン ポリシーは、ポリシーやセキュリティ オプションを監査します。</br>-Group_Mgmt</br>    セキュリティ テンプレートで指定されたすべてのグループのグループの設定が制限されています。</br>-User_Rights</br>    ユーザーのログオン権限と特権の付与します。</br>-レジストリ</br>    ローカル レジストリ キーのセキュリティ。</br>-FileStore</br>    ローカル ファイル ストレージでのセキュリティ。</br>-サービス</br>    定義されているすべてのサービスのセキュリティ。|
 |ログ|(省略可能)。</br>プロセスのログ ファイルのパスとファイル名を指定します。|
-|通知の停止|(省略可能)。</br>画面とログの出力を抑制します。 できます分析結果を表示する、セキュリティの構成と分析スナップインを Microsoft 管理コンソール (MMC) を使用しています。|
+|通知の停止|任意。</br>画面とログの出力を抑制します。 できます分析結果を表示する、セキュリティの構成と分析スナップインを Microsoft 管理コンソール (MMC) を使用しています。|
 
 ## <a name="remarks"></a>注釈
 
 別のコンピュータに、.inf ファイルをインポートする前にデータベースに対してコマンド secedit/generaterollback で実行、インポートに実行されると secedit、整合性を検証するインポート ファイルを検証/です。
 
-ログ ファイルのパスを指定しない場合、既定のログ ファイル (*systemroot*\Documents and 設定\**UserAccount\*\My Documents\Security\Logs*DatabaseName.log) を使用します。
+ログ ファイルのパスを指定しない場合、既定のログ ファイル (*systemroot*\Documents and 設定\*<em>UserAccount\*\My Documents\Security\Logs</em>DatabaseName.log) を使用します。
 
 Windows Server 2008 で `Secedit /refreshpolicy` に置き換えられました `gpupdate`します。 セキュリティ設定を更新する方法については、次を参照してください。 [Gpupdate](gpupdate.md)します。
 
@@ -66,8 +65,8 @@ Secedit /import /db C:\Security\FY12\SecDbContoso.sdb /cfg NetworkShare\Policies
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [secedit:export](secedit-export.md)
--   [secedit:generaterollback](secedit-generaterollback.md)
--   [secedit: 検証](secedit-validate.md)
+-   [Secedit:export](secedit-export.md)
+-   [Secedit:generaterollback](secedit-generaterollback.md)
+-   [Secedit:validate](secedit-validate.md)
 -   [Secedit](secedit.md)
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

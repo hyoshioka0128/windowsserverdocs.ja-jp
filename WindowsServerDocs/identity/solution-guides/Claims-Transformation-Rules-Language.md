@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 4a6b378bc4aef180ebedd260008febaa2f2a76ae
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a1f5c724d041a9f64c3b2697a8b5acd17a2a7bd9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856213"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445808"
 ---
 # <a name="claims-transformation-rules-language"></a>要求変換規則言語
 
@@ -225,75 +225,75 @@ Active Directory では、ここでは意味を判断するようになってし
   
 このセクションでは、パーサーによって生成されるエラーに不適切な構文と対応する構文で記述されているルールの例をいくつか示しています。  
   
-1.  以下に例を示します。  
+1. 以下に例を示します。  
   
-    ```  
-    c1;[]=>Issue(claim=c1);  
-    ```  
+   ```  
+   c1;[]=>Issue(claim=c1);  
+   ```  
   
-    この例では、コロンの代わりに、不適切に使用されるセミコロンがあります。   
-    **エラー メッセージ:**  
-    *POLICY0002:ポリシー データを解析できませんでした。*  
-    *行番号:1、列番号:エラー トークンが、2:;。コマンドライン: ' c1;= > Issue(claim=c1);'。*  
-    *パーサー エラー:' POLICY0030:予期しない構文エラーです ';' で、次のいずれかのが必要です: ':'。 '。*  
+   この例では、コロンの代わりに、不適切に使用されるセミコロンがあります。   
+   **エラー メッセージ:**  
+   *POLICY0002:ポリシー データを解析できませんでした。*  
+   *行番号:1、列番号:エラー トークンが、2:;。コマンドライン: ' c1;= > Issue(claim=c1);'。*  
+   *パーサー エラー:' POLICY0030:予期しない構文エラーです ';' で、次のいずれかのが必要です: ':'。 '。*  
   
-2.  以下に例を示します。  
+2. 以下に例を示します。  
   
-    ```  
-    c1:[]=>Issue(claim=c2);  
-    ```  
+   ```  
+   c1:[]=>Issue(claim=c2);  
+   ```  
   
-    この例では、コピーの発行ステートメントの識別子のタグは定義されません。   
-    **エラー メッセージ**:   
-    *POLICY0011:CopyIssuanceStatement で指定された条件タグに一致する要求規則の条件がありません: 'c2'。*  
+   この例では、コピーの発行ステートメントの識別子のタグは定義されません。   
+   **エラー メッセージ**:   
+   *POLICY0011:CopyIssuanceStatement で指定された条件タグに一致する要求規則の条件がありません: 'c2'。*  
   
-3.  以下に例を示します。  
+3. 以下に例を示します。  
   
-    ```  
-    c1:[type=="x1", value=="1", valuetype=="bool"]=>Issue(claim=c1)  
-    ```  
+   ```  
+   c1:[type=="x1", value=="1", valuetype=="bool"]=>Issue(claim=c1)  
+   ```  
   
-    "bool"言語では、ターミナルでないし、有効な値型ではありません。 有効な端末は、次のエラー メッセージに表示されます。   
-    **エラー メッセージ:**  
-    *POLICY0002:ポリシー データを解析できませんでした。*  
-    行番号:1、列番号:エラー トークンが、39:"bool"。 コマンドライン: ' c1: [型の値である"x1"= =「1」、valuetype = ="bool"= =] = > Issue(claim=c1);'。   
-    *パーサー エラー:' POLICY0030:構文エラー: 予期しない 'STRING' で、次のいずれかを指定してください:'INT64_TYPE' 'UINT64_TYPE' 'STRING_TYPE' 'BOOLEAN_TYPE' 'IDENTIFIER'*  
+   "bool"言語では、ターミナルでないし、有効な値型ではありません。 有効な端末は、次のエラー メッセージに表示されます。   
+   **エラー メッセージ:**  
+   *POLICY0002:ポリシー データを解析できませんでした。*  
+   行番号:1、列番号:エラー トークンが、39:"bool"。 コマンドライン: ' c1: [型の値である"x1"= =「1」、valuetype = ="bool"= =] = > Issue(claim=c1);'。   
+   *パーサー エラー:' POLICY0030:構文エラー: 予期しない 'STRING' で、次のいずれかを指定してください:'INT64_TYPE' 'UINT64_TYPE' 'STRING_TYPE' 'BOOLEAN_TYPE' 'IDENTIFIER'*  
   
-4.  以下に例を示します。  
+4. 以下に例を示します。  
   
-    ```  
-    c1:[type=="x1", value==1, valuetype=="boolean"]=>Issue(claim=c1);  
-    ```  
+   ```  
+   c1:[type=="x1", value==1, valuetype=="boolean"]=>Issue(claim=c1);  
+   ```  
   
-    数字の**1**言語では、有効なトークンのないこの例では、このような使用状況は、一致条件では許可されません。 文字列を二重引用符で囲む必要があります。   
-    **エラー メッセージ:**  
-    *POLICY0002:ポリシー データを解析できませんでした。*  
-    *行番号:1、列番号:23 のエラー トークン:1. コマンドライン: ' c1: [型の値である"x1"= = 1、valuetype = ="bool"= =] = > Issue(claim=c1);'。* * パーサー エラー:' POLICY0029:入力が間違っています。*  
+   数字の**1**言語では、有効なトークンのないこの例では、このような使用状況は、一致条件では許可されません。 文字列を二重引用符で囲む必要があります。   
+   **エラー メッセージ:**  
+   *POLICY0002:ポリシー データを解析できませんでした。*  
+   *行番号:1、列番号:23 のエラー トークン:1. コマンドライン: ' c1: [型の値である"x1"= = 1、valuetype = ="bool"= =] = > Issue(claim=c1);'。* <em>パーサー エラー。' POLICY0029:入力が間違っています。</em>  
   
-5.  以下に例を示します。  
+5. 以下に例を示します。  
   
-    ```  
-    c1:[type == "x1", value == "1", valuetype == "boolean"] =>   
+   ```  
+   c1:[type == "x1", value == "1", valuetype == "boolean"] =>   
   
-         Issue(type = c1.type, value="0", valuetype == "boolean");  
-    ```  
+        Issue(type = c1.type, value="0", valuetype == "boolean");  
+   ```  
   
-    この例では、1 つの等号 (=) ではなく、2 つの等号 (= =) を使用します。   
-    **エラー メッセージ:**  
-    *POLICY0002:ポリシー データを解析できませんでした。*  
-    *行番号:1、列番号:エラー トークンが、91: = =。コマンドライン: ' c1: [型の値である"x1"= =「1」を = =*  
-    *valuetype=="boolean"]=>Issue(type=c1.type, value="0", valuetype=="boolean");'.*  
-    *パーサー エラー:' POLICY0030:構文エラー、予期しない '= ='、次のいずれかを指定してください: '='*  
+   この例では、1 つの等号 (=) ではなく、2 つの等号 (= =) を使用します。   
+   **エラー メッセージ:**  
+   *POLICY0002:ポリシー データを解析できませんでした。*  
+   *行番号:1、列番号:エラー トークンが、91: = =。コマンドライン: ' c1: [型の値である"x1"= =「1」を = =*  
+   *valuetype=="boolean"]=>Issue(type=c1.type, value="0", valuetype=="boolean");'.*  
+   *パーサー エラー:' POLICY0030:構文エラー、予期しない '= ='、次のいずれかを指定してください: '='*  
   
-6.  以下に例を示します。  
+6. 以下に例を示します。  
   
-    ```  
-    c1:[type=="x1", value=="boolean", valuetype=="string"] =>   
+   ```  
+   c1:[type=="x1", value=="boolean", valuetype=="string"] =>   
   
-          Issue(type=c1.type, value=c1.value, valuetype = "string");  
-    ```  
+         Issue(type=c1.type, value=c1.value, valuetype = "string");  
+   ```  
   
-    この例は、正しい構文的および意味的があります。 ただし、"boolean"を使用して、文字列値は、混乱が生じるにバインドされ、避ける必要があります。 既に触れましたが、言語の端末を使用して要求の値は、可能な限り避ける必要があります。  
+   この例は、正しい構文的および意味的があります。 ただし、"boolean"を使用して、文字列値は、混乱が生じるにバインドされ、避ける必要があります。 既に触れましたが、言語の端末を使用して要求の値は、可能な限り避ける必要があります。  
   
 ## <a name="BKMK_LT"></a>言語終端要素  
 次の表では、ターミナルの文字列と、要求変換規則言語で使用される、関連する言語端末の完全なセットを示します。 これらの定義は、utf-16 文字列の大文字を使用します。  

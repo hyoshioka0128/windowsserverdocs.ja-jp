@@ -11,12 +11,12 @@ ms.prod: windows-server-threshold
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: ea56c718394d145a36145d32e5769661a62efd56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: cb9b5b9448f364760c3d2a7e43edd01a5a9f7f9d
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841003"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719669"
 ---
 # <a name="forest-and-domain-functional-levels"></a>フォレストおよびドメイン機能レベル
 
@@ -34,7 +34,7 @@ Windows Server 2008 以上のドメイン機能レベルでは、分散ファイ
 
 新しいフォレストやこのリリースで追加のドメイン機能レベルはありません。
 
-Windows Server 2019 ドメイン コント ローラーを追加する最小要件では、Windows Server 2008 r2 の機能レベルです。
+Windows Server 2019 ドメイン コント ローラーを追加する最小要件は、Windows Server 2008 の機能レベルです。 エンジンと DFS-R を使用して SYSVOL をレプリケートするドメインがあります。
 
 ## <a name="windows-server-2016"></a>Windows Server 2016
 
@@ -139,25 +139,27 @@ Windows Server 2019 ドメイン コント ローラーを追加する最小要�
 ### <a name="windows-server-2008-domain-functional-level-features"></a>Windows Server 2008 ドメイン機能レベルの機能
 
 * すべて既定の AD DS の機能、すべての Windows Server 2003 ドメイン機能レベルで機能し、次の機能を利用します。
-   * 分散ファイル システム (DFS) レプリケーションのサポートの Windows Server 2003 システム ボリューム (SYSVOL)
-      * DFS レプリケーションのサポートは、SYSVOL の内容のより堅牢で詳細なレプリケーションを提供します。
-        [!NOTE]>
-        >Windows Server 2012 R2 以降では、ファイル レプリケーション サービス (FRS) は非推奨とされます。 実行しているドメイン コント ローラー上に作成された新しいドメイン、Windows Server 2008 のドメイン機能レベルを以上には、Windows Server 2012 R2 を設定する必要があります。
+  * 分散ファイル システム (DFS) レプリケーションのサポートの Windows Server 2003 システム ボリューム (SYSVOL)
+    * DFS レプリケーションのサポートは、SYSVOL の内容のより堅牢で詳細なレプリケーションを提供します。
 
-   * ドメイン ベース DFS 名前空間アクセス ベースの列挙とスケーラビリティの向上をサポートする Windows Server 2008 モードで実行されています。 Windows Server 2008 モードでのドメイン ベース名前空間には、Windows Server 2003 フォレストの機能レベルを使用するフォレストも必要です。 詳細については、次を参照してください。 [Namespace の種類を選択](https://go.microsoft.com/fwlink/?LinkId=180400)します。
-   * Kerberos プロトコルの高度な (AES 128、AES 256) 暗号化標準サポートします。 Tgt を AES を使用して発行するためには、ドメインの機能レベルが Windows Server 2008 またはそれ以降にする必要があり、ドメインのパスワードを変更する必要があります。 
-      * 詳細については、次を参照してください。 [Kerberos の強化](https://technet.microsoft.com/library/cc749438(ws.10).aspx)します。
-        [!NOTE]>
-        >認証エラーが発生するドメイン コント ローラーで Windows Server 2008 以降のドメイン機能レベルが発生した後、ドメイン コント ローラーが DFL 変更が既にレプリケートされたが、krbtgt のパスワードをまだ更新されていないかどうか。 この場合、ドメイン コント ローラー上で KDC サービスの再起動は、krbtgt の新しいパスワードのメモリ内の更新をトリガーし、関連する認証エラーを解決します。
+      > [!NOTE]
+      > Windows Server 2012 R2 以降では、ファイル レプリケーション サービス (FRS) は非推奨とされます。 実行しているドメイン コント ローラー上に作成された新しいドメイン、Windows Server 2008 のドメイン機能レベルを以上には、Windows Server 2012 R2 を設定する必要があります。
 
-   * [最後の対話型ログオン](https://go.microsoft.com/fwlink/?LinkId=180387)情報には、次の情報が表示されます。
-      * Windows Server 2008 をドメインに参加しているサーバーまたは Windows Vista ワークステーションで失敗したログオン試行の合計数
-      * Windows Server 2008 サーバーまたは Windows Vista ワークステーションにログオンに成功、失敗したログオン試行の合計数
-      * Windows Server 2008 または Windows Vista ワークステーションで失敗したログオン試行が最後の時刻
-      * 最後のログオンに成功した時間が、Windows Server 2008 サーバーまたは Windows Vista ワークステーションで試行します。
-   * 詳細なパスワード ポリシーでは、ドメインのユーザーおよびグローバル セキュリティ グループのパスワードとアカウント ロックアウトのポリシーを指定できます。 詳細については、次を参照してください。[細かいパスワードおよびアカウント ロックアウトのポリシー構成のステップ バイ ステップ ガイド](https://go.microsoft.com/fwlink/?LinkID=91477)します。
-   * 個人用仮想デスクトップ
-      * Active Directory ユーザーとコンピューター でユーザー アカウントのプロパティ ダイアログ ボックスで、個人用仮想デスクトップ タブで提供される追加機能を使用するには、Windows Server 2008 R2 の AD DS スキーマを拡張 (スキーマ オブジェクトのバージョン = 47)。 詳細については、次を参照してください。[を展開する個人用仮想デスクトップを使用して RemoteApp とデスクトップ接続のステップ バイ ステップ ガイドで](https://go.microsoft.com/fwlink/?LinkId=183552)します。
+  * ドメイン ベース DFS 名前空間アクセス ベースの列挙とスケーラビリティの向上をサポートする Windows Server 2008 モードで実行されています。 Windows Server 2008 モードでのドメイン ベース名前空間には、Windows Server 2003 フォレストの機能レベルを使用するフォレストも必要です。 詳細については、次を参照してください。 [Namespace の種類を選択](https://go.microsoft.com/fwlink/?LinkId=180400)します。
+  * Kerberos プロトコルの高度な (AES 128、AES 256) 暗号化標準サポートします。 Tgt を AES を使用して発行するためには、ドメインの機能レベルが Windows Server 2008 またはそれ以降にする必要があり、ドメインのパスワードを変更する必要があります。 
+    * 詳細については、次を参照してください。 [Kerberos の強化](https://technet.microsoft.com/library/cc749438(ws.10).aspx)します。
+
+      > [!NOTE]
+      >認証エラーが発生するドメイン コント ローラーで Windows Server 2008 以降のドメイン機能レベルが発生した後、ドメイン コント ローラーが DFL 変更が既にレプリケートされたが、krbtgt のパスワードをまだ更新されていないかどうか。 この場合、ドメイン コント ローラー上で KDC サービスの再起動は、krbtgt の新しいパスワードのメモリ内の更新をトリガーし、関連する認証エラーを解決します。
+
+  * [最後の対話型ログオン](https://go.microsoft.com/fwlink/?LinkId=180387)情報には、次の情報が表示されます。
+     * Windows Server 2008 をドメインに参加しているサーバーまたは Windows Vista ワークステーションで失敗したログオン試行の合計数
+     * Windows Server 2008 サーバーまたは Windows Vista ワークステーションにログオンに成功、失敗したログオン試行の合計数
+     * Windows Server 2008 または Windows Vista ワークステーションで失敗したログオン試行が最後の時刻
+     * 最後のログオンに成功した時間が、Windows Server 2008 サーバーまたは Windows Vista ワークステーションで試行します。
+  * 詳細なパスワード ポリシーでは、ドメインのユーザーおよびグローバル セキュリティ グループのパスワードとアカウント ロックアウトのポリシーを指定できます。 詳細については、次を参照してください。[細かいパスワードおよびアカウント ロックアウトのポリシー構成のステップ バイ ステップ ガイド](https://go.microsoft.com/fwlink/?LinkID=91477)します。
+  * 個人用仮想デスクトップ
+     * Active Directory ユーザーとコンピューター でユーザー アカウントのプロパティ ダイアログ ボックスで、個人用仮想デスクトップ タブで提供される追加機能を使用するには、Windows Server 2008 R2 の AD DS スキーマを拡張 (スキーマ オブジェクトのバージョン = 47)。 詳細については、次を参照してください。[を展開する個人用仮想デスクトップを使用して RemoteApp とデスクトップ接続のステップ バイ ステップ ガイドで](https://go.microsoft.com/fwlink/?LinkId=183552)します。
 
 ## <a name="windows-server-2003"></a>Windows Server 2003
 

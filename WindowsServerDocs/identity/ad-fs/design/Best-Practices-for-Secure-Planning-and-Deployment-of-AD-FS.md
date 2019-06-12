@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: df1afc77afffd9b737965215a5c9d96f278c8129
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 4a2fb188bd0a46ebd54ae068e8e4eeb63788aaa0
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191671"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501575"
 ---
 # <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>AD FS のセキュリティを考慮した設計と展開のベスト プラクティス
 
@@ -23,7 +23,12 @@ ms.locfileid: "66191671"
   
 ## <a name="core-security-best-practices-for-ad-fs"></a>AD FS のセキュリティの主要ベスト プラクティス  
 以下の主要ベスト プラクティスは、設計または展開のセキュリティを改善または強化させたいすべての AD FS のインストールに共通です。  
-  
+
+-   **「階層 0」システムとして AD FS をセキュリティで保護します。** 
+
+    AD FS は基本的には、認証システムです。  したがって、ネットワーク上の他の id システムのような「階層 0」システムとして扱われますする必要があります。  [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material) Active Directory 管理階層モデルの詳細についてはします。 
+
+
 -   **セキュリティの構成ウィザードを使用して、フェデレーション サーバーとフェデレーション サーバー プロキシ コンピューターに AD FS 固有のセキュリティのベスト プラクティスを適用するには**  
   
     セキュリティ構成ウィザード (SCW) とは、すべての Windows Server 2008、Windows Server 2008 R2 および Windows Server 2012 コンピューターにプレインストールされているツールです。 このウィザードは、インストールするサーバーの役割に基づいて、サーバーが攻撃を受ける機会を削減するのに役立つセキュリティのベスト プラクティスを適用するのに使用できます。  

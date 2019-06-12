@@ -6,14 +6,14 @@ ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
-ms.date: 04/05/2018
+ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 00f29c70628f2869e9f3aeffd0d08032bce5aeda
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: b41ebd0bb822875a3114de4a849ea3ec5decee11
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034184"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810888"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>フェールオーバー クラスターでクラスターの共有ボリュームを使用します。
 
@@ -26,15 +26,15 @@ CSV では、NTFS (または Windows Server 2012 R2 での ReFS) 上に重ねら
 - クラスター化された仮想ハード ディスク (VHD) ファイル。これはクラスター化された Hyper-V 仮想マシン用です。
 - スケールアウト ファイル共有。これはスケールアウト ファイル サーバーのクラスターの役割のアプリケーション データを格納するために使用されます。 この役割のアプリケーション データの例には、Hyper-V 仮想マシン ファイルや Microsoft SQL Server のデータがあります (スケールアウト ファイル サーバーでは ReFS はサポートされないことに注意してください)。スケール アウト ファイル サーバーの詳細については、次を参照してください。[アプリケーション データ用のスケール アウト ファイル サーバー](sofs-overview.md)します。
 
->[!NOTE]
->CSV は、SQL Server 2012 以前の SQL Server バージョンでの Microsoft SQL Server のクラスター化されたワークロードをサポートしていません。
+> [!NOTE]
+> Csv は、Microsoft SQL Server のクラスター化されたワークロードを SQL Server 2012 および SQL Server の以前のバージョンでサポートされていません。
 
 Windows Server 2012 では、CSV 機能が大幅に強化されました。 たとえば、Active Directory ドメイン サービスとの依存関係が削除されました。 また、**chkdsk** の機能向上、ウイルス対策およびバックアップ アプリケーションとの相互運用性、および一般的な記憶域機能 (BitLocker 暗号化ボリュームや記憶域スペースなど) との統合のサポートが追加されました。 Windows Server 2012 で導入された CSV 機能の概要については、次を参照してください。 [Windows Server 2012 のフェールオーバー クラスタ リングの新\[リダイレクト\]](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)します。
 
 Windows Server 2012 R2 には、CSV 所有権の分散、サーバー サービスの向上、CSV キャッシュに割り当てることができる物理メモリ量のより柔軟の可用性による回復性を向上などの追加機能が導入されていますなおよび相互運用性の強化された ReFS と重複除去のサポートが含まれる。 詳細については、次を参照してください。[フェールオーバー クラスタ リングの新](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>)します。
 
->[!NOTE]
->仮想デスクトップ インフラストラクチャ (VDI) シナリオのために CSV でデータ重複除去を使用する方法については、ブログ記事の「 [Windows Server 2012 R2 で VDI 記憶域用にデータ重複除去を展開する](https://blogs.technet.com/b/filecab/archive/2013/07/31/deploying-data-deduplication-for-vdi-storage-in-windows-server-2012-r2.aspx) 」と「 [Windows Server 2012 R2 でデータ重複除去を新しいワークロードに適用する](https://blogs.technet.com/b/filecab/archive/2013/07/31/extending-data-deduplication-to-new-workloads-in-windows-server-2012-r2.aspx)」を参照してください。
+> [!NOTE]
+> 仮想デスクトップ インフラストラクチャ (VDI) シナリオのために CSV でデータ重複除去を使用する方法については、ブログ記事の「 [Windows Server 2012 R2 で VDI 記憶域用にデータ重複除去を展開する](https://blogs.technet.com/b/filecab/archive/2013/07/31/deploying-data-deduplication-for-vdi-storage-in-windows-server-2012-r2.aspx) 」と「 [Windows Server 2012 R2 でデータ重複除去を新しいワークロードに適用する](https://blogs.technet.com/b/filecab/archive/2013/07/31/extending-data-deduplication-to-new-workloads-in-windows-server-2012-r2.aspx)」を参照してください。
 
 ## <a name="review-requirements-and-considerations-for-using-csv-in-a-failover-cluster"></a>フェールオーバー クラスターで CSV を使用するための要件と考慮事項を確認する
 
@@ -81,7 +81,7 @@ CSV をサポートするネットワークを構成するときは、次の考�
 
 Windows Server 2012 R2 では、ノード単位で CSV ボリュームの状態を表示できます。 たとえば、I/O が直接実行されているのか、またはリダイレクトされているのかや、CSV ボリュームが利用可能かどうかを確認できます。 CSV ボリュームが I/O リダイレクト モードの場合は、その理由を表示することもできます。 この情報を表示するには、Windows PowerShell コマンドレットの **Get-ClusterSharedVolumeState** を使用します。
 
->[!NOTE]
+> [!NOTE]
 > * CSV の設計の向上のため、Windows Server 2012 で、CSV は実行多くの操作を直接 I/O モードで Windows Server 2008 R2 が発生します。
 > * CSV と SMB 3.0 の機能 (SMB マルチチャネルや SMB ダイレクトなど) との統合により、リダイレクトされた I/O トラフィックは複数のクラスター ネットワークを経由できます。
 > * クラスター ネットワークを計画する際は、I/O リダイレクト中にコーディネーター ノードへのネットワーク トラフィックが増加する可能性があることを考慮に入れる必要があります。
@@ -116,8 +116,8 @@ CSV を使用するには、ノードが次の要件を満たしている必要�
 
 このセクションでは、計画の考慮事項と Windows Server 2012 R2 または Windows Server 2012 を実行するフェールオーバー クラスターで CSV を使用するための推奨事項を示します。
 
->[!IMPORTANT]
->特定の記憶域ユニットを CSV 用に構成する方法に関する推奨事項については、記憶域のベンダーに問い合わせてください。 記憶域ベンダーからの推奨事項がこのトピックの情報と異なっている場合は、記憶域ベンダーからの推奨事項に従ってください。
+> [!IMPORTANT]
+> 特定の記憶域ユニットを CSV 用に構成する方法に関する推奨事項については、記憶域のベンダーに問い合わせてください。 記憶域ベンダーからの推奨事項がこのトピックの情報と異なっている場合は、記憶域ベンダーからの推奨事項に従ってください。
 
 ### <a name="arrangement-of-luns-volumes-and-vhd-files"></a>LUN、ボリューム、および VHD ファイルの配置
 
@@ -198,31 +198,14 @@ CSV キャッシュは、システム メモリ (RAM) をライトスルー キ�
 >[!NOTE]
 >すべてのクラスター化された Hyper-V およびスケールアウト ファイル サーバー展開で CSV キャッシュを有効にすることをお勧めします。
 
-既定では、Windows Server 2012 で CSV キャッシュは無効です。 Windows Server 2012 R2 では、CSV キャッシュは既定で有効にします。 しかし、予約用にブロック キャッシュのサイズを割り当てる必要があります。
+既定では、Windows Server 2012 で CSV キャッシュは無効です。 Windows Server 2012 R2 以降では、CSV キャッシュは既定で有効にします。 しかし、予約用にブロック キャッシュのサイズを割り当てる必要があります。
 
 次の表に、CSV キャッシュを制御する 2 つの構成設定を示します。
 
-<table>
-<thead>
-<tr class="header">
-<th>Windows Server 2012 R2 でのプロパティ名</th>
-<th>Windows Server 2012 でのプロパティ名</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>BlockCacheSize</strong></td>
-<td><strong>SharedVolumeBlockCacheSizeInMB</strong></td>
-<td>これは、クラスター内の各ノードで CSV キャッシュのために予約するメモリ量 (メガバイト) を定義するためのクラスター共通プロパティです。 たとえば、値として 512 を定義した場合、512 MB のシステム メモリが各ノードで予約されます (多くのクラスターで 512 MB、推奨される値です。)既定の設定は 0 (無効) です。</td>
-</tr>
-<tr class="even">
-<td><strong>EnableBlockCache</strong></td>
-<td><strong>CsvEnableBlockCache</strong></td>
-<td>これはクラスターの物理ディスク リソースのプライベート プロパティです。 このプロパティを使用して、CSV に追加される個々のディスクで CSV キャッシュを有効にできます。 Windows Server 2012 の既定の設定は 0 (無効) です。 ディスクで CSV キャッシュを有効にするには、値を 1 に設定します。 既定では、Windows Server 2012 R2 では、この設定が有効にします。</td>
-</tr>
-</tbody>
-</table>
+| Windows Server 2012 R2 以降 |  Windows Server 2012                 | 説明 |
+| -------------------------------- | ------------------------------------ | ----------- |
+| BlockCacheSize                   | SharedVolumeBlockCacheSizeInMB       | これは、クラスター内の各ノードで CSV キャッシュのために予約するメモリ量 (メガバイト) を定義するためのクラスター共通プロパティです。 たとえば、値として 512 を定義した場合、512 MB のシステム メモリが各ノードで予約されます (多くのクラスターで 512 MB、推奨される値です。)既定の設定は 0 (無効) です。 |
+| EnableBlockCache                 | CsvEnableBlockCache                  | これはクラスターの物理ディスク リソースのプライベート プロパティです。 このプロパティを使用して、CSV に追加される個々のディスクで CSV キャッシュを有効にできます。 Windows Server 2012 の既定の設定は 0 (無効) です。 ディスクで CSV キャッシュを有効にするには、値を 1 に設定します。 既定では、Windows Server 2012 R2 では、この設定が有効にします。 |
 
 CSV キャッシュを監視するには、パフォーマンス モニターで **[クラスター CSV ボリューム キャッシュ]** の下にカウンターを追加します。
 
@@ -231,7 +214,7 @@ CSV キャッシュを監視するには、パフォーマンス モニターで
 1. 管理者として Windows PowerShell を起動します。
 2. 各ノードで *512* MB の予約済みキャッシュを定義するには、次のように入力します。
 
-    - Windows Server 2012 r2:
+    - Windows Server 2012 R2 以降。
 
         ```PowerShell
         (Get-Cluster).BlockCacheSize = 512  
@@ -249,14 +232,14 @@ CSV キャッシュを監視するには、パフォーマンス モニターで
     ```
 
 >[!NOTE]
-> * Windows Server 2012 では、CSV キャッシュを使用する場合は、合計物理 RAM の 20% のみを割り当てることができます。 Windows Server 2012 R2 では、最大 80% を割り当てることができます。 スケールアウト ファイル サーバーは通常メモリの制約を受けないため、CSV キャッシュ用に追加のメモリを使用してパフォーマンスを大幅に向上させることができます。
-> * リソースの競合を避けるためには、CSV キャッシュに割り当てられたメモリを変更した後に、クラスター内の各ノードを再起動する必要があります。 Windows Server 2012 R2 での再起動は必要なくなりました。
-> * 個々のディスクで CSV キャッシュを有効または無効にしたら、設定を有効にするために、物理ディスク リソースをいったんオフラインにしてからオンラインに戻す必要があります。 (既定では、Windows Server 2012 r2、CSV キャッシュは有効になっている。) 
+> * Windows Server 2012 では、CSV キャッシュを使用する場合は、合計物理 RAM の 20% のみを割り当てることができます。 Windows Server 2012 R2 以降では、最大 80% を割り当てることができます。 スケールアウト ファイル サーバーは通常メモリの制約を受けないため、CSV キャッシュ用に追加のメモリを使用してパフォーマンスを大幅に向上させることができます。
+> * リソースの競合を避けるためには、CSV キャッシュに割り当てられたメモリを変更した後に、クラスター内の各ノードを再起動する必要があります。 Windows Server 2012 R2 以降では、再起動は必要なくなりました。
+> * 個々のディスクで CSV キャッシュを有効または無効にしたら、設定を有効にするために、物理ディスク リソースをいったんオフラインにしてからオンラインに戻す必要があります。 (既定で、Windows Server 2012 R2 以降では、CSV キャッシュは有効です。) 
 > * パフォーマンス カウンターに関する情報を含む、CSV キャッシュの詳細については、ブログ記事の「 [CSV キャッシュを有効にする方法](https://blogs.msdn.microsoft.com/clustering/2013/07/19/how-to-enable-csv-cache/)」を参照してください。
 
-## <a name="back-up-csv"></a>CSV をバックアップする
+## <a name="backing-up-csvs"></a>Csv のバックアップ
 
-フェールオーバー クラスターの CSV に格納されている情報をバックアップする方法はいくつかあります。 Microsoft のバックアップ アプリケーションに加えて、Microsoft 以外のアプリケーションも使用できます。 一般に、CSV では、NTFS または ReFS でフォーマットされたクラスター化された記憶域のバックアップ要件を超える特別なバックアップ要件はありません。 また、CSV バックアップによって他の CSV 記憶域操作が中断されることはありません。
+フェールオーバー クラスターで Csv に格納されている情報をバックアップする複数の方法はあります。 Microsoft のバックアップ アプリケーションに加えて、Microsoft 以外のアプリケーションも使用できます。 一般に、CSV では、NTFS または ReFS でフォーマットされたクラスター化された記憶域のバックアップ要件を超える特別なバックアップ要件はありません。 また、CSV バックアップによって他の CSV 記憶域操作が中断されることはありません。
 
 CSV 用のバックアップ アプリケーションとバックアップ スケジューラを選択するときには、次の要素を考慮してください。
 
@@ -266,11 +249,11 @@ CSV 用のバックアップ アプリケーションとバックアップ ス�
 - CSV では、Windows Server 2012 R2 バックアップ、Windows Server 2012 バックアップまたは Windows Server 2008 R2 バックアップを実行するバックアップ要求側をサポートします。 しかし、Windows Server バックアップは通常、基本的なバックアップ ソリューションのみを提供するため、より大規模なクラスターを使用する組織には適さない場合があります。 Windows Server バックアップは、CSV 上でアプリケーション間の整合性が維持される仮想マシンのバックアップをサポートしていません。 クラッシュ前後の整合性が維持されるボリュームレベルのバックアップのみをサポートしています (クラッシュ前後の整合性が維持されるバックアップを復元する場合、仮想マシンは、バックアップの実行時にクラッシュが発生したときと同じ状態になります)。CSV ボリューム上の仮想マシンのバックアップは成功しますが、 これがサポートされていないことを示すエラー イベントがログに記録されます。
 - フェールオーバー クラスターをバックアップするときには、管理者の資格情報が必要になる場合があります。
 
->[!IMPORTANT]
+> [!IMPORTANT]
 >バックアップ アプリケーションがどのデータをバックアップおよび復元するか、どの CSV 機能をサポートしているか、および各クラスター ノードでのアプリケーションのリソース要件を注意深く確認してください。
 
->[!WARNING]
->バックアップ データを CSV ボリュームに復元する必要がある場合は、バックアップ アプリケーションに、クラスター ノードにまたがってアプリケーション間の整合性が維持されるデータを維持および復元する機能と、その機能に対する制限があるかどうかを確認してください。 たとえば、一部のアプリケーションでは、CSV ボリュームをバックアップしたノードとは異なるノードで CSV を復元する場合、復元を実行するノードでアプリケーションの状態に関する重要なデータを誤って上書きする可能性があります。
+> [!WARNING]
+> バックアップ データを CSV ボリュームに復元する必要がある場合は、バックアップ アプリケーションに、クラスター ノードにまたがってアプリケーション間の整合性が維持されるデータを維持および復元する機能と、その機能に対する制限があるかどうかを確認してください。 たとえば、一部のアプリケーションでは、CSV ボリュームをバックアップしたノードとは異なるノードで CSV を復元する場合、復元を実行するノードでアプリケーションの状態に関する重要なデータを誤って上書きする可能性があります。
 
 ## <a name="more-information"></a>詳細情報
 

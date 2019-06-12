@@ -14,20 +14,20 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ec1b0a17c578f2d8ac55d1704af6b267b6bb8e5c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: e6f91aa02cd0f19d480c24309be5797c273b0f2e
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865933"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66804951"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>リモート デスクトップ クライアントについてよく寄せられる質問
 
->適用先:Windows 10、Windows 8.1、Windows Server 2012 R2、Windows Server 2016
+>適用対象:Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
 デバイス (Android、Mac、iOS、または Windows) でリモート デスクトップ クライアントを設定したら、これで、質問があります。 リモート デスクトップ クライアントに関してよく寄せられる質問に対する回答を示します。 
 
-- [設定します。](#Setting-up)
+- [設定します。](#setting-up)
 - [接続、ゲートウェイ、およびネットワーク](#connection-gateway-and-networks)
 - [web クライアント](#web-client)
 - [モニター、オーディオ、およびマウス](#monitors-audio-and-mouse)
@@ -81,18 +81,20 @@ Windows 8.1 用内のリモート接続を許可するように表示される�
 - **ネットワークに問題があります。** インターネット接続があることを確認します。 
 - **リモート デスクトップのポートは、ファイアウォールによってブロックされる可能性があります。** Windows ファイアウォールを使用している場合は、次の手順に従います。
 
-   1. Windows ファイアウォールを開きます。 
-   2. クリックして**アプリまたは Windows ファイアウォールを使用して機能を許可する**します。 
-   3. クリックして**設定を変更する**します。 管理者パスワードのか、選択内容を確認が求められるあります。
-   4. **アプリや機能を許可**, **リモート デスクトップ** , と順にタップまたはクリックして **ok** します。
+  1. Windows ファイアウォールを開きます。 
+  2. クリックして**アプリまたは Windows ファイアウォールを使用して機能を許可する**します。 
+  3. クリックして**設定を変更する**します。 管理者パスワードのか、選択内容を確認が求められるあります。
+  4. **アプリや機能を許可**, **リモート デスクトップ** , と順にタップまたはクリックして **ok** します。
 
-   別のファイアウォールを使用している場合は、リモート デスクトップ (通常は 3389) のポートが開いているを確認します。
+     別のファイアウォールを使用している場合は、リモート デスクトップ (通常は 3389) のポートが開いているを確認します。
 - **リモート PC をリモート接続を設定しない場合があります。** この問題を解決するにはバックアップ スクロール[リモート デスクトップの設定、PC を方法でしょうか。](#how-do-i-set-up-a-pc-for-remote-desktop)このトピック内の質問。
 - **リモート PC をネットワーク レベル認証の設定を持つ Pc に接続のみ使用できます。** 
 - **リモート PC をオフにすることがあります。** オフになっている PC に接続したり、休止状態にならないようにしてください、設定のスリープとリモート PC に休止状態に設定されます **Never** (休止状態は、すべての Pc では利用できない) です。 します。
 
 ### <a name="why-cant-i-find-or-connect-to-my-pc"></a>なぜことはできませんが見つからなかったり、自分の PC への接続ですか。
+
 次の点を確認します。
+
 - PC を入れて起動ですか。
 - 右側の名前または IP アドレスを入力するでしたか。
 
@@ -105,9 +107,11 @@ Windows 8.1 用内のリモート接続を許可するように表示される�
    > サード パーティ製ソフトウェアを使用せずには、Windows XP Home、Windows Media Center Edition、Windows Vista Home および Windows 7 Home または Starter がサポートされていません。
 
 ### <a name="why-cant-i-sign-in-to-a-remote-pc"></a>なぜサインインできないリモート PC にでしょうか。
+
 リモート PC のサインイン ページをご覧にサインインできない場合は、する可能性があります追加されていないリモート デスクトップ ユーザー グループに、またはリモート PC に管理者権限を持つ任意のグループにします。 これをシステム管理者に問い合わせてください。
 
 ### <a name="which-connection-methods-are-supported-for-company-networks"></a>会社のネットワークに接続する方法がサポートされますか。
+
 企業ネットワークの外部からの office デスクトップにアクセスする場合は、会社がリモート アクセスの手段を提供する必要があります。 現在、RD Client には、次のものがサポートされています。
 
 - ターミナル サーバー ゲートウェイまたはリモート デスクトップ ゲートウェイ
@@ -124,9 +128,11 @@ VPN の問題は、いくつかの原因でことができます。 最初の手
 - **VPN の構成が正しくありません。** 正しく構成されていない VPN サーバーには、理由、VPN 接続またはしないでください。 作業時間がたつ動作を停止して理由を配置できます。 このような場合、同じネットワーク上の iOS デバイスの web ブラウザーまたは PC、Mac でのテストを確認します。
 
 ### <a name="how-can-i-test-if-vpn-is-working-properly"></a>VPN が正常に動作している場合をテストする方法はありますか
+
 デバイスの VPN が有効になっていることを確認します。 Web ページに、内部ネットワーク上またはのみが、VPN 経由で使用できる web サービスを使用して、VPN 接続をテストできます。
 
 ### <a name="how-do-i-configure-l2tp-or-pptp-vpn-connections"></a>L2TP や PPTP VPN 接続を構成する方法はありますか
+
 L2TP または PPTP VPN でを使用している場合を設定することを確認してください **のすべてのトラフィックを送信** に **ON** VPN の構成にします。
 
 ## <a name="web-client"></a>web クライアント
@@ -141,11 +147,11 @@ Web クライアントには、Windows、macOS、Linux、および ChromeOS が�
 
 ### <a name="can-i-use-the-web-client-in-a-remote-desktop-deployment-without-a-gateway"></a>ゲートウェイなしのリモート デスクトップの展開で、web クライアントを使用できますか。
 
-いいえ。 クライアントでは、リモート デスクトップ ゲートウェイに接続が必要です。 わからないことを意味しますか? これについて、管理者に問い合わせてください。
+No. クライアントでは、リモート デスクトップ ゲートウェイに接続が必要です。 わからないことを意味しますか? これについて、管理者に問い合わせてください。
 
 ### <a name="does-the-remote-desktop-web-client-replace-the-remote-desktop-web-access-page"></a>リモート デスクトップ web クライアントは、リモート デスクトップ Web アクセス ページを置き換えますか。
 
-いいえ。 リモート デスクトップ web クライアントは、リモート デスクトップ Web アクセス ページよりも別の URL でホストされています。 ブラウザーでのリモート リソースを表示するのには、web クライアントまたは Web Access のページを使用できます。
+No. リモート デスクトップ web クライアントは、リモート デスクトップ Web アクセス ページよりも別の URL でホストされています。 ブラウザーでのリモート リソースを表示するのには、web クライアントまたは Web Access のページを使用できます。
 
 ### <a name="can-i-embed-the-web-client-in-another-web-page"></a>別の web ページで、web クライアントを埋め込むことはできますか。
 

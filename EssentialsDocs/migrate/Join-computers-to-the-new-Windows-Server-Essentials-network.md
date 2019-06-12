@@ -12,12 +12,12 @@ ms.assetid: d94de050-3300-4323-a5ea-c824cb9cecc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c6abc11ba2ce8a9f1d32c6a884db6332586de78b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 62f31f859ed3fd0f77baf37d3467d4702b24ad95
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822643"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432914"
 ---
 # <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>新しい Windows Server Essentials network1 にコンピューターを参加させる
 
@@ -27,13 +27,13 @@ ms.locfileid: "59822643"
  移行プロセスの次の手順では、クライアント コンピューターを新しい Windows Server Essentials ネットワークに参加させるし、グループ ポリシー設定を更新します。  
   
 ### <a name="domain-joined-client-computers"></a>ドメインに参加しているクライアント コンピューター  
- 参照**http://***先 servername***/connect**と場合、新しいコンピューターと同じように、Windows Server コネクタ ソフトウェアをインストールします。 インストール プロセスは、クライアント コンピューターがドメインに参加する場合でも参加しない場合でも同じです。  
+ **http://** <em>destination-servername</em> **/connect** を参照し、新しいコンピューターの場合と同じように Windows Server コネクタ ソフトウェアをインストールします。 インストール プロセスは、クライアント コンピューターがドメインに参加する場合でも参加しない場合でも同じです。  
   
 > [!NOTE]
 >  Windows Server コネクタ ソフトウェアは、Windows XP または Windows Vista を実行しているコンピューターはサポートしていません。 既にドメインに参加している Windows XP または Windows Vista を実行しているコンピューターがある場合は、この手順を省略できます。  
   
 ### <a name="non-domain-joined-client-computers"></a>ドメインに参加していないクライアント コンピューター  
- 参照**http://***先 servername***/connect**と場合、新しいコンピューターと同じように、Windows Server コネクタ ソフトウェアをインストールします。 インストール プロセスは、クライアント コンピューターがドメインに参加しているかどうかにかかわらず同じです。  
+ **http://** <em>destination-servername</em> **/connect** を参照し、新しいコンピューターの場合と同じように Windows Server コネクタ ソフトウェアをインストールします。 インストール プロセスは、クライアント コンピューターがドメインに参加しているかどうかにかかわらず同じです。  
   
 > [!NOTE]
 >  Windows Server コネクタ ソフトウェアは、Windows XP または Windows Vista を実行しているコンピューターはサポートしていません。 既にドメインに参加している Windows XP または Windows Vista を実行しているコンピューターがある場合は、この手順を省略できます。  
@@ -67,8 +67,8 @@ ms.locfileid: "59822643"
   
 5.  移行先サーバーがまだ表示されない場合は、グループ ポリシーの設定またはこの特定のクライアント コンピューターへのポリシーの適用にエラーがある可能性があります。 移行先サーバーが表示されない場合は、次の手順を実行してください。  
   
-    1.  **[スタート]** ボタンをクリックし、**[ファイル名を指定して実行]** をクリックし、「 **rsop.msc** 」 (ポリシーの結果セット) と入力して、Enter キーを押します。  
+    1.  **[スタート]** ボタンをクリックし、 **[ファイル名を指定して実行]** をクリックし、「 **rsop.msc** 」 (ポリシーの結果セット) と入力して、Enter キーを押します。  
   
     2.  ノードに表示されるまでに X 印が付いたツリーを展開します。  
   
-    3.  ノードを右クリックし、**[エラーの表示]** をクリックして、一覧のコンピューターでグループ ポリシーの設定が失敗する理由についての情報を確認します。
+    3.  ノードを右クリックし、 **[エラーの表示]** をクリックして、一覧のコンピューターでグループ ポリシーの設定が失敗する理由についての情報を確認します。
