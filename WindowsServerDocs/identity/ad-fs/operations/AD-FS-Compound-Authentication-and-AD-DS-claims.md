@@ -8,12 +8,12 @@ ms.date: 09/07/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 270fb6efd63e6355c410ee45d09e6fd16b14222b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 2380060894ff2f365451bbabfd41b8aa7e6792a0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867993"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445295"
 ---
 # <a name="compound-authentication-and-ad-ds-claims-in-ad-fs"></a>AD FS での複合認証と AD DS クレーム
 Windows Server 2012 では、複合認証を導入することで Kerberos 認証を強化します。  複合認証を使用すると、Kerberos チケット保証サービス (TGS) 要求を 2 つの id が含まれます。 
@@ -27,7 +27,7 @@ AD FS 2012 およびそれ以降のバージョンは、AD DS を Kerberos 認�
 
 Active Directory Domain Services (AD DS) を使用してフェデレーション アプリケーションの高度なアクセス制御を有効にすることができます-Active Directory フェデレーション サービス (AD FS) を同時に、ユーザーとデバイスの要求を発行します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 1.  AD FS を使用するフェデレーション アプリケーションへのアクセス、コンピューターを認証する必要があります**Windows 統合認証**します。 
     - Windows 統合認証は、バックエンドの AD FS サーバーに接続するときにのみ使用できます。
     - コンピューターは、フェデレーション サービス名、バックエンドの AD FS サーバーに到達できる必要があります。
@@ -87,21 +87,21 @@ Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'Windo
 >SQL ベースのファームでは、ファームのメンバーである任意の AD FS サーバー上の PowerShell コマンドを実行できます。
 
 ### <a name="step-5--add-the-claim-description-to-ad-fs"></a>手順 5:AD fs のクレームの説明を追加します。
-1.  ファームには、次のクレームの説明を追加します。 このクレームの説明が ADFS 2012 R2 では、既定で存在しないと、手動で追加する必要があります。
-2.  AD FS の管理 **サービス**を右クリックして**請求の説明**選択と**追加請求の説明**
-3.  クレームの説明で、次の情報を入力します。
-    - 表示名:' Windows デバイスのグループ ' 
-    - クレームの説明: 'https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup' '
+1. ファームには、次のクレームの説明を追加します。 このクレームの説明が ADFS 2012 R2 では、既定で存在しないと、手動で追加する必要があります。
+2. AD FS の管理 **サービス**を右クリックして**請求の説明**選択と**追加請求の説明**
+3. クレームの説明で、次の情報を入力します。
+   - 表示名:' Windows デバイスのグループ ' 
+   - クレームの説明: '<https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup>' '
 4. 両方のボックスに、チェックを配置します。
 5. **[OK]** をクリックします。
 
 ![クレームの説明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc6.png)
 
 6. PowerShell を使用することができますを使用して、**追加 AdfsClaimDescription**コマンドレット。
-``` powershell
-Add-AdfsClaimDescription -Name 'Windows device group' -ClaimType 'https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup' `
--ShortName 'windowsdevicegroup' -IsAccepted $true -IsOffered $true -IsRequired $false -Notes 'The windows group SID of the device' 
-```
+   ``` powershell
+   Add-AdfsClaimDescription -Name 'Windows device group' -ClaimType 'https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup' `
+   -ShortName 'windowsdevicegroup' -IsAccepted $true -IsOffered $true -IsRequired $false -Notes 'The windows group SID of the device' 
+   ```
 
 
 >[!NOTE]
@@ -118,7 +118,7 @@ Add-AdfsClaimDescription -Name 'Windows device group' -ClaimType 'https://schema
 ``` powershell
 Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true 
 ```
-2.  ADFS サービスを再起動します。
+2. ADFS サービスを再起動します。
 
 >[!NOTE]
 >新しいサーバー (2012R2/2016) 障害が発生した次のエラー – 同じ gMSA の true の場合、インストールに設定すると、'CompoundIdentitySupported' **Install-adserviceaccount:サービス アカウントをインストールすることはできません。エラー メッセージ :' 指定されたコンテキストが一致しません、ターゲット。 '** .
@@ -131,21 +131,21 @@ CompoundIdentitySupported を無効にして、再有効化は、ADFS サービ�
 1. AD FS の要求プロバイダー信頼の 'WindowsDeviceGroup' 要求の次の 'パススルー' の要求規則を含めるように Active Directory を更新します。
 2.  **AD FS 管理**、 をクリックして**要求プロバイダー信頼**と右側のウィンドウで右クリックして**Active Directory**選択**要求規則の編集**.
 3.  **Active Director の要求規則の編集**クリックして**規則の追加**します。
-4.  **変換要求規則追加ウィザード**選択**パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
+4.  **変換要求規則追加ウィザード**選択 **パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
 5.  表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
 6.  **[Finish]** (完了) をクリックします。  クリックして**適用**と**Ok**します。 
 ![クレームの説明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc7.png)
 
 ### <a name="step-8-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>手順 8:'WindowsDeviceGroup' 要求が予想される証明書利用者のパーティでは、'パススルー' または '変換' のような要求規則を追加します。
-2.  **AD FS 管理**、 をクリックして**証明書利用者信頼**と右側のウィンドウで右クリックして、RP と選択**要求規則の編集**します。
-3.  **発行変換規則**クリックして**規則の追加**します。
-4.  **変換要求規則追加ウィザード**選択 **パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
-5.  表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
-6.  **[Finish]** (完了) をクリックします。  クリックして**適用**と**Ok**します。
-![クレームの説明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc8.png)
+2. **AD FS 管理**、 をクリックして**証明書利用者信頼**と右側のウィンドウで右クリックして、RP と選択**要求規則の編集**します。
+3. **発行変換規則**クリックして**規則の追加**します。
+4. **変換要求規則追加ウィザード**選択 **パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
+5. 表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
+6. **[Finish]** (完了) をクリックします。  クリックして**適用**と**Ok**します。
+   ![クレームの説明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc8.png)
 
 
-##<a name="steps-for-configuring-ad-fs-in-windows-server-2016"></a>Windows Server 2016 で AD FS を構成する手順
+## <a name="steps-for-configuring-ad-fs-in-windows-server-2016"></a>Windows Server 2016 で AD FS を構成する手順
 次は、Windows Server 2016 の AD FS で複合認証を構成する手順について説明します。
 
 ### <a name="step-1--enable-kdc-support-for-claims-compound-authentication-and-kerberos-armoring-on-the-default-domain-controller-policy"></a>手順 1:KDC 信頼性情報、複合認証、および既定のドメイン コント ローラー ポリシーでの Kerberos 防御をサポートを有効にします。
@@ -189,7 +189,7 @@ Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'Windo
 ``` powershell
 Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true 
 ```
-2.  ADFS サービスを再起動します。
+2. ADFS サービスを再起動します。
 
 >[!NOTE]
 >新しいサーバー (2012R2/2016) 障害が発生した次のエラー – 同じ gMSA の true の場合、インストールに設定すると、'CompoundIdentitySupported' **Install-adserviceaccount:サービス アカウントをインストールすることはできません。エラー メッセージ :' 指定されたコンテキストが一致しません、ターゲット。 '** .
@@ -208,11 +208,11 @@ CompoundIdentitySupported を無効にして、再有効化は、ADFS サービ�
 
 
 ### <a name="step-6-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>手順 6:'WindowsDeviceGroup' 要求が予想される証明書利用者のパーティでは、'パススルー' または '変換' のような要求規則を追加します。
-2.  **AD FS 管理**、 をクリックして**証明書利用者信頼**と右側のウィンドウで右クリックして、RP と選択**要求規則の編集**します。
-3.  **発行変換規則**クリックして**規則の追加**します。
-4.  **変換要求規則追加ウィザード**選択 **パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
-5.  表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
-6.  **[Finish]** (完了) をクリックします。  クリックして**適用**と**Ok**します。
+2. **AD FS 管理**、 をクリックして**証明書利用者信頼**と右側のウィンドウで右クリックして、RP と選択**要求規則の編集**します。
+3. **発行変換規則**クリックして**規則の追加**します。
+4. **変換要求規則追加ウィザード**選択 **パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
+5. 表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
+6. **[Finish]** (完了) をクリックします。  クリックして**適用**と**Ok**します。
 
 ## <a name="validation"></a>［確認］
 'WindowsDeviceGroup' 要求のリリースを検証、テストを作成するには、.Net 4.6 を使用して対応するアプリケーションを要求します。 WIF sdk 4.0。

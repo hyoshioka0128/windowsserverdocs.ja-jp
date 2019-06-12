@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 295b7290cd7d312c5ec3956f1e96424cb20bf984
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f0a02302c4b99ead3701a966ba2d3fc65f6b078d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843223"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434398"
 ---
 # <a name="change"></a>change
 
@@ -27,18 +27,20 @@ ms.locfileid: "59843223"
 ログオン、COM ポートのマッピング、およびインストール モードのリモート デスクトップ セッション ホスト (rd セッション ホスト) サーバーの設定を変更します。
 > [!NOTE]
 > Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 新機能については、最新バージョンについてを参照してください。 [Windows Server 2012 でのリモート デスクトップ サービスでどのような s の新しい](https://technet.microsoft.com/library/hh831527)、Windows Server TechNet ライブラリです。
-## <a name="syntax"></a>構文
-```
-change logon
-change port
-change user
-```
-## <a name="parameters"></a>パラメーター
-|パラメーター|説明|
-|-------|--------|
-|[ログオン時に変更します。](change-logon.md)|有効または、rd セッション ホスト サーバー上のクライアント セッションからのログオンを無効にします。 または現在のログオン状態を表示します。|
-|[ポートを変更します。](change-port.md)|リストまたは MS-DOS アプリケーションと互換性がある COM ポートのマッピングを変更します。|
-|[ユーザーを変更します。](change-user.md)|rd セッション ホスト サーバーのインストール モードを変更します。|
-#### <a name="additional-references"></a>その他の参照
-[コマンドライン構文キー](command-line-syntax-key.md)
-[リモート デスクトップ サービスと #40 です。ターミナル サービスと #41 です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+> ## <a name="syntax"></a>構文
+> ```
+> change logon
+> change port
+> change user
+> ```
+> ## <a name="parameters"></a>パラメーター
+> 
+> |            パラメーター            |                                                   説明                                                   |
+> |---------------------------------|-----------------------------------------------------------------------------------------------------------------|
+> | [change logon](change-logon.md) | 有効または、rd セッション ホスト サーバー上のクライアント セッションからのログオンを無効にします。 または現在のログオン状態を表示します。 |
+> |  [change port](change-port.md)  |                リストまたは MS-DOS アプリケーションと互換性がある COM ポートのマッピングを変更します。                |
+> |  [change user](change-user.md)  |                            rd セッション ホスト サーバーのインストール モードを変更します。                             |
+> 
+> #### <a name="additional-references"></a>その他の参照
+> [コマンドライン構文キー](command-line-syntax-key.md)
+> [リモート デスクトップ サービスと #40 です。ターミナル サービスと #41 です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)

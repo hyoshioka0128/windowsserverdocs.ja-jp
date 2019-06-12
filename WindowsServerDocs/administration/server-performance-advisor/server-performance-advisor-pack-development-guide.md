@@ -5,12 +5,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c647e8a335aac924067d92dcb41ab4d17e0cceef
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c27dd0602c5993fd84e6956c2f50f6e2bfec8691
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884863"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435472"
 ---
 # <a name="server-performance-advisor-pack-development-guide"></a>サーバー パフォーマンス アドバイザー パック開発ガイド
 
@@ -259,7 +259,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\User\PowerSchemes\db31
 
 収集されたすべてのデータは、という一時テーブルにインポートされます **\#registryKeys** SQL レポートの前にスクリプトを実行します。 次の表は、たとえば 2 の結果を示しています。
 
-キー名 | KeytypeId | 値
+キー名 | KeytypeId | Value
 ------ | ----- | -------
 HKEY_LOCAL_MACHINE...\PowerSchemes | 1 | db310065-829b-4671-9647-2261c00e86ef
 \db310065-829b-4671-9647-2261c00e86ef\Description | 2 | |
@@ -276,6 +276,7 @@ KeytypeId | NULL でない Smallint | 内部的な型 Id
 Value | Nvarchar (4000) NULL でないです。 | すべての値
 
 **KeytypeID**列は、次の種類のいずれかであることができます。
+
 ID | 種類
 --- | ---
 1 | String
@@ -308,19 +309,19 @@ WMI で収集したデータがデータベースにインポートすると、�
 
 **\#WMIObjects テーブル**
 
-SequenceID | 名前空間 | クラス名 | Relativepath | WmiqueryID
+SequenceID | Namespace | クラス名 | Relativepath | WmiqueryID
 ----- | ----- | ----- | ----- | -----
 10 | Root \cimv2 | Win32_PageFileUsage | Win32_PageFileUsage.Name=<br>C:\\pagefile.sys | 1
 
 **\#WmiObjectsProperties テーブル**
 
-ID | クエリ (query)
+ID | query
 --- | ---
 1 | Root\Cimv2:select * FROM Win32_PageFileUsage
 
 **\#WmiQueries テーブル**
 
-ID | クエリ (query)
+ID | query
 --- | ---
 1 | Root\Cimv2:select * FROM Win32_PageFileUsage
 
@@ -329,7 +330,7 @@ ID | クエリ (query)
 列名 | SQL データ型 | 説明
 --- | --- | ---
 SequenceId | Int 型の NULL でないです。 | 行とそのプロパティを関連付ける
-名前空間 | NULL でない nvarchar (200) | WMI 名前空間
+Namespace | NULL でない nvarchar (200) | WMI 名前空間
 クラス名 | NULL でない nvarchar (200) | WMI クラスの名前
 Relativepath | NULL でない nvarchar (500) | WMI の相対パス
 WmiqueryId | Int 型の NULL でないです。 | #WmiQueries のキーを関連付ける
@@ -340,14 +341,14 @@ WmiqueryId | Int 型の NULL でないです。 | #WmiQueries のキーを関連
 --- | --- | ---
 SequenceId | Int 型の NULL でないです。 | 行とそのプロパティを関連付ける
 名前 | NULL でない nvarchar (1000) | プロパティ名
-値 | Nvarchar (4000) NULL | 現在のプロパティの値
+Value | Nvarchar (4000) NULL | 現在のプロパティの値
 
 **\#WmiQueries テーブル スキーマ**
 
 列名 | SQL データ型 | 説明
 --- | --- | ---
 ID | Int 型の NULL でないです。 | > は、一意のクエリ ID
-クエリ (query) | Nvarchar (4000) NULL でないです。 | プロビジョニングのメタデータ内の元のクエリ文字列
+query | Nvarchar (4000) NULL でないです。 | プロビジョニングのメタデータ内の元のクエリ文字列
 
 ### <a name="collect-performance-counters"></a>パフォーマンス カウンターを収集します。
 
@@ -363,7 +364,7 @@ ID | Int 型の NULL でないです。 | > は、一意のクエリ ID
 
 前の例では、カウンター \\PhysicalDisk (\*)\\avg.ディスク転送秒数には毎秒が照会されます。
 
-2 つのインスタンスが考えられます。**\_合計**と**0 の c:D:** 出力は次のようと。
+2 つのインスタンスが考えられます。 **\_合計**と**0 の c:D:** 出力は次のようと。
 
 TIMESTAMP | [区分名] | CounterName | _Total のインスタンスの値 | 0 の C のインスタンスの値D:
 ---- | ---- | ---- | ---- | ----
@@ -374,7 +375,7 @@ TIMESTAMP | [区分名] | CounterName | _Total のインスタンスの値 | 0 �
 
 という名前のテーブルにデータをデータベースにインポートするデータを正規化する **\#PerformanceCounters**します。
 
-CategoryDisplayName | InstanceName | CounterdisplayName | 値
+CategoryDisplayName | InstanceName | CounterdisplayName | Value
 ---- | ---- | ---- | ----
 PhysicalDisk | _Total | 平均Disk sec/Transfer の収集ルール | 0.00100008362473995
 PhysicalDisk | 0 の C:D: | 平均Disk sec/Transfer の収集ルール | 0.00100008362473995
@@ -397,7 +398,7 @@ CategoryDisplayName | NULL でない nvarchar (200) | ローカライズされ�
 InstanceName | NULL nvarchar (200) | ［インスタンス名］
 CounterName | NULL でない nvarchar (200) | カウンター名
 CounterdisplayName | NULL でない nvarchar (200) | ローカライズされたカウンター名
-値 | NULL でない浮動小数点数 | 収集された値
+Value | NULL でない浮動小数点数 | 収集された値
 
 ### <a name="collect-files"></a>[ファイルの収集]
 
@@ -449,7 +450,7 @@ Content | Varbinary (max) NULL | バイナリ ファイルの内容
 
 ``` syntax
 <advisorPack>
-   
+
   <reportDefinition>
     <thresholds>
       <threshold  />
@@ -515,7 +516,7 @@ Install OS on larger disk.</advice>
 
 先ほどの前の例と、ユーザーは、システム ドライブに十分な空きディスク領域があるかどうかを認識します。 ユーザーは、空き領域の実際のサイズにも利用可能性があります。 1 つの値グループを使用して、保存してそのような結果を表示します。 複数の単一の値をグループ化され SPA コンソールでの表に示すことができます。 テーブルでは、次のように名前と値を 2 つの列があります。
 
-名前 | 値
+名前 | Value
 ---- | ----
 システム ドライブ (GB) の空きディスク サイズ | 100
 インストールされているディスクの合計サイズ (GB) | 500 
@@ -589,7 +590,7 @@ Advisor パックでは、多数のテーブル (単一の値のグループと�
 
 1 つの値のグループとリストの値のテーブルは、異なる種類の文字列、int、float などのデータを含めます。 SQL Server データベースには、これらの値が格納されている、ためデータ プロパティごとに SQL データ型を定義できます。 ただし、SQL データ型を定義することはかなり複雑です。 長さまたは有効桁数を変更しやすい可能性のあるを指定する必要があります。
 
-最初の子を使用する論理データの種類を定義する **&lt;reportDefinition/&gt;**, 、これは、SQL データ型と、論理型のマッピングを定義することができます。
+最初の子を使用する論理データの種類を定義する **&lt;reportDefinition/&gt;** , 、これは、SQL データ型と、論理型のマッピングを定義することができます。
 
 次の例では、2 つのデータ型を定義します。 1 つは、 **文字列** し、もう一方の **companyCode**します。
 
@@ -674,9 +675,9 @@ Advisor パックでは、多数のテーブル (単一の値のグループと�
 
 名前 | Value
 --- | ---
-オペレーティング システム | &lt;_レポートのスクリプトによって、値が設定されます。_&gt;
-OS バージョン | &lt;_レポートのスクリプトによって、値が設定されます。_&gt;
-OS の場所 | &lt;_レポートのスクリプトによって、値が設定されます。_&gt;
+オペレーティング システム | &lt;_レポートのスクリプトによって、値が設定されます。_ &gt;
+OS バージョン | &lt;_レポートのスクリプトによって、値が設定されます。_ &gt;
+OS の場所 | &lt;_レポートのスクリプトによって、値が設定されます。_ &gt;
 
 **キャプション** の属性 **&lt;値/&gt;** は最初の列に表示されます。 [値] 列の値は将来的にによるスクリプト レポートによって設定 \[dbo\].\[SetSingleValue\]します。 **説明** の属性 **&lt;値/&gt;** ツールヒントに表示されます。 通常、ツールヒントは、データのソースのユーザー表示されます。 ツール ヒントの詳細については、次を参照してください。 [ツールヒント](#bkmk-tooltips)します。
 
@@ -941,7 +942,7 @@ DECLARE @freediskSize FLOat
 exec dbo.GetThreshold N freediskSize , @freediskSize output
 
 if (@freediskSizeInGB < @freediskSize)
- 
+
 ```
 
 ### <a name="set-or-remove-the-single-value"></a>設定または単一の値を削除します。
@@ -1033,7 +1034,7 @@ INSERT INTO #NetworkAdapterInformation (
   MACaddress
 )
 VALUES (
-   
+
 )
 ```
 
@@ -1091,7 +1092,7 @@ SPA コンソールを実行できる 2 つのモードでデバッグやリリ�
 
     **注**前のステートメントとデバッグにステップ イン f11 キーを押すこともできます。
 
-     
+
 
 実行している \[dbo\].\[DebugReportScript\] など、複数の結果セットを返します。
 
@@ -1109,9 +1110,9 @@ SPA コンソールを実行できる 2 つのモードでデバッグやリリ�
 
 ### <a name="naming-convention-and-styles"></a>名前付け規則とスタイル
 
-Pascal 文字種 | Camel 形式の規則 | 大文字
---- | ---- | ---
-<ul><li>Names in ProvisionMetadata.xml</li><li>ストアド プロシージャ</li><li>関数</li><li>ビューの名前</li><li>一時テーブル名</li></ul> | <ul><li>パラメーター名</li><li>ローカル変数</li></ul> | すべての SQL の予約されたキーワードの使用
+|                                                                 Pascal 文字種                                                                 |                       Camel 形式の規則                        |             大文字             |
+|-----------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------|
+| <ul><li>Names in ProvisionMetadata.xml</li><li>ストアド プロシージャ</li><li>関数</li><li>ビューの名前</li><li>一時テーブル名</li></ul> | <ul><li>パラメーター名</li><li>ローカル変数</li></ul> | すべての SQL の予約されたキーワードの使用 |
 
 ### <a name="other-recommendations"></a>他の推奨事項
 
@@ -1143,13 +1144,13 @@ SPA は、同時に複数の advisor パックを実行しているサポート�
 
 合併データ コレクター セットは、パフォーマンス カウンターと ETW のデータ ソースを収集するためだけです。 次の結合規則が適用されます。
 
-1.  SPA には、最大期間は新しい実行時間がかかります。
+1. SPA には、最大期間は新しい実行時間がかかります。
 
-2.  マージ競合がある場合、次の規則が適用されます。
+2. マージ競合がある場合、次の規則が適用されます。
 
-    1.  新しい間隔として最短の間隔を取得します。
+   1. 新しい間隔として最短の間隔を取得します。
 
-    2.  パフォーマンス カウンターのスーパー セットを考慮します。 たとえば、**プロセス (\*)\\% Processor time**と**プロセス (\*)\\\*、\\プロセス (\*)\\\*** より多くのデータを返すため、**プロセス (\*)\\% Processor time**と**プロセス (\*)\\ \*** マージされたデータ コレクター セットから削除されます。
+   2. パフォーマンス カウンターのスーパー セットを考慮します。 たとえば、**プロセス (\*)\\% Processor time**と**プロセス (\*)\\\*、\\プロセス (\*)\\\\** * より多くのデータを返すため、**プロセス (\*)\\% Processor time**と**プロセス (\*)\\ \\** * マージされたデータ コレクター セットから削除されます。
 
 ### <a name="collect-dynamic-data"></a>動的なデータを収集します。
 
@@ -1169,7 +1170,7 @@ Get-WmiObject -Namespace Root\Cimv2 -query "select PNPDeviceID FROM Win32_Networ
 ROOT\*ISatAP\0001
 PCI\VEN_8086&DEV_4238&SUBSYS_11118086&REV_35\4&372A6B86&0&00E4
 ROOT\*IPHTTPS\0000
- 
+
 ```
 
 検索する、 **FriendlyName**値、レジストリ エディターを開き、結合することで、レジストリ設定に移動します**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\Enum\\** 前の例では、1 行。 例えば：**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\Enum\\ルート\\\*IPHTTPS\\0000**します。
@@ -1196,9 +1197,9 @@ SPA プロビジョニング メタデータには、前の手順を変換する
 --- | :---: | :---:
 レジストリ キー | 〇 | 〇
 WMI に関するページ | 〇 | 〇
-ファイル | 〇 | いいえ
+ファイル | 〇 | X
 パフォーマンス カウンター | X | X
-ETW | いいえ | X
+ETW | X | X
 
 WMI のデータ コレクターは、各 WMI オブジェクトは、多くの接続されている属性を持ちます。 WMI オブジェクトの任意の型には、常に、次の 3 つの属性があります。\_\_名前空間、 \_\_クラス、および\_ \_RELpath します。
 
@@ -1216,9 +1217,9 @@ WMI の例:
 <path name="wmi">Root\Cimv2:select PNPDeviceID FROM Win32_NetworkAdapter</path>
 ```
 
-次の構文の使用に依存するデータ コレクターを定義する: $(*{name}*.*{属性}*)。
+次の構文の使用に依存するデータ コレクターを定義する: $( *{name}* . *{属性}* )。
 
-*{name}**{属性}* プレース ホルダーであります。
+*{name}* *{属性}* プレース ホルダーであります。
 
 パターン $ 動的に SPA は、対象サーバーからデータを収集するときに置き換えて (\*.\*) 実際には、その参照データ コレクターからデータを収集 (レジストリ キー/WMI) など。
 
@@ -1344,7 +1345,7 @@ Usertime | BigInt NOT NULL | ユーザー時間
 --- | --- | ---
 SequenceID | Int 型の NULL でないです。 | 相関関係のシーケンス ID
 名前 | Nvarchar (100) | プロパティ名
-値 | Nvarchar (4000) | Value
+Value | Nvarchar (4000) | Value
 
 ### <a name="etw-schema"></a>ETW スキーマ
 

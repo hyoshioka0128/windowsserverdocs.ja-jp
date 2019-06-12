@@ -9,12 +9,12 @@ ms.assetid: 9be83ed2-9e62-49e8-88e7-f52d3449aac5
 ms.author: pashort
 author: JMesser81
 ms.date: 08/14/2018
-ms.openlocfilehash: b6d4ff37186e66bec54794f8d6c9fd8a83e23e7d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: eeb0c335e4afd3c6835a04421a15073aeab6cdc6
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845393"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446242"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Windows Server ソフトウェア定義ネットワーク スタックのトラブルシューティング
 
@@ -34,17 +34,17 @@ ms.locfileid: "59845393"
 * **ポリシー アプリケーションのエラー**  
      ネットワーク コント ローラーからのポリシーは、大幅に遅延および/またはない最新の状態 (たとえば、ライブ マイグレーションを実行) 後のすべての HYPER-V ホストで HYPER-V ホストに配信されませんでした。  
 * **構成の誤差またはソフトウェアのバグ**  
- 破棄されたパケットのデータ パスの問題です。  
+  破棄されたパケットのデータ パスの問題です。  
 
 * **NIC のハードウェアに関連する外部エラー/ドライバーや、アンダーレイ ネットワーク ファブリック**  
- (VMQ) などの作業負荷を軽減または (MTU) などの構成が間違っているアンダーレイ ネットワーク ファブリックを適切に動作しません。   
+  (VMQ) などの作業負荷を軽減または (MTU) などの構成が間違っているアンダーレイ ネットワーク ファブリックを適切に動作しません。   
 
- このトラブルシューティング ガイドでは、これらのエラー カテゴリの各検証し、ベスト プラクティスを特定し、エラーの解決に使用できる診断ツールをお勧めします。  
+  このトラブルシューティング ガイドでは、これらのエラー カテゴリの各検証し、ベスト プラクティスを特定し、エラーの解決に使用できる診断ツールをお勧めします。  
 
 ## <a name="diagnostic-tools"></a>診断ツール  
 
 各この種のエラーのトラブルシューティングのワークフローを説明する前に使用できる診断ツールを調べてみましょう。   
-  
+
 ネットワーク コント ローラー (コントロール パス) の診断ツールを使用するのには、最初 RSAT NetworkController 機能をインストールし、インポートする必要があります、 ``NetworkControllerDiagnostics`` モジュール。  
 
 ```  
@@ -53,7 +53,7 @@ Import-Module NetworkControllerDiagnostics
 ```  
 
 インポートする必要があります (データ パス) の HNV 診断診断ツールを使用する、 ``HNVDiagnostics`` モジュール。
-  
+
 ```  
 # Assumes RSAT-NetworkController feature has already been installed
 Import-Module hnvdiagnostics   
@@ -63,12 +63,12 @@ Import-Module hnvdiagnostics
 Technet の「これらのコマンドレットについては、 [ネットワーク コント ローラー診断コマンドレット トピック](https://docs.microsoft.com/powershell/module/networkcontrollerdiagnostics/)します。 コントロール パスとネットワーク コント ローラーと HYPER-V ホストで実行されている NC ホスト エージェントの間にネットワーク コント ローラーのノード間でネットワーク ポリシーの整合性に問題を特定するのに役立ちます。
 
  _デバッグ ServiceFabricNodeStatus_ と _Get NetworkControllerReplica_ ネットワーク コント ローラーのノードのバーチャル マシンのいずれかのコマンドレットを実行する必要があります。 その他のすべての NC 診断コマンドレットは、ネットワーク コント ローラーに接続し、ネットワーク コント ローラーの管理セキュリティ グループ (Kerberos) のいずれかが、またはネットワーク コント ローラーを管理するための X.509 証明書にアクセスするすべてのホストから実行できます。 
-   
+
 ### <a name="hyper-v-host-diagnostics"></a>HYPER-V ホストでの診断  
 Technet の「これらのコマンドレットについては、 [Hyper-v ネットワーク仮想化 (HNV) 診断コマンドレット トピック](https://docs.microsoft.com/powershell/module/hnvdiagnostics/)します。 テナント仮想マシン (東または西) 間のデータ パスの問題を特定できると SLB VIP (北または南) からトラフィックを受信します。 
 
 _デバッグ VirtualMachineQueueOperation_, 、_Get CustomerRoute_, 、_Get PACAMapping_, 、_Get ProviderAddress_, 、_Get VMNetworkAdapterPortId_, 、_Get VMSwitchExternalPortId_, 、および _テスト EncapOverheadSettings_ すべての HYPER-V ホストから実行できるすべてのローカル テストします。 その他のコマンドレットでは、ネットワーク コント ローラーを介してデータ パスのテストを呼び出すし、したがって上 descried としてネットワーク コント ローラーへのアクセスを必要です。
- 
+
 ### <a name="github"></a>GitHub
 [Microsoft/SDN GitHub リポジトリ](https://github.com/microsoft/sdn) が数多くサンプル スクリプトとワークフロー内のこれらのコマンドレットの上に構築する必要があります。 具体的には、診断のスクリプトは記載されて、 [診断](https://github.com/Microsoft/sdn/diagnostics) フォルダーです。 プル要求を送信することでこれらのスクリプトへの協力にご協力します。
 
@@ -98,7 +98,6 @@ Fetching ResourceType:     networkInterfaces
 Fetching ResourceType:     virtualGateways
 Fetching ResourceType:     loadbalancerMuxes
 Fetching ResourceType:     Gateways
-
 ```
 
 サンプル構成の状態メッセージは、以下に示します。
@@ -121,7 +120,7 @@ Message:          Host is not Connected.
 
 次の表には、監視構成の状態に基づいて実行するには、エラー コード、メッセージ、およびフォロー アップのアクションの一覧が表示されます。
 
-  
+
 | **コード**| **メッセージ**| **操作**|  
 |--------|-----------|----------|  
 | Unknown| 不明なエラー| |  
@@ -215,7 +214,7 @@ ReplicaStatus : Ready
 
 ```
 レプリカの状態が準備完了であることを確認サービスごとにします。
- 
+
 #### <a name="check-for-corresponding-hostids-and-certificates-between-network-controller-and-each-hyper-v-host"></a>対応するホストの Id とネットワーク コント ローラーと各 HYPER-V ホスト間で証明書の確認 
 HYPER-V ホストでは、ホスト Id がネットワーク コント ローラー上のサーバー リソースのインスタンス Id に対応しているかを確認するには、次のコマンドを実行します
 
@@ -272,7 +271,7 @@ Thumbprint                                Subject
 - 信頼されるルート証明機関  
 
 *修復* 複数の証明書では、HYPER-V ホストに同じサブジェクト名がある、ネットワーク コント ローラーのホストのエージェントは無作為に選択ネットワーク コント ローラーに表示する 1 つです。 これが、既知のネットワーク コント ローラーにサーバー リソースのサムプリントとは一致しません。 この場合、HYPER-V ホスト上の同じサブジェクト名を持つ証明書のいずれかを削除し、ネットワーク コント ローラーのホストのエージェント サービスを再開します。 まだ、接続は確立されません、HYPER-V ホスト上の同じサブジェクト名を持つその他の証明書を削除し、VMM での対応するサーバー リソースを削除します。 次に、vmm は新しい X.509 証明書を生成し、HYPER-V ホストにインストールされるサーバー リソースを再作成します。
-  
+
 
 #### <a name="check-the-slb-configuration-state"></a>SLB 構成状態を確認します。
 デバッグ NetworkController コマンドレットに出力の一部として、SLB 構成の状態を確認できます。 このコマンドレットは、JSON ファイル、各 HYPER-V ホスト (サーバー) からのすべての IP 構成とホスト エージェントのデータベース テーブルからローカル ネットワーク ポリシーでネットワーク コント ローラーのリソースの現在のセットも出力されます。 
@@ -305,7 +304,7 @@ SLB 構成の状態については記載されて、 _診断 slbstateResults.Jso
    * Mux ルート - このセクションには 1 つの値の一覧各 SLB Mux 展開されているすべての特定のマルチプレクサーのルートのアドバタイズを含みます。
  * テナント
    * VipConsolidatedState - このセクションには接続状態の一覧アドバタイズされたルート プレフィックス、HYPER-V ホストおよび DIP エンドポイントを含む各テナント VIP です。
-    
+
 > [!NOTE]
 > 使用して直接 SLB 状態を確認できる、 [DumpSlbRestState](https://github.com/Microsoft/SDN/blob/master/Diagnostics/DumpSlbRestState.ps1) スクリプトで使用できる、 [Microsoft SDN GitHub リポジトリ](https://github.com/microsoft/sdn)です。 
 
@@ -486,9 +485,8 @@ ComputerName         : SA18N30-2
 IsDeleted            : False
 
 <snip> ...
-
 ```
- 
+
 #### <a name="check-mtu-and-jumbo-frame-support-on-hnv-provider-logical-network"></a>HNV のプロバイダーの論理ネットワーク上の MTU およびジャンボ フレームのサポートを確認します。
 
 HNV のプロバイダーの論理ネットワーク内の別の一般的な問題は、物理ネットワーク ポートおよびイーサネット カードが VXLAN (NVGRE) カプセル化によるオーバーヘッドを処理するように構成するのに十分な大きさ MTU を持っていないことです。 
@@ -527,7 +525,6 @@ Physical Nic  <NIC> Ethernet Adapter #2 can support SDN traffic. Encapoverhead v
 Cannot send jumbo packets to the destination. Physical switch ports may not be configured to support jumbo packets.
 
 # TODO: Success Results aftering updating MTU on physical switch ports
-
 ```
 
 *修復*
@@ -550,7 +547,6 @@ CA IP Address CA MAC Address    Virtual Subnet ID PA IP Address
 10.254.254.1  40-1D-D8-B7-1C-06              4115 10.10.182.66
 192.168.1.1   40-1D-D8-B7-1C-06              4114 10.10.182.66
 192.168.1.4   00-1D-D8-B7-1C-05              4114 10.10.182.66
-
 ```
 >[!NOTE]
 > 期待する CA と PA のマッピングは、特定のテナント VM 用の出力ではない場合、は、ネットワーク コント ローラーを使用して、上の VM NIC と ip アドレス構成のリソースを確認してください、 _Get NetworkControllerNetworkInterface_ コマンドレットです。 また、NC ホスト エージェントとネットワーク コント ローラーのノード間で確立された接続を確認してください。
@@ -600,10 +596,10 @@ CA のルーティング情報:
 
     Local PA IP: 10.10.182.66
     Remote PA IP: 10.10.182.65
- 
+
  <snip> ...
 
-4.  [テナント]仮想サブネットまたはトラフィックをブロックする VM ネットワーク インターフェイスで指定された分散型のファイアウォール ポリシーがないことを確認します。    
+4. [テナント]仮想サブネットまたはトラフィックをブロックする VM ネットワーク インターフェイスで指定された分散型のファイアウォール ポリシーがないことを確認します。    
 
 Sa18.nttest.microsoft.com ドメイン内で sa18n30nc デモ環境でのネットワーク コント ローラーの REST API のクエリを実行します。
 
@@ -624,7 +620,7 @@ Sa18.nttest.microsoft.com ドメイン内で sa18n30nc デモ環境でのネッ�
 次のセクションでは、高度な診断でログ記録、およびトレース情報を提供します。
 
 ### <a name="network-controller-centralized-logging"></a>ネットワーク コント ローラーがログ記録を集中管理 
- 
+
 ネットワーク コント ローラーを自動的にデバッガーのログを収集し、一元的な場所に保管します。 後でいつでも、初めてのネットワーク コント ローラーを展開するときに、ログの収集を有効にできます。 ログを選択して、ネットワーク コント ローラーから収集されるネットワーク ネットワーク コント ローラーで管理されている要素: コンピューター、ソフトウェアによる負荷分散 (SLB) とゲートウェイのマシンをホストします。 
 
 これらのログには、ネットワーク コント ローラー クラスター、ネットワーク コント ローラー アプリケーション、ゲートウェイのログ、SLB、仮想ネットワークおよび分散型のファイアウォールのデバッグ ログが含まれます。 ネットワーク コント ローラーに新しいホスト/SLB/ゲートウェイを追加するたびにそれらのコンピューターのログ記録が開始されます。 同様に、ネットワーク コント ローラーからホスト/SLB/ゲートウェイが削除されると、それらのコンピューターのログが停止されました。

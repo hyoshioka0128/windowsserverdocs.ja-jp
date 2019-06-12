@@ -11,12 +11,12 @@ ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 author: shirgall
 ms.author: kathydav
 ms.date: 06/01/2017
-ms.openlocfilehash: c72fd2c3a72a304fe8372afb93468fc451b3f2bc
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: e353ea0b444c07557de99db4472f565decb37349
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222663"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447750"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>HYPER-V でサポートされている Oracle Linux 仮想マシン
 
@@ -167,10 +167,9 @@ Oracle Linux Unbreakable Enterprise カーネル (UEK) 64 ビットのみ、LIS 
 
 13. Windows で「Server 2012 R2Generation 2 仮想マシンはセキュア ブートが既定で有効にあり、セキュア ブート オプションが無効にしない限り一部の Linux 仮想マシンは起動しません。 セキュア ブートを無効にすることができます、 **ファームウェア** でバーチャル マシンの設定のセクション **HYPER-V マネージャーで** または Powershell を使用して無効にすることができます。
 
-   ```Powershell
-   Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
-
-   ```
+    ```Powershell
+    Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
+    ```
 
     Linux Integration Services ダウンロードは、世代 2 の既存の Vm に適用することができますが、第 2 世代の機能には影響しません。
 

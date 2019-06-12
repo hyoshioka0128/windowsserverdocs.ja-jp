@@ -11,12 +11,12 @@ ms.assetid: 95ea5f7c-25c6-494b-8ffd-2a77f631ee94
 author: shirgall
 ms.author: shirgall
 ms.date: 11/19/2018
-ms.openlocfilehash: b58193ec570cf0d94b6c95018b8c00c813331986
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 662541658fe6e7b99e66fe31344450e0a1cbd201
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222642"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447829"
 ---
 # <a name="supported-ubuntu-virtual-machines-on-hyper-v"></a>HYPER-V でサポートされている Ubuntu 仮想マシン
 
@@ -91,7 +91,6 @@ HYPER-V の使用を増加させるには、適切な linux ツールと仮想�
    ```bash
    # apt-get update
    # apt-get install linux-azure
-
    ```
 
    12.04 の別の仮想カーネルではありません。 ジェネリック HWE カーネル 12.04 にインストールするには、ルート (または sudo) として、次のコマンドを実行します。
@@ -99,7 +98,6 @@ HYPER-V の使用を増加させるには、適切な linux ツールと仮想�
    ```bash
    # apt-get update
    # apt-get install linux-generic-lts-trusty
-
    ```
 
    Ubuntu 12.04 とは別にインストールされているパッケージでは、次の HYPER-V デーモンです。
@@ -112,7 +110,6 @@ HYPER-V の使用を増加させるには、適切な linux ツールと仮想�
 
    ```bash
    # apt-get install hv-kvp-daemon-init linux-tools-lts-trusty linux-cloud-tools-generic-lts-trusty
-
    ```
 
    カーネルが更新されるたびに、それを使用する、仮想マシンを再起動する必要があります。
@@ -124,7 +121,6 @@ HYPER-V の使用を増加させるには、適切な linux ツールと仮想�
    ```bash
    # apt-get update
    # apt-get install linux-azure
-
    ```
 
    カーネルが更新されるたびに、それを使用する、仮想マシンを再起動する必要があります。
@@ -143,42 +139,37 @@ HYPER-V の使用を増加させるには、適切な linux ツールと仮想�
 
 11. Windows Server 2012 R2 では、第 2 世代仮想マシンは、セキュア ブート オプションが無効にしない限り、仮想マシンは起動しません Linux 既定で有効になり、セキュア ブートがあります。 セキュア ブートを無効にすることができます、 **ファームウェア** でバーチャル マシンの設定のセクション **HYPER-V マネージャーで** または Powershell を使用して無効にすることができます。
 
-   ```Powershell
-   Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
-
-   ```
+    ```Powershell
+    Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
+    ```
 
 12. 新しい第 2 世代バーチャル マシンを作成するための既存の世代 2 の VHD の仮想マシンの VHD をコピーする前に、次の手順に従います。
 
-   1. 既存の第 2 世代バーチャル マシンにログインします。
+    1. 既存の第 2 世代バーチャル マシンにログインします。
 
-   2. ブート EFI ディレクトリにディレクトリを変更します。
+    2. ブート EFI ディレクトリにディレクトリを変更します。
 
-      ```bash
-      # cd /boot/efi/EFI
+       ```bash
+       # cd /boot/efi/EFI
+       ```
 
-      ```
+    3. Ubuntu ディレクトリを boot という名前の新しいディレクトリにコピーします。
 
-   3. Ubuntu ディレクトリを boot という名前の新しいディレクトリにコピーします。
+       ```bash
+       # sudo cp -r ubuntu/ boot
+       ```
 
-      ```bash
-      # sudo cp -r ubuntu/ boot
+    4. 新しく作成したブート ディレクトリにディレクトリを変更します。
 
-      ```
+       ```bash
+       # cd boot
+       ```
 
-   4. 新しく作成したブート ディレクトリにディレクトリを変更します。
+    5. Shimx64.efi ファイルの名前を変更します。
 
-      ```bash
-      # cd boot
-
-      ```
-
-   5. Shimx64.efi ファイルの名前を変更します。
-
-      ```bash
-      # sudo mv shimx64.efi bootx64.efi
-
-      ```
+       ```bash
+       # sudo mv shimx64.efi bootx64.efi
+       ```
 
 ## <a name="see-also"></a>関連項目
 

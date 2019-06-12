@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: f3f34b4c86854bfc55cf4b1b57a0fd3c2baf2ffc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3cce07ba5b3d2cc89f1363bbb2af5acd048c0466
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839253"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445940"
 ---
 # <a name="control-your-tools-visibility-in-a-solution"></a>ソリューション内のツールの表示を制御します。 #
 
@@ -194,7 +194,8 @@ SDK には、事前に精選されたかを確認する、ツールが使用で�
 }
 ```
 State プロパティは、ツールの一覧で、拡張機能を非表示の意思決定を制御する重要な値です。  使用できる値は次のとおりです。
-| 値 | 説明 |
+
+| Value | 説明 |
 | ---- | ----------- |
 | 使用できます。 | 拡張機能は、ツールの一覧に表示する必要があります。 |
 | NotSupported | 拡張機能は、ツールの一覧で表示されませんする必要があります。 |

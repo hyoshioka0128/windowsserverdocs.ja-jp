@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b3d0591f9feb12782d0c77b6c786cfe17656ab2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d0b77aed5970c74181ba03da5e57e9b230313a15
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831163"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438113"
 ---
 # <a name="klist"></a>klist
 
@@ -120,53 +120,52 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 
 ## <a name="BKMK_Examples"></a>例
 
-1.  処理中に、イベント ID 27 を診断するときにチケット保証サービス (TGS) の要求対象サーバーで、アカウントで Kerberos チケットを生成する適切なキーがありませんでした。 Klist は、任意のチケットは、対象サーバーまたはアカウントが、エラーの場合、不足している場合、または暗号化の種類がサポートされていない場合を判断するのに Kerberos チケットのキャッシュのクエリを使用できます。  
-    ```
-    klist 
-    ```  
-    ```
-    klist –li 0x3e7
-    ```  
-2.  エラーを診断すると、各チケット--チケット保証チケットのログオン セッションで、コンピューターにキャッシュされているの詳細を知りたい、TGT の情報を表示するのに Klist を使用することができます。  
-    ```
-    klist tgt
-    ```  
-3.  接続を確立できないし、診断は長時間かかる場合がある場合、は、Kerberos チケットのキャッシュを消去に、ログオフおよびログオンし直す。  
-    ```
-    klist purge
-    ```  
-    ```
-    klist purge –li 0x3e7
-    ```  
-4.  ユーザーまたはサービスのログオン セッションを診断する場合は、Klist 他のコマンドで使用される LogonID を検索する次のコマンドを使用できます。  
-    ```
-    klist sessions
-    ```  
-5.  Kerberos の制約付き委任エラーを診断するときに発生した最後のエラーを検索するのに次のコマンドを使用できます。  
-    ```
-    klist kcd_cache
-    ```  
-6.  場合、ユーザーを診断するか、サービスがサーバーにチケットを取得できる、特定の SPN のチケットを要求するのにこのコマンドを使用できます。  
-    ```
-    klist get host/%computername%
-    ```  
-7.  ドメイン コント ローラー間でレプリケーションの問題を診断する場合は、通常、クライアント コンピューターを対象に、特定のドメイン コント ローラー必要があります。 このような場合は、その特定のドメイン コント ローラーにクライアント コンピューターを対象とする、次のコマンドを使用することができます。  
-    ```
-    klist add_bind CONTOSO KDC.CONTOSO.COM
-    
-    ```  
-    ```
-    klist add_bind CONTOSO.COM KDC.CONTOSO.COM
-    ```  
-8.  このコンピューターの最近の接続をどのようなドメイン コント ローラーを照会するには、次のコマンドを使用できます。  
-    ```
-    klist query_bind
-    ```  
-9.  Kerberos ドメイン コント ローラーの再検出する場合は、次のコマンドを使用することができます。 このコマンドは、klist add_bind で新しいドメイン コント ローラーのバインドを作成する前に、キャッシュのフラッシュも使用できます。  
-    ```
-    klist purge_bind
-    ```
+1. 処理中に、イベント ID 27 を診断するときにチケット保証サービス (TGS) の要求対象サーバーで、アカウントで Kerberos チケットを生成する適切なキーがありませんでした。 Klist は、任意のチケットは、対象サーバーまたはアカウントが、エラーの場合、不足している場合、または暗号化の種類がサポートされていない場合を判断するのに Kerberos チケットのキャッシュのクエリを使用できます。  
+   ```
+   klist 
+   ```  
+   ```
+   klist –li 0x3e7
+   ```  
+2. エラーを診断すると、各チケット--チケット保証チケットのログオン セッションで、コンピューターにキャッシュされているの詳細を知りたい、TGT の情報を表示するのに Klist を使用することができます。  
+   ```
+   klist tgt
+   ```  
+3. 接続を確立できないし、診断は長時間かかる場合がある場合、は、Kerberos チケットのキャッシュを消去に、ログオフおよびログオンし直す。  
+   ```
+   klist purge
+   ```  
+   ```
+   klist purge –li 0x3e7
+   ```  
+4. ユーザーまたはサービスのログオン セッションを診断する場合は、Klist 他のコマンドで使用される LogonID を検索する次のコマンドを使用できます。  
+   ```
+   klist sessions
+   ```  
+5. Kerberos の制約付き委任エラーを診断するときに発生した最後のエラーを検索するのに次のコマンドを使用できます。  
+   ```
+   klist kcd_cache
+   ```  
+6. 場合、ユーザーを診断するか、サービスがサーバーにチケットを取得できる、特定の SPN のチケットを要求するのにこのコマンドを使用できます。  
+   ```
+   klist get host/%computername%
+   ```  
+7. ドメイン コント ローラー間でレプリケーションの問題を診断する場合は、通常、クライアント コンピューターを対象に、特定のドメイン コント ローラー必要があります。 このような場合は、その特定のドメイン コント ローラーにクライアント コンピューターを対象とする、次のコマンドを使用することができます。  
+   ```
+   klist add_bind CONTOSO KDC.CONTOSO.COM
+   ```  
+   ```
+   klist add_bind CONTOSO.COM KDC.CONTOSO.COM
+   ```  
+8. このコンピューターの最近の接続をどのようなドメイン コント ローラーを照会するには、次のコマンドを使用できます。  
+   ```
+   klist query_bind
+   ```  
+9. Kerberos ドメイン コント ローラーの再検出する場合は、次のコマンドを使用することができます。 このコマンドは、klist add_bind で新しいドメイン コント ローラーのバインドを作成する前に、キャッシュのフラッシュも使用できます。  
+   ```
+   klist purge_bind
+   ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

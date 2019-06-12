@@ -9,12 +9,12 @@ ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
 ms.date: 04/26/2019
 description: 記憶域レプリカを使用して、Windows Server を実行している別のクラスターを 1 つのクラスター内のボリュームをレプリケートする方法。
-ms.openlocfilehash: 2e3245320b2ef7035ac600ff783684083f3f929a
-ms.sourcegitcommit: 0099873d69bd23495d275d7bcb464594de09ee3c
+ms.openlocfilehash: 9d4b7eb05576095abd5d8c905211b2a5e88555bd
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65699901"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447636"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>クラスター間の記憶域のレプリケーション
 
@@ -139,8 +139,8 @@ ms.locfileid: "65699901"
 
 2. SR ログ ボリュームが常に最も高速なフラッシュ ストレージに配置され、データ ボリュームが低速な大容量ストレージに配置されることを確認します。
 
-10. Windows PowerShell を起動し、`Test-SRTopology` コマンドレットを使用して、記憶域レプリカのすべての要件を満たしているかどうかを判別します。 このコマンドレットは、簡単なテストのために要件のみモードで使用することも、実行時間の長いパフォーマンス評価モードで使用することもできます。  
-以下に例を示します。  
+3. Windows PowerShell を起動し、`Test-SRTopology` コマンドレットを使用して、記憶域レプリカのすべての要件を満たしているかどうかを判別します。 このコマンドレットは、簡単なテストのために要件のみモードで使用することも、実行時間の長いパフォーマンス評価モードで使用することもできます。  
+   以下に例を示します。  
 
    ```PowerShell
    MD c:\temp
@@ -148,13 +148,13 @@ ms.locfileid: "65699901"
    Test-SRTopology -SourceComputerName SR-SRV01 -SourceVolumeName f: -SourceLogVolumeName g: -DestinationComputerName SR-SRV03 -DestinationVolumeName f: -DestinationLogVolumeName g: -DurationInMinutes 30 -ResultPath c:\temp        
    ```
 
-      > [!IMPORTANT]
-      > 評価期間中に指定されたソース ボリューム上で書き込み IO 負荷のないテスト サーバーを使用している場合は、ワークロードの追加を検討してください。そうしないと、有用なレポートは生成されません。 実際の数値および推奨されるログのサイズを確認するには、実稼働環境と同様のワークロードでテストする必要があります。 または、単に、テスト中にソース ボリュームにいくつかのファイルをコピーするか、[DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) をダウンロードして実行することで書き込み IO を生成します。 たとえば、D: ボリュームに対する 5 分間の低書き込み IO ワークロードによる一例を次に示します。  
-      > `Diskspd.exe -c1g -d300 -W5 -C5 -b8k -t2 -o2 -r -w5 -h d:\test.dat`  
+     > [!IMPORTANT]
+     > 評価期間中に指定されたソース ボリューム上で書き込み IO 負荷のないテスト サーバーを使用している場合は、ワークロードの追加を検討してください。そうしないと、有用なレポートは生成されません。 実際の数値および推奨されるログのサイズを確認するには、実稼働環境と同様のワークロードでテストする必要があります。 または、単に、テスト中にソース ボリュームにいくつかのファイルをコピーするか、[DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) をダウンロードして実行することで書き込み IO を生成します。 たとえば、D: ボリュームに対する 5 分間の低書き込み IO ワークロードによる一例を次に示します。  
+     > `Diskspd.exe -c1g -d300 -W5 -C5 -b8k -t2 -o2 -r -w5 -h d:\test.dat`  
 
-11. **TestSrTopologyReport.html** レポートを調べて、記憶域レプリカの要件を満たしていることを確認します。  
+4. **TestSrTopologyReport.html** レポートを調べて、記憶域レプリカの要件を満たしていることを確認します。  
 
-    ![レプリケーション トポロジのレポートの結果を示す画面](./media/Cluster-to-Cluster-Storage-Replication/SRTestSRTopologyReport.png)      
+   ![レプリケーション トポロジのレポートの結果を示す画面](./media/Cluster-to-Cluster-Storage-Replication/SRTestSRTopologyReport.png)      
 
 ## <a name="step-2-configure-two-scale-out-file-server-failover-clusters"></a>手順 2:2 つのスケールアウト ファイル サーバー フェールオーバー クラスターを構成する  
 ここで、2 つの通常のフェールオーバー クラスターを作成します。 構成、検証、テストを完了した後で、記憶域レプリカを使用してレプリケートします。 クラスター ノードを直接または Windows Server のリモート サーバー管理ツールを含むリモート管理コンピューターから、すべての次の手順を実行することができます。  
@@ -175,7 +175,7 @@ ms.locfileid: "65699901"
     > [!WARNING]  
     > クォーラム構成の詳細については、次を参照してください。、**監視の構成**セクション[クォーラムの管理と構成](../../failover-clustering/manage-cluster-quorum.md)します。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。  
 
-5.  **Redmond** サイトでクラスター CSV に 1 台のディスクを追加します。 これを行うには、**[記憶域]** セクションの **[ディスク]** ノードでソース ディスクを右クリックして、**[クラスターの共有ボリュームへの追加]** をクリックします。  
+5.  **Redmond** サイトでクラスター CSV に 1 台のディスクを追加します。 これを行うには、 **[記憶域]** セクションの **[ディスク]** ノードでソース ディスクを右クリックして、 **[クラスターの共有ボリュームへの追加]** をクリックします。  
 
 6.  [スケールアウト ファイル サーバーの構成](https://technet.microsoft.com/library/hh831718.aspx)の手順に従って、両方のクラスターにクラスター化されたスケールアウト ファイル サーバーを作成します。  
 
@@ -195,7 +195,7 @@ ms.locfileid: "65699901"
     New-Cluster -Name SR-SRVCLUSB -Node SR-SRV03,SR-SRV04 -StaticAddress <your IP here>  
     ```  
 
-3.  ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 例:  
+3.  ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 次に、例を示します。  
 
     ```PowerShell  
     Set-ClusterQuorum -FileShareWitness \\someserver\someshare  
@@ -212,89 +212,89 @@ ms.locfileid: "65699901"
 ## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>手順 3:Windows PowerShell を使用してクラスター間レプリケーションを設定します。  
 次に、Windows PowerShell を使用してクラスター間のレプリケーションを設定します。 ノードを直接または Windows Server のリモート サーバー管理ツールを含むリモート管理コンピューターから次の手順をすべて実行できます。  
 
-1.  実行して、他のクラスターへの最初のクラスター フル アクセスを許可、 **Grant SRAccess**最初のクラスター内のノードでコマンドレットまたはリモートでします。  Windows Server のリモート サーバー管理ツール
+1. 実行して、他のクラスターへの最初のクラスター フル アクセスを許可、 **Grant SRAccess**最初のクラスター内のノードでコマンドレットまたはリモートでします。  Windows Server のリモート サーバー管理ツール
 
-    ```PowerShell
-    Grant-SRAccess -ComputerName SR-SRV01 -Cluster SR-SRVCLUSB  
-    ```  
+   ```PowerShell
+   Grant-SRAccess -ComputerName SR-SRV01 -Cluster SR-SRVCLUSB  
+   ```  
 
-2.  実行して、他のクラスターへの 2 番目のクラスター フル アクセスを許可、 **Grant SRAccess** 2 番目のクラスター内のノードでコマンドレットまたはリモートでします。  
+2. 実行して、他のクラスターへの 2 番目のクラスター フル アクセスを許可、 **Grant SRAccess** 2 番目のクラスター内のノードでコマンドレットまたはリモートでします。  
 
-    ```PowerShell
-    Grant-SRAccess -ComputerName SR-SRV03 -Cluster SR-SRVCLUSA  
-    ```  
+   ```PowerShell
+   Grant-SRAccess -ComputerName SR-SRV03 -Cluster SR-SRVCLUSA  
+   ```  
 
-3.  ソースと宛先のディスク、ソースと宛先のログ、ソースと宛先のクラスター名、およびログのサイズを指定して、クラスター間のレプリケーションを構成します。 このコマンドは、サーバー上でローカルで実行するか、リモート管理コンピューターを使用して実行できます。  
+3. ソースと宛先のディスク、ソースと宛先のログ、ソースと宛先のクラスター名、およびログのサイズを指定して、クラスター間のレプリケーションを構成します。 このコマンドは、サーバー上でローカルで実行するか、リモート管理コンピューターを使用して実行できます。  
 
-    ```powershell  
-    New-SRPartnership -SourceComputerName SR-SRVCLUSA -SourceRGName rg01 -SourceVolumeName c:\ClusterStorage\Volume2 -SourceLogVolumeName f: -DestinationComputerName SR-SRVCLUSB -DestinationRGName rg02 -DestinationVolumeName c:\ClusterStorage\Volume2 -DestinationLogVolumeName f:  
-    ```  
+   ```powershell  
+   New-SRPartnership -SourceComputerName SR-SRVCLUSA -SourceRGName rg01 -SourceVolumeName c:\ClusterStorage\Volume2 -SourceLogVolumeName f: -DestinationComputerName SR-SRVCLUSB -DestinationRGName rg02 -DestinationVolumeName c:\ClusterStorage\Volume2 -DestinationLogVolumeName f:  
+   ```  
 
-    > [!WARNING]  
-    > 既定のログのサイズは、8 GB です。 **Test-SRTopology** コマンドレットの結果に応じて、より大きい値または小さい値を指定して **-LogSizeInBytes** を使用することを検討してください。  
+   > [!WARNING]  
+   > 既定のログのサイズは、8 GB です。 **Test-SRTopology** コマンドレットの結果に応じて、より大きい値または小さい値を指定して **-LogSizeInBytes** を使用することを検討してください。  
 
-4.  レプリケーション元とレプリケーション先の状態を取得するために、次のように **Get-SRGroup** と **Get-SRPartnership** を使用します。  
+4. レプリケーション元とレプリケーション先の状態を取得するために、次のように **Get-SRGroup** と **Get-SRPartnership** を使用します。  
 
-    ```powershell
-    Get-SRGroup  
-    Get-SRPartnership  
-    (Get-SRGroup).replicas  
-    ```  
+   ```powershell
+   Get-SRGroup  
+   Get-SRPartnership  
+   (Get-SRGroup).replicas  
+   ```  
 
-5.  次のようにレプリケーションの進行状況を確認します。  
+5. 次のようにレプリケーションの進行状況を確認します。  
 
-    1.  レプリケーション元サーバーで、次のコマンドを入力し、イベント 5015、5002、5004、1237、5001、2200 を調べます。
+   1.  レプリケーション元サーバーで、次のコマンドを入力し、イベント 5015、5002、5004、1237、5001、2200 を調べます。
         
-        ```PowerShell
-        Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20
-        ```
-    2.  レプリケーション先サーバーで、次のコマンドを実行して、パートナーシップの作成を示す記憶域レプリカ イベントを参照します。 このイベントでは、コピーされたバイト数およびかかった時間が示されます。 以下に例を示します。  
-        
-        ```powershell
-        Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | Format-List
-        ```
-        この場合の出力例を以下に示します。
-        
-        ```
-        TimeCreated  : 4/8/2016 4:12:37 PM  
-        ProviderName : Microsoft-Windows-StorageReplica  
-        Id           : 1215  
-        Message      : Block copy completed for replica.  
-            ReplicationGroupName: rg02  
-            ReplicationGroupId:  
-            {616F1E00-5A68-4447-830F-B0B0EFBD359C}  
-            ReplicaName: f:\  
-            ReplicaId: {00000000-0000-0000-0000-000000000000}  
-            End LSN in bitmap:  
-            LogGeneration: {00000000-0000-0000-0000-000000000000}  
-            LogFileId: 0  
-            CLSFLsn: 0xFFFFFFFF  
-            Number of Bytes Recovered: 68583161856  
-            Elapsed Time (seconds): 117  
-        ```
-    3. または、レプリカのレプリケーション先サーバー グループでは、コピーの残りのバイト数が常時示されており、PowerShell を使って照会できます。 次に、例を示します。
-
        ```PowerShell
-       (Get-SRGroup).Replicas | Select-Object numofbytesremaining
+       Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20
        ```
+   2.  レプリケーション先サーバーで、次のコマンドを実行して、パートナーシップの作成を示す記憶域レプリカ イベントを参照します。 このイベントでは、コピーされたバイト数およびかかった時間が示されます。 以下に例を示します。  
+        
+       ```powershell
+       Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | Format-List
+       ```
+       この場合の出力例を以下に示します。
+        
+       ```
+       TimeCreated  : 4/8/2016 4:12:37 PM  
+       ProviderName : Microsoft-Windows-StorageReplica  
+       Id           : 1215  
+       Message      : Block copy completed for replica.  
+           ReplicationGroupName: rg02  
+           ReplicationGroupId:  
+           {616F1E00-5A68-4447-830F-B0B0EFBD359C}  
+           ReplicaName: f:\  
+           ReplicaId: {00000000-0000-0000-0000-000000000000}  
+           End LSN in bitmap:  
+           LogGeneration: {00000000-0000-0000-0000-000000000000}  
+           LogFileId: 0  
+           CLSFLsn: 0xFFFFFFFF  
+           Number of Bytes Recovered: 68583161856  
+           Elapsed Time (seconds): 117  
+       ```
+   3. または、レプリカのレプリケーション先サーバー グループでは、コピーの残りのバイト数が常時示されており、PowerShell を使って照会できます。 次に、例を示します。
 
-       進行状況を確認するサンプルを次に示します (サンプルは終了されません)。  
+      ```PowerShell
+      (Get-SRGroup).Replicas | Select-Object numofbytesremaining
+      ```
 
-       ```PowerShell
-         while($true) {  
-         $v = (Get-SRGroup -Name "Replication 2").replicas | Select-Object numofbytesremaining  
-         [System.Console]::Write("Number of bytes remaining: {0}`n", $v.numofbytesremaining)  
-         Start-Sleep -s 5  
-        }
-        ```
+      進行状況を確認するサンプルを次に示します (サンプルは終了されません)。  
+
+      ```PowerShell
+        while($true) {  
+        $v = (Get-SRGroup -Name "Replication 2").replicas | Select-Object numofbytesremaining  
+        [System.Console]::Write("Number of bytes remaining: {0}`n", $v.numofbytesremaining)  
+        Start-Sleep -s 5  
+       }
+       ```
 
 6. 宛先クラスターの宛先サーバーで、次のコマンドを実行し、イベント 5009、1237、5001、5015、5005、2200 を調べて、処理の進行状況を把握します。 このシーケンスではエラーの警告が存在しない必要があります。 イベント 1237 が多くあります。これは進行状況を示します。  
     
    ```PowerShell
    Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | FL  
    ```
-   > [!NOTE]  
-        > 宛先クラスター ディスクは、レプリケート中は常に **[Online (No Access) (オンライン (アクセスなし))]** と表示されます。  
+   > [!NOTE]
+   > 宛先クラスター ディスクは、レプリケート中は常に **[Online (No Access) (オンライン (アクセスなし))]** と表示されます。  
 
 ## <a name="step-4-manage-replication"></a>手順 4:レプリケーションを管理する
 

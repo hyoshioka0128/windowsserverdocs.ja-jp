@@ -9,12 +9,12 @@ ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: pashort
 author: shortpatti
 ms.date: 08/10/2018
-ms.openlocfilehash: 9db7609f6f1273c46cba1dd29f81c297bb26f94b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 51ba991397a7c35ee0198f8e75c67b2f99b7c7bc
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829863"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446308"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>ネットワーク コント ローラーの展開の要件
 
@@ -31,13 +31,13 @@ ms.locfileid: "59829863"
 - 任意のコンピューターまたはネットワーク コント ローラーをインストールするとなる仮想マシン (VM) に Windows Server 2016 の Datacenter edition を実行する必要があります。 
 - 管理クライアント コンピューターまたはネットワーク コント ローラーの VM に Windows 10 を実行する必要があります。 
 
-  
+
 ## <a name="configuration-requirements"></a>構成要件
 
 ネットワーク コント ローラーを展開する前に、セキュリティ グループ、ログ ファイルの場所 (必要な場合)、および DNS 動的登録を構成する必要があります。
-  
+
 ### <a name="step-1-configure-your-security-groups"></a>手順 1. セキュリティ グループを構成します。
-  
+
 最初に実行するには、Kerberos 認証の 2 つのセキュリティ グループを作成します。 
 
 アクセス許可を持つユーザーのグループを作成します。 
@@ -48,7 +48,7 @@ ms.locfileid: "59829863"
 >[!NOTE]
 >Active Directory ユーザーとコンピューター で、Domain Users グループのメンバーであるすべてのユーザーを追加する必要があります。
 
-### <a name="step-2-configure-log-file-locations-if-needed"></a>手順 2.  必要に応じて、ログ ファイルの場所を構成します。
+### <a name="step-2-configure-log-file-locations-if-needed"></a>手順 2. 必要に応じて、ログ ファイルの場所を構成します。
 
 次に実行することは、ネットワーク コント ローラーのコンピューターまたは VM 上またはリモート ファイル共有のいずれかのネットワーク コント ローラーがデバッグ ログを格納するファイルの場所を構成します。 
 
@@ -57,32 +57,34 @@ ms.locfileid: "59829863"
 
 
 ### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>手順 3. ネットワーク コント ローラーの DNS 動的登録を構成します。
-  
+
 最後に、次に実行することでは、同じサブネットまたは異なるサブネットにネットワーク コント ローラー クラスターのノードを展開します。 
 
-|もし...  |結果  |
-|---------|---------|
-|同じサブネット上 |ネットワーク コント ローラー REST IP アドレスを指定する必要があります。 |
-|異なるサブネット上 |展開プロセス中に作成したネットワーク コント ローラー REST DNS 名を指定する必要があります。 次の実行もあります。<ul><li>DNS サーバーでは、ネットワーク コント ローラーの DNS 名の DNS 動的更新を構成します。</li><li>DNS 動的更新をネットワーク コント ローラーのノードのみに制限します。</li></ul> |
+
+|         もし...         |                                                                                                                                                         結果                                                                                                                                                         |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  同じサブネット上  |                                                                                                                                ネットワーク コント ローラー REST IP アドレスを指定する必要があります。                                                                                                                                 |
+| 異なるサブネット上 | 展開プロセス中に作成したネットワーク コント ローラー REST DNS 名を指定する必要があります。 次の実行もあります。<ul><li>DNS サーバーでは、ネットワーク コント ローラーの DNS 名の DNS 動的更新を構成します。</li><li>DNS 動的更新をネットワーク コント ローラーのノードのみに制限します。</li></ul> |
+
 ---
 
 > [!NOTE]
 > メンバーシップ**Domain Admins**、またはそれと同等がこれらの手順を実行するために必要な最低限です。
-  
+
 1. ゾーンの DNS 動的更新を許可します。
 
-   a.  DNS マネージャーを開き、コンソール ツリーで、該当のゾーンを右クリックし、し順にクリックします**プロパティ**します。 
-      
-   b.  **全般** タブで、ゾーンの種類は、いずれかを確認します。**プライマリ**または**Active Directory 統合**します。
+   a. DNS マネージャーを開き、コンソール ツリーで、該当のゾーンを右クリックし、し順にクリックします**プロパティ**します。 
+
+   b. **全般** タブで、ゾーンの種類は、いずれかを確認します。**プライマリ**または**Active Directory 統合**します。
 
    c. **動的更新**、ことを確認します**Secure のみ**が選択されているし、をクリックし、 **[ok]** します。
 
 2. ネットワーク コント ローラーのノードの DNS ゾーンのセキュリティ アクセス許可を構成します。
 
-   a.   **[セキュリティ]** タブをクリックし、**[詳細設定]** をクリックします。 
+   a.  **[セキュリティ]** タブをクリックし、 **[詳細設定]** をクリックします。 
 
-   b.  **Advanced Security Settings**、 をクリックして**追加**します。 
-  
+   b. **Advanced Security Settings**、 をクリックして**追加**します。 
+
    c. **[プリンシパルの選択]** をクリックします。 
 
    d. **ユーザーの選択、コンピューター、サービス アカウントまたはグループ**ダイアログ ボックスで、をクリックして**オブジェクトの種類**します。 
@@ -95,8 +97,8 @@ ms.locfileid: "59829863"
 
       - **型**= を許可します。
       - **適用対象**= このオブジェクトとすべての子オブジェクト
-  
-   h.  **アクセス許可**を選択します**すべてのプロパティの書き込み**と**削除**、順にクリックします**OK**。
+
+   h. **アクセス許可**を選択します**すべてのプロパティの書き込み**と**削除**、順にクリックします**OK**。
 
 3. ネットワーク コント ローラーがクラスター内のすべてのコンピューターと Vm を繰り返します。
 
@@ -115,19 +117,19 @@ ms.locfileid: "59829863"
 ### <a name="network-controller-and-software-load-balancer-deployment"></a>ネットワーク コント ローラーとソフトウェア ロード バランサーの展開
 
 高可用性は、2 つ以上の SLB/MUX ノードがあります。
-   
+
 ![SDN NC の計画](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-SLB-Deployment.png)
-  
+
 ### <a name="network-controller-software-load-balancer-and-ras-gateway-deployment"></a>ネットワーク コント ローラー、ソフトウェア ロード バランサー、および RAS ゲートウェイの展開
 
 次の 3 つのゲートウェイ仮想マシン; があります。2 つがアクティブになり、1 つが冗長です。
 
 ![SDN NC の計画](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)  
-  
-  
-  
+
+
+
 TP5 ベースのデプロイの自動化、Active Directory が使用可能なこれらのサブネットから到達可能である必要があります。 Active Directory の詳細については、次を参照してください。 [Active Directory Domain Services の概要](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)します。  
-  
+
 >[!IMPORTANT] 
 >VMM を使用してを展開する場合は、インフラストラクチャ、仮想マシンを確認します (SQL Server を VMM サーバー、AD と DNS など)、図に示す 4 つのホストのいずれかでホストされていません。  
 
@@ -136,7 +138,7 @@ TP5 ベースのデプロイの自動化、Active Directory が使用可能な�
 [ソフトウェア定義ネットワーク インフラストラクチャ計画](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure)します。
 
 ## <a name="related-topics"></a>関連トピック
-- [ネットワーク コント ローラー](../technologies/network-controller/Network-Controller.md) 
+- [ネットワーク コントローラー](../technologies/network-controller/Network-Controller.md) 
 - [ネットワーク コント ローラーの高可用性](../technologies/network-controller/network-controller-high-availability.md) 
-- [Windows PowerShell を使用してネットワーク コント ローラーを展開します。](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)   
-- [サーバー マネージャーを使用して、ネットワーク コント ローラー サーバーの役割をインストールします。](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)   
+- [Windows PowerShell を使用してネットワーク コントローラーを展開する](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)   
+- [サーバー マネージャーを使用してネットワーク コントローラー サーバーの役割をインストールする](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)   

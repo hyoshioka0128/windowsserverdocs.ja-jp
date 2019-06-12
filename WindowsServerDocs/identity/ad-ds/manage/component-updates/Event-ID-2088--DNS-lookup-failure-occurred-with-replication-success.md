@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: cc090fa749a601e53b4347cce43245f22badc8ae
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e0c5e838290a8ebf33f0f7891dc10f8b00e5bcba
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840713"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442651"
 ---
 # <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>イベント ID 2088:レプリケーションが成功した DNS 参照エラーが発生しました
 
@@ -58,7 +58,7 @@ ms.locfileid: "59840713"
 
 2) ソース ドメイン コント ローラーが Active Directory を実行しているが」と入力して、ネットワーク上でアクセス可能であることを確認"ビューを net \\&lt;ソース DC 名&gt;"または"ping&lt;ソース DC 名&gt;"。 
 
-3) ソース ドメイン コント ローラーを使用している有効な DNS サーバーの DNS サービス、およびソース ドメイン コント ローラーのホスト レコードと CNAME レコードは、正しく登録確認、DCDIAG の DNS が強化されたバージョンを使用して。EXE でご確認いただけます https://www.microsoft.com/dns 
+3) ソース ドメイン コント ローラーを使用している有効な DNS サーバーの DNS サービス、およびソース ドメイン コント ローラーのホスト レコードと CNAME レコードは、正しく登録確認、DCDIAG の DNS が強化されたバージョンを使用して。EXE でご確認いただけます <https://www.microsoft.com/dns> 
 
 dcdiag/test:dns 
 
@@ -66,7 +66,7 @@ dcdiag/test:dns
 
 dcdiag/test:dns 
 
-5) DNS エラーのエラーの詳細な分析は、KB 824449 を参照してください。 https://support.microsoft.com/?kbid=824449 
+5) DNS エラーのエラーの詳細な分析は、KB 824449 を参照してください。 <https://support.microsoft.com/?kbid=824449> 
 
 追加のデータ エラー値:11004、要求された名前が有効では、要求された型のデータが見つかりません</code> </introduction>
   <section>
@@ -78,7 +78,7 @@ dcdiag/test:dns
   <section>
     <title>解決方法</title>
     <content>
-      <para>DNS のテスト」の説明に従って進める"<link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">イベント ID 2087。DNS ルックアップの失敗のレプリケーションが失敗する原因となった</link>"。</para>
+      <para>DNS のテスト」の説明に従って進める&quot;<link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">イベント ID 2087。DNS ルックアップの失敗のレプリケーションが失敗する原因となった</link>します。&quot;</para>
     </content>
   </section>
   <relatedTopics />

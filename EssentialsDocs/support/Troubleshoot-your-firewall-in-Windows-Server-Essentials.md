@@ -12,12 +12,12 @@ ms.assetid: 51d94b67-8b9b-4159-80dd-f652d73a43cb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 3c48d2abb7fd8431f40f76f8eece5c4142be4c75
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 11372589528fcc78e0053bc7002449b53cb3181d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846553"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436046"
 ---
 # <a name="troubleshoot-your-firewall-in-windows-server-essentials"></a>Windows Server Essentials でのファイアウォールのトラブルシューティング
  
@@ -27,13 +27,13 @@ ms.locfileid: "59846553"
   
 ### <a name="to-run-the-repair-anywhere-access-wizard"></a>Anywhere Access の修復ウィザードを実行するには  
   
-1.  ダッシュボードを開きます。  
+1. ダッシュボードを開きます。  
   
-2.  **[設定]** をクリックし、**[Anywhere Access]** タブをクリックし、**[修復]** をクリックします。  
+2. **[設定]** をクリックし、 **[Anywhere Access]** タブをクリックし、 **[修復]** をクリックします。  
   
-3.  Anywhere Access の修復ウィザードの指示に従います。  
+3. Anywhere Access の修復ウィザードの指示に従います。  
   
- 高度なネットワーク設定または Microsoft 以外のファイアウォールを使用している場合は、ファイアウォールで追加のポートを開く必要が生じる場合があります。 Internet Assigned Numbers Authority (IANA) では次の表のポートが登録されています。  
+   高度なネットワーク設定または Microsoft 以外のファイアウォールを使用している場合は、ファイアウォールで追加のポートを開く必要が生じる場合があります。 Internet Assigned Numbers Authority (IANA) では次の表のポートが登録されています。  
   
 |[ポート番号]|説明|  
 |-----------------|-----------------|  
@@ -51,10 +51,10 @@ ms.locfileid: "59846553"
   
 -   [Anywhere Access を管理します。](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
--   [Windows Server Essentials を管理します。](../manage/Manage-Windows-Server-Essentials.md)  
+-   [Windows Server Essentials の管理](../manage/Manage-Windows-Server-Essentials.md)  
   
 
--   [Windows Server Essentials をサポートします。](Support-Windows-Server-Essentials.md)
+-   [Windows Server Essentials のサポート](Support-Windows-Server-Essentials.md)
 
--   [Windows Server Essentials をサポートします。](../support/Support-Windows-Server-Essentials.md)
+-   [Windows Server Essentials のサポート](../support/Support-Windows-Server-Essentials.md)
 

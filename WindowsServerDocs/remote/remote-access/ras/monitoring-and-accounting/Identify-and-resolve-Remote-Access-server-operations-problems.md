@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 7ce84c9f-fd1f-4463-8fc7-d2f33344a2c9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c58ff97e286f91610a321801d177a2977349fa78
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1a289700efc35b8a515084c738746333cb0c9838
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840463"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446884"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>リモート アクセス サーバーの操作上の問題を特定して解決する
 
@@ -92,7 +92,7 @@ IP ヘルパー サービスをリモート アクセス サーバーを復元�
   
 2.  一覧で**サービス**下にスクロールし、右クリックし、 **IP ヘルパー**、 をクリックし、**開始**します。  
   
-![Windows PowerShell](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![Windows PowerShell](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   

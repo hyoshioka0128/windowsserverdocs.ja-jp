@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 002af67ab721d308cfc6421b37a089536ab61862
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 217ff23b8724464670520d0b2d5b196df5a4af47
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837213"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440303"
 ---
 # <a name="using-the-remove-driverpackage-command"></a>削除 DriverPackage コマンドを使用してください。
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
-
-
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 
+> 
+> 適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サーバーからドライバー パッケージを削除します。
 ## <a name="syntax"></a>構文
@@ -33,11 +33,13 @@ ms.locfileid: "59837213"
 wdsutil /remove-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package Name> | /PackageId:<ID>}
 ```
 ## <a name="parameters"></a>パラメーター
-|パラメーター|説明|
-|-------|--------|
-|[/Server:<Server name>]|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
-|[/DriverPackage:<Name>]|削除するドライバー パッケージの名前を指定します。|
-|[/パッケージ Id:<ID>]|削除するドライバー パッケージの Windows 展開サービス ID を指定します。 ドライバー パッケージを名前によって一意に識別できない場合は、ID を指定する必要があります。|
+
+|        パラメーター        |                                                                            説明                                                                             |
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [/Server:<Server name>] |              サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。              |
+| [/DriverPackage:<Name>] |                                                        削除するドライバー パッケージの名前を指定します。                                                         |
+|    [/パッケージ Id:<ID>]    | 削除するドライバー パッケージの Windows 展開サービス ID を指定します。 ドライバー パッケージを名前によって一意に識別できない場合は、ID を指定する必要があります。 |
+
 ## <a name="BKMK_examples"></a>例
 イメージに関する情報を表示するには、次のいずれかを入力します。
 ```

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6cf81018fa590d38e55778d60b0cb0e849ab83de
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7a379ead9c56af096e121048a8c0f596f6879bb0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835703"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438539"
 ---
 # <a name="ftp-mls1"></a>ftp: mls_1
 
@@ -30,23 +30,25 @@ ms.locfileid: "59835703"
 mls <remoteFile>[ ] <LocalFile>  
 ```  
 ### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
-|-------|--------|  
-|<remoteFile>|一覧を表示するファイルを指定します。|  
-|<LocalFile>|一覧を格納するローカル ファイルを指定します。|  
+
+|  パラメーター   |                       説明                       |
+|--------------|---------------------------------------------------------|
+| <remoteFile> | 一覧を表示するファイルを指定します。 |
+| <LocalFile>  |  一覧を格納するローカル ファイルを指定します。  |
+
 ## <a name="remarks"></a>注釈  
--   指定する*remoteFiles*  
-    ハイフンを入力 (**-**)、リモート コンピューター上の現在の作業ディレクトリを使用します。  
--   指定する *転送しています*  
-    ハイフンを入力 (**-**) 画面の一覧を表示します。  
-## <a name="BKMK_Examples"></a>例  
-ファイルとサブディレクトリの省略版リストを表示**dir1**と**ディレクトリ 2**します。  
-```  
-mls dir1 dir2 -  
-```  
-ファイルとサブディレクトリの省略版リストを保存**dir1**と**ディレクトリ 2**ローカル ファイルに**dirlist.txt**  
-```  
-mls dir1 dir2 dirlist.txt   
-```  
-## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+- 指定する*remoteFiles*  
+  ハイフンを入力 ( **-** )、リモート コンピューター上の現在の作業ディレクトリを使用します。  
+- 指定する *転送しています*  
+  ハイフンを入力 ( **-** ) 画面の一覧を表示します。  
+  ## <a name="BKMK_Examples"></a>例  
+  ファイルとサブディレクトリの省略版リストを表示**dir1**と**ディレクトリ 2**します。  
+  ```  
+  mls dir1 dir2 -  
+  ```  
+  ファイルとサブディレクトリの省略版リストを保存**dir1**と**ディレクトリ 2**ローカル ファイルに**dirlist.txt**  
+  ```  
+  mls dir1 dir2 dirlist.txt   
+  ```  
+  ## <a name="additional-references"></a>その他の参照  
+- [コマンド ライン構文の記号](command-line-syntax-key.md)  

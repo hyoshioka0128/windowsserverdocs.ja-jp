@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: e832dce3eed7d0e5103254fb48683726b82af2e6
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: d03407292a797b1cd511937ba40fc0fa373f5dc0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475935"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447571"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>記憶域レプリカについてよく寄せられる質問
 
@@ -112,7 +112,7 @@ Windows Server 2016 では構成できません。 記憶域レプリカは、�
 クラスター間のレプリケーションを構成している場合、記憶域レプリカは、2 つの記憶域クラスター間でのレプリケート中の記憶域スペース ダイレクトの使用も含め、スケールアウト ファイル サーバーを完全にサポートします。  
 
 ## <a name="FAQ7.5"></a> ストレッチ クラスター内、またはクラスター間でレプリケートするために必要な CSV でしょうか。  
-いいえ。 CSV ファイルまたはファイル サーバーの役割などのクラスター リソースによって所有されているディスクの永続的な予約 (PDR) をレプリケートできます。 
+No. CSV ファイルまたはファイル サーバーの役割などのクラスター リソースによって所有されているディスクの永続的な予約 (PDR) をレプリケートできます。 
 
 クラスター間のレプリケーションを構成している場合、記憶域レプリカは、2 つの記憶域クラスター間でのレプリケート中の記憶域スペース ダイレクトの使用も含め、スケールアウト ファイル サーバーを完全にサポートします。  
 
@@ -227,7 +227,7 @@ Test-srtopology のツールを実行して、ログのサイズ変更の推奨�
 ただし、Windows Server 2019 のレプリケーションのパフォーマンスを取得する、パートナーシップのすべてのメンバーが Windows Server 2019 を実行する必要があり。 に関連付けられたレプリケーション グループと、シードされたデータのいずれかで、再作成する既存のパートナーシップを削除する必要があります。作成するときに、パートナーシップまたは新規 SRPartnership コマンドレットを使用した Windows Admin Center で)。
 
 ## <a name="FAQ17"></a> 記憶域レプリカやこのガイドには問題を報告する方法を教えてください。  
-記憶域レプリカの技術的サポートが必要な場合は、[Microsoft TechNet フォーラム](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=WinServerPreview)から投稿できます。 記憶域レプリカに関する質問や、このドキュメントに関する問題は、srfeed@microsoft.com に電子メールを送信することもできます。  https://windowsserver.uservoice.com アイデアについては、サポートとフィードバックを提供する、他のお客様が許可されている、サイトが設計変更要求、優先的に使用します。
+記憶域レプリカの技術的サポートが必要な場合は、[Microsoft TechNet フォーラム](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=WinServerPreview)から投稿できます。 記憶域レプリカに関する質問や、このドキュメントに関する問題は、srfeed@microsoft.com に電子メールを送信することもできます。 <https://windowsserver.uservoice.com> アイデアについては、サポートとフィードバックを提供する、他のお客様が許可されている、サイトが設計変更要求、優先的に使用します。
 
 
 

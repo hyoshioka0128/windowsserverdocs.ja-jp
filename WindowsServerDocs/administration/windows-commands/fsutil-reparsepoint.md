@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 940131a02a5cd3a6122022cf9b0dff3281d1dabf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f66f09fa608fec10d7126e516f9cf2dd8a19bbfb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847943"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438995"
 ---
 # <a name="fsutil-reparsepoint"></a>fsutil reparsepoint
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7、Windows 2008、Windows Vista
@@ -32,11 +32,11 @@ fsutil reparsepoint [delete] <FileName>
 
 ## <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|-------------|---------------|
-|クエリ (query)|ファイルまたは指定したハンドルによって識別されたディレクトリに関連付けられている再解析ポイントのデータを取得します。|
-|delete|ファイルまたはディレクトリを指定したハンドルによって識別されますが、ファイルまたはディレクトリを削除しませんから、再解析ポイントを削除します。|
-|<FileName>|ファイル名と拡張子、たとえば C:\documents\filename.txt を含むファイルへの完全パスを指定します。|
+| パラメーター  |                                                                説明                                                                |
+|------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+|   query    |            ファイルまたは指定したハンドルによって識別されたディレクトリに関連付けられている再解析ポイントのデータを取得します。             |
+|   delete   | ファイルまたはディレクトリを指定したハンドルによって識別されますが、ファイルまたはディレクトリを削除しませんから、再解析ポイントを削除します。 |
+| <FileName> |             ファイル名と拡張子、たとえば C:\documents\filename.txt を含むファイルへの完全パスを指定します。             |
 
 ## <a name="remarks"></a>注釈
 
@@ -60,7 +60,7 @@ fsutil reparsepoint delete c:\server
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
-[コマンドライン構文キー](Command-Line-Syntax-Key.md)
+[コマンド ライン構文の記号](Command-Line-Syntax-Key.md)
 
 [Fsutil](Fsutil.md)
 

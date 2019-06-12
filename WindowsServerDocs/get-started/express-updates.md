@@ -7,18 +7,18 @@ ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
-ms.openlocfilehash: c48979440ab7c5cfa86aa1287b354a1e43692f48
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1644a61c87953e465895e23c3c8454bae7f3a056
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867443"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443387"
 ---
 # <a name="express-updates-for-windows-server-2016-re-enabled-for-november-2018-update"></a>2018 年 11 月に再び有効に、Windows Server 2016 の更新プログラムを高速更新
 
->Joel Frauenheim によって
-
->適用先:Windows Server 2016
+> Joel Frauenheim によって
+> 
+> 適用先:Windows Server 2016
 
 以降では、2018 年 11 月 13 日火曜日の Update、Windows もう一度を発行する Express の更新プログラム Windows Server 2016。 正常なインストールから、更新プログラムを保持する重大な問題が見つかった後、2017 年中頃に Windows Server 2016 用の高速更新プログラムが停止しました。 更新チームが、ほとんどのお客様は、2017 年 11 月 14 日更新には、Express パッケージの発行に保守的なアプローチが 2017 年 11 月の固定された、問題が、([KB 4048953](https://support.microsoft.com/help/4048953/windows-10-update-kb4048953))、サーバーにインストールされています。環境と、問題によって影響ありません。
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a87c4bac000a63af806705e9371a79d7370a34c1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 186664a75978f589a9a26047c72b9db74dd2dc4d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838243"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441118"
 ---
 # <a name="telnet-open"></a>telnet: を開く
 
@@ -30,14 +30,16 @@ Telnet サーバーに接続します。
 o[pen] <hostname> [<Port>]  
 ```  
 ### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
-|-------|--------|  
-|<hostname>|コンピューター名または IP アドレスを指定します。|  
-|[<Port>]|Telnet サーバーがリッスンする TCP ポートを指定します。 既定値は、TCP ポート 23 です。|  
+
+| パラメーター  |                                        説明                                         |
+|------------|--------------------------------------------------------------------------------------------|
+| <hostname> |                         コンピューター名または IP アドレスを指定します。                         |
+|  [<Port>]  | Telnet サーバーがリッスンする TCP ポートを指定します。 既定値は、TCP ポート 23 です。 |
+
 ## <a name="BKMK_Examples"></a>例  
 Telnet.microsoft.com で telnet サーバーに接続します。  
 ```  
 o telnet.microsoft.com  
 ```  
 ## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  

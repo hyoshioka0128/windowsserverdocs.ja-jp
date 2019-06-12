@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: b5658676d08318d88ddee44a0589db5873b4660b
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: cb301d0d68f00625ccea8c11d315b9defffe40f3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034292"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444536"
 ---
 # <a name="prepare-to-migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>AD FS 2.0 フェデレーション サーバーを Windows Server 2012 R2 で AD FS に移行を準備します。
 
@@ -45,17 +45,17 @@ ms.locfileid: "65034292"
   
 次のカスタム設定はすべて手動で移行する必要があります。  
   
- -   サービスの設定:  
+- サービスの設定:  
   
-     -   企業やパブリック証明機関から発行された既定以外のトークン署名証明書とトークン暗号化解除証明書。  
+  - 企業やパブリック証明機関から発行された既定以外のトークン署名証明書とトークン暗号化解除証明書。  
   
-     -   AD FS によって使用される SSL サーバー認証証明書。  
+  - AD FS によって使用される SSL サーバー認証証明書。  
   
-     -   AD FS によって使用されるサービス通信証明書 (既定では SSL 証明書と同じ証明書)。  
+  - AD FS によって使用されるサービス通信証明書 (既定では SSL 証明書と同じ証明書)。  
   
-      -   任意のフェデレーション サービス プロパティの既定以外の値 (AutoCertificateRollover や SSO 有効期間など)。  
+    -   任意のフェデレーション サービス プロパティの既定以外の値 (AutoCertificateRollover や SSO 有効期間など)。  
   
-      -   既定以外の AD FS エンドポイントの設定と要求記述します。  
+    -   既定以外の AD FS エンドポイントの設定と要求記述します。  
   
 -   Active Directory 要求プロバイダー信頼のカスタム要求規則。  
   
@@ -63,11 +63,11 @@ ms.locfileid: "65034292"
   
 詳細については、「[AD FS フェデレーション サーバーの移行](migrate-ad-fs-fed-server-r2.md)」を参照してください。  
   
-2.  Windows Server 2012 R2 フェデレーション サーバー ファームを作成します。  
+2. Windows Server 2012 R2 フェデレーション サーバー ファームを作成します。  
   
-3.  元の構成データをこの新しい Windows Server 2012 R2 AD FS ファームにインポートします。  
+3. 元の構成データをこの新しい Windows Server 2012 R2 AD FS ファームにインポートします。  
   
-4.  AD FS サインイン ページを構成およびカスタマイズします。  
+4. AD FS サインイン ページを構成およびカスタマイズします。  
   
 ##  <a name="new-ad-fs-functionality-in-windows-server-2012-r2"></a>Windows Server 2012 R2 の AD FS の新機能  
  次の AD FS 機能 Windows Server 2012 R2 への影響で、移行から変更 AD FS 2.0 または Windows Server 2012 で AD FS:  
@@ -109,27 +109,27 @@ Windows Server 2012 R2 に移行したい既存の AD FS ファームに web ペ
   
  関数には、Windows Server 2012 R2 で実行されている AD fs では、Active Directory ドメインは、次のいずれかを実行する必要があります。  
   
--   Windows Server 2012 R2  
+- Windows Server 2012 R2  
   
--   Windows Server 2012  
+- Windows Server 2012  
   
--   Windows Server 2008 R2  
+- Windows Server 2008 R2  
   
--   Windows Server 2008  
+- Windows Server 2008  
   
- AD FS のサービス アカウントとしてグループ管理サービス アカウント (gMSA) を使用する場合は、Windows Server 2012 または Windows Server 2012 R2 のオペレーティング システムで実行されている環境で少なくとも 1 つのドメイン コント ローラーが必要です。  
+  AD FS のサービス アカウントとしてグループ管理サービス アカウント (gMSA) を使用する場合は、Windows Server 2012 または Windows Server 2012 R2 のオペレーティング システムで実行されている環境で少なくとも 1 つのドメイン コント ローラーが必要です。  
   
- AD ワークプ レース ジョイン用に AD FS 展開の一部としてデバイス登録サービス (DRS) をデプロイする場合は、AD DS スキーマを Windows Server 2012 R2 のレベルを更新する必要があります。 スキーマを更新するには 3 種類の方法があります。  
+  AD ワークプ レース ジョイン用に AD FS 展開の一部としてデバイス登録サービス (DRS) をデプロイする場合は、AD DS スキーマを Windows Server 2012 R2 のレベルを更新する必要があります。 スキーマを更新するには 3 種類の方法があります。  
   
 1.  既存の Active Directory フォレスト内には、2008 またはそれ以降、Windows Server を実行する任意の 64 ビット サーバーで Windows Server 2012 R2 オペレーティング システム DVD の \support\adprep フォルダーから adprep/forestprep を実行します。 この場合は、追加のドメイン コントローラーをインストールする必要はなく、既存のドメイン コントローラーのアップグレードも必要ありません。  
   
 adprep/forestprep を実行するには、Schema Admins グループ、Enterprise Admins グループ、およびスキーマ マスターをホストするドメインの Domain Admins グループのメンバーである必要があります。  
   
-2.  既存の Active Directory フォレストでは、Windows Server 2012 R2 を実行するドメイン コント ローラーをインストールします。 この場合は、adprep/forestprep がドメイン コント ローラーのインストールの一部として自動的に実行されます。  
+2. 既存の Active Directory フォレストでは、Windows Server 2012 R2 を実行するドメイン コント ローラーをインストールします。 この場合は、adprep/forestprep がドメイン コント ローラーのインストールの一部として自動的に実行されます。  
   
 ドメイン コントローラーのインストール時に、adprep /forestprep を実行するための追加の資格情報の入力が必要になる場合があります。  
   
-3.  新しい Active Directory フォレストを作成するには、Windows Server 2012 R2 を実行しているサーバーに AD DS をインストールします。 この場合は、adprep/forestprep がスキーマは最初にすべての必要なコンテナーと DRS をサポートするためにオブジェクトを作成するために実行する必要はありません。  
+3. 新しい Active Directory フォレストを作成するには、Windows Server 2012 R2 を実行しているサーバーに AD DS をインストールします。 この場合は、adprep/forestprep がスキーマは最初にすべての必要なコンテナーと DRS をサポートするためにオブジェクトを作成するために実行する必要はありません。  
   
 ### <a name="sql-server-support-for-ad-fs-in-windows-server-2012-r2"></a>Windows Server 2012 R2 の AD FS のための SQL Server のサポート  
  AD FS ファームを作成し、SQL Server を使用して構成データを保存する場合は、SQL Server 2012 など、SQL Server 2008 以降のバージョンを使用できます。  

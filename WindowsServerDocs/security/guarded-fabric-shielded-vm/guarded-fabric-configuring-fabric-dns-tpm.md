@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 23fa783c1106e61dff5b38b92efea40d979b5980
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1ed7d362e9df253c1e8325a54b14190d689e38ee
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844663"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443710"
 ---
 >適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
@@ -21,8 +21,8 @@ ms.locfileid: "59844663"
 
 ## <a name="next-step"></a>次の手順
 
->[!div class="nextstepaction"]
-[HTTPS を構成します。](guarded-fabric-configure-hgs-https.md)
+> [!div class="nextstepaction"]
+> [HTTPS の構成](guarded-fabric-configure-hgs-https.md)
 
 ## <a name="see-also"></a>関連項目
 

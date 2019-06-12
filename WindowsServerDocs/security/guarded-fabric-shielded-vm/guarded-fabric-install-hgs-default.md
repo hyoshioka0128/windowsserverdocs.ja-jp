@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 7f04d9964f1a19e79335e50a1882f0326f15ddc1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 84f88d96f1e16767dec3b21b34aa226e544afaac
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860033"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447407"
 ---
 # <a name="install-hgs-in-a-new-forest"></a>新しいフォレストでの HGS をインストールします。 
 
@@ -36,7 +36,7 @@ HGS サーバーの役割を追加し、HGS をインストールする管理者
 
 ## <a name="next-step"></a>次の手順
 
->[!div class="nextstepaction"]
-[HGS を初期化します。](guarded-fabric-initialize-hgs.md)
+> [!div class="nextstepaction"]
+> [HGS の初期化](guarded-fabric-initialize-hgs.md)
 
 

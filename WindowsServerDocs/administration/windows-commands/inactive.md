@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6642288385571b00c3fd0094dcd6cc4237aa492e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9c8ded732d984830c7892720f75938979f1abb67
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812923"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438165"
 ---
 # <a name="inactive"></a>非アクティブ
 
@@ -36,8 +36,8 @@ inactive
 
 > [!CAUTION]
 > アクティブ パーティションがないコンピューターが起動しない可能性があります。 Windows ファミリのオペレーティング システムの理解と経験を積んだユーザーでない限り、非アクティブとしてシステムまたはブート パーティションを設定できません。</br>> CD-ROM ドライブに Windows セットアップ CD を挿入システムまたはブート パーティションを非アクティブとしてマークした後にコンピューターを起動されない場合、コンピューターを再起動しを使用して、パーティションを修復し、 **fixmbr**と**fixboot**回復コンソールのコマンド。
--   システム パーティションまたはブート パーティションを非アクティブとしてマークするには、CD-ROM ドライブまたは Pre-boot eXecution Environment (PXE) など、BIOS で指定された次のオプションからお使いのコンピューターが開始されます。
--   この操作を成功させるのには、アクティブなシステムまたはブート パーティションを選択してください。 使用して、**パーティションを選択**コマンドをアクティブなパーティションを選択し、それにフォーカスをします。
+> -   システム パーティションまたはブート パーティションを非アクティブとしてマークするには、CD-ROM ドライブまたは Pre-boot eXecution Environment (PXE) など、BIOS で指定された次のオプションからお使いのコンピューターが開始されます。
+> -   この操作を成功させるのには、アクティブなシステムまたはブート パーティションを選択してください。 使用して、**パーティションを選択**コマンドをアクティブなパーティションを選択し、それにフォーカスをします。
 
 ## <a name="BKMK_examples"></a>例
 
@@ -47,5 +47,5 @@ inactive
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
 

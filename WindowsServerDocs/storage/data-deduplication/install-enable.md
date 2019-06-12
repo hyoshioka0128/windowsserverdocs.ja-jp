@@ -9,12 +9,12 @@ manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
 description: Windows Server でのデータ重複除去のインストール方法、ワークロードがデータ重複除去に適切であるかどうかを判断する、ボリュームでデータ重複除去を有効にする
-ms.openlocfilehash: 153b064b158028c696bad4eeb00764d3e10822e1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e9ea3a144ae68ba9a51cdad66d493a7b962d3838
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814903"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447269"
 ---
 # <a name="install-and-enable-data-deduplication"></a>データ重複除去のインストールと有効化
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2016
@@ -29,9 +29,9 @@ ms.locfileid: "59814903"
 > [KB4025334](https://support.microsoft.com/kb/4025334) には、信頼性についての重要な修正データを含め、重複除去に関する修正のロールアップが含まれているため、Windows Server 2016 でデータ重複除去を使う場合はインストールすることを強くお勧めします。
 
 ### <a id="install-dedup-via-server-manager"></a>サーバー マネージャーを使用してデータ重複除去をインストールします。
-1. 役割と機能の追加ウィザードで **[サーバーの役割]** を選択し、**[データ重複除去]** をオンにします。  
+1. 役割と機能の追加ウィザードで **[サーバーの役割]** を選択し、 **[データ重複除去]** をオンにします。  
 ![サーバー マネージャーを使用してデータ重複除去のインストール: サーバーの役割からデータ重複除去を選択します。](media/install-dedup-via-server-manager-1.png)
-2. **[インストール]** がアクティブになるまで **[次へ]** をクリックし、**[インストール]** をクリックします。  
+2. **[インストール]** がアクティブになるまで **[次へ]** をクリックし、 **[インストール]** をクリックします。  
 ![サーバー マネージャーを使用してデータ重複除去のインストール: インストール をクリックして](media/install-dedup-via-server-manager-2.png)
 
 ### <a id="install-dedup-via-powershell"></a>PowerShell を使用してデータ重複除去をインストールします。
@@ -46,7 +46,7 @@ Nano Server のインストールにデータ重複除去をインストール�
     Install-WindowsFeature -ComputerName <MyNanoServer> -Name FS-Data-Deduplication
     ```  
     <br />
-    **--または--**
+    <strong>--または--</strong>
     <br />
     PowerShell のリモート処理を使用して Nano Server インスタンスにリモートで接続し、DISM を使用してデータ重複除去をインストールします。  
     
@@ -59,7 +59,7 @@ Nano Server のインストールにデータ重複除去をインストール�
 ### <a id="enable-dedup-candidate-workloads"></a>どのワークロードがデータ重複除去の候補であるかを確認します。
 データ重複除去を使用すると、重複データによって消費されるディスク領域を削減して、サーバー アプリケーションのデータ消費コストを効率よく最小限に抑えることができます。 重複除去を有効にする前に、記憶域のパフォーマンスを最大限に活かすことができるようにワークロードの特性を理解する必要があります。 考慮すべきの 2 つのクラスのワークロードがあります。
 
-* *"推奨ワークロード"*: 重複除去によって大きなメリットが得られるデータセットと、リソース消費パターンがデータ重複除去の処理後モデルに適合しているデータセットの両方が含まれることが実証されているワークロード。 次のワークロードに対しては、常に[データ重複除去を有効](install-enable.md#enable-dedup-lights-on)にすることをお勧めします。
+* *"推奨ワークロード"* : 重複除去によって大きなメリットが得られるデータセットと、リソース消費パターンがデータ重複除去の処理後モデルに適合しているデータセットの両方が含まれることが実証されているワークロード。 次のワークロードに対しては、常に[データ重複除去を有効](install-enable.md#enable-dedup-lights-on)にすることをお勧めします。
     * チーム共有、ユーザー ホーム フォルダー、ワーク フォルダー、ソフトウェア開発共有などの、共有のための汎用ファイル サーバー (GPFS)
     * 仮想デスクトップ インフラストラクチャ (VDI) サーバー
     * [Microsoft Data Protection Manager (DPM)](https://technet.microsoft.com/library/hh758173.aspx) などの仮想化バックアップ アプリケーション
@@ -118,9 +118,9 @@ Nano Server のインストールにデータ重複除去をインストール�
 ![ファイル サービスおよび記憶域サービスをクリックします。](media/enable-dedup-via-server-manager-1.PNG)
 2. **[ファイル サービスと記憶域サービス]** で **[ボリューム]** をクリックします。  
 ![ボリュームをクリックします。](media/enable-dedup-via-server-manager-2.png)
-3. 目的のボリュームを右クリックして、**[データ重複除去の構成]** を選択します。  
+3. 目的のボリュームを右クリックして、 **[データ重複除去の構成]** を選択します。  
 ![は、データ重複除去を構成します。](media/enable-dedup-via-server-manager-3.png)
-4. ドロップダウン ボックスから目的とする**使用法の種類**を選択して、**[OK]** を選択します。  
+4. ドロップダウン ボックスから目的とする**使用法の種類**を選択して、 **[OK]** を選択します。  
 ![下のドロップダウンから目的の使用法の種類の選択します。](media/enable-dedup-via-server-manager-4.png)
 5. 推奨ワークロードを実行している場合は、これで終了です。 他のワークロードの場合は、「[他の考慮事項](#enable-dedup-sometimes-considerations)」を参照してください。
 

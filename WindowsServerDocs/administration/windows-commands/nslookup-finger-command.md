@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a76ea6ede1237b05a7f7dd95fdb9f7c1560a922
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 13eb4e45b3fdc17fd48fa9793abaaf05925b56a2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858253"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436958"
 ---
 # <a name="nslookup-finger-command"></a>nslookup finger コマンド
 
@@ -34,12 +34,12 @@ finger [<UserName>] [{[>] <FileName>|[>>] <FileName>}]
 
 ## <a name="parameters"></a>パラメーター
 
-|パラメーター|説明|
-|---------|-----------|
-|\<ユーザー名 >|検索するユーザーの名前を指定します。|
-|\<FileName>|出力の保存先となるファイル名を指定します。 大なり (>) と二重を使用するより大きい (>>) 通常の方法で出力にリダイレクトする文字。|
-|{0} のヘルプ | ?}|簡単な概要を表示します。 **nslookup**サブコマンドします。|
+|  パラメーター  |                                                                               説明                                                                               |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| \<ユーザー名 > |                                                               検索するユーザーの名前を指定します。                                                                |
+| \<FileName> | 出力の保存先となるファイル名を指定します。 大なり (>) と二重を使用するより大きい (>>) 通常の方法で出力にリダイレクトする文字。 |
+|    {0} のヘルプ    |                                                                                   ?}                                                                                    |
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

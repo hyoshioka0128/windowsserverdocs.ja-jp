@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 23fa04b86d9c26fb30b74eebe8caef8498b90a12
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9580d725120bb32a9b915d37cdbc173bfb17b859
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879033"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438842"
 ---
 # <a name="ftp-append"></a>ftp: 追加
 
@@ -30,10 +30,12 @@ ms.locfileid: "59879033"
 append <LocalFile> [remoteFile]  
 ```  
 ### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
-|-------|--------|  
-|<LocalFile>|追加するローカル ファイルを指定します。|  
-|[remoteFile]|リモート コンピューターにファイルを指定します<LocalFile>が追加されます。|  
+
+|  パラメーター   |                               説明                                |
+|--------------|--------------------------------------------------------------------------|
+| <LocalFile>  |                     追加するローカル ファイルを指定します。                     |
+| [remoteFile] | リモート コンピューターにファイルを指定します<LocalFile>が追加されます。 |
+
 ## <a name="remarks"></a>注釈  
 場合*remoteFile*を省略すると、*ローカルファイル*名前は、リモート ファイル名の代わりに使用されます。  
 ## <a name="BKMK_Examples"></a>例  
@@ -46,4 +48,4 @@ append file1.txt file2.txt
 append file1.txt  
 ```  
 ## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  

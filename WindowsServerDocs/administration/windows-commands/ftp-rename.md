@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f99b3a43192a48e8adffaa60c25b46cfcaa8e3c2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 80d1a15f038017444c7654a44748bfd22be8e487
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861863"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438381"
 ---
 # <a name="ftp-rename"></a>ftp: 名前の変更
 
@@ -30,14 +30,16 @@ ms.locfileid: "59861863"
 rename <FileName> <NewFileName>  
 ```  
 ### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
-|-------|--------|  
-|<FileName>|名前を変更するファイルを指定します。|  
-|<NewFileName>|新しいファイル名を指定します。|  
+
+|   パラメーター   |                 説明                 |
+|---------------|---------------------------------------------|
+|  <FileName>   | 名前を変更するファイルを指定します。 |
+| <NewFileName> |        新しいファイル名を指定します。         |
+
 ## <a name="BKMK_Examples"></a>例  
 リモート ファイルの名前を変更**example.txt**に**example1.txt**  
 ```  
 rename example.txt example1.txt  
 ```  
 ## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  

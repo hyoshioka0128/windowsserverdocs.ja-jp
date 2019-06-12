@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2e3a3cf3baf2a3469560b90bed30c6813284a8bc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 65f7505dfcb3677fcaace9bd645cca7e7ba70b7d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866453"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438593"
 ---
 # <a name="ftp-prompt1"></a>ftp: prompt_1
 
@@ -32,12 +32,12 @@ prompt
 ### <a name="parameters"></a>パラメーター  
 なし  
 ## <a name="remarks"></a>注釈  
--   既定では、 **プロンプト** にします。  
--   **ftp**選択的に取得およびファイルを保存することができるように複数のファイル転送中にメッセージが表示されます。  **Mget** と **mput** 場合は、すべてのファイルを転送 **プロンプト** は無効になっています。  
-## <a name="BKMK_Examples"></a>例  
-オンとオフは、プロンプト モードを切り替えます。  
-```  
-prompt  
-```  
-## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+- 既定では、 **プロンプト** にします。  
+- **ftp**選択的に取得およびファイルを保存することができるように複数のファイル転送中にメッセージが表示されます。  **Mget** と **mput** 場合は、すべてのファイルを転送 **プロンプト** は無効になっています。  
+  ## <a name="BKMK_Examples"></a>例  
+  オンとオフは、プロンプト モードを切り替えます。  
+  ```  
+  prompt  
+  ```  
+  ## <a name="additional-references"></a>その他の参照  
+- [コマンド ライン構文の記号](command-line-syntax-key.md)  

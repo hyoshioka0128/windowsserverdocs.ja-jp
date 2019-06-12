@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: beb94475-b21f-46a9-ac51-bf2bb28ca94e
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 468854d6e03bbc2abee3b9fce7f7960c7c25cfd3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2a38e5682b03cdb37ff88332317122b6addd000c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879713"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446868"
 ---
 # <a name="monitor-connected-remote-clients-for-activity-and-status"></a>接続しているリモート クライアントの活動と状態を監視する
 
@@ -41,7 +41,7 @@ ms.locfileid: "59879713"
   
 4.  リモート アクセス サーバーに接続され、詳細なユーザーの一覧が表示されますに関する統計。 クライアントに対応するリストの最初の行をクリックします。 行を選択すると、リモート ユーザーの活動は、プレビュー ウィンドウに表示されます。  
   
-![Windows PowerShell](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![Windows PowerShell](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -51,7 +51,7 @@ PS> Get-RemoteAccessConnectionStatistics
   
 次の表にフィールドを使用して、条件の選択に基づいて、ユーザーの統計情報をフィルターできます。  
   
-|フィールド名|値|  
+|フィールド名|Value|  
 |-------|-----|  
 |Username|リモート ユーザーのユーザー名またはエイリアス。 Contoso のようなユーザーのグループを選択するワイルドカード文字を使用できる\\* または \*\administrator します。|  
 |hostname|リモート ユーザーのコンピューター アカウント名。 IPv4 または IPv6 アドレスも指定できます。|  

@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 1bb3e6695a7ec8fc7d950873403df023b4def3d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dca60fc0e216b1b873bd4f94dd1b01174d80fc14
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881613"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446442"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>アプリケーションの負荷分散に DNS ポリシーを使用する
 
@@ -79,7 +79,7 @@ DNS のポリシーでの負荷分散と考えられる問題の 1 つは、DNS 
 
 詳細については、次を参照してください [追加 DnsServerZoneScope。](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-####<a name="bkmk_records"></a>レコードをゾーンのスコープに追加します。
+#### <a name="bkmk_records"></a>レコードをゾーンのスコープに追加します。
 
 今すぐゾーン スコープに web サーバーのホストを表すレコードを追加する必要があります。
 
@@ -100,7 +100,7 @@ DNS のポリシーでの負荷分散と考えられる問題の 1 つは、DNS 
 
 詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
 
-####<a name="bkmk_policies"></a>DNS ポリシーを作成します。
+#### <a name="bkmk_policies"></a>DNS ポリシーを作成します。
 
 パーティション (ゾーン スコープ) を作成したレコードを追加した後は、50% の contosogiftservices.com に対するクエリの応答が IP アドレスを持つ、Web のように、これらのスコープ全体で着信クエリを分散する DNS ポリシーを作成する必要があります。シアトルのデータ センターおよびその他のサーバーは、シカゴとダラスのデータ センター間で均等に分散されます。
 

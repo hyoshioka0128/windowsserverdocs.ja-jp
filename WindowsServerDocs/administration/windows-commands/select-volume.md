@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b0ebf9896621268c384ea8129d32c985028054d9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 98f42324dbd4c6b3add3333cf4687d1613b1f700
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890733"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441425"
 ---
 # <a name="select-volume"></a>select volume
 
@@ -36,10 +36,10 @@ select volume={<n>|<d>}
   
 ## <a name="parameters"></a>パラメーター  
   
-|パラメーター|説明|  
-|-------|--------|  
-|<n>|フォーカスを受け取るボリュームの数。 使用して現在選択されているディスク上のすべてのボリュームの番号を表示する、 **ボリュームを一覧表示** diskpart コマンドです。|  
-|<d>|フォーカスを受け取るボリュームのドライブ文字またはマウント ポイントのパス。|  
+| パラメーター |                                                                               説明                                                                                |
+|-----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    <n>    | フォーカスを受け取るボリュームの数。 使用して現在選択されているディスク上のすべてのボリュームの番号を表示する、 **ボリュームを一覧表示** diskpart コマンドです。 |
+|    <d>    |                                                 フォーカスを受け取るボリュームのドライブ文字またはマウント ポイントのパス。                                                 |
   
 ## <a name="remarks"></a>注釈  
   
@@ -77,7 +77,7 @@ select volume
 ```  
   
 #### <a name="additional-references"></a>その他の参照  
-[コマンドライン構文キー](command-line-syntax-key.md)  
+[コマンド ライン構文の記号](command-line-syntax-key.md)  
   
 
   

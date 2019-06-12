@@ -13,12 +13,12 @@ author: gitmichiko
 ms.author: michikos
 manager: dongill
 ms.date: 03/06/2017
-ms.openlocfilehash: ec41e85949cb61c8130d8765b4786eefe39ebd0b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 475b6a0b24b811008ee213c1604d98d9aa9eb092
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855593"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447036"
 ---
 # <a name="whats-new-in-credential-protection"></a>新機能については資格情報の保護
 
@@ -49,7 +49,7 @@ Windows 10 バージョン 1511 以降資格情報マネージャーは、ドメ
 
 以降では、Windows 10 バージョン 1507、Windows Server 2016 ではドメインに参加しているデバイスが Windows Server 2016 ドメイン コント ローラー (DC) にバインドされている公開キーを登録できない場合、デバイスで認証できる Kerberos PKINIT を使用して、公開キーWindows Server 2016 の DC を認証します。
 
-Windows Server 2016 以降、Kdc はキー信頼の Kerberos を使用して認証をサポートします。  
+Windows Server 2016 以降、Kdc はキー信頼の Kerberos を使用して認証をサポートします。  
 
 [詳細については、Kerberos キー信頼 (&)、ドメイン参加済みデバイスのパブリック キーのサポートは](https://technet.microsoft.com/windows-server-docs/security/kerberos/whats-new-in-kerberos-authentication)します。
 
@@ -63,7 +63,7 @@ Windows Server 2016 以降、Kdc は PKInit 鮮度の拡張機能をサポート
 
 ### <a name="rolling-public-key-only-users-ntlm-secrets"></a>公開キーのみのユーザーの NTLM の機密情報のローリング
 
-公開キーのみユーザーの NTLM の機密情報のローリング以降 Windows Server 2016 ドメインの機能レベル (DFL) では、Dc をサポートできます。 この機能は、低い DFLs でなシャーシファンです。
+公開キーのみユーザーの NTLM の機密情報のローリング以降 Windows Server 2016 ドメインの機能レベル (DFL) では、Dc をサポートできます。 この機能は、低い DFLs でなシャーシファンです。
 
 > [!WARNING] 
 > NTLM の機密情報が、DC で更新されました、少なくとも 2016 年 11 月 8 日の実行にサービスを提供する前に有効になっている DC のクラッシュのリスクをローリングとドメインにドメイン コント ローラーを追加します。 
@@ -73,7 +73,7 @@ Windows Server 2016 以降、Kdc は PKInit 鮮度の拡張機能をサポート
 1. Active Directory 管理センターから、左側のウィンドウでドメインを右クリックして**プロパティ**します。
 
     ![ドメインのプロパティ](../media/Credentials-Protection-And-Management/domain-properties.png)
-    
+
 2. 選択**対話型ログオンに Microsoft Passport またはスマート カードを使用する必要のあるユーザーをサインアップ時に NTLM シークレットが期限切れ間近の導入にする**します。
 
     ![NTLM シークレットの有効期限が切れる Autoroll](../media/Credentials-Protection-And-Management/autoroll-ntlm.png)

@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 796825c3-5e3e-4745-a921-25ab90b95ede
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e8a9324e7c5b72f60422b1263e76c7d5e14cccf4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2d1661d43cd45614dfabc66fd9a737c55ab388ed
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880973"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446922"
 ---
 # <a name="step-13-test-directaccess-connectivity-from-behind-a-nat-device"></a>手順 13 NAT デバイスの背後から DirectAccess 接続のテスト
 
@@ -39,55 +39,55 @@ DirectAccess クライアントを NAT デバイスまたは Web プロキシ �
   
 ## <a name="TeredoCLIENT1"></a>Teredo 接続をテストします。  
   
-1.  CLIENT1 で管理者特権での Windows PowerShell ウィンドウを開きます。  
+1. CLIENT1 で管理者特権での Windows PowerShell ウィンドウを開きます。  
   
-2.  有効にする、Teredo アダプター型**netsh インターフェイス teredo 設定状態 enterpriseclient**、し、ENTER キーを押します。  
+2. 有効にする、Teredo アダプター型**netsh インターフェイス teredo 設定状態 enterpriseclient**、し、ENTER キーを押します。  
   
-3.  Windows PowerShell ウィンドウで、入力**ipconfig/all** ENTER キーを押します。  
+3. Windows PowerShell ウィンドウで、入力**ipconfig/all** ENTER キーを押します。  
   
-4.  ipconfig コマンドの出力を確認します。  
+4. ipconfig コマンドの出力を確認します。  
   
-    このコンピューターは、NAT デバイスの背後からインターネットに接続できるようになり、プライベート IPv4 アドレスが割り当てられます。 DirectAccess クライアントが NAT デバイスの背後にあり、プライベート IPv4 アドレスが割り当てられている場合、推奨される IPv6 移行テクノロジは Teredo です。 場合は、ipconfig コマンドの出力を見ると、する必要がありますトンネル アダプターの Teredo トンネリング擬似インターフェイスのセクションと説明を表示し、Microsoft Teredo Tunneling Adapter Teredo と一致 2001:0 で始まる IP アドレスを持つアドレス。 として Teredo のトンネル アダプターのデフォルト ゲートウェイを表示する必要があります ':: '。  
+   このコンピューターは、NAT デバイスの背後からインターネットに接続できるようになり、プライベート IPv4 アドレスが割り当てられます。 DirectAccess クライアントが NAT デバイスの背後にあり、プライベート IPv4 アドレスが割り当てられている場合、推奨される IPv6 移行テクノロジは Teredo です。 場合は、ipconfig コマンドの出力を見ると、する必要がありますトンネル アダプターの Teredo トンネリング擬似インターフェイスのセクションと説明を表示し、Microsoft Teredo Tunneling Adapter Teredo と一致 2001:0 で始まる IP アドレスを持つアドレス。 として Teredo のトンネル アダプターのデフォルト ゲートウェイを表示する必要があります ':: '。  
   
-5.  Windows PowerShell ウィンドウで、入力**ipconfig/flushdns** ENTER キーを押します。  
+5. Windows PowerShell ウィンドウで、入力**ipconfig/flushdns** ENTER キーを押します。  
   
-    その結果、クライアント コンピューターをインターネットに接続すると、まだクライアント DNS キャッシュに残っている名前解決エントリは消去されます。  
+   その結果、クライアント コンピューターをインターネットに接続すると、まだクライアント DNS キャッシュに残っている名前解決エントリは消去されます。  
   
-6.  Windows PowerShell ウィンドウで、入力**ping app1** ENTER キーを押します。 APP1 の IPv6 アドレス 2001:db8:1::3 から返信があります。  
+6. Windows PowerShell ウィンドウで、入力**ping app1** ENTER キーを押します。 APP1 の IPv6 アドレス 2001:db8:1::3 から返信があります。  
   
-7.  Windows PowerShell ウィンドウで、入力**ping app2** ENTER キーを押します。 ここでは、fd APP2 EDGE1 から割り当てられた NAT64 アドレスからの応答が表示**c9:9f4e:eb1b**: 7777::a00:4 します。 太字の値がアドレスを生成する方法のために異なることに注意してください。  
+7. Windows PowerShell ウィンドウで、入力**ping app2** ENTER キーを押します。 ここでは、fd APP2 EDGE1 から割り当てられた NAT64 アドレスからの応答が表示**c9:9f4e:eb1b**: 7777::a00:4 します。 太字の値がアドレスを生成する方法のために異なることに注意してください。  
   
-8.  Windows PowerShell ウィンドウで、入力**ping 2 app1** ENTER キーを押します。 2 APP1 2001:db8:2::3 の IPv6 アドレスからの応答が表示されます。  
+8. Windows PowerShell ウィンドウで、入力**ping 2 app1** ENTER キーを押します。 2 APP1 2001:db8:2::3 の IPv6 アドレスからの応答が表示されます。  
   
-9. Internet Explorer のアドレス バーに Internet Explorer を開き、入力**https://2-app1/** ENTER キーを押します。 2 APP1 で、既定の IIS web サイトが表示されます。  
+9. Internet Explorer のアドレス バーに Internet Explorer を開き、入力 **https://2-app1/** ENTER キーを押します。 2 APP1 で、既定の IIS web サイトが表示されます。  
   
 10. Internet Explorer のアドレス バーに次のように入力します。 **https://app2/** ENTER キーを押します。 APP2 の既定の Web サイトが表示されます。  
   
-11. **開始**画面で「**\\\App2\Files**し、ENTER キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。 これは、SMB を使用して IPv4 のみのサーバーに接続し、IPv4 のみのホストのリソースを取得できたことを示します。  
+11. **開始**画面で「<strong>\\\App2\Files</strong>し、ENTER キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。 これは、SMB を使用して IPv4 のみのサーバーに接続し、IPv4 のみのホストのリソースを取得できたことを示します。  
   
 12. CLIENT2 で、この手順を繰り返します。  
   
 ## <a name="IPHTTPS_CLIENT1"></a>IP-HTTPS 接続をテストします。  
   
-1.  CLIENT1 で開き、管理者特権で Windows PowerShell ウィンドウ、および種類**netsh インターフェイス teredo が無効になっている状態を設定**ENTER キーを押します。 その結果、クライアント コンピューターで Teredo が無効になり、クライアント コンピューターが IP-HTTPS を使用するように構成できます。 コマンドの完了時に、**OK** 応答が表示されます。  
+1. CLIENT1 で開き、管理者特権で Windows PowerShell ウィンドウ、および種類**netsh インターフェイス teredo が無効になっている状態を設定**ENTER キーを押します。 その結果、クライアント コンピューターで Teredo が無効になり、クライアント コンピューターが IP-HTTPS を使用するように構成できます。 コマンドの完了時に、**OK** 応答が表示されます。  
   
-2.  Windows PowerShell ウィンドウで、入力**ipconfig/all** ENTER キーを押します。  
+2. Windows PowerShell ウィンドウで、入力**ipconfig/all** ENTER キーを押します。  
   
-3.  ipconfig コマンドの出力を確認します。 このコンピューターは、NAT デバイスの背後からインターネットに接続できるようになり、プライベート IPv4 アドレスが割り当てられます。 Teredo は無効になり、DirectAccess クライアントは IP-HTTPS にフォールバックします。 Ipconfig コマンドの出力を確認するときと 2001:db8:1:1000 または 2001:db8:2:2000 としたプレフィックスに基づく IP-HTTPS アドレスで始まる IP アドレスのトンネル アダプター iphttpsinterface のセクションを参照してください。DirectAccess をセットアップするときに構成されています。 いない IPHTTPSInterface のトンネル アダプターのデフォルト ゲートウェイが表示されます。  
+3. ipconfig コマンドの出力を確認します。 このコンピューターは、NAT デバイスの背後からインターネットに接続できるようになり、プライベート IPv4 アドレスが割り当てられます。 Teredo は無効になり、DirectAccess クライアントは IP-HTTPS にフォールバックします。 Ipconfig コマンドの出力を確認するときと 2001:db8:1:1000 または 2001:db8:2:2000 としたプレフィックスに基づく IP-HTTPS アドレスで始まる IP アドレスのトンネル アダプター iphttpsinterface のセクションを参照してください。DirectAccess をセットアップするときに構成されています。 いない IPHTTPSInterface のトンネル アダプターのデフォルト ゲートウェイが表示されます。  
   
-4.  Windows PowerShell ウィンドウで、入力**ipconfig/flushdns** ENTER キーを押します。 その結果、クライアント コンピューターを社内ネットワークに接続すると、まだクライアント DNS キャッシュに残っている名前解決エントリは消去されます。  
+4. Windows PowerShell ウィンドウで、入力**ipconfig/flushdns** ENTER キーを押します。 その結果、クライアント コンピューターを社内ネットワークに接続すると、まだクライアント DNS キャッシュに残っている名前解決エントリは消去されます。  
   
-5.  Windows PowerShell ウィンドウで、入力**ping app1** ENTER キーを押します。 APP1 の IPv6 アドレス 2001:db8:1::3 から返信があります。  
+5. Windows PowerShell ウィンドウで、入力**ping app1** ENTER キーを押します。 APP1 の IPv6 アドレス 2001:db8:1::3 から返信があります。  
   
-6.  Windows PowerShell ウィンドウで、入力**ping app2** ENTER キーを押します。 ここでは、fd APP2 EDGE1 から割り当てられた NAT64 アドレスからの応答が表示**c9:9f4e:eb1b**: 7777::a00:4 します。 太字の値がアドレスを生成する方法のために異なることに注意してください。  
+6. Windows PowerShell ウィンドウで、入力**ping app2** ENTER キーを押します。 ここでは、fd APP2 EDGE1 から割り当てられた NAT64 アドレスからの応答が表示**c9:9f4e:eb1b**: 7777::a00:4 します。 太字の値がアドレスを生成する方法のために異なることに注意してください。  
   
-7.  Windows PowerShell ウィンドウで、入力**ping 2 app1** ENTER キーを押します。 2 APP1 2001:db8:2::3 の IPv6 アドレスからの応答が表示されます。  
+7. Windows PowerShell ウィンドウで、入力**ping 2 app1** ENTER キーを押します。 2 APP1 2001:db8:2::3 の IPv6 アドレスからの応答が表示されます。  
   
-8.  Internet Explorer のアドレス バーに Internet Explorer を開き、入力**https://2-app1/** ENTER キーを押します。 2 APP1 で、既定の IIS web サイトが表示されます。  
+8. Internet Explorer のアドレス バーに Internet Explorer を開き、入力 **https://2-app1/** ENTER キーを押します。 2 APP1 で、既定の IIS web サイトが表示されます。  
   
 9. Internet Explorer のアドレス バーに次のように入力します。 **https://app2/** ENTER キーを押します。 APP2 の既定の Web サイトが表示されます。  
   
-10. **開始**画面で「**\\\App2\Files**し、ENTER キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。 これは、SMB を使用して IPv4 のみのサーバーに接続し、IPv4 のみのホストのリソースを取得できたことを示します。  
+10. **開始**画面で「<strong>\\\App2\Files</strong>し、ENTER キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。 これは、SMB を使用して IPv4 のみのサーバーに接続し、IPv4 のみのホストのリソースを取得できたことを示します。  
   
 11. CLIENT2 で、この手順を繰り返します。  
   

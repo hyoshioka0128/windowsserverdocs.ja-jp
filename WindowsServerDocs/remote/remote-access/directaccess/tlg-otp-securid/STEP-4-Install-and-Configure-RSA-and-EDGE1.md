@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: d46ede6f-1a21-414d-b8c3-6b5c87344b9d
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5bb28ff6131c371e4b2f668fd20ec0a6133a0099
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: db0318f1306102bf19c82012f57e78ce2852d288
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860003"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446614"
 ---
 # <a name="step-4-install-and-configure-rsa-and-edge1"></a>手順 4 のインストールと RSA と EDGE1 構成
 
@@ -66,11 +66,11 @@ RSA 展開を構成する次の手順が実行されます。
   
 2.  **ネットワーク接続**を右クリックして**ローカル エリア接続**、 をクリックし、**プロパティ**します。  
   
-3.  **[インターネット プロトコル バージョン 4 (TCP/IPv4)]** をクリックし、**[プロパティ]** をクリックします。  
+3.  **[インターネット プロトコル バージョン 4 (TCP/IPv4)]** をクリックし、 **[プロパティ]** をクリックします。  
   
 4.  **[次の IP アドレスを使う]** をクリックします。 **[IP アドレス]** に、「 **10.0.0.5**」と入力します。 **[サブネット マスク]** に、「 **255.255.255.0**」と入力します。 **デフォルト ゲートウェイ**、型**10.0.0.2**します。 をクリックして**次の DNS サーバーのアドレスを使用して、** の**優先 DNS サーバー**、型**10.0.0.1**します。  
   
-5.  **[詳細設定]**、**[DNS]** タブの順にクリックします。  
+5.  **[詳細設定]** 、 **[DNS]** タブの順にクリックします。  
   
 6.  **この接続の DNS サフィックス**、型**corp.contoso.com**、順にクリックします**OK** 2 回です。  
   
@@ -100,7 +100,7 @@ RSA 展開を構成する次の手順が実行されます。
   
 5.  ドメイン参加 ダイアログ ボックスで次のようにクリックします。 **OK**します。  
   
-6.  コンピューターを再起動するよう求めるメッセージが表示されたら、**[OK]** をクリックします。  
+6.  コンピューターを再起動するよう求めるメッセージが表示されたら、 **[OK]** をクリックします。  
   
 7.  **[システムのプロパティ]** ダイアログ ボックスで、 **[閉じる]** をクリックします。  
   
@@ -279,7 +279,7 @@ CLIENT1 に SecurID ソフトウェア トークンをインストールする�
   
 5.  **セットアップの種類**ダイアログの **標準**、 をクリックして**次**、 をクリック**インストール**します。  
   
-6.  **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、**[はい]** をクリックします。  
+6.  **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
   
 7.  選択、**起動 RSA SecurID ソフトウェア トークン**チェック ボックスをオンにして**完了**します。  
   
@@ -294,23 +294,23 @@ RSA 認証を実行するのに EDGE1 を構成するのにには、この手順
   
 #### <a name="configure-the-rsa-authentication-agent"></a>RSA 認証エージェントを構成します。  
   
-1.  EDGE1 上、Windows エクスプ ローラーを開き C:\RSA ファイル フォルダーを作成します。 RSA ACE のインストール メディアに移動します。  
+1. EDGE1 上、Windows エクスプ ローラーを開き C:\RSA ファイル フォルダーを作成します。 RSA ACE のインストール メディアに移動します。  
   
-2.  コピー ファイル agent_nsload.exe、AM_Config.zip と C:\RSA ファイルに RSA メディアから EDGE1_NodeSecret.zip です。  
+2. コピー ファイル agent_nsload.exe、AM_Config.zip と C:\RSA ファイルに RSA メディアから EDGE1_NodeSecret.zip です。  
   
-3.  次の場所に両方の zip ファイルの内容を抽出します。  
+3. 次の場所に両方の zip ファイルの内容を抽出します。  
   
-    1.  C:\Windows\system32\  
+   1.  C:\Windows\system32\  
   
-    2.  C:\Windows\SysWOW64\  
+   2.  C:\Windows\SysWOW64\  
   
-4.  C:\Windows\SysWOW64 に agent_nsload.exe をコピー\\します。  
+4. C:\Windows\SysWOW64 に agent_nsload.exe をコピー\\します。  
   
-5.  管理者特権のコマンド プロンプトを開き、C:\Windows\SysWOW64 に移動します。  
+5. 管理者特権のコマンド プロンプトを開き、C:\Windows\SysWOW64 に移動します。  
   
-6.  型**agent_nsload.exe-f nodesecret.rec-p <password>** 場所<password>RSA の初期構成中に作成した強力なパスワードです。 Enter キーを押します。  
+6. 型**agent_nsload.exe-f nodesecret.rec-p <password>** 場所<password>RSA の初期構成中に作成した強力なパスワードです。 Enter キーを押します。  
   
-7.  Copy C:\Windows\SysWOW64\securid to C:\Windows\System32.  
+7. Copy C:\Windows\SysWOW64\securid to C:\Windows\System32.  
   
 ## <a name="configOTP"></a>EDGE1 OTP 認証をサポートするように構成します。  
 この手順を使用して、DirectAccess の OTP を構成して、構成を確認します。  
@@ -342,7 +342,7 @@ RSA 認証を実行するのに EDGE1 を構成するのにには、この手順
   
 11. **リモート アクセスの確認** ダイアログ ボックスをクリックして**適用**DirectAccess ポリシーを更新するには、待機し、クリックして**閉じる**します。  
   
-12. **開始**画面で「**powershell.exe**、を右クリックして**powershell** をクリック**詳細**、 をクリック**として実行管理者**します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、**[はい]** をクリックします。  
+12. **開始**画面で「**powershell.exe**、を右クリックして**powershell** をクリック**詳細**、 をクリック**として実行管理者**します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
   
 13. Windows PowerShell ウィンドウで、入力**gpupdate/force** ENTER キーを押します。  
   

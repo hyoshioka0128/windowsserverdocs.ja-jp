@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc2952bdbf709c31d720a7fb57430429edf9feb1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 47a26be99a5eee510970d3eee6b486331a98b159
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871913"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436898"
 ---
 # <a name="nslookup-root"></a>nslookup root
 
@@ -30,11 +30,13 @@ ms.locfileid: "59871913"
 root 
 ```
 ## <a name="parameters"></a>パラメーター
-|パラメーター|説明|
-|-------|--------|
-|{help &#124; ?}|簡単な概要を表示します。 **nslookup**サブコマンドします。|
+
+|    パラメーター    |                      説明                      |
+|-----------------|-------------------------------------------------------|
+| {help &#124; ?} | 簡単な概要を表示します。 **nslookup**サブコマンドします。 |
+
 ## <a name="remarks"></a>注釈
--   現時点では、ns.nic.ddn.mil ネーム サーバーが使用されます。 このコマンドは、lserver ns.nic.ddn.mil のシノニムです。 使用して、ルート サーバーの名前を変更することができます、**セット ルート**コマンド。
-## <a name="additional-references"></a>その他の参照
-[コマンドライン構文のポイント](command-line-syntax-key.md)
-[nslookup ルートの設定](nslookup-set-root.md)
+- 現時点では、ns.nic.ddn.mil ネーム サーバーが使用されます。 このコマンドは、lserver ns.nic.ddn.mil のシノニムです。 使用して、ルート サーバーの名前を変更することができます、**セット ルート**コマンド。
+  ## <a name="additional-references"></a>その他の参照
+  [コマンドライン構文のポイント](command-line-syntax-key.md)
+  [nslookup ルートの設定](nslookup-set-root.md)

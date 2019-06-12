@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 03c765b276a2e61247661e132dd49434b444530c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a5619396e29b446dbc6804ece7444f355dae4c0a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817283"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436302"
 ---
 # <a name="powershellise"></a>PowerShell_ise
 
@@ -33,27 +33,27 @@ Windows PowerShell Integrated Scripting Environment (ISE) は、読み取り、�
 ## <a name="using-powershelliseexe"></a>PowerShell_ISE.exe を使用します。
 
 使用する **PowerShell_ISE.exe** を開始し、次のように Windows PowerShell セッションを終了します。
--   Windows PowerShell、または [スタート] メニューでは、コマンド プロンプト ウィンドウで、Windows PowerShell ISE のセッションを開始するには、次のように入力します。  
-    ```
-    PowerShell_Ise
-    ```  
--   Windows PowerShell ISE でスクリプト (.ps1)、スクリプト モジュール (.psm1)、モジュール マニフェスト (.psd1)、XML ファイル、またはその他のサポートされているファイルを開くには、次のコマンド形式を使用します。  
-    ```
-    PowerShell_Ise <FilePath>
-    ```  
-    Windows PowerShell 3.0 で使用できます、省略可能な **ファイル** パラメーターとして次のとおりです。  
-    ```
-    PowerShell_Ise -File <FilePath>
-    ```  
--   Windows PowerShell プロファイルいない Windows PowerShell ISE のセッションを開始するには、使用、 **NoProfile** パラメーター。 (、 **NoProfile** パラメーターは Windows PowerShell 3.0 で導入されました)。  
-    ```
-    PowerShell_Ise -NoProfile
-    ```  
--   表示する、 **PowerShell_ISE.exe** の支援のファイルは、コマンド プロンプト ウィンドウで、次のコマンド形式を使用します。  
-    ```
-    PowerShell_Ise -help, -?, /?
-    ```  
-完全な一覧については、 **PowerShell_ISE.exe** コマンド ライン パラメーターを参照して [about_PowerShell_Ise.exe](https://go.microsoft.com/fwlink/?LinkId=256512)します。
+- Windows PowerShell、または [スタート] メニューでは、コマンド プロンプト ウィンドウで、Windows PowerShell ISE のセッションを開始するには、次のように入力します。  
+  ```
+  PowerShell_Ise
+  ```  
+- Windows PowerShell ISE でスクリプト (.ps1)、スクリプト モジュール (.psm1)、モジュール マニフェスト (.psd1)、XML ファイル、またはその他のサポートされているファイルを開くには、次のコマンド形式を使用します。  
+  ```
+  PowerShell_Ise <FilePath>
+  ```  
+  Windows PowerShell 3.0 で使用できます、省略可能な **ファイル** パラメーターとして次のとおりです。  
+  ```
+  PowerShell_Ise -File <FilePath>
+  ```  
+- Windows PowerShell プロファイルいない Windows PowerShell ISE のセッションを開始するには、使用、 **NoProfile** パラメーター。 (、 **NoProfile** パラメーターは Windows PowerShell 3.0 で導入されました)。  
+  ```
+  PowerShell_Ise -NoProfile
+  ```  
+- 表示する、 **PowerShell_ISE.exe** の支援のファイルは、コマンド プロンプト ウィンドウで、次のコマンド形式を使用します。  
+  ```
+  PowerShell_Ise -help, -?, /?
+  ```  
+  完全な一覧については、 **PowerShell_ISE.exe** コマンド ライン パラメーターを参照して [about_PowerShell_Ise.exe](https://go.microsoft.com/fwlink/?LinkId=256512)します。
 
 ## <a name="start-windows-powershell-ise-in-other-ways"></a>その他の方法で Windows PowerShell ISE を開始します。
 

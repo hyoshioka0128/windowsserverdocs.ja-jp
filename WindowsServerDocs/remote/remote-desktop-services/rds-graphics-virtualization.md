@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: d6ff5b22-7695-4fee-b1bd-6c9dce5bd0e8
 author: lizap
 manager: scottman
-ms.openlocfilehash: 7cf7fdf3510fcaaa955bd0031fb3564fe4372472
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: af5d5ce89561c89d8468627e20dfdb6f35eca5ef
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875803"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447111"
 ---
 # <a name="which-graphics-virtualization-technology-is-right-for-you"></a>グラフィックスの仮想化テクノロジは、適切なでしょうか。
 
@@ -43,12 +43,12 @@ DDA に関する詳細については、チェック アウト[の個別のデ�
 ## <a name="remotefx-vgpu"></a>RemoteFX vGPU 
 RemoteFX vGPU は、ナレッジ ワーカーのシナリオ (上記の最初の図を参照してください) を有効にする、さまざまなゲスト オペレーティング システムに分割される GPU の処理能力を許可するグラフィックスの仮想化テクノロジです。 Windows Server 2016 の進歩は、GPU バーストのシナリオでのアプリケーションとデータ視覚化のデザイナーなどのさらなる機能強化を使用できます。 その他の機能強化は次のとおりです。
 
--   第 2 世代ゲスト Vm、Windows Server 2016 ゲスト Vm、および Windows クライアント、HYPER-V ホストをサポートします。
-   >[!NOTE] 
-   > Windows Server 2016 ゲスト VM にリモート デスクトップ セッション ホストがサポートされていませんWindows Server 2016 ゲスト VM あたり 1 つだけセッションをホストできます。
+- 第 2 世代ゲスト Vm、Windows Server 2016 ゲスト Vm、および Windows クライアント、HYPER-V ホストをサポートします。
+  >[!NOTE] 
+  > Windows Server 2016 ゲスト VM にリモート デスクトップ セッション ホストがサポートされていませんWindows Server 2016 ゲスト VM あたり 1 つだけセッションをホストできます。
 
--   強化されたアプリケーションの互換性と安定性。
--   VM 接続拡張セッション モード、RemoteFX vGPU を有効になっている VM に接続する VM で USB とクリップボードのリダイレクトを許可します。
+- 強化されたアプリケーションの互換性と安定性。
+- VM 接続拡張セッション モード、RemoteFX vGPU を有効になっている VM に接続する VM で USB とクリップボードのリダイレクトを許可します。
 
 詳細については、チェック アウト[設定 for Remote Desktop Services の RemoteFX vGPU の構成のセットアップと](rds-remotefx-vgpu.md)します。
 

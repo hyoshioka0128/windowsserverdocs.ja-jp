@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65804f99095d0c0a56537b1d155ac26e768f61a7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 583f56c294e66542a75efca09e97d57ae54a8cea
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827663"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436427"
 ---
 # <a name="ntcmdprompt"></a>ntcmdprompt
 
@@ -30,13 +30,15 @@ ms.locfileid: "59827663"
 ntcmdprompt
 ```
 ### <a name="parameters"></a>パラメーター
-|パラメーター|説明|
-|-------|--------|
-|/?|コマンド プロンプトにヘルプを表示します。|
+
+| パラメーター |             説明              |
+|-----------|--------------------------------------|
+|    /?     | コマンド プロンプトにヘルプを表示します。 |
+
 ## <a name="remarks"></a>注釈
--   ときに**Command.com**実行している、一部の機能の**Cmd.exe**など、 **doskey**コマンド履歴の表示、利用できません。 実行する場合、 **Cmd.exe** MS-DOS に基づいてアプリケーション内からコマンド プロンプトを開始または終了と TSR) を開始した後は、コマンド インタープリターを使用できます、 **ntcmdprompt**コマンド。 ただし、留意する TSR できない可能性があります使用可能な実行しているときに**Cmd.exe**します。 含めることができます、 **ntcmdprompt**コマンド、 **Config.nt**ファイルまたはアプリケーションのプログラム情報ファイル (Pif) で同等のカスタム スタートアップ ファイルです。
-## <a name="examples"></a>例
-含める**ntcmdprompt**で、 **Config.nt**ファイル、または Pif、型で指定された構成のスタートアップ ファイル: **ntcmdprompt**
-## <a name="additional-references"></a>その他の参照
--   [コマンドライン構文キー](command-line-syntax-key.md)
+- ときに**Command.com**実行している、一部の機能の**Cmd.exe**など、 **doskey**コマンド履歴の表示、利用できません。 実行する場合、 **Cmd.exe** MS-DOS に基づいてアプリケーション内からコマンド プロンプトを開始または終了と TSR) を開始した後は、コマンド インタープリターを使用できます、 **ntcmdprompt**コマンド。 ただし、留意する TSR できない可能性があります使用可能な実行しているときに**Cmd.exe**します。 含めることができます、 **ntcmdprompt**コマンド、 **Config.nt**ファイルまたはアプリケーションのプログラム情報ファイル (Pif) で同等のカスタム スタートアップ ファイルです。
+  ## <a name="examples"></a>例
+  含める**ntcmdprompt**で、 **Config.nt**ファイル、または Pif、型で指定された構成のスタートアップ ファイル: **ntcmdprompt**
+  ## <a name="additional-references"></a>その他の参照
+- [コマンド ライン構文の記号](command-line-syntax-key.md)
 

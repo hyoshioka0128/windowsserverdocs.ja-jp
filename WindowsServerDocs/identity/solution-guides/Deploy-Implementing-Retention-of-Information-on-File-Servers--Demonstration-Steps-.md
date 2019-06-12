@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: e0f79dd72190888340144bc5c109ee31fa301937
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0acfa6eec1d83c246c43ad32f7548ea771eb3c11
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870803"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445761"
 ---
 # <a name="deploy-implementing-retention-of-information-on-file-servers-demonstration-steps"></a>Deploy Implementing Retention of Information on File Servers (Demonstration Steps)
 
@@ -49,15 +49,15 @@ ms.locfileid: "59870803"
   
 1.  ドメイン コントローラーで、Domain Admins セキュリティ グループのメンバーとしてサーバーにサインインします。  
   
-2.  Active Directory 管理センターを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、**[Active Directory 管理センター]** をクリックします。  
+2.  Active Directory 管理センターを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、 **[Active Directory 管理センター]** をクリックします。  
   
-3.  **[ダイナミック アクセス制御]** を展開してから、**[リソース プロパティ]** をクリックします。  
+3.  **[ダイナミック アクセス制御]** を展開してから、 **[リソース プロパティ]** をクリックします。  
   
-4.  **[保有期間]** を右クリックし、**[有効にする]** をクリックします。  
+4.  **[保有期間]** を右クリックし、 **[有効にする]** をクリックします。  
   
-5.  **[発見可能]** を右クリックし、**[有効にする]** をクリックします。  
+5.  **[発見可能]** を右クリックし、 **[有効にする]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![ソリューション ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -77,9 +77,9 @@ Set-ADResourceProperty -Enabled:$true -Identity:'CN=Discoverability_MS,CN=Resour
   
 2.  Windows PowerShell コマンド プロンプトで「 **Update-FsrmClassificationPropertyDefinition**」と入力してから、Enter キーを押します。 これにより、ドメイン コントローラーで作成されたプロパティ定義がファイル サーバーに同期されます。  
   
-3.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、**[ファイル サーバー リソース マネージャー]** をクリックします。  
+3.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、 **[ファイル サーバー リソース マネージャー]** をクリックします。  
   
-4.  **[ファイル サーバー リソース マネージャー (ローカル)]** をクリックしてから、**[オプションの構成]** をクリックします。  
+4.  **[ファイル サーバー リソース マネージャー (ローカル)]** をクリックしてから、 **[オプションの構成]** をクリックします。  
   
 5.  **[電子メールの通知]** タブで次のように構成します。  
   
@@ -91,7 +91,7 @@ Set-ADResourceProperty -Enabled:$true -Identity:'CN=Discoverability_MS,CN=Resour
   
 6.  **[OK]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![ソリューション ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -114,7 +114,7 @@ Set-FsrmSetting -SmtpServer IP address of SMTP server -FromEmailAddress "FromEma
   
 1.  Administrators セキュリティ グループのメンバーとしてファイル サーバーにサインインします。  
   
-2.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、**[ファイル サーバー リソース マネージャー]** をクリックします。  
+2.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、 **[ファイル サーバー リソース マネージャー]** をクリックします。  
   
 3.  **[ファイル管理タスク]** を右クリックし、 **[ファイル管理タスクの作成]** をクリックします。  
   
@@ -128,7 +128,7 @@ Set-FsrmSetting -SmtpServer IP address of SMTP server -FromEmailAddress "FromEma
   
     -   **[次の管理者に電子メールを送信する]** チェック ボックスを選択します。  
   
-    -   **[影響のあるファイルを使用するユーザーに電子メールを送信する]** チェック ボックスを選択してから、**[OK]** をクリックします。  
+    -   **[影響のあるファイルを使用するユーザーに電子メールを送信する]** チェック ボックスを選択してから、 **[OK]** をクリックします。  
   
 8.  **[条件]** タブで **[追加]** をクリックし、次のプロパティを追加します。  
   
@@ -138,11 +138,11 @@ Set-FsrmSetting -SmtpServer IP address of SMTP server -FromEmailAddress "FromEma
   
 9. **[条件]** タブで **[ファイルの最終変更からの日数]** チェック ボックスを選択してから、値を **3650** に設定します。  
   
-10. **[スケジュール]** タブで **[毎月]** オプションをクリックしてから、**[最終]** チェック ボックスを選択します。  
+10. **[スケジュール]** タブで **[毎月]** オプションをクリックしてから、 **[最終]** チェック ボックスを選択します。  
   
 11. **[OK]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![ソリューション ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -169,26 +169,26 @@ $fmj1=New-FSRMFileManagementJob -Name "Retention Task" -Namespace @('D:\Finance 
   
 3.  フォルダーを右クリックし、 **[プロパティ]** をクリックします。  
   
-4.  **[分類]** タブで **[保有期間]** をクリックし、**[長期]** をクリックしてから、**[OK]** をクリックします。  
+4.  **[分類]** タブで **[保有期間]** をクリックし、 **[長期]** をクリックしてから、 **[OK]** をクリックします。  
   
-5.  そのフォルダー内のファイルを右クリックしてから、**[プロパティ]** をクリックします。  
+5.  そのフォルダー内のファイルを右クリックしてから、 **[プロパティ]** をクリックします。  
   
-6.  **[分類]** タブで **[発見可能]** をクリックし、**[保留]** をクリックし、**[適用]** をクリックしてから、**[OK]** をクリックします。  
+6.  **[分類]** タブで **[発見可能]** をクリックし、 **[保留]** をクリックし、 **[適用]** をクリックしてから、 **[OK]** をクリックします。  
   
 7.  ファイル サーバーで、ファイル サーバー リソース マネージャーのコンソールを使用してファイル管理タスクを実行します。 ファイル管理タスクが完了した後に、フォルダーを検査し、ファイルが有効期限切れディレクトリに移動されていないことを確認します。  
   
-8.  そのフォルダー内の同じファイルを右クリックしてから、**[プロパティ]** をクリックします。  
+8.  そのフォルダー内の同じファイルを右クリックしてから、 **[プロパティ]** をクリックします。  
   
-9. **[分類]** タブで **[発見可能]** をクリックし、**[該当なし]** をクリックし、**[適用]** をクリックしてから、**[OK]** をクリックします。  
+9. **[分類]** タブで **[発見可能]** をクリックし、 **[該当なし]** をクリックし、 **[適用]** をクリックしてから、 **[OK]** をクリックします。  
   
 10. ファイル サーバーで、ファイル サーバー リソース マネージャーのコンソールを使用してファイル管理タスクを再度実行します。 ファイル管理タスクが完了した後に、フォルダーを検査し、ファイルが有効期限切れディレクトリに移動されたことを確認します。  
   
 ## <a name="BKMK_Links"></a>参照してください。  
   
--   [シナリオ:ファイル サーバー上の情報の保持を実装します。](Scenario--Implement-Retention-of-Information-on-File-Servers.md)  
+-   [シナリオ: ファイル サーバーでの情報の保持の実装](Scenario--Implement-Retention-of-Information-on-File-Servers.md)  
   
 -   [ファイル サーバー上の情報の保有期間を計画します。](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)  
   
--   [ダイナミック アクセス制御:シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

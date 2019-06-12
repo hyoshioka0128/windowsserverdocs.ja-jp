@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a68c59eb3a7018ba8a7c0c96b594f0ed68d914b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5334ff8a1c5d15343b4a48814b52012c641016a4
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841603"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434690"
 ---
 # <a name="bootcfg-raw"></a>bootcfg raw
 
@@ -31,25 +31,27 @@ ms.locfileid: "59841603"
 bootcfg /raw [/s <computer> [/u <Domain>\<User> /p <Password>]] <OSLoadOptionsString> [/id <OSEntryLineNum>] [/a]
 ```
 ## <a name="parameters"></a>パラメーター
-|用語|定義|
-|----|-------|
-|/s <computer>|名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定はローカル コンピュータです。|
-|/u <Domain> \\<User>|指定されたユーザーのアカウント権限でコマンドを実行<User>または<Domain> \\<User>します。 既定では現在のコマンドを実行するコンピューターのユーザー ログオンのアクセス許可です。|
-|/p <Password>|指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。|
-|<OSLoadOptionsString>|オペレーティング システム エントリに追加するオペレーティング システムの読み込みオプションを指定します。 これらのロード オプション、オペレーティング システム エントリに関連付けられている既存のロード オプションに置き換えられます。 検証なし<OSLoadOptions>は行われます。|
-|/id <OSEntryLineNum>|更新する Boot.ini ファイルの [operating systems] セクションでは、オペレーティング システム エントリの行番号を指定します。 [オペレーティング システム] セクション ヘッダーの後の最初の行には 1 です。|
-|/a|オペレーティング システムのオプションが追加されているが、既存のオペレーティング システムのオプションを追加することを指定します。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+
+|         項目          |                                                                                                            定義                                                                                                             |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     /s <computer>     |                                                        名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定はローカル コンピュータです。                                                         |
+| /u <Domain> \\<User>  |               指定されたユーザーのアカウント権限でコマンドを実行<User>または<Domain> \\<User>します。 既定では現在のコマンドを実行するコンピューターのユーザー ログオンのアクセス許可です。                |
+|     /p <Password>     |                                                                       指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。                                                                       |
+| <OSLoadOptionsString> | オペレーティング システム エントリに追加するオペレーティング システムの読み込みオプションを指定します。 これらのロード オプション、オペレーティング システム エントリに関連付けられている既存のロード オプションに置き換えられます。 検証なし<OSLoadOptions>は行われます。 |
+| /id <OSEntryLineNum>  |                       更新する Boot.ini ファイルの [operating systems] セクションでは、オペレーティング システム エントリの行番号を指定します。 [オペレーティング システム] セクション ヘッダーの後の最初の行には 1 です。                       |
+|          /a           |                                                       オペレーティング システムのオプションが追加されているが、既存のオペレーティング システムのオプションを追加することを指定します。                                                        |
+|          /?           |                                                                                               コマンド プロンプトにヘルプを表示します。                                                                                                |
+
 ##### <a name="remarks"></a>注釈
--   **bootcfg 生**既存のオペレーティング システム エントリのオプションを上書きする、オペレーティング システム エントリの末尾にテキストを追加するために使用します。 このテキストはなど、有効な OS ロード オプションを含める必要があります **/debug**、 **/fastdetect**、 **/nodebug**、 **/baudrate**、 **/なりません**、および **/sos**します。 たとえば、次のコマンドを追加します"**/debug/fastdetect**"最初のオペレーティング システム エントリのために、置換、以前のオペレーティング システム エントリのオプション。
-    ```
-    bootcfg /raw "/debug /fastdetect" /id 1
-    ```
-## <a name="BKMK_examples"></a>例
-次の例を使用する方法、 **bootcfg/生**コマンド。
-```
-bootcfg /raw "/debug /sos" /id 2
-bootcfg /raw /s srvmain /u maindom\hiropln /p p@ssW23 "/crashdebug " /id 2
-```
-#### <a name="additional-references"></a>その他の参照
-[コマンドライン構文キー](command-line-syntax-key.md)
+- **bootcfg 生**既存のオペレーティング システム エントリのオプションを上書きする、オペレーティング システム エントリの末尾にテキストを追加するために使用します。 このテキストはなど、有効な OS ロード オプションを含める必要があります **/debug**、 **/fastdetect**、 **/nodebug**、 **/baudrate**、 **/なりません**、および **/sos**します。 たとえば、次のコマンドを追加します" **/debug/fastdetect**"最初のオペレーティング システム エントリのために、置換、以前のオペレーティング システム エントリのオプション。
+  ```
+  bootcfg /raw "/debug /fastdetect" /id 1
+  ```
+  ## <a name="BKMK_examples"></a>例
+  次の例を使用する方法、 **bootcfg/生**コマンド。
+  ```
+  bootcfg /raw "/debug /sos" /id 2
+  bootcfg /raw /s srvmain /u maindom\hiropln /p p@ssW23 "/crashdebug " /id 2
+  ```
+  #### <a name="additional-references"></a>その他の参照
+  [コマンド ライン構文の記号](command-line-syntax-key.md)

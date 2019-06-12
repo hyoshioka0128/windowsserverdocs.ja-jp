@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3a3156eefc4af52fb7daefb618c689b78fef5efc
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: fb1bc5776ea4d24f274c79563d9e346b104de6d9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188819"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444218"
 ---
 # <a name="ad-fs-scenarios-for-developers"></a>開発者向けの AD FS のシナリオ
 
@@ -115,7 +115,7 @@ AD FS では、管理者の同意のモデルを使用するため、リソー�
 1.  ネイティブ クライアント アプリケーションは、ADAL のライブラリへの呼び出しでフローを開始します。  これは、場合、トリガー、ブラウザー ベースの承認エンドポイントの HTTP GET を AD FS:  
   
 **承認要求:**  
-取得 https://fs.contoso.com/adfs/oauth2/authorize?  
+取得 <https://fs.contoso.com/adfs/oauth2/authorize?>  
   
 パラメーター|Value  
 ---------|---------  
@@ -126,9 +126,9 @@ redirect_uri|アプリケーション グループでネイティブ アプリ�
   
 **承認要求の応答:**  
 ユーザーが署名されていない場合する前に、資格情報の入力が求められます。    
-AD FS は、redirect_uri のクエリ コンポーネントでの"code"パラメーターとして、認証コードを返すことで応答します。  例:Http/1.1 302 検出場所:  **http://redirect_uri:80/?code=&lt; コード&gt;します。**  
+AD FS は、redirect_uri のクエリ コンポーネントでの"code"パラメーターとして、認証コードを返すことで応答します。  例:Http/1.1 302 では、場所が見つかりました:  **<http://redirect_uri:80/?code=&lt;code&gt>;。**  
   
-2.  ネイティブ クライアントは、次のパラメーターと共に、コードを AD FS のトークン エンドポイントに送信します。  
+2. ネイティブ クライアントは、次のパラメーターと共に、コードを AD FS のトークン エンドポイントに送信します。  
   
 **トークンの要求:**  
 投稿 https://fs.contoso.com/adfs/oauth2/token  
@@ -144,7 +144,7 @@ redirect_uri|アプリケーション グループでネイティブ アプリ�
 **トークン要求の応答:**  
 AD FS は、access_token、refresh_token を本文に id_token と、HTTP 200 で応答します。  
   
-3.  次に、ネイティブ アプリケーションでは、web API に HTTP 要求の承認ヘッダーとして、上記の応答の access_token の一部を送信します。  
+3. 次に、ネイティブ アプリケーションでは、web API に HTTP 要求の承認ヘッダーとして、上記の応答の access_token の一部を送信します。  
   
 ### <a name="single-sign-on-behavior"></a>シングル サインオンの動作  
 (既定) 1 時間、access_token はまだ有効だが、キャッシュ内と、新しい要求が AD FS へのトラフィックがトリガーされない内でそれ以降のクライアントを要求します。  Access_token は、ADAL によってキャッシュから自動的にフェッチされます。  
@@ -177,9 +177,9 @@ refresh_token|最初のトークン要求に対する応答の AD FS によっ�
   
 ![プロトコル フローの説明](media/ADFS_DEV_4.png)  
   
-1.  承認エンドポイントの承認が AD FS に HTTP GET を送信すると、ブラウザーを使用して要求、Web アプリを開始します  
-**承認要求**:  
-取得 https://fs.contoso.com/adfs/oauth2/authorize?  
+1. 承認エンドポイントの承認が AD FS に HTTP GET を送信すると、ブラウザーを使用して要求、Web アプリを開始します  
+   **承認要求**:  
+   取得 <https://fs.contoso.com/adfs/oauth2/authorize?>  
   
 パラメーター|Value  
 ---------|---------  
@@ -190,13 +190,13 @@ redirect_uri|リダイレクト URI のアプリケーション グループ内�
   
 承認要求の応答:  
 ユーザーが署名されていない場合する前に、資格情報の入力が求められます。  
-AD FS は、たとえば、redirect_uri のクエリ コンポーネントでの"code"パラメーターとして、認証コードを返すことで応答します。Http/1.1 302 検出場所: https://webapp.contoso.com/?code=&lt; コード&gt;します。  
+AD FS は、たとえば、redirect_uri のクエリ コンポーネントでの"code"パラメーターとして、認証コードを返すことで応答します。Http/1.1 302 では、場所が見つかりました: <https://webapp.contoso.com/?code=&lt;code&gt>;。  
   
-2.  上記の 302 の結果として、ブラウザーを開始します、web アプリに HTTP GET など。取得 http://redirect_uri:80/?code=&lt; コード&gt;します。   
+2. 上記の 302 の結果として、ブラウザーを開始します、web アプリに HTTP GET など。取得<http://redirect_uri:80/?code=&lt;code&gt>;。   
   
-3.  この時点で、コードの受信、web アプリは、次の送信、AD FS のトークン エンドポイントに対する要求を開始します。  
-**トークンの要求:**  
-投稿 https://fs.contoso.com/adfs/oauth2/token  
+3. この時点で、コードの受信、web アプリは、次の送信、AD FS のトークン エンドポイントに対する要求を開始します。  
+   **トークンの要求:**  
+   投稿 https://fs.contoso.com/adfs/oauth2/token  
   
 パラメーター|Value  
 ---------|---------  
@@ -210,7 +210,7 @@ client_secret|アプリケーション グループでは、web app (サーバ�
 **トークン要求の応答:**  
 AD FS は、access_token、refresh_token を本文に id_token と、HTTP 200 で応答します。  
 要求  
-4.  Web アプリケーションのいずれか (例では、web アプリ自体がリソースをホストする)、上記の応答の access_token の一部を消費し、またはそれ以外の場合、HTTP 要求の承認ヘッダーとして web API に送信します。  
+4. Web アプリケーションのいずれか (例では、web アプリ自体がリソースをホストする)、上記の応答の access_token の一部を消費し、またはそれ以外の場合、HTTP 要求の承認ヘッダーとして web API に送信します。  
   
 #### <a name="single-sign-on-behavior"></a>シングル サインオンの動作  
 アクセス トークンがまだ有効だが 1 時間 (既定)、クライアントのキャッシュに、2 番目の要求が動作するネイティブ クライアントのシナリオ - 上記と同様にエントリのアクセス トークンが自動的には、新しい要求が AD FS へのトラフィックがトリガーされないと思われる場合があります。ADAL によってキャッシュからフェッチします。  ただし、個別の承認と、以前のサンプルのように、個別の URL リンクを使用して、トークンの要求が web アプリを送信できることができます。  
@@ -245,7 +245,7 @@ client_secret|アプリケーション グループで、web アプリ (サー�
 1.  承認エンドポイントの承認が AD FS に HTTP GET を送信すると、ブラウザーを使用して要求、Web アプリを開始します  
   
 **承認要求:**  
-取得 https://fs.contoso.com/adfs/oauth2/authorize?  
+取得 <https://fs.contoso.com/adfs/oauth2/authorize?>  
   
 パラメーター|Value  
 ---------|---------  
@@ -260,9 +260,9 @@ redirect_uri|リダイレクト URI のアプリケーション グループ内�
 AD FS が HTTP 200 とフォームを含む応答、として非要素の下。  
 * コード: 承認コード  
 * id_token: ユーザー認証を記述するクレームを含む JWT トークン  
-2.  フォームは、コードと id_token を web アプリに送信する、web アプリの redirect_uri を自動的に送信します。  
+* フォームは、コードと id_token を web アプリに送信する、web アプリの redirect_uri を自動的に送信します。  
   
-3.  この時点で、コードの受信、web アプリは、次の送信、AD FS のトークン エンドポイントに対する要求を開始します。  
+3. この時点で、コードの受信、web アプリは、次の送信、AD FS のトークン エンドポイントに対する要求を開始します。  
   
 **トークンの要求:**  
 投稿 https://fs.contoso.com/adfs/oauth2/token
@@ -281,7 +281,7 @@ client_secret|アプリケーション グループで、web アプリ (サー�
 **トークン要求の応答:**  
 AD FS は、access_token、refresh_token を本文に id_token と、HTTP 200 で応答します。  
   
-4.  Web アプリケーションのいずれか (例では、web アプリ自体がリソースをホストする)、上記の応答の access_token の一部を消費し、またはそれ以外の場合、HTTP 要求の承認ヘッダーとして web API に送信します。  
+4. Web アプリケーションのいずれか (例では、web アプリ自体がリソースをホストする)、上記の応答の access_token の一部を消費し、またはそれ以外の場合、HTTP 要求の承認ヘッダーとして web API に送信します。  
   
 #### <a name="single-sign-on-behavior"></a>シングル サインオンの動作  
 動作で、シングル サインオンは、上記の Oauth 2.0 confidential クライアント フローの場合と同じです。  

@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 65ac1c23-3a47-4e58-888d-9dde7fba1586
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 767d9e0760f29023aaf049ad108792f17dac309f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e45f0c3c988c86a2428c3beb8bafc29b7b16bc0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856963"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446937"
 ---
 # <a name="step-12-test-directaccess-connectivity"></a>手順 12 テスト DirectAccess の接続
 
@@ -39,7 +39,7 @@ ms.locfileid: "59856963"
   
 ## <a name="policy"></a>クライアントが適切なグループ ポリシーを確認します  
   
-1.  Client1 で、次のようにクリックします**開始**、型**powershell.exe**、を右クリック**powershell**、 をクリック**詳細設定**、をクリックして **。管理者として実行**します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、**[はい]** をクリックします。  
+1.  Client1 で、次のようにクリックします**開始**、型**powershell.exe**、を右クリック**powershell**、 をクリック**詳細設定**、をクリックして **。管理者として実行**します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
   
 2.  Windows PowerShell ウィンドウで、入力**ipconfig** ENTER キーを押します。  
   
@@ -53,7 +53,7 @@ ms.locfileid: "59856963"
   
 4.  Windows PowerShell ウィンドウは、次の手順を開いたままにしておきます。  
   
-5.  Client2 で、次のようにクリックします**開始**、 をクリック**すべてのプログラム**、 をクリック**アクセサリ**、 をクリック**Windows PowerShell**、を右クリック **。Windows PowerShell**、 をクリックし、**管理者として実行**します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、**[はい]** をクリックします。  
+5.  Client2 で、次のようにクリックします**開始**、 をクリック**すべてのプログラム**、 をクリック**アクセサリ**、 をクリック**Windows PowerShell**、を右クリック **。Windows PowerShell**、 をクリックし、**管理者として実行**します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
   
 6.  Windows PowerShell ウィンドウで、入力**ipconfig** ENTER キーを押します。  
   
@@ -71,32 +71,32 @@ ms.locfileid: "59856963"
   
 ## <a name="EDGE1"></a>EDGE1 経由でインターネットから DirectAccess 接続をテストします。  
   
-1.  インターネット ネットワークから 2 EDGE1 を取り外します。  
+1. インターネット ネットワークから 2 EDGE1 を取り外します。  
   
-2.  Corpnet スイッチから CLIENT1 および CLIENT2 を取り外すし、インターネット スイッチに接続します。 30 秒間待機します。  
+2. Corpnet スイッチから CLIENT1 および CLIENT2 を取り外すし、インターネット スイッチに接続します。 30 秒間待機します。  
   
-3.  Client1 で Windows PowerShell ウィンドウで、次のように入力します。 **ipconfig/all** ENTER キーを押します。  
+3. Client1 で Windows PowerShell ウィンドウで、次のように入力します。 **ipconfig/all** ENTER キーを押します。  
   
-4.  Ipconfig コマンドの出力を確認します。  
+4. Ipconfig コマンドの出力を確認します。  
   
-    クライアント コンピューターでは、インターネットに接続されているようになりましたし、パブリック IPv4 アドレスを持ちます。 DirectAccess クライアントは、パブリック IPv4 アドレスがある、DirectAccess クライアントとリモート アクセス サーバー間、IPv4 インターネット経由で IPv6 メッセージをトンネリングするのに Teredo または IP-HTTPS IPv6 移行テクノロジが使用されます。 Teredo は、推奨される移行テクノロジであることに注意してください。  
+   クライアント コンピューターでは、インターネットに接続されているようになりましたし、パブリック IPv4 アドレスを持ちます。 DirectAccess クライアントは、パブリック IPv4 アドレスがある、DirectAccess クライアントとリモート アクセス サーバー間、IPv4 インターネット経由で IPv6 メッセージをトンネリングするのに Teredo または IP-HTTPS IPv6 移行テクノロジが使用されます。 Teredo は、推奨される移行テクノロジであることに注意してください。  
   
-5.  Windows PowerShell ウィンドウで、入力**ipconfig/flushdns** ENTER キーを押します。 これにより、クライアント コンピューターが、企業ネットワークに接続されているときにまだクライアント DNS キャッシュに存在する名前解決エントリがフラッシュします。  
+5. Windows PowerShell ウィンドウで、入力**ipconfig/flushdns** ENTER キーを押します。 これにより、クライアント コンピューターが、企業ネットワークに接続されているときにまだクライアント DNS キャッシュに存在する名前解決エントリがフラッシュします。  
   
-6.  次のコマンドを使用して企業ネットワークに接続するクライアント コンピューターが IP-HTTPS を使用することを確認して、Teredo インターフェイスを無効にします。  
+6. 次のコマンドを使用して企業ネットワークに接続するクライアント コンピューターが IP-HTTPS を使用することを確認して、Teredo インターフェイスを無効にします。  
   
-    ```  
-    netsh interface teredo set state disable  
-    ```  
+   ```  
+   netsh interface teredo set state disable  
+   ```  
   
-7.  EDGE1 経由で接続していることを確認します。 型**netsh インターフェイス httpstunnel インターフェイスを表示する**ENTER キーを押します。  
+7. EDGE1 経由で接続していることを確認します。 型**netsh インターフェイス httpstunnel インターフェイスを表示する**ENTER キーを押します。  
   
-    出力は、URL を含める必要があります:https://edge1.contoso.com:443/IPHTTPSします。  
+   出力は、URL を含める必要があります:https://edge1.contoso.com:443/IPHTTPSします。  
   
-    > [!TIP]  
-    > Client1 で、次の Windows PowerShell コマンドを実行することもできます。**Get NetIPHTTPSConfiguration**します。 使用可能なサーバーの URL の接続と、現在アクティブなプロファイルが出力されます。  
+   > [!TIP]  
+   > Client1 で、次の Windows PowerShell コマンドを実行することもできます。**Get NetIPHTTPSConfiguration**します。 使用可能なサーバーの URL の接続と、現在アクティブなプロファイルが出力されます。  
   
-8.  Windows PowerShell ウィンドウで、入力**ping app1** ENTER キーを押します。 2001:db8:1::3 この例では、APP1 に割り当てられた IPv6 アドレスからの応答を表示する必要があります。  
+8. Windows PowerShell ウィンドウで、入力**ping app1** ENTER キーを押します。 2001:db8:1::3 この例では、APP1 に割り当てられた IPv6 アドレスからの応答を表示する必要があります。  
   
 9. Windows PowerShell ウィンドウで、入力**ping 2 app1** ENTER キーを押します。 2001:db8:2::3 この例では、2 APP1 に割り当てられている IPv6 アドレスからの応答を表示する必要があります。  
   
@@ -104,17 +104,17 @@ ms.locfileid: "59856963"
   
     APP2 の ping を実行する機能は、成功した場合は、APP2 が IPv4 唯一のリソースは、NAT64 と DNS64 を使用して接続を確立することができたことを示しているため、重要です。  
   
-11. Internet Explorer のアドレス バーに Internet Explorer を開き、入力**https://app1/** ENTER キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
+11. Internet Explorer のアドレス バーに Internet Explorer を開き、入力 **https://app1/** ENTER キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
   
 12. Internet Explorer のアドレス バーに次のように入力します。 **https://2-app1/** ENTER キーを押します。 2 APP1 の既定の web サイトが表示されます。  
   
 13. Internet Explorer のアドレス バーに次のように入力します。 **https://app2/** ENTER キーを押します。 APP2 の既定の Web サイトが表示されます。  
   
-14. **開始**画面で「**\\\2-App1\Files**し、ENTER キーを押します。 例のテキスト ファイルをダブルクリックします。  
+14. **開始**画面で「<strong>\\\2-App1\Files</strong>し、ENTER キーを押します。 例のテキスト ファイルをダブルクリックします。  
   
     これは、corp2.corp.contoso.com ドメイン EDGE1 を通して接続したときに、ファイル サーバーに接続することができたことを示します。  
   
-15. **開始**画面で「**\\\App2\Files**し、ENTER キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
+15. **開始**画面で「<strong>\\\App2\Files</strong>し、ENTER キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
   
     これは、SMB を使用して、リソース ドメイン内のリソースを取得する IPv4 のみのサーバーに接続することができたことを示します。  
   
@@ -154,43 +154,43 @@ ms.locfileid: "59856963"
   
 ## <a name="DAConnect"></a>2 EDGE1 経由でインターネットから DirectAccess 接続をテストします。  
   
-1.  2 EDGE1 をインターネット ネットワークに接続します。  
+1. 2 EDGE1 をインターネット ネットワークに接続します。  
   
-2.  インターネット ネットワークから EDGE1 を取り外します。  
+2. インターネット ネットワークから EDGE1 を取り外します。  
   
-3.  CLIENT1 で管理者特権での Windows PowerShell ウィンドウを開きます。  
+3. CLIENT1 で管理者特権での Windows PowerShell ウィンドウを開きます。  
   
-4.  Windows PowerShell ウィンドウで、入力**ipconfig/flushdns** ENTER キーを押します。 これにより、クライアント コンピューターが、企業ネットワークに接続されているときにまだクライアント DNS キャッシュに存在する名前解決エントリがフラッシュします。  
+4. Windows PowerShell ウィンドウで、入力**ipconfig/flushdns** ENTER キーを押します。 これにより、クライアント コンピューターが、企業ネットワークに接続されているときにまだクライアント DNS キャッシュに存在する名前解決エントリがフラッシュします。  
   
-5.  2 EDGE1 経由で接続していることを確認します。 型**netsh インターフェイス httpstunnel インターフェイスを表示する**ENTER キーを押します。  
+5. 2 EDGE1 経由で接続していることを確認します。 型**netsh インターフェイス httpstunnel インターフェイスを表示する**ENTER キーを押します。  
   
-    出力は、URL を含める必要があります:https://2-edge1.contoso.com:443/IPHTTPSします。  
+   出力は、URL を含める必要があります:https://2-edge1.contoso.com:443/IPHTTPSします。  
   
-    > [!TIP]  
-    > Client1 で、次のコマンドを実行することもできます。**Get NetIPHTTPSConfiguration**します。 使用可能なサーバーの URL の接続と、現在アクティブなプロファイルが出力されます。  
+   > [!TIP]  
+   > Client1 で、次のコマンドを実行することもできます。**Get NetIPHTTPSConfiguration**します。 使用可能なサーバーの URL の接続と、現在アクティブなプロファイルが出力されます。  
   
-    > [!NOTE]  
-    > CLIENT1 は、会社のリソースに接続するサーバーを自動的に変更します。 コマンドの出力では、EDGE1 への接続が表示される場合約 5 分間待機してからやり直してください。  
+   > [!NOTE]  
+   > CLIENT1 は、会社のリソースに接続するサーバーを自動的に変更します。 コマンドの出力では、EDGE1 への接続が表示される場合約 5 分間待機してからやり直してください。  
   
-6.  Windows PowerShell ウィンドウで、入力**ping app1** ENTER キーを押します。 2001:db8:1::3 この例では、APP1 に割り当てられた IPv6 アドレスからの応答を表示する必要があります。  
+6. Windows PowerShell ウィンドウで、入力**ping app1** ENTER キーを押します。 2001:db8:1::3 この例では、APP1 に割り当てられた IPv6 アドレスからの応答を表示する必要があります。  
   
-7.  Windows PowerShell ウィンドウで、入力**ping 2 app1** ENTER キーを押します。 2001:db8:2::3 この例では、2 APP1 に割り当てられている IPv6 アドレスからの応答を表示する必要があります。  
+7. Windows PowerShell ウィンドウで、入力**ping 2 app1** ENTER キーを押します。 2001:db8:2::3 この例では、2 APP1 に割り当てられている IPv6 アドレスからの応答を表示する必要があります。  
   
-8.  Windows PowerShell ウィンドウで、入力**ping app2** ENTER キーを押します。 ここでは、fd APP2 EDGE1 から割り当てられた NAT64 アドレスからの応答が表示**c9:9f4e:eb1b**: 7777::a00:4 します。 太字の値がアドレスを生成する方法のために異なることに注意してください。  
+8. Windows PowerShell ウィンドウで、入力**ping app2** ENTER キーを押します。 ここでは、fd APP2 EDGE1 から割り当てられた NAT64 アドレスからの応答が表示**c9:9f4e:eb1b**: 7777::a00:4 します。 太字の値がアドレスを生成する方法のために異なることに注意してください。  
   
-    APP2 の ping を実行する機能は、成功した場合は、APP2 が IPv4 唯一のリソースは、NAT64 と DNS64 を使用して接続を確立することができたことを示しているため、重要です。  
+   APP2 の ping を実行する機能は、成功した場合は、APP2 が IPv4 唯一のリソースは、NAT64 と DNS64 を使用して接続を確立することができたことを示しているため、重要です。  
   
-9. Internet Explorer のアドレス バーに Internet Explorer を開き、入力**https://app1/** ENTER キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
+9. Internet Explorer のアドレス バーに Internet Explorer を開き、入力 **https://app1/** ENTER キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
   
 10. Internet Explorer のアドレス バーに次のように入力します。 **https://2-app1/** ENTER キーを押します。 APP2 の既定の Web サイトが表示されます。  
   
 11. Internet Explorer のアドレス バーに次のように入力します。 **https://app2/** ENTER キーを押します。 APP3 の既定の web サイトが表示されます。  
   
-12. **開始**画面で「**\\\App1\Files**し、ENTER キーを押します。 例のテキスト ファイルをダブルクリックします。  
+12. **開始**画面で「<strong>\\\App1\Files</strong>し、ENTER キーを押します。 例のテキスト ファイルをダブルクリックします。  
   
     これは、2 EDGE1 を通して接続したときに、corp.contoso.com ドメイン内のファイル サーバーに接続することができたことを示します。  
   
-13. **開始**画面で「**\\\App2\Files**し、ENTER キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
+13. **開始**画面で「<strong>\\\App2\Files</strong>し、ENTER キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
   
     これは、SMB を使用して、リソース ドメイン内のリソースを取得する IPv4 のみのサーバーに接続することができたことを示します。  
   

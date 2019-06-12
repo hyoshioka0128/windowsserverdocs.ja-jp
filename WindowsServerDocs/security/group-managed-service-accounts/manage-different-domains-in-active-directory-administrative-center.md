@@ -11,12 +11,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 5f253bd4952d8a347e97eafdb38d86fa98024b8d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bd5650724272422d09e87b7eecf10f825b00fabf
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839943"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447041"
 ---
 # <a name="manage-different-domains-in-active-directory-administrative-center"></a>Active Directory 管理センターでさまざまなドメインを管理します。
 
@@ -52,31 +52,31 @@ ms.locfileid: "59839943"
 
 ### <a name="windows-server-2008-r2-to-manage-a-foreign-domain-in-the-selected-instance-of-active-directory-administrative-center-using-the-current-set-of-logon-credentials"></a>Windows Server 2008 R2:現在のログオン資格情報のセットを使用して Active Directory 管理センターの選択したインスタンスの外部ドメインを管理するには
 
-1.  Active Directory 管理センターを開くには、次のようにクリックします。**開始**、 をクリック**管理ツール**、 をクリックし、 **Active Directory 管理センター**します。
+1. Active Directory 管理センターを開くには、次のようにクリックします。**開始**、 をクリック**管理ツール**、 をクリックし、 **Active Directory 管理センター**します。
 
-    > [!NOTE]
-    >  Active Directory 管理センターを開く別の方法は をクリックする**開始**、 をクリックして**実行**、し、入力**dsac.exe**します。
+   > [!NOTE]
+   >  Active Directory 管理センターを開く別の方法は をクリックする**開始**、 をクリックして**実行**、し、入力**dsac.exe**します。
 
-2.  開くには**ナビゲーション ノードの追加**、Active Directory 管理センター ウィンドウの上部には、次のようにクリックします。**ナビゲーション ノードの追加**次の図に示すようにします。
+2. 開くには**ナビゲーション ノードの追加**、Active Directory 管理センター ウィンドウの上部には、次のようにクリックします。**ナビゲーション ノードの追加**次の図に示すようにします。
 
-     ![スクリーン ショット * * ナビゲーション ノード * * UI の追加](media/click_add_nav_nodes.gif)
+    ![スクリーン ショット * * ナビゲーション ノード * * UI の追加](media/click_add_nav_nodes.gif)
 
-    > [!NOTE]
-    >  別の方法で開く**ナビゲーション ノードの追加**右側には、\-Active Directory 管理センターのナビゲーション ウィンドウで空の領域内をクリックし、クリックして**ナビゲーションノードの追加**.
+   > [!NOTE]
+   >  別の方法で開く**ナビゲーション ノードの追加**右側には、\-Active Directory 管理センターのナビゲーション ウィンドウで空の領域内をクリックし、クリックして**ナビゲーションノードの追加**.
 
-3.  **ナビゲーション ノードの追加**、 をクリックして**他のドメインへの接続**次の図に示すようにします。
+3. **ナビゲーション ノードの追加**、 をクリックして**他のドメインへの接続**次の図に示すようにします。
 
-     ![スクリーン ショット * * 追加のナビゲーション ノード * * * * その他のドメイン * * UI への接続](media/add_nav_nodes.gif)
+    ![スクリーン ショット * * 追加のナビゲーション ノード * * * * その他のドメイン * * UI への接続](media/add_nav_nodes.gif)
 
-4.  **への接続**、管理する外部ドメインの名前を入力\(など**contoso.com**\)、順にクリックします**OK**します。
+4. **への接続**、管理する外部ドメインの名前を入力\(など**contoso.com**\)、順にクリックします**OK**します。
 
-5.  外部ドメインに正常に接続されて、列参照、**ナビゲーション ノードの追加**ウィンドウで、または、Active Directory 管理センターのナビゲーション ウィンドウに追加する複数のコンテナーを選択し、クリックして**OK**します。
+5. 外部ドメインに正常に接続されて、列参照、**ナビゲーション ノードの追加**ウィンドウで、または、Active Directory 管理センターのナビゲーション ウィンドウに追加する複数のコンテナーを選択し、クリックして**OK**します。
 
- Active Directory 管理センターのナビゲーション ウィンドウをカスタマイズする方法の詳細については、次を参照してください。 [Active Directory 管理センターのナビゲーション ウィンドウのカスタマイズ](customize-the-active-directory-administrative-center-navigation-pane.md)します。
+   Active Directory 管理センターのナビゲーション ウィンドウをカスタマイズする方法の詳細については、次を参照してください。 [Active Directory 管理センターのナビゲーション ウィンドウのカスタマイズ](customize-the-active-directory-administrative-center-navigation-pane.md)します。
 
- 現在のログオン資格情報のセットとは異なるログオン資格情報のセットを使用して、Active Directory 管理センターを開くこともできます。 次の手順で、コマンドは通常のユーザーの資格情報で Active Directory 管理センターを実行しているコンピューターにログオンしている場合に便利ですがこのコンピューターを管理する Active Directory 管理センターを使用する、管理者としてローカル ドメインです。 \(このコマンドは、現在のログオン資格情報のセットとは異なる一連の資格情報でローカル ドメインとは異なる外部ドメインをリモートで管理する Active Directory 管理センターを使用する場合に便利だことができます。 ただし、外部ドメインには、ローカル ドメインでの確立された信頼が必要です。\)
+   現在のログオン資格情報のセットとは異なるログオン資格情報のセットを使用して、Active Directory 管理センターを開くこともできます。 次の手順で、コマンドは通常のユーザーの資格情報で Active Directory 管理センターを実行しているコンピューターにログオンしている場合に便利ですがこのコンピューターを管理する Active Directory 管理センターを使用する、管理者としてローカル ドメインです。 \(このコマンドは、現在のログオン資格情報のセットとは異なる一連の資格情報でローカル ドメインとは異なる外部ドメインをリモートで管理する Active Directory 管理センターを使用する場合に便利だことができます。 ただし、外部ドメインには、ローカル ドメインでの確立された信頼が必要です。\)
 
- この手順を完了するために最低限必要なグループ メンバーシップはありません。
+   この手順を完了するために最低限必要なグループ メンバーシップはありません。
 
 ### <a name="to-manage-a-domain-using-logon-credentials-that-are-different-from-the-current-set-of-logon-credentials"></a>現在のログオン資格情報のセットとは異なるログオン資格情報を使用してドメインを管理するには
 

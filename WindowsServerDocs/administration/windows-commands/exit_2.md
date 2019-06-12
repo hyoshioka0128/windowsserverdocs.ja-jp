@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3490c6bc95a762bf2cb1da70f389fb8f583344f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e599f84389b23e527e3718a620d5fdfefe24edb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819493"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439462"
 ---
 # <a name="exit"></a>exit
 
@@ -31,16 +31,18 @@ Cmd.exe プログラム (コマンド インタープリター) または現在�
 exit [/b] [<exitCode>]  
 ```  
 ## <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
-|-------|--------|  
-|/b|Cmd.exe を終了せず、現在のバッチ スクリプトを終了します。 バッチ スクリプトの外から実行する場合は、Cmd.exe を終了します。|  
-|<exitCode>|数値の数を指定します。 場合 **/b**を指定すると、ERRORLEVEL 環境変数は、その番号に設定されます。 終了が場合**Cmd.exe**、プロセス終了コードは、その番号に設定されます。|  
-|/?|コマンド プロンプトにヘルプを表示します。|  
+
+| パラメーター  |                                                                                         説明                                                                                          |
+|------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     /b     |                                      Cmd.exe を終了せず、現在のバッチ スクリプトを終了します。 バッチ スクリプトの外から実行する場合は、Cmd.exe を終了します。                                      |
+| <exitCode> | 数値の数を指定します。 場合 **/b**を指定すると、ERRORLEVEL 環境変数は、その番号に設定されます。 終了が場合**Cmd.exe**、プロセス終了コードは、その番号に設定されます。 |
+|     /?     |                                                                             コマンド プロンプトにヘルプを表示します。                                                                             |
+
 ## <a name="BKMK_examples"></a>例  
 閉じるには、コマンド インタープリターを Cmd.exe、次のように入力します。  
 ```  
 exit  
 ```  
 ## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
-  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  
+

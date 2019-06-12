@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 77fb8cc6e13cb82e4d07808c3ae77757a4b2de79
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8d1ea7a428b2d03649a7a9347421d717be3f468a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826783"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445835"
 ---
 # <a name="deploy-automatic-file-classification-demonstration-steps"></a>Deploy Automatic File Classification (Demonstration Steps)
 
@@ -48,15 +48,15 @@ Impact リソース プロパティおよび Personally Identifiable Information
   
 1.  ドメイン コントローラーで、Domain Admins セキュリティ グループのメンバーとしてサーバーにサインインします。  
   
-2.  Active Directory 管理センターを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、**[Active Directory 管理センター]** をクリックします。  
+2.  Active Directory 管理センターを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、 **[Active Directory 管理センター]** をクリックします。  
   
-3.  **[ダイナミック アクセス制御]** を展開してから、**[リソース プロパティ]** をクリックします。  
+3.  **[ダイナミック アクセス制御]** を展開してから、 **[リソース プロパティ]** をクリックします。  
   
-4.  **[Impact]** を右クリックし、**[有効にする]** をクリックします。  
+4.  **[Impact]** を右クリックし、 **[有効にする]** をクリックします。  
   
-5.  **[Personally Identifiable Information]** を右クリックし、**[有効にする]** をクリックします。  
+5.  **[Personally Identifiable Information]** を右クリックし、 **[有効にする]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![ソリューション ガイド](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -76,11 +76,11 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
   
 2.  Windows PowerShell コマンド プロンプトで「 **Update-FsrmClassificationPropertyDefinition** 」と入力してから、Enter キーを押します。 これにより、ドメイン コントローラーで作成されたプロパティ定義がファイル サーバーに同期されます。  
   
-3.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、**[ファイル サーバー リソース マネージャー]** をクリックします。  
+3.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、 **[ファイル サーバー リソース マネージャー]** をクリックします。  
   
-4.  **[分類管理]** を展開し、**[分類規則]** を右クリックしてから、**[分類スケジュールの構成]** をクリックします。  
+4.  **[分類管理]** を展開し、 **[分類規則]** を右クリックしてから、 **[分類スケジュールの構成]** をクリックします。  
   
-5.  **[固定スケジュールを有効にする]** チェック ボックスを選択し、**[新しいファイルの連続分類を許可する]** チェック ボックスを選択し、分類を実行する曜日を選択してから、**[OK]** をクリックします。  
+5.  **[固定スケジュールを有効にする]** チェック ボックスを選択し、 **[新しいファイルの連続分類を許可する]** チェック ボックスを選択し、分類を実行する曜日を選択してから、 **[OK]** をクリックします。  
   
 6.  **[分類規則]** を右クリックし、 **[分類規則の作成]** をクリックします。  
   
@@ -103,11 +103,11 @@ Set-ADResourceProperty '"Enabled:$true '"Identity:'CN=PII_MS,CN=Resource Propert
   
 11. **[式の種類]** 列で **[文字列]** を選択します。  
   
-12. **[式]** 列に「 **Contoso Confidential**」と入力してから、**[OK]** をクリックします。  
+12. **[式]** 列に「 **Contoso Confidential**」と入力してから、 **[OK]** をクリックします。  
   
-13. **[評価の種類]** タブで **[既存のプロパティ値を再評価する]** チェック ボックスを選択し、**[既存の値を上書きする]** をクリックしてから、**[OK]** をクリックします。  
+13. **[評価の種類]** タブで **[既存のプロパティ値を再評価する]** チェック ボックスを選択し、 **[既存の値を上書きする]** をクリックしてから、 **[OK]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![ソリューション ガイド](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -129,7 +129,7 @@ New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -P
   
 2.  Windows PowerShell コマンド プロンプトで「 **Update-FsrmClassificationPropertyDefinition**」と入力してから、Enter キーを押します。 これにより、ドメイン コントローラーで作成されたプロパティ定義がファイル サーバーに同期されます。  
   
-3.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、**[ファイル サーバー リソース マネージャー]** をクリックします。  
+3.  ファイル サーバー リソース マネージャーを開きます。 サーバー マネージャーで **[ツール]** をクリックしてから、 **[ファイル サーバー リソース マネージャー]** をクリックします。  
   
 4.  **[分類規則]** を右クリックし、 **[分類規則の作成]** をクリックします。  
   
@@ -151,11 +151,11 @@ New-FSRMClassificationRule -Name 'Contoso Confidential' -Property "Impact_MS" -P
   
 10. **式**列に「 **^ (?!000) ([0-7] \d{2}| 7([0-7]\d|7[012])) ([-]?)(?!00) \d\d\3 (?!0000) \d{4}$**  
   
-11. **[最小項目]** 列に **10** と入力してから、**[OK]** をクリックします。  
+11. **[最小項目]** 列に **10** と入力してから、 **[OK]** をクリックします。  
   
-12. **[評価の種類]** タブで **[既存のプロパティ値を再評価する]** チェック ボックスを選択し、**[既存の値を上書きする]** をクリックしてから、**[OK]** をクリックします。  
+12. **[評価の種類]** タブで **[既存のプロパティ値を再評価する]** チェック ボックスを選択し、 **[既存の値を上書きする]** をクリックしてから、 **[OK]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell と同等のコマンド。  
+![ソリューション ガイド](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -170,9 +170,9 @@ New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5
   
 1.  ファイル サーバーで、ファイル サーバー リソース マネージャーを使用して分類規則を実行します。  
   
-    1.  **[分類管理]** をクリックし、**[分類規則]** を右クリックしてから、**[すべての規則で今すぐ分類を実行する]** をクリックします。  
+    1.  **[分類管理]** をクリックし、 **[分類規則]** を右クリックしてから、 **[すべての規則で今すぐ分類を実行する]** をクリックします。  
   
-    2.  **[分類の完了を待つ]** オプションをクリックしてから、**[OK]** をクリックします。  
+    2.  **[分類の完了を待つ]** オプションをクリックしてから、 **[OK]** をクリックします。  
   
     3.  自動分類レポートを閉じます。  
   
@@ -180,17 +180,17 @@ New-FSRMClassificationRule -Name "PII Rule" -Property "PII_MS" -PropertyValue "5
   
 2.  分類規則で指定されたフォルダー (D:\Finance Documents など) に移動します。  
   
-3.  そのフォルダー内のファイルを右クリックしてから、**[プロパティ]** をクリックします。  
+3.  そのフォルダー内のファイルを右クリックしてから、 **[プロパティ]** をクリックします。  
   
 4.  **[分類]** タブをクリックし、ファイルが正しく分類されていることを確認します。  
   
 ## <a name="BKMK_Links"></a>参照してください。  
   
--   [シナリオ:分類を使用して、データを取得します。](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
+-   [シナリオ: 分類を使用してデータの情報を得る](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
   
 -   [自動ファイル分類を計画します。](https://docs.microsoft.com/previous-versions/orphan-topics/ws.11/jj574209(v%3dws.11))  
 
   
--   [ダイナミック アクセス制御:シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

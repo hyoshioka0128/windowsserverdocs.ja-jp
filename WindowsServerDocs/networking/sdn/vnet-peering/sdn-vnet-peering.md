@@ -9,12 +9,12 @@ ms.assetid: ''
 ms.author: pashort
 author: shortpatti
 ms.date: 08/08/2018
-ms.openlocfilehash: 58596387d79f3f212a472f00c2785bacc278e855
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: aab4ec7c69ec5b52eae926cd1065d777415b1124
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821913"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446208"
 ---
 # <a name="virtual-network-peering"></a>仮想ネットワーク ピアリング
 
@@ -36,20 +36,20 @@ ms.locfileid: "59821913"
 
 仮想ネットワークをピアリングするには、いくつかの要件と制約があります。
 
--   ピアリングされた仮想ネットワークが必要です。
+- ピアリングされた仮想ネットワークが必要です。
 
-    -   重複しない IP アドレス空間があります。
+  -   重複しない IP アドレス空間があります。
 
-    -   同じネットワーク コント ローラーで管理します。
+  -   同じネットワーク コント ローラーで管理します。
 
--   別の仮想ネットワークと仮想ネットワークをピアリングすると、追加またはアドレス空間のアドレスの範囲を削除することはできません。
+- 別の仮想ネットワークと仮想ネットワークをピアリングすると、追加またはアドレス空間のアドレスの範囲を削除することはできません。
 
-   >[!TIP]
-   >アドレス範囲を追加する必要があります。 場合、<ol><li>ピアリングを削除します。</li><li>アドレス空間を追加します。</li><li>もう一度ピアリングを追加します。</li></ol>
+  >[!TIP]
+  >アドレス範囲を追加する必要があります。 場合、<ol><li>ピアリングを削除します。</li><li>アドレス空間を追加します。</li><li>もう一度ピアリングを追加します。</li></ol>
 
--   仮想ネットワーク ピアリングは、2 つの仮想ネットワーク間であるためにありません派生する推移的な関係のピアリング間で。 たとえば、virtualNetworkA しと virtualNetworkC にし、ピアリングする場合し virtualNetworkA はいない取得ピアリング関係。
+- 仮想ネットワーク ピアリングは、2 つの仮想ネットワーク間であるためにありません派生する推移的な関係のピアリング間で。 たとえば、virtualNetworkA しと virtualNetworkC にし、ピアリングする場合し virtualNetworkA はいない取得ピアリング関係。
 
-    [イメージ]
+  [イメージ]
 
 ## <a name="connectivity"></a>接続
 

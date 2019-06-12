@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da7926914e2cbdbb4909093d90c33025ae5cd695
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 45de8b3c210fe0925ac3cc43c41d3e092d5dfe16
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882473"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438505"
 ---
 # <a name="ftp-open1"></a>ftp: open_1
 
@@ -30,10 +30,12 @@ ms.locfileid: "59882473"
 open <computer> [<Port>]  
 ```  
 ### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
-|-------|--------|  
-|<computer>|接続を試みているリモート コンピューターを指定します。|  
-|[<Port>]|Ftp サーバーへの接続に使用する TCP ポート番号を指定します。 既定では、TCP ポート 21 を使用します。|  
+
+| パラメーター  |                                           説明                                            |
+|------------|--------------------------------------------------------------------------------------------------|
+| <computer> |                接続を試みているリモート コンピューターを指定します。                 |
+|  [<Port>]  | Ftp サーバーへの接続に使用する TCP ポート番号を指定します。 既定では、TCP ポート 21 を使用します。 |
+
 ## <a name="remarks"></a>注釈  
 (この場合、DNS サーバーまたはホスト ファイルがあります)、IP アドレスまたはコンピューター名を使用して、**コンピューター**します。  
 ## <a name="BKMK_Examples"></a>例  
@@ -46,4 +48,4 @@ Ftp サーバーに接続**専用**755 の TCP ポートでリッスンします
 open ftp.microsoft.com 755  
 ```  
 ## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  

@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: d9999f786639ff4aa303ed34ade14849cda8feec
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 95f3e9e929d6a28279f526eec6dbdf0427bd74c0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475911"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447585"
 ---
 # <a name="cluster-to-cluster-storage-replica-cross-region-in-azure"></a>Azure リージョンを超えてクラスター間の記憶域レプリカを構成する
 
@@ -25,7 +25,7 @@ Azure では、リージョンをまたがるアプリケーションをクラ�
 プロセスの詳しいチュートリアルについては、以下のビデオをご覧ください。
 > [!video https://www.microsoft.com/en-us/videoplayer/embed/RE26xeW]
 
-![アーキテクチャ ダイアグラム ポジティブサムの C2C SR Azure 内で同じリージョン。](media\Cluster-to-cluster-azure-cross-region\architecture.png)
+![アーキテクチャ ダイアグラム ポジティブサムの C2C SR Azure 内で同じリージョン。](media/Cluster-to-cluster-azure-cross-region/architecture.png)
 > [!IMPORTANT]
 > 参照先のすべての例では、上の図に固有です。
 
@@ -68,7 +68,7 @@ Azure では、リージョンをまたがるアプリケーションをクラ�
    仮想ネットワークの DNS サーバーをドメイン コント ローラーのプライベート IP アドレスに変更します。
    - 例では、ドメイン コント ローラーで**az2azDC**がプライベート IP アドレス (10.3.0.8)。 仮想ネットワーク内 (**az2az Vnet**と**azcross VNET**) DNS サーバー 10.3.0.8 を変更します。 
 
-    例では、"contoso.com"のすべてのノードを接続し、"contosoadmin"に、管理者権限を提供します。
+     例では、"contoso.com"のすべてのノードを接続し、"contosoadmin"に、管理者権限を提供します。
    - すべてのノードから contosoadmin としてログインします。 
  
 6. クラスターの作成 (**SRAZC1**、 **SRAZCross**)。
@@ -106,87 +106,87 @@ Azure では、リージョンをまたがるアプリケーションをクラ�
 
 9. 作成[仮想ネットワーク ゲートウェイ](https://ms.portal.azure.com/#create/Microsoft.VirtualNetworkGateway-ARM)Vnet 対 Vnet 接続用です。
 
- - 最初の仮想ネットワーク ゲートウェイの作成 (**az2az VNetGateway**) 最初のリソース グループ内 (**SR AZ2AZ**)
- - ゲートウェイの種類 = VPN、および VPN の種類 = ルート ベース
+   - 最初の仮想ネットワーク ゲートウェイの作成 (**az2az VNetGateway**) 最初のリソース グループ内 (**SR AZ2AZ**)
+   - ゲートウェイの種類 = VPN、および VPN の種類 = ルート ベース
 
- - 2 番目の仮想ネットワーク ゲートウェイの作成 (**azcross VNetGateway**) 2 つ目のリソース グループ内 (**SR AZCROSS**)
- - ゲートウェイの種類 = VPN、および VPN の種類 = ルート ベース
+   - 2 番目の仮想ネットワーク ゲートウェイの作成 (**azcross VNetGateway**) 2 つ目のリソース グループ内 (**SR AZCROSS**)
+   - ゲートウェイの種類 = VPN、および VPN の種類 = ルート ベース
 
- - 2 番目の仮想ネットワーク ゲートウェイを最初の仮想ネットワーク ゲートウェイから Vnet 対 Vnet 接続を作成します。 共有キーを提供します。
+   - 2 番目の仮想ネットワーク ゲートウェイを最初の仮想ネットワーク ゲートウェイから Vnet 対 Vnet 接続を作成します。 共有キーを提供します。
 
- - 最初の仮想ネットワーク ゲートウェイに 2 つ目の仮想ネットワーク ゲートウェイから Vnet 対 Vnet 接続を作成します。 上記の手順では、同じ共有キーを提供します。 
+   - 最初の仮想ネットワーク ゲートウェイに 2 つ目の仮想ネットワーク ゲートウェイから Vnet 対 Vnet 接続を作成します。 上記の手順では、同じ共有キーを提供します。 
 
 10. 各クラスター ノードでは、ポート 59999 (正常性プローブ) を開きます。
 
-   各ノードで、次のコマンドを実行します。
+    各ノードで、次のコマンドを実行します。
 
-   ```powershell
+    ```powershell
       netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=allow localport=59999 remoteip=any profile=any 
-   ```
+    ```
 
 11. クラスターの正常性プローブ ポート 59999 メッセージをリッスンし、このリソースを所有しているノードからの応答するように指示します。
 
-   1 回から実行クラスターごとに、クラスターの 1 つのノード。 
+    1 回から実行クラスターごとに、クラスターの 1 つのノード。 
     
-   この例では、"ILBIP"、構成値に基づいてを変更してください。 1 つのノードから、次のコマンドを実行**az2az1**/**az2az2**
+    この例では、"ILBIP"、構成値に基づいてを変更してください。 1 つのノードから、次のコマンドを実行**az2az1**/**az2az2**
 
-   ```PowerShell
+    ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
      $ILBIP = "10.3.0.100" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
      [int]$ProbePort = 59999
      Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}  
-   ```
+    ```
 
 12. 1 つのノードから、次のコマンドを実行**azcross1**/**azcross2**
-   ```PowerShell
+    ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
      $IPResourceName = "Cluster IP Address" # IP Address cluster resource name.
      $ILBIP = "10.0.0.10" # IP Address in Internal Load Balancer (ILB) - The static IP address for the load balancer configured in the Azure portal.
      [int]$ProbePort = 59999
      Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}  
-   ```
+    ```
 
-   両方のクラスターが接続/相互通信を確認してください。
+    両方のクラスターが接続/相互通信を確認してください。
 
-   いずれか、他のクラスターに接続または他のクラスターの現在のクラスターのノードの 1 つから応答を確認するフェールオーバー クラスター マネージャーの「クラスターに接続」機能を使用します。
+    いずれか、他のクラスターに接続または他のクラスターの現在のクラスターのノードの 1 つから応答を確認するフェールオーバー クラスター マネージャーの「クラスターに接続」機能を使用します。
 
-   例を使用しています。
-   ```powershell
+    例を使用しています。
+    ```powershell
       Get-Cluster -Name SRAZC1 (ran from azcross1)
-   ```
-   ```powershell
+    ```
+    ```powershell
       Get-Cluster -Name SRAZCross (ran from az2az1) 
-   ```
+    ```
 
 13. 両方のクラスターのクラウド監視を作成します。 2 つ作成[ストレージ アカウント](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM)(**az2azcw**、**azcrosssa**)、Azure リソース グループごとに各クラスターのいずれかで (**SR AZ2AZ**、 **SR-AZCROSS**)。
    
-   - [アクセス キー] から、ストレージ アカウント名とキーをコピーします。
-   - 「フェールオーバー クラスター マネージャー」から、クラウドのミラーリング監視サーバーを作成し、上記のアカウント名とキーを使用して作成しています。 
+    - [アクセス キー] から、ストレージ アカウント名とキーをコピーします。
+    - 「フェールオーバー クラスター マネージャー」から、クラウドのミラーリング監視サーバーを作成し、上記のアカウント名とキーを使用して作成しています。 
 
 14. 実行[クラスター検証テストの](../../failover-clustering/create-failover-cluster.md#validate-the-configuration)次の手順に進む前に
 
 15. Windows PowerShell を起動し、[Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) コマンドレットを使用して、記憶域レプリカのすべての要件を満たしているかどうかを判別します。 このコマンドレットは、簡単なテストのために要件のみモードで使用することも、実行時間の長いパフォーマンス評価モードで使用することもできます。
  
 16. クラスター-クラスターの記憶域レプリカを構成します。
-双方向で別のクラスターに 1 つのクラスターからのアクセスを許可します。
+    双方向で別のクラスターに 1 つのクラスターからのアクセスを許可します。
 
-   例。
-   ```powershell
+    例。
+    ```powershell
      Grant-SRAccess -ComputerName az2az1 -Cluster SRAZCross
-   ```
-Windows Server 2016 を使用している場合は、このコマンドを実行しても。
+    ```
+    Windows Server 2016 を使用している場合は、このコマンドを実行しても。
 
-   ```powershell
+    ```powershell
      Grant-SRAccess -ComputerName azcross1 -Cluster SRAZC1
-   ```
+    ```
 
 17. 2 つのクラスターの記憶域レプリカのパートナーシップを作成します。</ol>
 
-   - クラスターの**SRAZC1**
+    - クラスターの**SRAZC1**
       - ボリュームの場所:-c:\ClusterStorage\DataDisk1
       - ログの場所:-g:
-   - クラスターの**SRAZCross**
+    - クラスターの**SRAZCross**
       - ボリュームの場所:-c:\ClusterStorage\DataDiskCross
       - ログの場所:-g:
 

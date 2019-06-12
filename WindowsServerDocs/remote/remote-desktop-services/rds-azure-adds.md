@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: christianmontoya
 ms.localizationpriority: medium
-ms.openlocfilehash: e60cf70f1f91ad87046bedf024fe9afc459075b6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8b1baf642ffa3c8e8a0a2cfc70d2f49b58f208b3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860513"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446582"
 ---
 # <a name="integrate-azure-ad-domain-services-with-your-rds-deployment"></a>RDS 展開と Azure AD Domain Services との統合
 
@@ -51,26 +51,26 @@ Azure AD DS の理解を深めるためには、チェック アウト、 [Azure
 2. Rds. をセットアップします。 Azure テンプレートを使用してか、手動で RDS をデプロイします。
    - 使用して、 [Existing AD テンプレート](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/)します。 以下のカスタマイズをようにします。
    
-      - **設定**
-         - **リソース グループ**:RDS のリソースを作成するリソース グループを使用します。
+     - **設定**
+       - **リソース グループ**:RDS のリソースを作成するリソース グループを使用します。
          > [!NOTE] 
          > ここでは、Azure resource manager 仮想ネットワークが存在する同じリソース グループにする必要があります。
 
-         - **Dns ラベルのプレフィックス**:URL を入力するユーザー RD Web アクセスに使用します。
-         - **Ad ドメイン名**:"Contoso.onmicrosoft.com"または"contoso.com"など、Azure AD インスタンスの完全名を入力します。
-         - **Ad Vnet 名**と**Ad サブネット名**:Azure resource manager 仮想ネットワークを作成したときに使用したのと同じ値を入力します。 これは、RDS リソースの接続先サブネットです。
-         - **管理者のユーザー名**と**管理者パスワード**:メンバーであるユーザーが管理者の資格情報を入力、 **AAD DC Administrators** Azure AD でグループ化します。
+       - **Dns ラベルのプレフィックス**:URL を入力するユーザー RD Web アクセスに使用します。
+       - **Ad ドメイン名**:"Contoso.onmicrosoft.com"または"contoso.com"など、Azure AD インスタンスの完全名を入力します。
+       - **Ad Vnet 名**と**Ad サブネット名**:Azure resource manager 仮想ネットワークを作成したときに使用したのと同じ値を入力します。 これは、RDS リソースの接続先サブネットです。
+       - **管理者のユーザー名**と**管理者パスワード**:メンバーであるユーザーが管理者の資格情報を入力、 **AAD DC Administrators** Azure AD でグループ化します。
    
-      - **テンプレート**
-         - すべてのプロパティを削除**dnsServers**: 選択した後**テンプレートの編集**Azure クイック スタート テンプレートのページから"dnsServers"を検索し、プロパティを削除します。 
+     - **テンプレート**
+        - すべてのプロパティを削除**dnsServers**: 選択した後**テンプレートの編集**Azure クイック スタート テンプレートのページから"dnsServers"を検索し、プロパティを削除します。 
 
-            削除する前に、たとえば、 **dnsServers**プロパティ。
+           削除する前に、たとえば、 **dnsServers**プロパティ。
       
-            ![DnsSettings プロパティを使用して azure クイック スタート テンプレート](media/rds-remove-dnssettings-before.png)
+           ![DnsSettings プロパティを使用して azure クイック スタート テンプレート](media/rds-remove-dnssettings-before.png)
 
-            プロパティを削除した後、同じファイルを次に示します。
+           プロパティを削除した後、同じファイルを次に示します。
 
-            ![削除 dnsSettings プロパティを使用して azure クイック スタート テンプレート](media/rds-remove-dnssettings-after.png)
+           ![削除 dnsSettings プロパティを使用して azure クイック スタート テンプレート](media/rds-remove-dnssettings-after.png)
    
    - [RDS の展開を手動で](rds-deploy-infrastructure.md)します。 
 

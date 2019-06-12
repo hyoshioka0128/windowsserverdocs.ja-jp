@@ -12,14 +12,14 @@ ms.assetid: 07d0c4c6-3e92-4969-82b8-105e46ab8d97
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c60e5f73c88a225fbd1067992894f9d20da745ad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a99698519524c3b5050dc534d61921560522528c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860483"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433868"
 ---
-#<a name="support-for-larger-deployments"></a>大規模展開のサポート
+# <a name="support-for-larger-deployments"></a>大規模展開のサポート
 
 >適用先:Windows Server 2016 Essentials
 
@@ -34,7 +34,7 @@ Windows Server Essentials では、大規模な展開で使用できるように
 - 指定されたドメイン コント ローラーを指定する機能
 - 最大 500 ユーザーと 500 台のデバイスのサポート
 
-##<a name="support-for-multiple-domains"></a>複数のドメインのサポート
+## <a name="support-for-multiple-domains"></a>複数のドメインのサポート
 
 Windows server 2012 R2 Essentials のサポートが必要な場合、サーバーごとに 1 つのドメインと、Essentials サーバーは、フォレストのルートである必要があります。 ドメインとフォレストは引き続き必要ですが、Windows Server 2016 Essentials Experience 役割は Windows Server 2016 Standard または Datacenter 複数のドメインをサポートするために今すぐ展開できます。
 
@@ -42,7 +42,7 @@ Windows server 2012 R2 Essentials のサポートが必要な場合、サーバ�
 
  Windows Server Essentials 2012 R2 では、1 つ以上のドメイン コント ローラーが展開されている Office 365 など、Azure Active Directory を利用するすべてのサービスをブロックします。 理由は、ローカル ドメイン コント ローラーと Azure Active Directory のアカウントとパスワードの同期は、同期されていないパスワードを持つアカウントの資格情報になることができることです。Windows Server 2016 Essentials で、この制限がなくなりました。
 
-##<a name="ability-to-specify-a-designated-domain-controller"></a>指定されたドメイン コント ローラーを指定する機能
+## <a name="ability-to-specify-a-designated-domain-controller"></a>指定されたドメイン コント ローラーを指定する機能
 
 ここでは、Active Directory ドメインのオブジェクトの取得時間を向上だけでなく、ドメイン内の他のドメイン コント ローラー間でのアカウントの変更の同期の調整が指定されたドメイン コント ローラーを選択できます。
 
@@ -50,7 +50,7 @@ Windows server 2012 R2 Essentials のサポートが必要な場合、サーバ�
 
 ![設定が表示されたスクリーン ショットでは、フォア グラウンドでパネルと、バック グラウンドで Windows Server Essentials ダッシュ ボードを制御します。 コントロール パネルの設定の指定されたドメイン コント ローラーのページは現在選択されています。](media/larger-deployments-1.PNG)
 
-##<a name="support-for-500-users-and-500-devices"></a>500 人のユーザーと 500 台のデバイスのサポート
+## <a name="support-for-500-users-and-500-devices"></a>500 人のユーザーと 500 台のデバイスのサポート
 -------------------------------------
 
 Windows Server 2012 R2 Essentials でサポートされているユーザーとデバイスの最大数は、それぞれ 25、50、です。 Windows Server Essentials Experience サーバーの役割の導入に伴い、制限は 100 人のユーザーと 200 台のデバイスに拡張されました。
@@ -66,4 +66,4 @@ Windows Server 2016 Essentials は、500 人のユーザーと 500 台のデバ�
 
 <a name="see-also"></a>関連項目
 --------
-[Windows Server Essentials を概要します。](get-started.md)
+[Windows Server Essentials の概要](get-started.md)

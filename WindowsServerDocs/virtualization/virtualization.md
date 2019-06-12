@@ -10,12 +10,12 @@ ms.topic: landing-page
 author: shortpatti
 ms.author: pashort
 ms.localizationpriority: high
-ms.openlocfilehash: 1ae36a2e1be1559094dd55dba41fa9a468118260
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 53c927f89fd3ccaa212c998f7102d0fdb9f41bde
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840063"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447939"
 ---
 # <a name="virtualization"></a>仮想化
 
@@ -41,7 +41,7 @@ Windows Server の仮想化は、ソフトウェア定義インフラストラ�
                     <div class="cardText">
                         <h3>保護されたファブリックとシールドされた VM</h3>
 <HR />
-                        <p>クラウド サービス プロバイダーやエンタープライズ プライベート クラウド管理者は、保護されたファブリックを使用して、セキュリティが強化された VM 環境を実現できます。 保護されたファブリックが 1 つのホスト ガーディアン サービスから成る\(HGS\) -通常、3 つのノードの 1 つまたは複数の保護されたホストのクラスターとの一連のシールドされた Vm。</p>
+                        <p>クラウド サービス プロバイダーやエンタープライズ プライベート クラウド管理者は、保護されたファブリックを使用して、セキュリティが強化された VM 環境を実現できます。 保護されたファブリックは、1 つホスト ガーディアン サービス (HGS) の 3 つのノードのクラスターでは通常、- と 1 つで構成されますか、ホスト、および一連のシールドされた Vm を保護の詳細は。</p>
                      </div>
                   </div>
               </div>

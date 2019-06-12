@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 8b3b2934e7aa177e873e19d77530b2d796ccd521
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 83dab73230737b8303660b32683a6d05322ac754
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188897"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444772"
 ---
 # <a name="walkthrough-workplace-join-with-a-windows-device"></a>チュートリアル: 職場への Windows デバイスの参加
 
@@ -25,19 +25,19 @@ ms.locfileid: "66188897"
 
 #### <a name="to-access-the-web-application-before-you-use-workplace-join-on-your-device"></a>デバイスでワークプレース ジョインを使用する前に Web アプリケーションにアクセスするには
 
-1.  Microsoft アカウントを使用して Client1 にログオンします。
+1. Microsoft アカウントを使用して Client1 にログオンします。
 
-2.  Internet Explorer を汎用の要求アプリへの参照を開いて **https://webserv1.contoso.com/claimapp** します。
+2. Internet Explorer を汎用の要求アプリへの参照を開いて **https://webserv1.contoso.com/claimapp** します。
 
-3.  会社のドメイン アカウントを使用して web ページにログオン: **roberth@contoso.com**、パスワード:  **P@ssword** します。
+3. 会社のドメイン アカウントを使用して web ページにログオン: <strong>roberth@contoso.com</strong>、パスワード:  <strong>P@ssword</strong>します。
 
-4.  Web ページに、セキュリティ トークンに含まれるすべての信頼性情報が一覧表示されます。 セキュリティ トークンにはユーザーの信頼性情報のみが存在します。
+4. Web ページに、セキュリティ トークンに含まれるすべての信頼性情報が一覧表示されます。 セキュリティ トークンにはユーザーの信頼性情報のみが存在します。
 
-5.  Internet Explorer を閉じます。
+5. Internet Explorer を閉じます。
 
-6.  Internet Explorer を開き、同じ要求ベースのアプリケーションに移動します **https://webserv1.contoso.com/claimapp** します。
+6. Internet Explorer を開き、同じ要求ベースのアプリケーションに移動します **https://webserv1.contoso.com/claimapp** します。
 
-7.  資格情報の入力を再度、求められます。 ワークプレース ジョインを使用してデバイスから職場に接続していないため、シングル サインオンは機能していません。
+7. 資格情報の入力を再度、求められます。 ワークプレース ジョインを使用してデバイスから職場に接続していないため、シングル サインオンは機能していません。
 
 ## <a name="join-your-device-with-workplace-join"></a>ワークプレース ジョインによるデバイスの参加
 
@@ -48,36 +48,36 @@ ms.locfileid: "66188897"
 
 #### <a name="to-join-your-device-with-workplace-join"></a>ワークプレース ジョインを使用してデバイスを参加させるには
 
-1.  Microsoft アカウントを使用して Client1 にログオンします。
+1. Microsoft アカウントを使用して Client1 にログオンします。
 
-2.  **スタート**画面で、**チャーム** バーを開き、 **[設定]** チャームをクリックします。 **[PC 設定の変更]** を選択します。
+2. **スタート**画面で、**チャーム** バーを開き、 **[設定]** チャームをクリックします。 **[PC 設定の変更]** を選択します。
 
-3.  **[PC 設定]** ページで **[ネットワーク]** を選択し、 **[社内]** をクリックします。
+3. **[PC 設定]** ページで **[ネットワーク]** を選択し、 **[社内]** をクリックします。
 
-4.  **職場へのアクセスを取得またはデバイスの管理を有効にする、UserID を入力**ボックスに「 **roberth@contoso.com**、順にクリックします**参加**します。
+4. **職場へのアクセスを取得またはデバイスの管理を有効にする、UserID を入力**ボックスに「 <strong>roberth@contoso.com</strong>、順にクリックします**参加**します。
 
-5.  資格情報を求められたら、入力 **roberth@contoso.com** とパスワード:  **P@ssword** します。 **[OK]** をクリックします。
+5. 資格情報を求められたら、入力 <strong>roberth@contoso.com</strong>とパスワード:  <strong>P@ssword</strong>します。 **[OK]** をクリックします。
 
-6.  次のメッセージが表示されます:"このデバイスは社内のネットワークに参加しています"
+6. 次のメッセージが表示されます:"このデバイスは社内のネットワークに参加しています"
 
 ### <a name="access-the-web-application-after-joining-the-workplace"></a>職場への参加後の Web アプリケーションへのアクセス
 ここでは、ワークプレース ジョインを使用して接続されたデバイスから会社の Web アプリケーションにアクセスします。 Web ページには、セキュリティ トークンに含まれていた信頼性情報が表示されます。 信頼性情報の一覧に、デバイスとユーザーの両方の情報が含まれていることがわかります。 また、シングル サインオンを使用できることもわかります。
 
 ##### <a name="to-access-the-web-application-after-joining-the-workplace"></a>職場への参加後に Web アプリケーションにアクセスするには
 
-1.  Microsoft アカウントを使用して **Client1** にログオンします。
+1. Microsoft アカウントを使用して **Client1** にログオンします。
 
-2.  Internet Explorer を汎用の要求アプリへの参照を開いて **https://webserv1.contoso.com/claimapp** します。
+2. Internet Explorer を汎用の要求アプリへの参照を開いて **https://webserv1.contoso.com/claimapp** します。
 
-3.  会社のドメイン アカウントを使用して web ページにログオン: **roberth@contoso.com**、パスワード:  **P@ssword** します。
+3. 会社のドメイン アカウントを使用して web ページにログオン: <strong>roberth@contoso.com</strong>、パスワード:  <strong>P@ssword</strong>します。
 
-4.  Web ページに、セキュリティ トークンに含まれる信頼性情報が一覧表示されます。 トークンにはユーザーとデバイスの両方の信頼性情報が含まれています。
+4. Web ページに、セキュリティ トークンに含まれる信頼性情報が一覧表示されます。 トークンにはユーザーとデバイスの両方の信頼性情報が含まれています。
 
-5.  Internet Explorer を閉じます。
+5. Internet Explorer を閉じます。
 
-6.  Internet Explorer を開き、同じ要求ベースのアプリケーションに移動します **https://webserv1.contoso.com/claimapp** します。
+6. Internet Explorer を開き、同じ要求ベースのアプリケーションに移動します **https://webserv1.contoso.com/claimapp** します。
 
-7.  今回は資格情報の入力を **求められません** 。 ワークプレース ジョインを使用したデバイスから接続しているため、シングル サインオンが機能しています。
+7. 今回は資格情報の入力を **求められません** 。 ワークプレース ジョインを使用したデバイスから接続しているため、シングル サインオンが機能しています。
 
 ## <a name="see-also"></a>関連項目
 [任意のデバイスからの SSO とシームレスな 2 つ目 Factor Authentication Across Company Applications ワークプ レースへの参加](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)

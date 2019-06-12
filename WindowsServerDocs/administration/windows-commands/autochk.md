@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 023bd81b93106a091fb9f26d97cf7eda75f0f633
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6c26d42410e5466950ede4f9aa059e315030588
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888463"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435029"
 ---
 # <a name="autochk"></a>autochk
 
@@ -35,12 +35,12 @@ ms.locfileid: "59888463"
 
 > -   [!WARNING]
 >     **Autochk**コマンド ライン ツールは、コマンドラインから直接実行できません。 代わりに、使用、 **Chkntfs**方法を構成するコマンド ライン ツール**Autochk**スタートアップ時に実行します。
--   使用することができます**Chkntfs**で、 **/x**を防ぐためにパラメーター **Autochk**特定または複数のボリュームで実行されているからです。
--   使用して、 **Chkntfs.exe**とコマンド ライン ツール、 **/t** Autochk 遅延を 0 秒から 3 日 (259, 200 秒) に変更するパラメーター。 ただし、長時間の遅延は、時間が経過するまで、またはキャンセルするキーを押すと、コンピューターが起動しないことを意味**Autochk**します。
+> -   使用することができます**Chkntfs**で、 **/x**を防ぐためにパラメーター **Autochk**特定または複数のボリュームで実行されているからです。
+> -   使用して、 **Chkntfs.exe**とコマンド ライン ツール、 **/t** Autochk 遅延を 0 秒から 3 日 (259, 200 秒) に変更するパラメーター。 ただし、長時間の遅延は、時間が経過するまで、またはキャンセルするキーを押すと、コンピューターが起動しないことを意味**Autochk**します。
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
 
 [chkdsk](chkdsk.md)
 

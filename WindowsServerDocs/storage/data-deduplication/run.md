@@ -8,12 +8,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: 0421faaa910a1d679d809b88c0b4d2c94ba694b3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2e2e4975c4ab9ebb7ec68834f380255292426393
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852473"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447218"
 ---
 # <a name="running-data-deduplication"></a>データ重複除去の実行
 
@@ -49,10 +49,10 @@ Start-DedupJob -Type Optimization -Volume <Your-Volume-Here> -Memory 100 -Cores 
 
 [最適化ジョブ](understand.md#job-info-optimization)の失敗を示す指標の 1 つは、最適化率が下降傾向であることです。この場合、最適化ジョブが変更の速度 (チャーン) に対応できていない可能性があります。 [`Get-DedupStatus`  ](https://technet.microsoft.com/library/hh848437.aspx) PowerShell コマンドレットを使用して、最適化率を確認できます。
 
-> [!Important]  
+> [!Important]
 > `Get-DedupStatus` 最適化率に関連する 2 つのフィールドがあります:`OptimizedFilesSavingsRate`と`SavingsRate`します。 これらの値はどちらも追跡する必要がありますが、それぞれの意味合いは異なります。
-- `OptimizedFilesSavingsRate` 'ポリシー' はファイルにのみ適用される最適化のため (`space used by optimized files after optimization / logical size of optimized files`)。
-- `SavingsRate` ボリューム全体に適用されます (`space used by optimized files after optimization / total logical size of the optimization`)。
+> - `OptimizedFilesSavingsRate` 'ポリシー' はファイルにのみ適用される最適化のため (`space used by optimized files after optimization / logical size of optimized files`)。
+> - `SavingsRate` ボリューム全体に適用されます (`space used by optimized files after optimization / total logical size of the optimization`)。
 
 ## <a id="disabling-dedup"></a>データ重複除去を無効にします。
 データ重複除去を無効にするには、[非最適化ジョブ](understand.md#job-info-unoptimization)を実行します。 ボリュームの最適化を元に戻すには、次のコマンドを実行します。

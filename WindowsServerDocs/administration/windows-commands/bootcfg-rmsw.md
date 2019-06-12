@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65a8ba452911eb1b46a748d4e9d639ed102421b6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f3d873cffbdb386b5f4f564801a4f4b815c6987a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878823"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434680"
 ---
 # <a name="bootcfg-rmsw"></a>bootcfg rmsw
 
@@ -31,17 +31,19 @@ ms.locfileid: "59878823"
 bootcfg /rmsw [/s <computer> [/u <Domain>\<User> [/p <Password>]]] [/mm] [/bv] [/so] [/ng] /id <OSEntryLineNum>
 ```
 ## <a name="parameters"></a>パラメーター
-|パラメーター|説明|
-|-------|--------|
-|/s <computer>|名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定はローカル コンピュータです。|
-|/u <Domain>\\<User>|指定されたユーザーのアカウント権限でコマンドを実行<User>または<Domain> \\<User>します。 既定では現在のコマンドを実行するコンピューターのユーザー ログオンのアクセス許可です。|
-|/p <Password>|指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。|
-|/mm|指定された対象から/maxmem オプションとその関連付けられているメモリの最大値を削除します。<OSEntryLineNum>します。 /Maxmem オプションでは、オペレーティング システムが使用できる RAM の最大量を指定します。|
-|/bv|指定された対象から/basevideo オプションを削除します。<OSEntryLineNum>します。 /Basevideo オプションは、インストールされているビデオ ドライバーの標準の VGA モードを使用するオペレーティング システムに指示します。|
-|/so|指定された対象から/sos オプションを削除します。<OSEntryLineNum>します。 /Sos オプションは、読み込み中には、デバイス ドライバーの名前を表示するオペレーティング システムに指示します。|
-|/ng|指定された対象から選択するオプションを削除します。<OSEntryLineNum>します。 選択するオプションには、CTRL + ALT + del ログオン プロンプトの前に表示される進行状況バーが無効にします。|
-|/id <OSEntryLineNum>|OS の読み込みオプションの削除元となる、Boot.ini ファイルの [オペレーティング システム] セクションでは、オペレーティング システム エントリの行番号を指定します。 [オペレーティング システム] セクション ヘッダーの後の最初の行には 1 です。|
-|/?|コマンド プロンプトにヘルプを表示します。|
+
+|      パラメーター       |                                                                                                      説明                                                                                                       |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    /s <computer>     |                                                   名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定はローカル コンピュータです。                                                   |
+| /u <Domain>\\<User>  |          指定されたユーザーのアカウント権限でコマンドを実行<User>または<Domain> \\<User>します。 既定では現在のコマンドを実行するコンピューターのユーザー ログオンのアクセス許可です。          |
+|    /p <Password>     |                                                                 指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。                                                                  |
+|         /mm          |           指定された対象から/maxmem オプションとその関連付けられているメモリの最大値を削除します。<OSEntryLineNum>します。 /Maxmem オプションでは、オペレーティング システムが使用できる RAM の最大量を指定します。            |
+|         /bv          |                     指定された対象から/basevideo オプションを削除します。<OSEntryLineNum>します。 /Basevideo オプションは、インストールされているビデオ ドライバーの標準の VGA モードを使用するオペレーティング システムに指示します。                     |
+|         /so          |                         指定された対象から/sos オプションを削除します。<OSEntryLineNum>します。 /Sos オプションは、読み込み中には、デバイス ドライバーの名前を表示するオペレーティング システムに指示します。                          |
+|         /ng          |                         指定された対象から選択するオプションを削除します。<OSEntryLineNum>します。 選択するオプションには、CTRL + ALT + del ログオン プロンプトの前に表示される進行状況バーが無効にします。                          |
+| /id <OSEntryLineNum> | OS の読み込みオプションの削除元となる、Boot.ini ファイルの [オペレーティング システム] セクションでは、オペレーティング システム エントリの行番号を指定します。 [オペレーティング システム] セクション ヘッダーの後の最初の行には 1 です。 |
+|          /?          |                                                                                          コマンド プロンプトにヘルプを表示します。                                                                                          |
+
 ## <a name="BKMK_examples"></a>例
 次の例を使用する方法、 **bootcfg/rmsw**コマンド。
 ```
@@ -52,4 +54,4 @@ bootcfg /rmsw /ng /id 2
 bootcfg /rmsw /mm 96 /ng /s srvmain /u maindom\hiropln /p p@ssW23 /id 2       
 ```
 #### <a name="additional-references"></a>その他の参照
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

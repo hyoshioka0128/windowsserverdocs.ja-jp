@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1bc4be8be747c31d60d75c90ad3aa831dd8dff93
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7db6caf4e63ea59fa40892679d3de0cfaca661e9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838303"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438018"
 ---
 # <a name="ksetuplistrealmflags"></a>ksetup:listrealmflags
 
@@ -40,7 +40,7 @@ ksetup /listrealmflags
 
 領域のフラグは、非 Windows ベースの Kerberos 領域の他の機能を指定します。 Windows Server 2003、Windows Server 2008、または Windows Server 2008 R2 を実行しているコンピューターでは、非 Windows ベースの Kerberos サーバーを使用して、Windows Server オペレーティング システムを実行しているドメインを使用する代わりに、認証の管理します。 これらのシステムは、Windows ドメインではなく Kerberos 領域に参加します。 このエントリは、領域の機能を確立します。 次の表では、それぞれについて説明します。
 
-|値|領域のフラグ|説明|
+|Value|領域のフラグ|説明|
 |-----|----------|-----------|
 |0 xf です.|すべての|すべての領域フラグが設定されます。|
 |0x00|なし|領域のフラグが設定されていないと、その他の機能が有効なことはありません。|
@@ -50,7 +50,7 @@ ksetup /listrealmflags
 |0x08|NcSupported|この領域は、名の正規化は、DNS と領域の名前付け標準をサポートします。|
 |0x80|RC4|この領域は、TLS の使用できる領域間の信頼を有効にする RC4 暗号化をサポートします。|
 
-領域のフラグがレジストリに格納されている**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\*** 領域-名前 * です。 既定では、このエントリはレジストリに存在しません。 使用することができます、 [Ksetup:addrealmflags](ksetup-addrealmflags.md)レジストリの作成にコマンド。
+領域のフラグがレジストリに格納されている**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\\** <em>領域名</em>します。 既定では、このエントリはレジストリに存在しません。 使用することができます、 [Ksetup:addrealmflags](ksetup-addrealmflags.md)レジストリの作成にコマンド。
 
 ## <a name="BKMK_Examples"></a>例
 
@@ -68,8 +68,8 @@ ksetup /setrealmflags CORP.CONTOSO.COM 0xF
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [ksetup:setrealmflags](ksetup-setrealmflags.md)
--   [ksetup:addrealmflags](ksetup-addrealmflags.md)
--   [ksetup:delrealmflags](ksetup-delrealmflags.md)
+-   [Ksetup:setrealmflags](ksetup-setrealmflags.md)
+-   [Ksetup:addrealmflags](ksetup-addrealmflags.md)
+-   [Ksetup:delrealmflags](ksetup-delrealmflags.md)
 -   [Ksetup](ksetup.md)
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

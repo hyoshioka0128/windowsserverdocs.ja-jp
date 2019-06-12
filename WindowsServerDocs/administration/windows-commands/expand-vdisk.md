@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cf8fd0b05ca5baeeee4fadd670adb3169130d04e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8019ce62d6cf38c7430a789f68749444ac91ad48
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837403"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439441"
 ---
 # <a name="expand-vdisk"></a>vdisk を展開します。
 
@@ -27,25 +27,27 @@ ms.locfileid: "59837403"
 指定したサイズの仮想ハード_ディスク (VHD) を展開します。
 > [!NOTE]
 > このコマンドは、Windows 7 と Windows Server 2008 R2 に該当するだけです。
-## <a name="syntax"></a>構文
-```
-expand vdisk maximum=<n>
-```
-## <a name="parameters"></a>パラメーター
-|パラメーター|説明|
-|-------|--------|
-|最大 =<n>|メガバイト (MB) 単位で VHD を新しいサイズを指定します。|
-## <a name="remarks"></a>注釈
--   VHD の選択し、この操作を正常にデタッチする必要があります。 使用して、 **vdisk を選択**コマンドをボリュームを選択し、それにフォーカスをします。
-## <a name="BKMK_Examples"></a>例
-選択した VHD を展開し、20 GB に、次のように入力します。
-```
-expand vdisk maximum=20000
-```
-## <a name="additional-references"></a>その他の参照
--   [コマンドライン構文キー](command-line-syntax-key.md)
--   [attach vdisk](attach-vdisk.md)
--   [vdisk を最適化します。](compact-vdisk.md)
+> ## <a name="syntax"></a>構文
+> ```
+> expand vdisk maximum=<n>
+> ```
+> ## <a name="parameters"></a>パラメーター
+> 
+> |  パラメーター  |                      説明                      |
+> |-------------|-------------------------------------------------------|
+> | 最大 =<n> | メガバイト (MB) 単位で VHD を新しいサイズを指定します。 |
+> 
+> ## <a name="remarks"></a>注釈
+> - VHD の選択し、この操作を正常にデタッチする必要があります。 使用して、 **vdisk を選択**コマンドをボリュームを選択し、それにフォーカスをします。
+>   ## <a name="BKMK_Examples"></a>例
+>   選択した VHD を展開し、20 GB に、次のように入力します。
+>   ```
+>   expand vdisk maximum=20000
+>   ```
+>   ## <a name="additional-references"></a>その他の参照
+> - [コマンド ライン構文の記号](command-line-syntax-key.md)
+> - [attach vdisk](attach-vdisk.md)
+> - [vdisk を最適化します。](compact-vdisk.md)
 
 -   [Vdisk をデタッチします。](detach-vdisk.md)
 -   [詳細 vdisk](detail-vdisk.md)

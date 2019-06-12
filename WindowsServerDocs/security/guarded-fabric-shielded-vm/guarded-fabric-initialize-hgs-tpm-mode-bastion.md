@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: ac6407f9f23780dc62ff7d99fe0daf0f81f79f72
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 458642eedbfdc94ef0f3d6f6fe08ed4ead475ab0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832143"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447432"
 ---
 # <a name="initialize-the-hgs-cluster-using-tpm-mode-in-an-existing-bastion-forest"></a>既存の要塞フォレスト内の TPM のモードを使用して HGS クラスターを初期化します。
 
@@ -43,5 +43,5 @@ Initialize-HgsServer -UseExistingDomain -ServiceAccount 'HGSgMSA' -JeaReviewersG
 
 ## <a name="next-step"></a>次の手順
 
->[!div class="nextstepaction"]
-[TPM のルート証明書をインストールします。](guarded-fabric-install-trusted-tpm-root-certificates.md)
+> [!div class="nextstepaction"]
+> [TPM ルート証明書のインストール](guarded-fabric-install-trusted-tpm-root-certificates.md)

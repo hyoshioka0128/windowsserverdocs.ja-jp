@@ -11,14 +11,14 @@ author: sakitong
 ms.author: coreyp
 manager: dougkim
 ms.date: 10/16/2017
-ms.openlocfilehash: c89d5eb754685fb8000ac2025af391057e77654c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 272d3865bbe1a9853f5349c5e878155351525ef0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848613"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439940"
 ---
-#<a name="monthly-delta-update-isv-support-without-wsus"></a>月単位のデルタ WSUS せず ISV のサポートを更新します。
+# <a name="monthly-delta-update-isv-support-without-wsus"></a>月単位のデルタ WSUS せず ISV のサポートを更新します。
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows 10
 
@@ -30,7 +30,7 @@ WSUS がインストールされていないパッケージのサイズはそれ
 
 ![ダウンロード サイズの比較](../../media/express-update-delivery-isv-support/delta-1.png)
 
-##<a name="what-is-monthly-delta-update"></a>月単位のデルタの更新プログラムとは何ですか。
+## <a name="what-is-monthly-delta-update"></a>月単位のデルタの更新プログラムとは何ですか。
 
 月次セキュリティ更新プログラムの 2 つのバリエーションがあります。デルタと累積します。
 
@@ -49,8 +49,8 @@ WSUS がインストールされていないパッケージのサイズはそれ
 
 デルタと累積的なサポート技術情報の同じ番号、同じの分類を持つと同時にリリースします。 カタログで更新プログラム タイトルまたは msu の名前、更新プログラムを識別できます。
 
-- 2017-02 *\***差分更新**\** (KB1234567) x64 ベース システム用の Windows 10 バージョン 1607 用
-- 2017-02 *\***cumulative Update**\** (KB1234567) x86 ベース システム用の Windows 10 バージョン 1607 用                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+- 2017-02 *\***差分更新**\**  (KB1234567) x64 ベース システム用の Windows 10 バージョン 1607 用
+- 2017-02 *\***cumulative Update**\**  (KB1234567) x86 ベース システム用の Windows 10 バージョン 1607 用                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 
 ### <a name="when-to-use-monthly-delta-update"></a>デルタの月の更新を使用する場合
 

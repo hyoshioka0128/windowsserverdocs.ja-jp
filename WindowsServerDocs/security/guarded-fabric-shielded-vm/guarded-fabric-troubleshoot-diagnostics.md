@@ -7,12 +7,12 @@ ms.assetid: 07691d5b-046c-45ea-8570-a0a85c3f2d22
 manager: dongill
 author: huu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: c102fa0503e6aac279235e1243b55e0e3cf81e1d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0fb257f693cc27c0bc6dd18fc89e8dc6328ee638
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812413"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447341"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>保護されたファブリックの診断ツールを使用したトラブルシューティング
 
@@ -154,11 +154,11 @@ Get-HgsTrace -Target $hgs01,$hgs02,$gh01,$gh02 -RunDiagnostics
 
 手動診断を実行するための手順は次のとおりです。
 
-1. 各ホストの管理者が実行される要求`Get-HgsTrace`既知を指定する`-Path`一連の診断結果のトレースに対して実行します。  次に、例を示します。
+1. 各ホストの管理者が実行される要求`Get-HgsTrace`既知を指定する`-Path`一連の診断結果のトレースに対して実行します。  例:
 
- ```PowerShell
- Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
- ```
+   ```PowerShell
+   Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
+   ```
 2. 各ホストの管理者が結果のトレース フォルダーをパッケージ化し、送信するよう依頼します。  ファイル共有、またはその他の動作のポリシーと、組織が確立されている手順に基づくメカニズムを使用して、電子メール経由でこのプロセスを推進できます。
 
 3. ないその他の内容またはフォルダーの 1 つのフォルダーには、受信したすべてのトレースをマージします。
@@ -181,9 +181,9 @@ Get-HgsTrace -Target $hgs01,$hgs02,$gh01,$gh02 -RunDiagnostics
 
 4. 組み立てられたトレース フォルダーへのパスを提供する診断の実行、`-Path`パラメーターと指定する、`-RunDiagnostics`トレースを収集する管理者を求め、これらの診断とスイッチします。  診断は、パス内で検出されたホストにアクセスすることはできませんし、事前収集されたトレースのみを使用して試行はそのためと想定されます。  トレースが存在しないか破損している場合、診断が影響を受けるテストのみが失敗して、通常どおりに進行します。  例:
 
- ```PowerShell
- Get-HgsTrace -RunDiagnostics -Diagnostic Networking,BestPractices -Path ".\FabricTraces"
- ```
+   ```PowerShell
+   Get-HgsTrace -RunDiagnostics -Diagnostic Networking,BestPractices -Path ".\FabricTraces"
+   ```
 
 ### <a name="mixing-saved-traces-with-additional-targets"></a>追加のターゲットでトレースを保存の混在
 

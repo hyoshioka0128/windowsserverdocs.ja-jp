@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/17/2018
-ms.openlocfilehash: 5f99600e24c62da9bdf674897dbadde9246b7bb7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 58c4483c092c30a892ea6bdde20794270340fa8e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821033"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447025"
 ---
 # <a name="converged-nic-in-a-teamed-nic-configuration-datacenter"></a>収束の NIC チーミングされた NIC 構成では (データ センター)
 
@@ -35,31 +35,35 @@ ms.locfileid: "59821033"
    ```PowerShell
    Get-NetAdapter -Name "Test-40G-1" | ft -AutoSize
    ```
-  
-   _**結果:**_
 
-   |名前|InterfaceDescription|ifIndex|状況|Mac アドレス|%Linkspeed|
-   |-----|--------------------|-------|-----|----------|---------|
-   |テスト-40 G-1|Mellanox connectx-3 Pro イーサネット アダプター|11|Up|E4-1D-2D-07-43-D0|40 Gbps|
+   _**結果:** _
+
+
+   |    名前    |           InterfaceDescription           | IfIndex | 状況 |    Mac アドレス     | %Linkspeed |
+   |------------|------------------------------------------|---------|--------|-------------------|-----------|
+   | テスト-40 G-1 | Mellanox connectx-3 Pro イーサネット アダプター |   11    |   Up   | E4-1D-2D-07-43-D0 |  40 Gbps  |
+
    ---
-   
+
 2. 最初のアダプターで IP アドレスなどの追加のプロパティを表示します。 
 
    ```PowerShell
    Get-NetIPAddress -InterfaceAlias "Test-40G-1"
    Get-NetIPAddress -InterfaceAlias "TEST-40G-1" | Where-Object {$_.AddressFamily -eq "IPv4"} | fl InterfaceAlias,IPAddress
    ```
-   
-   _**結果:**_
 
-   |パラメーター|値|
-   |---------|-----|
-   |IPAddress| 192.168.1.3|
-   |InterfaceIndex|11|
-   |InterfaceAlias|テスト-40 G-1|
-   |AddressFamily|IPv4|
-   |種類| ユニキャスト|
-   |PrefixLength|24|
+   _**結果:** _
+
+
+   |   パラメーター    |    Value    |
+   |----------------|-------------|
+   |   IPAddress    | 192.168.1.3 |
+   | InterfaceIndex |     11      |
+   | InterfaceAlias | テスト-40 G-1  |
+   | AddressFamily  |    IPv4     |
+   |      種類      |   ユニキャスト   |
+   |  PrefixLength  |     24      |
+
    ---
 
 3. 2 番目のネットワーク アダプターのプロパティを表示します。
@@ -67,37 +71,41 @@ ms.locfileid: "59821033"
    ```PowerShell
    Get-NetAdapter -Name "Test-40G-2" | ft -AutoSize
    ```
-   
-   _**結果:**_
 
-   |名前 |InterfaceDescription |ifIndex |状況 |Mac アドレス |%Linkspeed|
-   |----|--------------------|-------|------|----------|---------|
-   |TEST-40G-2 |Mellanox connectx-3 Pro イーサネット ファブリック 2 |13 |Up |E4-1D-2D-07-40-70 |40 Gbps|
+   _**結果:** _
+
+
+   |    名前    |          InterfaceDescription           | IfIndex | 状況 |    Mac アドレス     | %Linkspeed |
+   |------------|-----------------------------------------|---------|--------|-------------------|-----------|
+   | TEST-40G-2 | Mellanox connectx-3 Pro イーサネット ファブリック 2 |   13    |   Up   | E4-1D-2D-07-40-70 |  40 Gbps  |
+
    ---
-   
+
 4. IP アドレスを含む、2 つ目のアダプターの追加のプロパティを表示します。
 
    ```PowerShell
    Get-NetIPAddress -InterfaceAlias "Test-40G-2"
    Get-NetIPAddress -InterfaceAlias "Test-40G-2" | Where-Object {$_.AddressFamily -eq "IPv4"} | fl InterfaceAlias,IPAddress
    ```
-   
-   _**結果:**_
 
-   |パラメーター|Value|
-   |---------|-----|
-   |IPAddress|192.168.2.3|
-   |InterfaceIndex|13|
-   |InterfaceAlias|TEST-40G-2|
-   |AddressFamily|IPv4|
-   |種類|ユニキャスト|
-   |PrefixLength|24|
+   _**結果:** _
+
+
+   |   パラメーター    |    Value    |
+   |----------------|-------------|
+   |   IPAddress    | 192.168.2.3 |
+   | InterfaceIndex |     13      |
+   | InterfaceAlias | TEST-40G-2  |
+   | AddressFamily  |    IPv4     |
+   |      種類      |   ユニキャスト   |
+   |  PrefixLength  |     24      |
+
    ---
 
 5. その他の NIC チームまたはセット メンバー pNICs が有効な IP アドレスを確認します。<p>別のサブネットを使用して、\(です。 **。2**.xxx vs です。 **。1**.xxx\)先にこのアダプターから送信を容易にします。 それ以外の場合、両方 pNICs 同じサブネット上で特定する場合、インターフェイス間での Windows の TCP/IP スタックの負荷を分散し、単純な検証が複雑になります。
 
 
-## <a name="step-2-ensure-that-source-and-destination-can-communicate"></a>手順 2.  ソースと変換先が通信できることを確認します。
+## <a name="step-2-ensure-that-source-and-destination-can-communicate"></a>手順 2. ソースと変換先が通信できることを確認します。
 
 この手順で使用して、 **Test-netconnection**場合を使用できますが、Windows PowerShell コマンド、 **ping**場合コマンドします。 
 
@@ -106,19 +114,21 @@ ms.locfileid: "59821033"
    ```PowerShell
    Test-NetConnection 192.168.1.5
    ```
-   
-   _**結果:**_
 
-   |パラメーター|Value|
-   |---------|-----|
-   |ComputerName|192.168.1.5|
-   |リモート アドレス|192.168.1.5|
-   |InterfaceAlias|テスト-40 G-1|
-   |発信元アドレス|192.168.1.3|
-   |PingSucceeded|False|
-   |PingReplyDetails \(RTT\)|0 ミリ秒|
+   _**結果:** _
+
+
+   |        パラメーター         |    Value    |
+   |--------------------------|-------------|
+   |       ComputerName       | 192.168.1.5 |
+   |      リモート アドレス       | 192.168.1.5 |
+   |      InterfaceAlias      | テスト-40 G-1  |
+   |      発信元アドレス       | 192.168.1.3 |
+   |      PingSucceeded       |    False    |
+   | PingReplyDetails \(RTT\) |    0 ミリ秒     |
+
    ---
-   
+
    場合によっては、このテストを正常に実行するセキュリティが強化された Windows ファイアウォールを無効にする必要もあります。 ファイアウォールを無効にした場合、セキュリティに留意し、構成が組織のセキュリティ要件を満たしていることを確認します。
 
 2. すべてのファイアウォール プロファイルを無効にします。
@@ -128,40 +138,44 @@ ms.locfileid: "59821033"
    ```
 
 3. ファイアウォール プロファイルを無効にした後、もう一度接続をテストします。 
-   
+
    ```PowerShell
    Test-NetConnection 192.168.1.5
    ```
-   
-   _**結果:**_
 
-   |パラメーター|値|
-   |---------|-----|
-   |ComputerName|192.168.1.5|
-   |リモート アドレス|192.168.1.5|
-   |InterfaceAlias|テスト-40 G-1|
-   |発信元アドレス|192.168.1.3|
-   |PingSucceeded|False|
-   |PingReplyDetails \(RTT\)|0 ミリ秒|
+   _**結果:** _
+
+
+   |        パラメーター         |    Value    |
+   |--------------------------|-------------|
+   |       ComputerName       | 192.168.1.5 |
+   |      リモート アドレス       | 192.168.1.5 |
+   |      InterfaceAlias      | テスト-40 G-1  |
+   |      発信元アドレス       | 192.168.1.3 |
+   |      PingSucceeded       |    False    |
+   | PingReplyDetails \(RTT\) |    0 ミリ秒     |
+
    ---
-   
-   
+
+
 4. さらに Nic の接続を確認します。 チーム NIC またはセットに含まれるすべての後続 pNICs の前の手順を繰り返します。
 
    ```PowerShell    
    Test-NetConnection 192.168.2.5
    ```
-   
-   _**結果:**_
 
-   |パラメーター|値|
-   |---------|-----|
-   |ComputerName|192.168.2.5|
-   |リモート アドレス|192.168.2.5|
-   |InterfaceAlias|テスト-40 G-2|
-   |発信元アドレス|192.168.2.3|
-   |PingSucceeded|False|
-   |PingReplyDetails \(RTT\)|0 ミリ秒|
+   _**結果:** _
+
+
+   |        パラメーター         |    Value    |
+   |--------------------------|-------------|
+   |       ComputerName       | 192.168.2.5 |
+   |      リモート アドレス       | 192.168.2.5 |
+   |      InterfaceAlias      | テスト-40 G-2  |
+   |      発信元アドレス       | 192.168.2.3 |
+   |      PingSucceeded       |    False    |
+   | PingReplyDetails \(RTT\) |    0 ミリ秒     |
+
    ---
 
 ## <a name="step-3-configure-the-vlan-ids-for-nics-installed-in-your-hyper-v-hosts"></a>手順 3. VLAN Id を HYPER-V ホストにインストールされている Nic の構成します。
@@ -190,11 +204,13 @@ ms.locfileid: "59821033"
    Get-NetAdapterAdvancedProperty -Name "Test-40G-1" | Where-Object {$_.RegistryKeyword -eq "VlanID"} | ft -AutoSize
    ```
 
-   _**結果:**_   
+   _**結果:** _   
 
-   |名前 |DisplayName| 値| RegistryKeyword |RegistryValue|
-   |----|-----------|------------|---------------|-------------|
-   |テスト-40 G-1|VLAN ID|101|VlanID|{101}|
+
+   |    名前    | DisplayName | 値 | RegistryKeyword | RegistryValue |
+   |------------|-------------|--------------|-----------------|---------------|
+   | テスト-40 G-1 |   VLAN ID   |     101      |     VlanID      |     {101}     |
+
    ---
 
 2. VLAN ID を適用するネットワーク アダプターを再起動します。
@@ -202,20 +218,22 @@ ms.locfileid: "59821033"
    ```PowerShell
    Restart-NetAdapter -Name "Test-40G-1"
    ```
-   
+
 3. 状態が確認**を**します。
 
    ```PowerShell
    Get-NetAdapter -Name "Test-40G-1" | ft -AutoSize
    ```
-   
-   _**結果:**_
 
-   |名前|InterfaceDescription|ifIndex| 状況|Mac アドレス|%Linkspeed|
-   |----|--------------------|-------|------|----------| ---------|
-   |テスト-40 G-1|Mellanox connectx-3 Pro イーサネット Ada.|11|Up|E4-1D-2D-07-43-D0|40 Gbps|
+   _**結果:** _
+
+
+   |    名前    |          InterfaceDescription           | IfIndex | 状況 |    Mac アドレス     | %Linkspeed |
+   |------------|-----------------------------------------|---------|--------|-------------------|-----------|
+   | テスト-40 G-1 | Mellanox connectx-3 Pro イーサネット Ada. |   11    |   Up   | E4-1D-2D-07-43-D0 |  40 Gbps  |
+
    ---
-    
+
 4. テスト-40 G 2、2 番目の NIC で VLAN ID を構成します。
 
    ```PowerShell    
@@ -223,82 +241,90 @@ ms.locfileid: "59821033"
    Get-NetAdapterAdvancedProperty -Name "Test-40G-2" | Where-Object {$_.RegistryKeyword -eq "VlanID"} | ft -AutoSize
    ``` 
 
-   _**結果:**_
+   _**結果:** _
 
-   |名前 |DisplayName| 値| RegistryKeyword |RegistryValue|
-   |----|-----------|------------|---------------|-------------|
-   |TEST-40G-2|VLAN ID|102|VlanID|{102}|
+
+   |    名前    | DisplayName | 値 | RegistryKeyword | RegistryValue |
+   |------------|-------------|--------------|-----------------|---------------|
+   | TEST-40G-2 |   VLAN ID   |     102      |     VlanID      |     {102}     |
+
    ---
-   
+
 5. VLAN ID を適用するネットワーク アダプターを再起動します。
 
    ```PowerShell
    Restart-NetAdapter -Name "Test-40G-2" 
    ```
-   
+
 6. 状態が確認**を**します。
 
    ```PowerShell
    Get-NetAdapter -Name "Test-40G-1" | ft -AutoSize
    ```
-   
-   _**結果:**_
 
-   |名前|InterfaceDescription|ifIndex| 状況|Mac アドレス|%Linkspeed|
-   |----|--------------------|-------|------|----------| ---------|
-   |テスト-40 G-2 |Mellanox connectx-3 Pro イーサネット Ada. |11 |Up |E4-1D-2D-07-43-D1 |40 Gbps|
+   _**結果:** _
+
+
+   |    名前    |          InterfaceDescription           | IfIndex | 状況 |    Mac アドレス     | %Linkspeed |
+   |------------|-----------------------------------------|---------|--------|-------------------|-----------|
+   | テスト-40 G-2 | Mellanox connectx-3 Pro イーサネット Ada. |   11    |   Up   | E4-1D-2D-07-43-D1 |  40 Gbps  |
+
    ---
 
    >[!IMPORTANT]
    >再起動し、ネットワーク上で利用可能になるデバイスに数秒かかる場合があります。 
-   
+
 7. 最初の NIC のテスト-40 G-1 の接続を確認します。<p>接続に失敗した場合は、スイッチ、同じ VLAN の VLAN の構成または変換先への参加を調べます。 
 
    ```PowerShell
    Test-NetConnection 192.168.1.5
    ```
 
-   _**結果:**_   
+   _**結果:** _   
 
-   |パラメーター|Value|
-   |---------|-----|
-   |ComputerName|192.168.1.5|
-   |リモート アドレス|192.168.1.5|
-   |InterfaceAlias|テスト-40 G-1|
-   |発信元アドレス|192.168.1.5|
-   |PingSucceeded|True|
-   |PingReplyDetails \(RTT\)|0 ミリ秒|
+
+   |        パラメーター         |    Value    |
+   |--------------------------|-------------|
+   |       ComputerName       | 192.168.1.5 |
+   |      リモート アドレス       | 192.168.1.5 |
+   |      InterfaceAlias      | テスト-40 G-1  |
+   |      発信元アドレス       | 192.168.1.5 |
+   |      PingSucceeded       |    True     |
+   | PingReplyDetails \(RTT\) |    0 ミリ秒     |
+
    ---
-   
+
 8. 最初の NIC のテスト-40 G-2 の接続を確認します。<p>接続に失敗した場合は、スイッチ、同じ VLAN の VLAN の構成または変換先への参加を調べます。
 
    ```PowerShell    
    Test-NetConnection 192.168.2.5
    ```
 
-   _**結果:**_    
+   _**結果:** _    
 
-   |パラメーター|値|
-   |---------|-----|
-   |ComputerName|192.168.2.5|
-   |リモート アドレス|192.168.2.5|
-   |InterfaceAlias|テスト-40 G-2|
-   |発信元アドレス|192.168.2.3|
-   |PingSucceeded|True|
-   |PingReplyDetails \(RTT\)|0 ミリ秒|
+
+   |        パラメーター         |    Value    |
+   |--------------------------|-------------|
+   |       ComputerName       | 192.168.2.5 |
+   |      リモート アドレス       | 192.168.2.5 |
+   |      InterfaceAlias      | テスト-40 G-2  |
+   |      発信元アドレス       | 192.168.2.3 |
+   |      PingSucceeded       |    True     |
+   | PingReplyDetails \(RTT\) |    0 ミリ秒     |
+
    ---
-   
+
    >[!IMPORTANT]
    >珍しくありません、 **Test-netconnection**またはを実行した後すぐに発生する ping 失敗**再起動 NetAdapter**します。  ネットワーク アダプターを完全に初期化するまで待機してからやり直してください。
    >
    >VLAN 101 接続するには、VLAN 102 接続がない場合は、問題場合、スイッチが、必要な VLAN のポートのトラフィックを許可するように構成する必要があることがあります。 この一時的に障害が発生したアダプターに VLAN 101、設定と接続のテストを繰り返しで確認できます。
 
-   
+
    次の図では、Vlan を正常に構成した後、HYPER-V ホストを示します。
 
    ![サービスの品質を構成します。](../../media/Converged-NIC/3-datacenter-configure-qos.jpg)
-   
-   
+
+
 ## <a name="step-4-configure-quality-of-service-qos"></a>手順 4. 構成サービスの品質\(QoS\)
 
 >[!NOTE]
@@ -313,35 +339,39 @@ ms.locfileid: "59821033"
    Install-WindowsFeature Data-Center-Bridging
    ```
 
-   _**結果:**_
+   _**結果:** _
 
-   |成功 |再起動が必要です。 |終了コード|機能の結果|
-   |------- |-------------- |--------- |-------------- |
-   |True |X |成功| {0} のデータ センター ブリッジング}|
+
+   | 成功 | 再起動が必要です。 | 終了コード |     機能の結果     |
+   |---------|----------------|-----------|------------------------|
+   |  True   |       X       |  成功  | {0} のデータ センター ブリッジング} |
+
    ---
-   
+
 2. SMB ダイレクトの QoS ポリシーを設定します。
 
    - **省略可能な**iWarp を使用しているネットワーク構成。
    - **必要な**RoCE を使用しているネットワーク構成\(任意のバージョン\)RDMA サービス。
-   
+
    次の例のコマンドでは、値「3」は任意です。 QoS ポリシーの構成全体で同じ値を一貫して使用する限り、1 から 7 までの値を使用することができます。
 
    ```PowerShell
    New-NetQosPolicy "SMB" -NetDirectPortMatchCondition 445 -PriorityValue8021Action 3
    ```
-   
-   _**結果:**_
 
-   |パラメーター|値|
-   |---------|-----|
-   |名前 |SMB|
-   |所有者|グループ ポリシー\(マシン\)|
-   |NetworkProfile|すべての|
-   |優先度|127|
-   |JobObject|&nbsp;| 
-   |NetDirectPort|445
-   |PriorityValue|3
+   _**結果:** _
+
+
+   |   パラメーター    |          Value           |
+   |----------------|--------------------------|
+   |      名前      |           SMB            |
+   |     所有者      | グループ ポリシー\(マシン\) |
+   | NetworkProfile |           すべての            |
+   |   優先度   |           127            |
+   |   JobObject    |          &nbsp;          |
+   | NetDirectPort  |           445            |
+   | PriorityValue  |            3             |
+
    ---
 
 3. インターフェイスでは、その他のトラフィックの QoS ポリシーの追加を設定します。   
@@ -350,40 +380,44 @@ ms.locfileid: "59821033"
    New-NetQosPolicy "DEFAULT" -Default -PriorityValue8021Action 0
    ```
 
-   _**結果:**_   
+   _**結果:** _   
 
-   |パラメーター|Value|
-   |---------|-----|
-   |名前 | DEFAULT|
-   |所有者|グループ ポリシー\(マシン\)|
-   |NetworkProfile|すべての|
-   |優先度|127|
-   |テンプレート| Default|
-   |JobObject| &nbsp;|
-   |PriorityValue|0|
+
+   |   パラメーター    |          Value           |
+   |----------------|--------------------------|
+   |      名前      |         DEFAULT          |
+   |     所有者      | グループ ポリシー\(マシン\) |
+   | NetworkProfile |           すべての            |
+   |   優先度   |           127            |
+   |    テンプレート    |         Default          |
+   |   JobObject    |          &nbsp;          |
+   | PriorityValue  |            0             |
+
    ---
-   
+
 4. オンにする**優先度のフロー制御**SMB トラフィックは、これは必要ありません iWarp の場合。
 
    ```PowerShell
    Enable-NetQosFlowControl -priority 3
    Get-NetQosFlowControl
    ```
-   
-   _**結果:**_
-   
-   |Priority|有効|PolicySet|IfIndex|ifAlias|
-   |---------|-----|--------- |-------| -------|
-   |0 |False |グローバル|&nbsp;|&nbsp;|
-   |1 |False |グローバル|&nbsp;|&nbsp;|
-   |2 |False |グローバル|&nbsp;|&nbsp;|
-   |3 |True |グローバル|&nbsp;|&nbsp;|
-   |4 |False |グローバル|&nbsp;|&nbsp;|
-   |5 |False |グローバル|&nbsp;|&nbsp;|
-   |6 |False |グローバル|&nbsp;|&nbsp;|
-   |7 |False |グローバル|&nbsp;|&nbsp;|
+
+   _**結果:** _
+
+
+   | Priority | 有効 | PolicySet | IfIndex | ifAlias |
+   |----------|---------|-----------|---------|---------|
+   |    0     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
+   |    1     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
+   |    2     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
+   |    3     |  True   |  グローバル   | &nbsp;  | &nbsp;  |
+   |    4     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
+   |    5     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
+   |    6     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
+   |    7     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
+
    ---
-   
+
    >**重要な**、結果では、これらの結果が一致しない 3 以外のアイテムが有効値は True、無効にした**FlowControl**これらのクラス。
    >
    >```PowerShell
@@ -404,18 +438,22 @@ ms.locfileid: "59821033"
    ```
    _**機能**:_   
 
-   |パラメーター|ハードウェア|現在の|
-   |---------|--------|-------|
-   |MacSecBypass|NotSupported|NotSupported|
-   |DcbxSupport|なし|なし|
-   |NumTCs(Max/ETS/PFC)|8/8/8|8/8/8|
+
+   |      パラメーター      |   ハードウェア   |   現在の    |
+   |---------------------|--------------|--------------|
+   |    MacSecBypass     | NotSupported | NotSupported |
+   |     DcbxSupport     |     なし     |     なし     |
+   | NumTCs(Max/ETS/PFC) |    8/8/8     |    8/8/8     |
+
    ---
- 
+
    _**OperationalTrafficClasses**:_    
 
-   |TC|TSA|帯域幅|優先順位|
-   |----|-----|--------|-------|
-   |0| 厳密|&nbsp;|0-7|
+
+   | TC |  TSA   | 帯域幅 | 優先順位 |
+   |----|--------|-----------|------------|
+   | 0  | 厳密 |  &nbsp;   |    0-7     |
+
    ---
 
    _**OperationalFlowControl**:_  
@@ -424,12 +462,14 @@ ms.locfileid: "59821033"
 
    _**OperationalClassifications**:_  
 
-   |プロトコル|ポートの種類/|Priority|
-   |--------|---------|--------|
-   |Default|&nbsp;|0|
-   |NetDirect| 445|3|
+
+   | プロトコル  | ポートの種類/ | Priority |
+   |-----------|-----------|----------|
+   |  Default  |  &nbsp;   |    0     |
+   | NetDirect |    445    |    3     |
+
    ---
-   
+
 6. 2 つ目の NIC のテスト-40 G-2 の QoS を有効にします。
 
    ```PowerShell
@@ -442,44 +482,52 @@ ms.locfileid: "59821033"
 
    _**機能**:_ 
 
-   |パラメーター|ハードウェア|現在の|
-   |---------|--------|-------|
-   |MacSecBypass|NotSupported|NotSupported|
-   |DcbxSupport|なし|なし|
-   |NumTCs(Max/ETS/PFC)|8/8/8|8/8/8|
+
+   |      パラメーター      |   ハードウェア   |   現在の    |
+   |---------------------|--------------|--------------|
+   |    MacSecBypass     | NotSupported | NotSupported |
+   |     DcbxSupport     |     なし     |     なし     |
+   | NumTCs(Max/ETS/PFC) |    8/8/8     |    8/8/8     |
+
    ---
 
    _**OperationalTrafficClasses**:_  
 
-   |TC|TSA|帯域幅|優先順位|
-   |----|-----|--------|-------|
-   |0| 厳密|&nbsp;|0-7|
+
+   | TC |  TSA   | 帯域幅 | 優先順位 |
+   |----|--------|-----------|------------|
+   | 0  | 厳密 |  &nbsp;   |    0-7     |
+
    ---
-   
+
     _**OperationalFlowControl**:_  
 
     優先順位 3 が有効になっています。  
-   
+
    _**OperationalClassifications**:_  
 
-   |プロトコル|ポートの種類/|Priority|
-   |--------|---------|--------|
-   |Default|&nbsp;|0|
-   |NetDirect| 445|3|
+
+   | プロトコル  | ポートの種類/ | Priority |
+   |-----------|-----------|----------|
+   |  Default  |  &nbsp;   |    0     |
+   | NetDirect |    445    |    3     |
+
    ---
 
-   
+
 7. SMB ダイレクトを半分の帯域幅が予約\(RDMA\)
 
    ```PowerShell
    New-NetQosTrafficClass "SMB" -priority 3 -bandwidthpercentage 50 -algorithm ETS
    ```
-   
-   _**結果:**_  
-   
-   |名前|アルゴリズム |Bandwidth(%)| Priority |PolicySet |IfIndex |ifAlias |
-   |----|---------| ------------ |--------| ---------|------- |------- |
-   |SMB | ETS     | 50 |3 |グローバル |&nbsp;|&nbsp;|   
+
+   _**結果:** _  
+
+
+   | 名前 | アルゴリズム | Bandwidth(%) | Priority | PolicySet | IfIndex | ifAlias |
+   |------|-----------|--------------|----------|-----------|---------|---------|
+   | SMB  |    ETS    |      50      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
+
    ---
 
 8. 帯域幅予約の設定を表示するには。   
@@ -487,15 +535,17 @@ ms.locfileid: "59821033"
    ```PowerShell
    Get-NetQosTrafficClass | ft -AutoSize
    ```
-   
-   _**結果:**_  
 
-   |名前|アルゴリズム |Bandwidth(%)| Priority |PolicySet |IfIndex |ifAlias |
-   |----|---------| ------------ |--------| ---------|------- |------- |
-   |[Default]| ETS|50 |0-2,4-7|  グローバル|&nbsp;|&nbsp;| 
-   |SMB |ETS|50 |3 |グローバル|&nbsp;|&nbsp;| 
+   _**結果:** _  
+
+
+   |   名前    | アルゴリズム | Bandwidth(%) | Priority | PolicySet | IfIndex | ifAlias |
+   |-----------|-----------|--------------|----------|-----------|---------|---------|
+   | [Default] |    ETS    |      50      | 0-2,4-7  |  グローバル   | &nbsp;  | &nbsp;  |
+   |    SMB    |    ETS    |      50      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
+
    ---
-   
+
 9. (省略可能)テナントの IP トラフィックの 2 つの余分なトラフィック クラスを作成します。 
 
    >[!TIP]
@@ -504,41 +554,47 @@ ms.locfileid: "59821033"
    ```PowerShell
    New-NetQosTrafficClass "IP1" -Priority 1 -bandwidthpercentage 10 -algorithm ETS
    ```
-   
-   _**結果:**_
-   
-   |名前|アルゴリズム |Bandwidth(%)| Priority |PolicySet |IfIndex |ifAlias |
-   |----|---------| ------------ |--------| ---------|------- |------- |
-   |IP1 |ETS |10 |1 |グローバル|&nbsp;|&nbsp;|
+
+   _**結果:** _
+
+
+   | 名前 | アルゴリズム | Bandwidth(%) | Priority | PolicySet | IfIndex | ifAlias |
+   |------|-----------|--------------|----------|-----------|---------|---------|
+   | IP1  |    ETS    |      10      |    1     |  グローバル   | &nbsp;  | &nbsp;  |
+
    ---
-   
+
    ```PowerShell
    New-NetQosTrafficClass "IP2" -Priority 2 -bandwidthpercentage 10 -algorithm ETS
    ```
-   
-   _**結果:**_
 
-   |名前|アルゴリズム |Bandwidth(%)| Priority |PolicySet |IfIndex |ifAlias |
-   |----|---------| ------------ |--------| ---------|------- |------- |
-   |IP2 |ETS |10 |2 |グローバル|&nbsp;|&nbsp;|
+   _**結果:** _
+
+
+   | 名前 | アルゴリズム | Bandwidth(%) | Priority | PolicySet | IfIndex | ifAlias |
+   |------|-----------|--------------|----------|-----------|---------|---------|
+   | IP2  |    ETS    |      10      |    2     |  グローバル   | &nbsp;  | &nbsp;  |
+
    ---
-   
+
 10. QoS のトラフィック クラスを表示します。
 
     ```PowerShell
     Get-NetQosTrafficClass | ft -AutoSize
     ```
-    
-    _**結果:**_
 
-    |名前|アルゴリズム |Bandwidth(%)| Priority |PolicySet |IfIndex |ifAlias |
-    |----|---------| ------------ |--------| ---------|------- |------- |
-    |[Default] |ETS |30 |0,4-7 |グローバル|&nbsp;|&nbsp;|
-    |SMB |ETS |50 |3 |グローバル|&nbsp;|&nbsp;|
-    |IP1 |ETS |10 |1 |グローバル|&nbsp;|&nbsp;|
-    |IP2 |ETS |10 |2 |グローバル|&nbsp;|&nbsp;|
+    _**結果:** _
+
+
+    |   名前    | アルゴリズム | Bandwidth(%) | Priority | PolicySet | IfIndex | ifAlias |
+    |-----------|-----------|--------------|----------|-----------|---------|---------|
+    | [Default] |    ETS    |      30      |  0,4-7   |  グローバル   | &nbsp;  | &nbsp;  |
+    |    SMB    |    ETS    |      50      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
+    |    IP1    |    ETS    |      10      |    1     |  グローバル   | &nbsp;  | &nbsp;  |
+    |    IP2    |    ETS    |      10      |    2     |  グローバル   | &nbsp;  | &nbsp;  |
+
     ---
-   
+
 11. (省略可能)デバッガーをオーバーライドします。<p>既定では、アタッチされたデバッガーは NetQos をブロックします。 
 
     ```PowerShell
@@ -546,7 +602,7 @@ ms.locfileid: "59821033"
     Get-ItemProperty HKLM:"\SYSTEM\CurrentControlSet\Services\NDIS\Parameters" | ft AllowFlowControlUnderDebugger
     ```
 
-    _**結果:**_  
+    _**結果:** _  
 
     ```
     AllowFlowControlUnderDebugger
@@ -568,13 +624,15 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    ```PowerShell
    Get-NetAdapterRdma | ft -AutoSize
    ```
-   
-   _**結果:**_
 
-   |名前 |InterfaceDescription |有効|
-   |----|--------------------|-------|
-   |テスト-40 G-1| Mellanox ConnectX 4 VPI アダプター #2 |True|
-   |TEST-40G-2| Mellanox ConnectX 4 VPI アダプター |True|
+   _**結果:** _
+
+
+   |    名前    |        InterfaceDescription        | 有効 |
+   |------------|------------------------------------|---------|
+   | テスト-40 G-1 | Mellanox ConnectX 4 VPI アダプター #2 |  True   |
+   | TEST-40G-2 |  Mellanox ConnectX 4 VPI アダプター   |  True   |
+
    ---
 
 2. 確認、 **ifIndex**ターゲットのアダプターの値。<p>ダウンロードしたスクリプトを実行するときに、以降の手順でこの値を使用します。   
@@ -582,27 +640,29 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    ```PowerShell
    Get-NetIPConfiguration -InterfaceAlias "TEST*" | ft InterfaceAlias,InterfaceIndex,IPv4Address
    ```
-   
-   _**結果:**_
 
-   |InterfaceAlias |InterfaceIndex |IPv4Address|
-   |-------------- |-------------- |-----------|
-   |テスト-40 G-1 |14 |{192.168.1.3}|
-   |TEST-40G-2 | 13 |{192.168.2.3}|
+   _**結果:** _
+
+
+   | InterfaceAlias | InterfaceIndex |  IPv4Address  |
+   |----------------|----------------|---------------|
+   |   テスト-40 G-1   |       14       | {192.168.1.3} |
+   |   TEST-40G-2   |       13       | {192.168.2.3} |
+
    ---
-   
+
 3. ダウンロード、 [DiskSpd.exe ユーティリティ](https://aka.ms/diskspd)C:\TEST に抽出\.
 
 4. ダウンロード、[テスト RDMA の PowerShell スクリプト](https://github.com/Microsoft/SDN/blob/master/Diagnostics/Test-Rdma.ps1)C:\TEST など、ローカル ドライブ上のテスト フォルダーを\.
 
 5. 実行、**テスト Rdma.ps1** ifIndex 値を同じ vlan の最初のリモート アダプターの IP アドレスと共に、スクリプトに渡す、PowerShell スクリプト。<p>この例では、スクリプトを渡します、 **ifIndex**リモート ネットワーク アダプターの IP アドレス 192.168.1.5 で 14 文字の値。
-   
+
    ```PowerShell
    C:\TEST\Test-RDMA.PS1 -IfIndex 14 -IsRoCE $true -RemoteIpAddress 192.168.1.5 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
    ```
 
-   _**結果:**_ 
-   
+   _**結果:** _ 
+
    ```   
    VERBOSE: Diskspd.exe found at C:\TEST\Diskspd-v2.0.17\amd64fre\diskspd.exe
    VERBOSE: The adapter M2 is a physical adapter
@@ -632,8 +692,8 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    C:\TEST\Test-RDMA.PS1 -IfIndex 13 -IsRoCE $true -RemoteIpAddress 192.168.2.5 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
    ```
 
-   _**結果:**_ 
-   
+   _**結果:** _ 
+
    ```   
    VERBOSE: Diskspd.exe found at C:\TEST\Diskspd-v2.0.17\amd64fre\diskspd.exe
    VERBOSE: The adapter TEST-40G-2 is a physical adapter
@@ -666,22 +726,24 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    ```PowerShell
    New-VMSwitch –Name "VMSTEST" –NetAdapterName "TEST-40G-1","TEST-40G-2" -EnableEmbeddedTeaming $true -AllowManagementOS $true
    ```
-   
-   _**結果:**_
 
-   |名前 |SwitchType |NetAdapterInterfaceDescription|
-   |---- |---------- |------------------------------|
-   |VMSTEST |外部リンク |チーム化されたインターフェイス|
+   _**結果:** _
+
+
+   |  名前   | SwitchType | NetAdapterInterfaceDescription |
+   |---------|------------|--------------------------------|
+   | VMSTEST |  外部リンク  |        チーム化されたインターフェイス        |
+
    ---
-   
+
 2. セット内の物理アダプターのチームを表示します。
 
    ```PowerShell
    Get-VMSwitchTeam -Name "VMSTEST" | fl
    ```
-   
-   _**結果:**_  
-   
+
+   _**結果:** _  
+
    ```
    Name: VMSTEST  
    Id: ad9bb542-dda2-4450-a00e-f96d44bdfbec  
@@ -689,45 +751,49 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    TeamingMode: SwitchIndependent  
    LoadBalancingAlgorithm: Dynamic   
    ```
-   
+
 3. ホスト vNIC の 2 つのビューを表示します。
 
    ```PowerShell
     Get-NetAdapter
    ```
-   
-   _**結果:**_
 
-   |名前 |InterfaceDescription |ifIndex |状況 |Mac アドレス |%Linkspeed|
-   |---- |--------------------|-------|------|----------|---------|
-   |vEthernet (VMSTEST)|HYPER-V 仮想イーサネット アダプター #2 |28 |Up|E4-1D-2D-07-40-71|80 Gbps|
+   _**結果:** _
+
+
+   |        名前         |        InterfaceDescription         | IfIndex | 状況 |    Mac アドレス     | %Linkspeed |
+   |---------------------|-------------------------------------|---------|--------|-------------------|-----------|
+   | vEthernet (VMSTEST) | HYPER-V 仮想イーサネット アダプター #2 |   28    |   Up   | E4-1D-2D-07-40-71 |  80 Gbps  |
+
    ---
-   
+
 4. ホスト vNIC の追加のプロパティを表示します。 
 
    ```PowerShell
    Get-VMNetworkAdapter -ManagementOS
    ```
-   
-   _**結果:**_
 
-   |名前 |IsManagementOs |VMName |SwitchName |Mac アドレス |状況 |Ip アドレス|
-   |----|--------------|------|----------|----------|------|-----------|
-   |VMSTEST|True |VMSTEST |E41D2D074071| {0} [ok]}|&nbsp;|
+   _**結果:** _
+
+
+   |  名前   | IsManagementOs | VMName  |  SwitchName  | Mac アドレス | 状況 | Ip アドレス |
+   |---------|----------------|---------|--------------|------------|--------|-------------|
+   | VMSTEST |      True      | VMSTEST | E41D2D074071 |    {0} [ok]}    | &nbsp; |             |
+
    ---
-   
+
 
 5. リモートの VLAN 101 アダプターへのネットワーク接続をテストします。
 
    ```PowerShell
    Test-NetConnection 192.168.1.5 
    ```
-   
-   _**結果:**_  
-   
+
+   _**結果:** _  
+
    ```
    WARNING: Ping to 192.168.1.5 failed -- Status: DestinationHostUnreachable
-    
+
    ComputerName   : 192.168.1.5
    RemoteAddress  : 192.168.1.5
    InterfaceAlias : vEthernet (CORP-External-Switch)
@@ -735,7 +801,7 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    PingSucceeded  : False
    PingReplyDetails (RTT) : 0 ms
    ```
-   
+
 ## <a name="step-7-remove-the-access-vlan-setting"></a>手順 7. アクセス VLAN 設定を削除します。
 
 この手順で物理 NIC からと vSwitch を使用して VLANID を設定するアクセス VLAN 設定を削除します。
@@ -743,7 +809,7 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
 両方の自動タグ付けが正しくない VLAN ID を持つエグレス トラフィックを防ぐために、アクセス VLAN 設定を削除し、アクセス VLAN ID と一致しません、トラフィックの受信をフィルター処理から必要があります。
 
 1. 設定を削除します。
-    
+
    ```PowerShell
    Set-NetAdapterAdvancedProperty -Name "Test-40G-1" -RegistryKeyword VlanID -RegistryValue "0"
    Set-NetAdapterAdvancedProperty -Name "Test-40G-2" -RegistryKeyword VlanID -RegistryValue "0"
@@ -755,24 +821,24 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    Set-VMNetworkAdapterVlan -VMNetworkAdapterName "VMSTEST" -VlanId "101" -Access -ManagementOS
    Get-VMNetworkAdapterVlan -ManagementOS -VMNetworkAdapterName "VMSTEST"
    ```
-   
-   _**結果:**_  
-   
+
+   _**結果:** _  
+
    ```
    VMName VMNetworkAdapterName Mode   VlanList
    ------ -------------------- ----   --------
           VMSTEST              Access 101     
    ```
-   
-   
+
+
 3. ネットワーク接続をテストします。
 
    ```PowerShell
    Test-NetConnection 192.168.1.5
    ```
-   
-   _**結果:**_   
-   
+
+   _**結果:** _   
+
    ```
    ComputerName   : 192.168.1.5
    RemoteAddress  : 192.168.1.5
@@ -807,7 +873,7 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    >SkipAsSource  : False
    >PolicyStore   : ActiveStore
    >```  
-   
+
 
 4. 管理用の NIC の名前を変更します。
 
@@ -815,28 +881,32 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    Rename-VMNetworkAdapter -ManagementOS -Name “VMSTEST” -NewName “MGT”
    Get-VMNetworkAdapter -ManagementOS
    ```
-   
-   _**結果:**_ 
-   
-   |名前 |IsManagementOs |VMName |SwitchName |Mac アドレス |状況 |Ip アドレス
-   |----|--------------|------|----------|----------|------|-----------|
-   |CORP の外部スイッチ |True |&nbsp;|CORP の外部スイッチ |001B785768AA |{0} [ok]}|&nbsp;|
-   |管理 |True |&nbsp;|VMSTEST |E41D2D074071 |{0} [ok]}|&nbsp;|
+
+   _**結果:** _ 
+
+
+   |         名前         | IsManagementOs | VMName |      SwitchName      |  Mac アドレス  | 状況 | Ip アドレス |
+   |----------------------|----------------|--------|----------------------|--------------|--------|-------------|
+   | CORP の外部スイッチ |      True      | &nbsp; | CORP の外部スイッチ | 001B785768AA |  {0} [ok]}  |   &nbsp;    |
+   |         管理          |      True      | &nbsp; |       VMSTEST        | E41D2D074071 |  {0} [ok]}  |   &nbsp;    |
+
    ---
-   
+
 5. NIC の追加のプロパティを表示します。
 
    ```PowerShell
    Get-NetAdapter
    ```
-   
-   _**結果:**_
 
-   |名前 |InterfaceDescription |ifIndex |状況 |Mac アドレス |%Linkspeed|
-   |----|--------------------|------|----------|---------|------|
-   |vEthernet (管理) |HYPER-V 仮想イーサネット アダプター #2 |28 |Up | E4-1D-2D-07-40-71 |80 Gbps|
+   _**結果:** _
+
+
+   |      名前       |        InterfaceDescription         | IfIndex | 状況 |    Mac アドレス     | %Linkspeed |
+   |-----------------|-------------------------------------|---------|--------|-------------------|-----------|
+   | vEthernet (管理) | HYPER-V 仮想イーサネット アダプター #2 |   28    |   Up   | E4-1D-2D-07-40-71 |  80 Gbps  |
+
    ---
-   
+
 ## <a name="step-8-test-hyper-v-vswitch-rdma"></a>手順 8 です。 HYPER-V vSwitch RDMA をテストします。
 
 次の図は、HYPER-V ホスト 1 vSwitch を含む、HYPER-V ホストの現在の状態を示します。
@@ -849,35 +919,37 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    Set-VMNetworkAdapter -ManagementOS -Name "MGT" -IeeePriorityTag on
    Get-VMNetworkAdapter -ManagementOS -Name "MGT" | fl Name,IeeePriorityTag
    ```
-   
-   _**結果:**_  
-      
+
+   _**結果:** _  
+
    名:管理  
    IeeePriorityTag:オン  
-    
+
 2. RDMA の 2 つのホスト Vnic を作成し、vSwitch VMSTEST に接続します。
 
    ```PowerShell    
    Add-VMNetworkAdapter –SwitchName "VMSTEST" –Name SMB1 –ManagementOS
    Add-VMNetworkAdapter –SwitchName "VMSTEST" –Name SMB2 –ManagementOS
    ```
-   
+
 3. 管理 NIC のプロパティを表示します。
 
    ```PowerShell    
    Get-VMNetworkAdapter -ManagementOS
    ```
-   
-   _**結果:**_ 
 
-   |名前 |IsManagementOs |VMName |SwitchName |Mac アドレス |状況 |Ip アドレス|
-   |----|--------------|------|----------|----------|------|-----------|
-   |CORP の外部スイッチ |True |CORP の外部スイッチ |001B785768AA|{0} [ok]} |&nbsp;| 
-   |管理 |True |VMSTEST |E41D2D074071 |{0} [ok]} |&nbsp;|
-   |SMB1 |True |VMSTEST |00155D30AA00 |{0} [ok]} |&nbsp;|
-   |SMB2 |True |VMSTEST |00155D30AA01 |{0} [ok]} |&nbsp;|
+   _**結果:** _ 
+
+
+   |         名前         | IsManagementOs |        VMName        |  SwitchName  | Mac アドレス | 状況 | Ip アドレス |
+   |----------------------|----------------|----------------------|--------------|------------|--------|-------------|
+   | CORP の外部スイッチ |      True      | CORP の外部スイッチ | 001B785768AA |    {0} [ok]}    | &nbsp; |             |
+   |         管理          |      True      |       VMSTEST        | E41D2D074071 |    {0} [ok]}    | &nbsp; |             |
+   |         SMB1         |      True      |       VMSTEST        | 00155D30AA00 |    {0} [ok]}    | &nbsp; |             |
+   |         SMB2         |      True      |       VMSTEST        | 00155D30AA01 |    {0} [ok]}    | &nbsp; |             |
+
    ---
-   
+
 ## <a name="step-9-assign-an-ip-address-to-the-smb-host-vnics-vethernet-smb1-and-vethernet-smb2"></a>手順 9: SMB ホスト Vnic の vEthernet に IP アドレスを割り当てる\(SMB1\)と vEthernet \(SMB2\)
 
 テスト-40 G-1 と 2-テスト-40 G の物理アダプターは、アクセス VLAN 101 と 102 が構成されているがあります。 このため、アダプターは、タグのトラフィックと ping が成功するとします。 以前は、両方の pNIC VLAN Id を 0 に設定し、VLAN 101 に VMSTEST vSwitch を設定します。 その後、まだは管理の vNIC を使用して、リモートの VLAN 101 アダプターに対して ping を実行できたが現在 VLAN 102 メンバーはありません。
@@ -890,7 +962,7 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    New-NetIPAddress -InterfaceAlias "vEthernet (SMB1)" -IPAddress 192.168.2.111 -PrefixLength 24
    ```
 
-   _**結果:**_  
+   _**結果:** _  
 
    ```   
    IPAddress : 192.168.2.111
@@ -909,13 +981,13 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    ```
 
 2. リモートの VLAN 102 アダプターをテストします。
-    
+
    ```PowerShell
    Test-NetConnection 192.168.2.5 
    ```
-   
-   _**結果:**_  
-   
+
+   _**結果:** _  
+
    ```
    ComputerName   : 192.168.2.5
    RemoteAddress  : 192.168.2.5
@@ -924,15 +996,15 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    PingSucceeded  : True
    PingReplyDetails (RTT) : 0 ms
    ```
-    
+
 3. インターフェイス vEthernet の新しい IP アドレスを追加\(SMB2\)します。
 
    ```PowerShell
    New-NetIPAddress -InterfaceAlias "vEthernet (SMB2)" -IPAddress 192.168.2.222 -PrefixLength 24 
    ```
-   
-   _**結果:**_ 
-   
+
+   _**結果:** _ 
+
    ```
    IPAddress : 192.168.2.222
    InterfaceIndex: 44
@@ -948,7 +1020,7 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    SkipAsSource  : False
    PolicyStore   : PersistentStore
    ```
-   
+
 4. もう一度接続をテストします。    
 
 
@@ -957,11 +1029,11 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    ```PowerShell
    Set-VMNetworkAdapterVlan -VMNetworkAdapterName "SMB1" -VlanId "102" -Access -ManagementOS
    Set-VMNetworkAdapterVlan -VMNetworkAdapterName "SMB2" -VlanId "102" -Access -ManagementOS
-    
+
    Get-VMNetworkAdapterVlan -ManagementOS
    ```
 
-   _**結果:**_ 
+   _**結果:** _ 
 
    ```   
    VMName VMNetworkAdapterName Mode VlanList
@@ -971,17 +1043,17 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
       SMB2 Access   102 
       CORP-External-Switch Untagged
    ```
-   
+
 6. SMB1 と vSwitch チームの設定 基になる物理 Nic に SMB2 のマッピングを確認します。<p>物理 Nic にホスト vNIC の関連付けは、ランダムの作成と破棄中に再調整対象とします。 このような状況での現在の関連付けを確認するのに間接のメカニズムを使用できます。 SMB1 と SMB2 の MAC アドレスは、テスト-40 G 2 NIC チームのメンバーに関連付けられます。 これは、テスト-40 G-1 が、関連付けられている SMB ホスト vNIC を持たないためが許可されていない RDMA のトラフィックの使用率、リンクを経由して、SMB ホスト vNIC がマップされるまでには適していません。
 
    ```PowerShell    
    Get-NetAdapterVPort (Preferred)
-    
+
    Get-NetAdapterVmqQueue
    ```
-   
-   _**結果:**_ 
-   
+
+   _**結果:** _ 
+
    ```
    Name   QueueID MacAddressVlanID Processor VmFriendlyName
    ----   ------- ---------------- --------- --------------
@@ -995,9 +1067,9 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    ```PowerShell
    Get-VMNetworkAdapter -ManagementOS
    ```
-   
-   _**結果:**_ 
-   
+
+   _**結果:** _ 
+
    ```
    Name IsManagementOs VMName SwitchName   MacAddress   Status IPAddresses
    ---- -------------- ------ ----------   ----------   ------ -----------
@@ -1008,27 +1080,27 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    ```
 
 8. ネットワーク アダプター チームのマッピングを表示します。<p>結果ではマッピングを実行していないため、情報は返されません。
-    
+
    ```PowerShell
    Get-VMNetworkAdapterTeamMapping -ManagementOS -SwitchName VMSTEST -VMNetworkAdapterName SMB1
    Get-VMNetworkAdapterTeamMapping -ManagementOS -SwitchName VMSTEST -VMNetworkAdapterName SMB2
    ```
-   
-   
+
+
 9. SMB1 と SMB2 は、物理 NIC チームのメンバーを分離して、アクションの結果を表示するマップします。
 
    >[!IMPORTANT]
    >進む前に、この手順を完了するか、実装が失敗したことを確認してください。
-    
+
    ```PowerShell
    Set-VMNetworkAdapterTeamMapping -ManagementOS -SwitchName VMSTEST -VMNetworkAdapterName "SMB1" -PhysicalNetAdapterName "Test-40G-1"
    Set-VMNetworkAdapterTeamMapping -ManagementOS -SwitchName VMSTEST -VMNetworkAdapterName "SMB2" -PhysicalNetAdapterName "Test-40G-2"
-    
+
    Get-VMNetworkAdapterTeamMapping -ManagementOS -SwitchName VMSTEST
    ```
 
-   _**結果:**_ 
-   
+   _**結果:** _ 
+
    ```   
    NetAdapterName : Test-40G-1
    NetAdapterDeviceId : {BAA9A00F-A844-4740-AA93-6BD838F8CFBA}
@@ -1037,7 +1109,7 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    CimSession : CimSession: .
    ComputerName   : 27-3145G0803
    IsDeleted  : False
-    
+
    NetAdapterName : Test-40G-2
    NetAdapterDeviceId : {B7AB5BB3-8ACB-444B-8B7E-BC882935EBC8}
    ParentAdapter  : VMInternalNetworkAdapter, Name = 'SMB2'
@@ -1046,15 +1118,15 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
    ComputerName   : 27-3145G0803
    IsDeleted  : False
    ```
-   
+
 10. 以前に作成する MAC の関連付けを確認します。
 
     ```PowerShell    
     Get-NetAdapterVmqQueue
     ```
 
-    _**結果:**_ 
-   
+    _**結果:** _ 
+
     ```   
     Name   QueueID MacAddressVlanID Processor VmFriendlyName
     ----   ------- ---------------- --------- --------------
@@ -1070,7 +1142,7 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
     Test-NetConnection 192.168.2.111
     ```
 
-    _**結果:**_   
+    _**結果:** _   
 
     ```
     ComputerName   : 192.168.2.111
@@ -1080,12 +1152,12 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
     PingSucceeded  : True
     PingReplyDetails (RTT) : 0 ms
     ```
-    
+
     ```PowerShell   
     Test-NetConnection 192.168.2.222
     ```
 
-    _**結果:**_   
+    _**結果:** _   
 
     ```
     ComputerName   : 192.168.2.222
@@ -1103,14 +1175,14 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
     Get-VMNetworkAdapter -ManagementOS -Name "SMB*" | fl Name,SwitchName,IeeePriorityTag,Status
     ```
 
-    _**結果:**_   
-    
+    _**結果:** _   
+
     ```
     Name: SMB1
     SwitchName  : VMSTEST
     IeeePriorityTag : On 
     Status  : {Ok}
-   
+
     Name: SMB2
     SwitchName  : VMSTEST
     IeeePriorityTag : On
@@ -1118,12 +1190,12 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
     ```
 
 13. VEthernet ネットワーク アダプターのプロパティを表示します。
-    
+
     ```PowerShell
     Get-NetAdapterRdma -Name "vEthernet*" | sort Name | ft -AutoSize
     ```
 
-    _**結果:**_   
+    _**結果:** _   
 
     ```
     Name  InterfaceDescription Enabled
@@ -1134,15 +1206,15 @@ VSwitch を作成して、RDMA に移行する前に、ファブリックが正�
     ```
 
 14. VEthernet のネットワーク アダプターを有効にします。  
-    
+
     ```PowerShell
     Enable-NetAdapterRdma -Name "vEthernet (SMB1)"
     Enable-NetAdapterRdma -Name "vEthernet (SMB2)"
     Get-NetAdapterRdma -Name "vEthernet*" | sort Name | fl *
     ```
 
-    _**結果:**_   
-    
+    _**結果:** _   
+
     ```
     Name  InterfaceDescription Enabled
     ----  -------------------- -------
@@ -1164,7 +1236,7 @@ VSwitch セット チームの両方のメンバーに、vSwitch が、ローカ
 >Get-NetAdapterAdvancedProperty -Name "Test-40G-2"
 >```
 >
->_**結果:**_ 
+>_**結果:** _ 
 >   
 >```
 >Name  DisplayNameDisplayValue   RegistryKeyword RegistryValue  
@@ -1173,29 +1245,29 @@ VSwitch セット チームの両方のメンバーに、vSwitch が、ローカ
 > .
 >Test-40G-2VLAN ID102VlanID  {102} 
 >```
-    
+
 1. ネットワーク アダプターのプロパティを表示します。
 
    ```PowerShell
    Get-NetAdapter
    ```
-    
-   _**結果:**_ 
-    
+
+   _**結果:** _ 
+
    ```
    Name  InterfaceDescriptionifIndex Status   MacAddress LinkSpeed
    ----  --------------------------- ------   ---------- ---------
    Test-40G-2Mellanox ConnectX-3 Pro Ethernet A...#3   3 Up   E4-1D-2D-07-43-D140 Gbps
    ```
-   
+
 2. ネットワーク アダプターの RDMA の情報を表示します。
 
    ```PowerShell
    Get-NetAdapterRdma
    ```
-    
-   _**結果:**_  
-    
+
+   _**結果:** _  
+
    ```
    Name  InterfaceDescription Enabled
    ----  -------------------- -------
@@ -1207,9 +1279,9 @@ VSwitch セット チームの両方のメンバーに、vSwitch が、ローカ
    ```PowerShell 
    C:\TEST\Test-RDMA.PS1 -IfIndex 3 -IsRoCE $true -RemoteIpAddress 192.168.2.111 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
    ```
-    
-   _**結果:**_ 
-    
+
+   _**結果:** _ 
+
    ```
    VERBOSE: Diskspd.exe found at C:\TEST\Diskspd-v2.0.17\amd64fre\diskspd.exe
    VERBOSE: The adapter Test-40G-2 is a physical adapter
@@ -1233,9 +1305,9 @@ VSwitch セット チームの両方のメンバーに、vSwitch が、ローカ
    ```PowerShell
    C:\TEST\Test-RDMA.PS1 -IfIndex 3 -IsRoCE $true -RemoteIpAddress 192.168.2.222 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
    ```
-    
-   _**結果:**_ 
-    
+
+   _**結果:** _ 
+
    ```
    VERBOSE: Diskspd.exe found at C:\TEST\Diskspd-v2.0.17\amd64fre\diskspd.exe
    VERBOSE: The adapter Test-40G-2 is a physical adapter
@@ -1255,15 +1327,15 @@ VSwitch セット チームの両方のメンバーに、vSwitch が、ローカ
    VERBOSE: Enabling RDMA on adapters that are not part of this test. RDMA was disabled on them prior to sending RDMA traffic.
    VERBOSE: RDMA traffic test SUCCESSFUL: RDMA traffic was sent to 192.168.2.222
    ```
-    
+
 5. リモート コンピューターにローカルの RDMA のトラフィックをテストします。
 
     ```PowerShell
     Get-NetAdapter | ft –AutoSize
     ```
-    
-    _**結果:**_ 
-    
+
+    _**結果:** _ 
+
     ```
     Name  InterfaceDescriptionifIndex Status   MacAddress LinkSpeed
     ----  --------------------------- ------   ---------- ---------
@@ -1272,13 +1344,13 @@ VSwitch セット チームの両方のメンバーに、vSwitch が、ローカ
     ```
 
 6. 最初の仮想アダプターの RDMA のトラフィックのテストを実行します。    
-    
+
    ```
    C:\TEST\Test-RDMA.PS1 -IfIndex 41 -IsRoCE $true -RemoteIpAddress 192.168.2.5 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
    ```
-    
-   _**結果:**_ 
-    
+
+   _**結果:** _ 
+
    ```
    VERBOSE: Diskspd.exe found at C:\TEST\Diskspd-v2.0.17\amd64fre\diskspd.exe
    VERBOSE: The adapter vEthernet (SMB1) is a virtual adapter
@@ -1309,9 +1381,9 @@ VSwitch セット チームの両方のメンバーに、vSwitch が、ローカ
    ```PowerShell
    C:\TEST\Test-RDMA.PS1 -IfIndex 45 -IsRoCE $true -RemoteIpAddress 192.168.2.5 -PathToDiskspd C:\TEST\Diskspd-v2.0.17\amd64fre\
    ```
-    
-   _**結果:**_ 
-    
+
+   _**結果:** _ 
+
    ```
    VERBOSE: Diskspd.exe found at C:\TEST\Diskspd-v2.0.17\amd64fre\diskspd.exe
    VERBOSE: The adapter vEthernet (SMB2) is a virtual adapter
@@ -1334,7 +1406,7 @@ VSwitch セット チームの両方のメンバーに、vSwitch が、ローカ
    VERBOSE: Enabling RDMA on adapters that are not part of this test. RDMA was disabled on them prior to sending RDMA traffic.
    VERBOSE: RDMA traffic test SUCCESSFUL: RDMA traffic was sent to 192.168.2.5
    ```
-    
+
 この出力の最後の行"RDMA のトラフィックのテスト成功。RDMA のトラフィックは、192.168.2.5 に送信された"は、アダプターに収束の NIC が正しく構成されたことを示します。
 
 ## <a name="related-topics"></a>関連トピック 

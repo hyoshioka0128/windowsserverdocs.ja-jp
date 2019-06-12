@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 8399bdfa-809a-45e4-9963-f9b6a631007f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 49b3f6f68bf30ff197b51643f9f1b8f36cc76f19
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3077aa54163ed9548ae3f45f8c673c731b8ef73b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825973"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446649"
 ---
 # <a name="step-5-test-directaccess-connectivity-from-the-internet-and-through-the-cluster"></a>手順 5 DirectAccess 接続をテスト クラスターと、インターネットから
 
@@ -35,27 +35,27 @@ CLIENT1 は、DirectAccess のテストの準備ができました。
   
 ## <a name="test-directaccess-connectivity-from-the-internet"></a>インターネットから DirectAccess 接続をテストします。  
   
-1.  企業ネットワーク スイッチから CLIENT1 を外し、インターネット スイッチに接続します。 30 秒間待機します。  
+1. 企業ネットワーク スイッチから CLIENT1 を外し、インターネット スイッチに接続します。 30 秒間待機します。  
   
-2.  管理者特権で Windows PowerShell ウィンドウで、次のように入力します。 **ipconfig/flushdns** ENTER キーを押します。 これにより、クライアント コンピューターが、企業ネットワークに接続されているときにまだクライアント DNS キャッシュに存在する名前解決エントリがフラッシュします。  
+2. 管理者特権で Windows PowerShell ウィンドウで、次のように入力します。 **ipconfig/flushdns** ENTER キーを押します。 これにより、クライアント コンピューターが、企業ネットワークに接続されているときにまだクライアント DNS キャッシュに存在する名前解決エントリがフラッシュします。  
   
-3.  Windows PowerShell ウィンドウで、入力**Get-dnsclientnrptpolicy** ENTER キーを押します。  
+3. Windows PowerShell ウィンドウで、入力**Get-dnsclientnrptpolicy** ENTER キーを押します。  
   
-    出力には、名前解決ポリシー テーブル (NRPT) の現在の設定が表示されます。 これらの設定を指定するすべての接続。 corp.contoso.com を IPv6 アドレスの 2001:db8:1::2、リモート アクセス DNS サーバーで解決できる必要があります。 また、nls.corp.contoso.com という名前が除外されることを示す NRPT エントリがあります。除外リストの名前は、リモート アクセス DNS サーバーから応答されません。 リモート アクセス サーバーへの接続を確認するリモート アクセス DNS サーバーの IP アドレスに ping を実行します。たとえば、2001:db8:1::2 の ping を実行することができます。  
+   出力には、名前解決ポリシー テーブル (NRPT) の現在の設定が表示されます。 これらの設定を指定するすべての接続。 corp.contoso.com を IPv6 アドレスの 2001:db8:1::2、リモート アクセス DNS サーバーで解決できる必要があります。 また、nls.corp.contoso.com という名前が除外されることを示す NRPT エントリがあります。除外リストの名前は、リモート アクセス DNS サーバーから応答されません。 リモート アクセス サーバーへの接続を確認するリモート アクセス DNS サーバーの IP アドレスに ping を実行します。たとえば、2001:db8:1::2 の ping を実行することができます。  
   
-4.  Windows PowerShell ウィンドウで、入力**ping app1** ENTER キーを押します。 IPv6 アドレスからの応答は、2001:db8:1::3 この例では、APP1 に表示されます。  
+4. Windows PowerShell ウィンドウで、入力**ping app1** ENTER キーを押します。 IPv6 アドレスからの応答は、2001:db8:1::3 この例では、APP1 に表示されます。  
   
-5.  Windows PowerShell ウィンドウで、入力**ping app2** ENTER キーを押します。 EDGE1 から割り当てられた NAT64 アドレスから APP2 (この例では fdc9:9f4e:eb1b:7777::a00:4) に返信があります。  
+5. Windows PowerShell ウィンドウで、入力**ping app2** ENTER キーを押します。 EDGE1 から割り当てられた NAT64 アドレスから APP2 (この例では fdc9:9f4e:eb1b:7777::a00:4) に返信があります。  
   
-    APP2 の ping を実行する機能は、成功した場合は、APP2 が IPv4 唯一のリソースは、NAT64 と DNS64 を使用して接続を確立することができたことを示しているため、重要です。  
+   APP2 の ping を実行する機能は、成功した場合は、APP2 が IPv4 唯一のリソースは、NAT64 と DNS64 を使用して接続を確立することができたことを示しているため、重要です。  
   
-6.  Windows PowerShell ウィンドウは、次の手順を開いたままにしておきます。  
+6. Windows PowerShell ウィンドウは、次の手順を開いたままにしておきます。  
   
-7.  Internet Explorer のアドレス バーに Internet Explorer を開き、入力**https://app1/** ENTER キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
+7. Internet Explorer のアドレス バーに Internet Explorer を開き、入力 **https://app1/** ENTER キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
   
-8.  Internet Explorer のアドレス バーに次のように入力します。 **https://app2/** ENTER キーを押します。 APP2 の既定の Web サイトが表示されます。  
+8. Internet Explorer のアドレス バーに次のように入力します。 **https://app2/** ENTER キーを押します。 APP2 の既定の Web サイトが表示されます。  
   
-9. **開始**画面で「**\\\App2\Files**し、ENTER キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
+9. **開始**画面で「<strong>\\\App2\Files</strong>し、ENTER キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
   
     これは、SMB を使用して、リソース ドメイン内のリソースを取得する IPv4 のみのサーバーに接続することができたことを示します。  
   
@@ -69,20 +69,20 @@ CLIENT1 は、DirectAccess のテストの準備ができました。
   
 ## <a name="test-directaccess-client-connectivity-through-the-cluster"></a>クラスターでの DirectAccess クライアント接続をテストします。  
   
-1.  EDGE2 では、正常なシャット ダウンを実行します。  
+1. EDGE2 では、正常なシャット ダウンを実行します。  
   
-    ネットワーク負荷分散マネージャーを使用して、これらのテストを実行するときに、サーバーの状態を表示することができます。  
+   ネットワーク負荷分散マネージャーを使用して、これらのテストを実行するときに、サーバーの状態を表示することができます。  
   
-2.  Client1 で Windows PowerShell ウィンドウで、次のように入力します。 **ipconfig/flushdns** ENTER キーを押します。 これにより、まだクライアント DNS キャッシュに残っている名前解決エントリがフラッシュします。  
+2. Client1 で Windows PowerShell ウィンドウで、次のように入力します。 **ipconfig/flushdns** ENTER キーを押します。 これにより、まだクライアント DNS キャッシュに残っている名前解決エントリがフラッシュします。  
   
-3.  Windows PowerShell ウィンドウで、APP1 および APP2 に対して ping を実行します。 これらのリソースの両方から応答を受信する必要があります。  
+3. Windows PowerShell ウィンドウで、APP1 および APP2 に対して ping を実行します。 これらのリソースの両方から応答を受信する必要があります。  
   
-4.  **開始**画面で「**\\\app2\files**します。 APP2 コンピューター上の共有フォルダーが表示されます。 APP2 のファイル共有を開くことができますでは、ユーザーの Kerberos 認証を必要とする 2 番目のトンネルが正しく動作していることを示します。  
+4. **開始**画面で「<strong>\\\app2\files</strong>します。 APP2 コンピューター上の共有フォルダーが表示されます。 APP2 のファイル共有を開くことができますでは、ユーザーの Kerberos 認証を必要とする 2 番目のトンネルが正しく動作していることを示します。  
   
-5.  Internet Explorer を開き、web サイトを開きます https://app1/と https://app2/します。 両方の web サイトを開くことができますを確認する最初と 2 つ目の両方のトンネルが機能しているとします。 Internet Explorer を閉じます。  
+5. Internet Explorer を開き、web サイトを開きます https://app1/と https://app2/します。 両方の web サイトを開くことができますを確認する最初と 2 つ目の両方のトンネルが機能しているとします。 Internet Explorer を閉じます。  
   
-6.  EDGE2 コンピューターを起動します。  
+6. EDGE2 コンピューターを起動します。  
   
-7.  EDGE1 では、正常なシャット ダウンを実行します。  
+7. EDGE1 では、正常なシャット ダウンを実行します。  
   
-8.  5 分間待機し、CLIENT1 に戻ります。 手順 2. ~ 5. を実行します。 CLIENT1 が透過的にフェールオーバーする EDGE2 EDGE1 は使用できなくなった後できたことを確認します。
+8. 5 分間待機し、CLIENT1 に戻ります。 手順 2. ~ 5. を実行します。 CLIENT1 が透過的にフェールオーバーする EDGE2 EDGE1 は使用できなくなった後できたことを確認します。

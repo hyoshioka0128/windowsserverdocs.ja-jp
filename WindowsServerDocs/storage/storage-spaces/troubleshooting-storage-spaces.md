@@ -9,12 +9,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 48099ad15465b885ccaf562bcf94b4bafdeff388
-ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.openlocfilehash: 44bcf48f3e4a3b4b49ff027d3aa3e5704865e7b5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64772629"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447886"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>直接記憶域スペースをトラブルシューティングします。
 
@@ -35,7 +35,7 @@ ms.locfileid: "64772629"
 
 ## <a name="virtual-disk-resources-are-in-no-redundancy-state"></a>仮想ディスク リソースが No 冗長性の状態
 記憶域スペース ダイレクトのシステムのノードは再起動が予期せずクラッシュや電源障害が原因です。 次に、1 つまたは複数の仮想ディスクをオンラインにならない場合があり、「冗長性を情報が不足しています。」の説明を参照してください。
-    
+
 |FriendlyName|ResiliencySettingName| OperationalStatus| HealthStatus| IsManualAttach|サイズ| PSComputerName|
 |------------|---------------------| -----------------| ------------| --------------|-----| --------------|
 |Disk4| Mirror (ミラー)| OK|  正常| True|  10 TB|  ノード 01.conto.|
@@ -52,7 +52,7 @@ ms.locfileid: "64772629"
 ``` 
 
 **いいえ冗長性の動作状態**ディスクが失敗するか、システムが仮想ディスクのデータにアクセスできない場合に発生することができます。 この問題は、ノードのメンテナンス中にノードの再起動が発生した場合に発生することができます。
-    
+
 この問題を解決するには、次の手順を実行します。
 
 1. CSV から影響を受けた仮想ディスクを削除します。 クラスター内の「使用可能記憶域」グループに配置され、「物理ディスク」のリソースの種類として表示を開始
@@ -91,8 +91,8 @@ ms.locfileid: "64772629"
    ```
 
 **DiskRecoveryAction**チェックなしの読み取り/書き込みモードでの領域のボリュームをアタッチできるようにするスイッチで上書きします。 プロパティを使用すると、ボリュームがオンラインにしない理由に診断を行うことができます。 メンテナンス モードに非常に似ていますが、失敗状態のリソースを呼び出すことができます。 "No 冗長性など、"アクセスを見いだすことのできる状況で役に立ちますデータにアクセスすることもできますなデータをでき、それをコピーします。 DiskRecoveryAction プロパティは、2018 年 2 月 22日の更新プログラム、KB 4077525 で追加されました。
-    
-    
+
+
 ## <a name="detached-status-in-a-cluster"></a>クラスターでのデタッチの状態 
 
 実行すると、 **Get-virtualdisk**コマンドレットでは、1 つまたは複数記憶域スペース ダイレクト仮想ディスクをデタッチ OperationalStatus します。 ただし、によって報告されます、HealthStatus、 **Get-physicaldisk**コマンドレットは、すべての物理ディスクが正常な状態でいることを示します。
@@ -122,7 +122,7 @@ Data on the disk is out-of-sync and a data integrity scan is required.
 
 To start the scan, run the following command:   
 Get-ScheduledTask -TaskName "Data Integrity Scan for Crash Recovery" | Start-ScheduledTask                
-             
+
 Once you have resolved the condition listed above, you can online the disk by using the following commands in PowerShell:   
 
 Get-VirtualDisk | ?{ $_.ObjectId -Match "{GUID}" } | Get-Disk | Set-Disk -IsReadOnly $false 
@@ -152,7 +152,7 @@ Volume Name:
 ``` 
 
 **デタッチの動作状態**ダーティ領域 (DRT) の追跡ログがいっぱいの場合に発生することができます。 記憶域スペース (DRT) の追跡をミラー化されたスペースをダーティ領域を使用して、電源障害が発生したときに、記憶域スペースが再実行または記憶域スペースを柔軟に戻す操作を元に戻すことができるかどうかを確認する実行中の更新メタデータを記録するかどうかを確認するには電源を復旧すると、一貫性のある状態と、システムが再び起動します。 DRT ログがいっぱいで、DRT メタデータが同期フラッシュされるまで、仮想ディスクがオンラインにできません。 このプロセスでは、完了に数時間かかる場合、フル スキャンを実行している必要があります。
-    
+
 この問題を解決するには、次の手順を実行します。
 1. CSV から影響を受けた仮想ディスクを削除します。
 
@@ -172,9 +172,9 @@ Volume Name:
    ```
    このタスクは、デタッチされたボリュームがオンラインのすべてのノードで開始する必要があります。 修復が自動的に開始する必要があります。 修復を完了するまで待ちます。 中断状態に移動して、もう一度開始し、可能性があります。 進行状況を監視します。 
    - 実行**Get-storagejob**が完了したときに表示して、修復の状態を監視します。
-   -  実行**Get-virtualdisk**し、領域を返します HealthStatus の正常性を確認します。
-    - 「データ整合性スキャンのクラッシュ回復」が、記憶域ジョブとして表示しないタスクと進行状況のインジケーターはありません。 タスクが表示されている場合、実行中として実行しています。 完了すると、完了したが表示されます。
-    
+   - 実行**Get-virtualdisk**し、領域を返します HealthStatus の正常性を確認します。
+     - 「データ整合性スキャンのクラッシュ回復」が、記憶域ジョブとして表示しないタスクと進行状況のインジケーターはありません。 タスクが表示されている場合、実行中として実行しています。 完了すると、完了したが表示されます。
+
        さらに、次のコマンドレットを使用して、実行中のスケジュール タスクの状態を表示できます。 
        ```powershell
        Get-ScheduledTask | ? State -eq running
@@ -189,12 +189,12 @@ Volume Name:
    ```powershell
    Add-ClusterSharedVolume -name "VdiskName"
    ```  
-**DiskRunChkdsk 値 7**領域ボリュームをアタッチし、読み取り専用モードでは、パーティションを保持するために使用します。 修復をトリガーすることによって空白を自己検出と自動修復ができるようにします。 修復の実行は 1 回自動的にマウントします。 また、任意のデータをコピーすることができますにアクセスすることができるデータにアクセスすることもできます。 完全な DRT ログなどのいくつかのエラー状態のクラッシュ回復のスケジュールされたタスクに対してデータ整合性スキャンを実行する必要があります。
-    
+   **DiskRunChkdsk 値 7**領域ボリュームをアタッチし、読み取り専用モードでは、パーティションを保持するために使用します。 修復をトリガーすることによって空白を自己検出と自動修復ができるようにします。 修復の実行は 1 回自動的にマウントします。 また、任意のデータをコピーすることができますにアクセスすることができるデータにアクセスすることもできます。 完全な DRT ログなどのいくつかのエラー状態のクラッシュ回復のスケジュールされたタスクに対してデータ整合性スキャンを実行する必要があります。
+
 **クラッシュ回復のタスクのデータ整合性スキャン**を同期し、完全なダーティ領域 (DRT) の追跡のログを消去するために使用します。 このタスクは完了に数時間をかかります。 「データ整合性スキャンのクラッシュ回復」が、記憶域ジョブとして表示しないタスクと進行状況のインジケーターはありません。 タスクが表示されている場合、実行中として実行しています。 完了すると、完了済みとして表示されます。 タスクをキャンセルするか、またはこのタスクの実行中にノードを再起動する場合、タスクは、最初からやり直す必要があります。
 
 詳細については、次を参照してください。[記憶域スペース ダイレクトのトラブルシューティングの正常性と操作状態](storage-spaces-states.md)します。
-    
+
 ## <a name="event-5120-with-statusiotimeout-c00000b5"></a>イベント 5120 STATUS_IO_TIMEOUT c00000b5 を 
 
 > [!Important]
@@ -223,7 +223,7 @@ Description: Cluster node 'NODENAME'was removed from the active failover cluster
 記憶域スペース ダイレクト クラスター内の SMB ネットワーク セッションの SMB の回復力のある処理を追加する累積更新プログラムが Windows Server 2016 では、2018 年 5 月 8 日で導入された変更。 これは、一時的なネットワーク障害に対する回復力と RoCE でのネットワークの輻輳の処理方法向上のために行われました。 ノードを再起動するとに、SMB 接続が再接続するときのタイムアウトとタイムアウトを待機これらの機能強化も誤って増加します。 これらの問題がストレス条件下でシステムに影響を与えることができます。 計画外のダウンタイム中に最大 60 秒間の IO の一時停止も観測されましたシステムが待機するタイムアウトへの接続中。この問題を解決するには、インストール、 [2018 年 10 月 18 日、Windows Server 2016 用の累積更新プログラム](https://support.microsoft.com/help/4462928)以降のバージョン。
 
 *注*この更新プログラムは、CSV のタイムアウトとこの問題を解決する SMB 接続のタイムアウトを揃えて配置します。 回避策」セクションで説明されているライブのダンプの生成を無効にする変更は実装しません。
-    
+
 ### <a name="shutdown-process-flow"></a>シャット ダウン プロセス フロー:
 
 1. Get-virtualdisk コマンドレットを実行し、HealthStatus 値が"健全"であるかどうかを確認します。
@@ -293,14 +293,14 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 (Get-Cluster).DumpPolicy = ((Get-Cluster).DumpPolicy -band 0xFFFFFFFFFFFFFFFE)
 ```
 このコマンドレットは、コンピューターを再起動しなくても、すべてのクラスター ノードで有効になります。
-    
+
 ## <a name="slow-io-performance"></a>低速の IO パフォーマンス
 
 低速の IO パフォーマンスを表示している場合は、記憶域スペース ダイレクト構成でキャッシュが有効になっているかどうかを確認します。 
 
 チェックする 2 つの方法はあります。 
-     
- 
+
+
 1. クラスター ログを使用します。 任意のテキスト エディターで、クラスター ログを開き、検索"[ステージ SBL ディスク ステージ]." これは、ログで生成されたノード上のディスクの一覧表示されます。 
 
      キャッシュには、ディスクの使用例が有効になります。状態が CacheDiskStateInitializedAndBound、およびがここで、GUID が存在することは、ここで注意してください。 
@@ -338,7 +338,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
    |NVMe INTEL SSDPE7KX02 |PHLF7330001J2P0LGN |SSD| False| OK| 正常| 自動選択| 1.82 TB|
    |NVMe INTEL SSDPE7KX02| PHLF733000302P0LGN |SSD| False| OK|正常| 自動選択| 1.82 TB|
    |NVMe INTEL SSDPE7KX02| PHLF7330004D2P0LGN |SSD| False| OK| 正常| 自動選択 |1.82 TB|
-    
+
 ## <a name="how-to-destroy-an-existing-cluster-so-you-can-use-the-same-disks-again"></a>同じディスクをもう一度使用できるように、既存のクラスターを破棄する方法
 
 記憶域スペース ダイレクト クラスターで記憶域スペース ダイレクトを無効にしてしたらで説明されているクリーンアップ プロセスを使用して[ドライブをクリーニング](deploy-storage-spaces-direct.md#step-31-clean-drives)、クラスター化された記憶域プールがオフラインの状態に残っておよびヘルス サービスはから削除クラスター。
@@ -370,7 +370,7 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 ||Msft Virtu. ||正常| オフライン| 100 GB| RAW|
 ||Msft Virtu. ||正常| オフライン| 100 GB| RAW|
 
-    
+
 ## <a name="error-message-about-unsupported-media-type-when-you-create-an-storage-spaces-direct-cluster-using-enable-clusters2d"></a>「サポートされていないメディアの種類」に関するエラー メッセージ Enable-clusters2d を使用して、記憶域スペース ダイレクト クラスターを作成する場合  
 
 実行すると次のようなエラーが発生、 **Enable-clusters2d**コマンドレット。
@@ -378,32 +378,33 @@ reg add "HKLM\Software\Microsoft\Windows\Windows Error Reporting\FullLiveKernelR
 ![シナリオ 6 エラー メッセージ](media/troubleshooting/scenario-error-message.png)
 
 この問題を解決するには、HBA アダプターは、HBA モードで構成されたことを確認します。 RAID モードで HBA は構成されていません。  
-    
+
 ## <a name="enable-clusterstoragespacesdirect-hangs-at-waiting-until-sbl-disks-are-surfaced-or-at-27"></a>'SBL まで待機しているディスクが表示される'、または 27% で、ClusterStorageSpacesDirect がハングします。
 
 検証レポートでは、次の情報が表示されます。
 
     Disk <identifier> connected to node <nodename> returned a SCSI Port Association and the corresponding enclosure device could not be found. The hardware is not compatible with Storage Spaces Direct (S2D), contact the hardware vendor to verify support for SCSI Enclosure Services (SES). 
-    
-  
+
+
 ディスクと HBA カードの間にある HPE SAS エキスパンダーのカードに問題があります。 SAS エキスパンダーは、展開と展開コントロール自体に接続されている最初のドライブ間で重複する ID を作成します。  これが解決された[HPE スマート配列コント ローラー SAS Expander ファームウェア。4.02](https://support.hpe.com/hpsc/swd/public/detail?sp4ts.oid=7304566&swItemId=MTX_ef8d0bf4006542e194854eea6a&swEnvOid=4184#tab3).
-    
+
 ## <a name="intel-ssd-dc-p4600-series-has-a-non-unique-nguid"></a>Intel SSD DC P4600 シリーズが一意でない NGUID
 問題を表示し、Intel SSD DC P4600 シリーズのデバイスが 0100000001000000E4D25C000014E214 または次の例で 0100000001000000E4D25C0000EEE214 など複数の名前空間の 16 バイト NGUID のようなレポートするようですがあります。
 
-|一意の id| deviceid |MediaType| BusType| シリアル番号| size|canpool| friendlyname| OperationalStatus|
-|-|-|-|-|-|-|-|-|-
-|5000CCA251D12E30| 0| HDD| SAS| 7PKR197G|                  10000831348736 |False|HGST| HUH721010AL4200| OK|
-|eui.0100000001000000E4D25C000014E214 |4|SSD| NVMe|   0100_0000_0100_0000_E4D2_5C00_0014_E214.|1600321314816|True| INTEL| SSDPE2KE016T7|  OK|
-|eui.0100000001000000E4D25C000014E214 |5|        SSD|       NVMe|    0100_0000_0100_0000_E4D2_5C00_0014_E214.|  1600321314816|    True| INTEL| SSDPE2KE016T7|  OK|
-|eui.0100000001000000E4D25C0000EEE214| 6|        SSD|       NVMe|    0100_0000_0100_0000_E4D2_5C00_00EE_E214.|  1600321314816|    True| INTEL| SSDPE2KE016T7|  OK|
-|eui.0100000001000000E4D25C0000EEE214| 7|        SSD|       NVMe|    0100_0000_0100_0000_E4D2_5C00_00EE_E214.|  1600321314816|    True| INTEL| SSDPE2KE016T7|  OK|
+
+|               一意の id               | deviceid | MediaType | BusType |               シリアル番号               |      size      | canpool | friendlyname | OperationalStatus |
+|--------------------------------------|----------|-----------|---------|------------------------------------------|----------------|---------|--------------|-------------------|
+|           5000CCA251D12E30           |    0     |    HDD    |   SAS   |                 7PKR197G                 | 10000831348736 |  False  |     HGST     |  HUH721010AL4200  |
+| eui.0100000001000000E4D25C000014E214 |    4     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  True   |    INTEL     |   SSDPE2KE016T7   |
+| eui.0100000001000000E4D25C000014E214 |    5     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_0014_E214. | 1600321314816  |  True   |    INTEL     |   SSDPE2KE016T7   |
+| eui.0100000001000000E4D25C0000EEE214 |    6     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  True   |    INTEL     |   SSDPE2KE016T7   |
+| eui.0100000001000000E4D25C0000EEE214 |    7     |    SSD    |  NVMe   | 0100_0000_0100_0000_E4D2_5C00_00EE_E214. | 1600321314816  |  True   |    INTEL     |   SSDPE2KE016T7   |
 
 この問題を解決するには、最新バージョンに Intel ドライブのファームウェアを更新します。  ファームウェアのバージョンこの問題を解決するのには、2018 年 5 月から QDV101B1 が呼ばれます。
 
 [Intel SSD のデータ センター ツールの 2018 年 5 月リリース](https://downloadmirror.intel.com/27778/eng/Intel_SSD_Data_Center_Tool_3_0_12_Release_Notes_330715-026.pdf)ファームウェア更新 QDV101B1、Intel SSD DC P4600 シリーズが含まれています。
 
-    
+
 ## <a name="physical-disk-healthy-and-operational-status-is-removing-from-pool"></a>物理ディスク「"健全"、」と操作の状態が「プールから削除する」 
 
 Windows Server 2016 記憶域スペース ダイレクト クラスターの場合は、表示がありますの 1 つ以上の物理ディスク HealthStatus「正常」として、OperationalStatus は「(削除して、[ok] のプールから)」 
@@ -416,7 +417,7 @@ Windows Server 2016 記憶域スペース ダイレクト クラスターの場�
 スクリプトを実行する方法を示すいくつかの例を次に示します。
 
 - 使用して、 **SerialNumber**パラメーターを"健全"に設定する必要があるディスクを指定します。 シリアル番号を取得する**WMI MSFT_PhysicalDisk**または**Get-physicaldisk**します。 (私たちだけを使用している 0 s 以下のシリアル番号の。)
-   
+
    ```powershell
    Clear-PhysicalDiskHealthData -Intent -Policy -SerialNumber 000000000000000 -Verbose -Force
     ```
@@ -446,7 +447,7 @@ VMFleet と Diskspd を使用して、ロード テストとストレス テス�
 Azure Vm で実行している場合は、このイベントを無視できます。
 
     Event ID 32: The driver detected that the device \Device\Harddisk5\DR5 has its write cache enabled. Data corruption may occur. 
-    
+
 ## <a name="slow-performance-or-lost-communication-io-error-detached-or-no-redundancy-errors-for-deployments-that-use-intel-p3x00-nvme-devices"></a>パフォーマンスの低下または「紛失の通信、」"IO Error"、「デタッチ」または「No 冗長性」エラー Intel P3x00 NVMe デバイスを使用するデプロイ
 
 「メンテナンス リリース 8」より前に、のファームウェア バージョン NVM Express (NVMe) デバイスの Intel P3x00 ファミリに基づいてハードウェアを使用している一部の記憶域スペース ダイレクトのユーザーに影響する重大な問題を特定できました 

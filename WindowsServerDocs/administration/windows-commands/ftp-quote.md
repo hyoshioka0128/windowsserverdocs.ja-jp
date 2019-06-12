@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b1aaf9eadfd9c51048ad41106ce6532f6f9588b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1f468bfc384673818dc53be303f82cd4803cb2eb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865883"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438492"
 ---
 # <a name="ftp-quote"></a>ftp: 見積もり
 
@@ -30,9 +30,11 @@ ms.locfileid: "59865883"
 quote <Argument>[ ]  
 ```  
 ### <a name="parameters"></a>パラメーター  
-|パラメーター|説明|  
-|-------|--------|  
-|<Argument>|Ftp サーバーに送信する引数を指定します。|  
+
+| パラメーター  |                    説明                    |
+|------------|---------------------------------------------------|
+| <Argument> | Ftp サーバーに送信する引数を指定します。 |
+
 ## <a name="remarks"></a>注釈  
 **見積もり** コマンドと同じ、 **リテラル** コマンドです。  
 ## <a name="BKMK_Examples"></a>例  
@@ -42,4 +44,4 @@ quote quit
 ```  
 ## <a name="additional-references"></a>その他の参照  
 -   [ftp: literal_1](ftp-literal_1.md)  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  

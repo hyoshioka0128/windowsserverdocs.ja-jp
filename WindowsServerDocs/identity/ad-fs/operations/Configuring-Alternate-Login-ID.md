@@ -9,12 +9,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 5bc43717f37fb3b14ac7f384a061ee64c734222d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 75ab011ed4931af3d5a03a38b3f7a7f0cfecbe3d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189657"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444913"
 ---
 # <a name="configuring-alternate-login-id"></a>代替ログイン ID を構成する
 
@@ -31,9 +31,9 @@ Active Directory フェデレーション サービス (AD FS) フェデレー�
 
 ## <a name="alternate-id-in-azure-ad"></a>Azure AD での代替 id
 組織は、次のシナリオで代替 ID を使用する必要があります。
-1.  オンプレミスのドメイン名は、ルーティング不可能な ex です。 Contoso.local し、その結果、既定のユーザー プリンシパル名は、ルーティング不可能 (jdoe@contoso.local)。 ローカル アプリケーションの依存関係または会社のポリシーにより、既存の UPN を変更できません。 Azure AD と Office 365 は完全にインターネット ルーティング可能な Azure AD ディレクトリに関連付けられているすべてのドメイン サフィックスを必要とします。 
-2.  オンプレミスの UPN がユーザーの電子メール アドレスと同じユーザーが電子メール アドレスを使用してサインインするには、Office 365 と組織の制約のために UPN を使用できません。
-上記のシナリオでは、AD FS を使用して代替 ID をユーザーが、オンプレミスの Upn を変更することがなく Azure AD へのサインインを使用できます。 
+1. オンプレミスのドメイン名は、ルーティング不可能な ex です。 Contoso.local し、その結果、既定のユーザー プリンシパル名は、ルーティング不可能 (jdoe@contoso.local)。 ローカル アプリケーションの依存関係または会社のポリシーにより、既存の UPN を変更できません。 Azure AD と Office 365 は完全にインターネット ルーティング可能な Azure AD ディレクトリに関連付けられているすべてのドメイン サフィックスを必要とします。 
+2. オンプレミスの UPN がユーザーの電子メール アドレスと同じユーザーが電子メール アドレスを使用してサインインするには、Office 365 と組織の制約のために UPN を使用できません。
+   上記のシナリオでは、AD FS を使用して代替 ID をユーザーが、オンプレミスの Upn を変更することがなく Azure AD へのサインインを使用できます。 
 
 ## <a name="end-user-experience-with-alternate-login-id"></a>代替ログイン ID のエンドユーザー エクスペリエンス
 エンド ユーザー エクスペリエンスは、代替ログイン id を使用する認証方法によって異なります。現在この代替ログイン id を使用して実現する 3 つの方法があります。  それらは以下のとおりです。
@@ -81,7 +81,7 @@ Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID <
 Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID mail -LookupForests contoso.com,fabrikam.com
 ```
 
-3.  この機能を無効にするには、null にすることの両方のパラメーターの値を設定します。
+3. この機能を無効にするには、null にすることの両方のパラメーターの値を設定します。
 
 ``` powershell
 Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID $NULL -LookupForests $NULL
@@ -129,7 +129,7 @@ SSO の代替 id を使用する代替の id を持つ、ディレクトリを�
 ##### <a name="step-1-update-to-required-office-version"></a>手順 1. Office のバージョンに必要な更新します。
 Office バージョン 1712 (8827.2148 ビルドなし) され、上記の代替 id のシナリオを処理するために認証ロジックが更新されました。 新しいロジックを利用するために、クライアント コンピューターは、(8827.2148 ビルドなし) の Office バージョン 1712 以降に更新する必要があります。
 
-##### <a name="step-2-update-to-required-windows-version"></a>手順 2.  更新するために必要な Windows バージョン
+##### <a name="step-2-update-to-required-windows-version"></a>手順 2. 更新するために必要な Windows バージョン
 Windows バージョン 1709 以降の更新が代替 id のシナリオを処理するために認証ロジック。 新しいロジックを利用するために、クライアント コンピューターは、Windows バージョン 1709 以降に更新する必要があります。
 
 ##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>手順 3. グループ ポリシーを使用して、影響を受けるユーザーのレジストリを構成します。
@@ -155,6 +155,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 ## <a name="applications-and-user-experience-after-the-additional-configuration"></a>アプリケーションとユーザー エクスペリエンスの追加の構成後
 
 ### <a name="non-exchange-and-skype-for-business-clients"></a>非 Exchange と Skype for Business クライアント
+
 |クライアント|サポートに関する声明|注釈|
 | ----- | -----|-----|
 |Microsoft Teams|サポート対象|<li>Microsoft Teams は、AD FS をサポートしています (SAML-P、Ws-fed、Ws-trust、および OAuth) と最新の認証。</li><li> 代替ログイン ID を持つコア Microsoft Teams のチャネル、チャット、およびファイルの機能などの機能します。</li><li>1 番目と 3 番目のパーティのアプリは、顧客が個別に調べる必要があります。 これは、ため、各アプリケーションには、独自のサポートの認証プロトコルです。</li>|     
@@ -173,7 +174,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 |Outlook Web Access|サポート対象|サポート対象|
 |Android、IOS、および Windows Phone 用の outlook モバイル アプリ|サポート対象|サポート対象|
 |Skype for Business/Lync|余分なプロンプトなしでサポートします。|サポートされています (前述のようを除く) がユーザーの混乱が発生する可能性があります。</br></br>モバイル クライアントは、別の Id がサポートされている場合にのみの SIP アドレスの電子メール アドレスを = = 代替 id。</br></br> ユーザーがオンプレミスの UPN を使用する方法と、代替の ID を使用して、ビジネスのデスクトップ クライアントを Skype に 2 回のサインインする必要があります。 (「サインイン アドレス」が実際に「ユーザー名」と同じである可能性がありますいないは多くの場合は、SIP アドレスに注意してください。) 最初にユーザー名の入力を求め、ときに、ユーザーは、場合でも、それは正しくであらかじめ設定されていない代替 ID または SIP アドレス、UPN を入力する必要があります。 サインインして、UPN、ユーザー名のプロンプトが再表示されます、UPN を使用してあらかじめ入力されています。 この時間をクリックした後、ユーザーにします。 今度は、ユーザーがこれを代替 ID で置き換えます、をクリックする必要がありますが、サインイン プロセスを完了にサインインするとします。 モバイル クライアントでユーザーする必要があります、オンプレミス ユーザー ID を入力 [詳細設定] ページで、SAM スタイルの形式 (domain \username)、UPN 形式ではなくを使用します。</br></br>成功したサインイン後に「Exchange には、資格情報が必要がある、」が Skype for Business または Lync の場合必要があります、メールボックスが有効な資格情報を提供します。 メールボックスがクラウド内にある場合は、代替の ID を提供する必要があります。 メールボックスが、オンプレミスの場合は、オンプレミスの UPN を提供する必要があります。| 
- 
+
 ## <a name="additional-details--considerations"></a>追加の詳細と考慮事項
 
 -   代替ログイン ID 機能は、デプロイされる AD FS でフェデレーション環境で使用できます。  次のシナリオではサポートされません。
@@ -211,12 +212,12 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 
 
 
-**エラー ケース**|**サインイン エクスペリエンスへの影響**|**イベント**|
----------|---------|---------
-ユーザー オブジェクトの SAMAccountName の値を取得できません。|ログインに失敗しました|例外メッセージ MSIS8012 にイベント ID 364:ユーザーの samAccountName が見つかりません: '{0}'。|
-用の属性にアクセスできません。|ログインに失敗しました|例外メッセージ MSIS8013 にイベント ID 364:用: '{0}' のユーザー:'{1}' が不適切な形式でします。|
-1 つのフォレスト内に複数のユーザー オブジェクトがあります。|ログインに失敗しました|例外メッセージ MSIS8015 にイベント ID 364:Id を持つ複数のユーザー アカウントが見つかりません '{0}'in 'フォレスト{1}' id: {2}|
-複数のユーザー オブジェクトが複数のフォレストが見つかりません|ログインに失敗しました|例外メッセージ MSIS8014 にイベント ID 364:Id を持つ複数のユーザー アカウントが見つかりません '{0}' フォレストで。 {1}|
+|                       **エラー ケース**                        | **サインイン エクスペリエンスへの影響** |                                                              **イベント**                                                              |
+|--------------------------------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| ユーザー オブジェクトの SAMAccountName の値を取得できません。 |          ログインに失敗しました           |                  例外メッセージ MSIS8012 にイベント ID 364:ユーザーの samAccountName が見つかりません: '{0}'。                   |
+|        用の属性にアクセスできません。         |          ログインに失敗しました           |               例外メッセージ MSIS8013 にイベント ID 364:用: '{0}' のユーザー:'{1}' が不適切な形式でします。                |
+|        1 つのフォレスト内に複数のユーザー オブジェクトがあります。        |          ログインに失敗しました           | 例外メッセージ MSIS8015 にイベント ID 364:Id を持つ複数のユーザー アカウントが見つかりません '{0}'in 'フォレスト{1}' id: {2} |
+|   複数のユーザー オブジェクトが複数のフォレストが見つかりません    |          ログインに失敗しました           |           例外メッセージ MSIS8014 にイベント ID 364:Id を持つ複数のユーザー アカウントが見つかりません '{0}' フォレストで。 {1}            |
 
 ## <a name="see-also"></a>関連項目
 [AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md)

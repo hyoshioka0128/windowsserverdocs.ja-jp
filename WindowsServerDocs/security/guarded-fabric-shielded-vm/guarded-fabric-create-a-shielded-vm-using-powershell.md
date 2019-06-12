@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 76be26e107bd16165367d5432e1dd757dea2f9b4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0086edb7781a604cc90b9e76d34e5a3dc2725547
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855413"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447525"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>PowerShell を使用して、シールドされた VM を作成します。
 
@@ -56,15 +56,15 @@ HGS サーバーとテナントのみ暗号化を解除できるように、シ�
 シールドされた Vm がインストールされているため、コンピューター、リモート サーバー管理ツールで、次のコマンドレットを実行します。
 PDK を Linux VM を作成する場合は、Windows Server バージョン 1709 以降を実行するサーバーでこれを行う必要があります。
 
- 
+ 
 ```powershell
 # Create owner certificate, don't lose this!
 # The certificate is stored at Cert:\LocalMachine\Shielded VM Local Certificates
 $Owner = New-HgsGuardian –Name 'Owner' –GenerateCertificates
- 
+ 
 # Import the HGS guardian for each fabric you want to run your shielded VM
 $Guardian = Import-HgsGuardian -Path C:\HGSGuardian.xml -Name 'TestFabric'
- 
+ 
 # Create the PDK file
 # The "Policy" parameter describes whether the admin can see the VM's console or not
 # Use "EncryptionSupported" if you are testing out shielded VMs and want to debug any issues during the specialization process
@@ -115,5 +115,5 @@ Add-ClusterVirtualMachineRole -VMName 'MyShieldedVM' -Cluster <Hyper-V cluster n
 
 ## <a name="next-step"></a>次の手順
 
->[!div class="nextstepaction"]
-[デプロイをシールドされた VMM を使用して](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)
+> [!div class="nextstepaction"]
+> [デプロイをシールドされた VMM を使用して](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)
