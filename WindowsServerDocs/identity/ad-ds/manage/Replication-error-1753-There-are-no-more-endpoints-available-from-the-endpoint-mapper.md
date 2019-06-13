@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: a280d540d09c6fdcb7846d1cf545856869be1152
-ms.sourcegitcommit: b190fac4bfa5599751a60d3fc3b4c4a64dd9afd7
+ms.openlocfilehash: e7d2b47c9c14af22cdcf29fb388779e7639e38cb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66008966"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442768"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>レプリケーション エラー 1753。エンドポイント マッパーから使用できるエンドポイントはこれ以上ありません
 
@@ -46,10 +46,10 @@ ms.locfileid: "66008966"
   <section address="BKMK_Symptoms">
     <title>現象</title>
     <content>
-      <para>この記事は、現象、原因を説明し、解像度が 1753 の Win32 エラーで失敗する Active Directory 操作の手順します。「があるエンドポイントのエンドポイント マッパーから使用できる。」</para>
+      <para>この記事は、現象、原因を説明し、解像度が 1753 の Win32 エラーで失敗する Active Directory 操作の手順します。&quot;エンドポイントはエンドポイント マッパーから使用できます。&quot;</para>
       <list class="ordered">
         <listItem>
-          <para>接続のテスト、Active Directory レプリケーションのテストまたは KnowsOfRoleHolders テストが失敗しました。 エラー 1753 DCDIAG レポート:「があるエンドポイントのエンドポイント マッパーから使用できる。」</para>
+          <para>接続のテスト、Active Directory レプリケーションのテストまたは KnowsOfRoleHolders テストが失敗しました。 エラー 1753 DCDIAG レポート:&quot;エンドポイントはエンドポイント マッパーから使用できます。&quot;</para>
           <code>Testing server: &lt;site&gt;&lt;DC Name&gt;
 Starting test: Connectivity
 * Active Directory LDAP Services Check
@@ -85,7 +85,7 @@ of starting up or shutting down, and is not available.
 Verify machine is not hung during boot.
 </code>
         </listItem>
-<listItem><para>REPADMIN します。EXE では、そのレプリケーションの試行が失敗しました状態 1753 をレポートします。</para><para>REPADMIN のコマンドをよくが示されている 1753 のステータスが含まれますが、これらに限定されません。</para><table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11"><tbody><tr><TD><list class="bullet"><listItem><para>REPADMIN/REPLSUM</para></listItem><listItem><para>REPADMIN/SHOWREPL</para></listItem></list></TD><TD><list class="bullet"><listItem><para>REPADMIN/SHOWREPS</para></listItem><listItem><para>REPADMIN/SYNCALL</para></listItem></list></TD></tr></tbody></table><para>"REPADMIN/SHOWREPS"が「レプリケーション アクセスが拒否されました」エラーで失敗を CONTOSO DC1 に contoso-dc2 から入力方向のレプリケーションを表すからの出力例は、以下に示します。</para><code>Default-First-Site-NameCONTOSO-DC1
+<listItem><para>REPADMIN します。EXE では、そのレプリケーションの試行が失敗しました状態 1753 をレポートします。</para><para>REPADMIN のコマンドをよくが示されている 1753 のステータスが含まれますが、これらに限定されません。</para><table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11"><tbody><tr><TD><list class="bullet"><listItem><para>REPADMIN/REPLSUM</para></listItem><listItem><para>REPADMIN/SHOWREPL</para></listItem></list></TD><TD><list class="bullet"><listItem><para>REPADMIN/SHOWREPS</para></listItem><listItem><para>REPADMIN/SYNCALL</para></listItem></list></TD></tr></tbody></table><para>サンプルからの出力&quot;REPADMIN/SHOWREPS&quot; CONTOSO DC1 で失敗に contoso-dc2 から入力方向のレプリケーションを表す、&quot;レプリケーション アクセスが拒否された&quot;エラーを次に示します。</para><code>Default-First-Site-NameCONTOSO-DC1
 DSA Options: IS_GC 
 Site Options: (none)
 DSA object GUID: b6dc8589-7e00-4a5d-b688-045aef63ec01
@@ -99,7 +99,7 @@ There are no more endpoints available from the endpoint mapper.</codeFeaturedEle
 &lt;#&gt; consecutive failure(s).
 Last success @ &lt;date&gt; &lt;time&gt;.
 
-</code></listItem><listItem><para><ui>レプリケーション トポロジの確認</ui>Active Directory サイトとサービスでのコマンドは、「があるエンドポイントのエンドポイント マッパーから使用できる」を返します。</para><para>ソース DC からの接続オブジェクトを右クリックし、選択<ui>レプリケーション トポロジの確認</ui>「があるエンドポイントのエンドポイント マッパーから使用できる」で失敗する。 画面に表示されるエラー メッセージが次に示します。</para><para>ダイアログ タイトルのテキスト:レプリケーション トポロジを確認します。</para><para>ダイアログ メッセージ テキスト: </para><para>ドメイン コント ローラーに接続するときに、次のエラーが発生しました。エンドポイントはエンドポイント マッパーから使用できます。</para></listItem><listItem><para><ui>今すぐレプリケート</ui>Active Directory サイトとサービスでのコマンドは、「があるエンドポイントのエンドポイント マッパーから使用できる」を返します。</para><para>ソース DC からの接続オブジェクトを右クリックし、選択<ui>今すぐレプリケート</ui>「があるエンドポイントのエンドポイント マッパーから使用できる」で失敗する。 画面に表示されるエラー メッセージが次に示します。</para><para>ダイアログ タイトルのテキスト:今すぐレプリケートします。</para><para>ダイアログ メッセージ テキスト:名前付けコンテキストの同期中に、次のエラーが発生した&lt;% ディレクトリ パーティション名 %&gt;ドメイン コント ローラーから&lt;ソース DC&gt;ドメイン コント ローラーに&lt;宛先 DC&gt;:</para><para>
+</code></listItem><listItem><para><ui>レプリケーション トポロジの確認</ui>Active Directory サイトとサービスでのコマンドを返します&quot;エンドポイントがあるエンドポイント マッパーから使用できます。&quot;</para><para>ソース DC からの接続オブジェクトを右クリックし、選択<ui>レプリケーション トポロジの確認</ui>で失敗&quot;エンドポイントがあるエンドポイント マッパーから使用できます。&quot;画面に表示されるエラー メッセージが次に示します。</para><para>ダイアログ タイトルのテキスト:レプリケーション トポロジを確認します。</para><para>ダイアログ メッセージ テキスト: </para><para>ドメイン コント ローラーに接続するときに、次のエラーが発生しました。エンドポイントはエンドポイント マッパーから使用できます。</para></listItem><listItem><para><ui>今すぐレプリケート</ui>Active Directory サイトとサービスでのコマンドを返します&quot;エンドポイントがあるエンドポイント マッパーから使用できます。&quot;</para><para>ソース DC からの接続オブジェクトを右クリックし、選択<ui>今すぐレプリケート</ui>で失敗&quot;エンドポイントがあるエンドポイント マッパーから使用できます。&quot;画面に表示されるエラー メッセージが次に示します。</para><para>ダイアログ タイトルのテキスト:今すぐレプリケートします。</para><para>ダイアログ メッセージ テキスト:名前付けコンテキストの同期中に、次のエラーが発生した&lt;% ディレクトリ パーティション名 %&gt;ドメイン コント ローラーから&lt;ソース DC&gt;ドメイン コント ローラーに&lt;宛先 DC&gt;:</para><para>
 
 エンドポイントはエンドポイント マッパーから使用できます。</para><para>操作は続行されません。</para></listItem><listItem><para>-2146893022 ステータスの NTDS KCC、NTDS 一般または Microsoft-Windows-ActiveDirectory_DomainService イベントは、イベント ビューアーで、ディレクトリ サービス ログに記録されます。</para><para>よく-2146893022 状態が示されている active Directory のイベントが含まれますが、これらに限定されません。</para><table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11"><thead><tr><TD><para>イベント ID</para></TD><TD><para>イベント ソース</para></TD><TD><para>イベントの文字列</para></TD></tr></thead><tbody><tr><TD><para>1655</para></TD><TD><para>NTDS 全般</para></TD><TD><para>Active Directory は、次のグローバル カタログと通信しようとして、試行が成功しなかった場合。</para></TD></tr><tr><TD><para>1925</para></TD><TD><para>NTDS KCC</para></TD><TD><para>次の書き込み可能なディレクトリ パーティションのレプリケーション リンクを確立できませんでした。</para></TD></tr><tr><TD><para>1265</para></TD><TD><para>NTDS KCC</para></TD><TD><para>知識整合性チェッカー (KCC) によって、次のディレクトリ パーティションとソース ドメイン コントローラのレプリケーション合意の追加に失敗しました。</para></TD></tr></tbody></table></listItem>
 </list>
@@ -122,7 +122,7 @@ Last success @ &lt;date&gt; &lt;time&gt;.
           <para>クライアント側 RPC がターゲット コンピューター EPM と、クライアント呼び出しを完了するエンドポイントを要求 </para>
         </listItem>
         <listItem>
-          <para>エンドポイントを持つサーバー マシンの EPM 応答 </para>
+          <para>サーバー マシン&#39;EPM のエンドポイントを持つ応答 s </para>
         </listItem>
         <listItem>
           <para>クライアント側 RPC サーバー アプリを接続します。 </para>
@@ -138,13 +138,13 @@ Last success @ &lt;date&gt; &lt;time&gt;.
       <para>1753 エラーの特定の根本原因は次のとおりです。 </para>
       <list class="ordered">
         <listItem>
-          <para>サーバー アプリを起動していない (つまり「詳細」の図の上にある手順 1 がまったく試行されなかった)。</para>
+          <para>サーバー アプリを起動していない (つまり手順 1 で、&quot;詳細&quot;の上にあるダイアグラムがまったく試行されなかった)。</para>
         </listItem>
         <listItem>
-          <para>サーバー アプリの開始が、RPC エンドポイント マッパー (つまり手順 1 で上記の「詳細」図が試行されたが失敗しました) を登録できないの初期化中に何らかの障害が発生しました。</para>
+          <para>サーバー アプリの開始が、RPC エンドポイント マッパーに登録できないの初期化中に何らかの障害が発生しました (つまり手順 1 で、&quot;詳細&quot;上の図が試行されたが失敗しました)。</para>
         </listItem>
         <listItem>
-          <para>サーバー アプリが開始されましたが、亡くなった後。 (つまり手順 1 上の「詳細」図でが正常に完了したが取り消された後で、サーバーが亡くなったため。)</para>
+          <para>サーバー アプリが開始されましたが、亡くなった後。 (つまり手順 1 で、&quot;詳細&quot;上の図が正常に完了したが取り消された後で、サーバーが亡くなったため)。</para>
         </listItem>
         <listItem>
           <para>サーバー アプリは、(意図的なものが 3 に似ていますそのエンドポイントを手動で登録解除。 とんでもないことがには含まれて完全を期すのため)。</para>
@@ -193,17 +193,17 @@ Windows Server 2008 または Windows Server 2008 R2: ソース DC のコンソ�
           <para>レプリケート先 DC のソース Dc の完全修飾 DC の CNAME レコードに対する NSLOOKUP を実行します。</para>
           <code>c:&gt;nslookup -type=cname &lt;fully qualified cname of source DC&gt; &lt;destination DCs primary DNS Server IP &gt;
 c:&gt;nslookup -type=cname &lt;fully qualified cname of source DC&gt; &lt;destination DCs secondary DNS Server IP&gt;</code>
-          <para>NSLOOKUP によって返される IP アドレスがホスト名を「所有」していることを確認/ソース DC のセキュリティ id。</para>
+          <para>NSLOOKUP によって IP アドレスが返されることを確認します。&quot;所有&quot;ホスト名/ソース DC のセキュリティ id。</para>
           <code>C:&gt;NBTSTAT -A &lt;IP address returned by NSLOOKUP in the step above&gt;</code>
           <para>または</para>
-          <para>ソース DC のコンソールにログインし、コマンド プロンプトから"IPCONFIG"を実行し、ソース DC が上記の NSLOOKUP コマンドによって返される IP アドレスを所有していることを確認します</para>
+          <para>ソース DC では、実行のコンソールにログオン&quot;IPCONFIG&quot; CMD から要求し、ソース DC が上記の NSLOOKUP コマンドによって返される IP アドレスを所有していることを確認します。</para>
           <para>古い/重複するホストで DNS の IP のマッピングを確認してください。</para>
           <code>NSLOOKUP -type=hostname &lt;single label hostname of source DC&gt; &lt;primary DNS Server IP on destination DC&gt;
 NSLOOKUP -type=hostname &lt;single label hostname of source DC&gt; &lt;secondary DNS Server IP on destination DC&gt;
 
 NSLOOKUP -type=hostname &lt;fully qualified computer name of source DC&gt; &lt;primary DNS Server IP on destination DC&gt;
 NSLOOKUP -type=hostname &lt;fully qualified computer name of source DC&gt; &lt;secondary DNS Server IP on dest. DC&gt;</code>
-<para>無効な IP アドレスは、ホスト レコードに存在する場合は、DNS の清掃を有効にして正しく構成されているかどうかを調査します。 </para><para>上のテストまたはネットワークのトレースが無効な IP アドレスを返す名前クエリを表示されない場合は、ホスト ファイル、LMHOSTS ファイルおよび WINS サーバーに古いエントリを検討してください。 DNS サーバーが WINS フォールバック名前解決を実行して構成することも注意してください。</para>
+<para>無効な IP アドレスは、ホスト レコードに存在する場合は、DNS の清掃を有効にして正しく構成されているかどうかを調査します。 </para><para>上記のテストまたはネットワークのトレースは場合&#39;t 表示、無効な IP アドレスを返します。 名前のクエリは、ホスト ファイル、LMHOSTS ファイルおよび WINS サーバーに古いエントリを検討してください。 DNS サーバーが WINS フォールバック名前解決を実行して構成することも注意してください。</para>
 </listItem>
         <listItem>
           <para>
@@ -329,11 +329,11 @@ NSLOOKUP -type=hostname &lt;fully qualified computer name of source DC&gt; &lt;s
             </tbody>
           </table>
           <para>既知のポートは、エンドポイント マッパーに登録されていません。 </para>
-          <para>Active Directory と他のアプリケーションも、RPC のエフェメラル ポートの範囲で動的に割り当てられたポートを受信するサービスを登録します。 1024 ~ 5000 Windows 2000 および Windows Server 2003 コンピューター上での TCP ポートとポート 49152 と 65535 の範囲を Windows Server 2008 および Windows Server 2008 R2 コンピューターの間で、このような RPC サーバー アプリケーションが動的に割り当てられます。 RPC ポート レプリケーションで使用されるには、ハード コーディングされたに記載の手順を使用して、レジストリで<externalLink><linkText>サポート技術情報記事 224196</linkText><linkUri>https://support.microsoft.com/kb/224196</linkUri></externalLink>します。 Active Directory は、ハード コーディングされたポートを使用する、EPM 構成されている場合に登録し続けます。 </para>
+          <para>Active Directory と他のアプリケーションも、RPC のエフェメラル ポートの範囲で動的に割り当てられたポートを受信するサービスを登録します。 1024 ~ 5000 Windows 2000 および Windows Server 2003 コンピューター上での TCP ポートとポート 49152 と 65535 の範囲を Windows Server 2008 および Windows Server 2008 R2 コンピューターの間で、このような RPC サーバー アプリケーションが動的に割り当てられます。 RPC ポート レプリケーションで使用されるには、ハード コーディングされたに記載の手順を使用して、レジストリで<externalLink><linkText>サポート技術情報記事 224196</linkText> <linkUri> <a href="https://support.microsoft.com/kb/224196" data-raw-source="https://support.microsoft.com/kb/224196"> https://support.microsoft.com/kb/224196 </a> </linkUri> </externalLink>. Active Directory は、ハード コーディングされたポートを使用する、EPM 構成されている場合に登録し続けます。 </para>
           <para>関心のある RPC サーバー アプリケーションが RPC サーバー (ソース DC の AD レプリケーションの場合)、RPC エンドポイント マッパーで自身に登録を確認します。 </para>
           <para>このタスクを実行する方法がいくつかがインストールして、管理特権のコマンド プロンプトからのソース DC の構文を使用してコンソールに PORTQRY を実行する 1 つです。 </para>
-          <code>c:\&gt;portquery -n &lt;source DC&gt; -e 135 &gt;file.txt</code>
-          <para>Portqry の出力では、「MS NT ディレクトリ DRS インターフェイス」を動的に登録されているポート番号に注意してください。 (UUID =... 351) の、 <embeddedLabel>ncacn_ip_tcp プロトコル</embeddedLabel>します。 次のスニペットは、Windows Server 2008 R2 の DC と UUID から portquery 出力の例を示していますで具体的には Active Directory で使用されるプロトコルのペアが強調表示/<embeddedLabel>太字</embeddedLabel>: </para>
+          <code>c:&amp;gt;portquery -n &lt;source DC&gt; -e 135 &gt;file.txt</code>
+          <para>Portqry の出力では、によって動的に登録されているポート番号に注意してください。、 &quot;MS NT ディレクトリ DRS インターフェイス&quot;(UUID =... 351) の、 <embeddedLabel>ncacn_ip_tcp プロトコル</embeddedLabel>します。 次のスニペットは、Windows Server 2008 R2 の DC と UUID から portquery 出力の例を示していますで具体的には Active Directory で使用されるプロトコルのペアが強調表示/<embeddedLabel>太字</embeddedLabel>: </para>
           <code>UUID: e3514235-4b06-11d1-ab04-00c04fc2dcd2 MS NT Directory DRS Interface
 ncacn_np:CONTOSO-DC01[\pipe\lsass] 
 UUID: e3514235-4b06-11d1-ab04-00c04fc2dcd2 MS NT Directory DRS Interface
@@ -407,7 +407,7 @@ ncacn_http:CONTOSO-DC01[6004]</code>
             </listItem>
             <listItem>
               <para>ソース Dc OS バージョンの KB 224196 で定義されているハード コーディングされたポートの定義が動的ポートの範囲内にあることを確認します。</para>
-              <para>レビュー <externalLink><linkText>サポート技術情報記事 224196</linkText> <linkUri> https://support.microsoft.com/kb/224196 </linkUri> </externalLink>をハード コーディングされたポートがソース DC のオペレーティング システムのバージョンの一時的なポート範囲に収まることを確認してください。</para>
+              <para>レビュー <externalLink><linkText>サポート技術情報記事 224196</linkText> <linkUri> <a href="https://support.microsoft.com/kb/224196" data-raw-source="https://support.microsoft.com/kb/224196"> https://support.microsoft.com/kb/224196 </a> </linkUri> </externalLink>をハード コーディングされたポートがのエフェメラル ポートの範囲内にあることを確認してくださいソース DC&#39;s オペレーティング システムのバージョン。</para>
             </listItem>
             <listItem>
               <para>ClientProtocols キーが HKLM\Software\Microsoft\Rpc 下が存在し、次の 5 つの既定値を含むことを確認します。</para>
@@ -428,7 +428,7 @@ ncacn_ip_udp REG_SZ rpcrt4.dll</code>
       <para>
         <embeddedLabel>マッピング-2146893022 と RPC エラー 1753 原因となる IP に不適切な名前の例: 対象のプリンシパル名が正しくありません</embeddedLabel>
       </para>
-      <para>DC1 と DC2 の IP アドレス x.x.1.1 と x.x.1.2 contoso.com ドメインで構成されます。 ホストの"A"]、[DC1 用に構成された DNS サーバーのすべてに DC2 用の"AAAA"レコードが正しく登録されています。 さらに、DC1 上の HOSTS ファイルには、IP アドレス x.x.1.2 DC2s の完全修飾ホスト名にマップのエントリが含まれています。 後で、DC2 の IP アドレスの変更 X.X.1.2 から X.X.1.3、新しいメンバーのコンピューターには、IP アドレス x.x.1.2 を使用してドメインに参加しています。 AD レプリケーションの試行がによってトリガーされる、<ui>今すぐレプリケート</ui>トレースを次に示すように、エラー 1753 で Active Directory サイトとサービス スナップインでのコマンドが失敗しました。</para>
+      <para>DC1 と DC2 の IP アドレス x.x.1.1 と x.x.1.2 contoso.com ドメインで構成されます。 ホスト&quot;A&quot; / &quot;AAAA&quot; DC1 用に構成された DNS サーバーのすべてに DC2 用のレコードが正しく登録されています。 さらに、DC1 上の HOSTS ファイルには、IP アドレス x.x.1.2 DC2s の完全修飾ホスト名にマップのエントリが含まれています。 その後、DC2&#39;X.X.1.2 から X.X.1.3 に IP アドレスが変更され、新しいメンバー コンピューターが IP アドレス x.x.1.2 でドメインに参加しています。 AD レプリケーションの試行がによってトリガーされる、<ui>今すぐレプリケート</ui>トレースを次に示すように、エラー 1753 で Active Directory サイトとサービス スナップインでのコマンドが失敗しました。</para>
       <code>F# SRC    DEST    Operation 
 1 x.x.1.1 x.x.1.2 ARP:Request, x.x.1.1 asks for x.x.1.2
 2 x.x.1.2 x.x.1.1 ARP:Response, x.x.1.2 at 00-13-72-28-C8-5E
@@ -443,22 +443,22 @@ ncacn_ip_udp REG_SZ rpcrt4.dll</code>
 <codeFeaturedElement>11</codeFeaturedElement> x.x.1.2 x.x.1.1 EPM:Response: ept_map: 0x16C9A0D6 - EP_S_NOT_REGISTERED
 </code>
       <para>フレームで<embeddedLabel>10</embeddedLabel>、レプリケート先 DC は、Active Directory のレプリケーションのサービス クラスの UUID E351 ポート 135 を介してソース Dc のエンドポイント マッパーを照会しています. </para>
-      <para>フレームで<embeddedLabel>11</embeddedLabel>、このソース DC では、まだ DC ロールをホストしないと、そのため、E351 登録いないメンバー コンピューターの場合.レプリケーション サービスの UUID をそのローカル EPM では、「は」エンドポイントのエンドポイント マッパーから使用できるシンボリック エラー エラー 1753 年の 10 進数、16 進数のエラー 0x6d9 およびフレンドリ エラーにマップする EP_S_NOT_REGISTERED で応答します。</para>
-      <para>後で、IP アドレス x.x.1.2 でメンバー コンピューターは、レプリカ、contoso.com ドメイン内には、"MayberryDC"として昇格を取得します。 もう一度、<ui>今すぐレプリケート</ui>コマンドを使用して、レプリケーション トリガーしますが、この時間に失敗します、画面に表示されるエラー「ターゲットのプリンシパル名が正しくありません」。 コンピューターがネットワーク アダプターの ip アドレスが割り当てられているアドレス x.x.1.2<placeholder>は</placeholder>ドメイン コント ローラーが通常モードで起動した現在および、E351 が登録しています.レプリケーション サービスがそのローカル EPM で UUID が DC2 の名またはセキュリティ id を所有していないと、要求ようになりましたエラーで失敗する「ターゲットのプリンシパル名が正しくありません」ためには、DC1 から Kerberos 要求を復号化できません。 エラーに 10 進数のエラー-2146893022 マップ/エラー 0x80090322 を 16 進数します。 </para>
+      <para>フレームで<embeddedLabel>11</embeddedLabel>、このソース DC では、まだ DC ロールをホストしないと、そのため、E351 登録いないメンバー コンピューターの場合.UUID とそのローカル EPM レプリケーション サービスはシンボリック エラー 1753 年、10 進数のエラーにマップする EP_S_NOT_REGISTERED で応答の 16 進数のエラー 0x6d9 およびフレンドリ エラー&quot;エンドポイントがあるエンドポイント マッパーから使用できる&quot;.</para>
+      <para>後で、IP アドレス x.x.1.2 メンバー コンピューターがレプリカとして昇格される&quot;MayberryDC&quot; contoso.com ドメインにします。 もう一度、<ui>今すぐレプリケート</ui>コマンドを使用して、レプリケーション トリガーしますが、この時間に失敗します、画面に表示されるエラー&quot;ターゲット プリンシパル名が正しくありません。&quot;コンピューターがネットワーク アダプターの ip アドレスが割り当てられているアドレス x.x.1.2<placeholder>は</placeholder>ドメイン コント ローラーが通常モードで起動した現在および、E351 が登録しています.レプリケーション サービスがそのローカル EPM で UUID DC2 の名またはセキュリティ id を所有していないと、要求がエラーで失敗するようになりましたのでには、DC1 から Kerberos 要求を復号化できない&quot;ターゲット プリンシパル名が正しくありません。&quot;エラーに 10 進数のエラー-2146893022 マップ/エラー 0x80090322 を 16 進数します。 </para>
       <para>このような無効なホストと IP マッピングがホストに古いエントリが考えられます lmhost ファイルでは、ホスト A//、DNS または WINS に AAAA 登録します。 </para>
-      <para>概要:(このケースでホスト ファイル) に無効なホストと IP マッピングには、そのため、レプリケーションの「ソース」サービスは実行中 (またはさらに言えばもインストールされている) Active Directory Domain Services に含まれていない DC を解決するのにはレプリケート先 DC が発生したため、この例が失敗しましたSPN がまだ登録されていないと、ソース DC が 1753 のエラーを返しました。 2 番目のケースでは、(ホスト ファイル) にもう一度無効なホストと IP マッピングが原因で、移行先ドメイン コント ローラー、E351 が登録されている DC に接続する.レプリケーション SPN が、そのソースは、エラー-2146893022 で、試行が失敗したため、別のホスト名とセキュリティ id を目的のソース DC にありました。対象のプリンシパル名が正しくありません。</para>
+      <para>概要:この例は、(このケースでホスト ファイル) に無効なホストと IP マッピング先に解決するのには DC が発生したため失敗しました、&quot;ソース&quot;Active Directory Domain Services のサービスの実行はありませんでした (またはもインストールされているの DCさらに言えば) とソース DC の SPN がまだ登録されていないレプリケーション エラー 1753 を返されるようにします。 2 番目のケースでは、(ホスト ファイル) にもう一度無効なホストと IP マッピングが原因で、移行先ドメイン コント ローラー、E351 が登録されている DC に接続する.レプリケーション SPN が、そのソースは、エラー-2146893022 で、試行が失敗したため、別のホスト名とセキュリティ id を目的のソース DC にありました。対象のプリンシパル名が正しくありません。</para>
     </content>
   </section>
   <relatedTopics>
     <externalLink>
       <linkText>1753 年のエラーで失敗する Active Directory 操作のトラブルシューティング。エンドポイントはエンドポイント マッパーから使用できます。</linkText> 
-      <linkUri> https://support.microsoft.com/kb/2089874 </linkUri> 
+      <linkUri> <a href="https://support.microsoft.com/kb/2089874" data-raw-source="https://support.microsoft.com/kb/2089874"> https://support.microsoft.com/kb/2089874 </a> </linkUri> 
     </externalLink> 
-<externalLink> <linkText>KB 記事の製品CDからWindowsServer2003サポートツールを使用してトラブルシューティングするRPCエンドポイントマッパーエラーの839880</linkText> <linkUri> https://support.microsoft.com/kb/839880 </linkUri> </externalLink> 
-<externalLink> <linkText>832017 サービス概要およびネットワーク ポートの要件の Windows サーバー システムの記事 KB</linkText> <linkUri>https://support.microsoft.com/kb/832017/ </linkUri> </externalLink> 
-<externalLink> <linkText>KB 記事 224196 の制限の Active Directory レプリケーションのトラフィックとクライアントの RPC トラフィック特定のポートに</linkText><linkUri> https://support.microsoft.com/kb/224196/ </linkUri> </externalLink> 
-<externalLink><linkText>サポート技術情報記事 154596 ファイアウォールで動作する RPC 動的ポート割り当てを構成する方法</linkText><linkUri> https://support.microsoft.com/kb/154596 </linkUri> </externalLink> <externalLink> <linkText>RPC のしくみ</linkText><linkUri>https://msdn.microsoft.com/library/aa373935(VS.85).aspx</linkUri></externalLink><externalLink><linkText>接続のサーバーの準備</linkText><linkUri> https://msdn.microsoft.com/library/aa373938(VS.85).aspx </linkUri> </externalLink> 
-<externalLink><linkText>クライアントによる接続の確立</linkText><linkUri> https://msdn.microsoft.com/library/aa373937(VS.85).aspx </linkUri> </externalLink><externalLink> <linkText>、インターフェイスを登録する</linkText><linkUri>https://msdn.microsoft.com/library/aa375357(VS.85).aspx</linkUri></externalLink><externalLink><linkText>サーバーネットワーク上で利用</linkText><linkUri>https://msdn.microsoft.com/library/aa373974(VS.85).aspx</linkUri></externalLink><externalLink><linkText>エンドポイントを登録する</linkText><linkUri>https://msdn.microsoft.com/library/aa375255(VS.85).aspx </linkUri> </externalLink> <externalLink><linkText>クライアント呼び出しのリッスン</linkText><linkUri> https://msdn.microsoft.com/library/aa373966(VS.85).aspx </linkUri> </externalLink><externalLink><linkText>クライアントによる接続の確立</linkText><linkUri>https://msdn.microsoft.com/library/aa373937(VS.85).aspx</linkUri></externalLink><externalLink><linkText>を制限します。Active Directory のレプリケーション トラフィックとクライアント RPC トラフィック特定のポートを</linkText><linkUri>https://support.microsoft.com/kb/224196</linkUri></externalLink><externalLink><linkText>でターゲット DC の SPNAD DS</linkText><linkUri>https://msdn.microsoft.com/library/dd207688(PROT.13).aspx</linkUri></externalLink></relatedTopics>
+<externalLink><linkText>サポート技術情報の記事 Windows Server 2003 のサポートを使用してトラブルシューティングする RPC エンドポイント マッパー エラーの 839880製品 CD からツール</linkText><linkUri><a href="https://support.microsoft.com/kb/839880" data-raw-source="https://support.microsoft.com/kb/839880">https://support.microsoft.com/kb/839880</a></linkUri></externalLink>
+<externalLink><linkText>KB 記事 832017 のサービス概要およびネットワーク ポートWindows Server システムの要件</linkText><linkUri><a href="https://support.microsoft.com/kb/832017/" data-raw-source="https://support.microsoft.com/kb/832017/">https://support.microsoft.com/kb/832017/</a></linkUri></externalLink>
+<externalLink><linkText>KB 記事 224196 制限 Activeディレクトリ レプリケーション トラフィックとクライアントの RPC トラフィック特定のポートを</linkText><linkUri><a href="https://support.microsoft.com/kb/224196/" data-raw-source="https://support.microsoft.com/kb/224196/">https://support.microsoft.com/kb/224196/</a></linkUri></externalLink>
+<externalLink><linkText>サポート技術情報記事154596 ファイアウォールで動作する RPC 動的ポート割り当てを構成する方法を</linkText><linkUri><a href="https://support.microsoft.com/kb/154596" data-raw-source="https://support.microsoft.com/kb/154596">https://support.microsoft.com/kb/154596</a></linkUri></externalLink><externalLink><linkText>RPC 方法Works</linkText><linkUri><a href="https://msdn.microsoft.com/library/aa373935(VS.85).aspx" data-raw-source="https://msdn.microsoft.com/library/aa373935(VS.85).aspx">https://msdn.microsoft.com/library/aa373935(VS.85).aspx</a></linkUri></externalLink><externalLink><linkText>接続のサーバーの準備</linkText><linkUri> <a href="https://msdn.microsoft.com/library/aa373938(VS.85).aspx" data-raw-source="https://msdn.microsoft.com/library/aa373938(VS.85).aspx"> https://msdn.microsoft.com/library/aa373938(VS.85).aspx </a> </linkUri> </externalLink> 
+<externalLink><linkText>クライアントによる接続の確立</linkText><linkUri><a href="https://msdn.microsoft.com/library/aa373937(VS.85).aspx" data-raw-source="https://msdn.microsoft.com/library/aa373937(VS.85).aspx"> https://msdn.microsoft.com/library/aa373937(VS.85).aspx </a> </linkUri> </externalLink> <externalLink> <linkText>、インターフェイスを登録する</linkText><linkUri> <a href="https://msdn.microsoft.com/library/aa375357(VS.85).aspx" data-raw-source="https://msdn.microsoft.com/library/aa375357(VS.85).aspx">https://msdn.microsoft.com/library/aa375357(VS.85).aspx </a> </linkUri> </externalLink> <externalLink><linkText>サーバーをネットワーク上で使用できるようにする</linkText><linkUri> <a href="https://msdn.microsoft.com/library/aa373974(VS.85).aspx" data-raw-source="https://msdn.microsoft.com/library/aa373974(VS.85).aspx"> https://msdn.microsoft.com/library/aa373974(VS.85).aspx</a> </linkUri> </externalLink> <externalLink><linkText>エンドポイントを登録する</linkText><linkUri> <a href="https://msdn.microsoft.com/library/aa375255(VS.85).aspx" data-raw-source="https://msdn.microsoft.com/library/aa375255(VS.85).aspx"> https://msdn.microsoft.com/library/aa375255(VS.85).aspx </a></linkUri> </externalLink> <externalLink><linkText>クライアント呼び出しのリッスン</linkText><linkUri> <a href="https://msdn.microsoft.com/library/aa373966(VS.85).aspx" data-raw-source="https://msdn.microsoft.com/library/aa373966(VS.85).aspx"> https://msdn.microsoft.com/library/aa373966(VS.85).aspx </a> </linkUri></externalLink> <externalLink><linkText>クライアントが接続を確立する方法</linkText><linkUri><a href="https://msdn.microsoft.com/library/aa373937(VS.85).aspx" data-raw-source="https://msdn.microsoft.com/library/aa373937(VS.85).aspx">https://msdn.microsoft.com/library/aa373937(VS.85).aspx</a></linkUri></externalLink><span class=" class=""></span class="></linkText><linkUri><a href="https://msdn.microsoft.com/library/dd207688(PROT.13).aspx" data-raw-source="https://msdn.microsoft.com/library/dd207688(PROT.13).aspx">https://msdn.microsoft.com/library/dd207688(PROT.13).aspx</a></linkUri></externalLink></relatedTopics>
 </developerConceptualDocument>
 
 

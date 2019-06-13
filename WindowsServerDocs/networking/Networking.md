@@ -10,12 +10,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: bb5a605ef6438bfa6a2afe4963b8206f9dc84a3a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 09c98d1bd7d2caa8e4cfaea68f9875b25da94003
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869353"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444656"
 ---
 # <a name="networking"></a>ネットワーク
 
@@ -43,7 +43,7 @@ ms.locfileid: "59869353"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h2><a href="../networking/What-s-New-in-Networking.md">ネットワークの新機能新機能</a></h2>
+                                        <h2><a href="./networking/What-s-New-in-Networking.md">どのような&#39;s ネットワークの新機能</a></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -68,7 +68,7 @@ ms.locfileid: "59869353"
                                         <div class="cardText">
                                         <h3><a href="https://docs.microsoft.com/windows-server/networking/sdn/">ソフトウェア定義ネットワーク (SDN)</a><hr /></h3>このトピックでは、Windows Server、System Center、および Microsoft Azure で提供される SDN テクノロジについて説明します。</p>
                         
-                                        <p><b>注: </b>HYPER-V ホストとバーチャル マシンの\(Vm\)ノード ネットワーク コント ローラーとソフトウェアの負荷分散など、SDN インフラストラクチャ サーバーを実行するインストール必要となる Windows Server Datacenter edition。 HYPER-V ホストのみが含まれているテナントの SDN に接続されているワークロード Vm\-制御のネットワークでは、Windows Server Standard edition を実行することができます。</p>                                        </div>
+                                        <p><b>注: </b>HYPER-V ホストと仮想マシン (Vm) ノード ネットワーク コント ローラーとソフトウェアの負荷分散など、SDN インフラストラクチャ サーバーを実行するには、Windows Server Datacenter edition をインストールする必要があります。 テナント ワークロード SDN 管理ネットワークに接続されている Vm にのみが含まれている HYPER-V ホストでは、Windows Server Standard edition を実行できます。</p>                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@ ms.locfileid: "59869353"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="sdn/technologies/network-controller/Network-Controller.md">ネットワーク コント ローラー</a><hr /></h3>ネットワーク コント ローラーは、管理、構成、監視、およびデータ センター内の仮想および物理ネットワーク インフラストラクチャのトラブルシューティングを行う自動化の集中管理された、プログラミング可能なポイントを提供します。</p>                                        </div>
+                                        <h3><a href="sdn/technologies/network-controller/Network-Controller.md">ネットワーク コントローラー</a><hr /></h3>ネットワーク コント ローラーは、管理、構成、監視、およびデータ センター内の仮想および物理ネットワーク インフラストラクチャのトラブルシューティングを行う自動化の集中管理された、プログラミング可能なポイントを提供します。</p>                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@ ms.locfileid: "59869353"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md">ソフトウェアの負荷分散&#40;SLB&#41; SDN の</a><hr /></h3>クラウド サービス プロバイダー \(Csp\) ソフトウェアによるネットワーク制御 (SDN) で Windows Server 2016 を展開する企業がソフトウェアの負荷分散を使用することと \(SLB\) をテナントと仮想ネットワークのリソース間でテナントのお客様のネットワーク トラフィックを均等に分散します。 Windows Server SLB により、同じワークロードをホストする複数のサーバーであり、高可用性とスケーラビリティを提供することです。</p>                                        </div>
+                                        <h3><a href="sdn/technologies/network-function-virtualization/software-load-balancing-for-sdn.md">ソフトウェアの負荷分散&#40;SLB&#41; SDN の</a><hr /></h3>クラウド サービス プロバイダー (Csp) やソフトウェアによるネットワーク制御 (SDN) で Windows Server 2016 を展開する企業は、ソフトウェアの負荷分散 (SLB) を使用してテナントと仮想ネットワークのリソース間でテナントのお客様のネットワーク トラフィックを均等に分散します。 Windows Server SLB により、同じワークロードをホストする複数のサーバーであり、高可用性とスケーラビリティを提供することです。</p>                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +136,7 @@ ms.locfileid: "59869353"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md">SDN の RAS ゲートウェイ</a><hr /></h3>RAS ゲートウェイは、ソフトウェア ベース、マルチ テナント、ボーダー ゲートウェイ プロトコル \(BGP\) Windows Server 2016 で対応のルーターがクラウド サービス プロバイダー用に設計された \(Csp\) と HYPER-V ネットワーク仮想化を使用して複数のテナント仮想ネットワークをホストしている企業です。</p>                                        </div>
+                                        <h3><a href="sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md">SDN の RAS ゲートウェイ</a><hr /></h3>RAS ゲートウェイは、ソフトウェア ベース、マルチ テナントとボーダー ゲートウェイ プロトコル (BGP)、Windows Server 2016 での対応のルーターがクラウド サービス プロバイダー (Csp) や、HYPER-V ネットワークを使用して複数のテナント仮想ネットワークをホストしている企業向け仮想化します。</p>                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@ ms.locfileid: "59869353"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md">ネットワーク関数仮想化</a><hr /></h3>定義されているソフトウェアのデータ センター内のネットワーク ハードウェア アプライアンスで実行されている関数 \(ロード バランサー、ファイアウォール、ルーター、スイッチなど\) がますます仮想アプライアンスとして仮想化されています。 この「ネットワーク機能の仮想化」は、サーバーの仮想化とネットワーク仮想化の自然な流れです。</p>                                        </div>
+                                        <h3><a href="sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md">ネットワーク関数仮想化</a><hr /></h3>ソフトウェア定義のデータ センターでハードウェア アプライアンス (ロード バランサー、ファイアウォール、ルーター、スイッチ、およびなど) などで実行されているネットワークの機能がますますされている仮想化仮想アプライアンスとして。 これは、&quot;ネットワーク関数仮想化&quot;サーバー仮想化とネットワーク仮想化の自然な流れです。</p>                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -194,7 +194,7 @@ ms.locfileid: "59869353"
                                         </div>
                                         <div class="cardText">
                                         <h3><a href="branchcache/BranchCache.md">BranchCache</a><hr /></h3>
-                                        <p>BranchCache は、ワイド エリア ネットワーク \(WAN\) 帯域幅最適化テクノロジです。 ユーザーがリモート サーバー上のコンテンツをアクセスするときは、WAN の帯域幅を最適化、BranchCache は、ホストされたクラウド コンテンツ サーバーまたはと、WAN 経由ではなくローカルでコンテンツにアクセスするブランチ オフィスでコンピューターをクライアントに許可するブランチ オフィスの場所にコンテンツをキャッシュ メイン オフィスからコンテンツを取得します。</p>
+                                        <p>BranchCache は、ワイド エリア ネットワーク (WAN) 帯域幅最適化テクノロジです。 ユーザーがリモート サーバー上のコンテンツをアクセスするときは、WAN の帯域幅を最適化、BranchCache は、ホストされたクラウド コンテンツ サーバーまたはと、WAN 経由ではなくローカルでコンテンツにアクセスするブランチ オフィスでコンピューターをクライアントに許可するブランチ オフィスの場所にコンテンツをキャッシュ メイン オフィスからコンテンツを取得します。</p>
                     </div>
                 </div>
             </div>
@@ -229,7 +229,7 @@ ms.locfileid: "59869353"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="../remote/remote-access/directaccess/DirectAccess.md">DirectAccess</a><hr /></h3>
+                                        <h3><a href="./remote/remote-access/directaccess/DirectAccess.md">DirectAccess</a><hr /></h3>
                                         <p>DirectAccess は、リモート ユーザーが組織のネットワーク リソースに接続するための機能です。 </p>
                     </div>
                 </div>
@@ -247,8 +247,8 @@ ms.locfileid: "59869353"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="dns/dns-top.md">ドメイン ネーム システム (DNS)"></a><hr /></h3>
-                                        <p>ドメイン ネーム システム \(DNS\) は業界標準の TCP/IP を構成するプロトコル群の 1 つと、まとめて DNS クライアントおよび DNS サーバー コンピューター名と IP アドレスのマッピングの名前解決サービスを提供コンピューターとユーザーにします。</p>
+                                        <h3><a href="dns/dns-top.md">ドメイン ネーム システム (DNS)&quot;&gt;</a><hr /></h3>
+                                        <p>ドメイン ネーム システム (DNS) は、業界標準の TCP/IP を構成するプロトコル群のいずれかと、まとめて DNS クライアントおよび DNS サーバー コンピューターとユーザーにコンピューター名と IP アドレスのマッピング名前解決サービスを提供します。</p>
                     </div>
                 </div>
             </div>
@@ -266,7 +266,7 @@ ms.locfileid: "59869353"
                                         </div>
                                         <div class="cardText">
                                         <h3><a href="technologies/dhcp/dhcp-top.md">動的ホスト構成プロトコル&#40;DHCP&#41;</a><hr /></h3>
-                                        <p>動的ホスト構成プロトコル \(DHCP\) は自動的にインターネット プロトコルを提供するクライアント/サーバー プロトコル \(IP\) 、IP アドレスとその他のホストに関連するサブネット マスク、デフォルト ゲートウェイなどの構成情報。</p>
+                                        <p>動的ホスト構成プロトコル (DHCP) とは、自動的にその IP アドレスとサブネット マスク、デフォルト ゲートウェイなどの他の関連する構成については、インターネット プロトコル (IP) ホストを提供するクライアント/サーバー プロトコルです。</p>
                     </div>
                 </div>
             </div>
@@ -284,7 +284,7 @@ ms.locfileid: "59869353"
                                         </div>
                                         <div class="cardText">
                                         <h3><a href="sdn/technologies/hyper-v-network-virtualization/Hyper-V-Network-Virtualization.md">HYPER-V ネットワーク仮想化</a><hr /></h3>
-                                        <p>HYPER-V ネットワーク仮想化 \(HNV\) 、共有の物理ネットワーク インフラストラクチャ上に顧客のネットワーク仮想化を使用します。</p>
+                                        <p>HYPER-V ネットワーク仮想化 (HNV) では、共有の物理ネットワーク インフラストラクチャ上に顧客のネットワーク仮想化が可能です。</p>
                     </div>
                 </div>
             </div>
@@ -301,7 +301,7 @@ ms.locfileid: "59869353"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md">Hyper-V Virtual Switch</a><hr /></h3>
+                                        <h3><a href="./virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md">Hyper-V 仮想スイッチ</a><hr /></h3>
                                         <p>Hyper-V 仮想スイッチは、Hyper-V サーバーの役割をインストールすると Hyper-V マネージャーで使用できる、ソフトウェアベースのレイヤー 2 イーサネット ネットワーク スイッチです。 このスイッチには、仮想マシンを仮想ネットワークと物理ネットワークの両方に接続するための、プログラムで管理される拡張可能な機能が含まれています。 また、Hyper-V 仮想スイッチでは、セキュリティ、分離、およびサービスのレベルでポリシーを適用できます。 </p>
                     </div>
                 </div>
@@ -320,7 +320,7 @@ ms.locfileid: "59869353"
                                         </div>
                                         <div class="cardText">
                                         <h3><a href="technologies/ipam/ipam-top.md">IP アドレス管理&#40;IPAM&#41;</a><hr /></h3>
-                                        <p>IP アドレス管理 \(IPAM\) はエンド ツー エンドで計画、展開を有効にするためのツールの統合されたスイートの管理および監視機能豊富なユーザー エクスペリエンスと、IP アドレス インフラストラクチャです。 IPAM は、IP アドレス インフラストラクチャのサーバーおよびドメイン ネーム システムに自動的に検出 \(DNS\) 、ネットワーク上のサーバー中心的なインターフェイスからそれらを管理することができます。 </p>
+                                        <p>IP アドレス管理 (IPAM) は、エンド ツー エンドの計画、展開、管理、豊富なユーザー エクスペリエンスと、IP アドレス インフラストラクチャの監視を有効にするためのツールの統合スイートです。 IPAM では、ネットワーク上の IP アドレス インフラストラクチャ サーバーとドメイン名システム (DNS) サーバーを自動で検出し、1 つのインターフェイスでこれらのサーバーを管理できます。 </p>
                     </div>
                 </div>
             </div>
@@ -338,7 +338,7 @@ ms.locfileid: "59869353"
                                         </div>
                                         <div class="cardText">
                                         <h3><a href="technologies/Network-Load-Balancing.md">ネットワーク負荷分散</a><hr /></h3>
-                                        <p>ネットワーク負荷分散 \(NLB\) 、TCP/IP ネットワーク プロトコルを使用して複数のサーバー間でトラフィックを分散します。 NLB でステートレスなことは SDN 以外の場合、インターネット インフォメーション サービスを実行する Web サーバーなどのアプリケーション \(IIS\), 、負荷の増加に応じてサーバーを追加して、拡張性がします。</p>
+                                        <p>ネットワーク負荷分散 (NLB) は、TCP/IP ネットワーク プロトコルを使用して複数のサーバー間でトラフィックを分散します。 SDN 以外の場合、NLB は、負荷の増加に応じてサーバーを追加して、インターネット インフォメーション サービス (IIS) を実行している Web サーバーなどのステートレス アプリケーションがスケーラブルなことを確認します。</p>
                     </div>
                 </div>
             </div>
@@ -398,9 +398,9 @@ ms.locfileid: "59869353"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="technologies/netsh/netsh.md">ネットワーク シェル (Netsh)</a><hr /></h3>
+                                        <h3><a href="technologies/netsh/netsh.md">ネットワーク シェル (netsh)</a><hr /></h3>
                                         <p>
-ネットワーク シェルを使用する\(netsh\)ネットワーク ユーティリティの Windows Server 2016 および Windows 10 でのネットワーク テクノロジを管理します。</p>
+ネットワーク シェル (netsh) ユーティリティのネットワークを使用して、Windows Server 2016 および Windows 10 でのネットワーク テクノロジを管理することができます。</p>
                     </div>
                 </div>
             </div>
@@ -419,7 +419,7 @@ ms.locfileid: "59869353"
                                         <div class="cardText">
                                         <h3><a href="technologies/network-subsystem/net-sub-performance-top.md">ネットワーク サブシステムのパフォーマンス チューニング</a><hr /></h3>
                                         <p>
-このトピックでは、情報を提供しますサーバーの負荷を適切なネットワーク アダプターを選択すると、ネットワーク インターフェイスを順序付けには、ネットワーク関連のパフォーマンス カウンターおよびパフォーマンスのチューニングなどのネットワーク アダプターと、ネットワーク関連のテクノロジ。Receive Side Scaling \(RSS\)、受信側 Coalescing \(RSC\)、およびその他。</p>
+このトピックでは、情報を提供しますサーバーの負荷を適切なネットワーク アダプターを選択すると、ネットワーク インターフェイスを順序付けには、ネットワーク関連のパフォーマンス カウンターおよびパフォーマンスのチューニングなどのネットワーク アダプターと、ネットワーク関連のテクノロジ。Receive Side Scaling (RSS)、Receive Side Coalescing (RSC)、およびその他のユーザー。</p>
                     </div>
                 </div>
             </div>
@@ -493,9 +493,9 @@ Windows インターネット ネーム サービス (WINS) は、コンピュ�
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="../remote/remote-access/remote-access.md">リモート アクセス</a><hr /></h3>
+                                        <h3><a href="./remote/remote-access/remote-access.md">リモート アクセス</a><hr /></h3>
                                         <p>
-DirectAccess と仮想プライベート ネットワークなどのリモート アクセス テクノロジを使用する\(VPN\)を内部ネットワーク リソースへの接続とリモート ワーカーを提供します。 ローカル エリア ネットワークのリモート アクセスを使用するさらに、 \(LAN\)ルーティング、および Web アプリケーション プロキシの。 Web アプリケーション プロキシには、企業ネットワーク内部の Web アプリケーション用のリバース プロキシ機能があり、ユーザーは任意のデバイスで企業ネットワーク外部から Web アプリケーションにアクセスできます。</p>
+内部ネットワーク リソースへの接続とリモート ワーカーを提供するには、DirectAccess と仮想プライベート ネットワーク (VPN) などのリモート アクセス テクノロジを使用することができます。 さらに、ローカル エリア ネットワーク (LAN) ルーティング、および Web アプリケーション プロキシは、リモート アクセスを使用することができます。 Web アプリケーション プロキシには、企業ネットワーク内部の Web アプリケーション用のリバース プロキシ機能があり、ユーザーは任意のデバイスで企業ネットワーク外部から Web アプリケーションにアクセスできます。</p>
 
                                         <p>リモート アクセス サーバーの役割の役割サービスである、Web アプリケーション プロキシの詳細については、次を参照してください<a href="https://docs.microsoft.com/windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server">Windows Server 2016 での Web アプリケーション プロキシ。</a></p>
                     </div>
@@ -518,7 +518,7 @@ DirectAccess と仮想プライベート ネットワークなどのリモート
                                         <p>
 Windows コンテナーのネットワークでは、業界の標準的なツールとワークフローを使用して、Windows 10 と Windows Server ホストの両方のコンテナー エンドポイントを接続するネットワークを作成および管理できます。 Windows コンテナーのネットワークは、プライベート、フラット L2、ルーティング L3 などの、複数のトポロジをサポートします。</p>
 
-                                        <p>Windows ホストのネットワーク サービスと通信するプラグインによって、Docker、Kubernetes、または Windows PowerShell を使用して、ホストにローカルで作成できるオーバーレイもサポートされています\(HNS\)します。 作成して複数の管理\-ローカル エージェントを各ノードの HNS を通じて通信することでより高いレベルのオーケストレーション システムを介してクラスター ネットワークのノード。</p>
+                                        <p>Windows ホストのネットワーク サービス (HNS) と通信するプラグインによって、Docker、Kubernetes、または Windows PowerShell を使用して、ホストにローカルで作成できるオーバーレイもサポートされます。 作成し、ローカル エージェントを各ノードの HNS を通じて通信することでより高いレベルのオーケストレーション システムを介して複数ノードのクラスター ネットワークを管理します。</p>
                     </div>
                 </div>
             </div>
@@ -535,11 +535,11 @@ Windows コンテナーのネットワークでは、業界の標準的なツー
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="../remote/remote-access/vpn/vpn-top.md">仮想プライベート ネットワーク (VPN)</a><hr /></h3>
+                                        <h3><a href="./remote/remote-access/vpn/vpn-top.md">仮想プライベート ネットワーク (VPN)</a><hr /></h3>
                                         <p>
 DirectAccess と VPN は、リモート アクセス サーバー ロールの役割サービスです。</p>
 
-                                        <p>仮想プライベート ネットワークを使用するにはリモート アクセスを VPN サーバーとしてインストールするときに\(VPN\) - インターネット経由で情報を維持しながら、組織のネットワークに接続しているリモート従業員を提供するには暗号化された接続プライバシーを保護します。</p>
+                                        <p>リモート アクセスを VPN サーバーとしてインストールするときに暗号化された接続情報のプライバシーを維持しながら、- インターネット経由で組織のネットワークに従業員がリモート接続を提供するのに仮想プライベート ネットワーク (VPN) を使用することができます.</p>
 
                                        <p> Windows Server のリモート アクセス VPN と Windows 10 クライアント コンピューターを使用することにより、Always On VPN を展開できます。 Always On VPN では、常時接続のリモート VPN クライアントを管理できます。また、リモート ワーカーは、組織ネットワークへの VPN に手動で接続、切断する必要がなくなり、利便性が向上します。</p>
 
@@ -557,4 +557,4 @@ Windows Server 2016 以前のオペレーティング システムのネット�
 
 - Windows Server 2012 および Windows Server 2012 R2 [ネットワークの概要](https://technet.microsoft.com/library/hh831357.aspx)
 - Windows Server 2008 および Windows Server 2008 R2 [ネットワーク](https://technet.microsoft.com/library/cc753940)
-- Windows Server 2003: 「[Windows Server 2003/2003 R2 の削除されたコンテンツ](https://www.microsoft.com/download/details.aspx?id=53314)」
+- Windows Server 2003[削除されたコンテンツを Windows Server 2003/2003 R2](https://www.microsoft.com/download/details.aspx?id=53314)

@@ -13,16 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 2639b8bb913bcd604a7c79015545006a23e1d0f2
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: b1aaa329c8925d7fa4245555ed51b08f7366299d
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222955"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811109"
 ---
 # <a name="icacls"></a>icacls
-
-
 
 指定されたファイルの随意アクセス制御リスト (DACL) を表示または変更し、保存した DACL を指定したディレクトリ内のファイルに適用します。
 
@@ -54,7 +52,7 @@ icacls <Directory> [/substitute <SidOld> <SidNew> [...]] [/restore <ACLfile> [/c
 |[拒否/ \<Sid >:<Perm>[...]|指定したユーザーのアクセス権を明示的に拒否されます。 明示的に拒否 ACE が記載されているアクセス許可の追加され、任意の明示的な許可で同じ権限が削除されます。|
 |[/remove[:g\|:d]] \<Sid>[...]] [/t] [/c] [/l] [/q]|DACL から指定された SID のすべての出現を削除します。</br>**: g** sid を指定した権限の付与のすべての出現を削除します。</br>**: d**指定された SID を拒否された権限のすべての出現を削除します。|
 |[/setintegritylevel [(CI)(OI)]\<レベル >:<Policy>[...]|一致するすべてのファイルに、整合性の ACE を明示的に追加します。 *レベル*として指定されます。</br>-   **L**[ow]</br>-   **M**[edium]</br>-   **H**[igh]</br>整合性 ACE の継承オプションでは、前に、レベルの場合があり、ディレクトリにのみ適用されます。|
-|[置換]、\<SidOld > <SidNew> [...]|既存の SID が置き換えられます (*SidOld*) 新しい SID を持つ (*SidNew*)。 必要があります、*ディレクトリ*パラメーター。|
+|[置換]、[ \<SidOld > <SidNew> [...]|既存の SID が置き換えられます (*SidOld*) 新しい SID を持つ (*SidNew*)。 必要があります、*ディレクトリ*パラメーター。|
 |復元/\<ACLfile > [/c] [/l] [/q]|保存した Dacl を適用*ACLfile*指定されたディレクトリ内のファイルにします。 必要があります、*ディレクトリ*パラメーター。|
 |/inheritancelevel:[e\|d\|r]|継承レベルを設定します。 <br>  **e** -enheritance 有効 <br>**d** - 継承を無効にし、Ace のコピー <br>**r** -継承された Ace をすべて削除します
 
@@ -132,18 +130,25 @@ icacls <Directory> [/substitute <SidOld> <SidNew> [...]] [/restore <ACLfile> [/c
 ## <a name="examples"></a>例
 
 すべてのファイルに対する Dacl を C:\Windows ディレクトリと ACLFile ファイルには、そのサブディレクトリ内に保存するには、次のように入力します。
+
 ```
 icacls c:\windows\* /save aclfile /t
 ```
+
 C:\Windows ディレクトリとそのサブディレクトリ内に存在する ACLFile 内のすべてのファイルに対して Dacl を復元するには、次のように入力します。
+
 ```
 icacls c:\windows\ /restore aclfile
 ```
+
 ユーザーに"Test1"という名前のファイルに User1 の削除と DAC の書き込みアクセス許可を与えるには、次のように入力します。
+
 ```
 icacls test1 /grant User1:(d,wdac)
 ```
+
 「Test2.」をという名前のファイル、SID S-1-1-0 削除および DAC の書き込みのアクセス許可によって定義されたユーザーに付与するには、次のように入力します。
+
 ```
 icacls test2 /grant *S-1-1-0:(d,wdac)
 ```
