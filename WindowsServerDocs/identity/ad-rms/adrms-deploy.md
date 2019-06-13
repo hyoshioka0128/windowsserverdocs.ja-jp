@@ -6,12 +6,12 @@ author: msmbaldwin
 ms.author: esaggese
 ms.date: 05/30/2019
 ms.topic: article
-ms.openlocfilehash: ce058a2885315c84d2c1c6701ad2801790d3c590
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: HT
+ms.openlocfilehash: f5d621a0ba06f5b1beb97ccdbffb8376b5503168
+ms.sourcegitcommit: 927adf32faa6052234ad08f21125906362e593dc
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66814075"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67033343"
 ---
 # <a name="upgrading-ad-rms-to-windows-server-2016"></a>AD RMS を Windows Server 2016 にアップグレードします。
 
@@ -257,7 +257,7 @@ AD RMS クラスターは、そのサーバー ライセンサー証明書の一
 
 13. 背面のログオンすると開く**サーバー マネージャー**選択**ツール**し**Active Directory Rights Management**します。 管理 ウィンドウが表示され、クラスターのクラスターで追加のサーバーがあるかを指定する必要があります。
 
-14. 14. 元の AD RMS クラスターで AD RMS モバイル デバイス拡張機能がインストールされた場合は、更新済みのクラスター ノードで、MDE にもインストールする必要があります。 MDE を AD RMS クラスターに追加するのには、MDE ドキュメントの手順に従います。 この時点では、既存のすべてのノードとして再利用、Windows Server 2016 にアップグレードまたはとそれらを上記で説明したのと同じプロセスを使用して AD RMS クラスターに再度参加させます。 
+14. 元の AD RMS クラスターで AD RMS モバイル デバイス拡張機能がインストールされた場合は、更新済みのクラスター ノードで、MDE にもインストールする必要があります。 MDE を AD RMS クラスターに追加するのには、MDE ドキュメントの手順に従います。 この時点では、既存のすべてのノードとして再利用、Windows Server 2016 にアップグレードまたはとそれらを上記で説明したのと同じプロセスを使用して AD RMS クラスターに再度参加させます。 
 
 ### <a name="configuring-windows-server-2016-web-application-proxy-wap"></a>Windows Server 2016 の Web アプリケーション プロキシ (WAP) を構成します。
 

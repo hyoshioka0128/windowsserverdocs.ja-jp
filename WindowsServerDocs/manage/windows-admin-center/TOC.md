@@ -11,19 +11,18 @@
 ## プラン
 ### [適切なインストールの種類](plan/installation-options.md)
 ### [ユーザー アクセス オプション](plan/user-access-options.md)
-### [Azure 統合オプション](plan/azure-integration-options.md)
 
 ## 展開
 ### [環境の準備](deploy/prepare-environment.md)
 ### [Windows Admin Center のインストール](deploy/install.md)
 ### [高可用性](deploy/high-availability.md)
 
+
 ## 構成
 ### [Windows Admin Center の設定](configure/settings.md)
 ### [ユーザー アクセスの制御とアクセス許可](configure/user-access-control.md)
 ### [拡張機能の使用](configure/using-extensions.md)
-### [Azure 統合の構成](configure/azure-integration.md)
-### [Windows Admin Center の使用による Azure VM の管理](configure/manage-azure-vms.md)
+### [共有接続](configure/shared-connections.md)
 
 ## 使用
 ### [作業の開始](use/get-started.md)
@@ -31,12 +30,25 @@
 ### [ハイパーコンバージド インフラストラクチャの管理](use/manage-hyper-converged.md)
 ### [フェールオーバー クラスターの管理](use/manage-failover-clusters.md)
 ### [Hyper-V 仮想マシンの管理](use/manage-virtual-machines.md)
-### [Azure サービスの構成](use/azure-services.md)
-#### [Azure Site Recovery を使用した Hyper-V VM の保護](use/azure-site-recovery.md)
-#### [Azure Update Management によるサーバーの更新](use/azure-update-management.md)
 ### [ログ](use/logging.md)
-### [一般的なトラブルシューティング手順](use/troubleshooting.md)
-### [既知の問題](use/known-issues.md)
+
+
+## Azure に接続する
+### [Azure のハイブリッド サービス](azure/index.md)
+#### [Azure Backup](azure/azure-backup.md)
+#### [Azure Site Recovery](azure/azure-site-recovery.md)
+#### [Azure File Sync](azure/azure-file-sync.md)
+#### [Azure Monitor](azure/azure-monitor.md)
+#### [Azure の更新プログラムの管理](azure/azure-update-management.md)
+### [Windows Admin Center を Azure に接続します。](azure/azure-integration.md)
+### [Azure で Windows Admin Center を展開します。](azure/deploy-wac-in-azure.md)
+### [Windows Admin Center の使用による Azure VM の管理](azure/manage-azure-vms.md)
+
+## サポート
+### [サポート ポリシー](support/index.md)
+### [一般的なトラブルシューティング手順](support/troubleshooting.md)
+### [既知の問題](support/known-issues.md)
+
 
 ## 拡張
 ### [拡張機能の概要](extend/extensibility-overview.md)
@@ -59,10 +71,14 @@
 #### [拡張機能で PowerShell を使用する](extend/guides/powershell.md)
 #### [CSS アイコン ガイド](extend/guides/cssicons.md)
 #### [最新の SDK への移行](extend/guides/migration-guide-0_1-1_0.md)
+#### [拡張機能の検出のバナーを有効にします。](extend/guides/extension-discovery-banner.md)
 ### [拡張機能の公開](extend/publish-extensions.md)
 ### ケース スタディ
 #### [DataON](extend/case-studies/dataon.md)
 #### [Fujitsu](extend/case-studies/fujitsu.md)
 #### [Lenovo](extend/case-studies/lenovo.md)
+#### [NEC](extend/case-studies/nec.md)
 #### [Pure Storage](extend/case-studies/purestorage.md)
 #### [Squared Up](extend/case-studies/squared-up.md)
+
+

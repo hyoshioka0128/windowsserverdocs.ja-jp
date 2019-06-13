@@ -1,17 +1,17 @@
 ---
 layout: HubPage
 hide_bc: true
-author: coreyp
+author: jasongerend
 ms.author: apexprodleads
 ms.topic: hub-page
 title: Windows Server に関するドキュメント
 description: Windows Server に関するドキュメントは、IT 担当者が Windows Server の評価、計画、展開、セキュリティ保護、管理を行うために役立ちます
-ms.openlocfilehash: 29ea8c17f41edbbaab275a61b6f96c0b348f9760
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 65e514d25e3e94841f7f1db0be2590b57a6b6455
+ms.sourcegitcommit: 9dc457ac1d64962e67aaf1d3924bc9361df8488d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891443"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66462169"
 ---
 <div id="main" class="v2">
 <div class="container">
@@ -20,34 +20,33 @@ ms.locfileid: "59891443"
 <p> </p>
 
 <ul class="pivots">
-<li>
-<a href="#main"></a>
-
-   <ul id="main">
     <li>
-    <a href="#mainPanel"></a>
-        <ul id="mainPanel" class="cardsF">
+    <a href="#main"></a>
+        <ul id="main">
             <li>
-                <a href="get-started-19/whats-new-19.md">
-                    <div class="cardSize">
-                        <div class="cardPadding">
-                            <div class="card">
-                                <div class="cardImageOuter">
-                                    <div class="cardImage">
-                                        <img src="media/i-whats-new.svg" alt="" />
+                <a href="#mainPanel"></a>
+                <ul id="mainPanel" class="cardsF">
+                    <li>
+                        <a href="get-started-19/whats-new-19.md">
+                            <div class="cardSize">
+                                <div class="cardPadding">
+                                    <div class="card">
+                                        <div class="cardImageOuter">
+                                            <div class="cardImage">
+                                                <img src="media/i-whats-new.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="cardText">
+                                            <h2>新機能</h2>
+                                            <p>調べる&#39;s Windows Server の新機能</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="cardText">
-                                    <h2>最新情報</h2>
-                                    <p>Windows Server の新機能を確認してください</p>
-                                </div>
                             </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="get-started-19/get-started-19.md">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="get-started-19/get-started-19.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -64,8 +63,8 @@ ms.locfileid: "59891443"
                                 </div>
                             </div>
                             </a>
-            </li>
-            <li>
+                    </li>
+                    <li>
                             <a href="http://aka.ms/upgradecenter">
                             <div class="cardSize">
                                 <div class="cardPadding">
@@ -83,12 +82,12 @@ ms.locfileid: "59891443"
                                 </div>
                             </div>
                             </a>
-            </li>
-            <li class="fullSpan">
-            <HR WIDTH="60%">
-            </li>
-            <li>
-                            <a href="https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview">
+                    </li>
+                    <li class="fullSpan">
+                        <HR WIDTH="60%">
+                    </li>
+                    <li>
+                         <a href="https://docs.microsoft.com/windows-server/manage/windows-admin-center/overview">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -107,7 +106,7 @@ ms.locfileid: "59891443"
                             </a>
             </li>
             <li>
-                            <a href="https://docs.microsoft.com/windows-server/hyperconverged">
+                            <a href="hyperconverged/index.yml">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
@@ -126,19 +125,19 @@ ms.locfileid: "59891443"
                             </a>
             </li>
             <li>
-                            <a href="https://docs.microsoft.com/windows-insider/at-work">
+                            <a href="azure-hybrid-services/index.md">
                             <div class="cardSize">
                                 <div class="cardPadding">
                                     <div class="card">
                                         <div class="cardImageOuter">
                                             <div class="cardImage">
-                                                <img src="media/i-insider.svg" alt="" />
+                                                <img src="media/i-microsoft-azure.svg" alt="" />
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h2>Windows Insider Program for Server</h2>
-                                            <p>Windows Server 2019 のプレビュー ビルドをテストします</p>
-            <li>
+                                            <h2>Azure のハイブリッド サービスへの接続します。</h2>
+                                            <p>Azure のハイブリッド サービス、オンプレミスとクラウドの機能の組み合わせにするサーバーまたはクラスターを接続します。</p>
+            </li>
                     <li class="fullSpan">
                     <HR COLOR="purple" SIZE="6" WIDTH="60%">
                     </li>
@@ -180,12 +179,25 @@ ms.locfileid: "59891443"
                             </div>
                             </a>
             </li>
+            <li>
+                            <a href="https://docs.microsoft.com/windows-insider/at-work">
+                            <div class="cardSize">
+                                <div class="cardPadding">
+                                    <div class="card">
+                                        <div class="cardImageOuter">
+                                            <div class="cardImage">
+                                                <img src="media/i-insider.svg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="cardText">
+                                            <h2>Windows Insider Program for Server</h2>
+                                            <p>Windows Server 2019 のプレビュー ビルドをテストします</p>
+            </li>
         </ul>
     </li>
     </ul>
     </li>
 </ul>
-
 <h1>Windows Server 2019 と Windows Server 2016 のガイダンス</h1>
     <h3>Windows Server に関するドキュメントは、IT 担当者が Windows Server の評価、計画、展開、セキュリティ保護、管理を行うために役立ちます</h3>
     <ul class="pivots">
@@ -212,11 +224,10 @@ ms.locfileid: "59891443"
         <td style="vertical-align: top;">
             <h4><u>高評価順</u></h4>
             <ol>
-            <li>1. <a href="https://docs.microsoft.com/windows-server/identity/software-restriction-policies/software-restriction-policies">ソフトウェア制限ポリシー</a></li>              
-       <hr width="80%">
+            <li>1. <a href="https://docs.microsoft.com/windows-server/identity/software-restriction-policies/software-restriction-policies">ソフトウェア制限ポリシー</a></li><br/>       <hr width="80%">
             <li>2. <a href="https://docs.microsoft.com/windows-server/identity/solution-guides/deploy-a-central-access-policy--demonstration-steps-">集約型アクセス ポリシーの展開 (デモンストレーション手順)</a></li>
        <hr width="80%">
-            <li>3. <a href="https://docs.microsoft.com/windows-server/identity/solution-guides/scenario--file-access-auditing">シナリオ:ファイル アクセスの監査</a></li>
+            <li>3. <a href="https://docs.microsoft.com/windows-server/identity/solution-guides/scenario--file-access-auditing">シナリオ: ファイル アクセスの監査</a></li>
             </ol>
         </td>
         <td style="vertical-align: top;">
@@ -256,13 +267,9 @@ ms.locfileid: "59891443"
             <h4><u>高評価順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/networking/what-s-new-in-networking">クラスター対応更新の要件とベスト プラクティス</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/failover-clustering/vm-load-balancing-overview">仮想マシンの負荷分散の概要</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/failover-clustering/troubleshooting-using-wer-reports">Windows エラー報告を使用したフェールオーバー クラスターのトラブルシューティング</a></li>
             </ol>
         </td>
@@ -270,14 +277,10 @@ ms.locfileid: "59891443"
             <h4><u>閲覧回数順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/failover-clustering/manage-cluster-quorum">クォーラムを構成および管理する</a></li>
-                   
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/failover-clustering/failover-cluster-csvs">フェールオーバー クラスターでクラスターの共有ボリュームを使用する</a></li>
-                 
        <hr width="80%">
-
-            <li>3. <a href="https://docs.microsoft.com/windows-server/failover-clustering/whats-new-in-failover-clustering">フェールオーバー クラスタリングの新機能</a></li>
+            <li>3. <a href="https://docs.microsoft.com/windows-server/failover-clustering/whats-new-in-failover-clustering">どのような&#39;ではフェールオーバー クラスタ リング</a></li>
             </ol>
         </td>
     </tr>
@@ -307,13 +310,9 @@ ms.locfileid: "59891443"
             <h4><u>高評価順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-radius-clients-configure">RADIUS クライアントを構成する</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-np-configure">ネットワーク ポリシーを構成する</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking">ソフトウェア定義ネットワーク (SDN)</a></li>
             </ol>
         </td>
@@ -321,13 +320,9 @@ ms.locfileid: "59891443"
             <h4><u>閲覧回数順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy">robocopy</a></li>
-                   
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center">Windows Admin Center の概要</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/administration/windows-server-update-services/get-started/windows-server-update-services-wsus">Windows Server Update Services (WSUS)</a></li>
             </ol>
         </td>
@@ -358,13 +353,9 @@ ms.locfileid: "59891443"
             <h4><u>高評価順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-radius-clients-configure">RADIUS クライアントを構成する</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-np-configure">ネットワーク ポリシーを構成する</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking">ソフトウェア定義ネットワーク (SDN)</a></li>
             </ol>
         </td>
@@ -372,13 +363,9 @@ ms.locfileid: "59891443"
             <h4><u>閲覧回数順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/networking/windows-time-service/windows-time-service-tools-and-settings">Windows タイム サービスのツールと設定</a></li>
-                   
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/networking/technologies/netsh/netsh-contexts">Netsh コマンドの構文、コンテキスト、形式</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top">ネットワーク ポリシー サーバー (NPS)</a></li>
             </ol>
         </td>
@@ -410,13 +397,9 @@ ms.locfileid: "59891443"
             <h4><u>高評価順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-client-vpn-connections">手順 6.Windows 10 クライアントの Always On VPN 接続を構成する</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-in-azure">ARM と Azure Marketplace を使った RDS のシームレスな展開</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/vpn-deploy-server-infrastructure">手順 2.サーバー インフラストラクチャを構成する</a></li>
             </ol>
         </td>
@@ -424,13 +407,9 @@ ms.locfileid: "59891443"
             <h4><u>閲覧回数順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients">リモート デスクトップ クライアント</a></li>
-                   
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access">リモート デスクトップ - PC へのアクセスを許可する</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/remote/remote-desktop-services/clients/remote-desktop-mac">リモート デスクトップ クライアント</a></li>
             </ol>
         </td>
@@ -461,13 +440,9 @@ ms.locfileid: "59891443"
             <h4><u>高評価順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/security/windows-authentication/windows-authentication-overview">Windows 認証の概要</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts">グループの管理されたサービス アカウントの概要</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview">Kerberos の制約付き委任の概要</a></li>
             </ol>
         </td>
@@ -475,15 +450,10 @@ ms.locfileid: "59891443"
             <h4><u>閲覧回数順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings">トランスポート層セキュリティ (TLS) のレジストリ設定</a></li>
-                   
        <hr width="80%">
-
-            <li>2. <a href="https://docs.microsoft.com/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server">Guidance on disabling system services on Windows Server 2016 with Desktop Experience
-</a></li>
-                 
+            <li>2. <a href="https://docs.microsoft.com/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server">デスクトップ エクスペリエンス搭載の Windows Server 2016 上のシステム サービスを無効にする方法のガイダンス </a></li>
        <hr width="80%">
-
-            <li>3. <a href="https://docs.microsoft.com/windows-server/security/windows-authentication/credentials-processes-in-windows-authentication">Credentials Processes in Windows Authentication</a></li>
+            <li>3. <a href="https://docs.microsoft.com/windows-server/security/windows-authentication/credentials-processes-in-windows-authentication">Windows 認証での資格情報の処理</a></li>
             </ol>
         </td>
     </tr>
@@ -513,13 +483,9 @@ ms.locfileid: "59891443"
             <h4><u>高評価順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-overview">記憶域レプリカの概要</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/storage/storage-spaces/understand-quorum">クラスターとプール クォーラムの概要</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/storage/data-deduplication/understand">データ重複除去とは</a></li>
             </ol>
         </td>
@@ -527,13 +493,9 @@ ms.locfileid: "59891443"
             <h4><u>閲覧回数順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/storage/disk-management/initialize-new-disks">新しいディスクを初期化する</a></li>
-                   
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/storage/disk-management/change-an-mbr-disk-into-a-gpt-disk">MBR ディスクを GPT ディスクに変換する</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/storage/disk-management/extend-a-basic-volume">ベーシック ボリュームを拡張する</a></li>
             </ol>
         </td>
@@ -564,13 +526,9 @@ ms.locfileid: "59891443"
             <h4><u>高評価順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/failover-clustering/troubleshooting-using-wer-reports">Windows エラー報告を使用したフェールオーバー クラスターのトラブルシューティング</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack">Windows Server ソフトウェア定義ネットワーク スタックのトラブルシューティング</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/troubleshoot-windows-defender-antivirus">イベント ログとエラー コードを確認して Windows Defender AV の問題をトラブルシューティングする</a></li>
             </ol>
         </td>
@@ -578,13 +536,9 @@ ms.locfileid: "59891443"
             <h4><u>閲覧回数順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/storage/disk-management/troubleshooting-disk-management">ディスクの管理のトラブルシューティング</a></li>
-                   
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/administration/windows-server-update-services/manage/wsus-messages-and-troubleshooting-tips">WSUS メッセージとトラブルシューティングのヒント</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/manage/windows-admin-center/use/troubleshooting">Windows Admin Center のトラブルシューティング</a></li>
             </ol>
         </td>
@@ -615,13 +569,9 @@ ms.locfileid: "59891443"
             <h4><u>高評価順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v">Hyper-V で仮想マシンを作成する</a></li>
-              
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-debian-virtual-machines-on-hyper-v">Hyper-V でサポートされている Debian 仮想マシン</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/virtualization/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms">保護されたファブリックとシールドされた VM の概要</a></li>
             </ol>
         </td>
@@ -629,13 +579,9 @@ ms.locfileid: "59891443"
             <h4><u>閲覧回数順</u></h4>
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/remotely-manage-hyper-v-hosts">Hyper-V マネージャーを使用した Hyper-V ホストのリモート管理</a></li>
-                   
        <hr width="80%">
-
             <li>2. <a href="https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines">Hyper-V 仮想マシン用の仮想スイッチを作成する</a></li>
-                 
        <hr width="80%">
-
             <li>3. <a href="https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect">Hyper-V 仮想マシン接続</a></li>
             </ol>
         </td>
@@ -652,9 +598,7 @@ ms.locfileid: "59891443"
             </ul>
         </li>
     </ul>
-                  
        <hr />
-
   <h1>Windows Server の以前のバージョン</h1>
     <h3>以前のバージョンの Windows Server を管理している IT 担当者向けのテクノロジ コンテンツ<h3>
     <p> </p>
@@ -663,7 +607,6 @@ ms.locfileid: "59891443"
             <a href="#main"></a>
             <ul id="main">
                 <li>
-                    
                     <ul id="mainPanel" class="cardsF">
                         <li>
                             <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11)">
@@ -676,7 +619,7 @@ ms.locfileid: "59891443"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Windows Server 2012 and<br> Windows Server 2012 R2</h3>
+                                            <h3>Windows Server 2012 と<br> Windows Server 2012 R2</h3>
                                             <p></p>
                                         </div>
                                     </div>

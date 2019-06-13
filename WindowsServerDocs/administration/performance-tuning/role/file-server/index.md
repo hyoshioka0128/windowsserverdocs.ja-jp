@@ -7,19 +7,18 @@ ms.topic: article
 author: phstee
 ms.author: NedPyle; Danlo; DKruse
 ms.date: 4/14/2017
-ms.openlocfilehash: ed9e9c6e2280aa69408455a111eddb3af7f88750
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: dc8a845a6d352fa03517e2a092c44b6d1c1def4b
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266695"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811469"
 ---
 # <a name="performance-tuning-for-file-servers"></a>ファイル サーバーのパフォーマンス チューニング
 
 平均負荷、ピーク時の負荷、容量、拡張の計画、応答時間を考慮して、予想されるファイル サーバー負荷に対応できる適切なハードウェアを選択する必要があります。 ハードウェアにボトルネックがあると、ソフトウェア チューニングの効果が限定されます。
 
 ## <a name="general-tuning-parameters-for-clients"></a>クライアントの一般的なチューニング パラメーター
-
 
 次の REG\_DWORD のレジストリ設定は、SMB ファイル サーバーとやり取りするクライアント コンピューターのパフォーマンスに影響を与える可能性があります。
 
@@ -94,9 +93,9 @@ ms.locfileid: "66266695"
 
     既定は 10 秒です。 これは、ディレクトリ キャッシュのタイムアウトです。
 
-    > [!Note]   このパラメーターは、ディレクトリのリースがない場合のディレクトリ メタデータのキャッシュを制御します。
-
-     
+    > [!NOTE]
+    > このパラメーターのディレクトリ リースがない場合は、ディレクトリのメタデータのキャッシュを制御します。
+     
 
 -   **DirectoryCacheEntrySizeMax**
 
@@ -222,7 +221,7 @@ ms.locfileid: "66266695"
 | FileNotFoundCacheEntriesMax | 32768 | 128     |
 | MaxCmds                     | 32768 | 15      |
 
- 
+ 
 
 Windows 8 以降では、Windows PowerShell コマンドレットの **Set-SmbClientConfiguration** および **Set-SmbServerConfiguration** を使用して、これらの SMB 設定の多くを構成できます。 レジストリのみの設定は、Windows PowerShell を使用しても構成できます。
 

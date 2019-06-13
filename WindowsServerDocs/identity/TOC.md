@@ -462,6 +462,10 @@
 #### [パスワード攻撃に対する AD FS での保護](ad-fs/technical-reference/ad-fs-password-protection.md)
 ### [AD FS 2016 に関する FAQ](ad-fs/overview/AD-FS-FAQ.md)
 
+## Active Directory Rights Management サービス
+### [AD RMS を Windows Server 2016 にアップグレードします。](ad-rms/adrms-deploy.md)
+
+
 ## [特権アクセスの保護](securing-privileged-access/securing-privileged-access.md)
 ### [特権アクセス ワークステーション](securing-privileged-access/privileged-access-workstations.md)
 ### [特権アクセスの保護に関する参考資料](securing-privileged-access/securing-privileged-access-reference-material.md)

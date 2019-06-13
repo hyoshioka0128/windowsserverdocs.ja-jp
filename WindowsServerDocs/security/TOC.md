@@ -84,6 +84,7 @@
 ### [ドメインに参加しているデバイスの公開キー認証](kerberos/domain-joined-device-public-key-authentication.md)
 ### [Kerberos の制約付き委任](kerberos/kerberos-constrained-delegation-overview.md)
 ### [Kerberos での RC4 秘密キーを使用するパスワードの変更を防ぐ](kerberos/preventing-kerberos-change-password-that-uses-rc4-secret-keys.md)
+### [IP アドレス用の Kerberos の構成](kerberos/configuring-kerberos-over-ip.md)
 ## [NTLM](kerberos/ntlm-overview.md)
 ## [パスワード](kerberos/passwords-overview.md)
 ## [TLS - SSL (Schannel SSP)](tls/tls-ssl-schannel-ssp-overview.md)
