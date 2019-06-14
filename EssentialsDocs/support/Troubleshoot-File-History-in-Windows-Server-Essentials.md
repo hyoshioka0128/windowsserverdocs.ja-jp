@@ -12,12 +12,12 @@ ms.assetid: ed062945-27e9-4572-b1bb-6c8cf1b9c2f4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 12a9ba285757a37a8fc32a73e52ac3003db80a6d
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: f080bed5714ae4426cc6d0ca8edb5fab2d3c65b2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63721021"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432472"
 ---
 # <a name="troubleshoot-file-history-in-windows-server-essentials"></a>Windows Server Essentials のファイル履歴に関するトラブルシューティング
 
@@ -29,11 +29,11 @@ ms.locfileid: "63721021"
 ### <a name="file-history-data-is-not-automatically-deleted"></a>ファイル履歴が自動削除されない  
  次の場合に、ファイル履歴データが自動的に削除されない可能性があります。  
   
--   ユーザー アカウントを削除するときに、s ファイル履歴データ、ユーザー アカウントは削除を選択し、データを手動で削除することを選択します。  
+- ユーザー アカウントを削除するときに、s ファイル履歴データ、ユーザー アカウントは削除を選択し、データを手動で削除することを選択します。  
   
--   ファイル履歴データを削除するときに、そのファイル履歴データが他のプロセスで使用中の場合。  
+- ファイル履歴データを削除するときに、そのファイル履歴データが他のプロセスで使用中の場合。  
   
- この問題を解決するには、次の手順を実行してファイル履歴を手動で削除しなければなりません。  
+  この問題を解決するには、次の手順を実行してファイル履歴を手動で削除しなければなりません。  
   
 ####  <a name="BKMK_manuallyDelete"></a> ユーザーまたはコンピューターのファイル履歴のバックアップを手動で削除するには  
   
@@ -78,7 +78,7 @@ ms.locfileid: "63721021"
 ### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>ユーザー アカウントは削除したものの、ユーザーのファイル履歴が残っている  
  ネットワーク管理者がサーバーからユーザーまたはコンピューターの削除を選択したものの、将来の使用に備えてファイル履歴のバックアップの保持を選択することがあります。 対象のファイル履歴が不要な場合には、対象ユーザーまたはコンピューターの File History Backups フォルダーを、サーバー上の共有フォルダーから削除します。 その方法については、「 [To manually delete File History backups for a user or a computer](Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)」をご覧ください。  
 
-5.  これで、新しいユーザーを追加できます。 手順については、ユーザー アカウントの追加を参照してください。[ユーザー アカウントを管理する](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)します。  
+5. これで、新しいユーザーを追加できます。 手順については、ユーザー アカウントの追加を参照してください。[ユーザー アカウントを管理する](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md)します。  
   
 ### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>ユーザー アカウントは削除したものの、ユーザーのファイル履歴が残っている  
  ネットワーク管理者がサーバーからユーザーまたはコンピューターの削除を選択したものの、将来の使用に備えてファイル履歴のバックアップの保持を選択することがあります。 対象のファイル履歴が不要な場合には、対象ユーザーまたはコンピューターの File History Backups フォルダーを、サーバー上の共有フォルダーから削除します。 その方法については、「 [To manually delete File History backups for a user or a computer](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete)」をご覧ください。  

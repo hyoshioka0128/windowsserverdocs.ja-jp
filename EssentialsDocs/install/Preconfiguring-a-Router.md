@@ -12,12 +12,12 @@ ms.assetid: 9153ac90-bb0c-4b8d-93b2-e2121ed13636
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6c4f471b6042fb22d74c10663cc38db995a16eb5
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 7dc66c8a439552c2087d0348b0115adba04027ee
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63720808"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433502"
 ---
 # <a name="preconfiguring-a-router"></a>ルーターの事前構成
 

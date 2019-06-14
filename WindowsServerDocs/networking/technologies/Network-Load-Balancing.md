@@ -9,12 +9,12 @@ ms.assetid: 244a4b48-06e5-4796-8750-a50e4f88ac72
 ms.author: pashort
 author: shortpatti
 ms.date: 09/13/2018
-ms.openlocfilehash: d0cf1e1d6b1681a0f18908b08cd17572159e0462
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 0ea129fe2230332c0099d735f064768bce9fc50c
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881753"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812279"
 ---
 # <a name="network-load-balancing"></a>ネットワーク負荷分散
 
@@ -22,8 +22,8 @@ ms.locfileid: "59881753"
 
 このトピックで提供しています、ネットワーク負荷分散の概要\(NLB\) Windows Server 2016 で機能します。 NLB を使用して、単一の仮想クラスターとして 2 つ以上のサーバーを管理することができます。 NLB は、可用性となど、FTP web サイトで使用されるインターネット サーバー アプリケーションのスケーラビリティを向上、ファイアウォール、プロキシ、仮想プライベート ネットワーク \(VPN\), 、およびその他のミッション\-重要なサーバーです。  
 
->[!NOTE]
->Windows Server 2016 には、新しい Azure 性に優れたソフトウェア ロード バランサーが含まれています。 \(SLB\) ソフトウェア定義されているネットワークのコンポーネントとして \(SDN\) インフラストラクチャです。 使用する NLB ではなく SLB SDN を使用している場合を使用している Windows 以外のワークロード発信ネットワーク アドレス変換を必要な \(NAT\), 、またはレイヤー 3 が必要な \(L3\) または非 TCP ベースの負荷分散します。 SDN 以外の展開の Windows Server 2016 で NLB を使用する続行することができます。 SLB の詳細については、次を参照してください。 [ソフトウェア負荷分散 (SLB) SDN の](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)です。
+> [!NOTE]
+> Windows Server 2016 には、新しい Azure 性に優れたソフトウェア ロード バランサーが含まれています。 \(SLB\) ソフトウェア定義されているネットワークのコンポーネントとして \(SDN\) インフラストラクチャです。 使用する NLB ではなく SLB SDN を使用している場合を使用している Windows 以外のワークロード発信ネットワーク アドレス変換を必要な \(NAT\), 、またはレイヤー 3 が必要な \(L3\) または非 TCP ベースの負荷分散します。 SDN 以外の展開の Windows Server 2016 で NLB を使用する続行することができます。 SLB の詳細については、次を参照してください。 [ソフトウェア負荷分散 (SLB) SDN の](../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)です。
 
 ネットワーク負荷分散 \(NLB\) 機能、TCP を使用して複数のサーバーのトラフィックでは分散\/IP ネットワーク プロトコルです。 1 つの仮想クラスターにアプリケーションを実行している 2 つ以上のコンピューターを組み合わせることで NLB では、信頼性とパフォーマンスの web サーバーとその他のミッション\-重要なサーバーです。  
   
@@ -145,7 +145,7 @@ NLB をインストールする Windows PowerShell を使用して、実行、�
 詳細については、次を参照してください。 [Install-windowsfeature](https://docs.microsoft.com/powershell/module/servermanager/install-windowsfeature?view=win10-ps)します。
 
 ### <a name="network-load-balancing-manager"></a>ネットワーク負荷分散マネージャー
-サーバー マネージャーでネットワーク負荷分散マネージャーを開くには、**[ツール]** をクリックし、**[ネットワーク負荷分散マネージャー]** をクリックします。
+サーバー マネージャーでネットワーク負荷分散マネージャーを開くには、 **[ツール]** をクリックし、 **[ネットワーク負荷分散マネージャー]** をクリックします。
   
 ## <a name="additional-resources"></a>その他の資料  
 次の表は、NLB の機能に関する追加情報へのリンクを示します。  

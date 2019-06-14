@@ -12,12 +12,12 @@ ms.assetid: d09dd82f-f7d2-47ce-862d-fd9869f2021c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 413c1d5d3bec7f002b73e9861aa119d495c5cfb2
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 502e54cf719895dd11030cf163159f6cdda47164
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63717121"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433731"
 ---
 # <a name="add-windows-server-essentials-as-a-member-server"></a>Windows Server Essentials をメンバー サーバーとして追加
 
@@ -49,23 +49,23 @@ ms.locfileid: "63717121"
   
 #### <a name="to-join-windows-server-essentials-to-a-workgroup-or-domain"></a>Windows Server Essentials をワークグループまたはドメインに参加させるには  
   
-1.  2 台目のサーバーへの Windows Server Essentials のインストールが完了したら、Windows Server Essentials の構成ウィザードを閉じます。  
+1. 2 台目のサーバーへの Windows Server Essentials のインストールが完了したら、Windows Server Essentials の構成ウィザードを閉じます。  
   
-2.  **検索** ボックスに **System Settings** と入力し、検索結果で **システムの詳細設定の表示** をクリックします。  
+2. **検索** ボックスに **System Settings** と入力し、検索結果で **システムの詳細設定の表示** をクリックします。  
   
-3.  **[システムのプロパティ]** で、**[コンピューター名]** タブをクリックします。  
+3. **[システムのプロパティ]** で、 **[コンピューター名]** タブをクリックします。  
   
-4.  **[コンピューター名]** の **[ドメイン]** セクションで **[変更]** をクリックします。  
+4. **[コンピューター名]** の **[ドメイン]** セクションで **[変更]** をクリックします。  
   
-5.  **コンピューター名/ドメイン名変更**の**メンバー**セクションで、Windows Server Essentials を実行しているサーバーに参加させるかを選択、**ワークグループ**または、 **ドメイン**します。  
+5. **コンピューター名/ドメイン名変更**の**メンバー**セクションで、Windows Server Essentials を実行しているサーバーに参加させるかを選択、**ワークグループ**または、 **ドメイン**します。  
   
-    -   サーバーをワークグループに追加するには、「 **workgroup**」と入力し、**[OK]** をクリックします。  
+   -   サーバーをワークグループに追加するには、「 **workgroup**」と入力し、 **[OK]** をクリックします。  
   
-    -   このサーバーを既存の Active Directory ドメインに参加させるには、ドメインの名前を入力して、**[OK]** をクリックします。  
+   -   このサーバーを既存の Active Directory ドメインに参加させるには、ドメインの名前を入力して、 **[OK]** をクリックします。  
   
-6.  サーバーを再起動して、変更を適用します。  
+6. サーバーを再起動して、変更を適用します。  
   
- サーバーは、プライマリ サーバーのドメインに参加させたら、サーバー マネージャーから Windows Server Essentials の構成ウィザードを実行して、Windows Server Essentials を構成することもできます。  
+   サーバーは、プライマリ サーバーのドメインに参加させたら、サーバー マネージャーから Windows Server Essentials の構成ウィザードを実行して、Windows Server Essentials を構成することもできます。  
   
 #### <a name="to-configure-windows-server-essentials-experience-on-a-member-server"></a>メンバー サーバーで Windows Server Essentials エクスペリエンスを構成するには  
   
@@ -78,13 +78,13 @@ ms.locfileid: "63717121"
   
 3.  サーバー マネージャーを開きます。  
   
-4.  **サーバー マネージャー**のフラグ通知領域で、フラグをクリックし、**[Windows Server Essentials の構成]** をクリックします。  
+4.  **サーバー マネージャー**のフラグ通知領域で、フラグをクリックし、 **[Windows Server Essentials の構成]** をクリックします。  
   
-5.  サーバーをメンバー サーバーとして構成することを選択して、**[次へ]** をクリックします。  
+5.  サーバーをメンバー サーバーとして構成することを選択して、 **[次へ]** をクリックします。  
   
 6.  **[構成]** をクリックして、構成を開始します。 構成プロセスが完了するまで、約 10 分かかります。  
   
-7.  デスクトップで、ダッシュボード アイコンをクリックし、サーバーを起動します。 ホーム ページで、**[セットアップ]** タブに示されている **[作業の開始]** タスクを実行します。  
+7.  デスクトップで、ダッシュボード アイコンをクリックし、サーバーを起動します。 ホーム ページで、 **[セットアップ]** タブに示されている **[作業の開始]** タスクを実行します。  
   
 ## <a name="see-also"></a>関連項目  
   

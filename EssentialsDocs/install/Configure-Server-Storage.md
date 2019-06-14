@@ -12,12 +12,12 @@ ms.assetid: ef7ddcdd-3a74-40ca-9487-c3a6fc5155a5
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 42ff3dfc633410837bff079223c74cd08051a5de
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 6de485f6fd46464ba707bc0871f60ac2fec5a1db
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63717717"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433745"
 ---
 # <a name="configure-server-storage"></a>サーバー記憶域の構成
 

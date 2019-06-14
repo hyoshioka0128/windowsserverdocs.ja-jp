@@ -12,12 +12,12 @@ ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d740b71a2c3b9ed8ddb0ecfae6da2cf7d4f689a5
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: a66f98b0896e706f520aa057b91cce2fe662d22d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63720411"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433321"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>Windows Server Essentials でのデバイスの管理
 
@@ -64,13 +64,13 @@ ms.locfileid: "63720411"
   
 #### <a name="to-view-the-status-of-network-computers"></a>ネットワーク コンピューターの状態を表示するには  
   
-1.  Windows Server Essentials ダッシュボードを開きます。  
+1. Windows Server Essentials ダッシュボードを開きます。  
   
-2.  ナビゲーション バーで、 **[デバイス]** をクリックします。  
+2. ナビゲーション バーで、 **[デバイス]** をクリックします。  
   
-3.  一覧ウィンドウに、ネットワーク内のすべてのコンピューターの状態が表示されます。  
+3. 一覧ウィンドウに、ネットワーク内のすべてのコンピューターの状態が表示されます。  
   
- 次の表で、Windows Server Essentials ダッシュボードで利用できる、コンピューターとバックアップに関するさまざまなタスクについて説明します。 一部のタスクはコンピューターに固有であり、一覧からコンピューターを選択した場合にのみ表示されます。  
+   次の表で、Windows Server Essentials ダッシュボードで利用できる、コンピューターとバックアップに関するさまざまなタスクについて説明します。 一部のタスクはコンピューターに固有であり、一覧からコンピューターを選択した場合にのみ表示されます。  
   
 ### <a name="computer-tasks-in-the-dashboard"></a>ダッシュボードでのコンピューターに関するタスク  
   

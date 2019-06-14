@@ -12,12 +12,12 @@ manager: ''
 ms.author: kaushika; rklemen; josh.bender; v-tea
 ms.date: 02/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4bbdd17f5e6e2b161e0dda0e172ea862a9107841
-ms.sourcegitcommit: 564158d760f902ced7f18e6d63a9daafa2a92bd4
+ms.openlocfilehash: 43e40f8442600dfc66dafd6b8b210274908b4595
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64988336"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446722"
 ---
 # <a name="troubleshooting-remote-desktop-connections"></a>リモート デスクトップ接続のトラブルシューティング
 リモート デスクトップ サービス (RDS) の一般的な問題のいくつかの簡単な説明については、次を参照してください。 [、リモート デスクトップ クライアントについてよく寄せられる質問](https://review.docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-client-faq)します。 この記事では、接続の問題をトラブルシューティングするいくつかのより高度なアプローチについて説明します。 これらの手順の多くには、1 つの物理コンピューターが別の物理コンピューター、またはより複雑な構成への接続などの単純な構成のトラブルシューティングを行うかどうかが適用されます。 いくつかの手順より複雑なマルチ ユーザー シナリオでのみ発生する問題に対処します。 詳細については、リモート デスクトップ コンポーネントとどのように連動する、次を参照してください。[リモート デスクトップ サービスのアーキテクチャ](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/desktop-hosting-logical-architecture)します。
@@ -68,7 +68,7 @@ ms.locfileid: "64988336"
 2. レジストリ エディターで、選択**ファイル**、し、**ネットワーク レジストリへの接続**します。
 3. **コンピューターの選択**] ダイアログ ボックスをリモート コンピューターの名前を入力し、選択**名前の確認**、し、[ **OK**。
 4. 移動します**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\ターミナル サーバー**します。  
-   ![レジストリ エディター、fDenyTSConnections エントリを表示](..\media\troubleshoot-remote-desktop-connections\RegEntry_fDenyTSConnections.png)
+   ![レジストリ エディター、fDenyTSConnections エントリを表示](../media/troubleshoot-remote-desktop-connections/RegEntry_fDenyTSConnections.png)
    - 場合の値、 **fDenyTSConnections**キーが**0**RDP を有効にし、
    - 場合の値、 **fDenyTSConnections**キーが**1**RDP は無効です
 5. RDP を有効にするには、値を変更**fDenyTSConnections**から**1**に**0**します。
@@ -85,9 +85,9 @@ gpresult /H c:\gpresult.html
 
 - このポリシー設定がある場合**有効**、グループ ポリシーが RDP 接続をブロックしていません。
 - このポリシー設定がある場合**無効**、確認**優勢な GPO**します。 これは、RDP 接続をブロックしている GPO です。
-![例のセグメントを gpresult.html のドメイン レベルの GPO * * ブロック RDP * * が RDP 無効にします。](..\media\troubleshoot-remote-desktop-connections\GPResult_RDSH_Connections_GP.png)
+  ![例のセグメントを gpresult.html のドメイン レベルの GPO * * ブロック RDP * * が RDP 無効にします。](../media/troubleshoot-remote-desktop-connections/GPResult_RDSH_Connections_GP.png)
    
-  ![例のセグメントを gpresult.html の * * ローカル グループ ポリシー * * が RDP 無効にします。](..\media\troubleshoot-remote-desktop-connections\GPResult_RDSH_Connections_LGP.png)
+  ![例のセグメントを gpresult.html の * * ローカル グループ ポリシー * * が RDP 無効にします。](../media/troubleshoot-remote-desktop-connections/GPResult_RDSH_Connections_LGP.png)
 
 #### <a name="check-whether-a-gpo-is-blocking-rdp-on-a-remote-computer"></a>GPO にリモート コンピューターで RDP がブロックしているかどうかを確認します。
 
@@ -117,7 +117,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 
 サービス MMC スナップインを使用すると、ローカルまたはリモート サービスを管理します。 ローカルまたはリモートに、PowerShell を使用することもできます (かどうか、リモート コンピューターが構成されているリモートの PowerShell コマンドも受け入れるように)。
 
-![サービス MMC スナップインでリモート デスクトップ サービス。 既定のサービス設定を変更しないでください。](..\media\troubleshoot-remote-desktop-connections\RDSServiceStatus.png)
+![サービス MMC スナップインでリモート デスクトップ サービス。 既定のサービス設定を変更しないでください。](../media/troubleshoot-remote-desktop-connections/RDSServiceStatus.png)
 
 一方のコンピューターで 1 つまたは両方のサービスが実行されていない場合開始します。
 
@@ -135,7 +135,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 
 1. PowerShell ウィンドウを開きます。 リモート コンピューターに接続するには、入力**Enter-pssession-ComputerName\<コンピューター名\>** します。
 2. 入力**qwinsta**します。 
-    ![Qwinsta コマンドは、コンピューターのポートでリッスンしているプロセスを一覧表示します。](..\media\troubleshoot-remote-desktop-connections\WPS_qwinsta.png)
+    ![Qwinsta コマンドは、コンピューターのポートでリッスンしているプロセスを一覧表示します。](../media/troubleshoot-remote-desktop-connections/WPS_qwinsta.png)
 3. リストが含まれている場合**rdp tcp**の状態で**リッスン**、RDP リスナーが動作します。 続行する[RDP リスナー ポートを確認](#check-the-rdp-listener-port)します。 手順 4 に進んでください。
 4. 動作中のコンピューターから RDP リスナーの構成をエクスポートします。
     1. 影響を受けるコンピューターは、同じバージョンのオペレーティング システムがあるコンピューターにサインインし、(たとえば、レジストリ エディターを使用) をそのコンピューターのレジストリにアクセスします。
@@ -171,7 +171,7 @@ gpresult /S <computer name> /H c:\gpresult-<computer name>.html
 
 1. それでも接続できない場合、証明書 MMC スナップインを開きます。 管理、選択するには、証明書ストアを選択するメッセージが表示されたら**コンピューター アカウント**、該当するコンピューターを選択します。
 2. **証明書**の下のフォルダー**リモート デスクトップ**RDP の自己署名証明書を削除します。 
-    ![MMC 証明書スナップインでリモート デスクトップ証明書。](..\media\troubleshoot-remote-desktop-connections\MMCCert_Delete.png)
+    ![MMC 証明書スナップインでリモート デスクトップ証明書。](../media/troubleshoot-remote-desktop-connections/MMCCert_Delete.png)
 3. 対象のコンピューターで、リモート デスクトップ サービスのサービスを再起動します。
 4. 証明書スナップインを更新します。
 5. RDP の自己署名証明書が再作成されていない場合[MachineKeys フォルダーのアクセス許可を確認](#check-the-permissions-of-the-machinekeys-folder)します。
@@ -197,7 +197,7 @@ RDP ポートを変更、または確認するには、レジストリ エディ
       - リモート コンピューターに接続するには、選択**ファイル**、し、**ネットワーク レジストリへの接続**します。
       - **コンピューターの選択**] ダイアログ ボックスをリモート コンピューターの名前を入力し、選択**名前の確認**、し、[ **OK**。
 2. レジストリを開きに移動します**HKEY\_ローカル\_マシン\\システム\\CurrentControlSet\\コントロール\\ターミナル サーバー\\WinStations\\\<リスナー\>** します。 
-    ![PortNumber のサブキーを RDP プロトコル。](..\media\troubleshoot-remote-desktop-connections\RegEntry_PortNumber.png)
+    ![PortNumber のサブキーを RDP プロトコル。](../media/troubleshoot-remote-desktop-connections/RegEntry_PortNumber.png)
 3. 場合**PortNumber**以外の値を持つ**3389**に変更して**3389**します。 
    > [!IMPORTANT]  
     > 別のポートを使用してリモート デスクトップ サービスを運用することができます。 ただし、このようにすることはお勧めできません。 このような構成のトラブルシューティングは、この記事の範囲外です。
@@ -214,19 +214,19 @@ RDP ポートを変更、または確認するには、レジストリ エディ
     cmd /c 'netstat -ano | find "3389"'  
     ```
   
-    ![Netstat コマンドは、ポートとそれらをリッスンするサービスの一覧を生成します。](..\media\troubleshoot-remote-desktop-connections\WPS_netstat.png)
-1. 3. 状態が「**LISTENING**」の TCP ポート 3389 (または割り当てられた RDP ポート) のエントリを探します。 
+    ![Netstat コマンドは、ポートとそれらをリッスンするサービスの一覧を生成します。](../media/troubleshoot-remote-desktop-connections/WPS_netstat.png)
+3. 3. 状態が「**LISTENING**」の TCP ポート 3389 (または割り当てられた RDP ポート) のエントリを探します。 
     > [!NOTE]  
    > そのポートを使用しているプロセスまたはサービスの PID (プロセス ID) が [PID] 列の下に表示されます。
-1. をどのアプリケーションがポート 3389 (または割り当てられている RDP ポート) を使用して確認するのには、次のコマンドを入力します。  
+4. をどのアプリケーションがポート 3389 (または割り当てられている RDP ポート) を使用して確認するのには、次のコマンドを入力します。  
    
      ```powershell  
     cmd /c 'tasklist /svc | find "<pid listening on 3389>"'  
     ```  
   
-    ![Tasklist コマンドでは、特定のプロセスの詳細を報告します。](..\media\troubleshoot-remote-desktop-connections\WPS_tasklist.png)
-1. ポートに関連付けられている PID 番号のエントリを探します (から、 **netstat**出力)。 サービスまたはその PID に関連付けられているプロセスが右側に表示します。
-1. アプリケーションまたはリモート デスクトップ サービス (TermServ.exe) 以外のサービスは、ポートで使用されている場合は、次のメソッドのいずれかを使用して競合を解決できます。
+    ![Tasklist コマンドでは、特定のプロセスの詳細を報告します。](../media/troubleshoot-remote-desktop-connections/WPS_tasklist.png)
+5. ポートに関連付けられている PID 番号のエントリを探します (から、 **netstat**出力)。 サービスまたはその PID に関連付けられているプロセスが右側に表示します。
+6. アプリケーションまたはリモート デスクトップ サービス (TermServ.exe) 以外のサービスは、ポートで使用されている場合は、次のメソッドのいずれかを使用して競合を解決できます。
       - その他のアプリケーションまたはサービス別のポート (推奨) を使用するを構成します。
       - その他のアプリケーションまたはサービスをアンインストールします。
       - 別のポートを使用する RDP を構成し、(推奨されません)、リモート デスクトップ サービスのサービスを再起動します。
@@ -295,7 +295,7 @@ RD ライセンス診断ツールなど、「RDP プロトコル コンポーネ
 3. 選択**RD ライセンス**、展開に適切なライセンス モードを選択します (**デバイスあたり**または**ユーザーごと**)。
 4. RD ライセンス サーバーの完全修飾ドメイン名 (FQDN) を入力し、**追加**します。
 5. 1 つ以上の RD ライセンス サーバーがある場合は、サーバーごとに手順 4. を繰り返します。 
-    ![RD ライセンス サーバー構成オプションでサーバー マネージャー。](..\media\troubleshoot-remote-desktop-connections\RDLicensing_Configure.png)
+    ![RD ライセンス サーバー構成オプションでサーバー マネージャー。](../media/troubleshoot-remote-desktop-connections/RDLicensing_Configure.png)
 
 ### <a name="refresh-the-x509-certificate-registry-keys"></a>更新、X509 証明書のレジストリ キー
 
@@ -440,12 +440,12 @@ RD セッション ホスト サーバー以外のサーバーでは、従来の
 
 更新が完了するまで、この問題を回避するには、KB 4093492 許可されている種類の接続を確認します。 可能な代替手段がない場合、次のメソッドのいずれかを考慮する場合があります。
 
-  - 影響を受けているクライアント コンピューターで、設定、**暗号化 Oracle 修復**ポリシーにバックアップ**Vulnerable**します。
-  - 次のポリシーの変更、**コンピューターの構成\\管理用テンプレート\\Windows コンポーネント\\Remote Desktop Services\\リモート デスクトップ セッション ホスト\\セキュリティ**グループ ポリシー フォルダー。  
-      - **リモート (RDP) 接続に特定のセキュリティ レイヤーの使用を必要と**: に設定**有効**選択**RDP**します。
-      - **ネットワーク レベル認証を使用してリモート接続のユーザー認証を必要と**: に設定**無効**します。
-      > [!IMPORTANT]  
-      > これらの変更には、デプロイのセキュリティが低下します。 一時的に使用する場合のみあります。
+- 影響を受けているクライアント コンピューターで、設定、**暗号化 Oracle 修復**ポリシーにバックアップ**Vulnerable**します。
+- 次のポリシーの変更、**コンピューターの構成\\管理用テンプレート\\Windows コンポーネント\\Remote Desktop Services\\リモート デスクトップ セッション ホスト\\セキュリティ**グループ ポリシー フォルダー。  
+  - **リモート (RDP) 接続に特定のセキュリティ レイヤーの使用を必要と**: に設定**有効**選択**RDP**します。
+  - **ネットワーク レベル認証を使用してリモート接続のユーザー認証を必要と**: に設定**無効**します。
+    > [!IMPORTANT]  
+    > これらの変更には、デプロイのセキュリティが低下します。 一時的に使用する場合のみあります。
 
 グループ ポリシーでの作業の詳細については、次を参照してください。[ブロックしている GPO を変更する](#modifying-a-blocking-gpo)します。
 
@@ -493,7 +493,7 @@ RD 接続ブローカーの負荷分散と高可用性構成を使用する必�
 
 この問題を回避するには、RDSH サーバーを再起動します。
 
-この問題を解決するには、サポート技術情報の 4093114 を適用する [2018 年 4 月 10 日-KB4093114 (毎月の累計)] (file:///c:\\ユーザー\\v jesits\\AppData\\ローカル\\Microsoft\\Windows\\INetCache\\Content.Outlook\\FUB8OO45\\年 4 月 %%202018 2010-KB4093114 %20\(% の月次 20Rollup\))、RDSH サーバーにします。
+この問題を解決するには、サポート技術情報の 4093114 を適用する [2018 年 4 月 10 日-KB4093114 (毎月 Rollup)](file:///C:/Users/v-jesits/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/FUB8OO45/April%2010,%202018—KB4093114%20(Monthly%20Rollup)) に、RDSH サーバー。
 
 ### <a name="rd-listener-issue"></a>RD リスナーの問題
 
