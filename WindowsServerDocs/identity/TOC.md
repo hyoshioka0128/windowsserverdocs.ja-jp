@@ -463,7 +463,7 @@
 ### [AD FS 2016 に関する FAQ](ad-fs/overview/AD-FS-FAQ.md)
 
 ## Active Directory Rights Management サービス
-### [AD RMS を Windows Server 2016 にアップグレードします。](ad-rms/adrms-deploy.md)
+### [AD RMS の Windows Server 2016 へのアップグレード](ad-rms/adrms-deploy.md)
 
 
 ## [特権アクセスの保護](securing-privileged-access/securing-privileged-access.md)

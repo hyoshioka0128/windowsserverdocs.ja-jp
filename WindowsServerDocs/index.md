@@ -38,7 +38,7 @@ ms.locfileid: "66462169"
                                         </div>
                                         <div class="cardText">
                                             <h2>新機能</h2>
-                                            <p>調べる&#39;s Windows Server の新機能</p>
+                                            <p>Windows Server の新機能を確認してください</p>
                                         </div>
                                     </div>
                                 </div>
@@ -135,8 +135,8 @@ ms.locfileid: "66462169"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h2>Azure のハイブリッド サービスへの接続します。</h2>
-                                            <p>Azure のハイブリッド サービス、オンプレミスとクラウドの機能の組み合わせにするサーバーまたはクラスターを接続します。</p>
+                                            <h2>Azure ハイブリッド サービスへの接続</h2>
+                                            <p>サーバーまたはクラスターを Azure ハイブリッド サービスに接続して、オンプレミスとクラウドの長所を組み合わせます。</p>
             </li>
                     <li class="fullSpan">
                     <HR COLOR="purple" SIZE="6" WIDTH="60%">
@@ -280,7 +280,7 @@ ms.locfileid: "66462169"
        <hr width="80%">
             <li>2. <a href="https://docs.microsoft.com/windows-server/failover-clustering/failover-cluster-csvs">フェールオーバー クラスターでクラスターの共有ボリュームを使用する</a></li>
        <hr width="80%">
-            <li>3. <a href="https://docs.microsoft.com/windows-server/failover-clustering/whats-new-in-failover-clustering">どのような&#39;ではフェールオーバー クラスタ リング</a></li>
+            <li>3. <a href="https://docs.microsoft.com/windows-server/failover-clustering/whats-new-in-failover-clustering">フェールオーバー クラスタリングの新機能</a></li>
             </ol>
         </td>
     </tr>
@@ -451,7 +451,7 @@ ms.locfileid: "66462169"
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings">トランスポート層セキュリティ (TLS) のレジストリ設定</a></li>
        <hr width="80%">
-            <li>2. <a href="https://docs.microsoft.com/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server">デスクトップ エクスペリエンス搭載の Windows Server 2016 上のシステム サービスを無効にする方法のガイダンス </a></li>
+            <li>2. <a href="https://docs.microsoft.com/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server">デスクトップ エクスペリエンスで Windows Server 2016 のシステム サービスを無効にするためのガイダンス</a></li>
        <hr width="80%">
             <li>3. <a href="https://docs.microsoft.com/windows-server/security/windows-authentication/credentials-processes-in-windows-authentication">Windows 認証での資格情報の処理</a></li>
             </ol>
@@ -619,7 +619,7 @@ ms.locfileid: "66462169"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h3>Windows Server 2012 と<br> Windows Server 2012 R2</h3>
+                                            <h3>Windows Server 2012 および<br> Windows Server 2012 R2</h3>
                                             <p></p>
                                         </div>
                                     </div>

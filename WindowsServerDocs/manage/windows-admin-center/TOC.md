@@ -34,14 +34,14 @@
 
 
 ## Azure に接続する
-### [Azure のハイブリッド サービス](azure/index.md)
+### [Azure ハイブリッド サービス](azure/index.md)
 #### [Azure Backup](azure/azure-backup.md)
 #### [Azure Site Recovery](azure/azure-site-recovery.md)
 #### [Azure File Sync](azure/azure-file-sync.md)
 #### [Azure Monitor](azure/azure-monitor.md)
-#### [Azure の更新プログラムの管理](azure/azure-update-management.md)
-### [Windows Admin Center を Azure に接続します。](azure/azure-integration.md)
-### [Azure で Windows Admin Center を展開します。](azure/deploy-wac-in-azure.md)
+#### [Azure Update Management](azure/azure-update-management.md)
+### [Windows Admin Center を Azure に接続する](azure/azure-integration.md)
+### [Windows Admin Center を Azure に展開する](azure/deploy-wac-in-azure.md)
 ### [Windows Admin Center の使用による Azure VM の管理](azure/manage-azure-vms.md)
 
 ## サポート
@@ -71,7 +71,7 @@
 #### [拡張機能で PowerShell を使用する](extend/guides/powershell.md)
 #### [CSS アイコン ガイド](extend/guides/cssicons.md)
 #### [最新の SDK への移行](extend/guides/migration-guide-0_1-1_0.md)
-#### [拡張機能の検出のバナーを有効にします。](extend/guides/extension-discovery-banner.md)
+#### [拡張検出バナーを有効にする](extend/guides/extension-discovery-banner.md)
 ### [拡張機能の公開](extend/publish-extensions.md)
 ### ケース スタディ
 #### [DataON](extend/case-studies/dataon.md)
