@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: d692e58d616376149e62fbce611fe2a9ac80c743
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 4af0f96b0af3a547ab7d509d031a9e23cce8b654
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863253"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443213"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>仮想化ドメイン コントローラーの展開と構成
 
@@ -65,7 +65,7 @@ Windows Server 2012 ドメイン コントローラーを使用するには、Wi
 |**Microsoft Windows Server 2012 機能が HYPER-V サーバー**|〇|  
 |**Microsoft Windows Server 2012 の HYPER-V サーバー**|〇|  
 |**Hyper V のクライアントでは、Microsoft Windows 8 の機能します。**|〇|  
-|**Windows Server 2008 R2 および Windows Server 2008**|いいえ|  
+|**Windows Server 2008 R2 および Windows Server 2008**|X|  
 |**Microsoft 以外の仮想化ソリューション**|ベンダーにお問い合わせください|  
   
 Microsoft では Windows 7 Virtual PC、Virtual PC 2007、Virtual PC 2004、および Virtual Server 2005 がサポートしていますが、64 ビットのゲストを実行することはできません。また、VM-GenerationID もサポートしていません。  
@@ -280,7 +280,7 @@ New-ADDCCloneConfigFile
 ||-PreferredWINSServer|プライマリ WINS サーバーの静的な IPv4 アドレスを指定します。 文字列データ型|  
 ||-AlternateWINSServer|セカンダリ WINS サーバーの静的な IPv4 アドレスを指定します。 文字列データ型|  
 ||-IPv6DNSResolver|コンマ区切りの一覧で複製されたコンピューターの静的な IPv6 DNS エントリを指定します。 仮想化ドメイン コントローラーの複製で静的な Ipv6 情報を設定することはできません。 配列データ型。|  
-||-Offline|検証テストを行わず、既存の dccloneconfig.xml を上書きします。 パラメーターがありません。 詳細については、「 [Running New-ADDCCloneConfigFile in offline mode](../../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md#BKMK_OfflineMode)」を参照してください。|  
+||-Offline|検証テストを行わず、既存の dccloneconfig.xml を上書きします。 パラメーターがありません。|  
 ||*静的*|静的な IP 引数 IPv4SubnetMask、IPv4SubnetMask、または IPv4DefaultGateway を指定する場合に必須です。 パラメーターがありません。|  
   
 オンライン モードで実行時にテストが行われます。  
@@ -330,7 +330,7 @@ Stop-computer は、仮想化に関係なくコンピューターのシャット
   
 システム ドライブだけでなく、仮想マシンのすべてのディスクをコピーする必要があります。 ソース ドメイン コントローラーが差分ディスクを使用しており、複製されたドメイン コントローラーを他の Hyper-V ホストに移動する場合は、エクスポートの必要があります。  
   
-ソース ドメイン コントローラーにドライブが " *1*" つしかない場合は、手動でディスクをコピーすることをお勧めします。 "複数"** のドライブがある VM、または複数 NIC のように複雑な仮想化ハードウェア カスタマイズが行われた VM については、エクスポート/インポートをお勧めします。  
+ソース ドメイン コントローラーにドライブが " *1*" つしかない場合は、手動でディスクをコピーすることをお勧めします。 "複数" ** のドライブがある VM、または複数 NIC のように複雑な仮想化ハードウェア カスタマイズが行われた VM については、エクスポート/インポートをお勧めします。  
   
 ファイルを手動でコピーする場合は、コピー前にすべてのスナップショットを削除します。 VM をエクスポートする場合、スナップショットは、エクスポート前に削除するか、インポート後に新しい VM から削除します。  
   
@@ -546,7 +546,7 @@ copy-item <xml file path><destination path>\dccloneconfig.xml
 dismount-vhd <disk path>  
 ```  
   
-次に、例を示します。  
+例:  
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSMountVHD.png)  
   
@@ -640,15 +640,15 @@ Get-VMSnapshot
 Remove-VMSnapshot  
 ```  
   
-次に、例を示します。  
+例:  
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSGetVMSnap.png)  
   
-> [!WARNING]  
+> [!WARNING]
 > コンピューターをインポートするときに、静的 MAC アドレスがソース ドメイン コントローラーに割り当てられていないことを確認します。 静的 MAC を持つソース コンピューターが複製されると、そのコピーされたコンピューターではネットワーク トラフィックが正しく送受信されません。 この場合は、一意の静的または動的 MAC アドレスを新しく設定します。 VM で静的 MAC アドレスが使用されているかどうかを確認するには、次のコマンドを使用します。  
->   
+> 
 > **Get-VM -VMName**   
->  ***テスト vm* |Get-vmnetworkadapter |fl \***  
+>  ***テスト vm* |Get-vmnetworkadapter |fl \\** *  
   
 ### <a name="step-9---clone-the-new-virtual-machine"></a>手順 9 - 新しい仮想マシンを複製する  
 複製を開始する前に、オプションで、オフラインの複製ソース ドメイン コントローラーを再起動します。 ただし、PDC エミュレーターはオンラインであることを確認します。  
@@ -664,7 +664,7 @@ Windows PowerShell を使用して VM を起動する場合、新しい Hyper-V 
 Start-VM  
 ```  
   
-例:  
+次に、例を示します。  
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSStartVM.png)  
   
