@@ -15,11 +15,11 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c26d6d0c4c4465b5f9073dbcac951fc0adce1d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882053"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63688543"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Windows Server 2016 の Standard エディションと Datacenter エディションの比較
 
@@ -97,7 +97,7 @@ ms.locfileid: "59882053"
 |拡張記憶域|〇|〇|
 |フェールオーバー クラスタリング|〇|〇|
 |グループ ポリシーの管理|〇|〇|
-|Host Guardian Hyper-V サポート|いいえ|〇|
+|Host Guardian Hyper-V サポート|X|〇|
 |サービスの I/O 品質|〇|〇|
 |IIS ホスト可能な Web コア|〇|〇|
 |インターネット印刷クライアント|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|
@@ -163,7 +163,7 @@ ms.locfileid: "59882053"
 |ソフトウェアによるネットワーク制御|X|〇|
 |記憶域管理サービス|〇|〇|
 |記憶域スペース|〇|〇|
-|記憶域スペース ダイレクト|いいえ|〇|
+|記憶域スペース ダイレクト|X|〇|
 |ボリューム ライセンス認証サービス|〇|〇|
 |VSS (ボリューム シャドウ コピー サービス) 統合|〇|〇|
 |Windows Server Update Services|〇|〇|
