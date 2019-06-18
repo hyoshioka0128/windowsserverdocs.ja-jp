@@ -8,12 +8,12 @@ ms.date: 02/13/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 856eb7c2c2dfe0e0e3300fcf826e75b56258dc1b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 879a87d4383d07e37227ecf6fffa5d002a77bbc0
+ms.sourcegitcommit: 214e827934e7b3e8987e9e0ab2cf00047d332c89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447649"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "67153313"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>記憶域の移行サービスを使用して、サーバーを移行するには
 
@@ -35,7 +35,7 @@ ms.locfileid: "66447649"
     - Windows Management Instrumentation (WMI-In)
 
    > [!NOTE]
-   > サード パーティ製のファイアウォールを使用している場合、受信ポートの範囲を開くには、/TCP 445 (SMB)、(RPC/DCOM エンドポイント マッパー) の 135/TCP、TCP 1025-65535 (RPC/DCOM 一時ポート)。
+   > サード パーティ製のファイアウォールを使用している場合、受信ポートの範囲を開くには、/TCP 445 (SMB)、(RPC/DCOM エンドポイント マッパー) の 135/TCP、TCP 1025-65535 (RPC/DCOM 一時ポート)。 記憶域の移行サービスのポート TCP/28940 (Orchestrator)、TCP/28941 (プロキシ) です。
 
 1. 移行を管理する、orchestrator サーバーを使用して、イベントまたは転送するデータのログをダウンロードする場合は、そのサーバーにもファイルとプリンターの共有 (SMB で) ファイアウォール ルールが有効になっていることを確認します。
 
