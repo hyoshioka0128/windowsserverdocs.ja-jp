@@ -6,13 +6,13 @@ ms.manager: mchad
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
-ms.date: 06/07/2019
-ms.openlocfilehash: fed23c999c67ba81b3bbb821170a748ed5eaa7b8
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.date: 06/17/2019
+ms.openlocfilehash: 133358e959e24abc506be13259d750753d3727f7
+ms.sourcegitcommit: 6fec3ca19ddaecbc936320d98cca0736dd8505d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812017"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67196171"
 ---
 # <a name="resilient-file-system-refs-overview"></a>Resilient File System (ReFS) の概要
 
@@ -168,6 +168,7 @@ Microsoft が用に開発された NTFS 具体的にはさまざまな構成と�
 
 ## <a name="see-also"></a>関連項目
 
--   [記憶域スペース ダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)
--   [ReFS ブロック複製](block-cloning.md)
--   [ReFS の整合性ストリーム](integrity-streams.md)
+- [ReFS と NTFS クラスター サイズの推奨事項](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
+- [記憶域スペース ダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)
+- [ReFS ブロック複製](block-cloning.md)
+- [ReFS の整合性ストリーム](integrity-streams.md)

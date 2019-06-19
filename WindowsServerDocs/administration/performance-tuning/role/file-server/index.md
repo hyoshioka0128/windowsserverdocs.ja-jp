@@ -135,7 +135,7 @@ ms.locfileid: "66811469"
 
     適用対象: Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Vista、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-    既定値は 0 です。 既定では、SMB リダイレクターは、ネットワーク関連のタイムアウトを回避するために、待機時間の長いネットワーク接続全体のスループットを調整します。 このレジストリ値を 1 に設定すると、この調整が無効になり、待機時間の長いネットワーク接続でのファイル転送のスループットがより高くなります。
+    既定値は 0 です。 既定では、SMB リダイレクターは、ネットワーク関連のタイムアウトを回避するために、待機時間の長いネットワーク接続全体のスループットを調整する場合があります。 このレジストリ値を 1 に設定すると、この調整が無効になり、待機時間の長いネットワーク接続でのファイル転送のスループットがより高くなります。
 
 -   **DisableLargeMtu**
 
@@ -145,7 +145,7 @@ ms.locfileid: "66811469"
 
     適用対象: Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Vista、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-    既定値は、Windows 8 の場合のみ 0 です。 Windows 8 では、SMB リダイレクターは、要求ごとに最大 1 MB のペイロードを転送するため、ファイル転送速度が向上します。 このレジストリ値を 1 に設定すると、要求のサイズは 64 KB に制限されます。 この設定を適用する前に、この設定の影響を評価する必要があります。
+    既定値は、Windows 8 の場合のみ 0 です。 Windows 8 では、SMB リダイレクターは、要求ごとに最大 1 MB のペイロードを転送するため、ファイル転送速度が向上します。 このレジストリ値を 1 に設定すると、要求のサイズは 64 KB に制限されます。 この設定を適用する前に、その影響を評価する必要があります。
 
 -   **RequireSecuritySignature**
 

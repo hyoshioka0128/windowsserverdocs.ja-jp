@@ -6,18 +6,18 @@ ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
-ms.date: 09/06/2018
+ms.date: 06/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f85e321381adcf607c3504005a0a3448ab0f098a
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 2e45fd1eb13044fdf0ba0f66a6e909a3f2d39bc3
+ms.sourcegitcommit: 6fec3ca19ddaecbc936320d98cca0736dd8505d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63738447"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67196168"
 ---
 # <a name="ntfs-overview"></a>NTFS の概要
 
->適用対象:Windows 10、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+>適用対象:Windows 10、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 NTFS-最近のバージョンの Windows および Windows Server のプライマリ ファイル システム、セキュリティ記述子、暗号化、ディスク クォータ、リッチ メタデータなどの機能の完全なセットし、継続的に提供するクラスター共有ボリューム (CSV) とを使用できますフェールオーバー クラスターの複数のノードから同時にアクセスできる使用可能なボリュームです。
 
@@ -93,8 +93,11 @@ NTFS では、長いファイル名および以下の最大値の長拡張パス
 
 ## <a name="additional-information"></a>追加情報
 
-|コンテンツの種類|参考資料|
-|---|---|
-|評価|- [NTFS の新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn466520(v%3dws.11))(Windows Server 2012 R2)<br>- [NTFS の新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff383236(v=ws.10))(Windows Server 2008 R2、Windows 7)<br>- [NTFS の正常性と Chkdsk](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831536(v%3dws.11))<br>- [NTFS の自己修復](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10))(Windows Server 2008 で導入)<br>- [トランザクション NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730726(v%3dws.10)) (Windows Server 2008 で導入)|
-|コミュニティ リソース|- [Windows Storage チームのブログ](https://blogs.msdn.microsoft.com/san/)|
-|関連テクノロジ|- [Windows Server でのストレージ](../storage.md)<br>- [クラスターは、フェールオーバー クラスターでボリュームを共有します。](../../failover-clustering/failover-cluster-csvs.md)<br>-[クラスターの共有ボリューム](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831630(v%3dws.11)#cluster-shared-volumes>)と[記憶域の設計](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831630(v%3dws.11)#storage-design>)のセクションでは[クラウド インフラストラクチャの設計](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831630(v%3dws.11)) <br>- [記憶域スペース](../storage-spaces/overview.md)<br>- [Resilient File System (ReFS) の概要](../refs/refs-overview.md)
+- [ReFS と NTFS クラスター サイズの推奨事項](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
+- [Resilient File System (ReFS) の概要](../refs/refs-overview.md)
+- [NTFS の新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn466520(v%3dws.11))(Windows Server 2012 R2)
+- [NTFS の新](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff383236(v=ws.10))(Windows Server 2008 R2、Windows 7)
+- [NTFS の正常性と Chkdsk](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831536(v%3dws.11))
+- [NTFS の自己修復](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10))(Windows Server 2008 で導入)
+- [トランザクション NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730726(v%3dws.10)) (Windows Server 2008 で導入)
+- [Windows Server でのストレージ](../storage.md)
