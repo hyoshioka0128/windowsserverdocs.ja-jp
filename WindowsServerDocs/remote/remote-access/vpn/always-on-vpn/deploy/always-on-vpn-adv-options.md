@@ -10,12 +10,12 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 7534f631cf0ac3f8230ea12e790dcd946da0ffbd
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: 5f43d64dc7642ef67da03fec989909bc4f2f14ae
+ms.sourcegitcommit: a3c9a7718502de723e8c156288017de465daaf6b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749519"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263030"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Always On VPN の高度な機能
 
@@ -54,6 +54,88 @@ ms.locfileid: "66749519"
 |アプリ トリガー VPN     |特定のアプリケーションやアプリケーションの種類の開始時に自動的に接続する VPN プロファイルを構成することができます。<p>これと他のトリガーを起動するオプションの詳細については、次を参照してください。 [VPN プロファイルの自動トリガー オプション](https://docs.microsoft.com/windows/access-protection/vpn/vpn-auto-trigger-profile)します。         |
 |VPN の条件付きアクセス   |条件付きアクセスとデバイスのコンプライアンス標準を満たす VPN に接続する管理対象デバイスを要求できます。 条件付きアクセスの VPN の高度な機能の 1 つ使用すると、クライアント認証証明書が 'AAD の条件付きアクセスの OID 1.3.6.1.4.1.311.87 の '' が含まれているもののみに VPN 接続を制限することができます。<p>VPN 接続を制限するには、する必要があります。<ol><li>NPS サーバーで開く、**ネットワーク ポリシー サーバー**スナップイン。</li><li>展開**ポリシー** > **ネットワーク ポリシー**します。</li><li>右クリックし、**仮想プライベート ネットワーク (VPN) 接続**ネットワーク ポリシーと選択**プロパティ**します。</li><li>選択、**設定**タブ。</li><li>選択**ベンダー固有**選択**追加**します。</li><li>選択、**許可されている証明書の OID**オプションを選択して**追加**します。</li><li>条件付きアクセス AAD OID を貼り付けます**1.3.6.1.4.1.311.87**として選択し、属性の値を**OK** 2 回です。</li><li>選択**閉じる**し**適用**します。<p>これで VPN クライアントは、有効期間が短いクラウド証明書以外の任意の証明書を使用して接続するときに、接続は失敗します。</li></ol>条件付きアクセスの詳細については、次を参照してください。 [VPN と条件付きアクセス](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)します。   |
 
+
+---
+## <a name="blocking-vpn-clients-that-use-revoked-certificates"></a>失効した証明書を使用して VPN クライアントのブロック
+  
+更新プログラムをインストールした後、RRAS サーバーは IKEv2 を使用する Vpn の証明書の失効を適用することができ、デバイスなどの認証の証明書をマシン always-on Vpn のトンネリングします。 これは、このような vpn では、RRAS サーバーことができますが拒否される VPN 接続、失効した証明書を使用しようとするクライアントに意味します。
+
+**可用性**
+
+次の表では、Windows のバージョンごとに、修正プログラムのおおよそのリリース日を示します。
+
+|オペレーティング システムのバージョン |リリース日 * |
+|---------|---------|
+|Windows Server バージョンが 1903  |2019、第 2 四半期  |
+|Windows Server 2019<br />Windows Server、バージョン 1809  |2019 年第 3 四半期  |
+|Windows Server Version 1803  |2019 年第 3 四半期  |
+|Windows Server バージョン 1709  |2019 年第 3 四半期  |
+|Windows Server 2016 バージョン 1607  |2019、第 2 四半期  |
+  
+\* リリースのすべての日付はカレンダー四半期に表示されます。 日付は概算であり予告なく変更可能性があります。
+
+**前提条件を構成する方法** 
+
+1. 利用可能になった Windows 更新プログラムをインストールします。
+1. すべての VPN クライアントとを使用する RRAS サーバーの証明書に CDP のエントリがあることと、それぞれの Crl の RRAS サーバーに到達できることを確認してください。
+1. 使用して、RRAS サーバーで、**セット VpnAuthProtocol**を構成する PowerShell コマンドレット、 **RootCertificateNameToAccept**パラメーター。<br /><br />
+   次の例は、これを行うためのコマンドを一覧表示します。 例では、 **CN = Contoso ルート証明機関**ルート証明機関の識別名を表します。 
+   ``` powershell
+   $cert1 = ( Get-ChildItem -Path cert:LocalMachine\root | Where-Object -FilterScript { $_.Subject -Like "*CN=Contoso Root Certification Authority,*" } )
+   Set-VpnAuthProtocol -RootCertificateNameToAccept $cert1 -PassThru
+   ```
+**IKEv2 コンピューター証明書に基づく VPN 接続用の証明書の失効を強制する RRAS サーバーを構成する方法**
+
+1. コマンド プロンプト ウィンドウで、次のコマンドを実行します。 
+   ```
+   reg add HKLM\SYSTEM\CurrentControlSet\Services\RemoteAccess\Parameters\Ikev2 /f /v CertAuthFlags /t REG_DWORD /d "4"
+   ```
+
+1. 再起動、**ルーティングとリモート アクセス**サービス。
+  
+これらの VPN 接続の証明書の失効を無効にするには設定**CertAuthFlags = 2**または削除、 **CertAuthFlags**値に設定して、再起動、**ルーティングとリモート アクセス**サービス。 
+
+**IKEv2 コンピューターの証明書に基づく VPN 接続用の VPN クライアント証明書を失効させる方法**
+1. 証明機関から VPN クライアント証明書の失効します。
+1. 証明機関から新しい CRL を公開します。
+1. RRAS サーバーで管理コマンド プロンプト ウィンドウを開くし、次のコマンドを実行します。
+   ```
+   certutil -urlcache * delete
+   certutil -setreg chain\ChainCacheResyncFiletime @now
+   ```
+
+**機能は、IKEv2 マシン証明書ベースの VPN 接続の場合は、その証明書失効を確認する方法**  
+>[!Note]  
+> この手順を使用する前に、CAPI2 操作イベント ログを有効にすることを確認します。
+1. VPN クライアント証明書の失効前の手順に従います。
+1. 失効した証明書を持つクライアントを使用して、VPN に接続しようとしてください。 RRAS サーバーの接続を拒否して「IKE 認証資格情報が許容可能です」など、メッセージを表示する必要があります。
+1. RRAS サーバーでイベント ビューアーを開きに移動します**アプリケーションとサービス ログ/Microsoft/Windows/CAPI2**します。 
+1. 次の情報を持つイベントを検索します。
+   * ログ名:**Microsoft Windows の CAPI2/運用 Microsoft Windows の CAPI2/運用**
+   * イベントID:**41** 
+   * イベントには、次のテキストが含まれています:**サブジェクト ="*クライアント FQDN*"** (*クライアント FQDN*を持つ、失効したクライアントの完全修飾ドメイン名を表します証明書です。) 
+
+   **<Result>** のイベント データ フィールドを含める必要があります **、証明書が失効**します。 たとえば、イベントから次の抜粋を参照してください。
+   ```xml
+   Log Name:      Microsoft-Windows-CAPI2/Operational Microsoft-Windows-CAPI2/Operational  
+   Source:        Microsoft-Windows-CAPI2  
+   Date:          5/20/2019 1:33:24 PM  
+   Event ID:      41  
+   ...  
+   Event Xml:
+   <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+    <UserData>  
+     <CertVerifyRevocation>  
+      <Certificate fileRef="C97AE73E9823E8179903E81107E089497C77A720.cer" subjectName="client01.corp.contoso.com" />  
+      <IssuerCertificate fileRef="34B1AE2BD868FE4F8BFDCA96E47C87C12BC01E3A.cer" subjectName="Contoso Root Certification Authority" />
+      ...
+      <Result value="80092010">The certificate is revoked.</Result>
+     </CertVerifyRevocation>
+    </UserData>
+   </Event>
+   ```
+
+---
 ## <a name="additional-protection"></a>追加の保護
 
 ### <a name="trusted-platform-module-tpm-key-attestation"></a>トラステッド プラットフォーム モジュール (TPM) キーの構成証明

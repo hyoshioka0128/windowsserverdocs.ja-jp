@@ -9,12 +9,12 @@ ms.date: 10/16/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: 6722d537c85ce913080224f229f2889e47f41274
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 721816c650adc21109cbfd065f29b694fb6c830f
+ms.sourcegitcommit: a3c9a7718502de723e8c156288017de465daaf6b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812346"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263044"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows タイム サービスのツールと設定
 >適用対象:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 以降
@@ -199,25 +199,30 @@ W32Time ログ記録を有効にするには、次のレジストリ エント�
 #### <a name="maxallowedphaseoffset-information"></a>MaxAllowedPhaseOffset 情報
 オフセットがある必要があります W32Time コンピューター クロックを徐々 に設定するためより小さい**MaxAllowedPhaseOffset**値し、同時に、次の式を満たします。  
 
-```  
-|CurrentTimeOffset| / (PhaseCorrectRate*UpdateInterval) < SystemClockRate / 2  
-``` 
-CurrentTimeOffset は 1 ミリ秒 = 10,000 が Windows システムのタイマー刻みをクロックのクロック ティックで測定されます。  
+* Windows Server 2016 およびそれ以降のバージョン:
+   ```  
+    |CurrentTimeOffset| / (16*PhaseCorrectRate*pollIntervalInSeconds) <= SystemClockRate / 2  
+   ``` 
+* Windows Server 2012 R2 と以前のバージョン:
+   ```  
+   |CurrentTimeOffset| / (PhaseCorrectRate*UpdateInterval) <= SystemClockRate / 2  
+   ``` 
+**CurrentTimeOffset**値は 1 ミリ秒 = 10,000 が Windows システムのタイマー刻みをクロックのクロック ティックで測定されます。  
 
-SystemClockRate と PhaseCorrectRate も、クロック タイマー刻み単位で測定します。 SystemClockRate を取得するには、次のコマンドを使用し、クロック ティック (秒) の数式を使用する秒から変換することができます * 1000\*10000。  
+**SystemClockRate**と**PhaseCorrectRate**もクロック タイマー刻み単位で測定されます。 取得する、 **SystemClockRate**値では、次のコマンドと秒の数式を使用して、クロックのティックを秒から変換を使用できます * 1000\*10000。  
 
 ```  
 W32tm /query /status /verbose  
 ClockRate: 0.0156000s  
 ```  
 
-SystemclockRate は、システム クロックの速度です。 で例として 156000 秒を使用して、SystemclockRate は = 0.0156000 \* 1000 \* 10000 = 156000 クロック ティック。  
+**SystemclockRate**システム クロックの速度です。 例として、156000 秒を使用して、 **SystemclockRate**値を = が 0.0156000 \* 1000 \* 10000 = 156000 クロック ティック。  
 
-MaxAllowedPhaseOffset は秒単位でもあります。 クロック ティックに変換、乗算 MaxAllowedPhaseOffset * 1000\*10000 です。  
+**MaxAllowedPhaseOffset**もは秒単位です。 クロック ティックに変換、乗算**MaxAllowedPhaseOffset**\*1000\*10000 です。  
 
-次の 2 つの例は、適用する方法を表示します。  
+次の例では、Windows Server 2012 R2 またはそれ以前のバージョンを使用する場合は、これらの計算を適用する方法を示します。
 
-**例 1**:時間が 4 分では異なります (たとえば、時間が 11時 05分 AM、タイム サンプル受信され、ピアからが正しいと推定は、午前 11時 09分)。
+**例 1**:4 分とは異なる時間 (時間が 11:05 までおよび、ピアから受信し、正しいと思われるタイム サンプルが 11時 09分など)。
   
 ```
 phasecorrectRate = 1  
@@ -230,19 +235,19 @@ MaxAllowedPhaseOffset = 10min = 600 seconds = 600*1000\*10000=6000000000 clock t
 
 |currentTimeOffset| = 4mins = 4*60\*1000\*10000 = 2400000000 ticks  
 
-Is CurrentTimeOffset < MaxAllowedPhaseOffset?  
+Is CurrentTimeOffset <= MaxAllowedPhaseOffset?  
 
-2400000000 < 6000000000 = TRUE  
+2400000000 <= 6000000000 = TRUE  
 ```
 
 上記の方程式は満たしてでしょうか。 
 
 ```
-(|CurrentTimeOffset| / (PhaseCorrectRate*UpdateInterval) < SystemClockRate / 2)  
+(|CurrentTimeOffset| / (PhaseCorrectRate*UpdateInterval) <= SystemClockRate / 2)  
 
-Is 2,400,000,000 / (30000*1) < 156000/2  
+Is 2,400,000,000 / (30000*1) <= 156000/2  
 
-Is 80,000 < 78,000  
+Is 80,000 <= 78,000  
 
 NO/FALSE  
 ```  
@@ -250,7 +255,7 @@ NO/FALSE
 そのため W32tm はクロックを遅らせて設定直後。  
 
 > [!NOTE]  
-> この場合、緩やかに変化戻る時計を設定する場合は TRUE で数式の結果を得ることも、PhaseCorrectRate または updateInterval レジストリ内の値を調整する必要があります。  
+> この場合、緩やかに変化戻る時計を設定する場合もことになるの値を調整する**PhaseCorrectRate**または**updateInterval**数式の結果がであることを確認するレジストリの**TRUE**します。  
 
 **例 2**:時間は、3 分では異なります。 
  
@@ -265,19 +270,19 @@ MaxAllowedPhaseOffset = 10min = 600 seconds = 600*1000\*10000=6000000000 clock t
 
 currentTimeOffset = 3mins = 3*60\*1000\*10000 = 1800000000 clock ticks  
 
-Is CurrentTimeOffset < MaxAllowedPhaseOffset?  
+Is CurrentTimeOffset <= MaxAllowedPhaseOffset?  
 
-1800000000 < 6000000000 = TRUE  
+1800000000 <= 6000000000 = TRUE  
 ```  
 
 上記の方程式は満たしてでしょうか。
 
 ```
-(|CurrentTimeOffset| / (PhaseCorrectRate*UpdateInterval) < SystemClockRate / 2)  
+(|CurrentTimeOffset| / (PhaseCorrectRate*UpdateInterval) <= SystemClockRate / 2)  
 
-Is 3 mins (1,800,000,000) / (30000*1) < 156000/2  
+Is 3 mins (1,800,000,000) / (30000*1) <= 156000/2  
 
-Is 60,000 < 78,000  
+Is 60,000 <= 78,000  
 
 YES/TRUE  
 ```  
