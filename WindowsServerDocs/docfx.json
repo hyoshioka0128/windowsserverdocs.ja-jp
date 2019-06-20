@@ -44,7 +44,15 @@
       "feedback_product_url": {
         "manage/windows-admin-center/*.md": "http://aka.ms/wacfeedback",
         "manage/windows-admin-center/**/*.md": "http://aka.ms/wacfeedback" 
-      }
+      },
+       "open_to_public_contributors": {
+         "storage/disk-management/**.md": "true",
+         "remote/remote-desktop-services/**.md": "true",
+         "manage/windows-admin-center/**.md": "true",
+         "manage/windows-admin-center/understand/**.md": "true",
+         "security/windows-services/**.md": "true",
+         "get-started/**.md": "true"
+       }
     },
     "template": [
       null
