@@ -35,13 +35,17 @@
     }
   ],
   "notification_subscribers": [],
+  "sync_notification_subscribers": [],
   "branches_to_filter": [
     "live"
   ],
+  "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/windowsserverdocs.ja-jp",
+  "git_repository_branch_open_to_public_contributors": "live",
   "continue_with_document_error": true,
   "skip_source_output_uploading": false,
   "need_preview_pull_request": true,
   "resolve_user_profile_using_github": true,
+  "contribution_branch_mappings": {},
   "dependent_repositories": [
     {
       "path_to_root": "_themes",
@@ -58,5 +62,8 @@
         "master": "master"
       }
     }
-  ]
+  ],
+  "branch_target_mapping": {},
+  "need_generate_pdf_url_template": false,
+  "targets": {}
 }
