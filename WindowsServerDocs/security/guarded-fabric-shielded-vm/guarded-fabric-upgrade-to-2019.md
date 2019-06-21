@@ -6,12 +6,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 11/21/2018
-ms.openlocfilehash: 274bdf027947ffb6fe807d4acd0a3b2174c20e28
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 39974806c02e55b37d3d16748c4ca0e3f361ee45
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867453"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284109"
 ---
 # <a name="upgrade-a-guarded-fabric-to-windows-server-2019"></a>Windows Server 2019 への保護されたファブリックのアップグレード
 
@@ -39,8 +39,8 @@ Windows Server 2019 に、保護されたファブリックをアップグレー
 
 |  | WS2016 HGS | WS2019 HGS|
 |---|---|---|
-|**WS2016 Hyper V ホスト** | サポートされている | サポートされている<sup>1</sup>|
-|**WS2019 Hyper V ホスト** | サポートされていない<sup>2</sup> | サポートされている|
+|**WS2016 Hyper V ホスト** | サポート対象 | サポートされている<sup>1</sup>|
+|**WS2019 Hyper V ホスト** | サポートされていない<sup>2</sup> | サポート対象|
 
 <sup>1</sup> v1 の構成証明プロトコルを使用して Windows Server 2019 HGS サーバーに対しては、Windows Server 2016 ホストは証明できるのみです。 ホスト キーの構成証明を含む、v2 の構成証明プロトコルでのみ利用できる新機能 Windows Server 2016 ホストはサポートされていません。
 
@@ -52,7 +52,7 @@ Windows Server 2019 に、保護されたファブリックをアップグレー
 
 HGS クラスターをアップグレードするには、アップグレード中に、一度にクラスターから 1 つのノードを一時的に削除することが必要ですが。 これは、HYPER-V ホストからの要求に応答するクラスターの容量を減らすし、テナントの低速な応答時間やサービスの停止になる可能性があります。 HGS サーバーをアップグレードする前に、構成証明とキーのリリースの要求を処理するための十分な容量があることを確認します。
 
-HGS クラスターをアップグレードするには、時に 1 つのノード、クラスターの各ノードで、次の手順を実行します。
+HGS クラスターをアップグレードするには、クラスターでは、一度に 1 つのノードの各ノードで、次の手順を実行します。
 
 1.  HGS サーバーを実行して、クラスターから削除`Clear-HgsServer`管理者特権の PowerShell プロンプトでします。 このコマンドレットでは、レプリケートされた HGS ストア、HGS の web サイト、およびノードをフェールオーバー クラスターから削除されます。
 2.  実行する必要があります、HGS サーバーがドメイン コント ローラー (既定の構成) の場合は、`adprep /forestprep`と`adprep /domainprep`OS アップグレード ドメインの準備にアップグレードされる最初のノードにします。 参照してください、 [Active Directory Domain Services のアップグレードに関するドキュメント](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/upgrade-domain-controllers#supported-in-place-upgrade-paths)詳細についてはします。
@@ -69,9 +69,9 @@ Set-HgsServerVersion  v2
 
 Windows Server 2019 するために、HYPER-V ホストをアップグレードする前に、HGS クラスターが既に Windows Server 2019 にアップグレードして、HYPER-V サーバーからのすべての Vm を移動したことを確認します。
 
-1.  (常に、ケース TPM 構成証明を使用する場合)、サーバーを Windows Defender アプリケーション制御コード整合性ポリシーを使用している場合は、ポリシーが監査モードでまたはサーバーをアップグレードする前に無効になっていることを確認します。 [WDAC ポリシーを無効にする方法について説明します](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/disable-windows-defender-application-control-policies)
+1.  (常に、ケース TPM 構成証明を使用する場合)、サーバーを Windows Defender アプリケーション制御コード整合性ポリシーを使用している場合は、ポリシーが監査モードでまたはサーバーをアップグレードする前に無効になっていることを確認します。 [WDAC ポリシーを無効にする方法について説明します](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/disable-windows-defender-application-control-policies)
 2.  ガイダンスに従って、 [Windows Server のアップグレード センター](http://aka.ms/upgradecenter)のホストを Windows Server 2019 をアップグレードします。 HYPER-V ホストがフェールオーバー クラスターの一部の場合は、使用を検討して、[クラスター オペレーティング システムのローリング アップグレード](../../failover-clustering/Cluster-Operating-System-Rolling-Upgrade.md)します。
-3.  [テストおよび再有効化する](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/audit-windows-defender-application-control-policies)した 1 つのアップグレードの前に有効になっている場合、Windows Defender Application Control ポリシー。
+3.  [テストおよび再有効化する](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/audit-windows-defender-application-control-policies)した 1 つのアップグレードの前に有効になっている場合、Windows Defender Application Control ポリシー。
 4.  実行`Get-HgsClientConfiguration`場合にチェックする**IsHostGuarded = True**、つまりホストでは、HGS サーバーと構成証明に合格が。
 5.  TPM 構成証明を使用している場合は、する必要があります[TPM ベースラインまたはコード整合性ポリシーを再キャプチャ](guarded-fabric-add-host-information-for-tpm-trusted-attestation.md)証明書を渡すにアップグレードした後。
 6.  開始を実行しているシールドされた Vm のホストでもう一度!

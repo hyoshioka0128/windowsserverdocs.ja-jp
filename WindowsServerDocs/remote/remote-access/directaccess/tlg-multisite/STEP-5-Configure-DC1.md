@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 70357156-fcb0-4346-a61e-4ea963e3ffb0
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e7f907c3bf463e3a90d413e5b167a70051057f06
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 108e517923c75f685d817cdf9fad9b14132e3bb0
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876773"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281437"
 ---
 # <a name="step-5-configure-dc1"></a>手順 5 DC1 を構成します。
 
@@ -40,7 +39,7 @@ DC1 は、ドメイン コント ローラー、DNS サーバー、および DHC
   
 2.  ネットワーク接続 ウィンドウで右クリック**ワイヤード (イーサネット) 接続**、 をクリックし、**プロパティ**します。  
   
-3.  **[インターネット プロトコル バージョン 4 (TCP/IPv4)]** をクリックし、**[プロパティ]** をクリックします。  
+3.  **[インターネット プロトコル バージョン 4 (TCP/IPv4)]** をクリックし、 **[プロパティ]** をクリックします。  
   
 4.  **デフォルト ゲートウェイ**、型**10.0.0.254**、および**代替 DNS サーバー**、型**10.2.0.1**、 をクリックし、 **ok**.  
   

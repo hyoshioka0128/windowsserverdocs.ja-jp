@@ -7,12 +7,12 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: a0062230dd3d9e9c52aa317f87e06b0e84507dc4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ad8e2a8eade1ea9d3faaba8f387b1f489854e589
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861063"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280632"
 ---
 # <a name="deploy-windows-admin-center-with-high-availability"></a>高可用性を備えた Windows Admin Center を展開します。
 
@@ -35,12 +35,12 @@ Windows Admin Center は、Windows Admin Center ゲートウェイ サービス�
 2. RDP と実行を使用してノードに接続する、```Install-WindowsAdminCenterHA.ps1```は次のパラメーターには、そのノードからスクリプト。
     - `-clusterStorage`: Windows Admin Center のデータを格納するクラスターの共有ボリュームのローカル パス。
     - `-clientAccessPoint`: Windows Admin Center へのアクセスに使用する名前を選択します。 例では、パラメーターを使用して、スクリプトを実行する場合、 `-clientAccessPoint contosoWindowsAdminCenter`、Windows Admin Center サービスにアクセスしてアクセスします。 `https://contosoWindowsAdminCenter.<domain>.com`
-    - `-staticAddress` :任意。 汎用サービスをクラスターの静的アドレスを 1 つまたは複数です。 
+    - `-staticAddress` :(省略可能)。 汎用サービスをクラスターの静的アドレスを 1 つまたは複数です。 
     - `-msiPath` :Windows Admin Center の .msi ファイルのパス。
-    - `-certPath` :任意。 証明書の .pfx ファイルのパス。
-    - `-certPassword` :任意。 SecureString で提供される証明書の .pfx のパスワード `-certPath`
+    - `-certPath` :(省略可能)。 証明書の .pfx ファイルのパス。
+    - `-certPassword` :(省略可能)。 SecureString で提供される証明書の .pfx のパスワード `-certPath`
     - `-generateSslCert` :(省略可能)。 署名証明書を指定しない場合は、自己署名証明書を生成するには、このパラメーター フラグが含まれます。 自己署名証明書の 60 日間の有効期限が切れることに注意してください。
-    - `-portNumber` :任意。 ポートを指定しない場合は、ポート 443 (HTTPS) でゲートウェイ サービスが配置されます。 使用するには、別のポートは、このパラメーターで指定します。 注こと、カスタム ポート (443) 以外は何を使用する場合がアクセスする、Windows Admin Center https:// に移動して\<clientAccessPoint\>:\<ポート\>します。
+    - `-portNumber` :(省略可能)。 ポートを指定しない場合は、ポート 443 (HTTPS) でゲートウェイ サービスが配置されます。 使用するには、別のポートは、このパラメーターで指定します。 注こと、カスタム ポート (443) 以外は何を使用する場合がアクセスする、Windows Admin Center https:// に移動して\<clientAccessPoint\>:\<ポート\>します。
 
 > [!NOTE]
 > ```Install-WindowsAdminCenterHA.ps1```スクリプト サポート```-WhatIf ```と```-Verbose```パラメーター
@@ -74,7 +74,7 @@ Windows Admin Center の新しいバージョンがリリースされると、�
 
 ### <a name="update-the-certificate-used-by-windows-admin-center"></a>Windows Admin Center で使用される証明書を更新します。
 
-新しい証明書の .pfx ファイルを指定して、いつでも Windows Admin Center の HA デプロイで使用する証明書を更新して、パスワード。
+新しい証明書の .pfx ファイルとパスワードを提供することで、いつでも Windows Admin Center の HA デプロイで使用する証明書を更新することができます。
 
 ```powershell
 $certPassword = Read-Host -AsSecureString

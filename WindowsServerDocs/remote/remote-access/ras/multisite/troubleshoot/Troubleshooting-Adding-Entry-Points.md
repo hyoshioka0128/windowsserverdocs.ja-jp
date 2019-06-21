@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dcc1037f-1a65-4497-99e6-0df9aef748a8
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: d4dfd37e2e8d87dafe6de4e03caf7464e3f0ee6c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 51f49364aa4e7a6da6c51b1d8b7da7e37f842190
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820463"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282562"
 ---
 # <a name="troubleshooting-adding-entry-points"></a>エントリ ポイント追加のトラブルシューティング
 
@@ -128,7 +127,7 @@ DirectAccess または VPN は新しいエントリ ポイントに既に構成�
   
 **ソリューション**  
   
-リモート アクセス管理コンソールの **[手順 2 リモート アクセス サーバー]** で **[編集]** をクリックし、**[認証]** ページの **[コンピューターの証明書を使用する]** で、選択された証明書が有効であることを確認します。 証明書が有効な場合は、その証明書が追加するサーバーの信頼されたルート CA にあることを確認してやり直します。  
+リモート アクセス管理コンソールの **[手順 2 リモート アクセス サーバー]** で **[編集]** をクリックし、 **[認証]** ページの **[コンピューターの証明書を使用する]** で、選択された証明書が有効であることを確認します。 証明書が有効な場合は、その証明書が追加するサーバーの信頼されたルート CA にあることを確認してやり直します。  
   
 > [!NOTE]  
 > 証明書は、同じ拇印の同じ証明書であることが必要です。  
@@ -227,11 +226,11 @@ DirectAccess が初めてインストールされるときに、内部ネット�
   
 NRPT 規則でアドレスを除外するには  
   
-1.  リモート アクセス管理コンソールの **[手順 3 インフラストラクチャ サーバー]** で、**[編集]** をクリックします。  
+1.  リモート アクセス管理コンソールの **[手順 3 インフラストラクチャ サーバー]** で、 **[編集]** をクリックします。  
   
 2.  **インフラストラクチャ サーバーのセットアップ** ウィザードの **[DNS]** ページで、テーブルをダブルクリックし、新しい名前サフィックスを入力します。  
   
-3.  **[DNS サーバー アドレス]** ダイアログ ボックスの [DNS サフィックス] に、エントリ ポイントの ConnectTo アドレスを入力し、**[適用]** をクリックします。  
+3.  **[DNS サーバー アドレス]** ダイアログ ボックスの [DNS サフィックス] に、エントリ ポイントの ConnectTo アドレスを入力し、 **[適用]** をクリックします。  
   
 サーバーのアドレスを指定せずに、名前サフィックスを追加すると、サフィックスは NRPT 除外として扱われます。  
   

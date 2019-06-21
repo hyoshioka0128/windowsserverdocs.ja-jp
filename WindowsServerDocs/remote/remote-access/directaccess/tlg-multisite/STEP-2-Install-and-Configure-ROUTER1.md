@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc20b1a0-540d-4531-a176-50b87c071600
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6a771b5eb8587d23bc67a7e7769264251afdb5bf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7d215ca234d63e7e393fbbce4d65e0803f023487
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838513"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283212"
 ---
 # <a name="step-2-install-and-configure-router1"></a>手順 2 のインストールと構成 ROUTER1
 
@@ -58,7 +57,7 @@ ms.locfileid: "59838513"
   
 3.  右クリック**Corpnet**、 をクリックし、**プロパティ**します。  
   
-4.  **[インターネット プロトコル バージョン 4 (TCP/IPv4)]** をクリックし、**[プロパティ]** をクリックします。  
+4.  **[インターネット プロトコル バージョン 4 (TCP/IPv4)]** をクリックし、 **[プロパティ]** をクリックします。  
   
 5.  **[次の IP アドレスを使う]** をクリックします。 **IP アドレス**、型**10.0.0.254**します。 **サブネット マスク**、型**255.255.255.0**、 をクリックし、 **OK**。  
   
@@ -72,7 +71,7 @@ ms.locfileid: "59838513"
   
 10. 右クリック**2 Corpnet**、 をクリックし、**プロパティ**します。  
   
-11. **[インターネット プロトコル バージョン 4 (TCP/IPv4)]** をクリックし、**[プロパティ]** をクリックします。  
+11. **[インターネット プロトコル バージョン 4 (TCP/IPv4)]** をクリックし、 **[プロパティ]** をクリックします。  
   
 12. **[次の IP アドレスを使う]** をクリックします。 **IP アドレス**、型**10.2.0.254**します。 **サブネット マスク**、型**255.255.255.0**、 をクリックし、 **OK**。  
   
@@ -90,7 +89,7 @@ ms.locfileid: "59838513"
   
 19. **コンピューター名/ドメイン名の変更** ダイアログ ボックスで**コンピューター名**、型**ROUTER1**、順にクリックします**OK**します。  
   
-20. コンピューターを再起動するよう求めるメッセージが表示されたら、**[OK]** をクリックします。  
+20. コンピューターを再起動するよう求めるメッセージが表示されたら、 **[OK]** をクリックします。  
   
 21. **[システムのプロパティ]** ダイアログ ボックスで、 **[閉じる]** をクリックします。  
   
