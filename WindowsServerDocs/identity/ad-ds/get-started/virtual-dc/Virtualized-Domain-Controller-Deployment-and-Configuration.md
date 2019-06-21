@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 4af0f96b0af3a547ab7d509d031a9e23cce8b654
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 059bb3c1b15afdc579ba048b8bbb02ed185f3d42
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66443213"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280953"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>仮想化ドメイン コントローラーの展開と構成
 
@@ -153,7 +153,7 @@ DC の複製を試みる前に、プライマリ ドメイン コントローラ
     >   
     > この RPC メソッドは新しいため、ネットワーク分析ソフトウェアには、新しい Opnum 28 のフィールドを既存の UUID E3514235-4B06-11D1-AB04-00C04FC2DCD2 に追加するための最新のパーサーが必要です。 これがないと、このトラフィックを解析できません。  
     >   
-    > 詳細については、「 [4.1.29 IDL_DRSAddCloneDC (Opnum 28)](https://msdn.microsoft.com/en-us/library/hh554213(v=prot.13).aspx)」をご覧ください。  
+    > 詳細については、「 [4.1.29 IDL_DRSAddCloneDC (Opnum 28)](https://msdn.microsoft.com/library/hh554213(v=prot.13).aspx)」をご覧ください。  
   
 ***これもルーティングが完全でないネットワークの使用時に仮想化ドメイン コント ローラーの複製が必要になります、PDCE へのアクセスを持つネットワーク セグメント***します。 複製後、物理ドメイン コントローラーのように、複製されたドメイン コントローラーを別のネットワークに移動してもかまいません。ただし、AD DS 論理サイト情報は必ず更新するようにしてください。  
   
@@ -330,7 +330,7 @@ Stop-computer は、仮想化に関係なくコンピューターのシャット
   
 システム ドライブだけでなく、仮想マシンのすべてのディスクをコピーする必要があります。 ソース ドメイン コントローラーが差分ディスクを使用しており、複製されたドメイン コントローラーを他の Hyper-V ホストに移動する場合は、エクスポートの必要があります。  
   
-ソース ドメイン コントローラーにドライブが " *1*" つしかない場合は、手動でディスクをコピーすることをお勧めします。 "複数" ** のドライブがある VM、または複数 NIC のように複雑な仮想化ハードウェア カスタマイズが行われた VM については、エクスポート/インポートをお勧めします。  
+ソース ドメイン コントローラーにドライブが " *1*" つしかない場合は、手動でディスクをコピーすることをお勧めします。 *"複数"* のドライブがある VM、または複数 NIC のように複雑な仮想化ハードウェア カスタマイズが行われた VM については、エクスポート/インポートをお勧めします。  
   
 ファイルを手動でコピーする場合は、コピー前にすべてのスナップショットを削除します。 VM をエクスポートする場合、スナップショットは、エクスポート前に削除するか、インポート後に新しい VM から削除します。  
   
@@ -546,7 +546,7 @@ copy-item <xml file path><destination path>\dccloneconfig.xml
 dismount-vhd <disk path>  
 ```  
   
-例:  
+次に、例を示します。  
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSMountVHD.png)  
   
