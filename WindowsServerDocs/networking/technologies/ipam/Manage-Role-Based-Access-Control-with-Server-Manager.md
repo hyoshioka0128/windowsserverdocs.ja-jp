@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 77b6ac92-eaff-46d7-95db-ee6fc96742ed
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4fdefab9cb51e3c521ca7cc68c882632178a5d18
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ac0e18c1ecc4e787c043d437538fab2d0f39f341
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827763"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283884"
 ---
 # <a name="manage-role-based-access-control-with-server-manager"></a>サーバー マネージャーで役割ベースのアクセス制御を管理する
 
@@ -39,7 +38,7 @@ ms.locfileid: "59827763"
 または、Windows PowerShell を使用して、IPAM のロール ベース アクセス制御を管理することができます。 詳細については、次を参照してください。[ロール ベース アクセス制御の管理 Windows PowerShell を使用した](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md)します。
   
 ## <a name="see-also"></a>関連項目  
-[IPAM を管理します。](Manage-IPAM.md)  
+[IPAM の管理](Manage-IPAM.md)  
   
 
 

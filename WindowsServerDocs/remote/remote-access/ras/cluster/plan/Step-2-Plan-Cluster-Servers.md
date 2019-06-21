@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 673c5bfb-b590-4932-8e54-ca0a466d90cc
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 1f0ab7c1d888466ed575ab7cc2ed204db9a02542
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0dcb14a03f02f931d59743f1b1b8b24b84ba8351
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854413"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282865"
 ---
 # <a name="step-2-plan-cluster-servers"></a>手順 2. 計画クラスター サーバー
 

@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 92519b49-0df4-43c1-9717-f13570644212
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 454bc8dc5a9cbf8dc4e759196a13e7920de2eaf7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c794d4b8169c81c63162f119467f5f03d10ce756
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823523"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282655"
 ---
 # <a name="use-remote-access-monitoring-and-accounting"></a>リモート アクセスの監視とアカウンティングを使用する
 
@@ -31,12 +30,12 @@ ms.locfileid: "59823523"
 > [!NOTE]  
 > このトピックに加え、次のトピックをリモート アクセスの監視に利用できます。  
 >   
-> -   [リモート アクセス サーバーの既存の負荷を監視します。](Monitor-the-existing-load-on-the-Remote-Access-server.md)  
-> -   [リモート アクセス サーバーの構成配布のステータスを監視します。](Monitor-the-configuration-distribution-status-of-the-Remote-Access-server.md)  
+> -   [リモート アクセス サーバー上の既存の負荷を監視する](Monitor-the-existing-load-on-the-Remote-Access-server.md)  
+> -   [リモート アクセス サーバーの構成配布の状態を監視する](Monitor-the-configuration-distribution-status-of-the-Remote-Access-server.md)  
 > -   [リモート アクセス サーバーとそのコンポーネントの操作状態の監視します。](Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components.md)  
-> -   [特定し、リモート アクセス サーバーの操作に関する問題の解決](Identify-and-resolve-Remote-Access-server-operations-problems.md)  
-> -   [利用状況と状態の接続のリモート クライアントを監視します。](Monitor-connected-remote-clients-for-activity-and-status.md)  
-> -   [履歴データを使用してリモート クライアントの使用状況レポートを生成します。](Generate-a-usage-report-for-remote-clients-using-historical-data.md)  
+> -   [リモート アクセス サーバーの操作上の問題を特定して解決する](Identify-and-resolve-Remote-Access-server-operations-problems.md)  
+> -   [接続しているリモート クライアントの活動と状態を監視する](Monitor-connected-remote-clients-for-activity-and-status.md)  
+> -   [履歴データを使ってリモート クライアントの使用状況レポートを生成する](Generate-a-usage-report-for-remote-clients-using-historical-data.md)  
 
 ## <a name="in-this-guide"></a>このガイドについて  
 このドキュメントでは、リモート アクセスの監視機能を利用するために、DirectAccess 管理コンソールおよびそれに対応する Windows PowerShell コマンドレット (リモート アクセス サーバーの役割の一部として提供されます) を使用する手順を説明します。  

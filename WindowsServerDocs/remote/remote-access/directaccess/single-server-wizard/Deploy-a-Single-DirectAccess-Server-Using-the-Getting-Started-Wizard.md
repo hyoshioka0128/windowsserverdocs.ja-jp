@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: eb0cf464-0668-40f8-8222-feb6bae6d3d5
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: d2bab7abd8acd958ccb0b0c1d64bc4245b61be36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: deb220ad5ee83e2849f962c588d6150892d990d6
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854073"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281791"
 ---
 # <a name="deploy-a-single-directaccess-server-using-the-getting-started-wizard"></a>作業の開始ウィザードを使用した単一の DirectAccess サーバーの展開
 
@@ -29,7 +28,7 @@ ms.locfileid: "59854073"
 ## <a name="before-you-begin-deploying-see-the-list-of-unsupported-configurations-known-issues-and-prerequisites"></a>展開を開始する前に、サポートされない構成、既知の問題、前提条件のリストを参照してください  
 次のトピックを使用すると、DirectAccess を展開する前に、前提条件とその他の情報を確認します。  
   
--   [DirectAccess がサポートされていない構成](../../../remote-access/directaccess/DirectAccess-Unsupported-Configurations.md)  
+-   [DirectAccess のサポートされない構成](../../../remote-access/directaccess/DirectAccess-Unsupported-Configurations.md)  
   
 -   [DirectAccess の展開の前提条件](../../../remote-access/directaccess/Prerequisites-for-Deploying-DirectAccess.md)  
   

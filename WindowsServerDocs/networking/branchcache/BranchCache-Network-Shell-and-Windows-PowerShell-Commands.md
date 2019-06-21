@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-bc
+ms.technology: networking-bc
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a0726752-0a78-472b-9667-2f91636c1b3b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4477b01f308e6340423540e260db7acf50f0185b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 13bb41937e50599727352339b69e8a20f9ed3524
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875403"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284017"
 ---
 # <a name="branchcache-network-shell-and-windows-powershell-commands"></a>BranchCache ネットワーク シェルと Windows PowerShell のコマンド
 

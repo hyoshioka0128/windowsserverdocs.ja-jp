@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d486735e-71fe-4443-9878-4b784cd588a7
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2bb01cc21bde80b6f5a54b1b0c495e7248420f5c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: db8d2e6ffe8e3fae4723eb78cb9212a64fdb5711
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844523"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283554"
 ---
 # <a name="plan-an-advanced-directaccess-deployment"></a>高度な DirectAccess 展開を計画する
 
@@ -26,11 +25,11 @@ ms.locfileid: "59844523"
 
 このトピックでは、広範囲の基本と高度な機能と Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行している単一の DirectAccess サーバーをデプロイするために必要な計画手順を示します。 計画フェーズは次のトピックで構成されます。  
   
--   [ステップ 1: 高度な DirectAccess インフラストラクチャを計画します。](da-adv-plan-s1-infrastructure.md)  
+-   [ステップ 1: 高度な DirectAccess インフラストラクチャを計画する](da-adv-plan-s1-infrastructure.md)  
   
     このフェーズでは、ネットワークとサーバーのトポロジ、ファイアウォールの設定、証明書の要件、ドメイン ネーム システム (DNS)、Active Directory、DirectAccess 管理サーバー、DirectAccess ネットワーク ロケーション サーバーを計画します。  
   
--   [手順 2:高度な DirectAccess 展開を計画します。](da-adv-plan-s2-deployments.md)  
+-   [手順 2:高度な DirectAccess 展開を計画する](da-adv-plan-s2-deployments.md)  
   
     このフェーズでは、DirectAccess インフラストラクチャとアプリケーション サーバーを含むクライアントとサーバーの展開を計画します。  
   

@@ -6,20 +6,19 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-sdn
+ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0254275a-0a77-40a9-b68a-1029284c03fe
 ms.author: pashort
 author: shortpatti
 ms.date: 03/19/2018
-ms.openlocfilehash: 24ec9e52be3acdfced35eae4fb5f98f16d8e18f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c87ccfba7b9ccc77646f58ade2853766524e67b1
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837953"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284039"
 ---
 # <a name="whats-new-in-hyper-v-network-virtualization-in-windows-server-2016"></a>新機能 Windows Server 2016 で HYPER-V ネットワーク仮想化の新機能
 

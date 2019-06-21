@@ -6,20 +6,19 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-nict
+ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: pashort
 author: shortpatti
 ms.date: 09/13/2018
-ms.openlocfilehash: d4dc7e0795d1f1d0b2a8bc18a6df12c683ef037d
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 5380cb2007bab1a296e0facc12885d47c6afc708
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812338"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282094"
 ---
 # <a name="create-a-new-nic-team-on-a-host-computer-or-vm"></a>ホスト コンピューターまたは VM に新しい NIC チームを作成します。
 

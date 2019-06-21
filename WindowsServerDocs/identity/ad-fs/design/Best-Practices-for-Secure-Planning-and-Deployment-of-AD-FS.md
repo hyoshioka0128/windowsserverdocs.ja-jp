@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4a2fb188bd0a46ebd54ae068e8e4eeb63788aaa0
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 95f9fd468df39525a2fe7d18647f399214486bbb
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501575"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280596"
 ---
 # <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>AD FS のセキュリティを考慮した設計と展開のベスト プラクティス
 
@@ -26,7 +26,7 @@ ms.locfileid: "66501575"
 
 -   **「階層 0」システムとして AD FS をセキュリティで保護します。** 
 
-    AD FS は基本的には、認証システムです。  したがって、ネットワーク上の他の id システムのような「階層 0」システムとして扱われますする必要があります。  [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material) Active Directory 管理階層モデルの詳細についてはします。 
+    AD FS は基本的には、認証システムです。  したがって、ネットワーク上の他の id システムのような「階層 0」システムとして扱われますする必要があります。  [Microsoft Docs](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material) Active Directory 管理階層モデルの詳細についてはします。 
 
 
 -   **セキュリティの構成ウィザードを使用して、フェデレーション サーバーとフェデレーション サーバー プロキシ コンピューターに AD FS 固有のセキュリティのベスト プラクティスを適用するには**  
@@ -117,11 +117,11 @@ ms.locfileid: "66501575"
 次のセキュリティのベスト プラクティスは、これらのデータベース テクノロジを使用して AD FS の設計と展開でデータを管理する Microsoft SQL Server® または Windows Internal Database (WID) の使用に固有です。  
   
 > [!NOTE]  
-> これらの推奨事項は SQL Server 製品のセキュリティ ガイダンスを強化するためのものであって、取って代わるものではありません。 セキュリティで保護された SQL Server のインストール計画の詳細については、次を参照してください。[セキュリティで保護された SQL インストールにおけるセキュリティの考慮事項](https://go.microsoft.com/fwlink/?LinkID=139831)(https://go.microsoft.com/fwlink/?LinkID=139831)します。  
+> これらの推奨事項は SQL Server 製品のセキュリティ ガイダンスを強化するためのものであって、取って代わるものではありません。 セキュリティで保護された SQL Server のインストール計画の詳細については、次を参照してください。[セキュリティで保護された SQL インストールにおけるセキュリティの考慮事項](https://go.microsoft.com/fwlink/?LinkID=139831)(https://go.microsoft.com/fwlink/?LinkID=139831) します。  
   
 -   **常に物理的にセキュリティで保護されたネットワーク環境でファイアウォールの背後にある SQL Server をデプロイします。**  
   
-    SQL Server のインストールを直接インターネットに公開しないでください。 データ センター内のコンピューターのみでは、AD FS をサポートする、SQL server のインストールに到達できる必要があります。 詳細については、次を参照してください。[セキュリティのベスト プラクティスのチェックリスト](https://go.microsoft.com/fwlink/?LinkID=189229)(https://go.microsoft.com/fwlink/?LinkID=189229)します。  
+    SQL Server のインストールを直接インターネットに公開しないでください。 データ センター内のコンピューターのみでは、AD FS をサポートする、SQL server のインストールに到達できる必要があります。 詳細については、次を参照してください。[セキュリティのベスト プラクティスのチェックリスト](https://go.microsoft.com/fwlink/?LinkID=189229)(https://go.microsoft.com/fwlink/?LinkID=189229) します。  
   
 -   **組み込みの既定のシステム サービス アカウントを使用する代わりにサービス アカウントには、SQL Server を実行します。**  
   
@@ -129,11 +129,11 @@ ms.locfileid: "66501575"
   
 -   **SQL Server のアクセス領域を最小限に抑えます。**  
   
-    必要な SQL Server エンドポイントのみを有効にしてください。 SQL Server では、既定で組み込みの TCP エンドポイント (削除不可) が 1 つ提供されています。 AD FS、Kerberos 認証の場合は、この TCP エンドポイントを有効にする必要があります。 現状の TCP エンドポイントを確認してユーザー定義の別の TCP ポートが SQL のインストールに追加されていないか調べるには、Transact-SQL (T-SQL) セッションで "SELECT * FROM sys.tcp_endpoints" クエリ ステートメントを使用できます。 SQL Server エンドポイントの構成の詳細については、次を参照してください[How To:。複数の TCP ポートでリッスンするようにデータベース エンジンの構成](https://go.microsoft.com/fwlink/?LinkID=189231)(https://go.microsoft.com/fwlink/?LinkID=189231)します。  
+    必要な SQL Server エンドポイントのみを有効にしてください。 SQL Server では、既定で組み込みの TCP エンドポイント (削除不可) が 1 つ提供されています。 AD FS、Kerberos 認証の場合は、この TCP エンドポイントを有効にする必要があります。 現状の TCP エンドポイントを確認してユーザー定義の別の TCP ポートが SQL のインストールに追加されていないか調べるには、Transact-SQL (T-SQL) セッションで "SELECT * FROM sys.tcp_endpoints" クエリ ステートメントを使用できます。 SQL Server エンドポイントの構成の詳細については、次を参照してください[How To:。複数の TCP ポートでリッスンするようにデータベース エンジンの構成](https://go.microsoft.com/fwlink/?LinkID=189231)(https://go.microsoft.com/fwlink/?LinkID=189231) します。  
   
 -   **SQL ベースの認証を使用しないでください。**  
   
-    ネットワークでパスワードをクリア テキストとして転送したり、構成設定にパスワードを保存したりすることを避けるために、SQL Server インストールで Windows 認証のみを使用してください。 SQL Server 認証は以前の認証モードです。 SQL Server 認証の使用時に構造化照会言語 (SQL) ログイン資格証明書 (SQL ユーザー名とパスワード) を保存することは推奨されません。 詳細については、次を参照してください。[認証モード](https://go.microsoft.com/fwlink/?LinkID=189232)(https://go.microsoft.com/fwlink/?LinkID=189232)します。  
+    ネットワークでパスワードをクリア テキストとして転送したり、構成設定にパスワードを保存したりすることを避けるために、SQL Server インストールで Windows 認証のみを使用してください。 SQL Server 認証は以前の認証モードです。 SQL Server 認証の使用時に構造化照会言語 (SQL) ログイン資格証明書 (SQL ユーザー名とパスワード) を保存することは推奨されません。 詳細については、次を参照してください。[認証モード](https://go.microsoft.com/fwlink/?LinkID=189232)(https://go.microsoft.com/fwlink/?LinkID=189232) します。  
   
 -   **SQL のインストールで追加のチャネルのセキュリティの必要性を慎重に評価します。**  
   

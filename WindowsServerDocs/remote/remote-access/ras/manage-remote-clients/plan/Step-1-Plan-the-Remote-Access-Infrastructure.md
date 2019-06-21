@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a1ce7af5-f3fe-4fc9-82e8-926800e37bc1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f0a7d19ff571a5172d2dbd9a3d11584581c00370
-ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
+ms.openlocfilehash: 9a3ee39736fb4ee2eb41162db27fed2299c204e5
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66805034"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281193"
 ---
 # <a name="step-1-plan-the-remote-access-infrastructure"></a>手順 1、リモート アクセス インフラストラクチャを計画します。
 
@@ -78,7 +77,7 @@ ms.locfileid: "66805034"
 ### <a name="plan-isatap-requirements"></a>ISATAP の要件を計画します。  
 ISATAP は、DirectAccess 管理サーバーがインターネット上に存在する DirectAccess クライアントに接続できるように DirectAccessclients のリモート管理に必要です。 ISATAP は、企業ネットワーク上の IPv4 リソースへの DirectAccess クライアント コンピューターによって開始された接続をサポートする必要はありません。 この目的には、NAT64/DNS64 が使用されます。 デプロイには、ISATAP が必要とする場合、要件を識別するために、次の表を使用します。  
   
-|ISATAP の展開シナリオ|必要条件|  
+|ISATAP の展開シナリオ|要件|  
 |---------------|--------|  
 |既存のネイティブ IPv6 イントラネット (ISATAP は必要ありません)|既存のネイティブ IPv6 インフラストラクチャにリモート アクセスの展開中に組織のプレフィックスを指定して、リモート アクセス サーバーは構成しない自体、ISATAP ルーターとして。 次の操作を行います。<br/><br/>1. DirectAccess クライアントがイントラネットから到達可能であることを確認するには、リモート アクセス サーバーに既定のルート トラフィックが転送されるようは、IPv6 ルーティングを変更する必要があります。 イントラネットに IPv6 アドレス空間は、単一 48 ビットの IPv6 のアドレス プレフィックス以外のアドレスを使用している場合は、デプロイ時に関連する組織の IPv6 プレフィックスを指定する必要があります。<br/>2. IPv6 インターネットに現在接続されている場合をする必要があります、リモート アクセス サーバーに転送されますので、既定のルート トラフィックを構成し、適切な接続とルートで構成、リモート アクセス サーバー、既定のルートをトラフィックは、IPv6 インターネットに接続されているデバイスに転送されます。|  
 |既存の ISATAP の展開|既存の ISATAP インフラストラクチャがある場合は、展開中に、組織の 48 ビット プレフィックスを求められ、リモート アクセス サーバーは構成しない自体、ISATAP ルーターとして。 DirectAccess クライアントがイントラネットから到達可能であることを確認するには、リモート アクセス サーバーに既定のルート トラフィックを転送できるように、IPv6 ルーティング インフラストラクチャを変更する必要があります。 この変更は、既存の ISATAP ルーターがするイントラネット クライアントする必要があります既に転送するデフォルトのトラフィックで実行する必要があります。|  

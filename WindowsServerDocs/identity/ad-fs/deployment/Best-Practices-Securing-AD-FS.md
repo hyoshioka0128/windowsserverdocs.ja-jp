@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 958bf8455d03ddc04395fafe83e70a49c7659c96
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: a7f4f29b37793b45a614bd592feddb339dd05c3d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192443"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280610"
 ---
 ## <a name="best-practices-for-securing-active-directory-federation-services"></a>Active Directory フェデレーション サービスをセキュリティで保護するためのベスト プラクティス
 
@@ -109,7 +109,7 @@ AD FS と WAP をインストールすると、プロキシとフェデレーシ
 3.  輻輳制御の設定を変更するには、その既定値から '<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />'。
 4.  ファイルを保存し、閉じます。
 5.  'Net stop adfssrv'、'net start adfssrv' を実行して、AD FS サービスを再起動します。
-参考までに、この機能に関するガイダンスについては、「[ここ](https://msdn.microsoft.com/en-us/library/azure/dn528859.aspx )します。
+参考までに、この機能に関するガイダンスについては、「[ここ](https://msdn.microsoft.com/library/azure/dn528859.aspx )します。
 
 ### <a name="standard-http-request-checks-at-the-proxy"></a>プロキシで標準の HTTP 要求を確認します
 プロキシには、すべてのトラフィックに対して、次の標準チェックも実行します。

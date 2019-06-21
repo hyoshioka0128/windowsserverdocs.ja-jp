@@ -9,12 +9,12 @@ manager: brianlic
 ms.author: jgerend
 ms.date: 06/04/2019
 description: IT プロフェッショナル向け Windows Server のオンプレミスの storage のドキュメントで新規および更新されたトピック。
-ms.openlocfilehash: 3245e6bc5320cc0ffae01817a8f7b9caeaa6c685
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 442d640809d3ae9cf4a11feb646fbbd566e6e3fa
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501489"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284456"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server のストレージ トピックの変更履歴
 
@@ -73,10 +73,10 @@ ms.locfileid: "66501489"
 |---                                                         |---           |
 |[入れ子の回復性](storage-spaces/nested-resiliency.md)    | 新しいトピックです。    |
 |[記憶域の移行サービスの既知の問題](storage-migration-service/known-issues.md)   | 新しいトピックです。    |
-|[DFS レプリケーション:よく寄せられる質問 (FAQ)](dfs-replication/dfsr-faq.md)|移行、[以前のバージョン](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/)ライブラリ|
-|[SYSVOL のレプリケーションを DFS レプリケーションに移行する](dfs-replication/migrate-sysvol-to-dfsr.md)|移行、[以前のバージョン](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)ライブラリ|
-|[SMB:ファイルとプリンターの共有ポートが開いていること](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|移行、[以前のバージョン](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)ライブラリ|
-|[ボリューム シャドウ コピー サービス](file-server/volume-shadow-copy-service.md)|移行、[以前のバージョン](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)ライブラリ|
+|[DFS レプリケーション:よく寄せられる質問 (FAQ)](dfs-replication/dfsr-faq.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/)ライブラリ|
+|[SYSVOL のレプリケーションを DFS レプリケーションに移行する](dfs-replication/migrate-sysvol-to-dfsr.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)ライブラリ|
+|[SMB:ファイルとプリンターの共有ポートが開いていること](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)ライブラリ|
+|[ボリューム シャドウ コピー サービス](file-server/volume-shadow-copy-service.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)ライブラリ|
 
 ## <a name="october-2018"></a>2018 年 10 月
 

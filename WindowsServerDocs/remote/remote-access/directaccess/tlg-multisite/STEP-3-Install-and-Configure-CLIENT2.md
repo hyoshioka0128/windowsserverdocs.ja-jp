@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f009fdd1-94e6-4ccb-8c6e-609a5394db53
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: d19f204e139433d11cf674c4ec39a134cde7eefa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2c7ff4953fd4369340f55f40f93cfc01d4240b26
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813173"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281466"
 ---
 # <a name="step-3-install-and-configure-client2"></a>手順 3 のインストールおよび CLIENT2 の構成
 
@@ -61,7 +60,7 @@ Windows 7 オペレーティング システムを構成する場合は、をク
   
 5.  ユーザー名とパスワードを求められたら、ユーザー名と、User1 のドメイン アカウントのパスワードを入力し、 **OK**します。  
   
-6.  corp.contoso.com ドメインへの参加を知らせるダイアログ ボックスが表示されたら、**[OK]** をクリックします。  
+6.  corp.contoso.com ドメインへの参加を知らせるダイアログ ボックスが表示されたら、 **[OK]** をクリックします。  
   
 7.  コンピューターを再起動し、をクリックすることを求めるダイアログ ボックスが表示されたら**OK**します。  
   

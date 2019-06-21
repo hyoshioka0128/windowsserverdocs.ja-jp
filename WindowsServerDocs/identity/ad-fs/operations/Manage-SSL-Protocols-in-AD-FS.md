@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e834c50965c3af569dbe3756d677ec4cb2372542
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c1153cd81185dcfe83d291161a85481e5a7d0700
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883923"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280546"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>AD FS の SSL や TLS プロトコルおよび暗号スイートを管理します。
 次のドキュメントと AD FS によって使用される暗号を無効にして特定の TLS/SSL プロトコルを有効にする方法に関する情報を提供します
@@ -256,7 +256,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Cryptography\Configuration\L
 
 暗号スイートを有効にするには、関数の複数行文字列値のキーに文字列値を追加します。  たとえば、TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P521 を有効にする場合しは追加文字列にします。
 
-スイートをサポートされている暗号の一覧を参照してください[in TLS/SSL (Schannel SSP) 暗号スイート](https://msdn.microsoft.com/en-us/library/windows/desktop/aa374757.aspx)します。  このドキュメントでは、既定でサポートされますが、既定で無効になっていると有効になっているスイートのテーブルを提供します。  暗号スイートを参照してください優先順位を付ける[Schannel 暗号スイートの優先順位を付ける](https://msdn.microsoft.com/en-us/library/windows/desktop/bb870930.aspx)します。
+スイートをサポートされている暗号の一覧を参照してください[in TLS/SSL (Schannel SSP) 暗号スイート](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx)します。  このドキュメントでは、既定でサポートされますが、既定で無効になっていると有効になっているスイートのテーブルを提供します。  暗号スイートを参照してください優先順位を付ける[Schannel 暗号スイートの優先順位を付ける](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx)します。
 
 ## <a name="enabling-strong-authentication-for-net-applications"></a>.NET アプリケーションの強力な認証を有効にします。
 .NET Framework の 3.5/4.0/4.5.x アプリケーションは、SchUseStrongCrypto のレジストリ キーを有効にすると、TLS 1.2 に既定のプロトコルを切り替えることができます。  このレジストリ キーには、TLS 1.2 を使用する .NET アプリケーションが強制されます。
@@ -280,7 +280,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Cryptography\Configuration\L
 
 ## <a name="additional-information"></a>追加情報
 
-- [TLS/SSL (Schannel SSP) の暗号スイート](https://msdn.microsoft.com/en-us/library/windows/desktop/aa374757.aspx)
-- [Windows 8.1 での TLS 暗号スイート](https://msdn.microsoft.com/en-us/library/windows/desktop/mt767781.aspx)
-- [優先順位を付ける Schannel 暗号スイート](https://msdn.microsoft.com/en-us/library/windows/desktop/bb870930.aspx)
+- [TLS/SSL (Schannel SSP) の暗号スイート](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx)
+- [Windows 8.1 での TLS 暗号スイート](https://msdn.microsoft.com/library/windows/desktop/mt767781.aspx)
+- [優先順位を付ける Schannel 暗号スイート](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx)
 - [暗号およびその他の謎めいた語で言うと](https://blogs.technet.microsoft.com/askds/2015/12/08/speaking-in-ciphers-and-other-enigmatic-tonguesupdate/)

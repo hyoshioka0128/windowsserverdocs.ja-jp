@@ -5,18 +5,17 @@ keywords: プライバシー, GDPR
 ms.custom: na
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- techgroup-security
+ms.technology: techgroup-security
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
-ms.openlocfilehash: be9509de0291924bb95733f995b447230bb75214
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1c374c00573e87594eeeab620face9ea9acaa531
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870133"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284203"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Windows server、一般データ保護規則 (GDPR) 体験を開始 
 
@@ -96,11 +95,11 @@ GDPR では、個人データと処理システムを保護する適切な技術
 
 こうした脅威は、保有する個人データや機密データの維持管理に対するリスクになるだけでなく、ビジネス全体的に影響する重大なリスクにもなります。 McKinsey、Ponemon Institute、Verizon、および Microsoft から最新のデータを考慮してください。
 
-- GDPR で予測されている報告に基づくと、データ侵害にかかる平均コストは 350 万ドルに達します 
+- GDPR で予測されている報告に基づくと、データ侵害にかかる平均コストは 350 万ドルに達します
 
-- これらの侵害の 63% には、脆弱なパスワードや盗難にあったパスワードが関連しています。GDPR ではこうした問題の解決を望んでいます 
+- これらの侵害の 63% には、脆弱なパスワードや盗難にあったパスワードが関連しています。GDPR ではこうした問題の解決を望んでいます
 
-- 毎日 300,000 件以上の新しいマルウェア サンプルが作成され、拡散されています。データ保護に対応するための作業はますます難しくなっています 
+- 毎日 300,000 件以上の新しいマルウェア サンプルが作成され、拡散されています。データ保護に対応するための作業はますます難しくなっています
 
 最近のランサムウェア攻撃は、1 回、インターネットの黒の足かせと呼ばれるとは異なり攻撃者は詳細の致命的な影響を及ぼします支払いに余裕がある大きなターゲットの後にします。 GDPR には、システムは、デスクトップ、ラップトップ、豊富なターゲット実際に個人情報や機密データにはが含まれているを含むように罰則が含まれています。
 
@@ -112,7 +111,7 @@ GDPR では、個人データと処理システムを保護する適切な技術
 
 Microsoft がこれらの原則を Microsoft の CEO Satya Nadella は、最近の先に対して強固は残っています 
 
-> "_操作によっては、一貫性のある世界が変化し続けるし、ビジネス要件の進化、: 顧客の需要のセキュリティとプライバシー。_"
+> "_操作によっては、一貫性のある世界が変化し続けるし、ビジネス要件の進化、: 顧客の需要のセキュリティとプライバシー。_ "
 
 作成へのアクセス、処理、格納および個人として修飾データを管理する物理および仮想サーバーの役割について、GDPR に準拠する作業を行うと、GDPR の下で機密データが重要です。 Windows Server では、個人データを保護する適切な技術的および組織的なセキュリティ対策を実装する GDPR 要件の遵守に役立つ機能を提供します。
 
@@ -173,7 +172,7 @@ Windows Server 2016 により、id、オペレーティング システム、お
 
 - **ソーシャル エンジニア リング研究します。** ほとんどの資格情報の脅威は、組織を調査して、起動し、ソーシャル エンジニア リングを通じて行われます。 たとえば、攻撃者は、組織のネットワークにアクセス権を持つセキュリティ侵害の正当なアカウント (ただし、必ずしも管理者特権でのアカウント) への電子メール フィッシング攻撃を実行できます。 攻撃者は、ネットワーク上のさらなる調査を実行し、管理タスクを実行できる特権のアカウントを識別するためにし、これらの有効なアカウントを使用します。 
 
-- **高度な特権を持つアカウントを活用します。** ネットワークで、通常、管理者特権以外のユーザー アカウントでも攻撃者は、昇格されたアクセス許可を持つアカウントにアクセスできます。 実行の一般的な方法の 1 つは、Pass the Hash またはトークン パス攻撃を使用してそのためです。 - Pass-the-hash とその他の資格情報窃盗手法の詳細については、参照、 [-Pass-the-hash (PtH) ページ](https://technet.microsoft.com/dn785092.aspx)します。
+- **高度な特権を持つアカウントを活用します。** ネットワークで、通常、管理者特権以外のユーザー アカウントでも攻撃者は、昇格されたアクセス許可を持つアカウントにアクセスできます。 実行の一般的な方法の 1 つは、Pass the Hash またはトークン パス攻撃を使用してそのためです。 \- Pass-the-hash とその他の資格情報窃盗手法の詳細については、参照、 [-Pass-the-hash (PtH) ページ](https://technet.microsoft.com/dn785092.aspx)します。
 
 特定し、(新しいメソッドが毎日作成) で特権 id を侵害する攻撃者が使用できるその他の方法はもちろんあります。 したがって、ユーザーが攻撃者の特権 id にアクセスする機能を削減する最小特権アカウントにログオンするためのプラクティスを確立することが重要です。 以下のセクションでは、Windows Server がこれらのリスクを軽減できる機能を説明します。
 
@@ -194,7 +193,7 @@ DNS 管理者の資格情報が盗まれた場合は、このシナリオを考�
 
 説明したとおり、 [Windows 資格情報盗難の軽減策のガイド](https://www.microsoft.com/en-us/download/confirmation.aspx?id=54095)、 
 
-> "_ツールと手法の犯罪者はそれを使用して資格情報の盗難を実行し、再利用する攻撃の向上、悪意のある攻撃者がこれを簡単に検索が目標を達成するためにします。資格情報の盗難は多くの場合に、効果的な軽減策人、プロセス、およびテクノロジに対応する包括的なアプローチが必要であるために、運用プラクティスやユーザーの資格情報の公開に依存します。これらの攻撃を展開したり、組織は攻撃者が自由に移動しないようにしてで検出する方針を導入する侵害を迅速に含める必要がありますので、アクセスを永続化システムを侵害した後に資格情報を盗む攻撃者に依存するさらに、侵害されたネットワーク。_"
+> "_ツールと手法の犯罪者はそれを使用して資格情報の盗難を実行し、再利用する攻撃の向上、悪意のある攻撃者がこれを簡単に検索が目標を達成するためにします。資格情報の盗難は多くの場合に、効果的な軽減策人、プロセス、およびテクノロジに対応する包括的なアプローチが必要であるために、運用プラクティスやユーザーの資格情報の公開に依存します。これらの攻撃を展開したり、組織は攻撃者が自由に移動しないようにしてで検出する方針を導入する侵害を迅速に含める必要がありますので、アクセスを永続化システムを侵害した後に資格情報を盗む攻撃者に依存するさらに、侵害されたネットワーク。_ "
 
 Windows Server の重要な設計の考慮対象として資格情報の盗難の軽減が、具体的には、資格情報を派生します。 Credential Guard は、単にしようとしてのではなく、ハードウェア ベースの分離の攻撃を排除するために設計されています。 Windows での大きなアーキテクチャ変更の実装によって派生資格情報の盗難および再利用に対して大幅に向上した、セキュリティを提供しますそれらを防御します。
 
@@ -307,11 +306,11 @@ Windows Server 2016 は、仮想マシンで BitLocker® ドライブ暗号化�
 仮想化環境での保護を改善する方法の 1 つでのみ機能するために必要な特定のシステムと通信する Vm をできるようにネットワークを分割することです。 たとえば、アプリケーションがインターネットに接続する必要がある場合を分割できます電源をオフ外部の攻撃者からのターゲットとしてこれらのシステムを排除すること。 Windows Server 2016 でソフトウェア定義ネットワーク (SDN) には、ネットワークの内外からの攻撃からアプリケーションを保護できるセキュリティ ポリシーを動的に作成できるようにする分散ネットワーク ファイアウォールが含まれています。 この分散ネットワーク ファイアウォールは、ネットワークでのアプリケーションの分離を有効にして、セキュリティ レイヤーを追加します。 ポリシーは任意の場所、– 必要に応じて、VM 間のトラフィック、VM からホストへのトラフィック、またはインターネットへの VM トラフィックを分離する、仮想ネットワーク インフラストラクチャ全体で適用できますが侵害された個別のシステムまたはプログラムによって全体複数のサブネット。 Windows Server 2016 ソフトウェア定義ネットワーク機能を使用して、ルーティングまたは Microsoft 以外の仮想アプライアンスへの着信トラフィックをミラー化することもできます。 たとえば、スパムの保護をフィルタ リングの Barracuda 仮想アプライアンス経由のすべての電子メール トラフィックを送信することができます。 これによりをレイヤーに簡単に追加のセキュリティでオンプレミスまたはクラウドで。
 
 ### <a name="other-gdpr-considerations-for-servers"></a>サーバーの他の GDPR に関する考慮事項
-GDPR が個人データ侵害が場合、侵害通知の明示的な要件が含まれています"_偶発的なまたは違法な廃棄、損失、変更の不正な開示またはへのアクセス、個人につながるセキュリティの侵害データは、送信または格納されている、それ以外の場合を処理します。_"  当然ながら、最初に、侵害を検出できない場合、72 時間以内に厳格な GDPR 通知要件を満たす前方に移動する開始することはできません。
+GDPR が個人データ侵害が場合、侵害通知の明示的な要件が含まれています"_偶発的なまたは違法な廃棄、損失、変更の不正な開示またはへのアクセス、個人につながるセキュリティの侵害データは、送信または格納されている、それ以外の場合を処理します。_ "  当然ながら、最初に、侵害を検出できない場合、72 時間以内に厳格な GDPR 通知要件を満たす前方に移動する開始することはできません。
 
 Windows セキュリティ センターのホワイト ペーパーで説明したように[侵害の投稿。高度な脅威を処理します。](http://wincom.blob.core.windows.net/documents/Post_Breach_Dealing_with_Advanced_Threats_Whitepaper.pdf)
 
-> "_侵害後、前の侵害とは異なり、侵害が既に発生して – フライト レコーダーと犯罪シーン調査担当者 (CSI) として機能する前提としています。侵害後はセキュリティ チームの情報を提供し、ツールセットに必要なを識別する調査し、それ以外の場合、検出されない引き続き攻撃とレーダーの範囲の下に応答します。_"
+> "_侵害後、前の侵害とは異なり、侵害が既に発生して – フライト レコーダーと犯罪シーン調査担当者 (CSI) として機能する前提としています。侵害後はセキュリティ チームの情報を提供し、ツールセットに必要なを識別する調査し、それ以外の場合、検出されない引き続き攻撃とレーダーの範囲の下に応答します。_ "
 
 このセクションでは、Windows Server が役立つ GDPR 侵害通知義務を満たす方法に注目します。 Microsoft が収集され、特典の分析に使用可能な基になる脅威データの理解が起動方法についてで Windows Defender Advanced Threat Protection (ATP)、そのデータを指定できます重要です。
 
@@ -354,15 +353,15 @@ ATA は、特権 id を侵害しようとしています。 攻撃者を検出�
 
 ## <a name="related-content-for-associated-windows-server-2016-solutions"></a>関連付けられている Windows Server 2016 のソリューションの関連するコンテンツ
 
-- **Windows Defender ウイルス対策:** https://www.youtube.com/watch?v=P1aNEy09NaIと https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10
+- **Windows Defender ウイルス対策:** https://www.youtube.com/watch?v=P1aNEy09NaI と https://docs.microsoft.com/windows/threat-protection/windows-defender-antivirus/windows-defender-antivirus-in-windows-10
 
-- **Advanced Threat Protection の Windows Defender:** https://www.youtube.com/watch?v=qxeGa3pxIwgと https://docs.microsoft.com/windows/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection
+- **Advanced Threat Protection の Windows Defender:** https://www.youtube.com/watch?v=qxeGa3pxIwg と https://docs.microsoft.com/windows/threat-protection/windows-defender-atp/configure-server-endpoints-windows-defender-advanced-threat-protection
 
-- **Windows Defender Device Guard:** https://www.youtube.com/watch?v=F-pTkesjkhIと https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide
+- **Windows Defender Device Guard:** https://www.youtube.com/watch?v=F-pTkesjkhI と https://docs.microsoft.com/windows/device-security/device-guard/device-guard-deployment-guide
 
-- **Windows Defender Credential Guard:** https://www.youtube.com/watch?v=F-pTkesjkhIと https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard
+- **Windows Defender Credential Guard:** https://www.youtube.com/watch?v=F-pTkesjkhI と https://docs.microsoft.com/windows/access-protection/credential-guard/credential-guard
 
-- **制御フロー ガード:** https://msdn.microsoft.com/en-us/library/windows/desktop/mt637065(v=vs.85).aspx
+- **制御フロー ガード:** https://msdn.microsoft.com/library/windows/desktop/mt637065(v=vs.85).aspx
 
 - **セキュリティおよび保証します。** https://docs.microsoft.com/windows-server/security/security-and-assurance
 

@@ -9,12 +9,12 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e62032533b15ec3d93896d242273612faafdca58
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 1e72556f9a630e188b59722e09650f9e48fb6852
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444101"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280468"
 ---
 # <a name="ad-fs-requirements"></a>AD FS の要件
 
@@ -22,7 +22,7 @@ ms.locfileid: "66444101"
 
 AD FS を展開するための要件を次に示します。  
   
--   5. コマンド プロンプトで、「[ipconfig /all](ad-fs-requirements.md#BKMK_1)」と入力して Enter キーを押します。  
+-   5\. コマンド プロンプトで、「[ipconfig /all](ad-fs-requirements.md#BKMK_1)」と入力して Enter キーを押します。  
   
 -   [ハードウェア要件](ad-fs-requirements.md#BKMK_2)  
   
@@ -110,7 +110,7 @@ AD FS 構成データベースを SQL Server を使用している場合は、�
   
 -   エクストラネット アクセスの場合、Web アプリケーション プロキシ役割サービスをデプロイする必要があります\-リモート アクセス サーバーの役割の一部です。 
 
--   サード パーティ製のプロキシをサポートする必要があります、 [MS ADFSPIP プロトコル](https://msdn.microsoft.com/en-us/library/dn392811.aspx)AD FS プロキシとしてサポートされます。  サード パーティの一覧の仕入先を参照してください、 [FAQ](AD-FS-FAQ.md#what-third-party-proxies-are-available-for-ad-fs-that-support-ms-adfspip)します。
+-   サード パーティ製のプロキシをサポートする必要があります、 [MS ADFSPIP プロトコル](https://msdn.microsoft.com/library/dn392811.aspx)AD FS プロキシとしてサポートされます。  サード パーティの一覧の仕入先を参照してください、 [FAQ](AD-FS-FAQ.md#what-third-party-proxies-are-available-for-ad-fs-that-support-ms-adfspip)します。
 
 -   AD FS 2016 では、Windows Server 2016 での Web アプリケーション プロキシ サーバーが必要です。  ダウンレベルのプロキシは、2016年ファーム動作レベルで実行されている AD FS 2016 ファームを構成できません。
   

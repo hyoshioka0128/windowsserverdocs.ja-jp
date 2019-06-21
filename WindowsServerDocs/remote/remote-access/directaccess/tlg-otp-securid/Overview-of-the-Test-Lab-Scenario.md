@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ce584811-b209-48fe-ab2b-4c399bd0bd79
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ebf19d75928e2a19732f2c6c4acaebbf8b34f25f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 944a38438d81bfffcff002336a5eb0427ab9e5ea
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871163"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283153"
 ---
 # <a name="overview-of-the-test-lab-scenario"></a>テスト ラボのシナリオの概要
 

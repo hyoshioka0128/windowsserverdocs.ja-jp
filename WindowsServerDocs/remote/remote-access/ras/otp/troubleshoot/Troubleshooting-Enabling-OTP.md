@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b58252ca-4c1d-4664-a3c4-7301e2121517
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: d789671a0425974e560e5f4a43ebcba4c1741c76
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 55314f3bd5e3500847beed256580b1924521abc9
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819463"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280794"
 ---
 # <a name="troubleshooting-enabling-otp"></a>OTP の有効化のトラブルシューティング
 

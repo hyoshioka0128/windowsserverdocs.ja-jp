@@ -6,12 +6,12 @@ contributor: maertendMSFT
 ms.product: w10
 author: maertendMSFT
 title: Windows の OpenSSH サーバー構成
-ms.openlocfilehash: 8e6476e4005bd5bbc2d40c8a59d39510ca1beb70
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7eff3d3e1af67c9daf7a68c67c3609c0ee89fc93
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827283"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280036"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>Windows 10 1809 および Server 2019 # の OpenSSH サーバー構成
 
@@ -28,7 +28,7 @@ OpenSSH でオンラインの構成オプションの詳細なドキュメント
 コマンド シェル | コマンドを使用するには
 ------------- | -------------- 
 コマンド | path
-PowerShell | $env:path: \path
+PowerShell | $env:path: パス
 
 構成、既定 ssh シェルは、Windows レジストリにして行います DefaultShell 文字列値で実行可能ファイルを Computer\HKEY_LOCAL_MACHINE\SOFTWARE\OpenSSH シェルへの完全なパスを追加します。 
 
@@ -53,7 +53,7 @@ Windows、sshd が %programdata%\ssh\sshd_config から既定では、構成デ�
 ベースのドメイン ユーザーまたはグループと規則をユーザー/グループを構成するときに、次の形式を使用:``` user?domain* ```します。
 Windows ドメインのプリンシパルを指定するための形式の複数の許可が、Linux の標準のパターンと競合する多くします。 そのため、* Fqdn についての説明に追加されます。 また、このアプローチを使用して"?"の代わりに @ との競合を回避するために、username@host形式。 
 
-グループのユーザー/グループの作業とインターネットに接続されたアカウントは、常に、ローカルのアカウント名 (ないドメイン部分、Unix の標準的な名前に似ています) に解決されます。 ドメイン ユーザーとグループに厳密に解決[NameSamCompatible](https://docs.microsoft.com/en-us/windows/desktop/api/secext/ne-secext-extended_name_format) domain_short_name\user_name 形式。 すべてのユーザー/グループ ベースの構成ルールは、この形式に従う必要があります。
+グループのユーザー/グループの作業とインターネットに接続されたアカウントは、常に、ローカルのアカウント名 (ないドメイン部分、Unix の標準的な名前に似ています) に解決されます。 ドメイン ユーザーとグループに厳密に解決[NameSamCompatible](https://docs.microsoft.com/windows/desktop/api/secext/ne-secext-extended_name_format) domain_short_name\user_name 形式。 すべてのユーザー/グループ ベースの構成ルールは、この形式に従う必要があります。
 
 ドメイン ユーザーおよびグループの例 
 

@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a09ec1a9-38e1-4c6c-8213-cf5b6ae44043
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 17da676e1d37562213422995222bdabcd93bd81c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b4528ece4e1e6ff8f7107a736a43c4bd3c8037c4
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877013"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283353"
 ---
 # <a name="directaccess-cluster-nlb-test-lab-configuration-requirements"></a>DirectAccess クラスター/NLB テスト ラボの構成要件
 

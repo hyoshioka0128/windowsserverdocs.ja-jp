@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0e7d1f5b-c939-47ca-892f-5bb285027fbc
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 95fc9cbef454c8f36b1921eb7f570138bf124256
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 712ef2fb5ada3f1890d0cdeac33bed1c0fb82e41
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446941"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282853"
 ---
 # <a name="step-1-configure-the-remote-access-infrastructure"></a>手順 1 は、リモート アクセス インフラストラクチャを構成します。
 

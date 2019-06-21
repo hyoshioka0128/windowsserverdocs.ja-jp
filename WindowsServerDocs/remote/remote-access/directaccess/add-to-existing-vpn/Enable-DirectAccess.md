@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: bf9aaf36-fc3c-4007-bba9-c0b752774601
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b34048131e9b5467be08fe34b51090088b0b82a6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1d6cc9db9bdc0eb2a753e3cffb8c698727357009
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851193"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281855"
 ---
 # <a name="enable-directaccess"></a>DirectAccess を有効にする
 

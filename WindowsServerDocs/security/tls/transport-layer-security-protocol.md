@@ -13,12 +13,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 05/16/2018
-ms.openlocfilehash: 77e3ee9d89bff7ab6e95ea47ffa141e6e1004ba4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0a3b241fe0d2a61361d551b7f515507ad55d71cd
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853023"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284237"
 ---
 # <a name="transport-layer-security-protocol"></a>トランスポート層セキュリティ プロトコル
 
@@ -41,7 +41,7 @@ TLS と SSL プロトコルは、2 つのレイヤーに分割できます。 �
 **TLS と SSL プロトコル レイヤー**
 
 
-Schannel SSP では、変更しなくても TLS と SSL プロトコルを実装します。 SSL プロトコルが、独自には、Internet Engineering Task Force は、TLS の公開仕様が生成されます。 Windows のバージョンでどの TLS または SSL のバージョンがサポートされているは、次を参照してください。 [in TLS/SSL (Schannel SSP) プロトコル](https://msdn.microsoft.com/en-us/library/windows/desktop/mt808159(v=vs.85).aspx)します。 次の表では、TLS のバージョンごとの仕様を示します。 各仕様には、に関する情報が含まれています。
+Schannel SSP では、変更しなくても TLS と SSL プロトコルを実装します。 SSL プロトコルが、独自には、Internet Engineering Task Force は、TLS の公開仕様が生成されます。 Windows のバージョンでどの TLS または SSL のバージョンがサポートされているは、次を参照してください。 [in TLS/SSL (Schannel SSP) プロトコル](https://msdn.microsoft.com/library/windows/desktop/mt808159(v=vs.85).aspx)します。 次の表では、TLS のバージョンごとの仕様を示します。 各仕様には、に関する情報が含まれています。
 
 -   TLS レコード プロトコル
 

@@ -9,16 +9,16 @@ manager: daveba
 ms.author: jgerend
 ms.date: 03/08/2019
 description: Windows Server 2016 のフェールオーバー クラスタ リングのドキュメントで新規および更新されたトピック
-ms.openlocfilehash: 4044475995175ea527a1ecc487bc0e1cc6f75003
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d6dd5c98b14134d42901fad79a375298ad0e7e23
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861223"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280179"
 ---
 # <a name="change-history-for-failover-clustering-topics"></a>フェールオーバー クラスタリングの変更履歴のトピック
 
->適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+>適用対象:Windows Server 2019、Windows Server 2016
 
 このトピックでは、新規および更新されたトピックを示しています、[フェールオーバー クラスタ リング](failover-clustering-overview.md)Windows Server のドキュメント。
 
@@ -34,21 +34,21 @@ ms.locfileid: "59861223"
 
 |新しいトピックまたは変更されたトピック                                    |説明 |
 |--------------------------------------------------------|------------|
-| [同じハードウェア上でフェールオーバー クラスターをアップグレードします。](upgrade-option-same-hardware.md)| 新規 |
-|[2 ノード ファイル サーバーを展開します。](deploy-two-node-clustered-file-server.md)| 新規 |
+| [同じハードウェア上でフェールオーバー クラスターをアップグレードする](upgrade-option-same-hardware.md)| 新規 |
+|[2 ノードのファイル サーバーを展開する](deploy-two-node-clustered-file-server.md)| 新規 |
 
 ## <a name="january-2019"></a>2019 年 1 月
 
 |新しいトピックまたは変更されたトピック                                    |説明 |
 |--------------------------------------------------------|------------|
-|[ファイル共有監視をデプロイします。](file-share-witness.md)    | 新規        |
-|[クラスターのドメインの移行](cluster-domain-migration.md) | 新規        |
+|[ファイル共有監視を展開する](file-share-witness.md)    | 新規        |
+|[クラスター ドメインの移行](cluster-domain-migration.md) | 新規        |
 
 ## <a name="november-2018"></a>2018 年 11 月
 
 |新しいトピックまたは変更されたトピック|説明|
 |---|---|
-|[Active Directory でクラスターのアカウントの構成](configure-ad-accounts.md)|移行、[以前のバージョン](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)ライブラリ|
+|[Active Directory でクラスターのアカウントを構成する](configure-ad-accounts.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/)ライブラリ|
 
 ## <a name="october-2018"></a>2018 年 10 月
 
@@ -60,24 +60,24 @@ ms.locfileid: "59861223"
 
 |新しいトピックまたは変更されたトピック|説明|
 |---|---|
-|[クラスターの設定](../storage/storage-spaces/cluster-sets.md)| 新しいトピックです。|
+|[クラスター セット](../storage/storage-spaces/cluster-sets.md)| 新しいトピックです。|
 
 ## <a name="may-2018"></a>2018 年 5 月
 
 |新しいトピックまたは変更されたトピック|説明|
 |---|---|
-|[構成し、クォーラムの管理](manage-cluster-quorum.md) | 移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。 |
+|[クォーラムを構成および管理する](manage-cluster-quorum.md) | 移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。 |
 
 ## <a name="april-2018"></a>2018 年 4 月
 
 |新しいトピックまたは変更されたトピック|説明|
 |---|---|
-|[Windows エラー報告を使用してフェールオーバー クラスターのトラブルシューティング](troubleshooting-using-WER-reports.md)| 新しいトピックです。 |
-|[アプリケーション データ用のスケール アウト ファイル サーバー](sofs-overview.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。|
+|[Windows エラー報告を使用したフェールオーバー クラスターのトラブルシューティング](troubleshooting-using-WER-reports.md)| 新しいトピックです。 |
+|[アプリケーション データ用のスケールアウト ファイル サーバー](sofs-overview.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。|
 |[ハードウェア要件](clustering-requirements.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。|
-|[クラスター共有ボリューム (Csv)](failover-cluster-csvs.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。|
-|[フェールオーバー クラスターを作成します。](create-failover-cluster.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。|
-|[AD DS にクラスターを事前設定します。](prestage-cluster-adds.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。|
+|[クラスター共有ボリューム (CSV) の使用](failover-cluster-csvs.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。|
+|[フェールオーバー クラスターを作成する](create-failover-cluster.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。|
+|[AD DS でクラスターのプレステージを行う](prestage-cluster-adds.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。|
 |[フェールオーバー クラスターのクラウド監視をデプロイします。](deploy-cloud-witness.md)|移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)ライブラリ。|
 
 ## <a name="june-2017"></a>2017 年 6 月

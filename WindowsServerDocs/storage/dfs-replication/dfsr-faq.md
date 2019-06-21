@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 280104977e295ce0c9ccb05b806442ccaa73667b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 00bb3dfd79096e28f9752053152571ea9919edcf
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447233"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284265"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS レプリケーション: よく寄せられる質問 (FAQ)
 
@@ -22,15 +22,15 @@ ms.locfileid: "66447233"
 
 この FAQ は、Windows Server の分散ファイル システム (DFS) レプリケーション (DFS-R または DFSR とも呼ばれます) に関する質問に回答します。
 
-DFS 名前空間については、次を参照してください。 [DFS 名前空間。よく寄せられる質問](https://technet.microsoft.com/en-us/library/ee404780)します。
+DFS 名前空間については、次を参照してください。 [DFS 名前空間。よく寄せられる質問](https://technet.microsoft.com/library/ee404780)します。
 
 DFS レプリケーションでは新しい方法の詳細については、次のトピックを参照してください。
 
-  - [DFS 名前空間と DFS レプリケーションの概要](http://technet.microsoft.com/en-us/library/jj127250)(で Windows Server 2012)  
+  - [DFS 名前空間と DFS レプリケーションの概要](https://technet.microsoft.com/library/jj127250)(で Windows Server 2012)  
       
-  - [分散ファイル システムで新](https://technet.microsoft.com/en-us/library/ee307957)トピック[で変更された Windows Server 2008 から Windows Server 2008 R2 の機能](https://technet.microsoft.com/en-us/library/dd391932)  
+  - [分散ファイル システムで新](https://technet.microsoft.com/library/ee307957)トピック[で変更された Windows Server 2008 から Windows Server 2008 R2 の機能](https://technet.microsoft.com/library/dd391932)  
       
-  - [分散ファイル システム](https://technet.microsoft.com/en-us/library/cc753479)トピック[で変更された Windows Server 2003 SP1 から Windows Server 2008 の機能](https://technet.microsoft.com/en-us/library/cc753208)  
+  - [分散ファイル システム](https://technet.microsoft.com/library/cc753479)トピック[で変更された Windows Server 2003 SP1 から Windows Server 2008 の機能](https://technet.microsoft.com/library/cc753208)  
       
 
 このトピックに対する最近の変更については、「 [変更履歴](#change-history) 」を参照してください。
@@ -47,15 +47,15 @@ No. DFS レプリケーションでは、ファイル レプリケーション �
 
 はい、DFS レプリケーションでは、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、または Windows Server 2008 を実行しているサーバー上の SYSVOL レプリケーション用 FRS を置き換えることができます。 Windows Server 2003 R2 を実行しているサーバーは、SYSVOL フォルダーのレプリケートに DFS レプリケーションの使用をサポートしていません。
 
-DFS レプリケーションを使用して SYSVOL をレプリケートする方法の詳細については、次を参照してください。、 [SYSVOL レプリケーション移行ガイド。FRS DFS レプリケーションから](https://technet.microsoft.com/en-us/library/dd640019)します。
+DFS レプリケーションを使用して SYSVOL をレプリケートする方法の詳細については、次を参照してください。、 [SYSVOL レプリケーション移行ガイド。FRS DFS レプリケーションから](https://technet.microsoft.com/library/dd640019)します。
 
 ### <a name="can-i-upgrade-from-frs-to-dfs-replication-without-losing-configuration-settings"></a>アップグレードできます FRS から DFS レプリケーションの構成設定を失うことがなくでしょうか。
 
 [はい]。 FRS から DFS レプリケーションへのレプリケーションを移行は、次のドキュメントを参照してください。
 
-  - SYSVOL フォルダー以外のフォルダーのレプリケーションを移行するには、次を参照してください。 [DFS 操作ガイド。FRS から DFS レプリケーションへの移行](http://go.microsoft.com/fwlink/?linkid=192776)と[FRS2DFSR – FRS、DFSR 移行ユーティリティ](http://go.microsoft.com/fwlink/?linkid=195437)(http://go.microsoft.com/fwlink/?LinkID=195437)します。  
+  - SYSVOL フォルダー以外のフォルダーのレプリケーションを移行するには、次を参照してください。 [DFS 操作ガイド。FRS から DFS レプリケーションへの移行](http://go.microsoft.com/fwlink/?linkid=192776)と[FRS2DFSR – FRS、DFSR 移行ユーティリティ](http://go.microsoft.com/fwlink/?linkid=195437)(http://go.microsoft.com/fwlink/?LinkID=195437) します。  
       
-  - SYSVOL フォルダーのレプリケーションを DFS レプリケーションに移行する、次を参照してください。 [SYSVOL レプリケーション移行ガイド。FRS DFS レプリケーションから](https://technet.microsoft.com/en-us/library/dd640019)します。  
+  - SYSVOL フォルダーのレプリケーションを DFS レプリケーションに移行する、次を参照してください。 [SYSVOL レプリケーション移行ガイド。FRS DFS レプリケーションから](https://technet.microsoft.com/library/dd640019)します。  
       
 
 ### <a name="can-i-use-dfs-replication-in-a-mixed-windowsunix-environment"></a>Windows または UNIX の混在環境で DFS レプリケーションを使用することができますか。
@@ -74,7 +74,7 @@ DFS レプリケーションは、Windows Server オペレーティング シス
 
 いいえ、Windows Server 2003 を実行するコンピューターで、または Windows Server 2012 を実行しているコンピューター上のレプリケート フォルダーの内容をバックアップするには、以前は、Windows バックアップ (Ntbackup.exe) を使用して、Windows Server 2008 R2、または Windows Server 2008 がサポートされていません。
 
-レプリケートされたフォルダーに格納されているファイルをバックアップするには、Windows Server バックアップまたは Microsoft® System Center Data Protection Manager を使用します。 Windows Server 2008 R2 および Windows Server 2008 でのバックアップと回復の機能については、次を参照してください。[バックアップと回復](https://technet.microsoft.com/en-us/library/Cc754097)します。 詳細については、次を参照してください。 [System Center Data Protection Manager](http://go.microsoft.com/fwlink/?linkid=182261) (http://go.microsoft.com/fwlink/?LinkId=182261)します。
+レプリケートされたフォルダーに格納されているファイルをバックアップするには、Windows Server バックアップまたは Microsoft® System Center Data Protection Manager を使用します。 Windows Server 2008 R2 および Windows Server 2008 でのバックアップと回復の機能については、次を参照してください。[バックアップと回復](https://technet.microsoft.com/library/Cc754097)します。 詳細については、次を参照してください。 [System Center Data Protection Manager](http://go.microsoft.com/fwlink/?linkid=182261) (http://go.microsoft.com/fwlink/?LinkId=182261) します。
 
 ### <a name="do-file-system-policies-impact-dfs-replication"></a>ファイル システムのポリシーは DFS レプリケーションに影響しますか。
 
@@ -101,7 +101,7 @@ No. DFS レプリケーションを使用して、Microsoft Exchange Server に�
 
 ### <a name="is-dfs-replication-cluster-aware"></a>DFS レプリケーションのクラスターを認識しますか。
 
-はい、Windows Server 2012 R2、Windows Server 2012 および Windows Server 2008 R2 での DFS レプリケーションには、レプリケーション グループのメンバーとしてフェールオーバー クラスターを追加する機能が含まれています。 詳細については、次を参照してください。[をレプリケーション グループのフェールオーバー クラスターの追加](http://go.microsoft.com/fwlink/?linkid=155085)(http://go.microsoft.com/fwlink/?LinkId=155085)します。 バージョンの Windows Server 2008 R2 より前の Windows での DFS レプリケーション サービスは、フェールオーバー クラスターでは、連携するものはありませんし、サービスが別のノードにフェールオーバーしていません。
+はい、Windows Server 2012 R2、Windows Server 2012 および Windows Server 2008 R2 での DFS レプリケーションには、レプリケーション グループのメンバーとしてフェールオーバー クラスターを追加する機能が含まれています。 詳細については、次を参照してください。[をレプリケーション グループのフェールオーバー クラスターの追加](http://go.microsoft.com/fwlink/?linkid=155085)(http://go.microsoft.com/fwlink/?LinkId=155085) します。 バージョンの Windows Server 2008 R2 より前の Windows での DFS レプリケーション サービスは、フェールオーバー クラスターでは、連携するものはありませんし、サービスが別のノードにフェールオーバーしていません。
 
 
 > [!NOTE]
@@ -125,7 +125,7 @@ DFS レプリケーションで使わないオフライン ファイル、マル
 
 ### <a name="what-antivirus-applications-are-compatible-with-dfs-replication"></a>DFS レプリケーションとの互換性のあるウイルス対策アプリケーションですか。
 
-過度のレプリケーションは、スキャンのアクティビティは、レプリケートされたフォルダー内のファイルを変更する場合、ウイルス対策アプリケーションで発生することができます。 詳細については、 [DFS レプリケーションとウイルス対策アプリケーションの相互運用テスト](http://go.microsoft.com/fwlink/?linkid=73990)(http://go.microsoft.com/fwlink/?LinkId=73990)します。
+過度のレプリケーションは、スキャンのアクティビティは、レプリケートされたフォルダー内のファイルを変更する場合、ウイルス対策アプリケーションで発生することができます。 詳細については、 [DFS レプリケーションとウイルス対策アプリケーションの相互運用テスト](http://go.microsoft.com/fwlink/?linkid=73990)(http://go.microsoft.com/fwlink/?LinkId=73990) します。
 
 ### <a name="what-are-the-benefits-of-using-dfs-replication-instead-of-windows-sharepoint-services"></a>Windows SharePoint Services ではなく、DFS レプリケーションを使用する利点とは
 
@@ -135,7 +135,7 @@ Windows® SharePoint® Services に DFS レプリケーションはないファ�
 
 ### <a name="can-dfs-replication-replicate-between-branch-offices-without-a-vpn-connection"></a>DFS レプリケーションは VPN 接続がないブランチ オフィスの間でレプリケートできますか。
 
-[はい]-ブランチ オフィスに接続するプライベート ワイド エリア ネットワーク (WAN) リンク (インターネットではなく) があると仮定します。 ただし、外部ファイアウォールで適切なポートを開く必要があります。 DFS レプリケーションには、RPC エンドポイント マッパー (ポート 135) および 1024 より大きい場合は、ランダムに割り当てられたエフェメラル ポートが使用されます。 使用することができます、 **Dfsrdiag**エフェメラル ポートではなく静的ポートを指定するコマンド ライン ツール。 RPC エンドポイント マッパーを指定する方法の詳細については、次を参照してください。 [154596](http://go.microsoft.com/fwlink/?linkid=73991)でマイクロソフト サポート技術情報 (http://go.microsoft.com/fwlink/?LinkId=73991)します。
+[はい]-ブランチ オフィスに接続するプライベート ワイド エリア ネットワーク (WAN) リンク (インターネットではなく) があると仮定します。 ただし、外部ファイアウォールで適切なポートを開く必要があります。 DFS レプリケーションには、RPC エンドポイント マッパー (ポート 135) および 1024 より大きい場合は、ランダムに割り当てられたエフェメラル ポートが使用されます。 使用することができます、 **Dfsrdiag**エフェメラル ポートではなく静的ポートを指定するコマンド ライン ツール。 RPC エンドポイント マッパーを指定する方法の詳細については、次を参照してください。 [154596](http://go.microsoft.com/fwlink/?linkid=73991)でマイクロソフト サポート技術情報 (http://go.microsoft.com/fwlink/?LinkId=73991) します。
 
 ### <a name="can-dfs-replication-replicate-files-encrypted-with-the-encrypting-file-system"></a>DFS レプリケーションは暗号化ファイル システムで暗号化されたファイルをレプリケートできますか。
 
@@ -145,7 +145,7 @@ No. DFS レプリケーションは、ファイルや暗号化ファイル シ�
 
 DFS レプリケーションはレプリケーションを安全に Microsoft Outlook 個人フォルダーのファイル (.pst) および Microsoft Access ファイルこれらは、アーカイブ用に保存され、(を .pst ファイルまたはアクセスを開く Outlook またはアクセスなどのクライアントを使用して、ネットワーク経由でアクセスしない場合にのみファイル、まず、ファイルをコピー、ローカル記憶装置)。 この理由は次のとおりです。
 
-  - ネットワーク接続経由での .pst ファイルを開くと、.pst ファイル内のデータが破損する可能性があります。 .Pst ファイル安全にアクセスできない理由から、ネットワーク経由での詳細については、次を参照してください。[記事 297019](http://go.microsoft.com/fwlink/?linkid=125363)でマイクロソフト サポート技術情報 (http://go.microsoft.com/fwlink/?LinkId=125363)します。  
+  - ネットワーク接続経由での .pst ファイルを開くと、.pst ファイル内のデータが破損する可能性があります。 .Pst ファイル安全にアクセスできない理由から、ネットワーク経由での詳細については、次を参照してください。[記事 297019](http://go.microsoft.com/fwlink/?linkid=125363)でマイクロソフト サポート技術情報 (http://go.microsoft.com/fwlink/?LinkId=125363) します。  
       
   - .pst ファイルおよびファイルへのアクセスは、Outlook、Office Access などのクライアントによってアクセスされることに時間が長期間開いたままにする傾向があります。 これは DFS レプリケーションが閉じられるまで、これらのファイルをレプリケートすることを防ぎます。  
       
@@ -168,7 +168,7 @@ No. DFS レプリケーションは、サーバー間の時刻同期を明示的
 
 ### <a name="does-dfs-replication-support-replicating-an-entire-volume"></a>DFS レプリケーションはボリューム全体をレプリケートするか。
 
-[はい]。 ただし、Windows Server 2003 Service Pack 2 または修正プログラムを最初にインストールする必要があります。 詳細については、次を参照してください。[記事 920335](http://go.microsoft.com/fwlink/?linkid=76776)でマイクロソフト サポート技術情報 (http://go.microsoft.com/fwlink/?LinkId=76776)します。 さらに、ボリューム全体をレプリケートするには、次の問題が発生します。
+[はい]。 ただし、Windows Server 2003 Service Pack 2 または修正プログラムを最初にインストールする必要があります。 詳細については、次を参照してください。[記事 920335](http://go.microsoft.com/fwlink/?linkid=76776)でマイクロソフト サポート技術情報 (http://go.microsoft.com/fwlink/?LinkId=76776) します。 さらに、ボリューム全体をレプリケートするには、次の問題が発生します。
 
   - ボリュームには、Windows ページング ファイルが含まれる、レプリケーションは失敗し、DFSR イベント 4312 システム イベント ログでログに記録されます。  
       
@@ -197,7 +197,7 @@ No. DFS レプリケーションのみで、NTFS ファイル システムでフ
 
 No. DFS レプリケーションは、レプリケートするには管理者としてログインする必要はありませんので、ローカル システム アカウントで実行されるサービスです。 ただし、DFS レプリケーションの構成を変更するには、ドメイン管理者または影響を受けるファイル サーバーのローカルの管理者をする必要があります。
 
-詳細についてで「DFS レプリケーションのセキュリティ要件と委任」を参照、 [DFS レプリケーションを管理する権限を委任](http://go.microsoft.com/fwlink/?linkid=182294)(http://go.microsoft.com/fwlink/?LinkId=182294)します。
+詳細についてで「DFS レプリケーションのセキュリティ要件と委任」を参照、 [DFS レプリケーションを管理する権限を委任](http://go.microsoft.com/fwlink/?linkid=182294)(http://go.microsoft.com/fwlink/?LinkId=182294) します。
 
 ### <a name="how-can-i-upgrade-or-replace-a-dfs-replication-member"></a>アップグレードまたは DFS レプリケーションのメンバーを置換する方法は?
 
@@ -205,7 +205,7 @@ No. DFS レプリケーションは、レプリケートするには管理者と
 
 ### <a name="is-dfs-replication-suitable-for-replicating-roaming-profiles"></a>DFS レプリケーションはローミング プロファイルをレプリケートするために適していますか。
 
-[はい]。 移動ユーザー プロファイルをレプリケートするときに、特定のシナリオはサポートされています。 サポートされるシナリオについては、次を参照してください。[マイクロソフトのサポート ステートメントをレプリケートされたユーザー プロファイル データ](http://go.microsoft.com/fwlink/?linkid=201282)(http://go.microsoft.com/fwlink/?LinkId=201282)します。
+[はい]。 移動ユーザー プロファイルをレプリケートするときに、特定のシナリオはサポートされています。 サポートされるシナリオについては、次を参照してください。[マイクロソフトのサポート ステートメントをレプリケートされたユーザー プロファイル データ](http://go.microsoft.com/fwlink/?linkid=201282)(http://go.microsoft.com/fwlink/?LinkId=201282) します。
 
 ### <a name="is-there-a-file-character-limit-or-limit-to-the-folder-depth"></a>文字の制限をファイルまたはフォルダの深さに制限はありますか。
 
@@ -247,7 +247,7 @@ No. レプリケーション グループは、別のフォレスト全体では
 <br>
 
 
-Windows Server 2003 R2 の Microsoft によってテスト済みのスケーラビリティに関するガイドラインの一覧は、次を参照してください。 [DFS レプリケーションのスケーラビリティに関するガイドライン](http://go.microsoft.com/fwlink/?linkid=75043)(http://go.microsoft.com/fwlink/?LinkId=75043)します。
+Windows Server 2003 R2 の Microsoft によってテスト済みのスケーラビリティに関するガイドラインの一覧は、次を参照してください。 [DFS レプリケーションのスケーラビリティに関するガイドライン](http://go.microsoft.com/fwlink/?linkid=75043)(http://go.microsoft.com/fwlink/?LinkId=75043) します。
 
 ### <a name="when-should-i-not-use-dfs-replication"></a>いないように使い分ければよい DFS レプリケーションでしょうか。
 
@@ -257,7 +257,7 @@ Windows Server 2003 R2 の Microsoft によってテスト済みのスケーラ�
 
 ### <a name="why-is-a-schema-update-required-for-dfs-replication"></a>DFS レプリケーションに必要なスキーマの更新はなぜですか。
 
-DFS レプリケーションでは、Active Directory Domain Services のドメイン名前付けコンテキストで新しいオブジェクトを使用して、構成情報を格納します。 Active Directory ドメイン サービス スキーマを更新すると、これらのオブジェクトが作成されます。 詳細については、次を参照してください。 [DFS レプリケーションの要件をレビュー](http://go.microsoft.com/fwlink/?linkid=182264) (http://go.microsoft.com/fwlink/?LinkId=182264)します。
+DFS レプリケーションでは、Active Directory Domain Services のドメイン名前付けコンテキストで新しいオブジェクトを使用して、構成情報を格納します。 Active Directory ドメイン サービス スキーマを更新すると、これらのオブジェクトが作成されます。 詳細については、次を参照してください。 [DFS レプリケーションの要件をレビュー](http://go.microsoft.com/fwlink/?linkid=182264) (http://go.microsoft.com/fwlink/?LinkId=182264) します。
 
 ## <a name="monitoring-and-management-tools"></a>監視および管理ツール
 
@@ -265,7 +265,7 @@ DFS レプリケーションでは、Active Directory Domain Services のドメ�
 
 [はい]。 正常性レポートを自動化する 3 つの方法はあります。
 
-  - 正常性レポートを定期的に生成するのにには、スケジュールされたタスクと組み合わせて、Windows Server 2012 R2 または DfsrAdmin.exe に含まれる DFSR の Windows PowerShell モジュールを使用します。 詳細については、次を参照してください。 [DFS レプリケーションの正常性レポートの自動化](http://go.microsoft.com/fwlink/?linkid=74010)(http://go.microsoft.com/fwlink/?LinkId=74010)します。  
+  - 正常性レポートを定期的に生成するのにには、スケジュールされたタスクと組み合わせて、Windows Server 2012 R2 または DfsrAdmin.exe に含まれる DFSR の Windows PowerShell モジュールを使用します。 詳細については、次を参照してください。 [DFS レプリケーションの正常性レポートの自動化](http://go.microsoft.com/fwlink/?linkid=74010)(http://go.microsoft.com/fwlink/?LinkId=74010) します。  
       
   - System Center Operations Manager 用の DFS レプリケーションの管理パックを使用すると、指定した条件に基づいてアラートを作成できます。  
       
@@ -274,17 +274,17 @@ DFS レプリケーションでは、Active Directory Domain Services のドメ�
 
 ### <a name="can-i-use-microsoft-system-center-operations-manager-to-monitor-dfs-replication"></a>Microsoft System Center Operations Manager を使用して、DFS レプリケーションを監視できますか。
 
-[はい]。 詳細については、次を参照してください。、 [System Center Operations Manager 2007 用の DFS レプリケーションの管理パック](http://go.microsoft.com/fwlink/?linkid=182265)、Microsoft ダウンロード センター (http://go.microsoft.com/fwlink/?LinkId=182265)します。
+[はい]。 詳細については、次を参照してください。、 [System Center Operations Manager 2007 用の DFS レプリケーションの管理パック](http://go.microsoft.com/fwlink/?linkid=182265)、Microsoft ダウンロード センター (http://go.microsoft.com/fwlink/?LinkId=182265) します。
 
 ### <a name="does-dfs-replication-support-remote-management"></a>DFS レプリケーションは、リモート管理をサポートしますか。
 
 [はい]。 DFS レプリケーションは、DFS の管理コンソールを使用してリモート管理をサポートしていると、**レプリケーション グループの追加**コマンド。 たとえば、サーバー A、サーバー A と B のメンバーとして持つフォレストで定義されたレプリケーション グループに接続できます。
 
-DFS の管理は、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、および Windows Server 2003 R2 に含まれています。 Windows の他のバージョンから DFS レプリケーションを管理するには、リモート デスクトップを使用または[リモート サーバー管理ツールの Windows 7](https://technet.microsoft.com/en-us/library/Ee449475)します。
+DFS の管理は、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、および Windows Server 2003 R2 に含まれています。 Windows の他のバージョンから DFS レプリケーションを管理するには、リモート デスクトップを使用または[リモート サーバー管理ツールの Windows 7](https://technet.microsoft.com/library/Ee449475)します。
 
 
 > [!IMPORTANT]
-> を表示または読み取り専用のレプリケート フォルダーまたはフェールオーバー クラスターであるメンバーを含むレプリケーション グループを管理するには、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、、に含まれているDFSの管理のバージョンを使用する必要があります<a href="http://go.microsoft.com/fwlink/p/?linkid=238560">Windows 8 用リモート サーバー管理ツール</a>、または<a href="https://technet.microsoft.com/en-us/library/ee449475">Windows 7 用のリモート サーバー管理ツール</a>します。 
+> を表示または読み取り専用のレプリケート フォルダーまたはフェールオーバー クラスターであるメンバーを含むレプリケーション グループを管理するには、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、、に含まれているDFSの管理のバージョンを使用する必要があります<a href="http://go.microsoft.com/fwlink/p/?linkid=238560">Windows 8 用リモート サーバー管理ツール</a>、または<a href="https://technet.microsoft.com/library/ee449475">Windows 7 用のリモート サーバー管理ツール</a>します。 
 <br>
 
 
@@ -304,7 +304,7 @@ No. DFS レプリケーションには、監視および診断ツールの独自
       
   - DFS の管理は、レプリケーションのバックログ、レプリケーションの効率性、および特定のレプリケーション グループのファイルとフォルダーの数の組み込みの診断レポートが。  
       
-  - Windows Server 2012 R2 の DFSR の Windows PowerShell モジュールには、伝達テストを開始し、伝達と正常性レポートを作成するためのコマンドレットが含まれています。 詳細については、次を参照してください。[分散ファイル システム レプリケーション Windows PowerShell コマンドレット](http://technet.microsoft.com/library/dn296601.aspx)します。  
+  - Windows Server 2012 R2 の DFSR の Windows PowerShell モジュールには、伝達テストを開始し、伝達と正常性レポートを作成するためのコマンドレットが含まれています。 詳細については、次を参照してください。[分散ファイル システム レプリケーション Windows PowerShell コマンドレット](https://technet.microsoft.com/library/dn296601.aspx)します。  
       
   - Dfsrdiag.exe は、バックログの数またはトリガー伝達テストを生成できるコマンド ライン ツールです。 両方のレプリケーションの状態が表示されます。 伝達は、ファイルがすべてのノードにレプリケートされるかどうかを示します。 バックログには、ファイルの数が 2 台のコンピューターが同期される前にレプリケートする必要がありますが表示されます。バックログの数は、レプリケーション グループのメンバーが処理されていない更新プログラムの数です。 Windows Server 2012 R2、Windows Server 2012 または Windows Server 2008 R2 を実行するコンピューターで、Dfsrdiag.exe は、DFS レプリケーションが現在レプリケートしている更新プログラムにも表示できます。  
       
@@ -339,7 +339,7 @@ DFS レプリケーションでは、接続で使用する最大帯域幅を設�
 
 それでも、100% 正確でない、帯域幅の調整と、短時間では、DFS レプリケーションにより、リンクが飽和状態ことができます。 DFS レプリケーションは、RPC 呼び出しの調整によって調整される帯域幅を調整するためです。 このプロセスは、RPC を含む、ネットワーク スタックの下位レベルでのさまざまなバッファーに依存しているために、レプリケーション トラフィックは、ネットワーク リンクをワークロードが時を大量に移動する傾向があります。
 
-Windows Server 2008 での DFS レプリケーションにはで説明したようにいくつかのパフォーマンス強化が含まれます[分散ファイル システム](https://technet.microsoft.com/en-us/library/Cc753479)、トピック[で変更された Windows Server 2003 SP1 から Windows Server の機能2008](https://technet.microsoft.com/en-us/library/cc753208)します。
+Windows Server 2008 での DFS レプリケーションにはで説明したようにいくつかのパフォーマンス強化が含まれます[分散ファイル システム](https://technet.microsoft.com/library/Cc753479)、トピック[で変更された Windows Server 2003 SP1 から Windows Server の機能2008](https://technet.microsoft.com/library/cc753208)します。
 
 ### <a name="how-does-dfs-replication-performance-compare-with-frs"></a>FRS と DFS レプリケーションのパフォーマンスを比較方法はありますか
 
@@ -474,9 +474,9 @@ No. レプリケート フォルダーのパスを変更する必要がある場
 
 いいえ、DFS レプリケーションによってレプリケートされるファイル属性を構成することはできません。
 
-属性値とその説明の一覧は、次を参照してください。[ファイル属性](http://go.microsoft.com/fwlink/?linkid=182268)msdn (http://go.microsoft.com/fwlink/?LinkId=182268)します。
+属性値とその説明の一覧は、次を参照してください。[ファイル属性](http://go.microsoft.com/fwlink/?linkid=182268)msdn (http://go.microsoft.com/fwlink/?LinkId=182268) します。
 
-次の属性値を使用して設定されて、`SetFileAttributes dwFileAttributes`関数、およびそれらが DFS レプリケーションによってレプリケートされます。 これらの属性値への変更は、属性のレプリケーションをトリガーします。 内容にも変更しない限り、ファイルの内容はレプリケートされません。 詳細については、次を参照してください。 [SetFileAttributes 関数](http://go.microsoft.com/fwlink/?linkid=182269)、MSDN ライブラリ (http://go.microsoft.com/fwlink/?LinkId=182269)します。
+次の属性値を使用して設定されて、`SetFileAttributes dwFileAttributes`関数、およびそれらが DFS レプリケーションによってレプリケートされます。 これらの属性値への変更は、属性のレプリケーションをトリガーします。 内容にも変更しない限り、ファイルの内容はレプリケートされません。 詳細については、次を参照してください。 [SetFileAttributes 関数](http://go.microsoft.com/fwlink/?linkid=182269)、MSDN ライブラリ (http://go.microsoft.com/fwlink/?LinkId=182269) します。
 
   - ファイル\_属性\_非表示  
       
@@ -529,13 +529,13 @@ DFS レプリケーションは、ファイルをレプリケートしません\
 
 [はい]。 DFS レプリケーションは、初期レプリケーション前に、レプリケーション グループのメンバーにファイルのコピーをサポートします。 この「事前登録」では、初期レプリケーションでレプリケートされたデータの量を大幅に削減できます。
 
-初期レプリケーションは、ファイルが、実際の属性またはタイムスタンプのみが異なる場合に、内容をレプリケートする必要はありません。 実際の属性は、Win32 関数によって設定できる属性`SetFileAttributes`します。 詳細については、次を参照してください。 [SetFileAttributes 関数](http://go.microsoft.com/fwlink/?linkid=182269)、MSDN ライブラリ (http://go.microsoft.com/fwlink/?LinkId=182269)します。 2 つのファイル圧縮などの他の属性が異なる場合、ファイルの内容はレプリケートされます。
+初期レプリケーションは、ファイルが、実際の属性またはタイムスタンプのみが異なる場合に、内容をレプリケートする必要はありません。 実際の属性は、Win32 関数によって設定できる属性`SetFileAttributes`します。 詳細については、次を参照してください。 [SetFileAttributes 関数](http://go.microsoft.com/fwlink/?linkid=182269)、MSDN ライブラリ (http://go.microsoft.com/fwlink/?LinkId=182269) します。 2 つのファイル圧縮などの他の属性が異なる場合、ファイルの内容はレプリケートされます。
 
 レプリケーション グループのメンバーを事前設定するには、移行先サーバー上の適切なフォルダーにファイルをコピー、レプリケーション グループを作成およびプライマリ メンバーを選択します。 プライマリ メンバーの内容が「優先」と見なされるためにレプリケートする、最新のファイルを持つメンバーを選択します。 これは、初期レプリケーションの際、プライマリ メンバーのファイルにより常に上書きされるレプリケーション グループの他のメンバー上のファイルの他のバージョンを意味します。
 
 事前シード処理し、DFSR データベースを複製する方法については、次を参照してください。 [Windows Server 2012 R2 の DFS レプリケーションの初期同期。クローンの攻撃](http://blogs.technet.com/b/filecab/archive/2013/08/21/dfs-replication-initial-sync-in-windows-server-2012-r2-attack-of-the-clones.aspx)します。
 
-初期レプリケーションの詳細については、次を参照してください。[レプリケーション グループを作成する](https://technet.microsoft.com/en-us/library/cc725893)します。
+初期レプリケーションの詳細については、次を参照してください。[レプリケーション グループを作成する](https://technet.microsoft.com/library/cc725893)します。
 
 ### <a name="does-dfs-replication-overcome-common-file-replication-service-issues"></a>DFS レプリケーションは、ファイル レプリケーション サービスの一般的な問題を克服しますか。
 
@@ -610,7 +610,7 @@ No. DFS レプリケーション サービスでは、TCP 経由でリモート 
 
 ### <a name="how-do-i-force-replication-or-polling"></a>レプリケーションまたはポーリングを強制する方法は?
 
-強制的にレプリケーションすぐに、DFS の管理を使用する」の説明に従って[レプリケーション スケジュールの編集](https://technet.microsoft.com/en-us/library/Cc732278)します。 使用してレプリケーションを強制することもできます、`Sync-DfsReplicationGroup`コマンドレットは、Windows Server 2012 R2 で導入された DFSR PowerShell モジュールに含まれる、または**Dfsrdiag SyncNow**コマンド。 使用してポーリングを強制することができます、`Update-DfsrConfigurationFromAD`コマンドレット、または**Dfsrdiag PollAD**コマンド。
+強制的にレプリケーションすぐに、DFS の管理を使用する」の説明に従って[レプリケーション スケジュールの編集](https://technet.microsoft.com/library/Cc732278)します。 使用してレプリケーションを強制することもできます、`Sync-DfsReplicationGroup`コマンドレットは、Windows Server 2012 R2 で導入された DFSR PowerShell モジュールに含まれる、または**Dfsrdiag SyncNow**コマンド。 使用してポーリングを強制することができます、`Update-DfsrConfigurationFromAD`コマンドレット、または**Dfsrdiag PollAD**コマンド。
 
 ### <a name="is-it-possible-to-configure-a-quiet-time-between-replications-for-files-that-change-frequently"></a>頻繁に変更されるファイルのレプリケーションの間の待ち時間を構成することはできますか。
 
@@ -618,7 +618,7 @@ No. スケジュールが開いている場合、それらを認識すると、D
 
 ### <a name="is-it-possible-to-configure-one-way-replication-with-dfs-replication"></a>DFS レプリケーションと一方向のレプリケーションを構成することはできますか。
 
-[はい]。 Windows Server 2012 または Windows Server 2008 R2 を使用している場合は、一方向の接続経由でコンテンツをレプリケートするための読み取り専用レプリケート フォルダーを作成できます。 詳細については、次を参照してください。[ことを特定のメンバーで、フォルダーのレプリケートされた読み取り専用](http://go.microsoft.com/fwlink/?linkid=156740)(http://go.microsoft.com/fwlink/?LinkId=156740)します。
+[はい]。 Windows Server 2012 または Windows Server 2008 R2 を使用している場合は、一方向の接続経由でコンテンツをレプリケートするための読み取り専用レプリケート フォルダーを作成できます。 詳細については、次を参照してください。[ことを特定のメンバーで、フォルダーのレプリケートされた読み取り専用](http://go.microsoft.com/fwlink/?linkid=156740)(http://go.microsoft.com/fwlink/?LinkId=156740) します。
 
 Windows Server 2008 または Windows Server 2003 R2 での DFS レプリケーションと、一方向のレプリケーション接続を作成することはできません。 そうと、正常性チェックのトポロジ エラー、ステージングの問題、および DFS レプリケーション データベースの問題を含む多数の問題が発生することができます。
 
@@ -639,7 +639,7 @@ No. DFS レプリケーションは、同じファイルを考慮する場合に
 
 場合は、初期レプリケーションが失敗するか、レプリケーション中、DFS レプリケーション サービスの再起動、プライマリ メンバーは、ローカルの DFS レプリケーション データベースにプライマリ メンバーの指定を認識し、初期レプリケーションを再試行します。 Active Directory Domain services では、プライマリの表記を消去した後にプライマリ メンバーの DFS レプリケーション データベースが失われた場合は、レプリケーション グループのすべてのメンバーは、初期レプリケーションを完了する前に、レプリケーション グループのすべてのメンバーに失敗します。フォルダーをレプリケートして、プライマリ メンバーとしてサーバーが指定されていないためです。 この場合、使用、 **Dfsradmin メンバーシップ/set/isprimary:true**プライマリ メンバー サーバーのプライマリ メンバーの指定を手動で復元するコマンド。
 
-初期レプリケーションの詳細については、次を参照してください。[レプリケーション グループを作成する](https://technet.microsoft.com/en-us/library/cc725893)します。
+初期レプリケーションの詳細については、次を参照してください。[レプリケーション グループを作成する](https://technet.microsoft.com/library/cc725893)します。
 
 
 > [!WARNING]

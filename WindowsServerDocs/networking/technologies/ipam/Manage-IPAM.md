@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c68905ef-d54f-4fc8-80ac-1006125db64f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a0acbde41388b9f116536aa18fe791dce2cfbccd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 12d86504df02e7a94709feb9319659ec662d71f5
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816373"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283915"
 ---
 # <a name="manage-ipam"></a>IPAM の管理
 

@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 04/01/2019
-ms.openlocfilehash: 61f56eea59d11264047a9c7b8b6734617ad1802f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 24d81e3d2c31b3493563f3f3e2ab3f92afff2c06
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447333"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284137"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>TPM ベースの構成証明を使用して保護されたホストを承認します。
 
@@ -99,7 +99,7 @@ CI ポリシーを変更することがなくサーバーで、同じ公開元�
 
 3.  参照をホストする CI ポリシーが適用されます。
 
-    1.  CI ポリシーを使用するマシンを構成するには、次のコマンドを実行します。 CI ポリシーを展開することもできます。[グループ ポリシー](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy)または[System Center Virtual Machine Manager](https://docs.microsoft.com/en-us/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm)します。
+    1.  CI ポリシーを使用するマシンを構成するには、次のコマンドを実行します。 CI ポリシーを展開することもできます。[グループ ポリシー](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy)または[System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm)します。
 
         ```powershell
         Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }

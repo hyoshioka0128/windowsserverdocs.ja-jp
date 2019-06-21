@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f000066e-7cf8-4085-82a3-4f4fe1cb3c5c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f835e27a80e661ff1f066af4779bd7c033cddc99
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: aea8ce1e07b29be49761e33cbe92a1bf56c29f43
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446626"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282964"
 ---
 # <a name="step-3-configure-a-load-balanced-cluster"></a>手順 3 が負荷分散クラスターを構成します。
 

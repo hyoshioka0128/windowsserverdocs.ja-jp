@@ -8,12 +8,12 @@ ms.date: 06/04/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 258f25a7e1ec5c796c15450625397e96db25d693
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 8f0f16f14ccf9099af8ff8bb8b27209c75c87cfc
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501520"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284465"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>よく寄せられる質問 (FAQ) の記憶域の移行サービス
 
@@ -131,7 +131,7 @@ Windows Server 2019 の付属ストレージ移行サービスのバージョン
 
 - **高パフォーマンスの処理を有効にします。** サーバーの BIOS および UEFI の設定が、C 状態の無効化、QPI 速度の設定、NUMA の有効化、最大メモリ動作周波数の設定など、高パフォーマンスを有効にする設定であることを確認します。 Windows Server での電源管理が高パフォーマンスに設定されていることを確認します。 必要に応じて再起動します。 忘れずにこれらを適切な状態に移行の完了後に戻ります。 
 
-- **ハードウェアのチューニング**レビュー、[パフォーマンス チューニング ガイドラインの Windows Server 2016](https://docs.microsoft.com/en-us/windows-server/administration/performance-tuning/) orchestrator と Windows Server 2019 を実行している移行先コンピューターと Windows Server 2016 をチューニングします。 [ネットワーク サブシステムのパフォーマンス チューニング](https://docs.microsoft.com/en-us/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics)セクションに特に重要な情報が含まれています。
+- **ハードウェアのチューニング**レビュー、[パフォーマンス チューニング ガイドラインの Windows Server 2016](https://docs.microsoft.com/windows-server/administration/performance-tuning/) orchestrator と Windows Server 2019 を実行している移行先コンピューターと Windows Server 2016 をチューニングします。 [ネットワーク サブシステムのパフォーマンス チューニング](https://docs.microsoft.com/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics)セクションに特に重要な情報が含まれています。
 
 - **高速ストレージを使用します。** ソース コンピューターの記憶域の速度をアップグレードする困難な場合がありますが、先のストレージが少なくとも転送で不要なボトルネックがないことを確認するには、ソースが読み取りの IO パフォーマンスでは、書き込みの IO パフォーマンスで高速ことを確認する必要があります。 送信先が VM の場合は、実行されるように、少なくとも移行のためには、ハイパーバイザー ホストの最速のストレージ層などフラッシュ層またはミラー化されたすべてフラッシュでもハイブリッド スペースを使用して記憶域スペース ダイレクト HCI クラスターでします。 SMS の移行が完了したら、VM できますライブ低下のレベルまたはホストに移行します。
 

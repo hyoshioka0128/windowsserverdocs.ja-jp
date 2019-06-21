@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 0326818f-9144-496c-b946-f82be4eefbd3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 219c333745d28bdedb9027c1dd46148ac80998f6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9c111ce52f2cca0cc37ea4d5b873c5fde12bce18
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840873"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282446"
 ---
 # <a name="step-2-configure-the-radius-server"></a>手順 2 は、RADIUS サーバーを構成します。
 

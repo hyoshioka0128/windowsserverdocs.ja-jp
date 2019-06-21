@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f22dcf10-b453-4664-a9ef-e40e95c72f63
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b449197265befb7caf7d8d3a5b56accf5c52aef9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 424c4f881c168ea691dd51cd2d86a4a234c41075
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821843"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282988"
 ---
 # <a name="step-4-verify-the-cluster"></a>手順 4 は、クラスターを確認します。
 

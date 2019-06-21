@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 43abc30a-300d-4752-b845-10a6b9f32244
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9d19ac813280981341019330470cc5d53ee00778
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 42cec0d2e6ded443d24d787191bcb72a17a92306
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446108"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283531"
 ---
 # <a name="step-1-configure-advanced-directaccess-infrastructure"></a>手順 1 は、高度な DirectAccess インフラストラクチャを構成します。
 

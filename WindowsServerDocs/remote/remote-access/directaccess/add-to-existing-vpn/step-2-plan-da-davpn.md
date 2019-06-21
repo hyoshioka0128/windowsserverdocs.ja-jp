@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 72b5b2af-6925-41e0-a3f9-b8809ed711d1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7b4e0e8647fa2011eae73efa8bcbd696c422f12c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6fd33926f4c3d86d5947bffdd5b212db0ae91f47
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859683"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283596"
 ---
 # <a name="step-2-plan-the-directaccess-deployment"></a>手順 2、DirectAccess の展開を計画します。
 
@@ -57,7 +56,7 @@ ms.locfileid: "59859683"
   
 -   **IP-HTTPS 証明書**-場合 SSTP VPN が構成されている、DirectAccess の有効化ウィザードは IP-HTTPS 用 SSTP によって使用される証明書を取得します。 SSTP VPN が構成されていない場合、ウィザードは IP-HTTPS 用の証明書が構成されているかどうかを確認しようとします。 構成されていない場合は、IP-HTTPS 用の自己署名証明書を自動的に提供します。ウィザードは Kerberos 認証を自動的に有効にします。 IPv4 のみの環境では、プロトコル変換のために NAT64 と DNS64 も有効になります。  
   
--   **IPv6 プレフィックス**-ウィザードがネットワーク アダプターに IPv6 が展開されていることを検出した場合、内部ネットワークの IPv6 プレフィックス、DirectAccess クライアント コンピューターに割り当てる IPv6 プレフィックス、および VPN に割り当てる IPv6 プレフィックスが自動的に作成されます。クライアント コンピューター。 自動的に生成されたプレフィックスがネィティブ IPv6 または ISATAP インフラストラクチャに正しくない場合は、それらを手動で変更する必要があります。 1.1 ネットワークおよびサーバーのトポロジを計画、設定を参照してください。  
+-   **IPv6 プレフィックス**-ウィザードがネットワーク アダプターに IPv6 が展開されていることを検出した場合、内部ネットワークの IPv6 プレフィックス、DirectAccess クライアント コンピューターに割り当てる IPv6 プレフィックス、および VPN に割り当てる IPv6 プレフィックスが自動的に作成されます。クライアント コンピューター。 自動的に生成されたプレフィックスがネィティブ IPv6 または ISATAP インフラストラクチャに正しくない場合は、それらを手動で変更する必要があります。 1\.1 ネットワークおよびサーバーのトポロジを計画、設定を参照してください。  
   
 -   **Windows 7 クライアント**-既定では、Windows 7 クライアント コンピューターが Windows Server 2012 のリモート アクセス展開に接続できません。 内部リソースへのリモート アクセスを必要とする組織で Windows 7 のクライアント コンピューターがある場合は、接続することを許可できます。 内部リソースにアクセスできるようにするすべてのクライアント コンピューターは、DirectAccess の有効化ウィザードで指定したセキュリティ グループのメンバーである必要があります。  
   

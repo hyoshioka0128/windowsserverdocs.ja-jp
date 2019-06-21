@@ -9,12 +9,12 @@ author: eldenchristensen
 ms.date: 10/25/2017
 description: 仮想マシンのゲスト クラスターで - たとえば、Microsoft Azure で記憶域スペース ダイレクトをデプロイする方法。
 ms.localizationpriority: medium
-ms.openlocfilehash: b99e750b78654df48ad3b412269511d047e3057c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d05afb5ee564b866dcd15ec6aa473cee608dbd8f
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447809"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284404"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>仮想マシンのゲスト クラスターでの記憶域スペース ダイレクトの使用
 
@@ -30,7 +30,7 @@ ms.locfileid: "66447809"
 
 <iframe src="https://channel9.msdn.com/Series/Microsoft-Hybrid-Cloud-Best-Practices-for-IT-Pros/Step-by-Step-Deploy-Windows-Server-2016-Storage-Spaces-Direct-S2D-Cluster-in-Microsoft-Azure/player" width="960" height="540" allowfullscreen></iframe>
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 仮想化環境で記憶域スペース ダイレクトを展開するときに、次の考慮事項が適用されます。
 
@@ -49,7 +49,7 @@ ms.locfileid: "66447809"
 
     -   Hyper-v – ノード間で Vm を分離する Vm で構成 AntiAffinityClassNames
 
-    -   VMware の型の DRS ルールを作成して構成する VM のアンチ アフィニティ ルール ' 別々 の仮想マシン"ESX のホスト間で Vm を分離します。 ディスク記憶域スペース ダイレクトで使用するための表示には、Paravirtual SCSI (PVSCSI) アダプタを使用する必要があります。 Windows Server、PVSCSI サポートを参照して https://kb.vmware.com/s/article/1010398します。
+    -   VMware の型の DRS ルールを作成して構成する VM のアンチ アフィニティ ルール ' 別々 の仮想マシン"ESX のホスト間で Vm を分離します。 ディスク記憶域スペース ダイレクトで使用するための表示には、Paravirtual SCSI (PVSCSI) アダプタを使用する必要があります。 Windows Server、PVSCSI サポートを参照して https://kb.vmware.com/s/article/1010398 します。
 
 -   低待機時間を活用して高パフォーマンス ストレージ - Azure Premium Storage の管理/ディスクが必要です
 
@@ -79,6 +79,6 @@ ms.locfileid: "66447809"
 
 ## <a name="see-also"></a>関連項目
 
-[記憶域スペース ダイレクト、ビデオ、およびステップ バイ ステップ ガイドをデプロイするための他の Azure Iaas VM テンプレート](https://blogs.msdn.microsoft.com/clustering/2017/02/14/deploying-an-iaas-vm-guest-clusters-in-microsoft-azure/)します。
+[記憶域スペース ダイレクト、ビデオ、およびステップ バイ ステップ ガイドをデプロイするための他の Azure Iaas VM テンプレート](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)します。
 
-[追加の記憶域スペース ダイレクトの概要](https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+[追加の記憶域スペース ダイレクトの概要](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)

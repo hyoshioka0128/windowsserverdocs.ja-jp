@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-bc
+ms.technology: networking-bc
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9c465a9e-c504-44ec-9ebc-4e06ba54db30
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 36d8379378529a94874c82e0aa90a6440f0281b2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fd1757f6da011c2f774d8f97f628e5f0e87d3bf7
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822233"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284033"
 ---
 # <a name="enable-branchcache-on-a-file-share-optional"></a>ファイル共有上の BranchCache を有効にする (省略可能)
 
@@ -35,11 +34,11 @@ ms.locfileid: "59822233"
   
 1.  Windows PowerShell を開き、「 **mmc**」と入力して、Enter キーを押します。 Microsoft 管理コンソール (MMC) が開きます。  
   
-2.  MMC で、**[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。 **スナップインを追加または** ダイアログ ボックスが表示されます。  
+2.  MMC で、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。 **スナップインを追加または** ダイアログ ボックスが表示されます。  
   
 3.  **スナップインを追加または**で、**利用できるスナップイン**、ダブルクリックして**共有フォルダー**します。 ローカル コンピューター オブジェクトを選択したフォルダーの共有ウィザードが開きます。 必要に応じて、ビューの構成 をクリックして**完了**、順にクリックします**OK**。  
   
-4.  ダブルクリック**共有フォルダー (ローカル)**、 をクリックし、**共有**。  
+4.  ダブルクリック**共有フォルダー (ローカル)** 、 をクリックし、**共有**。  
   
 5.  詳細ペインで、共有を右クリックし をクリックし、**プロパティ**します。 共有の**プロパティ** ダイアログ ボックスが表示されます。  
   

@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cc9f02b9-8ddd-4cae-b397-a832996144dd
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7aec08a19759c98150cf7518643f634947c5133d
-ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
+ms.openlocfilehash: 78303bbdd29819389944348a279fb4a52f1570fb
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66804998"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282791"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>手順 2 リモート アクセスの展開を計画します。
 

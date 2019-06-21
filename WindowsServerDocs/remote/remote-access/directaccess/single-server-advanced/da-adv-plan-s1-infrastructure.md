@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c3b7751ca6d0b62ee078d5da7084cbc007edc155
-ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
+ms.openlocfilehash: 339189928d3ce5403d0fca4a06efc36b867e2a50
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66805168"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281780"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>手順 1. プラン DirectAccess インフラストラクチャを高度です
 
@@ -205,7 +204,7 @@ DirectAccess サーバーは IP-HTTPS リスナーとして機能し、HTTPS Web
   
 IP-HTTPS を標準以外のポートで使用する計画がある場合は、DirectAccess サーバーで次の手順を実行してください。  
   
-1.  0.0.0.0:443 にバインドされた既存の証明書を削除して、選択したポートにバインドされた証明書に置き換えます。 この例の目的には、44500 を使用します。 証明書のバインドを削除する前に表示し、コピー、 **appid**します。  
+1.  0\.0.0.0:443 にバインドされた既存の証明書を削除して、選択したポートにバインドされた証明書に置き換えます。 この例の目的には、44500 を使用します。 証明書のバインドを削除する前に表示し、コピー、 **appid**します。  
   
     1.  証明書バインドを削除するには、次の内容を入力します。  
   

@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 36255d80-a13e-4af7-a5c0-ab4c8f302622
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 736495ff5d1d5d3ba73fa86e6030606da92271de
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c4ebab1cb444df9c756d66ded24e1c851023d17a
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832753"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281169"
 ---
 # <a name="manage-directaccess-clients-remotely"></a>DirectAccess クライアントをリモートで管理する
 

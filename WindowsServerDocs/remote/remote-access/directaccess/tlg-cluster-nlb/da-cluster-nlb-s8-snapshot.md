@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 915ef7dd-169d-4d58-9174-438d8ffa3584
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0fdf4ff296f86a7679e588df739d4c0ae0568153
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 616bf6b84ff6199990c24b5c7a9419f2142086aa
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860213"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281584"
 ---
 # <a name="step-8-snapshot-the-directaccess-cluster-nlb-configuration"></a>手順 8 の DirectAccess クラスター-NLB 構成のスナップショット
 

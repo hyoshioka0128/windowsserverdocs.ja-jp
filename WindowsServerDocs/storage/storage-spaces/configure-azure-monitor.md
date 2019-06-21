@@ -10,12 +10,12 @@ ms.topic: article
 author: adagashe
 ms.date: 3/26/2019
 ms.localizationpriority: ''
-ms.openlocfilehash: 908e4a7a75606905caebfa4b79168b3976982e6d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6b229696e796f176fe89ab250ab48f1d9f0d5666
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447595"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280201"
 ---
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>Azure Monitor を使用して、ヘルス サービスの障害の電子メールを送信するには
@@ -31,11 +31,11 @@ Azure Monitor の収集、分析、クラウドからのテレメトリに作用
 
 Azure Monitor によって収集されたすべてのデータが 2 つの基本的な型のいずれかに適合: メトリックとログ。
 
-1. [メトリック](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-collection#metrics)は時間で特定の時点のシステムの一部の側面を表す数値。 軽量でリアルタイムに近いシナリオをサポートします。 Azure Monitor 右側で、Azure portal の [概要] ページで収集されたデータが表示されます。
+1. [メトリック](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#metrics)は時間で特定の時点のシステムの一部の側面を表す数値。 軽量でリアルタイムに近いシナリオをサポートします。 Azure Monitor 右側で、Azure portal の [概要] ページで収集されたデータが表示されます。
 
 ![メトリックス エクスプ ローラーでのメトリックの取り込みの画像](media/configure-azure-monitor/metrics.png)
 
-2. [ログ](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/data-collection#logs)さまざまな種類の異なる種類ごとにプロパティのセットを持つレコードに編成されたデータを含めることができます。 イベントやトレースなどのテレメトリとして格納されますログさらにパフォーマンス データをすべて組み合わせることができます分析できるようにします。 Azure Monitor によって収集されたログ データを使用して分析することができます[クエリ](https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/log-query-overview)すばやく取得し、統合、および、収集されたデータを分析します。 作成してテストを使用してクエリ[Log Analytics](https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/portals) 、Azure portal といずれかから直接これらのツールを使用してデータを分析またはで使用するためのクエリを保存[視覚化](https://docs.microsoft.com/en-us/azure/azure-monitor/visualizations)または[アラートルール](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-overview)します。
+2. [ログ](https://docs.microsoft.com/azure/azure-monitor/platform/data-collection#logs)さまざまな種類の異なる種類ごとにプロパティのセットを持つレコードに編成されたデータを含めることができます。 イベントやトレースなどのテレメトリとして格納されますログさらにパフォーマンス データをすべて組み合わせることができます分析できるようにします。 Azure Monitor によって収集されたログ データを使用して分析することができます[クエリ](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview)すばやく取得し、統合、および、収集されたデータを分析します。 作成してテストを使用してクエリ[Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/portals) 、Azure portal といずれかから直接これらのツールを使用してデータを分析またはで使用するためのクエリを保存[視覚化](https://docs.microsoft.com/azure/azure-monitor/visualizations)または[アラートルール](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview)します。
 
 ![ログの log analytics での取り込みの画像](media/configure-azure-monitor/logs.png)
 
@@ -64,9 +64,9 @@ get-storagesubsystem clus* | Set-StorageHealthSetting -Name "Platform.ETW.MasTyp
 
 セットアップ、クラスターで適切なログ記録、次の手順がある log analytics を適切に構成します。
 
-概要、 [Azure Log Analytics](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/agent-windows)詳細な分析と相関のための 1 つのリポジトリにデータ センターまたは他のクラウド環境で物理または仮想 Windows コンピューターから直接データを収集できます。
+概要、 [Azure Log Analytics](https://docs.microsoft.com/azure/azure-monitor/platform/agent-windows)詳細な分析と相関のための 1 つのリポジトリにデータ センターまたは他のクラウド環境で物理または仮想 Windows コンピューターから直接データを収集できます。
 
-サポートされる構成については、確認[サポートされている Windows オペレーティング システム](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems)と[ネットワーク ファイアウォール構成](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements)します。
+サポートされる構成については、確認[サポートされている Windows オペレーティング システム](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems)と[ネットワーク ファイアウォール構成](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements)します。
 
 Azure サブスクリプションを持っていない場合は、作成、[無料アカウント](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)開始する前にします。
 
@@ -76,7 +76,7 @@ Azure portal にログイン[ https://portal.azure.com](https://azure.microsoft.
 
 ### <a name="create-a-workspace"></a>ワークスペースを作成します。
 
-以下の手順について詳しくは、次を参照してください。、 [Azure Monitor のドキュメント](https://docs.microsoft.com/en-us/azure/azure-monitor/learn/quick-collect-windows-computer)します。
+以下の手順について詳しくは、次を参照してください。、 [Azure Monitor のドキュメント](https://docs.microsoft.com/azure/azure-monitor/learn/quick-collect-windows-computer)します。
 
 1. Azure portal のをクリックして**すべてのサービス**します。 リソースの一覧で、入力**Log Analytics**します。 一覧がフィルター処理は、入力に基づくように入力を開始します。 選択**Log Analytics**します。<br><br> 
 
@@ -123,7 +123,7 @@ Azure portal にログイン[ https://portal.azure.com](https://azure.microsoft.
 
 ![Log Analytics への MMA 接続の状態](media/configure-azure-monitor/log-analytics-mma-laworkspace-status.png)
 
-サポートされる構成については、確認[サポートされている Windows オペレーティング システム](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems)と[ネットワーク ファイアウォール構成](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements)します。
+サポートされる構成については、確認[サポートされている Windows オペレーティング システム](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#supported-windows-operating-systems)と[ネットワーク ファイアウォール構成](https://docs.microsoft.com/azure/azure-monitor/platform/log-analytics-agent#network-firewall-requirements)します。
 
 ## <a name="collecting-event-and-performance-data"></a>イベントとパフォーマンス データの収集
 
@@ -212,4 +212,4 @@ Event | where (EventLevelName == "Error")
 ## <a name="see-also"></a>関連項目
 
 - [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)
-- 詳細については、読み取り、 [Azure Monitor のドキュメント](https://docs.microsoft.com/en-us/azure/azure-monitor/learn/tutorial-viewdata)します。
+- 詳細については、読み取り、 [Azure Monitor のドキュメント](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-viewdata)します。

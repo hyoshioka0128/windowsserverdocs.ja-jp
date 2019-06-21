@@ -5,12 +5,12 @@ author: maertendMSFT
 keywords: OpenSSH を SSH での Win32 OpenSSH
 title: Windows で OpenSSH
 ms.product: w10
-ms.openlocfilehash: 68ced1ff133495d7658e486e7e72321e18857b21
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c6563fbe4fe69acad4d295a3f7fe166e92d38444
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843363"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280057"
 ---
 # <a name="openssh-in-windows"></a>Windows で OpenSSH
 
@@ -32,5 +32,5 @@ SSH は、クライアント サーバー アーキテクチャ、ユーザー�
 
 OpenSSH の一般的な機能の追加の詳細なドキュメントはオンラインで[OpenSSH.com](https://www.openssh.com/manual.html)します。 
 
-マスター [OpenSSH オープン ソース プロジェクト](https://www.openssh.com)OpenBSD プロジェクトの開発者によって管理されます。 このプロジェクトの Microsoft のフォークが[Github](https://github.com/PowerShell/openssh-portable)します。
-Windows OpenSSH に関するフィードバックのことし、で Github の issue を作成して指定することができます、 [OpenSSH Github リポジトリ](https://github.com/PowerShell/openssh-portable)します。 
+マスター [OpenSSH オープン ソース プロジェクト](https://www.openssh.com)OpenBSD プロジェクトの開発者によって管理されます。 このプロジェクトの Microsoft のフォークが[GitHub](https://github.com/PowerShell/openssh-portable)します。
+Windows OpenSSH に関するフィードバックのことし、で GitHub の issue を作成して指定することができます、 [OpenSSH GitHub リポジトリ](https://github.com/PowerShell/openssh-portable)します。 

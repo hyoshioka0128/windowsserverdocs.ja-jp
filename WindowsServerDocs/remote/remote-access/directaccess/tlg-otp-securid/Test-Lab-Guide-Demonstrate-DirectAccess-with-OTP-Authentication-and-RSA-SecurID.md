@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 10c7a49c-5671-4bec-b562-13fdd67f4629
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a6e4b03ceb331899ac622bffe44061a7d92f5a09
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7ac60bdd5d8259197641a6aeaf332d8e671a7e97
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866233"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281248"
 ---
 # <a name="test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid"></a>テスト ラボ ガイド:OTP 認証と RSA SecurID と DirectAccess をデモンストレーションします。
 

@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 796825c3-5e3e-4745-a921-25ab90b95ede
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2d1661d43cd45614dfabc66fd9a737c55ab388ed
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 34a65434a0035c60c888170e779496653ad0ab6d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446922"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283200"
 ---
 # <a name="step-13-test-directaccess-connectivity-from-behind-a-nat-device"></a>手順 13 NAT デバイスの背後から DirectAccess 接続のテスト
 

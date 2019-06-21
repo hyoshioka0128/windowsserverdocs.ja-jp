@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 1459819a-b1b6-4800-8770-4a85d02c7a2b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b992f302378c103b242537c97e5d4b41e382b9cd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3b2c251f99be455ec11e3ea3ef25ca14c8399de2
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876233"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282980"
 ---
 # <a name="manage-remote-access"></a>リモート アクセスの管理
 
@@ -31,8 +30,8 @@ Windows Server 2016 および Windows Server 2012 は、DirectAccess および�
 > [!NOTE]  
 > このトピックに加えて、リモート アクセス管理についての次のトピックも参照してください。  
 >   
-> -   [リモート アクセス監視とアカウンティングを使用します。](monitoring-and-accounting/Use-Remote-Access-Monitoring-and-Accounting.md)  
-> -   [DirectAccess クライアントをリモート管理します。](manage-remote-clients/Manage-DirectAccess-Clients-Remotely.md)  
+> -   [リモート アクセスの監視とアカウンティングを使用する](monitoring-and-accounting/Use-Remote-Access-Monitoring-and-Accounting.md)  
+> -   [DirectAccess クライアントをリモートで管理する](manage-remote-clients/Manage-DirectAccess-Clients-Remotely.md)  
   
 ## <a name="BKMK_OVER"></a>シナリオの説明  
 DirectAccess クライアント コンピューターは、ユーザーがコンピューターにサインインしているかどうかに関係なく、インターネットに接続されるときは常に、イントラネットに接続されます。 このコンピューターはイントラネット リソースとして管理でき、グループ ポリシーの変更、オペレーティング システムの更新、マルウェア対策の更新、その他の組織の変更について最新の状態に保持できます。  

@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae8bbff0-c981-4bc6-8df1-861621d0627f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 90edc10e01c4dabfc259256e3359463f8359a467
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 386d10dda9f61724a012801840e6471e48c0905a
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820193"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283538"
 ---
 # <a name="step-3-verify-the-advanced-directaccess-deployment"></a>手順 3 は、高度な DirectAccess 展開を確認します。
 

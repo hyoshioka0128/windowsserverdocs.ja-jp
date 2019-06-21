@@ -1,12 +1,12 @@
 ---
 title: IP アドレス用の Kerberos の構成
 description: Spn の IP ベースの Kerberos サポート
-ms.openlocfilehash: 30741f7a0f1978fcaa6ac83c98a54c07e1ef25c5
-ms.sourcegitcommit: c6acac3622e5d34714ca5c569805931681f98779
+ms.openlocfilehash: aa2685fcff2fdf231e5e5884d25885585f0bd6c9
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66391523"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67279965"
 ---
 # <a name="kerberos-clients-allow-ipv4-and-ipv6-address-hostnames-in-service-principal-names-spns"></a>Kerberos クライアントがサービス プリンシパル名 (Spn) で IPv4 と IPv6 アドレスのホスト名を許可します。
 
@@ -30,7 +30,7 @@ Spn の IP アドレスのホスト名のサポートを構成するには、Try
 
 IP アドレスは、多くの場合、一時的なため、IP アドレスは通常のホスト名の代わりに使用されません。 これには、アドレスのリースは有効期限が切れるし、更新の競合および認証の失敗につながることができます。 IP アドレス ベースの SPN を登録するため、手動のプロセスし、DNS ベースのホスト名に切り替えることはできませんがある場合にのみ使用する必要があります。
 
-推奨方法が使用するには、 [Setspn.exe](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11))ツール。 SPN できますのみ登録することを Active Directory で単一のアカウント、一度にため DHCP を使用する場合、IP アドレスが静的なリースがあることをお勧めに注意してください。
+推奨方法が使用するには、 [Setspn.exe](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11))ツール。 SPN できますのみ登録することを Active Directory で単一のアカウント、一度にため DHCP を使用する場合、IP アドレスが静的なリースがあることをお勧めに注意してください。
 
 ```
 Setspn -s <service>/ip.address> <domain-user-account>  

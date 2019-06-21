@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc7205b4-a822-4038-ab67-ec0a870737f2
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2bda808336624a5d80ed44cbadf543fc134c6190
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a3d01dd8002e28fb127ac6b1b4cea25c58953521
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827883"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281392"
 ---
 # <a name="steps-for-configuring-the-test-lab"></a>テスト ラボの構成手順
 

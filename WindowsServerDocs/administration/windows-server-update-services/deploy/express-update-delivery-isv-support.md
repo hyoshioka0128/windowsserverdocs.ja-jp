@@ -11,12 +11,12 @@ author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 7331418c1926958da07c94bca9ff9f871134f3fa
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 5f2a99bb69fd41c05013788187838f8fceb5f69a
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439875"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280449"
 ---
 # <a name="express-update-delivery-isv-support"></a>更新プログラムのエクスプレス配信 ISV のサポート
 
@@ -66,7 +66,7 @@ WSUS では、Windows Update にインターフェイスとして機能し、Exp
 
 #### <a name="specify-the-isv-file-cache"></a>ISV ファイル キャッシュを指定します。
 
-記載された新しいクライアント側グループ ポリシーとモバイル デバイス管理 (MDM) の設定、 [**構成サービス プロバイダー リファレンス**](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/customize/mdm/configuration-service-provider-reference) ISV ファイル キャッシュの場所を定義します。
+記載された新しいクライアント側グループ ポリシーとモバイル デバイス管理 (MDM) の設定、 [**構成サービス プロバイダー リファレンス**](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/configuration-service-provider-reference) ISV ファイル キャッシュの場所を定義します。
 
 | **名前**                                              | **説明**                                                                                                                                                      |
 |-------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -93,7 +93,7 @@ ISV ファイル キャッシュの代替ダウンロード場所を設定する
 
 **ISV ファイル キャッシュを設定するには。**
 
-1. 使用[WSUS Api](https://msdn.microsoft.com/en-us/library/windows/desktop/microsoft.updateservices.administration.updatefile(v=vs.85).aspx)更新プログラムのファイルのパスとファイル名を MU サービスにアクセスします。
+1. 使用[WSUS Api](https://msdn.microsoft.com/library/windows/desktop/microsoft.updateservices.administration.updatefile(v=vs.85).aspx)更新プログラムのファイルのパスとファイル名を MU サービスにアクセスします。
 
     WSUS サーバーで各更新プログラムのメタデータを含む、更新プログラムのファイルのパスとファイル名、Microsoft Update で次のように (Microsoft Update のホスト名で太字、その後にファイルのパスとファイル名): **<http://download.windowsupdate.com>** /c msdownload/更新/software/updt/2016/09/windows10.0-kb3195781-x64_0c06079bccc35cba35a48bd2b1ec46f818bd2e74.msu
 
@@ -119,7 +119,7 @@ ISV のクライアント エージェントは、ダウンロードと、次の
 
 5.  ISV のクライアント エージェントが承認済み更新プログラムをインストールする WU クライアントを呼び出す、更新プログラムがダウンロードされたら、
 
-参照してください[検索、ダウンロード、および更新プログラムのインストール](https://msdn.microsoft.com/en-us/library/windows/desktop/aa387102(v=vs.85).aspx)WU クライアントを使用してスキャンする方法の詳細については、ダウンロードして更新プログラムをインストールします。
+参照してください[検索、ダウンロード、および更新プログラムのインストール](https://msdn.microsoft.com/library/windows/desktop/aa387102(v=vs.85).aspx)WU クライアントを使用してスキャンする方法の詳細については、ダウンロードして更新プログラムをインストールします。
 
 ### <a name="download-workflow-options"></a>ワークフロー オプションをダウンロードします。
 

@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: faec70ac-88c0-4b0a-85c7-f0fe21e28257
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f3b2eb55c11348c3abcb1ef9e234cd19ba727758
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2d8d5fbe427f25e9e26eac96d89dc5fae17e197b
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446591"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281052"
 ---
 # <a name="step-2-configure-the-multisite-infrastructure"></a>手順 2 は、マルチサイトのインフラストラクチャを構成します。
 

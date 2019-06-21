@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d12632d7-4f47-4b4e-a4ad-f18322d726e2
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 092628459d0aed6668a580d23bda2689c7247c11
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 84c9ccc1449b095c60ac99962993459315c687ca
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869813"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281750"
 ---
 # <a name="plan-a-basic-directaccess-deployment"></a>基本的な DirectAccess 展開を計画する
 

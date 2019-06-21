@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0d41c846034ad421d0da81bda57acbcd419c1ae1
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bc3cfa583866335d214282be08366854dec77d0f
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437392"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280007"
 ---
 # <a name="manage-bde-tpm"></a>manage-bde: tpm
 
 > 適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 > 
 > [!IMPORTANT]
-> このコマンドは、Windows 8、Windows Server 2012 またはそれ以降のオペレーティング システムを実行しているコンピュータでの使用はサポートされていません。 これらのコンピューターを使用することができます、 [Windows PowerShell 用の TPM 管理コマンドレット](https://docs.microsoft.com/en-us/powershell/module/trustedplatformmodule/)します。
+> このコマンドは、Windows 8、Windows Server 2012 またはそれ以降のオペレーティング システムを実行しているコンピュータでの使用はサポートされていません。 これらのコンピューターを使用することができます、 [Windows PowerShell 用の TPM 管理コマンドレット](https://docs.microsoft.com/powershell/module/trustedplatformmodule/)します。
 > Windows 7 または Windows Server 2008 を実行しているコンピューターでこのコマンドを使用する場合は、コンピューターのトラステッド プラットフォーム モジュール (TPM) このコマンドを使用して引き続き構成できます。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
 > ## <a name="syntax"></a>構文
 > ```

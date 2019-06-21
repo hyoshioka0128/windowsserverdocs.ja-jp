@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7b66c09d-e401-4f70-9a2a-6047dd629bfa
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2edf0fef80cfcfb2c754cacd53df3b38c3881733
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a2db802fa928a4051fbe409fc0ba60d774bb0428
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844613"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284052"
 ---
 # <a name="dns-resource-record-management"></a>DNS リソース レコードの管理
 
@@ -115,7 +114,7 @@ IPAM では、IPAM コンソールからリソース レコードに対して次
 IPAM は、IPAM コンソールを使用してすべての DNS 構成変更を自動的に記録します。  
   
 ## <a name="see-also"></a>関連項目  
-[IPAM を管理します。](Manage-IPAM.md)  
+[IPAM の管理](Manage-IPAM.md)  
   
 
 

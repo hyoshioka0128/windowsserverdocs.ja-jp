@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3c6df007-4c39-4b72-9f2c-b2c9b2825c2f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4a963fb147370fd6739d247ac5b1d53850f0da1b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9b8afb325de93d9dadfce9bbf56cf552e2dab711
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879893"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282948"
 ---
 # <a name="remote-access-server-role-documentation"></a>リモート アクセス サーバーの役割のドキュメント
 

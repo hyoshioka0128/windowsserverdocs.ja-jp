@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fd4b691a4b2bf6cc66a3b833eef8eca9f93dccc5
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2a8fb9565c5a84844104b202d749e74337101601
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446106"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281735"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>手順 1 は、基本的な DirectAccess インフラストラクチャを構成します。
 

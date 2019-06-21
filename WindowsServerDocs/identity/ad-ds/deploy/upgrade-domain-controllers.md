@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 6f3907426fd1124c5ed0a411a155490a2a537239
-ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
+ms.openlocfilehash: 572f923c33739b854808372a826e9c9bbc6aaca3
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66719680"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280853"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2016"></a>Windows Server 2016 へのドメイン コントローラーのアップグレード
 
@@ -27,7 +27,7 @@ ms.locfileid: "66719680"
 1. 対象サーバーがシステム要件を満たしていることを確認します。 
 2. アプリケーションの互換性を確認します。 
 3. Windows Server 2016 への移行の推奨事項を確認します。 
-4. セキュリティ設定を確認します。 詳細については、次を参照してください。[非推奨の機能および動作変更は、Windows Server 2016 での AD DS に関連する](https://docs.microsoft.com/en-us/windows-server/get-started/deprecated-features)します。 
+4. セキュリティ設定を確認します。 詳細については、次を参照してください。[非推奨の機能および動作変更は、Windows Server 2016 での AD DS に関連する](https://docs.microsoft.com/windows-server/get-started/deprecated-features)します。 
 5. インストールを実行するコンピューターから対象サーバーに接続できることを確認します。 
 6. 必要な操作マスターの役割を使用できることを確認します。 
    - インストールを実行するマシンを既存のドメインまたはフォレストで Windows Server 2016 を実行する最初の DC をインストールするにはへの接続を必要があります、**スキーマ マスター** adprep/forestprep およびインフラストラクチャ マスターを実行するにはadprep/domainprep を実行します。 

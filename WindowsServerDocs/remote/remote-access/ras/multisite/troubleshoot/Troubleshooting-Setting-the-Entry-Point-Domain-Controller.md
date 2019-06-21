@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b12dd0e8-1d80-4d4b-bb45-586f19d17ef0
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ee02d5db02bb6475dd8ec8ae4cba45e82b4c316c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5e7e09a6715df22882c8a88aedf95a5158dd2a0d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839403"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280913"
 ---
 # <a name="troubleshooting-setting-the-entry-point-domain-controller"></a>エントリ ポイント ドメイン コントローラー設定のトラブルシューティング
 

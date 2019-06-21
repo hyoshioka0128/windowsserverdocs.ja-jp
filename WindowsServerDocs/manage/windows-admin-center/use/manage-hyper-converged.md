@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: fe00072932d9c7f283ebd887a5292ac9a9d0e37f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 4d156820781d2a9defc989fa1acf35d4289fb24f
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446031"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284087"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Windows Admin Center でのハイパー コンバージド インフラストラクチャを管理します。
 
@@ -21,7 +21,7 @@ ms.locfileid: "66446031"
 
 ## <a name="what-is-hyper-converged-infrastructure"></a>Hyper-Converged インフラストラクチャします。
 
-ハイパー コンバージド インフラストラクチャでは、ソフトウェアによるコンピューティング、ストレージ、および高パフォーマンス、コスト効率に優れたを提供する 1 つのクラスターに簡単に拡張できる仮想化ネットワークを統合します。 この機能は、Windows Server 2016 で導入された[記憶域スペース ダイレクト](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)、[ソフトウェアによるネットワーク制御](https://docs.microsoft.com/en-us/windows-server/networking/sdn/software-defined-networking)と[HYPER-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)します。
+ハイパー コンバージド インフラストラクチャでは、ソフトウェアによるコンピューティング、ストレージ、および高パフォーマンス、コスト効率に優れたを提供する 1 つのクラスターに簡単に拡張できる仮想化ネットワークを統合します。 この機能は、Windows Server 2016 で導入された[記憶域スペース ダイレクト](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)、[ソフトウェアによるネットワーク制御](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)と[HYPER-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)します。
 
 > [!Tip]
 > Hyper-Converged インフラストラクチャを取得しようとしていますか。 マイクロソフトでは、これらをお勧め[Windows Server ソフトウェア定義](https://microsoft.com/wssd)パートナーからソリューションです。 設計は、アセンブリ、互換性および取得するための信頼性と簡単に実行されているように、参照アーキテクチャの検証にあり。

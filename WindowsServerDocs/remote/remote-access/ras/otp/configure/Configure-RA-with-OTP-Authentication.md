@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82505b18-dd77-4dd1-aa27-b2962b8241ca
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3c49f2e340051df275296eaa3d8d63da50297216
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 76a3980d2169afd4e36692210e063f230fd863a4
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849063"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282470"
 ---
 # <a name="configure-remote-access-with-otp-authentication"></a>OTP 認証を使用するリモート アクセスを構成する
 

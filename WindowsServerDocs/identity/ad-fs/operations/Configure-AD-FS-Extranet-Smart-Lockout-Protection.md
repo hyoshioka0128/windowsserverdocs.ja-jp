@@ -9,12 +9,12 @@ ms.date: 05/20/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 7a4ad8c0199f0f62d7cd69a43897cb4608ddb365
-ms.sourcegitcommit: ccc802338b163abdad2e53b55f39addcfea04603
+ms.openlocfilehash: eb31a76dbd7ccdff3ea3ee0d6bb26f9ee16ae93f
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66687371"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280703"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>AD FS エクストラネット ロックアウトおよびエクストラネットのスマート ロックアウト
 
@@ -237,7 +237,7 @@ AD FS では、アカウント アクティビティ データを管理する 3 
 ## <a name="event-logging--user-activity-information-for-ad-fs-extranet-lockout"></a>イベントのログと AD FS のエクストラネットのロックアウトのユーザー アクティビティ情報
 
 ### <a name="connect-health"></a>Connect Health
-ユーザー アカウントのアクティビティを監視するお勧めの方法は、Connect Health からです。 接続の正常性が危険な Ip でダウンロード可能なレポートを生成し、不正なパスワードの試行します。 危険な IP レポート内の各項目には、失敗した AD FS サインイン アクティビティに関する指定されたしきい値を超える集計情報が表示されます。 カスタマイズ可能な電子メールの設定でこれが発生するとすぐに、警告管理者に電子メール通知を設定できます。 追加情報およびセットアップの手順では、次を参照してください。、 [Connect Health のドキュメント](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-health-adfs)します。
+ユーザー アカウントのアクティビティを監視するお勧めの方法は、Connect Health からです。 接続の正常性が危険な Ip でダウンロード可能なレポートを生成し、不正なパスワードの試行します。 危険な IP レポート内の各項目には、失敗した AD FS サインイン アクティビティに関する指定されたしきい値を超える集計情報が表示されます。 カスタマイズ可能な電子メールの設定でこれが発生するとすぐに、警告管理者に電子メール通知を設定できます。 追加情報およびセットアップの手順では、次を参照してください。、 [Connect Health のドキュメント](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-health-adfs)します。
 
 ### <a name="ad-fs-extranet-smart-lockout-events"></a>AD FS エクストラネットのスマート ロックアウトのイベント。
 書き込まれるイベントをエクストラネットのスマート ロックアウトの ESL は、'強制' または"ログ専用"モードで有効にする必要があり、ADFS セキュリティ監査を有効にします。

@@ -9,12 +9,12 @@ ms.author: pashort
 author: shortpatti
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b4dd78e0e88678d4570d408b3dcd472bddc88ba
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: e7cbe64609e30b042df70020896aebd85b7d22b9
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749664"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280780"
 ---
 # <a name="always-on-vpn-enhancements"></a>Always On VPN の機能強化
 
@@ -27,7 +27,7 @@ Always On VPN では、多くのメリットを以前の Windows VPN ソリュ�
 
 - **プラットフォーム統合:** Always On VPN では、Windows オペレーティング システム、無数の高度な接続シナリオの堅牢なプラットフォームを提供するサード パーティ製ソリューションと統合の機能強化があります。
 
-- **セキュリティ:** Always On VPN が VPN 接続を使用できるは、アプリケーション、トラフィックの種類を制限する新しい高度なセキュリティ機能およびとの接続開始を使用して認証方法。 接続が通常は、アクティブな場合は、接続をセキュリティで保護するは特に重要です。 詳細については、次を参照してください。 [VPN 認証オプション](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-authentication)します。
+- **セキュリティ:** Always On VPN が VPN 接続を使用できるは、アプリケーション、トラフィックの種類を制限する新しい高度なセキュリティ機能およびとの接続開始を使用して認証方法。 接続が通常は、アクティブな場合は、接続をセキュリティで保護するは特に重要です。 詳細については、次を参照してください。 [VPN 認証オプション](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-authentication)します。
 
 - **VPN 接続:** Always On VPN、デバイスのトンネルの有無は、自動トリガー機能を提供します。 Always On VPN、前に、ユーザーまたはデバイスの認証を使用した自動の接続をトリガーすることは不可能でした。  
 

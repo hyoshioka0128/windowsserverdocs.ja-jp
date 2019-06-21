@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 375feefc-949e-47c3-9e61-35b79e021966
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9cd1184c9f9d603b82ac43829d4c8f7946f26561
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 44db34199257367e98279ccbcbc2d5041ee9884c
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867983"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283803"
 ---
 # <a name="view-dns-resource-records-for-a-dns-zone"></a>DNS ゾーンの DNS リソース レコードを表示する
 
@@ -53,7 +52,7 @@ ms.locfileid: "59867983"
   
 ## <a name="see-also"></a>関連項目  
 [DNS ゾーンの管理](DNS-Zone-Management.md)  
-[IPAM を管理します。](Manage-IPAM.md)  
+[IPAM の管理](Manage-IPAM.md)  
   
 
 

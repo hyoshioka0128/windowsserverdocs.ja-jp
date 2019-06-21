@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 01/18/2019
 description: この記事では、1 つのドメインから別の Windows Server 2019 クラスターの移動について説明します
 ms.localizationpriority: medium
-ms.openlocfilehash: 1054de942e807f00586903683faeaf695ec2f033
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: 5d5aaa333d2e20fa25e4738e343f326d63f75c6b
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452932"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280212"
 ---
 # <a name="failover-cluster-domain-migration"></a>フェールオーバー クラスターのドメインの移行
 
@@ -61,7 +61,7 @@ Windows Server 2016 以降では、クラスター サービスには、1 つの
 アニメーションが示すように、このオプションは破壊的なではありませんは、別のハードウェアまたは既存のクラスターからノードのいずれかが削除されているよりも必要があります。
 
 1. 以前のクラスターを利用しながら新しい clusterin、新しいドメインを作成します。
-2. 使用して、[クラスターの移行ウィザード](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10))すべてのリソースを新しいクラスターに移行します。 アラームは、このデータはコピーされません、ため、個別に実行する必要があります。
+2. 使用して、[クラスターの移行ウィザード](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10))すべてのリソースを新しいクラスターに移行します。 アラームは、このデータはコピーされません、ため、個別に実行する必要があります。
 3. 使用を停止または以前のクラスターを破棄します。
 
 どちらのオプションで、新しいクラスターが必要にすべて[クラスター対応アプリケーション](https://technet.microsoft.com/aa369082(v=vs.90))、すべて最新のドライバーをインストールし、可能性があるテストを行うすべてが適切に実行します。  これは、データも移動する必要がある場合、時間のかかるプロセスです。

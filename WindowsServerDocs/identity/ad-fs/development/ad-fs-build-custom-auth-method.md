@@ -8,16 +8,16 @@ ms.date: 05/23/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f28458ed9e781df6eca2478b02fb667d9240ca48
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: a638ec25be4fc99b4eccd1d9fa541e640ef9e15c
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445302"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280650"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>Windows Server AD FS のカスタム認証方法を構築します。
 
-このチュートリアルでは、Windows Server 2012 R2 で AD FS のカスタム認証メソッドを実装するための手順を提供します。 詳細については、次を参照してください。[追加の認証方法](https://msdn.microsoft.com/en-us/library/dn758113\(v=msdn.10\))します。
+このチュートリアルでは、Windows Server 2012 R2 で AD FS のカスタム認証メソッドを実装するための手順を提供します。 詳細については、次を参照してください。[追加の認証方法](https://msdn.microsoft.com/library/dn758113\(v=msdn.10\))します。
 
 
 > [!WARNING]
@@ -224,7 +224,7 @@ ms.locfileid: "66445302"
          }
          }
 
-         /// Returns an array indicating the type of claim that that the adapter uses to identify the user being authenticated.
+         /// Returns an array indicating the type of claim that the adapter uses to identify the user being authenticated.
          /// Note that although the property is an array, only the first element is currently used.
          /// MUST BE ONE OF THE FOLLOWING
          /// "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"
@@ -377,7 +377,7 @@ ms.locfileid: "66445302"
 
 2.  AD FS 役割サービスをインストールし、少なくとも 1 つのノードのファームを構成します。
 
-    ラボ環境でのフェデレーション サーバーをセットアップする詳細な手順は、次を参照してください。、 [Windows Server 2012 R2 AD FS 展開ガイド](https://msdn.microsoft.com/en-us/library/dn486820\(v=msdn.10\))します。
+    ラボ環境でのフェデレーション サーバーをセットアップする詳細な手順は、次を参照してください。、 [Windows Server 2012 R2 AD FS 展開ガイド](https://msdn.microsoft.com/library/dn486820\(v=msdn.10\))します。
 
 3.  Gacutil.exe ツールをサーバーにコピーします。
 
@@ -641,6 +641,6 @@ MFA 認証ページ"adfabric"を入力するときに、成功したサインイ
 
 #### <a name="other-resources"></a>その他のリソース
 
-[追加の認証方法](https://msdn.microsoft.com/en-us/library/dn758113\(v=msdn.10\))  
-[機密性の高いアプリケーションの追加の多要素認証によるリスクを管理します。](https://msdn.microsoft.com/en-us/library/dn280949\(v=msdn.10\))
+[追加の認証方法](https://msdn.microsoft.com/library/dn758113\(v=msdn.10\))  
+[機密性の高いアプリケーションの追加の多要素認証によるリスクを管理します。](https://msdn.microsoft.com/library/dn280949\(v=msdn.10\))
 

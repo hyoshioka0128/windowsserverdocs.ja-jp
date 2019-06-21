@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5379373f-a3d9-4f51-b6fc-bf0f6df1d244
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 868b27a2a2b2005c3cf54d544d2534ae66ae0d98
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 36773525187229e498b9addf4b1e6532fd413701
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849483"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282322"
 ---
 # <a name="add-a-dns-resource-record"></a>DNS リソース レコードを追加する
 
@@ -76,7 +75,7 @@ ms.locfileid: "59849483"
   
 ## <a name="see-also"></a>関連項目  
 [DNS リソース レコードの管理](DNS-Resource-Record-Management.md)  
-[IPAM を管理します。](Manage-IPAM.md)  
+[IPAM の管理](Manage-IPAM.md)  
   
 
 

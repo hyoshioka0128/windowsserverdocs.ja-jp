@@ -8,15 +8,15 @@ ms.topic: article
 ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: bc21b9fdec5700fec23dc6af7ca15873ded34bea
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e018c0270a0bf410dada9c05d2c25e51fdfac1d8
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821963"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280161"
 ---
 # <a name="health-service-reports"></a>ヘルス サービスをレポートします。
-> 適用対象: Windows Server 2016
+> 適用対象:Windows Server 2019、Windows Server 2016
 
 ## <a name="what-are-reports"></a>レポートとは  
 
@@ -110,7 +110,7 @@ public void DiscoverObjects(CimSession Session)
 
 これらは、同じオブジェクトのようなコマンドレットを使用して PowerShell で取得した**Get-storagesubsystem**、 **Get-storagenode**、および**Get-volume**します。
 
-記載されているプロパティをすべて同じアクセスできる[記憶域管理 API クラス](https://msdn.microsoft.com/en-us/library/windows/desktop/hh830612(v=vs.85).aspx)します。
+記載されているプロパティをすべて同じアクセスできる[記憶域管理 API クラス](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx)します。
 
 ```
 ...
@@ -131,7 +131,7 @@ Windows Server 2016 の各スコープで使用可能なメトリックの完全
 
 ### <a name="iobserveronnext"></a>IObserver.OnNext()
 
-このサンプル コードを使用して、[オブザーバー デザイン パターン](https://msdn.microsoft.com/en-us/library/ee850490(v=vs.110).aspx)オブザーバーを実装するために持つ**OnNext()** メトリックの新しい各サンプルが到着すると、メソッドが呼び出されます。 その**OnCompleted()** メソッドが呼び出される場合、/終了をストリーミングする場合。 たとえば、可能性があります使用する、ストリーミングを再開するのにため、無期限に続行します。
+このサンプル コードを使用して、[オブザーバー デザイン パターン](https://msdn.microsoft.com/library/ee850490(v=vs.110).aspx)オブザーバーを実装するために持つ**OnNext()** メトリックの新しい各サンプルが到着すると、メソッドが呼び出されます。 その**OnCompleted()** メソッドが呼び出される場合、/終了をストリーミングする場合。 たとえば、可能性があります使用する、ストリーミングを再開するのにため、無期限に続行します。
 
 ```
 class MetricsObserver<T> : IObserver<T>
@@ -216,7 +216,7 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 | **プロパティ** | **例**       |
 | -------------|-------------------|
 | 名前         | IOLatencyAverage  |
-| 値        | 0.00021           |
+| Value        | 0.00021           |
 | 単位        | 3                 |
 
 単位 = {0, 1、2、3, 4}、0 = 1 ("Bytes"、"BytesPerSecond"、2 = ="CountPerSecond"、3 ="Seconds"、または 4「割合」を =。

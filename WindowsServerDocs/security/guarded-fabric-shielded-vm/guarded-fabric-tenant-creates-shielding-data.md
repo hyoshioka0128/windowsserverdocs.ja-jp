@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 25ed17d964f12c2f497ccde443dad9f8bc253b20
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: 3c36eff8aabd1fa1c6456dce1d08ebe504102e8c
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034676"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284165"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>シールドされた Vm のテナントでシールドされた VM を定義するシールド データの作成
 
@@ -199,7 +199,7 @@ VMM での署名付きテンプレート ディスクは汎用化するために
 実行することができます、シールド データ ファイル ウィザードに代わりに、[新規 ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps)シールド データ ファイルを作成します。
 
 すべてのシールド データ ファイルは、保護されたファブリック上で実行する、シールドされた Vm を承認するには、適切な所有者とガーディアンの証明書を構成する必要があります。
-実行してローカルにインストールされている任意の保護者があることを確認することができます[Get HgsGuardian](https://docs.microsoft.com/en-us/powershell/module/hgsclient/get-hgsguardian?view=win10-ps)します。 所有者 guardians は秘密キーを持つ、データ センターのガーディアン通常はそうではありません。
+実行してローカルにインストールされている任意の保護者があることを確認することができます[Get HgsGuardian](https://docs.microsoft.com/powershell/module/hgsclient/get-hgsguardian?view=win10-ps)します。 所有者 guardians は秘密キーを持つ、データ センターのガーディアン通常はそうではありません。
 
 所有者ガーディアンを作成する必要がある場合は、次のコマンドを実行します。
 
@@ -238,7 +238,7 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 1 つ以上のテンプレート ディスクを信頼するには ID の修飾子をボリュームのコンマ区切りの一覧を提供することで、`-VolumeIDQualifier`パラメーター。
 最後に、その他の操作をした場合は、ファイル、VM を使用して、応答ファイルに付随する必要がある、`-OtherFile`パラメーター ファイルのパスのコンマ区切りの一覧を指定します。
 
-コマンドレットのドキュメントを参照して[新規 ShieldingDataFile](https://docs.microsoft.com/en-us/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps)と[新規 VolumeIDQualifier](https://docs.microsoft.com/en-us/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps)するシールド データ ファイルを構成するその他の方法について説明します。
+コマンドレットのドキュメントを参照して[新規 ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps)と[新規 VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps)するシールド データ ファイルを構成するその他の方法について説明します。
 
 ## <a name="see-also"></a>関連項目
 

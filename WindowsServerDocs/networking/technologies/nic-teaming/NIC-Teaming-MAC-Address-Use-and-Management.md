@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-nict
+ms.technology: networking-nict
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 26d105e0-afc3-44b5-bb5e-0c884a4c5d62
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 074a55d2f0a5423af5892ed73dc8a2b8dbda9d5b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: be05c4b3069d5b6928765d7211ae8f3a2dc42a13
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824253"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283764"
 ---
 # <a name="nic-teaming-mac-address-use-and-management"></a>NIC チーミングでの MAC アドレスの使用と管理
 

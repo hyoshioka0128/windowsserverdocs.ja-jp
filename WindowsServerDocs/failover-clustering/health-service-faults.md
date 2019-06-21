@@ -8,15 +8,15 @@ ms.topic: article
 ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 31a38eacea3af3c0a288d61a77a24b4fa45a1932
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 72b1593503db75aa275b9eb45c8342cee6724001
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843373"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280398"
 ---
 # <a name="health-service-faults"></a>ヘルス サービスの障害
-> 適用対象: Windows Server 2016
+> 適用対象:Windows Server 2019、Windows Server 2016
 
 ## <a name="what-are-faults"></a>エラーとは
 
@@ -136,7 +136,7 @@ public void DiscoverObjects(CimSession Session)
 
 これらは、同じオブジェクトのようなコマンドレットを使用して PowerShell で取得した**Get-storagesubsystem**、 **Get-storagenode**、および**Get-volume**します。
 
-記載されているプロパティをすべて同じアクセスできる[記憶域管理 API クラス](https://msdn.microsoft.com/en-us/library/windows/desktop/hh830612(v=vs.85).aspx)します。
+記載されているプロパティをすべて同じアクセスできる[記憶域管理 API クラス](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx)します。
 
 ```
 ...
@@ -335,185 +335,185 @@ Windows Server 2016 では、ヘルス サービスは、次のエラーのカ�
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedmedia"></a>FaultType:Microsoft.Health.FaultType.PhysicalDisk.FailedMedia
 * ［重要度］:警告
 * 理由: *「物理ディスクが失敗しました。」*
-* RecommendedAction:*「物理ディスクを交換します。」*
+* RecommendedAction: *「物理ディスクを交換します。」*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldisklostcommunication"></a>FaultType:Microsoft.Health.FaultType.PhysicalDisk.LostCommunication
 * ［重要度］:警告
 * 理由: *「接続が失われた物理ディスクにします。」*
-* RecommendedAction:*「物理ディスクは、機能し、正しく接続されていることを確認」します。*
+* RecommendedAction: *「物理ディスクは、機能し、正しく接続されていることを確認」します。*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunresponsive"></a>FaultType:Microsoft.Health.FaultType.PhysicalDisk.Unresponsive
 * ［重要度］:警告
 * 理由: *「物理ディスクが発生している定期的な無応答。」*
-* RecommendedAction:*「物理ディスクを交換します。」*
+* RecommendedAction: *「物理ディスクを交換します。」*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskpredictivefailure"></a>FaultType:Microsoft.Health.FaultType.PhysicalDisk.PredictiveFailure
 * ［重要度］:警告
 * 理由: *「物理ディスクの障害は間もなく発生を予測します。」*
-* RecommendedAction:*「物理ディスクを交換します。」*
+* RecommendedAction: *「物理ディスクを交換します。」*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedhardware"></a>FaultType:Microsoft.Health.FaultType.PhysicalDisk.UnsupportedHardware
 * ［重要度］:警告
 * 理由: *「物理ディスクが、ソリューションのベンダーでサポートされていないため、検疫された」。*
-* RecommendedAction:*「物理ディスクはサポートされているハードウェアで置き換えます。」*
+* RecommendedAction: *「物理ディスクはサポートされているハードウェアで置き換えます。」*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedfirmware"></a>FaultType:Microsoft.Health.FaultType.PhysicalDisk.UnsupportedFirmware
 * ［重要度］:警告
 * 理由: *「物理ディスクが検疫にそのファームウェアのバージョンが、ソリューションのベンダーでサポートされていません。」*
-* RecommendedAction:*「対象のバージョンへの物理ディスクのファームウェアを更新」します。*
+* RecommendedAction: *「対象のバージョンへの物理ディスクのファームウェアを更新」します。*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskunrecognizedmetadata"></a>FaultType:Microsoft.Health.FaultType.PhysicalDisk.UnrecognizedMetadata
 * ［重要度］:警告
 * 理由: *「物理ディスクが認識できないメタデータです」。*
-* RecommendedAction:*"このディスクは、不明な記憶域プールからのデータを含めることができます。まず、このディスクに有用なデータがないことを確認し、ディスクをリセットします。"*
+* RecommendedAction: *"このディスクは、不明な記憶域プールからのデータを含めることができます。まず、このディスクに有用なデータがないことを確認し、ディスクをリセットします。"*
 
 #### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedfirmwareupdate"></a>FaultType:Microsoft.Health.FaultType.PhysicalDisk.FailedFirmwareUpdate
 * ［重要度］:警告
 * 理由: *「物理ディスクのファームウェアの更新が失敗した試行です。」*
-* RecommendedAction:*「バイナリの別のファームウェアを使用してを実行してください。」*
+* RecommendedAction: *「バイナリの別のファームウェアを使用してを実行してください。」*
 
 ### <a name="virtual-disk-2"></a>**仮想ディスク (2)**
 
 #### <a name="faulttype-microsofthealthfaulttypevirtualdisksneedsrepair"></a>FaultType:Microsoft.Health.FaultType.VirtualDisks.NeedsRepair
 * ［重要度］:情報
 * 理由: *"このボリュームのいくつかのデータは完全には回復できません。アクセス可能のままです。"*
-* RecommendedAction:*「データの回復性を復元します。」*
+* RecommendedAction: *「データの回復性を復元します。」*
 
 #### <a name="faulttype-microsofthealthfaulttypevirtualdisksdetached"></a>FaultType:Microsoft.Health.FaultType.VirtualDisks.Detached
 * ［重要度］:重大
 * 理由: *"ボリュームにアクセスできません。一部のデータが失われます。"*
-* RecommendedAction:*"物理の確認やネットワークのすべての記憶装置の接続。必要がありますバックアップから復元する。"*
+* RecommendedAction: *"物理の確認やネットワークのすべての記憶装置の接続。必要がありますバックアップから復元する。"*
 
 ### <a name="pool-capacity-1"></a>**プールの容量 (1)**
 
 #### <a name="faulttype-microsofthealthfaulttypestoragepoolinsufficientreservecapacityfault"></a>FaultType:Microsoft.Health.FaultType.StoragePool.InsufficientReserveCapacityFault
 * ［重要度］:警告
 * 理由: *"記憶域プールには、推奨される最小の予約容量がありません。これは、機能を制限するドライブのエラーが発生した場合、データの回復性を復元します。"*
-* RecommendedAction:*"記憶域プールに追加の容量を追加または容量を解放します。最小推奨予約は、展開によって異なりますが、容量の約 2 のドライブの価値が。"*
+* RecommendedAction: *"記憶域プールに追加の容量を追加または容量を解放します。最小推奨予約は、展開によって異なりますが、容量の約 2 のドライブの価値が。"*
 
-### <a name="volume-capacity-2sup1sup"></a>**ボリュームの容量 (2)**<sup>1</sup>
+### <a name="volume-capacity-2sup1sup"></a>**ボリュームの容量 (2)** <sup>1</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType:Microsoft.Health.FaultType.Volume.Capacity
 * ［重要度］:警告
 * 理由: *「ボリューム領域が不足して利用可能です。」*
-* RecommendedAction:*「ボリュームを拡張またはその他のボリュームにワークロードを移行します。」*
+* RecommendedAction: *「ボリュームを拡張またはその他のボリュームにワークロードを移行します。」*
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType:Microsoft.Health.FaultType.Volume.Capacity
 * ［重要度］:重大
 * 理由: *「ボリューム領域が不足して利用可能です。」*
-* RecommendedAction:*「ボリュームを拡張またはその他のボリュームにワークロードを移行します。」*
+* RecommendedAction: *「ボリュームを拡張またはその他のボリュームにワークロードを移行します。」*
 
 ### <a name="server-3"></a>**サーバー (3)**
 
 #### <a name="faulttype-microsofthealthfaulttypeserverdown"></a>FaultType:Microsoft.Health.FaultType.Server.Down
 * ［重要度］:重大
 * 理由: *「サーバーは到達できません。」*
-* RecommendedAction:*「開始またはサーバーを交換します。」*
+* RecommendedAction: *「開始またはサーバーを交換します。」*
 
 #### <a name="faulttype-microsofthealthfaulttypeserverisolated"></a>FaultType:Microsoft.Health.FaultType.Server.Isolated
 * ［重要度］:重大
 * 理由: *「サーバーは、接続の問題によってクラスターから分離されます」。*
-* RecommendedAction:*「確認して、ネットワーク分離が解決しない場合または他のノードにワークロードを移行します。」*
+* RecommendedAction: *「確認して、ネットワーク分離が解決しない場合または他のノードにワークロードを移行します。」*
 
 #### <a name="faulttype-microsofthealthfaulttypeserverquarantined"></a>FaultType:Microsoft.Health.FaultType.Server.Quarantined
 * ［重要度］:重大
 * 理由: *「サーバーは、定期的な障害によるクラスターによって検疫されたは、」。*
-* RecommendedAction:*「サーバーの交換またはネットワークを修正します。」*
+* RecommendedAction: *「サーバーの交換またはネットワークを修正します。」*
 
 ### <a name="cluster-1"></a>**クラスター (1)**
 
 #### <a name="faulttype-microsofthealthfaulttypeclusterquorumwitnesserror"></a>FaultType:Microsoft.Health.FaultType.ClusterQuorumWitness.Error
 * ［重要度］:重大
 * 理由: *「クラスターがダウンしてから離れた場所の 1 つのサーバー エラー。」*
-* RecommendedAction:*"、監視リソースを確認し、必要に応じて再起動します。開始するか失敗したサーバーを置き換えてください。"*
+* RecommendedAction: *"、監視リソースを確認し、必要に応じて再起動します。開始するか失敗したサーバーを置き換えてください。"*
 
 ### <a name="network-adapterinterface-4"></a>**ネットワーク アダプターまたはインターフェイス (4)**
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisconnected"></a>FaultType:Microsoft.Health.FaultType.NetworkAdapter.Disconnected
 * ［重要度］:警告
 * 理由: *「ネットワーク インターフェイスになる切断されました。」*
-* RecommendedAction:*「ネットワーク ケーブルを再接続します。」*
+* RecommendedAction: *「ネットワーク ケーブルを再接続します。」*
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkinterfacemissing"></a>FaultType:Microsoft.Health.FaultType.NetworkInterface.Missing
 * ［重要度］:警告
 * 理由: *「{サーバー} が {クラスター ネットワーク} のクラスター ネットワークに接続されているアダプターのネットワークがありません。」*
-* RecommendedAction:*「サーバーは、不足しているクラスター ネットワークに接続します。」*
+* RecommendedAction: *「サーバーは、不足しているクラスター ネットワークに接続します。」*
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterhardware"></a>FaultType:Microsoft.Health.FaultType.NetworkAdapter.Hardware
 * ［重要度］:警告
 * 理由: *"ネットワーク インターフェイス ハードウェア障害をしました。"*
-* RecommendedAction:*「ネットワーク インターフェイス アダプターを交換します。」*
+* RecommendedAction: *「ネットワーク インターフェイス アダプターを交換します。」*
 
 #### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisabled"></a>FaultType:Microsoft.Health.FaultType.NetworkAdapter.Disabled
 * ［重要度］:警告
 * 理由: *「ネットワーク インターフェイス {0} ネットワーク インターフェイス} は無効になっておりが使用されていない」。*
-* RecommendedAction:*「ネットワーク インターフェイスを有効にします。」*
+* RecommendedAction: *「ネットワーク インターフェイスを有効にします。」*
 
 ### <a name="enclosure-6"></a>**エンクロージャ (6)**
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurelostcommunication"></a>FaultType:Microsoft.Health.FaultType.StorageEnclosure.LostCommunication
 * ［重要度］:警告
 * 理由: *「通信が失われました記憶域エンクロージャを。」*
-* RecommendedAction:*「開始または記憶域エンクロージャを置き換えます。」*
+* RecommendedAction: *「開始または記憶域エンクロージャを置き換えます。」*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurefanerror"></a>FaultType:Microsoft.Health.FaultType.StorageEnclosure.FanError
 * ［重要度］:警告
 * 理由: *「記憶域エンクロージャの位置 {0} 位置} のファンが失敗しました。」*
-* RecommendedAction:*「ファン、記憶域エンクロージャに交換してください。」*
+* RecommendedAction: *「ファン、記憶域エンクロージャに交換してください。」*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurecurrentsensorerror"></a>FaultType:Microsoft.Health.FaultType.StorageEnclosure.CurrentSensorError
 * ［重要度］:警告
 * 理由: *「記憶域エンクロージャの位置 {0} 位置} にある現在のセンサーが失敗しました。」*
-* RecommendedAction:*「記憶域エンクロージャ内の現在のセンサーを置換します。」*
+* RecommendedAction: *「記憶域エンクロージャ内の現在のセンサーを置換します。」*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosurevoltagesensorerror"></a>FaultType:Microsoft.Health.FaultType.StorageEnclosure.VoltageSensorError
 * ［重要度］:警告
 * 理由: *「記憶域エンクロージャの位置 {0} 位置} 電圧センサーが失敗しました。」*
-* RecommendedAction:*「記憶域エンクロージャの電圧センサーを置換します。」*
+* RecommendedAction: *「記憶域エンクロージャの電圧センサーを置換します。」*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosureiocontrollererror"></a>FaultType:Microsoft.Health.FaultType.StorageEnclosure.IoControllerError
 * ［重要度］:警告
 * 理由: *「IO コント ローラー、記憶域エンクロージャの位置 {0} 位置} で失敗しました。」*
-* RecommendedAction:*「記憶域エンクロージャで IO がコント ローラーを交換してください。」*
+* RecommendedAction: *「記憶域エンクロージャで IO がコント ローラーを交換してください。」*
 
 #### <a name="faulttype-microsofthealthfaulttypestorageenclosuretemperaturesensorerror"></a>FaultType:Microsoft.Health.FaultType.StorageEnclosure.TemperatureSensorError
 * ［重要度］:警告
 * 理由: *「記憶域エンクロージャの位置 {0} 位置} で、温度センサーが失敗しました。」*
-* RecommendedAction:*「記憶域エンクロージャ内の温度センサーを置換します。」*
+* RecommendedAction: *「記憶域エンクロージャ内の温度センサーを置換します。」*
 
 ### <a name="firmware-rollout-3"></a>**ファームウェアのロールアウト (3)**
 
 #### <a name="faulttype-microsofthealthfaulttypefaultdomainfailedmaintenancemode"></a>FaultType:Microsoft.Health.FaultType.FaultDomain.FailedMaintenanceMode
 * ［重要度］:警告
 * 理由: *「現在できません。 ファームウェアのロールアウトを実行するときに、進行状況を確認します。」*
-* RecommendedAction:*「すべての記憶域スペースは正常であり、および障害ドメインがない現在メンテナンス モードでを確認します。」*
+* RecommendedAction: *「すべての記憶域スペースは正常であり、および障害ドメインがない現在メンテナンス モードでを確認します。」*
 
 #### <a name="faulttype-microsofthealthfaulttypefaultdomainfirmwareverifyversionfaile"></a>FaultType:Microsoft.Health.FaultType.FaultDomain.FirmwareVerifyVersionFaile
 * ［重要度］:警告
 * 理由: *「ファームウェアのロールアウトは、ファームウェアの更新プログラムを適用した後に読み取り不可能なまたは予期しないファームウェアのバージョン情報のためにキャンセルされました」。*
-* RecommendedAction:*「再起動ファームウェアのロールアウト ファームウェアの問題が解決されたとします。」*
+* RecommendedAction: *「再起動ファームウェアのロールアウト ファームウェアの問題が解決されたとします。」*
 
 #### <a name="faulttype-microsofthealthfaulttypefaultdomaintoomanyfailedupdates"></a>FaultType:Microsoft.Health.FaultType.FaultDomain.TooManyFailedUpdates
 * ［重要度］:警告
 * 理由: *「ファームウェアのロールアウトはファームウェアの更新の試行が失敗している物理ディスクが多すぎるため取り消されました。」*
-* RecommendedAction:*「再起動ファームウェアのロールアウト ファームウェアの問題が解決されたとします。」*
+* RecommendedAction: *「再起動ファームウェアのロールアウト ファームウェアの問題が解決されたとします。」*
 
-### <a name="storage-qos-3sup2sup"></a>**記憶域の QoS (3)**<sup>2</sup>
+### <a name="storage-qos-3sup2sup"></a>**記憶域の QoS (3)** <sup>2</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultType:Microsoft.Health.FaultType.StorQos.InsufficientThroughput
 * ［重要度］:警告
 * 理由: *「記憶域のスループットは予約を満たすのに十分です。」*
-* RecommendedAction:*「記憶域の QoS ポリシーを再構成します。」*
+* RecommendedAction: *「記憶域の QoS ポリシーを再構成します。」*
 
 #### <a name="faulttype-microsofthealthfaulttypestorqoslostcommunication"></a>FaultType:Microsoft.Health.FaultType.StorQos.LostCommunication
 * ［重要度］:警告
 * 理由: *「記憶域の QoS ポリシー マネージャーが、ボリュームとの通信を失いました。 が」*
-* RecommendedAction:*「{のノード} のノードを再起動してください」*
+* RecommendedAction: *「{のノード} のノードを再起動してください」*
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosmisconfiguredflow"></a>FaultType:Microsoft.Health.FaultType.StorQos.MisconfiguredFlow
 * ［重要度］:警告
 * 理由: *「1 つまたは複数の記憶域コンシューマー (通常は仮想マシン) を使用している、存在しないポリシー id {id}。」*
-* RecommendedAction:*「すべての不足している記憶域の QoS ポリシーを再作成します。」*
+* RecommendedAction: *「すべての不足している記憶域の QoS ポリシーを再作成します。」*
 
 <sup>1</sup>ボリュームは 80% に達した (重要度のマイナー) または 90% に達した (重大度: メジャー) に達したことを示します。  
 <sup>2</sup>一部 .vhd(s) ボリューム上の最小 IOPS を満たしていないことを示します経由の 10% (マイナー)、30% (メジャー)、または 50% の 24 時間の期間 (重大)。  

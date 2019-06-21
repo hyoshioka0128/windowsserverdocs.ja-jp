@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: fe221fc9-c7d9-4508-b8a1-000d2515283c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f8a6448661861fdc9f97c66fb130bfc03d0ce72c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 83dfd5663a07bf10f7c27acb25d2dec9af3e7c7b
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446976"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281835"
 ---
 #  <a name="step-2-configure-the-directaccess-vpn-server"></a>手順 2 は、DirectAccess と VPN サーバーを構成します。
 

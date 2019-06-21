@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8228d1ed-0efc-4858-89df-eb2c426440f9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3ee1d5632c87bc47d7bfd6ab2fd193765c00588a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cc3d22261d5da3a82acb08d9f6078a3a0fe7fa39
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875783"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283468"
 ---
 # <a name="install-and-configure-basic-directaccess"></a>基本的な DirectAccess をインストールして構成する
 

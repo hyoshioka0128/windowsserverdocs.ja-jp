@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b9b77cfd-8dd4-476b-a118-f3d6bf59e7b1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fe3014b8b37fab35532f3ecf833188fda9e8b744
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: c19376b7301068639ba1315af5e9f5a9a4514b3b
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446640"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283055"
 ---
 # <a name="step-6-test-directaccess-connectivity-from-the-homenet-subnet"></a>手順 6 テスト DirectAccess ホームネット サブネットからの接続
 

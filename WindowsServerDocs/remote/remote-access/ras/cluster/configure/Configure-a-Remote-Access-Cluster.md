@@ -6,20 +6,19 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e8df3619-f365-4070-8117-888c88db13eb
 ms.author: pashort
 author: shortpatti
 ms.date: 05/25/2018
-ms.openlocfilehash: 4d9c42ade1187b00fac6e9cf02722cc134284811
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 19a0c50415a1dddd83333483c5f6c3b96b85aa4d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846143"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282935"
 ---
 # <a name="configure-a-remote-access-cluster"></a>リモート アクセス クラスターを構成する
 

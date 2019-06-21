@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f9086c4f-f950-44a9-93f1-7d03aecdaa60
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3b4c180e8d4c9b6c664c9b73a178e1e4c27bf03c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9891a885cb0665d9a778e414c3a0e89f0839504b
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817273"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282579"
 ---
 # <a name="step-1-implement-a-single-server-remote-access-deployment"></a>手順 1 の実装を 1 台のサーバーのリモート アクセスの展開
 

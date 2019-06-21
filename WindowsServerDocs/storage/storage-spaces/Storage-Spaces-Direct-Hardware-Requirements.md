@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 06/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f6b93b55d8685180de8eafff5e8a3d5ca33e5fb5
-ms.sourcegitcommit: 3fe551f99c58ac232a9df72aaca55187118eac3b
+ms.openlocfilehash: 7fa4560e0c050c8decbcb4e9456a884976e447e2
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67132931"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284419"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>記憶域スペース ダイレクトのハードウェア要件
 
@@ -22,7 +22,7 @@ ms.locfileid: "67132931"
 
 このトピックでは、記憶域スペース ダイレクトを使用するための最小ハードウェア要件について説明します。
 
-運用環境で検証済みハードウェア/ソフトウェア ソリューションをパートナーから購入をお勧めは、展開ツールと手順がこれが含まれます。 これらのソリューションの設計、アセンブル、および互換性と取得するための信頼性と簡単に実行されているように、参照アーキテクチャの検証にしていること。 Windows Server 2019 ソリューションでは、次を参照してください。、 [solutions の web サイトを Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci)します。 Windows Server 2016 のソリューションの詳細については、について説明します。 [Windows Server ソフトウェア定義](https://microsoft.com/wssd)します。
+運用環境では、展開ツールと手順を含むパートナーからの検証済みハードウェア/ソフトウェア ソリューションの購入をお勧めします。 これらのソリューションの設計、アセンブル、および互換性と取得するための信頼性と簡単に実行されているように、参照アーキテクチャの検証にしていること。 Windows Server 2019 ソリューションでは、次を参照してください。、 [solutions の web サイトを Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci)します。 Windows Server 2016 のソリューションの詳細については、について説明します。 [Windows Server ソフトウェア定義](https://microsoft.com/wssd)します。
 
    > [!TIP]
    > 記憶域スペース ダイレクトを評価するたいが、ハードウェアを持っていないでしょうか。 」の説明に従って、HYPER-V または Azure の仮想マシンを使用して[を使用して記憶域スペース ダイレクトでは、仮想マシンのゲスト クラスター](storage-spaces-direct-in-vm.md)します。

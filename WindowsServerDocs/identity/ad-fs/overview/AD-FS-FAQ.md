@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f3f84a5c18589d38606825ee064cfb729003a05d
-ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
+ms.openlocfilehash: fc92e8b30d6b4c0c765333d3e22311e551d3365d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66719685"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280493"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS のよく寄せられる質問 (FAQ)
 
@@ -138,9 +138,9 @@ AD FS と WAP サーバーが ATP をサポートする唯一の TLS 暗号ス�
 AD FS サーバー 2019年の Proof Key for コード Exchange (による PKCE) のサポート OAuth 承認コード付与フロー
 
 ### <a name="what-permitted-scopes-are-supported-by-ad-fs"></a>許可されているどのようなスコープは、AD FS でサポートされるでしょうか。
-- aza - を使用して場合[ブローカーのクライアントの OAuth 2.0 プロトコルの拡張](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)と、サーバーが新しいプライマリ更新トークンを発行し、応答と設定の refresh_token フィールドに設定、スコープのパラメーターに"aza"スコープが含まれている場合1 つの場合は、新しいプライマリ更新トークンの有効期間 refresh_token_expires_in フィールドが適用されます。
+- aza - を使用して場合[ブローカーのクライアントの OAuth 2.0 プロトコルの拡張](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)と、サーバーが新しいプライマリ更新トークンを発行し、応答と設定の refresh_token フィールドに設定、スコープのパラメーターに"aza"スコープが含まれている場合1 つの場合は、新しいプライマリ更新トークンの有効期間 refresh_token_expires_in フィールドが適用されます。
 - openid の OpenID Connect 認証プロトコルの使用を要求するアプリケーションを使用します。
-- logon_cert - logon_cert スコープにより、ログオン証明書を要求、認証されたユーザーを対話的にログオンするために使用できるアプリケーションです。 AD FS サーバーでは、応答から access_token パラメーターを省略し、代わりに CMS、base64 でエンコードされた証明書チェーンまたは CMC の完全な PKI 応答を提供します。 詳細については、使用可能な[ここ](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)します。 
+- logon_cert - logon_cert スコープにより、ログオン証明書を要求、認証されたユーザーを対話的にログオンするために使用できるアプリケーションです。 AD FS サーバーでは、応答から access_token パラメーターを省略し、代わりに CMS、base64 でエンコードされた証明書チェーンまたは CMC の完全な PKI 応答を提供します。 詳細については、使用可能な[ここ](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)します。 
 - user_impersonation - user_impersonation スコープは、正常に AD FS からの on-behalf-of アクセス トークンを要求する必要があります。 このスコープを使用する方法の詳細について参照してください[On-Behalf-Of (OBO) の AD FS 2016 で OAuth を使用してを使用して、多層アプリケーションをビルド](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md)します。
 - vpn_cert - vpn_cert スコープにより、VPN 証明書を要求、EAP-TLS 認証を使用して VPN 接続を確立するために使用できるアプリケーションです。 これはもはやサポートされていません。
 - 電子メール - アプリケーションにサインインしているユーザーの電子メール要求を要求できるようにします。 これはもはやサポートされていません。 

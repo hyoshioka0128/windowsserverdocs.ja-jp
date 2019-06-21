@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64c10107-cb03-41f3-92c6-ac249966f574
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 771df80fc3130b5c4c03bf628a95d67b7df04b36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a2655f4de83576ef62b113419a69badaacc868f9
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888203"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280996"
 ---
 # <a name="step-2-plan-the-multisite-infrastructure"></a>手順 2. 計画マルチサイトのインフラストラクチャ
 
@@ -116,7 +115,7 @@ Gpo は、次のように構成できます。
   
     -   **サーバー GPO**- 内のサーバー GPO の各エントリ ポイント (エントリ ポイントが配置されているドメイン)。 この GPO は、エントリ ポイントでは、各リモート アクセス サーバーに適用されます。  
   
-    -   **クライアント GPO (Windows 7)**-a GPO に対して各エントリ ポイントと、マルチサイト展開内のエントリ ポイントに接続する Windows 7 クライアント コンピューターを含む各ドメイン。 たとえば Domain1\DA_W7_Clients_GPO_Europe;Domain2\DA_W7_Clients_GPO_Europe;Domain1\DA_W7_Clients_GPO_US;Domain2\DA_W7_Clients_GPO_US します。 Windows 7 クライアント コンピューターがエントリ ポイントに接続できないが場合、Gpo は必要ありません。  
+    -   **クライアント GPO (Windows 7)** -a GPO に対して各エントリ ポイントと、マルチサイト展開内のエントリ ポイントに接続する Windows 7 クライアント コンピューターを含む各ドメイン。 たとえば Domain1\DA_W7_Clients_GPO_Europe;Domain2\DA_W7_Clients_GPO_Europe;Domain1\DA_W7_Clients_GPO_US;Domain2\DA_W7_Clients_GPO_US します。 Windows 7 クライアント コンピューターがエントリ ポイントに接続できないが場合、Gpo は必要ありません。  
   
 -   その他の Gpo for Windows 8 クライアント コンピューターを作成する必要はありません。 クライアント コンピューターを含む各ドメインの GPO は、単一のリモート アクセス サーバーがデプロイされたときに既にしました。 マルチサイト展開では、これらのクライアントの Gpo を Gpo for Windows 8 クライアントとして機能します。  
   

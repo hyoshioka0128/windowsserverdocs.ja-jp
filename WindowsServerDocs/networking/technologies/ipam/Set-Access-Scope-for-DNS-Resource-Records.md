@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a96a8752-5678-49c5-b069-d2cce8042a51
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2e63c82ef0c58a9b4392ad8b9b1fc896d075ab71
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c79e1f63b9bcb43520a57defca8228b76db68a31
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882913"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283872"
 ---
 # <a name="set-access-scope-for-dns-resource-records"></a>DNS リソース レコードのアクセス スコープを設定する
 
@@ -48,7 +47,7 @@ ms.locfileid: "59882913"
   
 ## <a name="see-also"></a>関連項目  
 [ロール ベース Access Control](Role-based-Access-Control.md)  
-[IPAM を管理します。](Manage-IPAM.md)  
+[IPAM の管理](Manage-IPAM.md)  
   
 
 

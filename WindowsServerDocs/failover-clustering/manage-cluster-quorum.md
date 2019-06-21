@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 85b75d0039fec1b2ad9982d6ae9bf83fa8da2fdf
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: bf854418e9efb7dbb5bd07ba86f29d84ba54d68a
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66810986"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280384"
 ---
 # <a name="configure-and-manage-quorum"></a>クォーラムを構成および管理する
 
@@ -67,7 +67,7 @@ Windows Server でのクォーラム モデルは柔軟です。 クラスター
 
 特定の障害回復構成では、ノードから投票を削除できます。 たとえば、マルチサイト クラスターでは、バックアップ サイトのノードから投票を削除して、それらのノードがクォーラムの計算に影響しないようにできます。 この構成は、サイト間の手動のフェールオーバーでのみ推奨されます。 詳細については、このトピックの後半の「[障害回復構成で使用するクォーラムに関する考慮事項](#quorum-considerations-for-disaster-recovery-configurations)」を参照してください。
 
-構成されたノードの投票を検索することで確認できます、 **NodeWeight**を使用してクラスター ノードの共通プロパティ、 [Get-clusternode](http://technet.microsoft.com/library/hh847268.aspx)Windows PowerShell コマンドレット。 0 の値は、ノードにクォーラム投票が構成されていないことを示しています。 1 の値は、ノードのクォーラム投票が割り当てられ、クラスターによって管理されていることを示しています。 ノードの投票の管理については、このトピックの後半の「[動的なクォーラム管理](#dynamic-quorum-management)」を参照してください。
+構成されたノードの投票を検索することで確認できます、 **NodeWeight**を使用してクラスター ノードの共通プロパティ、 [Get-clusternode](https://technet.microsoft.com/library/hh847268.aspx)Windows PowerShell コマンドレット。 0 の値は、ノードにクォーラム投票が構成されていないことを示しています。 1 の値は、ノードのクォーラム投票が割り当てられ、クラスターによって管理されていることを示しています。 ノードの投票の管理については、このトピックの後半の「[動的なクォーラム管理](#dynamic-quorum-management)」を参照してください。
 
 すべてのクラスター ノードに対する投票の割り当ては、**クラスター クォーラムの検証**テストによって検証できます。
 

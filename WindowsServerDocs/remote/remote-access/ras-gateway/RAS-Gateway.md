@@ -9,12 +9,12 @@ ms.assetid: acaa46b7-09b1-4707-9562-116df8db17eb
 ms.author: pashort
 author: shortpatti
 ms.date: 05/23/2018
-ms.openlocfilehash: 8fc1c97d7c2a8694e56cc36b5501a82081b3db23
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d61dcdbb61449bd2af57b8e2c99ced6235c4deca
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812343"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281261"
 ---
 # <a name="ras-gateway"></a>RAS ゲートウェイ
 
@@ -124,11 +124,11 @@ RAS ゲートウェイの推奨される展開シナリオを次に示します�
 ## <a name="bkmk_manage"></a>RAS ゲートウェイの管理ツール  
 RAS ゲートウェイ用の管理ツールを次に示します。  
   
--   RAS ゲートウェイ ルーターを展開する Windows Server 2016、Windows PowerShell コマンドを使用する必要があります。 詳細については、次を参照してください。[のリモート アクセス コマンドレット](https://technet.microsoft.com/library/hh918399.aspx)Windows Server 2016 および Windows 10。  
+-   RAS ゲートウェイ ルーターを展開する Windows Server 2016、Windows PowerShell コマンドを使用する必要があります。 詳細については、次を参照してください。[のリモート アクセス コマンドレット](https://docs.microsoft.com/powershell/module/remoteaccess)Windows Server 2016 および Windows 10。  
   
--   System Center 2012 R2 Virtual Machine Manager (VMM)、RAS ゲートウェイは、Windows Server ゲートウェイをいいます。 VMM ソフトウェア インターフェイスで限られたボーダー ゲートウェイ プロトコル (BGP) の構成オプションの利用を含む**ローカル BGP IP アドレス**と**自律システム番号 (ASN)**、 **BGP ピア IP アドレスの一覧**、および**ASN 値**します。 ただし、リモート アクセスの Windows PowerShell BGP コマンドを使用して、Windows Server ゲートウェイのその他の機能をすべて構成できます。 詳細については、次を参照してください。 [Virtual Machine Manager (VMM)](https://technet.microsoft.com/system-center-docs/vmm/vmm)と[のリモート アクセス コマンドレット](https://technet.microsoft.com/library/hh918399.aspx)Windows Server 2016 および Windows 10。  
+-   System Center 2012 R2 Virtual Machine Manager (VMM)、RAS ゲートウェイは、Windows Server ゲートウェイをいいます。 VMM ソフトウェア インターフェイスで限られたボーダー ゲートウェイ プロトコル (BGP) の構成オプションの利用を含む**ローカル BGP IP アドレス**と**自律システム番号 (ASN)** 、 **BGP ピア IP アドレスの一覧**、および**ASN 値**します。 ただし、リモート アクセスの Windows PowerShell BGP コマンドを使用して、Windows Server ゲートウェイのその他の機能をすべて構成できます。 詳細については、次を参照してください。 [Virtual Machine Manager (VMM)](https://technet.microsoft.com/system-center-docs/vmm/vmm)と[のリモート アクセス コマンドレット](https://technet.microsoft.com/library/hh918399.aspx)Windows Server 2016 および Windows 10。  
   
 ## <a name="related-topics"></a>関連トピック
 - [RAS ゲートウェイの高可用性](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)  
-- [Windows Server における GRE トンネリング](gre-tunneling-windows-server.md)
+- [Windows Server の GRE トンネリング](gre-tunneling-windows-server.md)
 - [RAS ゲートウェイ GRE トンネルのスループットとパフォーマンス](RAS-Gateway-GRE-Perf.md)

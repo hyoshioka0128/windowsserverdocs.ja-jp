@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 35d68abb-6914-42e0-91e8-803933cf785e
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ab08c4ced9431fe17a4876f6df471624f22a6c44
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 10a40b30acbf022ed34f454d753884cb8c5c97d4
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836593"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281207"
 ---
 # <a name="step-2-prepare-cluster-servers"></a>手順 2 は、クラスター サーバーを準備します。
 
@@ -62,7 +61,7 @@ ms.locfileid: "59836593"
   
 7. **[次へ]** をクリックし、 **[インストール]** をクリックします。  
   
-8.  **[インストールの進行状況]** ダイアログで、インストールが正常に完了したことを確認し、**[閉じる]** をクリックします。  
+8.  **[インストールの進行状況]** ダイアログで、インストールが正常に完了したことを確認し、 **[閉じる]** をクリックします。  
   
 9.  すべてのサーバー クラスターのメンバーにするには、この手順を繰り返します。  
   
@@ -80,7 +79,7 @@ ms.locfileid: "59836593"
   
 3.  **機能の選択**  ダイアログ ボックスで選択 **ネットワーク負荷分散**, 、 をクリックして **機能の追加**, 、 をクリックして **次**, 、 をクリックし、 **インストール**します。  
   
-4.  **[インストールの進行状況]** ダイアログで、インストールが正常に完了したことを確認し、**[閉じる]** をクリックします。  
+4.  **[インストールの進行状況]** ダイアログで、インストールが正常に完了したことを確認し、 **[閉じる]** をクリックします。  
   
 5.  すべてのサーバー クラスターのメンバーにするには、この手順を繰り返します。  
   

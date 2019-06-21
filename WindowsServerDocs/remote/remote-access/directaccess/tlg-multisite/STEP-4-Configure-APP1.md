@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7000e80f-31b1-43c5-b51e-1469d26909e5
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ccfac583f64d40012881a2d3f6a0897beb16c02a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 208839b827965d5fdbef4927f25a2477e117999b
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867223"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283191"
 ---
 # <a name="step-4-configure-app1"></a>手順 4 APP1 を構成します。
 
@@ -34,11 +33,11 @@ ms.locfileid: "59867223"
   
 2.  **ネットワーク接続**ウィンドウで、右クリックして**ワイヤード (イーサネット) 接続**、順にクリックします**プロパティ**します。  
   
-3.  **ワイヤード (イーサネット) 接続プロパティ**ダイアログ ボックスで、をクリックして**インターネット プロトコル バージョン 4 (Tcp/ipv4)**、順にクリックします**プロパティ**します。  
+3.  **ワイヤード (イーサネット) 接続プロパティ**ダイアログ ボックスで、をクリックして**インターネット プロトコル バージョン 4 (Tcp/ipv4)** 、順にクリックします**プロパティ**します。  
   
 4.  **デフォルト ゲートウェイ**、型**10.0.0.254**、および**代替 DNS サーバー**、型**10.2.0.1**、 をクリックし、 **ok**.  
   
-5.  **ワイヤード (イーサネット) 接続プロパティ**ダイアログ ボックスで、をクリックして**インターネット プロトコル バージョン 6 (Tcp/ipv6)**、順にクリックします**プロパティ**します。  
+5.  **ワイヤード (イーサネット) 接続プロパティ**ダイアログ ボックスで、をクリックして**インターネット プロトコル バージョン 6 (Tcp/ipv6)** 、順にクリックします**プロパティ**します。  
   
 6.  **デフォルト ゲートウェイ**、型**2001:db8:1::fe**します。 **代替 DNS サーバー**、型**2001:db8:2::1**、 をクリックし、 **OK**。  
   

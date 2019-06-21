@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: df1e87f2-6a0f-433b-8e42-816ae75395f9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5e192c062e8ecd18128109321058ddc58b6b1e4a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 093877657f19006bba2b80c10b92db1fb3b40fde
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839843"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280864"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-otp"></a>手順 3 OTP 用のリモート アクセス サーバーを構成します。
 
@@ -84,7 +83,7 @@ ms.locfileid: "59839843"
   
     クリックして**参照**OTP 証明書の登録要求の署名に、リモート アクセス サーバーによって使用される証明書の登録に使用される証明書テンプレートを選択します。 **[OK]** をクリックします。 **[次へ]** をクリックします。  
   
-10. DirectAccess OTP とから特定のユーザーを除外することが必要場合、次に、 **OTP 除外**セクションを選択**2 要素認証を使用して認証を指定したセキュリティ グループのユーザーが必要としません。**. クリックして**セキュリティ グループ**OTP の除外を作成したセキュリティ グループを選択します。  
+10. DirectAccess OTP とから特定のユーザーを除外することが必要場合、次に、 **OTP 除外**セクションを選択**2 要素認証を使用して認証を指定したセキュリティ グループのユーザーが必要としません。** . クリックして**セキュリティ グループ**OTP の除外を作成したセキュリティ グループを選択します。  
   
 11. **リモート アクセス サーバーのセットアップ**ページ クリック**完了**します。  
   
@@ -100,7 +99,7 @@ ms.locfileid: "59839843"
   
 17. **リモート アクセスの確認** ダイアログ ボックスをクリックして**適用**DirectAccess ポリシーを更新するには、待機し、クリックして**閉じる**します。  
   
-18. **開始**画面で「**powershell.exe**、を右クリックして**powershell** をクリック**詳細**、 をクリック**として実行管理者**します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、**[はい]** をクリックします。  
+18. **開始**画面で「**powershell.exe**、を右クリックして**powershell** をクリック**詳細**、 をクリック**として実行管理者**します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
   
 19. Windows PowerShell ウィンドウで、入力**gpupdate/force** ENTER キーを押します。  
   

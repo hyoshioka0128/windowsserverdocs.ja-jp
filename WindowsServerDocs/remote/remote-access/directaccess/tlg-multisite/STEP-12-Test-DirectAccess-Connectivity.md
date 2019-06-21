@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 65ac1c23-3a47-4e58-888d-9dde7fba1586
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4e45f0c3c988c86a2428c3beb8bafc29b7b16bc0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9c87f1823140fd6c92cf7df1f9d807545b50504e
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446937"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281543"
 ---
 # <a name="step-12-test-directaccess-connectivity"></a>手順 12 テスト DirectAccess の接続
 
@@ -91,7 +90,7 @@ ms.locfileid: "66446937"
   
 7. EDGE1 経由で接続していることを確認します。 型**netsh インターフェイス httpstunnel インターフェイスを表示する**ENTER キーを押します。  
   
-   出力は、URL を含める必要があります:https://edge1.contoso.com:443/IPHTTPSします。  
+   出力は、URL を含める必要があります: https://edge1.contoso.com:443/IPHTTPS します。  
   
    > [!TIP]  
    > Client1 で、次の Windows PowerShell コマンドを実行することもできます。**Get NetIPHTTPSConfiguration**します。 使用可能なサーバーの URL の接続と、現在アクティブなプロファイルが出力されます。  
@@ -164,7 +163,7 @@ ms.locfileid: "66446937"
   
 5. 2 EDGE1 経由で接続していることを確認します。 型**netsh インターフェイス httpstunnel インターフェイスを表示する**ENTER キーを押します。  
   
-   出力は、URL を含める必要があります:https://2-edge1.contoso.com:443/IPHTTPSします。  
+   出力は、URL を含める必要があります: https://2-edge1.contoso.com:443/IPHTTPS します。  
   
    > [!TIP]  
    > Client1 で、次のコマンドを実行することもできます。**Get NetIPHTTPSConfiguration**します。 使用可能なサーバーの URL の接続と、現在アクティブなプロファイルが出力されます。  

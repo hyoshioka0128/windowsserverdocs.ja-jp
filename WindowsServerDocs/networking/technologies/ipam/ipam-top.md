@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a6291ba-0d39-4434-a8c5-0f0369860faa
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: d2d1533d2b442068a926ea73336407616cd75e38
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dbd574413d1917cbb49419aff5a53f00a31bc47c
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816403"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282039"
 ---
 # <a name="ip-address-management-ipam"></a>IP アドレス管理 (IPAM)
 
@@ -30,6 +29,6 @@ IP アドレス管理 (IPAM) は、エンド ツー エンドの計画、展開�
 > このトピックに加え、次の IPAM のコンテンツは使用できます。  
 >   
 > -   [IPAM の新機能新機能](../../technologies/ipam/What-s-New-in-IPAM.md)  
-> -   [IPAM を管理します。](../../technologies/ipam/Manage-IPAM.md)  
+> -   [IPAM の管理](../../technologies/ipam/Manage-IPAM.md)  
 > -   [Windows PowerShell の IP アドレス管理 (IPAM) サーバー コマンドレット](https://technet.microsoft.com/library/jj553807.aspx)  
 > -   ビデオ:[Windows Server 2016:IPAM の DNS の管理](https://channel9.msdn.com/Blogs/windowsserver/Windows-Server-2016-DNS-management-in-IPAM)  

@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 02/28/2019
 description: この記事では、同じハードウェアを使用して 2 ノード フェールオーバー クラスターのアップグレードについて説明します
 ms.localizationpriority: medium
-ms.openlocfilehash: 77cde9e64fda385facd91d86483f4d7f749f30a1
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: 6787d852cc5075e306373a163814135190f27fd6
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453051"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280245"
 ---
 # <a name="upgrading-failover-clusters-on-the-same-hardware"></a>同じハードウェア上でフェールオーバー クラスターのアップグレード
 
@@ -25,7 +25,7 @@ ms.locfileid: "66453051"
 
 ## <a name="overview"></a>概要
 
-既存のフェールオーバーのオペレーティング システムをアップグレードするクラスターは場合にのみ Windows Server 2016 から Windows 2019 にしようとします。  フェールオーバー クラスターで以前のバージョンが実行されている場合のノードを結合など Windows Server 2012 R2 と以前では、クラスター サービスが実行中のアップグレードはできません。  同じハードウェアを使用する場合の手順を実行、新しいバージョンを入手します。  
+既存のフェールオーバーのオペレーティング システムをアップグレードするクラスターは場合にのみ Windows Server 2016 から Windows 2019 にしようとします。  フェールオーバー クラスターは、Windows Server 2012 R2 と以前では、以前のバージョンを実行している場合、クラスター サービスが実行中のアップグレードは許可されません結合ノード。  同じハードウェアを使用する場合の手順を実行、新しいバージョンを入手します。  
 
 フェールオーバー クラスターのアップグレードの前に参照してください、 [Windows アップグレード Center](https://www.microsoft.com/upgradecenter)します。  場所で Windows Server をアップグレードすると、同じハードウェアに移るより新しいリリースを既存のオペレーティング システム リリースから移動します。 Windows Server は、アップグレードされたインプレース、少なくとも 1 つとも 2 バージョン フォワードできます。 たとえば、Windows Server 2012 R2 および Windows Server 2016 をアップグレードできます Windows Server 2019 を適用します。  またことに注意、[クラスターの移行ウィザード](https://blogs.msdn.microsoft.com/clustering/2012/06/25/how-to-move-highly-available-clustered-vms-to-windows-server-2012-with-the-cluster-migration-wizard/)使用できますが、2 つのバージョンに戻すまではのみサポートされます。 次の図は、Windows Server のアップグレードのパスを示します。 ポインティングの下向きの矢印は、Windows Server 2019 までの以前のバージョンからの移行サポートされるアップグレード パスを表します。
 

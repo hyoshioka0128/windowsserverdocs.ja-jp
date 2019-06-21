@@ -11,12 +11,12 @@ ms.assetid: 1a65a98e-54b6-4c41-9732-1e3d32fe3a5f
 author: KBDAzure
 ms.author: kathydav
 ms.date: 09/21/2017
-ms.openlocfilehash: 8b7d9233b105f710d620b5142205fb2eadd0248a
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 6ec5db82ecae2fb74731f3c52b9113325837a2fb
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67141368"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280015"
 ---
 # <a name="whats-new-in-hyper-v-on-windows-server"></a>新機能 Windows server、HYPER-V の新機能
 
@@ -212,7 +212,7 @@ HYPER-V 管理者やホスト上でマルウェア検査、改ざん、または
   
 ### <a name="virtual-machine-configuration-version-updated"></a>仮想マシン構成バージョン\(更新\)
 
-バージョンは、仮想マシンの構成、状態、およびスナップショット ファイルを保存、HYPER-V のバージョンとの互換性を表します。 バージョン 5 を使用する仮想マシンは、Windows Server 2012 R2 と互換性があるし、Windows Server 2012 R2 と Windows Server 2016 の両方で実行できます。 Windows Server 2016 で導入されたバージョンを持つ仮想マシンと Windows Server 2019 が Windows Server 2012 R2 の HYPER-V で実行できないとします。   
+バージョンは、仮想マシンの構成、状態、およびスナップショット ファイルを保存、HYPER-V のバージョンとの互換性を表します。 バージョン 5 を使用する仮想マシンは、Windows Server 2012 R2 と互換性があるし、Windows Server 2012 R2 と Windows Server 2016 の両方で実行できます。 Windows Server 2016 および Windows Server 2019 で導入されたバージョンを持つ仮想マシンは、Windows Server 2012 R2 の HYPER-V で実行できません。   
   
 移動または Windows Server 2012 R2 から Windows Server 2016 で HYPER-V を実行しているサーバーまたは Windows Server 2019 に仮想マシンをインポートする場合、仮想マシンの構成は自動的に更新します。 つまり、Windows Server 2012 R2 を実行するサーバーに戻る仮想マシンを移動することができます。 しかし、つまり、仮想マシンの構成のバージョンを手動で更新するまで、新しい仮想マシンの機能を使用することはできません。  
   

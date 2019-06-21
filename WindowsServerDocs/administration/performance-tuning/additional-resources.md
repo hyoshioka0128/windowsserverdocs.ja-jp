@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: c7ac20da7e8508b824fdd000f6a9dde6e807cdf2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e09363eae005114b73bedac084f5ab0745c237ee
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835833"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280061"
 ---
 # <a name="additional-performance-tuning-resources"></a>追加のパフォーマンス チューニングのリソース
 
@@ -29,7 +29,7 @@ ms.locfileid: "59835833"
 
 ## <a name="power-management-tuning-resources"></a>電源管理の リソースのチューニング
 
--   [Windows の電源ポリシー構成と展開](https://msdn.microsoft.com/en-us/library/windows/hardware/mt422910.aspx)
+-   [Windows の電源ポリシー構成と展開](https://msdn.microsoft.com/library/windows/hardware/mt422910.aspx)
 
 -   [システムのエネルギー効率の評価に PowerCfg を使用](https://technet.microsoft.com/library/cc748940.aspx)
 
@@ -56,7 +56,7 @@ ms.locfileid: "59835833"
 -   [TCP の自動調整の診断ツールを無効にする方法](https://support.microsoft.com/kb/967475)
 
 ## <a name="active-directory-server-tuning-resources"></a>Active Directory サーバー リソースのチューニング
--   [Active Directory のパフォーマンス](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567654(v=vs.85).aspx)
+-   [Active Directory のパフォーマンス](https://msdn.microsoft.com/library/windows/hardware/dn567654(v=vs.85).aspx)
 -   [Windows Server 2003 および Windows 2000 Server では、Active Directory の診断イベント ログを構成する方法](https://support.microsoft.com/kb/314980)
 
 ## <a name="virtualization-server-tuning-resources"></a>仮想化サーバーの リソースのチューニング
@@ -83,19 +83,19 @@ ms.locfileid: "59835833"
 
 ## <a name="server-workload-tuning-resources"></a>サーバーのワークロードをチューニングするリソース
 
--   [NTttcp のパフォーマンス チューニング](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567663(v=vs.85).aspx)
+-   [NTttcp のパフォーマンス チューニング](https://msdn.microsoft.com/library/windows/hardware/dn567663(v=vs.85).aspx)
 
 -   [Ttcp](http://en.wikipedia.org/wiki/Ttcp)
 
 -   [ネットワークのパフォーマンスのテストに NTttcp を使用する方法](https://msdn.microsoft.com/windows/hardware/gg463264.aspx)
 
--   [ファイル サーバーの Capactiy ツールを使用](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567658(v=vs.85).aspx)
+-   [ファイル サーバーの Capactiy ツールを使用](https://msdn.microsoft.com/library/windows/hardware/dn567658(v=vs.85).aspx)
 
--   [SPECsfs2008 ファイル サーバーを使用します。](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567653(v=vs.85).aspx)
+-   [SPECsfs2008 ファイル サーバーを使用します。](https://msdn.microsoft.com/library/windows/hardware/dn567653(v=vs.85).aspx)
 
--   [販売および配布のワークロードのパフォーマンス チューニング](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567646(v=vs.85).aspx)
+-   [販売および配布のワークロードのパフォーマンス チューニング](https://msdn.microsoft.com/library/windows/hardware/dn567646(v=vs.85).aspx)
 
--   [オンライン トランザクション処理 (OLTP) のパフォーマンス チューニング](https://msdn.microsoft.com/en-us/library/windows/hardware/dn567642(v=vs.85).aspx)
+-   [オンライン トランザクション処理 (OLTP) のパフォーマンス チューニング](https://msdn.microsoft.com/library/windows/hardware/dn567642(v=vs.85).aspx)
 
 -   「[ソフト NUMA を使用する SQL Server を構成します。](https://go.microsoft.com/fwlink/?LinkId=98292)
 
@@ -106,7 +106,7 @@ ms.locfileid: "59835833"
 
 ## <a name="server-tuning-tools"></a>サーバー チューニング ツール
 
--   [Microsoft Server Performance Advisor](https://msdn.microsoft.com/en-us/library/windows/hardware/dn481522(v=vs.85).aspx)
+-   [Microsoft Server Performance Advisor](https://msdn.microsoft.com/library/windows/hardware/dn481522(v=vs.85).aspx)
 
 ## <a name="performance-tuning-guidelines-for-previous-versions-of-windows-server"></a>以前のバージョンの Windows Server のパフォーマンス チューニング ガイドライン
 

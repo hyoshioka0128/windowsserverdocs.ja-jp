@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 846307e19324ab18f8bbfd84971108871b677aeb
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9ac591d65fb84f3c0a8bbd33ca71c93daf892ced
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445879"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280727"
 ---
 # <a name="privileged-access-workstations"></a>特権アクセス ワークステーション
 
@@ -96,7 +96,7 @@ Windows 10、HYPER-V、ゲスト仮想マシン (Windows 10 も実行) では、
 
 これを構成するには、PAW ホストのこのガイドの指示に従って、クライアント Hyper-V 機能を追加し、ユーザー VM を作成して、ユーザー VM に Windows 10 の会社のイメージをインストールします。
 
-この機能の詳細については、[クライアント Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/index) の記事を参照してください。 ゲスト仮想マシンのオペレーティング システムは、[マイクロソフト製品のライセンス](https://www.microsoft.com/en-us/Licensing/product-licensing/products.aspx)ごとにライセンスを取得する必要があることにご注意ください。[こちら](https://download.microsoft.com/download/9/8/D/98D6A56C-4D79-40F4-8462-DA3ECBA2DC2C/Licensing_Windows_Desktop_OS_for_Virtual_Machines.pdf)にも説明が記載されています。
+この機能の詳細については、[クライアント Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index) の記事を参照してください。 ゲスト仮想マシンのオペレーティング システムは、[マイクロソフト製品のライセンス](https://www.microsoft.com/en-us/Licensing/product-licensing/products.aspx)ごとにライセンスを取得する必要があることにご注意ください。[こちら](https://download.microsoft.com/download/9/8/D/98D6A56C-4D79-40F4-8462-DA3ECBA2DC2C/Licensing_Windows_Desktop_OS_for_Virtual_Machines.pdf)にも説明が記載されています。
 
 #### <a name="simultaneous-use---adding-remoteapp-rdp-or-a-vdi"></a>同時使用 - 追加の RemoteApp、RDP、または VDI
 
@@ -138,7 +138,7 @@ ESAE 管理フォレストの詳細については、次を参照してくださ
 * **高い機密情報ワーカー** -PAW で使用されるアプローチは、機密性の高いインフォメーション ワーカーのタスクと発表前合併や買収アクティビティ、プレリリース版に関連するものなどの担当者の保護を提供できますも財務レポートなど、組織のソーシャル メディア サイト、executive 通信、経営者の企業秘密、機密調査、またはその他の独占的または機密データ。 このガイドでは、これらのインフォメーション ワーカー シナリオの詳しい構成を説明したり、このシナリオを技術的な手順に当てはめたりすることはありません。
 
     > [!NOTE]
-    > マイクロソフト IT は、PAW (内部的には "secure admin workstation" または SAW と呼ばれます) を使用して、マイクロソフト社内の価値の高いシステムへのセキュリティで保護されたアクセスを管理しています。 このガイドの「マイクロソフトでの管理ワークステーションの使用方法」でマイクロソフトでの PAW の使用方法について詳しく説明します。 この高価値資産環境アプローチの詳細については、「[セキュリティで保護された管理ワークステーションを使用した高価値資産の保護](https://msdn.microsoft.com/en-us/library/mt186538.aspx)」を参照してください。
+    > マイクロソフト IT は、PAW (内部的には "secure admin workstation" または SAW と呼ばれます) を使用して、マイクロソフト社内の価値の高いシステムへのセキュリティで保護されたアクセスを管理しています。 このガイドの「マイクロソフトでの管理ワークステーションの使用方法」でマイクロソフトでの PAW の使用方法について詳しく説明します。 この高価値資産環境アプローチの詳細については、「[セキュリティで保護された管理ワークステーションを使用した高価値資産の保護](https://msdn.microsoft.com/library/mt186538.aspx)」を参照してください。
 
 このドキュメントでは、この方法が影響の大きい特権アカウントの保護のために推奨される理由、これらの PAW ソリューションによる管理権限の保護の概要、ドメインおよびクラウド サービスの管理のために PAW ソリューションを迅速に展開する方法について説明します。
 
@@ -272,7 +272,7 @@ Microsoft Identity Manager (MIM) 特権アクセス管理 (PAM) の展開の詳�
 |その他の IaaS または PaaS クラウド サービスの管理<br />- 階層 0 または階層 1 (範囲と設計に関する考慮事項を参照してください)|〇|フェーズ 2 の説明を使用して構築された PAW は、このロールに対して十分です。<br /><br />-  クラウドでホストされた VM の管理権限を持つすべてのロールに対して PAW を使用する必要があります。これには、エージェントのインストール、ハード ディスク ファイルのエクスポート、またはオペレーティング システム、機密データ、ビジネス上重要なデータが保存されているハード ドライブ ストレージへのアクセスを行う権限が含まれます。<br />-  外部ネットワーク制限では、フェーズ 2 のガイダンスを使用してマイクロソフト サービスにのみ接続を許可する必要があります。 オープンなインターネット アクセスを PAW から許可しないようにします。<br />-Windows Defender Exploit Guard は、ワークステーションで構成する必要があります。 **注:** サブスクリプションは、フォレストの階層 0 をドメイン コント ローラーまたはその他の階層 0 ホストがサブスクリプションにある場合です。 階層 0 サーバーが Azure でホストされていない場合、サブスクリプションは階層 1 です。|
 |仮想化管理者<br />- 階層 0 または階層 1 (範囲と設計に関する考慮事項を参照してください)|〇|フェーズ 2 の説明を使用して構築された PAW は、このロールに対して十分です。<br /><br />-  VM の管理権限を持つすべてのロールに対して PAW を使用する必要があります。これには、エージェントのインストール、ハード ディスク ファイルのエクスポート、またはゲスト オペレーティング システム情報、機密データ、ビジネス上重要なデータが保存されているハード ドライブ ストレージへのアクセスを行う権限が含まれます。 **注:** 仮想化システム (およびその管理者) と見なされます、フォレストの階層 0 のドメイン コント ローラーまたはその他の階層 0 ホストがサブスクリプションにある場合。 階層 0 サーバーが仮想化システムでホストされていない場合、サブスクリプションは階層 1 です。|
 |サーバー メンテナンス管理者<br />- 階層 1|〇|フェーズ 2 の説明を使用して構築された PAW は、このロールに対して十分です。<br /><br />-  Windows Server、Linux、および他のオペレーティング システムを実行するエンタープライズ サーバーおよびアプリケーションの更新、パッチ適用、トラブルシューティングを行う管理者には PAW を使用する必要があります。<br />- このような管理者を大きな規模で処理する場合は、PAW に専用のツールの追加が必要になることがあります。|
-|ユーザー ワークステーション管理者 <br />- 階層 2|〇|フェーズ 2 のガイダンスで構築された PAW は、エンド ユーザー デバイスに関する管理権限を持つロール (ヘルプデスクおよびデスクサイド サポートのロール) に対して十分です。<br /><br />-  チケット管理や他のサポート機能を有効にするために PAW に追加のアプリケーションをインストールする必要がある場合があります。<br />-Windows Defender Exploit Guard は、ワークステーションで構成する必要があります。<br />    - このような管理者を大きな規模で処理する場合は、PAW に専用のツールの追加が必要になることがあります。|
+|ユーザー ワークステーション管理者 <br />- 階層 2|〇|フェーズ 2 のガイダンスで構築された PAW は、エンド ユーザー デバイスに関する管理権限を持つロール (ヘルプデスクおよびデスクサイド サポートのロール) に対して十分です。<br /><br />-  チケット管理や他のサポート機能を有効にするために PAW に追加のアプリケーションをインストールする必要がある場合があります。<br />-Windows Defender Exploit Guard は、ワークステーションで構成する必要があります。<br />    \- このような管理者を大きな規模で処理する場合は、PAW に専用のツールの追加が必要になることがあります。|
 |SQL、SharePoint、または基幹業務 (LOB) 管理者<br />- 階層 1|〇|フェーズ 2 のガイダンスで構築された PAW は、このロールに対して十分です。<br /><br />-   リモート デスクトップを使用してサーバーに接続しなくとも、管理者がアプリケーションを管理できるようにするために、PAW 上の追加の管理ツールのインストールが必要になることがあります。|
 |ソーシャル メディアの表示を管理しているユーザー|部分的|フェーズ 2 のガイダンスを使用して構築された PAW は、これらのロールのセキュリティを提供するための開始点として使用できます。<br /><br />-  ソーシャル メディア アカウントへのアクセスの共有、保護、および追跡のために Azure Active Directory (AAD) を使用してソーシャル メディア アカウントを保護および管理します。<br />    この機能の詳細については、[このブログの投稿](http://blogs.technet.com/b/ad/archive/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview.aspx)を読んでください。<br />-  外部ネットワークの制限では、これらのサービスへの接続を許可する必要があります。 これを行うには、オープンなインターネット接続を許可するか (多くの PAW の保護を無効にする大きなセキュリティ リスクがあります)、サービスの必要な DNS アドレスのみを許可します (取得が困難な場合があります)。|
 |標準ユーザー|X|標準ユーザーのセキュリティ強化に多くの手順を使用できますが、PAW は、ほとんどのユーザーが仕事に必要とするオープンなインターネット アクセスからアカウントを分離するように設計されています。|
@@ -727,7 +727,7 @@ Domain Admin、Enterprise Admin、または階層 0 の同等のグループ (�
                > 値名の左側にある **[既定]** チェック ボックスをオンにしないでください。
 
             5. 値の種類:REG_SZ
-            6. データの値: 完全な URL を入力、 *proxy.pac*ファイル http:// とファイル名を含むなど http://proxy.fabrikam.com/proxy.pac。  URL がなど、単一ラベルの URL をすることもできます。 http://proxy/proxy.pac
+            6. データの値: 完全な URL を入力、 *proxy.pac*ファイル http:// とファイル名を含むなど http://proxy.fabrikam.com/proxy.pac 。  URL がなど、単一ラベルの URL をすることもできます。 http://proxy/proxy.pac
 
                > [!NOTE]
                > PAC ファイルはファイル共有でホストすることもできます。この場合、file://server.fabrikan.com/share/proxy.pac といった構文を使用しますが、ここでは file:// プロトコルを許可する必要があります 参照してください、"に注意してください。この File://-based プロキシ スクリプトの非推奨」セクション[Web プロキシの構成について](http://blogs.msdn.com/b/ieinternals/archive/2013/10/11/web-proxy-configuration-and-ie11-changes.aspx)必要なレジストリ値の設定の詳細についてのブログ。
@@ -857,7 +857,7 @@ Domain Admin、Enterprise Admin、または階層 0 の同等のグループ (�
 2. **ホワイト リストには、Windows Defender Application Control や AppLocker を使用してアプリケーションが信頼されている**します。  信頼されていないコードや署名されていないコードの PAW での実行を制限することで、悪意のあるアクティビティやセキュリティ侵害が発生する可能性をさらに減らすことができます。  Windows には、アプリケーション コントロールのための次の 2 つの主なオプションが含まれています。
 
    * **AppLocker**:AppLocker は、特定のシステムで実行できるアプリケーション管理者が制御に役立ちます。  グループ ポリシーによって AppLocker を中央で管理し、特定のユーザーまたはグループに適用することができます (PAW ユーザーに対してアプリケーションを指定します)。  AppLocker の詳細については、「[AppLocker の技術概要](https://technet.microsoft.com/library/hh831440.aspx)」を参照してください。
-   * **Windows Defender Application Control**: 新しい Windows Defender アプリケーション制御機能が影響を受けるデバイスで AppLocker とは異なりはオーバーライドできませんが、強化されたハードウェア ベースのアプリケーション コントロールを提供します。  AppLocker のように Windows Defender Application Control をグループ ポリシーを使用して制御し、特定のユーザーを対象とすることがことができます。  Windows Defender アプリケーション制御でのアプリケーションの使用量を制限する方法の詳細についてを参照してください[Windows Defender アプリケーション制御の展開ガイド](https://docs.microsoft.com/en-gb/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)します。
+   * **Windows Defender Application Control**: 新しい Windows Defender アプリケーション制御機能が影響を受けるデバイスで AppLocker とは異なりはオーバーライドできませんが、強化されたハードウェア ベースのアプリケーション コントロールを提供します。  AppLocker のように Windows Defender Application Control をグループ ポリシーを使用して制御し、特定のユーザーを対象とすることがことができます。  Windows Defender アプリケーション制御でのアプリケーションの使用量を制限する方法の詳細についてを参照してください[Windows Defender アプリケーション制御の展開ガイド](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control-deployment-guide)します。
 
 3. **Protected Users、Authentication Policies、Authentication Silos を使用して、権限を持つアカウントの保護を強化します**。  Protected Users のメンバーは、ローカル セキュリティ エージェント (LSA) に保存された資格情報を保護する追加のセキュリティ保護の対象となるので、資格情報の盗難また再利用のリスクが最小限に抑えられます。  認証ポリシーとサイロは、権限を持つユーザーがドメイン内のリソースにアクセスする方法を制御します。  集合的に、このような保護は、これらの特権を持つユーザーのアカウントのセキュリティを大幅に強化します。  これらの機能の詳細については、Web の記事「[保護されるアカウントの構成方法](https://technet.microsoft.com/library/dn518179.aspx)」を参照してください。
 
@@ -912,7 +912,7 @@ VM ベースの Paw を使用してシールドされたときに、[推奨 GPO 
 ### <a name="set-up-the-host-guardian-service"></a>ホスト ガーディアン サービスをセットアップします。
 
 Id および PAW の物理デバイスの正常性を証明するため、ホスト ガーディアン サービスが担当します。
-HGS に呼ばれるマシンのみ、信頼されたを実行していると[コード整合性ポリシー](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)はシールドされた Vm の起動を許可します。
+HGS に呼ばれるマシンのみ、信頼されたを実行していると[コード整合性ポリシー](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control)はシールドされた Vm の起動を許可します。
 これにより、ユーザーのデスクトップ環境の脅威から、階層化されたリソースを管理する信頼できるワークロードを実行しているシールドされた Vm を保護します。
 
 HGS が PAW の Vm を実行できるはどのデバイスを判断するため、階層 0 のリソースと見なされます。
@@ -1010,7 +1010,7 @@ New-ShieldingDataFile -Policy Shielded -BindToHostTpm [...]
 
 [Device Guard の概要](https://technet.microsoft.com/library/dn986865(v=vs.85).aspx)
 
-[セキュリティで保護された管理ワークステーションを使用した高価値資産を保護します。](https://msdn.microsoft.com/en-us/library/mt186538.aspx)
+[セキュリティで保護された管理ワークステーションを使用した高価値資産を保護します。](https://msdn.microsoft.com/library/mt186538.aspx)
 
 [Dave probert (Channel 9)、Windows 10 分離ユーザー モード](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-in-Windows-10-with-Dave-Probert)
 

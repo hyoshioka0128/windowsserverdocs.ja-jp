@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f92b1335-ac4a-4501-a5ec-d1851e6f0fc7
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4c301db7c175f04aba26138fabdb51b501f63bc3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 09fa7145580b60f66d0406e69ca79342bae1534d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844873"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281028"
 ---
 # <a name="troubleshoot-a-multisite-deployment"></a>マルチサイト展開のトラブルシューティング
 

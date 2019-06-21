@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 7540c17b-81de-47de-a04f-3247afa26f70
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 12485ddb9cbb70766c018e8f99caa91cfa6ee9da
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8efeb29bf07b572d5e2faef677349690d4282b4d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861333"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281179"
 ---
 # <a name="step-3-plan-a-load-balanced-cluster-deployment"></a>手順 3. 負荷分散クラスターの展開を計画します。
 
@@ -40,7 +39,7 @@ ms.locfileid: "59861333"
   
 -   **外部ロード バランサー**-外部ロード バランサーを使用するには、クラスターのリモート アクセス サーバーの間でトラフィックの負荷を管理する外部のハードウェアが必要です。 さらに、外部ロード バランサーを使用すると、クラスターで最大 32 台のリモート アクセス サーバーをサポートします。 いくつかの点を考慮して外部の負荷分散の構成は次のとおりです。  
   
-    -   管理者は、(f5 キーを押して Big-ip ローカル Traffic Manager のシステム) のような外部のロード バランサーでリモート アクセスの負荷分散ウィザードで構成されている仮想 Ip が使用されていることを確認する必要があります。 外部の負荷分散を有効にすると外部および内部インターフェイス上の IP アドレスは仮想 IP アドレスに昇格するロード バランサーに組み込まする必要があります。 これにより、管理者が、クラスターの展開のパブリック名の DNS エントリを変更する必要があるないようにします。 また、IPsec トンネル エンドポイントは、サーバーの ip アドレスから派生します。 管理者は、別の仮想 ip アドレスを提供する場合、クライアントはできません、サーバーに接続できません。 3.1.1 で外部の負荷分散と DirectAccess を構成するための使用例を参照してください。 外部ロード バランサーの構成の例です。  
+    -   管理者は、(f5 キーを押して Big-ip ローカル Traffic Manager のシステム) のような外部のロード バランサーでリモート アクセスの負荷分散ウィザードで構成されている仮想 Ip が使用されていることを確認する必要があります。 外部の負荷分散を有効にすると外部および内部インターフェイス上の IP アドレスは仮想 IP アドレスに昇格するロード バランサーに組み込まする必要があります。 これにより、管理者が、クラスターの展開のパブリック名の DNS エントリを変更する必要があるないようにします。 また、IPsec トンネル エンドポイントは、サーバーの ip アドレスから派生します。 管理者は、別の仮想 ip アドレスを提供する場合、クライアントはできません、サーバーに接続できません。 3\.1.1 で外部の負荷分散と DirectAccess を構成するための使用例を参照してください。 外部ロード バランサーの構成の例です。  
   
     -   (F5 キーを含む) 多くの外部のロード バランサーは、6to4 と ISATAP の負荷分散をサポートしていません。 リモート アクセス サーバーが ISATAP ルーターの場合は、ISATAP 関数を別のコンピューターに移動してください。 また、ISATAP 関数が別のコンピューター上にある場合は、DirectAccess サーバーは、ISATAP ルーターにネイティブ IPv6 接続が必要です。 ノートがこの接続が DirectAccess を構成する前に存在する必要があります。  
   

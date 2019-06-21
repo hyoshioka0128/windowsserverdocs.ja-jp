@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8399bdfa-809a-45e4-9963-f9b6a631007f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3077aa54163ed9548ae3f45f8c673c731b8ef73b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 23aed915edb827fd0cd61e6778167108647269ea
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446649"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283342"
 ---
 # <a name="step-5-test-directaccess-connectivity-from-the-internet-and-through-the-cluster"></a>手順 5 DirectAccess 接続をテスト クラスターと、インターネットから
 
@@ -79,7 +78,7 @@ CLIENT1 は、DirectAccess のテストの準備ができました。
   
 4. **開始**画面で「<strong>\\\app2\files</strong>します。 APP2 コンピューター上の共有フォルダーが表示されます。 APP2 のファイル共有を開くことができますでは、ユーザーの Kerberos 認証を必要とする 2 番目のトンネルが正しく動作していることを示します。  
   
-5. Internet Explorer を開き、web サイトを開きます https://app1/と https://app2/します。 両方の web サイトを開くことができますを確認する最初と 2 つ目の両方のトンネルが機能しているとします。 Internet Explorer を閉じます。  
+5. Internet Explorer を開き、web サイトを開きます https://app1/ と https://app2/ します。 両方の web サイトを開くことができますを確認する最初と 2 つ目の両方のトンネルが機能しているとします。 Internet Explorer を閉じます。  
   
 6. EDGE2 コンピューターを起動します。  
   

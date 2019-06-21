@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b97b2fd-767a-45c1-a64e-5b3edd0c8a47
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 470eebc82177a21985afb8d0bf143427a33d65fb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a22d58e8e775ae341691cab1f5b40f8121ea533f
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825443"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282383"
 ---
 # <a name="step-4-plan-for-otp-on-the-remote-access-server"></a>リモート アクセス サーバーで OTP を手順 4. プラン
 

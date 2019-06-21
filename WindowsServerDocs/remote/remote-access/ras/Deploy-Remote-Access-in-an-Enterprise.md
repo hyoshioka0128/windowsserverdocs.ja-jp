@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4781df0a-158b-4562-b8f5-32b27615a4f8
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f110ad945139da3b07b33bbb0adb3e8084743fdb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7cbcc844c356978f5bb5f34b66aa36dec9b163c1
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812243"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283002"
 ---
 # <a name="deploy-remote-access-in-an-enterprise"></a>企業でのリモート アクセスの展開
 
@@ -32,9 +31,9 @@ ms.locfileid: "59812243"
   
 ## <a name="before-you-begin-deploying-see-the-list-of-unsupported-configurations-known-issues-and-prerequisites"></a>展開を開始する前に、サポートされない構成、既知の問題、前提条件のリストを参照してください  
   
--   [DirectAccess がサポートされていない構成](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-unsupported-configurations)  
+-   [DirectAccess のサポートされない構成](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-unsupported-configurations)  
   
--   [DirectAccess の既知を問題します。](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-known-issues)  
+-   [DirectAccess の既知の問題](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/directaccess-known-issues)  
   
 -   [DirectAccess の展開の前提条件) の前提条件](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/prerequisites-for-deploying-directaccess)  
   
@@ -46,9 +45,9 @@ ms.locfileid: "59812243"
   
 -   [クラスターのリモート アクセスを展開します。](cluster/Deploy-Remote-Access-In-Cluster.md)  
   
--   [マルチサイト展開で複数のリモート アクセス サーバーを展開します。](multisite/Deploy-Multiple-Remote-Access-Servers-in-a-Multisite-Deployment.md)  
+-   [マルチサイト展開での複数のリモート アクセス サーバーの展開](multisite/Deploy-Multiple-Remote-Access-Servers-in-a-Multisite-Deployment.md)  
   
--   [OTP 認証を使用したリモート アクセスを展開します。](otp/Deploy-RA-OTP.md)  
+-   [OTP 認証を使用するリモート アクセスの展開](otp/Deploy-RA-OTP.md)  
   
 -   [マルチ フォレスト環境でのリモート アクセスを展開します。](multi-forest/Deploy-Remote-Access-in-a-Multi-Forest-Environment.md)  
   

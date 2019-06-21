@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ipam
+ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2cfe4e40-ec6d-4541-baa9-d772409fe27c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 18a593a82a9b9fd0d8f2e59d1bb9da971856ad17
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 22d00865d1fb30faa2cf9cd79479772f768bfbbe
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841523"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283777"
 ---
 # <a name="view-dns-zones"></a>DNS ゾーンを表示する
 
@@ -46,7 +45,7 @@ IPAM クライアント コンソールで DNS ゾーンを表示するのにに
   
 ## <a name="see-also"></a>関連項目  
 [DNS ゾーンの管理](DNS-Zone-Management.md)  
-[IPAM を管理します。](Manage-IPAM.md)  
+[IPAM の管理](Manage-IPAM.md)  
   
 
 
