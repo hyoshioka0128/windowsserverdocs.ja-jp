@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 72266dcedcda080ee98dd7bc90da8db1a27255b4
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: aa7fae25f68030702aecd378d797301d5cb83186
+ms.sourcegitcommit: 6b6c3601fb7493ab145ccff02db26d7123df9a3d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192533"
+ms.lasthandoff: 06/21/2019
+ms.locfileid: "67316343"
 ---
 # <a name="ad-fs-operations"></a>AD FS の運用
 
@@ -53,13 +53,13 @@ ms.locfileid: "66192533"
 - [AD FS 2019 HTTP セキュリティ応答ヘッダーをカスタマイズします。](../ad-fs/operations/customize-http-security-headers-ad-fs.md)
 - [管理者以外のユーザーへの AD FS Powershell コマンドレットのアクセスの委任](../ad-fs/operations/delegate-ad-fs-pshell-access.md)
 - [AD FS のデバイス認証コントロール](../ad-fs/operations/device-authentication-controls-in-AD-FS.md) 
-
 - [SAML 2.0 との相互運用性の向上](../ad-fs/operations/Improved-interoperability-with-SAML-2.0.md)
 - [SSO およびシームレスな第 2 の任意のデバイスから社内への参加要素用アプリケーション間での認証](../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 - [機密性の高いアプリケーションの追加の多要素認証によるリスクを管理します。](../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [条件付きアクセス制御によってリスクを管理する](../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 - [AD FS と WAP 2016で SSL 証明書を管理する](../ad-fs/operations/Manage-SSL-Certificates-AD-FS-WAP-2016.md)
 - [AD FS ラボ環境を設定する](../ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
+- [SQL 正常の調整と待機時間をアドレス指定](../ad-fs/operations/adfs-sql-latency.md) 
 - [チュートリアル ガイド: 機密性の高いアプリケーションの追加の多要素認証によるリスクを管理します。](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [チュートリアル ガイド: 条件付きアクセス制御によってリスクを管理する](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
 - [チュートリアル: Workplace Join で Windows デバイスをワークプレースに参加させる](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
