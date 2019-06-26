@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: fc92e8b30d6b4c0c765333d3e22311e551d3365d
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 1fe73df2ce209fc47c7414d33cb1e0a83d31dcd7
+ms.sourcegitcommit: 9bece8049b1766bd9bb0d5eb5921413a2de2ca61
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280493"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67351288"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS のよく寄せられる質問 (FAQ)
 
@@ -300,3 +300,6 @@ ADFS と Web アプリケーション サーバーは、エンドポイントで
 AD FS 2016 では、トークンのバインドは自動的に有効にし、プロキシとフェデレーションのシナリオでの複数の既知の問題を結果が このエラーが発生します。 これを解決するには、次の Powershell コマンドを実行し、トークンのバインドのサポートを削除します。
 
 `Set-AdfsProperties -IgnoreTokenBinding $true`
+
+### <a name="i-have-upgraded-my-farm-from-ad-fs-in-windows-server-2016-to-ad-fs-in-windows-server-2019-the-farm-behavior-level-for-the-ad-fs-farm-has-been-successfully-raised-to-2019-but-the-web-application-proxy-configuration-is-still-displayed-as-windows-server-2016"></a>Windows Server 2016 で AD FS からの AD FS を Windows Server 2019、ファームをアップグレードしたがあります。 AD FS ファームのファーム動作レベルが 2019年を正常に発生しますが、Web アプリケーション プロキシの構成が Windows Server 2016 と表示されたままですか。
+Windows Server 2019 へのアップグレード後、に、Windows Server 2016 として表示する Web アプリケーション プロキシの構成のバージョンは引き続きします。 Web アプリケーション プロキシでは、Windows Server の 2019 は、バージョン固有の新機能はありませんし、設計上の Windows Server 2016 として表示する Web アプリケーション プロキシが引き続きファーム動作レベルが AD fs が正常に発生した場合。 
