@@ -6,16 +6,16 @@ ms.manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 06/07/2019
+ms.date: 06/26/2019
 ms.assetid: 8bd0d09a-0421-40a4-b752-40ecb5350ffd
 description: 記憶域スペース ダイレクト、クラスターのサーバーの内部記憶域にソフトウェア定義記憶域ソリューションに使用する Windows Server の機能の概要。
 ms.localizationpriority: medium
-ms.openlocfilehash: 1ff63794de25565a9ade7eb4e8b66cf1e394c14a
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 98801af7f753e071e27f100f20ed149110c90f66
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812700"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407685"
 ---
 # <a name="storage-spaces-direct-overview"></a>記憶域スペース ダイレクトの概要
 
@@ -30,8 +30,8 @@ ms.locfileid: "66812700"
 |       |       |
 |   -   |   -   |
 | **理解します。**<br><ul><li>概要 (このページ)</li><li>[キャッシュについて](understand-the-cache.md)</li><li>[フォールト トレランスと記憶域の効率](storage-spaces-fault-tolerance.md)<li>[ドライブの対称性に関する考慮事項](drive-symmetry-considerations.md)</li><li>[記憶域の再同期を理解して管理する](understand-storage-resync.md)</li><li>[クラスターとプール クォーラムの概要](understand-quorum.md)</li><li>[クラスター セット](cluster-sets.md)</li> | **計画**<br><ul><li>[ハードウェア要件](storage-spaces-direct-hardware-requirements.md)</li><li>[CSV のメモリ内読み取りキャッシュを使用する](csv-cache.md)</li><li>[ドライブの選択](choosing-drives.md)</li><li>[ボリュームの計画](plan-volumes.md)</li><li>[ゲスト VM クラスターの使用](storage-spaces-direct-in-vm.md)</li><li>[ディザスター リカバリー](storage-spaces-direct-disaster-recovery.md)</li> |
-| **展開**<br><ul><li>[記憶域スペース ダイレクトの展開](deploy-storage-spaces-direct.md)</li><li>[ボリュームの作成](create-volumes.md)</li><li>[入れ子の回復性](nested-resiliency.md)</li><li>[クォーラムの構成](../../failover-clustering/manage-cluster-quorum.md)</li><li>[記憶域スペース ダイレクト クラスターを Windows Server 2019 にアップグレードする](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li> | **管理**<br><ul><li>[Windows Admin Center による管理](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[サーバーまたはドライブの追加](add-nodes.md)</li><li>[メンテナンスのためサーバーをオフラインにする](maintain-servers.md)</li><li>[サーバーの削除](remove-servers.md)</li><li>[ボリュームの拡張](resize-volumes.md)</li><li>[ボリュームの削除](delete-volumes.md)</li><li>[ドライブ ファームウェアの更新](../update-firmware.md)</li><li>[パフォーマンス履歴](performance-history.md)</li><li>[ボリュームの割り当てを区切る](delimit-volume-allocation.md)</li><li>[Azure Monitor を使用して、ハイパーコンバージド クラスター](configure-azure-monitor.md)</li> |
-| **トラブルシューティング**<br><ul><li>[正常性と操作状態をトラブルシューティングします。](storage-spaces-states.md)</li><li>[記憶域スペース ダイレクトの診断データを収集します。](data-collection.md)</li> | **最近投稿されたブログ**<br><ul><li>[記憶域スペース ダイレクト 13.7 件 IOPS: ハイパー コンバージド インフラストラクチャの新しい業界レコード](https://blogs.technet.microsoft.com/filecab/2018/10/30/windows-server-2019-and-intel-optane-dc-persistent-memory/)</li><li>[Windows Server 2019 - ハイパー コンバージド インフラストラクチャ、カウント ダウンのクロックは今すぐ開始!](https://blogs.technet.microsoft.com/filecab/2018/10/02/hci-the-countdown-clock-starts-now/)</li><li>[Windows Server Summit から 5 つの大きなお知らせ](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap)</li><li>[10,000 の記憶域スペース ダイレクト クラスターとカウントしています.](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/)</li> |
+| **展開**<br><ul><li>[記憶域スペース ダイレクトの展開](deploy-storage-spaces-direct.md)</li><li>[ボリュームの作成](create-volumes.md)</li><li>[入れ子の回復性](nested-resiliency.md)</li><li>[クォーラムの構成](../../failover-clustering/manage-cluster-quorum.md)</li><li>[記憶域スペース ダイレクト クラスターを Windows Server 2019 にアップグレードする](upgrade-storage-spaces-direct-to-windows-server-2019.md)</li><li>[理解し、永続的なメモリの展開](deploy-pmem.md)</li> | **管理**<br><ul><li>[Windows Admin Center による管理](../../manage/windows-admin-center/use/manage-hyper-converged.md)</li><li>[サーバーまたはドライブの追加](add-nodes.md)</li><li>[メンテナンスのためサーバーをオフラインにする](maintain-servers.md)</li><li>[サーバーの削除](remove-servers.md)</li><li>[ボリュームの拡張](resize-volumes.md)</li><li>[ボリュームの削除](delete-volumes.md)</li><li>[ドライブ ファームウェアの更新](../update-firmware.md)</li><li>[パフォーマンス履歴](performance-history.md)</li><li>[ボリュームの割り当てを区切る](delimit-volume-allocation.md)</li><li>[Azure Monitor を使用して、ハイパーコンバージド クラスター](configure-azure-monitor.md)</li> |
+| **トラブルシューティング**<br><ul><li>[トラブルシューティング シナリオ](troubleshooting-storage-spaces.md)</li><li>[正常性と操作状態をトラブルシューティングします。](storage-spaces-states.md)</li><li>[記憶域スペース ダイレクトの診断データを収集します。](data-collection.md)</li><li>[記憶域クラスのメモリの状態の管理](Storage-class-memory-health.md)</li> | **最近投稿されたブログ**<br><ul><li>[記憶域スペース ダイレクト 13.7 件 IOPS: ハイパー コンバージド インフラストラクチャの新しい業界レコード](https://blogs.technet.microsoft.com/filecab/2018/10/30/windows-server-2019-and-intel-optane-dc-persistent-memory/)</li><li>[Windows Server 2019 - ハイパー コンバージド インフラストラクチャ、カウント ダウンのクロックは今すぐ開始!](https://blogs.technet.microsoft.com/filecab/2018/10/02/hci-the-countdown-clock-starts-now/)</li><li>[Windows Server Summit から 5 つの大きなお知らせ](https://blogs.technet.microsoft.com/filecab/2018/06/27/windows-server-summit-recap)</li><li>[10,000 の記憶域スペース ダイレクト クラスターとカウントしています.](https://blogs.technet.microsoft.com/filecab/2018/03/27/storage-spaces-direct-momentum/)</li> |
 
 ## <a name="videos"></a>ビデオ
 

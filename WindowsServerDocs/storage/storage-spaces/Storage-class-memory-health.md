@@ -7,17 +7,18 @@ ms.manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: JasonGerend
-ms.date: 08/24/2016
+ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c39d704056c4ae6935f3be9c521c12ca1014820
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4ebec8618c79c43816680387ae5e495f125b3c54
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870553"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407552"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Windows での記憶域クラス メモリ (NVDIMM-N) の正常性管理
-> 適用先:Windows Server 2016、Windows 10 (バージョン 1607)
+
+> 適用先:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)、Windows 10
 
 この記事では、Windows の記憶域クラス メモリ (NVDIMM-N) デバイスに固有のエラー処理と正常性管理に関する情報をシステム管理者および IT プロフェッショナルに提供して、記憶域クラス メモリと従来の記憶装置の違いを明らかにします。
 
@@ -25,6 +26,8 @@ Windows での記憶域クラス メモリ デバイスのサポートについ�
 - [Windows Server 2016 でのブロック記憶域として非揮発性メモリ (NVDIMM-N) を使用します。](https://channel9.msdn.com/Events/Build/2016/P466)
 - [Windows Server 2016 のバイトのアドレス指定可能な記憶域として非揮発性メモリ (NVDIMM-N) を使用します。](https://channel9.msdn.com/Events/Build/2016/P470)
 - [Windows Server 2016 で永続的なメモリと SQL Server 2016 のパフォーマンス向上を実現](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-Windows-Server-2016-SCM--FAST)
+
+参照してください[理解する記憶域スペース ダイレクトで永続的なメモリのデプロイと](deploy-pmem.md)します。
 
 JEDEC 準拠 NVDIMM-N 記憶域クラス メモリ デバイスは、Windows Server 2016 および Windows 10 (バージョン 1607) 以降の Windows において、ネイティブ ドライバーでサポートされます。 これらのデバイスの動作は他のディスク (HDD や SSD) に似ていますが、いくつかの違いがあります。
 
@@ -48,13 +51,13 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 これにより、この出力例が得られます。
 
-|SerialNumber|HealthStatus|OperationalStatus|OperationalDetails|
-|---|---|---|---|
-|802c-01-1602-117cb5fc|正常|OK||
-|802c-01-1602-117cb64f|警告|Predictive Failure|{Threshold Exceeded,NVDIMM\_N Error}|
+| SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
+| --- | --- | --- | --- |
+| 802c-01-1602-117cb5fc | 正常 | OK | |
+| 802c-01-1602-117cb64f | 警告 | Predictive Failure | {Threshold Exceeded,NVDIMM\_N Error} |
 
 > [!NOTE]
-> イベントで指定された NVDIMM-N デバイスの物理的な場所を検索するには、イベント ビューアーのイベントの **[詳細]** タブで、**[EventData]** > **[Location]** に移動します。 Windows Server 2016 では NVDIMM-N デバイスの場所が正しく表示されませんが、これは Windows Server バージョン 1709 で修正されています。
+> イベントで指定された NVDIMM-N デバイスの物理的な場所を検索するには、イベント ビューアーのイベントの **[詳細]** タブで、 **[EventData]**  >  **[Location]** に移動します。 Windows Server 2016 では NVDIMM-N デバイスの場所が正しく表示されませんが、これは Windows Server バージョン 1709 で修正されています。
 
 さまざまな正常性の状態を理解するには、以下のセクションをご覧ください。
 
@@ -62,36 +65,36 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 これは、記憶域クラス メモリ デバイスの正常性を確認すると、以下の出力例が示すように正常性状態として**警告**が表示される状態です。
 
-|SerialNumber|HealthStatus|OperationalStatus|OperationalDetails|
-|---|---|---|---|
-|802c-01-1602-117cb5fc|正常|OK||
-|802c-01-1602-117cb64f|警告|Predictive Failure|{Threshold Exceeded,NVDIMM\_N Error}|
+| SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
+| --- | --- | --- | --- |
+| 802c-01-1602-117cb5fc | 正常 | OK | |
+| 802c-01-1602-117cb64f | 警告 | Predictive Failure | {Threshold Exceeded,NVDIMM\_N Error} |
 
 この状態について、以下の表で説明します。
 
-||説明|
-|---|---|
-|起こり得る状態|NVDIMM-N 警告しきい値違反|
-|根本原因|NVDIMM-N デバイスは、温度、NVM の有効期間、電源の有効期間など、さまざまなしきい値を追跡します。 これらのしきい値のいずれかを超えると、オペレーティング システムに通知されます。|
-|通常の動作|デバイスは引き続き完全に動作します。 これは警告であり、エラーではありません。|
-|記憶域スペースの動作|デバイスは引き続き完全に動作します。 これは警告であり、エラーではありません。|
-|詳細情報|PhysicalDisk オブジェクトの OperationalStatus フィールド。 EventLog – Microsoft-Windows-ScmDisk0101/Operational|
-|操作|警告しきい値の違反によっては、NVDIMM-N のすべてまたは特定部分の交換を検討することが賢明である場合があります。 たとえば、NVM の有効期間しきい値の違反が発生した場合に、NVDIMM-N を交換することが合理的である場合があります。|
+| | 説明 |
+| --- | --- |
+| 起こり得る状態 | NVDIMM-N 警告しきい値違反 |
+| 根本原因 | NVDIMM-N デバイスは、温度、NVM の有効期間、電源の有効期間など、さまざまなしきい値を追跡します。 これらのしきい値のいずれかを超えると、オペレーティング システムに通知されます。 |
+| 通常の動作 | デバイスは引き続き完全に動作します。 これは警告であり、エラーではありません。 |
+| 記憶域スペースの動作 | デバイスは引き続き完全に動作します。 これは警告であり、エラーではありません。 |
+| 詳細情報 | PhysicalDisk オブジェクトの OperationalStatus フィールド。 EventLog – Microsoft-Windows-ScmDisk0101/Operational |
+| 操作 | 警告しきい値の違反によっては、NVDIMM-N のすべてまたは特定部分の交換を検討することが賢明である場合があります。 たとえば、NVM の有効期間しきい値の違反が発生した場合に、NVDIMM-N を交換することが合理的である場合があります。 |
 
 ## <a name="writes-to-an-nvdimm-n-fail"></a>NVDIMM-N への書き込みが失敗する
 
 この状態では、記憶域クラス メモリ デバイスの正常性を確認すると、以下の出力例が示すように、正常性状態が **Unhealthy** (異常)、操作状態が **IO Error**(IO エラー) と表示されます。
 
-|SerialNumber|HealthStatus|OperationalStatus|OperationalDetails|
-|---|---|---|---|
-|802c-01-1602-117cb5fc|正常|OK||
-|802c-01-1602-117cb64f|Unhealthy|{Stale Metadata, IO Error, Transient Error}|{Lost Data Persistence, Lost Data, NV...}|
+| SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
+| --- | --- | --- | --- |
+| 802c-01-1602-117cb5fc | 正常 | OK | |
+| 802c-01-1602-117cb64f | Unhealthy | {Stale Metadata, IO Error, Transient Error} | {Lost Data Persistence, Lost Data, NV...} |
 
 この状態について、以下の表で説明します。
 
-||説明|
-|---|---|
-|起こり得る状態|永続性/バックアップ電力の喪失|
+| | 説明 |
+| --- | --- |
+| 起こり得る状態 | 永続性/バックアップ電力の喪失 |
 |根本原因|NVDIMM-N デバイスは、永続性のためにバックアップ電源 (通常ではバッテリやスーパー キャパシター) に依存しています。 このバックアップ電源を利用できない場合、またはデバイスが何らかの理由 (コントローラー/Flash エラー) でバックアップを実行できない場合は、データが危険にさらされており、Windows は影響を受けているデバイスへのさらなる書き込みを阻止します。 データを退避させるための読み取りは引き続き可能です。|
 |通常の動作|NTFS ボリュームのマウントが解除されます。<br>PhysicalDisk の正常性状態フィールドには、影響を受けているすべての NVDIMM-N デバイスについて "Unhealthy" (異常)が表示されます。|
 |記憶域スペースの動作|影響を受けている NVDIMM-N が 1 つだけである限り、記憶域スペースは操作可能であり続けます。 複数のデバイスが影響を受けている場合、記憶域スペースへの書き込みは失敗します。 <br>PhysicalDisk の正常性状態フィールドには、影響を受けているすべての NVDIMM-N デバイスについて "Unhealthy" (異常)が表示されます。|
@@ -102,8 +105,8 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 これは、記憶域クラス メモリ デバイスが 0 バイトの容量として表示されて初期化できない状態であるか、または記憶域クラス メモリ デバイスが "汎用物理ディスク" オブジェクトとして公開されて、以下の出力例が示すように操作状態として**通信の切断**が表示される状態です。
 
-|SerialNumber|HealthStatus|OperationalStatus|OperationalDetails|
-|---|---|---|---|
+| SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
+| --- | --- | --- | --- |
 |802c-01-1602-117cb5fc|正常|OK||
 ||警告|通信の切断||
 
@@ -122,8 +125,8 @@ PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, Health
 
 この状態では、記憶域クラス メモリ デバイスの正常性を確認すると、以下の出力例が示すように、正常性状態が **Unhealthy** (異常)、操作状態が **Unrecognized Metadata** (認識されないメタデータ) と表示されます。
 
-|SerialNumber|HealthStatus|OperationalStatus|OperationalDetails|
-|---|---|---|---|
+| SerialNumber | HealthStatus | OperationalStatus | OperationalDetails |
+| --- | --- | --- | --- |
 |802c-01-1602-117cb5fc|正常|OK|{Unknown}|
 |802c-01-1602-117cb64f|Unhealthy|{Unrecognized Metadata, Stale Metadata}|{Unknown}|
 

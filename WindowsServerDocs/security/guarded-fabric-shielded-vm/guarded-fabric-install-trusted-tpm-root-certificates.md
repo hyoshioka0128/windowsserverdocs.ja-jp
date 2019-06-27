@@ -6,13 +6,13 @@ ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 09/11/2018
-ms.openlocfilehash: 65c5eb25f7a98e4db6a44e705a2968f185f3f962
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.date: 06/21/2019
+ms.openlocfilehash: 211d2f24b01d1e308f012df681f9e16a2190449f
+ms.sourcegitcommit: 260b1d78cb28b88b876579e1ac9a41a74e8752fd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447382"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67398804"
 ---
 # <a name="install-trusted-tpm-root-certificates"></a>信頼済み TPM ルート証明書をインストールします。
 
@@ -35,7 +35,7 @@ TPM 証明書は、以下のパッケージには含まれません、ルート�
 
 次の手順を繰り返します**HGS サーバーがすべて**:
 
-1.  最新パッケージをダウンロード[ https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab](https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab)します。
+1.  最新パッケージをダウンロード[ https://tpmsec.microsoft.com/TPMCerts/TrustedTPM.cab](https://tpmsec.microsoft.com/TPMCerts/TrustedTPM.cab)します。
 
 2.  Cab ファイルを展開します。
 

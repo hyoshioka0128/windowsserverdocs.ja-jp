@@ -1,26 +1,22 @@
 ---
 title: Windows コマンド
 description: Windows コマンド
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c703d07c-8227-4e86-94a6-8ef390f94cdc
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
 manager: dongill
-ms.date: 05/22/2018
+ms.date: 06/26/2019
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 861c8f35cf57fc7c8d03914dba2d971d50b66fc5
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: d0cf58ea8d37efccf80ce262b64e604218bd8d0b
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67298174"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407656"
 ---
-# <a name="windows-commands"></a>Windows コマンド
+# <a name="windows-commands"></a>Windows のコマンド
 
 Windows (サーバーとクライアント) のサポートされているすべてのバージョンがある一連の Win32 コンソールのコマンドが組み込まれています。
 
@@ -54,7 +50,8 @@ Windows (サーバーとクライアント) のサポートされているすべ
 [X](#x) |Y |Z
 
 ## <a name="prerequisites"></a>前提条件
-この PDF に含まれる情報に適用されます。
+
+このトピックに含まれる情報に適用されます。
 
 -   Windows Server 2019
 -   Windows Server (半期チャネル)
@@ -67,6 +64,7 @@ Windows (サーバーとクライアント) のサポートされているすべ
 -   Windows 8.1
 
 ### <a name="command-shell-overview"></a>コマンド シェルの概要
+
 コマンド シェルでは、バッチ (.bat) ファイルでユーザー アカウントの管理または夜間のバックアップなどの日常的なタスクを自動化する Windows に組み込まれている最初のシェルをしました。 Windows スクリプト ホストでは、コマンド シェルでより高度なスクリプトを実行できます。 詳細については、次を参照してください。 [cscript](cscript.md)または[wscript](wscript.md)します。 ユーザー インターフェイスを使用するよりも、スクリプトを使用して、操作をより効率的に実行できます。 スクリプトは、コマンドラインで使用できるすべてのコマンドをそのまま使用します。
 
 Windows では、2 つのコマンド シェルがあります。コマンド シェルと[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)します。 各シェルとして、オペレーティング システムまたは IT 操作を自動化するための環境を提供する、アプリケーションの間の直接の通信を提供するソフトウェア プログラムです。
@@ -88,6 +86,7 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 > 設定する、 **reg_DWOrd**値には、特定の機能の制御文字の 16 進数の値を使用して (たとえば、 **0 9**  タブと**0 08** backspace キーが)。 ユーザーが指定した設定は、コンピューターの設定より優先し、コマンド ライン オプションのレジストリ設定より優先します。
 
 ## <a name="command-line-reference-a-z"></a>コマンド ライン リファレンス A ~ Z
+
 次の A ~ Z のメニューで、特定の Windows コマンドに関する情報を検索するには、コマンドを使用すると、開始する文字をクリックし、コマンド名をクリックします。
 
 [A](#a) |
@@ -225,7 +224,7 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 - [chkntfs](chkntfs.md)
 - [choice](choice.md)
 - [cipher](cipher.md)
-- [cleanmgr](clean-mgr.md)
+- [cleanmgr](cleanmgr.md)
 - [clip](clip.md)
 - [cls](cls.md)
 - [Cmd](Cmd.md)

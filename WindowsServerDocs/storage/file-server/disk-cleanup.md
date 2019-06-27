@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: b479697366239144e5ca9d3486b84191eb51dc4d
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: fbec7cd2b8312f03998cfb27b739d0866d3a47c5
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67301604"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407668"
 ---
 # <a name="using-disk-cleanup-on-windows-server"></a>ディスク クリーンアップを使用して、Windows server
 
@@ -23,7 +23,7 @@ ms.locfileid: "67301604"
 
 ディスク クリーンアップ ツールを起動する Cleanmgr.exe のコマンドを実行または選択**開始**を選択します**Windows 管理ツール**、し、**ディスク クリーンアップ**します。
 
-使用して、ディスク クリーンアップを実行することも、 [cleanmgr Windows コマンド](../../administration/windows-commands/clean-mgr.md)しコマンド ライン オプションを使用して、ディスク クリーンアップが特定のファイルをクリーンアップするかを指定します。
+使用して、ディスク クリーンアップを実行することも、 [cleanmgr Windows コマンド](../../administration/windows-commands/cleanmgr.md)しコマンド ライン オプションを使用して、ディスク クリーンアップが特定のファイルをクリーンアップするかを指定します。
 
 ## <a name="enable-disk-cleanup-on-an-earlier-version-of-windows-server-by-installing-the-desktop-experience"></a>デスクトップ エクスペリエンスをインストールすることで、Windows Server の以前のバージョンでディスク クリーンアップを有効にします。
 
@@ -78,4 +78,4 @@ Cleanmgr.exe.mui を見つけて、ファイルの移動 **%systemroot%\System32
 
 [Windows 10 のドライブの領域を解放します。](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)
 
-[cleanmgr](../../administration/windows-commands/clean-mgr.md)
+[cleanmgr](../../administration/windows-commands/cleanmgr.md)

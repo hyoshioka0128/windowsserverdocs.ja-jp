@@ -7,14 +7,14 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 06/04/2019
+ms.date: 06/25/2019
 description: IT プロフェッショナル向け Windows Server のオンプレミスの storage のドキュメントで新規および更新されたトピック。
-ms.openlocfilehash: 442d640809d3ae9cf4a11feb646fbbd566e6e3fa
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 52e1de646a3acb56b764ee1b781d852d8bf93225
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284456"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407610"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server のストレージ トピックの変更履歴
 
@@ -26,8 +26,9 @@ ms.locfileid: "67284456"
 
 ## <a name="june-2019"></a>6 月 2019
 
-| 新しいトピックまたは変更されたトピック                                        | 説明|
+| 新しいトピックまたは変更されたトピック                                        | 説明 |
 | ---                                                         | ---           |
+| [ディスク クリーンアップ](file-server/disk-cleanup.md)                                              | 新しい (移行から、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11)))
 | [記憶域移行サービスについての FAQ](storage-migration-service/faq.md#consolidate-servers) | パフォーマンスの最適化の情報を追加します。 |
 
 ## <a name="may-2019"></a>2019 年 5 月
@@ -42,9 +43,10 @@ ms.locfileid: "67284456"
 
 |新しいトピックまたは変更されたトピック                                        |説明|
 |---                                                         |---           |
-|[Azure Monitor で監視する](storage-spaces/configure-azure-monitor.md)| 新規|
-|[記憶域スペース ダイレクト クラスターを Windows Server 2019 にアップグレードする](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| 新規        |
-|[DFS レプリケーション](dfs-replication/dfsr-overview.md)        | 移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))ライブラリ|
+| [Azure Monitor で監視する](storage-spaces/configure-azure-monitor.md) | 新規 |
+| [理解し、永続的なメモリの展開](storage-spaces/deploy-pmem.md) | 新規 |
+| [記憶域スペース ダイレクト クラスターを Windows Server 2019 にアップグレードする](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| 新規        |
+| [DFS レプリケーション](dfs-replication/dfsr-overview.md)        | 移行、[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))ライブラリ|
 
 ## <a name="february-2019"></a>2019 年 2 月
 

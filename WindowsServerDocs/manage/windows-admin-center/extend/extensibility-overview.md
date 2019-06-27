@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 09/17/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: fa3d7e75b32f0195346e58db54b7932c8d2fd3b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: beb2b3d1eefc5d70e39baa461708938ac9c17be5
+ms.sourcegitcommit: 3be280c8638214857dc355b201eb56a04499a5e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885003"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67396680"
 ---
 # <a name="extensions-for-windows-admin-center"></a>Windows Admin Center の拡張機能
 
@@ -43,7 +43,7 @@ GitHub でホストされているサンプル コードもあります。[開�
 SDK の詳細を確認し、作業を開始するには、次のトピックを参照してください。
 
 - [拡張機能のしくみを理解します。](understand-extensions.md)
-- [拡張機能を開発します。](developing-extensions.md)
+- [拡張機能の開発](developing-extensions.md)
 - [ガイド](guides.md)
 - [拡張機能を公開します。](publish-extensions.md)
 
@@ -51,9 +51,14 @@ SDK の詳細を確認し、作業を開始するには、次のトピックを�
 
 パートナーが Windows Admin Center エコシステムにもたらし始めたすばらしい価値を確認し、今すぐそれらの拡張機能を試してください。 Windows Admin Center から[拡張機能をインストールする方法](../configure/using-extensions.md)の詳細については、こちらを参照してください。
 
+### <a name="biitops"></a>BiitOps
+BiitOps 変更拡張機能は、変更の追跡、Windows Server の物理/仮想マシンのハードウェア、ソフトウェアや構成設定を提供します。 拡張機能が表示されます、BiitOps 変更正確に新機能については、変更内容と、単一ウィンドウ-の-ガラスの問題を追跡するで削除されましたは、コンプライアンス、信頼性、セキュリティに関連します。 [BiitOps 変更拡張機能の詳細について](case-studies/biitops.md)します。
+
+![BiitOps 拡張機能](../media/extensibility-overview/biitops-1.png)
+
 ### <a name="dataon"></a>DataON
 
-データの必要がありますの拡張機能では、監視、データのハイパー コンバージド インフラストラクチャとストレージ システムに Windows Server ベースの管理およびエンド ツー エンドの分析が表示されます。 履歴データの報告、ディスク マッピング、システム アラートおよび、Windows Admin Center サーバーと、シームレスなを介して、ハイパー コンバージド インフラストラクチャの管理機能を補完するものとして、SAN のような呼び出しホーム サービスなどの一意の値を追加する必要がありますの拡張機能統合された操作。 [DataON の MUST 拡張機能と開発エクスペリエンスの詳細については、こちらを参照してください](case-studies/dataon.md)。
+データにする必要があります拡張機能は、監視、管理、データのハイパー コンバージド インフラストラクチャと Windows Server ベースの記憶域システムをエンド ツー エンドの分析情報が表示されます。 履歴データの報告、ディスク マッピング、システム アラートおよび、Windows Admin Center サーバーと、シームレスなを介して、ハイパー コンバージド インフラストラクチャの管理機能を補完するものとして、SAN のような呼び出しホーム サービスなどの一意の値を追加する必要がありますの拡張機能統合された操作。 [DataON の MUST 拡張機能と開発エクスペリエンスの詳細については、こちらを参照してください](case-studies/dataon.md)。
 
 ![DataON MUST 拡張機能](../media/extensibility-overview/dataon-must-extension.png)
 
@@ -65,7 +70,7 @@ Fujitsu の ServerView 正常性と Windows Admin Center の RAID の正常性�
 
 ### <a name="lenovo"></a>Lenovo
 
-Lenovo の XClarity インテグレーターの拡張機能は、Windows Admin Center 内のさまざまなエクスペリエンスにシームレスに統合することで、次のレベルにハードウェアの管理を移動します。 XClarity インテグレーター ソリューションは、すべての Lenovo サーバーの概要を確認し、1 台のサーバー、フェールオーバー クラスターまたはハイパーコンバージド クラスターに接続しているかどうか、別のツールの拡張機能がハードウェアの詳細を指定します。 [Lenovo XClarity インテグレーターの拡張機能の詳細について](case-studies/lenovo.md)します。
+Lenovo XClarity インテグレーターの拡張機能は、Windows Admin Center 内のさまざまなエクスペリエンスにシームレスに統合することで、次のレベルにハードウェアの管理を移動します。 XClarity インテグレーター ソリューションは、すべての Lenovo サーバーの概要を確認し、1 台のサーバー、フェールオーバー クラスターまたはハイパーコンバージド クラスターに接続しているかどうか、別のツールの拡張機能がハードウェアの詳細を指定します。 [Lenovo XClarity インテグレーターの拡張機能の詳細について](case-studies/lenovo.md)します。
 
 ![Lenovo の拡張機能](../media/extensibility-overview/lenovo-extension.png)
 
@@ -74,6 +79,12 @@ Lenovo の XClarity インテグレーターの拡張機能は、Windows Admin C
 純粋なストレージでは、enterprise、競争優位性のビジネスを促進するデータ中心のアーキテクチャを提供するオール フラッシュ データ ストレージ ソリューションを提供します。 Windows Admin Center の純粋なストレージ拡張機能は、純粋な FlashArray 製品単一枠ビューを提供し、監視タスクを実行、リアルタイムのパフォーマンスのメトリックを表示および記憶域ボリュームと 1 つの UI でイニシエーターの管理ユーザーには、発生します。 [詳細については、純粋の拡張機能と、開発エクスペリエンスは](case-studies/purestorage.md)します。
 
 ![純粋なストレージの拡張機能](../media/extensibility-overview/purestorage-extension.png)
+
+### <a name="qct"></a>QCT
+
+QCT Management Suite の拡張機能は、物理サーバーの監視とシステムの認定 QCT Azure Stack HCI の管理を提供することで、Windows Admin Center を補完します。 QCT Management Suite 拡張機能は、サーバーのハードウェア情報を表示し、ハードウェア イベント ログのツール、および S.M.A.R.T.、直感的なウィザード UI を置き換える物理ディスク、効率的に提供します 予測的なディスクの管理に基づいています。 [QCT Management Suite の拡張機能の詳細について](case-studies/qct.md)します。
+
+![QCT 拡張機能](../media/extensibility-overview/qct-extension.png)
 
 ### <a name="squared-up"></a>Squared Up
 
