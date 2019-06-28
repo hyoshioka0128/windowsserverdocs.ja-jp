@@ -6,13 +6,13 @@ ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 06/21/2019
-ms.openlocfilehash: 211d2f24b01d1e308f012df681f9e16a2190449f
-ms.sourcegitcommit: 260b1d78cb28b88b876579e1ac9a41a74e8752fd
+ms.date: 06/27/2019
+ms.openlocfilehash: 0d42befcfacfffd302cfcb27f9f3c2c973534398
+ms.sourcegitcommit: 2c2c37170c65434179bcf2989d557f97dcbe1b9f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67398804"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67419230"
 ---
 # <a name="install-trusted-tpm-root-certificates"></a>信頼済み TPM ルート証明書をインストールします。
 
@@ -35,7 +35,23 @@ TPM 証明書は、以下のパッケージには含まれません、ルート�
 
 次の手順を繰り返します**HGS サーバーがすべて**:
 
-1.  最新パッケージをダウンロード[ https://tpmsec.microsoft.com/TPMCerts/TrustedTPM.cab](https://tpmsec.microsoft.com/TPMCerts/TrustedTPM.cab)します。
+1.  最新パッケージをダウンロード[ https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)します。
+
+2.  信頼性を保証する cab ファイルの署名を確認します。 署名が有効でない場合は、続行しないでください。
+
+    ```powershell
+    Get-AuthenticodeSignature .\TrustedTpm.cab
+    ```
+    
+    次に出力の例を示します。
+    
+    ```
+    Directory: C:\Users\Administrator\Downloads
+        
+    SignerCertificate                         Status                                 Path
+    -----------------                         ------                                 ----
+    0DD6D4D4F46C0C7C2671962C4D361D607E370940  Valid                                  TrustedTpm.cab
+    ```
 
 2.  Cab ファイルを展開します。
 

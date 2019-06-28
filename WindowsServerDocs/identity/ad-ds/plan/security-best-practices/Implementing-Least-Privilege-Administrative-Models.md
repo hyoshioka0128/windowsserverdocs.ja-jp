@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 609ea0bd796a4d3696e14c7499be047ebdd83183
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 01113b957c6b0be4e18955b5ddc78be3f463abe4
+ms.sourcegitcommit: 236a8ae1da12cea1acfff3f306246db0f022354d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868853"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67412210"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>最低限の特権の管理モデルを実装する
 
@@ -37,7 +37,7 @@ ms.locfileid: "59868853"
 
 残念ながら、多くの環境で抵抗を最小限のパスは、広範囲でかつ深い特権を持つアカウントの過剰な使用のことがわかっています。 広範な権限は、権限とアクセス許可などの環境での大きなセクション間で特定のアクティビティを実行するアカウントを許可するには、ヘルプ デスクのスタッフが権限を与える多くのユーザー アカウントのパスワードをリセットできるようにします。  
 
-詳細な特権は、母集団の幅が狭いセグメントに適用されている強力な特権です、このような権限を与えることをエンジニア リング管理者サーバーで実行できるように修復します。 広範な権限も詳細な権限が、必ずしも危険性がドメイン内の多数のアカウントには、アカウントのいずれかが侵害された場合のみ、広範囲でかつ深い特権が付与される完全にはと、にすばやく使用できますに環境を再構成する、攻撃者の目的でも破壊されたり、インフラストラクチャの大きなセグメント。  
+詳細な権限は、エンジニア管理者の権限を与える、サーバーで修復を実行できるようにするなど、母集団の幅が狭いセグメントに適用されている強力な特権です。 広範な権限も詳細な権限が、必ずしも危険性がドメイン内の多数のアカウントには、アカウントのいずれかが侵害された場合のみ、広範囲でかつ深い特権が付与される完全にはと、にすばやく使用できますに環境を再構成する、攻撃者の目的でも破壊されたり、インフラストラクチャの大きなセグメント。  
 
 Pass-the-hash 攻撃、資格情報盗用攻撃の一種でありは、ユビキタスため、それらの実行にツールを自由に使用できる、簡単に使える、多くの環境は、攻撃に対して脆弱であるためです。 Pass-the-hash 攻撃では、実際の問題をただしではありません。 問題の核心は、2 つあります。  
 
@@ -276,7 +276,7 @@ Privileged identity management (PIM) で特権アカウントの管理 (PAM) ま
 
 特権アカウントの管理の課題の 1 つは、既定で、特権、および保護されているアカウントを管理できるアカウントとグループが特権モードと保護されたアカウント。 Active Directory のインストールに適切な RBAC と PIM のソリューションを実装する場合、ソリューションがのみのグループを設定、ディレクトリ内の最も特権グループのメンバーシップを効果的に depopulate するためのアプローチを含めることができます。一時的とときに必要です。  
 
-ただし、ネイティブの RBAC と PIM を実装する場合、必要なときに、Active Directory の特権がない場合や depopulating 特権の作成との唯一の関数をグループ化するアカウントの作成を検討する必要があります。 [付録 i:Active Directory 内の保護されたアカウントとグループの管理アカウントを作成する](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)この目的のためのアカウントの作成に使用できる手順について説明します。  
+ただし、ネイティブの RBAC と PIM を実装する場合、必要なときに、Active Directory の特権がない場合や depopulating 特権の作成との唯一の関数をグループ化するアカウントの作成を検討する必要があります。 [付録 I: Active Directory 内の保護されたアカウントとグループの管理アカウントを作成する](../../../ad-ds/manage/component-updates/../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)この目的のためのアカウントの作成に使用できる手順について説明します。  
 
 ### <a name="implementing-robust-authentication-controls"></a>堅牢な認証の制御を実装します。
 
