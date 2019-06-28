@@ -186,7 +186,7 @@ ms.locfileid: "66433294"
  バックアップまたは Azure Backup へのファイル、フォルダー、および Windows Server Essentials サーバー上のファイル履歴の復元は、まず、Microsoft Azure Backup サービスで、サーバーを登録する必要があります。  
   
 > [!NOTE]
->  サーバーを登録する前に、オンライン バックアップを保存するバックアップ コンテナーで使用する証明書をアップロードする必要があります。 詳細については、「 [Upload a certificate to the Azure Backup vault](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_1)」を参照してください。  
+>  サーバーを登録する前に、オンライン バックアップを保存するバックアップ コンテナーで使用する証明書をアップロードする必要があります。 詳細については、次を参照してください。 [Azure Backup コンテナーに証明書のアップロード](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_1)します。  
   
 ##### <a name="to-register-your-server-with-azure-backup"></a>Azure Backup にサーバーを登録するには  
   
@@ -415,7 +415,7 @@ ms.locfileid: "66433294"
   
    これらの手順を完了した後に、次の手順を実行します。  
   
-6. Windows Server Essentials では、オンライン バックアップに使用する証明書をアップロードします。 詳細については、「 [Upload a certificate to the Azure Backup vault](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_1)」を参照してください。  
+6. Windows Server Essentials では、オンライン バックアップに使用する証明書をアップロードします。 詳細については、次を参照してください。 [Azure Backup コンテナーに証明書のアップロード](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_1)します。  
   
 7. Azure Backup コンテナーにサーバーを登録します。 詳細については、「 [Register this server for backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_5)」を参照してください。  
   

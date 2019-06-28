@@ -31,7 +31,7 @@ ms.locfileid: "66190587"
   
 アカウント パートナーの企業ネットワークにフェデレーション サーバーが配置されると、役割ブラウザー、Web サービス、または id セレクター クライアントのユーザーの資格情報の認証し、セキュリティ トークンをクライアントに送信することです。 詳細については、次を参照してください。 [アカウント パートナーのフェデレーション サーバーの役割を検討](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)します。  
   
-リソース パートナーの企業ネットワークにフェデレーション サーバーが配置されると、その役割は、リソース パートナー組織内のフェデレーション サーバーによって発行されるセキュリティ トークンに基づいてユーザーを認証する、または役割からのトークン要求をリダイレクトすることです。Web アプリケーションまたはクライアントが属しているアカウント パートナー組織の Web サービスを構成します。 詳細については、「 [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)」を参照してください。  
+リソース パートナーの企業ネットワークにフェデレーション サーバーが配置されると、その役割は、リソース パートナー組織内のフェデレーション サーバーによって発行されるセキュリティ トークンに基づいてユーザーを認証する、または役割からのトークン要求をリダイレクトすることです。Web アプリケーションまたはクライアントが属しているアカウント パートナー組織の Web サービスを構成します。 詳細については、次を参照してください。 [アカウント パートナーのフェデレーション サーバーの役割を検討](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)します。  
   
 ## <a name="determine-which-ad-fs-design-to-deploy"></a>展開する AD FS 設計を決定する  
 次の AD FS 設計のいずれかを展開するときに、組織内のフェデレーション サーバーを作成します。  
@@ -66,13 +66,13 @@ AD FS フェデレーション サーバー構成ウィザードまたは Fsconf
   
 -   フェデレーション サーバー ファーム内に最初のフェデレーション サーバーを作成する  
   
-    1 つ目のフェデレーション サーバーを設定する方法や、ファームにフェデレーション サーバーを追加する方法の詳細については、「 [Create the First Federation Server in a Federation Server Farm](../../ad-fs/deployment/Create-the-First-Federation-Server-in-a-Federation-Server-Farm.md)」を参照してください。  
+    最初のフェデレーション サーバーを設定またはファームにフェデレーション サーバーを追加する方法の詳細については、次を参照してください。[フェデレーション サーバー ファーム内の最初のフェデレーション サーバーの作成](../../ad-fs/deployment/Create-the-First-Federation-Server-in-a-Federation-Server-Farm.md)です。  
   
 -   フェデレーション サーバー ファームにフェデレーション サーバーを追加する  
   
-    ファームにフェデレーション サーバーを追加する方法の詳細については「 [Add a Federation Server to a Federation Server Farm](../../ad-fs/deployment/Add-a-Federation-Server-to-a-Federation-Server-Farm.md)」を参照してください。  
+    ファームにフェデレーション サーバーを追加する方法の詳細については、次を参照してください。[フェデレーション サーバー ファームにフェデレーション サーバーを追加](../../ad-fs/deployment/Add-a-Federation-Server-to-a-Federation-Server-Farm.md)します。  
   
-これらの各オプションの詳細については、「 [The Role of the AD FS Configuration Database](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)」を参照してください。  
+これらの各オプションの作業についての詳細を参照してください。 [、AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)します。  
   
 フェデレーション サーバーを展開するために必要なすべての前提条件を設定する方法の詳細については、次を参照してください。[チェックリスト。フェデレーション サーバーを設定する](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md)します。  
   

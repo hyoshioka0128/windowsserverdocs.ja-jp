@@ -22,7 +22,7 @@ Active Directory フェデレーション サービスの展開の計画の最�
   
 このトピックを読む前に、AD FS のデータが格納され、フェデレーション サーバー ファーム内の他のフェデレーション サーバーにレプリケートする方法を確認しの目的と AD FS に格納されている基になるデータを使用できるレプリケーション方法を理解しておいて con◆ データベースです。  
   
-AD FS 構成データの格納に使用できる 2 つのデータベースの種類があります。Windows Internal Database \(WID\)と Microsoft SQL Server。 詳細については、「 [The Role of the AD FS Configuration Database](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)」を参照してください。 さまざまな利点とさまざまなアプリケーション シナリオをサポートし、クリックすると、AD FS 構成データベースとして WID または SQL Server のいずれかを使用して関連付けられている制限事項を確認します。  
+AD FS 構成データの格納に使用できる 2 つのデータベースの種類があります。Windows Internal Database \(WID\)と Microsoft SQL Server。 詳細については、次を参照してください。 [、AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)します。 さまざまな利点とさまざまなアプリケーション シナリオをサポートし、クリックすると、AD FS 構成データベースとして WID または SQL Server のいずれかを使用して関連付けられている制限事項を確認します。  
   
 > [!IMPORTANT]  
 > 基本的な冗長性、負荷分散、およびフェデレーション サービスをスケーリングするオプションを実装する\(必要な場合\)、すべての運用環境でのフェデレーション サーバー ファームごとに少なくとも 2 つのフェデレーション サーバーをデプロイすることをお勧めします。使用するデータベースの種類に関係なく。  
