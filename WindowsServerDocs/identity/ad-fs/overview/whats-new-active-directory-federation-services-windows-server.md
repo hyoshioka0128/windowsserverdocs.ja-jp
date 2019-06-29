@@ -160,11 +160,11 @@ AD FS では、ハイブリッド シナリオで条件付きアクセス ポリ
 *  [AD FS による条件付きアクセスをベースのデバイスの計画](../../ad-fs/deployment/Plan-Device-based-Conditional-Access-on-Premises.md)  
 * [AD FS でのアクセス制御ポリシー](../../ad-fs/operations/Access-Control-Policies-in-AD-FS.md)  
 
-### <a name="sign-in-with-windows-hello-for-business"></a>Windows こんにちは for Business でサインイン   
-Windows 10 デバイスでは、Windows こんにちはと Windows こんにちは for Business、ユーザーのパスワードに置き換えて、ユーザーのジェスチャ (PIN、指紋、顔認識などの生体認証ジェスチャ) によって保護されている強力なデバイス主体ユーザー資格情報を紹介します。 AD FS 2016 では、これらの新しい Windows 10 機能をサポートするため、ユーザーにサインインできる AD FS アプリケーションから、イントラネットまたはエクストラネットのパスワードを入力する必要はありません。
+### <a name="sign-in-with-windows-hello-for-business"></a>Windows Hello for Business でサインイン   
+Windows 10 デバイスでは、Windows Helloと Windows Hello for Business、ユーザーのパスワードに置き換えて、ユーザーのジェスチャ (PIN、指紋、顔認識などの生体認証ジェスチャ) によって保護されている強力なデバイス主体ユーザー資格情報を紹介します。 AD FS 2016 では、これらの新しい Windows 10 機能をサポートするため、ユーザーにサインインできる AD FS アプリケーションから、イントラネットまたはエクストラネットのパスワードを入力する必要はありません。
 
-詳細については、Microsoft Windows こんにちは for Business 組織で使用します。
-*  [Windows こんにちは for Business の組織で有効化にします。](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/)
+詳細については、Microsoft Windows Hello for Business 組織で使用します。
+*  [Windows Hello for Business の組織で有効化にします。](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/)
 
 ## <a name="secure-access-to-applications"></a>アプリケーションへのアクセスをセキュリティで保護します。
 
