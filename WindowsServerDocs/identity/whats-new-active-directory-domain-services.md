@@ -82,11 +82,11 @@ Azure Active Directory Join、enterprise、business および EDU - お客様の
   
 ## <a name="windows-hello-for-business"></a>Windows Hello for Business
 
-Windows こんにちは for Business は、キー ベースの認証方法、組織とコンシューマーは、パスワードを超えます。 この形式の認証は、侵害、盗難、およびフィッシングに対する耐性の資格情報に依存します。  
+Windows Hello for Business は、キー ベースの認証方法、組織とコンシューマーは、パスワードを超えます。 この形式の認証は、侵害、盗難、およびフィッシングに対する耐性の資格情報に依存します。  
   
 ユーザーは、生体認証または PIN のログを証明書または非対称キーのペアにリンクされている情報に、デバイスにログオンします。 Id プロバイダー (Idp) は、IDLocker に、ユーザーの公開キーをマップすることによって、ユーザーを検証し、ログを 1 つワンタイム パスワード (OTP)、電話番号または他の通知メカニズムを使用して情報を提供します。  
   
-詳細については、「 [Windows こんにちは for Business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)  
+詳細については、「 [Windows Hello for Business](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification)  
   
 ## <a name="deprecation-of-file-replication-service-frs-and-windows-server-2003-functional-levels"></a>ファイル レプリケーション サービス (FRS) と Windows Server 2003 の機能レベルの廃止
 
