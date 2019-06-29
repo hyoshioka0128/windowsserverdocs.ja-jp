@@ -106,11 +106,11 @@ Azure Active Directory とオンプレミスでの従来の Active Directory の
 
 フェーズ 2 では、フェーズ 1 で実行された作業はし、約 90 日間に完了するのには設計されています。 このステージの手順を次の図で示します。
 
-![フェーズ 2 図に示します。1.  Windows こんにちは for Business/MFA、2 です。 PAW ロールアウトでは、3。 ジャスト イン タイムの特権 4 です。 Credential Guard では、5 です。 漏洩した資格情報、6。 水平方向の活動の脆弱性の検出](../media/securing-privileged-access/PAW_LP_Fig7.JPG)
+![フェーズ 2 図に示します。1.  Windows Hello for Business/MFA、2 です。 PAW ロールアウトでは、3。 ジャスト イン タイムの特権 4 です。 Credential Guard では、5 です。 漏洩した資格情報、6。 水平方向の活動の脆弱性の検出](../media/securing-privileged-access/PAW_LP_Fig7.JPG)
 
-### <a name="1-require-windows-hello-for-business-and-mfa"></a>1. Windows こんにちは for Business と MFA が必要
+### <a name="1-require-windows-hello-for-business-and-mfa"></a>1. Windows Hello for Business と MFA が必要
 
-管理者は、Windows こんにちは for Business に関連付けられている使いやすさを活用できます。 管理者は、各自の Pc で強力な 2 要素認証を使用した複雑なパスワードを置き換えることができます。 攻撃者は、デバイスと生体認証情報または暗証番号 (pin) の両方が必要、従業員の知識がなくてもアクセスする非常に困難です。 Windows こんにちは for Business とロールアウトへのパスの詳細については、情報の記事では[Windows こんにちは for Business の概要](/windows/security/identity-protection/hello-for-business/hello-overview)
+管理者は、Windows Hello for Business に関連付けられている使いやすさを活用できます。 管理者は、各自の Pc で強力な 2 要素認証を使用した複雑なパスワードを置き換えることができます。 攻撃者は、デバイスと生体認証情報または暗証番号 (pin) の両方が必要、従業員の知識がなくてもアクセスする非常に困難です。 Windows Hello for Business とロールアウトへのパスの詳細については、情報の記事では[Windows Hello for Business の概要](/windows/security/identity-protection/hello-for-business/hello-overview)
 
 Azure MFA を使用して Azure AD での管理者アカウントの多要素認証 (MFA) を有効にします。 最小有効にする で、[ベースラインの保護の条件付きアクセス ポリシー](/azure/active-directory/conditional-access/baseline-protection#require-mfa-for-admins) Azure Multi-factor Authentication の詳細については、情報の記事では[クラウド ベース Azure Multi-factor Authentication のデプロイ](/azure/active-directory/authentication/howto-mfa-getstarted)
 
