@@ -8,12 +8,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: 2a5a7a6bd6313f7a4eadd827e3d754c1e467c3bc
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 9bfa4e7d4f8777f8fef299cf3991238e31564ace
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63745423"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469595"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>高精度のシステムの構成
 >適用対象:Windows Server 2016、および Windows 10 バージョン 1607 以降
@@ -84,14 +84,13 @@ Windows タイム サービス (W32Time) は、継続的に実行する必要が
 
 累積的な一方向のネットワーク待機時間を計算するには、トポロジでは、時間、ターゲットで開始および終了高精度 stratum 1 タイム ソースの NTP クライアント サーバーのノード ペア間の個々 の一方向遅延を追加します。
 
-例:正確なソース、2 つの中間的な NTP サーバー A、B、およびその順序でターゲット コンピューターでの時間同期階層を検討してください。 ターゲットとソース間の累積的なネットワーク待機時間を取得するには、個々 の NTP ラウンド トリップ間 (Rtt) の時間の平均を測定します。
+次に、例を示します。正確なソース、2 つの中間的な NTP サーバー A、B、およびその順序でターゲット コンピューターでの時間同期階層を検討してください。 ターゲットとソース間の累積的なネットワーク待機時間を取得するには、個々 の NTP ラウンド トリップ間 (Rtt) の時間の平均を測定します。
 
 - ターゲットと時間のサーバー B
 - タイム サーバー B とタイム サーバー A
 - タイム サーバー A とソース
 
 この測定値は、受信トレイ w32tm.exe ツールを使用して取得できます。  これには、次の手順を実行します。
-<!-- Use PowerShell to import the CSV then average the RTT Column -->
 
 1. ターゲットと時間のサーバー B からの計算します。
     

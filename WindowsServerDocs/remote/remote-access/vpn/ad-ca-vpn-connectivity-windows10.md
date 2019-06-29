@@ -4,33 +4,34 @@ description: この省略可能な手順では、Azure Active Directory (Azure A
 ms.prod: windows-server-threshold
 ms.technology: networking-ras
 ms.topic: article
-ms.assetid: ''
 ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
-ms.date: 07/13/2018
+ms.date: 06/28/2019
 ms.reviewer: deverette
-ms.openlocfilehash: c87d0075696bf8ab5794667d42c40829c3eb61bd
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: f6383030f70dd7c0487edd534bcc0ad42010f409
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749529"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469307"
 ---
 # <a name="step-7-optional-conditional-access-for-vpn-connectivity-using-azure-ad"></a>手順 7. (省略可能)Azure AD を使用して VPN 接続用の条件付きアクセス
 
 - [**先の：** 手順 6.Windows 10 クライアントの Always On VPN 接続を構成する](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
 - [**次に：** 手順 7.1. 証明書失効リスト (CRL) の確認が無視されるように EAP-TLS を構成する](vpn-config-eap-tls-to-ignore-crl-checking.md)
 
-このオプションの手順で VPN ユーザーを使用して、リソースにアクセスする方法を微調整できます[Azure Active Directory (Azure AD) の条件付きアクセス](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)します。 仮想プライベート ネットワーク (VPN) 接続用の Azure AD の条件付きアクセス、VPN 接続を保護できます。 条件付きアクセスはポリシー ベースの評価エンジンであり、これを利用することで、Azure Active Directory (Azure AD) に接続されるアプリケーションのアクセス規則を作成できます。 
+このオプションの手順で VPN ユーザーを使用して、リソースにアクセスする方法を微調整できます[Azure Active Directory (Azure AD) の条件付きアクセス](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)します。 仮想プライベート ネットワーク (VPN) 接続用の Azure AD の条件付きアクセス、VPN 接続を保護できます。 条件付きアクセスはポリシー ベースの評価エンジンであり、これを利用することで、Azure Active Directory (Azure AD) に接続されるアプリケーションのアクセス規則を作成できます。
 
 ## <a name="prerequisites"></a>前提条件
 
 次のトピックを熟知の方します。
+
 - [Azure Active Directory の条件付きアクセス](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)
 - [VPN と条件付きアクセス](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)
 
 VPN 接続用の Azure Active Directory 条件付きアクセスを構成するには、以下を構成する必要があります。
+
 - [サーバー インフラストラクチャ](always-on-vpn/deploy/vpn-deploy-server-infrastructure.md)
 - [Always On VPN リモート アクセス サーバー用](always-on-vpn/deploy/vpn-deploy-ras.md)
 - [ネットワーク ポリシー サーバー](always-on-vpn/deploy/vpn-deploy-nps.md)
@@ -48,9 +49,13 @@ NPS サーバーの証明書チェーン (ルート証明書を含む) の失効
 この手順では、テナントに自動的に VPN サーバーのクラウド アプリを作成する Azure AD に VPN 認証用のルート証明書を構成します。  
 
 VPN 接続用の条件付きアクセスを構成する必要があります。
-1. (1 つ以上の証明書を作成することができます)、Azure portal で VPN 証明書を作成します。
+
+1. Azure portal で VPN 証明書を作成します。
 2. VPN 証明書をダウンロードします。
 3. VPN サーバーに証明書を展開します。
+
+> [!IMPORTANT]
+> Azure portal で VPN 証明書が作成されると、Azure AD は短い存続期間の証明書、VPN クライアントを発行するためにすぐに使用を開始します。 VPN 証明書が、VPN クライアントの資格情報の検証で問題を回避するために、VPN サーバーにすぐにデプロイすることが重要です。
 
 ## <a name="step-73-configure-the-conditional-access-policyvpn-config-conditional-access-policymd"></a>[手順 7.3.条件付きアクセス ポリシーを構成する](vpn-config-conditional-access-policy.md)
 
@@ -67,13 +72,14 @@ VPN 接続用の条件付きアクセスを構成する必要があります。
 この手順で、オンプレミスに VPN 認証用の信頼されたルート証明書を展開する AD。
 
 信頼されたルート証明書を展開するには、する必要があります。
+
 1. としてダウンロードした証明書を追加、 *VPN 認証用の信頼されたルート CA*します。
 2. VPN サーバーと VPN クライアント ルート証明書をインポートします。
 3. 証明書が存在し表示することを確認します。 信頼できます。
 
 ## <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devicesvpn-create-oma-dm-based-vpnv2-profilesmd"></a>[手順 7.5.Windows 10 デバイスに OMA-DM ベースの VPNv2 プロファイルを作成する](vpn-create-oma-dm-based-vpnv2-profiles.md)
 
-この手順では、OMA-DM を作成できますベースの VPNv2 プロファイルが Intune を使用して VPN デバイス構成ポリシーを展開します。 VPNv2 プロファイルを作成するを参照してください、SCCM または PowerShell スクリプトを使用したい場合[VPNv2 CSP 設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)の詳細。 
+この手順では、OMA-DM を作成できますベースの VPNv2 プロファイルが Intune を使用して VPN デバイス構成ポリシーを展開します。 VPNv2 プロファイルを作成するを参照してください、SCCM または PowerShell スクリプトを使用したい場合[VPNv2 CSP 設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)の詳細。
 
 ## <a name="next-steps"></a>次のステップ
 
@@ -81,7 +87,7 @@ VPN 接続用の条件付きアクセスを構成する必要があります。
 
 ## <a name="related-topics"></a>関連トピック
 
-- [VPNv2 プロファイルを構成する](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access):VPN クライアントは、クラウド ベースの条件付きアクセス プラットフォームと統合して、リモート クライアント用のデバイス コンプライアンス オプションを提供することができるようになりました。 このステップでの VPNv2 プロファイルを構成する **\<DeviceCompliance >\<有効 > true\</有効に >** します。 
+- [VPNv2 プロファイルを構成する](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access):VPN クライアントは、クラウド ベースの条件付きアクセス プラットフォームと統合して、リモート クライアント用のデバイス コンプライアンス オプションを提供することができるようになりました。 このステップでの VPNv2 プロファイルを構成する **\<DeviceCompliance >\<有効 > true\</有効に >** します。
 
 - [Windows 10 で、自動 VPN プロファイルのリモート アクセスの強化](https://www.microsoft.com/itshowcase/Article/Content/894/Enhancing-remote-access-in-Windows-10-with-an-automatic-VPN-profile):Microsoft が VPN 接続用の条件付きアクセスを実装する方法について説明します。 VPN プロファイルには、デバイスがサポートされている認証方法と、VPN サーバーに接続するデバイスを含め、企業ネットワークに接続する必要がありますすべての情報が含まれます。 条件付きアクセスとシングル サインオンを含む、Windows 10 Anniversary Update での変更を行った Always-On VPN 接続プロファイルを作成することも可能です。 接続プロファイルを作成したドメインに参加していると System Center Configuration Manager コンソールを使用して Microsoft Intune で管理されたデバイス。
 

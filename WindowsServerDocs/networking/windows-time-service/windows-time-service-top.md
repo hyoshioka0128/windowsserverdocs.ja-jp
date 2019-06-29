@@ -9,12 +9,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: a86c2bdde9c65878b228f153009734da8f03960d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3233434403594ef9e2555c0329c4791d1fb99709
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856833"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469586"
 ---
 # <a name="windows-time-service-w32time"></a>Windows タイム サービス (W32Time)
 
@@ -40,17 +40,3 @@ Windows タイム プロバイダー プラグイン モデルは[TechNet に記
 Windows 2016 の正確性の時間の記事で参照されている補遺がダウンロードできる[ここ](https://windocs.blob.core.windows.net/windocs/WindowsTimeSyncAccuracy_Addendum.pdf)
 
 Windows タイム サービスの簡単な概要については、これを参照してください[概要ビデオ](https://aka.ms/WS2016TimeVideo)します。
-
-<!-- In this guide
-In this guide:
-Windows Accurate Time
-High Accuracy
-Support Boundary
-Configuration for High Accuracy
-Traceability for Compliance
-Best Practices
-Technical Reference
-How the Windows Time Service Works
-Windows Time Service Tools and Settings
--->
-

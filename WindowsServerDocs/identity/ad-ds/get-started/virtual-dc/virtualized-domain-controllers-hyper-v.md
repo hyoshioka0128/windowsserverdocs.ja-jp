@@ -6,12 +6,12 @@ ms.author: joflore
 ms.date: 04/19/2018
 ms.topic: article
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 8a1775a40761e4a489cc39535514d75174edffa5
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 297c2a26f10503cb68ae241576a72e08aa4e55a0
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66442991"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469570"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>HYPER-V を使用してドメイン コント ローラーの仮想化
 
@@ -82,7 +82,6 @@ Rodc の詳細については、次を参照してください。[読み取り�
 ## <a name="rodcs"></a>Rodc
 
 Rodc の利点の 1 つ、物理的なセキュリティ保証できないなどでブランチ オフィスの場所に配置する機能があります。 Windows BitLocker ドライブ暗号化を使用して VHD ファイル自体を保護することができます (ファイル システムではなくそこ) から、ホストの物理ディスクの盗難による侵害を防止します。 
-<!-- Removed link to Windows Server 2008 Hyper-V and BitLocker Drive Encryption (http://go.microsoft.com/fwlink/?linkid=123534). Link is dead. -->
 
 ## <a name="performance"></a>パフォーマンス
 
@@ -176,10 +175,8 @@ Rodc の利点の 1 つ、物理的なセキュリティ保証できないなど
 信頼性とパフォーマンスのマネージャー (Perfmon.msc) を使ってバーチャル マシンのパフォーマンスを監視すると、仮想マシン内で CPU 情報されません物理プロセッサの仮想 CPU がスケジュールされている方法は、結果として完全に正確です。 HYPER-V サーバーで実行されている仮想マシンの CPU 情報を取得する場合は、パーティション ホストで HYPER-V ハイパーバイザーの論理プロセッサ カウンターを使用します。
 
 パフォーマンスの詳細については AD DS と、HYPER-V の両方のチューニングを参照してください[パフォーマンス チューニング ガイドラインの Windows Server 2016](../../../../administration/performance-tuning/index.md)します。
-<!-- Updated to 2016 perf guidance -->
 
 また、差分ディスクを VHD には、パフォーマンスが低下するために、ドメイン コント ローラーとして構成されている仮想マシンで差分ディスク VHD を使用する予定は。 差分ディスクを含む、HYPER-V ディスクの種類の詳細についてを参照してください。[新しい仮想ハード_ディスクの作成ウィザード](http://go.microsoft.com/fwlink/?linkid=137279)します。
-<!-- Couldn't find an equivalent WS 2016 Hyper-V article. -->
 
 仮想ホスト環境で AD DS の詳細については、次を参照してください。[仮想ホスト環境で Active Directory ドメイン コント ローラーをホストする場合の考慮事項](https://go.microsoft.com/fwlink/?linkid=141292)マイクロソフト サポート技術情報でします。
 
@@ -209,7 +206,7 @@ Rodc の利点の 1 つ、物理的なセキュリティ保証できないなど
 
 System Center Virtual Machine Manager (VMM) 2008 では、物理マシンと仮想マシンの統合の管理を提供します。 仮想マシンに物理マシンを移行する機能も提供します。 このプロセスは、物理-バーチャル マシン変換 (P2V 変換) と呼ばれます。 P2v 変換中に、新しい仮想マシンと移行される、物理ドメイン コント ローラーを実行しないでください」の説明に従って、USN ロールバックのような状況を回避するために、同時に[USN および USN ロールバック](#usn-and-usn-rollback)します。
 
-ドメイン コント ローラーがオンに戻るときに、ディレクトリ データの整合性がオフライン モードを使用して P2V 変換を実行する必要があります。 オフライン モードのオプションが提供され、物理サーバー変換ウィザードでお勧めします。 オンライン モードとオフライン モードの違いについては、次を参照してください[P2V:。VMM での物理コンピュータからバーチャル マシンへの変換](https://go.microsoft.com/fwlink/?linkid=155072)」を参照してください。 P2V 変換中には、ネットワークに、仮想マシンを接続されていない必要があります。 P2V 変換プロセスが完了し確認された後にのみ、仮想マシンのネットワーク アダプターを有効にする必要があります。 この時点では、物理ソース マシンがオフになります。 いないを持ち込みますネットワークを物理ソース マシン再びハード ディスクを再フォーマットする前に。
+ドメイン コント ローラーがオンに戻るときに、ディレクトリ データの整合性がオフライン モードを使用して P2V 変換を実行する必要があります。 オフライン モードのオプションが提供され、物理サーバー変換ウィザードでお勧めします。 オンライン モードとオフライン モードの違いについては、次を参照してください[P2V:。VMM での物理コンピューターから仮想マシンへの変換](https://go.microsoft.com/fwlink/?linkid=155072)」を参照してください。 P2V 変換中には、ネットワークに、仮想マシンを接続されていない必要があります。 P2V 変換プロセスが完了し確認された後にのみ、仮想マシンのネットワーク アダプターを有効にする必要があります。 この時点では、物理ソース マシンがオフになります。 いないを持ち込みますネットワークを物理ソース マシン再びハード ディスクを再フォーマットする前に。
 
 > [!NOTE]
 > 新しい仮想 Dc の USN のロールバックを作成するリスクを実行しないを作成するより安全なオプションがあります。 少なくとも 1 つの仮想 DC が既にある場合、正規の昇格、ドメイン コント ローラーの複製を使用してメディア (IfM) からのインストールから昇格によって新しい仮想 DC をセットアップする可能性があります。
@@ -384,8 +381,6 @@ Rodc で、復元処理と意思決定は簡単です。
 ## <a name="usn-and-usn-rollback"></a>USN と USN ロールバック
 
 このセクションでは、Active Directory データベースの仮想マシンの以前のバージョンでの正しくない復元の結果として発生する可能性がレプリケーションの問題について説明します。 Active Directory のレプリケーション処理の詳細については、次を参照してください[Active Directory レプリケーションの概念。](../replication/active-directory-replication-concepts.md)
-
-<!-- Replaced this link with 2016 article: [How the Active Directory Replication Model Works](http://go.microsoft.com/fwlink/?linkid=27636) (http://go.microsoft.com/fwlink/?LinkID=27636). -->
 
 ## <a name="usns"></a>Usn
 

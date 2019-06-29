@@ -8,18 +8,16 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 8e14cdeed435f23f28ca514e232fbcfa6220fc74
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 81e6ed7950fe13c5bed4a3f8850d64e7185b8ddd
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887723"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469634"
 ---
 # <a name="shielded-vms---preparing-a-vm-shielding-helper-vhd"></a>シールドされた Vm - VM シールド ヘルパー VHD を準備します。
 
 >適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
-
-<!-- This comment creates a break between the Applies To above and the Important note below. -->
 
 > [!IMPORTANT]
 > これらの手順を開始する前に Windows Server 2016 用の最新の累積的な更新プログラムがインストールされているか、最新の Windows 10 を使用していることを確認します。[リモート サーバー管理ツール](https://www.microsoft.com/en-us/download/details.aspx?id=45520)します。 それ以外の場合、手順は機能しません。 
@@ -57,11 +55,11 @@ ms.locfileid: "59887723"
 
 ## <a name="configure-vmm-host-guardian-server-settings"></a>VMM ホスト ガーディアン サーバーの設定を構成します。
 
-VMM コンソールで 設定 ウィンドウを開きし、**ホスト ガーディアン サービスの設定****全般**。 このウィンドウの下部には、ヘルパー VHD の場所を構成するためのフィールドがあります。 [参照] ボタンを使用して、ライブラリ共有から VHD を選択します。 共有ディスクが表示されない場合は、表示することに対する VMM でライブラリを手動で更新する必要があります。
+VMM コンソールで 設定 ウィンドウを開きし、**ホスト ガーディアン サービスの設定** **全般**。 このウィンドウの下部には、ヘルパー VHD の場所を構成するためのフィールドがあります。 [参照] ボタンを使用して、ライブラリ共有から VHD を選択します。 共有ディスクが表示されない場合は、表示することに対する VMM でライブラリを手動で更新する必要があります。
 
 ![VMM のホスト ガーディアン サービスの設定](../media/Guarded-Fabric-Shielded-VM/guarded-host-vmm-hgs-settings-01.png)
 
 ## <a name="see-also"></a>関連項目
 
 - [保護されたホストとシールドされた Vm のサービス プロバイダーの構成手順をホストしています。](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
-- [保護されたファブリックとシールドされた Vm](guarded-fabric-and-shielded-vms-top-node.md)
+- [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

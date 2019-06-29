@@ -16,12 +16,12 @@ ms.date: 10/28/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 588bc3f87c78feccac47d18d31d37be3b1a02d2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f075f91e97f806555507bfc0e0c5f3d1589a71e6
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835103"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469649"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Azure Active Directory フェデレーション サービスを展開します。
 AD FS では、シンプルで安全な id フェデレーションと Web シングル サインオン (SSO) 機能を提供します。 Azure AD とのフェデレーションまたは O365 は、オンプレミスの資格情報を使用して認証し、クラウド内のすべてのリソースにアクセスするユーザーを有効にします。 オンプレミスのリソースにアクセスするために高可用性 AD FS インフラストラクチャに重要になりますこの結果、およびクラウドで。 Azure での AD FS を展開すると、最小限の手間で必要な高可用性を実現できます。
@@ -120,7 +120,7 @@ ExpressRoute を使用することをお勧めしますが、任意の接続方�
 | contosodcset |DC/ADFS |3 |5 |
 | contosowapset」と |［WAP］ |3 |5 |
 
-### <a name="4-deploy-virtual-machines"></a>4。バーチャル マシンの展開
+### <a name="4-deploy-virtual-machines"></a>4。仮想マシンの展開
 次の手順では、インフラストラクチャ内のさまざまな役割をホストする仮想マシンをデプロイします。 各可用性セットには、2 つのマシンの最小値がお勧めします。 基本的な展開の 4 つの仮想マシンを作成します。
 
 | コンピューター | ロール | ［サブネット］ | 可用性セット | ストレージ アカウント | IP アドレス |
@@ -193,7 +193,7 @@ ILB の設定 パネルでは、正常性プローブを選択します。
 
 ![ILB のプローブを構成します。](./media/how-to-connect-fed-azure-adfs/ilbdeployment4.png)
 
-私たちはエンドポイントを使用して/adfs/probe AD FS 環境で正常性チェックを明示的に作成された HTTPS パスを完全に確認が実行できません。  これは、AD FS の展開を最新の状態を正確に反映しないポート 443 の基本的なチェックをよりも大幅に優れています。  詳細については、これをご覧 https://blogs.technet.microsoft.com/applicationproxyblog/2014/10/17/hardware-load-balancer-health-checks-and-web-application-proxy-ad-fs-2012-r2/します。
+私たちはエンドポイントを使用して/adfs/probe AD FS 環境で正常性チェックを明示的に作成された HTTPS パスを完全に確認が実行できません。  これは、AD FS の展開を最新の状態を正確に反映しないポート 443 の基本的なチェックをよりも大幅に優れています。  詳細については、これをご覧 https://blogs.technet.microsoft.com/applicationproxyblog/2014/10/17/hardware-load-balancer-health-checks-and-web-application-proxy-ad-fs-2012-r2/ します。
 
 **6.4.負荷分散規則を作成します。**
 
@@ -277,11 +277,6 @@ WAP サーバーのバックエンド プールのプローブを構成する内
 
 ![INT へのアクセス ルール (受信)](./media/how-to-connect-fed-azure-adfs/nsg_int.png)
 
-<!--
-[comment]: <> (![INT access rules (inbound)](./media/how-to-connect-fed-azure-adfs/nsgintinbound.png))
-[comment]: <> (![INT access rules (outbound)](./media/how-to-connect-fed-azure-adfs/nsgintoutbound.png))
--->
-
 **9.2.DMZ サブネットを保護します。**
 
 | ルール | 説明 | フロー |
@@ -290,11 +285,6 @@ WAP サーバーのバックエンド プールのプローブを構成する内
 | DenyInternetOutbound |インターネットへの HTTPS を除きすべてブロックされます。 |送信 |
 
 ![EXT アクセス ルール (受信)](./media/how-to-connect-fed-azure-adfs/nsg_dmz.png)
-
-<!--
-[comment]: <> (![EXT access rules (inbound)](./media/how-to-connect-fed-azure-adfs/nsgdmzinbound.png))
-[comment]: <> (![EXT access rules (outbound)](./media/how-to-connect-fed-azure-adfs/nsgdmzoutbound.png))
--->
 
 > [!NOTE]
 > クライアント ユーザー証明書認証場合、(X509 を使用し、clientTLS 認証ユーザー証明書) が必要な場合は、AD FS には、TCP が必要がありますの着信アクセスに対するポート 49443 を有効にします。

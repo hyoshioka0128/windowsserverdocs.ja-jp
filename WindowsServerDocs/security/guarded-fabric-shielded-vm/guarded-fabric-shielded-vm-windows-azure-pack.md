@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 600ccd74c379daa281f438b1200179dcae210817
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 4cb5ed3433e04b7a5fe7004e517eb4cc38c7eb53
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447353"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469661"
 ---
 # <a name="shielded-vms--for-tenants---deploying-a-shielded-vm-by-using-windows-azure-pack"></a>テナント - Windows Azure Pack を使用して、シールドされた VM を展開するためのシールドされた Vm
 
@@ -22,8 +22,6 @@ ms.locfileid: "66447353"
 ホスティング サービス プロバイダーがサポートする場合は、シールドされた VM をデプロイする Windows Azure Pack を使用できます。
 
 次の手順を完了するには。
-
-<!-- When we have a link to the topic about how tenants subscribe, add that link as an indented item just under step 1 below. -->
 
 1. Windows Azure Pack で提供される 1 つまたは複数のプランをサブスクライブします。
 

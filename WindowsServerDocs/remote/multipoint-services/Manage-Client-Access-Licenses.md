@@ -13,19 +13,19 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: f5f78d3d2387d3b95177a6a8a40fb9b16d8ed8e2
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 42b943ed5e0066f1f810efaba9e65a529ac25f00
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446121"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469347"
 ---
 # <a name="manage-client-access-licenses"></a>クライアント アクセス ライセンスを管理する
 すべてのステーションが MultiPoint Services ステーションとして使用されているを実行しているコンピューターを含め、MultiPoint Services システムに接続するには、ユーザーごとの有効なリモート デスクトップをいる必要があります*クライアント アクセス ライセンス (CAL)* します。
 
 ステーションの仮想デスクトップ ステーションが物理的ではなくを使用している場合は、各ステーションの仮想デスクトップの CAL をインストールする必要があります。  
   
-1.  MultiPoint Services コンピューターまたはサーバーに接続されている各ステーションのクライアント ライセンスを購入します。 Cal の購入方法の詳細については、リモート デスクトップ ライセンスに関するドキュメントを参照してください。 <!--@Liza: add link to RDS licensing here-->
+1.  MultiPoint Services コンピューターまたはサーバーに接続されている各ステーションのクライアント ライセンスを購入します。 Cal の購入方法の詳細については、リモート デスクトップ ライセンスに関するドキュメントを参照してください。 
 
 2.  **開始** 画面で、開いている**MultiPoint マネージャー**します。  
   

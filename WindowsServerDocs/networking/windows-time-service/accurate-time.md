@@ -8,12 +8,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: b68e6b915d029e53d47c6cffe214ec6e11bba6ea
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 75465aad45fc1b5e360fa1153a6530a771731f66
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812390"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469434"
 ---
 # <a name="accurate-time-for-windows-server-2016"></a>Windows Server 2016 の正確な時刻
 
@@ -24,7 +24,6 @@ Windows タイム サービスは、クライアントとサーバーの時刻�
 > [!NOTE]
 > Windows タイム サービスの簡単な概要については、これを参照してください[概要ビデオ](https://aka.ms/WS2016TimeVideo)します。
 
-<!-- Not sure what to do with the following -->
 このトピックでは、以下の操作について説明しています.これらのトピックに関連する正確な時刻を有効にします。 
 
 - 機能強化

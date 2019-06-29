@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 3c36eff8aabd1fa1c6456dce1d08ebe504102e8c
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: d1d269ecdbfd4803c51da4817b62caf01d2091ae
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284165"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469623"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>シールドされた Vm のテナントでシールドされた VM を定義するシールド データの作成
 
@@ -43,8 +43,6 @@ ms.locfileid: "67284165"
 テナントは、リモート デスクトップ接続または他のリモート管理ツールを使用して、シールドされた Vm に接続することは、ことが重要には、適切なエンドポイントに接続するテナントが確認できることを確認します (つまりがない"man in the middle"接続をインターセプト)。
 
 目的のサーバーに接続することを確認する 1 つの方法は、インストールして接続を開始するときに表示するへリモート デスクトップ サービス用の証明書を構成します。 サーバーに接続するクライアント コンピューターでは、そうでない場合、その信頼証明書と、警告を表示するかどうかを確認します。 一般に、接続するクライアント証明書を信頼するためには、RDP 証明書は、テナントの PKI から発行されます。 詳細については[リモート デスクトップ サービスの証明書を使用して](https://technet.microsoft.com/library/dn781533.aspx)TechNet で確認できます。
-
-<!-- The previous link comes from Windows 2012 R2 content, but as of Sept 2016, there isn't a more recent link that covers the same information. -->
 
 > [!NOTE]
 > シールド データ ファイルに含める、RDP 証明書を選択すると、必ず、ワイルドカード証明書を使用します。 シールド データ ファイルを 1 つは、無制限の数の Vm を作成するために可能性があります。 各 VM は、同じ証明書を共有するためのワイルドカード証明書により、証明書が VM のホスト名に関係なく有効になります。
@@ -142,8 +140,6 @@ VMM での署名付きテンプレート ディスクは汎用化するために
         $relecloudmetadata = Get-SCGuardianConfiguration
 
         $relecloudmetadata.InnerXml | Out-File .\RelecloudGuardian.xml -Encoding UTF8
-
-<!-- Note that the VMM PowerShell cmdlets aren't Windows PowerShell, so "VMM PowerShell" is the correct terminology for them. -->
 
 シールドされた Vm 上で続行する前に実行を承認する各保護されたファブリックのガーディアン メタデータ ファイルを取得します。
 

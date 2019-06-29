@@ -9,21 +9,16 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: dd9b89f34a3b4af8bb98d2399a524790aa65de0e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9601145048b8798cfb102757384da49bed16a538
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447478"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469624"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-new-shielded-vm-on-premises-and-moving-it-to-a-guarded-fabric"></a>オンプレミスに VM と保護されたファブリックに移動してテナント - 新しいを作成するためのシールドされた Vm のシールドされました。
 
 >適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
-
-
-<!-- NOTE THAT THIS FILE HAS A "redirect_url" LINE IN THE METADATA. EVENTUALLY WE WILL PROBABLY STRIP OUT THE DETAILED METADATA AND THE CONTENT BELOW, SO IT'S PURELY A REDIRECTED TOPIC. However, as of mid-November 2016, we're still deciding. -->
-
-
 
 このトピックでは、HYPER-V のみ; を使用して、シールドされた VM を作成する手順を説明しますつまり、Virtual Machine Manager、テンプレート ディスク、またはシールド データ ファイルのないです。 ホスティング環境では、ほとんどのパブリック クラウドの一般的ではないシナリオは、これが、保護されたファブリックをテストするときに便利な場合があります、または企業内に部門別のファブリックから VM の移動先のシナリオが IT インフラストラクチャを共有し、移行する前に暗号化する必要があります。
 
@@ -102,7 +97,7 @@ ms.locfileid: "66447478"
 
        $KP = New-HgsKeyProtector -Owner $Owner -Guardian $Guardian -AllowUntrustedRoot
 
-   1 つ以上のデータ センターのシールドされた VM (たとえば、ディザスター リカバリー サイトおよびパブリック クラウド プロバイダー) を実行できるようにする場合に保護者の一覧を行うことができます、 **-ガーディアン**パラメーター。 詳細については、[新規 HgsKeyProtector] を参照してください (https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-psします。
+   1 つ以上のデータ センターのシールドされた VM (たとえば、ディザスター リカバリー サイトおよびパブリック クラウド プロバイダー) を実行できるようにする場合に保護者の一覧を行うことができます、 **-ガーディアン**パラメーター。 詳細については、[新規 HgsKeyProtector] を参照してください (https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-ps します。
 
 5. キーの保護機能を使用して vTPM を有効にするには、次のコマンドを実行します。 &lt;ShieldedVMname&gt;、前の手順で使用される同じ VM 名を使用します。
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 51b01f80259a7b83e1999b47164108dbe174b887
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 1b39952353ce619aee355ad43048ee2c142e939e
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441907"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469511"
 ---
 # <a name="relog"></a>relog
 
@@ -90,17 +90,3 @@ relog "c:\perflogs\daily_trace_log.blg" -f sql -o "SQL:sql2016x64odbc!counter_lo
 
 ## <a name="additional-references"></a>その他の参照情報  
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)  
-  
-<!---
--   The following is a list of the possible formats:  
-    -   \<computer>\\\<Object>(\<Parent>/\<Instance#Index>)\<Counter>  
-    -   \<computer>\<Object>(<Parent>/<Instance>)\\<Counter>  
-    -   \\\\<computer>\\<Object>(<Instance#Index>)\\<Counter>  
-    -   \\\\<computer>\\<Object>(<Instance>)\\<Counter>  
-    -   \\\\<computer>\\<Object>\\<Counter>  
-    -   \\<Object>(<Parent>/<Instance#Index>)\\<Counter>  
-    -   \\<Object>(<Parent>/<Instance>)<Counter>  
-    -   \\<Object>(<Instance#Index>)\\<Counter>  
-    -   \\<Object>(<Instance>)\\<Counter>  
-    -   \\<Object>\\<Counter>  
---->
