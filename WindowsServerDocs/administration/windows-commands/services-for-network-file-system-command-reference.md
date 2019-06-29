@@ -31,7 +31,7 @@ ms.locfileid: "59861783"
 |コマンド|説明|
 |-------|-----------|
 |[mapadmin](mapadmin.md)|ユーザー名マッピング Microsoft services for Network File System を管理します。|
-|[マウント](mount.md)|Network File System (NFS) ネットワーク共有をマウントします。|
+|[Mount](mount.md)|Network File System (NFS) ネットワーク共有をマウントします。|
 |[nfsadmin](nfsadmin.md)|NFS と nfs クライアントに対してサーバーを管理します。|
 |[nfsshare](nfsshare.md)|Network File System (NFS) 共有を制御します。|
 |[nfsstat](nfsstat.md)|表示または nfs サーバーへの呼び出しのカウントをリセットします。|
