@@ -40,11 +40,11 @@ query user
 ## <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-|[クエリの処理](query-process.md)|Rd セッション ホスト サーバーで実行されているプロセスに関する情報が表示されます。|
-|[クエリのセッション](query-session.md)|Rd セッション ホスト サーバー上のセッションに関する情報を表示します。|
-|[クエリ termserver](query-termserver.md)|ネットワーク上のすべての rd セッション ホスト サーバーの一覧を表示します。|
-|[クエリ ユーザー](query-user.md)|Rd セッション ホスト サーバー上のユーザー セッションに関する情報を表示します。|
+|[query process](query-process.md)|Rd セッション ホスト サーバーで実行されているプロセスに関する情報が表示されます。|
+|[query session](query-session.md)|Rd セッション ホスト サーバー上のセッションに関する情報を表示します。|
+|[query termserver](query-termserver.md)|ネットワーク上のすべての rd セッション ホスト サーバーの一覧を表示します。|
+|[query user](query-user.md)|Rd セッション ホスト サーバー上のユーザー セッションに関する情報を表示します。|
 
 #### <a name="additional-references"></a>その他の参照
-[コマンドライン構文キー](command-line-syntax-key.md)
-[リモート デスクトップ サービスと #40 です。ターミナル サービスと #41 です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+[コマンドライン構文キー](command-line-syntax-key.md)  
+[リモート デスクトップ サービス &#40;ターミナル サービス&#41; のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)

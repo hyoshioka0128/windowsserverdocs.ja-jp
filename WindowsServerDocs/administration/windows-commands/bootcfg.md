@@ -33,13 +33,13 @@ bootcfg <parameter> [arguments...]
 |パラメーター|説明|  
 |-------|--------|  
 |[bootcfg addsw](bootcfg-addsw.md)|オペレーティング システムの読み込みオプションの指定したオペレーティング システム エントリを追加します。|  
-|[bootcfg コピー](bootcfg-copy.md)|コマンド ライン オプションを追加することができます、既存のブート エントリのコピーを作成します。|  
+|[bootcfg copy](bootcfg-copy.md)|コマンド ライン オプションを追加することができます、既存のブート エントリのコピーを作成します。|  
 |[bootcfg dbg1394](bootcfg-dbg1394.md)|指定したオペレーティング システム エントリの 1394 ポート デバッグを構成します。|  
-|[bootcfg デバッグ](bootcfg-debug.md)|追加または指定したオペレーティング システム エントリのデバッグ設定を変更します。|  
-|[bootcfg 既定](bootcfg-default.md)|既定値として指定するオペレーティング システム エントリを指定します。|  
+|[bootcfg debug](bootcfg-debug.md)|追加または指定したオペレーティング システム エントリのデバッグ設定を変更します。|  
+|[bootcfg default](bootcfg-default.md)|既定値として指定するオペレーティング システム エントリを指定します。|  
 |[bootcfg delete](bootcfg-delete.md)|オペレーティング システム エントリを削除、 **[オペレーティング システム]** Boot.ini ファイルのセクション。|  
 |[bootcfg ems](bootcfg-ems.md)|ユーザーを追加またはリモート コンピューターに、緊急管理サービス コンソールのリダイレクトの設定を変更できます。|  
 |[bootcfg query](bootcfg-query.md)|クエリを実行し、[ブート ローダー] が表示されますおよび **[オペレーティング システム]** Boot.ini からエントリをセクションします。|  
-|[bootcfg 生](bootcfg-raw.md)|オペレーティング システムのエントリを文字列として指定するオペレーティング システムの読み込みオプションを追加します、 **[オペレーティング システム]** Boot.ini ファイルのセクション。|  
+|[bootcfg raw](bootcfg-raw.md)|オペレーティング システムのエントリを文字列として指定するオペレーティング システムの読み込みオプションを追加します、 **[オペレーティング システム]** Boot.ini ファイルのセクション。|  
 |[bootcfg rmsw](bootcfg-rmsw.md)|オペレーティング システムの読み込みオプションの指定したオペレーティング システム エントリを削除します。|  
-|[bootcfg タイムアウト](bootcfg-timeout.md)|オペレーティング システムのタイムアウト値を変更します。|  
+|[bootcfg timeout](bootcfg-timeout.md)|オペレーティング システムのタイムアウト値を変更します。|  
