@@ -40,6 +40,7 @@
 ### [ネットワーク ファイル システムの展開](nfs/deploy-nfs.md)
 ### [NTFS の概要](file-server/ntfs-overview.md)
 ### [ボリューム シャドウ コピー サービス](file-server/volume-shadow-copy-service.md)
+### [ディスク クリーンアップを使用する](file-server/disk-cleanup.md)
 ## [ファイル サーバー リソース マネージャー](fsrm/fsrm-overview.md)
 ### [チェックリスト:ボリュームまたはフォルダーにクォータを適用する](fsrm/checklist-apply-quota-to-volume-or-folder.md)
 ### [チェックリスト:ボリュームまたはフォルダーにファイル スクリーンを適用する](fsrm/checklist-apply-file-screen-to-volume-or-folder.md)
@@ -128,7 +129,9 @@
 #### [ボリュームの作成](storage-spaces/create-volumes.md)
 #### [入れ子の回復性](storage-spaces/nested-resiliency.md)
 #### [クォーラムの構成](../failover-clustering/manage-cluster-quorum.md)
-#### [記憶域スペース ダイレクト クラスターを Windows Server 2019 にアップグレードする](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)
+#### [記憶域スペース ダイレクト クラスターのアップグレード](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)
+#### [永続的なメモリの理解とデプロイ](storage-spaces/deploy-pmem.md)
+
 ### 管理
 #### [Windows Admin Center による管理](../manage/windows-admin-center/use/manage-hyper-converged.md)
 #### [サーバーまたはドライブの追加](storage-spaces/add-nodes.md)
@@ -148,11 +151,14 @@
 ##### [スクリプトのサンプル](storage-spaces/performance-history-scripting.md)
 #### [ボリュームの割り当てを区切る](storage-spaces/delimit-volume-allocation.md)
 #### [Azure Monitor で監視する](storage-spaces/configure-azure-monitor.md)
+
 ### トラブルシューティング
 #### [トラブルシューティング シナリオ](storage-spaces/troubleshooting-storage-spaces.md)
 #### [正常性と動作状態](storage-spaces/storage-spaces-states.md)
 #### [データの収集](storage-spaces/data-collection.md)
 #### [よく寄せられる質問](storage-spaces/storage-spaces-direct-faq.md)
+#### [記憶域クラスのメモリの状態の管理](storage-spaces/Storage-class-memory-health.md)
+
 ## [ワーク フォルダー](work-folders/work-folders-overview.md)
 ### [ワーク フォルダーの実装の設計](work-folders/plan-work-folders.md)
 ### [ワーク フォルダーの展開](work-folders/deploy-work-folders.md)
@@ -163,6 +169,5 @@
 #### [手順 4: WAP のセットアップ](work-folders/deploy-work-folders-adfs-step4.md)
 #### [手順 5: クライアントのセットアップ](work-folders/deploy-work-folders-adfs-step5.md)
 ## [記憶域 QoS](storage-qos/storage-qos-overview.md)
-## [記憶域クラスのメモリの状態の管理](storage-spaces/Storage-class-memory-health.md)
 ## [ストレージ トピックの変更履歴](storage-change-history.md)
 

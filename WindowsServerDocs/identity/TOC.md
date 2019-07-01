@@ -421,6 +421,7 @@
 #### [オンプレミスのデバイス ベースの条件付きアクセスを計画する](ad-fs/deployment/Plan-Device-based-Conditional-Access-on-Premises.md)
 
 #### [AD FS ラボ環境を設定する](ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
+#### [SQL の微調整と待機時間への対処](ad-fs/operations/adfs-sql-latency.md)
 #### [チュートリアル ガイド: 追加の多要素認証による個人情報アプリケーションのリスク管理](ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 #### [チュートリアル ガイド: 条件付きアクセス制御によってリスクを管理する](ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
 #### [チュートリアル: Workplace Join で Windows デバイスをワークプレースに参加させる](ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)

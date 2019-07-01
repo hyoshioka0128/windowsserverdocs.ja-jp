@@ -13,3 +13,4 @@
 ## [Windows Server 2019 以降で削除される機能と置換が計画されている機能](removed-features-19.md)
 ## [Windows Server バージョン 1903 以降で削除される機能と置換が計画されている機能](removed-features-1903.md)
 ## [Windows Server のリリース情報](../get-started/windows-server-release-info.md)
+## [Windows Server ライセンス条項](../windows-server-licensing/windows-server-licensing.md)

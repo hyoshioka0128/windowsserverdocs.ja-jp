@@ -48,7 +48,7 @@
 ### [サポート ポリシー](support/index.md)
 ### [一般的なトラブルシューティング手順](support/troubleshooting.md)
 ### [既知の問題](support/known-issues.md)
-
+### [Windows Admin Center ライセンス条項](../../windows-server-licensing/windows-admin-center-licensing.md)
 
 ## 拡張
 ### [拡張機能の概要](extend/extensibility-overview.md)
@@ -74,6 +74,7 @@
 #### [拡張検出バナーを有効にする](extend/guides/extension-discovery-banner.md)
 ### [拡張機能の公開](extend/publish-extensions.md)
 ### ケース スタディ
+#### [BiitOps](extend/case-studies/biitops.md)
 #### [DataON](extend/case-studies/dataon.md)
 #### [Fujitsu](extend/case-studies/fujitsu.md)
 #### [Lenovo](extend/case-studies/lenovo.md)
@@ -81,5 +82,6 @@
 #### [Pure Storage](extend/case-studies/purestorage.md)
 #### [QCT](extend/case-studies/qct.md)
 #### [Squared Up](extend/case-studies/squared-up.md)
+#### [Thomas-Krenn](extend/case-studies/thomas-krenn.md)
 
 
