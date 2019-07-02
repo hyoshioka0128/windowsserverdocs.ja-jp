@@ -9,12 +9,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: e25217feba45516cd0e9a3aa2bf1a2581d2087f5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3256ff55ec8f293cd37acbea6122584a63847284
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838043"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469577"
 ---
 # <a name="windows-time-for-traceability"></a>Windows の時間の追跡可能性
 >適用対象:Windows Server 2016 バージョン 1709 以降および Windows 10 バージョン 1703 以降
@@ -41,7 +41,6 @@ Windows 10 バージョン 1703 以降および Windows Server 2016 バージョ
 
 次のセクションでは、追跡可能性のシナリオで使用するために記録されたイベントについて説明します。
 
-<!-- use tabs like the group policies -->
 # <a name="257tab257"></a>[257](#tab/257)
 このイベントと、Windows タイム サービス (W32Time) が開始され、現在の時刻、現在のティック数、ランタイム構成、タイム プロバイダ、および現在のクロック速度に関する情報をログに記録されます。
 
@@ -82,7 +81,7 @@ w32tm.exe /query /status /verbose
 |記録されたデータ |<ul><li>現在の時刻 (utc)</li><li>現在のティック数</li></ul> |
 |制限メカニズム  |なし。 このイベントは、サービスを停止するたびに発生します。 |
 
-**テキストの例:**
+**テキストの例:** 
 `W32time service is stopping at 2018-03-01T05:42:13.944Z (UTC), System Tick Count 6370250.`
 
 # <a name="259tab259"></a>[259](#tab/259)
@@ -99,11 +98,11 @@ w32tm.exe /query /status /verbose
 
 Ntp クライアントでは、次の NTP サーバーから時刻のデータが受信します。
 
-server1.fabrikam.com、0x8 (ntp.m|0x8|[::]:123 -> [IPAddress]:123)server2.fabrikam.com,0x8 (ntp.m|0x8|[::]:123 [IPAddress]-> [: 123)。 選択した参照のタイム サーバーは Server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123 [IPAddress]-> [: 123) (RefID:0x08d6648e63)。 システムのティック数 13187937
+server1.fabrikam.com、0x8 (ntp.m|0x8|[::]:123 -> [IPAddress]:123)server2.fabrikam.com,0x8 (ntp.m|0x8|[::]:123 [IPAddress]-> : 123)。 選択した参照のタイム サーバーは Server1.fabrikam.com,0x8 (ntp.m|0x8|[::]:123 [IPAddress]-> : 123) (RefID:0x08d6648e63)。 システムのティック数 13187937
 
 **コマンド**この情報は、次のコマンドを使用して照会することもできます
 
-*ピアを識別します。*
+*ピアを識別します。* 
 `w32tm.exe /query /peers`
 
 # <a name="260tab260"></a>[260](#tab/260)
@@ -144,7 +143,7 @@ server1.fabrikam.com、0x8 (ntp.m|0x8|[::]:123 -> [IPAddress]:123)server2.fabrik
 |||
 |---|---|
 |イベントの説明 |NTP クライアントで使用されるタイム ソースの変更します。 |
-|詳細 |NTP クライアントは、時間のサーバーまたはピアの状態が変更されたときに時間のサーバーまたはピアの現在の状態とイベントを記録 (**保留中の同期]-> [**、**同期]-> [到達不能**、または他の遷移) |
+|詳細 |NTP クライアントは、時間のサーバーまたはピアの状態が変更されたときに時間のサーバーまたはピアの現在の状態とイベントを記録 (**保留中の同期]-> [** 、**同期]-> [到達不能**、または他の遷移) |
 |制限メカニズム  |最大頻度 – 一時的な問題や不適切なプロバイダーの実装からログを保護するのには 5 分に 1 回だけです。 |
 
 # <a name="265tab265"></a>[265](#tab/265)

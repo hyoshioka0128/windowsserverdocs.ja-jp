@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 06/07/2019
-ms.openlocfilehash: 8e718eda7859c5e0b6949829c225b28e882525ad
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 4d108161dd4f6b57d4a86cbcaa5852aff53f0ac3
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811709"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469522"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center のトラブルシューティング
 
@@ -98,7 +98,6 @@ ms.locfileid: "66811709"
 
 ## <a name="i-get-the-message-cant-connect-securely-to-this-page-this-might-be-because-the-site-uses-outdated-or-unsafe-tls-security-settings"></a>メッセージが表示されます。"できません。 このページに安全に接続します。 サイトが古いか、安全でない TLS セキュリティ設定を使用して可能性があります。
 
-<!--REF: https://docs.microsoft.com/iis/get-started/whats-new-in-iis-10/http2-on-iis#when-is-http2-not-supported -->
 コンピューターは、http/2 接続に限定されます。 Windows Admin Center では、統合 Windows 認証では、http/2 でサポートされていないを使用します。 次の 2 つのレジストリ値を追加、```HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Http\Parameters```キーを**ブラウザーを実行しているマシン**http/2 制限を解除します。
 
 ```
@@ -198,14 +197,14 @@ netsh http delete urlacl url=https://+:443/
 
 ## <a name="azure-features-dont-work-properly-in-edge"></a>Azure の機能は Edge で適切に動作しません。
 
-エッジが[既知の問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)Windows Admin Center での Azure のログインに影響を与えるセキュリティ ゾーンに関連します。 Edge を使用する場合は、Azure の機能を使用していて問題が発生した場合は、追加してみてください https://login.microsoftonline.com、 https://login.live.comとしてゲートウェイの URL は、信頼済みサイトと、エッジ、クライアント側のブラウザーでポップアップ ブロックの設定のサイトを許可するとします。 
+エッジが[既知の問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)Windows Admin Center での Azure のログインに影響を与えるセキュリティ ゾーンに関連します。 Edge を使用する場合は、Azure の機能を使用していて問題が発生した場合は、追加してみてください https://login.microsoftonline.com 、 https://login.live.com としてゲートウェイの URL は、信頼済みサイトと、エッジ、クライアント側のブラウザーでポップアップ ブロックの設定のサイトを許可するとします。 
 
 これには、次の手順を実行します。
 1. 検索**インターネット オプション**Windows の [スタート] メニュー
 2. 移動して、**セキュリティ** タブ
-3. で、**信頼済みサイト**オプションで、をクリックして、**サイト**ボタンをクリックし、表示されたダイアログ ボックスで Url を追加します。 ゲートウェイの URL を追加する必要がありますだけでなく https://login.microsoftonline.comと https://login.live.comします。
+3. で、**信頼済みサイト**オプションで、をクリックして、**サイト**ボタンをクリックし、表示されたダイアログ ボックスで Url を追加します。 ゲートウェイの URL を追加する必要がありますだけでなく https://login.microsoftonline.com と https://login.live.com します。
 4. 移動して、**プライバシー**  タブ
-5. で、**ポップアップ ブロック**セクションで、をクリックして、**設定**ボタンをクリックし、表示されたダイアログ ボックスで Url を追加します。 ゲートウェイの URL を追加する必要がありますだけでなく https://login.microsoftonline.comと https://login.live.comします。
+5. で、**ポップアップ ブロック**セクションで、をクリックして、**設定**ボタンをクリックし、表示されたダイアログ ボックスで Url を追加します。 ゲートウェイの URL を追加する必要がありますだけでなく https://login.microsoftonline.com と https://login.live.com します。
 
 ## <a name="having-an-issue-with-an-azure-related-feature"></a>Azure 関連の機能の問題があるでしょうか。
 
