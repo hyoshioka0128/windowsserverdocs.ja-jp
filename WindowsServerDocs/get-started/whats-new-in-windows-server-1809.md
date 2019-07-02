@@ -9,17 +9,17 @@ ms.author: jgerend
 ms.date: 05/21/2019
 ms.localizationpriority: high
 ms.openlocfilehash: d268550112236daecbe3dc1a9d9da21bc8ec67fb
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "65976640"
 ---
 # <a name="whats-new-in-windows-server-version-1809"></a>Windows Server Version 1809 の新機能
 
 >適用先:Windows Server (半期チャネル)
 
-Windows では、最新の機能については、次を参照してください。 [Windows Server で新](whats-new-in-windows-server.md)します。 このトピックでは、Windows Server Version 1809 の新機能の一部について説明します。
+Windows の最新の機能については、「[Windows Server の新機能](whats-new-in-windows-server.md)」を参照してください。 このトピックでは、Windows Server Version 1809 の新機能の一部について説明します。
 
 ## <a name="container-networking-with-kubernetes"></a>Kubernetes を使用したコンテナー ネットワーク
 
@@ -40,10 +40,10 @@ Windows Server Version 1809 の新機能のほか、[Windows Server 2019](../get
 * HTTP/2
 * Kubernetes サポート
 * Windows 上の Linux コンテナー
-* [余分な遅延の低いバック グラウンド トランスポート (LEDBAT)](https://blogs.technet.microsoft.com/networking/2018/07/25/ledbat/)
+* [Low Extra Delay Background Transport (LEDBAT)](https://blogs.technet.microsoft.com/networking/2018/07/25/ledbat/)
 * 仮想ワークロードに関するネットワーク パフォーマンスの向上
-* [サーバーのコア アプリケーションの互換性機能 (FOD) をオンデマンドで](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19)
-* [記憶域の移行サービス (SMS)](../storage/whats-new-in-storage.md#storage-spaces-direct)
+* [Server Core アプリ互換性オンデマンド機能 (FOD)](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19)
+* [ストレージ移行サービス (SMS)](../storage/whats-new-in-storage.md#storage-spaces-direct)
 * 記憶域レプリカ
 * システム インサイト 
 * Windows Defender Advanced Threat Protection (ATP)

@@ -11,10 +11,10 @@ author: shortpatti
 ms.author: pashort
 ms.localizationpriority: high
 ms.openlocfilehash: 53c927f89fd3ccaa212c998f7102d0fdb9f41bde
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66447939"
 ---
 # <a name="virtualization"></a>仮想化
@@ -41,7 +41,7 @@ Windows Server の仮想化は、ソフトウェア定義インフラストラ�
                     <div class="cardText">
                         <h3>保護されたファブリックとシールドされた VM</h3>
 <HR />
-                        <p>クラウド サービス プロバイダーやエンタープライズ プライベート クラウド管理者は、保護されたファブリックを使用して、セキュリティが強化された VM 環境を実現できます。 保護されたファブリックは、1 つホスト ガーディアン サービス (HGS) の 3 つのノードのクラスターでは通常、- と 1 つで構成されますか、ホスト、および一連のシールドされた Vm を保護の詳細は。</p>
+                        <p>クラウド サービス プロバイダーやエンタープライズ プライベート クラウド管理者は、保護されたファブリックを使用して、セキュリティが強化された VM 環境を実現できます。 保護されたファブリックは、1 つのホスト ガーディアン サービス (HGS) (通常は、3 ノードのクラスター) と、1 つまたは複数の保護されたホストと、シールドされた VM のセットで構成されます。</p>
                      </div>
                   </div>
               </div>
@@ -99,7 +99,7 @@ Windows Server の仮想化は、ソフトウェア定義インフラストラ�
                         </div>
                     </div>
                     <div class="cardText">
-                       <h3>エンタープライズ向け Windows 10:デバイスの作業を使用する方法</h3>
+                       <h3>エンタープライズ向け Windows 10: 作業用のデバイスを使用する方法</h3>
 <HR />
                        <p>Hyper-V テクノロジは、ハードウェア仮想化によって、コンピューティング リソースを提供します。 Hyper-V では、ソフトウェア バージョンのコンピューター (仮想マシン) が作成され、それを使用してオペレーティング システムとアプリケーションが実行されます。 複数の仮想マシンを同時に実行でき、必要に応じてそれらを作成および削除できます。</p>
                      </div>

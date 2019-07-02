@@ -9,19 +9,19 @@ ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
 ms.openlocfilehash: 7110fe78982fec616174a93514d86fb2e1cf9fa5
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810768"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 の新機能
 
 > 適用対象:Windows Server 2019
 
-このトピックでは、Windows Server 2019 の新機能の一部について説明します。 Windows Server 2019 は Windows Server 2016 の強力な基盤上に構築し、により、さまざまな技術革新を 4 つの主要なテーマで。ハイブリッド クラウド、セキュリティ、アプリケーション プラットフォーム、およびハイパー コンバージド インフラストラクチャ (HCI)。
+このトピックでは、Windows Server 2019 の新機能の一部について説明します。 Windows Server 2019 は Windows Server 2016 の強力な基盤の上に構築されています。また、次の 4 つの主要テーマに沿って多数の技術革新が組み込まれています: ハイブリッド クラウド、セキュリティ、アプリケーション プラットフォーム、およびハイパー コンバージド インフラストラクチャ (HCI)。
 
-Windows Server 半期チャネル リリースの新機能についてを参照してください[Windows Server で新](../get-started/whats-new-in-windows-server.md)します。
+Windows Server 半期チャネル リリースの新機能については、「[Windows Server の新機能](../get-started/whats-new-in-windows-server.md)」を参照してください。
 
 ## <a name="general"></a>全般的な情報
 
@@ -29,13 +29,13 @@ Windows Server 半期チャネル リリースの新機能についてを参照�
 
 Windows Admin Center は、サーバー、クラスター、ハイパーコンバージド インフラストラクチャ、Windows 10 PC を管理するための、ローカルに展開されるブラウザー ベースのアプリです。 Windows 以外の追加費用は必要なく、実稼働環境で使用できます。
 
-Windows Server 2019 だけでなく Windows 10 および Windows と Windows Server の以前のバージョンで Windows Admin Center をインストールしてサーバーと Windows Server 2008 R2 を実行しているクラスターの管理に使用して、後でします。
+Windows Admin Center は、Windows Server 2019 にも、Windows 10、以前のバージョンの Windows、Windows Server にもインストールすることができます。これを使用すれば、Windows Server 2008 R2 以降を実行しているサーバーおよびクラスターを管理することができます。
 
-詳細については、次を参照してください。 [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md)します。
+詳細については、[Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md) に関するページを参照してください。
 
 ### <a name="desktop-experience"></a>デスクトップ エクスペリエンス
 
-Windows Server 2019 は長期サービス チャネル (LTSC) リリースであるため、<b>デスクトップ エクスペリエンス</b>が含まれています。 (半期チャネル\(SAC\)リリースにはしない設計によって、デスクトップ エクスペリエンスが含まれます厳密には Server Core と Nano Server コンテナー イメージを解放します。)。Windows Server 2016 の場合と同様、オペレーティング システムのセットアップ時に選択できます Server Core インストールまたは Server 間でデスクトップ エクスペリエンスのインストールで。
+Windows Server 2019 は長期サービス チャネル (LTSC) リリースであるため、<b>デスクトップ エクスペリエンス</b>が含まれています。 (半期チャネル \(SAC\) リリースには、設計上、デスクトップ エクスペリエンスは含まれていません。これらのリリースは厳密には Server Core および Nano Server コンテナー イメージ リリースです。)Windows Server 2016 の場合と同様、オペレーティング システムのセットアップ中には Server Core インストールまたはデスクトップ エクスペリエンス搭載サーバーのインストールを選択できます。
 
 ### <a name="system-insights"></a>システム インサイト
 
@@ -83,7 +83,7 @@ SDN の新機能の完全な一覧については、「[Windows Server 2019 の 
 
 ### <a name="shielded-virtual-machines-improvements"></a>シールドされた仮想マシンの機能強化
 
-- **Branch office の機能強化**
+- **ブランチ オフィスの機能強化**
 
     新しい[フォールバック HGS](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#fallback-configuration) 機能と[オフライン モード](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#offline-mode) 機能を利用することにより、ホスト ガーディアン サービスへの接続が断続的なコンピューターで、シールドされた仮想マシンを実行できるようになりました。 フォールバック HGS を使用すると、プライマリ HGS サーバーにアクセスできない場合に試すことができるように、Hyper-V の URL のセカンダリ セットを構成できます。
 
@@ -117,18 +117,18 @@ Windows Server 2019 でストレージに行った変更の一部を次に示し
 
 ### <a name="storage-spaces-direct"></a>記憶域スペース ダイレクト
 
-記憶域スペース ダイレクトの新機能の一覧を次に示します。 詳細については、「[記憶域スペース ダイレクトの新機能](../storage/whats-new-in-storage.md#storage-spaces-direct)」を参照してください。 参照してください[Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview)情報を取得するのには、記憶域スペース ダイレクトのシステムを検証します。
+記憶域スペース ダイレクトの新機能の一覧を次に示します。 詳細については、「[記憶域スペース ダイレクトの新機能](../storage/whats-new-in-storage.md#storage-spaces-direct)」を参照してください。 また、検証済みの記憶域スペース ダイレクト システムを取得する方法については、[Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview) に関するページを参照してください。
 
-- **重複除去と ReFS ボリュームの圧縮**
-- **永続的なメモリのネイティブ サポート**
-- **エッジで 2 つのノードのハイパー コンバージド インフラストラクチャの回復性を入れ子になった**
-- **ミラーリング監視サーバーとしてのフラッシュ ドライブを USB を使用して 2 台のサーバー クラスター**
-- **Windows Admin Center のサポート**
+- **ReFS ボリュームの重複除去と圧縮**
+- **永続メモリのネイティブ サポート**
+- **エッジの 2 ノード ハイパーコンバージド インフラストラクチャに対する入れ子の回復性**
+- **監視として USB フラッシュ ドライブを使用した 2 つのサーバー クラスター**
+- **Windows Admin Center サポート**
 - **パフォーマンス履歴**
-- **最大 4 つのスケール クラスターあたり PB**
-- **2 倍の高速ミラー アクセラレータを使用したパリティ**
-- **ドライブの外れ値検出の待機時間**
-- **フォールト トレランスを強化するボリュームの割り当てを手動で区切る**
+- **クラスターごとに 4 PB まで拡張可能**
+- **ミラーリングによって高速化されたパリティで 2 倍の速度を実現**
+- **ドライブの待機時間に関する外れ値の検出**
+- **フォールト トレランスを向上するボリュームの割り当てを手動で区切る**
 
 ### <a name="storage-replica"></a>記憶域レプリカ
 
@@ -145,13 +145,13 @@ Windows Server 2019 でストレージに行った変更の一部を次に示し
 
 - **クラスター セット**
 - **Azure 対応のクラスター**
-- **クロス ドメインのクラスターの移行**
-- **USB のミラーリング監視サーバー**
+- **ドメイン間のクラスター移行**
+- **USB 監視**
 - **クラスター インフラストラクチャの機能強化**
-- **記憶域スペース ダイレクト クラスター対応更新のサポートします。**
-- **ファイル共有のミラーリング監視サーバーの機能強化**
-- **クラスターのセキュリティ強化**
-- **フェールオーバー クラスターが不要になった NTLM 認証を使用します。**
+- **クラスター対応更新による記憶域スペース ダイレクトのサポート**
+- **ファイル共有監視の強化**
+- **クラスターの強化**
+- **フェールオーバー クラスターで使用されなくなった NTLM 認証**
 
 ## <a name="application-platform"></a>アプリケーション プラットフォーム
 
@@ -159,7 +159,7 @@ Windows Server 2019 でストレージに行った変更の一部を次に示し
 
 同じコンテナー ホストで同じ Docker デーモンを使用して、Windows および Linux ベースのコンテナーを実行できるようになりました。 これにより、異種コンテナーのホスト環境を持ちつつ、アプリケーション開発者に柔軟性を提供できます。
 
-### <a name="built-in-support-for-kubernetes"></a>Kubernetes 用の組み込みのサポート
+### <a name="built-in-support-for-kubernetes"></a>Kubernetes の組み込みサポート
 
 Windows Server 2019 では、Windows で Kubernetes をサポートするために必要な半期チャネル リリースから、計算、ネットワーク、および記憶域への機能強化が続行されます。 詳細は、今後の Kubernetes リリースで公開されます。
 
@@ -169,19 +169,19 @@ Windows Server 2019 では、Windows で Kubernetes をサポートするため�
 
 ### <a name="container-improvements"></a>コンテナーの機能強化
     
-- **統合された id の向上**
+- **統合された ID 機能強化**
 
     Windows Server の以前のバージョンにあったいくつかの制限に対処し、コンテナー内の統合 Windows 認証の容易さと信頼性が向上しました。
 
-- **アプリケーションの互換性を高める**
+- **アプリケーション互換性の向上**
 
-    Windows ベースのアプリケーションをコンテナー化するだけですが、簡単になります。既存のアプリケーションの互換性*windowsservercore*イメージが増えました。 追加の API 依存関係があるアプリケーション用に、*windows* という 3 つ目の基本イメージが用意されました。
+    Windows ベースのアプリケーションのコンテナー化が簡単になりました。既存の *windowsservercore* イメージに対するアプリの互換性が向上しました。 追加の API 依存関係があるアプリケーション用に、*windows* という 3 つ目の基本イメージが用意されました。
 
-- **減少後のサイズとパフォーマンスの向上**
+- **サイズの縮小とパフォーマンスの向上**
 
     基本コンテナー イメージのダウンロード サイズ、ディスク上のサイズ、起動時間が改善されました。 これにより、コンテナー ワークフローの実行速度が向上します。
 
-- **Windows Admin Center を使用して管理エクスペリエンス\(プレビュー\)**
+- **Windows Admin Center \(プレビュー\) を使用した管理エクスペリエンス**
 
     Windows Admin Center の新しい拡張機能により、これまでより簡単にコンピューターで実行しているコンテナーを表示し、個々のコンテナーを管理できるようになりました。 [Windows Admin Center パブリック フィード](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/using-extensions)で "Containers" 拡張機能を探してください。
 

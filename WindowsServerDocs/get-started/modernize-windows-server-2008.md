@@ -11,15 +11,15 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.openlocfilehash: 9d8a8cae62a9be3384c09009dbad52e06623adb0
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66222913"
 ---
 # <a name="upgrade-windows-server-2008-and-windows-server-2008-r2"></a>Windows Server 2008 と Windows Server 2008 R2 のアップグレード
 
-Windows Server 2008 と Windows Server 2008 R2 の延長サポートは、2020 年 1 月 14 日に終了します。 2 つの最新化パスを使用できます。オンプレミスのアップグレード、または Azure でホストを変更することによって移行します。 **Azure でホストを変更する場合は、無料の既存サーバー イメージを移行できます。**
+Windows Server 2008 と Windows Server 2008 R2 の延長サポートは、2020 年 1 月 14 日に終了します。 使用可能な最新化パスには次の 2 つがあります: オンプレミスのアップグレード、および Azure での再ホストによる移行。 **Azure で再ホストする場合は、無料で既存のサーバー イメージを移行できます。**
 
 ![Windows Server 2008 からのアップグレード パスを説明するフローチャート](media/WS08_upgrade_paths.png)
 
@@ -42,7 +42,7 @@ Windows Server 2003 を実行している場合は、[Windows Server 2008 にア
 - SQL Server を Azure 管理インスタンスまたは VM に移行することで、さらに 3 年分の Windows Server 2008 R2 または 2008 の重要なセキュリティ更新プログラムが追加料金なしで利用できます。 
 - Azure に固有のクラウド削減のために既存の SQL Server および Windows Server のライセンスを利用できます。
 
-[![特殊化されたイメージを Azure に移行を開始します。](./media/WS08-image-banner-small.png)](uploading-specialized-WS08-image-to-azure.md)
+[![特化されたイメージを使用して Azure への移行を開始する](./media/WS08-image-banner-small.png)](uploading-specialized-WS08-image-to-azure.md)
 
 移行を開始するには、「[Windows Server 2008/2008 R2 に特化されたイメージの Azure へのアップロード](uploading-specialized-WS08-image-to-azure.md)」をご覧ください。
 

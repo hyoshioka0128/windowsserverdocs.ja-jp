@@ -9,11 +9,11 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.openlocfilehash: 62821abc6c9eec660fa6af832bb1aba151708021
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884083"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63686444"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Windows Server 向け Azure ハイブリッド特典
 
@@ -51,8 +51,8 @@ Windows Server 向け Azure ハイブリッド特典は、ニーズに応じた�
 
 さまざまなライセンス位置を使用した構成例
 
-![図 4](media/ahb04.png)
-![イメージ 5](media/ahb05.png)
+![画像 4](media/ahb04.png)
+![画像 5](media/ahb05.png)
 
  
 Windows Server 向け Azure ハイブリッド特典の詳細については、Azure ハイブリッド特典 の Web サイトを参照してください。
@@ -84,7 +84,7 @@ Windows Server 向け Azure ハイブリッド特典の詳細については、A
 
 所有する各サブスクリプションでインベントリを実行して、すべてのライセンス位置を包括的に把握してください。
 
-[Azure ハイブリッド特典 WS SA カウント ツール](http://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
+[Azure Hybrid Benefit WS SA Count Tool](http://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
 
 上の操作を行った結果、実行中の Azure ハイブリッド特典インスタンス数に対応する十分なライセンスがあることが確認された場合、それ以上の作業は必要ありません。 特典を適用できる VM の数に余裕があることがわかった場合、現在、全額が課金されている実行中のインスタンスを特典利用に切り替えることで、料金をさらに最適化できます。
 
@@ -92,7 +92,7 @@ Windows Server 向け Azure ハイブリッド特典の詳細については、A
 
 Windows Server のソフトウェア アシュアランスやサブスクリプションは、以下のマイクロソフトのライセンス チャネルを組み合わせて購入できます。
 
-| Channel                      | [ファイル]     | OVS      | Select/ Select Plus  | MPSA       | EA/EAS   |
+| Channel                      | Open     | OVS      | Select/ Select Plus  | MPSA       | EA/EAS   |
 |------------------------------|----------|----------|-----------------------|-----------|----------|
 | 一般的なサイズ (デバイス数)  | 5 ～ 250    | 5 ～ 250    | >250                  | >250      | >500     |
 | SA/サブスクリプション            | 省略可能 | 含まれる | 省略可能              | 省略可能  | 含まれる |

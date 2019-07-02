@@ -11,10 +11,10 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.openlocfilehash: 425197d3462762c60a7371fc6ca529ad1b70e7ef
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66443374"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>Windows Server 2008/2008 R2 に特化されたイメージの Azure へのアップロード 
@@ -43,8 +43,8 @@ Azure によりクラウド内で Windows Server 2008/2008 R2 VM を実行でき
 - Windows ファイアウォールの設定を構成します。   
    1. 管理モードのコマンド プロンプトで、「**wf.msc**」と入力して Windows ファイアウォールとセキュリティの詳細設定を表示します。   
    2. 検出結果を **[ポート]** で並べ替え、 **[ポート 3389]** を選択します。   
-     ![WIndows ファイアウォールのスクリーン ショットの設定の受信の規則。](media/3b_inboundrules.png)   
-   3. プロファイルのリモート デスクトップ (TCP IN) を有効にします。**ドメイン**、**プライベート**、および**パブリック**(上記参照)。
+     ![Windows ファイアウォール設定の受信ルールのスクリーンショット](media/3b_inboundrules.png)   
+   3. 次のプロファイルに対してリモート デスクトップ (TCP-IN) を有効にします: **Domain**、**Private**、および **Public** (上に表示)。
 
 - すべての設定を保存して、イメージをシャットダウンします。   
 - Hyper-V を使用している場合は、変更を維持するために子 AVHD が親 VHD にマージされていることを確認します。
@@ -55,8 +55,8 @@ Azure によりクラウド内で Windows Server 2008/2008 R2 VM を実行でき
 2. 「**lusrmgr.msc**」と入力します。
 3. [ローカル ユーザーとグループ] で **[ユーザー]** を選択します
 4. **[管理者]** を右クリックし、 **[プロパティ]** を選択します
-5. 選択**パスワードを無期限**選択 **[ok]** 
-![管理者のプロパティのスクリーン ショット。](media/6_adminprops.png)
+5. **[パスワードを無期限にする]** を選択し、 **[OK]** 
+![ を選択します管理者プロパティのスクリーンショット。](media/6_adminprops.png)
 
 ## <a name="uploading-the-image-vhd"></a>イメージ VHD のアップロード
 以下のスクリプトを使用して、VHD をアップロードできます。 これを行う前に、Azure アカウントの公開設定ファイルが必要になります。 [Azure ファイル設定](https://azure.microsoft.com/downloads/)を取得します。
@@ -95,7 +95,7 @@ Login-AzureRmAccount
      a. [ディスク] に移動し、 **[追加]** をクリックします。  
      b. ディスクの名前を入力します。 使用するサブスクリプションを選択し、地域を設定して、アカウントの種類を選択します。   
      c. [ソースの種類] で、ストレージを選択します。 スクリプトを使用して作成した BLOB VHD の場所を参照します。  
-     d. Windows OS の種類とサイズを選択します (既定。1023).   
+     d. Windows OS の種類とサイズを選択します (既定値: 1023)。   
      e. **[作成]** をクリックします。   
 
 7.  [Disk Created] (作成されたディスク) に移動し、 **[VM の作成]** をクリックします。   

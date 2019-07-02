@@ -11,10 +11,10 @@ ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: high
 ms.openlocfilehash: a7f6dd847d2762dbc616189ed729449479788f98
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810905"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Windows Server のフェールオーバー クラスタリング
@@ -30,22 +30,22 @@ ms.locfileid: "66810905"
 * Microsoft SQL Server、Hyper-V 仮想マシンなどのアプリケーションを対象とした高可用性 (継続的に使用可能な) ファイル共有記憶域
 * 物理サーバー上、または Hyper-V を実行するサーバーにインストールされた仮想マシン上で実行される高可用性のクラスター化された役割
 
-| **理解します。**                                                               |  **計画**                          |  **展開**       |
+| **概要**                                                               |  **計画**                          |  **展開**       |
 | -------------                                                                |  --------------                        | --------------------- |
-| [フェールオーバー クラスタリングの新機能](whats-new-in-failover-clustering.md)    | [計画フェールオーバー クラスタ リングのハードウェア要件と記憶域オプション](clustering-requirements.md)  | [フェールオーバー クラスターの作成](create-failover-cluster.md) |
+| [フェールオーバー クラスタリングの新機能](whats-new-in-failover-clustering.md)    | [フェールオーバー クラスタリングのハードウェア要件と記憶域オプションの計画](clustering-requirements.md)  | [フェールオーバー クラスターの作成](create-failover-cluster.md) |
 | [アプリケーション データ用のスケールアウト ファイル サーバー](sofs-overview.md)               | [クラスター共有ボリューム (CSV) の使用](failover-cluster-csvs.md) | [2 ノードのファイル サーバーを展開する](../storage/storage-spaces/storage-spaces-direct-in-vm.md) |
-|  [クラスターとプール クォーラム](../storage/storage-spaces/understand-quorum.md)   |  [仮想マシンのゲスト クラスターを使用して、記憶域スペース ダイレクト](../storage/storage-spaces/storage-spaces-direct-in-vm.md)       | [Active Directory Domain Services でクラスター コンピューター オブジェクトを事前設定します。](prestage-cluster-adds.md) |
+|  [クラスターとプール クォーラム](../storage/storage-spaces/understand-quorum.md)   |  [ゲスト仮想マシン クラスターで記憶域スペース ダイレクトを使用する](../storage/storage-spaces/storage-spaces-direct-in-vm.md)       | [Active Directory Domain Services でクラスター コンピューター アカウントを事前設定する](prestage-cluster-adds.md) |
 | [障害ドメインの認識](fault-domains.md)                                 |                                 | [Active Directory でクラスターのアカウントを構成する](configure-ad-accounts.md) |
-| [簡略化された SMB マルチチャネルと複数 NIC のクラスター ネットワーク](smb-multichannel.md) |                       | [クォーラムと監視サーバーを管理します。](manage-cluster-quorum.md) |
-| [VM の負荷分散](vm-load-balancing-overview.md)                         |                             | [クラウド監視を展開します。](deploy-cloud-witness.md) |
+| [簡略化された SMB マルチチャネルと複数 NIC のクラスター ネットワーク](smb-multichannel.md) |                       | [クォーラムと監視を管理する](manage-cluster-quorum.md) |
+| [VM の負荷分散](vm-load-balancing-overview.md)                         |                             | [クラウド監視を展開する](deploy-cloud-witness.md) |
 | [クラスター セット](../storage/storage-spaces/cluster-sets.md)                  |                             |[ファイル共有監視を展開する](file-share-witness.md) |
 | [クラスターのアフィニティ](cluster-affinity.md)                                     |                            | [クラスター オペレーティング システムのローリング アップグレード](cluster-operating-system-rolling-upgrade.md) |
 |                                                                             |                            | [同じハードウェア上でフェールオーバー クラスターをアップグレードする](upgrade-option-same-hardware.md) |
-|                                                                            |                             | [Active Directory のデタッチされたクラスターをデプロイします。](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265970\(v%3dws.11\))
+|                                                                            |                             | [Active Directory からデタッチされたクラスターを展開する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265970\(v%3dws.11\))
 
 |**管理**  |  **ツールと設定**  |  **コミュニティ リソース**       |
 | ------------- |  -------------- | --------------------- |
-| [クラスター対応更新](cluster-aware-updating.md)    |   [フェールオーバー クラスタ リングの PowerShell コマンドレット](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)      |  [高可用性 (クラスタ リング) フォーラム](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
-|  [ヘルスサービス](health-service-overview.md)   |   [クラスター対応更新の PowerShell コマンドレット](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps)      | [フェールオーバー クラスタ リングとネットワーク負荷分散のチーム ブログ](http://blogs.msdn.com/b/clustering/)        |
+| [クラスター対応更新](cluster-aware-updating.md)    |   [フェールオーバー クラスタリング用 PowerShell コマンドレット](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)      |  [高可用性 (クラスタリング) フォーラム](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
+|  [ヘルスサービス](health-service-overview.md)   |   [クラスター対応更新の PowerShell コマンドレット](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps)      | [フェールオーバー クラスタリングおよびネットワークの負荷分散チームによるブログ](http://blogs.msdn.com/b/clustering/)        |
 |  [クラスター ドメインの移行](cluster-domain-migration.md)   |         |         |
 |  [Windows エラー報告を使用したトラブルシューティング](troubleshooting-using-wer-reports.md)   |         |         |
