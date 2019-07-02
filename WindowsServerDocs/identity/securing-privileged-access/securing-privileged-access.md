@@ -11,7 +11,7 @@ manager: daveba
 ms.reviewer: mas
 ms.openlocfilehash: 0d54a94d51a4d1e0a1d28f78ec39bf16bc3d9100
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59822013"
@@ -80,7 +80,7 @@ Microsoft では、断固とした敵対者に対して特権アクセスをセ�
 
 ロードマップの第 1 段階は、資格情報の盗難や誤用の最も頻繁に使用される攻撃手法を迅速に軽減する重視されています。 フェーズ 1 では、約 30 日以内に実装する設計されており、この図に示すようには。
 
-![フェーズ 1 図に示します。1.  独立した管理者とユーザー アカウント、2 です。 ジャスト イン タイムのローカル管理者パスワード、3。 管理ワークステーション ステージ 1、4 です。 Id 攻撃の検出](../media/securing-privileged-access/PAW_LP_Fig6.JPG)
+![フェーズ 1 図に示します。1. 独立した管理者とユーザー アカウント、2 です。 ジャスト イン タイムのローカル管理者パスワード、3。 管理ワークステーション ステージ 1、4 です。 Id 攻撃の検出](../media/securing-privileged-access/PAW_LP_Fig6.JPG)
 
 ### <a name="1-separate-accounts"></a>1. 個別のアカウント
 
@@ -106,9 +106,9 @@ Azure Active Directory とオンプレミスでの従来の Active Directory の
 
 フェーズ 2 では、フェーズ 1 で実行された作業はし、約 90 日間に完了するのには設計されています。 このステージの手順を次の図で示します。
 
-![フェーズ 2 図に示します。1.  Windows Hello for Business/MFA、2 です。 PAW ロールアウトでは、3。 ジャスト イン タイムの特権 4 です。 Credential Guard では、5 です。 漏洩した資格情報、6。 水平方向の活動の脆弱性の検出](../media/securing-privileged-access/PAW_LP_Fig7.JPG)
+![フェーズ 2 図に示します。1. Windows Hello for Business/MFA、2 です。 PAW ロールアウトでは、3。 ジャスト イン タイムの特権 4 です。 Credential Guard では、5 です。 漏洩した資格情報、6。 水平方向の活動の脆弱性の検出](../media/securing-privileged-access/PAW_LP_Fig7.JPG)
 
-### <a name="1-require-windows-hello-for-business-and-mfa"></a>1. Windows Hello for Business と MFA が必要
+### <a name="1-require-windows-hello-for-business-and-mfa"></a>1. Windows こんにちは for Business と MFA が必要
 
 管理者は、Windows Hello for Business に関連付けられている使いやすさを活用できます。 管理者は、各自の Pc で強力な 2 要素認証を使用した複雑なパスワードを置き換えることができます。 攻撃者は、デバイスと生体認証情報または暗証番号 (pin) の両方が必要、従業員の知識がなくてもアクセスする非常に困難です。 Windows Hello for Business とロールアウトへのパスの詳細については、情報の記事では[Windows Hello for Business の概要](/windows/security/identity-protection/hello-for-business/hello-overview)
 
@@ -143,7 +143,7 @@ Credential Guard を有効にすると、NTLM パスワード ハッシュ、Ker
 
 ロードマップのフェーズ 3 は、セキュリティに対する姿勢を強化するために、フェーズ 1 および 2 で実行される手順に基づいています。 フェーズ 3 は、この図では視覚的に示します。
 
-![フェーズ 3:1.  RBAC、2 を確認します。 攻撃対象領域、3 を削減します。 SEIM、4 と、ログを統合します。 漏洩した資格情報の自動化](../media/securing-privileged-access/PAW_LP_Fig8.JPG)
+![フェーズ 3:1. RBAC、2 を確認します。 攻撃対象領域、3 を削減します。 SEIM、4 と、ログを統合します。 漏洩した資格情報の自動化](../media/securing-privileged-access/PAW_LP_Fig8.JPG)
 
 これらの機能は、前のフェーズの手順でビルドしより予防的な対策を防御を移動します。 このフェーズでは、特定のタイムラインを持たず、時間がかかる実装するために個別の組織に基づきます。
 

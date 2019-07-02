@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: ebe10bb78a6a901871a75e8533b3389c38060666
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59863153"
@@ -46,5 +46,5 @@ query user
 |[query user](query-user.md)|Rd セッション ホスト サーバー上のユーザー セッションに関する情報を表示します。|
 
 #### <a name="additional-references"></a>その他の参照
-[コマンドライン構文キー](command-line-syntax-key.md)  
-[リモート デスクトップ サービス &#40;ターミナル サービス&#41; のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)
+[コマンドライン構文キー](command-line-syntax-key.md)
+[リモート デスクトップ サービスと #40 です。ターミナル サービスと #41 です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
