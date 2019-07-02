@@ -108,7 +108,7 @@ Azure Active Directory とオンプレミスでの従来の Active Directory の
 
 ![フェーズ 2 図に示します。1. Windows Hello for Business/MFA、2 です。 PAW ロールアウトでは、3。 ジャスト イン タイムの特権 4 です。 Credential Guard では、5 です。 漏洩した資格情報、6。 水平方向の活動の脆弱性の検出](../media/securing-privileged-access/PAW_LP_Fig7.JPG)
 
-### <a name="1-require-windows-hello-for-business-and-mfa"></a>1. Windows こんにちは for Business と MFA が必要
+### <a name="1-require-windows-hello-for-business-and-mfa"></a>1. Windows Hello for Business と MFA が必要
 
 管理者は、Windows Hello for Business に関連付けられている使いやすさを活用できます。 管理者は、各自の Pc で強力な 2 要素認証を使用した複雑なパスワードを置き換えることができます。 攻撃者は、デバイスと生体認証情報または暗証番号 (pin) の両方が必要、従業員の知識がなくてもアクセスする非常に困難です。 Windows Hello for Business とロールアウトへのパスの詳細については、情報の記事では[Windows Hello for Business の概要](/windows/security/identity-protection/hello-for-business/hello-overview)
 
