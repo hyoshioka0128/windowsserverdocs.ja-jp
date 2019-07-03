@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 06/07/2019
 ms.prod: windows-server-threshold
-ms.openlocfilehash: d0e57a1ef3f1b84fbdf4ebf0b3d2d205dc7a1987
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: 53f34992b875730be80ba479f387095aebbc8132
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67298166"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469559"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center についてよく寄せられる質問
 
@@ -148,10 +148,6 @@ Windows Admin Center と SCVMM は互いを補完する関係にあります。W
 * 最新のリリースは、[こちらでダウンロード](https://aka.ms/WACDownload)してください。
 
 ### <a name="windows-admin-center-preview"></a>Windows Admin Center Preview
-<!--
-> [!NOTE]
-> The current GA version (Windows Admin Center 1904) contains all previous preview functionality.
-> The Insider Preview will return in the coming months. -->
 
 * 一定間隔で最新かつ最大の機能を必要とする IT 管理者には、このバージョンが最適です。 Microsoft は毎月後続の更新プログラムのリリースを提供する予定です。 コア プラットフォームは引き続き実稼働レベルであり、ライセンスにより製品の使用権が提供されます。 ただし、明確に PREVIEW としてマークされた新しいツールや機能が導入されており、評価やテストに適しています。
 * 最新の Insider Preview リリースを入手する場合、登録済みの Insider は [Windows Server Insider Preview ダウンロード ページ](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)の [Additional Downloads] (追加のダウンロード) ドロップダウンから直接 Windows Admin Center Preview をダウンロードできます。 まだ Insider として登録していない場合は、Windows Insiders for Business ポータルの [Windows Server の概要](https://insider.windows.com/en-us/for-business-getting-started-server/)に関するページを参照してください。
