@@ -12,12 +12,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: cc535934705878c7f2b7fdc4e655ab5c853e4f96
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.openlocfilehash: 165b7e7aea7a7d0bb56d21f350f6ee646d5fa973
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66443531"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280404"
 ---
 # <a name="manage-nano-server"></a>Nano Server の管理
 
@@ -34,13 +34,13 @@ Nano Server はリモートで管理します。 Nano Server にローカル ロ
   
 -   コンピューターにシリアル ケーブルを接続し、EMS を使用する。  
   
--   構成時に Nano Server に割り当てたコンピューター名と ping を使用して、IP アドレスを取得できます。 たとえば、`ping NanoServer-PC /4` と記述します。  
+-   構成時に Nano Server に割り当てたコンピューター名と ping を使用して、IP アドレスを取得できます。 たとえば、`ping NanoServer-PC /4` のように指定します。  
   
 ## <a name="using-windows-powershell-remoting"></a>Windows PowerShell リモート処理を使用する  
 Windows PowerShell リモート処理を使用して Nano Server を管理するには、Nano Server の IP アドレスを管理コンピューターの信頼されたホストの一覧に追加し、使用しているアカウントを Nano Server の管理者に追加する必要があります。CredSSP を使用する場合は、その機能を有効にする必要もあります。  
 
 > [!NOTE]
-> Nano Server を追加しないでください場合、対象の Nano Server と管理コンピューターは、同じ AD DS フォレスト (または信頼関係を持つフォレスト) には、その完全修飾ドメイン名を使用して、信頼されたホスト一覧に、Nano Server に接続できます例えば：PS C:\>Enter-pssession-ComputerName nanoserver.contoso.com-Credential (Get-credential)
+> 対象の Nano Server と管理コンピューターが同じ AD DS フォレスト (または信頼関係のあるフォレスト) に属している場合、Nano Server を信頼されたホストの一覧に追加する必要はありません。完全修飾ドメイン名を使用して、Nano Server に接続できます。次に例を示します。PS C:\>Enter-PSSession -ComputerName nanoserver.contoso.com -Credential (Get-Credential)
   
   
 Nano Server を信頼されたホストの一覧に追加するには、管理者特権での Windows PowerShell プロンプトで次のコマンドを実行します。  
@@ -60,9 +60,9 @@ Enter-PSSession -ComputerName $ip -Credential $user
 これで、Nano Server で通常どおりに Windows PowerShell コマンドを実行できます。  
   
 > [!NOTE]  
-> このリリースの Nano Server では、一部の Windows PowerShell コマンドを利用できません。 利用可能なを表示するには、次のように実行します。 `Get-Command -CommandType Cmdlet`  
+> このリリースの Nano Server では、一部の Windows PowerShell コマンドを利用できません。 どれが利用できるかを確認するには、`Get-Command -CommandType Cmdlet` を実行します  
   
-コマンドを使用してリモート セッションを停止します。 `Exit-PSSession`  
+リモート セッションを停止するには、コマンド `Exit-PSSession` を使用します  
   
 ## <a name="using-windows-powershell-cim-sessions-over-winrm"></a>WinRM を介して Windows PowerShell CIM セッションを使用する  
 Windows リモート管理 (WinRM) を介して、Windows PowerShell の CIM セッションとインスタンスを使用して、WMI コマンドを実行できます。  
@@ -77,7 +77,7 @@ $cim = New-CimSession -Credential $user -ComputerName $ip
 ```  
   
   
-セッションが確立されたら、さまざまな WMI コマンドを実行できます。以下に例を示します。  
+セッションが確立されたら、さまざまな WMI コマンドを実行できます。次に例を示します。  
   
   
 ```  
@@ -124,9 +124,9 @@ Stop-NetEventSession [-Name]
   
 多くの場合、サービス パッケージまたは修正プログラムは、.cab ファイルを含む KB 項目としてダウンロードされます。 次の手順に従って、.cab ファイルを抽出します。その後、-ServicingPackagePath パラメーターを使用して、抽出したファイルをインストールできます。  
   
-1.  (関連するサポート技術情報の記事または [Microsoft Update カタログ](https://catalog.update.microsoft.com/v7/site/home.aspx)から) サービス パッケージをダウンロードします。 ローカル ディレクトリまたはネットワーク共有にそれをたとえば保存します。C:\ServicingPackages  
+1.  (関連するサポート技術情報の記事または [Microsoft Update カタログ](https://catalog.update.microsoft.com/v7/site/home.aspx)から) サービス パッケージをダウンロードします。 ローカル ディレクトリまたはネットワーク共有に保存します。次に例を示します。C:\ServicingPackages  
 2.  抽出されたサービス パッケージを保存するフォルダーを作成します。  例: c:\KB3157663_expanded  
-3.  Windows PowerShell コンソールを開き、`Expand` コマンドを使用し、サービス パッケージの .msu ファイルへのパスを指定します。さらに、`-f:*` パラメーターと、サービス パッケージを抽出する場所のパスを含めます。  例えば：  `Expand "C:\ServicingPackages\Windows10.0-KB3157663-x64.msu" -f:* "C:\KB3157663_expanded"`  
+3.  Windows PowerShell コンソールを開き、`Expand` コマンドを使用し、サービス パッケージの .msu ファイルへのパスを指定します。さらに、`-f:*` パラメーターと、サービス パッケージを抽出する場所のパスを含めます。  次に例を示します。`Expand "C:\ServicingPackages\Windows10.0-KB3157663-x64.msu" -f:* "C:\KB3157663_expanded"`  
   
     抽出されたファイルは次のようになります。  
 C:>dir C:\KB3157663_expanded   
@@ -143,7 +143,7 @@ Volume Serial Number is B05B-CC3D
 04/17/2016  12:36 AM           185,818 WSUSSCAN.cab  
                4 File(s)     94,073,136 bytes  
                2 Dir(s)  328,559,427,584 bytes free  
-4.  実行`New-NanoServerImage`など、このディレクトリで .cab ファイルを指す-servicingpackagepath パラメーターを使用します。 `New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -ServicingPackagePath C:\KB3157663_expanded\Windows10.0-KB3157663-x64.cab`  
+4.  -ServicingPackagePath パラメーターにこのディレクトリ内の .cab ファイルを指定して、`New-NanoServerImage` を実行します。次に例を示します。`New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -ServicingPackagePath C:\KB3157663_expanded\Windows10.0-KB3157663-x64.cab`  
 
 ## <a name="managing-updates-in-nano-server"></a>Nano Server の更新を管理する
 
@@ -226,7 +226,7 @@ Get-WindowsPackage--Online
 
 
 ## <a name="performance-and-event-monitoring-on-nano-server"></a>Nano Server のパフォーマンスおよびイベントを監視する
-[comment]: # (Venkat Yalla から。)
+[comment]: # (Venkat Yalla より。)
 Nano Server では、[Windows イベント トレーシング](https://aka.ms/u2pa0i) (ETW) フレームワークを完全にサポートしています。しかし、トレースとパフォーマンス カウンターを管理するための使い慣れたツールには、Nano Server で現在使用できないものがあります。 ただし、Nano Server には、最も一般的なパフォーマンス分析シナリオを実現するツールとコマンドレットが用意されています。
 
 大まかなワークフローは、どの Window Server インストールでも同じです。オーバーヘッドの少ないトレースをターゲットの (Nano Server) コンピューターで実行し、生成されたトレース ファイルやログを別のコンピューターで [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/hardware/hh448170.aspx) や [Message Analyzer](https://www.microsoft.com/download/details.aspx?id=44226) などのツールを使用してオフラインで後処理します。
@@ -237,7 +237,7 @@ Nano Server では、[Windows イベント トレーシング](https://aka.ms/u2
 次のセクションでは、最も一般的なパフォーマンス データ収集作業と、Nano Server でそれを実現するためのサポートされている方法の一覧を示します。
 
 ### <a name="query-available-event-providers"></a>使用可能なイベント プロバイダーの照会
-[Windows Performance Recorder](https://msdn.microsoft.com/en-us/library/hh448229.aspx) は、次のように使用可能なイベント プロバイダーを照会するツールです。
+[Windows Performance Recorder](https://msdn.microsoft.com/library/hh448229.aspx) は、次のように使用可能なイベント プロバイダーを照会するツールです。
 ```
 wpr.exe -providers
 ```

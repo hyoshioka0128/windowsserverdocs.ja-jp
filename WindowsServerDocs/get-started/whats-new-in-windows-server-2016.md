@@ -10,18 +10,18 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 2546322d6c6dbc4d64f18fc62366c698885108d8
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.openlocfilehash: b2be54748a36f97a11796ebfa16701baac1c612d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66810624"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280644"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 の新機能
 
 >適用対象:Windows Server 2016
 
-![新聞のことを示すアイコン](media/whats-new.png)Windows では、最新の機能については、次を参照してください。 [Windows Server で新](whats-new-in-windows-server.md)します。 ここでは、Windows Server&reg; 2016 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。
+![新聞を示すアイコン](media/whats-new.png) Windows の最新の機能については、「[Windows Server の新機能](whats-new-in-windows-server.md)」を参照してください。 ここでは、Windows Server&reg; 2016 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。
 
 ## <a name="computevirtualizationvirtualizationmd"></a>[Compute](../virtualization/virtualization.md)
 
@@ -33,7 +33,7 @@ ms.locfileid: "66810624"
 ### <a name="hyper-v"></a>Hyper-V  
 -   [Windows Server 2016 の Hyper-V の新機能](../virtualization/hyper-v/What-s-new-in-Hyper-V-on-Windows.md)。 このトピックでは、Windows Server 2016 の Hyper-V の役割、Windows 10 で実行されているクライアント Hyper-V、および Microsoft Hyper-V Server 2016 で追加および変更された機能について説明します。  
 
--   [Windows コンテナー](https://msdn.microsoft.com/virtualization/windowscontainers/containers_welcome):Windows Server 2016 のコンテナーのサポートは、Windows 10 でパフォーマンスの向上、簡素化されたネットワークの管理、および Windows コンテナーのサポートを追加します。 コンテナーの詳細については、次を参照してください。[コンテナー。Docker、Windows、および傾向](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/)します。  
+-   [Windows コンテナー](https://msdn.microsoft.com/virtualization/windowscontainers/containers_welcome): Windows Server 2016 コンテナーのサポートによって、Windows 10 でパフォーマンスの向上、ネットワーク管理の簡素化、および Windows コンテナーのサポートが実現しています。 コンテナーの詳細については、「[Containers: Docker, Windows and Trends](https://azure.microsoft.com/blog/2015/08/17/containers-docker-windows-and-trends/)」(コンテナー: Docker、Windows、および傾向) を参照してください。  
 
 ### <a name="nano-server"></a>Nano Server  
 [Nano Server](getting-started-with-nano-server.md) の新機能。 Nano Server には、物理ホストとゲスト仮想マシンの機能の分離の強化と、Windows Server のさまざまなエディションのサポートなど、Nano Server イメージを構築するための更新されたモジュールがあります。   
@@ -63,10 +63,10 @@ Windows Server 2016 には、不正に使用されているファブリックか
 ID での新機能では、組織が Active Directory 環境をセキュリティで保護する機能が強化され、クラウドのみの展開およびハイブリッドの展開に移行するために役立ちます。ハイブリッドの展開では、一部のアプリケーションとサービスはクラウドでホストされ、残りはオンプレミスでホストされます。  
 
 ### <a name="active-directory-certificate-services"></a>Active Directory 証明書サービス  
-Active Directory 証明書サービス (AD CS) Windows Server 2016 では、TPM キー認証のサポートを増加します。キーの構成証明のスマート カード KSP を使用できるようになりましたし、ドメインに参加していないデバイスが TPM にキーを証明できる証明書を取得する NDES の登録を使用できますようになりました。  
+Windows Server 2016 の Active Directory 証明書サービス (AD CS) では、TPM キーの構成証明のサポートが強化されます。キーの構成証明にスマート カード KSP を使用でき、ドメインに参加していないデバイスで NDES の登録を使用して、TPM にあるキーを証明できる証明書を取得できるようになりました。  
 
 ### <a name="active-directory-domain-services"></a>Active Directory Domain Services  
-Active Directory Domain Services では、Active Directory 環境をセキュリティで保護し、会社と個人の両方のデバイスの優れた ID 管理環境を実現するのに役立つ機能強化が図られています。 詳細については、[Windows Server 2016 の Active Directory Domain Services (AD DS) の新機能](../identity/whats-new-active-directory-domain-services.md)に関するページを参照してください。   
+Active Directory ドメイン サービスでは、Active Directory 環境をセキュリティで保護し、会社と個人の両方のデバイスの優れた ID 管理環境を実現するのに役立つ機能強化が図られています。 詳細については、[Windows Server 2016 の Active Directory Domain Services (AD DS) の新機能](../identity/whats-new-active-directory-domain-services.md)に関するページを参照してください。   
 
 ### <a name="active-directory-federation-services"></a>Active Directory フェデレーション サービス (AD FS)  
 Active Directory フェデレーション サービス (AD FS) の新機能。 Windows Server 2016 の Active Directory フェデレーション サービス (AD FS) には、ライトウェイト ディレクトリ アクセス プロトコル (LDAP) ディレクトリに格納されているユーザーを認証するよう AD FS を構成できる新機能が追加されています。 詳細については、[Windows Server 2016 の AD FS の新機能](../identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)に関する記事を参照してください。  
@@ -183,7 +183,7 @@ Windows Server 2016 の IIS 10.0 Web サーバーにより提供される新機�
 
 - ネットワーク スタックでの HTTP/2 プロトコルのサポート。IIS 10.0 と統合されたため、IIS 10.0 Web サイトはサポートされる構成の HTTP/2 要求を自動的に処理できるようになりました。 これにより、接続の効率的な再利用、待機時間の短縮など、多くの強化が HTTP/1.1 に加えられ、Web ページの読み込み時間が短縮されます。 
 - Nano Server での IIS 10.0 の実行および管理機能。 「[Nano Server の IIS](iis-on-nano-server.md)」をご覧ください。
-- ドメインの web サーバーを設定し、任意のサブドメインの要求を処理する web サーバーの管理者を有効にすると、ワイルドカードのホスト ヘッダーをサポートします。
+- ワイルドカード ホスト ヘッダーのサポート。管理者は、ドメイン向けに Web サーバーをセットアップし、Web サーバーが任意のサブドメインの要求を処理するように設定できます。
 - IIS を管理するための新しい PowerShell モジュール (IISAdministration)。 
 
 詳しくは、「[IIS](https://iis.net/learn)」をご覧ください。
@@ -191,14 +191,14 @@ Windows Server 2016 の IIS 10.0 Web サーバーにより提供される新機�
 ### <a name="distributed-transaction-coordinator-msdtc"></a>分散トランザクション コーディネーター (MSDTC)
 Microsoft Windows 10 と Windows Server 2016 に 3 つの新機能が追加されました。
 
-- Resource Manager Rejoin の新しいインターフェイスをリソース マネージャーが使って、データベースがエラーのために再起動した後にイン ダウトのトランザクションの結果を調べることができます。 詳しくは、「[IResourceManagerRejoinable::Rejoin](https://msdn.microsoft.com/en-us/library/mt203799(v=vs.85).aspx)」をご覧ください。
+- Resource Manager Rejoin の新しいインターフェイスをリソース マネージャーが使って、データベースがエラーのために再起動した後にイン ダウトのトランザクションの結果を調べることができます。 詳しくは、「[IResourceManagerRejoinable::Rejoin](https://msdn.microsoft.com/library/mt203799(v=vs.85).aspx)」をご覧ください。
 
-- DSN 名の制限が 256 バイトから 3072 バイトに緩和されました。 詳しくは、「[IDtcToXaHelperFactory::Create](https://msdn.microsoft.com/en-us/library/ms686861(v=vs.85).aspx)」、「[IDtcToXaHelperSinglePipe::XARMCreate](https://msdn.microsoft.com/en-us/library/ms679248(v=vs.85).aspx)」、または「[IDtcToXaMapper::RequestNewResourceManager](https://msdn.microsoft.com/en-us/library/ms680310(v=vs.85).aspx)」をご覧ください。
+- DSN 名の制限が 256 バイトから 3072 バイトに緩和されました。 詳しくは、「[IDtcToXaHelperFactory::Create](https://msdn.microsoft.com/library/ms686861(v=vs.85).aspx)」、「[IDtcToXaHelperSinglePipe::XARMCreate](https://msdn.microsoft.com/library/ms679248(v=vs.85).aspx)」、または「[IDtcToXaMapper::RequestNewResourceManager](https://msdn.microsoft.com/library/ms680310(v=vs.85).aspx)」をご覧ください。
 
 - トレースが強化され、トレース ログ ファイルにイメージ ファイルのパスが含められるようにレジストリ キーを設定して、確認するトレース ログ ファイルを指定できるようになりました。 MSDTC のトレースの構成について詳しくは、[Windows ベースのコンピューターで MS DTC の診断トレースを有効にする方法に関するページ](https://support.microsoft.com/en-us/kb/926099)をご覧ください。
 
 
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 -   [リリース ノート:Windows Server 2016 に関する重要な問題](Windows-Server-2016-GA-Release-Notes.md)  
 
