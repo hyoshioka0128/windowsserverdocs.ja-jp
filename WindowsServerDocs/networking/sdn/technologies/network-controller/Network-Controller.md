@@ -122,7 +122,7 @@ HYPER-V 仮想マシンで、ネットワーク コント ローラー サーバ
 
 ネットワーク コント ローラーは、テナントのさまざまな接続を別のゲートウェイに配置できます。 1 つのパブリック IP を使用して、すべてのゲートウェイ接続または接続のサブセットに対して異なるパブリック ip できます。 ネットワーク コント ローラーのログすべてのゲートウェイの構成と状態の変更は、監査とトラブルシューティングのために使用できます。
 
-BGP の詳細については、次を参照してください。 [ボーダー ゲートウェイ プロトコル (&) #40 です。BGP & #41;](../../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)します。
+BGP の詳細については、次を参照してください。 [ボーダー ゲートウェイ プロトコル &#40;BGP&#41](../../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)します。
 
 RAS ゲートウェイの詳細については、次を参照してください。 [SDN の RAS ゲートウェイ](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)します。
 
