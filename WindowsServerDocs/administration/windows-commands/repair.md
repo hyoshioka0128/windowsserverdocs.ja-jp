@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 05/31/2019
 ms.locfileid: "66441802"
 ---
-# <a name="repair"></a>修復
+# <a name="repair"></a>repair
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
