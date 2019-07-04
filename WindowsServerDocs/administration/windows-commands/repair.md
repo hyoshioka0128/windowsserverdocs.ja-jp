@@ -1,5 +1,5 @@
 ---
-title: 修復
+title: repair
 description: 'Windows コマンド」のトピック * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
