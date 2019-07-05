@@ -7,7 +7,7 @@
       "build_output_subfolder": "WindowsServerDocs-VSTS",
       "locale": "ja-jp",
       "monikers": [],
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
@@ -23,7 +23,7 @@
       "build_output_subfolder": "EssentialsDocs-VSTS",
       "locale": "ja-jp",
       "monikers": [],
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
         "ManagedReference": "Content",
