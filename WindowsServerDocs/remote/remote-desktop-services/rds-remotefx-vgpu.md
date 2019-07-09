@@ -1,6 +1,6 @@
 ---
-title: RDS で RemoteFX vGPU のセットアップと構成
-description: RemoteFX vGPU グラフィックスの仮想化を構成する情報を計画します。
+title: RDS - RemoteFX vGPU の設定と構成
+description: RemoteFX vGPU グラフィックスの仮想化を構成するための計画情報。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,125 +14,125 @@ ms.assetid: 0263fa6b-2185-4cc3-99ef-3588e2f4ada5
 author: lizap
 manager: scottman
 ms.openlocfilehash: 3e7da1a70826dc720a96ceb3fe5d04868943f163
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876843"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63712145"
 ---
 # <a name="set-up-and-configure-remotefx-vgpu-for-remote-desktop-services"></a>リモート デスクトップ サービスに RemoteFX vGPU をセットアップして構成
 
 
-RemoteFX vGPU 機能により、物理グラフィックス アダプターを共有する複数の仮想マシンのことです。 仮想マシンは、専用のグラフィックス アダプター、プロセッサからグラフィックス情報のレンダリングをオフロードできます。 CPU の負荷を軽減され、VDI の仮想マシンで実行されるグラフィックを多用するワークロードのスケーラビリティが向上します。 
+RemoteFX の vGPU 機能を利用すると、複数の仮想マシンが物理グラフィックス アダプターを共有できるようになります。 仮想マシンによって、グラフィックス情報のレンダリングをプロセッサから専用グラフィックス アダプターにオフロードできます。 これで CPU 負荷が軽減され、VDI 仮想マシンで実行されるグラフィックスを多用するワークロードのスケーラビリティが向上します。 
 
 ## <a name="remotefx-vgpu-requirements"></a>RemoteFX vGPU の要件
 
 ホスト システムの要件: 
 
 - Windows Server 2016 または Windows 10
-- WDDM 1.2 互換性のあるドライバーを使用した互換性のある GPU を DX 11.0 
-- Windows Server の RD 仮想化ホスト ロールが有効になっている (Hyper-v の役割を有効に) 
-- SLAT (第 2 レベルのアドレス変換) をサポートする CPU を持つサーバー 
+- WDDM 1.2 互換ドライバーを搭載した DX 11.0 互換 GPU 
+- Windows Server RD 仮想化ホストの役割が有効 (Hyper-V の役割を有効にする) 
+- SLAT (Second Level Address Translation) をサポートする CPU を搭載したサーバー 
 
 ゲスト VM の要件:
 
-- ゲスト VM が Windows エンタープライズ クライアント (Windows 7 Service Pack 1、Windows 8.1、Windows 10) または Windows Server (Windows Server 2012 R2 または Windows Server 2016) を実行します。 その他の OS のサポートを参照してください[for Remote Desktop Services のサポートされている構成](rds-supported-config.md)します。
+- Windows Enterprise クライアント (Windows 7 Service Pack 1、Windows 8.1、Windows 10) または Windows Server (Windows Server 2012 R2 または Windows Server 2016) を実行しているゲスト VM。 その他の OS のサポートについては、[リモート デスクトップ サービスでのサポートされる構成](rds-supported-config.md)に関するページを参照してください。
 
-ゲスト Vm の追加の考慮事項:
+ゲスト VM に関するその他の考慮事項:
 
-- OpenGL と OpenCL 機能には、Windows 10 または Windows Server 2016 ではできるだけです。  
-- DirectX 11.0 には、Windows 8 または新しいゲスト Vm にできるだけです。 
-- として実行されている場合、リモート デスクトップ セッション ホストが RemoteFX vGPU のサポートされているのみ、[個人用セッション デスクトップ](rds-personal-session-desktops.md)します。
+- OpenGL および OpenCL の機能は、Windows 10 または Windows Server 2016 でのみ使用できます。  
+- DirectX 11.0 は、Windows 8 以降のゲスト VM でのみ使用できます。 
+- リモート デスクトップ セッション ホストは、[個人用セッション デスクトップ](rds-personal-session-desktops.md)として実行されている場合にのみ RemoteFX vGPU でサポートされます。
 
-ゲスト VM のことを確認することを確認して[VDI 展開 - サポートされるゲスト Os](rds-supported-config.md#vdi-deployment--supported-guest-oss)します。
+ゲスト VMS については、「[VDI 展開 - サポートされるゲスト OS](rds-supported-config.md#vdi-deployment--supported-guest-oss)」を必ず確認してください。
 
-## <a name="install-remotefx-vgpu"></a>RemoteFX vGPU をインストールします。
+## <a name="install-remotefx-vgpu"></a>RemoteFX vGPU をインストールする
 
-インストールして Windows Server 2016 および Windows 10 ホストで RemoteFX を構成するには、次の手順を使用します。
+Windows Server 2016 および Windows 10 のホスト上で RemoteFX をインストールおよび構成するには、次の手順を使用します。
 
 1. オペレーティング システムをインストールする。
-2. グラフィックス カード ベンダー サイトから、最新 Windows 10/Windows Server 2016 の GPU ドライバーの使用をインストールします。
-3. Windows 10/Windows Server 2016 ホスト上の RemoteFX vGPU をインストールします。
-   1. Windows 10 ホストでは、コントロール パネル (go コントロール パネルのプログラムと機能を Windows の機能をオンまたはオフ) に HYPER-V の機能を有効にします。
+2. グラフィックス カードのベンダー サイトから入手できる最新の Windows 10/Windows Server 2016 GPU ドライバーをインストールします。
+3. Windows 10/Windows Server 2016 ホストに RemoteFX vGPU をインストールします。
+   1. Windows 10 ホストで、コントロール パネルの Hyper-V 機能を有効にします ([コントロール パネル]、[プログラムと機能]、[Windows の機能の有効化または無効化] の順に移動します)。
 
-      ![HYPER-V の機能を有効にする Windows 機能 ウィンドウ](media/rds-hyperv-settings.png)
+      ![Hyper-V 機能を有効にするための Windows の機能ウィンドウ](media/rds-hyperv-settings.png)
 
-   2. Windows Server 2016 ホストでは、リモート デスクトップ仮想化ホスト (RDVH) の役割をインストールします。
+   2. Windows Server 2016 ホストに、リモート デスクトップ仮想化ホスト (RDVH) の役割をインストールします。
    
 
-4. ここで、作成し、ゲスト VM を構成します。
-   1. Windows 10 Enterprise または Windows Server 2016 では、VM を作成します。
-   2. RemoteFX 3D グラフィックス アダプターを追加します。 参照してください[RemoteFX vGPU の 3D アダプターを構成する](#configure-the-remotefx-vgpu-3d-adapter)については、HYPER-V マネージャーまたは PowerShell コマンドレットを使用する実行する方法。 
+4. 次にゲスト VM を作成して構成します。
+   1. Windows 10 Enterprise または Windows Server 2016 で VM を作成します。
+   2. RemoteFX 3D グラフィックス アダプターを追加します。 Hyper-V マネージャーまたは PowerShell コマンドレットを使用してこれを行う方法については、「[RemoteFX vGPU 3D アダプターを構成する](#configure-the-remotefx-vgpu-3d-adapter)」を参照してください。 
 
-使用可能な 1 つ以上が場合、RemoteFX vGPU はすべての Gpu を使用します。 ただし、今後も RemoteFX でどの Gpu を制限する特定のケースでは使用します。 HYPER-V 環境でこの機能を制御具体的には Gpu がこれを選択して*いない*RemoteFX で使用します。 次の手順を使用します。 
+複数の GPU がある場合、RemoteFX vGPU ではすべての GPU が使用されます。 ただし、場合によっては、RemoteFX から使用される GPU が制限されることがあります。 Hyper-V 環境でこれを制御するには、RemoteFX が使用すべきでは "*ない*" GPU を具体的に選択します。 次の手順を使用します。 
 
-   1. HYPER-V マネージャーで、HYPER-V の設定に移動します。
-   2. クリックして**物理 Gpu** Hyper V の設定にします。
-   3. 選択し、オフにしたくない GPU**この GPU を使用して、RemoteFX の**します。
+   1. Hyper-V マネージャーで Hyper-V 設定に移動します。
+   2. [Hyper-V の設定] で **[物理 GPU]** をクリックします。
+   3. 使用しない GPU を選択し、 **[この GPU を RemoteFX で使用する]** をオフにします。
 
 
-### <a name="configure-the-remotefx-vgpu-3d-adapter"></a>RemoteFX vGPU の 3D アダプターを構成します。
-RemoteFX vGPU の 3D グラフィックス アダプターを構成するのには、HYPER-V マネージャーの UI または PowerShell コマンドレットを使用できます。 
+### <a name="configure-the-remotefx-vgpu-3d-adapter"></a>RemoteFX vGPU 3D アダプターを構成する
+RemoteFX vGPU 3D グラフィックス アダプターを構成するには、Hyper-V マネージャーの UI または PowerShell コマンドレットを使用できます。 
 
-#### <a name="through-hyper-v-manager"></a>Hyper V マネージャー。
+#### <a name="through-hyper-v-manager"></a>Hyper-V マネージャーの使用:
 
-1. Hyper-v を使用した、システムがセットアップされており、VM が構成されていることを確認します。  
-2. 実行されている場合、VM を停止します。 
-3. HYPER-V マネージャーに移動、 **VM 設定**、順にクリックします**ハードウェアの追加**します。
-4. 選択**RemoteFX 3D グラフィックス アダプター**、 をクリック**追加**します。 
-5. モニター、モニターの最大解像度、および専用のビデオ メモリの最大数を設定または既定値のままにします。
+1. システムが Hyper-V で設定され、VM が構成されていることを確認します。  
+2. VM が実行中の場合は停止します。 
+3. Hyper-V マネージャーで **[VM 設定]** に移動し、 **[ハードウェアの追加]** をクリックします。
+4. **[RemoteFX 3D Graphics Adapter]\(RemoteFX 3D グラフィックス アダプター\)** を選択し、 **[追加]** をクリックします。 
+5. 最大モニター数、最大モニター解像度、および専用ビデオ メモリを設定するか、既定値のままにします。
 
    > [!NOTE]
-   > - これらのオプションのいずれかのより高い値を設定するため、絶対に必要なだけ設定する必要があります、スケール変更の影響があります。
+   > - これらのオプションのいずれかに高い値を設定すると、スケールに影響するため、絶対に必要なもののみを設定します。
    >
-   > - 専用 VRAM の 1 GB を使用する必要がある場合は、32 ビット (x86) の代わりに、64 ビットのゲスト仮想マシンを使用して、最適な結果をします。
-6. クリックして**OK**構成を終了します。
+   > - 1 GB の専用 VRAM を使用する必要がある場合は、最高の結果を得るために 32 ビット (x86) ではなく 64 ビットのゲスト VM を使用します。
+6. **[OK]** をクリックして構成を完了します。
 
-#### <a name="with-powershell-cmdlets"></a>PowerShell コマンドレット。
+#### <a name="with-powershell-cmdlets"></a>PowerShell コマンドレットの使用:
 
-追加、確認、およびアダプターを構成するのには、次のコマンドレットを実行します。 
+次のコマンドレットを実行して、アダプターを追加、確認、および構成します。 
 
 ```powershell
 Add-VMRemoteFx3dVideoAdapter [-CimSession <CimSession[]>] [-ComputerName <String[]>] [-Credential <PSCredential[]>] [-VMName] <String[]> [-Passthru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-詳細を参照してください[追加 VMRemoteFx3dVideoAdapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/add-vmremotefx3dvideoadapter)します。
+詳細については、「[Add-VMRemoteFx3dVideoAdapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/add-vmremotefx3dvideoadapter)」を参照してください。
 
 ```powershell
 Get-VMRemoteFx3dVideoAdapter [-CimSession <CimSession[]>] [-ComputerName <String[]>]  [-Credential <PSCredential[]>] [-VMName] <String[]> [<CommonParameters>]
 ```
 
-詳細を参照してください[Get-vmremotefx3dvideoadapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/get-vmremotefx3dvideoadapter)
+詳細については、「[Get-VMRemoteFx3dVideoAdapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/get-vmremotefx3dvideoadapter)」を参照してください
 
 ```powershell
 Set-VMRemoteFx3dVideoAdapter [-CimSession <CimSession[]>] [-ComputerName <String[]>] [-Credential <PSCredential[]>] [-VMName] <String[]> [[-MonitorCount] <Byte>] [[-MaximumResolution] <String>] [[-VRAMSizeBytes] <UInt64>] [-Passthru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-詳細を参照してください[Set-vmremotefx3dvideoadapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/set-vmremotefx3dvideoadapter)します。
+詳細については、「[Set-VMRemoteFx3dVideoAdapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/set-vmremotefx3dvideoadapter)」を参照してください。
 
-物理 Gpu を確認するのには、次のコマンドレットを実行します。
+次のコマンドレットを実行して物理 GPU を確認します。
 
 ```powershell
 Get-VMRemoteFXPhysicalVideoAdapter [-ComputerName <String[]>] [-Credential <PSCredential[]>] [[-Name] <String[]>] [<CommonParameters>]  
 ```
 
-詳細を参照してください[Get-vmremotefxphysicalvideoadapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/get-vmremotefxphysicalvideoadapter)します。
+詳細については、「[Get-VMRemoteFXPhysicalVideoAdapter](https://technet.microsoft.com/itpro/powershell/windows/hyper-v/get-vmremotefxphysicalvideoadapter)」を参照してください。
 
-## <a name="monitor-performance"></a>パフォーマンスの監視
+## <a name="monitor-performance"></a>パフォーマンスを監視する
 
-VDI システムのスケールとパフォーマンスについては、さまざまなシステム メモリ、およびメモリの速度、CPU コアと CPU のクロック周波数、記憶域の速度と NUMA の実装の数の量、GPU の合計メモリなどの要因によって決まります。
+VDI システムのパフォーマンスとスケールは、GPU の合計メモリ、システム メモリの量とメモリ速度、CPU コアの数と CPU クロック周波数、ストレージ速度、NUMA の実装など、さまざまな要因によって決まります。
 
-RDS でのリモート vGPU のサポートには、フレーム レートのスループットに関する情報を収集するパフォーマンス モニター (perfmon.exe) で表示することができます、次のパフォーマンス カウンターが含まれています。
+RDS でのリモート vGPU のサポートには、次のパフォーマンス カウンターが含まれています。これらをパフォーマンス モニター (perfmon.exe) で表示して、フレーム レートのスループットに関する情報を収集できます。
 
-- RemoteFX グラフィックス - リモート デスクトップ プロトコルのグラフィックスの圧縮のカウンター。 たとえば、圧縮、RDP に表示されているフレームの数を確認する場合を見て、**入力 Frames/Second**カウンター。
-- RemoteFX ネットワーク - リモート デスクトップ プロトコルのネットワーク トラフィック用のカウンター。 たとえば、**ラウンド トリップ時間 (RTT)** します。
-- RemoteFX ルート GPU 管理 - VRAM 使用と予約済みのメジャー。
-- RemoteFX ソフトウェア - キャプチャ レート、GPU の応答時間、およびその他のユーザーのカウンターを提供します。
+- [RemoteFX Graphics]\(RemoteFX グラフィックス\) - リモート デスクトップ プロトコル グラフィックス圧縮用のカウンター。 たとえば、圧縮のために RDP に提示されているフレーム数を調べる場合は、 **[Input Frames/Second]\(入力フレーム/秒\)** カウンターを確認します。
+- [RemoteFX Network]\(RemoteFX ネットワーク\) - リモート デスクトップ プロトコル ネットワーク トラフィックのカウンター。 たとえば、**往復時間 (RTT)** です。
+- [RemoteFX Root GPU Management]\(RemoteFX ルート GPU 管理\) - 使用可能で予約済みの VRAM を測定します。
+- [RemoteFX Software]\(RemoteFX ソフトウェア\) - キャプチャ レート、GPU 応答時間などのカウンターを提供します。
 
-特に、トラブルシューティングの場合、パフォーマンスの監視がより低レベルの次の追加のパフォーマンス カウンターを使用できます。
+特にトラブルシューティングのために、より低レベルのパフォーマンス監視を行うには、次の追加のパフォーマンス カウンターを使用できます。
 
-- RemoteFX Synth3D VSC VM デバイス 
-- RemoteFX Synth3D VSC VM トランスポート チャネル 
+- RemoteFX Synth3D VSC VM Device (RemoteFX Synth3D VSC VM デバイス) 
+- RemoteFX Synth3D VSC VM Transport Channel (RemoteFX Synth3D VSC VM トランスポート チャネル) 
 - RemoteFX Synth3D VSP 
-- RemoteFX Synth3D VSP VM デバイス 
-- RemoteFX Synth3D VSP VM チャネル
+- RemoteFX Synth3D VSP VM Device (RemoteFX Synth3D VSP VM デバイス) 
+- RemoteFX Synth3D VSP VM Channel (RemoteFX Synth3D VSP VM チャネル)

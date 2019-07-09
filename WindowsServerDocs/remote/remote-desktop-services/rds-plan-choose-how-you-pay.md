@@ -1,6 +1,6 @@
 ---
 title: リモート デスクトップ サービスでは、支払方法を選択します。
-description: RDS のライセンスに関する情報を計画します。
+description: RDS ライセンスに関する計画情報。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,16 +13,16 @@ author: spatnaik
 ms.author: spatnaik
 ms.date: 09/23/2016
 manager: scottman
-ms.openlocfilehash: daa23b6ff8123f7b5122d93f39c4865402bd8565
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5d6b0b230bace0ce66d9956fad231eac5b679403
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844483"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63712066"
 ---
 # <a name="remote-desktop-services---choose-how-you-pay"></a>リモート デスクトップ サービスでは、支払方法を選択します。
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 会社に適したものに基づくライセンスを選択します。 ユーザーがリモート上にある任意の BYOD シナリオでデバイスを有効にするユーザーごとにライセンスされます。 ユーザーが同じデバイスを共有する場合、デバイスごとにライセンスされます。 サービス プロバイダー (HSP または MSP) のかどうかまたは選択して、ISV、柔軟性が高く、従量課金制モデルに対するユーザー Sal ライセンスあたりです。
 

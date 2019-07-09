@@ -9,31 +9,31 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e19c7a51ef1f50f974dc380e00315f9980da560
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66501363"
 ---
-# <a name="whats-new-in-windows-server"></a>新機能 Windows Server の新機能
+# <a name="whats-new-in-windows-server"></a>Windows Server の新機能
 
 >適用先:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
-これらの Windows Server リリースの各新機能が表示されます。  
+これらの各 Windows Server リリースの新機能を確認できます。  
 
-長期的なサービス チャネル (LTSC) を解放します。
+長期的なサービス チャネル (LTSC) リリース:
 
 - [Windows Server 2019 の新機能](../get-started-19/whats-new-19.md)
 - [Windows Server 2016 の新機能](whats-new-in-windows-server-2016.md)
 
 半期チャネル リリース:
 
-- [Windows Server バージョンが 1903 では新機能](../get-started-19/whats-new-in-windows-server-1903.md)
+- [Windows Server バージョン 1903 の新機能](../get-started-19/whats-new-in-windows-server-1903.md)
 - [Windows Server バージョン 1809 の新機能](whats-new-in-windows-server-1809.md)
 - [Windows Server バージョン 1803 の新機能](whats-new-in-windows-server-1803.md)
-- [Windows Server バージョン 1709 で新](whats-new-in-windows-server-1709.md)(サポート対象外、2019 年 4 月 9 日の時点で)
+- [Windows Server バージョン 1709 の新機能](whats-new-in-windows-server-1709.md) (2019 年 4 月 9 日時点でサポート終了)
 
-Windows Server 半期チャネル リリースより速いペースで新しいオペレーティング システムの機能を提供します。 新しいリリースでは、6 か月ごとに登場され、18 か月間サポートされます。 確認[Windows Server リリースの情報](windows-server-release-info.md)と[ライフ サイクル サポート ページ](https://support.microsoft.com/lifecycle)の日付をサポートし、常に可能であれば、最新のリリースを使用します。
+Windows Server 半期チャネル リリースは、オペレーティング システムの新機能をより速いペースで提供します。 新しいリリースは 6 か月ごとに提供され、18 か月間サポートされます。 サポートの日付については「[Windows Server のリリース情報](windows-server-release-info.md)」と[ライフサイクル サポートのページ](https://support.microsoft.com/lifecycle)を参照してください。また、可能であれば常に最新のリリースを使用してください。
 
 ## <a name="see-also"></a>関連項目
 
