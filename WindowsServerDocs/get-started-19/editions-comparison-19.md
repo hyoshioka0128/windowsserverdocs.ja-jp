@@ -1,5 +1,5 @@
 ---
-title: Windows Server 2019 の Standard および Datacenter エディションの比較
+title: Windows Server 2019 の Standard エディションと Datacenter エディションの比較
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,14 +12,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: ba7487a7e063775219182645a273d49c473f52e2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6ec6934b5c2cfcc33a95a0336e22a20dbd60d82
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854133"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "64772398"
 ---
-# <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2019"></a>Windows Server 2019 の Standard および Datacenter エディションの比較
+# <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2019"></a>Windows Server 2019 の Standard エディションと Datacenter エディションの比較
 
 > 適用先:Windows Server 2019
   
@@ -66,8 +66,7 @@ ms.locfileid: "59854133"
 |ファイル サービスおよび記憶域サービス|記憶域サービス|〇|〇|
 |ホスト ガーディアン サービス| |〇|〇|
 |Hyper-V| |〇|○ (シールドされた仮想マシン含む)|
-|MultiPoint Services| |〇|〇|
-|ネットワーク コントローラー| |いいえ|〇|
+|ネットワーク コントローラー| |X|〇|
 |ネットワーク ポリシーとアクセス サービス| |○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|
 |印刷とドキュメント サービス| |〇|〇|
 |リモート アクセス| |〇|〇|
@@ -78,7 +77,7 @@ ms.locfileid: "59854133"
 |Windows Server Essentials エクスペリエンス| |〇|〇|
 |Windows Server Update Services| |〇|〇|
 
-* WDS のトランスポート サーバーは (Windows Server、バージョン 1803 以降半期チャネル) でも Windows Server 2019 で Server Core インストールで新しく導入
+*WDS トランスポート サーバーは、Windows Server 2019 (Windows Server バージョン 1803 からは、半期チャネルでも) の Server Core インストールに新しく導入されました
 
 
 ## <a name="features"></a>機能
@@ -125,7 +124,7 @@ ms.locfileid: "59854133"
 |SMTP サーバー|〇|〇|
 |SNMP サービス|〇|〇|
 |ソフトウェア ロード バランサー|〇|〇|
-|記憶域レプリカ|いいえ|〇|
+|記憶域レプリカ|〇|〇|
 |Telnet クライアント|〇|〇|
 |TFTP クライアント|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|
 |Fabric Management 用の VM シールド ツール|〇|〇|
@@ -150,7 +149,7 @@ ms.locfileid: "59854133"
 |通常使用できる機能|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|---------------------------|  
 |ベスト プラクティス アナライザー|〇|〇|
-|制約付きの記憶域レプリカ|はい (1 と 1 リソース グループの 1 つの 2 TB のボリュームと)|はい、無制限|
+|制約付き記憶域レプリカ|〇 (単一の 2 TB ボリュームがある 1 つのパートナーシップと 1 つのリソース グループ)|〇 (無制限)|
 |直接アクセス|〇|〇|
 |動的メモリ (仮想化の場合)|〇|〇|
 |ホット アド/リプレース RAM|〇|〇|

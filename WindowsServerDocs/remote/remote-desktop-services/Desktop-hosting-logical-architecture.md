@@ -1,6 +1,6 @@
 ---
 title: リモート デスクトップ サービスのアーキテクチャ
-description: RDS のアーキテクチャの図
+description: RDS のアーキテクチャ図
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,27 +13,27 @@ ms.topic: article
 ms.assetid: 7f73bb0a-ce98-48a4-9d9f-cf7438936ca1
 author: lizap
 manager: dongill
-ms.openlocfilehash: ba597318cdaf1d4659a72905eeb4e252c9020e49
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 14c32831445b12b314c71e538320c2ce5a9b7ee4
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887873"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63749428"
 ---
 # <a name="remote-desktop-services-architecture"></a>リモート デスクトップ サービスのアーキテクチャ
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
-Windows アプリをホストするリモート デスクトップ サービスとエンドユーザーのデスクトップを展開するためのさまざまな構成を以下に示します。
+エンド ユーザー向けの Windows のアプリとデスクトップをホストするようにリモート デスクトップ サービスを展開するためのさまざまな構成を以下に示します。
 
 >[!NOTE]
-> 次のアーキテクチャ図は、Azure での RDS の使用を示します。 ただし、オンプレミスでリモート デスクトップ サービスを展開して、他のクラウドにします。 これらの図は主に、RDS ロールの併置されているし、他のサービスを使用して説明するために対象としています。
+> 以下のアーキテクチャ図は、Azure での RDS の使用を示しています。 ただし、リモート デスクトップ サービスは、オンプレミスでも他のクラウドでも展開できます。 これらの図は、主に、RDS のロールがどのように共存し、他のサービスを使用するかを示すことを目的としています。
 
-## <a name="standard-rds-deployment-architectures"></a>標準の RDS デプロイ アーキテクチャ
+## <a name="standard-rds-deployment-architectures"></a>標準の RDS 展開アーキテクチャ
 
-リモート デスクトップ サービスでは、2 つの標準的なアーキテクチャがあります。
--   完全に有効な RDS 環境を作成するサーバーの最小数を含むこの基本的な展開。
--   RDS 環境内の最高のアップタイムを保証するために必要なすべてのコンポーネントを含むこの高可用性の展開。
+リモート デスクトップ サービスには、次の 2 つの標準的アーキテクチャがあります。
+-   基本的な展開 – これには、完全に有効な RDS 環境を作成するための最小数のサーバーが含まれます。
+-   高可用性の展開 – これには、RDS 環境で保証される最も高い稼働時間を実現するために必要なすべてのコンポーネントが含まれます。
 
 ### <a name="basic-deployment"></a>基本的な展開
 
@@ -41,22 +41,22 @@ Windows アプリをホストするリモート デスクトップ サービス�
 
 ### <a name="highly-available-deployment"></a>高可用性の展開
 
-![高可用性 RDS のデプロイ](./media/ha-rds.png)
+![高可用性 RDS の展開](./media/ha-rds.png)
 
-## <a name="rds-architectures-with-unique-azure-paas-roles"></a>一意の Azure PaaS ロールを使用した RDS アーキテクチャ
+## <a name="rds-architectures-with-unique-azure-paas-roles"></a>固有の Azure PaaS ロールを持つ RDS アーキテクチャ
 
-ただし、標準の RDS デプロイ アーキテクチャでは、ほとんどのシナリオに合わせて、顧客価値を高めるファースト パーティの PaaS ソリューションで投資を Azure が続行されます。 Rds. に組み込むことを示すいくつかのアーキテクチャを以下に示します
+標準的な RDS 展開アーキテクチャはほとんどのシナリオに適合しますが、Azure では、顧客価値を高めるファースト パーティ PaaS ソリューションに引き続き投資します。 それらが RDS にどのように組み込まれているかを示すいくつかのアーキテクチャを以下に示します。
 
-### <a name="rds-deployment-with-azure-ad-domain-services"></a>Azure AD Domain Services での RDS のデプロイ
+### <a name="rds-deployment-with-azure-ad-domain-services"></a>Azure AD Domain Services を使用する RDS の展開
 
-上記の 2 つの標準的なアーキテクチャ図は、上、従来 Active Directory (AD) を Windows Server VM にデプロイに基づいています。 ただし、従来の ad し、のみ Azure AD テナントを設定しないかどうか、office 365 などのサービスによって — が RDS を利用する、使用することができます[Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) Azure IaaS で完全に管理されたドメインを作成するにはAzure AD テナントに存在する同じユーザーを使用する環境。 これには、手動でユーザーを同期して、複数の仮想マシンの管理の複雑さが削除されます。 Azure AD Domain Services は、いずれかの配置で作業できます。 基本または高可用性。
+上記の 2 つの標準的なアーキテクチャ図は、Windows Server VM に展開される従来型の Active Directory (AD) に基づいています。 ただし、従来の AD はなく、Office365 のようなサービスを介して Azure AD テナントだけがあるが、RDS を活用したいという場合は、[Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) を使って、Azure AD テナントに存在するのと同じユーザーを使用する、完全に管理されたドメインを Azure IaaS 環境に作成することができます。 これにより、ユーザーを手動で同期し、より多くの仮想マシンを管理するという複雑さが解消されます。 Azure AD Domain Services は、基本的な展開と高可用性の展開のどちらでも機能します。
 
 ![Azure AD と RDS の展開](./media/aadds-rds.png)
 
-### <a name="rds-deployment-with-azure-ad-application-proxy"></a>Azure AD アプリケーション プロキシを使用した RDS デプロイ
+### <a name="rds-deployment-with-azure-ad-application-proxy"></a>Azure AD アプリケーション プロキシを使用する RDS の展開
 
-上記の 2 つの標準的なアーキテクチャ図は、RDS システムにインターネットに接続するエントリ ポイントとして、RD Web とゲートウェイ サーバーを使用します。 一部の環境では、管理者によって、境界からそれぞれ独自のサーバーを削除し、リバース プロキシのテクノロジで追加のセキュリティを提供するテクノロジを使用して、代わりに優先されます。 [Azure AD アプリケーション プロキシ](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)PaaS ロールは、このシナリオで適切に適合します。
+上記の 2 つの標準的アーキテクチャ図では、RDS システムへのインターネット接続エントリ ポイントとして RD Web サーバー/ゲートウェイ サーバーが使用されています。 環境によっては、管理者は、独自のサーバーを境界から削除して、代わりに、リバース プロキシ テクノロジを介して追加のセキュリティも提供するテクノロジを使用することを選択します。 [Azure AD アプリケーション プロキシ](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started) PaaS ロールは、このシナリオにうまく適合します。
 
-サポートされている構成とセットアップを作成する方法は、次を参照してください。 方法[Azure AD アプリケーション プロキシでのリモート デスクトップを発行](/azure/active-directory/application-proxy-publish-remote-desktop)します。
+サポートされている構成およびこのセットアップの作成方法については、「[Azure AD アプリケーション プロキシを使用したリモート デスクトップの発行](/azure/active-directory/application-proxy-publish-remote-desktop)」をご覧ください。
 
-![Azure AD アプリケーション プロキシを使用した RDS](./media/aadappproxy-rds.png)
+![Azure AD アプリケーション プロキシを使用する RDS](./media/aadappproxy-rds.png)

@@ -1,6 +1,6 @@
 ---
-title: 任意のデバイスからのリモート デスクトップ サービスを接続します。
-description: ユーザーがリモート デスクトップ接続できるさまざまな方法について説明します。
+title: リモート デスクトップ サービス - 任意のデバイスからの接続
+description: ユーザーがリモート デスクトップに接続できるさまざまな方法について説明します。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,17 +13,17 @@ author: lizap
 ms.author: spatnaik
 ms.date: 09/23/2016
 manager: scottman
-ms.openlocfilehash: b06c081965869ece6c7418646413421382ae0c3b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7ff06314dc518dcc206da331327e2f974c9a5f6d
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887123"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743431"
 ---
-# <a name="remote-desktop-services---connect-from-any-device"></a>任意のデバイスからのリモート デスクトップ サービスを接続します。
+# <a name="remote-desktop-services---connect-from-any-device"></a>リモート デスクトップ サービス - 任意のデバイスからの接続
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
-任意の Windows、Apple または Android コンピューター、タブレット、または電話から企業リソースにアクセスします。 ユーザーが、使用可能なデスクトップや RD Web フィードを通じて任意のデバイスからアプリケーションを簡単に確認を有効にします。
+Windows、Apple、または Android の任意のコンピューター、タブレット、または電話から企業リソースにアクセスします。 ユーザーが、RD Web フィードを通じて任意のデバイスから、使用可能なデスクトップやアプリケーションを簡単に確認できるようにします。
 
-詳細については[Microsoft リモート デスクトップ クライアント](clients/remote-desktop-clients.md)します。
+[Microsoft リモート デスクトップ クライアント](clients/remote-desktop-clients.md)の詳細をご覧ください。

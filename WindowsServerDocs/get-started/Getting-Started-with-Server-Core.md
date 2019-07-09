@@ -1,6 +1,6 @@
 ---
 title: Server Core のインストール
-description: 取得して、Windows Server 2019、Windows Server 2016 または Windows Server (半期チャネル) の Server Core インストールをインストールする方法。
+description: コア インストールを取得して、Windows Server 2019、Windows Server 2016 または Windows Server (半期チャネル) にインストールする方法。
 ms.prod: windows-server-threshold
 ms.date: 05/21/2019
 ms.technology: server-general
@@ -12,17 +12,17 @@ ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: 6f685ce29088b56bb243d21315787ab90e6863a4
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "65976718"
 ---
 # <a name="install-server-core"></a>Server Core のインストール
 
 > 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
   
-初めての Windows Server をインストールするときに、次のインストール オプションがあります。
+初めて Windows Server をインストールする場合は、次のインストール オプションがあります。
 
 >[!NOTE]
 > 次の一覧で、「デスクトップ エクスペリエンス」と記載されていないエディションが、Server Core インストール オプションです。
@@ -32,7 +32,7 @@ ms.locfileid: "65976718"
 -   Windows Server Datacenter
 -   Windows Server Datacenter (デスクトップ エクスペリエンスあり)
 
-Windows Server (半期チャネル) をインストールするときに、次のインストール オプションがあります。
+初めて Windows Server (半期チャネル) をインストールする場合は、次のインストール オプションがあります。
 
 -   Windows Server Standard 
 -   Windows Server Datacenter
@@ -49,17 +49,17 @@ Server Core オプションでは、標準のユーザー インターフェイ�
 
 **サーバーの役割をローカルにインストール、構成、アンインストール:** Windows PowerShell でコマンド プロンプトを使用。
 
-**インストール、構成、Windows クライアント コンピューター (またはインストールされているデスクトップ エクスペリエンス搭載サーバー) からサーバーの役割をリモート アンインストール:** サーバー マネージャー、リモート サーバー管理ツール (RSAT)、Windows PowerShell、または Windows Admin Center.
+**サーバーの役割を Windows クライアント コンピューター (またはデスクトップ エクスペリエンスがインストールされたサーバー) からリモートでインストール、構成、アンインストール:** サーバー マネージャー、リモート サーバー管理ツール (RSAT)、Windows PowerShell、または Windows Admin Center を使用。
 
 >[!NOTE]
 >
 >RSAT の場合は、Windows 10 バージョンを使用する必要があります。
 >Microsoft 管理コンソールは、ローカルでは使うことができません。
 
-**使用できる例サーバー ロール:**
+**使用できるサーバーの役割の例:**
 
 - Active Directory 証明書サービス
-- Active Directory Domain Services
+- [Active Directory Domain Services]
 - DHCP サーバー
 - DNS サーバー
 - ファイル サーバー (ファイル サーバー リソース マネージャーを含む)
@@ -76,21 +76,21 @@ Server Core オプションでは、標準のユーザー インターフェイ�
    - 仮想化
    - ボリューム ライセンス認証サービス
 
-ロールの Server Core に含まれていない場合、次を参照してください。[役割、役割サービス、および Windows Server の Server Core ではなく機能](../administration/server-core/server-core-removed-roles.md)します。
+Server Core に含まれていない役割については、「[Windows Server - Server Core に含まれていない役割、役割サービス、および機能](../administration/server-core/server-core-removed-roles.md)」を参照してください。
 
-## <a name="installing-on-windows-server-2019-or-windows-server-2016"></a>Windows Server 2019 または Windows Server 2016 にインストールします。
+## <a name="installing-on-windows-server-2019-or-windows-server-2016"></a>Windows Server 2019 または Windows Server 2016 のインストール
 
-一般的なインストール手順と Windows Server (時間の長い用語サービス チャネル) のオプションは、次を参照してください。 [Windows Server のインストールとアップグレード](installation-and-upgrade.md)します。
+Windows Server (長期サービス チャネル) の一般的なインストール手順とオプションについては、「[Windows Server のインストールとアップグレード](installation-and-upgrade.md)」を参照してください。
 
-## <a name="installing-on-windows-server-semi-annual-channel"></a>Windows Server (半期チャネル) へのインストール
+## <a name="installing-on-windows-server-semi-annual-channel"></a>Windows Server (半期チャネル) のインストール
 
-Windows Server (半期チャネル) のインストール手順は、旧バージョンの Windows Server のインストールと同じ (から、します。ISO イメージの場合)、次の例外。
+Windows Server (半期チャネル) のインストールの手順は、以前のバージョンの Windows Server のインストールと同じ (.ISO イメージからの場合) ですが、次のような例外があります。
 
 - 以前のバージョンの Windows Server から Windows Server バージョン 1709 へのアップグレードはサポートされていません。 常に新規インストールが必要です。
-   これは、Windows コンピューターのデスクトップから setup.exe を実行すると、セットアップ エクスペリエンスは許可されていないこと (淡色) アップグレード オプションを意味します。
-- Windows Server (半期チャネル) の評価版ではありません。
-- OEM 版や製品版はありません。 Windows Server (半期チャネル) は、ソフトウェア アシュアランスやロイヤルティ プログラムを通してのみライセンスことができます。
+   これは、Windows コンピューターのデスクトップから setup.exe を実行する場合、セットアップ エクスペリエンスでアップグレード オプションが許可されない (灰色表示される) ことを意味します。
+- Windows Server (半期チャネル) の評価版はありません。
+- OEM 版や製品版はありません。 Windows Server (半期チャネル) は、ソフトウェア アシュアランスまたはロイヤルティ プログラムを通じてのみライセンス供与されます。
 
-半期チャネルの詳細については、次を参照してください。[サービス チャネルの比較](../get-started-19/servicing-channels-19.md)します。
+半期チャネルの詳細については、「[サービス チャネルの比較](../get-started-19/servicing-channels-19.md)」を参照してください。
 
-新機能については Windows Server 半期チャネルを表示するを参照してください[Windows Server では新機能。](whats-new-in-windows-server.md)
+Windows Server 半期チャネルの新機能については、「[Windows Server の新機能](whats-new-in-windows-server.md)」を参照してください。

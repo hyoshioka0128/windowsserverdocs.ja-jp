@@ -1,6 +1,6 @@
 ---
 title: Windows Server 2016 で削除された機能または推奨されなくなった機能
-description: 機能の現在のリリースで製品から削除されたか、または潜在的な削除 (非推奨) 以降のリリースでの Windows Server 2016 での機能の一覧。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。
+description: Windows Server 2016 の機能のうち、現在のリリースで製品から削除された機能および今後のリリースで削除が検討されている機能 (非推奨の機能) の一覧。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
@@ -11,10 +11,10 @@ ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: 83855cf7e4fa86a932298dd15735dc5bf7277dfb
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "65976603"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Windows Server 2016 で削除された機能または推奨されなくなった機能
@@ -23,14 +23,14 @@ ms.locfileid: "65976603"
 
 次の一覧に、Windows Server 2016 の機能のうち、現在のリリースで製品から削除された機能および今後のリリースで削除が検討されている機能 (推奨されなくなった機能) を示します。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。 この一覧は、今後のリリースで変更される可能性があります。また、使用が推奨されなくなった機能でこの一覧に含まれていないものもあります。 特定の機能とそれに置き換わる機能の詳細については、該当する機能のドキュメントを参照してください。
 
-どのような削除または新しいバージョンで非推奨とされたについては、次を参照してください。[削除された機能または開始 Windows サーバー 2019 交換の計画的な](../get-started-19/removed-features-19.md)します。
+新しいバージョンで削除された機能や非推奨となった機能については、「[Windows Server 2019 以降で削除される、または置換が計画されている機能](../get-started-19/removed-features-19.md)」を参照してください。
 
 ## <a name="features-removed-from-windows-server-2016"></a>Windows Server 2016 から削除された機能
 
 以下の機能は、このリリースの Windows Server 2016 で削除されました。 このリリースでは、別の方法を使用しない限り、これらの機能に依存するアプリケーション、コード、使用法は機能しません。  
 
 > [!NOTE]  
-> Windows Server 2016 を Windows Server 2012 R2 または Windows Server 2012 より前のサーバー リリースから移行する場合は、「[Windows Server 2012 R2 で削除された機能または推奨されなくなった機能](https://technet.microsoft.com/library/dn303411.aspx)」および「[Windows Server 2012 で削除された機能または推奨されなくなった機能](https://technet.microsoft.com/library/hh831568.aspx)」も確認してください。  
+> Windows Server 2016 を Windows Server 2012 R2 または Windows Server 2012 より前のサーバー リリースから移行する場合は、「[Windows Server 2012 R2 で削除された機能または非推奨となった機能](https://technet.microsoft.com/library/dn303411.aspx)」および「[Windows Server 2012 で削除された機能または推奨されなくなった機能](https://technet.microsoft.com/library/hh831568.aspx)」も確認してください。  
 
 
 ### <a name="file-server"></a>ファイル サーバー  
@@ -67,19 +67,19 @@ Journal.dll は Windows Server 2016 から削除されました。 これに置�
     ````
 
 ## <a name="features-deprecated-starting-with-windows-server-2016"></a>Windows Server 2016 から推奨されなくなった機能 
-以下の機能は、このリリースから推奨されなくなります。 これらの機能は、最終的に製品から完全に削除される予定ですが、このリリースでは使用できます (一部の機能が削除されている場合もあります)。 これらの機能に依存するアプリケーション、コード、使用法については、別の方法の使用を今から計画する必要があります。  
+以下の機能は、このリリースから非推奨とされます。 これらの機能は、最終的に製品から完全に削除される予定ですが、このリリースでは使用できます (一部の機能が削除されている場合もあります)。 これらの機能に依存するアプリケーション、コード、使用法については、別の方法の使用を今から計画する必要があります。  
 
 ### <a name="configuration-tools"></a>構成ツール  
 
--   **Scregedit.exe**は非推奨とされます。 Scregedit.exe に依存するスクリプトを使っている場合は、Reg.exe または Windows PowerShell のメソッドを使用するように調整してください。  
+-   **Scregedit.exe** は非推奨となりました。 Scregedit.exe に依存するスクリプトを使っている場合は、Reg.exe または Windows PowerShell のメソッドを使用するように調整してください。  
 
--   **Sconfig.exe**は非推奨とされます。 代わりに Windows PowerShell を使用してください。  
+-   **Sconfig.exe** は非推奨となりました。 代わりに Windows PowerShell を使用してください。  
 
 ### <a name="netcfg-custom-apis"></a>NetCfg のカスタム API  
-NetCfg のカスタム API を使用した PrintProvider、NetClient、および ISDN のインストールは推奨されなくなりました。  
+NetCfg のカスタム API を使用した PrintProvider、NetClient、および ISDN のインストールは非推奨となりました。  
 
 ### <a name="remote-management"></a>リモート管理  
-WinRM.vbs は推奨されなくなりました。 代わりに、Windows PowerShell の WinRM プロバイダーの機能を使用してください。  
+WinRM.vbs は非推奨となりました。 代わりに、Windows PowerShell の WinRM プロバイダーの機能を使用してください。  
 
 ### <a name="smb"></a>SMB  
-NetBT 経由の SMB 2+ は推奨されなくなりました。 代わりに TCP または RDMA 経由の SMB を実装してください。 
+NetBT 経由の SMB 2+ は非推奨となりました。 代わりに TCP または RDMA 経由の SMB を実装してください。 

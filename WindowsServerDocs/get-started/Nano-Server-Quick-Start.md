@@ -12,10 +12,10 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 7c1623e365be71cac2fd58da5444ce4358d75309
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66443558"
 ---
 # <a name="nano-server-quick-start"></a>Nano Server のクイック スタート
@@ -29,7 +29,7 @@ DHCP を使用して IP アドレスを取得する Nano Server の基本的な�
 
 これらのクイック スタート手順で基本的な展開を試した後は、独自のカスタム イメージの作成、さまざまな方法によるパッケージ管理、ドメイン操作などの詳細については、「[Nano Server の展開](Deploy-Nano-Server.md)」を参照してください。
   
-**仮想マシンに Nano Server**  
+**仮想マシンでの Nano Server**  
   
 仮想マシンで実行される Nano Server VHD を作成するには、次の手順に従います。  
   
@@ -37,13 +37,13 @@ DHCP を使用して IP アドレスを取得する Nano Server の基本的な�
   
 1. Windows Server 2016 ISO の \NanoServer フォルダーにある *NanoServerImageGenerator* フォルダーを、お使いのハード ディスクのフォルダーにコピーします。  
   
-2. 管理者は、ディレクトリを変更して NanoServerImageGenerator フォルダーに配置を使用して、モジュールをインポートし、フォルダーを Windows PowerShell を起動します。 `Import-Module .\NanoServerImageGenerator -Verbose`  
+2. 管理者として Windows PowerShell を起動します。NanoServerImageGenerator フォルダーを配置したフォルダーに移動し、`Import-Module .\NanoServerImageGenerator -Verbose` を使ってモジュールをインポートします。  
    >[!NOTE]  
-   >場合によっては Windows PowerShell 実行ポリシーを調整する必要があります。その場合は、 `Set-ExecutionPolicy RemoteSigned` うまく機能する必要があります。  
+   >場合によっては Windows PowerShell 実行ポリシーを調整する必要があります。その場合は、 `Set-ExecutionPolicy RemoteSigned` を使います。  
   
 3. 次のコマンドを実行して、コンピューター名を設定し、Hyper-V **ゲスト ドライバー**を含む Standard Edition の VHD を作成します。コマンドを実行すると、新しい VHD の管理者パスワードの入力を求められます。  
   
-   `New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerVM\NanoServerVM.vhd -ComputerName <computer name>` どこ  
+   `New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerVM\NanoServerVM.vhd -ComputerName <computer name>`。それぞれ以下の内容を表します。  
   
    -   **-MediaPath <path to root of media\>** には、Windows Server 2016 ISO の内容のルートへのパスを指定します。 たとえば、ISO の内容を d:\TP5ISO にコピーした場合は、そのパスを使用します。  
   
@@ -70,7 +70,7 @@ DHCP を使用して IP アドレスを取得する Nano Server の基本的な�
   
 7. Nano Server 仮想マシンの IP アドレスを取得し、Windows PowerShell リモート処理などのリモート管理ツールを使用して、仮想マシンに接続し、リモートで管理します。  
   
-**物理コンピューター上の Nano Server**  
+**物理コンピューターでの Nano Server**  
   
 プレインストールされているデバイス ドライバーを使用して、物理コンピューターで Nano Server を実行する VHD を作成することもできます。 起動したり、ネットワークに接続したりするためにハードウェアに必要なドライバーが提供されていない場合は、このガイドの「ドライバーの追加」セクションの手順に従ってください。  
   
@@ -78,14 +78,14 @@ DHCP を使用して IP アドレスを取得する Nano Server の基本的な�
   
 1.  Windows Server 2016 ISO の \NanoServer フォルダーにある *NanoServerImageGenerator* フォルダーを、お使いのハード ディスクのフォルダーにコピーします。  
   
-2.  管理者は、ディレクトリを変更して NanoServerImageGenerator フォルダーに配置を使用して、モジュールをインポートし、フォルダーを Windows PowerShell を起動します。 `Import-Module .\NanoServerImageGenerator -Verbose`  
+2.  管理者として Windows PowerShell を起動します。NanoServerImageGenerator フォルダーを配置したフォルダーにディレクトリを移動し、`Import-Module .\NanoServerImageGenerator -Verbose` を使ってモジュールをインポートします。  
   
 >[!NOTE]  
->場合によっては Windows PowerShell 実行ポリシーを調整する必要があります。その場合は、 `Set-ExecutionPolicy RemoteSigned` うまく機能する必要があります。  
+>場合によっては Windows PowerShell 実行ポリシーを調整する必要があります。その場合は、 `Set-ExecutionPolicy RemoteSigned` を使います。  
   
 3. 次のコマンドを実行して、コンピューター名を設定し、OEM ドライバーと Hyper-V を含む VHD を作成します。コマンドを実行すると、新しい VHD の管理者パスワードの入力を求められます。  
   
-   `New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerPhysical\NanoServer.vhd -ComputerName <computer name> -OEMDrivers -Compute -Clustering` どこ  
+   `New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath <path to root of media> -BasePath .\Base -TargetPath .\NanoServerPhysical\NanoServer.vhd -ComputerName <computer name> -OEMDrivers -Compute -Clustering`。それぞれ以下の内容を表します。  
   
    -   **-MediaPath <path to root of media\>** には、Windows Server 2016 ISO の内容のルートへのパスを指定します。 たとえば、ISO の内容を d:\TP5ISO にコピーした場合は、そのパスを使用します。  
   

@@ -9,11 +9,11 @@ author: lizap
 ms.author: elizapo
 ms.date: 05/10/2018
 ms.openlocfilehash: c80738fe7ceda43a1a73adb0a8b1061bbb24319f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886203"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63684524"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1803"></a>Windows Server バージョン 1803 以降で削除された機能と置換が計画されている機能
 
@@ -25,7 +25,7 @@ Windows Server の各リリースでは新機能が追加されています。�
 > - [Windows Insider プログラム](https://insider.windows.com)に参加することで Windows Server ビルドにいち早くアクセスできます。これは、機能の変更をテストするための最適な方法です。
 > - その他のリリースに関する質問がある場合 [Windows Server 2016](deprecated-features.md) および [Windows Server バージョン 1709](removed-features-1709.md) の詳細を確認してください。
 
-**一覧は変更される可能性し、すべての影響を受ける機能または機能が含まれません。** 
+**この一覧は変更される可能性があります。また、影響を受ける機能でこの一覧に含まれていないものもあります。** 
 
 ## <a name="features-we-removed-in-this-release"></a>このリリースで削除された機能
 

@@ -1,6 +1,6 @@
 ---
-title: リモート デスクトップ サービスの高可用性
-description: 高可用性 RDS デプロイの設定に関する情報を計画します。
+title: リモート デスクトップ サービス - 高可用性
+description: 高可用性 RDS 展開の設定に関する計画情報。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,27 +13,27 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: b5a2bd38c8831063d6fd2ba525b71a10403b8fc2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 79fd05458d0d838e34402bf28ef83b9327bfcceb
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839263"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743457"
 ---
-# <a name="remote-desktop-services---high-availability"></a>リモート デスクトップ サービスの高可用性
+# <a name="remote-desktop-services---high-availability"></a>リモート デスクトップ サービス - 高可用性
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
-エラーやスロット リングでは、大規模なシステムでは避けられません。 簡単にシームレスに接続する高可用性をサポートし、エンドユーザーにリモート デスクトップのインフラストラクチャ ロールを設定するたびにします。
+失敗と調整は、大規模なシステムでは避けられません。 高可用性をサポートし、エンド ユーザーがいつでもシームレスに接続できるようにするように、リモート デスクトップ インフラストラクチャのロールを設定することは単純です。
 
-リモート デスクトップ サービスでは、次の項目は、高可用性を確立するために、それぞれのガイダンスを持つ、リモート デスクトップのインフラストラクチャ ロールを表します。
+リモート デスクトップ サービスでは、次の項目はリモート デスクトップ インフラストラクチャのロールを表し、高可用性を確立するためのそれぞれのガイダンスが付けられています。
 - [リモート デスクトップ接続ブローカー](Deploy-a-Remote-Desktop-Connection-Broker-cluster.md)
 - [リモート デスクトップ ゲートウェイ](Deploy-a-RD-Web-Access-and-Gateway-farm.md)
 - リモート デスクトップ ライセンス
 - [リモート デスクトップ Web アクセス](Deploy-a-RD-Web-Access-and-Gateway-farm.md)
 
-高可用性を確立するには、各 2 つ目のコンピューターの役割サービスを複製します。 Azure では、保証されたアップタイムを受信可用性内 (同じロールをホストしている) 2 つの仮想マシンのセットを配置することで設定します。
+高可用性を確立するには、それぞれのロール サービスの複製を 2 台目のコンピューター上に作成します。 Azure では、2 つの仮想マシンのセット (同じロールをホスト) を、可用性セットに配置することによって、保証された稼働時間が受けられます。
 
-可用性セット、およびようになりましたことを確認して常に接続情報をデスクトップやアプリケーションにユーザーをリダイレクトすることができますを Azure SQL Database と Azure バックアップ SLA の電源を活用できます。
+可用性セットと共に、Azure SQL データベースとその Azure 認定の SLA の効力を活用して、常に接続情報を確保し、ユーザーをデスクトップやアプリケーションにリダイレクトできるようになりました。
 
-RDS 環境の作成のベスト プラクティスについてを参照してください、[デスクトップ ホスティング アーキテクチャ](desktop-hosting-reference-architecture.md)します。
+RDS 環境を作成するためのベスト プラクティスについては、[デスクトップ ホスティングのアーキテクチャ](desktop-hosting-reference-architecture.md)に関するページを参照してください。

@@ -1,6 +1,6 @@
 ---
-title: Azure での RDS データ センターの地理冗長
-description: 複数のデータ センターを使用して、さまざまな場所で高可用性を提供する RDS デプロイを作成する方法について説明します。
+title: Azure の地理冗長型 RDS データ センター
+description: 地理的に離れた複数の場所にわたって高可用性を実現するために、複数のデータ センターを使用した RDS 展開を作成する方法について説明します。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,85 +14,85 @@ ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
 ms.openlocfilehash: 2d12062f302c28a8124e0aa49af7f441e77ffe33
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66222791"
 ---
-# <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>Geo 冗長、複数のデータ センターのディザスター リカバリーの RDS のデプロイの作成します。
+# <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>ディザスター リカバリー用の地理冗長型複数データ センター RDS 展開の作成
 
 >適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
-Azure での複数のデータ センターを活用することにより、リモート デスクトップ サービス展開のディザスター リカバリーを有効にできます。 高可用性 RDS の標準デプロイとは異なり (」の説明に従って、[リモート デスクトップ サービスのアーキテクチャ](desktop-hosting-logical-architecture.md))、単一の Azure リージョン (西ヨーロッパなど) でのデータ センターを使用する、複数データ センター デプロイ データの使用展開 - 1 つの Azure データ センターの可用性を高める、複数の地理的な場所でセンターを使用できない可能性がありますが、複数のリージョンが同時にダウンは可能性はほとんどありません。 Geo 冗長 RDS アーキテクチャをデプロイすることで、リージョン全体の重大なエラーの場合のフェールオーバーを有効にできます。
+Azure で複数のデータ センターを活用することにより、リモート デスクトップ サービス展開のディザスター リカバリーを行えるようになります。 1 つの Azure リージョン (西ヨーロッパなど) のデータ センターを使用する標準の高可用性 RDS 展開 (「[リモート デスクトップ サービスのアーキテクチャ](desktop-hosting-logical-architecture.md)」で概説) とは異なり、複数データ センター展開は、地理的に離れた複数の場所にあるデータ センターを使用して、展開の可用性を高めます。1 つの Azure データ センターが使用できなくても、複数のリージョンが同時にダウンする可能性はほとんどありません。 地理冗長型 RDS アーキテクチャを展開することで、リージョン全体に壊滅的な障害が発生した場合に、フェールオーバーを有効にすることができます。
 
-以下の手順を使用してを通じて複数のテナントに Microsoft Azure インフラストラクチャ サービスと geo 冗長のデスクトップ ホスティング サービスおよびサブスクライバー アクセス ライセンス (Sal) を提供する RDS を利用することができます、 [Microsoft サービス プロバイダーライセンス契約 (SPLA) プログラム](https://www.microsoft.com/hosting/licensing/splabenefits.aspx)します。 使用して、独自の従業員の geo 冗長のホスティング サービスを作成する次の手順を使用することもできます。[拡張権利のソフトウェア アシュアランスによる RDS ユーザー Cal](https://download.microsoft.com/download/6/B/A/6BA3215A-C8B5-4AD1-AA8E-6C93606A4CFB/Windows_Server_2012_R2_Remote_Desktop_Services_Licensing_Datasheet.pdf)します。
+Microsoft Azure インフラストラクチャ サービスおよび RDS を活用して、[マイクロソフトのサービス プロバイダー ライセンス アグリーメント (SPLA) プログラム](https://www.microsoft.com/hosting/licensing/splabenefits.aspx)を通して、地理冗長型デスクトップ ホスティング サービスやサブスクライバー アクセス ライセンス (SAL) を複数のテナントに提供するには、以下の手順を使用します。 以下の手順を使用すると、[ソフトウェア アシュアランスによる RDS ユーザー CAL の拡張された権利](https://download.microsoft.com/download/6/B/A/6BA3215A-C8B5-4AD1-AA8E-6C93606A4CFB/Windows_Server_2012_R2_Remote_Desktop_Services_Licensing_Datasheet.pdf)を使用して、自社従業員向けの地理冗長型ホスティング サービスを作成することもできます。
 
-## <a name="logical-architecture-for-high-availability---single-and-multiple-regions"></a>高可用性 - 1 つの論理アーキテクチャと複数のリージョン
-次の図は、単一の Azure リージョンで高可用性展開のアーキテクチャを示しています。
+## <a name="logical-architecture-for-high-availability---single-and-multiple-regions"></a>高可用性の論理アーキテクチャ - 1 つのリージョンと複数のリージョン
+次の図は、1 つの Azure リージョンにおける高可用性の展開のアーキテクチャを示しています。
 
-![単一の Azure リージョンでの高可用性の展開](media/rds-ha-single-region.png)
+![1 つの Azure リージョンでの高可用性の展開](media/rds-ha-single-region.png)
 
 展開は、3 つの層で構成されます。
 
-- Azure サービスでは、Azure ポータルと Api では、DNS とパブリック IP アドレスの指定などのパブリック ネットワーク サービスなど、Azure 管理インターフェイス。
-- デスクトップ ホスティング サービスに仮想マシン、ネットワーク、ストレージ、Azure サービス、および Windows サーバーの役割サービス
-- Azure ファブリックに HYPER-V ロールを実行して、Windows Server オペレーティング システムの物理サーバー、記憶域ユニット、ネットワーク スイッチ、およびルーターを仮想化するために使用します。 Azure Fabric を使用して、Vm、ネットワーク、ストレージ、およびアプリケーションを基になるハードウェアから独立して作成できます。
+- Azure サービス - Azure portal および API を含む Azure 管理インターフェイスと、DNS やパブリック IP アドレス指定などのパブリック ネットワーク サービス。
+- デスクトップ ホスティング サービス - 仮想マシン、ネットワーク、記憶域、Azure サービス、および Windows Server の役割サービス
+- Azure ファブリック - HYPER-V の役割を実行している Windows Server オペレーティング システム。物理サーバー、記憶域ユニット、ネットワーク スイッチ、およびルーターを仮想化するために使用されます。 Azure ファブリックを使用すると、基になるハードウェアから独立した VM、ネットワーク、記憶域、およびアプリケーションを作成できます。
 
 
-比較では、複数の Azure データ センターを使用する展開のアーキテクチャを示します。
+対照的に、複数の Azure データ センターを使用する展開のアーキテクチャはこのようになります。
 
-![複数の Azure リージョンを使用している RDS のデプロイ](media/rds-ha-multi-region.png)
+![複数の Azure リージョンを使用する RDS 展開](media/rds-ha-multi-region.png)
 
-RDS デプロイ全体は、geo 冗長の展開を作成する 2 つ目の Azure リージョンにレプリケートされます。 このアーキテクチャでは、一度に 1 つだけの RDS のデプロイが実行されている、アクティブ/パッシブ モデルを使用します。 VNet 対 VNet 接続は、互いに通信する 2 つの環境を使用できます。 RDS のデプロイは、単一の Active Directory フォレスト/ドメイン、に基づいて、AD サーバーは、2 つのデプロイ間でレプリケート、意味のユーザーと同じ資格情報を使用してデプロイをいずれかにサインインできます。 ユーザー設定とユーザー プロファイル ディスク (UPD) に格納されているデータは、2 ノード クラスターの記憶域スペース ダイレクト スケール アウト ファイル サーバー (SOFS) に格納されます。 2 番目と同じ記憶域スペース ダイレクト クラスターが 2 つ目の (パッシブ) リージョンにデプロイし、記憶域レプリカはアクティブからパッシブ デプロイにユーザー プロファイルを複製するために使用します。 Azure Traffic Manager を使用して終了する地域のどちらの展開にエンドユーザーが現在アクティブで、エンドユーザーの観点から、1 つの URL を使用して、展開にアクセスしてに対応していないに自動的に出力するために使用されます。
+RDS 展開全体は、地理冗長型の展開を作成するために、2 つ目の Azure リージョンにレプリケートされます。 このアーキテクチャは、一度に 1 つの RDS 展開のみが実行されている、アクティブ/パッシブ モデルを使用しています。 VNet 間接続により、2 つの環境が相互に通信できるようになります。 RDS 展開は、1 つの Active Directory フォレスト/ドメインに基づき、AD サーバーは 2 つの展開全体でレプリケートされます。これは、ユーザーが同じ資格情報を使用してどちらの展開にもサインインできることを意味します。 ユーザー プロファイル ディスク (UPD) に格納されているユーザー設定およびデータは、2 ノード クラスター記憶域スペース ダイレクト スケールアウト ファイル サーバー (SOFS) に格納されます。 2 つ目の同じ記憶域スペース ダイレクト クラスターが 2 つ目の (パッシブ) リージョンに展開されます。記憶域レプリカが使用されて、アクティブからパッシブの展開にユーザー プロファイルがレプリケートされます。 Azure Traffic Manager は、現在アクティブであるいずれかの展開にエンドユーザーを自動的に誘導するために使用されます。エンドユーザーの視点からは、1 つの URL を使用して展開にアクセスしているので、どちらのリージョンを使用しているかはわかりません。
 
 
-*でした*、各リージョンで非高可用性 RDS デプロイを作成しますが、フェールオーバーが発生すると、1 つのリージョンで 1 つの VM が再起動された場合、フェールオーバーで発生しているが増加する可能性に関連付け、パフォーマンスに影響します。
+各リージョンに非高可用性 RDS 展開を作成することは "*可能です*" が、1 つのリージョンで 1 つの VM が再起動された場合でもフェールオーバーが発生し、関連するパフォーマンスの影響を伴うフェールオーバーが発生する可能性が高くなります。
 
 ## <a name="deployment-steps"></a>展開の手順
-複数のデータ センターの地理冗長 RDS 展開を作成する Azure で、次のリソースを作成します。
+地理冗長型の複数データ センター RDS 展開を作成するには、Azure で次のリソースを作成します。
 
-1. 2 つのリソース グループに 2 つの Azure リージョンで区切ります。 たとえば、(RG、アクティブなデプロイは [リソース グループ]) RG A と RG B (パッシブ配置) など。
-2. RG A. で Active Directory の高可用性展開使用することができます、 [AD で新しいドメインを 2 つのドメイン コント ローラー テンプレート](https://azure.microsoft.com/resources/templates/active-directory-new-domain-ha-2-dc/)展開を作成します。
-3. RG A. 使用中の高可用性 RDS デプロイ、 [RDS ファームの既存の active directory を使用してデプロイを](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/)、基本的な RDS 展開を作成し、次の情報は、テンプレート[リモート デスクトップ サービス - 高可用性](rds-plan-high-availability.md)高可用性のため、他の RDS のコンポーネントを構成します。
-4. RG A の展開を重複しないアドレス空間を使用するように RG b - VNet
-5. A [VNet 対 VNet 接続](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps)2 つのリソース グループ間で。
-6. 2 つの AD 仮想マシンの可用性セット RG B - VM の名前が RG A. デプロイで 1 つの可用性の 2 つの Windows Server 2016 Vm の設定、Active Directory Domain Services の役割をインストール、およびドメインの続きを昇格させることで AD Vm から異なるを確認します。手順 1 で作成したドメインでローラー。
-7. RG B の 2 番目の高可用性 RDS デプロイ 
-   1. 使用して、 [RDS ファームの既存の active directory を使用してデプロイを](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/)テンプレートをもう一度、今度は、次の変更を行います。 (テンプレートをカスタマイズするには、ギャラリーから選択します をクリックして**Deploy to Azure**し**テンプレートの編集**)。
+1. 2 つの別個の Azure リージョンにある 2 つのリソース グループ。 たとえば、RG A (アクティブな展開、RG は "リソース グループ" の略) と RG B (パッシブな展開) などです。
+2. RG A にある高可用性の Active Directory 展開。[2 つのドメイン コント ローラーを含む新しい AD ドメインのテンプレート](https://azure.microsoft.com/resources/templates/active-directory-new-domain-ha-2-dc/)を使用して、展開を作成できます。
+3. RG A にある高可用性 RDS 展開。[既存の Active Directory を使用した RDS ファーム展開](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/)のテンプレートを使用して基本的な RDS 展開を作成します。次に、[リモート デスクトップ サービス - 高可用性](rds-plan-high-availability.md)に関する記事の情報に従って、高可用性のためにその他の RDS コンポーネントを構成します。
+4. RG B 内の VNet - RG A にある展開と重複しないアドレス空間を使用するようにしてください。
+5. 2 つのリソース グループ間の [VNet 間接続](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps)。
+6. RG B 内の可用性セットにある 2 つの AD 仮想マシン - それらの VM 名が RG A 内の AD VM と異なることを確認します。1 つの可用性セットに 2 つの Windows Server 2016 VM を展開し、Active Directory Domain Services の役割をインストールしてから、手順 1 で作成したドメインのドメイン コントローラーにそれらを昇格させます。
+7. RG B 内の 2 つ目の高可用性 RDS 展開。 
+   1. [既存の Active Directory を使用した RDS ファーム展開](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/)のテンプレートをもう一度使用しますが、今度は次の変更を行います (テンプレートをカスタマイズするには、ギャラリーでそれを選択し、 **[Azure に配置する]** をクリックしてから、 **[テンプレートの編集]** をクリックします)。
       1. RG B の VNet に対応する DNS サーバーのプライベート IP のアドレス空間を調整します。 
       
-         変数に"dnsServerPrivateIp"を検索します。 RG B の VNet で定義したアドレス空間に対応する既定の IP (10.0.0.4) の編集します。
+         変数内で "dnsServerPrivateIp" を検索します。 RG B の VNet に定義したアドレス空間に対応する既定の IP (10.0.0.4) を編集します。
    
-      2. RG A の展開とは競合が発生しないように、コンピューター名を編集します。
+      2. RG A の展開内の名前と競合しないように、コンピューター名を編集します。
       
-         内の Vm を検索、**リソース**テンプレートのセクション。 変更、 **computerName**フィールド**osProfile**します。 たとえば、「ゲートウェイ」になれる"ゲートウェイ **-b**";"[concat ('rdsh-'、copyIndex())]""[concat ('rdsh-b-'、copyIndex())]"になるし、「ブローカー」になることがあります"ブローカー **-b**"。
+         テンプレートの **[Resources]** セクションに VM を配置します。 **[osProfile]** の下の **[computerName]** フィールドを変更します。 たとえば、"gateway" は "gateway **-b**"、"[concat('rdsh-', copyIndex())]" は "[concat('rdsh-b-', copyIndex())]"、"broker" は "broker **-b**" にすることができます
       
-         (ことも、Vm の名前手動で変更するテンプレートを実行した後です。)
-   2. 上の 3 つの手順のように、情報を使用して、[リモート デスクトップ サービスの高可用性](rds-plan-high-availability.md)高可用性のため、他の RDS のコンポーネントを構成します。
-8. 記憶域スペース ダイレクト スケール アウト ファイル サーバー記憶域レプリカで複数の 2 つのデプロイ。 使用して、 [PowerShell スクリプト](https://github.com/robotechredmond/301-s2d-sr-dr-md/tree/master/scripts)を展開する、[テンプレート](https://github.com/robotechredmond/301-s2d-sr-dr-md)すべてのリソース グループ。
+         (テンプレートを実行した後に、VM の名前を手動で変更することもできます)。
+   2. 上記の手順 3 のように、[リモート デスクトップ サービス - 高可用性](rds-plan-high-availability.md)に関する記事の情報を使用して、高可用性のためにその他の RDS のコンポーネントを構成します。
+8. 2 つの展開の間で記憶域レプリカを使用する記憶域スペース ダイレクト スケールアウト ファイル サーバー。 [PowerShell スクリプト](https://github.com/robotechredmond/301-s2d-sr-dr-md/tree/master/scripts)を使用して、 リソース グループ全体に[テンプレート](https://github.com/robotechredmond/301-s2d-sr-dr-md)を展開します。
 
    > [!NOTE]
-   > 手動ではなく、PowerShell スクリプトとテンプレートを使用して) ストレージをプロビジョニングできます。 
-   >1. デプロイを[2 つのノードの記憶域スペース ダイレクト SOFS](rds-storage-spaces-direct-deployment.md) RG a のユーザー プロファイル ディスク (Upd) を格納します。
-   >2. 2 つ目と同等の記憶域スペース ダイレクト SOFS RG B でを展開する-各クラスター内の同じ量の記憶域を使用してください。
-   >3. 設定する[非同期レプリケーションでの記憶域レプリカ](../../storage/storage-replica/cluster-to-cluster-storage-replication.md)2 つの間。
+   > (PowerShell スクリプトとテンプレートを使用する代わりに) 記憶域を手動でプロビジョニングできます。 
+   >1. RG A 内で [2 つのノード記憶域スペース ダイレクト SOFS](rds-storage-spaces-direct-deployment.md) を展開して、ユーザー プロファイル ディスク (UPD) を格納します。
+   >2. RG B 内で 2 つ目の同じ記憶域スペース ダイレクト SOFS を展開します。各クラスターで同じ容量の記憶域を使用してください。
+   >3. 2 つの間で[非同期レプリケーションを使用する記憶域レプリカ](../../storage/storage-replica/cluster-to-cluster-storage-replication.md)を設定します。
 
-### <a name="enable-upds"></a>Upd を有効にします。
-記憶域レプリカは、レプリケーション先のボリューム (セカンダリ/パッシブ デプロイに関連付けられている) にソース ボリューム (プライマリ/アクティブ デプロイに関連付けられている) からデータをレプリケートします。 仕様では、移行先クラスターとして表示されます。**オンライン (アクセスなし)** -記憶域レプリカが、移行先ボリュームとそのドライブ文字またはマウント ポイントをマウント解除します。 つまり、ボリュームがマウントされていないため、ファイル共有のパスを提供することで、セカンダリ デプロイの Upd を有効にするが失敗します。 
+### <a name="enable-upds"></a>UPD の有効化
+記憶域レプリカは、(プライマリ/アクティブ展開に関連付けられている) ソース ボリュームから (セカンダリ/パッシブ展開に関連付けられている) 宛先ボリュームにデータをレプリケートします。 仕様では、宛先クラスターは **[Online (No Access)]/(オンライン (アクセスなし)/)** と表示されます。記憶域レプリカは、宛先ボリュームと、それらのドライブ文字またはマウント ポイントをマウント解除します。 つまり、そのボリュームがマウントされていないため、ファイル共有パスを指定してセカンダリ展開の UPD の有効化を行うと、失敗します。 
 
-レプリケーションの管理についての詳細をしますか。 チェック アウト[クラスター記憶域のレプリケーションを](../../storage/storage-replica/cluster-to-cluster-storage-replication.md)します。
+レプリケーションの管理について詳しくは、 「[クラスター間の記憶域のレプリケーション](../../storage/storage-replica/cluster-to-cluster-storage-replication.md)」をご覧ください。
 
-両方のデプロイに Upd を有効にするには、次の操作を行います。
+両方の展開で UPD を有効にするには、次の手順を実行します。
 
-1. 実行、[セット RDSessionCollectionConfiguration コマンドレット](https://docs.microsoft.com/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration)プライマリ (アクティブ) デプロイのユーザー プロファイル ディスクを有効にするには、(手順 7 で作成するには、展開の手順で) がソース ボリュームのファイル共有へのパスを提供します。
-2. (このボリュームをマウントおよびセカンダリの展開でアクセスできるように) ソース ボリュームが回復先ボリュームになるように記憶域レプリカの方向を反転します。 実行することができます**Set-srpartnership**これを行うコマンドレット。 例:
+1. [Set-RDSessionCollectionConfiguration コマンドレット](https://docs.microsoft.com/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration)を実行して、プライマリ (アクティブ) 展開のユーザー プロファイル ディスクを有効にします。(「展開の手順」の手順 7 で作成した) ソース ボリューム上のファイル共有のパスを指定します。
+2. 宛先ボリュームがソース ボリュームになるように、記憶域レプリカの方向を反転します (これにより、そのボリュームがマウントされ、セカンダリ展開がアクセスできるようになります) 。 これを行うには、**Set-SRPartnership** コマンドレットを実行します。 次に、例を示します。
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-b-s2d-c" -SourceRGName "cluster-b-s2d-c" -DestinationComputerName "cluster-a-s2d-c" -DestinationRGName "cluster-a-s2d-c"
    ```
-3. セカンダリ (パッシブ) デプロイでのユーザー プロファイル ディスクを有効にします。 手順 1 で、プライマリ展開の場合と同じ手順を使用します。
-4. 方向を反転する記憶域レプリカもう一度、元のソース ボリュームが記憶域レプリカのパートナーシップで、ソース ボリュームで、もう一度と、プライマリ展開は、ファイル共有にアクセスできるようにします。 例:
+3. セカンダリ (パッシブ) 展開のユーザー プロファイル ディスクを有効にします。 手順 1 でプライマリ展開に行った手順と同じ手順を使用します。
+4. 記憶域レプリカの方向をもう一度反転します。それにより、元のソース ボリュームが再び SR パートナーシップのソース ボリュームになり、プライマリ展開がファイル共有にアクセスできるようになります。 次に、例を示します。
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-a-s2d-c" -SourceRGName "cluster-a-s2d-c" -DestinationComputerName "cluster-b-s2d-c" -DestinationRGName "cluster-b-s2d-c"
@@ -101,67 +101,67 @@ RDS デプロイ全体は、geo 冗長の展開を作成する 2 つ目の Azure
 
 ### <a name="azure-traffic-manager"></a>Azure Traffic Manager 
 
-作成、 [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview)プロファイル、および選択することを確認、**優先度**ルーティング方法。 2 つのエンドポイントを各展開のパブリック IP アドレスに設定します。 **構成**、(HTTP) ではなく HTTPS ポート (80) ではなく 443 にプロトコルを変更します。 メモ、 **DNS の time to live**、し、フェールオーバーが必要なの適切に設定します。 
+[Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) プロファイルを作成し、 **[優先順位]** ルーティング方法を必ず選択します。 2 つのエンドポイントを各展開のパブリック IP アドレスに設定します。 **[構成]** で、プロトコルを (HTTP ではなく) HTTPS に変更し、ポートを (80 ではなく) 443 に変更します。 **[DNS time to live]** を確認して、フェールオーバーのニーズに合わせて適切に設定します。 
 
-Traffic Manager がエンドポイントを「正常」としてマークするために GET 要求に応答-OK 200 を返す必要があります。 RDS テンプレートから作成されたパブリック Ip オブジェクトは、機能しますが、パスの補遺を追加しないでください。 代わりに、ユーザーに提供するエンドで Traffic Manager URL"/RDWeb"など、追加されます。 ```http://deployment.trafficmanager.net/RDWeb```
+Traffic Manager では、"正常" としてマークされるためにエンドポイントが GET 要求に応答して 200 OK を返す必要があることに注意してください。 RDS テンプレートから作成された publicIP オブジェクトは機能しますが、パスの補足は追加しないでください。 代わりに、"/RDWeb" を付加した Traffic Manager URL をエンド ユーザーに提供できます。例: ```http://deployment.trafficmanager.net/RDWeb```
 
-優先順位によるルーティング方法で Azure Traffic Manager を展開することでは、パッシブ配置へのアクセスのアクティブな展開は機能をエンドユーザーを防止します。 エンドユーザーがパッシブのデプロイメントにアクセスすると、フェールオーバーの記憶域レプリカの方向を切り替えられましたが、ユーザー サインインがハングする、配置しようとパッシブ記憶域スペース ダイレクト クラスターのデプロイでは最終的に上のファイル共有のアクセスに失敗すると諦め、一時的なプロファイルをユーザーに与えます。  
+優先順位によるルーティング方法を指定した Azure Traffic Manager を展開することで、アクティブな展開が機能している間、エンドユーザーがパッシブ展開にアクセスしないようにします。 エンドユーザーがパッシブ展開にアクセスし、記憶域レプリカの方向がフェールオーバー用に切り替えられていない場合、展開でパッシブ記憶域スペース ダイレクト クラスターのファイル共有へのアクセスを試行して失敗するため、ユーザーのサインインがハングします。最終的にその展開は中断し、一時的なプロファイルをユーザーに提供します。  
 
-### <a name="deallocate-vms-to-save-resources"></a>リソースを保存する Vm の割り当てを解除します。 
-両方のデプロイを構成した後必要に応じてシャット ダウンし、セカンダリの RDS インフラストラクチャとこれらの Vm でのコストを節約する RDSH 仮想マシンの割り当てを解除することができます。 記憶域スペース ダイレクト SOFS と AD サーバー Vm では、ユーザー アカウントとプロファイルの同期を有効にするセカンダリ/パッシブ配置で実行されている必要があります常います。  
+### <a name="deallocate-vms-to-save-resources"></a>リソースを節約するために VM の割り当てを解除する 
+両方の展開を構成した後、必要に応じてセカンダリ RDS インフラストラクチャと RDSH VM をシャット ダウンして、割り当てを解除し、これらの VM でのコストを節約することができます。 ユーザー アカウントとプロファイルの同期を有効にするには、記憶域スペース ダイレクト SOFS と AD サーバー VM がセカンダリ/パッシブ展開で常に実行されている必要があります。  
 
-フェールオーバーが発生したときに、割り当てが解除された Vm を起動する必要があります。 この配置構成では、フェールオーバー時点で譲歩のコストが小さいという利点があります。 致命的な障害は、アクティブなデプロイで発生する場合は、パッシブの展開を手動で開始する必要があります。 または自動化スクリプトをエラーを検出し、パッシブ配置を自動的に開始する必要があります。 いずれの場合もかかる場合があります実行され、ユーザーがサインインできる、パッシブ配置を取得するのに数分によってサービスのダウンタイムが発生します。 このようなダウンタイムに依存の時間に RDS インフラストラクチャと RDSH 仮想マシン (通常 2 ~ 4 分を並列ではなく連続的には、Vm が起動している場合)、(クラスターのサイズに依存するパッシブ クラスターをオンラインに時間を開始するまで、通常は 2 ノード クラスターのノードごとの 2 つのディスクで 2 ~ 4 分)。 
+フェールオーバーが発生したとき、割り当てが解除された VM を起動する必要があります。 この展開構成には低コストという利点がありますが、フェールオーバーに時間がかかります。 アクティブな展開で破壊的な障害が発生した場合は、パッシブ展開を手動で開始するか、障害を検出してパッシブ展開を自動的に開始する自動化スクリプトが必要になります。 いずれの場合も、パッシブ展開を稼働させてユーザーがサインインできるようにするのに数分かかる可能性があり、サービスのダウンタイムが発生することになります。 このダウンタイムは、RDS インフラストラクチャと RDSH VM の起動にかかる時間 (VM が順次ではなく並列で起動された場合、通常は 2 分から 4 分) と、パッシブ クラスターをオンラインにするのにかかる時間 (クラスターのサイズによりますが、 ノードごとに 2 つのディスクがある 2 ノード クラスターの場合、通常、2 分から 4 分) によって異なります。 
 
 ### <a name="active-directory"></a>Active Directory 
-各デプロイ内の Active Directory サーバーは、同じフォレストまたはドメイン内のレプリカです。 Active Directory では、4 つのドメイン コント ローラーの同期を維持する組み込みの同期プロトコルがあります。ただし、1 つの AD サーバーに新しいユーザーを追加する場合は、2 つのデプロイ内のすべての AD サーバー間でレプリケートするまでに時間がかかる場合がありますように、若干の差する可能性があります。 その結果、いないドメインに追加された後すぐにサインインしようとするユーザーに警告することを確認します。 
+各展開内の Active Directory サーバーは、同じフォレスト/ドメイン内のレプリカです。 Active Directory には、4 つのドメイン コント ローラーの同期を維持する組み込みの同期プロトコルがあります。ただし、多少遅延する場合があるので、新しいユーザーを 1 つの AD サーバーに追加すると、2 つの展開内のすべての AD サーバーにわたってレプリケートするのに多少時間がかかる可能性があります。 したがって、ドメインに追加された直後にサインインを試みないようにユーザーに警告してください。 
 
 ### <a name="rd-license-server"></a>RD ライセンス サーバー 
-提供、[ユーザーごとの RD CAL](rds-client-access-license.md) geo 冗長のデプロイメントにアクセスする権限を持つ名前付きユーザーごとにします。 配布、ユーザーのアクティブなデプロイでは、2 つの RD ライセンス サーバーの間で均等に Cal ごと。 次に、パッシブの展開では、2 つの RD ライセンス サーバーにこれらの Cal が重複しています。 接続するユーザーをアクティブにできる 1 つのみの展開の特定の時点で、アクティブとパッシブの展開の間、Cal が重複しているため、それ以外の場合、使用許諾契約に違反しています。  
+地理冗長型の展開にアクセスする権限を持つ名指定ユーザーに、[ユーザーごとの RD CAL](rds-client-access-license.md) を提供してください。 アクティブな展開内の 2 つの RD ライセンス サーバー間で、ユーザーごとの CAL を均等に配布します。 次に、パッシブ展開内の 2 つの RD ライセンス サーバーにこれらの CAL を複製します。 CAL はアクティブとパッシブの展開の間で複製されるため、ユーザーの接続でアクティブにできる展開は常に 1 つだけです。それ以外の場合は、使用許諾契約に違反します。  
 
 ### <a name="image-management"></a>イメージの管理 
-ソフトウェアの更新プログラムや新しいアプリケーションを提供する、RDSH イメージを更新するときは、両方のデプロイ全体で一般的なユーザー エクスペリエンスを維持するには、各デプロイに RDSH コレクションを個別に更新する必要があります。 使用することができます、 [Update RDSH コレクション テンプレート](https://azure.microsoft.com/resources/templates/rds-update-rdsh-collection/)テンプレートを実行するパッシブ配置の RDS インフラストラクチャと RDSH 仮想マシンを実行する必要があることに注意してください。 
+ソフトウェアの更新プログラムや新しいアプリケーションを提供するために RDSH イメージを更新する場合は、両方の展開全体で共通のユーザー エクスペリエンスを維持するために、各展開で RDSH コレクションを個別に更新する必要があります。 [RDSH コレクションの更新のテンプレート](https://azure.microsoft.com/resources/templates/rds-update-rdsh-collection/)を使用できますが、テンプレートを実行するには、パッシブ展開の RDS インフラストラクチャと RDSH VM が実行されている必要があることに注意してください。 
 
 ## <a name="failover"></a>フェールオーバー
 
-場合は、アクティブ/パッシブ配置フェールオーバーはセカンダリ配置の Vm を起動する必要があります。 これは、手動またはオートメーション スクリプトを使用して行うことができます。 記憶域スペース ダイレクト SOFS に壊滅的なフェールオーバーの場合に、ソース ボリュームが回復先ボリュームになるように、記憶域レプリカのパートナーシップの方向を変更します。 次に、例を示します。
+アクティブ/パッシブ展開の場合は、フェールオーバーでセカンダリ展開の VM を起動する必要があります。 これは、手動で行うことも、自動化スクリプトを使用して行うこともできます。 記憶域スペース ダイレクト SOFS の壊滅的なフェールオーバーの場合は、記憶域レプリカのパートナーシップの方向を変更して、宛先ボリュームがソース ボリュームになるようにします。 次に、例を示します。
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-b-s2d-c" -SourceRGName "cluster-b-s2d-c" -DestinationComputerName "cluster-a-s2d-c" -DestinationRGName "cluster-a-s2d-c"
    ```
 
-詳細については、[クラスター記憶域のレプリケーションを](../../storage/storage-replica/cluster-to-cluster-storage-replication.md)します。
+詳細については、「[クラスター間の記憶域のレプリケーション](../../storage/storage-replica/cluster-to-cluster-storage-replication.md)」をご覧ください。
 
-Azure Traffic Manager は、プライマリ展開が失敗したことと、セカンダリ配置が正常な状態に自動的に認識されます (RD ゲートウェイの Vm 内で開始されている RG B) とセカンダリのデプロイにユーザー トラフィックを転送します。 ユーザーは、同じ Traffic Manager の URL を使用して、一貫したエクスペリエンスを享受、リモートのリソースの操作を続行します。 クライアント DNS キャッシュは Azure Traffic Manager の構成で設定された TTL の間のレコードを更新しないことに注意してください。
+Azure Traffic Manager は、プライマリ展開で障害が発生したことと、セカンダリ展開が正常である (RD ゲートウェイ内で VM が RG B で起動されている) ことを自動的に認識し、セカンダリ展開にユーザー トラフィックを誘導します。 ユーザーは、同じ Traffic Manager URL を使用して各自のリモート リソースの操作を続行でき、一貫したエクスペリエンスを利用できます。 Azure Traffic Manager の構成で設定された TTL の間はクライアント DNS キャッシュでレコードが更新されないことに留意してください。
 
 ### <a name="test-failover"></a>テスト フェールオーバー
-記憶域レプリカのパートナーシップで 1 つのボリューム (ソース) を有効にする時間。 つまりを記憶域レプリカのパートナーシップの方向を切り替えた場合にプライマリ展開 (RG A) で、ボリュームは、レプリケーションの対象になります、非表示には、そのため。 したがって、RG A に接続するすべてのユーザーは、RG A. で SOFS 上に格納された Upd へのアクセス 
+記憶域レプリカのパートナーシップでは、一度に 1 つのボリューム (ソース) のみをアクティブにできます。 つまり、SR パートナーシップの方向を切り替えると、プライマリ展開 (RG A) 内のボリュームがレプリケーションの宛先になるため、非表示になります。 したがって、RG A に接続するすべてのユーザーは、RG A 内の SOFS 上に格納された UPD にアクセスできなくなります。 
 
-ログインを続行できるようにしながら、フェールオーバーをテストします。
-1. RG B の RDSH 仮想マシンとインフラストラクチャの Vm を開始します。
-2. 記憶域レプリカのパートナーシップの方向を切り替える (クラスター b s2d c では、ソース ボリュームになります)。
-3. [エンドポイントを無効にする](/azure/traffic-manager/traffic-manager-manage-endpoints#to-disable-an-endpoint)RG RG B. またはへのトラフィックをダイレクトに ATM を強制するには、Azure Traffic Manager プロファイルに A の PowerShell スクリプトを使用します。
+ユーザーが引き続きログインできるようにしながらフェールオーバーをテストするには:
+1. RG B 内のインフラストラクチャ VM と RDSH VM を起動します。
+2. SR パートナーシップの方向を切り替えます (cluster-b-s2d-c がソース ボリュームになります)。
+3. Azure Traffic Manager プロファイル内の RG A の[エンドポイントを無効にして](/azure/traffic-manager/traffic-manager-manage-endpoints#to-disable-an-endpoint)、RG B にトラフィックを誘導するように ATM を強制します。あるいは、PowerShell スクリプトを使用します。
 
    ```powershell
    Disable-AzureRmTrafficManagerEndpoint -Name publicIpA -Type AzureEndpoints -ProfileName MyTrafficManagerProfile -ResourceGroupName RGA -Force
    ```
 
-RG B がプライマリのアクティブなデプロイではようになりました。 プライマリ展開として RG A に切り替えるには
+これで、RG B がアクティブなプライマリ展開になりました。 プライマリ展開として RG A にもう一度切り替えるには:
 
-1. 記憶域レプリカのパートナーシップの方向を切り替える (クラスター、s2d c では、ソース ボリュームになります)。
+1. SR パートナーシップの方向を切り替えます (cluster-a-s2d-c がソース ボリュームになります)。
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-a-s2d-c" -SourceRGName "cluster-a-s2d-c" -DestinationComputerName "cluster-b-s2d-c" -DestinationRGName "cluster-b-s2d-c"
    ```
-2. Azure Traffic Manager プロファイルで RG A のエンドポイントを再度有効にするには。
+2. Azure Traffic Manager プロファイル内の RG A のエンドポイントを再度有効にするには:
 
    ```powershell
    Enable-AzureRmTrafficManagerEndpoint -Name publicIpA -Type AzureEndpoints -ProfileName MyTrafficManagerProfile -ResourceGroupName RGA 
    ```
 
-## <a name="considerations-for-on-premises-deployments"></a>オンプレミスの配置に関する考慮事項
+## <a name="considerations-for-on-premises-deployments"></a>オンプレミス展開に関する考慮事項
 
-オンプレミス デプロイでは、この記事で参照されている Azure クイック スタート テンプレートを使用できませんでした、インフラストラクチャのすべてのロールを手動で実装することができます。 場所コストは、Azure の消費量によって決まりますがない、オンプレミスのデプロイでは、アクティブ/アクティブ モデルを使用して、高速フェールオーバーを検討してください。
+オンプレミス展開では、この記事で参照されている Azure クイック スタート テンプレートを使用することはできませんが、すべてのインフラストラクチャ役割を手動で実装することはできます。 Azure の使用によってコストが左右されないオンプレミス展開では、フェールオーバーを高速化するためにアクティブ/アクティブ モデルの使用を検討してください。
 
-Azure Traffic Manager を使用するには、オンプレミスのエンドポイントを持つ Azure サブスクリプションが必要があります。 また、エンドユーザーに提供される dns から付与単にユーザーをプライマリ展開をリダイレクトする CNAME レコードをします。 フェールオーバーの場合は、セカンダリのデプロイにリダイレクトする DNS CNAME レコードを変更します。 この方法で、エンドユーザーと同じように Azure Traffic Manager で、適切な展開をユーザーに指示するに 1 つの URL を使用します。 
+オンプレミスのエンドポイントで Azure Traffic Manager を使用できますが、Azure サブスクリプションが必要です。 または、エンドユーザーに提供される DNS については、ユーザーを単純にプライマリ展開に誘導する CNAME レコードをエンドユーザーに提供します。 フェールオーバーの場合は、DNS CNAME レコードを変更して、セカンダリ展開にリダイレクトするようにしてください。 このようにして、エンドユーザーは、Azure Traffic Manager を使用するときと同じように、1 つの URL を使用してユーザーを適切な展開に誘導します。 
 
-オンプレミス-に-Azure のサイトでモデルを作成する場合は、使用を検討[Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview)します。
+on-premises-to-Azure-site モデルの作成に関心がある場合は、[Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview) の使用を検討してください。

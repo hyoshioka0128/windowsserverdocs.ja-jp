@@ -12,11 +12,11 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 8a19082121e2d859bc4694fd3f7332e9d0d0b3b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812263"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63687652"
 ---
 # <a name="powershell-on-nano-server"></a>Nano Server の PowerShell
 
@@ -29,8 +29,8 @@ ms.locfileid: "59812263"
   
 PowerShell は、バージョン 5.1 以降、機能セットとプラットフォーム互換性が異なるさまざまなエディションが提供されるようになりました。  
   
-- **デスクトップ エディション:**.NET Framework 上に構築され、スクリプトおよび Server Core などの Windows と Windows デスクトップの完全エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。  
-- **コア エディション:**.NET Core 上に構築され、スクリプトおよび Nano Server などの Windows や Windows IoT の縮小エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。  
+- **Desktop Edition:** .NET Framework 上に構築され、Windows の完全フットプリント エディション (Server Core、Windows Desktop など) で実行される PowerShell のバージョンをターゲットとするスクリプトおよびモジュールと互換性があります。  
+- **Core Edition:** .NET Core 上に構築され、Windows のフットプリントが小さいエディション (Nano Server、Windows IoT など) で実行される PowerShell のバージョンをターゲットとするスクリプトおよびモジュールと互換性があります。  
   
 PowerShell の実行中のエディションは、$PSVersionTable の PSEdition プロパティに表示されます。  
 ```powershell  
@@ -102,7 +102,7 @@ At line:1 char:1
 すべての Nano Server インストールには PowerShell Core が既定で含まれます。 PowerShell Core は、.NET Core に基づいて作成された PowerShell のフットプリントが小さいエディションであり、Windows のフットプリントが小さいエディション (Nano Server、Windows IoT Core など) で動作します。 PowerShell Core は、PowerShell の他のエディション (Windows Server 2016 で実行される Windows PowerShell など) と同じように動作します。 ただし、Nano Server のフットプリントが小さいため、Nano Server 上の PowerShell Core では、Windows Server 2016 の PowerShell 機能のうち、使用できない機能があります。  
   
   
-**Windows PowerShell の機能は Nano Server では使用できません。**  
+**Nano Server で使用できない Windows PowerShell の機能**  
 * ADSI、ADO、および WMI の型アダプター   
 * Enable-PSRemoting、Disable-PSRemoting (PowerShell リモート処理は既定で有効になります。「[Install Nano Server](Getting-Started-with-Nano-Server.md)」 (Nano Server のインストール) の「Windows PowerShell リモート処理を使用する」を参照してください)。  
 * スケジュールされたジョブと PSScheduledJob モジュール   
@@ -123,7 +123,7 @@ At line:1 char:1
 * PowerShell ワークフローのインフラストラクチャ、モジュール、およびコマンドレット   
 * Out-Printer   
 * Update-List   
-* WMI v1 コマンドレット:Get-wmiobject、Invoke-wmimethod、Register-wmievent、Remove-wmiobject、Set-wmiinstance (代わりに CimCmdlets モジュール)   
+* WMI v1 コマンドレット:Get-WmiObject、Invoke-WmiMethod、Register-WmiEvent、Remove-WmiObject、Set-WmiInstance (代わりに、CimCmdlets モジュールを使用します)   
   
 ## <a name="using-windows-powershell-desired-state-configuration-with-nano-server"></a>Nano Server に対して Windows PowerShell Desired State Configuration を使用する  
   

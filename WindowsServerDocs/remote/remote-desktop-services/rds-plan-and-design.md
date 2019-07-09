@@ -1,6 +1,6 @@
 ---
-title: RDS での実行と調整
-description: RD、展開を設計するのに役立つ計画情報。
+title: RDS - 実行と調整
+description: RD の展開を設計するのに役立つ計画に関する情報。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,27 +14,27 @@ ms.assetid: 047b08be-7f91-4194-a641-5b6941b92515
 author: spatnaik
 manager: scottman
 ms.openlocfilehash: 534fbef473c2627f65189c6f3dfcc9a89200f289
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815733"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743491"
 ---
-# <a name="plan-and-design-your-remote-desktop-services-environment"></a>計画し、リモート デスクトップ サービス環境の設計
+# <a name="plan-and-design-your-remote-desktop-services-environment"></a>リモート デスクトップ サービス環境の計画と設計
 
-リモート デスクトップの拡張性の高い展開では、特定のパターンとプラクティスの使用が必要です。
-最適なパフォーマンスとスケール アウトの設計が重要です。 以下のシナリオを使用して、構想、設計、および継続的に、デプロイを調整できます。
+拡張性の高いリモート デスクトップを展開するには、特定のパターンとプラクティスを使用する必要があります。
+最適なパフォーマンスとスケール アウトのための設計が鍵となります。 以下に示すシナリオを利用して、構想、設計、および継続的な展開の調整に役立ててください。
 
-計画および展開を設計には、次の情報を使用します。
+以下の情報を利用して展開の計画と設計を行います。
 
-- [任意の場所をビルドします。](rds-plan-build-anywhere.md)
+- [任意の場所での構築](rds-plan-build-anywhere.md)
 - [さまざまな種類のユーザーの要求を満たす](rds-plan-cater-to-users.md)
 - [どこからでもアクセス](rds-plan-access-from-anywhere.md)
 - [高可用性](rds-plan-high-availability.md)
 - [多要素認証](rds-plan-mfa.md)
 - [セキュリティで保護されたデータ ストレージ](rds-plan-secure-data-storage.md)
-- [ハイエンドなグラフィックスのレンダリングを有効にします。](rds-graphics-virtualization.md)
-- [任意のデバイスからの接続します。](rds-plan-connect-from-any-device.md)
-- [支払方法の選択します。](rds-plan-choose-how-you-pay.md)
+- [ハイエンド グラフィックス レンダリングの有効化](rds-graphics-virtualization.md)
+- [任意のデバイスからの接続](rds-plan-connect-from-any-device.md)
+- [支払方法の選択](rds-plan-choose-how-you-pay.md)
 
-必ず確認しても、[デスクトップ ホスティング参照アーキテクチャ](desktop-hosting-reference-architecture.md)、リモート デスクトップのアーキテクチャの概要し、Azure インフラストラクチャを含むハイブリッド RDS 環境を計画するのに役立ちます。
+[デスクトップ ホスティングの参照アーキテクチャ](desktop-hosting-reference-architecture.md)についても必ずレビューしてください。そこではリモート デスクトップのアーキテクチャの概要が示されていて、Azure インフラストラクチャを含むハイブリッド RDS 環境を計画するのに役立ちます。
