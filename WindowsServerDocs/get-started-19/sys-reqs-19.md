@@ -1,6 +1,6 @@
 ---
-title: Windows Server 2019 システム要件
-description: Windows Server 2019 のクリーン インストールでの記憶域、CPU、ネットワーク、メモリ、RAM の最小要件です。
+title: Windows Server 2019 のシステム要件
+description: Windows Server 2019 のクリーン インストールでの記憶域、CPU、ネットワーク、メモリ、RAM の最小要件。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,21 +14,21 @@ ms.author: coreyp
 manager: jasgroce
 ms.localizationpriority: medium
 ms.openlocfilehash: d97ec0efee86165f82bdf99a316d24d9c39ec958
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810718"
 ---
 # <a name="system-requirements"></a>システム要件
 
 >適用先:Windows Server 2019 
 
-このトピックの「Windows Server を実行する最小システム要件の概要&reg;2019 します。
+このトピックでは、Windows Server&reg; 2019 を実行するための最小システム要件の概要を説明します。
 
 ## <a name="review-system-requirements"></a>システム要件を確認する。  
 
-Windows Server 2019 のシステム要件を次に示します。 使用しているコンピューターが "最小" 要件を満たしていない場合は、この製品を正しくインストールすることはできません。 実際の要件は、システム構成やインストールするアプリケーションおよび機能によって異なります。
+以下に示されているのは、Windows Server 2019 の概算システム要件です。 使用しているコンピューターが "最小" 要件を満たしていない場合は、この製品を正しくインストールすることはできません。 実際の要件は、システム構成やインストールするアプリケーションおよび機能によって異なります。
 
 特に指定がない限り、これらの最小システム要件はすべてのインストール オプション (Server Core、デスクトップ エクスペリエンス搭載サーバー、および Nano Server) および Standard Edition と Datacenter Edition の両方に適用されます。  
 
@@ -46,14 +46,14 @@ Windows Server 2019 のシステム要件を次に示します。 使用して�
 - CMPXCHG16b、LAHF/SAHF、および PrefetchW のサポート  
 - 第 2 レベルのアドレス変換 (EPT または NPT) のサポート  
 
-[Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx)は、CPU がこれらの機能の確認に使用できるツールです。
+[Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx) は、お使いの CPU が備えている機能を確認するために使用できるツールです。
 
 ## <a name="ram"></a>RAM  
-この製品で推定される RAM の要件を次に示します。  
+この製品で予想される RAM の要件を次に示します。  
 
 **最小**:  
 - 512 MB (デスクトップ エクスペリエンス搭載サーバー インストール オプションを使用したサーバーの場合、2 GB)
-- ECC (エラーを修正するコード) 型または物理ホストの展開用の同様のテクノロジ
+- ECC (誤り訂正符号) 型または同様のテクノロジ (物理的なホストの展開の場合)
 
 > [!IMPORTANT]  
 > サポートされる最小のハードウェア パラメーター (1 プロセッサ コアと 512 MB RAM) で仮想マシンを作成し、このリリースを仮想マシンにインストールしようとすると、セットアップが失敗します。  
@@ -64,14 +64,14 @@ Windows Server 2019 のシステム要件を次に示します。 使用して�
 > -   Shift + F10 キーを押して仮想マシン上のこのリリースのブート プロセスを中断します。 開いたコマンド プロンプトで、Diskpart.exe を使用してインストール パーティションを作成してフォーマットします。 **Wpeutil createpagefile /path=C:\pf.sys** を実行します (作成したインストール パーティションを C: とする)。 コマンド プロンプトを閉じ、セットアップを続行します。  
 
 ## <a name="storage-controller-and-disk-space-requirements"></a>記憶域コントローラーとディスク領域の要件  
-Windows Server 2019 を実行しているコンピューターでは、PCI Express アーキテクチャの仕様に準拠している記憶域アダプターを含める必要があります。 ハード ディスク ドライブとして分類されるサーバー上の永続的な記憶装置は、PATA であってはなりません。 Windows Server 2019 ブート、ページ、またはデータ ドライブに ATA、PATA、IDE/EIDE ができませんでした。  
+Windows Server 2019 を実行するコンピューターでは、PCI Express アーキテクチャの仕様に準拠している記憶域アダプターを搭載する必要があります。 ハード ディスク ドライブとして分類されるサーバー上の永続的な記憶装置は、PATA であってはなりません。 Windows Server 2019 では、ブート ドライブ、ページ ドライブ、またはデータ ドライブに ATA、PATA、IDE、EIDE は使用できません。  
 
-システム **パ** ーティションで必要と予想される、最小のディスク領域の要件は次のとおりです  。  
+システム パーティションで必要と予想される、**最小**のディスク領域の要件は次のとおりです。  
 
 **最小**:32 GB  
 
 > [!NOTE]
-> 32 GB は、正常にインストールするための*最小*値であることに注意してください。 この最小値を使用して、Web サービス (IIS) サーバーの役割の Server Core モードで Windows Server 2019 をインストールする必要がありますできます。 Server Core モードのサーバーは、フル インストール モードの同じサーバーより約 4 GB 小さくなります。 
+> 32 GB は、正常にインストールするための*最小*値であることに注意してください。 この最小値では、Windows Server 2019 を Server Core モードでインストールし、Web サービス (IIS) のサーバー ロールを構成できます。 Server Core モードのサーバーは、フル インストール モードの同じサーバーより約 4 GB 小さくなります。 
 > 
 > 次のいずれかの状況に対して、追加のディスク領域がシステム パーティションに必要になります。  
 > 
@@ -88,7 +88,7 @@ Windows Server 2019 を実行しているコンピューターでは、PCI Expre
 
 ネットワーク デバッグ (KDNet) をサポートするネットワーク アダプターは有用ですが、最小要件ではありません。   
 
-サポートするブート前実行環境 (PXE) が便利な場合は、ネットワーク アダプターが最小要件ではありません。
+プリブート実行環境 (PXE) をサポートするネットワーク アダプターは有用ですが、最小要件ではありません。
 
 ## <a name="other-requirements"></a>その他の要件  
 このリリースを実行するコンピューターには、次のものも必要です。  

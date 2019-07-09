@@ -1,50 +1,50 @@
 ---
-title: Windows Admin Center に関連する管理ソリューション
-description: Windows Admin Center のと比較すると、他の Microsoft の監視と管理のソリューション/製品 (プロジェクト ホノルル) を補完するもの
+title: Windows Admin Center 関連の管理ソリューション
+description: Windows Admin Center が他の Microsoft 監視および管理ソリューション/製品 (Project Honolulu) とどのように比肩し補完するか
 ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 385a066cb828f58d698c2ca47e0553e996a77733
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f7bf0e32b1156fe361c79ac4ccd0e3536df767e2
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847323"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63742125"
 ---
 # <a name="windows-admin-center-and-related-management-solutions-from-microsoft"></a>Windows Admin Center と Microsoft の関連する管理ソリューション
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
-[Windows Admin Center](windows-admin-center.md)管理ツールを使用したリモート デスクトップ (RDP) は、トラブルシューティングまたは構成サーバーに接続する場合は、従来のボックスでサーバーの進化します。 その他の既存の Microsoft 管理ソリューションです。 を置き換えるためのものがありません。はなく以下に示すように、これらのソリューションを補完します。
+[Windows Admin Center](windows-admin-center.md) は、従来のインボックス サーバー管理ツールを進化させたもので、トラブルシューティングまたは構成のためにリモート デスクトップ (RDP) を使用してサーバーに接続した可能性のある状況に対するものです。 これは、その他の既存の Microsoft 管理ソリューションを置き換えるものではなく、むしろ、以下に説明するように、これらのソリューションを補完するものです。
 
 ## <a name="remote-server-administration-tools-rsat"></a>リモート サーバー管理ツール (RSAT)
 
-[リモート サーバー管理ツール (RSAT)](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools)は省略可能な役割と Windows Server の機能を管理する GUI ツールと PowerShell のツールのコレクションです。 RSAT では、Windows Admin Center でない多くの機能があります。 います可能性があります、最もよく使用されるツールの一部 RSAT で Windows Admin Center を将来に追加します。 任意の新しい Windows サーバーの役割または機能の管理 GUI を必要とするは、Windows Admin Center になります。
+[リモート サーバー管理ツール (RSAT)](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools) は、Windows Server のオプションのロールや機能を管理する GUI および PowerShell ツールをまとめたものです。 RSAT には、Windows Admin Center にはない多くの機能があります。 今後、RSAT でよく使用されているツールのいくつかが、Windows Admin Center に追加されるかもしれません。 管理に GUI を必要とする 新しい Windows サーバーのロールまたは機能はすべて、Windows Admin Center にあります。
 
 ## <a name="intune"></a>Intune
 
-[Intune](https://www.microsoft.com/cloud-platform/microsoft-intune)はクラウド ベースのエンタープライズ モビリティ管理サービス、一連のポリシーに基づいて、iOS、Android、Windows、および macOS デバイスを管理することができます。 Intune は、従業員のアクセスし、情報を共有を制御することで会社の情報をセキュリティで保護できるようにすることについて説明します。 これに対し、Windows Admin Center では、ポリシー主導ではありませんが、WinRM 経由でリモートの PowerShell および WMI を使用して Windows 10 および Windows Server のシステムの臨機応変に管理を有効します。
+[Intune](https://www.microsoft.com/cloud-platform/microsoft-intune) は、一連のポリシーに基づいて、iOS、Android、Windows、および macOS デバイスを管理できる、クラウド ベースのエンタープライズ モビリティ管理サービスです。 Intune は、従業員が情報にアクセスして共有する方法を制御することにより、会社の情報をセキュリティで保護できるようにすることを重視しています。 対照的に、Windows Admin Center はポリシー主導ではありませんが、PowerShell および WMI over WinRM を使用して、Windows 10 と Windows Server システムのアドホック管理を有効にします。
 
 ## <a name="azure-stack"></a>Azure Stack
 
-[Azure Stack](https://azure.microsoft.com/overview/azure-stack/)は、データ センターから Azure サービスを提供することができます、ハイブリッド クラウド プラットフォームです。 Azure Stack は、PowerShell またはアクセスし、従来の Azure サービスを管理するために使用する従来の Azure portal に類似した管理者ポータルを使用して管理されます。 Windows Admin Center は、Azure Stack インフラストラクチャの管理を目的として、クエリを使用することができますが、 [Azure IaaS 仮想マシンの管理](../configure/manage-azure-vms.md)(Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行している) やトラブルシューティングを行うAzure Stack 環境にデプロイされている個々 の物理サーバー。
+[Azure Stack](https://azure.microsoft.com/overview/azure-stack/) は、データ センターから Azure サービスを提供できるようにするハイブリッド クラウド プラットフォームです。 Azure Stack は、PowerShell または管理者ポータルを使用して管理されます。このポータルは、従来の Azure サービスにアクセスして管理するために使用される従来の Azure portal に類似しています。 Windows Admin Center は Azure Stack インフラストラクチャを管理するように意図されていませんが、これを使用して、(Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行している) [Azure IaaS 仮想マシンを管理](../azure/manage-azure-vms.md)したり、Azure Stack 環境に展開されている個々 の物理サーバーをトラブルシューティングしたりできます。
 
 ## <a name="system-center"></a>System Center
 
-[System Center](https://www.microsoft.com/cloud-platform/system-center)の展開、構成、管理、データ センター全体の監視、オンプレミス データ センター管理ソリューションです。 System Center では、Windows Admin Center では、特定のサーバーを管理またはより詳細なツールを使用してトラブルシューティングにドリル ダウンできます。 は、環境内のすべてのシステムのステータスを確認できます。
+[System Center](https://www.microsoft.com/cloud-platform/system-center) は、データ センター全体の展開、構成、管理、監視を行うためのオンプレミスのデータ センター管理ソリューションです。 System Center では環境内のすべてのシステムのステータスを確認できますが、Windows Admin Center では、特定のサーバーにドリル ダウンして、より詳細なツールで管理またはトラブルシューティングすることができます。
 
 | Windows Admin Center                 | System Center                      |
 |--------------------------------------|------------------------------------|
-| **一新「ボックス」プラットフォームとツール** | **データ センター管理と監視** |
-| Windows Server ライセンス – に含まれる**追加コストなし**MMC とその他の従来のインボックス ツールと同様に、 | **包括的な**さらなる価値を環境やプラットフォーム間でのソリューションのスイート |
-| **ライトウェイト**、Windows Server のインスタンスのブラウザー ベースのリモート管理**任意の場所**RDP に代わる; | 管理し、監視**異種**システム**大規模**(HYPER-V、VMware、Linux など) |
-|**ディープ**1 台のサーバーと単一のクラスターのドリルダウンのトラブルシューティング、構成とメンテナンス|インフラストラクチャを提供できます。自動化やセルフ サービスです。 インフラストラクチャとワークロードの監視**幅**|
-|管理に最適化された**個々**2. ~ 4. ノード**HCI**クラスターでは、HYPER-V、記憶域スペース ダイレクトと SDN を統合します。|展開 (&)、HYPER-V を管理、Windows Server クラスター**データ センターのスケール**から**ベア メタル**SCVMM と|
-|**HCI の監視**のみで、クラスターの正常性サービスは履歴を格納します。 1 番目と 3 番目のパーティの拡張可能なプラットフォーム**管理ツールの拡張機能**|**拡張可能な** & **拡張性の高い監視**scom で、アラート、通知、監視、サード パーティ製のワークロードのプラットフォーム履歴用の SQL|
-|最も簡単な仲介役を**ハイブリッド**; オンボードのさまざまなデータ保護、レプリケーション、更新プログラムおよび Azure サービスを使用して、|**組み込み**データ保護、レプリケーション、更新プログラム (DPM/VMM/SCCM)。 Log Analytics と Service Map とハイブリッド統合|
-|**プラットフォーム機能が点灯**の Windows Server:記憶域サービスの移行、記憶域レプリカでは、システム Insights など。|**追加のプラットフォーム**:Orchestrator または SMA の自動化します。SCSM & その他のサービス管理ツールとの統合|
+| **一新された "インボックス" プラットフォームおよびツール** | **データセンターの管理および監視** |
+| Windows Server ライセンスに付属 – **追加コストなし**、MMC やその他の従来のインボックス ツールと同様 | 環境およびプラットフォームにわたる追加の値に対するソリューションの**包括的**なスイート |
+| **軽量**、Windows Server インスタンスのブラウザー ベースのリモート管理、**任意の場所**; RDP の代替 | Hyper-V、VMware、Linux など**大規模**な**異種**システムを管理および監視 |
+|トラブルシューティング、構成、およびメンテナンスに対する**ディープ**な単一サーバーおよび単一クラスターのドリルダウン|インフラストラクチャ プロビジョニング; 自動化およびセルフ サービス; インフラストラクチャおよびワークロードの監視**幅**|
+|Hyper-V、記憶域スペース ダイレクト、および SDN を統合した、**個別**の 2 から 4 のノード **HCI** クラスターの最適化された管理|SCVMM を使用して**ベア メタル**から**データ センター規模**で Hyper-V、Windows Server クラスターを展開および管理|
+|**HCI で監視**のみ; クラスター正常性サービスは履歴を格納します。 1 番目と 3 番目のパーティ**管理ツール拡張機能**の拡張可能なプラットフォーム|アラート、通知、サード パーティ製負荷監視を備えた SCOM での**拡張可能** & **スケーラブルな監視**プラットフォーム; 履歴用 SQL|
+|**ハイブリッド**への最も簡単なブリッジ; オンボードであり、データ保護、レプリケーション、更新プログラムなどにさまざまな Azure サービスを使用|**組み込み**データ保護、レプリケーション、更新プログラム (DPM/VMM/SCCM)。 Log Analytics および Service Map とのハイブリッド統合|
+|Storage Migration Service、Storage Replica、System Insights などの、Windows Server の**プラットフォーム機能に焦点を当てます**。|**追加のプラットフォーム**:Orchestrator/SMA での自動化。SCSM およびその他のサービス管理ツールとの統合|
 
-#### <a name="each-delivers-targeted-value-independently-better-together-with-complementary-capabilities"></a>対象の値を個別に送信各**相乗効果**補完的な機能を使用します。
+#### <a name="each-delivers-targeted-value-independently-better-together-with-complementary-capabilities"></a>それぞれは独立して目標値を提供します; 補完機能と**一緒に使用するとより適切**です。

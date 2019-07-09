@@ -1,6 +1,6 @@
 ---
 title: ユーザー用にリモート デスクトップ Web クライアントをセットアップする
-description: リモート デスクトップ web クライアントを管理者を設定する方法について説明します。
+description: 管理者がどのようにしてリモート デスクトップ Web クライアントをセットアップできるかについて説明します。
 ms.prod: windows-server-threshold
 ms.technology: remote-desktop-services
 ms.author: helohr
@@ -9,271 +9,271 @@ ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
 ms.openlocfilehash: 45164e9eca0873c82148aa3b7baa179a3f626dd7
-ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66804975"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>ユーザー用にリモート デスクトップ Web クライアントをセットアップする
 
-リモート デスクトップ web クライアントでは、互換性のある web ブラウザーを通じて、組織のリモート デスクトップのインフラストラクチャにアクセスできます。 リモート アプリやデスクトップのどこからでもローカル PC と同じように操作したりすることがあります。 リモート デスクトップ web クライアントを設定すると、ユーザーが開始に必要なすべての URL です、自分の資格情報、およびサポートされている web ブラウザーをクライアントにアクセスできます。
+リモート デスクトップ Web クライアントにより、ユーザーは互換性のある Web ブラウザーを通して、組織のリモート デスクトップ インフラストラクチャにアクセスできます。 どこにいても、ローカル PC 使用時のようにリモート アプリやデスクトップを操作できるようになります。 リモート デスクトップ Web クライアントをセットアップしたら、ユーザーが利用し始めるために必要なのは、クライアント、自分の資格情報、およびサポートされている Web ブラウザーにアクセスできる URL だけです。
 
 >[!IMPORTANT]
->Web クライアントはサポートされていない Azure アプリケーション プロキシを使用して、Web アプリケーション プロキシがまったくサポートされません。 参照してください[アプリケーション プロキシ サービスを使用して RDS](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services)詳細についてはします。
+>Web クライアントは現在、Azure アプリケーション プロキシの使用をサポートしておらず、Web アプリケーション プロキシはまったくサポートされません。 詳細については、[アプリケーション プロキシ サービスと共に RDS を使用すること](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services)に関するページを参照してください。
 
-## <a name="what-youll-need-to-set-up-the-web-client"></a>Web クライアントを設定する必要があります内容
+## <a name="what-youll-need-to-set-up-the-web-client"></a>Web クライアントをセットアップするために必要なこと
 
-始める前に、次の点を考慮してください。
+開始する前に、以下のことに留意してください。
 
-* 確認、[リモート デスクトップの展開](../rds-deploy-infrastructure.md)RD ゲートウェイ、RD 接続ブローカー、および Windows Server 2016 または 2019 で実行されている RD Web アクセスを持ちます。
-* 配置が構成されていることを確認します[ユーザーごとのクライアント アクセス ライセンス](../rds-client-access-license.md)(Cal)、デバイスごとではなくそれ以外の場合すべてのライセンスが消費されることです。
-* インストール、 [Windows 10 KB4025334 update](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334) RD ゲートウェイ。 後で累積的更新プログラムには、このサポート技術情報が含まれます既に可能性があります。
-* RD ゲートウェイ、RD Web アクセスの役割のパブリックの信頼された証明書が構成されていることを確認します。
-* ユーザーが接続するすべてのコンピューターが実行されている次の OS バージョンのいずれかを確認します。
+* [リモート デスクトップの展開](../rds-deploy-infrastructure.md)に、RD ゲートウェイ、RD 接続ブローカー、Windows Server 2016 または 2019 で実行されている RD Web アクセスが含まれることを確認します。
+* デバイスごとではなく、[ユーザーごとのクライアント アクセス ライセンス](../rds-client-access-license.md) (CAL) で配置が構成されていることを確認します。そうでないと、すべてのライセンスが消費されます。
+* RD ゲートウェイに [Windows 10 の KB4025334 更新プログラム](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334)をインストールします。 後の累積的な更新プログラムに、この KB が含まれている可能性があります。
+* RD ゲートウェイの役割と RD Web アクセスの役割のために信頼できるパブリック証明書が構成されていることを確認します。
+* ユーザーが接続するどのコンピューターでも、以下の OS バージョンのいずれかが実行されていることを確認します。
   * Windows 10
-  * Windows Server 2008 r2 またはそれ以降
+  * Windows Server 2008R2 以降
 
-Windows Server 2016 (またはそれ以降)、パフォーマンスが接続して Windows 10 (バージョン 1611 またはそれ以降) の向上、ユーザーが表示されます。
+ユーザーは Windows Server 2016 (またはそれ以降) や Windows 10 (バージョン 1611 またはそれ以降) への接続ではパフォーマンスがより高いことに気付きます。
 
 >[!IMPORTANT]
->プレビュー期間中に、web クライアントを使用して 1.0.0 より前のバージョンがインストールされている場合は、新しいバージョンに移行する前に、古いクライアントをアンインストールする必要があります。 「Web クライアントは、RDWebClientManagement の以前のバージョンがインストールされ、新しいバージョンを展開する前に削除する必要があります」というエラーが発生した場合は、次の手順に従います。
+>プレビュー期間中に Web クライアントを使用し、1.0.0 より前のバージョンをインストールした場合は、まず古いクライアントをアンインストールしてから新しいバージョンに移行する必要があります。 "The web client was installed using an older version of RDWebClientManagement and must first be removed before deploying the new version" (古いバージョンの RDWebClientManagement を使用して Web クライアントがインストールされたため、まずそれを削除してから新しいバージョンを展開する必要があります) というエラーが発生した場合は、次の手順に従います。
 >
->1. 管理者特権で PowerShell プロンプトを開きます。
->2. 実行**Uninstall-module RDWebClientManagement**新しいモジュールをアンインストールします。
->3. 管理者特権で PowerShell プロンプトを閉じてから。
->4. 実行**Install-module RDWebClientManagement RequiredVersion\<以前のバージョン > 古いモジュールをインストールします。**
->5. 実行**アンインストール RDWebClient**古い web クライアントをアンインストールします。
->6. 実行**Uninstall-module RDWebClientManagement**古いモジュールをアンインストールします。
->7. 管理者特権で PowerShell プロンプトを閉じてから。
->8. 次のように、通常のインストールの手順に進みます。
+>1. 管理者特権の PowerShell プロンプトを開きます。
+>2. **Uninstall-Module RDWebClientManagement** を実行して新しいモジュールをアンインストールします。
+>3. PowerShell プロンプトを閉じ、管理者特権で再度開きます。
+>4. **Install-Module RDWebClientManagement -RequiredVersion \<古いバージョン> を実行して古いモジュールをインストールします。**
+>5. **Uninstall-RDWebClient** を実行して古い Web クライアントをアンインストールします。
+>6. **Uninstall-Module RDWebClientManagement** を実行して古いモジュールをアンインストールします。
+>7. PowerShell プロンプトを閉じ、管理者特権で再度開きます。
+>8. 以下のように通常のインストールの手順に進みます。
 
-## <a name="how-to-publish-the-remote-desktop-web-client"></a>リモート デスクトップ web クライアントを発行する方法
+## <a name="how-to-publish-the-remote-desktop-web-client"></a>リモート デスクトップ Web クライアントを発行する方法
 
-最初に、web クライアントをインストールするには、次の次の手順を実行します。
+初めて Web クライアントをインストールするには、以下の次の手順に従います。
 
-1. RD 接続ブローカー サーバーでリモート デスクトップ接続を使用する証明書を取得し、.cer ファイルとしてエクスポートします。 RD Web ロールを実行するサーバーに RD 接続ブローカーから .cer ファイルをコピーします。
-2. RD Web アクセス サーバーでは、管理者特権の PowerShell プロンプトを開きます。
-3. 、Windows Server 2016 では、受信トレイのバージョンが web クライアントの管理モジュールのインストールをサポートしていないため、powershellget を更新します。 PowerShellGet を更新するには、次のコマンドレットを実行します。
+1. RD 接続ブローカー サーバーで、リモート デスクトップ接続に使用する証明書を取得し、.cer ファイルとしてエクスポートします。 RD 接続ブローカーから、RD Web の役割を実行するサーバーに .cer ファイルをコピーします。
+2. RD Web アクセス サーバーで、管理者特権の PowerShell プロンプトを開きます。
+3. Windows Server 2016 では、受信トレイのバージョンが Web クライアント管理モジュールのインストールをサポートしていないため、PowerShellGet モジュールを更新します。 PowerShellGet を更新するには、次のコマンドレットを実行します。
     ```PowerShell
     Install-Module -Name PowerShellGet -Force
     ```
 
     >[!IMPORTANT]
-    >更新プログラムが有効で、モジュールが動作しない可能性があります、それ以外の場合になる前に、PowerShell を再起動する必要があります。
+    >更新プログラムを有効にするには、PowerShell を再起動する必要があります。そうしないと、モジュールが動作しない可能性があります。
 
-4. このコマンドレットで PowerShell ギャラリーからのリモート デスクトップ web クライアントの管理 PowerShell モジュールをインストールします。
+4. 次のコマンドレットで、リモート デスクトップの Web クライアント管理 PowerShell モジュールを PowerShell ギャラリーからインストールします。
     ```PowerShell
     Install-Module -Name RDWebClientManagement
     ```
 
-5. その後、リモート デスクトップ web クライアントの最新バージョンをダウンロードする、次のコマンドレットを実行します。
+5. その後、次のコマンドレットを実行し、最新バージョンのリモート デスクトップ Web クライアントをダウンロードします。
     ```PowerShell
     Install-RDWebClientPackage
     ```
 
-6. 次に、RD ブローカーからコピーした .cer ファイルのパスに置き換え、かっこで囲まれた値でこのコマンドレットを実行します。
+6. 次に、かっこに囲まれた値を、RD ブローカーからコピーした .cer ファイルのパスに置き換えて、このコマンドレットを実行します。
     ```PowerShell
     Import-RDWebClientBrokerCert <.cer file path>
     ```
 
-7. 最後に、リモート デスクトップの web クライアントに発行するには、このコマンドレットを実行します。
+7. 最後に、このコマンドレットを実行してリモート デスクトップ Web クライアントを発行します。
     ```PowerShell
     Publish-RDWebClientPackage -Type Production -Latest
     ```
-    Web クライアントの URL で web クライアントは、サーバー名として書式設定にアクセスできるように<https://server_FQDN/RDWeb/webclient/index.html>します。 RD Web アクセスに URL (通常、サーバーの FQDN) でのパブリック証明書に一致するサーバー名を使用する必要があります。
+    <https://server_FQDN/RDWeb/webclient/index.html> の形式でサーバー名を指定して、Web クライアント URL にある Web クライアントにアクセスできることを確認します。 URL (通常はサーバーの FQDN) 内の RD Web アクセスのパブリック証明書に一致するサーバー名を使用することが重要です。
 
     >[!NOTE]
-    >実行するときに、**発行 RDWebClientPackage**コマンドレット、する可能性がありますを参照してください、という警告が表示されたデバイス単位 Cal がサポートされていない場合でも、ユーザー単位 cal、配置が構成されています。 デプロイには、ユーザー単位 Cal が使用されている場合は、この警告を無視できます。 構成の制限のことを知っているかどうかを確認することが表示されます。
-8. Web クライアントにアクセスするユーザーの準備ができたら、送信するだけです、作成した web クライアントの URL。
+    >**Publish-RDWebClientPackage** コマンドレットの実行時に、展開がユーザー単位の CAL に構成されている場合でも、デバイス単位の CAL はサポートされていないという警告が表示される可能性があります。 展開でユーザー単位の CAL を使用している場合は、この警告を無視できます。 これが表示されるのは、ユーザーが構成の制限について知っていることを確認するためです。
+8. ユーザーに Web クライアントにアクセスさせる準備ができたら、作成した Web クライアントの URL を送信します。
 
 >[!NOTE]
->RDWebClientManagement モジュールのサポートされているすべてのコマンドレットの一覧を表示するには、PowerShell で次のコマンドレットを実行します。
+>RDWebClientManagement モジュールでサポートされているすべてのコマンドレットの一覧を表示するには、PowerShell で次のコマンドレットを実行します。
 >```PowerShell
 >Get-Command -Module RDWebClientManagement
 >```
 
-## <a name="how-to-update-the-remote-desktop-web-client"></a>リモート デスクトップ web クライアントを更新する方法
+## <a name="how-to-update-the-remote-desktop-web-client"></a>リモート デスクトップ Web クライアントを更新する方法
 
-リモート デスクトップ web クライアントの新しいバージョンが利用できる場合は、新しいクライアントで展開を更新する次の手順に従います。
+新しいバージョンのリモート デスクトップ Web クライアントが利用できる場合は、以下の手順に従って、新しいクライアントで展開を更新します。
 
-1. RD Web アクセス サーバーで管理者特権の PowerShell プロンプトを開き、web クライアントの最新バージョンをダウンロードするのには、次のコマンドレットを実行します。
+1. RD Web アクセス サーバーで、管理者特権の PowerShell プロンプトを開き、次のコマンドレットを実行して、入手できる最新バージョンの Web クライアントをダウンロードします。
     ```PowerShell
     Install-RDWebClientPackage
     ```
 
-2. 必要に応じて、このコマンドレットを実行して、公式リリース前に、テスト用クライアントを発行できます。
+2. 必要に応じて、次のコマンドレットを実行して、公式リリース前にテスト用のクライアントを発行できます。
     ```PowerShell
     Publish-RDWebClientPackage -Type Test -Latest
     ```
 
-    クライアントは、web クライアントの URL に対応する URL のテストに表示する必要があります (たとえば、 <https://server_FQDN/RDWeb/webclient-test/index.html>)。
-3. 次のコマンドレットを実行してユーザー向けにクライアントを発行します。
+    クライアントは、Web クライアント URL (たとえば <https://server_FQDN/RDWeb/webclient-test/index.html>) に対応するテスト URL に表示される必要があります。
+3. 次のコマンドレットを実行して、ユーザーのためにクライアントを発行します。
     ```PowerShell
     Publish-RDWebClientPackage -Type Production -Latest
     ```
 
-    Web ページを再実行するときに、すべてのユーザー用のクライアントに置き換わります。
+    これで、ユーザーが Web ページを再度開くときに、すべてのユーザーのクライアントが置き換えられます。
 
-## <a name="how-to-uninstall-the-remote-desktop-web-client"></a>リモート デスクトップ web クライアントをアンインストールする方法
+## <a name="how-to-uninstall-the-remote-desktop-web-client"></a>リモート デスクトップ Web クライアントをアンインストールする方法
 
-Web クライアントのすべてのトレースを削除するには、次の手順を実行します。
+Web クライアントのすべてのトレースを削除するには、以下の手順に従います。
 
-1. RD Web アクセス サーバーでは、管理者特権の PowerShell プロンプトを開きます。
-2. テストと実稼働クライアントを非公開に、ローカル パッケージをアンインストールし、web クライアントの設定を削除します。
+1. RD Web アクセス サーバーで、管理者特権の PowerShell プロンプトを開きます。
+2. テストと運用クライアントの発行を解除し、すべてのローカル パッケージをアンインストールし、Web クライアントの設定を削除します。
 
    ```PowerShell
    Uninstall-RDWebClient
    ```
 
-3. リモート デスクトップ web クライアントの管理 PowerShell モジュールをアンインストールします。
+3. リモート デスクトップ Web クライアントの管理 PowerShell モジュールをアンインストールします。
 
    ```PowerShell
    Uninstall-Module -Name RDWebClientManagement
    ```
 
-## <a name="how-to-install-the-remote-desktop-web-client-without-an-internet-connection"></a>インターネットに接続せず、リモート デスクトップ web クライアントをインストールする方法
+## <a name="how-to-install-the-remote-desktop-web-client-without-an-internet-connection"></a>インターネット接続なしでリモート デスクトップ Web クライアントをインストールする方法
 
-Web クライアント、インターネット接続がない RD Web アクセス サーバーを展開する次の手順に従います。
-
-> [!NOTE]
-> インターネット接続が使用できるは、バージョン 1.0.1 以降でないインストール RDWebClientManagement PowerShell モジュールの。
+インターネット接続がない RD Web アクセス サーバーに Web クライアントを展開するには、以下の手順に従います。
 
 > [!NOTE]
-> オフライン サーバーに転送する前に、必要なファイルをダウンロードにインターネットにアクセスできる管理者 PC が必要です。
+> インターネット接続なしのインストールは、RDWebClientManagement PowerShell モジュールのバージョン 1.0.1 以上で使用できます。
 
 > [!NOTE]
-> エンドユーザーの PC では、ここでは、インターネット接続が必要です。 これは、完全なオフライン シナリオを提供するクライアントの将来のリリースで解決されます。
+> その場合でも、オフライン サーバーに転送する前に必要なファイルをダウンロードするために、インターネットにアクセスできる管理者 PC が必要です。
 
-### <a name="from-a-device-with-internet-access"></a>インターネットにアクセスできるデバイスから
+> [!NOTE]
+> 現在のところ、エンド ユーザーの PC にはインターネット接続が必要です。 これは、完全なオフライン シナリオを提供する将来のリリースのクライアントで対処されます。
+
+### <a name="from-a-device-with-internet-access"></a>インターネット アクセスのあるデバイスから
 
 1. PowerShell プロンプトを開きます。
 
-2. PowerShell ギャラリーから、リモート デスクトップ web クライアントの管理 PowerShell モジュールをインポートします。
+2. リモート デスクトップの Web クライアント管理 PowerShell モジュールを PowerShell ギャラリーからインポートします。
     ```PowerShell
     Import-Module -Name RDWebClientManagement
     ```
 
-3. 別のデバイスにインストールするためのリモート デスクトップ web クライアントの最新バージョンをダウンロードするには。
+3. 別のデバイスへのインストール用の、最新バージョンのリモート デスクトップ Web クライアントをダウンロードします。
     ```PowerShell
     Save-RDWebClientPackage "C:\WebClient\"
     ```
 
-4. RDWebClientManagement PowerShell モジュールの最新バージョンをダウンロードするには。
+4. 最新バージョンの RDWebClientManagement PowerShell モジュールをダウンロードします。
     ```PowerShell
     Find-Module -Name "RDWebClientManagement" -Repository "PSGallery" | Save-Module -Path "C:\WebClient\"
     ```
 
-5. 内容をコピー"C:\WebClient\" RD Web アクセス サーバーにします。
+5. "C:\WebClient\" の内容を RD Web アクセス サーバーにコピーします。
 
 ### <a name="from-the-rd-web-access-server"></a>RD Web アクセス サーバーから
 
-説明に従い[web のリモート デスクトップ クライアントを発行する方法](remote-desktop-web-client-admin.md#how-to-publish-the-remote-desktop-web-client)、手順 4. と 5. を次に置き換えます。
+「[リモート デスクトップ Web クライアントを発行する方法](remote-desktop-web-client-admin.md#how-to-publish-the-remote-desktop-web-client)」の説明に従い、手順 4. および 5. を以下に置き換えます。
 
-4. ローカル フォルダーから、リモート デスクトップ web クライアントの管理 PowerShell モジュールをインポートします。
+4. リモート デスクトップの Web クライアント管理 PowerShell モジュールをローカル フォルダーからインポートします。
     ```PowerShell
     Import-Module -Name "C:\WebClient\"
     ```
 
-5. ローカル フォルダー (適切な zip ファイルに置き換えてください) からリモート デスクトップ web クライアントの最新バージョンを展開するには。
+5. ローカル フォルダーから最新バージョンのリモート デスクトップ Web クライアントを展開します (適切な zip ファイルに置き換えてください)。
     ```PowerShell
     Install-RDWebClientPackage -Source "C:\WebClient\rdwebclient-1.0.1.zip"
     ```
 
-## <a name="connecting-to-rd-broker-without-rd-gateway-in-windows-server-2019"></a>Windows server 2019 RD ゲートウェイなし RD ブローカーへの接続
-このセクションでは、RD ブローカー、RD ゲートウェイの Windows Server 2019 せずへの web クライアント接続を有効にする方法について説明します。
+## <a name="connecting-to-rd-broker-without-rd-gateway-in-windows-server-2019"></a>Windows server 2019 の RD ゲートウェイのない RD ブローカーへの接続
+このセクションでは、Windows Server 2019 の RD ゲートウェイのない RD ブローカーへの Web クライアント接続を有効にする方法について説明します。
 
-### <a name="setting-up-the-rd-broker-server"></a>RD ブローカー サーバーを設定します。
+### <a name="setting-up-the-rd-broker-server"></a>RD ブローカー サーバーをセットアップする
 
-#### <a name="follow-these-steps-if-there-is-no-certificate-bound-to-the-rd-broker-server"></a>RD ブローカー サーバーにバインドされた証明書がない場合に次の手順に従ってください。
+#### <a name="follow-these-steps-if-there-is-no-certificate-bound-to-the-rd-broker-server"></a>RD ブローカー サーバーにバインドされた証明書がない場合は、以下の手順に従います。
 
-1. 開いている**サーバー マネージャー** > **リモート デスクトップ サービス**します。
+1. **[サーバー マネージャー]**  >  **[リモート デスクトップ サービス]** の順に開きます。
 
-2. **展開の概要**セクションで、**タスク**ドロップダウン メニュー。
+2. **[展開の概要]** セクションで、 **[タスク]** ドロップダウン メニューを選択します。
 
-3. 選択**展開のプロパティの編集**、というタイトルの新しいウィンドウ**配置プロパティ**が開きます。
+3. **[Edit Deployment Properties] (展開プロパティの編集)** を選択すると、 **[展開プロパティ]** というタイトルの新しいウィンドウが開きます。
 
-4. **配置プロパティ**ウィンドウで、**証明書**左側のメニュー。
+4. **[展開プロパティ]** ウィンドウで、左側のメニューの **[証明書]** を選択します。
 
-5. 証明書のレベルの一覧で選択**RD 接続ブローカー - 有効にするシングル サインオンの**します。 次の 2 つの方法があります。(1) を作成、新しい証明書または (2) 既存の証明書。
+5. [証明書レベル] の一覧で、 **[RD 接続ブローカー - シングル サインオンを有効にする]** を選択します。 2 つのオプションがあります。(1) 新しい証明書の作成、または (2) 既存の証明書です。
 
-#### <a name="follow-these-steps-if-there-is-a-certificate-previously-bound-to-the-rd-broker-server"></a>以前に RD ブローカー サーバーにバインドされた証明書がある場合これらの手順に従います
+#### <a name="follow-these-steps-if-there-is-a-certificate-previously-bound-to-the-rd-broker-server"></a>RD ブローカー サーバーに以前にバインドされた証明書がない場合は、以下の手順に従います。
 
-1. ブローカーとコピーにバインドされた証明書を open、**拇印**値。
+1. ブローカーにバインドされている証明書を開き、**拇印**値をコピーします。
 
-2. セキュリティで保護されたポート 3392 にこの証明書をバインドする管理者特権の PowerShell ウィンドウを開くし、次を実行コマンドを置き換える **"< thumbprint >"** 値を前の手順からコピーされます。
+2. この証明書をセキュリティで保護されたポート 3392 にバインドするには、管理者特権の PowerShell ウィンドウを開き、 **"< thumbprint >"** を、前の手順でコピーした値に置き換えます。
 
     ```PowerShell
     netsh http add sslcert ipport=0.0.0.0:3392 certhash="<thumbprint>" certstorename="Remote Desktop" appid="{00000000-0000-0000-0000-000000000000}"
     ```
 
     > [!NOTE]
-    > かどうか、証明書が正しくバインドされていることを確認するには、次のコマンドを実行します。
+    > 証明書が正しくバインドされたかどうかを確認するには、次のコマンドを実行します。
     >
     > ```PowerShell
     > netsh http show sslcert
     > ```
     >
-    > 、SSL 証明書のバインドの一覧でポート 3392 に正しい証明書がバインドされていることを確認します。
+    > [SSL 証明書のバインド] の一覧で、ポート 3392 に正しい証明書がバインドされていることを確認します。
 
-3. 開き、Windows レジストリ (regedit) を nagivate```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp```キーを検索および**WebSocketURI**します。 値を設定する必要があります <strong>https://+:3392/rdp/</strong>します。
+3. Windows レジストリ (regedit) を開き、```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` に移動して、キー **WebSocketURI** を見つけます。 値は <strong>https://+:3392/rdp/</strong> に設定されている必要があります。
 
-### <a name="setting-up-the-rd-session-host"></a>RD セッション ホストの設定
-RD セッション ホスト サーバーが RD ブローカー サーバーと異なる場合は、次の手順に従います。
+### <a name="setting-up-the-rd-session-host"></a>RD セッション ホストのセットアップ
+RD セッション ホスト サーバーが RD ブローカー サーバーとは異なる場合は、以下の手順に従います。
 
-1. RD セッション ホスト コンピューターの証明書を作成し、それを開き、コピー、**拇印**値。
+1. RD セッション ホスト コンピューターの証明書を作成し、それを開きいて**拇印**値をコピーします。
 
-2. セキュリティで保護されたポート 3392 にこの証明書をバインドする管理者特権の PowerShell ウィンドウを開くし、次を実行コマンドを置き換える **"< thumbprint >"** 値を前の手順からコピーされます。
+2. この証明書をセキュリティで保護されたポート 3392 にバインドするには、管理者特権の PowerShell ウィンドウを開き、 **"< thumbprint >"** を、前の手順でコピーした値に置き換えます。
 
     ```PowerShell
     netsh http add sslcert ipport=0.0.0.0:3392 certhash="<thumbprint>" appid="{00000000-0000-0000-0000-000000000000}"
     ```
 
     > [!NOTE]
-    > かどうか、証明書が正しくバインドされていることを確認するには、次のコマンドを実行します。
+    > 証明書が正しくバインドされたかどうかを確認するには、次のコマンドを実行します。
     >
     > ```PowerShell
     > netsh http show sslcert
     > ```
     >
-    > 、SSL 証明書のバインドの一覧でポート 3392 に正しい証明書がバインドされていることを確認します。
+    > [SSL 証明書のバインド] の一覧で、ポート 3392 に正しい証明書がバインドされていることを確認します。
 
-3. 開き、Windows レジストリ (regedit) を nagivate```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp```キーを検索および**WebSocketURI**します。 値を設定する必要があります<https://+:3392/rdp/>します。
+3. Windows レジストリ (regedit) を開き、```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` に移動して、キー **WebSocketURI** を見つけます。 値は <https://+:3392/rdp/> に設定されている必要があります。
 
-### <a name="general-observations"></a>一般的な所見
+### <a name="general-observations"></a>一般的情報
 
-* RD セッション ホスト、RD ブローカーの両方のサーバーが Windows Server 2019 を実行していることを確認します。
+* RD セッション ホストおよび RD ブローカーの両方のサーバーが Windows Server 2019 を実行していることを確認します。
 
-* そのパブリックでは、RD セッション ホスト、RD ブローカーの両方のサーバー証明書が構成された信頼されていることを確認します。
+* RD セッション ホストおよび RD ブローカーの両方のサーバーに対して、信頼できるパブリック証明書が構成されていることを確認します。
     > [!NOTE]
-    > RD セッション ホスト、RD ブローカー サーバーの両方に、同じコンピューターを共有している場合は、RD ブローカー サーバー証明書のみを設定します。 RD セッション ホスト、RD ブローカー サーバーは、さまざまなマシンを使用して、一意の証明書両方構成する必要があります。
+    > RD セッション ホストおよび RD ブローカーの両方のサーバーが同じコンピューターを共有している場合は、RD ブローカー サーバーの証明書のみを設定します。 RD セッション ホストおよび RD ブローカーのサーバーが異なるコンピューターを使用している場合は、両方が一意の証明書を使用して構成されている必要があります。
 
-* **サブジェクト代替名 (SAN)** にマシンの各証明書を設定する必要があります**完全修飾ドメイン名 (FQDN)** します。 **共通名 (CN)** 各証明書の SAN に一致する必要があります。
+* 各証明書の**サブジェクト代替名 (SAN)** は、コンピューターの**完全修飾ドメイン名 (FQDN)** に設定する必要があります。 **共通名 (CN)** が各証明書の SAN に一致している必要があります。
 
-## <a name="how-to-pre-configure-settings-for-remote-desktop-web-client-users"></a>Web クライアントのリモート デスクトップ ユーザーの設定を事前に構成する方法
-このセクションでは、PowerShell を使用して、リモート デスクトップ web クライアントの展開の設定を構成する方法を説明します。 これら PowerShell コマンドレットの制御の設定を変更するユーザーの機能は、組織のセキュリティに関する注意事項に基づくまたはワークフローを対象としています。 次の設定はすべてにある、**設定**web クライアントのサイド パネル。 
+## <a name="how-to-pre-configure-settings-for-remote-desktop-web-client-users"></a>リモート デスクトップ Web クライアント ユーザーの設定を事前に構成する方法
+このセクションでは、PowerShell を使用して、リモート デスクトップ Web クライアントの展開の設定を構成する方法を説明します。 これらの PowerShell コマンドレットは、組織のセキュリティ上の懸念や目的のワークフローに基づいて設定を変更するユーザーの能力を制御します。 以下の設定はすべて、Web クライアントの **[設定]** サイド パネルにあります。 
 
-### <a name="suppress-telemetry"></a>製品利用統計情報を表示しません。
-既定では、ユーザーを有効または Microsoft に送信されるテレメトリ データの収集を無効にできます。 Microsoft が収集テレメトリ データについてでリンクを使用して、プライバシーに関する声明を参照してください、**について**サイド パネル。
+### <a name="suppress-telemetry"></a>製品利用統計情報を抑制する
+既定では、ユーザーは Microsoft に送信される製品利用統計情報データの収集を有効または無効にできます。 Microsoft が収集する製品利用統計情報データについては、 **[バージョン情報]** サイド パネルのリンクからプライバシーに関する声明を参照してください。
 
-管理者は、次の PowerShell コマンドレットを使用して、デプロイのテレメトリの収集を抑制する選択できます。
+管理者は、次の PowerShell コマンドレットを使用して、展開での製品利用統計情報の収集を抑制できます。
 
    ```PowerShell
     Set-RDWebClientDeploymentSetting -SuppressTelemetry $true
    ```
 
-既定では、ユーザーを有効またはテレメトリを無効にする選択可能性があります。 ブール値 **$false**は、既定のクライアント動作と一致します。 ブール値 **$true**テレメトリを無効にし、テレメトリを有効にすると、ユーザーを制限します。
+既定では、製品利用統計情報を有効にするか無効にするかをユーザーが選択できます。 ブール値 **$false** は、既定のクライアント動作と一致します。 ブール値 **$true** は製品利用統計情報を無効にし、ユーザーがこれを有効にすることを制限します。
 
 ### <a name="remote-resource-launch-method"></a>リモート リソースの起動方法
-既定では、ユーザーは、ブラウザーで (1) または (2) コンピューターにインストールされている他のクライアントで処理するために、.rdp ファイルをダウンロードしてリモート リソースを起動する選択可能性があります。 管理者は、次の Powershell コマンドを使用して、デプロイ用のリモート リソースの起動方法を制限できます。
+既定では、ユーザーはリモート リソースの起動を、(1) ブラウザーで行うか、(2) .rdp ファイルをダウンロードし、コンピューターにインストールされている他のクライアントで処理するかを選択できます。 管理者は、以下の PowerShell コマンドを使用して、展開でのリモート リソースの起動方法を制限できます。
 
    ```PowerShell
     Set-RDWebClientDeploymentSetting -LaunchResourceInBrowser ($true|$false)
    ```
- 既定では、ユーザーは、いずれかの起動方法を選択できます。 ブール値 **$true**ユーザーは、ブラウザー内のリソースを起動します。 ブール値 **$false**により、ユーザーをローカルにインストールされた RDP クライアントで処理するために、.rdp ファイルをダウンロードすることによってリソースを起動します。
+ 既定では、ユーザーは、いずれかの起動方法を選択できます。 ブール値 **$true** では、ユーザーはブラウザー内でリソースを起動します。 ブール値 **$false** では、.rdp ファイルをダウンロードし、ローカルにインストールされた RDP クライアントで処理することで、リソースを起動します。
 
-### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>既定値に RDWebClientDeploymentSetting 構成をリセットします。
-すべての配置レベルの web クライアント設定を既定の構成をリセットするには、次の PowerShell コマンドレットを実行します。
+### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>RDWebClientDeploymentSetting 構成を既定値にリセットする
+展開レベルのすべての Web クライアント設定を既定の構成にリセットするには、次の PowerShell コマンドレットを実行します。
 
    ```PowerShell
     Reset-RDWebClientDeploymentSetting 
@@ -281,39 +281,39 @@ RD セッション ホスト サーバーが RD ブローカー サーバーと�
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-ユーザーは web クライアントを初めて開くときに、次の問題のいずれかを報告する場合、次のセクションを教えてくれますそれらを解決するためにします。
+ユーザーが初めて Web クライアントを開くときに以下のいずれかの問題が報告される場合、以降のセクションがそれらをどう修正するかの参考になります。
 
-### <a name="what-to-do-if-the-users-browser-shows-a-security-warning-when-they-try-to-access-the-web-client"></a>ユーザーのブラウザーの web クライアントにアクセスしようとすると、セキュリティの警告が表示される場合の対処方法
+### <a name="what-to-do-if-the-users-browser-shows-a-security-warning-when-they-try-to-access-the-web-client"></a>Web クライアントへのアクセスを試みたときに、ユーザーのブラウザーにセキュリティの警告が表示される場合の対処方法
 
-RD Web アクセス役割で信頼された証明書が使用していない可能性があります。 公的に信頼された証明書で、RD Web アクセスの役割が構成されていることを確認します。
+RD Web アクセスの役割で、信頼できる証明書が使用されていない可能性があります。 RD Web アクセスの役割が、公的に信頼された証明書で構成されていることを確認します。
 
-うまく行かない場合、web でサーバー名クライアント URL 可能性がありますと一致しません RD Web 証明書によって指定された名前。 URL は、RD Web ロールをホストするサーバーの FQDN を使用することを確認します。
+改善されない場合は、Web クライアント URL 内のサーバー名が、RD Web 証明書によって提供される名前と一致していない可能性があります。 URL で、RD Web の役割をホストしているサーバーの FQDN を使用していることを確認します。
 
-### <a name="what-to-do-if-the-user-cant-connect-to-a-resource-with-the-web-client-even-though-they-can-see-the-items-under-all-resources"></a>ユーザーは、web クライアントの場合でも、すべてのリソースの下の項目を表示で、リソースに接続できない場合の対処方法
+### <a name="what-to-do-if-the-user-cant-connect-to-a-resource-with-the-web-client-even-though-they-can-see-the-items-under-all-resources"></a>[すべてのリソース] の下で項目を確認できるのに、Web クライアントでユーザーがリソースに接続できない場合の対処方法
 
-ユーザーは、それらが示されているリソースを表示することができる場合でも web クライアントで接続できないことを報告する場合は、次のことを確認します。
+一覧のリソースを参照できても Web クライアントで接続できないとユーザーが報告する場合は、以下のことを確認します。
 
-* RD ゲートウェイの役割は信頼された公開証明書を使用して正しく構成されてでしょうか。
-* RD ゲートウェイ サーバーにはインストールされている必要な更新プログラムがありますか。 サーバーが持つことを確認[KB4025334 update](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334)をインストールします。
+* RD ゲートウェイの役割は、信頼できるパブリック証明書を使用するように正しく構成されていますか。
+* RD ゲートウェイ サーバーに、必要な更新プログラムがインストールされていますか。 サーバーに [KB4025334 更新プログラム](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334)がインストールされていることを確認します。
 
-ユーザーが「予期しないサーバー認証証明書が受信されました」エラーを取得するかどうか、メッセージは、証明書の拇印を表示し、接続を試みたときのメッセージします。 その拇印を使用して、適切な証明書を検索する RD ブローカー サーバーの証明書マネージャーを検索します。 リモート デスクトップの展開のプロパティ ページで、RD ブローカー ロールを使用する証明書が構成されていることを確認します。 証明書を必ずが期限切れ後に証明書を .cer ファイル形式で、RD Web アクセス サーバーにコピーし、かっこで囲まれた値は、証明書のファイル パスに置き換え、RD Web アクセス サーバーで次のコマンドを実行します。
+接続を試みたときにユーザーが "予期しないサーバー認証証明書を受け取った" というエラー メッセージを受け取る場合、メッセージは証明書の拇印を表示します。 その拇印を使用して RD ブローカー サーバーの証明書マネージャーを検索し、適切な証明書を見つけます。 リモート デスクトップの展開のプロパティ ページで、RD ブローカーの役割で使用されるように証明書が構成されていることを確認します。 証明書が期限切れになっていないことを確認したら、.cer ファイル形式の証明書を RD Web アクセス サーバーにコピーし、かっこに囲まれた値は証明書のファイル パスに置き換えて、RD Web アクセス サーバーで次のコマンドを実行します。
 
 ```PowerShell
 Import-RDWebClientBrokerCert <certificate file path>
 ```
 
-### <a name="diagnose-issues-with-the-console-log"></a>コンソール ログの問題を診断します。
+### <a name="diagnose-issues-with-the-console-log"></a>コンソール ログの問題を診断する
 
-コンソールを見て、自分で問題の原因を診断しようとすることができます、この記事のトラブルシューティング手順に基づいて、問題を解決できない場合、ブラウザーでログインします。 Web クライアントは、問題の診断に役立つ、web クライアントを使用しているときにブラウザーのコンソール ログのアクティビティを記録するためのメソッドを提供します。
+この記事のトラブルシューティング手順に基づいて問題を解決できない場合は、ブラウザーでコンソール ログを参照することで、自分自身で問題の原因の診断を試みることができます。 Web クライアントには、問題の診断に役立つように、Web クライアントの使用中にブラウザーのコンソール ログにアクティビティを記録する方法が用意されています。
 
-* 右上隅にある省略記号を選択しに、**について**ページのドロップダウン メニュー。
-* **サポート情報をキャプチャ**選択、**の記録を開始**ボタンをクリックします。
-* 診断しようとして問題を生成する web クライアントでは、操作を実行します。
-* 移動し、**について** ページ**記録終了**。
-* お使いのブラウザーは「.txt ファイル自動的にダウンロード**RD コンソール Logs.txt**します。 このファイルは、ターゲットの問題を再現しながら生成された完全なコンソール ログ アクティビティが含まれます。
+* 右上隅にある省略記号を選択し、ドロップダウン メニューの **[バージョン情報]** ページに移動します。
+* **[Capture support information] (サポート情報をキャプチャする)** の **[Start recording] (記録の開始)** ボタンを選択します。
+* 診断しようとしている、問題を発生させた Web クライアントで操作を行います。
+* **[バージョン情報]** ページに移動し、 **[Stop recording] (記録の終了)** を選択します。
+* お使いのブラウザーが **RD Console Logs.txt** という .txt ファイルを自動的にダウンロードします。 このファイルには、対象の問題を再現しながら生成された完全なコンソール ログ アクティビティが含まれています。
 
-コンソールは、お使いのブラウザーから直接アクセスすることも可能性があります。 コンソールは通常、開発者ツールにあります。 たとえば、Microsoft Edge でログをアクセス キーを押して、 **F12**キー、または、省略記号ボタンを選択するに移動し**ツール** > **Developer Tools**.
+コンソールには、ブラウザーから直接アクセスすることもできます。 コンソールは通常、開発者ツールの下に置かれています。 たとえば、**F12** キーを押すか、省略記号ボタンを選択してから **[ツール]**  >  **[開発者ツール]** と移動することで、Microsoft Edge でログにアクセスできます。
 
-## <a name="get-help-with-the-web-client"></a>Web クライアント ヘルプを表示します。
+## <a name="get-help-with-the-web-client"></a>Web クライアントに関するヘルプの表示
 
-この記事の情報で解決できない問題が発生した場合は、[送り](mailto:rdwbclnt@microsoft.com)それを報告します。 また、リクエストするかの新機能に投票、[提案ボックス](https://aka.ms/rdwebfbk)します。
+この記事の情報で解決できない問題が発生した場合は、Microsoft に[電子メールを送信](mailto:rdwbclnt@microsoft.com)し、報告することができます。 [提案ボックス](https://aka.ms/rdwebfbk)でも、新機能についてのリクエストや投票を行うことがきます。

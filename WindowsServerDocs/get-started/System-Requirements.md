@@ -15,15 +15,15 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: d089af3562467aa1c222b17d9a1ad69d9c1b5008
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810584"
 ---
 # <a name="system-requirements"></a>システム要件
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル) 
+>適用先:Windows Server (半期チャネル)、Windows Server 2016 
 
 このトピックでは、Windows Server&reg; 2016 または Windows Server バージョン 1709 を実行するための最小システム要件について説明します。
 
@@ -53,10 +53,10 @@ Windows Server 2016 のシステム要件の概要は次のとおりです。 �
 - CMPXCHG16b、LAHF/SAHF、および PrefetchW のサポート  
 - 第 2 レベルのアドレス変換 (EPT または NPT) のサポート  
 
-[Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx)は、CPU がこれらの機能の確認に使用できるツールです。
+[Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx) は、お使いの CPU が備えている機能を確認するために使用できるツールです。
 
 ## <a name="ram"></a>RAM  
-この製品で推定される RAM の要件を次に示します。  
+この製品で予想される RAM の要件を次に示します。  
 
 **最小**:  
 - 512 MB (デスクトップ エクスペリエンス搭載サーバー インストール オプションを使用したサーバーの場合、2 GB)
@@ -73,7 +73,7 @@ Windows Server 2016 のシステム要件の概要は次のとおりです。 �
 ## <a name="storage-controller-and-disk-space-requirements"></a>記憶域コントローラーとディスク領域の要件  
 Windows Server 2016 を実行するコンピューターでは、PCI Express アーキテクチャの仕様に準拠している記憶域アダプターを搭載する必要があります。 ハード ディスク ドライブとして分類されるサーバー上の永続的な記憶装置は、PATA であってはなりません。 Windows Server 2016 では、ブート ドライブ、ページ ドライブ、またはデータ ドライブに ATA、PATA、IDE、EIDE は使用できません。  
 
-システム **パ** ーティションで必要と予想される、最小のディスク領域の要件は次のとおりです  。  
+システム パーティションで必要と予想される、**最小**のディスク領域の要件は次のとおりです。  
 
 **最小**:32 GB  
 
