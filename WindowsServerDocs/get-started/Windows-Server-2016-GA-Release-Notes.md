@@ -13,27 +13,27 @@ ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
 ms.openlocfilehash: dec1ec184a147ef4fae64e9cc4384c0b6e4510b6
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66749535"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>リリース ノート:Windows Server 2016 に関する重要な問題
 
 >適用対象:Windows Server 2016
 
-これらのリリース ノートがわかっている場合の回避や、問題を回避する方法を含む、Windows Server 2016 オペレーティング システムで最も重要な問題を要約します。 このリリースにおける計画的な変更点、新機能、および修正プログラムについては、「[Windows Server 2016 の新機能](whats-new-in-windows-server-2016.md)」と特定の機能チームからのお知らせを参照してください。 特に指定がない限り、レポートされる問題はそれぞれ、Windows Server 2016 のすべてのエディションおよびインストール オプションに適用されます。
+これらのリリース ノートでは、Windows Server 2016 オペレーティング システムの最も重大な問題とその回避策 (存在する場合) についてまとめています。 このリリースにおける計画的な変更点、新機能、および修正プログラムについては、「[Windows Server 2016 の新機能](whats-new-in-windows-server-2016.md)」と特定の機能チームからのお知らせを参照してください。 特に指定がない限り、レポートされる問題はそれぞれ、Windows Server 2016 のすべてのエディションおよびインストール オプションに適用されます。
 
 このドキュメントは継続的に更新されています。 解決策が必要な重大な問題が発見された場合、および新しい解決策および修正が使用可能になった場合は、ここに追加されます。
 
-## <a name="express-updates-available-starting-in-november-2018-new"></a>Express 2018 の年 11 月 (新規) で利用できる更新プログラム
+## <a name="express-updates-available-starting-in-november-2018-new"></a>2018 年 11 月 から利用できる高速更新プログラム (新規)
 
-2018 年 11 月以降"更新 Tuesday"更新プログラム、Windows は発行がもう一度[更新プログラムを Express](express-updates.md) for Windows Server 2016。 WSUS や System Center Configuration Manager (SCCM) を使用している場合は、Windows Server 2016 更新プログラムの 2 つのパッケージをもう一度表示されます。 完全な更新と Express の更新プログラム。 Express サーバー環境で使用する場合は、サーバーが 2017 年 11 月 (KB # 4048953) Express の更新プログラムが正しくインストールすることを確認するための完全な更新をなったことを確認する必要があります。 2017 11 b の更新 (4048953 KB #) 以降に更新されていないサーバーで高速更新プログラムを試行する場合は、帯域幅と無限ループに CPU リソースを消費する連続のエラーを確認します。 このシナリオが発生した場合は、Express の更新のプッシュを停止し、代わりにエラー ループを停止する場合は、最近使用した完全な更新をプッシュします。
+2018 年 11 月の "火曜日の更新" の更新から、Windows では Windows Server 2016 用の[高速更新プログラム](express-updates.md)が再発行されます。 WSUS と System Center Configuration Manager (SCCM) を使用している場合、Windows Server 2016 更新用の 2 つのパッケージ (完全更新プログラムと高速更新プログラム) が再表示されます。 お使いのサーバー環境で高速更新プログラムを使用する場合、高速更新プログラムを正しくインストールするには、2017 年 11 月以降の完全更新プログラム (KB# 4048953) を使用してサーバーが更新されていることを確認する必要があります。 2017 11B 更新プログラム (KB 4048953) 以降更新されていないサーバーで高速更新プログラムを試行した場合、無限ループに入って帯域幅や CPU リソースを消費する繰り返しエラーが発生します。 このシナリオが発生した場合は、高速更新プログラムのプッシュを停止し、最新の完全更新プログラムをプッシュして、エラー ループを停止します。
 
 ## <a name="server-core-installation-option"></a>Server Core インストール オプション
 
-[comment]: # (ID:370;送信者: amason;状態: サインオフ)
+[comment]: # (ID:370; 提出者: Amason; 状態: サインオフ)
 
 Server Core インストール オプションを使用して Windows Server 2016 をインストールすると、プリント サーバーの役割がインストールされていなくても、印刷スプーラーがインストールされ、既定で開始されます。
 
@@ -41,42 +41,42 @@ Server Core インストール オプションを使用して Windows Server 201
 
 ## <a name="containers"></a>コンテナー
 
-[comment]: # (ID:371;送信者: taylorb;状態: サインオフ)
-- コンテナーを使用する前にインストールする[Windows 10 バージョン 1607 のサービス スタック更新プログラム。2016 年 8 月 23 日、](https://support.microsoft.com/en-us/kb/3176936)または利用可能な後で更新します。 それ以外の場合、エラーを構築など、さまざまな問題が発生できます以降、またはコンテナー、およびのようなエラーを実行している"Win32 で CreateProcess が失敗しました。RPC サーバーは使用できません。"
+[comment]: # (ID:371; 提出者: taylorb; 状態:サインオフ)
+- コンテナーを使用する前に、[Windows 10 Version 1607 用のサービス スタック更新プログラム: 2016 年 8 月 23 日](https://support.microsoft.com/en-us/kb/3176936) またはそれ以降に利用可能になった更新プログラムをインストールしてください。 インストールしないと、コンテナーの作成、開始、または実行に失敗するほか、"Win32 で CreateProcess が失敗しました。RPC サーバーが利用できません" のようなエラーなど、多くの問題が発生します。
 
-[comment]: # (ID:373;送信者: plang;状態: サインオフ)
+[comment]: # (ID:373; 提出者: plang; 状態: サインオフ)
 - NanoServerPackage OneGet プロバイダーは、Windows コンテナーでは動作しません。 これを回避するには、(コンテナー以外の) 別のコンピューターで Find-NanoServerPackage および Save-NanoServerPackage を使用して、必要なパッケージをダウンロードします。 その後、ダウンロードしたパッケージをコンテナーにコピーしてインストールします。
 
 ## <a name="device-guard"></a>Device Guard
 
-[comment]: # (ID:369;送信者: nirb;状態: サインオフ)
+[comment]: # (ID:369; 提出者: nirb; 状態: サインオフ)
 コードの整合性に対する仮想化ベースの保護、またはシールドされた仮想マシン (コードの整合性に対する仮想化ベースの保護を使用します) を利用する場合、これらのテクノロジは一部のデバイスやアプリケーションとの互換性がない可能性があることに注意してください。 運用システムで機能を有効にする前に、ラボでこのような構成をテストする必要があります。 このテストを行わない場合は、予期しないデータの損失や Stop エラーが発生する可能性があります。
 
 ## <a name="microsoft-exchange"></a>Microsoft Exchange
 
-[comment]: # (ID:375;送信者: wgries;状態: サインオフ)
+[comment]: # (ID:375; 提出者: wgries; 状態: サインオフ)
 Windows Server 2016 で Microsoft Exchange 2016 CU3 を実行しようとすると、IIS ホスト プロセス W3WP.exe でエラーが発生します。 現時点では、回避策はありません。 サポートされる修正プログラムが利用可能になるまでは、Windows Server 2016 での Exchange 2016 CU3 の展開を延期する必要があります。
 
 ## <a name="remote-server-administration-tools-rsat"></a>リモート サーバー管理ツール (RSAT)
 
-[comment]: # (ID:374;送信者: ryanpu;状態: サインオフ)
-RSAT が Windows の提供を有効になっている仮想トラステッド プラットフォーム モジュール (シールドされた仮想マシンを含む) を Hyper-v ホストと仮想マシンを使用しているしのバージョンをインストールする Windows 10 Anniversary Update でより前のバージョンを実行している場合Server 2016 では、これらの仮想マシンを開始する試行は失敗します。
+[comment]: # (ID:374; 提出者: ryanpu; 状態: サインオフ)
+Anniversary Update より前のバージョンの Windows 10 を実行していて、Hyper-V と、仮想トラステッド プラットフォーム モジュールが有効になった仮想マシン (シールドされた仮想マシンを含む) を使用している場合、Windows Server 2016 用の RSAT バージョンをインストールすると、これらの仮想マシンの起動に失敗します。
 
-これを回避するには、RSAT をインストールする前に、クライアント コンピューターを Windows 10 Anniversary Update (以降) にアップグレードします。 この問題が既に発生している場合は、RSAT をアンインストールし、クライアントを Windows 10 Anniversary Update にアップグレードした後、RSAT を再インストールします。
+これを回避するには、RSAT をインストールする前に、クライアント コンピューターを Windows 10 Anniversary Update (以降) にアップグレードします。 この問題既に発生している場合は、RSAT をアンインストールし、クライアントを Windows 10 Anniversary Update にアップグレードした後、RSAT を再インストールします。
 
 ## <a name="shielded-virtual-machines"></a>シールドされた仮想マシン
 
-[comment]: # (ID:369;送信者: nirb;状態: サインオフ)  
+[comment]: # (ID:369; 提出者: nirb; 状態: サインオフ)  
 - シールドされた仮想マシンを運用環境で展開する前に、利用可能なすべての更新プログラムがインストールされていることを確認します。
 
 - コードの整合性に対する仮想化ベースの保護、またはシールドされた仮想マシン (コードの整合性に対する仮想化ベースの保護を使用します) を利用する場合、これらのテクノロジは一部のデバイスやアプリケーションとの互換性がない可能性があることに注意してください。 運用システムで機能を有効にする前に、ラボでこのような構成をテストする必要があります。 このテストを行わない場合は、予期しないデータの損失や Stop エラーが発生する可能性があります。
 
 ## <a name="start-menu"></a>スタート メニュー
 
-[comment]: # (ID:372;送信者: samli;状態: サインオフ)
+[comment]: # (ID:372; 提出者: samli; 状態: サインオフ)
 この問題は、デスクトップ エクスペリエンス搭載サーバー オプションを使用してインストールされた Windows Server 2016 に影響します。
 
-上のフォルダー内にショートカット項目を追加するアプリケーションをインストールするかどうか、**開始**メニュー、ショートカットはログアウトして、ログが再びになるまでに動作しません。
+**スタート** メニューのフォルダー内にショートカット項目を追加するアプリケーションをインストールした場合、そのショートカットを動作させるには、一度ログアウトしてから、もう一度ログインする必要があります。
 
 メインの [Windows Server 2016](Windows-Server-2016.md) ハブに戻ります。
 

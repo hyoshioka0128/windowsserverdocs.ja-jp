@@ -1,6 +1,6 @@
 ---
-title: RDS でのデスクトップとアプリをホストするためのパートナー
-description: デスクトップおよび rds. を使用してアプリをホストするパートナーの一覧
+title: RDS - デスクトップとアプリをホストするためのパートナー
+description: RDS を使用してデスクトップとアプリをホストできるパートナーの一覧。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,32 +14,32 @@ ms.assetid: 9a3cb426-fb39-40c5-ae07-26dbe9e3aed9
 author: lizap
 manager: dongill
 ms.openlocfilehash: 6081b84aa5c714dc8114408eed077a1822d58218
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849933"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743787"
 ---
-# <a name="remote-desktop-services-hosting-partners-and-assessment"></a>リモート デスクトップ サービスがホストしているパートナーと評価
+# <a name="remote-desktop-services-hosting-partners-and-assessment"></a>リモート デスクトップ サービスのホスティング パートナーと評価
 
-最近、Microsoft では、Microsoft Partner Network 内の新しいラーニング パスが配信されます。「Windows デスクトップおよびリモート デスクトップ サービスを使用して Azure でアプリケーションをホスティングします。」
+最近、Microsoft では、Microsoft Partner Network 内に新しいラーニング パスである "Azure でのリモート デスクトップ サービスを使用した Windows デスクトップとアプリケーションのホスティング" を配信しました。
 
-Microsoft パートナーあり、評価が成功するパートナーの一覧に含める場合は、ラーニング パスを完了するために行える手順を示します。
+ご自身が Microsoft パートナーであり、評価に合格したパートナーの一覧に掲載されることを希望する場合は、次の手順に従って、このラーニング パスを完了できます。
 
-1. なる、 [Microsoft パートナー](https://partner.microsoft.com/)していない場合は、します。
-2. ウォッチ、[をホストしている Windows と Azure のトレーニング セッションでリモート デスクトップ サービスを使用してアプリケーション](https://mspartnerlp.partner.microsoft.com/LearningPath/LearningPath/DLPaths?trackId=2915&rowId=3603)します。
-3. [技術評価](https://mspartnerlp.partner.microsoft.com/LearningPath/LearningPath/DLPaths?trackId=1660&rowId=2220&trackPathId=9871)します。
-4. 満たしていることを確認、[クラウド プラットフォーム コンピテンシー向け要件](https://partner.microsoft.com/en-us/membership/cloud-platform-competency)します。
+1. まだなっていなければ、[Microsoft パートナー](https://partner.microsoft.com/)になります。
+2. ["Azure でのリモート デスクトップ サービスを使用した Windows デスクトップとアプリケーションのホスティング" トレーニング セッション](https://mspartnerlp.partner.microsoft.com/LearningPath/LearningPath/DLPaths?trackId=2915&rowId=3603)を視聴します。
+3. [技術的な評価](https://mspartnerlp.partner.microsoft.com/LearningPath/LearningPath/DLPaths?trackId=1660&rowId=2220&trackPathId=9871)を受けます。
+4. [Cloud Platform コンピテンシー要件](https://partner.microsoft.com/en-us/membership/cloud-platform-competency)を満たしていることを確認します。
 
-Microsoft パートナーでは既にご質問があるとしますか? リモート デスクトップ チームにお問い合わせ<rdhostingpartners@microsoft.com>します。  
+既に Microsoft パートナーであり、ご質問がある場合は、 リモート デスクトップ チーム (<rdhostingpartners@microsoft.com>) にお問い合わせください。  
 
 
-## <a name="partners-who-have-passed-the-learning-path-assessment"></a>学習に合格するパートナーのパスの評価 
+## <a name="partners-who-have-passed-the-learning-path-assessment"></a>ラーニング パスの評価に合格しているパートナー 
 
-ホストの Windows デスクトップおよびアプリケーションを Azure でユーザーを支援するパートナーを求めているお客様の場合は、アセスメントに合格するパートナーの一覧を編集しました。 ここでは、[それらのパートナーの一覧](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/WindowsServerDocs/remote/remote-desktop-services/RDS-Hosting-Partners.pdf)03/28/2017 をダウンロードできます。
+ご自身のユーザーに対して Azure で Windows デスクトップとアプリケーションをホストすることを支援するパートナーをお探しのお客様のために、評価に合格しているパートナーをまとめた一覧が作成されています。 2017 年 3 月 28 日付けの[これらのパートナーの一覧](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/WindowsServerDocs/remote/remote-desktop-services/RDS-Hosting-Partners.pdf)をダウンロードできます。
 
-詳細については、次の手順を使用して、各パートナーにあります。
+次の手順を使用して、各パートナーの詳細を確認できます。
 
-1. 開いている[のパートナーを見つける](https://partnercenter.microsoft.com/pcv/search)します。
-2. クリア、**場所**フィールド。
-3. パートナーの名前を入力、**のヘルプを探しています**フィールド。
+1. [[パートナーを見つける]](https://partnercenter.microsoft.com/pcv/search) を開きます。
+2. **[場所]** フィールドをクリアします。
+3. **[I'm looking for help with]\(支援を求めているパートナー\)** フィールドにパートナーの名前を入力します。

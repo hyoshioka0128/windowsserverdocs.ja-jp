@@ -1,5 +1,5 @@
 ---
-title: はじめに
+title: 開始
 description: 'サーバーの基礎: システム要件、リリース ノートは、アップグレード オプション'
 ms.prod: windows-server-threshold
 ms.service: na
@@ -11,10 +11,10 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: e7ff669b1a1ca3bed5d7c827c40bc46e81ea3f02
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810601"
 ---
 # <a name="get-started-with-windows-server-2016"></a>Windows Server 2016 の概要
@@ -24,7 +24,7 @@ ms.locfileid: "66810601"
 > [!TIP]
 > 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
 
-![チェック マークの付いたボックスを表示するアイコン](../media/landing-icons/getstarted.png)このコレクションには、Windows Server 2016 に移行する準備ができたかどうかを判断するのに役立つ詳細な情報が含まれています。 Windows Server 2016 への移行に関するシステム要件、アップグレード オプション、およびその他の情報を確認したら、[Windows Server 2016](Windows-Server-2016.md) のメイン ページに戻り、ニーズに最も適したエディションとインストール オプションをインストールするための手順に進みます。 
+![チェックマーク付きのボックスを表示するアイコン](../media/landing-icons/getstarted.png) このコレクション記事に記載されている詳細情報は、Windows Server 2016 にすぐに移行できるかどうかを判断する際に役立ちます。 Windows Server 2016 への移行に関するシステム要件、アップグレード オプション、およびその他の情報を確認したら、[Windows Server 2016](Windows-Server-2016.md) のメイン ページに戻り、ニーズに最も適したエディションとインストール オプションをインストールするための手順に進みます。 
 
 > [!Note]
 > Windows Server 2016 をダウンロードするを参照してください。 [Windows Server の評価](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)します。
@@ -39,13 +39,13 @@ Windows Server 2016 をインストールして実行するための最小ハー
 ## <a name="recommendations-for-moving-to-windows-server-2016recommendations-moving-to-server2016md"></a>[Windows Server 2016 への移行に関する推奨事項](Recommendations-moving-to-Server2016.md)
 さまざまなシナリオで Windows Server 2016 にアクセスするために使用できる方法をまとめた表。
 
-## <a name="features-removed-or-deprecated-in--windows-server-2016deprecated-featuresmd"></a>[削除された機能または Windows Server 2016 で非推奨とされます。](deprecated-features.md)
+## <a name="features-removed-or-deprecated-in--windows-server-2016deprecated-featuresmd"></a>[Windows Server 2016 で削除された機能または推奨されなくなった機能](deprecated-features.md)
 Windows Server 2016 から既に削除されている機能や今後削除される可能性があるとして指定されている機能について。
 
-## <a name="upgrade-and-conversion-optionssupported-upgrade-pathsmd"></a>[アップグレードと変換オプション](Supported-Upgrade-Paths.md)
+## <a name="upgrade-and-conversion-optionssupported-upgrade-pathsmd"></a>[アップグレード オプションと変換オプション](Supported-Upgrade-Paths.md)
 現在実行しているエディションから Windows Server 2016 に移行するすべての方法の説明。
 
-## <a name="server-role-upgrade-and-migration-matrixserver-role-upgradeability-tablemd"></a>[サーバーの役割のアップグレードと移行に関する一覧表](Server-Role-Upgradeability-Table.md)
+## <a name="server-role-upgrade-and-migration-matrixserver-role-upgradeability-tablemd"></a>[サーバー ロールのアップグレードと移行に関する一覧表](Server-Role-Upgradeability-Table.md)
 特定のサーバーの役割を Windows Server 2016 に移行するために必要な追加手順についての情報。
 
 ## <a name="server-application-compatibility-tableserver-application-compatibilitymd"></a>[サーバー アプリケーションの互換性表](Server-Application-Compatibility.md)

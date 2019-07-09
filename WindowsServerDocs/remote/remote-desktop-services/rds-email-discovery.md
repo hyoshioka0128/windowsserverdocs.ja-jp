@@ -1,6 +1,6 @@
 ---
-title: フィード、RDS を購読する電子メール discovery のセットアップします。
-description: RDS のデプロイに Azure AD Domain Services を統合する方法について説明します。
+title: RDS フィードに登録するために電子メールの検出を設定する
+description: ご自身の RDS 展開に Azure AD Domain Services を統合する方法について説明します。
 ms.prod: windows-server-threshold
 ms.technology: remote-desktop-services
 ms.author: chrimo
@@ -9,33 +9,33 @@ ms.localizationpriority: medium
 ms.topic: article
 author: christianmontoya
 ms.openlocfilehash: 5b3f162b8eee70fbc452b7400b737454c3fffb59
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878323"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63712650"
 ---
-# <a name="set-up-email-discovery-to-subscribe-to-your-rds-feed"></a>フィード、RDS を購読する電子メール discovery のセットアップします。
+# <a name="set-up-email-discovery-to-subscribe-to-your-rds-feed"></a>RDS フィードに登録するために電子メールの検出を設定する
 
-経験はあるトラブルの維持、フィードで不足している単一の文字があるか、フィード、パブリッシュされた RDS が自分に接続されているエンドユーザー URL または URL を使用して電子メールを紛失したためでしょうか。 ほぼすべてのリモート デスクトップ クライアント アプリケーションをサポートして、これまでに、Remoteapp とデスクトップに接続されているユーザーを取得するよりも簡単に電子メール アドレスを入力して、サブスクリプションを検索します。
+フィード URL 内の単一の文字が不足している、または URL が含まれる電子メールを紛失したという理由で、エンドユーザーが各自に発行された RDS フィードに接続できないというトラブルを経験したことがありますか。 ほぼすべてのリモート デスクトップ クライアント アプリケーションでは、電子メール アドレスの入力によるサブスクリプションの検索をサポートして、ユーザーが各自の RemoteApp とデスクトップに簡単に接続できるようにしています。
 
 >[!IMPORTANT]
->Microsoft Store での Microsoft リモート デスクトップ アプリは、この時点で電子メール アドレスのサブスクリプションをサポートしていません。
+>Microsoft Store の Microsoft リモート デスクトップ アプリでは、現時点では電子メール アドレスのサブスクリプションはサポートされていません。
 
-電子メールの検出をセットアップする前に、次の操作を行います。
+電子メールの検出を設定する前に、以下を行います。
 
-- TXT レコードを電子メールに関連付けられているドメインに追加する権限があるかどうかを確認 (ユーザーがある場合など、@contoso.comの電子メール アドレスに、contoso.com ドメインのアクセス許可を必要があります)
-- フィード URL、RD Web の作成 (https://\<rdweb の dns 名\>.domain/RDWeb/Feed/webfeed.aspx など https://rdweb.contoso.com/RDWeb/Feed/webfeed.aspx)
+- 電子メールに関連付けられているドメインに TXT レコードを追加する権限があるかどうかを確認します (たとえば、ユーザーの電子メール アドレスに @contoso.com が含まれている場合は、contoso.com ドメインへのアクセス許可が必要です)。
+- RD Web フィード URL (https://\<rdweb-dns-name\>.domain/RDWeb/Feed/webfeed.aspx) を作成します。例: https://rdweb.contoso.com/RDWeb/Feed/webfeed.aspx)
 
-ここで、次の手順を使用して、電子メールの検出を設定します。
+次に、以下の手順を使用して、電子メールの検出を設定します。
 
-1. ブラウザーでは、ドメインが登録されているドメイン名レジストラーの web サイトに接続します。
-2. 表示、追加、および DNS レコードの編集をする登録済みドメインの適切なページに移動します。
-3. 次のプロパティで新しい DNS レコードを入力します。
+1. ブラウザーで、ドメインが登録されているドメイン名レジストラーの Web サイトに接続します。
+2. DNS レコードを表示、追加、および編集できる登録済みのドメイン用の適切なページに移動します.
+3. 次のプロパティを持つ新しい DNS レコードを入力します。
    - **ホスト:** _msradc
-   - **テキスト:**\<RD Web フィード URL\>
+   - **テキスト:** \<RD Web フィード URL\>
    - **TTL:** 300
 
-   ドメイン名レジストラーによって DNS レコードのフィールドの名前が異なりますが、_msradc という名前の TXT レコードでこのプロセスになります。\<domain_name\> (_msradc.contoso.com) など、すべての RD Web フィードの値を持ちます。
+   DNS レコードのフィールドの名前はドメイン名レジストラーによって異なりますが、このプロセスでは、RD Web フィード全体の値を持つ _msradc.\<domain_name\> (_msradc.contoso.com など) という名前の TXT レコードになります。
 
-これで完了です。 ここで、デバイス上のリモート デスクトップ アプリケーションを起動し、自分でサブスクライブ!
+これで完了です。 ここでデバイス上のリモート デスクトップ アプリケーションを起動して、ご自身を登録してください。
