@@ -95,7 +95,7 @@ HYPER-V 仮想マシンで、ネットワーク コント ローラー サーバ
 
 このネットワーク コントローラーの機能を使用すると、複数のサーバーで同じワークロードをホストし、高可用性とスケーラビリティを実現することができます。  
   
-詳細については、 [SDNのソフトウェアロードバランシング（SLB）](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)を参照してください。  
+詳細については、[SDNのソフトウェアロードバランシング (SLB)](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md) を参照してください。  
   
 ### <a name="bkmk_virtual"></a>仮想ネットワークの管理
 
