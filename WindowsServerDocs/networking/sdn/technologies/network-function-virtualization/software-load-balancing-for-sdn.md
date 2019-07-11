@@ -19,7 +19,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59853763"
 ---
-# <a name="software-load-balancing-slb-for-sdn"></a>ソフトウェアの負荷分散\(SLB\) SDN の
+# <a name="software-load-balancing-slb-for-sdn"></a>SDN のソフトウェア負荷分散 (SLB)
 
 >適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 
