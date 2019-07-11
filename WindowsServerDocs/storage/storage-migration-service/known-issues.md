@@ -4,16 +4,16 @@ description: 既知の問題と、Microsoft サポートにログを収集する
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 05/14/2019
+ms.date: 07/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: e1cfd2b0ea3bc4d7802cb4a6d2a8c1493d5511a1
-ms.sourcegitcommit: 0099873d69bd23495d275d7bcb464594de09ee3c
+ms.openlocfilehash: 08156a09491d66016b5fcfe6056ed318d682b987
+ms.sourcegitcommit: 514d659c3bcbdd60d1e66d3964ede87b85d79ca9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65699694"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735159"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域の移行サービスの既知の問題
 
@@ -42,7 +42,7 @@ Windows Admin Center 記憶域の移行サービスの拡張機能は、Windows 
 
 ## <a name="storage-migration-service-doesnt-let-you-choose-static-ip-on-cutover"></a>記憶域の移行サービスで、カット オーバーに静的 IP を選択することできますしません
 
-0.57 Windows Admin Center での拡張機能のカット オーバーのフェーズに到達する記憶域の移行サービスのバージョンを使用する場合は、静的 IP アドレスを選択することはできません。 DHCP を使用する必要があります。
+0\.57 Windows Admin Center での拡張機能のカット オーバーのフェーズに到達する記憶域の移行サービスのバージョンを使用する場合は、静的 IP アドレスを選択することはできません。 DHCP を使用する必要があります。
 
 Windows Admin Center では、この問題を解決するのには下を見て**設定** > **拡張機能**記憶域の移行サービス 0.57.2 更新されたバージョンを示す警告がインストールできるようにします。 Windows 管理センターの [ブラウザー] タブを再起動する必要があります。
 
@@ -116,9 +116,9 @@ Windows Admin Center の今後のリリースでこの問題を修正しまし�
 転送ジョブを検証するときに、次の警告を参照してください。
 
  > **資格情報は、管理者特権を持ちます。**
- > 警告:操作をリモートで使用できません。
+ > 警告 :操作をリモートで使用できません。
  > **変換先のプロキシが登録されます。**
- > 警告:変換先のプロキシが見つかりませんでした。
+ > 警告 :変換先のプロキシが見つかりませんでした。
 
 Windows Server 2019 対象のコンピューターで、記憶域の移行サービスのプロキシ サービスがインストールされていない、または少数のコンピューターが Windows Server 2016 または Windows Server 2012 R2 には、この動作は仕様です。 パフォーマンスを大幅に向上した転送用にインストールされたプロキシを使用した Windows Server 2019 コンピューターへの移行をお勧めします。  
 
@@ -173,12 +173,39 @@ Orchestrator サーバー上の [ファイルとプリンターの共有 (SMB �
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transfering-from-windows-server-2008-r2"></a>エラー"でした transfer ストレージ エンドポイントのいずれかで"と Windows Server 2008 R2 からの転送
 
-Windows Server 2008 R2 のソース コンピューターからデータを転送しようとすると、データなし trasnfers とするには、エラーが発生します。  
+Windows Server 2008 R2 のソース コンピューターからデータを転送しようとすると、しないデータ転送とするには、エラーが発生します。  
 
   エンドポイントのいずれかで記憶域を転送することができませんでした。
 0x9044
 
 Windows Server 2008 R2 コンピューターが完全に Windows Update からすべての重大、重要な更新プログラムを適用されていない場合は、このエラーがあります。 記憶域の移行サービスに関係なく常にお勧め修正プログラムの適用、セキュリティのための Windows Server 2008 R2 コンピューターとそのオペレーティング システムが新しいバージョンの Windows Server のセキュリティの強化が含まれていません。
+
+## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-and-check-if-the-source-device-is-online---we-couldnt-access-it"></a>エラー"でした transfer ストレージ エンドポイントのいずれかで"と「確認のソース デバイスがオンラインの場合、アクセスすることができませんでした」。
+
+ソース コンピューターからデータを転送しようとすると、一部またはすべての共有は転送されません、エラーの一覧。
+
+   エンドポイントのいずれかで記憶域を転送することができませんでした。
+0x9044
+
+SMB の移動の詳細を調べるには、エラーは示しています。
+
+   アクセスできませんでした、ソース デバイスがオンラインの場合を確認します。
+
+StorageMigrationService/管理者イベント ログを調べることを示しています。
+
+   記憶域を転送できませんでした。
+
+   ジョブ:Job1 ID:  
+   都道府県:障害が発生したエラー:36931 エラー メッセージ: 
+
+   ガイダンス:詳細なエラーを確認し、転送の要件を満たしているかどうかを確認します。 転送ジョブは、すべて元とコピー先のコンピューターに転送できませんでした。 Orchestrator コンピューターのファイアウォール規則では、原因として考えられますすべて元または転送先のコンピューターに到達できなかった可能性がありますか、アクセス許可がありません。
+
+StorageMigrationService-プロキシ/デバッグ ログの表示を確認します。
+
+   [エラー] 07/02/2019-13:35:57.231 転送の検証に失敗しました。 エラー コード:40961、元のエンドポイントにアクセスできない、または存在しないまたはソースの資格情報が有効でないまたは認証済みユーザーはそれにアクセスするための十分なアクセス許可がありません。
+Microsoft.StorageMigration.Proxy.Service.Transfer.TransferOperation.Validate() Microsoft.StorageMigration.Proxy.Service.Transfer.TransferRequestHandler.ProcessRequest (FileTransferRequest fileTransferRequest、Guid operationId) であります。   [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs:。
+
+移行アカウントには、少なくともがあるない場合、このエラーが期待どおりに SMB 共有への読み取りアクセス許可。 回避策をこのエラーは、移行元コンピューターに SMB 共有にソース移行アカウントを含むセキュリティ グループを追加し、読み取り、変更、またはフル コントロールを与えます。 移行の完了後は、このグループを削除できます。 Windows Server の将来のリリースでは、不要になったソース共有への明示的なアクセス許可を要求するには、この動作を変更可能性があります。
 
 ## <a name="see-also"></a>関連項目
 

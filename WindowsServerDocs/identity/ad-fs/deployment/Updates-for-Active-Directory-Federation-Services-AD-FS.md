@@ -9,12 +9,12 @@ ms.date: 3/29/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 071017d05b288a70592af9203fedc72f699d18e0
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 2336847825cfb3f232674a1e39d3bab7953a32c0
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191942"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792298"
 ---
 # <a name="required-updates-for-active-directory-federation-services-ad-fs-and-web-application-proxy-wap"></a>Active Directory フェデレーション サービス (AD FS) と Web アプリケーション プロキシ (WAP) の必要な更新プログラム
 
@@ -29,6 +29,7 @@ Windows Server 2016 の更新プログラムは毎月 Windows Update 経由で�
 
 |KB # |説明|リリース日
 |----- | ----- |-----
+|[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | このセキュリティ更新プログラムは、攻撃者がエクストラネットのロックアウト ポリシーをバイパスする Active の Directory フェデレーション サービス (AD FS) の脆弱性に対処します。 |2019 年の 7 月|
 |[4489889 (OS ビルド 14393.2879)](https://support.microsoft.com/help/4489889/windows-10-update-kb4489889) | 重複している信頼、AD FS 管理コンソールに表示される証明書利用者を原因となる Active の Directory フェデレーション サービス (AD FS) で発生する問題に対処します。 これは、証明書利用者信頼、AD FS 管理コンソールを使用して作成または表示するときに発生します。 |3 月 2019|
 |[4487006 (OS ビルド 14393.2828)](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) | 証明書利用者信頼を PowerShell または Active Directory フェデレーション サービス (AD FS) の管理コンソールを使用するときに更新プログラムが問題に対処します。 この問題は、1 つ以上の PassiveRequestorEndpoint を発行するオンラインのメタデータ URL を使用するを証明書利用者信頼を構成する場合に発生します。 エラーは、"MSIS7615:A relying party trust で指定された信頼できるエンドポイントする必要がありますで一意であるその証明書利用者信頼のためです。"  </br></br>Azure パスワード保護ポリシーのために複雑さの外部パスワード変更の特定のエラー メッセージを表示する問題に対処します。 |2019 年 2 月|
 |[4462928 (OS ビルド 14393.2580)](https://support.microsoft.com/help/4462928/windows-10-update-kb4462928)|Active Directory フェデレーション サービス (ADFS) エクストラネット スマート ロックアウト (ESL) と代替ログイン ID の間の相互運用の問題に対処します。 代替ログイン ID が有効な場合は、AD FS Powershell コマンドレット、Get AdfsAccountActivity とリセット AdfsAccountLockout、戻り値の「アカウントが見つかりません」エラーを呼び出します。 セット AdfsAccountActivity が呼び出されると、既存のものを編集する代わりに新しいエントリが追加されます。|2018 年 10 月|
@@ -50,11 +51,12 @@ Windows Server 2012 R2 で Active Directory フェデレーション サービ�
 
 |KB # |説明|リリース日
 |----- | ----- |-----
-|[4041685](https://support.microsoft.com/kb/4041685)|AD FS 要求ヘッダーで MSISConext cookie できます最終的にヘッダー サイズの上限をオーバーフロー、問題の認証に失敗する HTTP ステータス コード 400 でアドレス指定された「不適切な要求-ヘッダー長すぎます」。</br></br>ADFS が無視できなく「prompt = login」認証中に問題を修正しました。 [無効] オプションは、パスワード以外の認証が使用されているシナリオの復元に追加されました。|2017 年 10 月プレビューの更新プログラムのロールアップ|
-|[4019217](https://support.microsoft.com/kb/4019217)|ワーク フォルダー サーバー 2012 R2 AD FS サーバーを使用する場合、トークン ブローカーを使用してクライアントが動作しません。|2017 年 5 月プレビューの更新プログラムのロールアップ|
-|[4015550](https://support.microsoft.com/kb/4015550)|AD FS の外部ユーザーと要求を転送するようにランダムに失敗している AD FS WAP を認証できない問題を修正しました|2017 年 4 月の更新プログラムのロールアップ|
-|[4015547](https://support.microsoft.com/kb/4015547)|AD FS の外部ユーザーと要求を転送するようにランダムに失敗している AD FS WAP を認証できない問題を修正しました|2017 年 4 月のセキュリティ更新プログラム|
-|[4012216](https://support.microsoft.com/kb/4009970)|MS17 019 このセキュリティ更新プログラムは、Active Directory フェデレーション サービス (ADFS) で脆弱性を解決します。 この脆弱性により、攻撃者は、ターゲット システムに関する機密情報を読み取る、攻撃者の AD FS サーバーに特別に作成された要求を送信する場合、情報漏えいでした。|2017 年 3 月更新プログラムのロールアップ|
+|[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| このセキュリティ更新プログラムは、攻撃者がエクストラネットのロックアウト ポリシーをバイパスする Active の Directory フェデレーション サービス (AD FS) の脆弱性に対処します。 |2019 年の 7 月
+|[4041685](https://support.microsoft.com/kb/4041685)|AD FS 要求ヘッダーで MSISConext cookie できます最終的にヘッダー サイズの上限をオーバーフロー、問題の認証に失敗する HTTP ステータス コード 400 でアドレス指定された「不適切な要求-ヘッダー長すぎます」。</br></br>ADFS が無視できなく「prompt = login」認証中に問題を修正しました。 [無効] オプションは、パスワード以外の認証が使用されているシナリオの復元に追加されました。|2017 年 10 月プレビューの更新プログラムのロールアップ
+|[4019217](https://support.microsoft.com/kb/4019217)|ワーク フォルダー サーバー 2012 R2 AD FS サーバーを使用する場合、トークン ブローカーを使用してクライアントが動作しません。|2017 年 5 月プレビューの更新プログラムのロールアップ
+|[4015550](https://support.microsoft.com/kb/4015550)|AD FS の外部ユーザーと要求を転送するようにランダムに失敗している AD FS WAP を認証できない問題を修正しました|2017 年 4 月の更新プログラムのロールアップ
+|[4015547](https://support.microsoft.com/kb/4015547)|AD FS の外部ユーザーと要求を転送するようにランダムに失敗している AD FS WAP を認証できない問題を修正しました|2017 年 4 月のセキュリティ更新プログラム
+|[4012216](https://support.microsoft.com/kb/4009970)|MS17 019 このセキュリティ更新プログラムは、Active Directory フェデレーション サービス (ADFS) で脆弱性を解決します。 この脆弱性により、攻撃者は、ターゲット システムに関する機密情報を読み取る、攻撃者の AD FS サーバーに特別に作成された要求を送信する場合、情報漏えいでした。|2017 年 3 月更新プログラムのロールアップ
 |[3179574](https://support.microsoft.com/kb/3179574)|AD FS エクストラネットのパスワードの更新プログラムで問題を修正しました。 |2016 年 8 月更新プログラムのロールアップ
 |[3172614](https://support.microsoft.com/kb/3172614)|プロンプトが導入されたログインを =[サポート](https://technet.microsoft.com/windows-server-docs/identity/ad-fs/overview/ad-fs-faq#BKMK_7)、AlwaysRequireAuthentication 設定と AD FS 管理コンソールで問題を修正しました。 |2016 年 7 月更新プログラムのロールアップ
 |[3163306](https://support.microsoft.com/kb/3163306)|Active Directory フェデレーション サービス (AD FS) 3.0 は、Secure Sockets Layer (SSL) ポート 636 または 3269 で接続文字列を使用して構成されているライトウェイト ディレクトリ アクセス プロトコル (LDAP) 属性ストアに接続できません。 |2016 年 6 月の更新プログラムのロールアップ

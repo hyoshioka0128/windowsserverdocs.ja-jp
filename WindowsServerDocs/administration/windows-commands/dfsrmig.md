@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e0fb68fc962602969a18145c67ad6c361515db6a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: cce34684509a72912cc867b2d637477f868d289d
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436154"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792262"
 ---
 # <a name="dfsrmig"></a>dfsrmig
 
@@ -43,7 +43,7 @@ dfsrmig [/SetGlobalState <state> | /GetGlobalState | /GetMigrationState | /creat
 | /deleteRoDfsrMember [<read_only_domain_controller_name>]  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          指定された読み取り専用ドメイン コント ローラーに対応する、DFS レプリケーション用の AD DS のグローバル設定を削除しますかの値が指定されていない場合、すべての読み取り専用ドメイン コント ローラー、AD DS のグローバル設定 DFS レプリケーションを削除します*read_only_domain_controller_name*します。<br /><br />このオプションを使用して、自動削除が読み取り専用ドメイン コント ローラーに失敗し、読み取り専用ドメイン コント ローラーを長時間停止させる場合にのみ、AD DS の設定を手動で削除する時間の開始状態に、移行の準備ができた状態にロールバックするときにします。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |                            /?                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              コマンド プロンプトにヘルプを表示します。 実行に相当**dfsrmig**オプションなし。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 - dfsrmig.exe、DFS レプリケーション サービスの場合、移行ツールは、DFS レプリケーション サービスと共にインストールされます。
   新しい Windows Server 2008 サーバーの場合は、Dcpromo.exe は、インストールし、コンピューターのドメイン コント ローラーを昇格したときに、DFS レプリケーション サービスを開始します。 ときに、サーバーを Windows Server 2003 から Windows Server 2008、アップグレード プロセスのインストールをアップグレードし、DFS レプリケーション サービスを開始します。 DFS レプリケーション サービスをインストールして開始する、DFS レプリケーション役割サービスをインストールする必要はありません。
 - **Dfsrmig** FRS から DFS レプリケーションへの SYSvol の移行はで動作するドメイン コント ローラーに対して実行できる専用のために、ツールが Windows Server 2008 のドメイン機能レベルで実行するドメイン コント ローラーでのみサポートされて、 Windows Server 2008 ドメインの機能レベル。
@@ -79,14 +79,14 @@ dfsrmig [/SetGlobalState <state> | /GetGlobalState | /GetMigrationState | /creat
   ```
   この例からの典型的な出力を示しています、 **dfsrmig/GetMigrationState**コマンドをいくつかのドメイン コント ローラーのローカルな移行の状態ではグローバルの移行の状態が一致しません。
   ```
-  The following Domain Controllers are not in sync with Global state ( Prepared ):
-Domain Controller (Local Migration State)   DC type
-=========
-CONTOSO-DC2 ( start )   ReadOnly DC
-CONTOSO-DC3 ( Preparing )   Writable DC
-Migration has not yet reached a consistent state on all domain controllers
-State information might be stale due to AD latency.
-```
+    The following Domain Controllers are not in sync with Global state ( Prepared ):
+    Domain Controller (Local Migration State)   DC type
+    =========
+    CONTOSO-DC2 ( start )   ReadOnly DC
+    CONTOSO-DC3 ( Preparing )   Writable DC
+    Migration has not yet reached a consistent state on all domain controllers
+    State information might be stale due to AD latency.
+  ```
 これらの設定が自動的に作成されません移行中にドメイン コント ローラーに AD DS で DFS レプリケーションを使用して、グローバル オブジェクトと設定を作成または、これらの設定が存在しないか、入力します。
 ```
 dfsrmig /createGlobalObjects
