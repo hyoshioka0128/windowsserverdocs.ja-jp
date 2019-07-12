@@ -83,7 +83,7 @@ Windows Admin Center 1904.1 のバージョンでは、Windows Admin Center バ�
 
 - Azure Active Directory を ID プロバイダーとして使用していて、Windows Admin Center が自己署名証明書またはその他の信頼されていない証明書で構成されている場合は、Microsoft Edge で AAD 認証を完了することはできません。  [15968377]
 
-- サービスとしてデプロイされている Windows Admin Center があり、お使いのブラウザーとして Microsoft Edge を使用している場合、ゲートウェイを Azure に接続する、新しいブラウザー ウィンドウを起動した後は失敗します。 追加することで、この問題を回避しようとしています。 https://login.microsoftonline.com、 https://login.live.com、として、ゲートウェイの URL が信頼済みサイトとクライアント側のブラウザーでポップアップ ブロックの設定のサイトを許可されているとします。 この問題の修正の詳細について、[トラブルシューティング ガイド](troubleshooting.md#azure-features-dont-work-properly-in-edge)します。 [17990376]
+- サービスとしてデプロイされている Windows Admin Center があり、お使いのブラウザーとして Microsoft Edge を使用している場合、ゲートウェイを Azure に接続する、新しいブラウザー ウィンドウを起動した後は失敗します。 追加することで、この問題を回避しようとしています。 https://login.microsoftonline.com 、 https://login.live.com 、として、ゲートウェイの URL が信頼済みサイトとクライアント側のブラウザーでポップアップ ブロックの設定のサイトを許可されているとします。 この問題の修正の詳細について、[トラブルシューティング ガイド](troubleshooting.md#azure-features-dont-work-properly-in-edge)します。 [17990376]
 
 - デスクトップ モードでインストールされている Windows Admin Center があれば、Microsoft edge ブラウザーのタブは、favicon に表示されません。 [17665801]
 
