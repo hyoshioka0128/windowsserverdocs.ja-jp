@@ -26,7 +26,7 @@ ms.locfileid: "66434398"
 
 ログオン、COM ポートのマッピング、およびインストール モードのリモート デスクトップ セッション ホスト (rd セッション ホスト) サーバーの設定を変更します。
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの[Windows Server 2012のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)、を参照してください。
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。最新バージョンの新機能については、Windows Server TechNet ライブラリの[Windows Server 2012のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)、を参照してください。
 > ## <a name="syntax"></a>構文
 > ```
 > change logon
