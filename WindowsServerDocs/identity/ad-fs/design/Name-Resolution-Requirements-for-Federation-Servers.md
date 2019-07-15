@@ -29,7 +29,7 @@ ms.locfileid: "66191262"
   
 NLB を使用する FQDN をクラスターまたはクラスターの IP アドレスを構成する方法については、次を参照してください。 [クラスター パラメーターを指定して](https://go.microsoft.com/fwlink/?LinkId=75282)します。  
   
-会社の DNS にフェデレーション サーバーを構成する方法については、次を参照してください [ホストと #40; を追加します。(&) #41 です。フェデレーション サーバー用の会社の DNS リソース レコード](../../ad-fs/deployment/Add-a-Host--A--Resource-Record-to-Corporate-DNS-for-a-Federation-Server.md)します。  
+会社の DNS にフェデレーション サーバーを構成する方法については、[企業 DNS にフェデレーション サーバーのホスト &#41;A&#41; リソース レコードを追加する](../../ad-fs/deployment/Add-a-Host--A--Resource-Record-to-Corporate-DNS-for-a-Federation-Server.md)を参照してください。  
   
 境界ネットワーク内のフェデレーション サーバー プロキシを構成する方法については、次を参照してください。 [フェデレーション サーバー プロキシの名前解決要件](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)します。  
   
