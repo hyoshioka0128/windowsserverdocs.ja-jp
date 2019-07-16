@@ -32,7 +32,7 @@ ms.locfileid: "59836073"
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。最新バージョンの新機能については、Windows Server TechNet ライブラリの[Windows Server 2012のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)、を参照してください。
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの [Windows Server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527) を参照してください。
 
 ## <a name="syntax"></a>構文
 ```
