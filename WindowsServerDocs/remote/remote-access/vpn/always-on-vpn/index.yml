@@ -49,7 +49,7 @@ sections:
             image:
               src: 'https://docs.microsoft.com/media/common/i_advanced.svg'
             title: 高度な機能で Always On VPN を拡張する
-  - title: はじめに..
+  - title: はじめに.
     items:
       - type: paragraph
         text: ドメインに参加している Windows 10 クライアント コンピューターに Always On VPN 接続を展開します。 DirectAccess から Always On VPN に移行し、Azure AD を使用して条件付きアクセスを構成することもできます。
