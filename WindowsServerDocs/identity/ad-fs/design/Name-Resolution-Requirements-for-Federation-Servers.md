@@ -27,11 +27,11 @@ ms.locfileid: "66191262"
   
 ![名の要件](media/adfs2_deploy_single_fs.gif)  
   
-NLB を使用する FQDN をクラスターまたはクラスターの IP アドレスを構成する方法については、[クラスタパラメータの指定](https://go.microsoft.com/fwlink/?LinkId=75282)を参照してください。  
+NLB を使用するクラスターの FQDN またはクラスターの IP アドレスを構成する方法については、[クラスター パラメーターの指定](https://go.microsoft.com/fwlink/?LinkId=75282) を参照してください。  
   
-会社の DNS にフェデレーション サーバーを構成する方法については、[企業 DNS にフェデレーション サーバーのホスト &#41;A&#41; リソース レコードを追加する](../../ad-fs/deployment/Add-a-Host--A--Resource-Record-to-Corporate-DNS-for-a-Federation-Server.md)を参照してください。  
+フェデレーション サーバー用に企業の DNS を構成する方法については、[企業 DNS にフェデレーション サーバーのホスト &#41;A&#41; リソース レコードを追加する](../../ad-fs/deployment/Add-a-Host--A--Resource-Record-to-Corporate-DNS-for-a-Federation-Server.md) を参照してください。 
   
-境界ネットワーク内のフェデレーション サーバー プロキシを構成する方法については、[フェデレーション サーバー プロキシの名前解決要件](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)を参照してください。。  
+境界ネットワーク内のフェデレーション サーバー プロキシを構成する方法については、[フェデレーション サーバー プロキシの名前解決の要件](Name-Resolution-Requirements-for-Federation-Server-Proxies.md) を参照してください。  
   
 
 ## <a name="see-also"></a>関連項目
