@@ -1,7 +1,7 @@
 ---
 ms.assetid: b7bf7579-ca53-49e3-a26a-6f9f8690762f
-title: AD FS と Web アプリケーション プロキシをセキュリティで保護するためのベスト プラクティス
-description: このドキュメントでは、セキュリティで保護の計画と Active Directory フェデレーション サービス (AD FS) と Web アプリケーション プロキシの展開のベスト プラクティスを提供します。
+title: AD FS と Web アプリケーションプロキシをセキュリティで保護するためのベストプラクティス
+description: このドキュメントでは、Active Directory フェデレーションサービス (AD FS) (AD FS) と Web アプリケーションプロキシのセキュリティで保護された計画と展開のベストプラクティスについて説明します。
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,156 +9,163 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3cc4194b562dad17d0c2021f4aaf061114e2c94b
-ms.sourcegitcommit: 9bece8049b1766bd9bb0d5eb5921413a2de2ca61
+ms.openlocfilehash: 6939373db678f1ca6be62711f1771b8f7019c312
+ms.sourcegitcommit: c9ab5fbde1782a3a2bac2dbd45f3f178f7ae3c4c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67351297"
+ms.lasthandoff: 07/19/2019
+ms.locfileid: "68354638"
 ---
-## <a name="best-practices-for-securing-active-directory-federation-services"></a>Active Directory フェデレーション サービスをセキュリティで保護するためのベスト プラクティス
+## <a name="best-practices-for-securing-active-directory-federation-services"></a>Active Directory フェデレーションサービス (AD FS) をセキュリティで保護するためのベストプラクティス
 
 
-このドキュメントでは、セキュリティで保護の計画と Active Directory フェデレーション サービス (AD FS) と Web アプリケーション プロキシの展開のベスト プラクティスを提供します。  これらのコンポーネントと組織の特定のユース ケースとセキュリティ要件には追加のセキュリティ構成に関する推奨事項の既定の動作に関する情報が含まれています。
+このドキュメントでは、Active Directory フェデレーションサービス (AD FS) (AD FS) と Web アプリケーションプロキシのセキュリティで保護された計画と展開のベストプラクティスについて説明します。  この情報には、これらのコンポーネントの既定の動作、および特定のユースケースとセキュリティ要件を持つ組織の追加のセキュリティ構成に関する推奨事項に関する情報が含まれています。
 
-このドキュメントは、AD FS と WAP で Windows Server 2012 R2 および Windows Server 2016 (プレビュー) に適用されます。  オンプレミス ネットワークまたは Microsoft Azure などのホスト型クラウド環境に、インフラストラクチャが配置されているかどうか、これらの推奨事項を使用できます。
+このドキュメントは、Windows Server 2012 R2 および Windows Server 2016 (preview) の AD FS および WAP に適用されます。  これらの推奨事項は、インフラストラクチャがオンプレミスネットワークにデプロイされているか、Microsoft Azure などのクラウドでホストされている環境に展開されているかどうかによって使用できます。
 
 ## <a name="standard-deployment-topology"></a>標準の展開トポロジ
-オンプレミスの環境で展開、DMZ またはエクストラネットのネットワーク内の 1 つまたは複数の Web アプリケーション プロキシ (WAP) サーバーでは、1 つ以上、企業内部ネットワークの AD FS サーバーで構成される標準の展開トポロジはお勧めします。  AD FS と WAP では、各レイヤーでは、ハードウェアまたはソフトウェア ロード バランサーは、サーバー ファームの前に配置し、トラフィック ルーティングを処理します。  ファイアウォールは、各 (FS とプロキシ) ファームの前に、ロード バランサーの外部 IP アドレスの前に必要に応じて配置されます。
+オンプレミス環境でのデプロイでは、内部企業ネットワーク上の1つ以上の AD FS サーバーで構成される標準の展開トポロジを使用することをお勧めします。また、1つ以上の Web アプリケーションプロキシ (WAP) サーバーを DMZ またはエクストラネットネットワークに配置することをお勧めします。  各レイヤー、AD FS および WAP では、ハードウェアまたはソフトウェアのロードバランサーがサーバーファームの前に配置され、トラフィックルーティングを処理します。  ファイアウォールは、各 (FS および proxy) ファームの前にあるロードバランサーの外部 IP アドレスの前に、必要に応じて配置されます。
 
-![AD FS の標準のトポロジ](media/Best-Practices-Securing-AD-FS/adfssec1.png)
+![AD FS Standard トポロジ](media/Best-Practices-Securing-AD-FS/adfssec1.png)
 
 ## <a name="ports-required"></a>必要なポート
-以下の図は、ファイアウォールのポート間と AD FS と WAP のデプロイのコンポーネント間で有効にする必要がありますを示しています。  Azure AD が、展開に含まれていない場合]、[Office 365、同期の要件を無視できます。
+次の図は、AD FS と WAP の展開のコンポーネント間で有効にする必要があるファイアウォールポートを示しています。  展開に Azure AD/Office 365 が含まれていない場合は、同期の要件を無視できます。
 
->ポート 49443 はのみに必要なユーザー証明書認証を使用されるかどうかは Azure AD の省略可能と Office 365 です。
+>ポート49443は、ユーザー証明書認証が使用されている場合にのみ必要であることに注意してください。これは Azure AD と Office 365 では省略可能です。
 
-![AD FS の標準のトポロジ](media/Best-Practices-Securing-AD-FS/adfssec2.png)
+![AD FS Standard トポロジ](media/Best-Practices-Securing-AD-FS/adfssec2.png)
 
 >[!NOTE]
-> ポート 808 (Windows Server 2012R2) またはポート 1501 (Windows Server 2016 以降) は、Powershell およびサービスのプロセス構成データを転送するローカルの WCF エンドポイントの Net.TCP ポート AD FS を使用します。 このポートを表示するには Get-adfsproperties を実行しているを |NetTcpPort を選択します。 これはローカルのポートをファイアウォールで開く必要はありませんが、ポート スキャンが表示されます。 
+> ポート 808 (Windows Server 2012R2) またはポート 1501 (Windows Server 2016 以降) は、ローカル WCF エンドポイントが構成データをサービスプロセスと Powershell に転送するために使用 AD FS Net.tcp ポートです。 このポートは、Set-adfsproperties | を実行すると表示されます。[NetTcpPort] を選択します。 これは、ファイアウォールで開く必要のないローカルポートですが、ポートスキャンで表示されます。 
 
-### <a name="azure-ad-connect-and-federation-serverswap"></a>Azure AD Connect とフェデレーション サーバー/WAP
-このテーブルは、ポートと、Azure AD Connect サーバーとフェデレーション/WAP サーバー間の通信に必要なプロトコルについて説明します。  
+### <a name="azure-ad-connect-and-federation-serverswap"></a>Azure AD Connect とフェデレーションサーバー/WAP
+次の表では、Azure AD Connect サーバーとフェデレーション/WAP サーバー間の通信に必要なポートとプロトコルについて説明します。  
 
 プロトコル |ポート |説明
 --------- | --------- |---------
-HTTP|80 (TCP または UDP)|(証明書失効リスト) の SSL 証明書を確認する Crl をダウンロードするために使用します。
-HTTPS|443(TCP/UDP)|Azure AD と同期するために使用します。
+HTTP|80 (TCP/UDP)|SSL 証明書を確認するために Crl (証明書失効リスト) をダウンロードするために使用します。
+HTTPS|443 (TCP/UDP)|Azure AD と同期するために使用します。
 WinRM|5985| WinRM リスナー
 
-### <a name="wap-and-federation-servers"></a>WAP とフェデレーション サーバー
-このテーブルは、ポートとのフェデレーション サーバーと WAP サーバー間の通信に必要なプロトコルについて説明します。
+### <a name="wap-and-federation-servers"></a>WAP とフェデレーションサーバー
+次の表では、フェデレーションサーバーと WAP サーバー間の通信に必要なポートとプロトコルについて説明します。
 
 プロトコル |ポート |説明
 --------- | --------- |---------
-HTTPS|443(TCP/UDP)|認証に使用します。
+HTTPS|443 (TCP/UDP)|認証に使用されます。
 
 ### <a name="wap-and-users"></a>WAP とユーザー
-このテーブルは、ポートとユーザーと WAP サーバー間の通信に必要なプロトコルについて説明します。
+次の表では、ユーザーと WAP サーバー間の通信に必要なポートとプロトコルについて説明します。
 
 プロトコル |ポート |説明
 --------- | --------- |--------- |
-HTTPS|443(TCP/UDP)|デバイスの認証に使用します。
+HTTPS|443 (TCP/UDP)|デバイスの認証に使用されます。
 TCP|49443 (TCP)|証明書の認証に使用されます。
 
-必要なポートとのハイブリッド展開は、ドキュメントを参照してください。 必要なプロトコルの詳細については[ここ](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-ports/)します。
+ハイブリッド展開に必要なポートとプロトコルの詳細については、[こちら](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-ports/)のドキュメントを参照してください。
 
-詳細については、ポートと、Azure AD に必要なプロトコルと Office 365 デプロイのドキュメントを参照してください[ここ](https://support.office.com/en-us/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US)。
+Azure AD と Office 365 の展開に必要なポートとプロトコルの詳細については、[こちら](https://support.office.com/en-us/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US)のドキュメントを参照してください。
 
-### <a name="endpoints-enabled"></a>エンドポイントが有効になっています。
+### <a name="endpoints-enabled"></a>有効なエンドポイント
 
-AD FS と WAP をインストールすると、プロキシとフェデレーション サービスで AD FS エンドポイントの既定のセットが有効にします。  これらの既定値が、特に一般的な必要な使用シナリオに応じて、選択し、それらを変更する必要はありません。  
+AD FS と WAP がインストールされている場合、フェデレーションサービスとプロキシでは、AD FS エンドポイントの既定のセットが有効になります。  これらの既定値は、最も一般的に必要とされるシナリオに基づいて選択されたものであり、変更する必要はありません。  
 
-### <a name="optional-min-set-of-endpoints-proxy-enabled-for-azure-ad--office-365"></a>[省略可能]Azure AD を有効になっているエンドポイント プロキシの最小セットまたは Office 365
-組織が Azure AD に対してのみ、AD FS と WAP を展開し、Office 365 のシナリオが、さらに低く攻撃対象領域を実現するために、プロキシを有効になっている AD FS エンドポイントの数で制限できます。
-これらのシナリオで、プロキシで有効にする必要がありますエンドポイントの一覧を次に示します。
+### <a name="optional-min-set-of-endpoints-proxy-enabled-for-azure-ad--office-365"></a>OptionalAzure AD/Office 365 に対して有効なエンドポイントプロキシの最小セット
+Azure AD と Office 365 のシナリオにのみ AD FS と WAP を展開する組織では、より少ない攻撃対象を実現するために、プロキシで有効になっている AD FS エンドポイントの数をさらに制限することができます。
+次に示すのは、これらのシナリオでプロキシで有効にする必要があるエンドポイントの一覧です。
 
 |エンドポイント|目的
 |-----|-----
-|/adfs/ls|ブラウザー ベースの認証フローと、このエンドポイントを使用して、Azure AD の現在のバージョンの Microsoft Office と Office 365 認証
-|/adfs/services/trust/2005/usernamemixed|Office 2013 の 2015 年 5 月の更新プログラムよりも古い Office クライアントでは、Exchange Online の使用。  それ以降のクライアントは、パッシブ \adfs\ls エンドポイントを使用します。
-|/adfs/services/trust/13/usernamemixed|Office 2013 の 2015 年 5 月の更新プログラムよりも古い Office クライアントでは、Exchange Online の使用。  それ以降のクライアントは、パッシブ \adfs\ls エンドポイントを使用します。
-|/adfs/oauth2|この 1 つが使用されます (オンプレミスまたはクラウド内) の最新のアプリの (AAD) 経由ではなく、AD FS から直接認証を構成します。
-|/adfs/services/trust/mex|Office 2013 の 2015 年 5 月の更新プログラムよりも古い Office クライアントでは、Exchange Online の使用。  それ以降のクライアントは、パッシブ \adfs\ls エンドポイントを使用します。
-|/adfs/ls/federationmetadata/2007-06/federationmetadata.xml |任意のパッシブなフローの要件Office 365/Azure の AD FS 証明書を確認する AD で使用され、
+|/adfs/ls|ブラウザーベースの認証フローと現在のバージョン Microsoft Office Azure AD と Office 365 認証にこのエンドポイントを使用します
+|/adfs/services/trust/2005/usernamemixed|Office 2013 より前の Office クライアントで Exchange Online を使用する場合は2015更新プログラムを使用します。  その後のクライアントは、パッシブ \adfs\ls エンドポイントを使用します。
+|/adfs/services/trust/13/usernamemixed|Office 2013 より前の Office クライアントで Exchange Online を使用する場合は2015更新プログラムを使用します。  その後のクライアントは、パッシブ \adfs\ls エンドポイントを使用します。
+|/adfs/oauth2|この1つは、(AAD を通じてではなく) AD FS に直接認証するように構成した最新のアプリ (オンプレミスまたはクラウド) に対して使用されます。
+|/adfs/services/trust/mex|Office 2013 より前の Office クライアントで Exchange Online を使用する場合は2015更新プログラムを使用します。  その後のクライアントは、パッシブ \adfs\ls エンドポイントを使用します。
+|/adfs/ls/federationmetadata/2007-06/federationmetadata.xml |パッシブフローの要件および AD FS 証明書を確認するために Office 365/Azure AD によって使用されます。
 
 
-次の PowerShell コマンドレットを使用して、プロキシでは、AD FS のエンドポイントを無効にすることができます。
+プロキシで AD FS エンドポイントを無効にするには、次の PowerShell コマンドレットを使用します。
     
     PS:\>Set-AdfsEndpoint -TargetAddressPath <address path> -Proxy $false
 
-例:
+以下に例を示します。
     
     PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/certificatemixed -Proxy $false
     
 
 ### <a name="extended-protection-for-authentication"></a>認証の拡張保護
-認証の拡張保護は、中間 (MITM) 攻撃を軽減して、既定では、AD FS が有効になっている機能です。
+認証の拡張保護は、中間 (MITM) 攻撃のマンを軽減する機能であり、既定で AD FS で有効になっています。
 
-#### <a name="to-verify-the-settings-you-can-do-the-following"></a>設定を確認するには、次の操作を行うことができます。
-使用して、設定を検証できる、以下の PowerShell コマンドレット。  
+#### <a name="to-verify-the-settings-you-can-do-the-following"></a>設定を確認するには、次の操作を行います。
+この設定は、以下の PowerShell コマンドレットを使用して確認できます。  
     
    `PS:\>Get-ADFSProperties`
 
-プロパティが`ExtendedProtectionTokenCheck`します。  既定値は、許可するため、セキュリティ上の利点は、機能をサポートしないブラウザーと互換性の問題なく実現できます。  
+プロパティが`ExtendedProtectionTokenCheck`です。  既定の設定は [許可] です。これにより、機能をサポートしていないブラウザーとの互換性の問題がなくても、セキュリティ上の利点を実現できます。  
 
-### <a name="congestion-control-to-protect-the-federation-service"></a>輻輳制御、フェデレーション サービスを保護するには
-フェデレーション サービス プロキシ (WAP の一部) は、大量の要求から AD FS サービスを保護する輻輳制御を提供します。  Web アプリケーション プロキシは、Web アプリケーション プロキシとフェデレーション サーバー間の待機時間によって検出されると、フェデレーション サーバーがオーバー ロードの場合、外部クライアントの認証要求が拒否されます。  この機能は、既定では、推奨される待機時間のしきい値のレベルで構成されます。
+### <a name="congestion-control-to-protect-the-federation-service"></a>フェデレーションサービスを保護するための輻輳制御
+フェデレーションサービスプロキシ (WAP の一部) は、大量の要求から AD FS サービスを保護するための輻輳制御を提供します。  Web アプリケーションプロキシとフェデレーションサーバーの間の待機時間によって検出されたフェデレーションサーバーが過負荷になっている場合、Web アプリケーションプロキシは外部クライアントの認証要求を拒否します。  この機能は、既定で推奨される待機時間のしきい値レベルで構成されます。
 
-#### <a name="to-verify-the-settings-you-can-do-the-following"></a>設定を確認するには、次の操作を行うことができます。
-1.  Web アプリケーション プロキシ コンピューターに、管理者特権でコマンド ウィンドウを起動します。
-2.  %Windir%\adfs\config、ADFS ディレクトリに移動します。
-3.  輻輳制御の設定を変更するには、その既定値から '<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />'。
-4.  ファイルを保存し、閉じます。
-5.  'Net stop adfssrv'、'net start adfssrv' を実行して、AD FS サービスを再起動します。
-参考までに、この機能に関するガイダンスについては、「[ここ](https://msdn.microsoft.com/library/azure/dn528859.aspx )します。
+#### <a name="to-verify-the-settings-you-can-do-the-following"></a>設定を確認するには、次の操作を行います。
+1.  Web アプリケーションプロキシコンピューターで、管理者特権でのコマンドウィンドウを起動します。
+2.  %WINDIR%\adfs\config. で、ADFS ディレクトリに移動します。
+3.  輻輳制御の設定を既定値から '<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />' に変更します。
+4.  ファイルを保存して閉じます。
+5.  ' Net stop adfssrv ' を実行し、' net start adfssrv ' を実行して、AD FS サービスを再開します。
+この機能に関するガイダンスについては、[こちら](https://msdn.microsoft.com/library/azure/dn528859.aspx )を参照してください。
 
-### <a name="standard-http-request-checks-at-the-proxy"></a>プロキシで標準の HTTP 要求を確認します
-プロキシには、すべてのトラフィックに対して、次の標準チェックも実行します。
+### <a name="standard-http-request-checks-at-the-proxy"></a>プロキシでの標準 HTTP 要求チェック
+また、プロキシは、すべてのトラフィックに対して次の標準チェックを実行します。
 
-- FS-P 自体は、短期的な証明書を使用して AD FS を認証します。  Dmz サーバーのセキュリティ侵害を疑いがあるのでは、取り消すことができます"プロキシ信頼"されなくを信頼するように要求からは受信可能性のある AD FS には、プロキシが侵害されました。 AD FS サーバーに目的を問わず正常に認証できないように、各プロキシの証明書を失効プロキシ信頼を取り消す
-- FS P は、すべての接続を終了し、内部ネットワーク上の AD FS サービスへの新しい HTTP 接続を作成します。 これは、外部のデバイスと、AD FS サービス間のセッション レベル バッファーを提供します。 外部のデバイスは、AD FS サービスに直接接続されません。
-- FS P は、具体的には、AD FS サービスが不要な HTTP ヘッダーを除外する HTTP 要求の検証を実行します。
+- FS-P 自体は、短時間の証明書を使用して AD FS するために認証を行います。  Dmz サーバーが侵害された疑いがあるシナリオでは、AD FS が、侵害された可能性のあるプロキシからの受信要求を信頼しなくなるように、"プロキシの信頼を取り消す" ことができます。 プロキシの信頼を取り消すと、各プロキシの独自の証明書が失効し、AD FS サーバーに対する任意の目的に対して正常に認証できなくなります。
+- FS-P は、すべての接続を終了し、内部ネットワーク上の AD FS サービスへの新しい HTTP 接続を作成します。 これにより、外部デバイスと AD FS サービスの間にセッションレベルのバッファーが提供されます。 外部デバイスは、AD FS サービスに直接接続することはありません。
+- FS-P は、AD FS サービスで必要とされない HTTP ヘッダーをフィルターで除外する HTTP 要求の検証を実行します。
 
 ## <a name="recommended-security-configurations"></a>推奨されるセキュリティ構成
-すべての AD FS と WAP サーバーは、AD FS インフラストラクチャの最も重要なセキュリティ推奨事項がすべてのセキュリティ更新プログラムだけでなくこれらのオプションを使用して、AD FS および WAP サーバーを最新にする手段があることを確認するには、最新の更新プログラムを受信することを確認します。更新プログラムのこのページで AD FS の重要なこととして指定します。
+すべての AD FS および WAP サーバーが最新の更新プログラムを確実に受信できるようにする AD FS インフラストラクチャにとって最も重要なセキュリティの推奨事項は、AD FS および WAP サーバーをすべてのセキュリティ更新プログラムで最新の状態に保つための手段と、省略可能なオプションを使用できるようにすることです。このページの AD FS の重要な更新プログラムが指定されています。
 
-監視し、最新の Azure AD のお客様に対して推奨される方法、インフラストラクチャでは、Azure AD Connect Health for AD FS、Azure AD Premium の機能を使用します。  Azure AD Connect Health には、モニターと、AD FS または WAP コンピューターが不足している場合、重要な更新プログラムのいずれか専用の AD FS と WAP をトリガーするアラートが含まれています。
+Azure AD の顧客がインフラストラクチャを監視して最新の状態に保つには、Azure AD Premium の機能である AD FS の Azure AD Connect Health を使用することをお勧めします。  Azure AD Connect Health には、AD FS または WAP コンピューターに AD FS と WAP 専用の重要な更新プログラムのいずれかがない場合にトリガーされるモニターとアラートが含まれます。
 
-AD FS の Azure AD Connect Health をインストールする方法について[ここ](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health-agent-install/)します。
+AD FS に Azure AD Connect Health をインストールする方法については、[こちら](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health-agent-install/)を参照してください。
 
 ## <a name="additional-security-configurations"></a>追加のセキュリティ構成
-既定のデプロイで提供されている追加の保護を提供する、次の追加機能を必要に応じて構成できます。
+次の追加機能をオプションで構成して、既定のデプロイで提供されているものに対して追加の保護を提供することもできます。
 
-### <a name="extranet-soft-lockout-protection-for-accounts"></a>アカウントの保護を「ソフト」エクストラネットのロックアウト
-エクストラネットのロックアウト機能を使用して Windows Server 2012 R2 で AD FS 管理者が失敗した認証要求 (ExtranetLockoutThreshold) の数の上限を設定できます、' 監視ウィンドウの期間 (ExtranetObservationWindow)。 認証要求の最大数 (ExtranetLockoutThreshold) に達すると、特定の期間 (ExtranetObservationWindow) の AD FS に対して指定されたアカウントの資格情報を認証しようとしています。 AD FS を停止します。 つまり、ユーザーの認証用に AD FS に依存している企業リソースへのアクセスを失わずからこのアカウントを保護、この操作は、アカウントのロックアウトが AD からこのアカウントを保護します。 これらの設定は、AD FS サービスを認証できるすべてのドメインに適用されます。
+### <a name="extranet-soft-lockout-protection-for-accounts"></a>アカウントのエクストラネットの "ソフト" ロックアウト保護
+Windows Server 2012 R2 のエクストラネットロックアウト機能を使用すると、AD FS 管理者は、失敗した認証要求の最大許容数 (ExExtranetObservationWindow Etlockoutthreshold) と ' 観測期間の期間 () を設定できます。 認証要求のこの最大数 (ExExtranetObservationWindow Etlockoutthreshold) に到達すると AD FS、設定した期間 () の AD FS に対して、指定されたアカウントの資格情報の認証が試行されなくなります。 この操作により、このアカウントが AD アカウントのロックアウトから保護されます。つまり、このアカウントは、ユーザーの認証に AD FS に依存する企業リソースへのアクセスが失われるのを防ぐことができます。 これらの設定は、AD FS サービスが認証できるすべてのドメインに適用されます。
 
-AD FS エクストラネット ロックアウト (例) を設定するのには、次の Windows PowerShell コマンドを使用できます。 
+次の Windows PowerShell コマンドを使用して、AD FS エクストラネットロックアウト (例) を設定できます。 
 
     PS:\>Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow ( new-timespan -Minutes 30 )
 
-この機能のパブリック ドキュメントは、リファレンスについては、[ここ](https://technet.microsoft.com/library/dn486806.aspx )します。 
+参考までに、この機能のパブリックドキュメントは[こちら](https://technet.microsoft.com/library/dn486806.aspx )です。 
 
-### <a name="differentiate-access-policies-for-intranet-and-extranet-access"></a>イントラネットとエクストラネット アクセスのアクセス ポリシーを区別します。
-AD FS では、プロキシ経由でインターネットから到着したローカルの企業ネットワーク vs 要求で送信される要求のアクセス ポリシーを区別するために権限を持ちます。  これは、アプリケーションごと、またはグローバルに実行できます。  ビジネスに大きな値のアプリケーションや機密情報や個人を特定できる情報とアプリケーションの場合は、多要素認証を必要とする検討してください。  これは、AD FS 管理スナップインを使用して実行できます。  
+### <a name="disable-ws-trust-windows-endpoints-on-the-proxy-ie-from-extranet"></a>プロキシの WS-TRUST Windows エンドポイント (エクストラネットから) を無効にします。
 
-### <a name="require-multi-factor-authentication-mfa"></a>多要素認証 (MFA) が必要です。
-AD FS は、具体的には、プロキシ経由送信される要求を個々 のアプリケーション、および両方の Azure AD への条件付きアクセス (多要素認証) などの強力な認証を必要とするように構成できます/Office 365 とオンプレミスのリソース。  MFA のサポートされている方法には、Microsoft Azure MFA とサード パーティの両方のプロバイダーが含まれます。  ユーザーは追加の情報を提供するように求められます (など、1 つを格納している、SMS テキスト コードを時間) と AD FS がプロバイダー固有のアクセスを許可するプラグインと連携します。  
+WS-TRUST Windows エンドポイント ( */adfs/services/trust/2005/windowstransport*と */adfs/services/trust/13/windowstransport*) は、HTTPS で WIA バインドを使用する、イントラネットに接続するエンドポイントに限定されます。 それらをエクストラネットに公開すると、これらのエンドポイントに対する要求によってロックアウトの保護がバイパスされる可能性があります。 これらのエンドポイントは、次の PowerShell コマンドを使用して AD アカウントのロックアウトを保護するために、プロキシで無効にする (つまり、エクストラネットから無効にする) 必要があります。 プロキシでこれらのエンドポイントを無効にすることによって、エンドユーザーに対する既知の影響はありません。
 
-サポートされている外部の MFA プロバイダーは、記載されている[この](https://technet.microsoft.com/library/dn758113.aspx) ページで、だけでなく HDI グローバルです。
+    PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/2005/windowstransport -Proxy $false
+    PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/windowstransport -Proxy $false
+    
+### <a name="differentiate-access-policies-for-intranet-and-extranet-access"></a>イントラネットアクセスとエクストラネットアクセスのアクセスポリシーを区別する
+AD FS には、ローカルの企業ネットワークで発信される要求と、プロキシ経由でインターネットから送信される要求のアクセスポリシーを区別する機能があります。  これは、アプリケーションごとに実行することも、グローバルに行うこともできます。  ビジネス価値の高いアプリケーションや、機密情報または個人を特定できる情報を持つアプリケーションの場合は、multi-factor authentication を要求することを検討してください。  これは、AD FS 管理スナップインを使用して行うことができます。  
+
+### <a name="require-multi-factor-authentication-mfa"></a>Multi-factor authentication (MFA) を要求する
+AD FS は、プロキシ経由で受信する要求、個々のアプリケーション、および Azure AD/Office 365 とオンプレミスの両方のリソースへの条件付きアクセスに対して、強力な認証 (多要素認証など) を要求するように構成できます。  MFA のサポートされる方法には、Microsoft Azure MFA とサードパーティプロバイダーの両方が含まれます。  ユーザーは、追加情報 (1 回限りのコードを含む SMS テキストなど) を入力するように求められ、AD FS プロバイダー固有のプラグインを使用してアクセスできるようになります。  
+
+サポートされている外部 MFA プロバイダーには、[この](https://technet.microsoft.com/library/dn758113.aspx)ページに記載されているものと HDI グローバルが含まれます。
 
 ### <a name="hardware-security-module-hsm"></a>ハードウェア セキュリティ モジュール (HSM)
-既定の構成でしないトークンの署名に使用する AD FS のキーは、イントラネット上のフェデレーション サーバーままにします。  境界ネットワークまたはプロキシ コンピューター上に存在することはできません。  必要に応じて追加の保護を提供するには、これらのキーを AD FS に接続されている、ハードウェア セキュリティ モジュールで保護できます。  Microsoft には、HSM の製品がなければ、ただしは、いくつか AD FS をサポートする市場にします。  この推奨事項を実装するために、X509 を作成するベンダーのガイダンスに従うの署名と暗号化、証明書が、次のように、カスタムの証明書を指定する、AD FS インストール powershell コマンドレットを使用します。
+既定の構成では、トークンの署名に使用 AD FS キーは、イントラネット上のフェデレーションサーバーを離れることはありません。  これらは、DMZ またはプロキシコンピューターには存在しません。  必要に応じて、追加の保護を提供するために、AD FS にアタッチされたハードウェアセキュリティモジュールでこれらのキーを保護することができます。  Microsoft は HSM 製品を生成しませんが、AD FS をサポートするいくつかの市場があります。  この推奨事項を実装するには、ベンダーのガイダンスに従って署名と暗号化のための X509 証明書を作成し、AD FS インストール powershell コマンドレットを使用して、次のようにカスタム証明書を指定します。
 
     PS:\>Install-AdfsFarm -CertificateThumbprint <String> -DecryptionCertificateThumbprint <String> -FederationServiceName <String> -ServiceAccountCredential <PSCredential> -SigningCertificateThumbprint <String>
 
 それぞれの文字の説明は次のとおりです。
 
 
-- `CertificateThumbprint` SSL 証明書は、します。
-- `SigningCertificateThumbprint` HSM で保護されたキーの署名証明書は、します。
-- `DecryptionCertificateThumbprint` HSM で保護されたキーの暗号化証明書は、します。
+- `CertificateThumbprint`は SSL 証明書です
+- `SigningCertificateThumbprint`は、(HSM で保護されたキーを持つ) 署名証明書です。
+- `DecryptionCertificateThumbprint`は、(HSM で保護されたキーを持つ) 暗号化証明書です。
 
 
 
