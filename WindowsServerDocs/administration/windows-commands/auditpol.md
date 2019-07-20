@@ -39,12 +39,12 @@ Auditpol command [<sub-command><options>]
 |サブ コマンド|説明|
 |-----------|-----------|
 |/get|現在の監査ポリシーが表示されます。</br>参照してください[Auditpol get](auditpol-get.md)構文とオプションについてです。|
-|/set|監査ポリシーを設定します。</br>参照してください[Auditpol 設定](auditpol-set.md)構文とオプションについてです。|
-|/list|選択可能なポリシーの要素が表示されます。</br>参照してください[Auditpol 一覧](auditpol-list.md)構文とオプションについてです。|
-|/backup|監査ポリシーをファイルに保存します。</br>参照してください[Auditpol バックアップ](auditpol-backup.md)構文とオプションについてです。|
-|/restore|Auditpol/backup を使用して作成されたファイルから、監査ポリシーを復元します。</br>参照してください[Auditpol 復元](auditpol-restore.md)構文とオプションについてです。|
-|/clear|監査ポリシーを消去します。</br>参照してください[Auditpol オフ](auditpol-clear.md)構文とオプションについてです。|
-|/remove|すべてのユーザーごとの監査ポリシーの設定を削除し、すべてのシステム監査ポリシー設定を無効にします。</br>参照してください[Auditpol 削除](auditpol-remove.md)構文とオプションについてです。|
+|/set|監査ポリシーを設定します。</br>参照してください[Auditpol set](auditpol-set.md)構文とオプションについてです。|
+|/list|選択可能なポリシーの要素が表示されます。</br>参照してください[Auditpol list](auditpol-list.md)構文とオプションについてです。|
+|/backup|監査ポリシーをファイルに保存します。</br>参照してください[Auditpol backup](auditpol-backup.md)構文とオプションについてです。|
+|/restore|Auditpol/backup を使用して作成されたファイルから、監査ポリシーを復元します。</br>参照してください[Auditpol restore](auditpol-restore.md)構文とオプションについてです。|
+|/clear|監査ポリシーを消去します。</br>参照してください[Auditpol clear](auditpol-clear.md)構文とオプションについてです。|
+|/remove|すべてのユーザーごとの監査ポリシーの設定を削除し、すべてのシステム監査ポリシー設定を無効にします。</br>参照してください[Auditpol remove](auditpol-remove.md)構文とオプションについてです。|
 |/resourceSACL|グローバル リソース システム アクセス制御リスト (Sacl) を構成します。</br>注:7 および Windows Server 2008 R2、Windows にのみ適用されます。</br>参照してください[Auditpol resourceSACL](auditpol-resourcesacl.md)します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
