@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 45164e9eca0873c82148aa3b7baa179a3f626dd7
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 02c7098c8e3f93ce315e7d9a881613a03924e78b
+ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66804975"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68300696"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>ユーザー用にリモート デスクトップ Web クライアントをセットアップする
 
@@ -259,7 +259,7 @@ RD セッション ホスト サーバーが RD ブローカー サーバーと�
 管理者は、次の PowerShell コマンドレットを使用して、展開での製品利用統計情報の収集を抑制できます。
 
    ```PowerShell
-    Set-RDWebClientDeploymentSetting -SuppressTelemetry $true
+    Set-RDWebClientDeploymentSetting -Name "SuppressTelemetry" $true
    ```
 
 既定では、製品利用統計情報を有効にするか無効にするかをユーザーが選択できます。 ブール値 **$false** は、既定のクライアント動作と一致します。 ブール値 **$true** は製品利用統計情報を無効にし、ユーザーがこれを有効にすることを制限します。
@@ -268,15 +268,15 @@ RD セッション ホスト サーバーが RD ブローカー サーバーと�
 既定では、ユーザーはリモート リソースの起動を、(1) ブラウザーで行うか、(2) .rdp ファイルをダウンロードし、コンピューターにインストールされている他のクライアントで処理するかを選択できます。 管理者は、以下の PowerShell コマンドを使用して、展開でのリモート リソースの起動方法を制限できます。
 
    ```PowerShell
-    Set-RDWebClientDeploymentSetting -LaunchResourceInBrowser ($true|$false)
+    Set-RDWebClientDeploymentSetting -Name "LaunchResourceInBrowser" ($true|$false)
    ```
  既定では、ユーザーは、いずれかの起動方法を選択できます。 ブール値 **$true** では、ユーザーはブラウザー内でリソースを起動します。 ブール値 **$false** では、.rdp ファイルをダウンロードし、ローカルにインストールされた RDP クライアントで処理することで、リソースを起動します。
 
 ### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>RDWebClientDeploymentSetting 構成を既定値にリセットする
-展開レベルのすべての Web クライアント設定を既定の構成にリセットするには、次の PowerShell コマンドレットを実行します。
-
+展開レベルの Web クライアント設定を既定の構成にリセットするには、次の PowerShell コマンドレットを実行し、--Name パラメーターを使用して、リセットする設定を指定します。
    ```PowerShell
-    Reset-RDWebClientDeploymentSetting 
+    Reset-RDWebClientDeploymentSetting -Name "LaunchResourceInBrowser"
+    Reset-RDWebClientDeploymentSetting -Name "SuppressTelemetry"
    ```
 
 ## <a name="troubleshooting"></a>トラブルシューティング
