@@ -129,7 +129,7 @@ ms.locfileid: "66433302"
   
    Windows Media Player でサポートされるデジタル メディア タイプに関する詳細については、「 [Windows Media Player でサポートされるファイルの種類](https://support.microsoft.com/kb/316992)」を参照してください。  
   
-   詳細については、「 [Allow or restrict access to a media library on the server](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)」を参照してください。  
+   詳細については、次を参照してください。[許可、サーバー上のメディア ライブラリへのアクセスを制限または](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)します。  
   
 ##  <a name="BKMK_5"></a> デジタル メディア ファイルをサーバーに追加します。  
  サーバーの管理者は、サーバーに直接アクセスすることによって、またはリモート Web アクセス サイトを使用して、ダッシュ ボードにサインインして、メディア ライブラリに共有フォルダーにデジタル メディアを追加できます。 他のユーザーを使用して、サーバーにメディア ファイルを追加することができます、**共有フォルダー**スタート パッド、または Windows Phone の My Server アプリを使用して、リモート Web アクセス サイトを使用してに接続します。 メディアの再生方法の詳細については、次を参照してください。 [Play Digital Media](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)します。  

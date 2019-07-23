@@ -37,7 +37,7 @@ Active Directory フェデレーション サービスをインストールし�
   
 2.  **[ようこそ]** ページで、 **[フェデレーション サーバー ファームに最初のフェデレーション サーバーを作成します]** を選択し、 **[次へ]** をクリックします。  
   
-3.  **AD DS への接続** ページで、Active Directory のドメイン管理者のアクセス許可を使用してアカウントを指定\(AD\)クリックしてこのコンピューターが参加しているドメイン **次へ** .  
+3.  **AD DS への接続** ページで、Active Directory のドメイン管理者のアクセス許可を使用してアカウントを指定\(AD\)クリックしてこのコンピューターが参加しているドメイン**次へ**.  
   
 4.  **[サービスのプロパティの指定]** ページで次の操作を実行してから、 **[次へ]** をクリックします。  
   
@@ -59,7 +59,7 @@ Active Directory フェデレーション サービスをインストールし�
   
 6.  **構成データベースの指定**ページで、AD FS 構成データベースを指定してをクリックし、**次**します。 Windows Internal Database を使用してこのコンピューターにデータベースを作成する\(WID\)場所と Microsoft SQL Server のインスタンス名を指定することができます。  
   
-    詳細については、「 [The Role of the AD FS Configuration Database](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)」を参照してください。  
+    詳細については、次を参照してください。 [、AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)します。  
   
     > [!IMPORTANT]  
     > AD FS ファームを作成して構成データを格納する SQL Server を使用する場合は、SQL Server 2008 および SQL Server 2012、SQL Server 2014 などの新しいバージョンを使用することができます。  

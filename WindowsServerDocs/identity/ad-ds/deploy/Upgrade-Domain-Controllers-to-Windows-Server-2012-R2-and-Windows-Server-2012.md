@@ -26,7 +26,7 @@ ms.locfileid: "66443055"
 ドメインをアップグレードするのに推奨される方法は、新しいバージョンの Windows Server を実行するドメイン コントローラーを昇格させる一方で、必要に応じて古いドメイン コントローラーを降格させる方法です。 この方法は、既存のドメイン コントローラーのオペレーティング システムをアップグレードする方法としてお勧めします。 この一覧は、新しいバージョンの Windows Server を実行するドメイン コント ローラーを昇格する前にする一般的な手順について説明します。  
   
 1. 対象サーバーが [システム要件](https://technet.microsoft.com/library/dn303418.aspx)を満たしていることを確認します。  
-2. [Application compatibility](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_AppCompat)を確認します。  
+2. 確認[アプリケーションの互換性](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_AppCompat)します。  
 3. セキュリティ設定を確認します。 詳細については、次を参照してください。[非推奨の機能および動作変更は、Windows Server 2012 で AD DS に関連する](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_DeprecatedFeatures)と[Windows Server 2008 および Windows Server 2008 R2 の既定の設定をセキュリティで保護された](https://technet.microsoft.com/library/upgrade-domain-controllers-to-windows-server-2008-r2(WS.10).aspx#BKMK_SecureDefault)します。  
 4. インストールを実行するコンピューターから対象サーバーに接続できることを確認します。  
 5. 必要な操作マスターの役割を使用できることを確認します。  
@@ -158,9 +158,9 @@ Windows Server 2008 以降では、ドメイン コント ローラーはまた�
 |||||  
 |-|-|-|-|  
 |暗号化の種類またはポリシー|Windows Server 2008 の既定値|Windows Server 2012 および Windows Server 2008 R2 の既定値|Comment|  
-|AllowNT4Crypto|Disabled|Disabled|サード パーティ製のサーバー メッセージ ブロック (SMB) クライアントは、ドメイン コントローラー上の既定のセキュリティ設定と互換性がない場合があります。 どのような場合でも、これらの設定を緩和して相互運用を可能にすることもできますが、その際はセキュリティが低下します。 詳細については、次を参照してください。[記事 942564](https://go.microsoft.com/fwlink/?LinkId=164558)でマイクロソフト サポート技術情報 (https://go.microsoft.com/fwlink/?LinkId=164558)します。|  
+|AllowNT4Crypto|Disabled|Disabled|サード パーティ製のサーバー メッセージ ブロック (SMB) クライアントは、ドメイン コントローラー上の既定のセキュリティ設定と互換性がない場合があります。 どのような場合でも、これらの設定を緩和して相互運用を可能にすることもできますが、その際はセキュリティが低下します。 詳細については、次を参照してください。[記事 942564](https://go.microsoft.com/fwlink/?LinkId=164558)でマイクロソフト サポート技術情報 (https://go.microsoft.com/fwlink/?LinkId=164558) します。|  
 |DES|有効|Disabled|[記事 977321](https://go.microsoft.com/fwlink/?LinkId=177717)マイクロソフト サポート技術情報 (https://go.microsoft.com/fwlink/?LinkId=177717)|  
-|統合認証のための CBT/拡張保護|なし|有効|参照してください[マイクロソフト セキュリティ アドバイザリ (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559)と[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251)でマイクロソフト サポート技術情報 (https://go.microsoft.com/fwlink/?LinkId=178251)します。<br /><br />確認し、修正プログラムをインストール[記事 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (https://go.microsoft.com/fwlink/?LinkId=186394)必要に応じて、Microsoft サポート技術情報でします。|  
+|統合認証のための CBT/拡張保護|なし|有効|参照してください[マイクロソフト セキュリティ アドバイザリ (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) と[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251)でマイクロソフト サポート技術情報 (https://go.microsoft.com/fwlink/?LinkId=178251) します。<br /><br />確認し、修正プログラムをインストール[記事 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (https://go.microsoft.com/fwlink/?LinkId=186394) 必要に応じて、Microsoft サポート技術情報でします。|  
 |LMv2|有効|Disabled|[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251)マイクロソフト サポート技術情報 (https://go.microsoft.com/fwlink/?LinkId=178251)|  
 
 ## <a name="BKMK_SysReqs"></a>オペレーティング システムの要件
