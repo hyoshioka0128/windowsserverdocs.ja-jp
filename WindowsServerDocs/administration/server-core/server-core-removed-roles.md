@@ -1,92 +1,92 @@
 ---
-title: 役割、役割サービス、および Windows Server の Server Core ではなく機能
-description: 役割と Windows Server の Server Core インストール オプションで含まれていない機能について説明します。
+title: Windows Server ではない役割、役割サービス、および機能-Server Core
+description: Windows Server の Server Core インストールオプションに含まれていない役割と機能について説明します。
 ms.prod: windows-server-threshold
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 02/23/2018
-ms.openlocfilehash: 308bc8a5d25e2ec67438f0ee03cbfce6f7411ca2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ce5107e8e0ab573df7588428db65c8b223cf1f13
+ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825533"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68476514"
 ---
-# <a name="roles-role-services-and-features-not-in-windows-server---server-core"></a>役割、役割サービス、および Windows Server の Server Core ではなく機能
+# <a name="roles-role-services-and-features-not-in-windows-server---server-core"></a>Windows Server ではない役割、役割サービス、および機能-Server Core
 
-> 適用対象:Windows Server (半期チャネル) および Windows Server 2016
+> 適用対象:Windows Server 2019、Windows Server 2016、および Windows Server (半期チャネル)
 
-Windows Server の Server Core インストール オプションから、次の役割、役割サービス、および機能が削除されました。 環境内の Server Core オプションの動作はかどうかを把握するのにには、この情報を使用します。
+Windows Server の Server Core インストールオプションから、次の役割、役割サービス、および機能が削除されました。 この情報は、お使いの環境で Server Core オプションが機能するかどうかを判断するのに役立ちます。
 
 > [!NOTE]
-> 役割、役割サービスの一覧を表示もでき、機能を[Server Core に含まれる](server-core-roles-and-services.md)します。 これは非常に大きなリストでは、したがって最良の結果を特定の役割または機能に関心があるは、その一覧を検索します。
+> また、 [Server Core に含ま](server-core-roles-and-services.md)れる役割、役割サービス、および機能の一覧も表示できます。 これは非常に大きなリストなので、最適な結果を得るために、目的の特定の役割または機能を一覧で検索します。
 
-## <a name="roles-not-in-server-core"></a>Server Core ではなくロール
+## <a name="roles-not-in-server-core"></a>Server Core にないロール
 
 - FAX
 - MultiPointServerRole
 - NPAS
 - WDS
 
-## <a name="role-services-not-in-server-core"></a>Server Core ではなくロール サービス
-ある (接続ブローカー、ライセンス、仮想化ホスト) の Server Core に一部のリモート デスクトップ ロール サービスが含まれますが、他のユーザーに注意してください (ゲートウェイ、RD セッション ホスト、Web アクセス)。
+## <a name="role-services-not-in-server-core"></a>Server Core にない役割サービス
+一部のリモートデスクトップの役割サービスは、Server Core (接続ブローカー、ライセンス、仮想化ホスト) に含まれていますが、他の役割はありません (ゲートウェイ、RD セッションホスト、Web アクセス)。
 
-- スキャン サーバーの印刷
-- インターネット印刷
-- RDS ゲートウェイ
+- 印刷-スキャン-サーバー
+- 印刷-インターネット
+- RDS-ゲートウェイ
 - RDS-RD サーバー
-- RDS Web アクセス
-- Web の管理コンソール
-- Web Lgcy 管理コンソール
-- WDS の展開
-- WDS トランスポート *(前に Windows Server バージョン 1803)*
+- RDS-Web アクセス
+- Web 管理-コンソール
+- Lgcy-管理コンソール
+- WDS-展開
+- WDS-トランスポート *(Windows Server バージョン1803以前)*
 
-## <a name="features-not-in-server-core"></a>Server Core ではなく機能
+## <a name="features-not-in-server-core"></a>Server Core に含まれていない機能
 
-- BITS、IIS-Ext
-- BitLocker NetworkUnlock
+- BITS-IIS-Ext
+- BitLocker-NetworkUnlock
 - 直接再生
-- インターネット印刷のクライアント
-- LPR-Port-Monitor
-- MSMQ マルチキャスト
-- CMAK
-- リモート アシスタンス
+- インターネット-印刷-クライアント
+- LPR-ポートモニター
+- MSMQ-マルチキャスト
+- マネージャー
+- リモートアシスタンス
 - RSAT-SMTP
-- RSAT-Feature-Tools-BitLocker-RemoteAdminTool
+- RSAT-機能ツール-BitLocker-RemoteAdminTool
 - RSAT-Bits サーバー
 - RSAT-NLB
 - RSAT-SNMP
-- RSAT WINS
-- Hyper V ツール
-- RSAT RDS-ツール
-- RSAT から RDS ゲートウェイ
-- RSAT の RDS のライセンス-診断-UI
-- RDS ライセンス UI
-- UpdateServices UI
-- RSAT ADCS
-- RSAT ADCS 個の管理
-- オンライン レスポンダーの RSAT
-- RSAT ADRMS
-- RSAT Fax
-- RSAT のファイル サービス
-- RSAT-DFS-Mgmt-Con
-- RSAT FSRM 個の管理
-- RSAT の NFS の管理者
-- RSAT NPAS
-- RSAT の印刷サービス
-- RSAT VA-ツール
-- WDS AdminPack
-- SMTP サーバー
-- TFTP クライアント
-- WebDAV リダイレクター
-- 生体認証フレームワーク
-- Windows Defender の Gui
+- RSAT-WINS
+- Hyper-v-ツール
+- RSAT-RDS-ツール
+- RSAT-RDS-ゲートウェイ
+- RSAT-RDS-Licensing-診断-UI
+- RDS-Licensing-UI
+- UpdateServices-UI
+- RSAT-ADCS
+- RSAT-ADCS-管理
+- RSAT-オンラインレスポンダー
+- RSAT-ADRMS
+- RSAT-Fax
+- RSAT-ファイルサービス
+- RSAT-DFS 管理-Con
+- RSAT-FSRM-管理
+- RSAT-NFS-管理者
+- RSAT-NPAS
+- RSAT-印刷サービス
+- RSAT-VA-ツール
+- WDS-AdminPack
+- SMTP-サーバー
+- TFTP-クライアント
+- WebDAV-リダイレクター
+- 生体認証-フレームワーク
+- Windows-Defender-Gui
 - Windows-Identity-Foundation
-- PowerShell ISE
-- 検索サービス
-- Windows-TIFF IFilter
-- ワイヤレス ネットワーク
+- PowerShell-ISE
+- 検索-サービス
+- Windows-TIFF-IFilter
+- ワイヤレスネットワーク
 - XPS ビューアー
 
