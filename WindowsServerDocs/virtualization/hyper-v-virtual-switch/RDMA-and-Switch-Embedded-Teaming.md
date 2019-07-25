@@ -120,7 +120,7 @@ RDMA 機能を確認します。機能が 0 以外であることを確認しま
     Get-NetAdapterRdma | fl *
 
 
-## <a name="switch-embedded-teaming-set"></a>スイッチが埋め込まれたチーミング (設定)  
+## <a name="switch-embedded-teaming-set"></a>スイッチが埋め込まれたチーミング (SET)  
 
 このセクションでは、スイッチ埋め込みチーミング (SET) Windows Server 2016 の概要について説明し、次のセクションが含まれています。
 
@@ -142,7 +142,7 @@ RDMA 機能を確認します。機能が 0 以外であることを確認しま
 
 - [転送されたパケットの MAC アドレスの使用](#bkmk_mac)
 
-- [セット チームを管理します。](#bkmk_manage)
+- [SET チームの管理](#bkmk_manage)
 
 ## <a name="bkmk_over"></a>セットの概要
 
