@@ -15,7 +15,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 05/25/2019
 ms.locfileid: "66222751"
 ---
-# <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>リモート ダイレクト メモリ アクセス\(RDMA\)スイッチ埋め込みチーミングと\(設定\)
+# <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>リモート ダイレクト メモリ アクセス\(RDMA\)スイッチ埋め込みチーミング\(SET\)
 
 >適用先:Windows Server 2016 の Windows Server (半期チャネル)
 
