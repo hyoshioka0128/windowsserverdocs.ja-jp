@@ -52,7 +52,7 @@ Windows Server 2016 で新しいまたは強化されたネットワーク テ�
         詳細については、次を参照してください。 [RAS ゲートウェイで新](sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)と[SDN の RAS ゲートウェイ](sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)します。  
           
     - **ソフトウェア ロード バランサー (SLB) およびネットワーク アドレス変換 (NAT)** します。 北-南と東-西レイヤー 4 のロード バランサーと NAT がサポートの Direct Server Return 戻り値のネットワーク トラフィックが、負荷分散マルチプレクサーをバイパスできる、スループットを向上します。  
-       詳細については、次を参照してください。 [SDN のソフトウェアによる負荷分散&#40;SLB&#41;](sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)です。  
+       詳細については、「[&#40;SDN のソフトウェアの負荷分散 (SLB)&#41;](sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)」を参照してください。  
   
     詳細については、次を参照してください。 [ネットワーク機能の仮想化](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md)します。  
   
@@ -70,7 +70,7 @@ SDN の詳細については、次を参照してください。[ソフトウェ
   
 -   **パケット ダイレクト**します。  パケット ダイレクトでは、高いネットワーク トラフィックのスループットと低待機時間パケット処理インフラストラクチャを提供します。  
   
--   **スイッチ埋め込みチーミング (SET)** します。        セットは、HYPER-V 仮想スイッチに統合されている NIC チーミング ソリューションです。 セットは、可用性が向上し、フェールオーバーを提供します。 1 つのセット チームに最大 8 つの物理 NIC のチーミングを許可します。 Windows Server 2016 では、サーバー メッセージ ブロック (SMB)、および RDMA の使用に制限されているチームのセットを作成できます。 さらに、チームのセットを使用して、HYPER-V ネットワーク仮想化のネットワーク トラフィックを分散することができます。 詳細については、[リモート ダイレクト メモリ アクセス&#40;RDMA&#41;スイッチ埋め込みチーミングと&#40;SET&#41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)を参照してください。  
+-   **スイッチ埋め込みチーミング (SET)**。SET は、HYPER-V 仮想スイッチに統合されている NIC チーミング ソリューションです。SET は最大 8 つの物理 NIC を 1 つのチームにチーミングし、可用性を向上させ、フェールオーバーを提供します。Windows Server 2016 では、サーバー メッセージ ブロック (SMB) および RDMA の使用に制限されている SET チームを作成できます。さらに、SET チームを使用して、HYPER-V ネットワーク仮想化のネットワーク トラフィックを分散することができます。詳細については、「[リモート ダイレクト メモリ アクセス &#40;RDMA&#41; とスイッチ埋め込みチーミング &#40;SET&#41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)」を参照してください。 
   
 ## <a name="bkmk_existing"></a>追加のネットワーク テクノロジに対する新機能
 
