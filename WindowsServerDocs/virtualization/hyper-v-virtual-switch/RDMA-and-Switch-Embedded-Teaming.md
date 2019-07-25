@@ -142,7 +142,7 @@ RDMA 機能を確認します。機能が 0 以外であることを確認しま
 
 - [転送されたパケットの MAC アドレスの使用](#bkmk_mac)
 
-- [セット チームを管理](#bkmk_manage)
+- [SET チームの管理](#bkmk_manage)
 
 ## <a name="bkmk_over"></a>セットの概要
 
