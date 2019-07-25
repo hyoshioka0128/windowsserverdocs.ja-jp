@@ -389,11 +389,11 @@ WSUS では、SSL 用に 2 つのポートを必要とします。1 つは暗号
 
 2.  移動して**開始**、型**CMD**、右クリック**コマンド プロンプト**、順にクリックします**管理者として実行**します。
 
-3.  移動し、 *%ProgramFiles%***\Update \tools\\* * フォルダー。
+3.  移動し、 *%ProgramFiles%* **\Update \tools\\* * フォルダー。
 
 4.  コマンド プロンプト ウィンドウで、次のコマンドを入力します。
 
-    **Wsusutil configuressl * * * certificateName*
+    **Wsusutil configuressl** *certificateName*
 
     それぞれの文字の説明は次のとおりです。
 
