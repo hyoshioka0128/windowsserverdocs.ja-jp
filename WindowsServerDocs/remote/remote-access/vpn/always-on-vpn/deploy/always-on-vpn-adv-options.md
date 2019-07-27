@@ -5,17 +5,17 @@ ms.assetid: 51a1ee61-3ffe-4f65-b8de-ff21903e1e74
 ms.prod: windows-server-threshold
 ms.technology: networking-ras
 ms.topic: article
-ms.date: 11/05/2018
-ms.author: pashort
+ms.date: 07/24/19
+ms.author: pashort, v-tea
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: c238e44b538a31be7b21d2e75f41ebbf7ec7a1c8
-ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
+ms.openlocfilehash: ae3c088122a0100f94b4d9bca41078d901487237
+ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314333"
+ms.lasthandoff: 07/27/2019
+ms.locfileid: "68590409"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Always On VPN の高度な機能
 
@@ -24,7 +24,7 @@ ms.locfileid: "68314333"
 - [**先の：** Always On VPN テクノロジについて](../always-on-vpn-technology-overview.md)
 - [**次に：** Always On VPN 展開の計画を開始する](always-on-vpn-deploy-planning.md)
 
-提供される展開シナリオ以外にも、VPN 接続のセキュリティと可用性を向上させるために、他の高度な VPN 機能を追加することができます。 たとえば、このようなコンポーネントは接続を許可する前に、接続しているクライアントが正常であることを確認するのに役立ちます。
+提供される展開シナリオ以外にも、VPN 接続のセキュリティと可用性を向上させるために、他の高度な VPN 機能を追加することができます。 たとえば、VPN サーバーはこれらの機能を使用して、接続しているクライアントが正常であることを確認してから、接続を許可することができます。
 
 ## <a name="high-availability"></a>高可用性
 
@@ -32,7 +32,7 @@ ms.locfileid: "68314333"
 
 |OPTION  |説明  |
 |---------|---------|
-|サーバーの復元と負荷分散     |高可用性を必要とする環境や、大量の要求をサポートする環境では、ネットワークポリシーサーバー (NPS) を実行している複数のサーバー間で負荷分散を使用してリモートアクセスを有効にすることにより、リモートアクセスのパフォーマンスと回復性を向上させることができます。サーバークラスタリングにアクセスします。<p>関連ドキュメント:<ul><li>[NPS プロキシサーバーの負荷分散](../../../../../networking/technologies/nps/nps-manage-proxy-lb.md)</li><li>[クラスターでのリモート アクセスの展開](https://docs.microsoft.com/windows-server/remote/remote-access/ras/cluster/deploy-remote-access-in-cluster)</li></ul>        |
+|サーバーの復元と負荷分散     |高可用性を必要とする環境や、大量の要求をサポートする環境では、ネットワークポリシーサーバー (NPS) を実行している複数のサーバー間で負荷分散を使用して、を有効にすることで、リモートアクセスのパフォーマンスと回復性を向上させることができます。リモートアクセスサーバーのクラスタリング。<p>関連ドキュメント:<ul><li>[NPS プロキシサーバーの負荷分散](../../../../../networking/technologies/nps/nps-manage-proxy-lb.md)</li><li>[クラスターでのリモート アクセスの展開](https://docs.microsoft.com/windows-server/remote/remote-access/ras/cluster/deploy-remote-access-in-cluster)</li></ul>        |
 |地理的なサイトの復元     |IP ベースの地理位置情報の場合は、Windows Server 2016 の DNS でグローバル Traffic Manager を使用できます。 より堅牢な地理的負荷分散を行うには、Microsoft Azure Traffic Manager などのグローバルサーバー負荷分散ソリューションを使用できます。<p>関連ドキュメント:<ul><li>[Traffic Manager の概要](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview)</li><li>[Microsoft Azure Traffic Manager](https://azure.microsoft.com/services/traffic-manager)</li></ul>         |
 
 ## <a name="advanced-authentication"></a>高度な認証
@@ -41,7 +41,7 @@ ms.locfileid: "68314333"
 
 |OPTION  |説明  |
 |---------|---------|
-|Windows Hello for Business     |Windows Hello for Business は、Windows 10 の PC とモバイル デバイスで、パスワードに替わる強固な 2 要素認証機能を提供します。 この認証は、デバイスに関連付けられた新しい種類のユーザー資格情報で構成され、生体認証 Id または暗証番号 (PIN) を使用します。<p>Windows 10 VPN クライアントは Windows Hello for Business と互換性があります。 ユーザーがジェスチャを使用してログインすると、VPN 接続は Windows Hello for Business 証明書を使用して証明書ベースの認証を行います。<p>関連ドキュメント:<ul><li>[Windows Hello for Business](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification)</li><li>技術的なケーススタディ:[Windows 10 で Windows Hello for Business を使用したリモートアクセスの有効化](https://msdn.microsoft.com/library/mt728163.aspx)</li></ul>         |
+|Windows Hello for Business     |Windows 10 では、Pc とモバイルデバイスに強力な2要素認証を提供することで、Windows Hello for Business によってパスワードが置き換えられます。 この認証は、デバイスに関連付けられた新しい種類のユーザー資格情報で構成され、生体認証 Id または暗証番号 (PIN) を使用します。<p>Windows 10 VPN クライアントは Windows Hello for Business と互換性があります。 ユーザーがジェスチャを使用してログインすると、VPN 接続は Windows Hello for Business 証明書を使用して証明書ベースの認証を行います。<p>関連ドキュメント:<ul><li>[Windows Hello for Business](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification)</li><li>技術的なケーススタディ:[Windows 10 で Windows Hello for Business を使用したリモートアクセスの有効化](https://msdn.microsoft.com/library/mt728163.aspx)</li></ul>         |
 |Azure 多要素認証 (MFA)     |Azure MFA には、Windows VPN 認証メカニズムと統合できるクラウドおよびオンプレミスのバージョンがあります。<p>このメカニズムのしくみの詳細については、「 [RADIUS 認証と Azure Multi-factor Authentication Server の統合](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius)」を参照してください。         |
 
 ## <a name="advanced-vpn-features"></a>高度な VPN 機能
@@ -50,9 +50,9 @@ ms.locfileid: "68314333"
 
 |OPTION  |説明  |
 |---------|---------|
-|トラフィックのフィルター処理     |VPN クライアントがアクセスできるアプリケーションを強制する必要がある場合は、VPN トラフィックフィルターを有効にすることができます。<p>詳細については、「 [VPN のセキュリティ機能](https://docs.microsoft.com/windows/access-protection/vpn/vpn-security-features)」を参照してください。         |
+|トラフィックのフィルター処理     |VPN クライアントがアクセスできるアプリケーションを選択する必要がある場合は、VPN トラフィックフィルターを有効にすることができます。<p>詳細については、「 [VPN のセキュリティ機能](https://docs.microsoft.com/windows/access-protection/vpn/vpn-security-features)」を参照してください。         |
 |アプリ トリガー VPN     |特定のアプリケーションまたはアプリケーションの種類が開始されたときに、自動的に接続するように VPN プロファイルを構成することができます。<p>このオプションおよびその他のトリガーオプションの詳細については、「 [VPN 自動トリガープロファイルのオプション](https://docs.microsoft.com/windows/access-protection/vpn/vpn-auto-trigger-profile)」を参照してください。         |
-|VPN 条件付きアクセス   |条件付きアクセスとデバイスコンプライアンスでは、管理対象デバイスが VPN に接続するには、標準に準拠している必要があります。 VPN の条件付きアクセスの高度な機能の1つでは、クライアント認証証明書に ' 1.3.6.1.4.1.311.87 ' の ' AAD 条件付きアクセス ' OID が含まれているもののみに VPN 接続を制限することができます。<p>VPN 接続を制限するには、次のことを行う必要があります。<ol><li>NPS サーバーで、 **[ネットワークポリシーサーバー]** スナップインを開きます。</li><li>[**ポリシー** > ] **[ネットワークポリシー]** の順に展開します。</li><li>**[仮想プライベートネットワーク (VPN) 接続]** ネットワークポリシーを右クリックし、 **[プロパティ]** を選択します。</li><li>**[設定]** タブを選択します。</li><li>**[ベンダー固有]** を選択し、 **[追加]** を選択します。</li><li>**[許可-証明書-OID]** オプションを選択し、 **[追加]** を選択します。</li><li>**1.3.6.1.4.1.311.87**の AAD 条件付きアクセス OID を属性値として貼り付け、[ **OK]** を2回選択します。</li><li>**[閉じる]** を選択し、 **[適用]** をクリックします。<p>VPN クライアントが有効期間の短いクラウド証明書以外の証明書を使用して接続しようとすると、接続は失敗します。</li></ol>条件付きアクセスの詳細については、「 [VPN と条件付きアクセス](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)」を参照してください。   |
+|VPN 条件付きアクセス   |条件付きアクセスとデバイスコンプライアンスでは、管理対象デバイスが VPN に接続するには、標準に準拠している必要があります。 VPN の条件付きアクセスの高度な機能の1つとして、クライアント認証証明書に**1.3.6.1.4.1.311.87**の "AAD 条件付きアクセス" OID が含まれているもののみに vpn 接続を制限することができます。<p>VPN 接続を制限するには、次の操作を行う必要があります。<ol><li>NPS サーバーで、 **[ネットワークポリシーサーバー]** スナップインを開きます。</li><li>[**ポリシー** > ] **[ネットワークポリシー]** の順に展開します。</li><li>**[仮想プライベートネットワーク (VPN) 接続]** ネットワークポリシーを右クリックし、 **[プロパティ]** を選択します。</li><li>**[設定]** タブを選択します。</li><li>**[ベンダー固有]** を選択し、 **[追加]** を選択します。</li><li>**[許可-証明書-OID]** オプションを選択し、 **[追加]** を選択します。</li><li>**1.3.6.1.4.1.311.87**の AAD 条件付きアクセス OID を属性値として貼り付け、[ **OK]** を2回選択します。</li><li>**[閉じる]** を選択し、 **[適用]** を選択します。<p>これらの手順を実行した後、有効期間の短いクラウド証明書以外の証明書を使用して VPN クライアントが接続しようとすると、接続は失敗します。</li></ol>条件付きアクセスの詳細については、「 [VPN と条件付きアクセス](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)」を参照してください。   |
 
 
 ---
@@ -66,11 +66,11 @@ ms.locfileid: "68314333"
 
 |オペレーティング システムのバージョン |リリース日またはリリース日 * |
 |---------|---------|
-|Windows Server バージョン 1903  |[KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375)  |
+|Windows Server バージョン 1903  |[KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) |
 |Windows Server 2019<br />Windows Server、バージョン 1809  |2019年第3四半期  |
 |Windows Server Version 1803  |2019年第3四半期  |
 |Windows Server バージョン 1709  |2019年第3四半期  |
-|Windows Server 2016、バージョン1607  |[KB4503294](https://support.microsoft.com/help/4503294/windows-10-update-kb4503294)  |
+|Windows Server 2016、バージョン1607  |[KB4503294](https://support.microsoft.com/help/4503294/windows-10-update-kb4503294) |
   
 \*すべてのリリース日が [calendar 四半期] に一覧表示されます。 日付は概数であり、予告なしに変更される可能性があります。 更新プログラムがリリースされると、リリース日が置き換えられます。
 
@@ -140,13 +140,13 @@ ms.locfileid: "68314333"
 
 ### <a name="trusted-platform-module-tpm-key-attestation"></a>トラステッドプラットフォームモジュール (TPM) キーの構成証明
 
-TPM 証明キーを使用するユーザー証明書は、エクスポート、ハンマリング、TPM によって提供されるキーの分離によってバックアップされた、高いセキュリティ保証を提供します。
+TPM 証明キーを持つユーザー証明書により、セキュリティが強化され、エクスポート、ハンマリング、TPM によって提供されるキーの分離によってバックアップされます。
 
 Windows 10 での TPM キーの構成証明の詳細については、「 [Tpm キーの構成証明](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/component-updates/tpm-key-attestation)」を参照してください。
 
 ## <a name="next-step"></a>次の手順
 
-[ALWAYS ON VPN 展開の計画を開始し](always-on-vpn-deploy-planning.md)ます。を VPN サーバーとして使用する予定のコンピューターにリモートアクセスサーバーの役割をインストールする前に、次のタスクを実行します。 適切な計画の後で、Always On VPN を展開し、必要に応じて Azure AD を使用して VPN 接続の条件付きアクセスを構成します。  
+[ALWAYS ON VPN 展開の計画を開始し](always-on-vpn-deploy-planning.md)ます。VPN サーバーとして使用する予定のコンピューターにリモートアクセスサーバーの役割をインストールする前に、次のタスクを実行します。 適切な計画を立てたら Always On VPN を展開し、必要に応じて Azure AD を使用して VPN 接続の条件付きアクセスを構成することができます。  
 
 ## <a name="related-topics"></a>関連トピック
 - [NPS プロキシサーバーの負荷分散](../../../../../networking/technologies/nps/nps-manage-proxy-lb.md):リモート認証ダイヤルインユーザーサービス (RADIUS) クライアントは、仮想プライベートネットワーク (VPN) サーバーやワイヤレスアクセスポイントなどのネットワークアクセスサーバーであり、接続要求を作成して、NPS などの RADIUS サーバーに送信します。 場合によっては、NPS サーバーで一度に受信する接続要求が多すぎると、パフォーマンスが低下したり、過負荷になったりすることがあります。

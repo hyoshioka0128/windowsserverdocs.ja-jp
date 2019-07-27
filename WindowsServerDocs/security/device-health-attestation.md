@@ -10,12 +10,12 @@ ms.topic: article
 ms.assetid: 8e7b77a4-1c6a-4c21-8844-0df89b63f68d
 author: brianlic-msft
 ms.date: 10/12/2016
-ms.openlocfilehash: 4ee77fba1e82179f6998959b494628e97ac23390
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 888992366f8a722c4834f23e08a393c829b47a26
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284224"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544629"
 ---
 # <a name="device-health-attestation"></a>デバイス正常性構成証明
 
@@ -98,7 +98,7 @@ DHA が EKCert 検証モードで実行されている場合は、随時 (1 年�
 
 Microsoft は、承認された TPM 製造元に対して (利用可能になったときに) 信頼されたルートおよび中間 CA の集約されたパッケージを、.cab アーカイブでパブリックにアクセスできるアーカイブとして発行しています。 フィードをダウンロードし、その整合性を検証して、デバイス正常性構成証明を実行しているサーバーにインストールする必要があります。
 
-サンプルのアーカイブが[ https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab](https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab)します。
+アーカイブの例と[https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)しては、があります。
 
 #### <a name="aikcert-validation-mode"></a>AIKCert 検証モード
 
@@ -108,7 +108,7 @@ AIKCert 検証モードは、インターネットにアクセス可能な運用
 
 以下のセクションを使用して、DHA を Windows Server 2016 にインストールして構成します。
 
-### <a name="prerequisites"></a>前提条件
+### <a name="prerequisites"></a>必須コンポーネント
 
 DHA オンプレミス サービスを設定して検証するには、次のものが必要です。
 
@@ -147,7 +147,7 @@ Windows Server 2016 のインストールが完了すると、デバイスが再
 
 ### <a name="install-the-signing-and-encryption-certificates"></a>署名証明書および暗号化証明書をインストールする
 
-次の Windows PowerShell スクリプトを使用して、署名証明書および暗号化証明書をインストールします。 拇印の詳細については、次を参照してください。[方法。証明書のサムプリントを取得](https://msdn.microsoft.com/library/ms734695.aspx)します。
+次の Windows PowerShell スクリプトを使用して、署名証明書および暗号化証明書をインストールします。 サムプリントの詳細については[、「」を参照してください。証明書](https://msdn.microsoft.com/library/ms734695.aspx)の拇印を取得します。
 
 ```
 $key = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Thumbprint -like "<thumbprint>"}
@@ -165,9 +165,9 @@ icacls $keypath /grant <username>`:R
 
 #### <a name="download-the-trusted-tpm-roots-certificate-package"></a>信頼済み TPM ルート証明書パッケージをダウンロードする
 
-信頼済み TPM ルートの最新の一覧をダウンロードするには、証明書パッケージをインストールする前に[ https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab](https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab)します。
+証明書パッケージをインストールする前に、から[https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)信頼できる TPM ルートの最新の一覧をダウンロードできます。
 
-> **重要:** パッケージをインストールする前に Microsoft によってデジタル署名されていることを確認します。
+> **重要:** パッケージをインストールする前に、Microsoft によってデジタル署名されていることを確認します。
 
 #### <a name="extract-the-trusted-certificate-package"></a>信頼済み証明書パッケージを展開する
 次のコマンドを実行して、信頼済み証明書パッケージを展開します。
@@ -180,7 +180,7 @@ expand -F:* .\TrustedTpm.cab .\TrustedTpm
 
 組織によって信頼されていない TPM ベンダーの信頼チェーンのフォルダーを削除します。
 
-> **注:** AIK 証明書モードを使用する場合は、Microsoft が AIK 証明書の発行を検証する Microsoft フォルダーが必要です。
+> **注:** AIK 証明書モードを使用する場合は、microsoft が発行した AIK 証明書を検証するために Microsoft フォルダーが必要です。
 
 #### <a name="install-the-trusted-certificate-package"></a>信頼済み証明書パッケージをインストールする
 .cab ファイルから、セットアップ スクリプトを実行して、信頼済み証明書パッケージをインストールします。
@@ -238,7 +238,7 @@ Get-DHASActiveSigningCertificate
 Set-DHASActiveSigningCertificate -Thumbprint "<hex>" -Force
 ```
 
-> **注:** この証明書 DHA サービスを実行しているサーバーに展開する必要があります、 **localmachine \my**証明書ストア。 アクティブな署名証明書が設定されている場合、既存のアクティブな署名証明書は非アクティブな署名証明書の一覧に移動します。
+> **注:** この証明書は、 **LocalMachine\My**証明書ストアの DHA サービスを実行しているサーバーに展開する必要があります。 アクティブな署名証明書が設定されている場合、既存のアクティブな署名証明書は非アクティブな署名証明書の一覧に移動します。
 
 ### <a name="list-the-inactive-signing-certificates"></a>非アクティブな署名証明書を一覧表示する
 ```
@@ -251,7 +251,7 @@ Remove-DHASInactiveSigningCertificates -Force
 Remove-DHASInactiveSigningCertificates  -Thumbprint "<hex>" -Force
 ```
 
-> **注:** のみ*1 つ*(任意の型) の非アクティブな証明書は、サービスにいつでも存在可能性があります。 非アクティブな証明書が必要なくなった場合、一覧から証明書を削除する必要があります。
+> **注:** サービスには *、非アクティブ*な (任意の種類の) 証明書がいつでも存在する可能性があります。 非アクティブな証明書が必要なくなった場合、一覧から証明書を削除する必要があります。
 
 ### <a name="get-the-active-encryption-certificate"></a>アクティブな暗号化証明書を取得する
 
