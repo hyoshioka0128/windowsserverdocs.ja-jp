@@ -45,9 +45,9 @@ ms.locfileid: "59812233"
 次のドキュメントを使用すると、Windows Server 2016 SDN シナリオを展開します。  
   
   
--   [スクリプトを使用してソフトウェア定義ネットワーク インフラストラクチャをデプロイします。](sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)  
+-   [スクリプトを使用してソフトウェア定義ネットワーク インフラストラクチャを展開する](sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)  
   
-詳細については、次を参照してください。 [ソフトウェアがネットワーク定義と #40 です。SDN (& a) #41;](sdn/software-defined-networking.md)します。  
+詳細については、 [ソフトウェア定義ネットワーク&#40;SDN&#41;](sdn/software-defined-networking.md)を参照してください。 
   
 #### <a name="bkmk_netc"></a>ネットワーク コント ローラーのシナリオ
 
@@ -96,7 +96,7 @@ NFV シナリオを使用します。
   
 -   最大 2 つのネットワーク アダプター間で SMB ダイレクトと RDMA のトラフィック フローを分散するセットを構成します。  
   
-詳細については、次を参照してください。 [リモート ダイレクト メモリ アクセス (&) #40 です。RDMA と #41 です。スイッチには、チーム化 (&) #40; が含まれているとセットと #41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)します。  
+詳細については、[リモート ダイレクト メモリ アクセス&#40;RDMA&#41;スイッチ埋め込みチーミング&#40;SET&#41;]](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)を参照してください。
   
 #### <a name="bkmk_switch"></a>HYPER-V 仮想スイッチのシナリオ
 
@@ -110,7 +110,7 @@ HYPER-V 仮想スイッチのシナリオを使用します。
   
 -   Windows PowerShell コマンドを使用してセット チームを管理します。  
   
-詳細については、次を参照してください。 [リモート ダイレクト メモリ アクセス (&) #40 です。RDMA と #41 です。スイッチには、チーム化 (&) #40; が含まれているとセットと #41 です。](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)  
+詳細については、[リモート ダイレクト メモリ アクセス&#40;RDMA&#41;スイッチ埋め込みチーミング&#40;SET&#41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md) を参照してください。 
   
 ### <a name="bkmk_dns"></a>DNS サーバーのシナリオ
 
@@ -136,7 +136,7 @@ DNS サーバーのシナリオを使用します。
   
 -   DNS で不明なレコードのサポートを構成します。  
   
-詳細については、トピックを参照してください。 [Windows Server 2016 での DNS クライアントの新](dns/What-s-New-in-DNS-Client.md) と [Windows Server 2016 の DNS サーバーの新](dns/What-s-New-in-DNS-Server.md)します。  
+詳細については、[Windows Server 2016 の DNS クライアントの新機能](dns/What-s-New-in-DNS-Client.md) と [新機能 Windows server DNS サーバーの新機能](dns/What-s-New-in-DNS-Server.md)のトピックを参照してください。  
   
 ### <a name="bkmk_ipam"></a>IPAM DHCP および DNS のシナリオ
 
@@ -173,7 +173,7 @@ NIC チーミングのシナリオを使用します。
 
 セットは、Hyper-v ホストと、ソフトウェアによるネットワーク制御 (SDN) スタックを Windows Server 2016 に含まれる環境で使用できる代替 NIC チーミング ソリューションです。 セットは、HYPER-V 仮想スイッチにいくつかの NIC チーミング機能を統合します。 
 
-詳細については、次を参照してください [リモート ダイレクト メモリ アクセス (RDMA) とスイッチ埋め込みチーミング (SET)。](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)
+詳細については、[リモート ダイレクト メモリ アクセス&#40;RDMA&#41;スイッチ埋め込みチーミング&#40;SET&#41;](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)を参照してください。
   
  
   
