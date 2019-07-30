@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/20/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: d00051f59eb39c6a7c668d00034f72879b0b097f
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: 0612f4ff102d6b5d1fd24372ac20a98c3ec02edb
+ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67298141"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68476562"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -129,6 +129,7 @@ ms.locfileid: "67298141"
 
 次の最新の機能について確認してください。
 
+- バージョン [1907](https://aka.ms/wac1907) - Azure コスト見積もりのリンクを追加し、仮想マシンのインポート/エクスポートとタグ付けの機能を強化しました。
 - バージョン [1906](https://aka.ms/wac1906) - インポート/エクスポート VM を追加済み。Azure アカウントの切り替え。Azure からの接続の追加、接続設定の実験、パフォーマンスの向上、およびパフォーマンス プロファイリング ツール。
 - バージョン 1904.1 は最新の GA リリースです。ゲートウェイ プラグインの安定性を改善するためのメンテナンスに関する更新プログラムです。
 - バージョン [1904](https://aka.ms/wac1904) は、Azure ハイブリッド サービス ツールを導入し、プレビュー段階にあった機能を GA チャネルに取り込んだ GA リリースでした。
