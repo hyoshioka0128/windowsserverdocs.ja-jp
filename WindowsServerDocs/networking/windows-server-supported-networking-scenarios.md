@@ -173,7 +173,7 @@ NIC チーミングのシナリオを使用します。
 
 セットは、Hyper-v ホストと、ソフトウェアによるネットワーク制御 (SDN) スタックを Windows Server 2016 に含まれる環境で使用できる代替 NIC チーミング ソリューションです。 セットは、HYPER-V 仮想スイッチにいくつかの NIC チーミング機能を統合します。 
 
-詳細については、[リモート ダイレクト メモリ アクセス&#40;RDMA&#41;スイッチ埋め込みチーミング&#40;SET&#41;](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)を参照してください。
+詳細については、[リモート ダイレクト メモリ アクセス(RDMA)とスイッチ埋め込みチーミング(SET)](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming) を参照してください。
   
  
   
