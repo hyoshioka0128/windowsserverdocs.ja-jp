@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.date: 07/17/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 994e2324042dd441abbb114da2b8806574ce0352
-ms.sourcegitcommit: e5553285d509f15c20ba98ad9e8bf69b09531560
+ms.openlocfilehash: e67102d1fa8b35d90e97df64cb8bd2991b205ad5
+ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68307489"
+ms.lasthandoff: 07/30/2019
+ms.locfileid: "68658878"
 ---
 # <a name="install-windows-admin-center"></a>Windows Admin Center のインストール
 
@@ -27,7 +27,7 @@ ms.locfileid: "68307489"
 
 ## <a name="determine-your-installation-type"></a>インストールの種類を決定する
 
-サポートされている[オペレーティングシステム](../plan/installation-options.md#supported-operating-systems-installation)を含む[インストールオプション](../plan/installation-options.md)を確認します。 Azure の VM に Windows 管理センターをインストールする方法については、「 [azure での Windows 管理センターのデプロイ](../azure/deploy-wac-in-azure.md)」を参照してください。
+サポートされている[オペレーティングシステム](https://docs.microsoft.com/windows-server/manage/windows-admin-center/plan/installation-options#installation-supported-operating-systems)を含む[インストールオプション](../plan/installation-options.md)を確認します。 Azure の VM に Windows 管理センターをインストールする方法については、「 [azure での Windows 管理センターのデプロイ](../azure/deploy-wac-in-azure.md)」を参照してください。
 
 ## <a name="install-on-windows-10"></a>Windows 10 へのインストール
 
