@@ -293,7 +293,7 @@ Windows Server 2016 では、このコマンドレットのエラー報告が制
 
     Guidance: Possible causes include network failures, share creation failures for the remote replication group, or firewall settings. Make sure SMB traffic is allowed and there are no connectivity issues between the local computer and the remote computer. You should expect this event when suspending replication or removing a replication partnership.
 
-というメッセージ`A process has requested access to an object, but has not been granted those access rights.`に注意してください。これは、ストレージレプリカ内の既知の問題であり、2017年9月12日の品質更新プログラム (OS ビルド 14393.1715) で修正されました。 `Status: "{Access Denied}"`https://support.microsoft.com/help/4038782/windows-10-update-kb4038782 
+というメッセージ`A process has requested access to an object, but has not been granted those access rights.`に注意してください。これは、ストレージレプリカ内の既知の問題であり、2017年9月12日の品質更新プログラム (OS ビルド 14393.1715) で修正されました。 `Status: "{Access Denied}"` https://support.microsoft.com/help/4038782/windows-10-update-kb4038782 
 
 ## <a name="error-failed-to-bring-the-resource-cluster-disk-x-online-with-a-stretch-cluster"></a>ストレッチ クラスターで「リソース 'クラスター ディスク x' をオンラインにできませんでした」エラーが発生する ストレッチクラスターを使用する
 
