@@ -22,6 +22,7 @@
 ## [Windows Server 2016 のライセンス認証ガイド](Server-2016-activation.md)
 ### [KMS クライアント セットアップ キー](KMSclientkeys.md)
 ### [ライセンス認証エラー コードのトラブルシューティング](activation-error-codes.md)
+####[KMS と DNS の問題に関する一般的なトラブルシューティング手順](common-troubleshooting-procedures-kms-dns.md)
 ## [Nano Server のインストール](Getting-started-with-Nano-Server.md)
 ### [Windows Server の次期リリースで Nano Server に加えられる変更](nano-in-semi-annual-channel.md)
 ### [Nano Server のクイック スタート](Nano-Server-Quick-start.md)

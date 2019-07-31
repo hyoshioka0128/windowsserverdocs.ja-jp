@@ -11,7 +11,7 @@ ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 85f73f1f7caf833d23d3d693c0d754f52c4aa27d
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59812233"
@@ -45,7 +45,7 @@ ms.locfileid: "59812233"
 次のドキュメントを使用すると、Windows Server 2016 SDN シナリオを展開します。  
   
   
--   [スクリプトを使用してソフトウェア定義ネットワーク インフラストラクチャをデプロイします。](sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)  
+-   [スクリプトを使用してソフトウェア定義ネットワーク インフラストラクチャを展開する](sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)  
   
 詳細については、次を参照してください。 [ソフトウェアがネットワーク定義と #40 です。SDN (& a) #41;](sdn/software-defined-networking.md)します。  
   
@@ -173,7 +173,7 @@ NIC チーミングのシナリオを使用します。
 
 セットは、Hyper-v ホストと、ソフトウェアによるネットワーク制御 (SDN) スタックを Windows Server 2016 に含まれる環境で使用できる代替 NIC チーミング ソリューションです。 セットは、HYPER-V 仮想スイッチにいくつかの NIC チーミング機能を統合します。 
 
-詳細については、次を参照してください [リモート ダイレクト メモリ アクセス (RDMA) とスイッチ埋め込みチーミング (SET)。](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming)
+詳細については、[リモート ダイレクト メモリ アクセス(RDMA)とスイッチ埋め込みチーミング(SET)](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming) を参照してください。
   
  
   

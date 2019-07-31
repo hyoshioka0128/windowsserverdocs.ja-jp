@@ -7,6 +7,7 @@
 ## [システム要件](sys-reqs-19.md)
 ## [Windows Server 2019 のライセンス認証](activation-19.md)
 ## [Windows Server 2019 VM のライセンス認証](vm-activation-19.md)
+## [ライセンス認証エラー コードのトラブルシューティング](../get-started/activation-error-codes.md)
 ## [Windows Server 2019 と Microsoft サーバー アプリケーションの互換性](app-compat-19.md)
 ## [Server Core アプリ互換性オンデマンド機能 (FOD)](install-fod-19.md)
 ## [Standard | Datacenter エディションの比較](editions-comparison-19.md)
