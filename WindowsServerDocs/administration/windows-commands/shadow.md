@@ -62,4 +62,4 @@ shadow {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 
 #### <a name="additional-references"></a>その他の参照
 [コマンドライン構文キー](command-line-syntax-key.md)
-[リモート デスクトップ サービス &#40;ターミナル サービス&#41; のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)
+[リモート デスクトップ サービス(ターミナル サービス) のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)
