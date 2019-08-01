@@ -23,13 +23,13 @@ ms.locfileid: "63706579"
 
 |コマンド|説明|
 |---|---|
-|[Vssadmin shadowstorage を追加します。](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788051(v%3dws.11))|ボリューム シャドウ コピー記憶域の関連付けを追加します。|
-|[Vssadmin シャドウを作成します。](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788055(v%3dws.11))|新しいボリューム シャドウ コピーを作成します。|
-|[Vssadmin delete シャドウ](vssadmin-delete-shadows.md)|ボリューム シャドウ コピーを削除します。|
+|[Vssadmin add shadowstorage](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788051(v%3dws.11))|ボリューム シャドウ コピー記憶域の関連付けを追加します。|
+|[Vssadmin create shadow](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788055(v%3dws.11))|新しいボリューム シャドウ コピーを作成します。|
+|[Vssadmin delete shadows](vssadmin-delete-shadows.md)|ボリューム シャドウ コピーを削除します。|
 |[Vssadmin delete shadowstorage](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc785461(v%3dws.11))|ボリューム シャドウ コピー記憶域関連付けを削除します。|
-|[Vssadmin リスト プロバイダー](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788108(v%3dws.11))|リストには、ボリューム シャドウ コピー プロバイダーが登録されています。|
-|[Vssadmin 一覧の影](vssadmin-list-shadows.md)|既存のボリューム シャドウ コピーを一覧表示します。|
-|[Vssadmin 一覧 shadowstorage](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788045(v%3dws.11))|システム上のすべてのシャドウ コピー記憶域関連付けを一覧表示します。|
-|[Vssadmin ボリュームの一覧表示](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788064(v%3dws.11))|シャドウ コピーの対象になっているボリュームを一覧表示します。|
-|[Vssadmin 一覧ライター](vssadmin-list-writers.md)|システム上のすべての購読しているボリューム シャドウ コピー ライターの一覧を表示します。|
-|[Vssadmin サイズ変更の shadowstorage](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788050(v%3dws.11))|シャドウ コピー記憶域の関連付けの最大サイズを変更します。|
+|[Vssadmin list providers](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788108(v%3dws.11))|リストには、ボリューム シャドウ コピー プロバイダーが登録されています。|
+|[Vssadmin list shadows](vssadmin-list-shadows.md)|既存のボリューム シャドウ コピーを一覧表示します。|
+|[Vssadmin list shadowstorage](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788045(v%3dws.11))|システム上のすべてのシャドウ コピー記憶域関連付けを一覧表示します。|
+|[Vssadmin list volumes](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788064(v%3dws.11))|シャドウ コピーの対象になっているボリュームを一覧表示します。|
+|[Vssadmin list writers](vssadmin-list-writers.md)|システム上のすべての購読しているボリューム シャドウ コピー ライターの一覧を表示します。|
+|[Vssadmin resize shadowstorage](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc788050(v%3dws.11))|シャドウ コピー記憶域の関連付けの最大サイズを変更します。|

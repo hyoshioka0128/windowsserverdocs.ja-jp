@@ -37,7 +37,7 @@ WID ファームを Windows Server 2012 に移行するには、次の手順を�
 > [!NOTE]
 > **AD FS フェデレーション サーバー構成ウィザード** の **[プライマリ フェデレーション サーバーとサービス アカウントの指定]** ページが表示されたら、WID ファームのプライマリ フェデレーション サーバーの名前を入力し、AD FS の移行の準備を行っているときに記録したサービス アカウント情報を必ず入力してください。 詳細については、次を参照してください。 [to Migrate the AD FS 2.0 フェデレーション サーバーを準備](prepare-to-migrate-a-wid-farm.md)します。 
 >  
-> 表示されたら、**フェデレーション サービス名の指定**で、準備 WID ファームの移行」で記録したのと同じ SSL 証明書を選択してください ページで、 [Prepare to Migrate the AD FS 2.0 の Federation Server](prepare-to-migrate-a-wid-farm.md).  
+> 表示されたら、**フェデレーション サービス名の指定**で、準備 WID ファームの移行」で記録したのと同じ SSL 証明書を選択してください ページで、 [to Migrate the AD FS 2.0 フェデレーション サーバーを準備](prepare-to-migrate-a-wid-farm.md).  
   
 5. このサーバーで AD FS Web ページを更新します。 移行の準備中、カスタマイズされた AD FS web ページをバックアップしている場合は、バックアップ データを使用して、AD FS web ページで既定で作成された既定値を上書きする必要があります、 **%systemdrive%\inetpub\adfs\ls**ディレクトリWindows Server 2012 で AD FS 構成の結果。  
   

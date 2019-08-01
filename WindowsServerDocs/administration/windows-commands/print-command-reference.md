@@ -1,6 +1,6 @@
 ---
 title: 印刷コマンドのリファレンス
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,31 +13,31 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e2321b3fef67cfcbc5f7d0bbafe4650a8ec31207
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8a9b0ab1e3e9ecb170eb4535cb7e4e643d791e5b
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436261"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544540"
 ---
 # <a name="print-command-reference"></a>印刷コマンドのリファレンス
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-次に印刷コマンド ライン ツールの一覧を示します。
+印刷コマンドラインツールの一覧を次に示します。
 
-|                         コマンド                          |                                                                説明                                                                 |
+|                         Command                          |                                                                説明                                                                 |
 |----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-|                       [lpq](lpq.md)                       |                           ライン プリンタ デーモン (LPD) を実行しているコンピューター上の印刷キューの状態を表示します。                            |
-|                      [lpr](lpr.md)                       |      コンピューターまたはプリンターの印刷の準備として、ライン プリンタ デーモン (LPD) サービスを実行しているデバイスを共有するには、ファイルを送信します。       |
+|                       [lpq](lpq.md)                       |                           ラインプリンターデーモン (LPD) を実行しているコンピューター上の印刷キューの状態を表示します。                            |
+|                      [lpr](lpr.md)                       |      印刷の準備として、ラインプリンタデーモン (LPD) サービスを実行しているコンピューターまたはプリンターの共有デバイスにファイルを送信します。       |
 |                [Net print](net-print.md)                 | 指定したプリンター キューに関する情報を表示、指定した印刷ジョブに関する情報を表示または指定した印刷ジョブを制御します。 |
 |                    [print](print.md)                     |                                                      テキスト ファイルをプリンターに送信します。                                                       |
 |                  [prncnfg](prncnfg.md)                   |                                     プリンターに関する構成情報を表示または構成します。                                      |
-|                  [prndrvr](prndrvr.md)                   |                                                 追加、削除、およびプリンター ドライバーの一覧を表示します。                                                  |
-|                  [prnjobs](prnjobs.md)                   |                                              一時停止、再開、キャンセルすると、および印刷ジョブを一覧表示します。                                               |
-|                  [prnmngr](prnmngr.md)                   |            追加、削除、およびプリンターまたは設定し、既定のプリンターを表示するだけでなく、プリンター接続を一覧表示されます。            |
-|                  [prnport](prnport.md)                   |           作成、削除、および表示して、ポートの構成を変更するだけでなく、標準の TCP/IP プリンター ポートを一覧表示されます。            |
-|                  [prnqctl](prnqctl.md)                   |                                テスト ページを印刷を一時停止や、プリンターが再開プリンター キューをクリアします。                                |
-|                   [pubprn](pubprn.md)                    |                                       プリンターを active directory ディレクトリ サービスに発行します。                                       |
-| [rundll32 printui.dll, printuientry](rundll32-printui.md) |                インストールとスクリプトまたはコマンド プロンプトを使用してプリンターの構成を自動化できます。                 |
+|                  [prndrvr](prndrvr.md)                   |                                                 プリンタードライバーを追加、削除、および一覧表示します。                                                  |
+|                  [prnjobs](prnjobs.md)                   |                                              印刷ジョブを一時停止、再開、キャンセル、および一覧表示します。                                               |
+|                  [prnmngr](prnmngr.md)                   |            既定のプリンターの設定と表示に加えて、プリンターまたはプリンターの接続を追加、削除、および一覧表示します。            |
+|                  [prnport](prnport.md)                   |           ポート構成の表示と変更に加えて、標準の TCP/IP プリンターポートの作成、削除、および一覧表示を行います。            |
+|                  [prnqctl](prnqctl.md)                   |                                テストページを印刷し、プリンターを一時停止または再開して、プリンターキューをクリアします。                                |
+|                   [pubprn](pubprn.md)                    |                                       プリンターを active directory ディレクトリサービスに発行します。                                       |
+| [rundll32 printui.dll、printUIEntry](rundll32-printui.md) |                インストールとスクリプトまたはコマンド プロンプトを使用してプリンターの構成を自動化できます。                 |
 

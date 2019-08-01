@@ -234,7 +234,7 @@ ms.locfileid: "66433230"
   
 3. 指示に従ってウィザードを完了します。  
   
-   記憶域プール容量を増やす方法については、「 [Use the new hard drive to increase storage pool capacity](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_4c)」を参照してください。  
+   記憶域プール容量を増やす方法については、次を参照してください。 [、新しいハード ドライブを使用して、記憶域プール容量を増やす](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_4c)します。  
   
 ## <a name="see-also"></a>関連項目  
   

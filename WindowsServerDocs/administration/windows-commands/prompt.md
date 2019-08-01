@@ -1,6 +1,6 @@
 ---
 title: prompt
-description: コマンド プロンプトをカスタマイズする方法について説明します。
+description: コマンドプロンプトをカスタマイズする方法について説明します。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5ef487ce9799c1f09660cdfcd6fba71336fc4d9a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8371a67ba1b8dc7d5f02272c809f916aae3df584
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66442138"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544552"
 ---
 # <a name="prompt"></a>prompt
 
@@ -41,7 +41,7 @@ prompt [<Text>]
 |\<テキスト >|テキストと、コマンド プロンプトに追加する情報を指定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 現在のディレクトリ、時刻、日付、および Microsoft Windows のバージョン番号の名前としては、このような情報を含む、必要なテキストを表示するコマンド プロンプトをカスタマイズできます。
 
@@ -58,7 +58,7 @@ prompt [<Text>]
 |    $n     |                                現在のドライブ                                |
 |    $g     |                            > (不等号)                            |
 |    $l     |                             < (小なり記号)                              |
-|    $b     |                                                                             |
+|    $b     |                              \|(パイプ記号)                               |
 |    $_     |                               改行を入力してください。                                |
 |    $e     |                         ANSI エスケープ コード (コード 27)                          |
 |    $h     | バック スペース (がコマンドラインに書き込まれた文字を削除) する |

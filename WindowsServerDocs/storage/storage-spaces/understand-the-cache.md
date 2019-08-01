@@ -7,14 +7,14 @@ ms.manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 07/18/2017
+ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 62fa33d08af25c424c786c10191fe6ae2b3d02bc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 0050a8931162e37408895ef664293be2349d1bde
+ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855513"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68315006"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>記憶域スペース ダイレクトのキャッシュについて
 
@@ -25,7 +25,7 @@ ms.locfileid: "59855513"
 
 次のビデオでは、記憶域スペース ダイレクトに対するキャッシュの動作に加え、その他の設計に関する考慮事項について説明します。
 
-<strong>記憶域スペース ダイレクトの設計に関する考慮事項</strong><br>(20 分)<br>
+<strong>記憶域スペースダイレクトの設計に関する考慮事項</strong><br>(20 分)<br>
 <iframe src="https://channel9.msdn.com/Blogs/windowsserver/Design-Considerations-for-Storage-Spaces-Direct/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="drive-types-and-deployment-options"></a>ドライブの種類と展開オプション
@@ -88,7 +88,7 @@ SSD と HDD がある場合は、SSD が HDD のキャッシュになります�
    >[!NOTE]
    > キャッシュ ドライブは、使用可能な記憶域容量には含められません。 キャッシュに格納されているすべてのデータは、他の場所にも格納されているか、そうでない場合はステージング解除されるときに他の場所に格納されます。 つまり、展開内の生の記憶域容量の合計は、容量ドライブのみの合計値になります。
 
-すべてのドライブの種類が同じ場合、キャッシュの自動構成は行われません。 手動で構成を行うと、耐久性の高いドライブを、同じ種類の耐久性の低いドライブのキャッシュとして使うことができます。構成方法については、「[手動構成](#manual)」セクションをご覧ください。
+すべてのドライブの種類が同じ場合、キャッシュの自動構成は行われません。 手動で構成を行うと、耐久性の高いドライブを、同じ種類の耐久性の低いドライブのキャッシュとして使うことができます。構成方法については、「[手動構成](#manual-configuration)」セクションをご覧ください。
 
    >[!TIP]
    > すべて NVMe またはすべて SSD の展開では、特に規模が非常に小さい場合、キャッシュとして "消費" するドライブをなくした方が、記憶域の効率が大きく向上する可能性があります。
@@ -109,7 +109,7 @@ SSD と HDD がある場合は、SSD が HDD のキャッシュになります�
 
 ### <a name="readwrite-caching-for-hybrid-deployments"></a>ハイブリッド展開での読み取り/書き込みキャッシュ
 
-ハード ディスク ドライブ (HDD) をキャッシュする場合は、読み取り *と* 書き込みの両方がキャッシュされ、どちらについてもフラッシュと同様の待機時間 (多くの場合は最大 10 倍向上) が達成されます。 読み取りキャッシュには、最近読み取られたデータと頻繁に読み取られるデータが格納されます。これによって高速アクセスが実現され、HDD へのランダム トラフィックも最小限に抑えられます  (ためシークおよび回転の遅延、待機時間と HDD へのランダム アクセスによって発生した時間のロスは重要です。)書き込みは急増を吸収するキャッシュであり、以前と同様、coalesce を書き込みます再書き込みし、容量ドライブへの累積的なトラフィックを最小限に抑えます。
+ハード ディスク ドライブ (HDD) をキャッシュする場合は、読み取り *と* 書き込みの両方がキャッシュされ、どちらについてもフラッシュと同様の待機時間 (多くの場合は最大 10 倍向上) が達成されます。 読み取りキャッシュには、最近読み取られたデータと頻繁に読み取られるデータが格納されます。これによって高速アクセスが実現され、HDD へのランダム トラフィックも最小限に抑えられます (シークと回転の遅延のために、HDD へのランダムアクセスによって発生する待ち時間と失われた時間は重要です)。書き込みを吸収して、書き込みと再書き込みを行い、容量ドライブへの累積トラフィックを最小限に抑えるために、書き込みがキャッシュされます。
 
 記憶域スペース ダイレクトには、書き込みをステージング解除する前にランダム化を解除するアルゴリズムが実装されています。これにより、ワークロード (仮想マシンなど) から生じた実際の IO がランダムであっても、ディスクに対する IO パターンはシーケンシャルになるようにエミュレートされます。 これで HDD の IOPS とスループットが最大限に引き出されます。
 
@@ -117,17 +117,17 @@ SSD と HDD がある場合は、SSD が HDD のキャッシュになります�
 
 3 種類すべてのドライブが存在する場合は、NVMe ドライブが SSD と HDD の両方のキャッシュを提供します。 動作は既に説明したとおりで、SSD に対しては書き込みだけがキャッシュされ、HDD に対しては読み取りと書き込みの両方がキャッシュされます。 HDD をキャッシュするための負荷は、キャッシュ ドライブ間で均等に分散されます。 
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>Summary
 
 次の表は、それぞれの組み合わせの展開について、キャッシュとして使われるドライブ、容量として使われるドライブ、キャッシュ動作をまとめたものです。
 
-| 展開       | キャッシュ ドライブ                        | 容量ドライブ | キャッシュ動作 (既定)                  |
-|------------------|-------------------------------------|-----------------|-------------------------------------------|
-| すべて NVMe         | なし (オプション: 手動構成) | NVMe            | 書き込みのみ (構成した場合)                |
-| すべて SSD          | なし (オプション: 手動構成) | SSD             | 書き込みのみ (構成した場合)                |
-| NVMe + SSD       | NVMe                                | SSD             | 書き込みのみ                                |
-| NVMe + HDD       | NVMe                                | HDD             | 読み取りと書き込み                              |
-| SSD + HDD        | SSD                                 | HDD             | 読み取りと書き込み                              |
+| 展開     | キャッシュ ドライブ                        | 容量ドライブ | キャッシュ動作 (既定)  |
+| -------------- | ----------------------------------- | --------------- | ------------------------- |
+| すべて NVMe         | なし (オプション: 手動構成) | NVMe            | 書き込みのみ (構成した場合)  |
+| すべて SSD          | なし (オプション: 手動構成) | SSD             | 書き込みのみ (構成した場合)  |
+| NVMe + SSD       | NVMe                                | SSD             | 書き込みのみ                  |
+| NVMe + HDD       | NVMe                                | HDD             | 読み取りと書き込み                |
+| SSD + HDD        | SSD                                 | HDD             | 読み取りと書き込み                |
 | NVMe + SSD + HDD | NVMe                                | SSD + HDD       | HDD に対しては読み取りと書き込み、SSD に対しては書き込みのみ  |
 
 ## <a name="server-side-architecture"></a>サーバー側アーキテクチャ
@@ -171,11 +171,13 @@ Windows ソフトウェア定義記憶域スタックには、関連のない他
 
 記憶域スペース ダイレクトでは、記憶域スペースのライト バック キャッシュは既定の動作から変更しないでください。 たとえば、**New-Volume** コマンドレットの **-WriteCacheSize** などのパラメーターは使わないでください。
 
-CSV のキャッシュを使うかどうかは任意に選択できます。 記憶域スペース ダイレクトでは既定でオフになっていますが、このトピックで説明している新しいキャッシュと競合することはありません。 特定のシナリオでは、効果的なパフォーマンスの向上を見込める可能性があります。 詳しくは、[CSV キャッシュを有効にする方法に関する記事](https://blogs.msdn.microsoft.com/clustering/2013/07/19/how-to-enable-csv-cache/)をご覧ください。
+CSV のキャッシュを使うかどうかは任意に選択できます。 記憶域スペース ダイレクトでは既定でオフになっていますが、このトピックで説明している新しいキャッシュと競合することはありません。 特定のシナリオでは、効果的なパフォーマンスの向上を見込める可能性があります。 詳しくは、[CSV キャッシュを有効にする方法に関する記事](../../failover-clustering/failover-cluster-csvs.md#enable-the-csv-cache-for-read-intensive-workloads-optional)をご覧ください。
 
-## <a name="manual"></a> 手動による構成
+## <a name="manual-configuration"></a>手動構成
 
-ほとんどの展開では、手動構成は必要ありません。 必要になった場合は読み進めてください。
+ほとんどの展開では、手動構成は必要ありません。 これが必要な場合は、次のセクションを参照してください。 
+
+セットアップ後にキャッシュデバイスモデルを変更する必要がある場合は、「[ヘルスサービスの概要](../../failover-clustering/health-service-overview.md#supported-components-document)」で説明されているように、ヘルスサービスのサポートコンポーネントに関するドキュメントを編集してください。
 
 ### <a name="specify-cache-drive-model"></a>キャッシュ ドライブ モデルの指定
 
@@ -188,15 +190,25 @@ CSV のキャッシュを使うかどうかは任意に選択できます。 記
 
 ####  <a name="example"></a>例
 
-```
-PS C:\> Get-PhysicalDisk | Group Model -NoElement
+まず、物理ディスクの一覧を取得します。
 
+```PowerShell
+Get-PhysicalDisk | Group Model -NoElement
+```
+
+次に出力の例を示します。
+
+```
 Count Name
 ----- ----
     8 FABRIKAM NVME-1710
    16 CONTOSO NVME-1520
+```
 
-PS C:\> Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
+次に、キャッシュデバイスモデルを指定して、次のコマンドを入力します。
+
+```PowerShell
+Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
 ```
 
 意図したドライブがキャッシュとして使用されていることを確かめるには、PowerShell で **Get-PhysicalDisk** を実行し、**Usage** プロパティが **"Journal"** になっていることを確認します。
@@ -211,26 +223,38 @@ PS C:\> Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
 
 キャッシュの既定の動作はオーバーライドできます。 たとえば、オールフラッシュ展開でも読み取りをキャッシュするように設定することができます。 ただし、既定の動作がワークロードに適していないことが確かでない限り、動作を変更することはお勧めしません。
 
-動作をオーバーライドするには、**Set-ClusterS2D** コマンドレットの **-CacheModeSSD** パラメーターと **-CacheModeHDD** パラメーターを使用します。 **CacheModeSSD** パラメーターは、ソリッドステート ドライブをキャッシュする場合のキャッシュ動作を設定します。 **CacheModeHDD** パラメーターは、ハード ディスク ドライブをキャッシュする場合のキャッシュ動作を設定します。 これは、記憶域スペース ダイレクトを有効にした後であればいつでも実行できます。
+動作をオーバーライドするには、 **ClusterStorageSpacesDirect**コマンドレットと、その **-cachemodessd**パラメーターと **-cachemodehdd**パラメーターを使用します。 **CacheModeSSD** パラメーターは、ソリッドステート ドライブをキャッシュする場合のキャッシュ動作を設定します。 **CacheModeHDD** パラメーターは、ハード ディスク ドライブをキャッシュする場合のキャッシュ動作を設定します。 これは、記憶域スペース ダイレクトを有効にした後であればいつでも実行できます。
 
-動作が設定されたかどうかを確認するには、**Get-ClusterS2D** を使用します。
+**ClusterStorageSpacesDirect**を使用して、動作が設定されていることを確認できます。
 
 #### <a name="example"></a>例
 
-```
-PS C:\> Get-ClusterS2D
+まず、記憶域スペースダイレクトの設定を取得します。
 
+```PowerShell
+Get-ClusterStorageSpacesDirect
+```
+
+次に出力の例を示します。
+
+```
 CacheModeHDD : ReadWrite
 CacheModeSSD : WriteOnly
-...
+```
 
-PS C:\> Set-ClusterS2D -CacheModeSSD ReadWrite
+その後、次の手順を実行します。
 
-PS C:\> Get-ClusterS2D
+```PowerShell
+Set-ClusterStorageSpacesDirect -CacheModeSSD ReadWrite
 
+Get-ClusterS2D
+```
+
+次に出力の例を示します。
+
+```
 CacheModeHDD : ReadWrite
 CacheModeSSD : ReadWrite
-...
 ```
 
 ## <a name="sizing-the-cache"></a>キャッシュのサイズの設定
@@ -249,6 +273,6 @@ Windows の組み込みのパフォーマンス モニター (PerfMon.exe) ユ�
 
 ## <a name="see-also"></a>関連項目
 
-- [ドライブと回復性の種類を選択します。](choosing-drives.md)
-- [フォールト トレランスと記憶域の効率性](storage-spaces-fault-tolerance.md)
-- [記憶域スペース ダイレクトのハードウェア要件](storage-spaces-direct-hardware-requirements.md)
+- [ドライブと回復性の種類の選択](choosing-drives.md)
+- [フォールト トレランスと記憶域の効率](storage-spaces-fault-tolerance.md)
+- [ハードウェア要件の記憶域スペースダイレクト](storage-spaces-direct-hardware-requirements.md)

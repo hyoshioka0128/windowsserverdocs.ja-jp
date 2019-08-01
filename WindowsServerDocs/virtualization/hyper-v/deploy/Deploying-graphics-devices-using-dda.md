@@ -1,6 +1,6 @@
 ---
-title: 個別のデバイスの割り当てを使用してグラフィックス デバイスをデプロイします。
-description: DDA を使用して、Windows Server でのグラフィックス デバイスをデプロイする方法について説明します
+title: 個別のデバイスの割り当てを使用してグラフィックスデバイスをデプロイする
+description: DDA を使用して Windows Server でグラフィックスデバイスを展開する方法について説明します。
 ms.prod: windows-server-threshold
 ms.service: na
 ms.technology: hyper-v
@@ -9,99 +9,100 @@ ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
-ms.openlocfilehash: 6c528535fd34f57957a37992843933d4cd9f8824
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2f9d283f5f80d6bb0851b2abd93be0f4c10899c8
+ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447871"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68476585"
 ---
-# <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>個別のデバイスの割り当てを使用してグラフィックス デバイスをデプロイします。
+# <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>個別のデバイスの割り当てを使用してグラフィックスデバイスをデプロイする
 
->適用先:Microsoft HYPER-V Server 2016、Windows Server 2016、Windows Server 2019、Microsoft HYPER-V Server 2019  
+>適用先:Microsoft Hyper-v Server 2016、Windows Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019  
 
-Windows Server 2016 以降では、VM に PCIe デバイス全体を渡すの個別のデバイスの割り当てまたは DDA を使用できます。  これにより、高パフォーマンスへのアクセスなどのデバイスを[NVMe ストレージ](./Deploying-storage-devices-using-dda.md)またはネイティブのデバイス ドライバーを利用している間に、VM 内からのグラフィックス カード。  参照してください、[個別のデバイスの割り当てを使用して展開するデバイスの計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)デバイス作業について詳しくは、可能なセキュリティへの影響など、どのような。
+Windows Server 2016 以降では、個別のデバイス割り当て (DDA) を使用して、PCIe デバイス全体を VM に渡すことができます。  これにより、デバイスのネイティブドライバーを利用できるのに対して、VM 内から[NVMe ストレージ](./Deploying-storage-devices-using-dda.md)やグラフィックスカードなどのデバイスに高パフォーマンスでアクセスできるようになります。  デバイスの展開については、デバイス[の個別割り当てを使用したデバイスの展開計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)に関するページを参照してください。
 
-デバイスの割り当てが不連続でデバイスを使用する 3 つの手順があります。
--   個別のデバイスの割り当ての VM を構成します。
--   パーティションをホストからデバイスのマウントを解除します。
--   ゲスト VM へのデバイスの割り当てください。
+デバイスに個別のデバイス割り当てを使用するには、次の3つの手順を実行します。
+-   個別のデバイスの割り当て用に VM を構成する
+-   ホストパーティションからデバイスのマウントを解除する
+-   ゲスト VM へのデバイスの割り当て
 
-すべてのコマンドは、管理者として Windows PowerShell コンソールでのホストに実行できます。
+すべてのコマンドは、Windows PowerShell コンソールのホストで管理者として実行できます。
 
-## <a name="configure-the-vm-for-dda"></a>DDA の VM を構成します。
-個別のデバイスの割り当ては、Vm にいくつかの制限を適用し、次の手順を実行する必要があります。
+## <a name="configure-the-vm-for-dda"></a>DDA 用に VM を構成する
+個別のデバイスの割り当てによって、Vm にいくつかの制限が課され、次の手順を実行する必要があります。
 
-1.  実行して、「自動停止アクション」、vm をオフを構成します。
+1.  を実行して、VM の "自動停止アクション" を TurnOff に構成します。
 
 ```
 Set-VM -Name VMName -AutomaticStopAction TurnOff
 ```
 
-### <a name="some-additional-vm-preparation-is-required-for-graphics-devices"></a>いくつか追加の VM の準備がグラフィックス デバイスに必要です。
+### <a name="some-additional-vm-preparation-is-required-for-graphics-devices"></a>グラフィックスデバイスには、追加の VM 準備が必要です。
 
-一部のハードウェアは、内の VM は、特定の方法で構成されている場合に優れています。  詳細についての次の構成が必要かどうかは、ハードウェアの製造元にご連絡ください。 追加の詳細を確認できます[個別のデバイスの割り当てを使用して展開するデバイスの計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)とこの[ブログの投稿。](https://blogs.technet.microsoft.com/virtualization/2015/11/23/discrete-device-assignment-gpus/)
+VM が特定の方法で構成されていると、一部のハードウェアのパフォーマンスが向上します。  ハードウェアに次の構成が必要かどうかの詳細については、ハードウェアベンダーにお問い合わせください。 その他の詳細につい[ては、「個別のデバイスの割り当てを使用したデバイスのデプロイ計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)」と、このブログの投稿を参照して[ください。](https://techcommunity.microsoft.com/t5/Virtualization/Discrete-Device-Assignment-GPUs/ba-p/382266)
 
-1. 書き込み、CPU 上で結合を有効にします。
+1. CPU で書き込み結合を有効にする
    ```
    Set-VM -GuestControlledCacheTypes $true -VMName VMName
    ```
-2. 32 ビット MMIO スペースを構成します。
+2. 32ビット MMIO space の構成
    ```
    Set-VM -LowMemoryMappedIoSpace 3Gb -VMName VMName
    ```
-3. 32 ビット MMIO 領域よりも大きい値を構成します。
+3. 32ビット MMIO space を超える構成
    ```
    Set-VM -HighMemoryMappedIoSpace 33280Mb -VMName VMName
    ```
-   上記の MMIO 領域値が妥当な値を 1 つの gpu を搭載した実験の設定に注意してください。  VM の起動後に、デバイスがリソース不足に関連したエラーを報告している場合、これらの値を変更する必要がありますが可能性があります。  また、複数の Gpu を割り当てない場合はもこれらの値を大きく必要があります。
+   > [!TIP] 
+   > 上の MMIO space 値は、1つの GPU を試すために設定する妥当な値です。  VM を起動した後、デバイスがリソース不足に関連するエラーを報告している場合は、これらの値を変更する必要があります。 MMIO の要件を正確に計算する方法については、 [「個別のデバイスの割り当てを使用したデバイスの展開計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)」を参照してください。
 
-## <a name="dismount-the-device-from-the-host-partition"></a>パーティションをホストからデバイスのマウントを解除します。
-### <a name="optional---install-the-partitioning-driver"></a>省略可能 - パーティション分割のドライバーをインストールします。
-個別のデバイスの割り当ては、ハードウェアのベンダーと協力に自分のデバイスでセキュリティ対策のドライバーを提供する機能を提供します。  このドライバーがないことは、ゲスト VM にインストールするデバイス ドライバーと同じに注意してください。  これがこのドライバーを提供するハードウェアの製造元の裁量により、最大ただし場合は、提供インストールしてください前にホスト パーティションから、デバイスのマウントを解除します。  連絡してください、ハードウェアのベンダーの詳細については軽減策のドライバーがある場合
-> パーティション分割のドライバーが指定されていない場合のマウント解除中に使用する必要あります、`-force`セキュリティ警告を回避するにはオプションです。 詳細をお読みください、これを行ってのセキュリティの影響について[個別のデバイスの割り当てを使用して展開するデバイスの計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)します。
+## <a name="dismount-the-device-from-the-host-partition"></a>ホストパーティションからデバイスのマウントを解除する
+### <a name="optional---install-the-partitioning-driver"></a>オプション-パーティションドライバーをインストールする
+個別のデバイスの割り当てにより、ハードウェア venders は、セキュリティ対策ドライバーをデバイスに提供することができます。  このドライバーは、ゲスト VM にインストールされるデバイスドライバーと同じではないことに注意してください。  このドライバーを提供するには、ハードウェアベンダーの判断が必要です。ただし、提供されている場合は、ホストパーティションからデバイスをマウント解除する前にインストールしてください。  軽減ドライバーがあるかどうかの詳細については、ハードウェアベンダーにお問い合わせください。
+> パーティション分割ドライバーが指定されていない場合、マウント`-force`を解除するときに、オプションを使用してセキュリティの警告を回避する必要があります。 [個別のデバイスの割り当てを使用してデバイスを展開する計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)については、セキュリティへの影響について詳しくお読みください。
 
-### <a name="locating-the-devices-location-path"></a>デバイスの場所のパスを検索します。
-マウントを解除して、ホストからデバイスをマウントするには、PCI 場所のパスが必要です。  場所のパスの例は、次のように:`"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`します。  配置の詳細について、場所のパスはご覧ください。[個別のデバイスの割り当てを使用して展開するデバイスの計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)します。
+### <a name="locating-the-devices-location-path"></a>デバイスの場所のパスを特定する
+ホストからデバイスをマウント解除してマウントするには、PCI ロケーションパスが必要です。  ロケーションパスの例は次`"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`のようになります。  ロケーションパスの詳細については、こちらを参照してください。[個別のデバイスの割り当てを使用してデバイスを展開](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)することを計画します。
 
-### <a name="disable-the-device"></a>デバイスを無効にします。
-デバイス マネージャーまたは PowerShell を使用して、デバイスが"無効にしてください"  
+### <a name="disable-the-device"></a>デバイスを無効にする
+デバイスマネージャーまたは PowerShell を使用して、デバイスが "無効" になっていることを確認します。  
 
-### <a name="dismount-the-device"></a>デバイスのマウントを解除します。
-によって、ベンダーに軽減策のドライバーが指定されている場合か、必要がありますを使用する、"-強制的に"かどうかのオプションします。
-- 軽減策のドライバーがインストールされている場合
+### <a name="dismount-the-device"></a>デバイスのマウントを解除する
+ベンダーが軽減ドライバーを提供したかどうかによって、"-force" オプションを使用する必要があります。
+- 軽減ドライバーがインストールされている場合
   ```
   Dismount-VMHostAssignableDevice -LocationPath $locationPath
   ```
-- 軽減策のドライバーがインストールされていない場合
+- 軽減ドライバーがインストールされていない場合
   ```
   Dismount-VMHostAssignableDevice -force -LocationPath $locationPath
   ```
 
-## <a name="assigning-the-device-to-the-guest-vm"></a>ゲスト VM へのデバイスの割り当てください。
-最後の手順では、VM が存在するように、デバイスへのアクセスを HYPER-V に連絡します。  上記で見つかった場所のパス、だけでなく、vm の名前を知っている必要があります。
+## <a name="assigning-the-device-to-the-guest-vm"></a>ゲスト VM へのデバイスの割り当て
+最後の手順では、VM がデバイスにアクセスできる必要があることを Hyper-v に指示します。  上に示した場所のパスに加えて、vm の名前を把握しておく必要があります。
 
 ```
 Add-VMAssignableDevice -LocationPath $locationPath -VMName VMName
 ```
 
 ## <a name="whats-next"></a>次の内容
-VM で、デバイスが正常にマウントされると、その VM を起動し、ベア メタル システムを実行していた場合通常と同様に、デバイスと対話できるようになりました。  これは、VM のハードウェアの製造元のドライバーをインストールできるようになりましたし、アプリケーションが存在するハードウェアを参照してください。 できることを意味します。  これを確認するには、ゲスト VM でデバイス マネージャーを開き、表示、ハードウェアは、に表示されます。
+デバイスが VM に正常にマウントされると、その VM を起動して、ベアメタルシステムで実行されていた場合と同じように、通常どおりにデバイスと対話できるようになります。  これにより、ハードウェアベンダーのドライバーを VM にインストールできるようになり、アプリケーションはそのハードウェアが存在することを確認できるようになります。  これを確認するには、ゲスト VM でデバイスマネージャーを開き、ハードウェアが表示されていることを確認します。
 
-## <a name="removing-a-device-and-returning-it-to-the-host"></a>デバイスを削除して、ホストに戻す
-その元の状態にはデバイスを返す場合は、VM を停止し、次を発行する必要があります。
+## <a name="removing-a-device-and-returning-it-to-the-host"></a>デバイスを削除してホストに戻す
+デバイスを元の状態に戻す場合は、VM を停止し、次のものを発行する必要があります。
 ```
 #Remove the device from the VM
 Remove-VMAssignableDevice -LocationPath $locationPath -VMName VMName
 #Mount the device back in the host
 Mount-VMHostAssignableDevice -LocationPath $locationPath
 ```
-できますし、再度有効にするデバイス マネージャーでデバイスと、ホスト オペレーティング システムをもう一度、デバイスと対話することになります。
+デバイスマネージャーでデバイスを再度有効にすると、ホストオペレーティングシステムがデバイスと再び対話できるようになります。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
-### <a name="mounting-a-gpu-to-a-vm"></a>VM の GPU のマウント
-この例では、NVIDIA の製造元によって最初の GPU の実行を VM に割り当てる"ddatest1"をという名前の VM を構成するのに PowerShell を使用します。  
+### <a name="mounting-a-gpu-to-a-vm"></a>GPU を VM にマウントする
+この例では、PowerShell を使用して "ddatest1" という名前の VM を構成し、製造元の NVIDIA が使用できる最初の GPU を取得して VM に割り当てます。  
 ```
 #Configure the VM for a Discrete Device Assignment
 $vm =   "ddatest1"

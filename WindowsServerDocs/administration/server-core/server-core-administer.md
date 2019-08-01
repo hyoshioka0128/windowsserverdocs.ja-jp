@@ -1,6 +1,6 @@
 ---
-title: Server Core を管理します。
-description: Windows Server の Server Core インストールを管理する方法について説明します
+title: Server Core の管理
+description: Windows Server の Server Core インストールの管理方法について説明します。
 ms.prod: windows-server-threshold
 ms.mktglfcycl: manage
 ms.sitesec: library
@@ -8,87 +8,87 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: 50fa737db5862132c1dde5cb6eb6b83674b3f02e
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: b144127de2ceea99e36549974101d190154aaeaf
+ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811387"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68476525"
 ---
-# <a name="administer-a-server-core-server"></a>Server Core サーバーを管理します。
+# <a name="administer-a-server-core-server"></a>Server Core サーバーの管理
 
->適用先:Windows Server (半期チャネル) および Windows Server 2016
+>適用対象:Windows Server 2019、Windows Server 2016、および Windows Server (半期チャネル)
 
-Server Core では、UI があるないため、Windows PowerShell コマンドレット、コマンド ライン ツール、またはリモート ツールを使用して基本的な管理タスクを実行する必要があります。 次のセクションでは、PowerShell コマンドレットと基本的なタスクに使用されるコマンドを説明します。 使用することも[Windows Admin Center](../../manage/windows-admin-center/overview.md)、現在、インストールを管理する、パブリック プレビュー段階の統一された管理ポータル。 
+Server Core には UI がないため、基本的な管理タスクを実行するには、Windows PowerShell コマンドレット、コマンドラインツール、またはリモートツールを使用する必要があります。 以下のセクションでは、基本的なタスクに使用する PowerShell コマンドレットとコマンドの概要について説明します。 また、現在パブリックプレビュー中の統合された管理ポータルである[Windows 管理センター](../../manage/windows-admin-center/overview.md)を使用して、のインストールを管理することもできます。 
 
-## <a name="administrative-tasks-using-powershell-cmdlets"></a>PowerShell コマンドレットを使用して管理タスク
-次の情報を使用すると、Windows PowerShell コマンドレットの基本的な管理タスクを実行できます。
+## <a name="administrative-tasks-using-powershell-cmdlets"></a>PowerShell コマンドレットを使用した管理タスク
+Windows PowerShell コマンドレットを使用して基本的な管理タスクを実行するには、次の情報を使用します。
 
 ### <a name="set-a-static-ip-address"></a>静的 IP アドレスを設定する
-Server Core サーバーをインストールするときに既定では、DHCP アドレス。 静的 IP アドレスが必要な場合は、次の手順を使用して設定できます。
+Server Core サーバーをインストールすると、既定では DHCP アドレスが使用されます。 静的 IP アドレスが必要な場合は、次の手順を使用して設定できます。
 
-現在のネットワーク構成を表示する使用**Get NetIPConfiguration**します。
+現在のネットワーク構成を表示するには、 **Get Ne? configuration**を使用します。
 
-既に使用している IP アドレスを表示する使用**Get NetIPAddress**します。
+既に使用している IP アドレスを表示するには、 **new-netipaddress**を使用します。
 
-静的 IP アドレスを設定するには、次の操作を行います。 
+静的 IP アドレスを設定するには、次の手順を実行します。 
 
-1. 実行**Get-netipinterface**します。 
-2. 内の数に注意してください、 **IfIndex** IP インターフェイスの列、または**InterfaceDescription**文字列。 1 つ以上のネットワーク アダプターがある場合は、数またはの静的 IP アドレスを設定するインターフェイスに対応する文字列に注意してください。
-3. 静的 IP アドレスを設定するのには、次のコマンドレットを実行します。
+1. **Get Ne? インターフェイス**を実行します。 
+2. IP インターフェイスまたは**Interfacedescription**文字列の**IfIndex**列の番号に注意してください。 複数のネットワークアダプターがある場合は、静的 IP アドレスを設定するインターフェイスに対応する数値または文字列をメモします。
+3. 次のコマンドレットを実行して、静的 IP アドレスを設定します。
 
    ```powershell
    New-NetIPaddress -InterfaceIndex 12 -IPAddress 192.0.2.2 -PrefixLength 24 -DefaultGateway 192.0.2.1
    ```
 
    それぞれの文字の説明は次のとおりです。
-   - **InterfaceIndex**の値である**IfIndex**から手順 2。 (ここでは、12)
-   - **IPAddress**を設定する静的 IP アドレスです。 (ここでは、191.0.2.2)
-   - **PrefixLength**プレフィックス長 (別の形式のサブネット マスク) を設定している IP アドレスです。 (たとえば、24)
-   - **DefaultGateway**はデフォルト ゲートウェイに IP アドレスです。 (この例では 192.0.2.1) の
-4. DNS クライアントにサーバーのアドレスを設定するには、次のコマンドレットを実行します。 
+   - **InterfaceIndex**は、手順 2. の**IfIndex**の値です。 (この例では 12)
+   - **IPAddress**は、設定する静的 IP アドレスです。 (この例では、191.0.2.2)
+   - [プレフィックス **] は、** 設定する IP アドレスのプレフィックス長 (別の形式のサブネットマスク) です。 (この例では、24)
+   - **DefaultGateway**は、デフォルトゲートウェイの IP アドレスです。 (この例では、192.0.2.1)
+4. 次のコマンドレットを実行して、DNS クライアントサーバーのアドレスを設定します。 
 
    ```powershell
    Set-DNSClientServerAddress –InterfaceIndex 12 -ServerAddresses 192.0.2.4
    ```
    
    それぞれの文字の説明は次のとおりです。
-   - **InterfaceIndex**手順 2 の IfIndex の値です。
-   - **ServerAddresses**は、DNS サーバーの IP アドレスです。
+   - **InterfaceIndex**は、手順 2. の IfIndex の値です。
+   - **Serveraddresses**は、DNS サーバーの IP アドレスです。
 5. 複数の DNS サーバーを追加するには、次のコマンドレットを実行します。 
 
    ```powershell
    Set-DNSClientServerAddress –InterfaceIndex 12 -ServerAddresses 192.0.2.4,192.0.2.5
    ```
 
-   この例では、where、 **192.0.2.4**と**192.0.2.5**は DNS サーバーの両方の IP アドレス。
+   この例では、 **192.0.2.4 と 192.0.2.5**と**です。** は両方とも DNS サーバーの IP アドレスです。
 
-かどうかは、DHCP、実行の使用に切り替える必要があります。 **Set-dnsclientserveraddress – InterfaceIndex 12 – ResetServerAddresses**します。
+DHCP の使用に切り替える必要がある場合は、 **Set-DnsClientServerAddress – InterfaceIndex 12 – ResetServerAddresses**を実行します。
 
 ### <a name="join-a-domain"></a>ドメインに参加
-次のコマンドレットを使用して、コンピューターをドメインに参加します。
+コンピューターをドメインに参加させるには、次のコマンドレットを使用します。
 
-1. 実行**Add-computer**します。 ドメインとドメイン名を結合する両方の資格情報を求めるメッセージが表示します。
-2. ローカルの Administrators グループにドメイン ユーザー アカウントを追加する必要がある場合は、コマンド プロンプト (PowerShell ウィンドウ) ではなく、次のコマンドを実行します。
+1. **コンピューターの追加**を実行します。 ドメインに参加するための資格情報とドメイン名の両方を入力するように求められます。
+2. ローカルの Administrators グループにドメインユーザーアカウントを追加する必要がある場合は、コマンドプロンプトで次のコマンドを実行します (PowerShell ウィンドウではありません)。
 
    ```
    net localgroup administrators /add <DomainName>\<UserName>
    ```
-3. コンピューターを再起動します。 実行してこれを行う**Restart-computer**します。
+3. コンピューターを再起動します。 これを行うには、**コンピューターの再起動**を実行します。
 
 ### <a name="rename-the-server"></a>サーバー名を変更する
-サーバーの名前を変更するのにには、次の手順を使用します。
+サーバーの名前を変更するには、次の手順に従います。
 
 1. **hostname** または **ipconfig** コマンドで現在のサーバー名を確認します。
-2. 実行**Rename-computer-ComputerName \<new_name\>** します。
+2. **名前の変更-Computer- \<ComputerName\>新しい名前**を実行します。
 3. コンピューターを再起動します。
 
 ### <a name="activate-the-server"></a>サーバーのライセンス認証をする
 
-実行**slmgr.vbs – ipk\<productkey\>** します。 実行して**slmgr.vbs – ato**します。 アクティブ化が成功すると、メッセージは取得されません。
+**Slmgr.vbs –\<ipk productkey\>** を実行します。 次に、 **slmgr.vbs – ato**を実行します。 アクティブ化が成功した場合、メッセージは表示されません。
 
 > [!NOTE]
-> サーバー上でアクティブ化することもできますを使用して、電話、[キー管理サービス (KMS) サーバー](../../get-started/server-2016-activation.md)、またはリモートでします。 をリモートでアクティブ化するには、リモート コンピューターから、次のコマンドレットを実行します。 
+> また、[キー管理サービス (KMS) サーバー](../../get-started/server-2016-activation.md)を使用して、またはリモートで、サーバーを電話でアクティブ化することもできます。 リモートからライセンス認証するには、リモートコンピューターから次のコマンドレットを実行します。 
 > 
 > ```powershell
 > **cscript windows\system32\slmgr.vbs <ServerName> <UserName> <password>:-ato**
@@ -96,110 +96,110 @@ Server Core サーバーをインストールするときに既定では、DHCP 
  
 ### <a name="configure-windows-firewall"></a>Windows ファイアウォールを構成する
 
-Windows PowerShell コマンドレットとスクリプトを使用して、Windows ファイアウォールを Server Core コンピューターにローカルに構成できます。 参照してください[NetSecurity](/powershell/module/netsecurity/?view=win10-ps)コマンドレットについては、Windows ファイアウォールの構成に使用することができます。
+Windows PowerShell コマンドレットとスクリプトを使用して、Windows ファイアウォールを Server Core コンピューターにローカルに構成できます。 Windows ファイアウォールの構成に使用できるコマンドレットについては、「 [Netsecurity](/powershell/module/netsecurity/?view=win10-ps) 」を参照してください。
 
 ### <a name="enable-windows-powershell-remoting"></a>Windows PowerShell のリモート処理を有効にする
 
-Windows PowerShell のリモート処理を有効にすることができます。Windows PowerShell のリモート処理では、あるコンピューターで入力したコマンドが別のコンピューターで実行されます。 Windows PowerShell リモート処理で有効にする**Enable-psremoting**します。
+Windows PowerShell のリモート処理を有効にすることができます。Windows PowerShell のリモート処理では、あるコンピューターで入力したコマンドが別のコンピューターで実行されます。 **Enable-psremoting**を使用して Windows PowerShell リモート処理を有効にします。
 
-詳細については、次を参照してください。[リモート FAQ について](/powershell/module/microsoft.powershell.core/about/about_remote_faq?view=powershell-5.1)します。
+詳細については、「[リモートの FAQ につい](/powershell/module/microsoft.powershell.core/about/about_remote_faq?view=powershell-5.1)て」を参照してください。
 
-## <a name="administrative-tasks-from-the-command-line"></a>管理タスクをコマンドラインから
-コマンドラインから管理タスクを実行するのにには、次の参照情報を使用します。
+## <a name="administrative-tasks-from-the-command-line"></a>コマンドラインからの管理タスク
+コマンドラインから管理タスクを実行するには、次の参照情報を使用します。
 
 ### <a name="configuration-and-installation"></a>構成とインストール
 
-|                             タスク                              |                                                                                                                                                                                                                 コマンド                                                                                                                                                                                                                 |
+|                             タスク                              |                                                                                                                                                                                                                 Command                                                                                                                                                                                                                 |
 |---------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|             ローカルの管理パスワードを設定する             |                                                                                                                                                                                                      **net ユーザー管理者** \*                                                                                                                                                                                                      |
-|                  コンピューターのドメインへの参加                  |                                                                                                                                                       **netdom join %computername%** **/domain:\<domain\> /userd:\<domain\\username\> /passwordd:** \* <br> コンピューターを再起動します。                                                                                                                                                        |
+|             ローカルの管理パスワードを設定する             |                                                                                                                                                                                                      **net ユーザー管理者**\*                                                                                                                                                                                                      |
+|                  コンピューターのドメインへの参加                  |                                                                                                                                                       **netdom join% computername%** **/domain:\<ドメイン\> /userd:\<ドメインユーザー\\名\> /passwordd:** \* <br> コンピューターを再起動します。                                                                                                                                                        |
 |              ドメインが変更されたことを確認する              |                                                                                                                                                                                                                 **set**                                                                                                                                                                                                                 |
-|                コンピューターをドメインから削除する                |                                                                                                                                                                                                   **netdom remove \<computername\>**                                                                                                                                                                                                    |
-|         ローカルの Administrators グループにユーザーを追加します。          |                                                                                                                                                                                       **net localgroup Administrators/add\<ドメイン\\ユーザー名\>**                                                                                                                                                                                       |
-|       ローカルの Administrators グループからユーザーを削除する       |                                                                                                                                                                                     **net localgroup Administrators/delete\<ドメイン\\ユーザー名\>**                                                                                                                                                                                      |
-|               ローカル コンピューターにユーザーを追加する                |                                                                                                                                                                                                **net user \<domain\username\> \* /add**                                                                                                                                                                                                 |
-|               ローカル コンピューターにグループを追加する               |                                                                                                                                                                                                 **net localgroup\<グループ名\>/add**                                                                                                                                                                                                  |
-|          ドメインに参加しているコンピューターの名前を変更する          |                                                                                                                                                           **netdom renamecomputer %computername% /NewName:\<new computer name\> /userd:\<domain\\username\> /passwordd:** \*                                                                                                                                                            |
+|                コンピューターをドメインから削除する                |                                                                                                                                                                                                   **netdom コンピューター \<名の削除\>**                                                                                                                                                                                                    |
+|         ローカルの Administrators グループにユーザーを追加する          |                                                                                                                                                                                       **net localgroup Administrators/add \<ドメイン\\ユーザー名\>**                                                                                                                                                                                       |
+|       ローカルの Administrators グループからユーザーを削除する       |                                                                                                                                                                                     **net localgroup Administrators/delete \<ドメイン\\ユーザー名\>**                                                                                                                                                                                      |
+|               ローカル コンピューターにユーザーを追加する                |                                                                                                                                                                                                **net ユーザー \<domain\username\> /add\***                                                                                                                                                                                                 |
+|               ローカル コンピューターにグループを追加する               |                                                                                                                                                                                                 **net localgroup \<group name\> /add**                                                                                                                                                                                                  |
+|          ドメインに参加しているコンピューターの名前を変更する          |                                                                                                                                                           **netdom renamecomputer% computername%/newname:\<新しいコンピューター名\> /userd:\<ドメイン\\ユーザー\>名/passwordd:** \*                                                                                                                                                            |
 |                 新しいコンピューター名を確認する                 |                                                                                                                                                                                                                 **set**                                                                                                                                                                                                                 |
-|         ワーク グループ内のコンピューターの名前を変更する         |                                                                                                                                                                **netdom renamecomputer\<よび\>/NewName:\<newcomputername\>** <br>コンピューターを再起動します。                                                                                                                                                                 |
-|                ページング ファイルの管理を無効にする                 |                                                                                                                                                                        **wmic computersystem 場所名 ="\<computername\>"AutomaticManagedPagefile 設定 = False**                                                                                                                                                                         |
-|                   ページング ファイルを構成する                   |                                                            **wmic pagefileset 場所名 ="\<パス/ファイル名\>"InitialSize 設定 =\<initialsize\>、MaximumSize =\<maxsize\>** <br>場所*パス/ファイル名*へのパスと、ページング ファイルの名前は、 *initialsize*開始サイズ (バイト単位)、ページング ファイルのおよび*maxsize*の最大サイズは、ページのファイル (バイト単位)。                                                             |
-|                 静的 IP アドレスに変更する                 | **ipconfig/all** <br>関連する情報を記録またはテキスト ファイルにリダイレクトする (**ipconfig/all > ipconfig.txt**)。<br>**netsh インターフェイスの ipv4 show インターフェイス**<br>インターフェイスの一覧があることを確認します。<br>**netsh interface ipv4 アドレスの名前を設定する\<インターフェイスの一覧から ID\>ソース静的アドレスを = =\<IP アドレスを優先\>ゲートウェイ =\<ゲートウェイ アドレス\>**<br>実行**ipconfig/all** DHCP を有効に設定されていることを確認する**いいえ**します。 |
-|                   静的 DNS アドレスを設定します。                   |   <strong>netsh interface ipv4 dns サーバー名を追加する =\<ネットワーク インターフェイス カードの名前または ID\>アドレス =\<プライマリ DNS サーバーの IP アドレス\>インデックス = 1 <br></strong>netsh interface ipv4 dns サーバー名を追加する =\<セカンダリ DNS サーバーの名前\>アドレス =\<セカンダリ DNS サーバーの IP アドレス\>インデックス = 2\*\* <br> サーバーを追加するには必要に応じて繰り返します。<br>実行**ipconfig/all**アドレスが正しいことを確認します。   |
-| 静的 IP アドレスから DHCP によって提供された IP アドレスに変更する |                                                                                                                                      **netsh interface ipv4 アドレスの名前を設定する =\<ローカル システムの IP アドレス\>ソース DHCP を =** <br>実行**ipconfig/all** DCHP を有効になっているに設定されていることを確認する**はい**。                                                                                                                                      |
-|                      プロダクト キーを入力する                      |                                                                                                                                                                                                   **slmgr.vbs – ipk\<プロダクト キー\>**                                                                                                                                                                                                    |
-|                  サーバーをローカルにライセンス認証する                  |                                                                                                                                                                                                           **slmgr.vbs -ato**                                                                                                                                                                                                            |
-|                 サーバーをリモートからライセンス認証する                  |                                            **cscript slmgr.vbs – ipk\<プロダクト キー\>\<サーバー名\>\<username\>\<パスワード\>** <br>**cscript slmgr.vbs -ato \<servername\> \<username\> \<password\>** <br>実行して、コンピューターの GUID を取得**cscript slmgr.vbs-でした** <br> 実行**cscript slmgr.vbs-dli \<GUID\>** <br>ライセンスの状態に設定されていることを確認 **(アクティブ) ライセンス**します。                                             |
+|         ワーク グループ内のコンピューターの名前を変更する         |                                                                                                                                                                **netdom renamecomputer \<currentcomputername\> /newname:\<newcomputername\>** <br>コンピューターを再起動します。                                                                                                                                                                 |
+|                ページング ファイルの管理を無効にする                 |                                                                                                                                                                        **名前が "\<computername\>" に設定して、自動ページファイル = False に設定する wmic computersystem**                                                                                                                                                                         |
+|                   ページング ファイルを構成する                   |                                                            **wmic pagefileset セット (name =\<"path/\>filename" set InitialSize\<=\>InitialSize, MaximumSize\<= maxsize)\>** <br>*Path/filename*はページングファイルのパスと名前、 *initialsize*はページングファイルの開始サイズ (バイト単位)、 *maxsize*はページファイルの最大サイズ (バイト単位) です。                                                             |
+|                 静的 IP アドレスに変更する                 | **ipconfig/all** <br>関連する情報を記録するか、テキストファイル (**ipconfig/all > ipconfig**) にリダイレクトします。<br>**netsh interface ipv4 show インターフェイス**<br>インターフェイスリストがあることを確認します。<br>**netsh interface ipv4 set address name \<ID from interface list\> source = 静的アドレス =\<優先 IP アドレス\>ゲートウェイ =\<ゲートウェイアドレス\>**<br>**Ipconfig/all**を実行して、DHCP Enabled が**No**に設定されていることを確認します。 |
+|                   静的 DNS アドレスを設定します。                   |   <strong>netsh interface ipv4 add dnsserver name =\<ネットワークインターフェイスカード\>アドレス\<の名前または ID = プライマリ DNS サーバー\>インデックスの IP アドレス = 1 <br></strong>netsh interface ipv4 add dnsserver name =\<セカンダリ dns サーバー\>アドレス\<の名前 = セカンダリ dns サーバー\>インデックスの IP アドレス = 2\*\* <br> 必要に応じて、サーバーを追加します。<br>**Ipconfig/all**を実行して、アドレスが正しいことを確認します。   |
+| 静的 IP アドレスから DHCP によって提供された IP アドレスに変更する |                                                                                                                                      **netsh インターフェイス ipv4 set address name =\<ローカルシステム\>ソースの IP アドレス = DHCP** <br>**Ipconfig/all**を実行して、DCHP Enabled が**Yes**に設定されていることを確認します。                                                                                                                                      |
+|                      プロダクト キーを入力する                      |                                                                                                                                                                                                   **slmgr.vbs – ipk \<プロダクトキー\>**                                                                                                                                                                                                    |
+|                  サーバーをローカルにライセンス認証する                  |                                                                                                                                                                                                           **slmgr.vbs-ato**                                                                                                                                                                                                            |
+|                 サーバーをリモートからライセンス認証する                  |                                            **cscript slmgr.vbs-ipk \<プロダクトキー\>\<サーバー名\>\<の\>ユーザー\<名パスワード\>** <br>**cscript slmgr.vbs-ato \<servername\> \<ユーザー名\> パスワード\<\>** <br>**Cscript slmgr.vbs**を実行してコンピューターの GUID を取得する <br> **Cscript slmgr.vbs の実行\<-dli GUID\>** <br>ライセンスステータスが "ライセンス済み **(アクティブ化済み)** " に設定されていることを確認します。                                             |
 
 ### <a name="networking-and-firewall"></a>ネットワークとファイアウォール
 
-|タスク|コマンド| 
+|タスク|Command| 
 |----|-------|
-|プロキシ サーバーを使用するようにサーバーを構成します。|**netsh Winhttp プロキシを設定する\<servername\>:\<ポート番号\>** <br>**注:** Server Core インストールは、接続を許可するためのパスワードを必要とするプロキシを介してインターネットにアクセスできません。|
-|インターネット アドレスのプロキシをバイパスするようにサーバーを構成します。|**netsh winttp プロキシを設定する\<servername\>:\<ポート番号\>バイパス リスト ="\<ローカル\>"**| 
-|IPSEC 構成表示または変更|**netsh ipsec**| 
-|NAP 構成表示または変更|**netsh nap**| 
-|表示または物理アドレスへの変換からの IP の変更|**arp**| 
-|表示するか、またはローカル ルーティング テーブルの構成|**ルート**| 
-|表示または DNS サーバーの設定を構成します。|**nslookup**| 
+|プロキシサーバーを使用するようにサーバーを構成する|**netsh Winhttp set proxy \<servername\>:\<ポート番号\>** <br>**注:** Server Core インストールでは、接続を許可するためにパスワードを必要とするプロキシ経由でインターネットにアクセスすることはできません。|
+|インターネットアドレスのプロキシをバイパスするようにサーバーを構成する|**netsh winttp set proxy \<servername\>:\<ポート番号\>バイパスリスト = "\<local\>"**| 
+|IPSEC 構成を表示または変更する|**netsh ipsec**| 
+|NAP 構成を表示または変更する|**netsh nap**| 
+|IP から物理アドレスへの変換を表示または変更する|**arp**| 
+|ローカルルーティングテーブルを表示または構成する|**回送**| 
+|DNS サーバーの設定を表示または構成する|**nslookup**| 
 |プロトコル統計と現在の TCP/IP ネットワーク接続を表示する|**netstat**| 
-|プロトコル統計と現在の TCP/IP 接続が TCP/IP (NBT) 経由で NetBIOS を使用して表示します。|**nbtstat**| 
-|ネットワーク接続のホップを表示します。|**pathping**| 
-|ネットワーク接続のホップをトレースします。|**tracert**| 
+|NetBIOS over TCP/IP (NBT) を使用してプロトコル統計と現在の TCP/IP 接続を表示する|**nbtstat**| 
+|ネットワーク接続のホップを表示する|**pathping**| 
+|ネットワーク接続のホップをトレースする|**tracert**| 
 |マルチキャスト ルーターの構成を表示する|**mrinfo**| 
-|ファイアウォールのリモート管理を有効にします。|**netsh advfirewall のファイアウォール設定のルール グループ =「Windows ファイアウォールのリモート管理」の新しい有効にする = [はい]**| 
+|ファイアウォールのリモート管理を有効にする|**netsh advfirewall firewall set rule group = "Windows ファイアウォールリモート管理" 新しい有効化 = yes**| 
  
 
-### <a name="updates-error-reporting-and-feedback"></a>更新プログラム、エラーが報告およびフィードバック
+### <a name="updates-error-reporting-and-feedback"></a>更新プログラム、エラー報告、およびフィードバック
 
-|                               タスク                                |                                                                                                                               コマンド                                                                                                                                |
+|                               タスク                                |                                                                                                                               Command                                                                                                                                |
 |-------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                         更新プログラムをインストールする                         |                                                                                                                    **wusa \<update\>.msu /quiet**                                                                                                                    |
+|                         更新プログラムをインストールする                         |                                                                                                                    **wusa \<更新\>プログラム .msu/quiet**                                                                                                                    |
 |                      インストールされている更新プログラムの一覧を表示する                       |                                                                                                                            **systeminfo**                                                                                                                            |
-|                         更新プログラムを削除する                          |                                 **展開/f:\* \<更新\>.msu c:\test** <br>C:\test\ に移動して開く\<更新\>.xml をテキスト エディターでします。<br>置換**インストール**で**削除**ファイルを保存します。<br>**pkgmgr/n:\<更新\>.xml**                                 |
-|                    自動更新を構成する                    |          現在の設定を確認する: **cscript %systemroot%\system32\scregedit.wsf/AU/v \* \*<br>自動更新を有効にする: \* \*cscript ある scregedit.wsf/AU 4** <br>自動更新を無効にする: **cscript %systemroot%\system32\scregedit.wsf/AU 1**          |
-|                      エラー報告を有効にする                       | 現在の設定を確認する: **serverWerOptin/query** <br>詳細なレポートを自動的に送信する: **serverWerOptin 詳細/** <br>概要レポートを自動的に送信する: **serverWerOptin/summary がありません** <br>エラー報告を無効にする: **serverWerOptin/disable** |
-| カスタマー エクスペリエンス向上プログラム (CEIP) に参加する |                                                     現在の設定を確認する: **serverCEIPOptin/query** <br>CEIP を有効にする: **serverCEIPOptin/enable** <br>CEIP を無効にする: **serverCEIPOptin/disable**                                                      |
+|                         更新プログラムを削除する                          |                                 **[/f:\* \<update\>. .msu c:\test] を展開します。** <br>C:\test\ に移動し、 \<テキスト\>エディターで .xml を開きます。<br>**[インストール]** を **[削除]** に置き換えて、ファイルを保存します。<br>**pkgmgr/n:\<.xml\>を更新する**                                 |
+|                    自動更新を構成する                    |          現在の設定を確認するには: **cscript%systemroot%\system32\scregedit.wsf \*/au/v \* <br>自動更新\* \*を有効にするには、cscript scregedit.exe/au 4** <br>自動更新を無効にするには: **cscript%systemroot%\system32\scregedit.wsf/AU 1**          |
+|                      エラー報告を有効にする                       | 現在の設定を確認するには: **serverWerOptin/query** <br>詳細レポートを自動的に送信するには: **serverWerOptin/detailed** <br>概要レポートを自動的に送信するには: **serverWerOptin/summary** <br>エラー報告を無効にするには: **serverWerOptin/disable** |
+| カスタマー エクスペリエンス向上プログラム (CEIP) に参加する |                                                     現在の設定を確認するには: **serverCEIPOptin/query** <br>CEIP を有効にするには: **serverCEIPOptin/enable** <br>CEIP を無効にするには: **serverCEIPOptin/disable**                                                      |
 
 ### <a name="services-processes-and-performance"></a>サービス、プロセス、およびパフォーマンス
 
-|                               タスク                               |                                                                                                                                                                                                             コマンド                                                                                                                                                                                                              |
+|                               タスク                               |                                                                                                                                                                                                             Command                                                                                                                                                                                                              |
 |------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                    実行中のサービスを一覧表示します。                     |                                                                                                                                                                                                  **sc クエリ**または**net start**                                                                                                                                                                                                   |
-|                         サービスを開始する                          |                                                                                                                                                                                 **sc start\<サービス名\>** または**net start\<サービス名\>**                                                                                                                                                                                  |
-|                          サービスを停止する                          |                                                                                                                                                                                  **sc stop\<サービス名\>** または**net stop\<サービス名\>**                                                                                                                                                                                   |
+|                    実行中のサービスを一覧表示する                     |                                                                                                                                                                                                  **sc クエリ**または**net start**                                                                                                                                                                                                   |
+|                         サービスを開始する                          |                                                                                                                                                                                 **sc 開始\<サービス名\>** または**net \<start サービス\>名**                                                                                                                                                                                  |
+|                          サービスを停止する                          |                                                                                                                                                                                  **sc stop \<サービス名\>** または**net \<stop サービス\>名**                                                                                                                                                                                   |
 | 実行中のアプリケーションと関連するプロセスの一覧を取得する |                                                                                                                                                                                                           **tasklist**                                                                                                                                                                                                           |
-|                        タスク マネージャーを開始する                        |                                                                                                                                                                                                           **タスク マネージャー**                                                                                                                                                                                                            |
-|    作成およびイベント トレース セッションとパフォーマンス ログの管理    | カウンター、トレース、構成データの収集、または API を作成する: **logman の作成** <br>データ コレクターのプロパティの照会: **logman クエリ** <br>開始またはデータの収集を停止する: **logman start\|停止** <br>コレクターを削除する: **logman の削除** <br> コレクターのプロパティを更新する: **logman update** <br>XML ファイルからデータ コレクター セットをインポートまたは XML ファイルにエクスポートする: **logman import\|エクスポート** |
+|                        タスク マネージャーを開始する                        |                                                                                                                                                                                                           **taskmgr-networking**                                                                                                                                                                                                            |
+|    イベントトレースセッションとパフォーマンスログの作成と管理    | カウンター、トレース、構成データの収集、API を作成するには **、次の**ようにします。 <br>データコレクターのプロパティを照会するには: **logman クエリ** <br>データ収集を開始または停止するには: **\|logman start stop** <br>コレクターを削除するには: **logman delete** <br> コレクターのプロパティを更新するには: **logman update** <br>Xml ファイルからデータコレクターセットをインポートする、または xml ファイルにエクスポートするには: **\|logman インポートエクスポート** |
 
 ### <a name="event-logs"></a>イベント ログ
 
-|タスク|コマンド| 
+|タスク|Command| 
 |----|-------|
-|イベントのログを一覧表示|**wevtutil el**| 
-|指定したログのイベントをクエリします。|**wevtutil qe /f:text \<log name\>**| 
-|イベント ログをエクスポートします。|**wevtutil epl\<ログ名\>**| 
-|イベント ログを消去します。|**wevtutil cl\<ログ名\>**| 
+|イベントログの一覧表示|**wevtutil el**| 
+|指定されたログのイベントを照会する|**wevtutil qe/f: テキスト\<ログ名\>**| 
+|イベントログをエクスポートする|**wevtutil epl \<ログ名\>**| 
+|イベントログの消去|**wevtutil cl \<ログ名\>**| 
 
 
 ### <a name="disk-and-file-system"></a>ディスクとファイル システム
 
-|                   タスク                   |                        コマンド                        |
+|                   タスク                   |                        Command                        |
 |------------------------------------------|-------------------------------------------------------|
-|          ディスク パーティションを管理する          | コマンドの一覧は、実行**diskpart/でしょうか。**  |
-|           ソフトウェアの RAID を管理する           | コマンドの一覧は、実行**diskraid/でしょうか。**  |
-|        ボリューム マウント ポイントを管理する        | コマンドの一覧は、実行**mountvol/でしょうか。**  |
-|           ボリュームを最適化する            |  コマンドの一覧は、実行**デフラグ/でしょうか。**   |
-| ボリュームを NTFS ファイル システムに変換する |        **変換\<ボリューム文字\>/FS:NTFS**         |
-|              ファイルを圧縮する              |  コマンドの一覧は、実行**compact/でしょうか。**  |
-|          開いているファイルを管理する           | コマンドの一覧は、実行**openfiles/でしょうか。** |
-|          VSS フォルダーを管理する          | コマンドの一覧は、実行**vssadmin/でしょうか。**  |
-|        ファイル システムを管理する        |  コマンドの一覧は、実行**fsutil/でしょうか。**   |
-|    ファイルまたはフォルダーの所有権を取得する    |  コマンドの一覧は、実行**icacls/でしょうか。**   |
+|          ディスク パーティションを管理する          | コマンドの完全な一覧を表示するには、 **diskpart/?** を実行します。  |
+|           ソフトウェアの RAID を管理する           | コマンドの完全な一覧を表示するには、 **diskraid/?** を実行します。  |
+|        ボリューム マウント ポイントを管理する        | コマンドの完全な一覧を表示するには、 **mountvol/?** を実行します。  |
+|           ボリュームを最適化する            |  コマンドの完全な一覧を表示するには、 **defrag/?** を実行します。   |
+| ボリュームを NTFS ファイル システムに変換する |        **ボリューム\<名\>の変換/fs: NTFS**         |
+|              ファイルを圧縮する              |  コマンドの完全な一覧を表示するには、 **compact/?** を実行します。  |
+|          開いているファイルを管理する           | コマンドの完全な一覧については、「 **openfiles/?** 」を実行してください。 |
+|          VSS フォルダーを管理する          | コマンドの完全な一覧については、「 **vssadmin/?** 」を実行してください。  |
+|        ファイル システムを管理する        |  コマンドの完全な一覧を表示するには、 **fsutil/?** を実行します。   |
+|    ファイルまたはフォルダーの所有権を取得する    |  コマンドの完全な一覧を表示するには、 **icacls/?** を実行します。   |
  
 ### <a name="hardware"></a>ハードウェア
 
-|タスク|コマンド| 
+|タスク|Command| 
 |----|-------|
-|新しいハードウェア デバイスのドライバーを追加する|%Homedrive% フォルダーにドライバーをコピー\\\<ドライバー フォルダー\>します。 実行**pnputil-i-%homedrive%\\\<ドライバー フォルダー\>\\\<ドライバー\>.inf**|
-|ハードウェア デバイスのドライバーを削除する|読み込まれているドライバーの一覧は、実行**sc クエリの種類 = ドライバー**します。 実行して**sc delete \<service_name\>**|
+|新しいハードウェア デバイスのドライバーを追加する|% Homedrive%\\\<driver フォルダー\>にあるフォルダーにドライバーをコピーします。 **Pnputil の実行-i-% homedrive%\\\<ドライバーフォルダー\>\\\<ドライバー\>.inf**|
+|ハードウェア デバイスのドライバーを削除する|読み込まれたドライバーの一覧を表示するには、 **sc query type = driver**を実行します。 次に、 **sc \<delete\> service_name**を実行します。|
