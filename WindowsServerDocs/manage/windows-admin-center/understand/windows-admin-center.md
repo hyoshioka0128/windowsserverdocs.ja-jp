@@ -8,12 +8,12 @@ ms.author: harowl
 ms.date: 06/20/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: ca845e527d2469921c6248552f003c51bbc790a6
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: 59668e548f2e61cc7497e807dd93aae5c16798ca
+ms.sourcegitcommit: bd5f82f1e534dbb01b8e19e83a23759ebc92b81a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67298150"
+ms.lasthandoff: 08/03/2019
+ms.locfileid: "68757453"
 ---
 # <a name="hello-windows-admin-center"></a>Windows Admin Center の概要
 
@@ -25,7 +25,7 @@ Windows Admin Center は、サーバー、クラスター、ハイパーコン�
 
 [自分に適したバージョンはどれか?](faq.md#what-is-windows-admin-center-preview-which-version-is-right-for-me)
 
-[Windows Admin Center **Preview** 1906](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) - 機能に関する最新の更新プログラムが含まれています。
+[Windows Admin Center **Preview** 1907](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) - 機能に関する最新の更新プログラムが含まれています。
 
 [Windows Admin Center (バージョン 1904.1)](https://aka.ms/WACDownload) - 広範に検証され、一般公開されています。
 
