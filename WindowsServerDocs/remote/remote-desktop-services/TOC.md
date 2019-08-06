@@ -68,7 +68,7 @@
 ## [リモート デスクトップ クライアント](clients/remote-desktop-clients.md)
 ### リモート デスクトップの既知の問題
 #### [リモート デスクトップ接続の一般的なトラブルシューティング](troubleshoot/rdp-error-general-troubleshooting.md)
-#### [クライアントは接続できず、"クラスが登録されていません" というエラーが発生する](troubleshoot/rdp-error-class-not-registered.md)。
+#### [クライアントが接続できず、"クラスが登録されていません" というエラーが発生する](troubleshoot/rdp-error-class-not-registered.md)
 #### [クライアントは接続できず、"使用可能なライセンスがありません" というエラーが表示される](troubleshoot/rdp-error-no-licenses-available.md)
 #### [ユーザーが認証できない、または 2 回認証する必要がある](troubleshoot/cannot-authenticate-or-must-authenticate-twice.md)
 #### [接続時に、"リモート デスクトップ サービスが現在ビジー状態のため" というエラーが発生する](troubleshoot/remote-desktop-service-currently-busy.md)
