@@ -28,13 +28,13 @@ Windows Server の技術的なコンテンツを保持する 2 つの別々 の�
     > [!IMPORTANT]
     > Docs.microsoft.com に公開されるすべてのリポジトリを採用して、 [Microsoft オープン ソース倫理規定](https://opensource.microsoft.com/codeofconduct/)または[.NET Foundation 倫理](https://dotnetfoundation.org/code-of-conduct)します。 詳細については、次を参照してください。、 [FAQ の実施コード](https://opensource.microsoft.com/codeofconduct/faq/)します。 お問い合わせくださいまたは[ opencode@microsoft.com ](mailto:opencode@microsoft.com)、または[ conduct@dotnetfoundation.org ](mailto:conduct@dotnetfoundation.org)質問またはコメントにします。
     >
-    > 軽微な修正またはパブリック リポジトリでドキュメントとコードの例に説明の対象は、 [docs.microsoft.com Terms of Use](https://docs.microsoft.com/legal/termsofuse)します。 新規または大幅な変更は、Microsoft の従業員でない場合は、オンライン貢献ライセンス契約 (CLA) を送信するよう求める、プル要求のコメントを生成します。 確認したり、プル要求を受け入れる前に、オンライン フォームを完了する必要があります。
+    > パブリック リポジトリのドキュメントとコードの例に対する軽微な修正または説明は、「[docs.microsoft.com - 使用条件](https://docs.microsoft.com/legal/termsofuse)」で取り上げられています。 新規または大幅な変更がある場合は、プル要求でコメントが生成され、オンラインの貢献者使用許諾契約書 (CLA) を送信するよう求められます (Microsoft の従業員でない場合)。 プル要求を受け入れるには、オンライン フォームを完了していただく必要があります。
 
 ## <a name="quick-edits-to-existing-articles-using-github-and-a-web-browser"></a>GitHub と web ブラウザーを使用して既存の記事へのクイック編集
 
 クイック編集は、報告してドキュメントに軽度のエラーや未入力を修正するプロセスを合理化します。 すべての作業や小規模の文法、スペル ミスに関係なく_は_公開されたドキュメントに利用できるようします。
 
-1. [https://partnercenter.microsoft.com/partner/support](https://github.com/MicrosoftDocs/windowsserverdocs-pr/tree/master/WindowsServerDocs) に移動します。
+1. [https://partnercenter.microsoft.com/partner/support](https://github.com/MicrosoftDocs/windowsserverdocs-pr/tree/master/WindowsServerDocs ) に移動します。
 
 2. 編集する記事に移動して選択し、**このファイルを編集**ボタンをクリックします。
 
@@ -60,7 +60,7 @@ Windows Server の技術的なコンテンツを保持する 2 つの別々 の�
 
 5. テキストを追加する必要があります、コンテンツを確認するエイリアスから他のユーザーの準備ができたら、 **#sign オフ**コメントにします。 このコメント:
 
-    - プル要求からのラベルを更新**do not-マージ**に**マージの準備完了に**します。
+    - プル要求のラベルを **do-not-merge** から **ready-to merge** に更新します。
 
     - エイリアスとライターのコンテンツのレビューする準備ができたことを知ることができます。
 
