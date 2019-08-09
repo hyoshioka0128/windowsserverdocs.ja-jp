@@ -12,7 +12,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 386ef1d8683b75bdc94fc1aa4ac7cb8acf6cd6fa
 ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 07/26/2019
 ms.locfileid: "68544486"
@@ -389,7 +389,7 @@ WSUS では、SSL 用に 2 つのポートを必要とします。1 つは暗号
 
 2.  [**スタート**] にアクセスし、「 **CMD**」と入力して、[**コマンドプロンプト**] を右クリックし、[**管理者として実行**] をクリックします。
 
-3.  移動し、 *%ProgramFiles%* **\Update \tools\\* * フォルダー。
+3.  移動し、 *%ProgramFiles%* **\Update \tools\\* フォルダー。
 
 4.  コマンドプロンプトウィンドウで、次のコマンドを入力します。
 
