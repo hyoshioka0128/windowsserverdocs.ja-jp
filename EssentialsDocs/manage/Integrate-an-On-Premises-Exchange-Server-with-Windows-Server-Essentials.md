@@ -12,12 +12,12 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ef57ac325465d7b7a5cf65a2931df824c351c6a2
-ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
+ms.openlocfilehash: 142ae8514a6a480f8181ce193c2f437e2f286e2d
+ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863439"
+ms.locfileid: "68914608"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>社内 Exchange Server と Windows Server Essentials を統合する
 
@@ -364,18 +364,18 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
    - クリーン セットアップを実行している場合は、次のコマンドを実行します。  
 
-      **Arrconfig 構成-cert***証明書ファイルへのパス* **-ホスト名***Exchange Server のホスト名*  
+      **Arrconfig 構成-cert** _ **-ホスト名** _  
 
      > [!NOTE]
-     >  たとえば、次のようになります。**Arrconfig 構成-cert***c:\temp\certificate.pfx* **-ホスト名***mail.contoso.com*  
+     >  たとえば、次のようになります。**Arrconfig 構成-cert** _ **-ホスト名** _  
      > 
      >  *mail.contoso.com* は、証明書によって保護されているドメイン名に置き換えてください。  
 
    - Windows Small Business Server から移行している場合は、次のコマンドを実行します。  
 
-      **Arrconfig 構成-cert***証明書ファイルへのパス* **-ホスト名***Exchange Server のホスト名* **-targetserver***Exchange server のサーバー名*  
+      **Arrconfig 構成-cert** _ **-ホスト名** _ **-targetserver** _  
 
-      たとえば、次のようになります。**Arrconfig 構成-cert***c:\temp\certificate.pfx* **-ホスト名***mail.contoso.com* * *-targetserver * * *exchangesvr」*  
+      たとえば、次のようになります。**Arrconfig 構成-cert** _ **-ホスト名** _ * *-targetserver * * _exchangesvr」_  
 
       *mail.contoso.com* は実際のドメイン名に、 *ExchangeSvr* は Exchange Server を実行しているサーバー名に置き換えてください。  
 
