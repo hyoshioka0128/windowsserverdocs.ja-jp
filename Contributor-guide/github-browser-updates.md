@@ -19,7 +19,7 @@ Windows Server の技術的なコンテンツを保持する 2 つの別々 の�
 
 - **私はマイクロソフトの従業員です。** マイクロソフトの従業員としてを実行しているに基づいてのオプションがあります。
 
-    - **新しい記事を作成します。** 新しい記事を作成するには、作成する必要があり、GitHub アカウントとツールを設定すると、フォークと複製 windowsserverdocs pr リポジトリでは、独自のリモート ブランチを設定、アーティクルを作成および最後に、新しいプル リクエストの承認および発行を作成します。 これらの手順については、次を参照してください。、 [GitHub および Visual Studio Code を使用して新しい Windows Server の記事を作成](create-new-using-github.md)記事。
+    - **新しい記事を作成します。** 新しい記事を作成するには、GitHub アカウントとツールの作成と設定、windowsserverdocs-pr リポジトリのフォークと複製、リモート ブランチの設定、記事の作成をする必要があり、最後に承認および発行するための新しいプル要求を作成します。これらの手順については、「[Create new Windows Server articles using GitHub and Visual Studio Code (GitHub および Visual Studio Code を使用した新しい Windows Server の記事の作成)](create-new-using-github.md)」の記事を参照してください。
 
     - **既存のアーティクルに大きな変化を作成します。** 既存の記事に大幅な変更するには、手順を利用できる、 [GitHub および Visual Studio Code を使用して、既存の Windows Server の記事を編集](edit-existing-using-github.md)記事。
 
@@ -28,7 +28,7 @@ Windows Server の技術的なコンテンツを保持する 2 つの別々 の�
     > [!IMPORTANT]
     > Docs.microsoft.com に公開されるすべてのリポジトリを採用して、 [Microsoft オープン ソース倫理規定](https://opensource.microsoft.com/codeofconduct/)または[.NET Foundation 倫理](https://dotnetfoundation.org/code-of-conduct)します。 詳細については、次を参照してください。、 [FAQ の実施コード](https://opensource.microsoft.com/codeofconduct/faq/)します。 お問い合わせくださいまたは[ opencode@microsoft.com ](mailto:opencode@microsoft.com)、または[ conduct@dotnetfoundation.org ](mailto:conduct@dotnetfoundation.org)質問またはコメントにします。
     >
-    > 軽微な修正またはパブリック リポジトリでドキュメントとコードの例に説明の対象は、 [docs.microsoft.com Terms of Use](https://docs.microsoft.com/legal/termsofuse)します。 新規または大幅な変更は、Microsoft の従業員でない場合は、オンライン貢献ライセンス契約 (CLA) を送信するよう求める、プル リクエストのコメントを生成します。 確認したり、プル リクエストを受け入れる前に、オンライン フォームを完了する必要があります。
+    > パブリック リポジトリのドキュメントとコードの例に対する軽微な修正または説明は、「[docs.microsoft.com - 使用条件](https://docs.microsoft.com/legal/termsofuse)」で取り上げられています。新規または大幅な変更がある場合は、プル要求でコメントが生成され、オンラインの貢献者使用許諾契約書 (CLA) を送信するよう求められます (Microsoft の従業員でない場合)。プル要求を受け入れるには、オンライン フォームを完了していただく必要があります。
 
 ## <a name="quick-edits-to-existing-articles-using-github-and-a-web-browser"></a>GitHub と web ブラウザーを使用して既存の記事へのクイック編集
 
@@ -44,23 +44,23 @@ Windows Server の技術的なコンテンツを保持する 2 つの別々 の�
 
     ![タイトル情報に変更をコミットします。](media/github-browser-updates/commit-changes.png)
 
-## <a name="submit-the-pull-request"></a>プル リクエストを送信します。
+## <a name="submit-the-pull-request"></a>プル要求を送信します。
 
-プル リクエストを作成した後の承認と発行のために送信する必要があります。
+プル要求を作成した後の承認と発行のために送信する必要があります。
 
 ### <a name="to-submit-your-pull-request"></a>プル リクエストを送信するには
 
-1. **プル リクエストを開く**ページで、PR のより適切なコミット メッセージを更新 例: 最初の段落では、入力ミスを修正します。
+1. **プル要求を開く**ページで、PR のより適切なコミット メッセージを更新 例: 最初の段落では、入力ミスを修正します。
 
 2. コミットと含まれるはずのファイルのみが含まれることを確認します。 (通常は)、PR がアップ ストリーム リポジトリのいずれかのマスターに適切なブランチに移動するチェックもまたはリリース ブランチ (場合によっては)。
 
-3. **レビュー担当者**右側のペインの領域は、歯車アイコンを選択し、入力_windowsservercontent_します。 エイリアスのメンバーは、変更内容を確認するポイントになり、いずれかのマージ、プル リクエストまたはマージする前に変更すべき点に関するコメントを追加します。
+3. 右側ペインの **[レビュー担当者]** 領域で歯車アイコンを選択し、_windowsservercontent_ を入力します。エイリアスのメンバーは、変更内容を確認し、プル要求をマージするか、マージする前に変更する内容に関するコメントを追加する立場にあります。
 
-4. 選択**プル リクエストの作成**です。 新しい PR は、独自のフォークで独自の作業ブランチにリンクされます。 同じ作業ブランチをフォークにプッシュするすべての新しいコミットが PR に自動的に含め、PR をマージすると、まで 新しいラベルと書かれたプル リクエストに追加されます**do-not-merge**します。 単につまり、コンテンツが進行中としないでくださいするレビューまたはライブ サイトにプッシュします。
+4. **[プル要求の作成]** を選択します。新しい PR は、フォークの作業ブランチにリンクされます。PR がマージされるまで、フォークの同じ作業ブランチに対してプッシュする新しいコミットはすべて自動的に PR に含められます。**do-not-merge** と書かれたプル要求に新しいラベルが追加されます。これは単に、コンテンツが進行中であり、レビューもライブ サイトへのプッシュも行うべきではないことを示します。
 
-5. テキストを追加する必要があります、コンテンツを確認するエイリアスから他のユーザーの準備ができたら、 **#sign-off**コメントにします。 このコメント:
+5. エイリアス内のだれかにコンテンツをレビューしてもらう準備ができたら、コメントに **#sign-off** というテキストを追加する必要があります。このコメントの効果:
 
-    - プル リクエストからのラベルを更新**do-not-merge**に**マージの準備完了に**します。
+   - プル要求のラベルを **do-not-merge** から **ready-to merge** に更新します。
 
     - エイリアスとライターのコンテンツのレビューする準備ができたことを知ることができます。
 
