@@ -1,6 +1,6 @@
 ---
 title: MultiPoint ステーション
-description: ユーザーのさまざまなオプションを含め、MultiPoint services ステーションについて説明します
+description: ユーザーのさまざまなオプションを含む、MultiPoint Services のステーションについて説明します。
 ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server-threshold
@@ -13,15 +13,15 @@ ms.assetid: f9f9d618-ccfe-41ea-a52c-00c3c7adb51a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: e747826a7cd84521bc62e48abedf3092bf6d844c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 43386f0f4d4020d5e127e7b7cbd918e4c48cec6e
+ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855653"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863455"
 ---
 # <a name="multipoint--stations"></a>MultiPoint ステーション
-MultiPoint サービス システムの環境で *ステーション* MultiPoint サービスを実行しているコンピューターに接続するためのユーザーのエンドポイントします。 各ステーションは、独立系の Windows 10 エクスペリエンスでユーザーを提供します。 次のステーションの種類がサポートされています。  
+MultiPoint サービス システムの環境で *ステーション* MultiPoint サービスを実行しているコンピューターに接続するためのユーザーのエンドポイントします。 各ステーションは、ユーザーに独立した Windows 10 エクスペリエンスを提供します。 次のステーションの種類がサポートされています。  
   
 -   直接ビデオ接続ステーション  
   
@@ -46,9 +46,9 @@ MultiPoint サービスを実行しているコンピューターでは、1 つ�
   
 ![MultiPoint サービス USB ベース システム レイアウトのイメージ](./media/WMSMultiPointServerUSBSystemLayout.gif)  
   
-**図 1** MultiPoint services システムで 4 つの直接ビデオ接続ステーション  
+**図 1**4つの直接ビデオ接続ステーションを備えた MultiPoint services システム  
   
-### <a name="BKMK_PS2stations"></a>Ps/2 ステーション  
+### <a name="BKMK_PS2stations"></a>PS/2 ステーション  
 MultiPoint サービスでは、ps/2 ステーションを作成する直接ビデオ接続されているモニターに、ps/2 キーボードとマザーボード上にマウス ポインターをマップできます。 マザーボードの高解像度のアナログ オーディオは、このタイプのステーションに関連付けられているオーディオです。 これは、コンピューターには当てはまりませんマザーボードの ps/2 ジャックがない場合。  
   
 ## <a name="usb-zero-client-connected-stations"></a>USB ゼロ-クライアントの接続されたステーション  
@@ -58,7 +58,7 @@ USB ゼロ-クライアントの接続されたステーションを利用、 *U
   
 ![USB ゼロ クライアント接続ステーション](./media/WMS11_diagram7.gif)  
   
-**図 2**プライマリ ステーションと 2 つの USB ゼロ クライアント接続ステーションと MultiPoint サービス システム  
+**図 2**プライマリステーションと2つの USB ゼロクライアント接続ステーションを備えた MultiPoint Services システム  
   
 ### <a name="usb-over-ethernet-zero-clients"></a>USB over Ethernet 0 クライアント  
 USB over Ethernet 0 クライアントは、LAN 経由で MultiPoint サービス システムに USB を送信する USB ゼロ クライアントの一種です。 これらの種類の USB ゼロ クライアントは、同様に機能の他の USB ゼロ クライアントが、USB ケーブルの長さの最大値による制限はありません。 USB over Ethernet 0 クライアントは、従来のシン クライアントではありませんし、MultiPoint サービスのシステム上の仮想の USB デバイスとして表示されます。 これらのデバイスを使用する場合は、デバイスの製造元固有のパフォーマンスやサイトの計画に関する推奨事項を参照してください。 ほとんどのデバイスでは、関連付け、MultiPoint サービス システムにデバイスを接続することができます MultiPoint マネージャー用のサード パーティ プラグインがあります。  
@@ -68,7 +68,7 @@ USB over Ethernet 0 クライアントは、LAN 経由で MultiPoint サービ�
   
 クライアントと Microsoft RemoteFX を実行しているデバイスは、プロセッサとビデオ ハードウェアの機能のローカルのシン クライアントまたはコンピューター ネットワーク経由で高解像度ビデオを提供することで、リッチ マルチ メディア エクスペリエンスを提供することができます。  
   
-既存の LAN クライアントがある場合、MultiPoint Services は、Windows 10 エクスペリエンスに同時にアップグレードするすべてのユーザーに迅速かつコスト効率に優れた方法を指定できます。  
+LAN クライアントが既に存在する場合は、MultiPoint Services を使用すると、すべてのユーザーを Windows 10 エクスペリエンスに同時にアップグレードすることができます。  
   
 展開と管理の観点から RDP-over-LAN 接続ステーションを使用すると次の違いもあります。  
   
@@ -82,17 +82,17 @@ USB over Ethernet 0 クライアントは、LAN 経由で MultiPoint サービ�
   
 -   分割画面機能がありません。  
   
-    詳細については、次を参照してください [分割画面ステーション](#a-namebkmksplitscreenstationsasplit-screen-stations) 後述の「。  
+    詳細については、次を参照してください [分割画面ステーション](#split-screen-stations) 後述の「。  
   
 -   なし、ステーションの名前を変更または MultiPoint Manager コンソールから、自動ログオンを構成します。  
   
 ![USB ゼロ クライアント接続ステーション](./media/Diagram1.gif)  
   
-**図 3** RDP の over LAN-接続ステーションと MultiPoint サービス システム  
+**図 3**RDP over LAN 接続ステーションを使用した MultiPoint Services システム  
   
 ## <a name="additional-configuration-options"></a>追加の構成オプション  
   
-### <a name="BKMK_SplitscreenStations"></a>分割画面ステーション  
+### <a name="split-screen-stations"></a>分割画面ステーション  
 MultiPoint サービスは、直接ビデオ接続ステーションまたはステーションの USB ゼロ-クライアントの接続を持つコンピューターで、分割画面 オプションを提供します。 分割画面は、モニターごとの他のステーションを作成する機能を提供します。 ステーション ハブの 2 つの設定を 1 つのモニターを使用すると 2 つのモニターを必要とするのではなく、1 つのモニターを使用して 2 つのステーションを作成します。 追加のモニター、USB ゼロ クライアント、またはビデオ カードを購入することがなく利用可能な局の数をすばやく向上できます。  
   
 分割画面ステーションを使用する利点を含めることができます。  
@@ -111,18 +111,18 @@ MultiPoint サービス ステーション、モニターにある 1024 x 768 �
   
 ![分割画面ステーション](./media/WMS_diagram3.gif)  
   
-**図 4**分割画面ステーションと MultiPoint サービス システム  
+**図 4**分割画面ステーションがある MultiPoint Services システム  
   
-## <a name="BKMK_StationTypeComparison"></a>ステーション型の比較  
+## <a name="BKMK_StationTypeComparison"></a>ステーションの種類の比較  
   
 ||直接のビデオが接続されています。|USB ゼロ クライアント接続|RDP over LAN 接続|  
 |-|--------------------------|-----------------------------|----------------------------|  
 |ビデオのパフォーマンス|ビデオの最適なパフォーマンスの推奨||ネットワーク帯域幅の下にあるビデオ品質の向上の RemoteFX をサポートするシン クライアントを使用してください。|  
-|物理的な制限|ビデオ ケーブルの長さと USB ハブおよびケーブルの長さ (推奨 15 メーターの最大長) によって制限されます。|USB ハブおよびケーブルの長さ (推奨 15 メーターの最大長) によって制限されます。|LAN 配布によって制限されます。|  
+|物理的な制限|ビデオケーブルの長さと USB ハブ、およびケーブルの長さによって制限されます (推奨15メーターの最大長)|USB ハブとケーブルの長さによる制限 (推奨15メーターの最大長)|LAN 配布によって制限されます。|  
 |許可局の数 |ビデオ カード 1 枚あたりビデオ ポート時間のマザーボード上の利用可能な PCIe スロットの数によって制限されます。|USB ゼロ クライアント製造元別に合計数が制限される可能性が (詳細については、次の表の下の注を参照してください)。|ネットワーク スイッチで使用できるポートによって制限されます。|  
-|分割画面|〇|〇|X|  
-|MultiPoint マネージャーのステーション周辺機器の状態、自動ログオンの構成、ワークステーションの名前を変更します。|〇|〇|X|  
-|サーバーのスタートアップ メニューへのアクセス|〇|X|いいえ|  
+|分割画面|はい|[はい]|いいえ|  
+|MultiPoint マネージャーのステーション周辺機器の状態、自動ログオンの構成、ワークステーションの名前を変更します。|[はい]|[はい]|いいえ|  
+|サーバーのスタートアップ メニューへのアクセス|はい|いいえ|いいえ|  
   
 > [!NOTE]  
 > サーバーに接続されている USB ゼロ クライアントの合計数は、製造元または MultiPoint サービスを実行しているコンピューターのハードウェアの機能によって制限可能性があります。

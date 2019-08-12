@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 7f990c3412707e38a00110ac4d3cb3787fa18ee3
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: b8832e7e53e94761a489e850726bbd206b8be62b
+ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476532"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863432"
 ---
 # <a name="ad-fs-customization-in-windows-server-2016"></a>Windows Server 2016 での AD FS のカスタマイズ
 
@@ -69,9 +69,14 @@ PS C:\>Set-AdfsRelyingPartyWebTheme
 RP ごとにカスタムテーマを割り当てるには、次の手順を使用します。  
   
 1. の既定のグローバルテーマのコピーとして新しいテーマを作成し AD FS  
-<code>New-AdfsWebTheme -Name AppSpecificTheme -SourceName default</code>2.カスタマイズ用のテーマをエクスポートする<code>Export-AdfsWebTheme -Name AppSpecificTheme -DirectoryPath c:\appspecifictheme</code>  
-3.テーマファイル (画像、css、または onload) のカスタマイズ-お気に入りのエディターで、または4.ファイルインポートのカスタマイズされたファイルをファイルシステムから AD FS に置き換える (新しいテーマをターゲットにする)<code>Set-AdfsWebTheme -TargetName AppSpecificTheme -AdditionalFileResource @{Uri='/adfs/portal/script/onload.js';Path="c:\appspecifictheme\script\onload.js"}</code>  
-5.カスタマイズした新しいテーマを特定の RP (または RP) に適用する<code>Set-AdfsRelyingPartyWebTheme -TargetRelyingPartyName urn:app1 -SourceWebThemeName AppSpecificTheme</code>  
+`New-AdfsWebTheme -Name AppSpecificTheme -SourceName default`  
+2. カスタマイズ用のテーマをエクスポートする  
+`Export-AdfsWebTheme -Name AppSpecificTheme -DirectoryPath c:\appspecifictheme`  
+3. 好みのエディターで、またはファイルを置き換えるテーマファイル (画像、css、または onload) をカスタマイズします。  
+4. カスタマイズしたファイルをファイルシステムから AD FS にインポートする (新しいテーマをターゲットにする)  
+`Set-AdfsWebTheme -TargetName AppSpecificTheme -AdditionalFileResource @{Uri='/adfs/portal/script/onload.js';Path="c:\appspecifictheme\script\onload.js"}`  
+5. カスタマイズした新しいテーマを特定の RP (または RP) に適用する  
+`Set-AdfsRelyingPartyWebTheme -TargetRelyingPartyName urn:app1 -SourceWebThemeName AppSpecificTheme`  
   
 ## <a name="home-realm-discovery"></a>ホーム領域検出  
 ホーム領域検出のカスタマイズについて[は、「AD FS サインインページのカスタマイズ](https://technet.microsoft.com/library/dn280950.aspx)」を参照してください。  

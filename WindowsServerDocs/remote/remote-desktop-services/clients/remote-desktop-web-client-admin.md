@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 02c7098c8e3f93ce315e7d9a881613a03924e78b
-ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
+ms.openlocfilehash: d6761c43eefe04430603a1a16e9e8d256176a736
+ms.sourcegitcommit: 25376e261ebd5e85355c298cfd0bbd6b578a6a0c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68300696"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68729533"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>ユーザー用にリモート デスクトップ Web クライアントをセットアップする
 
@@ -251,7 +251,7 @@ RD セッション ホスト サーバーが RD ブローカー サーバーと�
 * 各証明書の**サブジェクト代替名 (SAN)** は、コンピューターの**完全修飾ドメイン名 (FQDN)** に設定する必要があります。 **共通名 (CN)** が各証明書の SAN に一致している必要があります。
 
 ## <a name="how-to-pre-configure-settings-for-remote-desktop-web-client-users"></a>リモート デスクトップ Web クライアント ユーザーの設定を事前に構成する方法
-このセクションでは、PowerShell を使用して、リモート デスクトップ Web クライアントの展開の設定を構成する方法を説明します。 これらの PowerShell コマンドレットは、組織のセキュリティ上の懸念や目的のワークフローに基づいて設定を変更するユーザーの能力を制御します。 以下の設定はすべて、Web クライアントの **[設定]** サイド パネルにあります。 
+このセクションでは、PowerShell を使用して、リモート デスクトップ Web クライアントの展開の設定を構成する方法を説明します。 これらの PowerShell コマンドレットは、組織のセキュリティ上の懸念や目的のワークフローに基づいて設定を変更するユーザーの能力を制御します。 以下の設定はすべて、Web クライアントの **[設定]** サイド パネルにあります。
 
 ### <a name="suppress-telemetry"></a>製品利用統計情報を抑制する
 既定では、ユーザーは Microsoft に送信される製品利用統計情報データの収集を有効または無効にできます。 Microsoft が収集する製品利用統計情報データについては、 **[バージョン情報]** サイド パネルのリンクからプライバシーに関する声明を参照してください。
@@ -274,7 +274,8 @@ RD セッション ホスト サーバーが RD ブローカー サーバーと�
 
 ### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>RDWebClientDeploymentSetting 構成を既定値にリセットする
 展開レベルの Web クライアント設定を既定の構成にリセットするには、次の PowerShell コマンドレットを実行し、--Name パラメーターを使用して、リセットする設定を指定します。
-   ```PowerShell
+  
+  ```PowerShell
     Reset-RDWebClientDeploymentSetting -Name "LaunchResourceInBrowser"
     Reset-RDWebClientDeploymentSetting -Name "SuppressTelemetry"
    ```
@@ -316,4 +317,4 @@ Import-RDWebClientBrokerCert <certificate file path>
 
 ## <a name="get-help-with-the-web-client"></a>Web クライアントに関するヘルプの表示
 
-この記事の情報で解決できない問題が発生した場合は、Microsoft に[電子メールを送信](mailto:rdwbclnt@microsoft.com)し、報告することができます。 [提案ボックス](https://aka.ms/rdwebfbk)でも、新機能についてのリクエストや投票を行うことがきます。
+この記事の情報では解決できない問題が発生した場合は、[Tech Community](https://aka.ms/wvdtc) で報告できます。 [提案ボックス](https://remotedesktop.uservoice.com/forums/911494-remote-desktop-web-client)でも、新機能についてのリクエストや投票を行うことがきます。

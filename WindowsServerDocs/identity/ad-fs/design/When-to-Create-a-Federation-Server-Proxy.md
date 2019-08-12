@@ -28,10 +28,10 @@ Active Directory フェデレーション サービスに追加のセキュリ�
   
 組織でフェデレーション サーバー プロキシが果たす役割は、アカウント パートナー組織内、またはリソース パートナー組織のフェデレーション サーバー プロキシを配置するかどうかによって異なります。 たとえば、フェデレーション サーバー プロキシがアカウント パートナーの境界ネットワークに配置されると、その役割は、ブラウザー クライアントからユーザーの資格情報を収集するは。 セキュリティ トークンの要求をリソースのフェデレーション サーバーとによって提供されるセキュリティ トークンへの応答で組織のセキュリティ トークンを生成するリレー リソース パートナーの境界ネットワークにフェデレーション サーバー プロキシが配置されると、そのアカウント パートナーです。  
   
-詳細については、「 [Review the Role of the Federation Server Proxy in the Account Partner](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Account-Partner.md) 」と「 [Review the Role of the Federation Server Proxy in the Resource Partner](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Resource-Partner.md)」を参照してください。  
+詳細については、次を参照してください[、アカウント パートナー フェデレーション サーバー プロキシの役割を確認する](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Account-Partner.md)と[リソース パートナーのフェデレーション サーバー プロキシの役割を確認する。](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Resource-Partner.md)  
   
 ## <a name="how-to-create-a-federation-server-proxy"></a>フェデレーション サーバー プロキシの作成方法  
-AD FS フェデレーション サーバー プロキシ構成ウィザードまたは Fsconfig.exe コマンドを使用してフェデレーション サーバー プロキシを作成する\-ライン ツール。 これを行う方法については、「 [Configure a Computer for the Federation Server Proxy Role](../../ad-fs/deployment/Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)」を参照してください。  
+AD FS フェデレーション サーバー プロキシ構成ウィザードまたは Fsconfig.exe コマンドを使用してフェデレーション サーバー プロキシを作成する\-ライン ツール。 AD FS フェデレーション サーバー プロキシ構成ウィザードまたは Fsconfig.exe コマンドを使用してフェデレーション サーバー プロキシを作成する[ライン ツール。  
   
 フェデレーション サーバー プロキシの展開に必要なすべての前提条件を設定する方法についての概要については、次を参照してください。[チェックリスト。フェデレーション サーバー プロキシを設定する](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md)します。  
   
