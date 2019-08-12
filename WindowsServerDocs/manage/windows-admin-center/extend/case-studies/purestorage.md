@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: 25018474fd22d05804ecc7faafbd633fbb4db269
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59849923"
@@ -21,9 +21,9 @@ ms.locfileid: "59849923"
 
 [純粋な記憶域](https://www.purestorage.com/)エンタープライズ、ビジネスの競争優位性を促進するデータ中心のアーキテクチャを提供するオール フラッシュ データ記憶域ソリューションを提供します。  純粋な Microsoft Windows server の認定、Microsoft ゴールド パートナーし、技術的な統合など、Azure では、重要な Microsoft ソリューションを開発して、HYPER-V、SQL Server、System Center、Windows PowerShell、および Windows SMB します。 純粋には、純粋な FlashArray 製品に単一枠ビューを提供する Windows Admin Center の最新リリースをサポートしている拡張機能のテクニカル プレビューを最近発表しました。  この拡張機能からのユーザーは監視タスクを実行、リアルタイムのパフォーマンスのメトリックを表示および記憶域ボリュームとイニシエーターを管理するための 1 つのツールから学ぶ: トレーニング情報します。
 
-早い段階で、Windows Admin Center は、「プロジェクト ホノルル」と呼ばれますが、純粋は顧客に提供するための値を確認し、Windows Admin Center を提供するガラスの 1 つのウィンドウから複数の純粋な記憶域 FlashArrays を管理する機能をパートナーします。
+早い段階で、Windows Admin Center は、「Project “Honolulu”」として知られていましたが、Pureは、Windows Admin Center が提供する単一のペインから複数の Pure Storage FlashArrays を管理する機能を顧客およびパートナーに提供できることの価値を見出しました。
 
-純粋な「プロジェクト ホノルル」によるユース ケースを調査を開始するときに、すぐに Windows Admin Center と FlashArray の間の統一された管理エクスペリエンスを提供する可能性を実現します。 純粋な機能の実装の詳細を定義に役立ち、Windows Admin Center エンジニア リング チームと緊密に連携します。 純粋な Windows Admin Center の初期の段階でのフィードバックの提供や Microsoft チームへの投稿を行うこともできました。 
+Pure が「Project “Honolulu”」によるユース ケースの調査を開始すると、すぐに Windows Admin Center と FlashArray の間で統一された管理エクスペリエンスを提供できる可能性に気づきました。 Pure は Windows Admin Center エンジニア リング チームと緊密に連携したことで、機能の実装の詳細を定義するのに役立ちました。 Pure は、 Windows Admin Center の初期の段階でのフィードバックの提供や Microsoft チームへの貢献もできました。 
 
 ![純粋なストレージの拡張機能](../../media/extend-case-study-purestorage/purestorage-1.png)
 
