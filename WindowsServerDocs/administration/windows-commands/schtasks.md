@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f898c67755fb8e7874932ea06a7cdf461d1e4bd
-ms.sourcegitcommit: e40fce7b8b4bc0bef278e676435306f14078cf00
+ms.openlocfilehash: fdda956a5da9ec50e44002cd8ab38373396d5713
+ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68787198"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68914641"
 ---
 # <a name="schtasks"></a>schtasks
 
@@ -479,7 +479,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /mo {FIRST | SECOND | 
 
 #### <a name="remarks"></a>コメント
 
-このスケジュールの種類で、 **/sc 毎月** 、パラメーター、 **/mo** (修飾子) パラメーターと **/d** (日) のパラメーターが必要です。 **/Mo** (修飾子) パラメーターは、タスクを実行する曜日を指定します。 **/D** パラメーターは週の曜日を指定します。 (このスケジュールの種類の週の 1 日だけを指定することができます)。このスケジュールはまた、省略可能なが **/m** することができます (月) パラメーターは、特定の月または毎月のタスクをスケジュール (<em>)。 **/M</em>* パラメーターの既定値は、毎月 (* ) です。
+このスケジュールの種類で、 **/sc 毎月** 、パラメーター、 **/mo** (修飾子) パラメーターと **/d** (日) のパラメーターが必要です。 **/Mo** (修飾子) パラメーターは、タスクを実行する曜日を指定します。 **/D** パラメーターは週の曜日を指定します。 (このスケジュールの種類の週の 1 日だけを指定することができます)。このスケジュールはまた、省略可能なが **/m** することができます (月) パラメーターは、特定の月または毎月のタスクをスケジュール (\*)。 **/M**パラメーターの既定値は、毎月 (\*) です。
 
 #### <a name="examples"></a>使用例
 

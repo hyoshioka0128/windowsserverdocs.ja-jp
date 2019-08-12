@@ -1,6 +1,6 @@
 ---
 title: Windows Server Essentials でのリモート Web アクセスの使用
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -12,72 +12,72 @@ ms.assetid: 47ea21a0-5e05-4b4b-8fa4-338c82601276
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b78d6abbaf287fc56336ff8d16127ce249b97519
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f6a5d6fd42c5cd7e92821e1157748054c741ef04
+ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435915"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68914683"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>Windows Server Essentials でのリモート Web アクセスの使用
 
 >適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
   
-  リモート Web アクセス、ファイル/フォルダーにアクセスし、web ブラウザーを使用してネットワーク上のコンピューターにどこからでも有効にする Windows サーバーの Essentials の機能は、インターネット接続を使用します。 
+  リモート Web アクセスは、インターネットに接続しているどこからでも Web ブラウザーを介してネットワーク上のファイルやフォルダーやコンピューターにアクセスできるようにする Windows Server Essentials の機能です。 
   
-  リモート Web アクセスを利用すると、外出中も Windows Server Essentials ネットワークに接続された状態を維持できます。 リモート Web アクセスにログオンするときに、Windows Server Essentials ネットワーク コンピューターに接続に、Windows Server Essentials ネットワークを管理するダッシュ ボードを開くし、サーバー上の共有のフォルダーとメディア ファイルのすべてにアクセスします。  
+  リモート Web アクセスを利用すると、外出中も Windows Server Essentials ネットワークに接続された状態を維持できます。 リモート Web アクセスにログオンするときに、Windows Server Essentials ネットワーク上のコンピューターに接続し、ダッシュボードを開いて Windows Server Essentials ネットワークを管理し、サーバー上のすべての共有フォルダーとメディアファイルにアクセスすることができます。  
   
  このトピックのセクションは次のとおりです。  
   
 
--   [リモート Web アクセスへの接続します。](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
+-   [リモート Web アクセスに接続する](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
   
--   [共有ファイルとフォルダー](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
+-   [ファイルとフォルダーを共有する](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
   
--   [モバイル デバイスからの接続します。](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ConnectMobile)  
+-   [モバイルデバイスから接続する](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ConnectMobile)  
   
-##  <a name="BKMK_Connect"></a> リモート Web アクセスへの接続します。  
+##  <a name="BKMK_Connect"></a>リモート Web アクセスに接続する  
   
--   [リモート Web アクセスにログオン](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [リモート Web アクセスにログオンします。](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [リモート コンピューターへのアクセスします。](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
+-   [コンピューターへのリモートアクセス](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
 
--   [リモート Web アクセスへの接続します。](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
+-   [リモート Web アクセスに接続する](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
   
--   [共有ファイルとフォルダー](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
+-   [ファイルとフォルダーを共有する](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
   
--   [モバイル デバイスからの接続します。](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ConnectMobile)  
+-   [モバイルデバイスから接続する](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ConnectMobile)  
   
-##  <a name="BKMK_Connect"></a> リモート Web アクセスへの接続します。  
+##  <a name="BKMK_Connect"></a>リモート Web アクセスに接続する  
   
--   [リモート Web アクセスにログオン](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [リモート Web アクセスにログオンします。](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [リモート コンピューターへのアクセスします。](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
+-   [コンピューターへのリモートアクセス](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
 
   
-###  <a name="BKMK_1"></a> リモート Web アクセスにログオン  
- ローカルまたはリモート コンピューターからリモート Web アクセスにログオンすると、ネットワーク上の Windows Server Essentials とコンピューターを実行しているサーバーのリソースにアクセスすることができます。  
+###  <a name="BKMK_1"></a>リモート Web アクセスにログオンします。  
+ ローカルコンピューターまたはリモートコンピューターからリモート Web アクセスにログオンすると、Windows Server Essentials を実行しているサーバー上のリソースとネットワーク上のコンピューターのリソースにアクセスできます。  
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-network-computer"></a>ネットワーク コンピューターからリモート Web アクセスにログオンするには  
   
-1.  Web ブラウザーを開き「 **https://***< YourServerName\>***/リモート**でアドレス バー、および Enter キーを押します。  
+1.  Web ブラウザーを開き、アドレスバーに「 https://」と入力して「 _<\>_ 」と入力し、enter キーを押します。  
   
     > [!NOTE]
-    >  Https で、s を含めることを確認します。  
+    >  を https に含めるようにしてください。  
   
-2.  リモート Web アクセスのログオン ページで、テキスト ボックスに、ユーザー名とパスワードを入力し、矢印をクリックします。  
+2.  [リモート Web アクセスログオン] ページで、テキストボックスにユーザー名とパスワードを入力し、矢印をクリックします。  
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-remote-computer"></a>リモート コンピューターからリモート Web アクセスにログオンするには  
   
-1.  Web ブラウザーを開き「 **https://***< YourDomainName\>***/リモート**でアドレス バー、および Enter キーを押します。  
+1.  Web ブラウザーを開き、アドレスバーに「 **https://** _<\>_ 」と入力して、enter キーを押します。  
   
     > [!NOTE]
-    >  ドメイン名情報はネットワーク管理者から取得できます。 Https で、s を含めることを確認します。  
+    >  ドメイン名情報はネットワーク管理者から取得できます。 を https に含めるようにしてください。  
   
-2.  リモート Web アクセスのログオン ページで、テキスト ボックスに、ユーザー名とパスワードを入力し、矢印をクリックします。  
+2.  [リモート Web アクセスログオン] ページで、テキストボックスにユーザー名とパスワードを入力し、矢印をクリックします。  
   
-###  <a name="BKMK_1.5"></a> リモート コンピューターへのアクセスします。  
- オフィス以外の場合は、Web ブラウザーを使用して、Windows Server Essentials ダッシュ ボード、共有フォルダー、およびネットワーク上のコンピューターにリモートでアクセスするリモート Web アクセス サイトにログオンすることができます。  
+###  <a name="BKMK_1.5"></a>コンピューターへのリモートアクセス  
+ オフィスから離れた場所にいる場合は、Web ブラウザーを使用してリモートの Web アクセスサイトにログオンし、ネットワーク上の Windows Server Essentials ダッシュボード、共有フォルダー、およびコンピューターにリモートでアクセスすることができます。  
   
  ダッシュボードに接続すると、オフィスにいるのと同様に Windows Server Essentials を管理できます。 ユーザー アカウントの追加、共有フォルダーの追加、共有フォルダー アクセスの設定など、普段の管理タスクをすべて実行できます。 ネットワークにあるコンピューターに接続すると、オフィスでコンピューターの前に座っているかのようにデスクトップにアクセスできます。  
   
@@ -91,11 +91,11 @@ ms.locfileid: "66435915"
   
      コンピューターの電源が入っていないか、スリープまたは休止状態に入っています。 コンピューターがオフラインかスリープ状態の場合、コンピューターが利用可能状態になったことがわかるように、状態はリアルタイムで更新されます。  
   
--   **サポートされていないオペレーティング システム**  
+-   **サポートされていないオペレーティングシステム**  
   
      コンピューターのオペレーティング システムは、リモート デスクトップをサポートしていません。 変更があった場合、この状態の更新に最大 6 時間かかることがあります。  
   
--   **接続が無効です。**  
+-   **接続が無効です**  
   
      コンピューターの接続がファイアウォールにより拒まれています。あるいは、リモート デスクトップがそのコンピューターで、またはグループ ポリシーにより無効になっています。 変更があった場合、この状態の更新に最大 6 時間かかることがあります。  
   
@@ -105,19 +105,19 @@ ms.locfileid: "66435915"
 #### <a name="to-connect-to-the-server-dashboard"></a>サーバーのダッシュボードに接続するには  
  **[デバイス]** タブで、サーバーの名前をクリックします。 状態が **[利用可能]** のコンピューターのみを選択できます。 ダッシュボードを使用するには、管理者ユーザー アカウントとパスワードをサーバーに入力できなければなりません。  
   
-##  <a name="BKMK_SharedFolders"></a> 共有ファイルとフォルダー  
+##  <a name="BKMK_SharedFolders"></a>ファイルとフォルダーを共有する  
   
 
--   [アップロードして、リモート Web アクセスでファイルをダウンロード](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UploadRWA)  
+-   [リモート Web アクセスでのファイルのアップロードとダウンロード](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UploadRWA)  
   
--   [作成、変更、移動、削除、またはリモート Web アクセスでファイルとフォルダーをコピー](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [リモート Web アクセスでのファイルとフォルダーの作成、名前の変更、移動、削除、またはコピー](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
 
--   [アップロードして、リモート Web アクセスでファイルをダウンロード](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UploadRWA)  
+-   [リモート Web アクセスでのファイルのアップロードとダウンロード](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UploadRWA)  
   
--   [作成、変更、移動、削除、またはリモート Web アクセスでファイルとフォルダーをコピー](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [リモート Web アクセスでのファイルとフォルダーの作成、名前の変更、移動、削除、またはコピー](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
 
   
-###  <a name="BKMK_UploadRWA"></a> アップロードして、リモート Web アクセスでファイルをダウンロード  
+###  <a name="BKMK_UploadRWA"></a>リモート Web アクセスでのファイルのアップロードとダウンロード  
  リモート Web アクセスの **[共有フォルダー]** タブで、次を実行できます。  
   
 -   コンピューターから Windows Server Essentials にファイルをアップロードします (送信します)。  
@@ -130,9 +130,9 @@ ms.locfileid: "66435915"
 -   Windows Server Essentials の共有フォルダー内にフォルダーを作成します。  
   
 
--   Windows Server Essentials のファイルとフォルダーを移動、削除、名前変更します。 詳細については、次を参照してください。[作成、名前の変更、移動、削除、またはファイルのコピーおよびリモート Web アクセスでフォルダー](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)します。  
+-   Windows Server Essentials のファイルとフォルダーを移動、削除、名前変更します。 詳細については、「[リモート Web アクセスでのファイルとフォルダーの作成、名前の変更、移動、削除、またはコピー](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)」を参照してください。  
 
--   Windows Server Essentials のファイルとフォルダーを移動、削除、名前変更します。 詳細については、次を参照してください。[作成、名前の変更、移動、削除、またはファイルのコピーおよびリモート Web アクセスでフォルダー](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)します。  
+-   Windows Server Essentials のファイルとフォルダーを移動、削除、名前変更します。 詳細については、「[リモート Web アクセスでのファイルとフォルダーの作成、名前の変更、移動、削除、またはコピー](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)」を参照してください。  
 
   
 #### <a name="upload-files"></a>ファイルのアップロード  
@@ -193,10 +193,10 @@ ms.locfileid: "66435915"
 > [!NOTE]
 >  これらのオプションは、複数のファイルまたはフォルダーをコンピューターにダウンロードする場合にのみ利用できます。  
   
-- **自己解凍実行可能ファイル (.exe)**  
+- **自己解凍形式の実行可能ファイル (.exe)**  
   
   > [!NOTE]
-  >   このセクションでは、Windows Server Essentials を実行しているサーバーに適用されます。  
+  >   このセクションは、Windows Server Essentials を実行しているサーバーに適用されます。  
   
    自己解凍実行ファイルは、解凍 (実行可能) プログラムと圧縮されたファイルを組み合わせたダウンロート可能ファイルです。 実行可能プログラムを実行すると、圧縮されたファイルが自動的に解凍されます (自己解凍)。 これは圧縮データを配信する一般的な方法であり、受け取る人に適切な解凍ツールがあるかどうか心配する必要がありません。  
   
@@ -208,7 +208,7 @@ ms.locfileid: "66435915"
    ファイルを圧縮すると、元のファイルより小さい圧縮されたファイルが作成されます。 この圧縮されたファイルには「.zip」というファイル名拡張子が付きます。 圧縮することで最も高い縮小効果が得られるファイルはテキスト指向ファイルとグラフィックス ファイルです。テキスト指向ファイルには「.txt」、「.doc」、「.xls」などがあり、グラフィックス ファイル (非圧縮ファイル タイプを使用) には「.bmp」などがあります。 「.jpg」や「.gif」ファイルのような一部のグラフィックス ファイルでは圧縮技術が既に使用されており、圧縮してもファイル サイズはそれほど小さくなりません。 また、さまざまなグラフィックスを含む Word ドキュメントは、ほとんどがテキストのドキュメントほどには縮小されません。  
   
   > [!NOTE]
-  >  このオプションは、Windows Server Essentials でのインターナショナル ファイル名の制限付きサポートを提供します。  
+  >  このオプションでは、Windows Server Essentials での国際的なファイル名のサポートが制限されています。  
   
   実際のダウンロードが始まる前に、exe または zip ファイルが作成されます。 ダウンロードするファイルの数や合計サイズによっては、数分かかる場合があります。 ダウンロード ファイルが作成されると、バックグラウンドでファイルのダウンロードが始まります。 ダウンロードが完了するまで、作業を続けられます。  
   
@@ -229,7 +229,7 @@ ms.locfileid: "66435915"
 #### <a name="retrieve-compressed-files-downloaded-to-your-computer"></a>コンピューターにダウンロードした圧縮ファイルを取得する  
   
 > [!NOTE]
->   このセクションでは、Windows Server Essentials を実行しているサーバーに適用されます。  
+>   このセクションは、Windows Server Essentials を実行しているサーバーに適用されます。  
   
  複数のファイルまたはフォルダーをダウンロードする場合、自己解凍実行ファイル (.exe) または圧縮ファイル (.zip) を取得できます。  
   
@@ -248,7 +248,7 @@ ms.locfileid: "66435915"
     > [!NOTE]
     >  サードパーティ製のファイル圧縮プログラムを使用する場合、そのプログラムの手順に従います。  
   
-###  <a name="BKMK_2"></a> 作成、変更、移動、削除、またはリモート Web アクセスでファイルとフォルダーをコピー  
+###  <a name="BKMK_2"></a>リモート Web アクセスでのファイルとフォルダーの作成、名前の変更、移動、削除、またはコピー  
  リモート Web アクセスを利用し、既存の共有フォルダーに新しいフォルダーを作成したり、ファイルとフォルダーの名前を変更したり、ファイルとフォルダーを移動またはコピーしたり、サーバーのファイルとフォルダーを削除したりできます。  
   
 > [!NOTE]
@@ -294,19 +294,19 @@ ms.locfileid: "66435915"
   
 3.  ファイルまたはフォルダーのコピー先にするフォルダーを右クリックし、 **[貼り付け]** をクリックします。  
   
-##  <a name="BKMK_ConnectMobile"></a> モバイル デバイスからの接続します。  
+##  <a name="BKMK_ConnectMobile"></a>モバイルデバイスから接続する  
   
 
--   [モバイル デバイスからリモート Web アクセスの使用](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
+-   [モバイルデバイスからリモート Web アクセスを使用する](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
   
--   [サポートされるモバイル デバイスの Web ブラウザー](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)  
+-   [モバイルデバイスでサポートされている Web ブラウザー](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)  
 
--   [モバイル デバイスからリモート Web アクセスの使用](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
+-   [モバイルデバイスからリモート Web アクセスを使用する](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
   
--   [サポートされるモバイル デバイスの Web ブラウザー](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)  
+-   [モバイルデバイスでサポートされている Web ブラウザー](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)  
 
   
-###  <a name="BKMK_8"></a> モバイル デバイスからリモート Web アクセスの使用  
+###  <a name="BKMK_8"></a>モバイルデバイスからリモート Web アクセスを使用する  
  スマートフォンからリモート Web アクセスにログオンし、サーバーの共有フォルダーのファイルとフォルダーを閲覧できます。  
   
 > [!NOTE]
@@ -314,27 +314,27 @@ ms.locfileid: "66435915"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>モバイル デバイスからリモート Web アクセスにログオンするには  
   
-1.  Web ブラウザーを開き**https://***<YourDomainName\>***/リモート**アドレス バーにします。  Https で、s を含めることを確認します。  
+1.  Web ブラウザーを開き、アドレスバーに「 **https://** _<\>_ 」と入力します。  を https に含めるようにしてください。  
   
-2.  リモート Web アクセスのログオン ページで、テキスト ボックスに、ユーザー名とパスワードを入力し、矢印をクリックします。 リモート Web アクセスのモバイル バージョンにログオンされます。  
+2.  [リモート Web アクセスログオン] ページで、テキストボックスにユーザー名とパスワードを入力し、矢印をクリックします。 リモート Web アクセスのモバイル バージョンにログオンされます。  
   
 ##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>リモート Web アクセスのデスクトップ バージョンに切り替えるには  
   
-1.  Web ブラウザーを開き**https://***<YourDomainName\>***/リモート**アドレス バーにします。  Https で、s を含めることを確認します。  
+1.  Web ブラウザーを開き、アドレスバーに「 **https://** _<\>_ 」と入力します。  を https に含めるようにしてください。  
   
-2.  リモート Web アクセスのログオン ページで、テキスト ボックスに、ユーザー名とパスワードを入力、 をクリックして**デスクトップ バージョンを表示**、矢印をクリックします。 リモート Web アクセスのデスクトップ バージョンにログオンされます。  
+2.  リモート Web アクセスログオン ページで、テキストボックスにユーザー名とパスワードを入力し、**デスクトップバージョンの表示** をクリックして、矢印をクリックします。 リモート Web アクセスのデスクトップ バージョンにログオンされます。  
   
 ##### <a name="to-return-to-the-mobile-version-of-remote-web-access"></a>リモート Web アクセスのモバイル バージョンに戻るには  
   
 1. ログオフします。  
   
-2. Web ブラウザーを開き **https://***<YourDomainName\>*** m/リモート** アドレス バーにします。 Https で、s を含めることを確認します。  
+2. Web ブラウザーを開き、アドレスバーに「 **https://** _<\>_ 」と入力します。 を https に含めるようにしてください。  
   
-3. リモート Web アクセスのモバイル バージョンが表示されます。 リモート Web アクセスのログオン ページで、テキスト ボックスに、ユーザー名とパスワードを入力し、矢印をクリックします。 リモート Web アクセスのモバイル バージョンにログオンしています。  
+3. リモート Web アクセスのモバイルバージョンが表示されます。 [リモート Web アクセスログオン] ページで、テキストボックスにユーザー名とパスワードを入力し、矢印をクリックします。 リモート Web アクセスのモバイルバージョンにログオンしています。  
   
    サーバーの共有フォルダーのファイルとフォルダーを検索できます。  
   
-###  <a name="BKMK_9"></a> サポートされるモバイル デバイスの Web ブラウザー  
+###  <a name="BKMK_9"></a>モバイルデバイスでサポートされている Web ブラウザー  
  サポートされるモバイル デバイス用 Web ブラウザー:  
   
 -   Internet Explorer Mobile 6.0 以降  
@@ -353,14 +353,14 @@ ms.locfileid: "66435915"
   
 ## <a name="see-also"></a>関連項目  
   
--   [リモート Web アクセスを管理します。](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [リモート Web アクセスの管理](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
 
--   [リモートで作業します。](Work-Remotely-in-Windows-Server-Essentials.md)  
+-   [リモートで作業する](Work-Remotely-in-Windows-Server-Essentials.md)  
   
 -   [Windows Server Essentials の使用](Use-Windows-Server-Essentials.md)
 
--   [リモートで作業します。](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
+-   [リモートで作業する](../use/Work-Remotely-in-Windows-Server-Essentials.md)  
   
 -   [Windows Server Essentials の使用](../use/Use-Windows-Server-Essentials.md)
 

@@ -10,12 +10,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 386ef1d8683b75bdc94fc1aa4ac7cb8acf6cd6fa
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: c5c4ac470d1187aa6186f6f05cab3df185a642fd
+ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544486"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68914569"
 ---
 # <a name="step-2-configure-wsus"></a>手順 2:WSUS の構成
 
@@ -161,7 +161,7 @@ WSUS の構成に HTTP プロトコルを使用するプロキシ サーバー�
 
     1.  プロキシ サーバーを WSUS の構成から削除するには、 **[同期時にプロキシ サーバーを使用する]** チェック ボックスをオフにします。
 
-    2.  **[OK]** をクリックします。
+    2.  [**OK**] をクリックします。
 
 ## <a name="22-configure-wsus-by-using-the-wsus-configuration-wizard"></a>2.2. WSUS 構成ウィザードを使用して WSUS を構成する
 次の手順では、WSUS 構成ウィザードを使用していることを前提としています。このウィザードは、WSUS 管理コンソールを初めて起動したときに表示されます。 **[オプション]** ページを使用してこれらの構成を行う方法については、後ほど説明します。
@@ -306,7 +306,7 @@ WSUS セットアップでは、WSUS サーバーに接続する各クライア�
     > [!WARNING]
     > WSUS サーバーのイントラネット アドレスを入力する場合は、使用するポートが指定されていることを確認してください。 既定では、WSUS は、HTTP にはポート 8530、HTTPS にはポート 8531 を使用します。 たとえば、HTTP を使用する場合は、「」と **http://servername:8530** 入力する必要があります。
 
-10. **[OK]** をクリックします。
+10. [**OK**] をクリックします。
 
 クライアントコンピューターをセットアップした後、WSUS 管理コンソールの [**コンピューター** ] ページにコンピューターが表示されるまでに数分かかります。 ドメイン ベースのグループ ポリシー オブジェクトを使用して構成されているクライアント コンピューターでは、グループ ポリシーによって新しいポリシー設定がクライアント コンピューターに適用されるのに約 20 分間かかる場合があります。 既定では、グループポリシーは90分ごとにバックグラウンドで更新されます。ランダムオフセットは0-30 分です。 グループポリシーをすぐに更新する場合は、クライアントコンピューターでコマンドプロンプトウィンドウを開き、「gpupdate/force」と入力します。
 
@@ -389,11 +389,11 @@ WSUS では、SSL 用に 2 つのポートを必要とします。1 つは暗号
 
 2.  [**スタート**] にアクセスし、「 **CMD**」と入力して、[**コマンドプロンプト**] を右クリックし、[**管理者として実行**] をクリックします。
 
-3.  移動し、 *%ProgramFiles%* **\Update \tools\\* * フォルダー。
+3.  _% ProgramFiles%_ **\\\ Update Services\Tools**フォルダーに移動します。
 
 4.  コマンドプロンプトウィンドウで、次のコマンドを入力します。
 
-    **Wsusutil configuressl** *certificateName*
+    **Wsusutil configuressl** _
 
     それぞれの文字の説明は次のとおりです。
 

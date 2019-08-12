@@ -1,6 +1,6 @@
 ---
 title: Windows SBS 2008 の設定とデータを Windows Server Essentials 移行の移行先サーバーに移動する
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -12,12 +12,12 @@ ms.assetid: 4950469d-d800-430d-8d10-53bafc4a9932
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2e393f184f1abfa79647432bd592975cae3fdc6c
-ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
+ms.openlocfilehash: 82a7a5b3ce3662574260379bc893da484baf1caa
+ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828536"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863408"
 ---
 # <a name="move-windows-sbs-2008-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Windows SBS 2008 の設定とデータを Windows Server Essentials 移行の移行先サーバーに移動する
 
@@ -25,17 +25,17 @@ ms.locfileid: "66828536"
 
 移行先サーバーへの設定とデータの移動は次のように行います。
 
-1. [移行先サーバーにデータのコピー](#copy-data-to-the-destination-server)
+1. [移行先サーバーにデータをコピーする](#copy-data-to-the-destination-server)
 
-2. [Active Directory ユーザー アカウントを Windows Server Essentials ダッシュ ボード (省略可能) にインポートします。](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
+2. [Windows Server Essentials ダッシュボードに Active Directory ユーザーアカウントをインポートする (省略可能)](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
 
-3. [移行元サーバーから DHCP サーバーの役割をルーターに移動します。](#move-the-dhcp-server-role-from-the-source-server-to-the-router)
+3. [DHCP サーバーの役割を移行元サーバーからルーターに移動する](#move-the-dhcp-server-role-from-the-source-server-to-the-router)
 
-4. [ネットワークを構成します。](#configure-the-network)
+4. [ネットワークを構成する](#configure-the-network)
 
-5. [(省略可能) 従来の Active Directory グループ ポリシー オブジェクトを削除します。](#remove-legacy-active-directory-group-policy-objects)
+5. [レガシ Active Directory グループポリシーオブジェクトを削除する (省略可能)](#remove-legacy-active-directory-group-policy-objects)
 
-6. [許可されているコンピューターのユーザー アカウントをマップします。](#map-permitted-computers-to-user-accounts)
+6. [許可されたコンピューターをユーザーアカウントにマップする](#map-permitted-computers-to-user-accounts)
 
 ## <a name="copy-data-to-the-destination-server"></a>データを移行先サーバーにコピーする
 移行元サーバーから移行先サーバーにデータをコピーする前に、以下のタスクを実行します。
@@ -55,17 +55,17 @@ ms.locfileid: "66828536"
     `robocopy \\<SourceServerName> \<SharedSourceFolderName> \\<DestinationServerName> \<SharedDestinationFolderName> /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt` 
 
  各項目の意味は次のとおりです。
- - \<SourceServerName\>移行元サーバーの名前を指定します
- - \<SharedSourceFolderName\>移行元サーバー上の共有フォルダーの名前を指定します
- - \<DestinationServerName\>移行先サーバーの名前を指定します
- - \<SharedDestinationFolderName\>はデータをコピーする移行先サーバーで共有フォルダーです。 
+ - \<SourceServerName\>は、移行元サーバーの名前です。
+ - \<共有 dsourcefoldername\>は、移行元サーバー上の共有フォルダーの名前です。
+ - \<Destinationservername\>は、移行先サーバーの名前です。
+ - \<Shareddestinationfoldername\>は、データがコピーされる移行先サーバー上の共有フォルダーです。 
 
 3. 移行元サーバーから移行する共有フォルダーごとに前記の手順を繰り返します。 
 
-## <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard"></a>Active Directory ユーザー アカウントを Windows Server Essentials ダッシュ ボードにインポートします。
- 既定では、移行元サーバーで作成されたすべてのユーザー アカウントは Windows Server essentials ダッシュ ボードに自動的に移行します。 ただし、一部のプロパティが移行要件を満たしていない場合、Active Directory ユーザー アカウントの自動移行は失敗します。 次の Windows PowerShell コマンドレットを使用して、Active Directory ユーザーをインポートできます。 
+## <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard"></a>Windows Server Essentials ダッシュボードに Active Directory ユーザーアカウントをインポートする
+ 既定では、移行元サーバーで作成されたすべてのユーザーアカウントは、Windows Server Essentials のダッシュボードに自動的に移行されます。 ただし、一部のプロパティが移行要件を満たしていない場合、Active Directory ユーザー アカウントの自動移行は失敗します。 次の Windows PowerShell コマンドレットを使用して、Active Directory ユーザーをインポートできます。 
 
-#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>Windows Server Essentials ダッシュ ボードに、Active Directory ユーザー アカウントをインポートするには 
+#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>Active Directory ユーザーアカウントを Windows Server Essentials ダッシュボードにインポートするには 
  
 1. 移行先サーバーにドメイン管理者としてログオンします。 
  
@@ -119,8 +119,8 @@ ms.locfileid: "66828536"
 > [!NOTE]
 > 第 2 のサーバーにオンプレミス Exchange サーバーを設定してある場合は、ポート 25 (SMTP 用) も開かれていること、およびオンプレミス Exchange サーバーの IP アドレスにリダイレクトされることを確認する必要があります。
  
-## <a name="remove-legacy-active-directory-group-policy-objects"></a>レガシ Active Directory グループ ポリシー オブジェクトを削除します。
-Windows Server Essentials のグループ ポリシー オブジェクト (Gpo) が更新されます。 これは Windows SBS 2008 GPO のスーパーセットです。 Windows Server essentials では、Windows SBS 2008 Gpo および Windows Management Instrumentation (WMI) フィルターは、Windows Server Essentials の Gpo および WMI フィルターとの競合を避けるために手動で削除する必要があります。 
+## <a name="remove-legacy-active-directory-group-policy-objects"></a>レガシ Active Directory グループポリシーオブジェクトの削除
+Windows Server Essentials のグループポリシーオブジェクト (Gpo) が更新されました。 これは Windows SBS 2008 GPO のスーパーセットです。 Windows Server Essentials の場合、windows Server Essentials Gpo および WMI フィルターとの競合を防ぐために、いくつかの Windows SBS 2008 Gpo および Windows Management Instrumentation (WMI) フィルターを手動で削除する必要があります。 
  
 > [!NOTE]
 > 元の Windows SBS 2008 グループ ポリシー オブジェクトを変更した場合は、そのコピーを別の場所に保存した後、Windows SBS 2008 から削除します。 
@@ -131,9 +131,9 @@ Windows Server Essentials のグループ ポリシー オブジェクト (Gpo) 
  
 2. **[スタート]** ボタンをクリックし、 **[サーバー管理]** をクリックします。 
  
-3. ナビゲーション ウィンドウで、[**高度な管理**、] をクリックして**グループ ポリシー管理**、順にクリックします **フォレスト: * * * < YourDomainName\>* します。 
+3. ナビゲーションウィンドウで、 **[詳細管理]** をクリックし、 **[グループポリシー管理]** をクリックして、[**フォレスト:** _\>< ドメイン名_] をクリックします。 
  
-4. クリックして**ドメイン**、 をクリックして *< YourDomainName\>* 、順にクリックします**グループ ポリシー オブジェクト**します。 
+4. **[ドメイン]** をクリックし、[ドメイン*名\>の <* ] をクリックして、 **[オブジェクトのグループポリシー]** をクリックします。 
  
 5. **[Small Business Server の監査のポリシー]** を右クリックし、 **[削除]** をクリックして、 **[OK]** をクリックします。 
  
@@ -143,7 +143,7 @@ Windows Server Essentials のグループ ポリシー オブジェクト (Gpo) 
  
  - Small Business Server ドメイン パスワード ポリシー 
  
-強力なパスワードを Windows Server Essentials でのパスワード ポリシーを構成することをお勧めします。 パスワード ポリシーを構成するにはダッシュボードを使用します。構成は既定のドメイン ポリシーに書き込まれます。 パスワード ポリシーの構成は、Windows SBS 2008 とは異なり、Small Business Server ドメイン パスワード ポリシー オブジェクトには書き込まれません。 
+強力なパスワードを適用するには、Windows Server Essentials でパスワードポリシーを構成することをお勧めします。 パスワード ポリシーを構成するにはダッシュボードを使用します。構成は既定のドメイン ポリシーに書き込まれます。 パスワード ポリシーの構成は、Windows SBS 2008 とは異なり、Small Business Server ドメイン パスワード ポリシー オブジェクトには書き込まれません。 
  
  - Small Business Server インターネット接続ファイアウォール 
  
@@ -173,9 +173,9 @@ Windows Server Essentials のグループ ポリシー オブジェクト (Gpo) 
  
 2. **[スタート]** ボタンをクリックし、 **[サーバー管理]** をクリックします。 
  
-3. ナビゲーション ウィンドウで、[**高度な管理**、] をクリックして**Group Policy Management**、順にクリックします **フォレスト: * * * < ネットワーク ドメイン名\>* 
+3. ナビゲーションウィンドウで、 **[詳細管理]** をクリックし、 **[グループポリシー管理]** をクリックして、[**フォレスト:** _\> < networkdomainname_ ] をクリックします。 
  
-4. をクリックして**ドメイン**、 をクリックして *< ネットワーク ドメイン名\>* 、 をクリックし、 **WMI フィルター**します。 
+4. **[ドメイン]** をクリックし、[ *< networkdomainname\>* ] をクリックして、 **[WMI フィルター]** をクリックします。 
  
 5. **[PostSP2]** を右クリックし、 **[削除]** をクリックして、 **[はい]** をクリックします。 
  
@@ -184,7 +184,7 @@ Windows Server Essentials のグループ ポリシー オブジェクト (Gpo) 
 7. これら 3 つの WMI フィルターが削除されたことを確認します。 
  
 ## <a name="map-permitted-computers-to-user-accounts"></a>許可されたコンピューターをユーザー アカウントにマップする
-Windows SBS 2008 では、ユーザーがリモート Web アクセスに接続する場合、ネットワーク内のすべてのコンピューターが表示されます。 これには、ユーザーがアクセス許可を持たないものも含まれる場合があります。 Windows Server Essentials でリモート Web アクセスで表示するためのコンピューターへユーザーが明示的に割り当てする必要があります。 Windows SBS 2008 から移行する各ユーザー アカウントを、1 つまたは複数のコンピューターにマップする必要があります。 
+Windows SBS 2008 では、ユーザーがリモート Web アクセスに接続する場合、ネットワーク内のすべてのコンピューターが表示されます。 これには、ユーザーがアクセス許可を持たないものも含まれる場合があります。 Windows Server Essentials では、リモート Web アクセスに表示するには、ユーザーをコンピューターに明示的に割り当てる必要があります。 Windows SBS 2008 から移行する各ユーザー アカウントを、1 つまたは複数のコンピューターにマップする必要があります。 
  
 #### <a name="to-map-user-accounts-to-computers"></a>コンピューターにユーザー アカウントをマップするには 
  

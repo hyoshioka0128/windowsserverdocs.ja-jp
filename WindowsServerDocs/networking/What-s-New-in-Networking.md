@@ -9,7 +9,7 @@ ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 43ce6290f6559be7cb078032b79519d1681506d4
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59829193"
@@ -70,7 +70,7 @@ SDN の詳細については、次を参照してください。[ソフトウェ
   
 -   **パケット ダイレクト**します。  パケット ダイレクトでは、高いネットワーク トラフィックのスループットと低待機時間パケット処理インフラストラクチャを提供します。  
   
--   **スイッチ埋め込みチーミング (SET)**。SET は、HYPER-V 仮想スイッチに統合されている NIC チーミング ソリューションです。SET は最大 8 つの物理 NIC を 1 つのチームにチーミングし、可用性を向上させ、フェールオーバーを提供します。Windows Server 2016 では、サーバー メッセージ ブロック (SMB) および RDMA の使用に制限されている SET チームを作成できます。さらに、SET チームを使用して、HYPER-V ネットワーク仮想化のネットワーク トラフィックを分散することができます。詳細については、「[リモート ダイレクト メモリ アクセス &#40;RDMA&#41; とスイッチ埋め込みチーミング &#40;SET&#41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)」を参照してください。 
+-   **スイッチ埋め込みチーミング (SET)** 。        SET は、HYPER-V 仮想スイッチに統合されている NIC チーミング ソリューションです。 SET は最大 8 つの物理 NIC を 1 つのチームにチーミングし、可用性を向上させ、フェールオーバーを提供します。 Windows Server 2016 では、サーバー メッセージ ブロック (SMB) および RDMA の使用に制限されている SET チームを作成できます。 さらに、SET チームを使用して、HYPER-V ネットワーク仮想化のネットワーク トラフィックを分散することができます。 詳細については、「[リモート ダイレクト メモリ アクセス &#40;RDMA&#41; とスイッチ埋め込みチーミング &#40;SET&#41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)」を参照してください。  
   
 ## <a name="bkmk_existing"></a>追加のネットワーク テクノロジに対する新機能
 
