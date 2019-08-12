@@ -151,7 +151,7 @@ ms.locfileid: "67407610"
 |新しいトピックまたは変更されたトピック|説明|
 |---|---|
 |[ドライブの記憶域スペース ダイレクトでの対称性に関する考慮事項](storage-spaces/drive-symmetry-considerations.md)| 新しいトピックです。|
-|[プロジェクト ホノルルで記憶域レプリカの使用](storage-replica/storage-replica-ui.md)|新しいトピックです。|
+|[Project “Honolulu”で記憶域レプリカの使用](storage-replica/storage-replica-ui.md)|新しいトピックです。|
 
 ## <a name="december-2017"></a>2017 年 12 月
 
