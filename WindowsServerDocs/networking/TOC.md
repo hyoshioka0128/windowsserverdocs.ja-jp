@@ -83,6 +83,10 @@
 #### [DNS クエリへのフィルターの適用に DNS ポリシーを使用する](dns/deploy/apply-filters-on-dns-queries.md)
 #### [アプリケーションの負荷分散に DNS ポリシーを使用する](dns/deploy/app-lb.md)
 #### [地理的な場所を認識するアプリケーションの負荷分散に DNS ポリシーを使用する](dns/deploy/app-lb-geo.md)
+### [DNS の問題のトラブルシューティング](dns/troubleshoot/troubleshoot-dns-data-collection.md)
+#### [DNS クライアントのトラブルシューティング](dns/troubleshoot/troubleshoot-dns-client.md)
+##### [DNS クライアントでの DNS クライアント側キャッシュの無効化](dns/troubleshoot/disable-dns-client-side-caching.md)
+#### [DNS サーバーのトラブルシューティング](dns/troubleshoot/troubleshoot-dns-server.md)
 
 ## [動的ホスト構成プロトコル (DHCP)](technologies/dhcp/dhcp-top.md)
 ### [DHCP の新機能](technologies/dhcp/What-s-New-in-DHCP.md)

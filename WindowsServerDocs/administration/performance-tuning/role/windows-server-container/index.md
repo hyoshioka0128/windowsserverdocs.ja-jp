@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: DavSo; Ericam; YaShi
 author: akino
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ac0563975e5ba72d5e4a72c3299233efcc52313
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 072d71a7825907ada7d4bc02eb5390722692e81d
+ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59892073"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863419"
 ---
 # <a name="performance-tuning-windows-server-containers"></a>Windows Server コンテナーのパフォーマンス チューニング
 

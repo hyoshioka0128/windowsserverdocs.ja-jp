@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab; v-tea
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: b06875f0fa175c1fcf4f60cbba9de3dbd10d06b1
-ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
+ms.openlocfilehash: b8ab1eed003294e3396bcea21b31b7c084180b9c
+ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67792165"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863454"
 ---
 # <a name="performance-tuning-active-directory-servers"></a>Active Directory サーバーのパフォーマンス チューニング
 
@@ -26,7 +26,8 @@ Active Directory のパフォーマンス チューニングでは、次の 2 �
 - Active Directory クライアント/アプリケーション チューニング - クライアントとアプリケーションによって Active Directory が最適な方法で使用されていることの確認
 
 ## <a name="start-with-capacity-planning"></a>キャパシティ プランニングから開始する
-十分な数のドメイン コントローラーを適切なロケールの適切なドメインに適切に展開し、冗長性に対処することは、適切なタイミングでクライアント要求を処理するために重要です。 これは詳細なトピックであり、このガイドのスコープ外となります。 読者には、「[Capacity Planning for Active Directory Domain Services (Active Directory Domain Services のキャパシティ プランニング](capacity-planning-for-active-directory-domain-services.md)」に記載されている推奨事項とガイダンスを読んで理解することにより、Active Directory のパフォーマンス チューニングを開始することをお勧めします。
+
+十分な数のドメイン コントローラーを適切なロケールの適切なドメインに適切に展開し、冗長性に対処することは、適切なタイミングでクライアント要求を処理するために重要です。 これは詳細なトピックであり、このガイドのスコープ外となります。 読者には、「[Active Directory Domain Services のキャパシティ プランニング](capacity-planning-for-active-directory-domain-services.md)」に記載されている推奨事項とガイダンスを読んで理解することにより、Active Directory のパフォーマンス チューニングを開始することをお勧めします。
 
 >[!Important]
 > Active Directory の適切な構成とサイズ設定は、全体的なシステムとワークロードのパフォーマンスに大きく影響する可能性があります。 読者には、最初に「[Capacity Planning for Active Directory Domain Services (Active Directory Domain Services のキャパシティ プランニング)](capacity-planning-for-active-directory-domain-services.md)」を読むことを強くお勧めします。
