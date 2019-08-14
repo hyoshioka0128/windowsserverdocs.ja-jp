@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3182ce1d0e856b06b143719c488864e9a58fbc0a
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 34488a7f1a9d8ccd04de0aae35cbe98ec162c93f
+ms.sourcegitcommit: 107b801af9603be9268a8f459478e212319f7f06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476571"
+ms.lasthandoff: 08/13/2019
+ms.locfileid: "68995263"
 ---
 # <a name="use-regular-expressions-in-nps"></a>NPS で正規表現を使用する
 
@@ -82,7 +82,7 @@ ms.locfileid: "68476571"
 
 - 次の内容
 
-**を com\user <em>user@example.microsoft.com</em>に置き換えるには、次のように*します。***
+**を com\user <em>user@example.microsoft.com</em>に置き換えるには、次のように_します。_**
 
 - 探す`(.*)@(.*)`
 
@@ -90,7 +90,7 @@ ms.locfileid: "68476571"
 
 
 
-***Domain\user*を*specific_domain\user*に置き換えるには**
+***Domain\user*を_specific_domain\user_に置き換えるには**
 
 - 探す`(.*)\\(.*)`
 
