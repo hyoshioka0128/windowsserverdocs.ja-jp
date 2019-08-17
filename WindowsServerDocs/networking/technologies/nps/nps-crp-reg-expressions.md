@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fec546e0608c36f9b3d907e486a0a3a24e7d1728
-ms.sourcegitcommit: e04565e4a1fb7aaed04addd2bc87cc6ec4c82e81
+ms.openlocfilehash: 2a47403d4f88d5487fb4ffb0e35c46438aadcd8a
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529899"
+ms.locfileid: "69546525"
 ---
 # <a name="use-regular-expressions-in-nps"></a>NPS で正規表現を使用する
 
@@ -28,7 +28,7 @@ ms.locfileid: "69529899"
 
 |  文字  |                                                                                 説明                                                                                  |                                                                 例                                                                 |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-|     `\`|                                                             次の文字を一致する文字としてマークします。                                                               |                      `/n/ matches the character "n". The sequence /\n/ matches a line feed or newline character.`                       |
+|     `\ `     |                                                              次の文字を一致する文字としてマークします。                                                               |                      `/n/ matches the character "n". The sequence /\n/ matches a line feed or newline character.`                       |
 |     `^`     |                                                                 入力または行の先頭と一致します。                                                                  |                                                                 &nbsp;                                                                  |
 |     `$`     |                                                                    入力または行の末尾と一致します。                                                                     |                                                                 &nbsp;                                                                  |
 |     `*`     |                                                             直前の文字と0回以上一致します。                                                              |                                                  `/zo*/ matches either "z" or "zoo."`                                                   |

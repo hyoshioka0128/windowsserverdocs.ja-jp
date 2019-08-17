@@ -10,12 +10,12 @@ ms.topic: article
 author: KBDAzure
 ms.author: kathydav
 ms.date: 09/28/2016
-ms.openlocfilehash: 534de49e50d7b415c9d64c32927418a4395f6f4f
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: b54d3e655d10d2dbb015d57f2b1be86a803d9911
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544746"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546638"
 ---
 # <a name="plan-for-hyper-v-scalability-in-windows-server-2016"></a>Windows Server 2016 での HYPER-V のスケーラビリティの計画します。
 
@@ -44,7 +44,7 @@ ms.locfileid: "68544746"
 |仮想プロセッサの数|ジェネレーション 2 の 240<br>ジェネレーション 1 の場合は 64<br>ホスト OS (ルート パーティション) で使用できる 320|ゲスト オペレーティング システムでサポートされる仮想プロセッサの数は、より少ない場合があります。 詳細については、特定のオペレーティング システムに対して発行された情報を参照してください。|
 |仮想 SCSI ドメイン コントローラー|4|仮想 SCSI デバイスの使用には、integration services は、サポート対象のゲスト オペレーティング システムで利用可能である必要があります。 詳細についてはオペレーティング システムがサポートされている、次を参照してください。 [サポートされている Linux および FreeBSD の仮想マシン](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md) と [サポートされている Windows ゲスト オペレーティング システム](../supported-windows-guest-operating-systems-for-hyper-v-on-windows.md)します。|  
 |仮想 SCSI ディスク数|256|各 SCSI コントローラーが最大 64 台のディスクをサポートします。つまり、各仮想マシンに最大 256 台の SCSI ディスクを構成できます (4 つのコントローラー×コントローラーごとに 64 台のディスク)。|  
-|仮想ネットワーク アダプター|Windows Server 2016 は、次の合計12個をサポートしています。<br> -8 つの HYPER-V で特定のネットワーク アダプター<br>-4 つのレガシ ネットワーク アダプター <br> Windows Server 2019 では、合計72がサポートされています。 <br> -64 hyper-v 固有のネットワークアダプター<br>-4 つのレガシ ネットワーク アダプター  |HYPER-V の特定のネットワーク アダプターでは、パフォーマンスが向上と、統合サービスに含まれるドライバーが必要です。 詳細については、「 [Windows Server での hyper-v ネットワークの計画](plan-hyper-v-networking-in-windows-server.md)」を参照してください。|  
+|仮想ネットワーク アダプター|Windows Server 2016 は、次の合計12個をサポートしています。<br> -8 つの HYPER-V で特定のネットワーク アダプター<br>-4 つのレガシ ネットワーク アダプター <br> Windows Server 2019 では、合計68がサポートされています。 <br> -64 hyper-v 固有のネットワークアダプター<br>-4 つのレガシ ネットワーク アダプター  |HYPER-V の特定のネットワーク アダプターでは、パフォーマンスが向上と、統合サービスに含まれるドライバーが必要です。 詳細については、「 [Windows Server での hyper-v ネットワークの計画](plan-hyper-v-networking-in-windows-server.md)」を参照してください。|  
   
 ## <a name="maximums-for-hyper-v-hosts"></a>HYPER-V ホストの最大値  
 これらの最大値は、各 HYPER-V ホストに適用されます。  

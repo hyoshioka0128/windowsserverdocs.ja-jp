@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 08/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 59c04a858ceae44ee51c1de10fc40b27dc22ef90
-ms.sourcegitcommit: e04565e4a1fb7aaed04addd2bc87cc6ec4c82e81
+ms.openlocfilehash: 2f3f8bff39550108b0417b9513bee4a248dca432
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529896"
+ms.locfileid: "69546373"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>記憶域スペース ダイレクトのハードウェア要件
 
@@ -86,7 +86,7 @@ Small scale 2-3 ノードの最小相互接続
 - すべてのサーバーで同じ数と種類のドライブ–[ドライブの対称に関する考慮事項](drive-symmetry-considerations.md)を参照してください。
 - キャッシュデバイスは 32 GB 以上である必要があります
 - 永続メモリデバイスをキャッシュデバイスとして使用する場合は、NVMe または SSD 容量デバイスを使用する必要があります (Hdd は使用できません)。
-- NVMe ドライバーは、Microsoft のインボックスまたは更新された NVMe ドライバーです。
+- NVMe ドライバーは、Windows に付属している Microsoft 提供のドライバーです。 (stornvme .sys)
 - 推奨:容量ドライブの数は、キャッシュドライブの数の倍数です。
 - 推奨:キャッシュドライブには、1日あたり少なくとも3つのドライブ書き込み (DWPD) または少なくとも4テラバイト (tbw) の書き込み (TBW) が必要です。また、1日[あたり記憶域スペースダイレクトのドライブの書き込み量 (DWPD)、テラバイトの書き込み (TBW)、および推奨される最小値について説明します。](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 

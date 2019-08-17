@@ -1,5 +1,5 @@
 ---
-Title: SMB:ファイルとプリンターの共有ポートが開く必要があります。
+title: 向けファイルとプリンターの共有ポートを開く
 TOCTitle: 'SMB: File and printer sharing ports should be open'
 ms.date: 07/02/2012
 ms.prod: windows-server-threshold
@@ -7,21 +7,21 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: fae579347a43dfa361206e65032b1f3da512ec4a
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: a22801be6ec73b6819a190c793d28feae4edcf69
+ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284376"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560425"
 ---
-# <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB:ファイルとプリンターの共有ポートが開く必要があります。
+# <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>向けファイルとプリンターの共有ポートを開く
 
 
-更新:2011 年 2 月 2 日
+更新:2011年2月2日
 
-適用先:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012、Windows Server 2008 R2
+適用先:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、windows server 2012、windows server 2008 R2
 
-*このトピックではベスト プラクティス アナライザー スキャンで検知した特定の問題に対処するためのものです。このトピックの情報は、ファイル サービス ベスト プラクティス アナライザーを実行する必要がありましたし、このトピックで取り上げて問題が発生しているコンピューターのみに適用してください。ベスト プラクティスとスキャンの詳細については、次を参照してください。* [Best Practices Analyzer](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a)します。
+*このトピックは、ベストプラクティスアナライザースキャンによって識別される特定の問題に対処することを目的としています。このトピックの情報は、ファイルベストプラクティスアナライザーサービスが実行されていて、このトピックで対処している問題が発生しているコンピューターにのみ適用する必要があります。ベストプラクティスとスキャンの詳細については* 、「[ベストプラクティスアナライザー](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a)」を参照してください。
 
 
 <table>
@@ -39,8 +39,8 @@ ms.locfileid: "67284376"
 <td><p>ファイル サービス</p></td>
 </tr>
 <tr class="odd">
-<td><p><strong>重要度</strong></p></td>
-<td><p>エラー</p></td>
+<td><p><strong>順</strong></p></td>
+<td><p>Error</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>カテゴリ</strong></p></td>
@@ -51,29 +51,29 @@ ms.locfileid: "67284376"
 
 ## <a name="issue"></a>問題
 
-> *ファイルとプリンターの共有のために必要なは、ファイアウォールのポート (ポート 445 と 139) を開けません。*
+> *ファイルとプリンターの共有に必要なファイアウォールポートが開いていません (ポート445および 139)。*
 
 ## <a name="impact"></a>影響
 
-> *コンピューターは共有フォルダーやこのサーバー上の他のサーバー メッセージ ブロック (SMB) ベースのネットワーク サービスにアクセスできません。*
+> *コンピューターは、このサーバー上の共有フォルダーやその他のサーバーメッセージブロック (SMB) ベースのネットワークサービスにアクセスできなくなります。*
 
 ## <a name="resolution"></a>解決方法
 
-> *コンピューターのファイアウォールを介して通信するファイルとプリンターの共有を有効にします。*
+> *ファイルとプリンターの共有がコンピューターのファイアウォールを経由して通信できるようにします。*
 
 この手順を実行するには、**Administrators** グループのメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。
 
-## <a name="to-open-the-firewall-ports-to-enable-file-and-printer-sharing"></a>ファイルとプリンターの共有を有効にするファイアウォール ポートを開く
+## <a name="to-open-the-firewall-ports-to-enable-file-and-printer-sharing"></a>ファイアウォールポートを開いてファイルとプリンターの共有を有効にするには
 
-1.  コントロール パネルを開き、[**システムとセキュリティ**、] をクリックし、 **Windows ファイアウォール**します。
+1.  コントロールパネルを開き、 **[システムとセキュリティ]** をクリックし、 **[Windows ファイアウォール]** をクリックします。
 
-2.  左側のウィンドウで次のようにクリックします。**詳細設定**、コンソール ツリーで、クリックと**受信の規則**します。
+2.  左側のウィンドウで、 **[詳細設定]** をクリックし、コンソールツリーで **[受信の規則]** をクリックします。
 
-3.  **受信の規則**、ルールを見つける**ファイルとプリンターの共有 (NB セッション-)** と**ファイルとプリンターの共有 (SMB)** します。
+3.  **[受信の規則]** で、規則**ファイルとプリンターの共有 (NB セッション)** と、**ファイルとプリンターの共有 (SMB 受信)** を見つけます。
 
-4.  ルールごとに、ルールを右クリックしをクリックして**規則の有効化**します。
+4.  各ルールについて、ルールを右クリックし、 **[ルールの有効化]** をクリックします。
 
 ## <a name="additional-references"></a>その他の参照情報
 
-[共有フォルダーと Windows ファイアウォール](https://technet.microsoft.com/library/cc731402.aspx)(https://technet.microsoft.com/library/cc731402.aspx)
+[共有フォルダーと Windows ファイアウォールについて](https://technet.microsoft.com/library/cc731402.aspx)(https://technet.microsoft.com/library/cc731402.aspx)
 

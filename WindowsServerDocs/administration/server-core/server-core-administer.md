@@ -8,12 +8,12 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: b144127de2ceea99e36549974101d190154aaeaf
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 78006dbbd2bdc569c15ac9967d8c5c542664312c
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476525"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546291"
 ---
 # <a name="administer-a-server-core-server"></a>Server Core サーバーの管理
 
@@ -44,7 +44,7 @@ Server Core サーバーをインストールすると、既定では DHCP ア�
    それぞれの文字の説明は次のとおりです。
    - **InterfaceIndex**は、手順 2. の**IfIndex**の値です。 (この例では 12)
    - **IPAddress**は、設定する静的 IP アドレスです。 (この例では、191.0.2.2)
-   - [プレフィックス **] は、** 設定する IP アドレスのプレフィックス長 (別の形式のサブネットマスク) です。 (この例では、24)
+   - [プレフィックス] は、設定する IP アドレスのプレフィックス長 (別の形式のサブネットマスク) です。 (この例では、24)
    - **DefaultGateway**は、デフォルトゲートウェイの IP アドレスです。 (この例では、192.0.2.1)
 4. 次のコマンドレットを実行して、DNS クライアントサーバーのアドレスを設定します。 
 
@@ -90,8 +90,8 @@ DHCP の使用に切り替える必要がある場合は、 **Set-DnsClientServe
 > [!NOTE]
 > また、[キー管理サービス (KMS) サーバー](../../get-started/server-2016-activation.md)を使用して、またはリモートで、サーバーを電話でアクティブ化することもできます。 リモートからライセンス認証するには、リモートコンピューターから次のコマンドレットを実行します。 
 > 
-> ```powershell
-> **cscript windows\system32\slmgr.vbs <ServerName> <UserName> <password>:-ato**
+> ```
+> cscript windows\system32\slmgr.vbs <ServerName> <UserName> <password>:-ato
 > ```
  
 ### <a name="configure-windows-firewall"></a>Windows ファイアウォールを構成する
@@ -136,7 +136,7 @@ Windows PowerShell のリモート処理を有効にすることができます�
 |タスク|Command| 
 |----|-------|
 |プロキシサーバーを使用するようにサーバーを構成する|**netsh Winhttp set proxy \<servername\>:\<ポート番号\>** <br>**注:** Server Core インストールでは、接続を許可するためにパスワードを必要とするプロキシ経由でインターネットにアクセスすることはできません。|
-|インターネットアドレスのプロキシをバイパスするようにサーバーを構成する|**netsh winttp set proxy \<servername\>:\<ポート番号\>バイパスリスト = "\<local\>"**| 
+|インターネットアドレスのプロキシをバイパスするようにサーバーを構成する|**netsh winhttp set proxy \<servername\>:\<ポート番号\>バイパスリスト = "\<local\>"**| 
 |IPSEC 構成を表示または変更する|**netsh ipsec**| 
 |NAP 構成を表示または変更する|**netsh nap**| 
 |IP から物理アドレスへの変換を表示または変更する|**arp**| 
@@ -147,7 +147,7 @@ Windows PowerShell のリモート処理を有効にすることができます�
 |ネットワーク接続のホップを表示する|**pathping**| 
 |ネットワーク接続のホップをトレースする|**tracert**| 
 |マルチキャスト ルーターの構成を表示する|**mrinfo**| 
-|ファイアウォールのリモート管理を有効にする|**netsh advfirewall firewall set rule group = "Windows ファイアウォールリモート管理" 新しい有効化 = yes**| 
+|ファイアウォールのリモート管理を有効にする|**netsh advfirewall firewall set rule group = "Windows Defender ファイアウォールリモート管理" 新しい有効化 = はい**| 
  
 
 ### <a name="updates-error-reporting-and-feedback"></a>更新プログラム、エラー報告、およびフィードバック
@@ -170,7 +170,7 @@ Windows PowerShell のリモート処理を有効にすることができます�
 |                          サービスを停止する                          |                                                                                                                                                                                  **sc stop \<サービス名\>** または**net \<stop サービス\>名**                                                                                                                                                                                   |
 | 実行中のアプリケーションと関連するプロセスの一覧を取得する |                                                                                                                                                                                                           **tasklist**                                                                                                                                                                                                           |
 |                        タスク マネージャーを開始する                        |                                                                                                                                                                                                           **taskmgr-networking**                                                                                                                                                                                                            |
-|    イベントトレースセッションとパフォーマンスログの作成と管理    | カウンター、トレース、構成データの収集、API を作成するには **、次の**ようにします。 <br>データコレクターのプロパティを照会するには: **logman クエリ** <br>データ収集を開始または停止するには: **\|logman start stop** <br>コレクターを削除するには: **logman delete** <br> コレクターのプロパティを更新するには: **logman update** <br>Xml ファイルからデータコレクターセットをインポートする、または xml ファイルにエクスポートするには: **\|logman インポートエクスポート** |
+|    イベントトレースセッションとパフォーマンスログの作成と管理    | カウンター、トレース、構成データの収集、API を作成するには、次のようにします。 <br>データコレクターのプロパティを照会するには: **logman クエリ** <br>データ収集を開始または停止するには: **\|logman start stop** <br>コレクターを削除するには: **logman delete** <br> コレクターのプロパティを更新するには: **logman update** <br>Xml ファイルからデータコレクターセットをインポートする、または xml ファイルにエクスポートするには: **\|logman インポートエクスポート** |
 
 ### <a name="event-logs"></a>イベント ログ
 
