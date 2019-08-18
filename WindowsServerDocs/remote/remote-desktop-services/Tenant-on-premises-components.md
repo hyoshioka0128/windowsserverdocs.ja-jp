@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: b3eebb38-a835-4fa6-9e41-1966014bf2cb
 author: lizap
 manager: dongill
-ms.openlocfilehash: ff584533eef70144e3bb6ba595fd0f8db89697e9
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 191d2247af5d5f63a203415af13f8d3370b3c6f6
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63744044"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546473"
 ---
 # <a name="tenant-on-premises-components"></a>テナント オンプレミス コンポーネント
 
@@ -35,8 +35,8 @@ ms.locfileid: "63744044"
 [Microsoft リモート デスクトップ クライアント](https://technet.microsoft.com/library/dn473009.aspx)  
 [Microsoft Store の Windows 用リモート デスクトップ アプリ](https://apps.microsoft.com/windows/app/remote-desktop/051f560e-5e9b-4dad-8b2e-fa5e0b05a480)  
 [Microsoft リモート デスクトップ - Google Play の Android アプリ](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)  
-[Mac App Store - Microsoft リモート デスクトップ](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12)  
-[App Store の Microsoft リモート デスクトップ](https://itunes.apple.com/us/app/microsoft-remote-desktop/id714464092?mt=8)  
+[Mac App Store - Microsoft リモート デスクトップ](https://itunes.apple.com/app/microsoft-remote-desktop/id715768417?mt=12)  
+[App Store の Microsoft リモート デスクトップ](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8)  
   
 ##  <a name="active-directory-domain-services"></a>Active Directory Domain Services  
 一部の大規模かつ高度なテナントでは、オンプレミスで Active Directory Domain Services (AD DS) サーバーをホストするという選択もできます。 この場合、テナントの環境の AD DS サーバーは、テナントのオンプレミスの AD DS サーバーのレプリカになることが一般的です。 これをサポートするには、テナントの環境に仮想ネットワークを作成し、Azure VPN を使用して、テナントのオンプレミス ネットワークから Azure データ センター内のテナントの仮想ネットワークへのサイト間接続を作成します。  
