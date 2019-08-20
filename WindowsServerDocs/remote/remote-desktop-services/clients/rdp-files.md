@@ -13,18 +13,18 @@ manager: dongill
 ms.author: helohr
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b11f4356496607d59e6c1b8dff2fb8edc0535cb
-ms.sourcegitcommit: 25376e261ebd5e85355c298cfd0bbd6b578a6a0c
+ms.openlocfilehash: ecc3236d44146015564fa593aaf8a20d3bfa42ff
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68729559"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546467"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>サポートされるリモート デスクトップ RDP ファイルの設定
 
 次の表には、Windows および HTML のクライアントで使用できる、サポートされる RDP ファイル設定の一覧が含まれています。 プラットフォーム列の "○" は、設定がサポートされていることを示しています。 ただし、この一覧は Windows クライアントと HTML5 クライアントでサポートされる設定の完全な一覧ではありません。 Windows クライアントと HTML5 クライアントだけでなく、macOS、iOS、Android の各クライアントについてもサポートされる RDP 設定をさらに含めるようにこの表を更新していく予定です。
 
-PowerShell を使用して RDP のプロパティをカスタマイズする方法の詳細については、[「ホスト プールのリモート デスクトップ プロトコルのプロパティをカスタマイズする」](https://docs.microsoft.com/azure/virtual-desktop/customize-rdp-properties)を参照してください。
+PowerShell を使用してホスト プールの RDP プロパティをカスタマイズする方法の詳細については、[こちらのドキュメント](https://go.microsoft.com/fwlink/?linkid=2098243&clcid=0x409)を参照してください。
 
 | RDP 設定                        | 説明            | 値                 | 既定値          | Windows 仮想デスクトップ | Windows | HTML5   |
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|:-------:|:-------:|

@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 date: 01/13/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71fe969de4d21f7fa3c134b0f80fc7f69e5b2da8
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ebb169ee3b733bd5e7aade6636e078d54a6f09b3
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66446705"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546399"
 ---
 # <a name="get-started-with-remote-desktop-on-ios"></a>IOS でのリモート デスクトップを概要します。
 
@@ -38,7 +38,7 @@ iOS 用のリモート デスクトップ クライアントを使用して、iO
 ### <a name="download-the-remote-desktop-client-from-the-ios-store"></a>iOS Store からリモート デスクトップ クライアントをダウンロードする
 IOS デバイスでのリモート デスクトップの概要を次の手順に従います。
 
-1. Microsoft リモート デスクトップ クライアントからのダウンロード [iTunes](https://itunes.apple.com/us/app/microsoft-remote-desktop/id714464092?mt=8)します。
+1. Microsoft リモート デスクトップ クライアントからのダウンロード [iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8)します。
 2. [リモート接続を受け入れるように、PC を設定します](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop)。
 3. [リモート デスクトップ接続](#add-a-remote-desktop-connection)または[リモート リソース](#add-a-remote-resource)を追加します。 Windows PC とリモート リソースに直接接続する接続を使用して、RemoteApp およびデスクトップ接続を使用してオンプレミスで公開された RemoteApp プログラム、セッション ベースのデスクトップ、または仮想デスクトップを使用します。 この機能は、企業環境で通常使用できます。
 

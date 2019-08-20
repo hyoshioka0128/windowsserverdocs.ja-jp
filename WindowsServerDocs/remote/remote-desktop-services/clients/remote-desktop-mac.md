@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 10/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a54ffd3d5596ba8c71deab668e4952da445ca12e
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 17df3ca3b88404a2775790d7a4a8206b7aa5befa
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66804943"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546348"
 ---
 # <a name="get-started-with-remote-desktop-on-mac"></a>Mac でリモート デスクトップを使ってみる
 
@@ -35,7 +35,7 @@ Mac 用のリモート デスクトップ クライアントを使用して、Ma
 ## <a name="get-the-remote-desktop-client"></a>リモート デスクトップ クライアントを取得する
 以下の手順に従って、Mac 上でリモート デスクトップを使ってみます。
 
-1. Microsoft リモート デスクトップ クライアントからのダウンロード、 [Mac App Store](https://itunes.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12)します。
+1. Microsoft リモート デスクトップ クライアントからのダウンロード、 [Mac App Store](https://itunes.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12)します。
 2. [リモート接続を受け入れるように、PC を設定します](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop)。 (この手順をスキップすると、PC に接続できません)。
 3. リモート デスクトップ接続またはリモート リソースを追加します。 Windows PC とリモート リソースに直接接続する接続を使用して、RemoteApp およびデスクトップ接続を使用してオンプレミスで公開された RemoteApp プログラム、セッション ベースのデスクトップ、または仮想デスクトップを使用します。 この機能は、企業環境で通常使用できます。
 
