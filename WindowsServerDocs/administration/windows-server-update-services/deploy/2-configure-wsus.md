@@ -10,12 +10,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c5c4ac470d1187aa6186f6f05cab3df185a642fd
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: 660cb0412abdf1ecb1afcba53a4aeb79ac407e56
+ms.sourcegitcommit: a9625758fbfb066494fe62e0da5f9570ccb738a3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68914569"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68952456"
 ---
 # <a name="step-2-configure-wsus"></a>手順 2:WSUS の構成
 
@@ -56,33 +56,33 @@ WSUS は、既定で、Microsoft Update を更新プログラムの入手先と�
 ### <a name="211-connection-from-the-wsus-server-to-the-internet"></a>2.1.1. WSUS サーバーからインターネットへの接続
 WSUS とインターネットの間に企業ファイアウォールがある場合は、WSUS で更新プログラムを取得できるようにそのファイアウォールを構成することが必要になることがあります。 WSUS サーバーでは、Microsoft Update から更新プログラムを取得するために、HTTPS プロトコルにはポート 443 を使用します。 ほとんどの企業ファイアウォールはこの種類のトラフィックを許可しますが、会社のセキュリティポリシーによってサーバーからのインターネットアクセスを制限する企業もあります。 会社がアクセスを制限している場合は、WSUS から次の Url の一覧へのインターネットアクセスを許可するための承認を得る必要があります。
 
-- http://windowsupdate.microsoft.com
+- http\://windowsupdate.microsoft.com
 
-- http://*.windowsupdate.microsoft.com
+- \:windowsupdate.microsoft.com//\*
 
-- https://*.windowsupdate.microsoft.com
+- \:windowsupdate.microsoft.com//\*
 
-- http://*.update.microsoft.com
+- \:update.microsoft.com//\*
 
-- https://*.update.microsoft.com
+- \:update.microsoft.com//\*
 
-- http://*.windowsupdate.com
+- \:windowsupdate.com//\*
 
-- http://download.windowsupdate.com
+- http\://download.windowsupdate.com
 
-- https://download.microsoft.com
+- https\://download.microsoft.com
 
-- http://*.download.windowsupdate.com
+- \:download.windowsupdate.com//\*
 
-- http://wustat.windows.com
+- http\://wustat.windows.com
 
-- http://ntservicepack.microsoft.com
+- http\://ntservicepack.microsoft.com
 
-- http://go.microsoft.com
+- http\://go.microsoft.com
 
-- http://dl.delivery.mp.microsoft.com
+- http\://dl.delivery.mp.microsoft.com
 
-- https://dl.delivery.mp.microsoft.com
+- https\://dl.delivery.mp.microsoft.com
 
 > [!IMPORTANT]
 > ファイアウォール構成が原因で WSUS で更新プログラムを取得できないシナリオについては、Microsoft サポート技術情報の[記事 885819](https://support.microsoft.com/kb/885819)を参照してください。
@@ -389,11 +389,11 @@ WSUS では、SSL 用に 2 つのポートを必要とします。1 つは暗号
 
 2.  [**スタート**] にアクセスし、「 **CMD**」と入力して、[**コマンドプロンプト**] を右クリックし、[**管理者として実行**] をクリックします。
 
-3.  _% ProgramFiles%_ **\\\ Update Services\Tools**フォルダーに移動します。
+3.  _% ProgramFiles%_ **\\Update\\Services Tools\\** フォルダーに移動します。
 
 4.  コマンドプロンプトウィンドウで、次のコマンドを入力します。
 
-    **Wsusutil configuressl** _
+    **Wsusutil configuressl**_certificateName_
 
     それぞれの文字の説明は次のとおりです。
 

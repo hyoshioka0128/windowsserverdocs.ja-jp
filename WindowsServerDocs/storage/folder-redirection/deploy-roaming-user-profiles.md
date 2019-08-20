@@ -1,5 +1,5 @@
 ---
-Title: 移動ユーザープロファイルの展開
+title: 移動ユーザープロファイルの展開
 TOCTitle: Deploying Roaming User Profiles
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,12 +8,12 @@ author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: e6e2e32ff9aeb1b3bcfc8fed9027c7e92e13b118
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 1fcabf890c0c54e12c1650c31a072d17a33e292f
+ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "66812487"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560544"
 ---
 # <a name="deploying-roaming-user-profiles"></a>移動ユーザープロファイルの展開
 
@@ -33,7 +33,7 @@ ms.locfileid: "66812487"
 >
 > その結果、OS のインプレースアップグレード後に、[スタート] メニューが新しい OS バージョンの既定値にリセットされます。 回避策につい[ては、「付録 C:アップグレード](#appendix-c-working-around-reset-start-menu-layouts-after-upgrades)後に [スタート] メニューのレイアウトのリセットを回避する。
 
-## <a name="prerequisites"></a>必須コンポーネント
+## <a name="prerequisites"></a>前提条件
 
 ### <a name="hardware-requirements"></a>ハードウェア要件
 
@@ -181,7 +181,7 @@ Windows Server でファイル共有を作成するには、次の手順を実�
 
 1. Active Directory 管理者センターで、適切なドメインの [**Users**] コンテナー (または OU) に移動します。
 2. 移動ユーザープロファイルを割り当てるすべてのユーザーを選択し、ユーザーを右クリックして、[**プロパティ**] を選択します。
-3. [**プロファイル**] セクションで、[**プロファイルパス:** ] チェックボックスをオンにし、ユーザーの移動ユーザープロファイルを保存するファイル共有へのパスを入力し`%username%`ます (最初のユーザー名に自動的に置き換えられます)。ユーザーがサインインした時刻)。 例:
+3. [**プロファイル**] セクションで、[**プロファイルパス:** ] チェックボックスをオンにし、ユーザーの移動ユーザープロファイルを保存するファイル共有へのパスを入力し`%username%`ます (最初のユーザー名に自動的に置き換えられます)。ユーザーがサインインした時刻)。 以下に例を示します。
     
     `\\fs1.corp.contoso.com\User Profiles$\%username%`
     

@@ -8,158 +8,158 @@ ms.author: jgerend
 author: JasonGerend
 ms.date: 04/28/2017
 ms.technology: storage-failover-clustering
-description: プラグインを使用して、クラスターで更新プログラムをインストールする Windows Server をクラスター対応更新を使用する場合は、更新プログラムを調整する方法。
-ms.openlocfilehash: d09addb5e6787a8386d50570c0d27640646aa587
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+description: Windows Server でクラスター対応更新を使用してクラスターに更新プログラムをインストールするときに、プラグインを使用して更新プログラムを調整する方法について説明します。
+ms.openlocfilehash: bd31a6056376b04fcb5a4a941b81a363548a2209
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854563"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544508"
 ---
 # <a name="how-cluster-aware-updating-plug-ins-work"></a>クラスター対応更新プラグインのしくみ
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-[クラスター対応更新](cluster-aware-updating.md)(CAU) は、フェールオーバー クラスター内のノード間で更新プログラムのインストールを調整するプラグインを使用します。 このトピックでは、組み込みの使用に関する情報を提供します。\-CAU プラグインで\-アドインまたはその他のプラグ\-CAU 用にインストールするアドイン。
+[クラスター対応更新](cluster-aware-updating.md)(CAU) は、プラグインを使用して、フェールオーバークラスター内のノード間での更新プログラムのインストールを調整します。 このトピックでは、cau 用に\-インストールされ\-た組み込みの cau\-プラグインまたはその他のプラグインの使用方法について説明します。
 
-## <a name="BKMK_INSTALL"></a>インストール、プラグ\-で  
-プラグ\-で既定以外プラグイン\-CAU と共にインストールされたスナップイン\( **Microsoft.WindowsUpdatePlugin**と**Microsoft.HotfixPlugin** \)個別にインストールする必要があります。 CAU を自己で使用する場合\-更新モード、プラグ\-では、すべてのクラスター ノードにインストールする必要があります。 CAU をリモートで使用する場合\-更新モード、プラグ\-では、リモート更新コーディネーター コンピューターにインストールする必要があります。 プラグ\-をインストールすることでは各ノードで追加のインストール要件が可能性があります。  
+## <a name="BKMK_INSTALL"></a>プラグイン\-をインストールする  
+\-\-CAU **microsoft.windowsupdateplugin と** microsoft.hotfixpluginと共にインストールされる既定のプラグイン以外のプラグインは、個別にインストールする必要があります。\) \( 自己\-更新モードで CAU を使用する場合は、\-すべてのクラスターノードにプラグインをインストールする必要があります。 CAU がリモート\-更新モードで使用されている\-場合は、リモート更新コーディネーターコンピューターにプラグインがインストールされている必要があります。 インストールする\-プラグインには、各ノードで追加のインストール要件がある場合があります。  
   
-プラグをインストールする\-、指示に従って、プラグインから\-publisher でします。 プラグを手動で登録する\-、CAU を使用して実行、 [Register-cauplugin](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/register-cauplugin)コマンドレットを各コンピューターでプラグ\-がインストールされています。  
+プラグイン\-をインストールするには、プラグイン\-の発行元の指示に従います。 CAU にプラグインを手動で登録するには、プラグインがインストールされている各コンピューターで [register-cauplugin](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/register-cauplugin) コマンドレットを実行します。  
   
-## <a name="specify-a-plug-in-and-plug-in-arguments"></a>プラグを指定\-でプラグインと\-引数  
+## <a name="specify-a-plug-in-and-plug-in-arguments"></a>プラグイン\-引数とプラグイン\-引数の指定  
   
-### <a name="specify-a-cau-plug-in"></a>CAU プラグインを指定\-で
+### <a name="specify-a-cau-plug-in"></a>CAU プラグイン\-の指定
 
-CAU ui で、プラグインを選択します\-で、ドロップダウンから\-使用可能なプラグインの一覧を下\-CAU を使用して、次の操作を実行するときにアドイン。  
+Cau を使用して次の操作を\-実行する場合は\-、cau UI で、\-使用可能なプラグインのドロップダウンリストからプラグインを選択します。  
   
 -   クラスターに更新プログラムを適用する  
   
 -   クラスターの更新プログラムをプレビューする  
   
--   構成するクラスターの自己\-更新オプション  
+-   クラスターの自己\-更新オプションを構成する  
   
-既定では、CAU は、プラグインを選択します\-で**Microsoft.WindowsUpdatePlugin**します。 ただし、任意のプラグを指定できます\-がインストールされ、CAU に登録します。
+既定では、CAU は\- **microsoft.windowsupdateplugin**プラグインを選択します。 ただし、インストールされ、CAU\-に登録されている任意のプラグインを指定できます。
 
 > [!TIP]  
-> CAU ui で、1 つのプラグを指定することができますのみ\-で CAU 更新実行中に更新プログラムを適用するまたはプレビューを使用するのです。 CAU の PowerShell コマンドレットを使用すると、1 つまたは複数のプラグインを指定できます\-アドイン。クラスターに複数の種類の更新プログラムをインストールする必要がある場合は、複数のプラグインを指定する方が効率的\-、独立した更新実行を使用して、各プラグインのではなく、1 つ更新実行で ins\-でします。 たとえば、通常は、ノードの再起動の回数が少なくなります。
+> Cau UI では、更新実行中に更新プログラムを\-プレビューまたは適用するために、cau が使用するプラグインを1つだけ指定できます。 CAU PowerShell コマンドレットを使用すると、1つまたは複数\-のプラグインを指定できます。クラスターに複数の種類の更新プログラムをインストールする必要がある場合は、プラグイン\-\-ごとに個別の更新実行を使用するのではなく、1つの更新実行で複数のプラグインを指定する方が効率的です。 たとえば、通常は、ノードの再起動の回数が少なくなります。
 
-次の表に記載されている CAU PowerShell コマンドレットを使用すると、1 つまたは複数のプラグインを指定できます\-更新実行やスキャンを渡すことによって、 **– CauPluginName**パラメーター。 複数のプラグインを指定する\-コンマで区切ることにより、名前にします。 複数のプラグインを指定する場合\-アドインを制御することもどのプラグ\-アドインに影響を与える他の更新実行中に指定することによって、  **\-RunPluginsSerially**、  **\-StopOnPluginFailure**、および **– SeparateReboots**パラメーター。 複数のプラグインを使用しての詳細については\-アドインを使用して、次の表に、コマンドレットのドキュメントを提供されるリンク。  
+次の表に示す CAU PowerShell コマンドレットを使用すると、 **-CauPluginName**パラメーターを渡すことに\-よって、更新実行またはスキャン用のプラグインを1つ以上指定できます。 複数のプラグイン\-名をコンマで区切って指定できます。 複数のプラグイン\-を指定する場合は、  **\-RunPluginsSerially**、  **\-stoponpluginfailure**を指定することによって、更新実行中にプラグイン\-が相互にどのように影響するかを制御することもできます。および **– SeparateReboots**パラメーター。 複数のプラグイン\-の使用方法の詳細については、次の表のコマンドレットのドキュメントに記載されているリンクを使用してください。  
   
 |コマンドレット|説明|  
 |----------|---------------|  
-|[Add-CauClusterRole](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/add-cauclusterrole)|Self は、CAU のクラスター化された役割を追加します。\-機能を、指定したクラスターに更新します。|  
-|[Invoke-CauRun](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/invoke-caurun)|適用可能な更新プログラムについてクラスター ノードのスキャンを実行し、更新実行で、指定したクラスターにその更新プログラムをインストールします。|  
-|[Invoke-CauScan](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/invoke-causcan)|適用可能な更新プログラムについてクラスター ノードのスキャンを実行し、指定したクラスターの各ノードに適用される更新プログラムの初期セットの一覧を返します。|  
-|[Set-CauClusterRole](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/set-cauclusterrole)|指定したクラスターに CAU のクラスター化された役割の構成プロパティを設定します。|  
+|[Add-cauclusterrole](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/add-cauclusterrole)|指定されたクラスターに自己\-更新機能を提供する CAU のクラスター化された役割を追加します。|  
+|[呼び出し-CauRun](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/invoke-caurun)|適用可能な更新プログラムについてクラスター ノードのスキャンを実行し、更新実行で、指定したクラスターにその更新プログラムをインストールします。|  
+|[Invoke-CauScan](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/invoke-causcan)|適用可能な更新プログラムについてクラスター ノードのスキャンを実行し、指定したクラスターの各ノードに適用される更新プログラムの初期セットの一覧を返します。|  
+|[Add-cauclusterrole](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/set-cauclusterrole)|指定したクラスターに CAU のクラスター化された役割の構成プロパティを設定します。|  
   
-CAU プラグインを指定しない場合\-でこれらのコマンドレットを使用して、パラメーター、既定値は、プラグ\-で**Microsoft.WindowsUpdatePlugin**します。  
+これらのコマンドレットを使用して\-CAU プラグインパラメーターを指定しない場合、既定値は\- **microsoft.windowsupdateplugin**にあります。  
   
-### <a name="specify-cau-plug-in-arguments"></a>CAU プラグインを指定\-引数  
-更新実行オプションを構成するときに、1 つまたは複数を指定することができます*名前\=値*ペア\(引数\)選択したプラグインの\-のロックを使用します。 たとえば、CAU UI では、次のように複数の引数を指定できます。  
+### <a name="specify-cau-plug-in-arguments"></a>CAU プラグイン\-引数の指定  
+更新実行オプションを構成するときに、選択したプラグイン\-が使用する 1 \(つ\)または複数の *\=名前と値*のペアの引数を指定できます。 たとえば、CAU UI では、次のように複数の引数を指定できます。  
   
 **Name1\=Value1;Name2\=Value2;Name3\=Value3**  
   
-これら*名前\=値*ペアは、プラグインにとって意味のあるである必要があります\-を指定することにします。 一部のプラグを\-ins 引数は省略可能です。  
+これら*の\=名前と値*のペアは、指定\-するプラグインにとって意味のあるものである必要があります。 一部のプラグイン\-では、引数は省略可能です。  
   
-CAU プラグインの構文\-引数でこれらの一般的な規則に従います。  
+CAU プラグイン\-引数の構文は、次の一般的な規則に従います。  
   
--   複数*名前\=値*のペアをセミコロンで区切られます。  
+-   複数*の\=名前と値*のペアは、セミコロンで区切られます。  
   
--   値にスペースを含める場合は、次のように引用符で囲みます。**Name1\="Value with Spaces"** します。  
+-   値にスペースを含める場合は、次のように引用符で囲みます。**Name1\="Value with Spaces"** 。  
   
--   正確な構文*値*プラグに依存\-でします。  
+-   *値*の正確な構文は、プラグイン\-によって異なります。  
   
-プラグインを指定する\-in 引数をサポートする CAU の PowerShell コマンドレットを使用して、 **– CauPluginParameters**パラメーターの形式でパラメーターを渡します。  
+**– CauPluginParameters**パラメーター\-をサポートする CAU PowerShell コマンドレットを使用してプラグイン引数を指定するには、次の形式のパラメーターを渡します。  
   
-**\-@{Name1\=Value1;Name2\=Value2;Name3\=:value3}**  
+**\-CauPluginArguments @ {Name1\=Value1;Name2\=Value2;Name3\=Value3}**  
   
-定義済みの PowerShell ハッシュ テーブルを使用することもできます。 プラグインを指定する\-プラグを 1 つ以上の引数で\-引数をコンマ区切りで複数のハッシュ テーブルを渡します。 プラグを渡す\-引数プラグに\-で指定された順序で**CauPluginName**します。  
+定義済みの PowerShell ハッシュテーブルを使用することもできます。 複数のプラグイン\-\-に対してプラグイン引数を指定するには、引数の複数のハッシュテーブルをコンマで区切って渡します。 CauPluginName で指定\-されたプラグインの\-順序で、プラグインの引数を渡します。  
   
-### <a name="specify-optional-plug-in-arguments"></a>省略可能なプラグインを指定\-引数  
-プラグ\-CAU によってインストールされる ins \( **Microsoft.WindowsUpdatePlugin**と**Microsoft.HotfixPlugin** \)選択できる追加のオプションを提供します。 表示されます、CAU UI で、**追加オプション**プラグの更新実行オプションを構成した後にページ\-でします。 省略可能なプラグインとしてこれらのオプションを構成する場合は、CAU の PowerShell コマンドレットを使用している\-引数。 詳細については、後の「 [Microsoft.WindowsUpdatePlugin の使用](#BKMK_WUP) 」および「 [Microsoft.HotfixPlugin の使用](#BKMK_HFP) 」を参照してください。  
+### <a name="specify-optional-plug-in-arguments"></a>オプションのプラグイン\-引数の指定  
+CAU が\- **microsoft.windowsupdateplugin**と**microsoft.hotfixplugin** \(をインストールするプラグインは、選択できる追加のオプションを提供します。\) CAU UI では、プラグイン\-の更新実行オプションを構成した後、[**追加オプション**] ページにこれらの UI が表示されます。 CAU の PowerShell コマンドレットを使用している場合、これらのオプションは\-オプションのプラグイン引数として構成されます。 詳細については、後の「 [Microsoft.WindowsUpdatePlugin の使用](#BKMK_WUP) 」および「 [Microsoft.HotfixPlugin の使用](#BKMK_HFP) 」を参照してください。  
   
-## <a name="manage-plug-ins-using-windows-powershell-cmdlets"></a>プラグインの管理\-Windows PowerShell コマンドレットを使用してアドイン  
+## <a name="manage-plug-ins-using-windows-powershell-cmdlets"></a>Windows PowerShell\-コマンドレットを使用してプラグインを管理する  
   
 |コマンドレット|説明|  
 |----------|---------------|  
-|[Get-CauPlugin](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/get-cauplugin)|プラグを更新する 1 つまたは複数のソフトウェアに関する情報を取得\-ローカル コンピューターに登録されているアドイン。|  
-|[Register-cauplugin]((https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/register-cauplugin))|プラグインを更新する CAU ソフトウェアを登録します\-でローカル コンピューターにします。|  
-|[登録を解除 CauPlugin](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating/unregister-cauplugin)|ソフトウェア更新プラグインを削除します\-でプラグインの一覧から\-CAU で使用できるアドインです。 **注:** プラグ\-CAU と共にインストールされたスナップイン\( **Microsoft.WindowsUpdatePlugin**と**Microsoft.HotfixPlugin** \)登録を解除することはできません。|  
+|[Register-cauplugin](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/get-cauplugin)|ローカルコンピューターに登録されている 1\-つまたは複数のソフトウェア更新プラグインに関する情報を取得します。|  
+|[Register-cauplugin]((https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/register-cauplugin))|ローカルコンピューター上の CAU ソフトウェア\-更新プラグインを登録します。|  
+|[登録解除-Register-cauplugin](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating/unregister-cauplugin)|CAU で使用できるプラグイン\-\-の一覧から、ソフトウェア更新プラグインを削除します。 **注:** CAU\- **microsoft.windowsupdateplugin および** microsoft.hotfixpluginと共にインストールされたプラグインの登録を解除することはできません。\) \(|  
   
-## <a name="BKMK_WUP"></a>Microsoft.WindowsUpdatePlugin の使用  
+## <a name="BKMK_WUP"></a>Microsoft.windowsupdateplugin の使用  
 
-既定のプラグイン\-で、CAU の**Microsoft.WindowsUpdatePlugin**、次の操作を実行します。
+CAU の既定\-のプラグインである**microsoft.windowsupdateplugin**では、次のアクションが実行されます。
 - 各フェールオーバー クラスター ノード上の Windows Update エージェントと通信し、各ノードで実行されている Microsoft 製品に必要な更新プログラムを適用します。
-- Windows Update や Microsoft Update、またはからクラスター更新プログラムを直接のインストールで\-オンプレミス Windows Server Update Services \(WSUS\)サーバー。
-- 選択されているのみのインストール、一般配布リリース\(GDR\)更新します。 既定では、プラグ\-で重要なソフトウェアの更新プログラムのみ適用されます。 構成は必要ありません。 既定の構成で、重要な GDR 更新プログラムが各ノードにダウンロードされ、インストールされます。 
+- Windows Update または Microsoft Update から直接、またはオン\-プレミス Windows Server Update Services \(WSUS\)サーバーからクラスターの更新プログラムをインストールします。
+- 選択された汎用配布リリース\(の\) GDR 更新プログラムのみをインストールします。 既定では、プラグイン\-は重要なソフトウェア更新プログラムのみを適用します。 構成は必要ありません。 既定の構成で、重要な GDR 更新プログラムが各ノードにダウンロードされ、インストールされます。 
 
 > [!NOTE]
-> 既定で選択されている重要なソフトウェア更新プログラム以外の更新プログラムを適用する\(ドライバーの更新など、\)、省略可能なプラグインを構成する\-パラメーターにします。 詳細については、「[Windows Update Agent クエリ文字列を構成する](#BKMK_QUERY)」を参照してください。
+> 既定\(で選択されている重要なソフトウェア更新プログラム (ドライバーの更新\)プログラムなど) 以外の更新プログラムを適用する\-には、オプションのプラグインパラメーターを構成します。 詳細については、「[Windows Update Agent クエリ文字列を構成する](#BKMK_QUERY)」を参照してください。
 
-### <a name="requirements"></a>要件
+### <a name="requirements"></a>必要条件
 
-- フェールオーバー クラスターとリモート更新コーディネーター コンピューター\(使用されている場合\)CAU と記載リモート管理のために必要な構成の要件を満たす必要があります[要件と CAU のベスト プラクティス](cluster-aware-updating-requirements.md).
+- フェールオーバークラスターとリモート更新コーディネーターコンピューター \(が使用\)されている場合は、cau の要件と、「 [cau の要件とベストプラクティス](cluster-aware-updating-requirements.md)」に記載されているリモート管理に必要な構成を満たしている必要があります。
 - 「[Microsoft 更新プログラムを適用する場合の推奨事項 (英語)](cluster-aware-updating-requirements.md#BKMK_BP_WUA)」を参照し、フェールオーバー クラスター ノードに合わせて Microsoft Update に必要な変更を加えます。
-- 最良の結果をお勧め、CAU ベスト プラクティス アナライザーを実行する\(BPA\) CAU を使用して更新プログラムを適用するクラスターと更新プログラムの環境が正しく構成されていることを確認します。 詳細については、「 [Test CAU updating readiness](cluster-aware-updating-requirements.md#BKMK_BPA)」を参照してください。
+- 最適な結果を得るために、cau ベストプラクティスアナライザー \(BPA\)を実行して、cau を使用して更新プログラムを適用するようにクラスターと更新プログラムの環境が正しく構成されていることを確認することをお勧めします。 詳細については、「 [Test CAU updating readiness](cluster-aware-updating-requirements.md#BKMK_BPA)」を参照してください。
 
 > [!NOTE]
 > Microsoft の利用規約に同意する必要がある更新プログラムや、ユーザー操作が必要な更新プログラムは除外されるため、手動でインストールする必要があります。
 
 ### <a name="additional-options"></a>[追加オプション]
 
-必要に応じて、次のプラグインを指定できます\-拡張またはプラグによって適用される更新プログラムのセットを制限する引数の\-で。
-- プラグを構成する\-の各ノードは、CAU UI で、重要な更新プログラムだけでなく、推奨される更新プログラムを適用するに、**追加オプション**] ページで、[、**同じ更新プログラムの推奨 me 付与方法重要な更新プログラムを受信する**チェック ボックスをオンします。
-<br>また、構成、 **'IncludeRecommendedUpdates'\='True'** プラグイン\-引数にします。
-- プラグを構成する\-でを各クラスター ノードに適用する GDR 更新プログラムの種類をフィルター処理する、Windows Update エージェント クエリ文字列を使用して指定、 **QueryString**プラグイン\-引数にします。 詳細については、「[Windows Update Agent クエリ文字列を構成する](#BKMK_QUERY)」を参照してください。
+必要に応じて、次のプラグイン\-の引数を指定して、プラグイン\-によって適用される更新プログラムのセットを拡張または制限することができます。
+- 各ノードの重要\-な更新プログラムだけでなく、推奨される更新プログラムを適用するようにプラグインを構成するには、CAU UI の [**追加のオプション**] ページで、[**推奨される更新プログラムを送信するときと同じ方法で重要な更新プログラムを受信する**] を選択します。チェックボックスをオンにします。
+<br>または、 **' IncludeRecommendedUpdates '\=' True '** プラグイン\-引数を構成します。
+- 各クラスターノードに\-適用される GDR 更新プログラムの種類をフィルター処理するようにプラグインを構成するには、 **QueryString**プラグイン\-引数を使用して Windows Update エージェントクエリ文字列を指定します。 詳細については、「[Windows Update Agent クエリ文字列を構成する](#BKMK_QUERY)」を参照してください。
 
-### <a name="BKMK_QUERY"></a>Windows Update Agent クエリ文字列を構成します。  
-プラグを構成する\-、既定の引数でプラグイン\-、 **Microsoft.WindowsUpdatePlugin**、Windows Update エージェントで構成される\(WUA\)クエリ文字列。 この手順では、WUA API を使用して、1 つまたは複数のグループの Microsoft 更新プログラムを指定して、指定した条件に基づいて各ノードに適用します。 複数の条件を組み合わせるには、論理 AND または論理 OR を使用できます。 WUA クエリ文字列が、プラグインで指定された\-よう引数で。  
+### <a name="BKMK_QUERY"></a>Windows Update エージェントのクエリ文字列を構成する  
+Windows Update エージェント\-\-のWUA\)クエリ文字列で構成される既定のプラグインである microsoft.windowsupdateplugin に対して、プラグイン引数を構成できます。 \( この手順では、WUA API を使用して、1 つまたは複数のグループの Microsoft 更新プログラムを指定して、指定した条件に基づいて各ノードに適用します。 複数の条件を組み合わせるには、論理 AND または論理 OR を使用できます。 WUA クエリ文字列は、次のように\-プラグイン引数で指定します。  
   
-**QueryString\="Criterion1\=Value1 と\/または Criterion2\=Value2 と\/または..."**  
+**QueryString\="Criterion1\=Value1 and\/or Criterion2\=Value2 and\/or..."**  
   
 たとえば、**Microsoft.WindowsUpdatePlugin** では、既定の **QueryString** 引数を使用して重要な更新プログラムを自動的に選択します。この引数は、**IsInstalled**、**Type**、**IsHidden**、および **IsAssigned** の条件を使用して構築します。  
   
-**QueryString\="IsInstalled\=0 と種類\='ソフトウェア' および IsHidden\=0 と IsAssigned\=1"**  
+**QueryString\="IsInstalled\=0 and Type\=' Software ' and IsHidden\=0 and isassigned\=1"**  
   
-指定した場合、 **QueryString**引数、既定値の代わりに使用されます**QueryString**プラグ用に構成された\-で。  
+**QueryString**引数を指定すると、プラグイン\-に対して構成されている既定の**querystring**の代わりに使用されます。  
   
 #### <a name="example-1"></a>例 1
   
-構成する、 **QueryString** ID によって識別される特定の更新プログラムをインストールする引数*f6ce46c1\-971 c\-43f9\-a2aa\-783df125f003*:  
+ID *f6ce46c1\-971c\-43f9\-a2aa\-783df125f003*によって識別される特定の更新をインストールする**QueryString**引数を構成するには、次のようにします。  
   
-**QueryString\="UpdateID\=' f6ce46c1\-971 c\-43f9\-a2aa\-783df125f003' や IsInstalled\=0"**  
+**QueryString\="updateid\=' f6ce46c1\-971c\-43f9\-a2aa\-783df125f003 ' and IsInstalled\=0"**  
   
 > [!NOTE]  
-> 前の例は、クラスターを使用して更新プログラムを適用するために有効な\-更新ウィザードを注意してください。 自己を構成することによって、特定の更新プログラムをインストールするかどうか\-CAU UI を使用した、またはを使用して、更新オプション、**追加\-CauClusterRole**または**設定\-CauClusterRole**PowerShell コマンドレットでは、2 つの 1 つを使用して UpdateID 値を書式設定する必要があります\-区切り記号。  
+> 前の例は、クラスター\-対応更新ウィザードを使用して更新プログラムを適用する場合に有効です。 CAU UI または**Add\-add-cauclusterrole**または**Set\-add-cauclusterrole**PowerShell\-コマンドレットを使用して自己更新オプションを構成して特定の更新プログラムをインストールする場合は、2つの単一\-引用符を含む updateid 値:  
 >   
-> **QueryString\="UpdateID\=' f6ce46c1\-971 c\-43f9\-a2aa\-783df125f003 '、IsInstalled\=0"**  
+> **QueryString\="updateid\=' ' f6ce46c1\-971c\-43f9\-a2aa\-783df125f003 ' ' and IsInstalled\=0"**  
   
 #### <a name="example-2"></a>例 2
   
 ドライバーのみをインストールする **QueryString** 引数を構成するには:  
   
-**QueryString\="IsInstalled\=0 と種類\='ドライバー' と IsHidden\=0"**  
+**QueryString\="IsInstalled\=0 and Type\=' Driver ' and IsHidden\=0"**  
   
-既定のクエリ文字列の詳細については、プラグイン\-、 **Microsoft.WindowsUpdatePlugin**、検索条件\(など**IsInstalled**\)、クエリ文字列に含めることができる構文で検索条件に関するセクションを参照してくださいと、 [Windows Update エージェント (WUA) API リファレンス](https://go.microsoft.com/fwlink/p/?LinkId=223304)します。  
+既定の\-プラグインのクエリ文字列、microsoft.windowsupdateplugin、 **IsInstalled**\)などの検索条件\(、およびクエリに含めることができる構文の詳細については、次を参照して**ください。** 文字列の詳細については、「 [Windows Update エージェント (WUA) API リファレンス](https://go.microsoft.com/fwlink/p/?LinkId=223304)」の検索条件に関するセクションを参照してください。  
   
-## <a name="BKMK_HFP"></a>Microsoft.HotfixPlugin を使用します。  
-プラグ\-で**Microsoft.HotfixPlugin** Microsoft の限定配布リリースを適用するために使用できる\(LDR\)更新\(、修正プログラムとも呼ばれ、旧称は Qfe\)ことを個別にダウンロードに特定の Microsoft ソフトウェアの問題に対処します。 プラグインは、SMB ファイル共有上のルート フォルダーから更新プログラムをインストールして適用以外にもカスタマイズできます\-Microsoft ドライバー、ファームウェア、および BIOS の更新プログラム。
+## <a name="BKMK_HFP"></a>Microsoft.hotfixplugin を使用する  
+Microsoft.hotfixplugin プラグイン\-を使用すると、修正プログラムとも呼ばれる microsoft の\(制限\)付き\(配布リリース LDR の更新プログラムを適用\)できます **。** 以前は、特定の Microsoft ソフトウェアの問題に対処するには、個別にダウンロードしてください。 このプラグインは、SMB ファイル共有のルートフォルダーから更新プログラムをインストールします。また、Microsoft 以外\-のドライバー、ファームウェア、BIOS の更新プログラムを適用するようにカスタマイズすることもできます。
 
 > [!NOTE]
-> 修正プログラムは、サポート技術情報の記事で Microsoft からダウンロードできる場合がありますが、としてお客様にも提供されている\-必要に応じて。
+> 修正プログラムは、サポート技術情報の記事に記載されている Microsoft からダウンロードできますが、必要\-に応じてお客様に提供されることもあります。
 
 ### <a name="requirements"></a>必要条件
 
-- フェールオーバー クラスターとリモート更新コーディネーター コンピューター\(使用されている場合\)CAU と記載リモート管理のために必要な構成の要件を満たす必要があります[要件と CAU のベスト プラクティス](cluster-aware-updating-requirements.md).
+- フェールオーバークラスターとリモート更新コーディネーターコンピューター \(が使用\)されている場合は、cau の要件と、「 [cau の要件とベストプラクティス](cluster-aware-updating-requirements.md)」に記載されているリモート管理に必要な構成を満たしている必要があります。
 - 「[Microsoft.HotfixPlugin を使用する場合の推奨事項 (英語)](cluster-aware-updating-requirements.md#BKMK_BP_HF)」を参照してください。
-- 最良の結果をお勧め、CAU ベスト プラクティス アナライザーを実行する\(BPA\) CAU を使用して更新プログラムを適用するクラスターと更新プログラムの環境が正しく構成されていることを確認するモデル。 詳細については、「 [Test CAU updating readiness](cluster-aware-updating-requirements.md#BKMK_BPA)」を参照してください。
-- パブリッシャーで更新プログラムを入手し、コピーまたはサーバー メッセージ ブロックに抽出\(SMB\)ファイル共有\(修正プログラム ルート フォルダー\)以上をサポートする SMB 2.0 とは、すべてのクラスターからアクセス可能なノードとリモート更新コーディネーター コンピューター \(CAU をリモートで使用する場合\-更新モード\)します。 詳細については、後述する「 [修正プログラム ルート フォルダー構造を構成する](#BKMK_HF_ROOT) 」を参照してください。 
+- 最適な結果を得るために、cau ベストプラクティスアナライザー \(BPA\)モデルを実行して、cau を使用して更新プログラムを適用するようにクラスターと更新プログラムの環境が正しく構成されていることを確認することをお勧めします。 詳細については、「 [Test CAU updating readiness](cluster-aware-updating-requirements.md#BKMK_BPA)」を参照してください。
+- 発行元から更新プログラムを入手してコピーするか、少なくとも smb 2.0 \(をサポートし\(、すべてのクラスターからアクセス可能なサーバーメッセージブロック smb\)ファイル共有修正プログラムルートフォルダー\)に抽出します。リモート\(更新\-モードでCAUが使用されている場合は、ノードとリモート\)更新コーディネーターコンピューター。 詳細については、後述する「 [修正プログラム ルート フォルダー構造を構成する](#BKMK_HF_ROOT) 」を参照してください。 
 
     > [!NOTE]
-    > 既定では、このプラグインによって\-で次のファイル名拡張子を持つのみの修正プログラムをインストール: .msu、.msi、および .msp します。
+    > 既定では、この\-プラグインによってインストールされるのは、ファイル名拡張子が .msu、.msi、および .msp の修正プログラムのみです。
 
-- DefaultHotfixConfig.xml ファイル コピー\(で表示されている、 **%systemroot%\\System32\\WindowsPowerShell\\v1.0\\モジュール\\ClusterAwareUpdating** CAU ツールがインストールされているコンピューター上のフォルダー\)修正プログラムを抽出およびを作成した修正プログラム ルート フォルダー。 たとえば、構成ファイルのコピー  *\\ \\MyFileServer\\修正プログラム\\ルート\\*します。 
+- \( **% Systemroot%\\System32\\\\windowspowershell v1.0Modules\\clusterawareupdating.dll フォルダーに用意されている defaulthotfixconfig .xml ファイルをコピーします。\\** 作成した修正プログラムルートフォルダーに CAU\)ツールがインストールされていて、修正プログラムを抽出したコンピューター。 たとえば、構成ファイルを *\\myfileserver\\の\\修正プログラムのルート\\ \\* にコピーします。 
 
     > [!NOTE]
     > Microsoft が提供するほとんどの修正プログラムやその他の更新プログラムをインストールするには、既定の修正プログラム構成ファイルを変更せずに使用できます。 変更が必要な場合は、高度なタスクとして構成ファイルをカスタマイズできます。 構成ファイルには、カスタム規則を含めることができます。たとえば、特定の拡張子を持つ修正プログラム ファイルの処理、特定の終了条件に関する動作の定義などです。 詳細については、このトピックの「[修正プログラムの構成ファイルをカスタマイズする](#BKMK_CONFIG_FILE)」を参照してください。
@@ -167,28 +167,28 @@ CAU プラグインの構文\-引数でこれらの一般的な規則に従い�
 ### <a name="configuration"></a>構成
 
 次の設定を構成します。 詳細については、このトピックで後述するセクションのリンクを参照してください。
-- 適用する更新プログラムと修正プログラムの構成ファイルが保存される、共有される修正プログラム ルート フォルダーのパス。 CAU UI でこのパスを入力するか、または構成、 **HotfixRootFolderPath\=\<パス >** PowerShell プラグ\-引数にします。 
+- 適用する更新プログラムと修正プログラムの構成ファイルが保存される、共有される修正プログラム ルート フォルダーのパス。 このパスを CAU UI に入力するか、 **\=HotfixRootFolderPath\<path >** PowerShell プラグイン\-の引数を構成します。 
 
    > [!NOTE]
-   > 修正プログラム ルート フォルダーを指定するには、ローカル フォルダーのパス、または形式の UNC パスとして *\\ \\ServerName\\共有\\RootFolderName*します。 ドメイン\-ベースまたはスタンドアロン DFS Namespace パスを使用できます。 ただし、プラグ\-へのアクセスを確認する機能の修正プログラムの構成ファイルのアクセス許可と互換性がない DFS Namespace パスでは、いずれかを構成する場合、CAU UI を使用して、または構成することでアクセス許可のチェックを無効にする必要がありますので、**DisableAclChecks\='True'** プラグイン\-引数にします。
-- 共有フォルダーのフォルダーにアクセスし、SMB からアクセスされるデータの整合性を確保するには、適切なアクセス許可を確認する修正プログラム ルート フォルダーをホストするサーバーで設定\(SMB 署名または SMB 暗号化\)します。 詳細については、「[修正プログラム ルート フォルダーへのアクセスを制限する](#BKMK_ACL)」を参照してください。
+   > 修正プログラムルートフォルダーは、ローカルフォルダーパスとして指定することも、  *\\ServerName\\Share \\\\rootfoldername*という形式の UNC パスとして指定することもできます。 ドメイン\-ベースまたはスタンドアロンの DFS 名前空間パスを使用できます。 ただし、修正プログラム\-の構成ファイルのアクセス許可をチェックするプラグイン機能は、DFS 名前空間パスと互換性がありません。そのため、構成する場合は、CAU UI を使用するか、**Disableaclchecks\=' True '** プラグイン\-引数をチェックします。
+- 修正プログラムルートフォルダーをホストするサーバーの設定。このフォルダーにアクセスするための適切なアクセス許可があるかどうかを確認し、smb \(共有フォルダー smb 署名また\)は smb 暗号化からアクセスされるデータの整合性を確認します。 詳細については、「[修正プログラム ルート フォルダーへのアクセスを制限する](#BKMK_ACL)」を参照してください。
 
 ### <a name="additional-options"></a>[追加オプション]
 
-- プラグを必要に応じて、構成\-でのでその SMB 暗号化を実行、修正プログラムのファイル共有からのデータにアクセスするとき。 CAU ui での**追加オプション**] ページで、[、**修正プログラム ルート フォルダーへのアクセスに SMB 暗号化を要求**オプション、または構成、 **RequireSMBEncryption\='True'** PowerShell プラグ\-引数にします。 
+- 必要に応じて、\-修正プログラムのファイル共有からデータにアクセスするときに SMB 暗号化が適用されるようにプラグインを構成します。 CAU UI の [**追加オプション**] ページで、[**修正プログラムルートフォルダーへのアクセス時に SMB 暗号化を要求**する] オプションをオンにするか、\- **RequireSMBEncryption\=' True '** PowerShell プラグイン引数を構成します。 
   > [!IMPORTANT]
   > SMB データの SMB 署名または SMB 暗号化との整合性を有効にするには、SMB サーバーで追加の構成手順を実行する必要があります。 詳細については、「 [修正プログラム ルート フォルダーへのアクセスを制限する](#BKMK_ACL)」の手順 4. を参照してください。 SMB 暗号化を使用するオプションを選択しても、SMB 暗号化を使用したアクセスに対応するように修正プログラム ルート フォルダーが構成されていない場合、更新実行は失敗します。
-- 必要に応じて、修正プログラム ルート フォルダーと修正プログラムの構成ファイルに十分なアクセス許可があるかどうかに関する既定の確認を無効にします。 CAU ui で選択**修正プログラム ルート フォルダーおよび構成ファイルへの管理者アクセスのチェックを無効にする**、または構成、 **DisableAclChecks\='True'** プラグイン\-で引数。
-- 必要に応じて、構成、 **HotfixInstallerTimeoutMinutes\= <Integer>** 修正プログラムはどのくらいの時間を指定する引数のプラグイン\-で修正プログラムのインストーラー プロセスから戻るまで待機します。 \(既定では 30 分です。\)たとえば、2 時間のタイムアウト期間を指定するには、次のように設定します。 **HotfixInstallerTimeoutMinutes\=120**します。
-- 必要に応じて、構成、 **HotfixConfigFileName \= <name>** プラグイン\-では、修正プログラム ルート フォルダーにある修正プログラム構成ファイルの名前を指定する引数。 指定しない場合、既定の名前である DefaultHotfixConfig.xml が使用されます。
+- 必要に応じて、修正プログラム ルート フォルダーと修正プログラムの構成ファイルに十分なアクセス許可があるかどうかに関する既定の確認を無効にします。 CAU UI で、[**修正プログラムルートフォルダーおよび構成ファイルへの管理者アクセスの確認を無効**にする] を選択するか、 **\=disableaclchecks ' True '** プラグイン\-引数を構成します。
+- 必要に応じて **、\= HotfixInstallerTimeoutMinutes<Integer>** 引数を構成して、修正\-プログラムプラグインが修正プログラムのインストーラープロセスを返すまで待機する時間を指定します。 \(既定値は30分です。\)たとえば、2時間のタイムアウト期間を指定するには、 **HotfixInstallerTimeoutMinutes\=120**を設定します。
+- 必要に応じて **、 \= HotfixConfigFileName <name>** プラグイン\-引数を構成して、修正プログラムルートフォルダーにある修正プログラムの構成ファイルの名前を指定します。 指定しない場合、既定の名前である DefaultHotfixConfig.xml が使用されます。
   
-### <a name="BKMK_HF_ROOT"></a>修正プログラム ルート フォルダー構造を構成します。
+### <a name="BKMK_HF_ROOT"></a>修正プログラムルートフォルダー構造を構成する
 
-修正プログラム プラグイン\-にするには、修正プログラムする必要がありますに格納する適切な\-構造体を SMB ファイル共有で定義されている\(修正プログラム ルート フォルダー\)、および修正プログラム プラグインを構成する必要があります\-へのパスを使用して、CAU UI または CAU の PowerShell コマンドレットを使用して修正プログラム ルート フォルダー。 このパスは、プラグインに渡される\-でとして、 **HotfixRootFolderPath**引数。 次の例のように、実際の更新のニーズに応じて、修正プログラム ルート フォルダーに対応するいくつかの構造からいずれかを選択できます。 この構造に従っていないファイルまたはフォルダーは無視されます。  
+修正\-プログラムプラグインを機能させるには、SMB ファイル共有\(の修正\-プログラムルートフォルダー\)に明確に定義された構造で修正プログラムを保存する必要\-があります。修正プログラムプラグインは、CAU UI または CAU PowerShell コマンドレットを使用した修正プログラムルートフォルダー。 このパスは、 **HotfixRootFolderPath**引数と\-してプラグインに渡されます。 次の例のように、実際の更新のニーズに応じて、修正プログラム ルート フォルダーに対応するいくつかの構造からいずれかを選択できます。 この構造に従っていないファイルまたはフォルダーは無視されます。  
   
-#### <a name="example-1---folder-structure-used-to-apply-hotfixes-to-all-cluster-nodes"></a>例 1: フォルダーの構造体のすべてのクラスター ノードに修正プログラムを適用するために使用
+#### <a name="example-1---folder-structure-used-to-apply-hotfixes-to-all-cluster-nodes"></a>例 1-すべてのクラスターノードに修正プログラムを適用するために使用されるフォルダー構造
   
-すべてのクラスター ノードに修正プログラムを適用することを指定するという名前のフォルダーにコピー **CAUHotfix\_すべて**修正プログラム ルート フォルダー。 この例で、 **HotfixRootFolderPath**プラグイン\-引数でに設定されて *\\ \\MyFileServer\\修正プログラム\\ルート\\*. **CAUHotfix\_すべて**フォルダーには、拡張子が .msu、.msi、および .msp のすべてのクラスター ノードに適用されると次の 3 つの更新プログラムが含まれています。 この更新プログラム ファイル名は、説明のためにのみ使用されています。  
+修正プログラムがすべてのクラスターノードに適用されるように指定するには、修正プログラムルートフォルダーの下の**CAUHotfix\_all**という名前のフォルダーにコピーします。 この例では、 **HotfixRootFolderPath**プラグイン\-の引数が myfileserver の *\\\\修正プログラム\\の\\ルート\\* に設定されています。 **CAUHotfix\_all**フォルダーには、拡張子が .msu、.msi、および .msp の3つの更新プログラムが含まれており、すべてのクラスターノードに適用されます。 この更新プログラム ファイル名は、説明のためにのみ使用されています。  
   
 > [!NOTE]  
 > この例と以降の例で、DefaultHotfixConfig.xml という既定の名前の修正プログラム構成ファイルは、修正プログラム ルート フォルダーの必要な場所に表示されます。  
@@ -203,9 +203,9 @@ CAU プラグインの構文\-引数でこれらの一般的な規則に従い�
       ...  
 ```  
   
-#### <a name="example-2---folder-structure-used-to-apply-certain-updates-only-to-a-specific-node"></a>例 2 - フォルダー構造の特定のノードにのみ特定の更新プログラムを適用するために使用
+#### <a name="example-2---folder-structure-used-to-apply-certain-updates-only-to-a-specific-node"></a>例 2-特定のノードにのみ特定の更新プログラムを適用するために使用されるフォルダー構造
   
-特定のノードにのみ適用する修正プログラムを指定するには、修正プログラム ルート フォルダー以下にあるノード名を持つサブフォルダーを使用します。 クラスター ノードの NetBIOS 名を使用します。たとえば、*ContosoNode1* などです。 次に、そのノードにのみ適用する更新プログラムを、このサブフォルダーに移動します。 次の例では、 **HotfixRootFolderPath**プラグイン\-引数でに設定されて *\\ \\MyFileServer\\修正プログラム\\ルート\\*. 内の更新、 **CAUHotfix\_すべて**フォルダーはすべてのクラスター ノードに適用されると*Node1\_特定\_Update.msu* にのみ適用される*ContosoNode1*します。  
+特定のノードにのみ適用する修正プログラムを指定するには、修正プログラム ルート フォルダー以下にあるノード名を持つサブフォルダーを使用します。 クラスター ノードの NetBIOS 名を使用します。たとえば、*ContosoNode1* などです。 次に、そのノードにのみ適用する更新プログラムを、このサブフォルダーに移動します。 次の例では、 **HotfixRootFolderPath**プラグイン\-の引数が myfileserver の *\\\\修正プログラム\\の\\ルート\\* に設定されています。 **CAUHotfix\_all**フォルダー内の更新プログラムはすべてのクラスターノードに適用され、 *Node1\_\_固有の更新*プログラムは*ContosoNode1*にのみ適用されます。  
   
 ```
 \\MyFileServer\Hotfixes\Root\   
@@ -220,11 +220,11 @@ CAU プラグインの構文\-引数でこれらの一般的な規則に従い�
       ...  
 ```  
   
-#### <a name="example-3---folder-structure-used-to-apply-updates-other-than-msu-msi-and-msp-files"></a>例 3 - フォルダー構造が .msu、.msi、および .msp ファイル以外の更新プログラムを適用するために使用
+#### <a name="example-3---folder-structure-used-to-apply-updates-other-than-msu-msi-and-msp-files"></a>例 3-.msu、.msi、および .msp ファイル以外の更新プログラムを適用するために使用されるフォルダー構造
   
-既定では、**Microsoft.HotfixPlugin** は拡張子が .msu、.msi、または .msp の更新プログラムのみを適用します。 ただし、一部の更新プログラムは拡張子が異なり、別のインストール コマンドが必要な場合があります。 たとえば、場合によっては、拡張子が .exe のファームウェアの更新プログラムをクラスター内のノードに適用する必要があります。 修正プログラム ルート フォルダーを構成するには、特定の非を示す名前のサブフォルダー\-既定の更新プログラムの種類をインストールする必要があります。 また、対応するフォルダーのインストール規則を構成して、修正プログラムの構成 XML ファイルで `<FolderRules>` 要素にインストール コマンドを指定する必要もあります。  
+既定では、**Microsoft.HotfixPlugin** は拡張子が .msu、.msi、または .msp の更新プログラムのみを適用します。 ただし、一部の更新プログラムは拡張子が異なり、別のインストール コマンドが必要な場合があります。 たとえば、場合によっては、拡張子が .exe のファームウェアの更新プログラムをクラスター内のノードに適用する必要があります。 特定の既定以外\-の更新プログラムの種類をインストールすることを示すサブフォルダーを使用して、修正プログラムルートフォルダーを構成することができます。 また、対応するフォルダーのインストール規則を構成して、修正プログラムの構成 XML ファイルで `<FolderRules>` 要素にインストール コマンドを指定する必要もあります。  
   
-次の例では、 **HotfixRootFolderPath**プラグイン\-引数でに設定されて *\\ \\MyFileServer\\修正プログラム\\ルート\\*. 一部の更新プログラムはすべてのクラスター ノードに適用されます。またファームウェアの更新プログラムの *SpecialHotfix1.exe* は、*FolderRule1* を使用して *ContosoNode1* に適用されます。 修正プログラムの構成ファイルで *ContosoNode1* を構成する場合の詳細については、このトピックの「 [修正プログラムの構成ファイルをカスタマイズする](#BKMK_CONFIG_FILE) 」を参照してください。  
+次の例では、 **HotfixRootFolderPath**プラグイン\-の引数が myfileserver の *\\\\修正プログラム\\の\\ルート\\* に設定されています。 一部の更新プログラムはすべてのクラスター ノードに適用されます。またファームウェアの更新プログラムの *SpecialHotfix1.exe* は、*FolderRule1* を使用して *ContosoNode1* に適用されます。 修正プログラムの構成ファイルで *ContosoNode1* を構成する場合の詳細については、このトピックの「 [修正プログラムの構成ファイルをカスタマイズする](#BKMK_CONFIG_FILE) 」を参照してください。  
   
 ```
 \\MyFileServer\Hotfixes\Root\   
@@ -241,10 +241,10 @@ CAU プラグインの構文\-引数でこれらの一般的な規則に従い�
       ...  
 ```
 
-### <a name="BKMK_CONFIG_FILE"></a>修正プログラム構成ファイルをカスタマイズします。  
+### <a name="BKMK_CONFIG_FILE"></a>修正プログラムの構成ファイルをカスタマイズする  
 修正プログラムの構成ファイルは、フェールオーバー クラスターに特定の修正プログラム ファイルの種類を **Microsoft.HotfixPlugin** でインストールする方法を制御します。 構成ファイルの XML スキーマは HotfixConfigSchema.xsd で定義されています。この xsd ファイルは、CAU ツールがインストールされているコンピューターの次のフォルダーに保存されています。  
   
-**%systemroot%\\System32\\WindowsPowerShell\\v1.0\\モジュール\\ClusterAwareUpdating フォルダー**  
+**% systemroot%\\System32\\\\windowspowershell\\v1.0モジュールclusterawareupdating.dllフォルダー\\**  
   
 修正プログラムの構成ファイルをカスタマイズするには、この場所にあるサンプルの構成ファイル DefaultHotfixConfig.xml を修正プログラム ルート フォルダーにコピーし、実際のシナリオに合わせて変更します。  
   
@@ -253,7 +253,7 @@ CAU プラグインの構文\-引数でこれらの一般的な規則に従い�
   
 修正プログラムの構成 XML ファイルは、次の 2 つのカテゴリの修正プログラムについて、既定でインストール規則と終了条件を定義しています。  
   
--   拡張機能の修正プログラム ファイルをプラグ\-で既定でインストールできます\(.msu、.msi、および .msp ファイル\)します。  
+-   既定\-\)の .msu、.msi、および .msp ファイルでプラグインによってインストールできる拡張子を持つ修正プログラムファイル。 \(  
   
     これらは、 `<ExtensionRules>` 要素内の `<DefaultRules>` 要素として定義されます。 既定のサポートされるファイルの種類ごとに、1 つの `<Extension>` 要素があります。 一般的な XML 構造は次のとおりです。  
   
@@ -279,9 +279,9 @@ CAU プラグインの構文\-引数でこれらの一般的な規則に従い�
   
     一部の更新プログラムの種類を環境内のすべてのクラスター ノードに適用する必要がある場合、追加の `<Extension>` 要素を定義できます。  
   
--   修正プログラムまたはその他の更新されていない、.msi、.msu、または .msp ファイルがないファイル\-Microsoft ドライバー、ファームウェア、および BIOS の更新プログラム。  
+-   .Msi、.msu、または .msp ファイルではない修正プログラムファイル (Microsoft 以外\-のドライバー、ファームウェア、BIOS の更新プログラムなど)。  
   
-    各非\-として構成されている既定のファイルの種類、`<Folder>`内の要素、`<FolderRules>`要素。 `<Folder>` 要素の name 属性は、対応する種類の更新プログラムを保存する修正プログラム ルート フォルダー内のフォルダー名と同じにする必要があります。 フォルダーを指定できます、 **CAUHotfix\_すべて**フォルダーまたはノードで\-特定のフォルダー。 たとえば、 *FolderRule1* を修正プログラム ルート フォルダー内に構成する場合、XML ファイルに次の要素を構成して、そのフォルダー内の更新プログラムについてインストール テンプレートと終了条件を定義します。  
+    既定以外\-の各ファイルの種類は、 `<Folder>` `<FolderRules>`要素内の要素として構成されます。 `<Folder>` 要素の name 属性は、対応する種類の更新プログラムを保存する修正プログラム ルート フォルダー内のフォルダー名と同じにする必要があります。 フォルダーは、 **CAUHotfix\_All**フォルダーまたはノード\-固有のフォルダーに配置できます。 たとえば、 *FolderRule1* を修正プログラム ルート フォルダー内に構成する場合、XML ファイルに次の要素を構成して、そのフォルダー内の更新プログラムについてインストール テンプレートと終了条件を定義します。  
   
     ```xml  
     <FolderRules>  
@@ -311,12 +311,12 @@ CAU プラグインの構文\-引数でこれらの一般的な規則に従い�
 > [!IMPORTANT]  
 > `<ExitConditions>` に明示的に定義されていない終了コードは、更新プログラムが失敗したと解釈され、ノードは再起動しません。  
   
-### <a name="BKMK_ACL"></a>修正プログラム ルート フォルダーへのアクセスを制限します。  
+### <a name="BKMK_ACL"></a>修正プログラムルートフォルダーへのアクセスを制限する  
 SMB ファイル サーバーとファイル共有を構成して、 **Microsoft.HotfixPlugin**のコンテキストでのみアクセスするように修正プログラム ルート フォルダー ファイルと修正プログラムの構成ファイルをセキュリティで保護するには、いくつかの手順を実行する必要があります。 これらの手順によって、フェールオーバー クラスターのセキュリティを侵害するような方法で修正プログラム ファイルを改ざんする危険性を回避できます。  
   
 一般的な手順は次のとおりです。  
   
-1.  プラグを使用して更新実行に使用されるユーザー アカウントを識別する\-で  
+1.  プラグイン\-を使用して、更新実行に使用するユーザーアカウントを特定します。  
   
 2.  SMB ファイル サーバーで必要なグループにユーザー アカウントを構成する  
   
@@ -326,15 +326,15 @@ SMB ファイル サーバーとファイル共有を構成して、 **Microsoft
   
 5.  SMB サーバーで Windows ファイアウォール規則を有効にする  
   
-#### <a name="step-1-identify-the-user-account-that-is-used-for-updating-runs-by-using-the-hotfix-plug-in"></a>手順 1. 修正プログラム プラグインを使用して更新実行に使用されるユーザー アカウントを識別する\-で
+#### <a name="step-1-identify-the-user-account-that-is-used-for-updating-runs-by-using-the-hotfix-plug-in"></a>手順 1. 修正プログラムプラグイン\-を使用して、更新実行に使用するユーザーアカウントを特定します。
   
-CAU 更新実行を使用して、実行中にセキュリティ設定を確認するために使用するアカウント**Microsoft.HotfixPlugin** CAU をリモートで使用するかどうかによって異なります\-更新モードや self\-としてモードの更新次に示します。  
+**Microsoft.hotfixplugin**を使用して更新実行を実行するときに、cau でセキュリティ設定を確認するために使用されるアカウントは、\-次のように\-、cau がリモート更新モードと自己更新モードのどちらで使用されているかによって異なります。  
   
--   **リモート\-更新モード**をプレビューし、更新プログラムを適用するクラスター上で管理者特権を持つアカウント。  
+-   **リモート\-更新モード**クラスターで管理者特権を持つアカウントで、更新プログラムをプレビューして適用します。  
   
--   **Self\-更新モード**クラスター化された役割を CAU の Active Directory で構成されている仮想コンピューター オブジェクトの名前。 この名前は、Active Directory で CAU のクラスター化された役割用に事前設定された仮想コンピューター オブジェクトの名前か、クラスター化された役割用に CAU によって生成された名前です。 CAU によって生成される場合は、名前を取得、実行、**取得\-CauClusterRole** CAU PowerShell コマンドレット。 出力の **ResourceGroupName** は、生成された仮想コンピューター オブジェクト アカウントの名前です。  
+-   **自己\-更新モード**CAU のクラスター化された役割の Active Directory で構成された仮想コンピューターオブジェクトの名前。 この名前は、Active Directory で CAU のクラスター化された役割用に事前設定された仮想コンピューター オブジェクトの名前か、クラスター化された役割用に CAU によって生成された名前です。 Cau によって生成された名前を取得するには、 **Get\-add-cauclusterrole** cau PowerShell コマンドレットを実行します。 出力の **ResourceGroupName** は、生成された仮想コンピューター オブジェクト アカウントの名前です。  
   
-#### <a name="step-2-configure-this-user-account-in-the-necessary-groups-on-an-smb-file-server"></a>手順 2.  SMB ファイル サーバーで必要なグループにユーザー アカウントを構成する
+#### <a name="step-2-configure-this-user-account-in-the-necessary-groups-on-an-smb-file-server"></a>手順 2. SMB ファイル サーバーで必要なグループにユーザー アカウントを構成する
   
 > [!IMPORTANT]  
 > 更新実行に使用するアカウントは、SMB サーバーのローカルの管理者アカウントとして追加する必要があります。 組織のセキュリティ ポリシーで、このようなアカウントを追加できない場合は、次の手順を使用して、SMB サーバーに必要なアクセス許可を持つ管理者アカウントを構成します。  
@@ -349,43 +349,43 @@ CAU 更新実行を使用して、実行中にセキュリティ設定を確認�
     wmimgmt.msc  
     ```  
   
-3.  コンソール ツリーで、右\-クリックして**WMI コントロール\(ローカル\)**、順にクリックします**プロパティ**します。  
+3.  コンソールツリーで、[\- **WMI コントロール\(ローカル\)** ] を右クリックし、[**プロパティ**] をクリックします。  
   
-4.  **[セキュリティ]** をクリックし、**[ルート]** を展開します。  
+4.  [**セキュリティ**] をクリックし、[**ルート**] を展開します。  
   
-5.  **[CIMV2]** をクリックし、**[セキュリティ]** をクリックします。  
+5.  [ **CIMV2**] をクリックし、[ **セキュリティ**] をクリックします。  
   
-6.  更新実行に使用するアカウントを **[グループ名またはユーザー名]** リストに追加します。  
+6.  更新実行に使用するアカウントを [**グループ名またはユーザー名**] リストに追加します。  
   
-7.  **[メソッドの実行]** および **[リモートの有効化]** のアクセス許可を更新実行に使用するアカウントに付与します。  
+7.  [ **メソッドの実行** ] および [ **リモートの有効化** ] のアクセス許可を更新実行に使用するアカウントに付与します。  
   
 #### <a name="step-3-configure-permissions-to-access-the-hotfix-root-folder"></a>手順 3. 修正プログラム ルート フォルダーのアクセス許可を構成する
   
-既定では、更新プログラムを適用しようとしたときに、修正プログラム プラグイン\-で修正プログラム ルート フォルダーへのアクセスの NTFS ファイル システム権限の構成を確認します。 フォルダーのアクセス許可が正しく構成されていない、更新実行の修正プログラム プラグインを使用して場合\-でが失敗します。  
+既定では、更新プログラムを適用しようとすると\-、修正プログラムプラグインは、修正プログラムルートフォルダーへのアクセスに関して NTFS ファイルシステムのアクセス許可の構成を確認します。 フォルダーのアクセス許可が適切に構成されていない場合は、修正\-プログラムプラグインを使用した更新実行が失敗する可能性があります。  
   
-修正プログラム プラグインの既定の構成を使用するかどうかは\-フォルダーのアクセス許可が、次の要件を満たしていることを確認します。  
+修正プログラムプラグイン\-の既定の構成を使用する場合は、フォルダーのアクセス許可が次の要件を満たしていることを確認してください。  
   
 -   Users グループに読み取りアクセス許可があります。  
   
--   場合、プラグ\-では、.exe 拡張子を持つ更新プログラムを適用、ユーザー グループが Execute 権限があります。  
+-   プラグイン\-によって .exe 拡張子の付いた更新プログラムが適用される場合、Users グループには実行アクセス許可があります。  
   
--   特定のセキュリティ プリンシパルのみが許可されている\(は必要ありませんが、\)書き込みまたはアクセス許可を変更します。 許可されるプリンシパルは、ローカルの Administrators グループ、SYSTEM、CREATOR OWNER、および TrustedInstaller です。 その他のアカウントまたはグループには、修正プログラム ルート フォルダーで書き込みまたは修正のアクセス許可は付与されません。  
+-   特定のセキュリティプリンシパルのみが\(許可されます\)が、書き込みまたは変更のアクセス許可が必要ではありません。 許可されるプリンシパルは、ローカルの Administrators グループ、SYSTEM、CREATOR OWNER、および TrustedInstaller です。 その他のアカウントまたはグループには、修正プログラム ルート フォルダーで書き込みまたは修正のアクセス許可は付与されません。  
   
-必要に応じて、前のチェックを無効にするをプラグ\-では、既定では実行します。 2 つの方法のいずれかでこれを行うことができます。  
+必要に応じて、プラグイン\-が既定で実行する上記のチェックを無効にすることができます。 2 つの方法のいずれかでこれを行うことができます。  
   
--   CAU の PowerShell コマンドレットを使用している場合は、構成、 **DisableAclChecks\='True'** 引数、**で**の修正プログラム プラグイン パラメーター\-でします。  
+-   CAU の PowerShell コマンドレットを使用している場合は、修正プログラムプラグイン\-の**CauPluginArguments**パラメーターで**disableaclchecks\=の ' True '** 引数を構成します。  
   
--   CAU UI を使用している場合、更新実行オプションの構成に使用するウィザードの **[追加の更新オプション]** ページで、**[修正プログラム ルート フォルダーおよび構成ファイルへの管理者アクセスのチェックを無効にする]** オプションをオンにします。  
+-   CAU UI を使用している場合、更新実行オプションの構成に使用するウィザードの [**追加の更新オプション**] ページで、[**修正プログラム ルート フォルダーおよび構成ファイルへの管理者アクセスのチェックを無効にする**] オプションをオンにします。  
   
 ただし、多くの環境では、ベスト プラクティスとして、既定の構成を使用してこれらの確認を実行することをお勧めします。  
   
 #### <a name="step-4-configure-settings-for-smb-data-integrity"></a>手順 4. SMB データの整合性に関する設定を構成する
   
-修正プログラムがプラグインのクラスター ノードと、SMB ファイル共有間の接続でデータの整合性を確認する\-で SMB 署名または SMB 暗号化の SMB ファイル共有の設定を有効にすることが必要です。 Windows Server 2012 以降では、セキュリティを強化し、多くの環境でパフォーマンスの向上を提供する SMB 暗号化がサポートされていること。 次のように、これらの設定のいずれかまたは両方を有効にすることができます。  
+クラスターノードと smb ファイル共有間の接続でデータの整合性を確認するには、修正プログラム\-プラグインで smb ファイル共有の設定を smb 署名または smb 暗号化に対して有効にする必要があります。 多くの環境でセキュリティを強化し、パフォーマンスを向上させる SMB 暗号化は、Windows Server 2012 以降でサポートされています。 次のように、これらの設定のいずれかまたは両方を有効にすることができます。  
   
 -   SMB 署名を有効にするには、Microsoft サポート技術情報の [記事 887429](https://support.microsoft.com/kb/887429) の手順を参照してください。  
   
--   SMB 共有フォルダーの SMB 暗号化を有効にするには、SMB サーバーで、次の PowerShell コマンドレットを実行します。  
+-   Smb 共有フォルダーの SMB 暗号化を有効にするには、SMB サーバーで次の PowerShell コマンドレットを実行します。  
   
     ```PowerShell  
     Set-SmbShare <ShareName> -EncryptData $true  
@@ -393,20 +393,20 @@ CAU 更新実行を使用して、実行中にセキュリティ設定を確認�
   
     ここで、<*ShareName*> は SMB 共有フォルダーの名前です。  
   
-必要に応じて、SMB サーバーの接続に SMB 暗号化の使用を強制する次のように選択します、**修正プログラム ルート フォルダーへのアクセスに SMB 暗号化を要求**オプション、CAU UI または、構成、 **RequireSMBEncryption。\='True'** プラグイン\-で CAU の PowerShell コマンドレットを使用して引数。  
+必要に応じて、smb サーバーへの接続に smb 暗号化の使用を強制するには、CAU UI で [**修正プログラムルートフォルダーへのアクセス時に smb 暗号化を要求**する] オプションをオンにするか、 **RequireSMBEncryption\=' True '** プラグを構成します。\-CAU の PowerShell コマンドレットを使用した in 引数。  
   
 > [!IMPORTANT]  
 > SMB 暗号化を使用するオプションを選択しても、SMB 暗号化を使用した接続に対応するように修正プログラム ルート フォルダーが構成されていない場合、更新実行は失敗します。  
   
 #### <a name="step-5-enable-a-windows-firewall-rule-on-the-smb-server"></a>手順 5. SMB サーバーで Windows ファイアウォール規則を有効にする
   
-有効にする必要があります、**ファイル サーバー リモート管理\(SMB\-で\)** SMB ファイル サーバーで Windows ファイアウォールの規則。 これは、Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 では既定で有効です。  
+Smb ファイルサーバーの Windows ファイアウォールのルール **\(で\) 、ファイルサーバーのリモート管理\-smb**を有効にする必要があります。 これは、Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 では既定で有効になっています。  
   
 ## <a name="see-also"></a>関連項目  
   
 -   [クラスター対応更新の概要](cluster-aware-updating.md)
   
--   [クラスター対応更新の Windows PowerShell コマンドレット](https://technet.microsoft.com/itpro/powershell/windows/cluster-aware-updating)  
+-   [クラスター対応更新の Windows PowerShell コマンドレット](https://docs.microsoft.com/en-us/powershell/module/clusterawareupdating)  
   
 -   [クラスター対応更新プラグインのリファレンス](https://msdn.microsoft.com/library/hh418084.aspx)  
   
