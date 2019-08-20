@@ -1,34 +1,34 @@
 ---
 title: NPS で正規表現を使用する
-description: このトピックでは、Windows Server 2016 の NPS でのパターンマッチングに正規表現を使用する方法について説明します。 この構文を使用すると、ネットワークポリシー属性と RADIUS 領域の条件を指定できます。
+description: このトピックでは、Windows Server の NPS でのパターンマッチングに正規表現を使用する方法について説明します。 この構文を使用すると、ネットワークポリシー属性と RADIUS 領域の条件を指定できます。
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2a47403d4f88d5487fb4ffb0e35c46438aadcd8a
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.author: jgerend
+author: jasongerend
+msdate: 08/16/2019
+ms.openlocfilehash: 76615fcccfe06333a76f872b52d2e88182fd60e5
+ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546525"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69584787"
 ---
 # <a name="use-regular-expressions-in-nps"></a>NPS で正規表現を使用する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
-このトピックでは、Windows Server 2016 の NPS でのパターンマッチングに正規表現を使用する方法について説明します。 この構文を使用すると、ネットワークポリシー属性と RADIUS 領域の条件を指定できます。
+このトピックでは、Windows Server の NPS でのパターンマッチングに正規表現を使用する方法について説明します。 この構文を使用すると、ネットワークポリシー属性と RADIUS 領域の条件を指定できます。
 
 ## <a name="pattern-matching-reference"></a>パターンマッチングのリファレンス
 
-パターンマッチング構文を使用して正規表現を作成する場合は、次の表を参照ソースとして使用できます。
+パターンマッチング構文を使用して正規表現を作成する場合は、次の表を参照ソースとして使用できます。 正規表現パターンは、多くの場合、スラッシュ (/) で囲まれていることに注意してください。
 
-
-|  文字  |                                                                                 説明                                                                                  |                                                                 例                                                                 |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-|     `\ `     |                                                              次の文字を一致する文字としてマークします。                                                               |                      `/n/ matches the character "n". The sequence /\n/ matches a line feed or newline character.`                       |
+|  文字  |  説明  |   例                                                                 |
+| ----------- | ------------- | ------------------------------------------------------------------------  |
+|     `\ `     | 次に続く文字が特殊文字であるか、文字どおりに解釈される必要があることを示します。  | `/n/ matches the character "n" while the sequence /\n/ matches a line feed or newline character.`  |
 |     `^`     |                                                                 入力または行の先頭と一致します。                                                                  |                                                                 &nbsp;                                                                  |
 |     `$`     |                                                                    入力または行の末尾と一致します。                                                                     |                                                                 &nbsp;                                                                  |
 |     `*`     |                                                             直前の文字と0回以上一致します。                                                              |                                                  `/zo*/ matches either "z" or "zoo."`                                                   |
