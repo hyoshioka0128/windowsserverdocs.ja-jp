@@ -204,7 +204,7 @@
 
 ### [AD FS の概要](ad-fs/AD-FS-Overview.md)
 #### [Active Directory フェデレーション サービス (AD FS) の新機能](ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)
-#### [開発者向けの AD FS のシナリオ](ad-fs/overview/AD-FS-Scenarios-for-Developers.md)
+
 #### [AD FS 2016 の要件](ad-fs/overview/AD-FS-Requirements.md)
 
 ### [AD FS の設計](ad-fs/AD-FS-Design.md)
@@ -365,18 +365,25 @@
 
 
 
-### [AD FS の開発](ad-fs/AD-FS-Development.md)
+### AD FS の開発
+#### [AD FS 先進認証の概念](ad-fs/development/ad-fs-openid-connect-oauth-concepts.md)
+#### [AD FS 先進認証フローとアプリのシナリオ](ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
 
 #### [AD FS のカスタム認証方法を構築する](ad-fs/development/ad-fs-build-custom-auth-method.md)
 #### [AD FS 2019 リスク評価モデルでプラグインを構築する](ad-fs/development/ad-fs-risk-assessment-model.md)
-#### [AD FS のカスタム ID トークン](ad-fs/development/Custom-Id-Tokens-in-AD-FS.md)
-#### [Windows Server 2016 の AD FS On-behalf-of 認証](ad-fs/development/AD-FS-On-behalf-of-Authentication-in-Windows-Server.md)
-#### [AD FS 2016 で OpenId 接続を有効にする](ad-fs/development/Enabling-OpenId-Connect-with-AD-FS.md)
-#### [AD FS 2016 で Oauth 機密クライアントを有効にする](ad-fs/development/Enabling-Oauth-Confidential-Clients-with-AD-FS.md)
 #### [AD FS での OpenID 接続のシングル ログアウト](ad-fs/development/ad-fs-logout-openid-connect.md)
-#### [AD FS によるシングル ページ アプリケーション](ad-fs/development/Single-Page-Application-with-AD-FS.md)
-#### [AD FS で OAuth パブリック クライアントを使用してネイティブ クライアント アプリケーションを構築する](ad-fs/development/native-client-with-ad-fs.md)
+#### ADAL
 
+##### [AD FS のカスタム ID トークン](ad-fs/development/Custom-Id-Tokens-in-AD-FS.md)
+##### [Windows Server 2016 の AD FS On-behalf-of 認証](ad-fs/development/AD-FS-On-behalf-of-Authentication-in-Windows-Server.md)
+##### [AD FS 2016 で OpenId 接続を有効にする](ad-fs/development/Enabling-OpenId-Connect-with-AD-FS.md)
+##### [AD FS 2016 で Oauth 機密クライアントを有効にする](ad-fs/development/Enabling-Oauth-Confidential-Clients-with-AD-FS.md)
+##### [AD FS によるシングル ページ アプリケーション](ad-fs/development/Single-Page-Application-with-AD-FS.md)
+##### [AD FS で OAuth パブリック クライアントを使用してネイティブ クライアント アプリケーションを構築する](ad-fs/development/native-client-with-ad-fs.md)
+#### MSAL
+##### [Web API を呼び出すネイティブ アプリ](ad-fs/development/msal/adfs-msal-native-app-web-api.md) 
+##### [Web API を呼び出す Web API (On-Behalf-Of シナリオ)](ad-fs/development/msal/adfs-msal-web-api-web-api.md) 
+##### [Web API を呼び出す Web アプリ (サーバー アプリ)](ad-fs/development/msal/adfs-msal-web-app-web-api.md) 
 
 ### [AD FS の運用](ad-fs/AD-FS-Operations.md)
 #### [AD FS のアクセス制御ポリシー](ad-fs/operations/AD-FS-Client-Access-Policies.md)
