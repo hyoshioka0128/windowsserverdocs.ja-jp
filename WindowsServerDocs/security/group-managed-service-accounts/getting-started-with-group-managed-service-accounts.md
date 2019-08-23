@@ -109,7 +109,7 @@ Windows Server 2012 では、サービスまたはサービス管理者は、グ
 
 -   Active Directory の最初のマスター ルート キーがドメインに展開されていない場合または作成されていない場合は、それを作成します。 作成した結果は、KdsSvc 操作ログ (Event ID 4004) で検証できます。
 
-キーを作成する方法については、「 [create The Key Distribution SERVICES KDS Root key](create-the-key-distribution-services-kds-root-key.md)」を参照してください。 Microsoft キー配布サービス (kdssvc.dll)、AD のルート キー。
+キーを作成する方法については、「 [Active Directory キー サービス KDS ルート キーの作成](create-the-key-distribution-services-kds-root-key.md)」を参照してください。 Microsoft キー配布サービス (kdssvc.dll)、AD のルート キー。
 
 **・**
 
