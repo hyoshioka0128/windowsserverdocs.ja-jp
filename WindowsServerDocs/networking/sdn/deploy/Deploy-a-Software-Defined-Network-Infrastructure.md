@@ -1,52 +1,48 @@
 ---
 title: ソフトウェア定義ネットワーク インフラストラクチャを展開する
-description: このトピックでは、Windows Server 2016 でスクリプトを使用して、Microsoft ソフトウェア定義ネットワーク (SDN) インフラストラクチャをデプロイする方法のトピックへのリンクを提供します。
-manager: dougkim
-ms.custom: na
+description: このトピックでは、Windows Server 2016 のスクリプトを使用して、Microsoft ソフトウェア定義ネットワーク (SDN) インフラストラクチャを展開する方法に関するトピックへのリンクを示します。
 ms.prod: windows-server-threshold
-ms.reviewer: na
 ms.service: virtual-network
-ms.suite: na
 ms.technology: networking-sdn
-ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 6c665c88-df28-4150-81d4-a47e9fa5255c
-ms.author: pashort
+ms.author: daveba
 ms.date: 08/23/2018
-ms.openlocfilehash: 30d5597cdeb76d636cdf5236228f035999a6bdf6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+author: daveba
+ms.openlocfilehash: 098b061acbb222d2038486f58081812a3ec67cfb
+ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878023"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69980287"
 ---
-# <a name="deploy-a-software-defined-network-infrastructure"></a>ソフトウェア定義ネットワーク インフラストラクチャをデプロイします。
+# <a name="deploy-a-software-defined-network-infrastructure"></a>ソフトウェアで定義されたネットワークインフラストラクチャを展開する
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-Microsoft のソフトウェア定義ネットワーク (SDN) インフラストラクチャをデプロイします。   
+Microsoft のソフトウェア定義ネットワーク (SDN) インフラストラクチャを展開します。   
   
-これらの展開には、HYPER-V ネットワーク仮想化 (HNV)、ネットワーク コント ローラー、ソフトウェア ロード バランサー (SLB/MUX)、およびゲートウェイを含む、完全に機能のインフラストラクチャに必要なすべてのテクノロジが含まれます。  
+これらの展開には、Hyper-v ネットワーク仮想化 (HNV)、ネットワークコントローラー、ソフトウェアロードバランサー (SLB/MUX)、ゲートウェイなど、完全に機能するインフラストラクチャに必要なすべてのテクノロジが含まれます。  
   
-## <a name="set-up-sdn-infrastructure-in-the-vmm-fabric"></a>VMM ファブリックで SDN インフラストラクチャを設定します。
+## <a name="set-up-sdn-infrastructure-in-the-vmm-fabric"></a>VMM ファブリックでの SDN インフラストラクチャのセットアップ
 
 
 
   
--   [VMM ファブリックでソフトウェア定義ネットワーク (SDN) インフラストラクチャの設定します。](https://docs.microsoft.com/system-center/vmm/deploy-sdn)  
+-   [VMM ファブリックでソフトウェア定義ネットワーク (SDN) インフラストラクチャを設定する](https://docs.microsoft.com/system-center/vmm/deploy-sdn)  
   
-    SDN インフラストラクチャを管理する System Center Virtual Machine Manger (VMM) を組み込みたい場合は、このメソッドを使用します。  
+    SDN インフラストラクチャを管理するために System Center Virtual Machine manager (VMM) を組み込む場合は、この方法を使用します。  
  
-## <a name="deploy-sdn-infrastructure-using-scripts"></a>スクリプトを使用して SDN インフラストラクチャをデプロイします。
+## <a name="deploy-sdn-infrastructure-using-scripts"></a>スクリプトを使用して SDN インフラストラクチャを展開する
  
--   [スクリプトを使用してソフトウェア定義ネットワーク インフラストラクチャをデプロイします。](../../sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)  
+-   [スクリプトを使用してソフトウェアで定義されたネットワークインフラストラクチャを展開する](../../sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)  
   
-    VMM を使用して、SDN インフラストラクチャを管理する必要がない場合、または別の管理方法がある場合は、このメソッドを使用します。  
+    SDN インフラストラクチャの管理に VMM を使用しない場合、または別の管理方法がある場合は、この方法を使用します。  
 
 
-## <a name="deploy-individual-sdn-technologies-instead-of-an-entire-infrastructure"></a>インフラストラクチャ全体ではなく個々 の SDN テクノロジを展開します。  
- インフラストラクチャ全体ではなく個々 の SDN テクノロジを展開する場合を参照してください。  
-[ソフトウェア定義ネットワーク テクノロジ Windows PowerShell を使用してデプロイ](Deploy-Software-Defined-Network-Technologies-using-Windows-PowerShell.md)します。    
+## <a name="deploy-individual-sdn-technologies-instead-of-an-entire-infrastructure"></a>インフラストラクチャ全体ではなく個々の SDN テクノロジを展開する  
+ インフラストラクチャ全体ではなく個々の SDN テクノロジを展開する場合は、次を参照してください。  
+[Windows PowerShell を使用して、ソフトウェアで定義されたネットワークテクノロジを展開](Deploy-Software-Defined-Network-Technologies-using-Windows-PowerShell.md)します。    
   
 
 
@@ -58,7 +54,7 @@ Microsoft のソフトウェア定義ネットワーク (SDN) インフラスト
 ## <a name="related-topics"></a>関連トピック
 - [ソフトウェア定義ネットワーク (SDN)](../Software-Defined-Networking--SDN-.md)  
 - [SDN テクノロジ](../technologies/Software-Defined-Networking-Technologies.md)  
-- [SDN を計画します。](../plan/plan-a-software-defined-network-infrastructure.md)  
-- [SDN を管理します。](../manage/manage-sdn.md)
+- [プラン SDN](../plan/plan-a-software-defined-network-infrastructure.md)  
+- [SDN の管理](../manage/manage-sdn.md)
 - [SDN のセキュリティ](../security/sdn-security-top.md)
-- [SDN をトラブルシューティングします。](../troubleshoot/Troubleshoot-Software-Defined-Networking.md)
+- [SDN のトラブルシューティング](../troubleshoot/Troubleshoot-Software-Defined-Networking.md)

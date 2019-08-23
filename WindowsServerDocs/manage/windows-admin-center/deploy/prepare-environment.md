@@ -8,16 +8,16 @@ ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: d018ea65ce61cab67fe2041b9ef885d32de51b17
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 5924a6a2304bd8e883c43628e3c6c05b69cbd46c
+ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811918"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69980322"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>Windows Admin Center のための環境の準備
 
-> 適用対象:Windows Admin Center、Windows Admin Center プレビュー
+> 適用対象:Windows Admin Center、Windows Admin Center Preview
 
 Windows Admin Center で管理する準備が完了する前に、追加の準備が必要ないくつかの Server バージョンがあります。
 
@@ -25,6 +25,8 @@ Windows Admin Center で管理する準備が完了する前に、追加の準�
 - [Windows Server 2008 R2](#prepare-windows-server-2008-r2)
 - [Microsoft Hyper-V Server 2016](#prepare-microsoft-hyper-v-server-2016)
 - [Microsoft Hyper-V Server 2012 R2](#prepare-microsoft-hyper-v-server-2012-r2)
+
+また、Windows 管理センターで管理する前に[、ターゲットサーバーのポート構成](#port-configuration-on-the-target-server)を変更しなければならない場合もあります。
 
 ## <a name="prepare-windows-server-2012-and-2012-r2"></a>Prepare Windows Server 2012 および 2012 R2
 
@@ -42,7 +44,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 Windows Admin Center では、既定で Windows Server 2008 R2 に含まれていない PowerShell 機能が必要です。 Windows Admin Center で Windows Server 2008 R22 を管理するには、それらのサーバーに WMF バージョン 5.1 以上をインストールする必要があります。 
 
-いることを確認[.NET Framework 4.5.2 以降](https://docs.microsoft.com/dotnet/framework/install/on-windows-7)が既にコンピューターにインストールされています。
+[.NET Framework 4.5.2](https://docs.microsoft.com/dotnet/framework/install/on-windows-7)以降が既にコンピューターにインストールされていることを確認してください。
 
 PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。
 
@@ -82,7 +84,7 @@ Hyper-V Server でリモート管理を有効にするには:
 1. **[ツール]** メニューで **[役割と機能]** をクリックします。
 2. **[役割と機能]** で、 **[ファイルおよび記憶域サービス]** を見つけて、 **[ファイルおよび iSCSI サービス]** と **[ファイル サーバー]** をオンにします。
 
-![スクリーン ショットの役割と機能のファイルおよび iSCSI サービスの役割の選択の表示](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![ファイルと iSCSI サービスの役割が選択されている役割と機能のスクリーンショット](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
 
 ### <a name="step-3-enable-hyper-v-module-for-powershell"></a>**手順 3:** PowerShell の Hyper-V モジュールの有効化
 
@@ -91,7 +93,7 @@ PowerShell 機能の Hyper-V モジュールを有効にするには:
 1. **[ツール]** メニューで **[役割と機能]** をクリックします。
 2. **[役割と機能]** で、 **[リモート サーバー管理ツール]** を見つけて **[役割管理ツール]** と **[PowerShell 用 Hyper-V モジュール]** をオンにします。
 
-![スクリーン ショットの役割と機能が選択されている、HYPER-V ロールを示す](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
+![選択された Hyper-v の役割を示す役割と機能のスクリーンショット](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
 
 これで、Microsoft Hyper-V Server 2016 は、Windows Admin Center で管理するための準備が整いました。
 
@@ -130,7 +132,7 @@ Hyper-V Server のリモート管理を有効にするには:
 1. **[ツール]** メニューで **[役割と機能]** をクリックします。
 2. **[役割と機能]** で、 **[ファイルおよび記憶域サービス]** を見つけて、 **[ファイルおよび iSCSI サービス]** と **[ファイル サーバー]** をオンにします。
 
-![スクリーン ショットの役割と機能のファイルおよび iSCSI サービスの役割の選択の表示](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
+![ファイルと iSCSI サービスの役割が選択されている役割と機能のスクリーンショット](../media/prepare-environment/c6c30b812d96afcc1edcdb6f52f0e13c.png)
 
 ### <a name="step-4-enable-hyper-v-module-for-powershell"></a>手順 4:PowerShell の Hyper-V モジュールの有効化
 
@@ -139,9 +141,13 @@ PowerShell 機能の Hyper-V モジュールを有効にするには:
 1. **[ツール]** メニューで **[役割と機能]** をクリックします。
 2. **[役割と機能]** で、 **[リモート サーバー管理ツール]** を見つけて **[役割管理ツール]** と **[PowerShell 用 Hyper-V モジュール]** をオンにします。
 
-![スクリーン ショットの役割と機能を示す、HYPER-V のリモート サーバー管理ツールが選択されています。](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
+![Hyper-v リモートサーバー管理ツールが選択されている役割と機能のスクリーンショット](../media/prepare-environment/7ab0999602b7083733525bd0c1ba2747.png)
 
 これで、Microsoft Hyper-V Server 2012 R2 は、Windows Admin Center で管理するための準備が整いました。
+
+## <a name="port-configuration-on-the-target-server"></a>ターゲットサーバーのポート構成
+
+Windows 管理センターでは、リモートサーバーに証明書をインポートする場合など、一部のファイルコピータスクに SMB ファイル共有プロトコルを使用します。 これらのファイルコピー操作を成功させるには、リモートサーバーのファイアウォールでポート445での受信接続を許可する必要があります。  Windows 管理センターのファイアウォールツールを使用して、[ファイルサーバーのリモート管理 (SMB 受信)] がこのポートでのアクセスを許可するように設定されていることを確認できます。
 
 > [!Tip]
 > Windows Admin Center をインストールする準備はできましたか。 [今すぐダウンロード](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/windows-admin-center#download-now)
