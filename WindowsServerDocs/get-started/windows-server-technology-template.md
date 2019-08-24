@@ -1,24 +1,17 @@
 ---
 title: Windows Server 2016 のテクノロジ
 description: テクノロジの概要について説明します。
-ms.custom: na
 ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
-ms.technology: ''
-ms.author: ''
-ms.date: ''
-ms.tgt_pltfrm: na
+ms.author: daveba
+ms.date: 10/17/2017
 ms.topic: article
-ms.assetid: ''
-author: ''
-manager: ''
-ms.openlocfilehash: 3aa582df6728d46b1f5f3ac13469ae7af52da28e
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+author: daveba
+ms.openlocfilehash: f9f683d9ca4b016f0e790f180735684acd6614d0
+ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63684584"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69980303"
 ---
 # <a name="technology-in-windows-server-2016"></a>Windows Server 2016 のテクノロジ 
 

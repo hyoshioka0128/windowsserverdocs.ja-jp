@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 7bc98a8c9a57b2b7f63523f0411d648ca82137aa
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 46e8548e24f0d0991f69427741b0e04da6398334
+ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980338"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70009095"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS に関してよく寄せられる質問 (FAQ)
 
@@ -76,9 +76,9 @@ AD FS は複数のフォレスト構成をサポートしており、基盤と�
 ## <a name="design"></a>設計
 
 ### <a name="what-third-party-multi-factor-authentication-providers-are-available-for-ad-fs"></a>AD FS に使用できるサードパーティ製の multi-factor authentication プロバイダーは何ですか。
-AD FS は、サードパーティの MFA プロバイダーを統合するための拡張メカニズムを提供します。 このための設定された認定プログラムはありません。 リリース前に、ベンダーが必要な検証を実行したことを前提としています。 
+AD FS は、サードパーティの MFA プロバイダーを統合するための拡張可能なメカニズムを提供します。 このための設定された認定プログラムはありません。 リリース前に、ベンダーが必要な検証を実行したことを前提としています。 
 
-Microsoft に通知されたベンダーの一覧は、 [AD FS のために MFA プロバイダー](..\operations\Configure-Additional-Authentication-Methods-for-AD-FS.md)で公開されています。  提供されていないプロバイダーが常に利用可能であり、その内容について学習するためにリストが更新されます。
+Microsoft に通知されたベンダーの一覧は、 [AD FS のために MFA プロバイダー](../operations/Configure-Additional-Authentication-Methods-for-AD-FS.md)で公開されています。  提供されていないプロバイダーが常に利用可能であり、その内容について学習するためにリストが更新されます。
 
 ### <a name="are-third-party-proxies-supported-with-ad-fs"></a>サードパーティのプロキシは AD FS でサポートされていますか。
 はい。サードパーティのプロキシは Web アプリケーションプロキシの前に配置できますが、サードパーティのプロキシでは、Web アプリケーションプロキシの代わりに使用するために、 [MS ADFSPIP プロトコル](https://msdn.microsoft.com/library/dn392811.aspx)をサポートする必要があります。
