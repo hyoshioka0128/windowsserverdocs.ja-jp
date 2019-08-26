@@ -367,7 +367,7 @@
 
 ### AD FS の開発
 #### [AD FS 先進認証の概念](ad-fs/development/ad-fs-openid-connect-oauth-concepts.md)
-#### [AD FS 先進認証フローとアプリのシナリオ](ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
+#### [AD FS OpenID 接続/OAuth フローとアプリケーション シナリオ](ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
 
 #### [AD FS のカスタム認証方法を構築する](ad-fs/development/ad-fs-build-custom-auth-method.md)
 #### [AD FS 2019 リスク評価モデルでプラグインを構築する](ad-fs/development/ad-fs-risk-assessment-model.md)

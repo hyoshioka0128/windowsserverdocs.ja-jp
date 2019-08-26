@@ -16,6 +16,7 @@
 ## [Windows Server 2016 のアップグレード オプションと変換オプション](Supported-Upgrade-paths.md)
 ## [Windows Server 2016 の役割のアップグレードと移行](Server-Role-Upgradeability-Table.md)
 ## [Windows Server 2016 のアプリケーションの互換性表](Server-Application-compatibility.md)
+## [Windows Server で削除された機能と置換が計画されている機能](../get-started-19/removed-features.md)
 ## [Windows Server 2016 で削除された機能または推奨されなくなった機能](Deprecated-Features.md)
 ## [Windows Server 2016 のエディションの比較](2016-Edition-Comparison.md)
 ## [Windows Server 向け Azure ハイブリッド特典](azure-hybrid-benefit.md)
