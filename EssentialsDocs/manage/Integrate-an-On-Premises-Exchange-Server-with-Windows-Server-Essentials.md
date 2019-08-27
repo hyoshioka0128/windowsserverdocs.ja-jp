@@ -12,12 +12,12 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 142ae8514a6a480f8181ce193c2f437e2f286e2d
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: 689f293acf1e87e135f6f8cf5c7eac2a7d8033b9
+ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68914608"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70031505"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>社内 Exchange Server と Windows Server Essentials を統合する
 
@@ -30,7 +30,7 @@ ms.locfileid: "68914608"
 > [!NOTE]
 >  Exchange Server 2010 では、Windows Server 2012 が実行されているコンピューターへのインストールはサポートしていません。  
 
-## <a name="prerequisites"></a>必須コンポーネント  
+## <a name="prerequisites"></a>前提条件  
  Windows Server Essentials ネットワークに Exchange Server をインストールする前に、このセクションに記載されている作業が完了していることを確認してください。  
 
 -   [Windows Server Essentials を実行しているサーバーをセットアップする](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SetUpSBS8)  
@@ -364,18 +364,18 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
    - クリーン セットアップを実行している場合は、次のコマンドを実行します。  
 
-      **Arrconfig 構成-cert** _ **-ホスト名** _  
+      **Arrconfig 構成-cert**_証明書ファイルへのパス_ **-ホスト名**_Exchange Server のホスト名_  
 
      > [!NOTE]
-     >  たとえば、次のようになります。**Arrconfig 構成-cert** _ **-ホスト名** _  
+     >  たとえば、次のようになります。**Arrconfig 構成-cert**_c:\temp\certificate.pfx_ **-ホスト名**_mail.contoso.com_  
      > 
      >  *mail.contoso.com* は、証明書によって保護されているドメイン名に置き換えてください。  
 
    - Windows Small Business Server から移行している場合は、次のコマンドを実行します。  
 
-      **Arrconfig 構成-cert** _ **-ホスト名** _ **-targetserver** _  
+      **Arrconfig 構成-cert**_証明書ファイルへのパス_ **-ホスト名**_Exchange Server のホスト名_ **-targetserver**_Exchange server のサーバー名_  
 
-      たとえば、次のようになります。**Arrconfig 構成-cert** _ **-ホスト名** _ * *-targetserver * * _exchangesvr」_  
+      たとえば、次のようになります。**Arrconfig 構成-cert**_c:\temp\certificate.pfx_ **-ホスト名**_mail.contoso.com_ **-targetserver** _exchangesvr」_  
 
       *mail.contoso.com* は実際のドメイン名に、 *ExchangeSvr* は Exchange Server を実行しているサーバー名に置き換えてください。  
 
