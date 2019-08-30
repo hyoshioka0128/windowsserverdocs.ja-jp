@@ -184,7 +184,7 @@
 #### [リモート RADIUS サーバー グループを構成する](technologies/nps/nps-crp-rrsg-configure.md)
 #### [NPS で使用される証明書を管理する](technologies/nps/nps-manage-certificates.md)
 ##### [PEAP と EAP の要件に合わせて証明書テンプレートを構成する](technologies/nps/nps-manage-cert-requirements.md)
-#### [NPS の管理](technologies/nps/nps-manage-servers.md)
+#### [NPSs の管理](technologies/nps/nps-manage-servers.md)
 ##### [マルチホーム コンピューターで NPS を構成する](technologies/nps/nps-multihomed-configure.md)
 ##### [NPS の UDP ポート情報を構成する](technologies/nps/nps-udp-ports-configure.md)
 ##### [NAS 通知の転送を無効にする](technologies/nps/nps-disable-nas-notifications.md)
