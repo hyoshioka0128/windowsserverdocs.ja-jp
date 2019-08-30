@@ -67,4 +67,4 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
   ```
   #### <a name="additional-references"></a>その他の参照情報
   [コマンドライン構文キー](command-line-syntax-key.md)
-  [リモート デスクトップ サービスと #40 です。ターミナル サービスと #41 です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+  [リモート デスクトップ サービス &#40;ターミナル サービス&#41; コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
