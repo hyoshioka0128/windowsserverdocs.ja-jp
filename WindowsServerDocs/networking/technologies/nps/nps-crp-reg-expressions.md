@@ -10,10 +10,10 @@ ms.author: jgerend
 author: jasongerend
 msdate: 08/16/2019
 ms.openlocfilehash: 76615fcccfe06333a76f872b52d2e88182fd60e5
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.sourcegitcommit: e58e1646ffd75d4a89576d967b2dbbbb84764303
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 08/29/2019
 ms.locfileid: "69584787"
 ---
 # <a name="use-regular-expressions-in-nps"></a>NPS で正規表現を使用する
