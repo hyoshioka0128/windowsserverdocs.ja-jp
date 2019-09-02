@@ -55,15 +55,15 @@ DC が 1 つしか存在しないテスト環境では、次の手順を実行�
 
 2.  Windows PowerShell Active Directory モジュールのコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します。
 
-    **$a = 取得日**
+    **$a=Get-Date**
 
-    **$b = $a. AddHours (-10)**
+    **$b=$a.AddHours(-10)**
 
-    **Add-kdsrootkey-EffectiveTime $b**
+    **Add-KdsRootKey -EffectiveTime $b**
 
     または、単一のコマンドを使用します。
 
-    **Add-kdsrootkey-EffectiveTime ((取得日). addhours (-10))**
+    **Add-KdsRootKey -EffectiveTime ((get-date).addhours(-10))**
 
 ## <a name="see-also"></a>関連項目
 [グループの管理されたサービス アカウントの概要](getting-started-with-group-managed-service-accounts.md)
