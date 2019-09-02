@@ -13,11 +13,11 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 295402a3bcdcec07025ad1f803cddd47127baa8d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878953"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63688594"
 ---
 # <a name="install-nano-server"></a>Nano Server のインストール
 
@@ -26,7 +26,7 @@ ms.locfileid: "59878953"
 > [!IMPORTANT]
 > Windows Server バージョン 1709 以降、Nano Server は[コンテナー基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、「[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)」をご覧ください。 
 
-Windows Server 2016 には、新しいインストール オプションが用意されています。Nano Server。 Nano Server は、プライベート クラウドとデータセンター向けに最適化されたリモート管理サーバー オペレーティング システムです。 Nano Server は Server Core モードの Windows Server に似ていますが、サイズが大幅に小さく、ローカル ログオン機能がありません。さらに、64 ビットのアプリケーション、ツール、およびエージェントのみがサポートされます。 Windows Server と比べて Nano Server の場合は、使用されるディスク領域がかなり小さくなり、セットアップが大幅に速くなり、必要とされる更新と再起動の回数がずっと少なくなります。 再起動も非常に高速化されています。 Nano Server インストール オプションは、Windows Server 2016 の Standard Edition および Datacenter Edition で提供されます。  
+Windows Server 2016 では、新しいインストール オプションである Nano Server が提供されています。 Nano Server は、プライベート クラウドとデータセンター向けに最適化されたリモート管理サーバー オペレーティング システムです。 Nano Server は Server Core モードの Windows Server に似ていますが、サイズが大幅に小さく、ローカル ログオン機能がありません。さらに、64 ビットのアプリケーション、ツール、およびエージェントのみがサポートされます。 Windows Server と比べて Nano Server の場合は、使用されるディスク領域がかなり小さくなり、セットアップが大幅に速くなり、必要とされる更新と再起動の回数がずっと少なくなります。 再起動も非常に高速化されています。 Nano Server インストール オプションは、Windows Server 2016 の Standard Edition および Datacenter Edition で提供されます。  
 
 Nano Server は、次のようなさまざまなシナリオに適しています。  
   
@@ -58,14 +58,14 @@ Nano Server は、コンテナーおよびマイクロサービスに基づく "
 - Nano Server は、Current Branch for Business (CBB) モデルでのみサポートされています。現時点で、Nano Server 用の Long-Term Servicing Branch (LTSB) リリースはありません。 詳細については、次のサブセクションを参照してください。
 
 ### <a name="current-branch-for-business"></a>Current Branch for Business
-Nano Server は、開発サイクルが短い "クラウド歩調" で事業を進めているお客様をサポートするために、Current Branch for Business (CBB) と呼ばれる、よりアクティブなモデルで処理されます。 このモデルでは、Nano Server の機能更新リリースが年に 2 回～ 3 回公開される予定です。 このモデルでは、Nano Server を運用環境に展開し運用する場合、[ソフトウェア アシュアランス](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx)が必要です。 サポートを維持するために、管理者は、2 つ後の CBB リリース以内に留まる必要があります。 ただし、これらのリリースで既存の展開の自動更新は行われません。管理者は、必要に応じて、新しい CBB リリースを手動でインストールします。 詳細については、「[Windows Server 2016 new Current Branch for Business servicing option](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)」 (Windows Server 2016 の新しい Current Branch for Business サービス オプション) を参照してください。
+Nano Server は、開発サイクルが短い "クラウド歩調" で事業を進めているお客様をサポートするために、Current Branch for Business (CBB) と呼ばれる、よりアクティブなモデルで処理されます。 このモデルでは、Nano Server の機能更新のリリースが年に 2 回～ 3 回発生すると予想されます。 このモデルでは、Nano Server を運用環境に展開し運用する場合、[ソフトウェア アシュアランス](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx)が必要です。 サポートを維持するために、管理者は、2 つ後の CBB リリース以内に留まる必要があります。 ただし、これらのリリースで既存の展開の自動更新は行われません。管理者は、必要に応じて、新しい CBB リリースを手動でインストールします。 詳細については、「[Windows Server 2016 new Current Branch for Business servicing option](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)」 (Windows Server 2016 の新しい Current Branch for Business サービス オプション) を参照してください。
 
 デスクトップ エクスペリエンスを使用する Server Core および Server インストール オプションは、5 年間のメインストリーム サポートと 5 年間の延長サポートで構成される [Long-Term Servicing Branch (LTSB) モデル](https://support.microsoft.com/lifecycle#gp%2Fgp_msl_policy)で処理されます。
 
 ## <a name="installation-scenarios"></a>インストールのシナリオ
 
 ### <a name="evaluation"></a>評価
-「[Windows Server 評価版ソフトウェア](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)」で 180 日間ライセンスが有効な Windows Server の評価版を入手できます。 Nano Server を試すには、選択、 **Nano Server | 64 ビット EXE オプション**、いずれかに戻ってくる[Nano Server のクイック スタート](Nano-Server-Quick-Start.md)または[Nano Server の展開](Deploy-Nano-Server.md)を開始します。
+「[Windows Server 評価版ソフトウェア](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)」で 180 日間ライセンスが有効な Windows Server の評価版を入手できます。 Nano Server を試用するには、 **[Nano Server | 64-bit EXE option]** (Nano Server | 64 ビット EXE オプション) を選択し、「[Nano Server のクイック スタート](Nano-Server-Quick-Start.md)」または「[Nano Server の展開](Deploy-Nano-Server.md)」に戻って作業を開始します。
 
 ### <a name="clean-installation"></a>クリーン インストール
 VHD を構成して Nano Server をインストールするため、クリーン インストールは、最も迅速かつ最も簡単な展開方法です。

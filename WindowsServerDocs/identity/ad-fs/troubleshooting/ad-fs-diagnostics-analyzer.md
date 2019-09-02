@@ -1,6 +1,6 @@
 ---
 title: AD FS ヘルプ診断アナライザー
-description: このドキュメントが AD FS ヘルプ診断アナライザーをについて説明し、AD FS 診断モジュールを PowerShell を使用して基本的なを実行できる方法を確認します。
+description: このドキュメントでは、AD FS Help Diagnostics Analyzer と、AD FS 診断 PowerShell モジュールを使用して基本的なチェックを実行する方法について説明します。
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -9,98 +9,111 @@ ms.date: 03/29/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 8d9acd1adcb8d9566b154abfef940e21609a6684
-ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.openlocfilehash: 6b6b7563aaa1f3c7d706cfdd172faf18417623e5
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64773371"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546579"
 ---
 # <a name="ad-fs-help-diagnostics-analyzer"></a>AD FS ヘルプ診断アナライザー
 
-AD FS では、さまざまな認証とアプリケーションの開発を提供する機能をサポートする多数の設定があります。 トラブルシューティング時に、すべての AD FS の設定が正しく構成されていることを確認することをお勧めします。 これらの設定の手動のチェックを行う場合があります時間がかかります。 AD FS ヘルプ診断アナライザーが ADFSToolbox PowerShell モジュールを使用して基本的なチェックを実行できます。 AD FS ヘルプは、チェックを実行した後、[診断アナライザー](https://aka.ms/adfsdiagnosticsanalyzer)簡単に結果を視覚化および修復手順を提供するためです。
+AD FS には、認証とアプリケーションの開発のために提供するさまざまな機能をサポートする多くの設定があります。 トラブルシューティングの際には、すべての AD FS 設定が正しく構成されていることを確認することをお勧めします。 これらの設定を手動でチェックすると、時間がかかることがあります。 AD FS Help Diagnostics Analyzer は、ADFSToolbox PowerShell モジュールを使用して基本的なチェックを実行するのに役立ちます。 このチェックを実行すると、結果を簡単に視覚化して修復手順を提示するのに役立つ[診断アナライザー](https://aka.ms/adfsdiagnosticsanalyzer)が AD FS ヘルプに表示されます。
 
-完了操作は簡単な 3 ステップを受け取ります。
+Complete 操作では、次の3つの簡単な手順が実行されます。
 
-1. プライマリ AD FS サーバー上で WAP サーバー ADFSToolbox モジュールをセットアップします。
-2. 診断を実行し、AD FS ヘルプ ファイルをアップロード
-3. 診断の分析を表示し、問題を解決
+1. プライマリ AD FS サーバーまたは WAP サーバーで ADFSToolbox モジュールをセットアップする
+2. 診断を実行し、ファイルを AD FS ヘルプにアップロードします
+3. 診断分析を表示し、問題を解決する
 
-移動して[AD FS ヘルプ診断アナライザー (https://aka.ms/adfsdiagnosticsanalyzer) ](https://aka.ms/adfsdiagnosticsanalyzer)トラブルシューティングを開始します。
+トラブルシューティングを開始するには、 [AD FS ヘルプ診断アナライザー https://aka.ms/adfsdiagnosticsanalyzer) ](https://aka.ms/adfsdiagnosticsanalyzer)にアクセスしてください。
 
-![AD FS ヘルプの AD FS 診断アナライザー ツール](media/ad-fs-diagonostics-analyzer/home.png)
+![AD FS ヘルプの AD FS diagnostics analyzer ツール](media/ad-fs-diagonostics-analyzer/home.png)
 
-## <a name="step-1-setup-the-adfstoolbox-module-on-ad-fs-server"></a>手順 1:AD FS サーバーで ADFSToolbox モジュールをセットアップします。
+## <a name="step-1-setup-the-adfstoolbox-module-on-ad-fs-server"></a>手順 1:AD FS サーバーでの ADFSToolbox モジュールのセットアップ
 
-実行する、[診断アナライザー](https://aka.ms/adfsdiagnosticsanalyzer)、ADFSToolbox PowerShell モジュールをインストールする必要があります。 AD FS サーバーにインターネットへの接続がある場合は、PowerShell ギャラリーから直接 ADFSToolbox モジュールをインストールできます。 インターネットに接続されていないが発生した場合に、手動でインストールの GitHub リポジトリを複製します。
+[診断アナライザー](https://aka.ms/adfsdiagnosticsanalyzer)を実行するには、ADFSToolbox PowerShell モジュールをインストールする必要があります。 AD FS サーバーがインターネットに接続できる場合は、PowerShell ギャラリーから ADFSToolbox モジュールを直接インストールできます。 インターネットに接続されていない場合は、手動でインストールすることができます。 
 
-![AD FS 診断アナライザーのセットアップ](media/ad-fs-diagonostics-analyzer/step1.png)
+[!WARNING]
+AD FS 2.1 以下を使用している場合は、ADFSToolbox のバージョン1.0.13 をインストールする必要があります。 ADFSToolbox では、最新バージョンで AD FS 2.1 以降がサポートされなくなりました。
 
-### <a name="setup-using-powershell-gallery"></a>PowerShell ギャラリーを使用した設定します。
+![AD FS diagnostics analyzer-セットアップ](media/ad-fs-diagonostics-analyzer/step1_v2.png)
 
-AD FS サーバーにインターネット接続がある場合は、次の PowerShell コマンドを使用して PowerShell ギャラリーから直接 ADFSToolbox モジュールをインストールすることをお勧めします。
+### <a name="setup-using-powershell-gallery"></a>PowerShell ギャラリーを使用したセットアップ
+
+AD FS サーバーがインターネットに接続されている場合は、次に示す PowerShell コマンドを使用して、PowerShell ギャラリーから ADFSToolbox モジュールを直接インストールすることをお勧めします。
 
    ```powershell
     Install-Module -Name ADFSToolbox -force
     Import-Module ADFSToolbox -force
    ```
-### <a name="setup-manually-by-cloning-the-repository"></a>リポジトリを複製することにより手動でセットアップします。
 
-ADFSToolbox モジュールは手動でインストールする GitHub から直接します。 リポジトリを複製して、AD FS サーバーで ADFSToolbox モジュールをインストールするための以下の手順に従います。
+### <a name="setup-manually"></a>手動によるセットアップ
 
-1. ダウンロード、[リポジトリ](https://github.com/Microsoft/adfsToolbox/archive/master.zip)
-2. ダウンロードしたファイルを解凍し、%systemdrive% adfsToolbox マスター フォルダーにコピー\\Program Files\\WindowsPowerShell\\モジュール\\します。
-3. PowerShell モジュールをインポートします。 管理者特権の PowerShell ウィンドウで、次の手順を実行します。
+ADFSToolbox モジュールは、AD FS または WAP サーバーに手動でコピーする必要があります。 次の手順に従います。
 
-   ```powershell
+1. インターネットにアクセスできるコンピューターで、管理者特権の PowerShell ウィンドウを起動します。
+2. AD FS ツールボックスモジュールをインストールします。
+
+    ```powershell
+    Install-Module -Name ADFSToolbox -Force
+    ```
+3. ローカルコンピューターにある`%SYSTEMDRIVE%\Program Files\WindowsPowerShell\Modules\` adfstoolbox フォルダーを、AD FS または WAP コンピューターの同じ場所にコピーします。
+
+4. AD FS マシンで管理者特権の PowerShell ウィンドウを起動し、次のコマンドレットを実行してモジュールをインポートします。
+
+    ```powershell
     Import-Module ADFSToolbox -Force
-   ```
+    ```
 
-## <a name="step-2-execute-the-diagnostics-and-upload-the-file-to-ad-fs-help"></a>手順 2:診断を実行し、AD FS ヘルプ ファイルをアップロード
+## <a name="step-2-execute-the-diagnostics-cmdlet"></a>手順 2:診断コマンドレットを実行する
 
-簡単に、ファーム内のすべての AD FS サーバー間で、診断テストを実行する 1 つのコマンドを使用できます。 PowerShell モジュールは、ファーム内の別のサーバー間で、診断テストを実行するのにリモート PS セッションを使用します。
+![AD FS diagnostics analyzer ツール-実行とアップロードの結果](media/ad-fs-diagonostics-analyzer/step2_v2.png)
 
-```powershell
-    Export-AdfsDiagnosticsFile [-adfsServers <list of servers>]
-```
-
-Server 2016 の AD FS ファームで、コマンドは、AD FS の構成から、AD FS サーバーの一覧を読み取ります。 診断テストは、一覧内の各サーバーに対して試行されます。 かどうかは AD FS サーバーの一覧は使用できません (例 2012R2) し、ローカル マシンに対してテストを実行します。 テストが実行される対象となるサーバーの一覧を指定するには、使用、 **adfsServers**サーバーの一覧を提供する引数。 例を次に示します
+1つのコマンドを使用して、ファーム内のすべての AD FS サーバーで診断テストを簡単に実行できます。 PowerShell モジュールは、リモート PS セッションを使用して、ファーム内のさまざまなサーバーに対して診断テストを実行します。
 
 ```powershell
-    Export-AdfsDiagnosticsFile -adfsServers @("sts1.contoso.com", "sts2.contoso.com", "sts3.contoso.com")
+    Export-AdfsDiagnosticsFile [-ServerNames <list of servers>]
 ```
 
-コマンドが実行されたのと同じディレクトリに作成されている JSON ファイルになります。 ファイルの名前は ADFSDiagnosticsFile -\<タイムスタンプ\>します。 ファイル名の例は、ADFSDiagnosticsFile 20180716124030 です。
+サーバー2016以上の AD FS ファームでは、コマンドは AD FS 構成から AD FS サーバーの一覧を読み取ります。 その後、一覧内の各サーバーに対して診断テストが試行されます。 AD FS サーバーの一覧 (例 2012R2) が使用できない場合は、ローカルコンピューターに対してテストが実行されます。 テストを実行する対象のサーバーの一覧を指定するには、 **Servernames**引数を使用してサーバーの一覧を指定します。 次に例を示します。
 
-手順 2 で[ https://aka.ms/adfsdiagnosticsanalyzer ](https://aka.ms/adfsdiagnosticsanalyzer)ファイル ブラウザーを使用してアップロードする結果ファイルを選択します。
+```powershell
+    Export-AdfsDiagnosticsFile -ServerNames @("adfs1.contoso.com", "adfs2.contoso.com")
+```
 
-![AD FS 診断アナライザー ツールの実行し、結果のアップロード](media/ad-fs-diagonostics-analyzer/step2.png)
+結果として、コマンドを実行したディレクトリに作成された JSON ファイルが生成されます。 ファイルの名前は AdfsDiagnosticsFile\<\>です。 ファイル名の例は、AdfsDiagnosticsFile-07312019-184201 です。
 
-をクリックして**アップロード**アップロードを完了し、次の手順に移動します。
+## <a name="step-3-upload-the-diagnostics-file"></a>手順 3:診断ファイルをアップロードする
 
+「」の[https://aka.ms/adfsdiagnosticsanalyzer](https://aka.ms/adfsdiagnosticsanalyzer)手順3では、ファイルブラウザーを使用して、アップロードする結果ファイルを選択します。
 
-Microsoft アカウントをサインインすることで結果を保存して後で表示するポイント、および Microsoft に送信できる診断をサポートします。 任意のポイントが、サポート ケースを開く場合に Microsoft は診断アナライザーの結果を表示したり、問題を迅速に解決することになります。
+**[アップロード]** をクリックしてアップロードを完了します。
 
-![AD FS 診断アナライザー ツール - サインイン](media/ad-fs-diagonostics-analyzer/sign_in_step.png)
+Microsoft アカウントでサインインすることにより、診断結果を後で表示するために保存し、Microsoft サポートに送信できます。 サポートケースを開いた時点で、Microsoft は診断アナライザーの結果を表示し、問題のトラブルシューティングを迅速に行うことができます。
 
-## <a name="step-3-view-diagnostics-analysis-and-resolve-any-issues"></a>手順 3:診断の分析を表示し、問題を解決
+![AD FS diagnostics analyzer ツール-サインイン](media/ad-fs-diagonostics-analyzer/sign_in_step.png)
 
-これには、テスト結果の 4 つのセクションがあります。
+## <a name="step-4-view-diagnostics-analysis-and-resolve-any-issues"></a>手順 4:診断分析を表示し、問題を解決する
 
-1. ［失敗］:このセクションには、失敗したテストの一覧が含まれています。 各結果で構成されます。
-2. 警告:このセクションには、警告を発生させたがテストのリストが含まれています。 これらの問題より広範なスケールでの認証に関するすべての問題でない可能性しますが、できるだけ早く対処する必要があります。
-3. 適用外:このセクションには、コマンドを実行していた特定のサーバーに適用されなかったために実行されなかったテストの一覧が含まれています。
-4. 渡されます。このセクションには、渡される、ユーザーのアクション アイテムはありませんが、テストの一覧が含まれています。
+テスト結果には、次の5つのセクションがあります。
 
-![AD FS 診断アナライザー ツールのテスト結果のリスト](media/ad-fs-diagonostics-analyzer/step3a_v2.png)テストと解決方法の手順を説明する詳細と共に各テスト結果が表示されます。
+1. ［失敗］:このセクションには、失敗したテストの一覧が含まれています。 各結果は次のもので構成します。
+2. 警告 :このセクションには、警告が発生したテストの一覧が含まれています。 これらの問題によって、より広範な規模で認証に関する問題が発生する可能性はほとんどありませんが、最も早い段階で対処する必要があります。
+3. 渡しこのセクションには、合格したテストのうち、ユーザーに対してアクション項目がないテストの一覧が含まれています。
+4. 実行しない:このセクションには、情報が不足しているために実行できなかったテストの一覧が含まれています。
+5. 適用外:このセクションには、コマンドが実行されていた特定のサーバーに適用できなかったために実行されなかったテストの一覧が含まれています。
+
+![AD FS diagnostics analyzer ツール-テスト結果一覧](media/ad-fs-diagonostics-analyzer/step3a_v3.png)には、テストとその解決策について説明する詳細情報が表示されます。
 
 1. テスト名:実行されたテストの名前
-2. 詳細:テスト中に実行された全体的な操作の説明
-3. 解決手順:テストで強調表示されている問題を解決する推奨される手順
+2. 説明:テストの説明。
+3. 詳細:テスト中に実行された操作全体の説明
+4. 解決手順:テストで強調表示されている問題を解決するために推奨される手順
 
-![AD FS 診断アナライザー ツールのエラーの解決](media/ad-fs-diagonostics-analyzer/step3b_v2.png)
+![AD FS diagnostics analyzer ツール-障害解決](media/ad-fs-diagonostics-analyzer/step3b_v3.png)
 
 ## <a name="next"></a>Next
 
-- [AD FS ヘルプ troublehshooting ガイドを使用してください。](https://aka.ms/adfshelp/troubleshooting )
+- [AD FS Help troublehshooting ガイドを使用する](https://aka.ms/adfshelp/troubleshooting )
 - [AD FS のトラブルシューティング](ad-fs-tshoot-overview.md)

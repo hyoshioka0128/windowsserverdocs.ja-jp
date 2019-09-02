@@ -9,12 +9,12 @@ ms.assetid: ''
 ms.author: pashort
 author: shortpatti
 ms.date: 10/02/2018
-ms.openlocfilehash: 50aee16b0b5797f28ebcdf61494b09669699873f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bdfb2b7321d5a4d119c9710e9ad93fc2e91ea536
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446321"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792293"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>仮想ネットワークの使用状況測定の送信
 
@@ -51,7 +51,7 @@ Windows Server 2019 の SDN ネットワーク トラフィックの使用状況
    ```
 
 
-## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>以下に例を示します。仮想ネットワークの未請求のアドレス範囲を管理します
+## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>例:仮想ネットワークの未請求のアドレス範囲を管理します
 
 設定して使用状況測定エグレスの課金対象から除外する IP サブネット プレフィックスのセットを管理することができます、 **UnbilledAddressRange**仮想ネットワークのプロパティ。  プレフィックスのいずれかに一致する宛先 IP アドレスで仮想ネットワーク上のネットワーク インターフェイスによって送信されたすべてのトラフィックを BilledEgressBytes プロパティに含まれていません。
 
@@ -72,33 +72,31 @@ Windows Server 2019 の SDN ネットワーク トラフィックの使用状況
     ```
 
     出力は次のようになります。
-    ```
-    Confirm
-    Performing the operation 'New-NetworkControllerVirtualNetwork' on entities of type
-    'Microsoft.Windows.NetworkController.VirtualNetwork' via
-    'https://sdn.contoso.com/networking/v3/virtualNetworks/VNet1'. Are you sure you want to continue?
-    [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
+      ```
+         Confirm
+         Performing the operation 'New-NetworkControllerVirtualNetwork' on entities of type
+         'Microsoft.Windows.NetworkController.VirtualNetwork' via
+         'https://sdn.contoso.com/networking/v3/virtualNetworks/VNet1'. Are you sure you want to continue?
+         [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
 
 
-~~~
-Tags             :
-ResourceRef      : /virtualNetworks/VNet1
-InstanceId       : 29654b0b-9091-4bed-ab01-e172225dc02d
-Etag             : W/"6970d0a3-3444-41d7-bbe4-36327968d853"
-ResourceMetadata :
-ResourceId       : VNet1
-Properties       : Microsoft.Windows.NetworkController.VirtualNetworkProperties
-```
-~~~
+         Tags             :
+         ResourceRef      : /virtualNetworks/VNet1
+         InstanceId       : 29654b0b-9091-4bed-ab01-e172225dc02d
+         Etag             : W/"6970d0a3-3444-41d7-bbe4-36327968d853"
+         ResourceMetadata :
+         ResourceId       : VNet1
+         Properties       : Microsoft.Windows.NetworkController.VirtualNetworkProperties
+      ```
 
 
-3. Check the Virtual Network to see the configured **UnbilledAddressRanges**.
+3. 仮想ネットワークを構成済みの確認**UnbilledAddressRanges**します。
 
    ```PowerShell
    (Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceID "VNet1").properties
    ```
 
-   Your output will now look similar to this:
+   出力は次のようになります。
    ```
    AddressSpace           : Microsoft.Windows.NetworkController.AddressSpace
    DhcpOptions            :
@@ -112,23 +110,23 @@ Properties       : Microsoft.Windows.NetworkController.VirtualNetworkProperties
    LogicalNetwork         : Microsoft.Windows.NetworkController.LogicalNetwork
    ```
 
-## Check the billed the unbilled egress usage of a virtual network
+## <a name="check-the-billed-the-unbilled-egress-usage-of-a-virtual-network"></a>確認料金請求が発生、仮想ネットワークのエグレス未請求の使用状況
 
-After you configure the **UnbilledAddressRanges** property, you can check the billed and unbilled egress usage of each subnet within a virtual network. Egress traffic updates every four minutes with the total bytes of the billed and unbilled ranges.
+構成した後、 **UnbilledAddressRanges**プロパティ、仮想ネットワーク内の各サブネットのエグレスの課金と未請求の使用状況を確認することができます。 エグレス トラフィックは、4 つ分に 1 で、課金と未請求の範囲の合計バイト数を更新します。
 
-The following properties are available for each virtual subnet:
+各仮想サブネットに使用できるは、次のプロパティです。
 
--   **UnbilledEgressBytes** shows the number of unbilled bytes sent by network interfaces connected to this virtual subnet. Unbilled bytes are bytes sent to address ranges that are part of the **UnbilledAddressRanges** property of the parent virtual network.
+-   **UnbilledEgressBytes**をこの仮想サブネットに接続されているネットワーク インターフェイスから送信された未請求のバイト数が表示されます。 未請求のバイトが含まれているアドレスの範囲に送信バイト、 **UnbilledAddressRanges**親仮想ネットワークのプロパティ。
 
--   **BilledEgressBytes** shows Number of billed bytes sent by network interfaces connected to this virtual subnet. Billed bytes are bytes sent to address ranges that are not part of the **UnbilledAddressRanges** property of the parent virtual network.
+-   **BilledEgressBytes**をこの仮想サブネットに接続されているネットワーク インターフェイスによって送信される課金対象のバイト数が表示されます。 課金対象のバイトはないアドレス範囲に送信されたバイトの一部、 **UnbilledAddressRanges**親仮想ネットワークのプロパティ。
 
-Use the following example to query egress usage:
+クエリの送信の使用状況を次の例を使用します。
 
 ```PowerShell
 (Get-NetworkControllerVirtualNetwork -ConnectionURI $URI -ResourceId "VNet1").properties.subnets.properties | ft AddressPrefix,BilledEgressBytes,UnbilledEgressBytes
 ```
 
-Your output will look similar to this:
+出力は次のようになります。
 ```
 AddressPrefix BilledEgressBytes UnbilledEgressBytes
 ------------- ----------------- -------------------

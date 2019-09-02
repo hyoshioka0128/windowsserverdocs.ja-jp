@@ -14,12 +14,12 @@ manager: dougkim
 ms.author: helohr
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 341262243b5bbe8ed046382d7490a6e5c39b8965
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
-ms.translationtype: MT
+ms.openlocfilehash: b7810d0b8b7cbd8d886b99a07d1419cb5e8197ed
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188127"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546410"
 ---
 # <a name="remote-desktop-clients"></a>リモート デスクトップ クライアント
 
@@ -33,10 +33,10 @@ Microsoft リモート デスクトップ クライアントを使用すると�
 
 | デバイス   | アプリを入手する                                                                                                     | セットアップ手順                                                                |
 |----------|-----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| Windows  | [Microsoft Store での Windows 10 クライアント](https://go.microsoft.com/fwlink/?LinkID=616709)                      | [Windows 上のリモート デスクトップ クライアントの概要](windows.md)                |
-| Android  | [Google Play の android クライアント](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)        | [Android でリモート デスクトップ クライアントの概要](remote-desktop-android.md) |
-| iOS      | [iTunes store で iOS クライアント](https://itunes.apple.com/us/app/microsoft-remote-desktop/id714464092?mt=8)     | [IOS でリモート デスクトップ クライアントの概要](remote-desktop-ios.md)         |
-| macOS    | [iTunes store での macOS のクライアント](https://itunes.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12) | [Mac でリモート デスクトップ クライアントの概要](remote-desktop-mac.md)         |
+| Windows  | [Microsoft Store の Windows 10 クライアント](https://go.microsoft.com/fwlink/?LinkID=616709)                      | [Windows のリモート デスクトップの概要](windows.md)                |
+| Android  | [Google Play の Android クライアント](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)        | [Android のリモート デスクトップ クライアントの概要](remote-desktop-android.md) |
+| iOS      | [iTunes ストアの iOS クライアント](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8)     | [iOS のリモート デスクトップ クライアントの概要](remote-desktop-ios.md)         |
+| macOS    | [iTunes ストアの macOS クライアント](https://itunes.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12) | [Mac でリモート デスクトップ クライアントを使用する](remote-desktop-mac.md)         |
 
 ## <a name="configuring-the-remote-pc"></a>リモート PC の構成
 
@@ -44,4 +44,4 @@ Microsoft リモート デスクトップ クライアントを使用すると�
 
 ## <a name="remote-desktop-client-uri-scheme"></a>リモート デスクトップ クライアントの URI スキーム
 
-統一リソース識別子 (URI) スキームを有効にすると、プラットフォーム間でリモート デスクトップ クライアントの機能を統合できます。 iOS、Mac、Android クライアントで使うことができる[サポートされている URI 属性](remote-desktop-uri.md)を確認してください。
+統一リソース識別子 (URI) スキームを有効にすると、プラットフォーム間でリモート デスクトップ クライアントの機能を統合できます。 チェック アウト、 [URI 属性をサポートされている](remote-desktop-uri.md) iOS、Mac、および Android クライアントで使用できます。

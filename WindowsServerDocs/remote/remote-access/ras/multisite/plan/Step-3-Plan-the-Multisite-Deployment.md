@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 16a2dcdc573fac2631b5a9890ee04f2efb08d90a
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 973ef70614f056adac1463918cc425d82b21ac62
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282539"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792310"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>手順 3 の計画、マルチサイト展開
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 マルチサイトのインフラストラクチャを計画した後、追加の証明書の要件を計画、エントリ ポイントと、デプロイに割り当てられた IPv6 アドレスのクライアント コンピューターの選択。  
 
@@ -162,11 +162,11 @@ ms.locfileid: "67282539"
   
    3. Teredo プレフィックス (省略可能)。 このプレフィックスは、リモート アクセス サーバーが 2 つ連続するパブリック IPv4 アドレスを持つ外部アダプターで構成されている場合にのみ該当します。 プレフィックスは、アドレスのペアの最初のパブリック IPv4 アドレスに基づきます。 たとえば、外部アドレスがある場合。  
   
-      1. www.xxx.yyy.zzz  
+      1. www\.xxx.yyy.zzz  
   
-      2. www.xxx.yyy.zzz+1  
+      2. www\.xxx.yyy.zzz+1  
   
-      構成する Teredo プレフィックスは 2001:0:WWXX:YYZZ::/64、IPv4 アドレスの www.xxx.yyy.zzz の 16 進数表現というが。  
+      構成する Teredo プレフィックスは 2001:0:WWXX:YYZZ::/64、IPv4 アドレスの www の 16 進数表現というの\.xxx.yyy.zzz します。  
   
       Teredo プレフィックスを計算する、次のスクリプトを使用することに注意してください。  
   
@@ -270,7 +270,7 @@ DirectAccess 展開を再インストールせず、IPv4 のみから IPv6 専�
   
     -   IP アドレス::: 1  
   
-    -   タイプ: AAAA  
+    -   型:AAAA  
   
   
   

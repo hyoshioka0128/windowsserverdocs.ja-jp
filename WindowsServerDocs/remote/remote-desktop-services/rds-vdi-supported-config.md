@@ -1,6 +1,6 @@
 ---
-title: リモート デスクトップ サービスの VDI でサポートされる Windows 10 のセキュリティ構成
-description: Windows Server 2016 で RDS での Windows 10 の VDI でサポートされる構成について説明します。
+title: リモート デスクトップ サービス VDI でサポートされる Windows 10 のセキュリティ構成
+description: Windows Server 2016 の RDS によって Windows 10 VDI でサポートされる構成に関する情報を提供します。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,41 +14,41 @@ ms.assetid: 8f164f5d-a498-4f91-a12f-3e01d554f810
 author: lizap
 manager: dongill
 ms.openlocfilehash: ff890150dcea30c425267dcaae9b1bdbc6d78b8c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820083"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743396"
 ---
-# <a name="supported-windows-10-security-configurations-for-remote-desktop-services-vdi"></a>リモート デスクトップ サービスの VDI でサポートされる Windows 10 のセキュリティ構成
+# <a name="supported-windows-10-security-configurations-for-remote-desktop-services-vdi"></a>リモート デスクトップ サービス VDI でサポートされる Windows 10 のセキュリティ構成
 
 > 適用先:Windows Server 2016
 
-Windows 10 および Windows Server 2016 をさらにセキュリティ侵害を防ぐため、悪意のある攻撃をブロックし、仮想マシン、アプリケーション、およびデータのセキュリティを強化、オペレーティング システムに組み込まれている保護の新しい層があります。
+Windows 10 と Windows Server 2016 には、オペレーティング システムに新しい保護層が組み込まれています。これにより、セキュリティ違反に対する防御を強化し、悪意ある攻撃のブロックに役立てて、仮想マシン、アプリケーション、およびデータのセキュリティを強化しています。
 
 > [!NOTE]
-> 必ず確認、[リモート デスクトップ サービスには、構成情報がサポートされている](rds-supported-config.md)します。
+> [リモート デスクトップ サービスでサポートされる構成情報](rds-supported-config.md)を必ず確認してください。
 
-これらの新機能の rds. を使用して、VDI 展開でサポートされている次の表
+次の表は、RDS を使用する VDI の展開で、これらの新機能のどれがサポートされているかの概要を示しています。
 
-|  VDI のコレクション型               |  プールの管理 |  個人の管理 |  プールされた非管理対象                                     |  非管理対象の個人                                    |
+|  VDI のコレクションの種類               |  管理対象のプール型 |  管理対象の個人用 |  非管理対象のプール型                                     |  非管理対象の個人用                                    |
 |-------------------------------------|------------------|--------------------|--------------------------------------------------------|--------------------------------------------------------|
 | [Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/credential-guard)                    | 〇              | 〇                | 〇                                                    | 〇                                                    |
 | [Device Guard](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)                        | 〇              | 〇                | 〇                                                    | 〇                                                    |
-| [Credential Guard をリモート](https://technet.microsoft.com/itpro/windows/keep-secure/remote-credential-guard)             | X               | いいえ                 | いいえ                                                     | X                                                     |
-| [シールドされた & 暗号化サポート Vm](../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md) | いいえ               | いいえ                 | 追加の構成でサポートされる Vm の暗号化 | 追加の構成でサポートされる Vm の暗号化 |
+| [Remote Credential Guard](https://technet.microsoft.com/itpro/windows/keep-secure/remote-credential-guard)             | X               | X                 | X                                                     | X                                                     |
+| [シールド型で暗号化がサポートされる VM](../../security/guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md) | X               | X                 | 追加の構成によって暗号化がサポートされる VM | 追加の構成によって暗号化がサポートされる VM |
 
-## <a name="remote-credential-guard"></a>Credential Guard をリモートの場合:
+## <a name="remote-credential-guard"></a>Remote Credential Guard:
 
-Credential Guard をリモートには、ターゲット コンピューターに直接接続していないのリモート デスクトップ接続ブローカーとリモート デスクトップ ゲートウェイ経由でのみサポートされます。
+Remote Credential Guard がサポートされるのは、ターゲット マシンへの直接接続に対してのみで、リモート デスクトップ接続ブローカーやリモート デスクトップ ゲートウェイを回する接続に対してはサポートされません。
 > [!NOTE]
-> 接続ブローカー、単一インスタンス環境にある DNS 名がコンピューター名と一致する場合は、ことができます、リモートの Credential Guard を使用するが、これはサポートされていません。
+> 単一インスタンス環境内に接続ブローカーがあり、DNS 名がコンピューター名と一致している場合、サポートはされませんが、Remote Credential Guard を使用できる可能性があります。
 
-## <a name="shielded-vms-and-encryption-supported-vms"></a>シールドされた Vm と暗号化には、Vm がサポートされています。 
+## <a name="shielded-vms-and-encryption-supported-vms"></a>シールド型 VM と暗号化がサポートされる VM: 
 
-- リモート デスクトップ サービスの VDI では、シールドされた Vm はサポートされていません 
+- リモート デスクトップ サービス VDI ではシールド型 VM はサポートされません 
 
-サポートされる Vm の暗号化を活用するには。
-- 非管理対象のコレクションと、リモート デスクトップ サービスのコレクションの作成プロセスの外部でプロビジョニングのテクノロジを使用して、仮想マシンをプロビジョニングします。 
-- 差分ディスクに依存しているために、ユーザー プロファイル ディスクはサポートされていません 
+暗号化がサポートされる VM を活用するには:
+- 非管理対象コレクションと、リモート デスクトップ サービスのコレクション作成プロセスの外部にあるプロビジョニング テクノロジを使用して仮想マシンをプロビジョニングします。 
+- ユーザー プロファイル ディスクは、差分ディスクに依存しているためサポートされません 
 

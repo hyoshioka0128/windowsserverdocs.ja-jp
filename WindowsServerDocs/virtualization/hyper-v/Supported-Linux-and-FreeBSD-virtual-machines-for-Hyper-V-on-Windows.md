@@ -1,6 +1,6 @@
 ---
 title: Windows にインストールされた Hyper-v の Linux および FreeBSD 仮想マシンがサポートされています。
-description: Linux integration services オブジェクトと各バージョンに含まれる機能を一覧表示します。
+description: 各バージョンに含まれる Linux integration services と機能の一覧を示します。
 ms.prod: windows-server-threshold
 ms.service: na
 manager: dongill
@@ -11,16 +11,16 @@ ms.assetid: 990ff94a-30fb-434b-b4a2-3804a5245ba6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 9df495bdc67b06a675fec050fb4c2960337ce8ca
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 593068f4fc2015c7f8f94bfe49c5a11c23cb6599
+ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832903"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68314980"
 ---
 # <a name="supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows"></a>Windows にインストールされた Hyper-v の Linux および FreeBSD 仮想マシンがサポートされています。
 
->適用先:Windows Server 2016、Hyper V Server 2016、Windows Server 2012 R2、Hyper-V Server 2012 R2、Windows Server 2012、Hyper-V Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
+>適用先:Windows Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server の2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
 
 HYPER-V では、Linux および FreeBSD の仮想マシンのエミュレートされたとハイパー V 固有の両方のデバイスをサポートします。 エミュレートされたデバイスを実行すると追加のソフトウェアをインストールする必要はありません。 ただしエミュレートされたデバイスは、高パフォーマンスを提供せず、HYPER-V テクノロジを提供する豊富な仮想マシンの管理インフラストラクチャを活用することはできません。 HYPER-V が提供するすべての利点を最大限に活用するために、Linux および FreeBSD のハイパー V 固有のデバイスを使用することをお勧めします。 ハイパースレッディング固有のデバイスを実行するために必要なドライバーのコレクションは、Linux Integration Services (LIS) または FreeBSD Integration Services (BIS) と呼ばれます。
 
@@ -31,8 +31,7 @@ LIS は Linux カーネルに追加されているされ、新しいリリース
 (10.0) の前に古い FreeBSD リリースには、マイクロソフトは、インストール可能な BIS ドライバーおよび FreeBSD の仮想マシンの対応するデーモンが含まれているポートを提供します。 それ以降の FreeBSD リリースの BIS、FreeBSD オペレーティング システムに組み込まれて、個別のダウンロードやインストールは FreeBSD 10.0 に必要な KVP ポート ダウンロード以外は必要ありません。
 
 > [!TIP]
-> - ダウンロード [Windows Server 2016](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016) Evaluation Center からです。
-> - ダウンロード[Microsoft HYPER-V Server 2016](https://www.microsoft.com/evalcenter/evaluate-hyper-v-server-2016) Evaluation Center からです。
+> - 評価センターから[Windows Server 2019](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019)をダウンロードします。
 
 このコンテンツの目的は、情報が役立ちますが、HYPER-V 上の Linux または FreeBSD 展開を容易にするためです。 特定の詳細は次のとおりです。
 
@@ -46,24 +45,24 @@ LIS は Linux カーネルに追加されているされ、新しいリリース
 
 * LIS または BIS 機能ごとに機能の説明。
 
-**特徴および機能に関する提案を送信しますか。** 適切か何かはありますか。 使用することができます、 [Windows Server の User Voice](https://windowsserver.uservoice.com/forums/295062-linux-support)サイト Linux と FreeBSD 仮想マシン、HYPER-V の新機能と機能を提案および他のユーザーの声を参照してください。
+**機能について提案する場合は、** 適切か何かはありますか。 [Windows Server User Voice](https://windowsserver.uservoice.com/forums/295062-linux-support)サイトを使用して、hyper-v 上の Linux および FreeBSD Virtual Machines の新機能を提案したり、他のユーザーの意見を確認したりすることができます。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-* [CentOS をサポートし、HYPER-V 上の Red Hat Enterprise Linux 仮想マシン](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
+* [サポートされている CentOS と Hyper-v 上の仮想マシンの Red Hat Enterprise Linux](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
-* [HYPER-V でサポートされている Debian の仮想マシン](Supported-Debian-virtual-machines-on-Hyper-V.md)
+* [Hyper-V でサポートされている Debian 仮想マシン](Supported-Debian-virtual-machines-on-Hyper-V.md)
 
-* [HYPER-V でサポートされている Oracle Linux 仮想マシン](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
+* [Hyper-v でサポートされている Oracle Linux の仮想マシン](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-v のサポートされている SUSE 仮想マシン](Supported-SUSE-virtual-machines-on-Hyper-V.md)
+* [Hyper-v でサポートされている SUSE 仮想マシン](Supported-SUSE-virtual-machines-on-Hyper-V.md)
 
-* [Ubuntu 仮想マシンの HYPER-V でサポートされています。](Supported-Ubuntu-virtual-machines-on-Hyper-V.md)
+* [Hyper-v でサポートされている Ubuntu 仮想マシン](Supported-Ubuntu-virtual-machines-on-Hyper-V.md)
 
-* [Hyper-v のサポートされている FreeBSD 仮想マシン](Supported-FreeBSD-virtual-machines-on-Hyper-V.md)
+* [Hyper-v でサポートされている FreeBSD 仮想マシン](Supported-FreeBSD-virtual-machines-on-Hyper-V.md)
 
-* [HYPER-V で Linux および FreeBSD の仮想マシンの機能の説明](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md)
+* [Hyper-v 上の Linux および FreeBSD 仮想マシンの機能の説明](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md)
 
-* [HYPER-V で Linux を実行するためのベスト プラクティス](Best-Practices-for-running-Linux-on-Hyper-V.md)
+* [Hyper-v で Linux を実行するためのベストプラクティス](Best-Practices-for-running-Linux-on-Hyper-V.md)
 
-* [HYPER-V で FreeBSD を実行するためのベスト プラクティス](Best-practices-for-running-FreeBSD-on-Hyper-V.md)
+* [Hyper-v で FreeBSD を実行するためのベストプラクティス](Best-practices-for-running-FreeBSD-on-Hyper-V.md)

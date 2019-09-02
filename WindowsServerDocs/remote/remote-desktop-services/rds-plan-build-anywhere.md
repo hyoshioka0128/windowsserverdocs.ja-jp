@@ -1,6 +1,6 @@
 ---
 title: リモート デスクトップ サービスの任意の場所のビルド
-description: RDS デプロイをホストする場所を判断するのに役立つ計画情報。
+description: RDS の展開をホストする場所の判断に役立つ計画情報。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,16 +13,16 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: cbb8e73d753b1fe4f0293cf4427c634020a23a42
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4563108d2efa9cd864fbe75fa82349d21659a941
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869513"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63712335"
 ---
 # <a name="remote-desktop-services---build-anywhere"></a>リモート デスクトップ サービスの任意の場所のビルド
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 オンプレミス、クラウド、またはその両方のハイブリッドを展開します。 お客様のビジネス ニーズの変化に応じて、展開を変更します。
 
@@ -33,6 +33,6 @@ ms.locfileid: "59869513"
 
 このような柔軟性では、両方の長所を活用することができます。
 - 簡潔さと従量課金制のメソッドをクラウドとオンラインの世界に関連付けられています。
-- 使いやすさと大量のリソースを既に活用の手間のかからない方法は、オンプレミスに存在します。
+- よく知っている手間のかからない方法で、オンプレミスに既に存在する大量のリソースを活用。
 
 詳細については、する方法を紹介 [の構築し、デプロイのリモート デスクトップ サービス展開](rds-build-and-deploy.md)します。

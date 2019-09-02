@@ -10,15 +10,15 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: d09024b3c7f7a1e55c9e9c2ece56e037fe7e16f2
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66812496"
 ---
 # <a name="assign-a-mount-point-folder-path-to-a-drive"></a>ドライブにマウント ポイント フォルダー パスを割り当てる
 
-> **適用対象します。** Windows 10、Windows 8.1、Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> **適用対象:** Windows 10、Windows 8.1、Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ディスクの管理を使用して、ドライブに (ドライブ文字ではなく) マウント ポイント フォルダー パスを割り当てることができます。 マウント ポイント フォルダー パスは、ベーシックまたはダイナミック NTFS ボリューム上の空のフォルダーに対してのみ使用できます。
 
@@ -27,7 +27,7 @@ ms.locfileid: "66812496"
 > [!NOTE]
 > 以下の手順を実行するには、少なくとも **Backup Operators** または **Administrators** グループのメンバーである必要があります。
 
-#### <a name="to-assign-a-mount-point-folder-path-to-a-drive-by-using-the-windows-interface"></a>Windows インターフェイスを使用して、ドライブにマウント ポイント フォルダー パスを割り当てる
+#### <a name="to-assign-a-mount-point-folder-path-to-a-drive-by-using-the-windows-interface"></a>Windows インターフェイスを使用して、ドライブにマウント ポイント フォルダー パスを割り当てるには
 
 1.  ディスクの管理で、マウント ポイント フォルダー パスを割り当てるパーティションまたはボリュームを右クリックします。 
 2. **[ドライブ文字とパスの変更]** をクリックし、 **[追加]** をクリックします。 
@@ -52,8 +52,8 @@ ms.locfileid: "66812496"
 
 | Value | 説明 |
 | --- | --- |
-| **ボリュームの一覧** | すべてのディスク上のベーシック ボリュームとダイナミック ボリュームの一覧を表示します。 |
-| **ボリュームを選択します。**        | <em>volumenumber</em> がボリューム番号である指定されたボリュームを選択し、そのボリュームにフォーカスを移動します。 ボリュームが指定されていない場合、**select** コマンドは、フォーカスがある現在のボリュームを一覧表示します。 番号、ドライブ文字、マウント ポイント フォルダー パスでボリュームを指定できます。 ベーシック ディスクでボリュームを選択すると、対応するパーティションにフォーカスが移動します。|
+| **list volume** | すべてのディスク上のベーシック ボリュームとダイナミック ボリュームの一覧を表示します。 |
+| **select volume**        | <em>volumenumber</em> がボリューム番号である指定されたボリュームを選択し、そのボリュームにフォーカスを移動します。 ボリュームが指定されていない場合、**select** コマンドは、フォーカスがある現在のボリュームを一覧表示します。 番号、ドライブ文字、マウント ポイント フォルダー パスでボリュームを指定できます。 ベーシック ディスクでボリュームを選択すると、対応するパーティションにフォーカスが移動します。|
 | **assign** | <ul><li> フォーカスがあるボリュームにドライブ文字またはマウント ポイント フォルダー パスを割り当てます。 ドライブ文字またはマウント ポイント フォルダー パスが指定されていない場合は、次に利用可能なドライブ文字が割り当てられます。 ドライブ文字またはマウント ポイント フォルダー パスが既に使用中の場合、エラーが生成されます。</li>  <li>**assign** コマンドを使用して、リムーバブル ドライブに関連付けられているドライブ名を変更できます。</li> <li> ブート ボリュームまたはページング ファイルが含まれているボリュームにドライブ文字を割り当てることはできません。 さらに、Original Equipment Manufacturer (OEM) パーティション、EFI システム パーティション、またはベーシック データ パーティション以外の任意の GPT パーティションにドライブ文字を割り当てることはできません。</li></ul> |
 | **mount=** <em>path</em> | マウントされたドライブが存在する、空の既存の NTFS フォルダーを指定します。  |
 
@@ -66,6 +66,6 @@ ms.locfileid: "66812496"
 -   [mountvol](https://go.microsoft.com/fwlink/?linkid=64111) コマンドを使用して、マウントされたドライブを作成することもできます。
 
 ## <a name="see-also"></a>関連項目
--   [コマンドライン構文の表記規則](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
+-   [コマンド ライン構文の表記規則](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
 
 

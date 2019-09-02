@@ -1,32 +1,27 @@
 ---
 title: 複数言語サポート用のサーバー回復 DVD の作成
-description: Windows Server Essentials を使用する方法について説明します
-ms.custom: na
+description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
-4author: nnamuhcs
-ms.author: coreyp
-manager: dongill
-ms.openlocfilehash: e2bbc7bf7af71c671153bf7ba3356ddc08dcc38b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+author: daveba
+ms.author: daveba
+ms.openlocfilehash: 59d8d41e5836ba88b405a058c8340f454b081c06
+ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433634"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69980246"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>複数言語サポート用のサーバー回復 DVD の作成
 
 >適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-##  <a name="BKMK_MLHeadedRecovery"></a> ローカルで管理されているサーバーで、サーバーのセットアップと複数言語のサポート用のサーバー回復 DVD を作成します。  
+##  <a name="BKMK_MLHeadedRecovery"></a>ローカルで管理されているサーバーで複数の言語をサポートするためのサーバーセットアップとサーバー回復 DVD の作成  
   
 > [!NOTE]
->  多言語 Windows イメージを作成する必要があります最初、[チュートリアル。多言語 Windows イメージの作成](https://technet.microsoft.com/library/jj126995)Windows Server Essentials 言語パックを install.wim に追加する前にします。  
+>  まず、 [チュートリアル「」の説明に従って、多言語の Windows イメージを作成する必要があります。Windows Server Essentials install.wim](https://technet.microsoft.com/library/jj126995) pack をインストールする前に、多言語の windows イメージを作成します。  
   
  セットアップには、Windows プレインストール環境 (Windows PE) と初期構成という 2 つのフェーズがあります。 既定では、初期構成には言語選択ページは表示されません。  
   
@@ -62,19 +57,19 @@ ms.locfileid: "66433634"
   
 -   Windows Server Essentials 言語パック DVD。  
   
-###  <a name="BKMK_Steps"></a> 複数言語のサポートを追加します。  
- Windows セットアップに複数言語のサポートを追加する、Windows Server 2012 を追加することで、Install.wim を更新して、Windows Server Essentials 言語パックをします。  
+###  <a name="BKMK_Steps"></a>複数言語サポートの追加  
+ Windows セットアップに複数の言語サポートを追加するには、Windows Server 2012 および Windows Server Essentials 言語パックを追加して、インストール .wim を更新します。  
   
 #### <a name="update-installwim"></a>Install.wim の更新  
- この手順で Windows Server 2012 および Windows Server Essentials 言語パックを Install.wim に追加します。  
+ この手順では、Windows Server 2012 および Windows Server Essentials 言語パックをインストール .wim に追加します。  
   
 > [!NOTE]
->  Windows Server 2012 の言語パックをインストールすることを確認します。 これで適切なブランド化を取得できます。 Windows Server 2012 Multilingual User Interface Language Pack は[Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)します。 手順に従ってください」の説明に従って、[チュートリアル。多言語 Windows イメージの作成、多言語](https://technet.microsoft.com/library/jj126995.aspx)Windows Server Essentials 言語パックを install.wim に追加する前に、多言語 Windows イメージを作成する方法。  
+>  Windows Server 2012 の言語パックがインストールされていることを確認します。 これで適切なブランド化を取得できます。 Windows Server 2012 多言語ユーザーインターフェイス言語パックは、 [Microsoft.com](https://www.microsoft.com/OEM/en/installation/downloads/Pages/technical-downloads.aspx)で入手できます。 [チュートリアル「」で説明されている手順に従ってください。Windows Server Essentials 言語パックをインストールする](https://technet.microsoft.com/library/jj126995.aspx)前に、多言語 windows イメージの作成に関する多言語の windows イメージを作成します。  
 >   
->  Windows Server Essentials 言語パックは、言語パック メディアの \Language パックで入手\\< CultureName\>します。  
+>  Windows Server Essentials 言語パックは、言語パックメディア () の言語パックメディア\\で利用でき\>ます。この言語パックは、< の選別します。  
   
 > [!NOTE]
->  すべての言語パックは、Windows Server 2012 のリリース以前に使用できない可能性があります。  
+>  Windows Server 2012 のリリース以前は、すべての言語パックを利用できない場合があります。  
   
 ###### <a name="to-add-language-packs-to-installwim"></a>言語パックを Install.wim に追加するには  
   
@@ -89,9 +84,9 @@ ms.locfileid: "66433634"
     ```  
   
 
-2.  クライアント バックアップ復元 USB の作成をサポートする言語固有のファイルのフラッシュ ドライブで説明する手順を使用して追加[多言語のクライアント復元メディアのビルド](Build-Multi-Language-Client-Restore-Media.md)します。  
+2.  「[複数言語のクライアント復元メディアの作成](Build-Multi-Language-Client-Restore-Media.md)」で説明されている手順に従って、クライアントバックアップ復元 USB フラッシュドライブの作成をサポートする言語固有のファイルを追加します。  
 
-2.  クライアント バックアップ復元 USB の作成をサポートする言語固有のファイルのフラッシュ ドライブで説明する手順を使用して追加[多言語のクライアント復元メディアのビルド](../install/Build-Multi-Language-Client-Restore-Media.md)します。  
+2.  「[複数言語のクライアント復元メディアの作成](../install/Build-Multi-Language-Client-Restore-Media.md)」で説明されている手順に従って、クライアントバックアップ復元 USB フラッシュドライブの作成をサポートする言語固有のファイルを追加します。  
 
   
 3.  `DISM /Gen-LangINI` コマンドを使用して、追加の言語サポートを反映するようにルーズ メディア内の Lang.ini ファイルを再作成します。次に例を示します。  
@@ -109,13 +104,13 @@ ms.locfileid: "66433634"
   
 ## <a name="see-also"></a>関連項目  
 
- [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   
+ [イメージの作成とカスタマイズ](Creating-and-Customizing-the-Image.md)   
  [追加のカスタマイズ](Additional-Customizations.md)   
- [イメージの展開の準備](Preparing-the-Image-for-Deployment.md)   
+ [展開のためのイメージの準備](Preparing-the-Image-for-Deployment.md)   
  [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)
 
- [作成して、イメージをカスタマイズします。](../install/Creating-and-Customizing-the-Image.md)   
+ [イメージの作成とカスタマイズ](../install/Creating-and-Customizing-the-Image.md)   
  [追加のカスタマイズ](../install/Additional-Customizations.md)   
- [イメージの展開の準備](../install/Preparing-the-Image-for-Deployment.md)   
+ [展開のためのイメージの準備](../install/Preparing-the-Image-for-Deployment.md)   
  [カスタマー エクスペリエンスのテスト](../install/Testing-the-Customer-Experience.md)
 

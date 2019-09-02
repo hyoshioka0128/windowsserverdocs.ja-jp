@@ -14,12 +14,12 @@ ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 26fb4aa21e80618c4c63bd9edbf8731bf886db62
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59853763"
 ---
-# <a name="software-load-balancing-slb-for-sdn"></a>ソフトウェアの負荷分散\(SLB\) SDN の
+# <a name="software-load-balancing-slb-for-sdn"></a>SDN のソフトウェア負荷分散 \(SLB\)
 
 >適用対象:Windows Server 2016 の Windows Server (半期チャネル)
 

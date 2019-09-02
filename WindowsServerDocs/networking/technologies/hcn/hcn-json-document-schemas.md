@@ -1,19 +1,19 @@
 ---
-title: ホスト ネットワークの計算 (HCN) JSON ドキュメントのスキーマ
+title: ホストコンピューティングネットワーク (HCN) JSON ドキュメントスキーマ
 description: ''
 ms.author: jmesser
 author: jmesser81
 ms.date: 11/05/2018
-ms.openlocfilehash: 5dadcffc34a4d3bc83b128b4fb5074c227151fa4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b8676fbab1776144cbbe68604f56d1230a04a145
+ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836303"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70031539"
 ---
 # <a name="hcn-json-document-schemas"></a>HCN JSON ドキュメントのスキーマ
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2019
 
 ## <a name="hcn-schema"></a>HCN スキーマ
 
@@ -79,7 +79,7 @@ ms.locfileid: "59836303"
 }
 ```
 
-## <a name="hcn-endpoint-schema"></a>HCN エンドポイント スキーマ
+## <a name="hcn-endpoint-schema"></a>HCN エンドポイントスキーマ
 
 ```json
 // Endpoint 
@@ -122,7 +122,7 @@ ms.locfileid: "59836303"
 }
 ```
 
-## <a name="hcn-policy-schema"></a>HCN ポリシー スキーマ
+## <a name="hcn-policy-schema"></a>HCN ポリシースキーマ
 
 ```json
 // VlanPolicy
@@ -136,17 +136,18 @@ ms.locfileid: "59836303"
     "Type" : "PortMapping",
     "Protocol" : <enum>,
          // AsString; Values: 
-         // "TCP" (0),
-         // "UDP" (1),
-         // "ICMPv4" (2),
-         // "ICMPv6" (3),
-         // "IGMP" (4),
+         // "Unknown" (0),
+         // "ICMPv4" (1),
+         // "IGMP" (2),
+         // "TCP" (6),
+         // "UDP" (17),
+         // "ICMPv6" (58)
     "InternalPort" : <uint16>,
     "ExternalPort" : <uint16>,
 }
 ```
 
-## <a name="hcn-load-balancer-schema"></a>HCN load balancer スキーマ
+## <a name="hcn-load-balancer-schema"></a>HCN ロードバランサースキーマ
 
 ```json
 // Host Compute LoadBalancer
@@ -168,11 +169,12 @@ ms.locfileid: "59836303"
         "Type" : "PortMapping",
         "Protocol" : <enum>,
              // AsString; Values: 
-             // "TCP" (0),
-             // "UDP" (1),
-             // "ICMPv4" (2),
-             // "ICMPv6" (3),
-             // "IGMP" (4),
+             // "Unknown" (0),
+             // "ICMPv4" (1),
+             // "IGMP" (2),
+             // "TCP" (6),
+             // "UDP" (17),
+             // "ICMPv6" (58)
         "InternalPort" : <uint16>,
         "ExternalPort" : <uint16>,
     } ],
@@ -185,7 +187,7 @@ ms.locfileid: "59836303"
 }
 ```
 
-## <a name="hcn-namespace-schema"></a>HCN 名前空間のスキーマ
+## <a name="hcn-namespace-schema"></a>HCN 名前空間スキーマ
 
 ```json
 // Namespace
@@ -224,7 +226,7 @@ ms.locfileid: "59836303"
 };
 ```
 
-## <a name="result-error-schema"></a>結果エラー スキーマ
+## <a name="result-error-schema"></a>結果のエラースキーマ
 
 ```json
 // ErrorSchema

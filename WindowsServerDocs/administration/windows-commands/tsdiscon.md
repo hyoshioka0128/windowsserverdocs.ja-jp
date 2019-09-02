@@ -28,7 +28,7 @@ ms.locfileid: "66440914"
 このコマンドを使用する方法の例については、次を参照してください。[例](#BKMK_examples)します。
 
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 新機能については、最新バージョンについてを参照してください。 [Windows Server 2012 でのリモート デスクトップ サービスでどのような s の新しい](https://technet.microsoft.com/library/hh831527)、Windows Server TechNet ライブラリです。
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの [Windows Server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527) を参照してください。
 
 ## <a name="syntax"></a>構文
 ```
@@ -67,4 +67,4 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
   ```
   #### <a name="additional-references"></a>その他の参照情報
   [コマンドライン構文キー](command-line-syntax-key.md)
-  [リモート デスクトップ サービスと #40 です。ターミナル サービスと #41 です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+  [リモート デスクトップ サービス &#40;ターミナル サービス&#41; コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)

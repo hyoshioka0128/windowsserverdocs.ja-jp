@@ -13,10 +13,10 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 54c8d05c028cbca364b6a46052d12cdcb12c01b0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66443615"
 ---
 # <a name="iis-on-nano-server"></a>Nano Server の IIS
@@ -32,7 +32,7 @@ Nano Server の今回のリリースでは、次の IIS 機能を使用できま
 
 |機能|既定で有効|  
 |-----------|----------------------|  
-|**HTTP 共通機能**||  
+|**一般的な HTTP 機能**||  
 |既定のドキュメント|○|  
 |ディレクトリの参照|○|  
 |HTTP エラー|○|  
@@ -43,19 +43,19 @@ Nano Server の今回のリリースでは、次の IIS 機能を使用できま
 |カスタム ログ||  
 |要求監視||  
 |トレース||  
-|**[パフォーマンス]**||  
+|**パフォーマンス**||  
 |静的コンテンツの圧縮|○|  
 |動的コンテンツの圧縮||  
 |**セキュリティ**||  
 |要求のフィルタリング|○|  
-|[基本認証]||  
+|基本認証||  
 |クライアント証明書マッピング認証||  
 |ダイジェスト認証||  
 |IIS クライアント証明書マッピング認証||  
 |IP とドメインの制限||  
 |URL 承認||  
-|Windows 認証||  
-|**アプリケーションの開発**||  
+|[Windows 認証]||  
+|**アプリケーション開発**||  
 |アプリケーションの初期化||  
 |CGI||  
 |ISAPI 拡張機能||  
@@ -65,7 +65,7 @@ Nano Server の今回のリリースでは、次の IIS 機能を使用できま
 |**管理ツール**||  
 |Windows PowerShell 用 IISAdministration モジュール|○|  
 
-その他の IIS (を使用して ASP.NET、PHP、および Java) などの他の構成に関する記事の一連の関連コンテンツを公開する[ http://iis.net/learn](http://iis.net/learn)します。  
+IIS の他の構成 (ASP.NET、PHP、Java の使用など) に関する一連の記事と、その他の関連するコンテンツは、[http://iis.net/learn](http://iis.net/learn) で公開されています。  
 
 ## <a name="installing-iis-on-nano-server"></a>Nano Server での IIS のインストール  
 このサーバーの役割は、オフライン (Nano Server が停止した状態) でもオンライン (Nano Server が実行中) でもインストールできますが、オフライン インストールをお勧めします。  
@@ -127,9 +127,9 @@ Nano Server の今回のリリースでは、次の IIS 機能を使用できま
 
 5. 以下を実行して、IIS パッケージと関連する言語パックが正しくインストールされていることを確認します。  
 
-   **dism/online/get-packages**  
+   **dism /online /get-packages**  
 
-   表示する必要があります"Package Identity:Microsoft NanoServer IIS パッケージ ~ 31bf3856ad364e35 ~ amd64 ~ ~ 10.0.14393.1000"2 回一覧表示、1 回 Release type:言語パックと Release type:Feature Pack。  
+   "Release Type : Language Pack" と "Release Type : Feature Pack" の 2 か所に "Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000" が表示されます。  
 
 6. **net start w3svc** を実行するか、Nano Server を再起動して、W3SVC サービスを開始します。  
 
@@ -209,7 +209,7 @@ PS C:\> $sm = Get-IISServerManager
 PS C:\> $sm.ApplicationPools.Add("DemoAppPool")  
 ```  
 
-**HTTPS と証明書を構成します。**  
+**HTTPS と証明書の構成**  
 
 次の例に示すように、Certoc.exe ユーティリティを使用して証明書をインポートします。これは、Nano Server 上の Web サイトの HTTPS の構成を示します。  
 
@@ -225,7 +225,7 @@ PS C:\> $sm.ApplicationPools.Add("DemoAppPool")
 
 3.  Nano Server で、次のコマンドを使用して証明書を "マイ" ストアにインポートします。  
 
-    **certoc.exe-importpfx-p YOUR_PFX_PASSWD、c:\temp\test.pfx**  
+    **certoc.exe -ImportPFX -p <独自の pfx のパスワード> My c:\temp\test.pfx**  
 
 4.  `Get-ChildItem Cert:\LocalMachine\my` を使用して、この新しい証明書の拇印 (この例では 61E71251294B2A7BB8259C2AC5CF7BA622777E73) を取得します。  
 
@@ -242,7 +242,7 @@ PS C:\> $sm.ApplicationPools.Add("DemoAppPool")
     $sm.CommitChanges()  
     ```  
 
-    この構文を使用して特定のホスト名と Server Name Indication (SNI) を使用することもできます。 `$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
+    さらに、次の構文を使用して特定のホスト名に Server Name Indication (SNI) を使用することもできます: `$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
 
 ## <a name="appendix-1-list-of-iis-sub-features"></a>付録 1:IIS サブ機能の一覧
 
@@ -370,7 +370,7 @@ IIS の各機能は、構成要素のセットとして存在します。 この
 |`<modules>`|`<add name="StaticCompressionModule" lockItem="true" />`|  
 |`<httpCompression>`|`<httpCompression directory="%SystemDrive%\inetpub\temp\IIS Temporary Compressed Files"><br />    <scheme name="gzip" dll="%Windir%\system32\inetsrv\gzip.dll" /><br />   <staticTypes><br />        <add mimeType="text/*" enabled="true" /><br />        <add mimeType="message/*" enabled="true" /><br />        <add mimeType="application/javascript" enabled="true" \/><br />        <add mimeType="application/atom+xml" enabled="true" /><br />        <add mimeType="application/xaml+xml" enabled="true" /><br />        <add mimeType="\*\*" enabled="false" /><br />    </staticTypes><br /></httpCompression>`|  
 
-**動的なコンテンツ圧縮**  
+**動的なコンテンツの圧縮**  
 
 |セクション|構成要素|  
 |-----------|--------------------------|  
@@ -379,7 +379,7 @@ IIS の各機能は、構成要素のセットとして存在します。 この
 |`<httpCompression>`|`<httpCompression directory\="%SystemDrive%\inetpub\temp\IIS Temporary Compressed Files"><br />    <scheme name="gzip" dll="%Windir%\system32\inetsrv\gzip.dll" \/><br />    \<dynamicTypes><br />        <add mimeType="text/*" enabled="true" \/><br />        <add mimeType="message/*" enabled="true" /><br />        <add mimeType="application/x-javascript" enabled="true" /><br />        <add mimeType="application/javascript" enabled="true" /><br />        <add mimeType="*/*" enabled="false" /><br />    <\/dynamicTypes><br /></httpCompression>`|  
 
 ### <a name="security"></a>セキュリティ  
-**要求のフィルタ リング**  
+**要求のフィルタリング**  
 
 
 |       セクション        |                                                                                                                                        構成要素                                                                                                                                        |
@@ -421,7 +421,7 @@ IIS の各機能は、構成要素のセットとして存在します。 この
 |                `<modules>`                 |               `<add name="CertificateMappingAuthenticationModule" lockItem="true" `/>\`                |
 | `<clientCertificateMappingAuthentication>` |                      `<clientCertificateMappingAuthentication enabled="false" />`                      |
 
-**IP およびドメインの制限**  
+**IP とドメインの制限**  
 
 |セクション|構成要素|  
 |----------------|--------------------------|  
@@ -476,7 +476,7 @@ IIS の各機能は、構成要素のセットとして存在します。 この
 |`<globalModules>`|`<add name="IsapiFilterModule" image="%windir%\System32\inetsrv\filter.dll" />`|  
 |`<modules>`|`<add name="IsapiFilterModule" lockItem="true" />`|  
 
-**サーバー側インクルードします。**  
+**サーバー側インクルード**  
 
 |セクション|構成要素|  
 |----------------|--------------------------|  

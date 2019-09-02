@@ -1,39 +1,32 @@
 ---
 title: Windows Server 2016 のテクノロジ
 description: テクノロジの概要について説明します。
-ms.custom: na
 ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
-ms.technology: ''
-ms.author: ''
-ms.date: ''
-ms.tgt_pltfrm: na
+ms.author: daveba
+ms.date: 10/17/2017
 ms.topic: article
-ms.assetid: ''
-author: ''
-manager: ''
-ms.openlocfilehash: 3aa582df6728d46b1f5f3ac13469ae7af52da28e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+author: daveba
+ms.openlocfilehash: f9f683d9ca4b016f0e790f180735684acd6614d0
+ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862953"
+ms.lasthandoff: 08/22/2019
+ms.locfileid: "69980303"
 ---
 # <a name="technology-in-windows-server-2016"></a>Windows Server 2016 のテクノロジ 
 
-<img src="media/6-networking.png" style='align:left'> *テクノロジを紹介します。テクノロジの市場における立ち位置とコンテンツの関係性を示すものである必要があります。該当するテクノロジ領域のランディング ページに使用するアイコンを変更します。*
+<img src="media/6-networking.png" style='align:left'> *テクノロジの概要です。テクノロジの市場における立ち位置とコンテンツの関係性を示すものである必要があります。アイコンは、ランディング ページの該当するテクノロジ領域で使用されているものに変更してください。*
 
-*目標は、それぞれの環境で実装に役立つコンテンツをテクノロジのマーケティング ストーリーから顧客です。*
+*目標は、まず販売用のテクノロジの説明を行ってから、お客様の環境へのテクノロジ実装に役立つコンテンツを紹介することです。*
 
 
 
 >[!Note]
 > Windows Server 2016 をダウンロードするを参照してください。 [Windows Server の評価](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)します。
 
-*新しいとおすすめの機能の機能は、ここを紹介します。*
+*ここでは、新機能や目玉機能を紹介します。*
 
-*コンテンツへのリンクを提供 - 各リンクは、H2 か H3 (テーブルまたは行頭文字) せずにする必要があります。例については、ネットワークに関する記事を参照してください。*
+*コンテンツへのリンクを記載します。各リンクは、表や箇条書きではなく、H2 か H3 のいずれかである必要があります。例については、ネットワークに関する記事を参照してください。*
 ## <a name="sub-technology"></a>サブテクノロジ
 
 ### <a name="link-to-article-about-sub-technology"></a>サブテクノロジに関する記事へのリンク

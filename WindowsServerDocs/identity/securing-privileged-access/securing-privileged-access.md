@@ -163,7 +163,9 @@ Credential Guard を有効にすると、NTLM パスワード ハッシュ、Ker
 
 ### <a name="4-leaked-credentials---force-password-reset"></a>4。漏洩した資格情報のパスワードのリセットを強制
 
-パスワードがセキュリティ侵害の疑いがあるときに自動的にパスワードのリセットを強制する Azure AD Identity Protection を有効にすると、セキュリティ体制を強化するために続行します。 ガイダンス資料にある[に Multi-factor Authentication のトリガーとパスワードの変更のリスク イベントを使用して、](/azure/active-directory/authentication/tutorial-risk-based-sspr-mfa)条件付きアクセス ポリシーを使用してこれを有効にする方法について説明します。
+
+パスワードにセキュリティ侵害の疑いがあるときに自動的にパスワードのリセットを強制する Azure AD Identity Protection を有効にすることによって、引き続きセキュリティ体制を強化してください。「[チュートリアル: リスク イベントを使用して多要素認証とパスワード変更をトリガーする](/azure/active-directory/authentication/tutorial-risk-based-sspr-mfa)」に記載されているガイダンスでは、条件付きアクセス ポリシーを使用してこれを有効にする方法について説明しています。
+
 
 ## <a name="am-i-done"></a>ロードマップの完了
 

@@ -1,6 +1,6 @@
 ---
 ms.assetid: 25f5aff1-6abf-4dea-b531-f1d9943bc181
-title: Windows Server 2016 で AD FS のカスタマイズ
+title: Windows Server 2016 での AD FS のカスタマイズ
 description: ''
 author: billmath
 ms.author: billmath
@@ -9,31 +9,31 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: b5aa22ad99529d99e2d7381a434916e8e749f185
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: b8832e7e53e94761a489e850726bbd206b8be62b
+ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188763"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863432"
 ---
-# <a name="ad-fs-customization-in-windows-server-2016"></a>Windows Server 2016 で AD FS のカスタマイズ
+# <a name="ad-fs-customization-in-windows-server-2016"></a>Windows Server 2016 での AD FS のカスタマイズ
 
 
-AD FS を使用して組織からのフィードバックに応答して、ユーザーをカスタマイズするその他のツールは、AD FS によって保護されている個々 のアプリケーションのエクスペリエンスにサインインを追加されています。  
-今すぐ説明のテキストとリンクなど、アプリケーションごとの web コンテンツを指定するだけでなくは、1 つのアプリケーション全体の web テーマを指定できます。  これには、ロゴ、図、スタイル シート、または、全体の onload.js ファイルが含まれます。  
+AD FS を使用した組織からのフィードバックに応じて、AD FS によって保護されている個々のアプリケーションのユーザーサインインエクスペリエンスをカスタマイズするためのツールが追加されました。  
+説明テキストやリンクなど、アプリケーションごとの web コンテンツを指定するだけでなく、アプリケーションごとに web テーマ全体を指定することもできます。  これには、ロゴ、イラスト、スタイルシート、または onload ファイル全体が含まれます。  
   
 ## <a name="global-settings"></a>グローバル設定    
-一般的なグローバル設定を参照することができます[Customizing the AD FS sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx) Windows Server 2012 R2 で AD FS に付属します。  
+全般的なグローバル設定については、Windows Server 2012 R2 の AD FS に付属している[AD FS サインインページのカスタマイズ](https://technet.microsoft.com/library/dn280950.aspx)に関するページを参照してください。  
   
 ## <a name="pre-requisites"></a>前提条件  
-このドキュメントで説明した手順を試行する前に、次の前提条件が必要です。  
+このドキュメントで説明されている手順を実行する前に、次の前提条件が必要です。  
   
 -   Windows Server 2016 TP4 以降の AD FS  
   
-## <a name="configure-ad-fs-relying-parties"></a>AD FS 証明書利用者のパーティを構成します。  
-Web サインインのパーティの証明書利用者ごとの要素とテーマを使って構成できます以下の PowerShell の例。  
+## <a name="configure-ad-fs-relying-parties"></a>AD FS 証明書利用者を構成する  
+証明書利用者ごとのサインイン web 要素とテーマは、次の PowerShell の例を使用して構成できます。  
   
-### <a name="customize-messages"></a>メッセージをカスタマイズします。  
+### <a name="customize-messages"></a>メッセージのカスタマイズ  
   
 ```  
 PS C:\>Set-AdfsRelyingPartyWebContent  
@@ -43,7 +43,7 @@ PS C:\>Set-AdfsRelyingPartyWebContent
     -SignInPageDescription "This text appears below the credential prompt"  
 ```  
   
-### <a name="customize-company-name-logo-and-image"></a>会社名、ロゴ、およびイメージをカスタマイズします。  
+### <a name="customize-company-name-logo-and-image"></a>会社名、ロゴ、画像をカスタマイズする  
   
 ```  
 PS C:\>Set-AdfsRelyingPartyWebTheme  
@@ -52,7 +52,7 @@ PS C:\>Set-AdfsRelyingPartyWebTheme
     -Illustration @{path="C:\Images\appillustration.jpg"}  
 ```  
   
-### <a name="customize-entire-page"></a>ページ全体のカスタマイズします。  
+### <a name="customize-entire-page"></a>ページ全体のカスタマイズ  
   
 ```  
 PS C:\>Set-AdfsRelyingPartyWebTheme  
@@ -60,31 +60,36 @@ PS C:\>Set-AdfsRelyingPartyWebTheme
     -OnLoadScriptPath @{path="c:\scripts\adfstheme\onload.js"}  
 ```  
   
-## <a name="custom-themes-and-advanced-custom-themes"></a>カスタム テーマと高度なカスタム テーマ  
+## <a name="custom-themes-and-advanced-custom-themes"></a>カスタムテーマと高度なカスタムテーマ  
   
-カスタム テーマを参照してください[Customizing the AD FS sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)と[Advanced Customization of AD FS サインイン ページ。](https://technet.microsoft.com/library/dn636121.aspx)  
+カスタムテーマについて[は、AD FS サインインページのカスタマイズ](https://technet.microsoft.com/library/dn280950.aspx)と[AD FS サインインページの高度なカスタマイズ](https://technet.microsoft.com/library/dn636121.aspx)に関するページを参照してください。  
   
-## <a name="assigning-custom-web-themes-per-rp"></a>RP ごとのカスタム web テーマを割り当てる  
+## <a name="assigning-custom-web-themes-per-rp"></a>RP ごとにカスタム web テーマを割り当てる  
   
-RP ごとのカスタム テーマを割り当てるには、次の手順を使用します。  
+RP ごとにカスタムテーマを割り当てるには、次の手順を使用します。  
   
-1. 既定では、AD FS でグローバルにテーマのコピーとして新しいテーマを作成します。  
-<code>New-AdfsWebTheme -Name AppSpecificTheme -SourceName default</code> 2.  カスタマイズ用のテーマをエクスポートします。 <code>Export-AdfsWebTheme -Name AppSpecificTheme -DirectoryPath c:\appspecifictheme</code>  
-3. お気に入りのエディターでテーマ ファイル (イメージ、css、onload.js) をカスタマイズまたは 4 ファイルを置換します。 AD FS の (新しいテーマを対象とする) をファイル システムからカスタマイズされたファイルをインポートします。 <code>Set-AdfsWebTheme -TargetName AppSpecificTheme -AdditionalFileResource @{Uri='/adfs/portal/script/onload.js';Path="c:\appspecifictheme\script\onload.js"}</code>  
-5. 特定の RP (または RP の) に、カスタマイズされた新しいテーマを適用します。 <code>Set-AdfsRelyingPartyWebTheme -TargetRelyingPartyName urn:app1 -SourceWebThemeName AppSpecificTheme</code>  
+1. の既定のグローバルテーマのコピーとして新しいテーマを作成し AD FS  
+`New-AdfsWebTheme -Name AppSpecificTheme -SourceName default`  
+2. カスタマイズ用のテーマをエクスポートする  
+`Export-AdfsWebTheme -Name AppSpecificTheme -DirectoryPath c:\appspecifictheme`  
+3. 好みのエディターで、またはファイルを置き換えるテーマファイル (画像、css、または onload) をカスタマイズします。  
+4. カスタマイズしたファイルをファイルシステムから AD FS にインポートする (新しいテーマをターゲットにする)  
+`Set-AdfsWebTheme -TargetName AppSpecificTheme -AdditionalFileResource @{Uri='/adfs/portal/script/onload.js';Path="c:\appspecifictheme\script\onload.js"}`  
+5. カスタマイズした新しいテーマを特定の RP (または RP) に適用する  
+`Set-AdfsRelyingPartyWebTheme -TargetRelyingPartyName urn:app1 -SourceWebThemeName AppSpecificTheme`  
   
 ## <a name="home-realm-discovery"></a>ホーム領域検出  
-ホーム領域検出のカスタマイズを参照してください[Customizing the AD FS sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)します。  
+ホーム領域検出のカスタマイズについて[は、「AD FS サインインページのカスタマイズ](https://technet.microsoft.com/library/dn280950.aspx)」を参照してください。  
   
-## <a name="updated-password-page"></a>パスワードの更新されたページ  
-パスワード更新ページのカスタマイズに関する情報を参照してください。 [AD FS サインイン ページのカスタマイズ](https://technet.microsoft.com/library/dn280950.aspx)します。  
+## <a name="updated-password-page"></a>更新されたパスワードページ  
+[パスワードの更新] ページのカスタマイズの詳細については、「 [AD FS サインインページのカスタマイズ](https://technet.microsoft.com/library/dn280950.aspx)」を参照してください。  
   
 ## <a name="customizing-and-alternate-ids"></a>カスタマイズと代替 Id  
-ユーザーが Active Directory フェデレーション サービス (AD FS) にサインインできます-その Active Directory Domain Services (AD DS) によって承認されたユーザー識別子の形式を使用してアプリケーションを有効にします。 ユーザー プリンシパル名 (Upn) が含まれます (johndoe@contoso.com) またはドメインが sam アカウント名 (contoso \johndoe または contoso.com\johndoe) を修飾します。  この参照の詳細については[構成の代替ログイン id です。](Configuring-Alternate-Login-ID.md)  
+ユーザーは、Active Directory Domain Services (AD DS) で受け入れられる任意の形式のユーザー識別子を使用して、Active Directory フェデレーションサービス (AD FS) (AD FS) 対応のアプリケーションにサインインできます。 これには、ユーザープリンシパル名 (upnjohndoe@contoso.com) またはドメイン修飾 sam アカウント名 (contoso\johndoe または com\johndoe) が含まれます。  詳細については、「[代替ログイン ID の構成](Configuring-Alternate-Login-ID.md)」を参照してください。  
   
-代替ログイン ID に関するいくつかのヒントをエンドユーザーに提供する AD FS サインイン ページをカスタマイズすることもさらに 詳細については「カスタマイズされたサインイン ページ説明を追加することで行うことができます[AD FS サインイン ページのカスタマイズ。](https://technet.microsoft.com/library/dn280950.aspx)   
+また、AD FS サインインページをカスタマイズして、代替ログイン ID に関するヒントをエンドユーザーに与えることもできます。 カスタマイズしたサインインページの説明を追加することによってこれを行うことができます。詳細については[、「AD FS サインインページのカスタマイズ](https://technet.microsoft.com/library/dn280950.aspx)」を参照してください。   
   
-ユーザー名 フィールド上に「組織アカウントでサインイン」の文字列をカスタマイズすることでこれを行うことができます。  この参照は[Advanced Customization of AD FS サインイン ページ](https://technet.microsoft.com/library/dn636121.aspx)します。  
+これを行うには、[ユーザー名] フィールドの上にある [組織のアカウントでサインインする] をカスタマイズします。  詳細については[、AD FS サインインページの高度なカスタマイズ](https://technet.microsoft.com/library/dn636121.aspx)に関するページを参照してください。  
 
 ## <a name="additional-references"></a>その他の参照情報 
-[AD FS のユーザー サインイン カスタマイズ](AD-FS-user-sign-in-customization.md)  
+[AD FS ユーザーサインインのカスタマイズ](AD-FS-user-sign-in-customization.md)  

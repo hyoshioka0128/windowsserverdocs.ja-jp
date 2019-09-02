@@ -8,16 +8,16 @@ ms.author: harowl
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 96d09b25ddb2f473fb4fe22c0cf716bfcf8becaa
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: ef87a3bcc5bd0b924a938f055307a0a87cb60d0b
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811929"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792319"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>ユーザー アクセス制御とアクセス許可を構成します。
 
-> 適用対象:Windows Admin Center、Windows Admin Center プレビュー
+> 適用対象:Windows Admin Center、Windows Admin Center Preview
 
 まだインストールしていない場合について理解するおくと、 [Windows Admin Center でユーザー アクセス制御オプション](../plan/user-access-options.md)
 
@@ -111,7 +111,7 @@ Azure AD 認証を有効にすると、ゲートウェイ サービスが再起�
 
 Windows 10 の Windows Admin Center をインストールするときに、シングル サインオンを使用する準備ができては。 Windows Server で Windows Admin Center を使用しようとしている場合は、シングル サインオンを使用する前に、何らかの形式の環境における Kerberos の委任を設定する必要があります。 委任は、ターゲット ノードに委任する信頼済みとしてゲートウェイ コンピューターを構成します。 
 
-構成する[リソースに基づく制約付き委任](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)環境内には、次の PowerShell コマンドレットを実行します。 (Windows Server 2012 を実行するドメイン コント ローラーが必要であるに注意してくださいまたはそれ以降を使用します。)
+構成する[リソースに基づく制約付き委任](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview)環境内には、次の PowerShell コマンドレットを実行します。 (Windows Server 2012 を実行するドメイン コント ローラーが必要であるに注意してくださいまたはそれ以降を使用します。)
 
 ```powershell
      $gateway = "WindowsAdminCenterGW" # Machine where Windows Admin Center is installed

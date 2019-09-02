@@ -1,6 +1,6 @@
 ---
-title: リリース ノート - Windows Server 2019 に関する重要な問題
-description: クラッシュ、ハング、インストールの障害およびデータの損失を回避するために回避策を必要とする重要な問題をまとめたものです。
+title: 'リリース ノート: Windows Server 2019 に関する重要な問題'
+description: クラッシュ、ハング、インストールの失敗、およびデータの損失を回避するための対策を必要とする重大な問題についてまとめます。
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
@@ -11,28 +11,28 @@ manager: jasgroce
 ms.localizationpriority: medium
 ms.date: 06/07/2019
 ms.openlocfilehash: 515255c301d343aa1b83bcfb506f2e3baa6ca969
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810741"
 ---
-# <a name="release-notes---important-issues-in-windows-server-2019"></a>リリース ノート - Windows Server 2019 に関する重要な問題
+# <a name="release-notes---important-issues-in-windows-server-2019"></a>リリース ノート: Windows Server 2019 に関する重要な問題
 
 >適用先:Windows Server 2019
 
-これらのリリース ノートがわかっている場合の回避や、問題を回避する方法を含めて、Windows Server 2019 オペレーティング システムで最も重要な問題を要約します。 設計による変更、新機能、および今回のリリースで修正プログラムについては、次を参照してください。[で Windows Server 2019 新](whats-new-19.md)と特定の機能チームからのお知らせします。 指定しない場合、報告された各問題はすべてのエディションおよび Windows Server 2019 のインストール オプションに適用されます。  
+これらのリリース ノートでは、Windows Server 2019 オペレーティング システムの最も重大な問題とその回避策 (存在する場合) がまとめられています。 このリリースにおける計画的な変更点、新機能、および修正プログラムについては、「[Windows Server 2019 の新機能](whats-new-19.md)」と特定の機能チームからのお知らせを参照してください。 特に指定がない限り、報告されている問題は、Windows Server 2019 のすべてのエディションとインストール オプションに適用されます。  
 
 このドキュメントは継続的に更新されています。 解決策が必要な重大な問題が発見された場合、および新しい解決策および修正が使用可能になった場合は、ここに追加されます。  
 
 ## <a name="release-notes"></a>リリース ノート
 
-次の既知の問題は、Windows Server 2019 表示されます。
+Windows Server 2019 には、以下の既知の問題が存在します。
 
 | タイトル         | 説明                            |
 | -----         | -----------                            |
-| サーバーのセットアップ中にインストール オプション メニューには、ドイツ語のテキストが切り捨てられて | デスクトップ エクスペリエンスのインストール オプションの説明が最後に、不足していると正しくない文字をある「をインストールするオペレーティング システムの選択」という、オペレーティング システムの選択ウィンドウで、ドイツ語サーバーのメディアからセットアップを実行する場合文。 完全なドイツ語のテキストがここで表示されるはずです。<br/>      <br/>`Durch diese Option wird die vollständige grafische Umgebung von Windows installiert, wodurch zusätzlicher Speicherplatz verbraucht wird. Sie kann hilfreich sein, wenn Sie den Windows-Desktop verwenden möchten oder über eine App verfügen, die die grafische Umgebung benötigt.` <br><br>これには、パブリックの可用性の Windows Server 2019、Windows Server、バージョンは 1809、および Microsoft HYPER-V Server 2019 では、リリース、ドイツ語のメディアのみに影響します。|
-| Windows Server のブランド化イメージが Windows Server バージョンは 1809 のセットアップ時に正しくないです。 | Windows Server バージョンは 1809 のセットアップ エクスペリエンス中にいくつかの最初の背景画像が表示を画面&quot;Windows Server 2019&quot;します。  、Windows server バージョン 1709 および 1803、これだけ表示されるはずと&quot;Windows Server&quot;します。  その他の製品にその他の場所への影響がないと、Windows Server 2019 製品への影響はありません。  問題は、Windows Server バージョンは 1809、ボリューム ライセンスのお客様が、ボリューム ライセンス サービス センターへのアクセスにのみ使用できますのセットアップ時にこの 1 つのイメージに制限されます。<br/> |
+| サーバーのセットアップ時のインストール オプション メニューで、ドイツ語のテキストが切り捨てられる | [インストールするオペレーティング システムを選択してください] というタイトルのオペレーティング システム選択ウィンドウで、ドイツ語版のサーバー メディアからセットアップを実行すると、デスクトップ エクスペリエンスのインストール オプションに関する説明が欠落し、文の末尾に間違った文字が表示されます。 表示されるはずのドイツ語のテキストの全文を次に示します。<br/>      <br/>`Durch diese Option wird die vollständige grafische Umgebung von Windows installiert, wodurch zusätzlicher Speicherplatz verbraucht wird. Sie kann hilfreich sein, wenn Sie den Windows-Desktop verwenden möchten oder über eine App verfügen, die die grafische Umgebung benötigt.` <br><br>これは、Windows Server 2019、Windows Server バージョン 1809、および Microsoft Hyper-V Server 2019 の一般公開でリリースされたドイツ語版のメディアにのみ影響します。|
+| Windows Server バージョン 1809 のセットアップ時の Windows Server のブランド画像が正しくない | Windows Server バージョン 1809 のセットアップ エクスペリエンスで、初期画面の一部の背景画像に &quot;Windows Server 2019&quot; と表示されます。  Windows Server バージョン 1709 および 1803 では、これは単に &quot;Windows Server&quot; と表示される必要があります。  この製品の他の場所に影響はなく、Windows Server 2019 製品への影響もありません。  この問題は、ボリューム ライセンス サービス センターにアクセスするボリューム ラインセスをご利用のお客さまのみが利用できる Windows Server バージョン 1809 のセットアップ時に、この 1 つの画像でのみ発生します。<br/> |
 
 ### <a name="copyright"></a>著作権
 

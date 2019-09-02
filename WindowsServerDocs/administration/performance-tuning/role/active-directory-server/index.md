@@ -4,15 +4,15 @@ description: Active Directory サーバーのパフォーマンス チューニ�
 ms.prod: windows-server-threshold
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
-ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
+ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab; v-tea
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 04c9683c3d14291d5dc2682c6836657313865866
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b8ab1eed003294e3396bcea21b31b7c084180b9c
+ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891943"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863454"
 ---
 # <a name="performance-tuning-active-directory-servers"></a>Active Directory サーバーのパフォーマンス チューニング
 
@@ -26,10 +26,11 @@ Active Directory のパフォーマンス チューニングでは、次の 2 �
 - Active Directory クライアント/アプリケーション チューニング - クライアントとアプリケーションによって Active Directory が最適な方法で使用されていることの確認
 
 ## <a name="start-with-capacity-planning"></a>キャパシティ プランニングから開始する
-十分な数のドメイン コントローラーを適切なロケールの適切なドメインに適切に展開し、冗長性に対処することは、適切なタイミングでクライアント要求を処理するために重要です。 これは詳細なトピックであり、このガイドのスコープ外となります。 読者には、「[Capacity Planning for Active Directory Domain Services (Active Directory Domain Services のキャパシティ プランニング](https://go.microsoft.com/fwlink/?LinkId=324566)」に記載されている推奨事項とガイダンスを読んで理解することにより、Active Directory のパフォーマンス チューニングを開始することをお勧めします。
+
+十分な数のドメイン コントローラーを適切なロケールの適切なドメインに適切に展開し、冗長性に対処することは、適切なタイミングでクライアント要求を処理するために重要です。 これは詳細なトピックであり、このガイドのスコープ外となります。 読者には、「[Active Directory Domain Services のキャパシティ プランニング](capacity-planning-for-active-directory-domain-services.md)」に記載されている推奨事項とガイダンスを読んで理解することにより、Active Directory のパフォーマンス チューニングを開始することをお勧めします。
 
 >[!Important]
-> Active Directory の適切な構成とサイズ設定は、全体的なシステムとワークロードのパフォーマンスに大きく影響する可能性があります。 読者には、最初に「[Capacity Planning for Active Directory Domain Services (Active Directory Domain Services のキャパシティ プランニング)](https://go.microsoft.com/fwlink/?LinkId=324566)」を読むことを強くお勧めします。
+> Active Directory の適切な構成とサイズ設定は、全体的なシステムとワークロードのパフォーマンスに大きく影響する可能性があります。 読者には、最初に「[Capacity Planning for Active Directory Domain Services (Active Directory Domain Services のキャパシティ プランニング)](capacity-planning-for-active-directory-domain-services.md)」を読むことを強くお勧めします。
 
 ## <a name="updates-and-evolving-recommendations"></a>更新と進化する推奨事項
 
@@ -41,11 +42,14 @@ Active Directory のパフォーマンス チューニングでは、次の 2 �
 
 ただし、これには時間がかかり、最新のプラットフォームを 100% 採用することはできないシナリオで実行されている環境が多いことを私たちは認識しています。 以前のバージョンのプラットフォームにはいくつかの改善が追加されており、さらに追加を続けていく予定です。
 
-「[Ask the Directory Services Team (ディレクトリ サービス チームに質問)](https://blogs.technet.microsoft.com/askds)」のチーム ブログに従って、ADDS の管理に関する最新ニュース、ガイダンスおよびベスト プラクティスの最新情報を常に把握しておくことをお勧めします。
+「[Ask the Directory Services Team (ディレクトリ サービス チームに質問)](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/bg-p/AskDS)」のチーム ブログに従って、ADDS の管理に関する最新ニュース、ガイダンスおよびベスト プラクティスの最新情報を常に把握しておくことをお勧めします。
 
 ## <a name="see-also"></a>関連項目
+
+- [AD DS のキャパシティ プランニング](capacity-planning-for-active-directory-domain-services.md)
 - [ハードウェアに関する考慮事項](hardware-considerations.md)
+- [メモリ使用量に関する考慮事項](memory-usage-considerations.md)
 - [LDAP に関する考慮事項](ldap-considerations.md)
 - [ドメイン コントローラーとサイトの適切な配置に関する考慮事項](site-definition-considerations.md)
-- [ADDS パフォーマンスのトラブルシューティング](troubleshoot.md) 
-- [Active Directory Domain Services のキャパシティ プランニング](https://go.microsoft.com/fwlink/?LinkId=324566)
+- [AD DS パフォーマンスのトラブルシューティング](troubleshoot.md)  
+  

@@ -1,6 +1,6 @@
 ---
 title: リモート デスクトップ クライアントでサポートされる構成
-description: リモート デスクトップ クライアントを使用してアクセスできる Pc について説明します
+description: リモート デスクトップ クライアントを使用してアクセスできる PC について説明します
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -15,11 +15,11 @@ ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: d38008b6387385917ad21ce7e169b8ff3f4d18ba
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884693"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63748964"
 ---
 # <a name="remote-desktop-client---supported-configuration"></a>リモート デスクトップ クライアントでサポートされる構成
 
@@ -64,8 +64,8 @@ ms.locfileid: "59884693"
 
 - Windows 7 Starter
 - Windows 7 ホーム
-- Windows 8 ホーム
-- Windows 8.1 ホーム
+- Windows 8 Home
+- Windows 8.1 Home
 - Windows 10 Home
 
 インストールされている Windows のバージョンの 1 つを持つコンピューターにアクセスする場合は、RDP をサポートする Windows バージョンにアップグレードをお勧めします。

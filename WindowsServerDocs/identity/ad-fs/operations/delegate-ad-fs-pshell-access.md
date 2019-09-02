@@ -1,6 +1,6 @@
 ---
-title: 管理者以外のユーザーを AD FS の Powershell コマンドレットのアクセスを委任します。
-description: これは、結果、AD FS PowerShell コマンドレットの非管理者のアクセス許可を委任する方法が descirbes に文書化します。
+title: AD FS Powershell コマンドレットへのアクセスを管理者以外のユーザーに委任する
+description: このドキュメントでは、AD FS PowerShell コマンドレットの管理者以外にアクセス許可を委任する方法について説明します。
 author: billmath
 ms.author: billmath
 manager: daveba
@@ -9,31 +9,31 @@ ms.date: 01/31/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 265d22b045011e34192e56bdb970955b601cda56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 86bbb562e223fdf61dac3ce5646d97a57b2eba4c
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883563"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546307"
 ---
-# <a name="delegate-ad-fs-powershell-commandlet-access-to-non-admin-users"></a>管理者以外のユーザーを AD FS の Powershell コマンドレットのアクセスを委任します。 
-既定では、AD FS 管理者が、PowerShell を使用して AD FS の管理を行うことのみできます。 多くの大規模な組織でこのできません実行可能な運用モデルをヘルプ デスク担当者などの他の人物を扱うとき。  
+# <a name="delegate-ad-fs-powershell-commandlet-access-to-non-admin-users"></a>AD FS Powershell コマンドレットへのアクセスを管理者以外のユーザーに委任する 
+既定では、PowerShell を使用した AD FS 管理は、AD FS の管理者のみが実行できます。 多くの大規模な組織では、これは、ヘルプデスク担当者などの他のペルソナを扱うときに実行可能な運用モデルではない可能性があります。  
 
-Just Enough Administration (JEA)、お客様は、さまざまな担当者グループに固有コマンドレットを委任できますようになりました。  
-このユース ケースの好例がヘルプ デスク担当者に AD FS のクエリには、アカウントのロックアウト状態と、ユーザーを検査すると、AD FS でアカウントのロックアウト状態をリセットを許可します。 この場合、委任が必要となるコマンドレットには。 
+十分な管理 (JEA) だけで、お客様は特定のコマンドレットを異なる担当者グループに委任できるようになりました。  
+このユースケースの好例として、ユーザーが吟味された後に、ヘルプデスク担当者が AD FS アカウントのロックアウト状態を照会し、AD FS でアカウントロックアウト状態をリセットできるようにすることが挙げられます。 この場合、コマンドレットを委任する必要があります。 
 - `Get-ADFSAccountActivity`
 - `Set-ADFSAccountActivity` 
 - `Reset-ADFSAccountLockout` 
 
-この例は、このドキュメントの残りの部分で使用します。 ただしも証明書利用者のパーティのプロパティを設定し、このオプションをオフに、組織内のアプリケーション所有者への委任を許可するようにカスタマイズいずれかのことができます。  
+この例は、このドキュメントの残りの部分で使用します。 ただし、これをカスタマイズして、委任によって証明書利用者のプロパティを設定し、それを組織内のアプリケーション所有者に渡すこともできます。  
 
 
-##  <a name="create-the-required-groups-necessary-to-grant-users-permissions"></a>ユーザーのアクセス許可を付与するために必要な必要なグループを作成します。 
-1. 作成、[グループ管理サービス アカウント](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)します。 JEA ユーザーが他のコンピューターや web サービスとしてネットワーク リソースにアクセスできるように、gMSA アカウントが使用されます。 ドメイン内のコンピューター上のリソースに対して認証するために使用できるドメイン id を提供します。 GMSA アカウントには、後で、セットアップ時に必要な管理権限が与えられます。 この例では、アカウントを呼び出して**gMSAContoso**します。 
-2. Active Directory の作成コマンドを委任する権限を付与する必要があるユーザーとグループを設定できます。 この例では、ヘルプ デスクの担当者に読み取り、更新、および ADFS のロックアウト状態をリセットするアクセス許可が付与されます。 全体としての例では、このグループに言及**JEAContoso**します。 
+##  <a name="create-the-required-groups-necessary-to-grant-users-permissions"></a>ユーザーにアクセス許可を付与するために必要なグループを作成する 
+1. グループの管理された[サービスアカウント](https://docs.microsoft.com/windows-server/security/group-managed-service-accounts/group-managed-service-accounts-overview)を作成します。 GMSA アカウントは、JEA ユーザーが他のコンピューターや web サービスとしてネットワークリソースにアクセスできるようにするために使用されます。 ドメイン内の任意のコンピューター上のリソースに対する認証に使用できるドメイン id を提供します。 GMSA アカウントには、後でセットアップで必要な管理者権限が付与されます。 この例では、アカウント**gMSAContoso**を呼び出します。 
+2. Active Directory グループを作成するには、委任されたコマンドへの権限を付与する必要があるユーザーを設定します。 この例では、ヘルプデスク担当者に、ADFS ロックアウト状態の読み取り、更新、およびリセットを行うためのアクセス許可が付与されています。 このグループは、例の**JEAContoso**と呼ばれています。 
 
-### <a name="install-the-gmsa-account-on-the-adfs-server"></a>ADFS サーバーで、gMSA アカウントをインストールします。 
-ADFS サーバーに対する管理者権限を持つサービス アカウントを作成します。 実行できますまたは long としてリモート ドメイン コント ローラーで、AD RSAT パッケージがインストールされています。  サービス アカウントは、ADFS サーバーと同じフォレストに作成する必要があります。 ファームの構成に、例の値を変更します。 
+### <a name="install-the-gmsa-account-on-the-adfs-server"></a>ADFS サーバーに gMSA アカウントをインストールします。 
+ADFS サーバーに対する管理者権限を持つサービスアカウントを作成します。 これは、AD RSAT パッケージがインストールされている限り、ドメインコントローラーまたはリモートで実行できます。  サービスアカウントは、ADFS サーバーと同じフォレストに作成する必要があります。 例の値をファームの構成に変更します。 
 
 ```powershell
  # This command should only be run if this is the first time gMSA accounts are enabled in the forest 
@@ -49,25 +49,25 @@ $serviceaccount = New-ADServiceAccount gMSAcontoso -DNSHostName <FQDN of the dom
 Add-ADComputerServiceAccount -Identity server01.contoso.com -ServiceAccount $ServiceAccount 
 ```
 
-ADFS サーバーで、gMSA アカウントをインストールします。  これは、ファーム内のすべての ADFS ノードで実行する必要があります。 
+ADFS サーバーに gMSA アカウントをインストールします。  これは、ファーム内のすべての ADFS ノードで実行する必要があります。 
  
 ```powershell
 Install-ADServiceAccount gMSAcontoso 
 ```
 
-### <a name="grant-the-gmsa-account-admin-rights"></a>GMSA アカウントの管理者権限を付与します。 
-ファーム管理の委任を使用している場合、gMSA アカウント管理者権限を付与が、管理者アクセス権を委任する既存のグループに追加することによって。  
+### <a name="grant-the-gmsa-account-admin-rights"></a>GMSA アカウントに管理者権限を付与する 
+ファームで代理管理を使用している場合は、管理者アクセスが委任されている既存のグループに gMSA アカウントの管理者権限を追加して付与します。  
  
-ファームが代理管理を使用していない場合、gMSA アカウント管理者権限を付与によってすべての ADFS サーバーのローカル管理グループを作成します。 
+ファームで代理管理を使用していない場合は、すべての ADFS サーバーでローカル管理グループを作成して、gMSA アカウントに管理者権限を付与します。 
  
  
-### <a name="create-the-jea-role-file"></a>JEA ロール ファイルを作成します。 
+### <a name="create-the-jea-role-file"></a>JEA ロールファイルを作成する 
  
-メモ帳ファイルには、JEA ロールを作成します。 手順については、ロールを作成するに収録されて[JEA ロール機能](https://docs.microsoft.com/powershell/jea/role-capabilities)します。 
+AD FS サーバーで、メモ帳ファイルに JEA ロールを作成します。 ロールを作成する手順については、 [Jea ロール機能](https://docs.microsoft.com/powershell/jea/role-capabilities)に関する説明を参照してください。 
  
-この例では委任コマンドレットは`Reset-AdfsAccountLockout, Get-ADFSAccountActivity, and Set-ADFSAccountActivity`します。 
+この例で委任されたコマンド`Reset-AdfsAccountLockout, Get-ADFSAccountActivity, and Set-ADFSAccountActivity`レットは、です。 
 
-サンプルの JEA ロール 'リセット ADFSAccountLockout'、' Get-ADFSAccountActivity' および' セット ADFSAccountActivity' コマンドレットへのアクセスを委任する:
+サンプル JEA ロールは、' ADFSAccountLockout '、' ADFSAccountActivity '、および ' ADFSAccountActivity ' コマンドレットのアクセスを委任します。
 
 ```powershell
 @{
@@ -78,12 +78,12 @@ VisibleCmdlets = 'Reset-AdfsAccountLockout', 'Get-ADFSAccountActivity', 'Set-ADF
 ```
 
 
-### <a name="create-the-jea-session-configuration-file"></a>JEA セッション構成ファイルを作成します。 
-作成する手順に従って、 [JEA セッション構成](https://docs.microsoft.com/powershell/jea/session-configurations)ファイル。 構成ファイルは、JEA エンドポイントを使用できるユーザーおよびへのアクセスがどのような機能を決定します。 
+### <a name="create-the-jea-session-configuration-file"></a>JEA セッション構成ファイルを作成する 
+手順に従って[Jea セッション構成](https://docs.microsoft.com/powershell/jea/session-configurations)ファイルを作成します。 この構成ファイルによって、JEA エンドポイントを使用できるユーザーと、ユーザーがアクセスできる機能が決まります。 
 
-ロール機能は、ロール機能ファイルのフラットな名前 (拡張子を除いたファイル名) を参照します。 複数のロール機能が同じフラットな名前を持つシステムで使用できる場合は、PowerShell は暗黙的な検索順序を使用して、有効なロール機能ファイルを選択します。 同じ名前を持つすべてのロール機能ファイルへもアクセスは与えられません。 
+ロール機能は、ロール機能ファイルのフラット名 (拡張子なしのファイル名) によって参照されます。 同じフラット名を持つシステムで複数のロール機能を使用できる場合、PowerShell は暗黙的な検索順序を使用して有効なロール機能ファイルを選択します。 同じ名前のすべてのロール機能ファイルへのアクセス権は付与されません。 
 
-パスを使用して、ロール機能ファイルを指定するには、使用、`RoleCapabilityFiles`引数。 サブフォルダー、JEA が含まれている有効な Powershell モジュールの検索、`RoleCapabilities`サブフォルダー、場所、`RoleCapabilityFiles`に引数を変更する必要があります`RoleCapabilities`します。 
+パスでロール機能ファイルを指定するには、 `RoleCapabilityFiles`引数を使用します。 サブフォルダーの場合、jea は、 `RoleCapabilities`サブフォルダーを含む有効な Powershell モジュールを検索`RoleCapabilities`します。 `RoleCapabilityFiles`ここで、引数をに変更する必要があります。 
 
 セッション構成ファイルのサンプル: 
 
@@ -99,21 +99,23 @@ RoleDefinitions = @{ JEAcontoso = @{ RoleCapabilityFiles = 'C:\Program Files\Win
 
 セッション構成ファイルを保存します。 
  
-強くお勧めします[、セッション構成ファイルをテスト](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Test-PSSessionConfigurationFile?view=powershell-5.1)pssc ファイルを手動で編集した場合は正しいがテキスト エディターを使用して、構文を確認します。 セッション構成ファイルがこのテストに合格していない場合は、登録されていない正常にシステムに。  
+構文が正しいことを確認するために、テキストエディターを使用して手動で .pssc ファイルを編集した場合は、[セッション構成ファイルをテスト](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Test-PSSessionConfigurationFile?view=powershell-5.1)することを強くお勧めします。 セッション構成ファイルがこのテストに合格しなかった場合は、システムに正常に登録されません。  
  
-### <a name="install-the-jea-session-configuration-on-the-ad-fs-server"></a>AD FS サーバーで、JEA セッション構成をインストールします。 
+### <a name="install-the-jea-session-configuration-on-the-ad-fs-server"></a>AD FS サーバーに JEA セッション構成をインストールする 
 
-AD FS サーバーで、JEA セッション構成をインストールします。 
+AD FS サーバーに JEA セッション構成をインストールする 
  
 ```powershell
 Register-PSSessionConfiguration -Path .\JEASessionConfig.pssc -name "AccountActivityAdministration" -force
 ``` 
-## <a name="operational-instructions"></a>運用の処理 
-セットアップ後、JEA のログ記録と監査に使用できる特定の場合は、適切なユーザーが JEA エンドポイントにアクセスします。 
+## <a name="operational-instructions"></a>操作手順 
+セットアップが完了したら、JEA のログ記録と監査を使用して、適切なユーザーが JEA エンドポイントにアクセスできるかどうかを判断できます。 
 
-委任されたコマンドを使用するには。 
+委任されたコマンドを使用するには: 
 
 ```powershell
 Enter-pssession -ComputerName server01.contoso.com -ConfigurationName "AccountActivityAdministration" -Credential <User Using JEA> 
 Get-AdfsAccountActivity <User> 
+
+
 ```

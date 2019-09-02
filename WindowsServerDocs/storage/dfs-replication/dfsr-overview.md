@@ -1,67 +1,67 @@
 ---
-Title: DFS レプリケーションの概要
+title: DFS レプリケーションの概要
 ms.date: 03/08/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: dd381c04b02889a7f2e7b8992ff6050d1b0f078a
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: ac1f963fd369a5b18414ffcdf9b05519a2e33e14
+ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453064"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560502"
 ---
 # <a name="dfs-replication-overview"></a>DFS レプリケーションの概要
 
 > 適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows Server (半期チャネル)
 
-DFS レプリケーションとは、複数のサーバーやサイト間で効率的にフォルダー (DFS 名前空間パスで参照されるを含む) をレプリケートすることができる Windows server の役割サービスです。 DFS レプリケーションは、フォルダーを限られた帯域幅のネットワーク接続サーバー間で同期するために使用できる、効率的なマルチ マスター レプリケーション エンジンです。 DFS 名前空間、および Windows Server 2008 またはそれ以降のドメイン機能レベルを使用するドメインの Active Directory Domain Services (AD DS) SYSVOL フォルダーをレプリケートするため、レプリケーション エンジンとしてファイル レプリケーション サービス (FRS) を置き換えます。
+DFS レプリケーションは、Windows Server の役割サービスです。これを使用すると、複数のサーバーやサイト間でフォルダー (DFS 名前空間パスによって参照されるフォルダーを含む) を効率的にレプリケートできます。 DFS レプリケーションは、帯域幅が制限されたネットワーク接続を介してサーバー間でフォルダーの同期を維持するために使用できる、効率的なマルチマスターレプリケーションエンジンです。 これにより、ファイルレプリケーションサービス (FRS) が DFS 名前空間のレプリケーションエンジンとして置き換えられます。また、Windows Server 2008 以降のドメイン機能レベルを使用するドメインで Active Directory Domain Services (AD DS) SYSVOL フォルダーをレプリケートすることもできます。
 
-DFS レプリケーションは、RDC (Remote Differential Compression) と呼ばれる圧縮アルゴリズムを使用します。 RDC は、ファイルにデータへの変更を検出し、ファイル全体ではなく、変更されたファイル ブロックのみをレプリケートする DFS レプリケーションを有効にします。
+DFS レプリケーションは、RDC (Remote Differential Compression) と呼ばれる圧縮アルゴリズムを使用します。 RDC は、ファイル内のデータに対する変更を検出し、ファイル全体ではなく、変更されたファイルブロックのみをレプリケート DFS レプリケーションできるようにします。
 
-DFS レプリケーションを使用して SYSVOL をレプリケートする方法の詳細については、次を参照してください。 [DFS レプリケーションに SYSVOL レプリケーション移行](migrate-sysvol-to-dfsr.md)します。
+DFS レプリケーションを使用した SYSVOL のレプリケートの詳細については、「 [DFS レプリケーションへの sysvol レプリケーションの移行](migrate-sysvol-to-dfsr.md)」を参照してください。
 
-DFS レプリケーションを使用するには、は、レプリケーション グループを作成し、レプリケート フォルダーをグループに追加する必要があります。 レプリケーション グループ、レプリケート フォルダー、およびメンバーは、次の図に示します。
+DFS レプリケーションを使用するには、レプリケーショングループを作成し、そのグループにレプリケートフォルダーを追加する必要があります。 次の図は、レプリケーショングループ、レプリケートフォルダー、およびメンバーを示しています。
 
-![2 つのメンバー間の接続を含むレプリケーション グループ、それぞれがいくつかレプリケート フォルダー](media/dfsr-overview.gif)
+![2つのメンバー間の接続を含むレプリケーショングループ。それぞれにレプリケートフォルダーがいくつかあります。](media/dfsr-overview.gif)
 
-この図では、レプリケーション グループが 1 つまたは複数のレプリケート フォルダーのレプリケーションに参加している、メンバーと呼ばれるサーバーのセットを示します。 レプリケート フォルダーは、各メンバーの同期を維持するフォルダーです。 図では、2 つのレプリケートされたフォルダーがあります。Projects と Proposals します。 データは、各レプリケート フォルダーの変更、変更は、レプリケーション グループのメンバー間の接続間でレプリケートされます。 すべてのメンバー間の接続は、レプリケーション トポロジを形成します。
-1 つのレプリケーション グループ内の複数のレプリケート フォルダーを作成するには、トポロジ、スケジュール、および帯域幅調整をレプリケーション グループは、レプリケート フォルダーごとに適用されるため、レプリケート フォルダーを展開するプロセスが簡略化します。 追加のレプリケート フォルダーを展開するには、命令を使用する Dfsradmin.exe またはフォロー、ウィザードでローカル パスと、新しいレプリケート フォルダーのアクセス許可を定義します。
+この図は、レプリケーショングループが、1つまたは複数のレプリケートフォルダーのレプリケーションに参加する、メンバーと呼ばれる一連のサーバーであることを示しています。 レプリケートフォルダーは、各メンバーの同期状態を維持するフォルダーです。 図には、次の2つのレプリケートフォルダーがあります。プロジェクトと提案。 各レプリケートフォルダー内のデータが変更されると、レプリケーショングループのメンバー間の接続間で変更がレプリケートされます。 すべてのメンバー間の接続は、レプリケーショントポロジを形成します。
+1つのレプリケーショングループに複数のレプリケートフォルダーを作成すると、レプリケーショングループのトポロジ、スケジュール、および帯域幅の調整が各レプリケートフォルダーに適用されるため、レプリケートフォルダーの展開プロセスが簡単になります。 追加のレプリケートフォルダーを展開するには、Dfsradmin.exe またはを使用して、ウィザードの指示に従って、新しいレプリケートフォルダーのローカルパスとアクセス許可を定義します。
 
-各レプリケート フォルダーはファイルとサブフォルダーのフィルターなど、一意の設定を持つ別のファイルと各レプリケート フォルダーのサブフォルダーを除外できるようにします。
+各レプリケートフォルダーには、ファイルとサブフォルダーのフィルターなどの固有の設定があるため、レプリケートフォルダーごとに異なるファイルとサブフォルダーを除外できます。
 
-各メンバーに保存されたレプリケート フォルダーは、メンバーで別々 のボリューム上に配置でき、レプリケート フォルダーは、共有フォルダーや名前空間の一部にする必要はありません。 ただし、DFS の管理スナップインで簡単にレプリケート フォルダーを共有し、必要に応じて既存の名前空間で公開します。
+各メンバーに格納されているレプリケートフォルダーは、メンバー内のさまざまなボリュームに配置できます。また、レプリケートフォルダーは、共有フォルダーまたは名前空間の一部である必要はありません。 ただし、DFS 管理スナップインを使用すると、レプリケートされたフォルダーを簡単に共有し、必要に応じて既存の名前空間に発行することができます。
 
-DFS レプリケーションを管理するには、DFS の管理、DfsrAdmin と Dfsrdiag コマンド、または WMI を呼び出すスクリプトを使用します。
+DFS レプリケーションを管理するには、DFS の管理、Dfsradmin.exe と Dfsrdiag.exe のコマンド、または WMI を呼び出すスクリプトを使用します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 DFS レプリケーションを展開する前に、サーバーを次のように構成する必要があります。
 
-- Windows Server 2003 R2 またはそれ以降のスキーマの追加機能を含める Active Directory Domain Services (AD DS) スキーマを更新します。 読み取り専用のレプリケート フォルダーは、Windows Server 2003 R2 または古いスキーマを追加で使用できません。
+- Active Directory Domain Services (AD DS) スキーマを更新して、Windows Server 2003 R2 以降のスキーマが追加されるようにします。 Windows Server 2003 R2 以前のスキーマ追加では、読み取り専用のレプリケートフォルダーを使用することはできません。
 - レプリケーション グループに含まれるすべてのサーバーが、同じフォレストに存在することを確認します。 異なるフォレスト内にある複数のサーバーにまたがってレプリケーションを有効にすることはできません。
-- レプリケーション グループのメンバーとして機能するすべてのサーバー上では、DFS レプリケーションをインストールします。
+- レプリケーショングループのメンバとして機能するすべてのサーバーに DFS レプリケーションをインストールします。
 - ウイルス対策ソフトウェア ベンダーに問い合わせて、使用するウイルス対策ソフトウェアが DFS レプリケーションと互換性があることを確認します。
 - NTFS ファイル システムでフォーマットされているボリュームで、レプリケートするフォルダーを探します。 DFS レプリケーションでは Resilient File System (ReFS) または FAT ファイル システムはサポートされていません。 また、DFS レプリケーションではクラスターの共有ボリュームに保存されているコンテンツはレプリケートできません。
 
 ## <a name="interoperability-with-azure-virtual-machines"></a>Azure Virtual Machines との相互運用性
 
-Windows Server; は、DFS レプリケーションを使用して、Azure の仮想マシンのテストします。ただしがいくつかの制限事項と要件に従う必要があります。
+Azure の仮想マシンでの DFS レプリケーションの使用は、Windows Server でテストされています。ただし、いくつかの制限事項と要件に従う必要があります。
 
 - DFS レプリケーションによって SYSVOL フォルダー以外のデータをレプリケートしているサーバーを、スナップショットや保存された状態を使用して復元すると、DFS レプリケーションが失敗します。この場合、特別なデータベース回復手順が必要になります。 また、仮想マシンをエクスポート、複製、またはコピーすることも避けてください。 詳細については、Microsoft サポート技術情報の記事 [2517913](http://support.microsoft.com/kb/2517913) と、「 [Safely Virtualizing DFSR (DFSR を安全に仮想化する)](https://blogs.technet.microsoft.com/filecab/2013/04/05/safely-virtualizing-dfsr/)」を参照してください。
 - 仮想マシンでホストされているレプリケート フォルダー内のデータをバックアップする場合は、ゲスト仮想マシン内からバックアップ ソフトウェアを使用する必要があります。
-- DFS レプリケーションには、物理または仮想化ドメイン コント ローラーへのアクセスが必要です: Azure AD と直接通信できません。
-- DFS レプリケーションを行うには、オンプレミスのレプリケーション グループ メンバーと、Azure VM でホストされているメンバーとの間の VPN 接続が必要です。 また、オンプレミスのルーター (Forefront Threat Management Gateway など) を構成して、RPC エンドポイント マッパー (ポート 135) と、49152 ～ 65535 の範囲にランダムに割り当てられたポートが、VPN 接続を経由できるようにする必要があります。 Set-dfsrmachineconfiguration コマンドレットまたは Dfsrdiag コマンド ライン ツールを使用すると、ランダムなポートではなく静的ポートを指定します。 DFS レプリケーション用に静的ポートを指定する方法の詳細については、「 [Set-DfsrServiceConfiguration](https://docs.microsoft.com/powershell/module/dfsr/set-dfsrserviceconfiguration)」を参照してください。 Windows Server の管理用に開く関連ポートについては、Microsoft サポート技術情報の記事 [832017](http://support.microsoft.com/kb/832017) を参照してください。
+- DFS レプリケーションは、物理または仮想化されたドメインコントローラーにアクセスする必要があります。 Azure AD と直接通信することはできません。
+- DFS レプリケーションを行うには、オンプレミスのレプリケーション グループ メンバーと、Azure VM でホストされているメンバーとの間の VPN 接続が必要です。 また、オンプレミスのルーター (Forefront Threat Management Gateway など) を構成して、RPC エンドポイント マッパー (ポート 135) と、49152 ～ 65535 の範囲にランダムに割り当てられたポートが、VPN 接続を経由できるようにする必要があります。 Set-dfsrmachineconfiguration コマンドレットまたは Dfsrdiag.exe コマンドラインツールを使用して、ランダムポートではなく静的ポートを指定できます。 DFS レプリケーション用に静的ポートを指定する方法の詳細については、「 [Set-DfsrServiceConfiguration](https://docs.microsoft.com/powershell/module/dfsr/set-dfsrserviceconfiguration)」を参照してください。 Windows Server の管理用に開く関連ポートについては、Microsoft サポート技術情報の記事 [832017](http://support.microsoft.com/kb/832017) を参照してください。
 
 Azure 仮想マシンを使い始める方法については、 [Microsoft Azure の Web サイト](https://docs.microsoft.com/azure/virtual-machines/)を参照してください。
 
 ## <a name="installing-dfs-replication"></a>DFS レプリケーションのインストール
 
-DFS レプリケーションは、ファイル サービスおよび記憶域サービスの役割の一部です。 (DFS の管理、DFS レプリケーション モジュールは、Windows PowerShell とコマンド ライン ツール) の dfs 管理ツールは、リモート サーバー管理ツールの一部として個別にインストールされます。
+DFS レプリケーションは、ファイルサービスおよび記憶域サービスの役割の一部です。 DFS 用の管理ツール (DFS の管理、Windows PowerShell 用の DFS レプリケーションモジュール、およびコマンドラインツール) は、リモートサーバー管理ツールの一部として個別にインストールされます。
 
-DFS レプリケーションを使用して、インストール[Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md)、サーバー マネージャー、または PowerShell で次のセクションで説明します。
+次のセクションで説明するように、 [Windows 管理センター](../../manage/windows-admin-center/understand/windows-admin-center.md)、サーバーマネージャー、または PowerShell を使用して DFS レプリケーションをインストールします。
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>サーバー マネージャーを使用して DFS をインストールするには
 
@@ -71,15 +71,15 @@ DFS レプリケーションを使用して、インストール[Windows Admin C
 
 3. インストールする役割サービスおよび機能を選択します。
 
-    - DFS レプリケーション サービスをインストールする、**サーバーの役割**] ページで、[ **DFS レプリケーション**します。
+    - DFS レプリケーションサービスをインストールするには、 **[サーバーの役割]** ページで **[DFS レプリケーション]** を選択します。
 
     - DFS 管理ツールのみをインストールするには、 **[機能]** ページで、 **[リモート サーバー管理ツール]** 、 **[役割管理ツール]** 、 **[ファイル サービス ツール]** の順に展開し、 **[DFS 管理ツール]** をクリックします。
 
-         **DFS 管理ツール**DFS の管理スナップインで、DFS レプリケーションとは、Windows PowerShell とコマンド ライン ツールは、DFS 名前空間モジュールがインストールされますが、サーバーで、DFS サービスをインストールできません。
+         Dfs**管理ツール**は、dfs 管理スナップイン、Windows PowerShell 用の DFS レプリケーションと Dfs 名前空間モジュール、およびコマンドラインツールをインストールしますが、dfs サービスはサーバーにインストールしません。
 
-### <a name="to-install-dfs-replication-by-using-windows-powershell"></a>Windows PowerShell を使用して、DFS レプリケーションをインストールするには
+### <a name="to-install-dfs-replication-by-using-windows-powershell"></a>Windows PowerShell を使用して DFS レプリケーションをインストールするには
 
-管理者特権で Windows PowerShell セッションを開くし、次のコマンドでは、入力場所 < 名前\>は役割サービスまたはインストールする機能 (関連する役割サービスまたは機能名の一覧については、次の表を参照してください)。
+管理者特権で Windows PowerShell セッションを開き、次のコマンドを入力します。ここで\> < name は、インストールする役割サービスまたは機能です (関連する役割サービスまたは機能名の一覧については、次の表を参照してください)。
 
 ```PowerShell
 Install-WindowsFeature <name>
@@ -96,7 +96,7 @@ Install-WindowsFeature <name>
 Install-WindowsFeature "RSAT-DFS-Mgmt-Con"
 ```
 
-DFS レプリケーション、およびリモート サーバー管理ツール機能の分散ファイル システム ツール部分をインストールするには、次のように入力します。
+DFS レプリケーションと、リモートサーバー管理ツール機能の分散ファイルシステムツール部分をインストールするには、次のように入力します。
 
 ```PowerShell
 Install-WindowsFeature "FS-DFS-Replication", "RSAT-DFS-Mgmt-Con"
@@ -105,8 +105,8 @@ Install-WindowsFeature "FS-DFS-Replication", "RSAT-DFS-Mgmt-Con"
 ## <a name="see-also"></a>関連項目
 
 - [DFS 名前空間と DFS レプリケーションの概要](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127250(v%3dws.11))
-- [チェックリスト:DFS レプリケーションをデプロイします。](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772201(v%3dws.11))
-- [チェックリスト:DFS レプリケーションを管理します。](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755035(v%3dws.11))
-- [DFS レプリケーションを展開します。](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770925(v%3dws.11))
-- [DFS レプリケーションを管理します。](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770925(v%3dws.11))
+- [チェックリスト:DFS レプリケーションのデプロイ](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772201(v%3dws.11))
+- [チェックリスト:DFS レプリケーションの管理](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc755035(v%3dws.11))
+- [DFS レプリケーションの展開](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770925(v%3dws.11))
+- [DFS レプリケーションの管理](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770925(v%3dws.11))
 - [DFS レプリケーションのトラブルシューティング](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732802(v%3dws.11))

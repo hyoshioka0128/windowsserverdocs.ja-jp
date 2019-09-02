@@ -15,10 +15,10 @@ ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: 486c11ebd46c6fd23b3bd16cd90463f8d607287e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66443538"
 ---
 # <a name="migrating-roles-and-features-in-windows-server"></a>Windows Server の役割と機能を移行する
@@ -52,34 +52,34 @@ Windows Server 2016 用の新しい移行ガイドは、現在開発中です。
 ### <a name="migration-guides"></a>移行ガイド
 Windows Server 2003、Windows Server 2008、Windows Server 2008 R2、Windows Server 2012、Windows Server 2012 R2 のいずれかを実行しているサーバーの役割と機能を Windows Server 2012 R2 に移行する場合は、以下のガイドの手順に従ってください。 Windows Server 2012 R2 の Windows Server 移行ツールでは、クロス サブネットの移行がサポートされています。
 
-- [インストール、使用、および Windows Server 移行ツールを削除します。](https://technet.microsoft.com/library/jj134202.aspx)
-- [Windows Server 2012 R2 の active Directory 証明書サービス移行ガイド](https://technet.microsoft.com/library/dn486797.aspx)
-- [Windows Server 2012 R2 に Active Directory フェデレーション サービス役割サービスを移行します。](https://technet.microsoft.com/library/dn486815.aspx)
-- [Active Directory Rights Management サービスの移行とアップグレード ガイド](https://technet.microsoft.com/library/cc754277.aspx)
-- [Windows Server 2012 R2 へのファイル サービスおよび記憶域サービスを移行します。](https://technet.microsoft.com/library/dn479292.aspx)
+- [Windows Server 移行ツールのインストール、使用、および削除](https://technet.microsoft.com/library/jj134202.aspx)
+- [Windows Server 2012 R2 用 Active Directory 証明書サービス移行ガイド](https://technet.microsoft.com/library/dn486797.aspx)
+- [Windows Server 2012 R2 への Active Directory フェデレーション サービス役割サービスの移行](https://technet.microsoft.com/library/dn486815.aspx)
+- [Active Directory Rights Management サービスの移行およびアップグレード ガイド](https://technet.microsoft.com/library/cc754277.aspx)
+- [Windows Server 2012 R2 へのファイル サービスおよび記憶域サービスの移行](https://technet.microsoft.com/library/dn479292.aspx)
 - [Windows Server 2012 から Windows Server 2012 R2 への Hyper-V の移行](https://technet.microsoft.com/library/dn486799.aspx)
-- [Windows Server 2012 へのネットワーク ポリシー サーバーを移行します。](https://technet.microsoft.com/library/hh831652)
-- [Windows Server 2012 R2 へのリモート デスクトップ サービスを移行します。](https://technet.microsoft.com/library/dn479239.aspx)
-- [Windows Server 2012 R2 への Windows Server Update Services を移行します。](https://technet.microsoft.com/library/hh852339.aspx)
-- [Windows Server 2012 R2 へのクラスターの役割を移行します。](https://technet.microsoft.com/library/dn530779.aspx)
-- [Windows Server 2012 R2 への DHCP サーバーを移行します。](https://technet.microsoft.com/library/dn495425.aspx)
+- [Windows Server 2012 へのネットワーク ポリシー サーバーの移行](https://technet.microsoft.com/library/hh831652)
+- [Windows Server 2012 R2 へのリモート デスクトップ サービスの移行](https://technet.microsoft.com/library/dn479239.aspx)
+- [Windows Server 2012 R2 への Windows Server Update Services の移行](https://technet.microsoft.com/library/hh852339.aspx)
+- [Windows Server 2012 R2 へのクラスターの役割の移行](https://technet.microsoft.com/library/dn530779.aspx)
+- [Windows Server 2012 R2 への DHCP サーバーの移行](https://technet.microsoft.com/library/dn495425.aspx)
  
 ## <a name="windows-server-2012"></a>Windows Server 2012
 
 ### <a name="migration-guides"></a>移行ガイド
 Windows Server 2003、Windows Server 2008、Windows Server 2008 R2、Windows Server 2012 のいずれかを実行しているサーバーの役割と機能を Windows Server 2012 に移行する場合は、以下のガイドの手順に従ってください。 Windows Server 2012 の Windows Server 移行ツールでは、クロス サブネットの移行がサポートされています。
 
-- [インストール、使用、および Windows Server 移行ツールを削除します。](https://technet.microsoft.com/library/jj134202)
+- [Windows Server 移行ツールのインストール、使用、および削除](https://technet.microsoft.com/library/jj134202)
 - [Windows Server 2012 への Active Directory フェデレーション サービス (AD FS) 役割サービスの移行](https://technet.microsoft.com/library/jj647765)
-- [Windows Server 2012 への正常性登録機関を移行します。](https://technet.microsoft.com/library/hh831513)
-- [Windows Server 2008 R2 から Windows Server 2012 への HYPER-V の移行します。](https://technet.microsoft.com/library/jj574113)
-- [Windows Server 2012 への IP 構成を移行します。](https://technet.microsoft.com/library/jj574133)
-- [Windows Server 2012 へのネットワーク ポリシー サーバーを移行します。](https://technet.microsoft.com/library/hh831652)
-- [移行の印刷とドキュメント Windows Server 2012 へのサービス](https://technet.microsoft.com/library/jj134150)
-- [Windows Server 2012 へのリモート アクセスを移行します。](https://technet.microsoft.com/library/hh831423)
-- [Windows Server 2012 への Windows Server Update Services を移行します。](https://technet.microsoft.com/library/hh852339)
-- [Active Directory ドメイン コント ローラーを Windows Server 2012 にアップグレードします。](https://technet.microsoft.com/library/hh994618.aspx)
-- [クラスター化されたサービスとアプリケーションを Windows Server 2012 に移行します。](https://technet.microsoft.com/library/dn486790.aspx)
+- [Windows Server 2012 への正常性登録機関の移行](https://technet.microsoft.com/library/hh831513)
+- [Windows 2008 R2 から Windows Server 2012 への Hyper-V の移行](https://technet.microsoft.com/library/jj574113)
+- [Windows Server 2012 への IP 構成の移行](https://technet.microsoft.com/library/jj574133)
+- [Windows Server 2012 へのネットワーク ポリシー サーバーの移行](https://technet.microsoft.com/library/hh831652)
+- [Windows Server 2012 への印刷とドキュメント サービスの移行](https://technet.microsoft.com/library/jj134150)
+- [Windows Server 2012 へのリモート アクセスの移行](https://technet.microsoft.com/library/hh831423)
+- [Windows Server 2012 への Windows Server Update Services の移行](https://technet.microsoft.com/library/hh852339)
+- [Active Directory ドメイン コントローラーを Windows Server 2012 にアップグレードする](https://technet.microsoft.com/library/hh994618.aspx)
+- [クラスター化されたサービスとアプリケーションの Windows Server 2012 への移行](https://technet.microsoft.com/library/dn486790.aspx)
  
 
 移行に関するその他の資料については、「[Windows Server への役割と機能の移行](https://technet.microsoft.com/library/jj134039)」をご覧ください。
@@ -91,19 +91,19 @@ Windows Server 2003、Windows Server 2008、Windows Server 2008 R2 のいずれ�
 
 - [Windows Server 移行ツールのインストール、アクセス、および削除](https://technet.microsoft.com/library/dd379545)
 - [Active Directory 証明書サービス移行ガイド](https://technet.microsoft.com/library/ee126170)
-- [Active Directory Domain Services とドメイン名システム (DNS) サーバーの移行ガイド](https://technet.microsoft.com/library/dd379558)
+- [Active Directory Domain Services とドメイン ネーム システム (DNS) サーバーの移行ガイド](https://technet.microsoft.com/library/dd379558)
 - [BranchCache 移行ガイド](https://technet.microsoft.com/library/dd548365)
 - [動的ホスト構成プロトコル (DHCP) サーバーの移行ガイド](https://technet.microsoft.com/library/dd379535)
 - [ファイル サービスの移行ガイド](https://technet.microsoft.com/library/dd379487)
 - [HRA 移行ガイド](https://technet.microsoft.com/library/ee791829)
-- [HYPER-V 移行ガイド](https://technet.microsoft.com/library/ee849855)
-- [IP Configuration Migration Guide](https://technet.microsoft.com/library/dd379537)
-- [ローカル ユーザーとグループの移行ガイド](https://technet.microsoft.com/library/dd379531)
+- [Hyper-V 移行ガイド](https://technet.microsoft.com/library/ee849855)
+- [IP 構成移行ガイド](https://technet.microsoft.com/library/dd379537)
+- [ローカル ユーザーとグループ移行のガイド](https://technet.microsoft.com/library/dd379531)
 - [NPS 移行ガイド](https://technet.microsoft.com/library/ee791849)
 - [印刷サービス移行ガイド](https://technet.microsoft.com/library/dd379488)
-- [リモート デスクトップ サービス移行ガイド](https://technet.microsoft.com/library/ff849223)
-- [RRAS の移行ガイド](https://technet.microsoft.com/library/ee822825)
-- [Windows Server 移行の一般的なタスクと情報](https://technet.microsoft.com/library/ff400258)
+- [リモート デスクトップ サービスの移行ガイド](https://technet.microsoft.com/library/ff849223)
+- [RRAS 移行ガイド](https://technet.microsoft.com/library/ee822825)
+- [Windows Server の移行に関する一般的なタスクと情報](https://technet.microsoft.com/library/ff400258)
 - [Windows Server Update Services 3.0 SP2 移行ガイド](https://technet.microsoft.com/library/ee822826)
  
 移行に関するその他の資料については、「[Migrate Roles and Features to Windows Server 2008 R2 (Windows Server 2008 R2 への役割と機能の移行)](https://technet.microsoft.com/library/dd365353)」をご覧ください。

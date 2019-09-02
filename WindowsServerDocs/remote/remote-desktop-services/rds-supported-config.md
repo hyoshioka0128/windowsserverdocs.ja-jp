@@ -1,6 +1,6 @@
 ---
-title: リモート デスクトップ サービスでサポートされる構成
-description: Windows Server 2016 で RDS でサポートされる構成についてを説明します。
+title: リモート デスクトップ サービスにおいてサポートされる構成
+description: Windows Server 2016 の RDS においてサポートされる構成に関する情報を示します。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,64 +14,64 @@ ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
 ms.openlocfilehash: 8571c2220f804a27e4e1a6b744e8e15e38bd53a3
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66453078"
 ---
-# <a name="supported-configurations-for-remote-desktop-services-in-windows-server-2016"></a>Windows Server 2016 でのリモート デスクトップ サービスでサポートされる構成
+# <a name="supported-configurations-for-remote-desktop-services-in-windows-server-2016"></a>Windows Server 2016 のリモート デスクトップ サービスにおいてサポートされる構成
 
 > 適用先:Windows Server 2016
 
-リモート デスクトップ サービス環境でサポートされる構成する際に最大の懸念事項は、バージョンの相互運用性のある傾向があります。 ほとんどの環境が Windows Server の複数のバージョンを含める - たとえば、既存の Windows Server 2012 R2 RDS デプロイしますが、(OpenGL\OpenCL、不連続値のサポートなどの新機能を活用するために Windows Server 2016 にアップグレードします。デバイスの割り当て、または記憶域スペース ダイレクトを使用)。 ここで問題は、RDS コンポーネントは別のバージョンで動作し、同じにする必要になるでしょうか。
+リモート デスクトップ サービス環境においてサポートされる構成に関しては、最大の懸念事項がバージョンの相互運用性になる傾向があります。 ほとんどの環境には、複数のバージョンの Windows Server が含まれます。たとえば、既存の Windows Server 2012 R2 の RDS を展開しているが、Windows Server 2016 にアップグレードして新しい機能 (OpenGL\OpenCL、個別のデバイス割り当て、記憶域スペース ダイレクトのサポートなど) を活用したい場合があります。 ここで、問題になるのは、どの RDS コンポーネントによってさまざまなバージョンを操作できるのか、また、同一でなければならないのはどれか、という点です。
 
-これを念頭に、ここではサポートされている構成の Windows Server 2016 でのリモート デスクトップ サービスの基本的なガイドラインです。
+そのことを念頭に置いて、ここでは Windows Server 2016 でサポートされるリモート デスクトップ サービスの構成に関する基本のガイドラインを示します。
 
 > [!NOTE]
-> 必ず確認、 [Windows Server 2016 のシステム要件](../../get-started/system-requirements.md)します。
+> [Windows Server 2016 のシステム要件](../../get-started/system-requirements.md)を必ず確認してください。
 
 ## <a name="best-practices"></a>ベスト プラクティス
-- Web アクセス、ゲートウェイ、接続ブローカー、およびライセンス サーバー、リモート デスクトップ インフラストラクチャ - Windows Server 2016 を使用します。 Windows Server 2016 では、これらのコンポーネントの旧バージョンと互換性のあるは、2012 R2 RD セッション ホストは、2016 の RD 接続ブローカーに接続できますが、逆はできませんので。
+- リモート デスクトップのインフラストラクチャ (Web アクセス、ゲートウェイ、接続ブローカー、およびライセンス サーバー) に Windows Server 2016 を使用します。 Windows Server 2016 は、これらのコンポーネントに対する下位互換性を備えています。そのため、2012 R2 RD セッション ホストから 2016 RD 接続ブローカーに接続することはできますが、逆はできません。
 
-- RD セッション ホスト - コレクション内のすべてのセッション ホストを同じレベルを指定する必要がありますが、複数のコレクションがあることができます。 Windows Server 2012 R2 セッション ホストを持つコレクションと Windows Server 2016 のセッション ホストを 1 つのことができます。
+- RD セッション ホストの場合、1 つのコレクション内にあるすべてのセッション ホストが同一レベルになっている必要がありますが、コレクションを複数保持することが可能です。 Windows Server 2012 R2 のセッション ホストによる 1 つのコレクションと、Windows Server 2016 のセッション ホストによるもう 1 つを保持することができます。
 
-- Windows Server 2016、RD セッション ホストをアップグレードする場合は、ライセンス サーバーもアップグレードします。 2016 のライセンス サーバーが Windows Server、Windows Server 2003 までのすべての以前のバージョンから Cal を処理できることに注意してください。
+- RD セッション ホストを Windows Server 2016 にアップグレードする場合は、ライセンス サーバーもアップグレードしてください。 2016 ライセンス サーバーでは、Windows Server 2003 に遡るまで、以前のすべての Windows Server バージョンからの CAL を処理できることを覚えておいてください。
 
-- 推奨されているアップグレードの順序に従う[リモート デスクトップ サービス環境のアップグレード](upgrade-to-rds.md#flow-for-deployment-upgrades)します。 
+- [リモート デスクトップ サービス環境のアップグレード](upgrade-to-rds.md#flow-for-deployment-upgrades)に関する記事で推奨されているアップグレード順序に従ってください。 
 
-- 高可用性環境を作成する場合は、同じ OS レベルであるすべての接続ブローカーの必要があります。
+- 高可用性環境を構築している場合、すべての接続ブローカーが同一の OS レベルになっている必要があります。
 
 ## <a name="rd-connection-brokers"></a>RD 接続ブローカー
 
-Windows Server 2016 は、リモート デスクトップ仮想化ホスト (RDVH) も Windows Server 2016 を実行しているリモート デスクトップ セッション ホスト (RDSH) の使用時に展開することが、接続ブローカーの数の制限を削除します。 次の表では、次の 3 つまたは複数の接続ブローカーの高可用性の展開で、2016 および 2012 R2 のバージョンの接続ブローカーでの RDS のコンポーネントの作業バージョンを示します。
+Windows Server 2016 も実行しているリモート デスクトップ セッション ホスト (RDSH) およびリモート デスクトップ仮想化ホスト (RDVH) を使用している場合、Windows Server 2016 では、展開に含めることができる接続ブローカー数の制限を取り外しています。 次の表は、3 つ以上の接続ブローカーを備えた高可用性の展開において、どのバージョンの RDS コンポーネントによって 2016 および 2012 R2 バージョンの接続ブローカーを利用できるかを示しています。
 
-| HA で 3 + 接続ブローカー              | RDSH 2016 | RDVH 2016 | RDSH 2012 R2  | RDVH 2012 R2  |
+| HA における 3 つ以上の接続ブローカー              | RDSH 2016 | RDVH 2016 | RDSH 2012 R2  | RDVH 2012 R2  |
 |------------------------------------------|-----------|-----------|---------------|---------------|
 | Windows Server 2016 の接続ブローカー    | サポート対象 | サポート対象 | サポート対象     | サポート対象     |
-| Windows Server 2012 R2 接続ブローカー | なし       | なし       | サポート対象     | サポート対象     |
+| Windows Server 2012 R2 の接続ブローカー | 該当なし       | 該当なし       | サポート対象     | サポート対象     |
 
-## <a name="support-for-gpu-acceleration-with-hyper-v"></a>Hyper V と GPU アクセラレーションのサポート
-次の表では、仮想マシンに GPU アクセラレータのサポートについて説明します。 参照してください[グラフィックス仮想化テクノロジが適切な?](rds-graphics-virtualization.md)確認する必要がある手助けをします。 DDA の詳細については、チェック アウト[の個別のデバイスの割り当ての展開を計画](../../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md)します。
+## <a name="support-for-gpu-acceleration-with-hyper-v"></a>Hyper-V による GPU アクセラレーションのサポート
+次の表は、仮想マシン上での GPU アクセラレーションのサポートに関する詳細を示しています。 何が必要かを明確にするには、「[Which graphics virtualization technology is right for you? (どのグラフィックス仮想化技術が適切か)](rds-graphics-virtualization.md)」をご覧ください。 DDA に関する特定の情報については、[個別のデバイス割り当てを展開する計画](../../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md)に関するページを参照してください。
 
-|VM のゲスト OS  |Windows Server 2012 R2 または Windows Server 2016<br> HYPER-V の RemoteFX vGPU (Gen 1 VM) |  Windows Server 2016 HYPER-V の RemoteFX vGPU (Gen 2 VM) |  Windows Server 2016 HYPER-V の個別のデバイスの割り当て (第 2 世代 VM) |
+|VM ゲスト OS  |Windows Server 2012 R2 または Windows Server 2016<br> HYPER-V の RemoteFX vGPU (Gen 1 VM) |  Windows Server 2016 HYPER-V の RemoteFX vGPU (Gen 2 VM) |  Windows Server 2016 Hyper-V の個別のデバイス割り当て (Gen 2 VM) |
 |-----------------------------|------------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------------|
 | Windows 7 SP1               | 〇                                                        | X                                                     | X                                                                  |
 | Windows 8.1                 | 〇                                                        | X                                                     | X                                                                  |
 | Windows 10 1511 Update      | 〇                                                        | 〇                                                    | 〇                                                                 |
 | Windows Server 2012 R2      | 〇                                                        | X                                                     | はい (KB 3133690 が必要)                                           |
 | Windows Server 2016         | 〇                                                        | 〇                                                    | 〇                                                                 |
-| Windows Server 2012 R2 の RDSH | X                                                         | X                                                     | はい (KB 3133690 が必要)                                           |
-| Windows Server 2016 の RDSH    | X                                                         | X                                                     | 〇                                                                 |
-## <a name="vdi-deployment--supported-guest-oss"></a>VDI 展開 – サポートされるゲスト Os 
-Windows Server 2016 の RD 仮想化ホスト サーバーは、次のゲスト Os をサポートします。
+| Windows Server 2012 R2 RDSH | X                                                         | X                                                     | はい (KB 3133690 が必要)                                           |
+| Windows Server 2016 RDSH    | X                                                         | X                                                     | 〇                                                                 |
+## <a name="vdi-deployment--supported-guest-oss"></a>VDI の展開 – サポートされているゲスト OS 
+Windows Server 2016 RD 仮想化ホスト サーバーでは、次のゲスト OS がサポートされます。
 
 - Windows 10 Enterprise
 - Windows 8.1 Enterprise 
 - Windows 8 Enterprise 
 - Windows 7 SP1 Enterprise 
 
-次の表は、サポートされている RD 仮想化ホスト オペレーティング システムとゲスト オペレーティング システムの組み合わせを示します。
+次の表に、サポートされている RD 仮想化ホスト オペレーティング システムとゲスト オペレーティング システムの組み合わせを示します。
 
 | RDVH OS バージョン        | ゲスト OS バージョン           |
 | ------------- |-------------|
@@ -80,29 +80,29 @@ Windows Server 2016 の RD 仮想化ホスト サーバーは、次のゲスト 
 | Windows Server 2012      | Windows 7 SP1、Windows 8、Windows 8.1 |
 
 > [!NOTE]  
-> - Windows Server 2016 リモート デスクトップ サービスは、異種コレクションをサポートしていません。 コレクション内のすべての Vm は、同じ OS バージョンである必要があります。 
-> - 同じホストには、さまざまなゲスト OS バージョンと同種の別個のコレクションがあります。 
-> - Windows Server 2016 の HYPER-V ホスト上のゲスト OS として使用する Windows Server 2016 の HYPER-V ホストには、VM テンプレートを作成する必要があります。
+> - Windows Server 2016 リモート デスクトップ サービスでは、異種コレクションをサポートしていません。 1 つのコレクション内にあるすべての VM は、同じ OS バージョンになっている必要があります。 
+> - 同じホスト上でさまざまなゲスト OS バージョンを利用して、別個の同種コレクションを保持することができます。 
+> - VM テンプレートは、Windows Server 2016 Hyper-V ホスト上でゲスト OS として使用するために、Windows Server 2016 Hyper-V ホスト上に作成される必要があります。
 
 ## <a name="single-sign-on-sso"></a>シングル サインオン (SSO)
-Windows Server 2016 の RDS は、2 つの主な SSO エクスペリエンスをサポートしています。
+Windows Server 2016 の RDS では、2 つの主要な SSO エクスペリエンスがサポートされています。
 
- - アプリ (Windows、iOS、Android、および Mac でリモート デスクトップ アプリケーション)
+ - アプリ内 (Windows、iOS、Android、および Mac 上のリモート デスクトップ アプリケーション)
  - Web SSO
  
-リモート デスクトップ アプリケーションを使用することができます資格情報を格納、接続情報の一部として ([Mac](clients/remote-desktop-mac.md)) または管理アカウントの一部として ([iOS](clients/remote-desktop-ios.md#manage-your-user-accounts)、 [Android](clients/remote-desktop-android.md#manage-your-user-accounts)Windows)各 OS に固有のメカニズムを通じて安全に。
+リモート デスクトップ アプリケーションを使用して、各 OS に固有のメカニズムを通じて接続情報の一部 ([Mac](clients/remote-desktop-mac.md)) またはマネージド アカウントの一部 ([iOS](clients/remote-desktop-ios.md#manage-your-user-accounts)、[Android](clients/remote-desktop-android.md#manage-your-user-accounts)、Windows) として、安全に資格情報を格納できます。
 
-Windows 上の受信トレイのリモート デスクトップ接続クライアントをデスクトップと SSO と Remoteapp に接続するには、Internet Explorer を使用して RD Web ページに接続する必要があります。 サーバー側では、次の構成オプションが必要です。 Web SSO の他の構成はサポートされていません。
+Windows 上でインボックス リモート デスクトップ接続クライアントを通じて、SSO によってデスクトップおよび RemoteApps に接続するには、Internet Explorer から RD Web ページに接続する必要があります。 サーバー側では、次の構成オプションが必要になります。 Web SSO では、他の構成はサポートされていません。
 
- - RD Web は、フォーム ベース認証 (既定値) に設定
- - RD ゲートウェイは、パスワード認証 (既定値) に設定
- - RDS のデプロイは、「使用 RD ゲートウェイはリモート コンピューターの資格情報」に設定 (既定) では、RD ゲートウェイのプロパティ
+ - フォーム ベース認証 (既定値) に設定された RD Web
+ - パスワード認証 (既定値) に設定された RD ゲートウェイ
+ - RD ゲートウェイのプロパティに [リモート コンピューター用の RD ゲートウェイ資格情報を使用する] (既定値) が設定された RDS の展開
 
 > [!NOTE]
-> 必要な構成オプションにより Web SSO はスマート カードではサポートされていません。 スマート カードを使用してログインがログインに複数のプロンプトが直面するユーザー。
+> 必須の構成オプションが原因で、スマートカードでは Web SSO はサポートされていません。 スマートカード経由でログインするユーザーには、ログインのために複数のプロンプトが表示される場合があります。
 
-リモート デスクトップ サービスの VDI の展開を作成する方法の詳細については、チェック アウト[リモート デスクトップ サービスの VDI に Windows 10 のサポートされているセキュリティ構成](rds-vdi-supported-config.md)します。
+リモート デスクトップ サービスの VDI の展開の作成について詳しくは、「[リモート デスクトップ サービスの VDI でサポートされる Windows 10 のセキュリティ構成](rds-vdi-supported-config.md)」を確認してください。
 
-## <a name="using-remote-desktop-services-with-application-proxy-services"></a>アプリケーション プロキシ サービスでリモート デスクトップ サービスを使用します。
+## <a name="using-remote-desktop-services-with-application-proxy-services"></a>アプリケーション プロキシ サービスによってリモート デスクトップ サービスを使用する
 
-Web クライアントを除くリモート デスクトップ サービスを使用できる[Azure AD アプリケーション プロキシ](https://docs.microsoft.com/azure/active-directory/application-proxy-publish-remote-desktop)します。 リモート デスクトップ サービスでは、使用はサポートしません[Web アプリケーション プロキシ](https://docs.microsoft.com/windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server)、Windows Server 2016 と以前のバージョンに含まれます。
+Web クライアント以外では、[Azure AD のアプリケーション プロキシ](https://docs.microsoft.com/azure/active-directory/application-proxy-publish-remote-desktop)を利用して、リモート デスクトップ サービスを使用できます。 リモート デスクトップ サービスでは、Windows Server 2016 および以前のバージョンに含まれる [Web アプリケーション プロキシ](https://docs.microsoft.com/windows-server/remote/remote-access/web-application-proxy/web-application-proxy-windows-server)の使用は、サポートされません。

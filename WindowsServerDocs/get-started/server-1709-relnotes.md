@@ -15,11 +15,11 @@ ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: 4eebc498289a81c7f27fcf4b84d81ae13bc38e4f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861983"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63688251"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1709"></a>リリース ノート:Windows Server バージョン 1709 に関する重要な問題
 
@@ -30,15 +30,15 @@ ms.locfileid: "59861983"
 このドキュメントは継続的に更新されています。 解決策が必要な重大な問題が発見された場合、および新しい解決策および修正が使用可能になった場合は、ここに追加されます。  
   
 ## <a name="storage-spaces-direct"></a>記憶域スペース ダイレクト
-[comment]: # (ID: 不明です。送信者: stevenek;状態: サインオフ)  
+[comment]: # (ID: 不明、送信者: stevenek、状態: サインオフ)  
 記憶域スペース ダイレクトは Windows Server バージョン 1709 には含まれません。 Windows Server バージョン 1709 を実行しているサーバーで *Enable-ClusterStorageSpacesDirect* またはそのエイリアス *Enable-ClusterS2D* を呼び出した場合、「要求された操作がサポートされていません」というメッセージと共にエラーが返されます。
 
 Windows Server バージョン 1709 を実行しているサーバーを、Windows Server 2016 記憶域スペース ダイレクトの展開に導入することもサポートされていません。
 
 Windows Server のリリース モデルで、新しいオプションが提供されます。これは、[Windows 10](https://docs.microsoft.com/windows/deployment/update/waas-overview) と [Office 365 ProPlus](https://support.office.com/article/Overview-of-the-upcoming-changes-to-Office-365-ProPlus-update-management-78b33779-9356-4cdf-9d2c-08350ef05cca?ui=en-US&rs=en-US&ad=US) で行われている同様のリリースおよびサービス モデルに連動するためのものです。 半期チャネルのリリースでは、迅速なペースで移行する必要があるお客様に新しい機能を提供します。新しいリリースは、年に 2 回、春と秋に提供されます。
 
-Windows Server の場合は半期チャネルがコンテナーと迅速な革新の恩恵アプリケーション シナリオに重点を置いて、これを参照してください[ブログ](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update)の追加情報。 記憶域スペース ダイレクトなどのインフラストラクチャの役割を検討しているお客様は、Windows Server 2016 (現在の利用可能) のように長期的なサービス チャネルのリリースを使用する必要がありますと[Windows Server 2019](https://cloudblogs.microsoft.com/windowsserver/2018/03/20/introducing-windows-server-2019-now-available-in-preview) (今年の後半に登場)。 ハイパー コンバージド インフラストラクチャ、最適なプラットフォームの構築に取り組んでいて、新機能を開発し、お客様のフィードバックに基づいて既存のものを向上させるのには継続的です。 
+半期チャネルの Windows Server は、よりすばやいイノベーションからメリットを引き出す、コンテナーとアプリケーションのシナリオに重点を置いています。追加情報については、この[ブログ](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update)を参照してください。 記憶域スペース ダイレクトなどのインフラストラクチャ ロールを探しているお客様は、Windows Server 2016 (現在利用可能) や [Windows Server 2019](https://cloudblogs.microsoft.com/windowsserver/2018/03/20/introducing-windows-server-2019-now-available-in-preview) (今年後半にリリース) のように長期的なサービス チャネルのリリースを使用する必要があります。 ハイパーコンバージド インフラストラクチャの最適なプラットフォームの構築に取り組んでおり、新しい機能の開発や、お客様のフィードバックに基づいた既存の機能の改善を継続しています。 
 
 記憶域スペース ダイレクトは、Windows Server 2016 で導入された、Microsoft のハイパーコンバージド プラットフォームの基盤です。 Microsoft ハイパーコンバージド プラットフォームの積極的な導入が進んでおり、Microsoft ではこれからもお客様へのコミットメントに取り組んでまいります。
 
-お客様のフィードバックを待機しているし、提供に取り組んでいます、[次の一連の技術革新の](https://blogs.technet.microsoft.com/windowsserver/2017/09/07/sneak-peek-2-windows-server-version-1709-hyper-converged-infrastructure/)ハイパー コンバージドの両方のプラットフォームです。 これらの機能は現時点で[Windows Insider](https://insider.windows.com/for-business/)試して、ご意見をするためのビルド、および私たちが歓迎します。 検証済みのハイパーコンバージド ソリューションをお探しのお客様には、[Windows Server Software Defined](http://microsoft.com/wssd) プログラムをお勧めします。
+Microsoft では、フィードバックに耳を傾けながら、ハイパーコンバージド プラットフォームに関する[次世代のイノベーション](https://blogs.technet.microsoft.com/windowsserver/2017/09/07/sneak-peek-2-windows-server-version-1709-hyper-converged-infrastructure/)の提供に取り組んでいます。 これらの機能は、現在、[Windows Insider](https://insider.windows.com/for-business/) のビルドで利用できます。ぜひ新しい機能をお試しいただき、フィードバックをお寄せください。 検証済みのハイパーコンバージド ソリューションをお探しのお客様には、[Windows Server Software Defined](http://microsoft.com/wssd) プログラムをお勧めします。

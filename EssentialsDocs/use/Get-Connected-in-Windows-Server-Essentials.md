@@ -90,7 +90,7 @@ ms.locfileid: "66435975"
 -   Windows Server Essentials のインストールが完了し、サーバーが実行されている。 コネクタ ソフトウェアは、サーバーと通信することができない場合、インストールを終了します。  
 
 
--   クライアント コンピューターが、サポートされているオペレーティング システムを実行している。 詳細については、「 [Supported operating systems for client computers](Get-Connected-in-Windows-Server-Essentials.md#BKMK_4)」を参照してください。
+-   クライアント コンピューターが、サポートされているオペレーティング システムを実行している。 詳細については、次を参照してください。[クライアント コンピューターのオペレーティング システムでサポートされる](Get-Connected-in-Windows-Server-Essentials.md#BKMK_4)します。
 
 
 -   クライアント コンピューターが、インターネットへの有効な接続を確立している。  
@@ -121,11 +121,11 @@ ms.locfileid: "66435975"
 
 > [!NOTE]
 > 
->  Windows Server Essentials または Windows Server Essentials のオンプレミス クライアント展開では、Windows Server Essentials ドメインに追加することがなくサーバーにコンピューターを接続できます。 この方法は、サポート対象のすべてのクライアント オペレーティング システムで使用できるわけではありません。また、コンピューターをドメインに接続する必要がある、グループ ポリシーや仮想プライベート ネットワーク (VPN) などの機能は使用できません。 要件と手順については、「 [Connect computers to a Windows Server Essentials server without joining the domain](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)」を参照してください。  
+>  Windows Server Essentials または Windows Server Essentials のオンプレミス クライアント展開では、Windows Server Essentials ドメインに追加することがなくサーバーにコンピューターを接続できます。 この方法は、サポート対象のすべてのクライアント オペレーティング システムで使用できるわけではありません。また、コンピューターをドメインに接続する必要がある、グループ ポリシーや仮想プライベート ネットワーク (VPN) などの機能は使用できません。 要件と手順については、次を参照してください。[ドメインに参加せず、Windows Server Essentials サーバーにコンピューターを接続](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)します。  
 
  Windows Server Essentials を実行しているサーバーにコンピューターを接続する詳細な手順については、「[コンピューターをサーバーに接続](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)」を参照してください。  
 
->  Windows Server Essentials または Windows Server Essentials のオンプレミス クライアント展開では、Windows Server Essentials ドメインに追加することがなくサーバーにコンピューターを接続できます。 この方法は、サポート対象のすべてのクライアント オペレーティング システムで使用できるわけではありません。また、コンピューターをドメインに接続する必要がある、グループ ポリシーや仮想プライベート ネットワーク (VPN) などの機能は使用できません。 要件と手順については、「 [Connect computers to a Windows Server Essentials server without joining the domain](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)」を参照してください。  
+>  Windows Server Essentials または Windows Server Essentials のオンプレミス クライアント展開では、Windows Server Essentials ドメインに追加することがなくサーバーにコンピューターを接続できます。 この方法は、サポート対象のすべてのクライアント オペレーティング システムで使用できるわけではありません。また、コンピューターをドメインに接続する必要がある、グループ ポリシーや仮想プライベート ネットワーク (VPN) などの機能は使用できません。 要件と手順については、次を参照してください。[ドメインに参加せず、Windows Server Essentials サーバーにコンピューターを接続](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)します。  
 
  Windows Server Essentials を実行しているサーバーにコンピューターを接続する詳細な手順については、「[コンピューターをサーバーに接続](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)」を参照してください。  
 
@@ -396,9 +396,9 @@ ms.locfileid: "66435975"
 
 > [!NOTE]
 > 
->  Windows Server Essentials または Windows Server Essentials のオンプレミス クライアント展開では、Windows Server Essentials ドメインに追加することがなくサーバーにコンピューターを接続できます。 この方法は、サポート対象のすべてのクライアント オペレーティング システムで使用できるわけではありません。また、コンピューターをドメインに接続する必要がある、グループ ポリシーや仮想プライベート ネットワーク (VPN) などの機能は使用できません。 要件と手順については、「 [Connect computers to a Windows Server Essentials server without joining the domain](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)」を参照してください。  
+>  Windows Server Essentials または Windows Server Essentials のオンプレミス クライアント展開では、Windows Server Essentials ドメインに追加することがなくサーバーにコンピューターを接続できます。 この方法は、サポート対象のすべてのクライアント オペレーティング システムで使用できるわけではありません。また、コンピューターをドメインに接続する必要がある、グループ ポリシーや仮想プライベート ネットワーク (VPN) などの機能は使用できません。 要件と手順については、次を参照してください。[ドメインに参加せず、Windows Server Essentials サーバーにコンピューターを接続](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)します。  
 > 
->  Windows Server Essentials または Windows Server Essentials のオンプレミス クライアント展開では、Windows Server Essentials ドメインに追加することがなくサーバーにコンピューターを接続できます。 この方法は、サポート対象のすべてのクライアント オペレーティング システムで使用できるわけではありません。また、コンピューターをドメインに接続する必要がある、グループ ポリシーや仮想プライベート ネットワーク (VPN) などの機能は使用できません。 要件と手順については、「 [Connect computers to a Windows Server Essentials server without joining the domain](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)」を参照してください。  
+>  Windows Server Essentials または Windows Server Essentials のオンプレミス クライアント展開では、Windows Server Essentials ドメインに追加することがなくサーバーにコンピューターを接続できます。 この方法は、サポート対象のすべてのクライアント オペレーティング システムで使用できるわけではありません。また、コンピューターをドメインに接続する必要がある、グループ ポリシーや仮想プライベート ネットワーク (VPN) などの機能は使用できません。 要件と手順については、次を参照してください。[ドメインに参加せず、Windows Server Essentials サーバーにコンピューターを接続](Get-Connected-in-Windows-Server-Essentials.md#BKMK_10)します。  
 
 
 ##### <a name="to-connect-a-client-computer-to-the-server"></a>クライアント コンピューターをサーバーに接続するには  
@@ -483,7 +483,7 @@ ms.locfileid: "66435975"
     -    Windows 7 Professional (x86 および x64)、Windows 7 Enterprise (x86 および x64)、Windows 7 Ultimate (x86 および x64)  
 
 
--   コンピューターは、Windows Server Essentials のクライアント コンピューターの他のすべての要件を満たす必要があります。 詳細については、「 [Prerequisites for connecting a computer to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_2)」を参照してください。  
+-   コンピューターは、Windows Server Essentials のクライアント コンピューターの他のすべての要件を満たす必要があります。 詳細については、次を参照してください。[コンピューターをサーバーに接続するための前提条件](Get-Connected-in-Windows-Server-Essentials.md#BKMK_2)します。  
 
 
 -   ドメインに参加せずに接続を有効にするには、ローカルの Administrators グループのメンバーであるアカウントを使用して、コンピューターにサインオンする必要があります。  
@@ -598,7 +598,7 @@ ms.locfileid: "66435975"
 -   自宅のコンピューターから Windows Server Essentials の構成とリモート管理を可能にする  
 
 
- コンピューターを Windows Server Essentials サーバーに接続するための詳細な手順については、「 [Connect computers to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)」を参照してください。   
+ お使いのコンピューターを Windows Server Essentials サーバーに接続する方法の手順については、次を参照してください。[コンピューターをサーバーに接続する](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)します。   
 
 
 ###  <a name="BKMK_12"></a> コンピューターのデータと設定を移動手動で  
@@ -656,10 +656,10 @@ ms.locfileid: "66435975"
 
 5. Windows Server Essentials ドメインからコンピューターの参加を解除し、ワークグループに参加させます。 Windows をワークグループに参加させるための詳細な手順については、「 [ワークグループへの参加または作成](https://windows.microsoft.com/windows7/Join-or-create-a-workgroup)」を参照してください。  
 
-6. コンピューターをサーバーに接続ウィザードを使用して、コンピューターをサーバーに接続します。 詳しい手順については、「 [Connect computers to the server](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)」を参照してください。  
+6. コンピューターをサーバーに接続ウィザードを使用して、コンピューターをサーバーに接続します。 手順については、次を参照してください。[コンピューターをサーバーに接続する](Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)します。  
 
 ###  <a name="BKMK_Sleep"></a> バックアップのスリープ状態と動作方法と、休止モード  
- コンピューターをサーバーに接続した際に **[バックアップのためにこのコンピューターのスリープを解除する]** オプションを選択すると、バックアップ スケジュールの指定に従って、毎日スリープ モードまたは休止モードから自動的にウェイクアップして、バックアップを実行します。 バックアップが完了したら、コンピューターは電源管理設定に基づいて、スリープまたは休止モードに戻ります。 このオプションを選択しないと、コンピューターがスリープまたは休止状態の場合、サーバーはコンピューターをバックアップしません。 詳細については、次を参照してください。 [Manage Client Backup](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)します。  
+ コンピューターをサーバーに接続した際に **[バックアップのためにこのコンピューターのスリープを解除する]** オプションを選択すると、バックアップ スケジュールの指定に従って、毎日スリープ モードまたは休止モードから自動的にウェイクアップして、バックアップを実行します。 バックアップが完了したら、コンピューターは電源管理設定に基づいて、スリープまたは休止モードに戻ります。 このオプションを選択しないと、コンピューターがスリープまたは休止状態の場合、サーバーはコンピューターをバックアップしません。 詳細については、「[ユーザー ステーションの管理](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)」を参照してください。  
 
 ##  <a name="BKMK_C"></a> スタート パッドを使用します。  
  スタート パッドを使用すると、Windows Server Essentials サーバーから共有リソースへのアクセス、コンピューターのバックアップの実行、およびシステム正常性アラートへの応答を実行することができます。  

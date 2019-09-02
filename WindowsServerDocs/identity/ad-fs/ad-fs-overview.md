@@ -9,28 +9,28 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1dd204ec930cb69d7117fc240b5384fa928d7626
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 0ab4152c28413f663dfcc4c5d43deee8a31c1ec2
+ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192516"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70009112"
 ---
 # <a name="ad-fs-overview"></a>AD FS の概要
 
 
 
-このドキュメントには、Windows Server 用の AD FS のドキュメントの概要のすべての一覧が含まれています。 これには、次のデータが含まれます。
+このドキュメントには、Windows Server の AD FS のすべてのドキュメント概要の一覧が含まれています。 これには、次の内容が含まれます。
   
   
   
-* [新機能 Windows Server 2019 の AD FS の新機能](../ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)  
+* [Windows Server 2019 の AD FS の新機能](../ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)  
   
-* [開発者向けの AD FS のシナリオ](../ad-fs/overview/AD-FS-Scenarios-for-Developers.md) 
+* [OpenID Connect/OAuth フローとアプリケーションシナリオの AD FS](../ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md) 
 
 * [AD FS の要件](../ad-fs/overview/AD-FS-2016-Requirements.md)
 
-* [AD FS に関する FAQ](../ad-fs/overview/AD-FS-FAQ.md)
+* [AD FS FAQ](../ad-fs/overview/AD-FS-FAQ.md)
 
   
   

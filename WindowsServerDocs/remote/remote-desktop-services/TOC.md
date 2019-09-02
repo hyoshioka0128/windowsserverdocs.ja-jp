@@ -66,13 +66,21 @@
 
 ## [その他のリモート デスクトップ サポート](rds-get-support.md)
 ## [リモート デスクトップ クライアント](clients/remote-desktop-clients.md)
+### リモート デスクトップの既知の問題
+#### [リモート デスクトップ接続の一般的なトラブルシューティング](troubleshoot/rdp-error-general-troubleshooting.md)
+#### [クライアントが接続できず、"クラスが登録されていません" というエラーが発生する](troubleshoot/rdp-error-class-not-registered.md)
+#### [クライアントは接続できず、"使用可能なライセンスがありません" というエラーが表示される](troubleshoot/rdp-error-no-licenses-available.md)
+#### [ユーザーが認証できない、または 2 回認証する必要がある](troubleshoot/cannot-authenticate-or-must-authenticate-twice.md)
+#### [接続時に、"リモート デスクトップ サービスが現在ビジー状態のため" というエラーが発生する](troubleshoot/remote-desktop-service-currently-busy.md)
+#### [リモート デスクトップ クライアントが切断され、同じセッションに再接続できない](troubleshoot/rdp-client-disconnects-cannot-reconnect-same-session.md)
+#### [リモート ラップトップがワイヤレス ネットワークから切断される](troubleshoot/remote-laptop-disconnects-wireless-network.md)
+#### [リモート デスクトップ接続時のパフォーマンスの低下またはアプリケーションの問題](troubleshoot/poor-performance-or-application-problems.md)
 ### 一般的な情報
 #### [お客様に最適なクライアント](clients/remote-desktop-app-compare.md)
 #### [リモート デスクトップ (RDP) ファイルの設定](clients/rdp-files.md)
 #### [リモート デスクトップの URI のスキーマ](clients/remote-desktop-uri.md)
 #### [リモート デスクトップ クライアントに関する FAQ](clients/remote-desktop-client-faq.md)
 #### [管理対象アプリとデスクトップのプライバシー設定](clients/remote-privacy-settings.md)
-#### [リモート デスクトップ接続のトラブルシューティング](clients/troubleshoot-remote-desktop-connections.md)
 ### Windows 用のリモート デスクトップ クライアント
 #### [作業の開始](clients/windows.md)
 #### [Windows クライアントの新機能](clients/windows-whatsnew.md)

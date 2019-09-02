@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 6/24/2017
 description: サーバー役割のインストール、同期共有の作成、DNS レコードの作成などの、ワーク フォルダーを展開する方法。
-ms.openlocfilehash: 1ed26c9949fa3f4b53b9f650ca5a3649d5261d65
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d2ba117a021cfc7361c0f7c8df2ed9f3c4bc9d94
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447851"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792340"
 ---
 # <a name="deploying-work-folders"></a>ワーク フォルダーの展開
 
@@ -51,7 +51,7 @@ ms.locfileid: "66447851"
 ## <a name="step-2-create-dns-records"></a>手順 2:DNS レコードを作成する  
  ユーザーがインターネット経由で同期できるようにするには、パブリック DNS にホスト (A) レコードを作成して、インターネット クライアントがワーク フォルダー URL を解決できるようにする必要があります。 この DNS レコードは、リバース プロキシ サーバーの外部インターフェイスに解決される必要があります。  
   
- 内部ネットワーク上で、workfolders という名前で DNS の CNAME レコードを作成します。これはサーバー ワーク フォルダーの FDQN に解決されます。 ワーク フォルダー クライアントでは、自動検出を使用する場合、ワーク フォルダー サーバーを検出するために使用する URL は https://workfolders.domain.comします。 自動検出を使用する場合は、workfolders CNAME レコードが DNS 内に存在する必要があります。  
+ 内部ネットワーク上で、workfolders という名前で DNS の CNAME レコードを作成します。これはサーバー ワーク フォルダーの FDQN に解決されます。 ワーク フォルダー クライアントは、自動検出を使用して、ワーク フォルダー サーバーを検出するための URL は https:\//workfolders.domain.com します。 自動検出を使用する場合は、workfolders CNAME レコードが DNS 内に存在する必要があります。  
   
 ## <a name="step-3-install-work-folders-on-file-servers"></a>手順 3:ファイル サーバーでワーク フォルダーをインストールする  
  ワーク フォルダーは、ドメインに参加しているサーバーに、サーバー マネージャーまたは Windows PowerShell を使用して、ローカルまたはネットワーク経由でリモートからインストールできます。 これは、ネットワーク経由で複数の同期サーバーを構成している場合に役立ちます。  
@@ -251,7 +251,7 @@ New-SyncShare "HR Sync Share" K:\Share-1 –User "HR Sync Share Users"
 6.  **[追加する値]** ボックスで、このユーザーに同期を許可する同期サーバーの URL を入力し、 **[追加]** をクリックします。次に、 **[OK]** をクリックし、もう一度 **[OK]** をクリックします。  
   
     > [!NOTE]
-    >  同期サーバーの URL は、単純に `https://` または `http://` (セキュリティで保護された接続が必要であるかどうかに依存する) の後に、同期サーバーの完全修飾ドメイン名を続けたものです。 たとえば、  **https://sync1.contoso.com** します。
+    >  同期サーバーの URL は、単純に `https://` または `http://` (セキュリティで保護された接続が必要であるかどうかに依存する) の後に、同期サーバーの完全修飾ドメイン名を続けたものです。 たとえば、 **https:\//sync1.contoso.com**します。
 
 複数のユーザーの属性にデータを挿入するには、Active Directory PowerShell を使用します。 手順 5. で説明した *HR Sync Share Users* グループのすべてのメンバーに対して属性を設定する例を次に示します。
   
@@ -292,7 +292,7 @@ Azure Active Directory アプリケーション プロキシを使って、ワ�
 ##  <a name="BKMK_LINKS"></a> 参照してください。  
  その他の関連情報については、次の情報を参照してください。  
   
-|コンテンツの種類|参考資料|  
+|コンテンツの種類|リファレンス|  
 |------------------|----------------|  
 |**理解します。**|-   [ワーク フォルダー](work-folders-overview.md)|  
 |**計画**|-   [ワーク フォルダーの実装の設計](plan-work-folders.md)|

@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c26d6d0c4c4465b5f9073dbcac951fc0adce1d5
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 4a305141b839772bb024140bd803073a67e266b2
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63688543"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544578"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Windows Server 2016 の Standard エディションと Datacenter エディションの比較
 
@@ -123,7 +123,7 @@ ms.locfileid: "63688543"
 |SMB 帯域幅の制限|〇|〇|
 |SMTP サーバー|〇|〇|
 |SNMP サービス|〇|〇|
-|ソフトウェア ロード バランサー|〇|〇|
+|ソフトウェア ロード バランサー|X|〇|
 |記憶域レプリカ|X|〇|
 |Telnet クライアント|〇|〇|
 |TFTP クライアント|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|

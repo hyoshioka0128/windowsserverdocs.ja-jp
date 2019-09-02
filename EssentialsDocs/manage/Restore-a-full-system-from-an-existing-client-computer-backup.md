@@ -145,7 +145,7 @@ ms.locfileid: "66433093"
   
      お使いのコンピューターのドライバーを見つける方法については、「[ハードウェアのドライバーを見つけるには](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_FindDrivers)」を参照してください。  
   
--   Windows Server essentials の場合。Windows Server Essentials 復元 CD が見つからない場合は、起動可能な USB フラッシュ ドライブを作成できます。 詳細については、「 [Create a bootable USB flash drive to restore a client computer](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_CreateBootable)」を参照してください。  
+-   Windows Server essentials の場合。Windows Server Essentials 復元 CD が見つからない場合は、起動可能な USB フラッシュ ドライブを作成できます。 詳細については、次を参照してください。[クライアント コンピューターを復元する起動可能な USB フラッシュ ドライブを作成する](Restore-a-full-system-from-an-existing-client-computer-backup.md#BKMK_CreateBootable)します。  
   
 #### <a name="to-use-the-full-system-restore-wizard"></a>システムの完全復元ウィザードを使用するには  
   

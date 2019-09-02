@@ -1,6 +1,6 @@
 ---
 title: 社内 Exchange Server と Windows Server Essentials を統合する
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -12,12 +12,12 @@ ms.assetid: b56a21e2-c9e3-4ba9-97d9-719ea6a0854b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 4759d33dc89c0ce458b2143cff94f78ea2d9a5cc
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 689f293acf1e87e135f6f8cf5c7eac2a7d8033b9
+ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433384"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70031505"
 ---
 # <a name="integrate-an-on-premises-exchange-server-with-windows-server-essentials"></a>社内 Exchange Server と Windows Server Essentials を統合する
 
@@ -33,24 +33,24 @@ ms.locfileid: "66433384"
 ## <a name="prerequisites"></a>前提条件  
  Windows Server Essentials ネットワークに Exchange Server をインストールする前に、このセクションに記載されている作業が完了していることを確認してください。  
 
--   [Windows Server Essentials を実行しているサーバーを設定します。](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SetUpSBS8)  
+-   [Windows Server Essentials を実行しているサーバーをセットアップする](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SetUpSBS8)  
 
--   [Exchange Server をインストールする 2 つ目のサーバーを準備します。](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SecondServer)  
+-   [Exchange Server をインストールする2台目のサーバーを準備する](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_SecondServer)  
 
--   [インターネット ドメイン名を構成します。](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_DomainNames)  
+-   [インターネットドメイン名を構成する](Integrate-an-On-Premises-Exchange-Server-with-Windows-Server-Essentials.md#BKMK_DomainNames)  
 
-###  <a name="BKMK_SetUpSBS8"></a> Windows Server Essentials を実行しているサーバーを設定します。  
+###  <a name="BKMK_SetUpSBS8"></a>Windows Server Essentials を実行しているサーバーをセットアップする  
  Windows Server Essentials を実行するサーバーが既にセットアップされている必要があります。 このサーバーは、Exchange Server を実行するサーバーに対するドメイン コントローラーになります。 Windows Server Essentials を設定する方法については、「[Windows Server Essentials のインストール](../install/Install-Windows-Server-Essentials.md)」を参照してください。  
 
-###  <a name="BKMK_SecondServer"></a> Exchange Server をインストールする 2 つ目のサーバーを準備します。  
+###  <a name="BKMK_SecondServer"></a>Exchange Server をインストールする2台目のサーバーを準備する  
  Exchange Server 2010 または Exchange Server 2013 の実行が正式にサポートされているバージョンの Windows Server オペレーティング システムを実行する 2 台目のサーバーを用意し、Exchange Server をインストールする必要があります。 その後、2 台目のサーバーを Windows Server Essentials ドメインに参加させる必要があります。  
 
- 2 番目のサーバーを Windows Server Essentials ドメインに参加させる方法については、次を参照してください。 2 つ目のサーバーのネットワークへの参加[接続](../use/Get-Connected-in-Windows-Server-Essentials.md)します。  
+ 2台目のサーバーを Windows Server Essentials ドメインに参加させる方法については、「 [Get Connected](../use/Get-Connected-in-Windows-Server-Essentials.md)」の「2台目のサーバーをネットワークに参加させる」を参照してください。  
 
 > [!NOTE]
 >  Microsoft では、Windows Server Essentials を実行しているサーバーへの Exchange Server のインストールはサポートしていません。  
 
-###  <a name="BKMK_DomainNames"></a> インターネット ドメイン名を構成します。  
+###  <a name="BKMK_DomainNames"></a>インターネットドメイン名を構成する  
  Exchange Server が実行されている社内サーバーを Windows Server Essentials と統合するには、会社用の有効なインターネット ドメイン名 ( *contoso.com*など) を登録済みであることが必要です。 また、ドメイン ネーム プロバイダーと連携して、Exchange Server で要求される DNS リソース レコードを作成する必要があります。  
 
  たとえば、会社のインターネット ドメイン名が contoso.com の場合、Exchange Server を実行する社内サーバーを参照するために *mail.contoso.com* という完全修飾ドメイン名 (FQDN) を使用するには、ドメイン ネーム プロバイダーと連携して、次の表に示すような DNS リソース レコードを作成します。  
@@ -59,9 +59,9 @@ ms.locfileid: "66433384"
 | リソース レコード名 |     レコードの種類     |                                                                         レコードの設定                                                                          |                                                                                                                                                                                                                                                              説明                                                                                                                                                                                                                                                              |
 |----------------------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         メール         |      ホスト (A)       |                                                        Address=*ISP によって割り当てられたパブリック IP アドレス*                                                         |                                                                                                                                                                                                   Exchange Server で mail.contoso.com 当てのメールを受信します。<br /><br /> 他の名前を任意に選択して使用できます。                                                                                                                                                                                                    |
-|          MX          | メール エクスチェンジャー (MX) |                                            ホスト名=@<br /><br /> アドレス=mail.contoso.com<br /><br /> 優先順位=0                                             |                                                                                                                                                                                                      電子メール メッセージのルーティングを提供しますemail@contoso.comExchange Server を実行しているオンプレミス サーバーに到達します。                                                                                                                                                                                                       |
+|          MX          | メール エクスチェンジャー (MX) |                                            ホスト名=@<br /><br /> アドレス=mail.contoso.com<br /><br /> 優先順位=0                                             |                                                                                                                                                                                                      Exchange server を実行しemail@contoso.comているオンプレミスサーバーに到着するための電子メールメッセージのルーティングを提供します。                                                                                                                                                                                                       |
 |         SPF          |     テキスト (TXT)      |                                                                        v=spf1 a mx ~all                                                                         |                                                                                                                                                                                                                      このサーバーから送信された電子メールがスパムとして識別されるのを防ぐためのリソース レコードです。                                                                                                                                                                                                                      |
-|  autodiscover._tcp   |    サービス (SRV)    | サービス: _autodiscover<br /><br /> プロトコル: _tcp<br /><br /> 優先度:0<br /><br /> 重み:0<br /><br /> ポート:443<br /><br /> ターゲット ホスト: mail.contoso.com | Microsoft Office Outlook およびモバイル デバイスで、Exchange Server を実行している社内サーバーを自動的に検出できるようにします。<br /><br /> **注:** 自動検出ホスト (A) リソース レコードを構成し、レコードをポイントして、Exchange Server を実行しているオンプレミス サーバーのパブリック IP アドレスもできます。 ただし、このオプションを実装する場合は、mail.contoso.com と autodiscover.contoso.com の両方のドメイン名をサポートするサブジェクト代替名 (SAN) SSL 証明書も提供する必要があります。 |
+|  autodiscover._tcp   |    サービス (SRV)    | サービス: _autodiscover<br /><br /> プロトコル: _tcp<br /><br /> 優先度:0<br /><br /> 重み:0<br /><br /> ポート:443<br /><br /> ターゲット ホスト: mail.contoso.com | Microsoft Office Outlook およびモバイル デバイスで、Exchange Server を実行している社内サーバーを自動的に検出できるようにします。<br /><br /> **注:** また、自動検出ホスト (A) リソースレコードを構成し、Exchange Server を実行しているオンプレミスサーバーのパブリック IP アドレスにレコードを指定することもできます。 ただし、このオプションを実装する場合は、mail.contoso.com と autodiscover.contoso.com の両方のドメイン名をサポートするサブジェクト代替名 (SAN) SSL 証明書も提供する必要があります。 |
 
 > [!NOTE]
 >  -   この例に含まれている *contoso.com* という部分は、実際に登録したインターネット ドメイン名で置き換えてください。  
@@ -83,7 +83,7 @@ ms.locfileid: "66433384"
 
 2.  管理者として Windows PowerShell を実行します。  
 
-3.  Windows PowerShell のコマンド プロンプトで「 **Add-adgroupmember"Enterprise Admins"$env:path: username**し、Enter キーを押します。  
+3.  Windows PowerShell コマンドプロンプトで、「 **add-adgroupmember "Enterprise Admins" $env: username**」と入力し、enter キーを押します。  
 
 #### <a name="to-install-exchange-server"></a>Exchange Server をインストールするには  
 
@@ -242,7 +242,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 15. サーバーを再起動します。  
 
 > [!NOTE]
->  自己発行の証明書ではなく、公的に信頼された SSL 証明書を使用する場合は、証明書の要求を作成し、選択した証明機関に送信するには、セットアップ ガイドの指示に従うことができます。 証明書要求は、Exchange の PowerShell コマンドレットを使用して作成することもできます。 例を次に示します。  
+>  自己発行の証明書ではなく、公的に信頼された SSL 証明書を使用する場合は、セットアップガイドの手順に従って証明書要求を作成し、選択した証明機関に送信することができます。 証明書要求は、Exchange の PowerShell コマンドレットを使用して作成することもできます。 例を次に示します。  
 >   
 >  `New-ExchangeCertificate -GenerateRequest -SubjectName "C=US, S=Washington, L=Redmond, O=contoso, OU=contoso, CN=mail.contoso.com" -DomainName mail.contoso.com -PrivateKeyExportable $true | Set-Content -path "c:\Docs\MyCertRequest.req"`  
 >   
@@ -356,26 +356,26 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
 7. 実行している Windows Server Essentials のバージョンに応じて、次の手順を実行します。  
 
-   -   Windows Server essentials:管理者としてコマンド ウィンドウを開き、%ProgramFiles%\Windows Server\Bin ディレクトリを開きます。  
+   -   Windows Server Essentials の場合:管理者としてコマンド ウィンドウを開き、%ProgramFiles%\Windows Server\Bin ディレクトリを開きます。  
 
-   -   Windows Server essentials:管理者としてコマンド ウィンドウを開き、%Windir%\System32\Essentials ディレクトリを開きます。  
+   -   Windows Server Essentials の場合:管理者としてコマンド ウィンドウを開き、%Windir%\System32\Essentials ディレクトリを開きます。  
 
 8. インストール シナリオに応じて、次のいずれかの手順に従って ARR を構成します。  
 
    - クリーン セットアップを実行している場合は、次のコマンドを実行します。  
 
-      **ARRConfig config-cert** *証明書ファイルのパスを* **- ホスト名** *Exchange Server のホスト名* ****  
+      **Arrconfig 構成-cert**_証明書ファイルへのパス_ **-ホスト名**_Exchange Server のホスト名_  
 
      > [!NOTE]
-     >  たとえば、* * ARRConfig config-cert ***c:\temp\certificate.pfx*** -ホスト名 ***mail.contoso.com***  
+     >  たとえば、次のようになります。**Arrconfig 構成-cert**_c:\temp\certificate.pfx_ **-ホスト名**_mail.contoso.com_  
      > 
      >  *mail.contoso.com* は、証明書によって保護されているドメイン名に置き換えてください。  
 
    - Windows Small Business Server から移行している場合は、次のコマンドを実行します。  
 
-      **ARRConfig config-cert** *証明書ファイルのパスを* **- ホスト名** *Exchange Server のホスト名* **targetserver** *Exchange サーバーのサーバー名* ****  
+      **Arrconfig 構成-cert**_証明書ファイルへのパス_ **-ホスト名**_Exchange Server のホスト名_ **-targetserver**_Exchange server のサーバー名_  
 
-      たとえば、* * ARRConfig config-cert ***c:\temp\certificate.pfx*** - ホスト名***mail.contoso.com*** -targetserver * * * ExchangeSvr * * *  
+      たとえば、次のようになります。**Arrconfig 構成-cert**_c:\temp\certificate.pfx_ **-ホスト名**_mail.contoso.com_ **-targetserver** _exchangesvr」_  
 
       *mail.contoso.com* は実際のドメイン名に、 *ExchangeSvr* は Exchange Server を実行しているサーバー名に置き換えてください。  
 
@@ -385,7 +385,7 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 > - Exchange Server 用に購入した SSL 証明書には、指定したホスト名が含まれている必要があります。  
 >   -   複数のホスト名がある場合は、コンマ (,) を使用して区切ります。  
 
- 構成が機能することを確認するには、Exchange Server を実行しているサーバーの OWA web サイトにアクセスしてください。 (https://mailします。 *ドメイン名*.com/owa) にアクセスします。 接続の問題のトラブルシューティングには、 [Microsoft リモート接続アナライザー](https://go.microsoft.com/fwlink/p/?LinkId=249455) ツールを使用することもできます。  
+ 構成が機能することを確認するには、Exchange Server を実行しているサーバーの OWA web https://mail サイト () にアクセスしてみてください。 *ドメイン名*.com/owa) にアクセスします。 接続の問題のトラブルシューティングには、 [Microsoft リモート接続アナライザー](https://go.microsoft.com/fwlink/p/?LinkId=249455) ツールを使用することもできます。  
 
 ### <a name="configure-split-dns-for-exchange-server"></a>Exchange Server 用に分割 DNS を構成する  
 
@@ -431,18 +431,18 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
  社内の Exchange Server との統合を無効にすると、Windows Server Essentials ダッシュボードを使用して Exchange Server のメールボックスを表示、作成、または管理することはできなくなります。  
 
 ### <a name="what-do-i-need-to-know-about-email-accounts"></a>電子メール アカウントについて知っておく必要があることは何ですか。  
- サーバーにはホスト型の電子メール ソリューションが構成されています。 Microsoft Office 365 などのホスト型電子メール プロバイダーからのソリューションでは、ネットワーク ユーザーの個別の電子メール アカウントを指定できます。 Windows Server Essentials でユーザー アカウントの追加ウィザードを実行してユーザー アカウントを作成するとき、ウィザードはユーザー アカウントを、使用可能なホスト型の電子メール ソリューションに追加しようとします。 同時に、ウィザードはユーザーに電子メール名 (エイリアス) を割り当て、メールボックスの最大サイズ (クォータ) を設定します。 メールボックスの最大サイズは、使用する電子メール プロバイダーによって異なります。 ユーザー アカウントを追加した後は、ユーザーのプロパティ ページからメールボックス エイリアスとクォータの情報の管理を続行することができます。 ユーザー アカウントとホスト型電子メール プロバイダーを完全に管理するには、ホスト型プロバイダーの管理コンソールを使用します。 プロバイダーによっては、Web ベースのポータルまたはサーバー ダッシュボードのタブのどちらからも管理コンソールにアクセスできます。  
+ サーバーにはホスト型の電子メール ソリューションが構成されています。 Microsoft Office 365 などのホスト型電子メールプロバイダーからのソリューションでは、ネットワークユーザー用に個別の電子メールアカウントを提供できます。 Windows Server Essentials でユーザー アカウントの追加ウィザードを実行してユーザー アカウントを作成するとき、ウィザードはユーザー アカウントを、使用可能なホスト型の電子メール ソリューションに追加しようとします。 同時に、ウィザードはユーザーに電子メール名 (エイリアス) を割り当て、メールボックスの最大サイズ (クォータ) を設定します。 メールボックスの最大サイズは、使用する電子メール プロバイダーによって異なります。 ユーザー アカウントを追加した後は、ユーザーのプロパティ ページからメールボックス エイリアスとクォータの情報の管理を続行することができます。 ユーザー アカウントとホスト型電子メール プロバイダーを完全に管理するには、ホスト型プロバイダーの管理コンソールを使用します。 プロバイダーによっては、Web ベースのポータルまたはサーバー ダッシュボードのタブのどちらからも管理コンソールにアクセスできます。  
 
- ユーザー アカウントの追加ウィザードの実行時に指定したエイリアスは、ユーザー エイリアスに推奨される名前としてホスト型電子メール プロバイダーに送信されます。 たとえば、ユーザー エイリアスが*FrankM*、ユーザーの電子メール アドレスは <em>FrankM@Contoso.com</em>します。  
+ ユーザー アカウントの追加ウィザードの実行時に指定したエイリアスは、ユーザー エイリアスに推奨される名前としてホスト型電子メール プロバイダーに送信されます。 たとえば、ユーザーエイリアスが*FrankM*の場合、ユーザーの電子メールアドレスはになり<em>FrankM@Contoso.com</em>ます。  
 
  さらに、ユーザー アカウントの追加ウィザードでユーザー用に設定したパスワードは、ホスト型電子メール ソリューションでユーザーの最初のパスワードになります。  
 
- 最後に、サーバーでユーザー アカウントの削除ウィザードを使用してユーザーを削除する場合、ウィザードは要求をホスト型電子メール プロバイダーにも送信して、プロバイダーのシステムからもユーザーを削除します。 プロバイダーは、ユーザーのアカウントと、アカウントに関連付けられている電子メールの両方を削除できます。  
+ 最後に、サーバーでユーザー アカウントの削除ウィザードを使用してユーザーを削除する場合、ウィザードは要求をホスト型電子メール プロバイダーにも送信して、プロバイダーのシステムからもユーザーを削除します。 プロバイダーは、ユーザーのアカウントと、アカウントに関連付けられている電子メールの両方を削除する場合があります。  
 
  必要な電子メール クライアント ソフトウェアをセットアップする方法に関するユーザー情報については、ホスト型電子メール プロバイダーから提供されるヘルプ ドキュメントを参照してください。  
 
 ### <a name="what-is-a-mailbox-quota"></a>メールボックス クォータとは何ですか。  
- ネットワーク ユーザーの Exchange メールボックスのデータに割り当てられた記憶域スペースの量は、メールボックス クォータと呼ばれます。  
+ ネットワークユーザーの Exchange メールボックスデータに割り当てられる記憶域の容量は、メールボックスクォータと呼ばれます。  
 
  ダッシュボードで **[Exchange Server 統合をセットアップする]** タスクを実行すると、ユーザー アカウントの追加ウィザードにページが追加され、そのページで、メールボックス クォータを適用するかどうかを選択し、クォータ サイズを指定できます。 既定では、 **[メールボックス クォータを適用する]** オプションが選択されていて (オン)、ユーザーのメールボックスに 2 GB の記憶域が割り当てられます。 Exchange 管理者は、会社のニーズに合わせてメールボックス クォータの設定をカスタマイズできます。  
 
@@ -450,6 +450,6 @@ New-SendConnector -Name "WSE Internet SendConnector" -Usage "Internet" -AddressS
 
 -   [Windows Server Essentials のシステム要件](../get-started/system-requirements.md)  
 
--   [電子メール サービス統合を管理します。](Manage-Email-Service-Integration-in-Windows-Server-Essentials.md)  
+-   [電子メールサービス統合の管理](Manage-Email-Service-Integration-in-Windows-Server-Essentials.md)  
 
 -   [Windows Server Essentials の管理](Manage-Windows-Server-Essentials.md)

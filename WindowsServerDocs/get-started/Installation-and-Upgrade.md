@@ -1,6 +1,6 @@
 ---
 title: Windows Server のインストールとアップグレード
-description: インストール、アップグレード、または Windows Server の新しいバージョンに移行する方法。
+description: Windows Server の新しいバージョンをインストール、アップグレード、または移行する方法。
 ms.prod: windows-server
 ms.date: 05/14/2019
 ms.technology: server-general
@@ -11,20 +11,20 @@ ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: 140f67a9dab5cf1f10cdb0c5c51a031a0dfb9dd3
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66443551"
 ---
 # <a name="windows-server-installation-and-upgrade"></a>Windows Server のインストールとアップグレード
 
 >適用対象:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-Windows Server 2019 探しですか。 参照してください[インストール、アップグレード、または Windows Server 2019 への移行](../get-started-19/install-upgrade-migrate-19.md)します。
+Windows Server 2019 をお求めですか? [Windows Server 2019 のインストール、アップグレード、または移行](../get-started-19/install-upgrade-migrate-19.md)に関する記事を参照してください。
 
 > [!IMPORTANT]
-> Windows Server 2008 R2 と Windows Server 2008 の延長サポートは 2020 年 1月で終了します。 [アップグレードのオプションについて説明します](#upgrading-from-windows-server-2008-r2-or-windows-server-2008)します。
+> Windows Server 2008 R2 と Windows Server 2008 の延長サポートは 2020 年 1月で終了します。 [アップグレードのオプションについて確認してください](#upgrading-from-windows-server-2008-r2-or-windows-server-2008)。
 
 Windows Server の新しいバージョンへ移行する場合、 現在実行しているバージョンに応じて、豊富なオプションを使用できます。
 
@@ -36,7 +36,7 @@ Windows Server の新しいバージョンへ移行する場合、 現在実行�
 
 ## <a name="migration-recommended-for-windows-server-2016"></a>移行 (Windows Server 2016 への移行で推奨される手順)
 
-Windows Server の移行に関するドキュメントでは、同じまたは新しいバージョンの Windows Server を実行している別のコンピューターに Windows Server を実行しているソース コンピューターから一度に 1 つの役割または機能を移行するのに役立ちます。 これらのドキュメントで "移行" とは、同じコンピューター上でのアップグレードではなく、役割や機能、データを別のコンピューターに移動することを指します。 既存のワークロードやデータを新しいバージョンの Windows Server に移行する場合には、この方法が推奨されます。 最初に、確認、[サーバー ロールのアップグレードと移行に関する一覧表](https://go.microsoft.com/fwlink/?LinkId=828595)for Windows Server。
+Windows Server の移行ドキュメントは、Windows Server を実行する移行元のコンピューターから、同じバージョンまたは新しいバージョンを実行する別の移行先コンピューターに、役割や機能を一度に 1 つずつ移行する場合について記載されています。 これらのドキュメントで "移行" とは、同じコンピューター上でのアップグレードではなく、役割や機能、データを別のコンピューターに移動することを指します。 既存のワークロードやデータを新しいバージョンの Windows Server に移行する場合には、この方法が推奨されます。 移行する場合は、まず Windows Server 向けの[サーバーの役割のアップグレードと移行に関する一覧表](https://go.microsoft.com/fwlink/?LinkId=828595)をご確認ください。
 
 ## <a name="cluster-os-rolling-upgrade"></a>クラスター OS のローリング アップグレード
 クラスター OS のローリング アップグレードは Windows Server 2016 の新機能です。管理者はこの機能を利用して、Hyper-V やスケールアウト ファイル サーバーのワークロードを停止することなく、クラスター ノードのオペレーティング システムを Windows Server 2012 R2 から Windows Server 2016 にアップグレードできます。 この機能により、サービス レベル アグリーメントに影響する可能性のあるダウンタイムが回避できます。 この新機能の詳細は、「[Cluster operating system rolling upgrade (クラスター オペレーティング システムのローリング アップグレード)](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade)」で説明されています。
@@ -98,10 +98,10 @@ Windows Server 2016 Datacenter の評価版は、Windows Server 2016 Datacenter 
 
 |使用している Windows オペレーティング システム|アップグレード先のエディション|
 |-------------------------|---------------------------|
-|Windows Server 2008 R2 Datacenter sp1|Windows Server 2012 R2 Datacenter|
-|Windows Server 2008 R2 Enterprise sp1|Windows Server 2012 R2 Standard または Windows Server 2012 R2 Datacenter|
-|Windows Server 2008 R2 Standard sp1|Windows Server 2012 R2 Standard または Windows Server 2012 R2 Datacenter|
-|Windows Web Server 2008 R2 SP1|Windows Server 2012 R2 Standard|
+|Windows Server 2008 R2 Datacenter SP1|Windows Server 2012 R2 Datacenter|
+|Windows Server 2008 R2 Enterprise SP1|Windows Server 2012 R2 Standard または Windows Server 2012 R2 Datacenter|
+|Windows Server 2008 R2 Standard SP1|Windows Server 2012 R2 Standard または Windows Server 2012 R2 Datacenter|
+|Windows Web Server 2008 R2 SP1|Windows Server 2012 R2 Standard|
 |Windows Server 2012 Datacenter|Windows Server 2012 R2 Datacenter|
 |Windows Server 2012 Standard|Windows Server 2012 R2 Standard または Windows Server 2012 R2 Datacenter|
 |Hyper-V Server 2012|Hyper-V Server 2012 R2|
@@ -123,8 +123,8 @@ Windows Server 2012 Standard の評価版は、Windows Server 2012 Standard (製
 |Windows Server 2008 Standard SP2 または Windows Server 2008 Enterprise SP2|Windows Server 2012 Standard、Windows Server 2012 Datacenter|
 |Windows Server 2008 Datacenter SP2|Windows Server 2012 Datacenter|
 |Windows Web Server 2008|Windows Server 2012 Standard|
-|Windows Server 2008 R2 Standard SP1 または Windows Server の 2008 R2 Enterprise sp1|Windows Server 2012 Standard、Windows Server 2012 Datacenter|
-|Windows Server 2008 R2 Datacenter sp1|Windows Server 2012 Datacenter|
+|Windows Server 2008 R2 Standard SP1 または Windows Server 2008 R2 Enterprise SP1|Windows Server 2012 Standard、Windows Server 2012 Datacenter|
+|Windows Server 2008 R2 Datacenter SP1|Windows Server 2012 Datacenter|
 |Windows Web Server 2008 R2|Windows Server 2012 Standard|
 
 ### <a name="license-conversion"></a>ライセンス変換
@@ -134,19 +134,19 @@ Windows Server 2012 Essentials (製品版) は、Windows Server 2012 Standard (�
 
 Windows Server 2012 Standard の評価版は、Windows Server 2012 Standard (製品版)、Datacenter (製品版) のいずれかに変換できます。
 
-## <a name="upgrading-from-windows-server-2008-r2-or-windows-server-2008"></a>Windows Server 2008 R2 または Windows Server 2008 からアップグレードします。
+## <a name="upgrading-from-windows-server-2008-r2-or-windows-server-2008"></a>Windows Server 2008 R2 または Windows Server 2008 からのアップグレード
 
-」の説明に従って[アップグレードの Windows Server 2008 および Windows Server 2008 R2](modernize-windows-server-2008.md)、Windows Server 2008 R2 および Windows Server 2008 の延長サポートは 2020 の年 1 月で終了します。 サポートにギャップがないことを確認するには、Windows Server のサポートされているバージョンにアップグレードまたは移行することによって、Azure で再ホストする必要があります[Windows Server 2008 R2 の Vm を特殊化された](uploading-specialized-WS08-image-to-azure.md)します。 チェック アウト、 [Windows Server の移行ガイド](https://go.microsoft.com/fwlink/?linkid=872689)情報と、移行/アップグレードの計画に関する考慮事項。
+「[Windows Server 2008 と Windows Server 2008 R2 のアップグレード](modernize-windows-server-2008.md)」に記載されているように、Windows Server 2008 R2 および Windows Server 2008 の延長サポートは 2020 年 1 月に終了します。 サポートに空白が生じないようにするには、Windows Server のサポートされているバージョンにアップグレードするか、[特殊な Windows Server 2008 R2 VM](uploading-specialized-WS08-image-to-azure.md) に移行することによって Azure で再ホストする必要があります。 移行およびアップグレードの計画についての情報および考慮事項については、「[Windows Server の移行ガイド](https://go.microsoft.com/fwlink/?linkid=872689)」を確認してください。
 
-オンプレミス サーバーでは、Windows Server 2016 以降、Windows Server 2008 R2 からの直接のアップグレード パスはありません。 代わりに、まず Windows Server 2012 r2 にアップグレードし、 [Windows Server 2016 にアップグレードする](#upgrading-to-windows-server-2016)します。
+オンプレミス サーバーでは、Windows Server 2008 R2 から Windows Server 2016 以降への直接のアップグレード パスはありません。 代わりに、まず Windows Server 2012 R2 にアップグレードし、次に [Windows Server 2016 にアップグレード](#upgrading-to-windows-server-2016)してください。
 
-アップグレードを計画するいるとは、Windows Server 2012 R2 へのアップグレードの中間の手順を次のガイドラインを把握します。
+アップグレードを計画する際は、Windows Server 2012 R2 へのアップグレードの中間の手順として次のガイドラインに注意してください。
 
-  - 32 ビットから 64 ビット アーキテクチャからインプレース アップグレードを実行またはいずれかからビルドの種類 (fre から chk へなどの例の) 別にできません。
+  - 32 ビットから 64 ビットのアーキテクチャに、または 1 つのビルドの種類から別のビルドの種類 (fre から chk など) に対してインプレース アップグレードを実行することはできません。
 
-  - インプレース アップグレードは、同じ言語でのみサポートされます。 1 つの言語から別にアップグレードすることはできません。
+  - インプレース アップグレードは、同じ言語でのみサポートされます。 1 つの言語から別の言語にアップグレードすることはできません。
 
-  - Windows Server 2008 の server core インストールから Server GUI (Windows Server で「完全なデスクトップをサーバー」と呼ばれます) を使用して Windows Server 2012 R2 に移行することはできません。 Windows Server 2012 R2 でのみが、完全なデスクトップ、サーバーに、アップグレードされた server core のインストールを切り替えることができます。 Windows Server 2016 以降*しない*サーバー コアから完全なデスクトップへの切り替えをサポートするには、そのスイッチを Windows Server 2016 にアップグレードする前にします。
+  - Windows Server 2008 のコア インストールから Windows Server 2012 R2 Server GUI 付き (Windows Server では "フル デスクトップ搭載サーバー" と呼ばれます) に移行することはできません。 アップグレードされたコア インストールをフル デスクトップ搭載サーバーに切り替えることはできますが、Windows Server 2012 R2 でのみ行えます。 Windows Server 2016 以降では、Server Core からフル デスクトップ搭載サーバーへの切り替えがサポート*されない*ため、Windows Server 2016 にアップグレードする前に切り替えを行ってください。
   
-詳細については、チェック アウト[評価バージョンとアップグレード オプションの Windows Server 2012](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574204\(v=ws.11\))役割に固有のアップグレードの詳細が含まれます。
+詳細については、役割に固有のアップグレードの詳細情報が記載されている、「[Windows Server 2012 の評価版と更新プログラムのオプション](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj574204\(v=ws.11\))」を参照してください。
 

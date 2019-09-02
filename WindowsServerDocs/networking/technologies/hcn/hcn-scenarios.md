@@ -1,26 +1,26 @@
 ---
-title: ホスト ネットワークの計算 (HCN) シナリオ
+title: ホストコンピューティングネットワーク (HCN) のシナリオ
 description: ''
 ms.author: jmesser
 author: jmesser81
 ms.date: 11/05/2018
-ms.openlocfilehash: 2a81b09c41c3b665d6a026da4b63a6119fbe202d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 91cdafa9699cd213156d872090034dd4ea67108e
+ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816303"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70031533"
 ---
 # <a name="common-scenarios"></a>一般的なシナリオ
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2019
 
 ## <a name="scenario-hcn"></a>シナリオ:HCN 
 
 
-### <a name="create-an-hcn"></a>作成、HCN
+### <a name="create-an-hcn"></a>HCN を作成する
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して仮想マシンまたはコンテナーへの仮想 NIC の接続に使用できるホストにホストのコンピューティング、ネットワークを作成する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、仮想 NIC を Virtual Machines またはコンテナーに接続するために使用できるホストコンピューティングネットワークをホスト上に作成する方法を示します。
 
 ```C++
 using unique_hcn_network = wil::unique_any< 
@@ -117,9 +117,9 @@ void CreateHcnNetwork()
 }
 ```
 
-### <a name="delete-an-hcn"></a>削除、HCN
+### <a name="delete-an-hcn"></a>HCN の削除
 
-このサンプルは、ホスト コンピューティング ネットワーク サービスの API を使用する開くし、ホストのコンピューティング、ネットワークを削除する方法を示しています。 
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、ホストコンピューティングネットワークを開い & 削除する方法を示します。 
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -134,9 +134,9 @@ void CreateHcnNetwork()
 ```
 
 
-### <a name="enumerate-all-networks"></a>すべてのネットワークを列挙します。
+### <a name="enumerate-all-networks"></a>すべてのネットワークを列挙する
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、ホスト コンピューティングのすべてのネットワークを列挙する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、すべてのホストコンピューティングネットワークを列挙する方法を示します。
 
 ```C++
      wil::unique_cotaskmem_string resultNetworks;
@@ -157,9 +157,9 @@ void CreateHcnNetwork()
 ```
 
 
-### <a name="query-network-properties"></a>ネットワーク プロパティのクエリ
+### <a name="query-network-properties"></a>ネットワークのプロパティを照会する
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、ネットワークのプロパティをクエリする方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用してネットワークのプロパティを照会する方法を示します。
 
 ```C++
     unique_hcn_network hcnnetwork;
@@ -191,9 +191,9 @@ void CreateHcnNetwork()
 
 ## <a name="scenario-hcn-endpoint"></a>シナリオ:HCN エンドポイント
 
-### <a name="create-an-hcn-endpoint"></a>HCN エンドポイントを作成します。
+### <a name="create-an-hcn-endpoint"></a>HCN エンドポイントを作成する
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、ホスト コンピューティングのネットワーク エンドポイントを作成し、ホット、仮想マシンまたはコンテナーに追加する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用してホストコンピューティングネットワークエンドポイントを作成し、仮想マシンまたはコンテナーにホットアドする方法を示します。
 
 ```C++
 using unique_hcn_endpoint = wil::unique_any< 
@@ -266,9 +266,9 @@ void CreateAndHotAddEndpoint()
 ```
 
 
-### <a name="delete-an-endpoint"></a>エンドポイントを削除します。
+### <a name="delete-an-endpoint"></a>エンドポイントを削除する
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、ホスト コンピューティングのネットワーク エンドポイントを削除する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用してホストコンピューティングネットワークエンドポイントを削除する方法を示します。
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -285,7 +285,7 @@ void CreateAndHotAddEndpoint()
 
 ### <a name="modify-and-endpoint"></a>変更とエンドポイント
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、ホスト コンピューティングのネットワーク エンドポイントを変更する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用してホストコンピューティングネットワークエンドポイントを変更する方法を示します。
 
 ```C++
     unique_hcn_endpoint hcnendpoint;
@@ -323,9 +323,9 @@ void CreateAndHotAddEndpoint()
 ```
 
 
-### <a name="enumerate-all-enpoints"></a>すべての enpoints を列挙します。
+### <a name="enumerate-all-enpoints"></a>すべての enpoints を列挙する
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、ホスト コンピューティング ネットワーク エンドポイントのすべてを列挙する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、すべてのホストコンピューティングネットワークエンドポイントを列挙する方法を示します。
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -346,9 +346,9 @@ void CreateAndHotAddEndpoint()
 ```
 
 
-### <a name="query-endpoint-properties"></a>エンドポイントのプロパティをクエリ
+### <a name="query-endpoint-properties"></a>クエリエンドポイントのプロパティ
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、ホスト コンピューティングのネットワーク エンドポイントのすべてのプロパティを照会する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、ホストコンピューティングネットワークエンドポイントのすべてのプロパティを照会する方法を示します。
 
 ```C++
     unique_hcn_endpoint hcnendpoint;
@@ -383,9 +383,9 @@ void CreateAndHotAddEndpoint()
 
 ## <a name="scenario-hcn-namespace"></a>シナリオ:HCN 名前空間
 
-### <a name="create-an-hcn-namespace"></a>HCN 名前空間を作成します。
+### <a name="create-an-hcn-namespace"></a>HCN 名前空間を作成する
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、エンドポイントとコンテナーの接続に使用できるホスト上でホスト コンピューティング ネットワーク Namespace を作成する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、エンドポイントとコンテナーを接続するために使用できるホストコンピューティングネットワーク名前空間をホストに作成する方法を示します。
 
 ```C++
 using unique_hcn_namespace = wil::unique_any< 
@@ -445,9 +445,9 @@ void CreateHcnNamespace()
 ```
 
 
-### <a name="delete-an-hcn-namespace"></a>HCN 名前空間を削除します。
+### <a name="delete-an-hcn-namespace"></a>HCN 名前空間の削除
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、ホスト コンピューティング ネットワーク Namespace を削除する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用してホストコンピューティングネットワークの名前空間を削除する方法を示します。
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -463,9 +463,9 @@ void CreateHcnNamespace()
 ```
 
 
-### <a name="modify-an-hcn-namespace"></a>HCN の名前空間を変更します。
+### <a name="modify-an-hcn-namespace"></a>HCN 名前空間を変更する
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、ホスト コンピューティング ネットワーク Namespace を変更する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用してホストコンピューティングネットワークの名前空間を変更する方法を示します。
 
 ```C++
     unique_hcn_namespace handle;
@@ -508,9 +508,9 @@ void CreateHcnNamespace()
 ```
 
 
-### <a name="enumerate-all-namespaces"></a>すべての名前空間を列挙します。
+### <a name="enumerate-all-namespaces"></a>すべての名前空間の列挙
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、すべてホスト コンピューティングのネットワーク名前空間を列挙する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、すべてのホストコンピューティングネットワーク名前空間を列挙する方法を示します。
 
 ```C++
     wil::unique_cotaskmem_string resultNamespaces;
@@ -532,7 +532,7 @@ void CreateHcnNamespace()
 
 ### <a name="query-namespace-properties"></a>クエリの名前空間のプロパティ
 
-このサンプルは、ホスト コンピューティング ネットワーク サービスの API を使用して、ホスト コンピューティング ネットワーク Namespace プロパティを照会する方法を示しています。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用してホストコンピューティングネットワークの名前空間プロパティを照会する方法を示します。
 
 ```C++
     unique_hcn_namespace handle;
@@ -564,11 +564,11 @@ void CreateHcnNamespace()
 ```
 
 
-## <a name="scenario-hcn-load-balancer"></a>シナリオ:HCN ロード バランサー
+## <a name="scenario-hcn-load-balancer"></a>シナリオ:HCN ロードバランサー
 
-### <a name="create-an-hcn-load-balancer"></a>HCN ロード バランサーを作成します。
+### <a name="create-an-hcn-load-balancer"></a>HCN ロードバランサーを作成する
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、エンドポイント間で負荷分散コンピューティングに使用できるホストにホスト コンピューティング ネットワーク ロード バランサーを作成する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、コンピューティング間でエンドポイントを負荷分散するために使用できるホストコンピューティングネットワーク Load Balancer をホスト上に作成する方法を示します。
 
 ```C++
 using unique_hcn_loadbalancer = wil::unique_any< 
@@ -641,9 +641,9 @@ void CreateHcnLoadBalancer()
 ```
 
 
-### <a name="delete-an-hcn-load-balancer"></a>HCN のロード バランサーを削除します。
+### <a name="delete-an-hcn-load-balancer"></a>HCN ロードバランサーの削除
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、ホスト コンピューティング ネットワーク ロード バランサーを削除する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用してホストコンピューティングネットワーク LoadBalancer を削除する方法を示します。
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -658,9 +658,9 @@ void CreateHcnLoadBalancer()
 ```
 
 
-### <a name="modify-an-hcn-load-balancer"></a>HCN のロード バランサーを変更します。
+### <a name="modify-an-hcn-load-balancer"></a>HCN ロードバランサーを変更する
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、ホスト コンピューティング ネットワーク Namespace を変更する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用してホストコンピューティングネットワークの名前空間を変更する方法を示します。
 
 ```C++
     unique_hcn_loadbalancer handle;
@@ -703,9 +703,9 @@ void CreateHcnLoadBalancer()
 ```
 
 
-### <a name="enumerate-all-load-balancers"></a>すべてのロード バランサーを列挙します。
+### <a name="enumerate-all-load-balancers"></a>すべてのロードバランサーを列挙する
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、すべてホスト コンピューティング ネットワーク ロード バランサーを列挙する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、すべてのホストコンピューティングネットワーク Load Balancer を列挙する方法を示します。
 
 ```C++
     wil::unique_cotaskmem_string resultLoadBalancers;
@@ -726,9 +726,9 @@ void CreateHcnLoadBalancer()
 ```
 
 
-### <a name="query-load-balancer-properties"></a>クエリのロード バランサーのプロパティ
+### <a name="query-load-balancer-properties"></a>ロードバランサーのプロパティのクエリ
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービスの API を使用して、ホスト コンピューティング ネットワーク ロード バランサーのプロパティを照会する方法を示します。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用してホストコンピューティングネットワーク LoadBalancer のプロパティを照会する方法を示します。
 
 ```C++
     unique_hcn_loadbalancer handle;
@@ -763,9 +763,9 @@ void CreateHcnLoadBalancer()
 
 ## <a name="scenario-hcn-notifications"></a>シナリオ:HCN 通知
 
-### <a name="register-and-unregister-service-wide-notifications"></a>登録およびサービス全体の通知を登録解除
+### <a name="register-and-unregister-service-wide-notifications"></a>サービス全体の通知の登録と登録解除
 
-このサンプルでは、ホスト コンピューティング ネットワーク サービス API を使用して登録して、サービス全体の通知の登録を解除する方法を示します。 これにより、呼び出し元 (登録時に指定したコールバック関数) を使用して通知を受信するたびに新しいネットワークの作成イベントなどのサービス全体にわたる操作が発生しました。
+このサンプルでは、ホストコンピューティングネットワークサービス API を使用して、サービス全体の通知の登録と登録解除を行う方法を示します。 これにより、新しいネットワーク作成イベントなどのサービス全体の操作が発生したときに、呼び出し元は (登録時に指定されたコールバック関数を使用して) 通知を受け取ることができます。
 
 ```C++
 using unique_hcn_callback = wil::unique_any< 
@@ -832,8 +832,8 @@ void UnregisterForServiceNotifications()
 }
 ```
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
-- 詳細については、 [RPC コンテキスト ハンドル HCN](hcn-declaration-handles.md)します。
+- [HCN の RPC コンテキストハンドル](hcn-declaration-handles.md)の詳細については、こちらを参照してください。
 
-- 詳細については、 [HCN JSON ドキュメントのスキーマ](hcn-json-document-schemas.md)します。
+- [Hcn JSON ドキュメントスキーマ](hcn-json-document-schemas.md)の詳細については、こちらを参照してください。

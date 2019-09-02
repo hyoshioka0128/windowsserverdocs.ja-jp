@@ -55,7 +55,7 @@ ms.locfileid: "66433537"
   
 ###  <a name="BKMK_Example1"></a> 例 1:Windows PowerShell を使用して、カスタム フォルダーを作成し、既定のフォルダーを PostIC.cmd から新しい場所に移動する  
   
-1.  「 [Create the PostIC.cmd File for Running Post Initial Configuration Tasks](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) 」セクションの説明に従って、初期構成後のタスクを実行するための PostIC.cmd ファイルを作成します。  
+1.  詳述するよう後の初期構成タスクを実行するための PostIC.cmd ファイルを作成、[初期構成の投稿を実行しているタスクのための PostIC.cmd ファイルを作成する](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)セクション。  
   
 2.  メモ帳を使用して、 **customizefolders.ps1** という名前のファイルを C:\Windows\Setup\Scripts フォルダー内に作成し、次の Windows PowerShell® コマンドをファイルに貼り付けます (目的の動作に応じて該当する行のマークを解除します)。  
   

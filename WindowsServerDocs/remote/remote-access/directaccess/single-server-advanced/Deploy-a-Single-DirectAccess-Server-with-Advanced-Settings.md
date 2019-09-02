@@ -36,7 +36,7 @@ ms.locfileid: "67283610"
 このシナリオでは、Windows Server 2016、Windows Server 2012 R2 または Windows Server 2012 では、いずれかを実行している 1 台のコンピューターは高度な設定で DirectAccess サーバーとして構成されます。  
   
 > [!NOTE]  
-> 単純な設定のみを使用して基本的なデプロイを構成する場合は、「 [Deploy a Single DirectAccess Server Using the Getting Started Wizard](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)」を参照してください。 単純なシナリオでは、DirectAccess はウィザードで規定の設定を使用して構成され、証明機関 (CA) または Active Directory セキュリティ グループなどのインフラストラクチャ設定の構成は必要ありません。  
+> 単純な設定を使用して基本的な展開を構成する場合は、「[作業の開始ウィザードを使用して単一の DirectAccess サーバーを展開する](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)」を参照してください。 単純なシナリオでは、DirectAccess はウィザードで規定の設定を使用して構成され、証明機関 (CA) または Active Directory セキュリティ グループなどのインフラストラクチャ設定の構成は必要ありません。  
   
 ## <a name="in-this-scenario"></a>このシナリオの内容  
 詳細設定を使用して単一の DirectAccess サーバーを設定するには、いくつかの計画と展開の手順を完了する必要があります。  

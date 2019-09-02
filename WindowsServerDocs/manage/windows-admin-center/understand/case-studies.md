@@ -9,25 +9,25 @@ ms.date: 06/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: 61f447f68ec6c85ed1554e176c78c4caec5dfde4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855703"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63747884"
 ---
 # <a name="windows-admin-center-case-studies"></a>Windows Admin Center ケース スタディ
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
 ## <a name="learn-about-how-our-customers-have-used-windows-admin-center-to-improve-their-productivity-and-reduce-costs"></a>お客様が生産性を高めてコストを削減させるために、どのように Windows Admin Center を利用してきたかについて説明します。
 
 - [Ava6](#ava6)
 - [Comparex](#comparex)
 - [Convergent Computing](#convergent-computing)
-- [情報技術 FZI 研究センター](#fzi-research-center-for-information-technology)
+- [FZI Research Center for Information Technology](#fzi-research-center-for-information-technology)
 - [GVC グループ](#gvc-group)
-- [内部のテクノロジ](#inside-technologies)
-- [SecureGUARD/COPA データ](#secureguard-copa-data)
+- [Inside Technologies](#inside-technologies)
+- [SecureGUARD / COPA-DATA](#secureguard-copa-data)
 - [VaiSulWeb](#vaisulweb)
 
 ## <a name="ava6"></a>Ava6

@@ -7,8 +7,10 @@
 #### [推奨されるバランスの電源プラン パラメーター](hardware/power/recommended-balanced-plan-parameters.md)
 ## サーバーの役割のチューニング
 ### [Active Directory サーバー](role/active-directory-server/index.md)
+#### [AD DS のキャパシティ プランニング](role/active-directory-server/capacity-planning-for-active-directory-domain-services.md)
 #### [サイト定義に関する考慮事項](role/active-directory-server/site-definition-considerations.md)
 #### [ハードウェアに関する考慮事項](role/active-directory-server/hardware-considerations.md)
+#### [メモリ使用量に関する考慮事項](role/active-directory-server/memory-usage-considerations.md)
 #### [LDAP に関する考慮事項](role/active-directory-server/ldap-considerations.md)
 #### [ADDS パフォーマンスのトラブルシューティング](role/active-directory-server/troubleshoot.md)
 ### [ファイル サーバー](role/file-server/index.md)

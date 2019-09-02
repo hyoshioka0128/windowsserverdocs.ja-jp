@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 069cdb493cd0ad442e8922ec67c2b9cc6b2ec5fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ed8a22881cd20633e6fcd61b146f3b0aad7a757b
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858173"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792281"
 ---
 # <a name="active-directory-domain-services-overview"></a>Active Directory Domain Services の概要
 
@@ -46,11 +46,11 @@ Active Directory が含まれています。
  
 * [Active Directory 構造と記憶域テクノロジ](https://technet.microsoft.com/library/cc759186(v=ws.10).aspx)
 * [ドメイン コント ローラーの役割](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
-* Active Directory スキーマ 
-* [信頼とは](https://technet.microsoft.com/library/cc771294(v=ws.10).aspx) 
+* [Active Directory スキーマ](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771796(v=ws.10))
+* [信頼とは](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771568(v=ws.10)) 
 * [Active Directory のレプリケーション テクノロジ](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
 * [Active Directory の検索とパブリケーションのテクノロジ](https://technet.microsoft.com/library/cc775686(v=ws.10).aspx) 
-* DNS とグループ ポリシーとの相互運用 
+* [DNS とグループ ポリシーとの相互運用](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd197486(v=ws.10))
 * [スキーマとは](https://technet.microsoft.com/library/cc759402(v=ws.10).aspx) 
 
 Active Directory の概念の詳細な一覧についてを参照してください。 [Understanding Active Directory](https://technet.microsoft.com/library/cc781408(v=ws.10).aspx)します。 

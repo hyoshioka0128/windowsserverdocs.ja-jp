@@ -1,6 +1,6 @@
 ---
-title: RDS でグラフィックス仮想化テクノロジが適切でしょうか。
-description: 最適なグラフィックス、RDS デプロイ用の仮想化オプションを選択するのに役立つ計画情報。
+title: RDS - どちらのグラフィックス仮想化テクノロジが適切か
+description: お使いの RDS 展開に適したグラフィックス仮想化オプションの選択に役立つ計画情報。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,61 +14,61 @@ ms.assetid: d6ff5b22-7695-4fee-b1bd-6c9dce5bd0e8
 author: lizap
 manager: scottman
 ms.openlocfilehash: af5d5ce89561c89d8468627e20dfdb6f35eca5ef
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66447111"
 ---
-# <a name="which-graphics-virtualization-technology-is-right-for-you"></a>グラフィックスの仮想化テクノロジは、適切なでしょうか。
+# <a name="which-graphics-virtualization-technology-is-right-for-you"></a>どちらのグラフィックス仮想化テクノロジが適切か
 
-リモート デスクトップ サービスでのグラフィックス レンダリングを有効にする際に、さまざまなオプションがあります。 仮想化環境を計画する際に、次の考慮事項は、どのグラフィックスのレンダリングのテクノロジを選択をドライブします。
+リモート デスクトップ サービスでグラフィックス レンダリングを有効にする場合、さまざまなオプションがあります。 仮想化環境を計画する際に、次の考慮事項によって、どちらのグラフィックス レンダリング テクノロジを選択するかが決まります。
 
-![グラフィックスのレンダリングに関する考慮事項 - 比較ユーザー スケールと GPU の要件、環境に最適な GPU テクノロジを判断するには](media/rds-gpu.png)
+![グラフィックス レンダリングに関する考慮事項 - ユーザーの規模と GPU の要件を比較して、お使いの環境に最適な GPU テクノロジを判断します](media/rds-gpu.png)
 
-Windows Server 2016 では、GPU ハードウェアを活用できる HYPER-V で使用可能な 2 つのグラフィックス仮想化テクノロジがあります。
+Windows Server 2016 では、GPU ハードウェアを活用するための、Hyper-V で使用可能な 2 つのグラフィックス仮想化テクノロジがあります。
 
-- [独立したデバイスの割り当て (DDA)](#discrete-device-assignment) – 1 つまたは複数の Gpu を使用して、最高のパフォーマンスは、VM 内でネイティブの GPU ドライバーのサポートを提供する VM に専用の場合。 密度が低いサーバーで使用可能な物理 Gpu の数によって制限されますです。 
-- [リモート FX vGPU](#remotefx-vgpu) - ナレッジ ワーカーおよび高バースト GPU シナリオが複数の Vm が para 仮想化を通じて 1 つまたは複数の Gpu を活用します。 このソリューションでは、サーバーごとの高いユーザー密度を提供します。
+- [個別のデバイスの割り当て (DDA)](#discrete-device-assignment) - VM 内部でネイティブな GPU ドライバーのサポートを提供する VM 専用の 1 つ以上の GPU を使用して最高のパフォーマンスを得る場合。 サーバーで利用できる物理的な GPU の数によって制限されるので、密度は低いです。 
+- [リモート FX vGPU](#remotefx-vgpu) - 複数の VM が準仮想化を通じて 1 つ以上の GPU を利用する、ナレッジ ワーカーおよび高バースト GPU シナリオの場合。 このソリューションでは、サーバーあたりのユーザー密度が高くなります。
 
-次の図では、Windows Server 2016 では、グラフィックス仮想化のオプションを示します。
+次の図では、Windows Server 2016 のグラフィックス仮想化のオプションを示しています。
 
-![RDS での Windows Server 2016 でのグラフィックス仮想化のオプションは使用可能な 3 つのテクノロジとスケールとパフォーマンスの違いを示しています。](media/rds-graphics-virtualization.png)
+![RDS を使用した Windows Server 2016 のグラフィックス仮想化オプション - 使用可能な 3 つのテクノロジと、それらが規模とパフォーマンスについてどのように異なるかを示します](media/rds-graphics-virtualization.png)
 
 ## <a name="discrete-device-assignment"></a>個別のデバイスの割り当て
-独立したデバイスの割り当て (DDA) は、VM があるネイティブのドライバーを使用して GPU へのフル アクセスを最高のパフォーマンスを提供するハードウェアのパススルー ソリューションです。 VM ユーザーとデバイスのネイティブ ドライバーも自分のデバイスのすべての機能にアクセスできます。 つまり、同じデバイスをベア メタルで実行されている VM のミラーでデバイスを実行する機能。
+個別のデバイスの割り当て (DDA) は、VM がネイティブ ドライバーを使用して GPU にフル アクセスできる場合は、最高のパフォーマンスをもたらすハードウェア パススルー ソリューションです。 VM ユーザーは、デバイスのネイティブ ドライバーと同様、デバイスの全機能にアクセスできます。 つまり、VM 内のデバイスを実行する機能は、ベア メタルで同じデバイスを実行することを反映します。
 
-DDA に関する詳細については、チェック アウト[の個別のデバイスの割り当ての展開を計画](../../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md)します。
+DDA の詳細については、[個別のデバイスの割り当ての展開の計画](../../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md)に関するページを参照してください。
 
 ## <a name="remotefx-vgpu"></a>RemoteFX vGPU 
-RemoteFX vGPU は、ナレッジ ワーカーのシナリオ (上記の最初の図を参照してください) を有効にする、さまざまなゲスト オペレーティング システムに分割される GPU の処理能力を許可するグラフィックスの仮想化テクノロジです。 Windows Server 2016 の進歩は、GPU バーストのシナリオでのアプリケーションとデータ視覚化のデザイナーなどのさらなる機能強化を使用できます。 その他の機能強化は次のとおりです。
+RemoteFX vGPU は、ナレッジ ワーカー シナリオ (上記の最初の図を参照) を有効にするために、GPU の処理能力をさまざまなゲスト オペレーティング システムに分割可能にするグラフィックス仮想化テクノロジです。 Windows Server 2016 での進歩により、デザイナー アプリケーションやデータの可視化など、GPU バースト シナリオ用のさらなる機能強化が可能になっています。 その他の機能強化は次のとおりです。
 
-- 第 2 世代ゲスト Vm、Windows Server 2016 ゲスト Vm、および Windows クライアント、HYPER-V ホストをサポートします。
+- 第 2 世代のゲスト VM、Windows Server 2016 ゲスト VM、および Windows Client Hyper-V ホストのサポート。
   >[!NOTE] 
-  > Windows Server 2016 ゲスト VM にリモート デスクトップ セッション ホストがサポートされていませんWindows Server 2016 ゲスト VM あたり 1 つだけセッションをホストできます。
+  > リモート デスクトップ セッション ホストは、Windows Server 2016 ゲスト VM ではサポートされていません。Windows Server 2016 ゲスト VM につき 1 セッションだけをホストできます。
 
-- 強化されたアプリケーションの互換性と安定性。
-- VM 接続拡張セッション モード、RemoteFX vGPU を有効になっている VM に接続する VM で USB とクリップボードのリダイレクトを許可します。
+- アプリケーションの互換性と安定性の向上。
+- VM 接続拡張セッション モード。RemoteFX vGPU に対して有効になっている VM への VM 接続を通じた、USB とクリップボードのリダイレクトを可能にします。
 
-詳細については、チェック アウト[設定 for Remote Desktop Services の RemoteFX vGPU の構成のセットアップと](rds-remotefx-vgpu.md)します。
+詳細については、「[リモート デスクトップ サービスに RemoteFX vGPU をセットアップして構成](rds-remotefx-vgpu.md)」を参照してください。
 
-## <a name="which-should-you-use"></a>これを使用する必要がありますか。
+## <a name="which-should-you-use"></a>どちらを使用すべきか
 
-重要な考慮事項をどの仮想化テクノロジがハードウェアの仕様または環境内でアプリケーションの要件に依存可能性があります。 DDA および RemoteFX vGPU の機能に関する簡単なテーブルを次に示します。
+仮想化テクノロジの選択に関する重要な考慮事項は、お使いの環境でのハードウェアの仕様やアプリケーションの要件によって異なる場合があります。 DDA および RemoteFX vGPU の機能に関する簡単な表を次に示します。
 
 | 機能               | RemoteFX vGPU                                                                       | 個別のデバイスの割り当て                                             |
 |-----------------------|-------------------------------------------------------------------------------------|------------------------------------------------------------------------|
-| GPU とデバイスの割り当て | Para 仮想化 (多数の Vm を 1 つまたは複数の Gpu)                                     | 1 つの VM に 1 つ以上の GPU                                                  |
-| Scale                 | スケールのベスト/1 GPU を多数の Vm                                                      | スケールが低い/1 の VM に 1 つ以上の Gpu                                     |
-| アプリケーションの互換性     | DX 11.1、OpenGL 4.4、OpenCL 1.1                                                     | (DX 12、OpenGL、CUDA) ベンダーから提供されるすべての GPU 機能          |
-| AVC444                | (Windows 10 および Windows Server 2016)、既定で有効になっています。                             | グループ ポリシー (Windows 10 および Windows Server 2016) を利用    |
+| デバイス GPU の割り当て | 準仮想化済み (多数の VM 対 1 つ以上の GPU)                                     | 1 つ以上の GPU 対 1 つの VM                                                  |
+| Scale                 | 最適なスケール/1 つの GPU 対多数の VM                                                      | 低いスケール/1 つ以上の GPU 対 1 つの VM                                     |
+| アプリの互換性     | DX 11.1、OpenGL 4.4、OpenCL 1.1                                                     | ベンダーから提供されるすべての GPU 機能 (DX 12、OpenGL、CUDA)          |
+| AVC444                | 既定で有効 (Windows 10 および Windows Server 2016)                             | グループ ポリシーを通じて使用可能 (Windows 10 および Windows Server 2016)    |
 | GPU VRAM              | 最大 1 GB の専用 VRAM                                                           | GPU でサポートされている VRAM まで                                        |
 | フレーム レート            | 最大 30 fps                                                                         | 最大 60 fps                                                            |
-| ゲストでの GPU ドライバー   | RemoteFX 3D アダプター ディスプレイ ドライバー (マイクロソフト)                                      | GPU ベンダー ドライバー (Nvidia、AMD、Intel)                                 |
-| ゲスト OS のサポート      |  Windows Server 2012 R2 Windows Server 2016 の Windows 7 SP1 を Windows 8.1 の Windows 10 |  Windows Server 2012 R2 Windows Server 2016 の Windows 10 の Linux         |
+| ゲスト内の GPU ドライバー   | RemoteFX 3D アダプター ディスプレイ ドライバー (Microsoft)                                      | GPU ベンダー ドライバー (Nvidia、AMD、Intel)                                 |
+| ゲスト OS のサポート      |  Windows Server 2012 R2  Windows Server 2016  Windows 7 SP1  Windows 8.1 Windows 10 |  Windows Server 2012 R2  Windows Server 2016  Windows 10 Linux         |
 | ハイパーバイザー            | Microsoft Hyper-V                                                                   | Microsoft Hyper-V                                                      |
 | ホスト OS の可用性  |  Windows Server 2012 R2  Windows Server 2016 Windows 10                             | Windows Server 2016                                                    |
-| GPU ハードウェア          | エンタープライズの Gpu (Nvidia Quadro/グリッドまたは AMD FirePro)                         | エンタープライズの Gpu (Nvidia Quadro/グリッドまたは AMD FirePro)            |
-| サーバー ハードウェア       | 特別な要件はありません。                                                             | 最新のサーバー OS (通常は準拠しているハードウェアの SR-IOV) に IOMMU を公開します。 |
+| GPU ハードウェア          | エンタープライズ GPU (Nvidia Quadro/GRID または AMD FirePro)                         | エンタープライズ GPU (Nvidia Quadro/GRID または AMD FirePro)            |
+| サーバー ハードウェア       | 特別な要件なし                                                             | 最新のサーバー、OS に IOMMU を公開 (通常は SR-IOV 準拠のハードウェア) |
 
-一般的な経験則では、仮想マシンは GPU への直接アクセスであるために、最適なアプリケーションの互換性に関する DDA を使用します。 GPU の厳格な要件として、アプリケーションまたはワークロードがないユーザーの広いベース サーバーにする場合は、RemoteFX vGPU が自分に最適です。
+一般的な経験則としては、仮想マシンは GPU に直接アクセスできるので、アプリケーションの互換性を最適にするには DDA を使用します。 アプリケーションまたはワークロードに GPU の厳格な要件がなく、さらに広範なユーザー ベースに対応しようとする場合、RemoteFX vGPU が最適である可能性があります。

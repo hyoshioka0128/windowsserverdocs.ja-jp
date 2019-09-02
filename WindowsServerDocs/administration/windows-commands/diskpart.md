@@ -1,57 +1,57 @@
 ---
-Title: DiskPart コマンド
+title: DiskPart コマンド
 ms.prod: windows-server-threshold
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: e04af7b6425e208013277d1aaa6f28af62871bcc
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 7155dbf34f9986b3ebdd8b549b6a861cf7fcfe3a
+ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280081"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560438"
 ---
 # <a name="diskpart-commands"></a>DiskPart コマンド
 
-適用先:Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、および Windows Server 2008 R2、Windows Server 2008
+適用先:Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、windows server 2008 R2、Windows Server 2008
 
-DiskPart コマンドを使用して、PC のドライブ (ディスク、パーティション、ボリューム、または仮想ハード_ディスク) を管理するのに役立ちます。 DiskPart コマンドを使用するには、最初に一覧表示、およびフォーカスを設定するオブジェクトを選択する必要があります。 オブジェクトにフォーカスがある場合は、入力した任意の DiskPart コマンドはそのオブジェクトに対して機能します。
+DiskPart コマンドを使用すると、PC のドライブ (ディスク、パーティション、ボリューム、または仮想ハードディスク) を管理できます。 DiskPart コマンドを使用するには、まず、オブジェクトを一覧表示してから、フォーカスを与えるオブジェクトを選択する必要があります。 オブジェクトにフォーカスがある場合、入力した DiskPart コマンドはそのオブジェクトに対して動作します。
 
-使用可能なオブジェクトを表示およびを使用して、オブジェクトの番号またはドライブ文字を決定できます、**リスト ディスク、ボリュームのリスト、リスト パーティション**、および**vdisk を一覧表示**コマンド。 **リスト ディスク、リスト vdisk**と**ボリュームを一覧表示**コマンドでは、コンピューターにすべてのディスクとボリュームが表示されます。 ただし、**パーティションを一覧表示**コマンドでは、フォーカスのあるディスク上のパーティションのみが表示されます。 使用すると、**一覧**コマンド、アスタリスク (\*) フォーカスを持つオブジェクトの横に表示されます。
+**List disk、list volume、list partition**、および**list vdisk**コマンドを使用して、使用可能なオブジェクトの一覧を表示し、オブジェクトの番号またはドライブ文字を特定できます。 **List disk、list vdisk** 、および**list volume**コマンドは、コンピューター上のすべてのディスクとボリュームを表示します。 ただし、 **list partition**コマンドは、フォーカスのあるディスク上のパーティションのみを表示します。 **List**コマンドを使用すると、フォーカスがある\*オブジェクトの横にアスタリスク () が表示されます。
 
-オブジェクトを選択すると、フォーカスは、別のオブジェクトを選択するまでそのオブジェクトに残ります。 たとえば、ディスク 0 のフォーカスを設定し、2 のディスクのボリューム 8 を選択して場合にフォーカスを移動ディスク 0 からディスク 2 のボリューム 8。 一部のコマンドは、フォーカスを自動的に変更します。 たとえば、新しいパーティションを作成するときに、フォーカスは自動的に新しいパーティションに切り替わります。
+オブジェクトを選択すると、別のオブジェクトを選択するまでフォーカスがそのオブジェクトに残ります。 たとえば、フォーカスがディスク0に設定されていて、ディスク2で [ボリューム 8] を選択した場合、フォーカスはディスク0からディスク2のボリューム8に移ります。 一部のコマンドでは、フォーカスが自動的に変更されます。 たとえば、新しいパーティションを作成すると、フォーカスは自動的に新しいパーティションに切り替わります。
 
-のみを選択したディスクのパーティションにフォーカスを与えることができます。 パーティションにフォーカスがある場合は、(ある場合) に関連するボリュームはフォーカスもあります。 ときに、ボリュームは、フォーカス、関連するディスクとパーティション、ボリュームが 1 つの特定のパーティションにマップされている場合は、フォーカスがあることもあります。 これでない場合は、ディスクにフォーカスし、パーティションが失われるとします。
+選択したディスクのパーティションにのみフォーカスを移すことができます。 パーティションにフォーカスがある場合、関連するボリューム (存在する場合) にもフォーカスがあります。 ボリュームにフォーカスがある場合、関連するディスクとパーティションには、ボリュームが1つの特定のパーティションにマップされている場合にもフォーカスがあります。 そうでない場合は、ディスクとパーティションにフォーカスが失われます。
 
 ## <a name="diskpart-commands"></a>DiskPart コマンド
 
-コマンド プロンプトで、DiskPart コマンド インタープリターを開始するには。
+DiskPart コマンドインタープリターを起動するには、コマンドプロンプトで次のように入力します。
 
 `diskpart`
 
 > [!IMPORTANT]
-> ローカル メンバーシップ**管理者**は DiskPart を実行するために必要な最小のグループ、またはそれと同等です。 
+> DiskPart を実行するには、ローカルの**Administrators**グループのメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。 
 
-Diskpart コマンド インタープリターでは、次のコマンドを実行できます。
+Diskpart コマンドインタープリターでは、次のコマンドを実行できます。
 
   - [Active](active.md)  
       
   - [[追加]](add.md)  
       
-  - [割り当てる](assign.md)  
+  - [Assign](assign.md)  
       
-  - [vdisk をアタッチします。](attach-vdisk.md)  
+  - [Vdisk のアタッチ](attach-vdisk.md)  
       
   - [Attributes](attributes.md)  
       
-  - [自動マウント](automount.md)  
+  - [オートマ](automount.md)  
       
-  - [break](break.md)  
+  - [Break](break.md)  
       
-  - [クリーンアップ](clean.md)  
+  - [中身](clean.md)  
       
-  - [vdisk を最適化します。](compact-vdisk.md)  
+  - [Compact vdisk](compact-vdisk.md)  
       
   - [[変換]](convert.md)  
       
@@ -59,17 +59,17 @@ Diskpart コマンド インタープリターでは、次のコマンドを実�
       
   - [削除](delete.md)  
       
-  - [Vdisk をデタッチします。](detach-vdisk.md)  
+  - [Vdisk のデタッチ](detach-vdisk.md)  
       
-  - [詳細](detail.md)  
+  - [データ](detail.md)  
       
   - [終了](exit.md)  
       
-  - [vdisk を展開します。](expand-vdisk.md)  
+  - [Vdisk を展開する](expand-vdisk.md)  
       
   - [Extend](extend.md)  
       
-  - [ファイル システム](filesystems.md)  
+  - [ファイルシステム](filesystems.md)  
       
   - [形式](format.md)  
       
@@ -77,39 +77,39 @@ Diskpart コマンド インタープリターでは、次のコマンドを実�
       
   - [ヘルプ](help.md)  
       
-  - [[インポート](import.md)]  
+  - [[インポート]](import.md)  
       
-  - [非アクティブ](inactive.md)  
+  - [稼動](inactive.md)  
       
-  - [一覧](list.md)  
+  - [List](list.md)  
       
-  - [Vdisk をマージします。](merge-vdisk.md)  
+  - [マージ vdisk](merge-vdisk.md)  
       
-  - [オフライン](offline.md)  
+  - [なっ](offline.md)  
       
   - [オンライン](online.md)  
       
   - [回復](recover.md)  
       
-  - [rem](rem.md)  
+  - [Rem](rem.md)  
       
   - [[削除]](remove.md)  
       
-  - [修復](repair.md)  
+  - [回復](repair.md)  
       
   - [再スキャン](rescan.md)  
       
-  - [保持](retain.md)  
+  - [日数](retain.md)  
       
   - [San](san.md)  
       
   - [Select](select.md)  
       
-  - [セット id](set-id.md)  
+  - [Id の設定](set-id.md)  
       
-  - [縮小](shrink.md)  
+  - [伸縮](shrink.md)  
       
-  - [一意の id](uniqueid.md)  
+  - [Uniqueid](uniqueid.md)  
       
 
 ## <a name="additional-references"></a>その他の参照情報

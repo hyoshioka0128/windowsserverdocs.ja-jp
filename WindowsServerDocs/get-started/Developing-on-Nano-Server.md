@@ -13,10 +13,10 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d793dde9c41bc99b55eeb0da3a5ee4b025f08d6
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66443644"
 ---
 # <a name="developing-for-nano-server"></a>Nano Server 向けの開発
@@ -35,7 +35,7 @@ ms.locfileid: "66443644"
 Windows PowerShell リモート処理を使用して Nano Server を管理するには、Nano Server の IP アドレスを管理コンピューターの信頼されたホストの一覧に追加し、使用しているアカウントを Nano Server の管理者に追加する必要があります。CredSSP を使用する場合は、その機能を有効にする必要もあります。  
 
 > [!NOTE]
-> Nano Server を追加しないでください場合、対象の Nano Server と管理コンピューターは、同じ AD DS フォレスト (または信頼関係を持つフォレスト) には、その完全修飾ドメイン名を使用して、信頼されたホスト一覧に、Nano Server に接続できます例えば：PS C:\>Enter-pssession-ComputerName nanoserver.contoso.com-Credential (Get-credential)
+> 対象の Nano Server と管理コンピューターが同じ AD DS フォレスト (または信頼関係のあるフォレスト) に属している場合、Nano Server を信頼されたホストの一覧に追加する必要はありません。完全修飾ドメイン名を使用して、Nano Server に接続できます。次に例を示します。PS C:\>Enter-PSSession -ComputerName nanoserver.contoso.com -Credential (Get-Credential)
   
   
 Nano Server を信頼されたホストの一覧に追加するには、管理者特権での Windows PowerShell プロンプトで次のコマンドを実行します。  
@@ -55,9 +55,9 @@ Enter-PSSession -ComputerName $ip -Credential $user
 これで、Nano Server で通常どおりに Windows PowerShell コマンドを実行できます。  
   
 > [!NOTE]  
-> このリリースの Nano Server では、一部の Windows PowerShell コマンドを利用できません。 利用可能なを表示するには、次のように実行します。 `Get-Command -CommandType Cmdlet`  
+> このリリースの Nano Server では、一部の Windows PowerShell コマンドを利用できません。 どれが利用できるかを確認するには、`Get-Command -CommandType Cmdlet` を実行します  
   
-コマンドを使用してリモート セッションを停止します。 `Exit-PSSession`  
+リモート セッションを停止するには、コマンド `Exit-PSSession` を使用します  
   
 ## <a name="using-windows-powershell-cim-sessions-over-winrm"></a>WinRM を介して Windows PowerShell CIM セッションを使用する  
 Windows リモート管理 (WinRM) を介して、Windows PowerShell の CIM セッションとインスタンスを使用して、WMI コマンドを実行できます。  

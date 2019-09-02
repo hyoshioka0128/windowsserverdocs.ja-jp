@@ -10,42 +10,42 @@ ms.localizationpriority: medium
 ms.date: 05/21/2019
 ms.topic: get-started-article
 ms.openlocfilehash: c0d85da8a51a43acd7765957b34220829a43b086
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810706"
 ---
 # <a name="kms-client-setup-keys"></a>KMS クライアント セットアップ キー
 
->適用対象:Windows Server 2019、Windows Server 半期チャネルでは、Windows Server 2016、Windows 10
+>適用対象:Windows Server 2019、Windows Server 半期チャネル、Windows Server 2016、Windows 10
 
 Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows 7、Windows Server 2008 R2、Windows Vista、and Windows Server 2008 のボリューム ライセンス版が実行されているコンピューターは、既定で、追加の構成が必要ない KMS クライアントとなります。
 
 > [!NOTE]
-> 次の表の"LTSC"の略「長期的なサービス チャネル」"LTSB"は"Long-Term Servicing Branch" 
+> 以下の表で使用されている "LTSC" は "長期サービス チャネル" を、"LTSB" は "長期サービス ブランチ" を意味しています。 
 
-**ここに記載された次のキー (これは、Gvlk) を使用して、デプロイで実行されている KMS ホストがあります。** まだ KMS ホストを構成していない場合は、「[KMS ライセンス認証の展開](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx)」でホストの設定手順を参照してください。
+**ここに記載されているキー (GVLK) を使用するには、お使いのデプロイ内で KMS ホストを先に実行しておく必要があります。** まだ KMS ホストを構成していない場合は、「[KMS ライセンス認証の展開](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx)」でホストの設定手順を参照してください。
 
-コンピューターを KMS ホスト、MAK、または製品版の Windows から KMS クライアントに変換する場合は、次の表を参照して、該当するセットアップ キー (GVLK) をインストールします。 クライアント セットアップ キーをインストールするには、クライアントの種類の管理のコマンド プロンプトを開き**slmgr/ipk\<セットアップ キー\>** しキーを押します**Enter**します。
+コンピューターを KMS ホスト、MAK、または製品版の Windows から KMS クライアントに変換する場合は、次の表を参照して、該当するセットアップ キー (GVLK) をインストールします。 クライアント セットアップ キーをインストールするには、クライアントで管理コマンド プロンプトを開き、「**slmgr /ipk \<セットアップ キー\>** 」と入力し、**Enter** キーを押します。
 
 | 目的の処理    | 使用するリソース   |
 |--------------------|------------------------|
 | ボリューム ライセンス認証のシナリオ以外で Windows のライセンスを認証する (つまり、製品版の Windows のライセンスを認証する)。**これらのキーは機能しない**。 | 製品版の Windows には次のリンクを使用します。 |
-| Windows 8.1、Windows Server 2012 R2、または新しいシステムをライセンス認証を行うときに発生したこのエラーを修正するには。“Error:0xC004F050 The Software Licensing Service reported that the product key is invalid”… | Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012 を実行している場合、KMS ホストに[この更新プログラムをインストールします](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2)。 |
+| Windows 8.1 または Windows Server 2012 R2 システムのライセンスを認証するときに発生する次のエラーを修正する。“Error:0xC004F050 The Software Licensing Service reported that the product key is invalid”… | Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012 を実行している場合、KMS ホストに[この更新プログラムをインストールします](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2)。 |
 
--   [Windows 10 を入手します。](https://www.microsoft.com/en-us/windows/get-windows-10)
+-   [Windows 10 を入手する](https://www.microsoft.com/en-us/windows/get-windows-10)
 
--   [新しい Windows プロダクト キーを取得します。](https://support.microsoft.com/help/10749/windows-product-key)
+-   [新しい Windows プロダクト キーを取得する](https://support.microsoft.com/help/10749/windows-product-key)
 
--   [Genuine Windows ヘルプと使い方](https://support.microsoft.com/help/15087/windows-genuine)
+-   [正規の Windows のヘルプと使い方](https://support.microsoft.com/help/15087/windows-genuine)
 
 
 >   Windows Server 2008 R2 または Windows 7 を実行している場合は、Windows 10 クライアントの KMS ホストとしてのこれらの使用をサポートする更新プログラムを監視します。
 
-## <a name="windows-server-semi-annual-channel-versions"></a>Windows Server 半期チャネルのバージョン
+## <a name="windows-server-semi-annual-channel-versions"></a>Windows Server 半期チャネル バージョン
 
-### <a name="windows-server-version-1903-and-windows-server-version-1809"></a>Windows Server、バージョンが 1903 および Windows Server バージョンは 1809
+### <a name="windows-server-version-1903-and-windows-server-version-1809"></a>Windows Server バージョン 1903 および Windows Server バージョン 1809
 
 | オペレーティング システムのエディション  | KMS クライアント セットアップ キー          |
 |---------------------------|-------------------------------|
@@ -73,7 +73,7 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 |--------------------------------|-------------------------------|
 | Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG  | 
 | Windows Server 2019 Standard   | N69G4-B89J2-4G8F4-WWYCC-J464C  |
-| Windows Server 2019 Essentials|WVDHN-86M7X-466 6-VHXV7-YY726|
+| Windows Server 2019 Essentials|WVDHN-86M7X-466P6-VHXV7-YY726|
 
 ### <a name="windows-server-2016"></a>Windows Server 2016
 
@@ -83,16 +83,16 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 | Windows Server 2016 Standard   | WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY |
 | Windows Server 2016 Essentials | JCKRF-N37P4-C2D82-9YXRT-4M63B |
 
-## <a name="windows-10-all-supported-semi-annual-channel-versions"></a>Windows 10 では、すべてのサポート バージョンの場合は半期チャネル
+## <a name="windows-10-all-supported-semi-annual-channel-versions"></a>Windows 10、サポートされているすべての半期チャネル バージョン
 
-参照してください、 [Windows ライフ サイクル ファクト シート](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet)についてはサポートされているバージョンとサービスの期間の終了。
+サポートされているバージョンとサービス終了日の情報については、「[Windows ライフサイクルのファクト シート](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet)」をご覧ください。
 
 | オペレーティング システムのエディション          | KMS クライアント セットアップ キー          |
 |-----------------------------------|-------------------------------|
 |Windows 10 Pro|W269N-WFGWX-YVC9B-4J6C9-T83GX|
 |Windows 10 Pro N|MH37W-N47XK-V7XM9-C7227-GCQG9|
-|Windows 10 Pro ワークステーション|NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J|
-|Windows 10 Pro ワークステーション N|9FNHH-K3HBT-3W4TD-6383H-6XYWF|
+|Windows 10 Pro Workstations|NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J|
+|Windows 10 Pro Workstations N|9FNHH-K3HBT-3W4TD-6383H-6XYWF|
 |Windows 10 Pro Education|6TP4R-GNPTD-KYYHQ-7B7DP-J447Y|
 |Windows 10 Pro Education N|YVWGF-BXNMC-HTQYQ-CPQ99-66QFC|
 |Windows 10 Education|NW6C2-QMPVW-D7KKK-3GKT6-VCFB2|
@@ -125,7 +125,7 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 | Windows 10 Enterprise 2015 LTSB   | WNMTR-4C88C-JK8YV-HQ7T2-76DF9 |
 | Windows 10 Enterprise 2015 LTSB N | 2F77B-TNFGY-69QQF-B8YKP-D69TJ |
 
-## <a name="earlier-versions-of-windows-server"></a>Windows Server の以前のバージョン
+## <a name="earlier-versions-of-windows-server"></a>旧バージョンの Windows Server
 ### <a name="windows-server-2012-r2"></a>Windows Server 2012 R2
 
 | オペレーティング システムのエディション               | KMS クライアント セットアップ キー          |

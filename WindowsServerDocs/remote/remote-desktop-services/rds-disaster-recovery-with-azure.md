@@ -1,6 +1,6 @@
 ---
-title: Azure のディザスター リカバリーを使用して RDS のディザスター リカバリーを設定します。
-description: RDS のデプロイのディザスター リカバリーに Azure のディザスター リカバリーを使用する方法について説明します
+title: Azure ディザスター リカバリーを使用して RDS のディザスター リカバリーを設定する
+description: RDS 展開のディザスター リカバリーに Azure ディザスター リカバリーを使用する方法について説明する
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,59 +12,59 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 561a515e23d12cc3397c40fd885550e735ed4d27
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 24b5fdaa815b6d2e84606cd8e681634eb3d0f4e9
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878173"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63713078"
 ---
-# <a name="set-up-disaster-recovery-for-rds-using-azure-site-recovery"></a>Azure Site Recovery を使用して RDS のディザスター リカバリーを設定します。
+# <a name="set-up-disaster-recovery-for-rds-using-azure-site-recovery"></a>Azure Site Recovery を使用して RDS のディザスター リカバリーを設定する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 Azure Site Recovery を使用して、リモート デスクトップ サービス展開のディザスター リカバリー ソリューションを作成することができます。 
 
-[Azure Site Recovery](/azure/site-recovery/site-recovery-overview)はレプリケーション、フェールオーバー、および仮想マシンの回復を調整することでディザスター リカバリー機能を提供する Azure ベースのサービスです。 Azure Site Recovery では、さまざまな一貫したレプリケート、保護、レプリケーション テクノロジとシームレスにフェールオーバー仮想マシンとプライベート/パブリック クラウドまたはホスト側のクラウドへのアプリケーションをサポートします。 
+[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) は仮想マシンのレプリケーション、フェールオーバー、および回復を組み合わせてディザスター リカバリー機能を提供する Azure ベースのサービスです。 Azure Site Recovery では、仮想マシンおよびアプリケーションを一貫してレプリケート、保護、プライベート/パブリック クラウドまたはホスト側のクラウドへシームレスにフェールオーバーするため、多数のレプリケーション テクノロジをサポートしています。 
 
-作成し、ディザスター リカバリーのソリューションを検証するには、次の情報を使用します。
+ディザスター リカバリー ソリューションを作成し検証するには、次の情報を使用します。
 
-## <a name="disaster-recovery-deployment-options"></a>障害復旧デプロイ オプション
+## <a name="disaster-recovery-deployment-options"></a>ディザスター リカバリーの展開オプション
 
-物理サーバーまたは HYPER-V または VMWare を実行する仮想マシンのいずれかで RDS をデプロイできます。 Azure Site Recovery には、オンプレミスと仮想の展開をセカンダリ サイトのいずれかまたは Azure の両方を保護できます。 次の表では、サイト対サイトおよびサイトと Azure の災害 recvoery シナリオでは、さまざまなサポート RDS のデプロイを示します。
+物理サーバーにも、Hyper-V または VMWare を実行している仮想マシンにも RDS を展開できます。 Azure Site Recovery は、オンプレミスと仮想の両方の展開をセカンダリ サイトか Azure のどちらにでも保護できます。 次の表では、サイト間とサイトと Azure 間のディザスター リカバリー シナリオで、サポートされるさまざまな RDS 展開を示します。
 
-| 展開の種類                          | HYPER-V サイト対サイト | HYPER-V サイトから Azure | VMWare から Azure へのサイト | 物理サイト-Azure |
+| 展開の種類                          | Hyper-V サイト間 | Hyper-V サイトと Azure 間 | VMWare サイトと Azure 間 | 物理サイトと Azure 間 |
 |------------------------------------------|----------------------|-----------------------|---------------------|----------------------|-----------------------|------------------------|
-| プールされた仮想デスクトップが (アンマネージ)       |〇|X|いいえ|いいえ |
-| プールされた仮想デスクトップ (管理対象、UPD なし) | 〇|X|いいえ|X|
-| Remoteapp とデスクトップのセッション (UPD なし) | 〇|〇|〇|〇  |
+| プールされた仮想デスクトップ (管理対象外)       |〇|X|X|X |
+| プールされた仮想デスクトップ (管理対象、UPD なし) | 〇|X|X|X|
+| RemoteApp とデスクトップ セッション (UPD なし) | 〇|〇|〇|〇  |
 
 ## <a name="prerequisites"></a>前提条件
 
-Azure Site Recovery を構成するには、展開に、前に、次の要件を満たしていることを確認します。
+お使いの展開に合わせて Azure Site Recovery を構成するには、その前に次の要件を満たしていることを確認します。
 
-- 作成、 [、オンプレミスでの RDS デプロイ](rds-deploy-infrastructure.md)します。
-- 追加[Azure Site Recovery Services コンテナー](/azure/site-recovery/site-recovery-vmm-to-azure#create-a-recovery-services-vault) Microsoft Azure サブスクリプションにします。
-- 復旧サイトとして Azure を使用する場合は、実行、 [Azure 仮想マシン準備状況評価ツール](https://azure.microsoft.com/downloads/vm-readiness-assessment/)で Vm を Azure Vm と Azure Site Recovery Services と互換性があることを確認します。
+- [オンプレミスの RDS 展開](rds-deploy-infrastructure.md)を作成します。
+- [Azure Site Recovery Services コンテナー](/azure/site-recovery/site-recovery-vmm-to-azure#create-a-recovery-services-vault)を Microsoft Azure サブスクリプションに追加します。
+- 回復サイトとして Azure を使用する場合は、VM 上で [Azure 仮想マシン準備状況評価ツール](https://azure.microsoft.com/downloads/vm-readiness-assessment/)を実行して、Azure VM および Azure Site Recovery Services と互換性のあることを確認します。
  
 ## <a name="implementation-checklist"></a>実装のチェックリスト
 
-詳細についてで RDS デプロイ用の Azure Site Recovery Services を有効にするさまざまな手順について説明しますが、高レベルの実装手順を示します。
+RDS 展開に対して Azure Site Recovery Services を有効にするさまざまな手順を詳しく取り上げますが、ここでは高レベルの実装手順を示します。
 
-| **手順 1 - Vm のディザスター リカバリーの構成**                                                                                                                                                                                               |
+| **手順 1 - ディザスター リカバリー用に VM を構成する**                                                                                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Hyper-V の Microsoft Azure Site Recovery Provider をダウンロードします。 VMM サーバーまたは HYPER-V ホストにインストールします。 参照してください[Azure Site Recovery を使用して Azure へのレプリケーションの前提条件](/azure/site-recovery/site-recovery-prereq)について。                                                                                                                             |
-| VMWare の保護サーバー、構成サーバーとマスター ターゲット サーバーを構成します。                                                                                                                                                      |
-| **手順 2 - リソースの準備**                                                                                                                                                                                                           |
-| 追加、 [Azure Storage アカウント](/azure/storage/storage-create-storage-account)します。                                                                                                                                                                                                              |
-| HYPER-V - は、Microsoft Azure Recovery Services エージェントをダウンロードして、HYPER-V ホスト サーバーにインストールします。                                                                                                                                     |
-| VMWare - すべての Vm にモビリティ サービスがインストールされていることを確認します。                                                                                                                                                                           |
-| [VMM クラウドで HYPER-V サイト、または VMWare サイトで Vm の保護を有効にする](rds-enable-dr-with-asr.md)します。                                                                                                                                                                    |
-| **手順 3 - 復旧計画を設計します。**                                                                                                                                                                                                        |
-| リソース - Azure Vnet にオンプレミス ネットワークのマップをマップします。                                                                                                                                                                              |
-| [復旧計画の作成](rds-disaster-recovery-plan.md)です。 |
-| テスト フェールオーバーを作成して、復旧計画をテストします。 すべての Vm が Active Directory などの必要なリソースにアクセスできることを確認します。 リダイレクトが構成されているネットワークおよび rds. に勤務していることを確認します。 復旧計画のテストに詳細な手順についてを参照してください[テスト フェールオーバーの実行。](/azure/site-recovery/site-recovery-test-failover-to-azure)|
-| **手順 4 - ディザスター リカバリーの訓練を実行します。**                                                                                                                                                                                                     |
-| 計画フェールオーバーや計画外フェールオーバーを使用してディザスター リカバリーの訓練を実行します。 すべての Vm の Active Directory などの必要なリソースにアクセスできるようにします。 すべての Vm の Active Directory などの必要なリソースにアクセスできるようにします。 フェールオーバーとドリルを実行する方法の詳細な手順は、次を参照してください。 [Site Recovery でフェールオーバー](/azure/site-recovery/site-recovery-failover)します。|
+| Hyper-V - Microsoft Azure Site Recovery プロバイダーをダウンロードします。 これを VMM サーバーまたは Hyper-V ホストにインストールします。 詳細については、[Azure Site Recovery を使用した Azure へのレプリケーションの前提条件](/azure/site-recovery/site-recovery-prereq)に関するページを参照してください。                                                                                                                             |
+| VMWare - 保護サーバー、構成サーバー、およびマスター ターゲット サーバーを構成します                                                                                                                                                      |
+| **手順 2 - リソースの準備する**                                                                                                                                                                                                           |
+| [Azure ストレージ アカウント](/azure/storage/storage-create-storage-account)を追加します。                                                                                                                                                                                                              |
+| Hyper-V - Microsoft Azure Recovery Services エージェントをダウンロードして、Hyper-V ホスト サーバーにインストールします。                                                                                                                                     |
+| VMWare - すべての VM にモビリティ サービスがインストールされていることを確認します。                                                                                                                                                                           |
+| [VMM クラウド、Hyper-V サイト、または VMWare サイトで VM の保護を有効にします](rds-enable-dr-with-asr.md)。                                                                                                                                                                    |
+| **手順 3 - 復旧計画を設計する。**                                                                                                                                                                                                        |
+| リソースのマップ - Azure VNET にオンプレミス ネットワークをマップします。                                                                                                                                                                              |
+| [復旧計画を作成します](rds-disaster-recovery-plan.md)。 |
+| テスト フェールオーバーを作成して、復旧計画をテストします。 すべての VM が Active Directory などの必要なリソースにアクセスできることを確認します。 ネットワーク リダイレクトが構成され、RDS 用に機能していることを確認します。 復旧計画のテストの詳細な手順については、「[テスト フェールオーバーを実行する](/azure/site-recovery/site-recovery-test-failover-to-azure)」を参照してください|
+| **手順 4 - ディザスター リカバリーの演習を実行する。**                                                                                                                                                                                                     |
+| 計画されたフェールオーバーと計画外のフェールオーバーを使用してディザスター リカバリーの演習を実行します。 すべての VM が、Active Directory などの必要なリソースにアクセスできることを確認します。 すべての VM が、Active Directory などの必要なリソースにアクセスできることを確認します。 フェールオーバーの詳細な手順と演習の実行方法については、[Site Recovery でのフェールオーバー](/azure/site-recovery/site-recovery-failover)に関するページを参照してください。|
 
 

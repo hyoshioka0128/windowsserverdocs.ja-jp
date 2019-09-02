@@ -1,137 +1,140 @@
 ---
 title: Server Core の管理
-description: Windows Server の Server Core インストールを管理する方法について説明します
+description: Windows Server の Server Core インストールの管理方法について説明します。
 ms.prod: windows-server-threshold
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
-ms.date: 10/17/2017
-ms.openlocfilehash: 761bfc681d7e39059884977cd99997ea9996268b
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.date: 07/23/2019
+ms.openlocfilehash: bbb04e761dbb1dd48d95e15d11c91608f4d6c240
+ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811357"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68476549"
 ---
-# <a name="manage-a-server-core-server"></a>Server Core サーバーを管理します。
+# <a name="manage-a-server-core-server"></a>Server Core サーバーの管理
  
-> 適用対象:Windows Server (半期チャネル) および Windows Server 2016
+> 適用対象:Windows Server 2019、Windows Server 2016、および Windows Server (半期チャネル)
 
-次の方法では、Server Core サーバーを管理できます。
-- 使用して[Windows Admin Center](../../manage/windows-admin-center/overview.md)
-- 使用して[リモート サーバー管理ツール](../../remote/remote-server-administration-tools.md)Windows 10 で実行されています。
+Server Core サーバーは、次の方法で管理できます。
+- [Windows 管理センター](../../manage/windows-admin-center/overview.md)を使用する
+- Windows 10 で実行されている[リモートサーバー管理ツール](../../remote/remote-server-administration-tools.md)の使用
 - Windows PowerShell を使用してローカルおよびリモートで管理する
-- 使用してリモート[サーバー マネージャー](../server-manager/server-manager.md)
-- 使用してリモート、 [MMC スナップイン](#managing-with-microsoft-management-console)
-- 使用してリモートで[リモート デスクトップ サービス](#managing-with-remote-desktop-services)
+- [サーバーマネージャー](../server-manager/server-manager.md)のリモートでの使用
+- [MMC スナップ](#managing-with-microsoft-management-console)インを使用してリモートで
+- リモートで[リモートデスクトップサービス](#managing-with-remote-desktop-services)
 
-ハードウェアを追加し、コマンドラインからを実行する限り、ドライバーをローカルでの管理もことができます。
+また、コマンドラインから実行する場合は、ハードウェアを追加し、ドライバーをローカルで管理することもできます。
 
-いくつかの重要な制限事項とヒントを Server Core を使用するときに注意してください。
+Server Core を使用する場合は、注意すべき重要な制限事項とヒントがいくつかあります。
 
-- すべてのコマンド プロンプト ウィンドウを閉じて新しいコマンド プロンプト ウィンドウを開く場合、行うことができるタスク マネージャーから。 キーを押して**CTRL\+ALT\+削除**、 をクリックして**タスク マネージャーの起動**、 をクリックして**詳細 > ファイル > 実行**、し、入力**cmd.exe**します。 (型**Powershell.exe**を PowerShell コマンド ウィンドウを開きます)。または、サインアウトして、再びサインインすることができます。
-- エクスプローラーを起動しようとするコマンドまたはツールは機能しません。 たとえば、実行している**を開始します。** コマンド プロンプトからは機能しません。
-- HTML レンダリングまたは Server Core での HTML ヘルプのサポートはありません。
-- Server Core は、Windows インストーラー ファイルからツールとユーティリティをインストールできるように、quiet モードで Windows インストーラーをサポートします。 Server Core での Windows インストーラー パッケージをインストールするときに使用して、 **/qb**基本的なユーザー インターフェイスを表示するにはオプションです。
-- タイム ゾーンを変更するには、実行**Set-date**します。
-- 国際対応の設定を変更するには、実行**control intl.cpl**します。
-- **Control.exe**単独で実行しません。 いずれかで実行する必要があります**Timedate.cpl**または**Intl.cpl**します。
-- **Winver.exe** Server Core では使用できません。 バージョン情報の使用を取得する**Systeminfo.exe**します。
+- すべてのコマンドプロンプトウィンドウを閉じて新しいコマンドプロンプトウィンドウを開く場合は、タスクマネージャーから実行できます。 **CTRL\+キー\+** を押しながら del キーを押し、**タスクマネージャーの起動** をクリックして、詳細 をクリックし **> ファイル > 実行** をクリックし、「 **cmd.exe**」と入力します。 (Powershell コマンドウィンドウを開くには、「 **powershell** 」と入力します)。または、サインアウトしてからもう一度サインインすることもできます。
+- エクスプローラーを起動しようとするコマンドまたはツールは機能しません。 たとえば、start を実行**します。** コマンドプロンプトからは機能しません。
+- Server Core では、HTML 表示や HTML ヘルプはサポートされていません。
+- Server Core は、Windows インストーラーファイルからツールとユーティリティをインストールできるように、quiet モードでの Windows インストーラーをサポートしています。 Server Core に Windows インストーラーパッケージをインストールする場合は、 **/qb**オプションを使用して基本的なユーザーインターフェイスを表示します。
+- タイムゾーンを変更するには、[ **Set-Date**] を実行します。
+- インターナショナル設定を変更するには、コントロールの [の**管理**] を実行します。
+- **コントロール**自体は実行されません。 これは、 **Timedate. cpl** **または**のいずれかを使用して実行する必要があります。
+- **Winver**は Server Core では使用できません。 バージョン情報を取得するには、 **msbuild.exe**を使用します。
 
-## <a name="managing-server-core-with-windows-admin-center"></a>Server Core と Windows Admin Center を管理します。
-[Windows Admin Center](../../manage/windows-admin-center/overview.md) は、Azure やクラウドに依存せずに、Windows サーバーのオンプレミス管理を実現する、ブラウザー ベースの管理アプリです。 Windows Admin Center では、サーバー インフラストラクチャのあらゆる側面を完全に管理できます。特に、インターネットに接続されていないプライベート ネットワークでの管理に便利です。 Windows 10、ゲートウェイ サーバー、またはデスクトップ エクスペリエンス搭載の Windows Server のインストールは、Windows Admin Center をインストールし、管理するの Server Core システムに接続できます。
+## <a name="managing-server-core-with-windows-admin-center"></a>Windows 管理センターを使用した Server Core の管理
+[Windows Admin Center](../../manage/windows-admin-center/overview.md) は、Azure やクラウドに依存せずに、Windows サーバーのオンプレミス管理を実現する、ブラウザー ベースの管理アプリです。 Windows Admin Center では、サーバー インフラストラクチャのあらゆる側面を完全に管理できます。特に、インターネットに接続されていないプライベート ネットワークでの管理に便利です。 Windows 管理センターは、windows 10、ゲートウェイサーバー、またはデスクトップエクスペリエンスを搭載した Windows Server のインストールにインストールし、管理する Server Core システムに接続できます。
 
-## <a name="managing-server-core-remotely-with-server-manager"></a>Server Core サーバー マネージャーをリモートで管理します。
+## <a name="managing-server-core-remotely-with-server-manager"></a>サーバーマネージャーを使用したリモートでの Server Core の管理
 
-サーバー マネージャーは、プロビジョニングおよびサーバーへの物理アクセスまたはリモート デスクトップ プロトコル (RDP) を有効にする必要のいずれかを必要とせず、デスクトップからローカルとリモートの両方の Windows ベースのサーバーを管理するのに役立つ Windows server 管理コンソール各サーバーに接続します。 サーバー マネージャーでは、リモートのマルチ サーバー管理をサポートします。
+サーバーマネージャーは、Windows Server の管理コンソールです。これを使用すると、サーバーに物理的にアクセスしたり、リモートデスクトッププロトコル (RDP) を有効にしなくても、デスクトップからローカルとリモートの両方の Windows ベースのサーバーをプロビジョニングして管理することができます。各サーバーへの接続。 サーバーマネージャーは、リモートのマルチサーバー管理をサポートします。
 
-ローカル サーバーをリモート サーバーで実行されているサーバー マネージャーで管理を有効にするには、Windows PowerShell コマンドレットを実行**SMRemoting.exe – 有効にする**します。
+リモートサーバーで実行されているサーバーマネージャーでローカルサーバーを管理できるようにするには、Windows PowerShell コマンドレットの**configure-smremoting.exe – enable**を実行します。
 
-## <a name="managing-with-microsoft-management-console"></a>Microsoft 管理コンソールで管理します。
+## <a name="managing-with-microsoft-management-console"></a>Microsoft 管理コンソールを使用した管理
 
-Server Core サーバーの管理に数多くスナップインを Microsoft 管理コンソール (MMC) をリモートで使用することができます。
+Microsoft 管理コンソール (MMC) の多くのスナップインをリモートで使用して、Server Core サーバーを管理できます。
 
-MMC スナップインを使用して、ドメイン メンバーである Server Core サーバーを管理します。 
+MMC スナップインを使用して、ドメインメンバーである Server Core サーバーを管理するには、次のようにします。 
 
-1. MMC スナップインで、コンピューターの管理などを開始します。
-2. スナップインを右クリックし、をクリックし、**別のコンピューターへの接続**します。
-2. Server Core サーバーのコンピューター名を入力し、クリックして**OK**します。 MMC スナップインを使用して、他の PC やサーバーと同様に、Server Core サーバーを管理することができますようになりました。
+1. [コンピューターの管理] などの MMC スナップインを起動します。
+2. スナップインを右クリックし、[**別のコンピューターへ接続**] をクリックします。
+2. Server Core サーバーのコンピューター名を入力し、[ **OK]** をクリックします。 これで、MMC スナップインを使用して、他の PC またはサーバーと同様に Server Core サーバーを管理できるようになりました。
 
-MMC スナップインを使用している Server Core サーバーを管理する*いない*ドメイン メンバー。 
+MMC スナップインを使用して、ドメインメンバーでは*ない*server Core サーバーを管理するには、次のようにします。 
 
-1. リモート コンピューターでコマンド プロンプトで次のコマンドを入力して、Server Core コンピューターへの接続に使用する代替の資格情報を設定します。
-1. 
+1. リモートコンピューターのコマンドプロンプトで次のコマンドを入力して、Server Core コンピューターへの接続に使用する別の資格情報を設定します。
+
    ```
    cmdkey /add:<ServerName> /user:<UserName> /pass:<password>
    ```
 
-   パスワードを要求する場合は、省略、 **渡す/** オプション。
+   パスワードの入力を求められる場合は、 **/pass**オプションを省略します。
 
-2. メッセージが表示されたら、指定したユーザー名のパスワードを入力します。
-   MMC スナップインの接続に許可する Server Core サーバーのファイアウォールが構成されていない場合は MMC スナップインを許可する Windows ファイアウォールを構成する次の手順に従います。 手順 3 に進みます。
-3. 別のコンピューターに MMC スナップインなど起動**コンピュータの管理**します。
-4. 左側のウィンドウで、スナップインを右クリックし、クリックして**別のコンピューターへの接続**します。 (たとえば、コンピューターの管理の例では右クリックした**コンピューターの管理 (ローカル)** )。
-5. **別のコンピューター**の Server Core サーバーのコンピューター名を入力し、 **OK**します。 これで、MMC スナップインを使用して、Windows Server オペレーティング システムを実行している他のコンピューターと同じように Server Core サーバーを管理できるようになります。
+2. プロンプトが表示されたら、指定したユーザー名のパスワードを入力します。
+   Server Core サーバー上のファイアウォールがまだ MMC スナップインの接続を許可するように構成されていない場合は、次の手順に従って、MMC スナップインを許可するように Windows ファイアウォールを構成します。 その後、手順 3. に進みます。
+3. 別のコンピューターで、[**コンピューターの管理**] などの MMC スナップインを起動します。
+4. 左側のウィンドウでスナップインを右クリックし、[**別のコンピューターへ接続**] をクリックします。 (たとえば、コンピューターの管理の例では、[**コンピューターの管理 (ローカル)** ] を右クリックします)。
+5. [**別のコンピューター**] に server Core サーバーのコンピューター名を入力し、[ **OK]** をクリックします。 これで、MMC スナップインを使用して、Windows Server オペレーティング システムを実行している他のコンピューターと同じように Server Core サーバーを管理できるようになります。
 
 ### <a name="to-configure-windows-firewall-to-allow-mmc-snap-ins-to-connect"></a>MMC スナップインの接続を許可するように Windows ファイアウォールを構成するには
-すべて MMC スナップインへの接続を許可するのには、次のコマンドを実行します。
+すべての MMC スナップインが接続できるようにするには、次のコマンドを実行します。
 
-```
+```PowerShell
 Enable-NetFirewallRule -DisplayGroup "Remote Administration"
 ```
 
-特定 MMC スナップインだけに接続できるように、次の手順を実行します。
-```
+特定の MMC スナップインだけが接続できるようにするには、次のように実行します。
+
+```PowerShell
 Enable-NetFirewallRule -DisplayGroup "<rulegroup>"
 ```
 
-場所*rulegroup*接続するスナップインによって、次の 1 つです。
+ここで、 *rulegroup*は、接続するスナップインに応じて、次のいずれかになります。
 
 | MMC スナップイン                            | 規則グループ                                            |
-|----------------------------------------|-------------------------------------------------------|
+| ---------------------------------------- | ------------------------------------------------------- |
 | イベント ビューアー                           | リモート イベントのログ管理                           |
-| サービス                               | リモート サービス管理                             |
+| Services                               | リモート サービス管理                             |
 | 共有フォルダー                         | ファイルとプリンターの共有                              |
-| タスク スケジューラ                         | パフォーマンス ログとアラート、ファイルとプリンターの共有 |
+| タスク スケジューラ                         | パフォーマンスログと警告、ファイルとプリンターの共有 |
 | ディスクの管理                        | リモート ボリューム管理                              |
-| Windows ファイアウォールと高度なセキュリティ | Windows ファイアウォール リモート管理                    |
+| Windows ファイアウォールとセキュリティ強化 | Windows ファイアウォール リモート管理                    |
 
 
 > [!NOTE] 
-> MMC スナップインは、ファイアウォール経由で接続するための対応するルール グループにありません。 ただし、イベント ビューアー、サービス、または共有フォルダーの規則グループを有効にすると、他のほとんどのスナップインが接続できるようになります。 
+> 一部の MMC スナップインには、ファイアウォール経由での接続を許可する、対応する規則グループがありません。 ただし、イベント ビューアー、サービス、または共有フォルダーの規則グループを有効にすると、他のほとんどのスナップインが接続できるようになります。 
 >
 > さらに、スナップインの中には、次のように、Windows ファイアウォール経由で接続する前に追加の構成が必要なものがあります。
 >
 > - ディスクの管理 :最初に Server Core コンピューターで仮想ディスク サービス (VDS) を開始する必要があります。 また、MMC スナップインを実行しているコンピューターで、ディスク管理規則を正しく構成する必要もあります。
-> - IP セキュリティ モニター :最初にこのスナップインのリモート管理を有効にする必要があります。 コマンド プロンプトで、次のように入力します**Cscript \windows\system32\scregedit.wsf/im 1。**
+> - IP セキュリティ モニター :最初にこのスナップインのリモート管理を有効にする必要があります。 これを行うには、コマンドプロンプトで「 **Cscript \windows\system32\scregedit.wsf/im 1** 」と入力します。
 > - 信頼性とパフォーマンス :このスナップインは追加の構成を必要としませんが、このスナップインを使用して Server Core コンピューターを監視するときには、パフォーマンス データしか監視できません。 信頼性データは使用できません。
 
-## <a name="managing-with-remote-desktop-services"></a>リモート デスクトップ サービスの使用を管理します。
+## <a name="managing-with-remote-desktop-services"></a>リモートデスクトップサービスを使用した管理
 
-使用することができます[リモート デスクトップ](../../remote/remote-desktop-services/welcome-to-rds.md)リモート コンピューターから Server Core サーバーを管理します。
+リモート[デスクトップ](../../remote/remote-desktop-services/welcome-to-rds.md)を使用して、リモートコンピューターから server Core サーバーを管理できます。
 
-Server Core にアクセスする前に、次のコマンドを実行する必要があります。 
+Server Core にアクセスするには、次のコマンドを実行する必要があります。 
+
 ```
 cscript C:\Windows\System32\Scregedit.wsf /ar 0
 ```
+
 これにより、管理用リモート デスクトップ モードが接続を受け入れられるようになります。
 
-## <a name="add-hardware-and-manage-drivers-locally"></a>ハードウェアを追加し、ドライバーをローカルでの管理
+## <a name="add-hardware-and-manage-drivers-locally"></a>ハードウェアを追加してドライバーをローカルに管理する
 
-ハードウェアを Server Core サーバーを追加するには、新しいハードウェアをインストールするため、ハードウェア ベンダーの指示に従います。 
+Server Core サーバーにハードウェアを追加するには、ハードウェアベンダーが新しいハードウェアをインストールするための指示に従ってください。 
 
-ハードウェアがプラグ アンド プレイでない場合は、ドライバーを手動でインストールする必要があります。 サーバーで、一時的な場所にドライバー ファイルをコピーし、次のコマンドを実行します。
+ハードウェアがプラグアンドプレイでない場合は、ドライバーを手動でインストールする必要があります。 これを行うには、ドライバーファイルをサーバー上の一時的な場所にコピーしてから、次のコマンドを実行します。
 
 ```
 pnputil –i –a <driverinf>
 ```
 
-場所*driverinf*ドライバーの .inf ファイルのファイルの名前です。
+*Driverinf:* は、ドライバーの .inf ファイルのファイル名です。
 
 ダイアログが表示されたら、コンピューターを再起動します。
 
-どのようなドライバーがインストールされているを表示するには、次のコマンドを実行します。 
+インストールされているドライバーを確認するには、次のコマンドを実行します。 
 
 ```
 sc query type= driver
@@ -140,10 +143,10 @@ sc query type= driver
 > [!NOTE] 
 > コマンドを正常に完了するには、等号の後にスペースを入れる必要があります。
 
-デバイス ドライバーを無効にするには、次の手順を実行します。
+デバイスドライバーを無効にするには、次のように実行します。
 
 ```
 sc delete <service_name>
 ```
 
-場所*service_name*を実行したときに取得したサービスの名前を指定**sc クエリの種類 = ドライバー**します。
+ここで、 *service_name*は、 **sc query type = driver**を実行したときに入手したサービスの名前です。

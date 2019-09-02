@@ -9,27 +9,27 @@ ms.author: coreyp
 ms.localizationpriority: medium
 ms.date: 06/03/2019
 ms.openlocfilehash: e17a636c5bf06d194abd1bfe9b6d20970773e993
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66501404"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server バージョン 1709 の新機能
 
 >適用先:Windows Server (半期チャネル)
 
-<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;Windows では、最新の機能については、次を参照してください。 [Windows Server で新](whats-new-in-windows-server.md)します。 ここでは、Windows Server バージョン 1709 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。 [Windows Server バージョン 1709 に関するブログの記事](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)もご覧ください。
+<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;Windows の最新の機能については、「[Windows Server の新機能](whats-new-in-windows-server.md)」を参照してください。 ここでは、Windows Server バージョン 1709 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。 [Windows Server バージョン 1709 に関するブログの記事](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/)もご覧ください。
 
 > [!IMPORTANT]
-> Windows Server、バージョン 1709 は、2019 年 4 月 9 日の時点でのサポート対象外です。
+> Windows Server バージョン 1709 は、2019 年 4 月 9 日時点でサポート対象外です。
 
 
 ## <a name="new-cadence-of-releases"></a>新しいリリースのペース
 
 今回のリリース以降、Windows Server の機能更新プログラムを入手するためのオプションは 2 つになります。
-- **長期的なサービス チャネル (LTSC)** :これは、ビジネス 5 年間の主流サポートおよび 5 年間の拡張サポートを通常どおりです。 過去 20 年間サポートされてきた方法と同じ方法で、2 ～ 3 年ごとに次の LTSC リリースにアップグレードするオプションが提供されます。
-- **半期チャネル (SAC)** :これはソフトウェア アシュアランスの特典であり、運用環境では完全にサポートします。 違いは、サポートされる期間が 18 か月間で、6 か月ごとに新しいバージョンがリリースされる点です。
+- **長期的なサービス チャネル (LTSC)** : これは、通常どおり、5 年間のメインストリーム サポートと 5 年間の延長サポートによるビジネスです。 過去 20 年間サポートされてきた方法と同じ方法で、2 ～ 3 年ごとに次の LTSC リリースにアップグレードするオプションが提供されます。
+- **半期チャネル (SAC)** : これは、ソフトウェア アシュアランスの特典であり、実稼働環境で完全にサポートされます。 違いは、サポートされる期間が 18 か月間で、6 か月ごとに新しいバージョンがリリースされる点です。
 
 リリース チャネルについては、以下の表で説明しています。
 
@@ -40,7 +40,7 @@ ms.locfileid: "66501404"
 | 対象  | ソフトウェア アシュアランスまたは Azure (クラウドでホストされている場合)  | すべてのチャンネル |
 | 名称に関する規則  | Windows Server バージョン YYMM  | Windows Server YYYY |
 
-詳細については、次を参照してください。[サービス チャネルの比較](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview)します。
+詳細については、[サービス チャネルの比較](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview)に関するページを参照してください。
 
 ## <a name="application-containers-and-micro-services"></a>アプリケーションのコンテナーとマイクロサービス
 
@@ -58,7 +58,7 @@ Project Honolulu には、PC、Windows サーバー、フェールオーバー �
 
 ## <a name="compute"></a>計算
 
-**Nano コンテナーと Server Core コンテナー**:何よりもまず、このリリースは、アプリケーションのイノベーションを促進します。 Nano Server、つまりホストとしての Nano は推奨されなくなり、Nano コンテナー (コンテナー イメージとして実行される Nano) に置き換えられています。 
+**Nano コンテナーと Server Core コンテナー**: 何よりもまず、今回のリリースはアプリケーションの革新を推進しています。 Nano Server、つまりホストとしての Nano は推奨されなくなり、Nano コンテナー (コンテナー イメージとして実行される Nano) に置き換えられています。 
 
 コンテナーの詳細については、[コンテナー ネットワークの概要に関するページ](https://docs.microsoft.com/windows-server/networking/sdn/technologies/containers/container-networking-overview)をご覧ください。
 
@@ -90,25 +90,25 @@ Project Honolulu には、PC、Windows サーバー、フェールオーバー �
 
 ## <a name="storage"></a>ストレージ
 
-**記憶域レプリカ**:Windows Server 2016 で記憶域レプリカによって追加されたディザスター リカバリー保護を含めるように拡張ようになりました。
+**記憶域レプリカ**: Windows Server 2016 の記憶域レプリカによって追加されたディザスター リカバリーによる保護が拡張され、以下の機能が含まれるようになりました。
 - **テスト フェールオーバー**: 宛先の記憶域をマウントするオプションが、テスト フェールオーバー機能によって可能になりました。 レプリケートされた記憶域のスナップショットを、宛先ノードで、テストやバックアップの目的で、一時的にマウントすることができます。  詳細については、「[記憶域レプリカについてよく寄せられる質問](https://aka.ms/srfaq)」をご覧ください。 
-- **プロジェクト ホノルル サポート**:グラフィカルな管理サーバー間のレプリケーションのサポートは、プロジェクト ホノルルでご利用いただけます。 これによって、一般的な障害対策のワークロードを管理するために PowerShell を使用する必要がなくなります。
+- **Project Honolulu のサポート**: サーバー間のレプリケーションのグラフィカル管理が、Project Honolulu でサポートされるようになりました。 これによって、一般的な障害対策のワークロードを管理するために PowerShell を使用する必要がなくなります。
 
 **SMB**: 
-- **SMB1 とゲスト認証削除**:Windows Server、バージョン 1709 されなく SMB1 クライアントとサーバーの既定でインストールされます。 さらに、SMB2 以降のゲストとして認証する機能は、既定で無効になっています。 詳細については、[Windows 10 バージョン 1709 および Windows Server 1709 のバージョンで、SMBv1 が 既定でインストールされない問題に関するページ](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)をご覧ください。 
+- **SMB1 とゲスト認証の削除**: Windows Server バージョン 1709 では、SMB1 クライアントとサーバーが既定でインストールされなくなりました。 さらに、SMB2 以降のゲストとして認証する機能は、既定で無効になっています。 詳細については、[Windows 10 バージョン 1709 および Windows Server 1709 のバージョンで、SMBv1 が 既定でインストールされない問題に関するページ](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)をご覧ください。 
 
-- **SMB2/SMB3 セキュリティおよび互換性**:署名またはクライアントからの接続ごとに暗号化を必要とするほか、従来のアプリケーションの SMB2 + での各 oplock を無効にする機能などのセキュリティとアプリケーションの互換性のための追加のオプションが追加されました。 詳細については、SMBShare PowerShell モジュールのヘルプを確認してください。
+- **SMB2/SMB3 のセキュリティと互換性**: レガシ アプリケーションについて SMB2+ の oplock を無効にする機能や、クライアントからの接続ごとに署名や暗号化を要求する機能など、セキュリティやアプリケーションの互換性のための新しいオプションが追加されました。 詳細については、SMBShare PowerShell モジュールのヘルプを確認してください。
 
 **データ重複除去**: 
-- **データ重複除去を今すぐには、ReFS がサポートしている**:不要になった選択 ReFS の最新のファイル システムの長所とデータ重複除去間する必要があります: ReFS を有効にできる任意の場所にデータ重複除去が有効にできますが、ようになりました。 ReFS によって記憶域の効率が 95% 以上向上します。
-- **重複除去されたボリュームに最適化されたイングレス/エグレスのデータポート API**:開発者では、データ重複除去ボリューム、サーバー間でデータを移動するには、効率的にデータを格納する方法の詳細については、クラスターを効率的にサポート技術情報の今すぐ利用できます。
+- **データ重複除去で ReFS をサポート**: ReFS による最新ファイル システムの長所とデータ重複除去のいずれかを選択する必要がなくなりました。ReFS を有効にしているときにいつでもデータ重複除去を有効にできるようになりました。 ReFS によって記憶域の効率が 95% 以上向上します。
+- **重複除去されたボリュームへの最適化された送受信のための DataPort API**: 開発者は、データ重複除去によって効率的にデータを保存する方法に関する知識を活用して、ボリューム、サーバー、クラスター間で効率的にデータを移動することができます。
 
 ## <a name="remote-desktop-services-rds"></a>リモート デスクトップ サービス (RDS)
 
 **RDS が Azure AD と統合され**、条件付きアクセス ポリシー、多要素認証、Azure AD を使用した他の SaaS アプリとの統合認証などを活用できます。 詳細については、[RDS 展開と Azure AD Domain Services との統合に関するページ](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-azure-adds)をご覧ください。
 
 >[!TIP]
->RDS に送信されるその他の魅力的な変更で紹介するには、次を参照してください。[リモート デスクトップ サービス。今後の技術革新 (&)、更新プログラム](https://blogs.technet.microsoft.com/enterprisemobility/2017/09/20/first-look-at-updates-coming-to-remote-desktop-services/)
+>RDS で予定されている他の変更点の概要については、[リモート デスクトップ サービスの更新と今後予定されている新機能](https://blogs.technet.microsoft.com/enterprisemobility/2017/09/20/first-look-at-updates-coming-to-remote-desktop-services/)に関するページを参照してください。
 
 ## <a name="networking"></a>ネットワーク
 
@@ -116,35 +116,35 @@ Project Honolulu には、PC、Windows サーバー、フェールオーバー �
 
 **Docker 用の新機能**を利用できます。 詳細については、[Windows Server 1709 での Docker 用の新機能に関する記事](https://blog.docker.com/2017/09/docker-windows-server-1709/)を参照してください。
 
-**Windows Kubernetes 用の Linux と同等のネットワークの**:Windows、Linux に従ったネットワー キングの観点から。 お客様は、OS が混在する Kubernetes クラスターを、Azure、オンプレミス、サード パーティ製クラウド スタックなどのあらゆる環境で展開でき、回避策やスイッチ拡張機能を使用することなく、Linux でサポートされているものと同じネットワーク プリミティブおよびトポロジを活用できます。
+**Kubernetes 用 Linux と同等の Windows ネットワーク**: Windows は、ネットワークの観点で Linux と同等になりました。 お客様は、OS が混在する Kubernetes クラスターを、Azure、オンプレミス、サード パーティ製クラウド スタックなどのあらゆる環境で展開でき、回避策やスイッチ拡張機能を使用することなく、Linux でサポートされているものと同じネットワーク プリミティブおよびトポロジを活用できます。
 
-**コア ネットワーク スタック**:コア ネットワーク スタックのいくつかの機能が向上します。 これらの機能の詳細については、[Windows 10 の Creators Update の中心的なネットワーク スタック機能に関するページ](https://blogs.technet.microsoft.com/networking/2017/07/13/core-network-stack-features-in-the-creators-update-for-windows-10/)をご覧ください。
-- **TCP 高速 Open (TFO)** :TCP 3 ウェイ ハンドシェイク プロセスを最適化するために、テスト フェールオーバーのサポートが追加されました。 TFO は、標準的な 3 方向のハンドシェイクを使用して最初の接続でセキュリティで保護された TFO Cookie を確立します。  同じサーバーへの以降の接続では、ラウンド トリップ時間ゼロで接続するために、3 方向のハンドシェイクではなく、TFO Cookie を使用します。
-- **三次**:3 次の Windows の実験用のネイティブ実装、TCP の輻輳のコントロールのアルゴリズムは、使用可能です。 次のコマンドはそれぞれ CUBIC を有効または無効にします。
+**コア ネットワーク スタック**: コア ネットワーク スタックのいくつかの機能が強化されています。 これらの機能の詳細については、[Windows 10 の Creators Update の中心的なネットワーク スタック機能に関するページ](https://blogs.technet.microsoft.com/networking/2017/07/13/core-network-stack-features-in-the-creators-update-for-windows-10/)をご覧ください。
+- **TCP Fast Open (TFO)** : TCP の 3 方向ハンドシェイク プロセスを最適化するために TFO のサポートが追加されました。 TFO は、標準的な 3 方向のハンドシェイクを使用して最初の接続でセキュリティで保護された TFO Cookie を確立します。  同じサーバーへの以降の接続では、ラウンド トリップ時間ゼロで接続するために、3 方向のハンドシェイクではなく、TFO Cookie を使用します。
+- **CUBIC**: TCP の輻輳制御アルゴリズムである CUBIC の、実験用の Windows ネイティブ実装を使用できます。 次のコマンドはそれぞれ CUBIC を有効または無効にします。
 
     ```
     netsh int tcp set supplemental template=internet congestionprovider=cubic
     netsh int tcp set supplemental template=internet congestionprovider=compound
     ```
 
-- **受信ウィンドウ自動調整**:TCP の自動調整ロジックは、TCP 接続の「受信ウィンドウ」パラメーターを計算します。  高速で遅延の大きい接続で良好なパフォーマンス特性を実現するには、このアルゴリズムが必要です。  このリリースでは、特定の接続の最大受信ウィンドウの値を、ステップ関数を使用して収束させるようにアルゴリズムが変更されています。
-- **TCP stats API**:新しい API が導入された SIO_TCP_INFO と呼ばれます。  SIO_TCP_INFO によって、開発者はソケット オプションを使用して個々 の TCP 接続に関する豊富な情報を照会できます。
-- **IPv6**:このリリースでは IPv6 では複数の機能強化があります。
-  - **RFC 6106**サポートします。RFC 6106 ルーター アドバタイズ (RAs) での DNS 構成を可能にします。 次のコマンドを使用して、RFC 6106 のサポートを有効または無効にすることができます。
+- **受信ウィンドウの自動調整**: TCP の自動調整ロジックは TCP 接続 "受信ウィンドウ" パラメーターを計算します。  高速で遅延の大きい接続で良好なパフォーマンス特性を実現するには、このアルゴリズムが必要です。  このリリースでは、特定の接続の最大受信ウィンドウの値を、ステップ関数を使用して収束させるようにアルゴリズムが変更されています。
+- **TCP 統計 API**: SIO_TCP_INFO と呼ばれる新しい API が導入されています。  SIO_TCP_INFO によって、開発者はソケット オプションを使用して個々 の TCP 接続に関する豊富な情報を照会できます。
+- **IPv6**: このリリースでは、IPv6 の複数の機能が強化されています。
+  - **RFC 6106** のサポート: ルーター アドバタイズ (RA) を通じて DNS を構成できるようにする RFC 6106。 次のコマンドを使用して、RFC 6106 のサポートを有効または無効にすることができます。
 
     ```
     netsh int ipv6 set interface <ifindex> rabaseddnsconfig=<enabled | disabled>
     ```
 
-  - **ラベルをフロー**:このフィールドに、5 タプル (ソース IP、Dst IP、発信元ポート、Dst ポート) のハッシュの設定を ipv6 パケットがある TCP および UDP 送信 Creators Update 以降します。  これにより、IPv6 のみのデータ センターでの負荷分散またはフロー分類がより効率的に実行されます。 フローラベルを有効にするには:
+  - **フロー ラベル**: Creators Update 以降、IPv6 経由の発信 TCP および UDP パケットでは、このフィールドが 5 タプル (接続元 IP、接続先 IP、接続元ポート、接続先ポート) のハッシュに設定されます。  これにより、IPv6 のみのデータ センターでの負荷分散またはフロー分類がより効率的に実行されます。 フローラベルを有効にするには:
 
     ```
     netsh int ipv6 set flowlabel=[disabled|enabled] (enabled by default)
     netsh int ipv6 set global flowlabel=<enabled | disabled>
     ```
 
-  - **ISATAP と 6to4**:一歩将来非推奨として Creators Update が既定で無効になっています。 これらのテクノロジがあります。
-- **配信不能のゲートウェイの検出 (DGD)** :DGD アルゴリズムに自動的に遷移接続経由で別のゲートウェイに現在のゲートウェイに到達できないときにします。 このリリースでは、ネットワーク環境を定期的に再プローブするようにアルゴリズムが強化されています。
+  - **ISATAP と 6to4**: 将来の使用廃止に向けての一歩として、Creators Update ではこれらのテクノロジは既定で無効になっています。
+- **停止しているゲートウェイの検出 (DGD)** : DGD アルゴリズムは、現在のゲートウェイにアクセスできないときに、自動的に別のゲートウェイに接続を移行します。 このリリースでは、ネットワーク環境を定期的に再プローブするようにアルゴリズムが強化されています。
 - [Test-NetConnection](https://technet.microsoft.com/itpro/powershell/windows/nettcpip/test-netconnection) は、さまざまなネットワークの診断を実行する Windows PowerShell の組み込みのコマンドレットです。  このリリースでは、接続元アドレスの選択だけでなく、ルートの選択に関する詳細情報を提供するように、コマンドレットが強化されました。
 
 **ソフトウェア定義ネットワーク**

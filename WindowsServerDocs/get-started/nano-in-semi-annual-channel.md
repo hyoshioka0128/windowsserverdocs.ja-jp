@@ -12,19 +12,19 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: a270334d-42a7-46ff-8eed-d8656a276544
 ms.openlocfilehash: c12ca84826a92fa045eb84b55e7406392161280b
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66452801"
 ---
 # <a name="changes-to-nano-server-in-windows-server-semi-annual-channel"></a>Windows Server 半期チャネルで Nano Server に加えられる変更
 
 >適用先:Windows Server 半期チャネル
 
-Nano Server を既に実行している場合、[ウィンドウ Server 半期チャネル](../get-started-19/servicing-channels-19.md)サービス モデルはなじみのある、Current Branch for Business (CBB) モデルで処理されることが以前から。 Windows Server 半期チャネルでは、同じモデルに対して新しい名です。 このモデルでは、Nano Server の機能更新リリースが年に 2 回～ 3 回公開される予定です。
+[Window Server 半期チャネル](../get-started-19/servicing-channels-19.md) サービス モデルは以前に Current Branch for Business (CBB) モデルで提供されているため、Nano Server を実行しているお客様には既に使用されています。 Windows Server 半期チャネルは、モデル名が新しくなりましたが、内容は同じです。 このモデルでは、Nano Server の機能更新リリースが年に 2 回～ 3 回公開される予定です。
 
-ただし、以降で Windows Server、バージョン 1803、Nano Server としてのみ使用可能な**コンテナー ベース OS イメージ**します。 このイメージは、Windows Server に含まれる Server Core インストールをはじめとするコンテナー ホスト内で、コンテナーとして実行する必要があります。 このリリースの Nano Server を使用して実行されるコンテナーは、これまでのリリースと次のような違いがあります。
+ただし、Windows Server バージョン 1803 以降、Nano Server は、**コンテナーの基本 OS イメージ**としてのみ利用可能です。 このイメージは、Windows Server に含まれる Server Core インストールをはじめとするコンテナー ホスト内で、コンテナーとして実行する必要があります。 このリリースの Nano Server を使用して実行されるコンテナーは、これまでのリリースと次のような違いがあります。
 
 - Nano Server は、.NET Core アプリケーションに最適化されています。
 - Nano Server は、Windows Server 2016 バージョンよりもさらに小型です。
@@ -35,5 +35,5 @@ Nano Server を既に実行している場合、[ウィンドウ Server 半期�
 
 ## <a name="related-topics"></a>関連トピック
 
-- [Windows コンテナーのドキュメント](http://aka.ms/windowscontainers)
-- [ウィンドウのサーバーの場合は半期チャネルの概要](../get-started-19/servicing-channels-19.md)
+- [Windows コンテナーに関するドキュメント](http://aka.ms/windowscontainers)
+- [Windows Server の半期チャネルの概要](../get-started-19/servicing-channels-19.md)

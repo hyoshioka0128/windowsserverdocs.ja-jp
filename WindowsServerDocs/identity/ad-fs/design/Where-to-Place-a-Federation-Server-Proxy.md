@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 9cc40920d366c973ace06a0b6d438a1c2d84b03e
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 03792d7ae5fec3c209cf1abfaa7af3fdfdb75f08
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190512"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792271"
 ---
 # <a name="where-to-place-a-federation-server-proxy"></a>フェデレーション サーバー プロキシを配置する場所
 
@@ -34,7 +34,7 @@ Active Directory フェデレーション サービスを配置する\(AD FS\)�
   
 サーバー公開規則によって、サーバー公開の動作方法が決まります。基本的に、ISA Server コンピューターを通過するすべての受信要求および送信要求をフィルター処理します。 サーバー公開規則は、ISA Server コンピューターの背後にある適切なサーバーに受信クライアント要求を割り当てます。 サーバーを公開する ISA Server を構成する方法については、次を参照してください。[セキュリティで保護された Web 公開ルールを作成](https://go.microsoft.com/fwlink/?LinkId=75182)です。  
   
-AD FS のフェデレーションの世界でこれらのクライアント要求は通常されます、特定の url では、たとえば、フェデレーション サーバー識別子 URL など http://fs.fabrikam.comします。 これらのクライアント要求があるために、インターネットでは、インターネットから\-の境界ネットワークにデプロイされている各フェデレーション サーバー プロキシ、フェデレーション サーバー識別子 URL を発行するファイアウォール サーバーに接続するを構成する必要があります。  
+AD FS のフェデレーションの世界でこれらのクライアント要求は通常されます、特定の url では、たとえば、http などのフェデレーション サーバー識別子 URL:\//fs.fabrikam.com します。 これらのクライアント要求があるために、インターネットでは、インターネットから\-の境界ネットワークにデプロイされている各フェデレーション サーバー プロキシ、フェデレーション サーバー識別子 URL を発行するファイアウォール サーバーに接続するを構成する必要があります。  
   
 ### <a name="configuring-isa-server-to-allow-ssl"></a>SSL を許可する ISA Server の構成  
 セキュリティで保護された AD FS の通信を容易にするには、Secure Sockets Layer を許可する ISA Server を構成する必要があります\(SSL\)次の間の通信。  

@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: e17d60126125fcd4b10373133dd61ca0db030290
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59836073"
@@ -32,7 +32,7 @@ ms.locfileid: "59836073"
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 新機能については、最新バージョンについてを参照してください。 [Windows Server 2012 でのリモート デスクトップ サービスでどのような s の新しい](https://technet.microsoft.com/library/hh831527)、Windows Server TechNet ライブラリです。
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの [Windows Server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527) を参照してください。
 
 ## <a name="syntax"></a>構文
 ```
@@ -44,12 +44,12 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 ## <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-|/update|プロファイル パス情報を更新 <*UserName*> ドメイン <*DomainName*> を <*%profilepath%*>。|
+|/update|プロファイル パス情報を更新 <*UserName*> ドメイン <*DomainName*> を < *%profilepath%* >。|
 |/domain:\<DomainName >|操作を適用するドメインの名前を指定します。|
 |/local|ローカル ユーザー アカウントのみに適用します。|
 |/profile:\<パス >|リモート デスクトップ サービスの拡張機能では、ローカル ユーザーとグループと active directory ユーザーとコンピューター で表示されるプロファイルのパスを指定します。|
 |\<ユーザー名 >|更新またはサーバー プロファイル パスを照会するユーザーの名前を指定します。|
-|/copy|ユーザーの構成情報をコピー \< *SourceUser*> に\< *DestinationUser*> のプロファイル パス情報を更新および\< *DestinationUser*> に\< *%profilepath%*>。 両方\< *SourceUser*> と\< *DestinationUser*> か、ローカルであるか、ドメインになければなりません\< *DomainName*>.|
+|/copy|ユーザーの構成情報をコピー \< *SourceUser*> に\< *DestinationUser*> のプロファイル パス情報を更新および\< *DestinationUser*> に\< *%profilepath%* >。 両方\< *SourceUser*> と\< *DestinationUser*> か、ローカルであるか、ドメインになければなりません\< *DomainName*>.|
 |\<Src_usr>|ユーザーの構成情報をコピーするユーザーの名前を指定します。|
 |\<Dest_usr >|ユーザーの構成情報をコピーするユーザーの名前を指定します。|
 |/q|サーバーのプロファイル パスをクエリするユーザーの現在のプロファイル パスを表示します。|
@@ -70,4 +70,4 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 
 #### <a name="additional-references"></a>その他の参照情報
 [コマンドライン構文キー](command-line-syntax-key.md)
-[リモート デスクトップ サービスと #40 です。ターミナル サービスと #41 です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+[リモート デスクトップ サービス &#40;ターミナル サービス&#41; コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)

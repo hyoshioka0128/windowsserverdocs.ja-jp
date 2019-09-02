@@ -1,7 +1,7 @@
 ---
-title: 仮想マシン自動ライセンス認証
+title: 仮想マシンの自動ライセンス認証
 TOCTitle: Automatic VM Activation
-description: Windows Server 2019、Windows Server 2016、および Windows Server 2012 R2 での Vm をアクティブ化する方法
+description: Windows Server 2019、Windows Server 2016、および Windows Server 2012 R2 で VM のライセンス認証を行う方法
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,15 +13,15 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.openlocfilehash: 18e20433050371dc02782fb8630a885e53ae31ad
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/24/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "63688702"
 ---
-# <a name="automatic-virtual-machine-activation"></a>仮想マシン自動ライセンス認証
+# <a name="automatic-virtual-machine-activation"></a>仮想マシンの自動ライセンス認証
 
-> 適用対象:Windows Server 2019、Windows Server 半期チャネルでは、Windows Server 2016、Windows Server 2012 R2
+> 適用対象:Windows Server 2019、Windows Server 半期チャネル、Windows Server 2016、Windows Server 2012 R2
 
 仮想マシンの自動ライセンス認証 (AVMA) は、購入証明メカニズムとして機能し、Windows 製品が製品使用権利およびマイクロソフト ソフトウェア ライセンス条項に従って使用されていることを保証します。
 
@@ -45,25 +45,25 @@ Service Provider License Agreement (SPLA) パートナーやその他のホス�
 
 ## <a name="system-requirements"></a>システム要件
 
-AVMA には、Windows Server 2019 Datacenter、Windows Server 2016 Datacenter または Windows Server 2012 R2 を実行している Microsoft の仮想化サーバーが必要です。 
+AVMA には、Windows Server 2019 Datacenter、Windows Server 2016 Datacenter、または Windows Server 2012 R2 を実行している Microsoft の仮想化サーバーが必要です。 
 
-別のバージョンのホストをアクティブ化するゲストを次に示します。
+以下に、異なるバージョンのホストでライセンス認証を行えるゲストを示します。
 
 |サーバー ホストのバージョン|Windows Server 2019|Windows Server 2016|Windows Server 2012 R2|
 |-|-|-|-|
-|Windows Server 2019|x|X|x|
-|Windows Server 2016| |x|x|
-|Windows Server 2012 R2| ||x|
+|Windows Server 2019|X|X|X|
+|Windows Server 2016| |X|X|
+|Windows Server 2012 R2| ||X|
 
-アクティブ化 (Datacenter、Standard、または Essentials) のすべてのエディションがこれらに注意してください。
+これらはすべてのエディション (Datacenter、Standard、または Essentials) のライセンス認証を行うことに注意してください。
 
-このツールは、他の仮想化サーバー テクノロジと機能しません。
+このツールは、他の仮想化サーバー テクノロジでは機能しません。
 
 ## <a name="how-to-implement-avma"></a>AVMA を実装する方法
 
-1.  Windows Server Datacenter の仮想化サーバーにインストールし、Microsoft HYPER-V Server ロールを構成します。 詳細については、次を参照してください。 [Hyper-v サーバーのインストール](../virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server.md)します。
+1.  Windows Server Datacenter の仮想化サーバーで、Microsoft Hyper-V Server の役割をインストールして構成します。 詳細については、[Hyper-V Server のインストール](../virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server.md)に関するページを参照してください。
 
-2.  [仮想マシンを作成する](../virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v.md)し、サポートされているサーバーのオペレーティング システムをインストールします。
+2.  [仮想マシンを作成](../virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v.md)し、そこに、サポートされているサーバー オペレーティング システムをインストールします。
 
 3.  仮想マシンに AVMA キーをインストールします。 管理者特権のコマンド プロンプトで、次のコマンドを実行します。
     
@@ -80,35 +80,35 @@ AVMA には、Windows Server 2019 Datacenter、Windows Server 2016 Datacenter �
 
 ## <a name="avma-keys"></a>AVMA キー
 
-次の AVMA キーは、Windows Server 2019 で使用できます。
+Windows Server 2019 には以下の AVMA キーを使用できます。
 
 |エディション|   AVMA キー|
 |-|-|
 |Datacenter|    H3RNG-8C32Q-Q8FRX-6TDXV-WMBMW|
-|Standard|  TNK62-RXVTB-4P47B-2D623-4GF74|
+|標準|  TNK62-RXVTB-4P47B-2D623-4GF74|
 |Essentials|    2CTP7-NHT64-BP62M-FV6GG-HFV28|
  
-次の AVMA キーは、Windows Server バージョンは 1809 で使用できます。
+Windows Server バージョン 1809 には以下の AVMA キーを使用できます。
 
 |エディション|   AVMA キー|
 |-|-|
 |Datacenter|    H3RNG-8C32Q-Q8FRX-6TDXV-WMBMW|
-|Standard|  TNK62-RXVTB-4P47B-2D623-4GF74|
+|標準|  TNK62-RXVTB-4P47B-2D623-4GF74|
 
-次の AVMA キーは、Windows Server、バージョン 1803 および 1709 で使用できます。
-
-|エディション|AVMA キー|
-|-|-|
-|Datacenter|TMJ3Y-NTRTM-FJYXT-T22BY-CWG3J|
-|Standard|C3RCX-M6NRP-6CXC9-TW2F2-4RHYD|
-
-
-次の AVMA キーは、Windows Server 2016 で使用できます。
+Windows Server バージョン 1803 および 1709 には以下の AVMA キーを使用できます。
 
 |エディション|AVMA キー|
 |-|-|
 |Datacenter|TMJ3Y-NTRTM-FJYXT-T22BY-CWG3J|
-|Standard|C3RCX-M6NRP-6CXC9-TW2F2-4RHYD|
+|標準|C3RCX-M6NRP-6CXC9-TW2F2-4RHYD|
+
+
+Windows Server 2016 には以下の AVMA キーを使用できます。
+
+|エディション|AVMA キー|
+|-|-|
+|Datacenter|TMJ3Y-NTRTM-FJYXT-T22BY-CWG3J|
+|標準|C3RCX-M6NRP-6CXC9-TW2F2-4RHYD|
 |Essentials|B4YNW-62DX9-W8V6M-82649-MHBKQ|
 
 
@@ -117,7 +117,7 @@ Windows Server 2012 R2 では、次の AVMA キーを使用できます。
 |エディション|AVMA キー|
 |-|-|
 |Datacenter|Y4TGP-NPTV9-HTC2H-7MGQ3-DV4TW|
-|Standard|DBGBW-NPF86-BJVTX-K3WKJ-MTB6V|
+|標準|DBGBW-NPF86-BJVTX-K3WKJ-MTB6V|
 |Essentials|K2XGM-NMBT3-2R6Q8-WF2FK-P36R2|
 
 ## <a name="reporting-and-tracking"></a>レポートと追跡
@@ -134,7 +134,7 @@ Windows Server 2012 R2 では、次の AVMA キーを使用できます。
 
   - RDP アドレス
 
-この情報を取得する方法の詳細については、次を参照してください。 [Hyper-v スクリプト。KVP guestintrinsicexchangeitems](http://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx)します。
+この情報を取得する方法について詳しくは、[Hyper-V スクリプトでのKVP GuestIntrinsicExchangeItems の参照](http://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx)に関するページを参照してください。
 
 
 > [!NOTE]
