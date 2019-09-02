@@ -64,9 +64,35 @@
 ### [Windows Server の PowerShell を使用して RDS タイトル "Work Resources" をカスタマイズする](rds-work-resources.md)
 ### [パフォーマンス カウンターでアプリのパフォーマンスに関する問題を診断する](rds-rdsh-performance-counters.md)
 
-## [その他のリモート デスクトップ サポート](rds-get-support.md)
-## [リモート デスクトップ クライアント](clients/remote-desktop-clients.md)
-### リモート デスクトップの既知の問題
+## リモート デスクトップ リソースへのアクセス
+### [利用可能な リモート デスクトップ クライアント](clients/remote-desktop-clients.md)
+### Microsoft Store クライアント
+#### [Microsoft Store クライアントの概要](clients/windows.md)
+#### [Microsoft Store クライアントの新機能](clients/windows-whatsnew.md)
+### Android クライアント
+#### [Android クライアントの概要](clients/remote-desktop-android.md)
+#### [Android クライアントの新機能](clients/android-whatsnew.md)
+### iOS クライアント
+#### [iOS クライアントの概要](clients/remote-desktop-ios.md)
+#### [iOS クライアントの新機能](clients/ios-whatsnew.md)
+### macOS クライアント
+#### [macOS クライアントの概要](clients/remote-desktop-mac.md)
+#### [macOS クライアントの新機能](clients/mac-whatsnew.md)
+### Web クライアント
+#### [Web クライアントの概要](clients/remote-desktop-web-client.md)
+#### [Web クライアントの新機能](clients/web-client-whatsnew.md)
+### リモート デスクトップ用の PC の設定
+#### [サポートされる PC](clients/remote-desktop-supported-config.md)
+#### [リモート デスクトップが PC にアクセスできるようにする](clients/remote-desktop-allow-access.md)
+#### [ネットワーク外部から PC へのアクセスを許可する](clients/remote-desktop-allow-outside-access.md)
+#### [PC の RD リスニング ポートを変更する](clients/change-listening-port.md)
+### 詳細情報
+#### [お客様に最適なクライアント](clients/remote-desktop-app-compare.md)
+#### [リモート デスクトップ (RDP) ファイルの設定](clients/rdp-files.md)
+#### [リモート デスクトップの URI のスキーマ](clients/remote-desktop-uri.md)
+#### [リモート デスクトップ クライアントに関する FAQ](clients/remote-desktop-client-faq.md)
+#### [管理対象アプリとデスクトップのプライバシー設定](clients/remote-privacy-settings.md)
+### 既知の問題
 #### [リモート デスクトップ接続の一般的なトラブルシューティング](troubleshoot/rdp-error-general-troubleshooting.md)
 #### [クライアントが接続できず、"クラスが登録されていません" というエラーが発生する](troubleshoot/rdp-error-class-not-registered.md)
 #### [クライアントは接続できず、"使用可能なライセンスがありません" というエラーが表示される](troubleshoot/rdp-error-no-licenses-available.md)
@@ -75,29 +101,5 @@
 #### [リモート デスクトップ クライアントが切断され、同じセッションに再接続できない](troubleshoot/rdp-client-disconnects-cannot-reconnect-same-session.md)
 #### [リモート ラップトップがワイヤレス ネットワークから切断される](troubleshoot/remote-laptop-disconnects-wireless-network.md)
 #### [リモート デスクトップ接続時のパフォーマンスの低下またはアプリケーションの問題](troubleshoot/poor-performance-or-application-problems.md)
-### 一般的な情報
-#### [お客様に最適なクライアント](clients/remote-desktop-app-compare.md)
-#### [リモート デスクトップ (RDP) ファイルの設定](clients/rdp-files.md)
-#### [リモート デスクトップの URI のスキーマ](clients/remote-desktop-uri.md)
-#### [リモート デスクトップ クライアントに関する FAQ](clients/remote-desktop-client-faq.md)
-#### [管理対象アプリとデスクトップのプライバシー設定](clients/remote-privacy-settings.md)
-### Windows 用のリモート デスクトップ クライアント
-#### [作業の開始](clients/windows.md)
-#### [Windows クライアントの新機能](clients/windows-whatsnew.md)
-### Android 用のリモート デスクトップ クライアント
-#### [作業の開始](clients/remote-desktop-android.md)
-#### [Android クライアントの新機能](clients/android-whatsnew.md)
-### IOS 用のリモート デスクトップ クライアント
-#### [作業の開始](clients/remote-desktop-ios.md)
-#### [iOS クライアントの新機能](clients/ios-whatsnew.md)
-### Mac 用のリモート デスクトップ クライアント
-#### [作業の開始](clients/remote-desktop-mac.md)
-#### [MacOS クライアントの新機能](clients/mac-whatsnew.md)
-### リモート デスクトップ Web クライアント
-#### [リモート デスクトップ Web クライアントへのアクセス](clients/remote-desktop-web-client.md)
-#### [Web クライアントの新機能](clients/web-client-whatsnew.md)
-### リモート デスクトップ用の PC の設定
-#### [サポートされる PC](clients/remote-desktop-supported-config.md)
-#### [リモート デスクトップが PC にアクセスできるようにする](clients/remote-desktop-allow-access.md)
-#### [ネットワーク外部から PC へのアクセスを許可する](clients/remote-desktop-allow-outside-access.md)
-#### [PC の RD リスニング ポートを変更する](clients/change-listening-port.md)
+
+## [その他のリソース](rds-get-support.md)
