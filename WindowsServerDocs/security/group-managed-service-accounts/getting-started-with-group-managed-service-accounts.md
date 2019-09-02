@@ -157,7 +157,7 @@ GMSA を作成できるのは、フォレストのスキーマが Windows Server
 
     |パラメーター|String|例|
     |-------|-----|------|
-    |名前|アカウントの名前|ITFarm1|
+    |Name|アカウントの名前|ITFarm1|
     |DNSHostName|サービスの DNS ホスト名|ITFarm1.contoso.com|
     |KerberosEncryptionType|ホスト サーバーによってサポートされる暗号化の種類|RC4、AES128、AES256|
     |ManagedPasswordIntervalInDays|日単位のパスワード変更間隔 (指定がなければ既定では 30 日)|90|
@@ -189,7 +189,7 @@ GMSA を作成できるのは、フォレストのスキーマが Windows Server
 
     |パラメーター|String|例|
     |-------|-----|------|
-    |名前|アカウントの名前|ITFarm1|
+    |Name|アカウントの名前|ITFarm1|
     |ManagedPasswordIntervalInDays|日単位のパスワード変更間隔 (指定がなければ既定では 30 日)|75|
     |PrincipalsAllowedToRetrieveManagedPassword|メンバー ホストのコンピューター アカウントまたはメンバー ホストが属するセキュリティ グループ|ITFarmHosts|
 
@@ -255,7 +255,7 @@ gMSA をサポートするサービスが他に存在する場合があります
 
 |パラメーター|String|例|
 |-------|-----|------|
-|名前|アカウントの名前|ITFarm1|
+|Name|アカウントの名前|ITFarm1|
 |PrincipalsAllowedToRetrieveManagedPassword|メンバー ホストのコンピューター アカウントまたはメンバー ホストが属するセキュリティ グループ|Host1、Host2、Host3|
 
 **例**
@@ -315,7 +315,7 @@ Windows PowerShell 用の Active Directory モジュールを開き、Set-ADServ
 
 |パラメーター|String|例|
 |-------|-----|------|
-|名前|アカウントの名前|ITFarm1|
+|Name|アカウントの名前|ITFarm1|
 |PrincipalsAllowedToRetrieveManagedPassword|メンバー ホストのコンピューター アカウントまたはメンバー ホストが属するセキュリティ グループ|Host1、Host3|
 
 **例**
@@ -343,7 +343,7 @@ Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
 
 2.  Windows PowerShell Active Directory モジュールのコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します。
 
-    **アンインストール-adserviceaccount < ADServiceAccount >**
+    **Uninstall-ADServiceAccount < ADServiceAccount >**
 
     **例**
 
