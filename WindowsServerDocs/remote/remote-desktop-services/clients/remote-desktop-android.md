@@ -1,5 +1,5 @@
 ---
-title: Android でのリモート デスクトップを使ってみる
+title: Android クライアントの概要
 description: Android 用のリモート デスクトップ クライアントの基本設定手順。
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,18 +12,18 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 07/24/2018
+ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b4b188eb8148b2f4e5c6672b07884af8fdcd0c60
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ccc96013efb71a2403f9be2df03461eba5ff1fc1
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66446741"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70151018"
 ---
-# <a name="get-started-with-remote-desktop-on-android"></a>Android でのリモート デスクトップを使ってみる
+# <a name="get-started-with-the-android-client"></a>Android クライアントの概要
 
->適用対象:Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
+>適用先:Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
 Android 用のリモート デスクトップ Android デバイスから直接 Windows のアプリおよびデスクトップを使用することができます。
 
@@ -193,7 +193,7 @@ Android クライアントで次のグローバル設定を指定できます。
 | マウス ポインター | ズーム                 | 2 本の指を使用し、ピンチ ズーム インまたはズーム アウトする分解本の指を移動します。 |
 | マウス ポインター | 左クリックします。           | 1 本指でタップ                                                          |
 | マウス ポインター | 左クリックしておよびドラッグ  | 1 本の指ダブルタップを押したままをドラッグし、                               |
-| マウス ポインター | 右クリック          | 2 本指でタップ                                                          |
+| マウス ポインター | 右クリックします。          | 2 本指でタップ                                                          |
 | マウス ポインター | 右クリックし、ドラッグ | 2 本の指ダブルタップを押したままをドラッグし、                               |
 | マウス ポインター | マウス ホイール          | 2 本の指をタップして、保持を上下にドラッグ                           |
 

@@ -1,21 +1,21 @@
 ---
-title: リモート デスクトップ Web クライアントへのアクセス
+title: Web クライアントの概要
 description: リモート デスクトップ Web クライアントにサインインする方法について説明します。
 ms.prod: windows-server-threshold
 ms.technology: remote-desktop-services
 ms.author: helohr
-ms.date: 07/20/2018
+ms.date: 08/27/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: f4433ad592219d6ed15b28fd0514790b078525fd
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 11e68821fb095617cea19ee83c057d247a909604
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743837"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70150973"
 ---
-# <a name="access-the-remote-desktop-web-client"></a>リモート デスクトップ Web クライアントへのアクセス
+# <a name="get-started-with-the-web-client"></a>Web クライアントの概要
 
 リモート デスクトップ Web クライアントでは、互換性のある Web ブラウザーを使用して、管理者によって公開されている組織のリモート リソース (アプリとデスクトップ) にアクセスできます。どこにいても、ローカル PC を使用するようにリモートのアプリおよびデスクトップを操作でき、別のデスクトップ PC に切り替える必要はありません。 管理者がリモート リソースを設定すれば、ご自身のドメイン、ユーザー名、パスワード、管理者から送信された URL、サポートされる Web ブラウザーを指定するだけで、問題なく進めることができます。
 

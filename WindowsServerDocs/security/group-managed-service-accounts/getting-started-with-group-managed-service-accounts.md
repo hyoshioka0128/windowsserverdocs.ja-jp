@@ -343,7 +343,7 @@ Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
 
 2.  Windows PowerShell Active Directory モジュールのコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します。
 
-    **アンインストール-adserviceaccount < ADServiceAccount >**
+    **Uninstall-ADServiceAccount < ADServiceAccount >**
 
     **例**
 

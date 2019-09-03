@@ -1,5 +1,5 @@
 ---
-title: Mac でリモート デスクトップを使ってみる
+title: macOS クライアントの概要
 description: Mac 用のリモート デスクトップ クライアントをセットアップする方法について説明する
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,16 +12,16 @@ ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 10/09/2018
+ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 17df3ca3b88404a2775790d7a4a8206b7aa5befa
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 8836ab500e97b68efbcdd0cd1ca5bcbe39d79334
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546348"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70150923"
 ---
-# <a name="get-started-with-remote-desktop-on-mac"></a>Mac でリモート デスクトップを使ってみる
+# <a name="get-started-with-the-macos-client"></a>macOS クライアントの概要
 
 >適用先:Windows 10、Windows 8.1、Windows Server 2012 R2、Windows Server 2016
 
@@ -68,7 +68,7 @@ HockeyApp 上のプレビュー チャネルで新機能をテストしていま
    - リモート セッションにローカル フォルダーをリダイレクトする
    - ローカル プリンターを転送する
    - スマート カードを転送する
-4. **[保存]** をクリックします。
+4. **[Save]** (保存) をクリックします。
 
 接続を開始するには、ダブルクリックするだけです。 同じことがリモート リソースにも当てはまります。
 
@@ -76,7 +76,7 @@ HockeyApp 上のプレビュー チャネルで新機能をテストしていま
 リモート デスクトップ接続の定義をエクスポートし、それを別のデバイスで使用できます。 リモート デスクトップは、個別に保存されます。RDP ファイル。
 
 1. 接続センターでは、リモート デスクトップを右クリックします。
-2. **[Export]** (エクスポート) をクリックします。
+2. クリックして **エクスポート**します。
 3. リモート デスクトップを保存する場所を参照します。RDP ファイルです。
 4. **[OK]** をクリックします。
 
@@ -99,7 +99,7 @@ HockeyApp 上のプレビュー チャネルで新機能をテストしていま
    - **フィード URL** の RD Web アクセス サーバーの URL。 電子メール アドレスに関連付けられている RD Web アクセス サーバーを検索するクライアントに通知この: このフィールドに、会社の電子メール アカウントを入力することもできます。
    - **ユーザー名** -に接続している RD Web アクセス サーバーを使用するユーザー名。
    - **パスワード** -に接続している RD Web アクセス サーバーを使用するパスワード。
-3. **[保存]** をクリックします。
+3. **[Save]** (保存) をクリックします。
 
 
 リモート リソースが、接続センターで表示されます。
