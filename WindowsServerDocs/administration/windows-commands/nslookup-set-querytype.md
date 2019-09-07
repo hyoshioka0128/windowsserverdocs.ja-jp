@@ -1,6 +1,6 @@
 ---
 title: nslookup set querytype
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,50 +13,50 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f0015db716bd8c74bc4366063009bda41d338d19
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 496eededd8b0b5eb79cdc1b4a7e35bc017157768
+ms.sourcegitcommit: f3b61dcd8aa0aa744db4ea938aac633c19217b0a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436729"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70746305"
 ---
 # <a name="nslookup-set-querytype"></a>nslookup set querytype
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-クエリのリソース レコードの種類を変更します。
+クエリのリソースレコードの種類を変更します。
 ## <a name="syntax"></a>構文
 ```
 set querytype=<ResourceRecordtype>
 ```
 ## <a name="parameters"></a>パラメーター
-<ResourceRecordtype> DNS リソース レコードの種類を指定します。 既定のリソース レコードの種類は A です。次の表では、このコマンドの有効な値を示します。
+<ResourceRecordtype>DNS リソースレコードの種類を指定します。 既定のリソースレコードの種類はです。次の表に、このコマンドの有効な値を示します。
 
-| Value |                                                   説明                                                   |
+| 値 |                                                   説明                                                   |
 |-------|-----------------------------------------------------------------------------------------------------------------|
-|   A   |                                      コンピューターを指定します&#39;の IP アドレス                                      |
-|  任意  |                                     コンピューターを指定します&#39;の IP アドレス。                                      |
+|   A   |                                      コンピューター&#39;の IP アドレスを指定します                                      |
+|  いつ  |                                     コンピューター&#39;の IP アドレスを指定します。                                      |
 | CNAME |                                    エイリアスの正規名を指定します。                                     |
-|  GID  |                                  グループ名のグループ識別子を指定します。                                  |
-| HINFO |                          コンピューターを指定します&#39;s CPU およびオペレーティング システムの種類。                           |
-|  MB   |                                        メールボックスのドメイン名を指定します。                                         |
-|  MG   |                                         メール グループのメンバーを指定します。                                          |
-| MINFO |                                   メールボックスまたはメール リスト情報を指定します。                                   |
-|  MR   |                                     メールの名前の変更のドメイン名を指定します。                                      |
-|  MX   |                                          メール エクスチェン ジャーを指定します。                                          |
-|  NS   |                                 名前付きのゾーンの DNS ネーム サーバーを指定します。                                 |
-|  PTR  | コンピューターを指定する場合は、クエリは、IP アドレスの名前それ以外の場合、その他の情報へのポインターを指定します。 |
-|  SOA  |                                DNS ゾーンの権限の開始-を指定します。                                 |
+|  ―  |                                  グループ名のグループ識別子を指定します。                                  |
+| HINFO |                          コンピューター&#39;の CPU とオペレーティングシステムの種類を指定します。                           |
+|  MB   |                                        メールボックスドメイン名を指定します。                                         |
+|  MG   |                                         メールグループメンバーを指定します。                                          |
+| MINFO |                                   メールボックスまたはメールの一覧の情報を指定します。                                   |
+|  MR   |                                     メールの名前変更ドメイン名を指定します。                                      |
+|  MX   |                                          メールエクスチェンジャーを指定します。                                          |
+|  STATION   |                                 名前付きゾーンの DNS ネームサーバーを指定します。                                 |
+|  ポインター  | クエリが IP アドレスの場合は、コンピューター名を指定します。それ以外の場合は、他の情報へのポインターを指定します。 |
+|  SOA  |                                DNS ゾーンの権限の開始を指定します。                                 |
 |  TXT  |                                         テキスト情報を指定します。                                         |
 |  UID  |                                         ユーザー識別子を指定します。                                          |
 | UINFO |                                         ユーザー情報を指定します。                                         |
-|  WKS  |                                         よく知られているサービスをについて説明します。                                         |
-| {0} のヘルプ |                                                       ?}                                                        |
+|  WKS  |                                         よく知られているサービスについて説明します。                                         |
+| {ヘルプ |                                                       ?}                                                        |
 
-簡単な概要を表示します<strong>nslookup</strong>サブコマンド。
-## <a name="remarks"></a>注釈
-- <strong>セットの種類</strong>コマンドと同じ機能を実行する、 <strong>querytype 設定</strong>コマンド。
-- リソース レコードの種類の詳細については、Request for Comment (Rfc) 1035 を参照してください。
-  ## <a name="additional-references"></a>その他の参照
-  <a href="command-line-syntax-key.md" data-raw-source="[Command-Line Syntax Key](command-line-syntax-key.md)">コマンドライン構文のポイント</a>
-  <a href="nslookup-set-type.md" data-raw-source="[nslookup set type](nslookup-set-type.md)">nslookup の種類を設定します。</a>
+<strong>Nslookup</strong>サブコマンドの簡単な概要を表示します。
+## <a name="remarks"></a>コメント
+- <strong>Set type</strong>コマンドは、 <strong>set querytype</strong>コマンドと同じ機能を実行します。
+- リソースレコードの種類の詳細については、「Request for Comment (Rfc) 1035」を参照してください。
+  ## <a name="additional-references"></a>その他の参照情報
+  <a href="command-line-syntax-key.md" data-raw-source="[Command-Line Syntax Key](command-line-syntax-key.md)">コマンドライン構文のキー</a>
+  <a href="nslookup-set-type.md" data-raw-source="[nslookup set type](nslookup-set-type.md)">nslookup set 型</a>
