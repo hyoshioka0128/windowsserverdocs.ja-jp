@@ -1,6 +1,6 @@
 ---
 title: ユーザー アカウントに関する考慮事項
-description: ユーザー アカウント、ユーザー名、および MultiPoint サービスのパスワードに関する考慮事項を提供します。
+description: MultiPoint Services のユーザーアカウント、ユーザー名、およびパスワードに関する考慮事項を提供します。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,18 +13,18 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 00fb5e83921ba0b8ad86a6f75bdfd7bf16419b73
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c4a0355b5e081e0673447fb86f1475d0b34c3792
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850793"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871502"
 ---
 # <a name="user-account-considerations"></a>ユーザー アカウントに関する考慮事項
 このトピックでは、管理ユーザーとして考慮すべき作成し、ユーザー アカウントを管理する際の問題について説明します。 MultiPoint マネージャーの [Users] タブ内のユーザー アカウントを管理します。 詳細については、「[ユーザー アカウントの管理](Manage-User-Accounts.md)」トピックを参照してください。  
   
 ## <a name="user-account-types"></a>ユーザー アカウントの種類  
-ユーザー アカウントは、ユーザーがアクセスできるファイルとフォルダー、ユーザーが MultiPoint Services システムに行える変更、各ユーザーの優先設定 (デスクトップの背景など) を MultiPoint Services に伝える情報の集まりです。 各ユーザーが一意のユーザー名とパスワードを使用して自分のユーザー アカウントにアクセスします。 MultiPoint サービスには、次の 3 つの種類のユーザー アカウントがサポートされています。  
+ユーザーアカウントは、ユーザーがアクセスできるファイルとフォルダー、MultiPoint Services システムに対してどのような変更を加えることができるか、およびデスクトップの背景などの各ユーザーの設定を MultiPoint Services に伝えるための情報のコレクションです。 各ユーザーが一意のユーザー名とパスワードを使用して自分のユーザー アカウントにアクセスします。 MultiPoint サービスには、次の 3 つの種類のユーザー アカウントがサポートされています。  
   
 -   **管理者のユーザー アカウント** は MultiPoint マネージャーを使用してを使用して、MultiPoint サービス システムを管理する個人用です。 詳細については、「[管理ユーザー アカウントの作成](Create-an-Administrative-User-Account.md)」を参照してください。  
   
@@ -38,10 +38,10 @@ ms.locfileid: "59850793"
 ユーザー アカウントの重要な考慮事項の 1 つが、ユーザー アカウントごとにエクスプローラーに一意の**ドキュメント** ライブラリを割り与えることです。このライブラリに **My Documents** フォルダーが含まれます。 MultiPoint Services システムの標準ユーザーがエクスプローラーの自分の**ドキュメント** ライブラリにプライベートな文書を保存する場合、標準ユーザーも一意のユーザー名と自分だけが知るパスワードで MultiPoint Services システムにログオンする必要があります。 エクスプローラーに文書を保管する方法については、「[ユーザー ファイルの管理](Manage-User-Files.md)」トピックを参照してください。  
   
 > [!TIP]  
-> システム セキュリティを強化するには、すべてのユーザーのパスワードに強力なパスワードを設定します。 強力なパスワードは、簡単に推測できない 1 つまたは解読は、少なくとも 8 長の文字をユーザーのアカウント名の全部または一部が含まれていない次の 4 種類の文字のうち少なくとも 3 種類が含まれています。 大文字、小文字、数字、キーボード上にある記号 (など!、@、#)。  
+> システムセキュリティを強化するには、すべてのユーザーのパスワードを強力なパスワードにする必要があります。 強力なパスワードとは、簡単に推測または解読できない、8文字以上の長さで、ユーザーのアカウント名の全部または一部を含まない、大文字、小文字、小文字の4種類の文字のうち少なくとも3つを含むパスワードです。キーボードで検出された文字、数字、および記号 (!、@、# など)。  
   
 ## <a name="see-also"></a>関連項目  
-[管理ユーザー アカウントを作成します。](Create-an-Administrative-User-Account.md)  
-[標準ユーザー アカウントを作成します。](Create-a-Standard-User-Account.md)  
+[管理ユーザー アカウントを作成する](Create-an-Administrative-User-Account.md)  
+[標準ユーザー アカウントを作成する](Create-a-Standard-User-Account.md)  
 [ユーザー ファイルを管理する](Manage-User-Files.md)
 [ユーザー アカウントの管理](Manage-User-Accounts.md)

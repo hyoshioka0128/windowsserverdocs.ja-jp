@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d2ac36180992d44f837ce74ace40cf95533309c9
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 03328ff8c94d96fcf34dcef29ac1a1daefc9d14a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69983430"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867491"
 ---
 # <a name="scenario-web-app-server-app-calling-web-api"></a>シナリオ:Web アプリ (サーバーアプリ) Web API の呼び出し 
 >適用先:AD FS 2019 以降 
@@ -121,5 +121,5 @@ ADFS で Web アプリを登録する方法と、Web API を呼び出すトー�
       ![アプリケーショングループの追加](media/adfs-msal-web-app-web-api/webapp13.png)
  
  ## <a name="next-steps"></a>次の手順
-[OpenID Connect/OAuth フローとアプリケーションシナリオの AD FS](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
+[AD FS OpenID 接続/OAuth フローとアプリケーション シナリオ](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
  

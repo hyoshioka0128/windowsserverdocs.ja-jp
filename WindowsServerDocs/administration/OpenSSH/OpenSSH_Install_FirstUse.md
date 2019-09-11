@@ -1,46 +1,46 @@
 ---
 ms.date: 01/07/2019
 ms.topic: conceptual
-keywords: OpenSSH を SSH、SSHD、インストール、セットアップ
+keywords: OpenSSH、SSH、SSHD、install、setup
 contributor: maertendMSFT
 author: maertendMSFT
-title: Windows の OpenSSH のインストール
-ms.openlocfilehash: f617b01ee7dabd4897f99e374420f673e209e145
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+title: Windows 用 OpenSSH のインストール
+ms.openlocfilehash: 6a5d4d47fbb3f962c2a19582eb0a72810145a28c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859563"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866875"
 ---
-# <a name="installation-of-openssh-for-windows-server-2019-and-windows-10"></a>Windows Server 2019 および Windows 10 の OpenSSH のインストール #
+# <a name="installation-of-openssh-for-windows-server-2019-and-windows-10"></a>Windows Server 2019 および Windows 10 用 OpenSSH のインストール #
 
-OpenSSH クライアントと OpenSSH サーバーは、Windows Server 2019 および Windows 10 1809 で個別にインストール可能なコンポーネントです。
-これらの Windows バージョンを持つユーザーは、インストールして OpenSSH を構成する次の手順を使用する必要があります。 
+OpenSSH クライアントおよび OpenSSH サーバーは、Windows Server 2019 および Windows 10 1809 の個別にインストール可能なコンポーネントです。
+これらの Windows バージョンを使用するユーザーは、次の手順に従って、OpenSSH のインストールと構成を行う必要があります。 
 
 > [!NOTE] 
-> OpenSSH を PowerShell Github リポジトリから取得したユーザー (https://github.com/PowerShell/OpenSSH-Portable)そこから、手順を使用する必要がありますと__しないで__これらの手順を使用します。 
+> PowerShell Github リポジトリから OpenSSH を取得したユーザー https://github.com/PowerShell/OpenSSH-Portable) (そこからの手順を使用する必要があり、これらの手順__は使用しないでください)__ 。 
 
 
-## <a name="installing-openssh-from-the-settings-ui-on-windows-server-2019-or-windows-10-1809"></a>Windows Server 2019 または Windows 10 1809 UI 設定から OpenSSH をインストールします。
+## <a name="installing-openssh-from-the-settings-ui-on-windows-server-2019-or-windows-10-1809"></a>Windows Server 2019 または Windows 10 1809 の設定 UI からの OpenSSH のインストール
 
 OpenSSH クライアントとサーバーは、Windows 10 1809 のインストール可能な機能です。 
 
-OpenSSH をインストールするには、設定を開始し、アプリに移動 > アプリおよび機能 > オプションの機能を管理します。 
+OpenSSH をインストールするには、[設定] を開始し、[アプリ > アプリと機能] > [オプション機能の管理] の順に選択します。 
 
-OpenSSH クライアントが既にインストールされているかどうか、この一覧をスキャンします。 ない場合は、ページの上部にある選び「機能を追加」します。 
+この一覧をスキャンして、OpenSSH クライアントが既にインストールされているかどうかを確認します。 それ以外の場合は、ページの上部にある [機能の追加] を選択し、次のように入力します。 
 
-* OpenSSH クライアントをインストールするには、"OpenSSH Client"を検索し、[インストール] をクリックします。 
-* OpenSSH server をインストールするには、"OpenSSH Server"を検索し、「インストール」 をクリックします。 
+* OpenSSH クライアントをインストールするには、"OpenSSH クライアント" に移動し、[インストール] をクリックします。 
+* OpenSSH サーバーをインストールするには、"OpenSSH サーバー" に移動し、[インストール] をクリックします。 
 
-インストールが完了したら、アプリに戻ります > アプリおよび機能 > して、省略可能な機能の管理は、OpenSSH コンポーネントを一覧表示を表示する必要があります。
+インストールが完了したら、[アプリ > アプリと機能] に戻り > オプション機能を管理します。 OpenSSH コンポーネントが一覧表示されます。
 
 > [!NOTE]
-> OpenSSH Server のインストール、作成し、"OpenSSH Server-で-TCP"をという名前のファイアウォール規則を有効にします。 これにより、ポート 22 で SSH トラフィックを受信できます。 
+> OpenSSH サーバーをインストールすると、"OpenSSH-Server-TCP" という名前のファイアウォール規則が作成され、有効になります。 これにより、ポート22での SSH 受信トラフィックが許可されます。 
 
-## <a name="installing-openssh-with-powershell"></a>PowerShell で OpenSSH をインストールします。 
+## <a name="installing-openssh-with-powershell"></a>PowerShell を使用した OpenSSH のインストール 
 
 PowerShell を使用して OpenSSH をインストールするには、最初に管理者として PowerShell を起動します。
-OpenSSH 機能がインストールに使用できることを確認します。
+OpenSSH 機能をインストールに使用できるようにするには、次のようにします。
 
 ```powershell
 Get-WindowsCapability -Online | ? Name -like 'OpenSSH*'
@@ -53,7 +53,7 @@ Name  : OpenSSH.Server~~~~0.0.1.0
 State : NotPresent
 ```
 
-次に、サーバーやクライアントの機能をインストールします。
+次に、サーバーまたはクライアント機能をインストールします。
 
 ```powershell
 # Install the OpenSSH Client
@@ -69,11 +69,11 @@ Online        : True
 RestartNeeded : False
 ```
 
-## <a name="uninstalling-openssh"></a>OpenSSH をアンインストールします。
+## <a name="uninstalling-openssh"></a>OpenSSH のアンインストール
 
-Windows 設定を使用して OpenSSH をアンインストールするには、設定を開始し、アプリに移動 > アプリおよび機能 > オプションの機能を管理します。 インストールされている機能の一覧で OpenSSH クライアントまたは OpenSSH サーバー コンポーネントを選択し、[アンインストール] を選択します。
+Windows の設定を使用して OpenSSH をアンインストールするには、設定 を開始し、アプリ > アプリと機能 > オプション機能の管理 をクリックします。 インストールされている機能の一覧で、OpenSSH クライアントまたは OpenSSH サーバーコンポーネントを選択し、[アンインストール] を選択します。
 
-PowerShell を使用して OpenSSH をアンインストールするには、するには、次のコマンドのいずれかを使用します。
+PowerShell を使用して OpenSSH をアンインストールするには、次のコマンドのいずれかを使用します。
 
 ```powershell
 # Uninstall the OpenSSH Client
@@ -83,12 +83,12 @@ Remove-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 Remove-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 ```
 
-OpenSSH を削除する場合に、同時に使用では、サービスがアンインストールされた後、Windows の再起動が必要にあります。
+サービスがアンインストール時に使用されている場合は、OpenSSH を削除した後に Windows の再起動が必要になることがあります。
 
 
 ## <a name="initial-configuration-of-ssh-server"></a>SSH サーバーの初期構成
 
-Windows の初期使用のための OpenSSH サーバーを構成するには、管理者は、PowerShell を起動し、SSHD サービスを開始するには、次のコマンドを実行します。
+Windows で初めて使用するために OpenSSH サーバーを構成するには、管理者として PowerShell を起動し、次のコマンドを実行して SSHD サービスを開始します。
 
 ```powershell
 Start-Service sshd
@@ -99,15 +99,15 @@ Get-NetFirewallRule -Name *ssh*
 # There should be a firewall rule named "OpenSSH-Server-In-TCP", which should be enabled 
 ```
 
-## <a name="initial-use-of-ssh"></a>SSH の初期の使用
+## <a name="initial-use-of-ssh"></a>SSH の初回使用
 
-Windows OpenSSH Server をインストールすると、任意の Windows デバイスから PowerShell を使用して、SSH クライアントのインストールをすばやくテストできます。 PowerShell では、次のコマンドを入力します。 
+Windows に OpenSSH サーバーをインストールすると、SSH クライアントがインストールされている任意の Windows デバイスから PowerShell を使用して簡単にテストできます。 PowerShell で、次のコマンドを入力します。 
 
 ```powershell
 Ssh username@servername
 ```
 
-任意のサーバーへの接続を最初は、次のようなメッセージになります。
+サーバーへの最初の接続では、次のようなメッセージが表示されます。
 
 ```
 The authenticity of host 'servername (10.00.00.001)' can't be established.
@@ -115,15 +115,15 @@ ECDSA key fingerprint is SHA256:(<a large string>).
 Are you sure you want to continue connecting (yes/no)?
 ```
 
-答えがある必要があります"か、yes"または"no"です。 はいすると、そのサーバーがローカルのシステムに追加する一連の既知の ssh ホスト。
+回答は、"yes" または "no" のいずれかにする必要があります。 [はい] をオンにすると、そのサーバーが既知の ssh ホストのローカルシステムの一覧に追加されます。
 
-求め、パスワードの時点でします。 セキュリティの予防措置として、パスワードは表示されませんを入力するとします。 
+この時点で、パスワードの入力を求められます。 セキュリティ上の理由から、入力したとおりにパスワードは表示されません。 
 
-接続すると、次のようなコマンド シェル プロンプトが表示されます。
+接続すると、次のようなコマンドシェルプロンプトが表示されます。
 
 ```
 domain\username@SERVERNAME C:\Users\username>
 ```
 
-OpenSSH を Windows server で使用される既定のシェルは、Windows コマンド シェルです。 
+Windows OpenSSH サーバーで使用される既定のシェルは、Windows コマンドシェルです。 
 

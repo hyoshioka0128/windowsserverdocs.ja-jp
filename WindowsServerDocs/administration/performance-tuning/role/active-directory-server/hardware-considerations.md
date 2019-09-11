@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f1aa1e3c07c5cb9238a332156abfec248e74176
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 4d1e6c2744cfe0d16b034e6511144bef92a46b2e
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "63721162"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866659"
 ---
 # <a name="hardware-considerations-in-adds-performance-tuning"></a>のハードウェアの考慮事項により、パフォーマンスチューニングが追加されます。 
 

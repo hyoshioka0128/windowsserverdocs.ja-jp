@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 6/24/2017
 description: サーバー役割のインストール、同期共有の作成、DNS レコードの作成などの、ワーク フォルダーを展開する方法。
-ms.openlocfilehash: d2ba117a021cfc7361c0f7c8df2ed9f3c4bc9d94
-ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
+ms.openlocfilehash: 45b25befcde328e38f694b64fa7536a2b5c7f232
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67792340"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867029"
 ---
 # <a name="deploying-work-folders"></a>ワーク フォルダーの展開
 
@@ -51,7 +51,7 @@ ms.locfileid: "67792340"
 ## <a name="step-2-create-dns-records"></a>手順 2:DNS レコードを作成する  
  ユーザーがインターネット経由で同期できるようにするには、パブリック DNS にホスト (A) レコードを作成して、インターネット クライアントがワーク フォルダー URL を解決できるようにする必要があります。 この DNS レコードは、リバース プロキシ サーバーの外部インターフェイスに解決される必要があります。  
   
- 内部ネットワーク上で、workfolders という名前で DNS の CNAME レコードを作成します。これはサーバー ワーク フォルダーの FDQN に解決されます。 ワーク フォルダー クライアントは、自動検出を使用して、ワーク フォルダー サーバーを検出するための URL は https:\//workfolders.domain.com します。 自動検出を使用する場合は、workfolders CNAME レコードが DNS 内に存在する必要があります。  
+ 内部ネットワーク上で、workfolders という名前で DNS の CNAME レコードを作成します。これはサーバー ワーク フォルダーの FDQN に解決されます。 ワークフォルダークライアントが自動検出を使用する場合、ワークフォルダーサーバーを検出するために使用\/される URL は、https:/workfolders.domain.com です。 自動検出を使用する場合は、workfolders CNAME レコードが DNS 内に存在する必要があります。  
   
 ## <a name="step-3-install-work-folders-on-file-servers"></a>手順 3:ファイル サーバーでワーク フォルダーをインストールする  
  ワーク フォルダーは、ドメインに参加しているサーバーに、サーバー マネージャーまたは Windows PowerShell を使用して、ローカルまたはネットワーク経由でリモートからインストールできます。 これは、ネットワーク経由で複数の同期サーバーを構成している場合に役立ちます。  
@@ -212,7 +212,7 @@ New-SyncShare "HR Sync Share" K:\Share-1 –User "HR Sync Share Users"
 > [!TIP]
 >  同期共有を作成すると、ファイル サーバー リソース マネージャーの機能を使用して、共有内のデータを管理できます。 たとえば、サーバー マネージャーのワーク フォルダー ページ内の **[クォータ]** のタイルを使用して、ユーザー フォルダーのクォータを設定できます。 また、[ファイル スクリーンの管理](https://technet.microsoft.com/library/cc732074.aspx)を使用して、ワーク フォルダーで同期するファイルの種類を制御できます。さらに高度なファイルの分類タスクについては「[ダイナミック アクセス制御](https://technet.microsoft.com/windows-server-docs/identity/solution-guides/dynamic-access-control--scenario-overview)」で説明されているシナリオを使用できます。  
   
-## <a name="step-8-optionally-specify-a-tech-support-email-address"></a>手順 8:必要に応じてテクニカル サポートの電子メール アドレスを指定します。   
+## <a name="step-8-optionally-specify-a-tech-support-email-address"></a>手順 8:必要に応じてテクニカルサポートの電子メールアドレスを指定する   
  ファイル サーバーにワーク フォルダーをインストールした後、必要に応じて、サーバーの管理部門の連絡先電子メール アドレスを指定できます。 電子メール アドレスを追加するには、次の手順に従います。  
   
 #### <a name="specifying-an-administrative-contact-email"></a>管理部門の連絡先メール アドレスを指定する 
@@ -229,7 +229,7 @@ New-SyncShare "HR Sync Share" K:\Share-1 –User "HR Sync Share Users"
  環境で複数の同期サーバーをホストしている場合、AD DS のユーザー アカウントで **msDS-SyncServerURL** プロパティを設定して、サーバー自動検出を構成してください。  
   
 >[!NOTE]
->Active Directory の msDS-SyncServerURL プロパティは、Web アプリケーション プロキシや Azure AD アプリケーション プロキシなどのプロキシ ソリューションを介してワーク フォルダーにアクセスするリモート ユーザーに対して定義しないでください。 msDS-SyncServerURL プロパティを定義すると、ワーク フォルダー クライアントは、リバース プロキシ ソリューション経由でアクセスできない内部 URL へのアクセスを試みます。 Web アプリケーション プロキシまたは Azure AD アプリケーション プロキシを使用する場合は、ワーク フォルダー サーバーごとに固有のプロキシ アプリケーションを作成する必要があります。 詳細については、次を参照してください。 [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開。概要](deploy-work-folders-adfs-overview.md)または[Azure AD アプリケーション プロキシを使ったワーク フォルダーを展開する](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)します。
+>Active Directory の msDS-SyncServerURL プロパティは、Web アプリケーション プロキシや Azure AD アプリケーション プロキシなどのプロキシ ソリューションを介してワーク フォルダーにアクセスするリモート ユーザーに対して定義しないでください。 "-SyncServerURL" プロパティが定義されている場合、ワークフォルダークライアントは、リバースプロキシソリューションを介してアクセスできない内部 URL にアクセスしようとします。 Web アプリケーション プロキシまたは Azure AD アプリケーション プロキシを使用する場合は、ワーク フォルダー サーバーごとに固有のプロキシ アプリケーションを作成する必要があります。 詳細については[、「AD FS と Web アプリケーションプロキシを使用したワークフォルダーの展開」を参照してください。[Azure AD アプリケーションプロキシを使用してワークフォルダーを展開](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)する方法について説明します。](deploy-work-folders-adfs-overview.md)
 
 
  この作業を行う前に、Windows Server 2012 R2 のドメイン コントローラーをインストールするか、`Adprep /forestprep` コマンドと `Adprep /domainprep` コマンドを使用して、フォレストとドメインのスキーマを更新する必要があります。 これらのコマンドを安全に実行する方法については、「[Adprep.exe の実行](https://technet.microsoft.com/library/dd464018.aspx)」を参照してください。  
@@ -251,7 +251,7 @@ New-SyncShare "HR Sync Share" K:\Share-1 –User "HR Sync Share Users"
 6.  **[追加する値]** ボックスで、このユーザーに同期を許可する同期サーバーの URL を入力し、 **[追加]** をクリックします。次に、 **[OK]** をクリックし、もう一度 **[OK]** をクリックします。  
   
     > [!NOTE]
-    >  同期サーバーの URL は、単純に `https://` または `http://` (セキュリティで保護された接続が必要であるかどうかに依存する) の後に、同期サーバーの完全修飾ドメイン名を続けたものです。 たとえば、 **https:\//sync1.contoso.com**します。
+    >  同期サーバーの URL は、単純に `https://` または `http://` (セキュリティで保護された接続が必要であるかどうかに依存する) の後に、同期サーバーの完全修飾ドメイン名を続けたものです。 たとえば、 **https:/\/sync1.contoso.com のよう**になります。
 
 複数のユーザーの属性にデータを挿入するには、Active Directory PowerShell を使用します。 手順 5. で説明した *HR Sync Share Users* グループのすべてのメンバーに対して属性を設定する例を次に示します。
   
@@ -264,7 +264,7 @@ Set-ADUser –Add @{"msDS-SyncServerURL"=$SyncServerURL}
   
 ```  
   
-## <a name="step-10-optionally-configure-web-application-proxy-azure-ad-application-proxy-or-another-reverse-proxy"></a>手順 10:必要に応じて Web アプリケーション プロキシ、Azure AD アプリケーション プロキシ、または別のリバース プロキシを構成します。  
+## <a name="step-10-optionally-configure-web-application-proxy-azure-ad-application-proxy-or-another-reverse-proxy"></a>手順 10:必要に応じて、Web アプリケーションプロキシ、Azure AD アプリケーションプロキシ、または別のリバースプロキシを構成します。  
 
 リモート ユーザーが自分のファイルにアクセスできる環境を整えるためには、リバース プロキシによってワーク フォルダーを公開して、外部のインターネットからワーク フォルダーを利用できるように構成する必要があります。 これには Web アプリケーション プロキシ、Azure Active Directory アプリケーション プロキシ、または別のリバース プロキシ ソリューションを使用できます。  
   
@@ -289,12 +289,12 @@ Azure Active Directory アプリケーション プロキシを使って、ワ�
 > [!NOTE]
 >  これらのポリシー設定は、Windows 8.1 または Windows Server 2012 R2 以降でグループ ポリシーの管理を実行しているコンピューターからグループ ポリシーを編集する場合にのみ利用できます。 以前のオペレーティング システムに含まれるバージョンのグループ ポリシーの管理では、この設定は利用できません。 これらのポリシー設定は、[Windows 7 のワーク フォルダー](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) アプリがインストールされている Windows 7 PC に適用されます。  
   
-##  <a name="BKMK_LINKS"></a> 参照してください。  
+##  <a name="BKMK_LINKS"></a>関連項目  
  その他の関連情報については、次の情報を参照してください。  
   
 |コンテンツの種類|リファレンス|  
 |------------------|----------------|  
-|**理解します。**|-   [ワーク フォルダー](work-folders-overview.md)|  
-|**計画**|-   [ワーク フォルダーの実装の設計](plan-work-folders.md)|
-|**展開**|-   [AD FS と Web アプリケーション プロキシ (WAP) を使ったワーク フォルダーを展開します。](deploy-work-folders-adfs-overview.md)<br />-   [ワーク フォルダーのテスト ラボの展開](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx)(ブログの投稿)<br />-   [ワーク フォルダー サーバー Url の新しいユーザー属性](http://blogs.technet.com/b/filecab/archive/2013/10/09/a-new-user-attribute-for-work-folders-server-url.aspx)(ブログの投稿)|  
-|**テクニカル リファレンス**|-   [対話型ログオン:コンピューター アカウントのロックアウトしきい値](https://technet.microsoft.com/library/jj966264(v=ws.11).aspx)<br />-   [同期共有のコマンドレット](https://docs.microsoft.com/powershell/module/syncshare/?view=win10-ps)|
+|**正しく**|-   [ワークフォルダー](work-folders-overview.md)|  
+|**計画**|-   [ワークフォルダーの実装の設計](plan-work-folders.md)|
+|**展開**|-   [AD FS と Web アプリケーションプロキシ (WAP) を使用したワークフォルダーの展開](deploy-work-folders-adfs-overview.md)<br />-   [ワークフォルダーのテストラボの展開](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx)(ブログの投稿)<br />-   [ワークフォルダーサーバーの Url の新しいユーザー属性](http://blogs.technet.com/b/filecab/archive/2013/10/09/a-new-user-attribute-for-work-folders-server-url.aspx)(ブログの投稿)|  
+|**テクニカル リファレンス**|-   [対話型ログオン:コンピューターアカウントのロックアウトのしきい値](https://technet.microsoft.com/library/jj966264(v=ws.11).aspx)<br />-   [同期共有のコマンドレット](https://docs.microsoft.com/powershell/module/syncshare/?view=win10-ps)|

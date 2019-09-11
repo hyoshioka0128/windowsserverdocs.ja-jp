@@ -1,5 +1,5 @@
 ---
-title: ホスト キーを作成し、HGS に追加します。
+title: ホストキーを作成して HGS に追加する
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.topic: article
@@ -8,54 +8,54 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 0526831fb0648e7f8f6fb1a081180f2e2aa9f09f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 655ebae66b234d62e5863e2a22e785d5a0028da7
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447488"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870541"
 ---
-# <a name="create-a-host-key-and-add-it-to-hgs"></a>ホスト キーを作成し、HGS に追加します。
+# <a name="create-a-host-key-and-add-it-to-hgs"></a>ホストキーを作成して HGS に追加する
 
 >適用対象:Windows Server 2019
 
 
-このトピックでは、ホスト キーの構成証明 (キー モード) を使用して保護されたホストに HYPER-V ホストを準備する方法について説明します。 ユーザー ホスト キー ペアを作成 (または既存の証明書を使用) をキーのパブリックの半分を HGS に追加します。
+このトピックでは、ホストキーの構成証明 (キーモード) を使用して、保護されたホストになるように Hyper-v ホストを準備する方法について説明します。 ホストキーペアを作成し (または既存の証明書を使用して)、キーの公開半分を HGS に追加します。
 
-## <a name="create-a-host-key"></a>ホスト キーを作成します。
+## <a name="create-a-host-key"></a>ホストキーを作成する
 
-1.  HYPER-V ホスト コンピューターで Windows Server 2019 をインストールします。
-2.  Hyper-v ホストと Host Guardian HYPER-V サポート機能をインストールします。
+1.  Hyper-v ホストコンピューターに Windows Server 2019 をインストールします。
+2.  Hyper-v および Host Guardian Hyper-v サポート機能をインストールします。
 
     ```powershell
     Install-WindowsFeature Hyper-V, HostGuardian -IncludeManagementTools -Restart
     ``` 
 
-3.  ホスト キーを自動的に生成するか、既存の証明書を選択します。 カスタムの証明書を使用している場合、少なくとも 2048 ビット RSA キー、クライアント認証 EKU およびデジタル署名のキー使用法が必要です。
+3.  ホストキーを自動的に生成するか、既存の証明書を選択します。 カスタム証明書を使用している場合は、少なくとも2048ビットの RSA キー、クライアント認証 EKU、およびデジタル署名キーの使用が必要です。
 
     ```powershell
     Set-HgsClientHostKey
     ```
 
-    または、独自の証明書を使用する場合は、拇印を指定できます。 
-    複数のコンピューター証明書を共有したり、TPM または HSM にバインドされている証明書を使用する場合に役立ちます。 ことができます。 次に、TPM バインド証明書 (秘密キーを盗まれ、別のコンピューターで使用できないし、TPM 1.2 のみが必要です) を作成する例を示します。
+    また、独自の証明書を使用する場合は、拇印を指定することもできます。 
+    これは、複数のコンピューターで証明書を共有する場合や、TPM または HSM にバインドされた証明書を使用する場合に便利です。 次に、TPM バインド証明書を作成する例を示します。これにより、秘密キーが盗まれて別のコンピューターで使用され、TPM 1.2 のみが必要になります。
 
     ```powershell
     $tpmBoundCert = New-SelfSignedCertificate -Subject “Host Key Attestation ($env:computername)” -Provider “Microsoft Platform Crypto Provider”
     Set-HgsClientHostKey -Thumbprint $tpmBoundCert.Thumbprint
     ```
 
-4.  HGS サーバーに提供するキーの半分の公開を取得します。 ことができます、次のコマンドレットを使用します、他の場所に格納されている証明書がある場合、パブリックを含む .cer 半分のキー。 私たちとのみを格納するが HGS; にある公開キーを検証することに注意してください。証明書情報を保持しないことも、私たちは証明書チェーンまたは有効期限の日付を検証します。
+4.  HGS サーバーに提供するキーの公開半分を取得します。 次のコマンドレットを使用するか、証明書が別の場所に格納されている場合は、キーの公開半分を含む .cer を指定します。 HGS では公開キーの保存と検証のみを行っていることに注意してください。証明書の情報は保持されず、証明書チェーンや有効期限も検証されません。
 
     ```powershell
     Get-HgsClientHostKey -Path "C:\temp\$env:hostname-HostKey.cer"
     ```
 
-5.  HGS サーバーに、.cer ファイルをコピーします。
+5.  .Cer ファイルを HGS サーバーにコピーします。
 
-## <a name="add-the-host-key-to-the-attestation-service"></a>ホスト キー構成証明サービスを追加します。
+## <a name="add-the-host-key-to-the-attestation-service"></a>構成証明サービスにホストキーを追加する
 
-この手順では、HGS サーバーでは行われ、ホストでシールドされた Vm を実行します。 FQDN に名前を設定するかに参照できるように簡単にするホストに、キー、ホスト コンピューターのリソース識別子がインストールされていることをお勧めします。
+この手順は、HGS サーバーで実行され、ホストがシールドされた Vm を実行できるようにします。 名前はホストコンピューターの FQDN またはリソース識別子に設定することをお勧めします。これにより、キーがインストールされているホストを簡単に参照できるようになります。
 
 ```powershell
 Add-HgsAttestationHostKey -Name MyHost01 -Path "C:\temp\MyHost01-HostKey.cer"
@@ -64,8 +64,8 @@ Add-HgsAttestationHostKey -Name MyHost01 -Path "C:\temp\MyHost01-HostKey.cer"
 ## <a name="next-step"></a>次の手順
 
 > [!div class="nextstepaction"]
-> [ホストが正常に証明できることを確認します。](guarded-fabric-confirm-hosts-can-attest-successfully.md)
+> [ホストが正常に証明できることを確認する](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 ## <a name="see-also"></a>関連項目
 
-- [保護されたホストとシールドされた Vm のホスト ガーディアン サービスを展開します。](guarded-fabric-deploying-hgs-overview.md)
+- [保護されたホストとシールドされた Vm のホストガーディアンサービスの展開](guarded-fabric-deploying-hgs-overview.md)

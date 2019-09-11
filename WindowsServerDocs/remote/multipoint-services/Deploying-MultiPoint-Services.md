@@ -13,35 +13,35 @@ ms.assetid: 594bc09e-5d2d-4984-a9de-79d40b1308d6
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: e2d71d691c61f5e1208d97ad77d3a5ba9c207c0a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 19e1b52c79e0d87804a76ec8963662b96c82b41b
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830713"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871723"
 ---
 # <a name="deploying-multipoint-services"></a>MultiPoint Services を展開する
-このガイドは、MultiPoint Services を実行しているサーバーを展開し、MultiPoint ステーションのセットアップ、インストールしシステムを構成する、ユーザー アカウントを設定およびディスク保護を有効にし、バックアップの設定など、いくつかの基本的な管理タスクを実行する方法を説明します。システムの使用を開始する前にします。  
+このガイドでは、MultiPoint Services を実行するサーバーを展開する方法、MultiPoint ステーションをセットアップする方法、システムをインストールして構成する方法、ユーザーアカウントを設定する方法、およびディスクの保護の有効化やバックアップのセットアップなど、基本的な管理タスクを実行する方法について説明します。システムの使用を開始する前に  
   
 > [!NOTE]  
-> その他のサポートは、MultiPoint Services ヘルプを開くことができます MultiPoint マネージャーまたは MultiPoint ダッシュ ボードの任意の画面または f1 キー ヘルプ アイコンをクリックして」を参照してください。  
+> 追加のサポートが必要な場合は、MultiPoint Services のヘルプを参照してください。これは、MultiPoint マネージャーまたは MultiPoint ダッシュボード画面のヘルプアイコンまたは F1 キーをクリックして開くことができます。  
   
-配置情報は、次のように構成されています。 少なくとも、システムを展開すると、ユーザーの環境の準備タスクを完了する必要があります。 その他のタスクを環境内に当てはまらない場合があります。 
--   [新しい MultiPoint Services システムを展開します。](Deploy-a-new-MultiPoint-services-system.md)  
+展開情報は、次のように編成されます。 少なくとも、システムを展開し、ユーザー用に環境を準備するためのタスクを完了する必要があります。 環境によっては、他のタスクが適用される場合とない場合があります。 
+-   [新しい MultiPoint Services システムを展開する](Deploy-a-new-MultiPoint-services-system.md)  
   
-    MultiPoint Services コンピューターとステーションを設定します。 MultiPoint サービスはインストールおよび構成は、ステーションをセットアップします。ドライバー、更新、およびソフトウェアをインストールします。必要に応じて、ドメインに参加します。各ステーションのクライアント ライセンス (Cal) を追加します。  
+    MultiPoint Services のコンピューターとステーションを設定します。 MultiPoint Services をインストールして構成します。ステーションを設定します。ドライバー、更新プログラム、およびソフトウェアをインストールします。必要に応じて、ドメインに参加します。各ステーションのクライアントライセンス (Cal) を追加します。  
   
--   [MultiPoint Services の展開のオプションの構成タスク](Optional-configuration-tasks-for-a-MultiPoint-services-deployment.md)  
+-   [MultiPoint サービスの展開のオプションの構成タスク](Optional-configuration-tasks-for-a-MultiPoint-services-deployment.md)  
   
-    オプションの構成タスクを実行します。 分割画面ステーション; のセットアップします。プリンターを追加します。ワイヤレス LAN; 経由でアクセスを有効にします。Windows 10、Windows 8、または Windows 7 オペレーティング システムと仮想デスクトップ ステーションを作成します。システムまたは個々 のユーザーの表示言語を変更します。  
+    オプションの構成タスクを実行します。 分割画面ステーションを設定します。プリンターを追加します。ワイヤレス LAN 経由のアクセスを有効にします。Windows 10、Windows 8、または Windows 7 オペレーティングシステムを使用して、ステーション用の仮想デスクトップを作成します。システムまたは個々のユーザーの表示言語を変更します。  
   
--   [ユーザーを MultiPoint Services システムを準備します。](Prepare-your-MultiPoint-services-system-for-users.md)  
+-   [ユーザー用に MultiPoint Services システムを準備する](Prepare-your-MultiPoint-services-system-for-users.md)  
   
-    計画し、ユーザー アカウントの作成サーバーへのユーザーのアクセスを制限します。オープンのアクセスの; の自動ログオン用ステーションを構成します。共有ユーザー アカウントで複数のセッションを許可します。ユーザーのファイル共有を実装します。  
+    ユーザーアカウントの計画と作成サーバーへのユーザーのアクセスを制限します。オープンアクセスの場合、ステーションを自動ログオン用に構成します。共有ユーザーアカウントに対して複数のセッションを許可します。ユーザー用のファイル共有を実装します。  
   
--   [MultiPoint services システム管理](System-administration-in-MultiPoint-services.md)  
+-   [MultiPoint Services のシステム管理](System-administration-in-MultiPoint-services.md)  
   
-    サーバーの使用を開始する前に、いくつかの基本的なサーバー管理タスクを実行します。 ディスクの保護を有効にします。サーバーのバックアップ; をインストールします。電力を節約するには、スリープの設定を構成します。グループ ポリシーとドメインの展開用にレジストリを構成します。  
+    サーバーの使用を開始する前に、いくつかの基本的なサーバー管理タスクを実行します。 ディスクの保護を有効にします。サーバーバックアップをインストールします。電力を節約するには、スリープ設定を構成します。ドメイン展開のグループポリシーとレジストリを構成します。  
   
 ## <a name="see-also"></a>関連項目  
   

@@ -10,12 +10,12 @@ ms.date: 03/16/2018
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: fc87bf87a79f5f7e13069ad1a58be0dc940a558e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d25142e3d0e5875fd8c0553d70e7bdff4d325097
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447778"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70872091"
 ---
 # <a name="top-support-solutions-for-windows-server"></a>Windows Server 向けの上位のサポート ソリューション
 
@@ -39,25 +39,25 @@ Microsoft では Windows Server 用の更新プログラムとソリューショ
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>インストールと Windows Server のアップグレード</h3>
+                        <h3>Windows Server のインストールとアップグレード</h3>
 <hr> 
-                        <a href="\windows\deployment\upgrade\resolve-windows-10-upgrade-errors">Windows 10 のアップグレード エラーを解決するには。IT プロフェッショナル向け技術情報</a>
+                        <a href="\windows\deployment\upgrade\resolve-windows-10-upgrade-errors">Windows 10 のアップグレードエラーを解決する:IT 担当者向け技術情報</a>
 <hr> 
-                        <p><a href="https://support.microsoft.com/en-US/help/4035631">Windows 10 バージョン 1607 および Windows Server 2016 のサービス スタック更新プログラム:2017 年 8 月 8 日)</a></p>
+                        <p><a href="https://support.microsoft.com/en-US/help/4035631">Windows 10 バージョン1607および Windows Server 2016 のサービススタック更新プログラム:2017年8月8日)</a></p>
 <hr> 
-                        <p><a href="https://support.microsoft.com/en-US/help/4033524">Windows 10 バージョン 1607 および Windows Server 2016 にアップグレードするための互換性に関する更新プログラム:2017 年 8 月 3 日)</a></p>
+                        <p><a href="https://support.microsoft.com/en-US/help/4033524">Windows 10 バージョン1607および Windows Server 2016 にアップグレードする場合の互換性更新プログラム:2017年8月3日)</a></p>
 <hr>
-                        <p><a href="https://support.microsoft.com/en-US/help/4014997">Windows ベースの Azure Vm では、システムの一括アップグレードがサポートされていません)</a></p>
+                        <p><a href="https://support.microsoft.com/en-US/help/4014997">Windows ベースの Azure Vm では、インプレースシステムアップグレードはサポートされていません)</a></p>
 <hr>
-                        <p><a href="..\get-started\supported-upgrade-paths.md">Windows Server 2016 のアップグレードと変換オプション)</a></p>
+                        <p><a href="..\get-started\supported-upgrade-paths.md">Windows Server 2016 のアップグレードオプションと変換オプション</a></p>
 <hr>
-                       <p><a href="..\get-started\server-role-upgradeability-table.md">サーバー ロールのアップグレードと移行マトリックス Windows Server 2016 用)</a></p>
+                       <p><a href="..\get-started\server-role-upgradeability-table.md">Windows Server 2016 のサーバーの役割のアップグレードと移行のマトリックス)</a></p>
 <hr>
                        <p><a href="..\get-started\installation-and-upgrade.md">Windows Server のインストールとアップグレード)</a></p>
 <hr>
-                       <p><a href="..\get-started\windows-server-2016-ga-release-notes.md">リリース ノート:Windows server 2016 に関する重要な問題)</a></p>
+                       <p><a href="..\get-started\windows-server-2016-ga-release-notes.md">リリース ノート:Windows Server 2016 に関する重要な問題)</a></p>
 <hr>
-                       <p><a href="..\get-started\recommendations-moving-to-server2016.md">Windows Server 2016 に移るための推奨事項)</a></p>
+                       <p><a href="..\get-started\recommendations-moving-to-server2016.md">Windows Server 2016 への移行に関する推奨事項</a></p>
                     </div>
                 </div>
             </div>
@@ -75,18 +75,18 @@ Microsoft では Windows Server 用の更新プログラムとソリューショ
                     <div class="cardText">
                         <h3>ボリューム ライセンス認証に関するページ</h3>
 <hr> 
-                        <a href="../get-started/server-2016-activation.md">Windows Server 2016 のライセンス認証</a>
+                        <a href="../get-started/server-2016-activation.md">Windows Server 2016 のアクティブ化</a>
 <hr>
-                        <p><a href="https://technet.microsoft.com/library/jj134256(ws.11).aspx">確認と選択のライセンス認証方法</a></p>
+                        <p><a href="https://technet.microsoft.com/library/jj134256(ws.11).aspx">ライセンス認証方法の確認と選択</a></p>
 <hr>
-                        <p><a href="https://technet.microsoft.com/library/dn502528.aspx">ボリューム ライセンス認証のライセンス認証エラー コード</a></p>
+                        <p><a href="https://technet.microsoft.com/library/dn502528.aspx">ボリュームライセンス認証のライセンス認証エラーコード</a></p>
 <hr>
-                        <p><a href="https://technet.microsoft.com/library/ee939272.aspx">キー管理サービス (KMS) のトラブルシューティングを行う方法</a></p>
+                        <p><a href="https://technet.microsoft.com/library/ee939272.aspx">キー管理サービス (KMS) のトラブルシューティング方法</a></p>
 <hr>
-                        <p><a href="https://technet.microsoft.com/library/ff793439.aspx">ボリューム ライセンス認証のトラブルシューティング</a></p>
-<hr><br/>                        <p><a href="https://technet.microsoft.com/library/ff793399.aspx">ライセンス認証エラー コード</a></p>
+                        <p><a href="https://technet.microsoft.com/library/ff793439.aspx">ボリュームライセンス認証のトラブルシューティング</a></p>
+<hr><br/>                        <p><a href="https://technet.microsoft.com/library/ff793399.aspx">アクティベーションエラーコード</a></p>
 <hr>
-                        <p><a href="https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess">Windows のインストールがエラーで失敗する&quot;入力されたプロダクト キーはインストール可能な Windows イメージのいずれか一致しません。別のプロダクト キーを入力します。&quot;</a></p>
+                        <p><a href="https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess">Windows のインストールがエラー &quot;で失敗することがあります。入力したプロダクトキーは、インストール可能な windows イメージのいずれとも一致しません。別のプロダクトキーを入力してください&quot;</a></p>
                     </div>
                 </div>
             </div>
@@ -102,21 +102,21 @@ Microsoft では Windows Server 用の更新プログラムとソリューショ
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>DCPromo とドメイン コント ローラーのインストール</h3>
+                        <h3>DCPromo およびドメインコントローラーのインストール</h3>
 <hr> 
-                        <a href="https://technet.microsoft.com/library/dd772723(v=ws.10).aspx">Active Directory と Active Directory ドメイン サービスのポート要件</a>
+                        <a href="https://technet.microsoft.com/library/dd772723(v=ws.10).aspx">Active Directory と Active Directory Domain Services ポートの要件</a>
 <hr>
-                        <p> <a href="http://blogs.msmvps.com/acefekay/2011/11/01/active-directory-firewall-ports-let-s-try-to-make-this-simple/">Active Directory のファイアウォール ポート – これを簡単に試してみましょう</a></p>
+                        <p> <a href="http://blogs.msmvps.com/acefekay/2011/11/01/active-directory-firewall-ports-let-s-try-to-make-this-simple/">Active Directory ファイアウォールのポート-単純にする</a></p>
 <hr>
-                        <p><a href="https://technet.microsoft.com/library/ff728623(v=exchg.150).aspx">Windows Server 2016 用の Exchange Server のサポート</a></p>
+                        <p><a href="https://technet.microsoft.com/library/ff728623(v=exchg.150).aspx">Windows Server 2016 用 Exchange Server のサポート</a></p>
 <hr>
-                        <p><a href="https://support.microsoft.com/kb/255504">Ntdsutil.exe を使用して、ドメイン コント ローラーに FSMO の役割を強制または転送するには</a></p>
+                        <p><a href="https://support.microsoft.com/kb/255504">Ntdsutil.exe を使用してドメインコントローラーに FSMO の役割を転送または強制する</a></p>
 <hr>
                         <p><a href="../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md">ドメイン コントローラーの展開のトラブルシューティング</a></p>
 <hr>
-                        <p><a href="https://msdn.microsoft.com/library/bb727058.aspx">Active Directory インストール ウィザードの問題のトラブルシューティング</a></p>
+                        <p><a href="https://msdn.microsoft.com/library/bb727058.aspx">Active Directory インストールウィザードに関する問題のトラブルシューティング</a></p>
 <hr>
-                        <p><a href="https://technet.microsoft.com/library/cc754463(v=ws.10).aspx">インストールして、AD DS の削除に関する既知の問題</a></p>
+                        <p><a href="https://technet.microsoft.com/library/cc754463(v=ws.10).aspx">AD DS のインストールと削除に関する既知の問題</a></p>
                       </div>
                  </div>
             </div>
@@ -134,21 +134,21 @@ Microsoft では Windows Server 用の更新プログラムとソリューショ
                     <div class="cardText">
                         <h3>Active Directory フェデレーション サービス (AD FS)</h3>
 <hr> 
-                        <a href="/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup">Azure Active Directory での Windows ドメイン参加済みデバイスの自動登録を構成する方法</a>
+                        <a href="/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup">Azure Active Directory に Windows ドメイン参加済みデバイスの自動登録を構成する方法</a>
 <hr>
-                        <p><a href="/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup#step-2-setup-issuance-of-claims">要求の発行をセットアップします。</a></p>
+                        <p><a href="/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup#step-2-setup-issuance-of-claims">要求の発行の設定</a></p>
 <hr><br/>                        <p><a href="../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md">LDAP ディレクトリに保存されたユーザーを認証するように AD FS を構成する</a></p>
 <hr>
                         <p><a href="../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md">AD FS での証明書認証のための代替ホスト名バインドのサポート</a></p>
 <hr>
-                        <p><a href="https://blogs.technet.microsoft.com/tspring/2017/01/20/federated-to-microsoft-cloud-and-account-lockouts/">パスワード攻撃から保護</a>
-                        <a href="../identity/ad-fs/deployment/upgrading-to-ad-fs-in-windows-server-2016.md">WID データベースを使用して Windows Server 2016 での AD FS へのアップグレード</a></p>
+                        <p><a href="https://blogs.technet.microsoft.com/tspring/2017/01/20/federated-to-microsoft-cloud-and-account-lockouts/">パスワード</a>
+                        <a href="../identity/ad-fs/deployment/upgrading-to-ad-fs-in-windows-server-2016.md">による攻撃から保護する WID データベースを使用して Windows Server 2016 の AD FS にアップグレードする</a></p>
 <hr>
-                        <p><a href="../identity/ad-fs/operations/configure-device-based-conditional-access-on-premises.md">Windows 10 のサイン オン – AD FS でデバイス認証を有効にします。</a></p>
+                        <p><a href="../identity/ad-fs/operations/configure-device-based-conditional-access-on-premises.md">Windows 10 サインオン– AD FS を使用したデバイス認証の有効化</a></p>
 <hr>
-                        <p><a href="../identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap-2016.md">AD FS と WAP で Windows Server 2016 で SSL 証明書の管理</a></p>
+                        <p><a href="../identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap-2016.md">Windows Server 2016 での AD FS と WAP での SSL 証明書の管理</a></p>
 <hr>
-                        <p><a href="../identity/ad-fs/operations/access-control-policies-in-ad-fs.md">Windows Server 2016 AD FS でのアクセス制御ポリシー</a></p>
+                        <p><a href="../identity/ad-fs/operations/access-control-policies-in-ad-fs.md">Windows Server 2016 AD FS の Access Control ポリシー</a></p>
                       </div>
                  </div>
             </div>
@@ -164,23 +164,23 @@ Microsoft では Windows Server 用の更新プログラムとソリューショ
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Active Directory のレプリケーション</h3>
+                        <h3>レプリケーションの Active Directory</h3>
 <hr> 
                          <a href="../identity/ad-ds/manage/troubleshoot/troubleshooting-active-directory-replication-problems.md">Active Directory レプリケーションの問題のトラブルシューティング</a>
 <hr>
-                         <a href="https://www.microsoft.com/en-in/download/details.aspx?id=30005">e2e:一般的な Active Directory レプリケーション エラーをトラブルシューティングする方法</a>
+                         <a href="https://www.microsoft.com/en-in/download/details.aspx?id=30005">e2e一般的な Active Directory レプリケーションエラーをトラブルシューティングする方法</a>
 <hr>
-                         <a href="https://support.microsoft.com/kb/3108513">Active Directory レプリケーション状態のツールは、Microsoft ダウンロード センターからダウンロードします。</a>
+                         <a href="https://support.microsoft.com/kb/3108513">Microsoft ダウンロードセンターから Active Directory Replication Status ツールをダウンロードする</a>
 <hr>
-                         <a href="https://support.microsoft.com/kb/2028495">AD レプリケーション エラー 8606 をトラブルシューティングするには。オブジェクトの作成に必要な属性が足りませんでした。</a></p>
+                         <a href="https://support.microsoft.com/kb/2028495">AD レプリケーションエラー8606のトラブルシューティング:オブジェクトを作成するための十分な属性が指定されていません</a></p>
 <hr>
-                         <a href="https://support.microsoft.com/kb/837932">Windows 2000 Server および Windows Server 2003 の Active Directory のレプリケーションを受信中に発生するイベント ID 2108 とイベント ID 1084</a>
+                         <a href="https://support.microsoft.com/kb/837932">Windows 2000 サーバーと Windows Server 2003 の Active Directory の入力方向のレプリケーション中にイベント ID 2108 とイベント ID 1084 が発生する</a>
 <hr>
-                         <a href="https://support.microsoft.com/kb/2645996">AD レプリケーション エラー 8451 をトラブルシューティングするには。レプリケーション操作には、データベース エラーが発生しました。</a>
+                         <a href="https://support.microsoft.com/kb/2645996">AD レプリケーションエラー8451のトラブルシューティング:レプリケーション操作でデータベースエラーが発生しました</a>
 <hr>
-                         <a href="https://support.microsoft.com/kb/2025726">AD レプリケーション エラー 1127 をトラブルシューティングするには。再試行の後も、ハード_ディスクにアクセスするときにディスク操作が失敗しました</a>
+                         <a href="https://support.microsoft.com/kb/2025726">AD レプリケーションエラー1127のトラブルシューティング:ハードディスクにアクセスしているときに、再試行後もディスク操作が失敗する</a>
 <hr>
-                         <a href="https://technet.microsoft.com/library/cc816907.aspx">サーバーのメタデータをクリーンアップします。</a>
+                         <a href="https://technet.microsoft.com/library/cc816907.aspx">サーバーメタデータのクリーンアップ</a>
                     </div>
                 </div>
             </div>

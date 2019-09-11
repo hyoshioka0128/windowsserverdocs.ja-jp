@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: このトピックでは、DFS 名前空間について説明します。DFS 名前空間は、複数のサーバー上に配置されている共有フォルダーを、論理的に構造化された 1 つ以上の名前空間にグループ化できる Windows Server の役割サービスです。
-ms.openlocfilehash: 2d91cb7197d2deecd96ebb29a951ef96ceefd9aa
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 8507961749bee6d01541029e33c8095470792b8a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284283"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870220"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 名前空間の概要
 
@@ -26,9 +26,9 @@ DFS 名前空間は、複数のサーバー上に配置されている共有フ�
 次では、DFS 名前空間を構成する要素について説明します。
 
 - **名前空間サーバー**: 名前空間サーバーは、名前空間をホストします。 名前空間サーバーには、メンバー サーバーやドメイン コントローラーを使用できます。
-- **名前空間のルート**: 名前空間のルートは、名前空間の開始ポイントです。 前の図では、ルートの名前は、パブリック、および名前空間のパスは\\ \\Contoso\\公開します。 この種類の名前空間は、ドメイン名 (たとえば、Contoso) で始まるし、Active Directory Domain Services (AD DS) でそのメタデータが格納されているため、ドメイン ベースの名前空間が。 上の図では、名前空間サーバーが 1 つだけ示されていますが、ドメインベースの名前空間を複数の名前空間サーバーでホストして、名前空間の可用性を向上させることもできます。
+- **名前空間のルート**: 名前空間のルートは、名前空間の開始ポイントです。 上の図では、ルートの名前はパブリックであり、名前空間のパス\\は\\ \\Contoso public です。 この種類の名前空間は、ドメイン名 (Contoso など) で始まり、そのメタデータが Active Directory Domain Services (AD DS) に格納されているため、ドメインベースの名前空間です。 上の図では、名前空間サーバーが 1 つだけ示されていますが、ドメインベースの名前空間を複数の名前空間サーバーでホストして、名前空間の可用性を向上させることもできます。
 - **フォルダー**:  フォルダー ターゲットを持たないフォルダーは名前空間に階層構造を追加し、フォルダー ターゲットを持つフォルダーはユーザーに対して実際の内容を提供します。 ユーザーが名前空間内のフォルダー ターゲットを持つフォルダーを参照すると、クライアント コンピューターは、そのフォルダー ターゲットの 1 つにクライアント コンピューターを透過的にリダイレクトする紹介を受け取ります。
-- **フォルダー ターゲット**: フォルダー ターゲットは、共有フォルダー、または名前空間内のフォルダーに関連付けられた別の名前空間の UNC パスです。 フォルダー ターゲットは、データおよび内容が保存される場所です。 上の図で、Tools という名前のフォルダーには、2 つのフォルダー ターゲット (ロンドンに 1 つ、ニューヨークに 1 つ) があります。また、Training Guides という名前のフォルダーには、フォルダー ターゲットがニューヨークに 1 つだけあります。 参照したユーザーは\\ \\Contoso\\パブリック\\ソフトウェア\\ツールは透過的に共有フォルダーにリダイレクトされます\\ \\LDN-SVR-01\\ツールまたは。\\ \\NYC-SVR-01\\サイトによって、ユーザーが現在にあるツールです。
+- **フォルダー ターゲット**: フォルダー ターゲットは、共有フォルダー、または名前空間内のフォルダーに関連付けられた別の名前空間の UNC パスです。 フォルダー ターゲットは、データおよび内容が保存される場所です。 上の図で、Tools という名前のフォルダーには、2 つのフォルダー ターゲット (ロンドンに 1 つ、ニューヨークに 1 つ) があります。また、Training Guides という名前のフォルダーには、フォルダー ターゲットがニューヨークに 1 つだけあります。 \\Contoso \\パブリックソフトウェアツールを\\参照するユーザーは、\\共有フォルダー\\LDN-01 ツールまたはに透過的にリダイレクトされます。\\\\\\NYC は、ユーザーが現在どのサイトに配置されているかによって異なります。 \\ \\\\
 
 このトピックでは、DFS のインストール方法、新機能、評価と展開に関する情報の参照先について説明します。
 
@@ -46,7 +46,7 @@ DFS の管理の実行または DFS 名前空間の使用には、その他の�
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2012
-- Windows Server 2008 R2 Datacenter edition および Enterprise Edition
+- Windows Server 2008 R2 Datacenter および Enterprise Edition
 - Windows Server (半期チャネル)
 
 次のオペレーティング システムを実行するサーバーは、単一のスタンドアロンの名前空間をホストできます。
@@ -65,7 +65,7 @@ DFS の管理の実行または DFS 名前空間の使用には、その他の�
 
 DFS 名前空間および DFS レプリケーションは、ファイル サービスおよび記憶域サービスの役割の一部です。 DFS 用の管理ツール (DFS の管理、Windows PowerShell 用の DFS 名前空間モジュール、およびコマンド ライン ツール) がリモート サーバー管理ツールの一部として個別にインストールされています。
 
-使用して DFS 名前空間をインストール[Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md)、サーバー マネージャー、または PowerShell で次のセクションで説明します。
+次のセクションで説明するように、 [Windows 管理センター](../../manage/windows-admin-center/understand/windows-admin-center.md)、サーバーマネージャー、または PowerShell を使用して DFS 名前空間をインストールします。
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>サーバー マネージャーを使用して DFS をインストールするには
 
@@ -83,7 +83,7 @@ DFS 名前空間および DFS レプリケーションは、ファイル サー�
 
 ### <a name="to-install-dfs-by-using-windows-powershell"></a>Windows PowerShell を使用して DFS をインストールするには
 
-管理者特権で Windows PowerShell セッションを開くし、次のコマンドでは、入力場所 < 名前\>は役割サービスまたはインストールする機能 (関連する役割サービスまたは機能名の一覧については、次の表を参照してください)。
+管理者特権で Windows PowerShell セッションを開き、次のコマンドを入力します。ここで\> < name は、インストールする役割サービスまたは機能です (関連する役割サービスまたは機能名の一覧については、次の表を参照してください)。
 
 ```PowerShell
 Install-WindowsFeature <name>
@@ -112,7 +112,7 @@ Microsoft Azure 内の仮想マシンにおける DFS 名前空間の使用は�
 
 - Azure の仮想マシンでは、スタンドアロンの名前空間をクラスター化することはできません。
 
-- ドメイン ベースの名前空間と Azure Active Directory 環境を含め、Azure の仮想マシンでホストできます。
+- ドメインベースの名前空間は、Azure Active Directory を持つ環境を含む、Azure の仮想マシンでホストすることができます。
 
 Azure 仮想マシンを使い始める方法については、[Azure 仮想マシンのドキュメント](https://docs.microsoft.com/azure/virtual-machines/)を参照してください。
 
@@ -122,10 +122,10 @@ Azure 仮想マシンを使い始める方法については、[Azure 仮想マ�
 
 | コンテンツの種類        | 参考資料 |
 | ------------------  | ----------------|
-| **製品評価** | [DFS 名前空間と Windows Server での DFS レプリケーションの新します。](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
-| **展開**    | [DFS Namespace スケーラビリティに関する考慮事項](http://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
+| **製品評価** | [Windows Server での DFS 名前空間と DFS レプリケーションの新機能](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
+| **展開**    | [DFS 名前空間のスケーラビリティに関する考慮事項](http://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
 | **運用**    | [DFS 名前空間:よく寄せられる質問](https://technet.microsoft.com/library/ee404780.aspx) |
-| **コミュニティ リソース** | [ファイル サービスとストレージに関する TechNet フォーラム](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
-| **プロトコル**        | [ファイル サービスの Windows server プロトコル](https://msdn.microsoft.com/library/cc239318.aspx)(非推奨) |
+| **コミュニティ リソース** | [ファイルサービスとストレージに関する TechNet フォーラム](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
+| **プロトコル**        | [Windows Server のファイルサービスプロトコル](https://msdn.microsoft.com/library/cc239318.aspx)れ |
 | **関連テクノロジ** | [フェールオーバー クラスタリング](../../failover-clustering/failover-clustering-overview.md)|
-| **サポート** | [Windows IT プロフェッショナル向けのサポート](https://www.microsoft.com/itpro/windows/support)|
+| **サポート** | [Windows IT Pro サポート](https://www.microsoft.com/itpro/windows/support)|

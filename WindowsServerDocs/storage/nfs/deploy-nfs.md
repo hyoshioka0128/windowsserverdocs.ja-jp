@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cc02f0a82b4143b80fc1107a63d234b117502d2d
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 761394f3190f02eedfea27a7d873c4c36535f23b
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544650"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865115"
 ---
 # <a name="deploy-network-file-system"></a>ネットワーク ファイル システムの展開
 

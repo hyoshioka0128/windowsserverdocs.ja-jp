@@ -1,6 +1,6 @@
 ---
-title: ネットワーク ポリシー サーバーのユーザー データの収集
-description: どのような情報は、Windows Server 2016 でネットワーク ポリシー サーバーによってユーザーを認証するために使用されます。
+title: ネットワークポリシーサーバーのユーザーデータコレクション
+description: Windows Server 2016 のネットワークポリシーサーバーによってユーザーを認証するためにどのような情報が使用されます。
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.author: joflore
@@ -11,40 +11,40 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: ''
 ms.date: 05/01/2018
-ms.openlocfilehash: 5bddd22c9c2f954435cc6ce37347d18c76ee7de3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cd145402ed70aa52da7188dee9dd64ce17fea155
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888743"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871882"
 ---
-# <a name="network-policy-server-user-data-collection"></a>ネットワーク ポリシー サーバーのユーザー データの収集
+# <a name="network-policy-server-user-data-collection"></a>ネットワークポリシーサーバーのユーザーデータコレクション
 
-このドキュメントでは、それを削除するには、イベントによって、ネットワーク ポリシー サーバー (NPS) が収集されるユーザー情報を検索する方法について説明します。
+このドキュメントでは、ネットワークポリシーサーバー (NPS) によって収集されたユーザー情報を削除したい場合に、その情報を検索する方法について説明します。
 
 >[!Note]
->表示または個人データの削除で知りたい場合は、Microsoft のガイダンスを確認してください、 [Windows gdpr データ主体の要求](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-windows)サイト。 GDPR に関する一般的な情報を探している場合を参照してください、 [Service Trust portal の GDPR セクション](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted)します。
+>個人データの表示や削除に関心がある場合は、「 [GDPR サイトの Windows データ主体の要求](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-windows)」に記載されているマイクロソフトのガイダンスを参照してください。 GDPR に関する一般情報をお探しの場合は、 [Service Trust portal の GDPR セクション](https://servicetrust.microsoft.com/ViewPage/GDPRGetStarted)を参照してください。
 
-## <a name="information-collected-by-nps"></a>NPS で収集される情報
+## <a name="information-collected-by-nps"></a>NPS によって収集された情報
 
 - Timestamp
 - イベントのタイムスタンプ
 - Username
-- 完全修飾されたユーザー名
-- クライアントの IP アドレス
-- クライアント ベンダー
+- 完全修飾ユーザー名
+- クライアント IP アドレス
+- クライアントベンダー
 - クライアントのフレンドリ名
 - [認証の種類]
-- RADIUS プロトコルに関するその他の多数のフィールド
+- RADIUS プロトコルに関する他の多くのフィールド
 
-## <a name="gather-data-from-nps"></a>NPS からデータを収集します。
+## <a name="gather-data-from-nps"></a>NPS からデータを収集する
 
-アカウンティング データが有効にし、構成、ユーザーの NPS の認証試行のレコードは SQL Server または構成によってログ ファイルから取得できます。 
+アカウンティングデータが有効で構成されている場合は、構成に応じて、SQL Server またはログファイルからユーザーの NPS 認証試行のレコードを取得できます。 
 
-すべてのクエリが、User_Name をレコードでアカウンティング データを SQL Server を構成すると、場合 =`'<username>'`します。
+アカウンティングデータが SQL Server 用に構成されている場合は、User_Name `'<username>'`= であるすべてのレコードに対してクエリを実行します。
 
-アカウンティング データは、ログ ファイルで構成された場合は、ログ ファイルを検索し、`<username>`すべてのログ エントリを検索します。
+アカウンティングデータがログファイルに対して構成されている場合は、ログ`<username>`ファイルでを検索して、すべてのログエントリを検索します。
 
-ネットワーク ポリシーとアクセス サービスのイベント ログ エントリは、アカウンティング データ商法と見なされます、収集する必要はありません。
+ネットワークポリシーとアクセスサービスのイベントログエントリは、アカウンティングデータにマルチ商法と見なされ、収集する必要はありません。
 
-アカウンティング データが有効でないかどうかは、ユーザーの NPS の認証試行のレコードは、検索することによって、ネットワーク ポリシーとアクセス サービス イベント ログから取得できます、`<username>`します。
+アカウンティングデータが有効になっていない場合は、 `<username>`を検索することにより、ネットワークポリシーとアクセスサービスのイベントログからユーザーの NPS 認証試行のレコードを取得できます。

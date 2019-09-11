@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: ad08d8716819773484fc1d1fbe3cc79dd203c498
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.openlocfilehash: 681e07b85af603d11295bf1ca2a08f0eb7181725
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590561"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865250"
 ---
 # <a name="known-issues-with-storage-replica"></a>記憶域レプリカに関する既知の問題
 
@@ -297,7 +297,7 @@ Windows Server 2016 では、このコマンドレットのエラー報告が制
 
 ## <a name="error-failed-to-bring-the-resource-cluster-disk-x-online-with-a-stretch-cluster"></a>ストレッチ クラスターで「リソース 'クラスター ディスク x' をオンラインにできませんでした」エラーが発生する ストレッチクラスターを使用する
 
-正常なフェールオーバー後にクラスター ディスクをオンラインにしようとするとき、元のソース サイトを再度プライマリにしようとすると、フェールオーバー クラスター マネージャーでエラーが発生します。 例:
+正常なフェールオーバー後にクラスター ディスクをオンラインにしようとするとき、元のソース サイトを再度プライマリにしようとすると、フェールオーバー クラスター マネージャーでエラーが発生します。 以下に例を示します。
 
     Error
     The operation has failed.
@@ -306,7 +306,7 @@ Windows Server 2016 では、このコマンドレットのエラー報告が制
     Error Code: 0x80071397
     The operation failed because either the specified cluster node is not the owner of the resource, or the node is not a possible owner of the resource.
 
-ディスクまたは CSV を手動で移動しようとすると、さらにエラーが表示されます。 例:
+ディスクまたは CSV を手動で移動しようとすると、さらにエラーが表示されます。 以下に例を示します。
 
     Error
     The operation has failed.

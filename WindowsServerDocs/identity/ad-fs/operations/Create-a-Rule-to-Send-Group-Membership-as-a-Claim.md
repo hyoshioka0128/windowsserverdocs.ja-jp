@@ -9,81 +9,81 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c9c4cdb881d77fe902776551b4e99061e67660ea
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 86111f8f7da7be1d33bd6ce07385805a9a3b3df8
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189383"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865925"
 ---
 # <a name="create-a-rule-to-send-group-membership-as-a-claim"></a>グループ メンバーシップを要求として送信する規則を作成する
 
-Active Directory フェデレーション サービスで要求規則テンプレートとして送信グループ メンバーシップを使用して\(AD FS\)、要求として送信する Active Directory セキュリティ グループを選択することを可能にするためのルールを作成することができます。 このルールは、選択したグループに基づくから 1 つの要求のみが表示されます。 たとえば、この規則テンプレートを使用すると、ユーザーが Domain Admins セキュリティ グループのメンバーである場合に管理者の値を持つグループの要求を送信するルールを作成します。 このルールは、ローカルの Active Directory ドメインのユーザーに対してのみ使用する必要があります。  
+Active Directory フェデレーションサービス (AD FS) \(ADFS\)で "グループメンバーシップを要求として送信する" 規則テンプレートを使用して、要求として送信する Active Directory セキュリティグループを選択できるようにする規則を作成できます。 選択したグループに基づいて、この規則から1つの要求のみが出力されます。 たとえば、この規則テンプレートを使用すると、ユーザーが Domain Admins セキュリティグループのメンバーである場合に、値が Admin のグループ要求を送信する規則を作成できます。 この規則は、ローカル Active Directory ドメイン内のユーザーに対してのみ使用してください。  
   
-次の手順を使用するには、AD FS 管理スナップインで要求規則を作成する\-でします。  
+AD FS 管理スナップイン\-を使用して要求規則を作成するには、次の手順を実行します。  
   
 この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
 
-## <a name="to-create-a-rule-to-send-group-membership-as-a-claim-on-a-relying-party-trust-in-windows-server-2016"></a>グループのメンバーシップを証明書利用者の信頼を Windows Server 2016 での要求として送信するルールを作成するには 
+## <a name="to-create-a-rule-to-send-group-membership-as-a-claim-on-a-relying-party-trust-in-windows-server-2016"></a>Windows Server 2016 の証明書利用者信頼に対してグループメンバーシップを要求として送信する規則を作成するには 
 
-1.  サーバー マネージャーで、**ツール**、し、 **AD FS 管理**します。  
+1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
   
-2.  コンソール ツリーで [ **AD FS**、] をクリックして**証明書利用者信頼**します。 
-![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
+2.  コンソールツリーの  **AD FS**で、**証明書利用者の信頼** をクリックします。 
+![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
-3.  右\-選択の信頼をクリックし、クリックして**要求発行ポリシーの編集**します。
-![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
+3.  選択\-した信頼を右クリックし、 **[要求の発行ポリシーの編集]** をクリックします。
+![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
   
-4.  **要求発行ポリシーの編集**ダイアログ ボックスで、**発行変換規則** をクリックして**規則の追加**ルール ウィザードを開始します。 
-![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
+4.  **[要求発行ポリシーの編集]** ダイアログボックスの **[発行変換規則]** で、 **[規則の追加]** をクリックして規則ウィザードを開始します。 
+![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**グループ メンバーシップを要求として送信** をクリックし、一覧から **次へ** .  
-![ルールを作成します。](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)      
+5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、一覧から **[グループメンバーシップを要求として送信]** を選択し、 **[次へ]** をクリックします。  
+![ルールの作成](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)      
 
-6.   **規則の構成**ページで**要求規則名**で、この規則の表示名を入力**ユーザーのグループ**クリックして**参照**を選択し、グループの下で**出力方向の要求の種類**目的のクレームの種類を選択し、**出力方向の要求の種類**値を入力します。
-![ルールを作成します。](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group4.PNG)   
+6.   **[規則の構成]** ページの **[要求規則名]** に、この規則の表示名を入力し、 **[ユーザーのグループ]** で **[参照]** をクリックしてグループを選択します。 **[出力方向の要求の種類]** で、目的の要求の種類を選択し、[次**へ] をクリックします。出力方向の要求の種類**値を入力します。
+![ルールの作成](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group4.PNG)   
 
-7.  をクリックして、**完了**ボタンをクリックします。  
+7.  **[完了]** ボタンをクリックします。  
   
-8.  **要求規則の編集**ダイアログ ボックスで、をクリックして **[ok]** ルールを保存します。
+8.  **[要求規則の編集]** ダイアログボックスで、 **[OK]** をクリックして規則を保存します。
   
-## <a name="to-create-a-rule-to-send-group-membership-as-a-claim-on-a-claims-provider-trust-in-windows-server-2016"></a>Windows Server 2016 での要求プロバイダー信頼のクレームとしてグループのメンバーシップを送信するルールを作成するには 
+## <a name="to-create-a-rule-to-send-group-membership-as-a-claim-on-a-claims-provider-trust-in-windows-server-2016"></a>Windows Server 2016 の要求プロバイダー信頼に対してグループメンバーシップを要求として送信する規則を作成するには 
   
-1.  サーバー マネージャーで、**ツール**、し、 **AD FS 管理**します。  
+1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
   
-2.  コンソール ツリーで [ **AD FS**、] をクリックして**要求プロバイダー信頼**します。 
-![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
+2.  コンソールツリーの  **AD FS**で、**要求プロバイダー信頼** をクリックします。 
+![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
   
-3.  右\-選択の信頼をクリックし、クリックして**要求規則の編集**します。
-![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
+3.  選択\-した信頼を右クリックし、 **[要求規則の編集]** をクリックします。
+![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
   
-4.  **要求規則の編集**ダイアログ ボックスで、**受け入れ変換規則** をクリックして**規則の追加**ルール ウィザードを開始します。
-![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
+4.  **[要求規則の編集]** ダイアログボックスの **[受け入れ変換規則]** で、 **[規則の追加]** をクリックして規則ウィザードを開始します。
+![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**グループ メンバーシップを要求として送信** をクリックし、一覧から **次へ** .  
-![ルールを作成します。](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)     
+5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、一覧から **[グループメンバーシップを要求として送信]** を選択し、 **[次へ]** をクリックします。  
+![ルールの作成](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)     
 
-6.   **規則の構成**ページで**要求規則名**で、この規則の表示名を入力**ユーザーのグループ**クリックして**参照**を選択し、グループの下で**出力方向の要求の種類**目的のクレームの種類を選択し、**出力方向の要求の種類**値を入力します。 
-![ルールを作成します。](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group4.PNG)      
+6.   **[規則の構成]** ページの **[要求規則名]** に、この規則の表示名を入力し、 **[ユーザーのグループ]** で **[参照]** をクリックしてグループを選択します。 **[出力方向の要求の種類]** で、目的の要求の種類を選択し、[次**へ] をクリックします。出力方向の要求の種類**値を入力します。 
+![ルールの作成](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group4.PNG)      
 
-7.  をクリックして、**完了**ボタンをクリックします。  
+7.  **[完了]** ボタンをクリックします。  
   
-8.  **要求規則の編集**ダイアログ ボックスで、をクリックして **[ok]** ルールを保存します。  
-
-
+8.  **[要求規則の編集]** ダイアログボックスで、 **[OK]** をクリックして規則を保存します。  
 
 
+
+
   
-## <a name="to-create-a-rule-to-send-group-membership-as-a-claim-in-windows-server-2012-r2"></a>グループのメンバーシップを Windows Server 2012 R2 で要求として送信するルールを作成するには 
+## <a name="to-create-a-rule-to-send-group-membership-as-a-claim-in-windows-server-2012-r2"></a>Windows Server 2012 R2 でグループメンバーシップを要求として送信するルールを作成するには 
   
-1.  サーバー マネージャーで、**ツール**、し、 **AD FS 管理**します。  
+1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
   
-2.  コンソール ツリーで [ **AD FS\\信頼関係**、] をクリックするか**要求プロバイダー信頼**または**証明書利用者信頼**特定の順にクリックしますこのルールを作成するリスト内の信頼します。  
+2.  コンソールツリーの [ **\\AD FS の信頼関係**] で、 **[要求プロバイダー信頼]** または **[証明書利用者信頼]** をクリックし、この規則を作成する一覧内の特定の信頼をクリックします。  
   
-3.  右\-選択の信頼をクリックし、クリックして**要求規則の編集**します。
-![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)  
+3.  選択\-した信頼を右クリックし、 **[要求規則の編集]** をクリックします。
+![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)  
   
-4.  **要求規則の編集**ダイアログ ボックスで、1 つに、次のタブを選択、信頼関係を編集して、どのルールを設定することによって、この規則を作成して順にクリックします**規則の追加**ルールを開始するにはその規則セットに関連付けられているウィザード:  
+4.  **[要求規則の編集]** ダイアログボックスで、編集する信頼とこの規則を作成する規則セットに応じて、次のタブのいずれかを選択し、 **[規則の追加]** をクリックして、その規則セットに関連付けられている規則ウィザードを開始します。:  
   
     -   **受け入れ変換規則**  
   
@@ -91,18 +91,18 @@ Active Directory フェデレーション サービスで要求規則テンプ�
   
     -   **発行承認規則**  
   
-    -   **委任承認規則**  
-![ルールを作成します。](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+    -   **委任の承認規則**  
+![ルールの作成](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
     
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**グループ メンバーシップを要求として送信** をクリックし、一覧から **次へ** .  
-![ルールを作成します。](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group1.PNG)
+5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、 **[グループメンバーシップを要求として送信する]** を一覧から選択し、 **[次へ]** をクリックします。  
+![ルールの作成](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group1.PNG)
 
-6.  **規則の構成**ページで**要求規則名**で、この規則の表示名を入力**ユーザーのグループ**クリックして**参照**を選択し、グループの下で**出力方向の要求の種類**目的のクレームの種類を選択し、**出力方向の要求の種類**値を入力します。  
-![ルールを作成します。](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group2.PNG)  
+6.  **[規則の構成]** ページの **[要求規則名]** に、この規則の表示名を入力し、 **[ユーザーのグループ]** で **[参照]** をクリックしてグループを選択します。 **[出力方向の要求の種類]** で、目的の要求の種類を選択し、[次**へ] をクリックします。出力方向の要求の種類**値を入力します。  
+![ルールの作成](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group2.PNG)  
 
-7.  **[Finish]** (完了) をクリックします。  
+7.  **[完了]** をクリックします。  
   
-8.  **要求規則の編集**ダイアログ ボックスで、をクリックして **[ok]** ルールを保存します。  
+8.  **[要求規則の編集]** ダイアログボックスで、 **[OK]** をクリックして規則を保存します。  
 
 
 

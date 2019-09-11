@@ -1,6 +1,6 @@
 ---
 title: ライブ マイグレーションの概要
-description: Windows Server 2016 でのライブ マイグレーション機能の概要を示します。
+description: Windows Server 2016 のライブマイグレーション機能の概要を示します。
 ms.prod: windows-server-threshold
 ms.service: na
 ms.technology: compute-hyper-v
@@ -10,33 +10,33 @@ ms.assetid: 5cc875ab-05c4-439e-b27d-6bfc77054660
 author: johncslack
 ms.author: joslack
 ms.date: 06/27/2017
-ms.openlocfilehash: 2bbe897ffb8b200a72fac5a662e518d4a4be1131
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2842435f1bdb0aeb82bbcf1ae02be66e242dc9eb
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887853"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70872054"
 ---
 # <a name="live-migration-overview"></a>ライブ マイグレーションの概要
 
-ライブ マイグレーションは、Windows server、HYPER-V 機能です。  計画外のダウンタイムをしなくても別に 1 つの HYPER-V ホストから仮想マシンの実行を透過的に移動することができます。  ライブ マイグレーションの主な利点は柔軟性です。実行中の仮想マシンは 1 つのホスト マシンに関連付けられていません。  これにより、使用停止またはにアップグレードする前に仮想マシンの特定のホストのドレインなどのアクションができます。  Windows フェールオーバー クラスタ リングと組み合わせると、ライブ マイグレーションは、高可用性のフォールト トレラント システム。 
+ライブマイグレーションは、Windows Server の Hyper-v 機能です。  これにより、ダウンタイムを認識することなく、Hyper-v ホスト間で実行中の Virtual Machines を透過的に移動できます。  ライブマイグレーションの主な利点は柔軟性です。Virtual Machines の実行は、1つのホストコンピューターに関連付けられていません。  これにより、特定のホスト Virtual Machines のドレインなどの操作を、使用停止またはアップグレードする前に行うことができます。  Windows フェールオーバークラスタリングと組み合わせて使用すると、ライブマイグレーションにより、高可用性とフォールトトレラントなシステムを作成できます。 
 
-## <a name="related-technologies-and-documentation"></a>関連するテクノロジとドキュメント
+## <a name="related-technologies-and-documentation"></a>関連テクノロジとドキュメント
 
-ライブ移行はフェールオーバー クラスタ リングと System Center Virtual Machine Manager などのいくつかの関連テクノロジと共によく使用されます。  これらのテクノロジを使用してライブ マイグレーションを使用する場合、最新のドキュメントへのポインターを示します。
-* [フェールオーバー クラスタ リング](../../../failover-clustering/failover-clustering-overview.md)(Windows Server 2016) 
-* [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/) (System Center 2016) 
+ライブマイグレーションは、フェールオーバークラスタリングや System Center Virtual Machine Manager など、いくつかの関連テクノロジと組み合わせて使用されることがよくあります。  これらのテクノロジを使用してライブマイグレーションを使用している場合は、最新のドキュメントを参照してください。
+* [フェールオーバークラスタリング](../../../failover-clustering/failover-clustering-overview.md)(Windows Server 2016) 
+* [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/)(System Center 2016) 
 
-Windows Server の以前のバージョンを使用しているか、または Windows Server の以前のバージョンで導入された機能についての詳細が必要な場合、履歴のドキュメントへのポインターを示します。 
-* [ライブ マイグレーション](https://technet.microsoft.com/library/ee815293(v=ws.10).aspx)(Windows Server 2008 R2)  
-* [ライブ マイグレーション](https://technet.microsoft.com/library/hh831435(v=ws.11).aspx)(Windows Server 2012 R2) 
-* [フェールオーバー クラスタ リング](https://technet.microsoft.com/library/hh831579(v=ws.11).aspx)(Windows Server 2012 R2)
-* [フェールオーバー クラスタ リング](https://technet.microsoft.com/library/ff182338(v=ws.10).aspx)(Windows Server 2008 R2)
-* [System Center Virtual Machine Manager](https://technet.microsoft.com/library/gg610610.aspx) (System Center 2012 R2)
-* [System Center Virtual Machine Manager](https://technet.microsoft.com/library/cc917964.aspx) (System Center 2008 R2)
+以前のバージョンの Windows Server を使用している場合、または以前のバージョンの Windows Server で導入された機能の詳細が必要な場合は、次のドキュメントを参照してください。 
+* [ライブマイグレーション](https://technet.microsoft.com/library/ee815293(v=ws.10).aspx)(Windows Server 2008 R2)  
+* [ライブマイグレーション](https://technet.microsoft.com/library/hh831435(v=ws.11).aspx)(Windows Server 2012 R2) 
+* [フェールオーバークラスタリング](https://technet.microsoft.com/library/hh831579(v=ws.11).aspx)(Windows Server 2012 R2)
+* [フェールオーバークラスタリング](https://technet.microsoft.com/library/ff182338(v=ws.10).aspx)(Windows Server 2008 R2)
+* [System Center Virtual Machine Manager](https://technet.microsoft.com/library/gg610610.aspx)(System Center 2012 R2)
+* [System Center Virtual Machine Manager](https://technet.microsoft.com/library/cc917964.aspx)(System Center 2008 R2)
 
-## <a name="live-migration-in-windows-server-2016"></a>Windows Server 2016 でのライブ マイグレーション
+## <a name="live-migration-in-windows-server-2016"></a>Windows Server 2016 のライブマイグレーション
 
-Windows Server 2016 でのライブ マイグレーションの展開の数の制限があります。  これでフェールオーバー クラスタ リングのない動作します。  その他の機能は、ライブ マイグレーションの以前のリリースから変更されません。  構成とフェールオーバー クラスタ リングのないライブ マイグレーションの使用について詳しくは。 
-* [フェールオーバー クラスタ リングのないライブ マイグレーションのホストの設定します。](../deploy/set-up-hosts-for-live-migration-without-failover-clustering.md)
-* [フェールオーバー クラスタ リングのないライブ マイグレーションを使用して、仮想マシンを移動するには](use-live-migration-without-failover-clustering-to-move-a-virtual-machine.md)
+Windows Server 2016 では、ライブマイグレーションの展開に制限がありません。  フェールオーバークラスタリングなしで動作するようになりました。  その他の機能は、以前のリリースのライブマイグレーションから変更されていません。  フェールオーバークラスタリングを使用しないライブマイグレーションの構成と使用の詳細については、次のとおりです。 
+* [フェールオーバークラスタリングを使用しないライブマイグレーションのホストの設定](../deploy/set-up-hosts-for-live-migration-without-failover-clustering.md)
+* [フェールオーバークラスタリングを使用せずにライブマイグレーションを使用して仮想マシンを移動する](use-live-migration-without-failover-clustering-to-move-a-virtual-machine.md)

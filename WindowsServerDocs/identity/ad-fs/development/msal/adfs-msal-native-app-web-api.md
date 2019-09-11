@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f1de6229d5360a4ea95d285f34ad32532762edca
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 588d717b8f03987b86af7dc0576d537ebd88c4ba
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69983560"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867617"
 ---
 # <a name="scenario-native-app-calling-web-api"></a>シナリオ:ネイティブアプリ呼び出し Web API 
 >適用先:AD FS 2019 以降 
@@ -53,7 +53,7 @@ AD FS 2019 によって認証され、 [Msal ライブラリ](https://github.com
  
      ![アプリの Reg](media/adfs-msal-native-app-web-api/native3.png) 
 
-  4. [Web API の構成] 画面で、**識別子** https://localhost:44321/ として「」を入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 この値は、後でアプリケーションの app.config ファイルと web.config ファイルで使用されます。
+  4. [Web API の構成] 画面で、**識別子** https://localhost:44321/ として「」を入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 この値**は、後でアプリケーションの app.config** **ファイルと web.config ファイル**で使用されます。
  
      ![アプリの Reg](media/adfs-msal-native-app-web-api/native4.png)   
   
@@ -146,5 +146,5 @@ AD FS 2019 によって認証され、 [Msal ライブラリ](https://github.com
        ![アプリのテスト](media/adfs-msal-native-app-web-api/native19.png)
  
 ## <a name="next-steps"></a>次の手順
-[OpenID Connect/OAuth フローとアプリケーションシナリオの AD FS](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
+[AD FS OpenID 接続/OAuth フローとアプリケーション シナリオ](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
  

@@ -1,6 +1,6 @@
 ---
-title: 一般的な MultiPoint Services の使用状況のシナリオ
-description: MultiPoint Services の一般的な使用について説明します
+title: MultiPoint サービスの一般的な使用シナリオ
+description: MultiPoint Services の一般的な使用方法について説明します。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,23 +13,23 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 5172927e087b49ec8a81ee84e58d58bdfa1d7e31
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3b0f8ea649382675a162572fcdafcfacc480a5f6
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865173"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871758"
 ---
 # <a name="common-usage-scenarios"></a>一般的な利用シナリオ
-MultiPoint Services では、Windows 10 デスクトップ エクスペリエンスの最も重要な要素を含む個々 のユーザーのデスクトップを提供します。 MultiPoint マネージャーで、システム管理者は、複数の MultiPoint サーバーとクライアントの検出と制御を使用できる、シンプルな管理ツールも提供します。 さらに、MultiPoint Services には、リアルタイムで表示 MultiPoint ダッシュ ボードが含まれています。 できるものの例は MultiPoint Services の次に示します。  
+MultiPoint Services では、Windows 10 デスクトップエクスペリエンスの最も重要な要素を使用して個々のユーザーデスクトップを配信します。 また、システム管理者が複数の MultiPoint サーバーとクライアントの検出と制御に使用できる、単純な管理ツールである MultiPoint Manager も用意されています。 さらに、MultiPoint Services には、リアルタイムで表示するための MultiPoint ダッシュボードが含まれています。 MultiPoint Services でできることの例を次に示します。  
   
-- 各個人の別のコンピューターをしなくても、パーソナル コンピューティング環境とのプライベート フォルダーに、各ユーザーを指定します。  
-- コンピューター ラボ、クラスルーム、トレーニング センター、または小規模ビジネス環境で複数の MultiPoint システムを管理します。  
-- 1 回、プログラムをインストールし、あらゆるステーションからアクセスします。  
-- 各ユーザーのデスクトップのアクティビティを監視します。  
-- グループの注意を引くためにカスタマイズ可能なメッセージで画面をブロックします。  
-- 1 つまたは複数の web サイトへのアクセスのみに、グループを制限します。  
-- 他の画面を特定のタスクを示すために、画面をプロジェクトします。  
-- プライベートの支援を求めるは標準のユーザーに通信します。  
-- タスクを示すために、ユーザーのセッションを制御します。  
-- 従来の PC、ラップトップ、またはその他のモバイル デバイスを使用しているユーザーのすべての上記の項目の操作を行います。 
+- 各ユーザーに個人用のコンピューティングエクスペリエンスとプライベートフォルダーを与えることで、各ユーザーに個別のコンピューターを用意する必要がありません。  
+- コンピューターラボ、教室、トレーニングセンター、または小規模ビジネス環境で、複数の MultiPoint システムを管理します。  
+- プログラムを1回インストールし、任意のステーションからアクセスします。  
+- 各ユーザーのデスクトップアクティビティを監視します。  
+- カスタマイズ可能なメッセージを含む画面をブロックして、グループの注意を得ることができます。  
+- グループが1つ以上の web サイトにアクセスできるように制限します。  
+- 画面を他の画面に投影して、特定のタスクを示します。  
+- ヘルプを要求している標準ユーザーとプライベートに通信します。  
+- ユーザーのセッションを制御して、タスクのデモンストレーションを行います。  
+- 従来の PC、ノート pc、またはその他のモバイルデバイスを使用しているユーザーについて、上記のすべての項目を実行します。 

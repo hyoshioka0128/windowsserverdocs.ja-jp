@@ -9,109 +9,109 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 72fe425b040f83a217a144976265c7754830c91b
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: d057c943b9c14b74b44472d446625b60f5ad9d22
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189505"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865962"
 ---
 # <a name="create-a-rule-to-permit-or-deny-users-based-on-an-incoming-claim"></a>入力方向の要求に基づいてユーザーを許可または拒否する規則を作成する 
 
 
-Windows Server 2016 で使用することができます、**アクセス制御ポリシー**を許可または入力方向の要求に基づいてユーザーを拒否する規則を作成します。  Windows Server 2012 r2 を使用して、**を許可または拒否する入力方向の要求に基づくユーザー**規則テンプレートの Active Directory フェデレーション サービスで\(AD FS\)を許可する承認規則を作成することができますか型と、入力方向の要求の値に基づいて証明書利用者のパーティには、ユーザーのアクセスを拒否します。 
+Windows Server 2016 では、 **Access Control ポリシー**を使用して、入力方向の要求に基づいてユーザーを許可または拒否する規則を作成できます。  Windows Server 2012 R2 では、Active Directory フェデレーションサービス (AD FS) \(AD FS\)の [**入力方向の要求に基づいてユーザーを許可または拒否**する] 規則テンプレートを使用して、ユーザーのへのアクセスを許可または拒否する承認規則を作成できます。入力方向の要求の種類と値に基づく証明書利用者。 
 
-たとえば、要求の証明書利用者へのアクセスに Domain Admins の値を持つグループがあるユーザーのみを許可する規則を作成するのにこれを使用することができます。 すべてのユーザー証明書利用者へのアクセスを許可する場合、**すべてのユーザーを許可**アクセス制御ポリシー、または**すべてのユーザーを許可**Windows Server のバージョンによってルール テンプレート。 ユーザーは、フェデレーション サービスから証明書利用者へのアクセスが許可されても、証明書利用者によってサービスが拒否される場合があります。  
+たとえば、これを使用すると、ドメイン管理者の値を持つグループ要求を持つユーザーのみに証明書利用者へのアクセスを許可する規則を作成できます。 すべてのユーザーに証明書利用者へのアクセスを許可する場合は、使用している Windows Server のバージョンに応じて、Everyone Access Control ポリシーを**許可**するか、**すべてのユーザーを許可**する規則テンプレートを使用します。 ユーザーは、フェデレーション サービスから証明書利用者へのアクセスが許可されても、証明書利用者によってサービスが拒否される場合があります。  
   
-次の手順を使用するには、AD FS 管理スナップインで要求規則を作成する\-でします。  
+AD FS 管理スナップイン\-を使用して要求規則を作成するには、次の手順を実行します。  
   
 この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。  
 
-## <a name="to-create-a-rule-to-permit-users-based-on-an-incoming-claim-on-windows-server-2016"></a>Windows Server 2016 での入力方向の要求に基づいてユーザーを許可するルールを作成するには
+## <a name="to-create-a-rule-to-permit-users-based-on-an-incoming-claim-on-windows-server-2016"></a>Windows Server 2016 の入力方向の要求に基づいてユーザーを許可する規則を作成するには
  
-1.  サーバー マネージャーで、**ツール**、し、 **AD FS 管理**します。  
+1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
   
-2.  コンソール ツリーで [ **AD FS**、] をクリックして**アクセス制御ポリシー**します。 
-![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny3.PNG)
+2.  コンソールツリーの  **AD FS**で、**Access Control ポリシー** をクリックします。 
+![ルールの作成](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny3.PNG)
 
-3. 右クリックして**アクセス制御ポリシーの追加**します。
-![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny4.PNG)
+3. 右クリックして **[Access Control ポリシーの追加]** を選択します。
+![ルールの作成](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny4.PNG)
 
-4. 名 ボックスに、ポリシー、説明およびクリックの名前を入力します。**追加**します。
-![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny5.PNG)
+4. 名前 ボックスに、ポリシーの名前と説明を入力し、**追加** をクリックします。
+![ルールの作成](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny5.PNG)
 
-5. **ルール エディター**、ユーザー で、配置をオンに**要求で特定のクレームを含む**下線の付いた をクリック**特定**下部にあります。
-![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny6.PNG)
+5. **ルールエディター**の [ユーザー] の下で、要求に**特定の要求を含む**チェックインを配置し、下部に**ある下線付き**の部分をクリックします。
+![ルールの作成](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny6.PNG)
 
-6. **要求を選択します**画面で、をクリックして、**要求**ラジオ ボタンを選択、**要求の種類**、**演算子**、および**要求の値**クリックして**Ok**します。
-![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny7.PNG)
+6. **[要求の選択]** 画面で、 **[要求]** オプションボタンをクリックし、**要求の種類**、**オペレーター**、および**要求の値**を選択し、 **[Ok]** をクリックします。
+![ルールの作成](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny7.PNG)
 
-7.  **ルール エディター**クリックして**Ok**します。  **アクセス制御ポリシーの追加**画面で、 **Ok**します。
+7.  **ルールエディター**で、[ **Ok]** をクリックします。  **[Access Control ポリシーの追加]** 画面で、[ **Ok]** をクリックします。
 
-8. **AD FS 管理**コンソール ツリーの [ **AD FS**、] をクリックして**証明書利用者信頼**します。 
-![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
+8. **AD FS 管理**コンソールツリーで、 **[AD FS]** の **[証明書]** 利用者の信頼 をクリックします。 
+![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
 
-9.  右クリックし、 **Relying Party Trust**へのアクセスを許可しを選択したい**アクセス制御ポリシーの編集**します。  
-![ルールを作成します。](media/Create-a-Rule-to-Permit-All-Users/permitall2.PNG)
+9.  アクセスを許可する**証明書利用者信頼**を右クリックし、 **[Access Control ポリシーの編集]** を選択します。  
+![ルールの作成](media/Create-a-Rule-to-Permit-All-Users/permitall2.PNG)
 
-10. アクセス制御ポリシー、ポリシーを選択し、順にクリックします**適用**と**Ok**します。
-![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny8.PNG)
+10. アクセス制御ポリシー でポリシーを選択し、**適用** をクリックして、 **Ok**をクリックします。
+![ルールの作成](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny8.PNG)
 
-## <a name="to-create-a-rule-to-deny-users-based-on-an-incoming-claim-on-windows-server-2016"></a>Windows Server 2016 での入力方向の要求に基づいてユーザーを拒否する規則を作成するには
+## <a name="to-create-a-rule-to-deny-users-based-on-an-incoming-claim-on-windows-server-2016"></a>Windows Server 2016 の入力方向の要求に基づいてユーザーを拒否する規則を作成するには
  
-1.  サーバー マネージャーで、**ツール**、し、 **AD FS 管理**します。  
+1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
   
-2.  コンソール ツリーで [ **AD FS**、] をクリックして**アクセス制御ポリシー**します。 
-![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny3.PNG)
+2.  コンソールツリーの  **AD FS**で、**Access Control ポリシー** をクリックします。 
+![ルールの作成](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny3.PNG)
 
-3. 右クリックして**アクセス制御ポリシーの追加**します。
-![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny4.PNG)
+3. 右クリックして **[Access Control ポリシーの追加]** を選択します。
+![ルールの作成](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny4.PNG)
 
-4. 名 ボックスに、ポリシー、説明およびクリックの名前を入力します。**追加**します。
-![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny9.PNG)
+4. 名前 ボックスに、ポリシーの名前と説明を入力し、**追加** をクリックします。
+![ルールの作成](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny9.PNG)
 
-5. **ルール エディター**、すべてのユーザーが選択されていることを確認し、[**を除く**でチェック ボックスをオン**要求で特定のクレームを含む**下線の付いた] をクリック**特定**下部にあります。
-![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny10.PNG)
+5. **ルールエディター**で、[すべてのユーザー] が選択されていることを確認し、[**要求内の特定の要求**でチェックイン**を行う]** を選択して、下部に**ある下線付きの部分**をクリックします。
+![ルールの作成](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny10.PNG)
 
-6. **要求を選択します**画面で、をクリックして、**要求**ラジオ ボタンを選択、**要求の種類**、**演算子**、および**要求の値**クリックして**Ok**します。
-![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny11.PNG)
+6. **[要求の選択]** 画面で、 **[要求]** オプションボタンをクリックし、**要求の種類**、**オペレーター**、および**要求の値**を選択し、 **[Ok]** をクリックします。
+![ルールの作成](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny11.PNG)
 
-7.  **ルール エディター**クリックして**Ok**します。  **アクセス制御ポリシーの追加**画面で、 **Ok**します。
+7.  **ルールエディター**で、[ **Ok]** をクリックします。  **[Access Control ポリシーの追加]** 画面で、[ **Ok]** をクリックします。
 
-8. **AD FS 管理**コンソール ツリーの [ **AD FS**、] をクリックして**証明書利用者信頼**します。 
-![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
+8. **AD FS 管理**コンソールツリーで、 **[AD FS]** の **[証明書]** 利用者の信頼 をクリックします。 
+![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)
 
-9.  右クリックし、 **Relying Party Trust**へのアクセスを許可しを選択したい**アクセス制御ポリシーの編集**します。  
-![ルールを作成します。](media/Create-a-Rule-to-Permit-All-Users/permitall2.PNG)
+9.  アクセスを許可する**証明書利用者信頼**を右クリックし、 **[Access Control ポリシーの編集]** を選択します。  
+![ルールの作成](media/Create-a-Rule-to-Permit-All-Users/permitall2.PNG)
 
-10. アクセス制御ポリシー、ポリシーを選択し、順にクリックします**適用**と**Ok**します。
-![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny12.PNG)
+10. アクセス制御ポリシー でポリシーを選択し、**適用** をクリックして、 **Ok**をクリックします。
+![ルールの作成](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny12.PNG)
 
   
-## <a name="to-create-a-rule-to-permit-or-deny-users-based-on-an-incoming-claim-on-windows-server-2012-r2"></a>許可または Windows Server 2012 R2 での入力方向の要求に基づいてユーザーを拒否する規則を作成するには
+## <a name="to-create-a-rule-to-permit-or-deny-users-based-on-an-incoming-claim-on-windows-server-2012-r2"></a>Windows Server 2012 R2 の入力方向の要求に基づいてユーザーを許可または拒否する規則を作成するには
   
-1.  サーバー マネージャーで、**ツール**、し、 **AD FS 管理**します。    
+1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。    
   
-2.  コンソール ツリーで  **AD FS\\信頼関係\\証明書利用者信頼**、この規則を作成するリスト内の特定の信頼をクリックします。  
+2.  コンソールツリーで、[ **\\AD FS の信頼関係\\] [証明書利用者信頼**] の下にある一覧で、この規則を作成する特定の信頼をクリックします。  
   
-3.  右\-選択の信頼をクリックし、クリックして**要求規則の編集**します。  
-![ルールを作成します。](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)   
+3.  選択\-した信頼を右クリックし、 **[要求規則の編集]** をクリックします。  
+![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)   
 
-4.  **要求規則の編集**ダイアログ ボックスで、をクリックして、**発行承認規則の** タブまたは**委任承認規則**タブ\(の種類に基づく必要な承認規則\)、 をクリックし、**規則の追加**を開始する、**承認の要求規則の追加ウィザード**。  
-![ルールを作成します。](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+4.  **要求規則の編集** ダイアログボックスで、必要\)な承認規則の種類に基づいて  \(**発行承認規則** タブまたは **委任承認**規則 タブをクリックし、規則の追加 をクリックします。を実行して、**承認要求規則の追加ウィザード**を開始します。  
+![ルールの作成](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
 
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**を許可または拒否する入力方向の要求に基づくユーザー**  をクリックし、一覧から **次へ** します。  
-![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny1.PNG)
+5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、一覧から **[入力方向の要求に基づいてユーザーを許可または拒否する]** を選択し、 **[次へ]** をクリックします。  
+![ルールの作成](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny1.PNG)
 
-6.  **規則の構成**ページ**要求規則名**で、この規則の表示名を入力**着信要求の種類**一覧で、要求の種類を選択**方向の要求値**値を入力するか、参照ボタン クリックして\(入手可能になった場合\)値を選択し、組織のニーズに応じて、次のオプションのいずれかを選択。  
+6.  **[規則の構成]** ページの **[要求規則名]** に、この規則の表示名を入力し、入力方向の要求の **[種類]** ボックスの一覧で要求の種類を選択します。 入力方向の **[要求の値]** で、値を入力するか、[参照\(] をクリックします。[\)使用可能] で値を選択し、組織のニーズに応じて、次のいずれかのオプションを選択します。  
   
-    -   **この着信要求でユーザーへのアクセスを許可します。**  
+    -   **この入力方向の要求でユーザーにアクセスを許可する**  
   
-    -   **この着信要求でユーザー アクセスを拒否します。**  
-![ルールを作成します。](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny2.PNG)  
-7.  **[Finish]** (完了) をクリックします。  
+    -   **この入力方向の要求でユーザーへのアクセスを拒否する**  
+![ルールの作成](media/Create-a-Rule-to-Permit-or-Deny-Users-Based-on-an-Incoming-Claim/permitdeny2.PNG)  
+7.  **[完了]** をクリックします。  
   
-8.  **要求規則の編集**ダイアログ ボックスで、をクリックして **[ok]** ルールを保存します。  
+8.  **[要求規則の編集]** ダイアログボックスで、 **[OK]** をクリックして規則を保存します。  
 
 ## <a name="additional-references"></a>その他の参照情報 
 [要求規則を構成する](Configure-Claim-Rules.md)  

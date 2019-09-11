@@ -8,57 +8,57 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 06/07/2019
-ms.openlocfilehash: e7cf6fc6a4fae2eee76409bd6af4ef2ff6ed35a3
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: b222cd4b97beecd25c14b9f8f39627bf46cb7716
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811782"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869536"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center の既知の問題
 
-> 適用対象:Windows Admin Center、Windows Admin Center プレビュー
+> 適用対象:Windows Admin Center、Windows Admin Center Preview
 
 このページで説明されている問題が発生した場合は、[お知らせください](http://aka.ms/WACfeedback)。
 
 ## <a name="lenovo-xclarity-integrator"></a>Lenovo XClarity インテグレーター
 
-Windows Admin Center 1904.1 のバージョンでは、Windows Admin Center バージョン 1904、Lenovo XClarity インテグレーターの拡張機能の公開された以前の非互換性の問題は解決されています。 Windows Admin Center のサポートされている最新のバージョンに更新することを強くお勧めします。
+以前に公開されていた Lenovo XClarity インテグレーター拡張と Windows 管理センターバージョン1904の非互換性の問題は、Windows 管理センターバージョン1904.1 で解決されるようになりました。 サポートされている最新バージョンの Windows 管理センターに更新することを強くお勧めします。
 
-- Lenovo XClarity インテグレーター拡張機能のバージョン 1.1 は Windows Admin Center 1904.1 と完全な互換性です。 Windows Admin Center および Lenovo の拡張機能の最新バージョンに更新することを強くお勧めします。
-- 何らかの理由で、時間の Windows Admin Center 1809.5 の使用を続行する必要がある場合可能性がありますを使用する Windows Admin Center 1809.5 はに基づいてサポートされなくなるまでに、Windows Admin Center 拡張子フィードで使用できますが XClarity インテグレーター 1.0.4この[サポート ポリシー](../support/index.md)します。
+- Lenovo XClarity インテグレーター拡張バージョン1.1 は、Windows 管理センター1904.1 と完全に互換性があります。 最新バージョンの Windows 管理センターと Lenovo 拡張機能を更新することを強くお勧めします。
+- 何らかの理由で、Windows 管理センター1809.5 の使用を継続する必要がある場合は、XClarity インテグレーター1.0.4 を使用することができます。これは、windows 管理センターの拡張機能1809.5 フィードでも使用できます。[サポートポリシー](../support/index.md)。
 
 ## <a name="installer"></a>インストーラー
 
 - 独自の証明書を使用して Windows Admin Center をインストールする場合は、証明書マネージャー MMC ツールから拇印をコピーすると、[先頭に無効な文字が含まれる](https://support.microsoft.com/help/2023835/certificate-thumbprint-displayed-in-mmc-certificate-snap-in-has-extra)ことに留意してください。 この問題を回避するには、拇印の最初の文字を入力し、残りをコピー/貼り付けします。
 
-- 1024 未満のポートを使用することはサポートされていません。 サービスのモードでポート 80 を指定されたポートにリダイレクトを構成する場合があります。
+- 1024未満のポートの使用はサポートされていません。 サービスモードでは、必要に応じて、指定したポートにリダイレクトするようにポート80を構成できます。
 
-- Windows Update service (wuauserv) が停止して無効になっている場合、インストーラーは失敗します。 [19100629]
+- Windows Update サービス (wuauserv) が停止され、無効になっている場合、インストーラーは失敗します。 [19100629]
 
 ### <a name="upgrade"></a>アップグレード
 
-- Quiet モードで msiexec を使用する場合は、以前のバージョンからのサービスのモードで Windows Admin Center をアップグレードする場合は、Windows Admin Center ポートの受信ファイアウォール規則の削除で問題があります。
-  - ルールを再作成して、管理者特権の PowerShell コンソールから、次のコマンドを実行して交換\<ポート > Windows Admin Center (既定値の 443) 用に構成されたポート。
+- 以前のバージョンから Windows 管理センターのサービスモードをアップグレードする場合、msiexec を quiet モードで使用すると、Windows 管理センターのポートの受信ファイアウォール規則が削除されるという問題が発生することがあります。
+  - ルールを再作成するには、管理者特権の PowerShell コンソールから次\<のコマンドを実行し、ポート > を Windows 管理センター用に構成されたポート (既定では 443) に置き換えます。
 
     ```powershell
     New-NetFirewallRule -DisplayName "SmeInboundOpenException" -Description "Windows Admin Center inbound port exception" -LocalPort <port> -RemoteAddress Any -Protocol TCP
     ```
 
-## <a name="general"></a>全般的な情報
+## <a name="general"></a>全般
 
-- ゲートウェイとしてインストールされている Windows Admin Center があれば**Windows Server 2016**含むイベント ログ エラーで、サービスがクラッシュする、頻繁に使用```Faulting application name: sme.exe```と```Faulting module name: WsmSvc.dll```。 これは、Windows Server 2019 で修正されたバグがあるためです。 Windows Server 2016 の修正プログラムが含まれている年 2019年 2 月累積更新プログラム、 [KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)します。
+- Windows **Server 2016**にゲートウェイとしてインストールされている windows 管理センターを使用している場合、サービスがとを```Faulting application name: sme.exe``` ```Faulting module name: WsmSvc.dll```含むイベントログのエラーでクラッシュすることがあります。 これは、Windows Server 2019 で修正されたバグが原因です。 Windows Server 2016 の修正プログラムには、2019の累積的な更新プログラム[KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)が含まれています。
 
-- ゲートウェイとしてインストールされている Windows Admin Center がありが破損していた接続一覧が表示される場合は、次の手順を実行します。
+- Windows 管理センターがゲートウェイとしてインストールされていて、接続リストが破損していると思われる場合は、次の手順を実行します。
 
    > [!WARNING]
-   >これは、接続の一覧と、ゲートウェイ上のすべての Windows Admin Center ユーザーの設定に削除されます。
+   >これにより、ゲートウェイのすべての Windows 管理センターユーザーの接続リストと設定が削除されます。
 
   1. Windows Admin Center をアンインストールします
   2. **C:\Windows\ServiceProfiles\NetworkService\AppData\Roaming\Microsoft** にある **Server Management Experience** フォルダーを削除します
   3. Windows Admin Center を再インストールします
 
-- 場合は、ツールを開いたままにして、長期間アイドル状態、発生してしまういくつか**エラー。実行空間の状態がこの操作に対して無効**エラー。 この問題が発生した場合は、お使いのブラウザーを更新してください。 これが発生した場合[フィードバックの送信](http://aka.ms/WACfeedback)します。
+- このツールを長時間開いたままアイドル状態にすると、次のような**エラーが発生する場合があります。実行空間の状態は、この操作**エラーに対して無効です。 この問題が発生した場合は、お使いのブラウザーを更新してください。 この問題が発生した場合は、[フィードバックをお送り](http://aka.ms/WACfeedback)ください。
 
 - 非常に長い URL を含むページを更新するときに **500 エラー**が発生する場合があります。 [12443710]
 
@@ -66,14 +66,14 @@ Windows Admin Center 1904.1 のバージョンでは、Windows Admin Center バ�
 
 - 一部のツールでは、コマンド ボタンがクリックされた直後に状態変更が反映されない場合があります。また、ツール UI に特定のプロパティへの変更が自動的に反映されない場合があります。 **[更新]** をクリックして、対象サーバーから最新の状態を取得することができます。 [11445790]
 
-- タグのタグのフィルター - 接続の一覧で複数選択のチェック ボックスを使用して接続を選択し、接続の一覧でフィルター処理する場合は、選択した任意のアクションは、以前に選択したすべてのマシンに適用されますので、元の選択が解決しません。 [18099259]
+- [接続一覧でのタグフィルター]-[複数選択] チェックボックスを使用して接続を選択した場合、接続リストをタグでフィルター処理すると、選択したすべてのコンピューターに対して選択した操作が適用されます。 [18099259]
 
-- サード パーティ ソフトウェアに関する通知内で表示されている、Windows Admin Center モジュールで実行されている OS のバージョン番号とマイナーの差異である可能性があります。
+- Windows 管理センターのモジュールで実行されている OSS のバージョン番号と、サードパーティのソフトウェアに関する通知に記載されているものとの間には、若干の差異がある場合があります。
 
 ### <a name="extension-manager"></a>拡張機能マネージャー
 
-- Windows Admin Center を更新するときに、拡張機能を再インストールする必要があります。
-- アクセスされるフィード拡張機能を追加する場合、警告はありません。 [14412861]
+- Windows 管理センターを更新する場合は、拡張機能を再インストールする必要があります。
+- アクセスできない拡張機能フィードを追加すると、警告は表示されません。 [14412861]
 
 ## <a name="browser-specific-issues"></a>ブラウザーに固有の問題
 
@@ -83,38 +83,38 @@ Windows Admin Center 1904.1 のバージョンでは、Windows Admin Center バ�
 
 - Azure Active Directory を ID プロバイダーとして使用していて、Windows Admin Center が自己署名証明書またはその他の信頼されていない証明書で構成されている場合は、Microsoft Edge で AAD 認証を完了することはできません。  [15968377]
 
-- サービスとしてデプロイされている Windows Admin Center があり、お使いのブラウザーとして Microsoft Edge を使用している場合、ゲートウェイを Azure に接続する、新しいブラウザー ウィンドウを起動した後は失敗します。 追加することで、この問題を回避しようとしています。 https://login.microsoftonline.com 、 https://login.live.com 、として、ゲートウェイの URL が信頼済みサイトとクライアント側のブラウザーでポップアップ ブロックの設定のサイトを許可されているとします。 この問題の修正の詳細について、[トラブルシューティング ガイド](troubleshooting.md#azure-features-dont-work-properly-in-edge)します。 [17990376]
+- Windows 管理センターがサービスとして展開されていて、ブラウザーとして Microsoft Edge を使用している場合は、新しいブラウザーウィンドウを起動した後にゲートウェイを Azure に接続できないことがあります。 追加することで、この問題を回避しようとしています。 https://login.microsoftonline.com 、 https://login.live.com 、として、ゲートウェイの URL が信頼済みサイトとクライアント側のブラウザーでポップアップ ブロックの設定のサイトを許可されているとします。 この問題を解決する方法については、[トラブルシューティングガイド](troubleshooting.md#azure-features-dont-work-properly-in-edge)を参照してください。 [17990376]
 
-- デスクトップ モードでインストールされている Windows Admin Center があれば、Microsoft edge ブラウザーのタブは、favicon に表示されません。 [17665801]
+- Windows 管理センターがデスクトップモードでインストールされている場合、Microsoft Edge の [ブラウザー] タブに favicon は表示されません。 [17665801]
 
 ### <a name="google-chrome"></a>Google Chrome
 
-- 前のバージョン 70 (年 10 月、2018 年後半にリリース) Chrome が、[バグ](https://bugs.chromium.org/p/chromium/issues/detail?id=423609)websockets プロトコルと NTLM 認証に関連します。 これにより、次のツールが影響します。イベント、PowerShell、リモート デスクトップ接続します。
+- バージョン70より前 (10 月、2018)、Chrome には websocket プロトコルと NTLM 認証に関する[バグ](https://bugs.chromium.org/p/chromium/issues/detail?id=423609)がありました。 これは、次のツールに影響します。イベント、PowerShell、リモートデスクトップ。
 
 - Chrome では、特に**ワークグループ** (非ドメイン) 環境での接続の追加エクスペリエンスの実行中に、複数の資格情報プロンプトが表示される場合があります。
 
-- Windows Admin Center が、サービスとしてデプロイした場合、ゲートウェイの URL からのポップアップは、Azure との統合機能を使用するのに有効にする必要があります。 これらのサービスには、Azure のネットワーク アダプター、Azure の更新プログラム管理および Azure Site Recovery が含まれます。
+- Windows 管理センターがサービスとしてデプロイされている場合、Azure 統合機能を使用するには、ゲートウェイ URL のポップアップを有効にする必要があります。 これらのサービスには、Azure ネットワークアダプター、Azure Update Management および Azure Site Recovery が含まれます。
 
 ### <a name="mozilla-firefox"></a>Mozilla Firefox
 
 Windows Admin Center は、Mozilla Firefox でテストされていませんが、ほとんどの機能は機能します。
 
-- Windows 10 のインストール:インポートする必要がありますので、Mozilla Firefox は、独自の証明書ストア、```Windows Admin Center Client```証明書を Firefox では Windows 10、Windows Admin Center を使用します。
+- Windows 10 のインストール:Mozilla Firefox には独自の証明書ストアがあるため、windows ```Windows Admin Center Client``` 10 で windows 管理センターを使用するには、Firefox に証明書をインポートする必要があります。
 
-## <a name="websocket-compatibility-when-using-a-proxy-service"></a>プロキシ サービスを使用するときに WebSocket 互換性
+## <a name="websocket-compatibility-when-using-a-proxy-service"></a>プロキシサービスを使用する場合の WebSocket の互換性
 
 Windows Admin Center のリモート デスクトップ、PowerShell、およびイベント モジュールでは、WebSocket プロトコルを利用します。多くの場合、このプロトコルはプロキシ サービスを使用するときにサポートされていません。 Azure AD アプリケーション プロキシの互換性における WebSocket サポートは[プレビュー](https://blogs.technet.microsoft.com/applicationproxyblog/2018/03/28/limited-websocket-support-now-in-public-preview/)の段階であり、互換性に関するフィードバックを必要としています。
 
-## <a name="support-for-windows-server-versions-before-2016-2012-r2-2012-2008-r2"></a>(2012 R2、2012、2008 R2) の 2016年より前に Windows Server のバージョンのサポート
+## <a name="support-for-windows-server-versions-before-2016-2012-r2-2012-2008-r2"></a>2016より前の Windows Server バージョンのサポート (2012 R2、2012、2008 R2)
 
 > [!NOTE]
-> Windows Admin Center では、PowerShell の機能は、Windows Server 2012 R2、2012、または 2008 R2 には含まれていない必要があります。 Windows Server は、Windows Admin Center で管理するが場合、は、それらのサーバーに WMF 5.1 以降のバージョンをインストールする必要があります。
+> Windows 管理センターには、Windows Server 2012 R2、2012、または 2008 R2 に含まれていない PowerShell 機能が必要です。 Windows 管理センターで Windows Server を管理する場合は、これらのサーバーに WMF バージョン5.1 以上をインストールする必要があります。
 
 PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。
 
 インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://www.microsoft.com/en-us/download/details.aspx?id=54616)できます。
 
-## <a name="role-based-access-control-rbac"></a>ロールベースのアクセス制御 (RBAC)
+## <a name="role-based-access-control-rbac"></a>ロールベースの Access Control (RBAC)
 
 - Windows Defender アプリケーション制御 (WDAC、旧称はコードの整合性) を使用するように構成されているコンピューターでは、RBAC 展開は成功しません。[16568455]
 
@@ -126,15 +126,15 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 ### <a name="server-settings"></a>サーバーの設定
 
-- 設定を変更しようと保存せずに移動した場合、ページが未保存の変更に関する警告しますが、移動を続行します。 [設定] タブが選択されているが、ページのコンテンツと一致しません状態で最終的に可能性があります。 [19905798] [19905787]
+- 設定を変更した後、保存せずに移動しようとすると、未保存の変更についての警告が表示されますが、移動は続行されます。 選択した [設定] タブがページの内容と一致しない状態になることがあります。 [19905798] [19905787]
 
 ### <a name="certificates"></a>証明書
 
 - .PFX の暗号化された証明書を現在のユーザー ストアにインポートすることはできません。 [11818622]
 
-### <a name="devices"></a>デバイス
+### <a name="devices"></a>[デバイス]
 
-- キーボードでテーブル間の移動、ときに、選択可能性があります、テーブル グループの先頭にジャンプします。 [16646059]
+- キーボードを使用してテーブル内を移動すると、選択した項目がテーブルグループの一番上に移動する場合があります。 [16646059]
 
 ### <a name="events"></a>イベント
 
@@ -142,11 +142,11 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 - 大きいログ ファイルをエクスポートするときに、“パケット サイズ” を参照するエラーが表示される場合があります。 [16630279]
 
-  - これを解決するには、ゲートウェイ コンピューターで管理者特権でコマンド プロンプトで、次のコマンドを使用します。 ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
+  - これを解決するには、ゲートウェイコンピューターで管理者特権のコマンドプロンプトで次のコマンドを使用します。```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
 ### <a name="files"></a>ファイル
 
-- 大きいファイルのアップロードまたはダウンロードはまだサポートされていません。 (\~100 mb の制限) [12524234]
+- 大きいファイルのアップロードまたはダウンロードはまだサポートされていません。 (\~100mb の制限) [12524234]
 
 ### <a name="powershell"></a>PowerShell
 
@@ -164,13 +164,13 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 ### <a name="remote-desktop"></a>リモート デスクトップ
 
-- Windows Server 2012 を管理するときに接続するリモート デスクトップ ツールがあります。 [20258278]
+- Windows Server 2012 を管理している場合、リモートデスクトップツールが接続に失敗することがあります。 [20258278]
 
-- ドメインに参加していないマシンに接続するには、リモート デスクトップを使用する場合で自分のアカウントを入力する必要があります、```MACHINENAME\USERNAME```形式。
+- リモートデスクトップを使用して、ドメインに参加していないコンピューターに接続する場合は、の```MACHINENAME\USERNAME```形式でアカウントを入力する必要があります。
 
-- いくつかの構成には、グループ ポリシーを使用してリモート デスクトップ クライアントを Windows Admin Center をブロックできます。 これが発生した場合に有効にする```Allow users to connect remotely by using Remote Desktop Services```下 ```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
+- 一部の構成では、Windows 管理センターのリモートデスクトップクライアントがグループポリシーでブロックされることがあります。 この問題が発生した```Allow users to connect remotely by using Remote Desktop Services```場合は、```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
 
-- リモート デスクトップによって影響を受ける[websocket 互換性。](#websocket-compatibility-when-using-a-proxy-service)
+- リモートデスクトップは websocket 互換性によって影響を受け[ます。](#websocket-compatibility-when-using-a-proxy-service)
 
 - リモート デスクトップ ツールは現在、ローカル デスクトップとリモート セッションの間のテキスト、イメージ、またはファイルのコピー/貼り付けをサポートしていません。
 
@@ -182,7 +182,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
   - Windows キー
   - PrtScn
 
-- リモート アプリ – からリモート デスクトップ設定、アプリのリモート ツールを有効にした後、ツールされない可能性がありますツールの一覧にデスクトップ エクスペリエンス搭載サーバーを管理するときにします。 [18906904]
+- リモートアプリ-リモートデスクトップの設定からリモートアプリツールを有効にした後、デスクトップエクスペリエンスを備えたサーバーを管理するときにツールの一覧にツールが表示されない場合があります。 [18906904]
 
 ### <a name="roles-and-features"></a>役割と機能
 
@@ -194,42 +194,42 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 ### <a name="storage"></a>ストレージ
 
-- エラー通知なくが失敗するクォータ情報をフェッチしています (されますが、エラー、ブラウザーのコンソールで) [18962274]
+- クォータ情報の取得がエラー通知なしに失敗する (ブラウザーのコンソールにエラーが表示される) [18962274]
 
-- 下位レベル。DVD または CD/フロッピー ドライブは、下位レベル上のボリュームとしては表示されません。
+- ダウンレベル:DVD/CD/フロッピードライブは、下位レベルではボリュームとして表示されません。
 
-- 下位レベル。不明または空白の詳細 パネルに表示されるため、ボリュームとディスクで一部のプロパティが使用可能な下位レベルです。
+- ダウンレベル:[ボリュームとディスク] の一部のプロパティは下位レベルでは使用できないため、[詳細] パネルに [不明] または [空白] と表示されます。
 
-- 下位レベル。新しいボリュームを作成するには、ReFS はのみ Windows 2012 および 2012 R2 コンピューターで 64 K のアロケーション ユニット サイズをサポートします。 ReFS ボリュームがダウンレベル ターゲットの小さいアロケーション ユニット サイズで作成された場合は、ファイル システムの書式設定が失敗します。 新しいボリュームは使用できません。 解決策は、ボリュームを削除し、64 K のアロケーション ユニット サイズを使用することです。
+- ダウンレベル:新しいボリュームを作成する場合、ReFS でサポートされるのは、Windows 2012 および 2012 R2 コンピューターでのアロケーションユニットサイズが64K です。 ReFS ボリュームがダウンレベル ターゲットの小さいアロケーション ユニット サイズで作成された場合は、ファイル システムの書式設定が失敗します。 新しいボリュームは使用できません。 解決策は、ボリュームを削除し、64 K のアロケーション ユニット サイズを使用することです。
 
 ### <a name="updates"></a>更新プログラム
 
-- 更新プログラムをインストールすると、インストールの状態がキャッシュしてブラウザーの更新が必要です。
+- 更新プログラムをインストールすると、インストールの状態がキャッシュされ、ブラウザーの更新が必要になる場合があります。
 
-- エラーが発生する可能性があります。「キーセットが存在しません」Azure の更新プログラム管理を設定しようとしています。 この場合は、管理対象ノードで次の修復手順をお試しください。
-    1. ' Cryptographic Services' サービスを停止します。
-    2. フォルダー オプションの変更を表示するにはファイルが非表示 (必要な場合)。
-    3. "%Allusersprofile%\microsoft\crypto\rsa\s-1-5-18"フォルダーにあり、その内容をすべて削除します。
-    4. ' Cryptographic Services' サービスを再起動します。
-    5. Windows Admin Center での更新管理のセットアップを繰り返します
+- 次のようなエラーが発生する可能性があります。Azure Update management を設定しようとすると、"キーセットが存在しません" が発生します。 この場合は、管理ノードで次の修復手順を試してください。
+    1. ' Cryptographic Services ' サービスを停止します。
+    2. 隠しファイルを表示するようにフォルダーオプションを変更します (必要な場合)。
+    3. "%Allusersprofile%\Microsoft\Crypto\RSA\S-1-5-18" フォルダーを受け取って、その内容をすべて削除します。
+    4. ' Cryptographic Services ' サービスを再起動してください。
+    5. Windows 管理センターで Update Management のセットアップを繰り返す
 
 ### <a name="virtual-machines"></a>仮想マシン
 
-- Windows Server 2012 ホスト上のバーチャル マシンを管理する場合、ブラウザーで VM が接続ツールは、VM への接続に失敗します。 VM に接続するための .rdp ファイルをダウンロードして動作するはずです。 [20258278]
+- Windows Server 2012 ホスト上の仮想マシンを管理する場合、ブラウザー内 VM 接続ツールは VM に接続できません。 VM に接続するための .rdp ファイルのダウンロードは引き続き機能します。 [20258278]
 
-- Azure Site Recovery – ASR が WAC、外部ホストのセットアップの場合はできないことから WAC [18972276] 内の VM を保護するには
+- Azure Site Recovery – ASR が WAC の外部のホストにセットアップされている場合、WAC 内から VM を保護することはできません [18972276]
 
 - 仮想 SAN マネージャー、Move VM、Export VM、VM レプリケーションなどの Hyper-V マネージャーで利用可能な高度な機能は、現在サポートされていません。
 
 ### <a name="virtual-switches"></a>仮想スイッチ
 
-- スイッチ埋め込みチーミング (SET) をします。Nic チームを追加する場合は、同じサブネット上があります。
+- スイッチ埋め込みチーミング (SET):Nic をチームに追加する場合は、同じサブネット上にある必要があります。
 
 ## <a name="computer-management-solution"></a>コンピューターの管理ソリューション
 
 コンピューターの管理ソリューションには、サーバー マネージャー ソリューションのツールのサブセットが含まれているため、同じ既知の問題と共に、次のコンピューターの管理ソリューション特有の問題が該当します。
 
-- Microsoft アカウントを使用する場合 ([MSA](https://account.microsoft.com/account/)) する必要がありますを指定する Windows 10 コンピューターにログオンするために Azure Active Directory (AAD) を使用する場合、または"管理-として"ローカル マシン [16568455] を管理する資格情報
+- Microsoft アカウント ([MSA](https://account.microsoft.com/account/)) を使用している場合、または AZURE ACTIVE DIRECTORY (AAD) を使用して Windows 10 コンピューターにログオンしている場合、ローカルコンピューターを管理するには、"管理-as" の資格情報を指定する必要があります [16568455]
 
 - ローカル ホストを管理しようとすると、ゲートウェイ プロセスを昇格するように求められます。 続いて表示される [ユーザー アカウント制御] ポップアップで **[いいえ]** をクリックすると、Windows Admin Center でそれを表示することができなくなります。 この場合、システム トレイの Windows Admin Center アイコンを右クリックし、[終了] を選択することでゲートウェイ プロセスを終了し、[スタート] メニューから Windows Admin Center を再起動します。
 

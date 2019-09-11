@@ -1,6 +1,6 @@
 ---
 title: Windows Server Essentials でのデバイスの管理
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -12,12 +12,12 @@ ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a66f98b0896e706f520aa057b91cce2fe662d22d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 48eb7009215e484fb00e704c7b328340240321d2
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433321"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865158"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>Windows Server Essentials でのデバイスの管理
 
@@ -25,19 +25,19 @@ ms.locfileid: "66433321"
  
  以下のセクションでは、サーバーのデバイス管理機能について説明し、さらに、ネットワーク上のデバイスを設定して使用する方法について説明します。  
   
--   [ダッシュ ボードを使用してデバイスを管理します。](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [ダッシュボードを使用してデバイスを管理する](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [ユーザー アカウントに特定のネットワーク コンピューターにログオンする権限を割り当てる](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [特定のネットワークコンピューターにログオンするためのアクセス許可をユーザーアカウントに割り当てる](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_2)  
   
--   [コンピューターをサーバーから削除します。](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_3)  
+-   [サーバーからコンピューターを削除する](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_3)  
   
--   [フォルダー リダイレクトおよびセキュリティ用グループ ポリシー設定を構成します。](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_5)  
+-   [フォルダーリダイレクトとセキュリティのグループポリシー設定を構成する](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_5)  
   
--   [リモート デスクトップ セッションを使用してネットワーク コンピューターに接続します。](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_7)  
+-   [リモートデスクトップセッションを使用してネットワークコンピューターに接続する](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_7)  
   
--   [コンピューター プロパティの表示](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_8)  
+-   [コンピューターのプロパティの表示](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_8)  
   
-##  <a name="BKMK_1"></a> ダッシュ ボードを使用してデバイスを管理します。  
+##  <a name="BKMK_1"></a>ダッシュボードを使用してデバイスを管理する  
  Windows Server Essentials では、Windows Server Essentials ダッシュボードを使用して、一般的な管理タスクを実行することができます。 ダッシュボードの **[デバイス]** ページには、次の項目が表示されます。  
   
 -   次の情報を含む、ネットワーク コンピューターの一覧  
@@ -89,7 +89,7 @@ ms.locfileid: "66433321"
 |コンピューターをサーバーに接続する方法|コンピューターをネットワークに参加させるために実行する手順が説明されているヘルプ トピックが開きます。|  
 |グループ ポリシーの実装|ドメインに参加している Windows 8 および Windows 7 コンピューターにポリシー設定を適用します。|  
   
-##  <a name="BKMK_2"></a> ユーザー アカウントに特定のネットワーク コンピューターにログオンする権限を割り当てる  
+##  <a name="BKMK_2"></a>特定のネットワークコンピューターにログオンするためのアクセス許可をユーザーアカウントに割り当てる  
  リモートの場所から Windows Server Essentials ネットワークにアクセスする場合、ユーザーが特定のネットワーク コンピューターのみにログオンできるように、ユーザー アカウントにアクセス許可を割り当てることができます。  
   
 #### <a name="to-change-the-computer-access-for-a-user-account"></a>ユーザー アカウントのコンピューター アクセスを変更するには  
@@ -100,15 +100,15 @@ ms.locfileid: "66433321"
   
 3.  ユーザー アカウント一覧で、変更するユーザー アカウントを選択します。  
   
-4.  **< ユーザー アカウント\>タスク**ウィンドウで、をクリックして**アカウント プロパティの表示**します。 ユーザー アカウントの **[プロパティ]** ページが表示されます。  
+4.  [**ユーザー\>アカウントタスクの <** ] ウィンドウで、 **[アカウントのプロパティの表示]** をクリックします。 ユーザー アカウントの **[プロパティ]** ページが表示されます。  
   
 5.  **[コンピューター アクセス]** タブで、このユーザーがリモートでアクセスできるコンピューターを選択し、 **[OK]** をクリックします。  
   
-##  <a name="BKMK_3"></a> コンピューターをサーバーから削除します。  
+##  <a name="BKMK_3"></a>サーバーからコンピューターを削除する  
  ダッシュボードを使用して Windows Server Essentials を実行しているサーバーから削除されたコンピューターは、サーバーによって管理されなくなります。 その結果、サーバーは、ネットワークから削除されたコンピューターのバックアップの作成や状態の監視を停止します。  
   
 > [!NOTE]
->  サーバーからコンピューターを削除しても、そのコンピューターがネットワークから切断されることはありません。 コンピューターは引き続き、サーバーに接続される前と同じ方法でネットワーク上のリソースにアクセスできます。 コンピューターのサーバー リソースへのアクセスを禁止して、サーバーから切断するには、そのコンピューターをドメインから削除する必要があります。 さらに、サーバーからコンピューターを削除しても、コネクタ ソフトウェアまたはスタート パッドはそのコンピューターから自動的にアンインストールされません。 コンピューターからコネクタ ソフトウェアを手動で削除する必要があります。 詳細についてでコネクタ ソフトウェアをアンインストールする」をご覧ください[接続](../use/Get-Connected-in-Windows-Server-Essentials.md)します。  
+>  サーバーからコンピューターを削除しても、そのコンピューターがネットワークから切断されることはありません。 コンピューターは引き続き、サーバーに接続される前と同じ方法でネットワーク上のリソースにアクセスできます。 コンピューターのサーバー リソースへのアクセスを禁止して、サーバーから切断するには、そのコンピューターをドメインから削除する必要があります。 さらに、サーバーからコンピューターを削除しても、コネクタ ソフトウェアまたはスタート パッドはそのコンピューターから自動的にアンインストールされません。 コンピューターからコネクタ ソフトウェアを手動で削除する必要があります。 詳細については、「 [Get Connected](../use/Get-Connected-in-Windows-Server-Essentials.md)」の「コネクタソフトウェアのアンインストール」を参照してください。  
   
 #### <a name="to-remove-a-computer-from-the-network-by-using-the-dashboard"></a>ダッシュボードを使用してネットワークからコンピューターを削除するには  
   
@@ -118,7 +118,7 @@ ms.locfileid: "66433321"
   
 3.  コンピューターの一覧で、ネットワークから削除するコンピューターを右クリックし、 **[コンピューターの削除]** をクリックします。  
   
-##  <a name="BKMK_5"></a> フォルダー リダイレクトおよびセキュリティ用グループ ポリシー設定を構成します。  
+##  <a name="BKMK_5"></a>フォルダーリダイレクトとセキュリティのグループポリシー設定を構成する  
  Windows Server Essentials ダッシュボードを使用して、グループ ポリシーを構成し、Windows Server Essentials ネットワーク内のコンピューターにそのポリシーを展開できます。 Windows Server Essentials のグループ ポリシーには、Windows Update、Windows Defender、およびネットワーク ファイアウォールに影響を与えるフォルダー リダイレクトとセキュリティの設定が含まれます。  
   
 #### <a name="to-configure-group-policy-in-windows-server-essentials"></a>Windows Server Essentials のグループ ポリシーを構成するには  
@@ -127,9 +127,9 @@ ms.locfileid: "66433321"
   
 2.  ナビゲーション バーで、 **[デバイス]** をクリックします。  
   
-3.  Windows Server essentials の場合。グローバルの **[ユーザー タスク]** ウィンドウで、 **[グループ ポリシーの実装]** をクリックします。  
+3.  Windows Server Essentials の場合:グローバルの **[ユーザー タスク]** ウィンドウで、 **[グループ ポリシーの実装]** をクリックします。  
   
-     Windows Server essentials の場合。グローバルの **[デバイス タスク]** ウィンドウで、 **[グループ ポリシーの実装]** をクリックします。  
+     Windows Server Essentials の場合:グローバルの **[デバイス タスク]** ウィンドウで、 **[グループ ポリシーの実装]** をクリックします。  
   
 4.  グループ ポリシーの実装ウィザードが開きます。  
   
@@ -139,8 +139,8 @@ ms.locfileid: "66433321"
   
 7.  **[完了]** をクリックして、グループ ポリシー設定を実装します。  
   
-##  <a name="BKMK_7"></a> リモート デスクトップ セッションを使用してネットワーク コンピューターに接続します。  
- オフィスから離れているときに、Windows Server Essentials ネットワーク コンピューターをリモートでアクセス、Web ブラウザー使用組織のリモート Web アクセス web サイトにログオンし、**コンピューター**  タブの名前をクリックしますコンピューター。  
+##  <a name="BKMK_7"></a>リモートデスクトップセッションを使用してネットワークコンピューターに接続する  
+ オフィスから離れた場所にいるときに Windows Server Essentials ネットワークコンピューターにリモートアクセスするには、Web ブラウザーを使用して組織のリモート Web アクセス web サイトにログオンし、 **[コンピューター]** タブでコンピューターの名前をクリックします。  
   
  **[状態]** 列に次の値が表示され、ネットワーク上のコンピューターに接続できるかどうかを示します。  
   
@@ -152,15 +152,15 @@ ms.locfileid: "66433321"
   
      コンピューターの電源が入っていないか、スリープまたは休止状態に入っています。 コンピューターがオフラインかスリープ状態の場合、コンピューターが利用可能状態になったことがわかるように、状態はリアルタイムで更新されます。  
   
--   **サポートされていないオペレーティング システム**  
+-   **サポートされていないオペレーティングシステム**  
   
      コンピューターのオペレーティング システムは、リモート デスクトップをサポートしていません。 変更があった場合、この状態の更新に最大 6 時間かかることがあります。  
   
--   **接続が無効です。**  
+-   **接続が無効です**  
   
      コンピューターの接続がファイアウォールにより拒まれています。あるいは、リモート デスクトップがそのコンピューターで、またはグループ ポリシーにより無効になっています。 変更があった場合、この状態の更新に最大 6 時間かかることがあります。  
   
-##  <a name="BKMK_8"></a> コンピューター プロパティの表示  
+##  <a name="BKMK_8"></a>コンピューターのプロパティの表示  
  Windows Server Essentials ダッシュボードの **[デバイス]** セクションには、ネットワーク コンピューターの一覧が表示されます。 また、各コンピューターに関する追加情報も提供されます。  
   
 #### <a name="to-view-a-list-of-computers"></a>コンピューターの一覧を表示するには  
@@ -175,7 +175,7 @@ ms.locfileid: "66433321"
   
 1.  コンピューターの一覧で、プロパティを表示または変更するアカウントを選択します。  
   
-2.  **< Computername\>タスク**ウィンドウで、をクリックして**コンピューターのプロパティを表示**します。 コンピューターの **[プロパティ]** ページが表示されます。  
+2.  [ **< Computername\>タスク**] ウィンドウで、 **[コンピューターのプロパティの表示]** をクリックします。 コンピューターの **[プロパティ]** ページが表示されます。  
   
 3.  タブをクリックすると、そのコンピューターのプロパティが表示されます。  
   
@@ -183,11 +183,11 @@ ms.locfileid: "66433321"
   
 ## <a name="see-also"></a>関連項目  
   
--   [リモート Web アクセスを管理します。](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [リモート Web アクセスの管理](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [リモート Web アクセスを使用します。](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [リモート Web アクセスを使用する](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [ダッシュ ボードを使用してユーザー アカウントを管理します。](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage8)  
+-   [ダッシュボードを使用してユーザーアカウントを管理する](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage8)  
   
 -   [Windows Server Essentials の管理](Manage-Windows-Server-Essentials.md)  
   

@@ -1,6 +1,6 @@
 ---
 title: データ センター ブリッジング (DCB)
-description: Windows Server 2016 でのデータ センター ブリッジングの概要については、このトピックを使用できます。
+description: このトピックでは、Windows Server 2016 のデータセンターブリッジングの概要について説明します。
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -8,106 +8,106 @@ ms.assetid: da58f312-bd3b-4bb6-98ca-6177869dd6ad
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7cb488192a873743db27d9c1d09c5912bc810bb8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6446324e23b9f1c87cb28bd76feb6cb493db8253
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834183"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869764"
 ---
-# <a name="data-center-bridging-dcb"></a>データ センター ブリッジング\(DCB\)
+# <a name="data-center-bridging-dcb"></a>データセンターブリッジング\(DCB\)
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックを使用すると、データ センター ブリッジングの概要については\(DCB\)します。
+このトピックでは、データセンターブリッジング\(DCB\)の概要について説明します。
 
-DCB は、一連の Institute の Electrical and Electronics Engineers \(IEEE\)ストレージ、ネットワーク、データのクラスター間、データ センターにおいてファブリックの集約を有効にする標準\-プロセス通信\(IPC\)、すべての管理トラフィックで同じイーサネット ネットワーク インフラストラクチャを共有するとします。
+DCB は、データセンター内の集約型ファブリック ( \(ストレージ\) 、データネットワーク、クラスターのプロセス間\-通信\()を可能にする、米国国立電気技術研究所のIEEE標準のスイートです。IPC\)と管理トラフィックはすべて同じイーサネットネットワークインフラストラクチャを共有します。
 
 >[!NOTE]
->このトピックに加え、次の DCB ドキュメントは使用可能です
+>このトピックに加えて、次の DCB のドキュメントも参照できます。
 >
->- [Windows Server 2016 または Windows 10 での DCB をインストールします。](dcb-install.md)
->- [データ センター ブリッジング (DCB) の管理します。](dcb-manage.md)
+>- [Windows Server 2016 または Windows 10 で DCB をインストールする](dcb-install.md)
+>- [データセンターブリッジング (DCB) の管理](dcb-manage.md)
 
-DCB はハードウェア\-に特定の種類のネットワーク トラフィックの帯域幅の割り当てをベースし、優先度の使用でイーサネット トランスポートの信頼性を高めます\-ベースのフロー制御します。
+DCB は、\-特定の種類のネットワークトラフィックに対してハードウェアベースの帯域幅割り当てを提供し、優先順位\-ベースのフロー制御を使用して、イーサネットトランスポートの信頼性を強化します。
 
-ハードウェア\-トラフィックが、オペレーティング システムをバイパスし、Internet Small Computer System Interface をサポートする収束ネットワーク アダプターにオフロードされる場合は、ベースの帯域幅の割り当てが欠かせません\(iSCSI\)、リモート ダイレクト メモリ アクセス\(RDMA\) over Ethernet、または Fiber Channel over Ethernet \(FCoE\)します。
+トラフィック\-がオペレーティングシステムをバイパスし、インターネットスモールコンピューターシステムインターフェイス\(iSCSI\)をサポートする収束ネットワークアダプターにオフロードされる場合は、ハードウェアベースの帯域幅割り当てが不可欠です。リモートダイレクトメモリアクセス\(RDMA\) over ethernet、またはイーサネット\(経由のファイバーチャネル\)fcoe。
 
-優先順位\-ベースのフロー制御が不可欠の場合は、ファイバー チャネルなどの上層のプロトコルには、下層の転送が前提としています。
+ファイバー\-チャネルなどの上位層プロトコルで、基になる転送が無損失であることが前提となっている場合は、優先順位ベースのフロー制御が不可欠です。
 
-## <a name="dcb-protocols-and-management-options"></a>DCB のプロトコル、および管理オプション
+## <a name="dcb-protocols-and-management-options"></a>DCB のプロトコルと管理オプション
 
-DCB は、次の一連のプロトコルで構成されます。 
+DCB は、次の一連のプロトコルで構成されています。 
 
-- 転送サービスを強化\(ETS\) -IEEE 802.1 qaz、802.1 P、802.1 q 標準に組み込まれました。
-- 優先度のフロー制御\(PFS\)、IEEE 802.1 qbb 
-- DCB 交換プロトコル\(DCBX\)、IEEE 802.1AB、802.1 qaz 標準の拡張として。
+- 802.1 p と\(802.1\) q 標準を基にした、高度な転送サービスの作成– IEEE 802.1 qaz
+- 優先順位フロー \(制御\)PFS、IEEE 802.1 qbb 
+- DCB Exchange Protocol \(dcbx\)、IEEE 802.1 ab。 802.1 qaz standard で拡張されています。
 
-DCBX プロトコルは Windows Server 2016 を実行しているコンピューターなど、エンド デバイスを自動的に構成し、スイッチで DCB を構成することができます。
+DCBX プロトコルを使用すると、スイッチで DCB を構成して、Windows Server 2016 を実行しているコンピューターなどのエンドデバイスを自動的に構成することができます。
 
-スイッチで DCB を管理する場合は、このアプローチには、いくつかの制限が含まれています。 ただし、Windows Server 2016 の機能として、DCB をインストールする必要はありません。
+スイッチから DCB を管理する場合、Windows Server 2016 の機能として DCB をインストールする必要はありませんが、この方法にはいくつかの制限があります。
 
-DCBX はクラスのサイズを ETS と PFC の有効化のホスト ネットワーク アダプターに通知のみ、ため、ただし、Windows Server ホストは、通常必要 ETS クラスにトラフィックをマップに DCB がインストールされていることです。
+DCBX は、クラスサイズと PFC を使用できるようにホストネットワークアダプターに通知するだけなので、通常、Windows Server ホストは DCB をインストールして、トラフィックが送信クラスにマップされるようにする必要があります。
 
-Windows アプリケーションは通常限りません DCBX 交換に参加します。 このため、ホストする必要がありますは個別に構成を同じ設定が、ネットワーク スイッチから。
+通常、Windows アプリケーションは、DCBX 交換に参加するように設計されていません。 このため、ホストはネットワークスイッチとは別に構成する必要がありますが、同じ設定を使用します。
 
-スイッチで DCB を管理する場合は、Windows PowerShell コマンドを使用して、構成で Windows Server 2016 も表示できます。
+スイッチから DCB を管理することを選択した場合でも、windows PowerShell コマンドを使用して Windows Server 2016 で構成を表示できます。
 
-##  <a name="important-dcb-functionality"></a>DCB の重要な機能
+##  <a name="important-dcb-functionality"></a>重要な DCB 機能
 
 DCB には、次のような機能があります。
 
-1. DCB の間の相互運用性を提供します。\-対応のネットワーク アダプターと DCB\-対応のスイッチ。
+1. DCB\-対応のネットワークアダプターと DCB\-対応のスイッチ間の相互運用性を提供します。
 
-2. 優先度を有効にして、Windows Server 2016 とその隣接するスイッチを実行しているコンピューターの間で無損失のイーサネット転送を提供します。\-ベースのネットワーク アダプターのフロー制御します。
+2. ネットワークアダプターの優先順位\-に基づくフロー制御を有効にすることによって、Windows Server 2016 を実行しているコンピューターとその近隣ノードスイッチとの間で無損失のイーサネット転送を提供します。
 
-3. トラフィック制御の帯域幅を割り当てる機能を提供します\(TC\)パーセント、802.1 p トラフィック クラスによって区別されるトラフィックの 1 つまたは複数のクラスの TC はで構成されます\(優先度\)。インジケーター。
+3. 802.1 p\) traffic クラス\(の優先順位によって区別される1つまたは複数のクラスで構成される場合があります。 \(\)インジケーター.
 
 4. サーバー管理者またはネットワーク管理者が、アプリケーションで使われるウェルノウン プロトコル、ウェルノウン TCP/UDP ポート、または NetworkDirect ポートに基づいて、特定のトラフィック クラスまたは優先度をアプリケーションに割り当てることのできる機能。
 
-5. Windows Server 2016 の Windows Management Instrumentation による DCB 管理\(WMI\)と Windows PowerShell。 詳細については、セクションをご覧ください。 [DCB 用 Windows PowerShell コマンド](#bkmk_wps)、次のトピックに加えて、このトピックで後述します。
+5. Windows Server 2016 Windows Management Instrumentation \(WMI\)および windows PowerShell を使用した DCB の管理を提供します。 詳細については、このトピックで後述する「 [Windows PowerShell Commands FOR DCB](#bkmk_wps) 」を参照してください。
     - [システム指定の DCB コンポーネント](https://msdn.microsoft.com/windows/hardware/drivers/network/system-provided-dcb-components)
-    - [データ センター ブリッジングの NDIS QoS の要件](https://msdn.microsoft.com/windows/hardware/drivers/network/ndis-qos-requirements-for-data-center-bridging)
+    - [データセンターブリッジングの NDIS QoS 要件](https://msdn.microsoft.com/windows/hardware/drivers/network/ndis-qos-requirements-for-data-center-bridging)
 
-6. Windows Server 2016 のグループ ポリシーによる DCB 管理を提供します。
+6. では、Windows Server 2016 グループポリシーによる DCB 管理が提供されます。
 
-7. Windows Server 2016 サービス品質の共存をサポートしている\(QoS\)ソリューション。
+7. は、Windows Server 2016 のサービス\(品質 QoS\)ソリューションの共存をサポートしています。
 
 >[!NOTE]
->Over Converged Ethernet、RDMA を使用する前に\(RoCE\)バージョン RDMA の DCB を有効にする必要があります。 インターネット ワイド エリア RDMA プロトコルは必要ありません、 \(iWARP\)テスト ネットワークがあると判断されるすべてイーサネット\-RDMA テクノロジは、うまくが DCB をベースします。 このため、DCB を使用して、iWARP RDMA の展開を検討してください。 詳細については、次を参照してください。[リモート ダイレクト メモリ アクセス (RDMA) とスイッチ埋め込みチーミング (SET)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)します。
+>Rdma の集約型イーサネット\(roce\)バージョンを使用する前に、DCB を有効にする必要があります。 インターネットワイドエリア rdma プロトコル\(の iwarp\)ネットワークには必要ありませんが、テストで\-は、すべてのイーサネットベースの rdma テクノロジが DCB で動作しやすくなっていると判断しました。 このため、iWARP RDMA のデプロイには DCB を使用することを検討してください。 詳細については、「[リモートダイレクトメモリアクセス (RDMA) とスイッチ埋め込みチーミング (SET)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)」を参照してください。
 
-##  <a name="practical-applications-of-dcb"></a>DCB の実際の適用
+##  <a name="practical-applications-of-dcb"></a>DCB の実用的なアプリケーション
 
-多くの組織がある大規模なファイバー チャネル\(FC\)記憶域エリア ネットワーク\(SAN\)ストレージ サービスをインストールします。 FC SAN を利用するには、サーバーに特殊なネットワーク アダプターが、また、ネットワークには FC スイッチが必要となります。 このような組織通常もイーサネット ネットワーク アダプターとスイッチを使用します。
+多くの組織では、 \(ストレージサービス用に\(大\)規模なファイバーチャネル FC\)ストレージエリアネットワーク SAN がインストールされています。 FC SAN を利用するには、サーバーに特殊なネットワーク アダプターが、また、ネットワークには FC スイッチが必要となります。 これらの組織は通常、イーサネットネットワークアダプターとスイッチも使用します。
 
-ほとんどの場合、FC のハードウェアはイーサネットのハードウェアは、大規模な資本支出の結果よりもデプロイを大幅に高くします。 さらに、独立したイーサネットと FC SAN、ネットワーク アダプターとスイッチ ハードウェアの要件は、追加の領域、電力、冷却結果、追加の進行中の運用経費、データ センターの容量が必要です。
+ほとんどの場合、FC ハードウェアの方がイーサネットハードウェアよりも負荷が大きくなり、資本投資が大きくなります。 さらに、個別のイーサネットおよび FC SAN ネットワークアダプターとスイッチハードウェアの要件によって、データセンターに追加の領域、電力、冷却能力が必要になります。これにより、継続的な運用コストが増加します。
 
-コストの観点からは、イーサネット、FC テクノロジに多くの組織にとって便利な\-ベースの記憶域とデータ ネットワーク サービスの両方を提供するハードウェア ソリューション。
+コストの観点からは、多くの組織は、FC テクノロジとイーサネット\-ベースのハードウェアソリューションを統合して、記憶域とデータネットワークサービスの両方を提供することをお勧めします。
 
-### <a name="using-dcb-for-an-ethernet-based-converged-fabric-for-storage-and-data-networking"></a>DCB を使用して、イーサネットの\-ベースの記憶域やネットワークのデータの収束ファブリック
+### <a name="using-dcb-for-an-ethernet-based-converged-fabric-for-storage-and-data-networking"></a>ストレージとデータネットワーク用\-のイーサネットベースの収束ファブリックに DCB を使用する
 
-組織は、既に大規模な FC SAN をいるが、FC テクノロジで追加の投資から移行する場合は、DCB を使用すると、ビルド、イーサネット ベースの収束ファブリックの記憶域とデータ ネットワークの両方。 DCB の集中型ファブリックは、将来の総保有コストを削減できます\(TCO\)および管理を簡略化します。
+既に大規模な FC SAN を所有していて、FC テクノロジによる追加投資から移行する必要がある組織では、DCB を使用して、記憶域とデータネットワークの両方に対してイーサネットベースの集約型ファブリックを構築することができます。 DCB 収束ファブリックを使用する\(\)と、将来の総所有コストを削減し、管理を簡素化できます。
 
-DCB、記憶域ソリューションとして iSCSI ホスト側ユーザー既に採用しているかを採用する場合は、ハードウェアを提供できる\-帯域幅予約を iSCSI トラフィックにパフォーマンスの分離を支援します。 DCB は標準を他の独自技術のソリューションとは異なり、\-ベース、およびそのため、異種ネットワーク環境で展開および管理を比較的簡単です。
+記憶域ソリューションとして iscsi を既に導入している場合、または導入を計画している\-場合、DCB は、パフォーマンスの分離を確保するために iscsi トラフィックに対してハードウェアによる帯域幅の予約を提供できます。 他の独自のソリューションとは異なり、\-DCB は標準ベースであるため、異種ネットワーク環境において比較的簡単に展開および管理できます。
 
-Windows Server 2016\-ベースの DCB 実装がファブリック ソリューションが複数の相手先ブランド供給によって提供される集約型のときに発生する問題の軽減\(Oem\)します。
+Windows Server 2016\-ベースの DCB の実装では、複数の相手先ブランド\)供給メーカー \(によって集約型ファブリックソリューションが提供される場合に発生する可能性がある多くの問題を軽減します。
 
-複数の Oem から提供される独自技術のソリューションの実装と他のいずれかの相互運用可能性がありますできません、難しい可能性がある管理、および通常はさまざまなソフトウェア メンテナンス スケジュールになります。 
+複数の Oem によって提供される独自のソリューションの実装は相互運用できない場合があり、管理が困難な場合があり、通常はソフトウェアメンテナンススケジュールが異なります。 
 
-これに対し、Windows Server 2016 の DCB は、標準\-し、デプロイおよび異種ネットワークにおいて DCB を管理することができます。
+これに対して、Windows Server 2016 DCB\-は標準ベースであるため、異種ネットワークに DCB を展開して管理することができます。
 
-## <a name="bkmk_wps"></a>DCB の Windows PowerShell コマンド
+## <a name="bkmk_wps"></a>DCB 用の Windows PowerShell コマンド
 
-Windows Server 2016 と Windows Server 2012 R2 の両方の DCB Windows PowerShell コマンドもあります。 Windows Server 2016 での Windows Server 2012 R2 のすべてのコマンドを使用できます。
+Windows Server 2016 と Windows Server 2012 R2 の両方に対応する DCB Windows PowerShell コマンドがあります。 Windows server 2016 では、Windows Server 2012 R2 のすべてのコマンドを使用できます。
 
-### <a name="windows-server-2016-windows-powershell-commands-for-dcb"></a>DCB の Windows Server 2016 の Windows PowerShell のコマンド
+### <a name="windows-server-2016-windows-powershell-commands-for-dcb"></a>Windows Server 2016 DCB 用の Windows PowerShell コマンド
 
-Windows Server 2016 の次のトピックでは、すべてのデータ センター ブリッジングの Windows PowerShell コマンドレットの説明と構文を提供します。 \(DCB\)サービスの品質\(QoS\)\-固有コマンドレット。 コマンドレットの先頭の動詞に基づいて、アルファベット順に記載しています。
+Windows Server 2016 の次のトピックでは、windows PowerShell コマンドレットの説明と構文を\(提供しており\(、\)すべてのデータセンターブリッジング DCB\) Quality of Service QoS\-固有のコマンドレットについて説明しています。 コマンドレットの先頭の動詞に基づいて、アルファベット順に記載しています。
 
 - [DcbQoS モジュール](https://technet.microsoft.com/itpro/powershell/windows/dcbqos/dcbqos)
 
-### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>DCB の Windows Server 2012 R2 の Windows PowerShell コマンド
+### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>DCB 用の windows Server 2012 R2 Windows PowerShell コマンド
 
-Windows Server 2012 R2 の次のトピックでは、すべてのデータ センター ブリッジングの Windows PowerShell コマンドレットの説明と構文を提供します。 \(DCB\)サービスの品質\(QoS\)\-固有コマンドレット。 コマンドレットの先頭の動詞に基づいて、アルファベット順に記載しています。
+Windows Server 2012 R2 の次のトピックでは、windows PowerShell コマンドレットの説明と構文を\(提供しており\(、\)すべてのデータセンターブリッジング DCB\) Quality of Service QoS\-固有のコマンドレットについて説明します。 コマンドレットの先頭の動詞に基づいて、アルファベット順に記載しています。
 
-- [データ センター ブリッジング (DCB) サービスの品質 (QoS) コマンドレットでは、Windows PowerShell](https://technet.microsoft.com/library/hh967440.aspx)
+- [Windows PowerShell のデータセンターブリッジング (DCB) のサービス品質 (QoS) コマンドレット](https://technet.microsoft.com/library/hh967440.aspx)

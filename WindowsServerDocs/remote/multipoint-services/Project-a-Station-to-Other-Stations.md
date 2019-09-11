@@ -1,6 +1,6 @@
 ---
 title: ステーションを他のステーションに投影する
-description: 1 つのシステムから別の MultiPoint Services のデスクトップを共有する方法について説明します
+description: MultiPoint Services で、あるシステムから別のシステムにデスクトップを共有する方法について説明します。
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,15 +13,15 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: a91460718d8f80b62ef7bde698f723a8be9ded90
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: db2b718154a7c41646ab25b16420eb0ee46a17cd
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858113"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871583"
 ---
 # <a name="project-a-station-to-other-stations"></a>ステーションを他のステーションに投影する
-MultiPoint ダッシュ ボード ユーザーは、単一のユーザーのステーションまたはすべてのユーザー (管理者以外の) ステーションにデスクトップを射影することができます。 この機能は、他のユーザーにタスクをデモンストレーションする場合に便利です。  
+MultiPoint ダッシュボードユーザーは、デスクトップを1人のユーザーのステーションまたはすべてのユーザーの (管理者以外の) ステーションに投影することができます。 この機能は、他のユーザーにタスクをデモンストレーションする場合に便利です。  
   
 ## <a name="to-project-your-desktop-to-a-standard-users-station"></a>標準ユーザーのステーションにデスクトップを投影するには  
   

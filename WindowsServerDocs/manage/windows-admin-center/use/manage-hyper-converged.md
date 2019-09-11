@@ -1,6 +1,6 @@
 ---
-title: Windows Admin Center でのハイパー コンバージド インフラストラクチャを管理します。
-description: Windows Admin Center (プロジェクト ホノルル) でのハイパー コンバージド インフラストラクチャを管理します。
+title: Windows 管理センターを使用したハイパー集約型インフラストラクチャの管理
+description: Windows 管理センター (Project ホノルル) を使用したハイパー集約型インフラストラクチャの管理
 ms.technology: manage
 ms.topic: article
 author: daniellee-msft
@@ -8,177 +8,177 @@ ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 4d156820781d2a9defc989fa1acf35d4289fb24f
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 5df035b448b80aa147067004c6a2f14aa03a9684
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284087"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869089"
 ---
-# <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Windows Admin Center でのハイパー コンバージド インフラストラクチャを管理します。
+# <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Windows 管理センターを使用したハイパー集約型インフラストラクチャの管理
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
-## <a name="what-is-hyper-converged-infrastructure"></a>Hyper-Converged インフラストラクチャします。
+## <a name="what-is-hyper-converged-infrastructure"></a>ハイパー集約型インフラストラクチャとは
 
-ハイパー コンバージド インフラストラクチャでは、ソフトウェアによるコンピューティング、ストレージ、および高パフォーマンス、コスト効率に優れたを提供する 1 つのクラスターに簡単に拡張できる仮想化ネットワークを統合します。 この機能は、Windows Server 2016 で導入された[記憶域スペース ダイレクト](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)、[ソフトウェアによるネットワーク制御](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)と[HYPER-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)します。
+ハイパースレッディングインフラストラクチャでは、ソフトウェアで定義されたコンピューティング、記憶域、およびネットワークを1つのクラスターに統合して、パフォーマンス、コスト効率、および拡張性に優れた、拡張性の高い仮想化を実現します。 この機能は、Windows Server 2016 で[記憶域スペースダイレクト](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)、[ソフトウェアで定義さ](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)れたネットワーク、および[hyper-v](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)を使用して導入されました。
 
 > [!Tip]
-> Hyper-Converged インフラストラクチャを取得しようとしていますか。 マイクロソフトでは、これらをお勧め[Windows Server ソフトウェア定義](https://microsoft.com/wssd)パートナーからソリューションです。 設計は、アセンブリ、互換性および取得するための信頼性と簡単に実行されているように、参照アーキテクチャの検証にあり。
+> ハイパー集約型インフラストラクチャの取得を検討していますか? Microsoft では、これらの[Windows Server ソフトウェアで定義された](https://microsoft.com/wssd)ソリューションをパートナーから推奨しています。 これらは、互換性と信頼性を確保するために、参照アーキテクチャに対して設計、組み立て、検証を行い、迅速に稼働させることができます。
 
 > [!IMPORTANT]
-> この記事で説明されている機能の一部は、Windows Admin Center プレビューでのみです。 [このバージョンを取得する方法はありますか](http://aka.ms/windowsadmincenter)
+> この記事で説明されている機能の一部は、Windows 管理センタープレビューでのみ使用できます。 [このバージョンを取得操作方法には](http://aka.ms/windowsadmincenter)
 
 ## <a name="what-is-windows-admin-center"></a>Windows Admin Center とは
 
-[Windows Admin Center](../understand/windows-admin-center.md)次世代の管理ツールを Windows Server、Server Manager などの従来の「ボックス」ツールの後継です。 無料とインストールされているし、インターネット接続なしで使用できます。 Windows Admin Center を使用して、管理および Windows Server 2016 または Windows Server 2019 実行 Hyper-Converged インフラストラクチャを監視することができます。
+[Windows 管理センター](../understand/windows-admin-center.md)は、windows Server 用の次世代管理ツールであり、サーバーマネージャーなどの従来の "組み込み" ツールを後継としています。 これは無料で、インターネットに接続せずにインストールして使用することができます。 Windows 管理センターを使用して、Windows Server 2016 または Windows Server 2019 を実行しているハイパー集約型インフラストラクチャを管理および監視できます。
 
-![ハイパー コンバージド クラスター ダッシュ ボード](../media/manage-hyper-converged/hci-dashboard-v1809.png)
+![ハイパー収束クラスターダッシュボード](../media/manage-hyper-converged/hci-dashboard-v1809.png)
 
 ## <a name="key-features"></a>主な機能
 
-Hyper-Converged インフラストラクチャ用の Windows Admin Center の主な特徴は次のとおりです。
+ハイパー集約型インフラストラクチャの Windows 管理センターには、次のような特徴があります。
 
-- **統一された単一ウィンドウ-の-ガラスのコンピューティング、ストレージ、およびネットワークのすぐにします。** 仮想マシン、ホスト サーバー、ボリューム、ドライブ、および 1 つの専用に作成された、一貫性のある、相互接続されたエクスペリエンス内で詳細を表示します。
-- **作成し、記憶域スペースと HYPER-V の仮想マシンを管理します。** 極めて簡単なワークフローを作成するには、開く、サイズ、および、; のボリュームを削除作成、起動への接続、および仮想マシンを移動その他さまざまな。
-- **強力なクラスター全体を監視します。** メモリと CPU 使用率、記憶域容量、IOPS、スループット、および待機時間がグラフで、ダッシュ ボード、問題が生じているときにアラートをクリアして、クラスター内の各サーバーではリアルタイムです。
-- **ソフトウェア定義ネットワーク (SDN) のサポート。** 管理し、仮想ネットワークの監視、サブネット、仮想ネットワーク、および SDN インフラストラクチャの監視に仮想マシンを接続します。
+- **コンピューティング、ストレージ、およびまもなくネットワークのための統合された単一のウィンドウです。** 仮想マシン、ホストサーバー、ボリューム、ドライブなどを、1つの目的で、一貫性のある、相互接続されたエクスペリエンスで表示します。
+- **記憶域スペースと Hyper-v 仮想マシンを作成および管理します。** ボリュームを作成、開く、サイズ変更、削除するための、大幅に単純なワークフロー。仮想マシンを作成、起動、接続、移動します。さらに多くのことができます。
+- **強力なクラスター全体の監視。** ダッシュボードには、クラスター内のすべてのサーバーにわたってメモリと CPU の使用率、ストレージ容量、IOPS、スループット、待機時間がリアルタイムでグラフ化されます。適切でない場合は明確なアラートが生成されます。
+- **ソフトウェア定義ネットワーク (SDN) のサポート。** 仮想ネットワーク、サブネット、仮想ネットワークへの仮想マシンの接続、および SDN インフラストラクチャの監視を行います。
 
-Hyper-Converged インフラストラクチャ用の Windows Admin Center Microsoft が積極的に開発中です。 既存の機能を向上させ、新しい機能の追加を頻繁に更新プログラムを受け取ります。
+Microsoft によって積極的に開発されているハイパー集約型インフラストラクチャの Windows 管理センターです。 既存の機能を向上させ、新機能を追加する頻繁な更新プログラムを受信します。
 
-## <a name="before-you-start"></a>開始前の作業
+## <a name="before-you-start"></a>開始前の準備
 
-Windows Admin Center で Hyper-Converged インフラストラクチャとして、クラスターを管理する Windows Server 2016 または Windows Server 2019、実行されている必要があり、Hyper-v ホストと記憶域スペース ダイレクトを有効にします。 必要に応じて、有効になっており、Windows Admin Center を使用して管理、ソフトウェアによるネットワーク制御も、かまいません。
+Windows 管理センターでハイパー集約型インフラストラクチャとしてクラスターを管理するには、Windows Server 2016 または Windows Server 2019 を実行している必要があります。また、Hyper-v と記憶域スペースダイレクトが有効になっている必要があります。 必要に応じて、Windows 管理センターを使用して、ソフトウェアで定義されたネットワークを有効にし、管理することもできます。
 
 > [!Tip]
-> Windows Admin Center では、汎用的な管理は、Windows Server 2012 以降使用可能なすべてのワークロードをサポートしている任意のクラスターのエクスペリエンスも提供します。 Windows Admin Center をクラスターを追加するより適したのように聞こえるこの場合は、選択[**フェイル オーバー クラスター** ](manage-failover-clusters.md)の代わりに**Hyper-Converged クラスター**します。
+> Windows 管理センターでは、Windows Server 2012 以降で使用可能なすべてのワークロードをサポートするクラスターに対して、汎用的な管理エクスペリエンスを提供します。 このような場合は、クラスターを Windows 管理センターに追加するときに、[**ハイパー収束クラスター**ではなく[**フェールオーバークラスター**](manage-failover-clusters.md) ] を選択します。
 
-### <a name="prepare-your-windows-server-2016-cluster-for-windows-admin-center"></a>Windows Admin Center の Windows Server 2016 クラスターを準備します。
+### <a name="prepare-your-windows-server-2016-cluster-for-windows-admin-center"></a>Windows 管理センター用に Windows Server 2016 クラスターを準備する
 
-Hyper-Converged インフラストラクチャ用の Windows Admin Center は、Windows Server 2016 がリリースされた後に Api が追加の管理に依存します。 Windows Server 2016 を Windows Admin Center を使用したクラスターを管理するには、これら 2 つの手順を実行する必要があります。
+ハイパー収束インフラストラクチャの windows 管理センターは、Windows Server 2016 のリリース後に追加された管理 Api に依存します。 Windows 管理センターを使用して Windows Server 2016 クラスターを管理するには、次の2つの手順を実行する必要があります。
 
-1. クラスター内のすべてのサーバーがインストールされていることを確認、 [2018-05 の累積更新プログラムを Windows Server 2016 (KB4103723)](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)またはそれ以降。 をダウンロードしてこの更新プログラムをインストールするには**設定** > **更新とセキュリティ** > **Windows 更新**選択**Microsoft Update から更新プログラムをオンラインで確認**します。
-2. クラスターの管理者として次の PowerShell コマンドレットを実行します。
+1. クラスター内のすべてのサーバーに、 [Windows server 2016 (KB4103723) 以降の2018-05 の累積的な更新プログラム](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)がインストールされていることを確認します。 この更新プログラムをダウンロードしてインストールするには、**設定** >  **更新プログラム & セキュリティ** > **Windows Update**にアクセスし、 **Microsoft Update の更新プログラムをオンラインで確認**する を選択します。
+2. クラスターで管理者として次の PowerShell コマンドレットを実行します。
 
 ```powershell
     Add-ClusterResourceType -Name "SDDC Management" -dll "$env:SystemRoot\Cluster\sddcres.dll" -DisplayName "SDDC Management"
 ```
 
 > [!Tip]
-> のみ、任意のサーバー クラスターに 1 回、コマンドレットを実行する必要があります。 Windows PowerShell でローカルで実行または Credential Security Service Provider (CredSSP) を使用して、リモートで実行することができます。 構成によっては、Windows Admin Center 内からこのコマンドレットを実行することはできません。
+> クラスター内の任意のサーバーで、コマンドレットを1回だけ実行する必要があります。 Windows PowerShell でローカルに実行するか、Credential Security Service Provider (CredSSP) を使用してリモートで実行することができます。 構成によっては、Windows 管理センター内からこのコマンドレットを実行できない場合があります。
 
-### <a name="prepare-your-windows-server-2019-cluster-for-windows-admin-center"></a>Windows Admin Center の Windows Server 2019 クラスターを準備します。
+### <a name="prepare-your-windows-server-2019-cluster-for-windows-admin-center"></a>Windows 管理センター用に Windows Server 2019 クラスターを準備する
 
-クラスターは、Windows Server 2019 を実行する場合は上記の手順は必要ありません。 次のセクションで説明した Windows Admin Center をクラスターに追加し、移動する準備が整いました。
+クラスターで Windows Server 2019 が実行されている場合、上記の手順は必要ありません。 次のセクションで説明されているように、クラスターを Windows 管理センターに追加するだけで十分です。
 
-### <a name="configure-software-defined-networking-optional"></a>ソフトウェア定義ネットワーク (省略可能) を構成します。 ###
+### <a name="configure-software-defined-networking-optional"></a>ソフトウェアで定義されたネットワークを構成する (省略可能) ###
 
-次の手順でソフトウェア定義ネットワーク (SDN) を使用するには、Windows Server 2016 または 2019 を実行している、Hyper-Converged インフラストラクチャを構成できます。
+次の手順でソフトウェア定義ネットワーク (SDN) を使用するように、Windows Server 2016 または2019を実行しているハイパー集約型インフラストラクチャを構成できます。
 
-1. これは、同じ OS のハイパー コンバージド インフラストラクチャのホストにインストールされている OS の VHD を準備します。 この VHD は、すべての NC/SLB/GW Vm に対して使用されます。
-2. すべての SDN の Express から下にあるファイルとフォルダーをダウンロード[ https://github.com/Microsoft/SDN/tree/master/SDNExpress](https://github.com/Microsoft/SDN/tree/master/SDNExpress)します。
-3. 展開コンソールを使用して別の VM を準備します。 この VM は、SDN のホストにアクセスできる必要があります。 また、VM には、インストールされている RSAT HYPER-V ツールが必要です。
-4. VM の展開コンソールに SDN Express をダウンロードしたすべてのものをコピーします。 これを共有および**SDNExpress**フォルダー。 すべてのホストがアクセスできるように、 **SDNExpress** 8 構成ファイルの行で定義されているフォルダーを共有します。
+1. ハイパー集約型インフラストラクチャホストにインストールした os と同じ OS の VHD を準備します。 この VHD は、すべての NC/SLB/GW Vm に使用されます。
+2. SDN Express の下にあるすべてのフォルダーと[https://github.com/Microsoft/SDN/tree/master/SDNExpress](https://github.com/Microsoft/SDN/tree/master/SDNExpress)ファイルをからダウンロードします。
+3. 展開コンソールを使用して別の VM を準備します。 この VM は SDN ホストにアクセスできる必要があります。 また、VM には RSAT Hyper-v ツールがインストールされている必要があります。
+4. SDN Express 用にダウンロードしたすべてのものをデプロイコンソール VM にコピーします。 この**Sdnexpress**フォルダーを共有します。 次のように、構成ファイル8で定義されているように、すべてのホストが**Sdnexpress**共有フォルダーにアクセスできることを確認します。
    ```
     \\$env:Computername\SDNExpress
    ```
-5. OS の VHD をコピーして、**イメージ**の下のフォルダー、 **SDNExpress**展開コンソール VM 上のフォルダー。
-6. 環境のセットアップで、SDN Express の構成を変更します。 環境の情報に基づいて、SDN Express の構成を変更した後は、次の 2 つの手順を完了します。
-7. SDN を展開する管理者特権で PowerShell を実行します。
+5. OS の VHD を、デプロイコンソール VM の**Sdnexpress**フォルダーの下の**images**フォルダーにコピーします。
+6. 環境のセットアップを使用して SDN Express 構成を変更します。 環境情報に基づいて SDN Express 構成を変更した後、次の2つの手順を完了します。
+7. 管理者特権で PowerShell を実行して SDN を展開します。
 
 ```powershell
     .\SDNExpress.ps1 -ConfigurationDataFile .\your_fabricconfig.PSD1 -verbose 
 ```
 
-展開は、約 30 ~ 45 分かかります。
+デプロイには約 30 ~ 45 分かかります。
 
 ## <a name="get-started"></a>作業開始
 
-Hyper-Converged インフラストラクチャをデプロイすると、Windows Admin Center を使用して管理できます。
+デプロイされたハイパースレッディングインフラストラクチャは、Windows 管理センターを使用して管理できます。
 
 ### <a name="install-windows-admin-center"></a>Windows Admin Center のインストール
 
-既に、していない場合はダウンロードして、Windows Admin Center をインストールします。 起動方法を最も迅速かつ実行中を Windows 10 コンピューターにインストールし、サーバーをリモートで管理です。 これは、5 分未満です。 [今すぐダウンロード](https://aka.ms/windowsadmincenter)または[の詳細については、他のインストール オプションは](../deploy/install.md)します。
+Windows 管理センターをまだダウンロードしていない場合はインストールします。 起動して実行する最速の方法は、Windows 10 コンピューターにインストールし、サーバーをリモートで管理することです。 これには、5分未満の時間がかかります。 [今すぐダウンロード](https://aka.ms/windowsadmincenter)するか、[他のインストールオプションの詳細をご](../deploy/install.md)確認ください。
 
-### <a name="add-hyper-converged-cluster"></a>ハイパー コンバージド クラスターを追加します。
+### <a name="add-hyper-converged-cluster"></a>ハイパー収束クラスターの追加
 
-クラスターを Windows Admin Center に追加します。
+クラスターを Windows 管理センターに追加するには、次のようにします。
 
-1. クリックして **+ 追加**すべての接続。
-2. 追加することも、 **Hyper-Converged クラスター接続**します。
-3. クラスターの名前を入力し、使用する資格情報を求められた場合。
-4. クリックして**追加**を完了します。
+1. すべての接続 の下にある  **+ 追加** をクリックします。
+2. ハイパー集約された**クラスター接続**を追加することを選択します。
+3. クラスターの名前を入力し、メッセージが表示されたら、使用する資格情報を入力します。
+4. **[追加]** をクリックして完了します。
 
-クラスターは、接続の一覧に追加されます。 クリックしてダッシュ ボードを起動します。
+クラスターが接続の一覧に追加されます。 これをクリックすると、ダッシュボードが起動します。
 
-![ハイパー コンバージド クラスター接続を追加します。](../media/manage-hyper-converged/add-hyper-converged-cluster-connection.gif)
+![ハイパー収束クラスター接続の追加](../media/manage-hyper-converged/add-hyper-converged-cluster-connection.gif)
 
-### <a name="add-sdn-enabled-hyper-converged-cluster-windows-admin-center-preview"></a>ハイパー コンバージド クラスターの SDN 有効になっている (Windows Admin Center プレビュー) の追加します。
+### <a name="add-sdn-enabled-hyper-converged-cluster-windows-admin-center-preview"></a>SDN が有効なハイパー収束クラスターの追加 (Windows 管理センタープレビュー)
 
-最新の Windows Admin Center プレビューでは、Hyper-Converged インフラストラクチャ ソフトウェアによるネットワーク制御の管理をサポートします。 ネットワーク コント ローラーの REST URI を追加すると、ハイパー コンバージド クラスターの接続に、SDN リソースを管理し、SDN インフラストラクチャを監視するハイパー コンバージド クラスター マネージャーを使用できます。
+最新の Windows 管理センタープレビューでは、ハイパー集約型インフラストラクチャのソフトウェア定義ネットワーク管理がサポートされています。 ハイパー収束クラスター接続にネットワークコントローラーの REST URI を追加することにより、統合されたクラスターマネージャーを使用して SDN リソースを管理し、SDN インフラストラクチャを監視できます。
 
-1. クリックして **+ 追加**すべての接続。
-2. 追加することも、 **Hyper-Converged クラスター接続**します。
-3. クラスターの名前を入力し、使用する資格情報を求められた場合。
-4. 確認**ネットワーク コント ローラーを構成する**を続行します。
-5. 入力、**ネットワーク コント ローラーの URI**クリック**検証**。
-6. クリックして**追加**を完了します。
+1. すべての接続 の下にある  **+ 追加** をクリックします。
+2. ハイパー集約された**クラスター接続**を追加することを選択します。
+3. クラスターの名前を入力し、メッセージが表示されたら、使用する資格情報を入力します。
+4. 続行するに**は、ネットワークコントローラーの構成**を確認してください。
+5. **ネットワークコントローラーの URI**を入力し、 **[検証]** をクリックします。
+6. **[追加]** をクリックして完了します。
 
-クラスターは、接続の一覧に追加されます。 クリックしてダッシュ ボードを起動します。
+クラスターが接続の一覧に追加されます。 これをクリックすると、ダッシュボードが起動します。
 
-![ハイパー コンバージド クラスターの SDN が有効な接続を追加します。](../media/manage-hyper-converged/add-snd-enabled-hci-connection.png)
+![SDN が有効なハイパー収束クラスター接続を追加する](../media/manage-hyper-converged/add-snd-enabled-hci-connection.png)
 
 > [!Important]
-> Northbound 通信用の Kerberos 認証を使用した SDN の環境は現在サポートされていません。
+> Northbound 通信用の Kerberos 認証を使用する SDN 環境は、現在サポートされていません。
 
 ## <a name="frequently-asked-questions"></a>よく寄せられる質問
 
-### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019"></a>Windows Server 2016 および Windows Server 2019 の管理の違いはありますか。
+### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019"></a>Windows Server 2016 と Windows Server 2019 の管理には違いがありますか。
 
-[はい]。 Hyper-Converged インフラストラクチャ用の Windows Admin Center では、Windows Server 2016 と Windows Server 2019 の両方のエクスペリエンスを向上させる、頻繁に更新プログラムを受信します。 ただし、一部の新機能では、Windows Server 2019 – たとえば、トグル スイッチを重複除去と圧縮の使用のみです。
+可能。 ハイパースレッディングインフラストラクチャの windows 管理センターは、Windows Server 2016 と Windows Server 2019 の両方のエクスペリエンスを向上させる更新プログラムを頻繁に受信します。 ただし、一部の新機能は、Windows Server 2019 でのみ使用できます。たとえば、重複除去と圧縮の切り替えスイッチなどです。
 
-### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>他のユース ケース (いないハイパー コンバージドの両方)、集約型のスケール アウト ファイル サーバー (SoFS) または Microsoft SQL Server などの記憶域スペース ダイレクトを管理するのに Windows Admin Center を使用できますか。
+### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>Windows 管理センターを使用して、収束スケールアウトファイルサーバー (SoFS) や Microsoft SQL Server など、他のユースケースの記憶域スペースダイレクトを管理できますか。
 
-Hyper-Converged インフラストラクチャ用の Windows Admin Center では、管理や記憶域スペース ダイレクトの他のユース ケースの具体的には監視オプションは提供されません – たとえば、ファイル共有を作成できません。 ただし、ボリュームの作成や、ドライブの交換などのダッシュ ボードとコア機能は、任意の記憶域スペース ダイレクト クラスターの動作します。
+ハイパー集約型インフラストラクチャの Windows 管理センターでは、記憶域スペースダイレクトの他のユースケースに特に管理オプションや監視オプションは提供されません。たとえば、ファイル共有を作成することはできません。 ただし、ダッシュボードと主要機能 (ボリュームの作成やドライブの交換など) は、記憶域スペースダイレクトクラスターに対して機能します。
 
-### <a name="whats-the-difference-between-a-failover-cluster-and-a-hyper-converged-cluster"></a>フェールオーバー クラスターと Hyper-Converged クラスターの違いは何ですか。
+### <a name="whats-the-difference-between-a-failover-cluster-and-a-hyper-converged-cluster"></a>フェールオーバークラスターとハイパー集約クラスターの違いは何ですか。
 
-一般に、「ハイパー コンバージド」とは、同じ Hyper-v ホストと記憶域スペース ダイレクトを実行するには、コンピューティングおよびストレージ リソースを仮想化サーバーがクラスター化します。 クリックすると、Windows Admin Center のコンテキストで **+ 追加**の追加の接続の一覧から選択できます、**フェイル オーバー クラスター接続**または**Hyper-Converged クラスター接続**:
+一般に、"ハイパー収束" という用語は、同じクラスターサーバー上で Hyper-v と記憶域スペースダイレクトを実行して、コンピューティングリソースと記憶域リソースを仮想化することを意味します。 Windows 管理センターのコンテキストで、接続 一覧から  **+ 追加** をクリックすると、**フェールオーバークラスター接続**またはハイパー集約された**クラスター接続**のいずれかを選択できます。
 
-- **フェイル オーバー クラスター接続**フェールオーバー クラスター マネージャーのデスクトップ アプリの後継です。 Microsoft SQL Server を含む、すべてのワークロードをサポートしている任意のクラスターの使い慣れた、汎用的な管理エクスペリエンスを提供します。 以降を Windows Server 2012 の利用可能になります。
+- **フェールオーバークラスター接続**は、フェールオーバークラスターマネージャーデスクトップアプリの後継です。 Microsoft SQL Server を含む任意のワークロードをサポートするすべてのクラスターに、使い慣れた汎用管理エクスペリエンスを提供します。 Windows Server 2012 以降で使用できます。
 
-- **Hyper-Converged クラスター接続**記憶域スペース ダイレクトと HYPER-V 向け、まったく新しいエクスペリエンスに調整されます。 ダッシュ ボードを備えており、監視のためのグラフとアラートが強調されます。 Windows Server 2016 および Windows Server 2019 の使用可能になります。
+- **ハイパー収束クラスター接続**は、記憶域スペースダイレクトと hyper-v 向けにカスタマイズされたすべての新しいエクスペリエンスです。 ダッシュ ボードを備えており、監視のためのグラフとアラートが強調されます。 Windows Server 2016 および Windows Server 2019 で使用できます。
 
-### <a name="why-do-i-need-the-latest-cumulative-update-for-windows-server-2016"></a>Windows Server 2016 の最新の累積的な更新プログラムが必要する理由
+### <a name="why-do-i-need-the-latest-cumulative-update-for-windows-server-2016"></a>Windows Server 2016 の最新の累積的な更新プログラムが必要なのはなぜですか。
 
-Hyper-Converged インフラストラクチャ用の Windows Admin Center は、Windows Server 2016 がリリースされてから、Api が開発された管理に依存します。 これらの Api を追加、[累積更新プログラムを Windows Server 2016 (KB4103723) を 2018-05](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)2018 年 5 月 8 日の時点で利用可能です。
+ハイパースレッディングインフラストラクチャ用の windows 管理センターは、Windows Server 2016 のリリース以降に開発された管理 Api に依存します。 これらの Api は、2018-05 2018 年5月8の時点で利用可能な、 [Windows Server 2016 用の累積的な更新プログラム (KB4103723)](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)に追加されています。
 
 ### <a name="how-much-does-it-cost-to-use-windows-admin-center"></a>Windows Admin Center を使用するにはいくらかかりますか。
 
 Windows Admin Center には、Windows 以外の追加コストはありません。
 
-追加コストなしで Windows Server または Windows 10 の有効なライセンスを持つ Windows Admin Center (個別のダウンロードとして入手可能) を使用することができます - Windows の追加契約書の下でライセンスを取得します。
+Windows 管理センターは、windows Server または Windows 10 の有効なライセンスと共に、追加コストなしで使用できます。 windows の追加のライセンス条項に従ってライセンスが付与されます。
 
 ### <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center に System Center は必要ですか。
 
 No.
 
-### <a name="does-it-require-an-internet-connection"></a>インターネット接続が必要ですか。
+### <a name="does-it-require-an-internet-connection"></a>インターネットに接続する必要がありますか。
 
 No.
 
-Windows Admin Center、強力で、Microsoft Azure クラウドでは、中心的な管理および Hyper-Converged インフラストラクチャの監視のエクスペリエンスとの便利な統合は、完全にオンプレミスにします。 インストールして、インターネット接続なしで使用できます。
+Windows 管理センターは Microsoft Azure クラウドとの強力で便利な統合機能を備えていますが、ハイパー集約型インフラストラクチャのコア管理と監視のエクスペリエンスは、完全にオンプレミスにあります。 インターネットに接続せずにインストールして使用することができます。
 
-## <a name="things-to-try"></a>対処方法
+## <a name="things-to-try"></a>試してみるべきこと
 
-いる作業を開始した場合、Hyper-Converged インフラストラクチャ用の Windows Admin Center の構成し、機能の学習に役立ついくつかのクイック チュートリアルを示します。 適切な判断を実行しての運用環境に注意してください。 これらのビデオは、Windows Admin Center バージョン 1804 および Windows Server 2019、Insider Preview ビルドで記録されています。
+作業を開始するだけであれば、次の簡単なチュートリアルでは、Windows 管理センターでのハイパー集約インフラストラクチャの構成と動作について説明しています。 適切な略しを使用して、運用環境に注意してください。 これらのビデオは、Windows 管理センターバージョン1804と、Windows Server 2019 の Insider Preview ビルドで記録されています。
 
-### <a name="manage-storage-spaces-direct-volumes"></a>記憶域スペース ダイレクトのボリュームを管理します。
+### <a name="manage-storage-spaces-direct-volumes"></a>記憶域スペースダイレクトボリュームの管理
 
 <ul>
-               <li>(0:37) <a href="https://youtu.be/o66etKq70N8">3 方向ミラー ボリュームを作成する方法</a></li>
-               <li>(1:17)<a href="https://youtu.be/R72QHudqWpE">ミラー アクセラレータを使用したパリティ ボリュームを作成する方法</a></li>
-               <li>(1:02)<a href="https://youtu.be/j59z7ulohs4">ボリュームを開き、ファイルを追加する方法</a></li>
+               <li>(0:37) <a href="https://youtu.be/o66etKq70N8">3 方向ミラーボリュームを作成する方法</a></li>
+               <li>(1:17)<a href="https://youtu.be/R72QHudqWpE">ミラーアクセラレータのパリティボリュームを作成する方法</a></li>
+               <li>(1:02)<a href="https://youtu.be/j59z7ulohs4">ボリュームを開いてファイルを追加する方法</a></li>
                <li>(0:51)<a href="https://youtu.be/PRibTacyKko">重複除去と圧縮を有効にする方法</a></li>
                <li>(0:47)<a href="https://youtu.be/hqyBzipBoTI">ボリュームを拡張する方法</a></li>
                <li>(0:26)<a href="https://youtu.be/DbjF8r2F6Jo">ボリュームを削除する方法</a></li>
@@ -187,31 +187,31 @@ Windows Admin Center、強力で、Microsoft Azure クラウドでは、中心�
 <table>
     <tr style="border: 0;">
         <td style="padding: 5px; border: 0;">
-            <strong>3 方向ミラー ボリュームを作成します。</strong>
+            <strong>ボリュームの作成、3方向ミラー</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/o66etKq70N8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
-            <strong>ボリューム、ミラー アクセラレータを使用したパリティを作成します。</strong>
+            <strong>ボリュームの作成、ミラーアクセラレータのパリティ</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/R72QHudqWpE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
     </tr>
     <tr style="border: 0;">
         <td style="padding: 5px; border: 0;">
-            <strong>ボリュームを開き、ファイルの追加</strong>
+            <strong>ボリュームを開き、ファイルを追加する</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/j59z7ulohs4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
-            <strong>重複除去と圧縮を有効にします。</strong>
+            <strong>重複除去と圧縮を有効にする</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/PRibTacyKko" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
     </tr>
     <tr style="border: 0;">
         <td style="padding: 5px; border: 0;">
-            <strong>ボリュームを拡張します。</strong>
+            <strong>ボリュームの展開</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/hqyBzipBoTI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
-            <strong>ボリュームを削除します。</strong>
+            <strong>ボリュームの削除</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/DbjF8r2F6Jo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
     </tr>
@@ -219,72 +219,72 @@ Windows Admin Center、強力で、Microsoft Azure クラウドでは、中心�
 
 ### <a name="create-a-new-virtual-machine"></a>新しい仮想マシンを作成する
 
-1. をクリックして、**仮想マシン**、左側のナビゲーション ウィンドウからのツール。
-2. 仮想マシンのツールの上部にある次のように選択します。、**インベントリ** タブの 、 をクリックし、**新規**新しい仮想マシンを作成します。
-3. 仮想マシンの名前を入力し、世代 1 および 2 世代仮想マシンを選択します。
-4. やすいは、最初に、仮想マシンを作成または推奨されるホストを使用するホストを選択できます。
-5. 仮想マシン ファイルのパスを選択します。 ドロップダウン リストからボリュームを選択するかクリックして**参照**フォルダー ピッカーを使用してフォルダーを選択します。 仮想マシン構成ファイルとバーチャル ハード ディスク ファイルは、1 つのフォルダーの下に保存されます、`\Hyper-V\[virtual machine name]`パスの選択したボリュームのパス。
-6. 入れ子になった仮想化が有効にする、メモリの設定、ネットワーク アダプタ、バーチャル ハード_ディスクを構成し、.iso イメージ ファイルから、またはネットワークからオペレーティング システムをインストールするかどうかを選択するかどうか、仮想プロセッサの数を選択します。
-7. **[作成]** をクリックして、バーチャル マシンを作成します。
-8. 仮想マシンを作成し、仮想マシンの一覧に表示される、仮想マシンを開始できます。
-9. 仮想マシンが開始されると、オペレーティング システムをインストールする VMConnect を使用して、仮想マシンのコンソールに接続できます。 一覧から仮想マシンを選択し、 をクリックして**詳細** > **Connect** .rdp ファイルをダウンロードします。 Remote Desktop Connection アプリでは、.rdp ファイルを開きます。 これは、仮想マシンのコンソールに接続する、ため、HYPER-V ホストの管理者の資格情報を入力する必要があります。
+1. 左側のナビゲーションウィンドウで **[Virtual Machines]** ツールをクリックします。
+2. Virtual Machines ツールの上部で、 **[インベントリ]** タブを選択し、 **[新規]** をクリックして新しい仮想マシンを作成します。
+3. 仮想マシン名を入力し、第1世代と第2世代の仮想マシンを選択します。
+4. その後、uou は、最初に仮想マシンを作成するホストを選択するか、推奨されるホストを使用します。
+5. 仮想マシンファイルのパスを選択します。 ドロップダウンリストからボリュームを選択するか、 **[参照]** をクリックしてフォルダーピッカーを使用してフォルダーを選択します。 仮想マシンの構成ファイルと仮想ハードディスクファイルは、選択したボリュームまたはパス`\Hyper-V\[virtual machine name]`のパスにある1つのフォルダーに保存されます。
+6. 仮想プロセッサの数を選択して、入れ子になった仮想化を有効にするかどうか、メモリ設定、ネットワークアダプター、仮想ハードディスクを構成し、.iso イメージファイルからオペレーティングシステムをインストールするか、ネットワークからインストールするかを選択します。
+7. **[作成]** をクリックして、仮想マシンを作成します。
+8. 仮想マシンが作成され、仮想マシンの一覧に表示されたら、仮想マシンを起動できます。
+9. 仮想マシンが起動したら、VMConnect を使用して仮想マシンのコンソールに接続し、オペレーティングシステムをインストールできます。 一覧から仮想マシンを選択し、[**その他** > の**接続**] をクリックして .rdp ファイルをダウンロードします。 リモートデスクトップ接続アプリで .rdp ファイルを開きます。 これは仮想マシンのコンソールに接続しているため、Hyper-v ホストの管理者の資格情報を入力する必要があります。
 
-[詳細については、Windows Admin Center での仮想マシンの管理は](manage-virtual-machines.md)します。
+[詳細については、Windows 管理センターを使用した仮想マシンの管理に関するページをご覧](manage-virtual-machines.md)ください。
 
-### <a name="pause-and-safely-restart-a-server"></a>一時停止し、安全に、サーバーを再起動
+### <a name="pause-and-safely-restart-a-server"></a>サーバーを一時停止して安全に再起動する
 
-1. **ダッシュ ボード**を選択します**サーバー** 、ナビゲーションの左側にあるかをクリックしてから、**サーバーの表示 >** ダッシュ ボードの右下隅のタイル上のリンク.
-2. 上部から切り替える**概要**を**インベントリ**タブ。
-3. 開くには、その名前をクリックして、サーバーの選択、 **Server**詳細ページ。
-4. クリックして**保守のため一時停止サーバー**します。 続行しても安全である場合は、仮想マシンをクラスター内の他のサーバーに移動がこれです。 サーバーでは、この処理中も状態のドレイン必要があります。 する場合は、上の移動、仮想マシンを見ることができます、**仮想マシン > インベントリ** ページで、そのホスト サーバーが明らかに、グリッド内に表示される場所。 すべての仮想マシンを移動して、サーバーの状態がなります**Paused**します。
-5. クリックして**管理サーバー** Windows Admin Center でのすべてのサーバー管理ツールにアクセスします。
-6. クリックして**再起動**、し**はい**します。 接続の一覧のバックアップを開始します。
-7. 戻り、**ダッシュ ボード**、停止中に、サーバーは赤です。
-8. バックアップが、もう一度移動、**サーバー**ページし、クリックして**メンテナンスからサーバーを再開**を単に、サーバーの状態を設定します。 仮想マシンへ移動: ユーザー操作は必要ありません。
+1. **ダッシュボード**で、左側のナビゲーションから **[サーバー]** を選択するか、ダッシュボードの右下隅にあるタイルの **[VIEW servers >]** リンクをクリックします。
+2. 上部にある **[概要]** から **[インベントリ]** タブに切り替えます。
+3. サーバーの名前をクリックしてサーバーを選択し、**サーバー**の詳細ページを開きます。
+4. [**メンテナンスのためにサーバーを一時停止する] を**クリックします。 続行しても問題ない場合は、仮想マシンがクラスター内の他のサーバーに移動されます。 このエラーが発生すると、サーバーの状態がドレインされます。 必要に応じて、[仮想マシン **> インベントリ**] ページで仮想マシンの移動を見ることができます。このページでは、ホストサーバーがグリッドで明確に表示されます。 すべてのバーチャルマシンが移動されると、サーバーの状態は **[一時停止]** になります。
+5. Windows 管理センターのサーバーごとの管理ツールにアクセスするには、 **[サーバーの管理]** をクリックします。
+6. **[再起動]** 、[**はい]** の順にクリックします。 [接続] の一覧に戻ります。
+7. **ダッシュボード**に戻ると、サーバーはダウンしている間、赤で色付けされます。
+8. バックアップが完了したら、 **[サーバー] ページに**移動し、[**メンテナンスからサーバーを再開**する] をクリックして、サーバーの状態を単に up に戻します。 時間の経過とともに、仮想マシンは元の状態に戻ります。ユーザーの操作は必要ありません。
 
-### <a name="replace-a-failed-drive"></a>失敗したドライブを交換します。
+### <a name="replace-a-failed-drive"></a>障害が発生したドライブを交換する
 
-1. ドライブに失敗すると、左上に表示されたアラート**アラート**の領域、**ダッシュ ボード**します。
-2. 選択することもできます**ドライブ**のナビゲーションで、左側にあるまたはをクリックしてから、**ビュー ドライブ >** ドライブを参照し、自分でその状態を表示する右下隅のタイルにリンクします。 **インベントリ**並べ替え、グループ化とキーワード検索 タブで、グリッドをサポートします。
-3. **ダッシュ ボード**アラートをクリックして、ドライブの物理的な場所などの詳細を参照してください。
-4. 詳細については、クリックして、**ドライブに移動して**へのショートカット、**ドライブ**詳細ページ。
-5. ご使用のハードウェアがサポートする場合は、クリックして**ライトのオン/オフを有効にする**ドライブのライトを制御します。
-6. 記憶域スペース ダイレクト自動的にインベントリから削除され失敗したドライブを退避させます。 ドライブの状態を終了すると、これが発生した場合、その記憶域容量のバーが空です。
-7. 失敗したドライブを削除し、交換品を挿入します。
-8. **ドライブ > インベントリ**、新しいドライブが表示されます。 時間では、アラートがクリアされますボリュームは、[ok] の状態に戻す修復し記憶域が新しいドライブに再調整: ユーザー操作は必要ありません。
+1. ドライブに障害が発生すると、**ダッシュボード**の左上の**アラート**領域にアラートが表示されます。
+2. また、左側のナビゲーションから **[ドライブ]** を選択するか、右下隅にあるタイルの **[ドライブの表示 >]** リンクをクリックすると、ドライブを参照して自分の状態を確認することもできます。 **[インベントリ]** タブでは、グリッドは並べ替え、グループ化、およびキーワード検索をサポートしています。
+3. **ダッシュボード**からアラートをクリックすると、ドライブの物理的な場所などの詳細が表示されます。
+4. 詳細については **、ドライブの詳細ページ**への **[ドライブへのジャンプ]** ショートカットをクリックしてください。
+5. ハードウェアでサポートされている場合は、[**電源をオン/オフ**にする] をクリックして、ドライブのインジケーターライトを制御できます。
+6. 記憶域スペースダイレクトは、障害が発生したドライブを自動的に廃止して下がっします。 この問題が発生すると、ドライブの状態は [廃棄済み] になり、その記憶域容量バーは空になります。
+7. 障害が発生したドライブを取り外し、交換を挿入します。
+8. **[ドライブ > インベントリ]** に新しいドライブが表示されます。 アラートがクリアされると、ボリュームは修復状態に戻り、記憶域は新しいドライブに再調整されます。ユーザー操作は不要です。
 
-### <a name="manage-virtual-networks-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>仮想ネットワーク (SDN が有効な HCI クラスターが Windows Admin Center プレビューを使用して) の管理します。
+### <a name="manage-virtual-networks-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>仮想ネットワークを管理する (Windows 管理センタープレビューを使用して SDN 対応 HCI クラスター)
 
-1. 選択**仮想ネットワーク**左側のナビゲーションから。
-2. をクリックして**新規**を新しい仮想ネットワークとサブネットを作成または既存の仮想ネットワークを選択し、をクリックして**設定**構成を変更します。
-3. 仮想ネットワーク サブネットに VM の接続を表示およびアクセス制御リストが仮想ネットワークのサブネットに適用する既存の仮想ネットワークをクリックします。
+1. 左側のナビゲーションから **[仮想ネットワーク]** を選択します。
+2. **[新規]** をクリックして新しい仮想ネットワークとサブネットを作成するか、既存の仮想ネットワークを選択して **[設定]** をクリックし、その構成を変更します。
+3. 既存の仮想ネットワークをクリックすると、仮想ネットワークのサブネットへの VM 接続と、仮想ネットワークのサブネットに適用されるアクセス制御リストが表示されます。
 
-![仮想ネットワークを管理します。](../media/manage-hyper-converged/manage-virtual-networks.png)
+![仮想ネットワークの管理](../media/manage-hyper-converged/manage-virtual-networks.png)
 
-### <a name="connect-a-virtual-machine-to-a-virtual-network-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>仮想マシンを仮想ネットワーク (SDN が有効な HCI クラスターが Windows Admin Center プレビューを使用して) に接続します。
+### <a name="connect-a-virtual-machine-to-a-virtual-network-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>仮想マシンを仮想ネットワークに接続する (Windows 管理センタープレビューを使用して SDN 対応 HCI クラスター)
 
-1. 選択**仮想マシン**左側のナビゲーションから。
-2. 既存の仮想マシンを選択 > をクリックして**設定**> オープン、**ネットワーク** タブの **設定**します。
-3. 構成、**仮想ネットワーク**と**仮想サブネット**フィールドを仮想マシンを仮想ネットワークに接続します。
+1. 左側のナビゲーションから **[Virtual Machines]** を選択します。
+2. 既存の仮想マシンを選択し > **[設定]** をクリックし > **[設定]** の **[ネットワーク]** タブを開きます。
+3. 仮想マシンを仮想ネットワークに接続するように**Virtual Network**と**仮想サブネット**のフィールドを構成します。
 
-仮想マシンを作成するときに、仮想ネットワークを構成することもできます。
+仮想マシンの作成時に仮想ネットワークを構成することもできます。
 
-![仮想マシンを仮想ネットワークに接続します。](../media/manage-hyper-converged/connect-vm-to-virtual-network.png)
+![仮想マシンを仮想ネットワークに接続する](../media/manage-hyper-converged/connect-vm-to-virtual-network.png)
 
-### <a name="monitor-software-defined-networking-infrastructure-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>ソフトウェアによるネットワーク制御インフラストラクチャの監視 (HCI の SDN が有効なクラスターが Windows Admin Center プレビューを使用して)
+### <a name="monitor-software-defined-networking-infrastructure-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>ソフトウェアによるネットワークインフラストラクチャの監視 (Windows 管理センタープレビューを使用した SDN 対応 HCI クラスター)
 
-1. 選択**SDN 監視**左側のナビゲーションから。
-2. ネットワーク コント ローラー、ソフトウェア ロード バランサー、仮想ゲートウェイの正常性に関する詳細情報を表示し、仮想ゲートウェイ プール、パブリックおよびプライベート IP プールの使用状況と SDN のホストの状態を監視します。
+1. 左側のナビゲーションから **[SDN 監視]** を選択します。
+2. ネットワークコントローラー、ソフトウェア Load Balancer、仮想ゲートウェイの正常性に関する詳細情報を表示し、仮想ゲートウェイプール、パブリックおよびプライベート IP プールの使用状況と SDN ホストの状態を監視します。
 
-![SDN インフラストラクチャの監視](../media/manage-hyper-converged/sdn-monitoring.png)
+![SDN インフラストラクチャを監視する](../media/manage-hyper-converged/sdn-monitoring.png)
 
-## <a name="feedback"></a>Feedback
+## <a name="feedback"></a>フィードバック
 
-お客様のフィードバックに関するあらゆるです。 頻繁に更新プログラムの最も重要な利点は、機能するいると改善が必要なものです。 何を考えているお知らせをいくつかの点を次に示します。
+ご意見をお寄せください。 頻繁に更新される最も重要な利点は、作業内容と改善が必要な機能を確認することです。 検討している内容を確認するには、次の方法を使用します。
 
-- [送信して、UserVoice での機能の要望に投票](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5Bhci%5D)
-- [Microsoft Tech Community で Windows Admin Center フォーラムに参加します。](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
-- ツイートするには `@servermgmt`
+- [UserVoice で機能要求を送信して投票する](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5Bhci%5D)
+- [Microsoft Tech Community で Windows 管理センターフォーラムに参加する](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
+- ツイート`@servermgmt`
 
 ### <a name="see-also"></a>関連項目
 

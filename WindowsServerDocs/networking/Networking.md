@@ -10,12 +10,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b2b42c0a1878a2d9f5f9002dd36e0124e2101cc
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: fb36f0ff804b139149922596a05d1ff649884bdd
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546555"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868973"
 ---
 # <a name="networking"></a>ネットワーク
 
@@ -26,7 +26,7 @@ ms.locfileid: "69546555"
 
 ネットワークは、ソフトウェアで定義されたデータ\(センター\)のデータセンター (SDDC) プラットフォームの基本部分であり、 \(Windows\) Server 2016 では、組織のための完全に実現した SDDC ソリューション。
 
-定義されているソフトウェアのリソースとネットワークを管理するときに、1 回限り、アプリケーションのインフラストラクチャ要件を記述およびを選択し、アプリケーションを実行する - 内部設置型またはクラウドにします。 
+ネットワークをソフトウェアによって定義されたリソースとして管理する場合、アプリケーションのインフラストラクチャ要件を1回記述し、アプリケーションの実行場所 (オンプレミスまたはクラウド) を選択することができます。 
 
 この一貫性により、アプリケーションの拡張が容易になり、アプリケーションをどこでもシームレスに実行できるだけでなく、セキュリティ、パフォーマンス、サービス品質、可用性のいずれについても等しい信頼性が実現されます。
 
@@ -514,6 +514,7 @@ DirectAccess や仮想プライベートネットワーク (VPN) などのリモ
                                         <h3><a href="https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture">Windows コンテナーネットワーク</a><hr /></h3>
                                         <p>
 Windows コンテナーのネットワークでは、業界の標準的なツールとワークフローを使用して、Windows 10 と Windows Server ホストの両方のコンテナー エンドポイントを接続するネットワークを作成および管理できます。 Windows コンテナーのネットワークは、プライベート、フラット L2、ルーティング L3 などの、複数のトポロジをサポートします。</p>
+
                                         <p>また、Windows ホストネットワークサービス (HNS) と通信するプラグインを介して Docker、Kubernetes、または Windows PowerShell を使用してホスト上にローカルで作成できるオーバーレイもサポートされています。 ローカルエージェントを介して各ノードの HNS に通信することで、高レベルのオーケストレーションシステムを通じてマルチノードクラスターネットワークを作成および管理できます。</p>
                     </div>
                 </div>

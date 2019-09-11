@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 46e8548e24f0d0991f69427741b0e04da6398334
-ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
+ms.openlocfilehash: 8444e417fe089c1a3cf2acc2648b222ec5c9774c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70009095"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865466"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS に関してよく寄せられる質問 (FAQ)
 

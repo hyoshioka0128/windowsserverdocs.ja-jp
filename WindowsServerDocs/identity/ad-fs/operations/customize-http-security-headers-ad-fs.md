@@ -9,12 +9,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3c497cbafb8f9313f988a1b892d2b8fef68115eb
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 4fd1e62e67f66a217a1d4f3a26933723a4645a31
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68523904"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865565"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>AD FS 2019 で HTTP セキュリティ応答ヘッダーをカスタマイズする 
  
@@ -34,7 +34,7 @@ ms.locfileid: "68523904"
 ## <a name="scenarios"></a>シナリオ 
 1. 管理者は、 [**Http Strict-Transport-Security (HSTS)** ](#http-strict-transport-security-hsts)を有効にしています (HTTPS 暗号化経由のすべての接続を強制します)。これにより、ハッキングされる可能性のあるパブリック wifi アクセスポイントから http を使用して web アプリにアクセスする可能性があるユーザーを保護できます。 また、サブドメインの HSTS を有効にすることで、セキュリティをさらに強化したいと考えています。  
 2. 管理者が、web ページの clickjacked を防ぐために、 [**X フレームオプション**](#x-frame-options)の応答ヘッダーを構成しました (iFrame に web ページが表示されないようにします)。 ただし、新しいビジネス要件によって、異なるオリジン (ドメイン) を持つアプリケーションからデータ (iFrame) を表示する必要があるため、ヘッダー値をカスタマイズする必要があります。
-3. 管理者は、クロススクリプティング攻撃を検出した場合に、クロススクリプティング攻撃を防止し、ページをブロックすること[**を許可し**](#x-xss-protection)ています。 ただし、編集後にページが読み込まれるようにするには、ヘッダーをカスタマイズする必要があります。  
+3. 管理者は[ **、クロス**](#x-xss-protection)スクリプティング攻撃を検出した場合に、クロススクリプティング攻撃を防止し、ページをブロックすることを許可しています。 ただし、編集後にページが読み込まれるようにするには、ヘッダーをカスタマイズする必要があります。  
 4. 管理者は、[**クロスオリジンリソース共有 (CORS)** ](#cross-origin-resource-sharing-cors-headers)を有効にし、AD FS の配信元 (ドメイン) を設定して、単一ページアプリケーションが別のドメインで web API にアクセスできるようにする必要があります。  
 5. 管理者は、クロスサイトスクリプトとデータインジェクション攻撃を防止するために、[**コンテンツセキュリティポリシー (CSP)** ](#content-security-policy-csp)ヘッダーを有効にしています。これにより、クロスドメイン要求が禁止されます。 ただし、新しいビジネス要件により、web ページが任意の配信元からイメージを読み込んで、メディアを信頼できるプロバイダーに制限するように、ヘッダーをカスタマイズする必要があります。  
 
@@ -179,7 +179,7 @@ Set-AdfsResponseHeaders -CORSTrustedOrigins https://example1.com,https://example
 #### <a name="csp-customization"></a>CSP のカスタマイズ 
 CSP ヘッダーをカスタマイズする場合は、ブラウザーで web ページの読み込みを許可するリソースを定義するセキュリティポリシーを変更します。 既定のセキュリティポリシーは、  
  
-`Content-Security-Policy: default-src ‘self’ ‘unsafe-inline’ ‘’unsafe-eval’; img-src ‘self’ data:;` 
+`Content-Security-Policy: default-src ‘self' ‘unsafe-inline' ‘'unsafe-eval'; img-src ‘self' data:;` 
  
 **既定の-src**ディレクティブは、各ディレクティブを明示的に指定せずに[-src ディレクティブ](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/default-src)を変更するために使用されます。 たとえば、次の例では、ポリシー1はポリシー2と同じです。  
 
@@ -190,14 +190,14 @@ Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue
  
 ポリシー2
 ```PowerShell 
-Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "script-src ‘self’; img-src ‘self’; font-src 'self';  
+Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "script-src ‘self'; img-src ‘self'; font-src 'self';  
 frame-src 'self'; manifest-src 'self'; media-src 'self';" 
 ```
 
 ディレクティブが明示的に指定されている場合、指定された値は、既定の-src に指定された値よりも優先されます。次の例では、img-src は値を ' * ' として受け取ります (任意のオリジンからイメージを読み込むことができます)。他の src ディレクティブは、値を ' self ' として受け取ります (web ページと同じオリジンに限定されます)。  
 
 ```PowerShell
-Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src ‘self’; img-src *" 
+Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src ‘self'; img-src *" 
 ```
 既定の src ポリシーには、次のソースを定義できます。 
  

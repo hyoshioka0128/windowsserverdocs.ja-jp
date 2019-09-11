@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: baea091482818c581414ba1d9c1c01db2a52e3d7
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 0c608d3762c45a0b1478bcb3303159feef963291
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "66435665"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866616"
 ---
 # <a name="hyper-v-configuration"></a>Hyper-V の構成
 

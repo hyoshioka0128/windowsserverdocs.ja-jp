@@ -1,46 +1,46 @@
 ---
 title: Hyper-V のアーキテクチャ
-description: Hyper-v アーキテクチャ condsiderations パフォーマンス チューニング
+description: パフォーマンスチューニングのための hyper-v アーキテクチャ condsiderations
 ms.prod: windows-server-threshold
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: fcc87b04698a44e115c8f49150fe33443f8e6a88
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7ed8522ec34e9e262f835530a248567ebbd0ddc9
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890283"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866667"
 ---
 # <a name="hyper-v-architecture"></a>Hyper-V のアーキテクチャ
 
-HYPER-V には、タイプ 1 ハイパーバイザー ベースのアーキテクチャが機能します。 ハイパーバイザーでは、プロセッサとメモリを仮想化し、子パーティション (仮想マシン) を管理し、仮想マシンへの I/O デバイスなどのサービスを公開するには、ルート パーティション内の仮想化スタックのメカニズムを提供します。
+Hyper-v は、種類1のハイパーバイザーベースのアーキテクチャを特徴としています。 ハイパーバイザーは、プロセッサとメモリを仮想化し、ルートパーティション内の仮想化スタックが子パーティション (仮想マシン) を管理し、i/o デバイスなどのサービスを仮想マシンに公開するメカニズムを提供します。
 
-ルート パーティションでは、所有し、物理 I/O デバイスに直接アクセスします。 ルート パーティション内の仮想化スタックでは、仮想マシン、管理 Api、および仮想化された I/O デバイスのメモリ マネージャーを提供します。 統合デバイス electronics (IDE) のディスク コント ローラーと ps/2 入力デバイスのポートとパフォーマンスの向上のハイパー V 固有の統合デバイスをサポートし、負荷の減少など、エミュレートされたデバイスも実装します。
+ルートパーティションはを所有し、物理 i/o デバイスに直接アクセスします。 ルートパーティションの仮想化スタックは、仮想マシン、管理 Api、および仮想化 i/o デバイス用のメモリマネージャーを提供します。 また、統合されたデバイスエレクトロニクス (IDE) ディスクコントローラーや PS/2 入力デバイスポートなどのエミュレートされたデバイスを実装します。また、パフォーマンスを向上させ、オーバーヘッドを削減するために、Hyper-v 固有の統合デバイスをサポートしています。
 
-![hyper-v ハイパーバイザー ベースのアーキテクチャ](../../media/perftune-guide-hyperv-arch.png)
+![hyper-v ハイパーバイザーベースのアーキテクチャ](../../media/perftune-guide-hyperv-arch.png)
 
-ハイパー V 固有の I/O のアーキテクチャは、ルート パーティションと仮想化サービス内のクライアント (Vsc)、子パーティションでの仮想化サービス プロバイダー (Vsp) で構成されます。 各サービスは、デバイスとして、VMBus、I/O バスとして機能し、共有メモリなどのメカニズムを使用する仮想マシン間の高パフォーマンス通信を介して公開されます。 ゲスト オペレーティング システムのプラグ アンド プレイのマネージャーは、VMBus を含め、これらのデバイスを列挙し、適切なデバイス ドライバー (仮想サービス クライアント) を読み込みます。 I/O 以外のサービスは、このアーキテクチャを通じても公開されます。
+Hyper-v 固有の i/o アーキテクチャは、子パーティションのルートパーティションおよび仮想化サービスクライアント (VSCs) の仮想化サービスプロバイダー (.Vsps) で構成されています。 各サービスは、VMBus 経由でデバイスとして公開されます。これは、i/o バスとして機能し、共有メモリなどのメカニズムを使用する仮想マシン間の高パフォーマンスの通信を可能にします。 ゲストオペレーティングシステムのプラグアンドプレイ manager は、このようなデバイス (VMBus を含む) を列挙し、適切なデバイスドライバー (仮想サービスクライアント) を読み込みます。 I/o 以外のサービスも、このアーキテクチャを通じて公開されます。
 
-Windows Server 2008 での仮想マシンで実行されているときに、その動作を最適化するためにオペレーティング システム機能啓発開始しています。 利点には、メモリ仮想化、マルチコアのスケーラビリティの向上と、バック グラウンドのゲスト オペレーティング システムの CPU 使用率を減らすのコストの削減が含まれます。
+Windows Server 2008 以降では、オペレーティングシステムの機能は、仮想マシンで実行されているときの動作を最適化するために enlightenments しています。 利点としては、メモリの仮想化コストの削減、マルチコアのスケーラビリティの向上、ゲストオペレーティングシステムのバックグラウンド CPU 使用率の削減などがあります。
 
-次のセクションでは、Hyper-v の役割を実行するサーバーでパフォーマンスの向上を生成するためのベスト プラクティスをお勧めします。
+以下のセクションでは、Hyper-v の役割を実行しているサーバーのパフォーマンスを向上させるベストプラクティスについて説明します。
 
 ## <a name="see-also"></a>関連項目
 
--   [HYPER-V 用語](terminology.md)
+-   [Hyper-V の用語](terminology.md)
 
--   [HYPER-V サーバーの構成](configuration.md)
+-   [Hyper-V サーバーの構成](configuration.md)
 
--   [HYPER-V のプロセッサのパフォーマンス](processor-performance.md)
+-   [Hyper-V プロセッサのパフォーマンス](processor-performance.md)
 
--   [HYPER-V でメモリのパフォーマンス](memory-performance.md)
+-   [Hyper-V メモリのパフォーマンス](memory-performance.md)
 
--   [HYPER-V ストレージの I/O パフォーマンス](storage-io-performance.md)
+-   [Hyper-V 記憶域の I/O のパフォーマンス](storage-io-performance.md)
 
--   [HYPER-V ネットワークの I/O パフォーマンス](network-io-performance.md)
+-   [Hyper-V ネットワークの I/O のパフォーマンス](network-io-performance.md)
 
 -   [仮想化環境のボトルネックの検出](detecting-virtualized-environment-bottlenecks.md)
 

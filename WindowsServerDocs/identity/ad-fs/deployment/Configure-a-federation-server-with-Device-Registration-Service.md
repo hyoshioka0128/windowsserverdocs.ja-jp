@@ -9,76 +9,76 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f1367f03ea8a9ba96bfe4bae1c324deff92576f0
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 12676d40d52046ae4ff2fe83c199ad21db4cf8ab
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192259"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868081"
 ---
 # <a name="configure-a-federation-server-with-device-registration-service"></a>デバイス登録サービスを使用してフェデレーション サーバーを構成する
 
-デバイス登録サービスを有効にすることができます\(DRS\)フェデレーション サーバーでの手順が完了した後で[手順 4。Configure a Federation Server](https://technet.microsoft.com/library/dn303424.aspx)します。 デバイス登録サービスがシームレスな第 2 のオンボード メカニズムを提供要素認証、永続的なシングル サインオン\-で\(SSO\)、および企業へのアクセスを必要とするコンシューマーに条件付きアクセスリソース。 DRS の詳細については、次を参照してください[SSO およびシームレスな第 2 要素認証用アプリケーション間の任意のデバイスから社内への参加。](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)  
+手順 4. の\( [手順を完了\)した後、フェデレーションサーバーでデバイス登録サービス DRS を有効にすることができます。フェデレーションサーバー](https://technet.microsoft.com/library/dn303424.aspx)を構成します。 デバイス登録サービスは、シームレスな第2要素認証、永続的シングルサイン\-オン\(SSO\)、および会社へのアクセスを必要とするコンシューマーへの条件付きアクセスのためのオンボードメカニズムを提供します。参考. DRS の詳細については、「[任意のデバイスからの職場への参加](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)」を参照してください。  
   
-## <a name="prepare-your-active-directory-forest-to-support-devices"></a>デバイスをサポートする Active Directory フォレストを準備します。  
+## <a name="prepare-your-active-directory-forest-to-support-devices"></a>デバイスをサポートするために Active Directory フォレストを準備する  
   
 > [!NOTE]  
-> これは、1 つ\-時刻の操作のデバイスをサポートするために Active Directory フォレストを準備するために実行する必要があります。 エンタープライズ管理者権限でログオンする必要があり、Active Directory フォレストには、この手順を実行する Windows Server 2012 R2 スキーマが必要です。 します。  
+> これは、デバイス\-をサポートするために Active Directory フォレストを準備するために実行する必要がある1回限りの操作です。 この手順を実行するには、エンタープライズ管理者のアクセス許可を使用してログオンする必要があります。また、Active Directory フォレストには、Windows Server 2012 R2 スキーマが含まれている必要があります。  
 >   
-> さらに、DRS は、フォレスト ルート ドメインに少なくとも 1 つのグローバル カタログ サーバーがあることが必要です。 グローバル カタログ サーバーが初期化を実行するために必要な\-ADDeviceRegistration と AD FS の認証時にします。 AD FS を初期化しますで\-DRS の構成のメモリ表現が各認証要求のオブジェクトし、を DRS オブジェクトが GC に対して要求が試行された場合は、DRS の構成オブジェクトは、現在のドメインの DC で見つかりません、初期化中にプロビジョニングされた\-ADDeviceRegistration します。  
+> さらに、DRS では、フォレストのルートドメインに少なくとも1つのグローバルカタログサーバーが必要です。 Initialize\-initialize-addeviceregistration を実行し AD FS 認証を実行するには、グローバルカタログサーバーが必要です。 AD FS によって\-、各認証要求で drs config オブジェクトのメモリ内表現が初期化されます。また、現在のドメインの DC で drs 構成オブジェクトが見つからない場合は、drs オブジェクトがある GC に対して要求が試行されます。initialize-addeviceregistration の初期化\-中にプロビジョニングされます。  
   
 #### <a name="to-prepare-the-active-directory-forest"></a>Active Directory フォレストを準備するには  
   
-1.  フェデレーション サーバーで Windows PowerShell コマンド ウィンドウと種類を開きます。  
+1.  フェデレーションサーバーで、Windows PowerShell コマンドウィンドウを開き、次のように入力します。  
   
     ```  
     Initialize-ADDeviceRegistration  
     ```  
   
-2.  ServiceAccountName が表示されたら、AD FS のサービス アカウントとして選択したサービス アカウントの名前を入力します。  GMSA アカウントである場合、アカウントを入力します。、**ドメイン\\accountname**形式。 ドメイン アカウントでは、形式を使用して**ドメイン\\accountname**します。  
+2.  ServiceAccountName の入力を求められたら、AD FS のサービスアカウントとして選択したサービスアカウントの名前を入力します。  GMSA アカウントの場合は、 **\\ドメイン accountname $** 形式でアカウントを入力します。 ドメインアカウントの場合は、**ドメイン\\** アカウントの形式を使用します。  
   
-## <a name="enable-device-registration-service-on-a-federation-server-farm-node"></a>フェデレーション サーバー ファーム ノードでデバイス登録サービスを有効にします。  
+## <a name="enable-device-registration-service-on-a-federation-server-farm-node"></a>フェデレーションサーバーファームノードでデバイス登録サービスを有効にする  
   
 > [!NOTE]  
-> この手順を実行するドメイン管理者権限でログオンする必要があります。  
+> この手順を実行するには、ドメイン管理者のアクセス許可を使用してログオンする必要があります。  
   
 #### <a name="to-enable-device-registration-service"></a>デバイス登録サービスを有効にするには  
   
-1.  フェデレーション サーバーで Windows PowerShell コマンド ウィンドウと種類を開きます。  
+1.  フェデレーションサーバーで、Windows PowerShell コマンドウィンドウを開き、次のように入力します。  
   
     ```  
     Enable-AdfsDeviceRegistration  
     ```  
   
-2.  AD FS ファーム内の各フェデレーション ファーム ノードでこの手順を繰り返す.  
+2.  AD FS ファームの各フェデレーションファームノードで、この手順を繰り返します。  
   
-## <a name="enable-seamless-second-factor-authentication"></a>有効にするシームレスな第 2 要素認証  
-シームレスな第 2 要素認証は、それらにアクセスしようとしている外部デバイスから会社のリソースやアプリケーションへのアクセス保護の追加レベルを提供する AD FS での拡張機能。 個人所有のデバイスがワークプ レースに参加している場合は、"不明と"デバイスになり、管理者はこの情報を使用して、リソースへの条件付きアクセスとアクセスのドライブです。  
+## <a name="enable-seamless-second-factor-authentication"></a>シームレスな2要素認証を有効にする  
+シームレスな2要素認証は AD FS の拡張機能であり、企業のリソースやアプリケーションにアクセスしようとしている外部デバイスからのアクセス保護レベルを追加します。 個人用デバイスが社内参加している場合は、"既知の" デバイスになり、管理者はこの情報を使用して、リソースへの条件付きアクセスやゲートアクセスを行うことができます。  
   
-#### <a name="to-enable-seamless-second-factor-authentication-persistent-single-sign-on-sso-and-conditional-access-for-workplace-joined-devices"></a>シームレスな 2 つ目を有効に authentication、永続的なシングル サインイン\-で\(SSO\)とワークプ レース参加済みデバイスの条件付きアクセス  
+#### <a name="to-enable-seamless-second-factor-authentication-persistent-single-sign-on-sso-and-conditional-access-for-workplace-joined-devices"></a>シームレスな2要素認証を有効にするに\-は\(、\)ワークプレースジョインデバイスの SSO と条件付きアクセスを永続的に使用する  
   
-1.  AD FS 管理コンソールでは、認証ポリシーに移動します。 グローバル プライマリ認証の編集を選択します。 デバイス認証の有効化、横のチェック ボックスを選択し、[ok] をクリックします。  
+1.  AD FS 管理コンソールで、[認証ポリシー] に移動します。 [グローバルプライマリ認証の編集] を選択します。 [デバイス認証を有効にする] の横にあるチェックボックスをオンにして、[OK] をクリックします。  
   
-## <a name="update-the-web-application-proxy-configuration"></a>Web アプリケーション プロキシの構成を更新します。  
+## <a name="update-the-web-application-proxy-configuration"></a>Web アプリケーションプロキシの構成を更新する  
   
 > [!IMPORTANT]  
-> Web アプリケーション プロキシにデバイス登録サービスを発行する必要はありません。  フェデレーション サーバーで有効にした後に、デバイス登録サービスは、Web アプリケーション プロキシを介して使用可能になります。  デバイス登録サービスを有効にする前に配置されている場合は、Web アプリケーション プロキシの構成を更新するには、この手順を完了する必要があります。  
+> デバイス登録サービスを Web アプリケーションプロキシに発行する必要はありません。  デバイス登録サービスは、フェデレーションサーバーで有効にされると、Web アプリケーションプロキシ経由で使用できるようになります。  デバイス登録サービスを有効にする前に Web アプリケーションプロキシの構成を更新するには、この手順を完了する必要があります。  
   
-#### <a name="to-update-the-web-application-proxy-configuration"></a>Web アプリケーション プロキシ構成を更新するには  
+#### <a name="to-update-the-web-application-proxy-configuration"></a>Web アプリケーションプロキシの構成を更新するには  
   
-1.  Web アプリケーション プロキシ サーバーで、Windows PowerShell コマンド ウィンドウを開き  
+1.  Web アプリケーションプロキシサーバーで、Windows PowerShell コマンドウィンドウを開き、「」と入力します。  
   
     ```  
     Update-WebApplicationProxyDeviceRegistration  
     ```  
   
-2.  資格情報が表示されたら、フェデレーション サーバーに管理者権限を持つアカウントの資格情報を入力します。  
+2.  資格情報の入力を求められたら、フェデレーションサーバーに対する管理者権限を持つアカウントの資格情報を入力します。  
   
 ## <a name="see-also"></a>関連項目 
 
 [AD FS 展開](../../ad-fs/AD-FS-Deployment.md)  
 
-[Windows Server 2012 R2 AD FS 展開ガイドします。](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
+[Windows Server 2012 R2 AD FS 展開ガイド](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  
 [フェデレーション サーバー ファームの展開](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
   

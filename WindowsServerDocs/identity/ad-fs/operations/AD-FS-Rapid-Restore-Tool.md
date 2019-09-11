@@ -9,12 +9,12 @@ ms.date: 07/02/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 188e635543e13154622f52bf02cf877b05cc8fda
-ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
+ms.openlocfilehash: fc924f5e5bdd7dabecac4fdd6805ad261a0fc634
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68300716"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866169"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>AD FS の迅速な復元ツール
 

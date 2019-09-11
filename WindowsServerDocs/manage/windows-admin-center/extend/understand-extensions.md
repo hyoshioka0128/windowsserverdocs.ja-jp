@@ -8,18 +8,18 @@ ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: b00ee847088d038e59266154bcbbe9499bfe47fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e54101e90005a1845820ecf0bb99df527ac7051
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850113"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869774"
 ---
 # <a name="understanding-windows-admin-center-extensions"></a>Windows Admin Center 拡張機能について
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
-Windows Admin Center のしくみがまだわからない場合は、アーキテクチャの概要から始めましょう。 Windows Admin Center は、次の 2 つの主要コンポーネントで構成されます。
+Windows 管理センターのしくみにまだ慣れていない場合は、概要アーキテクチャから始めましょう。 Windows Admin Center は、次の 2 つの主要コンポーネントで構成されます。
 
 - Web ブラウザーの要求に対して Windows Admin Center UI の Web ページを提供するライトウェイト **Web サービス**です。
 - Web ページからの REST API 要求をリッスンし、対象のサーバーまたはクラスターで WMI の呼び出しまたは PowerShell スクリプトが実行されるようにリレーする**ゲートウェイ コンポーネント**です。
@@ -50,6 +50,6 @@ Windows Admin Center のホーム画面で接続をクリックして接続す�
 
 ゲートウェイ サービスでは、呼び出す UI の REST API を公開し、ターゲットで実行するコマンドとスクリプトをリレーします。 ゲートウェイ サービスは、異なるプロトコルをサポートするゲートウェイ プラグインによって拡張できます。 Windows Admin Center には、PowerShell スクリプトの実行用と WMI コマンド用の 2 つのゲートウェイ プラグインが事前にパッケージ化されています。 REST など、PowerShell または WMI 以外のプロトコルによってターゲットと通信する必要がある場合は、そのためのゲートウェイ プラグインを構築できます。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
-Windows Admin Center で構築する機能に応じて、既存のサーバーまたはクラスター ソリューション向けの[ツール拡張機能を構築する](develop-tool.md)だけで十分であり、これが拡張機能を構築するための最も簡単な最初の手順です。 ただし、機能がサーバーやクラスターではなく、デバイス、サービス、または完全に新しいものを管理するためのものである場合は、1 つ以上のツールを使用して[ソリューション拡張機能を構築する](develop-solution.md)ことを考慮する必要があります。 最後に、WMI または PowerShell 以外のプロトコルを通じてターゲットと通信する必要がある場合は、[ゲートウェイ プラグインを作成する](develop-gateway-plugin.md)必要があります。 [さらに読み進めて](developing-extensions.md)開発環境を設定する方法および最初の拡張機能の記述を開始する方法を確認してください。
+Windows Admin Center で構築する機能に応じて、既存のサーバーまたはクラスター ソリューション向けの[ツール拡張機能を構築する](develop-tool.md)だけで十分であり、これが拡張機能を構築するための最も簡単な最初の手順です。 ただし、機能がサーバーやクラスターではなく、デバイス、サービス、または完全に新しいものを管理するためのものである場合は、1 つ以上のツールを使用して[ソリューション拡張機能を構築する](develop-solution.md)ことを考慮する必要があります。 最後に、WMI または PowerShell 以外のプロトコルを使用してターゲットと通信する必要がある場合は、[ゲートウェイプラグインを作成](develop-gateway-plugin.md)する必要があります。 [さらに読み進めて](developing-extensions.md)開発環境を設定する方法および最初の拡張機能の記述を開始する方法を確認してください。

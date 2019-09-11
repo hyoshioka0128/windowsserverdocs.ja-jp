@@ -1,28 +1,28 @@
 ---
-title: Windows Server に関連する記事に必要なメタデータ タグを追加します。
-description: 情報の一覧する必要がありますとして追加するメタデータ タグ、Windows Server に関連する記事の先頭にします。 必要なタグは、レポートとチームの両方の要件に基づいて変更される可能性が。
+title: Windows Server 関連の記事に必要なメタデータタグを追加する
+description: Windows Server 関連の記事の上部にメタデータタグとして追加する必要がある情報の一覧。 必要なタグは、レポートとチームの両方の要件に基づいて変更される可能性があります。
 author: eross-msft
 ms.author: lizross
 ms.date: 05/06/2019
-ms.openlocfilehash: f7c514def1353d44386b1bc53c8cabffe1e31fda
-ms.sourcegitcommit: 7e54a1bcd31cd2c6b18fd1f21b03f5cfb6165bf3
+ms.openlocfilehash: f0af6b48cd3fd28ae0a15752cb21bfe9a4abf14f
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65461640"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865091"
 ---
-# <a name="add-the-required-metadata-tags-to-your-windows-server-related-article"></a>Windows Server に関連する記事に必要なメタデータ タグを追加します。
+# <a name="add-the-required-metadata-tags-to-your-windows-server-related-article"></a>Windows Server 関連の記事に必要なメタデータタグを追加する
 
-すべての記事の上部にあるは、特定のメタデータを追跡および SEO の目的を含める必要があります。 必要なタグは、レポートの要件に基づいて変更される可能性が。 ただし、すべてのフィールドの追加または削除する必要がある場合、このするを通知する必要があります。
+各記事の上部には、追跡と SEO の目的で特定のメタデータが含まれている必要があります。 必要なタグは、レポートの要件に基づいて変更される可能性があります。 ただし、フィールドを追加または削除する必要がある場合は通知されます。
 
-これは、ようになります、上部と下部に 3 つのハイフン (-) を含みます。
+次のようになります。上部と下部にある3つのハイフン (---) を含みます。
 
 ```markdown
 
 ---
 title: The title of the article should go here. This is used in SEO and search results.
 
-description: A description for the article should go here. This is used in search results, to provide users with information about whether the article has the information they’re looking for.
+description: A description for the article should go here. This is used in search results, to provide users with information about whether the article has the information they're looking for.
 
 ms.prod: Use this specific text, windows-server-threshold
 
@@ -32,7 +32,7 @@ author: Your GitHub alias
 
 ms.author: Your Microsoft alias
 
-manager: Your manager’s Microsoft alias
+manager: Your manager's Microsoft alias
 
 ms.topic: Type of article, including article, landing-page, get-started-article, or reference
 

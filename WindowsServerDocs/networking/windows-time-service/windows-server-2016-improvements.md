@@ -8,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: 34d05a8058db366714c0ff4fed0b7d80b9150aa4
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: 2b8c6148af21e94e4a56661402f36dcb2e636461
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69626356"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871833"
 ---
 ## <a name="windows-server-2016-improvements"></a>Windows Server 2016 の機能強化
 

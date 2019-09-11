@@ -9,17 +9,17 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 154e6e986bd0e78936a985ce7b80ee533ea5c82a
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 44b8fef82e2f758e99ef0f8d9b28a55d36f0cfdf
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191828"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868003"
 ---
 # <a name="windows-server-ad-fs-deployment-guide"></a>Windows Server AD FS 展開ガイド
 
 
-Active Directory フェデレーション サービスを使用する\(AD FS\)フェデレーション id 拡張分散識別、管理ソリューションを構築するには、Windows Server 2016 と 2012 R2 オペレーティング システムでの認証と承認サービスを Web\-組織やプラットフォームの境界を越えてベースのアプリケーション。 AD FS を展開することで、組織の既存の ID 管理機能をインターネットにまで拡張できます。  
+Windows Server 2016 および\(2012\) R2 オペレーティングシステムで Active Directory フェデレーションサービス (AD FS) AD FS を使用して、分散識別、認証、およびを拡張するフェデレーション id 管理ソリューションを構築できます。組織やプラットフォームの\-境界を越えた Web ベースのアプリケーションに対する認証サービス。 AD FS を展開することにより、組織の既存の id 管理機能をインターネットに拡張できます。  
   
 -   [フェデレーション サーバー ファームの展開](Deploying-a-Federation-Server-Farm.md)  
   

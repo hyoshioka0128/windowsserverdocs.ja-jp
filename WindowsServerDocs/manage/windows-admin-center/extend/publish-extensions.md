@@ -1,6 +1,6 @@
 ---
-title: Windows Admin Center の拡張機能を公開
-description: Windows Admin Center (プロジェクト ホノルル) の拡張機能を公開
+title: Windows 管理センターの拡張機能の公開
+description: Windows 管理センター用の拡張機能の公開 (Project ホノルル)
 ms.technology: manage
 ms.topic: article
 author: daniellee-msft
@@ -8,76 +8,76 @@ ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 762bd4613fa8ad6cdfb5b44745a7ce78b331499d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d2bb97fb65e3fbf5c7809317a8565ff7051d0447
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820423"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869700"
 ---
-# <a name="publishing-extensions"></a>公開の拡張機能
+# <a name="publishing-extensions"></a>拡張機能の公開
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
-拡張機能を開発したら、発行し、テストまたは使用する他のユーザーに使用できるようにします。 対象ユーザーと発行の目的に応じて以下の手順と発行のための要件と共に導入する予定がいくつかのオプションがあります。
+拡張機能を開発したら、それを発行し、他のユーザーがテストまたは使用できるようにします。 発行者と発行の目的に応じて、以下に示すオプションがいくつかあります。これらのオプションについては、公開の手順と要件を参照してください。
 
-## <a name="publishing-options"></a>公開オプション
+## <a name="publishing-options"></a>パブリッシングオプション
 
-Windows Admin Center をサポートする構成可能なパッケージ ソースの主な 3 つのオプションがあります。
-* Microsoft のパブリック Windows Admin Center NuGet フィード
+Windows 管理センターでサポートされる構成可能なパッケージソースには、主に次の3つのオプションがあります。
+* Microsoft のパブリック Windows 管理センター NuGet フィード
 * 独自のプライベート NuGet フィード
-* ローカルまたはネットワーク ファイル共有
+* ローカルまたはネットワークのファイル共有
 
-### <a name="publishing-to-the-windows-admin-center-extension-feed"></a>フィード、Windows Admin Center の拡張機能への発行
+### <a name="publishing-to-the-windows-admin-center-extension-feed"></a>Windows 管理センターの拡張機能フィードへの発行
 
-NuGet に既定では、Windows Admin Center が接続されている microsoft Windows Admin Center の製品チームによって管理されるフィード。 Microsoft によって開発された新しい拡張機能の初期のプレビュー バージョンは、このフィードに発行され、Windows Admin Center ユーザーが使用できる可能性があります。 外部の開発者がビルドし、公開されている拡張機能をリリースする予定の場合も[要求を送信](#publishing-your-extension-to-the-windows-admin-center-feed)このフィードに発行します。
+既定では、Windows 管理センターは、Microsoft の Windows 管理センター製品チームによって管理されている NuGet フィードに接続されています。 Microsoft によって開発された新しい拡張機能の早期プレビュー版は、このフィードに公開され、Windows 管理センターのユーザーが使用できるようになります。 拡張機能のビルドとリリースを計画している外部の開発者は、このフィードへ[の発行要求を送信](#publishing-your-extension-to-the-windows-admin-center-feed)することもできます。
 
-### <a name="publishing-to-a-different-nuget-feed"></a>フィードのさまざまな NuGet への発行
+### <a name="publishing-to-a-different-nuget-feed"></a>別の NuGet フィードへの発行
 
-独自の NuGet を使用して、多数の 1 つに、拡張機能を公開するフィードを作成することも[秘密のソースを設定またはサービスをホストしている NuGet を使用するためのさまざまなオプション](https://docs.microsoft.com/nuget/hosting-packages/overview)します。 NuGet フィードには、NuGet v2 API をサポートする必要があります。 Windows Admin Center でフィードの認証が現在サポートされていないために、フィードは、すべてのユーザーへの読み取りアクセスを許可するように構成する必要があります。
+独自の NuGet フィードを作成して、[プライベートソースを設定したり、nuget ホスティングサービスを使用したりするためのさまざまなオプション](https://docs.microsoft.com/nuget/hosting-packages/overview)の1つを使用して、拡張機能を公開することもできます。 NuGet フィードは、NuGet v2 API をサポートしている必要があります。 現在、Windows 管理センターではフィード認証がサポートされていないため、すべてのユーザーに読み取りアクセスを許可するようにフィードを構成する必要があります。
 
 ### <a name="publishing-to-a-file-share"></a>ファイル共有への発行
 
-拡張機能のアクセスを制限するには、組織またはユーザーのグループに限定するフィードの拡張機能として SMB ファイル共有を使用することができます。 この場合、ファイル共有およびフォルダーのアクセス許可も、フィードへのアクセスを許可されます。
+拡張機能へのアクセスを組織または制限されたユーザーグループに限定するには、SMB ファイル共有を拡張機能フィードとして使用できます。 この場合、フィードへのアクセスを許可するために、ファイル共有とフォルダーのアクセス許可が適用されます。
 
-## <a name="preparing-your-extension-for-release"></a>リリースの拡張機能の準備
+## <a name="preparing-your-extension-for-release"></a>リリース用に拡張機能を準備する
 
-確認し、開発の次のトピックを検討してください。
+次の開発に関するトピックを必ず読み、検討してください。
 
-- [ツールの表示を制御します。](guides/dynamic-tool-display.md)
+- [ツールの可視性の制御](guides/dynamic-tool-display.md)
 - [文字列とローカライズ](guides/strings-localization.md)
 
-### <a name="consider-releasing-as-a-preview-release"></a>プレビュー リリースとしてリリースを検討してください。
+### <a name="consider-releasing-as-a-preview-release"></a>プレビューリリースとしてリリースすることを検討してください
 
-場合は評価目的で、拡張機能のプレビュー バージョンをリリースすることをお勧めします。
+評価のために拡張機能のプレビューバージョンをリリースする場合は、次のことをお勧めします。
 
-- .Nuspec ファイルの拡張機能のタイトルの最後に「(プレビュー)」を追加します。
-- .Nuspec ファイルの拡張機能の説明での制限事項について説明します
+- Nuspec ファイル内の拡張機能のタイトルの末尾に "(Preview)" を追加します。
+- Nuspec ファイルでの拡張機能の説明の制限事項について説明します。
 
 ## <a name="creating-an-extension-package"></a>拡張機能パッケージの作成
 
-Windows Admin Center では、NuGet パッケージと配布および拡張機能をダウンロードするためのフィードを利用します。  送付先であるパッケージの順番は、プラグインと拡張機能を含む NuGet パッケージを生成する必要があります。  1 つのパッケージは、ゲートウェイ プラグインだけでなく、UI の拡張機能に含めることができ、次のセクションでプロセスを説明します。
+Windows 管理センターでは、拡張機能の配布とダウンロードに NuGet パッケージとフィードを利用しています。  パッケージを出荷するには、プラグインと拡張機能を含む NuGet パッケージを生成する必要があります。  1つのパッケージには、UI 拡張機能とゲートウェイプラグインの両方を含めることができます。次のセクションでは、このプロセスについて説明します。
 
-### <a name="1-build-your-extension"></a>1. 拡張機能をビルドします。
+### <a name="1-build-your-extension"></a>1. 拡張機能をビルドする
 
-拡張機能をパッケージ化、ファイル システムに新しいディレクトリを作成する準備が完了したら、すぐに、コンソールと CD を開きます。  これはすべて、nuspec とコンテンツのディレクトリ、パッケージを構成するに使用するルート ディレクトリになります。  このフォルダーは、このドキュメントの間"NuGet Package"としてから参照されます。
+拡張機能のパッケージ化を開始する準備ができたら、すぐにファイルシステムに新しいディレクトリを作成し、コンソールを開いて、CD に追加します。  これは、パッケージを構成するすべての nuspec およびコンテンツディレクトリを格納するために使用されるルートディレクトリになります。  このドキュメントの期間中は、このフォルダーを "NuGet パッケージ" として参照します。
 
 #### <a name="ui-extensions"></a>UI 拡張機能
 
-UI 拡張機能に必要なすべての内容を収集する場合のプロセスを開始するには、ツールで「gulp ビルド」を実行しビルドが成功したかどうかを確認します。  このプロセスは、「バンドル」という名前のフォルダー内のすべてのコンポーネントは、(src ディレクトリの同じレベル) で、拡張機能のルート ディレクトリにあるパッケージ。  このディレクトリとすべてのコピー「NuGet パッケージ」フォルダーに内容ですね。
+UI 拡張機能に必要なすべてのコンテンツを収集するプロセスを開始するには、ツールで "gulp build" を実行し、ビルドが成功したことを確認します。  このプロセスでは、拡張機能のルートディレクトリ (src ディレクトリの同じレベル) にある "バンドル" という名前のフォルダーに、すべてのコンポーネントがまとめてパッケージ化されます。  このディレクトリとそのすべての内容を "NuGet パッケージ" フォルダーにコピーします。
 
-#### <a name="gateway-plugins"></a>ゲートウェイのプラグイン
+#### <a name="gateway-plugins"></a>ゲートウェイプラグイン
 
-(Visual Studio を開き、ビルド ボタンをクリックするだけでこれに可能性があります)、ビルドのインフラストラクチャを使用してコンパイルし、プラグインを構築します。  ビルド出力ディレクトリを開き、プラグインを表す、dll をコピーして「パッケージ」と呼ばれる"NuGet Package"ディレクトリ内の新しいフォルダーに配置します。  FeatureInterface dll で、コードを表す dll だけをコピーする必要はありません。
+ビルドインフラストラクチャを使用して (これは、Visual Studio を開いて [ビルド] ボタンをクリックするだけで、簡単に行うことができます)、プラグインをコンパイルしてビルドします。  ビルド出力ディレクトリを開き、プラグインを表す Dll をコピーして、"Package" という名前の "NuGet Package" ディレクトリ内の新しいフォルダーに配置します。  FeatureInterface dll をコピーする必要はありません。コードを表す Dll だけをコピーします。
 
-### <a name="2-create-the-nuspec-file"></a>2. .Nuspec ファイルを作成します。
+### <a name="2-create-the-nuspec-file"></a>2. Nuspec ファイルを作成する
 
-NuGet パッケージを作成するには、まず .nuspec ファイルを作成する必要があります。 .Nuspec ファイルには、NuGet パッケージのメタデータを含む XML マニフェストです。 このマニフェストを使用して、パッケージを作成して、コンシューマーに情報を提供します。  「NuGet パッケージ」フォルダーのルートには、このファイルを配置します。
+NuGet パッケージを作成するには、最初に nuspec ファイルを作成する必要があります。 Nuspec ファイルは、NuGet パッケージのメタデータを含む XML マニフェストです。 このマニフェストは、パッケージを作成するためと、コンシューマーに情報を提供するための、両方に使われます。  このファイルを "NuGet パッケージ" フォルダーのルートに配置します。
 
-.Nuspec ファイルの例と必須または推奨されるプロパティの一覧を次に示します。 完全なスキーマでは、次を参照してください。、 [.nuspec リファレンス](https://docs.microsoft.com/nuget/reference/nuspec)します。 .Nuspec ファイルを任意のファイル名を持つプロジェクトのルート フォルダーに保存します。
+Nuspec ファイルの例と、必須または推奨されるプロパティの一覧を次に示します。 完全なスキーマについては、 [nuspec のリファレンス](https://docs.microsoft.com/nuget/reference/nuspec)を参照してください。 任意のファイル名を使用して、nuspec ファイルをプロジェクトのルートフォルダーに保存します。
 
 > [!IMPORTANT]
-> ```<id>``` .Nuspec ファイル内の値が一致する必要があります、```"name"```プロジェクトの値```manifest.json```発行済みの拡張機能は、そうしないと、ファイルは、Windows Admin Center で正常に読み込みません。
+> Nuspec ファイルの```"name"``` ```manifest.json```値は、プロジェクトのファイル内の値と一致する必要があります。そうしないと、発行された拡張機能が Windows 管理センターで正常に読み込まれません。 ```<id>```
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -108,47 +108,47 @@ NuGet パッケージを作成するには、まず .nuspec ファイルを作�
 
 #### <a name="required-or-recommended-properties"></a>必須または推奨プロパティ
 
-| プロパティ名 | 必要な/推奨 | 説明 |
+| プロパティ名 | 必須/推奨 | 説明 |
 | ---- | ---- | ---- |
-| PackageType | 必須 | Windows Admin Center の拡張機能に対して定義されている NuGet パッケージの種類である"WindowsAdminCenterExtension"を使用します。 |
-| id | 必須 | フィード内で一意のパッケージの識別子。 この値は、プロジェクトの manifest.json ファイルに"name"値と一致する必要があります。  参照してください[一意のパッケージ識別子を選択する](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)のガイダンスについてはします。 |
-| title | Windows Admin Center をフィードに発行するために必要な | Windows Admin Center 拡張機能マネージャーに表示されるパッケージのフレンドリ名。 |
-| version | 必須 | 拡張機能のバージョン。 使用して[セマンティック バージョン管理 (SemVer 規則)](http://semver.org/spec/v1.0.0.html)推奨されますが、必要ありません。 |
-| 作成者 | 必須 | 会社の代わりをパブリッシュする場合は、会社名を使用します。 |
-| description | 必須 | 拡張機能の機能の説明を提供します。 |
-| IconUrl | Windows Admin Center をフィードに発行するときをお勧めします | 拡張機能マネージャーに表示するアイコンの URL です。 |
-| ProjectUrl | Windows Admin Center をフィードに発行するために必要な | 拡張機能の web サイトの URL です。 別の web サイトがいない場合は、NuGet フィードでパッケージの web ページの URL を使用します。 |
-| licenseUrl | Windows Admin Center をフィードに発行するために必要な | 拡張機能の使用許諾契約書への URL。 |
-| ファイル | 必須 | これら 2 つの設定は、Windows Admin Center UI 拡張機能とゲートウェイのプラグインが期待するフォルダー構造を設定します。 |
+| PackageType | 必須 | Windows 管理センターの拡張機能に定義されている NuGet パッケージの種類である "Windowsadmincenter Extension" を使用します。 |
+| id | 必須 | フィード内の一意のパッケージ識別子。 この値は、プロジェクトのマニフェストの json ファイルの "name" 値と一致する必要があります。  ガイダンスについては、[一意のパッケージ識別子の選択](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)に関するページをご覧ください。 |
+| title | Windows 管理センターフィードへの発行に必要 | Windows 管理センターの拡張機能マネージャーに表示されるパッケージのフレンドリ名。 |
+| version | 必須 | 拡張機能のバージョン。 [セマンティックバージョン管理 (SemVer 規約)](http://semver.org/spec/v1.0.0.html)を使用することをお勧めしますが、必須ではありません。 |
+| authors | 必須 | 会社の代理として発行する場合は、会社名を使用します。 |
+| description | 必須 | 拡張機能の機能についての説明を入力します。 |
+| iconUrl | Windows 管理センターフィードに発行するときに推奨 | 拡張機能マネージャーに表示するアイコンの URL。 |
+| projectUrl | Windows 管理センターフィードへの発行に必要 | 拡張機能の web サイトの URL。 別の web サイトがない場合は、NuGet フィードのパッケージ web ページの URL を使用します。 |
+| licenseUrl | Windows 管理センターフィードへの発行に必要 | 拡張機能の使用許諾契約書の URL。 |
+| files | 必須 | これら2つの設定は、Windows 管理センターが UI 拡張機能とゲートウェイプラグインに対して想定するフォルダー構造を設定します。 |
 
-### <a name="3-build-the-extension-nuget-package"></a>3.拡張機能の NuGet パッケージをビルドします。
+### <a name="3-build-the-extension-nuget-package"></a>3.拡張機能 NuGet パッケージをビルドする
 
-上記で作成した .nuspec ファイルを使用して、NuGet パッケージの .nupkg ファイルをアップロードして NuGet フィードにパブリッシュすることができますを今すぐ作成します。
+前の手順で作成した nuspec ファイルを使用して、NuGet パッケージを作成します。 nupkg ファイルをアップロードして、NuGet フィードに発行することができます。
 
-1. Nuget.exe CLI ツールをからダウンロード、 [NuGet クライアント ツールの web サイト](https://docs.microsoft.com/nuget/install-nuget-client-tools)します。
-2. .Nupkg ファイルを作成するには、「nuget.exe パック [.nuspec ファイル名]」を実行します。
+1. Nuget[クライアントツールの web サイト](https://docs.microsoft.com/nuget/install-nuget-client-tools)から nuget.exe CLI ツールをダウンロードします。
+2. "Nuget.exe pack [. nuspec file name]" を実行して、nupkg ファイルを作成します。
 
-### <a name="4-signing-your-extension-nuget-package"></a>4。拡張 NuGet パッケージの署名
+### <a name="4-signing-your-extension-nuget-package"></a>4。拡張機能の NuGet パッケージに署名しています
 
-拡張機能に含まれるすべての .dll ファイルは、信頼された証明機関 (CA) から証明書で署名する必要があります。 既定では、符号なしの .dll ファイルは、Windows Admin Center が実稼働モードで実行されているときに実行されてからはブロックされます。
+拡張機能に含まれているすべての .dll ファイルは、信頼された証明機関 (CA) の証明書で署名する必要があります。 既定では、Windows 管理センターが実稼働モードで実行されていると、署名されていない .dll ファイルは実行されません。
 
-これは必須の手順ではありませんが、パッケージの整合性を確保する拡張機能の NuGet パッケージの署名をも強くお勧めします。
+また、パッケージの整合性を保証するために拡張機能 NuGet パッケージに署名することを強くお勧めしますが、これは必須の手順ではありません。
 
-### <a name="5-test-your-extension-nuget-package"></a>5。拡張 NuGet パッケージをテストします。
+### <a name="5-test-your-extension-nuget-package"></a>5。拡張機能の NuGet パッケージをテストする
 
-拡張パッケージは、テストの準備ができました! NuGet フィードにし、.nupkg ファイルをアップロードまたはファイル共有にコピーします。 を表示して、別のフィードまたはファイル共有からパッケージをダウンロードする必要があります[、フィードの構成変更](../configure/using-extensions.md#installing-extensions-from-a-different-feed)NuGet フィードをポイントするか、またはファイル共有にします。 をテストする場合は、拡張機能マネージャーで正しく表示プロパティと正常にインストールして、拡張機能のアンインストールを確認します。
+これで、拡張機能パッケージをテストする準備ができました。 Nupkg ファイルを NuGet フィードにアップロードするか、ファイル共有にコピーします。 別のフィードまたはファイル共有のパッケージを表示およびダウンロードするには、NuGet フィードまたはファイル共有を指すように[フィードの構成を変更](../configure/using-extensions.md#installing-extensions-from-a-different-feed)する必要があります。 テスト時には、拡張機能マネージャーでプロパティが正しく表示されていることを確認し、拡張機能を正常にインストールしてアンインストールすることができます。
 
-## <a name="publishing-your-extension-to-the-windows-admin-center-feed"></a>フィード、Windows Admin Center を拡張機能を公開します。
+## <a name="publishing-your-extension-to-the-windows-admin-center-feed"></a>Windows 管理センターフィードへの拡張機能の発行
 
-フィード Windows Admin Center への発行、すること、拡張機能使用可能な任意の Windows Admin Center のユーザーにします。 Windows Admin Center SDK はまだプレビュー段階であるために、開発の問題を解決して、高品質の製品を提供することができるかどうかを確認し、ユーザー エクスペリエンスに役立つと緊密に連携いただきます。
+Windows 管理センターフィードに発行することで、Windows 管理センターのユーザーが拡張機能を使用できるようにすることができます。 Windows 管理センター SDK はまだプレビュー段階であるため、開発の問題の解決に役立つように、お客様と緊密に連携して、ユーザーに高品質の製品とエクスペリエンスを提供できるようにしたいと考えています。
 
-拡張機能の初期のバージョンをリリースする前に、2 ~ 3 週間以上とすると、必要に応じて、拡張機能を変更することを確認するための十分な時間があることを確認するリリースの前に microsoft 拡張機能のレビュー要求を送信することをお勧めします。 拡張機能が公開する準備をすることで、レビュー用に送信する必要があり、承認された場合のフィードに公開されます。
+拡張機能の初期バージョンをリリースする前に、リリース前に少なくとも2-3 週間後に拡張機能のレビュー要求をマイクロソフトに送信して、十分な情報を確認し、必要に応じて拡張機能に変更を加えることをお勧めします。 拡張機能を発行する準備ができたら、それをレビューのために送信する必要があります。承認されている場合は、フィードに発行します。
 
-その後、拡張機能への更新をリリースする場合は、確認のための別の要求を送信する必要があります。 変更の範囲によって異なりますレビューの更新プログラムのターンアラウンド時間が短い通常必要があります。
+その後、拡張機能の更新プログラムをリリースする場合は、レビューのために別の要求を送信する必要があります。 変更の範囲によっては、更新レビューのターンアラウンド時間は一般的に短くなります。
 
-### <a name="submit-an-extension-review-request-to-microsoft"></a>Microsoft 拡張機能のレビュー要求を送信します。
+### <a name="submit-an-extension-review-request-to-microsoft"></a>拡張機能レビュー要求を Microsoft に送信する
 
-拡張機能のレビュー要求を送信する、次の情報を入力しを電子メールとして送信[ wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Review%20Request)します。 私たちはから 1 週間以内の電子メールに返信します。
+拡張機能のレビュー要求を送信するには、次の情報を入力し[wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Review%20Request)て、に電子メールで送信します。 1週間以内に電子メールに返信します。
 
 ```
 Windows Admin Center Extension Review Request
@@ -160,11 +160,11 @@ Windows Admin Center Extension Review Request
 6. For extension update review – Description of changes (include product screenshots if UI has been significantly changed):
 ```
 
-### <a name="submit-your-extension-package-for-review-and-publishing"></a>確認と発行のため、拡張機能パッケージを送信します。
+### <a name="submit-your-extension-package-for-review-and-publishing"></a>レビューおよび発行のために拡張機能パッケージを送信する
 
-上記の指示に従うことを確認[拡張機能パッケージを作成する](#creating-an-extension-package).nuspec ファイルが正しく定義されているし、ファイルに署名します。 次を含むプロジェクトの web サイトがあることをお勧めします。
+[拡張機能パッケージを作成](#creating-an-extension-package)するための上記の手順に従ってください。 nuspec ファイルが適切に定義され、ファイルが署名されていることを確認してください。 また、次のようなプロジェクト web サイトを用意することもお勧めします。
 
-- スクリーン ショットやビデオを含む拡張機能の詳細な説明
-- 意見やご質問を受信する電子メール アドレスまたは web サイトの機能
+- スクリーンショットやビデオを含む拡張機能の詳細な説明
+- フィードバックまたは質問を受信するための電子メールアドレスまたは web サイト機能
 
-拡張機能を公開する準備ができたら、メールを送る[ wacextensionrequest@microsoft.com ](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Package%20Review)手順については、拡張機能パッケージを送信すると。 パッケージをお送りを確認して承認されると、Windows Admin Center をフィードに発行します。
+拡張機能を発行する準備ができたら、に[wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Package%20Review)電子メールを送信します。拡張機能パッケージを送信する方法については、こちらで説明します。 パッケージを受け取ったら、それを確認し、承認された場合は Windows 管理センターフィードに発行します。

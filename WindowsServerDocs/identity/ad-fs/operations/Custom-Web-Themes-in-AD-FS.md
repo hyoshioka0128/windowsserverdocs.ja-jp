@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 2bce52a5704706ad72799d00879e2f4e48f9d703
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: affcc8b7d6aed56c37ddf00dd1c962c0d82fd85b
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189246"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865778"
 ---
 # <a name="custom-web-themes-in-ad-fs"></a>AD FS でのカスタム Web テーマ 
 
-同梱されているテーマ\-の\-、\-ボックスは既定値と呼ばれます。 既定のテーマをエクスポートして使用すると、カスタマイズを簡単に開始できます。 カスタマイズできるのは外観と動作です.css ファイルを変更してレイアウトを調整し、変更済みの新しいテーマをインポートして適用すると、カスタマイズされた外観と動作を使用できるようになります。 .css ファイルを使用することで、Web デザイナーとの共同作業も容易になります。  
+既定と呼ばれるのは\-、\-その\-まま出荷されるテーマです。 既定のテーマをエクスポートして使用すると、カスタマイズを簡単に開始できます。 カスタマイズできるのは外観と動作です.css ファイルを変更してレイアウトを調整し、変更済みの新しいテーマをインポートして適用すると、カスタマイズされた外観と動作を使用できるようになります。 .css ファイルを使用することで、Web デザイナーとの共同作業も容易になります。  
   
 次のコマンドレットを実行すると、既定の Web テーマを複製してカスタム Web テーマが作成されます。  
   
@@ -45,17 +45,17 @@ ms.locfileid: "66189246"
   
   
   
-AD FS には、カスタム web テーマを適用するには、次のコマンドレットを使用します。  
+AD FS にカスタム web テーマを適用するには、次のコマンドレットを使用します。  
   
 
 `Set-AdfsWebConfig -ActiveThemeName custom`  
 
   
-AD FS には、JavaScript を追加するには、次のコマンドレットを使用します。  
+JavaScript を AD FS に追加するには、次のコマンドレットを使用します。  
   
  
-    Set-AdfsWebTheme -TargetName custom -AdditionalFileResource @{Uri=’ /adfs/portal/script/onload.js’;path="D:\inetpub\adfsassets\script\onload.js"}  
+    Set-AdfsWebTheme -TargetName custom -AdditionalFileResource @{Uri=' /adfs/portal/script/onload.js';path="D:\inetpub\adfsassets\script\onload.js"}  
 
 
 ## <a name="additional-references"></a>その他の参照情報 
-[AD FS のユーザー サインイン カスタマイズ](AD-FS-user-sign-in-customization.md)  
+[AD FS ユーザーサインインのカスタマイズ](AD-FS-user-sign-in-customization.md)  

@@ -1,6 +1,6 @@
 ---
-title: アップグレード、バックアップ、および復元の SDN インフラストラクチャ
-description: このトピックでは、更新、バックアップ、および、SDN インフラストラクチャを復元する方法について説明します。
+title: SDN インフラストラクチャのアップグレード、バックアップ、復元
+description: このトピックでは、SDN インフラストラクチャを更新、バックアップ、および復元する方法について説明します。
 manager: dougkim
 ms.prod: windows-server-threshold
 ms.technology: networking-sdn
@@ -9,78 +9,78 @@ ms.assetid: e9a8f2fd-48fe-4a90-9250-f6b32488b7a4
 ms.author: grcusanz
 author: shortpatti
 ms.date: 08/27/2018
-ms.openlocfilehash: 7916377f58261d0ccaa3fa24f135fccca3d5e79b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 1bee4ef9023a1fab49bf796907780662a0297a7c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446332"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869963"
 ---
-# <a name="upgrade-backup-and-restore-sdn-infrastructure"></a>アップグレード、バックアップ、および復元の SDN インフラストラクチャ
+# <a name="upgrade-backup-and-restore-sdn-infrastructure"></a>SDN インフラストラクチャのアップグレード、バックアップ、復元
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、更新、バックアップ、および、SDN インフラストラクチャを復元する方法について説明します。 
+このトピックでは、SDN インフラストラクチャを更新、バックアップ、および復元する方法について説明します。 
 
-## <a name="upgrade-the-sdn-infrastructure"></a>SDN インフラストラクチャをアップグレードします。
-SDN インフラストラクチャは、Windows Server 2019 に Windows Server 2016 からアップグレードできます。 順序付けをアップグレードするには、「SDN インフラストラクチャの更新」セクションで説明したように、同じ一連手順に従います。 アップグレードする前に、ネットワーク コント ローラーのデータベースのバックアップを実行することをお勧めします。
+## <a name="upgrade-the-sdn-infrastructure"></a>SDN インフラストラクチャをアップグレードする
+SDN インフラストラクチャは、Windows Server 2016 から Windows Server 2019 にアップグレードできます。 アップグレードの順序付けについては、「SDN インフラストラクチャを更新する」セクションで説明したのと同じ手順を実行します。 アップグレードする前に、ネットワークコントローラーデータベースのバックアップを作成することをお勧めします。
 
-ネットワーク コント ローラー マシンの場合に、Get NetworkControllerNode コマンドレットを使用して、アップグレードが完了した後に、ノードの状態を確認します。 ノードの他のノードをアップグレードする前に「稼働」状態に戻ったことを確認します。 すべてのネットワーク コント ローラーのノードをアップグレードすると、ネットワーク コント ローラーは 1 時間以内に、ネットワーク コント ローラーがクラスター内で実行されているマイクロ サービスを更新します。 Update networkcontroller コマンドレットを使用して直ちに更新をトリガーすることができます。 
+ネットワークコントローラーのコンピューターの場合は、NetworkControllerNode コマンドレットを使用して、アップグレードの完了後にノードの状態を確認します。 他のノードをアップグレードする前に、ノードが "アップ" 状態に戻っていることを確認します。 すべてのネットワークコントローラーノードをアップグレードすると、ネットワークコントローラーは、1時間以内にネットワークコントローラークラスター内で実行されているマイクロサービスを更新します。 即時更新は、networkcontroller コマンドレットを使用してトリガーできます。 
 
-すべてのオペレーティング システム コンポーネントが含まれるソフトウェア定義ネットワーク (SDN) システムの同じ Windows 更新プログラムをインストールします。
+ソフトウェア定義ネットワーク (SDN) システムのすべてのオペレーティングシステムコンポーネントに同じ Windows 更新プログラムをインストールします。これには次のものが含まれます。
 
-- SDN には、HYPER-V ホストが有効になっています。
-- ネットワーク コント ローラー Vm
-- ソフトウェア ロード バランサー Mux Vm
+- SDN が有効になっている Hyper-v ホスト
+- ネットワークコントローラー Vm
+- ソフトウェア Load Balancer Mux Vm
 - RAS ゲートウェイ Vm 
 
 >[!IMPORTANT]
->System Center Virtual Manager を使用する場合は、最新の更新プログラムのロールアップに更新する必要があります。
+>System Center Virtual Manager を使用する場合は、最新の更新プログラムのロールアップで更新する必要があります。
 
-各コンポーネントを更新するときに、標準的なメソッドのいずれかの Windows 更新プログラムをインストールするために使用できます。 ただし、最小限のダウンタイムのワークロードとネットワーク コント ローラーのデータベースの整合性を確実には、次の手順に従います。
+各コンポーネントを更新するときに、Windows 更新プログラムのインストールに標準の方法のいずれかを使用できます。 ただし、ワークロードのダウンタイムを最小限に抑え、ネットワークコントローラーデータベースの整合性を確保するには、次の手順を実行します。
 
-1. 管理コンソールを更新します。<p>ネットワーク コント ローラーの Powershell モジュールを使用するコンピューターの各更新プログラムをインストールします。  単独でインストールされている RSAT NetworkController ロールがあることを任意の場所などです。 ネットワーク コント ローラー Vm 自体を除く次の手順で更新します。
+1. 管理コンソールを更新します。<p>ネットワークコントローラーの Powershell モジュールを使用する各コンピューターに更新プログラムをインストールします。  NetworkController ロールが単独でインストールされているすべての場所を含めることができます。 ネットワークコントローラーの Vm 自体を除外する。これらの更新は、次の手順で行います。
 
-2. 最初のネットワーク コント ローラーの VM では、すべての更新プログラムをインストールし、再起動します。
+2. 最初のネットワークコントローラー VM で、すべての更新プログラムをインストールし、を再起動します。
 
-3. 次のネットワーク コント ローラー VM を次に進む前に使用して、`get-networkcontrollernode`コマンドレットを更新して再起動するノードの状態を確認します。
+3. 次のネットワークコントローラー VM に進む前に、 `get-networkcontrollernode`コマンドレットを使用して、更新して再起動したノードの状態を確認します。
 
-4. 再起動サイクル中にネットワーク コント ローラーのノードがダウンしてもう一度を待ちます。<p>VM を再起動した後に戻るまでに数分がかかることができます、 **_を_** 状態。 出力の例は、次を参照してください。 
+4. 再起動サイクル中に、[ネットワークコントローラー] ノードが停止するのを待ってから、もう一度バックアップします。<p>VM を再起動した後、状態が " **_アップ_** " に戻るまで数分かかることがあります。 出力の例については、「」を参照してください。 
 
-5. ロード バランサーのインフラストラクチャの継続的可用性を確保するに 1 つの各 SLB Mux VM に更新プログラムをインストールします。
+5. 各 SLB Mux VM に更新プログラムを1つずつインストールして、ロードバランサーインフラストラクチャの継続的な可用性を確保します。
 
-6. HYPER-V ホストと以降では、RAS ゲートウェイが含まれているホストでは、RAS ゲートウェイを更新**スタンバイ**モード。<p>テナントの接続を失うことがなく、RAS ゲートウェイの Vm をライブ移行できません。 更新プログラムのサイクル中にする必要がある回数を最小限に抑える新しい RAS ゲートウェイへの接続のフェールオーバーのテナントします。 ホストと RAS ゲートウェイの更新プログラムを調整することで、各テナントは最大で失敗を 1 回、します。
+6. Hyper-v ホストと RAS ゲートウェイを更新します。これは、**スタンバイ**モードになっている ras ゲートウェイを含むホストから始まります。<p>RAS ゲートウェイ Vm は、テナント接続を失わずにライブで移行することはできません。 更新サイクル中に、テナント接続が新しい RAS ゲートウェイにフェールオーバーする回数を最小限に抑えるように注意する必要があります。 ホストと RAS ゲートウェイの更新を調整することにより、各テナントは1回フェールオーバーされます。
 
-    a. ライブ マイグレーションの対応する Vm のホストを退避します。<p>RAS ゲートウェイ Vm は、ホスト上に残る必要があります。
+    a. ライブマイグレーションが可能な Vm のホストを退避させします。<p>RAS ゲートウェイ Vm はホスト上に残す必要があります。
 
-    b. このホスト上の各ゲートウェイ VM には、更新プログラムをインストールします。
+    b. このホストの各ゲートウェイ VM に更新プログラムをインストールします。
 
-    c. 更新プログラムには、ゲートウェイ VM の再起動が必要な場合は、VM を再起動します。  
+    c. 更新でゲートウェイ VM を再起動する必要がある場合は、VM を再起動します。  
 
-    d. ゲートウェイが更新されました VM を含むホスト上の更新プログラムをインストールします。
+    d. 更新されたばかりのゲートウェイ VM が含まれているホストに更新プログラムをインストールします。
 
-    e. 更新プログラムで必要な場合は、ホストを再起動します。
+    e. 更新プログラムによって必要になった場合は、ホストを再起動します。
 
-    f. スタンバイ ゲートウェイを含む追加の各ホストに対して繰り返します。<p>スタンバイ ゲートウェイが残っていない場合は、残りのすべてのホストの同様の手順を以下します。
+    f. スタンバイゲートウェイを含む追加のホストごとに、この手順を繰り返します。<p>スタンバイゲートウェイが残っていない場合は、残りのすべてのホストに対して同じ手順を実行します。
 
 
-### <a name="example-use-the-get-networkcontrollernode-cmdlet"></a>以下に例を示します。Get networkcontrollernode コマンドレットを使用します。 
+### <a name="example-use-the-get-networkcontrollernode-cmdlet"></a>例:Networkcontrollernode コマンドレットを使用する 
 
-この例の出力が参照してください。、`get-networkcontrollernode`内、ネットワーク コント ローラー Vm のいずれかからコマンドレットを実行します。  
+この例では、ネットワークコントローラー vm のいずれ`get-networkcontrollernode`かで実行されるコマンドレットの出力を確認できます。  
 
-例の出力結果に表示されるノードの状態を示します。
+出力例に表示されるノードの状態は次のとおりです。
 
-- NCNode1.contoso.com = ダウン
-- NCNode2.contoso.com を =
-- NCNode3.contoso.com = Up
+- NCNode1.contoso.com = Down
+- NCNode2.contoso.com = 上
+- NCNode3.contoso.com = 上
 
 >[!IMPORTANT]
->ノードへの変更の状態まで数分を待機する必要があります _**を**_ 、一度に 1 つずつ追加ノードを更新する前にします。
+>追加のノードを一度に1つずつ更新する前に、ノードの状態が変更 _**されるまで**_ 数分待つ必要があります。
 
-すべてのネットワーク コント ローラーのノードを更新して、ネットワーク コント ローラーは 1 時間以内に、ネットワーク コント ローラーがクラスター内で実行されているマイクロ サービスを更新します。 
+すべてのネットワークコントローラーノードを更新すると、ネットワークコントローラーは1時間以内にネットワークコントローラークラスター内で実行されているマイクロサービスを更新します。 
 
 >[!TIP]
->使用して、即時更新をトリガーすることができます、`update-networkcontroller`コマンドレット。
+>`update-networkcontroller`コマンドレットを使用して即時更新をトリガーすることができます。
 
 
 ```Powershell
@@ -107,11 +107,11 @@ NodeCertificate :
 Status          : Up
 ```
 
-### <a name="example-use-the-update-networkcontroller-cmdlet"></a>以下に例を示します。Update networkcontroller コマンドレットを使用します。
-この例の出力が参照してください。、`update-networkcontroller`コマンドレットを更新するネットワーク コント ローラーを使用します。 
+### <a name="example-use-the-update-networkcontroller-cmdlet"></a>例:Networkcontroller コマンドレットを使用する
+この例では、ネットワークコントローラーを強制的`update-networkcontroller`に更新するコマンドレットの出力を確認できます。 
 
 >[!IMPORTANT]
->インストールにも更新がある場合は、このコマンドレットを実行します。
+>インストールする更新プログラムがこれ以上ない場合は、このコマンドレットを実行します。
 
 
 ```Powershell
@@ -121,32 +121,32 @@ NetworkControllerClusterVersion NetworkControllerVersion
 10.1.1                          10.1.15
 ```
 
-## <a name="backup-the-sdn-infrastructure"></a>SDN インフラストラクチャのバックアップ
+## <a name="backup-the-sdn-infrastructure"></a>SDN インフラストラクチャをバックアップする
 
-ネットワーク コント ローラーのデータベースの定期的なバックアップにより、災害やデータ損失が発生した場合のビジネス継続性。  セッションが複数のネットワーク コント ローラーのノードは引き続き確実にできないために、ネットワーク コント ローラーの Vm をバックアップするための十分ではありません。
+ネットワークコントローラーデータベースの定期的なバックアップによって、障害やデータの損失が発生した場合にビジネスの継続性が確保されます。  ネットワークコントローラー Vm をバックアップするだけでは十分ではありません。これは、複数のネットワークコントローラーノードでセッションが続行されることがないためです。
 
 **要件:**
-* SMB 共有と、共有とファイル システムへの読み取り/書き込みアクセス許可を持つ資格情報。
-* 同様に GMSA を使用して、ネットワーク コント ローラーがインストールされた場合にも、グループ管理サービス アカウント (GMSA) を使用できます。
+* 共有とファイルシステムへの読み取り/書き込みアクセス許可を持つ SMB 共有と資格情報。
+* ネットワークコントローラーが GMSA を使用してインストールされている場合は、必要に応じて、グループの管理されたサービスアカウント (GMSA) を使用することもできます。
 
-**手順:**
+**作業**
 
-1. 任意の VM のバックアップ方法を使用して、または HYPER-V を使用して、各ネットワーク コント ローラー VM のコピーをエクスポートします。<p>ネットワーク コント ローラー VM のバックアップにより、データベースの復号化のために必要な証明書が存在します。  
+1. 任意の VM バックアップ方法を使用するか、Hyper-v を使用して各ネットワークコントローラー VM のコピーをエクスポートします。<p>ネットワークコントローラー VM をバックアップすると、データベースの暗号化解除に必要な証明書が確実に存在するようになります。  
 
-2. System Center Virtual Machine Manager (SCVMM) を使用する場合は、SCVMM サービスを停止し、SQL Server を使用してバックアップを作成します。<p>ここでの目的では、更新プログラムを取得行われていないことを SCVMM にこの時点では、ネットワーク コント ローラーのバックアップおよび SCVMM の間に不整合が生じる可能性の中に確認します。  
+2. System Center Virtual Machine Manager (SCVMM) を使用している場合は、SCVMM サービスを停止し、SQL Server 経由でバックアップします。<p>ここでの目的は、この期間中に SCVMM に更新が行われないようにすることです。これにより、ネットワークコントローラーのバックアップと SCVMM の間に不整合が生じる可能性があります。  
 
    >[!IMPORTANT]
-   >再始めないでください SCVMM サービス、ネットワーク コント ローラーのバックアップが完了するまでです。
+   >ネットワークコントローラーのバックアップが完了するまで、SCVMM サービスを再起動しないでください。
 
-3. ネットワーク コント ローラーのデータベースをバックアップ、`new-networkcontrollerbackup`コマンドレット。
+3. `new-networkcontrollerbackup`コマンドレットを使用してネットワークコントローラーデータベースをバックアップします。
 
-4. 完了と成功した場合、バックアップの確認、`get-networkcontrollerbackup`コマンドレット。
+4. `get-networkcontrollerbackup`コマンドレットを使用して、バックアップの完了と成功を確認します。
 
-5. SCVMM を使用する場合は、SCVMM サービスを開始します。
+5. SCVMM を使用している場合は、SCVMM サービスを開始します。
 
 
 
-### <a name="example-backing-up-the-network-controller-database"></a>以下に例を示します。ネットワーク コント ローラーのデータベースをバックアップします。
+### <a name="example-backing-up-the-network-controller-database"></a>例:ネットワークコントローラーデータベースをバックアップしています
 
 ```Powershell
 $URI = "https://NC.contoso.com"
@@ -177,7 +177,7 @@ $BackupProperties.Credential = $ShareCredential
 $Backup = New-NetworkControllerBackup -ConnectionURI $URI -Credential $Credential -Properties $BackupProperties -ResourceId $BackupTime -Force
 ```
 
-### <a name="example-checking-the-status-of-a-network-controller-backup-operation"></a>以下に例を示します。ネットワーク コント ローラーのバックアップ操作の状態の確認
+### <a name="example-checking-the-status-of-a-network-controller-backup-operation"></a>例:ネットワークコントローラーのバックアップ操作の状態を確認しています
 
 ```Powershell
 PS C:\ > Get-NetworkControllerBackup -ConnectionUri $URI -Credential $Credential -ResourceId $Backup.ResourceId
@@ -262,19 +262,19 @@ PS C:\ > Get-NetworkControllerBackup -ConnectionUri $URI -Credential $Credential
 }
 ```
 
-## <a name="restore-the-sdn-infrastructure-from-a-backup"></a>SDN インフラストラクチャをバックアップから復元します。
+## <a name="restore-the-sdn-infrastructure-from-a-backup"></a>バックアップから SDN インフラストラクチャを復元する
 
-必要なすべてのコンポーネントをバックアップから復元するときに、SDN 環境を動作状態に返します。  
+バックアップから必要なすべてのコンポーネントを復元すると、SDN 環境が動作状態に戻ります。  
 
 >[!IMPORTANT]
->手順は、復元のコンポーネントの数によって異なります。
+>手順は、復元されるコンポーネントの数によって異なります。
 
 
-1. 必要に応じて、HYPER-V ホストと必要な記憶域を再デプロイします。
+1. 必要に応じて、Hyper-v ホストと必要な記憶域を再展開します。
 
-2. 必要に応じて、ネットワーク コント ローラー Vm、RAS ゲートウェイの Vm および Mux Vm をバックアップから復元します。 
+2. 必要に応じて、ネットワークコントローラー Vm、RAS ゲートウェイ Vm、および Mux Vm をバックアップから復元します。 
 
-3. 停止の NC ホスト エージェントとすべての HYPER-V ホストで SLB ホスト エージェント:
+3. すべての Hyper-v ホスト上の NC ホストエージェントと SLB ホストエージェントを停止します。
 
     ```
     stop-service slbhostagent
@@ -286,15 +286,15 @@ PS C:\ > Get-NetworkControllerBackup -ConnectionUri $URI -Credential $Credential
 
 5. SLB Mux Vm を停止します。
 
-6. ネットワーク コント ローラーの復元、`new-networkcontrollerrestore`コマンドレット。
+6. `new-networkcontrollerrestore`コマンドレットを使用してネットワークコントローラーを復元します。
 
-7. 復元の確認**ProvisioningState**復元が正常に完了したかを把握します。
+7. 復元が正常に完了したことを確認するには、restore **ProvisioningState**を確認してください。
 
-8. SCVMM を使用する場合、ネットワーク コント ローラーのバックアップと同時に作成されたバックアップを使用して、SCVMM のデータベースを復元します。
+8. SCVMM を使用している場合は、ネットワークコントローラーのバックアップと同時に作成されたバックアップを使用して SCVMM データベースを復元します。
 
-9. ワークロード Vm をバックアップから復元する場合は、今すぐ行います。
+9. バックアップからワークロード Vm を復元する場合は、ここで作成します。
 
-10. デバッグ networkcontrollerconfigurationstate コマンドレットを使用してシステムの正常性を確認します。
+10. Networkcontrollerconfigurationstate コマンドレットを使用してシステムの正常性を確認します。
 
 ```Powershell
 $cred = Get-Credential
@@ -309,7 +309,7 @@ Fetching ResourceType:     loadbalancerMuxes
 Fetching ResourceType:     Gateways
 ```
 
-### <a name="example-restoring-a-network-controller-database"></a>以下に例を示します。ネットワーク コント ローラーのデータベースを復元します。
+### <a name="example-restoring-a-network-controller-database"></a>例:ネットワークコントローラーデータベースを復元する
  
 ```Powershell
 $URI = "https://NC.contoso.com"
@@ -326,7 +326,7 @@ $RestoreTime = (Get-Date).ToString("s").Replace(":", "_")
 New-NetworkControllerRestore -ConnectionURI $URI -Credential $Credential -Properties $RestoreProperties -ResourceId $RestoreTime -Force
 ```
 
-### <a name="example-checking-the-status-of-a-network-controller-database-restore"></a>以下に例を示します。ネットワーク コント ローラーのデータベースの復元の状態の確認
+### <a name="example-checking-the-status-of-a-network-controller-database-restore"></a>例:ネットワークコントローラーのデータベース復元の状態を確認しています
 
 ```PowerShell
 PS C:\ > get-networkcontrollerrestore -connectionuri $uri -credential $cred -ResourceId $restoreTime | convertto-json -depth 10
@@ -349,4 +349,4 @@ PS C:\ > get-networkcontrollerrestore -connectionuri $uri -credential $cred -Res
 ```
 
 
-表示される状態メッセージの構成については、次を参照してください。 [、Windows Server 2016 ソフトウェア定義ネットワーク スタックのトラブルシューティングを行う](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)します。
+表示される構成状態メッセージの詳細については、「 [Windows Server 2016 ソフトウェア定義ネットワークスタックのトラブルシューティング](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)」を参照してください。

@@ -1,5 +1,5 @@
 ---
-title: ユーザー プライバシーと AD FS
+title: ユーザーのプライバシーと AD FS
 description: ''
 author: billmath
 ms.author: billmath
@@ -8,24 +8,24 @@ ms.date: 04/24/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 93d0f892fe6fc5ceae8d8afaaa280b9202179d86
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 56087f8ff990e4b089c4efdd1bf1bc88915d12e1
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188561"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869401"
 ---
 # <a name="user-privacy-and-ad-fs"></a>ユーザー プライバシーと AD FS
 
 
 
 >[!Note] 
-> この記事では、デバイスから個人データを削除する方法について説明し、GDPR の下でお客様の義務をサポートするために使用できます。 GDPR に関する一般的な情報を探している場合を参照してください、[サービス セキュリティ センターの GDPR セクション](https://www.microsoft.com/en-us/TrustCenter/Privacy/gdpr/default.aspx)します。
+> この記事では、デバイスから個人データを削除する手順について説明します。また、GDPR での義務をサポートするために使用できます。 GDPR に関する一般的な情報を探している場合は、 [Service Trust Center の GDPR](https://www.microsoft.com/en-us/TrustCenter/Privacy/gdpr/default.aspx)に関するセクションを参照してください。
 
 >[!Note] 
->表示または個人データを削除する場合を参照してください、 [Azure のデータ主体要求 gdpr](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-azure)記事。 GDPR に関する一般的な情報を探している場合を参照してください、[サービス セキュリティ センターの GDPR セクション](https://www.microsoft.com/en-us/TrustCenter/Privacy/gdpr/default.aspx)します。
+>個人データの表示や削除に関心がある場合は、 [GDPR に関する Azure データ主体の要求に関する](https://docs.microsoft.com/microsoft-365/compliance/gdpr-dsr-azure)記事をご覧ください。 GDPR に関する一般的な情報を探している場合は、 [Service Trust Center の GDPR](https://www.microsoft.com/en-us/TrustCenter/Privacy/gdpr/default.aspx)に関するセクションを参照してください。
 
-## <a name="next-steps"></a>次のステップ
-* [セキュリティ センターで Microsoft のプライバシー ポリシーを確認してください。](https://www.microsoft.com/trustcenter)
+## <a name="next-steps"></a>次の手順
+* [セキュリティセンターで Microsoft のプライバシーポリシーを確認する](https://www.microsoft.com/trustcenter)
 
  

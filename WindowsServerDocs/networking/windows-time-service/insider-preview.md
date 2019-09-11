@@ -1,69 +1,69 @@
 ---
 ms.assetid: ''
-title: Windows Server 2019 の Windows タイム サービスの機能の insider preview
-description: Windows Server 2019 Windows タイム サービスの新機能
+title: Windows Server 2019 の Windows タイムサービス機能の Insider preview
+description: Windows Server 2019 の新しい Windows タイムサービス機能
 author: shortpatti
 ms.author: pashort
 ms.date: 09/05/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: ef0ff317f5957add5ecbe9f88ef83753b805ec41
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a0c4d01d095e8052a2192d6b6352732a6fe60919
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829023"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871789"
 ---
 # <a name="insider-preview"></a>Insider Preview 
 
 
-## <a name="leap-second-support"></a>うるう秒のサポート
+## <a name="leap-second-support"></a>Leap の2番目のサポート
 
 
->適用対象:Windows Server 2019 および Windows 10、バージョンは 1809
+>適用対象:Windows Server 2019 および Windows 10 バージョン1809
 
-うるう秒は、UTC への不定期の 1 秒あたりの調整です。 地球の回転速度の低下と[UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) (アトミック タイム スケールする) ブロックから分化[ほど時間が太陽](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time)または、天文学の時間。  UTC 多くて.9 秒間で相違するいると、[うるう秒](https://en.wikipedia.org/wiki/Leap_second)UTC との同期を平均太陽時間の保持に挿入されます。
+うるう秒は、UTC に対して1秒あたりの調整がときどき発生します。 地球の回転速度が低下すると、 [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time) (アトミックなタイムスケール) は[平均太陽時間](https://en.wikipedia.org/wiki/Solar_time#Mean_solar_time)または天文学時間とは異なります。  UTC の分岐が最大で .9 秒に達した時点で、平均太陽時間との間に UTC の同期を維持するために、[閏月](https://en.wikipedia.org/wiki/Leap_second)が挿入されます。
 
-うるう秒は、精度と米国と欧州連合の両方で、追跡可能性規制要件を満たすために重要になります。
+米国と欧州連合の両方で、正確さと追跡可能性に関する規制要件を満たすために、うるう秒が重要になりました。
 
-詳しくは、次のトピックをご覧ください。
+詳細については、以下をご覧ください。
 
--  この[の発表に関するブログ](https://blogs.technet.microsoft.com/networking/2018/07/18/top10-ws2019-hatime/)
+-  [お知らせのブログ](https://blogs.technet.microsoft.com/networking/2018/07/18/top10-ws2019-hatime/)
 
--  検証のためのガイド、[開発者](https://aka.ms/Dev-LeapSecond)
+-  [開発者](https://aka.ms/Dev-LeapSecond)向けの検証ガイド
 
--  検証のためのガイド、 [IT Pro](https://aka.ms/ITPro-LeapSecond)
-
-
-## <a name="precision-time-protocol"></a>有効桁数タイム プロトコル
-
->適用対象:Windows Server 2019 および Windows 10、バージョンは 1809
-
-Windows Server 2019 および Windows 10 (バージョンは 1809) に含まれる新しいタイム プロバイダーを使用すると、有効桁数タイム プロトコル (PTP) を使用して時刻を同期できます。 わけでは、遅延 (遅延) に到達した時刻をネットワーク経由で配布するように、または対称されていない場合は難しく、時間のサーバーから送信されたタイムスタンプを理解します。 PTP は、タイミング測定値を windows クライアントをより正確なタイム サンプルを提供するために、各ネットワーク デバイスで導入された待機時間を追加するネットワーク デバイスを使用できます。
-
-詳しくは、次のトピックをご覧ください。
-
--  この[の発表に関するブログ](https://blogs.technet.microsoft.com/networking/2018/07/18/top10-ws2019-hatime/)
-
--  検証のためのガイド、 [IT Pro](https://aka.ms/PTPValidation)
+-  [IT プロフェッショナル](https://aka.ms/ITPro-LeapSecond)向けの検証ガイド
 
 
-## <a name="software-timestamping"></a>ソフトウェアのタイムスタンプ
+## <a name="precision-time-protocol"></a>有効桁数のプロトコル
 
->適用対象:Windows Server 2019 および Windows 10、バージョンは 1809
+>適用対象:Windows Server 2019 および Windows 10 バージョン1809
 
-タイム サーバーからネットワーク経由でタイミングのパケットを受信するときに、ことで、タイム サービスで使用される前に、オペレーティング システムのネットワーク スタックによってに処理されなければなりません。 ネットワーク スタック内の各コンポーネントには、タイミング測定値の精度に影響を与える待機時間の量が導入されています。
+Windows Server 2019 および Windows 10 (バージョン 1809) に含まれている新しいタイムプロバイダーを使用すると、有効桁数タイムプロトコル (PTP) を使用して時刻を同期できます。 ネットワークを経由して時間を分散すると、遅延 (待機時間) が発生します。これについて考慮されていない場合、または対称でない場合は、タイムサーバーから送信されたタイムスタンプを理解することがますます困難になります。 ネットワークデバイスは、各ネットワークデバイスによって導入された待機時間をタイミング測定に追加することで、windows クライアントに対してより正確なタイムサンプルを提供します。
 
-![ソフトウェアのタイムスタンプ](../media/Windows-Time-Service/software-timestamping.png)
+詳細については、以下をご覧ください。
 
-この問題に対処するには、ソフトウェア タイムスタンプにより、タイムスタンプ パケットに、"Windows Networking Components"オペレーティング システムに遅延を考慮する前に示したの前後にできます。
+-  [お知らせのブログ](https://blogs.technet.microsoft.com/networking/2018/07/18/top10-ws2019-hatime/)
 
-詳しくは、次のトピックをご覧ください。
+-  [IT プロフェッショナル](https://aka.ms/PTPValidation)向けの検証ガイド
 
--  この[の発表に関するブログ](https://blogs.technet.microsoft.com/networking/2018/07/18/top10-ws2019-hatime/)
 
--  検証のためのガイド、 [IT Pro](https://github.com/Microsoft/SDN/blob/master/FeatureGuide/Validation%20Guide%20-%20RS5%20-%20Software%20Timestamping.docx)
+## <a name="software-timestamping"></a>ソフトウェアタイムスタンプ
+
+>適用対象:Windows Server 2019 および Windows 10 バージョン1809
+
+タイムサーバーからネットワーク経由でタイミングのパケットを受信する場合は、タイムサービスで使用される前に、オペレーティングシステムのネットワークスタックによって処理される必要があります。 ネットワークスタック内の各コンポーネントには、タイミング測定の精度に影響を与える変動した待機時間が導入されています。
+
+![ソフトウェアタイムスタンプ](../media/Windows-Time-Service/software-timestamping.png)
+
+この問題に対処するために、ソフトウェアタイムスタンプを使用すると、上に示した "Windows ネットワークコンポーネント" の前後に、オペレーティングシステムの遅延を考慮してパケットのタイムスタンプを行うことができます。
+
+詳細については、以下をご覧ください。
+
+-  [お知らせのブログ](https://blogs.technet.microsoft.com/networking/2018/07/18/top10-ws2019-hatime/)
+
+-  [IT プロフェッショナル](https://github.com/Microsoft/SDN/blob/master/FeatureGuide/Validation%20Guide%20-%20RS5%20-%20Software%20Timestamping.docx)向けの検証ガイド
 
 
 

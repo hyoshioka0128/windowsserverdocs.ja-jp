@@ -9,12 +9,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 61881b52-ee6a-4c8e-85d3-702ab8a2bd8c
-ms.openlocfilehash: 6b6af6d7b3f0c9a40f7e287097a0c102e637fbb0
-ms.sourcegitcommit: 2db58119d6ada38cc1b6b4bbf2950571d914dcab
+ms.openlocfilehash: fccdb8547ff27083ce943892842c2e2d05e5ace8
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/20/2019
-ms.locfileid: "69626850"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865293"
 ---
 # <a name="server-to-server-storage-replication-with-storage-replica"></a>記憶域レプリカを使用したサーバー間の記憶域レプリケーション
 

@@ -1,6 +1,6 @@
 ---
 title: インストールに必要なハードウェアとデバイス ドライバーを収集する
-description: MultiPoint Services をインストールする必要があるドライバーに関する情報
+description: MultiPoint Services にインストールする必要があるドライバーに関する情報
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,25 +13,25 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: a9d902e2599cdcd69e156d1fabec87a067b1d8ea
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f7fec373bc62c93fbf31bbb24bf1a11a42c0736d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833423"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871431"
 ---
 # <a name="collect-hardware-and-device-drivers-needed-for-the-installation"></a>インストールに必要なハードウェアとデバイス ドライバーを収集する
-MultiPoint Services システムの展開を開始する前にする必要があります。  
+MultiPoint Services システムの展開を開始する前に、次のものが必要です。  
   
--   **サーバーのハードウェア コンポーネント**-この時点で、追加のビデオ カードまたはその他のシステム コンポーネントをインストールします。  
+-   **サーバーのハードウェアコンポーネント**-この時点で、追加のビデオカードまたはその他のシステムコンポーネントをインストールします。  
   
--   **ステーションのハードウェア コンポーネント**については、環境の計画のステーションを参照してください - [MultiPoint Services システムのハードウェアを選択すると](Selecting-Hardware-for-Your-MultiPoint-services-System.md)します。
--   **ビデオ カードの最新のドライバー** -、OEM またはデバイス製造元では、これら提供しませんでした、デバイスの製造元の web サイトからダウンロードする必要があります。  
+-   **ステーションのハードウェアコンポーネント**-環境のステーションを計画する方法については、「 [MultiPoint Services システムのハードウェアの選択](Selecting-Hardware-for-Your-MultiPoint-services-System.md)」を参照してください。
+-   **ビデオカードの最新のドライバー** -OEM またはデバイスの製造元がこれらを提供していない場合は、デバイスの製造元の web サイトからダウンロードする必要があります。  
   
--   **最新の USB ゼロ クライアント ドライバー** -USB ゼロ クライアント ステーションを使用している場合は、最新の USB ゼロ クライアント ドライバーをインストールする必要があります。  
+-   **最新の usb ゼロクライアントドライバー** -usb ゼロクライアントステーションを使用している場合は、最新の usb ゼロクライアントドライバーをインストールする必要があります。  
   
     > [!IMPORTANT]  
-    > MultiPoint Services のインストールでは、すべてのドライバーの 64 ビット バージョンをインストールする必要があります。  
+    > MultiPoint Services をインストールするには、64ビット版のドライバーをインストールする必要があります。  
   
 > [!TIP]  
-> 別のバージョンの Windows を既にインストールされているコンピューターで MultiPoint Services をインストールする場合を調べますビデオ カードの製造元とモデル デバイス マネージャーで、Windows Server のインストールを開始してドライバーを取得することを確認する前にWindows Server 2016 で使用できます。 デバイス マネージャーを開き、開いている**コンピュータの管理**から、**開始**画面。 次に、コンソール ツリーで、クリックして**デバイス マネージャー**します。
+> 異なるバージョンの Windows が既にインストールされているコンピューターに MultiPoint Services をインストールする場合は、Windows Server のインストールを開始する前に、ビデオカードの製造元とモデルをデバイスマネージャーして、ドライバーを取得できることを確認する必要があります。Windows Server 2016 で使用できます。 デバイスマネージャーを開き、**スタート**画面から **[コンピューターの管理]** を開きます。 次に、コンソールツリーで、 **[デバイスマネージャー]** をクリックします。

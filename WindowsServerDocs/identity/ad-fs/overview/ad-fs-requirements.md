@@ -9,12 +9,12 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c330b5f65b2862628fd23e288c95e81653da5c5b
-ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
+ms.openlocfilehash: b93848a47eca952ebbeeec2a55c3e6f9b60dbfb8
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70009080"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865482"
 ---
 # <a name="ad-fs-requirements"></a>AD FS の要件
 

@@ -1,6 +1,6 @@
 ---
-title: 取得し、AD FS のトークンの署名とトークン暗号化解除証明書を構成します。
-description: このドキュメントを取得して、TS と TD を構成する方法を説明します AD FS 用の証明書。
+title: AD FS のトークン署名証明書とトークン暗号化解除証明書を取得して構成する
+description: このドキュメントでは、の TS および TD 証明書を取得して構成する方法について説明し AD FS
 author: jenfieldmsft
 ms.author: billmath
 manager: samueld
@@ -8,114 +8,114 @@ ms.date: 10/23/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d16a886c9fb8f88748ffe732a75f0fd6a32c3702
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 608f78ed03bc102cbdffb8abcc52244450b97b3c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820213"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865626"
 ---
-# <a name="obtain-and-configure-ts-and-td-certificates-for-ad-fs"></a>取得し、TS と TD 証明書を AD FS の構成
+# <a name="obtain-and-configure-ts-and-td-certificates-for-ad-fs"></a>AD FS の TS および TD 証明書を取得して構成する
 
-このトピックでは、タスクと、AD FS トークン署名とトークン暗号化解除証明書が最新であることを確認するときに実行する手順について説明します。
+このトピックでは、AD FS トークン署名証明書とトークン暗号化解除証明書が最新であることを確認するために実行できるタスクと手順について説明します。
 
-トークン署名証明書が標準の X509 証明書を安全にフェデレーション サーバーが発行するすべてのトークンの署名に使用します。 トークン暗号化解除証明書は、標準の X509 証明書、受信トークンを復号化するために使用します。 フェデレーション メタデータにも発行されます。
+トークン署名証明書は標準の X509 証明書であり、フェデレーションサーバーが発行するすべてのトークンに安全に署名するために使用されます。 トークン暗号化解除証明書は、受信トークンの暗号化を解除するために使用される標準の X509 証明書です。 また、フェデレーションメタデータでも公開されます。
 
-追加情報を参照してください[証明書の要件。](../design/ad-fs-requirements.md#BKMK_1)
+詳細については、[証明書の要件](../design/ad-fs-requirements.md#BKMK_1)を参照してください。
 
-## <a name="determine-whether-ad-fs-renews-the-certificates-automatically"></a>AD FS が自動的に証明書を更新するかどうかを判断します。
-既定では、AD FS は、初期構成時と、証明書は、有効期限の日付に近づいているときにトークンの署名とトークン暗号化解除証明書を自動的に生成するように構成します。
+## <a name="determine-whether-ad-fs-renews-the-certificates-automatically"></a>AD FS によって証明書が自動的に更新されるかどうかを判断する
+既定では、AD FS は、初期構成時と証明書の有効期限が近づいているときの両方で、トークン署名証明書とトークン暗号化解除証明書を自動的に生成するように構成されます。
 
-次の Windows PowerShell コマンドを実行することができます:`Get-AdfsProperties`します。
+次の Windows PowerShell コマンド`Get-AdfsProperties`を実行できます。
   
-  ![Get-adfsproperties](media/configure-TS-TD-certs-ad-fs/ts1.png)
+  ![Set-adfsproperties](media/configure-TS-TD-certs-ad-fs/ts1.png)
   
-AutoCertificateRollover プロパティは、トークンの署名と暗号化解除証明書を自動的にトークンを更新する AD FS が構成されているかどうかについて説明します。
+AutoCertificateRollover プロパティは、AD FS がトークン署名証明書とトークン暗号化解除証明書を自動的に更新するように構成されているかどうかを示します。
 
-AutoCertificateRollover が TRUE に設定されている場合、AD FS 証明書を更新して、AD FS で自動的に構成できます。 新しい証明書の構成が済んだら、障害発生を回避するためにする必要があります (証明書利用者信頼または要求プロバイダー信頼のいずれかによって、AD FS ファームで表される) 各フェデレーション パートナーが更新されるようにこの新しい証明書を使用します。
+AutoCertificateRollover が TRUE に設定されている場合、AD FS 証明書は AD FS で自動的に更新および構成されます。 新しい証明書が構成されたら、障害を回避するために、(証明書利用者信頼または要求プロバイダー信頼によって AD FS ファームで表される) 各フェデレーションパートナーがこの新しい証明書で更新されていることを確認する必要があります。
     
-AD FS がトークンの署名を更新するように構成し、トークンがない場合は、復号化する場合に自動的に (AutoCertificateRollover が False に設定) に証明書、AD FS が生成は自動的に、または新しいトークン署名やトークン暗号化解除証明書の使用を開始します。 これらのタスクを手動で実行する必要があります。
+AD FS がトークン署名証明書とトークン暗号化解除証明書を自動的に更新するように構成されていない場合 (AutoCertificateRollover が False に設定されている場合)、AD FS は新しいトークン署名証明書またはトークン暗号化解除証明書の使用を自動的に生成または開始しません。 これらのタスクは手動で実行する必要があります。
     
-トークンの署名と暗号化解除証明書を自動的にトークンを更新する AD FS が構成されている場合 (AutoCertificateRollover が TRUE に設定) 更新と判断できます。
+トークン署名証明書とトークン暗号化解除証明書を自動的に更新するように AD FS が構成されている場合 (AutoCertificateRollover が TRUE に設定されている場合)、いつ更新するかを決定できます。
 
-CertificateGenerationThreshold では、何日前の日付の後、証明書の新しい証明書は生成されたについて説明します。
+CertificateGenerationThreshold では、新しい証明書が生成されるまでに証明書が何日前に作成されるかを示します。
 
-CertificatePromotionThreshold が何日後に、新しい証明書が生成プライマリ証明書に昇格することを決定します (つまり、AD FS は開始を発行するトークンの署名し、id プロバイダーからトークンを復号化するために使用)。
+CertificatePromotionThreshold は、新しい証明書が生成されてからプライマリ証明書に昇格されるまでの日数を決定します (つまり、AD FS は、それを使用して、id プロバイダーからのトークンに署名し、トークンを復号化します)。
 
-![Get-adfsproperties](media/configure-TS-TD-certs-ad-fs/ts2.png)
+![Set-adfsproperties](media/configure-TS-TD-certs-ad-fs/ts2.png)
   
-トークンの署名と暗号化解除証明書を自動的にトークンを更新する AD FS が構成されている場合 (AutoCertificateRollover が TRUE に設定) 更新と判断できます。
+トークン署名証明書とトークン暗号化解除証明書を自動的に更新するように AD FS が構成されている場合 (AutoCertificateRollover が TRUE に設定されている場合)、いつ更新するかを決定できます。
 
- - **CertificateGenerationThreshold**何日前の日付の後、証明書の新しい証明書が生成するについて説明します。
- - **CertificatePromotionThreshold**何日後に、新しい証明書が生成プライマリ証明書に昇格することを決定します (つまり、AD FS は使用を開始を発行するトークンに署名し、id からのトークン暗号化解除プロバイダーの場合)。
+ - **CertificateGenerationThreshold**では、新しい証明書が生成されるまでに証明書が何日前に作成されるかを示します。
+ - **CertificatePromotionThreshold**は、新しい証明書が生成されてからプライマリ証明書に昇格されるまでの日数を決定します (つまり、AD FS は、その証明書を使用して、問題のあるトークンに署名し、id からトークンを復号化します。プロバイダー)。
 
-## <a name="determine-when-the-current-certificates-expire"></a>現在の証明書が有効期限が決まります
-現在の証明書の有効期限が切れるかを判断して、プライマリ トークン署名とトークン暗号化解除証明書を識別するためには、次の手順を使用できます。
+## <a name="determine-when-the-current-certificates-expire"></a>現在の証明書の有効期限を確認する
+次の手順を使用して、プライマリトークン署名証明書とトークン暗号化解除証明書を識別し、現在の証明書の有効期限がいつ切れるかを判断できます。
 
-次の Windows PowerShell コマンドを実行することができます: `Get-AdfsCertificate –CertificateType token-signing` (または`Get-AdfsCertificate –CertificateType token-decrypting `)。 または、MMC の現在の証明書を調べることができます。サービスには、証明書]-> [です。
+次の Windows PowerShell コマンドを実行できます`Get-AdfsCertificate –CertificateType token-signing` : ( `Get-AdfsCertificate –CertificateType token-decrypting `または)。 または、MMC で現在の証明書を確認することもできます。サービス > 証明書。
 
 ![Get-adfscertificate](media/configure-TS-TD-certs-ad-fs/ts3.png)
 
-対象の証明書、 **IsPrimary**値に設定されて**True**は AD FS を使用している証明書です。
+**IsPrimary**値が**True**に設定されている証明書は、AD FS が現在使用している証明書です。
 
-日付、**後**日付を新しいプライマリ トークン署名、または証明書を復号化を構成する必要があります。
+次の日付**は、新しい**プライマリトークンの署名または暗号化解除の証明書を構成する必要がある日付を示します。
 
-サービスの継続性を確保するには、(証明書利用者信頼または要求プロバイダー信頼のいずれかによって、AD FS ファームで表される) のすべてのフェデレーション パートナーは、新しいトークン署名とこの有効期限の前に、トークン暗号化解除証明書を使用する必要があります。 このプロセスには少なくとも 60 日間で事前の計画を開始することをお勧めします。
+サービスの継続性を確保するには、すべてのフェデレーションパートナー (証明書利用者信頼または要求プロバイダー信頼のいずれかによって AD FS ファームで表される) が、この有効期限の前に新しいトークン署名証明書とトークン暗号化解除証明書を使用する必要があります。 このプロセスの計画は、少なくとも60日前に開始することをお勧めします。
 
-## <a name="generating-a-new-self-signed-certificate-manually-prior-to-the-end-of-the-grace-period"></a>猶予期間の終了前に手動で新しい自己署名証明書を生成します。
-猶予期間の終了前に手動で新しい自己署名証明書を生成するのに、次の手順を使用することができます。
+## <a name="generating-a-new-self-signed-certificate-manually-prior-to-the-end-of-the-grace-period"></a>猶予期間が終了する前に、手動で新しい自己署名証明書を生成する
+猶予期間が終了する前に、新しい自己署名証明書を手動で生成するには、次の手順を使用します。
 
 1. プライマリ AD FS サーバーにログオンしていることを確認します。
-2. Windows PowerShell を開き、次のコマンドを実行します。 `Add-PSSnapin "microsoft.adfs.powershell"`
-3. 必要に応じて、AD FS で現在の署名証明書を確認することができます。 これを行うには、次のコマンドを実行します:`Get-ADFSCertificate –CertificateType token-signing`します。 表示されているすべての証明書の後ではなく日付を表示するコマンドの出力を確認します。
-4. 新しい証明書を生成するには、更新し、AD FS サーバーの証明書を更新するには、次のコマンドを実行します:`Update-ADFSCertificate –CertificateType token-signing`します。
-5. 次のコマンドを再度実行して、更新プログラムを確認します。 `Get-ADFSCertificate –CertificateType token-signing`
-6. 2 つの証明書が表示されるはず、うちの 1 つが、**後**を約 1 年間、将来の日付、 **IsPrimary**値は**False**します。
+2. Windows PowerShell を開き、次のコマンドを実行します。`Add-PSSnapin "microsoft.adfs.powershell"`
+3. 必要に応じて、AD FS で現在の署名証明書を確認できます。 これを行うには、コマンド`Get-ADFSCertificate –CertificateType token-signing`を実行します。 コマンドの出力を確認し、一覧にある証明書の後にない日付を確認します。
+4. 新しい証明書を生成するには、次のコマンドを実行して、AD FS サーバー `Update-ADFSCertificate –CertificateType token-signing`上の証明書を更新して更新します。
+5. 次のコマンドをもう一度実行して、更新を確認します。`Get-ADFSCertificate –CertificateType token-signing`
+6. 2つの証明書が表示されます。そのうちの1つは、今後約1年の日付では**なく**、 **IsPrimary**の値が**False**になっています。
 
 >[!IMPORTANT]
->サービスの停止を回避するには、有効なトークン署名証明書を Azure AD を更新する方法の手順を実行して Azure AD の証明書情報を更新します。
+>サービスが停止しないようにするには、「How to update Azure AD を有効なトークン署名証明書と共に更新する方法」の手順を実行して Azure AD の証明書情報を更新します。
 
-## <a name="if-youre-not-using-self-signed-certificates"></a>自己署名証明書を使用していない場合.
-自動的に生成される既定値を使用していない、自己署名トークンの署名およびトークン暗号化解除証明書の場合は、更新して、これらの証明書を手動で構成する必要があります。
+## <a name="if-youre-not-using-self-signed-certificates"></a>自己署名証明書を使用していない場合...
+自動的に生成された既定の自己署名トークン署名証明書とトークン暗号化解除証明書を使用していない場合は、これらの証明書を手動で更新して構成する必要があります。
 
-まず、証明機関から新しい証明書を取得し、各フェデレーション サーバーでローカル コンピューター個人証明書ストアにインポートする必要があります。 手順については、次を参照してください。、[証明書をインポート](https://technet.microsoft.com/library/cc754489.aspx)記事。
+まず、証明機関から新しい証明書を取得し、各フェデレーションサーバーのローカルコンピューターの個人証明書ストアにインポートする必要があります。 手順については、[証明書のインポート](https://technet.microsoft.com/library/cc754489.aspx)に関する記事を参照してください。
 
-このとして、セカンダリ AD FS トークン署名証明書または暗号化解除証明書を構成する必要があります。 (構成するプライマリ証明書に昇格する前に、この新しい証明書を使用するには、十分な時間に、フェデレーション パートナーを許可する証明書をセカンダリとして)。
+次に、この証明書をセカンダリ AD FS トークンの署名または暗号化解除証明書として構成する必要があります。 (プライマリ証明書に昇格する前に、フェデレーションパートナーがこの新しい証明書を使用するのに十分な時間を確保するために、セカンダリ証明書として構成します)。
 
-### <a name="to-configure-a-new-certificate-as-a-secondary-certificate"></a>セカンダリ証明書として、新しい証明書を構成するには
-1. PowerShell を開き、次を実行します。 `Set-ADFSProperties -AutoCertificateRollover $false`
-2. 1 回、証明書をインポートしました。 開く、 **AD FS 管理**コンソール。
-3. 展開**サービス**選び**証明書**します。
-4. 操作 ウィンドウで、次のようにクリックします。 **トークン署名証明書**します。
+### <a name="to-configure-a-new-certificate-as-a-secondary-certificate"></a>新しい証明書をセカンダリ証明書として構成するには
+1. PowerShell を開き、次のように実行します。`Set-ADFSProperties -AutoCertificateRollover $false`
+2. 証明書をインポートしたら、 **AD FS 管理**コンソールを開きます。
+3. **[サービス]** を展開し、 **[証明書]** を選択します。
+4. 操作 ウィンドウで、**トークン署名証明書の追加** をクリックします。
 ![Get-adfscertificate](media/configure-TS-TD-certs-ad-fs/ts4.png)</br>
-5. 表示されている証明書の一覧から、新しい証明書を選択し、[ok] をクリックします。
-6.  PowerShell を開き、次を実行します。 `Set-ADFSProperties -AutoCertificateRollover $true`
+5. 表示されている証明書の一覧から新しい証明書を選択し、[OK] をクリックします。
+6.  PowerShell を開き、次のように実行します。`Set-ADFSProperties -AutoCertificateRollover $true`
 
 >[!WARNING]
->新しい証明書が関連付けられている秘密キーを持つことを確認し、秘密キーへのアクセス許可を読み取り、AD FS サービス アカウントが許可されていること。 各フェデレーション サーバーでは、これを確認します。 証明書スナップインで、これには、新しい証明書を右クリックし、すべてのタスク をクリックしますおよび秘密キーの管理を順にクリックします。
+>新しい証明書に秘密キーが関連付けられていること、および AD FS サービスアカウントに秘密キーへの読み取りアクセス許可が付与されていることを確認します。 各フェデレーションサーバーでこれを確認します。 これを行うには、[証明書] スナップインで新しい証明書を右クリックし、[すべてのタスク] をクリックして、[秘密キーの管理] をクリックします。
 
-フェデレーション パートナー (フェデレーション メタデータをプル、または新しい証明書の公開キーを送信する) 新しい証明書を使用するための十分な時間を許可した後は、プライマリ証明書をセカンダリ証明書を昇格する必要があります。
+フェデレーションパートナーが新しい証明書を使用するのに十分な時間が与えられたら (フェデレーションメタデータをプルするか、新しい証明書の公開キーを送信するか)、セカンダリ証明書をプライマリ証明書に昇格させる必要があります。
 
-### <a name="to-promote-the-new-certificate-from-secondary-to-primary"></a>新しい証明書をセカンダリからプライマリへ昇格するには
+### <a name="to-promote-the-new-certificate-from-secondary-to-primary"></a>新しい証明書をセカンダリからプライマリに昇格させるには
 
-1. 開く、 **AD FS 管理**コンソール。
-2. 展開**サービス**選び**証明書**します。
-3. セカンダリ トークン署名証明書をクリックします。
-4. **アクション**ウィンドウで、をクリックして**プライマリとして設定**します。 確認プロンプトで、[はい] をクリックします。
+1. **AD FS 管理**コンソールを開きます。
+2. **[サービス]** を展開し、 **[証明書]** を選択します。
+3. セカンダリトークン署名証明書をクリックします。
+4. **[操作]** ウィンドウで、 **[プライマリとして設定]** をクリックします。 確認プロンプトで [はい] をクリックします。
 ![Get-adfscertificate](media/configure-TS-TD-certs-ad-fs/ts5.png)</br>
 
 
-## <a name="updating-federation-partners"></a>フェデレーション パートナーを更新しています
+## <a name="updating-federation-partners"></a>フェデレーションパートナーの更新
 
-### <a name="partners-who-can-consume-federation-metadata"></a>パートナーのフェデレーション メタデータを使用することができます。
-更新が新しいトークン署名やトークン暗号化解除証明書を構成していて必要があること確認する、すべてのフェデレーション パートナー (パーティの信頼をリソース組織またはアカウント組織のパートナーの AD fs 証明書利用者によって表されると要求プロバイダー信頼の場合) が新しい証明書を選択します。
+### <a name="partners-who-can-consume-federation-metadata"></a>フェデレーションメタデータを使用できるパートナー
+新しいトークン署名証明書またはトークン暗号化解除証明書を更新して構成した場合は、証明書利用者信頼によって AD FS で表されるすべてのフェデレーションパートナー (リソース組織またはアカウント組織のパートナー) であることを確認する必要があります。要求プロバイダー信頼) が新しい証明書を取得しました。
 
-### <a name="partners-who-can-not-consume-federation-metadata"></a>パートナーのフェデレーション メタデータを使用しないことができます。
-場合は、フェデレーション パートナーは、フェデレーション メタデータを消費することはできません、する必要があります手動で送信する、新しいトークン署名]、[トークン暗号化解除証明書の公開キー。 アカウント (証明書利用者信頼と要求プロバイダー信頼での AD FS で表されます) 組織のパートナーまたはリソース組織のすべてを新しい証明書公開キー (.cer ファイルまたは .p7b をチェーン全体を含めたい場合) を送信します。 新しい証明書を信頼する側の変更を実装パートナーが存在します。
+### <a name="partners-who-can-not-consume-federation-metadata"></a>フェデレーションメタデータを使用できないパートナー
+フェデレーションパートナーがフェデレーションメタデータを使用できない場合は、新しいトークン署名/トークン暗号化解除証明書の公開キーを手動で送信する必要があります。 新しい証明書公開キー (チェーン全体を含める場合は .cer ファイルまたは. p7b ファイル) を、すべてのリソース組織またはアカウント組織のパートナー (証明書利用者信頼と要求プロバイダー信頼によって AD FS で表されます) に送信します。 パートナーは、新しい証明書を信頼するために変更を実装する必要があります。
 
-### <a name="promote-to-primary-if-autocertificaterollover-is-false"></a>(AutoCertificateRollover が False の場合)、プライマリに昇格します。
-場合**AutoCertificateRollover**に設定されている**False**AD FS が自動的に生成されていない、またはトークンの署名またはトークン復号化証明書の新規の使用を開始します。 これらのタスクを手動で実行する必要があります。
-新しいセカンダリ証明書を使用するフェデレーション パートナーのすべてのための十分な期間があるので、プライマリ (、MMC スナップインで、セカンダリ トークン署名証明書をクリックし、操作 ウィンドウで次のようにクリックします。 このセカンダリ証明書を昇格させます。**プライマリとして設定**)。
+### <a name="promote-to-primary-if-autocertificaterollover-is-false"></a>プライマリに昇格する (AutoCertificateRollover が False の場合)
+**AutoCertificateRollover**が**False**に設定されている場合、AD FS は新しいトークン署名証明書またはトークン暗号化解除証明書の使用を自動的に生成または開始しません。 これらのタスクは手動で実行する必要があります。
+すべてのフェデレーションパートナーが新しいセカンダリ証明書を使用するのに十分な時間が経過したら、このセカンダリ証明書をプライマリに昇格させます (MMC スナップインで、セカンダリトークン署名証明書をクリックし、[操作] ウィンドウで [] をクリックします)。**プライマリとして設定**します。)
 
-## <a name="updating-azure-ad"></a>Azure AD を更新しています
-AD FS は、既存の AD DS 資格情報を使用してユーザーを認証することによって、Office 365 などの Microsoft クラウド サービスへのシングル サインオン アクセスを提供します。  証明書の使用の詳細については、次を参照してください。 [Office 365 と Azure AD のフェデレーション証明書を書き換える](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs)します。
+## <a name="updating-azure-ad"></a>Azure AD の更新
+AD FS は、既存の AD DS 資格情報を使用してユーザーを認証することで、Office 365 などの Microsoft クラウドサービスへのシングルサインオンアクセスを提供します。  証明書の使用方法の詳細については[、「Office 365 用フェデレーション証明書の更新」および「Azure AD](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs)」を参照してください。

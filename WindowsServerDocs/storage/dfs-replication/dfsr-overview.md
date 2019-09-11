@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: ac1f963fd369a5b18414ffcdf9b05519a2e33e14
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: 7c092547688bed01d3d588116badf6191e87b1ed
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560502"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871964"
 ---
 # <a name="dfs-replication-overview"></a>DFS レプリケーションの概要
 
@@ -50,7 +50,7 @@ DFS レプリケーションを展開する前に、サーバーを次のよう�
 
 Azure の仮想マシンでの DFS レプリケーションの使用は、Windows Server でテストされています。ただし、いくつかの制限事項と要件に従う必要があります。
 
-- DFS レプリケーションによって SYSVOL フォルダー以外のデータをレプリケートしているサーバーを、スナップショットや保存された状態を使用して復元すると、DFS レプリケーションが失敗します。この場合、特別なデータベース回復手順が必要になります。 また、仮想マシンをエクスポート、複製、またはコピーすることも避けてください。 詳細については、Microsoft サポート技術情報の記事 [2517913](http://support.microsoft.com/kb/2517913) と、「 [Safely Virtualizing DFSR (DFSR を安全に仮想化する)](https://blogs.technet.microsoft.com/filecab/2013/04/05/safely-virtualizing-dfsr/)」を参照してください。
+- DFS レプリケーションによって SYSVOL フォルダー以外のデータをレプリケートしているサーバーを、スナップショットや保存された状態を使用して復元すると、DFS レプリケーションが失敗します。この場合、特別なデータベース回復手順が必要になります。 同様に、仮想マシンをエクスポート、複製、またはコピーしないでください。 詳細については、Microsoft サポート技術情報の記事 [2517913](http://support.microsoft.com/kb/2517913) と、「 [Safely Virtualizing DFSR (DFSR を安全に仮想化する)](https://blogs.technet.microsoft.com/filecab/2013/04/05/safely-virtualizing-dfsr/)」を参照してください。
 - 仮想マシンでホストされているレプリケート フォルダー内のデータをバックアップする場合は、ゲスト仮想マシン内からバックアップ ソフトウェアを使用する必要があります。
 - DFS レプリケーションは、物理または仮想化されたドメインコントローラーにアクセスする必要があります。 Azure AD と直接通信することはできません。
 - DFS レプリケーションを行うには、オンプレミスのレプリケーション グループ メンバーと、Azure VM でホストされているメンバーとの間の VPN 接続が必要です。 また、オンプレミスのルーター (Forefront Threat Management Gateway など) を構成して、RPC エンドポイント マッパー (ポート 135) と、49152 ～ 65535 の範囲にランダムに割り当てられたポートが、VPN 接続を経由できるようにする必要があります。 Set-dfsrmachineconfiguration コマンドレットまたは Dfsrdiag.exe コマンドラインツールを使用して、ランダムポートではなく静的ポートを指定できます。 DFS レプリケーション用に静的ポートを指定する方法の詳細については、「 [Set-DfsrServiceConfiguration](https://docs.microsoft.com/powershell/module/dfsr/set-dfsrserviceconfiguration)」を参照してください。 Windows Server の管理用に開く関連ポートについては、Microsoft サポート技術情報の記事 [832017](http://support.microsoft.com/kb/832017) を参照してください。

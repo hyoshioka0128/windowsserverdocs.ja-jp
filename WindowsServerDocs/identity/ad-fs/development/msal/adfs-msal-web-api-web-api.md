@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 08892fe771928fa4b68ce50bfef2b6a041c2d210
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 2ab6141b84d03102c5dedd1ede0ba99e5adf3e4a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69983540"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867748"
 ---
 # <a name="scenario-web-api-calling-web-api-on-behalf-of-scenario"></a>シナリオ:Web api 呼び出し Web API (シナリオの代理) 
 > 適用先:AD FS 2019 以降 
@@ -53,7 +53,7 @@ ADFS で auth シナリオに代わってを構成する方法を理解するに
   
       ![アプリの登録](media/adfs-msal-web-api-web-api/webapi3.png)
   
-  4. [Web API の構成] 画面で、**識別子** https://localhost:44321/ として「」を入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 この値は、後でアプリケーションの app.config ファイルと web.config ファイルで使用されます。  
+  4. [Web API の構成] 画面で、**識別子** https://localhost:44321/ として「」を入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 この値**は、後でアプリケーションの app.config** **ファイルと web.config ファイル**で使用されます。  
  
       ![アプリの登録](media/adfs-msal-web-api-web-api/webapi4.png)
 
@@ -176,7 +176,7 @@ ADFS で auth シナリオに代わってを構成する方法を理解するに
   4. ToDoListService の下にある web.config ファイルを開きます。 次のように変更します。 
        - ida: Audience-上の AD FS セクションの [アプリの登録] の #12 からクライアント識別子の値を入力します
        - ida: ClientId-上の AD FS セクションの [アプリの登録] で #12 からクライアント識別子の値を入力します。 
-       - IdaClientSecret-前の AD FS セクションの「アプリの登録」で #13 からコピーした共有シークレットを入力します。
+       - idaClientSecret-前の AD FS セクションの「アプリの登録」で #13 からコピーした共有シークレットを入力します。
        - ida: RedirectUri-前の AD FS セクションの「アプリの登録」の #12 から、RedirectUri の値を入力します。 
        - idaAdfsMetadataEndpoint-「 https://[your AD FS hostname]/federationmetadata/2007-06/federationmetadata.xml」と入力します。 
        - ida: OBOWebAPIBase-上の AD FS セクションの [アプリの登録] の #19 から識別子の値を入力します。 
@@ -223,6 +223,6 @@ ADFS で auth シナリオに代わってを構成する方法を理解するに
       ![アプリの Reg](media/adfs-msal-web-api-web-api/webapi33.png)
  
  ## <a name="next-steps"></a>次の手順
-[OpenID Connect/OAuth フローとアプリケーションシナリオの AD FS](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
+[AD FS OpenID 接続/OAuth フローとアプリケーション シナリオ](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
  
  
