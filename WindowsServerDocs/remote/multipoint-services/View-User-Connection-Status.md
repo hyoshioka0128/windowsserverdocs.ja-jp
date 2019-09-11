@@ -1,6 +1,6 @@
 ---
 title: ユーザーの接続状態を表示する
-description: MultiPoint Services でユーザーの状態を表示する方法について説明します
+description: MultiPoint Services でユーザーの状態を表示する方法について説明します。
 ms.custom: na
 ms.date: 07/08/2016
 ms.prod: windows-server-threshold
@@ -13,26 +13,26 @@ ms.assetid: 426df382-07a0-4be1-a87a-12e63bd8157b
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 8ac5d18d9e85680861f48b4ce215f0abd411a122
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ea162c24dd9fe68e9492dea007583a6b1293da2d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850423"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871463"
 ---
 # <a name="view-user-connection-status"></a>ユーザーの接続状態を表示する
-使用して、 **ステーション**  タブをクリックして、標準トークンまたは MultiPoint サービス ステーションに他の管理ユーザーの接続の状態を確認します。  
+**[ステーション]** タブを使用して、MultiPoint Services ステーションへの標準またはその他の管理ユーザーの接続の状態を確認します。  
   
 状態の値は次のとおりです。  
   
--   **ログオンしている**:ステーションでアクティブになっているユーザー セッション  
+-   **ログオン**しました:ステーションでアクティブになっているユーザーセッション  
   
--   **中断**:ユーザー セッションが中断されますが、コンピューターではまだアクティブです。 ユーザーのデスクトップ セッションは、ユーザーが再びログオンするまで保持されます。  
+-   **中断**:中断されていても、コンピューター上でアクティブになっているユーザーセッション。 ユーザーのデスクトップセッションは、ユーザーが再びログオンするまで保持されます。  
   
--   **ログオフ**:ユーザーがログオフされるは表示されていない、**ステーション** タブ  
+-   **ログオフ**しました:ログオフされたユーザーは、 **[ステーション]** タブに表示されません。  
   
 ステーションの状態を表示するステーション モードで MultiPoint マネージャーを開き、をクリックし、 **ステーション**します。
 
 ## <a name="see-also"></a>関連項目  
-[ユーザー デスクトップを管理します。](manage-user-desktops-using-multipoint-dashboard.md)  
+[ユーザーデスクトップの管理](manage-user-desktops-using-multipoint-dashboard.md)  
 [モードの切り替え](Switch-Between-Modes.md)

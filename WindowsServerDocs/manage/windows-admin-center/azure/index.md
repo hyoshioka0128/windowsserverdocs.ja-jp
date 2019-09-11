@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 05/31/2019
-ms.openlocfilehash: 460399a57bc229b44d37a9fdd1e4938bf9e7d6ac
-ms.sourcegitcommit: fe621b72d45d0259bac1d5b9031deed3dcbed29d
+ms.openlocfilehash: b4b1f42db7d80fabe2e3361f3ab9ebf41ad8bc29
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455362"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865428"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>Azure ハイブリッド サービスへの Windows Server の接続
 
@@ -22,7 +22,7 @@ ms.locfileid: "66455362"
 Azure ハイブリッド サービスを使用して、Windows Server のオンプレミス展開をクラウドに拡張できます。 これらのクラウド サービスは、次のような一連の便利な機能を提供します。
 
 - Azure Site Recovery によって、仮想マシンを保護し、クラウドベースのバックアップとディザスター リカバリー (HA/DR) を使用します。 
-- Azure Monitor での高度な分析と機械学習を活用してて、アプリケーション、ネットワーク、およびインフラストラクチャ全体での状況を追跡します。 
+- Azure Monitor での高度な分析と機械学習を活用して、アプリケーション、ネットワーク、およびインフラストラクチャ全体での状況を追跡します。 
 - Azure ネットワーク アダプターを使用して Azure へのネットワーク接続を簡略化します。
 - Azure Update Management を使用して仮想マシンを最新の状態に保ちます。
 
