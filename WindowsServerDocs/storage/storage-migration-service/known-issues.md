@@ -8,12 +8,12 @@ ms.date: 07/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: efd92e9f6a199ad901e95b18718f3b448c3207e2
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: 2200c41bfc6f7e50d4f85f48591a12ad35720062
+ms.sourcegitcommit: 86350de764b89ebcac2a78ebf32631b7b5ce409a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560587"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70923359"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -89,7 +89,7 @@ Windows 管理センターまたは PowerShell を使用して転送操作の詳
 3. Orchestrator コンピューターで、Regedit.exe を起動します。
 4. 次のレジストリ サブキーを探してクリックします。 
 
-   `HKEY_LOCAL_MACHINE\\Software\\Microsoft\\SMSPowershell`
+   `HKEY_LOCAL_MACHINE\Software\Microsoft\SMSPowershell`
 
 5. [編集] メニューの [新規] をポイントして [DWORD 値] をクリックします。 
 6. DWORD の名前として「WcfOperationTimeoutInMinutes」と入力し、enter キーを押します。
@@ -206,6 +206,44 @@ StorageMigrationService/Debug ログを調べると、次のように表示さ�
 StorageMigration で StorageMigration () を実行します。 TransferRequestHandler には、ProcessRequest (FileTransferRequest fileTransferRequest, Guid operationId) を入力します (FileTransferRequest fileTransferRequest、Guid operationId)   [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
 
 このエラーは、移行アカウントに SMB 共有に対する少なくとも読み取りアクセス許可がない場合に発生します。 このエラーを回避するには、移行元コンピューターの SMB 共有にソース移行アカウントを含むセキュリティグループを追加し、読み取り、変更、またはフルコントロールを付与します。 移行が完了したら、このグループを削除できます。 Windows Server の将来のリリースでは、ソース共有に対する明示的なアクセス許可が不要になるように、この動作が変更される可能性があります。
+
+## <a name="error-0x80005000-when-running-inventory"></a>インベントリの実行時のエラー0x80005000
+
+[KB4512534](https://support.microsoft.com/en-us/help/4512534/windows-10-update-kb4512534)をインストールしてインベントリを実行しようとすると、次のエラーでインベントリが失敗します。
+
+  HRESULT からの例外:0x80005000
+  
+  ログ名:    StorageMigrationService/Admin Source:      StorageMigrationService Date:        9/9/2019 5:21:42 PM イベント ID:    2503タスクカテゴリ:None レベル:       エラーキーワード:      
+  ユーザー:        ネットワークサービスコンピューター:    FS02.TailwindTraders.net の説明:コンピューターのインベントリを行うことができませんでした。
+ジョブ: foo2 ID:20ac3f75-4945-41d1-9a79-d11dbb57798b の状態:失敗したエラー:36934エラーメッセージ:すべてのデバイスでインベントリに失敗した場合のガイダンス:詳細なエラーを確認し、在庫の要件が満たされていることを確認します。 ジョブは、指定されたソースコンピューターのいずれもインベントリできませんでした。 これは、orchestrator コンピューターがネットワーク経由でアクセスできなかったか、ファイアウォール規則またはアクセス許可がないことが原因である可能性があります。
+  
+  ログ名:    StorageMigrationService/Admin Source:      StorageMigrationService Date:        9/9/2019 5:21:42 PM イベント ID:    2509タスクカテゴリ:None レベル:       エラーキーワード:      
+  ユーザー:        ネットワークサービスコンピューター:    FS02.TailwindTraders.net の説明:コンピューターのインベントリを行うことができませんでした。
+ジョブ: foo2 コンピューター:FS01.TailwindTraders.net の状態:失敗したエラー:-2147463168 エラーメッセージ:ガイダンス:詳細なエラーを確認し、在庫の要件が満たされていることを確認します。 インベントリは、指定されたソースコンピューターの側面を特定できませんでした。 これは、ソースまたはブロックされているファイアウォールポートに対するアクセス許可または特権がないことが原因である可能性があります。
+  
+このエラーは、"meghan@contoso.com' などのユーザープリンシパル名 (UPN) の形式で移行資格情報を指定した場合に、ストレージ移行サービスのコードの不具合が原因で発生します。 Storage Migration Service orchestrator サービスは、この形式を正しく解析できません。そのため、KB4512534 と19H1 でのクラスター移行サポートに追加されたドメイン参照でエラーが発生します。
+
+この問題を回避するには、"Contoso\Meghan" のように、domain\user の形式で資格情報を指定します。
+
+## <a name="error-serviceerror0x9006-or-the-proxy-isnt-currently-available-when-migrating-to-a-windows-server-failover-cluster"></a>"ServiceError0x9006" または "プロキシは現在使用できません。" というエラーが表示されます。 Windows Server フェールオーバークラスターに移行する場合
+
+クラスター化されたファイルサーバーに対してデータを転送しようとすると、次のようなエラーが発生します。 
+
+   プロキシサービスがインストールされ、実行されていることを確認してから、操作をやり直してください。 プロキシは現在使用できません。
+0x9006 ServiceError0x9006、StorageMigration。 UnregisterSmsProxyCommand
+
+このエラーが発生するのは、ファイルサーバーリソースが元の Windows Server 2019 クラスター所有者ノードから新しいノードに移動され、そのノードに Storage Migration Service プロキシ機能がインストールされていない場合です。
+
+回避策として、移行先ファイルサーバーリソースを、最初に転送の組み合わせを構成したときに使用していた元の所有者のクラスターノードに戻します。
+
+別の回避策として、次のようにします。
+
+1. クラスター内のすべてのノードに Storage Migration Service プロキシ機能をインストールします。
+2. Orchestrator コンピューターで次の Storage Migration Service PowerShell コマンドを実行します。 
+
+   ```PowerShell
+   Register-SMSProxy -ComputerName *destination server* -Force
+   ```
 
 ## <a name="see-also"></a>関連項目
 

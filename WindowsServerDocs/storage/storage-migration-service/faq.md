@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: f086143ae2e02a2d049189ff248e02fc44fe3cb2
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: a1e195ab755dfd0b61cc4201f43373421ce51aa2
+ms.sourcegitcommit: 86350de764b89ebcac2a78ebf32631b7b5ce409a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69584803"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70923545"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>記憶域移行サービスに関してよく寄せられる質問 (FAQ)
 
@@ -89,11 +89,13 @@ Storage Migration Service には、Storage Migration Service プロキシサー�
 
 - **対象のオペレーティングシステムに Windows Server 2019 を使用します。** Windows Server 2019 には、Storage Migration Service プロキシサービスが含まれています。 この機能をインストールして Windows Server 2019 の変換先に移行すると、すべての転送は、ソースと宛先の間で直接表示されるように動作します。 対象のコンピューターが Windows Server 2012 R2 または Windows Server 2016 の場合、このサービスは、転送中に orchestrator 上で実行されます。これは、転送がダブルホップで、処理速度が大幅に低下することを意味します。 Windows Server 2012 R2 または Windows Server 2016 の変換先で複数のジョブが実行されている場合、orchestrator はボトルネックになります。 
 
-- **既定の転送スレッドを変更します。** 記憶域移行サービスのプロキシサービスは、指定されたジョブで8個のファイルを同時にコピーします。 SMS プロキシを実行しているすべてのノードで、次のレジストリの REG_DWORD 値の名前を10進数で調整することにより、同時コピースレッド数を増やすことができます。
+- **既定の転送スレッドを変更します。** 記憶域移行サービスのプロキシサービスは、指定されたジョブで8個のファイルを同時にコピーします。 Storage Migration Service プロキシを実行しているすべてのノードで、次のレジストリの REG_DWORD 値の名前を10進数で調整することにより、同時コピースレッド数を増やすことができます。
 
-    HKEY_Local_Machine\Software\Microsoft\SMSProxy FileTransferThreadCount
+    HKEY_Local_Machine\Software\Microsoft\SMSProxy
+    
+    FileTransferThreadCount
 
-   Windows Server 2019 では、有効な範囲は 1 ~ 128 です。 変更後は、移行に参加しているすべてのコンピューターで、Storage Migration Service プロキシサービスを再起動する必要があります。 この設定には注意してください。この値を高く設定すると、追加のコア、記憶域のパフォーマンス、およびネットワーク帯域幅が必要になる場合があります。 設定値が高すぎると、既定の設定と比較してパフォーマンスが低下する可能性があります。 CPU、メモリ、ネットワーク、およびストレージに基づいてスレッド設定をヒューリスティックに変更する機能は、SMS の新しいバージョンに対して計画されています。
+   Windows Server 2019 では、有効な範囲は 1 ~ 128 です。 変更後は、移行に参加しているすべてのコンピューターで、Storage Migration Service プロキシサービスを再起動する必要があります。 この設定には注意してください。この値を高く設定すると、追加のコア、記憶域のパフォーマンス、およびネットワーク帯域幅が必要になる場合があります。 設定値が高すぎると、既定の設定と比較してパフォーマンスが低下する可能性があります。
 
 - **コアとメモリを追加します。**  ソース、orchestrator、および対象のコンピューターには少なくとも2つのプロセッサコアまたは2つの vCPUs があることを強くお勧めします。これにより、特に FileTransferThreadCount (上記の) と組み合わせた場合に、インベントリと転送のパフォーマンスを大幅に向上させることができます。 通常の Office 形式 (ギガバイト以上) を超えるファイルを転送する場合は、既定の2GB よりも多くのメモリを利用した方がパフォーマンスが向上します。
 
