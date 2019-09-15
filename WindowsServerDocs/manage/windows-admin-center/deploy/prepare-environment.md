@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 96aced2c062717aee0d2957b751bc2c25ac8e0da
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 19013c3f132b7486647ade2c9c4950b65c21b8e7
+ms.sourcegitcommit: feec5cbe983c8c5800ccd4fc214914084fcceaba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869099"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70975315"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>Windows Admin Center のための環境の準備
 
@@ -36,7 +36,7 @@ Windows Admin Center には、既定で Windows Server 2012 および 2012 R2 �
 
 PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。
 
-インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)できます。
+インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://docs.microsoft.com/powershell/wmf/setup/install-configure)できます。
 
 ## <a name="prepare-windows-server-2008-r2"></a>Windows Server 2008 R2 の準備
 
@@ -48,7 +48,7 @@ Windows Admin Center では、既定で Windows Server 2008 R2 に含まれて�
 
 PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。
 
-インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)できます。
+インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://docs.microsoft.com/powershell/wmf/setup/install-configure)できます。
 
 PowerShell コンソールで `Enable-PSRemoting –force` を実行して Powershell リモート接続を有効にします。 
 
@@ -114,7 +114,7 @@ Windows Admin Center では、既定で Microsoft Hyper-V Server 2012 R2 に含�
 
 PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。 
 
-インストールされていない場合は、[WMF 5.1 をダウンロード](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)することができます。
+インストールされていない場合は、[WMF 5.1 をダウンロード](https://docs.microsoft.com/powershell/wmf/setup/install-configure)することができます。
 
 ### <a name="step-2-enable-remote-management"></a>手順 2:リモート管理の有効化
 

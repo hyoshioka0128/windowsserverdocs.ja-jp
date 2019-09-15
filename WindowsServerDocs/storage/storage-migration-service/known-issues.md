@@ -8,16 +8,20 @@ ms.date: 07/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 2200c41bfc6f7e50d4f85f48591a12ad35720062
-ms.sourcegitcommit: 86350de764b89ebcac2a78ebf32631b7b5ce409a
+ms.openlocfilehash: 16e62d9232d0ec1b01333d73bc5b4a1555ffbad0
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70923359"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987402"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
 このトピックでは、 [Storage Migration Service](overview.md)を使用してサーバーを移行する際の既知の問題に対する回答を示します。
+
+記憶域移行サービスは、Windows Server のサービスと Windows 管理センターのユーザーインターフェイスの2つの部分でリリースされます。 このサービスは、Windows server、長期的なサービスチャネル、Windows Server、半期チャネルで利用できます。Windows 管理センターは別途ダウンロードできます。 また、Windows Server の累積的な更新プログラムに加えた変更も、Windows Update によって定期的に追加されます。 
+
+たとえば、Windows Server バージョン1903には、記憶域移行サービスの新機能と修正プログラムが含まれています。これは、 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)をインストールすることによって、windows server 2019 と windows server、バージョン1809でも利用できます。
 
 ## <a name="collecting-logs"></a>Microsoft サポートを操作するときにログファイルを収集する方法
 
@@ -120,7 +124,7 @@ Azure IaaS インスタンスなど、ソースとは異なるネットワーク
  > **宛先プロキシが登録されています。**
  > 警告 :宛先プロキシが見つかりませんでした。
 
-Windows Server 2019 の対象コンピューターに Storage Migration Service Proxy サービスをインストールしていない場合、または destinaton コンピューターが Windows Server 2016 または Windows Server 2012 R2 の場合、この動作は仕様によるものです。 転送のパフォーマンスを大幅に向上させるために、プロキシがインストールされた Windows Server 2019 コンピューターに移行することをお勧めします。  
+Windows Server 2019 の展開先コンピューターに Storage Migration Service Proxy サービスをインストールしていない場合、または対象コンピューターが Windows Server 2016 または Windows Server 2012 R2 の場合、この動作は仕様によるものです。 転送のパフォーマンスを大幅に向上させるために、プロキシがインストールされた Windows Server 2019 コンピューターに移行することをお勧めします。  
 
 ## <a name="certain-files-do-not-inventory-or-transfer-error-5-access-is-denied"></a>特定のファイルのインベントリや転送が行われず、エラー5の "アクセスが拒否されました"
 
@@ -129,7 +133,7 @@ Windows Server 2019 の対象コンピューターに Storage Migration Service 
   ログ名:    StorageMigrationService-Proxy/Debug Source:      StorageMigrationService-プロキシの日付:        2/26/2019 9:00:04 AM イベント ID:    1万タスクカテゴリ:None レベル:       エラーキーワード:      
   ユーザー:        ネットワークサービスコンピューター: srv1.contoso.com の説明:
 
-  02/26/2019-09:00: 04.860 [Erro] 転送エラー \\(srv1. contoso. com\):(5) アクセスが拒否されました。
+  02/26/2019-09:00: 04.860 [Error] 転送エラー \\(srv1. contoso. com\):(5) アクセスが拒否されました。
 スタックトレース: FileDirUtils での StorageMigration (String fileName、DesiredAccess desiredAccess、ShareMode shareMode、FlagsAndAttributes FlagsAndAttributes) でのスタックトレースの場合、次の場所に移動します。FileDirUtils の StorageMigration (文字列パス) で、StorageMigration (FileInfo ファイル) をに移動します。このファイルには、(FileInfo ファイル) を指定します。StorageMigration () at StorageMigration () で、InitializeSourceFileInfo () をに移動します。このファイルの場所に移動してください。StorageMigration () [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs:: TryTransfer::55]」を実行してください ()。
 
 
@@ -139,7 +143,7 @@ Windows Server 2019 の対象コンピューターに Storage Migration Service 
 
 ## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>Storage Migration Service を使用してデータをプリシードするときに、DFSR ハッシュが一致しません
 
-記憶域移行サービスを使用してファイルを新しい宛先に転送するときに、DFS レプリケーション (DFSR) を構成して、レプリケーションまたは DFSR データベースの複製によって既存の DFSR サーバーでそのデータをレプリケートする場合、すべてのファイルにハッシュが experiemce されます。不一致とが再レプリケートされます。 データストリーム、セキュリティストリーム、サイズ、および属性はすべて、SMS を使用して転送した後、完全に一致しているように見えます。 Examing ファイルを ICACLS または DFSR データベース複製デバッグログに記録すると、次のようになります。
+記憶域移行サービスを使用してファイルを新しい宛先に転送する場合は、DFS レプリケーション (DFSR) を構成して、事前シードされたレプリケーションまたは DFSR データベースの複製を使用して、既存の DFSR サーバーを使用してそのデータをレプリケートします。すべてのファイルはハッシュを experiemce ます。不一致とが再レプリケートされます。 データストリーム、セキュリティストリーム、サイズ、および属性はすべて、SMS を使用して転送した後、完全に一致しているように見えます。 ICACLS または DFSR データベース複製デバッグログを使用してファイルを調べると、次のようになります。
 
 ソースファイル:
 
@@ -171,7 +175,7 @@ DFSR デバッグログ:
 
 このエラーは、orchestrator サーバーで "ファイルとプリンターの共有 (SMB 受信)" ファイアウォール規則を有効にしていない場合に発生します。 Windows 管理センターのファイルのダウンロードには、接続されたコンピューターにポート TCP/445 (SMB) が必要です。  
 
-## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transfering-from-windows-server-2008-r2"></a>Windows Server 2008 R2 からの転送時に "どのエンドポイントにもストレージを転送できませんでした" というエラーが発生する
+## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>Windows Server 2008 R2 から転送するときに、"どのエンドポイントにもストレージを転送できませんでした" というエラーが発生する
 
 Windows Server 2008 R2 ソースコンピューターからデータを転送しようとすると、データは転送されず、次のエラーが表示されます。  
 
@@ -202,10 +206,10 @@ StorageMigrationService/Admin イベントログを調べると、次のよう�
 
 StorageMigrationService/Debug ログを調べると、次のように表示されます。
 
-   07/02/2019-13:35: 57.231 [Erro] 転送の検証に失敗しました。 ErrorCode40961、ソースエンドポイントに到達できない、または存在しない、または送信元の資格情報が無効である、または認証されたユーザーにアクセスするための十分なアクセス許可がありません。
+   07/02/2019-13:35: 57.231 [Error] 転送の検証に失敗しました。 ErrorCode40961、ソースエンドポイントに到達できない、または存在しない、または送信元の資格情報が無効である、または認証されたユーザーにアクセスするための十分なアクセス許可がありません。
 StorageMigration で StorageMigration () を実行します。 TransferRequestHandler には、ProcessRequest (FileTransferRequest fileTransferRequest, Guid operationId) を入力します (FileTransferRequest fileTransferRequest、Guid operationId)   [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
 
-このエラーは、移行アカウントに SMB 共有に対する少なくとも読み取りアクセス許可がない場合に発生します。 このエラーを回避するには、移行元コンピューターの SMB 共有にソース移行アカウントを含むセキュリティグループを追加し、読み取り、変更、またはフルコントロールを付与します。 移行が完了したら、このグループを削除できます。 Windows Server の将来のリリースでは、ソース共有に対する明示的なアクセス許可が不要になるように、この動作が変更される可能性があります。
+このエラーは、移行アカウントに SMB 共有に対する少なくとも読み取りアクセス許可がない場合に発生します。 このエラーを回避するには、移行元コンピューターの SMB 共有にソース移行アカウントを含むセキュリティグループを追加し、読み取り、変更、またはフルコントロールを付与します。 移行が完了したら、このグループを削除できます。
 
 ## <a name="error-0x80005000-when-running-inventory"></a>インベントリの実行時のエラー0x80005000
 
