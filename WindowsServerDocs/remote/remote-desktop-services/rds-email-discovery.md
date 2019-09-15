@@ -8,12 +8,12 @@ ms.date: 3/27/2018
 ms.localizationpriority: medium
 ms.topic: article
 author: christianmontoya
-ms.openlocfilehash: 5b3f162b8eee70fbc452b7400b737454c3fffb59
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ca9484cc8abffcc21b4ed11756fb009b55046a0c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63712650"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870973"
 ---
 # <a name="set-up-email-discovery-to-subscribe-to-your-rds-feed"></a>RDS フィードに登録するために電子メールの検出を設定する
 
@@ -38,4 +38,4 @@ ms.locfileid: "63712650"
 
    DNS レコードのフィールドの名前はドメイン名レジストラーによって異なりますが、このプロセスでは、RD Web フィード全体の値を持つ _msradc.\<domain_name\> (_msradc.contoso.com など) という名前の TXT レコードになります。
 
-これで完了です。 ここでデバイス上のリモート デスクトップ アプリケーションを起動して、ご自身を登録してください。
+以上で作業は終了です。 ここでデバイス上のリモート デスクトップ アプリケーションを起動して、ご自身を登録してください。
