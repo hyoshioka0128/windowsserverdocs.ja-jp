@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: cdb831eb772114b86e6260063dff6ad881f2f37b
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 639623b4ebb21a4f6a0025a71721204cbfc4f496
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280345"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868599"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server サービス チャネル: LTSC と SAC
 

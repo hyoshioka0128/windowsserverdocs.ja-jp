@@ -10,12 +10,12 @@ ms.date: 07/11/2018
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: 425197d3462762c60a7371fc6ca529ad1b70e7ef
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 9bd2b17296872d4b94de5a7468178fbb2ba39709
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66443374"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868395"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>Windows Server 2008/2008 R2 に特化されたイメージの Azure へのアップロード 
 
@@ -104,7 +104,7 @@ Login-AzureRmAccount
      c. VM のサイズと SKU 計画を選びます。   
      d. 設定ページで、ネットワーク インターフェイスを選択します。 ネットワーク インターフェイスに次の規則が指定されていることを確認します。
  
-        PORT:3389 Protocol: TCP Action: Allow Priority: 1000 Name: ‘RDP-Rule’.   
+        PORT:3389 Protocol: TCP Action: Allow Priority: 1000 Name: ‘RDP-Rule'.   
      e. **[作成]** をクリックします。
 
 

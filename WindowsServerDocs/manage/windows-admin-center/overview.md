@@ -8,18 +8,18 @@ ms.author: niwashbu
 ms.date: 08/22/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 7af852ba934de2dd29a76972d7a7ec73606e9b4c
-ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
+ms.openlocfilehash: cdd7986486fd3cad07f5e4577aaf0ab404bfb5d3
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70009116"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869586"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
 > 適用対象:Windows Admin Center、Windows Admin Center Preview
 
-**Windows Admin Center** (以前はコードネーム **Project Honolulu**) は Windows Server のインボックス管理ツールの進化形です。ローカルおよびリモート サーバー管理のすべての側面を統合する 1 つのウィンドウです。 ローカルに展開されたブラウザー ベースの管理エクスペリエンスのため、インターネット接続や Azure は必要ありません。 Windows Admin Center では、インターネットに接続されていないプライベート ネットワークを含む、展開のあらゆる側面を完全に管理できます。
+**Windows Admin Center** (以前はコードネーム **Project Honolulu**) は Windows Server のインボックス管理ツールの進化形です。ローカルおよびリモート サーバー管理のすべての側面を統合する 1 つのウィンドウです。 ローカルに展開されたブラウザーベースの管理エクスペリエンスのため、インターネット接続や Azure は必要ありません。 Windows Admin Center では、インターネットに接続されていないプライベート ネットワークを含む、展開のあらゆる側面を完全に管理できます。
 
 ## <a name="introduction"></a>概要
 

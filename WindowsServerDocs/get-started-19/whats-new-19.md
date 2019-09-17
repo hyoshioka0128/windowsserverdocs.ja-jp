@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: 7110fe78982fec616174a93514d86fb2e1cf9fa5
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 665363c17cf5cb8d8ad52872128f2f63c07ea683
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810768"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868554"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 の新機能
 
