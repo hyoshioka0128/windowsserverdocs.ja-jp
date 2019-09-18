@@ -68,6 +68,7 @@
 ### [利用可能な リモート デスクトップ クライアント](clients/remote-desktop-clients.md)
 ### Windows デスクトップクライアント
 #### [Windows デスクトップ クライアントの概要](clients/windowsdesktop.md)
+#### [管理者用 Windows デスクトップクライアント](clients/windowsdesktop-admin.md)
 #### [Windows デスクトップ クライアントの新機能](clients/windowsdesktop-whatsnew.md)
 ### Microsoft Store クライアント
 #### [Microsoft Store クライアントの概要](clients/windows.md)
