@@ -7,12 +7,12 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/21/2019
-ms.openlocfilehash: 0ec6a7ec624818b92fb306089f3dea3c786c0827
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: cde394cd4e626466f17a27a68660e85f9fe55553
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280316"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868527"
 ---
 # <a name="whats-new-in-windows-server-version-1903"></a>Windows Server バージョン 1903 の新機能
 

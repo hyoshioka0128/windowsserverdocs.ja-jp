@@ -13,12 +13,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/20/2018
 manager: dongill
-ms.openlocfilehash: 0254c03396cba69a86eed021319ca2e2483ca625
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 7783fd19c3dedde81514512f0c81f54eada33dc4
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743865"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871061"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>クライアント アクセス ライセンス (CAL) を使用して RDS 展開をライセンスする
 
@@ -45,7 +45,7 @@ ms.locfileid: "63743865"
 
 次の表に、2 種類の CAL の違いの概要を示します。
 
-| デバイスごと                                                     | ユーザーごと                                                                         |
+| 接続デバイス数                                                     | 接続ユーザー数                                                                         |
 |----------------------------------------------------------------|----------------------------------------------------------------------------------|
 | CAL は各デバイスに物理的に割り当てられます。                   | CAL は Active Directory 内のユーザーに割り当てられます。                                 |
 | CAL はライセンス サーバーによって追跡されます。                        | CAL はライセンス サーバーによって追跡されます。                                          |

@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 05/21/2019
 ms.topic: get-started-article
-ms.openlocfilehash: c0d85da8a51a43acd7765957b34220829a43b086
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 964139ac5fdaee4d580d29ab0f7543c7d5f15d0b
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810706"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868463"
 ---
 # <a name="kms-client-setup-keys"></a>KMS クライアント セットアップ キー
 
@@ -31,7 +31,7 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 
 | 目的の処理    | 使用するリソース   |
 |--------------------|------------------------|
-| ボリューム ライセンス認証のシナリオ以外で Windows のライセンスを認証する (つまり、製品版の Windows のライセンスを認証する)。**これらのキーは機能しない**。 | 製品版の Windows には次のリンクを使用します。 |
+| ボリュームライセンス認証シナリオ以外で Windows のライセンスを認証する (つまり、製品版の Windows のライセンスを認証する) 場合、**これらのキーは機能しません**。 | 製品版の Windows には次のリンクを使用します。 |
 | Windows 8.1 または Windows Server 2012 R2 システムのライセンスを認証するときに発生する次のエラーを修正する。“Error:0xC004F050 The Software Licensing Service reported that the product key is invalid”… | Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012 を実行している場合、KMS ホストに[この更新プログラムをインストールします](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2)。 |
 
 -   [Windows 10 を入手する](https://www.microsoft.com/en-us/windows/get-windows-10)

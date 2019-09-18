@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 5aed8ba7-f541-4416-b01c-4d3b1712e2b1
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 9e624517e5e7910a32a68d1ebc38b3f8d5ab8459
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: a58231d908ff1ac32eca7d4ba3f1d5a6a18dd7fe
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805209"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870568"
 ---
 # <a name="upgrading-your-remote-desktop-virtualization-host-to-windows-server-2016"></a>リモート デスクトップ仮想化ホストの Windows Server 2016 へのアップグレード
 

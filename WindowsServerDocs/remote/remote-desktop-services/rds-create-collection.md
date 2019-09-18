@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: ae9767e3-864a-4eb2-96c0-626759ce6d60
 author: lizap
 manager: dongill
-ms.openlocfilehash: 87de04e3ca34217fbbc3ec451dc061ee228a1a60
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ca43a37bff28a035d9f7292da830a23ca29d23bc
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743828"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871028"
 ---
 # <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>デスクトップとアプリを実行するためのリモート デスクトップ サービス コレクションを作成する
 

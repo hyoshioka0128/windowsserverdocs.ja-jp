@@ -13,12 +13,12 @@ author: lizap
 ms.author: elizapo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: e9bd860769ec375a6d89ac452e3430b791fff3ad
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 506236cbb3893fe200b39aa1d58ed44cdbd9704a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63688734"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868380"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1803"></a>リリース ノート:Windows Server バージョン 1803 に関する重要な問題
 

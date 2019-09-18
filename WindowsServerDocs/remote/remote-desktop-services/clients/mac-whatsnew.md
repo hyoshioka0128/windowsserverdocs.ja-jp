@@ -8,21 +8,21 @@ ms.suite: na
 ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 08/27/2019
+author: heidilohr
+manager: daveba
+ms.author: helohr
+ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ae58103b00941bb71d447641b1cdab7c02fa20b
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 9fbd3e9c5f7938fbf6a80e9f5dc950a2c0a9a257
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70151022"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987340"
 ---
 # <a name="whats-new-in-the-macos-client"></a>macOS クライアントの新機能
 
-[macOS のリモート デスクトップ クライアント](remote-desktop-mac.md)は定期的に更新され、新機能の追加や問題の修正が行われています。 以下の最近の更新内容を確認してください。
+[macOS のリモート デスクトップ クライアント](remote-desktop-mac.md)は定期的に更新され、新機能の追加や問題の修正が行われています。 ここでは、最新の更新プログラムを紹介します。
 
 問題が生じた場合、 **[ヘルプ] > [Report an Issue]\(問題の報告\)** を使用してマイクロソフトに問い合わせることができます。
 

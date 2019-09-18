@@ -8,21 +8,21 @@ ms.suite: na
 ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 08/27/2019
+author: heidilohr
+manager: daveba
+ms.author: helohr
+ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6ee224cd5bf7ccdeb3b0d55d091a5d322583c101
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 7a2061878cdbc7a5ace923835a334736e976e248
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70150995"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987331"
 ---
 # <a name="whats-new-in-the-android-client"></a>Android クライアントの新機能
 
-[Android 用のリモート デスクトップ クライアント](remote-desktop-android.md)は定期的に更新され、新機能の追加や問題の修正が行われています。 以下の最近の更新内容を確認してください。
+[Android 用のリモート デスクトップ クライアント](remote-desktop-android.md)は定期的に更新され、新機能の追加や問題の修正が行われています。 ここでは、最新の更新プログラムを紹介します。
 
 ## <a name="updates-for-version-8171"></a>バージョン 8.1.71 の更新内容
 

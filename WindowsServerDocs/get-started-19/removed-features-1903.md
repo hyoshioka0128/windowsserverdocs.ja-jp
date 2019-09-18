@@ -8,12 +8,12 @@ ms.date: 08/22/2019
 author: jasongerend
 ms.author: jgerend
 manager: daveba
-ms.openlocfilehash: 079f1a6544aac606358a741ecb3fffae791a4985
-ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
+ms.openlocfilehash: 4471d6f9d98d58f7444151a7b8be33d2d81423e1
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000671"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868658"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1903"></a>Windows Server バージョン 1903 以降で削除された機能と置換が計画されている機能
 

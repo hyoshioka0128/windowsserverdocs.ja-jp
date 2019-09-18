@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: d6ff5b22-7695-4fee-b1bd-6c9dce5bd0e8
 author: lizap
 manager: scottman
-ms.openlocfilehash: af5d5ce89561c89d8468627e20dfdb6f35eca5ef
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ce10575d38bccc0b22dadf55bd89156c6ce5ea7b
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66447111"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871052"
 ---
 # <a name="which-graphics-virtualization-technology-is-right-for-you"></a>どちらのグラフィックス仮想化テクノロジが適切か
 

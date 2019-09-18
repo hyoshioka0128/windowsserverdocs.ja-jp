@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 61f447f68ec6c85ed1554e176c78c4caec5dfde4
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 4707a6b54ad7a216f18c22367985e55d07e7a2eb
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63747884"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869514"
 ---
 # <a name="windows-admin-center-case-studies"></a>Windows Admin Center ケース スタディ
 

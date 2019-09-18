@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: e17a636c5bf06d194abd1bfe9b6d20970773e993
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: b5391677397660e3beacb9a71189bf3ffe2aeaab
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66501404"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868342"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Windows Server バージョン 1709 の新機能
 

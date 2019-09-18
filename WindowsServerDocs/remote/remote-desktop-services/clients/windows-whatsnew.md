@@ -8,21 +8,21 @@ ms.suite: na
 ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 08/27/2019
+author: heidilohr
+manager: daveba
+ms.author: helohr
+ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ecdf217f847f495b2cb90dd3511a8db9e72c95
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 6a4a6ae860dc8eabc4856ff3aa66268ed8d588de
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70150984"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987360"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Microsoft Store クライアントの新機能
 
-[Windows のリモート デスクトップ クライアント](windows.md)は定期的に更新され、新しい機能の追加や問題の修正が行われています。 以下の最近の更新内容を確認してください。
+[Windows ストア クライアント](windows.md)は定期的に更新され、新機能の追加と問題の修正が行われています。 ここでは、最新の更新プログラムを紹介します。
 
 ## <a name="updates-for-version-1011098"></a>バージョン 10.1.1098 の更新内容
 

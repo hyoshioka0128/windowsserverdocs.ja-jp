@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 88cab1965e299c7d25c177125cb504432bf987e8
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 746434884701ba1a8a6781b485b3f1540abe975e
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810651"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868414"
 ---
 # <a name="windows-server-2016-activation"></a>Windows Server 2016 のライセンス認証
 

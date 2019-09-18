@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
 manager: dougkim
-ms.openlocfilehash: 597016ecf10da0febb7ba1bb099da0c1dddf96ce
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 025b5d8791d0b847a38798d36ffa4bfa86e0b00c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63749225"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871292"
 ---
 # <a name="desktop-hosting-service"></a>デスクトップ ホスティング サービス
 

@@ -8,12 +8,12 @@ ms.sitesec: library
 author: jasongerend
 ms.author: jgerend
 ms.date: 08/22/2019
-ms.openlocfilehash: 70b18ecbb94fb882a434388bb6f990f98cf0bc32
-ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
+ms.openlocfilehash: 8b871d6fa939271c7468a8b51a195539ee268e9c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000642"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868291"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1803"></a>Windows Server バージョン 1803 以降で削除された機能と置換が計画されている機能
 

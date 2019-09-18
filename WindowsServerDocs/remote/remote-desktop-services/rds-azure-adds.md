@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: christianmontoya
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b1baf642ffa3c8e8a0a2cfc70d2f49b58f208b3
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 511aee3ea5be7e5c70c75cbc4d1febe1ec58dd97
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66446582"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871072"
 ---
 # <a name="integrate-azure-ad-domain-services-with-your-rds-deployment"></a>RDS 展開と Azure AD Domain Services との統合
 

@@ -13,12 +13,12 @@ ms.author: jgerend
 manager: jasgro
 ms.date: 08/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 59a31d01d1c5775c837010eca964c72fad8b5c92
-ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
+ms.openlocfilehash: 0f6b6ac42c096c6c80404c2d650905e73da8a97a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000689"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868645"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-windows-server-2019"></a>Windows Server 2019 以降で削除される、または置換が計画されている機能
 

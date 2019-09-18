@@ -8,12 +8,12 @@ ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: dougkim
-ms.openlocfilehash: 717f6c714ce95793a9a7b5fcf0ddd304c77daa32
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e8b5928db1acf00abdeac1b7bfd4d435bc8f0a17
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63753173"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870768"
 ---
 # <a name="remote-desktop-services-roles"></a>リモート デスクトップ サービス ロール
 
