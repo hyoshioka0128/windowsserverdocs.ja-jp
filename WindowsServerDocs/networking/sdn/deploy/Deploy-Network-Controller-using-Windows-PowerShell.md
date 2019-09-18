@@ -27,7 +27,7 @@ ms.locfileid: "65034556"
 このトピックでは、Windows PowerShell を使用して、1 つまたは複数の仮想マシン (Vm) Windows Server 2016 を実行しているのネットワーク コント ローラーを展開するについて説明します。
 
 >[!IMPORTANT]
->物理ホストでネットワーク コント ローラー サーバーの役割を展開しないでください。 ネットワーク コント ローラーを展開するには、HYPER-V 仮想マシンでネットワーク コント ローラー サーバーの役割をインストールする必要があります\(VM\) HYPER-V ホストにインストールされています。 次の 3 つの異なるハイパースレッディング上の Vm でネットワーク コント ローラーをインストールした後\-V のホスト、ハイパースレッディングが有効にする必要があります\-ソフトウェアによるネットワーク制御の V ホスト\(SDN\)ネットワーク コント ローラーを使用するホストを追加することでWindows PowerShell コマンド**新規 NetworkControllerServer**します。 これにより、関数には、SDN ソフトウェア ロード バランサーを有効にします。 詳細については、次を参照してください。[新規 NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)します。
+>物理ホストでネットワーク コント ローラー サーバーの役割を展開しないでください。 ネットワーク コント ローラーを展開するには、HYPER-V 仮想マシンでネットワーク コント ローラー サーバーの役割をインストールする必要があります\(VM\) HYPER-V ホストにインストールされています。 次の 3 つの異なるハイパースレッディング上の Vm でネットワーク コント ローラーをインストールした後\-V のホスト、ハイパースレッディングが有効にする必要があります\-ソフトウェアによるネットワーク制御の V ホスト\(SDN\)ネットワーク コント ローラーを使用するホストを追加することでWindows PowerShell コマンド**New- NetworkControllerServer**します。 これにより、関数には、SDN ソフトウェア ロード バランサーを有効にします。 詳細については、[New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)を参照してください。
 
 このトピックは次のセクションで構成されます。
 
@@ -84,7 +84,7 @@ Windows PowerShell を使用してネットワーク コント ローラーを�
 New-NetworkControllerNodeObject -Name <string> -Server <String> -FaultDomain <string>-RestInterface <string> [-NodeCertificate <X509Certificate2>]
 ```
 
-次の表はの各パラメーターの説明、**新規 NetworkControllerNodeObject**コマンド。
+次の表はの各パラメーターの説明、**New-NetworkControllerNodeObject**コマンド。
 
 |パラメーター|説明|
 |-------------|---------------|
@@ -108,7 +108,7 @@ Install-NetworkControllerCluster -Node <NetworkControllerNode[]> -ClusterAuthent
 |-------------|---------------|
 |ClusterAuthentication|**ClusterAuthentication**パラメーターがノード間の通信をセキュリティで保護するために使用して、ネットワーク コント ローラーのサービス間のトラフィックの暗号化にも使用する認証の種類を指定します。 サポートされる値は**Kerberos**、 **X509**と**None**します。 Kerberos 認証は、ドメイン アカウントを使用し、ネットワーク コント ローラー ノードがドメインに参加している場合にのみ使用できます。 X509 ベースの認証を指定する場合は、NetworkControllerNode オブジェクト内の証明書を指定する必要があります。 さらに、このコマンドを実行する前に、証明書を手動でプロビジョニングする必要があります。|
 |ManagementSecurityGroup|**ManagementSecurityGroup**パラメーターをリモート コンピューターからの管理コマンドレットの実行を許可するユーザーを含むセキュリティ グループの名前を指定します。 これは、ClusterAuthentication が Kerberos の場合だけです。 ローカル コンピューターのドメイン セキュリティ グループとセキュリティ グループではなくを指定する必要があります。|
-|ノード|**ノード**パラメーターを使用して作成したネットワーク コント ローラー ノードの一覧を指定します、**新規 NetworkControllerNodeObject**コマンド。|
+|ノード|**ノード**パラメーターを使用して作成したネットワーク コント ローラー ノードの一覧を指定します、**New-NetworkControllerNodeObject**コマンド。|
 |DiagnosticLogLocation|**DiagnosticLogLocation**パラメーターが、診断ログを定期的にアップロードして共有の場所を指定します。 このパラメーターの値を指定しない場合、各ノードで、ログがローカルに格納されます。 ログは、フォルダーの %systemdrive%\windows\tracing\sdndiagnostics でローカルに格納されます。 クラスターのログは、フォルダー %systemdrive%\ProgramData\Microsoft\Service fabric \log\traces でローカルに格納されます。|
 |LogLocationCredential|**LogLocationCredential**パラメーターが、ログが格納されている共有の場所にアクセスするために必要な資格情報を指定します。|
 |CredentialEncryptionCertificate|**CredentialEncryptionCertificate**パラメーターは、ネットワーク コント ローラーを使用してネットワーク コント ローラー バイナリへのアクセスに使用される資格情報を暗号化する証明書を指定し、 **LogLocationCredential**指定されて 場合。 このコマンドを実行する前に、ネットワーク コント ローラー ノードのすべての証明書をプロビジョニングする必要があり、すべてのクラスター ノードで同じ証明書を登録する必要があります。 このパラメーターを使用して、ネットワーク コント ローラーのバイナリおよびログを保護するは、運用環境で使用することをお勧めします。 このパラメーターを指定しない資格情報はクリア テキストで保存され、権限のないユーザーによって悪用される可能性が。|
@@ -131,7 +131,7 @@ Install-NetworkController -Node <NetworkControllerNode[]> -ClientAuthentication 
 |パラメーター|説明|
 |-------------|---------------|
 |ClientAuthentication|**ClientAuthentication**パラメーターは、REST とネットワーク コント ローラー間の通信を保護するために使用される認証の種類を指定します。 サポートされる値は**Kerberos**、 **X509**と**None**します。 Kerberos 認証は、ドメイン アカウントを使用し、ネットワーク コント ローラー ノードがドメインに参加している場合にのみ使用できます。 X509 ベースの認証を指定する場合は、NetworkControllerNode オブジェクト内の証明書を指定する必要があります。 さらに、このコマンドを実行する前に、証明書を手動でプロビジョニングする必要があります。|
-|ノード|**ノード**パラメーターを使用して作成したネットワーク コント ローラー ノードの一覧を指定します、**新規 NetworkControllerNodeObject**コマンド。|
+|ノード|**ノード**パラメーターを使用して作成したネットワーク コント ローラー ノードの一覧を指定します、**New-NetworkControllerNodeObject**コマンド。|
 |ClientCertificateThumbprint|ネットワーク コント ローラーのクライアントの証明書ベースの認証を使用している場合にのみ、このパラメーターが必要です。 **ClientCertificateThumbprint** Northbound レイヤー上のクライアントに登録されている証明書の拇印を指定します。|
 |ServerCertificate|**ServerCertificate**パラメーターは、ネットワーク コント ローラーがクライアントに身元を証明するために使用する証明書を指定します。 サーバー証明書は、拡張キー使用法の拡張機能では、サーバー認証の目的を含める必要があり、クライアントによって信頼されている CA からネットワーク コント ローラーに発行する必要があります。|
 |RESTIPAddress|値を指定する必要はありません**RESTIPAddress**ネットワーク コント ローラーの単一ノード展開にします。 複数ノードの展開、 **RESTIPAddress**パラメーターは、CIDR 表記法での REST エンドポイントの IP アドレスを指定します。 たとえば、192.168.1.10/24 します。 サブジェクト名値**ServerCertificate**の値に解決する必要があります、 **RESTIPAddress**パラメーター。 同じサブネット上のすべてのノードが、すべての複数ノード ネットワーク コント ローラーの展開のこのパラメーターを指定する必要があります。 使用する必要があるノードが異なるサブネット上にある場合、 **RestName**パラメーターを使用してではなく**RESTIPAddress**します。|
