@@ -27,7 +27,7 @@ ms.locfileid: "65034556"
 このトピックでは、Windows PowerShell を使用して、1 つまたは複数の仮想マシン (Vm) Windows Server 2016 を実行しているのネットワーク コント ローラーを展開するについて説明します。
 
 >[!IMPORTANT]
->物理ホストでネットワーク コント ローラー サーバーの役割を展開しないでください。 ネットワーク コント ローラーを展開するには、HYPER-V 仮想マシンでネットワーク コント ローラー サーバーの役割をインストールする必要があります\(VM\) HYPER-V ホストにインストールされています。 次の 3 つの異なるハイパースレッディング上の Vm でネットワーク コント ローラーをインストールした後\-V のホスト、ハイパースレッディングが有効にする必要があります\-ソフトウェアによるネットワーク制御の V ホスト\(SDN\)ネットワーク コント ローラーを使用するホストを追加することでWindows PowerShell コマンド**新規 NetworkControllerServer**します。 これにより、関数には、SDN ソフトウェア ロード バランサーを有効にします。 詳細については、次を参照してください。[新規 NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)します。
+>物理ホストでネットワーク コント ローラー サーバーの役割を展開しないでください。 ネットワーク コント ローラーを展開するには、HYPER-V 仮想マシンでネットワーク コント ローラー サーバーの役割をインストールする必要があります\(VM\) HYPER-V ホストにインストールされています。 次の 3 つの異なるハイパースレッディング上の Vm でネットワーク コント ローラーをインストールした後\-V のホスト、ハイパースレッディングが有効にする必要があります\-ソフトウェアによるネットワーク制御の V ホスト\(SDN\)ネットワーク コント ローラーを使用するホストを追加することでWindows PowerShell コマンド**New-NetworkControllerServer**します。 これにより、関数には、SDN ソフトウェア ロード バランサーを有効にします。 詳細については、[New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)します。
 
 このトピックは次のセクションで構成されます。
 
