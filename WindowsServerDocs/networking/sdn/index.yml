@@ -49,7 +49,7 @@ sections:
             image:
               src: 'https://docs.microsoft.com/media/common/i_video.svg'
             title: Microsoft SDN のしくみ
-  - title: はじめに..
+  - title: はじめに.
     items:
       - type: paragraph
         text: データセンター内のルーター、スイッチ、ゲートウェイなどの物理および仮想ネットワーク デバイスを計画、構成、管理します。
@@ -68,7 +68,7 @@ sections:
             image:
               src: 'https://docs.microsoft.com/media/common/i_deploy.svg'
             title: SDN インフラストラクチャの展開
-          - href: \windows-server\networking\sdn\plan\Plan-a-Software-Defined-Network-Infrastructure
+          - href: \windows-server\networking\sdn\manage\manage-sdn
             html: <p> </p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_management.svg'

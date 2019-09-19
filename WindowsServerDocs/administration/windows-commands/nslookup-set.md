@@ -1,6 +1,6 @@
 ---
 title: nslookup set
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99ac8736ca8223a1a444784c4cf605a973a9e4dd
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 928d222714bf01cac1585a25e8cac3ec6c8b0233
+ms.sourcegitcommit: 6423dfa9cecb3b06bdd563cae113c3e80a4ec330
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436546"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105050"
 ---
 # <a name="nslookup-set"></a>nslookup set
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-影響する構成設定を変更する方法の参照関数。
+参照の機能に影響する構成設定を変更します。
 ## <a name="syntax"></a>構文
 ```
 set <KeyWord>[=<Value>]
@@ -33,12 +33,12 @@ set <KeyWord>[=<Value>]
 
 |    パラメーター    |                                                                                                                    説明                                                                                                                    |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    <KeyWord>    | 派生したサブコマンドを識別、**設定**サブコマンドします。 サブコマンドなど**d2 設定**のキーワードが **[ありません]** **d2**。 派生したサブコマンドの一覧については、**設定**サブコマンドを他の参照情報を参照してください。 |
-|     <Value>     |                                                                                      各サブコマンド nslookup 構成設定値を指定します。                                                                                      |
-| {help &#124; ?} |                                                                                               簡単な概要を表示します。 **nslookup**サブコマンドします。                                                                                               |
+|    <KeyWord>    | **Set**サブコマンドから派生したサブコマンドを識別します。 サブコマンドなど**d2 設定**のキーワードが **[ありません]** **d2**。 **Set**サブコマンドから派生したサブコマンドの一覧については、「その他の参照情報」を参照してください。 |
+|     <Value>     |                                                                                      各サブコマンドの nslookup 構成設定値を指定します。                                                                                      |
+| {ヘルプ&#124; ?} |                                                                                               **Nslookup**サブコマンドの簡単な概要を表示します。                                                                                               |
 
-## <a name="remarks"></a>注釈
-使用**すべて設定**現在の設定の一覧を表示します。
-## <a name="additional-references"></a>その他の参照
-[コマンドライン構文のポイント](command-line-syntax-key.md)
-[すべて nslookup 設定](nslookup-set-all.md)
+## <a name="remarks"></a>コメント
+現在の設定の一覧を表示するには、 **[すべて設定]** を使用します。
+## <a name="additional-references"></a>その他の参照情報
+[コマンドライン構文のキー](command-line-syntax-key.md)
+[nslookup set all](nslookup-set-all.md)

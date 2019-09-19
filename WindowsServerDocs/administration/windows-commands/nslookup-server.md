@@ -1,6 +1,6 @@
 ---
 title: nslookup server
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ba58e223d0aa35b4157b813b10bf1d274313a1c1
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: e24e55026d12a0d8afc5b6f1bef926ece9087bd0
+ms.sourcegitcommit: 6423dfa9cecb3b06bdd563cae113c3e80a4ec330
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436970"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105014"
 ---
 # <a name="nslookup-server"></a>nslookup server
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-指定されたドメイン ネーム システム (DNS) ドメインには、既定のサーバーを変更します。
+指定したドメインネームシステム (DNS) ドメインに既定のサーバーを変更します。
 ## <a name="syntax"></a>構文
 ```
 server <DNSDomain>
@@ -33,11 +33,11 @@ server <DNSDomain>
 
 |    パラメーター    |                          説明                           |
 |-----------------|----------------------------------------------------------------|
-|   <DNSDomain>   | 必須。 新しい DNS ドメインは、既定のサーバーを指定します。 |
-| {help &#124; ?} |     簡単な概要を表示します。 **nslookup**サブコマンドします。      |
+|   <DNSDomain>   | 必須。 既定のサーバーの新しい DNS ドメインを指定します。 |
+| {ヘルプ&#124; ?} |     **Nslookup**サブコマンドの簡単な概要を表示します。      |
 
-## <a name="remarks"></a>注釈
-- **Server**コマンドは現在の既定のサーバーを使用して、指定した DNS ドメインについての情報を確認します。 これとは対照的に、 **lserver**コマンドで、初期のサーバーを使用します。
-  ## <a name="additional-references"></a>その他の参照
-  [コマンドライン構文のポイント](command-line-syntax-key.md)
+## <a name="remarks"></a>コメント
+- **サーバー**コマンドは、現在の既定のサーバーを使用して、指定された DNS ドメインに関する情報を検索します。 これは、最初のサーバーを使用する**lserver**コマンドとは対照的です。
+  ## <a name="additional-references"></a>その他の参照情報
+  [コマンドライン構文のキー](command-line-syntax-key.md)
   [nslookup lserver](nslookup-lserver.md)
