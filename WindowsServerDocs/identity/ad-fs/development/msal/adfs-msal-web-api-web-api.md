@@ -147,7 +147,7 @@ ADFS で auth シナリオに代わってを構成する方法を理解するに
 
   31. [WebApiToWebApi – Web API 2 のプロパティ] 画面で、[発行変換規則] タブを選択し、[規則の追加...] をクリックします。 
 
-  32. 変換要求規則の追加ウィザードで、[dopdown からカスタムルールを使用して要求を![送信する] を選択し、[次のアプリの Reg] をクリックします。](media/adfs-msal-web-api-web-api/webapi23.png)
+  32. 変換要求規則の追加ウィザードで、dopdown からカスタムルールを使用して要求を![送信する を選択し、次のアプリの Reg をクリックします。](media/adfs-msal-web-api-web-api/webapi23.png)
 
   33. 要求規則名に「Pass Allclaim」と入力し、フィールドと**x: [] = > issue (claim = x);** **カスタムルール:** field の要求規則を入力して、 **[完了]** をクリックします。  
    

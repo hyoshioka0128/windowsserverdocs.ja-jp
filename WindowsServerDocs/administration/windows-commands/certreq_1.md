@@ -322,7 +322,7 @@ certreq –enroll –cert CertId [Options] Renew [ReuseKeys]
 ```
 certreq –enroll -machine –cert "61 2d 3c fe 00 00 00 00 00 05" Renew
 ```
-ここでは、* (*) を使用して、Web サーバーという証明書テンプレートに登録し、U/I 経由でポリシーサーバーを選択する例を示します。
+ここでは、* を使用して、Web サーバーという証明書テンプレートに登録し、U/I 経由でポリシーサーバーを選択する例を示します。
 ```
 certreq -enroll –machine –policyserver * "WebServer"
 ```
