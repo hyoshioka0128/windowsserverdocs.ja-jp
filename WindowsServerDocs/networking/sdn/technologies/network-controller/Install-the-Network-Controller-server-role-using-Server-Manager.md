@@ -23,9 +23,9 @@ ms.locfileid: "59859063"
 このトピックでは、サーバー マネージャーを使用して、ネットワーク コント ローラー サーバーの役割をインストールする方法の手順を示します。
 
 >[!IMPORTANT]
->物理ホストでネットワーク コント ローラー サーバーの役割を展開しないでください。 ネットワーク コント ローラーを展開するには、HYPER-V 仮想マシンでネットワーク コント ローラー サーバーの役割をインストールする必要があります\(VM\) HYPER-V ホストにインストールされています。 次の 3 つの異なるハイパースレッディング上の Vm でネットワーク コント ローラーをインストールした後\-V のホスト、ハイパースレッディングが有効にする必要があります\-ソフトウェアによるネットワーク制御の V ホスト\(SDN\)ネットワーク コント ローラーを使用するホストを追加することでWindows PowerShell コマンド**New-NetworkControllerServer**します。 これにより、関数には、SDN ソフトウェア ロード バランサーを有効にします。 詳細については、[New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver) を参照してください。
+>物理ホストでネットワーク コント ローラー サーバーの役割を展開しないでください。 ネットワーク コントローラーを展開するには、ホストにインストールされている HYPER-V 仮想マシン\(VM\)でネットワーク コントローラー サーバーの役割をインストールする必要があります。 次の 3 つの異なる HYPER-V ホスト上の VM にでネットワーク コントローラーをインストールした後、Windows PowerShell コマンド **New-NetworkControllerServer** を使用してホストをネットワーク コント ローラーに追加して、ソフトウェア定義ネットワーク（SDN）のHYPER-Vホストを有効にする必要があります。これにより、SDN ソフトウェア ロード バランサーが機能するようになります。 詳細については、[New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver) を参照してください。
   
-ネットワーク コント ローラーをインストールした後は、追加のネットワーク コント ローラー構成の Windows PowerShell コマンドを使用する必要があります。 詳細については、[Windows PowerShell を使用してネットワーク コントローラーを展開する](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md) を参照してください。 
+ネットワーク コントローラーをインストールした後は、追加のネットワーク コントローラーの構成に Windows PowerShell コマンドを使用する必要があります。 詳細については、[Windows PowerShell を使用してネットワーク コントローラーを展開する](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md) を参照してください。 
   
 ### <a name="to-install-network-controller"></a>ネットワーク コント ローラーをインストールするには  
   
