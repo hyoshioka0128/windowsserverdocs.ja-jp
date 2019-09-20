@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 91a1d69e4f7a77633d460f594ad3091f359df9c3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 247381b35a038627b5d8c91ac4dda0cc4fab6195
+ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867845"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143780"
 ---
 # <a name="ad-fs-requirements"></a>AD FS の要件
 
@@ -329,18 +329,18 @@ AD FS は、エンドユーザーがデバイスに参加するときに、デ�
 ||||  
 |-|-|-|  
 |**アルゴリズム**|**キーの長さ**|**プロトコル\/アプリケーション\/のコメント**|  
-|TripleDES – Default 192 \(supported 192 – 256\) \- [http:\/\/www.w3.org\/200104\/xmlenc\#TripleDES\/cbc\-](http://www.w3.org/2001/04/xmlenc)|>\=192|セキュリティトークンを復号化するためにサポートされているアルゴリズム。 このアルゴリズムを使用したセキュリティトークンの暗号化はサポートされていません。|  
-|AES128 \- http:\/www.w3.org2001\/04xmlenc\#AES128cbc\-\/\/\/|128|セキュリティトークンを復号化するためにサポートされているアルゴリズム。 このアルゴリズムを使用したセキュリティトークンの暗号化はサポートされていません。|  
-|AES192 \- http:\/www.w3.org2001\/04xmlenc\#AES192cbc\-\/\/\/|192|セキュリティトークンを復号化するためにサポートされているアルゴリズム。 このアルゴリズムを使用したセキュリティトークンの暗号化はサポートされていません。|  
-|AES256 \- [http:\/www.w3.org\/200104xmlenc\#AES256cbc\-\/\/\/](http://www.w3.org/2001/04/xmlenc)|256|**[既定]** 。 セキュリティトークンを暗号化するためにサポートされているアルゴリズム。|  
-|Tripledeskeywrap) \- http:\/www.w3.org2001\/04xmlenc\#kwtripledes\-\/\/\/|.NET 4.0 でサポートされているすべてのキーサイズ\+|セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|  
-|Aes128keywrap) \- [http:\/www.w3.org\/200104xmlenc\#kwaes128\-\/\/\/](http://www.w3.org/2001/04/xmlenc)|128|セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|  
-|Aes192keywrap) \- [http:\/www.w3.org\/200104xmlenc\#kwaes192\-\/\/\/](http://www.w3.org/2001/04/xmlenc)|192|セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|  
-|Aes256keywrap) \- [http:\/www.w3.org\/200104xmlenc\#kwaes256\-\/\/\/](http://www.w3.org/2001/04/xmlenc)|256|セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|  
-|RsaV15KeyWrap \- http:\/www.w3.org2001\/04xmlenc\#rsa1\-5\/\/\/\_|1024|セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|  
-|Rsaoaepkeywrap) \- [http:\/www.w3.org\/200104xmlenc\#rsaoaep\-rsa-oaep-mgf1p\/\/\/\-](http://www.w3.org/2001/04/xmlenc)|1024|既定値です。 セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|  
-|Sha1\-http:\/www.w3.orgPICS\/DSig SHA1 10\_.html\/\/\/\_|N\/A|アーティファクトの SourceId 生成で AD FS サーバーによって使用されます。このシナリオでは、STS は SAML \(2.0 標準\)の推奨事項に従って SHA1 を使用して、アーティファクト sourceiD の短い160ビット値を作成します。<br /><br />また、ADFS web agent \(レガシコンポーネントによって WS2003 期間\)から、"最終更新" 時刻値の変更を識別して、STS から情報を更新するタイミングを認識できるようにするために使用されます。|  
-|SHA1withRSA\-<br /><br />http:\/\/www.w3.orgPICSDSig\/RSA SHA1 10\_.html\/\-\/\_|N\/A|AD FS サーバーが SAML authenticationrequest の署名を検証する場合、アーティファクト解決要求または応答に署名する\-場合、トークン署名証明書を作成する場合に使用します。<br /><br />このような場合、sha256 は既定値であり、パートナー \(の\)証明書利用者が sha256 をサポートできず、sha1 を使用する必要がある場合にのみ、sha1 が使用されます。|  
+|TripleDES – Default 192 \(supported 192 – 256\) \- [http:\/\/www.w3.org\/200104\/xmlenc\#TripleDES\/cbc\-](http://www.w3.org/2001/04/xmlenc#tripledes-cbc)|>\=192|セキュリティトークンを復号化するためにサポートされているアルゴリズム。 このアルゴリズムを使用したセキュリティトークンの暗号化はサポートされていません。|  
+|AES128 \- [http:\/www.w3.org\/200104xmlenc\#AES128cbc\-\/\/\/](http://www.w3.org/2001/04/xmlenc#aes128-cbc)|128|セキュリティトークンを復号化するためにサポートされているアルゴリズム。 このアルゴリズムを使用したセキュリティトークンの暗号化はサポートされていません。|  
+|AES192 \- [http:\/www.w3.org\/200104xmlenc\#AES192cbc\-\/\/\/](http://www.w3.org/2001/04/xmlenc#aes192-cbc)|192|セキュリティトークンを復号化するためにサポートされているアルゴリズム。 このアルゴリズムを使用したセキュリティトークンの暗号化はサポートされていません。|  
+|AES256 \- [http:\/www.w3.org\/200104xmlenc\#AES256cbc\-\/\/\/](http://www.w3.org/2001/04/xmlenc#aes256-cbc)|256|**[既定]** 。 セキュリティトークンを暗号化するためにサポートされているアルゴリズム。|  
+|Tripledeskeywrap) \- [http:\/www.w3.org\/200104xmlenc\#kwtripledes\-\/\/\/](http://www.w3.org/2001/04/xmlenc#kw-tripledes)|.NET 4.0 でサポートされているすべてのキーサイズ\+|セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|  
+|Aes128keywrap) \- [http:\/www.w3.org\/200104xmlenc\#kwaes128\-\/\/\/](http://www.w3.org/2001/04/xmlenc#kw-aes128)|128|セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|  
+|Aes192keywrap) \- [http:\/www.w3.org\/200104xmlenc\#kwaes192\-\/\/\/](http://www.w3.org/2001/04/xmlenc#kw-aes192)|192|セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|  
+|Aes256keywrap) \- [http:\/www.w3.org\/200104xmlenc\#kwaes256\-\/\/\/](http://www.w3.org/2001/04/xmlenc#kw-aes256)|256|セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|  
+|RsaV15KeyWrap \- [http:\/www.w3.org\/200104xmlenc\#rsa1\-5\/\/\/\_](http://www.w3.org/2001/04/xmlenc#rsa-1_5)|1024|セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|  
+|Rsaoaepkeywrap) \- [http:\/www.w3.org\/200104xmlenc\#rsaoaep\-rsa-oaep-mgf1p\/\/\/\-](http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p)|1024|既定値です。 セキュリティトークンを暗号化する対称キーを暗号化するためにサポートされているアルゴリズム。|  
+|Sha1\-[http:\/www.w3.org\/PICSDSig\/SHA110\_.html\/\/\_](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|N\/A|アーティファクトの SourceId 生成で AD FS サーバーによって使用されます。このシナリオでは、STS は SAML \(2.0 標準\)の推奨事項に従って SHA1 を使用して、アーティファクト sourceiD の短い160ビット値を作成します。<br /><br />また、ADFS web agent \(レガシコンポーネントによって WS2003 期間\)から、"最終更新" 時刻値の変更を識別して、STS から情報を更新するタイミングを認識できるようにするために使用されます。|  
+|SHA1withRSA\-<br /><br />[http:\/\/www.w3.orgPICSDSig\/RSA SHA1 10\_.html\/\-\/\_](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|N\/A|AD FS サーバーが SAML authenticationrequest の署名を検証する場合、アーティファクト解決要求または応答に署名する\-場合、トークン署名証明書を作成する場合に使用します。<br /><br />このような場合、sha256 は既定値であり、パートナー \(の\)証明書利用者が sha256 をサポートできず、sha1 を使用する必要がある場合にのみ、sha1 が使用されます。|  
   
 ## <a name="BKMK_13"></a>アクセス許可の要件  
 AD FS のインストールと初期構成を実行する管理者には、ローカルドメイン\(のドメイン管理者のアクセス許可 (フェデレーションサーバーが参加しているドメイン) が必要です。\)  

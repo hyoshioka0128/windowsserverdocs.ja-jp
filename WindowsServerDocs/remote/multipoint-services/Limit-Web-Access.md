@@ -13,12 +13,12 @@ ms.assetid: 044f2fd5-5b87-42bb-ba0d-c06516ac48c8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 97d9e671823dade9e488922561c4c6a925719830
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9f3524261e8e93439ff48a3e6666fa7680a76a29
+ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871662"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143734"
 ---
 # <a name="limit-web-access"></a>Web アクセスを制限する
 個々のデスクトップ上のユーザーアクティビティを監視するだけでなく、管理ユーザーは、ユーザーのアクセスをブロックする web サイトや web サイトを指定することによって、特定の web サイトへのユーザーのアクセスを制限することができます。  
@@ -49,7 +49,7 @@ ms.locfileid: "70871662"
    ユーザーがアクセスできないようにするサイトを追加するには、 **[これらのサイトのみを許可]** する をクリックし、ユーザーにアクセスしない web アドレスを入力して、 **[追加]** をクリックします。  
   
    > [!NOTE]
-   > たとえば、「Contoso.com」と入力すると、 [www.contoso.com](www.contoso.com) に対して相対的なサイトが許可またはブロックされます (たとえば、[www.newpage.contoso.com](www.newpage.contoso.com) )。 「Contoso」と入力すると、すべての Contoso 関連サイト (contoso.com、contoso.uk など) が許可または制限されます。  
+   > たとえば、「Contoso.com」と入力すると、www.contoso.com に対して相対的なサイトが許可または\.ブロックされます (たとえば、www newpage.contoso.com)。 「Contoso」と入力すると、すべての Contoso 関連サイト (contoso.com、contoso.uk など) が許可または制限されます。  
   
 3. 許可または禁止するサイトの一覧から Web アドレスを削除するには、Web アドレスを選択し、 **[削除]** をクリックします。  
   

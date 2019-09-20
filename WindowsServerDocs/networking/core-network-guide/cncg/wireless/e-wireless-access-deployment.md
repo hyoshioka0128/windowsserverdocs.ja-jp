@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: bd951f221f1cf1c5715e26830b7da644d685634a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 64098a152d9ba485cfed80e0d0541f0e5ea72bf2
+ms.sourcegitcommit: 47a9514a68e42ac236065fd6b641204b769223d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868977"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71127677"
 ---
 # <a name="wireless-access-deployment"></a>ワイヤレス アクセスの展開
 
@@ -113,7 +113,7 @@ ms.locfileid: "70868977"
 
     - **ドメインローカル**
 
-    - **Global**
+    - **全体**
 
     - **ユニバーサル**
 
@@ -121,7 +121,7 @@ ms.locfileid: "70868977"
 
 6. **[OK]** をクリックします。
 
-ワイヤレスユーザーに複数のセキュリティグループが必要な場合は、これらの手順を繰り返して、追加のワイヤレスユーザーグループを作成します。 後で、NPS に個々のネットワークポリシーを作成して、さまざまな条件と制約を各グループに適用し、それぞれに異なるアクセス許可と接続規則を与えることができます。
+ワイヤレスユーザーに複数のセキュリティグループが必要な場合は、これらの手順を繰り返して、追加のワイヤレスユーザーグループを作成します。 後で個々のネットワークポリシーを NPS に作成し、各グループに異なる条件と制約を適用して、異なるアクセス許可と接続規則を与えることができます。
 
 ### <a name="bkmk_addusers"></a>Wireless Users セキュリティグループにユーザーを追加する
 
