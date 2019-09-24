@@ -49,7 +49,7 @@ ms.locfileid: "71143734"
    ユーザーがアクセスできないようにするサイトを追加するには、 **[これらのサイトのみを許可]** する をクリックし、ユーザーにアクセスしない web アドレスを入力して、 **[追加]** をクリックします。  
   
    > [!NOTE]
-   > たとえば、「Contoso.com」と入力すると、www.contoso.com に対して相対的なサイトが許可または\.ブロックされます (たとえば、www newpage.contoso.com)。 「Contoso」と入力すると、すべての Contoso 関連サイト (contoso.com、contoso.uk など) が許可または制限されます。  
+   > たとえば、「Contoso.com」と入力すると、www.contoso.com に対して相対的なサイトが許可または ブロックされます (たとえば、www\.newpage.contoso.com)。 「Contoso」と入力すると、すべての Contoso 関連サイト (contoso.com、contoso.uk など) が許可または制限されます。  
   
 3. 許可または禁止するサイトの一覧から Web アドレスを削除するには、Web アドレスを選択し、 **[削除]** をクリックします。  
   
