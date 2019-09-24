@@ -8,12 +8,12 @@ ms.date: 07/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 16e62d9232d0ec1b01333d73bc5b4a1555ffbad0
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: d8437e0e33a370ab698d25f25b43fbbcbae97792
+ms.sourcegitcommit: 45415ba58907d650cfda45f4c57f6ddf1255dcbf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987402"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206913"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -120,9 +120,9 @@ Azure IaaS インスタンスなど、ソースとは異なるネットワーク
 転送ジョブを検証するときに、次の警告が表示されます。
 
  > **この資格情報には管理者特権があります。**
- > 警告 :操作をリモートで実行することはできません。
+ > 警告:操作をリモートで実行することはできません。
  > **宛先プロキシが登録されています。**
- > 警告 :宛先プロキシが見つかりませんでした。
+ > 警告:宛先プロキシが見つかりませんでした。
 
 Windows Server 2019 の展開先コンピューターに Storage Migration Service Proxy サービスをインストールしていない場合、または対象コンピューターが Windows Server 2016 または Windows Server 2012 R2 の場合、この動作は仕様によるものです。 転送のパフォーマンスを大幅に向上させるために、プロキシがインストールされた Windows Server 2019 コンピューターに移行することをお勧めします。  
 
@@ -200,7 +200,7 @@ StorageMigrationService/Admin イベントログを調べると、次のよう�
    ストレージを転送できませんでした。
 
    補足Job1 ID (i):  
-   都道府県:失敗したエラー:36931エラーメッセージ: 
+   状態失敗したエラー:36931エラーメッセージ: 
 
    ガイダンス:詳細なエラーを確認し、転送要件が満たされていることを確認してください。 転送ジョブで、移行元と移行先のコンピューターを転送できませんでした。 これは、orchestrator コンピューターが移行元または移行先のコンピューターにアクセスできなかったか、ファイアウォール規則が原因の可能性があります。または、アクセス許可が不足している可能性があります。
 
@@ -248,6 +248,15 @@ StorageMigration で StorageMigration () を実行します。 TransferRequestHa
    ```PowerShell
    Register-SMSProxy -ComputerName *destination server* -Force
    ```
+## <a name="error-dll-was-not-found-when-running-inventory-from-a-cluster-node"></a>クラスターノードからインベントリを実行しているときに、エラー "Dll が見つかりませんでした" が発生する
+
+Windows Server 2019 フェールオーバークラスターノードにインストールされ、Windows Server フェールオーバークラスターをターゲットとしているインベントリを実行しようとすると、一般的にファイルサーバーソースを使用すると、次のエラーが表示されます。
+
+    DLL not found
+    [Error] Failed device discovery stage VolumeInfo with error: (0x80131524) Unable to load DLL 'Microsoft.FailoverClusters.FrameworkSupport.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)   
+
+この問題を回避するには、Storage Migration Service orchestrator を実行しているサーバーに "フェールオーバークラスター管理ツール" (RSAT-クラスター化-管理) をインストールします。 
+
 
 ## <a name="see-also"></a>関連項目
 
