@@ -5,15 +5,15 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 08/22/2019
+ms.date: 09/18/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: cdd7986486fd3cad07f5e4577aaf0ab404bfb5d3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 943026c04055919fefd7002c50144d28413de1a7
+ms.sourcegitcommit: 27f0caf74e88781054250455c3c1adf06deb6234
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869586"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71124345"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -129,9 +129,10 @@ ms.locfileid: "70869586"
 
 次の最新の機能について確認してください。
 
-- バージョン [1908](https://aka.ms/wac1908) - 視覚的な更新、Packetmon、FlowLog Audit、クラスター用 Azure Monitor のオンボード、および HTTPS 経由の WinRM (ポート 5986) のサポートが含まれています。
-- バージョン [1907](https://aka.ms/wac1907) - Azure コスト見積もりのリンクを追加し、仮想マシンのインポート/エクスポートとタグ付けの機能を強化しました。
-- バージョン [1906](https://aka.ms/wac1906) - インポート/エクスポート VM を追加済み。Azure アカウントの切り替え。Azure からの接続の追加、接続設定の実験、パフォーマンスの向上、およびパフォーマンス プロファイリング ツール。
+- バージョン [1909](https://aka.ms/wac1909) では、Azure VM 固有の接続の種類が導入され、従来のフェールオーバー クラスターと HCI クラスターの接続の種類が統合されています。
+- バージョン [1908](https://aka.ms/wac1908) では、視覚的な更新、Packetmon、FlowLog Audit、クラスター用 Azure Monitor のオンボード、および HTTPS 経由の WinRM (ポート 5986) のサポートが追加されています。
+- バージョン [1907](https://aka.ms/wac1907) では、Azure コスト見積もりのリンクを追加し、仮想マシンのインポート/エクスポートとタグ付けの機能を強化しました。
+- バージョン [1906](https://aka.ms/wac1906) ではインポート/エクスポート VM を追加しました。Azure アカウントの切り替え。Azure からの接続の追加、接続設定の実験、パフォーマンスの向上、およびパフォーマンス プロファイリング ツール。
 - バージョン 1904.1 は最新の GA リリースです。ゲートウェイ プラグインの安定性を改善するためのメンテナンスに関する更新プログラムです。
 - バージョン [1904](https://aka.ms/wac1904) は、Azure ハイブリッド サービス ツールを導入し、プレビュー段階にあった機能を GA チャネルに取り込んだ GA リリースでした。
 - バージョン [1903](https://aka.ms/wac1903) では、Azure Monitor からの電子メール通知と、Active Directory から Server または PC 接続を追加する機能と、Active Directory、DHCP、および DNS を管理するための新しいツールが追加されました。
