@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e90738a157f620124bfca3d5f1f4c12789d3bf2
-ms.sourcegitcommit: b17ccf7f81e58e8f4dd844be8acf784debbb20ae
+ms.openlocfilehash: 1c0c6ca10e7ebac16d81fe1393e471a7878fd0ca
+ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69023916"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143757"
 ---
 # <a name="install-upgrade-or-migrate-to-windows-server"></a>Windows Server のインストール、アップグレード、または移行
 
@@ -33,9 +33,7 @@ Windows Server をインストールする最も簡単な方法は、クリー�
 
 同じハードウェアを使い、サーバーをフラット化せずに、セットアップされているすべてのサーバーの役割を保持する場合、**インプレース アップグレード**を行うことがあります。これにより、古いオペレーティング システムから新しいオペレーティング システムに移行し、ユーザーの設定、サーバーの役割、およびデータはそのまま維持されます。 たとえば、サーバーで Windows Server 2012 R2 を実行している場合、Windows Server 2016 または Windows Server 2019 にアップグレードできます。 ただし、すべての古いオペレーティング システムが、すべての新しいオペレーティング システムに移行できるわけではありません。 
 
-Windows Server のアップグレードに関する手順を追ったガイダンスについては、[Windows Server アップグレード センター](http://aka.ms/upgradecenter)にアクセスしてください。
-
-[![Windows Server アップグレード センターのスクリーンショット](media/upgrade-center.png)](http://aka.ms/upgradecenter)
+Windows Server のアップグレード手順のガイダンスについては、[Windows Server アップグレード コンテンツ](../upgrade/upgrade-overview.md)をご覧ください。
 
 ## <a name="cluster-os-rolling-upgrade"></a>クラスター OS のローリング アップグレード
 

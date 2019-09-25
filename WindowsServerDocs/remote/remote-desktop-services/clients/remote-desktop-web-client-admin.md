@@ -4,16 +4,16 @@ description: 管理者がどのようにしてリモート デスクトップ We
 ms.prod: windows-server-threshold
 ms.technology: remote-desktop-services
 ms.author: helohr
-ms.date: 11/2/2018
+ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 7de392b049fbe910688a4b950e1ca870b6ba3f46
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 86667c744acfd340c2608609323b95c159e1279d
+ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871167"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143752"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>ユーザー用にリモート デスクトップ Web クライアントをセットアップする
 
@@ -265,6 +265,10 @@ RD セッション ホスト サーバーが RD ブローカー サーバーと�
 既定では、製品利用統計情報を有効にするか無効にするかをユーザーが選択できます。 ブール値 **$false** は、既定のクライアント動作と一致します。 ブール値 **$true** は製品利用統計情報を無効にし、ユーザーがこれを有効にすることを制限します。
 
 ### <a name="remote-resource-launch-method"></a>リモート リソースの起動方法
+
+>[!NOTE]
+>現在、この設定が機能するのは RDS Web クライアントのみであり、Windows 仮想デスクトップ Web クライアントでは機能しません。
+
 既定では、ユーザーはリモート リソースの起動を、(1) ブラウザーで行うか、(2) .rdp ファイルをダウンロードし、コンピューターにインストールされている他のクライアントで処理するかを選択できます。 管理者は、以下の PowerShell コマンドを使用して、展開でのリモート リソースの起動方法を制限できます。
 
    ```PowerShell

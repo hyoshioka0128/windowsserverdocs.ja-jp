@@ -11,27 +11,34 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/13/2019
+ms.date: 09/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9b51370a83fe6a49c29cc2557abd54e339c3b213
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: 587ad44509451497b253689238c3aef233a37153
+ms.sourcegitcommit: e210fce039452a9855353520c7f8698acd76ffce
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70988250"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71071289"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows デスクトップ クライアントの新機能
 
-[Windows デスクトップ クライアント](windowsdesktop.md)は定期的に更新され、新機能の追加と問題の修正が行われています。 ここでは、最新の更新プログラムを紹介します。
+Windows デスクトップ クライアントの詳細については、「[Windows デスクトップ クライアントの概要](windowsdesktop.md)」で確認できます。 クライアントの最新の更新プログラムは以下で確認できます。
 
-## <a name="client-versions"></a>クライアント バージョン
+## <a name="latest-client-versions"></a>最新のクライアント バージョン
 
-クライアントは、リリースまたは Insider のお客様に対して異なるバージョンを使用するように構成できます。 リリース バージョンは既定の構成です。
+クライアントは、さまざまな[ユーザー グループ](windowsdesktop-admin.md#configure-user-groups)に対して構成できます。 次の表に、各ユーザー グループで使用できる現在のバージョンを示します。
 
-|お客様 |バージョン  |
-|---------|---------|
-|リリース  |1.2.246  |
-|Insider  |1.2.246  |
+|ユーザー グループ |バージョン  |
+|-----------|---------|
+|パブリック     |1.2.246  |
+|Insider    |1.2.247  |
+
+## <a name="updates-for-version-12247"></a>バージョン 1.2.247 の更新内容
+
+*公開日:2019 年 9 月 17 日*
+
+- 接続中に認証を行うときに発生するクラッシュを修正しました。
+- クライアントを閉じるときに発生するクラッシュを修正しました。
 
 ## <a name="updates-for-version-12246"></a>バージョン 1.2.246 の更新内容
 

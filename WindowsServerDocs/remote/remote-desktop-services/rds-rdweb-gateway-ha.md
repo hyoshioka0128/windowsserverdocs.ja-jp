@@ -12,12 +12,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 11/08/2016
 manager: dongill
-ms.openlocfilehash: 4e185e51b09d2e2f8ac4527f9de339de27e02f24
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 869d47be73a39114ecc05080f8da16f460fb8198
+ms.sourcegitcommit: 6423dfa9cecb3b06bdd563cae113c3e80a4ec330
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805139"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105038"
 ---
 # <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>RD Web およびゲートウェイ Web フロントに高可用性を追加する
 
@@ -96,12 +96,13 @@ Azure インフラストラクチャを使用している場合は、外部の A
 1.  Azure Load Balancer を作成します。  
     1.  Azure portal で **[参照] > [ロード バランサー] > [追加]** の順にクリックします。  
     2.  名前を入力します (例: **WebGwLB**)。  
-    3.  **[スキーム]** に **[パブリック]** を選択し、 **[パブリック IP アドレス]** 、 **[パブリック IP アドレス]** の順に選択します。 既存のパブリック IP アドレスを選択することも、新しいものを作成することもできます。 
-    4.  適切な **[サブスクリプション]** 、 **[リソース グループ]** 、および **[場所]** を選択します。
-    5.  **[作成]** をクリックします。  
+    3.  **[スキーム]** として **[パブリック]** を選択します。
+    4.  **[パブリック IP アドレス]** で **[パブリック IP アドレスの選択]** を選択し、既存のパブリック IP アドレスを選択するか、新しいパブリック IP アドレスを作成します。
+    5.  適切な **[サブスクリプション]** 、 **[リソース グループ]** 、および **[場所]** を選択します。
+    6.  **[作成]** をクリックします。  
 2. どのサーバーが有効化を監視するために[プローブ](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/)を作成します。  
-    1.  Azure portal で、 **[参照] > [ロード バランサー]** の順にクリックし、作成したばかりのロード バランサー (例: WebGwLB)、[設定] をクリックします  
-    2.  **[プローブ] > [追加]** の順にクリックします。  
+    1.  Azure portal で **[参照]**  >  **[ロード バランサー]** を選択し、前のステップで作成したロード バランサーを選択します。
+    2.  **[すべての設定]**  >  **[プローブ]**  >  **[追加]** を選択します。  
     3.  プローブの名前を入力します (例: **HTTPS** など)。 **[プロトコル]** として **[TCP]** を選択し、 **[ポート]** に **443** を入力し、 **[OK]** をクリックします。   
 3.  HTTPS と UDP の負荷分散規則を作成します。  
     1.  **[設定]** で、 **[負荷分散規則]** をクリックします。  

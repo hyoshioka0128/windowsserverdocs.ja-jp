@@ -14,12 +14,12 @@ ms.assetid: 52b9e09f-39e0-41a9-9d3b-4d5f4eacf3e0
 author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
-ms.openlocfilehash: 74ec3d9bfbdb435c5bcb93ea1ef2cd9cdf2dd9d2
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 1fcb3fb7e2989399d908a1b5bed7bd21240efeab
+ms.sourcegitcommit: 2ec5e779c00481b13f186e2c56d207007897cfd4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871278"
+ms.lasthandoff: 09/16/2019
+ms.locfileid: "71021650"
 ---
 # <a name="welcome-to-remote-desktop-services"></a>リモート デスクトップ サービスへようこそ 
 
