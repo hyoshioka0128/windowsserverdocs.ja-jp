@@ -1,37 +1,38 @@
 ---
-title: Windows Server 2016 で HYPER-V を管理します。
-description: HYPER-V の管理に関する記事へのリンクを示します
+title: Windows Server で Hyper-v を管理する
+description: Hyper-v の管理に関する記事へのリンクを提供します。
 ms.prod: windows-server-threshold
-ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 5c06b632-dd19-46ca-9f51-130c321963d8
-author: KBDAzure
-ms.author: kathydav
+author: jasongerend
+ms.author: jgerend
 ms.date: 01/08/2018
-ms.openlocfilehash: 0f5f7600dd47a97e6f49669426d32054e4ab847d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e8a9d4a894990c793c3725f93a51f04c93be41e3
+ms.sourcegitcommit: d12d9e6afd71d23e8a24682ad80d2cf3bc486588
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867423"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71226011"
 ---
-# <a name="manage-hyper-v-on-windows-server"></a>Windows server HYPER-V を管理します。
+# <a name="manage-hyper-v-on-windows-server"></a>Windows Server で Hyper-v を管理する
 
 >適用先:Windows Server 2016、Windows Server 2019
 
-このセクションでは、リソースを使用して、Windows Server 2016 で HYPER-V を管理するためにします。
+このセクションのリソースは、Windows Server で Hyper-v を管理する際に役立ちます。
 
-- [標準または実稼働のチェックポイント間での選択します。](Choose-between-standard-or-production-checkpoints-in-Hyper-V.md)  
-- [有効にするか、チェックポイントを無効にします。](Enable-or-disable-checkpoints-in-Hyper-V.md) 
-- [HYPER-V マネージャーでのホストを管理します。](Remotely-manage-Hyper-V-hosts.md)
-- [ホスト CPU リソースの制御を管理します。](manage-hyper-v-minroot-2016.md)
-- [VM の CPU グループを使用します。](manage-hyper-v-cpugroups.md)
-- [PowerShell ダイレクトでの Windows 仮想マシンを管理します。](Manage-Windows-virtual-machines-with-PowerShell-Direct.md)  
-- [HYPER-V レプリカを設定します。](Set-up-Hyper-V-Replica.md)
-- [フェールオーバー クラスタ リングのないライブ マイグレーションを使用して、仮想マシンを移動するには](Use-live-migration-without-Failover-Clustering-to-move-a-virtual-machine.md)
-  
-
-
+- [Hyper-V VM 用の永続的なメモリ デバイスの構成](persistent-memory-cmdlets.md)
+- [標準または実稼働のチェックポイントを選択する](Choose-between-standard-or-production-checkpoints-in-Hyper-V.md)
+- [VHD セットの作成](Create-VHDSet-file.md)
+- [チェックポイントを有効または無効にする](Enable-or-disable-checkpoints-in-Hyper-V.md)
+- [Hyper-V マネージャーでホストを管理する](Remotely-manage-Hyper-V-hosts.md)
+- [ホストの CPU リソース コントロールを管理する](manage-hyper-v-minroot-2016.md)
+- [VM の CPU グループの使用](manage-hyper-v-cpugroups.md)
+- [ハイパーバイザー スケジューラの種類を管理する](manage-hyper-v-scheduler-types.md)
+- [Hyper-V スケジューラの種類の選択について](about-hyper-v-scheduler-type-selection.md)
+- [統合サービスの管理](Manage-Hyper-V-integration-services.md)
+- [PowerShell Direct で Windows VM を管理する](Manage-Windows-virtual-machines-with-powershell-direct.md)
+- [Hyper-V レプリカを設定する](Set-up-Hyper-V-Replica.md) 
+- [Intel パフォーマンス監視ハードウェアを有効にする](Performance-Monitoring-Hardware.md)
+- [ライブ マイグレーションで VM を移動する](Live-migration-overview.md)
