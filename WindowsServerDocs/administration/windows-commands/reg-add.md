@@ -1,5 +1,5 @@
 ---
-title: Reg を追加します。
+title: reg add
 description: 'Windows コマンド」のトピック * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 05/31/2019
 ms.locfileid: "66441913"
 ---
-# <a name="reg-add"></a>Reg を追加します。
+# <a name="reg-add"></a>reg add
 
 
 新しいサブキーまたはエントリをレジストリに追加します。
@@ -43,7 +43,7 @@ reg add <KeyName> [{/v ValueName | /ve}] [/t DataType] [/s Separator] [/d Data] 
 |   /s\<区切り記号 >   |                                                                                                                                                              REG_MULTI_SZ データ型が指定されている複数のエントリがリストに表示される必要がある場合は、データの複数のインスタンスを分離するために使用する文字を指定します。 既定の区切り記号は、指定しない場合、 **\0**します。                                                                                                                                                              |
 |     /d\<データ >      |                                                                                                                                                                                                                                                 新しいレジストリ エントリのデータを指定します。                                                                                                                                                                                                                                                  |
 |         /f          |                                                                                                                                                                                                                                           確認を求めずに、レジストリ エントリを追加します。                                                                                                                                                                                                                                           |
-|         /?          |                                                                                                                                                                                                                                              ヘルプを表示 **reg 追加** コマンド プロンプト。                                                                                                                                                                                                                                               |
+|         /?          |                                                                                                                                                                                                                                              ヘルプを表示 **reg add** コマンド プロンプト。                                                                                                                                                                                                                                               |
 
 ## <a name="remarks"></a>注釈
 
