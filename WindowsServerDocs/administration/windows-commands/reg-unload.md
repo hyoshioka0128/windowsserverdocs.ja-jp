@@ -1,5 +1,5 @@
 ---
-title: Reg アンロード
+title: reg unload
 description: 'Windows コマンド」のトピック * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -20,11 +20,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59834983"
 ---
-# <a name="reg-unload"></a>Reg アンロード
+# <a name="reg-unload"></a>reg unload
 
 
 
-レジストリを使用して既に読み込まれているセクションを削除、 **reg ロード** 操作します。
+レジストリを使用して既に読み込まれているセクションを削除、 **reg load** 操作します。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
@@ -39,11 +39,11 @@ reg unload <KeyName>
 |パラメーター|説明|
 |---------|-----------|
 |\<キー名 >|アンロードするサブキーの完全なパスを指定します。 リモート コンピューターに指定する場合、コンピューター名を含める (形式の\\ \\ComputerName\)の一部として、 *KeyName*します。 省略すると\\ \\ComputerName\ によりローカル コンピューターに既定値に操作します。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キーは、HKLM、HKCU、HKCR、HKU、および HKCC です。 リモート コンピューターが指定されている場合は、有効なルート キーは HKLM および HKU です。|
-|/?|ヘルプを表示 **reg アンロード** コマンド プロンプト。|
+|/?|ヘルプを表示 **reg unload** コマンド プロンプト。|
 
 ## <a name="remarks"></a>注釈
 
-次の表に、戻り値の **reg アンロード** オプション。
+次の表に、戻り値の **reg unload** オプション。
 
 |値|説明|
 |-----|-----------|
