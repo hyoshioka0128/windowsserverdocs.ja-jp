@@ -1,5 +1,5 @@
 ---
-title: Reg ロード
+title: reg load
 description: 'Windows コマンド」のトピック * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59852193"
 ---
-# <a name="reg-load"></a>Reg ロード
+# <a name="reg-load"></a>reg load
 
 
 
@@ -39,12 +39,12 @@ reg load KeyName FileName
 |パラメーター|説明|
 |---------|-----------|
 |\<キー名 >|読み込むサブキーの完全なパスを指定します。 リモート コンピューターに指定する場合、コンピューター名を含める (形式の\\ \\ComputerName\)の一部として、 *KeyName*します。 省略すると\\ \\ComputerName\ によりローカル コンピューターに既定値に操作します。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キーは次のとおりです。HKLM、HKCU、HKCR、HKU、および hkcc します。 リモート コンピューターが指定されている場合は、有効なルート キーは。HKLM および hku です。|
-|\<FileName>|読み込むファイルのパスと名前を指定します。 使用してこのファイルを事前に作成する必要があります、 **reg 保存** 操作と .hiv 拡張子です。|
-|/?|ヘルプを表示 **reg ロード** コマンド プロンプト。|
+|\<FileName>|読み込むファイルのパスと名前を指定します。 使用してこのファイルを事前に作成する必要があります、 **reg save** 操作と .hiv 拡張子です。|
+|/?|ヘルプを表示 **reg load** コマンド プロンプト。|
 
 ## <a name="remarks"></a>注釈
 
-次の表に、戻り値の **reg ロード** 操作します。
+次の表に、戻り値の **reg load** 操作します。
 
 |値|説明|
 |-----|-----------|
