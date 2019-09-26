@@ -1,5 +1,5 @@
 ---
-title: Reg のコピー
+title: reg copy
 description: 'Windows コマンド」のトピック * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59867563"
 ---
-# <a name="reg-copy"></a>Reg のコピー
+# <a name="reg-copy"></a>reg copy
 
 
 
@@ -47,7 +47,7 @@ reg copy <KeyName1> <KeyName2> [/s] [/f]
 ## <a name="remarks"></a>注釈
 
 -   Reg は、サブキーのコピー時に確認を求めません。
--   次の表に、戻り値の **reg コピー** 操作します。
+-   次の表に、戻り値の **reg copy** 操作します。
 
 |値|説明|
 |-----|-----------|
