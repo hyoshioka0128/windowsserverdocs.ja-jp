@@ -1,5 +1,5 @@
 ---
-title: Reg のエクスポート
+title: reg export
 description: 'Windows コマンド」のトピック * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59889653"
 ---
-# <a name="reg-export"></a>Reg のエクスポート
+# <a name="reg-export"></a>reg export
 
 
 
@@ -45,7 +45,7 @@ Reg export KeyName FileName [/y]
 
 ## <a name="remarks"></a>注釈
 
-次の表に、戻り値の **reg エクスポート** 操作します。
+次の表に、戻り値の **reg export** 操作します。
 
 |値|説明|
 |-----|-----------|
