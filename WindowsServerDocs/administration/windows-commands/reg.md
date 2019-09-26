@@ -24,28 +24,28 @@ ms.locfileid: "59838033"
 
 
 
-レジストリ エントリをレジストリ サブキー情報と値に対して操作を実行します。 **Reg**コマンドが含まれます。
+レジストリ エントリをレジストリ サブキー情報と値に対して操作を実行します。 **reg**コマンドが含まれます。
 
-[Reg を追加します。](reg-add.md)
+[Reg add](reg-add.md)
 
-[Reg の比較](reg-compare.md)
+[Reg compare](reg-compare.md)
 
-[Reg のコピー](reg-copy.md)
+[Reg copy](reg-copy.md)
 
 [Reg delete](reg-delete.md)
 
-[Reg のエクスポート](reg-export.md)
+[Reg export](reg-export.md)
 
-[Reg のインポート](reg-import.md)
+[Reg import](reg-import.md)
 
-[Reg ロード](reg-load.md)
+[Reg load](reg-load.md)
 
-[Reg クエリ](reg-query.md)
+[Reg query](reg-query.md)
 
-[Reg 復元](reg-restore.md)
+[Reg restore](reg-restore.md)
 
-[Reg 保存](reg-save.md)
+[Reg save](reg-save.md)
 
-[Reg アンロード](reg-unload.md)
+[Reg unload](reg-unload.md)
 
 一部の操作を使用すると、表示または他のユーザーを使用すると、ローカル コンピューターを構成するときに、ローカルまたはリモート コンピューターにレジストリ エントリを構成できます。 使用して **reg** コンピューターをリモート レジストリを構成するには、制限の一部の操作で使用できるパラメーターです。 構文とリモート コンピューターで使用できることを確認するには、各操作のパラメーターを確認します。
