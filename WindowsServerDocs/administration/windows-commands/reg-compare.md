@@ -1,5 +1,5 @@
 ---
-title: Reg の比較
+title: reg compare
 description: 'Windows コマンド」のトピック * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 05/31/2019
 ms.locfileid: "66441923"
 ---
-# <a name="reg-compare"></a>Reg の比較
+# <a name="reg-compare"></a>reg compare
 
 
 
@@ -52,7 +52,7 @@ reg compare <KeyName1> <KeyName2> [{/v ValueName | /ve}] [{/oa | /od | /os | on}
 
 ## <a name="remarks"></a>注釈
 
-次の表に、戻り値の **reg 比較**します。
+次の表に、戻り値の **reg compare**します。
 
 |Value|説明|
 |-----|-----------|
@@ -80,7 +80,7 @@ REG COMPARE HKLM\Software\MyCo HKLM\Software\MyCo1 /v Version
 
 すべてのサブキーと hklm \software\myco の下ですべてのサブキーと hklm \software\myco の下で、ローカル コンピューター上の値と干支をという名前のコンピューター上の値を比較するには、次のように入力します。
 
-REG 比較\\ \\ZODIAC\HKLM\Software\MyCo \\\\します。 /s
+REG COMPARE \\\\ZODIAC\HKLM\Software\MyCo \\\\. /s
 
 #### <a name="additional-references"></a>その他の参照情報
 
