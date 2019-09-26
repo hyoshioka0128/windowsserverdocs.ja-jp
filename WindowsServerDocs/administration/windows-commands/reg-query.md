@@ -1,5 +1,5 @@
 ---
-title: Reg クエリ
+title: reg query
 description: 'Windows コマンド」のトピック * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59827753"
 ---
-# <a name="reg-query"></a>Reg クエリ
+# <a name="reg-query"></a>reg query
 
 
 
@@ -54,7 +54,7 @@ reg query <KeyName> [{/v <ValueName> | /ve}] [/s] [/se <Separator>] [/f <Data>] 
 
 ## <a name="remarks-optional-section"></a>「解説」\<省略可能なセクション >
 
-次の表に、戻り値の **reg クエリ** 操作します。
+次の表に、戻り値の **reg query** 操作します。
 
 |Value|説明|
 |-----|-----------|
