@@ -1,5 +1,5 @@
 ---
-title: Reg 保存
+title: reg save
 description: 'Windows コマンド」のトピック * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59841083"
 ---
-# <a name="reg-save"></a>Reg 保存
+# <a name="reg-save"></a>reg save
 
 
 
@@ -41,17 +41,17 @@ reg save <KeyName> <FileName> [/y]
 |\<キー名 >|サブキーの完全なパスを指定します。 リモート コンピューターに指定する場合、コンピューター名を含める (形式の\\ \\ComputerName\)の一部として、 *KeyName*します。 省略すると\\ \\ComputerName\ によりローカル コンピューターに既定値に操作します。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キーは次のとおりです。HKLM、HKCU、HKCR、HKU、および hkcc します。 リモート コンピューターが指定されている場合は、有効なルート キーは。HKLM および hku です。|
 |\<FileName>|作成されるファイルのパスと名前を指定します。 パスが指定されていない場合は、現在のパスが使用されます。|
 |/y|名前の既存のファイルを上書き *FileName* 確認を求めずにします。|
-|/?|ヘルプを表示 **reg 保存** コマンド プロンプト。|
+|/?|ヘルプを表示 **reg save** コマンド プロンプト。|
 
 ## <a name="remarks-optional-section"></a>「解説」\<省略可能なセクション >
 
--   次の表に、戻り値の **reg 保存** 操作します。
+-   次の表に、戻り値の **reg save** 操作します。
 
 |Value|説明|
 |-----|-----------|
 |0|成功|
 |1|失敗|
--   すべてのレジストリ エントリを編集する前に保存された親サブキー、 **reg 保存** 操作します。 復元と元のサブキーの編集に失敗した場合、 **reg 復元** 操作します。
+-   すべてのレジストリ エントリを編集する前に保存された親サブキー、 **reg save** 操作します。 復元と元のサブキーの編集に失敗した場合、 **reg restore** 操作します。
 
 ## <a name="BKMK_examples"></a>例
 
