@@ -1,5 +1,5 @@
 ---
-title: Reg delete
+title: reg delete
 description: 'Windows コマンド」のトピック * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59877083"
 ---
-# <a name="reg-delete"></a>Reg delete
+# <a name="reg-delete"></a>reg delete
 
 
 
@@ -43,11 +43,11 @@ Reg delete <KeyName> [{/v ValueName | /ve | /va}] [/f]
 |/ve|値を持たないエントリのみが削除されることを指定します。|
 |/va|指定したサブキーの下のすべてのエントリを削除します。 指定したサブキーの下のサブキーは削除されません。|
 |/f|確認を求めずに、既存のレジストリ サブキーまたはエントリを削除します。|
-|/?|ヘルプを表示 **reg 削除** コマンド プロンプト。|
+|/?|ヘルプを表示 **reg delete** コマンド プロンプト。|
 
 ## <a name="remarks"></a>注釈
 
-次の表に、戻り値の **reg 削除** 操作します。
+次の表に、戻り値の **reg delete** 操作します。
 
 |値|説明|
 |-----|-----------|
