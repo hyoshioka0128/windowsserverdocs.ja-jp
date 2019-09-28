@@ -1,7 +1,7 @@
 ---
 title: Windows Server 2019 の Standard エディションと Datacenter エディションの比較
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: server-general
@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: e6ec6934b5c2cfcc33a95a0336e22a20dbd60d82
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: af9334159b4b2aef6c2880e44bbc4ee46d7821b7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "64772398"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360872"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2019"></a>Windows Server 2019 の Standard エディションと Datacenter エディションの比較
 

@@ -2,7 +2,7 @@
 title: ユーザー アカウントに関する考慮事項
 description: MultiPoint Services のユーザーアカウント、ユーザー名、およびパスワードに関する考慮事項を提供します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: c4a0355b5e081e0673447fb86f1475d0b34c3792
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: c81d14d46e96d39676e1fb6fa31892e0d5e1b683
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871502"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389256"
 ---
 # <a name="user-account-considerations"></a>ユーザー アカウントに関する考慮事項
 このトピックでは、管理ユーザーとして考慮すべき作成し、ユーザー アカウントを管理する際の問題について説明します。 MultiPoint マネージャーの [Users] タブ内のユーザー アカウントを管理します。 詳細については、「[ユーザー アカウントの管理](Manage-User-Accounts.md)」トピックを参照してください。  

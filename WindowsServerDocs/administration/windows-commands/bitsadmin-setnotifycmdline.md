@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setnotifycmdline
-description: Windows コマンド」のトピック * * *-bitsadmin setnotifycmdlineSets ジョブでは、データの転送が完了すると、またはジョブの状態になったときに実行するコマンド ライン コマンド。
+description: Windows コマンドのトピック * * * *-bitsadmin setnotifycmdlineSets、ジョブがデータの転送を終了したとき、またはジョブが状態に入ったときに実行されるコマンドラインコマンドを設定します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f1cea4e99cbaaf3881c6f436bdb932090ad6b006
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7a307fe552e7d8ec5852de953a3a439cb02246ec
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859073"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380480"
 ---
 # <a name="bitsadmin-setnotifycmdline"></a>bitsadmin setnotifycmdline
 
-ジョブは、データの転送が完了すると、またはジョブの状態になったときに実行するコマンド ライン コマンドを設定します。
+ジョブがデータの転送を終了したとき、またはジョブが状態に入ったときに実行されるコマンドラインコマンドを設定します。
 
-**1.2 およびそれ以前の BITS**: サポートされません。
+**BITS 1.2 以前**: サポートされていません。
 
 ## <a name="syntax"></a>構文
 
@@ -37,19 +37,19 @@ bitsadmin /SetNotifyCmdLine <Job> <ProgramName> [ProgramParameters]
 |パラメーター|説明|
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
-|プログラム名|ジョブの完了時に実行するコマンドの名前。|
-|ProgramParameters|渡すパラメーター *ProgramName*します。|
+|ProgramName|ジョブの完了時に実行するコマンドの名前。|
+|ProgramParameters|*ProgramName*に渡すパラメーター。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-場合は NULL を指定する*ProgramName*と*ProgramParameters*します。 場合*ProgramName*が null の場合、 *ProgramParameters* NULL にする必要があります。
+*ProgramName*と*PROGRAMPARAMETERS*には NULL を指定できます。 *ProgramName*が null の場合、 *PROGRAMPARAMETERS*は null である必要があります。
 
 > [!IMPORTANT]
-> 場合*ProgramParameters* null の場合、その後の最初のパラメーターでない*ProgramParameters*と一致する必要があります*ProgramName*します。
+> *Programparameters*が NULL でない場合、 *programparameters*の最初のパラメーターは*ProgramName*と一致する必要があります。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブは、メモ帳を実行するサービスによって使用されるコマンド ライン コマンド*myDownloadJob*が完了するとします。
+次の例では、 *Mydownloadjob*という名前のジョブが完了したときに、メモ帳を実行するためにサービスによって使用されるコマンドラインコマンドを設定します。
 ```
 C:\>bitsadmin /SetNotifyCmdLine myDownloadJob c:\winnt\system32\notepad.exe NULL
 ```
@@ -59,4 +59,4 @@ C:\>bitsadmin /SetNotifyCmdLine myDownloadJob c:\winnt\system32\notepad.exe "not
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

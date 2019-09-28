@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3ebe125ce7850797d786e7b564c98889cfb19927
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: af045545826269630af9327480cda59093d219df
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445861"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407140"
 ---
 # <a name="appendix-b-setting-up-the-test-environment"></a>付録 B:テスト環境のセットアップ
 
@@ -23,15 +23,15 @@ ms.locfileid: "66445861"
 このトピックでは、ダイナミック アクセス制御をテストする実践的ラボを作成する手順の概要を示します。 依存関係のあるコンポーネントが多数存在するため、手順には順に従ってください。  
 
 ## <a name="prerequisites"></a>前提条件  
-**ハードウェアおよびソフトウェア要件**  
+**ハードウェアとソフトウェアの要件**  
 
 テスト ラボを設定するための要件:  
 
 -   Windows Server 2008 R2 (SP1) および Hyper-V を実行しているホスト サーバー  
 
--   Windows Server 2012 の ISO のコピー  
+-   Windows Server 2012 ISO のコピー  
 
--   Windows 8 の ISO のコピー  
+-   Windows 8 ISO のコピー  
 
 -   Microsoft Office 2010  
 
@@ -51,7 +51,7 @@ ms.locfileid: "66445861"
 
 仮想マシンのパスワードは、次のようにする必要があります。  
 
--   Builtin \administrator: pass@word1  
+-   BUILTIN\Administrator: pass@word1  
 
 -   Contoso\Administrator: pass@word1  
 
@@ -66,7 +66,7 @@ Windows Server 2008 R2 (SP1) を実行しているコンピューターに Hyper
 
 1.  **[スタート]** ボタンをクリックして、[サーバー マネージャー] をクリックします。  
 
-2.  サーバー マネージャーのメイン ウィンドウの [役割の概要] エリアにある **[役割の追加]** をクリックします。  
+2.  サーバー マネージャーのメイン ウィンドウの 役割の概要 エリアにある  **役割の追加** をクリックします。  
 
 3.  **[サーバーの役割の選択]** ページで、 **[Hyper-V]** をクリックします。  
 
@@ -95,12 +95,12 @@ Windows Server 2008 R2 (SP1) を実行しているコンピューターに Hyper
 
 6.  **[OK]** をクリックして仮想ネットワークを作成して仮想ネットワーク マネージャーを閉じるか、 **[適用]** をクリックして仮想ネットワークを作成して仮想ネットワーク マネージャーの使用を続行します。  
 
-### <a name="BKMK_Build"></a>ドメイン コント ローラーをビルドします。  
-ドメイン コントローラー (DC1) として使用する仮想マシンを作成します。 Windows Server 2012 の ISO を使用して仮想マシンをインストールし、DC1 という名前を付けます。  
+### <a name="BKMK_Build"></a>ドメインコントローラーを構築する  
+ドメイン コントローラー (DC1) として使用する仮想マシンを作成します。 Windows Server 2012 ISO を使用して仮想マシンをインストールし、DC1 という名前を指定します。  
 
 ##### <a name="to-install-active-directory-domain-services"></a>Active Directory ドメイン サービスをインストールするには  
 
-1. 仮想マシンを ID_AD_Network に接続します。 管理者として、パスワードを使用して、DC1 にサインインします。  <strong>pass@word1</strong>します。  
+1. 仮想マシンを ID_AD_Network に接続します。 パスワード<strong>pass@word1</strong>を使用して、管理者として DC1 にサインインします。  
 
 2. サーバー マネージャーで、 **[管理]** をクリックし、 **[役割と機能の追加]** をクリックします。  
 
@@ -122,7 +122,7 @@ Windows Server 2008 R2 (SP1) を実行しているコンピューターに Hyper
 
 11. **[配置構成]** ページで **[新しいフォレストを追加する]** をクリックし、ルート ドメインの名前 **contoso.com** を入力してから、 **[次へ]** をクリックします。  
 
-12. **ドメイン コント ローラー オプション** ページで、Windows Server 2012 としてドメインおよびフォレスト機能レベルを選択、DSRM パスワードを指定<strong>pass@word1</strong>、 をクリックし、 **次へ**.  
+12. **[ドメインコントローラーオプション]** ページで、Windows Server 2012 としてドメインおよびフォレストの機能レベルを選択し、DSRM パスワード<strong>pass@word1</strong>を指定して、 **[次へ]** をクリックします。  
 
 13. **[DNS オプション]** ページで、 **[次へ]** をクリックします。  
 
@@ -164,7 +164,7 @@ Active Directory 管理センターを使用して、次のユーザーを作成
 4. 示されている属性を使用して次のユーザーを作成します。  
 
 
-   |       ユーザー       |  Username  |     メール アドレス      | 部署 |      グループ       | 国/地域 |
+   |       User       |  Username  |     メール アドレス      | 部署 |      グループ       | 国/地域 |
    |------------------|------------|------------------------|------------|------------------|----------------|
    | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  ファイナンス   |                  |       US       |
    |    Miles Reid    |   MReid    |   MReid@contoso.com    |  ファイナンス   |   FinanceAdmin   |       US       |
@@ -179,7 +179,7 @@ Active Directory 管理センターを使用して、次のユーザーを作成
 
 1.  画面の右上隅にカーソルを移動し、検索アイコンをクリックします。 検索ボックスに「 **group policy management**」と入力し、 **[グループ ポリシーの管理]** をクリックします。  
 
-2.  **[フォレスト: contoso.com]** を展開してから、 **[ドメイン]** を展開し、 **contoso.com**に移動して、 **(contoso.com)** を展開し、 **[FileServerOU]** を選択します。 右クリックして**このドメインに GPO を作成し、リンクします。**
+2.  **[フォレスト: contoso.com]** を展開してから、 **[ドメイン]** を展開し、 **contoso.com**に移動して、 **(contoso.com)** を展開し、 **[FileServerOU]** を選択します。 **[このドメインに GPO を作成し、ここにリンクします]** を右クリックします。
 
 3.  GPO の記述名 ( **FlexibleAccessGPO**など) を入力してから、 **[OK]** をクリックします。  
 
@@ -199,13 +199,13 @@ Active Directory 管理センターを使用して、次のユーザーを作成
     gpupdate /force  
     ```  
 
-### <a name="BKMK_FS1"></a>ファイル サーバーおよび AD RMS サーバー (FILE1) を作成します。  
+### <a name="BKMK_FS1"></a>ファイルサーバーと AD RMS サーバー (FILE1) をビルドする  
 
-1. Windows Server 2012 の ISO から file1 という名前の仮想マシンを作成します。  
+1. Windows Server 2012 ISO から FILE1 という名前の仮想マシンを作成します。  
 
 2. 仮想マシンを ID_AD_Network に接続します。  
 
-3. 仮想マシンを contoso.com ドメインに参加し、パスワードを使用して contoso \administrator として FILE1 にサインイン <strong>pass@word1</strong>します。  
+3. 仮想マシンを contoso.com ドメインに参加させ、パスワード<strong>pass@word1</strong>を使用して contoso\administrator として FILE1 にサインインします。  
 
 #### <a name="install-file-services-resource-manager"></a>ファイル サービス リソース マネージャーをインストールする  
 
@@ -230,7 +230,7 @@ Active Directory 管理センターを使用して、次のユーザーを作成
 8.  **[Installation progress]** ページで、 **[Close]** をクリックします。  
 
 #### <a name="install-the-microsoft-office-filter-packs-on-the-file-server"></a>ファイル サーバーで Microsoft Office Filter Packs をインストールします。  
-幅広い既定で提供されるよりも、Office ファイルに対して IFilters を有効にする Windows Server 2012 では、Microsoft Office Filter Packs をインストールする必要があります。  Windows Server 2012 では、既定では、インストールされている Microsoft Office ファイルは、IFilters はありませんし、ファイル分類インフラストラクチャは IFilters を使用してコンテンツ分析を実行します。  
+Windows Server 2012 に Microsoft Office フィルタパックをインストールして、既定で提供されているよりも大規模な Office ファイルの IFilters を有効にする必要があります。  Windows Server 2012 には Microsoft Office ファイル用の IFilters が既定でインストールされておらず、ファイル分類インフラストラクチャは IFilters を使用してコンテンツ分析を実行します。  
 
 IFilters をダウンロードしてインストールするには、「 [Microsoft Office 2010 フィルタ パック](https://go.microsoft.com/fwlink/?LinkID=234122)」を参照してください。  
 
@@ -245,13 +245,13 @@ IFilters をダウンロードしてインストールするには、「 [Micros
 
 3. **電子メールの通知** タブの SMTP サーバー名または IP アドレス  に、電子メールによる通知を転送する SMTP サーバーのホスト名または IP アドレスを入力します。  
 
-4. 場合は、定期的にクォータの特定の管理者に通知またはファイル スクリーン処理イベントの下に**既定の管理者の受信者**、各メール アドレスを入力します。fileadmin@contoso.comします。 形式を使用してaccount@domainセミコロンを使用して、複数のアカウントを分離するとします。  
+4. クォータまたはファイルスクリーンのイベントを特定の管理者に定期的に通知する場合は、[**既定の管理**者の受信者] に、fileadmin@contoso.com などの各電子メールアドレスを入力します。 @No__t-0 という形式を使用し、セミコロンを使用して複数のアカウントを区切ります。  
 
 #### <a name="create-groups-on-file1"></a>FILE1 でグループを作成する  
 
 ###### <a name="to-create-security-groups-on-file1"></a>FILE1 でセキュリティ グループを作成するには  
 
-1. パスワードを使用して contoso \administrator として FILE1 にサインイン:  <strong>pass@word1</strong>します。  
+1. Contoso\administrator として FILE1 にサインインし、パスワード: <strong>pass@word1</strong>を使用します。  
 
 2. NT AUTHORITY\Authenticated Users を **WinRMRemoteWMIUsers__** グループに追加します。  
 
@@ -261,7 +261,7 @@ IFilters をダウンロードしてインストールするには、「 [Micros
 
 2.  詳細を指定した次のファイルを作成します。  
 
-    -   **Finance Memo.docx**:ドキュメントに金融関連のテキストを追加します。 たとえば、' 金融ドキュメントにアクセスできるユーザーに関するビジネス規則が変更されました。 金融ドキュメントにアクセスできるのは、FinanceExpert グループのメンバーのみになりました。 他の部門やグループにアクセスしない '。 この変更を環境に実装する前にその影響を評価する必要があります。 このドキュメントの各ページのフッターには、「CONTOSO CONFIDENTIAL」と記載してください。  
+    -   **Finance Memo.docx**:ドキュメントに金融関連のテキストを追加します。 たとえば、「finance ドキュメントにアクセスできるユーザーに関するビジネスルールが変更されました。 金融ドキュメントにアクセスできるのは、FinanceExpert グループのメンバーのみになりました。 他の部門やグループはアクセスできません。 ' この変更を環境に実装する前にその影響を評価する必要があります。 このドキュメントの各ページのフッターには、「CONTOSO CONFIDENTIAL」と記載してください。  
 
     -   **Request for Approval to Hire.docx**:このドキュメントでは、応募者情報を収集するフォームを作成します。 ドキュメント内には次のフィールドが含まれている必要があります。**応募者名、社会保障番号、職名、提案した給料、開始日、上司名、部門**。 このドキュメントでは、 **上司署名、承認された給料、オファー確認**、および **オファー状態**用のフォームが含まれたセクションを追加します。   
         ドキュメント Rights Management は有効にします。  
@@ -270,9 +270,9 @@ IFilters をダウンロードしてインストールするには、「 [Micros
 
     -   **Word Document2.docx**:このドキュメントには、テスト内容を追加します。  
 
-    -   **Workbook1.xlsx**  
+    -   **Workbook1**  
 
-    -   **Workbook2.xlsx**  
+    -   **Workbook2**  
 
     -   「Regular Expressions」というフォルダーをデスクトップに作成します。 このフォルダー内に **RegEx-SSN** というテキスト ドキュメントを作成します。 ファイル内に次の内容を入力してから、ファイルを保存して閉じます。   
         ^(?!000)([0-7]\d{2}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$  
@@ -282,7 +282,7 @@ IFilters をダウンロードしてインストールするには、「 [Micros
 > [!NOTE]  
 > 既定では、システムまたはブート ボリューム C: では、集約型アクセス ポリシーは有効になっていません。  
 
-#### <a name="BKMK_CS1"></a>Active Directory Rights Management サービスをインストールします。  
+#### <a name="BKMK_CS1"></a>Active Directory Rights Management サービスのインストール  
 サーバー マネージャーを使用して、Active Directory Rights Management サービス (AD RMS) およびすべての必要な機能を追加します。 すべての規定値を選択します。  
 
 ###### <a name="to-install-active-directory-rights-management-services"></a>Active Directory Rights Management サービスをインストールするには  
@@ -329,13 +329,13 @@ IFilters をダウンロードしてインストールするには、「 [Micros
     > [!NOTE]  
     > Windows Internal Database では、AD RMS クラスター内の複数のサーバーがサポートされないため、テスト環境のみで使用することをお勧めします。 運用展開では、別個のデータベース サーバーを使用する必要があります。  
 
-19. **サービス アカウント**画面で、**ドメイン ユーザー アカウント**、 をクリックして**指定**し、ユーザー名を指定 (**contoso \rms**)、およびパスワード (<strong>pass@word1</strong>) をクリック**OK**、順にクリックします**次**します。  
+19. **[サービスアカウント]** 画面の **[ドメインユーザーアカウント]** で **[指定]** をクリックし、ユーザー名 (**contoso\rms**) とパスワード (<strong>@no__t 5</strong>) を指定して、 **[OK]** をクリックし、 **[次へ]** をクリックします。  
 
 20. **[暗号化モード]** 画面で **[暗号化モード 2]** をクリックします。  
 
 21. **[クラスター キーの格納]** 画面で、 **[次へ]** をクリックします。  
 
-22. **クラスター キー パスワード**画面で、**パスワード**と**パスワードの確認入力**ボックスに「 <strong>pass@word1</strong>、順にクリックします**次**します。  
+22. **[クラスターキーパスワード]** 画面で、 **[パスワード]** ボックスと **[パスワードの確認]** 入力 ボックスに「 <strong>pass@word1</strong>」と入力し、 **[次へ]** をクリックします。  
 
 23. **[クラスター Web サイト]** 画面で、 **[既定の Web サイト]** が選択されていることを確認してから、 **[次へ]** をクリックします。  
 
@@ -347,7 +347,7 @@ IFilters をダウンロードしてインストールするには、「 [Micros
 
 27. **[確認]** 画面で **[インストール]** をクリックします。  
 
-28. **[結果]** 画面で **[閉じる]** をクリックしてから、 **[インストールの進行状況]** 画面の **[閉じる]** をクリックします。 完了したら、ログオフして、指定されたパスワードを使用して contoso \rms としてログオン (<strong>pass@word1</strong>)。  
+28. **[結果]** 画面で **[閉じる]** をクリックしてから、 **[インストールの進行状況]** 画面の **[閉じる]** をクリックします。 完了したら、ログオフし、指定されたパスワード (<strong>pass@word1</strong>) を使用して contoso\rms としてログオンします。  
 
 29. AD RMS コンソールを起動し、 **[権利ポリシー テンプレート]** に移動します。  
 
@@ -363,13 +363,13 @@ IFilters をダウンロードしてインストールするには、「 [Micros
 
     **[追加]** をクリックし、 **[次へ]** をクリックします。  
 
-31. ユーザーおよび権利 セクションで、**ユーザーおよび権利**、 をクリックして**追加**、型<strong>financeadmin@contoso.com</strong>、 をクリック**OK**。  
+31. ユーザーと権限 セクションで、**ユーザーと権限** をクリックし、**追加** をクリックして<strong>financeadmin@contoso.com</strong>を入力し、 **OK**をクリックします。  
 
 32. **[フル コントロール]** をセンタユーケーし、 **[所有者 (作成者) に無期限のフル コントロールの権利を付与する]** を選択されたままにします。  
 
 33. 残りのタブを変更せずにクリックして完了してから、 **[完了]** をクリックします。 CONTOSO\Administrator としてサインインします。  
 
-34. フォルダー、C:\inetpub\wwwroot に移動\\_wmcs\certification、ServerCertification.asmx ファイルを選択し、Authenticated Users に読み取りし、書き込みアクセス許可をファイルに追加します。  
+34. C:\inetpub\wwwroot @ no__t-0_wmcs\certification フォルダーを参照し、ServerCertification .asmx ファイルを選択し、認証されたユーザーを追加して、ファイルに対する読み取りと書き込みのアクセス許可を付与します。  
 
 35. Windows PowerShell を開き、 `Get-FsrmRmsTemplate`を実行します。 このコマンドを使用して、この手順のこれより前の手順で作成した RMS テンプレートを表示できることを確認します。  
 
@@ -388,7 +388,7 @@ IFilters をダウンロードしてインストールするには、「 [Micros
 
 ###### <a name="to-install-and-configure-an-ad-rms-cluster-in-windows-server-2012-using-windows-powershell"></a>Windows Server 2012 で Windows PowerShell を使用して AD RMS クラスターをインストールして構成するには  
 
-1. パスワードを使用して contoso \administrator としてログオン:  <strong>pass@word1</strong>します。  
+1. 次のパスワードを使用して CONTOSO\Administrator としてログオンします<strong>@no__t。-1</strong>  
 
    > [!IMPORTANT]  
    > AD RMS サーバーの役割をインストールするために、AD RMS をインストールするサーバー コンピューター上のローカル管理者グループのメンバーシップと、Active Directory 内の Enterprise Admins グループのメンバーシップをインストーラー アカウント (この場合、CONTOSO\Administrator) に付与する必要があります。  
@@ -475,7 +475,7 @@ IFilters をダウンロードしてインストールするには、「 [Micros
 
    コマンドレットでインストールを開始するかを確認するプロンプトが出されたら、「Y」と入力します。  
 
-7. 指定されたパスワードを使用して contoso \rms として contoso \administrator とログとしてログアウトします。 ("pass@word1")。  
+7. CONTOSO\Administrator としてログアウトし、指定されたパスワード ("pass@word1") を使用して CONTOSO\RMS としてログオンします。  
 
    > [!IMPORTANT]  
    > AD RMS サーバーを管理するために、ログオンしていて、サーバーの管理に使用するアカウント (この場合、CONTOSO\RMS) には、AD RMS サーバー コンピューター上のローカル管理者グループのメンバーシップと、Active Directory の Enterprise Admins グループのメンバーシップが付与されている必要があります。  
@@ -522,7 +522,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
    - 名前:File Administrator  
 
-   - 電子メール アドレス: fileadmin@contoso.com  
+   - 電子メールアドレス: fileadmin@contoso.com  
 
    - アカウントの種類:POP3  
 
@@ -536,11 +536,11 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
 4. contoso\administrator のデスクトップに Outlook へのショートカットを作成する  
 
-5. Outlook を開き、'初回起動' すべてのメッセージに対処します。  
+5. Outlook を開き、' 初回起動時 ' メッセージすべてに対処します。  
 
 6. 生成されたすべてのテスト メッセージを削除します。  
 
-7. 指すクライアント仮想マシンのすべてのユーザーのデスクトップ上の新しいショートカットの作成\\\FILE1\Finance ドキュメント。  
+7. @No__t-0 \ File1\finance documents Documents を指すクライアントバーチャルマシン上のすべてのユーザーに対して、新しいショートカットをデスクトップに作成します。  
 
 8. 必要に応じて、再起動します。  
 
@@ -552,11 +552,11 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
     -   値:DWORD  
 
-## <a name="BKMK_CF"></a>フォレスト シナリオ全体で信頼性情報の展開のラボのセットアップ  
+## <a name="BKMK_CF"></a>フォレスト間で信頼性情報を展開するためのラボのセットアップ  
 
-### <a name="BKMK_2.1"></a>DC2 の仮想マシンを作成します。  
+### <a name="BKMK_2.1"></a>DC2 用の仮想マシンの構築  
 
--   Windows Server 2012 の ISO から仮想マシンを作成します。  
+-   Windows Server 2012 ISO から仮想マシンを構築します。  
 
 -   DC2 という名前で仮想マシンを作成します。  
 
@@ -567,11 +567,11 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 >   
 > 静的 IP バージョン 4 (IPv4) アドレスおよびドメイン ネーム システム (DNS) クライアント設定を使用するように、すべての仮想マシン イメージ (サーバーとクライアント) を再構成する必要があります。 詳細については、「 [静的 IP アドレスの DNS クライアントを構成する](https://go.microsoft.com/fwlink/?LinkId=150952)」を参照してください。  
 
-### <a name="BKMK_2.2"></a>Adatum.com という新規フォレストを設定します。  
+### <a name="BKMK_2.2"></a>Adatum.com という名前の新しいフォレストを設定します。  
 
 ##### <a name="to-install-active-directory-domain-services"></a>Active Directory ドメイン サービスをインストールするには  
 
-1. 仮想マシンを ID_AD_Network に接続します。 管理者として、パスワードを使用して、DC2 にサインインします。  <strong>Pass@word1</strong>します。  
+1. 仮想マシンを ID_AD_Network に接続します。 パスワード<strong>Pass@word1</strong>を使用して、管理者として DC2 にサインインします。  
 
 2. サーバー マネージャーで、 **[管理]** をクリックし、 **[役割と機能の追加]** をクリックします。  
 
@@ -596,7 +596,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
 11. **[配置構成]** ページで **[新しいフォレストを追加する]** をクリックし、ルート ドメインの名前 **adatum.com**を入力してから、 **[次へ]** をクリックします。  
 
-12. **ドメイン コント ローラー オプション** ページで、Windows Server 2012 としてドメインおよびフォレスト機能レベルを選択、DSRM パスワードを指定<strong>pass@word1</strong>、 をクリックし、 **次へ**.  
+12. **[ドメインコントローラーオプション]** ページで、Windows Server 2012 としてドメインおよびフォレストの機能レベルを選択し、DSRM パスワード<strong>pass@word1</strong>を指定して、 **[次へ]** をクリックします。  
 
 13. **[DNS オプション]** ページで、 **[次へ]** をクリックします。  
 
@@ -620,7 +620,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 >   
 > これらのコマンドがエラーなしで実行された場合、フォレストは相互に通信できます。 nslookup のエラーについて詳しくは、トピック「 [NSlookup.exe の使用方法](https://support.microsoft.com/kb/200525)」のトラブルシューティングのセクションを参照してください。  
 
-### <a name="BKMK_2.22"></a>Adatum.com に信頼する側のフォレストとして contoso.com を設定します。  
+### <a name="BKMK_2.22"></a>Contoso.com を adatum.com に信頼する側のフォレストとして設定します。  
 この手順では、Adatum Corporation サイトと Contoso, Ltd. サイト間に信頼関係を作成します。  
 
 ##### <a name="to-set-contoso-as-a-trusting-forest-to-adatum"></a>Adatum に信頼する側のフォレストとして Contoso を設定するには  
@@ -641,8 +641,8 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
 8.  引き続き、ウィザードの手順に従います。  
 
-### <a name="BKMK_2.4"></a>Adatum フォレストでの他のユーザーを作成します。  
-パスワードを使用してユーザー Jeff Low を作成する<strong>pass@word1</strong>、会社の属性値を割り当てます**Adatum**します。  
+### <a name="BKMK_2.4"></a>Adatum フォレストに追加のユーザーを作成する  
+パスワード<strong>pass@word1</strong>を指定してユーザー Jeff Low を作成し、値**Adatum**を使用して company 属性を割り当てます。  
 
 ##### <a name="to-create-a-user-with-the-company-attribute"></a>Company 属性を指定してユーザーを作成するには  
 
@@ -662,7 +662,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
     ```  
 
-### <a name="BKMK_2.5"></a>Adataum.com で会社の要求の種類を作成します。  
+### <a name="BKMK_2.5"></a>Adataum.com で会社の要求の種類を作成する  
 
 ##### <a name="to-create-a-claim-type-by-using-windows-powershell"></a>Windows PowerShell を使用して信頼性情報の種類を作成するには  
 
@@ -683,7 +683,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
     ```  
 
-### <a name="BKMK_2.55"></a>Contoso.com で Company リソース プロパティを有効にします。  
+### <a name="BKMK_2.55"></a>Contoso.com で Company リソースプロパティを有効にする  
 
 ##### <a name="to-enable-the-company-resource-property-on-contosocom"></a>contoso.com で Company リソース プロパティを有効にするには  
 
@@ -697,7 +697,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
 5.  **[リソース プロパティ]** リストから **[Company]** を選択し、右クリックして **[有効にする]** を選択します。  
 
-### <a name="BKMK_2.6"></a>Adatum.com でダイナミック アクセス制御を有効にします。  
+### <a name="BKMK_2.6"></a>Adatum.com での動的 Access Control の有効化  
 
 ##### <a name="to-enable-dynamic-access-control-for-adatumcom"></a>adatum.com でダイナミック アクセス制御を有効にするには  
 
@@ -717,7 +717,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
     gpupdate /force  
     ```  
 
-### <a name="BKMK_2.8"></a>Contoso.com で company を作成します。  
+### <a name="BKMK_2.8"></a>Contoso.com で会社の要求の種類を作成する  
 
 ##### <a name="to-create-a-claim-type-by-using-windows-powershell"></a>Windows PowerShell を使用して信頼性情報の種類を作成するには  
 
@@ -734,7 +734,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
     ```  
 
-### <a name="BKMK_2.9"></a>集約型アクセス規則を作成します。  
+### <a name="BKMK_2.9"></a>集約型アクセス規則を作成する  
 
 ##### <a name="to-create-a-central-access-rule"></a>集約型アクセス規則を作成するには  
 
@@ -752,7 +752,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
 7. **[OK]** を 3 回クリックして終了し、Active Directory 管理センターに戻ります。  
 
-   ![ソリューション ガイド](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+   @no__t 0solution ガイド](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
 
    以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
 
@@ -765,7 +765,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
    -Server:"contoso.com" `  
    ```  
 
-### <a name="BKMK_2.10"></a>集約型アクセス ポリシーを作成します。  
+### <a name="BKMK_2.10"></a>集約型アクセスポリシーを作成する  
 
 ##### <a name="to-create-a-central-access-policy"></a>集約型アクセスポリシーを作成するには  
 
@@ -779,7 +779,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
     -Member "AdatumEmployeeAccessRule" `  
     ```  
 
-### <a name="BKMK_2.11"></a>グループ ポリシーを使って新しいポリシーを発行します。  
+### <a name="BKMK_2.11"></a>グループポリシーを使用して新しいポリシーを発行する  
 
 ##### <a name="to-apply-the-central-access-policy-across-file-servers-through-group-policy"></a>グループ ポリシーを使用してファイル サーバー全体で集約型アクセス ポリシーを適用するには  
 
@@ -788,7 +788,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
     > [!TIP]  
     > **[管理ツールを表示]** の設定が無効になっていると、[管理ツール] フォルダーとその内容は **[設定]** の結果に表示されません。  
 
-2.  Contoso.com ドメインを右クリックし、をクリックして**このドメインに GPO を作成し、リンクします。**  
+2.  Contoso.com ドメインを右クリックし、[**このドメインに GPO を作成し、ここにリンク**します] をクリックします。  
 
 3.  GPO の記述名 (**AdatumAccessGPO** など) を入力してから、 **[OK]** をクリックします。  
 
@@ -811,17 +811,17 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
 7.  グループ ポリシー管理エディターを閉じます。 これで、集約型アクセス ポリシーがグループ ポリシーに追加されました。  
 
-### <a name="BKMK_2.12"></a>ファイル サーバーで Earnings フォルダーを作成します。  
+### <a name="BKMK_2.12"></a>ファイルサーバーでの [所得] フォルダーの作成  
 FILE1 で新規 NTFS ボリュームを作成し、次のフォルダーを作成します。D:\Earnings。  
 
 > [!NOTE]  
 > 既定では、システムまたはブート ボリューム C: では、集約型アクセス ポリシーは有効になっていません。  
 
-### <a name="BKMK_2.13"></a>分類を設定し、Earnings フォルダーで集約型アクセス ポリシーを適用  
+### <a name="BKMK_2.13"></a>分類を設定し、[所得] フォルダーに集約型アクセスポリシーを適用します。  
 
 ##### <a name="to-assign-the-central-access-policy-on-the-file-server"></a>ファイル サーバーで集約型アクセス ポリシーを割り当てるには  
 
-1. Hyper-V マネージャーでサーバー FILE1 に接続します。 パスワードを使用して contoso \administrator を使用して、サーバーにサインイン <strong>pass@word1</strong>します。  
+1. Hyper-V マネージャーでサーバー FILE1 に接続します。 Contoso\Administrator を使用してサーバーにサインインし、パスワード<strong>pass@word1</strong>を使用します。  
 
 2. 管理者特権でのコマンド プロンプトを開き、コマンド **gpupdate /force** を入力します。 これにより、グループ ポリシーの変更がサーバーで有効になります。  
 

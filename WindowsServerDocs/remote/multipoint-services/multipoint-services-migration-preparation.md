@@ -1,9 +1,9 @@
 ---
 title: MultiPoint Services への移行を準備する
-description: Windows Server 2016 で MultiPoint Services に移行する前に収集する情報について説明します
+description: Windows Server 2016 の MultiPoint Services に移行する前に収集する情報について説明します。
 ms.custom: na
 ms.date: 07/29/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,57 +13,57 @@ ms.assetid: 3060c531-98a2-4957-a02c-be273f25f493
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 9650ebcae7e6207a226617d401d892049405901f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d0f1fd22b00bdb2e5e3684a541dd14532fd885e6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824383"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394646"
 ---
-# <a name="prepare-to-migrate-to-multipoint-services-in-windows-server-2016"></a>Windows Server 2016 で MultiPoint Services に移行するための準備します。
+# <a name="prepare-to-migrate-to-multipoint-services-in-windows-server-2016"></a>Windows Server 2016 の MultiPoint Services への移行の準備
 
 >適用先:Windows Server 2016
 
-MultiPoint サービスの役割サービスを Windows Server 2016 RTM を実行している移行先サーバーに Windows Server 2016 の以前のリリースを実行している移行元サーバーから移行するのに必要がある情報を収集するのにには、次の情報を使用します。
+以前のリリースの Windows Server 2016 を実行している移行元サーバーから Windows Server 2016 RTM を実行している移行先サーバーに MultiPoint Services の役割サービスを移行するために必要な情報を収集するには、次の情報を使用します。
 
-少なくともには、インストール、削除、または MultiPoint Services をセットアップするには、移行元サーバーと移行先サーバーの Administrators グループのメンバーがあります。
+少なくとも、MultiPoint Services をインストール、削除、または設定するには、移行元サーバーと移行先サーバーの Administrators グループのメンバーである必要があります。
 
 >[!NOTE]
-> 次の手順では、データを移行するユーザー フォルダーに保存または共有フォルダーのガイダンスは提供されません。 ユーザーは、移行を開始する前にデータをバックアップすることを確認します。
+> ここでは、ユーザーフォルダーまたは共有フォルダーに保存されたデータを移行する方法については説明しません。 移行を開始する前に、ユーザーがデータをバックアップしていることを確認します。
 
-MultiPoint マネージャーを使用して、移行に必要な情報を取得します。 MultiPoint マネージャーを使用して、サーバー管理者のアクセス許可を必要があります。
+MultiPoint マネージャーを使用して、移行に必要な情報を取得します。 MultiPoint マネージャーを使用するには、サーバー管理者のアクセス許可が必要です。
 
-MultiPoint サーバー、ユーザー、および環境の設定を記録、[移行データ収集ワークシート](multipoint-services-migration-worksheet.md)します。 次の手順を使用して、その情報を収集します。
+MultiPoint サーバー、ユーザー、および環境の設定を、[移行データ収集ワークシート](multipoint-services-migration-worksheet.md)に記録します。 その情報を収集するには、次の手順に従います。
 
-## <a name="multipoint-server-settings-for-the-local-server"></a>ローカル サーバーの multiPoint Server の設定
+## <a name="multipoint-server-settings-for-the-local-server"></a>ローカルサーバーの MultiPoint Server 設定
 1. MultiPoint マネージャーを起動します。
-2. **ホーム**タブに、ローカル サーバーを選択してクリックして**サーバー設定を編集します。**
-3. データのワークシートで、設定を記録します。
+2. **[ホーム]** タブで、ローカルサーバーを選択し、 **[サーバー設定の編集]** をクリックします。
+3. データワークシートに設定を記録します。
 4. [設定] ウィンドウを閉じます。
 
-## <a name="managed-servers-and-computers"></a>管理対象サーバーとコンピューター
+## <a name="managed-servers-and-computers"></a>管理されたサーバーとコンピューター
 
-管理対象サーバーとコンピューターの名前を確認するには、上、**ホーム**MultiPoint マネージャー タブ。
+管理されているサーバーとコンピューターの名前は、MultiPoint マネージャーの **[ホーム]** タブで確認できます。
 
 ## <a name="station-settings"></a>ステーションの設定
-ステーションで自動ログオンやディスプレイの向きが構成された場合は、次の手順を使用して情報を取得します。 それ以外の場合、この手順をスキップすることができます。
+自動ログオンまたは表示の向きがステーション用に構成されている場合は、次の手順に従って、その情報を取得します。 それ以外の場合は、この手順を省略できます。
 
-ステーションの設定を取得するには。
+ステーションの設定を取得するには:
 
-1. 移動して、**ステーション**MultiPoint マネージャー タブ。
-2. "Yes"を持つステーション内の検索、**自動ログオン**列。
-3. そのステーションを選択し、クリックして**ステーションを構成する**します。
+1. MultiPoint マネージャーの **[ステーション]** タブにアクセスします。
+2. **自動ログオン**列に "yes" があるステーションを検索します。
+3. そのステーションを選択し、 **[ステーションの構成]** をクリックします。
 4. 自動ログオンに使用するユーザーを記録します。
 
-画面の向きの設定を取得するには、表示、**ステーション設定は**ステーションごと。
+画面の向きの設定を取得するには、各ステーションの**ステーション設定**を表示します。
 
 ## <a name="list-of-users"></a>ユーザーの一覧
-1. をクリックして、**ユーザー** MultiPoint マネージャー タブ。
-2. レコード、**管理者**と**MultiPoint ダッシュ ボード ユーザー** accoutns します。
-3. 標準のユーザーを記録します。
+1. MultiPoint マネージャーの **[ユーザー]** タブをクリックします。
+2. **管理者**と**MultiPoint ダッシュボードユーザーのログオン**を記録します。
+3. 標準ユーザーを記録します。
 
-## <a name="vdi-template-location"></a>VDI のテンプレートの場所
- 以前、VDI のテンプレート機能を有効にした場合は、VDI のテンプレートの場所を記録します。 同じネットワーク上の元と移行先サーバー、限り MultiPoint マネージャーを使用してテンプレートをインポートすることができます。
+## <a name="vdi-template-location"></a>VDI テンプレートの場所
+ 以前に VDI テンプレート機能を有効にした場合は、VDI テンプレートの場所を記録してください。 移行元サーバーと移行先サーバーが同じネットワーク上にある限り、MultiPoint マネージャーを使用してテンプレートをインポートできます。
  
 ## <a name="next-step"></a>次の手順
-準備ができました[MultiPoint Services への移行](multipoint-services-migration-steps.md)Windows Server 2016 の RTM リリースでします。
+これで、Windows Server 2016 の RTM リリースで[MultiPoint Services に移行](multipoint-services-migration-steps.md)する準備が整いました。

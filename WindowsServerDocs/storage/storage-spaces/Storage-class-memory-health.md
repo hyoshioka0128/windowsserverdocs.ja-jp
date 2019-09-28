@@ -1,7 +1,7 @@
 ---
 ms.assetid: 2bab6bf6-90e7-46a7-b917-14a7a8f55366
 title: Windows での記憶域クラス メモリ (NVDIMM-N) の正常性管理
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: jgerend
 ms.manager: dongill
 ms.technology: storage-spaces
@@ -9,12 +9,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 06/25/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4ebec8618c79c43816680387ae5e495f125b3c54
-ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
+ms.openlocfilehash: 03d986832e14e0dd7b80324de3c9f14d0537dba5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67407552"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402907"
 ---
 # <a name="storage-class-memory-nvdimm-n-health-management-in-windows"></a>Windows での記憶域クラス メモリ (NVDIMM-N) の正常性管理
 
@@ -23,11 +23,11 @@ ms.locfileid: "67407552"
 この記事では、Windows の記憶域クラス メモリ (NVDIMM-N) デバイスに固有のエラー処理と正常性管理に関する情報をシステム管理者および IT プロフェッショナルに提供して、記憶域クラス メモリと従来の記憶装置の違いを明らかにします。
 
 Windows での記憶域クラス メモリ デバイスのサポートについてご存知ない場合は、以下のショート ビデオで概要が説明されています。
-- [Windows Server 2016 でのブロック記憶域として非揮発性メモリ (NVDIMM-N) を使用します。](https://channel9.msdn.com/Events/Build/2016/P466)
-- [Windows Server 2016 のバイトのアドレス指定可能な記憶域として非揮発性メモリ (NVDIMM-N) を使用します。](https://channel9.msdn.com/Events/Build/2016/P470)
-- [Windows Server 2016 で永続的なメモリと SQL Server 2016 のパフォーマンス向上を実現](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-Windows-Server-2016-SCM--FAST)
+- [Windows Server 2016 でのブロック記憶域としての非揮発性メモリ (NVDIMM-N) の使用](https://channel9.msdn.com/Events/Build/2016/P466)
+- [非揮発性メモリ (NVDIMM) を Windows Server 2016 のバイトアドレス可能な記憶域として使用する](https://channel9.msdn.com/Events/Build/2016/P470)
+- [Windows Server 2016 で永続メモリを使用して SQL Server 2016 のパフォーマンスを向上させる](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-Windows-Server-2016-SCM--FAST)
 
-参照してください[理解する記憶域スペース ダイレクトで永続的なメモリのデプロイと](deploy-pmem.md)します。
+「[記憶域スペースダイレクトでの永続メモリの理解と配置](deploy-pmem.md)」も参照してください。
 
 JEDEC 準拠 NVDIMM-N 記憶域クラス メモリ デバイスは、Windows Server 2016 および Windows 10 (バージョン 1607) 以降の Windows において、ネイティブ ドライバーでサポートされます。 これらのデバイスの動作は他のディスク (HDD や SSD) に似ていますが、いくつかの違いがあります。
 

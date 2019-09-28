@@ -1,38 +1,38 @@
 ---
 title: ツール拡張機能の開発
-description: 開発ツールの拡張機能 Windows Admin Center SDK (プロジェクト ホノルル)
+description: ツール拡張機能の開発 Windows 管理センター SDK (Project ホノルル)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 1a068c0d33887e8e9287ff15c1aa14f3dc84915a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.prod: windows-server
+ms.openlocfilehash: c5c87be882a32958946198eb6ff1b9d7000577e7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445935"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385289"
 ---
-# <a name="install-extension-payload-on-a-managed-node"></a>拡張機能のペイロードを管理対象ノードにインストールします。
+# <a name="install-extension-payload-on-a-managed-node"></a>管理対象ノードに拡張機能のペイロードをインストールする
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
 ## <a name="setup"></a>セットアップ
 > [!NOTE]
-> 1.2.1904.02001 このガイドには、ビルドが必要またはそれ以降。 ビルドを確認するには、数は、Windows Admin Center を開くし、右上にある疑問符をクリックします。
+> このガイドに従うには、build 1.2.1904.02001 以降が必要です。 ビルド番号を確認するには、Windows 管理センターを開き、右上にある疑問符をクリックします。
 
-まだインストールしていない場合は、作成、[ツールの拡張機能](../develop-tool.md)Windows Admin Center をします。 この作成が完了した後の拡張機能を作成するときに使用されている値に注意してください。
+Windows 管理センター用の[ツール拡張機能](../develop-tool.md)をまだ作成していない場合は、作成します。 完了したら、拡張機能を作成するときに使用される値をメモしておきます。
 
-| Value | 説明 | 例 |
+| 値 | 説明 | 例 |
 | ----- | ----------- | ------- |
-| ```{!Company Name}``` | (スペース) を会社名 | ```Contoso``` |
-| ```{!Tool Name}``` | (スペース) を含む、ツール名 | ```InstallOnNode``` |
+| ```{!Company Name}``` | 会社名 (スペースを含む) | ```Contoso``` |
+| ```{!Tool Name}``` | (スペースを含む) ツール名 | ```InstallOnNode``` |
 
-ツール拡張機能のフォルダー内に作成、```Node```フォルダー (```{!Tool Name}\Node```)。 何もこのフォルダーに配置アドレスは、この API を使用する場合に、管理対象ノードにコピーされます。 ユース ケースに必要な任意のファイルを追加します。 
+ツールの拡張フォルダー内で、@no__t 0 のフォルダー (```{!Tool Name}\Node```) を作成します。 この API を使用すると、このフォルダーに格納されているすべてのものが、管理対象ノードにコピーされます。 ユースケースに必要なすべてのファイルを追加します。 
 
-作成することも、```{!Tool Name}\Node\installNode.ps1```スクリプト。 すべてのファイルをコピーしたら、管理対象ノードに対してこのスクリプトを実行は、```{!Tool Name}\Node```管理ノードにフォルダー。 使用状況に合わせて追加のロジックを追加します。 たとえば```{!Tool Name}\Node\installNode.ps1```ファイル。
+また、@no__t 0 スクリプトも作成します。 このスクリプトは、すべてのファイルが @no__t 0 フォルダーから管理対象ノードにコピーされると、管理ノードで実行されます。 ユースケースのロジックを追加します。 @No__t-0 ファイルの例を次に示します。
 
 ``` ps1
 # Add logic for installing payload on managed node
@@ -40,12 +40,12 @@ echo 'Success'
 ```
 
 > [!NOTE]
-> ```{!Tool Name}\Node\installNode.ps1``` 特定の名前を検索する API があります。 このファイルの名前を変更すると、エラーが発生します。
+> ```{!Tool Name}\Node\installNode.ps1``` には、API が検索する特定の名前があります。 このファイルの名前を変更すると、エラーが発生します。
 
 
 ## <a name="integration-with-ui"></a>UI との統合
 
-Update```\src\app\default.component.ts```次。
+@No__t-0 を次のように更新します。
 
 ``` ts
 import { Component } from '@angular/core';
@@ -88,7 +88,7 @@ export class DefaultComponent {
 
 }
 ```
-プレース ホルダーを拡張機能を作成するときに使用された値に更新します。
+拡張機能を作成するときに使用された値にプレースホルダーを更新します。
 ``` ts
 this.post('contoso.install-on-node', '1.0.0',
       this.appContextService.activeConnection.nodeName).subscribe(
@@ -105,13 +105,13 @@ this.post('contoso.install-on-node', '1.0.0',
       );
 ```
 
-更新も```\src\app\default.component.html```に。
+また ```\src\app\default.component.html``` をに更新します。
 ``` html
 <button (click)="installOnNode()">Click to install</button>
 <sme-loading-wheel *ngIf="loading" size="large"></sme-loading-wheel>
 <p *ngIf="response">{{response}}</p>
 ```
-最後に```\src\app\default.module.ts```:
+最後に ```\src\app\default.module.ts```:
 ``` ts
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -132,15 +132,15 @@ export class DefaultModule { }
 
 ```
 
-## <a name="creating-and-installing-a-nuget-package"></a>作成して、NuGet パッケージをインストールします。
+## <a name="creating-and-installing-a-nuget-package"></a>NuGet パッケージの作成とインストール
 
-最後の手順が追加されましたファイルに NuGet パッケージの作成と、Windows Admin Center でそのパッケージをインストールします。
+最後の手順では、追加したファイルを使用して NuGet パッケージをビルドし、そのパッケージを Windows 管理センターにインストールします。
 
-に従って、[拡張機能の公開](../publish-extensions.md)ガイドの前に、拡張機能パッケージを作成していない場合。 
+以前に拡張機能パッケージを作成していない場合は、「[発行拡張機能](../publish-extensions.md)ガイド」に従ってください。 
 > [!IMPORTANT]
-> この拡張機能の .nuspec ファイルのことが重要ですが、```<id>```値が、プロジェクトの名前と一致する```manifest.json```と```<version>```に追加された内容と一致する```\src\app\default.component.ts```。 エントリの下にも追加```<files>```: 
+> この拡張機能の nuspec ファイルでは、@no__t 0 の値がプロジェクトの ```manifest.json``` の名前と一致し、```<version>``` が ```\src\app\default.component.ts``` に追加されたものと一致することが重要です。 また ```<files>``` の下にエントリを追加します。 
 > 
-> ```<file src="Node\**\*.*" target="Node" />``` の順にクリックします。
+> ```<file src="Node\**\*.*" target="Node" />```。
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -165,4 +165,4 @@ export class DefaultModule { }
 </package>
 ```
 
-このパッケージが作成されると、そのフィードをパスを追加します。 Windows Admin Center の設定 に移動 > 拡張機能 > フィードし、そのパッケージが存在するパスを追加します。 拡張機能が完了すると、インストールされているおく必要がある をクリックして、```install```ボタンと、API が呼び出されます。  
+このパッケージを作成したら、そのフィードへのパスを追加します。 Windows 管理センターで、[設定] [> 拡張機能 > フィード] に移動し、パッケージが存在する場所へのパスを追加します。 拡張機能のインストールが完了すると、@no__t 0 ボタンをクリックすると、API が呼び出されます。  

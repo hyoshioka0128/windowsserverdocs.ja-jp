@@ -1,7 +1,7 @@
 ---
 title: サーバーインフラストラクチャの構成
 description: この手順では、VPN をサポートするために必要なサーバー側コンポーネントをインストールして構成します。 サーバー側のコンポーネントには、ユーザー、VPN サーバー、および NPS サーバーによって使用される証明書を配布するように PKI を構成することが含まれます。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
@@ -10,12 +10,12 @@ ms.author: pashort
 author: shortpatti
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: 260d5c6273d877386dc1cd8833b2f226533127c3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: c7e2c4172621416048fa9e82bbd12f5b1717d490
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871297"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404295"
 ---
 # <a name="step-2-configure-the-server-infrastructure"></a>手順 2. サーバーインフラストラクチャの構成
 
@@ -116,7 +116,7 @@ RRAS サーバーはドメインに参加していないため、自動登録を
 
     - **目的:** サーバー認証、IP セキュリティ IKE 中間 
 
-    - **証明書テンプレート:** [_Customer_]VPN サーバー
+    - **証明書テンプレート:** [_Customer_] VPN Server
 
 #### <a name="example-vpngatewayinf-script"></a>例:VPNGateway .inf スクリプト
 
@@ -226,7 +226,7 @@ _continue_ = "dns=vpn.contoso.com&"
 
 5. **[セキュリティ]** タブで、次の手順を実行します。
 
-   1. **[追加]** を選びます。
+   1. **[追加]** をクリックします。
 
    2. [ユーザー、コンピューター、サービスアカウントまたはグループの選択] ダイアログボックスで、「 **VPN Users**」と入力し、[ **OK]** を選択します。
 
@@ -306,7 +306,7 @@ _continue_ = "dns=vpn.contoso.com&"
 
 6. **[セキュリティ]** タブで、次の手順を実行します。
 
-    1. **[追加]** を選びます。
+    1. **[追加]** をクリックします。
 
     2. **[ユーザー、コンピューター、サービスアカウントまたはグループの選択]** ダイアログボックスで、「 **VPN サーバー**」と入力し、[ **OK]** を選択します。
 
@@ -363,7 +363,7 @@ Net Start "certsvc"
 
 5. **[セキュリティ]** タブで、次の手順を実行します。
 
-    1. **[追加]** を選びます。
+    1. **[追加]** をクリックします。
 
     2. **[ユーザー、コンピューター、サービスアカウントまたはグループの選択]** ダイアログボックスで、「 **NPS サーバー**」と入力し、[ **OK]** を選択します。
 

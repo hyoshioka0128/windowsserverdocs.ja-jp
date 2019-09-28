@@ -6,14 +6,14 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 3e144a09c99d9b72d623956e868b3f573962ed94
-ms.sourcegitcommit: 67833e36b8b2c6194a1426a974c5ad9c859fa4c9
+ms.openlocfilehash: cbb947c17219d4fe2f6694f0e44e379fc8671e76
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68329638"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401941"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2016"></a>Windows Server 2016 へのドメイン コントローラーのアップグレード
 
@@ -146,7 +146,7 @@ Contoso フォレストを Windows Server 2012 R2 から Windows Server 2016 に
 1. **[ドメインコントローラーオプション]** 画面で、**ディレクトリサービス復元モード (DSRM)** のパスワードを入力し、[次へ] をクリックします。
 1. 画面の残りの部分について、 **[次へ]** をクリックします。
 1. **[前提条件の確認]** 画面で、 **[インストール]** をクリックします。 再起動が完了したら、サインインし直すことができます。
-1. Windows Server 2012 R2 サーバーの**サーバーマネージャー**の [ツール] で、 **[Windows PowerShell の Active Directory モジュール]** を選択します。
+1. Windows Server 2012 R2 サーバーの**サーバーマネージャー**の ツール で、 **Windows PowerShell の Active Directory モジュール** を選択します。
 
    ![アップグレード](media/Upgrade-Domain-Controllers-to-Windows-Server-2016/upgrade6.png)
 

@@ -1,8 +1,8 @@
 ---
 title: プリンターを追加する
-description: MultiPoint Services のユーザー用のプリンターを追加します。
+description: MultiPoint Services ユーザーのプリンターを追加します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,33 +13,33 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: cce64f8cfbfb9d3b9984a0732d76418eea9dc9bf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e5da3d4919eba9f36e4b28f7c2d2fb3e3de02804
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846063"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405132"
 ---
 # <a name="add-printers"></a>プリンターを追加する
-このトピックの手順を使用して、MultiPoint Services システムのすべてのユーザーがローカル プリンターを使用できるようにします。  
+MultiPoint Services システムのすべてのユーザーがローカルプリンターを使用できるようにするには、このトピックの手順に従います。  
   
 > [!NOTE]  
-> MultiPoint Services のドメイン アカウントを使用する場合、ユーザーは、ステーションから任意のネットワーク プリンターを使用できます。  
+> MultiPoint Services でドメインアカウントを使用している場合、ユーザーはステーションから任意のネットワークプリンターを使用できます。  
   
-1.  Multipoint サーバーにプリンターを接続します。  
+1.  プリンターを Multipoint サーバーに接続します。  
   
-2.  共有プリンターとしてプリンターを構成します。  
+2.  プリンターを共有プリンターとして構成します。  
   
     1.  管理者として MultiPoint Server コンピューターにログオンします。  
   
     2.  **スタート**画面で、**コントロール パネル**を開きます。  
   
-    3.  コントロール パネルで、次のようにクリックします。**ハードウェア**、 をクリックし、**デバイスとプリンター**します。  
+    3.  コントロールパネル で、**ハードウェア** をクリックし、**デバイスとプリンター** をクリックします。  
   
-    4.  **プリンターと Fax**、プリンターを右クリックし、クリックして**プリンターのプロパティ**します。  
+    4.  **[プリンターと fax]** で、プリンターを右クリックし、 **[プリンターのプロパティ]** をクリックします。  
   
-    5.  をクリックして、**共有**タブ。  
+    5.  **[共有]** タブをクリックします。  
   
-    6.  をクリックして**このプリンターを共有**、プリンターの共有名を指定し、クリックして**OK**します。  
+    6.  [**このプリンターを共有**する] をクリックし、プリンターの共有名を指定して、[ **OK]** をクリックします。  
   
-Multipoint Services コンピューターに接続されているすべてのステーションにログオンしたユーザーは表示され、プリンターを使用することになります。 
+Multipoint Services コンピューターに接続されている任意のステーションにログオンしたユーザーは、プリンターを表示して使用することができます。 

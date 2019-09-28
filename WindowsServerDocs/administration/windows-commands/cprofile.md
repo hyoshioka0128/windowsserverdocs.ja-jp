@@ -1,8 +1,8 @@
 ---
 title: cprofile
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8a581a01b95456c56c6cbf177dfd6049c3514f1d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: efc296d43ff6cbe0c409f244160a9c14786d3be0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434203"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378987"
 ---
 # <a name="cprofile"></a>cprofile
 
 
 
-Cprofile - Cprofile は非推奨とし、Windows の将来のリリースでサポートされるとは限りません。
+Cprofile-Cprofile は非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 
-Cprofile.exe:クリーンなプロファイル。 このツールは、Windows Server 2003, Web edition を除くすべての Windows Server 2003 オペレーティング システムに含まれます。 詳細については、次を参照してください。[ターミナル サービスのツールと設定](https://technet.microsoft.com/library/cc776289(v=ws.10).aspx)します。
+Cprofile .exe:プロファイルをクリーンします。 このツールは、Windows server 2003, Web edition を除くすべての Windows Server 2003 オペレーティングシステムに含まれています。 詳細については[、「ターミナルサービスのツールと設定](https://technet.microsoft.com/library/cc776289(v=ws.10).aspx)」を参照してください。
 
 # #
 

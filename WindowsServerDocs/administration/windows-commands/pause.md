@@ -1,8 +1,8 @@
 ---
 title: pause
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e5805fcc14d6874d95ba90537d72b560229ba99b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6501859eacf30dd6c1e64f34eee29ff81bd78ec9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436313"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372374"
 ---
 # <a name="pause"></a>pause
 
@@ -42,7 +42,7 @@ pause
 |---------|-----------|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 - 実行すると、 **を一時停止** コマンドを次のメッセージが表示されます。  
   ```

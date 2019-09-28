@@ -1,7 +1,7 @@
 ---
 title: Windows 10 クライアントの Always On VPN 接続を構成する
 description: この手順では、ProfileXML オプションとスキーマについて説明し、VPN 接続を使用してそのインフラストラクチャと通信するように Windows 10 クライアントコンピューターを構成します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 05/29/2018
@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.reviewer: deverette
-ms.openlocfilehash: c3ac8295d048c599a1cb6d1ed141cd63a7a73f47
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9621f9bdca0416965861112ba23c1c8dd731f67b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871339"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404282"
 ---
 # <a name="step-6-configure-windows-10-client-always-on-vpn-connections"></a>手順 6. Windows 10 クライアント Always On VPN 接続を構成する
 
@@ -863,7 +863,7 @@ Intune を使用して Windows 10 リモートアクセス Always On VPN プロ�
 >[!NOTE]
 >Intune で Azure AD グループが使用されるようになりました。 VPN ユーザーグループをオンプレミスから Azure AD に Azure AD Connect 同期していて、ユーザーが VPN Users グループに割り当てられている場合は、先に進むことができます。
 
-グループに追加されたすべてのユーザーの Windows 10 クライアントコンピューターを構成するには、VPN デバイス構成ポリシーを作成します。 Intune テンプレートでは VPN パラメーターが提供されるため\<、VPN_ProfileXML ファイルの\<> の部分には、eaphostconfig >/eaphostconfig のみコピーしてください。
+グループに追加されたすべてのユーザーの Windows 10 クライアントコンピューターを構成するには、VPN デバイス構成ポリシーを作成します。 Intune テンプレートには VPN パラメーターが用意されているため、VPN_ProfileXML ファイルの \</eaphost> Config >-1/EapHostConfig @no__t のみコピーします。
 
 ### <a name="create-the-always-on-vpn-configuration-policy"></a>Always On VPN 構成ポリシーを作成する
 

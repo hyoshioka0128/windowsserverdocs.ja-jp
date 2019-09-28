@@ -1,9 +1,9 @@
 ---
-title: 手順 14、構成のスナップショット
-description: このトピックは一部のテスト ラボ ガイド-DirectAccess マルチサイト展開の Windows Server 2016 のデモンストレーション
+title: 手順 14. 構成のスナップショットを設定する
+description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,22 +12,22 @@ ms.topic: article
 ms.assetid: 8e17d886-f216-400e-bd31-808aceb88033
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a67191bb1501c077c0a2676437481d38fc26c587
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: c1d8ddf2949c2b859ac0d734149eddd88874998a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281482"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388327"
 ---
-# <a name="step-14-snapshot-the-configuration"></a>手順 14、構成のスナップショット
+# <a name="step-14-snapshot-the-configuration"></a>手順 14. 構成のスナップショットを設定する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-これは、DirectAccess のマルチサイトのテスト ラボを完了します。 すぐに戻し作業中の DirectAccess マルチサイトように、この構成を保存するには、構成の他の DirectAccess のモジュールをテストすることができますテスト ラボ ガイド、テスト ラボ ガイドの拡張機能、または独自の実証や学習を使用して、次の操作を行います:  
+これで、DirectAccess マルチサイトのテストラボが完成します。 この構成を保存して、その他の DirectAccess モジュールテストラボガイド、テストラボガイド拡張機能、または独自の実験と学習のために、作業中の DirectAccess マルチサイト構成にすばやく戻ることができるようにするには、次の操作を行います。:  
   
 1.  テスト ラボ内の物理コンピューターまたは仮想マシンのすべてのウィンドウを閉じ、正常にシャットダウンします。  
   
-2.  ラボは、仮想マシンに基づくが、各仮想マシンのスナップショットを保存し、スナップショット TLG DirectAccess のマルチサイトの名前を付けます。 ラボで物理コンピューターを使用する場合は、DirectAccess のテスト ラボ構成を保存するディスク イメージを作成します。  
+2.  ラボが仮想マシンに基づいている場合は、各仮想マシンのスナップショットを保存し、スナップショットに TLG DirectAccess Multisite という名前を付けます。 ラボで物理コンピューターを使用している場合は、ディスクイメージを作成して、DirectAccess のテストラボ構成を保存します。  
   
 
 

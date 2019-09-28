@@ -1,8 +1,8 @@
 ---
-title: ftp の cd
-description: Ftp の cd に Windows コマンド」のトピック
+title: ftp cd
+description: Ftp cd の Windows コマンドに関するトピック
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ef14c647534c92a97abdcc9ee8df50c64a72e5f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 891b144b20ebbef6c7e8058771d8249f4bace1cc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438790"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376494"
 ---
 # <a name="ftp-cd"></a>ftp: cd
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモート コンピューター上の作業ディレクトリを変更します。   
+リモートコンピューター上の作業ディレクトリを変更します。   
 ## <a name="syntax"></a>構文  
 ```  
 cd <remotedirectory>  
@@ -33,16 +33,16 @@ cd <remotedirectory>
 
 |     パラメーター     |                                 説明                                 |
 |-------------------|-----------------------------------------------------------------------------|
-| <remotedirectory> | 変更するリモート コンピューター上のディレクトリを指定します。 |
+| <remotedirectory> | 変更するリモートコンピューター上のディレクトリを指定します。 |
 
 ## <a name="BKMK_Examples"></a>例  
-リモート コンピューター上のディレクトリを変更する**Docs**します。  
+リモートコンピューター上のディレクトリを**Docs**に変更します。  
 ```  
 cd Docs  
 ```  
-リモート コンピューター上のディレクトリを変更する**がビデオ**します。  
+リモートコンピューター上のディレクトリを "may"**ビデオ**に変更します。  
 ```  
 cd  May Videos  
 ```  
-## <a name="additional-references"></a>その他の参照  
+## <a name="additional-references"></a>その他の参照情報  
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)  

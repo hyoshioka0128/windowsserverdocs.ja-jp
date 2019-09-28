@@ -1,8 +1,8 @@
 ---
 title: bitsadmin suspend
-description: Windows コマンド」のトピック**bitsadmin 中断**-指定したジョブを中断します。
+description: '**Bitsadmin suspend**の Windows コマンドトピックでは、指定されたジョブを中断します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87e1bbd1b068d68fb60655043735c6c1aeb07707
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7a3a484df2b50cdc8893512020b835f913793d2c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825923"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380370"
 ---
 # <a name="bitsadmin-suspend"></a>bitsadmin suspend
 
 > 適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-指定したジョブを中断します。
+指定されたジョブを中断します。
 
 ## <a name="syntax"></a>構文
 
@@ -38,18 +38,18 @@ bitsadmin /Suspend <Job>
 |-------|--------|
 |Job|ジョブの表示名または GUID|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-ジョブを再開するには、使用、 [bitsadmin 再開](bitsadmin-resume.md)スイッチします。
+ジョブを再開するには、 [bitsadmin resume](bitsadmin-resume.md)スイッチを使用します。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例は、という名前のジョブを中断します。 *myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブを一時停止します。
 
 ```
 C:\>bitsadmin /Suspend myDownloadJob
 ```
 
-#### <a name="additional-references"></a>その他の参照
+#### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

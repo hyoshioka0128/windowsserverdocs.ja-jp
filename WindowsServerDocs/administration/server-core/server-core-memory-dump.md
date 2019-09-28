@@ -1,18 +1,18 @@
 ---
 title: Server Core インストール用にメモリダンプファイルを構成する
 description: Windows Server の Server Core インストール用にメモリダンプファイルを構成する方法について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: 0cea3118abce156acdd9ad933518015a25f8afbf
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 4f1baa52fc9f0ebfe8afae35d86b7a7238d56223
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476556"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383386"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>Server Core インストール用にメモリダンプファイルを構成する
 
@@ -32,23 +32,23 @@ wmic computersystem set AutomaticManagedPagefile=False
  
 ## <a name="step-2-configure-the-destination-path-for-a-memory-dump"></a>手順 2:メモリダンプの宛先パスを構成する
 
-オペレーティングシステムがインストールされているパーティションにページファイルを配置する必要はありません。 ページファイルを別のパーティションに配置するには、 **DedicatedDumpFile**という名前の新しいレジストリエントリを作成する必要があります。 ページファイルのサイズを定義するには、Dumpfilesizeファイルサイズのレジストリエントリを使用します。 DedicatedDumpFile と DumpFileSize 両方のレジストリエントリを作成するには、次の手順を実行します。 
+オペレーティングシステムがインストールされているパーティションにページファイルを配置する必要はありません。 ページファイルを別のパーティションに配置するには、 **DedicatedDumpFile**という名前の新しいレジストリエントリを作成する必要があります。 ページファイルのサイズを定義するには、 **dumpfilesize**ファイルサイズのレジストリエントリを使用します。 DedicatedDumpFile と DumpFileSize 両方のレジストリエントリを作成するには、次の手順を実行します。 
 
 1. コマンドプロンプトで、 **regedit**コマンドを実行してレジストリエディターを開きます。
 2. 次のレジストリ サブキーを探してクリックします。HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl
 3. **[編集]、[新規]、[文字列値]** の順にクリックします。
 4. 新しい値に**DedicatedDumpFile**という名前を入力し、enter キーを押します。
-5. [ **DedicatedDumpFile**] を右クリックし、[**変更**] をクリックします。
-6. [**値のデータ**型] に「  **\<\>\\\<Drive:Dedicateddumpfile」と入力し、[OK]をクリックします。\>**
+5. **[DedicatedDumpFile]** を右クリックし、 **[変更]** をクリックします。
+6. [**値のデータ**型 **\<drive @ no__t-3: \\\<Dedicateddumpfile.sys @ no__t**] に入力し、 **[OK]** をクリックします。
 
    >[!NOTE] 
-   > ドライブ\< \<\>を、ページングファイルに十分なディスク領域があるドライブに置き換え、Dedicateddumpfile を専用ファイルの完全なパスに置き換えます。\>
+   > @No__t-0Drive @ no__t-1 を、ページングファイルに十分なディスク領域があるドライブに置き換え、\<Dedicateddumpfile @ no__t を専用ファイルの完全なパスに置き換えます。
  
 7. [編集] をクリックし **> 新しい DWORD 値 >** ます。
 8. 「 **Dumpfilesize サイズ**」と入力し、enter キーを押します。
-9. [Dumpfilesize**サイズ**] を右クリックし、[**変更**] をクリックします。
-10. [ **DWORD 値の編集**] の [**ベース**] で、[ **10 進**] をクリックします。
-11. [**値のデータ**] に適切な値を入力し、[ **OK]** をクリックします。
+9. **[Dumpfilesize サイズ]** を右クリックし、 **[変更]** をクリックします。
+10. **[DWORD 値の編集]** の **[ベース]** で、 **[10 進]** をクリックします。
+11. **[値のデータ]** に適切な値を入力し、[ **OK]** をクリックします。
     >[!NOTE]
     > ダンプファイルのサイズはメガバイト (MB) 単位です。
 12. レジストリ エディターを終了します。
@@ -65,7 +65,7 @@ wmic RECOVEROS get DebugFilePath
 wmic RECOVEROS set DebugFilePath = <FilePath>
 ```
 
-\<FilePath\>を対象のパスに設定します。 たとえば、次のコマンドは、メモリダンプの宛先パスを C:\WINDOWS\MEMORY. に設定します。MEMORY.DMP 
+@No__t-0FilePath @ no__t-1 をコピー先のパスに設定します。 たとえば、次のコマンドは、メモリダンプの宛先パスを C:\WINDOWS\MEMORY. に設定します。MEMORY.DMP 
 
 ```
 wmic RECOVEROS set DebugFilePath = C:\WINDOWS\MEMORY.DMP
@@ -85,7 +85,7 @@ wmic RECOVEROS get DebugInfoType
 wmic RECOVEROS set DebugInfoType = <Value>
 ```
 
-\<次\>に定義されているように、値には0、1、2、または3を指定できます。
+\<Value @ no__t には、次に示すように0、1、2、または3を指定できます。
 
 - 0メモリダンプの削除を無効にします。
 - 1:完全なメモリダンプ。 コンピューターが予期せず停止したときに、システムメモリのすべての内容を記録します。 メモリダンプ全体には、メモリダンプが収集されたときに実行されていたプロセスのデータが含まれている場合があります。

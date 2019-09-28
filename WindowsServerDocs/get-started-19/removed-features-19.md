@@ -2,7 +2,7 @@
 title: Windows Server 2019 で削除される、または削除が計画されている機能
 description: Windows Server 2019 以降で削除される、または削除が計画されている機能について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: server-general
@@ -13,12 +13,12 @@ ms.author: jgerend
 manager: jasgro
 ms.date: 08/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f6b6ac42c096c6c80404c2d650905e73da8a97a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 261023223b56e235320b7ad414fa91206420b1ed
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868645"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360841"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-windows-server-2019"></a>Windows Server 2019 以降で削除される、または置換が計画されている機能
 

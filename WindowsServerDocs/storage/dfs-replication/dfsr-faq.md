@@ -1,17 +1,17 @@
 ---
 title: 'DFS レプリケーション: よく寄せられる質問 (FAQ)'
 ms.date: 06/18/2014
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 5bf85938f242ec29d75b32cdcb8b03c5f34bd1bb
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 12410d619245153f759b54e7a8aff257888f04dc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871973"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386072"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS レプリケーション: よく寄せられる質問 (FAQ)
 

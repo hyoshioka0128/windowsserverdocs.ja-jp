@@ -1,8 +1,8 @@
 ---
 title: rundll32
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b1f288d21a1dcac25ecc00f685ea179d8a6542f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 29a87f9f07c25a0c671e47550e0a054d8308f747
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835033"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384420"
 ---
 # <a name="rundll32"></a>rundll32
 
@@ -38,12 +38,12 @@ Rundll32 <DLLname>
 
 |パラメーター|説明|
 |---------|-----------|
-|[Rundll32 printui.dll, printuientry](rundll32-printui.md)|プリンターのユーザー インターフェイスが表示されます。|
+|[Rundll32 printui.dll、PrintUIEntry](rundll32-printui.md)|プリンターのユーザー インターフェイスが表示されます。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-Rundll32 は、Rundll32 によって呼び出される明示的に記述されている DLL から関数を呼び出すのみできます。 要件を参照してください Rundll32 の詳細については[記事 164787](https://go.microsoft.com/fwlink/?LinkID=165773)でマイクロソフト サポート技術情報 (https://go.microsoft.com/fwlink/?LinkID=165773)します。
+Rundll32 は、Rundll32 によって呼び出される明示的に記述されている DLL から関数を呼び出すのみできます。 Rundll32 の要件の詳細については、Microsoft サポート技術情報の[記事 164787](https://go.microsoft.com/fwlink/?LinkID=165773) (https://go.microsoft.com/fwlink/?LinkID=165773) を参照してください。
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

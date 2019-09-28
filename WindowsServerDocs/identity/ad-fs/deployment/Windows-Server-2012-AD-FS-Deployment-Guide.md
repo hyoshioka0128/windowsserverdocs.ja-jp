@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 06946942bcdc5ea00acc22b91d6551a826357fcf
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 1597230fcfde4fe8a9767f0f14c634bc6fabdceb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868024"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408254"
 ---
 # <a name="windows-server-2012-ad-fs-deployment-guide"></a>Windows Server 2012 AD FS の展開ガイド
 

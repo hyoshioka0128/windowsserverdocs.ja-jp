@@ -1,7 +1,7 @@
 ---
 title: Windows Server ハイブリッドクラウド印刷の展開
 description: Microsoft ハイブリッドクラウド印刷をセットアップする方法
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: Windows Server 2016
@@ -12,12 +12,12 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: 552695626c98ee0fc01148536b50d4466d1b96e4
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: af5cd5f83633df7e704f4b768baf8dc6d78546aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866806"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370445"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print-with-pre-authentication"></a>Windows Server のハイブリッド クラウド印刷を事前認証で展開する
 
@@ -83,7 +83,7 @@ ms.locfileid: "70866806"
 
 2. ハイブリッドクラウド印刷ソリューションをインストールする
     - 同じ管理者特権の PowerShell コマンドプロンプトで、ディレクトリをに変更します。`C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0`
-    - 実行 <br>
+    - Run <br>
         `CloudPrintDeploy.ps1 -AzureTenant <Domain name used by Azure AD Connect> -AzureTenantGuid <Azure AD Directory ID>`
 3. 2つの IIS エンドポイントで SSL をサポートするように構成する
    -   SSL 証明書は、自己署名証明書か、一部の信頼された証明機関 (CA) から発行された証明書のいずれかになります。
@@ -188,7 +188,7 @@ ms.locfileid: "70866806"
        - 外部 URL:組織に合わせて構成する
        - 事前認証方法:Azure Active Directory
 
-     >   注:上記のすべての設定が見つからない場合は、使用可能な設定を使用してプロキシを追加してから、作成したアプリケーションプロキシを選択し、 **[アプリケーションプロキシ]** タブにアクセスして上記のすべての情報を追加します。
+     >   メモ:上記のすべての設定が見つからない場合は、使用可能な設定を使用してプロキシを追加してから、作成したアプリケーションプロキシを選択し、 **[アプリケーションプロキシ]** タブにアクセスして上記のすべての情報を追加します。
 
    - 作成したら、[**エンタープライズアプリケーション** -> ] **[すべてのアプリケーション]** に戻り、先ほど作成した新しいアプリケーションを選択します。
    - **シングルサインオン** にアクセスし、シングルサインオンモード が 統合 Windows 認証 に設定されていることを確認します。
@@ -228,7 +228,7 @@ ms.locfileid: "70866806"
   - CloudPrintResourceId = 手順3.5 で作成されたエンタープライズクラウド印刷サービス Azure アプリケーションプロキシの外部 URL (末尾の/を含む完全に同じである必要があります)
   - Discoverymaxプリンター limit = \<正の整数\>
 
->   注:Microsoft Intune サービスを使用している場合は、[Cloud Printer] (クラウドプリンター) カテゴリの下にこれらの設定が表示されます。
+>   メモ:Microsoft Intune サービスを使用している場合は、[Cloud Printer] (クラウドプリンター) カテゴリの下にこれらの設定が表示されます。
 
 |Intune の表示名                     |ポリシー                         |
 |----------------------------------------|-------------------------------|
@@ -239,7 +239,7 @@ ms.locfileid: "70866806"
 |クエリする最大プリンター (モバイルのみ)  |Discoverymaxプリンターの制限       |
 |プリンター検出サービスのリソース URI  |Mo先読み Adiscoveryresourceid      |
 
->   注:クラウド印刷ポリシーグループが使用できないが、MDM プロバイダーが OMA-URI 設定をサポートしている場合は、同じポリシーを設定できます。  詳細については、こちらの<a href="https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority">記事</a>を参照してください。
+>   メモ:クラウド印刷ポリシーグループが使用できないが、MDM プロバイダーが OMA-URI 設定をサポートしている場合は、同じポリシーを設定できます。  詳細については、こちらの<a href="https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority">記事</a>を参照してください。
 
 - OMA-URI
     - `CloudPrintOAuthAuthority = ./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority`
@@ -285,7 +285,7 @@ ms.locfileid: "70866806"
 
         > 注: 必要なすべてのパラメーター値をコマンドラインに入力することもできます。<br>
         **発行-CloudPrinter**PowerShell コマンドの構文: <br>
-        Publish-cloudprinter-printer \<\> string-製造元\<の\> \<\> 文字列-\<モデル文字列-orglocationstring-Sddl\> \< \<文字列\> - \<discoveryendpoint\>文字列- printserverendpoint\<文字列-AzureTenantGuid\> \> \<string \<[-discoveryresourceidstring\>]\> <br>
+        Publish-CloudPrinter-Printer \<string @ no__t \< string @ no__t-Model \<string @ no__t-5-OrgLocation \<string @ no__t-Sddl-Sddl \<string @ no__t--DiscoveryEndpoint \>0string @ no__t-11-PrintServerEndpoint 2string @ no__t-13-AzureClientId 4string @ no__t-15-AzureTenantGuid 6string @ no__t [-DiscoveryResourceId 8string @ no__t-19] <br>
         サンプルコマンド:`publish-cloudprinter -Printer EcpPrintTest -Manufacturer Microsoft -Model FilePrinterEcp -OrgLocation '{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"MyCompany", "depth":1}, {"category":"site", "vs":"MyCity, State", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor\_number", "vn":1, "depth":4}, {"category":"room\_name", "vs":"1111", "depth":5}]}' -Sddl "O:BAG:DUD:(A;OICI;FA;;;WD)" -DiscoveryEndpoint https://<services-machine-endpoint>/mcs -PrintServerEndpoint https://<services-machine-endpoint>/ecp -AzureClientId <Native Web App ID> -AzureTenantGuid <Azure AD Directory ID> -DiscoveryResourceId <Proxied Mopria Discovery Cloud Service App ID>`
 
 
@@ -302,4 +302,4 @@ MDM ポリシーが構成されている Azure AD 参加済みデバイスの場
     - プリンター を選択し、**デバイスの追加** ボタンをクリックします。
     - プリンターが正常にインストールされたら、お気に入りのアプリからプリンターに印刷します
 
->   注:"Ecpprinttest" プリンターを使用している場合は、"C:\\ecpprinttest\\ecpprinttest. .xps" の場所にあるプリントサーバーコンピューターで出力ファイルを見つけることができます。
+>   メモ:"Ecpprinttest" プリンターを使用している場合は、"C:\\ecpprinttest\\ecpprinttest. .xps" の場所にあるプリントサーバーコンピューターで出力ファイルを見つけることができます。

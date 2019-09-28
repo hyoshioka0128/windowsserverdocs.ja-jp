@@ -2,7 +2,7 @@
 title: 'secedit: 構成'
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9844ed9ac1c53d0a3b9f8bb28ab085a20a48509d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: f0e1b900d01ad7f0e84d3235f24a00fe108eaa36
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868816"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384275"
 ---
 # <a name="seceditconfigure"></a>secedit: 構成
 

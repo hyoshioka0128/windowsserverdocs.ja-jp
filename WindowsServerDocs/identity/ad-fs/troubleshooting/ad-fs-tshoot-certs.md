@@ -6,14 +6,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/21/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cee87ce864e333b98e92fa64e939f2ead7edc156
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: fdadbefc138562246c72f7707b303d966bff0989
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869188"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407191"
 ---
 # <a name="ad-fs-troubleshooting---certificates"></a>AD FS のトラブルシューティング-証明書
 AD FS は、正常に動作するために次の証明書を必要とします。  これらのいずれかが適切に設定されていないか、正しく構成されていない場合、問題が発生する可能性があります。  
@@ -46,7 +46,7 @@ AD FS には、次の証明書が必要です。
 ## <a name="common-certificate-errors"></a>一般的な証明書のエラー
 次の表は、一般的なエラーと考えられる原因の一覧です。
 
-|event|原因|解決方法
+|イベント|原因|解決方法
 |-----|-----|-----|
 |イベント 249-証明書が証明書ストアに見つかりませんでした。 証明書のロールオーバーのシナリオでは、この証明書を使用してフェデレーションサービスが署名または復号化するときに、エラーが発生する可能性があります。|問題の証明書がローカル証明書ストアに存在しないか、サービスアカウントに証明書の秘密キーへのアクセス許可がありません。|AD FS サーバーの LocalMAchine\My ストアに証明書がインストールされていることを確認します。 AD FS サービスアカウントに、証明書の秘密キーへの読み取りアクセス権があることを確認します。|
 |イベント 315-要求プロバイダー信頼署名証明書の証明書チェーンを構築しようとしたときにエラーが発生しました。|証明書が失効している。</br></br>証明書チェーンを検証できません。</br></br>証明書の有効期限が切れているか、まだ有効ではありません。|証明書が有効であり、失効していないことを確認してください。</br></br>CRL にアクセスできることを確認します。|

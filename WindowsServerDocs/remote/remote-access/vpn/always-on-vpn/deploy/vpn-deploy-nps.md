@@ -1,7 +1,7 @@
 ---
 title: サーバーに NPS サーバーをインストールして構成する
 description: NPS サーバーは、VPN サーバーによって送信される接続要求を処理することで、ユーザーが接続を許可しているかどうか、ユーザーの id を確認し、NPS で RADIUS アカウンティングを構成したときに選択した接続要求の側面をログに記録します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.date: 08/30/2018
-ms.openlocfilehash: 553f3327e6252d2b03744b2e0fc88f340701f3a9
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5cb0d342afec9c28259efb7a2e15666358f3cb5b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871335"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404261"
 ---
 # <a name="step-4-install-and-configure-the-network-policy-server-nps"></a>手順 4. ネットワークポリシーサーバー (NPS) をインストールして構成する
 
@@ -88,7 +88,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
     
     [インストールの進行状況] ページに、インストール処理中の状態が表示されます。 プロセスが完了すると、" *computername*でのインストールが成功しました" というメッセージが表示されます。ここで、 *Computername*は、ネットワークポリシーサーバーをインストールしたコンピューターの名前です。
 
-13. **[閉じる]** を選択します。
+13. **[閉じる]** を選びます。
 
 ## <a name="configure-nps"></a>NPS の構成
 
@@ -185,7 +185,7 @@ NPS を登録する別の方法については、「 [Active Directory ドメイ
 
     4. **[削除]** を選択して、セキュリティで保護されたパスワード (eap MSCHAP v2) の eap の種類を削除します。
 
-    5. **[追加]** を選びます。 [EAP の追加] ダイアログボックスが表示されます。
+    5. **[追加]** をクリックします。 [EAP の追加] ダイアログボックスが表示されます。
 
     6. **[スマートカードまたはその他の証明書]** を選択し、[ **OK]** を選択します。
 
@@ -195,7 +195,7 @@ NPS を登録する別の方法については、「 [Active Directory ドメイ
 
 8. [ユーザーグループの指定] で、次の手順を実行します。
 
-    1. **[追加]** を選びます。 [ユーザー、コンピューター、サービスアカウントまたはグループの選択] ダイアログボックスが表示されます。
+    1. **[追加]** をクリックします。 [ユーザー、コンピューター、サービスアカウントまたはグループの選択] ダイアログボックスが表示されます。
 
     2. 「 **VPN Users**」と入力し、[ **OK]** を選択します。
 

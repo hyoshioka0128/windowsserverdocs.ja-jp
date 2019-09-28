@@ -3,7 +3,7 @@ title: MultiPoint Services を展開するためのタスク
 description: MultiPoint Services の展開に関連するすべてのタスクと、手順へのリンクを示します。
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: e08c5784-5b3e-4028-86c1-96deaee41f09
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 9f0b69da06fb783ac7cccc2dc5bc7337dae59d66
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9d50cfc3ed48f77281af400e9e80fb8b4895bac5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871448"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394757"
 ---
 # <a name="task-lists-multipoint-services"></a>タスク一覧:MultiPoint Services
 MultiPoint Services システムを展開し、完了したタスクを追跡するには、このトピックのタスク一覧を使用します。 すべてのタスクは、すべての環境に適用されます。 たとえば、いくつかのタスクは、Active Directory ドメインに multipoint 対応のサーバーを展開する場合にのみ実行されます。 分割画面ステーションの作成や、基地局の場合、仮想デスクトップを展開するなど、他はオプションです。 これらのタスクを実行する方法を説明する手順については、次を参照してください。 [MultiPoint サービスを配置する](deploying-multipoint-services.md)です。  
@@ -36,7 +36,7 @@ MultiPoint Services システムを展開し、完了したタスクを追跡す
 |**7**|[MultiPoint Services コンピューターをドメインに参加させる-省略可能](Join-the-MultiPoint-services-computer-to-a-domain--optional-.md)|  
 |**8**|[更新プログラムをインストールする](Install-updates.md)|  
 |**9**|[MultiPoint Services コンピューターに追加のステーションを接続する](Attach-additional-stations-to-your-MultiPoint-services-computer.md)|  
-|"**10**"|[MultiPoint Services をアクティブ化して Cal を追加する](manage-client-access-licenses-with-multipoint-services.md)|  
+|**10**|[MultiPoint Services をアクティブ化して Cal を追加する](manage-client-access-licenses-with-multipoint-services.md)|  
 |**11**|[MultiPoint Services システムにソフトウェアをインストールする](Install-software-on-your-MultiPoint-services-system.md)|  
   
 ## <a name="task-list-optional-configurations"></a>タスク一覧:オプションの構成  

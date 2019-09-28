@@ -1,7 +1,7 @@
 ---
 title: ライブ マイグレーションの概要
 description: Windows Server 2016 のライブマイグレーション機能の概要を示します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 ms.technology: compute-hyper-v
 ms.tgt_pltfrm: na
@@ -10,12 +10,12 @@ ms.assetid: 5cc875ab-05c4-439e-b27d-6bfc77054660
 author: johncslack
 ms.author: joslack
 ms.date: 06/27/2017
-ms.openlocfilehash: 2842435f1bdb0aeb82bbcf1ae02be66e242dc9eb
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ba239343728502c4928b86a2a0d4a3db5c36e7f6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872054"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392550"
 ---
 # <a name="live-migration-overview"></a>ライブ マイグレーションの概要
 

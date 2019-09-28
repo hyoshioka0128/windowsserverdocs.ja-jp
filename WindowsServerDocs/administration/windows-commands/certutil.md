@@ -2,7 +2,7 @@
 title: certutil
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3bc1e544c0e0684678bc168f286b52e5573f3ac2
-ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
+ms.openlocfilehash: 45c9946cc53fe3a901c3f6ee53f082a5b3d086c0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68300685"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379653"
 ---
 # <a name="certutil"></a>certutil
 
@@ -146,7 +146,7 @@ Certutil は、証明書サービスの一部としてインストールされ�
 次の表では、コマンドライン構文を示すために使用される表記法について説明します。
 
 
-|            Notation             |                  説明                  |
+|            表し             |                  説明                  |
 |---------------------------------|-----------------------------------------------|
 | 角かっこまたは中かっこを含まないテキスト |         表示されるように入力する必要がある項目          |
 |  \<山かっこ内のテキスト >  | 値を指定する必要があるプレースホルダー |
@@ -1208,7 +1208,7 @@ CRYPT_DELETEKEYSET:スマートカードのすべてのキーを削除する
 
 CertUtil [オプション]-SCRoots update [+] [InputRootFile] [ReaderName]
 
-CertUtil [オプション]-scroots save \@outputrootfile [readername]
+CertUtil [オプション]-SCRoots save \@OutputRootFile [ReaderName]
 
 CertUtil [オプション]-SCRoots ビュー [InputRootFile |ReaderName]
 
@@ -1308,7 +1308,7 @@ CertFile: 検証する証明書を含むファイル。 証明書は CTL エン�
 
 ## <a name="-sign"></a>-sign
 
-CertUtil [オプション]-署名 InFileList |シリアルの |CRL OutFileList [StartDate + dd: hh] [+ SerialNumberList |-SerialNumberList |-ObjectIdList |\@Extensionfile]
+CertUtil [オプション]-署名 InFileList |シリアルの |CRL OutFileList [StartDate + dd: hh] [+ SerialNumberList |-SerialNumberList |-ObjectIdList | \@ExtensionFile]
 
 CertUtil [オプション]-署名 InFileList |シリアルの |CRL OutFileList [#HashAlgorithm] [+ AlternateSignatureAlgorithm | AlternateSignatureAlgorithm]
 
@@ -1461,7 +1461,7 @@ CertUtil [オプション]-エラー ErrorCode
 
 ## <a name="-getreg"></a>-getreg
 
-CertUtil [オプション]-getreg [{ca | restore | policy | exit | template | enroll | chain |Policyservers}\[ProgId\]] [registryvaluename]
+CertUtil [オプション]-getreg [{ca | restore | policy | exit | template | enroll | chain |PolicyServers} \[ProgId @ no__t-1] [RegistryValueName]
 
 レジストリ値の表示
 
@@ -1499,7 +1499,7 @@ Registryvaluename: レジストリ値の名前 (プレフィックスと\*一致
 
 ## <a name="-setreg"></a>-setreg
 
-CertUtil [オプション]-setreg [{ca | restore | policy | exit | template | enroll | chain |Policyservers}\[ProgId\]] registryvaluename 値
+CertUtil [オプション]-setreg [{ca | restore | policy | exit | template | enroll | chain |PolicyServers} \[ProgId @ no__t-1] RegistryValueName 値
 
 レジストリ値の設定
 
@@ -1537,7 +1537,7 @@ Registryvaluename: レジストリ値の名前 (プレフィックスと\*一致
 
 ## <a name="-delreg"></a>-delreg
 
-CertUtil [オプション]-delreg [{ca | restore | policy | exit | template | enroll | chain |Policyservers}\[ProgId\]] [registryvaluename]
+CertUtil [オプション]-delreg [{ca | restore | policy | exit | template | enroll | chain |PolicyServers} \[ProgId @ no__t-1] [RegistryValueName]
 
 レジストリ値の削除
 

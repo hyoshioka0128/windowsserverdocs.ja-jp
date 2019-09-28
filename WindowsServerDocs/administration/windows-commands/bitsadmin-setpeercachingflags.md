@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setpeercachingflags
-description: Windows コマンド」のトピック**bitsadmin setpeercachingflags** -ジョブのファイルをキャッシュしてピアに提供し、ジョブは、ピアからコンテンツをダウンロードできる場合を決定するフラグを設定します。
+description: '**Bitsadmin setpeercachingflags**の Windows コマンドトピック-ジョブのファイルをキャッシュしてピアに配信できるかどうか、およびジョブがピアからコンテンツをダウンロードできるかどうかを決定するフラグを設定します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2d50a6ccd83a6251808ca3d66437e52f641c60a7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 147f28268f1b4dd6dfb40cff85f073feabbc35a0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814253"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380464"
 ---
 # <a name="bitsadmin-setpeercachingflags"></a>bitsadmin setpeercachingflags
 
 
 
-ピアからコンテンツの場合は、ジョブをダウンロードして、ジョブのファイルをキャッシュおよびピアに提供できる場合を決定するフラグを設定します。
+ジョブのファイルをキャッシュしてピアに提供できるかどうか、およびジョブがピアからコンテンツをダウンロードできるかどうかを決定するフラグを設定します。
 
 ## <a name="syntax"></a>構文
 
@@ -37,15 +37,15 @@ bitsadmin /SetPeerCachingFlags <Job> <value>
 |パラメーター|説明|
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
-|値|値は、バイナリ表現内のビットの次の解釈で符号なし整数です。</br>1 - ジョブは、ピアからコンテンツをダウンロードできます。</br>2 - ジョブのファイルをキャッシュして、ピアに提供できます。|
+|値|値は符号なし整数で、バイナリ表現のビットに対して次のように解釈されます。</br>1-ジョブは、ピアからコンテンツをダウンロードできます。</br>2-ジョブのファイルをキャッシュしてピアに配信できます。|
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブのフラグを設定する*myJob*ピアからコンテンツをダウンロードすることができます。
+次の例では、 *myjob*という名前のジョブのフラグを設定して、ピアからコンテンツをダウンロードできるようにします。
 ```
 C:\>bitsadmin / SetPeerCachingFlags myJob 1 
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -2,7 +2,7 @@
 title: Windows Server 2019 のライセンス認証
 description: Windows Server 2019 をライセンス認証する方法
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: server-general
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 536d3265e6a29c2d5321d3d8a8ea3ecfa7b2cdcb
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5f3f9a05d02b291b4443b346a1cb2301e8a5190d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868692"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360880"
 ---
 # <a name="windows-server-2019-activation"></a>Windows Server 2019 のライセンス認証
 

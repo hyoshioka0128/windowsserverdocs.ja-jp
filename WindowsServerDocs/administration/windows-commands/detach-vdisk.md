@@ -1,8 +1,8 @@
 ---
-title: Vdisk をデタッチします。
-description: 'Windows コマンド」のトピック * * *- '
+title: Vdisk のデタッチ
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b6a1ecd3d787506c89f120bed204cc30e6d68d9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4850f9f17218178f210820dd4c6ca96fd918accc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822733"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378693"
 ---
-# <a name="detach-vdisk"></a>Vdisk をデタッチします。
+# <a name="detach-vdisk"></a>Vdisk のデタッチ
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-選択した仮想ハード_ディスクを停止する\(VHD\)ホスト コンピューター上のローカル ハード ディスク ドライブとして表示されないようにします。 VHD がデタッチされている場合は、他の場所にコピーできます。  
+選択したバーチャルハードディスク \(VHD @ no__t が、ホストコンピューターのローカルハードディスクドライブとして表示されなくなります。 VHD をデタッチすると、他の場所に VHD をコピーできます。  
   
 > [!NOTE]  
 > このコマンドは、Windows 7 と Windows Server 2008 R2 に該当するだけです。  
@@ -39,11 +39,11 @@ detach vdisk [noerr]
   
 |パラメーター|説明|  
 |-------|--------|  
-|noerr|スクリプトのみに使用されます。 エラーが発生すると、DiskPart は、エラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|  
+|noerr|スクリプト作成にのみ使用されます。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|  
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>コメント  
   
--   VHD の選択し、この操作を正常にデタッチする必要があります。 使用して、 **vdisk を選択して** コマンド、VHD を選択し、それにフォーカスをします。  
+-   この操作を成功させるには、VHD を選択してデタッチする必要があります。 使用して、 **vdisk を選択して** コマンド、VHD を選択し、それにフォーカスをします。  
   
 ## <a name="BKMK_Examples"></a>例  
 選択した VHD をデタッチするには、次のように入力します。  
@@ -52,23 +52,23 @@ detach vdisk [noerr]
 detach vdisk  
 ```  
   
-## <a name="additional-references"></a>その他の参照  
+## <a name="additional-references"></a>その他の参照情報  
   
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  
   
--   [attach vdisk](attach-vdisk.md)  
+-   [vdisk のアタッチ](attach-vdisk.md)  
   
--   [vdisk を最適化します。](compact-vdisk.md)  
+-   [compact vdisk](compact-vdisk.md)  
   
   
   
 -   [詳細 vdisk](detail-vdisk.md)  
   
--   [vdisk を展開します。](expand-vdisk.md)  
+-   [vdisk を展開する](expand-vdisk.md)  
   
--   [Vdisk をマージします。](merge-vdisk.md)  
+-   [マージ vdisk](merge-vdisk.md)  
   
--   [vdisk を選択します。](select-vdisk.md)  
+-   [vdisk の選択](select-vdisk.md)  
   
 -   [list_1](list_1.md)  
   

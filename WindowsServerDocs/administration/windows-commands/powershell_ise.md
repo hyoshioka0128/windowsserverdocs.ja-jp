@@ -1,8 +1,8 @@
 ---
 title: PowerShell_ise
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5619396e29b446dbc6804ece7444f355dae4c0a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 65d8b9e7b7952ec64cd24e8106802cf66de693c6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436302"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372191"
 ---
-# <a name="powershellise"></a>PowerShell_ise
+# <a name="powershell_ise"></a>PowerShell_ise
 
 
 
@@ -30,7 +30,7 @@ Windows PowerShell Integrated Scripting Environment (ISE) は、読み取り、�
 
 **PowerShell_ISE.exe** Windows PowerShell 2.0 で導入され、Windows PowerShell 3.0 では大幅に拡大されました。
 
-## <a name="using-powershelliseexe"></a>PowerShell_ISE.exe を使用します。
+## <a name="using-powershell_iseexe"></a>PowerShell_ISE.exe を使用します。
 
 使用する **PowerShell_ISE.exe** を開始し、次のように Windows PowerShell セッションを終了します。
 - Windows PowerShell、または [スタート] メニューでは、コマンド プロンプト ウィンドウで、Windows PowerShell ISE のセッションを開始するには、次のように入力します。  
@@ -59,13 +59,13 @@ Windows PowerShell Integrated Scripting Environment (ISE) は、読み取り、�
 
 Windows PowerShell ISE を開始するには、その他の方法については、次を参照してください。 [Windows PowerShell の開始](https://go.microsoft.com/fwlink/?LinkID=135259)します。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 Windows PowerShell は、Windows Server オペレーティング システムの Server Core インストール オプションで実行されます。 ただし、Windows PowerShell ISE には、グラフィック ユーザー インターフェイスが必要であるために、Server Core インストールで実行にしないとはされません。
 
 ## <a name="additional-references"></a>その他の参照情報
 
-[about_PowerShell_Ise.exe](https://go.microsoft.com/fwlink/?LinkId=256512)
-[about_PowerShell.exe](https://go.microsoft.com/fwlink/?LinkID=113439)
+[about_PowerShell_Ise](https://go.microsoft.com/fwlink/?LinkId=256512)
+[about_PowerShell](https://go.microsoft.com/fwlink/?LinkID=113439)
 [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)
-[Windows を使用したスクリプトPowerShell](https://technet.microsoft.com/scriptcenter/dd742419)も参照してください
+[windows powershell を使用したスクリプト](https://technet.microsoft.com/scriptcenter/dd742419)の参照

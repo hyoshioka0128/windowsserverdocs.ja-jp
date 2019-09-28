@@ -2,7 +2,7 @@
 title: 再起動またはシャットダウンする
 description: MultiPoint Services でシステムを再起動または完全にシャットダウンする方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: d2ef7185dc660e50dfde1816ed843b9c2586e930
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 76155fa5f8baf877999bdc3eb0753d7805087a72
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871567"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389422"
 ---
 # <a name="restart-or-shut-down"></a>再起動またはシャットダウンする
 ハードウェア、ソフトウェア、ソフトウェアの更新プログラムのインストール後に指示されたとき、場合によっては、ホスト コンピューターと MultiPoint Services システムのすべての*ステーション*を再起動する必要があります。 新しいハードウェア デバイスをステーションに追加している場合、そのハードウェア デバイスをそのステーションに関連付けると便利です。 *ステーションの関連付け*に関する詳細については、「[モードの切り替え](Switch-Between-Modes.md)」トピックを参照してください。  

@@ -1,18 +1,18 @@
 ---
 title: Server Core への修正プログラムの適用
 description: Windows Server の Server Core インストールを更新する方法について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: b649a3cc16bc1a527c5df0b4a0d543da22a882d2
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: eacb80d89e7bcc95d6b5c12269d7587dc7d6870c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476480"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383316"
 ---
 # <a name="patch-a-server-core-installation"></a>Server Core インストールにパッチを適用する
 
@@ -58,7 +58,7 @@ Windows PowerShell を使用して更新プログラムを表示するには、 
    Net start wuauserv 
    ```
 
-サーバーがドメインのメンバーである場合は、グループ ポリシーを使用して Windows Update を構成することもできます。 詳細については、「 https://go.microsoft.com/fwlink/?LinkId=192470 」を参照してください。 ただし、この方法を使用すると、グラフィカルインターフェイスがないため、Server Core インストールに関連するオプション 4 ("自動ダウンロードしてインストールをスケジュールする") のみが使用されます。 インストールする更新プログラムとインストールするタイミングをより詳細に制御するには、ほとんどの Windows Update グラフィカル インターフェイスと同等のコマンド ライン機能を提供するスクリプトを使用します。 スクリプトの詳細については https://go.microsoft.com/fwlink/?LinkId=192471 、「」を参照してください。
+サーバーがドメインのメンバーである場合は、グループ ポリシーを使用して Windows Update を構成することもできます。 詳細については、「 https://go.microsoft.com/fwlink/?LinkId=192470 」を参照してください。 ただし、この方法を使用すると、グラフィカルインターフェイスがないため、Server Core インストールに関連するオプション 4 ("自動ダウンロードしてインストールをスケジュールする") のみが使用されます。 インストールする更新プログラムとインストールするタイミングをより詳細に制御するには、ほとんどの Windows Update グラフィカル インターフェイスと同等のコマンド ライン機能を提供するスクリプトを使用します。 スクリプトの詳細については、「 https://go.microsoft.com/fwlink/?LinkId=192471 」を参照してください。
 
 Windows Update が使用可能なすべての更新プログラムを即座に検出してインストールするように強制するには、次のコマンドを実行します。
 

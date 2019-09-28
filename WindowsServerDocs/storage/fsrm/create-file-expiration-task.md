@@ -2,18 +2,18 @@
 title: ファイルの有効期限タスクを作成する
 description: この記事では、まもなく期限切れになるファイルを処理するためのファイル管理タスクの作成プロセスを説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b816dbe759d94980b2cc27284fd2e0ec7787d0b0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0901c17203252414a37ccc5205a0946b8bef0d41
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446004"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394231"
 ---
 # <a name="create-a-file-expiration-task"></a>ファイルの有効期限タスクを作成する
 
@@ -61,7 +61,7 @@ ms.locfileid: "66446004"
 
      - 有効期限切れが近いファイルの所有者に電子メールを送信するには、 **[ファイルの有効期限が切れるユーザーに電子メールを送信する]** チェック ボックスをオンにします。
 
-     - メッセージを構成するには、用意されている既定の件名行とメッセージ本文を編集します。 角かっこで囲まれたテキストには、通知の原因となったクォータ イベントに関する変数情報が挿入されます。 たとえば、 **\[ソース ファイル所有者\]** 変数ファイルの有効期限が近づいてユーザーの名前を挿入します。 テキストに追加の変数を挿入するには、 **[変数の挿入]** をクリックします。
+     - メッセージを構成するには、用意されている既定の件名行とメッセージ本文を編集します。 角かっこで囲まれたテキストには、通知の原因となったクォータ イベントに関する変数情報が挿入されます。 たとえば、 **\[Source File Owner @ no__t-2**変数は、ファイルの有効期限が間もなく切れるユーザーの名前を挿入します。 テキストに追加の変数を挿入するには、 **[変数の挿入]** をクリックします。
 
      - 有効期限が切れるファイルの一覧を添付するには、 **[アクションが実行されるファイルの電子メールの一覧に追加する]** をクリックし、 **[一覧上のファイルの最大数]** に値を入力するか選択します。
 

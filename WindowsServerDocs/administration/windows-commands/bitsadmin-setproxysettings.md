@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setproxysettings
-description: Windows コマンド」のトピック**bitsadmin setproxysettings** -指定したジョブのプロキシ設定を指定します。
+description: '**Bitsadmin setproxysettings**の Windows コマンドのトピック-指定したジョブのプロキシ設定を設定します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3503aab55f5650cb9283ce8a9f1a17359bfd48b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 38987c88bcfc93ea9251583b7914f982cf79e057
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825593"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380468"
 ---
 # <a name="bitsadmin-setproxysettings"></a>bitsadmin setproxysettings
 
 
 
-指定したジョブのプロキシ設定を設定します。
+指定されたジョブのプロキシ設定を設定します。
 
 ## <a name="syntax"></a>構文
 
@@ -37,19 +37,19 @@ bitsadmin /SetProxySettings <Job> <Usage> [List] [Bypass]
 |パラメーター|説明|
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
-|使用方法|次のいずれかの値です。</br>-PRECONFIG-所有者の Internet Explorer の既定値を使用します。</br>-NO_PROXY — プロキシ サーバーを使用しません。</br>-オーバーライド-明示的なプロキシのリストを使用し、リストをバイパスします。 プロキシとプロキシ バイ パス一覧が従う必要があります。</br>-AUTODETECT: プロキシ設定を自動的に検出します。|
-|一覧|際に使用される、*使用状況*パラメーターの上書きに設定されて、使用するプロキシ サーバーのコンマ区切りの一覧が含まれています。|
-|バイパス|際に使用される、*使用状況*パラメーターの上書きを設定する: スペースで区切られた一覧を含むのホスト名または IP アドレス、またはその両方を対象の転送はプロキシを経由してルーティングします。 これは、 **\<ローカル >** を同じ LAN 上のすべてのサーバーを参照してください。 NULL 値または""を空のプロキシ バイ パス一覧の使用可能性があります。|
+|使用方法|次のいずれかの値です。</br>-PRECONFIG —所有者の Internet Explorer の既定値を使用します。</br>-NO_PROXY —プロキシサーバーを使用しません。</br>-OVERRIDE —明示的なプロキシリストとバイパスリストを使用します。 プロキシとプロキシのバイパスリストは、の後に続く必要があります。</br>-自動検出—プロキシ設定を自動的に検出します。|
+|リスト|*Usage*パラメーターが OVERRIDE に設定されている場合に使用します。には、使用するプロキシサーバーのコンマ区切りの一覧が含まれています。|
+|通過|*Usage*パラメーターが OVERRIDE に設定されている場合に使用されます。には、転送がプロキシ経由でルーティングされない、ホスト名または IP アドレスのスペース区切りの一覧、またはその両方が含まれています。 これは、同じ LAN 上のすべてのサーバーを参照するために **、\< のローカル >** にすることができます。 空のプロキシバイパスリストには、NULL または "" の値を使用できます。|
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブのプロキシ設定を設定する*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブのプロキシ設定を設定します。
 
 ```
 C:\>bitsadmin /SetProxySettings myDownloadJob PRECONFIG
 ```
 
-その他の例に示します。
+その他の例を次に示します。
 
 ```
 bitsadmin /setproxysettings myDownloadJob NO_PROXY
@@ -59,4 +59,4 @@ bitsadmin /setproxysettings myDownloadJob OVERRIDE proxy1,proxy2,proxy3 NULL
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

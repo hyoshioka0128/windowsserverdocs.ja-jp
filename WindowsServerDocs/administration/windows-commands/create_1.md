@@ -1,8 +1,8 @@
 ---
 title: 作成
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70a8f53d9cb90fc36a76b11de2f93da71874617a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2245efb6c3bce8aecf8edf730694804ffbdc3d80
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881273"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378777"
 ---
 # <a name="create"></a>作成
 
 
 
-現在のコンテキストとオプションの設定を使用して、シャドウ コピーの作成プロセスを開始します。 シャドウ コピー セットに少なくとも 1 つのボリュームが必要です。
+現在のコンテキストとオプションの設定を使用して、シャドウコピーの作成プロセスを開始します。 シャドウコピーセットに少なくとも1つのボリュームが必要です。
 
 ## <a name="syntax"></a>構文
 
@@ -32,12 +32,12 @@ ms.locfileid: "59881273"
 create
 ```
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   少なくとも 1 つのボリュームを追加する必要があります、**ボリュームの追加**コマンドを使用する前に、**作成**コマンド。
--   使用することができます、**バックアップ開始**コピー バックアップではなく、完全バックアップを指定するコマンド。
--   実行した後、**作成**コマンドを使用することができます、 **exec**シャドウ コピーからバックアップの重複のスクリプトを実行するコマンド。
+-   **Create**コマンドを使用する前に、 **[ボリュームの追加]** コマンドでボリュームを少なくとも1つ追加する必要があります。
+-   **[バックアップの開始]** コマンドを使用すると、コピーバックアップではなく完全バックアップを指定できます。
+-   **Create**コマンドを実行した後、 **exec**コマンドを使用して、シャドウコピーからバックアップ用の複製スクリプトを実行できます。
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -2,7 +2,7 @@
 title: Windows Server 2019 と Microsoft サーバー アプリケーションの互換性
 description: Windows Server 2019 と Microsoft サーバー アプリケーションの互換性表
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: server-general
@@ -13,12 +13,12 @@ author: coreyp
 ms.author: coreyp-at-msft
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dcaff6ab8a296790158f59035bd4a5c1a093cbd
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 40c90b179321062949af5eea6d92f6238fb9b460
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66442371"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392001"
 ---
 # <a name="windows-server-2019-and-microsoft-server-application-compatibility"></a>Windows Server 2019 と Microsoft サーバー アプリケーションの互換性
 

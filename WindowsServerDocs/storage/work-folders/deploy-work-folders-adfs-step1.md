@@ -1,6 +1,6 @@
 ---
 title: 'AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開 - 手順 1: AD FS のセットアップ'
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-work-folders
 ms.topic: article
 manager: klaasl
@@ -8,31 +8,31 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 10/18/2018
 ms.assetid: 938cdda2-f17e-4964-9218-f5868fd96735
-ms.openlocfilehash: 4f4119e893b215bd9f6d713bc5a17218b751c3d3
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 0920d091d6e8b5f3db9bf945a966fdd577918179
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812683"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365788"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 1、AD FS のセットアップ
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する:手順 1. AD FS を設定する
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Active Directory フェデレーション サービス (AD FS) と Web アプリケーション プロキシを使用して、ワーク フォルダーを展開する最初の手順について説明します。 このプロセスの他の手順は、次のトピックで確認できます。  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。概要](deploy-work-folders-adfs-overview.md)  
+-   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。概要](deploy-work-folders-adfs-overview.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 2 では、AD FS の構成後の作業](deploy-work-folders-adfs-step2.md)  
+-   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順2、AD FS 構成後の作業 @ no__t-0  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 3 では、ワーク フォルダーの設定](deploy-work-folders-adfs-step3.md)  
+-   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順 3. ワークフォルダーをセットアップする @ no__t-0  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 4、Web アプリケーション プロキシの設定](deploy-work-folders-adfs-step4.md)  
+-   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順 4. Web アプリケーションプロキシの設定 @ no__t-0  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 5 では、クライアントをセットアップします。](deploy-work-folders-adfs-step5.md)  
+-   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順 5. クライアントをセットアップする @ no__t-0  
   
 > [!NOTE]
->   このセクションで説明する手順については、Windows Server 2019 または Windows Server 2016 環境です。 Windows Server 2012 R2 を使用している場合には、[Windows Server 2012 R2 の手順](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx) に従います。
+>   このセクションで説明する手順は、Windows Server 2019 または Windows Server 2016 環境向けです。 Windows Server 2012 R2 を使用している場合には、[Windows Server 2012 R2 の手順](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx) に従います。
 
 ワーク フォルダーで使用するための AD FS を設定するには、次の手順を使用します。  
   
@@ -104,7 +104,7 @@ AD FS 証明書は、次の値を持つ SAN 証明書である必要がありま
 enterpriseregistration SAN は Workplace Join に必要となります。  
   
 ### <a name="set-the-server-ip-address"></a>サーバー IP アドレスの設定  
-サーバーの IP アドレスを静的 IP アドレスに変更します。 テストの例は 192.168.0.160 IP クラス A を使用して/サブネット マスク。255.255.0.0/デフォルト ゲートウェイ。192.168.0.1/DNS を優先します。192.168.0.150 (ドメイン コント ローラーの IP アドレス\)します。  
+サーバーの IP アドレスを静的 IP アドレスに変更します。 テストの例では、IP クラス A を使用します。これは 192.168.0.160/subnet mask です。255.255.0.0/デフォルトゲートウェイ:192.168.0.1/優先 DNS:192.168.0.150 (ドメインコントローラーの IP アドレス @ no__t-0  
   
 ## <a name="install-the-ad-fs-role-service"></a>AD FS 役割サービスをインストールする  
 AD FS をインストールするには、次の手順に従います。  
@@ -182,9 +182,9 @@ $thumbprint = $cert.Thumbprint
 Install-ADFSFarm -CertificateThumbprint $thumbprint -FederationServiceDisplayName "Contoso Corporation" –FederationServiceName blueadfs.contoso.com -GroupServiceAccountIdentifier contoso\ADFSService$ -OverwriteConfiguration -ErrorAction Stop  
 ```  
   
-次のステップ:[AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 2 では、AD FS の構成後の作業](deploy-work-folders-adfs-step2.md)  
+次のステップ:[Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順2、AD FS 構成後の作業 @ no__t-0  
   
 ## <a name="see-also"></a>関連項目  
-[ワーク フォルダーの概要](Work-Folders-Overview.md)  
+[ワークフォルダーの概要](Work-Folders-Overview.md)  
   
 

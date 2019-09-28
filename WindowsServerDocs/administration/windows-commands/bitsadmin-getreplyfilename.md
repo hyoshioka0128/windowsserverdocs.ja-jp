@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getreplyfilename
-description: Windows コマンド」のトピック**bitsadmin getreplyfilename** -サーバーの応答を含むファイルのパスを取得します。
+description: '**Bitsadmin getreplyfilename**の Windows コマンドに関するトピックでは、サーバーの応答を含むファイルのパスを取得します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 46130700e9ac7e2d0076b368712e5dcb3f02ba2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 96b77e9bd19cdc094e6b025e143b05aff7bc60d5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862153"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381268"
 ---
 # <a name="bitsadmin-getreplyfilename"></a>bitsadmin getreplyfilename
 
-サーバー応答を含むファイルのパスを取得します。
+サーバー応答を格納しているファイルのパスを取得します。
 
-**1.2 およびそれ以前の BITS**: サポートされません。
+**BITS 1.2 以前**: サポートされていません。
 
 ## <a name="syntax"></a>構文
 
@@ -38,17 +38,17 @@ bitsadmin /GetReplyFileName <Job>
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-アップロード応答ジョブに対してのみ有効です。
+アップロード/応答ジョブに対してのみ有効です。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブの応答ファイル名を取得する*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブの応答ファイル名を取得します。
 ```
 C:\>bitsadmin /GetReplyFileName myDownloadJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

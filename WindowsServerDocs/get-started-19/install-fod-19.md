@@ -1,7 +1,7 @@
 ---
 title: Server Core アプリ互換性オンデマンド機能 (FOD)
 description: Windows Server 機能をオンデマンドでインストールする方法
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 ms.assetid: 99f7daa4-30ce-4d13-be65-0a4d55cca754
@@ -10,12 +10,12 @@ ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: 441cd9593371cb7e5018a61c3d7a6af991ce8fed
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 9ba0303d1eebc2138db7c5f1428ce920b0cb8af0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280168"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360822"
 ---
 # <a name="server-core-app-compatibility-feature-on-demand-fod"></a>Server Core アプリ互換性オンデマンド機能 (FOD)
 

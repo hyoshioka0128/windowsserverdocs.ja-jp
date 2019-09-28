@@ -1,8 +1,8 @@
 ---
 title: irftp
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d469270b744a9de881efd9b0cfa6f1105f70519a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ad8a0b9b49d90223f830081f5a99c40995d9e4ef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848423"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375364"
 ---
 # <a name="irftp"></a>irftp
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-赤外線リンク経由でファイルを送信します。    
+赤外線リンクを介してファイルを送信します。    
 ## <a name="syntax"></a>構文  
 ```  
 irftp [<Drive>:\] [[<path>] <FileName>] [/h][/s]  
@@ -33,20 +33,20 @@ irftp [<Drive>:\] [[<path>] <FileName>] [/h][/s]
 ### <a name="parameters"></a>パラメーター  
 |パラメーター|説明|  
 |-------|--------|  
-|ドライブ:\|赤外線リンク経由で送信するファイルが含まれているドライブを指定します。|  
-|[path]FileName|赤外線リンク経由で送信するファイルの場所とファイルの名前を指定します。 一連のファイルを指定する場合は、各ファイルの完全なパスを指定する必要があります。|  
-|/h|非表示モードを指定します。 非表示モードを使用すると、ワイヤレス リンク ダイアログ ボックスを表示せず、ファイルが送信されます。|  
-|/s|ファイルまたはコマンドラインを使用して、ドライブ、パス、およびファイル名を指定せずに送信するファイルのセットを選択するには、ワイヤレス リンク ダイアログ ボックスが開きます。|  
+|Drive: \|Specifies リンクを介して送信するファイルが格納されているドライブを指定します。|  
+|道/Db|赤外線リンクを介して送信するファイルまたはファイルのセットの場所と名前を指定します。 ファイルのセットを指定する場合は、各ファイルの完全なパスを指定する必要があります。|  
+|/h|非表示モードを指定します。 非表示モードを使用すると、[ワイヤレスリンク] ダイアログボックスを表示せずにファイルが送信されます。|  
+|/s|[ワイヤレスリンク] ダイアログボックスを開きます。これにより、コマンドラインを使用せずに、ドライブ、パス、およびファイル名を指定して、送信するファイルまたはファイルのセットを選択できます。|  
 
-## <a name="remarks"></a>注釈  
--   このコマンドを使用する前に、赤外線リンク経由で通信するデバイスが赤外線機能を有効にでき、正常に動作していること、およびデバイス間で赤外線リンクが確立されていることを確認します。  
--   パラメーターなしで使用したり **/s**、 **irftp**開きます、**ワイヤレス リンク** ダイアログ ボックスで、コマンドラインを使用せずに送信するファイルを選択できます。  
+## <a name="remarks"></a>コメント  
+-   このコマンドを使用する前に、赤外線リンクを介して通信するデバイスで赤外線機能が有効になっており、正常に動作していること、およびデバイス間に赤外線リンクが確立されていることを確認してください。  
+-   パラメーターを指定せずに使用するか、 **/s**と共に使用すると、 **Irftp**は **[ワイヤレスリンク]** ダイアログボックスを開きます。このダイアログボックスでは、コマンドラインを使用せずに、送信するファイルを選択できます。  
 
 ## <a name="BKMK_Examples"></a>例  
-Example.txt を赤外線リンク経由で送信します。  
+赤外線リンク経由で例 .txt を送信します。  
 ```  
 irftp c:\example.txt  
 ```  
 
-## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+## <a name="additional-references"></a>その他の参照情報  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  

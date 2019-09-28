@@ -1,7 +1,7 @@
 ---
-title: 仮想ハード ディスク ファイルが格納される物理記憶域のセクター サイズ未満のセクター サイズの仮想ハード_ディスクを使用しないでください。
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+title: バーチャルハードディスクファイルが保管されている物理記憶域のセクターサイズよりも小さいセクターサイズのバーチャルハードディスクは使用しないでください。
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,44 +10,44 @@ ms.topic: article
 ms.assetid: b7cf994e-bf4b-4b1b-bad6-ecf7d46d105e
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: b6ec2e0995180ecf9ae5986447fdd460a1c7a337
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 944fdce68a2f0b8e9c122f5f9134f0e07de18bbd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846263"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366407"
 ---
-# <a name="avoid-using-virtual-hard-disks-with-a-sector-size-less-than-the-sector-size-of-the-physical-storage-that-stores-the-virtual-hard-disk-file"></a>仮想ハード ディスク ファイルが格納される物理記憶域のセクター サイズ未満のセクター サイズの仮想ハード_ディスクを使用しないでください。
+# <a name="avoid-using-virtual-hard-disks-with-a-sector-size-less-than-the-sector-size-of-the-physical-storage-that-stores-the-virtual-hard-disk-file"></a>バーチャルハードディスクファイルが保管されている物理記憶域のセクターサイズよりも小さいセクターサイズのバーチャルハードディスクは使用しないでください。
 
 >適用先:Windows Server 2016
 
-ベスト プラクティスとスキャンの詳細については、次を参照してください。 [Run Best Practices Analyzer Scans and Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177)します。  
+ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
 |プロパティ|詳細|  
 |-|-|  
 |**オペレーティング** <br />**システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|警告|  
+|**順**|警告|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
   
 ## <a name="issue"></a>**問題**  
-*1 つまたは複数の仮想ハード_ディスクがバーチャル ハード ディスク ファイルが配置されている記憶域の物理セクター サイズ未満の物理セクター サイズであること。*  
+*1つまたは複数のバーチャルハードディスクの物理セクターサイズが、バーチャルハードディスクファイルが配置されている記憶域の物理セクターサイズよりも小さくなっています。*  
   
-## <a name="impact"></a>**影響**  
-*仮想マシンまたはバーチャル ハード_ディスクを使用して、アプリケーションでパフォーマンスの問題があります。これには、次の仮想マシンに影響します。*  
+## <a name="impact"></a>**よる**  
+バーチャルハードディスクを使用するバーチャルマシンまたはアプリケーションで、パフォーマンスの問題が @no__t ます。これは、次の仮想マシンに影響します: *  
   
-\<仮想マシンの一覧 >  
+@no__t-仮想マシンの > の一覧  
   
 ## <a name="resolution"></a>**解決方法**  
 *次のいずれかの操作を行います。*  
   
--   *新しい物理システムに仮想ハード_ディスクを移動する記憶域の移行を実行します。*  
+-   *記憶域の移行を実行して、仮想ハードディスクを新しい物理システムに移動する*  
   
--   *Windows PowerShell または WMI を使用して、特定のセクター サイズを報告する VHDX フォーマットのバーチャル ハード ディスクを有効にするには*  
+-   *Windows PowerShell または WMI を使用して、VHDX 形式の仮想ハードディスクが特定のセクターサイズを報告できるようにする*  
   
--   *レジストリ設定を使用して、レポートの 4 k 物理セクター サイズを VHD 形式のバーチャル ハード ディスクを有効にするには*  
+-   *レジストリ設定を使用して、VHD 形式のバーチャルハードディスクが4k の物理セクターサイズを報告できるようにします。*  
   
 
 

@@ -1,9 +1,9 @@
 ---
 title: 手順 1 は、DirectAccess インフラストラクチャを構成します。
-description: このトピックは Windows Server 2016 の既存のリモート アクセス (VPN) のデプロイ ガイド追加 DirectAccess の一部です。
+description: このトピックは、「Windows Server 2016 の既存のリモートアクセス (VPN) 展開に DirectAccess を追加する」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: 5dc529f7-7bc3-48dd-b83d-92a09e4055c4
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ad0ac1ad1187d0f99f84528a658bc66794ba67b2
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 4437101c6cde25ebb370fe54a2f8ef821997f15d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281860"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388769"
 ---
 # <a name="step-1-configure-the-directaccess-infrastructure"></a>手順 1 は、DirectAccess インフラストラクチャを構成します。
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、既存の VPN の展開で DirectAccess を有効にするために必要なインフラストラクチャを構成する方法について説明します。 展開の手順を開始する前で説明されている計画手順を完了したことを確認[手順 1。DirectAccess インフラストラクチャを計画](Step-1-Plan-DirectAccess-Infrastructure.md)します。  
+このトピックでは、既存の VPN の展開で DirectAccess を有効にするために必要なインフラストラクチャを構成する方法について説明します。 展開の手順を開始する前に、「[Step 1:」で説明されている計画の手順を完了していることを確認します。DirectAccess インフラストラクチャの計画 @ no__t-0  
   
 |タスク|説明|  
 |----|--------|  
@@ -37,7 +37,7 @@ ms.locfileid: "67281860"
 |セキュリティ グループを構成する|DirectAccess クライアント コンピューターを含むセキュリティ グループと、展開で必要な他の任意のセキュリティ グループを構成します。|  
 |ネットワーク ロケーション サーバーを構成する|DirectAccess の有効化ウィザードは DirectAccess サーバー上にネットワーク ロケーション サーバーを構成します。|  
   
-## <a name="ConfigNetworkSettings"></a>サーバーのネットワーク設定を構成します。  
+## <a name="ConfigNetworkSettings"></a>サーバーのネットワーク設定を構成する  
 IPv4 と IPv6 を使用した環境での単一サーバーの展開には次のネットワーク インフラストラクチャ設定が必要です。 使用してすべての IP アドレスが構成されている **アダプターの設定を変更する** で、 **Windows ネットワークと共有センター**します。  
   
 -   エッジ トポロジ  
@@ -66,14 +66,14 @@ IPv4 と IPv6 を使用した環境での単一サーバーの展開には次の
 >     Save-NetGPO -GPOSession $gposession  
 >     ```  
   
-## <a name="ConfigRouting"></a>企業ネットワークでルーティングを構成します。  
+## <a name="ConfigRouting"></a>企業ネットワークでルーティングを構成する  
 次のように、企業ネットワークでルーティングを構成します。  
   
 -   組織でネィティブ IPv6 が展開されている場合、内部ネットワーク上のルーターがリモート アクセス サーバー経由で IPv6 トラフィックをルーティングするようにルートを追加します。  
   
 -   リモート アクセス サーバー上で組織の IPv4 および IPv6 ルートを手動で構成します。 組織 (/48) の IPv6 プレフィックスが付いたすべてのトラフィックが内部ネットワークに転送されるように、公開されたルートを追加します。 さらに、IPv4 トラフィックの場合、IPv4 トラフィックが内部ネットワークに転送されるように、明示的なルートを追加します。  
   
-## <a name="ConfigFirewalls"></a>ファイアウォールを構成します。  
+## <a name="ConfigFirewalls"></a>ファイアウォールを構成する  
 展開で追加のファイアウォールを使用し、リモート アクセス サーバーが IPv4 インターネット上にある場合は、次のインターネットに接続するファイアウォール例外をリモート アクセス トラフィックに適用します。  
   
 -   6to4 トラフィック IP プロトコル 41 の受信と送信されます。  
@@ -92,10 +92,10 @@ IPv4 と IPv6 を使用した環境での単一サーバーの展開には次の
   
 -   すべての IPv4/IPv6 トラフィックに対する TCP/UDP  
   
-## <a name="ConfigCAs"></a>Ca と証明書を構成します。  
+## <a name="ConfigCAs"></a>Ca と証明書の構成  
 DirectAccess の有効化ウィザードは、ユーザー名とパスワードを使用して認証する組み込みの Kerberos プロキシを構成します。 さらに、リモート アクセス サーバーで IP-HTTPS 証明書も構成します。  
   
-### <a name="ConfigCertTemp"></a>証明書テンプレートを構成します。  
+### <a name="ConfigCertTemp"></a>証明書テンプレートを構成する  
 内部 CA を使用して証明書を発行する場合、IP-HTTPS 証明書およびネットワーク ロケーション サーバー Web サイト証明書の証明書テンプレートを構成する必要があります。  
   
 ##### <a name="to-configure-a-certificate-template"></a>証明書テンプレートを構成するには  
@@ -144,7 +144,7 @@ IP-HTTPS 認証に使用する Web サイトの証明書が次の要件を満た
   
 ##### <a name="to-install-the-ip-https-certificate-from-an-internal-ca"></a>内部 CA から IP-HTTPS 証明書をインストールするには  
   
-1.  リモート アクセス サーバーで、**開始**画面で「**mmc.exe**、し、ENTER キーを押します。  
+1.  リモート アクセス サーバーで、 **[スタート]** 画面で「**mmc.exe**」と入力し、enter キーを押します。  
   
 2.  MMC コンソールで、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   
@@ -174,12 +174,12 @@ IP-HTTPS 認証に使用する Web サイトの証明書が次の要件を満た
   
 15. 証明書スナップインの詳細ウィンドウで、新しい証明書が [サーバー認証の目的] とともに登録されていることを確認します。  
   
-## <a name="ConfigDNS"></a>DNS サーバーを構成します。  
+## <a name="ConfigDNS"></a>DNS サーバーを構成する  
 展開内の内部ネットワークのネットワーク ロケーション サーバー Web サイトの DNS エントリを手動で構成する必要があります。  
   
-### <a name="NLS_DNS"></a>ネットワーク ロケーション サーバーと web プローブ DNS レコードを作成するには  
+### <a name="NLS_DNS"></a>ネットワークロケーションサーバーと web プローブ DNS レコードを作成するには  
   
-1.  内部ネットワーク DNS サーバーで、**開始**画面、* * 型 dnsmgmt.msc**、し、ENTER キーを押します。  
+1.  内部ネットワーク DNS サーバーで、**スタート**画面で、「* * dnsmgmt.msc * *」と入力し、enter キーを押します。  
   
 2.  **[DNS マネージャー]** コンソールの左側のウィンドウで、ドメインの前方参照ゾーンを展開します。 ドメインを右クリックし、クリックして **新しいホスト (A または AAAA)** します。  
   
@@ -189,7 +189,7 @@ IP-HTTPS 認証に使用する Web サイトの証明書が次の要件を満た
   
 5.  **[完了]** をクリックします。  
 
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -204,7 +204,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 -   **CRL 失効確認**の DirectAccess は DirectAccess クライアントとリモート アクセス サーバー間の IP-HTTPS 接続、DirectAccess クライアントとネットワーク ロケーション サーバー間での HTTPS ベースの接続、証明書の失効確認を使用します。 どちらの場合も、DirectAccess クライアントは、CRL 配布ポイントの場所の解決とアクセスができる必要があります。  
   
-## <a name="ConfigAD"></a>Active Directory を構成します。  
+## <a name="ConfigAD"></a>Active Directory の構成  
 リモート アクセス サーバーとすべての DirectAccess クライアント コンピューターは Active Directory ドメインに参加している必要があります。 DirectAccess クライアント コンピューターは、次のいずれかのドメインの種類のメンバーである必要があります。  
   
 -   リモート アクセス サーバーと同じフォレストに属するドメイン。  
@@ -233,7 +233,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 9. **システムのプロパティ** ダイアログ ボックスで、閉じる をクリックします。 指示に従い、 **[今すぐ再起動する]** をクリックします。  
   
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -244,7 +244,7 @@ Add-Computer -DomainName <domain_name>
 Restart-Computer  
 ```  
   
-## <a name="ConfigGPOs"></a>Gpo を構成します。  
+## <a name="ConfigGPOs"></a>Gpo を構成する  
 リモート アクセスを展開する 2 つのグループ ポリシー オブジェクトの最小値を必要とします。 1 つのグループ ポリシー オブジェクトには、リモート アクセス サーバーの設定が含まれていますし、DirectAccess クライアント コンピューターの設定が含まれています。 リモート アクセスを構成するときに、ウィザードは自動的に必要なグループ ポリシー オブジェクトを作成します。 ただし、名前付け規則を実施する組織、またはグループ ポリシー オブジェクトを作成または更新に必要なアクセス許可がないは、リモート アクセスを構成する前に、作成する必要があります。  
   
 グループ ポリシー オブジェクトを作成するを参照してください。 [を作成し、グループ ポリシー オブジェクトを編集](https://technet.microsoft.com/library/cc754740.aspx)します。  
@@ -260,10 +260,10 @@ Restart-Computer
 > [!NOTE]  
 > グループ ポリシー オブジェクトは、手動で作成されている場合ことは、グループ ポリシー オブジェクトが使用できないこと、DirectAccess 構成中に。 グループ ポリシー オブジェクトは、管理コンピューターに最も近いドメイン コント ローラーにレプリケートするされていない可能性があります。 この場合、管理者はレプリケーションが完了するまで待つか、レプリケーションを強制的に実行できます。  
   
-## <a name="ConfigSGs"></a>セキュリティ グループを構成します。  
+## <a name="ConfigSGs"></a>セキュリティグループの構成  
 クライアント コンピューターのグループ ポリシー オブジェクトに含まれる DirectAccess 設定は、リモート アクセスを構成するときに指定したセキュリティ グループのメンバーであるコンピューターにのみ適用されます。 さらに、アプリケーション サーバーを管理するためにセキュリティ グループを使用する場合、これらのサーバーのセキュリティ グループを作成します。  
   
-### <a name="Sec_Group"></a>DirectAccess クライアントのセキュリティ グループを作成するには  
+### <a name="Sec_Group"></a>DirectAccess クライアントのセキュリティグループを作成するには  
   
 1.  **開始** 画面で「**dsa.msc**, 、ENTER キーを押します。 **Active Directory ユーザーとコンピューター** コンソールの左側のウィンドウで、セキュリティ グループを含むを右クリックし、ドメインを展開する **ユーザー**, 、 をポイント **新規**, 、クリックして **グループ**します。  
   
@@ -277,7 +277,7 @@ Restart-Computer
   
 6.  **[ユーザー、連絡先、コンピューター、サービス アカウントまたはグループの選択]** ダイアログ ボックスで、DirectAccess 用に有効にするクライアント コンピューターを選択し、 **[OK]** をクリックします。  
   
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)**Windows PowerShell の同等のコマンド**  
+@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -286,7 +286,7 @@ New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>
 Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_name>  
 ```  
   
-## <a name="ConfigNLS"></a>ネットワーク ロケーション サーバーを構成します。  
+## <a name="ConfigNLS"></a>ネットワークロケーションサーバーを構成する  
 ネットワーク ロケーション サーバーは、DirectAccess クライアントによって信頼されている可用性の高い有効な SSL 証明書を持つサーバー上にある必要があります。 ネットワーク ロケーション サーバー証明書には、次の 2 つの証明書オプションがあります。  
   
 -   **プライベート**-まだ存在しないと、次が必要です。  
@@ -307,7 +307,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 #### <a name="to-install-the-network-location-server-certificate-from-an-internal-ca"></a>内部 CA からネットワーク ロケーション サーバー証明書をインストールするには  
   
-1.  ネットワーク ロケーション サーバー Web サイトをホストするサーバーで、**開始**画面で「**mmc.exe**、し、ENTER キーを押します。  
+1.  ネットワーク ロケーション サーバー Web サイトをホストするサーバーで、 **[スタート]** 画面で「**mmc.exe**」と入力し、enter キーを押します。  
   
 2.  MMC コンソールで、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   

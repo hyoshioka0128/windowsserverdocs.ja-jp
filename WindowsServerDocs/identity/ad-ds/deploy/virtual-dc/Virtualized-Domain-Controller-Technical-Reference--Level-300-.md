@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 505939967bd9a132d2eca4e6979cf3676b3d8e51
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 45e175c2520d764b7a7221f362c16ea95ea3e2ca
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885393"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401895"
 ---
 # <a name="virtualized-domain-controller-technical-reference-level-300"></a>仮想化ドメイン コントローラーのテクニカル リファレンス (レベル 300)
 
@@ -22,14 +22,14 @@ ms.locfileid: "59885393"
 
 仮想化ドメイン コントローラー (VDC) のテクニカル リファレンスは、次のトピックで構成されています。  
   
--   [仮想化ドメイン コント ローラーのアーキテクチャ](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md)  
+-   [仮想化ドメイン コントローラーのアーキテクチャ](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md)  
   
--   [仮想化ドメイン コント ローラーの展開と構成](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Deployment-and-Configuration.md)  
+-   [仮想化ドメイン コントローラーの展開と構成](../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Deployment-and-Configuration.md)  
   
--   [仮想ドメイン コント ローラーのトラブルシューティング](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md)  
+-   [仮想化ドメイン コントローラーのトラブルシューティング](../../../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md)  
   
--   [仮想化ドメイン コント ローラーのテクニカル リファレンス付録](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md)  
+-   [仮想化ドメインコントローラーのテクニカルリファレンス付録](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md)  
   
--   [仮想化ドメイン コント ローラーの追加リソース](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Additional-Resources.md)  
+-   [仮想化ドメインコントローラーのその他のリソース](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Additional-Resources.md)  
   
 

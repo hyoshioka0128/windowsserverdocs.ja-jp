@@ -2,7 +2,7 @@
 title: ソフトウェア インベントリ ログ アグリゲーター
 description: ソフトウェアインベントリログアグリゲーターをインストールして管理する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0edecb86c7d5afa7d267c75ec858ded9af36e4c0
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 81dbfb89d2e72af57c070db8473fd3b0e521906c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866320"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382941"
 ---
 # <a name="software-inventory-logging-aggregator"></a>ソフトウェア インベントリ ログ アグリゲーター
 
@@ -391,7 +391,7 @@ SIL アグリゲーターで作成される Excel ベースのレポートの **
 |プロセッサの製造元|物理ホスト上のプロセッサの製造元です。|
 |プロセッサのモデル|物理ホスト上のプロセッサのモデルです。|
 |ハイパー スレッディングは有効ですか?|物理ホストのプロセッサでハイパー スレッディングが有効になっているかどうかに応じて False または True として表示されます。|
-|VM 名|Windows Server 仮想マシンのネットワーク名または FQDN です。 アグリゲーターがこのマシンから HTTPS 経由でデータを受信していない場合は、ハイパーバイザー内の仮想マシンのフレンドリ名が表示されます。|
+|バーチャル マシン名|Windows Server 仮想マシンのネットワーク名または FQDN です。 アグリゲーターがこのマシンから HTTPS 経由でデータを受信していない場合は、ハイパーバイザー内の仮想マシンのフレンドリ名が表示されます。|
 |ホストで同時に実行されている Windows Server VM|ホスト上で同時に実行されている Windows Server VM の数です。 対象ホストにおける月内での最大カウント数は、その時点で一覧表示およびキャプチャされたハイ ウォーターマーク カウントです。<br /><br />このドキュメントの「**ハイ ウォーターマーク**」を参照してください。<br /><br />Windows Server がインストールされている物理ホスト、または Windows Server がインストールされていて既知の Windows Server VM が実行されていない物理ホストは常に、カウントが 1 になります。 少なくとも 1 つの既知の Windows Server VM がホスト上で実行されていてホスト自体で Windows Server が実行されている場合、ホスト OS はカウントに含まれません。|
 |物理プロセッサ数|物理ホストにインストールされている物理プロセッサの数です。|
 |物理コア数|物理ホストにインストールされている物理プロセッサ コアの数です。|

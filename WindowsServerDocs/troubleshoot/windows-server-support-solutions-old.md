@@ -1,7 +1,7 @@
 ---
 title: Windows Server 向けの上位のサポート ソリューション
 description: Windows Server の問題のソリューションへのリンクを示します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: alant
 ms.technology: server-general
@@ -9,12 +9,12 @@ ms.date: 03/16/2018
 ms.topic: article
 author: kaushika-msft
 ms.author: elizapo
-ms.openlocfilehash: 29dd518ce7634a1cf8b3b7a84d8c7a4388d6027f
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 1ef9d511f8946452c5f9f05628c67c5908c53a55
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866981"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402764"
 ---
 # <a name="top-support-solutions-for-windows-server-2016"></a>Windows Server 2016 向けの上位のサポート ソリューション
 

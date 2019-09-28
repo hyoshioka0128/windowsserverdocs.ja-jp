@@ -3,7 +3,7 @@ title: NIC チーミング
 description: このトピックでは、Windows Server 2016 でのネットワークインターフェイスカード (NIC) チーミングの概要について説明します。 NIC チーミングを使用すると、1つまたは32の物理イーサネットネットワークアダプターを、1つまたは複数のソフトウェアベースの仮想ネットワークアダプターにグループ化することができます。 これらの仮想ネットワーク アダプターは、高速なパフォーマンスに加え、ネットワーク アダプターに障害が発生した場合のフォールト トレランスを提供します。
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-nict
@@ -13,12 +13,12 @@ ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
 ms.author: pashort
 author: shortpatti
 ms.date: 09/10/2018
-ms.openlocfilehash: acbb01acb39990126d5dce1d0811aefb8c931164
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 2356de674bfc6e57c9444136b1244934464a2d02
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871909"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396504"
 ---
 # <a name="nic-teaming"></a>NIC チーミング
 
@@ -80,7 +80,7 @@ VMQs は、各 VM のキューを割り当てる NIC 機能です。  Hyper-v �
 
 チームがスイッチに依存しないチーミングモードで、負荷分散を Hyper-v ポートモードまたは動的モードに設定している場合、報告されるキューの数は、チームメンバーが使用できるすべてのキューの合計 (キューの合計モード) になります。 それ以外の場合、報告されるキューの数は、チームのどのメンバーでもサポートされているキューの最小数 (最小キューモード) になります。
 
-その理由を説明します。  
+その理由を次に示します。  
   
 -   スイッチに依存しないチームが Hyper-v ポートモードまたは動的モードである場合、Hyper-v スイッチポート (VM) の受信トラフィックは常に同じチームメンバーに到着します。 ホストは、特定の VM のトラフィックを受信するメンバーを予測/制御できます。これにより、NIC チーミングは、特定のチームメンバーに割り当てられる VMQ キューをより詳しく把握できます。 Hyper-v スイッチを使用している NIC チーミングは、正確に1つのチームメンバーで VM の VMQ を設定し、受信トラフィックがそのキューに到達することを認識します。  
   

@@ -1,17 +1,17 @@
 ---
 title: SYSVOL のレプリケーションを DFS レプリケーションに移行する
 ms.date: 07/02/2012
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 30222d0737ac3cd2947fc3b2d70a0df77b606299
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 56877bc5ddb3ea5f24f4057051775094654d8bbf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871992"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386036"
 ---
 # <a name="migrate-sysvol-replication-to-dfs-replication"></a>SYSVOL のレプリケーションを DFS レプリケーションに移行する
 

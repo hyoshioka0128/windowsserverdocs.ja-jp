@@ -2,7 +2,7 @@
 title: cacls
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d3c2ba6dca1797cda3851b3c270938d47828ed7a
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.openlocfilehash: 04b60bd852abdb55059efb96aec4c290361d6a74
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590399"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379948"
 ---
 # <a name="cacls"></a>cacls
 
@@ -40,9 +40,9 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
 |         /s: sddl         |                                       SDDL 文字列で指定されている Acl を置き換えます ( **/e**、 **/g**、 **/r**、 **/p**、 **/d**では無効です)。                                        |
 |           /e            |                                                                                 ACL を置き換えるのではなく、編集します。                                                                                  |
 |           /c            |                                                                                 アクセス拒否エラーを続行します。                                                                                  |
-|    /g user:\<perm\>     |   指定されたユーザーアクセス権を付与します。<br /><br />アクセス許可の有効な値:<br /><br />-n-なし<br />-r-読み取り<br />-w-書き込み<br />-c-変更 (書き込み)<br />-f-フルコントロール   |
+|    /g user: \<perm @ no__t-1     |   指定されたユーザーアクセス権を付与します。<br /><br />アクセス許可の有効な値:<br /><br />-n-なし<br />-r-読み取り<br />-w-書き込み<br />-c-変更 (書き込み)<br />-f-フルコントロール   |
 |      /r ユーザー [...]      |                                                                  指定されたユーザーのアクセス権を取り消します ( **/e**でのみ有効)。                                                                   |
-| [/p ユーザー:\<perm\> [...] | 指定されたユーザーのアクセス権を置き換えます。<br /><br />アクセス許可の有効な値:<br /><br />-n-なし<br />-r-読み取り<br />-w-書き込み<br />-c-変更 (書き込み)<br />-f-フルコントロール |
+| [/p ユーザー: @no__t 0perm @ no__t [...] | 指定されたユーザーのアクセス権を置き換えます。<br /><br />アクセス許可の有効な値:<br /><br />-n-なし<br />-r-読み取り<br />-w-書き込み<br />-c-変更 (書き込み)<br />-f-フルコントロール |
 |     [/d ユーザー [...]      |                                                                                    指定されたユーザーアクセスを拒否します。                                                                                     |
 |           /?            |                                                                                コマンド プロンプトにヘルプを表示します。                                                                                |
 
@@ -63,7 +63,7 @@ cacls <filename> [/t] [/m] [/l] [/s[:sddl]] [/e] [/c] [/g user:<perm>] [/r user 
   |     OIIO      |                             ファイルのみ。                             |
 
 
-- ワイルドカード ( **?** または) を指定して、  **\\ \*** 複数のファイルを指定します。  
+- ワイルドカード ( **?** と **\\ @ no__t**) を指定して複数のファイルを指定します。  
 - 複数のユーザーを指定できます。  
 
 #### <a name="additional-references"></a>その他の参照情報  

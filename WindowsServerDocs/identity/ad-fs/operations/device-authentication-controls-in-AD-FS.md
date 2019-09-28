@@ -1,27 +1,27 @@
 ---
-title: AD FS でデバイス認証の制御
-description: このドキュメントは、Windows Server 2016 と 2012 R2 の AD FS でデバイス認証を有効にする方法を説明します
+title: AD FS でのデバイス認証の制御
+description: このドキュメントでは、Windows Server 2016 および 2012 R2 の AD FS でデバイス認証を有効にする方法について説明します。
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 11/09/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: f52d3d237573e4ed0028e228ff80273862a0aaf2
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 87c011b18ad4a1d464072c1ea90b09a44e831378
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444645"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407367"
 ---
-# <a name="device-authentication-controls-in-ad-fs"></a>AD FS でデバイス認証の制御
-次のドキュメントでは、Windows Server 2016 と 2012 R2 でデバイス認証の制御を有効にする方法を示します。
+# <a name="device-authentication-controls-in-ad-fs"></a>AD FS でのデバイス認証の制御
+次のドキュメントは、Windows Server 2016 および 2012 R2 でデバイス認証コントロールを有効にする方法を示しています。
 
-## <a name="device-authentication-controls-in-ad-fs-2012-r2"></a>AD FS 2012 R2 でデバイス認証の制御
-AD FS 2012 R2 のグローバル認証プロパティと呼ばれる 1 つを使用する必要がある最初の`DeviceAuthenticationEnabled`制御されたデバイスを認証します。
+## <a name="device-authentication-controls-in-ad-fs-2012-r2"></a>AD FS 2012 R2 のデバイス認証の制御
+AD FS 2012 R2 では、デバイスの認証を制御する `DeviceAuthenticationEnabled` というグローバル認証プロパティがもともと1つありました。
 
-設定を構成する、`Set-AdfsGlobalAuthenticationPolicy`コマンドレットは、次のようを使用しました。
+この設定を構成するには、次のように @no__t 0 のコマンドレットを使用します。
 
 
 ``` powershell
@@ -30,59 +30,59 @@ PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
 
 
 
-デバイス認証を無効にするには、同じコマンドレットは、値を $false に設定に使用されました。
+デバイス認証を無効にするには、同じコマンドレットを使用して、値を $false に設定します。
 
-## <a name="device-authentication-controls-in-ad-fs-2016"></a>Ad FS 2016 デバイス認証の制御
-2012 R2 でサポートされるデバイスの認証の唯一の種類では、しの clientTLS はでした。  Ad FS 2016 でし、clientTLS に加えては最新のデバイス認証に対してデバイス認証の 2 つの新しい型です。  それらを次に示します。
+## <a name="device-authentication-controls-in-ad-fs-2016"></a>AD FS 2016 のデバイス認証の制御
+2012 R2 でサポートされているデバイス認証の種類は、clientTLS のみでした。  AD FS 2016 では、clientTLS に加えて、最新のデバイス認証用に2つの新しい種類のデバイス認証があります。  これらの数値は、次のとおりです。
 - PKeyAuth
 - PRT
 
-新しい動作を制御する、`DeviceAuthenticationEnabled`プロパティがという名前の新しいプロパティと組み合わせて使用`DeviceAuthenticationMethod`します。  
+新しい動作を制御するには、`DeviceAuthenticationEnabled` プロパティを `DeviceAuthenticationMethod` という新しいプロパティと組み合わせて使用します。  
 
-デバイスの認証方法は、実行するデバイスの認証の種類を決定します。PRT、PKeyAuth、しの clientTLS は、またはそれらの組み合わせ。
+デバイスの認証方法によって、実行されるデバイス認証の種類が決まります。PRT、PKeyAuth、clientTLS、または何らかの組み合わせ。
 次の値があります。
  - SignedToken:PRT のみ
  - PKeyAuth:PRT + PKeyAuth
- - ClientTLS は:PRT + し clientTLS
+ - 用 clienttlsPRT + clientTLS
  - すべて:上記以外のすべて
 
-ご覧のとおり、PRT の一部であるすべてのデバイス認証方法は常に既定の方法に影響する場合に有効になっている`DeviceAuthenticationEnabled`に設定されている`$true`します。
+ご覧のように、PRT はすべてのデバイス認証方法の一部であるため、`DeviceAuthenticationEnabled` が `$true` に設定されている場合は常に有効になる既定の方法が有効になります。
 
-以下に例を示します。メソッドを構成するには、新しいプロパティと共に、上、として DeviceAuthenticationEnabled コマンドレットを使用します。
+例:メソッドを構成するには、上記の DeviceAuthenticationEnabled コマンドレットと新しいプロパティを使用します。
 
 ``` powershell
 PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
 ```
 
 >[!NOTE]
-> ADFS の 2019年で`DeviceAuthenticationMethod`で使用できる、`Set-AdfsRelyingPartyTrust`コマンド。
+> ADFS 2019 では、`DeviceAuthenticationMethod` を `Set-AdfsRelyingPartyTrust` コマンドと共に使用できます。
 
 ``` powershell
 PS:\>Set-AdfsRelyingPartyTrust -DeviceAuthenticationMethod ClientTLS
 ```
 
 >[!NOTE]
-> デバイス認証を有効にする (設定`DeviceAuthenticationEnabled`に`$true`) ことを意味、`DeviceAuthenticationMethod`に暗黙的に設定されている`SignedToken`に相当する**PRT**します。
+> デバイス認証を有効にすると (`DeviceAuthenticationEnabled` から `$true`)、@no__t が暗黙的に `SignedToken` に設定されることを意味します。これは、 **PRT**に相当します。
 
 
 ``` powershell
 PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationMethod All
 ```
 > [!NOTE]
-> 既定のデバイスの認証方法は`SignedToken`します。  他の値は**PKeyAuth、** <strong>し ClientTLS、</strong>と**すべて**します。
+> 既定のデバイスの認証方法は `SignedToken` です。  その他の値は **、PKeyAuth、** <strong>Clienttls、</strong>および**All**です。
 
-意味、 `DeviceAuthenticationMethod` AD FS 2016 がリリースされてから、値が若干変更されました。  更新プログラムのレベルに応じて、各値の意味は、以下の表を参照してください。
+AD FS 2016 がリリースされたため、`DeviceAuthenticationMethod` 値の意味が少し変更されています。  更新レベルに応じて、次の表を参照して各値の意味を確認してください。
 
 
-|AD FS のバージョン|DeviceAuthenticationMethod 値|意味|
+|AD FS のバージョン|DeviceAuthenticationMethod の値|と|
 | ----- | ----- | ----- |
 |2016 RTM|SignedToken|PRT + PkeyAuth|
-||clientTLS|clientTLS|
-||すべての|PRT + PkeyAuth し clientTLS|
-|2016 RTM +、Windows Update と日付の最大|SignedToken (つまり、変更された)|PRT (のみ)|
+||用 clienttls|用 clienttls|
+||All|PRT + PkeyAuth + clientTLS|
+|2016 RTM + 最新の Windows Update|SignedToken (変更された意味)|PRT (のみ)|
 ||PkeyAuth (新規)|PRT + PkeyAuth|
-||clientTLS|PRT + し clientTLS|
-||すべての|PRT + PkeyAuth し clientTLS|
+||用 clienttls|PRT + clientTLS|
+||All|PRT + PkeyAuth + clientTLS|
 
 ## <a name="see-also"></a>関連項目
 [AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md)

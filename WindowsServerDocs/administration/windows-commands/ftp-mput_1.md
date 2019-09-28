@@ -1,8 +1,8 @@
 ---
 title: ftp mput_1
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dd19a97246aa6155182cb055deceb4b5a5019f6c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6308f7b47d58bc25d964944f96fbc83a26350962
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438581"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376207"
 ---
-# <a name="ftp-mput1"></a>ftp: mput_1
+# <a name="ftp-mput_1"></a>ftp: mput_1
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
@@ -36,11 +36,11 @@ mput <LocalFile>[ ]
 | <LocalFile> | リモート コンピューターにコピーするローカル ファイルを指定します。 |
 
 ## <a name="BKMK_Examples"></a>例  
-コピー **Program1.exe**と**Program2.exe**現在のファイル転送の種類を使用してリモート コンピューターにします。  
+現在のファイル転送の種類を使用して、 **Program1**と**program2.c**をリモートコンピューターにコピーします。  
 ```  
 mput Program1.exe Program2.exe  
 ```  
-## <a name="additional-references"></a>その他の参照  
+## <a name="additional-references"></a>その他の参照情報  
 -   [ftp: ascii](ftp-ascii.md)  
 -   [ftp: バイナリ](ftp-binary.md)  
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)  

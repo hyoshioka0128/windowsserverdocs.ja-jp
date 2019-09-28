@@ -1,19 +1,19 @@
 ---
 title: RC4 秘密キーを使用する Kerberos 変更パスワードの防止
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: de207d55-aa3d-4c16-bd3b-496db43663a4
 manager: alanth
 author: justinha
 ms.technology: security-crdential-protection-and-management
 ms.date: 11/09/2016
-ms.openlocfilehash: ec49d195870f87ac8482a7ff6a93a50309425c6c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 64018f7f118086f3d290cb1ffa9b8d2b3e81c27c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870380"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386270"
 ---
 # <a name="preventing-kerberos-change-password-that-uses-rc4-secret-keys"></a>Kerberos での RC4 秘密キーを使用するパスワードの変更を防ぐ
 

@@ -7,14 +7,14 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: manage
-ms.openlocfilehash: ab124f3efabf2ac3ae8904157a81587c0c21ebb5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 49f6132cfe99d9d4b719aeeecf149ecb1d7b76f2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856333"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382988"
 ---
 # <a name="microsoft-server-performance-advisor"></a>Microsoft Server Performance Advisor
 
@@ -22,15 +22,15 @@ ms.locfileid: "59856333"
 
 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、または Windows Server 2008 の展開のパフォーマンスの問題の診断に役立つ Microsoft Server Performance Advisor (SPA) をダウンロードします。 SPA は包括的な診断レポートとグラフを生成し、すぐに始めるための推奨事項の問題を分析し、是正措置を開発を提供します。
 
--   [Server Performance Advisor の概要](#bkmk-aboutspa)
+-   [サーバーパフォーマンスアドバイザーの概要](#bkmk-aboutspa)
 
--   [Server Performance Advisor をダウンロードします。](#bkmk-downloadspa)
+-   [サーバーパフォーマンスアドバイザーのダウンロード](#bkmk-downloadspa)
 
--   [サーバー パフォーマンス アドバイザー ユーザー ガイド](server-performance-advisor-users-guide.md)
+-   [Server Performance Advisor ユーザー ガイド](server-performance-advisor-users-guide.md)
 
--   [サーバー パフォーマンス アドバイザー パック開発ガイド](server-performance-advisor-pack-development-guide.md)
+-   [Server Performance Advisor パック開発ガイド](server-performance-advisor-pack-development-guide.md)
 
-## <a href="" id="bkmk-aboutspa"></a>Server Performance Advisor の概要
+## <a href="" id="bkmk-aboutspa"></a>サーバーパフォーマンスアドバイザーの概要
 
 サーバー パフォーマンス アドバイザーは、2 つの部分、SPA フレームワークおよび SPA Advisor パックで構成されます。
 
@@ -48,7 +48,7 @@ SPA Advisor パックとは、一連のメタデータとの SQL スクリプト
 
 -   HYPER-V Advisor パックは、HYPER-V サーバー ロールの全般的なパフォーマンスを分析します。
 
-    **注**Advisor パックは、HYPER-V でゲスト オペレーティング システムが分析されません。
+    **メモ**Hyper-v Advisor パックは、ゲストオペレーティングシステムを分析しません。
 
      
 
@@ -56,11 +56,11 @@ SPA Advisor パックとは、一連のメタデータとの SQL スクリプト
 
 SPA は、Microsoft 以外の開発者のニーズに合わせて advisor パックを作成するには拡張可能なモデルも提供されます。
 
-**注**SPA は、すべてのハードウェアとユーザー シナリオのコンテキストを理解することはできません。 意思決定をサーバーに加えられたすべての潜在的な変更の結果を理解するのに役立つツールが用意されている推奨事項を使用する必要があります。
+**メモ**SPA は、すべてのハードウェアおよびユーザーシナリオコンテキストを理解できません。 意思決定をサーバーに加えられたすべての潜在的な変更の結果を理解するのに役立つツールが用意されている推奨事項を使用する必要があります。
 
  
 
-## <a href="" id="bkmk-downloadspa"></a>Server Performance Advisor をダウンロードします。
+## <a href="" id="bkmk-downloadspa"></a>サーバーパフォーマンスアドバイザーのダウンロード
 
 
 サーバー パフォーマンス アドバイザーの Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、または Windows Server 2008 をダウンロードするのにには、次のリンクを使用します。
@@ -71,11 +71,11 @@ SPA は、Microsoft 以外の開発者のニーズに合わせて advisor パッ
 
 次のコマンドを使用して、CAB ファイル内のファイルを抽出できます。
 
--   x86 バージョン。 `extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_x86.cab`
+-   x86 バージョンの場合: `extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_x86.cab`
 
--   x64 バージョン。 `extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_amd64.cab`
+-   x64 バージョンの場合: `extrac32.exe /e /a /l  d:\SPA   d:\SPA\SPAPlus\_amd64.cab`
 
-**注意**.cab ファイルを抽出するときに SPA が正常に機能する階層的なディレクトリ構造を保持する必要があります。 サーバーにインストールされている CAB ツールによって非運用時のディレクトリ構造抽出可能性があります。 階層的なディレクトリ構造を保持するためには、ファイルのディレクトリ構造を抽出する CAB 抽出ユーティリティ ツールを使用することができます。
+**注意**.Cab ファイルを抽出すると、SPA は階層ディレクトリ構造を維持して正常に機能する必要があります。 サーバーにインストールされている CAB ツールによって非運用時のディレクトリ構造抽出可能性があります。 階層的なディレクトリ構造を保持するためには、ファイルのディレクトリ構造を抽出する CAB 抽出ユーティリティ ツールを使用することができます。
 
 CAB の展開ツールは、ファイルを正しく展開、サブフォルダーは抽出先フォルダーに自動的に表示されます。
 

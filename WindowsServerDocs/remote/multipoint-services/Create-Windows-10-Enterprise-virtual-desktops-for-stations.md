@@ -3,7 +3,7 @@ title: ステーション用の Windows 10 Enterprise の仮想デスクトッ�
 description: ステーション用の Windows Server 2016 デスクトップを作成する方法について説明します。
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: e68412808e037b788d5b25c1c2c7b14253e40ea6
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: cd08caef8228a4d20c6d5f4a40fe5bd90aacbe40
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871731"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395538"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>ステーション用の Windows 10 Enterprise の仮想デスクトップを作成する
 MultiPoint Services でのこのオプションの構成は、主に、重要なアプリケーションがユーザーごとにクライアントオペレーティングシステムの独自のインスタンスを必要とする状況を想定しています。 たとえば、Windows Server にインストールできないアプリケーションや、同じホストコンピューターで複数のインスタンスを実行しないアプリケーションがこれに含まれます。  

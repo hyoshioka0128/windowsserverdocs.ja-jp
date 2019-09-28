@@ -1,8 +1,8 @@
 ---
-title: ディスクを削除します。
-description: 'Windows コマンド」のトピック * * *- '
+title: ディスクの削除
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e401133854118e82a45fd5e01466288ae41f67da
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 886e84edf80227d42ad77e36aed388b9e853ca62
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863913"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378671"
 ---
-# <a name="delete-disk"></a>ディスクを削除します。
+# <a name="delete-disk"></a>ディスクの削除
 
 
 
-ディスクの一覧から不明なダイナミック ディスクを削除します。
+ディスクの一覧から不足しているダイナミックディスクを削除します。
 
-このコマンドを使用する方法に関する手順については、次を参照してください。[不足しているダイナミック ディスクを削除する](https://go.microsoft.com/fwlink/?LinkId=207055)(https://go.microsoft.com/fwlink/?LinkId=207055)します。
+このコマンドの使用方法については、「不足している[ダイナミックディスクの削除](https://go.microsoft.com/fwlink/?LinkId=207055)(https://go.microsoft.com/fwlink/?LinkId=207055) 」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -38,17 +38,17 @@ delete disk [noerr] [override]
 
 |パラメーター|説明|
 |---------|-----------|
-|noerr|スクリプト専用です。 エラーが発生すると、DiskPart は、エラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
-|上書き|Diskpart でディスク上のすべてのシンプル ボリュームを削除します。 ディスクがミラー化されたボリュームの半分含まれる場合、ディスク上のミラーの半分は削除されます。 ディスクが raid-5 ボリュームのメンバーである場合、delete disk override のコマンドが失敗します。|
+|noerr|スクリプトの場合のみ。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
+|上書き|DiskPart でディスク上のすべてのシンプルボリュームを削除できるようにします。 ミラーボリュームの半分がディスクに含まれている場合、ディスク上のミラーの半分が削除されます。 ディスクが RAID-5 ボリュームのメンバーである場合、delete disk override コマンドは失敗します。|
 
 ## <a name="BKMK_examples"></a>例
 
-不明なダイナミック ディスクをディスクの一覧から削除するには、次のように入力します。
+ディスクの一覧から不足しているダイナミックディスクを削除するには、次のように入力します。
 ```
 delete disk
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
 

@@ -7,31 +7,31 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 36cdacec27e64586c359146b858a9d68750e5026
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ffc2849fa5e18f7984814d6187cf83d68566409b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858263"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369644"
 ---
 # <a name="simplified-administration-appendix"></a>付録: 管理の簡素化
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
   
--   [サーバー マネージャーの追加のサーバー ダイアログ ボックス (Active Directory)](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)  
+-   [サーバーマネージャーサーバーの追加 ダイアログ (Active Directory)](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)  
   
--   [サーバー マネージャーのリモート サーバーの状態](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_ServerMgrStatus)  
+-   [リモートサーバーの状態のサーバーマネージャー](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_ServerMgrStatus)  
   
 -   [Windows PowerShell モジュールの読み込み](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_PSLoadModule)  
   
--   [以前のオペレーティング システムの発行の修正プログラムを削除します。](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_Rid)  
+-   [以前のオペレーティングシステムの RID 発行修正プログラム](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_Rid)  
   
--   [Ntdsutil.exe Install from Media Changes](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)  
+-   [Ntdsutil.exe メディアの変更からのインストール](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)  
   
-## <a name="BKMK_AddServers"></a>サーバー マネージャーの追加のサーバー ダイアログ ボックス (Active Directory)  
+## <a name="BKMK_AddServers"></a>サーバーマネージャーサーバーの追加 ダイアログ (Active Directory)  
 
 **サーバーの追加** ダイアログ ボックスでは、ワイルドカードを使用してオペレーティング システム、および場所は、サーバーでは、Active Directory を検索します。 ダイアログ ボックスでは、完全修飾ドメイン名またはプレフィックス名で DNS クエリを使用することもできます。 これらの検索では、.NET、つまり、サーバー マネージャーでの接続のドメイン コント ローラーは、Windows Server 2003 にも実行できますが、SOAP を介して AD 管理ゲートウェイに対する AD Windows PowerShell ではなくによって実装され、ネイティブの DNS および LDAP プロトコルを使用します。 プロビジョニングのためのサーバー名を持つファイルをインポートすることもできます。  
   
@@ -57,7 +57,7 @@ Active Directory の検索には、次の属性が返されます。
   
 ```  
   
-## <a name="BKMK_ServerMgrStatus"></a>サーバー マネージャーのリモート サーバーの状態  
+## <a name="BKMK_ServerMgrStatus"></a>リモートサーバーの状態のサーバーマネージャー  
 サーバー マネージャーでは、アドレス ルーティング プロトコルを使用してリモート サーバーのユーザー補助をテストします。 プール内にある場合でも、ARP 要求に応答していないすべてのサーバーは表示されません。  
   
 ARP 応答があった場合、DCOM と WMI に接続できるサーバーにステータス情報を返します。 場合 RPC、DCOM、および WMI では、到達可能なサーバー マネージャーは、サーバーを完全に管理することはできません。  
@@ -81,7 +81,7 @@ Get-Module -ListAvailable
   
 ```  
   
-使用するためのメインのケース、**モジュールのインポート**コマンドは、アクセスする必要がある場合、"AD:"Windows PowerShell 仮想ドライブとその他に何も既に読み込まれて、モジュール。 たとえば、次のコマンドを使用します。  
+**[モジュールのインポート]** コマンドを使用する場合の主な例は、"AD:" にアクセスする必要がある場合です。Windows PowerShell 仮想ドライブと、モジュールが既に読み込まれているものはありません。 たとえば、次のコマンドを使用します。  
   
 ```  
 import-module activedirectory  
@@ -90,10 +90,10 @@ dir
   
 ```  
   
-## <a name="BKMK_Rid"></a>以前のオペレーティング システムの発行の修正プログラムを削除します。  
+## <a name="BKMK_Rid"></a>以前のオペレーティングシステムの RID 発行修正プログラム  
 参照してください [を検出し、Windows Server 2008 R2 を実行しているドメイン コント ローラーでグローバル RID プールの過剰消費を防ぐ更新プログラムがある](https://support.microsoft.com/kb/2618669)です。  
   
-## <a name="BKMK_IFM"></a>Ntdsutil.exe Install from Media Changes  
+## <a name="BKMK_IFM"></a>Ntdsutil.exe メディアの変更からのインストール  
 Windows Server 2012 は、Ntdsutil.exe コマンド ライン ツールを 2 つの追加のオプションを追加、 **IFM (IFM メディアの作成)** メニュー。 これらによって、エクスポートされた NTDS のオフラインでの最適化を実行せずに IFM ストアを作成できます。DIT のデータベース ファイルです。 ディスク領域が非常に高価でできない場合は、これは、IFM を作成する時間を保存します。  
   
 次の表では、2 つの新しいメニュー項目について説明します。  

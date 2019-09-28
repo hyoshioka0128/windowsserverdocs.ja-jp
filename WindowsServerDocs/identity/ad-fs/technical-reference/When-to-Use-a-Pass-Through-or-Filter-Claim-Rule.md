@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fd25927a11f12deb9cf23866dcad447f397d3173
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 49061aaab2f46d7d3abe80d4fade98c10654fc37
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869310"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407298"
 ---
 # <a name="when-to-use-a-pass-through-or-filter-claim-rule"></a>要求のパススルーとフィルターを使用するタイミングの規則
 この規則は、特定の入力\(方向\)の要求の種類を取得して、入力方向の要求の値に基づいてどのような出力を行うかを決定するアクションを適用する必要がある場合に Active Directory フェデレーションサービス (AD FS) AD FS で使用できます。 この規則を使用する場合、次の表の規則ロジックと一致する要求を、規則で構成するオプションに基づいてパススルーまたはフィルター処理します。  

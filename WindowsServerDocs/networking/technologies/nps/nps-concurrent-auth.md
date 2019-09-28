@@ -1,37 +1,37 @@
 ---
 title: NPS で処理する同時認証の数を増やす
-description: このトピックでは、Windows Server 2016 でのネットワーク ポリシー サーバーの同時実行の認証の構成について説明します。
+description: このトピックでは、Windows Server 2016 でネットワークポリシーサーバーの同時認証を構成する手順について説明します。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 2d9cdada-0625-41c8-8248-a32259b03e47
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fd930e34a4adf6c55812385b691df3e3575a4280
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 31dec30ba3c843b78974daa7a1e4ed6893b1ebbd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818263"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396432"
 ---
 # <a name="increase-concurrent-authentications-processed-by-nps"></a>NPS で処理する同時認証の数を増やす
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-ネットワーク ポリシー サーバーの同時実行の認証を構成する方法については、このトピックを使用できます。
+このトピックでは、ネットワークポリシーサーバーの同時認証を構成する手順について説明します。
 
-ネットワーク ポリシー サーバーをインストールした場合\(NPS\)ドメイン以外のコンピューターでコント ローラーと NPS が受信して 1 秒あたりの認証要求の数が多いの数を増やすことで NPS のパフォーマンスを向上させることができます同時に行う認証、NPS およびドメイン コント ローラーの間で許可します。
+ドメインコントローラー以外のコンピューターにネットワークポリシーサーバー \(NPS @ no__t-1 をインストールし、NPS が1秒あたりに多数の認証要求を受信している場合は、同時実行の数を増やすことで NPS のパフォーマンスを向上させることができます。NPS とドメインコントローラー間の認証が許可されます。
 
-これを行うには、次のレジストリ キーを編集する必要があります。 
+これを行うには、次のレジストリキーを編集する必要があります。 
 
 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters`
 
-という名前の新しい値を追加**MaxConcurrentApi** 2 ~ 5 の値を割り当てるとします。 
+**MaxConcurrentApi**という名前の新しい値を追加し、それに 2 ~ 5 の値を割り当てます。 
 
 >[!CAUTION]
->値を割り当てる場合**MaxConcurrentApi**が多すぎますドメイン コント ローラーで、NPS が過剰な負荷をかける場合があります。
+>**MaxConcurrentApi**に値を割り当てた場合は、NPS によってドメインコントローラーに過剰な負荷がかかる可能性があります。
 
-NPS の管理に関する詳細については、次を参照してください。[ネットワーク ポリシー サーバーの管理](nps-manage-top.md)します。
+NPS の管理の詳細については、「 [Manage Network Policy Server](nps-manage-top.md)」を参照してください。
 
-NPS の詳細については、次を参照してください。[ネットワーク ポリシー サーバー (NPS)](nps-top.md)します。
+NPS の詳細については、「[ネットワークポリシーサーバー (nps)](nps-top.md)」を参照してください。

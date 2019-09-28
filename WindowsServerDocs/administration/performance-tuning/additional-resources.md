@@ -1,18 +1,18 @@
 ---
 title: その他のサーバーパフォーマンスチューニングリソース
 description: その他のサーバーパフォーマンスチューニングリソース
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8fd1546519f9269732c743012215bb7c5646a677
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 498e72377197bd2185a518949520275c36295a77
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866778"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355080"
 ---
 # <a name="additional-performance-tuning-resources"></a>その他のパフォーマンスチューニングリソース
 

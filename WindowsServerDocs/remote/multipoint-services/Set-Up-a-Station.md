@@ -2,7 +2,7 @@
 title: ステーションをセットアップする
 description: MultiPoint Services でステーションを設定する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 043b0d8dba844f40569a854a4f4f2a2efb38a870
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 95a332a3d15e82047b46cc19f168f945cdb334d2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871612"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389448"
 ---
 # <a name="set-up-a-station"></a>ステーションをセットアップする
 通常、MultiPoint Services の*ステーション*は、*ステーション ハブ*、マウス、キーボード、およびビデオ モニターで構成されています。 このトピックでは、MultiPoint Services ステーションを作成するためにステーション ハブにハードウェア デバイスを接続する方法について説明します。  

@@ -1,6 +1,6 @@
 ---
 title: 記憶域レプリカに関する既知の問題
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
 ms.technology: storage-replica
@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: 681e07b85af603d11295bf1ca2a08f0eb7181725
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 32020dba2ccca04e8d0bdc29d47dc9fef1f05a01
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865250"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402926"
 ---
 # <a name="known-issues-with-storage-replica"></a>記憶域レプリカに関する既知の問題
 
