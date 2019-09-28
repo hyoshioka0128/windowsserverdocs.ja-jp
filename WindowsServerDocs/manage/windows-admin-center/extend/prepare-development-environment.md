@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 09/18/2018
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 08634e05d6b7450035324e8d925f2bb9df3b007e
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 2aff8c0e43c6813c543511e643471c9cd9bcc292
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869580"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357036"
 ---
 # <a name="prepare-your-development-environment"></a>開発環境の準備
 
@@ -26,7 +26,7 @@ Windows 管理センター SDK を使用して拡張機能の開発を開始し�
 
 開発環境を準備するには、次の手順を実行します。
 
-## <a name="install-prerequisites"></a>必須コンポーネントのインストール
+## <a name="install-prerequisites"></a>前提条件のインストール
 
 SDK で開発を開始するには、次の前提条件をダウンロードしてインストールします。
 

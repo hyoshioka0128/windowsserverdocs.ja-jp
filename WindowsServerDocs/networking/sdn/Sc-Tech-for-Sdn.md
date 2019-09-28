@@ -1,9 +1,9 @@
 ---
 title: SDN 用の System Center テクノロジ
-description: このトピックを使用すると、System Center で提供されるソフトウェア定義ネットワーク (SDN) テクノロジについて説明します。
+description: このトピックでは、System Center で提供されているソフトウェアによるネットワーク制御 (SDN) テクノロジについて説明します。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: f66ee49a-1fd3-4927-a813-64a15017b63b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e9c06871b9c2299b659199cd8bdeb7c70f8be642
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d1ba40f17506f8012462f43c1e124a6b414c0531
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863003"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356008"
 ---
 # <a name="system-center-technologies-for-sdn"></a>SDN 用の System Center テクノロジ
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-System Center には、ソフトウェア定義ネットワーク (SDN) を使用するために、次のテクノロジが含まれています。  
+System Center には、ソフトウェア定義ネットワーク (SDN) で使用する次のテクノロジが含まれています。  
   
 -   [System Center Operations Manager](#bkmk_scom)  
   
@@ -31,22 +31,22 @@ System Center には、ソフトウェア定義ネットワーク (SDN) を使�
   
   
 ## <a name="bkmk_scom"></a>System Center Operations Manager  
-System Center 2016 Operations Manager インフラストラクチャの監視を柔軟かつコスト効率の高いは、予測可能なパフォーマンスと、重要なアプリケーションの可用性を確実およびデータ センターとクラウドの包括的な監視機能を提供を提供します。、プライベートとパブリック両方。  
+System Center 2016 Operations Manager は、柔軟性とコスト効率の高いインフラストラクチャの監視機能を提供し、重要なアプリケーションの予測可能なパフォーマンスと可用性を保証し、データセンターとクラウドの包括的な監視を提供します。(プライベートとパブリックの両方)。  
   
-詳細については、次を参照してください。 [Operations Manager](https://technet.microsoft.com/library/hh205987.aspx)します。  
+詳細については、「 [Operations Manager](https://technet.microsoft.com/library/hh205987.aspx)」を参照してください。  
   
 ## <a name="bkmk_scvmm"></a>System Center Virtual Machine Manager  
-System Center 2016 Virtual Machine Manager (VMM) を実行できます。
+System Center 2016 Virtual Machine Manager (VMM) を使用すると、次のことができます。
 
-- プロビジョニングし、管理仮想ネットワークを大規模にします。
-- 展開し、ネットワーク コント ローラー、ソフトウェア ロード バランサー、およびゲートウェイを含む、SDN インフラストラクチャを管理します。 
-- 定義し仮想ネットワークのポリシーを一元的に制御し、アプリケーションまたはワークロードにリンクします。 
+- 大規模な仮想ネットワークのプロビジョニングと管理を行います。
+- ネットワークコントローラー、ソフトウェアロードバランサー、ゲートウェイなどの SDN インフラストラクチャを展開および管理します。 
+- 仮想ネットワークポリシーを一元的に定義して制御し、アプリケーションやワークロードにリンクします。 
 
   ワークロードが展開されたり移動されると、ネットワーク構成も自動的に調整されます。 これにより、ネットワーク ハードウェアを手動で再構成する必要がなくなるため、運用の複雑さが軽減され、貴重なリソースをより重要な作業に充てられるようになります。 
-- 重要なアプリケーションとワークロードの保証された帯域幅を定義する機能を含む、仮想ネットワーク間のトラフィック フローを制御するのに役立ちます。  
+- は、仮想ネットワーク間のトラフィックフローを制御するのに役立ちます。これには、重要なアプリケーションやワークロードに対して保証される帯域幅を定義する機能が含まれます。  
   
 
-詳細については、次を参照してください。 [VMM ファブリックでソフトウェア定義ネットワーク (SDN) インフラストラクチャをセットアップ](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-overview)します。  
+詳細については、「 [VMM ファブリックでのソフトウェア定義ネットワーク (SDN) インフラストラクチャのセットアップ](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-overview)」を参照してください。  
     
 
   
