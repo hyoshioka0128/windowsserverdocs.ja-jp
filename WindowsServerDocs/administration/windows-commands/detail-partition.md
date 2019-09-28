@@ -1,8 +1,8 @@
 ---
-title: パーティションの詳細
-description: 'Windows コマンド」のトピック * * *- '
+title: 詳細パーティション
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3a955303a5f06c64dcdb64de110686be570ef149
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9ead078217804def619998b1d31e55744f2e1c6b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846643"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378520"
 ---
-# <a name="detail-partition"></a>パーティションの詳細
+# <a name="detail-partition"></a>詳細パーティション
 
 
 
@@ -32,9 +32,9 @@ ms.locfileid: "59846643"
 detail partition
 ```
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   この操作を成功させるのには、パーティションを選択してください。 使用して、**パーティションを選択**コマンドをパーティションを選択し、それにフォーカスをします。
+-   この操作を成功させるには、パーティションを選択する必要があります。 **[パーティションの選択**] コマンドを使用してパーティションを選択し、それにフォーカスを移動します。
 
 ## <a name="BKMK_examples"></a>例
 
@@ -45,5 +45,5 @@ detail partition
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
 

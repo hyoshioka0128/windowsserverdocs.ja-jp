@@ -1,17 +1,17 @@
 ---
 title: ボリューム シャドウ コピー サービス
 ms.date: 01/30/2019
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 3fc184f8f23e4325198e3a1a08f20109c2c577e8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 19e07504dad49c5e23cc49630015529e2a746aa7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867318"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394447"
 ---
 # <a name="volume-shadow-copy-service"></a>ボリューム シャドウ コピー サービス
 
@@ -386,7 +386,7 @@ VSS は、ボリューム全体のシャドウコピーを作成するように�
 
 詳細については、MSDN http://go.microsoft.com/fwlink/?LinkId=180904) の「[シャドウコピーからのファイルの除外](http://go.microsoft.com/fwlink/?linkid=180904)」を参照してください。
 
-### <a name="my-non-microsoft-backup-program-failed-with-a-vss-error-what-can-i-do"></a>Microsoft 以外のバックアッププログラムが VSS エラーのために失敗しました。 どうしたらいいのでしょうか。
+### <a name="my-non-microsoft-backup-program-failed-with-a-vss-error-what-can-i-do"></a>Microsoft 以外のバックアッププログラムが VSS エラーのために失敗しました。 どうすればいいんでしょうか。
 
 バックアッププログラムを作成した会社の Web サイトの製品サポートセクションを確認します。 この問題を解決するには、ダウンロードしてインストールできる製品の更新プログラムがある可能性があります。 それ以外の場合は、会社の製品サポート部門にお問い合わせください。
 

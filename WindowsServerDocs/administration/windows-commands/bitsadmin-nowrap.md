@@ -1,8 +1,8 @@
 ---
 title: bitsadmin nowrap
-description: Windows コマンド」のトピック**bitsadmin nowrap** -任意のコマンド ウィンドウの右端の位置を超える出力テキストを拡張する行を切り捨てます。
+description: '**Bitsadmin nowrap**の Windows コマンドトピックでは、コマンドウィンドウの右端からはみ出た出力テキストの行を切り捨てます。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4130f606a6b1874e1ea31952160de44d6e09c6b6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3806ec51161eeae498e3c9b367b2aacf0bd32c99
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822923"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381052"
 ---
 # <a name="bitsadmin-nowrap"></a>bitsadmin nowrap
 
-コマンド ウィンドウの右端の位置を超える出力テキストを拡張する任意の行を切り捨てます。
+コマンドウィンドウの右端からはみ出た出力テキストの行をすべて切り捨てます。
 
 ## <a name="syntax"></a>構文
 
@@ -30,17 +30,17 @@ ms.locfileid: "59822923"
 bitsadmin /NoWrap
 ```
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-既定ですべてのスイッチを除く、**モニター**スイッチ、出力をラップします。 指定、 **NoWrap**他のスイッチの前に切り替えます。
+既定では、**モニター**スイッチを除くすべてのスイッチが出力をラップします。 他のスイッチの前に、 **NoWrap**スイッチを指定します。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブの状態を取得する*myDownloadJob*出力は折り返されません
+次の例では、 *Mydownloadjob*という名前のジョブの状態を取得し、出力をラップしません。
 ```
 C:\>bitsadmin /NoWrap /GetState myDownloadJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

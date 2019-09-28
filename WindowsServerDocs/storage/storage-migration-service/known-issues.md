@@ -6,14 +6,14 @@ ms.author: nedpyle
 manager: siroy
 ms.date: 07/09/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: d8437e0e33a370ab698d25f25b43fbbcbae97792
-ms.sourcegitcommit: 45415ba58907d650cfda45f4c57f6ddf1255dcbf
+ms.openlocfilehash: 391430b75670f207520a7d972b54ba293616d0e1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206913"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393908"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -133,7 +133,7 @@ Windows Server 2019 の展開先コンピューターに Storage Migration Servi
   ログ名:    StorageMigrationService-Proxy/Debug Source:      StorageMigrationService-プロキシの日付:        2/26/2019 9:00:04 AM イベント ID:    1万タスクカテゴリ:None レベル:       エラーキーワード:      
   ユーザー:        ネットワークサービスコンピューター: srv1.contoso.com の説明:
 
-  02/26/2019-09:00: 04.860 [Error] 転送エラー \\(srv1. contoso. com\):(5) アクセスが拒否されました。
+  02/26/2019-09:00: 04.860 [Error] 転送エラー \\srv1. contoso. com/-png:(5) アクセスが拒否されました。
 スタックトレース: FileDirUtils での StorageMigration (String fileName、DesiredAccess desiredAccess、ShareMode shareMode、FlagsAndAttributes FlagsAndAttributes) でのスタックトレースの場合、次の場所に移動します。FileDirUtils の StorageMigration (文字列パス) で、StorageMigration (FileInfo ファイル) をに移動します。このファイルには、(FileInfo ファイル) を指定します。StorageMigration () at StorageMigration () で、InitializeSourceFileInfo () をに移動します。このファイルの場所に移動してください。StorageMigration () [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs:: TryTransfer::55]」を実行してください ()。
 
 

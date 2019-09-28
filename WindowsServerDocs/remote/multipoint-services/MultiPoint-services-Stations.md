@@ -3,7 +3,7 @@ title: MultiPoint ステーション
 description: ユーザーのさまざまなオプションを含む、MultiPoint Services のステーションについて説明します。
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: f9f9d618-ccfe-41ea-a52c-00c3c7adb51a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 4aa08f58f8fdf6d6fce816ee090275b0bf46a844
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 7b8f757d552bf54cd7f4eed0783ba8e0062b9d30
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871630"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405081"
 ---
 # <a name="multipoint--stations"></a>MultiPoint ステーション
 MultiPoint サービス システムの環境で *ステーション* MultiPoint サービスを実行しているコンピューターに接続するためのユーザーのエンドポイントします。 各ステーションは、ユーザーに独立した Windows 10 エクスペリエンスを提供します。 次のステーションの種類がサポートされています。  

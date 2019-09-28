@@ -3,7 +3,7 @@ title: 仮想マシンの自動ライセンス認証
 TOCTitle: Automatic VM Activation
 description: Windows Server 2019、Windows Server 2016、および Windows Server 2012 R2 で VM のライセンス認証を行う方法
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: server-general
@@ -12,12 +12,12 @@ ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
-ms.openlocfilehash: 4d1cdcfe8325a246e2752e1d1f2a3ad536598658
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8887f2419176dd187ab01fb4d04988000c7ba74d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868569"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391914"
 ---
 # <a name="automatic-virtual-machine-activation"></a>仮想マシンの自動ライセンス認証
 

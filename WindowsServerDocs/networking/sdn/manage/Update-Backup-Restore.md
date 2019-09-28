@@ -2,19 +2,19 @@
 title: SDN インフラストラクチャのアップグレード、バックアップ、復元
 description: このトピックでは、SDN インフラストラクチャを更新、バックアップ、および復元する方法について説明します。
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: e9a8f2fd-48fe-4a90-9250-f6b32488b7a4
 ms.author: grcusanz
 author: shortpatti
 ms.date: 08/27/2018
-ms.openlocfilehash: 1bee4ef9023a1fab49bf796907780662a0297a7c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 7f385e094ca70027d1b036bf53af23c1fc4a1bd1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869963"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406060"
 ---
 # <a name="upgrade-backup-and-restore-sdn-infrastructure"></a>SDN インフラストラクチャのアップグレード、バックアップ、復元
 

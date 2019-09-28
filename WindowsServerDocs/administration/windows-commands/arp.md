@@ -2,7 +2,7 @@
 title: arp
 description: '**Arp**の Windows コマンドのトピック-IP アドレスとその解決済みの物理アドレスを格納するために使用されるアドレス解決プロトコル (arp) キャッシュ内のエントリを表示および変更します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8354df3f52790840e0cb0c5c9834da2722d27d43
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: 1e6d34ceaa56ed40a1083b710e0db01b106f49e2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68914695"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382661"
 ---
 # <a name="arp"></a>arp
 
@@ -33,10 +33,10 @@ arp [/a [<Inetaddr>] [/n <ifaceaddr>]] [/g [<Inetaddr>] [-n <ifaceaddr>]] [/d <I
 
 |                パラメーター                |                                                                                                                                                                                                                                                               説明                                                                                                                                                                                                                                                               |
 |-----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /a [<Inetaddr>] [/n <ifaceaddr>]     | すべてのインターフェイスの現在の arp キャッシュテーブルを表示します。 /N パラメーターでは、大文字と小文字が区別されます。<br /><br />特定の IP アドレスの arp キャッシュエントリを表示するには、 *Inetaddr*パラメーターで**arp/a**を使用します。ここで、 *Inetaddr*は IP アドレスです。 場合*Inetaddr*が指定されていない、最初の該当するインターフェイスが使用されます。<br /><br />特定のインターフェイスの arp キャッシュテーブルを表示するには、 **/n** _パラメーターを **/a**パラメーターと組み合わせて使用します。 *ifaceaddr*は、インターフェイスに割り当てられた IP アドレスです。 |
+|    /a [<Inetaddr>] [/n <ifaceaddr>]     | すべてのインターフェイスの現在の arp キャッシュテーブルを表示します。 /N パラメーターでは、大文字と小文字が区別されます。<br /><br />特定の IP アドレスの arp キャッシュエントリを表示するには、 *Inetaddr*パラメーターで**arp/a**を使用します。ここで、 *Inetaddr*は IP アドレスです。 場合*Inetaddr*が指定されていない、最初の該当するインターフェイスが使用されます。<br /><br />特定のインターフェイスの arp キャッシュテーブルを表示するには、 **/n**_ifaceaddr_パラメーターを **/a**パラメーターと組み合わせて使用します。 *ifaceaddr*は、インターフェイスに割り当てられた IP アドレスです。 |
 |    /g [<Inetaddr>] [/n <ifaceaddr>]     |                                                                                                                                                                                                                                                          **/A**と同じです。                                                                                                                                                                                                                                                           |
-|      [/d <Inetaddr> [<ifaceaddr>]       |                                                                                           特定の IP アドレスを持つエントリを削除します。ここで、 *Inetaddr*は ip アドレスです。<br /><br />特定のインターフェイスのテーブル内のエントリを削除するには、 *ifaceaddr*パラメーターを使用します。 *ifaceaddr*は、インターフェイスに割り当てられた IP アドレスです。<br /><br />すべてのエントリを削除するには、\* *Inetaddr*の代わりにアスタリスク () ワイルドカード文字を使用します。                                                                                           |
-| /s <Inetaddr> [<Etheraddr> ]<ifaceaddr> |                                                                                                                     IP アドレス*Inetaddr*を物理アドレス*Etheraddr*に解決する静的エントリを arp キャッシュに追加します。<br /><br />特定のインターフェイスの静的 arp キャッシュエントリをテーブルに追加するには、 *ifaceaddr*パラメーターを使用します。 *ifaceaddr*は、インターフェイスに割り当てられた IP アドレスです。                                                                                                                     |
+|      [/d <Inetaddr> [<ifaceaddr>]       |                                                                                           特定の IP アドレスを持つエントリを削除します。ここで、 *Inetaddr*は ip アドレスです。<br /><br />特定のインターフェイスのテーブル内のエントリを削除するには、 *ifaceaddr*パラメーターを使用します。 *ifaceaddr*は、インターフェイスに割り当てられた IP アドレスです。<br /><br />すべてのエントリを削除するには、 *Inetaddr*の代わりにアスタリスク (\*) ワイルドカード文字を使用します。                                                                                           |
+| /s <Inetaddr> <Etheraddr> [<ifaceaddr>] |                                                                                                                     IP アドレス*Inetaddr*を物理アドレス*Etheraddr*に解決する静的エントリを arp キャッシュに追加します。<br /><br />特定のインターフェイスの静的 arp キャッシュエントリをテーブルに追加するには、 *ifaceaddr*パラメーターを使用します。 *ifaceaddr*は、インターフェイスに割り当てられた IP アドレスです。                                                                                                                     |
 |                   /?                    |                                                                                                                                                                                                                                                  コマンド プロンプトにヘルプを表示します。                                                                                                                                                                                                                                                   |
 
 ## <a name="remarks"></a>コメント

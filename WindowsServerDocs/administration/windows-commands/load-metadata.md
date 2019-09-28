@@ -1,8 +1,8 @@
 ---
-title: メタデータを読み込み
-description: 'Windows コマンド」のトピック * * *- '
+title: メタデータの読み込み
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b52b5040fc8c834b04cad83ca4b0cfab103fdc43
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 025f75743d61889c4b987e9a2a575d1c599f04c1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871333"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374618"
 ---
-# <a name="load-metadata"></a>メタデータを読み込み
+# <a name="load-metadata"></a>メタデータの読み込み
 
 
 
-移動可能なシャドウ コピーをインポートする前に、メタデータの .cab ファイルの読み込みまたは復元の場合、ライター メタデータを読み込みます。 パラメーターを指定せずに使用されている場合**メタデータの読み込み**コマンド プロンプトでヘルプを表示します。
+転送可能なシャドウコピーをインポートする前に、または復元の場合にライターメタデータを読み込む前に、メタデータ .cab ファイルを読み込みます。 パラメーターを指定せずに使用した場合、**メタデータの読み込み**コマンドプロンプトでヘルプが表示されます。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
@@ -38,21 +38,21 @@ load metadata [<Drive>:][<Path>]<MetaData.cab>
 
 |パラメーター|説明|
 |---------|-----------|
-|[\<ドライブ >:] [<Path>]|メタデータ ファイルの場所を指定します。|
-|MetaData.cab|読み込むメタデータ .cab ファイルを指定します。|
+|[\<Drive >:][<Path>]|メタデータファイルの場所を指定します。|
+|メタデータ .cab|読み込むメタデータ .cab ファイルを指定します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   使用することができます、**インポート**移動可能なシャドウ コピーをインポートするコマンドがで指定されたメタデータに基づいた**メタデータの読み込み**します。
--   このコマンドは、前に必要な**復元を開始**選択されているライターと復元のコンポーネントを読み込むコマンド。
+-   **Import**コマンドを使用すると、**読み込みメタ**データによって指定されたメタデータに基づいて、転送可能なシャドウコピーをインポートできます。
+-   このコマンドは、 **[復元の開始]** コマンドを使用して、選択したライターと復元用のコンポーネントを読み込む前に必要です。
 
 ## <a name="BKMK_examples"></a>例
 
-既定の場所から metafile.cab をという名前のメタデータ ファイルを読み込むには、次のように入力します。
+既定の場所から metafile というメタデータファイルを読み込むには、次のように入力します。
 ```
 load metadata metafile.cab
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,7 +1,7 @@
 ---
 title: チーム化される NIC 構成 (datacenter) での収束 NIC
 description: このトピックでは、スイッチ埋め込みチーミング (SET) を使用して、チーム化された NIC 構成で収束 NIC を展開する手順について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: f01546f8-c495-4055-8492-8806eee99862
@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/17/2018
-ms.openlocfilehash: 8229b72d69968d3690ece87d5116b215bdf78a08
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e4c305a7c8c4c4618b0df1e1b2a646356d8f821f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869872"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356121"
 ---
 # <a name="converged-nic-in-a-teamed-nic-configuration-datacenter"></a>チーム化される NIC 構成 (datacenter) での収束 NIC
 
@@ -39,7 +39,7 @@ ms.locfileid: "70869872"
    _**生じ**_
 
 
-   |    名前    |           InterfaceDescription           | ifIndex | 状態 |    Mac     | LinkSpeed |
+   |    名前    |           InterfaceDescription           | ifIndex | 状況 |    Mac     | LinkSpeed |
    |------------|------------------------------------------|---------|--------|-------------------|-----------|
    | テスト-40G-1 | Mellanox/3 Pro イーサネットアダプター |   11    |   Up   | E4-1D-07-43-D0 |  40 Gbps  |
 
@@ -75,7 +75,7 @@ ms.locfileid: "70869872"
    _**生じ**_
 
 
-   |    名前    |          InterfaceDescription           | ifIndex | 状態 |    Mac     | LinkSpeed |
+   |    名前    |          InterfaceDescription           | ifIndex | 状況 |    Mac     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | テスト-40G-2 | Mellanox/3 Pro イーサネット A... #2 |   13    |   Up   | E4-1D-2D-07-40-70 |  40 Gbps  |
 
@@ -228,7 +228,7 @@ ms.locfileid: "70869872"
    _**生じ**_
 
 
-   |    名前    |          InterfaceDescription           | ifIndex | 状態 |    Mac     | LinkSpeed |
+   |    名前    |          InterfaceDescription           | ifIndex | 状況 |    Mac     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | テスト-40G-1 | Mellanox: 3 Pro イーサネット Ada... |   11    |   Up   | E4-1D-07-43-D0 |  40 Gbps  |
 
@@ -265,7 +265,7 @@ ms.locfileid: "70869872"
    _**生じ**_
 
 
-   |    名前    |          InterfaceDescription           | ifIndex | 状態 |    Mac     | LinkSpeed |
+   |    名前    |          InterfaceDescription           | ifIndex | 状況 |    Mac     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | テスト-40G-2 | Mellanox: 3 Pro イーサネット Ada... |   11    |   Up   | E4-1D-07-43-D1 |  40 Gbps  |
 
@@ -405,7 +405,7 @@ ms.locfileid: "70869872"
    _**生じ**_
 
 
-   | [Priority] | 有効 | PolicySet | IfIndex | IfAlias |
+   | [Priority] | 有効 | PolicySet | ifIndex | IfAlias |
    |----------|---------|-----------|---------|---------|
    |    0     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
    |    1     |  False  |  グローバル   | &nbsp;  | &nbsp;  |
@@ -439,7 +439,7 @@ ms.locfileid: "70869872"
    _**機能**:_   
 
 
-   |      パラメーター      |   ハードウェア   |   現在    |
+   |      パラメーター      |   ハードウェア   |   現在の    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | NotSupported | NotSupported |
    |     DcbxSupport     |     なし     |     なし     |
@@ -483,7 +483,7 @@ ms.locfileid: "70869872"
    _**機能**:_ 
 
 
-   |      パラメーター      |   ハードウェア   |   現在    |
+   |      パラメーター      |   ハードウェア   |   現在の    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | NotSupported | NotSupported |
    |     DcbxSupport     |     なし     |     なし     |
@@ -524,7 +524,7 @@ ms.locfileid: "70869872"
    _**生じ**_  
 
 
-   | 名前 | アルゴリズム | 帯域幅 (%) | [Priority] | PolicySet | IfIndex | IfAlias |
+   | 名前 | アルゴリズム | 帯域幅 (%) | [Priority] | PolicySet | ifIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | SMB  |    ETS    |      50      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
 
@@ -539,7 +539,7 @@ ms.locfileid: "70869872"
    _**生じ**_  
 
 
-   |   名前    | アルゴリズム | 帯域幅 (%) | [Priority] | PolicySet | IfIndex | IfAlias |
+   |   名前    | アルゴリズム | 帯域幅 (%) | [Priority] | PolicySet | ifIndex | IfAlias |
    |-----------|-----------|--------------|----------|-----------|---------|---------|
    | [Default] |    ETS    |      50      | 0 ~ 2、4-7  |  グローバル   | &nbsp;  | &nbsp;  |
    |    SMB    |    ETS    |      50      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
@@ -558,7 +558,7 @@ ms.locfileid: "70869872"
    _**生じ**_
 
 
-   | 名前 | アルゴリズム | 帯域幅 (%) | [Priority] | PolicySet | IfIndex | IfAlias |
+   | 名前 | アルゴリズム | 帯域幅 (%) | [Priority] | PolicySet | ifIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | IP1  |    ETS    |      10      |    1     |  グローバル   | &nbsp;  | &nbsp;  |
 
@@ -571,7 +571,7 @@ ms.locfileid: "70869872"
    _**生じ**_
 
 
-   | 名前 | アルゴリズム | 帯域幅 (%) | [Priority] | PolicySet | IfIndex | IfAlias |
+   | 名前 | アルゴリズム | 帯域幅 (%) | [Priority] | PolicySet | ifIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | IP2  |    ETS    |      10      |    2     |  グローバル   | &nbsp;  | &nbsp;  |
 
@@ -586,7 +586,7 @@ ms.locfileid: "70869872"
     _**生じ**_
 
 
-    |   名前    | アルゴリズム | 帯域幅 (%) | [Priority] | PolicySet | IfIndex | IfAlias |
+    |   名前    | アルゴリズム | 帯域幅 (%) | [Priority] | PolicySet | ifIndex | IfAlias |
     |-----------|-----------|--------------|----------|-----------|---------|---------|
     | [Default] |    ETS    |      30      |  0、4-7   |  グローバル   | &nbsp;  | &nbsp;  |
     |    SMB    |    ETS    |      50      |    3     |  グローバル   | &nbsp;  | &nbsp;  |
@@ -761,7 +761,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
    _**生じ**_
 
 
-   |        名前         |        InterfaceDescription         | ifIndex | 状態 |    Mac     | LinkSpeed |
+   |        名前         |        InterfaceDescription         | ifIndex | 状況 |    Mac     | LinkSpeed |
    |---------------------|-------------------------------------|---------|--------|-------------------|-----------|
    | Veruncommand Net (VMSTEST) | Hyper-v 仮想イーサネットアダプターの #2 |   28    |   Up   | E4-1D-2D-07-40-71 |  80 Gbps  |
 
@@ -776,7 +776,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
    _**生じ**_
 
 
-   |  名前   | IsManagementOs | VMName  |  SwitchName  | Mac | 状態 | IPAddresses |
+   |  名前   | IsManagementOs | VMName  |  SwitchName  | Mac | 状況 | IPAddresses |
    |---------|----------------|---------|--------------|------------|--------|-------------|
    | VMSTEST |      True      | VMSTEST | E41D2D074071 |    Ok を    | &nbsp; |             |
 
@@ -885,7 +885,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
    _**生じ**_ 
 
 
-   |         名前         | IsManagementOs | VMName |      SwitchName      |  Mac  | 状態 | IPAddresses |
+   |         名前         | IsManagementOs | VMName |      SwitchName      |  Mac  | 状況 | IPAddresses |
    |----------------------|----------------|--------|----------------------|--------------|--------|-------------|
    | CORP-外部スイッチ |      True      | &nbsp; | CORP-外部スイッチ | 001B785768AA |  Ok を  |   &nbsp;    |
    |         管理          |      True      | &nbsp; |       VMSTEST        | E41D2D074071 |  Ok を  |   &nbsp;    |
@@ -901,7 +901,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
    _**生じ**_
 
 
-   |      名前       |        InterfaceDescription         | ifIndex | 状態 |    Mac     | LinkSpeed |
+   |      名前       |        InterfaceDescription         | ifIndex | 状況 |    Mac     | LinkSpeed |
    |-----------------|-------------------------------------|---------|--------|-------------------|-----------|
    | Ve・ Net (の場合) | Hyper-v 仮想イーサネットアダプターの #2 |   28    |   Up   | E4-1D-2D-07-40-71 |  80 Gbps  |
 
@@ -941,7 +941,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
    _**生じ**_ 
 
 
-   |         名前         | IsManagementOs |        VMName        |  SwitchName  | Mac | 状態 | IPAddresses |
+   |         名前         | IsManagementOs |        VMName        |  SwitchName  | Mac | 状況 | IPAddresses |
    |----------------------|----------------|----------------------|--------------|------------|--------|-------------|
    | CORP-外部スイッチ |      True      | CORP-外部スイッチ | 001B785768AA |    Ok を    | &nbsp; |             |
    |         管理          |      True      |       VMSTEST        | E41D2D074071 |    Ok を    | &nbsp; |             |
@@ -950,7 +950,7 @@ VSwitch を作成して RDMA \(モード 2\)に移行する前に、ファブリ
 
    ---
 
-## <a name="step-9-assign-an-ip-address-to-the-smb-host-vnics-vethernet-smb1-and-vethernet-smb2"></a>手順 9. IP アドレスを SMB ホスト vnics veSMB2 \(\)と veruncommand net \(に割り当てます。\)
+## <a name="step-9-assign-an-ip-address-to-the-smb-host-vnics-vethernet-smb1-and-vethernet-smb2"></a>手順 9: IP アドレスを SMB ホスト vnics veSMB2 \(\)と veruncommand net \(に割り当てます。\)
 
 テスト-40G-1 とテスト-40G-2 物理アダプターでも、101と102のアクセス VLAN が構成されています。 このため、アダプターはトラフィックにタグを付け、ping は成功します。 以前は、2つの pNIC VLAN Id をゼロに構成し、VMSTEST vSwitch を VLAN 101 に設定しました。 その後、vNIC を使用してリモート VLAN 101 アダプターに ping を実行できますが、現在のところ、VLAN 102 のメンバーはありません。
 

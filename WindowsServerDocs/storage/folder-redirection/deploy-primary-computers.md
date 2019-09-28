@@ -1,19 +1,19 @@
 ---
 title: フォルダーリダイレクトと移動ユーザープロファイルのプライマリコンピューターを展開する
 description: フォルダーリダイレクトと移動ユーザープロファイルを使用して、プライマリコンピューターのサポートを有効にし、プライマリコンピューターを指定する方法。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: fe026b97f15b4094303c8162c5363cc6205dedd1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: be2b41cf32e2020422c32415e2d8f4273eb09859
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867279"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394440"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>フォルダーリダイレクトと移動ユーザープロファイルのプライマリコンピューターを展開する
 

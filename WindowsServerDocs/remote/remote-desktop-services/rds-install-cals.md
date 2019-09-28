@@ -2,7 +2,7 @@
 title: RDS クライアント アクセス ライセンスをインストールする
 description: RD クライアントの CAL をインストールする方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -12,12 +12,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/20/2016
 manager: dongill
-ms.openlocfilehash: 6a0b5bdfc4df8e7a60181d71b0f26735e8c07506
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 4ee26a0d9ba5ee3a94a4c569a639454e064d0a90
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743524"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387424"
 ---
 # <a name="install-rds-client-access-licenses-on-the-remote-desktop-license-server"></a>リモート デスクトップ ライセンス サーバーに RDS クライアント アクセス ライセンスをインストールする
 

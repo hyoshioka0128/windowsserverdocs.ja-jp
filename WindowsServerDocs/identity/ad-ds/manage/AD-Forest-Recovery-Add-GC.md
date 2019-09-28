@@ -1,49 +1,49 @@
 ---
-title: AD フォレストの回復 - GC の追加
+title: AD フォレストの回復-GC の追加
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: 156a4a64d9c3bb8261bd603b72ae11b81ff1d152
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f82033dd042847c7c735423c25756b936b137230
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825633"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369340"
 ---
-# <a name="ad-forest-recovery---adding-the-gc"></a>AD フォレストの回復 - GC の追加
+# <a name="ad-forest-recovery---adding-the-gc"></a>AD フォレストの回復-GC の追加
 
->適用先:Windows Server 2016、Windows Server 2012 および 2012 R2、Windows Server 2008 および 2008 R2
+>適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
 
-次の手順を使用すると、DC をグローバル カタログを追加できます。  
+グローバルカタログを DC に追加するには、次の手順に従います。  
   
-## <a name="to-add-the-global-catalog"></a>グローバル カタログに追加するには  
+## <a name="to-add-the-global-catalog"></a>グローバルカタログを追加するには  
   
-1. クリックして**開始**、 をポイント**すべてのプログラム**、 をポイント**管理ツール**、順にクリックします**Active Directory サイトとサービス**します。  
-2. コンソール ツリーで、展開、**サイト**コンテナー、およびターゲット サーバーを含む適切なサイトを選択します。  
-3. 展開、**サーバー**コンテナー、グローバル カタログを追加する DC のサーバー オブジェクトを展開します。  
-4. 右クリックして**NTDS 設定**、 をクリックし、**プロパティ**します。  
-5. 選択、**グローバル カタログ**チェック ボックスをオンします。  
-![GC を追加します。](media/AD-Forest-Recovery-Add-GC/addgc1.png)
+1. **[スタート]** をクリックし、 **[すべてのプログラム]** 、 **[管理ツール]** の順にポイントして、 **[Active Directory サイトとサービス]** をクリックします。  
+2. コンソールツリーで、 **[サイト]** コンテナを展開し、対象サーバーが含まれている適切なサイトを選択します。  
+3. **[サーバー]** コンテナーを展開し、グローバルカタログを追加する DC のサーバーオブジェクトを展開します。  
+4. **[NTDS 設定]** を右クリックし、 **[プロパティ]** をクリックします。  
+5. **[グローバルカタログ]** チェックボックスをオンにします。  
+![Add GC @ no__t
 
-## <a name="to-add-the-global-catalog-using-repadmin"></a>Repadmin を使用してグローバル カタログに追加するには  
+## <a name="to-add-the-global-catalog-using-repadmin"></a>Repadmin を使用してグローバルカタログを追加するには  
 
-- 管理者特権でコマンド プロンプトを開きます次のコマンドを入力し、ENTER キーを押します。  
+- 管理者特権でのコマンドプロンプトを開き、次のコマンドを入力して、enter キーを押します。  
 
    ```  
    repadmin.exe /options DC_NAME +IS_GC  
    ```  
 
-以下は、ルート ドメインの DC をグローバル カタログを追加するプロセスを高速化する方法です。  
+次に、グローバルカタログをルートドメインの DC に追加するプロセスを高速化する方法を示します。  
 
-- 理想的には、ルート ドメインの DC には、ルート以外のドメインで復元された Dc のレプリケーション パートナーがあります。 そうである場合は、対応する知識整合性チェッカー (KCC) が作成することを確認**repsFrom**ソース DC とルート DC でパーティションのオブジェクト。 これを確認するにを実行して、 **repadmin/showreps/v**コマンド。 
+- ルートドメインの DC は、ルート以外のドメインの復元された Dc のレプリケーションパートナーであることが理想的です。 その場合は、知識整合性チェッカー (KCC) によって、ルート DC 内のソース DC およびパーティションに対応する**repsFrom**オブジェクトが作成されていることを確認します。 これを確認するには、 **repadmin/showreps/v**コマンドを実行します。 
 
-- 存在する場合ありません**repsFrom**オブジェクトの作成、構成パーティションについて、このオブジェクトを作成します。 これにより、ルート ドメインの DC を判断できます非ルート ドメインでは、どの Dc が削除されました。 これは、次のコマンドで行うことができます。  
+- **RepsFrom**オブジェクトが作成されていない場合は、構成パーティション用にこのオブジェクトを作成します。 これにより、ルートドメインの DC は、ルート以外のドメイン内のどの Dc が削除されたかを判断できます。 これを行うには、次のコマンドを使用します。  
 
    ```
    repadmin /add ConfigurationNamingContext DestinationDomainController SourceDomainControllerCNAME  
@@ -53,29 +53,29 @@ ms.locfileid: "59825633"
    repadmin /options DSA -Disable_NTDSCONN_XLATE  
    ```
 
-   形式、 *SourceDomainControllerCNAME*は。  
+   *Sourcedomainコントローラー cname*の形式は次のとおりです。  
 
    ```
   
    sourceDCGuid._msdcs.root domain  
    ```
 
-   Repadmin などのコマンドの追加、contoso.com ドメインの構成パーティションがある可能性があります。  
+   たとえば、contoso.com ドメインの構成パーティションの repadmin/add コマンドは次のようになります。  
 
    ```
    repadmin /add cn=configuration,DC=contoso,DC=com DC01 937ef930-7356-43c8-88dc-8baaaa781cf6._msdcs.dDSP17A22.contoso.com  
    ```
 
-- 場合、 **repsFrom**オブジェクトが存在する、次のようにルート以外のドメインの DC にルート ドメインの DC を同期しようとしています。  
+- **RepsFrom**オブジェクトが存在する場合は、ルートドメインの dc と非ルートドメインの dc を次のように同期します。  
 
    ```
    Repadmin /sync DomainNamingContext DestinationDomainController SourceDomainControllerGUID  
    ```
 
-   場所*DestinationDomainController*ルート ドメインの dc と*SourceDomainController*非ルート ドメインで、復元された DC が。 
+   ここで、 *DestinationDomainController*はルートドメインの Dc、 *SourceDomainController*はルート以外のドメインの復元された dc です。 
 
-- ルート ドメインの DNS サーバーは、ソース DC のエイリアス (CNAME) リソース レコードが必要です。 親 DNS ゾーンが、子ゾーンでの適切なドメイン コント ローラー (バックアップから復元された Dc) (ネーム サーバー (NS) とホスト (A) リソース レコード) の委任のリソース レコードには含まれていることを確認します。 
-- ルート ドメインの DC がルート以外のドメインで正しいキー配布センター (KDC) への接続を確認します。 コマンド プロンプトで、これをテストするには、次のコマンドを入力し、ENTER キーを押します。  
+- ルートドメインの DNS サーバーには、ソース DC のエイリアス (CNAME) リソースレコードが必要です。 親 DNS ゾーンに、子ゾーンの正しい Dc (バックアップから復元された Dc) の委任リソースレコード (ネームサーバー (NS) とホスト (A) リソースレコード) が含まれていることを確認します。 
+- ルートドメインの DC が、ルート以外のドメインの正しいキー配布センター (KDC) に接続していることを確認します。 これをテストするには、コマンドプロンプトで次のコマンドを入力し、enter キーを押します。  
 
    ```
    nltest /dsgetdc:nonroot domain name /KDC /Force  
@@ -84,4 +84,4 @@ ms.locfileid: "59825633"
 ## <a name="next-steps"></a>次の手順
 
 - [AD フォレストの回復ガイド](AD-Forest-Recovery-Guide.md)
-- [AD フォレストの回復の手順](AD-Forest-Recovery-Procedures.md)  
+- [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md)  

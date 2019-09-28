@@ -1,7 +1,7 @@
 ---
-title: すべての必須の仮想スイッチ拡張機能が使用できることを確認します。
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+title: すべての必須の仮想スイッチ拡張機能が使用可能であることを確認する
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,38 +10,38 @@ ms.topic: article
 ms.assetid: 2f2f2698-f5ec-4cad-aa64-d6987e8142a1
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 53ceeb9aab6ca7196454fbcd7f0fdae8b34d05d2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c9363fbce35552a8f7d279662ae9072bcd7ea480
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825943"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364822"
 ---
-# <a name="ensure-that-all-mandatory-virtual-switch-extensions-are-available"></a>すべての必須の仮想スイッチ拡張機能が使用できることを確認します。
+# <a name="ensure-that-all-mandatory-virtual-switch-extensions-are-available"></a>すべての必須の仮想スイッチ拡張機能が使用可能であることを確認する
 
 >適用先:Windows Server 2016
 
-ベスト プラクティスとスキャンの詳細については、次を参照してください。 [Run Best Practices Analyzer Scans and Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177)します。  
+ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
 |プロパティ|詳細|  
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|警告|  
+|**順**|警告|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
   
 ## <a name="issue"></a>問題  
-*1 つまたは複数の仮想ネットワーク アダプターは、無効またはインストールされていない必須の拡張機能を仮想スイッチに接続されます。*  
+*1つまたは複数の仮想ネットワークアダプターが、無効またはインストールされていない必須の拡張機能を持つ仮想スイッチに接続されています。*  
   
 ## <a name="impact"></a>影響  
-*次の仮想マシン上の 1 つまたは複数の仮想ネットワーク アダプターのネットワーク トラフィックがブロックされます。*  
+*次の仮想マシン上の1つまたは複数の仮想ネットワークアダプターで、ネットワークトラフィックがブロックされています:*  
   
-\<仮想マシンの一覧 >  
+@no__t-仮想マシンの > の一覧  
   
 ## <a name="resolution"></a>解決方法  
-*最初に、ホスト上に必須の拡張機能がインストールされているかどうかを確認し、必要な場合は、拡張機能をインストールします。次に、必須の拡張機能が無効になっている場合を使用して、仮想スイッチ マネージャーまたは Windows PowerShell コマンドレットは、有効にする VMSwitchExtension、拡張機能を有効にします。*  
+*First で、ホストに必須の拡張機能がインストールされていることを確認し、必要に応じて拡張機能をインストールします。その後、必須の拡張機能が無効になっている場合は、仮想スイッチマネージャーまたは Windows PowerShell コマンドレット VMSwitchExtension を使用して拡張機能を有効にします。*  
   
 
 

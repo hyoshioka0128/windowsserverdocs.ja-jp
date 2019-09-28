@@ -1,39 +1,39 @@
 ---
-title: AD フォレストの回復 - 考案、AD フォレストの回復計画
+title: AD フォレストの回復-AD フォレストの復旧計画の策定
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: 17381f30-55f2-4e00-977a-b701675fa4ff
 ms.technology: identity-adds
-ms.openlocfilehash: edfc874fe030c6394bc8bda95c49e61951e78f43
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0ef0fbc19f1b3ba5a46fe09f66da6721f2e84712
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881783"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369147"
 ---
-# <a name="ad-forest-recovery---devising-an-ad-forest-recovery-plan"></a>AD フォレストの回復 - 考案、AD フォレストの回復計画
+# <a name="ad-forest-recovery---devising-an-ad-forest-recovery-plan"></a>AD フォレストの回復-AD フォレストの復旧計画の策定
 
->適用先:Windows Server 2016、Windows Server 2012 および 2012 R2、Windows Server 2008 および 2008 R2
+>適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
 
-環境やビジネス要件によっては、可能性があります。 または成功したフォレストの回復を実行するには、このガイドで説明されているすべての手順を実行する必要はありません。 このガイドでは、フォレストの回復用のテンプレートとしてのみ、ある環境に適したをビジネス ニーズを満たすカスタム フォレスト回復の計画を考案する必要があります。  
+環境やビジネス要件によっては、このガイドで説明されているすべての手順を実行して、フォレストの回復を正常に実行する必要がある場合があります。 このガイドは、フォレストの復旧のためのテンプレートとしてのみ機能するので、環境に適したカスタムフォレストの復旧計画を作成し、ビジネスのニーズを満たすことが重要です。  
   
-たとえば、フォレスト回復計画で、フォレストの詳細なトポロジ マップが必要です。 マップには、名前、そのロールとバックアップの状態間の信頼関係など、Dc の情報がすべてが一覧表示します。 トポロジ マップの作成に使用できるツールを参照してください。 [Microsoft Active Directory トポロジ Diagrammer](https://www.microsoft.com/download/details.aspx?id=13380)します。  
+たとえば、フォレストの復旧計画では、フォレストの詳細なトポロジマップが必要です。 マップには、Dc に関するすべての情報 (名前、ロールとバックアップの状態、およびそれらの間の信頼関係など) が一覧表示されます。 トポロジマップの作成に使用できるツールについては、「 [Microsoft Active Directory Topology Diagrammer](https://www.microsoft.com/download/details.aspx?id=13380)」を参照してください。  
   
-1 年間に少なくとも 1 回フォレスト復旧計画を練習する必要があります。 または、Enterprise Admins または Domain Admins グループにメンバーシップの変更がある場合に、フォレストの回復ドリルを実行することをお勧めします。 これにより、情報技術 (IT) スタッフがフォレストの復旧計画を完全に理解していることを確認できます。
+フォレストの復旧計画は、少なくとも1年に1回実行することをお勧めします。 また、Enterprise Admins グループまたは Domain Admins グループにメンバーシップの変更がある場合は、フォレストの回復訓練を実行することをお勧めします。 これにより、情報技術 (IT) スタッフがフォレストの復旧計画を完全に理解することができます。
 
 ## <a name="next-steps"></a>次の手順
 
 - [AD フォレストの回復 - 前提条件](AD-Forest-Recovery-Prerequisties.md)  
-- [AD フォレストの回復 - カスタム フォレスト回復の計画を立てる](AD-Forest-Recovery-Devising-a-Plan.md)  
-- [AD フォレストの回復の問題の特定](AD-Forest-Recovery-Identify-the-Problem.md)
-- [AD フォレストの回復に回復する方法を決定](AD-Forest-Recovery-Determine-how-to-Recover.md)
-- [AD フォレストの回復 - 最初の回復を実行します。](AD-Forest-Recovery-Perform-initial-recovery.md)  
-- [AD フォレストの回復の手順](AD-Forest-Recovery-Procedures.md)  
-- [AD フォレストの回復 - よく寄せられる質問](AD-Forest-Recovery-FAQ.md)  
-- [AD フォレストの回復 - Multidomain フォレスト内の 1 つのドメインを回復します。](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
-- [AD フォレストの回復 - Windows Server 2003 ドメイン コント ローラーとフォレストの回復](AD-Forest-Recovery-Windows-Server-2003.md)
+- [AD フォレストの回復-カスタムフォレストの復旧計画の作成](AD-Forest-Recovery-Devising-a-Plan.md)  
+- [AD フォレストの回復-問題の特定](AD-Forest-Recovery-Identify-the-Problem.md)
+- [AD フォレストの回復-回復方法を決定する](AD-Forest-Recovery-Determine-how-to-Recover.md)
+- [AD フォレストの回復-最初の回復を実行する](AD-Forest-Recovery-Perform-initial-recovery.md)  
+- [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md)  
+- [AD フォレストの回復-よく寄せられる質問](AD-Forest-Recovery-FAQ.md)  
+- [AD フォレストの回復-マルチドメインフォレスト内の単一ドメインの回復](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
+- [AD フォレストの回復-Windows Server 2003 ドメインコントローラーを使用したフォレストの回復](AD-Forest-Recovery-Windows-Server-2003.md)

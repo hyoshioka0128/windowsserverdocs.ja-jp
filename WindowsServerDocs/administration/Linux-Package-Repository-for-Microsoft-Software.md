@@ -2,7 +2,7 @@
 title: Microsoft 製品用 Linux ソフトウェアリポジトリ
 description: このドキュメントでは、Microsoft 製品用の Linux ソフトウェアパッケージを使用してインストールする方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: szark
 ms.technology: compute
@@ -11,12 +11,12 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: bade9fff306272188ac8d2b91a3d9921c80fe036
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0627c38f15966948dd4bea91b66a96ee59ec89e5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866892"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370454"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>Microsoft 製品用 Linux ソフトウェアリポジトリ
 

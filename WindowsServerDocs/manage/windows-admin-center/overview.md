@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2019
 ms.localizationpriority: high
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 943026c04055919fefd7002c50144d28413de1a7
-ms.sourcegitcommit: 27f0caf74e88781054250455c3c1adf06deb6234
+ms.prod: windows-server
+ms.openlocfilehash: e235c8013afa573712feaec75bbd1ca195c0e307
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71124345"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357000"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 

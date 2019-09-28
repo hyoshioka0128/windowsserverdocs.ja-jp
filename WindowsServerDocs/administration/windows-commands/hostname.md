@@ -1,8 +1,8 @@
 ---
 title: hostname
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 10d0e8d5a484ecd017fb4f299935c9a3fa802b64
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 39c85f869c0366236d99eba55774a7e3dab6e52f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837753"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375512"
 ---
 # <a name="hostname"></a>hostname
 
@@ -33,12 +33,12 @@ hostname
 |パラメーター|説明|
 |-------|--------|
 |/?|コマンド プロンプトにヘルプを表示します。|
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 このコマンドは、インターネット プロトコル (TCP/IP) プロトコルがネットワークのネットワーク アダプターのプロパティでコンポーネントとしてインストールされている場合にのみ使用できます。
 ## <a name="BKMK_Examples"></a>例
 コンピューターの名前を表示するには、次のように入力します。
 ```
 hostname
 ```
-## <a name="additional-references"></a>その他の参照
--   [コマンドライン構文キー](command-line-syntax-key.md)
+## <a name="additional-references"></a>その他の参照情報
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

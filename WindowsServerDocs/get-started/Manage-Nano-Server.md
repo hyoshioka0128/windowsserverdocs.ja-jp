@@ -1,7 +1,7 @@
 ---
 title: Nano Server の管理
 description: 更新プログラム、サービス パッケージ、ネットワーク トレース、パフォーマンスの監視
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -12,12 +12,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 165b7e7aea7a7d0bb56d21f350f6ee646d5fa973
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: dc3a2386573c5beb4ec156fdfca3b77f025b1738
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "67280404"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391761"
 ---
 # <a name="manage-nano-server"></a>Nano Server の管理
 

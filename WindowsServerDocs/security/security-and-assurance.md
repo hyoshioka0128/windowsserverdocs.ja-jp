@@ -3,7 +3,7 @@ title: セキュリティ | 保証
 description: Windows Server のセキュリティの概要
 ms.custom: na
 layout: LandingPage
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: techgroup-security
 ms.tgt_pltfrm: na
 ms.topic: landing-page
@@ -11,12 +11,12 @@ ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: high
-ms.openlocfilehash: b788aa85bcc2df7c96baaf591b224788e6e6f487
-ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
+ms.openlocfilehash: a29c43a87ccb55e85b018bc1b6dfe84bc53495b9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000739"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403445"
 ---
 # <a name="security--assurance"></a>セキュリティ | 保証
 

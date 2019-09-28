@@ -1,8 +1,8 @@
 ---
 title: fveupdate
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,15 +13,15 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da7bb7eab60947cd7eb408e82a1f55c1aec47992
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3c5cc40dafb0305e1fdca2e1b91de749ac1cc70b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858753"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375800"
 ---
 # <a name="fveupdate"></a>fveupdate
 
 
 
-FveUpdate は、Windows Vista または Windows Server 2008 から Windows 7 または Windows Server 2008 R2 にアップグレードしたコンピューターの場合は、セットアップによって実行される内部で使用されるツールです。 最新バージョンには、BitLocker に関連付けられているメタデータを更新します。 このツールとは独立して実行することはできません。
+FveUpdate は、コンピューターを Windows Vista または Windows Server 2008 から Windows 7 または Windows Server 2008 R2 にアップグレードするときにセットアップによって実行される、内部で使用されるツールです。 最新バージョンには、BitLocker に関連付けられているメタデータを更新します。 このツールとは独立して実行することはできません。

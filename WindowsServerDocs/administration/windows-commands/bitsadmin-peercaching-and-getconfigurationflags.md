@@ -1,8 +1,8 @@
 ---
 title: bitsadmin ピアキャッシュと getconfigurationflags
-description: Windows コマンド」のトピック**bitsadmin ピアキャッシュと getconfigurationflags** - コンピューターがピアにコンテンツを処理するかどうかを決定する構成フラグを取得し、ピアからコンテンツをダウンロードすることができます。
+description: '**Bitsadmin ピアキャッシュと getconfigurationflags**に関する Windows コマンドトピックでは、コンピューターがピアにコンテンツを提供し、ピアからコンテンツをダウンロードできるかどうかを決定する構成フラグを取得します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6afa39993cf90b2d71b6b681680c3b4e1fd9b56b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 94c7eb1a115fe9152b149b8cf65765b179080cc3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826353"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381092"
 ---
 # <a name="bitsadmin-peercaching-and-getconfigurationflags"></a>bitsadmin ピアキャッシュと getconfigurationflags
 
 
 
-コンピューターがピアにコンテンツの提供し、ピアからコンテンツをダウンロードすることができるかどうかを決定する構成フラグを取得します。
+コンピューターがピアにコンテンツを提供し、ピアからコンテンツをダウンロードできるかどうかを決定する構成フラグを取得します。
 
 ## <a name="syntax"></a>構文
 
@@ -40,11 +40,11 @@ bitsadmin /PeerCaching /GetConfigurationFlags <Job>
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブ構成フラグを取得する*myJob*します。
+次の例では、 *Myjob*という名前のジョブの構成フラグを取得します。
 ```
 C:\> Bitsadmin /PeerCaching /GetConfigurationFlags myJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

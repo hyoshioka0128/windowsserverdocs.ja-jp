@@ -2,7 +2,7 @@
 title: トランスポート層セキュリティ (TLS) のレジストリ設定
 description: Windows Server のセキュリティ
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-tls-ssl
@@ -12,12 +12,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 02/28/2019
-ms.openlocfilehash: 83146bd8a65b90994ed90a6dda29a4bc00a2533a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 60202e537093bd21515043ba56f70f3895c91d42
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870297"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403410"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>トランスポート層セキュリティ (TLS) のレジストリ設定
 

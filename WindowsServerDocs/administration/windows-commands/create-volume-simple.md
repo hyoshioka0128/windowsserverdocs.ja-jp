@@ -1,8 +1,8 @@
 ---
-title: 単純なボリュームを作成します。
-description: 'Windows コマンド」のトピック * * *- '
+title: ボリュームのシンプルな作成
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a35d0de5110c0e1616c42921c8402ecc1aff8c41
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 1afb97c5bdb167eaf6ecfcd34ca3607b7b5a4c71
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434051"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378881"
 ---
-# <a name="create-volume-simple"></a>単純なボリュームを作成します。
+# <a name="create-volume-simple"></a>ボリュームのシンプルな作成
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-指定されたダイナミック ディスクにシンプル ボリュームを作成します。  
+指定されたダイナミックディスクにシンプルボリュームを作成します。  
   
 > [!IMPORTANT]  
-> Windows vista の場合、この DiskPart コマンドでは、Windows Vista Ultimate、Windows Vista Enterprise、および Windows Vista Business edition で提供のみ。  
+> Windows Vista では、この DiskPart コマンドは、Windows Vista Ultimate、Windows Vista Enterprise、および Windows Vista Business edition でのみ使用できます。  
   
   
   
@@ -41,23 +41,23 @@ create volume simple [size=<n>] [disk=<n>] [align=<n>] [noerr]
   
 | パラメーター  |                                                                                                                            説明                                                                                                                            |
 |------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| サイズ\=<n>  |                                                                  メガバイト単位でボリュームのサイズ\(MB\)します。 サイズを指定しない場合、新しいボリュームをディスク上の残りの空き領域は。                                                                   |
-| ディスク\=<n>  |                                                                                ボリュームが作成されたダイナミック ディスクです。 ディスクが指定されていない場合は、現在のディスクが使用されます。                                                                                |
-| 配置\=<n> | すべてのボリュームのエクステント近いシリンダー境界に揃えて配置します。 ハードウェア RAID の論理ユニット番号で通常使用\(LUN\)パフォーマンスを向上させるために配列。 *n*キロバイト数は、 \(KB\)近いシリンダー境界にディスクの先頭から。 |
-|   noerr    |                               スクリプト専用です。 エラーが発生すると、DiskPart は、エラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。                                |
+| サイズ @ no__t-0 @ no__t-1  |                                                                  ボリュームのサイズ (メガバイト単位) \(MB @ no__t-1。 サイズが指定されていない場合、新しいボリュームはディスクの残りの空き領域を占有します。                                                                   |
+| disk\=<n>  |                                                                                ボリュームが作成されるダイナミックディスク。 ディスクが指定されていない場合は、現在のディスクが使用されます。                                                                                |
+| align\=<n> | すべてのボリュームエクステントを最も近い配置境界に配置します。 通常、パフォーマンスを向上させるために、ハードウェア RAID 論理ユニット番号 \(LUN @ no__t アレイと共に使用します。 *n*は、ディスクの先頭から最も近いアラインメント境界までの 1 kb @ no__t の @no__t 単位数です。 |
+|   noerr    |                               スクリプトの場合のみ。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。                                |
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>コメント  
   
--   ボリュームを作成すると、フォーカスは自動的に新しいボリュームに移動します。  
+-   ボリュームを作成すると、フォーカスは自動的に新しいボリュームに移ります。  
   
 ## <a name="BKMK_examples"></a>例  
-ディスク 1、上のサイズで 1000 メガバイトのボリュームを作成するには、次のように入力します。  
+サイズが 1000 mb のボリュームを作成するには、ディスク1で次のように入力します。  
   
 ```  
 create volume simple size=1000 disk=1  
 ```  
   
-#### <a name="additional-references"></a>その他の参照  
+#### <a name="additional-references"></a>その他の参照情報  
 [コマンド ライン構文の記号](command-line-syntax-key.md)  
   
 

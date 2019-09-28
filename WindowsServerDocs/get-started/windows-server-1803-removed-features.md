@@ -1,19 +1,19 @@
 ---
 title: Windows Server バージョン 1803 - 削除された機能
 description: Windows Server バージョン 1803 または今後のリリースで削除されるか、推奨されなくなる機能の詳細
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: plan
 ms.localizationpriority: medium
 ms.sitesec: library
 author: jasongerend
 ms.author: jgerend
 ms.date: 08/22/2019
-ms.openlocfilehash: 8b871d6fa939271c7468a8b51a195539ee268e9c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 482897b31bfaf3c4fe1f6b44a184463e88c5ae65
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868291"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391314"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1803"></a>Windows Server バージョン 1803 以降で削除された機能と置換が計画されている機能
 

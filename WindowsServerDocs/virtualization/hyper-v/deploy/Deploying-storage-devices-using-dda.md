@@ -1,7 +1,7 @@
 ---
 title: 個別のデバイスの割り当てを使用して NVMe 記憶装置を展開する
 description: DDA を使用して記憶装置を展開する方法について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 ms.technology: hyper-v
 ms.tgt_pltfrm: na
@@ -9,12 +9,12 @@ ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 1c36107e-78c9-4ec0-a313-6ed557ac0ffc
-ms.openlocfilehash: 001d8addba2cdb8cbbd5d72ffa224d16f62d1245
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: eb76b25e8ff1428b2c03b37dde1f76562751d3bb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872124"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364317"
 ---
 # <a name="deploy-nvme-storage-devices-using-discrete-device-assignment"></a>個別のデバイスの割り当てを使用して NVMe 記憶装置を展開する
 

@@ -1,19 +1,19 @@
 ---
 title: サービス チャネル
 description: 'Windows Server サービス チャネルの説明: LTSC と SAC'
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 639623b4ebb21a4f6a0025a71721204cbfc4f496
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 814bcf3e989e9aa9b83ba447d07c45ee95309a5a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868599"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391976"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server サービス チャネル: LTSC と SAC
 

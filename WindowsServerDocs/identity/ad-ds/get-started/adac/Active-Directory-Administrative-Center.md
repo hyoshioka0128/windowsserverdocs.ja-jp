@@ -7,24 +7,24 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1eef30085704d4992662c6bc00a05d28a62d4a6d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 41a7a1e1c1c08f90d336bbde49841844a232208a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850703"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390633"
 ---
 # <a name="active-directory-administrative-center"></a>Active Directory 管理センター
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-Active Directory 管理センター (ADAC) で Windows Server には、強化された管理エクスペリエンスの機能が含まれています。 これらの機能は、Active Directory Domain Services (AD DS) を管理するための管理の負担を軽減します。 次のトピックで、新機能の概要と詳細について説明します。  
+Windows Server の Active Directory 管理センター (ADAC) には、高度な管理エクスペリエンス機能が含まれています。 これらの機能により、Active Directory Domain Services (AD DS) を管理するための管理上の負担が軽減されます。 次のトピックで、新機能の概要と詳細について説明します。  
   
--   [Active Directory 管理センターの強化概要&#40;レベル 100&#41;](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)  
+-   [Active Directory 管理センターの拡張&#40;レベル100の概要&#41;](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)  
   
--   [Active Directory 管理センターを使用して AD DS の管理を高度な&#40;レベル 200&#41;](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md)  
+-   [Active Directory 管理センター &#40;レベル200を使用した高度な AD DS 管理&#41;](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md)  
   
 
 

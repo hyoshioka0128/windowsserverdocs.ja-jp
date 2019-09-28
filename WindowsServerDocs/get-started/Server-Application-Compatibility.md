@@ -2,7 +2,7 @@
 title: Microsoft サーバー アプリケーションの互換性
 description: Server 2016 と Microsoft サーバー アプリケーションの互換性表。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.date: 08/01/2018
@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: ''
 ms.localizationpriority: medium
-ms.openlocfilehash: a4c1e104c4f2b5c270f36dc8d5789e00b5a30bdf
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 779f96d0c7f676be692425727ad6cd6ff6cc4e21
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63687346"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360188"
 ---
 # <a name="windows-server-2016-and-microsoft-server-application-compatibility"></a>Windows Server 2016 と Microsoft サーバー アプリケーションの互換性
 

@@ -1,42 +1,42 @@
 ---
-title: コードの整合性の Windows Server 仮想化ベースの保護との互換性のあるハードウェア
+title: 互換性のあるハードウェアと Windows Server Virtualization によるコードの整合性保護
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 15ded82c-f70f-4efb-9e26-2731127931af
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: a52ff808af94159fe50c72bf0466768047ceea90
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5a9a4b91cc3528ce59f8ef3e4952b6162ca5c74e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820373"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403688"
 ---
-# <a name="compatible-hardware-with-windows-server-virtualization-based-protection-of-code-integrity"></a>コードの整合性の Windows Server 仮想化ベースの保護との互換性のあるハードウェア
+# <a name="compatible-hardware-with-windows-server-virtualization-based-protection-of-code-integrity"></a>互換性のあるハードウェアと Windows Server Virtualization によるコードの整合性保護
 
 >適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
-Windows Server 2016 には、システム コードを変更する攻撃から物理的に保護するために新しい仮想化ベースのコード保護と仮想マシンが導入されました。 Microsoft は、この高度な保護レベルを実現するために、システムの実行のコードに相手先ブランド供給 (Oem) 悪意のある書き込みを防ぐためには、コンピューター ハードウェアの製造元と連携して動作します。 この保護は、任意のシステムに適用されることができ、シールドされた仮想マシン (Vm) の HYPER-V ホストの正常性を実装するため、構成要素の 1 つとして使用します。 
+Windows Server 2016 では、システムコードを変更する攻撃から物理マシンと仮想マシンを保護するために、新しい仮想化ベースのコード保護が導入されました。 この高い保護レベルを実現するために、Microsoft はコンピューターのハードウェアメーカー (相手先ブランド供給メーカー、または Oem) と連携して、システム実行コードへの悪意のある書き込みを防止します。 この保護は任意のシステムに適用でき、シールドされた仮想マシン (Vm) の Hyper-v ホストの正常性を実装するための構成要素の1つとして使用されます。 
 
-任意のハードウェア ベースの保護と一部のシステムできない可能性がありますメモリ ページの実行可能ファイルとして、または実際にデータの損失、青いなど予期しないエラーが発生する場合があります、実行時にコードを変更しようとしての不正なマークなどの問題が原因で準拠しています。画面のエラー (stop エラーとも呼ばれます)。 
+ハードウェアベースの保護と同様に、一部のシステムは、実行可能ファイルとしてのメモリページの不適切なマーキング、実行時にコードを変更しようとするなどの問題が原因で準拠していない可能性があります。これにより、データの損失やブルーなどの予期しないエラーが発生する可能性があります。画面エラー (停止エラーとも呼ばれます)。 
 
-互換性を新しいセキュリティ機能を完全にサポートは、Oem は UEFI 2.6 では、2016 の 1 月に公開されたで定義されているメモリ アドレス テーブルを実装する必要があります。 標準の新しい UEFI の導入の時間します。その一方で、問題が発生する顧客を防ぐためには、するシステムと構成設定でこの機能をテストしましたが、およびそのシステムに互換性がないことがわかっているに関する情報を提供します。 
+新しいセキュリティ機能を完全にサポートするには、Oem は、2.6 2016 年1月に公開された UEFI で定義されているメモリアドレステーブルを実装する必要があります。 新しい UEFI 標準の導入には時間がかかります。その一方で、お客様が問題を発生させないようにするために、この機能セットをテストしたシステムと構成、および互換性のないことがわかっているシステムに関する情報を提供したいと考えています。 
 
 ## <a name="non-compatible-systems"></a>互換性のないシステム
 
-次の構成は互換性のないとわかっているの仮想化ベースの保護とコードの整合性とシールドされた Vm のホストとして使用できません。
+次の構成は、仮想化ベースのコードの整合性保護との互換性がないことがわかっているため、シールドされた Vm のホストとして使用することはできません。
 
-- 詳細については、PERC H330 RAID コント ローラーを実行している Dell PowerEdge サーバー Dell サポートから、次の記事を参照してください[H330 – 有効化「Host Guardian HYPER-V サポート」または"Device Guard"Win 2016 OS で OS 起動エラーの原因](http://www.dell.com/Support/Article/us/en/19/QNA44045)します。  
+- PERC H330 RAID コントローラーを実行する dell PowerEdge サーバー詳細については、「Dell サポート H330」の次の記事を参照してください。 [Win 2016 os で "Host Guardian Hyper-v Support" または "Device Guard" を有効にすると os のブートエラー](http://www.dell.com/Support/Article/us/en/19/QNA44045)が発生します。  
 
 
 ## <a name="compatible-systems"></a>互換性のあるシステム
 
-これらは、および当社のパートナーをこの環境でテストされていますが、システムです。 システムが環境内で期待どおりに動作を確認することを確認してください。 
+これらのシステムは、当社とパートナーの環境でテストされています。 システムが環境内で期待どおりに動作することを確認してください。 
 
-- Virtual Machines-Windows Server 2016 以降で HYPER-V ホスト上で実行する仮想マシンでのコードの整合性の仮想化ベースの保護を有効にできます。
+- Virtual Machines – Windows Server 2016 以降の Hyper-v ホスト上で実行される仮想マシンで、仮想化ベースのコードの整合性保護を有効にすることができます。
 
 
 

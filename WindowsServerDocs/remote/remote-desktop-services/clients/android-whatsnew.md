@@ -2,7 +2,7 @@
 title: Android クライアントの新機能
 description: Android のリモート デスクトップ クライアントに対する最近の変更について説明します
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ manager: daveba
 ms.author: helohr
 ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7a2061878cdbc7a5ace923835a334736e976e248
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: e9008515213c69090ac1f85a7c7866398a682349
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987331"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387793"
 ---
 # <a name="whats-new-in-the-android-client"></a>Android クライアントの新機能
 

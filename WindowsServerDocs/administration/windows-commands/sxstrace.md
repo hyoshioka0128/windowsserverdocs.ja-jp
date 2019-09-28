@@ -2,7 +2,7 @@
 title: sxstrace
 description: サイドバイサイドの問題を診断する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dbc8dad642e15dede1ce89105a501fd90224610b
-ms.sourcegitcommit: feec5cbe983c8c5800ccd4fc214914084fcceaba
+ms.openlocfilehash: 66326943bf1b056951ae5824df5a4f60892492cb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70975307"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370712"
 ---
 # <a name="sxstrace"></a>sxstrace
 
@@ -42,7 +42,7 @@ sxstrace [{[trace -logfile:<FileName> [-nostop]|[parse -logfile:<FileName> -outf
 |-出力|出力ファイル名を指定します。|  
 |\<ParsedFile >|解析されたファイルのファイル名を指定します。|  
 |-フィルター|フィルター選択される出力を使用します。|  
-|\<AppName >|アプリケーション名を示します。|  
+|\<AppName >|アプリケーションの名前を指定します。|  
 |stoptrace|前に停止していない場合は、トレースを停止します。|  
 |-?|コマンド プロンプトにヘルプを表示します。|  
 

@@ -1,8 +1,8 @@
 ---
 title: systeminfo
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3d08d3f86bdbd176aa4de157f58a58c9ea418470
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 32a84a33c5339e9949648a4e40d71daf25c055d8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841503"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370692"
 ---
 # <a name="systeminfo"></a>systeminfo
 
@@ -38,10 +38,10 @@ Systeminfo [/s <Computer> [/u <Domain>\<UserName> [/p <Password>]]] [/fo {TABLE 
 
 |パラメーター|説明|
 |---------|-----------|
-|/s\<コンピューター >|名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定はローカル コンピュータです。|
-|/u\<ドメイン >\<ユーザー名 >|指定したユーザー アカウントのアカウント権限でコマンドを実行します。 場合 **/u** が指定されていない、このコマンドは、現在のコマンドを発行しているコンピューターにログオンしたユーザーのアクセス許可を使用します。|
-|/p\<パスワード >|指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。|
-|/fo\<形式 >|次の値のいずれかで出力形式を指定します。</br>テーブル:出力テーブルを表示します。</br>一覧:出力一覧を表示します。</br>CSV:コンマ区切り値形式で出力を表示します。|
+|/s \<Computer >|名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定はローカル コンピュータです。|
+|/u \<Domain > \< Username >|指定したユーザー アカウントのアカウント権限でコマンドを実行します。 場合 **/u** が指定されていない、このコマンドは、現在のコマンドを発行しているコンピューターにログオンしたユーザーのアクセス許可を使用します。|
+|/p \<パスワード >|指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。|
+|/fo \<Format >|次の値のいずれかで出力形式を指定します。</br>一覧テーブルに出力を表示します。</br>表出力を一覧に表示します。</br>市区出力をコンマ区切り値形式で表示します。|
 |/nh|出力に列ヘッダーを抑制します。 有効な場合に、 **/fo** パラメーターがテーブルまたは CSV に設定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
@@ -51,14 +51,14 @@ Srvmain という名前のコンピューターの構成情報を表示するに
 
 **systeminfo/s srvmain**
 
-Maindom ドメインにある Srvmain2 という名前のコンピューターの構成情報をリモートで表示するには、次のように入力します。
+Maindom ドメインに配置されている Srvmain2 という名前のコンピューターの構成情報をリモートで表示するには、次のように入力します。
 
-**systeminfo /s srvmain2 /u maindom\hiropln**
+**systeminfo/s srvmain2/u maindom\hiropln**
 
-Maindom ドメインにある Srvmain2 という名前のコンピューターの (一覧形式) で構成情報をリモートで表示するには、次のように入力します。
+Maindom ドメインに配置されている Srvmain2 という名前のコンピューターの構成情報を (一覧形式で) リモートで表示するには、次のように入力します。
 
-**systeminfo /s srvmain2 /u maindom\hiropln /p p@ssW23 /fo list**
+**systeminfo/s srvmain2/u maindom\hiropln/p p@ssW23/fo list**
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

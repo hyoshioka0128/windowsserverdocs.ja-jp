@@ -7,22 +7,22 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f8ccaaa8e256e5801e9e638f55a5d6cf20463e03
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b42b1bafdf1d579c916d001becf69591368a0f91
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885293"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71368922"
 ---
 # <a name="ad-ds-operations"></a>AD DS の運用
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-このセクションでリンクを提供する方法の関数に関連する日常的な管理、管理と自動化タスクの Active Directory Domain Services.
+このセクションでは、Active Directory Domain Services の日常の管理、管理、および自動化のタスクに関連するおよびの機能へのリンクを示します。
   
-* [Active Directory をセキュリティで保護するためのベスト プラクティス](../../../ad-ds/plan/security-best-practices/Best-Practices-for-Securing-Active-Directory.md)  
-* [Active Directory レプリケーションおよびトポロジ管理の Windows PowerShell を使用します。](../../../ad-ds/manage/powershell/Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell.md)  
+* [Active Directory のセキュリティ保護に関するベスト プラクティス](../../../ad-ds/plan/security-best-practices/Best-Practices-for-Securing-Active-Directory.md)  
+* [Windows PowerShell を使用したレプリケーションとトポロジ管理の Active Directory](../../../ad-ds/manage/powershell/Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell.md)  
 * [RID 発行の管理](../../../ad-ds/manage/Managing-RID-Issuance.md)  
-* [Active Directory Domain Services コンポーネントの更新](../../../ad-ds/manage/component-updates/Active-Directory-Domain-Services-Component-Updates.md)
+* [コンポーネントの更新の Active Directory Domain Services](../../../ad-ds/manage/component-updates/Active-Directory-Domain-Services-Component-Updates.md)

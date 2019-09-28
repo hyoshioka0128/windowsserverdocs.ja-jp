@@ -1,19 +1,19 @@
 ---
 title: Windows Server の管理
 description: Windows Server の管理に関するツール、推奨事項、ガイダンスについて説明します
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: manage
 ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.date: 03/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ae87b12997aa3cb3ae3fe290c9243995b30d6b0
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: 880f8da5bfb872fba6fe4886198d932c91f4bf86
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452820"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370468"
 ---
 # <a name="manage-windows-server"></a>Windows Server の管理
 
@@ -66,7 +66,7 @@ Windows Server インスタンスの管理に使用するツールは、展開�
 >Windows Admin Center は、旧称 "Project Honolulu" の正式名です。
 
 ### <a name="manage-on-premises-systems-with-server-manager"></a>サーバー マネージャーを使用したオンプレミス システムの管理
-[サーバー マネージャー](server-manager/server-manager.md)は、Windows Server のフル インストールに含まれる管理コンソールです (インストール UI がないのはご利用いただけません - Server Core には、サーバー マネージャーは含まれません)。インストールおよびサーバーの役割を削除するサーバー マネージャーを使用して追加し、リモート サーバー、開始とサービスを停止、およびお客様の環境について収集されるデータの表示を削除します。
+[サーバー マネージャー](server-manager/server-manager.md)は、Windows Server のフル インストールに含まれる管理コンソールです (UI を持たないインストールでは使用できません。Server Core には、サーバー マネージャーが含まれていません)。サーバー マネージャーを使用して、サーバー ロールのインストールと削除、リモート サーバーの追加と削除、サービスの開始と停止、環境に関して収集したデータの表示を行うことができます。
 
 ### <a name="manage-remote-systems-and-systems-without-ui-with-remote-server-administration-tools-rsat"></a>リモート システムと UI のないシステムの管理には、リモート サーバー管理ツール (RSAT) を使用します。
 環境に Server Core または リモート サーバー (オンプレミスまたは仮想マシン) のインストールが含まれている場合は、[リモート サーバー管理ツール (RSAT)](../remote/remote-server-administration-tools.md) を使用して、それらのシステムを管理することができます。 RSAT にはサーバー マネージャーが含まれているため、すべてのサーバーの管理に使用できます。
@@ -84,7 +84,7 @@ Windows Server 環境内のシステムへの更新プログラムの管理お�
 
 まず、Windows 10 や Windows Server から収集できる診断データの情報について、[組織内の Windows 診断データを構成](/windows/configuration/configure-windows-diagnostic-data-in-your-organization)します。
 
-### <a name="setup-and-boot-event-collectionget-started-with-setup-and-boot-event-collectionmd"></a>[セットアップおよび起動イベント コレクション](get-started-with-setup-and-boot-event-collection.md)
+### <a name="setup-and-boot-event-collectionget-started-with-setup-and-boot-event-collectionmd"></a>[セットアップおよびブート イベント収集](get-started-with-setup-and-boot-event-collection.md)
 セットアップおよびブート イベント収集では、"コレクター" コンピューターを指定して、起動時またはセットアップ プロセスの実行時に、他のコンピューターで発生するさまざまな重要イベントを収集できます。 その後、収集されたイベントは、イベント ビューアー、メッセージ アナライザー、Wevtutil、または Windows PowerShell コマンドレットを使用して分析できます。 
 
 ### <a name="software-inventory-logging-silsoftware-inventory-loggingget-started-with-software-inventory-loggingmd"></a>[ソフトウェア インベントリ ログ (SIL)](software-inventory-logging/get-started-with-software-inventory-logging.md)
@@ -98,7 +98,7 @@ Windows Server のソフトウェア インベントリ ログは、サーバー
 ## <a name="tune-your-windows-server-environment-for-performance"></a>Windows Server 環境のパフォーマンスの調整
 以下では、環境のパフォーマンスの調整に役立つ情報を示します。
 
-### <a name="performance-tuning-guidelinesperformance-tuningindexmd"></a>[パフォーマンス チューニング ガイドライン](performance-tuning/index.md)
+### <a name="performance-tuning-guidelinesperformance-tuningindexmd"></a>[パフォーマンスの調整ガイドライン](performance-tuning/index.md)
 Windows Server 2016 のサーバ設定を調整し、特に、時間が経過してもワークロードの性質がほとんど変化しない場合に、パフォーマンスを改善して、エネルギー効率を向上させるためのガイドラインを参照してください。
 
 ### <a name="microsoft-server-performance-advisorserver-performance-advisormicrosoft-server-performance-advisormd"></a>[Microsoft Server Performance Advisor](server-performance-advisor/microsoft-server-performance-advisor.md)

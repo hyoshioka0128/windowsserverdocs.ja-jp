@@ -1,7 +1,7 @@
 ---
 title: Windows Server 2019 のインストール、アップグレード、または移行
 description: Windows Server のクリーン インストール、インプレース アップグレード、または移行を行う方法
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 ms.assetid: 99f7daa4-30ce-4d13-be65-0a4e99cca754
@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 1c0c6ca10e7ebac16d81fe1393e471a7878fd0ca
-ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
+ms.openlocfilehash: e10d4cff4b45d1c0d3b447c63104b97ded1cd0d5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71143757"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360859"
 ---
 # <a name="install-upgrade-or-migrate-to-windows-server"></a>Windows Server のインストール、アップグレード、または移行
 

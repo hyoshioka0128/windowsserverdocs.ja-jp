@@ -1,7 +1,7 @@
 ---
 ms.assetid: c91c7196-ee0d-4856-8cfb-4c38494ccf1f
 title: ワーク フォルダーの概要
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-work-folders
 ms.topic: article
 author: JasonGerend
@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 06/07/2019
 description: ワーク フォルダーの概要 - PC やデバイスから作業ファイルにアクセスするための一貫した方法をユーザーに提供する、Windows Server のサーバーの役割です。
-ms.openlocfilehash: 1313c49982cb85b5cce1e9a442ff0c622c6be272
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 69c7319bf1bf777c2a06d4c3a0025220aa4b819d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812564"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365680"
 ---
 # <a name="work-folders-overview"></a>ワーク フォルダーの概要
 
@@ -22,13 +22,13 @@ ms.locfileid: "66812564"
 
 このトピックでは、Windows Server を実行しているファイル サーバーの役割サービスであるワーク フォルダーについて説明します。ワーク フォルダーは、ユーザーが PC やデバイスから作業ファイルにアクセスするための一貫した方法を提供します。  
   
-Windows 10、Windows 7、または Android または iOS デバイスでワーク フォルダーを使用して、ダウンロードしたり探しの場合は、次を参照してください。
+Windows 10、Windows 7、または Android または iOS デバイスでワークフォルダーをダウンロードまたは使用する場合は、次を参照してください。
 
-- [Windows 10 用のワーク フォルダー](https://support.microsoft.com/help/12370/windows-10-work-folders)
-- [Windows 7 用のワーク フォルダー (64 ビット ダウンロード)](https://www.microsoft.com/download/details.aspx?id=42558)
-- [Windows 7 用のワーク フォルダー (32 ビット ダウンロード)](https://www.microsoft.com/download/details.aspx?id=42559)
-- [IOS 用のワーク フォルダー](https://itunes.apple.com/app/work-folders/id950878067)
-- [Android 用のワーク フォルダー](https://play.google.com/store/apps/details?id=com.microsoft.workfolders)
+- [Windows 10 用のワークフォルダー](https://support.microsoft.com/help/12370/windows-10-work-folders)
+- [Windows 7 のワークフォルダー (64 ビットダウンロード)](https://www.microsoft.com/download/details.aspx?id=42558)
+- [Windows 7 のワークフォルダー (32 ビットダウンロード)](https://www.microsoft.com/download/details.aspx?id=42559)
+- [IOS 用のワークフォルダー](https://itunes.apple.com/app/work-folders/id950878067)
+- [Android 用ワークフォルダー](https://play.google.com/store/apps/details?id=com.microsoft.workfolders)
 
 ## <a name="role-description"></a>役割の説明
 
@@ -56,7 +56,7 @@ Windows 10、Windows 7、または Android または iOS デバイスでワー�
 
  ワーク フォルダーには、次の機能が含まれています。  
   
-| 機能 | 対象 | 説明 |  
+| 機能 | 可用性 | 説明 |  
 | ------------------- | ------------------ | ----------------- |  
 | サーバー マネージャーでワーク フォルダーの役割サービスを使用 | Windows Server 2019、Windows Server 2016、または Windows Server 2012 R2 | ファイル サービスと記憶域サービスは、同期共有 (ユーザーの作業ファイルを格納するフォルダー) の設定、ワーク フォルダーの監視、同期共有とユーザー アクセスの管理などを行う方法を提供 |
 | ワーク フォルダーのコマンドレット | Windows Server 2019、Windows Server 2016、または Windows Server 2012 R2 | ワーク フォルダー サーバーを管理するための包括的なコマンドレットを含む、Windows PowerShell モジュール |  
@@ -70,7 +70,7 @@ Windows 10、Windows 7、または Android または iOS デバイスでワー�
 | 機能 | 新規/更新 | 説明 |
 | ---------------------------- | --------------------- | ----------------- |
 | Azure AD アプリケーション プロキシのサポート | Windows 10 バージョン 1703、Android、iOS に追加 | リモート ユーザーは、Azure AD アプリケーション プロキシを使用して、ワーク フォルダー サーバー上のファイルに安全にアクセスできます。 |
-| 変更の高速なレプリケーション | Windows 10 および Windows Server 2016 で更新 | Windows Server 2012 R2 では、ワーク フォルダー サーバーにファイルの変更が同期されるときに、クライアントには変更についての通知が送られず、変更内容が反映されるまでに最大で 10 分かかっていました。 ワーク フォルダー サーバーが、Windows 10 クライアントの通知をすぐに Windows Server 2016 を使用する場合と、ファイルの変更がすぐに同期されます。 この機能は Windows Server 2016 の新機能であり、Windows 10 クライアントが必要です。 古いクライアントを使用しているか、ワーク フォルダー サーバーが Windows Server 2012 R2 である場合、クライアントでは引き続き 10 分ごとに変更を取得します。 |  
+| 変更の高速なレプリケーション | Windows 10 および Windows Server 2016 で更新 | Windows Server 2012 R2 では、ワーク フォルダー サーバーにファイルの変更が同期されるときに、クライアントには変更についての通知が送られず、変更内容が反映されるまでに最大で 10 分かかっていました。 Windows Server 2016 を使用している場合、ワークフォルダーサーバーは直ちに Windows 10 クライアントに通知し、ファイルの変更は直ちに同期されます。 この機能は Windows Server 2016 の新機能であり、Windows 10 クライアントが必要です。 古いクライアントを使用しているか、ワーク フォルダー サーバーが Windows Server 2012 R2 である場合、クライアントでは引き続き 10 分ごとに変更を取得します。 |  
 | Windows 情報保護 (WIP) との統合 | Windows 10 バージョン 1607 に追加 | 管理者が WIP を展開すると、ワーク フォルダーは PC 上のデータを暗号化してデータ保護を適用できます。 暗号化には、エンタープライズ ID に関連付けられているキーが使用されます。これは Microsoft Intuneなど、サポート対象のモバイル デバイス管理パッケージを使用して、リモート消去することができます。 |  
 | Microsoft Office との統合 | Windows 10 バージョン 1511 に追加 | Windows 8.1 では、Office アプリ内から [PC] をクリックまたはタップして、PC 上のワーク フォルダーの場所に移動して、ワーク フォルダーを使用できます。 Windows 10 では、Office がファイルを保存したり開いたりする場所のリストにワークフォルダーを追加して、より容易にワーク フォルダーを使えるようにできます。 詳しくは、「[Windows 10 のワーク フォルダー](https://windows.microsoft.com/windows-10/work-folders-in-windows-10)」および「[Microsoft Office でワークフォルダーを場所として使用する場合のトラブルシューティング](https://social.technet.microsoft.com/wiki/contents/articles/32881.troubleshooting-using-work-folders-as-a-place-in-microsoft-office.aspx)」をご覧ください。 |  
   
@@ -78,7 +78,7 @@ Windows 10、Windows 7、または Android または iOS デバイスでワー�
 
 ワーク フォルダーには、ファイル サーバーとネットワーク インフラストラクチャについて、次のソフトウェア要件があります。  
   
--   Windows Server 2019 を実行しているサーバー、Windows Server 2016、または同期をホストするための Windows Server 2012 R2 と共有ユーザー ファイル  
+-   ユーザーファイルとの同期共有をホストするために Windows Server 2019、Windows Server 2016、または Windows Server 2012 R2 を実行しているサーバー  
   
 -   ユーザー ファイルを格納するための NTFS ファイル システムでフォーマットされたボリューム  
   
@@ -86,7 +86,7 @@ Windows 10、Windows 7、または Android または iOS デバイスでワー�
 
 -   ワーク フォルダーをホストする各ファイル サーバーのサーバー証明書。 これらの証明書には、ユーザーによって信頼されている証明機関 (CA)、できればパブリック CA から発行された証明書を使用してください。
 
--   (省略可能)複数のファイル サーバーを使用する場合は、Pc やデバイスで適切なファイル サーバーを自動的に参照をサポートするために Windows Server 2012 r2 スキーマ拡張機能の Active Directory Domain Services フォレスト。  
+-   Optional複数のファイルサーバーを使用する場合に、Pc とデバイスを適切なファイルサーバーに自動的に参照できるようにする、Windows Server 2012 R2 のスキーマ拡張を使用した Active Directory Domain Services フォレスト。  
   
 ユーザーがインターネット経由で同期できるようにするには、追加の要件があります。  
   
@@ -137,9 +137,9 @@ Windows 10、Windows 7、または Android または iOS デバイスでワー�
 | | ワーク フォルダー | オフライン ファイル | OneDrive for Business | OneDrive |
 | - | ------------------ | ------------------- | -------------------------- | -------------- |
 | **テクノロジの概要** | ファイル サーバーに保存されているファイルを PC やデバイスと同期する | ファイル サーバーに保存されているファイルを、企業ネットワークにアクセスできる PC と同期する (ワーク フォルダーで置き換え可能) | Office 365 または SharePoint に保存されているファイルを、企業ネットワークの内部または外部にある PC およびデバイスと同期したり、またドキュメント コラボレーション機能を提供する | OneDrive に保存されている個人用ファイルを PC、Mac コンピューター、デバイスと同期する |
-| **作業ファイルへのユーザー アクセスを提供するためのもの** | 〇 | 〇 | 〇 | X |
-| **クラウド サービス** | なし | なし | Office 365 | Microsoft OneDrive |
-| **内部ネットワーク サーバー** | Windows Server 2012 R2 または Windows Server 2016 を実行しているファイル サーバー | ファイル サーバー | SharePoint サーバー (オプション) | なし |
+| **作業ファイルへのユーザーアクセスを提供することを目的としています。** | はい | [はい] | [はい] | いいえ |
+| **クラウドサービス** | なし | なし | Office 365 | Microsoft OneDrive |
+| **内部ネットワークサーバー** | Windows Server 2012 R2 または Windows Server 2016 を実行しているファイル サーバー | ファイル サーバー | SharePoint サーバー (オプション) | なし |
 | **サポートされているクライアント** | PC、iOS、Android | 企業ネットワーク内の PC、または DirectAccess、VPN、またはその他のリモート アクセス テクノロジを介して接続されている PC | Pc、iOS、Android、Windows Phone | Pc、Mac コンピューター、Windows Phone、iOS、Android |
   
 > [!NOTE]
@@ -167,9 +167,9 @@ Windows Azure 仮想マシンを使い始める方法については、[Windows 
   
 | コンテンツの種類 | 参考資料 |
 | ------------------ | ---------------- |
-| **製品評価** | -   [-Android for work Folders リリース](https://blogs.technet.microsoft.com/filecab/2016/03/16/work-folders-for-android-released)(ブログの投稿)<br />-   [IOS: iPad アプリのリリースの work Folders](https://blogs.technet.com/b/filecab/archive/2015/01/16/work-folders-for-ios-ipad-app-release.aspx) (ブログの投稿)<br />-   [Windows Server 2012 R2 のワーク フォルダーの紹介](http://blogs.technet.com/b/filecab/archive/2013/07/09/introducing-work-folders-on-windows-server-2012-r2.aspx)(ブログの投稿)<br />-   [ワーク フォルダーの概要](http://channel9.msdn.com/posts/Introduction-to-Work-Folders)(Channel 9 ビデオ)<br />-   [ワーク フォルダーのテスト ラボの展開](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx)(ブログの投稿)<br />-   [Windows 7 のフォルダーのワーク](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx)(ブログの投稿) |
-| **展開** | -   [ワーク フォルダーの実装の設計](plan-work-folders.md)<br />-   [ワーク フォルダーの展開](deploy-work-folders.md)<br />-   [AD FS と Web アプリケーション プロキシ (WAP) を使ったワーク フォルダーを展開します。](deploy-work-folders-adfs-overview.md)<br />-   [Azure AD アプリケーション プロキシを使ったワーク フォルダーを展開します。](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)<br />- [オフライン ファイル フォルダーへの移行ガイドを操作するには、(CSC)](https://blogs.technet.microsoft.com/filecab/2016/08/12/offline-files-csc-to-work-folders-migration-guide/)<br />-   [ワーク フォルダーの展開のパフォーマンスに関する考慮事項](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   [Windows 7 用のワーク フォルダー (64 ビット ダウンロード)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Windows 7 用のワーク フォルダー (32 ビット ダウンロード)](https://www.microsoft.com/download/details.aspx?id=42559) |
-| **運用** | -   [作業フォルダーの iPad アプリ:よく寄せられる質問](https://windows.microsoft.com/windows/work-folders-ipad-faq)(ユーザー向け)<br />-   [ワーク フォルダーの証明書管理](https://blogs.technet.com/b/filecab/archive/2013/08/09/work-folders-certificate-management.aspx)(ブログの投稿)<br />-   [Windows Server 2012 R2 のワーク フォルダーの展開を監視](https://blogs.technet.com/b/filecab/archive/2013/10/15/monitoring-windows-server-2012-r2-work-folders-deployments.aspx)(ブログの投稿)<br />-   [Windows PowerShell のコマンドレットは SyncShare (作業フォルダー)](https://docs.microsoft.com/powershell/module/syncshare/?view=win10-ps)<br />-   [Windows Server 2012 R2 プレビュー版のストレージとファイル サービス PowerShell コマンドレットのクイック リファレンス カード](http://blogs.technet.com/b/filecab/archive/2013/07/30/storage-and-file-services-powershell-cmdlets-quick-reference-card-for-windows-server-2012-r2-preview-edition.aspx) |
-| **トラブルシューティング** | -   [Windows Server 2012 R2 – Resolving ポートが競合と IIS の web サイトおよびワーク フォルダー](https://blogs.technet.com/b/filecab/archive/2013/10/15/windows-server-2012-r2-resolving-port-conflict-with-iis-websites-and-work-folders.aspx) (ブログの投稿)<br />-   [ワーク フォルダー内の一般的なエラー](https://social.technet.microsoft.com/wiki/contents/articles/30578.common-errors-in-work-folders.aspx) |
-| **コミュニティ リソース** | -   [ファイル サービスおよびストレージ フォーラム](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserverfiles)<br />-   [マイクロソフト - File Cabinet ブログのストレージ チーム](http://blogs.technet.com/b/filecab/)<br />-   [ディレクトリ サービス チームのブログを確認します。](http://blogs.technet.com/b/askds/) |  
-| **関連テクノロジ** | -   [Windows Server 2016 でのストレージ](../storage.md)<br>-   [ファイル サービスおよび記憶域サービス](https://technet.microsoft.com/library/hh831487(v=ws.11).aspx)<br />-   [ファイル サーバー リソース マネージャー](https://technet.microsoft.com/library/hh831701(v=ws.11).aspx)<br />-   [フォルダー リダイレクト、オフライン ファイル、および移動ユーザー プロファイル](https://technet.microsoft.com/library/hh848267(v=ws.11).aspx)<br />-   [BranchCache](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)<br />-   [DFS 名前空間と DFS レプリケーション](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) |
+| **製品評価** | -   [の Android 用ワークフォルダー–リリース](https://blogs.technet.microsoft.com/filecab/2016/03/16/work-folders-for-android-released)(ブログの投稿)<br />-   [の iOS 用ワークフォルダー– IPad アプリのリリース](https://blogs.technet.com/b/filecab/archive/2015/01/16/work-folders-for-ios-ipad-app-release.aspx)(ブログの投稿)<br />-   [Windows Server 2012 R2 でのワークフォルダーの導入](http://blogs.technet.com/b/filecab/archive/2013/07/09/introducing-work-folders-on-windows-server-2012-r2.aspx)(ブログの投稿)<br />-   [ワークフォルダーの概要](http://channel9.msdn.com/posts/Introduction-to-Work-Folders)(Channel 9 ビデオ)<br />-   [ワークフォルダーのテストラボの展開](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx)(ブログの投稿)<br />-   [の Windows 7 のワークフォルダー](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) (ブログの投稿) |
+| **展開** | -   [ワークフォルダーの実装の設計](plan-work-folders.md)<br />-   [ワークフォルダーの展開](deploy-work-folders.md)<br />-   [AD FS と Web アプリケーションプロキシ (WAP) を使用したワークフォルダーの展開](deploy-work-folders-adfs-overview.md)<br />-   [Azure AD アプリケーションプロキシを使用してワークフォルダーを展開](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/)する<br />- [オフラインファイル (CSC) からワークフォルダーへの移行ガイド](https://blogs.technet.microsoft.com/filecab/2016/08/12/offline-files-csc-to-work-folders-migration-guide/)<br />-   [ワークフォルダーの展開のパフォーマンスに関する考慮事項](https://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx)<br />-   [Windows 7 のワークフォルダー (64 ビットダウンロード)](https://www.microsoft.com/download/details.aspx?id=42558)<br />-   [Windows 7 のワークフォルダー (32 ビットダウンロード)](https://www.microsoft.com/download/details.aspx?id=42559) |
+| **運用** | -    @ no__t-1Work Folders iPad アプリ:FAQ @ no__t (ユーザー用)<br />-   [ワークフォルダーの証明書の管理](https://blogs.technet.com/b/filecab/archive/2013/08/09/work-folders-certificate-management.aspx)(ブログの投稿)<br />-   [Windows Server 2012 R2 ワークフォルダーの展開の監視](https://blogs.technet.com/b/filecab/archive/2013/10/15/monitoring-windows-server-2012-r2-work-folders-deployments.aspx)(ブログの投稿)<br />[Windows PowerShell の -    Syncshare (ワークフォルダー) コマンドレット](https://docs.microsoft.com/powershell/module/syncshare/?view=win10-ps)<br />-   [ストレージおよびファイルサービス PowerShell コマンドレット Windows Server 2012 R2 Preview Edition のクイックリファレンスカード](http://blogs.technet.com/b/filecab/archive/2013/07/30/storage-and-file-services-powershell-cmdlets-quick-reference-card-for-windows-server-2012-r2-preview-edition.aspx) |
+| **トラブルシューティング** | -   [Windows Server 2012 R2 – IIS Web サイトおよびワークフォルダーとのポートの競合を解決](https://blogs.technet.com/b/filecab/archive/2013/10/15/windows-server-2012-r2-resolving-port-conflict-with-iis-websites-and-work-folders.aspx)する (ブログの投稿)<br />-   [ワークフォルダーでの一般的なエラー](https://social.technet.microsoft.com/wiki/contents/articles/30578.common-errors-in-work-folders.aspx) |
+| **コミュニティ リソース** | -   [ファイルサービスとストレージフォーラム](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserverfiles)<br />-   [ストレージチームの Microsoft-ファイルキャビネットのブログ](http://blogs.technet.com/b/filecab/)<br />-   [ディレクトリサービスチームのブログ](http://blogs.technet.com/b/askds/) |  
+| **関連テクノロジ** | [Windows Server 2016 の](../storage.md)-    ストレージ<br>-   [ファイルサービスと記憶域サービス](https://technet.microsoft.com/library/hh831487(v=ws.11).aspx)<br />-   [ファイルサーバーリソースマネージャー](https://technet.microsoft.com/library/hh831701(v=ws.11).aspx)<br />-   [フォルダーリダイレクト、オフラインファイル、移動ユーザープロファイル](https://technet.microsoft.com/library/hh848267(v=ws.11).aspx)<br />-   [BranchCache](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)<br />-   [DFS 名前空間と DFS レプリケーション](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) |

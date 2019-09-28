@@ -2,18 +2,18 @@
 title: ディスクの管理のトラブルシューティング
 description: この記事では、ディスクの管理の問題のトラブルシューティングを行う方法について説明します。
 ms.date: 06/07/2019
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 4d9448cc642ef522fa129dcfe97e2286f16bad1b
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: d801b051918c090257a466ab58c200943487b2e8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66812534"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402165"
 ---
 # <a name="troubleshooting-disk-management"></a>ディスクの管理のトラブルシューティング
 

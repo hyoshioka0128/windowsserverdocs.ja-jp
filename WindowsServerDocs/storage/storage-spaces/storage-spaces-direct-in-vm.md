@@ -1,84 +1,84 @@
 ---
-title: 仮想マシンでの記憶域スペース ダイレクトの使用
-ms.prod: windows-server-threshold
+title: 仮想マシンでの記憶域スペースダイレクトの使用
+ms.prod: windows-server
 ms.author: eldenc
 ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
 ms.date: 10/25/2017
-description: 仮想マシンのゲスト クラスターで - たとえば、Microsoft Azure で記憶域スペース ダイレクトをデプロイする方法。
+description: Microsoft Azure など、仮想マシンのゲストクラスターに記憶域スペースダイレクトを展開する方法。
 ms.localizationpriority: medium
-ms.openlocfilehash: d05afb5ee564b866dcd15ec6aa473cee608dbd8f
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: ab0ce792c5a948e763a48493a78ccdac7a6fe74c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284404"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366046"
 ---
-# <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>仮想マシンのゲスト クラスターでの記憶域スペース ダイレクトの使用
+# <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>ゲスト仮想マシンクラスターでの記憶域スペースダイレクトの使用
 
 > 適用対象:Windows Server 2019、Windows Server 2016
 
-物理サーバーのクラスターまたはこのトピックで説明したように、仮想マシン ゲスト クラスターに記憶域スペース ダイレクトを展開できます。 この種類の展開は、アプリケーションの高可用性ソリューションは、アプリケーションの可用性を高めるために使用できるように、プライベートまたはパブリック クラウド上に Vm のセット間で仮想共有記憶域を提供します。
+記憶域スペースダイレクトは、このトピックで説明するように、物理サーバーのクラスターまたは仮想マシンのゲストクラスターに展開できます。 この種類のデプロイは、プライベートクラウドまたはパブリッククラウド上の一連の Vm で仮想共有記憶域を提供し、アプリケーションの高可用性ソリューションを使用してアプリケーションの可用性を高めることができます。
 
 ![](media/storage-spaces-direct-in-vm/storage-spaces-direct-in-vm.png)
 
-## <a name="deploying-in-azure-iaas-vm-guest-clusters"></a>Azure Iaas VM ゲスト クラスターに展開します。
+## <a name="deploying-in-azure-iaas-vm-guest-clusters"></a>Azure Iaas VM ゲストクラスターでのデプロイ
 
-[Azure テンプレート](https://github.com/robotechredmond/301-storage-spaces-direct-md)パブリッシュの短縮に複雑さをされている、最適な構成プラクティス、および Azure Iaas VM で、記憶域スペース ダイレクトの展開の速度。 これは、Azure に配置するための推奨されるソリューションです。
+Azure[テンプレート](https://github.com/robotechredmond/301-storage-spaces-direct-md)が発行されているため、AZURE Iaas VM での記憶域スペースダイレクトデプロイの複雑さが軽減され、ベストプラクティスと速度が構成されます。 これは、Azure にデプロイする場合に推奨されるソリューションです。
 
 <iframe src="https://channel9.msdn.com/Series/Microsoft-Hybrid-Cloud-Best-Practices-for-IT-Pros/Step-by-Step-Deploy-Windows-Server-2016-Storage-Spaces-Direct-S2D-Cluster-in-Microsoft-Azure/player" width="960" height="540" allowfullscreen></iframe>
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
-仮想化環境で記憶域スペース ダイレクトを展開するときに、次の考慮事項が適用されます。
+仮想化環境に記憶域スペースダイレクトを展開する場合は、次の考慮事項が適用されます。
 
 > [!TIP]
-> Azure テンプレートは自動的に構成されているとは、Azure IaaS Vm でデプロイする場合は、推奨されるソリューションの考慮事項の下。
+> Azure テンプレートでは、以下の考慮事項が自動的に構成されます。 Azure IaaS Vm にデプロイする場合は、推奨されるソリューションです。
 
--   2 つのノードの最小値と最大 3 つのノード
+-   最低2ノードと最大3ノード
 
--   2 つのノードの展開は、ミラーリング監視サーバー (クラウド ミラーリング監視サーバーまたはファイル共有監視) を構成する必要があります。
+-   2-ノードデプロイでミラーリング監視サーバー (クラウド監視またはファイル共有監視) を構成する必要があります。
 
--   3 ノードのデプロイには、1 つのノードがダウンし、別のノードの 1 つ以上のディスクの損失を許容できます。  2 つのノードがシャット ダウンし、仮想ディスク オフラインになるまで、ノードのいずれかを返します。  
+-   3-ノード展開では、1つのノードがダウンし、別のノードで1つ以上のディスクが失われることが許容されます。  2つのノードがシャットダウンされた場合、仮想ディスクはノードのいずれかが返されるまでオフラインになります。  
 
--   障害ドメイン間でデプロイする仮想マシンの構成します。
+-   障害ドメイン間でデプロイされるように仮想マシンを構成する
 
-    -   Azure 可用性セットの構成
+    -   Azure –可用性セットの構成
 
-    -   Hyper-v – ノード間で Vm を分離する Vm で構成 AntiAffinityClassNames
+    -   Hyper-v – Vm で AntiAffinityClassNames を構成して、ノード間で Vm を分離します。
 
-    -   VMware の型の DRS ルールを作成して構成する VM のアンチ アフィニティ ルール ' 別々 の仮想マシン"ESX のホスト間で Vm を分離します。 ディスク記憶域スペース ダイレクトで使用するための表示には、Paravirtual SCSI (PVSCSI) アダプタを使用する必要があります。 Windows Server、PVSCSI サポートを参照して https://kb.vmware.com/s/article/1010398 します。
+    -   VMware – ESX ホスト間で Vm を分離するために、"個別の Virtual Machines" という種類の DRS ルールを作成して、VM と VM の間のアンチアフィニティルールを構成します。 記憶域スペースダイレクトで使用するために提示されたディスクでは、準仮想化 SCSI (PVSCSI) アダプタを使用する必要があります。 Windows Server での PVSCSI のサポートについては、 https://kb.vmware.com/s/article/1010398 を参照してください。
 
--   低待機時間を活用して高パフォーマンス ストレージ - Azure Premium Storage の管理/ディスクが必要です
+-   低待機時間/高パフォーマンスストレージの活用-Azure Premium Storage managed disks が必要です
 
--   構成されているキャッシュ デバイスなしで、フラットなストレージ設計を展開します。
+-   キャッシュデバイスが構成されていないフラットストレージ設計を展開する
 
--   各 VM に表示される 2 つの仮想データ ディスクの最小値 (VHD または VHDX/VMDK)
+-   各 VM に提示される最低2つの仮想データディスク (VHD/VHDX/VMDK)
 
-    この数は、仮想ディスクを物理的な障害を受けやすくはないファイルとして実装できるため、ベア メタルの展開とは異なります。
+    この数は、物理障害の影響を受けやすいファイルとして仮想ディスクを実装できるため、ベアメタル展開とは異なります。
 
--   次の PowerShell コマンドレットを実行して、ヘルス サービスでドライブの自動置換機能を無効にします。
+-   次の PowerShell コマンドレットを実行して、ヘルスサービスのドライブ交換の自動機能を無効にします。
 
     ```powershell
     Get-storagesubsystem clus* | set-storagehealthsetting -name “System.Storage.PhysicalDisk.AutoReplace.Enabled” -value “False”
     ```
 
--   サポートしていないバージョン:ホスト レベルの仮想ディスク スナップショットの復元
+-   サポートしていないバージョン:ホストレベルの仮想ディスクのスナップショット/復元
 
-    代わりに従来のゲスト レベルのバックアップ ソリューションを使用して、バックアップし、記憶域スペース ダイレクトのボリューム上のデータを復元します。
+    代わりに、従来のゲストレベルのバックアップソリューションを使用して、記憶域スペースダイレクトボリューム上のデータをバックアップおよび復元します。
 
--   可能な VHD への回復性が高いを付与する/VHDX ゲスト クラスターで VMDK ストレージの待機時間は、記憶域スペースの I/O のタイムアウト値を大きく/。
+-   ゲストクラスターにおける VHD/VHDX/VMDK ストレージの待機時間の回復性を高めるには、記憶域スペースの i/o タイムアウト値を増やします。
 
     `HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\spaceport\\Parameters\\HwTimeout`
 
     `dword: 00007530`
 
-    7530 の 16 進数の 10 進値は 30000 は 30 秒です。 既定値は 1770 16 進数、または 6000 の 10 進数は 6 秒であることに注意してください。
+    16進数の7530に相当する10進数は、3万です。これは30秒です。 既定値は 1770 16 進数、つまり、6秒の 6000 Decimal であることに注意してください。
 
 ## <a name="see-also"></a>関連項目
 
-[記憶域スペース ダイレクト、ビデオ、およびステップ バイ ステップ ガイドをデプロイするための他の Azure Iaas VM テンプレート](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)します。
+[記憶域スペースダイレクト、ビデオ、ステップバイステップガイドをデプロイするための追加の Azure IAAS VM テンプレート](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)。
 
-[追加の記憶域スペース ダイレクトの概要](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+[その他の記憶域スペースダイレクトの概要](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)

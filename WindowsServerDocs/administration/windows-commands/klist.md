@@ -2,7 +2,7 @@
 title: klist
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a8f574b65ec8c123379e1b02ee1571cc9f21fa1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 4b35069faa835b59f2655262f640ddb18068702f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867057"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375310"
 ---
 # <a name="klist"></a>klist
 
@@ -97,7 +97,7 @@ klist [-lh <LogonId.HighPart>] [-li <LogonId.LowPart>] tickets | tgt | purge | s
 
     Kerberos の制約付き委任キャッシュ情報を表示できます。  
     -   LogonID:指定した場合は、指定された値までにログオンセッションのキャッシュ情報が表示されます。 指定しない場合、現在のユーザーのログオンセッションのキャッシュ情報が表示されます。
--   **get**
+-   **取得**
 
     SPN によって指定されたターゲットにチケットを要求できます。  
     -   LogonID:指定した場合、指定された値でログオンセッションを使用してチケットを要求します。 指定しない場合、現在のユーザーのログオンセッションを使用してチケットを要求します。

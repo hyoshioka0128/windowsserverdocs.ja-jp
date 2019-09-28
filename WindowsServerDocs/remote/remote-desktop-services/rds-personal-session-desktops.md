@@ -2,7 +2,7 @@
 title: リモート デスクトップ サービスで個人用セッション デスクトップを使用する
 description: RDS から、個人用に設定された割り当て済みデスクトップを共有する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -12,12 +12,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/16/2016
 manager: dongill
-ms.openlocfilehash: 723e68bad79e7723aaa0690c312e20ccf47c47b0
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 7429cd9cb87db310a716136c171de47cfe0892f2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743503"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387365"
 ---
 # <a name="use-personal-session-desktops-with-remote-desktop-services"></a>リモート デスクトップ サービスで個人用セッション デスクトップを使用する
 
@@ -31,8 +31,8 @@ ms.locfileid: "63743503"
 
 個人用セッション デスクトップ コレクションを作成するには、New-RDSessionCollection コマンドレットを使用します。 次の 3 つのパラメーターは、個人用セッション デスクトップに必要な構成情報を提供します。
 
-- **-PersonalUnmanaged** - 個人用セッション ホスト サーバーにユーザーを割り当てられようにするセッション コレクションの種類を指定します。 このパラメーターを指定しない場合、コレクションは従来の RD セッション ホスト コレクションとして作成されます。ここではユーザーは、サインインしたときに、次に使用可能なセッション ホストに割り当てられます。
-- **-GrantAdministrativePrivilege** - **-PersonalUnmanaged** を使用する場合、セッション ホストに割り当てられているユーザーに管理者特権を与えられることを指定します。 このパラメーターを使用しない場合、ユーザーは、標準のユーザー特権のみが付与されます。
+- **-PersonalUnmanaged** - 個人用セッション ホスト サーバーにユーザーを割り当てられようにするセッション コレクションの種類を指定します。 このパラメーターを指定しない場合、コレクションは従来の RD セッション ホスト コレクションとして作成されます。ユーザーは、サインインしたときに、次に使用可能なセッション ホストに割り当てられます。
+- **-GrantAdministrativePrivilege** - **-PersonalUnmanaged** を使用する場合、セッション ホストに割り当てられているユーザーに管理者特権を与えられることを指定します。 このパラメーターを使用しない場合、ユーザーには、標準のユーザー特権のみが付与されます。
 - **-AutoAssignUser** - **-PersonalUnmanaged** を使用する場合、RD 接続ブローカーを通じて接続する新しいユーザーが、割り当てられていないセッション ホストに自動的に割り当てられることを指定します。 割り当てられていないセッション ホストがコレクションにない場合は、エラー メッセージが表示されます。 このパラメーターを使用しない場合は、サインインする前に、[ユーザーをセッション ホストに手動で割り当てる](#manually-assign-a-user-to-a-personal-session-host)必要があります。
 
 ## <a name="manually-assign-a-user-to-a-personal-session-host"></a>ユーザーを個人用セッション ホストに手動で割り当てる

@@ -2,7 +2,7 @@
 title: グループの管理されたサービス アカウントの概要
 description: Windows Server のセキュリティ
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-gmsa
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3d07f137aa40b26b4f4fd69c050415b82608ed7e
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 8086ce329c532e07363fd22fe424a9a1dda04250
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546367"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386886"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>グループの管理されたサービス アカウントの概要
 
@@ -153,11 +153,11 @@ GMSA を作成できるのは、フォレストのスキーマが Windows Server
 
 2.  Windows PowerShell のコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します (Active Directory モジュールが自動的にロードされます)。
 
-    **New-adserviceaccount [-Name] <string> -DNSHostName <string> [-KerberosEncryptionType <ADKerberosEncryptionType>] [-managedpasswordintervalindays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < adprincipal []>]-SamAccountName <string> -serviceprincipalnames < string [] >**
+    **New-ADServiceAccount [-Name] <string>-DNSHostName <string> [-KerberosEncryptionType <ADKerberosEncryptionType>] [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]-SamAccountName<string>-ServicePrincipalNames < string [] >**
 
     |パラメーター|String|例|
     |-------|-----|------|
-    |Name|アカウントの名前|ITFarm1|
+    |名前|アカウントの名前|ITFarm1|
     |DNSHostName|サービスの DNS ホスト名|ITFarm1.contoso.com|
     |KerberosEncryptionType|ホスト サーバーによってサポートされる暗号化の種類|RC4、AES128、AES256|
     |ManagedPasswordIntervalInDays|日単位のパスワード変更間隔 (指定がなければ既定では 30 日)|90|
@@ -185,11 +185,11 @@ GMSA を作成できるのは、フォレストのスキーマが Windows Server
 
 2.  Windows PowerShell Active Directory モジュールのコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します。
 
-    **New-adserviceaccount [-Name] <string> -RestrictToOutboundAuthenticationOnly [-managedpasswordintervalindays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < adprincipal [] >]**
+    **New-ADServiceAccount [-Name] <string>-RestrictToOutboundAuthenticationOnly [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]**
 
     |パラメーター|String|例|
     |-------|-----|------|
-    |Name|アカウントの名前|ITFarm1|
+    |名前|アカウントの名前|ITFarm1|
     |ManagedPasswordIntervalInDays|日単位のパスワード変更間隔 (指定がなければ既定では 30 日)|75|
     |PrincipalsAllowedToRetrieveManagedPassword|メンバー ホストのコンピューター アカウントまたはメンバー ホストが属するセキュリティ グループ|ITFarmHosts|
 
@@ -247,15 +247,15 @@ gMSA をサポートするサービスが他に存在する場合があります
 
 2.  Windows PowerShell Active Directory モジュールのコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します。
 
-    **Get-adserviceaccount [-Name] <string> -PrincipalsAllowedToRetrieveManagedPassword**
+    **Get-ADServiceAccount [-Name] <string>-PrincipalsAllowedToRetrieveManagedPassword**
 
 3.  Windows PowerShell Active Directory モジュールのコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します。
 
-    **Set-adserviceaccount [-Name] <string> -PrincipalsAllowedToRetrieveManagedPassword < adprincipal [] >**
+    **Set-ADServiceAccount [-Name] <string>-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
 
 |パラメーター|String|例|
 |-------|-----|------|
-|Name|アカウントの名前|ITFarm1|
+|名前|アカウントの名前|ITFarm1|
 |PrincipalsAllowedToRetrieveManagedPassword|メンバー ホストのコンピューター アカウントまたはメンバー ホストが属するセキュリティ グループ|Host1、Host2、Host3|
 
 **例**
@@ -307,15 +307,15 @@ Windows PowerShell 用の Active Directory モジュールを開き、Set-ADServ
 
 2.  Windows PowerShell Active Directory モジュールのコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します。
 
-    **Get-adserviceaccount [-Name] <string> -PrincipalsAllowedToRetrieveManagedPassword**
+    **Get-ADServiceAccount [-Name] <string>-PrincipalsAllowedToRetrieveManagedPassword**
 
 3.  Windows PowerShell Active Directory モジュールのコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します。
 
-    **Set-adserviceaccount [-Name] <string> -PrincipalsAllowedToRetrieveManagedPassword < adprincipal [] >**
+    **Set-ADServiceAccount [-Name] <string>-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
 
 |パラメーター|String|例|
 |-------|-----|------|
-|Name|アカウントの名前|ITFarm1|
+|名前|アカウントの名前|ITFarm1|
 |PrincipalsAllowedToRetrieveManagedPassword|メンバー ホストのコンピューター アカウントまたはメンバー ホストが属するセキュリティ グループ|Host1、Host3|
 
 **例**

@@ -1,6 +1,6 @@
 ---
-title: ヘルス サービスの動作
-ms.prod: windows-server-threshold
+title: ヘルスサービスアクション
+ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
@@ -8,18 +8,18 @@ ms.topic: article
 ms.assetid: ''
 author: cosmosdarwin
 ms.date: 08/14/2017
-ms.openlocfilehash: efdf8f04e68fcbdc7051e78d6725cb919e740ffa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 519f0321f36fb7afc86962950aeab729d7a38adb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843023"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361100"
 ---
-# <a name="health-service-actions"></a>ヘルス サービスの動作
+# <a name="health-service-actions"></a>ヘルスサービスアクション
 
-> 適用対象: Windows Server 2016
+> 適用対象:Windows Server 2019、Windows Server 2016
 
-ヘルス サービスは、日常的な監視を強化する Windows Server 2016 で記憶域スペース ダイレクトを実行するクラスターの運用エクスペリエンスの新しい機能です。
+ヘルスサービスは、Windows Server 2016 の新機能であり、記憶域スペースダイレクトを実行しているクラスターの日常的な監視と操作エクスペリエンスを向上させます。
 
 ## <a name="actions"></a>Actions  
 
@@ -35,7 +35,7 @@ Get-StorageHealthAction
 
 ### <a name="coverage"></a>対象範囲  
 
-Windows Server 2016 で、 **Get StorageHealthAction**コマンドレットには、次の情報を返すことができます。  
+Windows Server 2016 では、 **StorageHealthAction**コマンドレットは次のいずれかの情報を返すことができます。  
 
 -   障害が発生している、接続が損失している、または応答不能の物理ディスクの使用停止  
 
@@ -47,5 +47,5 @@ Windows Server 2016 で、 **Get StorageHealthAction**コマンドレットに�
 
 ## <a name="see-also"></a>関連項目
 
-- [Windows Server 2016 でヘルス サービス](health-service-overview.md)
-- [開発者向けドキュメント、サンプル コード、および msdn API リファレンス](https://msdn.microsoft.com/windowshealthservice)
+- [Windows Server 2016 のヘルスサービス](health-service-overview.md)
+- [MSDN の開発者向けドキュメント、サンプルコード、API リファレンス](https://msdn.microsoft.com/windowshealthservice)

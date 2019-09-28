@@ -1,8 +1,8 @@
 ---
-title: manage-bde changepin
-description: 'Windows コマンド」のトピック * * *- '
+title: manage-bde changepin を管理する
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7da4690dd93eb0f660bdf3a1b1fe7432e503eb07
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: af20ade2eb9fb280b6bb15ebb850c5275e0acdf6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877743"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374861"
 ---
 # <a name="manage-bde-changepin"></a>manage-bde: changepin
 
 
 
-オペレーティング システム ドライブの暗証番号 (pin) を変更します。 新しい PIN の入力を求められます。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+オペレーティング システム ドライブの暗証番号 (pin) を変更します。 ユーザーは、新しい PIN を入力するように求められます。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,20 +36,20 @@ manage-bde -changepin [<Drive>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 
 |パラメーター|説明|
 |---------|-----------|
-|\<ドライブ >|コロンの後にドライブ文字を表します。|
-|-computername|別のコンピューターに BitLocker による保護を変更する、bde.exe を使用することを指定します。 使用することも **- cn**としてこのコマンドの簡易版です。|
-|\<名 >|BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。|
-|-? または /?|ヘルプの簡単なコマンド プロンプトが表示されます。|
-|--help または-h|表示は、コマンド プロンプトでヘルプを完了します。|
+|\<Drive >|コロンの後にドライブ文字を表します。|
+|-computername|別のコンピューターに BitLocker による保護を変更する、bde.exe を使用することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。|
+|\<名前 >|BitLocker による保護を変更するコンピューターの名前を表します。 指定できる値には、コンピューターの NetBIOS 名とコンピューターの IP アドレスが含まれます。|
+|-? または /?|コマンドプロンプトで簡単なヘルプを表示します。|
+|-help または-h|表示は、コマンド プロンプトでヘルプを完了します。|
 
 ## <a name="BKMK_Examples"></a>例
 
-次の例を使用して、 **- changepin** C ドライブを BitLocker で使用する PIN を変更するコマンド
+次の例では、 **-changepin**コマンドを使用して、ドライブ C で BitLocker で使用する pin を変更する方法を示します。
 ```
 manage-bde –changepin C:
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Manage-bde](manage-bde.md)

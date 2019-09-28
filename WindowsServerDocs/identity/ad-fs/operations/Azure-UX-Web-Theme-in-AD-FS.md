@@ -6,14 +6,14 @@ ms.author: billmath
 manager: femila
 ms.date: 10/24/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 25ba9505f3f93fb236d6e60e49efc4206482f977
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: f4dd1d45646475be3788cd6b615b1743976eedae
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866004"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358414"
 ---
 # <a name="using-an-azure-ad-ux-web-theme-in-active-directory-federation-services"></a>Active Directory フェデレーションサービス (AD FS) での Azure AD UX Web テーマの使用
 現在、AD FS フォームのサインインでは、Azure/O365 サインインエクスペリエンスは反映されません。  エンドユーザーに対してより一貫したシームレスなエクスペリエンスを提供するために、次のカスケードスタイルシートの web テーマをリリースしました。これは、AD FS サーバーに適用できます。  現時点では、Windows Server 2016 での AD FS のフォームサインインは次のようになります。

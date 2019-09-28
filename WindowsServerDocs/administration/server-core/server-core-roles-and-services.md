@@ -1,18 +1,18 @@
 ---
 title: Windows Server-Server Core に含まれる役割、役割サービス、および機能
 description: Windows Server の Server Core インストールオプションにはどのような役割と機能が含まれていますか。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 02/23/2018
-ms.openlocfilehash: 2f6aed56083bd606ae2ec06b72152ef4a0461420
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 7b5d5d5ad38b1b03e409c26485860f43799f1322
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476508"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383330"
 ---
 # <a name="roles-role-services-and-features-included-in-windows-server---server-core"></a>Windows Server-Server Core に含まれる役割、役割サービス、および機能
 
@@ -110,7 +110,7 @@ Server Core インストールオプションには、次の役割サービス�
 |                                       | IP とドメインの制限                                     | Web IP セキュリティ         | N                     |
 |                                       | URL 承認                                              | Web Url の認証            | N                     |
 |                                       | [Windows 認証]                                         | Windows-認証 web        | N                     |
-|                                       | アプリケーション開発                                        | Web アプリの開発             | N                     |
+|                                       | アプリケーションの開発                                        | Web アプリの開発             | N                     |
 |                                       | .NET 拡張3.5                                         | Web-Net-Ext             | N                     |
 |                                       | .NET 拡張4.6                                         | Ext45           | N                     |
 |                                       | Application Initialization                                     | Web AppInit             | N                     |
@@ -176,7 +176,7 @@ Server Core インストールオプションには、次の機能がありま�
 | ディレクトリ サービス統合                          | MSMQ-ディレクトリ                     | N                     |
 | HTTP サポート                                           | MSMQ-HTTP サポート                  | N                     |
 | メッセージキュートリガー                               | MSMQ-トリガー                      | N                     |
-| ルーティング サービス                                        | MSMQ-ルーティング                       | N                     |
+| ルーティングサービス                                        | MSMQ-ルーティング                       | N                     |
 | メッセージ キュー DCOM プロキシ                             | MSMQ DCOM                          | N                     |
 | マルチパス I/O                                          | マルチパス-IO                       | N                     |
 | MultiPoint Connector                                   | MultiPoint-コネクタ               | N                     |

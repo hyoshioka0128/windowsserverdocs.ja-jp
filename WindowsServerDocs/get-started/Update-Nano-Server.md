@@ -1,7 +1,7 @@
 ---
 title: Nano Server の更新
 description: " "
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -11,12 +11,12 @@ ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 0fd21f5c38968a303169b99186effd3d66f1e69b
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 4cfd7442f4c696d791349de8d4de903a7edff75a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280296"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360157"
 ---
 # <a name="updating-nano-server"></a>Nano Server の更新
 

@@ -1,8 +1,8 @@
 ---
 title: bitsadmin reset
-description: Windows コマンド」のトピック**bitsadmin リセット**-現在のユーザーが所有する、転送キュー内のすべてのジョブを取り消します。
+description: '**Bitsadmin reset**の Windows コマンドトピック-現在のユーザーが所有している転送キュー内のすべてのジョブをキャンセルします。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7c29aac55393cd87145583814b3ffa8f0a2c3b3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: adc6b07a7b5d1414c733fe6a3ac05eba7cb3029e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874253"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380814"
 ---
 # <a name="bitsadmin-reset"></a>bitsadmin reset
 
-現在のユーザーが所有する転送キュー内のすべてのジョブをキャンセルします。
+現在のユーザーが所有している転送キュー内のすべてのジョブをキャンセルします。
 
-**1.5 およびそれ以前の BITSAdmin**: 管理者特権がある場合 **リセット** キュー内のすべてのジョブが取り消されます。 /AllUsers オプションがサポートされていません。
+**BITSAdmin 1.5 以前**: 管理者特権を持っている場合は、  を **リセット**すると、キュー内のすべてのジョブがキャンセルされます。 /AllUsers オプションはサポートされていません。
 
 ## <a name="syntax"></a>構文
 
@@ -36,22 +36,22 @@ bitsadmin /Reset [/AllUsers]
 
 |パラメーター|説明|
 |---------|-----------|
-|AllUsers|省略可能なキュー内のすべてのジョブをキャンセルします。|
+|AllUsers|省略可能: キュー内のすべてのジョブを取り消します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-使用する管理者特権が必要、 **AllUsers**パラメーター。
+**AllUsers**パラメーターを使用するには、管理者特権が必要です。
 
 > [!NOTE]
-> 管理者は、ローカル システムによって作成されたジョブをリセットできません。 タスク スケジューラを使用して、ローカル システム資格情報を使用して、タスクとしてこのコマンドをスケジュールします。
+> 管理者は、ローカルシステムによって作成されたジョブをリセットできません。 タスクスケジューラを使用して、ローカルシステムの資格情報を使用して、このコマンドをタスクとしてスケジュールします。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、現在のユーザーの転送キュー内のすべてのジョブをキャンセルします。
+次の例では、現在のユーザーの転送キューにあるすべてのジョブを取り消します。
 ```
 C:\>bitsadmin /Reset
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

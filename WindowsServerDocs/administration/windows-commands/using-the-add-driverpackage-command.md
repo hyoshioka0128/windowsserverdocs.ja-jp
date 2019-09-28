@@ -1,8 +1,8 @@
 ---
 title: 追加 DriverPackage コマンドを使用してください。
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 893bcd3b28aaa5d501017fe65b7b5205e9452693
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f5370d301f5fec15f4812b3d65588297d179455d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440692"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363755"
 ---
 # <a name="using-the-add-driverpackage-command"></a>追加 DriverPackage コマンドを使用してください。
 
@@ -36,11 +36,11 @@ WDSUTIL /Add-DriverPackage /InfFile:<Inf File path> [/Server:<Server name>] [/Ar
 
 |          パラメーター           |                                                              説明                                                              |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-|   InfFile:\<Inf ファイルのパス >   |                                           追加する .inf ファイルの完全なパスを指定します。                                            |
-|    /Server:\<サーバー名 >    | サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。 |
+|   InfFile: \<Inf ファイルのパス >   |                                           追加する .inf ファイルの完全なパスを指定します。                                            |
+|    /Server: \<Server name >    | サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。 |
 |      /アーキテクチャ: {x86      |                                                                 ia64                                                                  |
-| [/DriverGroup:\<グループ名 >] |                             パッケージの追加先となるドライバー グループの名前を指定します。                              |
-|   [/Name:\<フレンドリ名 >]   |                                           ドライバー パッケージのフレンドリ名を示しています。                                            |
+| [/Drivergroup: \<Group Name >] |                             パッケージの追加先となるドライバー グループの名前を指定します。                              |
+|   [/Name: \<Friendly 名 >]   |                                           ドライバー パッケージのフレンドリ名を示しています。                                            |
 
 ## <a name="BKMK_examples"></a>例
 

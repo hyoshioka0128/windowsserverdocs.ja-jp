@@ -2,7 +2,7 @@
 title: リモート デスクトップ サービスの計画ポスター
 description: リモート デスクトップ サービスの計画、展開、および実行の概要を示します
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a8c6d5fa-399b-4823-8f10-affec1bbfe65
 ms.localizationpriority: medium
-ms.openlocfilehash: 571af5a50618db285aecbf26573ba52a6aec1101
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e7f52629dcbda6ce449bfa4b991742c21681055e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66453115"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403822"
 ---
 # <a name="remote-desktop-services---planning-poster"></a>リモート デスクトップ サービスの計画ポスター
 

@@ -1,6 +1,6 @@
 ---
 title: 記憶域レプリカについてよく寄せられる質問
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
 ms.technology: storage-replica
@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: 89676ba821b99d44865bc6f45c34c05edb771d9d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: d369e7f2d3d725fe8b3871fea199da1cac044456
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865256"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393804"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>記憶域レプリカについてよく寄せられる質問
 
@@ -183,7 +183,7 @@ Windows Server バックアップ、Microsoft Azure Backup、Microsoft DPM、ま
 
  445 (SMB レプリケーショントランスポートプロトコル、クラスター RPC 管理プロトコル) 5445 (iwarp RDMA ネットワークを使用する場合にのみ必要) 5985 (WMI/CIM/PowerShell 用の WSManHTTP 管理プロトコル)
 
-注:Test-srtopology コマンドレットは、ICMPv4/ICMPv6 を必要としますが、レプリケーションまたは管理には必要ありません。
+メモ:Test-srtopology コマンドレットは、ICMPv4/ICMPv6 を必要としますが、レプリケーションまたは管理には必要ありません。
 
 ## <a name="FAQ15.5"></a>ログボリュームのベストプラクティスは何ですか?
 ログの最適なサイズは環境やワークロードごとに大きく異なり、ワークロードが実行する書き込み IO の量によって決まります。 

@@ -1,7 +1,7 @@
 ---
 title: 記憶域スペース ダイレクトでのサーバーの削除
 ms.assetid: 9d8499a7-1307-473d-9f00-8a051164fad2
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: cosdar
 ms.manager: eldenc
 ms.technology: storage-spaces
@@ -10,12 +10,12 @@ author: cosmosdarwin
 description: Windows Server で記憶域スペース ダイレクト クラスターからサーバーを削除する方法。
 ms.date: 2/5/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fcb67b3c5fbcff0ca2a48ee9a1d2e109af3e9a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ce8caef2b51279c97cc012045750b7a73d97a4ba
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890783"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402811"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>記憶域スペース ダイレクトでのサーバーの削除
 
@@ -58,7 +58,7 @@ Windows はそのサーバーに保存されたデータをすべてクラスタ
 
 #### <a name="enough-capacity"></a>十分な容量
 
-最初に、すべてのボリュームに対応するために、残りのサーバーで十分な記憶域容量が必要です。
+まず、すべてのボリュームに対応するために、残りのサーバーに十分な記憶域容量が必要です。
 
 たとえば、サーバーが 4 台 (それぞれ 1 TB のドライブを 10 台搭載) ある場合、物理的な記憶域の合計容量は 40 TB です。 1 台のサーバーとそのドライブをすべて削除すると、残りの容量は 30 TB になります。 ボリュームのフットプリントが合計で 30 TB を超える場合、残りのサーバーに収まらないため、コマンドレットによりエラーが返され、データは削除されません。
 
@@ -81,4 +81,4 @@ Windows はそのサーバーに保存されたデータをすべてクラスタ
 
 ## <a name="see-also"></a>関連項目
 
-- [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)
+- [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)

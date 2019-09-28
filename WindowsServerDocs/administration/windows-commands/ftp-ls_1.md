@@ -1,8 +1,8 @@
 ---
 title: ftp ls_1
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6abf8466f90ac29846f2e1ee7d305e7e4280231e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d183f6a014273b78befd14c8d3208508948ffc54
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438630"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376251"
 ---
-# <a name="ftp-ls1"></a>ftp: ls_1
+# <a name="ftp-ls_1"></a>ftp: ls_1
 
 > 適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 > 
 > 
 > 適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-ファイルと、リモート コンピューターからのサブディレクトリの省略版リストを表示します。   
+リモートコンピューターのファイルとサブディレクトリの省略形の一覧を表示します。   
 ## <a name="syntax"></a>構文  
 ```  
 ls [<remotedirectory>] [<LocalFile>]  
@@ -36,17 +36,17 @@ ls [<remotedirectory>] [<LocalFile>]
 
 |      パラメーター      |                                                                       説明                                                                        |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [<remotedirectory>] | 一覧を表示するディレクトリを指定します。 ディレクトリが指定されていない場合は、リモート コンピューター上の現在の作業ディレクトリが使用されます。 |
-|    [<LocalFile>]    |               一覧を格納するローカル ファイルを指定します。 ローカル ファイルが指定されていない場合は、結果が画面に表示されます。               |
+| [<remotedirectory>] | 一覧を表示するディレクトリを指定します。 ディレクトリが指定されていない場合は、リモートコンピューター上の現在の作業ディレクトリが使用されます。 |
+|    [<LocalFile>]    |               一覧を格納するローカル ファイルを指定します。 ローカルファイルが指定されていない場合、結果は画面に表示されます。               |
 
 ## <a name="BKMK_Examples"></a>例  
-ファイルと、リモート コンピューターからのサブディレクトリの省略版リストを表示します。  
+リモートコンピューターのファイルとサブディレクトリの省略形の一覧を表示します。  
 ```  
 ls  
 ```  
-ディレクトリの省略形にリスト**dir1**と呼ばれるリモート コンピューターとローカル ファイルに保存**dirlist.txt**  
+リモートコンピューター上の**dir1**の省略形のディレクトリ一覧を取得し、dirlist という名前のローカルファイルに保存し**ます。**  
 ```  
 ls dir1 dirlist.txt   
 ```  
-## <a name="additional-references"></a>その他の参照  
+## <a name="additional-references"></a>その他の参照情報  
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)  

@@ -1,7 +1,7 @@
 ---
-title: 収束ネットワーク インターフェイス カード (NIC) の構成ガイド
-description: 収束ネットワーク インターフェイス カード (NIC) ホスト サービスのパーティション分割はリモート ダイレクト メモリ アクセス (RDMA)、HYPER-V ゲストが TCP/IP トラフィックを使用している同じ Nic 上でアクセスできるように、を通じてパーティションのホスト仮想 NIC (vNIC) RDMA を公開することができます。
-ms.prod: windows-server-threshold
+title: 収束ネットワークインターフェイスカード (NIC) の構成ガイダンス
+description: 収束ネットワークインターフェイスカード (NIC) を使用すると、ホストパーティションの仮想 NIC (vNIC) を介して RDMA を公開できます。これにより、ホストパーティションサービスは、Hyper-v ゲストが TCP/IP トラフィックに使用しているのと同じ Nic でリモートダイレクトメモリアクセス (RDMA) にアクセスできるようになります。
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: d7642338-9b33-4dce-8100-8b2c38d7127a
@@ -9,59 +9,59 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/13/2018
-ms.openlocfilehash: e9f5180285dda790e11cec543a109d0cb58edd2d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d791e0d51278d1f83f344250d38b1c7005c1a14a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838843"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355441"
 ---
-# <a name="converged-network-interface-card-nic-configuration-guidance"></a>集約型のネットワーク インターフェイス カード\(NIC\)構成ガイド
+# <a name="converged-network-interface-card-nic-configuration-guidance"></a>収束ネットワークインターフェイスカード \(NIC @ no__t 構成ガイダンス
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-収束ネットワーク インターフェイス カード\(NIC\)ホストから RDMA を公開できる\-仮想 NIC をパーティション分割\(vNIC\)ホスト サービスのパーティション分割は、リモート ダイレクト メモリ アクセスをアクセスできるように\(RDMA\) TCP/IP トラフィックを HYPER-V でゲストを使用している同じ Nic でします。
+収束ネットワークインターフェイスカード \(NIC @ no__t-1 を使用すると、ホストパーティションサービスが同じ Nic のリモートダイレクトメモリアクセス \(RDMA @ no__t にアクセスできるように、ホスト @ no__t-2partition 仮想 NIC \(vNIC @ no__t-4 を介して RDMA を公開できます。Hyper-v ゲストが TCP/IP トラフィックに使用している。
 
-コンバージド NIC 機能を管理する前に\(パーティションがホスト\)RDMA を使用したいサービス専用の RDMA を使用する必要がある\-帯域幅は Hyper-v ホストにバインドされている Nic で利用可能だった場合でも対応の Nic仮想スイッチ。
+収束 NIC 機能の前に、Hyper-v 仮想スイッチにバインドされている Nic で帯域幅が使用可能であったとしても、RDMA を使用する必要がある管理 \(host パーティション @ no__t サービスでは、専用の RDMA @ no__t 対応 Nic を使用する必要がありました。
 
-収束の NIC、2 つのワークロードで\(RDMA とゲスト トラフィックの管理ユーザー\)サーバーの数の Nic をインストールすることができます、同じ物理 Nic を共有することができます。
+収束 NIC を使用すると、RDMA トラフィックとゲストトラフィックの2つのワークロード @no__t (RDMA とゲストトラフィック @ no__t) で同じ物理 Nic を共有でき、サーバーにインストールできる Nic の数を減らすことができます。
 
-Vnic で HYPER-V ホストがすべてイーサネット経由で RDMA を使用してホスト プロセスに RDMA のサービスを公開収束の NIC を Windows Server 2016 の HYPER-V ホストと HYPER-V 仮想スイッチを展開するときに\-RDMA テクノロジに基づいています。
+Windows Server 2016 の Hyper-v ホストと Hyper-v 仮想スイッチを使用して収束 NIC を展開すると、Hyper-v ホストの vNICs は、イーサネット @ no__t-0based の RDMA テクノロジを使用して rdma を使用してプロセスをホストする RDMA サービスを公開します。
 
 >[!NOTE]
->コンバージド NIC テクノロジを使用するには、サーバーで、認定済みのネットワーク アダプターで RDMA をサポートする必要があります。
+>収束 NIC テクノロジを使用するには、サーバーの認定されたネットワークアダプターで RDMA がサポートされている必要があります。
 
-このガイドには、手順については、コンバージド NIC; の基本的な展開である単一のネットワーク アダプターがインストールされている、サーバーがある展開のいずれかの 2 つのセットが用意されていますコンバージド NIC の展開をスイッチ埋め込みチーミング経由では、サーバーがインストールされている場合、2 つ以上のネットワーク アダプターにある命令の別のセットと\(設定\)RDMA のチーム\-対応のネットワーク アダプター。
+このガイドでは、サーバーに単一のネットワークアダプターがインストールされている展開用の2つの手順について説明します。これは、収束 NIC の基本的な展開です。また、サーバーに2つ以上のネットワークアダプターがインストールされています。これは、スイッチ埋め込みチーミングに対する収束 NIC の展開であり、RDMA @ no__t に対応したネットワークアダプターの @no__t 0SET @ no__t チームです。
 
 
 ## <a name="prerequisites"></a>前提条件
 
-次に、収束の NIC の Basic、およびデータ センターの展開の前提条件
+収束 NIC の基本およびデータセンターの展開の前提条件を次に示します。
 
 >[!NOTE]
->提供された例で、Mellanox connectx-3 Pro 40 Gbps のイーサネット アダプターを使用しますが、RDMA の認定、Windows Server のいずれかを使用する\-この機能をサポートする対応のネットワーク アダプター。 互換性のあるネットワーク アダプターの詳細については、Windows Server Catalog トピックを参照してください。 [LAN カード](https://www.windowsservercatalog.com/results.aspx?&bCatID=1468&cpID=0&avc=85&ava=0&avt=0&avq=46&OR=1)します。
+>提供される例については、Mellanox/3 Pro 40 Gbps イーサネットアダプターを使用しますが、この機能をサポートする Windows Server 認定 RDMA @ no__t 対応ネットワークアダプターを使用することもできます。 互換性のあるネットワークアダプターの詳細については、Windows Server Catalog のトピック「 [LAN カード](https://www.windowsservercatalog.com/results.aspx?&bCatID=1468&cpID=0&avc=85&ava=0&avt=0&avq=46&OR=1)」を参照してください。
 
-### <a name="basic-converged-nic-prerequisites"></a>収束の NIC の基本的な前提条件
+### <a name="basic-converged-nic-prerequisites"></a>基本的な収束 NIC の前提条件
 
-収束の NIC の基本的な構成は、このガイドで、手順を実行するには、次の操作が必要です。
+基本的な集約型 NIC の構成について、このガイドの手順を実行するには、次のものが必要です。
 
-- Windows Server 2016 Datacenter edition または Windows Server 2016 Standard edition を実行する 2 つのサーバー。
-- 1 つ rdma 対応、各サーバーにインストールされているネットワーク アダプターを認定します。
-- 各サーバーにインストールされている HYPER-V サーバー ロール。
+- Windows Server 2016 Datacenter edition または Windows Server 2016 Standard edition を実行する2台のサーバー。
+- 各サーバーに1つの RDMA 対応の認定済みネットワークアダプターがインストールされていること。
+- 各サーバーにインストールされている hyper-v サーバーロール。
 
-### <a name="datacenter-converged-nic-prerequisites"></a>データ センターの収束の NIC の前提条件
+### <a name="datacenter-converged-nic-prerequisites"></a>データセンターの集約型 NIC の前提条件
 
-データ センターの収束の NIC の構成は、このガイドで、手順を実行するには、次の操作が必要です。
+データセンターの集約型 NIC の構成に関するこのガイドの手順を実行するには、次のものが必要です。
 
-- Windows Server 2016 Datacenter edition または Windows Server 2016 Standard edition を実行する 2 つのサーバー。
-- 2 つ rdma 対応には、各サーバーにインストールされているネットワーク アダプターが認定されています。
-- 各サーバーにインストールされている HYPER-V サーバー ロール。
-- スイッチ埋め込みチーミング理解しておく必要があります\(設定\)、代替 NIC チーミング ソリューションの Hyper-v ホストと、ソフトウェア定義ネットワーク (SDN) スタックを Windows Server 2016 に含まれる環境で使用します。 セットは、HYPER-V 仮想スイッチにいくつかの NIC チーミング機能を統合します。 詳細については、次を参照してください。[リモート ダイレクト メモリ アクセス (RDMA) とスイッチ埋め込みチーミング (SET)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)します。
+- Windows Server 2016 Datacenter edition または Windows Server 2016 Standard edition を実行する2台のサーバー。
+- 各サーバーにインストールされている、RDMA 対応の2つのネットワークアダプター。
+- 各サーバーにインストールされている hyper-v サーバーロール。
+- スイッチ埋め込みチーミング \(SET @ no__t-1 (Hyper-v を含む環境で使用される代替の NIC チーミングソリューション、および Windows Server 2016 のソフトウェア定義ネットワーク (SDN) スタックについて理解している必要があります。 セットは、HYPER-V 仮想スイッチにいくつかの NIC チーミング機能を統合します。 詳細については、「[リモートダイレクトメモリアクセス (RDMA) とスイッチ埋め込みチーミング (SET)](../../../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)」を参照してください。
 
 ## <a name="related-topics"></a>関連トピック
-- [1 つのネットワーク アダプターに収束の NIC の構成](cnic-single.md)
-- [収束の NIC チーミングされた NIC の構成](cnic-datacenter.md)
-- [収束の NIC の物理スイッチの構成](cnic-app-switch-config.md)
-- [集約型のない NIC 構成のトラブルシューティング](cnic-app-troubleshoot.md)
+- [単一のネットワークアダプターを使用した収束 NIC 構成](cnic-single.md)
+- [収束 NIC チーミング NIC 構成](cnic-datacenter.md)
+- [収束 NIC の物理スイッチ構成](cnic-app-switch-config.md)
+- [収束 NIC 構成のトラブルシューティング](cnic-app-troubleshoot.md)
 
 ---

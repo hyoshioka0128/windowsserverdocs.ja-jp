@@ -2,18 +2,18 @@
 title: ドライブ文字を変更する
 description: ディスクの管理を使用して Windows でドライブ文字の変更または割り当てを行う方法。
 ms.date: 10/24/2018
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b972ab05c192dca9a9a0a2bda4f083d2906acadb
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 3e18092a71e12cadb86052204738fafc8a149ff4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66812473"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386018"
 ---
 # <a name="change-a-drive-letter"></a>ドライブ文字を変更する
 

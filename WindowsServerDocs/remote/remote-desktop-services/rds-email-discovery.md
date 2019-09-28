@@ -1,19 +1,19 @@
 ---
 title: RDS フィードに登録するために電子メールの検出を設定する
 description: ご自身の RDS 展開に Azure AD Domain Services を統合する方法について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: remote-desktop-services
 ms.author: chrimo
 ms.date: 3/27/2018
 ms.localizationpriority: medium
 ms.topic: article
 author: christianmontoya
-ms.openlocfilehash: ca9484cc8abffcc21b4ed11756fb009b55046a0c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: c56a233adf28270aac809dc960e32b5363e4b8ab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870973"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387509"
 ---
 # <a name="set-up-email-discovery-to-subscribe-to-your-rds-feed"></a>RDS フィードに登録するために電子メールの検出を設定する
 

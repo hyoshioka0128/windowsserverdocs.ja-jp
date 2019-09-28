@@ -1,9 +1,9 @@
 ---
 title: DirectAccess クライアントをリモートで管理する
-description: このトピックでは、リモート Windows Server 2016 での Directaccess の管理ガイドの一部です。
+description: このトピックは、「Windows Server 2016 で DirectAccess クライアントをリモート管理する」ガイドの一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,20 +12,20 @@ ms.topic: article
 ms.assetid: 36255d80-a13e-4af7-a5c0-ab4c8f302622
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c4ebab1cb444df9c756d66ded24e1c851023d17a
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: ecfbd6dc09f251d5197a16b166aa76e6a37b933a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281169"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71367279"
 ---
 # <a name="manage-directaccess-clients-remotely"></a>DirectAccess クライアントをリモートで管理する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 リモート アクセス監視では、DirectAccess 接続と VPN 接続に関するリモート ユーザーの活動と状態が報告されます。 クライアント接続の回数と期間 (他の統計も含めて) が追跡され、サーバーの操作状態が監視されます。 使いやすい監視コンソールでは、リモート アクセス インフラストラクチャ全体を表示できます。 監視ビューは、単一のサーバー、クラスター、およびマルチサイトの構成について表示できます。  
   
-**注:** Windows Server 2016 では、単一のリモート アクセス役割に DirectAccess とリモート アクセス サービス (RAS) を結合します。  
+**注:** Windows Server 2016 では、DirectAccess とリモートアクセスサービス (RAS) が1つのリモートアクセスの役割に統合されています。  
   
 ## <a name="in-this-guide"></a>このガイドについて  
 このドキュメントでは、リモート アクセスの監視機能を利用するために、DirectAccess 管理コンソールおよびそれに対応する Windows PowerShell コマンドレット (リモート アクセス サーバーの役割の一部として提供されます) を使用する手順を説明します。  

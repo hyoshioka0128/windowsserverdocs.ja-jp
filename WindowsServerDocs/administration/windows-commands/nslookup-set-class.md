@@ -1,8 +1,8 @@
 ---
 title: nslookup set class
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7953f450c17afdee849515f8d8945631a30f4b98
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 312b409490603fcb0ded63a78f3a2936f5216de1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436845"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372980"
 ---
 # <a name="nslookup-set-class"></a>nslookup set class
 
 
 
-クエリ クラスを変更します。 クラスには、情報のプロトコルのグループを指定します。
+クエリクラスを変更します。 クラスは、情報のプロトコルグループを指定します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,8 +36,8 @@ set class=<Class>
 
 | パラメーター |                                                                                                                                    説明                                                                                                                                    |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \<Class>  | 既定のクラスは、in です。 このコマンドの有効な値を次に示します。</br>インします。インターネット クラスを指定します。</br>-混乱します。Chaos クラスを指定します。</br>-HESIOD:MIT アテナ Hesiod クラスを指定します。</br>-すべて。上記のワイルドカードのいずれかを指定します。 |
-|   {0} のヘルプ   |                                                                                                                                        ?}                                                                                                                                         |
+| \<クラスの >  | 既定のクラスは、にあります。 このコマンドの有効な値を次に示します。</br>からインターネットクラスを指定します。</br>混乱混乱クラスを指定します。</br>- HESIOD:MIT アテナ Hesiod クラスを指定します。</br>いつ前に示したワイルドカードのいずれかを指定します。 |
+|   {ヘルプ   |                                                                                                                                        ?}                                                                                                                                         |
 
 #### <a name="additional-references"></a>その他の参照情報
 

@@ -1,35 +1,35 @@
 ---
-title: サーバー マネージャーを使用してネットワーク コント ローラー サーバーの役割をインストールします。
-description: このトピックでは、Windows Server 2016 でサーバー マネージャーを使用して、ネットワーク コント ローラー サーバーの役割をインストールする方法について説明します。
+title: を使用してネットワークコントローラーのサーバーの役割をインストールサーバーマネージャー
+description: このトピックでは、Windows Server 2016 のサーバーマネージャーを使用して、ネットワークコントローラーのサーバーの役割をインストールする手順について説明します。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 3a6e4352-ff62-4290-b8a4-5c83740070fc
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 699e2ca5c4ec33099d0ad948523b6f587ad118e4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 8b656bbd823a10f1e36d1757bb53c4565d4e828c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859063"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405837"
 ---
-# <a name="install-the-network-controller-server-role-using-server-manager"></a>サーバー マネージャーを使用してネットワーク コント ローラー サーバーの役割をインストールします。
+# <a name="install-the-network-controller-server-role-using-server-manager"></a>を使用してネットワークコントローラーのサーバーの役割をインストールサーバーマネージャー
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、サーバー マネージャーを使用して、ネットワーク コント ローラー サーバーの役割をインストールする方法の手順を示します。
 
 >[!IMPORTANT]
->物理ホストでネットワーク コント ローラー サーバーの役割を展開しないでください。 ネットワーク コント ローラーを展開するには、ホストにインストールされている HYPER-V 仮想マシン\(VM\)でネットワーク コントローラー サーバーの役割をインストールする必要があります。 次の 3 つの異なる HYPER\-V ホスト上の VM にでネットワーク コントローラーをインストールした後、Windows PowerShell コマンド **New-NetworkControllerServer** を使用してホストをネットワーク コント ローラーに追加して、ソフトウェア定義ネットワーク\(SDN\)のHYPER\-Vホストを有効にする必要があります。 これにより、SDN ソフトウェア ロード バランサーが機能するようになります。 詳細については、[New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver) を参照してください。
+>ネットワークコントローラーのサーバーの役割を物理ホストに展開しないでください。 ネットワーク コント ローラーを展開するには、ホストにインストールされている HYPER-V 仮想マシン\(VM\)でネットワーク コントローラー サーバーの役割をインストールする必要があります。 次の 3 つの異なる HYPER\-V ホスト上の VM にでネットワーク コントローラーをインストールした後、Windows PowerShell コマンド **New-NetworkControllerServer** を使用してホストをネットワーク コント ローラーに追加して、ソフトウェア定義ネットワーク\(SDN\)のHYPER\-Vホストを有効にする必要があります。 これにより、SDN ソフトウェア ロード バランサーが機能するようになります。 詳細については、[New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver) を参照してください。
   
 ネットワーク コントローラーをインストールした後は、追加のネットワーク コントローラーの構成に Windows PowerShell コマンドを使用する必要があります。 詳細については、[Windows PowerShell を使用してネットワーク コントローラーを展開する](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md) を参照してください。  
   
 ### <a name="to-install-network-controller"></a>ネットワーク コント ローラーをインストールするには  
   
-1.  サーバー マネージャーで、 **[管理]** をクリックし、 **[役割と機能の追加]** をクリックします。 追加の役割と機能のウィザードが開きます。 **[次へ]** をクリックします。  
+1.  サーバー マネージャーで、 **[管理]** をクリックし、 **[役割と機能の追加]** をクリックします。 役割と機能の追加ウィザードが開きます。 **[次へ]** をクリックします。  
   
 2.  **インストールの種類**, 既定の設定を保持し、クリックして **次**します。  
   
@@ -64,7 +64,7 @@ ms.locfileid: "59859063"
     ![サーバー マネージャー](../../../media/Install-the-Network-Controller-server-role-using-Server-Manager/nc_013.jpg)  
   
 ## <a name="see-also"></a>関連項目  
-[ネットワーク コント ローラー](Network-Controller.md)  
+[ネットワーク コントローラー](Network-Controller.md)  
   
 
 

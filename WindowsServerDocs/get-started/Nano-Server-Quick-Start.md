@@ -1,7 +1,7 @@
 ---
 title: Nano Server のクイック スタート
 description: 物理マシンまたは仮想マシンに基本的な Nano Server を迅速に展開する手順
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -11,12 +11,12 @@ ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 7c1623e365be71cac2fd58da5444ce4358d75309
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 5de589d9da1c7d4fc9eb116e6ea1f6a326d1ad7c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66443558"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391720"
 ---
 # <a name="nano-server-quick-start"></a>Nano Server のクイック スタート
 
@@ -37,7 +37,7 @@ DHCP を使用して IP アドレスを取得する Nano Server の基本的な�
   
 1. Windows Server 2016 ISO の \NanoServer フォルダーにある *NanoServerImageGenerator* フォルダーを、お使いのハード ディスクのフォルダーにコピーします。  
   
-2. 管理者として Windows PowerShell を起動します。NanoServerImageGenerator フォルダーを配置したフォルダーに移動し、`Import-Module .\NanoServerImageGenerator -Verbose` を使ってモジュールをインポートします。  
+2. 管理者として Windows PowerShell を起動します。NanoServerImageGenerator フォルダーを配置したフォルダーにディレクトリを移動し、`Import-Module .\NanoServerImageGenerator -Verbose` を使ってモジュールをインポートします。  
    >[!NOTE]  
    >場合によっては Windows PowerShell 実行ポリシーを調整する必要があります。その場合は、 `Set-ExecutionPolicy RemoteSigned` を使います。  
   

@@ -2,7 +2,7 @@
 title: MultiPoint サービスの一般的な使用シナリオ
 description: MultiPoint Services の一般的な使用方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 3b0f8ea649382675a162572fcdafcfacc480a5f6
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b6e1ce47be76d8df1d8c9079204106f51c9067b3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871758"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395578"
 ---
 # <a name="common-usage-scenarios"></a>一般的な利用シナリオ
 MultiPoint Services では、Windows 10 デスクトップエクスペリエンスの最も重要な要素を使用して個々のユーザーデスクトップを配信します。 また、システム管理者が複数の MultiPoint サーバーとクライアントの検出と制御に使用できる、単純な管理ツールである MultiPoint Manager も用意されています。 さらに、MultiPoint Services には、リアルタイムで表示するための MultiPoint ダッシュボードが含まれています。 MultiPoint Services でできることの例を次に示します。  

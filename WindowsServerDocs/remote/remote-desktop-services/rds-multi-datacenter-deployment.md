@@ -2,7 +2,7 @@
 title: Azure の地理冗長型 RDS データ センター
 description: 地理的に離れた複数の場所にわたって高可用性を実現するために、複数のデータ センターを使用した RDS 展開を作成する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ author: haley-rowland
 ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
-ms.openlocfilehash: 39a0d00e64ecab93fe1826726b14969e5e034738
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 55b96c112dd7f7294ff674ee4675501af4287da4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871042"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403960"
 ---
 # <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>ディザスター リカバリー用の地理冗長型複数データ センター RDS 展開の作成
 

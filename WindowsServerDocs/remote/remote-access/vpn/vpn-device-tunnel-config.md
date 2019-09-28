@@ -1,7 +1,7 @@
 ---
-title: Windows 10 デバイスの VPN トンネルを構成します。
-description: Windows 10 でデバイスの VPN トンネルを作成する方法について説明します。
-ms.prod: windows-server-threshold
+title: Windows 10 で VPN デバイストンネルを構成する
+description: Windows 10 で VPN デバイストンネルを作成する方法について説明します。
+ms.prod: windows-server
 ms.date: 11/05/2018
 ms.technology: networking-ras
 ms.topic: article
@@ -9,32 +9,32 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: 989216f90e78689b464240cff957bab1d9c1229b
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: a216c490c92461e07fd5093783ec2c3049e8accb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749571"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388031"
 ---
-# <a name="configure-vpn-device-tunnels-in-windows-10"></a>Windows 10 デバイスの VPN トンネルを構成します。
+# <a name="configure-vpn-device-tunnels-in-windows-10"></a>Windows 10 で VPN デバイストンネルを構成する
 
->適用対象:Windows 10 バージョン 1709
+>適用対象:Windows 10 バージョン1709
 
-Always On VPN では、デバイスまたはコンピューターの専用の VPN プロファイルを作成する機能を提供します。 Always On VPN 接続には、トンネルの 2 つの種類が含まれます。 
+Always On VPN を使用すると、デバイスまたはコンピューター用の専用 VPN プロファイルを作成できます。 Always On VPN 接続には、次の2種類のトンネルがあります。 
 
-- _デバイスのトンネル_はユーザー、デバイスにログオンする前に指定された VPN サーバーに接続します。 ログイン前の接続のシナリオとデバイス管理の目的は、デバイスのトンネルを使用します。
+- _デバイストンネル_は、ユーザーがデバイスにログオンする前に、指定された VPN サーバーに接続します。 ログイン前の接続のシナリオとデバイス管理の目的は、デバイスのトンネルを使用することです。
 
-- _ユーザー トンネル_ユーザーがデバイスにログオンした後にのみ接続します。 ユーザー トンネルでは、VPN サーバーを組織のリソースにアクセスすることができます。
+- ユーザー_トンネル_は、ユーザーがデバイスにログオンした後にのみ接続されます。 ユーザートンネルを使用すると、ユーザーは VPN サーバー経由で組織のリソースにアクセスできます。
 
-異なり_ユーザー トンネル_、デバイスまたはコンピューターにユーザーのログオン後にのみ接続する_デバイス トンネル_ユーザーがログオンする前に、接続を確立するために VPN を使用します。 両方_デバイス トンネル_と_ユーザー トンネル_VPN プロファイルを使用した独立して動作や、同時に接続できるさまざまな認証方法とその他の VPN の構成設定を使用することができます必要に応じて。 ユーザー トンネルは、SSTP と IKEv2 をサポートしています。 デバイスのトンネルは、SSTP にフォールバックのサポートなしでのみ IKEv2 をサポートしています。
+ユーザーがデバイスまたはコンピューターにログオンした後にのみ接続する_ユーザートンネル_とは異なり、_デバイストンネル_を使用すると、ユーザーがログオンする前に VPN が接続を確立できます。 _デバイストンネル_と_ユーザートンネル_はどちらも、VPN プロファイルとは独立して動作し、同時に接続できます。また、必要に応じて、さまざまな認証方法やその他の VPN 構成設定を使用できます。 ユーザートンネルは SSTP と IKEv2 をサポートします。デバイストンネルは、SSTP フォールバックがサポートされていない場合にのみ IKEv2 をサポートします。
 
-ユーザーのトンネルがサポートされているドメインに参加しているドメインに参加している (ワークグループ)、または Azure AD に参加してデバイスの企業と BYOD のシナリオの両方を許可します。 すべての Windows エディションで使用可能になるし、プラットフォーム機能は、UWP の VPN プラグインのサポートを使用してサード パーティに使用します。
+ユーザートンネルは、企業と BYOD の両方のシナリオに対応するために、ドメインに参加している、ドメインに参加していない (ワークグループ) または Azure AD 参加済みのデバイスでサポートされています。 この機能は、すべての Windows エディションで利用できます。また、UWP VPN プラグインサポートによって、プラットフォームの機能がサードパーティに提供されます。
 
-デバイスのトンネルは 1709 以降、Windows 10 Enterprise または教育向けバージョンを実行しているドメインに参加しているデバイスでのみ構成できます。 デバイスのトンネルのサード パーティ製のコントロールのサポートはありません。
+デバイストンネルは、Windows 10 Enterprise または教育バージョン1709以降を実行しているドメインに参加しているデバイスでのみ構成できます。 デバイストンネルのサードパーティコントロールはサポートされていません。
 
 
-## <a name="device-tunnel-requirements-and-features"></a>デバイスのトンネルの要件と機能
-VPN 接続用のコンピューター証明書認証を有効にして、受信 VPN 接続を認証するためのルート証明機関を定義する必要があります。 
+## <a name="device-tunnel-requirements-and-features"></a>デバイストンネルの要件と機能
+VPN 接続に対してコンピューター証明書認証を有効にし、受信 VPN 接続を認証するためのルート証明機関を定義する必要があります。 
 
 ```PowerShell
 $VPNRootCertAuthority = “Common Name of trusted root certification authority”
@@ -42,18 +42,18 @@ $RootCACert = (Get-ChildItem -Path cert:LocalMachine\root | Where-Object {$_.Sub
 Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateNameToAccept $RootCACert -PassThru
 ```
 
-![トンネルのデバイスの機能と要件](../../media/device-tunnel-feature-and-requirements.png)
+![デバイスのトンネル機能と要件](../../media/device-tunnel-feature-and-requirements.png)
 
-## <a name="vpn-device-tunnel-configuration"></a>VPN デバイスのトンネルの構成
+## <a name="vpn-device-tunnel-configuration"></a>VPN デバイストンネルの構成
 
-デバイスのトンネル経由でのクライアントのみが操作を開始するシナリオの優れたガイダンスを提供する次の XML サンプル プロファイルが必要です。  トラフィック フィルターを活用して、デバイスのトンネルを管理トラフィックのみに制限します。  この構成は Windows の更新、一般的なグループ ポリシー (GP) と System Center Configuration Manager (SCCM) の更新のシナリオだけでなくキャッシュされた資格情報のない最初のログオン用の VPN 接続に適してまたはパスワードがシナリオをリセットします。 
+次のサンプルプロファイル XML は、デバイストンネル経由でクライアントが開始したプルのみが必要なシナリオに適したガイダンスを提供します。  トラフィックフィルターは、デバイスのトンネルを管理トラフィックのみに制限するために利用されます。  この構成は、Windows Update、一般的なグループポリシー (GP) と System Center Configuration Manager (SCCM) の更新シナリオ、および、キャッシュされた資格情報を使用しない最初のログオンの VPN 接続、またはパスワードリセットのシナリオに適しています。 
 
-サーバーが開始したプッシュの場合、Windows リモート管理 (WinRM)、リモート GPUpdate の場合は、リモートの SCCM 更新シナリオ – などの必要があります、トラフィックのフィルターを使用できないように、デバイスのトンネルの受信トラフィックを許可します。  デバイスのトンネルのプロファイルを有効にするトラフィックのフィルター デバイス トンネルは受信トラフィックを拒否します。  この制限は今後のリリースで削除される予定です。
+Windows リモート管理 (WinRM)、リモート GPUpdate、およびリモートの SCCM 更新シナリオなど、サーバーによって開始されるプッシュケースの場合は、トラフィックフィルターを使用できないように、デバイストンネルで受信トラフィックを許可する必要があります。  デバイストンネルプロファイルでトラフィックフィルターをオンにすると、デバイストンネルは受信トラフィックを拒否します。  この制限は、今後のリリースでは削除される予定です。
 
 
-### <a name="sample-vpn-profilexml"></a>VPN profileXML のサンプル
+### <a name="sample-vpn-profilexml"></a>VPN profileXML の例
 
-サンプルの VPN profileXML を次に示します。
+VPN profileXML の例を次に示します。
 
 ``` xml
 <VPNProfile>  
@@ -89,7 +89,7 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 </VPNProfile>
 ```
 
-デバイスのトンネルで構成できるもう 1 つの VPN 機能は、特定のデプロイ シナリオごとのニーズに応じて[信頼されたネットワーク検出](https://social.technet.microsoft.com/wiki/contents/articles/38546.new-features-for-vpn-in-windows-10-and-windows-server-2016.aspx#Trusted_Network_Detection)します。
+特定の展開シナリオのニーズに応じて、デバイストンネルを使用して構成できる別の VPN 機能は、信頼された[ネットワーク検出](https://social.technet.microsoft.com/wiki/contents/articles/38546.new-features-for-vpn-in-windows-10-and-windows-server-2016.aspx#Trusted_Network_Detection)です。
 
 ```
  <!-- inside/outside detection -->
@@ -98,21 +98,21 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ## <a name="deployment-and-testing"></a>配置とテスト
 
-Windows PowerShell スクリプトを使用して、Windows Management Instrumentation (WMI) ブリッジを使用して、デバイスのトンネルを構成できます。 コンテキストで Always On VPN デバイスのトンネルを構成する必要があります、**ローカル システム**アカウント。 これを実現するにはこれを使用する必要があります[PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec)、1 つの[PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools)に含まれる、 [Sysinternals](https://docs.microsoft.com/sysinternals/)群のユーティリティ。
+Windows PowerShell スクリプトを使用し、Windows Management Instrumentation (WMI) ブリッジを使用して、デバイスのトンネルを構成できます。 Always On VPN デバイストンネルは、**ローカルシステム**アカウントのコンテキストで構成する必要があります。 これを実現するには、 [Sysinternals](https://docs.microsoft.com/sysinternals/)スイートのユーティリティに含まれている[PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools)の1つである[PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec)を使用する必要があります。
 
-展開する方法に関するガイドラインについては、デバイスごと`(.\Device)`と、ユーザーごと`(.\User)`プロファイルは、「 [PowerShell の使用、ブリッジの WMI プロバイダーを使用したスクリプト](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)。
+デバイスごとのを展開する方法に関するガイドラインについては、「 [WMI ブリッジプロバイダーでの PowerShell スクリプトの使用](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)」を参照して、ユーザーごとに1つの @no__t プロファイル @no__t します。
 
-デバイス プロファイルを正常にデプロイすることを確認する次の Windows PowerShell コマンドを実行します。
+次の Windows PowerShell コマンドを実行して、デバイスプロファイルが正常に展開されたことを確認します。
 
   ```powershell
   Get-VpnConnection -AllUserConnection
   ```
 
-出力には、デバイスの一覧が表示されます。\-デバイスに展開されている VPN プロファイルの幅。
+出力には、デバイスに展開されているデバイスの @ no__t-0wide VPN プロファイルの一覧が表示されます。
 
 ### <a name="example-windows-powershell-script"></a>Windows PowerShell スクリプトの例
 
-次の Windows PowerShell スクリプトを使用すると、プロファイルの作成の独自のスクリプトの作成を支援します。
+次の Windows PowerShell スクリプトを使用すると、プロファイル作成用の独自のスクリプトを作成できます。
 
 ```PowerShell
 Param(
@@ -167,24 +167,24 @@ Write-Host "$Message"
 
 ## <a name="additional-resources"></a>その他のリソース
 
-VPN の展開を支援するその他のリソースを次に示します。
+VPN の展開に役立つその他のリソースを次に示します。
 
-### <a name="vpn-client-configuration-resources"></a>VPN クライアント構成のリソース
+### <a name="vpn-client-configuration-resources"></a>VPN クライアント構成リソース
 
-VPN クライアント構成のリソースを次に示します。
+VPN クライアント構成リソースは次のとおりです。
 
-- [System Center Configuration Manager での作成の VPN プロファイルする方法](https://docs.microsoft.com/sccm/protect/deploy-use/create-vpn-profiles)
-- [VPN 接続で常に Windows 10 クライアントを構成します。](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
+- [System Center Configuration Manager で VPN プロファイルを作成する方法](https://docs.microsoft.com/sccm/protect/deploy-use/create-vpn-profiles)
+- [Windows 10 クライアント Always On VPN 接続を構成する](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
 - [VPN プロファイルのオプション](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
 
-### <a name="remote-access-server-gateway-resources"></a>リモート アクセス サーバーのゲートウェイ リソース
+### <a name="remote-access-server-gateway-resources"></a>リモートアクセスサーバーゲートウェイのリソース
 
-リモート アクセス サーバー (RAS) ゲートウェイ リソースを次に示します。
+リモートアクセスサーバー (RAS) ゲートウェイのリソースを次に示します。
 
-- [コンピューターの認証証明書を使用して RRAS を構成します。](https://technet.microsoft.com/library/dd458982.aspx)
+- [コンピューター認証証明書を使用して RRAS を構成する](https://technet.microsoft.com/library/dd458982.aspx)
 - [IKEv2 VPN 接続のトラブルシューティング](https://technet.microsoft.com/library/dd941612.aspx)
-- [IKEv2 ベースのリモート アクセスを構成します。](https://technet.microsoft.com/library/ff687731.aspx)
+- [IKEv2 ベースのリモートアクセスを構成する](https://technet.microsoft.com/library/ff687731.aspx)
 
 >[!IMPORTANT]
->有効にすると IKEv2 マシン証明書認証をサポートするために、RRAS サーバーを構成する必要がありますが、Microsoft RAS ゲートウェイ デバイスのトンネルを使用しているときに、**の IKEv2 マシン証明書認証を許可する**認証方法の説明に従って[ここ](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29)します。 この設定を有効にすると、強くお勧め、**セット VpnAuthProtocol** PowerShell のコマンドレットと共に、 **RootCertificateNameToAccept**ことを確認する、オプションのパラメーターが使用されます。RRAS の IKEv2 接続のみ許可されます VPN クライアント証明書を明示的に定義された内部/プライベート ルート証明機関にチェーン化されました。 または、**信頼されたルート証明機関**させることがない公共の証明機関説明したように、RRAS サーバー上のストアを修正するか[ここ](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/)します。 同様のメソッドは、他の VPN ゲートウェイを考慮する必要もあります。
+>Microsoft RAS ゲートウェイでデバイストンネルを使用する場合は、説明に従って、ikev2 認証方法**に対してコンピューター証明書認証を許可**することで、ikev2 コンピューター証明書認証をサポートするように RRAS サーバーを構成する必要があります。[ここで](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29)説明します。 この設定を有効にした後、 **RootCertificateNameToAccept**オプションのパラメーターと共に、 **Set vpnauthprotocol** PowerShell コマンドレットを使用して、RRAS IKEv2 接続が許可されているかどうかを確認することを強くお勧めします。明示的に定義された内部/プライベートルート証明機関にチェーンされている VPN クライアント証明書。 または、[ここで](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/)説明するように、RRAS サーバーの**信頼されたルート証明機関**ストアを修正して、公開証明機関が含まれていないことを確認する必要があります。 同様の方法は、他の VPN ゲートウェイでも考慮する必要があります。
 

@@ -2,7 +2,7 @@
 title: リモート デスクトップ サービス - セキュリティで保護されたデータ ストレージ
 description: RDS でユーザー プロファイル ディスク (UPD) を使用してデータを安全に格納するための計画情報。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 11/21/2016
 manager: dongill
-ms.openlocfilehash: d681530f849fe55495de0f4d4b564921d3b0bb3d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8b7fa596f88f5cb361e0c681ffec3bcc72403d03
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870868"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403927"
 ---
 # <a name="remote-desktop-services---secure-data-storage-with-upds"></a>リモート デスクトップ サービス - UPD を使用してセキュリティで保護されたデータ ストレージ
 

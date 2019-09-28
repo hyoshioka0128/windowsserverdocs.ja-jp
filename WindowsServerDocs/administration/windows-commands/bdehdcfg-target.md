@@ -1,8 +1,8 @@
 ---
 title: bdehdcfg ターゲット
-description: Bdehdcfg ターゲットに Windows コマンド」のトピックでは、BitLocker と Windows recovery によってシステム ドライブとして使用するため、パーティションを準備します。
+description: Bdehdcfg target の Windows コマンドトピックでは、BitLocker と Windows 回復によってシステムドライブとして使用するパーティションを準備します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8d180974f480b4c40532dab529ad49dcc33540d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2fb0a1daa257ef2c9f1cd77b88e5ef14f84a0dfa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881533"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382181"
 ---
-# <a name="bdehdcfg-target"></a>bdehdcfg: target
+# <a name="bdehdcfg-target"></a>bdehdcfg: ターゲット
 
 
 
-BitLocker と Windows 回復してシステムのドライブとして使用するためには、パーティションを準備します。 既定では、ドライブ文字がないこのパーティションが作成されます。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+BitLocker と Windows 回復によってシステムドライブとして使用するパーティションを準備します。 既定では、このパーティションはドライブ文字なしで作成されます。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,19 +36,19 @@ bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge}
 
 |パラメーター|説明|
 |---------|-----------|
-|既定値 (default)|コマンド ライン ツールで、BitLocker セットアップ ウィザードと同じプロセスに従うことを示します。|
-|未割り当て|ディスクの使用可能な未割り当ての領域外のシステム パーティションを作成します。|
-|\<ドライブ文字 > 圧縮|アクティブなシステム パーティションを作成するために必要な量で指定されたドライブが減少します。 このコマンドを使用して、指定されたドライブに空き領域が 5% 以上する必要があります。|
-|\<ドライブ文字 > マージ|アクティブなシステム パーティションとして指定されたドライブを使用します。 オペレーティング システムのドライブは、マージの対象にすることはできません。|
+|既定値 (default)|は、コマンドラインツールが BitLocker セットアップウィザードと同じプロセスに従うことを示します。|
+|未|ディスク上の使用可能な未割り当て領域からシステムパーティションを作成します。|
+|@no__t 0 のドライブ文字 > 圧縮|アクティブなシステムパーティションを作成するのに必要な量だけドライブを減らします。 このコマンドを使用するには、指定されたドライブに少なくとも 5% の空き領域が必要です。|
+|\<DriveLetter merge|は、アクティブなシステムパーティションとして指定されたドライブを使用します。 オペレーティングシステムドライブをマージのターゲットにすることはできません。|
 
 ## <a name="BKMK_Examples"></a>例
 
-使用して次の例を示しています、**ターゲット**システム ドライブとして既存のドライブ (P) を指定するコマンド。
+次の例では、**ターゲット**コマンドを使用して、既存のドライブ (P) をシステムドライブとして指定しています。
 ```
 bdehdcfg -target P: merge
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Bdehdcfg](bdehdcfg.md)

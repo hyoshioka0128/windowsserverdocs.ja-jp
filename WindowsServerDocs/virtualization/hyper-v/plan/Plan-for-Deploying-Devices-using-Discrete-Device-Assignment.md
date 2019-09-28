@@ -1,7 +1,7 @@
 ---
 title: 個別のデバイスの割り当てを使用したデバイスの展開の計画
 description: Windows Server で DDA がどのように機能するかについて説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 ms.technology: hyper-v
 ms.tgt_pltfrm: na
@@ -9,15 +9,15 @@ ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.date: 02/06/2018
-ms.openlocfilehash: 7df7dbd1e7252f5bab451ed9272f9cbede63d223
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 7084f4951ebe1d1203f4c9e45bc5f73cc6487a84
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476497"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364190"
 ---
 # <a name="plan-for-deploying-devices-using-discrete-device-assignment"></a>個別のデバイスの割り当てを使用したデバイスの展開の計画
->適用先:Microsoft Hyper-v Server 2016、Windows Server 2016、Microsoft Hyper-v Server 2019、Windows Server 2019
+>適用先:Microsoft Hyper-V Server 2016、Windows Server 2016、Microsoft Hyper-V Server 2019、Windows Server 2019
 
 個別のデバイス割り当てでは、物理 PCIe ハードウェアに仮想マシン内から直接アクセスできます。  このガイドでは、デバイスの個別割り当てを使用できるデバイスの種類、ホストシステム要件、仮想マシンに課せられる制限事項、および個別のデバイス割り当てのセキュリティへの影響について説明します。
 
@@ -57,7 +57,7 @@ ms.locfileid: "68476497"
 
 管理者が信頼されていないテナントのデバイスを使用することを希望している場合は、デバイスの製造元に、ホストにインストールできるデバイス軽減ドライバーを作成する機能が用意されています。  デバイスの対策ドライバーが提供されているかどうかの詳細については、デバイスの製造元に問い合わせてください。
 
-デバイスの軽減ドライバーがないデバイスのセキュリティチェックをバイパスする場合は、 `-Force`パラメーターを`Dismount-VMHostAssignableDevice`コマンドレットに渡す必要があります。  そうすることで、そのシステムのセキュリティプロファイルが変更され、プロトタイプ作成または信頼された環境でのみ推奨されることがわかります。
+デバイスの軽減ドライバーがないデバイスのセキュリティチェックをバイパスする場合は、`-Force` パラメーターを `Dismount-VMHostAssignableDevice` コマンドレットに渡す必要があります。  そうすることで、そのシステムのセキュリティプロファイルが変更され、プロトタイプ作成または信頼された環境でのみ推奨されることがわかります。
 
 ## <a name="pcie-location-path"></a>PCIe ロケーションパス
 ホストからデバイスをマウント解除してマウントするには、PCIe ロケーションパスが必要です。  ロケーションパスの例は次`"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`のようになります。   [コンピュータープロファイルスクリプト](#machine-profile-script)は、PCIe デバイスの場所のパスも返します。

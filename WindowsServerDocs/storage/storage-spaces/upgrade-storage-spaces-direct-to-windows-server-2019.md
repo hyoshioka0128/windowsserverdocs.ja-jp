@@ -6,14 +6,14 @@ ms.author: robhind
 manager: eldenc
 ms.date: 03/06/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-spaces
-ms.openlocfilehash: 9966ee0fd3c0a2d1df0180bf177dec03343efc14
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 09a1116b7fc1b1d0f8bc144ba9c4cf68fc45697e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867190"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402782"
 ---
 # <a name="upgrade-a-storage-spaces-direct-cluster-to-windows-server-2019"></a>記憶域スペースダイレクトクラスターを Windows Server 2019 にアップグレードする
 

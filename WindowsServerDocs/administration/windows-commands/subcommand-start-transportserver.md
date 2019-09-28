@@ -1,8 +1,8 @@
 ---
-title: サブコマンド開始 TransportServer
-description: 'Windows コマンド」のトピック * * *- '
+title: サブコマンドの開始 TransportServer
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5fdfea020019a45eceac0142160f9d5d4d97b989
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c1bdf80aa9c255e12e1e4821467d556eb67f8691
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848633"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370733"
 ---
 # <a name="subcommand-start-transportserver"></a>サブコマンド: 開始 TransportServer
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-トランスポート サーバーのすべてのサービスを開始します。
+トランスポートサーバーのすべてのサービスを開始します。
 ## <a name="syntax"></a>構文
 ```
 wdsutil [Options] /start-TransportServer [/Server:<Server name>]
@@ -39,7 +39,7 @@ wdsutil [Options] /start-TransportServer [/Server:<Server name>]
 wdsutil /start-TransportServer
 wdsutil /verbose /start-TransportServer /Server:MyWDSServer
 ```
-#### <a name="additional-references"></a>その他の参照
+#### <a name="additional-references"></a>その他の参照情報
 [コマンドライン構文のポイント](command-line-syntax-key.md)
 [TransportServer 無効にするコマンドを使用して](using-the-disable-transportserver-command.md)
 [TransportServer 有効にするコマンドを使用して](using-the-enable-transportserver-command.md)

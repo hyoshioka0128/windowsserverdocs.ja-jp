@@ -1,8 +1,8 @@
 ---
-title: efi のパーティションを作成します。
-description: 'Windows コマンド」のトピック * * *- '
+title: パーティション efi の作成
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99970fba41a747a6bb4b1ca6cc4b7f603c547790
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 76d97129fd67345f23eee2fc7b300493a1632cc6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434163"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379010"
 ---
-# <a name="create-partition-efi"></a>efi のパーティションを作成します。
+# <a name="create-partition-efi"></a>パーティション efi の作成
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Itanium\-ベースのコンピューターは、拡張ファームウェア インターフェイスを作成します。 \(EFI\) GUID パーティション テーブルのシステム パーティション\(gpt\)ディスク。  
+Itanium @ no__t ベースのコンピューターでは、拡張可能なファームウェアインターフェイス \(EFI @ no__t-2 システムパーティションを GUID パーティションテーブル \(gpt @ no__t ディスクに作成します。  
   
   
   
@@ -38,24 +38,24 @@ create partition efi [size=<n>] [offset=<n>] [noerr]
   
 |  パラメーター  |                                                                                             説明                                                                                              |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  サイズ\=<n>  |                         メガバイト単位でのパーティションのサイズ\(MB\)します。 サイズを指定しない場合、パーティションが現在の領域に空き領域があるまで続行されます。                         |
-| オフセット\=<n> |             キロバイト単位のオフセット\(KB\)でパーティションを作成します。 オフセットを指定しない場合、パーティションは保持するのに十分な大きさである最初のディスク エクステントで配置されます。              |
-|    noerr    | スクリプト専用です。 エラーが発生すると、DiskPart は、エラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
+|  サイズ @ no__t-0 @ no__t-1  |                         パーティションのサイズ (mb) \(MB @ no__t-1。 サイズが指定されていない場合は、現在の領域に空き領域がなくなるまで、パーティションは続行されます。                         |
+| offset @ no__t-0 @ no__t-1 |             パーティションが作成されるオフセット (kb \(KB @ no__t-1)。 オフセットが指定されていない場合、パーティションは、それを保持するのに十分な大きさの最初のディスクエクステントに配置されます。              |
+|    noerr    | スクリプトの場合のみ。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
   
-## <a name="remarks"></a>注釈  
+## <a name="remarks"></a>コメント  
   
--   パーティションが作成された後は、新しいパーティションにフォーカスが与えられます。  
+-   パーティションが作成されると、新しいパーティションにフォーカスが割り当てられます。  
   
--   この操作を成功させるのには、gpt ディスクを選択してください。 使用して、 **select ディスク** コマンド ディスクを選択し、それにフォーカスをします。  
+-   この操作を成功させるには、gpt ディスクを選択する必要があります。 使用して、 **select ディスク** コマンド ディスクを選択し、それにフォーカスをします。  
   
 ## <a name="BKMK_examples"></a>例  
-選択したディスクを 1000 メガバイトの EFI パーティションを作成するには、次のように入力します。  
+選択したディスクに 1000 mb の EFI パーティションを作成するには、次のように入力します。  
   
 ```  
 create partition efi size=1000  
 ```  
   
-#### <a name="additional-references"></a>その他の参照  
+#### <a name="additional-references"></a>その他の参照情報  
 [コマンド ライン構文の記号](command-line-syntax-key.md)  
   
 

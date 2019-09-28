@@ -2,7 +2,7 @@
 title: path
 description: PATH 環境変数を設定する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a637abc91dd3342afb3a2723d1b3a835be149122
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 81e8441e7c67e42bdf929e703c8fe780a6f8aff8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436318"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372422"
 ---
 # <a name="path"></a>path
 
@@ -39,12 +39,12 @@ path ;
 
 |     パラメーター     |                                                                                                     説明                                                                                                      |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<ドライブ >:]<Path> |                                                                            ドライブとコマンドのパスを設定するディレクトリを指定します。                                                                             |
+| [\<Drive >:] <Path> |                                                                            ドライブとコマンドのパスを設定するディレクトリを指定します。                                                                             |
 |         ;         | コマンド パス内のディレクトリを分割します。 その他のパラメーターを指定せずに使用する場合 **;** PATH 環境変数からの既存のコマンド パスをクリアし、Cmd.exe、現在のディレクトリのみで検索するように指示します。 |
 |      %PATH%       |                                                         コマンド パスを PATH 環境変数で指定されているディレクトリの既存のセットに追加します。                                                         |
 |        /?         |                                                                                         コマンド プロンプトにヘルプを表示します。                                                                                         |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   含めた場合 **%path%** 構文では、Cmd.exe に置き換えられますコマンド パスにある値、PATH 環境変数では、コマンド プロンプトでこれらの値を手動で入力する必要はありません。
 -   現在のディレクトリはコマンドのパスで指定したディレクトリの前に常に検索します。

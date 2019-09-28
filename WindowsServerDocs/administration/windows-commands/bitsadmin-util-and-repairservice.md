@@ -1,8 +1,8 @@
 ---
 title: bitsadmin util と repairservice
-description: Windows コマンド」のトピック**bitsadmin util と repairservice** -コマンドさまざまなバージョンの BITS サービスに関する既知の問題を解決するために使用します。
+description: さまざまなバージョンの BITS サービスに関する既知の問題を修正するために使用される**bitsadmin util と repairservice**コマンドの Windows コマンドに関するトピック。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc5101378a389c865f5753146b711be0d15c6785
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0ab06ac9c784cfa438eb285c28f0e661cf4b8302
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852093"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380279"
 ---
 # <a name="bitsadmin-util-and-repairservice"></a>bitsadmin util と repairservice
 
-ビットが起動しない場合は、さまざまなバージョンのビットに関する既知の問題を解決するこのスイッチを使用します。
+BITS を起動できない場合は、このスイッチを使用して、さまざまなバージョンの BITS に関する既知の問題を修正します。
 
-**1.5 およびそれ以前の BITSAdmin:** はサポートされていません。
+**BITSAdmin 1.5 以前:**   はサポートされていません。
 
 ## <a name="syntax"></a>構文
 
@@ -36,25 +36,25 @@ bitsadmin /Util /RepairService [/Force]
 
 |パラメーター|説明|
 |---------|-----------|
-|Force|省略可能: 削除し、サービスを再作成されます。|
+|Force|省略可能: サービスを削除して再作成します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-このスイッチは、エラーに関連する不適切なサービスの構成と LANManworkstation) などの Windows サービスへの依存関係ネットワーク ディレクトリを解決します。 このスイッチを示す出力を生成するかどうか、問題が解決されました。
+このスイッチは、不適切なサービス構成と Windows サービス (LANManworkstation など) およびネットワークディレクトリの依存関係に関連するエラーを解決します。 このスイッチは、解決された問題が発生したかどうかを示す出力を生成します。
 
 > [!NOTE]
-> BITS では、サービスが再作成場合、サービスの説明文字列をローカライズされたシステムで英語に設定できます。
+> BITS がサービスを再作成する場合、ローカライズされたシステムでサービスの説明文字列が英語に設定されている可能性があります。
 
 > [!IMPORTANT]
 > このコマンドは、Windows Vista ではサポートされていません。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、BITS サービス構成を修復します。
+次の例では、BITS サービスの構成を修復します。
 ```
 C:\>bitsadmin /Util /RepairService
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

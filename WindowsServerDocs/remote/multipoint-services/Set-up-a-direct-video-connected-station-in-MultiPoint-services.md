@@ -3,7 +3,7 @@ title: MultiPoint サービスに直接ビデオ接続ステーションを設�
 description: MultiPoint Services で直接ビデオ接続ステーションを作成する方法について説明します。
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: 82ba3517-9743-4cde-8eea-63a17edb016f
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: eda8d5eee0635370873adec5b1fde2d65fc9fd9c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ab57f3d996cfe9196fd256a76516a44dc146043b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871603"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389362"
 ---
 # <a name="set-up-a-direct-video-connected-station-in-multipoint-services"></a>MultiPoint サービスに直接ビデオ接続ステーションを設定します。
 直接ビデオ接続ステーション、モニターが MultiPoint Server コンピューターのビデオ ポートに直接接続されています。 キーボードとマウス USB ハブにし、接続されているし、モニターに関連付けられました。  

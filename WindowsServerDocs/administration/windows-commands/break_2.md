@@ -1,8 +1,8 @@
 ---
 title: break
-description: Windows コマンド」のトピック**break_2** - VSS からシャドウ コピー ボリュームの関連付けを解除し、通常のボリュームとしてアクセスできるようにします。
+description: '**Break_2**の Windows コマンドに関するトピック-VSS からシャドウコピーボリュームの関連付けを解除し、通常のボリュームとしてアクセスできるようにします。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 49516539ae603e2c93b3fc395c77786be790d663
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a5789e3442152c705b3197bf1ce5e63dc782a15c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886333"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379778"
 ---
 # <a name="break"></a>break
 
 
 
-VSS からシャドウ コピー ボリュームの関連付けを解除し、通常のボリュームとしてアクセスできるようにします。 ボリュームにはドライブ文字 (割り当て場合) またはボリュームの名前を使用してアクセスできます。 パラメーターを指定せずに使用されている場合**break**コマンド プロンプトでヘルプを表示します。
+シャドウコピーボリュームを VSS から切り離し、通常のボリュームとしてアクセスできるようにします。 ボリュームには、ドライブ文字 (割り当てられている場合) またはボリューム名を使用してアクセスできます。 パラメーターを指定せずに使用した場合は、コマンドプロンプトに [**ヘルプ] が**表示されます。
 
 > [!NOTE]
-> このコマンドは、インポートした後にハードウェアのシャドウ コピーに対してのみ適用されます。
+> このコマンドは、インポート後のハードウェアシャドウコピーにのみ関連します。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
@@ -41,24 +41,24 @@ break [writable] <SetID>
 
 |パラメーター|説明|
 |---------|-----------|
-|[書き込み]|により読み取り/書き込みボリュームにアクセスします。|
-|\<SetID>|シャドウ コピー セットの ID を指定します。|
+|書き込み可能|ボリュームの読み取り/書き込みアクセスを有効にします。|
+|\<SetID >|シャドウコピーセットの ID を指定します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   シャドウ コピーから、発生するように、公開されているボリュームとは、既定では読み取り専用です。
--   環境変数として格納されているシャドウ コピー ID のエイリアス、**メタデータの読み込み**コマンドで使用できる、 *SetID*パラメーター。
+-   公開されているボリュームは、既定では読み取り専用です。
+-   **Load metadata**コマンドによって環境変数として格納されているシャドウコピー ID のエイリアスは、 *SetID*パラメーターで使用できます。
 
 ## <a name="BKMK_examples"></a>例
 
-オペレーティング システムでの書き込み可能なボリュームとしてアクセスできるように Alias1 エイリアス名を使用してコピーをシャドウするために、次のように入力します。
+エイリアス名 Alias1 を使用してシャドウコピーを作成し、オペレーティングシステムで書き込み可能なボリュームとしてアクセスできるようにするには、次のように入力します。
 ```
 break writable %Alias1%
 ```
 
 > [!NOTE]
-> ボリュームへのアクセスは、ボリューム シャドウ コピーになったの記録を行わず、ハードウェア プロバイダーに対して直接行われます。
+> ボリュームへのアクセスは、シャドウコピーされたボリュームを記録せずに、ハードウェアプロバイダーに直接行われます。
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

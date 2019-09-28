@@ -2,7 +2,7 @@
 title: リモート デスクトップ クライアントに関する FAQ
 description: リモート デスクトップ クライアントについてよく寄せられる質問
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e0dbe709681cf679347ccad2677ff3cda6690f3d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5b1dd3b728f941d9c3732abccf19363cf631284e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871232"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387751"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>リモート デスクトップ クライアントについてよく寄せられる質問
 

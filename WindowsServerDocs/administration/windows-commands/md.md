@@ -1,8 +1,8 @@
 ---
 title: Md
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1396038410ecc5db5a124a1768038c4f8c8bea8c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 965a5c506535a2c52d6cc7b3557c6104182c12a5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820843"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373690"
 ---
 # <a name="md"></a>Md
 
@@ -42,11 +42,11 @@ mkdir [<Drive>:]<Path>
 
 |パラメーター|説明|
 |---------|-----------|
-|\<ドライブ >:|新しいディレクトリを作成するドライブを指定します。|
-|\<パス >|必須。 新しいディレクトリの場所と名前を指定します。 1 つのパスの最大長は、ファイル システムによって決まります。|
+|@no__t 0Drive >:|新しいディレクトリを作成するドライブを指定します。|
+|\<Path >|必須。 新しいディレクトリの場所と名前を指定します。 1 つのパスの最大長は、ファイル システムによって決まります。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 既定で有効になっているコマンド拡張機能では、1 つを使用できます。 **md** 指定されたパスに中間ディレクトリを作成するコマンドです。
 
@@ -71,6 +71,6 @@ md Current
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
 
-[cmd](cmd.md)
+[Cmd](cmd.md)

@@ -1,7 +1,7 @@
 ---
 title: Windows Server 2016 で削除された機能または推奨されなくなった機能
 description: Windows Server 2016 の機能のうち、現在のリリースで製品から削除された機能および今後のリリースで削除が検討されている機能 (非推奨の機能) の一覧。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 ms.date: 08/22/2019
@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a35da3fda1736139290a2503a5c06317cf322ccc
-ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
+ms.openlocfilehash: b3f531325c338224d7ac69e46a9d16c9d236ee87
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000610"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360357"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Windows Server 2016 で削除された機能または推奨されなくなった機能
 

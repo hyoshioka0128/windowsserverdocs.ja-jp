@@ -1,8 +1,8 @@
 ---
 title: bitsadmin sethttpmethod
-description: Windows コマンド」のトピック**bitsadmin sethttpmethod** -使用する HTTP 動詞を設定します。
+description: '**Bitsadmin sethttpmethod**の Windows コマンドに関するトピックでは、使用する HTTP 動詞を設定します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 710df3eedb0bbad60f28c519ef683d60ca55fcd2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0f23b3b06bb3da448bb4cf18344aecfa31dcecd9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866433"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380611"
 ---
 # <a name="bitsadmin-sethttpmethod"></a>bitsadmin sethttpmethod
 
@@ -38,4 +38,4 @@ bitsadmin /GetHttpMethod <Job> <HTTPMethod>
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

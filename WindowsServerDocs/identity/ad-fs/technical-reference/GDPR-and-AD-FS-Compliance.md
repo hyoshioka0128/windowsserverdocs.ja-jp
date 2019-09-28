@@ -6,14 +6,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 04/24/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 56087f8ff990e4b089c4efdd1bf1bc88915d12e1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: bbcfa7060c13b388e04327121db67b102d73a50c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869401"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407323"
 ---
 # <a name="user-privacy-and-ad-fs"></a>ユーザー プライバシーと AD FS
 

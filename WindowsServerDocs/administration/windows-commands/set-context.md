@@ -1,8 +1,8 @@
 ---
 title: コンテキストの設定
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6f24e795f2d7c92d462cf822e70e4830b53827e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 16f71d831f374f495abf2239cb8e694eee69efdf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845853"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370982"
 ---
 # <a name="set-contex"></a>セットのコンテキスト
 
@@ -39,11 +39,11 @@ set context {clientaccessible | persistent [nowriters] | volatile [nowriters]}
 |パラメーター|説明|
 |---------|-----------|
 |clientaccessible|シャドウ コピーがクライアントのバージョンの Windows で使用できることを指定します。|
-|永続的です|シャドウ コピーがプログラムの終了、リセット、または再起動の間で永続化することを指定します。|
+|一貫|シャドウ コピーがプログラムの終了、リセット、または再起動の間で永続化することを指定します。|
 |揮発性|上のシャドウ コピーの削除は、終了またはリセットします。|
 |nowriters|すべてのライターを除外することを指定します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   *Clientaccessible* コンテキストは既定では永続的です。
 
@@ -56,4 +56,4 @@ set context persistent
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

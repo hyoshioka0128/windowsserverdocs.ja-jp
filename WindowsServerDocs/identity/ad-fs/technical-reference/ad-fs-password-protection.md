@@ -6,15 +6,15 @@ manager: mtillman
 ms.reviewer: andandyMSFT
 ms.date: 11/15/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c446ec86d426148836267e29610f86691cf0798a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 68624e2307e5ddefc6e32160cabfcd140f609966
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865461"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407246"
 ---
 # <a name="ad-fs-password-attack-protection"></a>AD FS パスワード攻撃による保護
 

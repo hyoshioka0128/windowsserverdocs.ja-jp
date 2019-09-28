@@ -1,7 +1,7 @@
 ---
-title: Windows Server Update Services (WSUS) の概要します。
-description: Windows Server Update Service (WSUS) のトピックで、サーバーの役割とその実際のアプリケーションの概要
-ms.prod: windows-server-threshold
+title: Windows Server Update Services (WSUS) を使ってみる
+description: Windows Server Update Service (WSUS) のトピック-サーバーの役割と実際のアプリケーションの概要
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-wsus
@@ -12,18 +12,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 5/22/2017
-ms.openlocfilehash: 7a6c64e0a4321553162b426e3d6857ff6ac3581c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 89247f91f616233fc6e4967a0457ff34fac221da
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830263"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361647"
 ---
 # <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Windows Server Update Services (WSUS) を使用すると、IT 管理者は Microsoft 製品の最新の更新プログラムを展開できます。 WSUS を使用すると、ネットワーク上のコンピューターに Microsoft Update を通じてリリースされる更新プログラムの配布を完全に管理します。 このトピックでは、このサーバーの役割の概要に加え、WSUS を展開および保守する方法の詳細について説明します。
+Windows Server Update Services (WSUS) を使用すると、IT 管理者は Microsoft 製品の最新の更新プログラムを展開できます。 WSUS を使用して、Microsoft Update 経由でネットワーク上のコンピューターにリリースされる更新プログラムの配布を完全に管理することができます。 このトピックでは、このサーバーの役割の概要に加え、WSUS を展開および保守する方法の詳細について説明します。
 
 ## <a name="wsus-server-role-description"></a>WSUS サーバー ロールの説明
 WSUS サーバーでは、管理コンソールから更新プログラムの配布の管理に使用できる機能を提供します。 WSUS サーバーには、組織内で他の WSUS サーバーの更新ソースことができます。 更新プログラムの供給元として機能する WSUS サーバーは、"アップストリーム サーバー" と呼ばれます。 WSUS 実装では、ネットワーク上の少なくとも 1 つの WSUS サーバーは、利用可能な更新情報を取得する Microsoft Update に接続できる必要があります。 管理者は、指定できます - ネットワーク セキュリティと構成 - に基づくその他の WSUS サーバーの数に直接接続 Microsoft Update。
@@ -54,7 +54,7 @@ Windows Server Update Services は組み込みのサーバーの役割で、次�
 
 -   セキュリティ強化のための SHA256 ハッシュ機能が追加されています。
 
--   クライアントとサーバーの分離を提供します Windows Update エージェント (WUA) のバージョンが WSUS に関係なく出荷できる。
+-   クライアントとサーバーの分離を提供: Windows Update エージェント (WUA) のバージョンを WSUS とは別に配布できます。
 
 ### <a name="using-windows-powershell-to-manage-wsus"></a>Windows PowerShell を使用した WSUS の管理
 操作を自動化するシステム管理者は、コマンド ラインの自動化への対応が必要です。 主な目的は、システム管理者が日常的な操作を自動化できるようにすることで、WSUS 管理を容易にすることです。
@@ -68,10 +68,10 @@ Windows Server Update Services は組み込みのサーバーの役割で、次�
 以前のバージョンの Windows Server オペレーティング システムでは、Windows PowerShell コマンドレットがなかったため、更新プログラムの管理の自動化は困難でした。 WSUS 操作用の Windows PowerShell コマンドレットにより、システム管理者に柔軟性と迅速さが加わりました。
 
 ## <a name="in-this-collection"></a>このコレクションに
-計画するため、次のガイド、展開、および WSUS の管理は、このコレクションには。
+このコレクションには、WSUS の計画、展開、および管理に関する次のガイドが含まれています。
 
--   [Windows Server Update Services をデプロイします。](../deploy/deploy-windows-server-update-services.md)
+-   [Windows Server Update Services を展開する](../deploy/deploy-windows-server-update-services.md)
 
--   [Windows Server Update Services を使用して更新プログラムを管理します。](../manage/update-management-with-windows-server-update-services.md)
+-   [Windows Server Update Services を使用した更新プログラムの管理](../manage/update-management-with-windows-server-update-services.md)
 
 

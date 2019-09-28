@@ -1,8 +1,8 @@
 ---
-title: bitsadmin gethelpertokenflags
-description: Windows コマンド」のトピック**bitsadmin gethelpertokenflags** -BITS 転送ジョブに関連付けられているヘルパー トークンの使用法フラグを返します。
+title: bitsadmin gea pertokenflags
+description: '**Bitsadmin ge pertokenflags**の Windows コマンドのトピック-BITS 転送ジョブに関連付けられているヘルパートークンの使用フラグを返します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,18 +12,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: e5665ed4670891dcbecd56215342f3d94e1ed753
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 25d667736d5fdcd018f557b2a5565b94898f6e51
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885793"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381568"
 ---
-# <a name="bitsadmin-gethelpertokenflags"></a>bitsadmin gethelpertokenflags
+# <a name="bitsadmin-gethelpertokenflags"></a>bitsadmin gea pertokenflags
 
-使用法フラグを返します、 [ヘルパー トークン](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs) BITS 転送ジョブに関連付けられています。
+BITS 転送ジョブに関連付けられている [ヘルパートークン](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)  の使用フラグを返します。
 
-**3.0 と以前の BITS**: サポートされません。
+**BITS 3.0 以前**: サポートされていません。
 
 ## <a name="syntax"></a>構文
 
@@ -37,13 +37,13 @@ bitsadmin /GetHelperTokenFlags <Job>
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-有効な戻り値は、次に示します。
+返される戻り値には、次のようなものがあります。
 
-- 0x0001 します。 ヘルパーのトークンを使用して、アップロード ジョブを作成したり、ダウンロードしたジョブの一時ファイルの名前を変更または作成またはアップロード応答ジョブの応答ファイルの名前を変更するのローカル ファイルを開きます。
-- 0x0002 します。 ヘルパー トークンは、サーバー メッセージ ブロック (SMB) のアップロードのリモート ファイルを開くか、ジョブをダウンロードするために使用または資格情報の暗黙的な NTLM または Kerberos の HTTP サーバーまたはプロキシ チャレンジに応答します。 SetCredentialsJob TargetScheme NULL NULL HTTP 経由で送信される資格情報を許可するを呼び出す必要があります。
+- 0x0001. ヘルパートークンは、アップロードジョブのローカルファイルを開き、ダウンロードジョブの一時ファイルを作成または名前を変更するため、またはアップロード/応答ジョブの応答ファイルを作成または名前を変更するために使用されます。
+- 0x0002. ヘルパートークンは、サーバーメッセージブロック (SMB) のアップロードジョブまたはダウンロードジョブのリモートファイルを開くため、または暗黙の NTLM または Kerberos 資格情報に対する HTTP サーバーまたはプロキシのチャレンジに対する応答として使用されます。 資格情報が HTTP 経由で送信されるようにするには、/SetCredentialsJob TargetScheme NULL NULL を呼び出す必要があります。
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,17 +1,17 @@
 ---
 title: Windows Server 2019 への保護されたファブリックのアップグレード
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 11/21/2018
-ms.openlocfilehash: dfc9d9cb4282823bb774b8dca136bbd4e5ccb496
-ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
+ms.openlocfilehash: 621d4175894bb235475155507a896a251dec0f7e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71143769"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386336"
 ---
 # <a name="upgrade-a-guarded-fabric-to-windows-server-2019"></a>Windows Server 2019 への保護されたファブリックのアップグレード
 

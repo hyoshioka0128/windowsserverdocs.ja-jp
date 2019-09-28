@@ -6,14 +6,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 11/14/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e8adbaf07976569fdea86156e15f246aad2e4fe0
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 7c9750a4f59cd17d0495e58dbc2fd8b2d2802c89
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868240"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369528"
 ---
 # <a name="clean-up-active-directory-domain-controller-server-metadata"></a>Active Directory ドメイン Controller サーバーメタデータのクリーンアップ
 

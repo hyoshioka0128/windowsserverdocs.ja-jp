@@ -2,19 +2,19 @@
 title: Kerberos とサービス プリンシパル名 (SPN)
 description: ネットワークコントローラーは、管理クライアントと通信するための複数の認証方法をサポートしています。 Kerberos ベースの認証 (X509 証明書ベースの認証) を使用できます。 テスト配置に認証を使用しないオプションもあります。
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: bc625de9-ee31-40a4-9ad2-7448bfbfb6e6
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 8c8c5367eeda576f87ac5de20b7885a1a29aeb4d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 78d5d2144e0def8e69a2a4ae5fdc2d7718936710
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869913"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355769"
 ---
 # <a name="kerberos-with-service-principal-name-spn"></a>Kerberos とサービス プリンシパル名 (SPN)
 

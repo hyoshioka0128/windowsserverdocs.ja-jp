@@ -2,7 +2,7 @@
 title: RDS - 実行と調整
 description: リモート デスクトップ サービスの管理情報を提供します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 79909767-a4c3-4ecf-8d3f-77d37a663153
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 0207a1d69eb62b5a7ea02416408b67d2f5a0be32
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5a2aa5c166b41ed8bd04ccfb92911368c07a5459
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870761"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387157"
 ---
 # <a name="run-and-tune-your-remote-desktop-services-environment"></a>リモート デスクトップ サービス環境の実行と調整
 

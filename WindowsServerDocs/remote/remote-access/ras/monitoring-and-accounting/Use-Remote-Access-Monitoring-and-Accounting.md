@@ -1,9 +1,9 @@
 ---
 title: リモート アクセスの監視とアカウンティングを使用する
-description: このトピックでは、リモート アクセスの監視とアカウンティング Windows Server 2016 では、ガイドの一部です。
+description: このトピックは、Windows Server 2016 のリモートアクセスの監視とアカウンティングに関するガイドの一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: 92519b49-0df4-43c1-9717-f13570644212
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c794d4b8169c81c63162f119467f5f03d10ce756
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: eb7c052358bc50f9b466b7ac862e77be7b044685
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282655"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71367146"
 ---
 # <a name="use-remote-access-monitoring-and-accounting"></a>リモート アクセスの監視とアカウンティングを使用する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 リモート アクセス監視では、DirectAccess 接続と VPN 接続に関するリモート ユーザーの活動と状態が報告されます。 クライアント接続の回数と期間 (他の統計も含めて) が追跡され、サーバーの操作状態が監視されます。 使いやすい監視コンソールでは、リモート アクセス インフラストラクチャ全体を表示できます。 監視ビューは、単一のサーバー、クラスター、およびマルチサイトの構成について表示できます。  
   
@@ -32,7 +32,7 @@ ms.locfileid: "67282655"
 >   
 > -   [リモート アクセス サーバー上の既存の負荷を監視する](Monitor-the-existing-load-on-the-Remote-Access-server.md)  
 > -   [リモート アクセス サーバーの構成配布の状態を監視する](Monitor-the-configuration-distribution-status-of-the-Remote-Access-server.md)  
-> -   [リモート アクセス サーバーとそのコンポーネントの操作状態の監視します。](Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components.md)  
+> -   [リモートアクセスサーバーとそのコンポーネントの操作の状態を監視する](Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components.md)  
 > -   [リモート アクセス サーバーの操作上の問題を特定して解決する](Identify-and-resolve-Remote-Access-server-operations-problems.md)  
 > -   [接続しているリモート クライアントの活動と状態を監視する](Monitor-connected-remote-clients-for-activity-and-status.md)  
 > -   [履歴データを使ってリモート クライアントの使用状況レポートを生成する](Generate-a-usage-report-for-remote-clients-using-historical-data.md)  

@@ -2,7 +2,7 @@
 title: 追加のステーションを MultiPoint server に接続する
 description: MultiPoint Services のデプロイにステーションを追加する
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 70609d491f5eb60daf89df219c06c8b9d4c3cd3e
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 45340f02b120b1431b1f58a58ed03ea40e17a14c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871413"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394752"
 ---
 # <a name="attach-additional-stations-to-multipoint-services"></a>MultiPoint Services に追加のステーションをアタッチする
 MultiPoint Services 環境では、ユーザーはステーションを使用して MultiPoint Services に接続し、作業を行います。 ステーションは、Multipoint Services を実行しているコンピューターに接続するためのユーザーエンドポイントです。  

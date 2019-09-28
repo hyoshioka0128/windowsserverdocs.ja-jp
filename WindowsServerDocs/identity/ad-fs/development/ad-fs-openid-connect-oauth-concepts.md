@@ -6,21 +6,21 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6a0a1da3dd5c92dff885478c1669bbda5ae07fe5
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0e680e07ce1ee27a73791e310a71b85ad76d6318
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867478"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358759"
 ---
 # <a name="ad-fs-openid-connectoauth-concepts"></a>AD FS OpenID Connect/OAuth の概念
 AD FS 2016 以降に適用されます
  
 ## <a name="modern-authentication-actors"></a>先進認証アクター 
 
-|アクター| 説明|
+|Actor| 説明|
 |-----|-----|
 |エンド ユーザー|これは、リソースへのアクセスを必要とするセキュリティプリンシパル (ユーザー、アプリケーション、サービス、およびグループ) です。|  
 |クライアント|これは、クライアント ID によって識別される web アプリケーションです。 クライアントは、通常、エンドユーザーが操作するパーティであり、承認サーバーからのトークンを要求します。
@@ -55,7 +55,7 @@ AD FS で構成されたすべての OAuth クライアント (ネイティブ�
  
 AD FS にリソースを登録するときに、AD FS が特定のアクションを実行できるようにスコープを構成できます。 スコープの構成に加えて、アクションを実行するために AD FS 要求でもスコープの値を送信する必要があります。 たとえば、管理者はリソースの登録時に openid としてスコープを構成する必要があります。また、アプリケーション (クライアント) が ID トークンを発行するには、AD FS の認証要求で scope = openid を送信する必要があります。 AD FS で使用できるスコープの詳細については、以下を参照してください。 
  
-- aza-  [ブローカークライアントに OAuth 2.0 プロトコル拡張](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)を使用していて、スコープパラメーターにスコープ "aza" が含まれている場合、サーバーは新しいプライマリ更新トークンを発行し、応答の refresh_token フィールドにそれを設定します。さらに、refresh_token_expires_in フィールドが適用されている場合は、新しいプライマリ更新トークンの有効期間を設定します。 
+- aza- [Broker クライアントに OAuth 2.0 プロトコル拡張](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)を使用している場合  and スコープパラメーターにスコープ "aza" が含まれていると、サーバーは新しいプライマリ更新トークンを発行し、refresh_ を設定するだけでなく、応答の refresh_token フィールドに設定します。token_expires_in フィールドが適用されている場合は、新しいプライマリ更新トークンの有効期間を設定します。 
 - openid-アプリケーションが OpenID Connect 承認プロトコルの使用を要求できるようにします。 
 - logon_cert-logon_cert スコープを使用すると、アプリケーションはログオン証明書を要求することができます。これは、認証されたユーザーを対話的にログオンするために使用できます。 AD FS サーバーは、応答から access_token パラメーターを除外し、代わりに base64 でエンコードされた CMS 証明書チェーンまたは CMC 完全 PKI 応答を提供します。 詳細について [は、こちら](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)を参照してください。
 - user_impersonation-user_impersonation スコープは、AD FS からの代理アクセストークンを正常に要求するために必要です。 このスコープを使用する方法の詳細については、 [AD FS 2016 で OAuth を使用して、(OBO) を使用して多層アプリケーションを構築](ad-fs-on-behalf-of-authentication-in-windows-server.md)する方法に関する説明を参照してください。 

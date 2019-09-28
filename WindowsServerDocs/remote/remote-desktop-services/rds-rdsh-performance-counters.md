@@ -1,7 +1,7 @@
 ---
 title: パフォーマンス カウンターを使用して、リモート デスクトップ セッション ホストでのアプリケーションの応答性の問題を診断する
 description: RDS でのアプリの実行速度が遅いですか。 RDS でのアプリのパフォーマンス問題を診断するために使用できるパフォーマンス カウンターについて説明する
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 07/11/2019
@@ -10,12 +10,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 3eb1e4b6da971d788383b8facbf8bbcbe00a5953
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b59d93d576967ee83b3efecc2630034eab919bf2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870907"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403905"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>パフォーマンス カウンターを使用して、リモート デスクトップ セッション ホストでのアプリのパフォーマンス問題を診断する
 

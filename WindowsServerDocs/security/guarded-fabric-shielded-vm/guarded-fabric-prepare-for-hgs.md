@@ -1,44 +1,44 @@
 ---
-title: HGS の前提条件を確認します。
+title: HGS の前提条件を確認する
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: f4b4d1a8-bf6d-4881-9150-ddeca8b48038
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9a668a39990b79862b99c2c7d9aeaf6540fa376d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9024557dd42ede27144bf10aa5873b6bb12d585c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447375"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403484"
 ---
-# <a name="review-prerequisites-for-the-host-guardian-service"></a>ホスト ガーディアン サービスの前提条件を確認します。
+# <a name="review-prerequisites-for-the-host-guardian-service"></a>ホストガーディアンサービスの前提条件を確認する
 
 >適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 
-このトピックでは、HGS の前提条件と HGS 展開を準備する初期手順について説明します。
+このトピックでは、hgs の前提条件と、HGS の展開を準備するための初期手順について説明します。
 
 ## <a name="prerequisites"></a>前提条件 
 
--   **ハードウェア**:HGS は、物理または仮想のマシンで実行できますが、物理マシンはお勧めします。
+-   **ハードウェア**:HGS は物理マシンまたは仮想マシンで実行できますが、物理マシンを使用することをお勧めします。
 
-    (可用性) の 3 つのノードの物理クラスターとして HGS を実行する場合は、次の 3 つの物理サーバーが必要です。 (クラスター化するためのベスト プラクティスとして、次の 3 つのサーバーが必要非常に類似するハードウェアです。)
+    HGS を3ノードの物理クラスター (可用性) として実行する場合は、3台の物理サーバーが必要です。 (クラスタリングのベストプラクティスとして、3台のサーバーには非常に類似したハードウェアが必要です)。
   
--   **オペレーティング システム**:Windows Server 2019 Standard または Datacenter edition で動作してホスト キーの構成証明が必要と[v2 構成証明](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#versioned-attestation-policies)します。 HGS には、TPM ベースの構成証明は、Windows Server 2019 または Windows Server 2016、Standard または Datacenter edition を実行できます。
+-   **オペレーティングシステム**:ホストキーの構成証明には、 [v2 構成証明](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#versioned-attestation-policies)で動作する Windows Server 2019 Standard または Datacenter edition が必要です。 TPM ベースの構成証明の場合、HGS では Windows Server 2019 または Windows Server 2016 (Standard または Datacenter edition) を実行できます。
 
--   **サーバーの役割**:ホスト ガーディアン サービスとサーバーの役割をサポートします。
+-   **サーバーの役割**:ホストガーディアンサービスとサポートサーバーの役割。
 
--   **ファブリック (ホスト) ドメインの構成のアクセス許可/特権**:ファブリック (ホスト) と HGS ドメイン間で DNS 転送を構成する必要があります。 
+-   **ファブリック (ホスト) ドメインの構成アクセス許可/特権**:ファブリック (ホスト) ドメインと HGS ドメイン間の DNS 転送を構成する必要があります。 
     
-## <a name="upgrading-hgs"></a>HGS のアップグレード
+## <a name="upgrading-hgs"></a>HGS をアップグレードしています
 
-HGS 既にデプロイ済みのオペレーティング システムをアップグレードする場合は、に従って、[アップグレード ガイダンスについて](guarded-fabric-upgrade-to-2019.md)HGS および HYPER-V サーバーを最新の OS にアップグレードします。
+既に HGS を展開済みで、そのオペレーティングシステムをアップグレードする場合は、[アップグレードのガイダンス](guarded-fabric-upgrade-to-2019.md)に従って、Hgs および hyper-v サーバーを最新の OS にアップグレードします。
 
 ## <a name="next-step"></a>次の手順
 
 > [!div class="nextstepaction"]
-> [HGS の証明書を取得します。](guarded-fabric-obtain-certs.md)
+> [HGS の証明書を取得する](guarded-fabric-obtain-certs.md)

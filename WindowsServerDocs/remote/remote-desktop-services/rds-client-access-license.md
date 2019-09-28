@@ -2,7 +2,7 @@
 title: クライアント アクセス ライセンス (CAL) を使用して RDS 展開をライセンスする
 description: リモート デスクトップ サービスでのクライアントのライセンスの概要。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/20/2018
 manager: dongill
-ms.openlocfilehash: 7783fd19c3dedde81514512f0c81f54eada33dc4
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 252ee776946ba0c387d7a6cdf3dc97ffdc55a591
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871061"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387580"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>クライアント アクセス ライセンス (CAL) を使用して RDS 展開をライセンスする
 

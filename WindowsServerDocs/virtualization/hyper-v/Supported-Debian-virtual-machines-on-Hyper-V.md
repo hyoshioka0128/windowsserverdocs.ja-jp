@@ -1,7 +1,7 @@
 ---
 title: Debian の仮想マシンを HYPER-V でサポートされています。
 description: 各バージョンに含まれる Linux integration services と機能の一覧を示します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,12 +11,12 @@ ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 35603d47439b0bc8702dbaba09dea9d449964026
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 71b1985da522ef9ee2d7745bd19d2548e0241a2f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544734"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366773"
 ---
 # <a name="supported-debian-virtual-machines-on-hyper-v"></a>Debian の仮想マシンを HYPER-V でサポートされています。
 

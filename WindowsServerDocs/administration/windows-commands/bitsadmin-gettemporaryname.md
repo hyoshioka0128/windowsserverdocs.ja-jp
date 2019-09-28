@@ -1,8 +1,8 @@
 ---
-title: bitsadmin gettemporaryname
-description: Windows コマンド」のトピック**bitsadmin gettemporaryname** -ジョブ内の指定されたファイルの一時ファイル名を報告します。
+title: bitsadmin get一時名
+description: '**Bitsadmin gettemporary name**の Windows コマンドトピックでは、ジョブ内の指定されたファイルの一時ファイル名を報告します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 762a2a5943202b38e94a245b74745e6631e0792d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7b665fae4c0bfdd5ea04b929be49f9590430b358
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876713"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381300"
 ---
-# <a name="bitsadmin-gettemporaryname"></a>bitsadmin gettemporaryname
+# <a name="bitsadmin-gettemporaryname"></a>bitsadmin get一時名
 
 
 
@@ -37,15 +37,15 @@ bitsadmin /GetTemporaryName <Job> <file index>
 |パラメーター|説明|
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
-|ファイルのインデックス|0 から始まります|
+|ファイルインデックス|0から開始|
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、ファイル 2 という名前のジョブの一時ファイル名をレポートする*myJob*します。
+次の例では、 *myjob*という名前のジョブのファイル2の一時ファイル名を報告します。
 ```
 C:\>bitsadmin /GetTemporaryName myJob 1 
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

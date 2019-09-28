@@ -7,44 +7,44 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8d3027c419e85d1aec4b3b0308926a86bb37620d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0f5c9d3b0f856ab72a16930ddb5c50686d747ecc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445088"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358388"
 ---
 # <a name="add-an-attribute-store"></a>属性ストアを追加する
 
 
-ユーザー アカウントとコンピューター アカウントを Active Directory フェデレーション サービスによって保護されているリソースへのアクセスを必要とする\(AD FS\)は、Active Directory Domain Services などの属性ストアに格納されている\(AD DS\). 要求発行エンジンでは、属性ストアを使用して、要求を発行するために必要なデータを収集します。 属性ストアからデータを要求として投影されます。  
+@No__t-0AD FS @ no__t によっ Active Directory フェデレーションサービス (AD FS) て保護されているリソースへのアクセスを必要とするユーザーアカウントとコンピューターアカウントは、Active Directory Domain Services \(AD DS @ no__t のように、属性ストアに格納されます。 要求発行エンジンは、属性ストアを使用して、要求を発行するために必要なデータを収集します。 その後、属性ストアからのデータが要求として投影されます。  
   
-次の手順を使用して、属性ストアをフェデレーション サービスに追加することができます。  
+属性ストアをフェデレーションサービスに追加するには、次の手順を実行します。  
   
 この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
 #### <a name="to-add-an-attribute-store"></a>属性ストアを追加するには  
   
-1.  開いている**AD FS 管理**します。  
+1.  **AD FS 管理**を開きます。  
   
-2.  **アクション**クリックして**属性ストアを追加**します。  
+2.  **[アクション]** で **[属性ストアの追加]** をクリックします。  
 
-![属性ストアを追加します。](media/Add-an-Attribute-Store/addstore1.PNG)
+![属性ストアの追加](media/Add-an-Attribute-Store/addstore1.PNG)
   
-3. **属性ストアを追加** ダイアログ ボックスで、属性ストアに追加するは、次のプロパティを構成します。  
+3. **[属性ストアの追加]** ダイアログボックスで、追加する属性ストアの次のプロパティを構成します。  
   
-   -   **表示名**、属性ストアを識別するために使用する名前を入力します。  
+   -   **[表示名]** に、属性ストアを識別するために使用する名前を入力します。  
   
-   -   **属性ストアの種類**、サポートされている属性ストアの種類を**Active Directory**、 **LDAP**、または**SQL**します。  
+   -   **[属性ストアの種類]** で、サポートされている属性ストアの種類として、 **Active Directory**、 **LDAP**、または**SQL**のいずれかを選択します。  
   
-   -   **接続文字列**か、ライトウェイト ディレクトリ アクセス プロトコルを選択した場合、 \(LDAP\)ストアまたは構造化照会言語\(SQL\)ストア、文字列を入力します属性ストアへの接続を確立するために使用することです。 Active Directory 属性ストアの場合、接続文字列は必要ありません。そのため、このフィールドは無効になります。  
+   -   **[接続文字列]** で、ライトウェイトディレクトリアクセスプロトコル \(ldap @ no__t ストアまたは構造化照会言語 \(sql @ no__t ストアのいずれかを選択した場合は、属性への接続を確立するために使用した文字列を入力します。ソース. Active Directory の属性ストアの場合、接続文字列は必要ありません。このため、このフィールドは無効になっています。  
   
        > [!NOTE]  
        > AD FS の既定の設定では、Active Directory 属性ストアが自動的に作成されます。  
  
-![属性ストアを追加します。](media/Add-an-Attribute-Store/addstore2.PNG) 
+![属性ストアの追加](media/Add-an-Attribute-Store/addstore2.PNG) 
 
 4. **[OK]** をクリックします。  
   

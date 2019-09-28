@@ -2,7 +2,7 @@
 title: Windows Server 2016 のシステム サービスに関するセキュリティ ガイドライン
 description: デスクトップ エクスペリエンスで Windows Server 2016 のサービスを無効にするためのセキュリティ ガイドライン
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: techgroup-security
 ms.tgt_pltfrm: na
 ms.topic: article
@@ -10,12 +10,12 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: fe2f82c373b0014a3f385dcfad77ec11a0b1e6c0
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 35bb2d547c4af2b90d5ed68e32dfa214bee6b3a7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870212"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403234"
 ---
 ## <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>デスクトップ エクスペリエンス搭載 Windows Server 2016 上のシステム サービスを無効にする場合のガイダンス
 
@@ -2294,7 +2294,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 
 <br />          
 
-## <a name="windows-connection-manager"></a>Windows 接続マネージャー           
+## <a name="windows-connection-manager"></a>Windows 接続マネージャー           
 
 | | |           
 |---|---|   

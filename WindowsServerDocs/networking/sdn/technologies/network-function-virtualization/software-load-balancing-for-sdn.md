@@ -1,9 +1,9 @@
 ---
 title: SDN のソフトウェア負荷分散 (SLB)
-description: このトピックを使用すると、Windows Server 2016 でソフトウェアによるネットワーク制御のソフトウェアの負荷分散について説明します。
+description: このトピックでは、Windows Server 2016 のソフトウェア定義ネットワークのソフトウェア負荷分散について説明します。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: 97abf182-4725-4026-801c-122db96964ed
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 26fb4aa21e80618c4c63bd9edbf8731bf886db62
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 35743d9e1a25c71a35eed018a4a3882a3d094d76
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853763"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355567"
 ---
 # <a name="software-load-balancing-slb-for-sdn"></a>SDN のソフトウェア負荷分散 \(SLB\)
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックを使用すると、Windows Server 2016 でソフトウェアによるネットワーク制御のソフトウェアの負荷分散について説明します。  
+このトピックでは、Windows Server 2016 のソフトウェア定義ネットワークのソフトウェア負荷分散について説明します。  
 
 クラウド サービス プロバイダー (Csp) やソフトウェアによるネットワーク制御 (SDN) で Windows Server 2016 を展開する企業は、ソフトウェアの負荷分散 (SLB) を使用してテナントと仮想ネットワークのリソース間でテナントのお客様のネットワーク トラフィックを均等に分散します。 Windows Server SLB により、同じワークロードをホストする複数のサーバーであり、高可用性とスケーラビリティを提供することです。
   
@@ -76,7 +76,7 @@ Vip はで、SLB マルチプレクサー (マルチプレクサー) にあり�
   
 受信ネットワーク トラフィックが SLB マルチプレクサーを完全にバイパスする最初のネットワーク トラフィック フローが確立されると、します。  
   
-次の図では、クライアント コンピューターは、会社 SharePoint サイトの例では、Contoso という架空の会社の IP アドレスの DNS クエリを実行します。 次の処理が行われます。  
+次の図では、クライアントコンピューターは、会社の SharePoint サイト (この場合は Contoso という架空の会社) の IP アドレスに対して DNS クエリを実行します。 次の処理が行われます。  
   
 -   DNS サーバーは、VIP 107.105.47.60 をクライアントに返します。  
   
@@ -90,7 +90,7 @@ Vip はで、SLB マルチプレクサー (マルチプレクサー) にあり�
   
 -   ホストは、カプセル化されるパケットを受信し、それを検査します。  カプセル化を削除し、パケットを書き換えるため、変換先、VIP の代わりに 10.10.10.5 DIP は、今すぐ DIP の仮想マシンにトラフィックを送信します。  
   
--   要求はサーバー ファーム 2 で Contoso の SharePoint サイトに達してようになりました。 サーバーは、応答を生成し、ソースとして独自の IP アドレスを使用して、クライアントに送信します。  
+-   これで、要求がサーバーファーム2の Contoso SharePoint サイトに到達しました。 サーバーは、応答を生成し、ソースとして独自の IP アドレスを使用して、クライアントに送信します。  
   
 -   ホストは、クライアント、変換先ではこれで VIP を元の要求を行ったを記憶する仮想スイッチでは送信パケットをインターセプトします。  ホストは、DIP アドレスをクライアントに認識しないため、VIP にパケットのソースをリライトします。  
   
@@ -98,7 +98,7 @@ Vip はで、SLB マルチプレクサー (マルチプレクサー) にあり�
   
 ![ソフトウェアの負荷分散プロセス](../../../media/Software-Load-Balancing--SLB--for-SDN/slb_process.jpg)  
   
-**負荷分散のデータ センターの内部トラフィック**  
+**内部データセンターのトラフィックの負荷分散**  
   
 Vm が接続されている HYPER-V 仮想スイッチが NAT. を実行する別のサーバー上で実行され、同じ仮想ネットワークのメンバーであるテナントのリソースを間など、負荷分散のネットワーク トラフィックが、データ センターの内部がとき  
   
@@ -114,7 +114,7 @@ SLB には、次を含む、ネットワーク インフラストラクチャの
   
 従来のロード バランサー アプライアンスし、プローブがアプライアンス上で発生した、ネットワーク経由で DIP に移動中とは異なり、DIP があると、さらに、ホストにわたる作業の分散、DIP に SLB ホスト エージェントから直接移動のホスト上で発生した SLB プローブします。  
   
-## <a name="bkmk_infrastructure"></a>ソフトウェア負荷分散のインフラストラクチャ  
+## <a name="bkmk_infrastructure"></a>ソフトウェア負荷分散インフラストラクチャ  
 Windows Server SLB を展開するには、Windows Server 2016 のネットワーク コント ローラーと 1 つまたは複数の SLB MUX Vm を展開する必要があります。  
   
 さらに、SDN 対応の HYPER-V 仮想スイッチを使用して HYPER-V ホストを構成して、SLB ホスト エージェントが実行されていることを確認する必要があります。  ホストを提供するルーターは、同じコスト (ECMP) のマルチパス ルーティングおよびボーダー ゲートウェイ プロトコル (BGP) をサポートする必要がありますや、SLB MUXes から BGP ピアリングの要求を受け入れるように構成する必要があります。  
@@ -131,7 +131,7 @@ System Center の 2016年では、SLB マネージャーおよびヘルス モ�
 System Center 2016 の詳細については、次を参照してください。 [システム センター 2016](https://www.microsoft.com/server-cloud/products/system-center-2016/)します。  
   
 > [!NOTE]  
-> System Center 2016 を使用しないようにする場合は、ネットワーク コント ローラーおよびその他の SLB インフラストラクチャ インストールし、構成に Windows PowerShell または別の管理アプリケーションを使用できます。 詳細については、次を参照してください。 [展開ネットワーク コント ローラーが Windows PowerShell を使用して](../../../sdn/deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)します。  
+> System Center 2016 を使用しないようにする場合は、ネットワーク コント ローラーおよびその他の SLB インフラストラクチャ インストールし、構成に Windows PowerShell または別の管理アプリケーションを使用できます。 詳細については、[Windows PowerShell を使用してネットワーク コントローラーを展開する](../../../sdn/deploy/Deploy-Network-Controller-using-Windows-PowerShell.md) を参照してください。  
   
 ### <a name="network-controller"></a>ネットワーク コントローラー  
 ネットワーク コント ローラーは、SLB マネージャーをホストし、SLB の次の操作を実行します。  
@@ -179,7 +179,7 @@ BGP ルーターでは、SLB に対して次の操作を実行します。
   
 -   Keep Alive が失敗した場合は、SLB MUXes SLB ローテーションからを削除します。  
   
-## <a name="bkmk_features"></a>ソフトウェア負荷分散の機能  
+## <a name="bkmk_features"></a>ソフトウェアの負荷分散機能  
 SLB の機能と機能の一部を次に示します。  
   
 **コア機能**  
@@ -198,7 +198,7 @@ SLB の機能と機能の一部を次に示します。
   
 -   SLB には、インターネット プロトコル バージョン 4 (IPv4) が含まれていますサポート。  
   
--   SLB をサイト間ゲートウェイ シナリオの場合に、1 つのパブリック IP を利用するすべてのサイト対サイト接続を有効にする NAT 機能を提供します  
+-   サイト間ゲートウェイのシナリオでは、すべてのサイト間接続で1つのパブリック IP を使用できるようにする NAT 機能が SLB によって提供されます。  
   
 -   SLB、全ホスト エージェントと Windows Server 2016 では、上のマルチプレクサーを含む、コア、および Nano インストールをインストールすることができます。  
   

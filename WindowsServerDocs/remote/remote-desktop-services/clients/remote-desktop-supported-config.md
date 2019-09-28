@@ -2,7 +2,7 @@
 title: リモート デスクトップ クライアントでサポートされる構成
 description: リモート デスクトップ クライアントを使用してアクセスできる PC について説明します
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d38008b6387385917ad21ce7e169b8ff3f4d18ba
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 2dc8eb68aebc904640aa4adc3e75cdeda34e97b2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63748964"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387651"
 ---
 # <a name="remote-desktop-client---supported-configuration"></a>リモート デスクトップ クライアントでサポートされる構成
 

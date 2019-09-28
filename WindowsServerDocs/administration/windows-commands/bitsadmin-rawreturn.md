@@ -1,8 +1,8 @@
 ---
 title: bitsadmin rawreturn
-description: Windows コマンド」のトピック**bitsadmin rawreturn** -を解析するための適切なデータを返します。
+description: '**Bitsadmin rawreturn**の Windows コマンドトピックは、解析に適したデータを返します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e12c8e621021d35ac618b4592515fe38c36be0e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 86d769de460538acda696194348980de5752d6d8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434891"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380877"
 ---
 # <a name="bitsadmin-rawreturn"></a>bitsadmin rawreturn
 
-解析するための適切なデータを返します。
+解析に適したデータを返します。
 
 ## <a name="syntax"></a>構文
 
@@ -30,15 +30,15 @@ ms.locfileid: "66434891"
 bitsadmin /RawReturn
 ```
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-ストリップの改行文字と、出力の書式設定します。
+改行文字と書式設定を出力から取り除きます。
 
-組み合わせてこのコマンドを使用する、通常、**作成**と**取得\\** * 値のみを受け取るスイッチ。 その他のスイッチの前に、このスイッチを指定する必要があります。
+通常、このコマンドを**Create**および**Get @ no__t*** スイッチと組み合わせて使用すると、値のみを受け取ることができます。 このスイッチは、他のスイッチの前に指定する必要があります。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例は、という名前のジョブの状態の生データを取得*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブの状態の生データを取得します。
 ```
 C:\>bitsadmin /RawReturn /GetState myDownloadJob
 ```

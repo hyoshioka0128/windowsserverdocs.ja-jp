@@ -1,27 +1,27 @@
 ---
 ms.assetid: f7f6bac2-1100-4b00-a248-4ca3eb3cdbe9
-title: AD FS サインイン ページに会社のロゴを変更します。
+title: AD FS サインインページで会社のロゴを変更する
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 03/08/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fe5c138466ea288b5dfb8c7c284603150ab9d874
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: b22c969e0113081e1ca8a662ae81a2ee24829835
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190030"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358297"
 ---
-# <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>AD FS サインイン ページに会社のロゴを変更します。
+# <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>AD FS サインインページで会社のロゴを変更する
 
 #### <a name="change-company-logo"></a>会社ロゴの変更  
-記号が表示される会社のロゴを変更する\- ページで、次の PowerShell の Windows PowerShell コマンドレットと構文を使用します。  
+[Sign @ no__t-0in] ページに表示される会社のロゴを変更するには、次の PowerShell Windows PowerShell コマンドレットと構文を使用します。  
 
-![ロゴを変更します。](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
+![ロゴの変更](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   
 > [!IMPORTANT]  
 > ロゴの寸法は 260x35 ピクセル (96 DPI) に設定して、ファイル サイズは 10 KB 以下にすることをお勧めします。  
@@ -31,7 +31,7 @@ ms.locfileid: "66190030"
 
   
 > [!NOTE]  
-> `TargetName` パラメーターは必須です。 AD FS と共にリリースされている既定のテーマの名前は*既定*します。  
+> `TargetName` パラメーターは必須です。 AD FS と共にリリースされる既定のテーマには、 *default*という名前が付けられます。  
 
 ## <a name="additional-references"></a>その他の参照情報 
-[AD FS のユーザー サインイン カスタマイズ](AD-FS-user-sign-in-customization.md)  
+[AD FS ユーザーサインインのカスタマイズ](AD-FS-user-sign-in-customization.md)  

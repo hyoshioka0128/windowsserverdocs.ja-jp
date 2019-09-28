@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.prod: windows-server-threshold
-ms.openlocfilehash: d2a2acc9261ac1a25e140cc298cc58e4b0fb6e52
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 74d886246eb9d27264c0b8653f90f2eed86b891c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869047"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406823"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center についてよく寄せられる質問
 

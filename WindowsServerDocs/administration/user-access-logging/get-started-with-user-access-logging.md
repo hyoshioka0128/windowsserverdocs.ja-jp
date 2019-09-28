@@ -2,7 +2,7 @@
 title: ユーザーアクセスログを使ってみる
 desctription: Describes the User Access Logging feature and how to start using it.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: manage-user-access-logging
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a1706756b52777f5dd3bf1db59fb2ed087ca8648
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 15906e8cc1e5e85a471f1b8725435eb60852f6f5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866259"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382867"
 ---
 # <a name="get-started-with-user-access-logging"></a>ユーザーアクセスログを使ってみる
 
@@ -99,7 +99,7 @@ UAL では、次のタスクを実行できます。
 |-----------------|---------|  
 |ほぼリアルタイムでクライアント要求イベント データを収集し、集計します。|最大 3 年分のデータを保存できます。 **重要:** 管理者は、組織のプライバシーポリシーとローカル規制に従って、収集されたデータとデータ保有期間のコンプライアンスを強制する必要があります。|  
 |WMI または Windows PowerShell インターフェイスを利用して UAL に問い合わせ、ローカルまたはリモート サーバーのクライアント要求データを取得します。|UAL では、1 つのビューで進行中の使用状況データを参照できます。 サーバー管理者とエンタープライズ管理者は、このデータを取得し、ビジネス管理者と連携し、ボリューム ソフトウェア ライセンスを最適な方法で利用できます。|  
-|既定で有効になります。|サーバー管理者がこの機能を構成しなくても、すべてのコア機能は利用できるし、動作します。|  
+|既定で有効になっています。|サーバー管理者がこの機能を構成しなくても、すべてのコア機能は利用できるし、動作します。|  
   
 ## <a name="data-logged-with-ual"></a>UAL で記録されたデータ  
 UAL では次のユーザー関連データが記録されます。  

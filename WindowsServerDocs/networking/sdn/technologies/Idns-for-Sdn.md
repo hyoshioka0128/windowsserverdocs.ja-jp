@@ -1,9 +1,9 @@
 ---
 title: SDN の Internal DNS Service (iDNS)
-description: このトピックでは、Windows Server 2016 でソフトウェアによるネットワーク制御と統合されている内部 DNS (Idn) を使用して、ホストされているテナントのワークロードに DNS サービスを提供する方法について説明します。
+description: このトピックでは、Windows Server 2016 のソフトウェア定義ネットワークと統合されている内部 DNS (Idn) を使用して、ホストされているテナントワークロードに DNS サービスを提供する方法について説明します。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -12,83 +12,83 @@ ms.topic: get-started-article
 ms.assetid: ad848a5b-0811-4c67-afe5-6147489c0384
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4d4ae5ee5f5600d86349ca26b7acbdb284b45bac
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a7e5aa9e1ae7442c706c1bdbdb56d65234fe5ae8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824083"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405967"
 ---
 # <a name="internal-dns-service-idns-for-sdn"></a>SDN の Internal DNS Service (iDNS)
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-クラウド サービス プロバイダーに作業している場合\(CSP\)またはソフトウェアによるネットワーク制御の展開を計画しているエンタープライズ\(SDN\) Windows Server 2016 では、ホストされているテナント ワークロードを DNS サービスを行うことができます内部 DNS を使用して\(Idn\)SDN と統合されています。
+Windows Server 2016 でソフトウェア定義のネットワーク \(SDN @ no__t の展開を計画しているクラウドサービスプロバイダー \(CSP @ または Enterprise を使用している場合は、内部 DNS を使用して、ホストされているテナントワークロードに DNS サービスを提供することができ @no__SDN と統合されている t-4iDNS @ no__t-5。
 
-仮想マシンがホストされている\(Vm\)アプリケーションには、独自のネットワーク内およびインターネット上の外部のリソースを通信するために DNS が必要とします。 Idn を使用できますは、ローカルの分離された名前空間のとインターネット リソースの DNS 名前解決サービスでテナントを提供します。
+ホストされている仮想マシン @no__t 0VMs @ no__t とアプリケーションは、独自のネットワーク内およびインターネット上の外部リソースと通信するために DNS を必要とします。 Idn を使用すると、テナントは、分離されたローカルの名前空間とインターネットリソースに対して DNS 名前解決サービスを提供できます。
 
-Idn サービスにテナント仮想ネットワークからアクセスできないため、以外の Idn プロキシを介してサーバーでないテナント ネットワークに悪意のあるアクティビティに対して脆弱になります。
+Idn プロキシを経由するのではなく、テナントの仮想ネットワークから Idn サービスにアクセスできないため、テナントネットワーク上の悪意のあるアクティビティに対してサーバーが脆弱になることはありません。
 
-**主な機能**
+**主要機能**
 
 Idn の主な機能を次に示します。
 
-- 共有 DNS 名前解決サービス テナントのワークロードを提供します。
-- 名前解決およびテナントの名前空間内での DNS 登録の権限のある DNS サービス
-- 再帰 DNS サービスのテナントの Vm からインターネット名前解決。
-- ファブリックとテナントの名前の同時ホストを構成するには、必要な場合
-- コスト効率の高い DNS ソリューションでは、独自の DNS インフラストラクチャをデプロイするテナントは必要はありません。
-- Active Directory の統合により、必要とされる高可用性。
+- テナントワークロードの共有 DNS 名前解決サービスを提供します
+- 名前解決と DNS 登録のための権限のある DNS サービス (テナント名空間内)
+- テナント Vm からのインターネット名を解決するための再帰 DNS サービス。
+- 必要に応じて、ファブリック名とテナント名の同時ホストを構成できます。
+- コスト効果の高い DNS ソリューション-テナントは独自の DNS インフラストラクチャを展開する必要はありません。
+- Active Directory 統合を使用した高可用性。これは必須です。
 
-これらの機能に加えて DNS サーバーを開くには、インターネットに、AD の統合を維持する心配がある場合、境界ネットワーク内の別の再帰リゾルバーの背後にある Idn サーバーを展開することができます。
+これらの機能に加えて、AD 統合 DNS サーバーをインターネットに対して開いたままにすることが懸念される場合は、境界ネットワーク内の別の再帰的なリゾルバーの背後に Idn サーバーを展開できます。
 
-IDNS はすべての DNS クエリの一元的なサーバーであるため、CSP またはエンタープライズできますもテナント DNS ファイアウォールを実装、フィルターを適用、悪意のあるアクティビティを検出および中央の場所でのトランザクションの監査
+Idn はすべての DNS クエリに対して集中管理されたサーバーであるため、CSP またはエンタープライズは、テナント DNS ファイアウォールの実装、フィルターの適用、悪意のあるアクティビティの検出、および集中管理された場所でのトランザクションの監査も行うことができます。
 
 ## <a name="idns-infrastructure"></a>Idn インフラストラクチャ
-Idn インフラストラクチャには、Idn サーバーと Idn のプロキシが含まれています。
+Idn インフラストラクチャには、Idn サーバーと Idn プロキシが含まれています。
 
 ### <a name="idns-servers"></a>Idn サーバー
-Idn には、一連 VM の DNS リソース レコードなど、テナント固有のデータをホストする DNS サーバーにはが含まれています。
+Idn には、VM DNS リソースレコードなど、テナント固有のデータをホストする一連の DNS サーバーが含まれています。
 
-Idn サーバーの権限のあるサーバーの内部の DNS ゾーンとパブリック名の競合回避モジュールとしても機能とテナントの Vm の外部リソースへの接続を試行します。
+Idn サーバーは、内部 DNS ゾーンに対して権限のあるサーバーです。テナント Vm が外部リソースに接続しようとすると、パブリック名のリゾルバーとしても機能します。
 
-すべての仮想ネットワーク上の Vm のホスト名は、同じゾーンで DNS リソース レコードとして格納されます。 たとえば、contoso.local という名前のゾーン用の iDNS を展開する場合は、そのネットワーク上の Vm の DNS リソース レコードが、contoso.local ゾーンに格納されます。
+仮想ネットワーク上の Vm のホスト名はすべて、同じゾーンに DNS リソースレコードとして保存されます。 たとえば、contoso. local という名前のゾーンに対して Idn を展開する場合、そのネットワーク上の Vm の DNS リソースレコードは、contoso. ローカルゾーンに格納されます。
 
-VM の完全修飾ドメイン名をテナント\(Fqdn\) GUID 形式で、仮想ネットワークのコンピューター名と DNS サフィックス文字列で構成されます。 たとえば、テナントの仮想ネットワーク contoso では、ローカルの上にある TENANT1 という名前の VM がある場合、VM の FQDN は TENANT1 します。*vn guid*. contoso.local、、 *vn guid*仮想ネットワークの DNS サフィックスの文字列は、します。
+テナント VM の完全修飾ドメイン名 \(FQDNs @ no__t-1 は、コンピューター名と、GUID 形式の Virtual Network の DNS サフィックス文字列で構成されます。 たとえば、Virtual Network contoso, local という名前のテナント VM がある場合、VM の FQDN は TENANT1 です。*vn*を指定します。 *vn*は、Virtual Network の DNS サフィックス文字列です。
 
 >[!NOTE]
->ファブリック管理者の場合は、Idn としてサーバーを使用して専用の新しい DNS サーバーを展開するのではなく、Idn サーバーとして、CSP または企業の DNS インフラストラクチャを使用できます。 Idn の新しいサーバーを展開する場合も、既存のインフラストラクチャを使用して、Idn は高可用性を提供する Active Directory に依存します。 Idn サーバーは、Active Directory したがって統合する必要があります。
+>ファブリック管理者は、Idn サーバーとして使用するために特別に使用する新しい DNS サーバーを展開するのではなく、CSP サーバーまたはエンタープライズ DNS インフラストラクチャを Idn サーバーとして使用できます。 Idn 用の新しいサーバーを展開するか、既存のインフラストラクチャを使用するかにかかわらず、Idn は Active Directory を利用して高可用性を実現します。 したがって、Idn サーバーは Active Directory に統合されている必要があります。
 
-### <a name="idns-proxy"></a>プロキシの iDNS
-Idn プロキシは、すべてのホスト上で実行されると、テナント Idn サーバーへの仮想ネットワークの DNS トラフィックを転送する Windows サービスです。
+### <a name="idns-proxy"></a>Idn プロキシ
+Idn プロキシは、すべてのホストで実行される Windows サービスであり、テナント Virtual Network DNS トラフィックを Idn サーバーに転送します。
 
-次の図は、Idn プロキシ Idn サーバーを使ったテナントの仮想ネットワークとインターネットからの DNS トラフィックのパスを示しています。
+次の図は、idn プロキシ経由で Idn サーバーとインターネットに接続しているテナント仮想ネットワークからの DNS トラフィックパスを示しています。
 
 ![Idn インフラストラクチャ](../../media/Internal-Dns/Internal-Dns.jpg)
 
-## <a name="how-to-deploy-idns"></a>Idn をデプロイする方法
-スクリプトを使用して Windows Server 2016 の SDN を展開するときに、展開で Idn が自動的に含まれます。
+## <a name="how-to-deploy-idns"></a>Idn を展開する方法
+スクリプトを使用して Windows Server 2016 で SDN を展開すると、Idn が自動的に展開に含まれるようになります。
 
 詳しくは、次のトピックをご覧ください。
 
-- [スクリプトを使用してソフトウェア定義ネットワーク インフラストラクチャをデプロイします。](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)
+- [スクリプトを使用してソフトウェアで定義されたネットワークインフラストラクチャを展開する](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)
 
 
-## <a name="understanding-idns-deployment-steps"></a>Idn の配置手順を理解します。
-このセクションを使用すると、Idn がインストールされ、スクリプトを使用して SDN を展開するときに構成する方法を理解します。
+## <a name="understanding-idns-deployment-steps"></a>Idn の展開手順について
+このセクションを使用すると、スクリプトを使用して SDN を展開するときに Idn をインストールし、構成する方法を理解することができます。
 
-Idn の展開に必要な手順の概要を次に示します。
+Idn を展開するために必要な手順の概要を次に示します。
 
 >[!NOTE]
->スクリプトを使用して SDN を展開する場合は、次の手順を実行する必要はありません。 手順は、情報とトラブルシューティングの目的でのみ提供されます。
+>スクリプトを使用して SDN を展開した場合は、次の手順を実行する必要はありません。 ここで説明する手順は、情報とトラブルシューティングのみを目的として提供されています。
 
-### <a name="step-1-deploy-dns"></a>手順 1:DNS を展開します。
-DNS サーバーを展開するには、次の例の Windows PowerShell コマンドを使用します。
+### <a name="step-1-deploy-dns"></a>手順 1:DNS の展開
+DNS サーバーを展開するには、次の Windows PowerShell コマンド例を使用します。
     
     Install-WindowsFeature DNS -IncludeManagementTools
     
-### <a name="step-2-configure-idns-information-in-network-controller"></a>手順 2:ネットワーク コント ローラーで Idn の情報を構成します。
-このスクリプトのセグメントは、REST 呼び出しが行われる、管理者がネットワーク コント ローラーに Idn ゾーンの構成 -、iDNSServer および Idn 名をホストするために使用するゾーンの IP アドレスなどに関する通知です。 
+### <a name="step-2-configure-idns-information-in-network-controller"></a>手順 2:ネットワークコントローラーでの Idn 情報の構成
+このスクリプトセグメントは、管理者がネットワークコントローラーに対して実行する REST 呼び出しであり、Idn ゾーン構成 (iDNSServer の IP アドレスや Idn 名のホストに使用されるゾーンなど) について通知します。 
 
 ```
     Url: https://<url>/networking/v1/iDnsServer/configuration
@@ -112,85 +112,85 @@ Method: PUT
 ```
 
 >[!NOTE]
->これは、セクションからの抜粋**構成 ConfigureIDns** SDNExpress.ps1 でします。 詳細については、次を参照してください。[スクリプトを使用してソフトウェア定義ネットワーク インフラストラクチャをデプロイ](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)します。
+>これは、SDNExpress のセクション**構成**の抜粋です。 詳細については、「[スクリプトを使用したソフトウェア定義ネットワークインフラストラクチャの展開](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)」を参照してください。
 
-### <a name="step-3-configure-the-idns-proxy-service"></a>手順 3:Idn プロキシ サービスを構成します。
-Idn プロキシ サービスは、各テナントの仮想ネットワークと Idn サーバーが配置される、物理ネットワーク間のブリッジを提供する、HYPER-V ホストで実行されます。 すべての HYPER-V ホストでは、次のレジストリ キーを作成する必要があります。
+### <a name="step-3-configure-the-idns-proxy-service"></a>手順 3:Idn プロキシサービスを構成する
+Idn プロキシサービスは各 Hyper-v ホスト上で実行され、テナントの仮想ネットワークと Idn サーバーが配置されている物理ネットワークとの間にブリッジを提供します。 次のレジストリキーは、すべての Hyper-v ホスト上に作成する必要があります。
 
 
-**DNS のポート:** 固定ポート 53
+**DNS ポート:** 固定ポート53
 
-- Registry Key = HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters\Plugins\Vnet\InfraServices\DnsProxyService"
-- ValueName「ポート」を =
-- ValueData 53 を =
+- レジストリキー = HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters\Plugins\Vnet\InfraServices\DnsProxyService "
+- ValueName = "Port"
+- ValueData = 53
 - ValueType = "Dword"
        
 
-**DNS プロキシ ポート:** 固定ポート 53
+**DNS プロキシポート:** 固定ポート53
 
-- Registry Key = HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters\Plugins\Vnet\InfraServices\DnsProxyService"
+- レジストリキー = HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters\Plugins\Vnet\InfraServices\DnsProxyService "
 - ValueName = "ProxyPort"
-- ValueData 53 を =
+- ValueData = 53
 - ValueType = "Dword"
         
-**DNS の IP アドレス:** テナントが Idn サービスを使用した場合に、ネットワーク インターフェイスで構成されている固定の IP アドレス
+**DNS IP:** テナントが Idn サービスを使用することを選択した場合に、ネットワークインターフェイスで構成された固定 IP アドレス
 
-- Registry Key = HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters\Plugins\Vnet\InfraServices\DnsProxyService"
-- ValueName"IP"を =
-- ValueData「169.254.169.254」を =
-- ValueType ="String"
+- レジストリキー = HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters\Plugins\Vnet\InfraServices\DnsProxyService "
+- ValueName = "IP"
+- ValueData = "169.254.169.254"
+- ValueType = "String"
 
         
-**Mac アドレス:** DNS サーバーのメディア アクセス制御アドレス
+**Mac アドレス:** DNS サーバーのメディア Access Control アドレス
 
-- Registry Key = HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters\Plugins\Vnet\InfraServices\DnsProxyService
+- レジストリキー = HKLM\SYSTEM\CurrentControlSet\Services\NcHostAgent\Parameters\Plugins\Vnet\InfraServices\DnsProxyService
 - ValueName = "MAC"
-- ValueData = “aa-bb-cc-aa-bb-cc”
-- ValueType ="String"
+- ValueData = "aa-bb-cc-bb-cc"
+- ValueType = "String"
 
-**IDN サーバーのアドレス:** コンマ区切りの Idn サーバーの一覧。
+**IDN サーバーアドレス:** Idn サーバーのコンマ区切りの一覧。
 
 - レジストリ キー: HKLM\SYSTEM\CurrentControlSet\Services\DNSProxy\Parameters
-- ValueName「フォワーダー」を =
-- ValueData「10.0.0.9」を =
-- ValueType ="String"
+- ValueName = "フォワーダー"
+- ValueData = "10.0.0.9"
+- ValueType = "String"
 
 
 
 >[!NOTE]
->これは、セクションからの抜粋**構成 ConfigureIDnsProxy** SDNExpress.ps1 でします。 詳細については、次を参照してください。[スクリプトを使用してソフトウェア定義ネットワーク インフラストラクチャをデプロイ](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)します。
+>これは、SDNExpress のセクション**構成**の抜粋です。 詳細については、「[スクリプトを使用したソフトウェア定義ネットワークインフラストラクチャの展開](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)」を参照してください。
 
-### <a name="step-4-restart-the-network-controller-host-agent-service"></a>手順 4:ネットワーク コント ローラー ホスト エージェント サービスを再起動します。
-次の Windows PowerShell コマンドを使用すると、ネットワーク コント ローラー ホスト エージェント サービスを再起動します。
+### <a name="step-4-restart-the-network-controller-host-agent-service"></a>手順 4:ネットワークコントローラーのホストエージェントサービスを再起動します
+次の Windows PowerShell コマンドを使用して、ネットワークコントローラーのホストエージェントサービスを再起動できます。
     
     Restart-Service nchostagent -Force
     
-詳細については、次を参照してください。 [Restart-service](https://technet.microsoft.com/library/hh849823.aspx)します。
+詳細については、「 [Restart-Service](https://technet.microsoft.com/library/hh849823.aspx)」を参照してください。
 
-### <a name="enable-firewall-rules-for-the-dns-proxy-service"></a>プロキシの DNS サービスのファイアウォール規則を有効にします。
-次の Windows PowerShell コマンドを使用して、VM と、Idn サーバーと通信するプロキシの例外を許可するファイアウォール ルールを作成することができます。
+### <a name="enable-firewall-rules-for-the-dns-proxy-service"></a>DNS プロキシサービスのファイアウォール規則を有効にする
+次の Windows PowerShell コマンドを使用して、プロキシが VM と Idn サーバーと通信するための例外を許可するファイアウォール規則を作成できます。
     
     Enable-NetFirewallRule -DisplayGroup 'DNS Proxy Firewall'
 
-詳細については、次を参照してください。 [Enable-netfirewallrule](https://technet.microsoft.com/library/jj554869.aspx)します。
+詳細については、「 [set-netfirewallrule](https://technet.microsoft.com/library/jj554869.aspx)」を参照してください。
     
-### <a name="validate-the-idns-service"></a>Idn サービスを検証します。
-Idn サービスを検証するには、サンプル テナント ワークロードをデプロイする必要があります。
+### <a name="validate-the-idns-service"></a>Idn サービスを検証する
+Idn サービスを検証するには、サンプルのテナントワークロードをデプロイする必要があります。
 
-詳細については、次を参照してください。 [VM とテナントの仮想ネットワークまたは VLAN への接続を作成](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm)です。
+詳細については、「 [VM の作成とテナント Virtual Network または VLAN への接続](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm)」を参照してください。
 
-テナント VM Idn サービスを使用する場合は、空白のままに、VM ネットワーク インターフェイスの DNS サーバーの構成と DHCP を使用するインターフェイスを許可する必要があります。 
+テナント VM で Idn サービスを使用する場合は、VM ネットワークインターフェイスの DNS サーバー構成を空白のままにして、インターフェイスで DHCP を使用できるようにする必要があります。 
 
-このようなネットワーク インターフェイスを使用して、VM が開始されると後、は、構成、Idn を使用する VM が自動的に受信し、VM がすぐに Idn サービスを使用して名前解決を実行するを開始します。
+このようなネットワークインターフェイスを持つ VM が開始されると、vm が Idn を使用できるように構成が自動的に受信され、VM は Idn サービスを使用して名前解決の実行を直ちに開始します。
 
-ネットワーク コント ローラーが、IP アドレスを持つ VM を提供し、Idn サーバーと VM の代わりに DNS 名の登録を実行、テナントのネットワーク インターフェイスの DNS サーバーおよび代替 DNS サーバーの情報は空のままで、Idn サービスを使用する VM を構成する場合. 
+ネットワークインターフェイスの DNS サーバーと代替 DNS サーバー情報を空白にして、Idn サービスを使用するようにテナント VM を構成すると、ネットワークコントローラーは VM に IP アドレスを提供し、Idn サーバーを使用して VM に代わって DNS 名の登録を実行します. 
 
-ネットワーク コント ローラーは、VM の名前解決を実行するには、VM と、必要な情報についても、Idn プロキシを通知します。 
+また、ネットワークコントローラーは、vm の名前解決を実行するために必要な詳細情報を Idn プロキシに伝えます。 
 
-VM を開始すると、DNS クエリをプロキシは、仮想ネットワークから Idn サービスへのクエリのフォワーダーとして機能します。 
+VM が DNS クエリを開始すると、プロキシは、Virtual Network から Idn サービスへのクエリのフォワーダーとして機能します。 
 
-DNS プロキシは、テナント VM のクエリが分離されるも確認します。 Idn サーバー クエリの権限がある場合、Idn サーバーは、権限のある応答を返します。 Idn サーバーにクエリの権限がない場合は、インターネットの名前を解決する DNS 再帰を実行します。
+また、DNS プロキシによって、テナント VM のクエリが分離されます。 Idn サーバーがクエリに対して権限を持っている場合、Idn サーバーは権限のある応答で応答します。 Idn サーバーがクエリに対して権限を持っていない場合、インターネット名を解決するために DNS 再帰が実行されます。
 
 >[!NOTE]
->この情報は、セクションに含める**構成 AttachToVirtualNetwork** SDNExpressTenant.ps1 で。 詳細については、次を参照してください。[スクリプトを使用してソフトウェア定義ネットワーク インフラストラクチャをデプロイ](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)します。
+>この情報は、SDNExpressTenant の「 **Configuration AttachToVirtualNetwork** 」セクションに記載されています。 詳細については、「[スクリプトを使用したソフトウェア定義ネットワークインフラストラクチャの展開](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)」を参照してください。
 

@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setaclflag
-description: Windows コマンド」のトピック**bitsadmin setaclflag** -アクセス制御リスト反映フラグを設定します。
+description: '**Bitsadmin setaclflag**の Windows コマンドのトピック-アクセス制御リストの伝達フラグを設定します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 89d825a4bc4512022fed98a3188537d3977fa3c3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fbdb12c29af7b4db8b25846d43ee1c93b2454ff2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867403"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380757"
 ---
 # <a name="bitsadmin-setaclflag"></a>bitsadmin setaclflag
 
-ジョブのリスト (ACL) の反映フラグ、アクセス制御を設定します。 フラグでは、ダウンロードされるファイルの所有者と ACL の情報を維持することを指定します。 たとえば、ファイルの所有者とグループを維持するために次のように設定します。 **フラグ** に`OG`します。
+ジョブのアクセス制御リスト (ACL) の伝達フラグを設定します。 フラグは、ファイルをダウンロードするときに所有者と ACL の情報を保持することを示します。 たとえば、ファイルで所有者とグループを管理するには、 **フラグ**を  to `OG` に設定します。
 
 ## <a name="syntax"></a>構文
 
@@ -35,19 +35,19 @@ bitsadmin /SetAclFlags <Job> <Flags>
 |パラメーター|説明|
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
-|フラグ|次のフラグの値の 1 つ以上を指定します。</br>-/O:ファイルの所有者情報をコピーします。</br>-G:ファイル グループ情報をコピーします。</br>-D:DACL 情報をファイルにコピーします。</br>-S: コピー SACL 情報ファイルを使用します。|
+|フラグ|次のフラグの値を1つ以上指定します。</br>I/O所有者情報をファイルと共にコピーします。</br>A-G-DL-Pグループ情報をファイルと共にコピーします。</br>ADACL 情報をファイルと共にコピーします。</br>-S: ファイルを使用して SACL 情報をコピーします。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-SetAclFlags スイッチは、Windows (SMB) 共有からのデータのダウンロードには、ジョブの所有者とアクセス制御リストの情報の管理に使用されます。
+SetAclFlags スイッチは、ジョブが Windows (SMB) 共有からデータをダウンロードするときに、所有者およびアクセス制御リストの情報を保持するために使用されます。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、設定、アクセス制御リストという名前のジョブのフラグと反映フラグ*myDownloadJob*ダウンロードしたファイルを所有者とグループの情報を維持します。
+次の例では、 *Mydownloadjob*という名前のジョブのアクセス制御リストの伝達フラグを設定して、ダウンロードされたファイルで所有者とグループの情報を管理します。
 ```
 C:\>bitsadmin /setaclflags myDownloadJob OG
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

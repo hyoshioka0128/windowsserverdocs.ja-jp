@@ -2,7 +2,7 @@
 title: RD セッション ホスト ファームの追加による RDS 展開のスケール アウト
 description: RDS 環境に 2 つ目の RD セッション ホストを追加します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 0e3852b4ea5f1080a3798c0806e5c87ca808c3be
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: da0dbd4332cd05d580c2b1f4dc5eb0734b36b13e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66446524"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403890"
 ---
 # <a name="scale-out-your-remote-desktop-services-deployment-by-adding-an-rd-session-host-farm"></a>RD セッション ホスト ファームの追加によるリモート デスクトップ サービス展開のスケール アウト
 
@@ -35,7 +35,7 @@ ms.locfileid: "66446524"
    3. 省略可能: 更新プログラムを自動的にダウンロードしてインストールしないように Windows Update を一時的に設定できます。 これは、RDSH サーバーの展開中に変更やシステムの再起動が起きないようにするのに役立ちます。 サーバー マネージャーで、 **[ローカル サーバー] > [Windows Update current setting] (Windows Update の現在の設定)** とクリックします。 **[詳細オプション] > [アップグレードを延期する]** とクリックします。 
 3. サーバーまたは VM をドメインに追加します。
    1. サーバー マネージャーで、 **[ローカル サーバー] > [Workgroup current setting] (ワークグループの現在の設定)** とクリックします。 
-   2. **[変更] > [ドメイン]** とクリックしてから、ドメイン名 (たとえば Contoso.com) を入力します。 
+   2. **[変更] > [ドメイン]** をクリックしてから、ドメイン名 (たとえば Contoso.com) を入力します。 
    3. ドメイン管理者の資格情報を入力します。 
    4. サーバーまたは VM を再起動します。
 4. ファームに新しい RD セッション ホストを追加します。
@@ -45,7 +45,7 @@ ms.locfileid: "66446524"
    1. リモート デスクトップ管理サービス (RDMS) を実行する仮想マシンのパブリック IP アドレスを作成します。 RDMS 仮想マシンは、一般に、RD 接続ブローカーのロールの最初のインスタンスを実行する仮想マシンとなります。  
        1. Azure portal で、 **[参照] > [リソース グループ]** とクリックし、デプロイのリソース グループをクリックしてから、RDMS 仮想マシンをクリックします (たとえば Contoso-Cb1)。  
        2. **[設定] > [ネットワーク インターフェイス]** とクリックして、対応するネットワーク インターフェイスをクリックします。   
-       3. **[設定] > [IP アドレス]** とクリックします。
+       3. **[設定] > [IP アドレス]** の順にクリックします。
        4. **[パブリック IP アドレス]** では、 **[有効]** を選択し、 **[IP アドレス]** をクリックします。   
        5. 使用したい既存のパブリック IP アドレスがある場合は、一覧からそれを選択します。 それ以外の場合は、 **[新規作成]** をクリックし、名前を入力したら、 **[OK]** 、 **[保存]** の順にクリックします。   
    2. RDMS にサインインします。

@@ -1,7 +1,7 @@
 ---
 title: HYPER-V での FreeBSD の実行に関するベスト プラクティス
 description: 仮想マシンでの FreeBSD の実行に関する推奨事項について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,12 +11,12 @@ ms.assetid: 0c66f1c8-2606-43a3-b4cc-166acaaf2d2a
 author: shirgall
 ms.author: kathydav
 ms.date: 01/09/2017
-ms.openlocfilehash: 598087411b35dde2e4a1cb606fae6a4602fe588e
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 1d284b38e1bdb642aa40ecbb8e82caa7712f7aad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544684"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365629"
 ---
 # <a name="best-practices-for-running-freebsd-on-hyper-v"></a>HYPER-V での FreeBSD の実行に関するベスト プラクティス
 
@@ -28,13 +28,13 @@ ms.locfileid: "68544684"
 
 共通アドレス冗長プロトコル (CARP) を使用すると、複数のホストが同じ IP アドレスと仮想ホスト ID (VHID) を共有して、1つ以上のサービスの高可用性を実現するのに役立ちます。 1つまたは複数のホストで障害が発生した場合、他のホストは透過的に処理されるため、ユーザーはサービスの障害に気付くことはありません。FreeBSD 10.2 で CARP を使用するには、 [freebsd ハンドブック](https://www.freebsd.org/doc/en/books/handbook/carp.html)に記載されている手順に従って、hyper-v マネージャーで次の操作を実行します。
 
-* 仮想マシンにネットワークアダプターがあり、仮想スイッチが割り当てられていることを確認します。 仮想マシンを選択し、[**アクション** > の**設定**] を選択します。
+* 仮想マシンにネットワークアダプターがあり、仮想スイッチが割り当てられていることを確認します。 仮想マシンを選択し、[**アクション** >  の**設定**] を選択します。
 
 ![ネットワークアダプターが選択されている仮想マシンの設定のスクリーンショット](media/Hyper-V_Settings_NetworkAdapter.png)
 
 * MAC アドレスのスプーフィングを有効にします。 そのためには、次の手順を実行します。
 
-   1. 仮想マシンを選択し、[**アクション** > の**設定**] を選択します。
+   1. 仮想マシンを選択し、[**アクション** >  の**設定**] を選択します。
 
    2. **[ネットワークアダプター]** を展開し、 **[高度な機能]** を選択します。
 

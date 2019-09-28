@@ -1,7 +1,7 @@
 ---
 title: Nano Server の PowerShell
 description: Nano Server 上の縮小された PowerShell 機能セットにおける相違点
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -11,12 +11,12 @@ ms.assetid: 9b25b939-1e2c-4bed-a8d3-2a8e8e46b53d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a19082121e2d859bc4694fd3f7332e9d0d0b3b9
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: f662f1f48e903fac69c85185222c08954c5994a0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63687652"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360258"
 ---
 # <a name="powershell-on-nano-server"></a>Nano Server の PowerShell
 

@@ -4,18 +4,18 @@ description: ''
 author: billmath
 manager: femila
 layout: LandingPage
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
 ms.assetid: c248b41f-0de3-4247-9a25-b4b08e50ebf0
 ms.topic: landing-page
 ms.author: billmath
 ms.localizationpriority: high
-ms.openlocfilehash: 161840d86cae6b688e3e7a877c7c44b17aefd432
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: c4e3589a8aecd01d06301b702cf5286a6d8d175d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63684203"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391148"
 ---
 # <a name="identity--access"></a>ID | アクセス
 

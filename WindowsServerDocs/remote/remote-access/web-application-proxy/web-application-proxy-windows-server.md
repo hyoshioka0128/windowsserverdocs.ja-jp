@@ -6,54 +6,54 @@ author: kgremban
 manager: femila
 ms.date: 07/13/2016
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: c4e4eb73b7d50c7618ad2c998ee484e660bcfef1
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 4f2827f02ec13d187cdf360637882c6c9d4b2441
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446767"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387975"
 ---
 # <a name="web-application-proxy-in-windows-server-2016"></a>Windows Server 2016 における Web アプリケーション プロキシ
 
 >適用先:Windows Server 2016
 
-**このコンテンツは、Web アプリケーション プロキシのオンプレミス バージョンに関連します。クラウドでオンプレミス アプリケーションに安全にアクセスを有効にするのを参照してください。、 [Azure AD アプリケーション プロキシのコンテンツ](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)します。**  
+@no__t-このコンテンツは、オンプレミスバージョンの Web アプリケーションプロキシに関連しています。クラウド経由でオンプレミスアプリケーションへのセキュリティで保護されたアクセスを有効にするには、 [Azure AD アプリケーションプロキシのコンテンツ](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)を参照してください。 **  
   
-このセクションの内容は、新機能と、Web アプリケーション プロキシの Windows Server 2016 での変更について説明します。 新機能とは、ここに記載されている変更は、大きな影響を及ぼすプレビューを使用する際に最も可能性の高いものです。  
+このセクションの内容では、Windows Server 2016 用の Web アプリケーションプロキシの新機能と変更された機能について説明します。 ここに記載されている新機能と変更点は、プレビューを操作するときに最も大きな影響を与える可能性の高いものです。  
   
-## <a name="web-application-proxy-new-features-in-windows-server-2016"></a>Windows Server 2016 で web アプリケーション プロキシの新機能
+## <a name="web-application-proxy-new-features-in-windows-server-2016"></a>Windows Server 2016 の Web アプリケーションプロキシの新機能
   
 - HTTP 基本アプリケーションの発行の事前認証  
   
-  HTTP 基本は、ActiveSync を含む、多くのプロトコルと、Exchange メールボックスのスマート フォンを含む、リッチ クライアントの接続に使用する承認プロトコルです。 Web アプリケーション プロキシは、従来のリダイレクトを使用して ActiveSync クライアントでサポートされていない AD FS と対話します。 この新しいバージョンの Web アプリケーション プロキシは、以外の要求を受信する HTTP アプリケーションを有効にすると、基本的な HTTP を使用してアプリを発行するサポートを提供します。 アプリケーションをフェデレーション サービスの証明書利用者信頼。  
+  HTTP Basic は、多数のプロトコル (ActiveSync など) によって使用される認証プロトコルで、スマートフォンなどのリッチクライアントを Exchange メールボックスに接続します。 従来、Web アプリケーションプロキシは、ActiveSync クライアントでサポートされていないリダイレクトを使用して AD FS とやり取りします。 この新しいバージョンの Web アプリケーションプロキシでは、http アプリがアプリケーションの要求されていない証明書利用者信頼をフェデレーションサービスに受信できるようにすることで、HTTP basic を使用してアプリを発行するためのサポートを提供します。  
   
-  HTTP の基本的な発行の詳細については、次を参照してください[AD FS 事前認証を使用してアプリケーションの発行。](Publishing-Applications-using-AD-FS-Preauthentication.md#publish-an-application-that-uses-http-basic)  
+  HTTP 基本発行の詳細については、「 [AD FS 事前認証を使用してアプリケーションを公開する](Publishing-Applications-using-AD-FS-Preauthentication.md#publish-an-application-that-uses-http-basic)」を参照してください。  
   
-- アプリケーションのワイルドカード ドメインの公開  
+- ワイルドカードによるアプリケーションのドメイン公開  
   
-  SharePoint 2013 などのシナリオをサポートするために、アプリケーションの外部 URL にワイルドカード https://*.sp-apps.contoso.com など、特定のドメイン内から複数のアプリケーションを発行するためにできるようになりました。 これは、SharePoint アプリの発行を簡略化されます。  
+  SharePoint 2013 のようなシナリオをサポートするために、アプリケーションの外部 URL にワイルドカードを含めることができるようになりました。これにより、 https://*. sp-アプリなど、特定のドメイン内から複数のアプリケーションを発行できます。 これにより、SharePoint アプリの発行が簡単になります。  
   
-- HTTP HTTPS へのリダイレクトから  
+- HTTP から HTTPS へのリダイレクト  
   
-  確認するために、ユーザーは、アプリにアクセスできる HTTPS URL を入力を怠ると、場合でも、Web アプリケーション プロキシは HTTP を HTTPS にリダイレクトするようになりましたサポートします。  
+  URL に HTTPS を入力しない場合でも、ユーザーがアプリにアクセスできるようにするために、Web アプリケーションプロキシで HTTP から HTTPS へのリダイレクトがサポートされるようになりました。  
   
-- HTTP の公開  
+- HTTP 発行  
   
-  パススルー事前認証を使用する HTTP アプリケーションを発行することは今すぐ  
+  パススルー事前認証を使用して HTTP アプリケーションを公開できるようになりました  
   
-- リモート デスクトップ ゲートウェイ アプリケーションの発行  
+- リモートデスクトップゲートウェイアプリの発行  
   
-  Web アプリケーション プロキシで RDG の詳細については、次を参照してください[SharePoint、Exchange および RDG によるアプリケーションの発行。](../web-application-proxy/Publishing-Applications-with-SharePoint,-Exchange-and-RDG.md)  
+  Web アプリケーションプロキシの RDG の詳細については、「 [SharePoint、Exchange、および RDG を使用したアプリケーションの発行](../web-application-proxy/Publishing-Applications-with-SharePoint,-Exchange-and-RDG.md)」を参照してください。  
   
-- トラブルシューティングに役立つ新しいデバッグ ログとサービスの向上のログに完全な監査証跡およびエラー処理の強化  
+- 詳細なトラブルシューティングと改善されたサービスログを記録し、完全な監査証跡を作成し、エラー処理を改善します。  
   
-  トラブルシューティングの詳細については、次を参照してください[Web アプリケーション プロキシのトラブルシューティング。](https://technet.microsoft.com/library/dn770156.aspx)  
+  トラブルシューティングの詳細については、「 [Web アプリケーションプロキシのトラブルシューティング](https://technet.microsoft.com/library/dn770156.aspx)」を参照してください。  
   
-- 管理者コンソール UI の機能強化  
+- 管理コンソール UI の機能強化  
   
-- バックエンド アプリケーションへのクライアント IP アドレスの伝達  
+- バックエンドアプリケーションへのクライアント IP アドレスの伝達  
   
 ## <a name="see-also"></a>関連項目  
   

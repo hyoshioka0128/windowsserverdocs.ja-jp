@@ -1,8 +1,8 @@
 ---
 title: netstat
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c06684eb73639e7480b5bad39d4d679739682800
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 54bd21b7e96275d329e45e825971d9236488c793
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437149"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373258"
 ---
 # <a name="netstat"></a>netstat
 
@@ -45,13 +45,13 @@ netstat [-a] [-e] [-n] [-o] [-p <Protocol>] [-r] [-s] [<Interval>]
 |  <Interval>   |                                                        選択した情報を再表示すべて *間隔* 秒です。 再表示を停止するには、CTRL + C キーを押します。 このパラメーターを省略すると、 **netstat** 選択されている情報を 1 回だけを出力します。                                                         |
 |      /?       |                                                                                                                                 コマンド プロンプトにヘルプを表示します。                                                                                                                                  |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 -   次のコマンドで使用されるパラメーターをハイフンで接頭辞必要があります ( **-** )、スラッシュではなく ( **/** )。
--   **netstat**次の統計情報を提供します。
+-   **netstat**は、次の統計情報を提供します。
     -   Proto プロトコル (TCP または UDP) の名前。
-    -   ローカル アドレス、ローカル コンピューターと使用するポート番号の IP アドレスです。 IP アドレスに対応するローカル コンピューターの名前とポートの名前が示すようにしない限り、 **-n** パラメーターを指定します。 ポートがまだ確立されていない場合、ポート番号は、アスタリスク (*) として表示されます。
-    -   外部アドレス、IP アドレスとポートの数、ソケットが接続されているリモート コンピューター。 しない限り、IP アドレスとポートに対応する名前のとおり、 **-n** パラメーターを指定します。 ポートがまだ確立されていない場合、ポート番号は、アスタリスク (*) として表示されます。
-    -   (状態)TCP 接続の状態を示します。 可能な状態は次のとおりです。詳細については、TCP 接続の状態の CLOSE_WAIT 閉じた確立 FIN_WAIT_1 FIN_WAIT_2 LAST_ACK リッスン SYN_RECEIVED SYN_SEND timeD_WAIT は、Rfc 793 を参照してください。
+    -   [ローカルアドレス] ローカルコンピューターの IP アドレスと使用されているポート番号。 IP アドレスに対応するローカル コンピューターの名前とポートの名前が示すようにしない限り、 **-n** パラメーターを指定します。 ポートがまだ確立されていない場合、ポート番号は、アスタリスク (*) として表示されます。
+    -   [外部アドレス] ソケットが接続されているリモートコンピューターの IP アドレスとポート番号。 しない限り、IP アドレスとポートに対応する名前のとおり、 **-n** パラメーターを指定します。 ポートがまだ確立されていない場合、ポート番号は、アスタリスク (*) として表示されます。
+    -   (状態)TCP 接続の状態を示します。 考えられる状態は次のとおりです。CLOSE_WAIT CLOSED 確立済み FIN_WAIT_1 FIN_WAIT_2 LAST_ACK listEN SYN_RECEIVED SYN_SEND timeD_WAIT TCP 接続の状態の詳細については、Rfc 793 を参照してください。
 -   このコマンドは、インターネット プロトコル (TCP/IP) プロトコルがネットワーク接続のネットワーク アダプターのプロパティでコンポーネントとしてインストールされている場合にのみ使用できます。
 
 ## <a name="BKMK_Examples"></a>例
@@ -72,5 +72,5 @@ netstat -o 5
 netstat -n -o
 ```
 
-## <a name="additional-references"></a>その他の参照
+## <a name="additional-references"></a>その他の参照情報
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)

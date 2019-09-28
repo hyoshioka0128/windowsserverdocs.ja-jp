@@ -1,8 +1,8 @@
 ---
 title: nslookup exit コマンド
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de7f508eaff92ad7b3e12aef8549a185bd2ba381
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 324ad4fc87c1387861f077ec2c991eaf3e2ae1ac
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437010"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373136"
 ---
 # <a name="nslookup-exit-command"></a>nslookup exit コマンド
 
 
 
-終了**nslookup**します。
+**Nslookup**を終了します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,7 +36,7 @@ Nslookup /exit
 
 | パラメーター | 説明 |
 |-----------|-------------|
-|   {0} のヘルプ   |     ?}      |
+|   {ヘルプ   |     ?}      |
 
 #### <a name="additional-references"></a>その他の参照情報
 

@@ -1,8 +1,8 @@
 ---
-title: サブコマンド/start-multicasttransmission
-description: 'Windows コマンド」のトピック * * *- '
+title: サブコマンド/Get-multicasttransmission
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d7e3e59a0907caf2769d5df00aeaf00589ab450d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: c0e05a1d625e560d85f0af6ae1d76ef8116ddfd8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842683"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383827"
 ---
 # <a name="subcommand-start-multicasttransmission"></a>サブコマンド:/start-multicasttransmission
 
@@ -30,7 +30,7 @@ ms.locfileid: "59842683"
 ```
 wdsutil /start-MulticastTransmissiomedia:<Image name> [/Server:<Server namemediatype:InstallmediaGroup:<Image group name>] [/Filename:<File name>]
 ```
-**Windows Server 2008 R2**ブート イメージ。
+**Windows Server 2008 R2**ブートイメージ:
 ```
 wdsutil [Options] /start-MulticastTransmissiomedia:<Image name>
         [/Server:<Server name>]
@@ -38,7 +38,7 @@ wdsutil [Options] /start-MulticastTransmissiomedia:<Image name>
         /Architecture:{x86 | ia64 | x64}
         [/Filename:<File name>]
 ```
-インストール イメージ。
+インストールイメージの場合:
 ```
 wdsutil [Options] /start-MulticastTransmissiomedia:<Image name>
         [/Server:<Server name>]
@@ -49,7 +49,7 @@ wdsutil [Options] /start-MulticastTransmissiomedia:<Image name>
 ## <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-メディア:<Image name>|イメージの名前を指定します。|
+メディア: <Image name>|イメージの名前を指定します。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
 メディアの種類: {インストール&#124;ブート}|イメージの種類を指定します。 このオプションに設定する必要があります **インストール** Windows Server 2008 用です。|
 |/アーキテクチャ: {x86 &#124; ia64 &#124; x64}|転送の開始に関連付けられているブート イメージのアーキテクチャです。 ブート イメージのイメージの同じ名前のさまざまなアーキテクチャに行うことがあるために、正しい転送が使用されるようにするアーキテクチャを指定してください。|
@@ -67,7 +67,7 @@ wdsutil /start-MulticastTransmission /Server:MyWDSServemedia:"Vista with Officem
 wdsutil /start-MulticastTransmission /Server:MyWDSServemedia:"X64 Boot Imagemediatype:Boot /Architecture:x64
 /Filename:boot.wim\n\
 ```
-#### <a name="additional-references"></a>その他の参照
+#### <a name="additional-references"></a>その他の参照情報
 [コマンドライン構文のポイント](command-line-syntax-key.md)
 [get AllMulticastTransmissions コマンドを使用して](using-the-get-allmulticasttransmissions-command.md)
 [/get-multicasttransmission コマンドを使用して](using-the-get-multicasttransmission-command.md)

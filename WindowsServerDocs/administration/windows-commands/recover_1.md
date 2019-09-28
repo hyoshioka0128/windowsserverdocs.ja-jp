@@ -1,8 +1,8 @@
 ---
 title: 復元 (recover)
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 261bfd79d74323ad324246e21b84a5eb798ebcdf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a83bb7502145cc09116241ea255e31b5f9981791
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867183"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384742"
 ---
 # <a name="recover"></a>復元 (recover)
 
 
 
-ディスク グループのすべてのディスクの状態を更新、グループでは無効なディスク、ディスクの復旧を試みるおよびミラー ボリュームや raid-5 ボリューム データは古いデータを再同期化します。
+ディスクグループ内のすべてのディスクの状態を更新し、無効なディスクグループのディスクを回復します。また、古いデータを保持しているミラーボリュームと RAID-5 ボリュームを再同期します。
 
 > [!IMPORTANT]
-> この DiskPart コマンドは、Windows Vista のエディションでご利用いただけません。
+> この DiskPart コマンドは、Windows Vista のどのエディションでも使用できません。
 
 ## <a name="syntax"></a>構文
 
@@ -39,9 +39,9 @@ recover [noerr]
 
 |パラメーター|説明|
 |---------|-----------|
-|noerr|スクリプト専用です。 エラーが発生すると、DiskPart は、エラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
+|noerr|スクリプトの場合のみ。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   このコマンドは、ディスク グループ上で動作します。
 -   このコマンドは、ダイナミック ディスクのグループにのみ適用されます。 ベーシック ディスクを使用してグループでは、このコマンドを使用する場合は、エラーは返されませんが、アクションは実行されません。
@@ -57,5 +57,5 @@ recover
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
 

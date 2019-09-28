@@ -2,7 +2,7 @@
 title: ユーザー アクセス ログの管理
 description: ユーザーアクセスログを管理する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: manage-user-access-logging
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c3a172f37d491cb37d897c586312107fe62a4c55
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b209cdb4763d4f30478725aa1ba47f399e9a729f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866235"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382845"
 ---
 # <a name="manage-user-access-logging"></a>ユーザー アクセス ログの管理
 
@@ -198,7 +198,7 @@ UAL は、最大2年分の履歴を保持します。 サービスの実行中�
 3.  レジストリ値を追加します。**HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\AutoLogger\Sum\PollingInterval (REG_DWORD)** 。  
   
     > [!WARNING]  
-    > レジストリを間違って編集すると、システムが壊れる可能性があります。 レジストリを変更する前に、コンピューター上のすべての重要なデータのバックアップを作成してください。  
+    > レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリを変更する前に、コンピューター上のすべての重要なデータのバックアップを作成してください。  
   
     次の例では、2 分間の間隔を追加する方法を示します (長期間実行中の状態は推奨されません)。**REG ADD HKLM\System\CurrentControlSet\Control\WMI\\AutoLogger\Sum/v PollingInterval/t REG\_DWORD/d 12万/f**  
   

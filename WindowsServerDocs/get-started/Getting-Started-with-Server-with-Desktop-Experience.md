@@ -2,7 +2,7 @@
 title: デスクトップ エクスペリエンス搭載サーバーのインストール
 description: 'デスクトップ エクスペリエンス搭載サーバー インストールを入手してインストールする方法について説明します。 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.date: 01/18/2017
@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: cf67a1c9675191936a6150bb950c59e6f99b54ad
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 2d92ae9e0013d622c1e0a6b8b6a1662dc82360f2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810694"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391789"
 ---
 # <a name="install-server-with-desktop-experience"></a>デスクトップ エクスペリエンス搭載サーバーのインストール
 > 適用先:Windows Server 2016

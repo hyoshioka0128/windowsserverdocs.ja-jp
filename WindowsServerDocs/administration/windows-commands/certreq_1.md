@@ -2,7 +2,7 @@
 title: certreq
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 19b4750b627a86a724b2a0f58ed7f9bde5ea1613
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 3098cb12379493a82c77412b2328f5312afb2c0c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867110"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379676"
 ---
 # <a name="certreq"></a>certreq
 
@@ -68,7 +68,7 @@ Certreq を使用して、証明機関 (CA) からの証明書を要求したり
 
 次の表では、コマンドライン構文を示すために使用される表記法について説明します。
 
-|Notation|説明|
+|表し|説明|
 |--------|-----------|
 |角かっこまたは中かっこを含まないテキスト|表示されるように入力する必要がある項目|
 |\<山かっこ内のテキスト >|値を指定する必要があるプレースホルダー|
@@ -156,7 +156,7 @@ Subject = "CN=W2K8-BO-DC.contoso2.com"
 |ProviderName|プロバイダー名は、CSP の表示名です。|使用している CSP のプロバイダー名がわからない場合は、コマンドラインから certutil – csplist を実行します。 このコマンドは、ローカルシステムで使用可能なすべての Csp の名前を表示します。|ProviderName = "Microsoft RSA SChannel Cryptographic Provider"|
 |ProviderType|プロバイダーの種類は、"RSA Full" などの特定のアルゴリズム機能に基づいて特定のプロバイダーを選択するために使用されます。|使用している CSP のプロバイダーの種類がわからない場合は、コマンドラインプロンプトから certutil – csplist を実行します。 このコマンドは、ローカルシステムで使用可能なすべての Csp のプロバイダーの種類を表示します。|ProviderType = 1|
 |RenewalCert|証明書の要求が生成されたシステム上に存在する証明書を更新する必要がある場合は、その証明書のハッシュをこのキーの値として指定する必要があります。|証明書要求が作成されたコンピューターで使用可能な証明書の証明書ハッシュ。 証明書のハッシュがわからない場合は、証明書 MMC スナップインを使用して、更新する必要がある証明書を確認します。 証明書のプロパティを開き、証明書の "拇印" 属性を確認します。 証明書の更新には、PKCS # 7 または CMC 要求の形式が必要です。|RenewalCert = 4EDF274BD2919C6E9EC6A522F0F3B153E9B1582D|
-|RequesterName</br>注:これにより、別のユーザー要求に代わって要求が登録されます。また、登録エージェント証明書を使用して要求に署名する必要があります。これを行わないと、CA は要求を拒否します。 -Cert オプションを使用して、登録エージェント証明書を指定します。|RequestType が PKCS # 7 または CMC に設定されている場合、証明書の要求に対して要求者名を指定できます。 RequestType が PKCS # 10 に設定されている場合、このキーは無視されます。 Requestername は、要求の一部としてのみ設定できます。 保留中の要求では Requestername を操作できません。|\|Requestername = "Contoso\BSmith"|
+|RequesterName</br>メモ:これにより、別のユーザー要求に代わって要求が登録されます。また、登録エージェント証明書を使用して要求に署名する必要があります。これを行わないと、CA は要求を拒否します。 -Cert オプションを使用して、登録エージェント証明書を指定します。|RequestType が PKCS # 7 または CMC に設定されている場合、証明書の要求に対して要求者名を指定できます。 RequestType が PKCS # 10 に設定されている場合、このキーは無視されます。 Requestername は、要求の一部としてのみ設定できます。 保留中の要求では Requestername を操作できません。|\|Requestername = "Contoso\BSmith"|
 |RequestType|証明書要求を生成して送信するために使用される標準を決定します。|PKCS10--1</br>PKCS7--2</br>CMC--3</br>Cert--4</br>SCEP--fd00 (64768)</br>ヒント:このオプションは、自己署名または自己発行の証明書を示します。 要求を生成するのではなく、新しい証明書を作成してから、証明書をインストールします。"自己署名" は既定値です。– Cert オプションを使用して署名証明書を指定し、自己署名されていない自己発行の証明書を作成します。|RequestType = CMC|
 |SecurityDescriptor</br>ヒント:これは、コンピューターコンテキストのスマートカード以外のキーにのみ関連します。|セキュリティ保護可能なオブジェクトに関連付けられているセキュリティ情報を格納します。 ほとんどのセキュリティ保護可能なオブジェクトでは、オブジェクトを作成する関数呼び出しでオブジェクトのセキュリティ記述子を指定できます。|[セキュリティ記述子定義言語](https://msdn.microsoft.com/library/aa379567(v=vs.85).aspx)に基づく文字列。|SecurityDescriptor = "d: P (A;;GA、;、SY) (A;;GA、;、BA) "|
 |AlternateSignatureAlgorithm|PKCS # 10 要求または証明書署名の署名アルゴリズムオブジェクト識別子 (OID) が不連続であるか結合されているかを示すブール値を指定して取得します。|true、false|AlternateSignatureAlgorithm = false</br>ヒント:RSA 署名の場合、false は Pkcs1 v 1.5 を示します。 True は、version 2.1 の署名を示します。|
@@ -166,8 +166,8 @@ Subject = "CN=W2K8-BO-DC.contoso2.com"
 |KeyProtection|秘密キーを使用する前に保護する方法を示す値を指定します。|XCN_NCRYPT_UI_NO_PROTCTION_FLAG--0</br>XCN_NCRYPT_UI_PROTECT_KEY_FLAG--1</br>XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG--2|KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG|
 |SuppressDefaults|既定の拡張機能と属性が要求に含まれるかどうかを示すブール値を指定します。 既定値は、オブジェクト識別子 (Oid) によって表されます。|true、false|SuppressDefaults = true|
 |FriendlyName|新しい証明書のフレンドリ名。|テキスト|FriendlyName = "Server1"|
-|ValidityPeriodUnits</br>注:これは、要求の種類が cert の場合にのみ使用されます。|ValidityPeriod で使用する単位の数を指定します。|数値|ValidityPeriodUnits = 3|
-|ValidityPeriod</br>注:これは、要求の種類が cert の場合にのみ使用されます。|VValidityPeriod は米国英語の複数形の期間である必要があります。|年、月、週、日、時間、分、秒|ValidityPeriod = 年|
+|ValidityPeriodUnits</br>メモ:これは、要求の種類が cert の場合にのみ使用されます。|ValidityPeriod で使用する単位の数を指定します。|数値|ValidityPeriodUnits = 3|
+|ValidityPeriod</br>メモ:これは、要求の種類が cert の場合にのみ使用されます。|VValidityPeriod は米国英語の複数形の期間である必要があります。|年、月、週、日、時間、分、秒|ValidityPeriod = 年|
 
 [コンテンツ](#BKMK_Contents)に戻る
 
