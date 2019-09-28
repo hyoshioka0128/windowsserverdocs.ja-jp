@@ -1,8 +1,8 @@
 ---
-title: サブコマンド停止 TransportServer
-description: 停止 TransportServer の Windows コマンド」のトピック
+title: サブコマンドの停止 TransportServer
+description: Stop TransportServer の Windows コマンドに関するトピック
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8f7410a8720337e509325b99863446bd8d19eb26
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2a2444328a426429c2dce5ceee3272cf1dc814cc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853453"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370716"
 ---
 # <a name="subcommand-stop-transportserver"></a>サブコマンド: 停止 TransportServer
 
@@ -39,7 +39,7 @@ wdsutil [Options] /Stop-TransportServer [/Server:<Server name>]
 wdsutil /Stop-TransportServer
 wdsutil /verbose /Stop-TransportServer /Server:MyWDSServer
 ```
-#### <a name="additional-references"></a>その他の参照
+#### <a name="additional-references"></a>その他の参照情報
 [コマンドライン構文のポイント](command-line-syntax-key.md)
 [TransportServer 無効にするコマンドを使用して](using-the-disable-transportserver-command.md)
 [TransportServer 有効にするコマンドを使用して](using-the-enable-transportserver-command.md)

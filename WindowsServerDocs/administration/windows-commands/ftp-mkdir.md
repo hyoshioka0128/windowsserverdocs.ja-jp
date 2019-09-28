@@ -1,8 +1,8 @@
 ---
 title: ftp mkdir
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a03bb9766ffe62a80e8661bf8ce2a8eea2ce536b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 900548cbca67c53887d2d46b4e05612ed00a1660
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438558"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376243"
 ---
 # <a name="ftp-mkdir"></a>ftp: mkdir
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモート コンピューター上のディレクトリを作成します。   
+リモートコンピューター上にディレクトリを作成します。   
 ## <a name="syntax"></a>構文  
 ```  
 mkdir <directory>  
@@ -36,9 +36,9 @@ mkdir <directory>
 | <directory> | 新しいリモート ディレクトリの名前を指定します。 |
 
 ## <a name="BKMK_Examples"></a>例  
-というディレクトリを作成**dir1**リモート コンピューター。  
+リモートコンピューター上に**dir1**という名前のディレクトリを作成します。  
 ```  
 mkdir dir1  
 ```  
-## <a name="additional-references"></a>その他の参照  
+## <a name="additional-references"></a>その他の参照情報  
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)  

@@ -2,18 +2,18 @@
 title: ディスクの管理の概要
 description: ディスクの管理は、新しいドライブの初期化、ボリュームの拡張、パーティションの圧縮、およびドライブ文字の変更などの記憶域に関する高度なタスクを実行できる Windows のシステム ユーティリティです。
 ms.date: 06/07/2019
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: a3885ae6b09ad431fd1ea5e4c593e02c7bb274d9
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 46ed1256ed9039311939f9de12ea46416443be9c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66812550"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402144"
 ---
 # <a name="overview-of-disk-management"></a>ディスクの管理の概要
 
@@ -29,7 +29,7 @@ ms.locfileid: "66812550"
 ![3 つのパーティションがある一般的なドライブを表示するディスクの管理 - 499 MB のシステム パーティション、Windows 用のサイズの大きい C ドライブ、およびもう 1 つの 499 MB のリカバリ用パーティション](media/disk-management.png)
 
 > [!TIP]
->  次の手順の実行時にエラーが発生したり、うまくいかない場合は、「[ディスクの管理のトラブルシューティング](troubleshooting-disk-management.md)」のトピックを参照してください。 解決しなくても、慌てる必要はありません。 [Microsoft コミュニティ](https://answers.microsoft.com/en-us/windows) サイトに大量の情報があります。[[ファイル、フォルダー、オンライン ストレージ]](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639) セクションを検索してみてください。それでもヘルプが必要な場合は、そこで質問を投稿してください。Microsoft またはコミュニティのその他のメンバーがヘルプを試みます。 これらのトピックを改善する方法についてご意見ご要望などがございましたら、ぜひお知らせください。 *[このページはお役に立ちましたか?]* のプロンプトに答えて、そちらか、このトピックの下部にあるパブリック コメントのスレッドにコメントを残してください。
+>  次の手順の実行時にエラーが発生したり、うまくいかない場合は、「[ディスクの管理のトラブルシューティング](troubleshooting-disk-management.md)」のトピックを参照してください。 解決しなくても、慌てる必要はありません。 [Microsoft コミュニティ](https://answers.microsoft.com/en-us/windows) サイトに大量の情報があります。[[ファイル、フォルダー、オンライン ストレージ]](https://answers.microsoft.com/en-us/windows/forum/windows_10-files?sort=lastreplydate&dir=desc&tab=All&status=all&mod=&modAge=&advFil=&postedAfter=&postedBefore=&threadType=all&isFilterExpanded=true&tm=1514405359639) セクションを検索してみてください。それでもヘルプが必要な場合は、そこで質問を投稿してください。Microsoft またはコミュニティのその他のメンバーがヘルプを試みます。 これらのトピックを改善する方法についてフィードバックがございましたら、ぜひお知らせください。 *[このページはお役に立ちましたか?]* のプロンプトに答えて、そちらか、このトピックの下部にあるパブリック コメントのスレッドにコメントを残してください。
 
 実行する必要があるが Windows の別のツールを使用するいくつかの共通タスクを以下に示します。
 

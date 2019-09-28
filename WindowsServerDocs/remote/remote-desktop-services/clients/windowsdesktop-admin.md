@@ -2,7 +2,7 @@
 title: 管理者のための Windows デスクトップ クライアント
 description: Windows デスクトップ クライアントの情報は、主に管理者に役立ちます。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ manager: daveba
 ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 86cadefb9733ca7293c4fd99c270b35a41799e1a
-ms.sourcegitcommit: 081661f50d6dafb77180149956a02e679270c710
+ms.openlocfilehash: b3fc8be8ad53213c41c6683d3cfc9233198d50e3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71038710"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404106"
 ---
 # <a name="windows-desktop-client-for-admins"></a>管理者のための Windows デスクトップ クライアント
 

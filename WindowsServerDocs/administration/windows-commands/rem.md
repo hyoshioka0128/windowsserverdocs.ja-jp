@@ -1,8 +1,8 @@
 ---
 title: rem
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 85c8a69bf21a386cd36e45bbca6dacd35aef2509
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2da0b6e42858582c1485659f3bf8f59e8e2ed97e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847003"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384566"
 ---
 # <a name="rem"></a>rem
 
@@ -38,13 +38,13 @@ rem [<Comment>]
 
 |パラメーター|説明|
 |---------|-----------|
-|\<コメント >|コメントとして追加する文字の文字列を指定します。|
+|\<Comment >|コメントとして追加する文字の文字列を指定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   **Rem** コマンドは、画面にコメントを表示できません。 使用する必要があります、 **にエコー** コマンド、バッチ ファイルまたは構成を実行します。画面にコメントを表示する SYS ファイルです。
--   リダイレクト文字を使用することはできません (**<** または **>**) またはパイプ (**|**) バッチ ファイルのコメントにします。
+-   リダイレクト文字を使用することはできません ( **<** または **>** ) またはパイプ ( **|** ) バッチ ファイルのコメントにします。
 -   使用できますが **rem** 、コメントの上下の間隔をバッチ ファイルに追加することがなく、空白行を使用することもできます。 バッチ ファイルが処理されるときに、空白行は無視されます。
 
 ## <a name="BKMK_examples"></a>例
@@ -67,4 +67,4 @@ prompt $p$g
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

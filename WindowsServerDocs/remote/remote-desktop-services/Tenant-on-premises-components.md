@@ -2,7 +2,7 @@
 title: テナント オンプレミス コンポーネント
 description: RDS 展開内のオンプレミス コンポーネントについて説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: b3eebb38-a835-4fa6-9e41-1966014bf2cb
 author: lizap
 manager: dongill
-ms.openlocfilehash: 191d2247af5d5f63a203415af13f8d3370b3c6f6
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: a9ff1382d2a2e7e2acf0247fa2ba4ae8e9642162
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546473"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387843"
 ---
 # <a name="tenant-on-premises-components"></a>テナント オンプレミス コンポーネント
 

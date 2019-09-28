@@ -1,7 +1,7 @@
 ---
 title: DNS とファイアウォールの設定を構成する
 description: このトピックでは、Windows Server 2016 で Always On VPN を展開するための詳細な手順について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: d8cf3bae-45bf-4ffa-9205-290d555c59da
@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.date: 06/11/2018
-ms.openlocfilehash: b1efa918971208bb9819de189de7298b4de144a5
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 326f1e8d52dc34ad433e8cc3bd4c4e84508026b7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871322"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388079"
 ---
 # <a name="step-5-configure-dns-and-firewall-settings"></a>手順 5. DNS とファイアウォールの設定を構成する
 

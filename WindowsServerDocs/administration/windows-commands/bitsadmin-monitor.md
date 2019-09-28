@@ -1,8 +1,8 @@
 ---
 title: bitsadmin monitor
-description: Windows コマンド」のトピック**bitsadmin モニター** -現在のユーザーが所有する転送キュー内のジョブを監視します。
+description: '**Bitsadmin monitor**の Windows コマンドトピックでは、現在のユーザーが所有している転送キュー内のジョブを監視します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2c4620d5c8e46cb8bfcb6b9c83261d57781abea5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fe4963349c7e17fc77500b5adfceafc48a20ac5f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814593"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381222"
 ---
 # <a name="bitsadmin-monitor"></a>bitsadmin monitor
 
 
 
-現在のユーザーが所有する転送キュー内のジョブを監視します。
+現在のユーザーが所有している転送キュー内のジョブを監視します。
 
 ## <a name="syntax"></a>構文
 
@@ -37,21 +37,21 @@ bitsadmin /Monitor [/allusers] [/refresh <Seconds>]
 |パラメーター|説明|
 |---------|-----------|
 |Allusers|省略可能-すべてのユーザーのジョブを監視します。|
-|Refresh|省略可能: で指定された間隔でデータを更新*秒*します。 既定の更新間隔は、5 秒です。|
+|Refresh|省略可能:*秒*単位で指定された間隔でデータを更新します。 既定の更新間隔は5秒です。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-使用する管理者特権が必要、 **Allusers**パラメーター。
+**Allusers**パラメーターを使用するには、管理者特権が必要です。
 
-CTRL + C を使用して、更新を停止します。
+更新を停止するには、CTRL + C キーを使用します。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、現在のユーザーが所有するジョブの転送キューを監視し、60 秒ごとの情報を更新します。
+次の例では、現在のユーザーが所有しているジョブの転送キューを監視し、60秒ごとに情報を更新します。
 ```
 C:\>bitsadmin /Monitor /refesh 60
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

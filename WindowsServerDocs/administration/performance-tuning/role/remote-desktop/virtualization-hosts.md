@@ -1,18 +1,18 @@
 ---
 title: リモートデスクトップ仮想化ホストのパフォーマンスチューニング
 description: リモートデスクトップ仮想化ホストのパフォーマンスチューニング
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 24e3243d4e9791c8941729d396e0a96cd8b11a7d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 6aad1560fa9f9429af94426487d9a33369137ded
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866441"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370029"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>リモートデスクトップ仮想化ホストのパフォーマンスチューニング
 
@@ -129,7 +129,7 @@ RemoteFX サーバーでは、次のパフォーマンスカウンターを使�
 
 -   **VRAM使用されて**いない専用のビデオメモリの GPU 容量あたりの使用可能な MB
 
--   **VRAMRemoteFX 用に予約**されている専用のビデオメモリの GPU 比率あたりの予約%
+-   **VRAMGPU あたりの予約% @ no__t-RemoteFX 用に予約されている専用のビデオメモリの 0%
 
 **RemoteFX ソフトウェア**
 

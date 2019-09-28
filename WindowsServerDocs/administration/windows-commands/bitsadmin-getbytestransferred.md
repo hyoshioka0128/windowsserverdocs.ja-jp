@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getbytestransferred
-description: Windows コマンド」のトピック**bitsadmin getbytestransferred** -指定したジョブの転送されたバイト数を取得します。
+description: '**Bitsadmin getbytestransferred**の Windows コマンドトピックでは、指定されたジョブで転送されたバイト数を取得します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cce2c051af169385c43fdff4efdeff46d8422926
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f690fa55a4ac5ae31223794c5e7eabc0c982c2ce
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814613"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381733"
 ---
 # <a name="bitsadmin-getbytestransferred"></a>bitsadmin getbytestransferred
 
 
 
-指定したジョブの転送されたバイト数を取得します。
+指定したジョブに対して転送されたバイト数を取得します。
 
 ## <a name="syntax"></a>構文
 
@@ -40,11 +40,11 @@ bitsadmin /GetBytesTransferred <Job>
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブの転送されたバイト数を取得する*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブで転送されたバイト数を取得します。
 ```
 C:\>bitsadmin /GetBytesTransferred myDownloadJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,8 +1,8 @@
 ---
-title: auditpol 一覧
-description: Windows コマンド」のトピック**auditpol 一覧**- リスト監査ポリシー カテゴリやサブカテゴリ、またはユーザーごとの監査ポリシーを対象のユーザーがリストを定義します。
+title: auditpol リスト
+description: '**Auditpol リスト**の Windows コマンドのトピック-監査ポリシーのカテゴリまたはサブカテゴリを一覧表示します。または、ユーザーごとの監査ポリシーが定義されているユーザーの一覧を表示します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08f524ef0aacd731f709ce7a2e17b3d831da1e5b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 27a89ae18838989b4f2df27d777c1c35249b8991
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858583"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382458"
 ---
-# <a name="auditpol-list"></a>auditpol 一覧
+# <a name="auditpol-list"></a>auditpol リスト
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リストの監査ポリシー カテゴリやサブカテゴリ、または一覧のユーザーがユーザーごとの監査ポリシーが定義されます。
+監査ポリシーのカテゴリまたはサブカテゴリの一覧を表示します。または、ユーザーごとの監査ポリシーが定義されているユーザーの一覧を表示します。
 
 ## <a name="syntax"></a>構文
 ```
@@ -35,30 +35,30 @@ auditpol /list
 ## <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-|/user|ユーザーごとの監査ポリシーが定義されたすべてのユーザーを取得します。 /V パラメーターを併用する場合も、ユーザーのセキュリティ識別子 (SID) が表示されます。|
-|/category|システムで認識されるカテゴリの名前が表示されます。 /V パラメーターを併用する場合も、カテゴリのグローバル一意識別子 (GUID) が表示されます。|
-|/subcategory|サブカテゴリと、関連付けられている GUID の名前が表示されます。|
-|/v|カテゴリまたはサブカテゴリを GUID を表示または/user を併用すると、各ユーザーの SID を表示します。|
-|/r|コンマ区切り値 (CSV) 形式でレポートをレポートとして出力が表示されます。|
+|/user|ユーザーごとの監査ポリシーが定義されているすべてのユーザーを取得します。 /V パラメーターと共に使用すると、ユーザーのセキュリティ識別子 (SID) も表示されます。|
+|/category|システムによって認識されるカテゴリの名前を表示します。 /V パラメーターと共に使用すると、カテゴリのグローバル一意識別子 (GUID) も表示されます。|
+|/subcategory|サブカテゴリの名前とそれに関連付けられている GUID が表示されます。|
+|/v|カテゴリまたはサブカテゴリの GUID を表示します。または、/user と共に使用すると、各ユーザーの SID が表示されます。|
+|/r|出力をコンマ区切り値 (CSV) 形式でレポートとして表示します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
-## <a name="remarks"></a>注釈
-ユーザーごとのポリシーのすべての一覧操作では、セキュリティ記述子の設定、そのオブジェクトに対する権限を読み取りが必要です。 所有することによって、リスト操作を実行することも、**監査とセキュリティ ログの管理**(SeSecurityPrivilege) ユーザー権利。 ただし、この権限は、リスト操作を実行する必要はありません、追加のアクセスを許可します。
+## <a name="remarks"></a>コメント
+ユーザーごとのポリシーのすべてのリスト操作について、セキュリティ記述子で設定されたそのオブジェクトに対する読み取りアクセス許可を持っている必要があります。 また、"**監査とセキュリティログの管理**" (SeSecurityPrivilege) ユーザー権利を使用して、リスト操作を実行することもできます。 ただし、この権限により、リスト操作を実行するために必要な追加のアクセス権が許可されます。
 ## <a name="BKMK_examples"></a>例
-定義された監査ポリシーが適用されているすべてのユーザーを一覧表示するには、次のように入力します。
+監査ポリシーが定義されているすべてのユーザーを一覧表示するには、次のように入力します。
 ```
 auditpol /list /user
 ```
-定義された監査ポリシーと関連付けられている SID を持つすべてのユーザーを一覧表示するには、次のように入力します。
+定義済みの監査ポリシーとそれに関連付けられている SID を持つすべてのユーザーを一覧表示するには、次のように入力します。
 ```
 auditpol /list /user /v
 ```
-すべてのカテゴリとサブカテゴリ レポート形式で一覧表示、次のように入力します。
+すべてのカテゴリとサブカテゴリをレポート形式で一覧表示するには、次のように入力します。
 ```
 auditpol /list /subcategory:* /r
 ```
-詳細な追跡および DS アクセスのカテゴリのサブカテゴリの一覧を表示、次のように入力します。
+詳細な追跡カテゴリと DS アクセスカテゴリのサブカテゴリの一覧を表示するには、次のように入力します。
 ```
 auditpol /list /subcategory:"detailed Tracking","DS Access"
 ```
-#### <a name="additional-references"></a>その他の参照
-[コマンドライン構文キー](command-line-syntax-key.md)
+#### <a name="additional-references"></a>その他の参照情報
+[コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getnotifyinterface
-description: Windows コマンド」のトピック**bitsadmin getnotifyinterface** -別のプログラムに指定したジョブの COM のコールバック インターフェイスが登録されているかどうかを決定します。
+description: '**Bitsadmin getnotifyinterface**の Windows コマンドトピック-別のプログラムによって、指定されたジョブの COM コールバックインターフェイスが登録されているかどうかを判断します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8316721a20cc477f9e8e15fc57b5d1c861da3ff4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 826e13cf8a3e54935ceb5a72ff82647cacfc3be5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868043"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381467"
 ---
 # <a name="bitsadmin-getnotifyinterface"></a>bitsadmin getnotifyinterface
 
-別のプログラムに指定したジョブの COM コールバック インターフェイス (通知インターフェイス) が登録されているかどうかを判断します。
+別のプログラムによって、指定されたジョブの COM コールバックインターフェイス (notify インターフェイス) が登録されているかどうかを判断します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,20 +36,20 @@ bitsadmin /GetNotifyInterface <Job>
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-登録または登録解除が表示されます。
+登録または登録解除されたを表示します。
 
 > [!NOTE]
-> コールバック インターフェイスが登録されているプログラムを特定することはできません。
+> コールバックインターフェイスを登録したプログラムを特定することはできません。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブの通知インターフェイスを取得する*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブの notify インターフェイスを取得します。
 ```
 C:\>bitsadmin /GetNotifyInterface myDownloadJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

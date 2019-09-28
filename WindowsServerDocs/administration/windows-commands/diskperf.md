@@ -1,8 +1,8 @@
 ---
 title: diskperf
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a99f18b56c9295e902a3c89e2e89b36c9c1b6c89
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 829f0284d761e6a5134011fa1dff99646d55fc13
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852583"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377810"
 ---
 # <a name="diskperf"></a>diskperf
 
 
 
-Windows 2000 では、物理および論理ディスクのパフォーマンス カウンターは既定で有効にできません。
+Windows 2000 では、物理ディスクと論理ディスクのパフォーマンスカウンターは既定では有効になっていません。
 
-**Diskperf**リモートを有効にまたはを実行するコンピューターの論理または物理ディスクのパフォーマンス カウンターを無効にするために使用できるように、Windows XP、Windows Server 2003、Windows Server 2008、Windows Vista、Windows Server 2008 R2、および Windows 7 に含めるはWindows 2000 です。
+**Diskperf**は、windows XP、windows server 2003、windows server 2008、windows Vista、windows Server 2008 R2、および windows 7 に含まれています。これにより、を実行しているコンピューターで物理ディスクまたは論理ディスクのパフォーマンスカウンターをリモートで有効または無効にすることができます。Windows 2000。
 
 ## <a name="syntax"></a>構文
 
@@ -34,15 +34,15 @@ Windows 2000 では、物理および論理ディスクのパフォーマンス 
 diskperf [-Y[D|V] | -N[D|V]] [\\computername]
 ```
 
-## <a name="options"></a>オプション
+## <a name="options"></a>および
 
-|オプション|説明|
+|OPTION|説明|
 |------|-----------|
-|-?|ヘルプ表示のコンテキストに依存します。|
-|-Y|コンピューターを再起動すると、すべてのディスクのパフォーマンス カウンターを開始します。|
-|-YD|コンピューターを再起動すると、物理ドライブのディスクのパフォーマンス カウンターを有効にします。|
-|-YV|コンピューターを再起動すると、論理ドライブまたは記憶域ボリュームのディスク パフォーマンス カウンターを有効にします。|
-|-N|コンピューターを再起動すると、すべてのディスクのパフォーマンス カウンターを無効にします。|
-|-ND|コンピューターを再起動すると、物理ドライブのディスクのパフォーマンス カウンターを無効にします。|
-|-NV|コンピューターを再起動すると、論理ドライブまたは記憶域ボリュームのディスク パフォーマンス カウンターを無効にします。|
-|\\\\*\<computername>*|有効またはディスクのパフォーマンス カウンターを無効にコンピューターの名前を指定します。|
+|-?|状況依存のヘルプを表示します。|
+|-Y|コンピューターの再起動時に、すべてのディスクパフォーマンスカウンターを開始します。|
+|-YD|コンピューターの再起動時に、物理ドライブのディスクパフォーマンスカウンターを有効にします。|
+|-YV|コンピューターの再起動時に、論理ドライブまたは記憶域ボリュームのディスクパフォーマンスカウンターを有効にします。|
+|-N|コンピューターの再起動時に、すべてのディスクパフォーマンスカウンターを無効にします。|
+|-ND|コンピューターの再起動時に、物理ドライブのディスクパフォーマンスカウンターを無効にします。|
+|-NV|コンピューターの再起動時に、論理ドライブまたは記憶域ボリュームのディスクパフォーマンスカウンターを無効にします。|
+|\\ @ no__t-1 *\<computername >*|ディスクパフォーマンスカウンターを有効または無効にするコンピューターの名前を指定します。|

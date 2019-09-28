@@ -1,8 +1,8 @@
 ---
 title: bitsadmin create
-description: Windows コマンド」のトピック**bitsadmin 作成**-特定の表示名の転送ジョブを作成します。
+description: '**Bitsadmin create**の Windows コマンドトピックでは、指定された表示名を持つ転送ジョブを作成します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6ce5a4fdc21d879bf0a265e3c4185d83311464a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9f6d641d44c56ea4ff11f48a725367de7dcf472a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817193"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381808"
 ---
 # <a name="bitsadmin-create"></a>bitsadmin create
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-指定した表示名の転送ジョブを作成します。 サーバーからローカル ファイルにジョブのデータ転送をダウンロードします。 ローカル ファイルからサーバーにデータを転送ジョブをアップロードします。 アップロード応答ジョブをサーバーにローカル ファイルからデータを転送し、サーバーから返信ファイルを受信します。
+指定された表示名を使用して転送ジョブを作成します。 ダウンロードジョブは、サーバーからローカルファイルにデータを転送します。 アップロードジョブは、ローカルファイルからサーバーにデータを転送します。 アップロード/応答ジョブは、ローカルファイルからサーバーにデータを転送し、サーバーから応答ファイルを受信します。
 
-使用して、 [bitsadmin 再開](bitsadmin-resume.md)転送キュー内のジョブをアクティブにするスイッチ。
+[Bitsadmin resume](bitsadmin-resume.md)スイッチを使用して、転送キュー内のジョブをアクティブ化します。
 
 ## <a name="syntax"></a>構文
 
@@ -38,19 +38,19 @@ bitsadmin /create [type] DisplayName
 
 |パラメーター|説明|
 |-------|--------|
-|type|-   **/ダウンロード**サーバーからローカル ファイルにデータを転送します。<br />-   **/アップロード**サーバーにローカル ファイルからデータを転送します。<br />-   **/アップロード応答**サーバーにローカル ファイルからデータを転送し、サーバーから返信ファイルを受け取ります。<br />-このパラメーターの既定値**ダウンロード/** コマンドラインで指定されていない場合。|
+|type|-    **/ダウンロード**は、サーバーからローカルファイルにデータを転送します。<br />-    **/アップロード**は、データをローカルファイルからサーバーに転送します。<br />-    **/uploadreply**は、ローカルファイルからサーバーにデータを転送し、サーバーから応答ファイルを受信します。<br />-このパラメーターの既定値は、コマンドラインで指定されていない場合の**ダウンロード**です。|
 |DisplayName|新しく作成されたジョブに割り当てられた表示名。|
 
-**1.2 およびそれ以前の BITS**: /Upload と/Upload-Reply 型は使用できません。
+**BITS 1.2 以前**: /Upload および/upload応答の種類は使用できません。
 
 ## <a name="BKMK_examples"></a>例
 
-という名前のダウンロード ジョブを作成します。 *myDownloadJob*します。
+*Mydownloadjob*という名前のダウンロードジョブを作成します。
 
 ```
 C:\>bitsadmin /create myDownloadJob
 ```
 
-## <a name="additional-references"></a>その他の参照
+## <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

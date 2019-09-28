@@ -1,7 +1,7 @@
 ---
 title: HYPER-V でジェネレーション 1 または 2 の仮想マシンを作成するか。
-description: サポートされているなどの考慮事項のブート方法とジェネレーションがニーズを満たしているかを選択するのに役立つその他の機能の相違点を与えます。
-ms.prod: windows-server-threshold
+description: サポートされているブート方法やその他の機能の違いなど、ニーズを満たす世代を選択する際に役立つ考慮事項を示します。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,51 +11,51 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: 95ececde8a1b8c591ea2baf367a93f63ee55a6e3
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: bd0b50534096bc06edb41390ef2c4ec3554d8406
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811986"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364082"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>HYPER-V でジェネレーション 1 または 2 の仮想マシンを作成するか。
 
->適用先:Windows 10、Windows Server 2016、Microsoft HYPER-V Server 2016、Windows Server 2019、Microsoft HYPER-V Server 2019
+>適用先:Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 > [!NOTE]
-> Microsoft Azure、第 1 世代と第 2 世代 Vm VHD ファイルの形式で、オンプレミスからこれまで Windows 仮想マシン (VM) をアップロードする予定がある場合、固定サイズのディスクがサポートされています。 参照してください[Azure を第 2 世代 Vm](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2)を Azure でサポートされている第 2 世代の機能の詳細を参照してください。 Windows VHD または VHDX をアップロードする方法の詳細については、次を参照してください。 [Azure にアップロードするには、Windows VHD または VHDX を準備する](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)します。
+> Windows 仮想マシン (VM) をオンプレミスから Microsoft Azure にアップロードする予定がある場合、第1世代と第2世代の Vm を VHD ファイル形式でアップロードし、容量固定のディスクを使用できます。 Azure でサポートされている第2世代の機能の詳細については、「 [azure での第2世代の vm](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) 」を参照してください。 Windows VHD または VHDX のアップロードの詳細については、「 [Azure にアップロードする WINDOWS vhd または vhdx を準備](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)する」を参照してください。
 
-第 1 世代または第 2 世代バーチャル マシンを作成するために選択を選んでいるゲスト オペレーティング システムのインストールと仮想マシンを展開に使用するブート方法です。 次のステートメントのいずれかが true でない限り、セキュア ブートのような機能を活用する第 2 世代バーチャル マシンを作成することをお勧めします。  
+第 1 世代または第 2 世代バーチャル マシンを作成するために選択を選んでいるゲスト オペレーティング システムのインストールと仮想マシンを展開に使用するブート方法です。 次のステートメントのいずれかが true でない限り、セキュア ブートのような機能を活用する第 2 世代仮想マシンを作成することをお勧めします。  
 
 - ブートする VHD が存在しない [UEFI と互換性のある](https://technet.microsoft.com/library/hh824898.aspx)です。  
-- 第 2 世代バーチャル マシンで実行するオペレーティング システムをサポートしていません。  
+- 第 2 世代では、仮想マシンで実行するオペレーティング システムがサポートされていません。  
 - 第 2 世代は、使用するブート方法をサポートしていません。  
 
-詳細については、第 2 世代仮想マシンで使用できる機能は、次を参照してください。[生成とゲストでの Hyper-v 機能の互換性](../Hyper-V-feature-compatibility-by-generation-and-guest.md)します。
+第2世代仮想マシンで使用できる機能の詳細については、「 [hyper-v の機能と世代とゲストの互換性](../Hyper-V-feature-compatibility-by-generation-and-guest.md)」を参照してください。
 
-作成した後、バーチャル マシンの世代を変更することはできません。 そのため、ことを確認する際の考慮事項は、ここでは、だけでなく、オペレーティング システム、ブートの方法と、世代を選択する前に使用する機能の選択を勧めします。  
+作成した後、仮想マシンの世代を変更することはできません。 そのため、ここで考慮事項を確認し、世代を選択する前に使用するオペレーティングシステム、ブート方法、および機能を選択することをお勧めします。  
 
 ## <a name="which-guest-operating-systems-are-supported"></a>ゲスト オペレーティング システムがサポートされますか。
 
-第 1 世代バーチャル マシンは、ほとんどのゲスト オペレーティング システムをサポートします。 第 2 世代バーチャル マシンは、最も 64 ビット バージョンの Windows および Linux および FreeBSD オペレーティング システムの最新のバージョンをサポートします。 次のセクションを使用して、仮想マシンのサポートをインストールするゲスト オペレーティング システムを参照してください。  
+第 1 世代仮想マシンは、ほとんどのゲスト オペレーティング システムをサポートします。 第 2 世代仮想マシンは、最も 64 ビット バージョンの Windows および Linux および FreeBSD オペレーティング システムの最新のバージョンをサポートします。 次のセクションを使用して、仮想マシンのサポートをインストールするゲスト オペレーティング システムを参照してください。  
 
-- [Windows ゲスト オペレーティング システムのサポート](#windows-guest-operating-system-support)  
+- [Windows ゲストオペレーティングシステムのサポート](#windows-guest-operating-system-support)  
 
-- [CentOS と Red Hat Enterprise Linux ゲスト オペレーティング システムのサポート](#centos-and-red-hat-enterprise-linux-guest-operating-system-support)  
+- [CentOS と Red Hat Enterprise Linux ゲストオペレーティングシステムのサポート](#centos-and-red-hat-enterprise-linux-guest-operating-system-support)  
 
-- [Debian ゲスト オペレーティング システムのサポート](#debian-guest-operating-system-support)  
+- [Debian ゲストオペレーティングシステムのサポート](#debian-guest-operating-system-support)  
 
-- [FreeBSD ゲスト オペレーティング システムのサポート](#freebsd-guest-operating-system-support)  
+- [FreeBSD ゲストオペレーティングシステムのサポート](#freebsd-guest-operating-system-support)  
 
-- [Oracle Linux ゲスト オペレーティング システムのサポート](#oracle-linux-guest-operating-system-support)  
+- [Oracle Linux のゲストオペレーティングシステムのサポート](#oracle-linux-guest-operating-system-support)  
 
-- [SUSE のゲスト オペレーティング システムのサポート](#suse-guest-operating-system-support)  
+- [SUSE ゲストオペレーティングシステムのサポート](#suse-guest-operating-system-support)  
 
-- [Ubuntu のゲスト オペレーティング システムのサポート](#ubuntu-guest-operating-system-support)  
+- [Ubuntu ゲストオペレーティングシステムのサポート](#ubuntu-guest-operating-system-support)  
 
 ### <a name="windows-guest-operating-system-support"></a>Windows ゲスト オペレーティング システムのサポート
 
-次の表では、Windows の 64 ビット バージョンとして使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代バーチャル マシンを示します。  
+次の表は、第 1 世代と第 2 世代の仮想マシン用にどの 64 ビット バージョンの Windows をゲスト オペレーティング システムとして使用できるかを示しています。  
 
 |64 ビット バージョンの Windows|第 1 世代|第 2 世代|  
 |-------------------------------|----------------|----------------|  
@@ -70,7 +70,7 @@ ms.locfileid: "66811986"
 |Windows 8|&#10004;|&#10004;|  
 |Windows 7|&#10004;| &#10006;|
 
-次の表では、Windows の 32 ビット バージョンとして使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代バーチャル マシンを示します。
+次の表は、第 1 世代と第 2 世代の仮想マシン用にどの 32 ビット バージョンの Windows をゲスト オペレーティング システムとして使用できるかを示しています。
 
 |32 ビット バージョンの Windows|第 1 世代|第 2 世代|  
 |-------------------------------|----------------|----------------|  
@@ -81,30 +81,30 @@ ms.locfileid: "66811986"
 
 ### <a name="centos-and-red-hat-enterprise-linux-guest-operating-system-support"></a>CentOS、Red Hat Enterprise Linux ゲスト オペレーティング システムのサポート
 
-次の表に、Red Hat Enterprise Linux のバージョン\(RHEL\) CentOS として使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代仮想マシンとします。
+次の表に、第1世代と第2世代の仮想マシンのゲストオペレーティングシステムとして使用できる Red Hat Enterprise Linux \(RHEL @ no__t-1 および CentOS のバージョンを示します。
 
 |オペレーティング システムのバージョン|第 1 世代|第 2 世代|  
 |-----------------------------|----------------|----------------|  
 |RHEL/CentOS 7.x シリーズ|&#10004;|&#10004;|  
-|RHEL/CentOS 6.x シリーズ|&#10004;|&#10004;<br />**注:** Windows Server 2016 でのみサポートされます。|  
+|RHEL/CentOS 6.x シリーズ|&#10004;|&#10004;<br />**注:** Windows Server 2016 以降でのみサポートされています。|  
 |RHEL/CentOS 5.x シリーズ|&#10004;| &#10006;|  
 
 詳細については、次を参照してください。 [CentOS、Red Hat Enterprise Linux 仮想マシンを Hyper-v](../Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)します。  
 
 ### <a name="debian-guest-operating-system-support"></a>Debian ゲスト オペレーティング システムのサポート  
 
-Debian のバージョンとして使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代バーチャル マシンを次の表に示します。
+次の表は、第 1 世代と第 2 世代の仮想マシン用にどのバージョンの Debian をゲスト オペレーティング システムとして使用できるかを示しています。
 
 |オペレーティング システムのバージョン|第 1 世代|第 2 世代|  
 |-----------------------------|----------------|----------------|  
 |Debian 7.x シリーズ|&#10004;| &#10006;|  
-|Debian 8.x シリーズ|&#10004;|&#10004;|  
+|Debian 8. x シリーズ|&#10004;|&#10004;|  
 
 詳細については、次を参照してください。 [Debian の仮想マシンを Hyper-v](../Supported-Debian-virtual-machines-on-Hyper-V.md)します。  
 
 ### <a name="freebsd-guest-operating-system-support"></a>FreeBSD ゲスト オペレーティング システムのサポート
 
-次の表では、FreeBSD のバージョンとして使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代バーチャル マシンを示します。  
+次の表は、第 1 世代と第 2 世代の仮想マシン用にどのバージョンの FreeBSD をゲスト オペレーティング システムとして使用できるかを示しています。  
 
 |オペレーティング システムのバージョン|第 1 世代|第 2 世代|  
 |-----------------------------|----------------|----------------|  
@@ -112,18 +112,18 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 |FreeBSD 9.1 および 9.3|&#10004;| &#10006;|  
 |FreeBSD 8.4|&#10004;| &#10006;|  
 
-詳細については、次を参照してください。 [Hyper-v 上のバーチャル マシンを FreeBSD](../Supported-FreeBSD-virtual-machines-on-Hyper-V.md)します。  
+詳しくは、[Hyper-V での FreeBSD 仮想マシン](../Supported-FreeBSD-virtual-machines-on-Hyper-V.md)に関する記事をご覧ください。  
 
 ### <a name="oracle-linux-guest-operating-system-support"></a>Oracle Linux ゲスト オペレーティング システムのサポート  
 
-次の表では、Red Hat 互換カーネル シリーズのバージョンとして使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代バーチャル マシンを示します。  
+次の表は、第 1 世代と第 2 世代の仮想マシン用にどのバージョンの Red Hat Compatible Kernel Series をゲスト オペレーティング システムとして使用できるかを示しています。  
 
 |Red Hat 互換カーネル シリーズのバージョン|第 1 世代|第 2 世代|  
 |---------------------------------------------|----------------|----------------|  
 |Oracle Linux 7.x シリーズ|&#10004;|&#10004;|
 |Oracle Linux 6.x シリーズ|&#10004;| &#10006;|  
 
-次の表では、Unbreakable Enterprise Kernel のバージョンとして使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代バーチャル マシンを示します。
+次の表は、第 1 世代と第 2 世代の仮想マシン用にどのバージョンの Unbreakable Enterprise Kernel をゲスト オペレーティング システムとして使用できるかを示しています。
 
 |Unbreakable Enterprise カーネル (UEK) バージョン|第 1 世代|第 2 世代|  
 |--------------------------------------------------|----------------|----------------|  
@@ -135,7 +135,7 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 
 ### <a name="suse-guest-operating-system-support"></a>SUSE のゲスト オペレーティング システムのサポート
 
-次の表では、SUSE のどのバージョンとして使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代仮想マシンを示します。
+次の表は、第1世代および第2世代仮想マシンのゲストオペレーティングシステムとして使用できる SUSE のバージョンを示しています。
 
 |オペレーティング システムのバージョン|第 1 世代|第 2 世代|  
 |-----------------------------|----------------|----------------|  
@@ -143,11 +143,11 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 |SUSE Linux Enterprise Server 11 シリーズ|&#10004;| &#10006;|  
 |Open SUSE 12.3|&#10004;| &#10006;|  
 
-詳細については、次を参照してください。 [Hyper-v 上のバーチャル マシンを SUSE](../Supported-SUSE-virtual-machines-on-Hyper-V.md)します。  
+詳細については、[Hyper-V での SUSE 仮想マシン](../Supported-SUSE-virtual-machines-on-Hyper-V.md)に関する記事をご覧ください。  
 
 ### <a name="ubuntu-guest-operating-system-support"></a>Ubuntu のゲスト オペレーティング システムのサポート
 
-次の表では、Ubuntu のバージョンとして使用できます、ゲスト オペレーティング システムの第 1 世代と第 2 世代バーチャル マシンを示します。
+次の表は、第 1 世代と第 2 世代の仮想マシン用にどのバージョンの Ubuntu をゲスト オペレーティング システムとして使用できるかを示しています。
 
 |オペレーティング システムのバージョン|第 1 世代|第 2 世代|  
 |-----------------------------|----------------|----------------|  
@@ -168,14 +168,14 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 |IDE コント ローラーのバーチャル ハード_ディスクからブート (します。VHD) またはバーチャル DVD (します。ISO)|&#10004;| &#10006;|  
 |フロッピーからの起動 (します。VFD)|&#10004;| &#10006;|  
 
-## <a name="what-are-the-advantages-of-using-generation-2-virtual-machines"></a>第 2 世代バーチャル マシンを使用する利点とは
+## <a name="what-are-the-advantages-of-using-generation-2-virtual-machines"></a>第 2 世代仮想マシンを使用する利点とは
 
-第 2 世代バーチャル マシンを使用する場合のメリットの一部を次に示します。  
-- **セキュア ブート**これは、ブート ローダーが承認されていないファームウェア、オペレーティング システム、または UEFI ドライバーがブート時に実行されていることを防ぐために、UEFI データベースで信頼されている機関によって署名されたことを確認する機能です。 セキュア ブートは、第 2 世代仮想マシンでは既定で有効になります。 セキュア ブートでサポートされていないゲスト オペレーティング システムを実行する必要がある場合に、バーチャル マシンの作成後に無効にできます。  詳細については、次を参照してください。 [セキュア ブート](https://technet.microsoft.com/library/dn486875.aspx)します。  
+第 2 世代仮想マシンを使用する場合のメリットの一部を次に示します。  
+- **セキュアブート**これは、承認されていないファームウェア、オペレーティングシステム、または UEFI ドライバーが起動時に実行されないようにするために、ブートローダーが UEFI データベース内の信頼された機関によって署名されていることを確認する機能です。 セキュア ブートは、第 2 世代仮想マシンでは既定で有効になります。 セキュア ブートでサポートされていないゲスト オペレーティング システムを実行する必要がある場合に、仮想マシンの作成後に無効にできます。  詳細については、次を参照してください。 [セキュア ブート](https://technet.microsoft.com/library/dn486875.aspx)します。  
 
     セキュア ブートの第 2 世代の Linux 仮想マシン、仮想マシンを作成するときに、UEFI CA セキュア ブート テンプレートを選択する必要があります。  
 
-- **ブート ボリュームの大きい**第 2 世代仮想マシンの最大のブート ボリュームは 64 TB です。 これは、最大ディスク サイズでサポートされているのです。VHDX します。 第 1 世代バーチャル マシンの最大のブート ボリュームは用に 2 TB をします。VHDX と 2040 gb 以上、します。VHD です。 詳細については、次を参照してください。 [Hyper-v 仮想ハード ディスク フォーマットに関するテクニカル プレビュー](https://technet.microsoft.com/library/hh831446.aspx)します。  
+- **大きなブートボリューム**第2世代仮想マシンの最大ブートボリュームは、64 TB です。 これは、最大ディスク サイズでサポートされているのです。VHDX します。 第 1 世代の仮想マシンの場合、最大のブート ボリュームは .VHDX の場合 2TB、.VHD の場合 2040 GB です。 詳細については、次を参照してください。 [Hyper-v 仮想ハード ディスク フォーマットに関するテクニカル プレビュー](https://technet.microsoft.com/library/hh831446.aspx)します。  
 
   第 2 世代仮想マシンで仮想マシンのブートとインストール時間にわずかな改善を表示することもあります。
 
@@ -200,59 +200,59 @@ Debian のバージョンとして使用できます、ゲスト オペレーテ
 |Programmable Interval Timer (PIT)|必要ありません|なし|  
 |スーパー I/O デバイス|必要ありません|なし|  
 
-## <a name="more-about-generation-2-virtual-machines"></a>第 2 世代バーチャル マシンの詳細について
+## <a name="more-about-generation-2-virtual-machines"></a>第 2 世代仮想マシンの詳細について
 
-第 2 世代仮想マシンの使用に関するいくつかその他のヒントを次に示します。
+第2世代仮想マシンの使用に関するその他のヒントを次に示します。
 
-### <a name="attach-or-add-a-dvd-drive"></a>接続または DVD ドライブを追加
+### <a name="attach-or-add-a-dvd-drive"></a>DVD ドライブの接続または追加
 
 - 物理 CD または DVD ドライブは、第 2 世代仮想マシンに接続できません。 第 2 世代仮想マシンの仮想 DVD ドライブは、ISO イメージ ファイルだけをサポートします。 Windows 環境の ISO イメージ ファイルは、Oscdimg コマンド ライン ツールを使用して作成できます。 詳細については、「 [Oscdimg のコマンド ライン オプション](https://msdn.microsoft.com/library/hh824847.aspx)」を参照してください。
 - NEW-VM Windows PowerShell コマンドレットで新しいバーチャル マシンを作成するときに、第 2 世代仮想マシンに DVD ドライブはありません。 仮想マシンの実行中には、DVD ドライブを追加できます。
 
-### <a name="use-uefi-firmware"></a>UEFI ファームウェアを使用します。
+### <a name="use-uefi-firmware"></a>UEFI ファームウェアを使用する
 
 - セキュア ブートまたは UEFI ファームウェアは、物理的な HYPER-V ホスト上必要ではありません。 HYPER-V では、HYPER-V ホスト上にあるものとは無関係の仮想マシンに仮想のファームウェアを提供します。
 - 第 2 世代仮想マシンでの UEFI ファームウェアでは、セキュア ブートのセットアップ モードをサポートしていません。
 - 第 2 世代仮想マシンで UEFI シェルまたは他の UEFI アプリケーションを実行しているサポートされていません。 マイクロソフト以外の UEFI シェルまたは UEFI アプリケーションの使用は、それらがソースから直接コンパイルされている場合であれば、技術的には可能です。 これらのアプリケーションが適切にデジタル署名されていない場合、仮想マシンのセキュア ブートを無効にする必要があります。
 
-### <a name="work-with-vhdx-files"></a>VHDX ファイルを使用します。
+### <a name="work-with-vhdx-files"></a>VHDX ファイルを操作する
 
 - 仮想マシンの実行中には、第 2 世代バーチャル マシンのブート ボリュームを含む VHDX ファイルのサイズを変更することができます。
-- サポートまたは推奨第 1 世代と第 2 世代バーチャル マシンの両方を起動可能な VHDX ファイルを作成することはしないでください。  
+- サポートまたは推奨第 1 世代と第 2 世代仮想マシンの両方を起動可能な VHDX ファイルを作成することはしないでください。  
 - 仮想マシンの世代は、仮想マシンのプロパティであり、仮想ハード ディスクのプロパティではありません。 したがって、第 1 世代または第 2 世代仮想マシンで VHDX ファイルが作成されていないかを判断できません。  
-- IDE コント ローラーまたは第 1 世代バーチャル マシンの SCSI コント ローラーに接続できる 2 つの仮想マシンの世代で作成された VHDX ファイル。 ただし、起動可能な VHDX ファイルの場合は、第 1 世代バーチャル マシンは起動しません。
+- IDE コント ローラーまたは第 1 世代バーチャル マシンの SCSI コント ローラーに接続できる 2 つの仮想マシンの世代で作成された VHDX ファイル。 ただし、起動可能な VHDX ファイルの場合は、第 1 世代仮想マシンは起動しません。
 
-### <a name="use-ipv6-instead-of-ipv4"></a>IPv4 ではなく IPv6 を使用します。
+### <a name="use-ipv6-instead-of-ipv4"></a>IPv4 ではなく IPv6 を使用する
 
-既定では、第 2 世代仮想マシンは IPv4 を使用します。 代わりに IPv6 を使用して、実行、 [Set-vmfirmware](https://technet.microsoft.com/library/dn464287.aspx) Windows PowerShell コマンドレット。 たとえば、次のコマンドは、TestVM という名前のバーチャル マシンの IPv6 に優先プロトコルを設定します。  
+既定では、第 2 世代仮想マシンは IPv4 を使用します。 代わりに IPv6 を使用するには、 [Set-vmfirmware](https://technet.microsoft.com/library/dn464287.aspx) Windows PowerShell コマンドレットを実行します。 たとえば、次のコマンドは、TestVM という名前の仮想マシンの IPv6 に優先プロトコルを設定します。  
 
 ```powershell
 Set-VMFirmware -VMName TestVM -IPProtocolPreference IPv6  
 ```  
 
-## <a name="add-a-com-port-for-kernel-debugging"></a>カーネル デバッグ用に COM ポートを追加します。
+## <a name="add-a-com-port-for-kernel-debugging"></a>カーネルデバッグ用の COM ポートを追加する
 
-COM ポートは、それらを追加するまで第 2 世代仮想マシンでは使用されません。 Windows PowerShell または Windows Management Instrumentation (WMI) で、これを行うことができます。 次の手順では、Windows PowerShell を使用する方法を示します。
+COM ポートは、追加するまで、第2世代仮想マシンでは使用できません。 これを行うには、Windows PowerShell または Windows Management Instrumentation (WMI) を使用します。 次の手順では、Windows PowerShell を使用してこれを行う方法を示します。
 
-COM ポートを追加します。  
+COM ポートを追加するには:  
 
-1. セキュア ブートを無効にします。 セキュア ブートと互換性のないカーネルのデバッグ。 バーチャル マシンがオフの状態になっていることを確認し、使用して、 [Set-vmfirmware](https://technet.microsoft.com/library/dn464287.aspx)コマンドレット。 たとえば、次のコマンドでは、仮想マシン TestVM でセキュア ブートを無効にします。  
+1. セキュア ブートを無効にします。 カーネルデバッグはセキュアブートと互換性がありません。 バーチャルマシンがオフ状態であることを確認してから、 [set-vmfirmware](https://technet.microsoft.com/library/dn464287.aspx)コマンドレットを使用してください。 たとえば、次のコマンドでは、仮想マシン TestVM でセキュア ブートを無効にします。  
 
     ```powershell  
     Set-VMFirmware -Vmname TestVM -EnableSecureBoot Off  
     ```  
 
-2. COM ポートを追加します。 使用して、 [Set-vmcomport](https://technet.microsoft.com/library/hh848616.aspx)これを行うコマンドレット。 たとえば、次のコマンドは、仮想マシンの名前付きパイプ TestPipe、ローカル コンピューター上に接続するための TestVM で最初の COM ポートを構成します。  
+2. COM ポートを追加します。 これを行うには、 [Set VMComPort](https://technet.microsoft.com/library/hh848616.aspx)コマンドレットを使用します。 たとえば、次のコマンドは、仮想マシンの名前付きパイプ TestPipe、ローカル コンピューター上に接続するための TestVM で最初の COM ポートを構成します。  
 
     ```powershell
     Set-VMComPort -VMName TestVM 1 \\.\pipe\TestPipe  
     ```  
 
 > [!NOTE]  
-> HYPER-V マネージャーで仮想マシンの設定で構成した COM ポートが記載されていません。
+> 構成済みの COM ポートは、Hyper-v マネージャーの仮想マシンの設定に一覧表示されません。
 
 ## <a name="see-also"></a>関連項目  
 
-- [Linux および FreeBSD Virtual Machines on Hyper-v の概要](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
-- [VMConnect を使って、HYPER-V 仮想マシン上のローカル リソースの使用](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)
-- [Windows Server 2016 での HYPER-V のスケーラビリティの計画します。](Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)
+- [Hyper-v 上の Linux および FreeBSD Virtual Machines](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
+- [VMConnect を使用して Hyper-v 仮想マシン上のローカルリソースを使用する](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)
+- [Windows Server 2016 での Hyper-v のスケーラビリティの計画](Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)

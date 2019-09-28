@@ -1,8 +1,8 @@
 ---
 title: ftp mget
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e43bf8b6e7067a31b3ec51336b0b43845ab88f63
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 666025c92b6fb1a612cbe7b83833557a8a7d5017
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438602"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376301"
 ---
 # <a name="ftp-mget"></a>ftp: mget
 
@@ -36,11 +36,11 @@ mget <remoteFile>[ ]
 | <remoteFile> | ローカル コンピューターにコピーするリモート ファイルを指定します。 |
 
 ## <a name="BKMK_Examples"></a>例  
-リモート ファイルをコピー **a.exe**と**b.exe**現在のファイル転送の種類を使用してローカル コンピューターにします。  
+現在のファイル転送の種類を使用して、リモートファイル**を**ローカル**コンピューターにコピーします。**  
 ```  
 mget a.exe b.exe  
 ```  
-## <a name="additional-references"></a>その他の参照  
+## <a name="additional-references"></a>その他の参照情報  
 -   [ftp: ascii](ftp-ascii.md)  
 -   [ftp: バイナリ](ftp-binary.md)  
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)  

@@ -1,7 +1,7 @@
 ---
 title: Windows Server 2019 のシステム要件
 description: Windows Server 2019 のクリーン インストールでの記憶域、CPU、ネットワーク、メモリ、RAM の最小要件。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 ms.assetid: 4a8b42d7-9fe5-4efe-9ea1-ace2131f860e
@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 70ebf445515fd227d0f35b0c267f4fe34b2b83a9
-ms.sourcegitcommit: 081661f50d6dafb77180149956a02e679270c710
+ms.openlocfilehash: eb328b9a80eb9d73b7230e0eaa7f820307baf294
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71037580"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391934"
 ---
 # <a name="system-requirements"></a>システム要件
 

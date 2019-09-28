@@ -1,8 +1,8 @@
 ---
 title: if
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9751dfe3e0cb0965cc2c5169ea19e0f08110b0ff
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: fd7857251b0b6a943f2eea33f56732ec57e7e8d1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438100"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375481"
 ---
 # <a name="if"></a>if
 
 
 
-バッチ プログラムでは、条件処理を実行します。
+バッチプログラムで条件付き処理を実行します。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
@@ -35,7 +35,7 @@ if [not] ERRORLEVEL <Number> <Command> [else <Expression>]
 if [not] <String1>==<String2> <Command> [else <Expression>]
 if [not] exist <FileName> <Command> [else <Expression>]
 ```
-コマンド拡張機能が有効な場合は、次の構文を使用します。
+コマンド拡張機能が有効になっている場合は、次の構文を使用します。
 ```
 if [/i] <String1> <CompareOp> <String2> <Command> [else <Expression>]
 if cmdextversion <Number> <Command> [else <Expression>]
@@ -46,35 +46,35 @@ if defined <Variable> <Command> [else <Expression>]
 
 |        パラメーター        |                                                                                                                                                                                                                説明                                                                                                                                                                                                                 |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|           非           |                                                                                                                                                                              コマンドの実行には、条件が false の場合にのみを指定します。                                                                                                                                                                              |
-|  errorlevel\<番号 >   |                                                                                                                                                      Cmd.exe で実行する前のプログラムには、終了コードが返される以上になる場合にのみ、true の条件を指定します*数*します。                                                                                                                                                       |
-|       \<コマンド >        |                                                                                                                                                                            上記の条件を満たした場合に実行する必要がありますのコマンドを指定します。                                                                                                                                                                             |
-|  \<String1 > = =<String2>  |                                                                                                             条件が真の場合にのみを指定します*String1*と*String2*は同じです。 これらの値には、リテラル文字列またはバッチの変数 (例: %1) を指定できます。 リテラル文字列を引用符で囲む必要はありません。                                                                                                              |
-|    存在\<ファイル名 >    |                                                                                                                                                                                       指定したファイル名が存在する場合は、条件が真を指定します。                                                                                                                                                                                        |
-|      \<CompareOp>       |                                                                               3 文字の比較演算子を指定します。 次の一覧が有効な値を表す*CompareOp*:</br>**EQU**と等しい</br>**NEQ**等しくないです。</br>**お近くの LSS**より小さい</br>**LEQ**に等しいまたはそれよりも小さい</br>**GTR**より大きい</br>**GEQ**より大きいまたは等しい                                                                                |
-|           /i            |                                                            文字列を小文字を区別しない比較。  使用することができます **/i**上、 <em>String1</em> **==** <em>String2</em>のフォーム**場合**します。 これらの比較では、する場合は、両方*String1*と*String2*桁の数字から成るはのみ、文字列を数値に変換され、数値比較を実行します。                                                            |
-| cmdextversion\<番号 > | 条件が真の場合にのみ Cmd.exe の機能と等しいコマンド拡張機能に関連付け、または指定された数値より大きい値の内部バージョン番号を指定します。 最初のバージョンには 1 です。 コマンド拡張機能を大幅に強化が追加されたときに 1 ずつ増加します。 **Cmdextversion** (既定ではコマンド拡張機能が有効になっている) 拡張機能が無効で条件がときにコマンド true ことはありません。 |
-|   定義されている\<変数 >   |                                                                                                                                                                                            場合は true。 条件を指定します*変数*が定義されています。                                                                                                                                                                                            |
-|      \<式 >      |                                                                                                                                                                   コマンドに渡されるコマンドライン コマンドおよびパラメーターを指定します、**他**句。                                                                                                                                                                   |
+|           非           |                                                                                                                                                                              条件が false の場合にのみコマンドを実行するように指定します。                                                                                                                                                                              |
+|  errorlevel \<Number >   |                                                                                                                                                      Cmd.exe によって実行された前のプログラムが、 *Number*以上の終了コードを返した場合にのみ、true 条件を指定します。                                                                                                                                                       |
+|       \<Command >        |                                                                                                                                                                            前の条件が満たされた場合に実行するコマンドを指定します。                                                                                                                                                                             |
+|  \<String1 > = = <String2>  |                                                                                                             *String1*と*String2*が同じ場合にのみ true 条件を指定します。 これらの値には、リテラル文字列またはバッチ変数 (% 1 など) を指定できます。 リテラル文字列を引用符で囲む必要はありません。                                                                                                              |
+|    存在 \<FileName >    |                                                                                                                                                                                       指定されたファイル名が存在する場合に true 条件を指定します。                                                                                                                                                                                        |
+|      \<CompareOp >       |                                                                               3文字の比較演算子を指定します。 次の一覧は、 *Compareop*の有効な値を示しています。</br>**等しい**等しい</br>**Neq**等しくない</br>**Lss**より小さい</br>**Leq**以下</br>**Gtr**より大きい</br>**Geq**以上                                                                                |
+|           /i            |                                                            大文字小文字を無視するように文字列比較を強制します。  **If**の<em>String1</em> **==** <em>String2</em>形式の **/i**を使用できます。 これらの比較は一般に、 *String1*と*String2*の両方が数字のみで構成されている場合、文字列は数値に変換され、数値比較が実行されます。                                                            |
+| cmdextversion \<Number > | Cmd.exe のコマンド拡張機能に関連付けられている内部バージョン番号が、指定された数以上である場合にのみ、true 条件を指定します。 最初のバージョンは1です。 コマンド拡張機能に大幅な拡張が追加されると、1つずつ増加します。 コマンド拡張機能が無効になっている場合 (既定では、コマンド拡張機能が有効になっている場合)、 **cmdextversion**条件は満たされません。 |
+|   定義済みの \<Variable >   |                                                                                                                                                                                            *変数*が定義されている場合に true 条件を指定します。                                                                                                                                                                                            |
+|      \<Expression >      |                                                                                                                                                                   コマンドラインコマンドと、 **else**句でコマンドに渡すパラメーターを指定します。                                                                                                                                                                   |
 |           /?            |                                                                                                                                                                                                    コマンド プロンプトにヘルプを表示します。                                                                                                                                                                                                    |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   条件が指定されている場合、**場合**句が true の場合、条件を次のコマンドを実行します。条件が false の場合、コマンドで、**場合**句は無視されで指定されている任意のコマンドを実行するコマンドを**他**句。
--   プログラムが停止したら、終了コードを返します。 終了コードを条件として使用する**errorlevel**します。
--   使用する場合**定義**、次の 3 つの変数が環境に追加されます: **%errorlevel%** 、 **%cmdcmdline**、および **%cmdextversion**.  
-    -   **%errorlevel%** ERRORLEVEL 環境変数の現在の値の文字列表現に展開します。 これは ERRORLEVEL という名前の既存の環境変数がないことを前提としています-が発生した場合、ERRORLEVEL 値をそのを代わりに取得されます。
-    -   **%cmdcmdline** Cmd.exe で Cmd.exe を処理する前に渡された元のコマンド ラインに展開します。 これは CMDCMDLINE という名前の既存の環境変数がないことを前提としています: 代わりに CMDCMDLINE 値を取得する場合は、します。
-    -   **%cmdextversion**の現在の値の文字列形式に展開**cmdextversion**します。 これは CMDEXTVERSION という名前の既存の環境変数がないことを前提としています: 代わりに CMDEXTVERSION 値を取得する場合は、します。
--   使用する必要があります、**他**後にコマンドと同じ行で句、**場合**します。
+-   **If**句に指定された条件が true の場合、条件に従ったコマンドが実行されます。条件が false の場合、 **if**句のコマンドは無視され、コマンドは**else**句で指定されているすべてのコマンドを実行します。
+-   プログラムが停止すると、終了コードが返されます。 終了コードを条件として使用するには、 **errorlevel**を使用します。
+-   を**定義**した場合、次の3つの変数が環境に追加されます: **% errorlevel%** 、 **% cmdcmdline%** 、および **% cmdextversion%** 。  
+    -   **% errorlevel%** は、errorlevel 環境変数の現在の値の文字列形式に展開されます。 これは、ERRORLEVEL という名前の既存の環境変数が存在しないことを前提としています。存在する場合は、代わりに ERRORLEVEL 値が取得されます。
+    -   **% cmdcmdline%** は、cmd.exe によって処理される前に cmd.exe に渡された元のコマンドラインに展開されます。 これは、CMDCMDLINE という名前の既存の環境変数が存在しないことを前提としています。存在する場合は、代わりに CMDCMDLINE 値が取得されます。
+    -   **% cmdextversion%** は、 **cmdextversion**の現在の値の文字列形式に展開されます。 これは、CMDEXTVERSION という名前の既存の環境変数が存在しないことを前提としています。存在する場合は、代わりに CMDEXTVERSION の値が取得されます。
+-   **If**の後のコマンドと同じ行で**else**句を使用する必要があります。
 
 ## <a name="BKMK_examples"></a>例
 
-メッセージを表示するには、"データ ファイルを見つけることができません"ファイル Product.dat が見つからない場合に入力します。
+ファイルの製品が見つからない場合に "データファイルが見つかりません" というメッセージを表示するには、次のように入力します。
 ```
 if not exist product.dat echo Cannot find data file 
 ```
-A ドライブのディスクをフォーマットして、書式設定プロセス中にエラーが発生した場合、エラー メッセージを表示するには、バッチ ファイルで、次の行を入力します。
+フォーマット処理中にエラーが発生した場合に、ドライブ A のディスクをフォーマットし、エラーメッセージを表示するには、次の行をバッチファイルに入力します。
 ```
 :begin
 @echo off
@@ -84,7 +84,7 @@ echo An error occurred during formatting.
 :end
 echo End of batch program.
 ```
-Product.dat ファイルを現在のディレクトリから削除するか、Product.dat が見つからない場合は、メッセージを表示するには、バッチ ファイルで、次の行を入力します。
+現在のディレクトリからファイルの製品 .dat を削除するか、または製品 .dat が見つからない場合はメッセージを表示するには、バッチファイルに次の行を入力します。
 ```
 IF EXIST Product.dat (
 del Product.dat
@@ -94,11 +94,11 @@ echo The Product.dat file is missing.
 ```
 
 > [!NOTE]
-> これらの行は、次のように 1 行に結合できます。
+> これらの行は、次のように1つの行に結合できます。
 > ```
 > IF EXIST Product.dat (del Product.dat) ELSE (echo The Product.dat file is missing.)
 > ```
-> バッチ ファイルを実行した後、ERRORLEVEL 環境変数の値をエコーするには、バッチ ファイルで、次の行を入力します。
+> バッチファイルを実行した後に ERRORLEVEL 環境変数の値をエコーするには、バッチファイルに次の行を入力します。
 > ```
 > goto answer%errorlevel%
 > :answer1
@@ -109,7 +109,7 @@ echo The Product.dat file is missing.
 > :end
 > echo Done! 
 > ```
-> ERRORLEVEL 環境変数の値が 1、型の場合は、「正常」のラベルに移動。
+> ERRORLEVEL 環境変数の値が1以下の場合、"ok" というラベルにジャンプするには、次のように入力します。
 > ```
 > if %errorlevel% LEQ 1 goto okay
 > ```
@@ -120,4 +120,4 @@ echo The Product.dat file is missing.
 
 [もし](if.md)
 
-[goto](goto.md)
+[へ](goto.md)

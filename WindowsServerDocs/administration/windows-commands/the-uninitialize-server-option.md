@@ -1,8 +1,8 @@
 ---
 title: 非サーバー オプション
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 73f1ff67331ae41fa0d88cb3a16df5095e0b6d66
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5c63e09738871c5b74c1b564a83c35ad28f4fa80
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873983"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385592"
 ---
 # <a name="the-uninitialize-server-option"></a>非サーバー オプション
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-サーバーの初期構成中に、サーバーに加えられた変更を元に戻します。 これには、いずれかによって行われた変更が含まれます、 **/initialize-server/** オプションまたは Windows 展開サービス mmc スナップイン。 このコマンドは、サーバーを未構成の状態にリセットしていることに注意してください。 このコマンドでは、remoteInstall 共有フォルダーの内容は変更されません。 代わりに、サーバーを再初期化できるように、サーバーの状態をリセットします。
+サーバーの初期構成中にサーバーに加えられた変更を元に戻します。 これには、**サーバー**オプションまたは Windows 展開サービス mmc スナップインのいずれかによって行われた変更が含まれます。 このコマンドは、サーバーを未構成の状態にリセットしていることに注意してください。 このコマンドでは、remoteInstall 共有フォルダーの内容は変更されません。 代わりに、サーバーを再初期化できるように、サーバーの状態をリセットします。
 ## <a name="syntax"></a>構文
 ```
 wdsutil [Options] /Uninitialize-Server [/Server:<Server name>]
@@ -39,7 +39,7 @@ wdsutil [Options] /Uninitialize-Server [/Server:<Server name>]
 wdsutil /Uninitialize-Server
 wdsutil /verbose /Uninitialize-Server /Server:MyWDSServer
 ```
-#### <a name="additional-references"></a>その他の参照
+#### <a name="additional-references"></a>その他の参照情報
 [コマンドライン構文のポイント](command-line-syntax-key.md)
 [、無効にするサーバーのコマンドを使用して](using-the-disable-server-command.md)
 [、有効にするサーバーのコマンドを使用して](using-the-enable-server-command.md)

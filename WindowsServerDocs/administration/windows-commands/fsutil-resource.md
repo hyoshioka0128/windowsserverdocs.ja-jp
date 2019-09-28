@@ -1,7 +1,7 @@
 ---
 ms.assetid: b198d8ca-a5b7-430f-8911-5cbb9f50484c
 title: Fsutil リソース
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: ea97f7f71d1b484c7ac63c7c429f291fba607bba
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 10f2847fd05658a481a10dfb5a1920a998559962
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867069"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376818"
 ---
 # <a name="fsutil-resource"></a>Fsutil リソース
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7、Windows 2008、Windows Vista
@@ -50,7 +50,7 @@ fsutil resource [stop] <RmRootPathname>
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |         作成          |                                                                                                                                                                                                                    セカンダリトランザクションリソースマネージャーを作成します。                                                                                                                                                                                                                     |
 |    <RmRootPathname>     |                                                                                                                                                                                                        トランザクションリソースマネージャーのルートディレクトリへの完全パスを指定します。                                                                                                                                                                                                         |
-|          info           |                                                                                                                                                                                                            指定されたトランザクションリソースマネージャーの情報を表示します。                                                                                                                                                                                                            |
+|          情報           |                                                                                                                                                                                                            指定されたトランザクションリソースマネージャーの情報を表示します。                                                                                                                                                                                                            |
 |      setautoreset       | 既定のトランザクションリソースマネージャーが次のマウントでトランザクションメタデータをクリーンアップするかどうかを指定します。<br /><br />-既定では、 **setautoreset**パラメーターを**true**に設定して、トランザクションリソースマネージャーが次のマウントでトランザクションメタデータをクリーンアップするように指定します。<br />- **Setautoreset**パラメーターを**false**に設定して、既定では、トランザクションリソースマネージャーが次のマウントでトランザクションメタデータを消去しないように指定します。 |
 | <DefaultRmRootPathname> |                                                                                                                                                                                                                       ドライブ名の後にコロンを付けて指定します。                                                                                                                                                                                                                        |
 |      setavailable       |                                                                                                                                                                                                 トランザクションリソースマネージャーが整合性よりも可用性を優先することを指定します。                                                                                                                                                                                                 |

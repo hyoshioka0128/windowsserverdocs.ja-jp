@@ -1,9 +1,9 @@
 ---
-title: 手順 4 は、クラスターを確認します。
-description: このトピックでは、Windows Server 2016 でのクラスターでのリモート アクセスの展開ガイドの一部です。
+title: 手順 4. クラスターを確認する
+description: このトピックは、「Windows Server 2016 のクラスターにリモートアクセスを展開する」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,20 +12,20 @@ ms.topic: article
 ms.assetid: f22dcf10-b453-4664-a9ef-e40e95c72f63
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 424c4f881c168ea691dd51cd2d86a4a234c41075
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 738b7d6aad1c9684ac1e12981213caaf3f745c2c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282988"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71367396"
 ---
-# <a name="step-4-verify-the-cluster"></a>手順 4 は、クラスターを確認します。
+# <a name="step-4-verify-the-cluster"></a>手順 4. クラスターを確認する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、DirectAccess クラスター展開が正しく構成されていることを確認する方法について説明します。  
+このトピックでは、DirectAccess クラスターの展開が正しく構成されていることを確認する方法について説明します。  
   
-### <a name="to-verify-access-to-internal-resources-through-the-cluster"></a>クラスターを通じた内部リソースへのアクセスを確認するには  
+### <a name="to-verify-access-to-internal-resources-through-the-cluster"></a>クラスターを介して内部リソースへのアクセスを確認するには  
   
 1.  DirectAccess クライアント コンピューターを企業ネットワークに接続し、グループ ポリシーを取得します。  
   
@@ -33,9 +33,9 @@ ms.locfileid: "67282988"
   
     すべての企業リソースにアクセスできます。  
   
-3.  オフ、または、クラスター サーバーの 1 つを除くすべての外部ネットワークから切断して、クラスター内の各サーバー経由で接続をテストします。 クライアント コンピューターでは、企業リソースにアクセスしようとします。 別のクラスター サーバーでテストを繰り返します。  
+3.  クラスター内の各サーバーを使用して接続をテストします。これを行うには、クラスターサーバーの1つではなく、外部ネットワークから電源をオフにするか、接続を切断します。 クライアントコンピューターで、会社のリソースへのアクセスを試みます。 別のクラスターサーバーでテストを繰り返します。  
   
-    各クラスター サーバーですべての企業リソースにアクセスできる必要があります。  
+    各クラスターサーバーを介して、すべての企業リソースにアクセスできる必要があります。  
   
 
 

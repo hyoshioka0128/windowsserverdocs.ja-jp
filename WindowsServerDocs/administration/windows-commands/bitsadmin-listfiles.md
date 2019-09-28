@@ -1,8 +1,8 @@
 ---
 title: bitsadmin listfiles
-description: Windows コマンド」のトピック**bitsadmin/listfiles という**-指定したジョブ内のファイルを一覧表示されます。
+description: '**Bitsadmin listfiles**の Windows コマンドのトピック-指定したジョブ内のファイルの一覧を表示します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f0f86a7e176c601c51dbdf403baf51f70e53dc4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 43823e4f5c8443396e21405f22ba8b3c5687da44
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852973"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381064"
 ---
 # <a name="bitsadmin-listfiles"></a>bitsadmin listfiles
 
 
 
-指定したジョブ内のファイルを一覧表示します。
+指定されたジョブ内のファイルを一覧表示します。
 
 ## <a name="syntax"></a>構文
 
@@ -40,11 +40,11 @@ bitsadmin /ListFiles <Job>
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブのファイルの一覧を取得する*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブのファイルの一覧を取得します。
 ```
 C:\>bitsadmin /GetNotifyFlags myDownloadJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

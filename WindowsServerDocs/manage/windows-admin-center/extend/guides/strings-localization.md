@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 4cc624dcc985f13f97b7bbc767de6bbb9c72217a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 61289ae175ca8b906386cff9e36f5023ea28d051
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869708"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385239"
 ---
 # <a name="strings-and-localization-in-windows-admin-center"></a>Windows 管理センターでの文字列とローカライズ #
 

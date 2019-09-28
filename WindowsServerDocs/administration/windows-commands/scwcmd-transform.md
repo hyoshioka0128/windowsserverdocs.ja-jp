@@ -1,8 +1,8 @@
 ---
 title: Scwcmd 変換
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8a6a6e37c2c2a362f3aa0aeadef615ff5065713f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 36ee3a99828c7fdd9d4fc0ca14cbc0e203b01ea0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843813"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384310"
 ---
 # <a name="scwcmd-transform"></a>Scwcmd: transform
 
@@ -29,7 +29,7 @@ ms.locfileid: "59843813"
 変換操作を完了するには、ドメイン管理者の資格情報が必要です。
 
 > [!IMPORTANT]
-> インターネット インフォメーション サービス (IIS) セキュリティ ポリシー設定は、グループ ポリシーを使用して展開できません。</br>> アプリケーションの一覧表示を承認する必要がありますいないを配置することをサーバーに Windows ファイアウォール サービスの開始を自動的にサーバーが最後とされない限り、ファイアウォール ポリシーを開始します。
+> インターネット インフォメーション サービス (IIS) セキュリティ ポリシー設定は、グループ ポリシーを使用して展開できません。</br>> 承認されたアプリケーションを一覧表示するファイアウォールポリシーは、サーバーが最後に起動されたときに Windows ファイアウォールサービスが自動的に開始しない限り、サーバーに展開しないでください。
 
 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
 
@@ -43,11 +43,11 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 
 |パラメーター|説明|
 |---------|-----------|
-|/p:\<Policyfile.xml>|適用される .xml ポリシー ファイルのパスとファイル名を指定します。 このパラメーターを指定する必要があります。|
-|/g:\<GPODisplayName>|GPO の表示名を指定します。 このパラメーターを指定する必要があります。|
+|/p: @no__t 05 >|適用される .xml ポリシー ファイルのパスとファイル名を指定します。 このパラメーターを指定する必要があります。|
+|/g: \<GPODisplayName >|GPO の表示名を指定します。 このパラメーターを指定する必要があります。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 Scwcmd.exe は Windows Server 2008 R2、Windows Server 2008 または Windows Server 2003 を実行するコンピューターにできるだけです。
 
@@ -60,4 +60,4 @@ scwcmd transform /p:FileServerPolicy.xml /g:FileServerSecurity
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

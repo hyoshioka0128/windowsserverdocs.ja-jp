@@ -1,8 +1,8 @@
 ---
 title: start
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ab7388633681120442544adf4ee0e337d8599854
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 1fb0875c972f8259b47f48ef84ed486fc678d8b0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441225"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370890"
 ---
 # <a name="start"></a>start
 
@@ -38,20 +38,20 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 
 |パラメーター|説明|
 |---------|-----------|
-|"\<タイトル >"|コマンド プロンプト ウィンドウのタイトル バーに表示するタイトルを指定します。|
-|/d\<パス >|スタートアップ ディレクトリを指定します。|
+|"\<Title >"|コマンド プロンプト ウィンドウのタイトル バーに表示するタイトルを指定します。|
+|/d \<Path >|スタートアップ ディレクトリを指定します。|
 |/i|Cmd.exe スタートアップ環境を新しいコマンド プロンプト ウィンドウに渡します。 場合 **/i** が指定されていない、現在の環境を使用します。|
-|/min \| max/|最小化することを指定 ( **/min**) または最大化 (**最大**) 新しいコマンド プロンプト ウィンドウです。|
-|/separate \| /shared|別のメモリ領域で 16 ビット プログラムを起動 ( **/separate**) または共有メモリの領域 ( **/共有**)。 64 ビット プラットフォームでは、これらのオプションはサポートされていません。|
-|/low \| /normal \| /high \| /realtime \| /abovenormal \| /belownormal|指定した優先度クラスでは、アプリケーションを起動します。 有効な優先度クラスの値は **低/** , 、**通常/** , 、 **/高**, 、 **/realtime**, 、 **/abovenormal**, と **/belownormal**します。|
-|/affinity \<HexAffinity >|新しいアプリケーションを (16 進数として表されます)、指定されたプロセッサ関係マスクを適用します。|
+|/分 \|/最大|最小化することを指定 ( **/min**) または最大化 (**最大**) 新しいコマンド プロンプト ウィンドウです。|
+|/@no__t 0/共有|別のメモリ領域で 16 ビット プログラムを起動 ( **/separate**) または共有メモリの領域 ( **/共有**)。 64 ビット プラットフォームでは、これらのオプションはサポートされていません。|
+|/低 \|/標準 \|/高 \|/リアルタイム \|/abovenormal \|/belownormal|指定した優先度クラスでは、アプリケーションを起動します。 有効な優先度クラスの値は **低/** , 、**通常/** , 、 **/高**, 、 **/realtime**, 、 **/abovenormal**, と **/belownormal**します。|
+|/アフィニティ \<HexAffinity >|新しいアプリケーションを (16 進数として表されます)、指定されたプロセッサ関係マスクを適用します。|
 |/wait|アプリケーションを起動し、終了するまで待機します。|
 |/b|新しいコマンド プロンプト ウィンドウを開くことがなく、アプリケーションを起動します。 CTRL キーを押しながら C キーの処理には、アプリケーションは CTRL + C 処理を有効にしない限りは無視されます。 アプリケーションを中断するのにには、CTRL キーを押しながら BREAK キーを使用します。|
-|/b\<コマンド > \| \<プログラム >|開始するコマンドまたはプログラムを指定します。|
-|\<パラメーター >|コマンドまたはプログラムに渡すパラメーターを指定します。|
+|/b \<Command > \| \<Program >|開始するコマンドまたはプログラムを指定します。|
+|\<Parameters >|コマンドまたはプログラムに渡すパラメーターを指定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 - コマンドとして、ファイルの名前を入力して、ファイルの関連付けを通じて非実行可能ファイルを実行できます。
 - 拡張機能またはパスの修飾子を持たない最初のトークンとして文字列"CMD"を含むコマンドを実行すると、"CMD"は COMSPEC 変数の値に置き換えられます。 これを取得できないように **cmd** 、現在のディレクトリからです。

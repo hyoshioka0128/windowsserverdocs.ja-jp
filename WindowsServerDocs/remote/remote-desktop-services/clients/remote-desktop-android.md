@@ -2,7 +2,7 @@
 title: Android クライアントの概要
 description: Android クライアントに関する一般的な情報。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -14,12 +14,12 @@ manager: daveba
 ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f9e8eb861961dc714a964012960e8742b721d4de
-ms.sourcegitcommit: 081661f50d6dafb77180149956a02e679270c710
+ms.openlocfilehash: d11e8ad0cac1f9cf024097450e90d9be95d950b0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71037598"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387759"
 ---
 # <a name="get-started-with-the-android-client"></a>Android クライアントの概要
 

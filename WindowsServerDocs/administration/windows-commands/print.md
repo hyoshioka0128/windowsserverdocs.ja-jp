@@ -1,8 +1,8 @@
 ---
 title: print
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d85fc5b2cd5f5ba09ebdf4756a5adb60c1759f2a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ada0657e2f17754e55e97e6488aac99fb0025afb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831553"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372155"
 ---
 # <a name="print"></a>print
 
@@ -38,18 +38,18 @@ Print [/d:<PrinterName>] [<Drive>:][<Path>]<FileName>[ ...]
 
 |パラメーター|説明|
 |---------|-----------|
-|/d:\<PrinterName>|ジョブを印刷するプリンターを指定します。 ローカルに接続されたプリンターに印刷するには、プリンターが接続されているコンピューターで、ポートを指定します。</br>-パラレル ポートに有効な値は、LPT1、LPT2、LPT3 です。</br>にシリアル ポート用有効な値は、COM1、COM2、COM3、COM4 です。</br>キュー名を使用して、ネットワーク プリンターを指定することもできます (\\\\*ServerName*\*PrinterName *)。 プリンターを指定しないと、印刷ジョブが既定では LPT1 に送信されます。|
-|\<ドライブ >:|印刷するファイルの場所の論理的または物理的なドライブを指定します。 現在のドライブに印刷するファイルがある場合、このパラメーターは必要ありません。|
-|\<パス >|印刷するファイルの場所を指定します。 印刷するファイルが現在のディレクトリにある場合、このパラメーターは必要ありません。|
-|\<ファイル名 > [...]|必須。 印刷するファイルを指定します。 1 つのコマンドでは、複数のファイルを含めることができます。|
+|/d: \<PrinterName >|ジョブを印刷するプリンターを指定します。 ローカルに接続されたプリンターに印刷するには、プリンターが接続されているコンピューターで、ポートを指定します。</br>-パラレル ポートに有効な値は、LPT1、LPT2、LPT3 です。</br>にシリアル ポート用有効な値は、COM1、COM2、COM3、COM4 です。</br>また、キュー名 (\\ @ no__t-1*ServerName*\*PrinterName *) を使用して、ネットワークプリンターを指定することもできます。 プリンターを指定しないと、印刷ジョブが既定では LPT1 に送信されます。|
+|@no__t 0Drive >:|印刷するファイルの場所の論理的または物理的なドライブを指定します。 現在のドライブに印刷するファイルがある場合、このパラメーターは必要ありません。|
+|\<Path >|印刷するファイルの場所を指定します。 印刷するファイルが現在のディレクトリにある場合、このパラメーターは必要ありません。|
+|\<FileName > [...]|必須。 印刷するファイルを指定します。 1 つのコマンドでは、複数のファイルを含めることができます。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   ファイルは、ローカル コンピューターのシリアル ポートまたはパラレル ポートに接続されているプリンターに送信する場合、バック グラウンドで印刷できます。
 -   コマンド プロンプトからさまざまな構成タスクを実行するにを使用して、 **モード** コマンドです。
 
-    参照してください[モード](mode.md)の詳細については。  
+    の詳細については、「[モード](mode.md)」を参照してください。  
     -   パラレル ポートに接続されているプリンターを構成します。
     -   シリアル ポートに接続されているプリンターを構成します。
     -   プリンターの状態を表示します。
@@ -61,15 +61,15 @@ LPT2 に、ローカル コンピューター上のプリンターには、現�
 ```
 print /d:lpt2 report.txt
 ```
-Printer1 は通常の印刷キューに Report.txt c:\Accounting ディレクトリ内のファイルを送信する、 \\ \\CopyRoom、サーバーの型。
+C:\ アカウンティングディレクトリのファイル Printer1 を、0 @ no__t のコピールームサーバーの印刷 @no__t キューに送信するには、次のように入力します。
 ```
 print /d:\\copyroom\printer1 c:\accounting\report.txt 
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
 
 [印刷コマンドのリファレンス](print-command-reference.md)
 
-[モード](mode.md)
+[Mode](mode.md)

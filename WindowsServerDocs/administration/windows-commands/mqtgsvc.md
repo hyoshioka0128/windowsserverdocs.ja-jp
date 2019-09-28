@@ -1,8 +1,8 @@
 ---
 title: mqtgsvc
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c420c9d00ab71993fc35d0046fc905049e57b58f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c10a260470c6a97e521b04f5bef2844c1f3893a9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817183"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373477"
 ---
 # <a name="mqtgsvc"></a>mqtgsvc
 
 
 
-受信メッセージのキューを監視し、トリガーの規則が true として評価されるときに、実行可能ファイルまたは COM コンポーネントの形式でアクションを実行します。 メッセージ キュー トリガー サービスの使用方法の例については、次を参照してください。[メッセージ キュー トリガー](https://go.microsoft.com/fwlink/?LinkId=248725)msdn です。
+トリガーの規則が true と評価された場合に、受信メッセージのキューを監視し、実行可能ファイルまたは COM コンポーネントの形式でアクションを実行します。 メッセージキュートリガーサービスを使用する方法の例については、MSDN の「[メッセージキュートリガー](https://go.microsoft.com/fwlink/?LinkId=248725)」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -38,4 +38,4 @@ Mqtgsvc.exe
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

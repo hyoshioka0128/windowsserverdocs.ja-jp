@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getvalidationstate
-description: 'Windows コマンド」のトピック**bitsadmin getvalidationstate** -ジョブ内の指定されたファイルのコンテンツの検証状態を報告します。 '
+description: '**Bitsadmin getvalidationstate**の Windows コマンドのトピック-ジョブ内の指定されたファイルのコンテンツ検証の状態を報告します。 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8abff3fc9fddb9cff1758739fdc540a9c945efe2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ca4269a596010258edd0479f5a7e9844bc9c98df
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879163"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381262"
 ---
 # <a name="bitsadmin-getvalidationstate"></a>bitsadmin getvalidationstate
 
 
 
-ジョブ内の指定されたファイルのコンテンツの検証の状態を報告します。
+ジョブ内の指定されたファイルのコンテンツ検証の状態を報告します。
 
 ## <a name="syntax"></a>構文
 
@@ -37,15 +37,15 @@ bitsadmin /GetValidationState <Job> <file index>
 |パラメーター|説明|
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
-|ファイルのインデックス|0 から始まります|
+|ファイルインデックス|0から開始|
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、ファイル 2 という名前のジョブ内のコンテンツの検証の状態を取得します。 *myJob*します。
+次の例では、 *myjob*という名前のジョブ内にあるファイル2のコンテンツ検証の状態を取得します。
 ```
 C:\>bitsadmin /GetValidationState myJob 1
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

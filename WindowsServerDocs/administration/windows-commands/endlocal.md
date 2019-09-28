@@ -1,8 +1,8 @@
 ---
 title: endlocal
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e516b2bf9e8a45ada910dfbd93e3ed5e7d86c14
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 16d2b7b445a2220a10f88f21029948ed10ee96e4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862143"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377570"
 ---
 # <a name="endlocal"></a>endlocal
 
 
 
-バッチ ファイルでは、環境の変更のローカライズを終了し、対応する環境変数を値に戻します**setlocal**コマンドが実行されました。
+バッチファイル内の環境の変更のローカライズを終了し、対応する**setlocal**コマンドが実行される前に環境変数を値に復元します。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
@@ -40,18 +40,18 @@ endlocal
 |---------|-----------|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   **Endlocal**コマンド スクリプトまたはバッチ ファイルの外部効果がありません。
--   暗黙的な**endlocal**バッチ ファイルの末尾にあるコマンド。
--   コマンド拡張機能が有効になっている場合 (コマンド拡張機能は、既定で有効には、)、 **endlocal**コマンドでは、コマンド拡張機能 (つまり、有効または無効) の状態を復元すると、対応する前に、の**setlocal**コマンドが実行されました。
+-   **Endlocal**コマンドは、スクリプトまたはバッチファイルの外部には影響しません。
+-   バッチファイルの末尾には、暗黙的な**endlocal**コマンドがあります。
+-   コマンド拡張機能が有効になっている場合 (コマンド拡張機能が既定で有効になっている場合)、 **endlocal**コマンドを実行すると、コマンド拡張機能 (有効または無効) の状態が、対応する**setlocal**コマンドが実行される前の状態に復元されます。
 
 > [!NOTE]
-> 有効にして、コマンド拡張機能を無効化の詳細については、次を参照してください。 [Cmd](cmd.md)します。
+> コマンド拡張機能の有効化と無効化の詳細については、「 [Cmd](cmd.md)」を参照してください。
 
 ## <a name="BKMK_examples"></a>例
 
-バッチ ファイルで環境変数をローカライズすることができます。 たとえば、次のプログラム superapp バッチ プログラムをネットワークで起動する、出力ファイルを転送し、メモ帳でファイルが表示されます。
+環境変数はバッチファイルでローカライズできます。 たとえば、次のプログラムは、ネットワーク上で superapp バッチプログラムを開始し、出力をファイルに送信して、メモ帳でファイルを表示します。
 ```
 @echo off
 setlocal
@@ -63,4 +63,4 @@ start notepad c:\superapp.out
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

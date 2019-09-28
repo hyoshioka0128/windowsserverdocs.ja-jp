@@ -1,8 +1,8 @@
 ---
-title: ksetup:setcomputerpassword
-description: 'Windows コマンド」のトピック * * *- '
+title: 'ksetup: setcomputerpassword'
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0679bb9ee429e05c7679411c5493bd21b530ef8e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d1d3742476385eb770c9cb5c798c1f6ab27c74f8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831543"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374940"
 ---
-# <a name="ksetupsetcomputerpassword"></a>ksetup:setcomputerpassword
+# <a name="ksetupsetcomputerpassword"></a>ksetup: setcomputerpassword
 
 
 
-ローカル コンピューターのパスワードを設定します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+ローカルコンピューターのパスワードを設定します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,19 +36,19 @@ ksetup /setcomputerpassword <Password>
 
 |パラメーター|説明|
 |---------|-----------|
-|\<パスワード >|指定したパスワードを使用すると、ローカル コンピューターのコンピューター アカウントを設定します。</br>パスワードは、管理者特権を持つアカウントを使用してのみ設定できます。 パスワードには、1 ~ 156 の英数字または特殊文字を指定できます。|
+|\<Password >|指定されたパスワードを使用して、ローカルコンピューターのコンピューターアカウントを設定します。</br>パスワードは、管理者特権を持つアカウントを使用してのみ設定できます。 パスワードには、1 ~ 156 の英数字または特殊文字を使用できます。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-このコマンドでは、コンピューター アカウントのみに影響します。
+このコマンドは、コンピューターアカウントのみに影響します。
 
 パスワードの変更を有効にするには、コンピューターを再起動する必要があります。
 
-レジストリまたはからの出力として、コンピューター アカウントのパスワードは表示されませんが、 **ksetup**コマンド。
+コンピューターアカウントのパスワードは、レジストリまたは**ksetup**コマンドからの出力としては表示されません。
 
 ## <a name="BKMK_Examples"></a>例
 
-IPops897 から IPop ドル 897 にローカル コンピューターのコンピューター アカウントのパスワードを変更しました。
+ローカルコンピューターのコンピューターアカウントのパスワードを IPops897 から IPop $ 897! に変更します。
 ```
 ksetup /setcomputerpassword IPop$897!
 ```
@@ -56,4 +56,4 @@ ksetup /setcomputerpassword IPop$897!
 #### <a name="additional-references"></a>その他の参照情報
 
 -   [Ksetup](ksetup.md)
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

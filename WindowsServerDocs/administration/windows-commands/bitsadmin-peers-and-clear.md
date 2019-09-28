@@ -1,8 +1,8 @@
 ---
-title: bitsadmin ピアと消去
-description: Windows コマンド」のトピック**bitsadmin ピアし、クリア**-ピアのリストをクリアします。
+title: bitsadmin ピアとクリア
+description: Bitsadmin ピアの Windows コマンドに関するトピック**とクリア**-ピアの一覧をクリアします。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 19e14078dab5471dad78b4198cd39c3a547339e2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 253b7ce370a942b30479936a5ee84aaea9c950e7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873013"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381001"
 ---
-# <a name="bitsadmin-peers-and-clear"></a>bitsadmin ピアと消去
+# <a name="bitsadmin-peers-and-clear"></a>bitsadmin ピアとクリア
 
 
 
-ピアのリストをクリアします。
+ピアの一覧をクリアします。
 
 ## <a name="syntax"></a>構文
 
@@ -34,11 +34,11 @@ bitsadmin /Peers /Clear
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、ピアのリストをクリアします。
+次の例では、ピアリストをクリアします。
 ```
 C:\>bitsadmin /Peers /Clear
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

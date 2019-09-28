@@ -6,14 +6,14 @@ ms.author: billmath
 manager: femila
 ms.date: 09/07/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b67177c8bf0ce9869aa51c3012d57f3208ac02f5
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 78db6f8b6961cecea55b8d371e9abf952cafdab3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866290"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358668"
 ---
 # <a name="compound-authentication-and-ad-ds-claims-in-ad-fs"></a>AD FS での複合認証と AD DS クレーム
 Windows Server 2012 では、複合認証の導入によって Kerberos 認証が強化されています。  複合認証を使用すると、Kerberos チケット保証サービス (TGS) の要求に2つの id を含めることができます。 
@@ -121,7 +121,7 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 2. ADFS サービスを再起動します。
 
 >[!NOTE]
->' CompoundIdentitySupported ' が true に設定されている場合、新しいサーバー (2012r2/2016) に同じ gMSA をインストールすると、 **次のエラーが発生します-adserviceaccount:サービスアカウントをインストールできません。エラー メッセージ:' 指定されたコンテキストはターゲットと一致しませんでした。 '** .
+>' CompoundIdentitySupported ' が true に設定されている場合、新しいサーバー (2012r2/2016) に同じ gMSA をインストールすると、 **次のエラーが発生します-adserviceaccount:サービスアカウントをインストールできません。エラー メッセージ :' 指定されたコンテキストはターゲットと一致しませんでした。 '** .
 >
 >**解決方法**:一時的に CompoundIdentitySupported を $false に設定します。 この手順により、ADFS は WindowsDeviceGroup 要求の発行を停止します。 Set ADServiceAccount-Identity ' ADFS Service Account '-CompoundIdentitySupported: $false 新しいサーバーに gMSA をインストールしてから、CompoundIdentitySupported を $True に戻します。
 CompoundIdentitySupported を無効にしてから再度有効化する場合、ADFS サービスを再起動する必要はありません。
@@ -192,7 +192,7 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 2. ADFS サービスを再起動します。
 
 >[!NOTE]
->' CompoundIdentitySupported ' が true に設定されている場合、新しいサーバー (2012r2/2016) に同じ gMSA をインストールすると、 **次のエラーが発生します-adserviceaccount:サービスアカウントをインストールできません。エラー メッセージ:' 指定されたコンテキストはターゲットと一致しませんでした。 '** .
+>' CompoundIdentitySupported ' が true に設定されている場合、新しいサーバー (2012r2/2016) に同じ gMSA をインストールすると、 **次のエラーが発生します-adserviceaccount:サービスアカウントをインストールできません。エラー メッセージ :' 指定されたコンテキストはターゲットと一致しませんでした。 '** .
 >
 >**解決方法**:一時的に CompoundIdentitySupported を $false に設定します。 この手順により、ADFS は WindowsDeviceGroup 要求の発行を停止します。 Set ADServiceAccount-Identity ' ADFS Service Account '-CompoundIdentitySupported: $false 新しいサーバーに gMSA をインストールしてから、CompoundIdentitySupported を $True に戻します。
 CompoundIdentitySupported を無効にしてから再度有効化する場合、ADFS サービスを再起動する必要はありません。
@@ -218,7 +218,7 @@ CompoundIdentitySupported を無効にしてから再度有効化する場合、
 "WindowsDeviceGroup" 要求のリリースを検証するには、.Net 4.6 を使用してテスト要求対応アプリケーションを作成します。 WIF SDK 4.0 を使用します。
 ADFS で証明書利用者としてアプリケーションを構成し、前述の手順で指定したとおりに要求規則で更新します。
 Windows 統合認証プロバイダーの ADFS を使用してアプリケーションを認証する場合、次の要求がキャストされます。
-![検証](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc9.png)
+![検査](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc9.png)
 
 コンピューターまたはデバイスの信頼性情報を使用して、より豊富なアクセス制御を行うことができるようになりました。
 

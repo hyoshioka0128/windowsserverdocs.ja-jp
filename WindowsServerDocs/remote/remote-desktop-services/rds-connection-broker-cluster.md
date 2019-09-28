@@ -2,7 +2,7 @@
 title: RD 接続ブローカー サーバーを追加して RDS で高可用性を構成する
 description: 高可用性のために RDS の展開に RD 接続ブローカーを追加する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: b1e5726e3976527278b11f105007a32548da0bc4
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 511f852568aa4cc7498e3a0b8deacea83db22c08
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805154"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404059"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>RD 接続ブローカー サーバーを展開に追加し、高可用性を構成する
 
@@ -48,7 +48,7 @@ ms.locfileid: "66805154"
    1. 接続ブローカーのために VM を使用する場合は、最初の RD 接続ブローカー用にパブリック IP アドレスを作成します。 (これを行う必要があるのは、RDMS 仮想マシンに、RDP 接続を可能にするパブリック IP アドレスがまだない場合だけです。)
        1. Azure portal で、 **[参照]**  >  **[リソース グループ]** とクリックし、デプロイのリソース グループをクリックしてから、RD 接続ブローカーの最初の仮想マシンをクリックします (たとえば Contoso-Cb1)。
        2. **[設定] > [ネットワーク インターフェイス]** とクリックして、対応するネットワーク インターフェイスをクリックします。
-       3. **[設定] > [IP アドレス]** とクリックします。
+       3. **[設定] > [IP アドレス]** の順にクリックします。
        4. **[パブリック IP アドレス]** では、 **[有効]** を選択し、 **[IP アドレス]** をクリックします。
        5. 使用したい既存のパブリック IP アドレスがある場合は、一覧からそれを選択します。 それ以外の場合は、 **[新規作成]** をクリックし、名前を入力したら、 **[OK]** 、 **[保存]** の順にクリックします。
    2. 最初の RD 接続ブローカーに接続します。

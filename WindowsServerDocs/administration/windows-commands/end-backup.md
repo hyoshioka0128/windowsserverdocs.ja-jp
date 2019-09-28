@@ -1,8 +1,8 @@
 ---
-title: 末尾のバックアップ
-description: 'Windows コマンド」のトピック * * *- '
+title: バックアップの終了
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 78eac68131b423768651842fbfb5e34dbdf21677
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 331b8249a4d30da883da830d6db802c3327cc25b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837393"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377588"
 ---
-# <a name="end-backup"></a>末尾のバックアップ
+# <a name="end-backup"></a>バックアップの終了
 
 
 
 
-完全バックアップのセッションとの問題を終了、 **BackupComplete**イベントが必要な場合は、適切なライターの状態。
+完全バックアップセッションを終了し、必要に応じて、適切なライター状態の**BackupComplete**イベントを発行します。
 
 ## <a name="syntax"></a>構文
 
@@ -33,10 +33,10 @@ ms.locfileid: "59837393"
 end backup
 ```
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   このコマンドは、すべての完全バックアップを使用する必要があります。
+-   このコマンドは、すべての完全バックアップに使用する必要があります。
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

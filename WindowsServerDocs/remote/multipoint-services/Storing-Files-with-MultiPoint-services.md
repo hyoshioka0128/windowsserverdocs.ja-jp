@@ -1,9 +1,9 @@
 ---
 title: MultiPoint Services でファイルを保存する
-description: MultiPoint Services で file storage についてください。
+description: MultiPoint Services のファイルストレージについて
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,23 +13,23 @@ ms.assetid: c9eb0461-3846-4ddc-97ff-de10f03f30cf
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: b432ca793b156997761f9fadab7340c394e3b553
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bf31f5c582cffb5b38cff8cb15fcfdb4b3f76386
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817343"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389300"
 ---
 # <a name="storing-files-with-multipoint-services"></a>MultiPoint Services でファイルを保存する
-MultiPoint Services では、次の方法でユーザーのファイルの格納をサポートしています。  
+MultiPoint Services では、次の方法でユーザーファイルを格納できます。  
   
--   **ハード ディスク ドライブのオペレーティング システム パーティション。** 既定では、MultiPoint サービスは、オペレーティング システムとハード ディスク ドライブ上のユーザー ファイルを格納します。  
+-   **ハードディスクドライブのオペレーティングシステムパーティション。** 既定では、MultiPoint Services はユーザーファイルをハードディスクドライブにオペレーティングシステムと共に保存します。  
   
--   **別のハード ディスク ドライブのパーティション。** ときに、MultiPoint Services システムは、最初に設定する、*パーティション*ハード ディスク ドライブ。 つまり、別のドライブの場合と同様に機能するように、ドライブのセクションを構成できます。 これにより、簡単に復元またはユーザー ファイルの影響を与えずに、オペレーティング システムをアップグレードします。 詳細については、次を参照してください。[パーティションまたは論理ドライブを作成](https://go.microsoft.com/fwlink/?LinkId=182618)、Windows Server テクニカル ライブラリにします。  
+-   **ハードディスクドライブの別のパーティション。** MultiPoint Services システムを初めてセットアップするときに、ハードディスクドライブを*パーティション分割*することができます。 つまり、ドライブのセクションを構成して、別のドライブとして機能するようにすることができます。 これにより、ユーザーファイルに影響を与えることなく、オペレーティングシステムの復元またはアップグレードが容易になります。 詳細については、Windows Server テクニカルライブラリの「[パーティションまたは論理ドライブを作成する](https://go.microsoft.com/fwlink/?LinkId=182618)」を参照してください。  
   
--   **内部または外部ハード ディスク ドライブ。** MultiPoint Services を保存およびデータをバックアップするには、その他の内部または外部ハード ディスク ドライブをアタッチできます。  
+-   **追加の内蔵または外付けハードディスクドライブ。** データの保存とバックアップを行うために、追加の内部または外部のハードディスクドライブを MultiPoint Services に接続することができます。  
   
--   **共有ネットワーク フォルダー。** あらゆるステーションからユーザー ファイルを使用できるようにするには、ネットワーク上の共有フォルダーを作成できます。 これは、別のコンピューターまたは MultiPoint Services を実行しているコンピューターだけでなく、サーバーが必要です。 これは、ファイル サーバーがある使用可能な場合は、ファイルを格納するための推奨される方法です。  
+-   **共有ネットワークフォルダー内。** ユーザーファイルを任意のステーションから使用できるようにするには、ネットワーク上に共有フォルダーを作成します。 これには、MultiPoint Services を実行しているコンピューターに加えて、別のコンピューターまたはサーバーが必要です。 ファイルサーバーが使用可能な場合は、この方法を使用してファイルを保存することをお勧めします。  
   
-    使用可能なファイル サーバーのない MultiPoint Services を実行している 2 ~ 3 のコンピューターの小規模なシステムでは、MultiPoint Services コンピューターのすべてのファイル サーバーとして機能 MultiPoint Services コンピューターの 1 つ。 ファイル サーバーとして動作している MultiPoint Services のすべてのユーザーのユーザー アカウントを作成します。  
+    ファイルサーバーを使用しない MultiPoint Services を実行している2-3 コンピューターの小規模なコンピューターでは、MultiPoint Services コンピューターの1つを、multipoint services のすべてのコンピューターのファイルサーバーとして機能させることができます。 次に、ファイルサーバーとして機能する MultiPoint Services のすべてのユーザーのユーザーアカウントを作成します。  
   

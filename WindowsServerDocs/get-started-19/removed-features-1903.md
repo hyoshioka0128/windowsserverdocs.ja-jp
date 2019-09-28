@@ -1,19 +1,19 @@
 ---
 title: Windows Server バージョン 1903 以降で削除された機能と置換が計画されている機能
 description: 次の一覧に、Windows Server バージョン 1903 の機能のうち、このリリースで製品から削除された機能および今後のリリースで置換が検討されるようになった機能を示します。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 ms.date: 08/22/2019
 author: jasongerend
 ms.author: jgerend
 manager: daveba
-ms.openlocfilehash: 4471d6f9d98d58f7444151a7b8be33d2d81423e1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b31cde8216b3ceb230c9c197924b40e8cc8fc3f8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868658"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361176"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1903"></a>Windows Server バージョン 1903 以降で削除された機能と置換が計画されている機能
 

@@ -2,7 +2,7 @@
 title: ユーザー セッションを制御する
 description: MultiPoint Services で別のユーザーのステーションにアクセスして制御する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: fbf50d2a30bdae1665fed2ed4f1b223c6505c699
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 702c6c08647869825d6a46208ee261b6f3843717
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871542"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389228"
 ---
 # <a name="take-control-of-a-user-session"></a>ユーザー セッションを制御する
 MultiPoint ダッシュ ボード ユーザーは、制御機能を使用してリモートから別のユーザーのデスクトップにアクセスし、サポートをすることができます。  

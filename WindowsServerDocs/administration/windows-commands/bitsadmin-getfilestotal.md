@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getfilestotal
-description: Windows コマンド」のトピック**bitsadmin getfilestotal** -指定したジョブ内のファイルの数を取得します。
+description: '**Bitsadmin getfilestotal**の Windows コマンドトピックでは、指定されたジョブ内のファイルの数を取得します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5f6d32b3410b182c510cf40b9def5370efafdc4
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 27cf04e8745aeab5cd1f2ce379c8506be642fea2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435119"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381606"
 ---
 # <a name="bitsadmin-getfilestotal"></a>bitsadmin getfilestotal
 
 
 
-指定したジョブ内のファイルの数を取得します。
+指定されたジョブ内のファイルの数を取得します。
 
 ## <a name="syntax"></a>構文
 
@@ -40,11 +40,11 @@ bitsadmin /GetFilesTotal <Job>
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブに含まれるファイルの数を取得する*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブに含まれているファイルの数を取得します。
 ```
 C:\>bitsadmin /GetFilesTotal myDownloadJob
 ```
 
 # #
 
-[コマンドライン構文キー](command-line-syntax-key.md)も参照してください
+[コマンドライン構文のキー](command-line-syntax-key.md)関連項目

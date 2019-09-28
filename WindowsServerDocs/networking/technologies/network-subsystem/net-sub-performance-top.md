@@ -1,47 +1,47 @@
 ---
 title: ネットワーク サブシステムのパフォーマンスの調整
-description: このトピックでは、Windows Server 2016 は、ネットワーク サブシステムのパフォーマンス チューニング ガイドの一部です。
-ms.prod: windows-server-threshold
+description: このトピックは、Windows Server 2016 のネットワークサブシステムのパフォーマンスチューニングガイドに含まれています。
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 45217fce-bfb9-47e8-9814-88ffdb3c7b7d
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c0706c6ddbb678eacd3e609cfad3ccdda943fbd3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 02a1abc9de04926740309081397e0bd92fe74b88
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857413"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401886"
 ---
 # <a name="network-subsystem-performance-tuning"></a>ネットワーク サブシステムのパフォーマンスの調整
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、ネットワーク サブシステムの概要については、このガイドの他のトピックへのリンクを使用できます。
+このトピックでは、ネットワークサブシステムの概要と、このガイドの他のトピックへのリンクについて説明します。
 
 >[!NOTE]
->このトピックに加え、このガイドの次のセクションではネットワーク デバイスのパフォーマンス チューニングの推奨事項とネットワーク スタックを提供します。
-> - [ネットワーク アダプターを選択します。](net-sub-choose-nic.md)
-> - [ネットワーク インターフェイスの順序を構成します。](net-sub-interface-metric.md)
-> - [パフォーマンス チューニングのネットワーク アダプター](net-sub-performance-tuning-nics.md)
-> - [ネットワーク関連のパフォーマンス カウンター](net-sub-performance-counters.md)
-> - [ネットワーク ワークロードのパフォーマンス ツール](net-sub-performance-tools.md)
+>このトピックに加えて、このガイドの次のセクションでは、ネットワークデバイスとネットワークスタックのパフォーマンスチューニングに関する推奨事項について説明します。
+> - [ネットワークアダプターの選択](net-sub-choose-nic.md)
+> - [ネットワークインターフェイスの順序を構成する](net-sub-interface-metric.md)
+> - [ネットワークアダプターのパフォーマンスチューニング](net-sub-performance-tuning-nics.md)
+> - [ネットワーク関連のパフォーマンスカウンター](net-sub-performance-counters.md)
+> - [ネットワーク ワークロードに関するパフォーマンス ツール](net-sub-performance-tools.md)
 
-パフォーマンス チューニングの特にネットワーク集中型のワークロードの場合、ネットワーク サブシステムには、ネットワーク スタックとも呼ばれるネットワーク アーキテクチャの各レイヤーが含まれます。 これらの層は、次のセクションに大きく分類します。
+ネットワークサブシステムのパフォーマンスチューニング (特にネットワーク集中型のワークロードの場合) には、ネットワークスタックとも呼ばれるネットワークアーキテクチャの各層が関係します。 これらのレイヤーは、次のセクションに広範囲に分かれています。
 
-1. **ネットワーク インターフェイス**します。 これは、ネットワーク スタックの最下位の層であり、ネットワーク アダプターと直接通信するネットワーク ドライバーが含まれています。
+1. **ネットワークインターフェイス**。 これはネットワークスタックの最下位層であり、ネットワークアダプターと直接通信するネットワークドライバーが含まれています。
 
-2. **Network Driver Interface Specification (NDIS)** します。 NDIS は、下にある、ドライバー、およびプロトコル スタックなど、上位層インターフェイスを公開します。
+2. **Network Driver Interface Specification (NDIS)** 。 NDIS は、その下にあるドライバーのインターフェイスと、プロトコルスタックなどの上位層のインターフェイスを公開します。
   
-3. **プロトコル スタック**します。 プロトコル スタックは、TCP/IP や UDP/IP などのプロトコルを実装します。 これらの層は、それらの上に層のトランスポート レイヤー インターフェイスを公開します。
+3. **プロトコルスタック**。 プロトコルスタックは、TCP/IP や UDP/IP などのプロトコルを実装します。 これらのレイヤーは、その上にあるレイヤーのトランスポート層インターフェイスを公開します。
   
-4. **システム ドライバー**します。 これらは、通常、インターフェイス ユーザー モード アプリケーションを公開する、トランスポートのデータ拡張機能 (TDX) や Winsock カーネル (WSK) インターフェイスを使用するクライアントです。 WSK インターフェイスは、Windows Server 2008 および Windows で導入された&reg;AFD.sys によって、Vista、およびが公開されます。 インターフェイスでは、ユーザー モードとカーネル モードの切り替えを排除することによってパフォーマンスが向上します。
+4. **システムドライバー**。 これらは通常、トランスポートデータ拡張機能 (TDX) または Winsock カーネル (WSK) インターフェイスを使用して、インターフェイスをユーザーモードアプリケーションに公開するクライアントです。 WSK インターフェイスは、Windows Server 2008 および Windows @ no__t-0 Vista で導入され、AFD.SYS によって公開されています。 インターフェイスにより、ユーザーモードとカーネルモードの切り替えが不要になるため、パフォーマンスが向上します。
   
-5. **ユーザー モード アプリケーション**します。 これらは通常、Microsoft ソリューションまたはカスタム アプリケーションです。
+5. **ユーザーモードアプリケーション**。 これらは通常、Microsoft ソリューションまたはカスタムアプリケーションです。
 
-次の表は、各レイヤーで実行されている項目の例を含む、ネットワーク スタックの各層の垂直方向の図を示します。  
+次の表は、各レイヤーで実行される項目の例を含む、ネットワークスタックのレイヤーを示しています。  
 
-![ネットワーク スタック レイヤー](../../media/Network-Subsystem/network-layers.jpg)
+![ネットワークスタックレイヤー](../../media/Network-Subsystem/network-layers.jpg)
 
