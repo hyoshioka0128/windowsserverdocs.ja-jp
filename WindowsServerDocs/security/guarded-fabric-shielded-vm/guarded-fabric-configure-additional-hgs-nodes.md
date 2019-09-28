@@ -1,19 +1,19 @@
 ---
 title: 追加の HGS ノードを構成する
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 227f723b-acb2-42a7-bbe3-44e82f930e35
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 10/22/2018
-ms.openlocfilehash: fe9cd63f08da849c2cb002ab853501370d736f0f
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5277a97f7f58d9d7edb1457cb363cb6ddf1d8b59
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870593"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403697"
 ---
 # <a name="configure-additional-hgs-nodes"></a>追加の HGS ノードを構成する
 

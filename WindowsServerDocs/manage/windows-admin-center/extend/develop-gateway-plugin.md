@@ -1,88 +1,88 @@
 ---
 title: ゲートウェイ プラグインの開発
-description: ゲートウェイ プラグイン Windows Admin Center SDK (プロジェクト ホノルル) の開発します。
+description: ゲートウェイプラグインの開発 Windows 管理センター SDK (Project ホノルル)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 66e36a349fc6bd38a77ccf4f00d380788ea4b422
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.prod: windows-server
+ms.openlocfilehash: 2b096b226190ad1ca3fd07c38b7b939d019ee30f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445955"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406939"
 ---
 # <a name="develop-a-gateway-plugin"></a>ゲートウェイ プラグインの開発
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
-Windows Admin Center ゲートウェイ プラグインには、ターゲット ノードに、ツールやソリューションの UI からの通信の API ができます。  Windows Admin Center では、ターゲット ノードで実行するには、コマンドおよびゲートウェイ プラグインからスクリプトを中継するゲートウェイ サービスをホストします。 ゲートウェイ サービスは、既定の以外のプロトコルをサポートするカスタム ゲートウェイ プラグインを含める拡張できます。
+Windows 管理センターのゲートウェイプラグインを使用すると、ツールまたはソリューションの UI からターゲットノードへの API 通信が可能になります。  Windows 管理センターは、ターゲットノードで実行されるゲートウェイプラグインからコマンドとスクリプトをリレーするゲートウェイサービスをホストします。 ゲートウェイサービスを拡張して、既定のプロトコル以外のプロトコルをサポートするカスタムゲートウェイプラグインを含めることができます。
 
-Windows Admin Center では既定では、これらのゲートウェイ プラグインが含まれています。
+これらのゲートウェイプラグインは、既定で Windows 管理センターに含まれています。
 
-* PowerShell ゲートウェイ プラグイン
-* WMI ゲートウェイ プラグイン
+* PowerShell ゲートウェイプラグイン
+* WMI ゲートウェイプラグイン
 
-PowerShell または WMI 以外のプロトコルと通信したい場合など、残りの部分で構築できますゲートウェイ プラグイン。  ゲートウェイ プラグインは、既存のゲートウェイ プロセスから別の AppDomain に読み込まれますが、権利については、同じレベルの昇格を使用します。
+REST など、PowerShell または WMI 以外のプロトコルと通信する場合は、独自のゲートウェイプラグインを作成できます。  ゲートウェイプラグインは、既存のゲートウェイプロセスとは別の AppDomain に読み込まれますが、権限については同じレベルの昇格を使用します。
 
 > [!NOTE]
-> 別の拡張機能の種類に精通していないか。 詳細については、[機能拡張のアーキテクチャと拡張機能の種類](understand-extensions.md)します。
+> さまざまな拡張機能の種類に慣れていない場合は、 拡張[機能のアーキテクチャと拡張機能の種類](understand-extensions.md)の詳細については、こちらを参照してください。
 
 ## <a name="prepare-your-environment"></a>環境の準備
 
-既に、していない場合は[環境を準備する](prepare-development-environment.md)依存関係とすべてのプロジェクトに必要なグローバルの前提条件をインストールすることで。
+まだインストールしていない場合は、すべてのプロジェクトに必要な依存関係とグローバルな前提条件をインストールして[環境を準備](prepare-development-environment.md)します。
 
-## <a name="create-a-gateway-plugin-c-library"></a>ゲートウェイのプラグインを作成 (C#ライブラリ)
+## <a name="create-a-gateway-plugin-c-library"></a>ゲートウェイプラグイン (C#ライブラリ) を作成する
 
-ゲートウェイのカスタム プラグインを作成するには、新規作成C#を実装するクラス、```IPlugIn```からインターフェイス、```Microsoft.ManagementExperience.FeatureInterfaces```名前空間。  
-
-> [!NOTE]
-> ```IFeature``` SDK の以前のバージョンで使用可能なインターフェイスが不使用とフラグが設定ようになりました。  ゲートウェイのすべてのプラグイン開発には、IPlugIn (または必要に応じて HttpPlugIn 抽象クラス) を使用する必要があります。
-
-### <a name="download-sample-from-github"></a>GitHub からサンプルをダウンロードします。
-
-手始めにゲートウェイのカスタム プラグインを使用した、複製またはのコピーをダウンロード、[サンプルC#プラグイン プロジェクト](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin)Windows Admin Center SDK から[GitHub サイト](https://aka.ms/wacsdk)します。
-
-### <a name="add-content"></a>コンテンツを追加します。
-
-複製されたコピーの新しいコンテンツの追加、[サンプルC#プラグイン プロジェクト](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin)プロジェクト (または独自のプロジェクト) に含めるカスタム Api、ゲートウェイのカスタム プラグイン DLL のビルドは、次の手順で使用するファイルします。
-
-### <a name="deploy-plugin-for-testing"></a>配置をテストするためのプラグイン
-
-カスタム ゲートウェイ プラグイン DLL をテストするには、Windows Admin Center ゲートウェイ プロセスに読み込みます。
-
-Windows Admin Center がすべてのプラグインを探し、 ```plugins``` (Environment.SpecialFolder 列挙体の CommonApplicationData 値を使用して) 現在のコンピューターのアプリケーション データ フォルダー内のフォルダー。 この場所は、Windows 10 で```C:\ProgramData\Server Management Experience```します。  場合、```plugins```フォルダーが存在しない時点では、フォルダーを自分で作成できます。
+カスタムゲートウェイプラグインを作成するには、@no__t C#の名前空間から ```IPlugIn``` インターフェイスを実装する新しいクラスを作成します。  
 
 > [!NOTE]
-> デバッグ ビルドでプラグインの場所をオーバーライドするには、"StaticsFolder"構成値を更新します。 ローカルでデバッグしている場合、この設定はデスクトップ ソリューションの App.Config では。 
+> 以前のバージョンの SDK で使用可能な ```IFeature``` インターフェイスには、互換性のために残されています。  すべてのゲートウェイプラグイン開発では、IPlugIn (または必要に応じて HttpPlugIn 抽象クラス) を使用する必要があります。
 
-Plugins フォルダー内 (この例で```C:\ProgramData\Server Management Experience\plugins```)
+### <a name="download-sample-from-github"></a>GitHub からサンプルをダウンロードする
 
-* 同じ名前の新しいフォルダーを作成、```Name```プロパティの値、```Feature```カスタム ゲートウェイ プラグイン DLL の (このサンプル プロジェクトで、```Name```は"サンプル Uno")
-* ゲートウェイのカスタム プラグインの DLL ファイルをこの新しいフォルダーにコピーします。
-* Windows Admin Center プロセスを再起動します。
+カスタムゲートウェイプラグインを使用してすぐに開始するには、Windows 管理センター SDK [GitHub サイト](https://aka.ms/wacsdk)から[ C#サンプルプラグインプロジェクト](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin)の複製またはダウンロードを行うことができます。
 
-Windows の管理プロセスを再起動した後は、GET を発行することによってカスタム ゲートウェイ プラグイン DLL の Api を練習するができます PUT、PATCH、DELETE、または投稿するには ```http(s)://{domain|localhost}/api/nodes/{node}/features/{feature name}/{identifier}```
+### <a name="add-content"></a>コンテンツを追加する
 
-### <a name="optional-attach-to-plugin-for-debugging"></a>省略可能: デバッグ用のプラグインにアタッチします。
+[ C#サンプルプラグインプロジェクト](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin)プロジェクト (または独自のプロジェクト) の複製したコピーに新しいコンテンツを追加してカスタム api を含め、次の手順で使用するカスタムゲートウェイプラグイン DLL ファイルを作成します。
 
-Visual Studio 2017 でのデバッグ メニューから"プロセスにアタッチ を選択します。 次のウィンドウでは、使用可能なプロセスの一覧をスクロールして、「SMEDesktop.exe、を選択し、"Attach"をクリックします。 1 回、デバッガーが開始することができますにブレークポイントを設定、機能のコードと、上記の URL 形式を演習します。 このサンプル プロジェクトの (機能名。"サンプル Uno") の URL です:"<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>"
+### <a name="deploy-plugin-for-testing"></a>テスト用のプラグインの配置
 
-## <a name="create-a-tool-extension-with-the-windows-admin-center-cli"></a>Windows Admin Center CLI を使用したツールの拡張機能を作成します。 ##
+カスタムゲートウェイプラグイン DLL を Windows 管理センターゲートウェイプロセスに読み込んでテストします。
 
-元のゲートウェイのカスタム プラグインを呼び出すことができますツール拡張を作成する必要があります。  作成またはプロジェクト ファイルの保存、コマンド プロンプトを開き、そのフォルダーを作業ディレクトリとして設定しフォルダーを参照します。  既にインストールされている Windows Admin Center CLI を使用して、次の構文で、新しい拡張機能を作成します。
+Windows 管理センターでは、現在のコンピューターの Application Data フォルダー内の @no__t 0 フォルダーにあるすべてのプラグインが検索されます (System.environment.specialfolder 列挙型の CommonApplicationData 値を使用します)。 Windows 10 では、この場所は ```C:\ProgramData\Server Management Experience``` です。  @No__t-0 フォルダーがまだ存在しない場合は、自分でフォルダーを作成することができます。
+
+> [!NOTE]
+> デバッグビルドでプラグインの場所をオーバーライドするには、"StaticsFolder" 構成値を更新します。 ローカルでデバッグしている場合、この設定はデスクトップソリューションの app.config にあります。 
+
+プラグインフォルダー内 (この例では、```C:\ProgramData\Server Management Experience\plugins```)
+
+* カスタムゲートウェイプラグイン DLL で ```Feature``` の @no__t 0 プロパティ値と同じ名前の新しいフォルダーを作成します (サンプルプロジェクトでは、```Name``` は "Sample Uno")。
+* カスタムゲートウェイプラグイン DLL ファイルをこの新しいフォルダーにコピーします
+* Windows 管理センターのプロセスを再起動する
+
+Windows 管理プロセスが再起動した後、GET、PUT、PATCH、DELETE、または POST を発行して、カスタムゲートウェイプラグイン DLL で Api を実行することができます。 ```http(s)://{domain|localhost}/api/nodes/{node}/features/{feature name}/{identifier}```
+
+### <a name="optional-attach-to-plugin-for-debugging"></a>省略可能: デバッグ用にプラグインにアタッチ
+
+Visual Studio 2017 で、[デバッグ] メニューの [プロセスにアタッチ] をクリックします。 次のウィンドウで、[選択可能なプロセス] ボックスの一覧をスクロールして SMEDesktop を選択し、[アタッチ] をクリックします。 デバッガーが起動したら、機能コードにブレークポイントを設定してから、上記の URL 形式を使用することができます。 サンプルプロジェクトの場合 (機能名:"Sample Uno") URL: "<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>"
+
+## <a name="create-a-tool-extension-with-the-windows-admin-center-cli"></a>Windows 管理センター CLI を使用してツール拡張機能を作成する ##
+
+ここで、カスタムゲートウェイプラグインを呼び出すことができるツール拡張機能を作成する必要があります。  プロジェクトファイルを格納するフォルダーを作成または参照し、コマンドプロンプトを開き、そのフォルダーを作業ディレクトリとして設定します。  以前にインストールされた Windows 管理センター CLI を使用して、次の構文で新しい拡張機能を作成します。
 
 ```
 wac create --company "{!Company Name}" --tool "{!Tool Name}"
 ```
 
-| Value | 説明 | 例 |
+| 値 | 説明 | 例 |
 | ----- | ----------- | ------- |
-| ```{!Company Name}``` | (スペース) を会社名 | ```Contoso Inc``` |
-| ```{!Tool Name}``` | (スペース) を含む、ツール名 | ```Manage Foo Works``` |
+| ```{!Company Name}``` | 会社名 (スペースを含む) | ```Contoso Inc``` |
+| ```{!Tool Name}``` | (スペースを含む) ツール名 | ```Manage Foo Works``` |
 
 次に使用方法の例を示します。
 
@@ -90,26 +90,26 @@ wac create --company "{!Company Name}" --tool "{!Tool Name}"
 wac create --company "Contoso Inc" --tool "Manage Foo Works"
 ```
 
-これは、ツールに指定されたプロジェクトにすべての必要なテンプレート ファイルをコピー、および、会社とツールの名前を持つファイルを構成します。 名前を使用して現在の作業ディレクトリ内の新しいフォルダーを作成します。  
+これにより、ツールで指定した名前を使用して現在の作業ディレクトリ内に新しいフォルダーが作成され、必要なすべてのテンプレートファイルがプロジェクトにコピーされ、会社名とツール名を使用してファイルが構成されます。  
 
-次に、先ほど作成したフォルダーにディレクトリを変更し、次のコマンドを実行して、必要なローカルの依存関係をインストールします。
+次に、作成したフォルダーにディレクトリを変更し、次のコマンドを実行して必要なローカルの依存関係をインストールします。
 
 ```
 npm install
 ```
 
-これが完了すると、Windows Admin Center に新しい拡張機能を読み込む必要があるすべてのものを設定します。 
+これが完了すると、Windows 管理センターに新しい拡張機能を読み込むために必要なすべての設定が完了します。 
 
-## <a name="connect-your-tool-extension-to-your-custom-gateway-plugin"></a>ツール拡張機能をカスタム ゲートウェイ プラグインに接続します。
+## <a name="connect-your-tool-extension-to-your-custom-gateway-plugin"></a>ツール拡張機能をカスタムゲートウェイプラグインに接続する
 
-Windows Admin Center CLI を使用した拡張機能を作成するのでは、次の手順に従って、ツールの拡張機能をカスタム ゲートウェイ プラグインに接続する準備が完了したら。
+Windows 管理センター CLI を使用して拡張機能を作成したので、次の手順に従って、ツール拡張機能をカスタムゲートウェイプラグインに接続する準備ができました。
 
-- 追加、[空のモジュール](guides/add-module.md)
-- 使用して、[カスタム ゲートウェイ プラグイン](guides/use-custom-gateway-plugin.md)ツールの拡張機能
+- 空の[モジュール](guides/add-module.md)を追加する
+- ツール拡張機能で[カスタムゲートウェイプラグイン](guides/use-custom-gateway-plugin.md)を使用する
  
-## <a name="build-and-side-load-your-extension"></a>ビルドと側は、拡張機能を読み込む
+## <a name="build-and-side-load-your-extension"></a>拡張機能をビルドしてサイドロードする
 
-次に、ビルドと側は、Windows Admin Center に、拡張機能を読み込みます。  コマンド ウィンドウを開き、ビルドする準備ができたし、ソース ディレクトリにディレクトリを変更します。
+次に、拡張機能をビルドして Windows 管理センターに読み込みます。  コマンドウィンドウを開き、ディレクトリをソースディレクトリに変更します。その後、ビルドする準備が整います。
 
 * 次のように gulp build および gulp serve を指定します。
 
@@ -134,6 +134,6 @@ Windows Admin Center CLI を使用した拡張機能を作成するのでは、�
 
 これで、プロジェクトは、名前の横に (side loaded) が追加された状態でツール一覧に表示されるようになります。
 
-## <a name="target-a-different-version-of-the-windows-admin-center-sdk"></a>別のバージョン、Windows Admin Center SDK の対象します。
+## <a name="target-a-different-version-of-the-windows-admin-center-sdk"></a>別のバージョンの Windows 管理センター SDK をターゲットにする
 
-拡張機能の最新の SDK の変更点とプラットフォームの変更を維持することは簡単です。  」を参照して[別のバージョンをターゲット](target-sdk-version.md)Windows Admin Center SDK の。
+SDK の変更とプラットフォームの変更によって拡張機能を最新の状態に保つことは簡単です。  [別のバージョン](target-sdk-version.md)の Windows 管理センター SDK をターゲットにする方法については、こちらを参照してください。

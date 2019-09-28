@@ -6,14 +6,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 951e7d74a3370d9863d747e349d7fe701615e225
-ms.sourcegitcommit: 2e38b26742f3b16c153170d6f5219c020a8e9383
+ms.openlocfilehash: 44fb4c02421a431edb502daecaa38f00fb4dd2ad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69896815"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407533"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>AD FS のための SSL/TLS プロトコルと暗号スイートの管理
 次のドキュメントでは、で使用される特定の TLS/SSL プロトコルおよび暗号スイートを無効にして有効にする方法について説明し AD FS
@@ -262,14 +262,14 @@ RC4 を有効または無効にするには、次のレジストリキーとそ�
 .NET Framework 3.5/4.0/4.5 .x アプリケーションでは、SchUseStrongCrypto レジストリキーを有効にすることで、既定のプロトコルを TLS 1.2 に切り替えることができます。  このレジストリキーを使用すると、.NET アプリケーションで TLS 1.2 が強制的に使用されます。
 
 > [!IMPORTANT]
-> Windows Server 2016 および Windows Server 2012 R2 の AD FS については、.NET Framework 4.0/4.5. x キーを使用する必要があります。HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\。NETFramework\v4.0.30319
+> Windows Server 2016 および Windows Server 2012 R2 の AD FS については、.NET Framework 4.0/4.5. x キーを使用する必要があります。HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft @ no__t-0 NETFramework\v4.0.30319
 
 
 .NET Framework 3.5 では、次のレジストリキーを使用します。
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\。NETFramework\v2.0.50727] "SchUseStrongCrypto" = dword: 00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft @ no__t-0. NETFramework\v2.0.50727] "SchUseStrongCrypto" = dword: 00000001
 
-.NET Framework 4.0/4.5. x では、次のレジストリキーを使用します。HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\。NETFramework\v4.0.30319 "SchUseStrongCrypto" = dword: 00000001
+.NET Framework 4.0/4.5. x では、次のレジストリキーを使用します。HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft @ no__t-0 NETFramework\v4.0.30319 "SchUseStrongCrypto" = dword: 00000001
 
 ![強力な認証](media/Managing-SSL-Protocols-in-AD-FS/strongauth.png)
 

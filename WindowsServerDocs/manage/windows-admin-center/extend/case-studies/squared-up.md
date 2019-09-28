@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 05/23/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 0d4469684ad9cbdadec5c40cb3b5178345b64a6d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 620d3d9f4b5c3638d49fe9141e83ebdcb9eb245c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865334"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406920"
 ---
 # <a name="squared-up-extension"></a>2乗されるアップ拡張
 

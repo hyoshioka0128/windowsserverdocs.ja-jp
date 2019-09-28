@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0d69c92209a2998cf2c249b865ad8d16424735ca
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: bac72fb27b40e3d7d7cd4e796caeec12c65def5e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867581"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358812"
 ---
 # <a name="when-to-use-identity-delegation"></a>ID 委任が必要になるシナリオ
   

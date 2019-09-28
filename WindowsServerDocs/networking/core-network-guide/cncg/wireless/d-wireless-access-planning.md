@@ -2,18 +2,18 @@
 title: ワイヤレス アクセスの展開計画
 description: このトピックは、Windows Server 2016 ネットワークガイド「パスワードベースの 802.1 X 認証ワイヤレスアクセスの展開」に含まれています。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 8c632d02-2270-4a82-8fc4-74ea3747f079
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4606e1cb418426623aca9e199ddde575a826a064
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 44ca48ab05a7f63b1b9dd07f955e68accbcefdb7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865330"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356078"
 ---
 # <a name="wireless-access-deployment-planning"></a>ワイヤレス アクセスの展開計画
 

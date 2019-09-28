@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 01/11/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 12de939aa451ba75b4bafed85cd57bdd8280bc81
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 0e4def5cd8a88cd5cb5d4df71d2f3a192ae23701
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70864940"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406965"
 ---
 # <a name="dataon-must-extension"></a>DataON には拡張機能が必要です
 

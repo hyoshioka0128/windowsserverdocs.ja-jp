@@ -2,7 +2,7 @@
 title: typeperf
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cfcbac82b88c0c8d8bcc706ebfd807f96e359de7
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 087b201c51d5aec8e6f61c7469c59307d3ed8b4d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "66440779"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392296"
 ---
 # <a name="typeperf"></a>typeperf
 
@@ -44,27 +44,27 @@ typeperf -qx [object] [options]
 |\<counter [カウンター [...]]>|監視するパフォーマンスカウンターを指定します。|
 
 > [!NOTE]
-> *\\ \\* **カウンター\<>** は、  **\\Server1\Processor (0) \\のように、Computer\Object (インスタンス) \ カウンター形式のパフォーマンスカウンターの完全な名前です。\%ユーザー時間**。
+> **\<counter >** は *\\ @ no__t-4Computer\Object (インスタンス) \ カウンター*形式のパフォーマンスカウンターの完全な名前です (例: **\\ @ no__t-7Server1\Processor (0) \% ユーザー時間)** 。
 
 ## <a name="options"></a>および
 
-|                   オプション                   |                                                         説明                                                          |
+|                   OPTION                   |                                                         説明                                                          |
 |--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 |                     -?                     |                                               状況依存のヘルプを表示します。                                               |
-| -f \<CSV&verbar;TSV&verbar;ビン&verbar;SQL > |                                    出力ファイルの形式を指定します。 既定値は CSV です。                                     |
-|              -cf \<ファイル名 >               |              監視するパフォーマンスカウンターの一覧を含むファイルを指定します。1行につき1つのカウンターがあります。               |
+| -f \<CSV @ no__t-1TSV @ no__t-2BIN @ no__t-3SQL > |                                    出力ファイルの形式を指定します。 既定値は CSV です。                                     |
+|              -cf \<filename >               |              監視するパフォーマンスカウンターの一覧を含むファイルを指定します。1行につき1つのカウンターがあります。               |
 |             -si < [[hh:] mm:] ss >             |                                  サンプル間隔を指定します。 既定値は1秒です。                                   |
 |               -o \<filename >               |     出力ファイルまたは SQL データベースのパスを指定します。 既定値は STDOUT (コマンドウィンドウに書き込まれます) です。      |
-|                -q [オブジェクト]                 | インストールされているカウンターの一覧を表示します (インスタンスなし)。 1つのオブジェクトのカウンターを一覧表示するには、オブジェクト名を含めます。 \*\*\*よう |
+|                -q [オブジェクト]                 | インストールされているカウンターの一覧を表示します (インスタンスなし)。 1つのオブジェクトのカウンターを一覧表示するには、オブジェクト名を含めます。 \* @ NO__T @ NO__T-2EXAMPLE |
 |                -qx [オブジェクト]                |        インストールされているカウンターの一覧をインスタンスと共に表示します。 1つのオブジェクトのカウンターを一覧表示するには、オブジェクト名を含めます。        |
-|               -sc \<サンプル >               |             収集するサンプルの数を指定します。 既定では、CTRL + C キーが押されるまでデータが収集されます。              |
+|               -sc \<samples >               |             収集するサンプルの数を指定します。 既定では、CTRL + C キーが押されるまでデータが収集されます。              |
 |            -config \<ファイル名 >             |                                    コマンドオプションを含む設定ファイルを指定します。                                     |
-|            -s \<>             |                   カウンターパスにコンピューターが指定されていない場合に、監視するリモートコンピューターを指定します。                    |
+|            -s \<computer_name >             |                   カウンターパスにコンピューターが指定されていない場合に、監視するリモートコンピューターを指定します。                    |
 |                     -y                     |                                        確認を求めずにすべての質問に対して [はい] を回答します。                                        |
 
 ## <a name="BKMK_EXAMPLES"></a>例
 
-- 次の例では、CTRL + C キーが押されるまで、ローカルコンピューターのパフォーマンスカウンター  **\\ \\プロセッサ (_total\% ) プロセッサ時間**の値を既定の1秒のサンプル間隔でコマンドウィンドウに書き込みます.  
+- 次の例では、ローカルコンピューターのパフォーマンスカウンターの値 **\\ @ no__t-2processor (_total) \% プロセッサ時間**を既定のサンプル間隔である1秒で、CTRL + C キーを押します。  
   ```
   typeperf "\Processor(_Total)\% Processor Time"
   ```  

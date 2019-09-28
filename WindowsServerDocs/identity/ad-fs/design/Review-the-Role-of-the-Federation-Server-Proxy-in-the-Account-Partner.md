@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: eb0547ac1d84fffed31360f0ee510504510c24ce
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 876dee31a38506f7d7934bd8adfb51766bb60ce5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867670"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407931"
 ---
 # <a name="review-the-role-of-the-federation-server-proxy-in-the-account-partner"></a>アカウント パートナー内のフェデレーション サーバー プロキシの役割を確認する
 

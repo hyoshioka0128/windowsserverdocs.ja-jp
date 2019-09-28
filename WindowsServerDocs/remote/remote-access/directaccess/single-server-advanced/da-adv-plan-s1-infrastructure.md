@@ -1,9 +1,9 @@
 ---
-title: 手順 1. プラン DirectAccess インフラストラクチャを高度です
-description: このトピックは高度な設定を Windows Server 2016 での単一の DirectAccess サーバー展開ガイドの一部です。
+title: 手順1高度な DirectAccess インフラストラクチャを計画する
+description: このトピックは、「Windows Server 2016 の詳細設定を使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,39 +12,39 @@ ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 339189928d3ce5403d0fca4a06efc36b867e2a50
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 9fa6fe4de0c8723c17f6a61717281d0a38d1b579
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281780"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388660"
 ---
-# <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>手順 1. プラン DirectAccess インフラストラクチャを高度です
+# <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>手順1高度な DirectAccess インフラストラクチャを計画する
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
 単一サーバーでの高度な DirectAccess 展開計画の最初の手順は、展開に必要なインフラストラクチャを計画することです。 このトピックでは、インフラストラクチャの計画手順を説明します。 これらの計画タスクを特定の順序で完了する必要はありません。  
   
 |タスク|説明|
 |----|--------|  
-|[1.1 ネットワーク トポロジと設定を計画します。](#11-plan-network-topology-and-settings)|DirectAccess サーバーの配置場所 (エッジか、ネットワーク アドレス変換 (NAT) デバイスまたはファイアウォールの内側) を決定し、IP アドレス指定、ルーティング、強制トンネリングを計画します。|  
-|[1.2 ファイアウォールの要件を計画します。](#12-plan-firewall-requirements)|DirectAccess トラフィックがエッジ ファイアウォールを使用するように計画します。|  
-|[1.3 証明書の要件を計画します。](#13-plan-certificate-requirements)|クライアント認証に Kerberos を使用するか、証明書を使用するかを決定し、Web サイト証明書を計画します。 IP-HTTPS は、IPv4 ネットワーク経由で IPv6 トラフィックをトンネリングするために DirectAccess クライアントによって使用される移行プロトコルです。 IP-HTTPS サーバーの認証に証明機関 (CA) が発行する証明書を使用するか、DirectAccess サーバーが自動的に発行する自己署名証明書を使用するかを決定します。|  
-|[1.4 DNS 要件を計画します。](#14-plan-dns-requirements)|DirectAccess サーバーのドメイン ネーム システム (DNS) 設定、インフラストラクチャ サーバー、ローカルでの名前解決オプション、クライアント接続を計画します。|  
-|[1.5 ネットワーク ロケーション サーバーを計画します。](#15-plan-the-network-location-server)|ネットワーク ロケーション サーバーは、内部ネットワークに配置されているかどうかを判断するために DirectAccess クライアントによって使用されます。 組織でのネットワーク ロケーション サーバー Web サイトの配置場所 (DirectAccess サーバーまたは代替サーバー) を決定し、ネットワーク ロケーション サーバーを DirectAccess サーバーに配置する場合は、証明書要件を計画します。|  
-|[1.6 管理サーバーを計画します。](#16-plan-management-servers)|インターネット上で企業ネットワークの外側に配置された DirectAccess クライアント コンピューターはリモートで管理できます。 リモート クライアント管理時に使用する管理サーバー (更新サーバーなど) を計画します。|  
-|[1.7 Active Directory Domain Services を計画します。](#17-plan-active-directory-domain-services)|ドメイン コントローラー、Active Directory の要件、クライアント認証、複数ドメインを計画します。|  
-|[1.8 プランのグループ ポリシー オブジェクト](#18-plan-group-policy-objects)|組織で必要な GPO とその GPO の作成または編集方法を決定します。|  
+|[1.1 ネットワークトポロジと設定を計画する](#11-plan-network-topology-and-settings)|DirectAccess サーバーの配置場所 (エッジか、ネットワーク アドレス変換 (NAT) デバイスまたはファイアウォールの内側) を決定し、IP アドレス指定、ルーティング、強制トンネリングを計画します。|  
+|[1.2 ファイアウォール要件を計画する](#12-plan-firewall-requirements)|DirectAccess トラフィックがエッジ ファイアウォールを使用するように計画します。|  
+|[1.3 証明書の要件を計画する](#13-plan-certificate-requirements)|クライアント認証に Kerberos を使用するか、証明書を使用するかを決定し、Web サイト証明書を計画します。 IP-HTTPS は、IPv4 ネットワーク経由で IPv6 トラフィックをトンネリングするために DirectAccess クライアントによって使用される移行プロトコルです。 IP-HTTPS サーバーの認証に証明機関 (CA) が発行する証明書を使用するか、DirectAccess サーバーが自動的に発行する自己署名証明書を使用するかを決定します。|  
+|[1.4 DNS 要件を計画する](#14-plan-dns-requirements)|DirectAccess サーバーのドメイン ネーム システム (DNS) 設定、インフラストラクチャ サーバー、ローカルでの名前解決オプション、クライアント接続を計画します。|  
+|[1.5 ネットワークロケーションサーバーを計画する](#15-plan-the-network-location-server)|ネットワーク ロケーション サーバーは、内部ネットワークに配置されているかどうかを判断するために DirectAccess クライアントによって使用されます。 組織でのネットワーク ロケーション サーバー Web サイトの配置場所 (DirectAccess サーバーまたは代替サーバー) を決定し、ネットワーク ロケーション サーバーを DirectAccess サーバーに配置する場合は、証明書要件を計画します。|  
+|[1.6 管理サーバーを計画する](#16-plan-management-servers)|インターネット上で企業ネットワークの外側に配置された DirectAccess クライアント コンピューターはリモートで管理できます。 リモート クライアント管理時に使用する管理サーバー (更新サーバーなど) を計画します。|  
+|[1.7 計画 Active Directory Domain Services](#17-plan-active-directory-domain-services)|ドメイン コントローラー、Active Directory の要件、クライアント認証、複数ドメインを計画します。|  
+|[1.8 グループポリシーオブジェクトを計画する](#18-plan-group-policy-objects)|組織で必要な GPO とその GPO の作成または編集方法を決定します。|  
   
 ## <a name="11-plan-network-topology-and-settings"></a>1.1ネットワーク トポロジと設定を計画する
 
 このセクションでは、次のようなネットワークを計画する方法について説明します。  
   
-- [1.1.1 ネットワーク アダプターと IP アドレス指定を計画します。](#111-plan-network-adapters-and-ip-addressing)  
+- [1.1.1 ネットワークアダプターと IP アドレス指定を計画する](#111-plan-network-adapters-and-ip-addressing)  
   
-- [1.1.2 IPv6 イントラネット接続を計画します。](#112-plan-ipv6-intranet-connectivity)  
+- [1.1.2 IPv6 イントラネット接続を計画する](#112-plan-ipv6-intranet-connectivity)  
   
-- [1.1.3 強制トンネリングのプラン](#113-plan-for-force-tunneling)  
+- [強制トンネリングの1.1.3 プラン](#113-plan-for-force-tunneling)  
   
 ### <a name="111-plan-network-adapters-and-ip-addressing"></a>1.1.1 ネットワーク アダプターと IP アドレス指定を計画する  
   
@@ -60,7 +60,7 @@ ms.locfileid: "67281780"
   
     - [IPv6 移行テクノロジ](https://technet.microsoft.com/library/bb726951.aspx)  
   
-    - [IP-HTTPS トンネリング プロトコルの仕様](https://msdn.microsoft.com/library/dd358571(PROT.10).aspx)  
+    - [Ip-https トンネリングプロトコル仕様](https://msdn.microsoft.com/library/dd358571(PROT.10).aspx)  
   
 3. 次の表に従って、必要なアダプターとアドレスを構成します。 単一のネットワーク アダプターを使用し、NAT デバイスの内側に設定されている展開のみを使用して IP アドレスを構成するため、 **内部ネットワーク アダプター** 列です。  
   
@@ -152,17 +152,17 @@ DirectAccess サーバーが IPv6 インターネット上にある場合は、�
 
 単一の DirectAccess サーバーを展開する場合、証明書を必要とするシナリオは 3 つあります。  
   
-- [1.3.1 IPsec 認証用のコンピューターの証明書を計画します。](#131-plan-computer-certificates-for-ipsec-authentication)  
+- [1.3.1 IPsec 認証用にコンピューター証明書を計画する](#131-plan-computer-certificates-for-ipsec-authentication)  
   
     IPsec の証明書要件には、クライアントと DirectAccess サーバーとの IPsec 接続を確立するときに DirectAccess クライアント コンピューターが使用するコンピューター証明書と、DirectAccess サーバーが DirectAccess クライアントとの IPsec 接続を確立するときに使用するコンピューター証明書が含まれます。  
   
     Windows Server 2012 の DirectAccess IPsec 証明書の使用は必須ではありません。 代わりに、DirectAccess サーバーは Kerberos プロキシとして機能し、証明書を必要とせずに、IPsec 認証を実行できます。 Kerberos プロトコルが使用されている場合は、SSL 上で機能し、Kerberos プロキシは、この目的のために IP-HTTPS 向けに構成された証明書を使用します。 一部のエンタープライズ シナリオ (マルチサイト展開とワンタイム パスワード (OTP) クライアント認証を含む) には、Kerberos プロトコルではなく、証明書認証の使用が必要です。  
   
--   [1.3.2 IP-HTTPS の証明書を計画します。](#132-plan-certificates-for-ip-https)  
+-   [1.3.2 による ip-https の証明書の計画](#132-plan-certificates-for-ip-https)  
   
     リモート アクセスを構成する場合、DirectAccess サーバーは、IP-HTTPS リスナーとして機能するように、自動的に構成されます。 IP-HTTPS サイトは Web サイト証明書を要求します。また、クライアント コンピューターは、その証明書の証明書失効リスト (CRL) サイトに接続できる必要があります。  
   
--   [1.3.3 ネットワーク ロケーション サーバー web サイトの証明書を計画します。](#133-plan-website-certificates-for-the-network-location-server)  
+-   [1.3.3 ネットワークロケーションサーバーの web サイト証明書を計画する](#133-plan-website-certificates-for-the-network-location-server)  
   
     ネットワーク ロケーション サーバーとは、クライアント コンピューターが企業ネットワークに置かれているかどうかを検出するために使用する Web サイトです。 ネットワーク ロケーション サーバーには、web サイトの証明書が必要です。 DirectAccess クライアントは、その証明書の CRL サイトに接続できる必要があります。  
   
@@ -172,7 +172,7 @@ DirectAccess サーバーが IPv6 インターネット上にある場合は、�
 |------------|----------|--------------|  
 |認証に Kerberos プロキシを使用しない場合に、内部 CA が DirectAccess サーバーとの IPsec 認証にクライアントをコンピューター証明書を発行するために必要|内部 CA:<br/><br/>IP-HTTPS 証明書の発行には、内部 CA を使用できます。ただし、CRL 配布ポイントが外部で使用できることを確認する必要があります。|内部 CA:<br/><br/>内部 CA を使用して、ネットワーク ロケーション サーバー Web サイト証明書を発行できます。 CRL 配布ポイントに内部ネットワークからの高可用性があることを確認してください。|  
 ||自己署名証明書:<br/><br/>IP-HTTPS サーバーには、自己署名証明書を使用できます。ただし、CRL 配布ポイントが外部で使用できることを確認する必要があります。<br/><br/>自己署名証明書をマルチサイト展開に使用することはできません。|自己署名証明書:<br/><br/>自己署名証明書は、ネットワーク ロケーション サーバー Web サイトに使用できます。<br/><br/>自己署名証明書をマルチサイト展開に使用することはできません。|  
-||**お勧めします**<br/><br/>パブリック CA:<br/><br/>IP-HTTPS 証明書の発行には、パブリック CA の使用をお勧めします。 こうすることで、CRL 配布ポイントを外部で使用できます。|  
+||**しない**<br/><br/>パブリック CA:<br/><br/>IP-HTTPS 証明書の発行には、パブリック CA の使用をお勧めします。 こうすることで、CRL 配布ポイントを外部で使用できます。|  
   
 ### <a name="131-plan-computer-certificates-for-ipsec-authentication"></a>1.3.1 IPsec 認証にコンピューター証明書を計画する  
 証明書に基づく IPsec 認証を使用している場合、DirectAccess サーバーとクライアントは、コンピューター証明書を入手する必要があります。 証明書をインストールする最も簡単な方法は、コンピューター証明書にグループ ポリシーベースの自動登録を構成することです。 こうすることによって、すべてのドメイン メンバーがエンタープライズ CA から証明書を入手します。 エンタープライズ CA で、組織を設定しない場合は、次を参照してください。 [Active Directory Certificate Services](https://technet.microsoft.com/library/cc770357.aspx)します。  
@@ -305,9 +305,9 @@ IP-HTTPS の非標準ポートを使用して手動プロセスを完了する�
 ## <a name="14-plan-dns-requirements"></a>1.4 DNS 要件を計画する  
 このセクションでは、リモート アクセス展開の DirectAccess クライアント要求とインフラストラクチャ サーバーの DNS 要件について説明します。 このトピックには次のサブセクションが含まれます。  
   
--   [1.4.1 DNS サーバーの要件を計画します。](#141-plan-for-dns-server-requirements)  
+-   [1.4.1 DNS サーバー要件の計画](#141-plan-for-dns-server-requirements)  
   
--   [1.4.2 がローカルの名前解決を計画します。](#142-plan-for-local-name-resolution)  
+-   [1.4.2 ローカルでの名前解決の計画](#142-plan-for-local-name-resolution)  
   
 **DirectAccess クライアント要求**  
   
@@ -317,7 +317,7 @@ DNS は、内部 (または企業ネットワーク) に配置されていない
   
 -   接続に失敗すると、クライアントはインターネットに配置されていると仮定され、DirectAccess クライアントは名前解決ポリシー テーブル (NRPT) を使用して、名前要求を解決するときに使用する DNS サーバーを決定します。  
   
-クライアントが名前解決に DirectAccess DNS64 を使用するか、代替内部 DNS サーバーを使用するかを指定できます。 名前解決の実行時、NRPT が DirectAccess クライアントによって使用されて、要求の処理方法が特定されます。 クライアントは、FQDN または単一ラベル名をなど要求<https://internal>します。 シングルラベル名が要求されると、DNS サフィックスが追加されて FQDN になります。 DNS クエリが NRPT のエントリと一致し、DNS64 または内部ネットワーク上の DNS サーバーがエントリに指定されると、指定したサーバーを使用して、名前解決にクエリが送信されます。 一致が存在するが、DNS サーバーが指定されていない場合、これは除外規則を示し、通常の名前解決が適用されます。  
+クライアントが名前解決に DirectAccess DNS64 を使用するか、代替内部 DNS サーバーを使用するかを指定できます。 名前解決の実行時、NRPT が DirectAccess クライアントによって使用されて、要求の処理方法が特定されます。 クライアントは、<https://internal> などの FQDN または単一ラベル名を要求します。 シングルラベル名が要求されると、DNS サフィックスが追加されて FQDN になります。 DNS クエリが NRPT のエントリと一致し、DNS64 または内部ネットワーク上の DNS サーバーがエントリに指定されると、指定したサーバーを使用して、名前解決にクエリが送信されます。 一致が存在するが、DNS サーバーが指定されていない場合、これは除外規則を示し、通常の名前解決が適用されます。  
   
 > [!NOTE]  
 > リモート アクセス管理コンソールで NRPT に新しいサフィックスが追加されると、サフィックスの既定の DNS サーバーを自動的に検出する分断 **検出**します。  
@@ -328,17 +328,17 @@ DNS は、内部 (または企業ネットワーク) に配置されていない
   
 -   企業ネットワークが IPv6 ベースである場合、既定のアドレスは、企業ネットワーク内の DNS サーバーの IPv6 アドレスです。  
   
-**インフラストラクチャ サーバー**  
+**インフラストラクチャサーバー**  
   
--   **ネットワーク ロケーション サーバー**  
+-   **ネットワークロケーションサーバー**  
   
     DirectAccess クライアントは、内部ネットワークに配置されているかを判断するために、ネットワーク ロケーション サーバーに接続しようとします。 内部ネットワークのクライアントは、ネットワーク ロケーション サーバーの名前を解決できる必要がありますが、インターネット上に配置されている場合は、名前の解決を防ぐ必要があります。 これが確実に行われるように、既定で、ネットワーク ロケーション サーバーの FQDN が NRPT に対する除外規則として追加されます。 また、リモート アクセスを構成する場合、次の規則が自動的に作成されます。  
   
     -   ルート ドメイン、または DirectAccess サーバーのドメイン名の DNS サフィックス規則と DNS64 アドレスに一致する IPv6 アドレス。 IPv6 専用の企業ネットワークでは、イントラネット DNS サーバーが DirectAccess サーバー上に構成されます。 たとえば、DirectAccess サーバーが corp.contoso.com ドメインのメンバーである場合、corp.contoso.com DNS サフィックスについて規則が作成されます。  
   
-    -   ネットワーク ロケーション サーバーの FQDN の除外規則。 たとえば、ネットワーク ロケーション サーバーの URL は<https://nls.corp.contoso.com>、FQDN nls.corp.contoso.com について除外規則が作成されます。  
+    -   ネットワーク ロケーション サーバーの FQDN の除外規則。 たとえば、ネットワークロケーションサーバーの URL が @no__t 0 の場合、FQDN nls.corp.contoso.com に対して除外ルールが作成されます。  
   
--   **IP-HTTPS サーバー**  
+-   **Ip-https サーバー**  
   
     DirectAccess サーバーは IP-HTTPS リスナーとして機能し、サーバー証明書を使用して、IP-HTTPS クライアントを認証します。 IP-HTTPS 名は、パブリック DNS サーバーを使用している DirectAccess クライアントによって解決できる必要があります。  
   
@@ -375,7 +375,7 @@ DirectAccess を展開するときの DNS の要件を次に示します。
   
 -   動的更新をサポートする DNS サーバーを使用します。 動的更新をサポートしない DNS サーバーも使用できますが、これらのサーバーはエントリを手動で更新する必要があります。  
   
--   インターネットにアクセスできる CRL 配布ポイントの FQDN fは、インターネット DNS サーバーを使用して解決できる必要があります。 たとえば場合、URL<https://crl.contoso.com/crld/corp-DC1-CA.crl>では、 **CRL 配布ポイント**IP-HTTPS 証明書のフィールド、DirectAccess サーバーの FQDN crld.contoso.com がインターネット DNS サーバーを使用して解決できることを確認する必要があります。  
+-   インターネットにアクセスできる CRL 配布ポイントの FQDN fは、インターネット DNS サーバーを使用して解決できる必要があります。 たとえば、URL <https://crl.contoso.com/crld/corp-DC1-CA.crl> が DirectAccess サーバーの ip-https 証明書の**CRL 配布ポイント**フィールドにある場合、インターネット DNS サーバーを使用して FQDN crld.contoso.com が解決可能であることを確認する必要があります。  
   
 ### <a name="142-plan-for-local-name-resolution"></a>1.4.2 ローカルでの名前解決を計画する  
 ローカルでの名前解決を計画している場合、次の問題を考慮してください。  
@@ -396,7 +396,7 @@ DirectAccess を展開するときの DNS の要件を次に示します。
   
 **単一ラベル名**  
   
-単一ラベル名のなど<https://paycheck>、イントラネット サーバーに使用されることができます。 単一ラベル名が要求され、DNS サフィックス検索一覧が構成されている場合、その一覧の DNS サフィックスが単一ラベル名に追加されます。 たとえば、ユーザーがコンピューターには、corp.contoso.com ドメインの種類のメンバー <https://paycheck> web ブラウザーで、名前として構成される FQDN は、paycheck.corp.contoso.com です。 既定で、追加されたサフィックスは、クライアント コンピューターのプライマリ DNS サフィックスに基づきます。  
+@No__t-0 などの単一ラベル名は、イントラネットサーバーで使用されることがあります。 単一ラベル名が要求され、DNS サフィックス検索一覧が構成されている場合、その一覧の DNS サフィックスが単一ラベル名に追加されます。 たとえば、corp.contoso.com ドメインのメンバーであるコンピューターのユーザーが web ブラウザーで <https://paycheck> の場合、名前として構成されている FQDN は paycheck.corp.contoso.com になります。 既定で、追加されたサフィックスは、クライアント コンピューターのプライマリ DNS サフィックスに基づきます。  
   
 > [!NOTE]  
 > 不整合の名前空間というシナリオ (1 つ以上のドメイン コンピューターにそのコンピューターが属する Active Directory ドメインと一致しない DNS サフィックスがある場合)、検索一覧が要求されたサフィックスをすべて含むようにカスタマイズされていることを確認する必要があります。 既定で、リモート アクセス ウィザードはクライアントのプライマリ DNS サフィックスとして、Active Directory DNS 名を構成します。 クライアントによって名前解決に使用される DNS サフィックスを追加していることを確認します。  
@@ -421,7 +421,7 @@ DirectAccess を展開するときの DNS の要件を次に示します。
   
 DNS の名前を解決できない場合、ローカル サブネット上の名前を解決するのには Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows 8 および Windows 7 における DNS クライアント サービスで使用できます、ローカル名前解決、リンク ローカル マルチキャスト名前解決 (LLMNR) と NetBIOS over TCP/IP プロトコル。  
   
-ローカルの名前解決は、通常、コンピューターが単一サブネットのホーム ネットワークなどのプライベート ネットワークに配置されている場合、ピアツーピア接続に必要です。 DNS クライアント サービスがイントラネット サーバー名に対するローカルの名前解決を実行し、コンピューターがインターネットで共有サブネットに接続されていると、悪意あるユーザーは LLMNR メッセージや NetBIOS over TCP/IP メッセージをキャプチャして、イントラネット サーバー名を判断できます。 インフラストラクチャ サーバーのセットアップ ウィザードの DNS ページで、イントラネット DNS サーバーから受け取った応答の種類に基づいて、ローカルの名前解決動作を構成します。 次のオプションが使用できます。  
+ローカルの名前解決は、通常、コンピューターが単一サブネットのホーム ネットワークなどのプライベート ネットワークに配置されている場合、ピアツーピア接続に必要です。 DNS クライアント サービスがイントラネット サーバー名に対するローカルの名前解決を実行し、コンピューターがインターネットで共有サブネットに接続されていると、悪意あるユーザーは LLMNR メッセージや NetBIOS over TCP/IP メッセージをキャプチャして、イントラネット サーバー名を判断できます。 インフラストラクチャ サーバーのセットアップ ウィザードの DNS ページで、イントラネット DNS サーバーから受け取った応答の種類に基づいて、ローカルの名前解決動作を構成します。 次のオプションを使用できます。  
   
 -   **[名前が DNS に存在しない場合は、ローカルでの名前解決を行います]** : このオプションは、DirectAccess クライアントがイントラネット DNS サーバーで解決できないサーバー名についてのみローカルの名前解決を実行するため、最も安全です。 イントラネット DNS サーバーに到達できれば、イントラネット サーバーの名前が解決されます。 イントラネット DNS サーバーに到達できない場合や、他の種類の DNS エラーがある場合に、イントラネット サーバー名がローカルの名前解決でサブネットに漏洩することはありません。  
   
@@ -478,9 +478,9 @@ DirectAccess クライアントは、Windows Update やウイルス対策の更�
 ## <a name="17-plan-active-directory-domain-services"></a>1.7 Active Directory Domain Services を計画する  
 このセクションでは、DirectAccess で Active Directory ドメイン サービス (AD DS) がどのように使用されるかについて説明します。このトピックには次のサブセクションが含まれます。  
   
--   [1.7.1 クライアント認証を計画します。](#171-plan-client-authentication)  
+-   [1.7.1 Plan クライアント認証](#171-plan-client-authentication)  
   
--   [1.7.2 複数ドメインを計画します。](#172-plan-multiple-domains)  
+-   [1.7.2 複数ドメインを計画する](#172-plan-multiple-domains)  
   
 DirectAccess は、次のような AD DS と Active Directory グループ ポリシー オブジェクト (Gpo) を使用します。  
   
@@ -488,11 +488,11 @@ DirectAccess は、次のような AD DS と Active Directory グループ ポ�
   
     AD DS は認証に使用されます。 インフラストラクチャ トンネルでは、DirectAccess サーバーに接続しているコンピューター アカウントに NTLMv2 認証が使用され、アカウントは Active Directory ドメインに表示されている必要があります。 イントラネット トンネルは、ユーザーが 2 番目のトンネルを作成する際に Kerberos 認証を使用します。  
   
--   **グループ ポリシー オブジェクト**  
+-   **グループポリシーオブジェクト**  
   
     DirectAccess は、構成設定を DirectAccess サーバー、クライアント、内部アプリケーション サーバーに適用される GPO に集めます。  
   
--   **セキュリティ グループ**  
+-   **セキュリティグループ**  
   
     DirectAccess は、セキュリティ グループを使用して、DirectAccess クライアント コンピューターを集めて識別します。 GPO は、必要なセキュリティ グループに適用されます。  
   
@@ -552,15 +552,15 @@ IWindows インターネット ネーム サービス (WINS) が複数ドメイ�
 ## <a name="18-plan-group-policy-objects"></a>1.8 グループ ポリシー オブジェクトを計画する  
 このセクションでは、リモート アクセス インフラストラクチャのグループ ポリシー オブジェクト (GPO) の役割について説明します。このトピックには次のサブセクションが含まれます。  
   
--   [1.8.1 自動的に作成された Gpo を構成します。](#181-configure-automatically-created-gpos)  
+-   [1.8.1 自動的に作成された Gpo を構成する](#181-configure-automatically-created-gpos)  
   
--   [1.8.2 手動で作成した Gpo を構成します。](#182-configure-manually-created-gpos)  
+-   [1.8.2 手動で作成した Gpo を構成する](#182-configure-manually-created-gpos)  
   
--   [1.8.3 マルチ ドメイン コント ローラー環境で Gpo を管理します。](#183-manage-gpos-in-a-multi-domain-controller-environment)  
+-   [1.8.3 マルチドメインコントローラー環境で Gpo を管理する](#183-manage-gpos-in-a-multi-domain-controller-environment)  
   
--   [1.8.4 アクセス許可が制限されたリモート アクセス Gpo を管理します。](#184-manage-remote-access-gpos-with-limited-permissions)  
+-   [1.8.4 アクセス許可が制限されたリモートアクセス Gpo を管理する](#184-manage-remote-access-gpos-with-limited-permissions)  
   
--   [1.8.5 が削除された GPO から復元します。](#185-recover-from-a-deleted-gpo)  
+-   [1.8.5 削除された GPO から回復する](#185-recover-from-a-deleted-gpo)  
   
 リモート アクセスを構成するときに構成された DirectAccess 設定は、GPO に収集されます。 次の種類の GPO には、DirectAccess 設定が設定され、次のように分散されます。  
   
@@ -568,11 +568,11 @@ IWindows インターネット ネーム サービス (WINS) が複数ドメイ�
   
     この GPO には、IPv6 移行テクノロジ設定、NRPT エントリ、セキュリティが強化された Windows ファイアウォール接続セキュリティの規則を含むクライアント設定が含まれます。 GPO は、クライアント コンピューターに指定されたセキュリティ グループに適用されます。  
   
--   **DirectAccess サーバー GPO**  
+-   **DirectAccess サーバーの GPO**  
   
     この GPO には、展開で DirectAccess サーバーとして構成される任意のサーバーに適用される DirectAccess 構成設定が含まれます。 また、セキュリティが強化された Windows ファイアウォールの接続セキュリティの規則も含まれます。  
   
--   **アプリケーション サーバー GPO**  
+-   **アプリケーションサーバー GPO**  
   
     この GPO には、DirectAccess クライアントから認証と暗号化をオプションで拡張した、選択したアプリケーション サーバーの設定が含まれます。 認証と暗号化が拡張されていない場合、この GPO は使用されません。  
   
@@ -585,10 +585,10 @@ GPO は 2 つの方法で構成できます。
 > [!NOTE]  
 > 特定の GPO を使用するように DirectAccess が構成された後で、別の GPO を使用するように構成することはできません。  
   
-GPO を自動で構成しているか、手動で構成しているかにかかわらず、クライアントで 3G ネットワークを使用する場合は、低速リンクの検出のためのポリシーを追加する必要があります。 パス**ポリシー。グループ ポリシーの低速リンクの検出を構成する**は。**コンピューターの構成/ポリシー/管理用テンプレート/システム/グループ ポリシー**  
+GPO を自動で構成しているか、手動で構成しているかにかかわらず、クライアントで 3G ネットワークを使用する場合は、低速リンクの検出のためのポリシーを追加する必要があります。 @No__t-0Policy のパス:グループポリシー低速リンクの検出を構成する @ no__t-0:**コンピューターの構成/ポリシー/管理用テンプレート/システム/グループ ポリシー**  
   
 > [!CAUTION]  
-> DirectAccess コマンドレットを実行する前に、すべてのリモート アクセス GPO をバックアップする手順は次のとおりです。[バックアップおよびリモート アクセスの構成を復元する](https://go.microsoft.com/fwlink/?LinkID=257928)します。  
+> DirectAccess コマンドレットを実行する前に、すべてのリモート アクセス GPO をバックアップする手順は次のとおりです。[リモートアクセス構成のバックアップと復元を](https://go.microsoft.com/fwlink/?LinkID=257928)行います。  
   
 GPO のリンクのための正しいアクセス許可 (次のセクションに記載されているもの) が存在しない場合は、警告が発行されます。 リモート アクセスの操作は続行されますが、リンク処理は行われません。 この警告が発行されると、後でアクセス許可が追加されても、リンクは自動的に作成されなくなります。 代わりに、管理者がリンクを手動で作成する必要があります。  
   
@@ -675,7 +675,7 @@ GPO 設定を手動で変更する場合は、次の点を考慮してくださ�
 ### <a name="185-recover-from-a-deleted-gpo"></a>1.8.5 削除された GPO から復元する  
 クライアント、DirectAccess サーバー、またはアプリケーション サーバー GPO が誤って削除され、使用できるバックアップがない場合、構成設定を削除して再構成する必要があります。 バックアップを使用できる場合は、バックアップから GPO を復元できます。  
   
-リモート アクセス管理コンソールは、次のエラー メッセージを表示します。**GPO (GPO 名) が見つかりません**します。 構成設定を削除するには、次の手順に従います。  
+リモート アクセス管理コンソールは、次のエラー メッセージを表示します。**Gpo (gpo 名) が見つかりません**。 構成設定を削除するには、次の手順に従います。  
   
 1.  Windows PowerShell コマンドレットを実行 **uninstall-remoteaccess**します。  
   
@@ -683,9 +683,9 @@ GPO 設定を手動で変更する場合は、次の点を考慮してくださ�
   
 3.  GPO が見つからないというエラー メッセージが表示されます。 **[構成設定の削除]** をクリックします。 完了後、サーバーは構成されていない状態で復元されます。  
   
-## <a name="next-steps"></a>次のステップ  
+## <a name="next-steps"></a>次の手順  
   
--   [手順 2:DirectAccess 展開を計画します。](da-adv-plan-s2-deployments.md)  
+-   [手順 2:DirectAccess の展開を計画する @ no__t-0  
   
 
 

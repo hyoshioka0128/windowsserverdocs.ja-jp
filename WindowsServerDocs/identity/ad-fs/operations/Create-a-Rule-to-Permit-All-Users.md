@@ -7,54 +7,54 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: abb00e14dd0b3ce7b06efba816fbd7452e7bf0f1
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 1356218c5f9f47073f007286e8acfdf4c3608b73
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189406"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407623"
 ---
 # <a name="create-a-rule-to-permit-all-users"></a>すべてのユーザーを許可する規則を作成する
 
-Windows Server 2016 で使用することができます、**アクセス制御ポリシー**ルールはすべてのユーザーにアクセスできるように、証明書利用者を作成します。  Windows Server 2012 R2 でを使用して、**すべてのユーザーを許可**規則テンプレートの Active Directory フェデレーション サービスで\(AD FS\)はすべてのユーザーにアクセスできるように、証明書利用者する承認規則を作成します。パーティです。 
+Windows Server 2016 では、 **Access Control ポリシー**を使用して、すべてのユーザーに証明書利用者へのアクセスを許可する規則を作成できます。  Windows Server 2012 R2 では、Active Directory フェデレーションサービス (AD FS) \( AD FS @ no__t の**すべてのユーザーを許可**する規則テンプレートを使用して、すべてのユーザーに証明書利用者へのアクセスを許可する承認規則を作成できます。 
 
 追加の承認規則を使用して、さらにアクセスを制限することができます。 ユーザーは、フェデレーション サービスから証明書利用者へのアクセスが許可されても、証明書利用者によってサービスが拒否される場合があります。  
   
-次の手順を使用するには、AD FS 管理スナップインで要求規則を作成する\-でします。  
+次の手順に従って、の AD FS 管理スナップイン @ no__t を使用して要求規則を作成できます。  
   
 この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。 
 
-## <a name="to-create-a-rule-to-permit-all-users-in-windows-server-2016"></a>Windows Server 2016 ですべてのユーザーを許可する規則を作成するには
+## <a name="to-create-a-rule-to-permit-all-users-in-windows-server-2016"></a>Windows Server 2016 のすべてのユーザーを許可するルールを作成するには
 
-1.  サーバー マネージャーで、**ツール**、し、 **AD FS 管理**します。  
+1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
   
-2.  コンソール ツリーで [ **AD FS**、] をクリックして**証明書利用者信頼**します。 
-![ルールを作成します。](media/Create-a-Rule-to-Permit-All-Users/permitall1.PNG)
+2.  コンソールツリーの  **AD FS**で、**証明書利用者の信頼** をクリックします。 
+![ルールの作成](media/Create-a-Rule-to-Permit-All-Users/permitall1.PNG)
 
-3.  右クリックし、 **Relying Party Trust**へのアクセスを許可しを選択したい**アクセス制御ポリシーの編集**します。  
-![ルールを作成します。](media/Create-a-Rule-to-Permit-All-Users/permitall2.PNG)
+3.  アクセスを許可する**証明書利用者信頼**を右クリックし、 **[Access Control ポリシーの編集]** を選択します。  
+![ルールの作成](media/Create-a-Rule-to-Permit-All-Users/permitall2.PNG)
 
-4. アクセス制御ポリシーを選択**のすべてのユーザーに許可**順にクリックします**適用**と**Ok**します。
-![ルールを作成します。](media/Create-a-Rule-to-Permit-All-Users/permitall3.PNG)
+4. アクセス制御ポリシー で、**すべてのユーザーを許可**する を選択し、**適用** と  **Ok**をクリックします。
+![ルールの作成](media/Create-a-Rule-to-Permit-All-Users/permitall3.PNG)
   
-## <a name="to-create-a-rule-to-permit-all-users-in-windows-server-2012-r2"></a>Windows Server 2012 R2 のすべてのユーザーを許可する規則を作成するには 
+## <a name="to-create-a-rule-to-permit-all-users-in-windows-server-2012-r2"></a>Windows Server 2012 R2 のすべてのユーザーを許可するルールを作成するには 
   
-1.  サーバー マネージャーで、**ツール**、し、 **AD FS 管理**します。  
+1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
   
-2.  コンソール ツリーで  **AD FS\\信頼関係\\証明書利用者信頼**、この規則を作成するリスト内の特定の信頼をクリックします。  
+2.  コンソールツリーで、[ **\\AD FS の信頼関係\\] [証明書利用者信頼**] の下にある一覧で、この規則を作成する特定の信頼をクリックします。  
 
-3.  右\-選択の信頼をクリックし、クリックして**要求規則の編集**します。  
-![ルールを作成します。](media/Create-a-Rule-to-Permit-All-Users/permitall4.PNG)  
+3.  選択\-した信頼を右クリックし、 **[要求規則の編集]** をクリックします。  
+![ルールの作成](media/Create-a-Rule-to-Permit-All-Users/permitall4.PNG)  
 
-4.  **要求規則の編集**ダイアログ ボックスで、をクリックして、**発行承認規則の** タブまたは**委任承認規則**タブ\(の種類に基づく必要な承認規則\)、 をクリックし、**規則の追加**を開始する、**承認の要求規則の追加ウィザード**。  
-![ルールを作成します。](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)  
-5.  **規則テンプレートの選択** ページ **要求規則テンプレート**を選択します**すべてのユーザーを許可** をクリックし、一覧から**次**します。  
-![ルールを作成します。](media/Create-a-Rule-to-Permit-All-Users/permitall6.PNG)    
-6.  **規則の構成**] ページで [**完了**します。  
+4.  **要求規則の編集** ダイアログボックスで、必要\)な承認規則の種類に基づいて  \(**発行承認規則** タブまたは **委任承認**規則 タブをクリックし、規則の追加 をクリックします。を実行して、**承認要求規則の追加ウィザード**を開始します。  
+![ルールの作成](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)  
+5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、一覧から **[すべてのユーザーを許可]** する を選択し、 **[次へ]** をクリックします。  
+![ルールの作成](media/Create-a-Rule-to-Permit-All-Users/permitall6.PNG)    
+6.  **[規則の構成]** ページで、 **[完了]** をクリックします。  
   
-7.  **要求規則の編集**ダイアログ ボックスで、をクリックして **[ok]** ルールを保存します。  
+7.  **[要求規則の編集]** ダイアログボックスで、 **[OK]** をクリックして規則を保存します。  
 
 ## <a name="additional-references"></a>その他の参照情報 
 [要求規則を構成する](Configure-Claim-Rules.md)  

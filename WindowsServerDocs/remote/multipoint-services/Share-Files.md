@@ -1,8 +1,8 @@
 ---
 title: ファイルを共有する
-description: 共有フォルダーと、ネットワークを使用して MultiPoint Services でのファイルを共有する方法について説明します
+description: 共有フォルダーとネットワークを使用して MultiPoint Services 内のファイルを共有する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,39 +13,39 @@ author: lizap
 manager: dongill
 ms.date: 08/04/2016
 ms.author: elizapo
-ms.openlocfilehash: 130bd81affba68d92d7db6b691e7817dedfbb22c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f050691603ed0989ab3b0ea3aac34a5fd74e1fbd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857473"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394989"
 ---
 # <a name="share-files"></a>ファイルを共有する
 コンテンツをエクスプローラーのパブリック フォルダーに保存して、他の MultiPoint Services ユーザーとコンテンツを共有できます。 MultiPoint Services システムのすべてのユーザーが、MultiPoint Services システムでエクスプローラーのパブリック フォルダーに保存されているすべてのコンテンツにアクセスできます。  
   
-」の説明に従って、リムーバブル記憶装置に保存することによってコンテンツに共有することもできます[USB フラッシュ ドライブ上の共有ファイルの保存および](Save-and-Share-Files-on-a-USB-Flash-Drive.md)します。  
+「 [USB フラッシュドライブでのファイルの保存と共有](Save-and-Share-Files-on-a-USB-Flash-Drive.md)」で説明されているように、リムーバブル記憶装置にコンテンツを保存することによってコンテンツを共有することもできます。  
   
-コンテンツのプライベートのままの状態の詳細については、次を参照してください。[ファイルをプライベート](Keep-Files-Private.md)します。  
+コンテンツをプライベートに保つ方法の詳細については、「[ファイルをプライベートに保つ](Keep-Files-Private.md)」を参照してください。  
   
 ## <a name="to-share-content-with-other-users-by-using-public-folders"></a>パブリック フォルダーを使用して他のユーザーとコンテンツを共有するには  
   
-エクスプローラー ライブラリの **[パブリックのドキュメント]** フォルダー、**[パブリックのミュージック]** フォルダー、その他のパブリック フォルダーにコンテンツを保存して他のユーザーとコンテンツを共有します。 
+エクスプローラー ライブラリの **[パブリックのドキュメント]** フォルダー、 **[パブリックのミュージック]** フォルダー、その他のパブリック フォルダーにコンテンツを保存して他のユーザーとコンテンツを共有します。 
   
 新しいフォルダーを作成し、それを共有することによって、ネットワーク上で MultiPoint Services を実行している複数のコンピューターでファイルを共有することもできます。  
   
 ## <a name="to-share-files-across-multiple-computers-in-a-multipoint-services-network"></a>MultiPoint Services ネットワークの複数のコンピューター間でファイルを共有するには  
   
-1.  デスクトップを右クリックし、をクリックし、**新規**します。  
+1.  デスクトップを右クリックし、 **[新規]** をクリックします。  
   
 2.  **[フォルダー]** をクリックし、フォルダーの名前を入力します。  
   
-3.  フォルダーを開きをダブルクリックします。  
+3.  フォルダーをダブルクリックして開きます。  
   
-4.  をクリックして**と共有**、 をクリックし、**特定のユーザー**します。  
+4.  **[共有]** をクリックし、 **[特定の担当者]** をクリックします。  
   
-5.  特定のユーザーを選択するか、**[全員]** をクリックします。  
+5.  特定のユーザーを選択するか、 **[全員]** をクリックします。  
   
 ## <a name="see-also"></a>関連項目  
-[ユーザー ファイルを管理します。](Manage-User-Files.md)  
-[保存し、USB フラッシュ ドライブ上のファイルの共有](Save-and-Share-Files-on-a-USB-Flash-Drive.md)  
-[ファイルをプライベートな保持](Keep-Files-Private.md) 
+[ユーザー ファイルの管理](Manage-User-Files.md)  
+[USB フラッシュ ドライブにファイルを保存して共有する](Save-and-Share-Files-on-a-USB-Flash-Drive.md)  
+[ファイルをプライベートな状態で保持する](Keep-Files-Private.md) 

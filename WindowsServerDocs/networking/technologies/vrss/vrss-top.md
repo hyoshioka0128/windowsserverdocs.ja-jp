@@ -1,7 +1,7 @@
 ---
 title: Virtual Receive Side Scaling (vRSS)
 description: Windows Server での仮想 Receive Side Scaling (vRSS) について説明します。また、仮想ネットワークアダプターを構成して、VM 内の複数の論理プロセッサコア間で着信ネットワークトラフィックを負荷分散する方法についても説明します。 また、ホスト仮想ネットワークインターフェイスカード (vNIC) の複数の物理コアを構成することもできます。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 9be477b3-f81d-4e84-a6b0-ac4c1ea97715
@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 manager: dougkim
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ae017d7d78adea565942a952aaea3da1669f39a9
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b24cabe3597af35e7c7f3c6f81d360bb11675e23
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871796"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395787"
 ---
 # <a name="virtual-receive-side-scaling-vrss"></a>仮想 Receive Side Scaling \(vRSS\)
 

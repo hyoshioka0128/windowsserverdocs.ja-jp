@@ -1,34 +1,34 @@
 ---
 ms.assetid: 28043fc4-a34d-4710-ac3b-5c9d4d6a895c
-title: AD FS サインイン ページに会社名を変更します。
+title: AD FS サインインページで会社名を変更する
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e2b5c7228094305759344d5094cffa7f24a0da7a
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: c4991b27f104cb96f55f09fa9467f2b93868b910
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190023"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407734"
 ---
-# <a name="change-the-company-name-on-the-ad-fs-sign-in-page"></a>AD FS サインイン ページに会社名を変更します。
+# <a name="change-the-company-name-on-the-ad-fs-sign-in-page"></a>AD FS サインインページで会社名を変更する
  
-記号が表示される会社の名前を変更する\- ページで、次の Windows PowerShell コマンドレットと構文を使用します。 この値には、セットアップ時に入力したフェデレーション サービスの表示名が既定で設定されています。  
+[Sign @ no__t] ページに表示される会社の名前を変更するには、次の Windows PowerShell コマンドレットと構文を使用します。 この値には、セットアップ時に入力したフェデレーション サービスの表示名が既定で設定されています。  
 
-![名前を変更します。](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1.png)
+![名前の変更](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1.png)
   
   
     Set-AdfsGlobalWebContent –CompanyName "Contoso Corp"  
  
   
 > [!NOTE]  
-> Windows PowerShell Integrated Scripting Environment を使用することもできます。 \(ISE\)会社名を変更します。 Windows PowerShell ISE を使用すると、Unicode でコンテンツを表示することができます\-準拠の環境。 詳細については、「 [Windows PowerShell ISE の紹介](https://technet.microsoft.com/library/dd315244.aspx)」を参照してください。  
+> Windows PowerShell Integrated Scripting Environment \(ISE @ no__t-1 を使用して会社名を変更することもできます。 Windows PowerShell ISE を使用すると、Unicode @ no__t-0compliant 環境でコンテンツを表示できます。 詳細については、「 [Windows PowerShell ISE の紹介](https://technet.microsoft.com/library/dd315244.aspx)」を参照してください。  
 
 ## <a name="additional-references"></a>その他の参照情報 
-[AD FS のユーザー サインイン カスタマイズ](AD-FS-user-sign-in-customization.md)  
+[AD FS ユーザーサインインのカスタマイズ](AD-FS-user-sign-in-customization.md)  
   

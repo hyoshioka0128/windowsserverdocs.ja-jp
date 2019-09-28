@@ -1,32 +1,32 @@
 ---
 title: SDN ファイアウォール監査
-description: ファイアウォールの監査は、Windows Server 2019 の SDN のファイアウォールの新しい機能です。 SDN ファイアウォールを有効にするとログが有効になっている SDN ファイアウォール ルール (Acl) によって処理されるすべてのフローは記録を取得します。
+description: ファイアウォール監査は、Windows Server 2019 の SDN ファイアウォールの新機能です。 SDN ファイアウォールを有効にすると、ログが有効になっている SDN ファイアウォール規則 (Acl) によって処理されるすべてのフローが記録されます。
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: pashort
 author: shortpatti
 ms.date: 08/22/2018
-ms.openlocfilehash: a73cdc443dd55b16f6e6cb187e001581620ce771
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 246adc6b4fd3ea130196cf1786f7fa130703de1a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890903"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355754"
 ---
 # <a name="sdn-firewall-auditing"></a>SDN ファイアウォール監査
 
 >適用対象:Windows Server 2019
 
-ファイアウォールの監査は、Windows Server 2019 の SDN のファイアウォールの新しい機能です。 SDN ファイアウォールを有効にするとログが有効になっている SDN ファイアウォール ルール (Acl) によって処理されるすべてのフローは記録を取得します。 ログ ファイルがで一貫性のある構文である必要があります、 [Azure Network Watcher フロー ログ](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)します。 これらのログの診断に使用または後で分析のためのアーカイブできます。 
+ファイアウォール監査は、Windows Server 2019 の SDN ファイアウォールの新機能です。 SDN ファイアウォールを有効にすると、ログが有効になっている SDN ファイアウォール規則 (Acl) によって処理されるすべてのフローが記録されます。 ログファイルは、 [Azure Network Watcher フローログ](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)と一貫性のある構文である必要があります。 これらのログは、診断に使用したり、後で分析するためにアーカイブしたりすることができます。 
 
-Power BI などのツールを使用してこれらのファイルを処理する方法の例をいくつかは、すぐにされます。
+ここでは、Power BI などのツールを使用してこれらのファイルを処理する方法の例をいくつか紹介します。
 
-_**試してみるとフィードバックを提供します。**_
+_**試してみて、フィードバックをお寄せください。**_
 
-ファイアウォールが HYPER-V ホストで監査を有効にするサンプル スクリプトを次に示します。 先頭にある変数を更新および RSAT NetworkController 機能がインストールされた Windows Server 2019 コンピューターで実行します。
+Hyper-v ホストでファイアウォールの監査を有効にするサンプルスクリプトを次に示します。 最初の変数を更新し、NetworkController 機能がインストールされている Windows Server 2019 コンピューターでこれを実行します。
 
 ```PowerShell
 $logpath = "C:\test\log1"
@@ -54,7 +54,7 @@ foreach ($s in $servers) {
 }
 ```
 
-新しいファイルを有効にするとは、1 時間ごとに 1 回の詳細については、各ホストで指定されたディレクトリに表示されます。  定期的に、これらのファイルを処理して、ホストから削除する必要があります。  現在のファイルは、長さ 0 と、[次へ] の時間のマークにフラッシュされるまではロックされています。
+有効にすると、各ホストの指定したディレクトリに新しいファイルが1時間ごとに1回表示されます。  これらのファイルを定期的に処理し、ホストから削除する必要があります。  現在のファイルは長さが0で、次の1時間マークでフラッシュされるまでロックされています:
 
 ```syntax
 PS C:\test\log1> dir
@@ -70,7 +70,7 @@ Mode                LastWriteTime         Length Name
 -a----        7/19/2018   9:28 AM              0 SdnFirewallAuditing.d8b3b697-5355-40e2-84d2-1bf2f0e0dc4a.20180719TL162803464.json
 ```
 
-これらのファイルには、フローのイベントのシーケンスには例が含まれます。
+これらのファイルには、フローイベントのシーケンスが含まれています。次に例を示します。
 
 ```syntax
 { 
@@ -100,7 +100,7 @@ Mode                LastWriteTime         Length Name
 ```
 
 
-注意してください、ログ記録を実行したルールに対してのみ**ログ**設定**有効**、たとえば。
+ログ記録は、**ログ**が**有効**に設定されているルールに対してのみ行われます。次に例を示します。
 
 ```syntax
 {

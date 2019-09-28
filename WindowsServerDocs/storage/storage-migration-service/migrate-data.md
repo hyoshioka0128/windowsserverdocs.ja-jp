@@ -6,14 +6,14 @@ ms.author: jgerend
 manager: elizapo
 ms.date: 02/13/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 4b90f8c5713fbcefc1740b932e9a6f210901a974
-ms.sourcegitcommit: 45415ba58907d650cfda45f4c57f6ddf1255dcbf
+ms.openlocfilehash: 80407630c4bcfe7e1f27cb68289967264ac74442
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206906"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393962"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Storage Migration Service を使用してサーバーを移行する
 

@@ -2,7 +2,7 @@
 title: サーバー設定を編集する
 description: MultiPoint Services の設定について
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,12 @@ ms.assetid: afb64b94-9055-4703-b8ce-a8839b2718da
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 8a6a9d8e6a76a8fb3c0da59c8fb487d0311f04d7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5973bf6a23d0ce3f91620eaa3537f751ec19303c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871709"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389692"
 ---
 # <a name="edit-server-settings"></a>サーバー設定を編集する
 MultiPoint Services をインストールした際に、特定のプログラムを選択するなど、システム設定を行っているはずです。 このトピックでは、MultiPoint Services システムで可能な設定と、設定の編集方法について説明します。  

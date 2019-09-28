@@ -1,42 +1,42 @@
 ---
 title: ホスト型キャッシュ サーバーでデータ パッケージをインポートする (省略可能)
-description: このガイドでは、Windows Server 2016 および Windows 10 を実行するコンピューターでホスト型キャッシュ モードで BranchCache の展開の説明
+description: このガイドでは、Windows Server 2016 と Windows 10 を実行するコンピューターに、ホスト型キャッシュモードで BranchCache を展開する手順について説明します。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: d6159e91-f77c-42ec-9180-14bbb230ad17
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 440ef1e04143cba09213ffea634aa9d4fea51dab
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 61a6b1ac1dede4caf8d5633ce6a75e2005e190df
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888003"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356194"
 ---
-# <a name="import-data-packages-on-the-hosted-cache-server-optional"></a>ホスト型キャッシュ サーバー上のデータ パッケージをインポート\(オプション\)
+# <a name="import-data-packages-on-the-hosted-cache-server-optional"></a>ホスト型キャッシュサーバーにデータパッケージをインポートする \(Optional @ no__t
 
 >適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-データ パッケージをインポートし、ホスト型キャッシュ サーバーのコンテンツをプリロードするこの手順を使用することができます。
+この手順を使用すると、データパッケージをインポートし、ホスト型キャッシュサーバーにコンテンツを事前に読み込むことができます。
 
-この手順はないため、コンテンツを prehash しプリロードするために必要で、ホスト型キャッシュ サーバー省略可能です。
+ホスト型キャッシュサーバーにコンテンツを事前にハッシュし、事前に読み込む必要がないため、この手順は省略できます。
 
-前ではない操作を行う場合\-ロード コンテンツ、データは自動的にこのホスト型キャッシュに追加のクライアントが WAN 接続経由でダウンロードするとします。
+コンテンツを @ no__t に事前に読み込まない場合、データは WAN 接続を介してクライアントがダウンロードするときに、自動的にホスト型キャッシュに追加されます。
 
-この手順を実行する管理者グループのメンバーがあります。
+この手順を実行するには、Administrators グループのメンバーである必要があります。
 
-## <a name="to-import-data-packages-on-the-hosted-cache-server"></a>ホスト型キャッシュ サーバー上のパッケージ データをインポートするには  
+## <a name="to-import-data-packages-on-the-hosted-cache-server"></a>ホスト型キャッシュサーバーにデータパッケージをインポートするには  
 
-1. サーバー コンピューターには、管理者特権で Windows PowerShell を開きます。
+1. サーバーコンピューターで、管理者特権を使用して Windows PowerShell を開きます。
 
-2. 値を置き換えて、次のコマンドを入力: パス パラメーターには、フォルダーの場所で、データ パッケージが格納されているし、ENTER キーを押します。
+2. 次のコマンドを入力し、– Path パラメーターの値を、データパッケージが格納されているフォルダーの場所に置き換えて、ENTER キーを押します。
 
     ```  
     Import-BCCachePackage –Path D:\temp\PeerDistPackage.zip
     ```  
 
-3. コンテンツをプリロードする 1 つ以上のホスト型キャッシュ サーバーがあれば、各のホスト型キャッシュ サーバーでこの手順を実行します。
+3. コンテンツを事前に読み込む複数のホスト型キャッシュサーバーがある場合は、各ホスト型キャッシュサーバーでこの手順を実行します。
 
-このガイドを続行する、次を参照してください。[構成クライアント自動ホストされるキャッシュの検出サービス接続ポイントによる](10-Bc-Client-By-Scp.md)します。
+このガイドを続行するには、「[クライアントの自動ホスト型キャッシュ検出をサービス接続ポイント別に構成する](10-Bc-Client-By-Scp.md)」を参照してください。

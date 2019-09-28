@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 03/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 72524fcc71f722daeb8238bc3cffc6d38a611098
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.prod: windows-server
+ms.openlocfilehash: c7f436ea9b2baa00294ccef52a5d7a27c7247e4a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590582"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406785"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Windows 管理センターを使用してサーバーを管理する
 
@@ -33,7 +33,7 @@ Windows Server 2012 以降を実行している個々のサーバーを Windows 
 
 Windows 管理センターにサーバーを追加するには:
 
-1. [すべての接続] の下にある **[+ 追加]** をクリックします。
+1. すべての接続 の下にある  **+ 追加** をクリックします。
 2. **サーバー接続**を追加することを選択します。
 3. サーバーの名前を入力し、メッセージが表示されたら、使用する資格情報を入力します。
 4. **[送信]** をクリックして完了します。
@@ -156,11 +156,11 @@ Windows 管理センターにサーバーを追加するには:
 
 ## <a name="containers"></a>コンテナー
 
-コンテナー**を使用する**と、Windows Server コンテナーホスト上のコンテナーを表示できます。 Windows Server Core コンテナーが実行されている場合は、イベントログを表示し、コンテナーの CLI にアクセスできます。
+**コンテナーを使用する**と、Windows Server コンテナーホスト上のコンテナーを表示できます。 Windows Server Core コンテナーが実行されている場合は、イベントログを表示し、コンテナーの CLI にアクセスできます。
 
 [**コンテナーのフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BContainers%5D)します。
 
-## <a name="devices"></a>[デバイス]
+## <a name="devices"></a>デバイス
 
 **デバイス**では、コンピューターまたはサーバー上の接続されているデバイスを管理できます。
 
@@ -310,7 +310,7 @@ PowerShell では、次の機能がサポートされています。
 
 [**PowerShell のフィードバックと提案された機能を表示する**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BPowerShell%5D)
 
-## <a name="processes"></a>プロセス
+## <a name="processes"></a>Processes (プロセス)
 
 **プロセス**を使用すると、コンピューターまたはサーバー上で実行中のプロセスを管理できます。
 

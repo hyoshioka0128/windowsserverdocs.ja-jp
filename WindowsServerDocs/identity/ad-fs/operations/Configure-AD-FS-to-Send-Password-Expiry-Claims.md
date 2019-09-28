@@ -7,21 +7,21 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3be14b824038e9424b86c40bfd657dd988fa99e9
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 29760dcc0dffe9fe29289f20f1abca4cfd8325b1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189868"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407698"
 ---
 # <a name="configure-ad-fs-to-send-password-expiry-claims"></a>パスワードの有効期限クレームを送信するように AD FS を構成する
 
 
-ADFS で保護されている証明書利用者のパーティ信頼 (アプリケーション) にパスワードの有効期限クレームを送信する Active の Directory フェデレーション サービス (AD FS) を構成することができます。 これらの要求を使用する方法は、アプリケーションによって異なります。 たとえば、証明書利用者として Office 365 を更新プログラムが実装されましたがすぐに-する-有効期限切れのパスワードのフェデレーション ユーザーに通知するには、Exchange と Outlook に。
+ADFS によって保護されている証明書利用者信頼 (アプリケーション) にパスワードの有効期限要求を送信するように Active Directory フェデレーションサービス (AD FS) (AD FS) を構成できます。 これらの要求がどのように使用されるかは、アプリケーションによって異なります。 たとえば、Office 365 を証明書利用者として使用する場合、更新プログラムは、間もなく期限切れになったパスワードをフェデレーションユーザーに通知するために Exchange と Outlook に実装されています。
 
-パスワードを送信する AD FS を構成するには、有効期限は、証明書利用者信頼を要求する必要があります追加する次の要求規則にこの証明書利用者信頼。
+証明書利用者信頼にパスワードの有効期限要求を送信するように AD FS を構成するには、この証明書利用者信頼に次の要求規則を追加する必要があります。
 
 ```
 @RuleName = "Issue Password Expiry Claims"
@@ -30,10 +30,10 @@ c1:[Type == "http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime"]
 ```
 
 > [!NOTE]
-> パスワードの有効期限クレームでは、作業の認証の種類のユーザー名とパスワード、および Microsoft Passport を使用できるのみです。  ユーザーを認証する場合は、Windows 統合認証と Passport を使用してが構成されていないと要求は使用できません、ユーザーがパスワードの有効期限通知に表示されません。
+> パスワードの有効期限要求は、ユーザー名とパスワード、および Microsoft Passport for Work 認証の種類に対してのみ使用できます。  ユーザーが Windows 統合認証を使用して認証され、Passport が構成されていない場合、要求は使用できず、ユーザーにはパスワードの有効期限の通知は表示されません。
 
 > [!NOTE]
-> 14 日間のウィンドウがあるため、送信された要求は、パスワードは 14 日以内は期限切れにならない場合のみ設定されます。
+> 14日間の期間があるため、パスワードの有効期限が14日以内に切れる場合にのみ、送信された要求に値が設定されます。
 
 ## <a name="see-also"></a>関連項目
 [AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md)

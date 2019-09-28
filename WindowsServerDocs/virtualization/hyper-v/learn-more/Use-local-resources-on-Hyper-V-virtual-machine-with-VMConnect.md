@@ -1,7 +1,7 @@
 ---
 title: Use local resources on Hyper-V virtual machine with VMConnect
-description: VMConnect を使ってローカル リソースを使用するための要件について説明します
-ms.prod: windows-server-threshold
+description: VMConnect でローカルリソースを使用するための要件について説明します。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,27 +11,27 @@ ms.assetid: 18eface5-7518-4c6b-9282-93e2e3e87492
 author: KBDAzure
 ms.author: kathyDav
 ms.date: 12/06/2016
-ms.openlocfilehash: a7e465313c68ee793715aba045cc56a2ca5fd1de
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 70bf72ec2277679820d985c9f78f10a4ea6e04df
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222841"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392887"
 ---
 # <a name="use-local-resources-on-hyper-v-virtual-machine-with-vmconnect"></a>Use local resources on Hyper-V virtual machine with VMConnect
 
 >適用先:Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2
 
-仮想マシン接続 (VMConnect) を使用して、リムーバブル USB フラッシュ ドライブやプリンターなど、仮想マシンでは、コンピューターのローカル リソースを使用できます。 拡張セッション モードを使用して、VMConnect ウィンドウのサイズを変更することもできます。 この記事ではどのホストを構成し、ローカル リソースに仮想マシンのアクセスを提供します。
+仮想マシン接続 (VMConnect) を使用すると、リムーバブル USB フラッシュドライブやプリンターなど、仮想マシンでコンピューターのローカルリソースを使用できます。 拡張セッションモードでは、VMConnect ウィンドウのサイズを変更することもできます。 この記事では、ホストを構成し、仮想マシンがローカルリソースにアクセスできるようにする方法について説明します。
 
-拡張セッション モードとクリップボードのテキストを入力は、最新の Windows オペレーティング システムを実行する仮想マシンでのみ使用できます。 \(参照してください[ローカル リソースを使用するための要件](#requirements-for-using-local-resources)、後述します。\) 
+拡張セッションモードとクリップボードテキストの種類は、最新の Windows オペレーティングシステムを実行している仮想マシンに対してのみ使用できます。 \(See[ローカルリソースを使用するための要件](#requirements-for-using-local-resources)」を参照してください。 \) 
 
 Ubuntu を実行する仮想マシンでは、次を参照してください。 [Hyper-v VM の Ubuntu 画面の解像度を変更する](https://blogs.msdn.microsoft.com/virtual_pc_guy/2014/09/19/changing-ubuntu-screen-resolution-in-a-hyper-v-vm/)です。 
   
-## <a name="turn-on-enhanced-session-mode-on-a-hyper-v-host"></a>HYPER-V ホストで拡張セッション モードを有効にします。  
-場合は、HYPER-V ホストには、Windows 10 または Windows 8.1 が実行される、拡張セッション モードは既定で、ため、これをスキップして次のセクションに移動することができます。 ホストは、Windows Server 2016 または Windows Server 2012 R2 を実行する場合が最初に実行します。 
+## <a name="turn-on-enhanced-session-mode-on-a-hyper-v-host"></a>Hyper-v ホストで拡張セッションモードを有効にする  
+Hyper-v ホストで Windows 10 または Windows 8.1 が実行されている場合、拡張セッションモードは既定でオンになっているため、この手順をスキップして次のセクションに進むことができます。 ただし、ホストで Windows Server 2016 または Windows Server 2012 R2 が実行されている場合は、まずこれを実行します。 
   
-拡張セッション モードを有効にします。
+拡張セッションモードを有効にする:
 
 1.  仮想マシンをホストするコンピューターに接続します。  
   
@@ -59,11 +59,11 @@ Ubuntu を実行する仮想マシンでは、次を参照してください。 
   
 8.  **[OK]** をクリックします。  
   
-## <a name="choose-a-local-resource"></a>ローカル リソースを選択します。
+## <a name="choose-a-local-resource"></a>ローカルリソースの選択
 
-ローカル リソースには、プリンターには、クリップボード、VMConnect を実行しているコンピューター上のローカル ドライブが含まれます。 詳細については、次を参照してください。[ローカル リソースを使用するための要件](#requirements-for-using-local-resources)、後述します。  
+ローカルリソースには、VMConnect を実行しているコンピューター上のプリンター、クリップボード、およびローカルドライブが含まれます。 詳細については、以下の「[ローカルリソースを使用するための要件](#requirements-for-using-local-resources)」を参照してください。  
   
-ローカル リソースを選択。
+ローカルリソースを選択するには:
   
 1.  VMConnect を開きます。  
   
@@ -97,17 +97,17 @@ Windows PowerShell またはコマンド プロンプトで次のコマンドを
   
 `VMConnect.exe <ServerName> <VMName> /edit`  
   
-## <a name="requirements-for-using-local-resources"></a>ローカル リソースを使用するための要件
+## <a name="requirements-for-using-local-resources"></a>ローカルリソースを使用するための要件
 
 仮想マシン上のコンピューターのローカル リソースを使用できるようにするには。  
   
--   HYPER-V ホストが必要**拡張セッション モード ポリシー**と**拡張セッション モード**設定が有効にします。  
+-   Hyper-v ホストの**拡張セッションモードポリシー**と**拡張セッションモード**の設定が有効になっている必要があります。  
   
--   VMConnect を使用するコンピューターには、Windows 10、Windows 8.1、Windows Server 2016 または Windows Server 2012 R2 を実行する必要があります。  
+-   VMConnect を使用するコンピューターでは、Windows 10、Windows 8.1、Windows Server 2016、または Windows Server 2012 R2 が実行されている必要があります。  
   
--   仮想マシンは、リモート デスクトップ サービスを有効にし、ゲスト オペレーティング システムとして Windows 10、Windows 8.1、Windows Server 2016 または Windows Server 2012 R2 を実行に必要です。  
+-   バーチャルマシンでリモートデスクトップサービスを有効にし、windows 10、Windows 8.1、Windows Server 2016、または Windows Server 2012 R2 をゲストオペレーティングシステムとして実行している必要があります。  
   
-利用可能な場合、次のローカル リソースのいずれかの VMConnect と仮想マシンを実行しているコンピューターの要件を満たして両方とサーバー オブジェクトする使用できます。  
+VMConnect を実行しているコンピューターと仮想マシンの両方が要件を満たしている場合は、次のローカルリソースのいずれかを使用できます (使用可能な場合)。  
   
 -   ディスプレイの構成  
   
@@ -139,8 +139,8 @@ Windows PowerShell またはコマンド プロンプトで次のコマンドを
 -   USB やサウンド リダイレクトを必要とする開発者向けアプリケーションを RDP を使わずにテストおよびトラブルシューティングする。  
   
 ## <a name="see-also"></a>関連項目  
-[仮想マシンに接続します。](https://technet.microsoft.com/library/cc742407.aspx)  
-[HYPER-V にジェネレーション 1 または 2 仮想マシンを作成する必要があります。](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)
+[仮想マシンへの接続](https://technet.microsoft.com/library/cc742407.aspx)  
+[Hyper-v に第1世代または第2世代の仮想マシンを作成する必要がありますか。](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)
 
 
 

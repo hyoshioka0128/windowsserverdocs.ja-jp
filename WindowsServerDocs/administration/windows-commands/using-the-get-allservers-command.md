@@ -1,8 +1,8 @@
 ---
 title: Get AllServers コマンドを使用してください。
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dbccb834f9058f2c3cca097cdf998455f2a6892e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8dd7f9917a54a80b3c570b07fe1a87bd3bcbe4d6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440494"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363260"
 ---
 # <a name="using-the-get-allservers-command"></a>Get AllServers コマンドを使用してください。
 
@@ -39,9 +39,9 @@ WDSUTIL [Options] /Get-AllServers /Show:{Config | Images | All} [/Detailed] [/Fo
 
 |   パラメーター   |                                                                                                                 説明                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| /Show:{Config |                                                                                                                    画像                                                                                                                    |
+| /Show: {Config |                                                                                                                    画像                                                                                                                    |
 |  [/詳細]  | 組み合わせて使用すると、 **/Show:Images** または **/Show:All**, 、すべてのイメージの各イメージからメタデータを返します。 場合、 **詳細/** オプションを指定しない場合、既定の動作は、イメージの名前、説明、およびファイル名を返す。 |
-| []、[フォレスト: {[はい] |                                                                                                                     No}]                                                                                                                     |
+| [/Forest: {はい |                                                                                                                     いいえ}]                                                                                                                     |
 
 ## <a name="BKMK_examples"></a>例
 

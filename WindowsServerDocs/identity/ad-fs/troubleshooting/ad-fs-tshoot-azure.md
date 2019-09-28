@@ -1,53 +1,53 @@
 ---
-title: AD FS のトラブルシューティング - Azure AD
-description: このドキュメントは、AD FS と Azure AD のさまざまな側面をトラブルシューティングする方法を説明します
+title: AD FS のトラブルシューティング-Azure AD
+description: このドキュメントでは、AD FS と Azure AD のさまざまな側面をトラブルシューティングする方法について説明します
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 03/01/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 228ef34ab25276c1cf98f9b2b64e997390023c87
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 293618b3fe2a24caff8fd6b52c5528cc699f93de
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444012"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407287"
 ---
-# <a name="ad-fs-troubleshooting---azure-ad"></a>AD FS のトラブルシューティング - Azure AD
-クラウドの増加、多くの企業が Azure AD のさまざまなアプリやサービスを使用する外してきました。  Azure AD とのフェデレーションと、多くの組織の標準的な手法になっています。  このドキュメントは、このフェデレーションで発生する問題のトラブルシューティングの側面のいくつかについて説明します。  このドキュメントは単なる仕様と Azure AD にフォーカスすることが Azure とのフェデレーションに関するいくつかの一般的なトラブルシューティング ドキュメントのトピックと AD FS の相互作用します。
+# <a name="ad-fs-troubleshooting---azure-ad"></a>AD FS のトラブルシューティング-Azure AD
+クラウドの成長に伴って、多くの企業がさまざまなアプリやサービスのために Azure AD を使用するように移行してきました。  Azure AD とのフェデレーションは、多くの組織にとって標準的な手法になりました。  このドキュメントでは、このフェデレーションで発生する問題のトラブルシューティングに関するいくつかの側面について説明します。  一般的なトラブルシューティングドキュメントに記載されているいくつかのトピックは、引き続き Azure とのフェデレーションに関連しているため、このドキュメントでは Azure AD と AD FS の対話に関する詳細のみに焦点を当てています。
 
 ## <a name="redirection-to-ad-fs"></a>AD FS へのリダイレクト
-リダイレクトと発生しますサインインで Office 365 などのアプリケーションに「リダイレクトされます」に、組織のサインインに AD FS サーバー。
+リダイレクトは、Office 365 などのアプリケーションにサインインし、組織 AD FS サーバーに "リダイレクト" してサインインすると発生します。
 
 ![](media/ad-fs-tshoot-azure/azure1.png)
 
 
-### <a name="first-things-to-check"></a>最初に行うことを確認するには
-リダイレクトが行われていないいくつかの点がある場合は、確認します。
+### <a name="first-things-to-check"></a>最初にチェックする項目
+リダイレクトが発生していない場合は、いくつかのことを確認する必要があります。
 
-   1. Azure portal にサインインし、Azure AD Connect の下のチェックで、フェデレーション用に、Azure AD テナントが有効になっていることを確認します。
+   1. Azure portal にサインインし、[Azure AD Connect] をオンにして、Azure AD テナントがフェデレーションに対して有効になっていることを確認します。
 
 ![](media/ad-fs-tshoot-azure/azure2.png)
 
-1. Azure portal でのフェデレーションの横にあるドメインをクリックして、カスタム ドメインを確認することを確認します。
+1. Azure portal の [フェデレーション] の横にあるドメインをクリックして、カスタムドメインが検証されていることを確認します。
    ![](media/ad-fs-tshoot-azure/azure3.png)
 
-2. 最後に、確認したい[DNS](ad-fs-tshoot-dns.md)し、AD FS サーバーまたは WAP サーバーがインターネットから解決することを確認します。  これが解決されると、それに移動できることを確認します。
-3. PowerShell コマンドレットを使用することもできます。`Get-AzureADDomain`もこの情報を取得します。
+2. 最後に、 [DNS](ad-fs-tshoot-dns.md)を確認し、AD FS サーバーまたは WAP サーバーがインターネットから解決していることを確認します。  これが解決されていることを確認し、それに移動できることを確認します。
+3. PowerShell コマンドレット `Get-AzureADDomain` を使用して、この情報を取得することもできます。
 
 ![](media/ad-fs-tshoot-azure/azure6.png)
 
-### <a name="you-are-receiving-an-unknown-auth-method-error"></a>不明な認証メソッドのエラーを受信しています。
-Azure からリダイレクトされる、AuthnContext が AD FS または STS のレベルでサポートされないことを示す「不明な認証方法」エラーが発生する可能性があります。 
+### <a name="you-are-receiving-an-unknown-auth-method-error"></a>不明な認証方法のエラーを受信しています
+Azure からリダイレクトされた場合、AD FS または STS レベルで AuthnContext がサポートされていないことを示す "不明な認証方法" エラーが発生することがあります。 
 
-これは、Azure AD が認証方法を強制するパラメーターを使用して、AD FS または STS にリダイレクトするときに最も一般的です。 
+これは、認証方法を適用するパラメーターを使用して Azure AD が AD FS または STS にリダイレクトされる場合に最も一般的です。 
 
-認証方法を適用するには、次のメソッドのいずれかを使用します。
-- 、Ws-federation の WAUTH クエリ文字列を使用して、強制的に推奨される認証方法。
+認証方法を適用するには、次のいずれかの方法を使用します。
+- WS-FEDERATION の場合は、WAUTH クエリ文字列を使用して、優先認証方法を強制します。
 
-- SAML2.0 の次の手順に従います。
+- SAML 2.0 の場合は、次のようにします。
   ```
   <saml:AuthnContext>
   <saml:AuthnContextClassRef>
@@ -55,30 +55,30 @@ Azure からリダイレクトされる、AuthnContext が AD FS または STS �
   </saml:AuthnContextClassRef>
   </saml:AuthnContext>
   ```
-  適用される認証方法が正しくない値では、送信されたときに、または AD FS または STS でその認証方法がサポートされていない場合は、認証を行う前にエラー メッセージが表示されます。
+  強制認証方法が正しくない値で送信された場合、または AD FS または STS で認証方法がサポートされていない場合は、認証される前にエラーメッセージが表示されます。
 
 |必要な認証方法|wauth URI|
 |-----|-----|
-|ユーザー名とパスワードの認証|urn:oasis:names:tc:SAML:1.0:am:password|
+|ユーザー名とパスワードの認証|urn: oasis: names: tc: SAML: 1.0: am: password|
 |SSL クライアント認証|urn:ietf:rfc:2246|
-|Windows 統合認証|urn:federation:authentication:windows|
+|Windows 統合認証|urn: フェデレーション: 認証: windows|
 
-サポートされている SAML 認証コンテキスト クラス
+サポートされている SAML 認証コンテキストクラス
 
-|認証方法|認証コンテキスト クラスの URI|
+|認証方法|認証コンテキストクラスの URI|
 |-----|-----| 
-|ユーザー名とパスワード|urn: oasis: 名前: tc: SAML:2.0:ac:classes:Password|
-|パスワードで保護されたトランスポート|urn: oasis: 名前: tc: SAML:2.0:ac:classes:PasswordProtectedTransport|
-|トランスポート層セキュリティ (TLS) クライアント|urn:oasis:names:tc:SAML:2.0:ac:classes:TLSClient
-|X.509 証明書|urn: oasis: 名前: tc: SAML:2.0:ac:classes:X 509
-|統合 Windows 認証|urn:federation:authentication:windows|
-|Kerberos|urn:oasis:names:tc:SAML:2.0:ac:classes:Kerberos|
+|ユーザー名とパスワード|urn: oasis: names: tc: SAML: 2.0: ac: classes: Password|
+|パスワードで保護されたトランスポート|urn: oasis: names: tc: SAML: 2.0: ac: classes: PasswordProtectedTransport|
+|TLS (Transport Layer Security) クライアント|urn: oasis: names: tc: SAML: 2.0: ac: classes: TLSClient
+|X.509 証明書|urn: oasis: names: tc: SAML: 2.0: ac: classes: X509
+|統合 Windows 認証|urn: フェデレーション: 認証: windows|
+|Kerberos|urn: oasis: names: tc: SAML: 2.0: ac: classes: Kerberos|
 
-認証方法が AD FS レベルでサポートされていることを確認するには、次の手順を確認します。
+認証方法が AD FS レベルでサポートされていることを確認するには、次のことを確認してください。
 
 #### <a name="ad-fs-20"></a>AD FS 2.0 
 
-**/Adfs/ls/web.config**認証の種類のエントリが存在するかどうかを確認します。
+**[/Adfs/ls/web.config]** で、認証の種類のエントリが存在することを確認します。
 
 ```
 <microsoft.identityServer.web>
@@ -92,56 +92,56 @@ Azure からリダイレクトされる、AuthnContext が AD FS または STS �
 
 #### <a name="ad-fs-2012-r2"></a>AD FS 2012 R2
 
-[ **AD FS 管理**、] をクリックして**認証ポリシー**スナップインで、AD FS します。
+**[AD FS の管理]** で、AD FS スナップインの **[認証ポリシー]** をクリックします。
 
-**プライマリ認証**セクションで、グローバル設定 の横の編集 をクリックします。 認証ポリシーを右クリックし、グローバル プライマリ認証の編集を選択できます。 または、[操作] ウィンドウで、グローバル プライマリ認証の編集を選択します。
+**プライマリ認証** セクションで、グローバル設定 の横にある 編集 をクリックします。 [認証ポリシー] を右クリックし、[グローバルプライマリ認証の編集] を選択することもできます。 または、[操作] ウィンドウで [グローバルプライマリ認証の編集] を選択します。
 
-プライマリ タブで、グローバル認証ポリシーの編集 ウィンドウで、グローバル認証ポリシーの一部として設定を構成できます。 たとえば、プライマリ認証の場合、エクストラネットおよびイントラネットで使用できる認証方法を選択できます。
+[グローバル認証ポリシーの編集] ウィンドウの [プライマリ] タブで、グローバル認証ポリシーの一部として設定を構成できます。 たとえば、プライマリ認証の場合は、[エクストラネットとイントラネット] で利用可能な認証方法を選択できます。
 
-* * こと、必要な認証方式 チェック ボックスが選択されていることを確認します。 
+\* * [必要な認証方法] チェックボックスがオンになっていることを確認します。 
 
 #### <a name="ad-fs-2016"></a>AD FS 2016
 
-[ **AD FS 管理**、] をクリックして**サービス**と**認証方法**スナップインで、AD FS します。
+**[AD FS 管理]** で、AD FS スナップインの [**サービス**と**認証方法**] をクリックします。
 
-**プライマリ認証**セクションで、[編集] をクリックします。
+**プライマリ認証** セクションで、編集 をクリックします。
 
-**認証方法の編集**ウィンドウで、[プライマリ] タブで、認証ポリシーの一部として設定を構成することができます。
+**認証方法の編集** ウィンドウの プライマリ タブで、認証ポリシーの一部として設定を構成できます。
 
 ![](media/ad-fs-tshoot-azure/azure4.png)
 
 ## <a name="tokens-issued-by-ad-fs"></a>AD FS によって発行されたトークン
 
-### <a name="azure-ad-throws-error-after-token-issuance"></a>Azure AD トークン発行後にエラーがスローされます。
-AD FS トークンを発行した後は、Azure AD がエラーをスローします。 このような状況では、次の問題を確認します。
-- トークン内の AD FS によって発行される要求は、Azure AD でユーザーのそれぞれの属性を一致させてください。
-- Azure AD のトークンには、次の必要なクレームが含まれます。
-    - : WSFED 
-        - UPN:この要求の値は、Azure AD でのユーザーの UPN を一致する必要があります。
-        - ImmutableID:この要求の値は、Azure AD で sourceAnchor またはユーザーの ImmutableID を一致する必要があります。
+### <a name="azure-ad-throws-error-after-token-issuance"></a>トークンの発行後に Azure AD がエラーをスローする
+AD FS によってトークンが発行されると、Azure AD によってエラーがスローされることがあります。 このような状況では、次の問題がないかどうかを確認します。
+- トークン内の AD FS によって発行される要求は、Azure AD 内のユーザーの各属性と一致する必要があります。
+- Azure AD のトークンには、次の必要な要求が含まれている必要があります。
+    - WSFED 
+        - プリンシパルこの要求の値は Azure AD のユーザーの UPN と一致している必要があります。
+        - ImmutableIDこの要求の値は、Azure AD のユーザーの sourceAnchor または ImmutableID と一致する必要があります。
 
-Azure AD でユーザー属性の値を取得するには、次のコマンドラインを実行します。 `Get-AzureADUser –UserPrincipalName <UPN>`
+Azure AD でユーザー属性値を取得するには、次のコマンドラインを実行します。 `Get-AzureADUser –UserPrincipalName <UPN>`
 
 ![](media/ad-fs-tshoot-azure/azure5.png)
 
    - SAML 2.0:
-       - IDPEmail:この要求の値は、Azure AD でのユーザーのユーザー プリンシパル名を一致する必要があります。
-       - NAMEID:この要求の値は、Azure AD で sourceAnchor またはユーザーの ImmutableID を一致する必要があります。
+       - Idpemail というこの要求の値は Azure AD のユーザーのユーザープリンシパル名と一致する必要があります。
+       - NAMEIDこの要求の値は、Azure AD のユーザーの sourceAnchor または ImmutableID と一致する必要があります。
 
-詳細については、次を参照してください。 [、SAML 2.0 id プロバイダーを使用して、シングル サインオンを実装する](https://technet.microsoft.com/library/dn641269.aspx)します。
+詳細については、「 [SAML 2.0 id プロバイダーを使用したシングルサインオンの実装](https://technet.microsoft.com/library/dn641269.aspx)」を参照してください。
 
-### <a name="token-signing-certificate-mismatch-between-ad-fs-and-azure-ad"></a>トークン署名証明書の不一致 AD FS と Azure AD の間。
+### <a name="token-signing-certificate-mismatch-between-ad-fs-and-azure-ad"></a>AD FS と Azure AD のトークン署名証明書が一致していません。
 
-AD FS では、トークン署名証明書を使用して、ユーザーまたはアプリケーションに送信されるトークンに署名します。 AD FS と Azure AD の間の信頼では、このトークン署名証明書に基づくフェデレーションによる信頼です。
+AD FS は、トークン署名証明書を使用して、ユーザーまたはアプリケーションに送信されるトークンに署名します。 AD FS と Azure AD 間の信頼は、このトークン署名証明書に基づくフェデレーション信頼です。
 
-ただし、自動証明書のロール オーバーのため、または何らかの介入によって AD FS にある トークン署名証明書を変更する場合、新しい証明書の詳細は、フェデレーション ドメインの Azure AD 側で更新する必要があります。 AD FS のプライマリ トークン署名証明書が Azure Ad と異なる場合は、AD FS によって発行されるトークンは Azure AD によって信頼されていません。 そのため、フェデレーション ユーザーは、ログオンは許可されません。
+ただし、証明書の自動ロールオーバーまたは何らかの介入によって AD FS 側のトークン署名証明書が変更された場合は、フェデレーションドメインの Azure AD 側で新しい証明書の詳細を更新する必要があります。 AD FS のプライマリトークン署名証明書が Azure Ad と異なる場合、AD FS によって発行されたトークンは Azure AD によって信頼されていません。 そのため、フェデレーションユーザーはログオンを許可されていません。
 
-使用することがこれを解決する手順の説明で[Office 365 と Azure Active Directory のフェデレーション証明書を書き換える](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs)します。
+この問題を解決するには、「 [Office 365 用フェデレーション証明書の更新](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-o365-certs)」の手順のアウトラインを使用して Azure Active Directory します。
 
 ## <a name="other-common-things-to-check"></a>その他の一般的なチェック事項
-次は AD FS と Azure AD との対話によって問題が発生したかどうかを確認する項目の簡単な一覧です。
-- 古いまたはキャッシュされた資格情報では、Windows 資格情報マネージャー
-- Office 365 の Relying Party Trust で構成されているセキュリティで保護されたハッシュ アルゴリズムが SHA1 に設定されています。
+AD FS と Azure AD の相互作用に関する問題があるかどうかを確認するための簡単な一覧を次に示します。
+- Windows Credential Manager での古いまたはキャッシュされた資格情報
+- Office 365 の証明書利用者信頼で構成されているセキュリティで保護されたハッシュアルゴリズムが SHA1 に設定されている
 
 ## <a name="next-steps"></a>次の手順
 

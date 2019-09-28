@@ -2,38 +2,38 @@
 title: BranchCache 設計の選択
 description: このトピックは、BranchCache 展開ガイドの Windows Server 2016、ブランチ オフィスに WAN 帯域幅使用量を最適化するために分散され、ホスト型キャッシュ モードで BranchCache を展開する方法を示しますの一部
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 86c1ccad-2aa4-40fe-84c1-f77c49eb1216
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 330dcbee26f52ff69cd85ef8dc78d2e161b943d1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2a1b4615dfda3989f0321725fd27da066fcb8a5e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59811913"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406320"
 ---
 # <a name="choosing-a-branchcache-design"></a>BranchCache 設計の選択
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-展開に最適なモードを選択して BranchCache のモードの詳細については、このトピックを使用できます。  
+このトピックでは、BranchCache モードについて学習し、展開に最適なモードを選択する方法について説明します。  
   
-このガイドを使用して、次のモードおよびモードの組み合わせで BranchCache を展開することができます。  
+このガイドを使用して、次のモードとモードの組み合わせで BranchCache を展開できます。  
   
--   すべてのブランチ オフィスは、分散キャッシュ モード用に構成されます。  
+-   すべてのブランチオフィスは、分散キャッシュモード用に構成されています。  
   
--   すべてのブランチ オフィスでは、ホスト型キャッシュ モードが構成され、サイトにホスト型キャッシュ サーバーがあります。  
+-   すべてのブランチオフィスは、ホスト型キャッシュモード用に構成され、サイトにホスト型キャッシュサーバーがあります。  
   
--   一部のブランチ オフィス分散キャッシュ モードが構成され、いくつかのブランチ オフィス サイトにホスト型キャッシュ サーバーがあるし、ホスト型キャッシュ モード用に構成されます。  
+-   一部のブランチオフィスは、分散キャッシュモード用に構成されています。一部のブランチオフィスには、サイトにホスト型キャッシュサーバーがあり、ホスト型キャッシュモード用に構成されています。  
   
-次の図は、分散キャッシュ モード用に構成された 1 つのブランチ オフィスとホスト型キャッシュ モード用に構成された 1 つのブランチ オフィス、デュアル モードのインストールを示しています。  
+次の図は、1つのブランチオフィスが分散キャッシュモード用に構成され、1つのブランチオフィスがホスト型キャッシュモード用に構成されている、デュアルモードインストールを示しています。  
   
 ![BranchCache 設計の選択](../../media/Choosing-a-BranchCache-Design/bc_new_modes.jpg)  
   
-BranchCache を展開する前に、組織内で各ブランチ オフィスで望ましいとモードを選択します。  
+BranchCache を展開する前に、組織内の各ブランチオフィスに対して希望するモードを選択します。  
   
 
 

@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1a3f3e711d8e8443eb80109245eef42c668353d9
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 61c129ab8472d7e85602fa0a0244c4a925050d93
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869292"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407307"
 ---
 # <a name="when-to-use-a-custom-claim-rule"></a>カスタム要求規則を使用する状況
 要求規則言語を使用して Active Directory フェデレーションサービス (AD FS) \(AD FS\)でカスタム要求規則を記述します。要求規則言語は、クレーム発行エンジンがプログラムによる生成、変換、パススルー、およびフィルター処理に使用するフレームワークです。保険. カスタム規則を使用することで、標準的な規則テンプレートよりもさらに複雑なロジックを持つ規則を作成できます。 次の状況に該当する場合に、カスタム規則の使用を検討してください。  

@@ -1,8 +1,8 @@
 ---
 title: アプリケーションの考慮事項
-description: MultiPoint Services でのアプリの互換性情報
+description: MultiPoint Services でのアプリの互換性に関する情報
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,34 +13,34 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 400f87c09f1b2e897d67f94e9b7ac12ae0a1e799
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 21531273b1dd6d643df3f816a880a0efb3117c70
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839833"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405125"
 ---
 # <a name="application-considerations"></a>アプリケーションの考慮事項
   
 ## <a name="application-compatibility"></a>アプリケーションの互換性
 
-MultiPoint Services システムで実行する任意のアプリケーションでは、次の要件を満たす必要があります。
+MultiPoint Services システム上で実行するすべてのアプリケーションは、次の要件を満たす必要があります。
   
-- インストールおよび Windows Server 2016 上で実行する必要があります。 
-- セッション対応になる各ユーザーが MultiPoint システムで、アプリのインスタンスを実行するために必要です。
+- Windows Server 2016 にインストールして実行する必要があります。 
+- 各ユーザーが MultiPoint システムでアプリのインスタンスを実行できるように、セッションに対応している必要があります。
   
-アプリケーションはこの要件を指定する場合は、アプリケーションをインストールするリモート デスクトップ セッションでの使用をお勧めします。 
+アプリケーションでこの要件が指定されている場合は、アプリケーションをインストールし、リモートデスクトップセッションで使用することをお勧めします。 
 
-## <a name="addressing-application-compatibility-problems"></a>アプリケーションの互換性の問題に対処  
-MultiPoint Services ステーションを同じホスト コンピューターで仮想的に実行する Windows 10 Enterprise エディションの完全なインスタンスに関連付けるオプションを提供します。 重要なアプリケーションは、複数のユーザーに対して複数のインスタンスは実行されませんまたは 64 ビットのオペレーティング システムではインストールされませんでは、これは、ソリューションを指定できます。 この方法でデスクトップを展開するには、する MultiPoint マネージャーで仮想デスクトップ タブを使用する必要があります。  
+## <a name="addressing-application-compatibility-problems"></a>アプリケーションの互換性の問題への対処  
+MultiPoint Services には、同じホストコンピューター上で実質的に実行されている Windows 10 Enterprise エディションの完全なインスタンスにステーションを関連付けるオプションが用意されています。 複数のユーザーに対して複数のインスタンスを実行しない重要なアプリケーションや、64ビットのオペレーティングシステムにインストールされない場合は、これが解決策になることがあります。 この方法でデスクトップを展開するには、MultiPoint マネージャーの [仮想デスクトップ] タブを使用して次のことを行う必要があります。  
   
--   仮想デスクトップを有効にします。  
--   デスクトップ テンプレートを作成します。  
--   問題のあるアプリケーションでテンプレートをカスタマイズします。  
--   カスタマイズされたテンプレートを使用してステーションを関連付け  
+-   仮想デスクトップを有効にする  
+-   デスクトップテンプレートを作成する  
+-   問題アプリケーションを使用してテンプレートをカスタマイズする  
+-   カスタマイズしたテンプレートにステーションを関連付ける  
 
-各ステーションは、すべての変更は、コンピューターが起動するたびに消去するため、同じテンプレートから開始します。  
+各ステーションは同じテンプレートから開始されるので、コンピューターが起動するたびにすべての変更が消去されます。  
   
 >[!NOTE] 
->MultiPoint で実行するアプリケーションのライセンス要件を確認するのには重要です。 インストールするユーザーごとのライセンス コピーを 1 つのアプリケーションが必要があります。  
+>MultiPoint で実行するアプリケーションのライセンス要件を確認することが重要です。 1つのコピーアプリケーションをインストールする場合でも、ユーザーごとのライセンスが必要になる場合があります。  
   

@@ -7,28 +7,28 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e07965b079a953d062f5bdaaca8f9f9f32500610
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0effdb3ae3ba6294e8a28f4f6b780f4d0c6a8582
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851793"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402613"
 ---
 # <a name="determining-whether-to-upgrade-existing-domains-or-deploy-new-domains"></a>既存のドメインをアップグレードするか新しいドメインを展開するかを決定する
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-設計上の各ドメインは、新しいドメインになります。 または既存のドメインをアップグレードします。 アップグレードしない既存のドメインのユーザーは、新しいドメインに移動する必要があります。  
+設計内の各ドメインは、新しいドメインか、または既存のアップグレードされたドメインになります。 アップグレードしていない既存のドメインのユーザーは、新しいドメインに移動する必要があります。  
   
-ドメイン間でアカウントを移動するとエンドユーザーに影響を与えることができます。 新しいドメインへのユーザーの移動や、既存のドメインをアップグレードするかどうかを決定するには、前に、ドメインにユーザーの移動のコストと新しい AD DS ドメインの長期的な管理上の利点を評価します。  
+ドメイン間でアカウントを移動すると、エンドユーザーに影響が及ぶ可能性があります。 ユーザーを新しいドメインに移動するか、既存のドメインをアップグレードするかを決定する前に、新しい AD DS ドメインの長期的な管理上の利点を、ユーザーをドメインに移動するコストと比較して評価してください。  
   
-Active Directory ドメインを Windows Server 2008 にアップグレードする方法の詳細については、次を参照してください。[を Windows Server 2008 および Windows Server 2008 R2 の AD DS ドメインの Active Directory ドメインのアップグレード](https://technet.microsoft.com/library/cc731188.aspx)します。  
+Active Directory ドメインを Windows Server 2008 にアップグレードする方法の詳細については、「 [Active Directory ドメインを Windows server 2008 および Windows server 2008 R2 AD DS ドメインにアップグレードする](https://technet.microsoft.com/library/cc731188.aspx)」を参照してください。  
   
-AD DS ドメイン内およびフォレスト間での再構築の詳細については、Active Directory 移行ツール バージョン 3.1 を参照してください。 移行ガイド ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678))。  
+フォレスト内およびフォレスト間の AD DS ドメインの再構築の詳細については、「Active Directory 移行ツールバージョン3.1 移行ガイド ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678))」を参照してください。  
   
-新規とアップグレード ドメインの計画を文書化するために、ワークシートでは、ジョブ エイドの Windows Server 2003 展開キットから Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip をダウンロードして ([ https://go.microsoft.com/fwlink/?LinkID=102558 ](https://go.microsoft.com/fwlink/?LinkID=102558))「ドメイン計画」(DSSLOGI_5.doc) を開きます。  
+新規およびアップグレードされたドメインの計画を文書化するためのワークシートについては、Windows Server 2003 Deployment Kit ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)) のジョブエイドから Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードして、"ドメイン" を開きます。"(DSSLOGI_5)" を計画します。  
   
 
 

@@ -7,22 +7,22 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 6b66b224278f15b6abeecbef8fe0778a98159bb7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 48ea357b952738c63274d194b4a5aa5d4adcb3d8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872623"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408845"
 ---
 # <a name="domain-controller-location"></a>ドメイン コントローラーの場所
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-クライアントでは、ドメイン ネーム システム (DNS) を使用して、ログオン要求を処理または公開されたリソースのディレクトリの検索などの操作を完了するドメイン コント ローラーを特定します。 ドメイン コント ローラーが DNS クライアントをさまざまなレコードを登録し、他のコンピューターに配置します。 これらのレコードをロケーター レコードとしてと総称されます。  
+クライアントはドメインネームシステム (DNS) を使用してドメインコントローラーを特定し、ログオン要求の処理や、発行されたリソースのディレクトリの検索などの操作を完了します。 ドメインコントローラーは、クライアントや他のコンピューターが検出できるように、さまざまなレコードを DNS に登録します。 これらのレコードは、まとめてロケーターレコードと呼ばれます。  
   
-ドメイン コント ローラーは、他のドメイン コント ローラーを検索して、レプリケーションなどのタスクを実行することも DNS を使用します。 ドメイン コント ローラーが他のドメイン コント ローラーを検索するプロセスは、クライアントがドメイン コント ローラーを特定するプロセスと同じです。  
+また、ドメインコントローラーは、他のドメインコントローラーを検索したり、レプリケーションなどのタスクを実行したりするためにも DNS を使用します。 ドメインコントローラーが他のドメインコントローラーを検索するプロセスは、クライアントがドメインコントローラーを特定するプロセスと同じです。  
   
 
 

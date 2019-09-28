@@ -1,36 +1,36 @@
 ---
 ms.assetid: a33bd54c-e6db-4b58-8264-c0f34bd8ba39
-title: チュートリアル - Android デバイスをワークプ レース ジョイン
+title: チュートリアル-Android デバイスへの Workplace Join
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 73dbe4d62d460f9487467c7d4198d62b3b6af539
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: c021e8b67963df4f885059c75eff5e94d6dcdafb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188931"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407470"
 ---
-# <a name="walkthrough-workplace-join-to-an-android-device"></a>チュートリアル: Android デバイスをワークプ レース ジョイン
+# <a name="walkthrough-workplace-join-to-an-android-device"></a>チュートリアル: Android デバイスへの Workplace Join
 
 
 
 ## <a name="join-your-device-with-workplace-join"></a>ワークプレース ジョインによるデバイスの参加
 
 > [!NOTE]
-> Android のワークプ レース ジョインでは、Azure Active Directory Device Registration Service が必要です。 条件付きのデバイス ポリシーはオンプレミスでを適用するためにデバイス オブジェクトの書き戻しオプションを有効にディレクトリ同期ツール (DirSync) をデプロイする必要があります。 現時点では、デバイスの書き戻しを Active Directory に Azure Active Directory から最新の状態に 3 時間かかります。 そのため、ユーザーは、職場アカウントを作成した後、オンプレミスの web アプリケーションへのアクセスに 3 時間まで待機する必要があります。 Azure Active Directory Device Registration の展開の詳細については、サービスを参照してください、 [Azure Active Directory Device Registration サービスの概要](https://msdn.microsoft.com/library/azure/dn788908.aspx)
+> Android workplace join には Azure Active Directory Device Registration サービスが必要です。 条件付きデバイスポリシーをオンプレミスで適用するには、ディレクトリ同期ツール (DirSync) をデバイスオブジェクトの書き戻しオプションが有効になっている状態で展開する必要があります。 現時点では、Azure Active Directory から Active Directory へのデバイスの書き戻しには最大3時間かかることがあります。 そのため、ユーザーは職場アカウントを作成した後、オンプレミスの web アプリケーションにアクセスするまで3時間待つ必要があります。 Azure Active Directory Device Registration サービスの展開の詳細については、「」、「 [Azure Active Directory Device Registration サービスの概要](https://msdn.microsoft.com/library/azure/dn788908.aspx)」を参照してください。
 
-#### <a name="create-a-work-account-that-joins-your-device-with-workplace-join"></a>ワークプ レース ジョインを使用してデバイスを参加させる作業アカウントを作成します。
+#### <a name="create-a-work-account-that-joins-your-device-with-workplace-join"></a>ワークプレースジョインを使用してデバイスに参加する職場アカウントを作成する
 
-1.  デバイスをワークプ レース ジョインで連結された職場アカウントを作成するため、デバイスに Azure Authenticator アプリケーションをインストールする必要があります。 次の URL は、Android デバイスでの Azure authenticator アプリをインストールし、職場アカウントを追加する方法手順が記載されています。 職場アカウントでは、Android デバイスを信頼済みデバイスにし、デバイス上のアプリケーションにシングル サインオン (SSO) を提供します。 推奨に従って、IT 管理者は、web アプリケーションにアクセスし、最新の基幹業務アプリケーションを信頼済みデバイスを使用できます。 詳細については、次を参照してください。 [Android 用の Azure Authenticator](https://docs.microsoft.com/azure/multi-factor-authentication/end-user/microsoft-authenticator-app-how-to)します。
+1.  デバイスにワークプレースジョインを参加させる職場アカウントを作成するには、デバイスに Azure Authenticator アプリケーションをインストールする必要があります。 次の URL では、Android デバイスに Azure authenticator アプリをインストールし、仕事用アカウントを追加する方法について説明しています。 職場アカウントによって、Android デバイスが信頼されたデバイスになり、デバイス上のアプリケーションにシングルサインオン (SSO) が提供されます。 IT 管理者が推奨するように、信頼されたデバイスを使用して、web アプリケーションや最新の基幹業務アプリケーションにアクセスできます。 詳細については、「 [Android 用の Azure Authenticator](https://docs.microsoft.com/azure/multi-factor-authentication/end-user/microsoft-authenticator-app-how-to)」を参照してください。
 
 ## <a name="see-also"></a>関連項目
-[任意のデバイスからの SSO とシームレスな 2 つ目 Factor Authentication Across Company Applications ワークプ レースへの参加](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
-[Azure Active Directory Device Registration Service を使用して、オンプレミス条件付きアクセスの設定](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)
+[任意のデバイスからの職場への参加による会社のアプリケーション間の SSO とシームレスな2要素認証の](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
+[Azure Active Directory Device Registration サービスを使用したオンプレミスの条件付きアクセスの設定](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)
 
 

@@ -7,34 +7,34 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b14ded98c4f1a340349119bd9f5f42e3a1bf9434
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: ecbaa33d83d7b37f376a426571c0d2df89c7695d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445745"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407115"
 ---
 # <a name="deploy-security-auditing-with-central-audit-policies-demonstration-steps"></a>集約型の監査ポリシーを使用したセキュリティ監査の展開 (デモンストレーション手順)
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-このシナリオで作成した財務ポリシーを使用して財務ドキュメント フォルダー内のファイルへのアクセスを監査します[集約型アクセス ポリシーを展開&#40;デモンストレーション手順&#41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)します。 このフォルダーへのアクセスが許可されていないユーザーがこのフォルダーにアクセスしようとすると、イベント ビューアーでそのアクティビティがキャプチャされます。   
+このシナリオでは、「[集約型アクセス&#40;ポリシー&#41;の展開](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)」で作成した finance ポリシーを使用して、finance Documents フォルダー内のファイルへのアクセスを監査します。 このフォルダーへのアクセスが許可されていないユーザーがこのフォルダーにアクセスしようとすると、イベント ビューアーでそのアクティビティがキャプチャされます。   
  このシナリオをテストするには、次の手順が必要です。  
   
 |タスク|説明|  
 |--------|---------------|  
-|[グローバル オブジェクト アクセスを構成します。](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_1)|この手順では、ドメイン コントローラーでグローバル オブジェクト アクセス ポリシーを構成します。|  
-|[更新プログラム グループ ポリシーの設定](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_2)|ファイル サーバーにサインインし、グループ ポリシーの更新を適用します。|  
-|[グローバル オブジェクト アクセス ポリシーが適用されたことを確認します。](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_3)|イベント ビューアーで関連するイベントを確認します。 これらのイベントには、国とドキュメント タイプのメタデータが含まれている必要があります。|  
+|[グローバルオブジェクトアクセスの構成](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_1)|この手順では、ドメイン コントローラーでグローバル オブジェクト アクセス ポリシーを構成します。|  
+|[グループポリシーの設定を更新する](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_2)|ファイル サーバーにサインインし、グループ ポリシーの更新を適用します。|  
+|[グローバルオブジェクトアクセスポリシーが適用されていることを確認する](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_3)|イベント ビューアーで関連するイベントを確認します。 これらのイベントには、国とドキュメント タイプのメタデータが含まれている必要があります。|  
   
-## <a name="BKMK_1"></a>グローバル オブジェクト アクセス ポリシーを構成します。  
+## <a name="BKMK_1"></a>グローバルオブジェクトアクセスポリシーを構成する  
 この手順では、ドメイン コントローラーでグローバル オブジェクト アクセス ポリシーを構成します。  
   
 #### <a name="to-configure-a-global-object-access-policy"></a>グローバル オブジェクト アクセス ポリシーを構成するには  
   
-1. パスワードを使用して contoso \administrator としてドメイン コント ローラー DC1 にサインイン <strong>pass@word1</strong>します。  
+1. パスワード<strong>pass@word1</strong>で、contoso\administrator としてドメインコントローラー DC1 にサインインします。  
   
 2. サーバー マネージャーで、 **[ツール]** をポイントし、 **[グループ ポリシーの管理]** をクリックします。  
   
@@ -65,12 +65,12 @@ ms.locfileid: "66445745"
   
 15. ナビゲーション ウィンドウで **[オブジェクト アクセス]** をクリックし、結果ウィンドウで **[ハンドル操作の監査]** をダブルクリックします。 **[次の監査イベントを構成する]** 、 **[成功]** 、 **[失敗]** をクリックして **[OK]** をクリックし、柔軟なアクセス GPO を閉じます。  
   
-## <a name="BKMK_2"></a>グループ ポリシー設定を更新します。  
+## <a name="BKMK_2"></a>グループポリシーの設定を更新する  
 この手順では、監査ポリシーを作成した後でグループ ポリシー設定を更新します。  
   
 #### <a name="to-update-group-policy-settings"></a>グループ ポリシーの設定を更新するには  
   
-1. ファイル サーバーのパスワードを使用して contoso \administrator として FILE1 にサインイン <strong>pass@word1</strong>します。  
+1. パスワード<strong>pass@word1</strong>で、contoso\Administrator としてファイルサーバー FILE1 にサインインします。  
   
 2. Windows キーを押しながら R キーを押し、「**cmd**」と入力してコマンド プロンプト ウィンドウを開きます。  
   
@@ -79,19 +79,19 @@ ms.locfileid: "66445745"
   
 3. 「 **gpupdate /force** 」と入力し、Enter キーを押します。  
   
-## <a name="BKMK_3"></a>グローバル オブジェクト アクセス ポリシーが適用されたことを確認します。  
+## <a name="BKMK_3"></a>グローバルオブジェクトアクセスポリシーが適用されていることを確認する  
 グループ ポリシーの設定が適用された後、監査ポリシーの設定が正しく適用されたことを検証できます。  
   
 #### <a name="to-verify-that-the-global-object-access-policy-has-been-applied"></a>グローバル オブジェクト アクセス ポリシーが適用されたことを検証するには  
   
-1.  クライアント コンピューター CLIENT1 に Contoso\MReid としてサインインします。 フォルダー HYPERLINK を参照"file:///\\\\\\\ID_AD_FILE1\\\Finance" \\\ file1 \finance Documents、および Word Document 2 を変更します。  
+1.  クライアント コンピューター CLIENT1 に Contoso\MReid としてサインインします。 フォルダーのハイパーリンク "file:///\\ @ no__t-1 @ no__t-2\ID_AD_FILE1 @ no__t-3\Finance @no__t" を参照し、Word 文書2を変更します。  
   
 2.  contoso\administrator としてファイル サーバー FILE1 にサインインします。 イベント ビューアーを開き、 **[Windows ログ]** に移動して **[セキュリティ]** をクリックし、アクティビティの結果として監査イベント **4656** と **4663** が発生したことを確認します (作成、変更、または削除したファイルまたはフォルダーについて明示的な監査 SACL を設定しなかった場合でも、これらの監査イベントが発生します)。  
   
 > [!IMPORTANT]  
 > 有効なアクセス許可が確認されているユーザーのために、リソースが配置されているコンピューター上で新しいログオン イベントが生成されます。 ユーザー サインイン アクティビティのセキュリティ監査ログを分析する場合、有効なアクセス許可が原因となって生成されるログオン イベントと対話型のネットワーク ユーザー サインインが原因となって生成されるログオン イベントを区別するために、偽装レベル情報が含められます。 有効なアクセス許可が原因となってログオン イベントが生成される場合、偽装レベルは Identity です。 対話型のネットワーク ユーザー サインインでは、通常、偽装レベルが Impersonation または Delegation のログオン イベントが生成されます。  
   
-## <a name="BKMK_Links"></a>参照してください。  
+## <a name="BKMK_Links"></a>関連項目  
   
 -   [シナリオ: ファイル アクセスの監査](Scenario--File-Access-Auditing.md)  
   

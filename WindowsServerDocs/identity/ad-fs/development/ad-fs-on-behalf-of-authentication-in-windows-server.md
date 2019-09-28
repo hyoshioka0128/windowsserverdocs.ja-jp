@@ -7,14 +7,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 89b2bf8422fb1151a7e502b381f9842f77009277
-ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
+ms.openlocfilehash: 9c6c6e7d2c12b6b822989bba05370015f7cd1833
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70009130"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407812"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>AD FS 2016 以降で OAuth を使用して、の代理 (OBO) を使用して多層アプリケーションを構築する
 
@@ -102,7 +102,7 @@ AD FS 管理 MMC を開き、新しいアプリケーショングループを追
 
 [次へ] をクリックすると、クライアントアプリに関する情報を提供するためのページが表示されます。 AD FS でクライアントアプリに適切な名前を付けます。 クライアント識別子をコピーし、後でアクセスできる場所に保存します。これは、visual studio のアプリケーション構成で必要になります。
 
->注:リダイレクト URI は、ネイティブクライアントの場合には実際には使用されないため、任意の URI にすることができます。
+>メモ:リダイレクト URI は、ネイティブクライアントの場合には実際には使用されないため、任意の URI にすることができます。
 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO11.PNG)
 
@@ -276,12 +276,12 @@ ToDoListService WebAPI を構成したときと同じように、ウィザード
 
 | キー                      | 値                                                                                                                                                                                                                   |
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ida: 対象ユーザー             | ToDoListService WebAPI の構成中に AD FS に指定された ToDoListService の ID (例:)https://localhost:44321/                                                                                         |
-| ida: ClientID             | ToDoListService WebAPI の構成中に AD FS に指定された ToDoListService の ID (例:)<https://localhost:44321/> </br>**Ida: Audience と ida: ClientID が相互に一致することが非常に重要です。** |
+| ida: 対象ユーザー             | ToDoListService WebAPI の構成中に AD FS に指定された ToDoListService の ID (たとえば、 https://localhost:44321/ )                                                                                         |
+| ida: ClientID             | ToDoListService WebAPI の構成中に AD FS に指定された ToDoListService の ID (たとえば、<https://localhost:44321/>) </br>**Ida: Audience と ida: ClientID が相互に一致することが非常に重要です。** |
 | ida: ClientSecret         | これは、で ToDoListService クライアントを構成したときに生成されたシークレット AD FS AD FS                                                                                                                   |
 | ida: AdfsMetadataEndpoint | これは AD FS メタデータの URL です。例: https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
-| ida: OBOWebAPIBase        | これは、バックエンド API の呼び出しに使用するベースアドレスです。たとえば、 https://localhost:44300                                                                                                                     |
-| ida: Authority            | これは、AD FS サービスの URL です。例を次に示します。 https://fs.anandmsft.com/adfs/                                                                                                                                          |
+| ida: OBOWebAPIBase        | これは、バックエンド API の呼び出しに使用するベースアドレスです (たとえば、 https://localhost:44300 )。                                                                                                                     |
+| ida: Authority            | これは、AD FS サービスの URL です。例 https://fs.anandmsft.com/adfs/                                                                                                                                          |
 
 **Appsettings**ノード内の他のすべての IDA: XXXXXXX キーをコメントアウトまたは削除できます。
 
@@ -298,7 +298,7 @@ ToDoListService WebAPI を構成したときと同じように、ウィザード
                 TokenValidationParameters = new TokenValidationParameters{ SaveSigninToken = true }
             });
 
-with
+を、次のように置き換えます。
 
         app.UseActiveDirectoryFederationServicesBearerAuthentication(
             new ActiveDirectoryFederationServicesBearerAuthenticationOptions
@@ -335,7 +335,7 @@ System.web 拡張子への参照を追加します。 次のコードを置き�
     private static string graphUserUrl = ConfigurationManager.AppSettings["ida:GraphUserUrl"];
     private const string TenantIdClaimType = "https://schemas.microsoft.com/identity/claims/tenantid";
 
-with
+を、次のように置き換えます。
 
     //
     // The Client ID is used by the application to uniquely identify itself to Azure AD.
@@ -494,10 +494,10 @@ F5 キーを押してソリューションを実行します
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
 Fiddler で詳細なトレースを確認することもできます。 Fiddler を起動し、HTTPS の暗号化解除を有効にします。 /Adfs/oautincludes エンドポイントに対して2つの要求が実行されていることがわかります。
-最初の相互作用では、アクセスコードをトークンエンドポイントに提示し、AD FS obo https://localhost:44321/ の![ アクセストークンを取得します。](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
+最初の相互作用では、トークンエンドポイントにアクセスコードを提示し、 https://localhost:44321/ ![ AD FS OBO @ no__t-2 のアクセストークンを取得します。
 
-トークンエンドポイントとの2つ目のやり取りでは、 **requested_token_use**が**on_behalf_of**として設定されており、中間層 web サービス用に取得したアクセストークンを https://localhost:44321/ 使用していることがわかります。つまり、代理トークン。
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
+トークンエンドポイントとの2つ目のやり取りでは、 **requested_token_use**が**on_behalf_of**として設定されていて、中間層 web サービス用に取得したアクセストークンを使用していることがわかり @no__t ます。つまり、代理トークン。
+![AD FS OBO @ NO__T-1
 
 ## <a name="next-steps"></a>次の手順
 [AD FS の開発](../../ad-fs/AD-FS-Development.md)  

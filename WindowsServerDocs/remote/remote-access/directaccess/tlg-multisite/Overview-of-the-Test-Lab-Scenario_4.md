@@ -1,9 +1,9 @@
 ---
 title: テスト ラボのシナリオの概要
-description: このトピックは一部のテスト ラボ ガイド-DirectAccess マルチサイト展開の Windows Server 2016 のデモンストレーション
+description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: 9afeced4-1a9b-4cb3-9fc4-d7e44c675755
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b067d5f247f5dc13ea294d83a76f267c5a57ffe7
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: bcee25c4a13afc2b41d6b1a9a43a1489054ef43d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283297"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388407"
 ---
 # <a name="overview-of-the-test-lab-scenario"></a>テスト ラボのシナリオの概要
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このテスト ラボのシナリオでは、DirectAccess に展開されます。  
   

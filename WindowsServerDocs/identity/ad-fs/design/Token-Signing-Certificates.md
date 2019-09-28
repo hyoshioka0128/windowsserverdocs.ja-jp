@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d31b7d60021e72f80c762df5b4e1a4199ea3909c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 02c126fe0792872298a5512abf850af41e1db826
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867693"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407916"
 ---
 # <a name="token-signing-certificates"></a>トークン署名証明書
 

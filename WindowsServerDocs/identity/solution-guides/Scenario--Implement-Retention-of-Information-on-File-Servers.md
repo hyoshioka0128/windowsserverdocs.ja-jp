@@ -1,20 +1,20 @@
 ---
 ms.assetid: 81c55015-82e5-4ba1-b15e-cc7b49af28fc
-title: ファイル サーバー上の情報のシナリオ実装の保有期間
+title: ファイルサーバーに関する情報の保持を実装するシナリオ
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 59fd7f0a0a4d9ed8f5cec57b17be21e1aa4cd592
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b6df28987e9e6d2fa1382b00e9403f2d112fc226
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880253"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406985"
 ---
 # <a name="scenario-implement-retention-of-information-on-file-servers"></a>シナリオ:ファイル サーバーでの情報の保持を実装する
 
@@ -27,22 +27,22 @@ ms.locfileid: "59880253"
   
 「 [Plan for Retention of Information on File Servers](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)」に、保持の構成に関する計画情報があります。  
   
-訴訟ホールド用にファイルを分類および保持期間を構成するための手順を見つけることができます[展開を実装する保有期間のサーバー上の情報ファイル&#40;デモンストレーション手順&#41;](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md)します。  
+「 [ &#40;ファイルサーバーへの情報の保持の実装&#41;](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md)」の手順に従って、訴訟ホールドのためにファイルを分類し、保有期間を構成するための手順を確認できます。  
   
 > [!NOTE]  
-> このシナリオでは、訴訟ホールドのためにドキュメントを手動で分類する方法のみが説明されています。 ただし、訴訟ホールド用のドキュメントを自動的に分類する Windows Server 2012 で可能です。 これを行う 1 つの方法として、訴訟ホールド下のユーザー アカウントのリストに対してファイル所有者を比較する Windows PowerShell 分類子を作成する方法があります。 ファイル所有者がユーザー アカウント リストの一部である場合、ファイルは訴訟ホールドとして分類されます。  
+> このシナリオでは、訴訟ホールドのためにドキュメントを手動で分類する方法のみが説明されています。 ただし、Windows Server 2012 では、訴訟ホールドのためにドキュメントを自動的に分類することができます。 これを行う 1 つの方法として、訴訟ホールド下のユーザー アカウントのリストに対してファイル所有者を比較する Windows PowerShell 分類子を作成する方法があります。 ファイル所有者がユーザー アカウント リストの一部である場合、ファイルは訴訟ホールドとして分類されます。  
   
 ## <a name="in-this-scenario"></a>このシナリオの内容  
 このシナリオは、ダイナミック アクセス制御のシナリオの一部です。 ダイナミック アクセス制御の追加情報については、次のトピックを参照してください。  
   
--   [ダイナミック アクセス制御:シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
 ## <a name="BKMK_NEW"></a>このシナリオに含まれる機能  
 次の表で、このシナリオに含まれる機能を紹介すると共に、それをシナリオに活かす方法について説明します。  
   
 |機能|このシナリオのサポート方法|  
 |-----------|---------------------------------|  
-|[ファイル サーバー リソース マネージャーの概要](https://technet.microsoft.com/library/hh831701.aspx)|ファイル分類インフラストラクチャは、ファイル サーバー リソース マネージャーに含まれている機能です。|  
+|[ファイルサーバーリソースマネージャーの概要](https://technet.microsoft.com/library/hh831701.aspx)|ファイル分類インフラストラクチャは、ファイル サーバー リソース マネージャーに含まれている機能です。|  
 |[ファイル サービスおよび記憶域サービスの概要](https://technet.microsoft.com/library/hh831487.aspx)|ファイル サーバー リソース マネージャーは、ファイル サービスのサーバーの役割に付属している機能です。|  
   
   

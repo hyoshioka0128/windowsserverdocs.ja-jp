@@ -1,8 +1,8 @@
 ---
-title: クエリ ユーザー
-description: 'Windows コマンド」のトピック * * *- '
+title: ユーザーのクエリ
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c6e0d936e03e14e134c7bfd450a878fda1a796c4
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 65bf42281e6e1956331c061167aea23d1cd61a1d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66442000"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384873"
 ---
-# <a name="query-user"></a>クエリ ユーザー
+# <a name="query-user"></a>ユーザーのクエリ
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモート デスクトップ セッション ホスト (rd セッション ホスト) サーバー上のユーザー セッションに関する情報を表示します。
-このコマンドを使用する方法の例については、次を参照してください。[例](#BKMK_examples)します。
+リモートデスクトップセッションホスト (rd セッションホスト) サーバー上のユーザーセッションに関する情報を表示します。
+このコマンドの使用方法の例については、「[例](#BKMK_examples)」を参照してください。
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 新機能については、最新バージョンについてを参照してください。 [Windows Server 2012 でのリモート デスクトップ サービスでどのような s の新しい](https://technet.microsoft.com/library/hh831527)、Windows Server TechNet ライブラリです。
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの[Windows Server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527) を参照してください。
 > ## <a name="syntax"></a>構文
 > ```
 > query user [<UserName> | <SessionName> | <SessionID>] [/server:<ServerName>]
@@ -39,19 +39,19 @@ ms.locfileid: "66442000"
 > |      <UserName>      |                            クエリを実行するユーザーのログオン名を指定します。                             |
 > |    <SessionName>     |                              クエリを実行するセッションの名前を指定します。                              |
 > |     <SessionID>      |                               クエリを実行するセッションの ID を指定します。                               |
-> | /server:<ServerName> | クエリを実行する rd セッション ホスト サーバーを指定します。 それ以外の場合、現在の rd セッション ホスト サーバーが使用されます。 |
+> | /server:<ServerName> | 照会する rd セッションホストサーバーを指定します。 それ以外の場合は、現在の rd セッションホストサーバーが使用されます。 |
 > |          /?          |                                        コマンド プロンプトにヘルプを表示します。                                         |
 > 
-> ## <a name="remarks"></a>注釈
-> - このコマンドを使用すると、特定のユーザーが特定の rd セッション ホスト サーバーにログオンしているかどうかを確認します。 **クエリ ユーザー**次の情報を返します。
+> ## <a name="remarks"></a>コメント
+> - このコマンドを使用すると、特定のユーザーが特定の rd セッションホストサーバーにログオンしているかどうかを確認できます。 **query user**は、次の情報を返します。
 >   -   ユーザーの名前
->   -   Rd セッション ホスト サーバー上のセッションの名前
+>   -   Rd セッションホストサーバー上のセッションの名前
 >   -   セッション ID
 >   -   (アクティブまたは切断) セッションの状態
 >   -   アイドル時間 (セッションで最後にキーストロークやマウスの動きを以降の分単位の数)
 >   -   ユーザーがログオンした日付と時刻
-> - 使用する**クエリ ユーザー**、フル コントロール権限を持っているまたは特別なアクセス許可の情報をクエリする必要があります。
-> - 使用する場合**クエリ ユーザー**を指定せず <*UserName*>、<*SessionName*>、または <*SessionID*>、すべての一覧サーバーにログオンしているユーザーが返されます。 またはも使用できます **クエリ セッション** 、サーバー上のすべてのセッションの一覧を表示します。
+> - **クエリユーザー**を使用するには、フルコントロールアクセス許可またはクエリ情報の特別なアクセス許可を持っている必要があります。
+> - <*UserName*> *、< の*SessionID >、または <*SessionID*> を指定せずに**クエリユーザー**を使用すると、サーバーにログオンしているすべてのユーザーの一覧が返されます。 またはも使用できます **クエリ セッション** 、サーバー上のすべてのセッションの一覧を表示します。
 > - **クエリ ユーザー** 情報、不等号 (>) を返しますが、現在のセッションの前に表示されます。
 > - **/Server** パラメーターは、使用する場合にのみ必要 **クエリ ユーザー** リモート サーバーからです。
 >   ## <a name="BKMK_examples"></a>例
@@ -59,11 +59,11 @@ ms.locfileid: "66442000"
 >   ```
 >   query user
 >   ```
-> - サーバー SERver1 上 USER1 のユーザーに関する情報を表示するには、次のように入力します。
+> - サーバー SERver1 のユーザー USER1 に関する情報を表示するには、次のように入力します。
 >   ```
 >   query user USER1 /server:SERver1
 >   ```
->   #### <a name="additional-references"></a>その他の参照
->   [コマンドライン構文のポイント](command-line-syntax-key.md)
+>   #### <a name="additional-references"></a>その他の参照情報
+>   [コマンドライン構文のキー](command-line-syntax-key.md)
 >   [クエリ](query.md)
->   [Remote Desktop Services&#40;ターミナル サービス&#41;コマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)
+>   [リモートデスクトップサービス&#40;ターミナルサービス&#41;のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)

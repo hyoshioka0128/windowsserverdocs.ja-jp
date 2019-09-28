@@ -6,14 +6,14 @@ ms.author: billmath
 manager: femila
 ms.date: 07/10/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 1357c4bd86f45de5d83b38419b3612afc123dea9
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 024f7a586c58dcf5f0d6f9c3aa291e6bef8d838b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867890"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408181"
 ---
 # <a name="verify-the-ad-fs-20-migration-to-windows-server-2012-r2"></a>AD FS 2.0 を Windows Server 2012 R2 に移行することを確認する
 

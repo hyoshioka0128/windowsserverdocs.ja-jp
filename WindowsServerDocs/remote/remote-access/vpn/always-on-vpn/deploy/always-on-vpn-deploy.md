@@ -1,7 +1,7 @@
 ---
 title: Windows Server および Windows 10 のための Always On VPN 展開
-description: この展開を使用して、Windows 10 クライアント コンピューターの Windows Server 2016 以降のリモート アクセスと Always On VPN プロファイルを使用してリモートの社員を常に仮想プライベート ネットワーク (VPN) 接続を展開することができます。
-ms.prod: windows-server-threshold
+description: この展開を使用して、Windows Server 2016 以降のリモートアクセスを使用してリモート従業員用の仮想プライベートネットワーク (VPN) 接続 Always On を展開し、Windows 10 クライアントコンピューターの VPN プロファイルを Always On できます。
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 5ae1a40b-4f10-4ace-8aaf-13f7ab581f4f
@@ -9,72 +9,72 @@ ms.localizationpriority: medium
 ms.date: 12/20/2018
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 533f0273f6802be209ae5ad79b57f46dd6775149
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: 5eba89cf61354627b63bcdf2420c25e7a44e3d9a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749469"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388142"
 ---
-# <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>Windows Server および Windows 10 の always On VPN 展開
+# <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>Windows Server および Windows 10 用の VPN 展開の Always On
 
->適用対象:Windows Server 2016、Windows Server 2012 R2、Windows 10 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**先の：** リモート アクセス](../../../Remote-Access.md)<br>
-- [**次に：** Always On VPN 機能と機能について説明します](../../vpn-map-da.md)
+- [**先の：** リモートアクセス @ no__t-0<br>
+- [**次に：** Always On VPN の機能について @ no__t-0
 
-Always On VPN リモート アクセスをサポートするドメインに参加している 1 つのまとまりのあるソリューション、非ドメインに参加している (ワークグループ)、または Azure AD に参加してデバイスも個人所有のデバイスを提供します。 Always On VPN では、接続の種類がユーザーまたはデバイス専用である必要はなく、両方の組み合わせにすることができます。 たとえば、リモート デバイス管理用のデバイス認証を有効にし、会社の内部サイトとサービスへの接続に対するユーザー認証を有効にすることができます。
+Always On VPN は、リモートアクセスのための単一の統合されたソリューションを提供し、ドメインに参加している、ドメインに参加していない (ワークグループ)、または Azure AD 参加しているデバイス (個人所有のデバイスも含む) をサポートします。 Always On VPN では、接続の種類がユーザーまたはデバイス専用である必要はなく、両方の組み合わせにすることができます。 たとえば、リモート デバイス管理用のデバイス認証を有効にし、会社の内部サイトとサービスへの接続に対するユーザー認証を有効にすることができます。
 
 ## <a name="prerequisites"></a>前提条件
 
-テクノロジがある可能性が最も高いデプロイ Always On VPN の展開を行えます。 NPS (RADIUS) サーバー、証明機関 (CA) サーバー、およびリモート アクセス (ルーティング VPN) サーバー、DC/DNS サーバー以外、Always On VPN 展開が必要です。 インフラストラクチャを設定すると、クライアントの登録し、経由でオンプレミスに安全にいくつかのネットワークの変更をクライアントを接続する必要があります。
+多くの場合、Always On VPN の展開に使用できるテクノロジが展開されています。 DC/DNS サーバー以外の Always On VPN の展開には、NPS (RADIUS) サーバー、証明機関 (CA) サーバー、およびリモートアクセス (ルーティングと VPN) サーバーが必要です。 インフラストラクチャがセットアップされたら、クライアントを登録し、いくつかのネットワーク変更によってクライアントをオンプレミスに安全に接続する必要があります。
 
-- Active Directory ドメイン インフラストラクチャ、1 つまたは複数のドメイン ネーム システム (DNS) サーバーを含むです。 内部および外部の両方のドメイン ネーム システム (DNS) ゾーンが必要な場合は、内部のゾーン (たとえば、corp.contoso.com と contoso.com など) は、外部のゾーンの委任されたサブドメインであることを想定しています。
-- Active Directory による公開キー基盤 (PKI) と Active Directory 証明書サービス (AD CS)。
-- サーバー、仮想または物理、既存または新規、ネットワーク ポリシー サーバー (NPS) をインストールします。 ネットワーク上の NPS サーバーを既にがある場合は、新しいサーバーを追加なくに、既存の NPS サーバーの構成を変更します。
-- IKEv2 VPN 接続と LAN ルーティングをサポートする機能の小さなサブセットを持つ RAS ゲートウェイの VPN サーバーとしてリモート アクセスします。
-- 2 つのファイアウォールを含む境界ネットワーク。  ファイアウォールが適切に機能する VPN、RADIUS の両方の通信に必要なトラフィックを許可することを確認します。 詳細については、次を参照してください。 [VPN 技術概要で常に](../always-on-vpn-technology-overview.md)します。
-- 物理サーバーまたはリモート アクセスを RAS ゲートウェイの VPN サーバーとしてインストールする物理イーサネット ネットワーク アダプターが 2 つ、境界ネットワーク上の仮想マシン (VM)。 Vm では、ホストの仮想 LAN (VLAN) が必要です。 
-- 管理者、またはそれと同等のメンバーシップは、最低限必要です。
-- 展開を実行する前にこの展開する準備は、このガイドの計画セクションを参照します。
-- 使用されているテクノロジのそれぞれの設計と展開のガイドを確認します。 これらのガイドでは、展開シナリオが、サービスと、組織のネットワークに必要な構成を提供するかどうかを判断できます。 詳細については、次を参照してください。 [VPN 技術概要で常に](../always-on-vpn-technology-overview.md)します。
-- CSP は、ベンダー固有ではないため、Always On VPN 構成をデプロイするため、任意の管理プラットフォームです。
+- Active Directory ドメインインフラストラクチャ (1 つ以上のドメインネームシステム (DNS) サーバーを含む)。 内部ゾーンと外部ドメインネームシステム (DNS) ゾーンの両方が必要です。これは、内部ゾーンが外部ゾーンの委任されたサブドメインであることを前提としています (たとえば、corp.contoso.com と contoso.com)。
+- Active Directory ベースの公開キー基盤 (PKI) と Active Directory 証明書サービス (AD CS)。
+- ネットワークポリシーサーバー (NPS) をインストールするサーバー (仮想または物理、既存または新規)。 ネットワーク上に既に NPS サーバーがある場合は、新しいサーバーを追加するのではなく、既存の NPS サーバー構成を変更することができます。
+- IKEv2 VPN 接続と LAN ルーティングをサポートする機能の小さなサブセットを使用した RAS ゲートウェイ VPN サーバーとしてのリモートアクセス。
+- 2つのファイアウォールを含む境界ネットワーク。  VPN と RADIUS 通信の両方が正常に機能するために必要なトラフィックがファイアウォールによって許可されていることを確認します。 詳細については、「 [ALWAYS ON VPN テクノロジの概要](../always-on-vpn-technology-overview.md)」を参照してください。
+- 2つの物理イーサネットネットワークアダプターを使用する境界ネットワーク上の物理サーバーまたは仮想マシン (VM)。 RAS ゲートウェイ VPN サーバーとしてリモートアクセスをインストールします。 Vm には、ホストの仮想 LAN (VLAN) が必要です。 
+- Administrators のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。
+- 展開を実行する前に、このガイドの「計画」セクションを読んで、この展開の準備ができていることを確認してください。
+- 使用する各テクノロジの設計と展開に関するガイドを確認します。 これらのガイドは、組織のネットワークに必要なサービスと構成が展開シナリオによって提供されるかどうかを判断するのに役立ちます。 詳細については、「 [ALWAYS ON VPN テクノロジの概要](../always-on-vpn-technology-overview.md)」を参照してください。
+- CSP はベンダー固有ではないため、Always On VPN 構成を展開するために選択した管理プラットフォーム。
 
 >[!IMPORTANT]
->この展開では、Active Directory Domain Services、Active Directory 証明書サービス、およびネットワーク ポリシー サーバーを実行しているコンピューターなど、インフラストラクチャ サーバーが Windows Server 2016 を実行していることを要件が違います。 インフラストラクチャ サーバーとリモート アクセスを実行しているサーバーの以前のバージョンの Windows Server、Windows Server 2012 R2 などを使用することができます。
+>この展開では、Active Directory Domain Services、Active Directory 証明書サービス、およびネットワークポリシーサーバーを実行しているコンピューターなどのインフラストラクチャサーバーが Windows Server 2016 を実行している必要はありません。 Windows server 2012 R2 など、以前のバージョンの Windows Server を、インフラストラクチャサーバーおよびリモートアクセスを実行しているサーバーに使用できます。
 >
->Microsoft Azure で仮想マシン (VM) 上のリモート アクセスの展開しようとしないでください。 Microsoft Azure でのリモート アクセスの使用はサポートされていません、リモート アクセス VPN と DirectAccess の両方を含むです。 詳細については、次を参照してください。 [Microsoft Azure 仮想マシンのマイクロソフト サーバー ソフトウェア サポート](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)します。
+>Microsoft Azure の仮想マシン (VM) にリモートアクセスを展開しないでください。 リモートアクセス VPN と DirectAccess の両方を含め、Microsoft Azure でのリモートアクセスの使用はサポートされていません。 詳細については、「 [Microsoft Azure の仮想マシンに対する Microsoft サーバーソフトウェアのサポート](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)」を参照してください。
 
 ## <a name="about-this-deployment"></a>この展開について
 
-指示には、シングル テナントとして RAS ゲートウェイの VPN、ポイント対サイト VPN 接続用の Windows 10 を実行しているリモート クライアント コンピューターに、以下に説明するシナリオのいずれかを使用してリモート アクセスを配置する方法を説明します。 既存のインフラストラクチャのデプロイの一部を変更する手順についても表示されます。 またこの展開では、全体に VPN 接続のプロセス、構成するサーバーをそれを ProfileXML VPNv2 CSP ノード、および Always On VPN を展開するには、その他のテクノロジの詳細について役立つリンクがあります。
+ここでは、Windows 10 を実行しているリモートクライアントコンピューター用に、次に示すシナリオのいずれかを使用して、ポイント対サイト VPN RAS ゲートウェイとしてリモートアクセスを展開する手順について説明します。 また、展開用の既存のインフラストラクチャの一部を変更するための手順も紹介します。 また、この展開全体で、VPN 接続プロセス、構成するサーバー、ProfileXML VPNv2 CSP ノード、および Always On VPN を展開するためのその他のテクノロジについての詳細情報を確認するためのリンクがあります。
 
 **Always On VPN 展開シナリオ:**
 
-1. 常を展開 VPN のみです。
-2. Azure AD を使用して VPN 接続用の条件付きアクセスには、Always On VPN をデプロイします。
+1. VPN のみ Always On デプロイします。
+2. Azure AD を使用して VPN 接続の条件付きアクセスを使用して Always On VPN をデプロイします。
 
-詳細と、シナリオのワークフローは、次を参照してください。[デプロイ Always On VPN](always-on-vpn-deploy-deployment.md)します。
+表示されるシナリオの詳細とワークフローについては、「 [Deploy ALWAYS ON VPN](always-on-vpn-deploy-deployment.md)」を参照してください。
 
-## <a name="what-isnt-provided-in-this-deployment"></a>このデプロイにどのような指定されていません
+## <a name="what-isnt-provided-in-this-deployment"></a>この展開で提供されていないもの
 
-このデプロイは、手順を提供しません。
+この展開では、次の手順は使用できません。
 
 - Active Directory Domain Services (AD DS)。
 - Active Directory 証明書サービス (AD CS) と公開キー基盤 (PKI)。
 - 動的ホスト構成プロトコル (DHCP)。
-- イーサネット ケーブルの接続、ファイアウォール、スイッチ、およびハブなどのハードウェアをネットワークします。
-- Always On VPN 接続経由でリモート ユーザーがアクセスできるアプリケーションおよびファイル サーバーなどの追加のネットワーク リソース。
-- インターネット接続または Azure AD を使用してインターネット接続の条件付きアクセス。 詳細については、次を参照してください。 [Azure Active Directory の条件付きアクセス](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)します。
+- イーサネットケーブル、ファイアウォール、スイッチ、ハブなどのネットワークハードウェア。
+- リモートユーザーが Always On VPN 接続を介してアクセスできる、アプリケーションやファイルサーバーなどの追加のネットワークリソース。
+- インターネット接続、または Azure AD を使用したインターネット接続のための条件付きアクセス。 詳細については、「 [Azure Active Directory での条件付きアクセス](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)」を参照してください。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
-- [Always On VPN 機能と機能の詳細について説明します](../../vpn-map-da.md)
+- [Always On VPN の機能についての詳細情報](../../vpn-map-da.md)
 
-- [Always On VPN の機能強化についての詳細します。](../always-on-vpn-enhancements.md)
+- [Always On VPN の機能強化についての詳細情報](../always-on-vpn-enhancements.md)
 
-- [高度な Always On VPN 機能の一部について説明します](always-on-vpn-adv-options.md)
+- [いくつかの高度な Always On VPN 機能について説明します。](always-on-vpn-adv-options.md)
 
-- [Always On VPN テクノロジについて詳しく説明します](../always-on-vpn-technology-overview.md)
+- [Always On VPN テクノロジについての詳細情報](../always-on-vpn-technology-overview.md)
 
-- [Always On VPN 展開の計画を開始します。](always-on-vpn-deploy-deployment.md)
+- [Always On VPN 展開の計画を開始する](always-on-vpn-deploy-deployment.md)

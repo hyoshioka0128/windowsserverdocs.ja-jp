@@ -2,7 +2,7 @@
 title: MultiPoint Services のユーザーアカウント
 description: MultiPoint Services のユーザーアカウント、特にさまざまなシナリオで使用するユーザーアカウントについて説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 67aa84244aa9ebfcd8375bd82f9d6ae431fc5eac
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ff81af2a0aa8da7f801ec14c27dc00c9bae6e8aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871417"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388958"
 ---
 # <a name="example-scenarios-multipoint-services-user-accounts"></a>シナリオの例:MultiPoint Services のユーザーアカウント
 MultiPoint Services 環境用に選択したユーザーアカウントシナリオを実装するには、どうすればよいですか。 次の表では、ユーザーアカウントを構成し、スタンドアロンの MultiPoint コンピューター、またはワークグループまたは Active Directory ドメイン内のネットワークサーバー上の共有ユーザーアカウントまたは個人ユーザーアカウントのステーションを準備するために実行する各タスクについて説明します。 環境に当てはまるシナリオを選択します。 次に、表のリンクに従って、必要な各構成タスクを完了します。  

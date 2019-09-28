@@ -1,29 +1,29 @@
 ---
 title: ダンプの暗号化について
 description: ダンプファイルを暗号化し、暗号化をトラブルシューティングする方法について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: dongill
 ms.topic: article
 author: larsiwer
 ms.asset: b78ab493-e7c3-41f5-ab36-29397f086f32
 ms.author: kathydav
 ms.date: 11/03/2016
-ms.openlocfilehash: d46deee7fc9d911de2a6ee44ae097affe1d658a3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e1e374a75c11321820393bede83ca9ea225f5424
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872143"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392817"
 ---
 # <a name="about-dump-encryption"></a>ダンプの暗号化について
 ダンプ暗号化を使用して、システムに対して生成されたクラッシュダンプとライブダンプを暗号化できます。 ダンプは、ダンプごとに生成される対称暗号化キーを使用して暗号化されます。 このキー自体は、ホストの信頼された管理者 (クラッシュダンプ暗号化キープロテクター) によって指定された公開キーを使用して暗号化されます。 これにより、一致する秘密キーを持つユーザーだけが暗号化を解除して、ダンプの内容にアクセスできるようになります。 この機能は、保護されたファブリックで利用されています。
-注:ダンプの暗号化を構成する場合は、Windows エラー報告も無効にします。 WER は、暗号化されたクラッシュダンプを読み取ることができません。
+メモ:ダンプの暗号化を構成する場合は、Windows エラー報告も無効にします。 WER は、暗号化されたクラッシュダンプを読み取ることができません。
 
 # <a name="configuring-dump-encryption"></a>ダンプ暗号化の構成
 ## <a name="manual-configuration"></a>手動構成
 レジストリを使用してダンプ暗号化を有効にするには、次のレジストリ値を次のように構成します。`HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl`
 
-| 値名 | 種類 | 値 |
+| ［値の名前］ | 種類 | 値 |
 | ---------- | ---- | ----- |
 | DumpEncryptionEnabled | DWORD | ダンプの暗号化を有効にする場合は1、ダンプの暗号化を無効にする場合は0。 |
 | Encryptionublickey::P | Binary | ダンプの暗号化に使用する公開キー (RSA、2048ビット)。 これは[BCRYPT_RSAKEY_BLOB](https://msdn.microsoft.com/library/windows/desktop/aa375531(v=vs.85).aspx)として書式設定する必要があります。 |

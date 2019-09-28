@@ -6,15 +6,15 @@ ms.author: billmath
 manager: femila
 ms.date: 07/07/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
-ms.openlocfilehash: 0c2d411be7ef807198df30074ea706d7c5398617
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ff4c43bb8dc5582716638f0a3f6e4f6a8022aece
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869359"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407378"
 ---
 # <a name="the-role-of-the-claim-rule-language"></a>要求規則言語の役割
 Active Directory フェデレーションサービス (AD FS) (AD FS) 要求規則言語は、受信および出力方向の要求の動作の管理用構成要素として機能します。要求エンジンは、要求規則言語のロジックの処理エンジンとして機能します。カスタムルールを定義します。 要求エンジンですべてのルールを処理する方法の詳細についてを参照してください [要求エンジンの役割](The-Role-of-the-Claims-Engine.md)します。  
@@ -144,7 +144,7 @@ AD FS では、定義済みのクレームの発行とクレームの一般的�
 
 -   Claim.ValueType  
 
--   要求のプロパティ名\](プロパティ _name が要求のプロパティのコレクションに見つからない場合、このプロパティは空の文字列を返します。\_\[ )  
+-   No__t @ no__t-0property @ no__t-2 (プロパティ _name が要求の Properties コレクションに見つからない場合、このプロパティは空の文字列を返します。 )  
 
 RegexReplace 関数を式内で使用して呼び出すことができます。 この関数は、入力式を受け取り、指定されたパターンと照合します。 パターンが一致すると、一致の出力が置換値に置き換えられます。  
 

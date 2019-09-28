@@ -2,7 +2,7 @@
 title: MultiPoint Services でのはじめに
 description: MultiPoint サービスを紹介し、使用を開始します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 2ed2084038236dc8914eefe6bdafc133817b7b41
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: cf31e62345b006ef9572a2ea97a23e3e0bf41b64
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871679"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395374"
 ---
 # <a name="getting-started-with-multipoint-services"></a>MultiPoint Services でのはじめに
 MultiPoint Services システムでは、多くのユーザーが、ステーションハブを使用して物理的に接続されている複数のステーションを1台のコンピューターにしか使用できません。 各ステーションは、通常、ステーションハブ、マウス、キーボード、およびビデオモニターで構成されています。 MultiPoint Services ステーションの各ユーザーには、MultiPoint Manager を使用して管理できる一意の Windows コンピューティングセッションがあります。  

@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 9c8efee98cc8128443d9c835ccc5cb6b7695a094
-ms.sourcegitcommit: a9625758fbfb066494fe62e0da5f9570ccb738a3
+ms.openlocfilehash: 64b479663dfc930ec9a6d2055b4c9ad5755b30fc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68952468"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389970"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>レプリケーション エラー 1753。エンドポイント マッパーから使用できるエンドポイントはこれ以上ありません
 
@@ -96,7 +96,7 @@ Active Directory サイトおよびサービスの **[今すぐレプリケー�
 ソース DC からの接続オブジェクトを右クリックし、 **[今すぐレプリケート]** を選択すると、"エンドポイントマッパーから使用できるエンドポイントはこれ以上ありません" というエラーが表示されます。
 画面上のエラーメッセージは次のようになります。
 
-ダイアログのタイトルのテキスト:今すぐレプリケートダイアログのメッセージテキスト:ドメインコントローラー \< \<のソース dc > からドメインコントローラー \<の宛先 dc > に名前付けコンテキスト% directory パーティション名% > を同期しようとして、次のエラーが発生しました:
+ダイアログのタイトルのテキスト:今すぐレプリケートダイアログのメッセージテキスト:ドメインコントローラ \<Source DC > からドメインコントローラへの名前付けコンテキスト \<% directory パーティション名% > を同期しようとしたときに次のエラーが発生しました \<Destination DC >:
 
 エンドポイントマッパーから使用できるエンドポイントはこれ以上ありません。
 操作は続行されません
@@ -150,7 +150,7 @@ Active Directory サイトおよびサービスの **[今すぐレプリケー�
 
 RPC クライアント (接続先 DC) が目的の RPC サーバー (ソース DC) に接続されていることを確認します。
 
-共通 Active Directory フォレスト内のすべての Dc がドメインコントローラーの CNAME レコードを _msdcs に登録します。 \<フォレストルートドメインは、フォレスト内に存在するドメインに関係なく、DNS ゾーン > ます。 DC CNAME レコードは、各ドメインコントローラーの NTDS 設定オブジェクトの objectGUID 属性から派生します。
+共通 Active Directory フォレスト内のすべての Dc がドメインコントローラーの CNAME レコードを _msdcs に登録します。 \<forest ルートドメインは、フォレスト内に存在するドメインに関係なく、DNS ゾーン > ます。 DC CNAME レコードは、各ドメインコントローラーの NTDS 設定オブジェクトの objectGUID 属性から派生します。
 
 レプリケーションベースの操作を実行する場合、宛先 DC は、ソース Dc CNAME レコードの DNS を照会します。 CNAME レコードには、ソース DC の完全修飾コンピューター名が含まれています。これは、DNS クライアントキャッシュの参照、ホスト/LMHost ファイルの参照、DNS 内のホスト A/AAAA レコード、または WINS を使用してソース Dc の IP アドレスを派生させるために使用されます。
 
@@ -299,7 +299,7 @@ F# SRC    DEST    Operation
 
 ## <a name="related-topics"></a>関連トピック
 
-* [エラー1753で失敗する Active Directory の操作のトラブルシューティング:エンドポイントマッパーから使用できるエンドポイントはこれ以上ありません。](https://support.microsoft.com/kb/2089874)
+* @no__t 0 のトラブルシューティング Active Directory エラー1753で失敗した操作:エンドポイントマッパーから使用できるエンドポイントがありません。 ](https://support.microsoft.com/kb/2089874)
 * [サポート技術情報の記事839880製品 CD からの Windows Server 2003 サポートツールを使用した RPC エンドポイントマッパーエラーのトラブルシューティング](https://support.microsoft.com/kb/839880)
 * [サポート技術情報の記事 832017 Windows Server システムのサービスの概要とネットワークポートの要件](https://support.microsoft.com/kb/832017/)
 * [サポート技術情報の記事 224196 Active Directory レプリケーショントラフィックとクライアント RPC トラフィックを特定のポートに制限する](https://support.microsoft.com/kb/224196/)

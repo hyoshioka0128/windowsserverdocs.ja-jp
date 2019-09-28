@@ -7,13 +7,13 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 ms.localizationpriority: low
-ms.prod: windows-server-threshold
-ms.openlocfilehash: ff67355697051a6c36a5143de96a6aec44bf35ca
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 7b38dae62232c61afafd65eabaf239ad7e747d69
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865419"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407068"
 ---
 # <a name="use-windows-admin-center-to-manage-operating-system-updates-with-azure-update-management"></a>Windows 管理センターを使用して、Azure Update Management でオペレーティングシステムの更新を管理する
 

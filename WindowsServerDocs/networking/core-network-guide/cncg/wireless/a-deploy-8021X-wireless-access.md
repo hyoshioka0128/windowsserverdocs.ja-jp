@@ -2,18 +2,18 @@
 title: パスワード ベース 802.1X 認証ワイヤレス アクセスの展開
 description: このトピックは、Windows Server 2016 ネットワークガイド「パスワードベースの 802.1 X 認証ワイヤレスアクセスの展開」に含まれています。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: ff06ba23-9c0f-49ec-8f7b-611cf8d73a1b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ee20e002aa8dad29eefcda87a7b949ffb0bb6e9b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 90c2c6c4fbd0110724bc3950b11b3b2c09c5c604
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868940"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406270"
 ---
 # <a name="deploy-password-based-8021x-authenticated-wireless-access"></a>パスワード\-ベースの 802.1 x で認証されたワイヤレスアクセスを展開する
 

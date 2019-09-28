@@ -1,20 +1,20 @@
 ---
 title: Active Directory Domain Services コンポーネントの更新
-description: このドキュメントでは、Windows Server 2012 R2 の AD DS のコンポーネントの更新がについて説明します
+description: このドキュメントでは、Windows Server 2012 R2 の AD DS コンポーネントの更新について説明します。
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 09/08/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: a3a91034-a4da-4ad7-93f8-0cd2ec3e7824
 ms.technology: identity-adds
-ms.openlocfilehash: b0bd021863e1e25bd222baf9a633438153fe820b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: e7bacf4f238144fca26776a729a5e4d5bf3444ab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66442764"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389949"
 ---
 # <a name="active-directory-domain-services-component-updates"></a>Active Directory Domain Services コンポーネントの更新
 
@@ -40,7 +40,7 @@ ms.locfileid: "66442764"
 
     -   [SPN と UPN の一意性](../../../ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)  
 
-    -   [Winlogon 自動再起動サインオン&#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
+    -   [Winlogon 自動再起動サインオン&#40;arso&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
 
     -   [TPM キーの構成証明](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md)  
 

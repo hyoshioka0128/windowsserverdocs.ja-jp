@@ -1,9 +1,9 @@
 ---
-title: 手順 1 の実装を 1 台のサーバーのリモート アクセスの展開
-description: このトピックは、ガイドの一部複数リモート アクセス サーバーの展開で Windows Server 2016 の Multisite 展開します。
+title: 手順1単一サーバーのリモートアクセスの展開を実装する
+description: このトピックは、「Windows Server 2016 のマルチサイト展開に複数のリモートアクセスサーバーを展開する」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,25 +12,25 @@ ms.topic: article
 ms.assetid: f9086c4f-f950-44a9-93f1-7d03aecdaa60
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9891a885cb0665d9a778e414c3a0e89f0839504b
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: fab3b29cd6bbbf3da1e085a99c59a36fd25ab565
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282579"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404485"
 ---
-# <a name="step-1-implement-a-single-server-remote-access-deployment"></a>手順 1 の実装を 1 台のサーバーのリモート アクセスの展開
+# <a name="step-1-implement-a-single-server-remote-access-deployment"></a>手順1単一サーバーのリモートアクセスの展開を実装する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-マルチサイトのトポロジでのリモート アクセスの展開には、最初の構成手順は、1 台のサーバーを高度な展開を実装するマルチサイト エントリ ポイントごとにサーバーを追加し、検討してください。  
+マルチサイトトポロジにリモートアクセスを展開する最初の構成手順は、高度な単一サーバー展開を実装してから、各マルチサイトエントリポイントへのサーバーの追加を計画することです。  
   
-## <a name="BKMK_1.1"></a>シングル サーバー配置を実装します。  
-マルチサイト展開を構成する前に」の説明に従って、高度な単一サーバー リモート アクセスの展開を構成する必要があります[高度な設定で単一の DirectAccess サーバーをデプロイ](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings)します。  
+## <a name="BKMK_1.1"></a>単一サーバー配置を実装する  
+マルチサイト展開を構成する前に、「[詳細設定を使用して単一の DirectAccess サーバーを展開](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/single-server-advanced/deploy-a-single-directaccess-server-with-advanced-settings)する」の説明に従って、高度なシングルサーバーリモートアクセスの展開を構成する必要があります。  
   
-## <a name="BKMK_Links"></a>参照してください。  
+## <a name="BKMK_Links"></a>関連項目  
   
--   [手順 2:マルチサイトのインフラストラクチャを構成します。](Step-2-Configure-the-Multisite-Infrastructure.md)  
+-   [手順 2:マルチサイトインフラストラクチャの構成 @ no__t-0  
 
 
 

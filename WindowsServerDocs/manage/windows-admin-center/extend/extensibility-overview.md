@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 09/17/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: c318f3dba1d1264c91a7134aafecdd177882f5f8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: ee8c0203be25b30f173b1887de506844d5b58738
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869730"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406914"
 ---
 # <a name="extensions-for-windows-admin-center"></a>Windows Admin Center の拡張機能
 

@@ -1,147 +1,147 @@
 ---
 ms.assetid: 5a64e790-6725-4099-aa08-8067d57c3168
-title: サーバー側の AD FS 2016 で OAuth 機密クライアントを使用してアプリケーションまたはそれ以降のビルドします。
+title: AD FS 2016 以降の OAuth 機密クライアントを使用してサーバー側アプリケーションを構築する
 description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 167f74522172790d8f5b3fc1dea46d0b7059cd20
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 5b2bf036de1de8300e36c3413c551e51d408a4d2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501678"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407867"
 ---
-# <a name="build-a-server-side-application-using-oauth-confidential-clients-with-ad-fs-2016-or-later"></a>サーバー側の AD FS 2016 で OAuth 機密クライアントを使用してアプリケーションまたはそれ以降のビルドします。
+# <a name="build-a-server-side-application-using-oauth-confidential-clients-with-ad-fs-2016-or-later"></a>AD FS 2016 以降の OAuth 機密クライアントを使用してサーバー側アプリケーションを構築する
 
 
-AD FS 2016 と以降のリリースは、アプリや web サーバーで実行されているサービスなどの独自のシークレットを維持できるクライアントのサポートを提供します。  これらのクライアントは、confidential クライアントと呼ばれます。
-Web サーバーで実行し、AD FS に機密性の高いクライアントとして使用される web アプリケーションの概略図を次に示します。  
+AD FS 2016 以降のリリースでは、web サーバーで実行されているアプリやサービスなど、独自のシークレットを保持できるクライアントがサポートされています。  これらのクライアントは、機密クライアントとして知られています。
+次に示すのは、web サーバー上で実行され、AD FS するための機密クライアントとして機能する web アプリケーションの概略です。  
 
 ## <a name="pre-requisites"></a>前提条件  
 このドキュメントを完了する前に必要な前提条件の一覧を次に示します。 このドキュメントでは、AD FS がインストールされていることを前提としています。  
 
--   GitHub のクライアント ツール  
+-   GitHub クライアントツール  
 
 -   Windows Server 2016 TP4 以降の AD FS  
 
--   Visual Studio 2013 またはそれ以降。  
+-   Visual Studio 2013 以降。  
 
-## <a name="create-an-application-group-in-ad-fs-2016-or-later"></a>2016 以降、AD FS でアプリケーション グループを作成します。
-次のセクションでは、AD FS 2016 でのグループまたはそれ以降のアプリケーションを構成する方法について説明します。  
+## <a name="create-an-application-group-in-ad-fs-2016-or-later"></a>AD FS 2016 以降でアプリケーショングループを作成する
+次のセクションでは、AD FS 2016 以降でアプリケーショングループを構成する方法について説明します。  
 
-#### <a name="create-the-application-group"></a>アプリケーション グループを作成します。  
+#### <a name="create-the-application-group"></a>アプリケーショングループを作成する  
 
-1.  AD FS の管理、アプリケーション グループを右クリックし、選択**アプリケーション グループの追加**します。  
+1.  AD FS 管理 で、アプリケーショングループ を右クリックし、**アプリケーショングループの追加** を選択します。  
 
-2.  アプリケーション グループ ウィザードでの**名前**入力**ADFSOAUTHCC**し、**クライアント/サーバー アプリケーション**を選択、**サーバー アプリケーションWeb API にアクセスする**テンプレート。  **[次へ]** をクリックします。  
+2.  アプリケーショングループウィザードで、**名前**として「 **Adfsoauthcc** 」と入力し、 **[クライアント-サーバーアプリケーション]** で、 **Web API テンプレートにアクセスするサーバーアプリケーション**を選択します。  **[次へ]** をクリックします。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_2.PNG)  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_2.PNG)  
 
-3.  コピー、**クライアント識別子**値。  後の値として使用する**ida: ClientId**アプリケーションの web.config ファイルにします。  
+3.  **クライアント識別子**の値をコピーします。  この値は、アプリケーションの web.config ファイルの**ida: ClientId**の値として後で使用されます。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_3.PNG)  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_3.PNG)  
 
-4.  次の入力**リダイレクト URI:**  -  **https://localhost:44323** します。  **[追加]** をクリックします。 **[次へ]** をクリックします。  
+4.  **リダイレクト URI** - には、次のよう **https://localhost:44323** に入力します。  **[追加]** をクリックします。 **[次へ]** をクリックします。  
 
-5.  **アプリケーション資格情報の構成**画面で、チェック ボックスをオンに**共有シークレットを生成**し、シークレットをコピーします。  これは、後の値として使用されます**ida: ClientSecret**アプリケーションの web.config ファイルにします。  **[次へ]** をクリックします。  
+5.  **[アプリケーション資格情報の構成]** 画面で、 **[共有シークレットを生成]** してシークレットをコピーする チェックボックスをオンにします。  この値は、アプリケーションの web.config ファイルの**ida: ClientSecret**の値として後で使用されます。  **[次へ]** をクリックします。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_4.PNG)   
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_4.PNG)   
 
-6. **Web API の構成**画面で、次の入力**識別子** -  **https://contoso.com/WebApp** します。  **[追加]** をクリックします。 **[次へ]** をクリックします。  この値の後で使用する**ida: GraphResourceId**アプリケーションの web.config ファイルにします。  
+6. **[WEB API の構成]** 画面で、[**識別子** -  **https://contoso.com/WebApp** ] に次のように入力します。  **[追加]** をクリックします。 **[次へ]** をクリックします。  この値は、アプリケーションの web.config ファイルの**ida: GraphResourceId**で後で使用されます。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_9.PNG)  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_9.PNG)  
 
-7. **アクセス制御ポリシーの適用**画面で、 **[のすべてのユーザーに許可]** をクリック **[次へ]** します。  
+7. **[Access Control ポリシーの適用]** 画面で、 **[すべてのユーザーを許可]** する を選択し、 **[次へ]** をクリックします。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_7.PNG)  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_7.PNG)  
 
-8. **アプリケーションのアクセス許可を構成する**確認画面で、 **openid**と**user_impersonation**が選択されており、クリックして **[次へ]** 。  
+8. **[アプリケーションのアクセス許可の構成]** 画面で、 **openid**と**user_impersonation**が選択されていることを確認し、 **[次へ]** をクリックします。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_8.PNG)  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_8.PNG)  
 
-9. **概要**画面で、**次**します。  
+9. **[概要]** 画面で、 **[次へ]** をクリックします。  
 
-10. **完了**画面で、**閉じる**します。  
+10. **[完了]** 画面で、 **[閉じる]** をクリックします。  
 
-## <a name="upgrade-the-database"></a>データベースをアップグレードします。  
-Visual Studio 2015 は、このチュートリアルの作成に使用されました。   Visual Studio 2015 の使用例を取得するためには、データベース ファイルを更新する必要があります。  この場合、次の手順を実行します。  
+## <a name="upgrade-the-database"></a>データベースをアップグレードする  
+このチュートリアルの作成では、Visual Studio 2015 が使用されました。   この例を Visual Studio 2015 で使用するには、データベースファイルを更新する必要があります。  この場合、次の手順を実行します。  
 
-このセクションでは、Web API のサンプルをダウンロードし、Visual Studio 2015 でのデータベースをアップグレードする方法について説明します。   Azure AD のサンプルを使用する[ここ](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-oauth2-useridentity)します。  
+このセクションでは、サンプル Web API をダウンロードし、Visual Studio 2015 でデータベースをアップグレードする方法について説明します。   [ここに記載](https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-oauth2-useridentity)されている Azure AD サンプルを使用します。  
 
-サンプル プロジェクトをダウンロードし、Git Bash を使用して、次を入力します。  
+サンプルプロジェクトをダウンロードするには、Git Bash を使用し、次のように入力します。  
 
 ```  
 git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-oauth2-useridentity.git  
 ```  
 
-![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_10.PNG)  
+![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_10.PNG)  
 
-#### <a name="to-upgrade-the-database-file"></a>データベース ファイルをアップグレードするには  
+#### <a name="to-upgrade-the-database-file"></a>データベースファイルをアップグレードするには  
 
-1.  Visual Studio でプロジェクトを開き、アプリは、SQL Server 2012 Express が必要であることを示すポップアップがあります。 またはデータベースをアップグレードする必要があります。  [Ok] をクリックします。  
+1.  Visual Studio でプロジェクトを開くと、アプリに 2012 Express SQL Server が必要であることを通知するポップアップが表示されるか、データベースをアップグレードする必要があります。  [Ok] をクリックします。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_12.PNG)  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_12.PNG)  
 
-2.  次のコンパイル ビルドを選択して、アプリケーションでは、上部にあるソリューションのビルドを -> します。  これは、すべての NuGet パッケージが復元されます。  
+2.  次に、上部にある [ビルド] > [ソリューションのビルド] の順に選択して、アプリケーションをコンパイルします。  これにより、すべての NuGet パッケージが復元されます。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_13.PNG)  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_13.PNG)  
 
-3.  これで、上部にある次のように選択します。**ビュー** -> **サーバー エクスプ ローラー**します。  を開くと**データ接続**、右クリック**DefaultConnection**選択と**接続の変更**します。  
+3.  上部で、[ **View** -> **サーバーエクスプローラー**] を選択します。  このウィンドウが開いたら、 **[データ接続]** の **[defaultconnection]** を右クリックし、 **[接続の変更]** を選択します。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_14.PNG)  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_14.PNG)  
 
-4.  **接続の変更** **データベース ファイル名 (新規または既存)** を選択します**参照**提供と**path\filename.mdf**します。 クリックして**はい** ダイアログ ボックス。
+4.  **[接続の変更]** の **[データベースファイル名 (新規または既存)]** で、 **[参照]** を選択して**path\filename.mdf**を指定します。 ダイアログボックスで [**はい]** をクリックします。
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_6.PNG)
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_6.PNG)
 
-5.  **接続の変更**を選択します**詳細**します。  
+5.  **[接続の変更]** で **[詳細設定]** を選択します。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_15.PNG)  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_15.PNG)  
 
-6.  高度なプロパティのデータ ソースを特定およびから変更する、ドロップダウンを使用して **(LocalDb\v11.0)** に **(LocalDB) \MSSQLLocalDB**します。  
+6.  [詳細プロパティ] で [データソース] を見つけ、ドロップダウンを使用して、 **(Localdb\ V11.0)** から **(LocalDb) \MSSQLLocalDB**に変更します。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_16.PNG)  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_16.PNG)  
 
-7.  [Ok] をクリックします。 [Ok] をクリックします。  データベースをアップグレードするには、[はい] をクリックします。  
+7.  [Ok] をクリックします。 [Ok] をクリックします。  [はい] をクリックしてデータベースをアップグレードします。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_17.PNG)  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_17.PNG)  
 
-8.  これが完了したら、以上、右側の値をコピー、ボックスの横に**接続文字列。**  
+8.  この処理が完了したら、右側にある [接続文字列] の横にあるボックスの値をコピーし**ます。**  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_18.PNG)  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_18.PNG)  
 
-9.  次に、Web.config ファイルを開きは上記でコピーした値を持つ接続文字列の値を置き換えます。  Web.config ファイルを保存します。  
-
-    > [!NOTE]  
-    > 上記の手順は、新しい接続文字列を取得できるように必要です。  それ以外の場合、以下の更新プログラム-データベースを実行するとエラーが発生をされます。  
-
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_19.PNG)  
-
-10. Visual Studio の上部にある次のように選択します。**ビュー** -> **その他の Windows** -> **パッケージ マネージャー コンソール**します。  
-
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_20.PNG)  
-
-11. 下部で、パッケージ マネージャー コンソールで入力します:`Enable-Migrations`し、enter キーを押します。  
+9.  次に、web.config ファイルを開き、connectionString 内の値を上記でコピーした値に置き換えます。  Web.config ファイルを保存します。  
 
     > [!NOTE]  
-    > 表示された場合は、Enable-migrations ことを示すエラーは、コマンドレットとしては認識されません、EntityFramework を更新するのには、"Install-package entityframework"を入力します。  
+    > 上記の手順は、新しい connectionString を取得できるようにするために必要です。  それ以外の場合は、以下のように Update データベースを実行すると、エラーが発生します。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_21.PNG)  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_19.PNG)  
 
-12. 下部で、パッケージ マネージャー コンソールで入力します:`Add-Migration <anynamehere>`し、enter キーを押します。  
+10. Visual Studio の上部で、[**表示** -> **つの他の Windows** -> **パッケージマネージャーコンソール**] を選択します。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_22.PNG)  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_20.PNG)  
 
-13. 下部で、パッケージ マネージャー コンソールで入力します:`Update-Database`し、enter キーを押します。  
+11. 下部にあるパッケージマネージャーコンソールで、次のように入力して、enter キーを押します。 `Enable-Migrations` と入力します。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_23.PNG)  
+    > [!NOTE]  
+    > コマンドレットとして "有効/移行" が認識されないというエラーが表示された場合は、「Install-Package EntityFramework」と入力して EntityFramework を更新します。  
 
-## <a name="modify-the-webapi-in-visual-studio"></a>Visual Studio で web Api を変更します。  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_21.PNG)  
+
+12. 下部にあるパッケージマネージャーコンソールで、次のように入力して、enter キーを押します。 `Add-Migration <anynamehere>` と入力します。  
+
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_22.PNG)  
+
+13. 下部にあるパッケージマネージャーコンソールで、次のように入力して、enter キーを押します。 `Update-Database` と入力します。  
+
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_23.PNG)  
+
+## <a name="modify-the-webapi-in-visual-studio"></a>Visual Studio での WebApi の変更  
 
 #### <a name="to-modify-the-sample-web-api"></a>サンプル Web API を変更するには  
 
@@ -149,17 +149,17 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
 
 2.  Web.config ファイルを開きます。  次の値を変更します。  
 
-    -   ClientId: ida - 3 では、上記のアプリケーション グループの作成から値を入力します。  
+    -   ida: ClientId-上の「アプリケーショングループの作成」セクションの #3 から値を入力します。  
 
-    -   ClientSecret: ida - 上記のアプリケーション グループの作成に 5 から値を入力します。  
+    -   ida: ClientSecret-前の「アプリケーショングループの作成」セクションの #5 から値を入力します。  
 
-    -   ida: GraphResourceId - 6 では、上記のアプリケーション グループの作成から値を入力します。  
+    -   ida: GraphResourceId-上の「アプリケーショングループの作成」セクションの #6 から値を入力します。  
 
-    ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_24.PNG)  
+    ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_24.PNG)  
 
-3.  App_Start Startup.Auth.cs ファイルを開き、次の変更を行います。  
+3.  App_Start の下にある Startup.Auth.cs ファイルを開き、次のように変更します。  
 
-    -   次の行をコメント化します。  
+    -   次の行をコメントアウトします。  
 
         ```  
         //private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];  
@@ -167,84 +167,84 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi
         //public static readonly string Authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);  
         ```  
 
-    -   代わりに、次を追加します。  
+    -   その場所に次のものを追加します。  
 
         ```  
         public static readonly string Authority = "https://<your_fsname>/adfs";  
         ```  
 
-        < your_fsname > は、フェデレーション サービスの url、adfs.contoso.com などの DNS 部分を置き換え  
+        ここで < your_fsname > は、フェデレーションサービスの url の DNS 部分 (たとえば、adfs.contoso.com) に置き換えられます。  
 
-        ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_25.PNG)  
+        ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_25.PNG)  
 
-4.  UserProfileController.cs ファイルを開き、次の変更を行います。  
+4.  UserProfileController.cs ファイルを開き、次のように変更します。  
 
-    -   コメントを以下の記事。  
+    -   次のことをコメントアウトします。  
 
         ```  
         //authContext = new AuthenticationContext(Startup.Authority, new TokenDbCache(userObjectID));  
         ```  
 
-    -   次のように両方の出現箇所を置き換えます。  
+    -   両方のオカレンスを次のように置き換えます。  
 
         ```  
         authContext = new AuthenticationContext(Startup.Authority, false, new TokenDbCache(userObjectID));  
         ```  
 
-        ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_27.PNG)  
+        ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_27.PNG)  
 
-    -   コメントを以下の記事。  
+    -   次のことをコメントアウトします。  
 
         ```  
         //authContext = new AuthenticationContext(Startup.Authority);  
         ```  
 
-    -   次のように両方の出現箇所を置き換えます。  
+    -   両方のオカレンスを次のように置き換えます。  
 
         ```  
         authContext = new AuthenticationContext(Startup.Authority, false);  
         ```  
 
-        ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_28.PNG)  
+        ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_28.PNG)  
 
-    -   次のすべてのインスタンスを今すぐコメント:  
+    -   次のすべてのインスタンスをコメントアウトします。  
 
         ```  
         Uri redirectUri = new Uri(Request.Url.GetLeftPart(UriPartial.Authority).ToString() + "/OAuth");  
         ```  
 
-    -   次のように、すべての出現箇所を置き換えます。  
+    -   すべての出現箇所を次のように置き換えます。  
 
         ```  
         Uri redirectUri = new Uri(Request.Url.GetLeftPart(UriPartial.Authority).ToString());  
         ```  
 
-        ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_34.PNG)  
+        ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_34.PNG)  
 
-## <a name="test-the-solution"></a>ソリューションをテストします。  
-このセクションでは秘密のクライアント ソリューションがテストされます。  ソリューションをテストするのにには、次の手順を使用します。  
+## <a name="test-the-solution"></a>ソリューションをテストする  
+このセクションでは、confidential クライアントソリューションをテストします。  ソリューションをテストするには、次の手順に従います。  
 
-#### <a name="testing-the-confidential-client-solution"></a>Confidential クライアント ソリューションをテストします。  
+#### <a name="testing-the-confidential-client-solution"></a>Confidential クライアントソリューションのテスト  
 
-1. Visual Studio の上部にある Internet Explorer が選択されているかどうかを確認し、緑色の矢印をクリックします。  
+1. Visual Studio の上部で、Internet Explorer が選択されていることを確認し、緑色の矢印をクリックします。  
 
-   ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_36.png)  
+   ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_36.png)  
 
-2. をクリックすると、ASP.Net ページが表示されたら、**登録**でページの右側の上位します。  ユーザー名とパスワードを入力し、クリックして**登録**ボタンをクリックします。  これは、SQL database で、ローカル アカウントを作成します。  
+2. ASP.Net ページが起動したら、ページの右上にある **[登録]** をクリックします。  ユーザー名とパスワードを入力し、 **[登録]** ボタンをクリックします。  これにより、SQL データベースにローカルアカウントが作成されます。  
 
-   ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_31.PNG)  
+   ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_31.PNG)  
 
-3. 通知、ASP.NET サイト伝えるこんにちはabby@contoso.comです。  クリックして**プロファイル**します。  
+3. ここで、ASP.NET サイトに Hello abby@contoso.com! と表示されます。  **[プロファイル]** をクリックします。  
 
-   ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_32.PNG)  
+   ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_32.PNG)  
 
-4. これにより、情報なしのページが表示され、ということする必要がありますここをクリックしてサインインします。  クリックして**ここ**します。  
+4. これにより、情報のないページが表示され、サインインするにはここをクリックする必要があります。  **ここ**をクリックしてください。  
 
-   ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_33.PNG)  
+   ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_33.PNG)  
 
-5. AD FS にサインインを求め。  
+5. AD FS にサインインするように求められます。  
 
-   ![AD FS の Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_35.PNG)  
+   ![AD FS Oauth](media/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016/AD_FS_Confidential_35.PNG)  
 
 ## <a name="next-steps"></a>次の手順
 [AD FS の開発](../../ad-fs/AD-FS-Development.md)  

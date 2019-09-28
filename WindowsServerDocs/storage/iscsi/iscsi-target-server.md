@@ -1,35 +1,35 @@
 ---
 title: iSCSI Target Server Overview
 TOCTitle: iSCSI Target Server
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-iscsi
 ms.topic: article
 author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 14dd373b71c1be2f1a4ff157b9c631530532fc80
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 638343abf782983020a3301898920470ffcd5952
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837943"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403061"
 ---
-# <a name="iscsi-target-server-overview"></a>iSCSI ターゲット サーバーの概要
+# <a name="iscsi-target-server-overview"></a>iSCSI ターゲットサーバーの概要
 
 適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-このトピックでは、iSCSI ターゲット サーバー、記憶域を iSCSI プロトコル経由で使用できるようにすることができる Windows Server の役割サービスの概要を説明します。 これは、ネイティブの Windows ファイル共有プロトコル、SMB 経由で通信できないクライアントの Windows サーバー上のストレージへのアクセスを提供するために役立ちます。
+このトピックでは、iscsi プロトコルを使用して記憶域を使用できるようにする、Windows Server の役割サービスである iSCSI ターゲットサーバーの概要について簡単に説明します。 これは、ネイティブの Windows ファイル共有プロトコルである SMB を使用して通信できないクライアントのために、Windows server 上の記憶域へのアクセスを提供する場合に便利です。
 
 iSCSI ターゲット サーバーは、以下の目的に最適です。
 
-* **ネットワークおよびディスクなしのブート**   ブートに対応したネットワーク アダプターまたはソフトウェア ローダーを使用すると、数百のディスクなしのサーバーを展開することができます。 iSCSI ターゲット サーバーを使用すると、すばやい展開が可能です。 マイクロソフトの内部テストでは、256 台のコンピューターを 34 分で展開できました。 差分仮想ハード ディスクを使用すると、オペレーティング システム イメージ用に使用される記憶域スペースを最大 90% 節約できます。 これは、Hyper-V や高性能コンピューティング (HPC) クラスターを実行している仮想マシンのように、同じオペレーティング システム イメージを大規模に展開する場合に適しています。
+* **ネットワークとディスク**なしのブート     ブート対応のネットワークアダプターまたはソフトウェアローダーを使用して、数百台のディスクなしのサーバーを展開できます。 iSCSI ターゲット サーバーを使用すると、すばやい展開が可能です。 マイクロソフトの内部テストでは、256 台のコンピューターを 34 分で展開できました。 差分仮想ハード ディスクを使用すると、オペレーティング システム イメージ用に使用される記憶域スペースを最大 90% 節約できます。 これは、Hyper-V や高性能コンピューティング (HPC) クラスターを実行している仮想マシンのように、同じオペレーティング システム イメージを大規模に展開する場合に適しています。
 
-* **サーバー アプリケーション記憶域**   一部のアプリケーションは、ブロック記憶域を必要とします。 iSCSI ターゲット サーバーは、このようなアプリケーションに継続的に使用可能なブロック記憶域を提供できます。 記憶域にはリモートでアクセスできるため、本社または支部にあるブロック記憶域を統合することもできます。
+* **サーバーアプリケーション記憶域**    一部のアプリケーションでは、ブロック記憶域が必要です。 iSCSI ターゲット サーバーは、このようなアプリケーションに継続的に使用可能なブロック記憶域を提供できます。 記憶域にはリモートでアクセスできるため、本社または支部にあるブロック記憶域を統合することもできます。
 
-* **異種記憶域**   iSCSI ターゲット サーバーは、Microsoft 以外の iSCSI イニシエーターを簡単にソフトウェアの混在環境でのサーバー上の記憶域を共有することをサポートしています。
+* **異種記憶域**    Iscsi ターゲットサーバーでは、Microsoft 以外の iscsi イニシエーターがサポートされているため、混在するソフトウェア環境にあるサーバー上の記憶域を簡単に共有できます。
 
-* **開発、テスト、デモ、およびラボ環境**   iSCSI ターゲット サーバーが有効にすると、Windows Server オペレーティング システムを実行しているコンピューターがネットワークからアクセス可能なブロック記憶装置になります。 これは、記憶域ネットワーク (SAN) に展開する前にアプリケーションをテストする場合に便利です。
+* **開発、テスト、デモ、およびラボ環境**   When ターゲットサーバーが有効になっている場合、Windows Server オペレーティングシステムを実行しているコンピューターは、ネットワークからアクセス可能なブロック記憶装置になります。 これは、記憶域ネットワーク (SAN) に展開する前にアプリケーションをテストする場合に便利です。
 
 ## <a name="block-storage-requirements"></a>ブロック記憶域の要件
 
@@ -39,6 +39,6 @@ iSCSI ターゲット サーバーを有効にしてブロック記憶域を提�
 
 ## <a name="see-also"></a>関連項目
 
-[iSCSI ターゲット ブロック記憶域にする方法](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh848268(v%3dws.11))  
-[ISCSI ターゲット サーバーの Windows Server の新します。](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn305893(v%3dws.11))
+[iSCSI ターゲットブロック記憶域、操作方法](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh848268(v%3dws.11))  
+[Windows Server の iSCSI ターゲットサーバーの新機能](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn305893(v%3dws.11))
 

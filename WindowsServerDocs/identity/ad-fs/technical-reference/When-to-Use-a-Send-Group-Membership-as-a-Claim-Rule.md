@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 546507254f796e6a2fbe71e3ba30a7597ea51295
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 82dd9cec2c75a796eb0def508082508a5d0dbf5f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869272"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385433"
 ---
 # <a name="when-to-use-a-send-group-membership-as-a-claim-rule"></a>"グループ メンバーシップを要求として送信する" 規則を使用するタイミング
 この規則は、指定され\(た\) Active Directory セキュリティグループのメンバーであるユーザーのみに対して、新しい出力方向の要求の値を発行する場合に Active Directory フェデレーションサービス (AD FS) AD FS で使用できます。 この規則を使用すると、次の表で説明するように、指定されたグループの中で、規則のロジックと一致するグループに対してのみ、1 つの要求が発行されます。  

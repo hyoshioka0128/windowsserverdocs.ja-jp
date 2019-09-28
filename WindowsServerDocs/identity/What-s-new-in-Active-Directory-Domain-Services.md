@@ -2,7 +2,7 @@
 ms.assetid: 9a06cd41-426f-4cb9-89cf-f5be730e0b79
 title: Active Directory Domain Services&#39;の新機能
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.service: ''
 ms.suite: na
@@ -12,12 +12,12 @@ ms.topic: article
 author: Femila
 ms.author: billmath
 ms.date: 05/31/2017
-ms.openlocfilehash: 3fc45782af7aaaccf87569c59f936abd8cbc5d08
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e3af163855e2550383b119d504449b2b43208a78
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868268"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391101"
 ---
 # <a name="what39s-new-in-active-directory-domain-services"></a>Active Directory Domain Services&#39;の新機能 
 

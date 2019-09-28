@@ -1,7 +1,7 @@
 ---
 title: HYPER-V 仮想マシン管理サービスは、自動的に開始するように構成する必要があります。
-description: このベスト プラクティス アナライザー ルールによって報告された問題を解決する方法を説明します。
-ms.prod: windows-server-threshold
+description: このベストプラクティスアナライザー規則によって報告された問題を解決するための手順を示します。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,12 +10,12 @@ ms.topic: article
 ms.assetid: 222bbe76-c514-4a3f-b61b-860a4dc2826a
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: c33f81678d7fdc71e81834a002fd3d7917a6f632
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f35f94a815e9f895f7f7690737b6b8fb2bed82e1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833253"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393419"
 ---
 # <a name="the-hyper-v-virtual-machine-management-service-should-be-configured-to-start-automatically"></a>HYPER-V 仮想マシン管理サービスは、自動的に開始するように構成する必要があります。
 
@@ -27,24 +27,24 @@ ms.locfileid: "59833253"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|警告|  
+|**順**|警告|  
 |**カテゴリ**|構成|  
 
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。
 
 ## <a name="issue"></a>問題  
   
-*自動的に開始するのには、HYPER-V 仮想マシン管理サービスが構成されていません。*  
+*Hyper-v 仮想マシン管理サービスが自動的に開始するように構成されていません。*  
   
 ## <a name="impact"></a>影響  
   
 *サービスが開始されるまで、仮想マシンを管理することはできません。*  
   
-実行されている仮想マシンは引き続き実行します。 ただし、バーチャル マシンを管理または作成またはサービスが実行されるまでは、それらを削除することはできません。  
+実行されている仮想マシンは引き続き実行します。 ただし、仮想マシンを管理または作成またはサービスが実行されるまでは、それらを削除することはできません。  
   
 ## <a name="resolution"></a>解決方法  
   
-*サービス スナップインまたは sc config コマンド ライン ツールを使用して、自動的に開始するサービスを再構成します。*  
+*サービススナップインまたは sc config コマンドラインツールを使用して、サービスを自動的に開始するように再構成します。*  
   
 > [!TIP]  
 > デスクトップ アプリで、サービスが見つからないか、コマンド ライン ツールをレポートしたサービスが存在しない、HYPER-V 管理ツール可能性がありますがインストールされていません。 インストールします。  
@@ -64,7 +64,7 @@ ms.locfileid: "59833253"
   
 1.  Windows PowerShell を開きます。  
   
-2.  タイプ:   
+2.  型:  
   
     ```  
     set-service  vmms -startuptype automatic  

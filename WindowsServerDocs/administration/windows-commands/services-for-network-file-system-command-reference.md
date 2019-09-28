@@ -1,8 +1,8 @@
 ---
 title: サービスがネットワーク ファイル システム コマンドのリファレンス
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,27 +13,27 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9dcfd62f994d20d21cc9045a26f5fe313b0e338e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 247adb10411970129303c04b7d8790ad06e8c583
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861783"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384059"
 ---
 # <a name="services-for-network-file-system-command-reference"></a>サービスがネットワーク ファイル システム コマンドのリファレンス
 
 
 
-ネットワーク ファイル システム (NFS) 用のサービスでは、ファイル共有ソリューションを Windows Server 2008 と NFS プロトコルを使用して UNIX オペレーティング システムを実行しているコンピューター間でファイルを転送することができますを提供します。
+Nfs (Network File System) 用サービスは、NFS プロトコルを使用して、Windows Server 2008 および UNIX オペレーティングシステムを実行しているコンピューター間でファイルを転送できるようにするファイル共有ソリューションを提供します。
 
-次に NFS コマンド ライン ツールの一覧を示します。
+NFS コマンドラインツールの一覧を次に示します。
 
 |コマンド|説明|
 |-------|-----------|
 |[mapadmin](mapadmin.md)|ユーザー名マッピング Microsoft services for Network File System を管理します。|
-|[mount](mount.md)|Network File System (NFS) ネットワーク共有をマウントします。|
-|[nfsadmin](nfsadmin.md)|NFS と nfs クライアントに対してサーバーを管理します。|
-|[nfsshare](nfsshare.md)|Network File System (NFS) 共有を制御します。|
-|[nfsstat](nfsstat.md)|表示または nfs サーバーへの呼び出しのカウントをリセットします。|
-|[rpcinfo](rpcinfo.md)|リモート コンピューター上のプログラムを一覧表示します。|
-|[showmount](showmount.md)|マウントされたディレクトリを表示します。|
+|[mount](mount.md)|ネットワークファイルシステム (NFS) ネットワーク共有をマウントします。|
+|[Nfsadmin](nfsadmin.md)|NFS と nfs クライアントに対してサーバーを管理します。|
+|[Nfsshare](nfsshare.md)|ネットワークファイルシステム (NFS) 共有を制御します。|
+|[Nfsstat](nfsstat.md)|表示または nfs サーバーへの呼び出しのカウントをリセットします。|
+|[Rpcinfo](rpcinfo.md)|リモート コンピューター上のプログラムを一覧表示します。|
+|[Showmount-](showmount.md)|マウントされたディレクトリを表示します。|

@@ -2,7 +2,7 @@
 title: tracerpt
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 25014d23c797f37dcc488b5fea20c73907eb6f4c
-ms.sourcegitcommit: feec5cbe983c8c5800ccd4fc214914084fcceaba
+ms.openlocfilehash: 1c8e85acc59383d0a027c8d5ec51e68942a76b85
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70975304"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385677"
 ---
 # <a name="tracerpt"></a>tracerpt
 
@@ -57,7 +57,7 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
 |           -レポート [ファイル名]           |                                  テキスト出力レポートファイルを生成します。 ファイル名が指定されていない場合、ワークロード .xml です。                                   |
 |                  -lr                   |                        "制限の緩い" を指定します。 これは、events スキーマに一致しないイベントに対して最適な作業を行います。                         |
 |           -export [ファイル名]           |                                  イベントスキーマエクスポートファイルを生成します。 指定されていない場合、ファイル名は schema. man です。                                   |
-|       [-l]\<値 [値 [...]]>        |                                                   処理するイベントトレースログファイルを指定します。                                                    |
+|       [-l] \<value [値 [...]]>        |                                                   処理するイベントトレースログファイルを指定します。                                                    |
 | -rt \<session_name [session_name [...]]> |                                                リアルタイムイベントトレースセッションのデータソースを指定します。                                                |
 
 ## <a name="BKMK_EXAMPLES"></a>例
