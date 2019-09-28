@@ -4,20 +4,20 @@ description: このトピックでは、802.1 X ワイヤードおよびワイ�
 manager: brianlic
 ms.topic: article
 ms.assetid: 65b36794-bb09-4c1b-a2e7-8fc780893d97
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 83dd48297535aafe30e48fe37010d81b279f4c91
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 88d39f41f61ae7c7f6a1fb84aa99806c4796c8cf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863453"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356189"
 ---
 # <a name="refresh-group-policy"></a>グループ ポリシーを更新する
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
 この手順を使用すると、ローカル コンピューターのグループ ポリシーを手動で更新します。 グループ ポリシーが更新される、証明書自動登録が構成されていて正しく機能している、ローカル コンピューターでは、証明機関 (CA) によって証明書自動登録された場合。  
   

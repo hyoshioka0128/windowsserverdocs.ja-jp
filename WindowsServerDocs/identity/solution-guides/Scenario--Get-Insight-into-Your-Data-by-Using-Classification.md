@@ -1,20 +1,20 @@
 ---
 ms.assetid: ad3f0480-99f7-428a-ab33-6d165a440840
-title: 分類を使用してデータ洞察のシナリオ Get
+title: シナリオでは、分類を使用してデータに関する洞察を得ます
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 2e5248b5fd5e20b7436de9f796367c018d8ef16e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cd6a6e9d3cb452a2cd0a48c6207aea181d85dc7b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881483"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357448"
 ---
 # <a name="scenario-get-insight-into-your-data-by-using-classification"></a>シナリオ:分類を使用してデータの情報を得る
 
@@ -25,7 +25,7 @@ ms.locfileid: "59881483"
 ## <a name="BKMK_OVER"></a>シナリオの説明  
 ファイル分類インフラストラクチャは分類規則を使用して、自動的にファイルをスキャンし、ファイルのコンテンツに従って分類します。 分類プロパティは、Active Directory で集約的に定義されるため、その定義は、組織内のファイル サーバー全体で共有できます。 ファイルで標準文字列またはパターンに一致する文字列 (正規表現) をスキャンする分類規則を作成できます。 構成した分類パラメーターがファイル内で見つかった場合、そのファイルは、分類規則での構成に従って分類されます。 分類規則の例をいくつか挙げます。  
   
--   ビジネスに大きな影響を与えるものとして、文字列「Contoso Confidential」を含むファイルを分類します。  
+-   "Contoso Confidential" という文字列を含むファイルを、ビジネスに大きな影響を与えるものとして分類します。  
   
 -   少なくとも 10 個の社会保障番号が含まれているファイルを、個人を特定できる情報として分類する  
   
@@ -33,22 +33,22 @@ ms.locfileid: "59881483"
   
 「[自動ファイル分類の計画](assetId:///e3c3bb4b-3034-42b7-b391-8ef5f5851955)」に、自動ファイル分類を構成するための計画に関する情報があります。  
   
-内のファイルを自動的に分類する方法に関する手順があります[自動ファイル分類の展開&#40;デモンストレーション手順&#41;](Deploy-Automatic-File-Classification--Demonstration-Steps-.md)します。  
+「[自動ファイル分類&#40;の展開&#41;](Deploy-Automatic-File-Classification--Demonstration-Steps-.md)」の手順に従って、ファイルを自動的に分類する方法を確認できます。  
   
 ## <a name="in-this-scenario"></a>このシナリオの内容  
 このシナリオは、ダイナミック アクセス制御のシナリオの一部です。 ダイナミック アクセス制御の追加情報については、次のトピックを参照してください。  
   
--   [ダイナミック アクセス制御:シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="BKMK_APP"></a>実際の適用  
-Windows Server 2012 でのファイル分類インフラストラクチャは、ビジネス データ所有者が簡単に分類して、データ ラベルを有効にすると、ダイナミック アクセス制御に作用します。 集約型アクセス ポリシーに保管されている分類情報を使用して、ビジネスにとって重要なデータ クラスのアクセス ポリシーを定義できます。  
+## <a name="BKMK_APP"></a>実用的なアプリケーション  
+Windows Server 2012 のファイル分類インフラストラクチャは、ビジネスデータ所有者が簡単にデータを分類してラベル付けできるようにすることで、動的 Access Control に貢献します。 集約型アクセス ポリシーに保管されている分類情報を使用して、ビジネスにとって重要なデータ クラスのアクセス ポリシーを定義できます。  
   
 ## <a name="BKMK_NEW"></a>このシナリオに含まれる機能  
 次の表で、このシナリオに含まれる機能を紹介すると共に、それをシナリオに活かす方法について説明します。  
   
 |機能|このシナリオのサポート方法|  
 |-----------|---------------------------------|  
-|[ファイル サーバー リソース マネージャーの概要](https://technet.microsoft.com/library/hh831701.aspx)|ファイル分類インフラストラクチャは、ファイル サーバー リソース マネージャーに含まれている機能です。|  
+|[ファイルサーバーリソースマネージャーの概要](https://technet.microsoft.com/library/hh831701.aspx)|ファイル分類インフラストラクチャは、ファイル サーバー リソース マネージャーに含まれている機能です。|  
 |[ファイル サービスおよび記憶域サービスの概要](https://technet.microsoft.com/library/hh831487.aspx)|ファイル サーバー リソース マネージャーは、ファイル サービスのサーバーの役割に付属している機能です。|  
   
 

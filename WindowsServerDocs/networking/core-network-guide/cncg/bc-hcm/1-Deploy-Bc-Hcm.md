@@ -1,30 +1,30 @@
 ---
 title: BranchCache ホスト型キャッシュ モードを展開する
-description: このガイドでは、Windows Server 2016 および Windows 10 を実行するコンピューターでホスト型キャッシュ モードで BranchCache の展開の説明
+description: このガイドでは、Windows Server 2016 と Windows 10 を実行するコンピューターに、ホスト型キャッシュモードで BranchCache を展開する手順について説明します。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: 4235231c-4732-4ea9-9330-2a8c8a616d39
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 54991b343623b934118bb62af1bd91871a726996
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 49e74132dba2909b7e5b639c95ef50064cf23e8c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446483"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356382"
 ---
 # <a name="deploy-branchcache-hosted-cache-mode"></a>BranchCache ホスト型キャッシュ モードを展開する
 
 >適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Windows Server 2016 コア ネットワーク ガイドの計画とネットワークが完全に機能し、新しい Active Directory に必要なコア コンポーネントを展開するための手順を提供する&reg;新しいフォレストのドメイン。
+Windows Server 2016 コアネットワークガイドでは、完全に機能するネットワークに必要なコアコンポーネントを計画および展開する手順について説明し、新しいフォレストに新しい Active Directory @ no__t ドメインを追加します。
 
-このガイドを読み取り、1 つまたは複数のブランチ オフィスでホスト型キャッシュ モードで BranchCache を展開するための手順を提供することで、コア ネットワーク上に構築する方法を説明する\-クライアント コンピューターに Windows が実行されているドメイン コント ローラーのみ&reg;10、Windows 8.1、または Windows 8 では、ドメインに参加しているとします。
+このガイドでは、クライアントコンピューターが Windows @ no__t-1 10 Windows 8.1 を実行している読み取り @ no__t-0Only ドメインコントローラーを使用して、1つまたは複数のブランチオフィスにホスト型キャッシュモードで BranchCache を展開する方法について説明します。、、または Windows 8、およびはドメインに参加しています。
 
 >[!IMPORTANT]
->展開または Windows Server 2008 R2 を実行している BranchCache ホスト型キャッシュ サーバーが既に展開を計画している場合は、このガイドを使用しないでください。 このガイドでは Windows Server を実行しているホスト型キャッシュ サーバーとホスト型キャッシュ モードの展開の説明&reg;2016、Windows Server 2012 R2、または Windows Server 2012。
+>Windows Server 2008 R2 を実行している BranchCache ホスト型キャッシュサーバーを展開する場合、または既に展開している場合は、このガイドを使用しないでください。 このガイドでは、Windows Server @ no__t-0 2016、Windows Server 2012 R2、または Windows Server 2012 を実行しているホスト型キャッシュサーバーを使用して、ホスト型キャッシュモードを展開する手順について説明します。
 
 このガイドは次のセクションで構成されます。
 
@@ -36,76 +36,76 @@ Windows Server 2016 コア ネットワーク ガイドの計画とネットワ�
 
 - [テクノロジの概要](#bkmk_tech)
 
-- [BranchCache ホスト型キャッシュ モードの展開の概要](2-Bc-Hcm-Deploy-Overview.md)
+- [BranchCache ホスト型キャッシュモードの展開の概要](2-Bc-Hcm-Deploy-Overview.md)
 
-- [BranchCache には、キャッシュ モードがホストされている展開の計画](3-Bc-Hcm-Plan.md)
+- [BranchCache ホスト型キャッシュモードの展開計画](3-Bc-Hcm-Plan.md)
 
-- [BranchCache にホスト型キャッシュ モードの展開](4-Bc-Hcm-Deployment.md)
+- [BranchCache ホスト型キャッシュモードの展開](4-Bc-Hcm-Deployment.md)
 
 - [その他のリソース](11-Bc-Hcm-additional-resources.md)
 
 ## <a name="bkmk_pre"></a>このガイドを使用するための前提条件
 
-これは、Windows Server 2016 コア ネットワーク ガイドの必携ガイドです。 このガイドに従ってホスト型キャッシュ モードで BranchCache をデプロイするには、先に次のことを行う必要があります。
+これは、Windows Server 2016 コアネットワークガイドの必携ガイドです。 このガイドに従ってホスト型キャッシュ モードで BranchCache をデプロイするには、先に次のことを行う必要があります。
 
-- コア ネットワーク ガイドを使用してメイン オフィスにコア ネットワークをデプロイするか、コア ネットワーク ガイドで説明されているテクノロジが既にネットワーク上に正しくインストールされて機能している必要があります。 これらのテクノロジは、TCP\/IP v4、DHCP、Active Directory Domain Services \(AD DS\)、および DNS。
+- コア ネットワーク ガイドを使用してメイン オフィスにコア ネットワークをデプロイするか、コア ネットワーク ガイドで説明されているテクノロジが既にネットワーク上に正しくインストールされて機能している必要があります。 これらのテクノロジには、TCP @ no__t-0IP v4、DHCP、Active Directory Domain Services \( AD DS @ no__t、DNS などがあります。
 
     > [!NOTE]
-    > Windows Server 2016[コア ネットワーク ガイド](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide)は、Windows Server 2016 テクニカル ライブラリで使用できます。  
+    > Windows Server 2016[コアネットワークガイド](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide)は、windows Server 2016 テクニカルライブラリから入手できます。  
 
-- メイン オフィスまたはクラウド データ センターの Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行する BranchCache コンテンツ サーバーをデプロイします。 BranchCache コンテンツ サーバーをデプロイする方法については、次を参照してください。[資料](11-Bc-Hcm-additional-resources.md)します。
+- メインオフィスまたはクラウドデータセンターで、windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行する BranchCache コンテンツサーバーを展開します。 BranchCache コンテンツサーバーを展開する方法の詳細については、「[その他のリソース](11-Bc-Hcm-additional-resources.md)」を参照してください。
 
-- ワイド エリア ネットワークを確立\(WAN\) 、ブランチ オフィス、メイン オフィス間の接続と、該当する場合は、仮想プライベート ネットワークを使用して、クラウド リソース\(VPN\)DirectAccess、またはその他接続方法。
+- 仮想プライベートネットワーク \(VPN @ no__t、DirectAccess、またはその他の接続方法を使用して、ブランチオフィス、メインオフィス、必要に応じてクラウドリソースの間で、ワイドエリアネットワーク @no__t 0WAN @ no__t 接続を確立します。
 
-- BranchCache をバック グラウンド インテリジェント転送サービス (BITS)、ハイパー テキスト転送プロトコル (HTTP)、およびサーバー メッセージ ブロック (SMB) のサポートを提供する次のオペレーティング システムのいずれかを実行しているブランチ オフィス内のクライアント コンピューターを展開します.
+- 次のオペレーティングシステムのいずれかを実行しているブランチオフィスのクライアントコンピューターを展開します。これにより、バックグラウンドインテリジェント転送サービス (BITS)、ハイパーテキスト転送プロトコル (HTTP)、およびサーバーメッセージブロック (SMB) をサポートする BranchCache が提供されます.
     - Windows 10 Enterprise
     - Windows 10 Education
     - Windows 8.1 Enterprise
     - Windows 8 Enterprise
 
 > [!NOTE]
-> 次のオペレーティング システムでは、BranchCache は、HTTP と SMB の機能をサポートしていませんが BITS の BranchCache 機能をサポートします。
->     - Windows 10 Pro BITS サポートのみ
->     - Windows 8.1 Pro BITS サポートのみ
->     - Windows 8 Pro BITS サポートのみ
+> 次のオペレーティングシステムでは、BranchCache は HTTP および SMB 機能をサポートしていませんが、BranchCache BITS 機能はサポートしています。
+>     - Windows 10 Pro、BITS サポートのみ
+>     - Windows 8.1 Pro、BITS サポートのみ
+>     - Windows 8 Pro、BITS サポートのみ
 
 ## <a name="bkmk_about"></a>このガイドについて
 
-このガイドは、コア ネットワークをデプロイする、Windows Server 2016 コア ネットワーク ガイド Windows Server 2012 コア ネットワーク ガイドの手順に従っているネットワークとシステムの管理者または以前にデプロイした方のために設計されていますが、Active Directory Domain Services を含む、コア ネットワーク ガイドで使用されているテクノロジ\(AD DS\)、ドメイン ネーム サービス\(DNS\)、動的ホスト構成プロトコル\(DHCP\)、および TCP\/IP v4 です。
+このガイドは、Windows Server 2016 コアネットワークガイドまたは Windows Server 2012 コアネットワークガイドに記載されている手順に従ってコアネットワークを展開するネットワーク管理者またはシステム管理者向けに設計されています。コアネットワークガイドに含まれるテクノロジには、Active Directory Domain Services \(AD DS @ no__t、Domain Name Service \(DNS @ no__t、動的ホスト構成プロトコル \(DHCP @ no__t-5、TCP @ no__t-6IP v4 などがあります。
 
 このデプロイ シナリオで使用される各テクノロジについては、それぞれの設計ガイドやデプロイ ガイドを参照することをお勧めします。 これらのガイドは、このデプロイ シナリオが組織のネットワークに必要なサービスおよび構成を提供するかどうかを判断するのに役立ちます。
 
-## <a name="bkmk_not"></a>このガイドで説明としていないもの
+## <a name="bkmk_not"></a>このガイドで提供されていないもの
 
 このガイドでは、BranchCache のモードと機能に関する情報など、BranchCache の概念に関する情報は提供しません。  
 
 このガイドでは、WAN 接続またはブランチ オフィス内の他のテクノロジ (DHCP、RODC、VPN サーバーなど) をデプロイする方法についての情報は提供しません。
 
 さらに、このガイドではホスト型キャッシュ サーバーをデプロイするときに使用するハードウェアについてのガイダンスは提供しません。 ホスト型キャッシュ サーバーで他のサービスやアプリケーションを実行することもできますが、ワークロード、ハードウェアの機能、およびブランチ オフィスの規模に基づいて、特定のコンピューターに BranchCache ホスト型キャッシュ サーバーをインストールするかどうか、およびキャッシュに割り当てるディスク領域の量を、判断する必要があります。  
-このガイドでは、Windows 7 を実行しているコンピューターを構成する手順については提供されません。 ブランチ オフィスで Windows 7 を実行しているクライアント コンピューターをした場合、それらを構成する必要がありますが、Windows 10、Windows 8.1、および Windows 8 を実行しているクライアント コンピューターのこのガイドで提供されるものとは異なる手順を使用します。
+このガイドでは、Windows 7 を実行しているコンピューターを構成する手順については説明しません。 ブランチオフィスで Windows 7 を実行しているクライアントコンピューターがある場合は、Windows 10、Windows 8.1、および Windows 8 を実行しているクライアントコンピューターの場合とは異なる手順を使用して構成する必要があります。
   
-さらに、Windows 7 を実行しているコンピューターがある場合は、クライアント コンピューターを信頼する証明機関によって発行されたサーバー証明書に、ホスト型キャッシュ サーバーを構成する必要があります。 \(Windows 10、Windows 8.1、または Windows 8 を実行しているすべてのクライアント コンピューターは場合、は、サーバー証明書とホスト型キャッシュ サーバーを構成する必要はありません。\) 
+さらに、Windows 7 を実行しているコンピューターがある場合は、クライアントコンピューターが信頼する証明機関によって発行されたサーバー証明書を使用して、ホスト型キャッシュサーバーを構成する必要があります。 \( すべてのクライアントコンピューターで Windows 10、Windows 8.1、または Windows 8 が実行されている場合は、サーバー証明書を使用してホスト型キャッシュサーバーを構成する必要はありません。 \) 
 > [!IMPORTANT]
-> ホスト型キャッシュ サーバーが Windows Server 2008 R2 を実行している場合は、Windows Server 2008 R2 を使用して[BranchCache 展開ガイド](https://technet.microsoft.com/library/ee649232(v=ws.10).aspx)ホスト型キャッシュ モードで BranchCache をデプロイするには、このガイドではなく。 Windows 7 から Windows 10 のバージョンの Windows を実行するすべての BranchCache クライアントにそのガイドに記載されているグループ ポリシー設定を適用します。 このガイドの手順を使用して、Windows Server 2008 R2 を実行しているコンピューターを構成することはできません。
+> ホスト型キャッシュサーバーで Windows Server 2008 R2 が実行されている場合は、このガイドではなく Windows Server 2008 R2 [Branchcache 展開ガイド](https://technet.microsoft.com/library/ee649232(v=ws.10).aspx)を使用して、ホスト型キャッシュモードで branchcache を展開します。 このガイドで説明されているグループポリシー設定を、windows 7 から windows 10 に対して windows のバージョンを実行しているすべての BranchCache クライアントに適用します。 このガイドの手順を使用して、Windows Server 2008 R2 を実行しているコンピューターを構成することはできません。
 
 ## <a name="bkmk_tech"></a>テクノロジの概要
 
-この必携ガイドでインストールして構成する必要のあるテクノロジは、BranchCache だけです。 Web サーバーやファイル サーバーなどのコンテンツ サーバーで Windows PowerShell の BranchCache コマンドを実行する必要がありますが、それ以外の変更や構成をコンテンツ サーバーで行う必要はありません。 さらに、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 で AD DS を実行しているドメイン コント ローラーにグループ ポリシーを使用して、クライアント コンピューターを構成する必要があります。
+この必携ガイドでインストールして構成する必要のあるテクノロジは、BranchCache だけです。 Web サーバーやファイル サーバーなどのコンテンツ サーバーで Windows PowerShell の BranchCache コマンドを実行する必要がありますが、それ以外の変更や構成をコンテンツ サーバーで行う必要はありません。 さらに、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 で AD DS を実行しているドメインコントローラーでグループポリシーを使用して、クライアントコンピューターを構成する必要があります。
 
 ### <a name="branchcache"></a>BranchCache
 
-BranchCache は Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8 の一部のエディションの Windows Server 2016 および Windows 10 オペレーティング システムでは、一部のエディションに組み込まれているワイド エリア ネットワーク (WAN) 帯域幅最適化テクノロジ、Windows Server 2008 R2、および Windows 7。
+BranchCache は、windows Server 2016 および Windows 10 オペレーティングシステムの一部のエディション、および Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8 の一部のエディションに組み込まれているワイドエリアネットワーク (WAN) 帯域幅最適化テクノロジです。、Windows Server 2008 R2、および Windows 7。
 
-WAN の帯域幅を最適化するには、ユーザーがリモート サーバー上のコンテンツにアクセスするには、BranchCache をメイン オフィスからコンテンツをクライアントが要求をダウンロードまたはクラウド コンテンツ サーバーをホストし、その他のクライアント コンピュータを許可するブランチ オフィスの場所にコンテンツをキャッシュブランチ オフィス、WAN 経由ではなく、ローカルで同じコンテンツにアクセスします。
+ユーザーがリモートサーバー上のコンテンツにアクセスするときに WAN 帯域幅を最適化するために、BranchCache はクライアントから要求されたコンテンツをメインオフィスまたはホストされているクラウドコンテンツサーバーからダウンロードし、ブランチオフィスの場所にキャッシュして、他のクライアントコンピューターにWAN 経由ではなく、ローカルで同じコンテンツにアクセスするブランチオフィス。
 
-ホスト型キャッシュ モードで BranchCache をデプロイするときは、ブランチ オフィスのクライアント コンピューターをホスト型キャッシュ モード クライアントとして構成した後、ホスト型キャッシュ サーバーをブランチ オフィスにデプロイする必要があります。 このガイドは、Web サービスとファイル サーバーからのハッシュおよび読み込まれたコンテンツを持つホスト型キャッシュ サーバーをデプロイする方法を示します\-ベースのサーバーのコンテンツ。
+ホスト型キャッシュ モードで BranchCache をデプロイするときは、ブランチ オフィスのクライアント コンピューターをホスト型キャッシュ モード クライアントとして構成した後、ホスト型キャッシュ サーバーをブランチ オフィスにデプロイする必要があります。 このガイドでは、Web およびファイルサーバー @ no__t ベースのコンテンツサーバーから事前ハッシュされ、事前に読み込まれたコンテンツを使用して、ホスト型キャッシュサーバーをデプロイする方法を示します。
 
 ### <a name="group-policy"></a>グループ ポリシー
 
-Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 でのグループ ポリシーは、インフラストラクチャを提供および一連の対象とするユーザーと、Active Directory 環境内のコンピューターに必要な構成やポリシー設定の 1 つまたは複数を適用するために使用します。 
+グループポリシー Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 は、1つまたは複数の必要な構成またはポリシー設定を、Active Directory 環境内の対象ユーザーとコンピューターのセットに適用するために使用されるインフラストラクチャです。 
 
-このインフラストラクチャは、グループ ポリシー エンジンと複数のクライアントで構成されます\-側拡張機能\(Cse\)ターゲット クライアント コンピューター上のポリシー設定の読み取りを担当しています。
+このインフラストラクチャは、グループポリシーエンジンと、対象のクライアントコンピューターのポリシー設定の読み取りを行う、\(CSEs @ no__t の複数のクライアント @ no__t 拡張機能で構成されています。
 
 このシナリオでのグループ ポリシーは、BranchCache ホスト型キャッシュ モードでドメイン メンバー クライアント コンピューターを構成するために使用されます。
 
-このガイドを続行する、次を参照してください。 [BranchCache ホスト キャッシュ モードの展開の概要](2-Bc-Hcm-Deploy-Overview.md)します。
+このガイドを続行するには、「 [BranchCache ホスト型キャッシュモードの展開の概要](2-Bc-Hcm-Deploy-Overview.md)」を参照してください。

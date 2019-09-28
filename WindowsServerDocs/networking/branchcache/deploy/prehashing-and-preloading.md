@@ -1,23 +1,23 @@
 ---
 title: ホストされたキャッシュ サーバー上でのコンテンツの事前ハッシュおよび事前読み込み (省略可能)
-description: このトピックでは、BranchCache 展開ガイドの Windows Server 2016、ブランチ オフィスに WAN 帯域幅の使用を最適化するために分散され、ホスト型キャッシュ モードで BranchCache を展開する方法を示しますの一部です。
+description: このトピックは、Windows Server 2016 用の BranchCache 展開ガイドに含まれています。これは、ブランチオフィスでの WAN 帯域幅の使用を最適化するために、分散キャッシュモードとホスト型キャッシュモードで BranchCache を展開する方法を示しています。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 5a09d9f1-1049-447f-a9bf-74adf779af27
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b421132a44240520e3e3ba294623584c36b18ab4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1a0694ebe30c5a927fb2f1152adc792f8b0c9157
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867003"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356391"
 ---
 # <a name="prehashing-and-preloading-content-on-hosted-cache-servers-optional"></a>ホストされたキャッシュ サーバー上でのコンテンツの事前ハッシュおよび事前読み込み (省略可能)
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
 この手順を使用すると、BranchCache が有効な Web サービスとファイル サーバー上でのハッシュとも呼ばれます - コンテンツの情報の作成を強制します。 リモート ホスト型キャッシュ サーバーに転送できます。 パッケージにファイルと web サーバーでデータを収集することもできます。  これにより、データを最初のクライアント アクセスに使用できるように、リモート ホスト型キャッシュ サーバー上のコンテンツをプリロードすることです。  
   

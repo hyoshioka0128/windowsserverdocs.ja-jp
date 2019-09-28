@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ba7ed6baa30d15eea5ae08326847187ac85605d5
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 881cdc02d06ce5afd3c0706f9c1ea5fa2576799f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867588"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358919"
 ---
 # <a name="using-ad-ds-claims-with-ad-fs"></a>AD DS の要求を AD FS と共に使用する
   

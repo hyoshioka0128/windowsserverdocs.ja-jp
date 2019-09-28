@@ -1,98 +1,98 @@
 ---
 ms.assetid: 777aab65-c9c7-4dc9-a807-9ab73fac87b8
-title: AD FS エクストラネット ロックアウト保護を構成します。
+title: AD FS エクストラネットロックアウト保護の構成
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 02/01/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6612c05e664b50c5a50b10b712b91715cc85d230
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: bb5958f8205271fe3ab2258ed9812ae03f2a0be0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189883"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358210"
 ---
-# <a name="configure-ad-fs-extranet-lockout-protection"></a>AD FS エクストラネット ロックアウト保護を構成します。
+# <a name="configure-ad-fs-extranet-lockout-protection"></a>AD FS エクストラネットロックアウト保護の構成
 
-Windows Server 2012 R2 で AD FS でエクストラネットのロックアウトと呼ばれるセキュリティ機能が導入されました。  この機能により、AD FS が「停止」一定期間の外部から「悪意のある」ユーザー アカウントを認証します。  これは、ユーザー アカウントが Active Directory でロックアウトされていることを防ぎます。  アカウントのロックアウトが AD からユーザーを保護できるだけでなく AD FS のエクストラネット ロックアウトも保護ブルート フォース パスワード推測攻撃から
+Windows Server 2012 R2 の AD FS では、エクストラネットロックアウトと呼ばれるセキュリティ機能が導入されました。  この機能を使用すると、AD FS は、一定期間外に "悪意のある" ユーザーアカウントの認証を "停止" します。  これにより、Active Directory でユーザーアカウントがロックアウトされるのを防ぐことができます。  AD アカウントロックアウトを使用してユーザーを保護するだけでなく、AD FS のエクストラネットロックアウトでは、ブルートフォースパスワード推測攻撃から保護することもできます。
 
 > [!NOTE]
-> この機能は、に対してのみ機能、**エクストラネット シナリオ**認証要求にのみ適用されます、Web アプリケーション プロキシ経由で**ユーザー名とパスワード認証**します。
+> この機能は、認証要求が Web アプリケーションプロキシを経由し、**ユーザー名とパスワードの認証**にのみ適用される**エクストラネットシナリオ**に対してのみ機能します。
 
-## <a name="advantages-of-extranet-lockout"></a>エクストラネットのロックアウトの利点
-エクストラネットのロックアウトは、次の主な利点を提供します。
-- ユーザー アカウントを保護する**ブルート フォース攻撃による**攻撃者が継続的に認証要求を送信することによって、ユーザーのパスワードを推測しようとします。 この場合、AD FS がエクストラネット アクセス用の悪意のあるユーザー アカウントがロックされます。
-- ユーザー アカウントを保護する**悪意のあるアカウントのロックアウト**攻撃者が間違ったパスワードで認証要求を送信することによって、ユーザー アカウントをロックアウトましょう。 この場合、ユーザー アカウントは、エクストラネット アクセス用の AD FS によってロックは、AD での実際のユーザー アカウントがロックアウトされていないと、組織内の企業リソースにもアクセスできます。 これと呼ばれますが、**ソフト ロックアウト**します。
+## <a name="advantages-of-extranet-lockout"></a>エクストラネットロックアウトの利点
+エクストラネットのロックアウトには、次のような主な利点があります。
+- 攻撃者が認証要求を継続的に送信することによってユーザーのパスワードを推測しようとする**ブルートフォース攻撃**からユーザーアカウントを保護します。 この場合、AD FS によって、エクストラネットアクセス用の悪意のあるユーザーアカウントがロックアウトされます。
+- 悪意のある**アカウントロックアウト**からユーザーアカウントを保護します。攻撃者は、間違ったパスワードを使用して認証要求を送信することによってユーザーアカウントをロックアウトする必要があります。 この場合、ユーザーアカウントはエクストラネットアクセス用に AD FS によってロックアウトされますが、AD の実際のユーザーアカウントはロックアウトされず、ユーザーは引き続き組織内の企業リソースにアクセスできます。 これは、**ソフトロックアウト**と呼ばれます。
 
 ## <a name="how-it-works"></a>動作のしくみ
-この機能を有効にするように構成する必要がある AD FS での 3 つの設定があります。 
-- **EnableExtranetLockout&lt;ブール&gt;** このブール値に設定エクストラネットのロックアウトを有効にする場合は True。
-- **ExtranetLockoutThreshold&lt;整数&gt;** 無効なパスワード試行の最大数を定義します。 しきい値に達すると、AD FS はすぐに拒否されているパスワードは、良くも悪くも、エクストラネットの監視 ウィンドウが経過するまでかどうかに関係なく、認証ドメイン コント ローラーに接続を試みることがなくエクストラネットからの要求を使用します。 値をつまり**badPwdCount**を論理的なロックされているアカウントは、中に、AD アカウントの属性は向上しません。
-- **ExtranetObservationWindow &lt;TimeSpan&gt;** を論理的なロック期間のユーザーのアカウントであるが決定します。AD FS は、ウィンドウが渡されるときにユーザー名とパスワードの認証をもう一度の実行が開始されます。 AD FS では、エクストラネットの監視 ウィンドウがかどうかに渡されるかどうかを決定するため、参照として AD 属性の badPasswordTime を使用します。 現在の場合、ウィンドウが経過時間 > badPasswordTime + ExtranetObservationWindow します。 
+この機能を有効にするために構成する必要がある AD FS には、次の3つの設定があります。 
+- **Enableexno__t et&lt;boolean @-2**エクストラネットロックアウトを有効にする場合は、このブール値を True に設定します。
+- **Exno__t Etlockoutthreshold &lt; integer @-2**これは、無効なパスワードの試行回数の最大値を定義します。 しきい値に達すると AD FS は、エクストラネットの監視ウィンドウが渡されるまで、パスワードが適切かどうかにかかわらず、認証のためにドメインコントローラーに接続しようとせずに、エクストラネットからの要求を直ちに拒否します。 これは、アカウントがソフトロックアウトされている間、AD アカウントの**Badpwdcount**属性の値が増加しないことを意味します。
+- **ExtranetObservationWindow &lt;TimeSpan @ no__t-2**これは、ユーザーアカウントがソフトロックアウトされる期間を決定します。ウィンドウが渡されると、AD FS によってユーザー名とパスワードの認証の実行が開始されます。 AD FS では、エクストラネットの監視ウィンドウが成功したかどうかを判断するために、AD 属性 badPasswordTime を参照として使用します。 現在の時刻 > badPasswordTime + ExtranetObservationWindow の場合、ウィンドウが渡されます。 
 
 > [!NOTE]
-> AD のロックアウト ポリシーから独立して AD FS エクストラネット ロックアウト機能です。 ただし、強くお勧めを設定すること、 **ExtranetLockoutThreshold**パラメーターの値を AD アカウント ロックアウトのしきい値よりも小さい値です。 そのために失敗すると、AD FS のアカウントが Active Directory でロックアウトされていることを防止することができませんが発生します。 
+> エクストラネットのロックアウト機能は、AD ロックアウトポリシーとは別に AD FS ます。 ただし、 **ex/Etlockoutthreshold**パラメーター値は、AD アカウントのロックアウトしきい値よりも小さい値に設定することを強くお勧めします。 この操作を行わないと、Active Directory でアカウントがロックアウトされるのを防ぐことができ AD FS ます。 
 
-無効なパスワード試行とソフト ロックアウト期間の 30 分の 15 の数の最大のエクストラネットのロックアウトの機能を有効化の例は次のとおりです。
+最大15個の無効なパスワード試行回数と30分のソフトロックアウト期間を持つエクストラネットロックアウト機能を有効にする例を次に示します。
 
 ```powershell
 Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow (new-timespan -Minutes 30)
 ```
 
-これらの設定は、AD FS サービスを認証できるすべてのドメインに適用されます。 動作する方法を AD FS は、認証要求を受け取る LDAP の呼び出しを通じて、プライマリ ドメイン コント ローラー (PDC) にアクセスし、参照を実行するは、 **badPwdCount** PDC 上のユーザーの属性。 AD FS の値が検出されると**badPwdCount** > = ExtranetLockoutThreshold 設定、エクストラネットの監視 ウィンドウで定義されている時間は過ぎていませんまだ、AD FS 要求を拒否、すぐにかどうかに関係なくことを意味して、ユーザーがエクストラネットから良くも悪くもパスワードを入力、AD FS が AD に資格情報を送信していないため、ログオンは失敗します。 AD FS に任意の状態に関係を保持しない**badPwdCount**またはユーザー アカウントがロックアウトします。 AD FS は AD を使用して、すべての状態を追跡します。 
+これらの設定は、AD FS サービスが認証できるすべてのドメインに適用されます。 その方法として、AD FS が認証要求を受信すると、LDAP 呼び出しを使用してプライマリドメインコントローラー (PDC) にアクセスし、PDC 上のユーザーの**Badpwdcount**属性の参照を実行します。 AD FS が**Badpwdcount** > = Ex渡 Etlockoutthreshold 設定の値を検出し、エクストラネットの監視ウィンドウで定義されている時間がまだ渡されていない場合、AD FS は要求を直ちに拒否します。これは、ユーザーが適切なものを入力したかどうかにかかわらず、エクストラネットからのパスワード。 AD FS によって資格情報が AD に送信されないため、ログオンに失敗します。 AD FS は、 **Badpwdcount**またはロックアウトされたユーザーアカウントに関して、状態を保持しません。 AD FS は、すべての状態追跡に AD を使用します。 
 
 > [!warning]
-> Server 2012 R2 で AD FS エクストラネット ロックアウトが有効にすると、WAP 経由のすべての認証要求は、PDC で AD FS によって検証されます。 PDC が利用できない場合は、ユーザーは、エクストラネットから認証することできません。
+> サーバー 2012 R2 で AD FS エクストラネットロックアウトが有効になっている場合、WAP 経由のすべての認証要求は、PDC で AD FS によって検証されます。 PDC が使用できなくなると、ユーザーはエクストラネットから認証できなくなります。
 
-Server 2016 には、PDC が利用できない場合は、AD FS を別のドメイン コント ローラーにフォールバックを許可する追加のパラメーターが用意されています。
+サーバー2016には追加のパラメーターが用意されています。これにより、PDC が使用できなくなったときに、AD FS が別のドメインコントローラーにフォールバックできます。
 
-- **ExtranetLockoutRequirePDC&lt;ブール&gt;** - 有効になっている場合: エクストラネットのロックアウトがプライマリ ドメイン コント ローラー (PDC) が必要です。 無効にした場合: PDC を利用できない場合、エクストラネットのロックアウトが別のドメイン コント ローラーにフォールバックします。
+- **Exno__t Etlockoutrequirepdc &lt;Boolean @** -有効になっている場合: エクストラネットのロックアウトにはプライマリドメインコントローラー (PDC) が必要です。 無効になっている場合: PDC が使用できない場合に、エクストラネットのロックアウトが別のドメインコントローラーにフォールバックします。
 
-次の Windows PowerShell コマンドを使用して、Server 2016 で AD FS エクストラネット ロックアウトを構成することができます。
+次の Windows PowerShell コマンドを使用して、サーバー2016で AD FS エクストラネットロックアウトを構成できます。
 
 ```powershell
 Set-AdfsProperties -EnableExtranetLockout $true -ExtranetLockoutThreshold 15 -ExtranetObservationWindow (new-timespan -Minutes 30) -ExtranetLockoutRequirePDC $false
 ```
 
-## <a name="working-with-the-active-directory-lockout-policy"></a>Active Directory のロックアウトのポリシーでの作業
-AD FS でエクストラネットのロックアウトの機能は関係なく機能 AD ロックアウト ポリシーから。 ただし、実行設定を行うことを確認して、AD ロックアウト ポリシー セキュリティ目的が役立つように、エクストラネットのロックアウトが正しく構成されている必要があります。
-AD ロックアウト ポリシーの確認を最初見てみましょう。 AD のロックアウトのポリシーに関する 3 つの設定があります。
-- **アカウントのロックアウトしきい値**: この設定は AD FS で ExtranetLockoutThreshold 設定に似ています。 ユーザー アカウントがロックアウトされると、失敗したログオン試行の数が決定します。AD FS で ExtranetLockoutThreshold の値を設定すると、悪意のあるアカウント ロックアウトの攻撃からのユーザー アカウントを保護するために&lt;ad アカウント ロックアウトのしきい値の値
-- **アカウントのロックアウト期間**: この設定は、アカウントのロックアウト、ユーザーはどのくらいの時間を決定します。この設定は必要ありませんはるかこの会話のように AD ロックアウトが正しく構成されている場合に発生する前に、常にエクストラネットのロックアウトが発生します。
-- **アカウント ロックアウト カウンター後にリセット**: この設定を決定する前に、ユーザーの最後のログオン失敗からどれ時間だけが経過する必要があります**badPwdCount** 0 にリセットされます。 AD FS でエクストラネットのロックアウト機能に AD ロックアウト ポリシーで機能するにすることを確認して ExtranetObservationWindow の値では、AD FS &gt; ad リセット アカウント ロックアウト カウンターの後の値。 次の例では、その理由を説明します。  
+## <a name="working-with-the-active-directory-lockout-policy"></a>Active Directory ロックアウトポリシーの使用
+AD FS のエクストラネットロックアウト機能は、AD ロックアウトポリシーとは独立して動作します。 ただし、エクストラネットのロックアウトの設定が適切に構成されていることを確認して、AD ロックアウトポリシーでのセキュリティの目的を実現できるようにする必要があります。
+まず、AD ロックアウトポリシーを見てみましょう。 AD のロックアウトポリシーには、次の3つの設定があります。
+- **アカウントのロックアウトのしきい値**: この設定は、AD FS の [Ex/Etlockoutthreshold] 設定に似ています。 ユーザーアカウントがロックアウトされる原因となる、ログオン試行の失敗回数を決定します。悪意のあるアカウントのロックアウト攻撃からユーザーアカウントを保護するために、AD FS で Ex/Etlockoutthreshold の値を設定する必要があります &lt; AD のアカウントロックアウトしきい値
+- **アカウントのロックアウト期間**: この設定は、ユーザーアカウントがロックアウトされる期間を決定します。この設定は、このメッセージ交換ではあまり重要ではありません。正しく構成されている場合、AD ロックアウトが発生する前に、エクストラネットのロックアウトが発生するためです
+- 次の期間に**アカウントロックアウトカウンターをリセット**: この設定は、ユーザーの最後のログオン失敗から、 **Badpwdcount**が0にリセットされるまでに経過する時間を決定します。 AD FS のエクストラネットロックアウト機能が AD ロックアウトポリシーに適していることを確認するには、AD で ExtranetObservationWindow の値が AD FS &gt; に設定されていることを確認してください。 次の例では、その理由について説明します。  
 
-2 つの例を見てを確認しましょう方法**badPwdCount**さまざまな設定と状態に基づいて時間の経過と共に変化します。 どちらの例で仮定**アカウント ロックアウトのしきい値**= 4 と**ExtranetLockoutThreshold** = 2 です。 **赤い**矢印が不正なパスワードの試行を表します、**緑色**矢印は、適切なパスワードの試行を表します。 例 1 で**ExtranetObservationWindow** &gt; **リセット アカウント ロックアウト カウンター後**します。 例 2 で**ExtranetObservationWindow** &lt; **リセット アカウント ロックアウト カウンター後**します。 
+2つの例を見て、さまざまな設定と状態に基づいて時間の経過と共に**Badpwdcount**がどのように変化するかを見てみましょう。 **アカウントロックアウトのしきい値**= 4 と**Exシャー etlockoutthreshold** = 2 の両方の例を考えてみましょう。 **赤い**矢印は間違ったパスワードの試行を表し、**緑色**の矢印は適切なパスワードの試行を表します。 たとえば #1 では、 **ExtranetObservationWindow**は、の**後にアカウントロックアウトカウンターをリセット**@no__t ます。 たとえば #2 では、 **ExtranetObservationWindow**は、の**後にアカウントロックアウトカウンターをリセット**@no__t ます。 
 
 ### <a name="example-1"></a>例 1
-![例 1](media/Configure-AD-FS-Extranet-Lockout-Protection/one.png)
+![Example1](media/Configure-AD-FS-Extranet-Lockout-Protection/one.png)
 
 ### <a name="example-2"></a>例 2
-![例 1](media/Configure-AD-FS-Extranet-Lockout-Protection/two.png)
+![Example1](media/Configure-AD-FS-Extranet-Lockout-Protection/two.png)
 
-上記からわかるが 2 つある場合の条件**badPwdCount**は 0 にリセットされます。 1 つは、成功したログオンがある場合です。 定義されている、このカウンターをリセットするときに、もう一方は**リセット アカウント ロックアウト カウンター後**設定します。 ときに**リセット アカウント ロックアウト カウンター後** &lt; **ExtranetObservationWindow**アカウントには、AD によってロックアウトされる可能性はありません。 ただし場合、**リセット アカウント ロックアウト カウンター後** &gt; **ExtranetObservationWindow**アカウントがロックアウトされている AD によってが「遅延方式」で可能性があります。 によってロック AD 構成によっては AD FS で 1 つの無効なパスワード試行までには、その監視期間中にのみ許可されるアカウントを取得するしばらく時間がかかること**badPwdCount**に達すると**アカウント ロックアウトのしきい値**.
+上の例からわかるように、 **Badpwdcount**が0にリセットされる条件は2つあります。 1つは、ログオンに成功した場合です。 もう1つは、設定後に **[アカウントロックアウトカウンターのリセット]** で定義したカウンターをリセットする時間です。 @No__t-1 **ExtranetObservationWindow**の**後にアカウントロックアウトカウンターをリセット**すると、アカウントに AD によってロックアウトされるリスクがありません。 ただし、&gt; **ExtranetObservationWindow**の**後にアカウントロックアウトカウンターをリセット**した場合は、アカウントが AD によってロックアウトされる可能性がありますが、"遅延" の状態になります。 構成によっては、AD によってアカウントがロックアウトされるまでにしばらく時間がかかることがあります。 AD FS では、 **Badpwdcount**が**Account Locked Threshold しきい値**に達するまで、監視期間中は1つの無効なパスワードの試行のみが許可されます。
 
-詳細については、次を参照してください。[を構成するアカウントのロックアウト](https://blogs.technet.microsoft.com/secguide/2014/08/13/configuring-account-lockout/)します。 
+詳細については、「[アカウントロックアウトの構成](https://blogs.technet.microsoft.com/secguide/2014/08/13/configuring-account-lockout/)」を参照してください。 
 
 ## <a name="known-issues"></a>既知の問題
-既知の問題のために AD FS に認証できません AD ユーザー アカウントの場所、 **badPwdCount**属性は ADFS を照会しているドメイン コント ローラーにレプリケートされません。 参照してください[2971171](https://support.microsoft.com/help/2971171/adfs-authentication-issue-for-active-directory-users-when-extranet-loc)の詳細。 これまでにリリースされたすべての AD FS Qfe が見つかります[ここ](../deployment/updates-for-active-directory-federation-services-ad-fs.md)します。
+AD ユーザーアカウントが AD FS で認証できないという既知の問題があります。これは、ADFS がクエリを実行しているドメインコントローラーに**Badpwdcount**属性がレプリケートされていないためです。 詳細については、「 [2971171](https://support.microsoft.com/help/2971171/adfs-authentication-issue-for-active-directory-users-when-extranet-loc) 」を参照してください。 [ここ](../deployment/updates-for-active-directory-federation-services-ad-fs.md)までにリリースされたすべての AD FS qfe を見つけることができます。
 
-## <a name="key-points-to-remember"></a>注意点
-- エクストラネットのロックアウトの機能は、に対してのみ機能、**エクストラネット シナリオ**Web アプリケーション プロキシを介した認証要求はどこ
-- エクストラネットのロックアウトの機能にのみ適用されます**ユーザー名とパスワードの認証**
-- AD FS のトラックを保持しません**badPwdCount**またはアウト論理的なロックであるユーザー。AD FS は AD を使用してすべての状態の追跡用
-- AD FS の参照を実行する、 **badPwdCount**属性を介してすべての認証試行のために PDC でユーザーに LDAP の呼び出し  
-- AD FS 2016 よりも前は、PDC にアクセスできない場合は失敗します。 AD FS 2016 では、AD FS、PDC が発生した場合の他のドメイン コント ローラーにフォールバックすることはできませんを許可するための機能強化が導入されました。 
-- AD FS will allow authentication requests from extranet if badPwdCount < ExtranetLockoutThreshold 
-- 場合**badPwdCount** >= **ExtranetLockoutThreshold** AND **badPasswordTime** + **ExtranetObservationWindow** < 現在の時刻では、AD FS のエクストラネットからの認証要求は拒否
-- 悪意のあるアカウントのロックアウトを避けるためには、必ず**ExtranetLockoutThreshold** < **アカウント ロックアウトのしきい値**AND **ExtranetObservationWindow**  > **ロックアウト カウンターのリセット**
+## <a name="key-points-to-remember"></a>覚えておくべき重要事項
+- エクストラネットのロックアウト機能は、認証要求が Web アプリケーションプロキシを経由する**エクストラネットシナリオ**に対してのみ機能します。
+- エクストラネットのロックアウト機能は、**ユーザー名 & パスワード認証**にのみ適用されます。
+- AD FS は、 **Badpwdcount**またはソフトロックアウトされているユーザーの追跡を保持しません。AD FS は、すべての状態追跡に AD を使用します。
+- AD FS は、すべての認証試行について、PDC 上のユーザーの LDAP 呼び出しによって**Badpwdcount**属性の参照を実行します。  
+- PDC にアクセスできない場合、2016より前の AD FS は失敗します。 AD FS 2016 では、PDC が使用できない場合に AD FS を他のドメインコントローラーに切り替えられるようにする機能強化が導入されました。 
+- AD FS は、badPwdCount < Exri Etlockoutthreshold の場合、エクストラネットからの認証要求を許可します 
+- **Badpwdcount** >= **ExExtranetObservationWindow Etlockoutthreshold**と**badpasswordtime** +  < Current time の場合、AD FS はエクストラネットからの認証要求を拒否します
+- 悪意のあるアカウントのロックアウトを回避するには、 **ExtranetObservationWindow**の**アカウントロックアウトのしきい値**と @no__t を **@no__t 確認し**、**アカウントロックアウトカウンターをリセット**する必要があります。
 
 
 ## <a name="additional-references"></a>その他の参照情報  
-- [Active Directory フェデレーション サービスをセキュリティで保護するためのベスト プラクティス](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
+- [Active Directory フェデレーションサービス (AD FS) をセキュリティで保護するためのベストプラクティス](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
 - [管理者以外のユーザーへの AD FS Powershell コマンドレットのアクセスの委任](delegate-ad-fs-pshell-access.md)
 - [Set-adfsproperties](https://technet.microsoft.com/itpro/powershell/windows/adfs/set-adfsproperties)
 

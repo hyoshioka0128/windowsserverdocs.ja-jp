@@ -1,37 +1,37 @@
 ---
 title: Active Directory でスプリット ブレイン DNS に DNS ポリシーを使用する
-description: このトピックを使用して、トラフィックを活用することができますスプリット ブレイン展開を Active Directory と DNS のポリシーの管理機能は、Windows Server 2016 での DNS ゾーンを統合します。
+description: このトピックを使用して、Windows Server 2016 で Active Directory 統合 DNS ゾーンを使用して、スプリットブレイン展開の DNS ポリシーのトラフィック管理機能を活用できます。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: f9533204-ad7e-4e49-81c1-559324a16aeb
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 66931d2196b741e469cb726929f7b58985b8d0cd
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 1a05bdcbf6205b8be7044c92e3dcf71a6e62bed6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812150"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356027"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-in-active-directory"></a>Active Directory でスプリット ブレイン DNS に DNS ポリシーを使用する
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックを使用して、分割 DNS のポリシーのトラフィック管理機能を活用することができます\-ブレイン展開と Active Directory は、Windows Server 2016 での DNS ゾーンを統合します。
+このトピックを使用して、Windows Server 2016 で Active Directory 統合 DNS ゾーンを使用して、split @ no__t-0brain の展開に対する DNS ポリシーのトラフィック管理機能を活用できます。
 
-DNS のポリシーのサポートの拡張 Active Directory に Windows Server 2016 で DNS ゾーンを統合します。 Active Directory 統合は、マルチ\-マスターの DNS サーバーに高可用性機能。 
+Windows Server 2016 では、DNS ポリシーのサポートは、統合された DNS ゾーンを Active Directory するように拡張されています。 Active Directory 統合は、DNS サーバーに複数の @ no__t-0master 高可用性機能を提供します。 
 
-以前は、このシナリオは、DNS 管理者の管理 2 台の DNS サーバー、各内部および外部のユーザーのセットごとにサービスを提供することが必要です。 ゾーン内のいくつかのレコードが分割された場合のみ\-brained またはゾーン (内部および外部) の両方のインスタンスが委任された同じ親ドメインになり、管理の難点です。
+以前は、このシナリオは、DNS 管理者の管理 2 台の DNS サーバー、各内部および外部のユーザーのセットごとにサービスを提供することが必要です。 ゾーン内の少数のレコードだけが分割されている場合は、@ no__t-0brained またはゾーンの両方のインスタンス (内部および外部) が同じ親ドメインに委任された場合、これが管理難問になりました。
 
 > [!NOTE]
-> - DNS 展開を分割\-脳の 1 つのゾーンの 2 つのバージョン、組織のイントラネット上の内部ユーザー用の 1 つのバージョンとは、通常、インターネット上のユーザー – 外部ユーザー向けの 1 つのバージョンがある場合。
-> - トピック[Split-Brain DNS の展開の DNS のポリシーを使用して](split-brain-DNS-deployment.md)DNS のポリシーとゾーンのスコープを使用して、デプロイを分割する方法について説明します。\-脳は単一の Windows Server 2016 の DNS サーバー上の DNS システム。
+> - DNS 展開は、1つのゾーンの2つのバージョン、組織のイントラネット上の内部ユーザー用の1つのバージョン、および外部ユーザー (通常はインターネット上のユーザー) の1つのバージョンが存在する場合に分割されます。
+> - トピック「[スプリットブレイン Dns 展開に Dns ポリシーを使用](split-brain-DNS-deployment.md)する」では、dns ポリシーとゾーンのスコープを使用して、1つの Windows SERVER 2016 DNS サーバーに split @ no__t-1brain dns システムを展開する方法について説明します。
 
 
 
-##  <a name="example-split-brain-dns-in-active-directory"></a>例の分割\-脳 Active Directory での DNS
+##  <a name="example-split-brain-dns-in-active-directory"></a>Active Directory での Split @ no__t-0Brain DNS の例
 
 この例では、1 つ架空の企業、www.career.contoso.com で仕事紹介 Web サイトを保持する contoso 社で使用します。
 
@@ -43,18 +43,18 @@ DNS のポリシーがない場合を別の Windows Server DNS サーバーで�
 
 DNS ポリシーを使用してこれらのゾーンできますでホストされるよう、同じ DNS サーバーです。
 
-Contoso.com の DNS サーバーが Active Directory 統合が 2 つのネットワーク インターフェイスでリッスンしている場合は、Contoso の DNS 管理者は、分割を実現するために、このトピックの手順に\-ブレイン展開します。
+Contoso.com の DNS サーバーが Active Directory 統合されており、2つのネットワークインターフェイスでリッスンしている場合、Contoso の DNS 管理者は、このトピックの手順に従って、@ no__t を分割します。
 
-DNS 管理者は、次の IP アドレスで DNS サーバーのインターフェイスを構成します。
+Dns 管理者は、次の IP アドレスを使用して DNS サーバーインターフェイスを構成します。
 
-- インターネットに接続するネットワーク アダプターは、外部クエリ 208.84.0.53 のパブリック IP アドレスで構成されます。
-- イントラネットに接続するネットワーク アダプターは、内部クエリ 10.0.0.56 のプライベート IP アドレスで構成されます。
+- インターネットに接続するネットワークアダプターは、外部クエリ用に208.84.0.53 のパブリック IP アドレスで構成されます。
+- イントラネットに接続するネットワークアダプターは、内部クエリ用に10.0.0.56 のプライベート IP アドレスを使用して構成されます。
 
 次の図は、このシナリオを示しています。
 
-![AD スプリット ブレイン DNS 展開を統合します。](../../media/DNS-SB-AD/DNS-SB-AD.jpg)
+![スプリットブレイン AD 統合 DNS の展開](../../media/DNS-SB-AD/DNS-SB-AD.jpg)
 
-## <a name="how-dns-policy-for-split-brain-dns-in-active-directory-works"></a>DNS のポリシーの分割\-ブレインの DNS の Active Directory の機能
+## <a name="how-dns-policy-for-split-brain-dns-in-active-directory-works"></a>Active Directory における Split @ no__t-0Brain DNS の DNS ポリシーのしくみ
 
 必要な DNS ポリシーで、DNS サーバーを構成すると、各名前解決の要求は、DNS サーバー上のポリシーに対して評価されます。
 
@@ -64,47 +64,47 @@ DNS 管理者は、次の IP アドレスで DNS サーバーのインターフ�
 
 そのため、この例ではプライベート ip アドレス (10.0.0.56) で受信した www.career.contoso.com に関する DNS クエリ DNS 応答を受信する内部の IP アドレスを含むパブリック ネットワーク インターフェイスで受信 DNS クエリ応答を受信する DNS ゾーンの既定のスコープ (これは通常のクエリの解決策と同じ) のパブリック IP アドレスを含みます。  
 
-動的 DNS のサポート\(DDNS\)更新プログラムと清掃がゾーンの既定のスコープでのみサポートされます。 ゾーンの既定のスコープでは、内部のクライアントが処理される、ために、Contoso の DNS 管理者が (動的 DNS または静的) contoso.com 内のレコードを更新する既存のメカニズムを使用してを続行することができます。 非\-ゾーンのスコープを既定\(など、この例では、外部スコープ\)、DDNS または清掃のサポートは使用できません。
+動的 DNS @no__t のサポート-0DDNS @ no__t の更新と清掃は、既定のゾーンのスコープでのみサポートされています。 内部クライアントは既定のゾーンのスコープによって処理されるため、Contoso の DNS 管理者は、引き続き既存のメカニズム (動的 DNS または静的) を使用して contoso.com のレコードを更新できます。 この例では、@ no__t-2、DDNS、または清掃のサポートは使用できません。この例では、外部スコープなど、既定のゾーンスコープ \( はありません。
 
 ### <a name="high-availability-of-policies"></a>ポリシーの高可用性
 
-DNS のポリシーは、Active Directory 統合ではありません。 このため、DNS のポリシーは、同じ Active Directory 統合ゾーンをホストしている他の DNS サーバーはレプリケートされません。 
+DNS ポリシーは Active Directory 統合されていません。 このため、DNS ポリシーは、同じ Active Directory 統合ゾーンをホストしている他の DNS サーバーにはレプリケートされません。 
 
-DNS のポリシーは、ローカルの DNS サーバーに格納されます。 次の例の Windows PowerShell コマンドを使用して 1 つのサーバーから別に DNS ポリシーをエクスポートすることができます簡単にします。
+DNS ポリシーは、ローカル DNS サーバーに格納されます。 次の Windows PowerShell コマンドの例を使用すると、DNS ポリシーをサーバー間で簡単にエクスポートできます。
 
     $policies = Get-DnsServerQueryResolutionPolicy -ZoneName "contoso.com" -ComputerName Server01
     
     $policies |  Add-DnsServerQueryResolutionPolicy -ZoneName "contoso.com" -ComputerName Server02
 
-詳細については、次の Windows PowerShell のリファレンス トピックを参照してください。
+詳細については、次の Windows PowerShell のリファレンストピックを参照してください。
 
-- [Get-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/get-dnsserverqueryresolutionpolicy?view=win10-ps)
-- [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)
+- [DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/get-dnsserverqueryresolutionpolicy?view=win10-ps)
+- [DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)
 
 
-## <a name="how-to-configure-dns-policy-for-split-brain-dns-in-active-directory"></a>分割 DNS のポリシーを構成する方法\-脳 Active Directory での DNS
+## <a name="how-to-configure-dns-policy-for-split-brain-dns-in-active-directory"></a>Active Directory で Split @ no__t-0Brain DNS の DNS ポリシーを構成する方法
 
-DNS のポリシーを使用して DNS Split-Brain 展開を構成するには、詳細な構成の指示を提供する次のセクションを使用する必要があります。
+Dns ポリシーを使用して DNS スプリットブレイン展開を構成するには、次のセクションを使用する必要があります。これらのセクションでは、詳細な構成手順を説明します。
 
-### <a name="add-the-active-directory-integrated-zone"></a>Active Directory 統合ゾーンを追加します。
+### <a name="add-the-active-directory-integrated-zone"></a>Active Directory 統合ゾーンを追加する
 
-次の例のコマンドを使用すると、DNS サーバーに Active Directory 統合 contoso.com ゾーンを追加します。
+次のコマンド例を使用して、Active Directory 統合 contoso.com ゾーンを DNS サーバーに追加できます。
 
     Add-DnsServerPrimaryZone -Name "contoso.com" -ReplicationScope "Domain" -PassThru
 
-詳細については、次を参照してください。[デモンストレーション](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverprimaryzone?view=win10-ps)します。
+詳細については、「[デモンストレーション](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverprimaryzone?view=win10-ps)」を参照してください。
 
 ### <a name="create-the-scopes-of-the-zone"></a>ゾーンのスコープを作成します。
 
-このセクションを使用するには、外部のゾーンのスコープを作成するのに、ゾーン contoso.com をパーティション分割します。
+このセクションを使用すると、ゾーン contoso.com をパーティション分割して外部ゾーンスコープを作成できます。
 
-ゾーンのスコープは、ゾーンの一意のインスタンスです。 DNS ゾーンは、独自の DNS レコード セットを格納している各ゾーンのスコープを持つ、複数のゾーン スコープを持つことができます。 同じレコードは、別の IP アドレスを持つ、複数のスコープまたは同じ IP アドレスに存在することができます。 
+ゾーンのスコープは、ゾーンの一意のインスタンスです。 DNS ゾーンは複数のゾーンスコープを持つことができ、各ゾーンスコープには独自の DNS レコードセットが含まれます。 同じレコードが複数のスコープに存在し、異なる IP アドレスまたは同じ IP アドレスを持つことができます。 
 
-Active Directory 統合ゾーンでこの新しいゾーンのスコープを追加するため、ゾーンのスコープとその中のレコードは Active Directory を使用してドメイン内の他のレプリカ サーバーにレプリケートします。
+この新しいゾーンスコープを Active Directory 統合ゾーンに追加するので、ゾーンのスコープとその中のレコードは、Active Directory 経由でドメイン内の他のレプリカサーバーにレプリケートされます。
 
-既定では、ゾーンのスコープは、すべての DNS ゾーンに存在します。 このゾーンのスコープでは、ゾーンと同じ名前と、従来の DNS の機能がこのスコープで動作します。 この既定のゾーンのスコープは、www.career.contoso.com の内部バージョンをホストします。
+既定では、ゾーンスコープはすべての DNS ゾーンに存在します。 このゾーンのスコープでは、ゾーンと同じ名前と、従来の DNS の機能がこのスコープで動作します。 この既定のゾーンスコープは、www.career.contoso.com の内部バージョンをホストします。
 
-次のコマンドの例を使用して、DNS サーバーでゾーンのスコープを作成することができます。
+次のコマンド例を使用すると、DNS サーバーでゾーンのスコープを作成できます。
 
     Add-DnsServerZoneScope -ZoneName "contoso.com" -Name "external"
 
@@ -112,20 +112,20 @@ Active Directory 統合ゾーンでこの新しいゾーンのスコープを追
 
 ### <a name="add-records-to-the-zone-scopes"></a>レコードをゾーンのスコープに追加します。
 
-次の手順では、2 つに、web サーバーのホストを表すレコードがゾーンのスコープ外部と既定の追加を\(内部クライアントの\)します。 
+次の手順では、web サーバーホストを表すレコードを、外部および @no__t 既定の2つのゾーンスコープ (内部クライアント @ no__t-1) に追加します。 
 
-これはプライベート IP アドレスは IP アドレス 10.0.0.39、内部のゾーンの既定のスコープでレコード www.career.contoso.com が追加されます。同じレコードの外部のゾーン スコープで\(www.career.contoso.com\)パブリック IP アドレス 65.55.39.10 で追加されます。 
+既定の内部ゾーンスコープでは、レコード www.career.contoso.com は、プライベート IP アドレスである IP アドレス10.0.0.39 を使用して追加されます。外部ゾーンのスコープでは、no__t @ という同じ @no__t レコードが、パブリック IP アドレス65.55.39.10 と共に追加されます。 
 
-レコード\(の両方で、既定の内部ゾーンのスコープと外部のゾーン スコープ\)それぞれのゾーンのスコープを使用してドメイン間で自動的にレプリケートされます。
+既定の内部ゾーンスコープと外部ゾーンのスコープ @ no__t の両方で @no__t のレコードは、それぞれのゾーンのスコープと共にドメイン全体で自動的にレプリケートされます。
 
-次のコマンドの例を使用して、レコードを DNS サーバーでゾーンのスコープに追加することができます。
+次のコマンド例を使用すると、DNS サーバーのゾーンスコープにレコードを追加できます。
 
     Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4Address "65.55.39.10" -ZoneScope "external"
     
     Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4Address "10.0.0.39”
 
 > [!NOTE]
-> **– ゾーン範囲ゾーン**パラメーターは、レコードがゾーンの既定のスコープに追加されたときに含まれません。 このアクションは、標準のゾーンにレコードを追加することと同じです。
+> レコードが既定のゾーンのスコープに追加される場合、 **–ゾーン範囲ゾーン**パラメーターは含まれません。 この操作は、通常のゾーンにレコードを追加することと同じです。
 
 詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。
 
@@ -134,20 +134,20 @@ Active Directory 統合ゾーンでこの新しいゾーンのスコープを追
 外部ネットワークおよび内部ネットワーク用のサーバー インターフェイスを識別する、ゾーンのスコープを作成した後は、内部および外部のゾーンのスコープを接続する DNS ポリシーを作成する必要があります。
 
 > [!NOTE]
-> この例は、サーバーのインターフェイスを使用して\(次の例のコマンドで - ServerInterface パラメーター\)内部および外部のクライアントを区別する検索条件として。 内部および外部のクライアントを区別するために別の方法では、クライアントのサブネットを使用して、条件として、です。 内部のクライアントが属するサブネットを特定する場合は、クライアントのサブネットに基づいて区別するために DNS のポリシーを構成できます。 クライアントのサブネットの条件を使用したトラフィック管理を構成する方法については、次を参照してください。 [のプライマリ サーバーの地理的な場所ベースのトラフィック管理用の DNS ポリシーを使用して](primary-geo-location.md)します。
+> この例では、内部および外部のクライアントを区別するための条件として、@ no__t-1 の下にある例のコマンドの-ServerInterface パラメーターを使用して、サーバー @no__t インターフェイスを使用します。 内部および外部のクライアントを区別するために別の方法では、クライアントのサブネットを使用して、条件として、です。 内部のクライアントが属するサブネットを特定する場合は、クライアントのサブネットに基づいて区別するために DNS のポリシーを構成できます。 クライアントのサブネットの条件を使用したトラフィック管理を構成する方法については、次を参照してください。 [のプライマリ サーバーの地理的な場所ベースのトラフィック管理用の DNS ポリシーを使用して](primary-geo-location.md)します。
 
-DNS クエリがパブリック インターフェイスで受信したときに、ポリシーを構成した後は、ゾーンの外部スコープから、応答が返されます。 
+ポリシーを構成した後、パブリックインターフェイスで DNS クエリを受信すると、ゾーンの外部スコープから回答が返されます。 
 
 > [!NOTE]
-> ポリシーの既定の内部ゾーン スコープをマッピングするため必要はありません。 
+> 既定の内部ゾーンスコープをマップするためにポリシーは必要ありません。 
 
     Add-DnsServerQueryResolutionPolicy -Name "SplitBrainZonePolicy" -Action ALLOW -ServerInterface "eq,208.84.0.53" -ZoneScope "external,1" -ZoneName contoso.com
 
 > [!NOTE]
-> 208.84.0.53 は、パブリック ネットワーク インターフェイスの IP アドレスです。
+> 208.84.0.53 は、パブリックネットワークインターフェイスの IP アドレスです。
 
 詳細については、次を参照してください。 [追加 DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)します。
 
-Active Directory とスプリット ブレイン ネーム サーバーが DNS を統合するために必要な DNS ポリシーで、DNS サーバーが構成されているようになりましたゾーン。
+これで、Active Directory 統合された DNS ゾーンを持つスプリットブレインネームサーバーに必要な DNS ポリシーを使用して、DNS サーバーが構成されました。
 
 何千もの DNS のポリシーに合わせて作成できます、トラフィック管理の要件、DNS サーバーを再起動しなくても - 受信したクエリで、すべての新しいポリシーが動的 - 適用されます。 

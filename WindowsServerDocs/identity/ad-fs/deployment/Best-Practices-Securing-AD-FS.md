@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bf7e2ed20a59bb021627a8a58f869ea5d94bf2b7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 15b0c721b620e2891f4452fd54501f4970b7c177
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868187"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359999"
 ---
 ## <a name="best-practices-for-securing-active-directory-federation-services"></a>Active Directory フェデレーションサービス (AD FS) をセキュリティで保護するためのベストプラクティス
 
@@ -110,7 +110,7 @@ Azure AD と Office 365 のシナリオにのみ AD FS と WAP を展開する�
 1.  Web アプリケーションプロキシコンピューターで、管理者特権でのコマンドウィンドウを起動します。
 2.  %WINDIR%\adfs\config. で、ADFS ディレクトリに移動します。
 3.  輻輳制御の設定を既定値から '<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />' に変更します。
-4.  ファイルを保存して閉じます。
+4.  ファイルを保存し、閉じます。
 5.  ' Net stop adfssrv ' を実行し、' net start adfssrv ' を実行して、AD FS サービスを再開します。
 この機能に関するガイダンスについては、[こちら](https://msdn.microsoft.com/library/azure/dn528859.aspx )を参照してください。
 

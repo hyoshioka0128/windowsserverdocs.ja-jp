@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 38e058f36522ba6a2c81694cb883d0946b04adda
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ab1b277b83369cf2e4ef4be5aa467dea8b2d2f84
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865183"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357443"
 ---
 # <a name="scenario-classification-based-encryption-for-office-documents"></a>シナリオ:Office ドキュメントに対する分類ベースの暗号化
 
@@ -38,11 +38,11 @@ AD RMS 暗号化により、ファイル保護のための新しい層が追加�
   
 -   [Office ドキュメントの暗号化の計画に関する考慮事項](assetId:///14714ba6-d6a2-45e4-aae5-d3318817e52a)  
   
--   [Office ファイルの暗号化を適用する&#40;デモンストレーション手順&#41;](Deploy-Encryption-of-Office-Files--Demonstration-Steps-.md)  
+-   [Office ファイル&#40;の暗号化の展開のデモンストレーションステップ&#41;](Deploy-Encryption-of-Office-Files--Demonstration-Steps-.md)  
   
--   [ダイナミック アクセス制御:シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="BKMK_NEW"></a>役割と機能がこのシナリオに含まれる  
+## <a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
 次の表で、このシナリオに含まれている役割と機能を紹介すると共に、それをシナリオに活かす方法について説明します。  
   
 |役割/機能|このシナリオのサポート方法|  
