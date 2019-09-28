@@ -6,15 +6,15 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 82added5018d83aeb9fe7d8033204a0d19bd047a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 37dd52b8771eda695069dd996fbd920e31f80ef1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868101"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359810"
 ---
 # <a name="configure-performance-monitoring"></a>パフォーマンスの監視を構成する
   
@@ -41,7 +41,7 @@ AD FS には、フェデレーションサーバーとフェデレーション�
   
 7. 監視するレジストリキーを追加するように求めるメッセージが表示されたら、 **[次へ]** をクリックします。  
   
-8. パフォーマンスデータを保存する場所を指定するように求めるメッセージが表示されたら、既定\(の場所 **%\\systemdrive\\%\\PerfLogs Admin** _<\_データコレクターをそのまま使用します。>\_を設定_し、 **[次へ]** をクリックします。  
+8. パフォーマンスデータを保存する場所を指定するように求められたら、既定の場所 \( **% systemdrive% \\PerfLogs @ no__t-3Admin @ no__t** _< data @ no__t-6collector @ no__t-7set >_ をそのまま使用します。**次**に、  
   
 9. データコレクターセットの作成を求めるメッセージが表示されたら、 **[保存して閉じる]** を選択し、 **[完了]** をクリックします。  
   

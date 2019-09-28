@@ -6,44 +6,44 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: da91a3e8c34c86f7fd03ca875b3800fdb6001750
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: b1c602d0cdfa562469419de223f5691ec2ff4527
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192124"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359563"
 ---
 # <a name="import-a-server-authentication-certificate-to-the-default-web-site"></a>サーバー認証証明書を既定の Web サイトにインポートする
 
-証明機関から、サーバー認証証明書を取得した後\(CA\)、する必要があります手動でインストールする証明書を各フェデレーション サーバーまたはサーバー ファームにフェデレーション サーバー プロキシの既定の Web サイトにします。  
+証明機関 \(CA @ no__t からサーバー認証証明書を取得した後、サーバーファーム内の各フェデレーションサーバーまたはフェデレーションサーバープロキシの既定の Web サイトにその証明書を手動でインストールする必要があります。  
   
 Web サーバーの場合、適切な Web サイトまたはフェデレーション アプリケーションが常駐する仮想ディレクトリに、サーバー認証証明書を手動でインストールする必要があります。  
   
 ファームをセットアップする場合は、ファーム内の各サーバー上で、まったく同じ設定を使って、この同じ手順を実行してください。  
   
 > [!NOTE]  
-> AD FS 管理スナップイン\-サービス通信証明書としてフェデレーション サーバーのサーバー認証証明書を参照しています。  
+> AD FS Management snap @ no__t-0in は、サービス通信証明書としてフェデレーションサーバーのサーバー認証証明書を参照します。  
   
 この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
 ### <a name="to-import-a-server-authentication-certificate-to-the-default-web-site"></a>サーバー認証証明書を既定の Web サイトにインポートするには  
   
-1.  **開始**画面で「**インターネット インフォメーション サービス\(IIS\) Manager**、し、ENTER キーを押します。  
+1.  **スタート**画面で、「**インターネットインフォメーションサービス \(iis @ No__t-3 Manager**」と入力し、enter キーを押します。  
   
-2.  コンソール ツリーで、**[コンピューター名]** をクリックします。  
+2.  コンソール ツリーで、 **[コンピューター名]** をクリックします。  
   
-3.  中央のウィンドウでダブルクリック\-クリックして**サーバー証明書**します。  
+3.  中央のウィンドウで、 **[サーバー証明書]** をダブルクリックします。  
   
-4.  **[操作]** ウィンドウで、**[インポート]** をクリックします。  
+4.  **[操作]** ウィンドウで、 **[インポート]** をクリックします。  
   
-5.  **証明書のインポート**ダイアログ ボックスで、をクリックして、 **.** ボタンをクリックします。  
+5.  **[証明書のインポート]** ダイアログボックスで、. **[.]** をクリックします。 ボタンをクリックします。  
   
-6.  pfx 証明書ファイルのある場所に移動し、ファイルを強調表示して、**[開く]** をクリックします。  
+6.  pfx 証明書ファイルのある場所に移動し、ファイルを強調表示して、 **[開く]** をクリックします。  
   
-7.  証明書のパスワードを入力し、**[OK]** をクリックします。  
+7.  証明書のパスワードを入力し、 **[OK]** をクリックします。  
   
 ## <a name="additional-references"></a>その他の参照情報  
 [チェックリスト:フェデレーション サーバーのセットアップ](Checklist--Setting-Up-a-Federation-Server.md)  

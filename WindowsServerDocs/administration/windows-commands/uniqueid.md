@@ -1,8 +1,8 @@
 ---
-title: 一意の id
-description: 'Windows コマンド」のトピック * * *- '
+title: uniqueid
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d237f4d6d3562e3787efe28ca98f9dc553d74898
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 64f097766daa4c87ec84f42dd53f49792a160bb9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440753"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363909"
 ---
-# <a name="uniqueid"></a>一意の id
+# <a name="uniqueid"></a>uniqueid
 
 
 
-表示または GUID パーティション テーブル (GPT) の識別子またはマスター ブート レコード (MBR) の署名、フォーカスがあるディスクを設定します。
+フォーカスがあるディスクの GUID パーティションテーブル (GPT) 識別子またはマスターブートレコード (MBR) 署名を表示または設定します。
 
 > [!IMPORTANT]
-> この DiskPart コマンドは、Windows Vista のエディションでご利用いただけません。
+> この DiskPart コマンドは、Windows Vista のどのエディションでも使用できません。
 
 ## <a name="syntax"></a>構文
 
@@ -39,25 +39,25 @@ uniqueid disk [id={<dword> | <GUID>}] [noerr]
 
 |  パラメーター   |                                                                                             説明                                                                                              |
 |--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id={\<dword> |                                                                                               <GUID>}                                                                                                |
-|    noerr     | スクリプト専用です。 エラーが発生すると、DiskPart は、エラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
+| id = {\<dword > |                                                                                               <GUID>}                                                                                                |
+|    noerr     | スクリプトの場合のみ。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。 |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   このコマンドは、ベーシック ディスクとダイナミック ディスクで機能します。
+-   このコマンドは、ベーシックディスクとダイナミックディスクで機能します。
 -   このコマンドを成功させるには、ディスクを選択してください。 使用して、 **select ディスク** コマンド ディスクを選択し、それにフォーカスをします。
 
 ## <a name="BKMK_examples"></a>例
 
-MBR ディスクでは、フォーカスのシグネチャを表示するには、次のように入力します。
+フォーカスがある MBR ディスクの署名を表示するには、次のように入力します。
 ```
 uniqueid disk
 ```
-MBR ディスクでは、フォーカスのシグネチャを 5f1b2c36 を設定するには、次のように入力します。
+5f1b2c36 にフォーカスがある MBR ディスクの署名を設定するには、次のように入力します。
 ```
 uniqueid disk id=5f1b2c36
 ```
-Baf784e7-6bbd-4cfb-aaac-e86c96e166ee にフォーカスを持つ GPT ディスクの識別子を設定するには、次のように入力します。
+Baf784e7-6bbd-4cfb-aaac-e86c96e166ee にフォーカスがある GPT ディスクの識別子を設定するには、次のように入力します。
 ```
 uniqueid disk id=baf784e7-6bbd-4cfb-aaac-e86c96e166ee
 ```

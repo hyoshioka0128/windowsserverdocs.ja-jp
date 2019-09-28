@@ -1,8 +1,8 @@
 ---
 title: Get AllMulticastTransmissions コマンドを使用してください。
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b05f8802a288d80960cf79356675cb9adce9c260
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 644684ffb356ef07120bc391e3d3da2daf768eaf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440534"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363342"
 ---
 # <a name="using-the-get-allmulticasttransmissions-command"></a>Get AllMulticastTransmissions コマンドを使用してください。
 
@@ -26,11 +26,11 @@ ms.locfileid: "66440534"
 
 サーバー上のすべてのマルチキャスト転送に関する情報を表示します。
 ## <a name="syntax"></a>構文
-Windows server 2008。
+Windows Server 2008 の場合:
 ```
 wdsutil /Get-AllMulticastTransmissions [/Server:<Server name>] [/Show:Clients] [/ExcludedeletePending]
 ```
-Windows Server 2008 r2:
+Windows Server 2008 R2 の場合:
 ```
 wdsutil /Get-AllMulticastTransmissions [/Server:<Server name>] [/Show:{Boot | Install | All}] [/details:Clients]  [/ExcludedeletePending]
 ```
@@ -41,16 +41,16 @@ wdsutil /Get-AllMulticastTransmissions [/Server:<Server name>] [/Show:{Boot | In
 | [/Server:<Server name>] |                                                                                                                                                                                 サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。                                                                                                                                                                                  |
 |         [/Show]         | **Windows Server 2008**<br /><br />/Show:Clients - マルチキャスト転送に接続されているクライアント コンピューターに関する情報を表示します。<br /><br />**Windows Server 2008 R2**<br /><br />表示: {ブートと #124 文字です。インストールと #124 文字です。すべて} - 返すイメージの種類。                                **ブート** ブート イメージの転送のみを返します。                                  **インストール** インストールのイメージ転送のみを返します。 **すべて** 両方のイメージの種類を返します。 |
 |                         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|    /details:clients     |                                                                                                                                                                                              Windows Server 2008 R2 のみサポートされます。 存在する場合、送信に接続されているクライアントが表示されます。                                                                                                                                                                                               |
-| [/ExcludedeletePending] |                                                                                                                                                                                                                                              一覧から任意の非アクティブ化された転送を除外します。                                                                                                                                                                                                                                               |
+|    詳細: クライアント     |                                                                                                                                                                                              Windows Server 2008 R2 のみサポートされます。 存在する場合、送信に接続されているクライアントが表示されます。                                                                                                                                                                                               |
+| [/Excludedeletepending] |                                                                                                                                                                                                                                              一覧から任意の非アクティブ化された転送を除外します。                                                                                                                                                                                                                                               |
 
 ## <a name="BKMK_examples"></a>例
 すべての転送に関する情報を表示するには、次のように入力します。
 - Windows Server 2008: `wdsutil /Get-AllMulticastTransmissions`
-- Windows Server 2008 R2:`wdsutil /Get-AllMulticastTransmissions /Show:All` 非アクティブ化の転送を除くすべての転送に関する情報を表示するには、次のように入力します。
+- Windows Server 2008 R2:非アクティブ化される送信を除くすべての転送に関する情報を表示するには、次のように入力します: 0 @no__t
 - Windows Server 2008: `wdsutil /Get-AllMulticastTransmissions /Server:MyWDSServer /Show:Clients /ExcludedeletePending`
 - Windows Server 2008 R2: `wdsutil /Get-AllMulticastTransmissions /Server:MyWDSServer /Show:All /details:Clients /ExcludedeletePending`
-  #### <a name="additional-references"></a>その他の参照
+  #### <a name="additional-references"></a>その他の参照情報
   [コマンドライン構文のポイント](command-line-syntax-key.md)
   [/get-multicasttransmission コマンドを使用して](using-the-get-multicasttransmission-command.md)
   [MulticastTransmission 新しいコマンドを使用して](using-the-new-multicasttransmission-command.md)

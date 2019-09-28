@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 0acfa6eec1d83c246c43ad32f7548ea771eb3c11
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 994eadfa205b62c5a512ab130c71fa6c22d1cff6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445761"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357543"
 ---
 # <a name="deploy-implementing-retention-of-information-on-file-servers-demonstration-steps"></a>Deploy Implementing Retention of Information on File Servers (Demonstration Steps)
 
@@ -22,17 +22,17 @@ ms.locfileid: "66445761"
 
 ファイル分類インフラストラクチャおよびファイル サーバー リソース マネージャーを使用して、フォルダーの保持期間を設定したり、ファイルを訴訟ホールドにしたりすることができます。  
   
-**このドキュメントで**  
+**このドキュメントの説明**  
   
 -   [前提条件](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Prereqs)  
   
--   [ステップ 1: リソース プロパティ定義を作成します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
+-   [ステップ 1: リソースプロパティの定義を作成する @ no__t-0  
   
--   [手順 2:通知を構成します。](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step2)  
+-   [手順 2:通知を構成する @ no__t-0  
   
--   [手順 3:ファイル管理タスクを作成します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step3)  
+-   [手順 3:ファイル管理タスクを作成する @ no__t-0  
   
--   [手順 4:ファイルを手動で分類します。](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step4)  
+-   [手順 4:ファイルを手動で分類する @ no__t-0  
   
 > [!NOTE]  
 > このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
@@ -43,7 +43,7 @@ ms.locfileid: "66445761"
 ## <a name="BKMK_Step1"></a>手順 1:リソース プロパティ定義を作成する  
 この手順では、Retention Period および Discoverability リソース プロパティを有効にして、ファイル分類インフラストラクチャがこれらのリソース プロパティを使用してネットワーク共有フォルダーでスキャンされたファイルにタグを付けることができるようにします。  
   
-[Windows PowerShell を使用してこの手順を実行します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
+[Windows PowerShell を使用してこの手順を実行する](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
   
 #### <a name="to-create-resource-property-definitions"></a>リソース プロパティ定義を作成するには  
   
@@ -57,7 +57,7 @@ ms.locfileid: "66445761"
   
 5.  **[発見可能]** を右クリックし、 **[有効にする]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+@no__t 0solution ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -69,7 +69,7 @@ Set-ADResourceProperty -Enabled:$true -Identity:'CN=Discoverability_MS,CN=Resour
 ## <a name="BKMK_Step2"></a>手順 2:通知を構成する  
 この手順では、ファイル サーバー リソース マネージャーのコンソールを使用して、SMTP サーバー、既定の管理者電子メール アドレス、およびレポート送信元の既定の電子メール アドレスを構成します。  
   
-[Windows PowerShell を使用してこの手順を実行します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
+[Windows PowerShell を使用してこの手順を実行する](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
   
 #### <a name="to-configure-notifications"></a>通知を構成するには  
   
@@ -87,11 +87,11 @@ Set-ADResourceProperty -Enabled:$true -Identity:'CN=Discoverability_MS,CN=Resour
   
     -   **[管理者である既定の受信者]** ボックスに、通知を受け取る管理者の電子メール アドレスを入力します。  
   
-    -   **既定の「差出人」電子メール アドレス**ボックスに、通知の送信に使用する電子メール アドレスを入力します。  
+    -   **[既定の電子メールアドレス]** ボックスに、通知の送信に使用する電子メールアドレスを入力します。  
   
 6.  **[OK]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+@no__t 0solution ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -108,7 +108,7 @@ Set-FsrmSetting -SmtpServer IP address of SMTP server -FromEmailAddress "FromEma
   
 -   ファイルが過去 10 年間に変更されていない。  
   
-[Windows PowerShell を使用してこの手順を実行します。](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
+[Windows PowerShell を使用してこの手順を実行する](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
   
 #### <a name="to-create-a-file-management-task"></a>ファイル管理タスクを作成するには  
   
@@ -142,7 +142,7 @@ Set-FsrmSetting -SmtpServer IP address of SMTP server -FromEmailAddress "FromEma
   
 11. **[OK]** をクリックします。  
   
-![ソリューション ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+@no__t 0solution ガイド](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -183,11 +183,11 @@ $fmj1=New-FSRMFileManagementJob -Name "Retention Task" -Namespace @('D:\Finance 
   
 10. ファイル サーバーで、ファイル サーバー リソース マネージャーのコンソールを使用してファイル管理タスクを再度実行します。 ファイル管理タスクが完了した後に、フォルダーを検査し、ファイルが有効期限切れディレクトリに移動されたことを確認します。  
   
-## <a name="BKMK_Links"></a>参照してください。  
+## <a name="BKMK_Links"></a>関連項目  
   
 -   [シナリオ: ファイル サーバーでの情報の保持の実装](Scenario--Implement-Retention-of-Information-on-File-Servers.md)  
   
--   [ファイル サーバー上の情報の保有期間を計画します。](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)  
+-   [ファイルサーバーの情報の保持を計画する](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)  
   
 -   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   

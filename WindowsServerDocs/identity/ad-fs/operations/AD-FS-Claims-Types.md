@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0b309dfe3c4c13629144342198197f382a2f25c2
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: a689e68ae60268880fd28158820c1803ab35bc33
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866206"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358624"
 ---
 # <a name="client-access-policy-claim-types-in-ad-fs"></a>AD FS のクライアントアクセスポリシー要求の種類
 

@@ -1,8 +1,8 @@
 ---
 title: イメージを使用して、追加のコマンド
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,25 +13,25 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0433e0775bd2088170ae17fcfe432cdaee0bf99d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b0d671dd482710c486a6936cdbe3b1cc6b331866
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817463"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363742"
 ---
 # <a name="using-the-add-image-command"></a>イメージを使用して、追加のコマンド
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Windows 展開サービス サーバーにイメージを追加します。 このコマンドを使用する方法の例については、次を参照してください。 [例](#BKMK_examples)します。
+Windows 展開サービスサーバーにイメージを追加します。 このコマンドを使用する方法の例については、次を参照してください。 [例](#BKMK_examples)します。
 ## <a name="syntax"></a>構文
-ブート イメージの場合に、次の構文を使用します。
+ブートイメージの場合は、次の構文を使用します。
 ```
 wdsutil /add-ImagmediaFile:<wim file path> [/Server:<Server name>mediatype:Boot [/Skipverify] [/Name:<Image name>] [/Description:<Image description>] 
 [/Filename:<New wim file name>]
 ```
-インストール イメージの場合は、次の構文を使用します。
+インストールイメージの場合は、次の構文を使用します。
 ```
 wdsutil /add-ImagmediaFile:<wim file path>
      [/Server:<Server name>]
@@ -52,10 +52,10 @@ mediaFile: < .wim ファイルのパス >|追加するイメージを含む Wind
 メディアの種類: {ブート&#124;インストール}|追加するイメージの種類を指定します。|
 |[/Skipverify]|ある整合性の検証は実行されません、ソース イメージ ファイルのイメージを追加する前に指定します。|
 |[/Name:<Name>]|イメージの表示名を設定します。|
-|[/説明。<Description>]|イメージの説明を設定します。|
+|/Description<Description>]|イメージの説明を設定します。|
 |[/ファイル名:<Filename>]|.Wim ファイルの新しいファイル名を指定します。 これにより、イメージを追加するときに、.wim ファイルのファイル名を変更することができます。 ファイル名が指定されていない場合、ソース イメージ ファイル名が使用されます。 常に、Windows 展開サービスをセットアップ先のコンピューターのブート イメージ ストアにファイル名が一意かどうかをチェックします。|
 |\mediaGroup:<Image group name>]|イメージが追加されるイメージ グループの名前を指定します。 サーバーの 1 つ以上のイメージ グループが存在する場合は、イメージ グループを指定してください。 これが指定されていないイメージ グループが存在しない場合は、新しいイメージ グループが作成されます。 それ以外の場合、既存のイメージ グループが使用されます。|
-|[/SingleImage:<Single image name>] [/Name:<Name>] [/Description:<Description>]|.Wim ファイルから指定された 1 つのイメージをコピーし、イメージの表示名と説明を設定します。|
+|[/Singleimage: <Single image name>][/Name: <Name>]/Description<Description>]|.Wim ファイルから指定された 1 つのイメージをコピーし、イメージの表示名と説明を設定します。|
 |[/UnattendFile:<Unattend file path>]|無人インストール ファイルが追加されているイメージと関連付けるへの完全パスを指定します。 場合 **/SingleImage** が指定されていない、同じ無人セットアップ ファイルはすべての .wim ファイル内のイメージに関連付けられます。|
 ## <a name="BKMK_examples"></a>例
 ブート イメージを追加するには、次のように入力します。
@@ -71,7 +71,7 @@ wdsutil /verbose /Progress /add-ImagmediaFile:\\MyServer\Share \Install.wim /Ser
 /SingleImage:"Windows Pro" /Name:"My WDS Image"
 /Description:"Windows Pro image with Microsoft Office" /Filename:"Win Pro.wim" /UnattendFile:"\\server\share\unattend.xml"
 ```
-#### <a name="additional-references"></a>その他の参照
+#### <a name="additional-references"></a>その他の参照情報
 [コマンドライン構文のポイント](command-line-syntax-key.md)
 [コピー イメージのコマンドを使用して](using-the-copy-image-command.md)
 [/export-image コマンドを使用して](using-the-export-image-command.md)

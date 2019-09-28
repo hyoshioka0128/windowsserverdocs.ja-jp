@@ -7,13 +7,13 @@ author: jwwool
 ms.author: jeffrew
 ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: e67102d1fa8b35d90e97df64cb8bd2991b205ad5
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.prod: windows-server
+ms.openlocfilehash: c7adb3ef50d5d88565463d15e664b8fe1add8d4c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658878"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357232"
 ---
 # <a name="install-windows-admin-center"></a>Windows Admin Center のインストール
 

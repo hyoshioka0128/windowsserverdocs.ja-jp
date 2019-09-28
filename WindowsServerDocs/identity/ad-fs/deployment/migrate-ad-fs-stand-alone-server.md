@@ -1,33 +1,33 @@
 ---
 title: スタンドアロン AD FS フェデレーション サーバーまたは単一ノード AD FS ファームの移行
-description: Windows Server 2012 へのスタンドアロン単独で、または単一ノード AD FS 2.0 サーバーの移行に関する情報を提供します。
+description: スタンドアロンまたは単一ノードの AD FS 2.0 サーバーを Windows Server 2012 に移行する方法について説明します。
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 06/28/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 5526afa758a142e30b9a238b4c7204cacebb1812
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: b8029d67a9f21e5189322692b8f1316306542c96
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444555"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359384"
 ---
 # <a name="migrate-a-stand-alone-ad-fs-federation-server-or-a-single-node-ad-fs-farm"></a>スタンドアロン AD FS フェデレーション サーバーまたは単一ノード AD FS ファームの移行  
-このドキュメントでは、Windows Server 2012 への AD FS 2.0 のスタンドアロンだけでサーバーの移行に関する詳細情報を示します。
+このドキュメントでは、AD FS 2.0 のスタンドアロンサーバーを Windows Server 2012 に移行する方法について詳しく説明します。
 
-## <a name="migrate-a-stand-alone-ad-fs-20-server"></a>移行のスタンドアロン AD FS 2.0 サーバー
+## <a name="migrate-a-stand-alone-ad-fs-20-server"></a>スタンドアロン AD FS 2.0 サーバーを移行する
 
-次の手順を使用して、AD FS 2.0 に移行する Windows Server 2012 へのサーバー。
+AD FS 2.0 サーバーを Windows Server 2012 に移行するには、次の手順を使用します。
   
-1.  確認し、実行の手順では、[スタンドアロン AD FS フェデレーション サーバーまたは単一ノード AD FS ファームの移行の準備](prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md)します。  
+1.  「[スタンドアロン AD FS フェデレーションサーバーまたは単一ノード AD FS ファームの移行の準備](prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md)」の手順を確認して実行します。  
   
-2.  サーバーから Windows Server 2008 R2 または Windows Server 2012 への Windows Server 2008 オペレーティング システムのインプレース アップグレードを実行します。 詳細については、「[Windows Server 2012 のインストール](https://technet.microsoft.com/library/jj134246.aspx)」を参照してください。  
+2.  サーバー上のオペレーティングシステムを windows server 2008 R2 または Windows Server 2008 から Windows Server 2012 にインプレースアップグレードします。 詳細については、「[Windows Server 2012 のインストール](https://technet.microsoft.com/library/jj134246.aspx)」を参照してください。  
   
 > [!IMPORTANT]
->  オペレーティング システムをアップグレードすると、このサーバーの AD FS 構成が失われ、AD FS 2.0 サーバーの役割が削除されます。 Windows Server 2012 の AD FS サーバーの役割が代わりに、インストールされているが構成されていません。 元の AD FS 構成を手動で作成し、その他の AD FS 設定を復元して、フェデレーション サーバーの移行を完了する必要があります。  
+>  オペレーティング システムをアップグレードすると、このサーバーの AD FS 構成が失われ、AD FS 2.0 サーバーの役割が削除されます。 代わりに、Windows Server 2012 AD FS サーバーロールがインストールされますが、構成されていません。 元の AD FS 構成を手動で作成し、その他の AD FS 設定を復元して、フェデレーション サーバーの移行を完了する必要があります。  
   
 3. 元の AD FS 構成を作成します。 元の AD FS 構成を作成するには、次のいずれかの方法を使用します。  
   
@@ -35,7 +35,7 @@ ms.locfileid: "66444555"
   
 このウィザードでは、AD FS フェデレーション サーバーの移行の準備を行っているときに収集した次の情報を使用します。  
   
- |**フェデレーション サーバー構成ウィザードの入力オプション**|**次の値を使用します。**| 
+ |**フェデレーションサーバー構成ウィザードの入力オプション**|**次の値を使用します。**| 
 |-----|-----| 
 |**[フェデレーション サービス名の指定]** ページの **[SSL 証明書]**|AD FS フェデレーション サーバーの移行の準備を行っているときに記録したサブジェクト名と拇印が含まれる SSL 証明書を選択します。|  
 |**[サービス アカウントの指定]** ページの **[サービス アカウント]** と **[パスワード]**|AD FS フェデレーション サーバーの移行の準備を行っているときに記録したサービス アカウント情報を入力します。 **注:** ウィザードの 2 ページ目でスタンドアロン フェデレーション サーバーを選択すると、ネットワーク サービスがサービス アカウントとして自動的に使用されます。|  
@@ -57,7 +57,7 @@ ms.locfileid: "66444555"
 > [!NOTE]
 >  この手順は、スタンドアロン フェデレーション サーバーまたは単一ノード WID ファームを移行する場合にのみ必要です。  フェデレーション サーバーで SQL Server データベースが構成ストアとして使用されている場合、サービスの設定と信頼関係はデータベースに保持されます。  
   
-5. AD FS Web ページを更新します。 これは手動で行います。 移行の準備中、カスタマイズされた AD FS web ページをバックアップしている場合は、バックアップ データを使用して、AD FS web ページで既定で作成された既定値を上書きする、 **%systemdrive%\inetpub\adfs\ls**の結果としてディレクトリWindows Server 2012 で AD FS の構成。  
+5. AD FS Web ページを更新します。 これは手動で行います。 移行の準備中にカスタマイズした AD FS web ページをバックアップした場合は、バックアップデータを使用して、 **%systemdrive%\inetpub\adfs\ls**ディレクトリに既定で作成された既定の AD FS web ページを AD FS の結果として上書きします。Windows Server 2012 の構成。  
   
 6. カスタム属性ストアなど、その他の AD FS カスタマイズを復元します。  
   
@@ -68,7 +68,7 @@ ms.locfileid: "66444555"
     -   AD FS 管理コンソールで、 **[サービス]** を選択し、 **[フェデレーション サービスの編集]** をクリックします。 各値を、移行の準備中に properties.txt ファイルにエクスポートした値と照合して、フェデレーション サービスの設定を確認します。  
   
     
-|**Get-adfsproperties によって報告された、フェデレーション サービスのプロパティ名**|**AD FS 管理コンソールで、フェデレーション サービスのプロパティ名**|  
+|**Set-adfsproperties によって報告されたフェデレーションサービスプロパティ名**|**AD FS 管理コンソールのフェデレーションサービスプロパティ名**|  
 |-----|-----|
 |DisplayName|フェデレーション サービスの表示名|  
 |HostName|フェデレーション サービス名|  
@@ -87,10 +87,10 @@ ms.locfileid: "66444555"
 -   AD FS 管理コンソールで、 **[証明書利用者信頼]** を選択します。 **証明書利用者信頼の追加ウィザード**を使用して、各証明書利用者信頼を手動で再作成する必要があります。 AD FS の移行の準備中にエクスポートして記録した証明書利用者信頼のリストを使用します。 証明書利用者信頼の作成の詳細については、「[フェデレーション メタデータを使って証明書利用者信頼を作成する](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-using-federation-metadata)」または「[証明書利用者信頼を手動で作成する](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-manually)」を参照してください。 
 
 ## <a name="next-steps"></a>次の手順
- [AD FS 2.0 フェデレーション サーバーの移行を準備します。](prepare-to-migrate-ad-fs-fed-server.md)   
- [AD FS 2.0 フェデレーション サーバー プロキシの移行を準備します。](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [AD FS 2.0 フェデレーション サーバーを移行します。](migrate-the-ad-fs-fed-server.md)   
- [AD FS 2.0 フェデレーション サーバー プロキシを移行します。](migrate-the-ad-fs-2-fed-server-proxy.md)   
+ [AD FS 2.0 フェデレーションサーバーの移行の準備](prepare-to-migrate-ad-fs-fed-server.md)   
+ [AD FS 2.0 フェデレーションサーバープロキシの移行の準備](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [AD FS 2.0 フェデレーションサーバー](migrate-the-ad-fs-fed-server.md)  を移行します。  
+ [AD FS 2.0 フェデレーションサーバープロキシ   を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
  [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)
 
 

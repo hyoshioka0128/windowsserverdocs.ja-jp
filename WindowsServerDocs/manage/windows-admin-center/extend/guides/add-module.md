@@ -1,31 +1,31 @@
 ---
 title: ツール拡張機能にモジュールを追加する
-description: ツールの拡張機能 Windows Admin Center SDK (プロジェクト ホノルル) の作成 - ツールの拡張機能にモジュールを追加
+description: ツール拡張機能の開発 Windows 管理センター SDK (Project ホノルル)-ツール拡張機能へのモジュールの追加
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: d8d901097eb280679a388ff66161e3514befcd13
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.prod: windows-server
+ms.openlocfilehash: 9d30980ca404187ff1481242c1c0ef0a3d571416
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452654"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357100"
 ---
 # <a name="add-a-module-to-a-tool-extension"></a>ツール拡張機能にモジュールを追加する
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
-この記事では、Windows Admin Center CLI を使用して作成したツールの拡張機能に、空のモジュールを追加します。
+この記事では、Windows 管理センター CLI で作成したツール拡張機能に空のモジュールを追加します。
 
 ## <a name="prepare-your-environment"></a>環境の準備
 
-まだインストールしていない場合、手順を実行では、開発、[ツール](../develop-tool.md)(または[ソリューション](../develop-solution.md)) 環境を準備し、新しい空のツールの拡張機能を作成する拡張機能。
+まだ行っていない場合は、「[ツール](../develop-tool.md)(または[ソリューション](../develop-solution.md)) の拡張機能の開発」の指示に従って、環境を準備し、新しい空のツール拡張を作成します。
 
-## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>Angular CLI を使用して、モジュール (およびコンポーネント) を作成するには
+## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>角 CLI を使用してモジュール (およびコンポーネント) を作成する
 
 Angular を初めて使用する場合は、Angular.Io Web サイトのドキュメントを読み、Angular および NgModule の詳細を確認することを強くお勧めします。 NgModule の詳細については、 https://angular.io/guide/ngmodule を参照してください。
 
@@ -33,7 +33,7 @@ Angular を初めて使用する場合は、Angular.Io Web サイトのドキュ
 * Angular CLI での新しいコンポーネントの生成の詳細については、 https://github.com/angular/angular-cli/wiki/generate-component を参照してください。
 
 
-コマンド プロンプトを開き、\src\app プロジェクトで、ディレクトリを変更し、次のコマンドを実行```{!ModuleName}```をモジュール名 (スペースを削除)。
+コマンドプロンプトを開き、プロジェクトのディレクトリを-src\ app に変更し、次のコマンドを実行します。 ```{!ModuleName}``` は実際のモジュール名に置き換えます (スペースは削除します)。
 
 ```
 cd \src\app
@@ -41,7 +41,7 @@ ng generate module {!ModuleName}
 ng generate component {!ModuleName}
 ```
 
-| Value | 説明 | 例 |
+| 値 | 説明 | 例 |
 | ----- | ----------- | ------- |
 | ```{!ModuleName}``` | モジュール名 (スペースを削除) | ```ManageFooWorksPortal``` |
 
@@ -57,7 +57,7 @@ ng generate component ManageFooWorksPortal
 
 Angular に慣れていない場合は、Angular のルーティングとナビゲーションの詳細を確認することを強くお勧めします。 次のセクションでは、Windows Admin Center で拡張機能に移動し、ユーザー アクティビティに応じて拡張機能のビュー間を移動できるようにするために必要なルーティング要素を定義します。 詳細については、 https://angular.io/guide/router を参照してください。
 
-上記の手順で使用した同じモジュール名を使用します。
+前の手順で使用したのと同じモジュール名を使用します。
 
 ### <a name="add-content-to-new-routing-file"></a>新しいルーティング ファイルへのコンテンツの追加
 
@@ -65,7 +65,7 @@ Angular に慣れていない場合は、Angular のルーティングとナビ�
 
 * 次の名前付け規則に従い、新しいファイル ```{!module-name}.routing.ts``` を作成します。
 
-    | Value | 説明 | ファイル名の例 |
+    | 値 | 説明 | ファイル名の例 |
     | ----- | ----------- | ------- |
     | ```{!module-name}``` | モジュール名 (小文字、スペースをダッシュに置換) | ```manage-foo-works-portal.routing.ts``` |
 
@@ -103,7 +103,7 @@ Angular に慣れていない場合は、Angular のルーティングとナビ�
 
 * 作成したファイル内の値を目的の値に置き換えます。
 
-    | Value | 説明 | 例 |
+    | 値 | 説明 | 例 |
     | ----- | ----------- | ------- |
     | ```{!ModuleName}``` | モジュール名 (スペースを削除) | ```ManageFooWorksPortal``` |
     | ```{!module-name}``` | モジュール名 (小文字、スペースをダッシュに置換) | ```manage-foo-works-portal``` |
@@ -112,7 +112,7 @@ Angular に慣れていない場合は、Angular のルーティングとナビ�
 
 次の命名規則で見つかったファイル ```{!module-name}.module.ts``` を開きます。
 
-| Value | 説明 | ファイル名の例 |
+| 値 | 説明 | ファイル名の例 |
 | ----- | ----------- | ------- |
 | ```{!module-name}``` | モジュール名 (小文字、スペースをダッシュに置換) | ```manage-foo-works-portal.module.ts``` |
 
@@ -124,7 +124,7 @@ Angular に慣れていない場合は、Angular のルーティングとナビ�
 
 * 追加したコンテンツ内の値を目的の値に置き換えます。
 
-    | Value | 説明 | 例 |
+    | 値 | 説明 | 例 |
     | ----- | ----------- | ------- |
     | ```{!module-name}``` | モジュール名 (小文字、スペースをダッシュに置換) | ```manage-foo-works-portal``` |
 
@@ -136,11 +136,11 @@ Angular に慣れていない場合は、Angular のルーティングとナビ�
 
 * ```import``` ステートメントがソースでアルファベット順になっていることを確認します。
 
-### <a name="add-content-to-new-component-typescript-file"></a>新しいコンポーネントの typescript ファイルにコンテンツを追加します。
+### <a name="add-content-to-new-component-typescript-file"></a>新しいコンポーネント typescript ファイルにコンテンツを追加する
 
 次の命名規則で見つかったファイル ```{!module-name}.component.ts``` を開きます。
 
-| Value | 説明 | ファイル名の例 |
+| 値 | 説明 | ファイル名の例 |
 | ----- | ----------- | ------- |
 | ```{!module-name}``` | モジュール名 (小文字、スペースをダッシュに置換) | ```manage-foo-works-portal.component.ts``` |
     
@@ -155,11 +155,11 @@ public ngOnInit() {
     // TODO
 }
 ```
-### <a name="update-app-routingmodulets"></a>アプリ routing.module.ts を更新します。
+### <a name="update-app-routingmodulets"></a>App-v を更新します。
 
-ファイルを開く```app-routing.module.ts```、および作成した新しいモジュールが読み込まれますので、既定のパスを変更します。  エントリを探します```path: ''```、および更新```loadChildren```既定モジュールではなく、モジュールを読み込めません。
+ファイル ```app-routing.module.ts``` を開き、作成したばかりの新しいモジュールが読み込まれるように既定のパスを変更します。  @No__t-0 のエントリを探し、```loadChildren``` を更新して、既定のモジュールではなくモジュールを読み込みます。
 
-| Value | 説明 | 例 |
+| 値 | 説明 | 例 |
 | ----- | ----------- | ------- |
 | ```{!ModuleName}``` | モジュール名 (スペースを削除) | ```ManageFooWorksPortal``` |
 | ```{!module-name}``` | モジュール名 (小文字、スペースをダッシュに置換) | ```manage-foo-works-portal``` |
@@ -170,7 +170,7 @@ public ngOnInit() {
         loadChildren: 'app/{!module-name}/{!module-name}.module#{!ModuleName}Module'
     },
 ```
-更新された既定のパスの例を次に示します。
+次に、更新された既定のパスの例を示します。
 ``` ts
     {
         path: '', 
@@ -179,6 +179,6 @@ public ngOnInit() {
 ```
 
 
-## <a name="build-and-side-load-your-extension"></a>ビルドと側は、拡張機能を読み込む
+## <a name="build-and-side-load-your-extension"></a>拡張機能をビルドしてサイドロードする
 
-拡張機能にモジュールを追加したようになりました。  次に、実行できます[ビルドおよび負荷を側](../develop-tool.md#build-and-side-load-your-extension)結果を表示する Windows Admin Center で、拡張機能。
+これで、拡張機能にモジュールを追加しました。  次に、Windows 管理センターで拡張機能を[ビルドしてサイドロード](../develop-tool.md#build-and-side-load-your-extension)し、結果を確認することができます。

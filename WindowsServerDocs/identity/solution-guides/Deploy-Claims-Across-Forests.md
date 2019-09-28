@@ -7,20 +7,20 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7d78258d8f1db9889b6d2db8c497780940ed35a1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 21ddcbd3b71a8d623950f1600b654e04ecc41f1e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890653"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357572"
 ---
 # <a name="deploy-claims-across-forests"></a>フォレスト間にわたる要求の展開
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-Windows Server 2012 では、要求の種類は、アサーションが関連付けられているオブジェクトに関するは。 信頼性情報の種類は、Active directory のフォレストごとに定義されます。 セキュリティ プリンシパルが信頼の境界を横断して信頼されているフォレストのリソースにアクセスする必要があるさまざまなシナリオがあります。 Windows Server 2012 でのフォレスト間のクレームの変換では、クレームが認識されと信頼関係の信頼されたフォレストで受け入れられるように、フォレストを通過した送受信のクレームを変換することができます。 実際にある信頼性情報変換のシナリオをいくつか示します。  
+Windows Server 2012 では、クレームの種類は、関連付けられているオブジェクトに関するアサーションです。 信頼性情報の種類は、Active directory のフォレストごとに定義されます。 セキュリティ プリンシパルが信頼の境界を横断して信頼されているフォレストのリソースにアクセスする必要があるさまざまなシナリオがあります。 Windows Server 2012 でのフォレスト間の要求変換を使用すると、フォレストを通過する送信要求と受信要求を変換して、信頼する側と信頼される側のフォレストで信頼性情報が認識され受け入れられるようにすることができます。 実際にある信頼性情報変換のシナリオをいくつか示します。  
   
 -   信頼する側のフォレストでは、特定の値を含む入力信頼性情報をフィルター処理することにより、特権の昇格に対するガードとして信頼性情報の変換を使用できます。  
   
@@ -45,11 +45,11 @@ Windows Server 2012 では、要求の種類は、アサーションが関連付
 ## <a name="in-this-scenario"></a>このシナリオの内容  
 次に、このシナリオで使用可能なガイダンスを示します。  
   
--   [フォレスト間にわたる信頼性情報の展開&#40;デモンストレーション手順&#41;](Deploy-Claims-Across-Forests--Demonstration-Steps-.md)  
+-   [フォレスト&#40;間での要求の展開のデモンストレーション手順&#41;](Deploy-Claims-Across-Forests--Demonstration-Steps-.md)  
   
--   [クレーム変換規則言語](Claims-Transformation-Rules-Language.md)  
+-   [要求変換規則言語](Claims-Transformation-Rules-Language.md)  
   
-## <a name="BKMK_NEW"></a>役割と機能がこのシナリオに含まれる  
+## <a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
 次の表で、このシナリオに含まれている役割と機能を紹介すると共に、それをシナリオに活かす方法について説明します。  
   
 |役割/機能|このシナリオのサポート方法|  

@@ -2,22 +2,22 @@
 title: ファイル サービスのコンテンツ サーバーをインストールする
 description: このトピックは、BranchCache 展開ガイドの Windows Server 2016、ブランチ オフィスに WAN 帯域幅使用量を最適化するために分散され、ホスト型キャッシュ モードで BranchCache を展開する方法を示しますの一部
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 74b0a5ed-dc20-4974-9d4b-2426987a01a1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 496c0c1408c64216f29a31d5b22d3d9b48d4f44c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c55f8df57ed98d13d6d0d6d2a281edfb55883bea
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855063"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356557"
 ---
 # <a name="install-file-services-content-servers"></a>ファイル サービスのコンテンツ サーバーをインストールする
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
 ファイル サービス サーバーの役割を実行しているコンテンツ サーバーを展開するには、ファイル サービス サーバー ロールのネットワーク ファイルのロール サービスの BranchCache をインストールしてください。 さらに、ニーズに合わせて、ファイル共有の BranchCache を有効する必要があります。  
   
@@ -30,11 +30,11 @@ ms.locfileid: "59855063"
   
 コンテンツ サーバーを展開するには、以下のトピックを参照してください。  
   
--   [ファイル サービス サーバーの役割を構成します。](../../branchcache/deploy/Configure-the-File-Services-server-role.md)  
+-   [ファイル サービス サーバーの役割を構成する](../../branchcache/deploy/Configure-the-File-Services-server-role.md)  
   
--   [ファイル サーバーのハッシュの発行を有効にします。](../../branchcache/deploy/Enable-Hash-Publication-for-File-Servers.md)  
+-   [ファイルサーバーのハッシュの発行を有効にする](../../branchcache/deploy/Enable-Hash-Publication-for-File-Servers.md)  
   
--   [ファイル共有の BranchCache を有効にする&#40;オプション&#41;](../../branchcache/deploy/enable-bc-on-file-share.md)  
+-   [ファイル共有&#40;で BranchCache を有効にする (省略可能)&#41;](../../branchcache/deploy/enable-bc-on-file-share.md)  
   
 
 
