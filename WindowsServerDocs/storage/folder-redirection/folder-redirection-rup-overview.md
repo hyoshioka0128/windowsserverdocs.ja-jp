@@ -1,19 +1,19 @@
 ---
 title: フォルダー リダイレクト、オフライン ファイル、移動ユーザー プロファイルの概要
 description: フォルダーリダイレクト、オフラインファイル、および移動ユーザープロファイルテクノロジの概要について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d6c980cd9e7d96261ffe467f4d9da627e3c50102
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ae1b23244f141cd0806ee14d3c40117ba72aeebb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867234"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402053"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>フォルダー リダイレクト、オフライン ファイル、移動ユーザー プロファイルの概要
 
@@ -48,9 +48,9 @@ ms.locfileid: "70867234"
 
 | 機能 | 新規/更新 | 説明 |
 | --- | --- | --- |
-| 常時オフライン モード | 新規作成 | 高速ネットワーク接続によって接続している場合でも、常時オフラインで作業することによりファイルへのアクセス速度を高め、帯域幅の使用量を抑制できます。 |
-| コスト意識型同期 | 新規作成 | 使用制限のある従量制課金接続を使用しているとき、または別のプロバイダーのネットワークでローミングしているときに、ユーザーが同期による高データ使用コストを回避するのに役立ちます。 |
-| プライマリ コンピューターのサポート | 新規作成 | では、ユーザーのプライマリコンピューターのみにフォルダーリダイレクト、移動ユーザープロファイル、またはその両方の使用を制限できます。 |
+| 常時オフライン モード | 新規 | 高速ネットワーク接続によって接続している場合でも、常時オフラインで作業することによりファイルへのアクセス速度を高め、帯域幅の使用量を抑制できます。 |
+| コスト意識型同期 | 新規 | 使用制限のある従量制課金接続を使用しているとき、または別のプロバイダーのネットワークでローミングしているときに、ユーザーが同期による高データ使用コストを回避するのに役立ちます。 |
+| プライマリ コンピューターのサポート | 新規 | では、ユーザーのプライマリコンピューターのみにフォルダーリダイレクト、移動ユーザープロファイル、またはその両方の使用を制限できます。 |
 
 ## <a name="always-offline-mode"></a>常時オフライン モード
 

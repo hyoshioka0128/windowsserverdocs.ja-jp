@@ -1,8 +1,8 @@
 ---
 title: ftp close_1
-description: Ftp close_1 の Windows コマンド」のトピック
+description: Ftp close_1 の Windows コマンドに関するトピック
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 802cf238e2120f947decebec65d63da6477e8ed1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7ca7dc3e6d0d90155c49eaf4ae4184d442c17521
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842583"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376533"
 ---
-# <a name="ftp-close1"></a>ftp: close_1
+# <a name="ftp-close_1"></a>ftp: close_1
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモート サーバーと ftp セッションを終了しのまま、 **ftp >** プロンプト。   
+リモートサーバーとの ftp セッションを終了し、 **ftp >** プロンプトのままにします。   
 ## <a name="syntax"></a>構文  
 ```  
 close  
@@ -32,9 +32,9 @@ close
 ### <a name="parameters"></a>パラメーター  
 なし  
 ## <a name="BKMK_Examples"></a>例  
-リモート サーバーと ftp セッションを終了しのまま、 **ftp >** プロンプト。  
+リモートサーバーで ftp セッションを終了し、 **ftp >** プロンプトでそのままにします。  
 ```  
 close  
 ```  
-## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+## <a name="additional-references"></a>その他の参照情報  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  

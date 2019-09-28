@@ -7,28 +7,28 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 29d50a4d1855e609b6ac9ee627256201074a5033
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: d7f52cd36588a1e5de4536a760c38c147dd1e003
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190723"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407836"
 ---
 # <a name="web-sso-design"></a>Web SSO 設計
 
-Web シングル\-サインオン\-で\(SSO\) Active Directory フェデレーション サービスの設計\(AD FS\)、ユーザーは複数の AD FS にアクセスするには 1 回だけ認証する必要があります\-セキュリティで保護されたアプリケーションまたはサービス。 この設計では、すべてのユーザーが外部ユーザーであり、パートナー組織が存在しないため、フェデレーションの信頼はありません。 通常、次の図に示すように、インターネット経由で 1 つ以上の AD FS で保護されたサービスまたはアプリケーションを個々 の顧客または顧客のアクセスを提供する場合に、この設計を展開します。  
+Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-5 で \(SSO @ no__t design の Web Single @ no__t-0Sign @ no__t-1On 認証する必要があります。ユーザーは、複数の AD FS @ no__t-6secured アプリケーションまたはサービスにアクセスするために1回だけ認証する必要があります。 この設計では、すべてのユーザーが外部ユーザーであり、パートナー組織が存在しないため、フェデレーションの信頼はありません。 通常、次の図に示すように、1つまたは複数の AD FS セキュリティで保護されたサービスまたはアプリケーションに対して、個々のコンシューマーまたは顧客のアクセスをインターネット経由で提供する場合は、この設計をデプロイします。  
   
-![web sso 設計](media/adfs2_WebSSODesign.gif)  
+![web sso の設計](media/adfs2_WebSSODesign.gif)  
   
-Web SSO 設計で組織通常をホストする AD FS\-セキュリティで保護されたアプリケーションまたは境界ネットワーク内のサービスがお客様を分離しやすくなる境界ネットワーク内の顧客アカウントの独立したストアを維持従業員のアカウントのアカウントです。  
+Web SSO 設計では、通常、境界ネットワークで AD FS @ no__t で保護されたアプリケーションまたはサービスをホストする組織は、境界ネットワーク内に顧客アカウントを個別に格納することができます。これにより、顧客アカウントの分離が容易になります。従業員アカウント。  
   
-境界ネットワーク内の顧客のローカル アカウントを管理するには、Active Directory Domain Services を使用して\(AD DS\)、SQL Server、またはカスタム属性ストアです。  
+境界ネットワーク内の顧客のローカルアカウントは、Active Directory Domain Services \(AD DS @ no__t-1、SQL Server、またはカスタム属性ストアのいずれかを使用して管理できます。  
   
 この設計は、 [Provide Your Active Directory Users Access to Your Claims-Aware Applications and Services](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)のデプロイ目標と同じです。  
   
-計画および Web SSO 設計を展開するのに使用できる詳細なタスクの一覧は、次を参照してください。[チェックリスト。Web SSO 設計を実装する](../../ad-fs/deployment/Checklist--Implementing-a-Web-SSO-Design.md)します。  
+Web SSO 設計を計画してデプロイするために使用できる詳細なタスクの一覧については、「@no__t」チェックリストを参照してください。Web SSO デザイン @ no__t を実装します。  
   
 ## <a name="see-also"></a>関連項目
 [Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

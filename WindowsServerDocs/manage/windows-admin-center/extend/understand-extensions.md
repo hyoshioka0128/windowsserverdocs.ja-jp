@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 4e54101e90005a1845820ecf0bb99df527ac7051
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 4bfabe4959fe16f5e240cbf1a972a902e37ffb52
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869774"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385248"
 ---
 # <a name="understanding-windows-admin-center-extensions"></a>Windows Admin Center 拡張機能について
 

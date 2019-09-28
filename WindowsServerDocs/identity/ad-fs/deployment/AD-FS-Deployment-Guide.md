@@ -7,26 +7,26 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b15bb55741ed6cde2e1884896d58fb2d361cd014
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 094ad9e2de21e1f89c35c914a1b327727c2b1439
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192508"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360124"
 ---
 # <a name="ad-fs-2016-deployment-guide"></a>AD FS 2016 展開ガイド
 
 
-AD FS 展開ガイドは、AD FS を展開するための包括的なガイドです。  このガイドは、次の構成されています。
+AD FS 展開ガイドは、AD FS を展開するための包括的なガイドです。  このガイドは、次のもので構成されています。
 
   
-* [Windows Server 2016 の AD FS へのアップグレード](Upgrading-to-AD-FS-in-Windows-Server-2016.md)  
+* [Windows Server 2016 での AD FS へのアップグレード](Upgrading-to-AD-FS-in-Windows-Server-2016.md)  
 
 * [Windows Server 2016 および 2012 R2 展開ガイド](Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)
 
 * [Windows Server 2012 展開ガイド](Windows-Server-2012-AD-FS-Deployment-Guide.md)
 
-* [クラウドのオンプレミス id インフラストラクチャと同期サービスを監視します。](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health)
+* [クラウド内のオンプレミスの id インフラストラクチャと同期サービスを監視する](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health)
   

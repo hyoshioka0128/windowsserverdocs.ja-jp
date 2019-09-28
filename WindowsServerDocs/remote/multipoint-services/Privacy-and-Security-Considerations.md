@@ -1,8 +1,8 @@
 ---
 title: プライバシーとセキュリティに関する考慮事項
-description: MultiPoint サービスに関するプライバシーとセキュリティの洞察を提供します。
+description: MultiPoint Services に関するプライバシーとセキュリティに関する洞察を提供します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 6580d0974e0e27a6ecd2706890801fbeb9c45d27
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5dffc99342cba3b4c5d43585745dedfd002a7c89
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848533"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389504"
 ---
 # <a name="privacy-and-security-considerations"></a>プライバシーとセキュリティに関する考慮事項
 MultiPoint Services システムは共有コンピューティング環境として設計されているので、プライバシーと安全なコンピューティングに関する次の問題を検討する必要があります。  
@@ -32,5 +32,5 @@ MultiPoint Services システムの管理ユーザーとして、Windows のセ�
 MultiPoint Services システムのような共有コンピューティング リソースは、システムのユーザー数が多く、ステーション ハードウェア デバイスやネットワークに簡単にアクセスできるため、セキュリティの脅威が発生しやすくなります。 悪意を持ったユーザーが、MultiPoint Services のステーション ハブにキーストローク ロガーまたは同様のデバイスを挿入しようとする可能性があります。 MultiPoint Services システムのポートに見覚えのないデバイスが装着されている場合は、疑いを持つようにして、組織のセキュリティ エスカレーション ガイドラインに従ってください。  
   
 ## <a name="see-also"></a>関連項目  
-[ユーザー ファイルを管理します。](Manage-User-Files.md)  
+[ユーザー ファイルの管理](Manage-User-Files.md)  
 [MultiPoint Services システムの管理](Managing-Your-MultiPoint-Services-System.md)

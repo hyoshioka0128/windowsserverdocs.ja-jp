@@ -7,14 +7,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 11/14/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 586f2d7b73c6017f8b69103a09f6b38bb31f542d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 12c47f98af24331b25355178370cc4cd28c0aa10
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865795"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358053"
 ---
 # <a name="configuring-alternate-login-id"></a>代替ログイン ID を構成する
 
@@ -212,7 +212,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 
 
 
-|                       **エラーケース**                        | **サインインエクスペリエンスへの影響** |                                                              **Event**                                                              |
+|                       **エラーケース**                        | **サインインエクスペリエンスへの影響** |                                                              **場合**                                                              |
 |--------------------------------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | ユーザーオブジェクトの SAMAccountName の値を取得できません |          ログインエラー           |                  イベント ID 364 と例外メッセージ MSIS8012:ユーザーの samAccountName が見つかりません: '{0}'。                   |
 |        CanonicalName 属性にアクセスできません         |          ログインエラー           |               イベント ID 364 と例外メッセージ MSIS8013:CanonicalName:{0}' ' のユーザー{1}' ' の形式が正しくありません。                |

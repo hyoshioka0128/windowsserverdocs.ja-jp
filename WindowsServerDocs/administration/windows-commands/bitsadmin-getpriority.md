@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getpriority
-description: Windows コマンド」のトピック**bitsadmin getpriority** -指定したジョブの優先順位を取得します。
+description: '**Bitsadmin getpriority**の Windows コマンドトピックでは、指定されたジョブの優先順位を取得します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,16 +12,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 6be2461ed87b75144367b1bd74376381e4674b66
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0b8914f27c690aa9bb9cbf30430b3edf55f2eb92
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841443"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381431"
 ---
 # <a name="bitsadmin-getpriority"></a>bitsadmin getpriority
 
-指定したジョブの優先順位を取得します。
+指定されたジョブの優先順位を取得します。
 
 ## <a name="syntax"></a>構文
 
@@ -35,17 +35,17 @@ bitsadmin /GetPriority <Job>
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-優先順位があるか、**フォア グラウンド**、**高**、**標準**、**低**、または**不明な**します。
+優先順位は、 **[フォアグラウンド]** 、 **[高]** 、 **[標準]** 、 **[低]** 、または **[不明]** のいずれかです。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブの優先順位を取得する*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブの優先順位を取得します。
 ```
 C:\>bitsadmin /GetPriority myDownloadJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

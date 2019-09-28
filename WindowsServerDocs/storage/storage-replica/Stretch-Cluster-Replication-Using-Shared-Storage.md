@@ -1,6 +1,6 @@
 ---
 title: 共有記憶域を使用したストレッチ クラスター レプリケーション
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: eldenc
 ms.author: nedpyle
 ms.technology: storage-replica
@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: 3acfcfd13ee3f78bac59a96b6021e5489f4e39ac
-ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
+ms.openlocfilehash: 654b4aea135c360f5fc5f59fdf85627fe8dd4cc2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000754"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402964"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>共有記憶域を使用したストレッチ クラスター レプリケーション
 
@@ -36,7 +36,7 @@ ms.locfileid: "70000754"
 
 ![Redmond の 2 つのノードと Bellevue サイトにある同一クラスターの 2 つのノードでのレプリケーションを示す図](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_StretchClusterExample.png)  
 
-**図 1:ストレッチクラスターでのストレージレプリケーション**  
+**FIGURE 1:ストレッチクラスターでの記憶域のレプリケーション @ no__t-0  
 
 ## <a name="prerequisites"></a>前提条件  
 -   Active Directory Domain Services フォレスト (Windows Server 2016 を実行する必要はありません)。  
@@ -664,7 +664,7 @@ ms.locfileid: "70000754"
         > Windows Server 2016 では、ノードがオンラインになった後に、フェールオーバー クラスター マネージャーまたは Move-ClusterGroup を使用して宛先ディスクを別のサイトに手動で戻す必要のある場合があります。  
 
         > [!NOTE]
-        > 記憶域レプリカは、宛先ボリュームをマウント解除します。 これは仕様に基づく制限事項です。  
+        > 記憶域レプリカは、宛先ボリュームをマウント解除します。 これは仕様です。  
 
 4.  ログサイズを既定の 8 GB から変更するには、コピー元とコピー先の両方のログディスクを右クリックし、 **[レプリケーションログ]** タブをクリックします。次に、両方のディスクのサイズを一致するように変更します。  
 
@@ -768,7 +768,7 @@ ms.locfileid: "70000754"
     3.  1 つのサイトから別のサイトのレプリケーションの方向で予定外のフェールオーバーを実行するには、1 つのサイトで両方のノードの電源を切ります。  
 
         > [!NOTE]  
-        > 記憶域レプリカは、宛先ボリュームをマウント解除します。 これは仕様に基づく制限事項です。  
+        > 記憶域レプリカは、宛先ボリュームをマウント解除します。 これは仕様です。  
 
 4.  ログサイズを既定の 8 GB から変更するには、ソースとターゲットの両方のストレージレプリカグループで**セット-SRGroup**を使用します。   たとえば、すべてのログを 2GB に設定するには、次の手順を実行します。  
 

@@ -2,7 +2,7 @@
 title: ディスク保護を有効または無効にする
 description: MultiPoint Services でディスク保護を使用する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -12,12 +12,12 @@ ms.assetid: 00aba4c4-0244-4b39-8c85-c46fd96e1d6a
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: d037b0843f5ba50c98e0d6e7cb10836c8d6fa23a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ad5f12a3901a3faf3559abae76e0ba924dce2eb9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871750"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389752"
 ---
 # <a name="enable-or-disable-disk-protection"></a>ディスク保護を有効または無効にする
 ディスク保護機能を使用すると、MultiPoint Services システムを再起動するたびに指定した状態にリセットできます。 ディスク保護を使用することにより、ユーザーは MultiPoint Services システムを一時的に変更することができ、変更はサーバーを再起動すると破棄されます。 サーバーの再起動時に破棄される変更の例としては、ユーザーのプロファイルのカスタマイズ、ファイルの保存、設定の変更、アプリケーションのインストールなどがあります。  

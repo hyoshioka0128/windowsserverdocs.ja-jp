@@ -1,8 +1,8 @@
 ---
-title: bitsadmin gethelpertokensid
-description: Windows コマンド」のトピック**bitsadmin gethelpertokensid** -設定されている場合、BITS 転送ジョブのヘルパーのトークンの SID を返します。
+title: bitsadmin gei pertokensid
+description: '**Bitsadmin ge pertokensid**の Windows コマンドのトピックが設定されている場合は、BITS 転送ジョブのヘルパートークンの SID を返します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,18 +12,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 1a956357b786c1d151f1363dacf78dbced137a2e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a8c2a9f319defd8ac9acd36063ee079c24ad8ae0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874663"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381593"
 ---
-# <a name="bitsadmin-gethelpertokensid"></a>bitsadmin gethelpertokensid
+# <a name="bitsadmin-gethelpertokensid"></a>bitsadmin gei pertokensid
 
-BITS 転送ジョブの SID を返します [ヘルパー トークン](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)が設定されている場合は、します。
+BITS 転送ジョブの [ヘルパートークン](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)が設定されている場合、その SID を返します。
 
-**3.0 と以前の BITS**: サポートされません。
+**BITS 3.0 以前**: サポートされていません。
 
 ## <a name="syntax"></a>構文
 
@@ -39,4 +39,4 @@ bitsadmin /GetHelperTokensID <Job>
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

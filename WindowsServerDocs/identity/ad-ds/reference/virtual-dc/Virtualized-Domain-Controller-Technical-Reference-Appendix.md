@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 9e3a5cc2c71455bb040f1311bdbfed1ac7e213fb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e1018d5bbff5922df5a696e5c4fad12dc9f6ec3d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832233"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408585"
 ---
 # <a name="virtualized-domain-controller-technical-reference-appendix"></a>仮想化ドメイン コントローラーのテクニカル リファレンスの付録
 
@@ -22,29 +22,29 @@ ms.locfileid: "59832233"
 
 このトピックでは、次の内容について説明します。  
   
--   [用語集](../../../ad-ds/reference/virtual-dc/../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_Terms)  
+-   [用語](../../../ad-ds/reference/virtual-dc/../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_Terms)  
   
--   [FixVDCPermissions.ps1](../../../ad-ds/reference/virtual-dc/../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms)  
+-   [Fixvdcpermissions.ps1](../../../ad-ds/reference/virtual-dc/../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms)  
   
-## <a name="BKMK_Terms"></a>用語集  
+## <a name="BKMK_Terms"></a>関する  
   
--   **スナップショット**-特定の時点で仮想マシンの状態。 ハードウェアで作成された以前のスナップショットのチェーンと仮想化プラットフォームに依存します。  
+-   **Snapshot** -特定の時点における仮想マシンの状態。 これは、作成された以前のスナップショットのチェーン、ハードウェア、および仮想化プラットフォームに依存します。  
   
--   **複製**- 完了し、仮想マシンのコピーを区切ります。 仮想ハードウェア (ハイパーバイザー) に依存しています。  
+-   **複製**-仮想マシンの完全で個別のコピー。 これは、仮想ハードウェア (ハイパーバイザー) に依存します。  
   
--   **完全な複製**-完全な複製は独立したリソースを共有するない親仮想マシンと複製操作の後に仮想マシンのコピー。 完全な複製の実行中の操作は、親の仮想マシンからはまったく別です。  
+-   **完全な複製**-完全な複製は、複製操作後に親仮想マシンとリソースを共有しない仮想マシンの独立したコピーです。 完全な複製の継続的な操作は、親のバーチャルマシンと完全に分離されています。  
   
--   **差分ディスク**-継続的な方法で、親の仮想マシンと仮想ディスクを共有する仮想マシンのコピー。 これは、通常ディスク領域を節約でき、同じソフトウェアのインストールを使用する複数の仮想マシン。  
+-   **差分ディスク**-親仮想マシンと仮想ディスクを継続的に共有する仮想マシンのコピー。 これにより、通常、ディスク領域が節約され、複数の仮想マシンが同じソフトウェアインストールを使用できるようになります。  
   
--   **VM のコピー**- ファイル システム関連のすべてのファイルのコピーと仮想マシンのフォルダー。  
+-   **VM コピー**-仮想マシンのすべての関連ファイルとフォルダーのファイルシステムコピー。  
   
--   **VHD ファイルのコピー** -仮想マシンの VHD のコピー  
+-   **Vhd ファイルのコピー** -仮想マシンの vhd のコピー  
   
--   **VM 生成 ID** - ハイパーバイザーで仮想マシンに指定された 128 ビットの整数。 この ID はメモリに格納され、スナップショットが適用されるたびにリセットします。 設計では、ハイパーバイザーに依存しないメカニズムを使用して、仮想マシン内の Vm-generation ID を提示するのです。 HYPER-V の実装では、仮想マシンの ACPI テーブルの ID を公開します。  
+-   **VM 生成 ID** -ハイパーバイザーによって仮想マシンに指定された128ビットの整数。 この ID はメモリに格納され、スナップショットが適用されるたびにリセットされます。 この設計では、仮想マシンで VM 生成 ID を提示するために、ハイパーバイザーに依存しないメカニズムを使用します。 Hyper-v 実装は、仮想マシンの ACPI テーブルで ID を公開します。  
   
--   **インポート/エクスポート**-ユーザーは、全体の仮想マシン (VM ファイル、VHD と、マシンの構成) を保存できるようにする、HYPER-V 機能です。 同じ VM (移動)、または新しい VM を (コピー) として別のコンピューターにユーザーが、同じ VM (復元) と同じコンピューターに戻り、マシンをそのファイルのセットを使用して、します。  
+-   **Import/Export** -仮想マシン全体 (VM ファイル、VHD、およびマシン構成) を保存することをユーザーに許可する hyper-v の機能。 その後、ユーザーはそのファイルセットを使用して、同じ VM (復元) と同じマシン上にコンピューターを戻すことができます。また、同じ VM (移動)、または新しい VM (コピー) としてコンピューターを戻すことができます。  
   
-## <a name="BKMK_FixPDCPerms"></a>FixVDCPermissions.ps1  
+## <a name="BKMK_FixPDCPerms"></a>Fixvdcpermissions.ps1  
   
 ```  
 # Unsigned script, requires use of set-executionpolicy remotesigned -force  

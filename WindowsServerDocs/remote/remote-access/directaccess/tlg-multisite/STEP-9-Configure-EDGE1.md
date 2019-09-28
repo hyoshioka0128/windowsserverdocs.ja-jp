@@ -1,9 +1,9 @@
 ---
-title: 手順 9 EDGE1 を構成します。
-description: このトピックは一部のテスト ラボ ガイド-DirectAccess マルチサイト展開の Windows Server 2016 のデモンストレーション
+title: 手順 9 EDGE1 を構成する
+description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,46 +12,46 @@ ms.topic: article
 ms.assetid: f6e8d85b-de65-43b3-bf3e-ec84471a1fcc
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b0a47a436bbd11c795caa8b402054ae0d2c3282f
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: ce86a75ac5b8d53874d2fc5c6743979506591680
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281375"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388231"
 ---
-# <a name="step-9-configure-edge1"></a>手順 9 EDGE1 を構成します。
+# <a name="step-9-configure-edge1"></a>手順 9 EDGE1 を構成する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-EDGE1 サーバーで、次の手順が実行されます。  
+EDGE1 サーバーでは、次の手順が実行されます。  
   
-1. EDGE1 上の DNS サーバーを構成します。 EDGE1 で corp2.corp.contoso.com ドメインの DNS サーバーを構成する必要があります。  
+1. EDGE1 で DNS サーバーを構成します。 EDGE1 の corp2.corp.contoso.com ドメインから DNS サーバーを構成する必要があります。  
   
-2. サブネット間のルーティングを構成します。 企業ネットワークと 2 Corpnet サブネット間の通信を有効にする EDGE1 上のルーティングを構成します。  
+2. サブネット間のルーティングを構成します。 EDGE1 でルーティングを構成して、企業ネットワークと2ネットワークのサブネット間の通信を有効にします。  
   
-## <a name="IPv6"></a>EDGE1 上の DNS サーバーを構成します。  
+## <a name="IPv6"></a>EDGE1 で DNS サーバーを構成する  
   
-1.  サーバー マネージャー コンソールで、次のようにクリックします。**ローカル サーバー**、し、**プロパティ**エリア、次へ を**Corpnet**、リンクをクリックします。  
+1.  サーバーマネージャーコンソールで **[ローカルサーバー]** をクリックし、 **[プロパティ]** 領域の [企業**ネットワーク] の横にある**リンクをクリックします。  
   
-2.  ネットワーク接続 ウィンドウで右クリック**Corpnet**、 をクリックし、**プロパティ**します。  
+2.  [ネットワーク接続] ウィンドウで、[企業ネットワーク **] を右クリックし**、 **[プロパティ]** をクリックします。  
   
 3.  **[インターネット プロトコル バージョン 4 (TCP/IPv4)]** をクリックし、 **[プロパティ]** をクリックします。  
   
-4.  **代替 DNS サーバー**、型**10.2.0.1**します。 **[OK]** をクリックします。  
+4.  **[代替 DNS サーバー]** に、「 **10.2.0.1**」と入力します。 **[OK]** をクリックします。  
   
 5.  **[インターネット プロトコル バージョン 6 (TCP/IPv6)]** をクリックし、 **[プロパティ]** をクリックします。  
   
-6.  **代替 DNS サーバー**、型**2001:db8:2::1**順にクリックします**OK**します。  
+6.  **[代替 DNS サーバー]** に「 **2001: db8: 2:: 1** 」と入力し、[ **OK]** をクリックします。  
   
-7.  **Corpnet プロパティ**ダイアログ ボックスで、をクリックして**閉じる**します。  
+7.  企業ネットワークの **[プロパティ]** ダイアログボックスで、 **[閉じる]** をクリックします。  
   
 8.  **[ネットワーク接続]** ウィンドウを閉じます。  
   
-## <a name="ConfigRouting"></a>サブネット間のルーティングを構成します。  
+## <a name="ConfigRouting"></a>サブネット間のルーティングを構成する  
   
-1.  **開始**画面で「**cmd.exe**、を右クリックして**cmd** をクリック**詳細**、順にクリックします**として実行管理者**します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  **スタート**画面で、「**cmd.exe**」と入力し、 **[cmd]** を右クリックして、 **[詳細設定]** をクリックし、 **[管理者として実行]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
   
-2.  コマンド プロンプト ウィンドウで、次のコマンドを入力します。 各コマンドを入力した後 ENTER キーを押します。  
+2.  コマンドプロンプトウィンドウで、次のコマンドを入力します。 各コマンドを入力したら、enter キーを押します。  
   
     ```  
     netsh interface IPv4 add route 10.2.0.0/24 Corpnet 10.0.0.254  

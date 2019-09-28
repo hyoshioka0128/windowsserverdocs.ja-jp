@@ -2,18 +2,18 @@
 title: オン デマンドでレポートを生成する
 description: この記事では、サーバー上のディスク使用量を分析するオンデマンド レポートを生成する方法を説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b51ab0ad2a9c670aa63c4c86f7ff2c052139cb95
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9b3cde8a01c40a04df1bc433687029a2e0e7c394
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445977"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403009"
 ---
 # <a name="generate-reports-on-demand"></a>オン デマンドでレポートを生成する
 

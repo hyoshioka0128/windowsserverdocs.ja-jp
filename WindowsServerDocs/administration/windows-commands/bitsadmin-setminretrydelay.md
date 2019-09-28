@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setminretrydelay
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 640492cf690a934e3e3b8d0ecf8ca7a0d6a7dc2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 379dfa8bfdc48969f268fd1c9544d3bee8bbe646
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813083"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380511"
 ---
 # <a name="bitsadmin-setminretrydelay"></a>bitsadmin setminretrydelay
 
-ファイルの転送を試行する前に一時的なエラーが発生したときに BITS が待機する秒単位で時間の最小の長さを設定します。
+一時エラーが発生してからファイルの転送を試行するまでの待機時間の最小値を秒単位で設定します。
 
 ## <a name="syntax"></a>構文
 
@@ -39,11 +39,11 @@ bitsadmin /SetMinRetryDelay <Job> <RetryDelay>
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブの最小再試行間隔を設定する*myDownloadJob* 35 秒にします。
+次の例では、 *Mydownloadjob*という名前のジョブの最小再試行間隔を35秒に設定しています。
 ```
 C:\>bitsadmin /SetMinRetryDelay myDownloadJob 35
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

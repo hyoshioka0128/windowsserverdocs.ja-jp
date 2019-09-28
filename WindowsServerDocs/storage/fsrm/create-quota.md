@@ -2,18 +2,18 @@
 title: クォータを作成する
 description: この記事では、テンプレートに基づいてクォータを作成する方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f3c677f5ebf7dda44f4b99a64d0fbf8d2c72b92e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6b199d8cc520021fcbbe32397997cc483f9c68cb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883193"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403136"
 ---
 # <a name="create-a-quota"></a>クォータを作成する
 
@@ -32,18 +32,18 @@ ms.locfileid: "59883193"
 
 ## <a name="to-create-a-quota-that-is-based-on-a-template"></a>テンプレートに基づいたクォータを作成するには
 
-1.  **[クォータの管理]** で、**[クォータのテンプレート]** ノードをクリックします。
+1.  **[クォータの管理]** で、 **[クォータのテンプレート]** ノードをクリックします。
 
 2.  結果のウィンドウで、新しいクォータのベースにするテンプレートを選択します。
 
-3.  このテンプレートを右クリックし、**[テンプレートからのクォータを作成]** をクリックするか、**[操作]** ウィンドウで **[テンプレートからのクォータを作成]** をクリックします。 **[クォータの作成]** ダイアログ ボックスが開き、クォータ テンプレートの概要プロパティが表示されます。
+3.  このテンプレートを右クリックし、 **[テンプレートからのクォータを作成]** をクリックするか、 **[操作]** ウィンドウで **[テンプレートからのクォータを作成]** をクリックします。 **[クォータの作成]** ダイアログ ボックスが開き、クォータ テンプレートの概要プロパティが表示されます。
 
 4.  **[クォータのパス]** で、クォータを適用するフォルダーへのパスを入力するか、そのフォルダーを参照します。
 
 5.  **[パスにクォータを作成する]** をクリックします。 クォータ プロパティは、フォルダー全体に適用されます。
 
      > [!Note]
-     > 自動適用クォータを作成するには、**[既存と新規のサブフォルダーに自動でテンプレート適用とクォータ作成を行う]** をクリックします。 自動適用クォータの詳細については、「[自動適用クォータを作成する](create-auto-apply-quota.md)」を参照してください。
+     > 自動適用クォータを作成するには、 **[既存と新規のサブフォルダーに自動でテンプレート適用とクォータ作成を行う]** をクリックします。 自動適用クォータの詳細については、「[自動適用クォータを作成する](create-auto-apply-quota.md)」を参照してください。
 
 6.  **[次のクォータ テンプレートからプロパティを取得する]** では、手順 2 で新しいクォータの作成に使用したテンプレートが既に選択されています (別のテンプレートを一覧から選択することもできます)。 テンプレートのプロパティは **[クォータ プロパティの概要]** の下に表示されます。
 
@@ -52,7 +52,7 @@ ms.locfileid: "59883193"
 ## <a name="see-also"></a>関連項目
 
 -   [クォータの管理](quota-management.md)
--   [作成、自動適用クォータ](create-auto-apply-quota.md)
--   [クォータ テンプレートを作成します。](create-quota-template.md)
+-   [自動適用クォータを作成する](create-auto-apply-quota.md)
+-   [クォータテンプレートを作成する](create-quota-template.md)
 
 

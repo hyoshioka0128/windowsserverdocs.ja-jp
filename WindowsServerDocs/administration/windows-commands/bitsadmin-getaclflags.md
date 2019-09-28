@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getaclflags
-description: Windows コマンド」のトピック**bitsadmin getaclflags** -アクセス制御リストの反映フラグを取得します。
+description: '**Bitsadmin getaclflags**の Windows コマンドトピックでは、アクセス制御リストの伝達フラグを取得します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 185445a97168344f910abc0e644718296de2c712
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ad98cd742161ae06be5cba7acde7b810eaf199d6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861453"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381789"
 ---
 # <a name="bitsadmin-getaclflags"></a>bitsadmin getaclflags
 
@@ -36,21 +36,21 @@ bitsadmin /GetAclFlags <Job>
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-次のフラグの値の 1 つ以上が表示されます。
--   O:ファイルの所有者情報をコピーします。
--   G:ファイル グループ情報をコピーします。
--   D:DACL 情報をファイルにコピーします。
--   送信:ファイルの SACL の情報をコピーします。
+次のフラグ値の1つまたは複数を表示します。
+-   O:所有者情報をファイルと共にコピーします。
+-   G:グループ情報をファイルと共にコピーします。
+-   D:DACL 情報をファイルと共にコピーします。
+-   送信:ファイルを使用して SACL 情報をコピーします。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブへのアクセス制御リスト伝達フラグを取得する*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブのアクセス制御リストの伝達フラグを取得します。
 ```
 C:\>bitsadmin /getaclflags myDownloadJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

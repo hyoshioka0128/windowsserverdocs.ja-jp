@@ -2,7 +2,7 @@
 title: キー配布サービス KDS ルート キーの作成
 description: Windows Server のセキュリティ
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-gmsa
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 8a3743d1ce430f605244408dc6b26779965aa99f
-ms.sourcegitcommit: d83933c6a2e180b747c2db910392117569348901
+ms.openlocfilehash: fd335d61eae7cf753d09436d54f14c7d6004d643
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807876"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386905"
 ---
 # <a name="create-the-key-distribution-services-kds-root-key"></a>キー配布サービス KDS ルート キーの作成
 
@@ -55,15 +55,15 @@ DC が 1 つしか存在しないテスト環境では、次の手順を実行�
 
 2.  Windows PowerShell Active Directory モジュールのコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します。
 
-    **$a=Get-Date**
+    **$a = 取得日**
 
-    **$b=$a.AddHours(-10)**
+    **$b = $a. AddHours (-10)**
 
-    **Add-KdsRootKey -EffectiveTime $b**
+    **Add-kdsrootkey-EffectiveTime $b**
 
     または、単一のコマンドを使用します。
 
-    **Add-KdsRootKey -EffectiveTime ((get-date).addhours(-10))**
+    **Add-kdsrootkey-EffectiveTime ((取得日). addhours (-10))**
 
 ## <a name="see-also"></a>関連項目
 [グループの管理されたサービス アカウントの概要](getting-started-with-group-managed-service-accounts.md)

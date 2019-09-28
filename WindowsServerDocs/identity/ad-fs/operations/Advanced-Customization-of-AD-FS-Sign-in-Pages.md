@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 01/16/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e49b18bf5e10de6150603b690095f61a13e59ef2
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 35d2c6dfaf509434aa8f61099b8440138904d450
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865991"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407727"
 ---
 # <a name="advanced-customization-of-ad-fs-sign-in-pages"></a>AD FS サインインページの高度なカスタマイズ
 

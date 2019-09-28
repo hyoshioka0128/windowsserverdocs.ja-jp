@@ -2,7 +2,7 @@
 title: ユーザー セッションをログオフまたは切断する
 description: ユーザーを手動でログオフする方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 0e516a617341ffebadbdeb571a39f50369446f11
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: c636af35a78eab76d69c68b6f506b64dcb555f81
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871647"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395269"
 ---
 # <a name="log-off-or-disconnect-user-sessions"></a>ユーザー セッションをログオフまたは切断する
 MultiPoint Services のユーザーは、Windows セッションの場合と同様に、デスクトップセッションにログオンしてログオフできます。 また、ユーザーは、MultiPoint Services ステーションが使用されないようにセッションを切断または中断することができますが、そのセッションは MultiPoint Services システムのコンピューターメモリ内でアクティブなままになります。  

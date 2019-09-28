@@ -6,14 +6,14 @@ ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 36c9dfcb38ef417df56206cdb18633cc877183c4
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 144c57bba621ee1b94a66914f8d9b6c0292f8b03
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658894"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406872"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>適切なインストールの種類
 
@@ -21,7 +21,7 @@ ms.locfileid: "68658894"
 
 このトピックでは、windows 管理センターのさまざまなインストールオプションについて説明します。これには、複数の管理者が使用する windows 10 PC または Windows server へのインストールが含まれます。 Azure の VM に Windows 管理センターをインストールする方法については、「 [azure での Windows 管理センターのデプロイ](../azure/deploy-wac-in-azure.md)」を参照してください。
 
-## <a name="installation-types"></a>インストール:型
+## <a name="installation-types"></a>インストール:種類
 
 | ローカルクライアント                                | ゲートウェイ サーバー                                  | 管理対象サーバー                               | フェールオーバー クラスター                           |
 |---------------------------------------------|-------------------------------------------------|----------------------------------------------|--------------------------------------------|
@@ -41,15 +41,15 @@ Windows 管理センターは、次の Windows オペレーティングシステ
 
 Windows 管理センターを操作するには:
 
-- **ローカルクライアントのシナリオの場合:** [スタート] メニューから Windows 管理センターゲートウェイを起動し、にアクセス`https://localhost:6516`してクライアント web ブラウザーから接続します。
-- **その他のシナリオの場合:** URL を使用して、クライアントブラウザーから別のコンピューターの Windows 管理センターゲートウェイに接続します (例:)。`https://servername.contoso.com`
+- **ローカルクライアントのシナリオの場合:** [スタート] メニューから Windows 管理センターゲートウェイを起動し、`https://localhost:6516` にアクセスしてクライアント web ブラウザーから接続します。
+- **その他のシナリオの場合:** URL (たとえば、`https://servername.contoso.com`) を使用して、クライアントブラウザーから別のコンピューターの Windows 管理センターゲートウェイに接続します。
 
 > [!WARNING]
 > ドメインコントローラーへの Windows 管理センターのインストールはサポートされていません。 [詳細については、「ドメインコントローラーのセキュリティに関するベストプラクティス](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack)」を参照してください。 
 
 ## <a name="installation-supported-web-browsers"></a>インストール:サポートされている web ブラウザー
 
-Microsoft Edge と Google Chrome は、Windows 10 でテストおよびサポートされています。 Internet Explorer や Firefox などの他の web ブラウザーは、現在テストマトリックスの一部ではないため、*公式*にはサポートされていません。 これらのブラウザーでは、Windows 管理センターの実行に問題がある可能性があります。 たとえば、firefox には独自の証明書ストアがあるため、windows 10 `Windows Admin Center Client`で windows 管理センターを使用するには、firefox に証明書をインポートする必要があります。 詳細については、「[ブラウザー固有の既知の問題](../support/known-issues.md#browser-specific-issues)」を参照してください。
+Microsoft Edge と Google Chrome は、Windows 10 でテストおよびサポートされています。 Internet Explorer や Firefox などの他の web ブラウザーは、現在テストマトリックスの一部ではないため、*公式*にはサポートされていません。 これらのブラウザーでは、Windows 管理センターの実行に問題がある可能性があります。 たとえば、Firefox には独自の証明書ストアがあるため、Windows 10 で Windows 管理センターを使用するには `Windows Admin Center Client` 証明書を Firefox にインポートする必要があります。 詳細については、「[ブラウザー固有の既知の問題](../support/known-issues.md#browser-specific-issues)」を参照してください。
 
 ## <a name="management-target-supported-operating-systems"></a>管理対象:サポートされるオペレーティング システム
 
@@ -58,11 +58,11 @@ Windows 管理センターを使用して、次の Windows オペレーティン
 | バージョン | *サーバーマネージャー*を使用した*ノード*の管理 | *フェールオーバークラスターマネージャー*を使用した*クラスター*の管理 | *HCI クラスターマネージャー*を使用して*HCI*を管理する |
 | ------------------------- |--------------- | ----- | ------------------------ |
 | Windows 10 バージョン1709以降 | はい (コンピューターの管理を使用) | なし | なし |
-| Windows Server 半期チャネル | [はい] | 〇 | なし |
-| Windows Server 2019 | [はい] | [はい] | [はい] |
-| Windows Server 2016 | はい | [はい] | はい ([最新の累積的な更新プログラム](../use/manage-hyper-converged.md#prepare-your-windows-server-2016-cluster-for-windows-admin-center)あり) |
+| Windows Server 半期チャネル | はい | 〇 | なし |
+| Windows Server 2019 | はい | [はい] | はい |
+| Windows Server 2016 | はい | はい | はい ([最新の累積的な更新プログラム](../use/manage-hyper-converged.md#prepare-your-windows-server-2016-cluster-for-windows-admin-center)あり) |
 | Microsoft Hyper-V Server 2016 | はい | 〇 | なし |
-| Windows Server 2012 R2 | [はい] | 〇 | なし |
+| Windows Server 2012 R2 | はい | 〇 | なし |
 | Microsoft Hyper-V Server 2012 R2 | はい | 〇 | なし |
 | Windows Server 2012 | はい | 〇 | なし |
 | Windows Server 2008 R2 | はい (制限された機能) | なし | なし |

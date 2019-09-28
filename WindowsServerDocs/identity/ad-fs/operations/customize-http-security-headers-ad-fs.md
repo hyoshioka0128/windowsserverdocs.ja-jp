@@ -7,14 +7,14 @@ manager: daveba
 ms.reviewer: akgoel23
 ms.date: 02/19/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4fd1e62e67f66a217a1d4f3a26933723a4645a31
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e1042ad4dae0b023c9816dff798c25b05b60eccf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865565"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407449"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>AD FS 2019 で HTTP セキュリティ応答ヘッダーをカスタマイズする 
  
@@ -194,7 +194,7 @@ Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue
 frame-src 'self'; manifest-src 'self'; media-src 'self';" 
 ```
 
-ディレクティブが明示的に指定されている場合、指定された値は、既定の-src に指定された値よりも優先されます。次の例では、img-src は値を ' * ' として受け取ります (任意のオリジンからイメージを読み込むことができます)。他の src ディレクティブは、値を ' self ' として受け取ります (web ページと同じオリジンに限定されます)。  
+ディレクティブが明示的に指定されている場合、指定された値は、既定の-src に指定された値よりも優先されます。 次の例では、img-src は値を ' * ' として受け取ります (任意のオリジンからイメージを読み込むことができます)。他の src ディレクティブは、値を ' self ' として受け取ります (web ページと同じオリジンに限定されます)。  
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src ‘self'; img-src *" 

@@ -1,19 +1,19 @@
 ---
 title: アプリケーション データ用のスケールアウト ファイル サーバーの概要
 description: Windows Server 201 R2 および Windows Server 2012 のスケールアウトファイルサーバー機能の概要について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 80bf85caac6f84e0d6da0c6139e39f3823b3a961
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: da7c90bdb1c4a2fbdb2e518f34abe9cbfef2fc29
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868710"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392035"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>アプリケーション データ用のスケールアウト ファイル サーバーの概要
 

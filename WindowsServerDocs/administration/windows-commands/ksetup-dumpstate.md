@@ -1,8 +1,8 @@
 ---
-title: ksetup:dumpstate
-description: 'Windows コマンド」のトピック * * *- '
+title: 'ksetup: dumpstate'
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e5e8f20188fc27cc08dfd37c5fdbd811925f476
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 625d05b2fea9ae58681648c64e309aa8b2a201ed
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863123"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375000"
 ---
-# <a name="ksetupdumpstate"></a>ksetup:dumpstate
+# <a name="ksetupdumpstate"></a>ksetup: dumpstate
 
 
 
-コンピューターで定義されているすべての領域の領域の設定の現在の状態を表示します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+コンピューターに定義されているすべての領域の領域設定の現在の状態を表示します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,22 +36,22 @@ ksetup /dumpstate
 
 なし
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-このコマンドの出力には、既定の領域 (コンピューターのメンバーであるドメイン) が含まれています。 このコンピューターで定義されているすべての領域とします。 以下は、各領域に含まれています。
--   すべてのキー配布センター (Kdc) この領域に関連付けられています。
--   すべての**セット レルム**この領域のフラグ
+このコマンドの出力には、既定の領域 (コンピューターがメンバーとなっているドメイン) と、このコンピューターで定義されているすべての領域が含まれます。 各領域には次のものが含まれます。
+-   この領域に関連付けられているすべてのキー配布センター (Kdc)
+-   この領域のすべての**設定領域**フラグ
 -   KDC パスワード
 
-このコマンドで DNS 検出によって、またはコマンドで指定されたドメイン名が表示されない**ksetup/domain**します。
+このコマンドでは、DNS の検出またはコマンド**ksetup/domain**によって指定されたドメイン名は表示されません。
 
-このコマンドでは、コマンドを使用して設定されているコンピューターのパスワードは表示されません**ksetup/setcomputerpassword**します。
+このコマンドでは、 **ksetup/setcomputerpassword**コマンドを使用して設定されたコンピューターパスワードは表示されません。
 
-**Ksetup**と同じ出力を生成**ksetup/dumpstate**します。
+**Ksetup**は、 **Ksetup/dumpstate**と同じ出力を生成します。
 
 ## <a name="BKMK_Examples"></a>例
 
-コンピューターの Kerberos 領域の構成のほとんどを検索します。
+コンピューター上のほとんどの Kerberos 領域構成を検索します。
 ```
 ksetup /dumpstate
 ```
@@ -59,4 +59,4 @@ ksetup /dumpstate
 #### <a name="additional-references"></a>その他の参照情報
 
 -   [Ksetup](ksetup.md)
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

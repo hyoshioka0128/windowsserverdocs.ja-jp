@@ -1,9 +1,9 @@
 ---
 title: DirectAccess のトラブルシューティング
-description: このトピックでは、Windows Server 2016 での DirectAccess の展開のトラブルシューティングに関する情報を提供します。
+description: このトピックでは、Windows Server 2016 での DirectAccess 展開のトラブルシューティングについて説明します。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,30 +12,30 @@ ms.topic: article
 ms.assetid: 61040e19-5960-4eb0-b612-d710627988f7
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f49d9ab0e28e84cbb46015d50778653b35f5ea85
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 3ee1eb6f9855174357242d2689567b394b75aed1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281943"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394466"
 ---
 # <a name="troubleshooting-directaccess"></a>DirectAccess のトラブルシューティング
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-リモート アクセス (DirectAccess) の問題のトラブルシューティングを行うこれらの手順に従います。  
+リモートアクセス (DirectAccess) の問題のトラブルシューティングを行うには、次の手順に従います。  
   
 |||  
 |-|-|  
 |**問題**|**解決方法**|  
-|リモート アクセス管理コンソールは、DirectAccess の構成を表示できません。|**不足している構成情報を復元するには**<br />マルチサイト展開のトラブルシューティングを行う場合は、エントリ ポイントに最も近いドメイン コント ローラーがあることを確認します。<br />-を使用して、 **Get DAEntrypointDC**エントリ ポイントに最も近いドメイン コント ローラーの名前を取得するコマンドレットです。 ドメイン コント ローラーが実行されていない場合は、使用、 **Set-daentrypointdc**コマンドレットをもう 1 つのドメイン コント ローラー をポイントします。<br />-実行**gpresult**サーバーが DirectAccess グループ ポリシー オブジェクトを取得するように、サーバーで管理者特権でコマンド プロンプトからです。<br />-ユーザー インターフェイス (UI) のログ記録を有効にします。<br />-Windows PowerShell のログ記録を開始する、次のコマンドを使います。<pre>logman create trace ETWTrace -ow -o c:\ETWTrace.etl -p {AAD4C46D-56DE-4F98-BDA2-B5EAEBDD2B04} 0xffffffffffffffff 0xff -nb 16 16 -bs 1024 -mode 0x2 -max 2048 -ets <br />logman update trace ETWTrace -p {62DFF3DA-7513-4FCA-BC73-25B111FBB1DB} 0xffffffffffffffff 0xff -ets</pre><repro>-終了し、ユーザー インターフェイスを閉じてください。<br />-Windows Powershell のログ記録を無効にします。 イベント トレース ログ ファイルを収集します。 またからのすべてのログを収集、 **%windir%/tracing**フォルダー。|  
-|DirectAccess の構成の適用が失敗しました。|**DirectAccess の構成を更新するには**<br />マルチサイト展開のトラブルシューティングを行う場合は、エントリ ポイントに最も近いドメイン コント ローラーがあることを確認します。<br />-を使用して、 **Get DAEntrypointDC**エントリ ポイントに最も近いドメイン コント ローラーの名前を取得するコマンドレットです。 ドメイン コント ローラーが実行されていない場合は、使用、 **Set-daentrypointdc**コマンドレットをもう 1 つのドメイン コント ローラー をポイントします。<br />-Windows Powershell のログ記録を開始する、次のコマンドを使います。<br /><pre>logman create trace ETWTrace -ow -o c:\ETWTrace.etl -p {AAD4C46D-56DE-4F98-BDA2-B5EAEBDD2B04} 0xffffffffffffffff 0xff -nb 16 16 -bs 1024 -mode 0x2 -max 2048 -ets<br />logman update trace ETWTrace -p {62DFF3DA-7513-4FCA-BC73-25B111FBB1DB} 0xffffffffffffffff 0xff -ets</pre>    <repro><br />-**適用**します。<br />-障害が発生した後は、Windows Powershell のログ記録を無効にし、イベントのトレース ログを収集します。|  
-|DirectAccess が構成されているが、クライアントが内部リソースに接続できません。|**クライアント接続の問題をトラブルシューティングするには**<br />-[クリックして、**操作の状況**] タブで、リモート アクセス管理コンソールをすべてのコンポーネントが緑色のアイコンを表示することを確認してください。 できない場合は、エラーの詳細を確認し、解決の手順に従います。<br />-リモート アクセス サーバー ベスト プラクティス アナライザー (BPA) を実行します。 警告またはエラーがある場合は、問題を解決する解決手順に従ってください。|  
-|マルチサイトの構成 (、マルチサイト、追加のエントリ ポイントを有効にする。 または、エントリ ポイント ドメイン コント ローラー設定など) に関連する問題が発生してください。|次の手順では、[マルチサイト展開のトラブルシューティングを行う](https://technet.microsoft.com/library/jj554657(v=ws.11).aspx)します。|  
-|構成の状態 ダッシュ ボードのタイルは、警告またはエラーを示しています。|次の手順では、[リモート アクセス サーバーの構成配布のステータスを監視](https://technet.microsoft.com/library/jj574221(v=ws.11).aspx)します。|  
-|(例では、負荷分散を有効にするか、追加またはクラスターからサーバーを削除するときに問題があるときに、構成は失敗) の負荷分散の構成に関連する発生した問題|負荷分散または、ノードの追加を有効にされた場合にクリックしたときに、構成が更新**適用**、サーバーで、次のコマンドを実行、クラスターが正しく形成しませんでしたが、: **cmd.exe/c"reg add hklm \SYSTEM\CurrentControlSet\Services\RaMgmtSvc\Parameters/f/v DebugFlag/t REG_DWORD/d""0 xffffffff"""** インターフェイスが、新しいサーバーでログをユーザーを収集します。|  
-|操作の状況を示します、エラーまたは警告後、次の手順で、問題を解決するには|操作の状況が (などのエラーであっても後に修正) が正しくない情報を表示: 場合<br /><br />-   Enable the registry key **cmd.exe /c "reg add HKLM\SYSTEM\CurrentControlSet\Services\RaMgmtSvc\Parameters /f /v EnableTracing /t REG_DWORD /d ""5"" "** .<br />-操作の状態を更新して、ログの収集 **%windir%/tracing**します。|  
-|Windows 8 およびそれ以降の DirectAccess クライアント コンピューターは、DirectAccess 接続のステータスとして"No Internet"を報告し、ネットワーク接続状態インジケーター (NCSI) が制限された接続を報告します。|これは、DirectAccess の構成で強制トンネリングが有効になっているし、このため、IPHTTPS のみが使用されているときに発生します。 この問題を解決するは、作成し、プロキシ サーバーを構成します。 NCSI は、このプロキシ サーバーを使用してインターネット接続の確認を実行します。 静的プロキシ名前解決ポリシー テーブル (NRPT) を使用して追加する、次の手順をお勧めします。<br /><br />この手順では、コマンドを実行する前に、展開に適切な値には、すべてのドメイン名、コンピューター名、およびその他の Windows PowerShell コマンドの変数を置き換えることを確認します。<br /><br />**静的プロキシ NRPT ルールを構成します。**<br />1. 表示、"."NRPT 規則: `Get-DnsClientNrptRule -GpoName "corp.example.com\DirectAccess Client Settings" -Server <DomainControllerNetBIOSName>`<br />2. 名前 (GUID) に注意してください、"."NRPT 規則です。 (GUID) という名の先頭に**DA - {0}.}**<br />3.プロキシを設定します"."NRPT 規則を**proxy.corp.example.com:8080**:  `Set-DnsClientNrptRule -Name "DA-{..}" -Server <DomainControllerNetBIOSName> -GPOName "corp.example.com\DirectAccess Client Settings" -DAProxyServerName "proxy.corp.example.com:8080" -DAProxyType "UseProxyName"`<br />4。表示、"."NRPT ルールを実行して、もう一度`Get-DnsClientNrptRule`、いることを確認および**ProxyFQDN:port**が正しく構成されました。<br />5。実行してグループ ポリシーを更新`gpupdate /force`DirectAccess クライアント、クライアントが内部的には、接続されている場合、表示 NRPT を使用して、`Get-DnsClientNrptPolicy`いることを確認し、"."ルールの表示**ProxyFQDN:port**します。|  
+|リモートアクセス管理コンソールで DirectAccess 構成を表示できない|**不足している構成情報を復元するには**<br />-マルチサイト展開のトラブルシューティングを行う場合は、エントリポイントに最も近いドメインコントローラーが使用可能であることを確認します。<br />- **Set-daentrypointdc**コマンドレットを使用して、エントリポイントに最も近いドメインコントローラーの名前を取得します。 ドメインコントローラーが実行されていない場合は、 **set-daentrypointdc**コマンドレットを使用して別のドメインコントローラーを指定します。<br />-サーバーで管理者特権でのコマンドプロンプトから**gpresult**を実行し、サーバーが DirectAccess グループポリシーオブジェクトを取得していることを確認します。<br />-ユーザーインターフェイス (UI) のログ記録を有効にします。<br />-次のコマンドを使用して、Windows PowerShell ログを開始します。<pre>logman create trace ETWTrace -ow -o c:\ETWTrace.etl -p {AAD4C46D-56DE-4F98-BDA2-B5EAEBDD2B04} 0xffffffffffffffff 0xff -nb 16 16 -bs 1024 -mode 0x2 -max 2048 -ets <br />logman update trace ETWTrace -p {62DFF3DA-7513-4FCA-BC73-25B111FBB1DB} 0xffffffffffffffff 0xff -ets</pre><repro>-ユーザーインターフェイスを閉じて再度開きます。<br />-Windows Powershell のログ記録を無効にします。 イベントトレースログファイルを収集します。 また、 **% windir%/トレース**フォルダーからすべてのログを収集します。|  
+|DirectAccess 構成の適用に失敗する|**DirectAccess 構成を更新するには**<br />-マルチサイト展開のトラブルシューティングを行う場合は、エントリポイントに最も近いドメインコントローラーが使用可能であることを確認します。<br />- **Set-daentrypointdc**コマンドレットを使用して、エントリポイントに最も近いドメインコントローラーの名前を取得します。 ドメインコントローラーが実行されていない場合は、 **set-daentrypointdc**コマンドレットを使用して別のドメインコントローラーを指定します。<br />-次のコマンドを使用して、Windows Powershell ログを開始します。<br /><pre>logman create trace ETWTrace -ow -o c:\ETWTrace.etl -p {AAD4C46D-56DE-4F98-BDA2-B5EAEBDD2B04} 0xffffffffffffffff 0xff -nb 16 16 -bs 1024 -mode 0x2 -max 2048 -ets<br />logman update trace ETWTrace -p {62DFF3DA-7513-4FCA-BC73-25B111FBB1DB} 0xffffffffffffffff 0xff -ets</pre>    <repro><br />**[適用]** をクリックします。<br />-エラーが発生した後、Windows Powershell のログ記録を無効にし、イベントトレースログを収集します。|  
+|DirectAccess は構成されていますが、クライアントが内部リソースに接続できません|**クライアント接続の問題のトラブルシューティングを行うには**<br />-リモートアクセス管理コンソールの **[操作の状態]** タブをクリックし、すべてのコンポーネントに緑色のアイコンが表示されていることを確認します。 それ以外の場合は、エラーの詳細を確認し、解決手順に従います。<br />-リモートアクセスサーバーベストプラクティスアナライザー (BPA) を実行します。 警告またはエラーが発生した場合は、解決手順に従って問題を解決します。|  
+|マルチサイト構成に関連する問題の検出 (マルチサイトの有効化、エントリポイントの追加、エントリポイントのドメインコントローラーの設定など)|「[マルチサイト展開のトラブルシューティング](https://technet.microsoft.com/library/jj554657(v=ws.11).aspx)」の手順に従います。|  
+|ダッシュボードの [構成の状態] タイルで警告またはエラーが表示される|「[リモートアクセスサーバーの構成配布ステータスを監視](https://technet.microsoft.com/library/jj574221(v=ws.11).aspx)する」の手順に従います。|  
+|負荷分散の構成に関連する問題 (たとえば、負荷分散を有効にしたときに構成が失敗する、またはクラスターのサーバーを追加または削除するときに問題が発生する)|負荷分散を有効にした場合、またはノードを追加したときに、 **[適用]** をクリックしたときに更新された構成が表示されていても、クラスターがサーバー上で正しく形成されなかった場合は、 **cmd.exe/c "reg add HKLM\SYSTEM\CurrentControlSet\" コマンドを実行します。Services\RaMgmtSvc\Parameters/f/v DebugFlag/t REG_DWORD/d "" 0xffffffff "" "** 。新しいサーバー上のユーザーインターフェイスログを収集します。|  
+|操作の状態は、次の手順を実行してエラーまたは警告を表示し、状況を修正します。|操作の状態に誤った情報 (修正後もエラーなど) が表示されている場合は、次のようになります。<br /><br />-レジストリキー **cmd.exe/c "reg add HKLM\SYSTEM\CurrentControlSet\Services\RaMgmtSvc\Parameters/f/V EnableTracing/T REG_DWORD/d" "5" "** " を有効にします。<br />-操作の状態を更新し、 **% windir%/トレース**からログを収集します。|  
+|Windows 8 以降の DirectAccess クライアントコンピューターは、DirectAccess 接続の状態として "No Internet" を報告し、ネットワーク接続状態インジケーター (NCSI) は限られた接続性を報告します。|これは、DirectAccess 構成で強制トンネリングが有効になっている場合に発生する可能性があります。そのため、IPHTTPS のみが使用されています。 この問題を解決するには、プロキシサーバーを作成して構成します。 次に、NCSI はプロキシサーバーを使用して、インターネット接続チェックを実行します。 次の手順に従って、名前解決ポリシーテーブル (NRPT) に静的プロキシを追加することをお勧めします。<br /><br />この手順のコマンドを実行する前に、すべてのドメイン名、コンピューター名、およびその他の Windows PowerShell コマンド変数を、展開に適した値に置き換えてください。<br /><br />**NRPT 規則の静的プロキシの構成**<br />1. "." を表示します。NRPT ルール: `Get-DnsClientNrptRule -GpoName "corp.example.com\DirectAccess Client Settings" -Server <DomainControllerNetBIOSName>`<br />2. "." の名前 (GUID) に注意してください。NRPT ルール。 名前 (GUID) は、 **DA-{..}** で始まる必要があります<br />3."." にプロキシを設定します。NRPT ルールから**proxy.corp.example.com:8080**: `Set-DnsClientNrptRule -Name "DA-{..}" -Server <DomainControllerNetBIOSName> -GPOName "corp.example.com\DirectAccess Client Settings" -DAProxyServerName "proxy.corp.example.com:8080" -DAProxyType "UseProxyName"`<br />4。"." を表示します。@No__t-0 を実行して NRPT ルールを再実行し、 **Proxyfqdn: port**が正しく構成されていることを確認します。<br />5。クライアントが内部で接続されているときに DirectAccess クライアントで `gpupdate /force` を実行してグループポリシーを更新し、`Get-DnsClientNrptPolicy` を使用して NRPT を表示し、"." 規則に**Proxyfqdn: port**が表示されていることを確認します。|  
   
 
 

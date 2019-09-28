@@ -1,18 +1,18 @@
 ---
 title: 仮想化環境でのボトルネックの検出
 description: Hyper-v のパフォーマンスに関する潜在的なボトルネックを検出して解決する方法
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: a0d6d263b344cde412ee4dd3caa80305742d56e7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 53ec6159d177284773f17a05a37dd89184ef3c12
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866598"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370124"
 ---
 # <a name="detecting-bottlenecks-in-a-virtualized-environment"></a>仮想化環境でのボトルネックの検出
 
@@ -28,15 +28,15 @@ ms.locfileid: "70866598"
 
 ホストから次のパフォーマンスカウンターを使用できます。
 
--   論理プロセッサ使用率\\-hyper-v ハイパーバイザー論理プロセッサ (\*)\\% 合計実行時間
+-   論理プロセッサ使用率-\\Hyper ハイパーバイザー論理プロセッサ (\*) \\% 合計実行時間
 
--   仮想プロセッサ使用率\\-hyper-v ハイパーバイザー仮想プロセッサ (\*)\\% 合計実行時間
+-   仮想プロセッサ使用率-\\Hyper ハイパーバイザー仮想プロセッサ (\*) \\% 合計実行時間
 
--   ルート仮想プロセッサ使用率\\-hyper-v ハイパーバイザールート仮想プロセッサ (\*)\\% 合計実行時間
+-   ルート仮想プロセッサ使用率-\\Hyper ハイパーバイザールート仮想プロセッサ (\*) \\% 合計実行時間
 
-**Hyper-v ハイパーバイザー論理プロセッサ (\_total)\\% total Runtime**カウンターが 90% を超えている場合、ホストは過負荷になります。 より多くの処理能力を追加するか、一部の仮想マシンを別のホストに移動する必要があります。
+**Hyper-v ハイパーバイザー論理プロセッサ (\_total) \\% のランタイム**カウンターの合計が 90% を超えている場合、ホストは過負荷になります。 より多くの処理能力を追加するか、一部の仮想マシンを別のホストに移動する必要があります。
 
-**Hyper-v ハイパーバイザー仮想プロセッサ (VM Name: VP x)\\% Total Runtime**カウンタがすべての仮想プロセッサで 90% を超えている場合は、次の操作を行う必要があります。
+**Hyper-v ハイパーバイザー仮想プロセッサ (VM 名: VP x) \\% の合計ランタイム**カウンターがすべての仮想プロセッサで 90% を超えている場合は、次の操作を行う必要があります。
 
 -   ホストが過負荷になっていないことを確認する
 
@@ -44,7 +44,7 @@ ms.locfileid: "70866598"
 
 -   仮想マシンにさらに仮想プロセッサを割り当てる
 
-**Hyper-v ハイパーバイザー仮想プロセッサ (VM Name: VP x)\\% Total Runtime**カウンターがすべてではなく、一部の仮想プロセッサに対して 90% を超えている場合は、次の操作を行う必要があります。
+**Hyper-v ハイパーバイザー仮想プロセッサ (VM 名: VP x) \\% の合計ランタイム**カウンターがすべてではなく、一部の仮想プロセッサに対して 90% を超えている場合は、次の操作を行う必要があります。
 
 -   ワークロードがネットワークを集中的に使用する場合は、vRSS の使用を検討する必要があります。
 
@@ -52,7 +52,7 @@ ms.locfileid: "70866598"
 
 -   ワークロードが記憶域を集中的に使用する場合は、仮想 NUMA を有効にし、さらに仮想ディスクを追加する必要があります。
 
-すべてで **\\** はなく、一部の仮想プロセッサと**プロセッサ\\(x)% Interrupt time と processor (x)\\% DPC time について、hyper-v ハイパーバイザールート仮想プロセッサ (ルート VP x)% Total Runtime counter が 90% を超えている場合**カウンタは、**平方根仮想プロセッサ (ルート VP x)\\% Total Runtime**カウンターの値に加算されます。ネットワークアダプターで VMQ を有効にする必要があります。
+**Hyper-v ハイパーバイザールート仮想プロセッサ (ルート VP x) \\% の合計ランタイム**カウンターがすべてではなく、一部の仮想プロセッサとプロセッサ (x) に対して 90% を超えている場合、 **\\% Interrupt time and processor (x) \\% DPC Time**カウンターおおよそ、**ルート仮想プロセッサ (ルート VP x) \\% の合計ランタイム**カウンターの値を加算し、ネットワークアダプターで VMQ を有効にする必要があります。
 
 ## <a name="memory-bottlenecks"></a>メモリのボトルネック
 

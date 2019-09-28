@@ -1,9 +1,9 @@
 ---
 title: MultiPoint Services の仮想化のサポート
-description: MultiPoint Services、HYPER-V を使用する方法について説明します
+description: Hyper-v で MultiPoint Services を使用する方法について説明します。
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,30 +13,30 @@ ms.assetid: 3f0864b8-a087-4890-94ef-05efbd3c4241
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 06d518dcea154ac2bab49a7d0e83a90f96be6e44
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7b94b4a4015e58402a62cf74f9abbb3eb2333f26
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872523"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395185"
 ---
 # <a name="multipoint-services-virtualization-support"></a>MultiPoint Services の仮想化のサポート
-MultiPoint Services では、2 つの方法で、Hyper-v の役割をサポートします。  
+MultiPoint Services は、次の2つの方法で Hyper-v の役割をサポートします。  
   
--   MultiPoint Services は、HYPER-V を実行しているサーバー上のゲスト オペレーティング システムとして展開できます。  
+-   MultiPoint サービスは、Hyper-v を実行しているサーバー上のゲストオペレーティングシステムとして展開できます。  
   
 -   MultiPoint Services は、仮想化サーバーとして使用できます。   
   
-MultiPoint Services を仮想マシンで実行されているオペレーティング システムを管理する HYPER-V ツールの使用を提供します。 これらのツールは、チェックポイントとロールバックの機能を含めるし、エクスポートし、仮想マシンをインポートすることができます。 大規模なインストールの場合、1 台の物理サーバーで複数の MultiPoint Services の仮想コンピューターを実行してサーバーを統合できます。 次のようなシナリオが想定されます。  
+仮想マシンで MultiPoint Services を実行すると、Hyper-v ツールを使用してオペレーティングシステムを管理できます。 これらのツールには、チェックポイント機能とロールバック機能が含まれており、仮想マシンのエクスポートとインポートを行うことができます。 大規模なインストールでは、1台の物理サーバー上で複数の MultiPoint Services 仮想コンピューターを実行してサーバーを統合できます。 次のようなシナリオが想定されます。  
   
--   1 つのクラスルームまたはラボは、20 を超えるシートを持っています。 MultiPoint Services を実行している複数の物理コンピューターを展開するのではなく、1 台の物理コンピューター上の複数の仮想マシンをデプロイできます。  
+-   1つのクラスルームまたはラボに20台を超えるシートがあります。 MultiPoint Services を実行する複数の物理コンピューターを展開するのではなく、複数の仮想マシンを1台の物理コンピューターに展開することができます。  
   
     > [!NOTE]  
-    > 物理または仮想、単一の MultiPoint マネージャー コンソールを使用するかどうかは、複数の MultiPoint サーバーを管理できます。  
+    > 1つの MultiPoint マネージャーコンソールを使用して、物理または仮想の複数の MultiPoint server を管理できます。  
   
--   MultiPoint server は、同じ物理コンピューター上の別のサーバー インフラストラクチャと仮想マシンで実行しています。 その場合はこのサーバー インフラストラクチャは、ドメイン、セキュリティ、およびネットワークのデータを一元化します。 MultiPoint サーバーでは、リモート デスクトップ サービスを提供し、デスクトップの一元化します。  
+-   MultiPoint server は、同じ物理コンピューター上の別のサーバーインフラストラクチャを持つ仮想マシン上で実行されています。 この場合、このサーバーインフラストラクチャによって、ネットワークのドメイン、セキュリティ、およびデータが一元化されます。 MultiPoint server は、デスクトップをリモートデスクトップサービスし、一元化します。  
   
 > [!NOTE]  
-> 仮想マシンで MultiPoint Services を実行するときに、USB over Ethernet と RDP クライアント ステーションがサポートされます。 直接のビデオと USB ゼロ クライアント接続ステーションがサポートされていません。  
+> 仮想マシンで MultiPoint Services を実行している場合は、USB over Ethernet および RDP クライアントステーションがサポートされています。 ダイレクトビデオと USB ゼロクライアント接続ステーションはサポートされていません。  
   
-HYPER-V ロールの詳細については、次を参照してください。 [Hyper-v](../../virtualization/hyper-v/hyper-v-on-windows-server.md)します。  
+Hyper-v の役割の詳細については、「 [hyper-v](../../virtualization/hyper-v/hyper-v-on-windows-server.md)」を参照してください。  

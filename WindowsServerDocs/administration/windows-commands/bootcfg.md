@@ -1,8 +1,8 @@
 ---
 title: bootcfg
-description: Windows コマンド」のトピック**bootcfg** - 構成、クエリ、または Boot.ini ファイルの設定を変更します。
+description: '**Bootcfg**の Windows コマンドのトピック-boot.ini ファイルの設定の構成、クエリ、または変更を行います。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 79a1c0e22a3b162ba9492c80d114b2d5b943c744
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 2d66296327a2221093e5434f69e15e7c55df1f6b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867023"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379846"
 ---
 # <a name="bootcfg"></a>bootcfg
 
@@ -32,14 +32,14 @@ bootcfg <parameter> [arguments...]
 ## <a name="parameters"></a>パラメーター  
 |パラメーター|説明|  
 |-------|--------|  
-|[bootcfg addsw](bootcfg-addsw.md)|オペレーティング システムの読み込みオプションの指定したオペレーティング システム エントリを追加します。|  
-|[bootcfg copy](bootcfg-copy.md)|コマンド ライン オプションを追加することができます、既存のブート エントリのコピーを作成します。|  
-|[bootcfg dbg1394](bootcfg-dbg1394.md)|指定したオペレーティング システム エントリの 1394 ポート デバッグを構成します。|  
-|[bootcfg debug](bootcfg-debug.md)|追加または指定したオペレーティング システム エントリのデバッグ設定を変更します。|  
-|[bootcfg default](bootcfg-default.md)|既定値として指定するオペレーティング システム エントリを指定します。|  
-|[bootcfg delete](bootcfg-delete.md)|オペレーティング システム エントリを削除、 **[オペレーティング システム]** Boot.ini ファイルのセクション。|  
-|[bootcfg ems](bootcfg-ems.md)|ユーザーを追加またはリモート コンピューターに、緊急管理サービス コンソールのリダイレクトの設定を変更できます。|  
-|[bootcfg query](bootcfg-query.md)|クエリを実行し、[ブート ローダー] が表示されますおよび **[オペレーティング システム]** Boot.ini からエントリをセクションします。|  
-|[bootcfg raw](bootcfg-raw.md)|オペレーティング システムのエントリを文字列として指定するオペレーティング システムの読み込みオプションを追加します、 **[オペレーティング システム]** Boot.ini ファイルのセクション。|  
-|[bootcfg rmsw](bootcfg-rmsw.md)|オペレーティング システムの読み込みオプションの指定したオペレーティング システム エントリを削除します。|  
-|[bootcfg timeout](bootcfg-timeout.md)|オペレーティング システムのタイムアウト値を変更します。|  
+|[bootcfg addsw](bootcfg-addsw.md)|指定したオペレーティングシステムエントリのオペレーティングシステムの読み込みオプションを追加します。|  
+|[bootcfg copy](bootcfg-copy.md)|既存のブートエントリのコピーを作成します。これには、コマンドラインオプションを追加できます。|  
+|[bootcfg dbg1394](bootcfg-dbg1394.md)|指定されたオペレーティングシステムエントリに対して1394ポートデバッグを構成します。|  
+|[bootcfg debug](bootcfg-debug.md)|指定したオペレーティングシステムエントリのデバッグ設定を追加または変更します。|  
+|[bootcfg default](bootcfg-default.md)|既定値として指定するオペレーティングシステムエントリを指定します。|  
+|[bootcfg delete](bootcfg-delete.md)|boot.ini ファイルの **[オペレーティングシステム]** セクションにあるオペレーティングシステムのエントリを削除します。|  
+|[bootcfg ems](bootcfg-ems.md)|ユーザーが、緊急管理サービスコンソールをリモートコンピューターにリダイレクトするための設定を追加または変更できるようにします。|  
+|[bootcfg query](bootcfg-query.md)|Boot.ini の [ブートローダー] セクションと **[オペレーティングシステム]** セクションのエントリを照会して表示します。|  
+|[bootcfg raw](bootcfg-raw.md)|boot.ini ファイルの **[オペレーティングシステム]** セクションのオペレーティングシステムエントリに、文字列として指定されたオペレーティングシステムの読み込みオプションを追加します。|  
+|[bootcfg rmsw](bootcfg-rmsw.md)|指定したオペレーティングシステムエントリのオペレーティングシステムの読み込みオプションを削除します。|  
+|[bootcfg timeout](bootcfg-timeout.md)|オペレーティングシステムのタイムアウト値を変更します。|  

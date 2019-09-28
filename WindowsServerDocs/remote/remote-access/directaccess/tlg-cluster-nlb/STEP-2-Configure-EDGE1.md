@@ -1,9 +1,9 @@
 ---
-title: 手順 2 EDGE1 を構成します。
-description: このトピックは一部のテスト ラボ ガイド - Windows Server 2016 で Windows NLB を使用するクラスターでの DirectAccess のデモンストレーション
+title: 手順 2 EDGE1 を構成する
+description: このトピックは、「windows Server 2016 用 Windows NLB を使用するクラスターでの DirectAccess のデモンストレーション」のテストラボガイドに含まれています。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,31 +12,31 @@ ms.topic: article
 ms.assetid: 84457351-1ca7-4e7c-8e2c-53d55b1fcdc0
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 03d7d85f730cf792238aef372337030861cd6a9d
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: b9eb37433e26c174ccae85482163c976577ff479
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281673"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388515"
 ---
-# <a name="step-2-configure-edge1"></a>手順 2 EDGE1 を構成します。
+# <a name="step-2-configure-edge1"></a>手順 2 EDGE1 を構成する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-次の手順は、DirectAccess サーバーで実行されます。
+DirectAccess サーバーでは、次の手順が実行されます。
 
 ## <a name="to-configure-directaccess-on-edge1"></a>EDGE1 で DirectAccess を構成するには
   
-1.  **開始**画面で「**RAMgmtUI.exe**、し、ENTER キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  **スタート**画面で「**ramgmtui.exe**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
   
-2.  左側のウィンドウで、リモート アクセス管理コンソールで次のようにクリックします。**構成**します。  
+2.  リモートアクセス管理コンソールの左側のウィンドウで、 **[構成]** をクリックします。  
   
-3.  コンソールの中央のペインでの**手順 2 リモート アクセス サーバー**領域で、をクリックして**編集**。  
+3.  コンソールの中央のウィンドウの **[手順2リモートアクセスサーバー]** 領域で、 **[編集]** をクリックします。  
   
-4.  **リモート アクセス サーバーのセットアップ**ウィザード、をクリックして**プレフィックスの構成**します。 **プレフィックスの構成** ページの  **DirectAccess クライアント コンピューターに割り当てられている IPv6 プレフィックス**、入力**2001:db8:1:1000::/59**、 をクリックし、 **次へ**.  
+4.  **リモートアクセスサーバーのセットアップ**ウィザードで、 **[プレフィックスの構成]** をクリックします。 **[プレフィックスの構成]** ページの **[DirectAccess クライアントコンピューターに割り当てられた IPv6 プレフィックス]** に、「 **2001: db8: 1: 1000::/59**」と入力し、 **[次へ]** をクリックします。  
   
-5.  **[Finish]** (完了) をクリックします。  
+5.  **[完了]** をクリックします。  
   
-6.  コンソールの中央のペインで次のようにクリックします。**完了**します。  
+6.  コンソールの中央のウィンドウで、 **[完了]** をクリックします。  
   
-7.  **リモート アクセスのレビュー**ダイアログ ボックスで、構成設定を確認し、順にクリックします**適用**します。 **[リモートアクセス セットアップ ウィザードの設定を適用しています]** ダイアログ ボックスで、 **[閉じる]** をクリックします。
+7.  **[リモートアクセスの確認]** ダイアログボックスで、構成設定を確認し、 **[適用]** をクリックします。 **[リモートアクセス セットアップ ウィザードの設定を適用しています]** ダイアログ ボックスで、 **[閉じる]** をクリックします。

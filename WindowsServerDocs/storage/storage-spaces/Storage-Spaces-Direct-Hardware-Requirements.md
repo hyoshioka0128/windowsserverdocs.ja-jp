@@ -1,6 +1,6 @@
 ---
 title: 記憶域スペース ダイレクトのハードウェア要件
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 description: 記憶域スペース ダイレクトをテストするための最小ハードウェア要件です。
 ms.author: eldenc
 ms.manager: eldenc
@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 08/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3f8bff39550108b0417b9513bee4a248dca432
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 63a7152ec6abb318a096ac321ae7ccfaaef4d199
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546373"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402940"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>記憶域スペース ダイレクトのハードウェア要件
 
@@ -33,7 +33,7 @@ ms.locfileid: "69546373"
 
 ![SDDC が表示されている Windows Server カタログのスクリーンショット](media/hardware-requirements/sddc-aqs.png)
 
-完全に構成されたクラスター (サーバー、ネットワーク、および記憶域) は、フェールオーバークラスターマネージャーのウィザードまたは`Test-Cluster` PowerShell の[コマンドレット](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)に従って、すべての[クラスター検証テスト](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)に合格する必要があります。
+完全に構成されたクラスター (サーバー、ネットワーク、および記憶域) は、フェールオーバークラスターマネージャーのウィザードに従って、または PowerShell の @no__t[コマンドレット](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)を使用して、すべての[クラスター検証テスト](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)に合格する必要があります。
 
 また、次の要件が適用されます。
 

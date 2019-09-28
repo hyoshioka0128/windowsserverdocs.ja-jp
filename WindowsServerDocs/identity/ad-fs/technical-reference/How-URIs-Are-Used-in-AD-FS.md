@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: edd708985b8caac30b8788b12237430c1711f22f
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 2ae91b16448c5acd61712332310544c1fd66789f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865448"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385489"
 ---
 # <a name="how-uris-are-used-in-ad-fs"></a>AD FS での URI の使用
 Uniform Resource Identifier \(URI\)は、一意の識別子として使用される文字列です。  AD FS では、パートナー ネットワークのアドレスと構成オブジェクトの両方を識別するために URI を使用します。  パートナー ネットワーク アドレスの識別に使用されるときは、URI は常に URL です。  構成オブジェクトの識別に使用されるときは、URI は URN または URL の場合があります。  URI についての一般的な情報については、 [RFC 2396](https://go.microsoft.com/fwlink/?LinkId=48289) および [RFC 3986](https://go.microsoft.com/fwlink/?LinkId=90453)を参照してください。  

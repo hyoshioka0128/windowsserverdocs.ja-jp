@@ -2,18 +2,18 @@
 title: 紹介におけるターゲットの順序指定方法を設定する
 description: この記事では、紹介におけるターゲットの順序指定方法を設定する方法について説明します。
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 52568944a98bed7960b37335b2e3cbbde61479ca
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bb42a98666941c5dfa50a8dfbf45635ad25dc767
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447202"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386137"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>紹介におけるターゲットの順序指定方法を設定する
 
@@ -40,7 +40,7 @@ ms.locfileid: "66447202"
 >    -   **EnableInsiteReferrals** の場合、 **"クライアント サイト外のターゲットを除外する"** 順序指定方法が指定されます。
 >    -   いずれかのパラメーターを省略すると、 **"ランダム順序"** の参照順序指定方法が指定されます。 
 
-DFSN の Windows PowerShell モジュールは、Windows Server 2012 で導入されました。
+DFSN Windows PowerShell モジュールは、Windows Server 2012 で導入されました。
    
 ## <a name="to-set-the-ordering-method-for-targets-in-folder-referrals"></a>フォルダー紹介におけるターゲットの順序指定方法を設定するには
 
@@ -67,7 +67,7 @@ DFSN の Windows PowerShell モジュールは、Windows Server 2012 で導入�
 
 この方法では、ターゲットが次のように順序指定されます。
 
-1.  クライアントと同じ Active Directory ディレクトリ サービス (AD DS) サイトのターゲットには、紹介の最上部に無作為な順序で表示されます。
+1.  クライアントと同じ Active Directory Directory Services (AD DS) サイト内のターゲットは、紹介の先頭にランダムな順序で一覧表示されます。
 2.  クライアント サイト外部のターゲットは、ランダムな順序でリストされます。
 
 同じサイトのターゲット サーバーがない場合、クライアント コンピューターは、接続のコストやターゲットとの距離に関係なくランダムなターゲット サーバーに紹介されます。

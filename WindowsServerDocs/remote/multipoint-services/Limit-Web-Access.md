@@ -3,7 +3,7 @@ title: Web アクセスを制限する
 description: MultiPoint Services でインターネットへのユーザーアクセスを制限する方法について説明します。
 ms.custom: na
 ms.date: 07/08/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: 044f2fd5-5b87-42bb-ba0d-c06516ac48c8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 9f3524261e8e93439ff48a3e6666fa7680a76a29
-ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
+ms.openlocfilehash: 8e12eebd55aa066979bbcbe4d2f3e613b5876a01
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71143734"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395332"
 ---
 # <a name="limit-web-access"></a>Web アクセスを制限する
 個々のデスクトップ上のユーザーアクティビティを監視するだけでなく、管理ユーザーは、ユーザーのアクセスをブロックする web サイトや web サイトを指定することによって、特定の web サイトへのユーザーのアクセスを制限することができます。  

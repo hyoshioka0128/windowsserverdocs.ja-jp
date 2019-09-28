@@ -1,9 +1,9 @@
 ---
 title: データセンターのファイアウォール アクセス制御リスト (ACL) を構成する
-description: ネットワーク インターフェイスには、特定の Acl を適用できます。  Acl はネットワーク インターフェイスが接続されている仮想サブネットの設定も、Acl が適用されると、両方がネットワーク インターフェイスの Acl が仮想サブネット Acl より優先されます。
+description: 特定の Acl をネットワークインターフェイスに適用できます。  ネットワークインターフェイスが接続されている仮想サブネット上で Acl も設定されている場合、両方の Acl が適用されますが、ネットワークインターフェイスの Acl は仮想サブネット Acl の上位に優先されます。
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -13,76 +13,76 @@ ms.assetid: 25f18927-a63e-44f3-b02a-81ed51933187
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 77a7706e39da265eedd65342a0ccf2174ab050ea
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2e3f365a820de67dec87ea209cbfeb22d9091616
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853403"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406106"
 ---
-# <a name="configure-datacenter-firewall-access-control-lists-acls"></a>データ センターのファイアウォール アクセス制御リスト (Acl) を構成します。
+# <a name="configure-datacenter-firewall-access-control-lists-acls"></a>データセンターのファイアウォール Access Control リスト (Acl) の構成
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-ACL を作成し、仮想サブネットに割り当てられていることとは、個々 のネットワーク インターフェイスの特定の ACL を使用して、仮想サブネットでその既定の ACL をオーバーライドすることができます。  この場合、仮想ネットワークではなく、Vlan に接続されたネットワーク インターフェイスに直接、特定の Acl を適用します。 ネットワーク インターフェイスに接続されている仮想サブネットに設定される Acl があれば、両方の Acl が適用され、ネットワーク インターフェイス上の仮想サブネットの Acl の Acl の優先順位を付けます。
+ACL を作成して仮想サブネットに割り当てたら、仮想サブネット上の既定の ACL を個々のネットワークインターフェイス用に特定の ACL で上書きすることができます。  この場合は、仮想ネットワークではなく、Vlan に接続されているネットワークインターフェイスに特定の Acl を直接適用します。 ネットワークインターフェイスに接続された仮想サブネットに Acl が設定されている場合、両方の Acl が適用され、仮想サブネット Acl の上にネットワークインターフェイス Acl が優先されます。
 
 >[!IMPORTANT]
->ACL を作成および仮想ネットワークに割り当てられていないが場合を参照してください。[使用へのアクセス制御リスト (Acl) を管理データ センター ネットワーク トラフィックのフローを](Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md)に ACL を作成し、仮想サブネットに割り当てます。  
+>ACL を作成して仮想ネットワークに割り当てていない場合は、「 [Access Control リスト (acl) を使用してデータセンターのネットワークトラフィックフローを管理](Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md)し、acl を作成して仮想サブネットに割り当てる」を参照してください。  
 
-このトピックで紹介するネットワーク インターフェイスに ACL を追加する方法。 紹介する Windows PowerShell とネットワーク コント ローラーの REST API を使用してネットワーク インターフェイスから ACL を削除する方法。
+このトピックでは、ネットワークインターフェイスに ACL を追加する方法について説明します。 また、Windows PowerShell とネットワークコントローラー REST API を使用してネットワークインターフェイスから ACL を削除する方法についても説明します。
 
-- [例:ネットワーク インターフェイスに ACL を追加します。](#example-add-an-acl-to-a-network-interface)
-- [例:Windows Powershell とネットワーク コント ローラーの REST API を使用してネットワーク インターフェイスから ACL を削除します。](#example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api)
+- [例:ネットワークインターフェイス @ no__t に ACL を追加する
+- [例:Windows Powershell とネットワークコントローラー REST API @ no__t-0 を使用して、ネットワークインターフェイスから ACL を削除します。
 
 
-## <a name="example-add-an-acl-to-a-network-interface"></a>以下に例を示します。ネットワーク インターフェイスに ACL を追加します。
-この例では、仮想ネットワークに ACL を追加する方法を示します。 
+## <a name="example-add-an-acl-to-a-network-interface"></a>例:ネットワークインターフェイスに ACL を追加する
+この例では、仮想ネットワークに ACL を追加する方法について説明します。 
 
 >[!TIP]
->ネットワーク インターフェイスを作成するのと同時に ACL を追加することもできます。
+>また、ネットワークインターフェイスを作成するときに ACL を追加することもできます。
 
-1. 取得するか、ACL を追加すると、ネットワーク インターフェイスを作成します。
+1. ACL を追加するネットワークインターフェイスを取得または作成します。
  
    ```PowerShell
    $nic = get-networkcontrollernetworkinterface -ConnectionUri $uri -ResourceId "MyVM_Ethernet1"
    ```
  
-2. 取得またはネットワーク インターフェイスを追加する ACL を作成します。
+2. ネットワークインターフェイスに追加する ACL を取得または作成します。
  
    ```PowerShell
    $acl = get-networkcontrolleraccesscontrollist -ConnectionUri $uri -resourceid "AllowAllACL"
    ```
  
-3. ACL をネットワーク インターフェイスの AccessControlList プロパティに割り当てる
+3. ネットワークインターフェイスの AccessControlList プロパティに ACL を割り当てます。
  
    ```PowerShell
     $nic.properties.ipconfigurations[0].properties.AccessControlList = $acl
    ```
  
-4. ネットワーク コント ローラーにネットワーク インターフェイスを追加します。
+4. ネットワークコントローラーにネットワークインターフェイスを追加する
  
    ```
    new-networkcontrollernetworkinterface -ConnectionUri $uri -Properties $nic.properties -ResourceId $nic.resourceid
    ```
  
-## <a name="example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api"></a>以下に例を示します。Windows Powershell とネットワーク コント ローラーの REST API を使用してネットワーク インターフェイスから ACL を削除します。
-この例で紹介する ACL を削除する方法。 ACL を削除すると、既定の規則セットが、ネットワーク インターフェイスに適用されます。 既定の規則セットはすべての送信トラフィックを許可しますが、すべての着信トラフィックをブロックします。
+## <a name="example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api"></a>例:Windows Powershell とネットワークコントローラーを使用して、ネットワークインターフェイスから ACL を削除 REST API
+この例では、ACL を削除する方法について説明します。 ACL を削除すると、既定のルールセットがネットワークインターフェイスに適用されます。 既定のルールセットは、すべての送信トラフィックを許可しますが、すべての受信トラフィックをブロックします。
 
 >[!NOTE]
->以前、従う必要があるすべての受信トラフィックを許可する場合は、[例](#example-add-an-acl-to-a-network-interface)にすべての受信と送信のすべてのトラフィックを許可する ACL を追加します。
+>すべての受信トラフィックを許可する場合は、前の[例](#example-add-an-acl-to-a-network-interface)に従って、すべての受信トラフィックとすべての送信トラフィックを許可する ACL を追加する必要があります。
 
 
-1. ネットワーク インターフェイスを削除する ACL を取得します。<br>
+1. ACL を削除するネットワークインターフェイスを取得します。<br>
    ```PowerShell
    $nic = get-networkcontrollernetworkinterface -ConnectionUri $uri -ResourceId "MyVM_Ethernet1"
    ```
  
-2. $NULL を ip 構成の AccessControlList プロパティに割り当てます。<br>
+2. Ip 構成の AccessControlList プロパティに $NULL を割り当てます。<br>
    ```PowerShell
    $nic.properties.ipconfigurations[0].properties.AccessControlList = $null
    ```
  
-3. ネットワーク コント ローラーで、ネットワーク インターフェイス オブジェクトを追加します。<br>
+3. ネットワークコントローラーにネットワークインターフェイスオブジェクトを追加します。<br>
    ```PowerShell
    new-networkcontrollernetworkinterface -ConnectionUri $uri -Properties $nic.properties -ResourceId $nic.resourceid
    ```

@@ -2,31 +2,31 @@
 title: ファイル サーバーでハッシュの発行を有効にする
 description: このトピックは、BranchCache 展開ガイドの Windows Server 2016、ブランチ オフィスに WAN 帯域幅使用量を最適化するために分散され、ホスト型キャッシュ モードで BranchCache を展開する方法を示しますの一部
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 5697aefe-1dd2-4ff9-82a9-da0afc182cb3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6f7d9c286f80b8c1ad4fb2370389f1afcd16dff8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 62ebddf85a2a86b9759d970f29b3c8edbeba63f0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859743"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406467"
 ---
 # <a name="enable-hash-publication-for-file-servers"></a>ファイル サーバーでハッシュの発行を有効にする
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-1 つのファイル サーバーまたは複数のファイル サーバー上にハッシュの発行を BranchCache を有効にすることができます。  
+BranchCache ハッシュ発行は、1つのファイルサーバーで、または複数のファイルサーバー上で有効にすることができます。  
   
--   ローカル コンピューターのグループ ポリシーを使用して 1 つのファイル サーバーにハッシュの発行を有効にするのを参照してください。[非ドメイン メンバーのファイル サーバーのハッシュの発行を有効にする](../../branchcache/deploy/Enable-Hash-Publication-for-Non-Domain-Member-File-Servers.md)します。  
+-   ローカルコンピューターグループポリシーを使用して1つのファイルサーバーでハッシュの発行を有効にするには、「[ドメインメンバー以外のファイルサーバーのハッシュの発行を有効](../../branchcache/deploy/Enable-Hash-Publication-for-Non-Domain-Member-File-Servers.md)にする」を参照してください。  
   
--   ドメイン グループ ポリシーを使用して複数のファイル サーバーにハッシュの発行を有効にするのを参照してください。[ドメイン メンバーのファイル サーバーのハッシュの発行を有効にする](../../branchcache/deploy/Enable-Hash-Publication-for-Domain-Member-File-Servers.md)します。  
+-   ドメイングループポリシーを使用して複数のファイルサーバーでハッシュの発行を有効にするには、「[ドメインメンバーファイルサーバーのハッシュの発行を有効](../../branchcache/deploy/Enable-Hash-Publication-for-Domain-Member-File-Servers.md)にする」を参照してください。  
   
 > [!NOTE]  
-> 複数のファイル サーバーがあり、ハッシュの発行を有効にするすべての共有ではなく、共有、ごとのハッシュの発行を有効にする場合、トピックの手順を使用することができます[非ドメイン メンバーのファイル サーバーのハッシュの発行を有効にする](Enable-Hash-Publication-for-Non-Domain-Member-File-Servers.md).  
+> 複数のファイルサーバーがあり、共有ごとにハッシュの発行を有効にする場合は、「[ドメインメンバー以外のファイルサーバーに対して](Enable-Hash-Publication-for-Non-Domain-Member-File-Servers.md)ハッシュの発行を有効にする」のトピックに記載されている手順を使用できます。  
   
 
 

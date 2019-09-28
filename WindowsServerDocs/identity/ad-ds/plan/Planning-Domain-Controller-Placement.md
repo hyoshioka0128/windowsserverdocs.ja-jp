@@ -7,37 +7,37 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 68406d4973dd585bf0a98562c987c1b1512c095c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ff0cba67454080db7cca4b012ae0a2d5cb40e412
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883363"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408756"
 ---
 # <a name="planning-domain-controller-placement"></a>ドメイン コント ローラー配置の計画
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-すべてのサイト トポロジの設計に使用されるネットワーク情報を収集した後は、フォレスト ルート ドメイン コント ローラー、地域別のドメイン コント ローラー、操作マスターの役割の所有者などのドメイン コント ローラーを配置する位置を計画し、グローバル カタログ サーバー。  
+サイトトポロジの設計に使用するすべてのネットワーク情報を収集したら、ドメインコントローラーを配置する場所を計画します。これには、フォレストルートドメインコントローラー、地域ドメインコントローラー、操作マスターの役割所有者などが含まれます。グローバルカタログサーバー。  
   
-Windows Server 2008 を活用することも読み取り専用ドメイン コント ローラー (Rodc)。 RODC は、Active Directory データベースの読み取り専用のパーティションをホストするドメイン コント ローラーの新しい型です。 RODC は、アカウント パスワードを除いて、すべての Active Directory オブジェクトと、書き込み可能なドメイン コント ローラーを保持する属性を保持します。 ただし、RODC に格納されているデータベースに変更を行うことはできません。 変更は、書き込み可能なドメイン コント ローラーに対して実行され、RODC にレプリケートされるする必要があります。  
+Windows Server 2008 では、読み取り専用ドメインコントローラー (Rodc) を利用することもできます。 RODC は、Active Directory データベースの読み取り専用パーティションをホストする新しい種類のドメインコントローラーです。 RODC は、アカウント パスワードを除いて、すべての Active Directory オブジェクトと、書き込み可能なドメイン コント ローラーを保持する属性を保持します。 ただし、RODC に格納されているデータベースに変更を行うことはできません。 変更は、書き込み可能なドメイン コント ローラーに対して実行され、RODC にレプリケートされるする必要があります。  
   
-RODC はリモートで展開するには、主に設計されていますか、ブランチ オフィス環境は、通常は比較的少数のユーザー、物理的なセキュリティの低下、ハブ サイト、および人員についての知識を比較的不適切なネットワーク帯域幅があります。技術 (IT)。 セキュリティの向上とネットワーク リソースにアクセスをより効率的では、Rodc の結果を展開します。 RODC の機能の詳細については、AD DS を参照してください。読み取り専用ドメイン コント ローラー ([https://go.microsoft.com/fwlink/?LinkID=106616](https://go.microsoft.com/fwlink/?LinkID=106616))。 RODC をデプロイする方法については、読み取り専用ドメイン コント ローラーのステップ バイ ステップ ガイドを参照してください。 ([https://go.microsoft.com/fwlink/?LinkID=92728](https://go.microsoft.com/fwlink/?LinkID=92728))。  
+RODC は、主にリモートまたはブランチオフィス環境で展開されるように設計されています。これには、通常、ユーザー数が比較的少なく、物理的なセキュリティが不十分で、ハブサイトへのネットワーク帯域幅が比較的少なく、情報に関する知識が限られている人がいます。テクノロジ (IT)。 Rodc を展開すると、セキュリティが強化され、ネットワークリソースにより効率的にアクセスできるようになります。 RODC の機能の詳細については、AD DS を参照してください。読み取り専用ドメインコントローラー ([https://go.microsoft.com/fwlink/?LinkID=106616](https://go.microsoft.com/fwlink/?LinkID=106616))。 RODC を展開する方法の詳細については、「読み取り専用ドメインコントローラーのステップバイステップガイド ([https://go.microsoft.com/fwlink/?LinkID=92728](https://go.microsoft.com/fwlink/?LinkID=92728))」を参照してください。  
   
 > [!NOTE]  
-> このガイドでは、適切な数のドメイン コント ローラーと各サイトで表される各ドメインのドメイン コント ローラーのハードウェア要件を特定する方法を説明していません。  
+> このガイドでは、各サイトで表される各ドメインについて、適切な数のドメインコントローラーおよびドメインコントローラーのハードウェア要件を決定する方法については説明しません。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   
--   [フォレスト ルート ドメイン コント ローラー配置の計画](../../ad-ds/plan/Planning-Forest-Root-Domain-Controller-Placement.md)  
+-   [フォレスト ルート ドメイン コントローラーの配置を計画する](../../ad-ds/plan/Planning-Forest-Root-Domain-Controller-Placement.md)  
   
--   [地域ドメイン コント ローラーの配置の計画](../../ad-ds/plan/Planning-Regional-Domain-Controller-Placement.md)  
+-   [地域ドメインコントローラーの配置の計画](../../ad-ds/plan/Planning-Regional-Domain-Controller-Placement.md)  
   
--   [グローバル カタログ サーバーの配置の計画](../../ad-ds/plan/Planning-Global-Catalog-Server-Placement.md)  
+-   [グローバル カタログ サーバーの配置を計画する](../../ad-ds/plan/Planning-Global-Catalog-Server-Placement.md)  
   
--   [操作マスターの役割の配置の計画](../../ad-ds/plan/Planning-Operations-Master-Role-Placement.md)  
+-   [操作マスターの役割の配置を計画する](../../ad-ds/plan/Planning-Operations-Master-Role-Placement.md)  
   
 
 

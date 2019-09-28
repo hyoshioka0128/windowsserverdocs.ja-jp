@@ -1,8 +1,8 @@
 ---
-title: Dfsdiag TestDFSConfig
-description: 'Windows コマンド」のトピック * * *- '
+title: dfsdiag TestDFSConfig
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,30 +13,30 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 922b78b87f3bb66765b87348a3bf136e14c9e837
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8008e02d588edaa6fe7700a331c43f9680d89431
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436129"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378420"
 ---
-# <a name="dfsdiag-testdfsconfig"></a>Dfsdiag TestDFSConfig
+# <a name="dfsdiag-testdfsconfig"></a>dfsdiag TestDFSConfig
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-分散ファイル システムの構成をチェック\(DFS\)次の操作を実行することによって名前空間。  
+次のアクションを実行して、分散ファイルシステム @no__t 0DFS @ no__t 名前空間の構成を確認します。  
   
--   DFS Namespace サービスが実行されていることと、名前空間のすべてのサーバー上で、スタートアップの種類を自動に設定されていることを確認します。  
+-   DFS 名前空間サービスが実行されていること、およびすべての名前空間サーバーでそのスタートアップの種類が [自動] に設定されていることを確認します。  
   
--   DFS のレジストリ構成に名前空間サーバー間で整合性があることを確認します。  
+-   DFS レジストリの構成が名前空間サーバー間で一貫していることを確認します。  
   
--   Windows Server 2008 またはそれ以降を実行するクラスター化された名前空間サーバーで次の依存関係を検証します。  
+-   は、Windows Server 2008 以降を実行しているクラスター化された名前空間サーバーで、次の依存関係を検証します。  
   
-    -   Namespace ネットワーク名リソースに依存関係のリソースをルートです。  
+    -   名前空間のルートリソースがネットワーク名リソースに依存しています。  
   
-    -   ネットワークの IP アドレス リソースのリソースの依存関係の名前。  
+    -   IP アドレスリソースに対するネットワーク名リソースの依存関係。  
   
-    -   Namespace 物理ディスク リソースの依存関係のリソースをルートです。  
+    -   物理ディスクリソースに対する名前空間のルートリソースの依存関係。  
   
   
   
@@ -50,16 +50,16 @@ dfsdiag /TestDFSConfig /DFSRoot:<namespace>
   
 |       パラメーター       |               説明               |
 |-----------------------|-----------------------------------------|
-| \/します。<namespace> | 名前空間\(DFS ルート\)を診断します。 |
+| \/DFSRoot: <namespace> | 名前空間 \(DFS root @ no__t-1 を診断します。 |
   
 ## <a name="BKMK_Examples"></a>例  
-TBD を入力します。  
+次のように入力します。  
   
 ```  
 dfsdiag /TestDFSConfig /DFSRoot:\\Contoso.com\MyNamespace  
 ```  
   
-## <a name="additional-references"></a>その他の参照  
+## <a name="additional-references"></a>その他の参照情報  
   
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)  
   

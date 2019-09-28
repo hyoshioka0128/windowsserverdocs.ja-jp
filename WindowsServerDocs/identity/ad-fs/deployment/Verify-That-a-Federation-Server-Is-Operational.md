@@ -6,15 +6,15 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: bdaa43fcb501405529415de950ecdf40a91ed088
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 6d27c8d69affe001630d8deaa2c21f334f8f86ad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868049"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408312"
 ---
 # <a name="verify-that-a-federation-server-is-operational"></a>フェデレーション サーバーが正常に動作していることを確認する
 

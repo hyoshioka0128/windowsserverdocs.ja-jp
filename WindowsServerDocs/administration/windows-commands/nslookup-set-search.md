@@ -1,8 +1,8 @@
 ---
 title: nslookup set search
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d95ebe30ce45430787bebbfe63766a571a436bbf
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d9da08a296d61789dbafeccde5d46c8a220d874c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436591"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372781"
 ---
 # <a name="nslookup-set-search"></a>nslookup set search
 
 
 
-応答が受信されるまでは、ドメインの DNS 検索リストにドメイン ネーム システム (DNS) ドメイン名、要求に追加します。 これは、セット、検索要求を少なくとも 1 つのピリオドを含めるときに適用されますが、末尾のピリオドで終わらない。
+DNS ドメイン検索リスト内のドメインネームシステム (DNS) ドメイン名を、応答が受信されるまで要求に追加します。 これは、セットと参照要求に少なくとも1つのピリオドが含まれている場合に適用されますが、末尾にピリオドは付きません。
 
 ## <a name="syntax"></a>構文
 
@@ -36,9 +36,9 @@ set [no]search
 
 |  パラメーター   |                                                                          説明                                                                          |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **nosearch** |                            要求にドメインの DNS 検索リストにドメイン ネーム システム (DNS) ドメイン名を追加することを停止します。                            |
-|  **search**  | 応答が受信されるまでは、ドメインの DNS 検索リストにドメイン ネーム システム (DNS) ドメイン名、要求に追加します。 既定の構文は**検索**します。 |
-|    {0} のヘルプ     |                                                                              ?}                                                                               |
+| **nosearch** |                            DNS ドメイン検索リスト内のドメインネームシステム (DNS) ドメイン名を要求に追加しないようにします。                            |
+|  **サーチ**  | DNS ドメイン検索リスト内のドメインネームシステム (DNS) ドメイン名を、応答が受信されるまで要求に追加します。 既定の構文は**search**です。 |
+|    {ヘルプ     |                                                                              ?}                                                                               |
 
 #### <a name="additional-references"></a>その他の参照情報
 

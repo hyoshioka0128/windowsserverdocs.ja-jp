@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d7ed8f7976116ab245fa730a5a050e7ec46cebea
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e1e0235e50945fadd09fe9dd5ffeaf6d7119e482
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869492"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385598"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>OpenID Connect/OAuth フローとアプリケーションシナリオの AD FS
 AD FS 2016 以降に適用されます
@@ -63,7 +63,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |パラメーター|必須/オプション|説明| 
 |-----|-----|-----|
 |client_id|required|AD FS アプリに割り当てられているアプリケーション (クライアント) ID。| 
-|response_type|required|OpenID connect `id_token`サインインにはを含める 必要があります。 Response_type `token`が含まれている場合もあります。 ここでトークンを使用すると、トークンエンドポイントに対して2番目の要求を行うことなく、アプリが承認エンドポイントからすぐにアクセストークンを受信できるようになります。| 
+|response_type|required|OpenID connect `id_token`サインインにはを含める 必要があります。 Response_type @ no__t-0 も含まれる場合があります。 ここでトークンを使用すると、トークンエンドポイントに対して2番目の要求を行うことなく、アプリが承認エンドポイントからすぐにアクセストークンを受信できるようになります。| 
 |redirect_uri|required|アプリの redirect_uri。アプリで認証応答を送受信できます。 AD FS で構成した redirect_uris の1つと完全に一致している必要があります。| 
 |nonce|required|要求に含まれる、アプリによって生成される値。この値は、結果の id_token に要求として含まれます。 その後、アプリはこの値を検証して、トークン再生攻撃を軽減できます。 通常、この値はランダム化された一意の文字列であり、要求の発生元を識別するために使用できます。 Id_token が要求された場合にのみ必要です。|
 |スコープ (scope)|オプション|スペースで区切られたスコープのリスト。 OpenID Connect には、スコープ `openid`が含まれている必要があります。|
@@ -95,11 +95,11 @@ access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZEstZnl0aEV...
 
 |パラメーター|説明| 
 |-----|-----|
-|access_token|Response_type にが含ま `token`れる場合に含まれます。|
-|token_type|Response_type にが含ま `token`れる場合に含まれます。 は常にベアラーです。| 
-|expires_in| Response_type にが含ま `token`れる場合に含まれます。 キャッシュのためにトークンが有効である秒数を示します。| 
+|access_token|Response_type に @ no__t-0 が含まれている場合に含まれます。|
+|token_type|Response_type に @ no__t-0 が含まれている場合に含まれます。 は常にベアラーです。| 
+|expires_in| Response_type に @ no__t-0 が含まれている場合に含まれます。 キャッシュのためにトークンが有効である秒数を示します。| 
 |スコープ (scope)| Access_token が有効になるスコープを示します。|  
-|id_token|Response_type にが含ま `id_token`れる場合に含まれます。 署名された JSON Web トークン (JWT)。 アプリは、このトークンのセグメントをデコードして、サインインしたユーザーに関する情報を要求することができます。 アプリは値をキャッシュして表示できますが、承認やセキュリティの境界に依存することはできません。| 
+|id_token|Response_type に @ no__t-0 が含まれている場合に含まれます。 署名された JSON Web トークン (JWT)。 アプリは、このトークンのセグメントをデコードして、サインインしたユーザーに関する情報を要求することができます。 アプリは値をキャッシュして表示できますが、承認やセキュリティの境界に依存することはできません。| 
 |state|状態パラメーターが要求に含まれている場合、同じ値が応答に表示されます。 アプリでは、要求と応答の状態値が同一であることを確認する必要があります。|
 
 ### <a name="refresh-tokens"></a>トークンの更新 
@@ -139,12 +139,12 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |redirect_uri|required|アプリ`redirect_uri`の。アプリで認証応答を送受信することができます。 クライアントの AD FS に登録した redirect_uris の1つと完全に一致している必要があります。|  
 |resource|オプション|Web API の url。</br>注: MSAL クライアントライブラリを使用している場合、resource パラメーターは送信されません。 代わりに、リソース url はスコープパラメーターの一部として送信されます。`scope = [resource url]//[scope values e.g., openid]`</br>リソースがここで渡されない場合、またはスコープ内にある場合、ADFS は既定のリソース urn: microsoft: userinfo を使用します。 MFA、発行、承認ポリシーなどの userinfo リソースポリシーはカスタマイズできません。| 
 |スコープ (scope)|オプション|スペースで区切られたスコープのリスト。|
-|response_mode|オプション|生成されたトークンをアプリに返すために使用するメソッドを指定します。 次のいずれかになります。 </br>-クエリ </br>-fragment </br>- form_post</br>`query` コードをリダイレクト URI のクエリ文字列パラメーターとして提供します。 コードを要求している場合は、query、fragment、または form_post を使用できます。 `form_post`コードを含む投稿をリダイレクトURIに対し て実行します。|
+|response_mode|オプション|生成されたトークンをアプリに返すために使用するメソッドを指定します。 次のいずれかになります。 </br>-クエリ </br>-fragment </br>- form_post</br>`query` コードをリダイレクト URI のクエリ文字列パラメーターとして提供します。 コードを要求する場合は、query、fragment、または form_post を使用できます。  `form_post` @ no__t-1 は、コードを含む投稿をリダイレクト URI に対して実行します。|
 |state|オプション|要求に含まれる値。トークンの応答でも返されます。 任意のコンテンツの文字列を指定できます。 ランダムに生成された一意の値は、通常、クロスサイト要求偽造攻撃を防止するために使用されます。 この値は、認証要求が発生する前にアプリ内でユーザーの状態に関する情報をエンコードすることもできます (ページやビューなど)。|
 |prompt|オプション|必要なユーザー操作の種類を示します。 現時点で有効な値は、login と none だけです。</br>- `prompt=login` では、ユーザーは、シングルサインオンを否定して、その要求に対して資格情報を入力するように強制されます。 </br>- `prompt=none` は反対です。ユーザーには、対話的なプロンプトが表示されないようにします。 シングルサインオンを使用して要求をサイレントモードで完了できない場合、AD FS は interaction_required エラーを返します。|
 |login_hint|オプション|を使用すると、ユーザー名が事前にわかっている場合に、ユーザーのサインインページのユーザー名/電子メールアドレスフィールドに事前に入力できます。 多くの場合、アプリでは再認証時にこのパラメーターが使用され、からの `upn` `id_token`要求を使用して以前のサインインからユーザー名が既に抽出されています。|
 |domain_hint|オプション|含まれている場合は、サインインページでユーザーが実行するドメインベースの検出プロセスがスキップされ、ユーザーエクスペリエンスが少し簡素化されます。|
-|code_challenge_method|オプション|Code_challenge パラメーターの code_verifier をエンコードするために使用されるメソッド。 次の値のいずれかです。 </br>-plain </br>- S256 </br>除外されている場合、code_challenge は、 `code_challenge`が含まれている場合 はプレーンテキストと見なされます。 AD FS は、plain と S256 の両方をサポートしています。 詳細については、「 [Pkce RFC](https://tools.ietf.org/html/rfc7636)」を参照してください。|
+|code_challenge_method|オプション|Code_challenge パラメーターの code_verifier をエンコードするために使用されるメソッド。 次の値のいずれかです。 </br>-plain </br>- S256 </br>除外した場合、code_challenge は、@ no__t-0 @ no__t が含まれている場合はプレーンテキストと見なされます。 AD FS は、plain と S256 の両方をサポートしています。 詳細については、「 [Pkce RFC](https://tools.ietf.org/html/rfc7636)」を参照してください。|
 |code_challenge|オプション| ネイティブクライアントからのコード交換 (PKCE) の証明キーを使用して承認コードの付与をセキュリティで保護するために使用されます。 が含ま `code_challenge_method`れている場合 は必須です。 詳細については、「 [Pkce RFC](https://tools.ietf.org/html/rfc7636) 」を参照してください。|
 
 この時点で、ユーザーは資格情報の入力を求められ、認証が完了します。 ユーザーが認証されると、AD FS は、 `redirect_uri` パラメーター `response_mode`に指定されたメソッドを使用して、指定されたでアプリに応答を返します。  
@@ -190,7 +190,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |code|required|`authorization_code`フローの最初の区間で取得した。| 
 |redirect_uri|required|`redirect_uri` を`authorization_code`取得するために使用したものと同じ値。| 
 |client_secret|web アプリに必要|AD FS でのアプリの登録時に作成したアプリケーションシークレット。 デバイスに client_secrets を確実に格納することはできないため、ネイティブアプリではアプリケーションシークレットを使用しないでください。 これは web apps と web Api に必要であり、client_secret をサーバー側に安全に格納する機能を備えています。 クライアントシークレットは、送信する前に URL エンコードする必要があります。 これらのアプリでは、JWT に署名し、それを client_assertion パラメーターとして追加することで、キーベースの認証を使用することもできます。| 
-|code_verifier|オプション|Authorization_code を`code_verifier`取得するために使用されたものと同じです。 認証コード付与要求で PKCE が使用されている場合は必須です。 詳細については、「 [Pkce RFC](https://tools.ietf.org/html/rfc7636)」を参照してください。</br>注– AD FS 2019 以降に適用されます。| 
+|code_verifier|オプション|Authorization_code を取得するために使用されたのと同じ @no__t 0。 認証コード付与要求で PKCE が使用されている場合は必須です。 詳細については、「 [Pkce RFC](https://tools.ietf.org/html/rfc7636)」を参照してください。</br>注– AD FS 2019 以降に適用されます。| 
 
 ### <a name="successful-response"></a>成功した応答 
  
@@ -227,7 +227,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZ2ZEstZn
 
 ### <a name="refresh-the-access-token"></a>アクセストークンを更新する 
  
-Access_tokens は有効期間が短いため、リソースへのアクセスを継続するには、有効期限が切れた後で更新する必要があります。 これを行うには、 `/token` エンドポイントに別の POST 要求を送信します。今度は、コードの代わりに refresh_token を指定します。 更新トークンは、クライアントが既にのアクセストークンを受信しているすべてのアクセス許可に対して有効です。 
+Access_tokens は有効期間が短いため、リソースへのアクセスを継続するには、有効期限が切れた後で更新する必要があります。 これを行うには、別の POST 要求を @ no__t-0 @ no__t エンドポイントに送信します。今度は、コードの代わりに refresh_token を指定します。 更新トークンは、クライアントが既にのアクセストークンを受信しているすべてのアクセス許可に対して有効です。 
  
 更新トークンには、有効期間が指定されていません。 通常、更新トークンの有効期間は比較的長くなります。 ただし、場合によっては、更新トークンの有効期限が切れたか、失効しているか、必要な操作に必要な特権が不足しています。 アプリケーションでは、トークン発行エンドポイントから返されたエラーを正しく処理し、処理する必要があります。  
  
@@ -291,7 +291,7 @@ OAuth 2.0 の代理フロー (OBO) は、アプリケーションがサービス
 ![代理フロー](media/adfs-scenarios-for-developers/obo.png)
 
   1. クライアントアプリケーションは、トークン A を使用して API A に要求を行います。  
-  注:AD FS で obo フローを構成している`user_impersonation`ときに、スコープが選択`user_impersonation`されていること、およびクライアントが要求でスコープを要求していることを確認してください。 
+  メモ:AD FS で obo フローを構成している`user_impersonation`ときに、スコープが選択`user_impersonation`されていること、およびクライアントが要求でスコープを要求していることを確認してください。 
   2. API A は AD FS トークン発行エンドポイントに対して認証を行い、API B にアクセスするためのトークンを要求します。注:AD FS でこのフローを構成するときに、api A も API A のリソース ID と同じ値を持つ clientID を使用してサーバーアプリケーションとして登録されていることを確認します。詳細については、こちらの「リンクの追加」を参照してください。  
   3. AD FS トークン発行エンドポイントは、トークン A を使用して API A の資格情報を検証し、API B (トークン B) のアクセストークンを発行します。 
   4. トークン B は、API B に対する要求の authorization ヘッダーに設定されます。 

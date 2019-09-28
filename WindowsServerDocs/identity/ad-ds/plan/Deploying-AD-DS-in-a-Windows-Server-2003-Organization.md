@@ -7,33 +7,33 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 033973ad7a726054f6c47c7154fa54a3767beab4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7426ba8fa3ea5077510655ea4877d0e0b69226ff
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816363"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408901"
 ---
 # <a name="deploying-ad-ds-in-a-windows-server-2003-organization"></a>Windows Server 2003 組織への AD DS の展開
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-一部またはすべてのドメイン コント ローラーのオペレーティング システムのインプレース アップグレードを実行して Windows Server 2008 Active Directory Domain Services (AD DS) を展開するには、組織が Windows Server 2003 の Active Directory を実行中の場合 Windows Server 2008、またはお客様の環境に Windows Server 2008 を実行しているドメイン コント ローラーを導入することで。  
+組織で現在 Windows Server 2003 Active Directory が実行されている場合は、ドメインコントローラーのオペレーティングシステムの一部またはすべてのインプレースアップグレードを実行することで、Windows Server 2008 Active Directory Domain Services (AD DS) を展開できます。 Windows Server 2008 または Windows Server 2008 を実行するドメインコントローラーを環境に導入します。  
   
-実行する必要がある既存の Windows Server 2003 の Active Directory ドメインに Windows Server 2008 を実行するドメイン コント ローラーを追加する前に**adprep**、コマンド ライン ツール。 Adprep は、AD DS スキーマを拡張し、選択したオブジェクトの既定のセキュリティ記述子を更新、および一部のアプリケーションで必要に応じて新しいディレクトリ オブジェクトを追加します。 Adprep は Windows Server 2008 のインストール ディスク (\sources\adprep\adprep.exe) でご確認いただけます。 詳細については、Adprep を参照してください ([https://go.microsoft.com/fwlink/?LinkId=99215](https://go.microsoft.com/fwlink/?LinkId=99215))。  
+Windows Server 2008 を実行しているドメインコントローラーを既存の Windows Server 2003 Active Directory ドメインに追加するには、その前に、コマンドラインツール**adprep**を実行する必要があります。 Adprep は AD DS スキーマを拡張し、選択したオブジェクトの既定のセキュリティ記述子を更新し、一部のアプリケーションに必要な新しいディレクトリオブジェクトを追加します。 Adprep は、Windows Server 2008 インストールディスク (\sources\adprep\adprep.exe) で使用できます。 詳細については、「Adprep ([https://go.microsoft.com/fwlink/?LinkId=99215](https://go.microsoft.com/fwlink/?LinkId=99215))」を参照してください。  
   
-次の図は、Windows Server 2003 の Active Directory を現在実行中のネットワーク環境で Windows Server 2008 AD DS を展開する手順を示します。  
+次の図は、windows Server 2003 Active Directory を現在実行しているネットワーク環境に Windows Server 2008 AD DS を展開する手順を示しています。  
   
-![windows 2003 の組織で展開します。](media/Deploying-AD-DS-in-a-Windows-Server-2003-Organization/900c4eee-1119-4a9a-9310-755597428b71.gif)  
+![windows 2003 組織での展開](media/Deploying-AD-DS-in-a-Windows-Server-2003-Organization/900c4eee-1119-4a9a-9310-755597428b71.gif)  
   
 > [!NOTE]  
-> Windows Server 2008 へのドメインまたはフォレストの機能レベルを設定する場合は、環境内のすべてのドメイン コント ローラーは、Windows Server 2008 オペレーティング システムを実行する必要があります。  
+> ドメインまたはフォレストの機能レベルを Windows Server 2008 に設定する場合は、環境内のすべてのドメインコントローラーで Windows Server 2008 オペレーティングシステムを実行する必要があります。  
   
-リソースのドメインと Windows Server 2008 AD DS の展開の一部には、フォレスト間またはフォレスト内のドメインの再構築が必要とする可能性があります、Windows Server 2003 環境からのインプレース アップグレードしたアカウントのドメインを統合します。 フォレスト間での AD DS ドメインの再構築では、AD DS に組織の表現の複雑さを軽減でき、関連する管理コストが軽減されます。 レプリケーション トラフィックを減らし、ユーザーおよびグループの管理を必要とされる量を削減し、グループの管理を簡素化して、組織の管理オーバーヘッドを減らすことにより、フォレスト内の AD DS ドメインの再構築ポリシー。 詳細については、ADMT v3.1 移行ガイドを参照してください ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678))。  
+Windows server 2008 AD DS の展開の一部として Windows Server 2003 環境からアップグレードされたリソースドメインとアカウントドメインを統合するには、フォレスト間またはフォレスト内のドメイン再構築が必要になることがあります。 フォレスト間で AD DS ドメインを再構築すると、AD DS における組織の表現の複雑さを軽減し、関連する管理コストを削減するのに役立ちます。 フォレスト内の AD DS ドメインを再構築すると、レプリケーショントラフィックを削減し、必要なユーザーとグループ管理の量を減らし、グループの管理を簡素化することで、組織の管理オーバーヘッドを削減できます。ポリシー. 詳細については、「ADMT v1.0 移行ガイド ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678))」を参照してください。  
   
-計画し、Windows Server 2003 の Active Directory を実行している組織で AD DS の展開に使用できる詳細なタスクの一覧は、次を参照してください。[チェックリスト。Windows Server 2003 組織で AD DS 展開](https://technet.microsoft.com/library/cc771407.aspx)します。  
+Windows Server 2003 Active Directory を実行している組織で AD DS を計画および展開するために使用できる詳細なタスクの一覧については、「[Checklist リスト:Windows Server 2003 組織に AD DS を展開する @ no__t-0  
   
 
 

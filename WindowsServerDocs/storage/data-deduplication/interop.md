@@ -2,27 +2,27 @@
 ms.assetid: 60fca6b2-f1c0-451f-858f-2f6ab350d220
 title: データ重複除去の相互運用性
 ms.technology: storage-deduplication
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
-ms.openlocfilehash: b82e02b7896c3795ae7470ca03bb8d19a8d5e403
-ms.sourcegitcommit: fe621b72d45d0259bac1d5b9031deed3dcbed29d
+ms.openlocfilehash: fb3c9842f1d698151bffebbe5f77618c8b19b366
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455425"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403193"
 ---
 # <a name="data-deduplication-interoperability"></a>データ重複除去の相互運用性
 
 > 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2019
 
-## <a name="supported"></a>サポート対象
+## <a name="supported"></a>Supported
 
 ### <a name="refs"></a>ReFS
-データ重複除去は Windows Server 2019 の時点でサポートされています。 
+データ重複除去は、Windows Server 2019 でサポートされています。 
 
 ### <a name="failover-clustering"></a>フェールオーバー クラスタリング
 
@@ -64,7 +64,7 @@ Windows Server バックアップでは、最適化されたボリュームを�
     wbadmin get versions
     ```
 
-    この出力バージョン ID は、日付と時刻の文字列を例になります。08/18/2016-06:22.
+    この出力バージョン ID は日付と時刻の文字列になります。次に例を示します。08/18/2016-06:22。
 
 4. ボリューム全体を復元します。
     ```PowerShell
@@ -78,7 +78,7 @@ Windows Server バックアップでは、最適化されたボリュームを�
     wbadmin start recovery –version:02/16/2012-06:22 -itemtype:File  -items:E:\Docs  -recursive
     ```
 
-## <a name="unsupported"></a>サポートされません
+## <a name="unsupported"></a>サポートされていない
 
 ### <a name="windows-10-client-os"></a>Windows 10 (クライアント OS)
 Windows 10 では、データ重複除去はサポートされていません。 Windows コミュニティの人気ブログの中には、Windows Server 2016 からバイナリを削除して Windows 10 をインストールする方法を説明した記事がいくつかありますが、これはデータ重複除去の開発の一部として検証されたシナリオではありません。 [この項目のサポートをご希望の場合は、Windows Server Storage UserVoice の Windows 10 vNext で票を投じることができます](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/9011008-add-deduplication-support-to-client-os)

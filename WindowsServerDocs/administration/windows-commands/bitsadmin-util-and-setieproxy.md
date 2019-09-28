@@ -1,8 +1,8 @@
 ---
 title: bitsadmin util と setieproxy
-description: Windows コマンド」のトピック**bitsadmin util と setieproxy** -サービス アカウントを使用してファイルを転送するときに使用するプロキシ設定を設定します。
+description: '**Bitsadmin util と setieproxy**の Windows コマンドに関するトピックでは、サービスアカウントを使用してファイルを転送するときに使用するプロキシ設定を設定します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 81bb333e2bb776bc75789b52ab41d7ef64016f51
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 9d485c0e9cb135febdb1bf99cec4de08d7c9321b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266464"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380218"
 ---
 # <a name="bitsadmin-util-and-setieproxy"></a>bitsadmin util と setieproxy
 
-サービス アカウントを使用してファイルを転送するときに使用するプロキシ設定を設定します。
+サービスアカウントを使用してファイルを転送するときに使用するプロキシ設定を設定します。
 
-**1.5 およびそれ以前の BITSAdmin**: サポートされません。
+**BITSAdmin 1.5 以前**: サポートされていません。
 
 ## <a name="syntax"></a>構文
 
@@ -36,26 +36,26 @@ bitsadmin /Util /SetIEProxy <Account> <Usage>[/Conn <ConnectionName>]
 
 |パラメーター|説明|
 |---------|-----------|
-|アカウント|サービス アカウントを定義するプロキシ設定の種類を指定します。 設定可能な値は、次のとおりです。</br>ローカル システム</br>-NETWORKSERVICE</br>-LOCALSERVICE|
-|使用方法|使用するプロキシ検出の形式を指定します。 設定可能な値は、次のとおりです。</br>-NO_PROXY — プロキシ サーバーを使用しません。</br>-AUTODETECT: プロキシ設定を自動的に検出します。</br>-MANUAL_PROXY: 明示的なプロキシのリストを使用し、リストをバイパスします。 プロキシ一覧を指定し、すぐ後に、使用状況のタグ リストをバイパスします。 たとえば、MANUAL_PROXY proxy1、proxy2 NULL です。</br>    プロキシ一覧は、使用するプロキシ サーバーのコンマ区切り一覧を示します。</br>    -バイパス リストは、スペースで区切られた一覧のホスト名または IP アドレス、またはその両方を対象の転送はプロキシを経由してルーティングします。 これは、\<ローカル > を同じ LAN 上のすべてのサーバーを参照してください。 NULL 値または""を空のプロキシ バイ パス一覧の使用可能性があります。</br>-AUTOSCRIPT — ことを除けば、自動検出と同じでもスクリプトを実行します。 使用状況のタグの直後に続くスクリプトの URL を指定します。 たとえば、AUTOSCRIPT http://server/proxy.jsします。</br>リセット-手動プロキシの Url を削除ことを除けば、NO_PROXY と同じには、(選択した場合のみ) し、Url では、自動検出を使用して検出されました。|
-|ConnectionName|省略可能: と併用、 **/conn**パラメーターを使用するモデム接続を指定します。 指定しない場合、 **/conn**パラメーター、BITS は LAN 接続を使用します。 直後に続くモデム接続名を指定、 **/conn**パラメーター。|
+|アカウント|プロキシ設定を定義するサービスアカウントの種類を指定します。 指定できる値は次のとおりです。</br>-LOCALSYSTEM</br>-NETWORKSERVICE</br>-LOCALSERVICE|
+|使用方法|使用するプロキシ検出の形式を指定します。 指定できる値は次のとおりです。</br>-NO_PROXY —プロキシサーバーを使用しません。</br>-自動検出—プロキシ設定を自動的に検出します。</br>-MANUAL_PROXY —明示的なプロキシリストとバイパスリストを使用します。 使用状況タグのすぐ後に、プロキシリストとバイパスリストを指定します。 たとえば、MANUAL_PROXY proxy1、proxy2 NULL です。</br>    -プロキシリストは、使用するプロキシサーバーのコンマ区切りの一覧です。</br>    -バイパスリストは、ホスト名または IP アドレス (またはその両方) のスペース区切りの一覧であり、転送はプロキシ経由でルーティングされません。 これは、同じ LAN 上のすべてのサーバーを参照する @no__t 0local > にすることができます。 空のプロキシバイパスリストには、NULL または "" の値を使用できます。</br>-AUTOSCRIPT —自動検出と同じですが、スクリプトも実行されます。 使用状況タグの直後にスクリプト URL を指定します。 たとえば、AUTOSCRIPT http://server/proxy.js です。</br>-RESET — NO_PROXY と同じですが、手動プロキシ Url (指定されている場合) と、自動検出を使用して検出された Url が削除される点が異なります。|
+|ConnectionName|省略可能: **/Conn**パラメーターと共に使用して、使用するモデム接続を指定します。 **/Conn**パラメーターを指定しない場合、BITS は LAN 接続を使用します。 **/Conn**パラメーターの直後に、モデムの接続名を指定します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-このスイッチを使用して連続する各呼び出しは、以前に指定された使用量が以前に定義された使用状況のパラメーターではなく、置き換えられます。 たとえば、NO_PROXY、自動で検出および MANUAL_PROXY を個別の呼び出しで指定した場合ビットは最後の指定された使用法を使用してが以前に定義された使用状況からパラメーターを保持します。
+このスイッチを使用する後続の各呼び出しは、以前に指定された使用量を置き換えますが、以前に定義された使用法のパラメーターは置き換えられません。 たとえば、個別の呼び出しで NO_PROXY、自動検出、および MANUAL_PROXY を指定した場合、BITS は最後に指定された使用量を使用しますが、以前に定義した使用法のパラメーターを保持します。
 
 > [!IMPORTANT]
-> このコマンドは、正常に完了するための管理者特権でコマンド プロンプトから実行する必要があります。
+> このコマンドを正常に完了するには、管理者特権のコマンドプロンプトから実行する必要があります。
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
-次の例では、NETWORK SERVICE アカウントに対するプロキシの使用を設定します。
+次の例では、ネットワークサービスアカウントのプロキシ使用法を設定します。
 
 ```
 C:\>bitsadmin /Util /SetIEProxy localsystem AUTODETECT
 ```
 
-他の例を示します。
+その他の例を次に示します。
 
 ```
 bitsadmin /util /setieproxy localsystem MANUAL_PROXY proxy1,proxy2,proxy3 NULL

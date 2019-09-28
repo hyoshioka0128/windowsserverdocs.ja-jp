@@ -2,19 +2,19 @@
 title: ネットワーク ポリシー サーバー アカウンティングを構成する
 description: このトピックでは、Windows Server 2016 のネットワークポリシーサーバーのテキストファイルと SQL Server ログについて説明します。
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: dfde2e21-f3d5-41e8-8492-cb3f0d028afb
 ms.author: pashort
 author: shortpatti
 ms.date: 05/25/2018
-ms.openlocfilehash: f16e4093ed58f2a2fadc4b9faa1fa42c0c157ca3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0c154d4d4534f4c343107eecd158974b92903e39
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871903"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405570"
 ---
 # <a name="configure-network-policy-server-accounting"></a>ネットワーク ポリシー サーバー アカウンティングを構成する
 
@@ -55,7 +55,7 @@ ms.locfileid: "70871903"
 
 - コレクションのログファイルデータを別のプロセスで送信するには、名前付きパイプに書き込むように NPS を構成できます。 名前付きパイプを使用するには、ログファイル\\フォルダーを\\て .\pipe または ComputerName\pipe. に設定します。 名前付きパイプサーバープログラムでは、データを\\受け入れるために .\pipe\iaslog.log という名前付きパイプが作成されます。 [ローカルファイルのプロパティ] ダイアログボックスの [新しいログファイルの作成] で、名前付きパイプを使用する場合は [Never (ファイルサイズの制限なし)] を選択します。
 
-- ログファイルディレクトリは、% systemdrive%、% systemroot%、% windir% などのシステム環境変数 (ユーザー変数ではなく) を使用して作成できます。 たとえば、次のパスでは、環境変数% windir% を使用して、サブフォルダー \System32\Logs (つまり、%windir%\System32\Logs\)) のシステムディレクトリにあるログファイルを検索します。
+- ログファイルディレクトリは、% systemdrive%、% systemroot%、% windir% などのシステム環境変数 (ユーザー変数ではなく) を使用して作成できます。 たとえば、次のパスでは、環境変数% windir% を使用して、サブフォルダー \System32\Logs (つまり、%windir%\System32\Logs @ no__t-0) のシステムディレクトリにあるログファイルを検索します。
 
 - ログファイルの形式を切り替えると、新しいログが作成されません。 ログファイルの形式を変更すると、変更時にアクティブになっているファイルには、2つの形式が混在します (ログの先頭のレコードは前の形式になり、ログの末尾のレコードは新しい形式になります)。
 
@@ -122,7 +122,7 @@ ms.locfileid: "70871903"
 既定では **、ユーザー名の Ping**はインストールされません。 レジストリに**ping ユーザー名**を追加する必要があります。 レジストリエディターを使用して、レジストリにエントリを追加できます。
 
 >[!CAUTION]
->レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリを変更する前に、コンピューターにある重要なデータをバックアップしてください。
+>レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリを変更する前に、コンピューター上の重要なデータのバックアップを作成する必要があります。
 
 ### <a name="to-add-ping-user-name-to-the-registry"></a>Ping ユーザー名をレジストリに追加するには
 

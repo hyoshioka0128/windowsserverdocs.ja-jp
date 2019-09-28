@@ -1,31 +1,31 @@
 ---
-title: Active Directory フェデレーション サービスと証明書キーの仕様のプロパティ情報
+title: Active Directory フェデレーションサービス (AD FS) と証明書キー指定のプロパティ情報
 description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: a5307da5-02ff-4c31-80f0-47cb17a87272
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 32b0d08f678e9e612bb0ce9cc38d254564bd9b2f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 51c9828cfe494c68422f4985e5b17113020c8414
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444090"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407423"
 ---
-# <a name="ad-fs-and-certificate-keyspec-property-information"></a>AD FS と証明書 KeySpec プロパティ情報
-キーの仕様 ("KeySpec") は、証明書とキーに関連付けられているプロパティです。 これは、署名、暗号化、またはその両方の証明書に関連付けられている秘密キーを使用できるかどうかを指定します。   
+# <a name="ad-fs-and-certificate-keyspec-property-information"></a>AD FS と certificate KeySpec のプロパティ情報
+キー指定 ("KeySpec") は、証明書とキーに関連付けられているプロパティです。 証明書に関連付けられた秘密キーを署名、暗号化、またはその両方に使用できるかどうかを指定します。   
 
-KeySpec 値が正しくない AD FS と Web アプリケーション プロキシのエラーの原因など。
+KeySpec 値が正しくないと、次のような AD FS と Web アプリケーションプロキシエラーが発生する可能性があります。
 
 
-- AD FS イベントのないログに記録 (ただし、36888 と 36874 SChannel イベントが記録される可能性があります) を AD FS または Web アプリケーション プロキシは、SSL や TLS 接続を確立するために失敗
-- AD FS または WAP でのログインの失敗は、ページに表示されるエラー メッセージなしでベースの認証ページを形成します。
+- AD FS または Web アプリケーションプロキシへの SSL/TLS 接続を確立できませんでした。 AD FS イベントは記録されません (ただし、SChannel 36888 および36874イベントはログに記録される可能性があります)。
+- ページにエラーメッセージが表示されず、AD FS または WAP のフォームベースの認証ページでログインできませんでした。
 
-イベント ログでは、次が表示されます。
+イベントログに次のように表示される場合があります。
 
     Log Name:      AD FS Tracing/Debug
     Source:        AD FS Tracing
@@ -39,80 +39,80 @@ KeySpec 値が正しくない AD FS と Web アプリケーション プロキ�
     Description:
     Ignore corrupted SSO cookie.
 
-## <a name="what-causes-the-problem"></a>問題を原因します。
-KeySpec プロパティでは、Microsoft CryptoAPI (CAPI) から Microsoft レガシ暗号化ストレージ プロバイダー (CSP)、種策さ生成されたキーの使用方法を識別します。
+## <a name="what-causes-the-problem"></a>問題の原因
+KeySpec プロパティは、microsoft CryptoAPI (CAPI) によって生成または取得されたキーを Microsoft レガシ暗号化ストレージプロバイダー (CSP) から使用できるようにする方法を指定します。
 
-KeySpec @property **1**、または**AT_KEYEXCHANGE**、署名と暗号化に使用できます。  値**2**、または**AT_SIGNATURE**、署名にのみ使用します。
+KeySpec 値**1**または**AT_KEYEXCHANGE**は、署名と暗号化に使用できます。  値**2**または**AT_SIGNATURE**は、署名にのみ使用されます。
 
-最も一般的な構成の KeySpec ミスが使用して値が 2 のトークン署名証明書以外の証明書。  
+最も一般的な KeySpec mis 構成では、トークン署名証明書以外の証明書に対して値2を使用します。  
 
-証明書のキーを持つは、Cryptography Next Generation (CNG) プロバイダーを使用して生成された場合、キーの仕様の概念がないと KeySpec 値が 0 になります常にします。
+Cryptography Next Generation (CNG) プロバイダーを使用してキーが生成された証明書の場合、キー指定の概念はなく、KeySpec 値は常に0になります。
 
-以下の有効な KeySpec 値を確認する方法を参照してください。 
+次の「有効な KeySpec 値を確認する方法」を参照してください。 
 
 ### <a name="example"></a>例
-従来の CSP の例では、Microsoft Enhanced Cryptographic Provider です。 
+従来の CSP の例として、Microsoft Enhanced Cryptographic Provider があります。 
 
-Microsoft RSA CSP キー blob 形式か、アルゴリズム識別子を含む**CALG_RSA_KEYX**または**CALG_RSA_SIGN**をそれぞれのいずれかのサービス要求に<strong>AT_KEYEXCHANGE * * または * * する at _署名</strong>キー。
+Microsoft RSA CSP キーの blob 形式には、 **CALG_RSA_KEYX**または**CALG_RSA_SIGN**のいずれかのアルゴリズム識別子が含まれています。この識別子は、 <strong>AT_KEYEXCHANGE * * または * * AT_SIGNATURE</strong>キーの要求を処理します。
 
-RSA キー アルゴリズムの識別子がよう KeySpec 値にマップします。
+RSA キーアルゴリズム識別子は、次のように KeySpec 値にマップされます。
 
-| プロバイダーがサポートされているアルゴリズム| CAPI 呼び出しの値をキーの仕様 |
+| プロバイダーでサポートされているアルゴリズム| CAPI 呼び出しのキー指定値 |
 | --- | --- |
-|CALG_RSA_KEYX:RSA キーの署名と暗号化解除に使用できます。| AT_KEYEXCHANGE (または KeySpec = 1)|
-CALG_RSA_SIGN :RSA 署名キーのみ |AT_SIGNATURE (または KeySpec = 2)|
+|CALG_RSA_KEYX :署名と復号化に使用できる RSA キー| AT_KEYEXCHANGE (または KeySpec = 1)|
+CALG_RSA_SIGN :RSA 署名のみのキー |AT_SIGNATURE (または KeySpec = 2)|
 
-## <a name="keyspec-values-and-associated-meanings"></a>KeySpec 値と関連付けられている意味
-次に、さまざまな KeySpec 値の意味を示します。
+## <a name="keyspec-values-and-associated-meanings"></a>KeySpec 値と関連する意味
+さまざまな KeySpec 値の意味を次に示します。
 
-|Keyspec 値|意味|推奨される AD FS の使用|
+|Keyspec 値|と|推奨 AD FS 使用|
 | --- | --- | --- |
-|0|証明書が CNG 証明書です。|SSL 証明書のみ|
-|1|レガシ CAPI (非 CNG) 証明書の署名と暗号化解除キーを使用できます。|    トークン署名、トークンの復号化、サービス通信証明書を SSL|
-|2|レガシ CAPI (非 CNG) 証明書の署名にのみ、キーを使用できます。|推奨されません。|
+|0|証明書が CNG 証明書である|SSL 証明書のみ|
+|1|従来の CAPI (CNG) 以外の証明書の場合、キーを署名と復号化に使用できます。|    SSL、トークン署名、トークン暗号化解除、サービス通信証明書|
+|2|従来の CAPI (CNG) 以外の証明書の場合、キーは署名にのみ使用できます。|推奨されません|
 
-## <a name="how-to-check-the-keyspec-value-for-your-certificates--keys"></a>証明書の KeySpec 値を確認する方法とキー
-使用できる証明書の値を表示する、 **certutil**コマンド ライン ツール。  
+## <a name="how-to-check-the-keyspec-value-for-your-certificates--keys"></a>証明書/キーの KeySpec 値を確認する方法
+証明書の値を表示するには、 **certutil**コマンドラインツールを使用します。  
 
-例を次に: **certutil – v – ストア my**します。  これが証明書情報を画面にダンプされます。
+次に例を示します。 **certutil – v – store my**.  これにより、証明書の情報が画面にダンプされます。
 
 ![Keyspec cert](media/AD-FS-and-KeySpec-Property/keyspec1.png)
 
-次の 2 つの CERT_KEY_PROV_INFO_PROP_ID ファイルの場所。
+[CERT_KEY_PROV_INFO_PROP_ID] で、次の2つの項目を検索します。
 
 
-1. **プロバイダーの種類:** これはレガシ暗号化ストレージ プロバイダー (CSP) を使用する証明書またはキー記憶域プロバイダー ベースの新しい証明書 Next Generation (CNG) Api のかどうかを示します。  0 以外の値では、従来のプロバイダーを示します。
-2. **KeySpec:** 以下は、AD FS の証明書の有効な KeySpec 値です。
+1. **Providertype:** 証明書で、新しい Certificate Next GENERATION (CNG) api に基づく従来の暗号化ストレージプロバイダー (CSP) またはキー記憶域プロバイダーを使用するかどうかを示します。  0以外の値は、レガシプロバイダーを示します。
+2. **KeySpec**AD FS 証明書の有効な KeySpec 値を次に示します。
 
-   レガシ CSP プロバイダー (ProviderType を 0 に等しくない):
+   レガシ CSP プロバイダー (ProviderType が0に等しくない):
 
    |AD FS 証明書の目的|有効な KeySpec 値|
    | --- | --- |
-   |サービスの通信|1|
-   |トークン暗号化解除|1|
-   |トークンの署名|1 と 2|
+   |サービス通信|1|
+   |トークンの復号化|1|
+   |トークン署名|1 と 2|
    |SSL (SSL)|1|
 
-   CNG プロバイダー (プロバイダーの種類 = 0)。
+   CNG プロバイダー (ProviderType = 0):
 
    |AD FS 証明書の目的|有効な KeySpec 値|
    | --- | --- |   
    |SSL (SSL)|0|
 
 ## <a name="how-to-change-the-keyspec-for-your-certificate-to-a-supported-value"></a>証明書の keyspec をサポートされている値に変更する方法
-KeySpec 値を変更する場合は再生成または再証明機関によって発行される証明書は必要ありません。  次の手順を使用して、証明書ストアに、完全な証明書と秘密キーを PFX ファイルからを再インポートすることは、KeySpec を変更できます。
+KeySpec 値を変更しても、証明機関によって証明書が再生成または再発行される必要はありません。  KeySpec を変更するには、次の手順を使用して、完全な証明書と秘密キーを PFX ファイルから証明書ストアに再インポートします。
 
 
-1. 最初に、確認しができるように構成し直す必要に応じて再インポートした後は、既存の証明書の秘密キーのアクセス許可を記録します。
-2. PFX ファイルに秘密キーを含む証明書をエクスポートします。
-3. AD FS と WAP サーバーごとに、次の手順を実行します。
-    1. 証明書を削除 (AD FS から/WAP サーバー)
-    2. 管理者特権の PowerShell コマンド プロンプトを開き、次のコマンドレットの構文を使用して、(これは、すべての AD FS 証明書の目的は) AT_KEYEXCHANGE 値を指定する各 AD FS と WAP サーバー上の PFX ファイルをインポートします。
-        1. C:\>certutil – importpfx certfile.pfx AT_KEYEXCHANGE
-        2. PFX のパスワードを入力します。
-    3. 上記が完了するとは、次を操作します。
-        1. 秘密キーのアクセス許可を確認してください。
-        2. adfs または wap サービスを再起動します。
+1. まず、既存の証明書の秘密キーのアクセス許可を確認して記録し、再インポート後に必要に応じて再構成できるようにします。
+2. 秘密キーを含む証明書を PFX ファイルにエクスポートします。
+3. AD FS と WAP サーバーごとに次の手順を実行します。
+    1. (AD FS/WAP サーバーから) 証明書を削除します。
+    2. 管理者特権の PowerShell コマンドプロンプトを開き、次のコマンドレット構文を使用して、各 AD FS および WAP サーバーで PFX ファイルをインポートします。このとき、AT_KEYEXCHANGE 値を指定します (すべて AD FS 証明書の目的で機能します)。
+        1. C: \>certutil – importpfx certfile .pfx AT_KEYEXCHANGE
+        2. PFX パスワードを入力してください
+    3. 上記の手順を完了したら、次の手順を実行します。
+        1. 秘密キーのアクセス許可を確認する
+        2. adfs または wap サービスを再起動する
 
 
 

@@ -2,7 +2,7 @@
 title: MultiPoint Services でディスク保護を構成する
 description: MultiPoint Services のディスク保護を設定する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 867848b65b02b6a7436fc5c86ba796a1b42aec42
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ae930162de32335ac32e3bda0ac381a26c5ea6dd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871736"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389817"
 ---
 # <a name="configure-disk-protection"></a>ディスクの保護を構成します。
 Multipoint Services のディスク保護を使用して、意図しない更新からシステムボリュームを保護したり、ディスク保護がアクティブになっている間は Windows 更新を保持するようにスケジュールしたり、ディスク保護を一時的に無効にしたり、ディスク保護をアンインストールしたりすることができます。  

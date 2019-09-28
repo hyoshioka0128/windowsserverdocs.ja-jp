@@ -2,18 +2,18 @@
 title: ターゲット優先順位を設定して紹介順序を上書きする
 description: この記事では、ターゲット優先順位を指定して紹介順序を上書きする方法について説明します。
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 59db08d5ef46b696f550a5fa0738c5c1f9375fda
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f0a6496802d2be16e84ef62c41fea6f0ae9f6438
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826363"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386119"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>ターゲット優先順位を設定して紹介順序を上書きする
 
@@ -27,13 +27,13 @@ ms.locfileid: "59826363"
 
 ドメインベースの名前空間のルート ターゲットにターゲット優先順位を設定するには、次の手順を実行します。
 
-1.  **[スタート]** をクリックし、**[管理ツール]** をポイントして、**[DFS 管理]** をクリックします。
+1.  **[スタート]** をクリックし、 **[管理ツール]** をポイントして、 **[DFS 管理]** をクリックします。
 
 2.  コンソール ツリーの **[名前空間]** ノードで、優先順位を設定するルート ターゲットのドメインベースの名前空間をクリックします。
 
-3.  **[詳細]** ウィンドウの **[名前空間サーバー]** タブで、優先順位を変更するルート ターゲットを右クリックし、**[プロパティ]** をクリックします。
+3.  **[詳細]** ウィンドウの **[名前空間サーバー]** タブで、優先順位を変更するルート ターゲットを右クリックし、 **[プロパティ]** をクリックします。
 
-4.  **[詳細設定]** タブで、**[紹介順序を上書きする]** をクリックし、希望する優先順位をクリックします。
+4.  **[詳細設定]** タブで、 **[紹介順序を上書きする]** をクリックし、希望する優先順位をクリックします。
 
     -   **[すべてのターゲットのうち最初のターゲット]**  このターゲットを使用できる場合は、ユーザーが常にこのターゲットを参照するよう指定します。
     -   **[すべてのターゲットのうち最後のターゲット]**  他のすべてのターゲットを使用できない場合にのみ、ユーザーがこのターゲットを参照するよう指定します。
@@ -44,18 +44,18 @@ ms.locfileid: "59826363"
 
 フォルダー ターゲットにターゲット優先順位を設定するには、次の手順を実行します。
 
-1.  **[スタート]** をクリックし、**[管理ツール]** をポイントして、**[DFS 管理]** をクリックします。
+1.  **[スタート]** をクリックし、 **[管理ツール]** をポイントして、 **[DFS 管理]** をクリックします。
 
 2.  コンソール ツリーの **[名前空間]** ノードで、優先順位を設定するターゲットのフォルダーをクリックします。
 
-3.  **[詳細]** ウィンドウの **[フォルダー ターゲット]** タブで、優先順位を変更するフォルダー ターゲットを右クリックし、**[プロパティ]** をクリックします。
+3.  **[詳細]** ウィンドウの **[フォルダー ターゲット]** タブで、優先順位を変更するフォルダー ターゲットを右クリックし、 **[プロパティ]** をクリックします。
 
-4.  **[詳細設定]** タブで、**[紹介順序を上書きする]** をクリックし、希望する優先順位をクリックします。
+4.  **[詳細設定]** タブで、 **[紹介順序を上書きする]** をクリックし、希望する優先順位をクリックします。
 
 > [!NOTE]
 > Windows PowerShell を使ってターゲット優先順位を設定するには、**ReferralPriorityClass** および **ReferralPriorityRank** パラメーターを指定して [Set-DfsnRootTarget](https://technet.microsoft.com/library/jj884266.aspx) および [Set-DfsnFolderTarget](https://technet.microsoft.com/library/jj884264.aspx) コマンドレットを使います。 これらのコマンドレットは、Windows Server 2012 で導入されました。
 
 ## <a name="see-also"></a>関連項目
 
--   [DFS 名前空間のチューニング](tuning-dfs-namespaces.md)
--   [Delegate Management Permissions for DFS 名前空間](delegate-management-permissions-for-dfs-namespaces.md)
+-   [DFS 名前空間を調整する](tuning-dfs-namespaces.md)
+-   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)

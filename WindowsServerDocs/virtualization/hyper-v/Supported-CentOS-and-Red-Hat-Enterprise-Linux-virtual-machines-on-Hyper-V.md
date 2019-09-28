@@ -1,7 +1,7 @@
 ---
 title: CentOS をサポートし、HYPER-V 上の Red Hat Enterprise Linux 仮想マシン
 description: サポートされている CentOS と Red Hat Enterprise ディストリビューション用の Linux integration services のバージョンを一覧表示します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 ms.technology: compute-hyper-v
 ms.tgt_pltfrm: na
@@ -10,12 +10,12 @@ ms.assetid: 4bf8783d-dee5-4b3e-8cce-2b11b117c189
 author: danihalfin
 ms.author: jopoulso
 ms.date: 06/13/2019
-ms.openlocfilehash: 80273bc0e99a3e70c8c783deae4a3ee42b5a11f0
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 19e22df7ed5e49cdf4047204f1b13b9c4f3450ef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544727"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365553"
 ---
 # <a name="supported-centos-and-red-hat-enterprise-linux-virtual-machines-on-hyper-v"></a>CentOS をサポートし、HYPER-V 上の Red Hat Enterprise Linux 仮想マシン
 
@@ -244,7 +244,7 @@ Hyper-v 用の組み込みの Red Hat Enterprise Linux Integration Services ド�
 
    1. ファイルを作成する **/etc/udev/rules.d/100-balloon.rules**します。 ファイルの他の目的の名前を使用することがあります。
 
-   2. 次の内容をファイルに追加します。`SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
+   2. 次の内容をファイルに追加します。 `SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
 
    3. ホット アド サポートを有効にするシステムを再起動します。
 

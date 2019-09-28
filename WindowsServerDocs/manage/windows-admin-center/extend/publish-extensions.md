@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: d2bb97fb65e3fbf5c7809317a8565ff7051d0447
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 24beb287aa35757e1f8057920e8fd95828baf83b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869700"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385202"
 ---
 # <a name="publishing-extensions"></a>拡張機能の公開
 
@@ -72,7 +72,7 @@ UI 拡張機能に必要なすべてのコンテンツを収集するプロセ�
 
 ### <a name="2-create-the-nuspec-file"></a>2. Nuspec ファイルを作成する
 
-NuGet パッケージを作成するには、最初に nuspec ファイルを作成する必要があります。 Nuspec ファイルは、NuGet パッケージのメタデータを含む XML マニフェストです。 このマニフェストは、パッケージを作成するためと、コンシューマーに情報を提供するための、両方に使われます。  このファイルを "NuGet パッケージ" フォルダーのルートに配置します。
+NuGet パッケージを作成するには、最初に nuspec ファイルを作成する必要があります。 Nuspec ファイルは、NuGet パッケージのメタデータを含む XML マニフェストです。 このマニフェストは、パッケージをビルドし、コンシューマーに情報を提供するために使用されます。  このファイルを "NuGet パッケージ" フォルダーのルートに配置します。
 
 Nuspec ファイルの例と、必須または推奨されるプロパティの一覧を次に示します。 完全なスキーマについては、 [nuspec のリファレンス](https://docs.microsoft.com/nuget/reference/nuspec)を参照してください。 任意のファイル名を使用して、nuspec ファイルをプロジェクトのルートフォルダーに保存します。
 
@@ -111,7 +111,7 @@ Nuspec ファイルの例と、必須または推奨されるプロパティの�
 | プロパティ名 | 必須/推奨 | 説明 |
 | ---- | ---- | ---- |
 | PackageType | 必須 | Windows 管理センターの拡張機能に定義されている NuGet パッケージの種類である "Windowsadmincenter Extension" を使用します。 |
-| id | 必須 | フィード内の一意のパッケージ識別子。 この値は、プロジェクトのマニフェストの json ファイルの "name" 値と一致する必要があります。  ガイダンスについては、[一意のパッケージ識別子の選択](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)に関するページをご覧ください。 |
+| id | 必須 | フィード内の一意のパッケージ識別子。 この値は、プロジェクトのマニフェストの json ファイルの "name" 値と一致する必要があります。  ガイダンスについて[は、「一意のパッケージ識別子の選択](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)」を参照してください。 |
 | title | Windows 管理センターフィードへの発行に必要 | Windows 管理センターの拡張機能マネージャーに表示されるパッケージのフレンドリ名。 |
 | version | 必須 | 拡張機能のバージョン。 [セマンティックバージョン管理 (SemVer 規約)](http://semver.org/spec/v1.0.0.html)を使用することをお勧めしますが、必須ではありません。 |
 | authors | 必須 | 会社の代理として発行する場合は、会社名を使用します。 |
