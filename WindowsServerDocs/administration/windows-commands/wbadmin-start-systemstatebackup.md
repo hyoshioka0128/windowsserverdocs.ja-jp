@@ -1,8 +1,8 @@
 ---
 title: wbadmin start systemstatebackup
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,25 +13,25 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d98ba295b2a76baf98e85a01a02677d57922877d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0244f984d29c8a802475d2dc08f1cdfe4495f0b9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440265"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362231"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>wbadmin start systemstatebackup
 
 
 
-ローカル コンピューターのシステム状態のバックアップを作成し、指定された場所に保存します。
+ローカルコンピューターのシステム状態のバックアップを作成し、指定した場所に保存します。
 
 > [!NOTE]
 > Windows Server バックアップはバックアップまたはシステム状態のバックアップまたはシステム状態の回復の一部としてユーザーのレジストリ ハイブ (HKEY_CURRENT_USER) を回復します。
 
-このサブコマンドでシステム状態のバックアップを実行するには、メンバーである、 **Backup Operators**グループまたは**管理者**グループ、またはをされている必要が適切なアクセス許可を委任します。 さらに、実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (を開き、管理者特権でコマンド プロンプトを右クリック**コマンド プロンプト**、 をクリックし、**管理者として実行**)。
+このサブコマンドを使用してシステム状態のバックアップを実行するには、 **Backup Operators**グループまたは**Administrators**グループのメンバであるか、適切な権限が委任されている必要があります。 さらに、実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (管理者特権でのコマンドプロンプトを開くには、 **[コマンドプロンプト]** を右クリックし、 **[管理者として実行]** をクリックします)。
 
-このサブコマンドを使用する方法の例については、次を参照してください。[例](#BKMK_examples)します。
+このサブコマンドの使用方法の例については、「[例](#BKMK_examples)」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -45,16 +45,16 @@ wbadmin start systemstatebackup
 
 |   パラメーター   |                                                                                                                                                                                                                      説明                                                                                                                                                                                                                      |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| -backuptarget | バックアップを格納する場所を指定します。 記憶域の場所は、ドライブ文字または形式の GUID ベースのボリュームが必要です: \\ \\? \Volume {*GUID*}。</br>Windows Server 2008 を実行するコンピューターでは、共有ネットワーク フォルダーへのシステム状態のバックアップはサポートされていません。 サーバーには、Windows Server 2008 R2 が実行されているか、後でコマンドを使用することができる場合 **-backuptarget:\\\\servername\sharedFolder\\** システム状態のバックアップを格納します。 |
-|    -通知の停止     |                                                                                                                                                                                                   ユーザーにプロンプトなしで、サブコマンドを実行します。                                                                                                                                                                                                    |
+| -backuptarget | バックアップを保存する場所を指定します。 記憶域の場所には、次の形式のドライブ文字または GUID ベースのボリュームが必要です: \\ @ no__t-1? \ volume{*GUID*}。</br>Windows Server 2008 を実行しているコンピューターでは、共有ネットワークフォルダーへのシステム状態のバックアップはサポートされていません。 サーバーで Windows Server 2008 R2 以降が実行されている場合は、 **backuptarget: \\ @ no__t-2servername\sharedFolder @ no__t**コマンドを使用して、システム状態のバックアップを格納できます。 |
+|    -通知の停止     |                                                                                                                                                                                                   ユーザーにプロンプトを表示せずにサブコマンドを実行します。                                                                                                                                                                                                    |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-ボリュームにシステム状態のバックアップを保存する方法については、システム状態ファイル、さらに、含まれています。 944530 でマイクロソフト サポート技術情報の記事を参照してください。 ([https://go.microsoft.com/fwlink/?LinkId=110439](https://go.microsoft.com/fwlink/?LinkId=110439))。
+システム状態のバックアップをボリュームに保存する方法については、Microsoft サポート技術情報の記事 944530 ([https://go.microsoft.com/fwlink/?LinkId=110439](https://go.microsoft.com/fwlink/?LinkId=110439)) を参照してください。
 
 ## <a name="BKMK_examples"></a>例
 
-システム状態のバックアップを作成してボリューム f に保存、次のように入力します。
+システム状態のバックアップを作成し、ボリューム f に保存するには、次のように入力します。
 ```
 wbadmin start systemstatebackup -backupTarget:f:
 ```
@@ -63,4 +63,4 @@ wbadmin start systemstatebackup -backupTarget:f:
 
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [開始 WBBackup](https://technet.microsoft.com/library/jj902459.aspx)コマンドレット
+-   [WBBackup](https://technet.microsoft.com/library/jj902459.aspx)コマンドレット

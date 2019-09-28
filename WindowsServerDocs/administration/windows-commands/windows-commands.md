@@ -8,50 +8,32 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.date: 06/26/2019
-ms.prod: windows-server-threshold
-ms.openlocfilehash: d0cf58ea8d37efccf80ce262b64e604218bd8d0b
-ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
+ms.prod: windows-server
+ms.openlocfilehash: 5cb26bcff99d9cf3a1ee8b3a937ad6098a913c3d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67407656"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362060"
 ---
 # <a name="windows-commands"></a>Windows のコマンド
 
-Windows (サーバーとクライアント) のサポートされているすべてのバージョンがある一連の Win32 コンソールのコマンドが組み込まれています。
+サポートされているすべてのバージョンの Windows (サーバーとクライアント) には、に組み込まれている一連の Win32 コンソールコマンドがあります。
 
-このドキュメント セットでは、タスクを自動化するスクリプトを使用して、またはスクリプト ツールで使用できる Windows コマンドについて説明します。
+この一連のドキュメントでは、スクリプトまたはスクリプトツールを使用してタスクを自動化するために使用できる Windows コマンドについて説明します。
 
-次の A ~ Z のメニューで、特定のコマンドに関する情報を検索するには、コマンドを使用すると、開始する文字をクリックし、コマンド名をクリックします。
+特定のコマンドに関する情報を検索するには、次の A-Z メニューで、コマンドの開始文字をクリックし、コマンド名をクリックします。
 
 [A](#a) |
 [B](#b) | 
 [C](#c) | 
 [D](#d) | 
-[E](#e)  | 
- [F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[は](#i) |
- [J](#j) | 
-[K](#k) | 
-[L](#l) | 
-[M](#m) | 
-[N](#n) | 
- [O](#o) | 
-[P](#p) | 
-[Q](#q) | 
-[R](#r)  | 
-[S](#s) | 
-[T](#t) | 
-[U](#u) | 
-[V](#v) | 
- [W](#w) | 
-[X](#x) |Y |Z
+[E](#e) | 
+[F](#f)1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)7[T](#t)9[U](#u)1[V](#v)3[W](#w)5[X](#x) |Y |方向
 
 ## <a name="prerequisites"></a>前提条件
 
-このトピックに含まれる情報に適用されます。
+このトピックに記載されている情報は、以下に適用されます。
 
 -   Windows Server 2019
 -   Windows Server (半期チャネル)
@@ -65,54 +47,36 @@ Windows (サーバーとクライアント) のサポートされているすべ
 
 ### <a name="command-shell-overview"></a>コマンド シェルの概要
 
-コマンド シェルでは、バッチ (.bat) ファイルでユーザー アカウントの管理または夜間のバックアップなどの日常的なタスクを自動化する Windows に組み込まれている最初のシェルをしました。 Windows スクリプト ホストでは、コマンド シェルでより高度なスクリプトを実行できます。 詳細については、次を参照してください。 [cscript](cscript.md)または[wscript](wscript.md)します。 ユーザー インターフェイスを使用するよりも、スクリプトを使用して、操作をより効率的に実行できます。 スクリプトは、コマンドラインで使用できるすべてのコマンドをそのまま使用します。
+コマンドシェルは、ユーザーアカウント管理や夜間バックアップなどの日常的なタスクをバッチ (.bat) ファイルで自動化するために Windows に組み込まれた最初のシェルでした。 Windows スクリプトホストを使用すると、コマンドシェルでより高度なスクリプトを実行できます。 詳細については、「 [cscript](cscript.md)または[wscript](wscript.md)」を参照してください。 ユーザーインターフェイスを使用する場合よりも、スクリプトを使用すると操作をより効率的に実行できます。 スクリプトは、コマンドラインで使用可能なすべてのコマンドを受け入れます。
 
-Windows では、2 つのコマンド シェルがあります。コマンド シェルと[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)します。 各シェルとして、オペレーティング システムまたは IT 操作を自動化するための環境を提供する、アプリケーションの間の直接の通信を提供するソフトウェア プログラムです。
+Windows には、次の2つのコマンドシェルがあります。コマンドシェルと[PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)。 各シェルは、ユーザーとオペレーティングシステムまたはアプリケーションとの直接通信を提供するソフトウェアプログラムであり、IT 運用を自動化するための環境を提供します。
 
-PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを実行するコマンド シェルの機能を拡張する設計されました。 コマンドレットは Windows のコマンドに似ていますが、拡張可能なスクリプト言語を提供します。 Powershell では、Windows のコマンドと PowerShell コマンドレットを実行することができますが、コマンド シェルには、Windows のコマンドと PowerShell コマンドレットではないのみを実行できます。
+PowerShell は、コマンドシェルの機能を拡張して、コマンドレットと呼ばれる PowerShell コマンドを実行するように設計されています。 コマンドレットは Windows コマンドに似ていますが、より拡張可能なスクリプト言語を提供します。 Powershell では Windows コマンドと PowerShell コマンドレットを実行できますが、コマンドシェルで実行できるのは PowerShell コマンドレットではなく Windows コマンドだけです。
 
-最も信頼性が高く、最新 Windows automation、PowerShell を使用して、Windows コマンドまたは Windows スクリプト ホストの Windows のオートメーションではなくをお勧めします。 
+最も堅牢で最新の Windows オートメーションの場合は、windows コマンドや windows スクリプトホストの代わりに PowerShell を使用することをお勧めします。 
 > [!NOTE]
->ダウンロードしてインストールすることができますも[PowerShell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)PowerShell のオープン ソース バージョン。 
+>Powershell のオープンソースバージョンである[Powershell Core](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6)をダウンロードしてインストールすることもできます。 
 
 > [!CAUTION]
-> レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリに次の変更を加える前に、コンピューターの重要なデータをバックアップする必要があります。
+> レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリに次の変更を加える前に、コンピューター上の重要なデータをバックアップする必要があります。
 
 > [!NOTE]
-> 実行を有効または、ファイルとディレクトリ名の補完機能コマンド シェルで、コンピューターまたはユーザーのログオン セッションを無効にする、 **regedit.exe** 、以下の設定と**reg_DWOrd 値**:
+> コンピューターまたはユーザーのログオンセッションでコマンドシェルのファイル名とディレクトリ名の入力候補を有効または無効にするには、 **regedit.exe**を実行し、次の**reg_DWOrd 値**を設定します。
 > 
-> 次のレジストリ Processor\completionChar\reg_DWOrd
+> HKEY_LOCAL_MACHINE\Software\Microsoft\Command のプロセッサ名 (_e)
 > 
-> 設定する、 **reg_DWOrd**値には、特定の機能の制御文字の 16 進数の値を使用して (たとえば、 **0 9**  タブと**0 08** backspace キーが)。 ユーザーが指定した設定は、コンピューターの設定より優先し、コマンド ライン オプションのレジストリ設定より優先します。
+> **Reg_DWOrd**値を設定するには、特定の関数に対して制御文字の16進値を使用します (たとえば、 **0 9**は Tab、 **0 08**は Backspace です)。 ユーザー指定の設定はコンピューターの設定よりも優先され、コマンドラインオプションはレジストリ設定よりも優先されます。
 
-## <a name="command-line-reference-a-z"></a>コマンド ライン リファレンス A ~ Z
+## <a name="command-line-reference-a-z"></a>コマンドラインリファレンス A-z
 
-次の A ~ Z のメニューで、特定の Windows コマンドに関する情報を検索するには、コマンドを使用すると、開始する文字をクリックし、コマンド名をクリックします。
+特定の Windows コマンドに関する情報を検索するには、次の A-Z メニューで、コマンドの開始文字をクリックし、コマンド名をクリックします。
 
 [A](#a) |
 [B](#b) | 
 [C](#c) | 
 [D](#d) | 
-[E](#e)  | 
- [F](#f) | 
-[G](#g) | 
-[H](#h) | 
-[は](#i) |
- [J](#j) | 
-[K](#k) | 
-[L](#l) | 
-[M](#m) | 
-[N](#n) | 
- [O](#o) | 
-[P](#p) | 
-[Q](#q) | 
-[R](#r)  | 
-[S](#s) | 
-[T](#t) | 
-[U](#u) | 
-[V](#v) | 
- [W](#w) | 
-[X](#x) |Y |Z)
+[E](#e) | 
+[F](#f)1[G](#g)3[H](#h)5[I](#i)7[J](#j)9[K](#k)1[L](#l)3[M](#m)5[N](#n)7[O](#o)9[P](#p)1[Q](#q)3[R](#r)5[S](#s)7[T](#t)9[U](#u)1[V](#v)3[W](#w)5[X](#x) |Y |方向
 
 ### <a name="a"></a>A
 -   [append](append.md)
@@ -155,7 +119,7 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
   -   [bitsadmin getnotifyflags](bitsadmin-getnotifyflags.md)
   -   [bitsadmin getnotifyinterface](bitsadmin-getnotifyinterface.md)
   -   [bitsadmin getowner](bitsadmin-getowner.md)
-  -   [bitsadmin get の優先順位](bitsadmin-getpriority.md)
+  -   [bitsadmin の優先順位を取得する](bitsadmin-getpriority.md)
   -   [bitsadmin getproxybypasslist](bitsadmin-getproxybypasslist.md)
   -   [bitsadmin getproxylist](bitsadmin-getproxylist.md)
   -   [bitsadmin getproxyusage](bitsadmin-getproxyusage.md)
@@ -205,7 +169,7 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
   -   [bootcfg timeout](bootcfg-timeout.md)
 - [break](break_1.md)
 
-### <a name="c"></a>C
+### <a name="c"></a>c
 - [cacls](cacls_1.md)
 - [call](call.md)
 - [cd](cd.md)
@@ -253,7 +217,7 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 -   [diskraid](diskraid.md)
 -   [diskshadow](diskshadow.md)
 -   [dispdiag](dispdiag.md)
--   [dnscmd](Dnscmd.md)
+-   [あるいは](Dnscmd.md)
 -   [doskey](doskey.md)
 -   [driverquery](driverquery.md)
 
@@ -298,7 +262,7 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
   -   [fsutil usn](fsutil-usn.md)
   -   [fsutil volume](fsutil-volume.md)
   -   [fsutil wim](fsutil-wim.md)
-- [ftp](ftp.md)
+- [パッシブ](ftp.md)
 - [ftype](ftype.md)
 - [fveupdate](fveupdate.md)
 
@@ -330,28 +294,28 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 ### <a name="k"></a>K
 - [klist](klist.md)
 - [ksetup](ksetup.md)
-  -   [ksetup:setrealm](ksetup-setrealm.md)
-  -   [ksetup:mapuser](ksetup-mapuser.md)
-  -   [ksetup:addkdc](ksetup-addkdc.md)
-  -   [ksetup:delkdc](ksetup-delkdc.md)
-  -   [ksetup:addkpasswd](ksetup-addkpasswd.md)
-  -   [ksetup:delkpasswd](ksetup-delkpasswd.md)
-  -   [ksetup:server](ksetup-server.md)
-  -   [ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)
-  -   [ksetup:removerealm](ksetup-removerealm.md)
-  -   [ksetup:domain](ksetup-domain.md)
-  -   [ksetup:changepassword](ksetup-changepassword.md)
-  -   [ksetup:listrealmflags](ksetup-listrealmflags.md)
-  -   [ksetup:setrealmflags](ksetup-setrealmflags.md)
-  -   [ksetup:addrealmflags](ksetup-addrealmflags.md)
-  -   [ksetup:delrealmflags](ksetup-delrealmflags.md)
-  -   [ksetup:dumpstate](ksetup-dumpstate.md)
-  -   [ksetup:addhosttorealmmap](ksetup-addhosttorealmmap.md)
-  -   [ksetup:delhosttorealmmap](ksetup-delhosttorealmmap.md)
-  -   [ksetup:setenctypeattr](ksetup-setenctypeattr.md)
-  -   [ksetup:getenctypeattr](ksetup-getenctypeattr.md)
-  -   [ksetup:addenctypeattr](ksetup-addenctypeattr.md)
-  -   [ksetup:delenctypeattr](ksetup-delenctypeattr.md) 
+  -   [ksetup: setrealm](ksetup-setrealm.md)
+  -   [ksetup: mapuser](ksetup-mapuser.md)
+  -   [ksetup: addkdc](ksetup-addkdc.md)
+  -   [ksetup: delkdc](ksetup-delkdc.md)
+  -   [ksetup: addkpasswd](ksetup-addkpasswd.md)
+  -   [ksetup: delkpasswd](ksetup-delkpasswd.md)
+  -   [ksetup: サーバー](ksetup-server.md)
+  -   [ksetup: setcomputerpassword](ksetup-setcomputerpassword.md)
+  -   [ksetup: removerealm](ksetup-removerealm.md)
+  -   [ksetup: ドメイン](ksetup-domain.md)
+  -   [ksetup: changepassword](ksetup-changepassword.md)
+  -   [ksetup: listrealmflags](ksetup-listrealmflags.md)
+  -   [ksetup: setrealmflags](ksetup-setrealmflags.md)
+  -   [ksetup: addrealmflags](ksetup-addrealmflags.md)
+  -   [ksetup: delrealmflags](ksetup-delrealmflags.md)
+  -   [ksetup: dumpstate](ksetup-dumpstate.md)
+  -   [ksetup: addhost almmap](ksetup-addhosttorealmmap.md)
+  -   [ksetup: delhost almmap](ksetup-delhosttorealmmap.md)
+  -   [ksetup: setenctypeattr](ksetup-setenctypeattr.md)
+  -   [ksetup: getenctypeattr](ksetup-getenctypeattr.md)
+  -   [ksetup: addenctypeattr](ksetup-addenctypeattr.md)
+  -   [ksetup: delenctypeattr](ksetup-delenctypeattr.md) 
 - [ktmutil](ktmutil.md)
 - [ktpass](ktpass.md)
 
@@ -361,10 +325,10 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 - [logman](logman.md)
   -   [logman create](logman-create.md)
   -   [logman query](logman-query.md)
-  -   [logman start & #124;停止](logman-start-stop.md)
+  -   [logman 開始 & 124;停止](logman-start-stop.md)
   -   [logman delete](logman-delete.md)
   -   [logman update](logman-update.md)
-  -   [logman import & #124;エクスポート](logman-import-export.md)
+  -   [logman インポート & 124;輸出](logman-import-export.md)
 - [logoff](logoff.md)
 - [lpq](lpq.md)
 - [lpr](lpr.md)
@@ -373,24 +337,24 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 - [macfile](macfile.md)
 - [makecab](makecab.md)
 - [manage-bde](manage-bde.md)
-  -   [manage-bde: ステータス](manage-bde-status.md)
+  -   [manage-bde: 状態](manage-bde-status.md)
   -   [manage-bde: on](manage-bde-on.md)
   -   [manage-bde: off](manage-bde-off.md)
-  -   [manage-bde: 一時停止](manage-bde-pause.md)
+  -   [manage-bde: pause](manage-bde-pause.md)
   -   [manage-bde: resume](manage-bde-resume.md)
   -   [manage-bde: lock](manage-bde-lock.md)
   -   [manage-bde: unlock](manage-bde-unlock.md)
-  -   [manage-bde: autounlock](manage-bde-autounlock.md)
-  -   [manage-bde: protectors](manage-bde-protectors.md)
+  -   [manage-bde: 自動ロック解除](manage-bde-autounlock.md)
+  -   [manage-bde: プロテクター](manage-bde-protectors.md)
   -   [manage-bde: tpm](manage-bde-tpm.md)
   -   [manage-bde: setidentifier](manage-bde-setidentifier.md)
-  -   [manage-bde:ForceRecovery](manage-bde-forcerecovery.md)
+  -   [manage:ForceRecovery](manage-bde-forcerecovery.md)
   -   [manage-bde: changepassword](manage-bde-changepassword.md)
   -   [manage-bde: changepin](manage-bde-changepin.md)
-  -   [manage-bde: changekey](manage-bde-changekey.md)
-  -   [manage-bde:KeyPackage](manage-bde-keypackage.md)
+  -   [manage-bde: 変更キー](manage-bde-changekey.md)
+  -   [manage:KeyPackage](manage-bde-keypackage.md)
   -   [manage-bde: upgrade](manage-bde-upgrade.md)
-  -   [manage-bde:WipeFreeSpace](manage-bde-wipefreespace.md)
+  -   [manage:WipeFreeSpace](manage-bde-wipefreespace.md)
 - [mapadmin](mapadmin.md)
 - [Md](Md.md)
 - [mkdir](mkdir.md)
@@ -422,7 +386,7 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 - [nlbmgr](nlbmgr.md)
 - [nslookup](nslookup.md)
   -   [nslookup exit コマンド](nslookup-exit-command.md)
-  -   [本の指で nslookup コマンド](nslookup-finger-command.md)
+  -   [nslookup finger コマンド](nslookup-finger-command.md)
   -   [nslookup help](nslookup-help.md)
   -   [nslookup ls](nslookup-ls.md)
   -   [nslookup lserver](nslookup-lserver.md)
@@ -454,7 +418,7 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 
 ### <a name="p"></a>P
 -   [pagefileconfig](pagefileconfig.md)
--   [パス](path.md)
+-   [path](path.md)
 -   [pathping](pathping.md)
 -   [pause](pause.md)
 -   [pbadmin](pbadmin.md)
@@ -481,7 +445,7 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 ### <a name="q"></a>Q
 -   [qappsrv](qappsrv.md)
 -   [qprocess](qprocess.md)
--   [クエリ](query.md)
+-   [query](query.md)
 -   [quser](quser.md)
 -   [qwinsta](qwinsta.md)
 
@@ -491,17 +455,17 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 - [rdpsign](rdpsign.md)
 - [recover](recover.md)
 - [reg](reg.md)
-  -   [Reg を追加します。](reg-add.md)
-  -   [Reg の比較](reg-compare.md)
-  -   [Reg のコピー](reg-copy.md)
-  -   [reg delete](reg-delete.md)
-  -   [Reg のエクスポート](reg-export.md)
-  -   [Reg のインポート](reg-import.md)
-  -   [Reg ロード](reg-load.md)
-  -   [Reg クエリ](reg-query.md)
-  -   [Reg 復元](reg-restore.md)
-  -   [Reg 保存](reg-save.md)
-  -   [reg unload](reg-unload.md)
+  -   [reg add](reg-add.md)
+  -   [reg 比較](reg-compare.md)
+  -   [reg コピー](reg-copy.md)
+  -   [reg の削除](reg-delete.md)
+  -   [reg エクスポート](reg-export.md)
+  -   [reg インポート](reg-import.md)
+  -   [reg 読み込み](reg-load.md)
+  -   [reg クエリ](reg-query.md)
+  -   [reg 復元](reg-restore.md)
+  -   [reg 保存](reg-save.md)
+  -   [reg アンロード](reg-unload.md)
 - [regini](regini.md)
 - [regsvr32](regsvr32.md)
 - [relog](relog.md)
@@ -526,18 +490,18 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 - [schtasks](schtasks.md)
 - [scwcmd](Scwcmd.md)
   -   [scwcmd: 分析](scwcmd-analyze.md)
-  -   [scwcmd: configure](scwcmd-configure.md)
-  -   [scwcmd: register](scwcmd-register.md) 
-  -   [scwcmd: rollback](scwcmd-rollback.md) 
+  -   [scwcmd: 構成](scwcmd-configure.md)
+  -   [scwcmd: 登録](scwcmd-register.md) 
+  -   [scwcmd: ロールバック](scwcmd-rollback.md) 
   -   [scwcmd: transform](scwcmd-transform.md) 
-  -   [scwcmd: view](scwcmd-view.md) 
+  -   [scwcmd: 表示](scwcmd-view.md) 
 - [secedit](secedit.md)
-  -   [secedit:analyze](secedit-analyze.md)
-  -   [secedit:configure](secedit-configure.md)
-  -   [secedit:export](secedit-export.md)
-  -   [secedit:generaterollback](secedit-generaterollback.md)
-  -   [secedit:import](secedit-import.md)
-  -   [secedit:validate](secedit-validate.md)
+  -   [secedit: 分析](secedit-analyze.md)
+  -   [secedit: 構成](secedit-configure.md)
+  -   [secedit: エクスポート](secedit-export.md)
+  -   [secedit: generaterollback](secedit-generaterollback.md)
+  -   [secedit: インポート](secedit-import.md)
+  -   [secedit: validate](secedit-validate.md)
 - [serverceipoptin](serverceipoptin.md)
 - [Servermanagercmd](Servermanagercmd.md)
 - [serverweroptin](serverweroptin.md)
@@ -594,20 +558,20 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 ### <a name="w"></a>W
 - [waitfor](waitfor.md)
 - [wbadmin](wbadmin.md)
-  -   [wbadmin バックアップの有効化](wbadmin-enable-backup.md)
-  -   [バックアップを無効に wbadmin](wbadmin-disable-backup.md)
-  -   [wbadmin start backup](wbadmin-start-backup.md)
-  -   [wbadmin の停止ジョブ](wbadmin-stop-job.md)
-  -   [wbadmin get バージョン](wbadmin-get-versions.md)
-  -   [wbadmin get 項目](wbadmin-get-items.md)
-  -   [wbadmin start recovery](wbadmin-start-recovery.md)
-  -   [wbadmin get 状態](wbadmin-get-status.md)
-  -   [wbadmin get ディスク](wbadmin-get-disks.md)
+  -   [wbadmin のバックアップの有効化](wbadmin-enable-backup.md)
+  -   [wbadmin のバックアップの無効化](wbadmin-disable-backup.md)
+  -   [wbadmin のバックアップの開始](wbadmin-start-backup.md)
+  -   [wbadmin 停止ジョブ](wbadmin-stop-job.md)
+  -   [wbadmin get のバージョン](wbadmin-get-versions.md)
+  -   [wbadmin の項目の取得](wbadmin-get-items.md)
+  -   [wbadmin の回復の開始](wbadmin-start-recovery.md)
+  -   [wbadmin の状態の取得](wbadmin-get-status.md)
+  -   [wbadmin のディスクの取得](wbadmin-get-disks.md)
   -   [wbadmin start systemstaterecovery](wbadmin-start-systemstaterecovery.md)
   -   [wbadmin start systemstatebackup](wbadmin-start-systemstatebackup.md)
   -   [wbadmin delete systemstatebackup](wbadmin-delete-systemstatebackup.md)
   -   [wbadmin start sysrecovery](wbadmin-start-sysrecovery.md)
-  -   [wbadmin restore catalog](wbadmin-restore-catalog.md)
+  -   [wbadmin restore カタログ](wbadmin-restore-catalog.md)
   -   [wbadmin delete カタログ](wbadmin-delete-catalog.md)
 - [wdsutil](wdsutil.md)
 - [wecutil](wecutil.md)
@@ -618,7 +582,7 @@ PowerShell は、コマンドレットと呼ばれる PowerShell コマンドを
 - [winnt32](winnt32.md)
 - [winpop](winpop.md)
 - [winrs](winrs.md)
-- [wlbs](wlbs_1.md)
+- [wlbs.exe](wlbs_1.md)
 - [wmic](wmic.md)
 - [wscript](wscript.md)
 

@@ -1,42 +1,42 @@
 ---
-title: スタンドアロン AD FS フェデレーション サーバーの移行を準備します。
-description: スタンドアロン AD FS サーバーを Windows Server 2012 に移行するための準備について説明します。
+title: スタンドアロン AD FS フェデレーションサーバーの移行の準備
+description: スタンドアロン AD FS サーバーを Windows Server 2012 に移行するための準備作業について説明します。
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 06/28/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4d2b8a9c35b106a237b47d1bd062026469af59a0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 09b8cbd9097a95cd00b1413ce9e32ff9bf2f44c3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444480"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359318"
 ---
 #  <a name="prepare-to-migrate-a-stand-alone-ad-fs-federation-server-or-a-single-node-ad-fs-farm"></a>スタンドアロン AD FS フェデレーション サーバーまたは単一ノード AD FS ファームの移行の準備  
  
-(同じサーバーの移行) の移行の準備にスタンドアロン AD FS 2.0 フェデレーション サーバーまたは Windows Server 2012 では、単一ノード AD FS ファームをエクスポートしてこのサーバーから AD FS 構成データをバックアップします。  
+スタンドアロンの AD FS 2.0 フェデレーションサーバーまたは単一ノード AD FS ファームから Windows Server 2012 への移行 (同一サーバー移行) を準備するには、このサーバーから AD FS 構成データをエクスポートしてバックアップする必要があります。  
   
 AD FS の構成データをエクスポートするには、次の作業を実行します。  
   
--   [ステップ 1: サービス設定のエクスポート](#step-1-export-service-settings)  
+-   [ステップ 1: サービス設定のエクスポート @ no__t-0  
   
--   [手順 2:要求プロバイダー信頼をエクスポートします。](#step-2-export-claims-provider-trusts)  
+-   [手順 2:要求プロバイダー信頼をエクスポートする @ no__t-0  
   
--   [手順 3:証明書利用者信頼をエクスポートします。](#step-3-export-relying-party-trusts)  
+-   [手順 3:証明書利用者信頼をエクスポートする @ no__t-0  
   
--   [手順 4:カスタム属性ストアをバックアップします。](#step-4-back-up-custom-attribute-stores)  
+-   [手順 4:カスタム属性ストアのバックアップ @ no__t-0  
   
--   [手順 5:Web ページのカスタマイズをバックアップします。](#step-5-back-up-webpage-customizations)  
+-   [手順 5:Web ページのカスタマイズをバックアップする @ no__t-0  
   
 ## <a name="step-1-export-service-settings"></a>手順 1:サービスの設定をエクスポートする  
  サービスの設定をエクスポートするには、次の手順を実行します。  
   
 ### <a name="to-export-service-settings"></a>サービスの設定をエクスポートするには  
   
-1.  フェデレーション サービスによって使用される SSL 証明書の証明書サブジェクト名と拇印の値を記録します。 SSL 証明書を検索するには、インターネット インフォメーション サービス (IIS) 管理コンソールを開き、左ウィンドウで **[既定の Web サイト]** を選択します。 **[操作]** **アクション**ペイン、検索、および https バインドを選択します をクリックして**編集**、 をクリックし、**ビュー**します。  
+1.  フェデレーション サービスによって使用される SSL 証明書の証明書サブジェクト名と拇印の値を記録します。 SSL 証明書を検索するには、インターネット インフォメーション サービス (IIS) 管理コンソールを開き、左ウィンドウで **[既定の Web サイト]** を選択します。 **[操作]** **[操作]** ウィンドウで、https バインドを検索して選択し、 **[編集]** をクリックして、 **[表示]** をクリックします。  
   
 > [!NOTE]
 >  オプションで、フェデレーション サービスによって使用される SSL 証明書とその秘密キーを .pfx ファイルにエクスポートすることもできます。 詳細については、[サーバー認証証明書の秘密キー部分のエクスポートに関するページ](Export-the-Private-Key-Portion-of-a-Server-Authentication-Certificate.md)を参照してください。  
@@ -57,7 +57,7 @@ AD FS の構成データをエクスポートするには、次の作業を実�
 出力ファイルには次の重要な構成値が含まれます。  
   
     
-|**Get-adfsproperties によって報告された、フェデレーション サービスのプロパティ名**|**AD FS 管理コンソールで、フェデレーション サービスのプロパティ名**|
+|**Set-adfsproperties によって報告されたフェデレーションサービスプロパティ名**|**AD FS 管理コンソールのフェデレーションサービスプロパティ名**|
 |------|------|
 |HostName|フェデレーション サービス名|  
 |識別子|フェデレーション サービスの識別子|  
@@ -108,8 +108,8 @@ ID 値を検索するには、 **[サービス]** コンソールで **[AD FS 2.
  任意の Web ページのカスタマイズをバックアップするには、IIS で仮想パス **“/adfs/ls”** にマップされたディレクトリから AD FS Web ページと **web.config** ファイルをコピーします。 既定では、そのファイルは **%systemdrive%\inetpub\adfs\ls** ディレクトリにあります。  
 
 ## <a name="next-steps"></a>次の手順
- [AD FS 2.0 フェデレーション サーバーの移行を準備します。](prepare-to-migrate-ad-fs-fed-server.md)   
- [AD FS 2.0 フェデレーション サーバー プロキシの移行を準備します。](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [AD FS 2.0 フェデレーション サーバーを移行します。](migrate-the-ad-fs-fed-server.md)   
- [AD FS 2.0 フェデレーション サーバー プロキシを移行します。](migrate-the-ad-fs-2-fed-server-proxy.md)   
+ [AD FS 2.0 フェデレーションサーバーの移行の準備](prepare-to-migrate-ad-fs-fed-server.md)   
+ [AD FS 2.0 フェデレーションサーバープロキシの移行の準備](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [AD FS 2.0 フェデレーションサーバー](migrate-the-ad-fs-fed-server.md)  を移行します。  
+ [AD FS 2.0 フェデレーションサーバープロキシ   を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
  [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)

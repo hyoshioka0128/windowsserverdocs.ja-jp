@@ -4,12 +4,12 @@ description: Windows Server 関連の記事の上部にメタデータタグと�
 author: eross-msft
 ms.author: lizross
 ms.date: 05/06/2019
-ms.openlocfilehash: f0af6b48cd3fd28ae0a15752cb21bfe9a4abf14f
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9bedc7ec13aedab9cfaa655f537d5e431d20cccb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865091"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363958"
 ---
 # <a name="add-the-required-metadata-tags-to-your-windows-server-related-article"></a>Windows Server 関連の記事に必要なメタデータタグを追加する
 
@@ -49,7 +49,7 @@ ms.date: Date of change (MM/DD/YYYY)
 ---
 title: What is Windows Admin Center?
 description: Learn about the Windows Admin Center, a locally-deployed, browser-based management tool set that lets you manage your Windows Servers with no Azure or cloud dependency.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: alainch
 author: danielle-github
 ms.author: danielle

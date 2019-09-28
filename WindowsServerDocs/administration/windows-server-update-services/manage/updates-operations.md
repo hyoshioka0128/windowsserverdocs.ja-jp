@@ -1,7 +1,7 @@
 ---
 title: 更新操作
 description: Windows Server Update Service (WSUS) トピック-承認プロセスを含む更新プログラムの管理方法
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-wsus
@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2618586fdc38588bb58e122116345eb88a680a3f
-ms.sourcegitcommit: 6423dfa9cecb3b06bdd563cae113c3e80a4ec330
+ms.openlocfilehash: 7121f6303bef48486720d4cdca4582fd897467c4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105061"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361484"
 ---
 # <a name="updates-operations"></a>更新操作
 
