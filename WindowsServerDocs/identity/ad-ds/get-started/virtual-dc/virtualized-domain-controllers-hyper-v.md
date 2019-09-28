@@ -5,13 +5,13 @@ author: MicrosoftGuyJFlo
 ms.author: joflore
 ms.date: 04/19/2018
 ms.topic: article
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 287d7ef0b8645d8e808b8b8d9f195d05ffed1cc0
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 19e8eef008d3818c413808ab1f085a7cc247ec36
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868329"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369502"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>Hyper-v を使用してドメインコントローラーを仮想化する
 

@@ -1,8 +1,8 @@
 ---
 title: auditpol
-description: Windows コマンド」のトピック**auditpol** - に関する情報を表示し、監査ポリシーを操作する関数を実行します。
+description: '**Auditpol**の Windows コマンドのトピック-監査ポリシーを操作するための情報を表示し、関数を実行します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d7e8364be977e868ac161704e67c37ec5c400e49
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5e249a9e2a07505f052b774208c514b4d16879b8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849223"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382379"
 ---
 # <a name="auditpol"></a>auditpol
 
@@ -26,7 +26,7 @@ ms.locfileid: "59849223"
 
 に関する情報を表示し、監査ポリシーを操作する関数を実行します。
 
-このコマンドの使用方法の例については、各トピックの「例」セクションを参照してください。
+このコマンドを使用する方法の例については、各トピックの「例」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -36,29 +36,29 @@ Auditpol command [<sub-command><options>]
 
 ## <a name="parameters"></a>パラメーター
 
-|サブ コマンド|説明|
+|サブコマンド|説明|
 |-----------|-----------|
-|/get|現在の監査ポリシーが表示されます。</br>参照してください[Auditpol get](auditpol-get.md)構文とオプションについてです。|
-|/set|監査ポリシーを設定します。</br>参照してください[Auditpol set](auditpol-set.md)構文とオプションについてです。|
-|/list|選択可能なポリシーの要素が表示されます。</br>参照してください[Auditpol list](auditpol-list.md)構文とオプションについてです。|
-|/backup|監査ポリシーをファイルに保存します。</br>参照してください[Auditpol backup](auditpol-backup.md)構文とオプションについてです。|
-|/restore|Auditpol/backup を使用して作成されたファイルから、監査ポリシーを復元します。</br>参照してください[Auditpol restore](auditpol-restore.md)構文とオプションについてです。|
-|/clear|監査ポリシーを消去します。</br>参照してください[Auditpol clear](auditpol-clear.md)構文とオプションについてです。|
-|/remove|すべてのユーザーごとの監査ポリシーの設定を削除し、すべてのシステム監査ポリシー設定を無効にします。</br>参照してください[Auditpol remove](auditpol-remove.md)構文とオプションについてです。|
-|/resourceSACL|グローバル リソース システム アクセス制御リスト (Sacl) を構成します。</br>注:7 および Windows Server 2008 R2、Windows にのみ適用されます。</br>参照してください[Auditpol resourceSACL](auditpol-resourcesacl.md)します。|
+|/get|現在の監査ポリシーを表示します。</br>構文とオプションについては、「 [Auditpol get](auditpol-get.md) 」を参照してください。|
+|/set|監査ポリシーを設定します。</br>構文とオプションについては、 [Auditpol の設定](auditpol-set.md)を参照してください。|
+|/list|選択可能なポリシー要素を表示します。</br>構文とオプションについては、 [Auditpol の一覧](auditpol-list.md)を参照してください。|
+|/backup|監査ポリシーをファイルに保存します。</br>構文とオプションについては、「 [Auditpol バックアップ](auditpol-backup.md)」を参照してください。|
+|/restore|Auditpol/backupを使用して以前に作成されたファイルから監査ポリシーを復元します。</br>構文とオプションについては、 [Auditpol の復元](auditpol-restore.md)を参照してください。|
+|/clear|監査ポリシーをクリアします。</br>構文とオプションについては、「 [Auditpol clear](auditpol-clear.md) 」を参照してください。|
+|/remove|すべてのユーザーごとの監査ポリシー設定を削除し、すべてのシステム監査ポリシー設定を無効にします。</br>構文とオプションについては、 [Auditpol の削除](auditpol-remove.md)を参照してください。|
+|/resourcesacl|グローバルリソースシステムアクセス制御リスト (Sacl) を構成します。</br>メモ:Windows 7 および Windows Server 2008 R2 にのみ適用されます。</br>[Auditpol resourceSACL](auditpol-resourcesacl.md)を参照してください。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-監査ポリシーのコマンド ライン ツールを使用できます。
--   設定して、システム監査ポリシーをクエリします。
--   設定して、ユーザーごとの監査ポリシーをクエリします。
--   設定して、監査オプションをクエリします。
--   設定して、監査ポリシーへのアクセスを委任するために使用するセキュリティ記述子をクエリします。
--   レポートまたはコンマ区切り値 (CSV) テキスト ファイルに、監査ポリシーをバックアップします。
--   監査ポリシーは、CSV テキスト ファイルから読み込みます。
--   グローバル リソース Sacl を構成します。
+監査ポリシーのコマンドラインツールを使用すると、次のことができます。
+-   システム監査ポリシーを設定し、クエリを実行します。
+-   ユーザーごとの監査ポリシーを設定し、クエリを実行します。
+-   監査オプションを設定および照会します。
+-   監査ポリシーへのアクセスを委任するために使用されるセキュリティ記述子を設定および照会します。
+-   監査ポリシーをレポートするか、コンマ区切り値 (CSV) テキストファイルにバックアップします。
+-   CSV テキストファイルから監査ポリシーを読み込みます。
+-   グローバルリソース Sacl を構成します。
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

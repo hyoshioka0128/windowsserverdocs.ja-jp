@@ -1,60 +1,60 @@
 ---
 ms.assetid: f0d4cecc-5a03-448c-bef9-86c4730b4eb0
 title: 仮想マシンの負荷分散の概要
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.topic: article
 author: bhattacharyaz
 manager: eldenc
 ms.author: subhatt
 ms.date: 09/19/2016
-ms.openlocfilehash: 125dd7421cc1876c07983016498a9689d8a507ac
-ms.sourcegitcommit: a3c9a7718502de723e8c156288017de465daaf6b
+ms.openlocfilehash: 1fea9e6297399a5081eb8fef1876f1b11d23c745
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "65475988"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360980"
 ---
 # <a name="virtual-machine-load-balancing-overview"></a>仮想マシンの負荷分散の概要
 
 > 適用対象:Windows Server 2019、Windows Server 2016
 
-プライベート クラウド展開向けの重要な考慮事項は、設備投資 (です。<abbr title="設備投資">資本支出</abbr>) を運用環境に移動するために必要です。 運用環境でのトラフィックのピーク時に容量の不足を回避するためにプライベート クラウド環境に冗長性を追加する非常に一般的ですが、これが増加 <abbr title="設備投資">資本支出</abbr>. 冗長性の必要性は、いくつかのノードが複数の仮想マシン (をホストが不均衡のプライベート クラウドによって決まります<abbr title="仮想マシン">VM</abbr>) (再起動されたばかりのサーバー) など他のユーザーは過小使用とします。
+プライベートクラウドの展開に関する重要な考慮事項は、資本支出 (<abbr title="資本支出">CapEx</abbr>) を運用環境に移行するために必要です。 実稼働環境でのピークトラフィック中は容量が少ないことを避けるために、プライベートクラウドのデプロイに冗長性を追加するのは非常に一般的ですが、 <abbr title="資本支出">CapEx</abbr>. 冗長性の必要性は、一部のノードがより多くの Virtual Machines をホストしている、不均衡なプライベートクラウドによって促進されます (<abbr title="仮想マシン">VM</abbr>) が使用されていない場合もあります (新しく再起動されたサーバーなど)。
 
-<strong>簡単なビデオ概要</strong><br>(6 分)<br>
+<strong>クイックビデオの概要</strong><br>(6 分)<br>
 > [!VIDEO https://channel9.msdn.com/Blogs/windowsserver/Virtual-Machine-Load-Balancing-in-Windows-Server-2016/player]
 
 ## <a id="what-is-vm-load-balancing"></a>仮想マシンの負荷分散とは
-<abbr title="仮想マシン">VM</abbr> 負荷分散は、Windows Server 2019 および Windows Server 2016 フェールオーバー クラスター内のノードの使用率を最適化するためのボックスの機能です。 "過剰コミット"ノードを識別し、再配布 <abbr title="仮想マシン">VM</abbr> コミット済みのノードにこれらのノードから。 この機能の主要な特徴のいくつか次に示します。
+<abbr title="仮想マシン">VM</abbr> 負荷分散は、フェールオーバークラスター内のノードの使用を最適化することができる Windows Server 2019 および Windows Server 2016 のインボックス機能です。 過剰コミットされたノードを識別し、再配布します。 <abbr title="仮想マシン">VM</abbr> これらのノードから、コミットされていないノードにします。 この機能には、次のような特徴があります。
 
-* *ダウンタイムのソリューションは*: <abbr title="バーチャル マシン">VM</abbr> アイドル状態のノードにライブ移行されます。
-* *既存のクラスター環境とのシームレスな統合*:失敗ポリシーなどのアンチ アフィニティ、障害ドメインおよび実行可能な所有者が受け入れられます。
-* *分散のためのヒューリスティック*: <abbr title="仮想マシン">VM</abbr> メモリ不足とノードの CPU 使用率。
-* *詳細な制御*:既定で有効になっています。 オンデマンドまたは定期的な間隔でアクティブにできます。
-* *強度しきい値*:次の 3 つのしきい値使用可能な配置の特性に基づいて。
+* *ダウンタイムなしのソリューション*です。 <abbr title="仮想マシン">VM</abbr> アイドル状態のノードにライブ移行されます。
+* *既存のクラスター環境とのシームレスな統合*:障害ポリシー (アンチアフィニティ、障害ドメイン、実行可能な所有者など) は受け入れられます。
+* *分散のヒューリスティック*: <abbr title="仮想マシン">VM</abbr> ノードのメモリ負荷と CPU 使用率。
+* *詳細な制御*:既定で有効になっています。 オンデマンドで、または一定の間隔でアクティブ化できます。
+* *強度しきい値*:デプロイの特性に基づいて、3つのしきい値を利用できます。
 
-## <a id="feature-in-action"></a>機能の動作
-### <a id="new-node-added"></a>新しいノードが、フェールオーバー クラスターに追加されます。
-![フェールオーバー クラスターに追加される新しいノードのグラフィック](media/vm-load-balancing/overview-VM-load-balancing-1.png)
+## <a id="feature-in-action"></a>動作中の機能
+### <a id="new-node-added"></a>新しいノードがフェールオーバークラスターに追加されます。
+![フェールオーバークラスターに新しいノードが追加されているグラフィック](media/vm-load-balancing/overview-VM-load-balancing-1.png)
 
-新しい容量をフェールオーバー クラスターに追加すると、 <abbr title="バーチャル マシン">VM</abbr> 負荷分散機能では、容量を既存のノードから次の順序で新しく追加されたノードに自動的に分散します。
+フェールオーバークラスターに新しい容量を追加すると、 <abbr title="仮想マシン">VM</abbr> 負荷分散機能では、次の順序で、既存のノードから新しく追加されたノードに容量が自動的に分散されます。
 
-1. 圧力は、フェールオーバー クラスターで既存のノードで評価されます。
+1. 負荷は、フェールオーバークラスター内の既存のノードで評価されます。
 2. しきい値を超えるすべてのノードが識別されます。
-3. 分散の優先順位を決定する高い負荷を持つノードが識別されます。
-4. <abbr title="バーチャル マシン">VM</abbr> ライブ移行 (でダウンタイムなく) フェールオーバー クラスターで新しく追加されたノードにしきい値を超えるノードです。
+3. 負荷の優先順位を決定するために、負荷の高いノードが特定されます。
+4. <abbr title="仮想マシン">VM</abbr> フェールオーバークラスター内の新しく追加されたノードに対して、しきい値を超えたノードからライブ移行されます (ダウンタイムはありません)。
 
 ### <a id="recurring-load-balancing"></a>定期的な負荷分散
-![定期的な VM の負荷分散のグラフィック](media/vm-load-balancing/overview-VM-load-balancing-2.png)
+![定期的な VM 負荷分散の図](media/vm-load-balancing/overview-VM-load-balancing-2.png)
 
-で定期的な分散を構成して、クラスター ノードで負荷が分散 30 分ごとに評価されます。 または、圧力はオンデマンドで評価を指定できます。 手順の流れを次に示します。
+定期的に分散するように構成すると、クラスターノードの負荷は30分ごとに評価されます。 また、必要に応じて圧力を評価することもできます。 ステップのフローを次に示します。
 
-1. 圧力は、プライベート クラウドのすべてのノードで評価されます。
-2. しきい値を下回るとしきい値を超えるすべてのノードが識別されます。
-3. 分散の優先順位を決定する高い負荷を持つノードが識別されます。
-4. <abbr title="バーチャル マシン">VM</abbr> ライブ移行 (ダウンタイムなし) で、ノードの最小しきい値より下のノードにしきい値を超えた場合です。
+1. 負荷は、プライベートクラウド内のすべてのノードで評価されます。
+2. しきい値を超えるすべてのノードとしきい値を下回るすべてのノードが識別されます。
+3. 負荷の優先順位を決定するために、負荷の高いノードが特定されます。
+4. <abbr title="仮想マシン">VM</abbr> [最小しきい値] の下のノードに対して、しきい値を超えるノードからライブ移行されます (ダウンタイムはありません)。
 
 ## <a name="see-also"></a>関連項目
 * [仮想マシンの負荷分散の詳細](vm-load-balancing-deep-dive.md)
 * [フェールオーバー クラスタリング](failover-clustering-overview.md)
-* [HYPER-V の概要](../virtualization/hyper-v/Hyper-V-on-Windows-Server.md)
+* [Hyper-v の概要](../virtualization/hyper-v/Hyper-V-on-Windows-Server.md)

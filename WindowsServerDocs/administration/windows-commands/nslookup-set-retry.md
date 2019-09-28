@@ -1,8 +1,8 @@
 ---
 title: nslookup set retry
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 876d8332e778aa0b3049354a21fbe01adb883729
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 306bcc4f5e7ac98767c3c2e274100cf917874a8e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436653"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372859"
 ---
 # <a name="nslookup-set-retry"></a>nslookup set retry
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-再試行の回数を設定します。
+再試行回数を設定します。
 ## <a name="syntax"></a>構文
 ```
 set retry=<Number>
@@ -33,11 +33,11 @@ set retry=<Number>
 
 |    パラメーター    |                                      説明                                       |
 |-----------------|----------------------------------------------------------------------------------------|
-|    <Number>     | 再試行の回数の新しい値を指定します。 既定の再試行回数には 4 です。 |
-| {help &#124; ?} |                 簡単な概要を表示します。 **nslookup**サブコマンドします。                  |
+|    <Number>     | 再試行回数の新しい値を指定します。 既定の再試行回数は4です。 |
+| {ヘルプ&#124; ?} |                 **Nslookup**サブコマンドの簡単な概要を表示します。                  |
 
-## <a name="remarks"></a>注釈
-- 一定の時間内で、要求への応答が受信していない場合は、タイムアウト期間が倍になり、要求が再送信してもらいます。 再試行の値渡す前に、要求が再送信回数を制御します。 タイムアウト期間を変更することができます、**タイムアウト設定**サブコマンドします。
-  ## <a name="additional-references"></a>その他の参照
-  [コマンドライン構文のポイント](command-line-syntax-key.md)
-  [nslookup のタイムアウトを設定します。](nslookup-set-timeout.md)
+## <a name="remarks"></a>コメント
+- 一定の時間内に要求に対する応答が受信されない場合、タイムアウト期間は2倍になり、要求は再送信されます。 再試行の値は、要求を再送信する回数を制御します。 タイムアウト期間は、 **set timeout**サブコマンドを使用して変更できます。
+  ## <a name="additional-references"></a>その他の参照情報
+  [コマンドライン構文のキー](command-line-syntax-key.md)
+  [nslookup set timeout](nslookup-set-timeout.md)

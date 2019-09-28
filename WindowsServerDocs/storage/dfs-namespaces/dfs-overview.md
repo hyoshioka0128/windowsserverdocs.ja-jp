@@ -1,6 +1,6 @@
 ---
 title: DFS 名前空間の概要
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: jgerend
 ms.manager: daveba
 ms.technology: storage
@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: このトピックでは、DFS 名前空間について説明します。DFS 名前空間は、複数のサーバー上に配置されている共有フォルダーを、論理的に構造化された 1 つ以上の名前空間にグループ化できる Windows Server の役割サービスです。
-ms.openlocfilehash: 8507961749bee6d01541029e33c8095470792b8a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 33fe25d2298d210ee37f9193a50fa77ed39bd2b4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870220"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402228"
 ---
 # <a name="dfs-namespaces-overview"></a>DFS 名前空間の概要
 

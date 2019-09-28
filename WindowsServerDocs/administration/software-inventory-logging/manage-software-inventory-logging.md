@@ -2,7 +2,7 @@
 title: ソフトウェア インベントリ ログの管理
 description: ソフトウェアインベントリログの管理方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 686bb61426e49f00597c423bcf4f52d949a358ab
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: bd8a26d158f53121074881ac8ff204287f9a19ad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866379"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382968"
 ---
 # <a name="manage-software-inventory-logging"></a>ソフトウェア インベントリ ログの管理
 
@@ -221,7 +221,7 @@ SystemManufacturer        : Microsoft Corporation
 > 何らかの理由でインストールの修復やオペレーティング システムのアップグレードが必要になった場合、ローカルに保存されているログ ファイルはすべて失われます。  これが運用上重要なデータである場合は、新しいオペレーティング システムをインストールする前にバックアップすることをお勧めします。 修復またはアップグレードが完了したら、単に同じ場所に復元します。  
   
 > [!NOTE]  
-> Sil によってローカルに記録されたデータのリテンション期間を管理することが重要な場合は、レジストリ値を次の\\ように変更して構成できます: \HKEY_LOCAL_MACHINE SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. 既定値は30日間です。  
+> SIL によってローカルに記録されたデータのリテンション期間を管理することが重要になる場合は、レジストリ値を次のように変更して構成できます。 \HKEY_LOCAL_MACHINE @ no__t-0SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. 既定値は30日間です。  
   
 ## <a name="BKMK_Step6"></a>ソフトウェアインベントリログで記録および公開されたデータの読み取り  
 SIL によって記録されたデータ (ターゲット URI への転送が失敗した場合)、またはターゲット集計サーバーに正常に転送されたデータは、バイナリファイル (毎日のデータ) に格納されます。 PowerShell でこのデータを表示するには、 [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx) コマンドレットを使用します。  
@@ -244,7 +244,7 @@ Windows Server 上にローカルに保存されているすべてのデータ (
 ## <a name="BKMK_Step10"></a>マウントされたバーチャルハードディスクでのソフトウェアインベントリログの有効化と構成  
 ソフトウェア インベントリ ログは、オフラインの仮想マシンでの構成と有効化もサポートしています。 このための実用的な用途は、データセンター全体の大規模な展開に対する "ゴールドイメージ" の設定と、オンプレミスからクラウドデプロイへのエンドユーザーイメージの構成の両方に対応することを目的としています。  
   
-これらの用途をサポートするため、ソフトウェア インベントリ ログにはそれぞれの構成オプションに関連したレジストリ エントリがあります。  これらのレジストリ値は \HKEY_LOCAL_MACHINE\\SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. にあります。  
+これらの用途をサポートするため、ソフトウェア インベントリ ログにはそれぞれの構成オプションに関連したレジストリ エントリがあります。  これらのレジストリ値は \HKEY_LOCAL_MACHINE @ no__t-0SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. にあります。  
   
 |||||  
 |-|-|-|-|  

@@ -1,9 +1,9 @@
 ---
 title: 高度な DirectAccess 展開を計画する
-description: このトピックは高度な設定を Windows Server 2016 での単一の DirectAccess サーバー展開ガイドの一部です。
+description: このトピックは、「Windows Server 2016 の詳細設定を使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: d486735e-71fe-4443-9878-4b784cd588a7
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: db8d2e6ffe8e3fae4723eb78cb9212a64fdb5711
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 5fead00e1fbf0785d8c3af038039816e1cf618b2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283554"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404947"
 ---
 # <a name="plan-an-advanced-directaccess-deployment"></a>高度な DirectAccess 展開を計画する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、広範囲の基本と高度な機能と Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行している単一の DirectAccess サーバーをデプロイするために必要な計画手順を示します。 計画フェーズは次のトピックで構成されます。  
+このトピックでは、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行する単一の DirectAccess サーバーを、基本的な機能と高度な機能を使用して展開するために必要な計画手順を示します。 計画フェーズは次のトピックで構成されます。  
   
 -   [ステップ 1: 高度な DirectAccess インフラストラクチャを計画する](da-adv-plan-s1-infrastructure.md)  
   
@@ -34,7 +34,7 @@ ms.locfileid: "67283554"
     このフェーズでは、DirectAccess インフラストラクチャとアプリケーション サーバーを含むクライアントとサーバーの展開を計画します。  
   
 ## <a name="next-step"></a>次の手順  
-これらの計画手順を完了したら、サーバーの展開を開始できます。 手順については、次を参照してください。 [Install and Configure Advanced DirectAccess](Install-and-Configure-Advanced-DirectAccess.md)します。  
+これらの計画手順を完了したら、サーバーの展開を開始できます。 手順については、「[高度な DirectAccess のインストールと構成](Install-and-Configure-Advanced-DirectAccess.md)」を参照してください。  
   
 
 

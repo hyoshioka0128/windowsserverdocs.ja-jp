@@ -1,8 +1,8 @@
 ---
-title: label
-description: 'Windows コマンド」のトピック * * *- '
+title: ラベル●らべる○
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d0c68fbbf3ea776bbf6cd49fc4fa446d5dd46542
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: e66a2d9a7d28462b287084e3f8b129ffc03800bd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437911"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374792"
 ---
-# <a name="label"></a>label
+# <a name="label"></a>ラベル●らべる○
 
 
 
-作成、変更、またはディスクのボリューム ラベル (名) を削除します。 パラメーターを指定せずに使用されている場合、**ラベル**コマンドが現在のボリューム ラベルを変更または既存のラベルを削除します。
+ディスクのボリュームラベル (名前) を作成、変更、または削除します。 パラメーターを指定せずに使用した場合、 **label**コマンドは、現在のボリュームラベルを変更するか、既存のラベルを削除します。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
@@ -38,30 +38,30 @@ label [/mp] [<Volume>] [<Label>]
 
 |パラメーター|説明|
 |---------|-----------|
-|/mp|ボリュームをマウント ポイントまたはボリューム名として扱うことを指定します。|
-|\<ボリューム >|(コロンの後に)、ドライブ文字を指定します。 マウント ポイント、またはボリュームの名前。 ボリューム名が指定されている場合、 **/mp**パラメーターは必要ありません。|
-|\<ラベル >|ボリュームのラベルを指定します。|
+|/mp|ボリュームをマウントポイントまたはボリューム名として扱うことを指定します。|
+|@no__t 0Volume >|ドライブ文字 (後ろにコロンを付ける)、マウントポイント、またはボリューム名を指定します。 ボリューム名が指定されている場合、 **/mp**パラメーターは必要ありません。|
+|\<Label >|ボリュームのラベルを指定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-- Windows が表示されます、ボリューム ラベルとシリアル番号 (ある) 場合、ディレクトリの一覧の一部として。
-- NTFS のボリューム ラベルは最大 32 文字で、スペースを含むできます。 NTFS ボリューム ラベルを保持し、ラベルが作成されたときに使用されたケースを表示します。
-- 値を指定しない場合、**ラベル**パラメーター、**ラベル**コマンドでは、次の形式で出力が表示されます。  
+- Windows では、ディレクトリの一覧の一部としてボリュームラベルとシリアル番号 (ある場合) が表示されます。
+- NTFS ボリュームラベルには、スペースを含め、最大32文字の長さを指定できます。 NTFS ボリュームラベルは、ラベルが作成されたときに使用されたケースを保持し、表示します。
+- **Label**パラメーターの値を指定しない場合、 **label**コマンドは次の形式で出力を表示します。  
   ```
   Volume in drive C: xxxxxxxxxxx 
   Volume Serial Number is xxxx-xxxx 
   Volume label (32 characters, ENTER for none)?
   ```  
-  新しいボリューム ラベルを入力したり、現在のラベルを保持するには ENTER キーを押します。 ENTER キーを押すし、現在、ボリュームには、ラベルが付いている場合、**ラベル**コマンドは、次のメッセージを要求します。  
+  新しいボリュームラベルを入力するか、enter キーを押して現在のラベルを維持することができます。 ENTER キーを押すと、現在ボリュームにラベルがある場合、 **label**コマンドによって次のメッセージが表示されます。  
   ```
   Delete current volume label (Y/N)?
   ```  
-  ラベルを削除するには、キーを押して Y または N キーを押して、ラベルを保持します。
+  Y キーを押してラベルを削除するか、N キーを押してラベルを保持します。
 
 ## <a name="BKMK_examples"></a>例
 
-7 月の売上情報を含むドライブ A でのディスクをラベルには、次のように入力します。
+7月の売上情報が含まれているドライブ A のディスクにラベルを付けるには、次のように入力します。
 ```
 label a:sales-july
 ```
@@ -80,7 +80,7 @@ C ドライブの現在のラベルを削除するには、次の手順を実行
    ```
    Delete current volume label (Y/N)?
    ```  
-3. 現在のラベルを削除するには Y キーを押します。
+3. Y キーを押して現在のラベルを削除します。
 
 #### <a name="additional-references"></a>その他の参照情報
 

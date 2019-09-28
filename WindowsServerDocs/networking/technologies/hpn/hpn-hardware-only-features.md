@@ -1,7 +1,7 @@
 ---
 title: 高パフォーマンスネットワーク
 description: このトピックでは、Windows Server 2016 のオフロードおよび最適化テクノロジの概要について説明し、これらのテクノロジに関するその他のガイダンスへのリンクを示します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/12/2018
-ms.openlocfilehash: 3a561096da49efc4c217c0736d888674b2acf202
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5cf6a5057151c696bc1c29a1dcf6fc18c776605a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871952"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405748"
 ---
 ## <a name="hardware-only-ho-features-and-technologies"></a>ハードウェアのみ (HO) の機能とテクノロジ
 

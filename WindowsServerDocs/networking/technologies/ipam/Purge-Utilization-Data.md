@@ -1,9 +1,9 @@
 ---
 title: 使用率データを消去する
-description: このトピックでは、Windows Server 2016 での IP アドレス管理 (IPAM) の管理ガイドの一部です。
+description: このトピックは、Windows Server 2016 の IP アドレス管理 (IPAM) 管理ガイドに含まれています。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ipam
@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: 45cada9e-69b9-43df-b6f5-6d3942435809
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ab2bd3ad1ef8965400e09fa74c6eb89ffc5ebcef
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 9e1db31e4d2d714c358f2a67c2165aef91b314ba
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283843"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405606"
 ---
 # <a name="purge-utilization-data"></a>使用率データを消去する
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを使用すると、使用率データを IPAM データベースから削除するのに方法について説明します。  
 
@@ -29,7 +29,7 @@ ms.locfileid: "67283843"
 
 ## <a name="to-purge-the-ipam-database"></a>IPAM データベースを消去するには  
 1. サーバー マネージャーを開き、IPAM クライアント インターフェイスを参照します。
-2. 次の場所のいずれかに移動します。**IP アドレス ブロック**、 **IP アドレス インベントリ**、または**IP アドレス範囲のグループ**します。  
+2. 次の場所のいずれかに移動します。Ip**アドレスブロック**、 **ip アドレスインベントリ**、または**ip アドレス範囲のグループ**。  
 3. クリックして **タスク**, 、 をクリックし、 **使用率データの消去**します。 **使用率データの消去**  ダイアログ ボックスが表示されます。
 4. **すべての使用率を消去する前にデータ**, 、 をクリックして **日付を選択**します。
 5. その日の前にすべてのデータベース レコードを削除する日付を選択します。

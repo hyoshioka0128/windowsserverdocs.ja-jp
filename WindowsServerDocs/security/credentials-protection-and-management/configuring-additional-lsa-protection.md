@@ -2,7 +2,7 @@
 title: 追加の LSA の保護の構成
 description: Windows Server のセキュリティ
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-credential-protection
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 90efc49b0d7ff6edd8367cece42bf7f2950de952
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: eaebac19119525b659c09b5506c497afdbd9a263
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870560"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386990"
 ---
 # <a name="configuring-additional-lsa-protection"></a>追加の LSA の保護の構成
 

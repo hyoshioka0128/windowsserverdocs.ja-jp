@@ -1,8 +1,8 @@
 ---
 title: fondue
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bcbbbf80f25f77d1feb83f358401e4d14da3d354
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d75d2d9fb57f8888cfc5bf50e2f7796aefc66102
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439220"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377092"
 ---
 # <a name="fondue"></a>fondue
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Windows のオプション機能ことにより、Windows Update またはグループ ポリシーで指定された別のソースから必要なファイルをダウンロードします。 機能のマニフェスト ファイルは、Windows イメージに既にインストールする必要があります。 
+Windows Update またはグループポリシーによって指定された別のソースから必要なファイルをダウンロードして、Windows のオプション機能を有効にします。 機能のマニフェストファイルは、Windows イメージに既にインストールされている必要があります。 
 ## <a name="syntax"></a>構文
 ```
 fondue.exe /enable-feature:<feature_name> [/caller-name:<program_name>] [/hide-ux:{all | rebootRequest}]
@@ -33,20 +33,20 @@ fondue.exe /enable-feature:<feature_name> [/caller-name:<program_name>] [/hide-u
 
 |              パラメーター              |                                                                                                                                                                     説明                                                                                                                                                                     |
 |-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  /enable-feature: <*feature_name*>   |                                                                               有効にする Windows の省略可能な機能の名前を指定します。 コマンド ラインあたり 1 つの機能を有効にすることができますのみです。 複数の機能を有効にするには、各機能の fondue.exe を使用します。                                                                                |
-|    /caller-name:<*program_name*>    |                                                                                 スクリプトまたはバッチ ファイルから fondue.exe を呼び出すときに、プログラムまたはプロセス名を指定します。 このオプションを使用して、エラーがある場合は、SQM レポートにプログラム名を追加することができます。                                                                                 |
-| /hide-ux:{all &#124; rebootRequest} | 使用**すべて**Windows Update にアクセスする進行状況とアクセス許可の要求を含む、ユーザーにすべてのメッセージを非表示にします。 アクセス許可が必要な場合、操作は失敗します。<br /><br />使用**rebootRequest**のみコンピューターを再起動する許可を求めるユーザー メッセージを非表示にします。 コントロールに要求が再起動されるスクリプトがある場合は、このオプションを使用します。 |
+|  /enable-feature: <*feature_name*>   |                                                                               有効にする Windows オプション機能の名前を指定します。 有効にできる機能は、コマンドラインごとに1つだけです。 複数の機能を有効にするには、各機能に対して、"/" を使用します。                                                                                |
+|    /callname: <*program_name*>    |                                                                                 スクリプトまたはバッチファイルから小文字の .exe を呼び出すときに、プログラム名またはプロセス名を指定します。 このオプションを使用すると、エラーが発生した場合にプログラム名を SQM レポートに追加できます。                                                                                 |
+| /hideux: {all &#124; rebootRequest} | **[すべて]** を使用して、Windows Update にアクセスするための進行状況とアクセス許可要求を含むすべてのメッセージをユーザーに非表示にします。 アクセス許可が必要な場合、操作は失敗します。<br /><br />**RebootRequest**を使用して、コンピューターを再起動するアクセス許可を求めるユーザーメッセージのみを非表示にします。 このオプションは、再起動要求を制御するスクリプトがある場合に使用します。 |
 
 ## <a name="BKMK_Examples"></a>例
 Microsoft .NET Framework 3.5 を有効にするには、次のように入力します。
 ```
 fondue.exe /enable-feature:NETFX3
 ```
-Microsoft .NET Framework 3.5 を有効にするには、は、SQM レポートにプログラム名を追加し、型、ユーザーにメッセージが表示されません。
+Microsoft .NET Framework 3.5 を有効にするには、プログラム名を SQM レポートに追加し、ユーザーにメッセージを表示しないようにするには、次のように入力します。
 ```
 fondue.exe /enable-feature:NETFX3 /caller-name:Admin.bat /hide-ux:all
 ```
-## <a name="additional-references"></a>その他の参照
+## <a name="additional-references"></a>その他の参照情報
 - [コマンド ライン構文の記号](command-line-syntax-key.md)
   ## <a name="see-also"></a>関連項目
-  [Microsoft .NET Framework 3.5 展開に関する考慮事項](https://go.microsoft.com/fwlink/?LinkId=248869)
+  [Microsoft .NET Framework 3.5 の展開に関する考慮事項](https://go.microsoft.com/fwlink/?LinkId=248869)

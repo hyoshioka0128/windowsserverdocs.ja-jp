@@ -1,8 +1,8 @@
 ---
-title: bitsadmin getproxylist - は、指定したジョブのプロキシの一覧を取得します。
-description: Windows コマンド」のトピック**bitsadmin getproxylist** -指定したジョブのプロキシの一覧を取得します。
+title: bitsadmin getproxylist-指定したジョブのプロキシの一覧を取得します。
+description: '**Bitsadmin getproxylist**の Windows コマンドトピックでは、指定されたジョブのプロキシ一覧を取得します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e8c3ffb1e425552cda5b14a00287817ace77a90f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6f176d268c816725b183da0a948afcb25272b2fb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840513"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381315"
 ---
 # <a name="bitsadmin-getproxylist"></a>bitsadmin getproxylist
 
-指定したジョブのプロキシの一覧を取得します。
+指定されたジョブのプロキシリストを取得します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,17 +36,17 @@ bitsadmin /GetProxyList <Job>
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-プロキシの一覧は、使用するプロキシ サーバーの一覧を示します。 一覧は、コンマで区切られました。
+プロキシリストは、使用するプロキシサーバーの一覧です。 リストはコンマで区切られます。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブのプロキシ リスト*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブのプロキシ一覧を取得します。
 ```
 C:\>bitsadmin /GetProxyList myDownloadJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,6 +1,6 @@
 ---
 title: 記憶域スペース ダイレクトの展開
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: eldenc
 ms.author: stevenek
 ms.technology: storage-spaces
@@ -10,12 +10,12 @@ author: stevenek
 ms.date: 06/07/2019
 description: 記憶域スペースダイレクトを使用して、Windows Server のソフトウェア定義記憶域を、ハイパー集約型インフラストラクチャまたは収束 (disaggregated とも呼ばれる) インフラストラクチャとして展開する手順を説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 69cd27cba09bd9d23a461978416217a20b2979ec
-ms.sourcegitcommit: b68ff64ecd87959cd2acde4a47506a01035b542a
+ms.openlocfilehash: 0ab96f737f7700e202c9d0382c06859c4ea84118
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68830908"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402813"
 ---
 # <a name="deploy-storage-spaces-direct"></a>記憶域スペース ダイレクトの展開
 
@@ -84,19 +84,19 @@ PS セッションを開始し、接続するノードのサーバー名また�
 >   
 > `Set-Item WSMAN:\Localhost\Client\TrustedHosts -Value Server01 -Force`
 >  
-> 注: 信頼されたホストの一覧で`Server*`は、のようなワイルドカードがサポートされています。
+> 注: 信頼されたホストの一覧は、ワイルドカード (`Server*` など) をサポートしています。
 >
-> 信頼されたホストの一覧を`Get-Item WSMAN:\Localhost\Client\TrustedHosts`表示するには、「」と入力します。  
+> 信頼されたホストの一覧を表示するには、「`Get-Item WSMAN:\Localhost\Client\TrustedHosts`」と入力します。  
 >   
-> リストを空にするに`Clear-Item WSMAN:\Localhost\Client\TrustedHost`は、「」と入力します。  
+> 一覧を空にするには、「`Clear-Item WSMAN:\Localhost\Client\TrustedHost`」と入力します。  
 
 ### <a name="step-13-join-the-domain-and-add-domain-accounts"></a>手順 1.3:ドメインに参加してドメインアカウントを追加する
 
-ここまでで、 `<ComputerName>\Administrator`ローカル管理者アカウントを使用して個々のサーバーを構成しました。
+ここまでで、ローカル管理者アカウントを使用して個々のサーバーを構成しました。 `<ComputerName>\Administrator` です。
 
 記憶域スペースダイレクトを管理するには、サーバーをドメインに参加させ、すべてのサーバーの Administrators グループにある Active Directory Domain Services ドメインアカウントを使用する必要があります。
 
-管理システムから、管理者特権で PowerShell コンソールを開きます。 を`Enter-PSSession`使用して各サーバーに接続し、次のコマンドレットを実行します。実際のコンピューター名、ドメイン名、およびドメイン資格情報に置き換えてください。
+管理システムから、管理者特権で PowerShell コンソールを開きます。 @No__t-0 を使用して各サーバーに接続し、次のコマンドレットを実行します。実際のコンピューター名、ドメイン名、ドメイン資格情報を使用します。
 
 ```PowerShell  
 Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force  
@@ -204,7 +204,7 @@ Count Name                          PSComputerName
 
 ### <a name="step-32-validate-the-cluster"></a>手順 3.2:クラスターを検証する
 
-この手順では、クラスター検証ツールを実行して、記憶域スペースダイレクトを使用してクラスターを作成するようにサーバーノードが正しく構成されていることを確認します。 クラスターが作成さ`Test-Cluster`れる前にクラスターの検証 () を実行すると、フェールオーバークラスターとして正常に機能するために適切に構成されているかどうかを確認するテストが実行されます。 次の例では、 `-Include`パラメーターを使用して、特定のカテゴリのテストを指定しています。 これにより、記憶域スペース ダイレクトの特定のテストが確実に検証に含まれるようになります。
+この手順では、クラスター検証ツールを実行して、記憶域スペースダイレクトを使用してクラスターを作成するようにサーバーノードが正しく構成されていることを確認します。 クラスターが作成される前にクラスターの検証 (`Test-Cluster`) を実行すると、フェールオーバークラスターとして正常に機能するために適切に構成されているかどうかを確認するテストが実行されます。 次の例では、`-Include` パラメーターを使用し、テストの特定のカテゴリを指定しています。 これにより、記憶域スペース ダイレクトの特定のテストが確実に検証に含まれるようになります。
 
 記憶域スペース ダイレクト クラスターとして使用する一連のサーバーを検証するには、以下の PowerShell コマンドを使用します。
 
@@ -238,7 +238,7 @@ Test-Cluster –Node <MachineName1, MachineName2, MachineName3, MachineName4> �
 
 ### <a name="step-35-enable-storage-spaces-direct"></a>手順 3.5:記憶域スペース ダイレクトを有効にする
 
-クラスターを作成したら、 `Enable-ClusterStorageSpacesDirect` PowerShell コマンドレットを使用します。これにより、ストレージシステムが記憶域スペースダイレクトモードになり、次の操作が自動的に実行されます。
+クラスターを作成したら、`Enable-ClusterStorageSpacesDirect` PowerShell コマンドレットを使用します。これにより、ストレージシステムが記憶域スペースダイレクトモードになり、次の操作が自動的に実行されます。
 
 -   **プールを作成します。** "S2D on Cluster1" のような名前を持つ単一の大きなプールを作成します。
 
@@ -258,17 +258,17 @@ Enable-ClusterStorageSpacesDirect –CimSession <ClusterName>
 
 ### <a name="step-36-create-volumes"></a>手順 3.6:ボリュームの作成
 
-最速で簡単な`New-Volume`エクスペリエンスを提供するため、コマンドレットを使用することをお勧めします。 このコマンドレット 1 つだけで、仮想ディスクが作成されて、パーティション化およびフォーマットされ、一致する名前を持つボリュームが作成されて、クラスター共有ボリュームに追加されます。すべて 1 つの簡単な手順で行うことができます。
+最速で簡単なエクスペリエンスを提供するため、`New-Volume` コマンドレットを使用することをお勧めします。 このコマンドレット 1 つだけで、仮想ディスクが作成されて、パーティション化およびフォーマットされ、一致する名前を持つボリュームが作成されて、クラスター共有ボリュームに追加されます。すべて 1 つの簡単な手順で行うことができます。
 
 詳しくは、「[記憶域スペース ダイレクトのボリュームの作成](create-volumes.md)」をご覧ください。
 
 ### <a name="step-37-optionally-enable-the-csv-cache"></a>手順 3.7:必要に応じて CSV キャッシュを有効にする
 
-必要に応じて、クラスターの共有ボリューム (CSV) キャッシュを有効にして、Windows キャッシュマネージャーによってまだキャッシュされていない読み取り操作のライトスルーブロックレベルキャッシュとして、システムメモリ (RAM) を使用することもできます。 これにより、Hyper-v などのアプリケーションのパフォーマンスが向上します。 CSV キャッシュを使用すると、読み取り要求のパフォーマンスを向上させることができ、スケールアウトファイルサーバーのシナリオにも役立ちます。
+必要に応じて、クラスターの共有ボリューム (CSV) キャッシュを有効にして、Windows キャッシュマネージャーによってまだキャッシュされていない読み取り操作のライトスルーブロックレベルキャッシュとして、システムメモリ (RAM) を使用することもできます。 これにより、Hyper-v などのアプリケーションのパフォーマンスが向上します。 CSV キャッシュを使用すると、読み取り要求のパフォーマンスを向上させることができ、スケールアウトファイルサーバーシナリオにも役立ちます。
 
 CSV キャッシュを有効にすると、ハイパー収束クラスターで Vm を実行するために使用できるメモリの量が減ります。そのため、記憶域のパフォーマンスと Vhd で使用可能なメモリのバランスを取る必要があります。
 
-CSV キャッシュのサイズを設定するには、記憶域クラスターに対する管理者アクセス許可を持つアカウントを使用して、管理システムで PowerShell セッションを開き、次のスクリプト`$ClusterName`を`$CSVCacheSize`使用して、変数と変数を適宜変更します (次の例では、サーバーごとに 2 GB の CSV キャッシュを設定します。
+CSV キャッシュのサイズを設定するには、記憶域クラスターに対する管理者アクセス許可を持つアカウントを使用して、管理システムで PowerShell セッションを開き、次のスクリプトを使用して `$ClusterName` と `$CSVCacheSize` の変数を必要に応じて変更します (この例では2を設定します)。サーバーごとの GB CSV キャッシュ):
 
 ```PowerShell
 $ClusterName = "StorageSpacesDirect1"
@@ -287,13 +287,13 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
 
 ハイパー収束クラスターをデプロイする場合は、最後の手順として、記憶域スペースダイレクトクラスターに仮想マシンをプロビジョニングします。
 
-仮想マシンのファイルは、フェールオーバークラスター上のクラスター化された vm と\\同様に\\、systems CSV 名前空間 (例: c: clusterstorage Volume1) に保存する必要があります。
+仮想マシンのファイルは、フェールオーバークラスター上のクラスター化された Vm と同様に、systems CSV 名前空間 (例: c: \\ClusterStorage @ no__t-1Volume1) に格納する必要があります。
 
 インボックスツールまたはその他のツールを使用して、System Center Virtual Machine Manager などのストレージと仮想マシンを管理できます。
 
-## <a name="step-4-deploy-scale-out-file-server-for-converged-solutions"></a>手順 4:集約型ソリューション用のスケールアウトファイルサーバーの展開
+## <a name="step-4-deploy-scale-out-file-server-for-converged-solutions"></a>手順 4:収束型ソリューションのスケールアウトファイルサーバーをデプロイする
 
-収束型ソリューションを配置する場合は、次の手順として、スケールアウトファイルサーバーインスタンスを作成し、いくつかのファイル共有を設定します。 ハイパー収束クラスターをデプロイしている場合は、このセクションは必要ありません。
+収束ソリューションをデプロイする場合は、次の手順として、スケールアウトファイルサーバーインスタンスを作成し、いくつかのファイル共有を設定します。 ハイパー収束クラスターをデプロイしている場合は、このセクションは必要ありません。
 
 ### <a name="step-41-create-the-scale-out-file-server-role"></a>手順 4.1:スケールアウトファイルサーバーロールを作成する
 
@@ -303,11 +303,11 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
 
 1. フェールオーバークラスターマネージャーで、クラスターを選択し、 **[役割]** にアクセスして、 **[役割の構成...]** をクリックします。<br>高可用性ウィザードが表示されます。
 2. **[役割の選択]** ページで、 **[ファイルサーバー]** をクリックします。
-3. **[ファイルサーバーの種類]** ページで、 **[アプリケーションデータ用のスケールアウトファイルサーバー]** をクリックします。
+3. **[ファイルサーバーの種類]** ページで、[**アプリケーションデータ] の [スケールアウトファイルサーバー**] をクリックします。
 4. **[クライアントアクセスポイント]** ページで、スケールアウトファイルサーバーの名前を入力します。
-5. 図1に示すように、ロールに移動し 、作成したクラスター化されたファイルサーバーロールの横に **[状態]** 列に **[実行中]** と表示されていることを確認して、役割が正常に設定されていることを確認します。
+5. 図1に示す**ように、ロールに移動**し、作成したクラスター化されたファイルサーバーロールの横に **[状態]** 列に **[実行中]** と表示されていることを確認して、役割が正常に設定されていることを確認します。
 
-   ![スケールアウトファイルサーバーを示すフェールオーバークラスターマネージャーのスクリーンショット](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "スケールアウトファイルサーバーを示すフェールオーバークラスターマネージャー")
+   スケールアウトファイルサーバーフェールオーバークラスターマネージャー表示されて(media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "スケールアウトファイルサーバーいる")![フェールオーバークラスターマネージャーのスクリーンショット]
 
     **図 1**実行中の状態のスケールアウトファイルサーバーを示すフェールオーバークラスターマネージャー
 
@@ -316,7 +316,7 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
   
 #### <a name="to-create-a-scale-out-file-server-role-by-using-windows-powershell"></a>Windows PowerShell を使用してスケールアウトファイルサーバーの役割を作成するには
 
- ファイルサーバークラスターに接続されている Windows PowerShell セッションで、次のコマンドを入力してスケールアウトファイルサーバーの役割を作成し、クラスターの名前に合わせて*Fscluster*を変更し、 *SOFS*に指定する名前と一致するように設定します。スケールアウトファイルサーバーロール:
+ ファイルサーバークラスターに接続されている Windows PowerShell セッションで、次のコマンドを入力してスケールアウトファイルサーバーの役割を作成し、クラスターの名前に合わせて*Fscluster*を変更し、 *SOFS*に指定した名前に一致するように変更します。スケールアウトファイルサーバーロール:
 
 ```PowerShell
 Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER

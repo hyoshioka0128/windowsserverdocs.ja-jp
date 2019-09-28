@@ -2,7 +2,7 @@
 title: ユーザー セッションを中断してアクティブな状態で保持する
 description: MultiPoint セッションを切断せずに、ユーザーを中断する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: a7c94b9d1edd36efc8651e35dfabbc95239335cb
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0ef9d98584df568438cc3c905a7c86cd58f53343
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871535"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394929"
 ---
 # <a name="suspend-and-leave-user-session-active"></a>ユーザー セッションを中断してアクティブな状態で保持する
 ユーザーのセッションを終了したくない場合は、MultiPoint Services システムからユーザーを切断または中断することができます。 管理ユーザーがユーザーのセッションを切断するのではなく、ユーザー自身がセッションを切断することもできます。 ユーザーセッションが中断されている間は、コンピューターがシャットダウンまたは再起動されるまで、セッションは MultiPoint Services システムのコンピューターメモリ内でアクティブなままになります。 コンピューターがシャットダウンまたは再起動されると、中断されていたセッションはすべて終了し、保存されていない作業は失われます。  

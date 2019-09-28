@@ -1,9 +1,9 @@
 ---
 title: 一般的な問題のトラブルシューティング
-description: このトピックは、ガイドの一部複数リモート アクセス サーバーの展開で Windows Server 2016 の Multisite 展開します。
+description: このトピックは、「Windows Server 2016 のマルチサイト展開に複数のリモートアクセスサーバーを展開する」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,38 +12,38 @@ ms.topic: article
 ms.assetid: 354ae5e3-bae1-44f9-afd7-7eaba70f2346
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 87614ac3b83eaacefb4ac5f9fddef238ed500953
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: a2b8d7decad482ca8756aa4d82baa35abf16f5fe
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282551"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404449"
 ---
 # <a name="troubleshooting-general-issues"></a>一般的な問題のトラブルシューティング
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでには、リモート アクセスに関連する一般的な問題のトラブルシューティング情報が含まれています。  
+このトピックでは、リモートアクセスに関連する一般的な問題のトラブルシューティングについて説明します。  
   
 ## <a name="gpo-retrieval-error"></a>GPO の取得エラー  
-**表示されるエラー**します。 DirectAccess サーバー GPO の設定を取得することはできません。 GPO の編集アクセス許可があることを確認します。  
+**エラーを受信しました**。 DirectAccess サーバーの GPO 設定を取得できません。 GPO の編集アクセス許可があることを確認します。  
   
-このエラーを受信した後、リモート アクセス管理コンソールが応答しません。  
+このエラーを受信した後、リモートアクセス管理コンソールは応答しません。  
   
 **原因**  
   
-DirectAccess 展開でエントリ ポイントの 1 つの GPO にアクセスできないし、その結果、構成の読み込みに失敗します。  
+DirectAccess は、展開内のいずれかのエントリポイントの GPO にアクセスできないため、構成の読み込みに失敗します。  
   
 **ソリューション**  
   
-展開内の各エントリ ポイントが、ドメイン コント ローラー上の対応する GPO を持っているかどうかを確認し、ログオン ユーザーに読み取りし、書き込みのアクセス許可、リモート アクセス展開で構成されているすべての Gpo ことを確認します。  
+展開内の各エントリポイントがドメインコントローラー上に対応する GPO を持っていることを確認し、ログオンしたユーザーに、リモートアクセスの展開で構成されているすべての Gpo に対する読み取りおよび書き込みのアクセス許可があることを確認します。  
   
-この問題を回避するには、リモート アクセス管理コンソールを使用する代わりに構成コマンドレットを使用して、たとえばを使用して`Get-RemoteAccess`と`Get-DAEntryPoint`します。  
+回避策として、リモートアクセス管理コンソールを使用する代わりに、構成コマンドレットを使用します。たとえば、`Get-RemoteAccess` および `Get-DAEntryPoint` を使用します。  
   
 > [!NOTE]  
-> このシナリオでは、現在のエントリ ポイントのサーバーの GPO を利用できない場合は発生しません。  
+> このシナリオは、現在のエントリポイントのサーバー GPO が使用できない場合には発生しません。  
   
-使用することができます、`Get-DAEntryPointDC`サーバー Gpo を保存するすべてのドメイン コント ローラーの一覧を表示するコマンドレットと`Get-DAMultiSite`と組み合わせて`Get-RemoteAccess`展開内のサーバー Gpo の完全な一覧を取得します。 次に、例を示します。  
+@No__t-0 コマンドレットを使用して、サーバー Gpo を格納しているすべてのドメインコントローラー @no__t を一覧表示し、`Get-RemoteAccess` と組み合わせて、展開内のサーバー Gpo の完全な一覧を取得することができます。 以下に例を示します。  
   
 ```  
 $ServerGpos = Get-DAEntryPointDC | ForEach-Object {   
@@ -54,43 +54,43 @@ $ServerGpos = Get-DAEntryPointDC | ForEach-Object {
 $ServerGpos | ForEach-Object { $GpoName = $_['GpoName'] ; $DC = $_['DC'] ; Write-Host "Server GPO '$GpoName' on DC '$DC'" }  
 ```  
   
-## <a name="windows-7-to-windows-8-or-10-client-upgrade"></a>Windows 8、Windows 7 または 10 クライアントのアップグレード  
-**現象**します。 Windows 7 クライアントのマルチサイト展開で Windows 10 または Windows 8 にアップグレードした後は、DirectAccess 接続は、ネットワークの一覧に表示されません。  
+## <a name="windows-7-to-windows-8-or-10-client-upgrade"></a>Windows 7 から Windows 8 または10クライアントへのアップグレード  
+**症状**。 Windows 7 クライアントがマルチサイト展開で Windows 10 または Windows 8 にアップグレードされた後、DirectAccess 接続は [ネットワーク] の一覧に表示されません。  
   
 **原因**  
   
-マルチサイト展開では、Windows 7 の Gpo では、Windows 8 Network Connectivity Assistant の構成は含まれません。  
+マルチサイト展開の Windows 7 Gpo には、Windows 8 Network Connectivity Assistant の構成が含まれていません。  
   
- Windows 7 クライアントは、Windows 7 クライアント Gpo で個別の手動構成を必要とする DirectAccess 接続の状態を監視するのに DirectAccess Connectivity Assistant を使用する必要があります。 Windows 7 クライアントをアップグレードするには Windows 10 または Windows 8 に、Network Connectivity Assistant は機能しません、Windows 7 クライアント GPO がまだ適用されている場合。  
+ Windows 7 クライアントは、DirectAccess 接続アシスタントを使用して、Windows 7 クライアント Gpo で個別の手動構成を必要とする DirectAccess 接続の状態を監視する必要があります。 Windows 7 クライアントを Windows 10 または Windows 8 にアップグレードしても、Windows 7 クライアントの GPO が適用されている場合、Network Connectivity Assistant は機能しません。  
   
 **ソリューション**  
   
-DirectAccess Connectivity Assistant の設定が構成され、Windows 7 の Gpo の場合は、次の PowerShell コマンドレットを使用して Windows 7 の Gpo を変更することにより、クライアント コンピューターをアップグレードする前にこの問題を解決できます。  
+DirectAccess 接続アシスタントの設定が Windows 7 Gpo で構成されている場合は、次の PowerShell コマンドレットを使用して Windows 7 Gpo を変更することで、クライアントコンピューターをアップグレードする前にこの問題を解決できます。  
   
 ```  
 Set-GPRegistryValue -Name <Windows7GpoName> -Domain <DomainName> -Key "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\NetworkConnectivityAssistant" -ValueName "TemporaryValue" -Type Dword -Value 1  
 Remove-GPRegistryValue -Name <Windows7GpoName> -Domain <DomainName> -Key "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\NetworkConnectivityAssistant"  
 ```  
   
-場合は、クライアントがアップグレードされているか、DCA が構成されていない、クライアント コンピューターを Windows 10 または Windows 8 のセキュリティ グループに移動します。  
+クライアントが既にアップグレードされている場合、または DCA が構成されていない場合は、クライアントコンピューターを Windows 10 または Windows 8 セキュリティグループに移動します。  
   
 ## <a name="general-cmdlet-errors"></a>コマンドレットの一般的なエラー  
   
--   **問題 1**  
+-   **問題1**  
   
-    **表示されるエラー**します。 < サーバー名または名 > の < 表示される > のドメイン コント ローラーに到達できません。  
+    **エラーを受信しました**。 < Server_name または entry_point_name > のドメインコントローラー < domain_controller > に到達できません。  
   
     **原因**  
   
-    マルチサイト展開で構成の一貫性を維持するためには、各 GPO が単一のドメイン コントローラーによって管理されるようにすることが重要です。 エントリ ポイントのサーバーの GPO を管理するドメイン コント ローラーが利用できない場合は、リモート アクセスの構成設定の読み取りまたは変更できません。  
+    マルチサイト展開で構成の一貫性を維持するためには、各 GPO が単一のドメイン コントローラーによって管理されるようにすることが重要です。 エントリポイントのサーバー GPO を管理するドメインコントローラーを使用できない場合、リモートアクセスの構成設定を読み取りまたは変更することはできません。  
   
     **ソリューション**  
   
-    サーバーの Gpo を管理するドメイン コント ローラーの変更"するには」で説明されている手順に従って[2.4 します。Gpo を構成する](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs)します。  
+    「@No__t-02.4」で説明されている「サーバーの Gpo を管理するドメインコントローラーを変更するには」の手順に従います。Gpo を構成する @ no__t-0  
   
--   **問題 2**  
+-   **問題2**  
   
-    **表示されるエラー**します。 < Domain_name > ドメインでプライマリ ドメイン コント ローラーに到達できません。  
+    **エラーを受信しました**。 ドメイン < ドメイン名 > のプライマリドメインコントローラに到達できません。  
   
     **原因**  
   
@@ -98,7 +98,7 @@ Remove-GPRegistryValue -Name <Windows7GpoName> -Domain <DomainName> -Key "HKEY_L
   
     **ソリューション**  
   
-    PDC エミュレーターの役割を転送するには"するには」で説明されている手順に従って[2.4 します。Gpo を構成する](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs)します。  
+    「@No__t-02.4」で説明されている「PDC エミュレーターの役割を転送するには」の手順に従います。Gpo を構成する @ no__t-0  
   
 
 

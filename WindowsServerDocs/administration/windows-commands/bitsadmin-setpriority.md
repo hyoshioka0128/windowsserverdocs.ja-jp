@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setpriority
-description: Windows コマンド」のトピック**bitsadmin setpriority** -指定したジョブの優先順位を設定します。
+description: '**Bitsadmin setpriority**の Windows コマンドトピック-指定したジョブの優先順位を設定します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 072f22ae8c928d427104062b8cbf0f8f42ac4416
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 60564350928f917ca1861684e042304d5d380426
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882213"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380440"
 ---
 # <a name="bitsadmin-setpriority"></a>bitsadmin setpriority
 
 
 
-指定したジョブの優先順位を設定します。
+指定されたジョブの優先順位を設定します。
 
 ## <a name="syntax"></a>構文
 
@@ -37,15 +37,15 @@ bitsadmin /SetPriority <Job> <Priority>
 |パラメーター|説明|
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
-|Priority|次のいずれかの値です。</br>前景色</br>-高</br>-標準</br>-低|
+|[Priority]|次のいずれかの値です。</br>-前景</br>-高</br>-通常</br>-低|
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブの優先順位を設定する*myDownloadJob*通常にします。
+次の例では、 *Mydownloadjob*という名前のジョブの優先順位を normal に設定します。
 ```
 C:\>bitsadmin /SetPriority myDownloadJob NORMAL
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

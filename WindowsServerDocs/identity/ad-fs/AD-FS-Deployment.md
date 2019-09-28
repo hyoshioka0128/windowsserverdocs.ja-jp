@@ -7,19 +7,19 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6ea73506bbd67dd44fa23b4b87d4744ebbbd71cb
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 264a7d3399757e903e794dc4ec554e7ea63dd0e5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192570"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360154"
 ---
 # <a name="ad-fs-deployment"></a>AD FS 展開
 
 
-このドキュメントには、すべての Windows Server 2016 の AD FS を展開するためのドキュメントの一覧が含まれています。 これには、次のデータが含まれます。
+このドキュメントには、Windows Server 2016 の AD FS を展開するためのすべてのドキュメントの一覧が含まれています。 これには、次の内容が含まれます。
   
 * [AD FS について推奨するセキュリティ運用方法](deployment/Best-Practices-Securing-AD-FS.md)
 
@@ -27,7 +27,7 @@ ms.locfileid: "66192570"
 
 * [オンプレミスのデバイス ベースの条件付きアクセスを計画する](deployment/Plan-Device-based-Conditional-Access-on-Premises.md)
 
-* [AD FS と WAP の必要な更新プログラム](deployment/updates-for-active-directory-federation-services-ad-fs.md)
+* [AD FS および WAP に必要な更新](deployment/updates-for-active-directory-federation-services-ad-fs.md)
 
 * [SQL Server レプリケーションを使用した地理的な冗長性の設定](deployment/Set-up-Geographic-Redundancy-with-SQL-Server-Replication.md)
 

@@ -1,7 +1,7 @@
 ---
 title: Always On VPN のトラブルシューティング
 description: このトピックでは、Windows Server 2016 で Always On VPN 展開を確認およびトラブルシューティングする手順について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 4d08164e-3cc8-44e5-a319-9671e1ac294a
@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.date: 06/11/2018
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 60873c8bbf71ad5afa58bd9e19b1a3fd650bc65f
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 649fbc16e3dfef2ed1061d0ba6a5c22a8712b186
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871350"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404372"
 ---
 # <a name="troubleshoot-always-on-vpn"></a>Always On VPN のトラブルシューティング 
 
@@ -118,7 +118,7 @@ Always On VPN セットアップがクライアントを内部ネットワーク
 
 ## <a name="nps-logs"></a>NPS ログ
 
-Nps は NPS アカウンティングログを作成して保存します。 既定では、これらのファイルは、*xxxx*.\\.txt のという名前のファイルに% SYSTEMROOT%\\ \\System32 ログファイルに格納されます。ここで、 *xxxx*は、ファイルが作成された日付です。
+Nps は NPS アカウンティングログを作成して保存します。 既定では、これらは% SYSTEMROOT% \\System32 @ no__t-1Logfiles ファイルに格納さ*れます。* ここで、 *xxxx*は、ファイルが作成された日付です。
 
 既定では、これらのログはコンマ区切り値形式ですが、見出し行は含まれません。 見出し行は次のとおりです。
 
@@ -166,7 +166,7 @@ VPN_ スクリプトを手動で実行するときの最も一般的な問題を
 
 - **エラーの説明。** 条件付きアクセスポリシーが満たされていない場合、VPN 接続をブロックしますが、ユーザーが **[X]** を選択してメッセージを閉じた後に接続します。  **[OK]** を選択すると別の認証が試行され、別の "問題がある" メッセージで終了します。 これらのイベントは、クライアントの AAD 操作イベントログに記録されます。
 
-- **原因**
+- **考えられる原因**
 
   - ユーザーは、Azure AD によって発行されていない、有効なクライアント認証証明書を個人用証明書ストアに持っています。
 

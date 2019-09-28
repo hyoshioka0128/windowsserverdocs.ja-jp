@@ -1,8 +1,8 @@
 ---
 title: gpfixup
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: efb30e243d9c165fdcf13943225eb90d38235070
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: e32427369f1664476c81a81353ae8869ec0c2ff3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438214"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375670"
 ---
 # <a name="gpfixup"></a>gpfixup
 
 
 
-ドメイン操作の名前を変更した後は、グループ ポリシー オブジェクトとグループ ポリシーのリンクのドメイン名の依存関係を修正します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+ドメイン名の変更操作後にグループポリシーオブジェクトおよびグループポリシーリンク内のドメイン名の依存関係を修正します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
 
 ## <a name="syntax"></a>構文
 
@@ -40,35 +40,35 @@ Gpfixup [/v]
 
 |       パラメーター       |                                                                                                                                                                                                                               説明                                                                                                                                                                                                                               |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|          /v           |                                                                                                                                                      詳細なステータス メッセージが表示されます。</br>このパラメーターを使用しない場合は、エラー メッセージのみまたは概要の状態メッセージを**成功**または**エラー**が表示されます。                                                                                                                                                       |
-| /olddns:\<OLDDNSNAME > |                                                                                                           名前が変更されたドメインの古い DNS 名を指定します *\<OLDDNSNAME >* ドメインの名前の変更操作が、ドメインの DNS 名に変更されたとき。 このパラメーターを使用するには、使用する場合にのみ、 **/newdns**新しいドメインの DNS 名を指定するパラメーター。                                                                                                            |
-| /newdns:\<NEWDNSNAME > |                                                                                                          名前が変更されたドメインの新しい DNS 名を指定します *\<NEWDNSNAME >* ドメインの名前の変更操作が、ドメインの DNS 名に変更されたとき。 このパラメーターを使用するには、使用する場合にのみ、 **/olddns**古いドメインの DNS 名を指定するパラメーター。                                                                                                           |
-| /oldnb:\<OLDFLATNAME> |                                                                                                        名前が変更されたドメインの古い NetBIOS 名を指定します *\<OLDFLATNAME >* ドメインの名前の変更操作で、ドメインの NetBIOS 名が変更されたとき。 このパラメーターを使用するには、使用する場合にのみ、 **/newnb**パラメーターを新しいドメインの NetBIOS 名を指定します。                                                                                                        |
-| /newnb:\<NEWFLATNAME > |                                                                                                       名前が変更されたドメインの新しい NetBIOS 名を指定します *\<NEWFLATNAME >* ドメインの名前の変更操作で、ドメインの NetBIOS 名が変更されたとき。 このパラメーターを使用するには、使用する場合にのみ、 **/oldnb**古いドメイン NetBIOS 名を指定するパラメーター。                                                                                                       |
-|     /dc:\<DCNAME>     | という名前のドメイン コント ローラーに接続する *\<DCNAME >* (DNS 名または NetBIOS 名)。 *\<DCNAME >* 次のいずれかで示されている、ドメイン ディレクトリ パーティションの書き込み可能なレプリカをホストする必要があります。</br>DNS 名 *\<NEWDNSNAME >* を使用して **/newdns**</br>-NetBIOS 名 *\<NEWFLATNAME >* を使用して **/newnb**</br>このパラメーターを使用しない場合は、によって示される名前が変更されたドメイン内の任意のドメイン コント ローラーに接続 *\<NEWDNSNAME >* または *\<NEWFLATNAME >* します。 |
-|        /sionly        |                                                                                                                           管理されているソフトウェアのインストール (グループ ポリシーのソフトウェアのインストールの拡張機能) に関連するグループ ポリシー修正プログラムのみを実行します。 Gpo のグループ ポリシーのリンクと SYSVOL のパスを修正するアクションをスキップします。                                                                                                                           |
-|   /user:\<ユーザー名 >   |                                                                                                                                   ユーザーのセキュリティ コンテキストでこのコマンドを実行 *\<ユーザー名 >* ここで、 *\<ユーザー名 >* 形式 domain \user にします。</br>このパラメーターを使用しない場合は、ログインしているユーザーとしてこのコマンドを実行します。                                                                                                                                    |
-|   /pwd: {\<パスワード >   |                                                                                                                                                                                                                                   \*}                                                                                                                                                                                                                                   |
+|          /v           |                                                                                                                                                      詳細なステータスメッセージを表示します。</br>このパラメーターを使用しない場合は、エラーメッセージまたは**成功**または**失敗**の概要ステータスメッセージのみが表示されます。                                                                                                                                                       |
+| /olddns: \<OLDDNSNAME > |                                                                                                           ドメインの名前変更操作によってドメインの DNS 名が変更された場合に *@no__t 1OLDDNSNAME >* として名前が変更されたドメインの古い DNS 名を指定します。 このパラメーターは、 **/newdns**パラメーターを使用して新しいドメイン dns 名を指定する場合にのみ使用できます。                                                                                                            |
+| /newdns: \<NEWDNSNAME > |                                                                                                          ドメインの名前変更操作によってドメインの DNS 名が変更された場合に *@no__t 1NEWDNSNAME >* として名前が変更されたドメインの新しい dns 名を指定します。 このパラメーターは、古いドメイン DNS 名を指定するために、 **/olddns**パラメーターも使用する場合にのみ使用できます。                                                                                                           |
+| /oldnb: \<OLDFLATNAME > |                                                                                                        ドメインの名前変更操作によってドメインの NetBIOS 名が変更された場合に *@no__t 1OLDFLATNAME >* として名前が変更されたドメインの古い NetBIOS 名を指定します。 このパラメーターは、 **/newnb**パラメーターを使用して新しいドメイン NetBIOS 名を指定する場合にのみ使用できます。                                                                                                        |
+| /newnb: \<NEWFLATNAME > |                                                                                                       ドメインの名前変更操作によってドメインの NetBIOS 名が変更された場合に *@no__t 1NEWFLATNAME >* として名前が変更されたドメインの新しい netbios 名を指定します。 このパラメーターは、 **/oldnb**パラメーターを使用して古いドメイン NetBIOS 名を指定する場合にのみ使用できます。                                                                                                       |
+|     /dc: \<DCNAME >     | *@No__t-1DCNAME >* (DNS 名または NetBIOS 名) という名前のドメインコントローラーに接続します。 *1DCNAME >* は、次のいずれかの方法で示されているように、ドメインディレクトリパーティションの書き込み可能なレプリカをホストする必要があります。 @no__t</br>-DNS 名 *@no__t 1NEWDNSNAME >* には、 **/dns dns**を使用します。</br>-NetBIOS 名 *@no__t 1NEWFLATNAME >* には、 **/newnb**を使用します。</br>このパラメーターが使用されていない場合は、 *\<NEWDNSNAME >* または *\<NEWFLATNAME >* によって示される、名前が変更されたドメイン内の任意のドメインコントローラーに接続します。 |
+|        /sionly        |                                                                                                                           は、管理されているソフトウェアのインストール (グループポリシーのソフトウェアインストール拡張機能) に関連するグループポリシー修正プログラムのみを実行します。 Gpo のグループポリシーリンクと SYSVOL パスを修正する操作をスキップします。                                                                                                                           |
+|   /user: \<USERNAME >   |                                                                                                                                   このコマンドをユーザーのセキュリティコンテキストで実行 *\< ユーザー名 >* です。 *\<username >* は domain\user という形式になっています。</br>このパラメーターが使用されていない場合、はログインしているユーザーとしてこのコマンドを実行します。                                                                                                                                    |
+|   /pwd: {\<PASSWORD >   |                                                                                                                                                                                                                                   \*}                                                                                                                                                                                                                                   |
 |          /?           |                                                                                                                                                                                                                  コマンド プロンプトでヘルプを表示します。                                                                                                                                                                                                                   |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   **Gpfixup**コマンドには、Windows Server 2008 R2 および Windows Server 2008 では、Server Core インストールする場合は除きます。
--   グループ ポリシー管理コンソール (GPMC) は、Windows Server 2008 R2 および Windows Server 2008 と共に配布は、サーバー マネージャーから機能としてグループ ポリシーの管理をインストールする必要があります。
+-   **Gpfixup**コマンドは、server Core インストールを除き、windows Server 2008 R2 および windows server 2008 で使用できます。
+-   グループポリシー管理コンソール (GPMC) は Windows Server 2008 R2 および Windows Server 2008 と共に配布されますが、サーバーマネージャーを通じてグループポリシー管理を機能としてインストールする必要があります。
 
 ## <a name="BKMK_Examples"></a>例
 
-この例から DNS 名を変更したドメイン名の変更操作が既に実行**MyOldDnsName**に**MyNewDnsName**、および NetBIOS 名から**MyOldNetBIOSName**に**MyNewNetBIOSName**します。 この例では使用して、 **gpfixup**という名前のドメイン コント ローラーに接続するためのコマンド**MyDcDnsName** Gpo およびグループ ポリシーの修復と Gpo とリンクに埋め込まれている古いドメイン名を更新することによってリンクします。 状態とエラー出力がという名前のファイルに保存する**gpfixup.log**します。
+この例では、DNS 名を**MyOldDnsName**から**MyNewDnsName**に、NetBIOS 名を**MyOldNetBIOSName**から**MyNewNetBIOSName**に変更したドメインの名前変更操作を既に実行していることを前提としています。 この例では、 **gpfixup**コマンドを使用して、gpo とリンクに埋め込まれている古いドメイン名を更新することによって、 **Mydcdnsname 名**という名前のドメインコントローラーに接続し、gpo とグループポリシーリンクを修復します。 状態およびエラー出力は、 **gpfixup .log**という名前のファイルに保存されます。
 ```
 gpfixup /olddns: MyOldDnsName /newdns:MyNewDnsName /oldnb:MyOldNetBIOSName /newnb:MyNewNetBIOSName /dc:MyDcDnsName 2>&1 >gpfixup.log
 ```
-この例は前と同じで、ドメインの NetBIOS 名、ドメインの中に変更しないことを前提としていますが、操作の名前を変更します。
+この例は前の例と同じですが、ドメインの名前変更操作中にドメインの NetBIOS 名が変更されていないことを前提としています。
 ```
 gpfixup /olddns: MyOldDnsName /newdns:MyNewDnsName /dc:MyDcDnsName 2>&1 >gpfixup.log
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [Active Directory ドメイン名の変更を管理します。](https://go.microsoft.com/fwlink/?LinkId=198385)
--   [グループ ポリシーの TechCenter](https://go.microsoft.com/fwlink/?LinkID=145531)
+-   [Active Directory ドメインの名前変更の管理](https://go.microsoft.com/fwlink/?LinkId=198385)
+-   [グループポリシー TechCenter](https://go.microsoft.com/fwlink/?LinkID=145531)
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)

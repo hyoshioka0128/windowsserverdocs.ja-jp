@@ -1,8 +1,8 @@
 ---
 title: nslookup set recurse
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: de948d9e182cf6489c1869a5725bce8319484293
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 68a5dc26387ddeb6541cc1c85005cd9dab4b433a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436675"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372886"
 ---
 # <a name="nslookup-set-recurse"></a>nslookup set recurse
 
 
 
-ドメイン ネーム システム (DNS) サーバーに情報があるない場合は、他のサーバーを照会するように指示します。
+他のサーバーが情報を持っていない場合にクエリを実行するように、ドメインネームシステム (DNS) ネームサーバーに指示します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,9 +36,9 @@ set [no]recurse
 
 |   パラメーター   |                                                                  説明                                                                  |
 |---------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| **norecurse** |                情報があるない場合は、他のサーバーを照会できないドメイン ネーム システム (DNS) のネーム サーバーを停止します。                |
-|  **recurse**  | ドメイン ネーム システム (DNS) サーバーに情報があるない場合は、他のサーバーを照会するように指示します。 既定の構文は**recurse**します。 |
-|     {0} のヘルプ     |                                                                      ?}                                                                       |
+| **norecurse** |                ドメインネームシステム (DNS) ネームサーバーに情報がない場合は、他のサーバーに対してクエリを実行しないようにします。                |
+|  **recurse**  | 他のサーバーが情報を持っていない場合にクエリを実行するように、ドメインネームシステム (DNS) ネームサーバーに指示します。 既定の構文は、**再帰**です。 |
+|     {ヘルプ     |                                                                      ?}                                                                       |
 
 #### <a name="additional-references"></a>その他の参照情報
 

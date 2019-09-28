@@ -1,8 +1,8 @@
 ---
 title: pubprn
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 499ff2ade7ffc6c608791ba3da0ede0c3282c13d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 844a13c1a650ebedcc0d5b4fbf65b9de671b2180
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831703"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372013"
 ---
 # <a name="pubprn"></a>pubprn
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-プリンターを active directory Domain Services に発行します。
+プリンターを active directory ドメインサービスに発行します。
 
 ## <a name="syntax"></a>構文
 ```
@@ -35,28 +35,28 @@ cscript pubprn {<ServerName> | <UNCprinterpath>}
 ## <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-|\<サーバー名 >|発行するプリンターをホストしている Windows サーバーの名前を指定します。 コンピューターを指定しないと、ローカル コンピューターが使用されます。|
-|\<UNCprinterpath >|共有プリンターを発行する場合に汎用名前付け規則 (UNC) パス。|
-|"なります<Container>,、DC =<Container>"|プリンターを発行する active directory ドメイン サービスでは、コンテナーへのパスを指定します。|
+|\<ServerName >|発行するプリンターをホストしている Windows サーバーの名前を指定します。 コンピューターを指定しないと、ローカル コンピューターが使用されます。|
+|\< 番目のプリンターパス >|共有プリンターを発行する場合に汎用名前付け規則 (UNC) パス。|
+|"なります<Container>,、DC =<Container>"|プリンターを公開する active directory ドメインサービス内のコンテナーへのパスを指定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
--   **Pubprn**コマンドは、%WINdir%\System32\printing_Admin_Scripts にある Visual Basic スクリプト\\<language>ディレクトリ。 このコマンドでは、コマンド プロンプトで、使用する入力**cscript** pubprn ファイル、または適切なフォルダーにディレクトリを変更する、完全なパスを続けています。 例:
+## <a name="remarks"></a>コメント
+-   **Pubprn.vbs**コマンドは、%WINdir%\System32\printing_Admin_Scripts @ no__t @ no__t ディレクトリにある Visual Basic スクリプトです。 このコマンドを使用するには、コマンドプロンプトで「 **cscript** 」と入力し、pubprn.vbs ファイルへの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 以下に例を示します。
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\pubprn
     ```
--   入力する情報にスペースが含まれている場合は、テキストを囲む引用符を使用して (たとえば、 `"computer Name"`)。
+-   入力した情報にスペースが含まれている場合は、テキストを引用符で囲みます (たとえば、`"computer Name"`)。
 
 ## <a name="BKMK_examples"></a>例
-上のすべてのプリンターを公開する、 \\MyDomain.company.Com ドメイン内の MyContainer コンテナーに \Server1 コンピューターを入力します。
+@No__t 0 から Server1 コンピューター上のすべてのプリンターを、MyDomain.company.Com ドメインの MyContainer コンテナーに発行するには、次のように入力します。
 ```
 cscript Ppubprn Server1 "LDAP://CN=MyContainer,DC=MyDomain,DC=company,DC=Com"
 ```
-上の Laserprinter1 プリンターを公開する、 \\MyDomain.company.Com ドメインの種類の MyContainer コンテナーに \Server1 サーバー。
+@No__t 0 の Server1 サーバーにある Laserprinter1 プリンターを MyDomain.company.Com ドメインの MyContainer コンテナーに発行するには、次のように入力します。
 ```
 cscript Ppubprn \\Server1\Laserprinter1 "LDAP://CN=MyContainer,DC=MyDomain,DC=company,DC=Com"
 ```
 
-#### <a name="additional-references"></a>その他の参照
-[コマンドライン構文のポイント](command-line-syntax-key.md)
-[印刷コマンドのリファレンス](print-command-reference.md)
+#### <a name="additional-references"></a>その他の参照情報
+[コマンドライン構文のキー](command-line-syntax-key.md)
+[印刷コマンドリファレンス](print-command-reference.md)

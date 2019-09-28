@@ -1,8 +1,8 @@
 ---
-title: ksetup:delrealmflags
-description: 'Windows コマンド」のトピック * * *- '
+title: 'ksetup: delrealmflags'
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fd2a3897a07a2eda4c05526b0ae8c55dda35e1e9
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8e2e67d7af4fdd31b79ad633c9df844483bb1ea3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437992"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375104"
 ---
-# <a name="ksetupdelrealmflags"></a>ksetup:delrealmflags
+# <a name="ksetupdelrealmflags"></a>ksetup: delrealmflags
 
 
 
-指定された領域から領域のフラグを削除します。  このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+指定された領域から領域フラグを削除します。  このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,37 +36,37 @@ ksetup /delrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 |パラメーター|説明|
 |---------|-----------|
-|\<RealmName>|CORP. などの大文字の DNS 名と領域名が指定されています。CONTOSO.COM では、既定の領域として表示時に**Ksetup**を実行します。|
+|\<RealmName >|領域名は、CORP などの大文字の DNS 名で表されます。CONTOSO.COM は、 **Ksetup**の実行時に既定の領域として表示されます。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-領域のフラグは、Windows Server オペレーティング システムに基づいていないいる Kerberos 領域の他の機能を指定します。 Windows Server 2003、Windows Server 2008、または Windows Server 2008 R2 を実行しているコンピューターが、Windows Server オペレーティング システムを実行しているドメインを使用する代わりに認証を管理するサーバーを Kerberos を使用し、これらのシステムに参加します。Kerberos 領域。 このエントリは、領域の機能を確立します。 次の表では、それぞれについて説明します。
+領域フラグは、Windows Server オペレーティングシステムに基づいていない Kerberos 領域の追加機能を指定します。 Windows server 2003、Windows Server 2008、または Windows Server 2008 R2 を実行しているコンピューターは、Windows Server オペレーティングシステムを実行しているドメインを使用するのではなく、Kerberos サーバーを使用して認証を管理できます。また、これらのシステムは、Kerberos 領域。 このエントリにより、領域の機能が確立されます。 次の表では、それぞれについて説明します。
 
-|Value|領域のフラグ|説明|
+|値|領域フラグ|説明|
 |-----|----------|-----------|
-|0 xf です.|すべての|すべての領域フラグが設定されます。|
-|0x00|なし|領域のフラグが設定されていないと、その他の機能が有効なことはありません。|
-|0x01|SendAddress|IP アドレスにが、チケットの付与のチケットに含まれます。|
-|0x02|TcpSupported|この領域では、伝送制御プロトコル (TCP) とユーザー データグラム プロトコル (UDP) の両方がサポートされています。|
-|0x04|委任|この領域のすべてのユーザーは、委任に対して信頼されています。|
-|0x08|NcSupported|この領域は、名の正規化は、DNS と領域の名前付け標準をサポートします。|
-|0x80|RC4|この領域は、TLS の使用できる領域間の信頼を有効にする RC4 暗号化をサポートします。|
+|0Xf です|All|すべての領域フラグが設定されます。|
+|0x00|なし|領域フラグが設定されておらず、追加の機能は有効になっていません。|
+|0x01|SendAddress|この IP アドレスはチケット交付チケット内に含まれます。|
+|0x02|TcpSupported|この領域では、伝送制御プロトコル (TCP) とユーザーデータグラムプロトコル (UDP) の両方がサポートされています。|
+|0x04|委任|この領域のすべてのユーザーが委任に対して信頼されています。|
+|0x08|NcSupported|この領域では、DNS と領域の名前付け標準を可能にする、名前の正規化がサポートされています。|
+|0x80|RC4|この領域では、RC4 暗号化をサポートして、複数領域にわたる信頼を有効にします。これにより、TLS を使用できるようになります。|
 
-領域のフラグがレジストリに格納されている**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\\** <em>RealmName</em>します。 既定では、このエントリはレジストリに存在しません。 使用することができます、 [Ksetup:addrealmflags](ksetup-addrealmflags.md)レジストリの作成にコマンド。
+領域フラグは、レジストリの**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains @ no__t-1**<em>realmname</em>に格納されます。 既定では、このエントリはレジストリに存在しません。 [Ksetup: addrealmflags](ksetup-addrealmflags.md)コマンドを使用して、レジストリにデータを設定できます。
 
-どのような領域のフラグが使用可能で設定を確認できますの出力を表示して**ksetup**または**ksetup/dumpstate**します。
+**Ksetup**または**ksetup/dumpstate**の出力を表示することで、使用可能な領域フラグと設定されている領域フラグを確認できます。
 
 ## <a name="BKMK_Examples"></a>例
 
-CONTOSO の領域の使用可能な領域のフラグを一覧表示します。
+領域 CONTOSO の利用可能な領域フラグを一覧表示します。
 ```
 Ksetup /listrealmflags
 ```
-現在、セット内にある 2 つのフラグを削除します。
+現在セット内にある2つのフラグを削除します。
 ```
 ksetup /delrealmflags CONTOSO ncsupported delegate
 ```
-実行、 **ksetup**コマンド出力を表示し、領域のフラグが設定されていることを確認する**領域フラグ =** します。
+**Ksetup**コマンドを実行して、領域フラグが設定されていることを確認します。これを行うには、出力を表示し、 **realm flags =** を探します。
 
 #### <a name="additional-references"></a>その他の参照情報
 

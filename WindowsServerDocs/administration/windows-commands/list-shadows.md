@@ -1,8 +1,8 @@
 ---
-title: 一覧の影
-description: 'Windows コマンド」のトピック * * *- '
+title: 影の一覧表示
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 50e4c4b8c7ea97ec65cecb6b8e904abd8c6d98eb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2640c04aef34cd6433efe529ac08c0294ba1c3b9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848773"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374762"
 ---
-# <a name="list-shadows"></a>一覧の影
+# <a name="list-shadows"></a>影の一覧表示
 
 
 
-永続的および既存の非永続的なシャドウ コピーは、システム上にあるを一覧表示します。
+システム上の永続的なシャドウコピーと永続的でないシャドウコピーを一覧表示します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,10 +36,10 @@ list shadows {all | set <SetID> | id <ShadowID>}
 
 |パラメーター|説明|
 |---------|-----------|
-|all|すべてのシャドウ コピーを一覧表示します。|
-|設定\<SetID >|シャドウ コピーが指定したシャドウ コピー セット ID に属しているを一覧表示|
-|id \<ShadowID>|指定したシャドウ コピー ID を持つすべてのシャドウ コピーを一覧表示されます。|
+|all|すべてのシャドウコピーを一覧表示します。|
+|\<SetID > を設定します|指定されたシャドウコピーセット ID に属するシャドウコピーを一覧表示します。|
+|id \<ShadowID >|指定されたシャドウコピー ID を持つシャドウコピーを一覧表示します。|
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

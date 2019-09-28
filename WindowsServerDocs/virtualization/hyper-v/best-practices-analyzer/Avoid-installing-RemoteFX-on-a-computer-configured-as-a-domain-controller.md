@@ -1,7 +1,7 @@
 ---
-title: RemoteFX を Active Directory のドメイン コント ローラーとして構成されているコンピューターにインストールしないでください。
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+title: Active Directory ドメインコントローラーとして構成されているコンピューターに RemoteFX をインストールしないようにする
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,36 +10,36 @@ ms.topic: article
 ms.assetid: da58694e-91f6-45d8-a599-18966db165f4
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 9e1c642e3f36b5fe25f34bb417a83b8510adcc02
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 67fd8e2568691b7e9be4b46e30b64bf44558d6d0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832563"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366471"
 ---
-# <a name="avoid-installing-remotefx-on-a-computer-that-is-configured-as-an-active-directory-domain-controller"></a>RemoteFX を Active Directory のドメイン コント ローラーとして構成されているコンピューターにインストールしないでください。
+# <a name="avoid-installing-remotefx-on-a-computer-that-is-configured-as-an-active-directory-domain-controller"></a>Active Directory ドメインコントローラーとして構成されているコンピューターに RemoteFX をインストールしないようにする
 
 >適用先:Windows Server 2016
 
-ベスト プラクティスとスキャンの詳細については、次を参照してください。 [Run Best Practices Analyzer Scans and Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177)します。  
+ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
 |プロパティ|詳細|  
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|エラー|  
+|**順**|Error|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
   
 ## <a name="issue"></a>**問題**  
-*RemoteFX は、ドメイン コント ローラーにインストールされます。*  
+*RemoteFX はドメインコントローラーにインストールされます。*  
   
-## <a name="impact"></a>**影響**  
+## <a name="impact"></a>**よる**  
 *RemoteFX 用に構成された仮想コンピューターは、これらのコンピューターでは使用できません。*  
   
 ## <a name="resolution"></a>**解決方法**  
-*このサーバーまたは Active Directory ドメイン コント ローラー、として、HYPER-V に対して RemoteFX のいずれかを構成し、必要に応じてサーバーを再構成するかを決定します。*  
+*このサーバーを Hyper-v 用 RemoteFX または Active Directory ドメインコントローラーとして構成するかどうかを決定し、必要に応じてサーバーを再構成します。*  
   
 
 
