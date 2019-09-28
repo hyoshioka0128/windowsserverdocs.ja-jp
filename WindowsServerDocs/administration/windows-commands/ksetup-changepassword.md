@@ -1,8 +1,8 @@
 ---
-title: ksetup:changepassword
-description: 'Windows コマンド」のトピック * * *- '
+title: 'ksetup: changepassword'
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f629c6c7930777583df38f5af900ed380ec60f9c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 51be9e71c2b290e6346d23144543e0eec29f9d07
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878533"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375180"
 ---
-# <a name="ksetupchangepassword"></a>ksetup:changepassword
+# <a name="ksetupchangepassword"></a>ksetup: changepassword
 
 
 
-ログオン ユーザーのパスワードを変更するのにには、キー配布センター (KDC) のパスワード (kpasswd) 値を使用します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+では、キー配布センター (KDC) のパスワード (kpasswd) 値を使用して、ログオンしているユーザーのパスワードを変更します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,36 +36,36 @@ ksetup /changepassword <OldPasswd> <NewPasswd>
 
 |パラメーター|説明|
 |---------|-----------|
-|\<OldPasswd>|ログオンしたユーザーの既存のパスワードを示しています。|
-|\<NewPasswd>|ログオンしたユーザーの新しいパスワードを状態します。|
+|\<OldPasswd >|ログオンしているユーザーの既存のパスワードを示します。|
+|\<NewPasswd >|ログオンしているユーザーの新しいパスワードを示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-このコマンドは、ログオン ユーザーのパスワードを変更するのに KDC (kpasswd) のパスワードの値を使用します。 Kpasswd 場合設定を実行して、出力が表示されます、 **ksetup/dumpstate**コマンド。
+このコマンドは、KDC パスワード (kpasswd) の値を使用して、ログオンしているユーザーのパスワードを変更します。 Kpasswd が設定されている場合は、 **ksetup/dumpstate**コマンドを実行して出力に表示されます。
 
-ユーザーの新しいパスワードには、このコンピューターに設定されているすべてのパスワード要件を満たす必要があります。
+ユーザーの新しいパスワードは、このコンピューターに設定されているすべてのパスワード要件を満たしている必要があります。
 
-現在のドメイン ユーザー アカウントが見つからない場合は、システムからユーザー アカウントが存在するドメイン名の指定を求められます。
+現在のドメインにユーザーアカウントが見つからない場合は、ユーザーアカウントが存在するドメイン名を入力するように求められます。
 
-次回ログオン時のパスワードの変更を強制するには、ユーザーは新しいパスワードを求めるために、このコマンドは、アスタリスク (*) を使用できます。
+次回ログオン時にパスワードの変更を強制する場合は、このコマンドでアスタリスク (*) を使用できるので、ユーザーは新しいパスワードの入力を求められます。
 
-コマンドの出力は、成功または失敗のステータスを通知します。
+コマンドの出力によって、成功または失敗の状態が通知されます。
 
 ## <a name="BKMK_Examples"></a>例
 
-このドメインでは、このコンピューターに現在ログオンしているユーザーのパスワードを変更します。
+このドメインのこのコンピューターに現在ログオンしているユーザーのパスワードを変更します:
 ```
 ksetup /changepassword Pas$w0rd Pa$$w0rd
 ```
-現在、Contoso ドメインにログオンしたユーザーのパスワードを変更します。
+Contoso ドメインで現在ログオンしているユーザーのパスワードを変更します。
 ```
 ksetup /domain CONTOSO /changepassword Pas$w0rd Pa$$w0rd
 ```
-[次へ] のログオン時にパスワードを変更する現在ログオンしてユーザーを強制します。
+現在ログオンしているユーザーに対して、次回ログオン時にパスワードの変更を強制します。
 ```
 ksetup /changepassword Pas$w0rd *
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

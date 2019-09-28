@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 07/26/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: adb587412d65506c35705c5eaa8dbea8c660d117
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.openlocfilehash: f78c60ccd65b4c9148d53d894c572a4402948806
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590359"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407685"
 ---
 # <a name="configure-additional-authentication-methods-for-ad-fs"></a>AD FS の追加の認証方法の構成
 
@@ -23,7 +23,7 @@ ms.locfileid: "68590359"
 > [!NOTE]
 > 証明書の認証を選択した場合は、スマート カードの証明書が安全にプロビジョニングされており、PIN 要件が含まれていることを確認してください。
 
-Microsoft Azure は、クラウドで同様の機能を提供します。 [Microsoft Azure ID ソリューション](http://aka.ms/m2w274)の詳細をご覧ください。<br /><br />Microsoft Azure でのハイブリッド ID ソリューションの作成:<br /> - [Azure Multi-factor Authentication について説明します。](http://aka.ms/ey6o9r)<br /> - [クラウド認証を使用して、単一フォレストのハイブリッド環境の id を管理します。](http://aka.ms/g1jat8)<br /> - [追加の Multi-factor Authentication による機密アプリケーションのリスク管理。](http://aka.ms/kt1bbm)
+Microsoft Azure は同様の機能をクラウドで実現します。 [Microsoft Azure ID ソリューション](http://aka.ms/m2w274)の詳細をご覧ください。<br /><br />Microsoft Azure でのハイブリッド ID ソリューションの作成:<br /> - [Azure Multi-Factor Authentication について説明します。](http://aka.ms/ey6o9r)<br /> - [クラウド認証を使用して、単一フォレストのハイブリッド環境の id を管理します。](http://aka.ms/g1jat8)<br /> - [機密アプリケーションの追加 Multi-Factor Authentication によってリスクを管理します。](http://aka.ms/kt1bbm)
 
 ## <a name="microsoft-and-third-party-additional-authentication-methods"></a>Microsoft とサード パーティによる追加の認証方法
 Windows Server 2012 R2 の AD FS で、Microsoft とサードパーティの認証方法を構成して有効にすることもできます。 AD FS にインストールして登録すると、グローバルまたは証明書利用者ごとの認証ポリシーの一部として MFA を適用できます。
@@ -32,7 +32,7 @@ Windows Server 2012 R2 の AD FS で、Microsoft とサードパーティの認�
 
 |プロバイダー|サービス|詳細情報へのリンク|
 |-|-|-| 
-|aPersona|Microsoft ADFS SSO の aPersona Adaptive Multi-factor Authentication|[aPersona ASM ADFS アダプター](https://www.apersona.com/adfs)|
+|aPersona|Microsoft ADFS SSO の aPersona Adaptive Multi-Factor Authentication|[aPersona ASM ADFS アダプター](https://www.apersona.com/adfs)|
 |Duo のセキュリティ|AD FS 用の Duo MFA アダプター|[AD FS のための Duo 認証](https://duo.com/docs/adfs)|
 |Futurae|AD FS 用の Futurae Authentication Suite|[Futurae 強力な認証](https://futurae.com)|
 |Gemalto|Gemalto アイデンティティ & セキュリティ サービス|[http://www.gemalto.com/identity](http://www.gemalto.com/identity)|

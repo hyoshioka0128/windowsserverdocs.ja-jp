@@ -1,18 +1,18 @@
 ---
 title: Hyper-V のアーキテクチャ
 description: パフォーマンスチューニングのための hyper-v アーキテクチャ condsiderations
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ed8522ec34e9e262f835530a248567ebbd0ddc9
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0feb2977791dd181907c381e4898924ff51c2bc5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866667"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383491"
 ---
 # <a name="hyper-v-architecture"></a>Hyper-V のアーキテクチャ
 
