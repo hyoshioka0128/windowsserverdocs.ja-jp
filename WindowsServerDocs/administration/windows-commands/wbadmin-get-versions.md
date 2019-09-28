@@ -1,8 +1,8 @@
 ---
-title: wbadmin get バージョン
-description: 'Windows コマンド」のトピック * * *- '
+title: wbadmin get のバージョン
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,22 +13,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e4ebbd0d78de0ffbff1ee8c658d6d9811b87df1d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0b7ba0749c8ef347e27590bde4eed7bbcf25af7e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813533"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362360"
 ---
-# <a name="wbadmin-get-versions"></a>wbadmin get バージョン
+# <a name="wbadmin-get-versions"></a>wbadmin get のバージョン
 
 
 
-詳細については、ローカル コンピューターまたは別のコンピューターに保存されている使用可能なバックアップを一覧表示します。 このサブコマンドを使用して、パラメーターを指定せず、それらのバックアップが利用できない場合でも、ローカル コンピューターのすべてのバックアップが一覧表示します。 バックアップの詳細情報には、バックアップの時刻、バックアップ記憶域の場所、バージョン識別子が含まれます (に必要な**wbadmin 項目を取得**サブコマンドと回復を実行する)、および種類の回復を行うことができます。
+ローカルコンピューターまたは別のコンピューターに格納されている利用可能なバックアップの詳細を一覧表示します。 パラメーターを指定せずにこのサブコマンドを使用すると、それらのバックアップが使用できない場合でも、ローカルコンピューターのすべてのバックアップが一覧表示されます。 バックアップに関して提供される詳細には、バックアップ時刻、バックアップの保存場所、バージョン識別子 ( **wbadmin get items**サブコマンドに必要なものと回復を実行するために必要)、および実行できる回復の種類が含まれます。
 
-このサブコマンドを使用して、使用可能なバックアップに関する詳細を取得するには、メンバーである、 **Backup Operators**グループまたは**管理者**グループ、またはをされている必要が適切な委任アクセス許可。 さらに、実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (管理者特権でコマンド プロンプトを開くに**コマンド プロンプト**し**管理者として実行**)。
+このサブコマンドを使用して利用可能なバックアップの詳細を取得するには、 **Backup Operators**グループまたは**Administrators**グループのメンバーであるか、適切な権限が委任されている必要があります。 さらに、実行する必要があります **wbadmin** 管理者特権でコマンド プロンプトからです。 (管理者特権でのコマンドプロンプト**コマンドプロンプト**を開き、 **[管理者として実行]** をクリックします)。
 
-このサブコマンドを使用する方法の例については、次を参照してください。[例](#BKMK_examples)します。
+このサブコマンドの使用方法の例については、「[例](#BKMK_examples)」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -42,26 +42,26 @@ wbadmin get versions
 
 |パラメーター|説明|
 |---------|-----------|
-|-backuptarget|バックアップの詳細を格納するストレージの場所を指定します。 そのターゲットの場所に格納されているバックアップを一覧表示するために使用します。 バックアップ ターゲットの位置には、ローカルに接続されたディスク ドライブ、ボリューム、リモート共有フォルダー、DVD ドライブなどのリムーバブル メディアまたはその他の光メディアを指定できます。 場合**wbadmin のバージョンを取得する**実行は、バックアップが作成された、同じコンピューターでこのパラメーターは必要ありません。 ただし、このパラメーターは、別のコンピューターから作成されたバックアップに関する情報の取得に必須です。|
-|-コンピューター|コンピューターのバックアップの詳細を指定します。 複数のコンピューターのバックアップが同じ場所に格納されている場合に使用します。 ときに使用する必要があります **-backuptarget**を指定します。|
+|-backuptarget|詳細を表示するバックアップが格納されている場所を指定します。 対象の場所に格納されているバックアップを一覧表示するには、を使用します。 バックアップターゲットの場所は、ローカルに接続されたディスクドライブ、ボリューム、リモート共有フォルダー、リムーバブルメディア (DVD ドライブなど)、またはその他の光学メディアにすることができます。 **Wbadmin get バージョン**が、バックアップが作成された同じコンピューターで実行されている場合、このパラメーターは必要ありません。 ただし、別のコンピューターから作成されたバックアップに関する情報を取得するには、このパラメーターが必要です。|
+|-コンピューター|バックアップの詳細を表示するコンピューターを指定します。 複数のコンピューターのバックアップが同じ場所に格納されている場合に使用します。 **-BackupTarget**が指定されている場合は、を使用する必要があります。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-リストの項目は、特定のバックアップからの回復に使用できるを使用して**wbadmin get 項目**します。
+特定のバックアップからの回復に使用できる項目を一覧表示するには、 **wbadmin get items**を使用します。
 
 ## <a name="BKMK_examples"></a>例
 
-H のボリュームに格納されている使用可能なバックアップの一覧を表示するには、次のように入力します。
+ボリューム h に格納されている利用可能なバックアップの一覧を表示するには、次のように入力します。
 ```
 wbadmin get versions -backupTarget:h:
 ```
-リモート共有フォルダーに格納されている使用可能なバックアップの一覧を表示する\\\\型であるコンピューター server01 の servername\share:
+リモート共有フォルダーに格納されている利用可能なバックアップの一覧を表示するには \\ @ no__t-1servername\share server01 コンピューターの場合、次のように入力します。
 ```
 wbadmin get versions -backupTarget:\\servername\share -machine:server01
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [Get-WBBackupTarget](https://technet.microsoft.com/library/jj902447.aspx) cmdlet
+-   [WBBackupTarget](https://technet.microsoft.com/library/jj902447.aspx)コマンドレット

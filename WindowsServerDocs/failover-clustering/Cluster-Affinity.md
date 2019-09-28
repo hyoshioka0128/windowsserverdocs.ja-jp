@@ -1,32 +1,32 @@
 ---
-title: クラスターのアフィニティ
-ms.prod: windows-server-threshold
+title: クラスターアフィニティ
+ms.prod: windows-server
 ms.manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.date: 03/07/2019
-description: この記事では、フェールオーバー クラスターのアフィニティと antiAffinity レベルを説明します。
-ms.openlocfilehash: 67929e6d3399633ebfec0b908463131973aecaf7
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+description: この記事では、フェールオーバークラスターのアフィニティレベルと反対のアフィニティレベルについて説明します。
+ms.openlocfilehash: 9a269d2b14e953daee849008a473c750dfbfe84b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453027"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361456"
 ---
-# <a name="cluster-affinity"></a>クラスターのアフィニティ
+# <a name="cluster-affinity"></a>クラスターアフィニティ
 
 > 適用対象:Windows Server 2019、Windows Server 2016
 
-フェールオーバー クラスター ノード間を移動して実行できる多くの役割を保持できます。  同じノードで、特定の役割 (仮想マシン、リソース グループなど) を実行してしないでください場合もあります。  リソースの消費量、メモリ使用量などが考えられます。たとえば、メモリと CPU を集中的には 2 つの仮想マシンがあるし、2 つの仮想マシンを同じノードで実行している場合、仮想マシンのいずれかでしたへの影響のパフォーマンスの問題が。  この記事で説明がクラスターの antiaffinity レベルとその使用方法。
+フェールオーバークラスターは、ノード間を移動して実行できる多数のロールを保持できます。  特定のロール (仮想マシン、リソースグループなど) が同じノードで実行されない場合もあります。  リソース消費、メモリ使用量などが原因である可能性があります。たとえば、メモリと CPU を集中的に使用する2つの仮想マシンがあり、2つの仮想マシンが同じノードで実行されている場合、一方または両方の仮想マシンがパフォーマンスに影響を与える可能性があります。  この記事では、クラスターのアンチアフィニティレベルとその使用方法について説明します。
 
-## <a name="what-is-affinity-and-antiaffinity"></a>アフィニティおよび AntiAffinity は何か
+## <a name="what-is-affinity-and-antiaffinity"></a>アフィニティとその関係はどのようなものですか?
 
-アフィニティでは、(i、e、仮想マシン、リソース グループなど) にまとめておくためには、2 つ以上のロール間の関係を確立するルールを設定する場合です。  AntiAffinity は同じですが、相互の指定されたロールをようにするために使用します。  フェールオーバー クラスターでは、そのロールの AntiAffinity を使用します。  具体的には、 [AntiAffinityClassNames](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames)同じノードで実行されないように、ロールで定義されたパラメーター。  
+アフィニティは、2つ以上のロール (i、e、仮想マシン、リソースグループなど) の間にリレーションシップを確立するように設定するルールです。  "アンチアフィニティ" は同じですが、指定されたロールを相互に分離するために使用されます。  フェールオーバークラスターは、その役割に対して、"関係のない" アフィニティを使用します。  具体的には、ロールに定義されている[AntiAffinityClassNames](https://docs.microsoft.com/previous-versions/windows/desktop/mscs/groups-antiaffinityclassnames)パラメーターが、同じノードで実行されないようにします。  
 
 ## <a name="antiaffinityclassnames"></a>AntiAffinityClassnames
 
-AntiAffinityClassNames パラメーターがあるグループのプロパティを調べるときに、既定値として空白。  次の例では Group1 と Group2 区切る必要があります、同じノードで実行されているからです。  プロパティを表示するには、PowerShell コマンドと結果になります。
+グループのプロパティを見ると、AntiAffinityClassNames パラメーターが存在し、既定値として空白になります。  次の例では、Group1 と Group2 は、同じノードで実行されていると分離する必要があります。  プロパティを表示するために、PowerShell コマンドと結果は次のようになります。
 
     PS> Get-ClusterGroup Group1 | fl AntiAffinityClassNames
     AntiAffinityClassNames : {}
@@ -34,7 +34,7 @@ AntiAffinityClassNames パラメーターがあるグループのプロパティ
     PS> Get-ClusterGroup Group2 | fl AntiAffinityClassNames
     AntiAffinityClassNames : {}
 
-以降、AntiAffinityClassNames は一緒に実行したり、離れているこれらの役割は、既定値として定義されていません。  目標は、分割を保持することです。  AntiAffinityClassNames の値は、好きにするには、接続同じであるがします。  たとえば Group1 と Group2 は仮想マシンで実行されているドメイン コント ローラーとそれらが最も適して別々 のノードで実行されています。  これらはドメイン コント ローラーであるため、クラス名の DC を使用します。  値を設定するには、PowerShell コマンドと結果になります。
+AntiAffinityClassNames は既定値として定義されていないため、これらのロールは一緒に実行することも、分離することもできます。  目標は、分離された状態を維持することです。  AntiAffinityClassNames の値は、任意のものにすることができます。同じである必要があります。  たとえば、Group1 と Group2 は仮想マシンで実行されているドメインコントローラーであり、それぞれ異なるノードで実行するのが最適です。  これらはドメインコントローラーであるため、クラス名には DC を使用します。  値を設定するために、PowerShell コマンドと結果は次のようになります。
 
     PS> $AntiAffinity = New-Object System.Collections.Specialized.StringCollection
     PS> $AntiAffinity.Add("DC")
@@ -47,31 +47,31 @@ AntiAffinityClassNames パラメーターがあるグループのプロパティ
     PS> Get-ClusterGroup "Group2" | fl AntiAffinityClassNames
     AntiAffinityClassNames : {DC}
 
-これで設定されているフェールオーバー クラスタ リングは離れているようにしようとします。  
+これらの設定が完了すると、フェールオーバークラスタリングによってそれらが分離されます。  
 
-AntiAffinityClassName パラメーターは、「ソフト」ブロックです。  つまり、離れている場合は、引き続き試行されますが、できない場合は、これも、同じノードで実行するようにします。  たとえば、グループは、2 ノード フェールオーバー クラスターで実行されます。  を 1 つのノードがメンテナンスのためダウンする必要がある場合、両方のグループになります。 稼働している同じノードがどういうは。  この場合、これを指定してもかまいませんがあります。  最も理想的なできない可能性がありますが、両方の virtial マシンはパフォーマンスが許容できる範囲内でまだ実行されています。
+アンチ Affinityclassname パラメーターは "soft" ブロックです。  つまり、別のノードを維持しようとしますが、できない場合でも、同じノードでの実行が許可されます。  たとえば、グループが2ノードのフェールオーバークラスターで実行されているとします。  メンテナンスのために1つのノードをダウンさせる必要がある場合、両方のグループが同じノードで稼働していることを意味します。  この場合、これを行うことはできます。  これは最適ではない可能性がありますが、どちらの virtial マシンも許容可能なパフォーマンス範囲内で実行されます。
 
-## <a name="i-need-more"></a>詳細は必要があります。
+## <a name="i-need-more"></a>さらに必要です
 
-前述のように、AntiAffinityClassNames、ソフト ブロックです。  しかし、ハード ブロックが必要な場合でしょうか。  彼の仮想マシンを実行することはできませんと同じノードであります。それ以外の場合、パフォーマンスに与える影響は発生し、いくつかのサービスがダウンする可能性がありますがあります。
+前述のように、AntiAffinityClassNames はソフトブロックです。  しかし、ハードブロックが必要な場合はどうでしょうか。  同じノードで仮想マシンを実行することはできません。そうしないと、パフォーマンスに影響が生じ、一部のサービスがダウンする可能性があります。
 
-ような場合、ClusterEnforcedAntiAffinity の追加のクラスターのプロパティがあります。  この antiaffinity レベルできなくなります是が非でも同じ AntiAffinityClassNames 値のいずれか、同じノードで実行されています。
+そのような場合は、ClusterEnforcedAntiAffinity の追加のクラスタープロパティがあります。  このアンチアフィニティレベルにより、同じ AntiAffinityClassNames 値を持つすべてのコストが同じノードで実行されるのを防ぐことができます。
 
-プロパティと値を表示するには、PowerShell コマンド (および結果) ようになります。
+プロパティと値を表示するために、PowerShell コマンド (および結果) は次のようになります。
 
     PS> Get-Cluster | fl ClusterEnforcedAntiAffinity
     ClusterEnforcedAntiAffinity : 0
 
-値「0」は、無効になっていることを意味し、適用するのにはありません。  「1」の値では、有効で、ハード ブロック。  このハード ブロックを有効にするには、コマンド (および結果) はします。
+値 "0" は、無効になっていて、適用されないことを意味します。  値 "1" を指定すると、これが有効になり、ハードブロックになります。  このハードブロックを有効にするために、コマンド (および結果) は次のようになります。
 
     PS> (Get-Cluster).ClusterEnforcedAntiAffinity = 1
     ClusterEnforcedAntiAffinity : 1
 
-これらの両方が設定されている場合、グループをまとめてオンラインをできません。  同じノードにある場合、これは、フェールオーバー クラスター マネージャーで表示します。
+これらの両方が設定されていると、グループは同時にオンラインになりません。  同じノード上にある場合は、フェールオーバークラスターマネージャーに表示されます。
 
-![クラスターのアフィニティ](media/Cluster-Affinity/Cluster-Affinity-1.png)
+![クラスターアフィニティ](media/Cluster-Affinity/Cluster-Affinity-1.png)
 
-グループの PowerShell の一覧では、これが表示されます。
+グループの PowerShell リストでは、次の内容が表示されます。
 
     PS> Get-ClusterGroup
 
@@ -82,11 +82,11 @@ AntiAffinityClassName パラメーターは、「ソフト」ブロックです�
 
 ## <a name="additional-comments"></a>その他のコメント
 
-- ニーズに応じて、適切な AntiAffinity 設定を使用していることを確認します。
-- 注意 ClusterEnforcedAntiAffinity、2 つのノード シナリオで 1 つのノードがダウンして両方のグループが実行されない場合。  
+- ニーズに応じて、適切な [関係下] 設定を使用していることを確認します。
+- 2ノードのシナリオと ClusterEnforcedAntiAffinity では、1つのノードがダウンしても、両方のグループが実行されないことに注意してください。  
 
-- グループでの優先所有者の使用は、次の 3 つまたは複数のノード クラスターで AntiAffinity と組み合わせることができます。
-- AntiAffinityClassNames と ClusterEnforcedAntiAffinity 設定、リソースの再利用後の場所になります。 つまり 両方のグループでオンラインに同じノードに設定すると、どちらも、引き続きオンラインのままですが、それらを設定できます。
+- グループで優先所有者を使用することは、3つ以上のノードクラスターで、アンチアフィニティと組み合わせることができます。
+- AntiAffinityClassNames と ClusterEnforcedAntiAffinity の設定は、リソースのリサイクル後にのみ行われます。 :. 設定することもできますが、両方のグループが設定時に同じノード上でオンラインになっている場合は、両方ともオンラインのままになります。
 
 
 

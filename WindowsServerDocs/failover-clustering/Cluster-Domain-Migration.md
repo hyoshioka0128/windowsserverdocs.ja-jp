@@ -1,98 +1,98 @@
 ---
-title: クロス ドメイン 2019/Windows Server 2016 でのクラスターの移行
-ms.prod: windows-server-threshold
+title: Windows Server 2016/2019 でのクロスドメインクラスター移行
+ms.prod: windows-server
 ms.manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.date: 01/18/2019
-description: この記事では、1 つのドメインから別の Windows Server 2019 クラスターの移動について説明します
+description: この記事では、Windows Server 2019 クラスターをあるドメインから別のドメインに移動する方法について説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 5d5aaa333d2e20fa25e4738e343f326d63f75c6b
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 68f49795124dedf0655726853a4d865686f6d697
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280212"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361413"
 ---
-# <a name="failover-cluster-domain-migration"></a>フェールオーバー クラスターのドメインの移行
+# <a name="failover-cluster-domain-migration"></a>フェールオーバークラスタードメインの移行
 
 > 適用対象:Windows Server 2019、Windows Server 2016
 
-このトピックでは、別に 1 つのドメインからクラスターの移動の Windows Server フェールオーバーの概要を説明します。
+このトピックでは、Windows Server フェールオーバークラスターをあるドメインから別のドメインに移動する方法の概要について説明します。
 
 ## <a name="why-migrate-between-domains"></a>ドメイン間で移行する理由
 
-いくつかのシナリオ別に 1 つ doamin からクラスターの移行が必要な場合があります。
+クラスターをある doamin から別のクラスターに移行する場合、いくつかのシナリオが必要です。
 
-- 人物については、CompanyB をマージし、人物についてのドメインのすべてのクラスターに移動する必要があります。
-- クラスターが、メイン データ センターに組み込まれているし、リモートの場所への発送
-- クラスターがワークグループ クラスターとして作成されており、ドメインの一部である必要があります。
-- クラスターは、ドメインのクラスターとしてが作成されており、ワークグループの一部である必要があります。
-- クラスターを別の会社の 1 つの領域に移動し、別のサブドメイン
+- 会社 b と合併し、すべてのクラスターを会社 a のドメインに移行する必要がある
+- クラスターはメインデータセンターに構築され、リモートの場所に配布されます。
+- クラスターはワークグループクラスターとして構築されており、現在はドメインに属している必要があります
+- クラスターはドメインクラスターとして構築されており、ワークグループの一部である必要があります
+- クラスターは別の場所に移動されており、別のサブドメインになっています
 
-Microsoft では、基になるアプリケーションの操作がサポートされていない場合は、別に 1 つのドメインからリソースを移動しようとする管理者にサポートを提供しません。 たとえば、Microsoft では、1 つのドメイン間で、Microsoft Exchange server を移動しようとする管理者にサポートを提供しません。
+基になるアプリケーションの操作がサポートされていない場合は、ドメイン間でリソースを移動しようとする管理者に対して、Microsoft はサポートを提供しません。 たとえば、microsoft では、Microsoft Exchange server をあるドメインから別のドメインに移動しようとする管理者に対してサポートを提供していません。
 
    > [!WARNING]
-   > クラスターを移行する前に、クラスター内のすべての共有記憶域の完全バックアップを実行することをお勧めします。
+   > クラスターを移動する前に、クラスター内のすべての共有記憶域の完全バックアップを実行することをお勧めします。
 
-## <a name="windows-server-2016-and-earlier"></a>Windows Server 2016 以前のバージョン
+## <a name="windows-server-2016-and-earlier"></a>Windows Server 2016 以前
 
-Windows Server 2016 以降では、クラスター サービスには、1 つのドメイン間を移動するの機能がありませんでした。  これは、Active Directory Domain Services で作成した仮想名への増加が原因でした。   
+Windows Server 2016 以前では、クラスターサービスにドメイン間を移動する機能はありませんでした。  これは、Active Directory Domain Services と作成された仮想名への依存関係が増加したためです。   
 
-## <a name="options"></a>オプション
+## <a name="options"></a>および
 
-このような移動を行うには 2 つのオプションがあります。
+このような移動を行うために、2つのオプションがあります。
 
-最初のオプションは、クラスターを破棄して、新しいドメインでそれを再構築する必要があります。
+最初のオプションでは、クラスターを破棄し、新しいドメインで再構築します。
 
-![破棄および再構築](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-1.gif)
+![破棄と再構築](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-1.gif)
 
-このオプションは、手順に破壊的なアニメーションが示すようにします。
+アニメーションに示されているように、このオプションは、次の手順で破壊的です。
 
 1. クラスターを破棄します。
-2. 新しいドメインに、ノードのドメイン メンバーシップを変更します。
-3. 更新されたドメインで、新しいクラスターを再作成します。  すべてのリソースを再作成することが必要になるこれは。
+2. ノードのドメインメンバーシップを新しいドメインに変更します。
+3. 更新されたドメインの新規としてクラスターを再作成します。  これにより、すべてのリソースを再作成する必要があります。
 
-2 番目のオプションは、小さい破壊的なは、新しいクラスターを新しいドメインをビルドする必要がある追加のハードウェアが必要です。  クラスターを新しいドメインには、リソースを移行するクラスターの移行ウィザードを実行します。 このデータを移行しないこと、-など、データを移行する別のツールを使用する必要がありますに注意してください[記憶域の移行サービス](../storage/storage-migration-service/overview.md)(したら、クラスターのサポートが追加されます)。
+2番目のオプションは破壊的ではありませんが、新しいクラスターを新しいドメインに構築する必要があるため、追加のハードウェアが必要になります。  クラスターが新しいドメインに追加されたら、クラスターの移行ウィザードを実行してリソースを移行します。 これはデータを移行しないことに注意してください。記憶域の移行[サービス](../storage/storage-migration-service/overview.md)(クラスターのサポートが追加された後) などの別のツールを使用してデータを移行する必要があります。
 
-![ビルドおよび移行](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-2.gif)
+![ビルドと移行](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-2.gif)
 
-アニメーションが示すように、このオプションは破壊的なではありませんは、別のハードウェアまたは既存のクラスターからノードのいずれかが削除されているよりも必要があります。
+アニメーションに示されているように、このオプションは破壊的ではありませんが、別のハードウェアまたは既存のクラスターのノードが削除されている必要があります。
 
-1. 以前のクラスターを利用しながら新しい clusterin、新しいドメインを作成します。
-2. 使用して、[クラスターの移行ウィザード](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10))すべてのリソースを新しいクラスターに移行します。 アラームは、このデータはコピーされません、ため、個別に実行する必要があります。
-3. 使用を停止または以前のクラスターを破棄します。
+1. 新しいドメインに新しい clusterin 作成し、以前のクラスターを使用できるようにします。
+2. クラスターの[移行ウィザード](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10))を使用して、すべてのリソースを新しいクラスターに移行します。 リマインダーはデータをコピーしないため、別途行う必要があります。
+3. 以前のクラスターを使用停止または破棄します。
 
-どちらのオプションで、新しいクラスターが必要にすべて[クラスター対応アプリケーション](https://technet.microsoft.com/aa369082(v=vs.90))、すべて最新のドライバーをインストールし、可能性があるテストを行うすべてが適切に実行します。  これは、データも移動する必要がある場合、時間のかかるプロセスです。
+どちらのオプションでも、新しいクラスターはすべての[クラスター対応アプリケーション](https://technet.microsoft.com/aa369082(v=vs.90))をインストールし、ドライバーをすべて最新の状態にして、すべてが正常に動作することを確認するためにテストすることが必要になる場合があります。  データも移動する必要がある場合は、この処理に時間がかかります。
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
-Windows Server 2019、クラスターのクロス ドメインの移行機能を導入しました。  これで前に、示したシナリオを簡単に実施でき、再構築する必要があるが不要になった。  
+Windows Server 2019 では、クロスクラスタードメイン移行機能が導入されました。  ここで、上記のシナリオは簡単に実行でき、再構築の必要性は不要になりました。  
 
-1 つのドメインからのクラスターの移動は、単純なプロセスです。 これを行うには、2 つの新しい PowerShell コマンドレットがあります。
+1つのドメインからのクラスターの移動は、単純なプロセスです。 これを実現するには、2つの新しい PowerShell コマンドレットを使用します。
 
-**新しい ClusterNameAccount** : Active Directory でクラスター名アカウントを作成します**削除 ClusterNameAccount** – クラスター名アカウントを Active Directory から削除します。
+**新しい-ClusterNameAccount** –クラスター名アカウントを Active Directory 削除する **-clusternameaccount** –からクラスター名アカウントを削除し Active Directory
 
-これを実現するプロセスでは、ワークグループには、新しいドメインには、1 つのドメインからクラスターを変更します。  クラスターの破棄、クラスターを再構築、アプリケーションなどをインストールする必要がある要件ではありません。 たとえば、このようなことになります。
+これを実現するには、クラスターを1つのドメインからワークグループに変更し、新しいドメインに戻します。  クラスターを破棄し、クラスターを再構築し、アプリケーションをインストールする必要はありません。 たとえば、次のようになります。
 
 ![移行](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-3.gif)
 
-## <a name="migrating-a-cluster-to-a-new-domain"></a>新しいドメインにクラスターの移行
+## <a name="migrating-a-cluster-to-a-new-domain"></a>クラスターを新しいドメインに移行する
 
-次の手順でクラスターを Contoso.com ドメインから新しい Fabrikam.com ドメインに移動されるは。  クラスター名が*CLUSCLUS*と呼ばれるファイル サーバーの役割を使用して*FS CLUSCLUS*します。
+次の手順では、クラスターを Contoso.com ドメインから新しい Fabrikam.com ドメインに移動します。  クラスター名は*CLUSCLUS* 、 *CLUSCLUS*というファイルサーバーの役割を持ちます。
 
-1. 同じ名前と、クラスター内のすべてのサーバー上でパスワードを持つローカル管理者アカウントを作成します。  これは、サーバーはドメイン間で移動するときにログインする必要あります。
-2. Active Directory のアクセス許可をクラスター名オブジェクト (CNO)、仮想コンピューター オブジェクト (VCO) を持つドメイン ユーザーまたは管理者アカウントを使用して最初のサーバーへのサインインには、PowerShell を開き、クラスターへのアクセスがあります。
-3. すべてのクラスター ネットワーク名リソースが状態と実行をオフラインにしていることを確認、次のコマンド。  このコマンドは、クラスターがいる可能性のある Active Directory オブジェクトに削除されます。
+1. クラスター内のすべてのサーバーに同じ名前とパスワードを持つローカル管理者アカウントを作成します。  これは、サーバーがドメイン間を移動している間にログインするために必要になる場合があります。
+2. クラスター名オブジェクト (CNO) に対する Active Directory アクセス許可を持つドメインユーザーまたは管理者アカウントを使用して最初のサーバーにサインインし、仮想コンピューターオブジェクト (VCO) にクラスターへのアクセス権があり、PowerShell を開きます。
+3. すべてのクラスターネットワーク名リソースがオフライン状態であることを確認してから、次のコマンドを実行してください。  このコマンドを実行すると、クラスターに存在する Active Directory オブジェクトが削除されます。
 
    ```PowerShell
    Remove-ClusterNameAccount -Cluster CLUSCLUS -DeleteComputerObjects
    ```
-4. Active Directory ユーザーとコンピューターを使用して、すべてのクラスター化された名前に関連付けられたオブジェクトが削除された CNO と VCO のコンピューターを確認します。
+4. Active Directory ユーザーとコンピューター を使用して、すべてのクラスター化された名前に関連付けられている CNO および VCO コンピューターオブジェクトが削除されていることを確認します。
 
    > [!NOTE]
-   > クラスター内のすべてのサーバー上でクラスター サービスを停止し、サーバーがドメインの変更中に再起動する場合、クラスター サービスが起動しないように、サービスのスタートアップの種類を手動に設定することをお勧めします。
+   > クラスター内のすべてのサーバーでクラスターサービスを停止し、サービスのスタートアップの種類を手動に設定することをお勧めします。これにより、ドメインの変更中にサーバーを再起動してもクラスターサービスが開始されないようにすることができます。
 
    ```PowerShell
    Stop-Service -Name ClusSvc
@@ -100,15 +100,15 @@ Windows Server 2019、クラスターのクロス ドメインの移行機能を
    Set-Service -Name ClusSvc -StartupType Manual
    ```
 
-5. ワークグループにサーバーのドメイン メンバーシップを変更、サーバーを再起動、サーバーを新しいドメインに参加およびをもう一度再起動します。
-6. 新しいドメインのサーバーが表示されたら、Active Directory のアクセス許可オブジェクトを作成するには、クラスターにアクセスするドメイン ユーザーまたは管理者アカウントでサーバーにサインインし、PowerShell を開きます。 クラスター サービスを開始し、それを自動に設定します。
+5. サーバーのドメインメンバーシップをワークグループに変更し、サーバーを再起動して、サーバーを新しいドメインに参加させ、再起動します。
+6. サーバーが新しいドメインに追加されたら、オブジェクトを作成するためのアクセス許可を持つドメインユーザーまたは管理者 Active Directory アカウントを使用してサーバーにサインインし、クラスターへのアクセス権を持ち、PowerShell を開きます。 クラスターサービスを開始し、[自動] に設定します。
 
    ```PowerShell
    Start-Service -Name ClusSvc
 
    Set-Service -Name ClusSvc -StartupType Automatic
    ```
-7. オンライン状態にクラスター名とその他のすべてのクラスター ネットワーク名リソースにもたらします。
+7. クラスター名とその他のすべてのクラスターネットワーク名リソースをオンライン状態にします。
 
    ```PowerShell
    Start-ClusterResource -Name "Cluster Name"
@@ -116,15 +116,15 @@ Windows Server 2019、クラスターのクロス ドメインの移行機能を
    Start-ClusterResource -Name FS-CLUSCLUS
    ```
 
-8. 関連付けられている active directory オブジェクトを使用して新しいドメインの一部としてクラスターを変更します。 これを行うには、コマンドは以下は、ネットワーク名リソースがオンライン状態である必要があります。  このコマンドは、Active Directory で名前のオブジェクトを再作成します。
+8. クラスターを、active directory オブジェクトに関連付けられた新しいドメインの一部になるように変更します。 これを行うには、次のコマンドを実行し、ネットワーク名リソースがオンライン状態である必要があります。  このコマンドでは、Active Directory で name オブジェクトを再作成します。
 
    ```PowerShell
    New-ClusterNameAccount -Name CLUSTERNAME -Domain NEWDOMAINNAME.com -UpgradeVCOs
    ```
 
-    注: ネットワーク名 (つまり仮想マシンのみで、HYPER-V クラスター) とその他のグループがない - UpgradeVCOs パラメーター スイッチは不要です。
+    注: ネットワーク名を持つ追加のグループ (つまり、仮想マシンのみを持つ Hyper-v クラスター) がない場合は、-UpgradeVCOs パラメータースイッチは必要ありません。
 
-9. 新しいドメインを確認し、関連付けられたコンピューター オブジェクトが作成されたことを確認するには、Active Directory ユーザーとコンピューターを使用します。 場合は、グループをオンラインで残りのリソースを表示します。
+9. Active Directory ユーザーとコンピューター を使用して新しいドメインを確認し、関連付けられているコンピューターオブジェクトが作成されたことを確認します。 存在する場合は、グループ内の残りのリソースをオンラインにします。
 
    ```PowerShell
    Start-ClusterGroup -Name "Cluster Group"
@@ -134,7 +134,7 @@ Windows Server 2019、クラスターのクロス ドメインの移行機能を
 
 ## <a name="known-issues"></a>既知の問題
 
-新しい USB ミラーリング監視サーバーの機能を使用している場合、新しいドメインにクラスターを追加することはできません。  推論としては、ファイル共有のミラーリング監視サーバーの種類が認証に Kerberos を利用する必要があります。  クラスターをドメインに追加する前に [なし] に、ミラーリング監視サーバーを変更します。  完了すると、USB のミラーリング監視サーバーを再作成します。  「エラーです。
+新しい USB 監視機能を使用している場合、クラスターを新しいドメインに追加することはできません。  理由は、ファイル共有監視の種類で認証に Kerberos を利用する必要があるということです。  クラスターをドメインに追加する前に、ミラーリング監視サーバーを [なし] に変更します。  完了したら、USB 監視を再作成します。  次のエラーが表示されます。
 
 ```
 New-ClusternameAccount : Cluster name account cannot be created.  This cluster contains a file share witness with invalid permissions for a cluster of type AdministrativeAccesssPoint ActiveDirectoryAndDns. To proceed, delete the file share witness.  After this you can create the cluster name account and recreate the file share witness.  The new file share witness will be automatically created with valid permissions.
