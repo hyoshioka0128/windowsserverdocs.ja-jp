@@ -1,8 +1,8 @@
 ---
 title: 証明書失効リスト (CRL) が無視されるように EAP-TLS を構成する
-description: NPS サーバーがクライアントの証明書チェーン (ルート証明書を含む) の失効確認が完了して、証明書が失効を検証しますしない限り、EAP-TLS クライアントは接続できません。
+description: EAP-TLS クライアントは、NPS サーバーがクライアントの証明書チェーン (ルート証明書を含む) の失効確認を完了し、証明書が失効していることを確認しない限り、接続できません。
 services: active-directory
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 documentationcenter: ''
 ms.assetid: ''
@@ -15,53 +15,53 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 781239f45b9b260b7d374c2a6972cdb8faad2879
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: f2c1de01883f2fb52faebb4abf1d0c9e61f0139b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749600"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388073"
 ---
 # <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>手順 7.1. 証明書失効リスト (CRL) が無視されるように EAP-TLS を構成する
 
->適用対象:Windows Server 2016、Windows Server 2012 R2、Windows 10 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**先の：** 手順 7.(省略可能)Azure AD を使用して VPN 接続用の条件付きアクセス](ad-ca-vpn-connectivity-windows10.md)
+- [**先の：** 手順 7.OptionalAzure AD を使用した VPN 接続の条件付きアクセス](ad-ca-vpn-connectivity-windows10.md)
 - [**次に：** 手順 7.2. Azure AD で VPN 認証のルート証明書を作成する](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
 
 >[!IMPORTANT]
->このレジストリの変更を実装するためにエラーによって PEAP が失敗し、クラウドの証明書の使用の IKEv2 接続が、オンプレミスで CA から発行されたクライアント認証証明書を使用する IKEv2 接続は継続して動作します。
+>このレジストリ変更を実装しないと、PEAP を使用したクラウド証明書を使用した IKEv2 接続は失敗しますが、オンプレミスの CA から発行されたクライアント認証証明書を使用した IKEv2 接続は引き続き機能します。
 
-この手順で追加することができます**IgnoreNoRevocationCheck**し、証明書に CRL 配布ポイントが含まれていない場合は、クライアントの認証を許可するように設定します。 既定では、IgnoreNoRevocationCheck は、0 (無効) に設定されます。
+この手順では、 **Ignorenorevocationcheck**を追加し、証明書に CRL 配布ポイントが含まれていない場合にクライアントの認証を許可するように設定できます。 既定では、IgnoreNoRevocationCheck は 0 (無効) に設定されています。
 
 >[!NOTE]
->Windows ルーティングとリモート アクセス サーバー (RRAS) は、NPS を使用している場合、2 つ目の NPS を RADIUS を呼び出すプロキシにし、設定する必要があります**IgnoreNoRevocationCheck = 1**両方のサーバーにします。
+>Windows ルーティングとリモートアクセスサーバー (RRAS) が NPS を使用して2番目の NPS への RADIUS 呼び出しをプロキシする場合、両方のサーバーで**Ignorenorevocationcheck = 1**を設定する必要があります。
 
-NPS サーバーの証明書チェーン (ルート証明書を含む) の失効確認が完了しない限り、EAP-TLS クライアントは接続できません。 ユーザーに Azure AD によって発行された証明書をクラウドでは、1 時間の有効期間を持つ証明書を短時間であるため、CRL を必要はありません。 NPS で EAP は、CRL の休暇を無視するように構成する必要があります。 既定では、IgnoreNoRevocationCheck は、0 (無効) に設定されます。 IgnoreNoRevocationCheck を追加し、証明書に CRL 配布ポイントが含まれていない場合は、クライアントの認証を許可する 1 に設定します。 
+EAP-TLS クライアントは、NPS サーバーが証明書チェーン (ルート証明書を含む) の失効確認を完了しない限り、接続できません。 Azure AD によってユーザーに発行されたクラウド証明書には CRL がありません。有効期間が1時間の有効期間が短い証明書であるためです。 CRL の存在を無視するように NPS の EAP を構成する必要があります。 既定では、IgnoreNoRevocationCheck は 0 (無効) に設定されています。 IgnoreNoRevocationCheck を追加し、それを1に設定して、証明書に CRL 配布ポイントが含まれていない場合のクライアントの認証を許可します。 
 
-認証方法が EAP-TLS であるために、このレジストリ値は EAP\13 下でのみ必要です。 その他の EAP 認証メソッドを使用している場合、レジストリ値必要があります追加ものでも。 
+認証方法は EAP-TLS であるため、このレジストリ値は EAP/13の下でのみ必要です。 他の EAP 認証方法が使用されている場合は、その下にレジストリ値も追加する必要があります。 
 
-**プロシージャ**
+**作業**
 
-1. 開いている**regedit.exe** NPS サーバーでします。
+1. NPS サーバーで**regedit.exe**を開きます。
 
-2. 移動します**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\13**します。
+2. **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\13**に移動します。
 
-3. 選択**編集 > 新規**選択と**DWORD (32 ビット) 値**入力と**IgnoreNoRevocationCheck**。
+3. **[編集 > 新規作成]** を選択し、[ **DWORD (32 ビット)] 値**を選択して、「 **Ignorenorevocationcheck**」と入力します。
 
-4. ダブルクリック**IgnoreNoRevocationCheck**に値のデータを設定および**1**します。
+4. **[Ignorenorevocationcheck]** をダブルクリックし、[値のデータ] を**1**に設定します。
 
-5. 選択**OK**サーバーを再起動します。 RRAS および NPS サービスを再起動するだけでは不十分です。
+5. [ **OK]** を選択し、サーバーを再起動します。 RRAS と NPS サービスを再起動しても十分ではありません。
 
-詳細については、次を参照してください。[を有効にするか、クライアントで証明書失効確認 (CRL) を無効にする方法](https://technet.microsoft.com/library/bb680540.aspx)します。
+詳細については、「[クライアントで証明書失効確認 (CRL) を有効または無効にする方法](https://technet.microsoft.com/library/bb680540.aspx)」を参照してください。
 
 
-|レジストリ パス  |EAP の拡張機能  |
+|レジストリ パス  |EAP 拡張機能  |
 |---------|---------|
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\13     |EAP-TLS         |
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\25     |PEAP         |
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\26     |EAP-MSCHAP v2         |
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
-[手順 7.2.Azure AD での VPN 認証用のルート証明書の作成](vpn-create-root-cert-for-vpn-auth-azure-ad.md):この手順では、テナントに自動的に VPN サーバーのクラウド アプリを作成する Azure AD に VPN 認証用のルート証明書の条件付きアクセスを構成します。
+[手順 7.2.Azure AD @ no__t: 0 を使用して VPN 認証用のルート証明書を作成します。この手順では、Azure AD で VPN 認証用の条件付きアクセスルート証明書を構成します。これにより、VPN サーバークラウドアプリがテナントに自動的に作成されます。

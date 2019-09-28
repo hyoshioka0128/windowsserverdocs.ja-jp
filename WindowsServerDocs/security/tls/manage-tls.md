@@ -2,7 +2,7 @@
 title: トランスポート層セキュリティ (TLS) を管理する
 description: Windows Server のセキュリティ
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-tls-ssl
@@ -12,12 +12,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 05/16/2018
-ms.openlocfilehash: f691775d5ab24de8b23df048c13ec3d7c572833f
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: a4ac1ea5b0648dbb80f103c146ad3df23fc04ab7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870288"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402349"
 ---
 # <a name="manage-transport-layer-security-tls"></a>トランスポート層セキュリティ (TLS) を管理する
 
@@ -124,7 +124,7 @@ Certutil.exe –deleteEccCurve curveName
 1.  Windows 10 および Windows Server 2016 では、 **certutil**を使用して、登録されている新しい名前付き曲線を windows に追加します。
 2.  同じコンピューターから、グループポリシー管理コンソール (GPMC) を開き、新しいグループポリシーオブジェクトを作成して編集します。
 3.  [コンピューターの構成] に移動します。 **基本設定 |Windows の設定 |レジストリ**。  **[レジストリ]** を右クリックします。 **[新規]** をポイントし、 **[コレクションアイテム]** を選択します。 曲線の名前に一致するように、コレクションアイテムの名前を変更します。 *HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters*の下にあるレジストリキーごとに1つのレジストリコレクション項目を作成します。
-4.  HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters curの下に一覧表示されている各レジストリ値に新しい**レジストリ項目**を追加して、新しく作成されたグループポリシー基本設定レジストリコレクションを構成します。 *\[]* .
+4.  *HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters @ no__t*の下に一覧表示されている各レジストリ値に新しい**レジストリ項目**を追加して、新しく作成されたグループポリシー基本設定レジストリコレクションを構成します.
 5.  グループポリシーレジストリコレクション項目を含むグループポリシーオブジェクトを、新しい名前付き曲線を受け取る必要がある Windows 10 および Windows Server 2016 コンピューターに展開します。
 
     ![GPP 分散曲線](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)

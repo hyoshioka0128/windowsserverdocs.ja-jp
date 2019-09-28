@@ -1,25 +1,25 @@
 ---
-title: 保護されたファブリックの計画とシールドされた Vm
+title: 保護されたファブリックとシールドされた Vm の計画
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: a754b78c-048d-4be9-a846-cf41ff0bcbc4
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: befb34c5d684c09b3be22704cab3a9806e47487d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f0ace5a081569cbe1ecb86c63fd88635035cf908
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879273"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403555"
 ---
 # <a name="planning-a-guarded-fabric"></a>保護されたファブリックの計画
 
 >適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
-次のトピックでは、保護されたファブリックの展開の計画について説明し、シールドされた仮想マシン (Vm)。
+次のトピックでは、保護されたファブリックとシールドされた仮想マシン (Vm) のデプロイの計画について説明します。
 
-- [保護されたファブリックとシールドされた VM のホスト向けのガイドの計画](guarded-fabric-planning-for-hosters.md) 
-- [コードの整合性の Windows Server 2016 の仮想化ベースの保護との互換性のあるハードウェア](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)
-- [保護されたファブリックとシールドされた VM の計画ガイドのテナント](guarded-fabric-shielded-vm-planning-for-tenants.md)
+- [ホスト用の保護されたファブリックとシールドされた VM 計画ガイド](guarded-fabric-planning-for-hosters.md) 
+- [互換性のあるハードウェアと Windows Server 2016 の仮想化ベースの保護コードの整合性](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)
+- [保護されたファブリックとテナント向けのシールドされた VM 計画ガイド](guarded-fabric-shielded-vm-planning-for-tenants.md)

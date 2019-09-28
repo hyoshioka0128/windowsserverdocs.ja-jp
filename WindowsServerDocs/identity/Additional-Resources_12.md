@@ -2,7 +2,7 @@
 ms.assetid: 20dff664-2370-469b-96a8-df1acf7c7f12
 title: その他のリソース
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.service: ''
 ms.suite: na
@@ -13,36 +13,36 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
-ms.openlocfilehash: e50527358dbffa36f8f14e290a548568e3d0635e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 36fb987bae28edc6745227bc9ce9a51d16cce9b3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66443262"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391140"
 ---
 # <a name="additional-resources"></a>その他のリソース
 
 >適用先:Windows Server
 
-Repadmin.exe を使用して、Active Directory のレプリケーションを管理する方法の詳細については、次のリソースを参照してください。 
+Repadmin.exe を使用して Active Directory レプリケーションを管理する方法の詳細については、次のリソースを参照してください。 
 
-- [監視と Repadmin を使用して Active Directory レプリケーションのトラブルシューティング](https://go.microsoft.com/fwlink/?LinkId=122830)
+- [Repadmin を使用した Active Directory レプリケーションの監視とトラブルシューティング](https://go.microsoft.com/fwlink/?LinkId=122830)
 
-Active Directory の問題のログに記録される特定のイベントについては、次のリソースを参照してください。
+Active Directory の問題について記録された特定のイベントの詳細については、次のリソースを参照してください。
 
 - [Active Directory](https://go.microsoft.com/fwlink/?LinkId=122877)
 
-Active Directory の既知の問題とベスト プラクティスについては、次のリソースを参照してください。
+Active Directory に関する既知の問題とベストプラクティスについては、次のリソースを参照してください。
 
-- [ドメインおよびフォレストの信頼を作成するための既知の問題](https://go.microsoft.com/fwlink/?LinkId=128784)
-- [ドメインを管理するためのベスト プラクティスおよびフォレストの信頼](https://go.microsoft.com/fwlink/?LinkId=128785)
-- [Active Directory Domain Services をバックアップするための既知の問題](https://go.microsoft.com/fwlink/?LinkId=128793)
-- [Authoritative Restore の既知の問題](https://go.microsoft.com/fwlink/?LinkId=128788)
-- [権限のある復元のベスト プラクティス](https://go.microsoft.com/fwlink/?LinkId=128791) 
-- [リモート サイトでドメイン コント ローラーを追加するための既知の問題](https://go.microsoft.com/fwlink/?LinkId=128794)
-- [リモート サイトでドメイン コント ローラーを追加するためのベスト プラクティス](https://go.microsoft.com/fwlink/?LinkId=128796)
+- [ドメインおよびフォレストの信頼の作成に関する既知の問題](https://go.microsoft.com/fwlink/?LinkId=128784)
+- [ドメインおよびフォレストの信頼を管理するためのベストプラクティス](https://go.microsoft.com/fwlink/?LinkId=128785)
+- [Active Directory Domain Services のバックアップに関する既知の問題](https://go.microsoft.com/fwlink/?LinkId=128793)
+- [権限のある復元に関する既知の問題](https://go.microsoft.com/fwlink/?LinkId=128788)
+- [権限のある復元のベストプラクティス](https://go.microsoft.com/fwlink/?LinkId=128791) 
+- [リモートサイトにドメインコントローラーを追加するための既知の問題](https://go.microsoft.com/fwlink/?LinkId=128794)
+- [リモートサイトにドメインコントローラーを追加するためのベストプラクティス](https://go.microsoft.com/fwlink/?LinkId=128796)
 
-管理および Active Directory Domain Services (AD DS) を構成する方法とそのしくみの詳細については、次のリソースを参照してください。
+Active Directory Domain Services (AD DS) を管理および構成する方法とそのしくみに関する一般的な情報については、次のリソースを参照してください。
 
 - [Active Directory 操作の管理](https://go.microsoft.com/fwlink/?LinkId=128798)
-- [Active Directory のコレクション](https://go.microsoft.com/fwlink/?LinkId=34157)
+- [Active Directory コレクション](https://go.microsoft.com/fwlink/?LinkId=34157)

@@ -1,7 +1,7 @@
 ---
-title: Windows server、HYPER-V のシステム要件
-description: Windows server、HYPER-V のハードウェアおよびファームウェアの要件を示します
-ms.prod: windows-server-threshold
+title: Windows Server 上の Hyper-v のシステム要件
+description: Windows Server の Hyper-v のハードウェア要件とファームウェア要件の一覧を示します。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,16 +11,16 @@ ms.assetid: bc4a4971-f727-40cd-91f5-2ee6d24b54cb
 author: KBDAzure
 ms.author: kathydav
 ms.date: 9/30/2016
-ms.openlocfilehash: 97fb1b9003705ba8ad26c2b3e71eda34e88642ee
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: fabaa1933fef836bb6ce3fc01badf337b832d072
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812622"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365440"
 ---
-# <a name="system-requirements-for-hyper-v-on-windows-server"></a>Windows server、HYPER-V のシステム要件
+# <a name="system-requirements-for-hyper-v-on-windows-server"></a>Windows Server 上の Hyper-v のシステム要件
 
->適用先:Windows Server 2016、Microsoft HYPER-V Server 2016、Windows Server 2019、Microsoft HYPER-V Server 2019
+>適用先:Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 HYPER-V では、特定のハードウェア要件を持ち、一部の HYPER-V 機能の追加要件があります。 この記事で詳細情報を使用すると、どのような要件を計画する方法は、HYPER-V を使用できるように、システムが満たしている必要がありますを決定できます。 その後、確認、 [Windows Server カタログ](https://www.windowsservercatalog.com/)します。 HYPER-V の要件では、仮想化環境には、多くのコンピューティング リソースが必要とするために、Windows Server 2016 の一般的な最小要件が超えていることに留意してください。
 
@@ -56,7 +56,7 @@ Systeminfo.exe
 
 ## <a name="requirements-for-specific-features"></a>特定の機能の要件
 
-個別のデバイスの割り当てとシールドされたバーチャル マシンの要件を次に示します。 これらの機能の説明については、次を参照してください。[新機能については、Hyper-v で Windows Server](What-s-new-in-Hyper-V-on-Windows.md)します。
+個別のデバイスの割り当てとシールドされた仮想マシンの要件を次に示します。 これらの機能の詳細については、「 [Windows Server の hyper-v の新](What-s-new-in-Hyper-V-on-Windows.md)機能」を参照してください。
 
 ### <a name="discrete-device-assignment"></a>個別のデバイスの割り当て
 
@@ -78,7 +78,7 @@ Systeminfo.exe
 
 ### <a name="shielded-virtual-machines"></a>シールドされた仮想マシン
 
-これらの仮想マシンは仮想化ベースのセキュリティに依存し、Windows Server 2016 以降で利用します。
+これらの仮想マシンは、仮想化ベースのセキュリティに依存しており、Windows Server 2016 以降で使用できます。
 
 **ホスト** の要件。
 
@@ -92,5 +92,5 @@ Systeminfo.exe
 **仮想マシン** の要件。
 
 - 第 2 世代
-- Windows Server 2012 以降、ゲスト オペレーティング システムとして
+- ゲストオペレーティングシステムとしての Windows Server 2012 以降
 

@@ -1,8 +1,8 @@
 ---
-title: ライターの一覧
-description: 'Windows コマンド」のトピック * * *- '
+title: ライターの一覧表示
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6fbab6644d46dbb352a5d5a51abefb293f3ffe6f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d00eebe4e562764e97794b3eb1b76ea96c2dc47c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866743"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374720"
 ---
-# <a name="list-writers"></a>ライターの一覧
+# <a name="list-writers"></a>ライターの一覧表示
 
 
 
-ライターは、システム上にあるを一覧表示します。 パラメーターを指定せずに使用されている場合**一覧**の出力が表示されます**メタデータを一覧表示**既定。
+システム上のライターを一覧表示します。 パラメーターを指定せず**に使用**する場合は、リスト**メタデータ**の出力が既定で表示されます。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
@@ -38,17 +38,17 @@ list writers [metadata | detailed | status]
 
 |パラメーター|説明|
 |---------|-----------|
-|メタデータ (metadata)|Id とライターの状態を一覧表示し、コンポーネントの詳細とファイルの除外などのメタデータを表示します。 これは、既定のパラメーターです。|
-|詳細|同じ情報を一覧表示**メタデータ**が**詳細**のすべてのコンポーネント ファイルの完全一覧が含まれています。|
-|status|Id と登録されているライターの状態を一覧表示します。|
+|メタデータ (metadata)|ライターの id とステータスを一覧表示し、コンポーネントの詳細や除外されたファイルなどのメタデータを表示します。 これは、既定のパラメーターです。|
+|detailed|**メタデータ**と同じ情報を一覧表示しますが、**詳細**についてはすべてのコンポーネントの完全なファイルリストを参照してください。|
+|status|登録されているライターの id と状態のみを一覧表示します。|
 
 ## <a name="BKMK_examples"></a>例
 
-Id とライターの状態を一覧表示するには、次のように入力します。
+ライターの id と状態のみを一覧表示するには、次のように入力します。
 ```
 list writers status
 ```
-次のような出力:
+次のような出力が表示されます。
 ```
 Listing writer status ...
 * WRITER "System Writer"
@@ -74,4 +74,4 @@ Listing writer status ...
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

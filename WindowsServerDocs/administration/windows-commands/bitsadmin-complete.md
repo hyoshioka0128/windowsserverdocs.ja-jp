@@ -1,8 +1,8 @@
 ---
 title: bitsadmin complete
-description: Windows コマンド」のトピック**bitsadmin 完了**-ジョブが完了するとします。 このスイッチを使用するまでは、ダウンロードしたファイルを使用できません。
+description: '**Bitsadmin complete**の Windows コマンドトピックでは、ジョブを完了します。 ダウンロードしたファイルは、このスイッチを使用するまで使用できません。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 561585da370f7e69aa3b83b3ddd7579bfc658a21
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d5a1dc5dbbf2d5b3207b5423f338e0caf4412599
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817323"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381818"
 ---
 # <a name="bitsadmin-complete"></a>bitsadmin complete
 
-ジョブを完了します。 このスイッチを使用するまでは、ダウンロードしたファイルを使用できません。 ジョブが転送の状態に移動した後は、このスイッチを使用します。 それ以外の場合、正常に転送されたファイルのみ利用できます。
+ジョブを完了します。 ダウンロードしたファイルは、このスイッチを使用するまで使用できません。 ジョブが転送済み状態に移行した後に、このスイッチを使用します。 それ以外の場合は、正常に転送されたファイルのみを使用できます。
 
 ## <a name="syntax"></a>構文
 
@@ -38,11 +38,11 @@ bitsadmin /complete <Job>
 
 ## <a name="BKMK_examples"></a>例
 
-ジョブの状態を転送すると、BITS はジョブのすべてのファイルを正常に転送が。 ただし、ファイルは使用できませんを使用するまで、**完了/** スイッチします。 複数のジョブを使用して場合*myDownloadJob*という名前で置き換える必要がある*myDownloadJob*ジョブを一意に識別するために、ジョブの GUID を持つ。
+ジョブの状態が [転送済み] になると、そのジョブ内のすべてのファイルが BITS によって正常に転送されます。 ただし、 **[完了]** スイッチを使用するまで、ファイルは使用できません。 複数のジョブが*Mydownloadjob*を名前として使用する場合は、ジョブを一意に識別するために、 *mydownloadjob*をジョブの GUID に置き換える必要があります。
 ```
 C:\>bitsadmin /complete myDownloadJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

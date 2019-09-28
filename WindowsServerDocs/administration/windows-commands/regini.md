@@ -2,7 +2,7 @@
 title: regini
 description: コマンドプロンプトまたはスクリプトを使用して、レジストリを変更する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 80f8f4212d2054fc54ce33993a1cef8a1501c6d5
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 482a0a256c537965a9960a896fa323aa8b8fac42
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868881"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371638"
 ---
 # <a name="regini"></a>regini
 

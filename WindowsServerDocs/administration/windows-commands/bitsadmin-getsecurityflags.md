@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getsecurityflags
-description: Windows コマンド」のトピック**bitsadmin getsecurityflags** - URL のリダイレクトの HTTP セキュリティ フラグをレポートし、転送中に実行されるサーバーの証明書を確認します。
+description: '**Bitsadmin getsecurityflags**の Windows コマンドトピックでは、転送中にサーバー証明書に対して実行される URL リダイレクトとチェックの HTTP セキュリティフラグを報告します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e1db167b12d47afccb8842da617f1e9fe72acff
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: fb53664a6366b411ae1eb9b0fe7c93392d60b542
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434962"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381461"
 ---
 # <a name="bitsadmin-getsecurityflags"></a>bitsadmin getsecurityflags
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-URL リダイレクトとチェックのレポート、HTTP セキュリティ フラグは、転送中にサーバー証明書に対して実行します。
+転送中にサーバー証明書に対して実行された URL リダイレクトおよび確認の HTTP セキュリティフラグを報告します。
 
 ## <a name="syntax"></a>構文
 
@@ -39,13 +39,13 @@ bitsadmin /GetSecurityFlags <Job>
 |Job|ジョブの表示名または GUID|
 
 ## <a name="BKMK_examples"></a>例
-次の例では、securitly フラグを取得という名前のジョブから*myJob*します。
+次の例では、 *Myjob*という名前のジョブから securitly フラグを取得します。
 
 ```
 C:\>bitsadmin /GetSecurityFlags myJob 
 ```
 
-## <a name="additional-references"></a>その他の参照
+## <a name="additional-references"></a>その他の参照情報
 [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 

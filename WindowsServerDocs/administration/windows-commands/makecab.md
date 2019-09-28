@@ -1,8 +1,8 @@
 ---
 title: makecab
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7b120cf990abe2024fd6c96ca2f1ef11fa2350ae
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: b0231b6f1ddd3e81caa7544587f764e2308015b8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437533"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374147"
 ---
 # <a name="makecab"></a>makecab
 
@@ -42,9 +42,9 @@ makecab [/v[<n>]] [/d var=<value> ...] /f <directives_file> [...]
 |       /v[<n>]        |                                                    詳細レベルのデバッグ設定 (0 = なし、..., 3 = フル)。                                                     |
 |          /?          |                                                           コマンド プロンプトにヘルプを表示します。                                                            |
 
-## <a name="remarks"></a>注釈
--   参照してください[Microsoft キャビネット形式](https://go.microsoft.com/fwlink/?LinkId=226852)ディレクティブ ・ ファイルについては msdn です。
+## <a name="remarks"></a>コメント
+-   Directive_file の詳細については、MSDN の「 [Microsoft キャビネット形式](https://go.microsoft.com/fwlink/?LinkId=226852)」を参照してください。
 
-## <a name="additional-references"></a>その他の参照
+## <a name="additional-references"></a>その他の参照情報
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)
 

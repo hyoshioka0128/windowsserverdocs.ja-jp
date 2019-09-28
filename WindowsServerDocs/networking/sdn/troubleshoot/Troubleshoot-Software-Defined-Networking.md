@@ -1,39 +1,40 @@
 ---
 title: SDN のトラブルシューティング
-description: このトピックでは、Windows Server 2016 でソフトウェアによるネットワーク制御のトラブルシューティングに関するコンテンツへのリンクを提供します。
+description: このトピックでは、Windows Server 2016 でのソフトウェア定義ネットワークのトラブルシューティングに関するコンテンツへのリンクを示します。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 427048db-bab6-49b1-9611-099bb547ec0e
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 8c1cea8785efce0356763a46c60a368c02d5e3cf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 33eef13bc13081acf398f3d3f26dc04219aa1d20
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863393"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405829"
 ---
 # <a name="troubleshoot-sdn"></a>SDN のトラブルシューティング
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-このセクションのトピックでは、Windows Server 2016 に含まれているソフトウェア定義ネットワーク (SDN) テクノロジのトラブルシューティングに関する情報を提供します。
+このセクションのトピックでは、Windows Server 2016 に含まれているソフトウェアによるネットワーク制御 (SDN) テクノロジのトラブルシューティングについて説明します。
 
 > [!NOTE]  
-> 他のソフトウェアによるネットワーク制御のドキュメント ライブラリの次のセクションでを使用することができます。  
+> その他のソフトウェア定義ネットワークのドキュメントについては、次のライブラリのセクションを参照してください。  
 >  
 > - [SDN テクノロジ](../technologies/Software-Defined-Networking-Technologies.md) 
-> - [SDN を計画します。](../plan/Plan-Software-Defined-Networking.md)
-> - [SDN を展開します。](../deploy/Deploy-Software-Defined-Networking.md)
-> - [SDN を管理します。](../manage/manage-sdn.md)
+> - [プラン SDN](../plan/Plan-Software-Defined-Networking.md)
+> - [SDN の展開](../deploy/Deploy-Software-Defined-Networking.md)
+> - [SDN の管理](../manage/manage-sdn.md)
 > - [SDN のセキュリティ](../security/sdn-security-top.md)
 
-ここでは、次のトピックについて説明します。
+このセクションでは、次のトピックを扱います。
 
-- [Windows Server ソフトウェア定義ネットワーク スタックをトラブルシューティングします。](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)  
-- ブログの投稿[トラブルシューティング SDN RAS ゲートウェイ VPN 帯域幅設定を構成する Virtual Machine Manager で](https://blogs.technet.microsoft.com/wsnetdoc/2017/03/02/troubleshoot-changing-sdn-ras-gateway-vpn-bandwidth-settings-in-virtual-machine-manager/)
-- ブログの投稿[SDN のトラブルシューティングします。ローカルの SDN RAS ゲートウェイ サーバーの IP アドレスを見つける](https://blogs.technet.microsoft.com/wsnetdoc/2017/03/23/sdn-troubleshooting-find-the-local-sdn-ras-gateway-server-ip-address/)
-- ブログの投稿[SDN のトラブルシューティングします。UDP 通信とネットワーク コント ローラー証明書を変更します。](https://blogs.technet.microsoft.com/wsnetdoc/2017/08/25/sdn-troubleshooting-udp-communication-and-changing-network-controller-cert/)
+- [Windows Server ソフトウェア定義ネットワーク スタックのトラブルシューティング](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
+- ブログの投稿 [SDN のトラブルシューティング:UDP 通信エラーとネットワークコントローラー証明書の変更 @ no__t-0
+- ブログ投稿[: ソフトウェア定義ネットワーク (SDN) の証明書に関する問題のトラブルシューティング](https://techcommunity.microsoft.com/t5/Networking-Blog/Troubleshooting-certificate-issues-in-Software-Defined/ba-p/339671)
+- ブログ投稿[Windows Server 2016 で BGP ピアリングの SDN ゲートウェイローカルアドレスを検索する方法](https://techcommunity.microsoft.com/t5/Networking-Blog/How-to-find-the-SDN-gateway-local-address-for-BGP-peering-in/ba-p/339663)
+- ブログ投稿[Virtual Machine Manager で SDN RAS ゲートウェイ VPN 帯域幅設定を構成する際のトラブルシューティング](https://techcommunity.microsoft.com/t5/Networking-Blog/Troubleshoot-Configuring-SDN-RAS-Gateway-VPN-Bandwidth-Settings/ba-p/339661)
 

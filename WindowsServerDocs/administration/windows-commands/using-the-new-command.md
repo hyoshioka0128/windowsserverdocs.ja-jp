@@ -1,8 +1,8 @@
 ---
 title: 新しいコマンドを使用してください。
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d61d1fe652f3b41e5a02f9ec8a0d204d4dc8324
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e8ca818468050cf21a55a4c9963ea2411ab018c7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873943"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392078"
 ---
 # <a name="using-the-new-command"></a>新しいコマンドを使用してください。
 
@@ -28,7 +28,7 @@ ms.locfileid: "59873943"
 ## <a name="subcommands"></a>サブコマンド
 |サブコマンド|説明|
 |-------|--------|
-|[新しいキャプチャ イメージのコマンドを使用してください。](using-the-new-captureimage-command.md)|既存のブート イメージから新しいキャプチャ イメージを作成します。|
-|[新しい検出イメージのコマンドを使用してください。](using-the-new-discoverimage-command.md)|既存のブート イメージから新しい検出イメージを作成します。|
-|[新しい MulticastTransmission コマンドを使用してください。](using-the-new-multicasttransmission-command.md)|新しいマルチキャスト転送を作成します。|
-|[新しい Namespace コマンドを使用してください。](using-the-new-namespace-command.md)|新しい名前空間を作成します。|
+|[キャプチャイメージコマンドの使用](using-the-new-captureimage-command.md)|既存のブートイメージから新しいキャプチャイメージを作成します。|
+|[検出イメージコマンドの使用](using-the-new-discoverimage-command.md)|既存のブートイメージから新しい検出イメージを作成します。|
+|[/Get-multicasttransmission コマンドの使用](using-the-new-multicasttransmission-command.md)|新しいマルチキャスト転送を作成します。|
+|[新しい名前空間のコマンドを使用する](using-the-new-namespace-command.md)|新しい名前空間を作成します。|

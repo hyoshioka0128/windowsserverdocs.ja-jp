@@ -1,6 +1,6 @@
 ---
 title: ミラーリングによって高速化されたパリティ
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: gawatu
 ms.manager: masriniv
 ms.technology: storage-file-systems
@@ -8,12 +8,12 @@ ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: ec1f04b20b0b743085bacd95ad95a52c15207f40
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0325a37e38845ea9482a6ed260e2bb3b493cc79a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872000"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393999"
 ---
 # <a name="mirror-accelerated-parity"></a>ミラーリングによって高速化されたパリティ
 
@@ -114,7 +114,7 @@ ReFS は、ミラーが指定された容量しきい値に達するとデータ
 -   値を小さくすると、ReFS がデータを積極的にデステージでき、取り込み入力 IO が向上します。 これは、アーカイブ ストレージなど、取り込み量が多いワークロードに当てはまります。 ただし、一般的な用途のワークロードの場合、値を小さくするとパフォーマンスが低下する可能性があります。 ミラー層からデータを不必要にローテーションすると、パフォーマンスが低下します。 
 
 ReFS には、このしきい値を調整するための調整可能なパラメーターが導入されており、レジストリ キーを使って構成できます。 このレジストリ キーは、**記憶域スペース ダイレクト展開内の各ノード**で構成する必要があり、変更を有効にするには再起動が必要です。 
--   **レジストリ**HKEY_LOCAL_MACHINE\System\CurrentControlSet\Policies
+-   **キー:** HKEY_LOCAL_MACHINE\System\CurrentControlSet\Policies
 -   **ValueName (DWORD):** DataDestageSsdFillRatioThreshold
 -   **ValueType**[割合]
 

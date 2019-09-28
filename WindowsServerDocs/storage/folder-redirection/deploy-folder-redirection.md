@@ -1,19 +1,19 @@
 ---
 title: オフラインファイルでフォルダーリダイレクトを展開する
 description: Windows Server を使用して、オフラインファイルで Windows クライアントコンピューターにフォルダーリダイレクトを展開する方法について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 90b3e3d0b5030f8c0140e54c8b0bf55317437427
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 21172d9d3e6d91af691986bfd84b0e32049f3b88
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867304"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71401964"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>オフラインファイルでフォルダーリダイレクトを展開する
 
@@ -175,7 +175,7 @@ Windows Server 2019、Windows Server 2016、および Windows Server 2012 でフ
 
 ## <a name="appendix-a-checklist-for-deploying-folder-redirection"></a>付録 A:フォルダーリダイレクトを展開するためのチェックリスト
 
-| 状態           | 操作 |
+| 状況           | 操作 |
 | ---              | ---    |
 | ☐<br>☐<br>☐    | 1. ドメインを準備する<br>-コンピューターをドメインに参加させる<br>-ユーザーアカウントを作成する |
 | ☐<br><br><br>   | 2. フォルダーリダイレクトのセキュリティグループの作成<br>-グループ名:<br>属する |

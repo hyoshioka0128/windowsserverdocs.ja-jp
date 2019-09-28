@@ -1,8 +1,8 @@
 ---
 title: set_2
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3f5523646fddbfec31cb3900fc09230efc1c7813
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e91bee5f0d351e461d16ccd22478d67f26887728
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862613"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370912"
 ---
-# <a name="set2"></a>set_2
+# <a name="set_2"></a>set_2
 
 
 
@@ -36,9 +36,9 @@ set verbose {on|off}
 set metadata <MetaData.cab>
 ```
 
-## <a name="set-sub-commands"></a>サブの set コマンド
+## <a name="set-sub-commands"></a>サブコマンドの設定
 
-|サブ コマンド|説明|
+|サブコマンド|説明|
 |-----------|-----------|
 |コンテキスト|シャドウ コピーの作成のコンテキストを設定します。 参照してください [セット コンテキスト](set-context.md) 構文およびパラメーターについてです。|
 |オプション|シャドウ コピーの作成のオプションを設定します。 参照してください [オプション設定](set-option.md) 構文およびパラメーターについてです。|
@@ -48,4 +48,4 @@ set metadata <MetaData.cab>
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

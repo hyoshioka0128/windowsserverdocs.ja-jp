@@ -7,33 +7,33 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 0cb6243aaa0f2581dd4abb172aac55bee6e254b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 16f77e4c6f6f3253cf32d0545815623b1f7277cd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812963"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408600"
 ---
 # <a name="virtualized-domain-controller-additional-resources"></a>仮想化ドメイン コントローラーの追加リソース
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
   
--   [AD DS の仮想化 (複製と仮想化安全の向上)](https://go.microsoft.com/fwlink/p/?LinkID=238316)  
+-   [AD DS の仮想化 (複製と仮想化の安全な強化)](https://go.microsoft.com/fwlink/p/?LinkID=238316)  
   
--   [Active Directory レプリケーション モデルのテクニカル リファレンス](https://technet.microsoft.com/library/cc782376(v=ws.10).aspx)  
+-   [Active Directory レプリケーションモデルのテクニカルリファレンス](https://technet.microsoft.com/library/cc782376(v=ws.10).aspx)  
   
--   [HYPER-V (Windows Server 2008 R2 の動作) でドメイン コント ローラーを実行しています。](https://technet.microsoft.com/library/dd363553(v=ws.10).aspx)  
+-   [Hyper-v でのドメインコントローラーの実行 (Windows Server 2008 R2 の動作)](https://technet.microsoft.com/library/dd363553(v=ws.10).aspx)  
   
--   [USN と USN ロールバック保護 (Windows Server 2008 R2)](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10))  
+-   [USN および USN ロールバック保護 (Windows Server 2008 R2)](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10))  
   
--   [Windows PowerShell (Windows Server 2008 R2) を使用した active Directory の管理](https://technet.microsoft.com/library/dd378937(WS.10).aspx)  
+-   [Windows PowerShell を使用した Active Directory 管理 (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd378937(WS.10).aspx)  
   
--   [Windows Server 2012 の Hyper-v](https://technet.microsoft.com/library/hh831531.aspx)  
+-   [Windows Server 2012 の hyper-v](https://technet.microsoft.com/library/hh831531.aspx)  
   
--   [Ask the Directory Services Team (公式の Microsoft コマーシャル テクニカル サポートのブログ)](http://blogs.technet.com/b/askds)  
+-   [ディレクトリサービスチームに質問する (Microsoft の公式テクニカルサポートブログ)](http://blogs.technet.com/b/askds)  
   
 
 

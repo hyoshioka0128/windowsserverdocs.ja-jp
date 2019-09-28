@@ -1,19 +1,19 @@
 ---
 title: Hyper-v 仮想マシンで Intel パフォーマンス監視ハードウェアを有効にする
 description: Hyper-v マシンで Intel のパフォーマンス監視ハードウェアを有効にする方法について説明します。 また、パフォーマンス監視ハードウェアがライブマイグレーションを有効にする方法についても触れます。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: ifufondu
 author: ifeomaufondu-ms
 ms.author: ifufondu
 manager: chhuybre
 ms.topic: article
 ms.date: 09/20/2019
-ms.openlocfilehash: 67f32a6e2ceeaf07701d558f473e2f997fbd8219
-ms.sourcegitcommit: d12d9e6afd71d23e8a24682ad80d2cf3bc486588
+ms.openlocfilehash: 6938739d7c8efdf60c859d2d5ea5bc63246ae4fe
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71226025"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364098"
 ---
 # <a name="enable-intel-performance-monitoring-hardware-in-a-hyper-v-virtual-machine"></a>Hyper-v 仮想マシンで Intel パフォーマンス監視ハードウェアを有効にする
 

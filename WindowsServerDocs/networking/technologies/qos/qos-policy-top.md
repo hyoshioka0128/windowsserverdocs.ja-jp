@@ -1,19 +1,19 @@
 ---
 title: サービス品質 (QoS) ポリシー
 description: このトピックでは、サービスの品質 (QoS) ポリシーの概要について説明します。これにより、グループポリシーを使用して、Windows Server 2016 の特定のアプリケーションとサービスのネットワークトラフィック帯域幅に優先順位を付けることができます。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 16918506-102c-482e-89d3-004ad8d6aabe
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 8f139f047218c4c8da3a462206d4541c1fc255ec
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 429c38d93c2c5c0053153d538304767c8261229c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871859"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395855"
 ---
 # <a name="quality-of-service-qos-policy"></a>サービス\(品質 QoS\)ポリシー
 

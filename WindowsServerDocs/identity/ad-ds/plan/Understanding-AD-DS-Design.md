@@ -7,25 +7,25 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c94f6ddd19e3178243545b0cc71f6f4c7bb4dbec
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f46cad23e13edcef57bf00113e601069c02cfd4f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828793"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402453"
 ---
 # <a name="understanding-ad-ds-design"></a>AD DS の設計とは
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-組織は、スケーラブルで安全性、および管理しやすいインフラストラクチャを作成するときに、ユーザーおよびリソースの管理を合理化するのに、Windows server Active Directory Domain Services (AD DS) を使用できます。 AD DS を使用して、ブランチ オフィス、Microsoft Exchange Server では、複数のフォレスト環境など、ネットワーク インフラストラクチャを管理することができます。  
+組織は、Windows Server の Active Directory Domain Services (AD DS) を使用して、スケーラブルで安全な、管理性に優れたインフラストラクチャを作成しながら、ユーザーとリソースの管理を簡略化することができます。 AD DS を使用して、ブランチオフィス、Microsoft Exchange Server、および複数のフォレスト環境を含むネットワークインフラストラクチャを管理できます。  
   
-AD DS の展開プロジェクトは、3 つのフェーズ: 設計フェーズや展開段階で、操作のフェーズ。 設計フェーズでは、デザイン チームは、ディレクトリ サービスを使用する組織内の各部門のニーズに最適な AD DS の論理構造の設計を作成します。 設計が承認されると、展開チームは、ラボ環境で設計をテストし、運用環境で設計を実装します。 展開チームがテストを実行して、デザイン フェーズを潜在的に影響、ため、設計と展開の両方と重複する中間のアクティビティになります。 デプロイが完了したら、運用チームは、ディレクトリ サービスの保守を担当します。  
+AD DS 配置プロジェクトには、設計フェーズ、配置フェーズ、操作フェーズという3つのフェーズが含まれます。 設計段階では、設計チームは、ディレクトリサービスを使用する組織内の各部門のニーズに最適な AD DS 論理構造の設計を作成します。 設計が承認されると、配置チームはラボ環境でデザインをテストし、運用環境で設計を実装します。 テストは配置チームによって実行されるため、設計フェーズに影響する可能性があります。これは、設計と配置の両方に重複する中間アクティビティです。 デプロイが完了すると、運用チームはディレクトリサービスの保守を担当します。  
   
-このガイドで説明されている Windows Server AD DS の設計と展開戦略は、広範なラボとパイロット プログラムをテストし、お客様の環境で正常な実装に基づいていますが、AD DS、デザインをカスタマイズする必要があり、特定の複雑な環境に合うように展開します。
+このガイドに記載されている Windows Server AD DS の設計と展開の戦略は、さまざまなラボおよびパイロットプログラムのテストと、お客様の環境での正常な実装に基づいていますが、AD DS 設計をカスタマイズし、特定の複雑な環境に適した配置。
   
-- AD DS、ブランチ オフィス環境の展開の詳細については、次を参照してください。、[読み取り専用ドメイン コント ローラー (RODC) のブランチ オフィスの計画ガイド](https://go.microsoft.com/fwlink/?LinkId=100207)します。  
-- Exchange 環境で AD DS の展開に関する詳細については、記事を参照してください。 [Exchange 2007 の Active Directory の計画](https://go.microsoft.com/fwlink/?LinkId=88904)します。  
-- 複数フォレスト環境で AD DS の展開に関する詳細については、記事を参照してください。 [Windows 2000 および Windows Server 2003 での複数のフォレストにに関する考慮事項](https://go.microsoft.com/fwlink/?LinkId=88905)します。  
+- ブランチオフィス環境で AD DS を展開する方法の詳細については、「[読み取り専用ドメインコントローラー (RODC) のブランチオフィス計画ガイド](https://go.microsoft.com/fwlink/?LinkId=100207)」を参照してください。  
+- Exchange 環境で AD DS を展開する方法の詳細については、「 [exchange 2007-Planning Active Directory](https://go.microsoft.com/fwlink/?LinkId=88904)」を参照してください。  
+- 複数のフォレスト環境で AD DS を展開する方法の詳細については、「 [windows 2000 および Windows Server 2003 における複数のフォレストに関する考慮事項](https://go.microsoft.com/fwlink/?LinkId=88905)」を参照してください。  

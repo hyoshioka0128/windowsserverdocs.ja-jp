@@ -1,7 +1,7 @@
 ---
 title: 仮想化
 description: コンテナー、Hyper-V、Hyper-V 仮想スイッチなどの仮想化テクノロジーの概要と、Windows Server 2016 以降のバージョンのオペレーティング システムに関する追加コンテンツへのリンクを示します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: dougkim
 ms.technology: compute
 ms.topic: article
@@ -9,23 +9,23 @@ author: shortpatti
 ms.author: pashort
 ms.localizationpriority: medium
 ms.date: 03/16/2018
-ms.openlocfilehash: e6dbb5be6d836462c9a24078dbec3700b09b08fc
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bbbd8ea812a25b0d538dcb87a380184412235b99
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446051"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364037"
 ---
 # <a name="virtualization"></a>仮想化
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル) 
+>適用先:Windows Server (半期チャネル)、Windows Server 2016 
 
 >[!TIP]
 > 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
 
 <img src="../media/landing-icons/virtualization.png" style='float:left; padding:.5em;' alt="Icon showing a box with spokes"> Windows Server 2016 の仮想化は、ソフトウェア定義インフラストラクチャを作成するために必要な基盤技術の 1 つです。 仮想化機能は、ネットワークやストレージとともに、お客様のワークロードの処理に必要な柔軟性を実現します。
 
-Windows Server 仮想化テクノロジには、Hyper-v ホスト、HYPER-V 仮想スイッチ、および保護されたファブリックとシールドされた仮想マシンに更新プログラムが含まれます。 \(Vm\)、セキュリティ、スケーラビリティ、および信頼性を向上します。 フェールオーバー クラスタリング、ネットワーク、記憶域に対する更新により、Hyper-V で使用する場合でも、これらのテクノロジの展開と管理が容易になっています。 
+Windows Server 仮想化テクノロジには、Hyper-v、Hyper-v 仮想スイッチ、および保護されたファブリックとシールドされた Virtual Machines @no__t 0VMs @ no__t-1 の更新プログラムが含まれており、セキュリティ、スケーラビリティ、および信頼性が向上しています。 フェールオーバー クラスタリング、ネットワーク、記憶域に対する更新により、Hyper-V で使用する場合でも、これらのテクノロジの展開と管理が容易になっています。 
 
 
 <ul class="cardsI panelContent">
@@ -41,7 +41,7 @@ Windows Server 仮想化テクノロジには、Hyper-v ホスト、HYPER-V 仮�
                     </div>
                     <div class="cardText">
                         <h3>保護されたファブリックとシールドされた VM</h3>
-                        <p>クラウド サービス プロバイダーやエンタープライズ プライベート クラウド管理者は、保護されたファブリックを使用して、セキュリティが強化された VM 環境を実現できます。 保護されたファブリックは、1 つホスト ガーディアン サービス (HGS) の 3 つのノードのクラスターでは通常、- と 1 つで構成されますか、ホスト、および一連のシールドされた Vm を保護の詳細は。</p>
+                        <p>クラウド サービス プロバイダーやエンタープライズ プライベート クラウド管理者は、保護されたファブリックを使用して、セキュリティが強化された VM 環境を実現できます。 保護されたファブリックは、1 つのホスト ガーディアン サービス (HGS) (通常は、3 ノードのクラスター) と、1 つまたは複数の保護されたホストと、シールドされた VM のセットで構成されます。</p>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@ Windows Server 仮想化テクノロジには、Hyper-v ホスト、HYPER-V 仮�
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>エンタープライズ向け Windows 10:デバイスの作業を使用する方法</h3>
+                        <h3>エンタープライズ向け Windows 10: 作業用のデバイスを使用する方法</h3>
                         <p>Hyper-V テクノロジは、ハードウェア仮想化によって、コンピューティング リソースを提供します。 Hyper-V では、ソフトウェア バージョンのコンピューター (仮想マシン) が作成され、それを使用してオペレーティング システムとアプリケーションが実行されます。 複数の仮想マシンを同時に実行でき、必要に応じてそれらを作成および削除できます。 </p>
                     </div>
                 </div>

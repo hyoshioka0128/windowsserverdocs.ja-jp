@@ -1,8 +1,8 @@
 ---
 title: break
-description: 'Windows コマンド」のトピック**break_1** -セットまたはクリア拡張 CTRL + C MS-DOS システムでチェックします。 パラメーターを指定せずに使用されている場合**break**現在の設定を表示します。 '
+description: '**Break_1**の Windows コマンドのトピック-MS-DOS システムの拡張 CTRL + C チェックを設定またはクリアします。 パラメーターを指定せずに使用した場合、 **break**は現在の設定を表示します。 '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d08eaa5194c8895aeb42ac58dfb68d2fc44e70bd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 73afdac29efbfd9efec88d297cf4185ca1b92d62
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869053"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380491"
 ---
 # <a name="break"></a>break
 
 
 
-設定または MS-DOS システムの拡張の CTRL + C をクリアします。 パラメーターを指定せずに使用されている場合**break**現在の設定を表示します。
+MS-DOS システムの拡張された CTRL + C チェックを設定または解除します。 パラメーターを指定せずに使用した場合、 **break**は現在の設定を表示します。
 
 > [!NOTE]
-> このコマンドは、使用中ではなくなりました。 これは、既存の MS-DOS ファイルとの互換性を保持するためだけに備えられていますが、機能は自動で実行されるためコマンド ラインでは無効です。
+> このコマンドは使用されなくなりました。 これは、既存の MS-DOS ファイルとの互換性を保持するためだけに備えられていますが、機能は自動で実行されるためコマンド ラインでは無効です。
 
 ## <a name="syntax"></a>構文
 
@@ -35,10 +35,10 @@ ms.locfileid: "59869053"
 break=[on|off]
 ```
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-コマンド拡張機能が有効になっており、Windows プラットフォームで実行されている場合、挿入、 **break**をバッチ ファイル コマンドでは、デバッガーによってデバッグされている場合、ハード コーディングされたブレークポイント。
+コマンド拡張機能が有効になっていて、Windows プラットフォームで実行されている場合、 **break**コマンドをバッチファイルに挿入すると、デバッガーによってデバッグされている場合に、ハードコーディングされたブレークポイントが入力されます。
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

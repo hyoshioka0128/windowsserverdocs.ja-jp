@@ -1,7 +1,7 @@
 ---
 ms.assetid: 7787a72e-a26b-415f-b700-a32806803478
-title: fsutil fsinfo
-ms.prod: windows-server-threshold
+title: Fsutil fsinfo
+ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
@@ -9,17 +9,17 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: 434dfde2286538367fb96d168b06983cb4357067
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 472c3b91285810ac1ff528da24de50533bae526d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873043"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376941"
 ---
-# <a name="fsutil-fsinfo"></a>fsutil fsinfo
+# <a name="fsutil-fsinfo"></a>Fsutil fsinfo
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
 
-すべてのドライブを一覧表示、ドライブの種類のクエリを実行、ボリューム情報の照会、NTFS に固有のボリューム情報、クエリを実行またはファイル システムの統計情報をクエリします。
+すべてのドライブの一覧表示、ドライブの種類の照会、ボリューム情報の照会、NTFS 固有のボリューム情報の照会、またはファイルシステムの統計情報の照会を行います。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
@@ -37,35 +37,35 @@ fsutil fsinfo [volumeinfo] <RootPath>
 
 |パラメーター|説明|
 |-------------|---------------|
-|ドライブ|コンピューターのすべてのドライブを一覧表示します。|
-|drivetype|ドライブを照会し、その型では、たとえば CD-ROM ドライブを一覧表示します。|
-|ntfsinfo|セクター、合計のクラスター、無料のクラスターでは、開始および MFT ゾーンの最後の数など、指定されたボリュームの NTFS の特定のボリューム情報を一覧表示します。|
-|sectorinfo|ハードウェアのセクター サイズと配置に関する情報を一覧表示します。|
-|統計情報|ファイルのメタデータ、ログ ファイル、および MFT 読み取りおよび書き込みなどの指定ボリュームのシステムの統計情報を一覧表示します。|
-|volumeinfo|ファイル システムなどの指定ボリュームの情報を一覧表示し、ディスク クォータ、または、DirectAccess (DAX) ボリューム、ボリュームは、大文字小文字を区別するファイル名をファイル名の unicode をサポートしているかどうか。|
-|<"VolumePath">|ドライブ文字 (コロンに続く) を指定します。|
-|<"RootPathname">|ルート ドライブのドライブ文字 (コロンに続く) を指定します。|
+|促進|コンピューター内のすべてのドライブを一覧表示します。|
+|drivetype が|ドライブに対してクエリを行い、その種類を一覧表示します (例: CD-ROM ドライブ)。|
+|ntfsinfo|指定されたボリュームの NTFS 固有のボリューム情報を一覧表示、セクターの数、クラスターの総数、空きクラスター、および MFT ゾーンの開始と終了。|
+|sectorinfo|ハードウェアのセクターサイズとアラインメントに関する情報を一覧表示します。|
+|値|メタデータ、ログファイル、MFT の読み取りと書き込みなど、指定されたボリュームのファイルシステム統計情報を一覧表示します。|
+|volumeinfo|ファイルシステムなど、指定されたボリュームの情報を一覧表示します。ボリュームが大文字と小文字を区別するファイル名、ファイル名の unicode、ディスククォータ、または DirectAccess (DAX) ボリュームをサポートするかどうかを指定します。|
+|< "VolumePath" >|ドライブ文字を指定します (その後にコロンが続きます)。|
+|"RootPathname" を < >|ルートドライブのドライブ文字 (後ろにコロンを付ける) を指定します。|
 
 ## <a name="BKMK_examples"></a>例
-すべてのコンピューターでドライブを一覧表示するには、次のように入力します。
+コンピューターのすべてのドライブを一覧表示するには、次のように入力します。
 
 ```
 fsutil fsinfo drives
 ```
 
-次のような出力:
+次のような出力が表示されます。
 
 ```
 Drives: A:\ C:\ D:\ E:\       
 ```
 
-C ドライブのドライブの種類をクエリするには、次のように入力します。
+ドライブ C のドライブの種類に対してクエリを実行するには、次のように入力します。
 
 ```
 fsutil fsinfo drivetype c:
 ```
 
-クエリの結果は次のとおりです。
+クエリには次のような結果があります。
 
 ```
 Unknown Drive
@@ -83,7 +83,7 @@ Ram Disk
 fsinfo volumeinfo e:\
 ```
 
-次のような出力:
+次のような出力が表示されます。
 
 ```
 Volume Name :Volume
@@ -97,13 +97,13 @@ Supports Named Streams
 Is DAX Volume
 ```
 
-ドライブ F NTFS に固有のボリューム情報のクエリに次のように入力します。
+NTFS 固有のボリューム情報をドライブ F に照会するには、次のように入力します。
 
 ```
 fsutil fsinfo ntfsinfo f:
 ```
 
-次のような出力:
+次のような出力が表示されます。
 
 ```
 NTFS Volume Serial Number : 0xe660d46a60d442cb
@@ -115,13 +115,13 @@ Total Clusters :            0x000000000021d409
 Mft Zone End   :            0x0000000000004700       
 ```
 
-セクターについては、ファイル システムの基になるハードウェアをクエリするには、次のように入力します。
+ファイルシステムの基になるハードウェアでセクター情報を照会するには、次のように入力します。
 
 ```
 fsinfo sectorinfo d:
 ```
 
-次のような出力:
+次のような出力が表示されます。
 
 ```
 D:\>fsutil fsinfo sectorinfo d:
@@ -134,13 +134,13 @@ Trim Not Supported
 DAX capable
 ```
 
-ドライブ E のファイル システムの統計情報を照会するには、次のように入力します。
+ドライブ E のファイルシステム統計情報を照会するには、次のように入力します。
 
 ```
 fsinfo statistics e:
 ```
 
-次のような出力:
+次のような出力が表示されます。
 
 ```
 File System Type :     NTFS
@@ -154,7 +154,7 @@ LogFileWriteBytes :    180936704
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
-[コマンドライン構文キー](Command-Line-Syntax-Key.md)
+[コマンドライン構文のキー](Command-Line-Syntax-Key.md)
 [Fsutil](Fsutil.md)
 
 

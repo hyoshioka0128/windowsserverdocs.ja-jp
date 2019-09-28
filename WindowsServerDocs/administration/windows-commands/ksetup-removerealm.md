@@ -1,8 +1,8 @@
 ---
-title: ksetup:removerealm
-description: 'Windows コマンド」のトピック * * *- '
+title: 'ksetup: removerealm'
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 579b0772e4642389b90aa370dad80a3eebea9d34
-ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.openlocfilehash: 11858d8a24d4f125c83b3e4092ac48f336a9ef0b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65564717"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374947"
 ---
-# <a name="ksetupremoverealm"></a>ksetup:removerealm
+# <a name="ksetupremoverealm"></a>ksetup: removerealm
 
 
 
@@ -36,25 +36,25 @@ ksetup /removerealm <RealmName>
 
 |パラメーター|説明|
 |---------|-----------|
-|\<RealmName>|CORP. などの大文字の DNS 名と領域名が指定されています。CONTOSO.COM、およびこれが既定の領域として一覧表示と**ksetup**が実行します。|
+|\<RealmName >|領域名は、CORP などの大文字の DNS 名で表されます。CONTOSO.COM。 **ksetup**を実行すると、既定の領域として表示されます。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-領域名は、レジストリ内の 2 つの場所に格納されます。**HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001**と **\CurrentControlSet\Control\Lsa\Kerberos**します。
+領域名は、レジストリの2つの場所に格納されます。**HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001**と **\CurrentControlSet\Control\Lsa\Kerberos**。
 
-これは、DNS 情報をリセットし、削除する場合があります、ドメイン コント ローラーを使用できないようにするために、ドメイン コント ローラーから既定の領域名を削除できません。
+ドメインコントローラーから既定の領域名を削除することはできません。これにより、DNS 情報がリセットされ、削除すると、ドメインコントローラーが使用できなくなる可能性があります。
 
 ## <a name="BKMK_Examples"></a>例
 
-誤って領域名".COM"のスペルが間違ってによって、ローカル コンピューター上に設定 corp.CONTOSO です。CON
+ローカルコンピューターの ".com" に対して ".com" というスペルを間違えて、誤って領域名を設定しています。製薬.短所
 ```
 ksetup /setrealm CORP.CONTOSO.CON
 ```
-ローカル コンピューターからそのエラーのある領域名を削除します。
+この誤った領域名をローカルコンピューターから削除します。
 ```
 ksetup /removerealm CORP.CONTOSO.CON
 ```
-実行して、削除の確認**ksetup**出力を確認します。
+**Ksetup**を実行して削除を確認し、出力を確認します。
 
 #### <a name="additional-references"></a>その他の参照情報
 

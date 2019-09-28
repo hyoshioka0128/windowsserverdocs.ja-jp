@@ -1,8 +1,8 @@
 ---
 title: nslookup finger コマンド
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 13eb4e45b3fdc17fd48fa9793abaaf05925b56a2
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 4067c16a7d338c5853a6179af17cf4e3e996e6a6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436958"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373134"
 ---
 # <a name="nslookup-finger-command"></a>nslookup finger コマンド
 
 
 
-現在のコンピューターに本の指のサーバーに接続します。
+現在のコンピューター上の finger サーバーに接続します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,9 +36,9 @@ finger [<UserName>] [{[>] <FileName>|[>>] <FileName>}]
 
 |  パラメーター  |                                                                               説明                                                                               |
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \<ユーザー名 > |                                                               検索するユーザーの名前を指定します。                                                                |
-| \<FileName> | 出力の保存先となるファイル名を指定します。 大なり (>) と二重を使用するより大きい (>>) 通常の方法で出力にリダイレクトする文字。 |
-|    {0} のヘルプ    |                                                                                   ?}                                                                                    |
+| \<UserName > |                                                               検索するユーザーの名前を指定します。                                                                |
+| \<ファイル名 > | 出力を保存するファイル名を指定します。 より大きい (>) 文字と2つのより大きい (> >) 文字を使用すると、通常の方法で出力をリダイレクトできます。 |
+|    {ヘルプ    |                                                                                   ?}                                                                                    |
 
 #### <a name="additional-references"></a>その他の参照情報
 

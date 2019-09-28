@@ -1,8 +1,8 @@
 ---
 title: telnet セット
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b68ce0ee87d80b25cf13db5bebc6c407a9fe091f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: e39e2812edc9cd5f169a046def26beebda1d007e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441022"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383621"
 ---
 # <a name="telnet-set"></a>telnet: 設定
 
@@ -33,12 +33,12 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
 
 |                    パラメーター                     |                                                                                                                                              説明                                                                                                                                              |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                     bsasdel                      |                                                                                                                                 送信**Backspace**として、**削除**します。                                                                                                                                  |
-|                       crlf                       |                                                                                                        CR、LF、(&) を送信 (0x0D、0x0a) と、 **Enter** キーが押されました。 新しい行のモードと呼ばれます。                                                                                                        |
-|                     delasbs                      |                                                                                                                                 送信**削除**として、 **Backspace**します。                                                                                                                                  |
-|                エスケープ <Character>                | Telnet クライアント プロンプトを入力するために使用するエスケープ文字を設定します。 エスケープ文字、一文字でもかまいませんの組み合わせを使用して、 **ctrl キーを押し** さらに、文字キーです。 コントロール キーの組み合わせを設定するキーを押し、 **CTRL** を割り当てる必要がある文字を入力するときにキーします。 |
+|                     bsasdel                      |                                                                                                                                 **Backspace**を**削除**として送信します。                                                                                                                                  |
+|                       crlf                       |                                                                                                        CR、LF、(&) を送信 (0x0D、0x0a) と、 **Enter** キーが押されました。 改行モードとして知られています。                                                                                                        |
+|                     delasbs                      |                                                                                                                                 **Delete**を**Backspace**として送信します。                                                                                                                                  |
+|                エスケープ <Character>                | Telnet クライアントプロンプトを入力するために使用するエスケープ文字を設定します。 エスケープ文字、一文字でもかまいませんの組み合わせを使用して、 **ctrl キーを押し** さらに、文字キーです。 コントロール キーの組み合わせを設定するキーを押し、 **CTRL** を割り当てる必要がある文字を入力するときにキーします。 |
 |                    localecho                     |                                                                                                                                         ローカル エコーをオンにします。                                                                                                                                          |
-|                ログ ファイル <FileName>                |                                                                                               ローカル ファイルには、現在の telnet セッションを記録します。 ログ記録は、このオプションを設定すると自動的に開始します。                                                                                               |
+|                ログファイル <FileName>                |                                                                                               現在の telnet セッションをローカルファイルに記録します。 ログ記録は、このオプションを設定すると自動的に開始します。                                                                                               |
 |                     logging                      |                                                                                                                  ログ記録を有効にします。 ログ ファイルが設定されていない場合、エラー メッセージが表示されます。                                                                                                                   |
 |           {コンソールと &#124; 画面} モード           |                                                                                                                                       操作モードを設定します。                                                                                                                                        |
 |                       ntlm                       |                                                                                                                                     NTLM 認証を有効にします。                                                                                                                                     |
@@ -47,11 +47,11 @@ set [bsasdel] [crlf] [delasbs] [escape <Char>] [localecho] [logfile <FileName>] 
 
 ## <a name="remarks"></a>注釈  
 1. 使用することができます、 **未設定** コマンドに設定されているオプションをオフにします。  
-2. Telnet の英語以外のバージョンで、**コードセット**<option>は使用できます。 **コードセット** <option> 、次のいずれかの可能性があるオプションに設定する現在のコードを設定します**シフト JIS**、**日本語 EUC**、 **JIS 漢字**、。**JIS 漢字 (78)** 、 **DEC 漢字**、 **NEC 漢字**します。 同じコードがリモート コンピューターのセットを設定する必要があります。  
+2. 英語以外のバージョンの telnet では、**コードセット**<option> を使用できます。 **コードセット**<option> は、現在のコードセットをオプションに設定します。これは、次のいずれかになります: **shift JIS**、**日本語 EUC**、 **jis 漢字**、 **jis 漢字 (78)** 、 **DEC 漢字**、 **NEC 漢字**。 同じコードがリモート コンピューターのセットを設定する必要があります。  
    ## <a name="BKMK_Examples"></a>例  
    ログ ファイルを設定し、ローカル ファイル tnlog.txt へのログ記録を開始  
    ```  
    set logfile tnlog.txt  
    ```  
-   ## <a name="additional-references"></a>その他の参照  
+   ## <a name="additional-references"></a>その他の参照情報  
 3. [コマンド ライン構文の記号](command-line-syntax-key.md)  

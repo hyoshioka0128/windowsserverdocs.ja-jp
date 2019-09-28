@@ -1,8 +1,8 @@
 ---
-title: bitsadmin sethelpertokenflags
-description: Windows コマンド」のトピック**bitsadmin sethelpertokenflags** -BITS 転送ジョブに関連付けられているヘルパー トークンの使用法フラグを設定します。
+title: bitsadmin sea pertokenflags
+description: '**Bitsadmin se pertokenflags**の Windows コマンドトピック-BITS 転送ジョブに関連付けられているヘルパートークンの使用フラグを設定します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,18 +12,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: cc9652afe73476041aa42e64671885bfc1af9628
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6047c63677fac3311634ababb675be5301b7f3b5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813863"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380577"
 ---
-# <a name="bitsadmin-sethelpertokenflags"></a>bitsadmin sethelpertokenflags
+# <a name="bitsadmin-sethelpertokenflags"></a>bitsadmin sea pertokenflags
 
-使用法フラグを設定、 [ヘルパー トークン](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs) BITS 転送ジョブに関連付けられています。
+BITS 転送ジョブに関連付けられている [ヘルパートークン](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)  の使用フラグを設定します。
 
-**3.0 と以前の BITS**: サポートされません。
+**BITS 3.0 以前**: サポートされていません。
 
 ## <a name="syntax"></a>構文
 
@@ -36,8 +36,8 @@ bitsadmin /SetHelperTokenFlags <Job> <Flags>
 |パラメーター|説明|
 |---------|-----------|
 |Job|ジョブの表示名または GUID。|
-|フラグ|使用可能な値は、次に示します。 0x0001&mdash;アップロード ジョブのローカル ファイルを開く、作成またはダウンロード ジョブの一時ファイルの名前を変更するかを作成またはアップロード応答ジョブの応答ファイルの名前を変更するヘルパー トークンを使用します。 0x0002&mdash;ヘルパー トークンがサーバー メッセージ ブロック (SMB) のアップロードのリモート ファイルを開くか、ジョブをダウンロードするために使用または資格情報の暗黙的な NTLM または Kerberos の HTTP サーバーまたはプロキシ チャレンジに応答します。 呼び出す必要があります `/SetCredentialsJob TargetScheme NULL NULL` HTTP 経由で送信される資格情報を許可します。|
+|フラグ|使用できる値は次のとおりです。 0x0001 @ no__t: ヘルパートークンを使用して、アップロードジョブのローカルファイルを開き、ダウンロードジョブの一時ファイルを作成または名前を変更するか、アップロード応答ジョブの応答ファイルを作成または名前を変更します。 0x0002 @ no__t ヘルパートークンは、サーバーメッセージブロック (SMB) のアップロードまたはダウンロードジョブのリモートファイルを開くため、または暗黙の NTLM または Kerberos 資格情報に対する HTTP サーバーまたはプロキシのチャレンジに対する応答として使用されます。 @ No__t-0 @ no__t-1to を呼び出す必要があります。これにより、資格情報を HTTP 経由で送信できるようになります。|
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

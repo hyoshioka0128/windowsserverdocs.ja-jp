@@ -1,19 +1,19 @@
 ---
 ms.assetid: 01c8cece-66ce-4a83-a81e-aa6cc98e51fc
 title: 高度なデータ重複除去の設定
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-deduplication
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: af977519b5e77eb768fdf8de1e6a34f7c8274666
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 1d0677cec134ddeb4c706d0f1231f2c26b39967e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447241"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403217"
 ---
 # <a name="advanced-data-deduplication-settings"></a>高度なデータ重複除去の設定
 
@@ -21,15 +21,15 @@ ms.locfileid: "66447241"
 
 このドキュメントでは、高度な[データ重複除去](overview.md)の設定を変更する方法について説明します。 [推奨されるワークロード](install-enable.md#enable-dedup-candidate-workloads)については、既定の設定で十分です。 これらの設定を変更する主な理由は、その他の種類のワークロードでのデータ重複除去のパフォーマンス向上です。
 
-## <a id="modifying-job-schedules"></a>データ重複除去ジョブ スケジュールの変更
+## <a id="modifying-job-schedules"></a>データ重複除去ジョブのスケジュールの変更
 [既定のデータ重複除去ジョブ スケジュール](understand.md#job-info)は、([**バックアップ**使用法の種類](understand.md#usage-type-backup)に対して有効な*優先順位最適化*ジョブを除いて) 推奨されるワークロードで適切に動作し、可能な限り悪影響を及ぼさないように設計されています。 ワークロードには、サイズの大きいリソース要件がある場合、ジョブがアイドル状態の時間内にのみ実行されるようにしたり、データ重複除去ジョブが使用できるシステム リソースの量を増減したりできます。
 
-### <a id="modifying-job-schedules-change-schedule"></a>データ重複除去スケジュールを変更します。
+### <a id="modifying-job-schedules-change-schedule"></a>データ重複除去スケジュールの変更
 データ重複除去ジョブは、Windows タスク スケジューラを使用してスケジュールされ、パス Microsoft\Windows\Deduplication で表示および編集できます。 データ重複除去には、スケジュールを簡単にするいくつかのコマンドレットが含まれます。
-* [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx) 現在のスケジュールされたジョブを示しています。
-* [`New-DedupSchedule`](https://technet.microsoft.com/library/hh848445.aspx) 新しいスケジュールされたジョブを作成します。
-* [`Set-DedupSchedule`](https://technet.microsoft.com/library/hh848447.aspx) 既存のスケジュールされたジョブを変更します。
-* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx) スケジュールされたジョブを削除します。
+* [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx)は、現在スケジュールされているジョブを表示します。
+* [`New-DedupSchedule`](https://technet.microsoft.com/library/hh848445.aspx)は、スケジュールされた新しいジョブを作成します。
+* [`Set-DedupSchedule` 既存の](https://technet.microsoft.com/library/hh848447.aspx)スケジュールされたジョブを変更します。
+* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx)は、スケジュールされたジョブを削除します。
 
 データ重複除去ジョブを実行する時間を変更する最も一般的な理由は、ジョブが業務時間外に実行されるようにするためです。 次の手順の例は、週末と平日の午後 7:00 にアイドル状態となるハイパーコンバージド Hyper-V ホストの、*晴れた日*のシナリオでデータ重複除去スケジュールを変更する方法を示しています。 スケジュールを変更するには、管理者コンテキストで次の PowerShell コマンドレットを実行します。
 
@@ -88,13 +88,13 @@ ms.locfileid: "66447241"
             <td>この値は、スケジュールされている必要があるジョブの種類であるため、必要です。 タスクをスケジュールした後は、この値を変更できません。</td>
         </tr>
         <tr>
-            <td>Priority</td>
+            <td>[Priority]</td>
             <td>スケジュールされたジョブのシステム優先順位</td>
             <td>
                 <ul>
                     <li>高</li>
-                    <li>中</li>
-                    <li>低</li>
+                    <li>Medium</li>
+                    <li>Low</li>
                 </ul>
             </td>
             <td>この値は、CPU 時間が割り当てられる方法を決定するのに役立ちます。 <em>[高]</em> は多くの CPU 時間を使用し、<em>[低]</em> は使用する CPU 時間がそれより少なくなります。</td>
@@ -123,7 +123,7 @@ ms.locfileid: "66447241"
             <td>DurationHours</td>
             <td>ジョブの実行が許容される最大時間数。</td>
             <td>正の整数</td>
-            <td>ワークロードを実行するためのジョブを防ぐために&#39;s 非アイドル時間</td>
+            <td>ワークロード&#39;がアイドル時間外にジョブを実行しないようにするには</td>
         </tr>
         <tr>
             <td>有効</td>
@@ -132,7 +132,7 @@ ms.locfileid: "66447241"
             <td>ジョブを削除せずに無効にするため</td>
         </tr>
         <tr>
-            <td>完全</td>
+            <td>[完全]</td>
             <td>フル ガベージ コレクション ジョブのスケジュール</td>
             <td>スイッチ (true または false)</td>
             <td>既定では、4 番目のジョブはすべてガベージ コレクション ジョブです。 このスイッチを使用して、より頻繁に実行されるフル ガベージ コレクションをスケジュールできます。</td>
@@ -141,10 +141,10 @@ ms.locfileid: "66447241"
             <td>InputOutputThrottle</td>
             <td>ジョブに適用される入力/出力の調整の量の指定</td>
             <td>(パーセントを示す) 整数 0 ~ 100</td>
-            <td>調整により、そのジョブ don&#39;t O 集中型の他のプロセスに干渉します。</td>
+            <td>スロットルにより、ジョブ&#39;が他の i/o 集中型のプロセスに干渉しないようにすることができます。</td>
         </tr>
         <tr>
-            <td>メモリ</td>
+            <td>Memory</td>
             <td>ジョブが使用するシステム上のメモリの割合</td>
             <td>(パーセントを示す) 整数 0 ~ 100</td>
             <td>ジョブがシステム上のコンピューティング リソースに与える影響のレベルを制御するため</td>
@@ -165,7 +165,7 @@ ms.locfileid: "66447241"
             <td>開始</td>
             <td>ジョブを開始する時刻の指定</td>
             <td><code>System.DateTime</code></td>
-            <td><em>日付</em>の一部、<code>System.Datetime</code>に提供される<em>開始</em>は関係ありません (ほど&#39;過去の s) が、<em>時間</em>部分では、ジョブが開始する必要がありますを指定します.</td>
+            <td><em>開始</em>するために指定された <code>System.Datetime</code> の&#39;<em>日付</em>部分は (過去の場合に限り) 無関係ですが、<em>時刻</em>部分はジョブの開始時刻を指定します。</td>
         </tr>
         <tr>
             <td>StopWhenSystemBusy</td>
@@ -176,8 +176,8 @@ ms.locfileid: "66447241"
     </tbody>
 </table>
 
-## <a id="modifying-volume-settings"></a>データ重複除去ボリューム全体の設定を変更します。
-### <a id="modifying-volume-settings-how-to-toggle"></a>ボリュームの設定を切り替える
+## <a id="modifying-volume-settings"></a>データ重複除去のボリューム全体の設定の変更
+### <a id="modifying-volume-settings-how-to-toggle"></a>ボリューム設定の切り替え
 ボリュームに対して重複除去を有効にするときに選択する[使用法の種類](understand.md#usage-type)から、ボリューム全体についてのデータ重複除去の既定の設定を行うことができます。 データ重複除去には、ボリューム全体の設定を簡単に編集できるようにするコマンドレットが含まれています。
 
 * [`Get-DedupVolume`](https://technet.microsoft.com/library/hh848448.aspx)
@@ -208,9 +208,9 @@ ms.locfileid: "66447241"
     <tbody>
         <tr>
             <td>ChunkRedundancyThreshold</td>
-            <td>チャンクがチャンク ストアのホット スポット セクションに複製される前に参照される回数。 ホット スポット セクションの値がそのいわゆる&quot;ホット&quot;頻繁に参照されるチャンクは、アクセス時間を向上させるために複数のアクセス パスを持ちます。</td>
+            <td>チャンクがチャンク ストアのホット スポット セクションに複製される前に参照される回数。 ホットスポットセクションの値は、アクセス時間を向上させるために、参照される &quot;hot @ no__t のチャンクが、頻繁に複数のアクセスパスを持つということです。</td>
             <td>正の整数</td>
-            <td>この数を変更する主な理由は、重複率の高いボリュームの削減率を上げることです。 既定値 (100) は、一般に、推奨設定、および避けるべき&#39;t は、これを変更する必要があります。</td>
+            <td>この数を変更する主な理由は、重複率の高いボリュームの削減率を上げることです。 一般に、既定値 (100) が推奨される設定で&#39;あるため、この設定を変更する必要はありません。</td>
         </tr>
         <tr>
             <td>ExcludeFileType</td>
@@ -228,7 +228,7 @@ ms.locfileid: "66447241"
             <td>InputOutputScale</td>
             <td>後処理ジョブ中にボリュームに使用するデータの重複除去の IO の並列化 (IO キュー) のレベルの指定</td>
             <td>1~36 の正の整数</td>
-            <td>この値を変更する主な理由は、データ重複除去がボリュームに使用できる IO キューの数を制限して、高い IO ワークロードのパフォーマンスへの影響を軽減することです。 既定値からこの設定を変更することが原因があるデータ重複除去に注意してください。&#39;s 処理後の実行速度が遅いジョブ。</td>
+            <td>この値を変更する主な理由は、データ重複除去がボリュームに使用できる IO キューの数を制限して、高い IO ワークロードのパフォーマンスへの影響を軽減することです。 この設定を既定値から変更すると、データ重複&#39;除去処理のジョブの実行速度が低下する可能性があります。</td>
         </tr>
         <tr>
             <td>MinimumFileAgeDays</td>
@@ -258,7 +258,7 @@ ms.locfileid: "66447241"
             <td>OptimizeInUseFiles</td>
             <td>有効な場合は、最適化のためのポリシーとしてこれらに対してアクティブなハンドルを持つファイルと見なされます。</td>
             <td>true または false</td>
-            <td>ワークロードによってファイルが長期間開かれたままとなっている場合、この設定を有効にします。 この設定が有効でない場合、ファイルが最適化されません、ワークロード、開いているハンドルがある場合場合でも、&#39;s ごくまれにしか、最後にデータを追加します。</td>
+            <td>ワークロードによってファイルが長期間開かれたままとなっている場合、この設定を有効にします。 この設定が有効になっていない場合、ワークロードに開いているハンドルがある場合は、そのファイルが&#39;最後にデータを追加するだけであっても、ファイルは最適化されません。</td>
         </tr>
         <tr>
             <td>OptimizePartialFiles</td>
@@ -275,7 +275,7 @@ ms.locfileid: "66447241"
     </tbody>
 </table>
 
-## <a id="modifying-dedup-system-settings"></a>データ重複除去システム全体の設定を変更します。
+## <a id="modifying-dedup-system-settings"></a>データ重複除去のシステム全体の設定の変更
 データ重複除去には、[レジストリ](https://technet.microsoft.com/library/cc755256(v=ws.11).aspx)から構成できる追加のシステム全体の設定があります。 これらの設定は、システム上で実行されるすべてのジョブとボリュームに適用されます。 レジストリを編集するときは、細心の注意を払ってください。
 
 たとえば、フル ガベージ コレクションを無効にするとします。 これがお使いのシナリオに役立つ理由の詳細は、「[よく寄せられる質問](#faq-why-disable-full-gc)」に記載されています。 PowerShell を使用してレジストリを編集するには、次のとおりコマンドを使用します。
@@ -310,7 +310,7 @@ ms.locfileid: "66447241"
         </tr>
         <tr>
             <td>DeepGCInterval</td>
-            <td>この設定により、通常のガベージ コレクション ジョブが<a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">完全なガベージ コレクション ジョブ</a>になる間隔が構成されます。 設定が n の場合、n <sup>回</sup>ごとにジョブがフル ガベージ コレクション ジョブになります。 <a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">バックアップ使用法の種類</a>を含むボリュームでは、常にフル ガベージ コレクションが無効になる (レジストリ値に関係なく) 点に注意してください。 <code>Start-DedupJob -Type GarbageCollection -Full</code> フル ガベージ コレクションがバックアップ ボリュームに必要な場合に使用できます。</td>
+            <td>この設定により、通常のガベージ コレクション ジョブが<a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">完全なガベージ コレクション ジョブ</a>になる間隔が構成されます。 設定が n の場合、n <sup>回</sup>ごとにジョブがフル ガベージ コレクション ジョブになります。 <a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">バックアップ使用法の種類</a>を含むボリュームでは、常にフル ガベージ コレクションが無効になる (レジストリ値に関係なく) 点に注意してください。 <code>Start-DedupJob -Type GarbageCollection -Full</code> は、バックアップボリュームでフルガベージコレクションが必要な場合に使用できます。</td>
             <td>整数 (-1 は無効を示します)</td>
             <td><a href="advanced-settings.md#faq-why-disable-full-gc" data-raw-source="[this frequently asked question](advanced-settings.md#faq-why-disable-full-gc)">このよく寄せられる質問</a>を参照してください。</td>
         </tr>
@@ -318,18 +318,18 @@ ms.locfileid: "66447241"
 </table>
 
 ## <a id="faq"></a>よく寄せられる質問
-<a id="faq-use-responsibly"></a>**データ重複除去設定を変更しましたし、ジョブが低速または、完了しないようになりましたまたは、ワークロードのパフォーマンスが低下します。その理由を教えてください。**  
+<a id="faq-use-responsibly"></a>**I データ重複除去の設定を変更しました。ジョブの速度が遅いか、完了していないか、ワークロードのパフォーマンスが低下しています。その理由を教えてください。**  
 これらの設定では、データ重複除去を制御するのに多くの労力が費やされます。 設定は責任を持って使用し、[パフォーマンスを監視](run.md#monitoring-dedup)してください。
 
-<a id="faq-running-dedup-jobs-manually"></a>**データ重複除去ジョブをすぐに実行する必要しますが、ありません--新しいスケジュールを作成することはできますか?**  
+<a id="faq-running-dedup-jobs-manually"></a>**現在、データ重複除去ジョブを実行したいが、新しいスケジュールを作成したくない場合は、これを行うことはできますか。**  
 はい、 [すべてのジョブは手動で実行することができます](run.md#running-dedup-jobs-manually)。
 
-<a id="faq-full-v-regular-gc"></a>**フルと通常のガベージ コレクションの違いは何ですか。**  
+<a id="faq-full-v-regular-gc"></a>**フルガベージコレクションと通常のガベージコレクションの違いは何ですか。**  
 [ガベージ コレクション](understand.md#job-info-gc)には、次の 2 つの種類があります。
 
 - *通常のガベージ コレクション*は統計アルゴリズムを使用して、特定の基準 (メモリと IOPS が少ない) に適合する大きな参照されていないチャンクを検索します。 通常のガベージ コレクションでは、チャンクの最小の割合が参照されていない場合にのみ、チャンク格納コンテナーが圧縮されます。 この種類のガベージ コレクションは、フル ガベージ コレクションより実行が速く、使用されるリソースはより少なくなります。 通常のガベージ コレクション ジョブの既定のスケジュールでは、実行は毎週 1 回です。
 - *フル ガベージ コレクション*は、参照されていないチャンクをより綿密に検索し、より多くのディスク領域を解放します。 フル ガベージ コレクションでは、コンテナー内の単一のチャンクだけが参照されていない場合でも、すべてのコンテナーが圧縮されます。 フル ガベージ コレクションでは、最適化ジョブ中にクラッシュや電源障害があった場合に使用されていた可能性のある領域も解放されます。 フル ガベージ コレクション ジョブは、通常のガベージ コレクションジョブと比較してより多くの時間とシステム リソースを費やして、重複解除されたボリューム上で回復できる利用可能な領域を 100% 回復します。 フル ガベージ コレクション ジョブは一般的に、通常のガベージ コレクション ジョブより最大 5% 多くの参照されていないデータを検出して解放します。 既定のスケジュールでは、フル ガベージ コレクション ジョブは通常のガベージ コレクションのスケジュールの 4 回目ごとに実行されます。
 
-<a id="faq-why-disable-full-gc"></a>**フル ガベージ コレクションを無効にする必要なはなぜですか。**  
+<a id="faq-why-disable-full-gc"></a>**フルガベージコレクションを無効にする理由**  
 - ガベージ コレクションは、ボリュームの有効期間のシャドウ コピーと増分バックアップのサイズに悪影響を与える可能性があります。 頻繁に変化する、または I/O 集中型のワークロードは、フル ガベージ コレクション ジョブによってパフォーマンスが低下する可能性があります。           
 - システムがクラッシュしたことがわかっている場合は、PowerShell からフル ガベージ コレクション ジョブを手動で実行して、リークをクリーンアップすることができます。

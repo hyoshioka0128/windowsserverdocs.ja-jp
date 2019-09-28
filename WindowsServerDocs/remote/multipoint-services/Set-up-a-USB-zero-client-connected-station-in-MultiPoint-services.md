@@ -1,9 +1,9 @@
 ---
 title: USB ゼロ クライアント接続ステーションでセットアップ MultiPoint サービス
-description: MultiPoint Services で、USB ゼロ クライアント ステーションを作成する方法について説明します
+description: MultiPoint Services で USB ゼロクライアントステーションを作成する方法について説明します。
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,17 +13,17 @@ ms.assetid: d2908865-6be3-474d-88f1-995f40bb61d0
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 1a64373f4ed5e0d1ac96a0257ac5697ff94ffcbe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 80a73065024e5c40f1ebf8efd64022ee6d48fbe8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878933"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395073"
 ---
 # <a name="set-up-a-usb-zero-client-connected-station-in-multipoint-services"></a>USB ゼロ クライアント接続ステーションでセットアップ MultiPoint サービス
 USB ゼロ クライアントを使用して MultiPoint サービス ステーションを作成すると、ステーションごとに、モニターは、次の図に示すように USB ゼロ クライアントのビデオ ポートに接続されます。 これと他のステーションの種類に関する詳細については、次を参照してください。 [MultiPoint ステーション](MultiPoint-services-Stations.md)します。
   
-**1 つの直接ビデオ接続ステーションと 2 つの USB ゼロ クライアント接続ステーションと multiPoint サービス システム**  
+**1つの直接ビデオ接続ステーションと2つの USB ゼロクライアント接続ステーションを備えた MultiPoint Services システム**  
   
 ![USB ゼロ クライアント接続ステーション](./media/WMS11_diagram7.gif)  
   

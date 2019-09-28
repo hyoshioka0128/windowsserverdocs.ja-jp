@@ -7,14 +7,14 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: bec8595ab6eae8eb6cedaf9307ab97ac9c8316b8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2508476f35462516f32877365cb15be919b5b6df
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880443"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408732"
 ---
 # <a name="planning-regional-domain-controller-placement"></a>地域ドメイン コント ローラーの配置の計画
 
@@ -80,6 +80,6 @@ WAN リンクの可用性が信頼性の高い場合はドメイン コント �
   
 ドメイン コント ローラーを維持するためのコストの削減がネットワーク トラフィックより重要な場合は、そのドメインのドメイン コント ローラーを集中管理ししない位置に、地域別のドメイン コント ローラーを配置するか場所に Rodc を配置することを検討してください。  
   
-地域ドメイン コント ローラーと各場所で表される各ドメインのユーザー数の配置を文書化するために、ワークシートでは、次を参照してください[ジョブ エイドの Windows Server 2003 展開キット](https://go.microsoft.com/fwlink/?LinkID=102558)、Job_ のダウンロード。Aids_Designing_and_Deploying_Directory_and_Security_Services.zip、および開いている「ドメイン コント ローラー配置」(DSSTOPO_4.doc)。  
+地域別のドメインコントローラーの配置と各場所で表される各ドメインのユーザー数を文書化するのに役立つワークシートについては、「 [Windows Server 2003 Deployment Kit 用のジョブエイド](https://go.microsoft.com/fwlink/?LinkID=102558)」、Job_Aids_Designing_and_ をダウンロードしてください。Deploying_Directory_and_Security_Services を開き、"ドメインコントローラーの配置" (DSSTOPO_4) を開きます。  
   
 地域ドメインを展開するときに、地域別のドメイン コント ローラーを配置する必要がある場所に関する情報を参照する必要があります。 地域ドメインの展開に関する詳細については、次を参照してください。 [を展開する Windows Server 2008 地域ドメイン](https://technet.microsoft.com/library/cc755118.aspx)します。  

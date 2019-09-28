@@ -2,22 +2,22 @@
 title: Windows PowerShell を使用して、非ドメイン メンバー クライアント コンピューターを構成するには
 description: このトピックは、BranchCache 展開ガイドの Windows Server 2016、ブランチ オフィスに WAN 帯域幅使用量を最適化するために分散され、ホスト型キャッシュ モードで BranchCache を展開する方法を示しますの一部
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 1b511e1a-686d-441f-a1c7-d4d029e1a061
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9abb77e573d7b3f144ab831c655c81370a4a6af1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9743d93fe7bc21a971ff886a7e255eed3b775c97
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839953"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406428"
 ---
 # <a name="use-windows-powershell-to-configure-non-domain-member-client-computers"></a>Windows PowerShell を使用して、非ドメイン メンバー クライアント コンピューターを構成するには
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
 キャッシュ モードのホストまたは分散キャッシュ モードの BranchCache クライアント コンピューターを手動で構成するこの手順を使用できます。  
   

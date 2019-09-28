@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getstate
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7ed7529fda264efaceb6b4b36e36e728c211f3f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 55be37a6b1b44b81ed9002e5e3b9eb1fd46bd0dc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889623"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381234"
 ---
 # <a name="bitsadmin-getstate"></a>bitsadmin getstate
 
 
 
-指定したジョブの状態を取得します。
+指定されたジョブの状態を取得します。
 
 ## <a name="syntax"></a>構文
 
@@ -38,19 +38,19 @@ bitsadmin /GetState <Job>
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-可能な状態は次のとおりです。
+考えられる状態は次のとおりです。
 
-|-----|-----| |キューに置かれた |ジョブが実行を待機している |。|接続する |BITS は、サーバーへの接続します |。|転送する |BITS がデータを転送する |。|中断 |ジョブが一時停止しています |。|エラー |回復可能なエラーが発生しました。転送は再試行されません |。|TRANSIENT_ERROR |回復可能なエラーが発生しました。最小再試行間隔が経過すると、転送の再試行します |。|受信確認 |ジョブが完了した |。|取り消されました |ジョブが取り消されました |。
+|-----|-----| |QUEUED |ジョブは実行を待機しています |。|接続 |BITS はサーバーに接続しています |。|転送中 |BITS はデータを転送しています |。|中断 |ジョブが一時停止されています |。|ERROR |回復不可能なエラーが発生しました。転送は再試行されません |。|TRANSIENT_ERROR |回復可能なエラーが発生しました。最小再試行間隔が経過すると、転送が再試行されます |。|認知済み |ジョブは完了しました |。|CANCELED |ジョブは取り消されました |。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブの状態を取得する*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブの状態を取得します。
 ```
 C:\>bitsadmin /GetState myDownloadJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

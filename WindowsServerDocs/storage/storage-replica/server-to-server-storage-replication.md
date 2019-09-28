@@ -1,7 +1,7 @@
 ---
 title: サーバー間のストレージレプリケーション
 description: Windows 管理センターと PowerShell を含む、Windows Server のサーバー間のレプリケーションに記憶域レプリカをセットアップして使用する方法について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
 ms.technology: storage-replica
@@ -9,12 +9,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 61881b52-ee6a-4c8e-85d3-702ab8a2bd8c
-ms.openlocfilehash: fccdb8547ff27083ce943892842c2e2d05e5ace8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: a21000e857d702846703deb4f55380e1a998f6d2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865293"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402960"
 ---
 # <a name="server-to-server-storage-replication-with-storage-replica"></a>記憶域レプリカを使用したサーバー間の記憶域レプリケーション
 
@@ -219,7 +219,7 @@ Windows 管理センターを使用して記憶域レプリカを管理してい
     New-SRPartnership -SourceComputerName sr-srv05 -SourceRGName rg01 -SourceVolumeName f: -SourceLogVolumeName g: -DestinationComputerName sr-srv06 -DestinationRGName rg02 -DestinationVolumeName f: -DestinationLogVolumeName g:  
     ```  
 
-   Output:
+   出力:
    ```PowerShell
    DestinationComputerName : SR-SRV06
    DestinationRGName       : rg02
@@ -237,7 +237,7 @@ Windows 管理センターを使用して記憶域レプリカを管理してい
     Get-SRPartnership  
     (Get-SRGroup).replicas  
     ```
-    Output:
+    出力:
 
     ```PowerShell
     CurrentLsn             : 0
@@ -287,7 +287,7 @@ Windows 管理センターを使用して記憶域レプリカを管理してい
         ```  
 
         > [!NOTE]
-        > 記憶域レプリカは、宛先のボリュームとそのドライブ文字またはマウント ポイントをマウント解除します。 これは仕様に基づく制限事項です。  
+        > 記憶域レプリカは、宛先のボリュームとそのドライブ文字またはマウント ポイントをマウント解除します。 これは仕様です。  
 
     3.  または、レプリカのレプリケーション先サーバー グループでは、コピーの残りのバイト数が常時示されており、PowerShell を使って照会できます。 以下に例を示します。  
 

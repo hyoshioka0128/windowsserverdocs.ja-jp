@@ -1,8 +1,8 @@
 ---
 title: auditpol バックアップ
-description: Windows コマンド」のトピック**auditpol バックアップ**-バックアップを作成するシステム監査ポリシーの設定]、[すべてのユーザーとすべての監査オプションをコンマ区切り値 (CSV) テキスト ファイルをユーザーごとの監査ポリシーの設定。
+description: '**Auditpol バックアップ**の Windows コマンドトピック-システム監査ポリシー設定、すべてのユーザーのユーザーごとの監査ポリシー設定、およびすべての監査オプションをコンマ区切り値 (CSV) テキストファイルにバックアップします。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7de5e6dc6d205b7e6749d38ac822e31a78788c6e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 96b98a05740d3ce1bfe14eda4c5d97ba6c09ff32
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435212"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382451"
 ---
 # <a name="auditpol-backup"></a>auditpol バックアップ
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-バックアップを作成するシステムでは、ポリシーの設定]、[すべてのユーザーとすべての監査オプションをコンマ区切り値 (CSV) テキスト ファイルをユーザーごとの監査ポリシーの設定を監査します。
+システム監査ポリシー設定、すべてのユーザーのユーザーごとの監査ポリシー設定、およびすべての監査オプションをコンマ区切り値 (CSV) テキストファイルにバックアップします。
 
 ## <a name="syntax"></a>構文
 ```
@@ -34,18 +34,18 @@ auditpol /backup /file:<filename>
 
 | パラメーター |                                 説明                                 |
 |-----------|-----------------------------------------------------------------------------|
-|   /file   | 監査ポリシーのバックアップ先ファイルの名前を指定します。 |
+|   /file   | 監査ポリシーがバックアップされるファイルの名前を指定します。 |
 |    /?     |                    コマンド プロンプトにヘルプを表示します。                     |
 
-## <a name="remarks"></a>注釈
-ユーザーごとのポリシーおよびシステム ポリシーのバックアップ操作を記述する必要がありますがまたはセキュリティ記述子でそのオブジェクトに対するフル コントロール アクセス許可を設定します。 所有することによって、バックアップ操作を実行することも、**監査とセキュリティ ログの管理**(SeSecurityPrivilege) ユーザー権利。 ただし、この権限は、リスト操作を実行する必要はありません、追加のアクセスを許可します。
+## <a name="remarks"></a>コメント
+ユーザーごとのポリシーとシステムポリシーのバックアップ操作については、セキュリティ記述子で設定されたそのオブジェクトに対する書き込みまたはフルコントロールのアクセス許可を持っている必要があります。 "**監査とセキュリティログの管理**" (SeSecurityPrivilege) ユーザー権利を使用して、バックアップ操作を実行することもできます。 ただし、この権限により、リスト操作を実行するために必要な追加のアクセス権が許可されます。
 ## <a name="BKMK_examples"></a>例
-ユーザーごとの監査をバックアップするには、すべてのユーザー、システムのポリシー設定の監査ポリシーの設定、および auditpolicy.csv、型をという名前の CSV 形式のテキスト ファイルにすべての監査オプション。
+すべてのユーザー、システム監査ポリシー設定、およびすべての監査オプションのユーザーごとの監査ポリシー設定を、auditpolicy .csv という名前の CSV 形式のテキストファイルにバックアップするには、次のように入力します。
 ```
 auditpol /backup /file:C:\auditpolicy.csv 
 ```
 > [!NOTE]
 > ドライブが指定されていない場合は、現在のディレクトリが使用されます。
-> #### <a name="additional-references"></a>その他の参照
-> [コマンドライン構文のポイント](command-line-syntax-key.md)
+> #### <a name="additional-references"></a>その他の参照情報
+> [コマンドライン構文のキー](command-line-syntax-key.md)
 > [auditpol 復元](auditpol-restore.md)

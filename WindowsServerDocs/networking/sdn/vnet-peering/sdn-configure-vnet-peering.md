@@ -2,19 +2,19 @@
 title: 仮想ネットワーク ピアリングの構成
 description: 仮想ネットワークピアリングの構成には、ピアリングされる2つの仮想ネットワークの作成が含まれます。
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
 ms.author: pashort
 author: shortpatti
 ms.date: 08/08/2018
-ms.openlocfilehash: 417585ffbe1e8374be1560073d5636659eaf4332
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 4d35501b8d876f2a178a4744d495125dea8da6c7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869883"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405815"
 ---
 # <a name="configure-virtual-network-peering"></a>仮想ネットワーク ピアリングの構成
 

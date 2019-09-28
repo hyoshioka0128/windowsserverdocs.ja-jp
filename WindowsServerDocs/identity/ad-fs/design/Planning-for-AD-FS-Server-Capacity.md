@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 151118c51904b50df8e63f705b0870dbb1053609
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 956d026edf5de87a2c20d058f9be5cfec186191b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867764"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408008"
 ---
 # <a name="planning-for-ad-fs-server-capacity"></a>AD FS サーバーの容量計画
 
@@ -33,7 +33,7 @@ Active Directory フェデレーションサービス (AD FS) \(\-AD FS\)のキ�
   
 キャパシティ プランニングに関するこのコンテンツを読み始める前に、次の 2 つの表のタスクを、ここに示した順序で実行することをお勧めします。 最初の表には、ここで説明するキャパシティ プランニングに関連する背景情報を知るうえで役立つタスクへのリンクがあります。  
   
-|推奨されるタスク|説明|リファレンス|  
+|推奨されるタスク|説明|参照|  
 |--------------------|---------------|-------------|  
 |AD FS フェデレーションサーバーとフェデレーションサーバープロキシを展開するための要件を理解する|フェデレーション サーバーとフェデレーション サーバー プロキシを展開するために必要な、ハードウェアとソフトウェアに関する重要な要件を確認します。|[付録 A: AD FS 要件の確認](Appendix-A--Reviewing-AD-FS-Requirements.md)|  
 |組織に展開する AD FS 構成データベースの種類を選択します|このセクションの容量計画データの使用を開始する前に、まず、Windows Internal database \(WID\)または構造化照会言語\(のいずれかを展開するADFS構成データベースの種類を決定する必要があります。SQL\)データベース。|[AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)。<br /><br />[AD FS 展開トポロジに関する考慮事項](AD-FS-Deployment-Topology-Considerations.md)|  
@@ -42,7 +42,7 @@ Active Directory フェデレーションサービス (AD FS) \(\-AD FS\)のキ�
   
 前の表に示したコンテンツの確認が完了したら、次の表に示す、前提条件となるタスクを行ってください。  
   
-|前提条件となるタスク|説明|リファレンス|  
+|前提条件となるタスク|説明|参照|  
 |---------------------|---------------|-------------|  
 |AD FS 容量計画のサイジングスプレッドシートをダウンロードする|AD FS 容量計画のサイジングスプレッドシートは、AD FS のフェデレーションサーバーファームの展開に必要なフェデレーションサーバーの数を判断するのに役立ちます。 このスプレッドシートの使い方は、次のタスクの下に示したリンク先にあります。|[AD FS キャパシティプランニングスプレッドシート](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacityPlanning.xlsx)|  
 |ターゲット\-の要求\(\)に対応するアプリケーションへのシングルサインオン SSO アクセスを必要とするユーザーの数と、このアクセスに関連する予想されるピーク時の使用期間に関するデータを収集します。\-|ここで集めるユーザー データは、AD FS キャパシティ プランニング サイジング スプレッドシートの入力値として使用します。|[組織のフェデレーションサーバーの数を推定する](Planning-for-Federation-Server-Capacity.md#bk_estimatefs)|  

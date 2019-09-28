@@ -1,7 +1,7 @@
 ---
 title: ネットワーク
 description: このトピックでは、Windows Server 2016 で利用できるソフトウェア定義ネットワークおよびネットワーク プラットフォーム テクノロジの概要について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 layout: LandingPage
 ms.technology: networking
 ms.topic: landing-page
@@ -10,12 +10,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: fb36f0ff804b139149922596a05d1ff649884bdd
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0d9c30f52082f10b482df3403fc79daa6c888798
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868973"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406775"
 ---
 # <a name="networking"></a>ネットワーク
 

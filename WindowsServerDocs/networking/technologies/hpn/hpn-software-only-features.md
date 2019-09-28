@@ -1,7 +1,7 @@
 ---
 title: ソフトウェアのみ (SO) の機能とテクノロジ
 description: これらの機能は OS の一部として実装され、基になる NIC からは独立しています。 場合によっては、最適な操作のために NIC のチューニングが必要になることがあります。 これらの例としては、仮想マシンのサービス品質 (vmQoS)、Access Control リスト (Acl)、NIC チーミングなどの Hyper-v 以外の機能などの Hyper-v 機能が挙げられます。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 0cafb1cc-5798-42f5-89b6-3ffe7ac024ba
@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/20/2018
-ms.openlocfilehash: 27fbbcc5eedb1bc8ee37a85356542335c2eac77a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8c354d53db983d0437749de918b2d5f12ede0f5b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871935"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405692"
 ---
 # <a name="software-only-so-features-and-technologies"></a>ソフトウェアのみ (SO) の機能とテクノロジ
 ソフトウェアのみの機能は OS の一部として実装され、基になる NIC からは独立しています。 場合によっては、最適な操作のために NIC のチューニングが必要になることがあります。 これらの例としては、仮想マシンのサービス品質 (vmQoS)、Access Control リスト (Acl)、NIC チーミングなどの Hyper-v 以外の機能などの Hyper-v 機能が挙げられます。

@@ -1,9 +1,9 @@
 ---
 title: 手順 3 の展開を確認します
-description: このトピックは、作業の開始ウィザードの Windows Server 2016 を使用して単一の DirectAccess サーバー展開ガイドの一部です。
+description: このトピックは、「Windows Server 2016 用はじめにウィザードを使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: 45e9edd6-acca-4d59-851a-a0cc8bd8b4c6
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e9e78ed78671c5c61fb3736cccf4e095b5186e23
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 29457f6f1859a8f3aee2f9d0f84e226b20905175
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281646"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388529"
 ---
 # <a name="step-3-verify-deployments"></a>手順 3 の展開を確認します
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、基本的な DirectAccess 展開が正しく構成されていることを確認する方法について説明します。  
   
@@ -39,7 +39,7 @@ ms.locfileid: "67281646"
   
 ## <a name="BKMK_Links"></a>前の手順  
   
--   [手順 2:DirectAccess サーバーを構成します。](da-basic-configure-s2-server.md)  
+-   [手順 2:DirectAccess サーバーを構成する @ no__t-0  
   
 
 

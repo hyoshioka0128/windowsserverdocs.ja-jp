@@ -1,8 +1,8 @@
 ---
-title: バイナリの ftp
-description: Ftp のバイナリに Windows コマンド」のトピック
+title: ftp バイナリ
+description: Ftp バイナリの Windows コマンドに関するトピック
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cadd59bff3bd2acf5c6d700caef66ca5c871b523
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 48579523f44232dec3357a20e8082050cc5175e6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821923"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376585"
 ---
 # <a name="ftp-binary"></a>ftp: バイナリ
 
@@ -31,13 +31,13 @@ binary
 ```  
 ### <a name="parameters"></a>パラメーター  
 なし  
-## <a name="remarks-optional-section"></a>「解説」 <optional section>  
-**ftp** ASCII とバイナリの画像ファイル転送の種類の両方をサポートします。 実行可能ファイルを転送するときに、バイナリを使用します。 バイナリ モードでは、ファイルが 1 バイト単位で転送されます。 ASCII ファイル転送の詳細については、次を参照してください。 **ftp: ascii**で参照を追加します。  
+## <a name="remarks-optional-section"></a>解説 <optional section>  
+**ftp**では、ASCII とバイナリの両方のイメージファイル転送がサポートされています。 実行可能ファイルを転送するときにバイナリを使用します。 バイナリモードでは、ファイルは1バイト単位で転送されます。 ASCII ファイル転送の詳細については、「 **ftp:** その他の参照情報」を参照してください。  
 ## <a name="BKMK_Examples"></a>例  
 ファイル転送の種類をバイナリに設定します。  
 ```  
 binary  
 ```  
-## <a name="additional-references"></a>その他の参照  
+## <a name="additional-references"></a>その他の参照情報  
 -   [ftp: ascii](ftp-ascii.md)  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  

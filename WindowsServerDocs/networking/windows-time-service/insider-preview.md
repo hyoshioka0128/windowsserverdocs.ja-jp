@@ -6,14 +6,14 @@ author: shortpatti
 ms.author: pashort
 ms.date: 09/05/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: a0c4d01d095e8052a2192d6b6352732a6fe60919
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 38682afa37a4c6882ee2e63a4abf4cd9fdbd2b27
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871789"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405213"
 ---
 # <a name="insider-preview"></a>Insider Preview 
 

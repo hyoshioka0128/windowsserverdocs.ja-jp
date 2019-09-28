@@ -7,36 +7,36 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/08/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 080c36f8410be4d6b1933c74730e2b55ce8d0a0b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b4b7cea18a6bb6b435b3c3fb6b4e94cfdddb2c04
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856133"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408974"
 ---
 # <a name="creating-a-dns-infrastructure-design"></a>DNS インフラストラクチャの設計を作成する
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-Active Directory フォレストおよびドメイン設計を作成した後は、Active Directory 論理構造をサポートするためにドメイン ネーム システム (DNS) インフラストラクチャを設計する必要があります。 DNS は、コンピュータおよび IP ネットワーク上の他のリソースへの接続に覚えやすいフレンドリ名を使用することができます。 Active Directory Domain Services (AD DS) で Windows Server 2008 では、DNS が必要です。  
+Active Directory フォレストとドメインの設計を作成した後、Active Directory 論理構造をサポートするために、ドメインネームシステム (DNS) インフラストラクチャを設計する必要があります。 DNS を使用すると、ユーザーは覚えやすいわかりやすい名前を使用して、IP ネットワーク上のコンピューターやその他のリソースに接続できます。 Windows Server 2008 の Active Directory Domain Services (AD DS) には DNS が必要です。  
   
-AD DS をサポートするために DNS を設計するためのプロセスによって既存の DNS サーバー サービスが組織に既に異なりますか、新しい DNS サーバー サービスを展開します。  
+AD DS をサポートするように DNS を設計するプロセスは、既存の DNS サーバーサービスが組織に既に存在するか、または新しい DNS サーバーサービスを展開するかによって異なります。  
   
-- 既存の DNS インフラストラクチャは、既にある場合は、その環境に Active Directory 名前空間を統合する必要があります。 詳細については、次を参照してください。[既存の DNS インフラストラクチャに AD DS の統合](../../ad-ds/plan/Integrating-AD-DS-into-an-Existing-DNS-Infrastructure.md)します。  
-- インプレース DNS インフラストラクチャがいない場合は、設計し、AD DS をサポートするために、新しい DNS インフラストラクチャを展開する必要があります。 詳細については、次を参照してください。[を展開するドメイン ネーム システム (DNS)](https://go.microsoft.com/fwlink/?LinkId=93656)します。  
+- 既存の DNS インフラストラクチャが既に存在する場合は、その環境に Active Directory 名前空間を統合する必要があります。 詳細については、「 [AD DS を既存の DNS インフラストラクチャに統合する](../../ad-ds/plan/Integrating-AD-DS-into-an-Existing-DNS-Infrastructure.md)」を参照してください。  
+- DNS インフラストラクチャが配置されていない場合は、AD DS をサポートするために新しい DNS インフラストラクチャを設計および展開する必要があります。 詳細については、「[ドメインネームシステム (DNS) の展開](https://go.microsoft.com/fwlink/?LinkId=93656)」を参照してください。  
   
-お客様の組織は、既存の DNS インフラストラクチャがある場合、は、Active Directory 名前空間に、DNS インフラストラクチャが対話する方法を理解することを確認する必要があります。 Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip をダウンロードして、既存の DNS インフラストラクチャの設計を文書化するためのワークシート、[ジョブ エイドの Windows Server 2003 展開キット](https://go.microsoft.com/fwlink/?LinkID=102558)と「DNS インベントリ」(DSSLOGI_8.doc) を開きます。  
+組織に既存の DNS インフラストラクチャがある場合は、DNS インフラストラクチャが Active Directory 名前空間とどのように対話するかを理解しておく必要があります。 既存の DNS インフラストラクチャ設計を文書化するのに役立つワークシートについては、「 [Windows Server 2003 Deployment Kit のジョブエイド](https://go.microsoft.com/fwlink/?LinkID=102558)」から Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードし、「DNS インベントリ」を開きます (DSSLOGI_8)。  
   
 > [!NOTE]  
-> に加えて IP バージョン 4 (IPv4) アドレス、IP バージョン 6 (IPv6) をサポートするもの Windows Server のアドレスします。 ワークシートで、現在の構造の DNS の再帰的名前解決方法を文書化中に、IPv6 アドレスを一覧表示を支援するためには、次を参照してください[付録 a:。DNS インベントリ](../../ad-ds/plan/Appendix-A--DNS-Inventory.md)します。
+> Windows Server では、IP version 4 (IPv4) アドレスに加えて、IP version 6 (IPv6) アドレスもサポートしています。 現在の DNS 構造の再帰的な名前解決方法を文書化しながら、IPv6 アドレスの一覧を作成するのに役立つワークシートについては、「[Appendix A:DNS インベントリ @ no__t-0。
   
-AD DS をサポートするために、DNS インフラストラクチャを設計する前に、DNS 階層、DNS 名前解決プロセス、および DNS が AD DS をサポートする方法について説明立つことができます。 DNS 階層と名前解決プロセスの詳細については、DNS のテクニカル リファレンスを参照してください ([https://go.microsoft.com/fwlink/?LinkID=48145](https://go.microsoft.com/fwlink/?LinkID=48145))。 DNS は AD DS をサポートする方法の詳細については、Active Directory に関するテクニカル リファレンスの DNS のサポートを参照して ([https://go.microsoft.com/fwlink/?LinkID=48147](https://go.microsoft.com/fwlink/?LinkID=48147))。  
+AD DS をサポートするように DNS インフラストラクチャを設計する前に、dns 階層、DNS 名前解決プロセス、および DNS が AD DS をサポートする方法について理解しておくことをお勧めします。 DNS 階層と名前解決プロセスの詳細については、DNS のテクニカルリファレンス ([https://go.microsoft.com/fwlink/?LinkID=48145](https://go.microsoft.com/fwlink/?LinkID=48145)) を参照してください。 DNS が AD DS をサポートする方法の詳細については、「Active Directory テクニカルリファレンスの DNS サポート ([https://go.microsoft.com/fwlink/?LinkID=48147](https://go.microsoft.com/fwlink/?LinkID=48147))」を参照してください。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
 
-- [DNS の概念を確認します。](../../ad-ds/plan/Reviewing-DNS-Concepts.md)  
-- [AD DS および DNS](../../ad-ds/plan/DNS-and-AD-DS.md)  
-- [DNS の AD DS の所有者ロールの割り当てください。](../../ad-ds/deploy/Assigning-the-DNS-for-AD-DS-Owner-Role.md)  
-- [既存の DNS インフラストラクチャへの AD DS の統合](../../ad-ds/plan/../../ad-ds/plan/Integrating-AD-DS-into-an-Existing-DNS-Infrastructure.md)  
+- [DNS の概念を確認する](../../ad-ds/plan/Reviewing-DNS-Concepts.md)  
+- [DNS と AD DS](../../ad-ds/plan/DNS-and-AD-DS.md)  
+- [AD DS の DNS の所有者の役割を割り当てる](../../ad-ds/deploy/Assigning-the-DNS-for-AD-DS-Owner-Role.md)  
+- [AD DS を既存の DNS インフラストラクチャに統合する](../../ad-ds/plan/../../ad-ds/plan/Integrating-AD-DS-into-an-Existing-DNS-Infrastructure.md)  

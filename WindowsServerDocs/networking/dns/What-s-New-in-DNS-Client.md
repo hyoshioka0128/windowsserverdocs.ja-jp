@@ -1,41 +1,41 @@
 ---
-title: 新機能 Windows Server での DNS クライアントの新機能
-description: このトピックでは、Windows Server および Windows 10 での DNS クライアントの新機能の概要を提供します。
+title: Windows Server での DNS クライアントの新機能
+description: このトピックでは、Windows Server と Windows 10 の DNS クライアントの新機能の概要について説明します。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 6edaba84-4595-4fd8-95d7-64d4d975a38a
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 34b1a64465e217fbd7e6b3ae55e89832a7a4e48c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 696ea0b499a4132d630cc0cda15a1d7efdac37a8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860563"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356063"
 ---
 # <a name="whats-new-in-dns-client-in-windows-server-2016"></a>Windows Server 2016 の DNS クライアントの新機能
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、Windows 10 および Windows Server 2016 以降のバージョンのこれらのオペレーティング システムで追加または変更は、ドメイン ネーム システム (DNS) クライアントの機能について説明します。
+このトピックでは、Windows 10 および Windows Server 2016 以降のバージョンのオペレーティングシステムで追加または変更されたドメインネームシステム (DNS) クライアントの機能について説明します。
   
-## <a name="updates-to-dns-client"></a>DNS クライアントの更新
+## <a name="updates-to-dns-client"></a>DNS クライアントの更新プログラム
 
-**DNS クライアント サービスのバインド**:Windows 10 では、DNS クライアント サービスは、1 つ以上のネットワーク インターフェイスを持つコンピューターのサポートの強化を提供します。 マルチホーム コンピューターでは、DNS 解決は、次の方法で最適化します。  
+**DNS クライアントサービスのバインド**:Windows 10 では、DNS クライアントサービスは、複数のネットワークインターフェイスを持つコンピューターの拡張サポートを提供します。 マルチホームコンピューターの場合、DNS 解決は次の方法で最適化されます。  
   
--   特定のインターフェイスで構成されている DNS サーバーを使用するには DNS クエリを解決する、DNS クライアント サービスは、DNS クエリを送信する前に、このインターフェイスにバインドされます。  
+-   特定のインターフェイスで構成されている DNS サーバーを使用して DNS クエリを解決すると、dns クライアントサービスは、dns クエリを送信する前にこのインターフェイスにバインドします。  
   
-    特定のインターフェイス、クライアントは、DNS へのバインドを明確にには、この DNS クライアントとの通信を最適化するためにアプリケーションを有効にするネットワーク インターフェイス、インターフェイスの名前解決が発生するを指定します。  
+    DNS クライアントは、特定のインターフェイスにバインドすることによって、名前解決が行われるインターフェイスを明確に指定できます。これにより、アプリケーションはこのネットワークインターフェイス経由で DNS クライアントとの通信を最適化できます。  
   
--   名前解決ポリシー テーブル (NRPT) からのグループ ポリシー設定で使用される DNS サーバーが指定されると、DNS クライアント サービスは特定のインターフェイスをバインドしません。  
+-   使用する DNS サーバーが名前解決ポリシーテーブル (NRPT) のグループポリシー設定によって指定されている場合、DNS クライアントサービスは特定のインターフェイスにバインドされません。  
   
 > [!NOTE]  
-> Windows 10 での DNS クライアント サービスへの変更は、Windows Server 2016 およびそれ以降のバージョンを実行しているコンピューターにもできます。  
+> Windows 10 の DNS クライアントサービスに加えられた変更は、Windows Server 2016 以降のバージョンを実行しているコンピューターにも存在します。  
   
 ## <a name="see-also"></a>関連項目  
   
--   [新機能 Windows Server 2016 での DNS サーバーの新機能](What-s-New-in-DNS-Server.md)  
+-   [Windows Server 2016 の DNS サーバーの新機能](What-s-New-in-DNS-Server.md)  
   
 

@@ -1,19 +1,19 @@
 ---
 title: TLS (Schannel SSP)
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: ebd3c40c-b4c0-4f6d-a00c-f90eda4691df
 manager: alanth
 author: justinha
 ms.technology: security-authentication
 ms.date: 05/16/2018
-ms.openlocfilehash: a8928d89c42d4462dbcabc756adcfdc5678c7a9d
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e103e985592e6aed150ccd3e1a87e56f19621dbe
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870230"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403384"
 ---
 # <a name="tls-schannel-ssp-changes-in-windows-10-and-windows-server-2016"></a>Windows 10 および Windows Server 2016 での TLS (Schannel SSP) の変更点
 

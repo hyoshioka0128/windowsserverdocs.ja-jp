@@ -1,7 +1,7 @@
 ---
 title: ネットワーク ワークロードに関するパフォーマンス ツール
-description: このトピックでは、Windows Server 2016 は、ネットワーク サブシステムのパフォーマンス チューニング ガイドの一部です。
-ms.prod: windows-server-threshold
+description: このトピックは、Windows Server 2016 のネットワークサブシステムのパフォーマンスチューニングガイドに含まれています。
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: c7789781-87e8-464e-981b-af887d01badd
@@ -9,41 +9,41 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 07/16/2018
-ms.openlocfilehash: e71c5f34041145907c30b279dc91a94c03c2abed
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 09e775bfe956d67adbd70cf4ce3f9461e1c37cf5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824933"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405530"
 ---
 # <a name="performance-tools-for-network-workloads"></a>ネットワーク ワークロードに関するパフォーマンス ツール
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックを使用すると、パフォーマンス ツールについて説明します。
+このトピックでは、パフォーマンスツールについて説明します。
 
-このトピックには、クライアント サーバー トラフィック ツール、TCP/IP ウィンドウのサイズ、および Microsoft Server Performance Advisor に関するセクションが含まれています。
+このトピックでは、クライアントとサーバー間のトラフィックツール、TCP/IP ウィンドウのサイズ、および Microsoft Server Performance Advisor について説明します。
 
-##  <a name="bkmk_tuning"></a> クライアント サーバー トラフィック ツールに
+##  <a name="bkmk_tuning"></a>クライアントからサーバーへのトラフィックツール
 
-クライアント サーバー トラフィックを\(ctsTraffic\)ツールを作成し、ネットワーク トラフィックを確認する機能を提供します。
+クライアントからサーバーへのトラフィック \(Ctstrno__t Ic @-1 ツールでは、ネットワークトラフィックを作成および検証することができます。
 
-詳細については、およびツールをダウンロードするには、「 [ctsTraffic (クライアントからサーバーへのトラフィック)](https://github.com/Microsoft/ctsTraffic)します。
+詳細については、ツールをダウンロードするには、「 [ctc (クライアントとサーバー間のトラフィック)](https://github.com/Microsoft/ctsTraffic)」を参照してください。
   
-##  <a name="bkmk_size"></a> TCP/IP のウィンドウのサイズ
+##  <a name="bkmk_size"></a>TCP/IP ウィンドウのサイズ
 
-1 GB アダプターの場合、前の表に示すように設定する必要があります提供に十分なスループット NTttcp 64 K に特定の論理プロセッサ オプションを使用して既定の TCP ウィンドウ サイズを設定するため\(SO_RCVBUF\)接続します。 これは、待機時間の短いネットワーク上で良好なパフォーマンスを提供します。  
+1 GB のアダプターの場合、前の表に示した設定では、適切なスループットが得られます。これは、NTttcp によって、接続の 0SO_RCVBUF @ no__t の特定の論理プロセッサ @no__t オプションを使用して、既定の TCP ウィンドウサイズが 64 K に設定されるためです。 これにより、待機時間の短いネットワークで優れたパフォーマンスが得られます。  
 
-これに対し、待機時間の長いネットワークまたは 10 GB アダプターでは、NTttcp の既定の TCP ウィンドウ サイズ値が最適なパフォーマンスをより小さい生成されます。 どちらの場合も、大規模な帯域幅遅延積を許可する TCP ウィンドウ サイズを調整する必要があります。  
+これに対し、待機時間の長いネットワークまたは 10 GB のアダプターの場合、NTttcp の既定の TCP ウィンドウサイズの値によって、最適なパフォーマンスが得られません。 どちらの場合も、帯域幅の遅延が大きくなるように、TCP ウィンドウのサイズを調整する必要があります。  
 
-使用して TCP ウィンドウ サイズを大きい値に静的に設定することができます、 **-rb**オプション。 TCP ウィンドウ自動チューニングにより、このオプションを無効にし、ユーザーが完全に TCP/IP 動作の結果の変更を認識する場合にのみ使用することをお勧めします。 します。 既定は、TCP ウィンドウ サイズは、十分な値に設定し、負荷の下でのみ、または待機時間の長いリンクでを調整します。  
+**-Rb**オプションを使用すると、TCP ウィンドウサイズを大きな値に静的に設定できます。 このオプションを選択すると、TCP ウィンドウ自動調整が無効になります。ユーザーが TCP/IP 動作の結果変更を完全に理解している場合にのみ、このオプションを使用することをお勧めします。 既定では、TCP ウィンドウのサイズは十分な値で設定され、負荷が高い場合、または待機時間の長いリンクの場合にのみ調整されます。  
 
-##  <a name="bkmk_advisor"></a> Microsoft Server Performance Advisor
+##  <a name="bkmk_advisor"></a>Microsoft Server Performance Advisor
 
-Microsoft Server Performance Advisor \(SPA\) IT 管理者は、識別するためにメトリックを収集することは、比較、および Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows での潜在的なパフォーマンス問題を診断Server 2008 R2、または Windows Server 2008 の展開。 
+Microsoft Server Performance Advisor \(SPA @ no__t-1 を使用すると、IT 管理者は、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、またはで発生する可能性のあるパフォーマンスの問題を特定、比較、診断するためのメトリックを収集できます。Windows Server 2008 の展開。 
 
-SPA は包括的な診断レポートとグラフを生成し、すぐに始めるための推奨事項は、問題を分析し、是正措置を開発を提供します。  
+SPA は、包括的な診断レポートとグラフを生成します。また、問題を迅速に分析し、是正措置を開発するために役立つ推奨事項を提供します。  
   
- 詳細については、および、アドバイザーをダウンロードするには、「 [Microsoft Server Performance Advisor](https://msdn.microsoft.com/library/windows/hardware/dn481522.aspx) Windows ハードウェア デベロッパー センターでします。
+ Advisor の詳細とダウンロードについては、Windows ハードウェアデベロッパーセンターの「 [Microsoft Server Performance advisor](https://msdn.microsoft.com/library/windows/hardware/dn481522.aspx) 」を参照してください。
 
-このガイドのすべてのトピックへのリンクを参照してください。[ネットワーク サブシステムのパフォーマンス チューニング](net-sub-performance-top.md)します。
+このガイドのすべてのトピックへのリンクについては、「[ネットワークサブシステムのパフォーマンスチューニング](net-sub-performance-top.md)」を参照してください。

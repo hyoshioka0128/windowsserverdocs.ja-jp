@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setsecurityflags
-description: Windows コマンド」のトピック**bitsadmin setsecurityflags** -フラグ セットのビット必要があります、証明書失効リスト、特定の証明書のエラーを無視するとするときに使用するポリシーを定義する HTTP サーバーHTTP 要求をリダイレクトします。
+description: '**Bitsadmin setsecurityflags**の Windows コマンドトピック-http のフラグを設定します。これにより、BITS が証明書失効リストを確認し、特定の証明書エラーを無視し、サーバーが HTTP 要求をリダイレクトするときに使用するポリシーを定義するかどうかを決定します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a7f74146a26314ddb4fa92f85e5a40267d0f0d9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: acc5a64ef7c82b14e6815b6d51dda5ea4700dcad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858623"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380411"
 ---
 # <a name="bitsadmin-setsecurityflags"></a>bitsadmin setsecurityflags
 
 
 
-HTTP ビット必要があります、証明書失効リスト、特定の証明書のエラーを無視すると、サーバーが HTTP 要求をリダイレクトするときに使用するポリシーを定義するのには、フラグを設定します。 値は、符号なし整数です。
+BITS が証明書失効リストを確認し、特定の証明書エラーを無視して、サーバーが HTTP 要求をリダイレクトするときに使用するポリシーを定義するかどうかを決定する HTTP のフラグを設定します。 値は符号なし整数です。
 
 ## <a name="syntax"></a>構文
 
@@ -37,29 +37,29 @@ bitsadmin /SetSecurityFlags <Job> <Value>
 |パラメーター|説明|
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
-|値|「解説」を参照してください。|
+|値|「解説」を参照|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-**値**パラメーターは、次の通知フラグの 1 つ以上含めることができます。
+**Value**パラメーターには、次の通知フラグを1つ以上含めることができます。
 
-|アクション|バイナリ表現|
+|操作|バイナリ表現|
 |------|---------------------|
-|CRL チェックを有効にします。|最下位ビットを設定します。|
-|サーバー証明書での無効な共通名を無視します。|右から 2 番目のビットを設定します。|
-|サーバー証明書に無効な日付を無視します。|右から 3 番目のビットを設定します。|
-|サーバー証明書内の無効な証明機関を無視します。|右から 4 番目のビットを設定します。|
-|証明書の無効な使用法を無視します。|右から 5 番目のビットを設定します。|
-|リダイレクト ポリシー|右から 9 日に 11 ビットで制御されます。</br>0,0,0 - リダイレクトが自動的に許可されます。</br>0,0,1 - リダイレクトが発生した場合、IBackgroundCopyFile インターフェイスのリモート名が更新されます。</br>0,1,0 - リダイレクトが発生する場合のビットには、ジョブが失敗します。|
-|HTTPS から HTTP へのリダイレクトを許可します。|右から 12 のビットを設定します。|
+|CRL チェックを有効にする|最下位ビットを設定する|
+|サーバー証明書の無効な共通名を無視する|右側から2番目のビットを設定します。|
+|サーバー証明書の無効な日付を無視する|右から3番目のビットを設定します。|
+|サーバー証明書の無効な証明機関を無視する|右側の4番目のビットを設定します。|
+|証明書の無効な使用を無視する|右から5番目のビットを設定します。|
+|リダイレクトポリシー|右側から11番目から11番目のビットによって制御されます。</br>0、0、0のリダイレクトは、自動的に許可されます。</br>0、0、1-リダイレクトが発生した場合、IBackgroundCopyFile インターフェイスのリモート名が更新されます。</br>0, 1, 0 ビットは、リダイレクトが発生した場合にジョブを失敗させます。|
+|HTTPS から HTTP へのリダイレクトを許可する|右から12番目のビットを設定します。|
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブの CRL チェックを有効にするセキュリティ フラグを設定する*myJob*します。
+次の例では、セキュリティフラグを設定して、 *myjob*という名前のジョブの CRL チェックを有効にします。
 ```
 C:\>bitsadmin /SetSecurityFlags myJob 0x0001
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

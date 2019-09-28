@@ -1,161 +1,161 @@
 ---
 ms.assetid: ''
 title: 高精度のシステムの構成
-description: Windows 10 および Windows Server 2016 での時刻の同期が大幅に改善されました。  1 ミリ秒 (ミリ秒) を維持するために妥当な条件下でシステムを構成することができます (UTC) に関して以上の精度。
+description: Windows 10 と Windows Server 2016 での時刻の同期が大幅に改善されました。  合理的な運用条件下では、1ミリ秒 (ミリ秒) の精度以上 (UTC に関して) を維持するようにシステムを構成できます。
 author: shortpatti
 ms.author: dacuo
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 9bfa4e7d4f8777f8fef299cf3991238e31564ace
-ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
+ms.openlocfilehash: b7cd256fdbbdbe7432e5b5d5b16254314132560f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67469595"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405197"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>高精度のシステムの構成
->適用対象:Windows Server 2016、および Windows 10 バージョン 1607 以降
+>適用対象:Windows Server 2016、Windows 10 バージョン1607以降
 
-Windows 10 および Windows Server 2016 での時刻の同期が大幅に改善されました。  1 ミリ秒 (ミリ秒) を維持するために妥当な条件下でシステムを構成することができます (UTC) に関して以上の精度。
+Windows 10 と Windows Server 2016 での時刻の同期が大幅に改善されました。  合理的な運用条件下では、1ミリ秒 (ミリ秒) の精度以上 (UTC に関して) を維持するようにシステムを構成できます。
 
-次のガイダンスを高い精度を実現するために、システムを構成できます。  この記事では、次の要件について説明します。
+次のガイダンスは、高い精度を実現するようにシステムを構成するのに役立ちます。  この記事では、次の要件について説明します。
 
 - サポートされるオペレーティング システム
 - システム構成 
 
 > [!WARNING]
-> **以前のオペレーティング システムの正確性の目標**<br>
->Windows Server 2012 R2 と以下同じ高精度の目標を満たしていないことができます。 高精度では、これらのオペレーティング システムはサポートされていません。
+> **以前のオペレーティングシステムの精度の目標**<br>
+>Windows Server 2012 R2 以降では、同じ高精度の目標を満たすことができません。 これらのオペレーティングシステムは、高い精度ではサポートされていません。
 >
->これらのバージョンでは、Windows タイム サービスには、次の要件が満たされています。
+>これらのバージョンでは、Windows タイムサービスは次の要件を満たしています。
 >
-> - Kerberos version 5 認証要件を満たすために必要な時刻の精度を提供します。
-> - Windows クライアントおよび一般的な Active Directory フォレストに参加しているサーバーの疎に正確な時刻を提供します。
+> - Kerberos version 5 の認証要件を満たすために必要な時間精度が提供されました。
+> - 共通の Active Directory フォレストに参加している Windows クライアントおよびサーバーの正確な時間を指定します。
 >
->2012 R2 での上下に大きい値の許容範囲は、Windows タイム サービスの設計仕様外です。
+>2012 R2 以下の許容範囲が、Windows タイムサービスの設計仕様の範囲を超えています。
 
-## <a name="windows-10-and-windows-server-2016-default-configuration"></a>Windows 10 および Windows Server 2016 既定の構成
+## <a name="windows-10-and-windows-server-2016-default-configuration"></a>Windows 10 および Windows Server 2016 の既定の構成
 
-Windows 10 または Windows Server 2016 で最大 1 ミリ秒の精度がサポートされます、中に顧客の大半は正確な時間は必要ありません。
+Windows 10 または Windows Server 2016 の1ミリ秒までの精度はサポートされていますが、ほとんどのお客様にとって、非常に正確な時間は必要ありません。
 
-そのため、**既定の構成**が以前のオペレーティング システムと同じ要件を満たすものでは。
+そのため、**既定の構成**は、以前のオペレーティングシステムと同じ要件を満たすことを目的としています。
 
-- Kerberos version 5 認証要件を満たすために必要な時刻の精度を提供します。
-- Windows クライアントおよび一般的な Active Directory フォレストに参加しているサーバーには、疎正確な時刻を提供します。
+- Kerberos version 5 の認証要件を満たすために必要な時間の精度を指定します。
+- 共通の Active Directory フォレストに参加している Windows クライアントとサーバーの正確な時間を指定します。
 
-## <a name="how-to-configure-systems-for-high-accuracy"></a>高精度のシステムを構成する方法
+## <a name="how-to-configure-systems-for-high-accuracy"></a>システムの精度を高めるためにシステムを構成する方法
 
 >[!IMPORTANT]
->**正確なシステムのサポートに関するメモ**<br>
-> 時刻の精度の正確な時刻のエンド ツー エンドの配布を信頼できるタイム ソースからエンド デバイスにする必要があります。  デバイスで達成可能な精度 assymetry このパスに沿って測定では精度の影響を与える悪影響を追加するものに影響します。
+>**非常に正確なシステムのサポートに関する注意**<br>
+> 時間の精度は、権限のあるタイムソースからエンドデバイスへの正確な時刻のエンドツーエンドの分布を伴います。  このパスに沿って測定値に assymetry を追加すると、精度に悪影響を及ぼすことがあります。これは、デバイスで実現可能な精度に影響します。
 >
->このため、私たちが記載されている、[高精度の環境の Windows タイム サービスを構成するサポート境界](support-boundary.md)も高精度の目標に到達するを満たす必要がある環境の要件のアウトラインを表示します。
+>このため、高精度のターゲットに対応するためにも満たす必要がある環境要件を概説した[高精度の環境で Windows タイムサービスを構成するためのサポート境界](support-boundary.md)について説明しました。
 
 ### <a name="operating-system-requirements"></a>必要なオペレーティング システム
 
-高精度の構成では、Windows 10 または Windows Server 2016 が必要です。  時間トポロジ内のすべての Windows デバイスでは、上位の階層 Windows タイム サーバーを含むこの要件を満たす必要があり、仮想化シナリオでは、時間を区別する仮想マシンを実行する HYPER-V ホストします。 以上である必要がありますすべてこれらのデバイスの Windows 10 または Windows Server 2016。
+高精度構成には、Windows 10 または Windows Server 2016 が必要です。  タイムトポロジ内のすべての Windows デバイスは、上位の階層の Windows タイムサーバーを含むこの要件を満たしている必要があります。また、仮想化されたシナリオでは、時間の影響を受ける仮想マシンを実行する Hyper-v ホストでなければなりません。 これらのデバイスはすべて、Windows 10 または Windows Server 2016 以降である必要があります。
 
-以下の図で高精度を必要とする仮想マシンは Windows 10 または Windows Server 2016 を実行しています。  同様に、仮想マシンが存在する HYPER-V ホストと上流の Windows タイム サーバーする必要がありますも Windows Server 2016 を実行します。
+次に示す図では、高精度を必要とする仮想マシンでは、Windows 10 または Windows Server 2016 が実行されています。  同様に、仮想マシンが存在する Hyper-v ホストと上流の Windows タイムサーバーも Windows Server 2016 を実行する必要があります。
 
-![時間トポロジ - 1607](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/Topology2016.png)
+![時間のトポロジ-1607](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/Topology2016.png)
 
 
 >[!TIP] 
->**Windows のバージョンを確認します。**<br>
-> コマンドを実行する`winver`OS を確認するコマンド プロンプト バージョン 1607 (またはそれ以降)、OS ビルド 14393 (またはそれ以降) の下に示すように。
+>**Windows のバージョンを確認する**<br>
+> コマンドプロンプトでコマンド `winver` を実行すると、OS のバージョンが1607以上であることを確認できます。 OS のビルドは 14393 (またはそれ以降) であることを確認できます。次に例を示します。
 >
-> ![Winver - 2016 1607](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/winver2016.png)
+> ![Winver-2016 1607](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/winver2016.png)
 
 ### <a name="system-configuration"></a>システム構成
 
-高精度のターゲットに達すると、システム構成が必要です。  さまざまなレジストリに直接またはグループ ポリシーを含め、この構成を実行する方法があります。  これらの各設定の詳細については Windows タイム サービスのテクニカル リファレンス – であります[Windows タイム サービス ツール](Windows-Time-Service-Tools-and-Settings.md#windows-time-service-tools)します。
+高精度のターゲットに到達するには、システム構成が必要です。  この構成を実行するには、レジストリやグループポリシーを使用して、さまざまな方法があります。  これらの各設定の詳細については、「Windows タイムサービステクニカルリファレンス– [Windows タイムサービスツール](Windows-Time-Service-Tools-and-Settings.md#windows-time-service-tools)」を参照してください。
 
-#### <a name="windows-time-service-startup-type"></a>Windows タイム サービスのスタートアップの種類
+#### <a name="windows-time-service-startup-type"></a>Windows タイムサービスのスタートアップの種類
 
-Windows タイム サービス (W32Time) は、継続的に実行する必要があります。  これを行うには、Windows タイム サービスのスタートアップの種類を '自動' 開始を構成します。
+Windows タイムサービス (W32Time) は連続的に実行する必要があります。  これを行うには、Windows タイムサービスのスタートアップの種類を "自動" に構成します。
 
 ![自動構成](../media/Windows-Time-Service/Configuring-Systems-for-High-Accuracy/AutomaticService.PNG)
 
-#### <a name="cumulative-one-way-network-latency"></a>累積的な一方向のネットワーク待機時間
+#### <a name="cumulative-one-way-network-latency"></a>累積一方向のネットワーク待機時間
 
-測定値の不確実性と「ノイズ」忍び寄ってくるネットワーク待機時間が増加します。  そのため、ネットワーク待機時間が妥当な境界内に存在する命令型です。  特定の要件が、ターゲットの精度に依存するために記載されて、[高精度の環境の Windows タイム サービスを構成するサポート境界](support-boundary.md)記事。
+ネットワーク待機時間の増加に応じて、測定の不確実性と "ノイズ" が発生します。  そのため、ネットワーク待機時間が妥当な境界内にあることが不可欠です。  特定の要件は、ターゲットの精度に依存しており、「[高精度環境用に Windows タイムサービスを構成するためのサポート境界](support-boundary.md)」で説明されています。
 
-累積的な一方向のネットワーク待機時間を計算するには、トポロジでは、時間、ターゲットで開始および終了高精度 stratum 1 タイム ソースの NTP クライアント サーバーのノード ペア間の個々 の一方向遅延を追加します。
+一方向の累積ネットワーク待機時間の累積を計算するには、時間トポロジ内の NTP クライアントサーバーノードのペア間に個々の一方向の遅延を追加します。これは、ターゲットから始まり、高精度の階層1タイムソースで終了します。
 
-次に、例を示します。正確なソース、2 つの中間的な NTP サーバー A、B、およびその順序でターゲット コンピューターでの時間同期階層を検討してください。 ターゲットとソース間の累積的なネットワーク待機時間を取得するには、個々 の NTP ラウンド トリップ間 (Rtt) の時間の平均を測定します。
+以下に例を示します。非常に正確なソース、2つの中間 NTP サーバー A と B、およびその順序でのターゲットコンピューターを使用したタイム同期階層を考えてみます。 ターゲットとソースの間の累積ネットワーク待機時間を取得するには、次の間隔の個々の NTP ラウンドトリップ時間 (RTTs) を測定します。
 
-- ターゲットと時間のサーバー B
-- タイム サーバー B とタイム サーバー A
-- タイム サーバー A とソース
+- ターゲットとタイムサーバー B
+- タイムサーバー B とタイムサーバー A
+- タイムサーバー A とソース
 
-この測定値は、受信トレイ w32tm.exe ツールを使用して取得できます。  これには、次の手順を実行します。
+この測定値は、受信トレイの w32tm ツールを使用して取得できます。  これを行うには :
 
-1. ターゲットと時間のサーバー B からの計算します。
+1. ターゲットとタイムサーバー B から計算を実行します。
     
     `w32tm /stripchart /computer:TimeServerB /rdtsc /samples:450 > c:\temp\Target_TsB.csv`
 
-2. (で示される) に対してサーバー b の時刻から計算を実行時のサーバーをします。
+2. タイムサーバー b の計算をタイムサーバー a に対して実行します。
     
     `w32tm /stripchart /computer:TimeServerA /rdtsc /samples:450 > c:\temp\Target_TsA.csv`
 
-3. タイム サーバーから、計算を実行するソースに対して。
+3. タイムサーバー a からソースに対して計算を実行します。
  
-4. 次に、前の手順で測定された平均 RoundTripDelay を追加し、ターゲットとソースの間の累積的なネットワーク遅延を取得する 2 で除算します。
+4. 次に、前の手順で測定した average RoundTripDelay を追加し、2で除算して、ターゲットとソース間の累積ネットワーク遅延を取得します。
 
 #### <a name="registry-settings"></a>レジストリの設定
 
 # <a name="minpollintervaltabminpollinterval"></a>[MinPollInterval](#tab/MinPollInterval)
-Log2 (秒) のシステムのポーリングの許可されている最短の間隔を構成します。
+システムポーリングで許容される log2 秒単位の最小間隔を構成します。
 
 |  |  | 
 |---------|---------|
-|キーの場所     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config        |
+|キーの場所     | HKLM:\ SYSTEM\CurrentControlSet\Services\W32Time\Config        |
 |設定    | 6        |
-|結果 | ポーリング間隔の下限は 64 秒ではようになりました。 |
+|結果 | 最小ポーリング間隔が64秒になりました。 |
 
-次のコマンドは、更新された設定を取得する Windows 時間を通知します。
+次のコマンドは、更新された設定を取得するために Windows タイムを通知します。
 
 `w32tm /config /update`
 
 
 # <a name="maxpollintervaltabmaxpollinterval"></a>[MaxPollInterval](#tab/MaxPollInterval)
-システムのポーリングの許容される log2 秒の最大間隔を構成します。
+システムポーリングで許容される log2 秒単位の最大間隔を構成します。
 
 |  |  |  
 |---------|---------|
-|キーの場所     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config        |
+|キーの場所     | HKLM:\ SYSTEM\CurrentControlSet\Services\W32Time\Config        |
 |設定    | 6        |
-|結果 | 最大のポーリング間隔は、64 秒ではようになりました。  |
+|結果 | 最大ポーリング間隔が64秒になりました。  |
 
-次のコマンドは、更新された設定を取得する Windows 時間を通知します。
+次のコマンドは、更新された設定を取得するために Windows タイムを通知します。
 
 `w32tm /config /update`
 
 # <a name="updateintervaltabupdateinterval"></a>[UpdateInterval](#tab/UpdateInterval)
-補正の調整のフェーズの間のクロック ティック数。
+フェーズ修正調整の間のクロックティック数。
 
 |  |  |  
 |---------|---------|
-|キーの場所     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config       |
+|キーの場所     | HKLM:\ SYSTEM\CurrentControlSet\Services\W32Time\Config       |
 |設定    | 100        |
-|結果 | 補正の調整のフェーズの間のクロック ティック数が 100 の目盛りではようになりました。 |
+|結果 | フェーズ修正調整の間のクロックティック数は、100ティックになりました。 |
 
-次のコマンドは、更新された設定を取得する Windows 時間を通知します。
+次のコマンドは、更新された設定を取得するために Windows タイムを通知します。
 
 `w32tm /config /update`
 
 # <a name="specialpollintervaltabspecialpollinterval"></a>[SpecialPollInterval](#tab/SpecialPollInterval)
-0x1 SpecialInterval フラグが有効な場合 (秒) には、ポーリング間隔を構成します。
+特別間隔0x1 フラグが有効になっている場合のポーリング間隔を秒単位で構成します。
 
 |  |  |  
 |---------|---------|
-|キーの場所     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient        |
+|キーの場所     | HKLM:\ SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient        |
 |設定    | 64        |
-|結果 | ポーリング間隔は、64 秒ではようになりました。 |
+|結果 | ポーリング間隔が64秒になりました。 |
 
-次のコマンドは、更新された設定を取得する Windows の時刻を再起動します。
+次のコマンドを実行すると、Windows タイムを再起動して更新された設定を取得します。
 
 `net stop w32time && net start w32time`
 
@@ -163,7 +163,7 @@ Log2 (秒) のシステムのポーリングの許可されている最短の間
 
 |  |  |  
 |---------|---------|
-|キーの場所     | HKLM:\SYSTEM\CurrentControlSet\Services\W32Time\Config      |
+|キーの場所     | HKLM:\ SYSTEM\CurrentControlSet\Services\W32Time\Config      |
 |設定    | 2        |
 
 

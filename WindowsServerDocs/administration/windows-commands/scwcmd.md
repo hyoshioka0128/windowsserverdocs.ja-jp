@@ -1,8 +1,8 @@
 ---
 title: Scwcmd
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 19d631f97c194a78819491f32955e391d3be5a70
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fae9476f94af5faa6e942239e7d91cf589bb1776
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883883"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384258"
 ---
 # <a name="scwcmd"></a>Scwcmd
 
 > 適用先:Windows Server 2012 R2、Windows Server 2012
 
-次のタスクを実行するセキュリティ構成ウィザード (SCW) に含まれている Scwcmd.exe コマンド ライン ツールを使用できます。
+セキュリティ構成ウィザード (SCW) に含まれている Scwcmd コマンドラインツールを使用して、次のタスクを実行できます。
 -   SCW で生成されたポリシーを使用して 1 つまたは複数のサーバーを構成します。
 -   SCW で生成されたポリシーを使用して 1 つまたは複数のサーバーを分析します。
 -   HTML 形式では、分析結果を表示します。
@@ -54,4 +54,4 @@ scwcmd <command> [<subcommand>]
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

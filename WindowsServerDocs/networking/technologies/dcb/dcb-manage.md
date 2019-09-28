@@ -1,19 +1,19 @@
 ---
 title: データセンターブリッジング (DCB) の管理
 description: このトピックでは、windows Server 2016 で Windows PowerShell コマンドを使用してデータセンターブリッジングを管理する方法について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fd6e8e5dd0bb4103011269473c3e1091739c775e
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: d635f96516040fcb30504f752c8194b0323c63f3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869801"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405773"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>データセンターブリッジング (DCB) の管理
 
@@ -109,7 +109,7 @@ Traffic クラスを管理するための Windows PowerShell コマンドの例�
     SMB  ETS   30   4Global
       
 
-既定では、すべての 802.1 p 値は、物理リンクの帯域幅の 100% を持つ既定の traffic クラスにマップされます。 **Get-netqostrafficclass**コマンドは、802.1 p 優先順位値4のタグが付けられているパケットをマップする新しい traffic クラスを作成します。 伝送選択アルゴリズム\(TSA\)は 30% の帯域幅を使用します。
+既定では、すべての 802.1 p 値は、物理リンクの帯域幅の 100% を持つ既定の traffic クラスにマップされます。 **Get-netqostrafficclass**コマンドは、802.1 p 優先順位値4のタグが付けられているパケットをマップする新しい traffic クラスを作成します。 転送選択アルゴリズム \(TSA @ no__t は、帯域幅の 30% を使用します。
 
 最大7つの新しいトラフィッククラスを作成できます。 既定の traffic クラスを含め、システムに最大8つのトラフィッククラスを含めることができます。 ただし、DCB 対応のネットワークアダプターでは、ハードウェアの多くのトラフィッククラスをサポートしていない場合があります。 ネットワークアダプターでは対応できない数のトラフィッククラスを作成し、そのネットワークアダプターで DCB を有効にすると、ミニポートドライバーはオペレーティングシステムにエラーを報告します。 このエラーは、イベントログに記録されます。
 

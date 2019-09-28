@@ -7,14 +7,14 @@ ms.author: billmath
 manager: daveba
 ms.date: 04/23/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2a5de194f5870652920ec6a3d451d18840ba7b2a
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 6294c7b6ead0a9fa338f8b2cc8134b750f7e3e8f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980347"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385550"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Active Directory フェデレーション サービス (AD FS) の新機能
 
@@ -52,7 +52,7 @@ AD FS 2019 には、次の認証/ポリシー機能があります。
 AD FS 2019 では、次のサインイン SSO の機能強化が行われています。
 
 - [中央のテーマを使用する改ページ調整](../operations/AD-FS-paginated-sign-in.md)された ux-adfs は、改ページ調整された ux フローに移行され、adfs はより円滑なサインインエクスペリエンスを提供できるようになりました。 ADFS では、(画面の右側ではなく) 中央の UI が使用されるようになりました。 このエクスペリエンスに合わせて、新しいロゴと背景画像が必要になる場合があります。 これは、Azure AD で提供される機能にも反映されます。
-- **バグの修正:Win10 デバイスの永続 SSO 状態-prt auth**を実行すると、Windows 10 デバイスで prt 認証を使用しているときに MFA 状態が永続化されていない問題に対処します。 この問題の原因は、エンドユーザーが2要素資格情報 (MFA) を頻繁に要求することでした。 また、この修正により、デバイス認証がクライアント TLS および PRT 機構を使用して正常に実行されたときに、エクスペリエンスの一貫性も向上します。 
+- **Bug fix:Win10 デバイスの永続 SSO 状態: PRT auth @ no__t-0 を実行すると、Windows 10 デバイスに対して PRT 認証を使用しているときに MFA 状態が永続化されていない問題が解決されます。 この問題の原因は、エンドユーザーが2要素資格情報 (MFA) を頻繁に要求することでした。 また、この修正により、デバイス認証がクライアント TLS および PRT 機構を使用して正常に実行されたときに、エクスペリエンスの一貫性も向上します。 
 
 
 ### <a name="suppport-for-building-modern-line-of-business-apps"></a>最新の基幹業務アプリを構築するためのつい
@@ -62,7 +62,7 @@ AD FS 2019 では、次のサインイン SSO の機能強化が行われてい�
  - **' Resource ' パラメーター** -AD FS を削除すると、現在の Oauth 仕様に対応したリソースパラメーターを指定する必要がなくなりました。 クライアントは、要求されたアクセス許可に加えて、証明書利用者信頼の識別子をスコープパラメーターとして提供できるようになりました。 
  - **AD FS の応答での CORS ヘッダー** -お客様は、AD FS にある oidc discovery ドキュメントから署名キーを照会することによって、クライアント側 JS ライブラリが id_token の署名を検証できるようになりました。 
  - **Pkce のサポート**-AD FS は、OAuth 内で安全な認証コードフローを提供する pkce サポートを追加します。 これにより、このフローにセキュリティレイヤーが追加され、コードがハイジャックされ、別のクライアントから再生されるのを防ぐことができます。 
- - **バグの修正:Send x5t と kid claim** -これは軽微なバグ修正です。 さらに、AD FS は、署名を検証するためのキー id ヒントを示す "kid" 要求を送信します。 以前は AD FS これは ' x5t ' 要求としてのみ送信されていました。
+ - **Bug fix:Send x5t と kid 要求 @ no__t-0-これは軽微なバグ修正です。 さらに、AD FS は、署名を検証するためのキー id ヒントを示す "kid" 要求を送信します。 以前は AD FS これは ' x5t ' 要求としてのみ送信されていました。
 
 ### <a name="supportability-improvements"></a>サポート性の向上
 次のサポート性の向上は、AD FS 2019 には含まれていません。
@@ -76,14 +76,14 @@ AD FS 2019 には、次の展開の更新が含まれるようになりました
 
 ### <a name="saml-updates"></a>SAML 更新
 次の SAML 更新は AD FS 2019 にあります。
-- **バグの修正:集計されたフェデレーション**のバグを修正する-集約されたフェデレーションサポートに関して多くのバグ修正が行われています (例: common)。 修正は次のように行われています。 
+- **Bug fix:集計されたフェデレーション @ no__t のバグを修正しました-0-集約されたフェデレーションサポートに関するバグ修正が多数ありました (例: Common)。 修正は次のように行われています。 
   - 集計されたフェデレーションメタデータドキュメントに含まれる大規模なエンティティのスケーリングが向上しました。以前は、"ADMIN0017" エラーが発生すると失敗します。 
   - AdfsRelyingPartyTrustsGroup PSH コマンドレットを使用して ' ScopeGroupID ' パラメーターを使用してクエリを実行します。 
   - 重複する entityID に関するエラー状態の処理
 
 
 ### <a name="azure-ad-style-resource-specification-in-scope-parameter"></a>スコープパラメーターの Azure AD スタイルリソース仕様 
-以前は、任意の認証要求で、必要なリソースとスコープが個別のパラメーターに含まれて AD FS 必要があります。 たとえば、一般的な oauth 要求は次のようになります。7 **https:&#47;&#47;fs.contoso.com/adfs/oauth2/authorize?</br>response_type = code & client_id = claimsxrayclient & resource = urn: microsoft:</br>adfs: claimsxray & scope = oauth & redirect_uri = https:&#47;&#47;adfshelp.microsoft.com/</br> claimsxray/TokenResponse & prompt = login**
+以前は、任意の認証要求で、必要なリソースとスコープが個別のパラメーターに含まれて AD FS 必要があります。 たとえば、一般的な oauth 要求は次のようになります。7 **https:&#47;&#47;fs.contoso.com/adfs/oauth2/authorize? </br>response_type = code & client_id = claimsxrayclient & resource = urn: microsoft: </br>adfs: claimsxray & scope = oauth & redirect_uri = https:&#47; &#47;adfshelp.microsoft.com/</br> ClaimsXray/TokenResponse & prompt = ログイン**
  
 サーバー2019で AD FS を使用すると、スコープパラメーターに埋め込まれたリソース値を渡すことができます。 これは Azure AD に対して認証を行う方法と同じです。 
 

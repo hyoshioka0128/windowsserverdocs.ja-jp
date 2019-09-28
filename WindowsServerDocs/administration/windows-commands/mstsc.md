@@ -1,8 +1,8 @@
 ---
 title: mstsc
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b6f89c1e3b0d36f14dbd55f9e6994c788305b30d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bf813c75c83154c76d4aeb53a259495d4ad1369e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437186"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373347"
 ---
 # <a name="mstsc"></a>mstsc
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモート デスクトップ セッション ホスト (rd セッション ホスト) サーバーまたは他のリモート コンピューターへの接続を作成し、既存のリモート デスクトップ接続 (.rdp) 構成ファイルを編集し、クライアント接続マネージャーで作成されたレガシ接続ファイルの移行新しい .rdp 接続ファイル。
-このコマンドを使用する方法の例については、次を参照してください。[例](#BKMK_examples)します。
+リモートデスクトップセッションホスト (rd セッションホスト) サーバーまたはその他のリモートコンピューターへの接続を作成し、既存のリモートデスクトップ接続 (.rdp) 構成ファイルを編集して、クライアント接続マネージャーで作成された従来の接続ファイルを移行します。を新しい .rdp 接続ファイルに追加します。
+このコマンドの使用方法の例については、「[例](#BKMK_examples)」を参照してください。
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 新機能については、最新バージョンについてを参照してください。 [Windows Server 2012 でのリモート デスクトップ サービスでどのような s の新しい](https://technet.microsoft.com/library/hh831527)、Windows Server TechNet ライブラリです。
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの[Windows Server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527) を参照してください。
 
 ## <a name="syntax"></a>構文
 ```
@@ -41,31 +41,31 @@ mstsc.exe /migrate
 |        パラメーター        |                                                         説明                                                         |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 |    <Connection File>    |                                   接続の .rdp ファイルの名前を指定します。                                    |
-|   /v: < サーバー [:<Port>]   |                リモート コンピューターと、必要に応じて、接続するポート番号を指定します。                 |
+|   /v: < Server [: <Port>]   |                リモートコンピューターと、必要に応じて接続するポート番号を指定します。                 |
 |         /admin          |                                   サーバーを管理するためのセッションに接続します。                                   |
-|           /f            |                                    全画面表示モードでリモート デスクトップ接続を開始します。                                    |
-|       /w:<Width>        |                                      リモート デスクトップ ウィンドウの幅を指定します。                                      |
-|       /h:<Height>       |                                     リモート デスクトップ ウィンドウの高さを指定します。                                      |
-|         パブリック/         |                  パブリック モードでリモート デスクトップを実行します。 パブリック モードでのパスワードとビットマップはキャッシュされません。                  |
-|          /span          | リモート デスクトップの幅と高さを必要に応じて、複数のモニターにまたがる、ローカル仮想デスクトップに一致します。 |
-| /edit <Connection File> |                                         編集するための指定した .rdp ファイルを開きます。                                          |
-|        /移行         |       クライアントとの接続マネージャーを新しい .rdp 接続ファイルに作成されたレガシ接続ファイルを移行します。       |
+|           /f            |                                    全画面表示モードでリモートデスクトップ接続を開始します。                                    |
+|       /w: <Width>        |                                      リモートデスクトップウィンドウの幅を指定します。                                      |
+|       /h: <Height>       |                                     リモートデスクトップウィンドウの高さを指定します。                                      |
+|         /public         |                  リモートデスクトップをパブリックモードで実行します。 パブリックモードでは、パスワードとビットマップはキャッシュされません。                  |
+|          /span          | リモートデスクトップの幅と高さをローカル仮想デスクトップと照合し、必要に応じて複数のモニターにまたがっています。 |
+| /edit <Connection File> |                                         指定した .rdp ファイルを編集用に開きます。                                          |
+|        /移行         |       クライアント接続マネージャーで作成された従来の接続ファイルを新しい .rdp 接続ファイルに移行します。       |
 |           /?            |                                            コマンド プロンプトにヘルプを表示します。                                             |
 
-## <a name="remarks"></a>注釈
--   Default.rdp は、各ユーザーのユーザーの Documents フォルダー内の非表示ファイルとして格納されます。 .Rdp ファイルを作成したユーザーは、既定では、ユーザーの Documents フォルダーに保存されますが、任意の場所に保存することができます。
--   複数のモニター、モニターは、同じ解像度を使用する必要があり、横方向に配置する必要があります (つまり、並行して)。 現在、クライアント システム上の垂直方向に複数のモニターにまたがるようにサポートされていません。
+## <a name="remarks"></a>コメント
+-   既定の .rdp は、ユーザーごとに隠しファイルとしてユーザーの Documents フォルダーに格納されます。 ユーザーが作成した .rdp ファイルは、既定ではユーザーの Documents フォルダーに保存されますが、どこにでも保存できます。
+-   複数のモニターにまたがる場合、モニターは同じ解像度を使用する必要があり、水平方向 (つまりサイドバイサイド) に調整する必要があります。 現在、クライアントシステム上で複数のモニターを垂直方向にまたがることはサポートされていません。
 
 ## <a name="BKMK_examples"></a>例
--   全画面表示モードでのセッションに接続するに次のように入力します。
+-   全画面表示モードでセッションに接続するには、次のように入力します。
     ```
     mstsc /f
     ```
--   編集用 filename.rdp をという名前のファイルを開くには、次のように入力します。
+-   編集するためにファイル名 .rdp という名前のファイルを開くには、次のように入力します。
     ```
     mstsc /edit filename.rdp
     ```
 
-#### <a name="additional-references"></a>その他の参照
+#### <a name="additional-references"></a>その他の参照情報
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)
--   [リモート デスクトップ サービス&#40;ターミナル サービス&#41;コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+-   [リモートデスクトップサービス&#40;ターミナルサービス&#41;のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)

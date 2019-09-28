@@ -2,18 +2,18 @@
 title: クオータの管理
 description: この記事では、クォータの作成方法と管理方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6effaf7c2d197c08b4930e09c3ada96462b17d6f
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 5a655e28020d08bb1c10fa862c007f914a8cf566
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476188"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403075"
 ---
 # <a name="quota-management"></a>クオータの管理
 
@@ -27,15 +27,15 @@ ms.locfileid: "65476188"
 
 たとえば、次のようなことができます。
 
--   180 MB のストレージが制限を超過した場合に、ユーザーに送信される電子メール通知をユーザーの個人用サーバー フォルダーに 200 メガバイト (MB) 制限を設定します。
--   グループの共有フォルダーで柔軟な 500 MB のクォータを設定します。 この記憶域の上限に達すると、グループ内のすべてのユーザーは、記憶域のクォータが拡張されている一時的に 520 mb まで不要なファイルを削除して、事前設定された 500 MB のクォータ ポリシーに準拠できます電子メールで通知されます。
+-   ユーザーの個人用サーバーフォルダーに200メガバイト (MB) の制限を設定します。これにより、ストレージの 180 MB を超えたときに、ユーザーとユーザーに電子メール通知が送信されます。
+-   グループの共有フォルダーに対して、柔軟な 500 MB クォータを設定します。 この記憶域の上限に達すると、グループ内のすべてのユーザーに、記憶域クォータが一時的に 520 MB に拡張されたことを知らせる電子メールが送信されます。これにより、不要なファイルを削除し、事前設定された 500 MB クォータポリシーに準拠することができます。
 -   一時フォルダーの使用量が 2 GB に達した時点で通知を受信するが、サーバーで実行されているサービスに必要であるため、そのフォルダーのクォータを制限しない。
 
 ここでは、次のトピックについて説明します。
 
 -   [クォータを作成する](create-quota.md)
 -   [自動適用クォータを作成する](create-auto-apply-quota.md)
--   [クォータ テンプレートを作成します。](create-quota-template.md)
+-   [クォータテンプレートを作成する](create-quota-template.md)
 -   [クォータ テンプレートのプロパティを編集する](edit-quota-template-properties.md)
 -   [自動適用クォータのプロパティを編集する](edit-auto-apply-quota-properties.md)
 

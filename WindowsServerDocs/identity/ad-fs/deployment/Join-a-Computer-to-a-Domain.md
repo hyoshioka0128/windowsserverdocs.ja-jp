@@ -6,37 +6,37 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 02df9659ee3a1121c0cee3f7c5fa21b91c36b87c
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 9f6d657397cb07d081a229135e3e6c97c7191164
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192052"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408347"
 ---
 # <a name="join-a-computer-to-a-domain"></a>コンピューターをドメインに参加させる
 
-Active Directory フェデレーション サービスの\(AD FS\)に機能するようにフェデレーション サーバーをドメインに参加する必要がありますが機能する各コンピューターにします。 フェデレーション サーバー プロキシは、ドメインに参加させることがありますが、これは必須ではありません。  
+Active Directory フェデレーションサービス (AD FS) @no__t の AD FS @ no__t を機能させるには、フェデレーションサーバーとして機能する各コンピューターがドメインに参加している必要があります。 フェデレーションサーバープロキシはドメインに参加することができますが、これは必須ではありません。  
   
-Web サーバーが要求をホストしている場合は、Web サーバーをドメインに参加する必要はありません\-対応のアプリケーションのみです。  
+Web サーバーがクレーム @ no__t 対応アプリケーションのみをホストしている場合は、Web サーバーをドメインに参加させる必要はありません。  
   
 この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
-### <a name="to-join-a-computer-to-a-domain"></a>コンピューターをドメインに参加させる  
+### <a name="to-join-a-computer-to-a-domain"></a>コンピューターをドメインに参加させるには  
   
 1.  **開始**画面で「**コントロール パネルの** し、ENTER キーを押します。  
   
-2.  移動します**システムとセキュリティ**、 をクリックし、**システム**します。  
+2.  **[システムとセキュリティ]** に移動し、 **[システム]** をクリックします。  
   
 3.  **[コンピューター名、ドメインおよびワークグループの設定]** で **[設定の変更]** をクリックします。  
   
 4.  **[コンピューター名]** タブで、 **[変更]** をクリックします。  
   
-5.  [**のメンバー**、] をクリックして**ドメイン**、このコンピューターをクリックして、参加を希望するドメインの名前を入力**OK**します。  
+5.  次 **[のメンバー]** で **[ドメイン]** をクリックし、このコンピューターを参加させるドメインの名前を入力して、[ **OK]** をクリックします。  
   
-6.  をクリックして**OK**、コンピューターを再起動します。  
+6.  **[OK]** をクリックし、コンピューターを再起動します。  
   
 ## <a name="additional-references"></a>その他の参照情報  
 [チェックリスト:フェデレーション サーバーのセットアップ](Checklist--Setting-Up-a-Federation-Server.md)  

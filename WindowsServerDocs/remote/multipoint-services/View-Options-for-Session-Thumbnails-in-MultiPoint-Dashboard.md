@@ -2,7 +2,7 @@
 title: MultiPoint ダッシュボードでのセッション サムネイルの表示オプション
 description: MultiPoint Services の表示オプションをカスタマイズする方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: a11f2f2bbafe4d21e1cd5d56d66a97e08cf35b11
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9b6fa08a6f3215140a528dab0fb55bac23c60ccc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871468"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394801"
 ---
 # <a name="view-options-for-session-thumbnails-in-multipoint-dashboard"></a>MultiPoint ダッシュボードでのセッション サムネイルの表示オプション
 個々のデスクトップでのユーザー アクティビティを監視する簡単な方法は、MultiPoint Services システムでアクティブな各デスクトップのサムネイル画像を表示することです。 既定では、デスクトップの画像に表示されます MultiPoint ダッシュ ボード、 **ホーム**  タブをクリックします。  

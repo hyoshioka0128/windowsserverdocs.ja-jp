@@ -1,19 +1,19 @@
 ---
 title: Robocopy を使用して DFS レプリケーション用にファイルをプリシードする
 description: Robocopy を使用して DFS レプリケーション用にファイルをプリシードする方法。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4a0cad3c685c8609784c7096fe31d55294712c2e
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ea5cd954dde6d4fa8fcaa7874f75cb9588115ab1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871979"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402127"
 ---
 # <a name="use-robocopy-to-preseed-files-for-dfs-replication"></a>Robocopy を使用して DFS レプリケーション用にファイルをプリシードする
 

@@ -6,36 +6,36 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: cf89972120f3f0effa3eb1cf0fee6d29dbc8ed4e
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 388414fff97705901bf52ee844b90508d62f8c83
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192484"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408454"
 ---
 # <a name="add-a-token-decrypting-certificate"></a>トークン暗号化解除証明書を追加する
 
-フェデレーション サーバーは、トークンを使用して\-復号化証明書と証明書利用者のパーティのフェデレーション サーバーが、新しい証明書をプライマリ暗号化解除証明書として設定した後、古い証明書によって発行されたトークンの暗号化を解除する必要があります。 Active Directory フェデレーション サービス\(AD FS\) Secure Sockets Layer を使用して\(SSL\)インターネット インフォメーション サービスの証明書\(IIS\)として、既定の復号化証明書。  
+フェデレーションサーバーでは、新しい証明書がプライマリ暗号化解除証明書として設定された後に、証明書利用者のフェデレーションサーバーが古い証明書で発行されたトークンの暗号化を解除する必要がある場合に、トークン @ no__t-0decryption 解除証明書を使用します。 Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 は、既定の暗号化解除証明書としてインターネットインフォメーションサービス \(IIS @ no__t-5 の Secure Sockets Layer \(SSL @ no__t 証明書を使用します。  
   
 > [!CAUTION]  
-> トークンを使用する証明書\-復号化は、フェデレーション サービスの安定性に重要です。 損失またはこの目的用に構成されたすべての証明書の計画外の削除は、サービスを中断できる、ため、この目的用に構成されたすべての証明書をバックアップする必要があります。  
+> トークン @ no__t-0decrypting 化に使用される証明書は、フェデレーションサービスの安定性を確保するために重要です。 この目的で構成された証明書の損失または計画外の削除によってサービスが中断される可能性があるため、この目的で構成された証明書をバックアップする必要があります。  
   
-次の手順を使用するには、トークンを追加する\-証明書を AD FS 管理スナップインを復号化\-でエクスポートしたファイルから。  
+次の手順を使用して、エクスポートしたファイルの AD FS 管理スナップ @ no__t にトークン @ no__t-0decrypting 解除証明書を追加できます。  
   
-この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用に関する詳細を確認し、グループ メンバーシップ[ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.microsoft.com\/fwlink\/でしょうか。LinkId\=83477\)します。   
+この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントおよびグループメンバーシップの使用に関する詳細については、「[ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.microsoft.com\/fwlink\/?」を参照してください。LinkId\=83477\)。   
   
-### <a name="to-add-a-token-decrypting-certificate"></a>トークンを追加する\-証明書を復号化  
+### <a name="to-add-a-token-decrypting-certificate"></a>トークン @ no__t-0decrypting 解除証明書を追加するには  
   
-1.  **開始**画面で「**AD FS 管理**、し、ENTER キーを押します。  
+1.  **スタート**画面で「**AD FS Management**」と入力し、enter キーを押します。  
   
-2.  コンソール ツリーで、二重\-クリックして**サービス**、順にクリックします**証明書**します。  
+2.  コンソールツリーで、 **[サービス]** をダブルクリックし、 **[証明書]** をクリックします。  
   
-3.  **アクション**ウィンドウで、をクリックして、**トークンを追加\-暗号化解除証明書**リンク。  
+3.  **操作** ウィンドウで、**トークンの追加 @ no__t-2Decrypting 証明書の暗号化解除** リンクをクリックします。  
   
-4.  **証明書ファイルの参照** ダイアログ ボックスで、追加、証明書ファイルを選択し、をクリックしたい証明書ファイルを移動**オープン**します。  
+4.  **[証明書ファイルの参照]** ダイアログボックスで、追加する証明書ファイルに移動し、証明書ファイルを選択して **[開く]** をクリックします。  
   
 ## <a name="additional-references"></a>その他の参照情報  
 [チェックリスト:フェデレーション サーバーのセットアップ](Checklist--Setting-Up-a-Federation-Server.md)  

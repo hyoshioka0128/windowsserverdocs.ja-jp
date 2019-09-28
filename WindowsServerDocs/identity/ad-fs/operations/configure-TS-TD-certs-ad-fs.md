@@ -6,14 +6,14 @@ ms.author: billmath
 manager: samueld
 ms.date: 10/23/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 608f78ed03bc102cbdffb8abcc52244450b97b3c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: c544f956983357bdcaaaf2e5ee5b4ab5f80abb6e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865626"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407484"
 ---
 # <a name="obtain-and-configure-ts-and-td-certificates-for-ad-fs"></a>AD FS の TS および TD 証明書を取得して構成する
 

@@ -1,8 +1,8 @@
 ---
 title: 削除 DriverGroupFilter コマンドを使用してください。
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a546ead7220273955368c582ac1e3f9b3f61c191
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 75b4a1446b5fb4db4132a39b6e5ba70cd1c4ab4b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883433"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362921"
 ---
 # <a name="using-the-remove-drivergroupfilter-command"></a>削除 DriverGroupFilter コマンドを使用してください。
 
@@ -36,9 +36,9 @@ WDSUTIL /Remove-DriverGroupFilter /DriverGroup:<Group Name> [/Server:<Server nam
 
 |パラメーター|説明|
 |---------|-----------|
-|/DriverGroup:\<グループ名 >|ドライバー グループの名前を指定します。|
-|[/Server:\<サーバー名 >]|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
-|[/FilterType:\<FilterType>]|グループから削除するフィルターの種類を指定します。 \<FilterType > 次のいずれかを指定できます。</br>**BiosVendor**</br>**BiosVersion**</br>**ChassisType**</br>**Manufacturer**</br>**uuid**</br>**osVersion**</br>**OsEdition**</br>**OsLanguage**|
+|/Drivergroup: \<Group Name >|ドライバー グループの名前を指定します。|
+|[/Server: \<Server name >]|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
+|[/FilterType: \<FilterType >]|グループから削除するフィルターの種類を指定します。 \<FilterType > には、次のいずれかを指定できます。</br>**Bios ベンダー**</br>**Bios のバージョン**</br>**ChassisType**</br>**Manufacturer**</br>**Uuid**</br>**OsVersion**</br>**OsEdition**</br>**OsLanguage**|
 
 ## <a name="BKMK_examples"></a>例
 
@@ -52,4 +52,4 @@ WDSUTIL /Remove-DriverGroupFilter /DriverGroup:PrinterDrivers /FilterType:Manufa
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

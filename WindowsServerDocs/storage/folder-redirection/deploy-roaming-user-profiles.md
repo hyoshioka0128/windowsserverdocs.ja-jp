@@ -1,19 +1,19 @@
 ---
 title: 移動ユーザープロファイルの展開
 TOCTitle: Deploying Roaming User Profiles
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: 3442ad46590add695fb3fed607c6f728e2bc5ee1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b7a89ce8d72cf4f060e83b3653b3b2d93eed5cfd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867291"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402035"
 ---
 # <a name="deploying-roaming-user-profiles"></a>移動ユーザープロファイルの展開
 
@@ -85,7 +85,7 @@ Windows 8.1、Windows 8、Windows Server 2012 R2、または Windows Server 2012
     ```
 
     > [!WARNING]
-    > レジストリを間違って編集すると、システムが壊れる可能性があります。 レジストリを変更する前に、コンピューターにある重要なデータをバックアップしてください。
+    > レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリを変更する前に、コンピューター上の重要なデータのバックアップを作成する必要があります。
 3. コンピューターを再起動します。
 
 ## <a name="step-2-create-a-roaming-user-profiles-security-group"></a>手順 2:移動ユーザー プロファイルのセキュリティ グループを作成する
@@ -238,7 +238,7 @@ Windows Server でファイル共有を作成するには、次の手順を実�
 | 値の名前   | **SpecialRoamingOverrideAllowed** |
 | [値の型]   | **REG_DWORD**               |
 | [値] に   | **1** (無効にする場合は**0** ) |
-| 基本         | **Decimal**                 |
+| 基本         | **位**                 |
 
 5. Optional初回ログオンの最適化を有効にすると、ユーザーによるサインインが高速になります。 これを行うには、「[ポリシーを適用してサインイン時間を向上](https://docs.microsoft.com/windows/client-management/mandatory-user-profile#apply-policies-to-improve-sign-in-time)させる」を参照してください。
 6. Optionalクライアント Pc の展開に使用する Windows 10 基本イメージから不要なアプリを削除することで、サインイン時間をさらに短縮します。 Windows Server 2019 および Windows Server 2016 には事前にプロビジョニングされたアプリがないため、サーバーイメージでこの手順をスキップできます。
@@ -287,7 +287,7 @@ Windows Server でファイル共有を作成するには、次の手順を実�
 
 ## <a name="appendix-a-checklist-for-deploying-roaming-user-profiles"></a>付録 A:移動ユーザー プロファイルの展開のチェックリスト
 
-| 状態                     | 操作                                                |
+| 状況                     | 操作                                                |
 | ---                        | ------                                                |
 | ☐<br>☐<br>☐<br>☐<br>☐   | 1. ドメインを準備する<br>-コンピューターをドメインに参加させる<br>-個別のプロファイルバージョンの使用を有効にする<br>-ユーザーアカウントを作成する<br>-(省略可能) フォルダーリダイレクトを展開する |
 | ☐<br><br><br>             | 2. 移動ユーザー プロファイルのセキュリティ グループを作成する<br>-グループ名:<br>属する |

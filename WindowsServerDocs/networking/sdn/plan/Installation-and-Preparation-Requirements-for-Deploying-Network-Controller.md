@@ -1,144 +1,144 @@
 ---
-title: ネットワーク コント ローラーの展開の要件
-description: データ センターを準備する、ネットワーク コント ローラーの展開は、1 つまたは複数のコンピューターまたは Vm と 1 台のコンピューターまたは VM が必要です。 ネットワーク コント ローラーを展開する前に、セキュリティ グループ、ログ ファイルの場所 (必要な場合)、および DNS 動的登録を構成する必要があります。
+title: ネットワークコントローラーを展開するための要件
+description: ネットワークコントローラーを展開するために、1台以上のコンピューターまたは Vm、1台のコンピューターまたは VM を必要とするデータセンターを準備します。 ネットワークコントローラーを展開する前に、セキュリティグループ、ログファイルの場所 (必要な場合)、および動的 DNS の登録を構成する必要があります。
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: pashort
 author: shortpatti
 ms.date: 08/10/2018
-ms.openlocfilehash: 51ba991397a7c35ee0198f8e75c67b2f99b7c7bc
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 38d104bc3ceca478f0e261b3a364b5d4448b22f3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446308"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406012"
 ---
-# <a name="requirements-for-deploying-network-controller"></a>ネットワーク コント ローラーの展開の要件
+# <a name="requirements-for-deploying-network-controller"></a>ネットワークコントローラーを展開するための要件
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-データ センターを準備する、ネットワーク コント ローラーの展開は、1 つまたは複数のコンピューターまたは Vm と 1 台のコンピューターまたは VM が必要です。 ネットワーク コント ローラーを展開する前に、セキュリティ グループ、ログ ファイルの場所 (必要な場合)、および DNS 動的登録を構成する必要があります。
+ネットワークコントローラーを展開するために、1台以上のコンピューターまたは Vm、1台のコンピューターまたは VM を必要とするデータセンターを準備します。 ネットワークコントローラーを展開する前に、セキュリティグループ、ログファイルの場所 (必要な場合)、および動的 DNS の登録を構成する必要があります。
 
 
-## <a name="network-controller-requirements"></a>ネットワーク コント ローラーの要件
+## <a name="network-controller-requirements"></a>ネットワークコントローラーの要件
 
-ネットワーク コント ローラーの展開では、1 つ以上のコンピューターまたはネットワーク コント ローラーの管理クライアントとして機能するには、ネットワーク コント ローラーと 1 台のコンピューターとして機能する Vm または VM が必要です。 
+ネットワークコントローラーの展開には、ネットワークコントローラーとして機能する1つ以上のコンピューターまたは Vm、およびネットワークコントローラーの管理クライアントとして機能する1台のコンピューターまたは VM が必要です。 
 
-- すべての Vm とネットワーク コント ローラーのノードとして計画的なコンピューターに Windows Server 2016 Datacenter edition を実行する必要があります。 
-- 任意のコンピューターまたはネットワーク コント ローラーをインストールするとなる仮想マシン (VM) に Windows Server 2016 の Datacenter edition を実行する必要があります。 
-- 管理クライアント コンピューターまたはネットワーク コント ローラーの VM に Windows 10 を実行する必要があります。 
+- ネットワークコントローラーノードとして計画されているすべての Vm とコンピューターは、Windows Server 2016 Datacenter edition を実行している必要があります。 
+- ネットワークコントローラーをインストールするすべてのコンピューターまたは仮想マシン (VM) で、Windows Server 2016 の Datacenter edition が実行されている必要があります。 
+- 管理クライアントコンピューターまたはネットワークコントローラーの VM は、Windows 10 を実行している必要があります。 
 
 
 ## <a name="configuration-requirements"></a>構成要件
 
-ネットワーク コント ローラーを展開する前に、セキュリティ グループ、ログ ファイルの場所 (必要な場合)、および DNS 動的登録を構成する必要があります。
+ネットワークコントローラーを展開する前に、セキュリティグループ、ログファイルの場所 (必要な場合)、および動的 DNS の登録を構成する必要があります。
 
-### <a name="step-1-configure-your-security-groups"></a>手順 1. セキュリティ グループを構成します。
+### <a name="step-1-configure-your-security-groups"></a>手順 1. セキュリティグループを構成する
 
-最初に実行するには、Kerberos 認証の 2 つのセキュリティ グループを作成します。 
+まず、Kerberos 認証用に2つのセキュリティグループを作成します。 
 
-アクセス許可を持つユーザーのグループを作成します。 
+次の権限を持つユーザーのグループを作成します。 
 
-1. ネットワーク コント ローラーを構成します。<p>Network Controller Admins では、このグループは、たとえば名前をことができます。 
-2.  構成し、ネットワーク コント ローラーを使用して、ネットワークの管理<p>このグループのネットワーク コント ローラー ユーザーは、たとえば名前をことができます。 構成して、ネットワーク コント ローラーを管理するには、Representational State Transfer (REST) を使用します。
-
->[!NOTE]
->Active Directory ユーザーとコンピューター で、Domain Users グループのメンバーであるすべてのユーザーを追加する必要があります。
-
-### <a name="step-2-configure-log-file-locations-if-needed"></a>手順 2. 必要に応じて、ログ ファイルの場所を構成します。
-
-次に実行することは、ネットワーク コント ローラーのコンピューターまたは VM 上またはリモート ファイル共有のいずれかのネットワーク コント ローラーがデバッグ ログを格納するファイルの場所を構成します。 
+1. ネットワークコントローラーの構成<p>このグループには、たとえばネットワークコントローラーの管理者という名前を指定できます。 
+2.  ネットワークコントローラーを使用してネットワークを構成および管理する<p>このグループには、ネットワークコントローラーのユーザーなどの名前を指定できます。 ネットワークコントローラーを構成および管理するには、表現を使用します。
 
 >[!NOTE]
->リモート ファイル共有に、ログを格納する場合は、共有は、ネットワーク コント ローラーからアクセスできることを確認します。
+>追加するすべてのユーザーは、Active Directory ユーザーとコンピューターの Domain Users グループのメンバーである必要があります。
+
+### <a name="step-2-configure-log-file-locations-if-needed"></a>手順 2. 必要に応じてログファイルの場所を構成する
+
+次に行う必要があるのは、ネットワークコントローラーのデバッグログをネットワークコントローラーコンピューターまたは VM、またはリモートファイル共有に保存するようにファイルの場所を構成することです。 
+
+>[!NOTE]
+>リモートファイル共有にログを保存する場合は、ネットワークコントローラーから共有にアクセスできることを確認してください。
 
 
-### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>手順 3. ネットワーク コント ローラーの DNS 動的登録を構成します。
+### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>手順 3. ネットワークコントローラーの動的 DNS 登録を構成する
 
-最後に、次に実行することでは、同じサブネットまたは異なるサブネットにネットワーク コント ローラー クラスターのノードを展開します。 
+最後に、同じサブネットまたは異なるサブネットにネットワークコントローラークラスターノードを展開します。 
 
 
 |         もし...         |                                                                                                                                                         結果                                                                                                                                                         |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  同じサブネット上  |                                                                                                                                ネットワーク コント ローラー REST IP アドレスを指定する必要があります。                                                                                                                                 |
-| 異なるサブネット上 | 展開プロセス中に作成したネットワーク コント ローラー REST DNS 名を指定する必要があります。 次の実行もあります。<ul><li>DNS サーバーでは、ネットワーク コント ローラーの DNS 名の DNS 動的更新を構成します。</li><li>DNS 動的更新をネットワーク コント ローラーのノードのみに制限します。</li></ul> |
+|  同じサブネット上で、  |                                                                                                                                ネットワークコントローラーの REST IP アドレスを指定する必要があります。                                                                                                                                 |
+| 異なるサブネットでは、 | ネットワークコントローラーの REST DNS 名を指定する必要があります。これは、展開プロセスで作成します。 また、次の操作を行う必要があります。<ul><li>Dns サーバーで、ネットワークコントローラーの DNS 名の DNS 動的更新を構成します。</li><li>DNS 動的更新をネットワークコントローラーノードのみに制限します。</li></ul> |
 
 ---
 
 > [!NOTE]
-> メンバーシップ**Domain Admins**、またはそれと同等がこれらの手順を実行するために必要な最低限です。
+> これらの手順を実行するには、 **Domain Admins**のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。
 
 1. ゾーンの DNS 動的更新を許可します。
 
-   a. DNS マネージャーを開き、コンソール ツリーで、該当のゾーンを右クリックし、し順にクリックします**プロパティ**します。 
+   a. DNS マネージャーを開き、コンソールツリーで該当するゾーンを右クリックし、 **[プロパティ]** をクリックします。 
 
-   b. **全般** タブで、ゾーンの種類は、いずれかを確認します。**プライマリ**または**Active Directory 統合**します。
+   b. **[全般]** タブで、ゾーンの種類が **[プライマリ]** または **[Active Directory 統合]** であることを確認します。
 
-   c. **動的更新**、ことを確認します**Secure のみ**が選択されているし、をクリックし、 **[ok]** します。
+   c. **[動的更新]** で、 **[セキュリティのみ]** が選択されていることを確認し、[ **OK]** をクリックします。
 
-2. ネットワーク コント ローラーのノードの DNS ゾーンのセキュリティ アクセス許可を構成します。
+2. ネットワークコントローラーノードの DNS ゾーンセキュリティアクセス許可を構成する
 
    a.  **[セキュリティ]** タブをクリックし、 **[詳細設定]** をクリックします。 
 
-   b. **Advanced Security Settings**、 をクリックして**追加**します。 
+   b. **[セキュリティの詳細設定]** で、 **[追加]** をクリックします。 
 
    c. **[プリンシパルの選択]** をクリックします。 
 
-   d. **ユーザーの選択、コンピューター、サービス アカウントまたはグループ**ダイアログ ボックスで、をクリックして**オブジェクトの種類**します。 
+   d. **[ユーザー、コンピューター、サービスアカウントまたはグループの選択]** ダイアログボックスで、 **[オブジェクトの種類]** をクリックします。 
 
-   e. **オブジェクトの種類**を選択します**コンピューター**、 をクリックし、 **OK**。
+   e. **[オブジェクトの種類]** で、 **[コンピューター]** を選択し、 **[OK]** をクリックします。
 
-   f. **ユーザーの選択、コンピューター、サービス アカウントまたはグループ**ダイアログ ボックスで、展開でネットワーク コント ローラーのノードの 1 つの NetBIOS 名を入力し、順にクリックします**OK**します。
+   f. **[ユーザー、コンピューター、サービスアカウント、またはグループの選択**] ダイアログボックスで、展開内のいずれかのネットワークコントローラーノードの NetBIOS 名を入力し、[ **OK]** をクリックします。
 
-   g. **アクセス許可エントリ**、次の値を確認します。
+   g. **[アクセス許可エントリ]** で、次の値を確認します。
 
-      - **型**= を許可します。
-      - **適用対象**= このオブジェクトとすべての子オブジェクト
+      - **種類**= 許可
+      - **適用対象**= This オブジェクトとすべての子オブジェクト
 
-   h. **アクセス許可**を選択します**すべてのプロパティの書き込み**と**削除**、順にクリックします**OK**。
+   h. **[アクセス許可]** で **[すべてのプロパティの書き込み]** を選択し、 **[削除]** をクリックして、[ **OK]** をクリックします。
 
-3. ネットワーク コント ローラーがクラスター内のすべてのコンピューターと Vm を繰り返します。
+3. ネットワークコントローラークラスター内のすべてのコンピューターと Vm に対して、この手順を繰り返します。
 
-### <a name="step-4-configure-service-principal-name-if-using-kerberos-based-authentication"></a>手順 4. Kerberos を使用してベースの認証の場合は、サービス プリンシパル名を構成します。
+### <a name="step-4-configure-service-principal-name-if-using-kerberos-based-authentication"></a>手順 4. Kerberos ベースの認証を使用する場合のサービスプリンシパル名の構成
 
-ネットワーク コント ローラーが管理クライアントとの通信で Kerberos ベースの認証を使用している場合は、Active Directory でのネットワーク コント ローラーのサービス プリンシパル名 (SPN) を構成する必要があります。 ネットワーク コント ローラーには、SPN が自動的に構成されます。 行う必要があるすべては、登録およびは SPN を変更するには、ネットワーク コント ローラー コンピューターのアクセス許可を提供します。 詳細については、次を参照してください。[を構成するサービス プリンシパル名 (SPN)](https://docs.microsoft.com/windows-server/networking/sdn/security/kerberos-with-spn#configure-service-principal-names-spn)します。
+ネットワークコントローラーが管理クライアントとの通信に Kerberos ベースの認証を使用している場合は、Active Directory でネットワークコントローラーのサービスプリンシパル名 (SPN) を構成する必要があります。 SPN は、ネットワークコントローラーによって自動的に構成されます。 必要なのは、SPN を登録および変更するためのアクセス許可をネットワークコントローラーコンピューターに付与することだけです。 詳細については、「[サービスプリンシパル名 (SPN) の構成](https://docs.microsoft.com/windows-server/networking/sdn/security/kerberos-with-spn#configure-service-principal-names-spn)」を参照してください。
 
 ## <a name="deployment-options"></a>展開オプション
 
-### <a name="network-controller-deployment"></a>ネットワーク コント ローラーの展開
+### <a name="network-controller-deployment"></a>ネットワークコントローラーの展開
 
-セットアップは、仮想マシンで構成されている 3 つのネットワーク コント ローラーのノードが高可用性です。 また、web 層とデータベース層をシミュレートする 2 つの仮想サブネットに分割されたテナント 2 の仮想ネットワークと 2 つのテナントも示します。  
+このセットアップは、仮想マシン上に3つのネットワークコントローラーノードが構成されている場合に高可用性を実現します。 また、web 層とデータベース層をシミュレートするために、2つの仮想サブネットに分類されたテナント2の仮想ネットワークを持つ2つのテナントも示しています。  
 
-![SDN NC の計画](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-NC-Planning.png)
+![SDN NC 計画](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-NC-Planning.png)
 
-### <a name="network-controller-and-software-load-balancer-deployment"></a>ネットワーク コント ローラーとソフトウェア ロード バランサーの展開
+### <a name="network-controller-and-software-load-balancer-deployment"></a>ネットワークコントローラーとソフトウェアロードバランサーの展開
 
-高可用性は、2 つ以上の SLB/MUX ノードがあります。
+高可用性を高めるために、2つ以上の SLB/MUX ノードがあります。
 
-![SDN NC の計画](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-SLB-Deployment.png)
+![SDN NC 計画](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-SLB-Deployment.png)
 
-### <a name="network-controller-software-load-balancer-and-ras-gateway-deployment"></a>ネットワーク コント ローラー、ソフトウェア ロード バランサー、および RAS ゲートウェイの展開
+### <a name="network-controller-software-load-balancer-and-ras-gateway-deployment"></a>ネットワークコントローラー、ソフトウェア Load Balancer、RAS ゲートウェイの展開
 
-次の 3 つのゲートウェイ仮想マシン; があります。2 つがアクティブになり、1 つが冗長です。
+ゲートウェイ仮想マシンは3つあります。2つはアクティブで、1つは冗長です。
 
-![SDN NC の計画](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)  
+![SDN NC 計画](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)  
 
 
 
-TP5 ベースのデプロイの自動化、Active Directory が使用可能なこれらのサブネットから到達可能である必要があります。 Active Directory の詳細については、次を参照してください。 [Active Directory Domain Services の概要](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)します。  
+TP5 ベースの展開の自動化では、Active Directory が使用可能であり、これらのサブネットから到達可能である必要があります。 Active Directory の詳細については、「 [Active Directory Domain Services の概要](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)」を参照してください。  
 
 >[!IMPORTANT] 
->VMM を使用してを展開する場合は、インフラストラクチャ、仮想マシンを確認します (SQL Server を VMM サーバー、AD と DNS など)、図に示す 4 つのホストのいずれかでホストされていません。  
+>VMM を使用して展開する場合は、インフラストラクチャの仮想マシン (VMM サーバー、AD/DNS、SQL Server など) が、図に示されている4つのホストのいずれかでホストされていないことを確認してください。  
 
 
-## <a name="next-steps"></a>次のステップ
-[ソフトウェア定義ネットワーク インフラストラクチャ計画](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure)します。
+## <a name="next-steps"></a>次の手順
+[ソフトウェアで定義されたネットワークインフラストラクチャを計画](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure)します。
 
 ## <a name="related-topics"></a>関連トピック
 - [ネットワーク コントローラー](../technologies/network-controller/Network-Controller.md) 
-- [ネットワーク コント ローラーの高可用性](../technologies/network-controller/network-controller-high-availability.md) 
+- [ネットワークコントローラーの高可用性](../technologies/network-controller/network-controller-high-availability.md) 
 - [Windows PowerShell を使用してネットワーク コントローラーを展開する](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)   
 - [サーバー マネージャーを使用してネットワーク コントローラー サーバーの役割をインストールする](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)   

@@ -7,18 +7,18 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e2776cc29b8c9ede884a6b304cd541f700f516ca
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 88ec418bd72a6389856deb1abd85641d8782bc30
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191262"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408041"
 ---
 # <a name="name-resolution-requirements-for-federation-servers"></a>フェデレーション サーバーの名前解決の要件
 
-企業ネットワーク上のクライアント コンピューターが Active Directory フェデレーション サービスによって保護されている Web サービスまたはアプリケーションにアクセスしようとした場合に\(AD FS\)、まずフェデレーション サーバーを認証する必要があります。 認証する方法の 1 つでは、会社のネットワーク クライアントが Windows 統合認証を通じて、ローカルのフェデレーション サーバーにアクセスします。  
+企業ネットワーク上のクライアントコンピューターが Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 で保護されているアプリケーションまたは Web サービスにアクセスしようとすると、最初にフェデレーションサーバーに対して認証を行う必要があります。 認証する方法の 1 つでは、会社のネットワーク クライアントが Windows 統合認証を通じて、ローカルのフェデレーション サーバーにアクセスします。  
   
 ## <a name="configure-corporate-dns"></a>企業 DNS を構成する  
 ローカルのフェデレーション サーバーで Windows 統合認証を通じて正常な名前解決を実行、ドメイン ネーム システム \(DNS\) アカウントの企業ネットワーク内には、新しいホストのパートナーを構成 \(A\) 完全修飾ドメイン名を解決するリソース レコード \(FQDN\) フェデレーション サーバー クラスターの IP アドレスにフェデレーション サーバーのホスト名です。  

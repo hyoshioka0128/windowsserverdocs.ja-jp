@@ -7,24 +7,24 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: dde9ed6035b30ba5b5b96b7132d25a1f8a1c0b8c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1b42c60374162b6482b18df2555997e80463d6d9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884023"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390849"
 ---
 # <a name="assigning-the-dns-for-ad-ds-owner-role"></a>AD DS の DNS の所有者の役割を割り当てる
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-フォレストの所有者には、フォレストの Active Directory Domain Services (AD DS) の所有者のドメイン ネーム システム (DNS) が割り当てられます。 DNS フォレストの AD DS の所有者では、ユーザー (またはユーザーのグループ)、DNS の展開の監視を担当するユーザー ドメイン名が適切なインターネット機関に登録されていることを確認する (必要な) 場合、AD DS インフラストラクチャ。  
+フォレスト所有者は、フォレストの Active Directory Domain Services (AD DS) 所有者にドメインネームシステム (DNS) を割り当てます。 フォレストの AD DS 所有者の DNS は、AD DS インフラストラクチャの DNS の展開を監視し、必要に応じてドメイン名が適切なインターネット機関に登録されていることを確認する担当者 (またはユーザーのグループ) です。  
   
-AD DS の所有者の DNS は、DNS で、フォレストの AD DS の設計を担当します。 組織は、DNS サーバー サービスを動作している場合、既存の DNS サーバー サービスの DNS のデザイナーは、AD DS の所有者のドメイン コント ローラーで実行されている DNS サーバーには、フォレスト ルート DNS 名をデリゲートに DNS で動作します。  
+AD DS 所有者の DNS は、フォレストの AD DS 設計の DNS に責任を持ちます。 組織が現在 DNS サーバーサービスを運用している場合、既存の DNS サーバーサービスの dns デザイナーは AD DS 所有者の DNS と連携して、ドメインコントローラー上で実行されている DNS サーバーにフォレストルート DNS 名を委任します。  
   
-DNS フォレストの AD DS の所有者では、動的ホスト構成プロトコル (DHCP) のグループと組織の DNS のグループにお問い合わせくださいが保持され、これらのグループと各ドメイン、フォレスト内の個々 の DNS 所有者のプラン (ある場合) を調整します。 フォレストの DNS 所有者によりように DNS の設計計画の対応は、各グループと初期入力を提供することができます、DHCP および DNS のグループが AD DS 設計プロセスの DNS に関与しているようになります。  
+フォレストの AD DS 所有者の DNS では、動的ホスト構成プロトコル (DHCP) グループと組織の DNS グループの連絡先も保持し、フォレスト内の各ドメイン (存在する場合) の個々の DNS 所有者の計画をこれらのグループと調整します。 フォレストの DNS 所有者は、各グループが DNS 設計計画を認識し、事前に入力を提供できるように、DHCP グループと DNS グループが AD DS 設計プロセスの DNS に関与していることを確認します。  
   
 
 

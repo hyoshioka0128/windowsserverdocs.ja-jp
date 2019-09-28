@@ -6,15 +6,15 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 5c91cb97a1b8371d1e3f8e496f026727681e2304
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 921cf4b4b5629df735b20ba59f239abfd6b0d6d6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865599"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407509"
 ---
 # <a name="set-up-an-ad-fs-lab-environment"></a>AD FS ラボ環境を設定する
 
@@ -325,7 +325,7 @@ Web サーバーで実行されるサンプルアプリケーションを AD FS 
 1.  フェデレーション サーバー (ADFS1) で、 **AD FS 管理コンソール**の **[証明書利用者信頼]** に移動し、 **[証明書利用者信頼の追加]** をクリックします。  
   
 2.  **[データ ソースの選択]** ページで、 **[オンラインまたはローカル ネットワークで公開されている証明書利用者についてのデータをインポートする]** を選択して、 **claimapp**のメタデータ URL を入力し、 **[次へ]** をクリックします。 FedUtil.exe の実行時にメタデータの .xml ファイルが作成されています。 これは、   
-    **https://webserv1.contoso.com/claimapp/federationmetadata/2007-06/federationmetadata.xml**  
+    **https://webserv1.contoso.com/claimapp/federationmetadata/2007-06/federationmetadata.xml** .  
   
 3.  **[表示名の指定]** ページで、証明書利用者信頼 **claimapp** の **[表示名]** を指定し、 **[次へ]** をクリックします。  
   

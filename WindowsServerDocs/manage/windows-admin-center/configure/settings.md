@@ -7,13 +7,13 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 04/12/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: e184064aa913bf4fb18cadd8ddbb08b5b97c59c6
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: e0fd6618f275058d4e22fe9abb9e484d4752ac9a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865322"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407057"
 ---
 # <a name="windows-admin-center-settings"></a>Windows 管理センターの設定
 
@@ -29,7 +29,7 @@ Windows 管理センターの設定は、ユーザーレベルとゲートウェ
 - Personalization
 - 言語/地域
 - おすすめ
-- 詳細設定
+- 詳細
 
 **[アカウント]** タブでは、ユーザーは Windows 管理センターでの認証に使用した資格情報を確認できます。 Azure AD が id プロバイダーとして構成されている場合、ユーザーはこのタブから Azure AD アカウントからログアウトできます。
 

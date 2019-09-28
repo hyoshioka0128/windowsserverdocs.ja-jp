@@ -6,14 +6,14 @@ ms.author: nedpyle
 manager: siroy
 ms.date: 08/19/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: a1e195ab755dfd0b61cc4201f43373421ce51aa2
-ms.sourcegitcommit: 86350de764b89ebcac2a78ebf32631b7b5ce409a
+ms.openlocfilehash: a776920caa85c3ee133070d52b020c8ad3c799e1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70923545"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402992"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>記憶域移行サービスに関してよく寄せられる質問 (FAQ)
 

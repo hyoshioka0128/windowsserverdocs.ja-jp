@@ -1,19 +1,19 @@
 ---
 title: QoS ポリシーの管理
 description: このトピックでは、Windows Server 2016 でサービス品質 (QoS) ポリシーを作成および管理する方法について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 04fdfa54-6600-43d4-8945-35f75e15275a
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3cff51b3cf76d3224832bf99ff966bf473d6ff6c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ac717555d1ab751600527e294d32f10d1f05bfa5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871851"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395883"
 ---
 # <a name="manage-qos-policy"></a>QoS ポリシーの管理
 
@@ -280,7 +280,7 @@ DSCP マーキングオーバーライドは、アプリケーションが QoS �
 
 ##### <a name="wireless-multimedia-and-dscp-values"></a>ワイヤレスマルチメディアと DSCP 値
 
-[Wi-fi アライアンス](https://go.microsoft.com/fwlink/?LinkId=160769)は\(、wi-fi\) \(\)で送信されるネットワークトラフィックを優先順位付けする4つのアクセスカテゴリWMM_ACを定義する、ワイヤレスマルチメディアWMMの認定を確立しました。\-Fi ワイヤレスネットワーク。 アクセスカテゴリは、 \(優先順位\)の高い順に表示されます。これは、音声、ビデオ、ベストエフォート、背景という、それぞれが VO、VI、BE、および BK として省略されているためです。 WMM 仕様では、次の4つのアクセスカテゴリそれぞれに対応する DSCP 値が定義されています。
+[Wi-fi アライアンス](https://go.microsoft.com/fwlink/?LinkId=160769)は、1WMM @ no__t-2 という4つのアクセスカテゴリを定義する @-2 の証明 @no__t 書を確立しました。これは、wi @ No__t-5fi ワイヤレスネットワークで送信されるネットワークトラフィックに優先順位を設定するための4つのアクセス @no__t カテゴリを定義します。 アクセスカテゴリは、 \(優先順位\)の高い順に表示されます。これは、音声、ビデオ、ベストエフォート、背景という、それぞれが VO、VI、BE、および BK として省略されているためです。 WMM 仕様では、次の4つのアクセスカテゴリそれぞれに対応する DSCP 値が定義されています。
   
 |DSCP 値|WMM アクセスカテゴリ|
 |----------|-------------------|
@@ -312,7 +312,7 @@ GPO の優先順位と同様に、QoS ポリシーには、複数の QoS ポリ�
 
 または、重複しない条件を指定することによって、複数の QoS ポリシーを同じトラフィックに適用することもできます。 アプリケーションとネットワーク5つの条件の間に、アプリケーションを指定するポリシーがより具体的であり、適用されていると見なされます。 
 
-たとえば、policy_A はアプリケーション名 (app-v) のみを指定し、policy_B は宛先 IP アドレス 192.168.1.0/24 を指定します。 これらの QoS ポリシーが\(競合する場合、192.168.4.0/24\)の範囲内にある IP アドレスにアプリケーションがトラフィックを送信します。 policy_A が適用されます。
+たとえば、policy_A はアプリケーション名 (app-v) のみを指定し、policy_B は宛先 IP アドレス 192.168.1.0/24 を指定します。 これらの QoS ポリシーが競合している場合 @no__t 192.168.4.0/24 @ no__t-1 の範囲内の IP アドレスにトラフィックが送信され、policy_A が適用されます。
 
  **ネットワーク5つ内では、より多くの特異性が優先されます。**
 

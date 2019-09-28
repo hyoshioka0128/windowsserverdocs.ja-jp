@@ -1,16 +1,16 @@
 ---
 title: DiskPart コマンド
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 7155dbf34f9986b3ebdd8b549b6a861cf7fcfe3a
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: 0826b773927f09cc846fb1cfdf4d5dfbf75d5cca
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560438"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377833"
 ---
 # <a name="diskpart-commands"></a>DiskPart コマンド
 
@@ -18,7 +18,7 @@ ms.locfileid: "69560438"
 
 DiskPart コマンドを使用すると、PC のドライブ (ディスク、パーティション、ボリューム、または仮想ハードディスク) を管理できます。 DiskPart コマンドを使用するには、まず、オブジェクトを一覧表示してから、フォーカスを与えるオブジェクトを選択する必要があります。 オブジェクトにフォーカスがある場合、入力した DiskPart コマンドはそのオブジェクトに対して動作します。
 
-**List disk、list volume、list partition**、および**list vdisk**コマンドを使用して、使用可能なオブジェクトの一覧を表示し、オブジェクトの番号またはドライブ文字を特定できます。 **List disk、list vdisk** 、および**list volume**コマンドは、コンピューター上のすべてのディスクとボリュームを表示します。 ただし、 **list partition**コマンドは、フォーカスのあるディスク上のパーティションのみを表示します。 **List**コマンドを使用すると、フォーカスがある\*オブジェクトの横にアスタリスク () が表示されます。
+**List disk、list volume、list partition**、および**list vdisk**コマンドを使用して、使用可能なオブジェクトの一覧を表示し、オブジェクトの番号またはドライブ文字を特定できます。 **List disk、list vdisk** 、および**list volume**コマンドは、コンピューター上のすべてのディスクとボリュームを表示します。 ただし、 **list partition**コマンドは、フォーカスのあるディスク上のパーティションのみを表示します。 **List**コマンドを使用すると、フォーカスがあるオブジェクトの横にアスタリスク (\*) が表示されます。
 
 オブジェクトを選択すると、別のオブジェクトを選択するまでフォーカスがそのオブジェクトに残ります。 たとえば、フォーカスがディスク0に設定されていて、ディスク2で [ボリューム 8] を選択した場合、フォーカスはディスク0からディスク2のボリューム8に移ります。 一部のコマンドでは、フォーカスが自動的に変更されます。 たとえば、新しいパーティションを作成すると、フォーカスは自動的に新しいパーティションに切り替わります。
 
@@ -39,7 +39,7 @@ Diskpart コマンドインタープリターでは、次のコマンドを実�
       
   - [[追加]](add.md)  
       
-  - [Assign](assign.md)  
+  - [割り当てる](assign.md)  
       
   - [Vdisk のアタッチ](attach-vdisk.md)  
       
@@ -47,7 +47,7 @@ Diskpart コマンドインタープリターでは、次のコマンドを実�
       
   - [オートマ](automount.md)  
       
-  - [Break](break.md)  
+  - [改](break.md)  
       
   - [中身](clean.md)  
       
@@ -81,7 +81,7 @@ Diskpart コマンドインタープリターでは、次のコマンドを実�
       
   - [稼動](inactive.md)  
       
-  - [List](list.md)  
+  - [表](list.md)  
       
   - [マージ vdisk](merge-vdisk.md)  
       

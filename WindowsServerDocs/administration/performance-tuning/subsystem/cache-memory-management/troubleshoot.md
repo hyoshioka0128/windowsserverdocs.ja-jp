@@ -1,18 +1,18 @@
 ---
 title: キャッシュとメモリマネージャーのパフォーマンスの問題のトラブルシューティング
 description: Windows Server 16 でのキャッシュとメモリマネージャーのパフォーマンスに関する問題のトラブルシューティング
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Pavel; ATales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 56871924311a945d62fef8a7ef7231889ba018cc
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: d55ad122048a8b180c9d12abe03666b796c3e9b5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866404"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370006"
 ---
 # <a name="troubleshoot-cache-and-memory-manager-performance-issues"></a>キャッシュとメモリマネージャーのパフォーマンスの問題のトラブルシューティング
 

@@ -1,8 +1,8 @@
 ---
 title: ftype
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c29ca0aa027d11fa8f981134e5367021227d3096
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ce3f4c360269eb9cabd2cbef8abb89935923a595
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881683"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375816"
 ---
 # <a name="ftype"></a>ftype
 
 
 
-表示またはファイル名拡張子の関連付けで使用されているファイルの種類を変更します。 代入演算子を使用せずに使用する場合 (**=**)、 **ftype** 指定したファイルの種類に対して現在開いているコマンド文字列を表示します。 パラメーターを指定せずに使用する場合 **ftype** 開いているコマンド文字列が定義されているファイルの種類が表示されます。
+表示またはファイル名拡張子の関連付けで使用されているファイルの種類を変更します。 代入演算子を使用せずに使用する場合 ( **=** )、 **ftype** 指定したファイルの種類に対して現在開いているコマンド文字列を表示します。 パラメーターを指定せずに使用する場合 **ftype** 開いているコマンド文字列が定義されているファイルの種類が表示されます。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
@@ -38,11 +38,11 @@ ftype [<FileType>[=[<OpenCommandString>]]]
 
 |パラメーター|説明|
 |---------|-----------|
-|\<FileType>|表示または変更するファイルの種類を指定します。|
+|\<FileType >|表示または変更するファイルの種類を指定します。|
 |\<OpenCommandString >|指定したファイルの種類のファイルを開くときに使用する開いているコマンド文字列を指定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 次の表方法 **ftype** [開く] コマンド文字列内の変数に置換します。
 
@@ -50,8 +50,8 @@ ftype [<FileType>[=[<OpenCommandString>]]]
 |--------|-----------------|
 |%0 または %1|アソシエーションを起動して、ファイル名と置き換えを取得します。|
 |%*|すべてのパラメーターを取得します。|
-|%2, %3, ...|最初のパラメーター (%2)、2 番目のパラメーター (%3) およびなどを取得します。|
-|%~\<N>|以降で、残りのパラメーターのすべてを取得、 *N*番目のパラメーター位置 *N* 2 ~ 9 の任意の数値を指定できます。|
+|% 2、% 3、...|最初のパラメーター (%2)、2 番目のパラメーター (%3) およびなどを取得します。|
+|%~ @ NO__T-1N >|以降で、残りのパラメーターのすべてを取得、 *N*番目のパラメーター位置 *N* 2 ~ 9 の任意の数値を指定できます。|
 
 ## <a name="BKMK_examples"></a>例
 
@@ -83,4 +83,4 @@ set PATHEXT=.pl;%PATHEXT%
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

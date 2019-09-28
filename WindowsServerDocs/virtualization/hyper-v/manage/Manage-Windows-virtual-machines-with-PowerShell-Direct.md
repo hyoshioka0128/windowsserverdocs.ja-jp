@@ -1,7 +1,7 @@
 ---
-title: PowerShell ダイレクトでの Windows 仮想マシンを管理します。
-description: PowerShell Direct を使用して、ネットワーク接続またはリモートの接続に依存することがなく仮想マシンを管理する方法を説明します。
-ms.prod: windows-server-threshold
+title: PowerShell Direct を使用して Windows 仮想マシンを管理する
+description: PowerShell Direct を使用して仮想マシンを管理する手順について説明します。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,18 +11,18 @@ ms.assetid: b5715c02-a90f-4de9-a71e-0fc09093ba2d
 author: KBDAzure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 4081a9737825d2f50f0d3b19b3bada3b9bbc76f1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f42e221b073cf199117f85ea96beef4997bbbbc5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814703"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392745"
 ---
-# <a name="manage-windows-virtual-machines-with-powershell-direct"></a>PowerShell ダイレクトでの Windows 仮想マシンを管理します。
+# <a name="manage-windows-virtual-machines-with-powershell-direct"></a>PowerShell Direct を使用して Windows 仮想マシンを管理する
 
 >適用先:Windows 10、Windows Server 2016、Windows Server 2019
   
-PowerShell Direct を使用すると、Windows 10、Windows Server 2016 または Windows Server 2019 の HYPER-V ホストから Windows 10、Windows Server 2016 または Windows Server 2019 仮想マシンをリモートで管理します。 PowerShell ダイレクトでネットワーク構成またはいずれかの HYPER-V ホスト上のリモート管理設定に関係なくまたは仮想マシン内の Windows PowerShell の管理ができます。 これを使うと、Hyper-V 管理者が仮想マシンの管理や設定を容易に自動化したり、スクリプトを作成したりすることができます。  
+PowerShell Direct を使用すると、windows 10、windows Server 2016、または Windows Server 2019 Hyper-v ホストから、windows 10、Windows Server 2016、または Windows Server 2019 の仮想マシンをリモートで管理できます。 PowerShell Direct を使用すると、Hyper-v ホストまたは仮想マシンのいずれかのネットワーク構成またはリモート管理設定に関係なく、仮想マシン内で Windows PowerShell を管理できます。 これを使うと、Hyper-V 管理者が仮想マシンの管理や設定を容易に自動化したり、スクリプトを作成したりすることができます。  
   
 PowerShell ダイレクトを実行するには、次の 2 つの方法があります。  
   
@@ -36,7 +36,7 @@ PowerShell ダイレクトを実行するには、次の 2 つの方法があり
   
 1. Hyper-V ホストで、管理者として Windows PowerShell を開きます。  
   
-2. 使用して、 [Enter-pssession](https://technet.microsoft.com/library/hh849707.aspx)コマンドレットを仮想マシンに接続します。 仮想マシンの名前または GUID を使用してセッションを作成するには、次のコマンドのいずれかを実行します。  
+2. 仮想マシンに接続するには、 [PSSession](https://technet.microsoft.com/library/hh849707.aspx)コマンドレットを使用します。 次のコマンドのいずれかを実行して、仮想マシン名または GUID を使用してセッションを作成します。  
   
     ```  
     Enter-PSSession -VMName <VMName>  
@@ -46,10 +46,10 @@ PowerShell ダイレクトを実行するには、次の 2 つの方法があり
     Enter-PSSession -VMGUID <VMGUID>  
     ```  
   
-3. 仮想マシン用の資格情報を入力します。   
+3. 仮想マシンの資格情報を入力します。   
 4. 必要なコマンドを実行します。 これらのコマンドは、セッションを作成した仮想マシン上で実行されます。  
   
-5.  完了したらを使用して、 [Exit-pssession](https://technet.microsoft.com/library/hh849743.aspx)セッションを閉じます。   
+5.  完了したら、[出口](https://technet.microsoft.com/library/hh849743.aspx)を使用してセッションを終了します。   
   
     ```  
     Exit-PSSession  
@@ -62,7 +62,7 @@ PowerShell ダイレクトを実行するには、次の 2 つの方法があり
 Invoke-Command -VMName PSTest  -FilePath C:\script\foo.ps1  
 ```  
   
-1 つのコマンドを使用するには、**-ScriptBlock** パラメーターを使用します。  
+1 つのコマンドを使用するには、 **-ScriptBlock** パラメーターを使用します。  
   
 ```  
 Invoke-Command -VMName PSTest  -ScriptBlock { cmdlet }  
@@ -77,16 +77,16 @@ Invoke-Command -VMName PSTest  -ScriptBlock { cmdlet }
   
 -   仮想マシンの有効なユーザー資格情報を指定する必要があります。  
   
--   少なくとも、ホスト オペレーティング システムを実行する必要があります Windows 10 または Windows Server 2016。
+-   ホストオペレーティングシステムは、少なくとも Windows 10 または Windows Server 2016 を実行している必要があります。
   
--   仮想マシンを実行する必要があります、少なくとも Windows 10 または Windows Server 2016。  
+-   仮想マシンは Windows 10 または Windows Server 2016 以降を実行している必要があります。  
   
-使用することができます、 [GET-VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm)コマンドレットを使用する資格情報に HYPER-V 管理者の役割があることを確認し、ホスト上でローカルで実行し、起動した仮想マシンの一覧を取得します。  
+[GET VM](https://docs.microsoft.com/powershell/module/hyper-v/get-vm)コマンドレットを使用して、使用している資格情報が hyper-v の管理者ロールを持っていることを確認し、ホスト上でローカルに実行されている仮想マシンの一覧を取得して、起動します。  
   
 ## <a name="see-also"></a>関連項目  
-[Enter-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)  
-[Exit-pssession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession)  
-[Invoke-Command](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Invoke-Command)  
+[「-PSSession」と入力します。](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)  
+[終了-PSSession](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession)  
+[Invoke コマンド](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Invoke-Command)  
   
 
 

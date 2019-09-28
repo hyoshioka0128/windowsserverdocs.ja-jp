@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getfilestransferred
-description: Windows コマンド」のトピック**bitsadmin getfilestransferred** -指定したジョブの転送されたファイルの数を取得します。
+description: '**Bitsadmin getfilestransferred**の Windows コマンドに関するトピックでは、指定したジョブで転送されたファイルの数を取得します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5df7f2abfdad6780878b1f00da44c772eecf9fba
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d02d9d7bc216a5ad7ca922e716c368f64c4b9a44
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822263"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381602"
 ---
 # <a name="bitsadmin-getfilestransferred"></a>bitsadmin getfilestransferred
 
 
 
-指定したジョブの転送ファイルの数を取得します。
+指定したジョブで転送されたファイルの数を取得します。
 
 ## <a name="syntax"></a>構文
 
@@ -40,11 +40,11 @@ bitsadmin /GetFilesTransferred <Job>
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブで転送されるファイルの数を取得する*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブで転送されたファイルの数を取得します。
 ```
 C:\>bitsadmin /GetFilesTransferred myDownloadJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

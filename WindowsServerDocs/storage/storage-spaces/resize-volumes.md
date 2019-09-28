@@ -1,42 +1,42 @@
 ---
 title: 記憶域スペース ダイレクトのボリュームの拡張
-description: 記憶域スペース ダイレクトの Windows Admin Center と PowerShell を使用してボリュームのサイズを変更する方法。
-ms.prod: windows-server-threshold
+description: Windows 管理センターと PowerShell を使用して記憶域スペースダイレクトのボリュームのサイズを変更する方法。
+ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
 ms.date: 05/07/2019
-ms.openlocfilehash: 3be6a4cda20f4d7d7d881ad8a272dc38fd787bba
-ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
+ms.openlocfilehash: 20482fe1728b12d4fe56dcfa397352fbb4b4f981
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613227"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366092"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>記憶域スペース ダイレクトのボリュームの拡張
 > 適用対象:Windows Server 2019、Windows Server 2016
 
-このトピックでは上のボリュームのサイズを変更する手順、[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)Windows Admin Center を使用してクラスター。
+このトピックでは、Windows 管理センターを使用して[記憶域スペースダイレクト](storage-spaces-direct-overview.md)クラスター上のボリュームのサイズを変更する手順について説明します。
 
-ボリュームのサイズを変更する方法の簡単なビデオをご覧ください。
+ボリュームのサイズを変更する方法に関する簡単なビデオをご覧ください。
 
 > [!VIDEO https://www.youtube-nocookie.com/embed/hqyBzipBoTI]
 
-## <a name="extending-volumes-using-windows-admin-center"></a>Windows Admin Center を使用してボリュームを拡張します。
+## <a name="extending-volumes-using-windows-admin-center"></a>Windows 管理センターを使用したボリュームの拡張
 
-1. Windows Admin Center で、記憶域スペース ダイレクト クラスターに接続し、**ボリューム**から、**ツール**ウィンドウ。
-2. [ボリューム] ページで、選択、**インベントリ**タブ、およびサイズを変更するボリュームを選択します。
+1. Windows 管理センターで、記憶域スペースダイレクトクラスターに接続し、 **[ツール]** ウィンドウで **[ボリューム]** を選択します。
+2. ボリューム ページで、**インベントリ** タブを選択し、サイズを変更するボリュームを選択します。
 
-    ボリュームの詳細 ページで、ボリュームの記憶域容量が示されます。 ダッシュ ボードから直接、ボリュームの詳細ページを開くこともできます。 ダッシュ ボードの アラート ウィンドウでは、それを通知するボリュームの記憶域の容量が少なくなっています。 場合、アラートを選択し、**ボリュームに移動して**します。
+    ボリュームの詳細ページで、ボリュームの記憶域容量が示されます。 [ボリュームの詳細] ページは、ダッシュボードから直接開くこともできます。 ダッシュボードの アラート ウィンドウで、アラート を選択します。これにより、ボリュームの記憶域容量が不足している場合に通知され、**ボリュームに移行する** を選択します。
 
-4. ボリュームの詳細ページの上部にある次のように選択します。**サイズを変更する**します。
-5. 新しいサイズを入力し、**サイズを変更する**します。
+4. ボリュームの詳細ページの上部で、 **[サイズ変更]** を選択します。
+5. 新しいサイズを新しく入力し、 **[サイズ変更]** を選択します。
 
-    ボリュームの詳細 ページで、ボリュームの大きな記憶域容量が示されるように、およびダッシュ ボードのアラートをクリアします。
+    [ボリュームの詳細] ページには、ボリュームの記憶域の容量が大きいことが示され、ダッシュボードのアラートがクリアされます。
 
-## <a name="extending-volumes-using-powershell"></a>PowerShell を使用してボリュームの拡張
+## <a name="extending-volumes-using-powershell"></a>PowerShell を使用したボリュームの拡張
 
 ### <a name="capacity-in-the-storage-pool"></a>記憶域プールの容量
 
@@ -50,7 +50,7 @@ ms.locfileid: "65613227"
 
 ボリュームについてよく知るため、PowerShell で対応する名詞を使って **Get-** を実行してみます。
 
-例:
+以下に例を示します。
 
 ```PowerShell
 Get-VirtualDisk
@@ -134,14 +134,14 @@ $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).Si
 
 ![パーティションのサイズ変更](media/resize-volumes/Resize-Partition.gif)
 
-以上で作業は終了です。
+これで完了です。
 
 > [!TIP]
 > **Get-Volume** を実行して、ボリュームが新しいサイズになっていることを確認できます。
 
 ## <a name="see-also"></a>関連項目
 
-- [Windows Server 2016 での記憶域スペース ダイレクト](storage-spaces-direct-overview.md)
-- [記憶域スペース ダイレクトのボリュームの計画](plan-volumes.md)
-- [記憶域スペース ダイレクトのボリュームを作成します。](create-volumes.md)
-- [記憶域スペース ダイレクトのボリュームを削除します。](delete-volumes.md)
+- [Windows Server 2016 の記憶域スペースダイレクト](storage-spaces-direct-overview.md)
+- [記憶域スペースダイレクトのボリュームの計画](plan-volumes.md)
+- [記憶域スペースダイレクトでのボリュームの作成](create-volumes.md)
+- [記憶域スペースダイレクトのボリュームの削除](delete-volumes.md)

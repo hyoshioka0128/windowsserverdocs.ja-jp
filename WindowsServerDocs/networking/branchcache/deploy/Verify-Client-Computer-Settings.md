@@ -2,22 +2,22 @@
 title: クライアント コンピューターの設定を確認します。
 description: このトピックは、BranchCache 展開ガイドの Windows Server 2016、ブランチ オフィスに WAN 帯域幅使用量を最適化するために分散され、ホスト型キャッシュ モードで BranchCache を展開する方法を示しますの一部
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 31ea58b0-d407-4f62-8ec6-6a1b19174042
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: d628886186474d3f05d7961ca3d3b45b8bf12e73
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6d0adbf0db2d7888ca12ca49f50fc37baa8cbc16
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834053"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356508"
 ---
 # <a name="verify-client-computer-settings"></a>クライアント コンピューターの設定を確認します。
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
 この手順を使用すると、BranchCache のクライアント コンピューターが正しく構成されていることを確認します。  
   

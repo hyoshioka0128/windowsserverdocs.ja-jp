@@ -2,7 +2,7 @@
 title: nslookup
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84e3e9ee920f458ca775dd7b76d892f10ba2f992
-ms.sourcegitcommit: ee8e0b217be6f6b2532ee7265fb4be00c106e124
+ms.openlocfilehash: 6b47592be57d5999ac26465097490da266bd0aea
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70878117"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372698"
 ---
 # <a name="nslookup"></a>nslookup
 

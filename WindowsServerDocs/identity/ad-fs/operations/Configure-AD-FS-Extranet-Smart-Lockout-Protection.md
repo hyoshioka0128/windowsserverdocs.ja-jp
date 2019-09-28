@@ -7,14 +7,14 @@ ms.author: billmath
 manager: mtilman
 ms.date: 05/20/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8ddefae96806b50b0ab98f67b9313b85c577bb70
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9ef595cc98a95caca0f2043b011868e0573a5b19
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865828"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407709"
 ---
 # <a name="ad-fs-extranet-lockout-and-extranet-smart-lockout"></a>エクストラネットのロックアウトとエクストラネットのスマートロックアウトの AD FS
 

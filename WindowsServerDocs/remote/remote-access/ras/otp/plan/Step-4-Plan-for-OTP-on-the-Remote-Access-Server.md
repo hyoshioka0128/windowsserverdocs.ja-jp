@@ -1,9 +1,9 @@
 ---
-title: リモート アクセス サーバーで OTP を手順 4. プラン
-description: このトピックでは、ガイド Windows Server 2016 での OTP 認証を使用したリモート アクセスの展開の一部です。
+title: 手順4リモートアクセスサーバーで OTP を計画する
+description: このトピックは、「Windows Server 2016 で OTP 認証を使用してリモートアクセスを展開する」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,40 +12,40 @@ ms.topic: article
 ms.assetid: 4b97b2fd-767a-45c1-a64e-5b3edd0c8a47
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a22d58e8e775ae341691cab1f5b40f8121ea533f
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: cc833ea2ae5d24754a445d6c1252f21a59cc6f13
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282383"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404385"
 ---
-# <a name="step-4-plan-for-otp-on-the-remote-access-server"></a>リモート アクセス サーバーで OTP を手順 4. プラン
+# <a name="step-4-plan-for-otp-on-the-remote-access-server"></a>手順4リモートアクセスサーバーで OTP を計画する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-ワンタイム パスワード (OTP) の RADIUS サーバーおよび証明書の設定の計画、後にリモート アクセスの OTP の展開を計画する最後の手順がリモート アクセス サーバーでクライアント OTP 設定の計画です。  
+ワンタイムパスワード (OTP) の RADIUS サーバーと証明書の設定を計画した後、リモートアクセス OTP の展開を計画するための最後の手順は、リモートアクセスサーバーでのクライアント OTP 設定を計画することです。  
   
 |タスク|説明|  
 |----|--------|  
-|[4.1 が OTP クライアントの除外対象を計画します。](#bkmk_4_1_Exemptions)|OTP を使用して認証を必要としないユーザーの除外を計画します。|  
-|[4.2 は、Windows 7 クライアントを計画します。](#bkmk_4_2_Win7)|Windows 7 クライアント コンピューターに、DirectAccess Connectivity Assistant (DCA) 2.0 を展開する予定です。|  
-|[4.3 スマート カードのプラン](#BKMK_smartcard)|追加の承認のスマート カードの使用を計画します。|  
+|[4.1 OTP クライアントの除外を計画する](#bkmk_4_1_Exemptions)|OTP を使用した認証を必要としないユーザーの除外を計画します。|  
+|[4.2 Windows 7 クライアントの計画](#bkmk_4_2_Win7)|DirectAccess Connectivity Assistant (DCA) 2.0 を Windows 7 クライアントコンピューターに展開することを計画します。|  
+|[4.3 スマートカードの計画](#BKMK_smartcard)|追加の承認にスマートカードを使用することを計画します。|  
   
-## <a name="bkmk_4_1_Exemptions"></a>4.1 が OTP クライアントの除外対象を計画します。  
-OTP 認証を有効にすると、既定ではすべてのユーザーはユーザー名とパスワードおよび OTP 資格情報の組み合わせを使用して認証を要求します。 ただし、OTP せず、ユーザー名とパスワードのみを使用して認証を選択したユーザーを許可することができます。 これを行うには、セキュリティ グループを作成しに OTP 認証から除外するユーザーを追加します。  
+## <a name="bkmk_4_1_Exemptions"></a>4.1 OTP クライアントの除外を計画する  
+OTP 認証が有効になっている場合、既定では、ユーザー名とパスワード、および OTP 資格情報の組み合わせを使用して認証する必要があります。 ただし、選択したユーザーに対して、ユーザー名とパスワードのみを使用した認証を許可することができます (OTP は不要)。 これを行うには、セキュリティグループを作成し、OTP 認証から除外するユーザーを追加します。  
   
 > [!NOTE]  
-> という事実により、単一フォレストからのクライアント コンピュータのみを除外することがありますクライアントの除外対象にその 1 つだけのセキュリティ グループを選択できます。  
+> クライアントの除外対象として選択できるセキュリティグループは1つだけであるため、1つのフォレストのクライアントコンピューターのみを除外することができます。  
   
-## <a name="bkmk_4_2_Win7"></a>4.2 は、Windows 7 クライアントを計画します。  
-既定では、Windows 7 クライアント コンピューターは、OTP を使用して認証できません。  Windows 7 クライアント コンピューターでは、Windows Server 2012 のリモート アクセス展開で OTP を使用して認証に DCA 2.0 が必要です。 DCA 2.0 の詳細については、次を参照してください。 [DirectAccess Connectivity Assistant 2.0](https://go.microsoft.com/fwlink/?LinkId=253699) 、Microsoft ダウンロード センター。  
+## <a name="bkmk_4_2_Win7"></a>4.2 Windows 7 クライアントの計画  
+既定では、Windows 7 クライアントコンピューターは OTP を使用した認証を行うことができません。  Windows 7 クライアントコンピューターでは、Windows Server 2012 リモートアクセス展開で OTP を使用して認証を行うには、DCA 2.0 が必要です。 DCA 2.0 の詳細については、Microsoft ダウンロードセンターの「 [DirectAccess Connectivity Assistant 2.0](https://go.microsoft.com/fwlink/?LinkId=253699) 」を参照してください。  
   
-## <a name="BKMK_smartcard"></a>4.3 スマート カードのプラン  
-OTP 認証が有効にすると、追加の承認のスマート カードの使用を有効にするオプションは、使用します。 ユーザーのスマート カードが機能していないことに、一時的なアクセスを許可するセキュリティ グループを作成します。  
+## <a name="BKMK_smartcard"></a>4.3 スマートカードの計画  
+OTP 認証が有効になっている場合、追加の承認にスマートカードを使用できるようにするオプションがあります。 ユーザーのスマートカードが機能していない場合に、一時的なアクセスを許可するセキュリティグループを作成します。  
   
-## <a name="BKMK_Links"></a>参照してください。  
+## <a name="BKMK_Links"></a>関連項目  
   
--   [OTP 認証を使用した DirectAccess を構成します。](https://technet.microsoft.com/windows-server-docs/networking/remote-access/ras/otp/deploy-ra-otp)  
+-   [OTP 認証を使用して DirectAccess を構成する](https://technet.microsoft.com/windows-server-docs/networking/remote-access/ras/otp/deploy-ra-otp)  
   
 
 

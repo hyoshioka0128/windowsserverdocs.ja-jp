@@ -1,43 +1,43 @@
 ---
-title: ファイル共有の SMB 3 プロトコルを使用して、Windows server の概要
-description: ファイル共有と Windows Server でのファイル サービングの SMB 3 プロトコルの使用の概要。
-ms.prod: windows-server-threshold
+title: Windows Server の SMB 3 プロトコルを使用したファイル共有の概要
+description: Windows Server でのファイル共有とファイルサービスのための SMB 3 プロトコルの使用の概要について説明します。
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: fc4c8b341ee78db80f862ee412400f0a930fe810
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b40c179d242a0c48c6eb176db1225979f9e6a123
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845053"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402091"
 ---
-# <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>ファイル共有の SMB 3 プロトコルを使用して、Windows server の概要
+# <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>Windows Server の SMB 3 プロトコルを使用したファイル共有の概要
 
 >適用対象:Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
 
-このトピックでは、Windows Server® 2012、Windows Server 2012 R2、および Windows Server 2016 での SMB 3.0 の機能を説明します、実用的な新しい機能は、最も重要な使用または更新された以前のバージョンとハードウェアを比較した場合、このバージョンの機能要件。
+このトピックでは、Windows Server®2012、Windows Server 2012 R2、および Windows Server 2016 の SMB 3.0 機能について説明します。この機能の実際の使用方法、このバージョンの新機能または更新された機能については、以前のバージョンと比較してください。必要性.
 
 ## <a name="feature-description"></a>機能の説明
 
-サーバー メッセージ ブロック (SMB) プロトコルはネットワーク ファイル共有プロトコルの一種で、コンピューターのアプリケーションがコンピューター ネットワーク上のサーバー プログラムに対してファイルの読み込みや書き込みを実行したり、サービスを要求したりする際に使用されます。 SMB プロトコルは、TCP/IP プロトコルをはじめとするネットワーク プロトコルの上位で使用できます。 SMB プロトコルを使えば、アプリケーション (またはアプリケーションのユーザー) がリモート サーバーにあるファイルなどのリソースにアクセスできます。 これにより、リモート サーバー上でアプリケーションがファイルを読み込み、作成、および更新できるようになります。 また、SMB クライアント リクエストを受け取ることができるように設定された任意のサーバー プログラムと通信できます。 Windows Server 2012 では、SMB プロトコルの新しいバージョンを 3.0 について説明します。
+サーバー メッセージ ブロック (SMB) プロトコルはネットワーク ファイル共有プロトコルの一種で、コンピューターのアプリケーションがコンピューター ネットワーク上のサーバー プログラムに対してファイルの読み込みや書き込みを実行したり、サービスを要求したりする際に使用されます。 SMB プロトコルは、TCP/IP プロトコルをはじめとするネットワーク プロトコルの上位で使用できます。 SMB プロトコルを使えば、アプリケーション (またはアプリケーションのユーザー) がリモート サーバーにあるファイルなどのリソースにアクセスできます。 これにより、リモート サーバー上でアプリケーションがファイルを読み込み、作成、および更新できるようになります。 また、SMB クライアント リクエストを受け取ることができるように設定された任意のサーバー プログラムと通信できます。 Windows Server 2012 では、SMB プロトコルの新しい3.0 バージョンが導入されています。
 
 ## <a name="practical-applications"></a>実際の適用例
 
 このセクションでは、この新しい SMB 3.0 プロトコルの実際の使用法をいくつか説明します。
 
-* **仮想化用のファイル ストレージ (Hyper-V™ over SMB)**。 Hyper-V では、SMB 3.0 プロトコルを使って構成ファイル、仮想ハード ディスク (VHD) ファイル、スナップショットなどの仮想マシン ファイルをファイル共有に格納できます。 この機能はスタンドアロン型ファイル サーバーで使用できますが、Hyper-V を使っており、かつクラスターに共有ファイル ストレージを使っていれば、クラスター化されたファイル サーバーでも使用できます。
+* **仮想化用のファイル ストレージ (Hyper-V™ over SMB)** 。 Hyper-V では、SMB 3.0 プロトコルを使って構成ファイル、仮想ハード ディスク (VHD) ファイル、スナップショットなどの仮想マシン ファイルをファイル共有に格納できます。 この機能はスタンドアロン型ファイル サーバーで使用できますが、Hyper-V を使っており、かつクラスターに共有ファイル ストレージを使っていれば、クラスター化されたファイル サーバーでも使用できます。
 * **Microsoft SQL Server over SMB**。 SQL Server は、SMB を使用するファイル共有にユーザーのデータベース ファイルを格納できます。 この機能は現在、スタンドアロン型 SQL サーバー向けの SQL Server 2008 R2 でサポートされています。 クラスター化された SQL サーバーとシステム データベースのサポートについては、SQL Server の今後のバージョンで追加する予定です。
 * **エンド ユーザー データの従来型ストレージ**。 SMB 3.0 プロトコルは、インフォメーション ワーカー (つまりクライアント) の作業効率を改善します。 たとえば、ブランチ オフィスのユーザーがワイド エリア ネットワーク (WAN) 経由でデータにアクセスする際のアプリケーション待ち時間を短縮したり、データの傍受からの保護したりします。
 
 ## <a name="new-and-changed-functionality"></a>新機能と変更された機能
 
-Windows Server 2012 R2 で新しくなった機能については、次を参照してください。 [Windows Server での SMB の新](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>)します。
+Windows Server 2012 R2 の新機能および変更された機能の詳細については、「 [Windows server の SMB の新](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)>)機能」を参照してください。
 
-Windows Server 2012 および Windows Server 2016 での SMB には、次の表に、新しい SMB 3.0 プロトコルと説明されている多くの新しい機能強化が含まれます。
+Windows Server 2012 および Windows Server 2016 の SMB には、新しい SMB 3.0 プロトコルと、次の表で説明されている多くの新しい機能強化が含まれています。
 
 <table>
 <colgroup>
@@ -49,7 +49,7 @@ Windows Server 2012 および Windows Server 2016 での SMB には、次の表�
 <tr class="header">
 <th><p>機能</p></th>
 <th><p>新規/更新</p></th>
-<th><p>概要</p></th>
+<th><p>まとめ</p></th>
 </tr>
 </thead>
 <tbody>
@@ -105,32 +105,32 @@ Windows Server 2012 および Windows Server 2016 での SMB には、次の表�
 
 SMB 透過フェールオーバーには、次の要件があります。
 
-* 構成されている少なくとも 2 つのノードで Windows Server 2012 または Windows Server 2016 を実行しているフェールオーバー クラスター。 このクラスターは、検証ウィザードのクラスター検証テストに合格している必要があります。
+* 少なくとも2つのノードが構成された Windows Server 2012 または Windows Server 2016 を実行しているフェールオーバークラスター。 このクラスターは、検証ウィザードのクラスター検証テストに合格している必要があります。
 * ファイル共有が "継続的可用性 (CA)" プロパティで作成されていること。これは既定の設定です。
 * SMB のスケールアウトができるように、CSV のボリューム パスにファイル共有を作成していること。
-* Windows® 8 または Windows Server 2012、継続的な可用性をサポートする最新の SMB クライアントを含めるは、クライアント コンピューターを実行する必要があります。
+* クライアントコンピューターは、Windows®8または Windows Server 2012 を実行している必要があります。どちらにも、継続的な可用性をサポートする更新された SMB クライアントが含まれています。
 
 >[!NOTE]
->下位レベル クライアントは、CA プロパティを持つファイル共有に接続できますが、透過フェールオーバーは、これらのクライアントはサポートされません。
+>下位クライアントは、CA プロパティが設定されているファイル共有に接続できますが、透過的なフェールオーバーはこれらのクライアントではサポートされません。
 
 SMB マルチチャネルの要件は次のとおりです。
 
-* Windows Server 2012 を実行している少なくとも 2 つのコンピューターが必要です。 余分な機能をインストールする必要はありません — テクノロジが既定でオンです。
+* 少なくとも2台のコンピューターが Windows Server 2012 を実行している必要があります。 追加の機能をインストールする必要はありません。テクノロジは既定でオンになっています。
 * 推奨されるネットワーク構成については、この概要トピックの最後にある「関連項目」を参照してください。
 
 SMB ダイレクトの要件は次のとおりです。
 
-* Windows Server 2012 を実行している少なくとも 2 つのコンピューターが必要です。 余分な機能をインストールする必要はありません — テクノロジが既定でオンです。
+* 少なくとも2台のコンピューターが Windows Server 2012 を実行している必要があります。 追加の機能をインストールする必要はありません。テクノロジは既定でオンになっています。
 * RDMA 機能搭載のネットワーク アダプター。 ネットワーク アダプターは現在、iWARP、Infiniband、RoCE (RDMA over Converged Ethernet) の 3 種類が使用できます。
 
 ## <a name="more-information"></a>詳細情報
 
-SMB テクノロジと Windows Server 2012 R2、Windows Server 2012、および Windows Server 2016 での関連テクノロジに関する web 上の他のリソースを次に示します。
+次の一覧は、Windows Server 2012 R2、Windows Server 2012、および Windows Server 2016 の SMB および関連テクノロジに関する web 上のその他のリソースを示しています。
 
-* [Windows Server でのストレージ](../storage.md)
-* [アプリケーション データ用のスケール アウト ファイル サーバー](../../failover-clustering/sofs-overview.md)
-* [直接 SMB でファイル サーバーのパフォーマンスを向上させる](smb-direct.md)
-* [SMB 経由での Hyper V を展開します。](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
-* [SMB マルチ チャネルを展開します。](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
-* [サーバー アプリケーションの高速で効率的なファイル サーバーを展開します。](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
-* [SMB:トラブルシューティング ガイド](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)
+* [Windows Server の記憶域](../storage.md)
+* [アプリケーションデータのスケールアウトファイルサーバー](../../failover-clustering/sofs-overview.md)
+* [SMB ダイレクトを使用してファイルサーバーのパフォーマンスを向上させる](smb-direct.md)
+* [Hyper-v over SMB の展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+* [SMB マルチチャネルを展開する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
+* [サーバーアプリケーション用の高速で効率的なファイルサーバーの展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
+* [SMB:トラブルシューティングガイド @ no__t-0

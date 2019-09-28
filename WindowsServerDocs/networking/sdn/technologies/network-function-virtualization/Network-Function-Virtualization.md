@@ -1,9 +1,9 @@
 ---
 title: ネットワーク機能の仮想化
-description: このトピックを使用すると、データ センターのファイアウォールでは、マルチ テナントの RAS ゲートウェイ、およびソフトウェア負荷分散 (SLB) Windows Server 2016 でのように仮想ネットワーク アプライアンスをデプロイすることができますネットワーク関数仮想化について説明します。
+description: このトピックでは、ネットワーク機能の仮想化について説明します。これにより、Windows Server 2016 で Datacenter Firewall、マルチテナント RAS ゲートウェイ、ソフトウェア負荷分散 (SLB) などの仮想ネットワークアプライアンスを展開することができます。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -12,31 +12,31 @@ ms.topic: article
 ms.assetid: 79df3bbe-48fd-4eff-8df6-35f6317566f3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 59474a13d1cbce6a607f025caf3f6c1b839c7eed
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 338d5a285f2524932a91a66db186554cd0f50e2a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884553"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355660"
 ---
 # <a name="network-function-virtualization"></a>ネットワーク機能の仮想化
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックを使用するには、データ センターのファイアウォール、マルチ テナント RAS ゲートウェイ、およびソフトウェアの負荷分散などの仮想ネットワーク アプライアンスをデプロイすることができますネットワーク関数仮想化の詳細について\(SLB\)マルチプレクサー\(MUX\)します。
+このトピックでは、ネットワーク機能の仮想化について説明します。これにより、データセンターのファイアウォール、マルチテナント RAS ゲートウェイ、ソフトウェア負荷分散 \(SLB @ no__t マルチプレクサー \(MUX @ no_ のような仮想ネットワークアプライアンスを展開できます。_t-3。
   
 >[!NOTE]  
 >このトピックに加え、次のネットワーク機能の仮想化のドキュメントは使用できます。  
-> - [データ センターのファイアウォールの概要](../../../sdn/technologies/network-function-virtualization/../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)  
+> - [Datacenter Firewall の概要](../../../sdn/technologies/network-function-virtualization/../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)  
 > - [SDN の RAS ゲートウェイ](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)  
-> - [ソフトウェアの負荷分散 (SLB) SDN](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)  
+> - [SDN のソフトウェア負荷分散 (SLB)](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)  
   
-今日のソフトウェアで定義されているデータ センター、(ロード バランサー、ファイアウォール、ルーター、スイッチ、およびなど) などのハードウェア アプライアンスで実行されているネットワークの機能がますますされている仮想化仮想アプライアンスとして。 この「ネットワーク機能の仮想化」は、サーバーの仮想化とネットワーク仮想化の自然な流れです。 仮想アプライアンスは迅速に新たなと、新しい市場を作成します。 常に興味を引くと両方の仮想化プラットフォームで運動量を取得し、クラウド サービスです。  
+今日のソフトウェアで定義されているデータ センター、(ロード バランサー、ファイアウォール、ルーター、スイッチ、およびなど) などのハードウェア アプライアンスで実行されているネットワークの機能がますますされている仮想化仮想アプライアンスとして。 この「ネットワーク機能の仮想化」は、サーバーの仮想化とネットワーク仮想化の自然な流れです。 仮想アプライアンスが急速に登場し、新しい市場が作成されます。 常に興味を引くと両方の仮想化プラットフォームで運動量を取得し、クラウド サービスです。  
   
 Microsoft には、Windows Server 2012 R2 で始まる仮想アプライアンスとしてスタンドアロン ゲートウェイが含まれています。 詳細については、「 [Windows Server ゲートウェイ](https://technet.microsoft.com/library/dn313101.aspx)」を参照してください。 今すぐ Windows Server 2016 microsoft を展開し、ネットワーク機能の仮想化市場への投資を続行します。  
   
 ## <a name="virtual-appliance-benefits"></a>仮想アプライアンスの利点  
-仮想アプライアンスは、動的かつ簡単にカスタマイズした、事前構成済みの仮想マシンのため、変更です。 1 つまたは複数の仮想マシンをパッケージ化、更新、および単位として管理できます。 ネットワーク (SDN) を定義したソフトウェアと連携して、機敏性と柔軟性今日のクラウド ベースのインフラストラクチャにします。 次に、例を示します。  
+仮想アプライアンスは、動的かつ簡単にカスタマイズした、事前構成済みの仮想マシンのため、変更です。 1 つまたは複数の仮想マシンをパッケージ化、更新、および単位として管理できます。 ネットワーク (SDN) を定義したソフトウェアと連携して、機敏性と柔軟性今日のクラウド ベースのインフラストラクチャにします。 以下に例を示します。  
   
 -   SDN は、プールされたおよび動的なリソースとして、ネットワークを表示します。  
   
@@ -59,7 +59,7 @@ Microsoft SDN の詳細については、次を参照してください。 [ソ�
 ### <a name="what-network-functions-are-being-virtualized"></a>どのようなネットワーク機能が仮想化されているか。  
 仮想化されたネットワーク機能の市場はすぐに増加しています。 次のネットワーク機能を仮想化します。  
   
--   **セキュリティ**  
+-   **Security**  
   
     -   ファイアウォール  
   
@@ -69,9 +69,9 @@ Microsoft SDN の詳細については、次を参照してください。 [ソ�
   
     -   Ip アドレス/ID (侵入防止システム/侵入検出システム)  
   
--   **アプリケーションと WAN の最適化**  
+-   **アプリケーション/WAN オプティマイザー**  
   
--   **Edge**  
+-   **自動**  
   
     -   サイト間ゲートウェイ  
   
@@ -105,29 +105,29 @@ Microsoft プラットフォームが最適なプラットフォームをビル�
 ### <a name="virtual-appliances-functions-provided-by-microsoft"></a>Microsoft によって提供される仮想アプライアンス関数  
 Windows Server 2016 では、次の仮想アプライアンスが用意されています。  
   
-**ソフトウェア ロード バランサー**  
+**ソフトウェアロードバランサー**  
   
 データ センターのスケールで動作している 4 層のロード バランサーです。 これは、Azure 環境内で大規模に展開されている Azure のロード バランサーのようなバージョンです。 Microsoft ソフトウェア ロード バランサーの詳細については、次を参照してください。 [ソフトウェア負荷分散 (SLB) SDN の](https://technet.microsoft.com/library/mt632286.aspx)です。 Microsoft Azure の負荷分散サービスの詳細については、次を参照してください。 [Microsoft Azure の負荷分散サービス](https://azure.microsoft.com/blog/2014/04/08/microsoft-azure-load-balancing-services/)します。  
   
 **ゲートウェイ**します。 RAS ゲートウェイは、次のゲートウェイの機能のすべての組み合わせを提供します。  
   
--   **サイト間ゲートウェイ**  
+-   **サイト対サイトゲートウェイ**  
   
     RAS ゲートウェイは、ボーダー ゲートウェイ プロトコル (BGP) の対応、マルチ テナント ゲートウェイにアクセスして、リモート サイトからサイト間 VPN 接続経由で、リソースを管理するテナントを使用して、クラウドおよびテナントの物理ネットワーク内の仮想リソース間のネットワーク トラフィック フローを許可します。 RAS ゲートウェイの詳細については、次を参照してください。 [RAS ゲートウェイの高可用性](https://technet.microsoft.com/library/mt631692.aspx) と [RAS ゲートウェイ](https://technet.microsoft.com/library/mt626650.aspx)します。  
   
--   **転送ゲートウェイ**  
+-   **ゲートウェイの転送**  
   
     RAS ゲートウェイは、仮想ネットワークとプロバイダーのホストの物理ネットワーク間のトラフィックをルーティングします。 たとえば、テナントが 1 つまたは複数の仮想ネットワークを作成、ホスティング プロバイダーで物理ネットワーク上の共有リソースへのアクセスを必要がある場合は、転送ゲートウェイは、仮想ネットワークとユーザーが必要なサービスと仮想ネットワーク上の操作を提供する物理ネットワーク間のトラフィックをルーティングできます。 詳細については、次を参照してください。 [RAS ゲートウェイの高可用性](https://technet.microsoft.com/library/mt631692.aspx) と [RAS ゲートウェイ](https://technet.microsoft.com/library/mt626650.aspx)します。  
   
--   **GRE トンネル ゲートウェイ**  
+-   **GRE トンネルゲートウェイ**  
   
     GRE ベースのトンネルにより、テナントの仮想ネットワークと外部ネットワーク間の接続が可能になります。 GRE プロトコルは、軽量で、サポートは GRE はほとんどのネットワーク デバイスで利用可能であるため、データの暗号化は必要ありませんトンネリングにとって最適な選択肢になります。 サイト間 (S2S) トンネルの GRE サポートは、マルチテナント ゲートウェイを使用して、テナントの仮想ネットワークとテナントの外部ネットワーク間の転送の問題を解決します。 GRE トンネルの詳細については、次を参照してください。 [GRE は、Windows Server 2016 でトンネリング](https://technet.microsoft.com/library/dn765485.aspx)します。  
   
-**Bgp のルーティングの制御プレーン**  
+**BGP を使用したルーティングコントロールプレーン**  
   
 HYPER-V ネットワーク仮想化 (HNV) ルーティング コントロールは、すべての顧客の住所平面ルートを実行し、動的には学習を仮想ネットワークには、分散の RAS ゲートウェイ ルーターを更新する制御平面に論理的で一元的なエンティティです。 詳細については、次を参照してください。 [RAS ゲートウェイの高可用性](https://technet.microsoft.com/library/mt631692.aspx) と [RAS ゲートウェイ](https://technet.microsoft.com/library/mt626650.aspx)します。  
   
-**分散型のマルチ テナント ファイアウォール**  
+**分散マルチテナントファイアウォール**  
   
 ファイアウォールは、仮想ネットワークのネットワーク層を保護します。 各テナント VM の SDN vSwitch ポートでは、ポリシーが適用されます。 すべてのトラフィック フローが保護: 東西部と北南です。 ポリシーは、テナント ポータルを介してプッシュし、ネットワーク コント ローラーに適用可能なすべてのホストに整列します。 分散型のマルチ テナント ファイアウォールの詳細については、次を参照してください。 [データ センターのファイアウォールの概要](../../../sdn/technologies/network-function-virtualization/../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)します。  
   

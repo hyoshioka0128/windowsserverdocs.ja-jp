@@ -1,9 +1,9 @@
 ---
 title: Microsoft Azure と SDN
-description: このトピックを使用すると、Microsoft Azure で提供されるソフトウェア定義ネットワーク (SDN) テクノロジについて説明します。
+description: このトピックでは、Microsoft Azure に用意されているソフトウェアによるネットワーク制御 (SDN) テクノロジについて説明します。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -12,21 +12,21 @@ ms.topic: article
 ms.assetid: 79e87013-7f27-4031-8383-288bcb291731
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4988285ab19d8d3a5e2880a75386ead7eef8b731
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ea279a6131c06d5bb991edbbf22c1ba0d5ffc592
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864833"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406146"
 ---
 # <a name="microsoft-azure-and-software-defined-networking"></a>Microsoft Azure とソフトウェア定義ネットワーク
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-Microsoft Azure は、Microsoft のクラウド プラットフォーム: コンピューティング、ストレージ、データ、ネットワー キング、およびアプリの高速で移動するための統合サービスの成長を続けるコレクション、およびコストを削減します。  
+Microsoft Azure は、Microsoft のクラウドプラットフォームです。これは、コンピューティング、ストレージ、データ、ネットワーク、アプリといった統合サービスのコレクションであり、より迅速に移行し、より多くの作業を行い、コストを節約するのに役立ちます。  
   
-ソフトウェア定義ネットワークに対する Microsoft のアプローチには、設計、構築、および Microsoft Azure などのサービスの世界規模のデータ センター ネットワークの操作が含まれています。 Microsoft Azure のグローバル データ センターでは、毎日数万件のネットワーク変更が行われていますが、これはソフトウェア定義ネットワークがなければ実現できないことです。  
+Microsoft によるソフトウェア定義ネットワークのアプローチには、Microsoft Azure などのサービスのためのグローバルなデータセンターネットワークの設計、構築、および運用が含まれます。 Microsoft Azure のグローバル データ センターでは、毎日数万件のネットワーク変更が行われていますが、これはソフトウェア定義ネットワークがなければ実現できないことです。  
   
-Microsoft Azure は、Windows Server や、Windows Server に含まれている Hyper-V と同じプラットフォーム上で実行されます。 Windows Server および System Center の柔軟性、自動化、およびコントロールと同じテクノロジをデプロイできるようにする Microsoft Azure などのグローバルなスケール データ センターのネットワークの運用に、機能強化とマイクロソフトの経験からのベスト プラクティスを含めるときにソフトウェアを使用するには、ネットワーク テクノロジ設計されています。  
+Microsoft Azure は、Windows Server や、Windows Server に含まれている Hyper-V と同じプラットフォーム上で実行されます。 Windows Server と System Center には、Microsoft Azure のようにグローバルなデータセンター ネットワークを運営する Microsoft の経験を活かした機能改善やベスト プラクティスが含まれています。そのためお客様は、ソフトウェアによるネットワーク テクノロジを使用する際に、Microsoft と同じテクノロジをデプロイして優れた柔軟性、自動化機能、および制御機能を実現できます。  
   
-詳細については、次を参照してください。 [Microsoft Azure とは何ですか?](https://azure.microsoft.com/overview/what-is-azure/?WT.mc_id=azurebg_us_sem_bing_br_nontest_whatisazure_whatisazure&WT.srch=1)します。  
+詳細については、「 [Microsoft Azure とは](https://azure.microsoft.com/overview/what-is-azure/?WT.mc_id=azurebg_us_sem_bing_br_nontest_whatisazure_whatisazure&WT.srch=1)」を参照してください。  

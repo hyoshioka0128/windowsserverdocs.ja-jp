@@ -7,25 +7,25 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 88513a889bc361f5733fc6b18f3d261dbcb2f1b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 995ba44a64ae022b52213b9c912f94144d4c2543
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876473"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369328"
 ---
 # <a name="ad-ds-troubleshooting"></a>AD FS のトラブルシューティング
 
 >適用先:Windows Server 2016、Windows Server 2012 R2
 
-このセクションには、トラブルシューティングの推奨事項とを診断するための手順が含まれていて、Active Directory のレプリケーションで発生する可能性の問題を修正します。
+ここでは、Active Directory レプリケーションで発生する可能性のある問題を診断および修正するためのトラブルシューティングの推奨事項と手順について説明します。
 
-このコンテンツは、ディレクトリ サービス イベント ログ メッセージと Repadmin.exe、Dcdiag.exe ツールによって報告される可能性がありますツール ベースのエラー メッセージを応答で主に重点を置いています。 これらのツールは、Windows Server 2016 を実行しているすべてのドメイン コント ローラーまたは 2012 R2 で使用できます。 Windows 10 を実行しているメンバー サーバーにリモート サーバー管理ツール (RSAT) をインストールすることもできます。
+このコンテンツでは、主に、Repadmin.exe および Dcdiag.exe ツールによって報告される可能性がある、ディレクトリサービスのイベントログメッセージとツールベースのエラーメッセージへの応答に焦点を当てています。 これらのツールは、Windows Server 2016 または 2012 R2 を実行しているすべてのドメインコントローラーで使用できます。 また、Windows 10 を実行しているメンバーサーバーにリモートサーバー管理ツール (RSAT) をインストールすることもできます。
 
-RSAT をインストールする方法の詳細については、この記事を参照してください。[リモート サーバー管理ツール](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools)します。
+RSAT のインストールの詳細については、「[リモートサーバー管理ツール](https://docs.microsoft.com/windows-server/remote/remote-server-administration-tools)」を参照してください。
 
-[Active Directory のトラブルシューティング用コンピューターの構成](../manage/troubleshoot/Configuring-a-Computer-for-Troubleshooting.md)
+[トラブルシューティングのためにコンピューターを構成する Active Directory](../manage/troubleshoot/Configuring-a-Computer-for-Troubleshooting.md)
 
-[Active Directory レプリケーションの問題のトラブルシューティング](../manage/troubleshoot/Troubleshooting-Active-Directory-Replication-Problems.md)
+[Active Directory レプリケーションの問題のトラブルシューティングに関するページ](../manage/troubleshoot/Troubleshooting-Active-Directory-Replication-Problems.md)
