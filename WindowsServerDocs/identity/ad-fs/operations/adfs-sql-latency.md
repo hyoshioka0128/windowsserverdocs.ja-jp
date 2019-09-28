@@ -6,14 +6,14 @@ ms.author: billmath
 manager: daveba
 ms.date: 06/20/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 29c8e8ba52f62a335ab136756e759b6114ecfb20
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 785ecd4de86c06dd12eb57e41efaa1103f2afdc5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865611"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357808"
 ---
 # <a name="fine-tuning-sql-and-addressing-latency-issues-with-ad-fs"></a>AD FS による SQL の微調整と待機時間に関する問題の解決
 [AD FS 2016](https://support.microsoft.com/help/4503294/windows-10-update-kb4503294)の更新では、データベース間の待機時間を削減するために、次の機能強化が導入されました。 AD FS 2019 の今後の更新プログラムには、これらの機能強化が含まれています。
@@ -51,7 +51,7 @@ AD FS によって SQL の変更のコールバックが登録され、変更時
  
 サポートされている追加の構成可能な値: 
 
-   - **maxRelyingPartyEntries** -AD FS がメモリに保持する証明書利用者エントリの最大数。 この値は、oAuth アプリケーションアクセス許可キャッシュでも使用されます。 RPs よりも多くのアプリケーションアクセス許可があり、すべてがメモリに格納される場合、この値はアプリケーションのアクセス許可の数である必要があります。 既定値は 1000 です。
+   - **maxRelyingPartyEntries** -AD FS がメモリに保持する証明書利用者エントリの最大数。 この値は、oAuth アプリケーションアクセス許可キャッシュでも使用されます。 RPs よりも多くのアプリケーションアクセス許可があり、すべてがメモリに格納される場合、この値はアプリケーションのアクセス許可の数である必要があります。 既定値は1000です。
    - **Maxidentity providerentries** -これは、AD FS がメモリに保持する要求プロバイダーエントリの最大数です。 既定値は200です。 
    - **Maxcliententries** -これは、AD FS がメモリに保持する OAuth クライアントエントリの最大数です。 既定値は 500 です。 
    - **Maxclaimdescriptor エントリ**-AD FS は、メモリ内に保持される要求記述子エントリの最大数を指定します。 既定値は 500 です。 

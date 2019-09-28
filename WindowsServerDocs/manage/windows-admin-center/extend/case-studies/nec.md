@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 04/01/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 76378f933a407bd8fa8993c5474e7d121581a27c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 9b238f25d856f42515ed93780de730ac672aa288
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869074"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357160"
 ---
 # <a name="nec-esmpro-extension"></a>NEC ESMPRO 拡張機能
 

@@ -6,14 +6,14 @@ ms.author: billmath
 manager: femila
 ms.date: 07/10/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d72217d9e8dc3b0f47382e08346dca977ac14b67
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9e947f1894516de232a0db50bcbb56c7452098cd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867926"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359425"
 ---
 # <a name="migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>Windows Server 2012 R2 の AD FS に AD FS 2.0 フェデレーションサーバーを移行する
 
@@ -103,14 +103,14 @@ Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`.
   
 ###  <a name="to-export-claims-provider-trusts-and-relying-party-trusts"></a>要求プロバイダー信頼と証明書利用者信頼をエクスポートするには  
   
-1.  AD FS 要求プロバイダー信頼と証明書利用者信頼をエクスポートするには、管理者として (ただし、ドメイン管理者としてではなく) 管理者としてフェデレーションサーバーにログインし、 **media/server_support にある次の Windows PowerShell スクリプトを実行する必要があります。/** Windows Server 2012 R2 のインストール CD の adfs フォルダー: `export-federationconfiguration.ps1`  
+1.  AD FS 要求プロバイダー信頼と証明書利用者信頼をエクスポートするには、管理者として (ただし、ドメイン管理者としてではなく) 管理者としてフェデレーションサーバーにログインし、 **media/server_support にある次の Windows PowerShell スクリプトを実行する必要があります。/** Windows Server 2012 R2 のインストール CD の adfs フォルダー: `export-federationconfiguration.ps1`。  
   
 > [!IMPORTANT]
 >  エクスポート スクリプトは次のパラメーターを受け取ります。  
 > 
-> - Export-federationconfiguration.ps1-path-\> Path < string [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-certificatepassword < securestring\>]  
->   -   Export-federationconfiguration.ps1-path-\> Path < string [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-certificatepassword < securestring\>] [-RelyingPartyTrustIdentifier < string [] >] [-ClaimsProviderTrustIdentifier < string [] >]  
->   -   Export-federationconfiguration.ps1-path-\> Path < string [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-certificatepassword < securestring\>] [-RelyingPartyTrustName < string [] >] [-ClaimsProviderTrustName < string [] >]  
+> - Export-federationconfiguration.ps1-path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-CertificatePassword < securestring @ no__t-3]  
+>   -   Export-federationconfiguration.ps1-path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-CertificatePassword < securestring @ no__t-3] [-RelyingPartyTrustIdentifier < string []>] [-ClaimsProviderTrustIdentifier < string [] >]  
+>   -   Export-federationconfiguration.ps1-path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-CertificatePassword < securestring @ no__t-3] [-RelyingPartyTrustName < string [] >] [-ClaimsProviderTrustName < string [] >]  
 > 
 >   **-RelyingPartyTrustIdentifier <string[]>** - このコマンドレットは、識別子が string 配列に指定されている証明書利用者信頼のみをエクスポートします。 既定では、どの証明書利用者信頼もエクスポートしません。 RelyingPartyTrustIdentifier、ClaimsProviderTrustIdentifier、RelyingPartyTrustName、および ClaimsProviderTrustName のいずれも指定されていない場合、このスクリプトはすべての証明書利用者信頼と要求プロバイダー信頼をエクスポートします。  
 > 
@@ -193,9 +193,9 @@ import-federationconfiguration.ps1
 > [!IMPORTANT]
 >  インポート スクリプトは次のパラメーターを受け取ります。  
 > 
-> - Import-federationconfiguration.ps1-path < string\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-LogPath < string\>] [-certificatepassword < securestring\>]  
->   -   Import-federationconfiguration.ps1-path < string\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-LogPath < string\>] [-certificatepassword < securestring\>] [-RelyingPartyTrustIdentifier < string [] >] [-ClaimsProviderTrustIdentifier < string [] >  
->   -   Import-federationconfiguration.ps1-path < string\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-LogPath < string\>] [-certificatepassword < securestring\>] [-RelyingPartyTrustName < string [] >] [-ClaimsProviderTrustName < string [] >]  
+> - Import-federationconfiguration.ps1-path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-LogPath < string @ no__t-3] [-CertificatePassword < securestring @ no__t-4]  
+>   -   Import-federationconfiguration.ps1-path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-LogPath < string @ no__t-3] [-CertificatePassword < securestring @ no__t-4] [-RelyingPartyTrustIdentifier < string [] >] [-ClaimsProviderTrustIdentifier < string [] >  
+>   -   Import-federationconfiguration.ps1-path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-LogPath < string @ no__t-3] [-CertificatePassword < securestring @ no__t-4] [-RelyingPartyTrustName < string [] >] [-ClaimsProviderTrustName < string [] >]  
 > 
 >   **-RelyingPartyTrustIdentifier <string[]>** - このコマンドレットは、識別子が string 配列に指定されている証明書利用者信頼のみをインポートします。 既定では、どの証明書利用者信頼もインポートしません。 RelyingPartyTrustIdentifier、ClaimsProviderTrustIdentifier、RelyingPartyTrustName、および ClaimsProviderTrustName のいずれも指定されていない場合、このスクリプトはすべての証明書利用者信頼と要求プロバイダー信頼をインポートします。  
 > 

@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: c30f8a9b856db8250a16210931e6f8dd73c07aa7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 6e99fc43d4acb7a70dfd3a8ba19dae6492c41b2b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869609"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357051"
 ---
 # <a name="using-powershell-in-your-extension"></a>拡張機能で PowerShell を使用する #
 
@@ -92,7 +92,7 @@ CreateSession メソッドにノード名を指定すると、新しい PowerShe
 ### <a name="key-options"></a>キーオプション ###
 PowerShell API を呼び出すときに使用できるオプションがいくつかあります。 セッションが作成されるたびに、キーの有無に関係なく作成できます。 
 
-**レジストリ**これにより、コンポーネント間でも検索と再利用が可能なキー付きセッションが作成されます (つまり、Component1 はキー "SME-岩" を使用してセッションを作成でき、Component2 は同じセッションを使用できます)。キーが指定されている場合は、上記の例のように dispose () を呼び出すことによって、作成されたセッションを破棄する必要があります。 セッションは、5分を超えて破棄されることなく保持されません。 
+**キー:** これにより、コンポーネント間でも検索と再利用が可能なキー付きセッションが作成されます (つまり、Component1 はキー "SME-岩" を使用してセッションを作成でき、Component2 は同じセッションを使用できます)。キーが指定されている場合は、上記の例のように dispose () を呼び出すことによって、作成されたセッションを破棄する必要があります。 セッションは、5分を超えて破棄されることなく保持されません。 
 ```ts
   const session = this.appContextService.powerShell.createSession('{!TargetNode}', '{!Key}');
 ```

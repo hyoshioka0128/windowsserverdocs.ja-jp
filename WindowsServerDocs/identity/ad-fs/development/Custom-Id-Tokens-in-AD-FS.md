@@ -6,15 +6,15 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: anandy
 ms.technology: identity-adfs
-ms.openlocfilehash: d2577be364d7bb2e74ab7e06490b7bc3f150441a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 88ae6837872c5a6cf6bb1d8533a0aa14b82ca573
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867696"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358913"
 ---
 # <a name="customize-claims-to-be-emitted-in-id_token-when-using-openid-connect-or-oauth-with-ad-fs-2016-or-later"></a>OpenID Connect または OAuth を AD FS 2016 以降で使用するときに id_token で出力される要求をカスタマイズする
 

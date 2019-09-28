@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b73baacc1115359b1d3d8b494cc285b5edd7c5fc
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b0d6133a6fb43b8624dc1329db632fb5dd4aa070
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866030"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358453"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>AD FS 2.0 のクライアント Access Control ポリシー
 Active Directory フェデレーションサービス (AD FS) 2.0 のクライアントアクセスポリシーでは、リソースへのアクセスを制限または許可することができます。  このドキュメントでは、AD FS 2.0 でクライアントアクセスポリシーを有効にする方法と、最も一般的なシナリオを構成する方法について説明します。
@@ -167,10 +167,10 @@ Active Directory 要求プロバイダー信頼で、新しい要求コンテキ
 |              すべてのユーザーへのアクセスを許可する既定の AD FS 規則。 このルールは、Microsoft Office 365 Id プラットフォーム証明書利用者信頼の発行承認規則の一覧に既に存在している必要があります。              |                                  = > の問題 (Type =<https://schemas.microsoft.com/authorization/claims/permit>"", Value = "true");                                   |
 |                               この句を新しいカスタムルールに追加すると、要求がフェデレーションサーバープロキシから取得された (つまり、x.509 プロキシヘッダーがある) ことが指定されます。                                |                                                                                                                                                                    |
 |                                                                                 すべてのルールにこれを含めることをお勧めします。                                                                                  |                                    exists ([Type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy>"])                                    |
-|                                                         定義された許容範囲内の IP を持つクライアントからの要求であることを確立するために使用されます。                                                         | 存在しません ([Type =<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip>= "", Value = ~ "顧客が指定したパブリック ip アドレス regex"]) |
-|                                    この句を使用して、アクセスするアプリケーションが Microsoft. Exchange. ActiveSync でない場合に、要求を拒否する必要があることを指定します。                                     |       存在しません ([Type =<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application>= "", Value = = "Microsoft. Exchange. ActiveSync"])        |
-|                                                      この規則を使用すると、呼び出しが Web ブラウザーを介して行われたかどうかを判断でき、拒否されません。                                                      |              存在しません ([Type =<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path>= "", Value = = "/adfs/ls/"])               |
-| このルールは、(SID 値に基づいて) 特定の Active Directory グループ内のユーザーのみを拒否することを示します。 このステートメントを追加しないと、場所に関係なく、ユーザーのグループが許可されます。 |             exists ([Type = = "<https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid>", Value = ~ "{許可された AD グループのグループ SID 値}"])              |
+|                                                         定義された許容範囲内の IP を持つクライアントからの要求であることを確立するために使用されます。                                                         | 存在しません ([Type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip>", Value = ~ "顧客が指定したパブリック ip アドレス regex"]) |
+|                                    この句を使用して、アクセスするアプリケーションが Microsoft. Exchange. ActiveSync でない場合に、要求を拒否する必要があることを指定します。                                     |       存在しません ([Type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application>", Value = = "Microsoft. Exchange. ActiveSync"])        |
+|                                                      この規則を使用すると、呼び出しが Web ブラウザーを介して行われたかどうかを判断でき、拒否されません。                                                      |              存在しません ([Type = = "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path>", Value = = "/adfs/ls/"])               |
+| このルールは、(SID 値に基づいて) 特定の Active Directory グループ内のユーザーのみを拒否することを示します。 このステートメントを追加しないと、場所に関係なく、ユーザーのグループが許可されます。 |             exists ([Type = = "<https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid>", Value = ~ "{Group SID Value for allowed AD group}"])              |
 |                                                                これは、上記の条件がすべて満たされたときに拒否を発行するために必要な句です。                                                                 |                                   = > の問題 (Type =<https://schemas.microsoft.com/authorization/claims/deny>"", Value = "true");                                    |
 
 ### <a name="building-the-ip-address-range-expression"></a>IP アドレス範囲の作成
@@ -209,7 +209,7 @@ IP アドレスの範囲を一致させる必要がある場合は、比較を�
 
 そのため、2つのアドレス (192.168.1.1、10.0.0.1 など) のみを照合する例を次\.に\.示し\.ます。 \b192 168 1\.1 \\.b | \b10 0\.0 1 \ b
 
-これにより、任意の数のアドレスを入力できるようになります。 アドレスの範囲を許可する必要がある場合 (例: 192.168.1.1 – 192.168.1.25)、文字によって照合が行わ\.れる\.必要\.があります: \b192 168 1 ([1-9] | 1 [0-9] | 2 [0-5]) \b
+これにより、任意の数のアドレスを入力できるようになります。 アドレスの範囲を許可する必要がある場所 (例: 192.168.1.1 – 192.168.1.25) では、文字によって照合を行う必要があります。 \b192 @ no__t ([1-9] | 1 [0-9] | 2 [0-5]) \b
 
 >[!Note] 
 >IP アドレスは、数値ではなく文字列として扱われます。
@@ -229,9 +229,9 @@ IP アドレスの範囲を一致させる必要がある場合は、比較を�
 >[!Note]
 >かっこは、IP アドレスの他の部分との照合を開始しないように、正しく配置されている必要があります。
 
-192ブロックが一致すると、10個のブロックに対して同様の式を\.記述\.でき\.ます。 \b10 0 0 ([1-9] | 1 [0-4]) \b
+192ブロックが一致した場合、10個のブロックに対して同様の式を記述できます。 \b10 @ no__t ([1-9] | 1 [0-4]) \b
 
-これらをまとめると、次の式は、"192.168.1.1 ~ 25" および "10.0.0.1 ~ 14" のすべてのアドレスと一致\.する必要\.があります: \b192 168\.1 ([1-9] | 1 [0-9] | 2 [0\.-\.5]) \b | \b10 0 0\.([1-9] | 1 [0-4]) \b
+これらをまとめると、次の式は、"192.168.1.1 ~ 25" と "10.0.0.1 ~ 14" のすべてのアドレスと一致する必要があります。 \b192 @ no__t-0168 @ no__t-11 @ no__t-2 ([1-9] | 1 [0-9] | 2 [0-5]) \b | \b10 @ no__t-30 @ no__t-40 @ no__t-5 ([1-9] | 1 [0-4]) \b
 
 #### <a name="testing-the-expression"></a>式のテスト
 
@@ -261,7 +261,7 @@ Regex 式は非常に複雑になる可能性があるため、regex 検証ツ�
 
 AD FS サーバー上のセキュリティログへの監査イベントのログ記録を有効にするには AD FS 2.0 の監査の構成」の手順に従います。
 
-### <a name="event-logging"></a>イベント ログ
+### <a name="event-logging"></a>イベントログ
 
 既定では、失敗した要求は、[アプリケーションとサービスログ] \ AD FS 2.0 \ Admin にあるアプリケーションイベントログに記録されます。 AD FS のイベントログの詳細については、「 [AD FS 2.0 イベントログの設定](https://technet.microsoft.com/library/adfs2-troubleshooting-configuring-computers.aspx)」を参照してください。
 

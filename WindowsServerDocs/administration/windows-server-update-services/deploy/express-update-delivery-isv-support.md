@@ -1,7 +1,7 @@
 ---
 title: 更新プログラムのエクスプレス配信 ISV のサポート
 description: Windows Server Update Service (WSUS) トピック-独立系ソフトウェアベンダー (ISV) が WSUS を使用して高速更新配信を構成する方法
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-wsus
@@ -11,12 +11,12 @@ author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f5893d47219e9263ed7f35bee472848a47c6164
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: a4880a1a66d9c722cfda9e194c4eff38c5058674
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868737"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361725"
 ---
 # <a name="express-update-delivery-isv-support"></a>更新プログラムのエクスプレス配信 ISV のサポート
 
@@ -95,7 +95,7 @@ ISV ファイルキャッシュには、管理されたクライアントにイ�
 
 1. [WSUS api](https://msdn.microsoft.com/library/windows/desktop/microsoft.updateservices.administration.updatefile(v=vs.85).aspx)を使用して、MU サービスの更新プログラムのファイルパスとファイル名にアクセスします。
 
-    WSUS サーバー上の各更新プログラムのメタデータには、次のように Microsoft Update 上の更新プログラムのファイルパスとファイル名が含まれます (Microsoft Update の **<http://download.windowsupdate.com>** ホスト名は太字で、その後にファイルのパスとファイル名を指定します):/c/msdownload/update/software/updt/2016/09/windows 10.0-kb3195781-x64_0c06079bccc35cba35a48bd2b1ec46f818bd2e74
+    WSUS サーバー上の各更新プログラムのメタデータには、次のように Microsoft Update 上の更新プログラムのファイルパスとファイル名が含まれます (Microsoft Update のホスト名は太字で、その後にファイルのパスとファイル名を指定します): **<http://download.windowsupdate.com>** /c/msdownload/update/software/updt/2016/09/windows 10.0-kb3195781-x64_0c06079bccc35cba35a48bd2b1ec46f818bd2e74
 
 2. 次の2つの方法のいずれかを使用して、Microsoft Update からファイルをダウンロードし、ISV ファイルキャッシュに保存します。 
 

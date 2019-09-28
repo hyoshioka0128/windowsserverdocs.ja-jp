@@ -7,18 +7,18 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 31e2e1b04383adc8bec12e7290a7acec80e0402f
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 5fa89a4a57c618fd711234b8770a35750f3099bd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190790"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358958"
 ---
 # <a name="stand-alone-federation-server-using-wid"></a>WID を使用するスタンドアロン フェデレーション サーバー
 
-スタンドアロン\-Active Directory フェデレーション サービスで単独でフェデレーション サーバー \(AD FS\) Windows Internal Database を使用するように構成をフェデレーション サービスをホストする 1 台のサーバーから成る\(WID\). この AD FS トポロジは、テスト ラボです。 できるだけしないように、運用環境での 1 つだけのフェデレーション サーバーの制限がありより多くのサーバーをスケール アップするために使用できないためです。  
+Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-2 のスタンドアロンフェデレーションサーバーは、Windows Internal @no__t Database を使用するように構成されたフェデレーションサービスをホストする1台のサーバーで構成されています。-3WID @ no__t。 この AD FS トポロジは、テスト ラボです。 できるだけしないように、運用環境での 1 つだけのフェデレーション サーバーの制限がありより多くのサーバーをスケール アップするために使用できないためです。  
   
 テスト ラボに追加のフェデレーション サーバーを追加する場合、このセクションで後で説明した以外のトポロジのいずれかを展開することにより最初からフェデレーション サービスを再構築する必要があります。 テスト ラボや実証には、このトポロジを使用すること勧めそのため、\-の\-1 つのフェデレーション サーバーの適切なもので、次の図に示すように、プライベートのテスト ネットワークで概念環境です。  
   
@@ -37,9 +37,9 @@ ms.locfileid: "66190790"
   
 ### <a name="what-are-the-limitations-of-using-this-topology"></a>このトポロジを使用する場合の制限事項を挙げてください。  
   
--   フェデレーション サービスごとに 1 つだけのフェデレーション サーバー\(ファームをスケール アップ機能がないです。\)  
+-   フェデレーションサービスあたり1つのフェデレーションサーバーのみ \(no ファームにスケールアップすることはできません。 @ no__t-1  
   
--   重複していない\(AD FS 構成データベースのインスタンスが 1 つだけ存在します\)  
+-   冗長ではない \(only AD FS 構成データベースの1つのインスタンスが存在する @ no__t-1  
   
 
 ## <a name="see-also"></a>関連項目

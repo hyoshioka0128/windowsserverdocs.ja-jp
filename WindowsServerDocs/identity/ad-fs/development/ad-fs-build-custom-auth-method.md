@@ -6,14 +6,14 @@ ms.author: billmath
 manager: daveba
 ms.date: 05/23/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fc71ca2b8d130ab00014f850ccae25e9138d501b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 2ef16ddeb241d55b61b484805ff91cb247985d8d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867572"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358883"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>Windows Server での AD FS のためのカスタム認証方法を構築する
 
@@ -62,7 +62,7 @@ ms.locfileid: "70867572"
 
     ![プロバイダーを作成する](media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "プロバイダーを作成する")
 
-3.  AD FS がインストールされている Windows server 2012 R2 サーバーの% windir%\\ADFS から、Microsoft のサービスをコピーして、開発用コンピューターのプロジェクトフォルダーに貼り付けます。
+3.  AD FS がインストールされている Windows Server 2012 R2 サーバーで、% windir% \\ ADFS から、 **Microsoft のサービス**のコピーを作成し、開発用コンピューターのプロジェクトフォルダーに貼り付けます。
 
 4.  **ソリューションエクスプローラー**で、 **[参照]** を右クリックし、 **[参照の追加]** をクリックします。
 
@@ -325,9 +325,7 @@ ms.locfileid: "70867572"
         <input id="context" type="hidden" name="Context" value="%Context%"/>
         <!-- End inputs are required by the presentation framework. -->
         <p id="pageIntroductionText">このコンテンツは、MFA サンプルアダプターによって提供されます。 チャレンジ入力は以下に表示されます。</p>
-        <label for="challengeQuestionInput" class="block">質問のテキスト</label>
-        <input id="challengeQuestionInput" name="ChallengeQuestionAnswer" type="text" value="" class="text" placeholder="Answer placeholder" />
-        <div id="submissionArea" class="submitMargin">
+        <label for="challengeQuestionInput" class="block">Question テキスト @ no__t-1 @ no__t @ no__t @<div id="submissionArea" class="submitMargin">
         <input id="submitButton" type="submit" name="Submit" value="Submit" onclick="return AuthPage.submitAnswer()"/>
         </div>
         </form>
@@ -381,7 +379,7 @@ ms.locfileid: "70867572"
 
 3.  Gacutil.exe ツールをサーバーにコピーします。
 
-    Gacutil.exe は、 **% homedrive\\% Program Files (x86)\\\\Microsoft sdk windows\\v2.0 a\\bin\\NETFX\\ 4.0 Tools** on windows 8 コンピューターにあります。  **Gacutil.exe**ファイル自体に加え、 **1033**、 **En-us**、および**NETFX 4.0 ツール**の場所の下にあるその他のローカライズされたリソースフォルダーが必要です。
+    Gacutil.exe は、 **% homedrive% \\Program Files (x86) \\Microsoft sdk @ no__t-3windows @ no__t-4v 8.0 a @ no__t-5bin @ no__t-6NETFX 4.0 Tools @ no__t** 、windows 8 コンピューターにあります。  **Gacutil.exe**ファイル自体に加え、 **1033**、 **En-us**、および**NETFX 4.0 ツール**の場所の下にあるその他のローカライズされたリソースフォルダーが必要です。
 
 4.  プロバイダーファイル (1 つ以上の厳密な名前で署名された .dll ファイル) を gacutil.exe と同じフォルダーの場所にコピーし**ます**(場所は便宜上)
 
@@ -639,7 +637,7 @@ MFA 認証ページで「adfabric」と入力すると、成功したサイン�
 
 ## <a name="see-also"></a>関連項目
 
-#### <a name="other-resources"></a>その他の参照情報
+#### <a name="other-resources"></a>その他のリソース
 
 [追加の認証方法](https://msdn.microsoft.com/library/dn758113\(v=msdn.10\))  
 [追加の多要素認証による個人情報アプリケーションのリスク管理](https://msdn.microsoft.com/library/dn280949\(v=msdn.10\))

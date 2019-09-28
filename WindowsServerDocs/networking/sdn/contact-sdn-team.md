@@ -1,49 +1,49 @@
 ---
 title: データセンターおよびクラウド ネットワーク チームへのお問い合わせ
-description: このページは、さまざまなコンテキストで、SDN チームに到達するための最適な方法でお客様に通知するために設計されています。
+description: このページは、さまざまなコンテキストで SDN チームに最適な方法をお客様に通知することを目的としています。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
 ms.author: pashort
 author: kallie-b
-ms.openlocfilehash: dd67fe27c048a15903d18dca43cf331a025933b3
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: a62a661fc9bb665f71f0e16cb3298ff52f3137db
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446383"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355985"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>データセンターおよびクラウド ネットワーク チームへのお問い合わせ
 
 > 適用先:Windows Server 2016
 
-Microsoft の**ソフトウェアによるネットワーク制御\(SDN\)** と**コンテナー ネットワーク**ソリューションは、データ センターとクラウド ネットワーク チームによって作成されます。 このページを使用する - 質問、フィードバックを提供する、チームとつながるバグの報告や機能要求をしてください。
+Microsoft の**ソフトウェア定義ネットワーク \(SDN @ no__t-2**と**コンテナーネットワーク**ソリューションは、データセンターとクラウドネットワークチームによって作成されます。 このページを使用して、チームに連絡してください。質問をしたり、フィードバックを提供したり、バグを報告したり、機能の要求を行ったりすることができます。
 
-Microsoft teams との連絡を多くの手段があるし、可能な限りすべてのコミュニティで使用される手法に従う SDN チームには、中になる傾向がありますが、最もアクティブなフォーラムの一覧を示します。 *これらは、ユーザーの主要リソースと見るからです。 最も近い、経路はそのためです。*
+Microsoft teams に連絡するには多くの方法があります。 SDN チームでは、コミュニティで使用されるすべての手段に従うことをお勧めしますが、ここでは、最もアクティブになる傾向のあるフォーラムの一覧を示します。 *これらはユーザーにとって重要なリソースです。そのため、最も近いものを見ることができます。*
 
-## <a name="twitterhttpstwittercommicrosoftsdn"></a>[Twitter](https://twitter.com/Microsoft_SDN)
+## <a name="twitterhttpstwittercommicrosoft_sdn"></a>[Twitter](https://twitter.com/Microsoft_SDN)
 
-プレゼンスとして twitter を開始しました。 最近では、 [ @Microsoft_SDN](https://twitter.com/Microsoft_SDN)します。 自由に、Twitter ハンドルを使用して、質問、フィードバックを提供または機能/ドキュメント要求できます。
-> SDN と Windows コンテナーのネットワーク関連--Twitter は、まず、すべての「フィード」を取得する、Twitter、場所を検討要求フィードバック/質問/で連絡する、場所、だけでなく**ニュースを投稿**、発表**の新機能**をすべてのコミュニティをポイントし、**最新のブログとリソース**します。
+最近、Twitter での存在を[@Microsoft_SDN](https://twitter.com/Microsoft_SDN)として立ち上げました。 Twitter のハンドルを使用して、質問をしたり、フィードバックを提供したり、機能/ドキュメントの要求を行ったりすることができます。
+> 質問/フィードバック/要求を受けられる場所だけでなく、すべての SDN と Windows コンテナーネットワーク関連の "フィード" を取得する場所についても説明します。 Twitter は**ニュースを投稿**するための最初の場所であり、新たにお知らせします。 **の機能**を利用して、最新の**ブログとリソース**をすべて参照できます。
 
-## <a name="github-microsoftsdn-repohttpsgithubcommicrosoftsdnissues"></a>GitHub ([MICROSOFT/SDN リポジトリ](https://github.com/Microsoft/SDN/issues))
-移動[ここ](https://github.com/Microsoft/SDN/issues)当社の GitHub リポジトリを使用して SDN チームに質問を送信します。 これは、最適な場所に**トラブルシューティングのヘルプ**または**バグの報告**します。
+## <a name="github-microsoftsdn-repohttpsgithubcommicrosoftsdnissues"></a>GitHub ([Microsoft/SDN リポジトリ](https://github.com/Microsoft/SDN/issues))
+GitHub リポジトリから SDN チームに問題を送信するに[は、こちら](https://github.com/Microsoft/SDN/issues)を参照してください。 これは、**トラブルシューティング**を行ったり、**バグを報告**したりするのに最適な場所です。
 
-> GitHub は、ツイートで簡単に収めることができることよりも詳細に関連するトピックについてご連絡する最適な場所です。 *SDN 展開にヘルプが必要ですか。この機能が、組織の独自のニーズに合わせてだった方法についてよくわからないでしょうか。潜在的なバグによってロックされる中でしょうか。* GitHub の問題を送信することを取るには取得すべてそれなりの理由。
+> GitHub は、ツイートに簡単に適合させることができるものよりも詳細な情報が含まれているトピックに関するお問い合わせに最適な場所です。 *Need のデプロイに関するヘルプが必要ですか?お客様の組織固有のニーズにどのような機能がどのように適合しているかわからない場合は、潜在的なバグによって保持されていますか* GitHub の問題を送信することによって、お客様と連絡を取ることができるすばらしい理由です。
 
 ## <a name="microsoft-docshttpsdocsmicrosoftcom"></a>[Microsoft Docs](https://docs.microsoft.com/)
-[コンテナーのネットワークに関するドキュメント](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)で確認できます[Microsoft Docs (docs.microsoft.com)](https://docs.microsoft.com/)、ある**コメント機能が組み込まれて**します。 ままにする、またはを参照する Microsoft のドキュメントのページの一番下までスクロールでだけで、サインインに Microsoft Docs でのコメントに返信するは、作成しがコメントを送信します。
+[コンテナーネットワークのドキュメント](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)は[Microsoft Docs (docs.microsoft.com)](https://docs.microsoft.com/)にあります。これには、**コメント機能が組み込ま**れています。 サインインしたときにコメントに返信したり Microsoft Docs に返信したりするには、参照する Microsoft Docs ページの一番下までスクロールし、コメントを作成して送信します。
 
-> [Microsoft Docs](https://docs.microsoft.com/)は Microsoft の新しい統一されたドキュメント サイトです。 私たちのチームの大部分[SDN ドキュメント](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking)は、TechNet 上に保持、[コンテナーのネットワークに関するドキュメント](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)Microsoft Docs のようになりましたが。
+> [Microsoft Docs](https://docs.microsoft.com/)は、Microsoft の新しい統合ドキュメントサイトです。 私たちのチームの[SDN ドキュメント](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking)のほとんどは TechNet に残されていますが、[コンテナーネットワークのドキュメント](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)は Microsoft Docs にあります。
 > 
-> *一般に、質問をスパークを離れたりする必要がある詳細を Microsoft Docs でトピックに実行する場合だけにコメントを残してフィードバックに役立つ Microsoft チームと共有するには、そのページ。*
+> *一般に、質問をわきしたり、さらに多くのことを希望したりする Microsoft Docs に関するトピックが表示される場合は、そのページにコメントを残して、お客様のフィードバックを Microsoft チームと共有してください。*
 
-## <a name="container-specific-forums"></a>コンテナーに固有のフォーラム
-このページで任意の手段を使用して、コンテナーとコンテナーのネットワークに関連するフィードバックを提供するもかまいません。 ただし、必要な場合は、Microsoft の主なフォーラムのコンテナーのコミュニティの具体的は、以下を参照します。
-- [ユーザーの声](https://windowsserver.uservoice.com/forums/304624-containers)最適 -*機能の要求*
-- [Github (仮想化のリポジトリ)](https://github.com/Microsoft/Virtualization-Documentation)シークに最適な -*トラブルシューティングに関する支援を*と*バグの報告*
+## <a name="container-specific-forums"></a>コンテナー固有のフォーラム
+このページの手段を自由に使用して、コンテナーとコンテナーネットワークに関するフィードバックを提供してください。 ただし、コンテナーコミュニティの Microsoft の主要なフォーラムを探している場合は、以下を参照してください。
+- [ユーザーの声](https://windowsserver.uservoice.com/forums/304624-containers)-機能に関する*要望*に最適
+- [Github (仮想化リポジトリ)](https://github.com/Microsoft/Virtualization-Documentation) -*トラブルシューティングのヘルプ*と*バグの報告*に最適です
 
-### <a name="not-seeing-the-forum-for-you"></a>フォーラムが表示されません。 
-可能であればより広範なコミュニティに役立つアクセスからの質問やコメントを進めてをように、パブリック フォーラムの使用お勧めします。 ただし、電子メールの問い合わせを単に適してがいる場合があることも認識します。 そのような状況のいずれかの場合は、ご連絡くださいに電子メールをsdn_feedback@microsoft.comと意見をお聞かせいたします。
+### <a name="not-seeing-the-forum-for-you"></a>フォーラムが表示されない場合は、 
+可能な限り、マイクロソフトはパブリックフォーラムを使用することをお勧めします。これにより、より広範なコミュニティでは、お客様の質問やコメントにアクセスするメリットが得られます。 ただし、電子メールがお客様に連絡するために推奨される方法であるという状況も認識しています。 これらの状況のいずれかが発生している場合は、sdn_feedback@microsoft.com でメールを送信してください。お客様からのご意見をお待ちしております。

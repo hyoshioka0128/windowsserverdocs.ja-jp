@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 5df035b448b80aa147067004c6a2f14aa03a9684
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: d692251e1ba0fef43e4eeee6f259f26f4347f3c0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869089"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356876"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Windows 管理センターを使用したハイパー集約型インフラストラクチャの管理
 
@@ -157,7 +157,7 @@ Windows 管理センターをまだダウンロードしていない場合はイ
 
 Windows Admin Center には、Windows 以外の追加コストはありません。
 
-Windows 管理センターは、windows Server または Windows 10 の有効なライセンスと共に、追加コストなしで使用できます。 windows の追加のライセンス条項に従ってライセンスが付与されます。
+Windows Admin Center (別のダウンロードとして利用可能) は、Windows Supplemental EULA に基づいて使用許諾されているため、Windows Server または Windows 10 の有効なライセンスと共に追加コストなしで使用することができます。
 
 ### <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center に System Center は必要ですか。
 
@@ -278,7 +278,7 @@ Windows 管理センターは Microsoft Azure クラウドとの強力で便利�
 
 ![SDN インフラストラクチャを監視する](../media/manage-hyper-converged/sdn-monitoring.png)
 
-## <a name="feedback"></a>フィードバック
+## <a name="feedback"></a>Feedback
 
 ご意見をお寄せください。 頻繁に更新される最も重要な利点は、作業内容と改善が必要な機能を確認することです。 検討している内容を確認するには、次の方法を使用します。
 

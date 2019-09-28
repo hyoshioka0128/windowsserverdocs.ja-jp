@@ -1,50 +1,50 @@
 ---
 title: PowerShell スクリプトのパフォーマンスに関する考慮事項
-description: PowerShell でのパフォーマンスについての説明
-ms.prod: windows-server-threshold
+description: PowerShell でのパフォーマンスのスクリプト作成
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: JasonSh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: df406c7e382907ca32006ec4dae6537a140a91cf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2898cf5ee965da77c9f6a3473e55c1cee6b53f2b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830373"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71354978"
 ---
 # <a name="powershell-scripting-performance-considerations"></a>PowerShell スクリプトのパフォーマンスに関する考慮事項
 
-.NET を直接活用して、パイプラインを回避する PowerShell スクリプトは、慣用 PowerShell よりも高速にする傾向があります。 慣用 PowerShell は、通常、コマンドレットを使用し、PowerShell 関数、パイプラインを利用し、ドロップダウン表示に必要な場合にのみ .NET 頻度の高い、多くの場合、します。
+.NET を直接利用してパイプラインを回避する PowerShell スクリプトは、慣用的な PowerShell よりも高速になる傾向があります。 慣用的な PowerShell は、通常、コマンドレットと PowerShell 関数を頻繁に使用します。多くの場合、パイプラインを利用し、必要な場合にのみ .NET にドロップします。
 
 >[!Note] 
-> ここで説明した手法の多くは、慣用 PowerShell ではないと、PowerShell スクリプトの読みやすさを減らすことができます。 スクリプトの作成者はパフォーマンスがそれ以外の場合に指定しない限り、慣用 PowerShell を使用することをお勧めします。
+> ここで説明する手法の多くは、PowerShell の慣用的なではないため、PowerShell スクリプトの読みやすさが低下する可能性があります。 スクリプト作成者は、それ以外の場合は、慣用的な PowerShell を使用することをお勧めします。
 
-## <a name="suppressing-output"></a>出力を抑制します。
+## <a name="suppressing-output"></a>出力の抑制
 
-オブジェクトをパイプラインに書き込まれないようにする多くの方法はあります。
+パイプラインへのオブジェクトの書き込みを回避するには、さまざまな方法があります。
 
 ```PowerShell
 $null = $arrayList.Add($item)
 [void]$arrayList.Add($item)
 ```
 
-割り当てを`$null`をキャストまたは`[void]`はほぼ同等ですし、パフォーマンスが重要な優先一般にする必要があります。
+@No__t-0 への割り当てまたは `[void]` へのキャストはほぼ同じであり、通常はパフォーマンスが重要な場合に推奨されます。
 
 ```PowerShell
 $arrayList.Add($item) > $null
 ```
 
-ファイルにリダイレクト`$null`ほぼ同程度前の代替手段として最もスクリプトに違いがわかることはありません。
-シナリオによってはのファイルのリダイレクトは、多少のオーバーヘッドをただしに紹介します。
+@No__t-0 へのファイルのリダイレクトは、前の方法とほとんど同じですが、ほとんどのスクリプトではその違いに気付くことはありません。
+このシナリオによっては、ファイルのリダイレクトによって若干のオーバーヘッドが生じます。
 
 ```PowerShell
 $arrayList.Add($item) | Out-Null
 ```
 
-パイプ`Out-Null`選択肢を比較した場合に大幅なオーバーヘッドが発生します。
-これは、パフォーマンスの重要なコードで回避する必要があります。
+@No__t-0 へのパイプは、代替手段と比較すると大きなオーバーヘッドが発生します。
+パフォーマンスに影響するコードでは、これを回避する必要があります。
 
 ```PowerShell
 $null = . {
@@ -53,14 +53,14 @@ $null = . {
 }
 ```
 
-スクリプト ブロックの概要と、呼び出し (ソーシングまたはそれ以外の場合、ドットを使用して) に結果を代入し、`$null`は、大きなブロック スクリプトの出力を抑制するための便利な手法です。
-この手法を実行するパイプ処理とほぼ`Out-Null`と機密性の高いスクリプトのパフォーマンスに避ける必要があります。
-この例では余分なオーバーヘッドの作成と、スクリプト ブロックされていたインライン スクリプトを呼び出すことに由来します。
+スクリプトブロックを導入して (ドットソーシングまたはそれ以外の方法を使用して) 呼び出し、その結果を `$null` に割り当てることは、スクリプトの大きなブロックの出力を抑制するための便利な手法です。
+この手法は @no__t 0 にパイプを使用して実行されるため、パフォーマンスに影響するスクリプトでは回避する必要があります。
+この例の追加のオーバーヘッドは、以前インラインスクリプトであったスクリプトブロックを作成して呼び出すことから取得されます。
 
 
-## <a name="array-addition"></a>配列の追加
+## <a name="array-addition"></a>配列の加算
 
-項目のリストを生成するときは多くの場合、加算演算子を含む配列を使用します。
+多くの場合、項目のリストを生成するには、加算演算子を使用した配列を使用します。
 
 ```PowerShell
 $results = @()
@@ -69,13 +69,13 @@ $results += Do-SomethingElse
 $results
 ```
 
-配列は変更できないために、非常に inefficent ができます。
-配列に追加されるたびには実際には左右両方のオペランドのすべての要素を保持するために十分な大きさの新しい配列を作成し、両方のオペランドの要素を新しい配列にコピーします。
-小規模なコレクション、このオーバーヘッドは問題になりません。
-大きなコレクションは、問題を明らかにこのことができます。
+配列は不変であるため、これは非常に inefficent になる可能性があります。
+配列に追加するたびに、左側と右の両方のオペランドのすべての要素を保持するために十分な大きさの新しい配列が作成され、その後、両方のオペランドの要素が新しい配列にコピーされます。
+小さいコレクションの場合、このオーバーヘッドは問題にならない可能性があります。
+大規模なコレクションの場合、これは明らかに問題になる可能性があります。
 
-いくつかの選択肢があります。
-配列が実際に必要なしない場合は、代わりに ArrayList の使用を検討してください。
+代替手段がいくつかあります。
+実際に配列を必要としない場合は、代わりに ArrayList を使用することを検討してください。
 
 ```PowerShell
 $results = [System.Collections.ArrayList]::new()
@@ -84,8 +84,8 @@ $results.AddRange((Do-SomethingElse))
 $results
 ```
 
-配列が必要な場合は使用する独自`ArrayList`を呼び出すだけで、`ArrayList.ToArray`配列の場合します。
-または、PowerShell の作成をさせることができます、`ArrayList`と`Array`できます。
+配列が必要な場合は、独自の `ArrayList` を使用して、配列が必要なときに単に `ArrayList.ToArray` を呼び出すことができます。
+または、PowerShell を使用して `ArrayList` と `Array` を作成することもできます。
 
 ```PowerShell
 $results = @(
@@ -94,18 +94,18 @@ $results = @(
 )
 ```
 
-この例では PowerShell を作成、`ArrayList`配列式の内部でパイプラインに書き込まれた結果を保持します。
-代入する前に`$results`、PowerShell によって変換されます、`ArrayList`を`object[]`します。
+この例では、PowerShell によって @no__t 0 が作成され、配列式内のパイプラインに書き込まれた結果を保持します。
+@No__t-0 に割り当てる直前に、PowerShell は `ArrayList` を `object[]` に変換します。
 
 ## <a name="processing-large-files"></a>大きなファイルの処理
 
-PowerShell でのファイルを処理するための慣用方法はようになります可能性があります。
+PowerShell でファイルを処理する慣用的なの方法は、次のようになります。
 
 ```PowerShell
 Get-Content $path | Where-Object { $_.Length -gt 10 }
 ```
 
-これはほぼ桁違い .NET Api を直接使用するよりも低速になります。
+これは、.NET Api を直接使用するよりもはるかに低い順序で実行できます。
 
 ```PowerShell
 try
@@ -125,11 +125,11 @@ finally
 }
 ```
 
-## <a name="avoid-write-host"></a>Write-host を避ける
+## <a name="avoid-write-host"></a>書き込みホストを避ける
 
-一般に、コンソールに直接出力を記述することを不適切と見なされますが、多くのスクリプトを使用して検出するときに、`Write-Host`します。
+通常、出力をコンソールに直接書き込むのは好ましくありませんが、意味がある場合は、多くのスクリプトで `Write-Host` が使用されます。
 
-場合は、コンソールに多数のメッセージを記述する必要があります`Write-Host`桁よりも低速にすることができます`[Console]::WriteLine()`します。 ただし、注意を`[Console]::WriteLine()`適切な代替のみは、特定のホストなどの powershell.exe または powershell_ise.exe - すべてのホストで作業とは限りません。
+多くのメッセージをコンソールに書き込む必要がある場合、`Write-Host` は `[Console]::WriteLine()` よりもはるかに低い順序になります。 ただし、`[Console]::WriteLine()` は、powershell .exe や powershell_ise などの特定のホストに対してのみ適切な代替であることに注意してください。すべてのホストで動作することは保証されていません。
 
-使用する代わりに`Write-Host`、使用を検討して[Write-output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output?view=powershell-5.1)します。
+@No__t-0 を使用する代わりに、[書き込み出力](/powershell/module/Microsoft.PowerShell.Utility/Write-Output?view=powershell-5.1)の使用を検討してください。
 

@@ -1,8 +1,8 @@
 ---
 title: vol
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 57233c58cf8c1c27288d94503c56733f287652f8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 19f7de75b633903b2fcc0b7188846c7d6d7370a4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825603"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362568"
 ---
 # <a name="vol"></a>vol
 
@@ -36,9 +36,9 @@ vol [<Drive>:]
 
 |パラメーター|説明|
 |---------|-----------|
-|\<ドライブ >:|ボリューム ラベルとシリアル番号を表示するディスクが含まれるドライブを指定します。|
+|@no__t 0Drive >:|ボリューム ラベルとシリアル番号を表示するディスクが含まれるドライブを指定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

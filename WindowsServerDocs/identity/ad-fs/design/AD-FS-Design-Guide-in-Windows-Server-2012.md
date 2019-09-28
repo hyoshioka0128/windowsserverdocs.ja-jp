@@ -7,34 +7,34 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3f2a6df6a9c9a5cbdfa9c64bc6521e92f4982a15
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: d9d7ec6f4ff575d3aac30b7127e591b78f5ef49b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191734"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359213"
 ---
-# <a name="ad-fs-design-guide-in-windows-server"></a>Windows Server で AD FS 設計ガイドします。 
+# <a name="ad-fs-design-guide-in-windows-server"></a>Windows Server の AD FS 設計ガイド 
 
 
   
 > [!NOTE]  
-> Windows Server 2012 R2 で AD FS をデプロイする方法については、次を参照してください。 [Windows Server 2012 R2 AD FS 展開ガイド](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)します。  
+> Windows Server 2012 R2 で AD FS を展開する方法の詳細については、「 [Windows server 2012 r2 AD FS 展開ガイド](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)」を参照してください。  
   
-Active Directory® フェデレーション サービスを使用する\(AD FS\)フェデレーションでは、オペレーティング システム サービスをシームレスに任意の Web にユーザーを認証プロバイダーの役割の Windows Server® 2012\-ベースのサービスまたは管理者を作成したり、外部の信頼またはフォレストの信頼をもう一度ログオンするユーザーを必要としないと両方の組織のネットワーク間の管理を必要としない、リソース パートナー組織に存在するアプリケーション。 別のネットワーク内のリソースにアクセス中に 1 つのネットワークへの認証のプロセス-ユーザーが繰り返しログオン操作を行うことがなく — はシングル サインオンと呼ばれます\-で\(SSO\)します。  
+フェデレーションサービスプロバイダーの役割で Windows Server®2012オペレーティングシステムを使用して Active Directory®フェデレーションサービス @no__t 0AD FS @ no__t を使用して、ユーザーを Web @ no__t ベースのサービスまたはに存在するアプリケーションに対してシームレスに認証できます。リソースパートナー組織。管理者は、両方の組織のネットワーク間で外部の信頼またはフォレストの信頼を作成または管理する必要がなく、ユーザーが2回目にログオンする必要もありません。 別のネットワーク内のリソースにアクセスするときに、ユーザーによるログオン操作が繰り返されるのではなく、1つのネットワークに対して認証を行うプロセスは、\( SSO @ no__t では、シングルサインオン @ no__t-0on 呼ばれています。  
   
 ## <a name="about-this-guide"></a>このガイドについて  
-このガイドは、組織の要件に基づいて、AD FS の新しい展開を計画に役立つ推奨事項を提供します。\(も展開の目標としてこのガイドで指す\)と特定の設計を作成します。 このガイドの対象読者は、インフラストラクチャ専門家またはシステム アーキテクトです。 AD FS の展開を計画するときの主要な判断基準が強調表示されます。 このガイドを読む前に、AD FS が機能レベルでどのように動作するしくみをよく理解が必要です。 反映される組織の要件の理解は、AD FS 設計にも必要です。  
+このガイドでは、AD FS の新しい展開を計画する際に役立つ推奨事項について説明します。 @no__t 組織の要件 (このガイドでは、このガイドでは、展開の目標は、@ no__t-1 と、作成する特定の設計) を基にしています。 このガイドの対象読者は、インフラストラクチャ専門家またはシステム アーキテクトです。 AD FS の展開を計画する際に、主な意思決定点に焦点を当てます。 このガイドを読む前に、AD FS が機能レベルでどのように機能するかについて十分に理解しておく必要があります。 また、AD FS の設計に反映される組織の要件について十分に理解している必要があります。  
   
-このガイドは、一連の 3 つのプライマリ AD FS 設計に基づいた展開の目標をについて説明し、環境に最適な設計を決定できます。 次の包括的な AD FS 設計または環境のニーズを満たすカスタム デザインの 1 つのフォームにこれらの展開目標を使用できます。  
+このガイドでは、3つの主要な AD FS 設計に基づいた一連の展開目標について説明します。また、環境に最適な設計を決定するのに役立ちます。 これらの展開目標を使用して、次の包括的な AD FS 設計のいずれかを作成したり、環境のニーズを満たすカスタム設計を作成したりすることができます。  
   
--   フェデレーション Web SSO ビジネスをサポートする\-に\-ビジネス\(B2B\)シナリオと、独立したフォレストの事業単位間のコラボレーションをサポートするには  
+-   Business @ no__t-0to @ no__t-1business \(B2B @ no__t シナリオをサポートし、独立したフォレストを持つ事業単位間のコラボレーションをサポートするためのフェデレーション Web SSO  
   
--   ビジネス アプリケーションを顧客へのアクセスをサポートするために SSO を web\-に\-コンシューマー \(B2C\)シナリオ  
+-   Business @ no__t 内のアプリケーションへの顧客アクセスをサポートするための Web SSO-0to @ no__t-1consumer \(B2C @ no__t-3 シナリオ  
   
-それぞれの設計について、環境に関して必要なデータを収集するガイドラインが示されています。 計画し、AD FS の展開を設計し、次のガイドラインを使用できます。 このガイドを参照する、収集、文書化、および、組織の要件のマッピングを完了すると、必要があります」のガイダンスを使用して AD FS の展開を開始するために必要な情報、 [Windows Server 2012 AD FS 展開ガイド](../../ad-fs/deployment/Windows-Server-2012-AD-FS-Deployment-Guide.md).  
+それぞれの設計について、環境に関して必要なデータを収集するガイドラインが示されています。 その後、これらのガイドラインを使用して、AD FS 展開の計画と設計を行うことができます。 このガイドを読み、組織の要件の収集、文書化、マッピングを完了すると、「 [Windows Server 2012 AD FS 展開ガイド](../../ad-fs/deployment/Windows-Server-2012-AD-FS-Deployment-Guide.md)」のガイダンスに従って AD FS の展開を開始するために必要な情報が得られます。  
   
 ## <a name="in-this-guide"></a>このガイドについて  
   

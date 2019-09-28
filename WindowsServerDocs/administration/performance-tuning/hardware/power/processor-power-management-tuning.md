@@ -1,18 +1,18 @@
 ---
 title: Windows Server のバランスの取れた電源プランのプロセッサ電源管理 (PPM) のチューニング
 description: Windows Server のバランスの取れた電源プランのプロセッサ電源管理 (PPM) のチューニング
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Qizha;TristanB
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: f98e8f3b64bd91837b6cc9b62777bebd57c0ec00
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 53399c1ff1d9fa60df992b922b99c82d119b2f58
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866758"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355026"
 ---
 # <a name="processor-power-management-ppm-tuning-for-the-windows-server-balanced-power-plan"></a>Windows Server のバランスの取れた電源プランのプロセッサ電源管理 (PPM) のチューニング
 
