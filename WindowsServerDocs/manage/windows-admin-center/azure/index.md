@@ -6,14 +6,14 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.date: 05/31/2019
-ms.openlocfilehash: b4b1f42db7d80fabe2e3361f3ab9ebf41ad8bc29
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 063fe828e906cfdb6b787322942272335591d404
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865428"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407041"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>Azure ハイブリッド サービスへの Windows Server の接続
 

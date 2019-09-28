@@ -1,18 +1,18 @@
 ---
 title: ファイル サーバーのパフォーマンス チューニング
 description: Windows Server を実行しているファイル サーバーのパフォーマンス チューニング
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
 ms.author: NedPyle; Danlo; DKruse
 ms.date: 4/14/2017
-ms.openlocfilehash: dc8a845a6d352fa03517e2a092c44b6d1c1def4b
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 5f772d2333acb2d48bf27168aca42754013dd8be
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811469"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370221"
 ---
 # <a name="performance-tuning-for-file-servers"></a>ファイル サーバーのパフォーマンス チューニング
 
@@ -135,7 +135,7 @@ ms.locfileid: "66811469"
 
     適用対象: Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Vista、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-    既定値は 0 です。 既定では、SMB リダイレクターは、ネットワーク関連のタイムアウトを回避するために、待機時間の長いネットワーク接続全体のスループットを調整する場合があります。 このレジストリ値を 1 に設定すると、この調整が無効になり、待機時間の長いネットワーク接続でのファイル転送のスループットがより高くなります。
+    既定値は 0 です。 既定では、SMB リダイレクターは、ネットワーク関連のタイムアウトを回避するために、待機時間の長いネットワーク接続全体のスループットを調整します。 このレジストリ値を 1 に設定すると、この調整が無効になり、待機時間の長いネットワーク接続でのファイル転送のスループットがより高くなります。
 
 -   **DisableLargeMtu**
 
@@ -145,7 +145,7 @@ ms.locfileid: "66811469"
 
     適用対象: Windows 10、Windows 8.1、Windows 8、Windows 7、Windows Vista、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-    既定値は、Windows 8 の場合のみ 0 です。 Windows 8 では、SMB リダイレクターは、要求ごとに最大 1 MB のペイロードを転送するため、ファイル転送速度が向上します。 このレジストリ値を 1 に設定すると、要求のサイズは 64 KB に制限されます。 この設定を適用する前に、その影響を評価する必要があります。
+    既定値は、Windows 8 の場合のみ 0 です。 Windows 8 では、SMB リダイレクターは、要求ごとに最大 1 MB のペイロードを転送するため、ファイル転送速度が向上します。 このレジストリ値を 1 に設定すると、要求のサイズは 64 KB に制限されます。 この設定を適用する前に、この設定の影響を評価する必要があります。
 
 -   **RequireSecuritySignature**
 

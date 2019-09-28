@@ -1,18 +1,18 @@
 ---
 title: サーバーのハードウェア パフォーマンスに関する考慮事項
 description: Windows Server 2016 のサーバーのハードウェア パフォーマンスに関する考慮事項
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: phstee
 author: phstee
 ms.date: 01/08/2018
-ms.openlocfilehash: f9c7f0e589980f7d985f165e318667ebe2e5d5c5
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9c012711dff3746587b4a04b31d9c23ebb7de4cd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866746"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370553"
 ---
 # <a name="server-hardware-performance-considerations"></a>サーバーのハードウェア パフォーマンスに関する考慮事項
 
