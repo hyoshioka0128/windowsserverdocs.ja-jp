@@ -1,43 +1,43 @@
 ---
 title: ガイド
-description: ガイド Windows Admin Center SDK (プロジェクト ホノルル)
+description: ガイド Windows 管理センター SDK (プロジェクトホノルル)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/17/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 0620329bc0059c830359a125dd865ffd39ae72b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.prod: windows-server
+ms.openlocfilehash: b7e091e4b9bef11b37a8247b52390404e258ae3b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836153"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357107"
 ---
 # <a name="guides"></a>ガイド
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
 ## <a name="guides"></a>ガイド
-Windows Admin Center SDK を使用した開発のいくつかのガイドを示します。
+ここでは、Windows 管理センター SDK を使用してを開発するためのガイドをいくつか紹介します。
 
-- [ツールの拡張機能にモジュールを追加します。](guides/add-module.md)
-- [ツールの拡張機能に iFrame を追加します。](guides/add-iframe.md)
-- [ゲートウェイのカスタム プラグインを使用して、ツールの拡張機能で](guides/use-custom-gateway-plugin.md)
-- [接続プロバイダーを作成します。](guides/create-connection-provider.md)
-- [ルートのナビゲーション動作を変更します。](guides/modify-root-navigation.md)
-- [ツールの表示を制御します。](guides/dynamic-tool-display.md)
+- [ツール拡張機能にモジュールを追加する](guides/add-module.md)
+- [ツール拡張機能に iFrame を追加する](guides/add-iframe.md)
+- [ツール拡張機能でカスタムのゲートウェイ プラグインを使用する](guides/use-custom-gateway-plugin.md)
+- [接続プロバイダーの作成](guides/create-connection-provider.md)
+- [ルート ナビゲーション動作の変更](guides/modify-root-navigation.md)
+- [ツールの可視性の制御](guides/dynamic-tool-display.md)
 - [文字列とローカライズ](guides/strings-localization.md)
-- [拡張機能で PowerShell を使用します。](guides/powershell.md)
-- [CSS アイコンのガイド](guides/cssicons.md)
+- [拡張機能で PowerShell を使用する](guides/powershell.md)
+- [CSS アイコン ガイド](guides/cssicons.md)
 
-## <a name="sdk-design-toolkit"></a>SDK のデザイン ツールキット
+## <a name="sdk-design-toolkit"></a>SDK design toolkit
 
-- チェック アウト、Windows Admin Center [SDK デザイン ツールキット](https://github.com/Microsoft/windows-admin-center-sdk/blob/master/WindowsAdminCenterDesignToolkit.zip)! このツールキットは、Windows Admin Center スタイル、コントロール、およびページ テンプレートを使用して PowerPoint の拡張機能を迅速に模擬テストを実行するために設計されています。 拡張機能はどのように Windows Admin Center でコーディングを開始する前に参照してください。
+- Windows 管理センター [SDK design toolkit](https://github.com/Microsoft/windows-admin-center-sdk/blob/master/WindowsAdminCenterDesignToolkit.zip)をご覧ください。 このツールキットは、Windows 管理センターのスタイル、コントロール、およびページテンプレートを使用して、PowerPoint の拡張機能を迅速にモックアップできるように設計されています。 コーディングを開始する前に、Windows 管理センターで拡張機能がどのように表示されるかを確認してください。
 
-## <a name="sample-code-included-with-the-sdk"></a>SDK に付属のサンプル コード
+## <a name="sample-code-included-with-the-sdk"></a>SDK に含まれているサンプルコード
 
-- サンプル コードが見つかる[ツール](develop-tool.md)、[ソリューション](develop-solution.md)、および[ゲートウェイ プラグイン](develop-gateway-plugin.md)SDK ドキュメントの拡張機能の種類。 ありますは新しい拡張機能プロジェクトをビルドし、ニーズに合わせてプロジェクトをカスタマイズする個々 の手順に従って、Windows Admin Center CLI を活用します。
+- サンプルコードについては、SDK ドキュメントの「[ツール](develop-tool.md)、[ソリューション](develop-solution.md)、および[ゲートウェイのプラグイン](develop-gateway-plugin.md)拡張機能の種類」を参照してください。 ここでは、Windows 管理センター CLI を利用して新しい拡張機能プロジェクトをビルドした後、個々のガイドに従って、ニーズに合わせてプロジェクトをカスタマイズします。
 
-- [開発者ツール](https://aka.ms/wacsdk)SDK の GitHub サイトでホストされているは参照でき、独自の拡張機能で使用するコントロールの豊富なコレクションを格納しているソリューションの拡張機能です。  開発者ツールは、開発者モードで Windows Admin Center にサイド ローディングすることができる完全に機能する拡張機能です。
+- GitHub SDK サイトでホストされている[開発者ツール](https://aka.ms/wacsdk)は、独自の拡張機能で参照して使用できる豊富なコントロールのコレクションを含むソリューションの拡張機能です。  開発者ツールは、開発者モードで Windows Admin Center にサイド ローディングすることができる完全に機能する拡張機能です。
