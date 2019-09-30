@@ -45,7 +45,7 @@ Reg export KeyName FileName [/y]
 
 ## <a name="remarks"></a>コメント
 
-次の表に、戻り値の **reg エクスポート** 操作します。
+次の表に、戻り値の **reg export** 操作します。
 
 |値|説明|
 |-----|-----------|

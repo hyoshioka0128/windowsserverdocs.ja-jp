@@ -54,7 +54,7 @@ reg query <KeyName> [{/v <ValueName> | /ve}] [/s] [/se <Separator>] [/f <Data>] 
 
 ## <a name="remarks-optional-section"></a>解説 \<optional section >
 
-次の表に、戻り値の **reg クエリ** 操作します。
+次の表に、戻り値の **reg query** 操作します。
 
 |値|説明|
 |-----|-----------|

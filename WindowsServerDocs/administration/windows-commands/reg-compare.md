@@ -52,7 +52,7 @@ reg compare <KeyName1> <KeyName2> [{/v ValueName | /ve}] [{/oa | /od | /os | on}
 
 ## <a name="remarks"></a>コメント
 
-次の表に、戻り値の **reg 比較**します。
+次の表に、戻り値の **reg compare**します。
 
 |値|説明|
 |-----|-----------|
