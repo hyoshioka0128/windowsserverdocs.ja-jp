@@ -1,7 +1,7 @@
 ---
 title: リモート デスクトップ環境を展開する
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 description: リモート デスクトップ環境を展開する基本の手順。
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b9ce1bb87a7a2ad8819235edc412fd095bc2985
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e00be471b2607ad4bc8cc8e11652d428419b4fd6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805130"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404020"
 ---
 # <a name="deploy-your-remote-desktop-environment"></a>リモート デスクトップ環境を展開する
 
@@ -46,7 +46,7 @@ ms.locfileid: "66805130"
 4.  RD ライセンス サーバーをアクティブ化し、それをライセンス サーバー グループに追加します。  
     1.  サーバー マネージャーで、 **[ツール] > [ターミナル サービス] > [リモート デスクトップ ライセンス マネージャー]** とクリックします。  
     2.  RD ライセンス マネージャーで、サーバーを選択してから、 **[アクション] > [サーバーのアクティブ化]** とクリックします。  
-    3.  **[会社についての情報]** ページに到達するまで既定値を受け入れるサーバーのアクティブ化ウィザードで既定値を受け入れます。 次に、会社についての情報を入力します。  
+    3.  サーバーのアクティブ化ウィザードで既定値を受け入れます。 [会社についての情報] ページに到達するまで既定値を受け入れます。 次に、会社についての情報を入力します。  
     4.  最後のページまでの残りのページでは既定値をそのまま使用します。 **[ライセンスのインストール ウィザードを開始する]** チェック ボックスをオフにして、 **[完了]** をクリックします。  
     5.  **[アクション] > [構成の確認] > [グループに追加] > [OK]** とクリックします。 AAD DC Administrators グループで、ユーザーの資格情報を入力し、SCP として登録します。 Azure AD Domain Services を使用している場合、この手順が機能しない可能性がありますが、警告やエラーは無視できます。  
 5.  RD ゲートウェイ サーバーと証明書名を追加します。  
