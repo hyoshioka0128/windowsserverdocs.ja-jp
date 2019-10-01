@@ -6,13 +6,13 @@ ms.topic: article
 author: haley-rowland
 ms.author: harowl
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: f7bf0e32b1156fe361c79ac4ccd0e3536df767e2
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.prod: windows-server
+ms.openlocfilehash: d681e5007cd3ae3c14de774df0bc85abc23b51d7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63742125"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406832"
 ---
 # <a name="windows-admin-center-and-related-management-solutions-from-microsoft"></a>Windows Admin Center と Microsoft の関連する管理ソリューション
 
@@ -45,6 +45,6 @@ ms.locfileid: "63742125"
 |Hyper-V、記憶域スペース ダイレクト、および SDN を統合した、**個別**の 2 から 4 のノード **HCI** クラスターの最適化された管理|SCVMM を使用して**ベア メタル**から**データ センター規模**で Hyper-V、Windows Server クラスターを展開および管理|
 |**HCI で監視**のみ; クラスター正常性サービスは履歴を格納します。 1 番目と 3 番目のパーティ**管理ツール拡張機能**の拡張可能なプラットフォーム|アラート、通知、サード パーティ製負荷監視を備えた SCOM での**拡張可能** & **スケーラブルな監視**プラットフォーム; 履歴用 SQL|
 |**ハイブリッド**への最も簡単なブリッジ; オンボードであり、データ保護、レプリケーション、更新プログラムなどにさまざまな Azure サービスを使用|**組み込み**データ保護、レプリケーション、更新プログラム (DPM/VMM/SCCM)。 Log Analytics および Service Map とのハイブリッド統合|
-|Storage Migration Service、Storage Replica、System Insights などの、Windows Server の**プラットフォーム機能に焦点を当てます**。|**追加のプラットフォーム**:Orchestrator/SMA での自動化。SCSM およびその他のサービス管理ツールとの統合|
+|次の Windows Server の**プラットフォーム機能に焦点を当てます**。Storage Migration Service、Storage Replica、System Insights など。|**追加のプラットフォーム**:Orchestrator/SMA での自動化。SCSM およびその他のサービス管理ツールとの統合|
 
 #### <a name="each-delivers-targeted-value-independently-better-together-with-complementary-capabilities"></a>それぞれは独立して目標値を提供します; 補完機能と**一緒に使用するとより適切**です。
