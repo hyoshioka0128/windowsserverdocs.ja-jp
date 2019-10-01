@@ -36,7 +36,7 @@ Windows Server 2016 では、グローバルポリシーストアまたは個別
 
 1. DCBX を無効にするビットを false にする
 
-2. ネットワークアダプターで DCB を有効にします。 「 [Enable And DISPLAY DCB Settings On Network Adapters](#bkmk_enabledcb)」を参照してください。
+2. ネットワークアダプターで DCB を有効にします。 「 [ネットワークアダプターの DCB 設定を有効にして表示する](#bkmk_enabledcb)」を参照してください。
 
 >[!NOTE]
 >DCBX を使用してスイッチから DCB を構成する場合は、「 [Dcbx の設定](#dcb-configuration-on-network-adapters)」を参照してください。

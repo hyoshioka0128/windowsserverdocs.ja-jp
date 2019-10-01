@@ -24,7 +24,7 @@ ms.locfileid: "71407941"
   
 -   各クライアントコンピューターで、アカウントフェデレーションサーバーを信頼するように Internet Explorer を構成します。  
   
-    詳細については、「 [Configure Client Computers to Trust the Account Federation Server](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md)」を参照してください。  
+    詳細については、「 [アカウント フェデレーション サーバーを信頼するクライアント コンピューターを構成します](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md)」を参照してください。  
   
 -   適切なアカウントフェデレーションサーバー、リソースフェデレーションサーバー、および Web サーバー Secure Sockets Layer \(SSL @ no__t 証明書 \(、または各クライアントコンピューターの信頼されたルート @ no__t-3 にチェーンする同等の証明書をインストールします。  
   

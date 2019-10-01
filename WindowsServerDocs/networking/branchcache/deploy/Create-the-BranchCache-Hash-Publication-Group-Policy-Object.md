@@ -24,7 +24,7 @@ ms.locfileid: "71356636"
 この手順を実行するには、**Domain Admins** のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
   
 > [!NOTE]  
-> この手順を実行する前に、BranchCache ファイルサーバーの組織単位を作成し、ファイルサーバーを OU に移動する必要があります。 詳細については、「 [Enable Hash Publication For Domain Member File Servers](../../branchcache/deploy/Enable-Hash-Publication-for-Domain-Member-File-Servers.md)」を参照してください。  
+> この手順を実行する前に、BranchCache ファイルサーバーの組織単位を作成し、ファイルサーバーを OU に移動する必要があります。 詳細については、「 [ドメイン メンバー ファイル サーバーでハッシュの発行を有効にする](../../branchcache/deploy/Enable-Hash-Publication-for-Domain-Member-File-Servers.md)」を参照してください。  
   
 ### <a name="to-create-the-branchcache-hash-publication-group-policy-object"></a>BranchCache ハッシュパブリケーショングループポリシーオブジェクトを作成するには  
   

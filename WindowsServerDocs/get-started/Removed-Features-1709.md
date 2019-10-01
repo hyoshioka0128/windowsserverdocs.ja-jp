@@ -32,7 +32,7 @@ Windows Server バージョン 1709 には、Windows Server 2016 と同じ機能
 
 - 半期チャネルのリリースでは、Windows Server バージョン 1709 は Server Core インストール オプションのみを提供します。 詳細については、[サービス チャネルの比較](../get-started-19/servicing-channels-19.md)に関するページをご覧ください。
 - このリリース以降、Nano Server はインストール可能なホスト オペレーティング システムとして使用できません。 代わりに、Nano Server は、コンテナー オペレーティング システムとして使用できます。 「[Windows Server バージョン 1709 で Nano Server に加えられる変更](nano-in-semi-annual-channel.md)」をご覧ください。
-- このリリース以降、サーバー メッセージ ブロック (SMB) バージョン 1 は既定でインストールされません。 詳細については、「[SMBv1 is not installed by default in Windows 10 Fall Creators Update and Windows Server, version 1709 and later versions (Windows 10 Fall Creators Update および Windows Server バージョン 1709 以降では SMBv1 は既定でインストールされない)](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows)」をご覧ください。
+- このリリース以降、サーバー メッセージ ブロック (SMB) バージョン 1 は既定でインストールされません。 詳細については、「[Windows 10 Fall Creators Update と Windows Server バージョン 1709 以降のバージョンの既定では SMBv1 はインストールされません](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows)」をご覧ください。
 
 
 ## <a name="features-being-considered-for-replacement-starting-with-subsequent-releases"></a>今後のリリースで置換が検討されている機能

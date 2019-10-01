@@ -26,7 +26,8 @@ ms.locfileid: "71356542"
 メンバーシップ **管理者**, 、または同等がこの手順を実行するために必要な最小値。  
   
 > [!NOTE]  
-> 1つまたは複数のドメインメンバーファイルサーバーがある場合は、それらを Active Directory Domain Services の組織単位 (OU) に追加し、グループポリシーを使用して、個別に構成するのではなく、一度にすべてのファイルサーバーに対してハッシュの発行を構成することができます。各ファイルサーバー。 詳細については、「 [Enable Hash Publication For Domain Member File Servers](../../branchcache/deploy/Enable-Hash-Publication-for-Domain-Member-File-Servers.md)」を参照してください。  
+> 1つまたは複数のドメインメンバーファイルサーバーがある場合は、それらを Active Directory Domain Services の組織単位 (OU) に追加し、グループポリシーを使用して、個別に構成するのではなく、一度にすべてのファイルサーバーに対してハッシュの発行を構成することができます。各ファイルサーバー。 詳細については、「 [ドメイン メンバー ファイル サーバーでハッシュの発行を有効にする
+](../../branchcache/deploy/Enable-Hash-Publication-for-Domain-Member-File-Servers.md)」を参照してください。  
   
 ### <a name="to-enable-hash-publication-for-one-file-server"></a>1つのファイルサーバーでハッシュの発行を有効にするには  
   
