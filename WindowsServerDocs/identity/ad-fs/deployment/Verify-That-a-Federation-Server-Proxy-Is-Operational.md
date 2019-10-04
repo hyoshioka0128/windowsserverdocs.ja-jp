@@ -19,7 +19,7 @@ ms.locfileid: "71359969"
 # <a name="verify-that-a-federation-server-proxy-is-operational"></a>フェデレーション サーバー プロキシが正常に動作していることを確認する
 
 
-フェデレーションサーバープロキシが Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 のフェデレーションサービスと通信できることを確認するには、次の手順に従います。 **AD FS フェデレーションサーバープロキシ構成ウィザード**を実行して、フェデレーションサーバープロキシの役割で実行されるようにコンピューターを構成した後に、この手順を実行します。 このウィザードの実行方法の詳細については、「 [Configure a Computer for The Federation Server Proxy Role](Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)」を参照してください。  
+フェデレーションサーバープロキシが Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 のフェデレーションサービスと通信できることを確認するには、次の手順に従います。 **AD FS フェデレーションサーバープロキシ構成ウィザード**を実行して、フェデレーションサーバープロキシの役割で実行されるようにコンピューターを構成した後に、この手順を実行します。 このウィザードの実行方法の詳細については、「 [フェデレーション サーバー プロキシの役割用にコンピューターを構成する](Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md)」を参照してください。  
   
 > [!IMPORTANT]  
 > このテスト結果は、フェデレーション サーバー プロキシ コンピューターのイベント ビューアーに、特定の成功イベントとして生成されます。  
