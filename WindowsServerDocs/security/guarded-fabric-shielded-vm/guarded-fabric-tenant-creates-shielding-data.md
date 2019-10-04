@@ -7,13 +7,13 @@ ms.assetid: 49f4e84d-c1f7-45e5-9143-e7ebbb2ef052
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 01/30/2019
-ms.openlocfilehash: 86047420cb4b1095d5715739d76daa3dba3ff5d0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 09/25/2019
+ms.openlocfilehash: 1ae6f881e1bd4b9b317e5622f18958f25f692eec
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403452"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940803"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>テナント用のシールドされた Vm-シールドされた VM を定義するシールドデータの作成
 
@@ -24,11 +24,11 @@ ms.locfileid: "71403452"
 シールドデータファイルの一覧および内容の図については、「[シールドデータとは何ですか?](guarded-fabric-and-shielded-vms.md#what-is-shielding-data-and-why-is-it-necessary)」を参照してください。
 
 > [!IMPORTANT]
-> このセクションの手順は、Windows Server 2016 を実行しているテナントコンピューターで完了している必要があります。 このマシンは、保護されたファブリックの一部にすることはできません (つまり、HGS クラスターを使用するように構成することはできません)。
+> このセクションの手順は、保護されたファブリックの外部にある別の信頼されたマシンで完了する必要があります。 通常、VM 所有者 (テナント) は、ファブリック管理者ではなく、vm のシールドデータを作成します。
 
 シールドデータファイルの作成を準備するには、次の手順を実行します。
 
-- [リモートデスクトップ接続用の証明書を取得する](#obtain-a-certificate-for-remote-desktop-connection)
+- [リモートデスクトップ接続用の証明書を取得する](#optional-obtain-a-certificate-for-remote-desktop-connection)
 - [応答ファイルを作成する](#create-an-answer-file)
 - [ボリューム署名カタログファイルを取得する](#get-the-volume-signature-catalog-file)
 - [信頼されたファブリックの選択](#select-trusted-fabrics)
@@ -37,23 +37,20 @@ ms.locfileid: "71403452"
 
 - [シールドデータファイルを作成して、ガーディアンを追加する](#create-a-shielding-data-file-and-add-guardians-using-the-shielding-data-file-wizard)
 
-
-## <a name="obtain-a-certificate-for-remote-desktop-connection"></a>リモートデスクトップ接続用の証明書を取得する
+## <a name="optional-obtain-a-certificate-for-remote-desktop-connection"></a>Optionalリモートデスクトップ接続用の証明書を取得する
 
 テナントはリモートデスクトップ接続またはその他のリモート管理ツールを使用してシールドされた Vm にしか接続できないため、テナントが適切なエンドポイントに接続していることを確認できること (つまり、"man-in-the-middle" がないこと) を確認することが重要です。接続を遮断しています。
 
 目的のサーバーに接続していることを確認する方法の1つとして、接続の開始時に提示するリモートデスクトップサービス用の証明書をインストールして構成する方法があります。 サーバーに接続しているクライアントコンピューターは、証明書が信頼されているかどうかを確認し、存在しない場合は警告を表示します。 一般に、接続しているクライアントが証明書を信頼していることを確認するために、RDP 証明書はテナントの PKI から発行されます。 [リモートデスクトップサービスでの証明書の使用](https://technet.microsoft.com/library/dn781533.aspx)の詳細については、TechNet を参照してください。
 
-> [!NOTE]
+ カスタム RDP 証明書を取得する必要があるかどうかを判断するために、次の点を考慮してください。
+
+- ラボ環境でシールドされた Vm をテストするだけの場合は、カスタム RDP 証明書は必要あり**ません**。
+- VM が Active Directory ドメインに参加するように構成されている場合、通常、コンピューター証明書は組織の証明機関によって自動的に発行され、RDP 接続中にコンピューターを識別するために使用されます。 カスタム RDP 証明書は必要あり**ません**。
+- VM がドメインに参加しておらず、リモートデスクトップを使用しているときに正しいコンピューターに接続していることを確認する方法が必要な場合は、カスタム RDP 証明書の使用を**検討する必要があり**ます。
+
+> [!TIP]
 > シールドデータファイルに含める RDP 証明書を選択する場合は、必ずワイルドカード証明書を使用してください。 1つのシールドデータファイルを使用すると、無制限の数の Vm を作成できます。 各 VM は同じ証明書を共有するので、ワイルドカード証明書によって、VM のホスト名に関係なく証明書が有効であることが確認されます。
-
-シールドされた Vm を評価していて、証明機関からの証明書を要求する準備がまだできていない場合は、次の Windows PowerShell コマンドを実行して、テナントコンピューターに自己署名証明書を作成できます ( *contoso.com*はテナントのドメイン):
-
-``` powershell
-$rdpCertificate = New-SelfSignedCertificate -DnsName '\*.contoso.com'
-$password = ConvertTo-SecureString -AsPlainText 'Password1' -Force
-Export-PfxCertificate -Cert $RdpCertificate -FilePath .\rdpCert.pfx -Password $password
-```
 
 ## <a name="create-an-answer-file"></a>応答ファイルを作成する
 
@@ -64,40 +61,50 @@ VMM の署名済みテンプレートディスクは一般化されているた�
 - 初期化プロセスの最後に、VM はドメインに参加することを意図していますか?
 - ボリュームライセンスまたは特定のプロダクトキーを VM ごとに使用しますか?
 - DHCP または静的 IP を使用していますか?
-- VM が組織に属していることを証明するために使用されるリモートデスクトッププロトコル (RDP) 証明書を使用しますか。
+- VM が組織に属していることを証明するために使用されるカスタムリモートデスクトッププロトコル (RDP) 証明書を使用しますか。
 - 初期化の最後にスクリプトを実行しますか?
-- 追加の構成に Desired State Configuration (DSC) サーバーを使用していますか。
 
 シールドデータファイルで使用される応答ファイルは、そのシールドデータファイルを使用して作成されたすべての VM で使用されます。 そのため、VM 固有の情報を応答ファイルにハードコーディングしないようにする必要があります。 VMM では、VM 間で変更される可能性のある特殊化値を処理するために、無人セットアップファイルの一部の代替文字列 (下の表を参照) がサポートされています。 これらを使用する必要はありません。ただし、これらが存在する場合、VMM はそれらの機能を利用します。
 
 シールドされた Vm の unattend.xml ファイルを作成する場合は、次の制限事項に注意してください。
 
--   無人セットアップファイルを構成した後、VM がオフになるようにする必要があります。 これは、VM がプロビジョニングを完了し、使用できる状態になったことを、VMM がテナントに報告する必要があることを VMM が認識できるようにするためです。 プロビジョニング中に VM がオフになったことを検出すると、VMM によって自動的に VM が電源に入れられます。
+- VMM を使用してデータセンターを管理している場合、無人セットアップファイルを構成した後、VM がオフになるようにする必要があります。 これは、VM がプロビジョニングを完了し、使用できる状態になったことを、VMM がテナントに報告する必要があることを VMM が認識できるようにするためです。 プロビジョニング中に VM がオフになったことを検出すると、VMM によって自動的に VM が電源に入れられます。
 
--   RDP 証明書を構成して、中間者攻撃用に構成された別のマシンではなく、適切な VM に接続していることを確認することを強くお勧めします。
+- 構成した後に VM にアクセスできるように、RDP と対応するファイアウォール規則を必ず有効にしてください。 VMM コンソールを使用してシールドされた Vm にアクセスすることはできないため、VM に接続するには RDP が必要です。 Windows PowerShell リモート処理でシステムを管理する場合は、WinRM が有効になっていることも確認してください。
 
--   構成した後に VM にアクセスできるように、RDP と対応するファイアウォール規則を必ず有効にしてください。 VMM コンソールを使用してシールドされた Vm にアクセスすることはできないため、VM に接続するには RDP が必要です。 Windows PowerShell リモート処理でシステムを管理する場合は、WinRM が有効になっていることも確認してください。
+- シールドされた VM の無人セットアップファイルでサポートされている代替文字列は次のとおりです。
 
--   シールドされた VM の無人セットアップファイルでサポートされている代替文字列は次のとおりです。
+    | 置き換え可能な要素 | 置換文字列 |
+    |-----------|-----------|
+    | ComputerName        | @ComputerName@      |
+    | TimeZone            | @TimeZone@          |
+    | ProductKey          | @ProductKey@        |
+    | IPAddr4-1           | @IP4Addr-1@         |
+    | IPAddr6-1           | @IP6Addr-1@         |
+    | MACAddr-1           | @MACAddr-1@         |
+    | Prefix-1-1          | @Prefix-1-1@        |
+    | NextHop-1-1         | @NextHop-1-1@       |
+    | Prefix-1-2          | @Prefix-1-2@        |
+    | NextHop-1-2         | @NextHop-1-2@       |
 
-| 置き換え可能な要素 | 置換文字列 |
-|-----------|-----------|
-| ComputerName        | @ComputerName@      |
-| TimeZone            | @TimeZone@          |
-| ProductKey          | @ProductKey@        |
-| IPAddr4-1           | @IP4Addr-1@         |
-| IPAddr6-1           | @IP6Addr-1@         |
-| MACAddr-1           | @MACAddr-1@         |
-| Prefix-1-1          | @Prefix-1-1@        |
-| NextHop-1-1         | @NextHop-1-1@       |
-| Prefix-1-2          | @Prefix-1-2@        |
-| NextHop-1-2         | @NextHop-1-2@       |
+    複数の NIC がある場合は、1番目の桁を増やすことで、IP 構成に複数の代替文字列を追加できます。 たとえば、2つの Nic に IPv4 アドレス、サブネット、およびゲートウェイを設定するには、次の代替文字列を使用します。
+
+    | 置換文字列 | 置換の例 |
+    |---------------------|----------------------|
+    | @IP4Addr-1@         | 192.168.1.10         |
+    | @MACAddr-1@         | Ethernet             |
+    | @Prefix-1-1@        | 192.168.1.0/24       |
+    | @NextHop-1-1@       | 192.168.1.254        |
+    | @IP4Addr-2@         | 10.0.20.30           |
+    | @MACAddr-2@         | イーサネット2           |
+    | @Prefix-2-1@        | 10.0.20.0/24         |
+    | @NextHop-2-1@       | 10.0.20.1            |
 
 代替文字列を使用する場合は、VM のプロビジョニング処理中に文字列が設定されるようにすることが重要です。 展開時に @ProductKey @ のような文字列が指定されていない場合は、無人セットアップファイルの 1ProductKey @ no__t ノードを空白の @no__t ままにすると、特殊化プロセスは失敗し、VM に接続できなくなります。
 
 また、テーブルの末尾に向かうネットワーク関連の代替文字列は、VMM 静的 IP アドレスプールを利用している場合にのみ使用されることに注意してください。 これらの置換文字列が必要であるかどうかは、ホスティングサービスプロバイダーから通知されます。 VMM テンプレートでの静的 IP アドレスの詳細については、VMM のドキュメントの次の情報を参照してください。
 
-- [IP アドレスプールに関するガイドライン](https://technet.microsoft.com/system-center-docs/vmm/plan/plan-network#guidelines-for-ip-address-pools) 
+- [IP アドレスプールに関するガイドライン](https://technet.microsoft.com/system-center-docs/vmm/plan/plan-network#guidelines-for-ip-address-pools)
 - [VMM ファブリックでの静的 IP アドレスプールの設定](https://technet.microsoft.com/system-center-docs/vmm/manage/manage-network-static-address-pools)
 
 最後に、シールドされた VM の展開プロセスでは、OS ドライブのみが暗号化されることに注意する必要があります。 1つまたは複数のデータドライブを含むシールドされた VM をデプロイする場合は、データドライブを自動的に暗号化するために、無人コマンドまたはグループポリシー設定をテナントドメインに追加することを強くお勧めします。
@@ -111,17 +118,21 @@ VMM の署名済みテンプレートディスクは一般化されているた�
 
 テンプレートディスクの VSC を取得するには、次の2つの方法があります。
 
--  ホスト (またはテナントが VMM にアクセスできる場合) は、VMM PowerShell コマンドレットを使用して、VSC を保存し、テナントに渡します。 これは、VMM コンソールがインストールされ、ホストファブリックの VMM 環境を管理するように構成されている任意のコンピューターで実行できます。 VSC を保存するための PowerShell コマンドレットは次のとおりです。
+1. ホスト (またはテナントが VMM にアクセスできる場合) は、VMM PowerShell コマンドレットを使用して、VSC を保存し、テナントに渡します。 これは、VMM コンソールがインストールされ、ホストファブリックの VMM 環境を管理するように構成されている任意のコンピューターで実行できます。 VSC を保存するための PowerShell コマンドレットは次のとおりです。
 
-        $disk = Get-SCVirtualHardDisk -Name "templateDisk.vhdx"
-    
-        $vsc = Get-SCVolumeSignatureCatalog -VirtualHardDisk $disk
-    
-        $vsc.WriteToFile(".\templateDisk.vsc")
+    ```powershell
+    $disk = Get-SCVirtualHardDisk -Name "templateDisk.vhdx"
 
--  テナントは、テンプレートディスクファイルにアクセスできます。 これは、ホスティングサービスプロバイダーにアップロードするテンプレートディスクをテナントが作成する場合、またはテナントがホストのテンプレートディスクをダウンロードできる場合に発生する可能性があります。 この場合、図に VMM がないと、テナントは次のコマンドレットを実行します (シールドされた VM ツール機能と共にインストールされ、リモートサーバー管理ツール)。
+    $vsc = Get-SCVolumeSignatureCatalog -VirtualHardDisk $disk
 
-        Save-VolumeSignatureCatalog -TemplateDiskPath templateDisk.vhdx -VolumeSignatureCatalogPath templateDisk.vsc
+    $vsc.WriteToFile(".\templateDisk.vsc")
+    ```
+
+2. テナントは、テンプレートディスクファイルにアクセスできます。 これは、ホスティングサービスプロバイダーにアップロードするテンプレートディスクをテナントが作成する場合、またはテナントがホストのテンプレートディスクをダウンロードできる場合に発生する可能性があります。 この場合、図に VMM がないと、テナントは次のコマンドレットを実行します (シールドされた VM ツール機能と共にインストールされ、リモートサーバー管理ツール)。
+
+    ```powershell
+    Save-VolumeSignatureCatalog -TemplateDiskPath templateDisk.vhdx -VolumeSignatureCatalogPath templateDisk.vsc
+    ```
 
 ## <a name="select-trusted-fabrics"></a>信頼されたファブリックの選択
 
@@ -131,15 +142,18 @@ VMM の署名済みテンプレートディスクは一般化されているた�
 
 ユーザーまたはホスティングサービスプロバイダーは、次のいずれかのアクションを実行して、HGS からガーディアンメタデータを取得できます。
 
--  次の Windows PowerShell コマンドを実行するか、web サイトを参照して表示されている XML ファイルを保存して、HGS から直接ガーディアンメタデータを取得します。
+- 次の Windows PowerShell コマンドを実行するか、web サイトを参照して表示されている XML ファイルを保存して、HGS から直接ガーディアンメタデータを取得します。
 
-        Invoke-WebRequest 'http://hgs.bastion.local/KeyProtection/service/metadata/2014-07/metadata.xml' -OutFile .\RelecloudGuardian.xml
+    ```powershell
+    Invoke-WebRequest 'http://hgs.bastion.local/KeyProtection/service/metadata/2014-07/metadata.xml' -OutFile .\RelecloudGuardian.xml
+    ```
 
--  Vmm PowerShell コマンドレットを使用して、VMM からガーディアンメタデータを取得します。
+- Vmm PowerShell コマンドレットを使用して、VMM からガーディアンメタデータを取得します。
 
-        $relecloudmetadata = Get-SCGuardianConfiguration
-
-        $relecloudmetadata.InnerXml | Out-File .\RelecloudGuardian.xml -Encoding UTF8
+    ```powershell
+    $relecloudmetadata = Get-SCGuardianConfiguration
+    $relecloudmetadata.InnerXml | Out-File .\RelecloudGuardian.xml -Encoding UTF8
+    ```
 
 続行する前に、シールドされた Vm の実行を承認する保護されたファブリックごとにガーディアンメタデータファイルを取得します。
 
@@ -147,13 +161,15 @@ VMM の署名済みテンプレートディスクは一般化されているた�
 
 シールドデータファイルウィザードを実行して、シールドデータ (PDK) ファイルを作成します。 ここでは、RDP 証明書、無人セットアップファイル、ボリューム署名カタログ、所有者ガーディアン、および前の手順で取得したダウンロードしたガーディアンメタデータを追加します。
 
-1.  サーバーマネージャーまたは次の Windows PowerShell コマンドを使用して、 **&gt; @no__t シールド**された VM ツールをコンピューターにインストールリモートサーバー管理ツールます。
+1. サーバーマネージャーまたは次の Windows PowerShell コマンドを使用して、 **&gt; @no__t シールド**された VM ツールをコンピューターにインストールリモートサーバー管理ツールます。
 
-        Install-WindowsFeature RSAT-Shielded-VM-Tools
+    ```powershell
+    Install-WindowsFeature RSAT-Shielded-VM-Tools
+    ```
 
-2.  [スタート] メニューの [管理ツール] セクションからシールドデータファイルウィザードを開くか、次の実行可能ファイル**C: \\Windows @ no__t-2System32\\ShieldingDataFileWizard.exe**を実行します。
+2. [スタート] メニューの [管理ツール] セクションからシールドデータファイルウィザードを開くか、次の実行可能ファイル**C: \\Windows @ no__t-2System32\\ShieldingDataFileWizard.exe**を実行します。
 
-3.  最初のページで、2番目の [ファイルの選択] ボックスを使用して、シールドデータファイルの場所とファイル名を選択します。 通常、シールドデータファイルには、そのシールドデータを使用して作成された任意の Vm を所有するエンティティ (HR、IT、Finance など) と、実行しているワークロードロール (たとえば、ファイルサーバー、web サーバー、または無人セットアップファイルによって構成されている他のすべてのもの) を所有するエンティティを指定します オプションボタンは、シールドされた**テンプレートのシールドデータ**に設定したままにしておきます。
+3. 最初のページで、2番目の [ファイルの選択] ボックスを使用して、シールドデータファイルの場所とファイル名を選択します。 通常、シールドデータファイルには、そのシールドデータを使用して作成された任意の Vm を所有するエンティティ (HR、IT、Finance など) と、実行しているワークロードロール (たとえば、ファイルサーバー、web サーバー、または無人セットアップファイルによって構成されている他のすべてのもの) を所有するエンティティを指定します オプションボタンは、シールドされた**テンプレートのシールドデータ**に設定したままにしておきます。
 
     > [!NOTE]
     > シールドデータファイルウィザードでは、次の2つのオプションが表示されます。
@@ -163,12 +179,12 @@ VMM の署名済みテンプレートディスクは一般化されているた�
 
     ![シールドデータファイルウィザード、ファイルの選択](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielding-data-wizard-01.png)
 
-       また、このシールドデータファイルを使用して作成された Vm を本当にシールドするか、"暗号化がサポートされている" モードで構成するかを選択する必要があります。 これら2つのオプションの詳細については、「[保護されたファブリックが実行できる仮想マシンの種類を教え](guarded-fabric-and-shielded-vms.md#what-are-the-types-of-virtual-machines-that-a-guarded-fabric-can-run)てください。」を参照してください。
+    また、このシールドデータファイルを使用して作成された Vm を本当にシールドするか、"暗号化がサポートされている" モードで構成するかを選択する必要があります。 これら2つのオプションの詳細については、「[保護されたファブリックが実行できる仮想マシンの種類を教え](guarded-fabric-and-shielded-vms.md#what-are-the-types-of-virtual-machines-that-a-guarded-fabric-can-run)てください。」を参照してください。
 
     > [!IMPORTANT]
     > 次の手順に注意してください。シールドされた Vm の所有者と、シールドされた Vm の実行が許可されるファブリックを定義するためです。<br>後で既存のシールド**され**た VM を**シールド**からサポート、またはその逆に変更するには、**所有者ガーディアン**を所有する必要があります。
-    
-4.  この手順の目標は2つのフォールドです。
+
+4. この手順の目標は2つのフォールドです。
 
     - VM の所有者として自分を表す所有者ガーディアンを作成または選択します。
 
@@ -180,15 +196,15 @@ VMM の署名済みテンプレートディスクは一般化されているた�
 
     ![シールドデータファイルウィザード、所有者、およびガーディアン](../media/Guarded-Fabric-Shielded-VM/guarded-host-shielding-data-wizard-02.png)
 
-5.  ボリューム ID の修飾子 ページで、**追加** をクリックして、シールドデータファイル内の署名済みテンプレートディスクを承認します。 ダイアログボックスで VSC を選択すると、そのディスクの名前、バージョン、および署名に使用された証明書に関する情報が表示されます。 承認するテンプレートディスクごとに、この手順を繰り返します。
+5. ボリューム ID の修飾子 ページで、**追加** をクリックして、シールドデータファイル内の署名済みテンプレートディスクを承認します。 ダイアログボックスで VSC を選択すると、そのディスクの名前、バージョン、および署名に使用された証明書に関する情報が表示されます。 承認するテンプレートディスクごとに、この手順を繰り返します。
 
-6.  **[特殊化値]** ページで、 **[参照]** をクリックして、vm を特殊化するために使用する unattend.xml ファイルを選択します。
+6. **[特殊化値]** ページで、 **[参照]** をクリックして、vm を特殊化するために使用する unattend.xml ファイルを選択します。
 
-    下部にある **[追加]** ボタンを使用して、特殊化プロセス中に必要な追加ファイルを PDK に追加します。 たとえば、無人セットアップファイルが VM に RDP 証明書をインストールする場合 (「 [ShieldingDataAnswerFile 関数を使用して応答ファイルを生成](guarded-fabric-sample-unattend-xml-file.md)する」の説明を参照)、無人セットアップファイルで参照されている RDPCert ファイルをここに追加する必要があります。 ここで指定するファイルは、作成される VM の C: \\temp @ no__t-1 に自動的にコピーされます。 無人セットアップファイルでは、パスによってファイルを参照するときに、ファイルがそのフォルダー内にあることを想定する必要があります。
+    下部にある **[追加]** ボタンを使用して、特殊化プロセス中に必要な追加ファイルを PDK に追加します。 たとえば、無人セットアップファイルが VM に RDP 証明書をインストールする場合 (「 [ShieldingDataAnswerFile 関数を使用して応答ファイルを生成](guarded-fabric-sample-unattend-xml-file.md)する」の説明を参照)、rdp 証明書 PFX ファイルと RDPCertificateConfig を追加する必要があります。ここにスクリプトを作成します。 ここで指定するファイルは、作成される VM の C: \\temp @ no__t-1 に自動的にコピーされます。 無人セットアップファイルでは、パスによってファイルを参照するときに、ファイルがそのフォルダー内にあることを想定する必要があります。
 
-7.  次のページで選択内容を確認し、 **[生成]** をクリックします。
+7. 次のページで選択内容を確認し、 **[生成]** をクリックします。
 
-8.  完了したら、ウィザードを閉じます。
+8. 完了したら、ウィザードを閉じます。
 
 ## <a name="create-a-shielding-data-file-and-add-guardians-using-powershell"></a>PowerShell を使用してシールドデータファイルを作成し、ガーディアンを追加する
 
@@ -226,6 +242,9 @@ Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
 $viq = New-VolumeIDQualifier -VolumeSignatureCatalogFilePath 'C:\temp\marketing-ws2016.vsc' -VersionRule Equals
 New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy EncryptionSupported -Owner 'Owner' -Guardian 'EAST-US Datacenter' -VolumeIDQualifier $viq -AnswerFile 'C:\temp\marketing-ws2016-answerfile.xml'
 ```
+
+> [!TIP]
+> カスタム RDP 証明書、SSH キー、またはシールドデータファイルに含める必要があるその他のファイルを使用している場合は、`-OtherFile` パラメーターを使用して追加します。 ファイルパスのコンマ区切りリストを指定できます (`-OtherFile "C:\source\myRDPCert.pfx", "C:\source\RDPCertificateConfig.ps1"` など)。
 
 上記のコマンドでは、"Owner" という名前のガーディアン (HgsGuardian から取得) で VM のセキュリティ構成を変更できますが、"米国東部データセンター" では VM を実行できますが、その設定は変更できません。
 複数のガーディアンがある場合は、ガーディアンの名前をコンマで区切って `'EAST-US Datacenter', 'EMEA Datacenter'` のようにします。

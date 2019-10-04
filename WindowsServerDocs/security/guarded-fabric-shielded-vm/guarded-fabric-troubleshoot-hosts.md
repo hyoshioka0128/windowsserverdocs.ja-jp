@@ -7,13 +7,13 @@ ms.assetid: 80ea38f4-4de6-4f85-8188-33a63bb1cf81
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 08/29/2018
-ms.openlocfilehash: e2685e33a215d0c5f97fe414b7458371930e862b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 09/25/2019
+ms.openlocfilehash: 0479309efe629d204bdc98fe11a7ccb4447a7369
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386361"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940728"
 ---
 # <a name="troubleshooting-guarded-hosts"></a>保護されたホストのトラブルシューティング
 
@@ -57,7 +57,6 @@ TpmError                  | TPM でエラーが発生したため、ホストは
 UnauthorizedHost          | シールドされた Vm の実行が承認されていないため、ホストは構成証明を通過しませんでした。 シールドされた Vm を実行するために、ホストが HGS によって信頼されたセキュリティグループに属していることを確認します。
 Unknown                   | ホストは、まだ HGS で証明を試行していません。
 
-
 **AttestationStatus**が**Insecurehostconfiguration**として報告されると、1つまたは複数の理由が**AttestationSubStatus**フィールドに入力されます。
 次の表では、AttestationSubStatus で使用できる値と、問題の解決方法に関するヒントについて説明します。
 
@@ -77,3 +76,20 @@ PagefileEncryption         | ページファイルの暗号化がホストで有
 SecureBootSettings         | このホストの TPM ベースラインが、HGS によって信頼されているものと一致しません。 これは、UEFI 起動機関、DBX 変数、デバッグフラグ、またはカスタムセキュアブートポリシーが新しいハードウェアまたはソフトウェアのインストールによって変更された場合に発生する可能性があります。 このコンピューターの現在のハードウェア、ファームウェア、およびソフトウェアの構成を信頼する場合は、[新しい TPM ベースラインをキャプチャ](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#capture-the-tpm-baseline-for-each-unique-class-of-hardware)して[HGS に登録](guarded-fabric-manage-hgs.md#authorizing-new-guarded-hosts)できます。
 TcgLogVerification         | TCG ログ (TPM ベースライン) を取得または検証できません。 これは、ホストのファームウェア、TPM、またはその他のハードウェアコンポーネントに問題があることを示している可能性があります。 Windows を起動する前に、ホストが PXE ブートを試行するように構成されている場合は、古い Net Boot Program (NBP) でもこのエラーが発生することがあります。 PXE ブートが有効になっている場合は、すべての NBPs が最新の状態であることを確認します。
 VirtualSecureMode          | 仮想化ベースのセキュリティ機能がホストで実行されていません。 VBS が有効になっていること、およびシステムが構成された[プラットフォームのセキュリティ機能](https://technet.microsoft.com/itpro/windows/keep-secure/deploy-device-guard-enable-virtualization-based-security#validate-enabled-device-guard-hardware-based-security-features)を満たしていることを確認してください。 VBS の要件の詳細については、 [Device Guard のドキュメント](https://technet.microsoft.com/itpro/windows/keep-secure/device-guard-deployment-guide)を参照してください。
+
+## <a name="modern-tls"></a>最新の TLS
+
+グループポリシーを展開した場合、または TLS 1.0 を使用しないように Hyper-v ホストを構成した場合は、シールドされた VM を起動しようとすると、"ホストガーディアンサービスクライアントが、呼び出し元のプロセスに代わってキープロテクターのラップを解除できませんでした" というエラーが発生することがあります。
+これは、サポートされている TLS のバージョンを HGS サーバーとネゴシエートするときにシステムの既定の TLS バージョンが考慮されない、.NET 4.6 の既定の動作によるものです。
+
+この動作を回避するには、次の2つのコマンドを実行して、すべての .NET アプリにシステムの既定の TLS バージョンを使用するように .NET を構成します。
+
+```cmd
+reg add HKLM\SOFTWARE\Microsoft\.NETFramework\v4.0.30319 /v SystemDefaultTlsVersions /t REG_DWORD /d 1 /f /reg:64
+reg add HKLM\SOFTWARE\Microsoft\.NETFramework\v4.0.30319 /v SystemDefaultTlsVersions /t REG_DWORD /d 1 /f /reg:32
+```
+
+> [!WARNING]
+> [システムの既定の TLS バージョン] 設定は、コンピューター上のすべての .NET アプリに影響します。 実稼働コンピューターに展開する前に、分離された環境でレジストリキーをテストしてください。
+
+.NET 4.6 と TLS 1.0 の詳細については、「 [tls 1.0 の問題、第2版の解決](https://docs.microsoft.com/security/solving-tls1-problem)」を参照してください。

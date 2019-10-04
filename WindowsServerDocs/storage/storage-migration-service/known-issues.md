@@ -8,12 +8,12 @@ ms.date: 07/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 391430b75670f207520a7d972b54ba293616d0e1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 150c9f1e70df4f634886ea65efd9c61ef075f26a
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393908"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940707"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -257,6 +257,13 @@ Windows Server 2019 フェールオーバークラスターノードにインス
 
 この問題を回避するには、Storage Migration Service orchestrator を実行しているサーバーに "フェールオーバークラスター管理ツール" (RSAT-クラスター化-管理) をインストールします。 
 
+## <a name="error-there-are-no-more-endpoints-available-from-the-endpoint-mapper-when-running-inventory-against-a-windows-server-2003-source-computer"></a>Windows Server 2003 ソースコンピュータに対してインベントリを実行すると、"エンドポイントマッパーから使用できるエンドポイントがありません" というエラーが表示される
+
+Storage Migration Service orchestrator サーバーで[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)累積更新プログラムを適用して修正プログラムを適用してインベントリを実行しようとすると、次のエラーが表示されます。
+
+    There are no more endpoints available from the endpoint mapper  
+
+この問題を回避するには、記憶域移行サービス orchestrator コンピューターから、KB4512534 の累積的な更新プログラム (およびそれを置き換えたもの) を一時的にアンインストールします。 移行が完了したら、最新の累積的な更新プログラムを再インストールします。  
 
 ## <a name="see-also"></a>関連項目
 

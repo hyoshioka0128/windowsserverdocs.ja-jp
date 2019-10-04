@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 12410d619245153f759b54e7a8aff257888f04dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 92fe505c3ae7d76f7a8d5bd9d2ed0ce845159fde
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386072"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940757"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>DFS レプリケーション: よく寄せられる質問 (FAQ)
 
@@ -217,7 +217,7 @@ No. レプリケーショングループは、1つのフォレスト内の複数
 
 ### <a name="what-are-the-supported-limits-of-dfs-replication"></a>サポートされている DFS レプリケーションの制限は何ですか。
 
-次の一覧は、Windows Server 2012 R2 で Microsoft によってテストされた一連のスケーラビリティガイドラインを示しています。
+次の一覧は、Microsoft によってテストされ、Windows Server 2012 R2、Windows Server 2016、および Windows Server 2019 に適用される一連のスケーラビリティガイドラインを示しています。
 
   - サーバー上のすべてのレプリケートされたファイルのサイズ:100テラバイト。  
       
@@ -228,7 +228,7 @@ No. レプリケーショングループは、1つのフォレスト内の複数
 
 
 > [!IMPORTANT]
-> 多数のファイルを含むレプリケーショングループを作成する場合は、データベースの複製をエクスポートし、シード前の手法を使用して初期レプリケーションの実行時間を最小限に抑えることをお勧めします。 詳細については<A href="http://blogs.technet.com/b/filecab/archive/2013/08/21/dfs-replication-initial-sync-in-windows-server-2012-r2-attack-of-the-clones.aspx">、「Windows Server 2012 R2 での初期同期の DFS レプリケーション」を参照してください。複製</A>の攻撃。 
+> 多数のファイルを含むレプリケーショングループを作成する場合は、データベースの複製をエクスポートし、シード前の手法を使用して初期レプリケーションの実行時間を最小限に抑えることをお勧めします。 詳細については[、「Windows Server 2012 R2 での初期同期の DFS レプリケーション」を参照してください。複製](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/DFS-Replication-Initial-Sync-in-Windows-Server-2012-R2-Attack-of/ba-p/424877)の攻撃。 
 <br>
 
 

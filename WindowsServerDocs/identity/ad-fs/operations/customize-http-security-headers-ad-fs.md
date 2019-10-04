@@ -9,12 +9,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e1042ad4dae0b023c9816dff798c25b05b60eccf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0685e0935a031b2f73474d59b025b70fc735902d
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407449"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935042"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>AD FS 2019 で HTTP セキュリティ応答ヘッダーをカスタマイズする 
  
@@ -53,7 +53,7 @@ Set-AdfsResponseHeaders -EnableResponseHeaders $false
 ### <a name="http-strict-transport-security-hsts"></a>HTTP Strict-Transport-Security (HSTS) 
 HSTS は、HTTP と HTTPS の両方のエンドポイントを持つサービスのプロトコルダウングレード攻撃や cookie ハイジャックを軽減するための web セキュリティポリシーメカニズムです。 これにより、web サーバーは、web ブラウザー (または他の準拠ユーザーエージェント) が HTTPS を使用してのみ対話し、HTTP プロトコル経由では通信しないように宣言できます。  
  
-Web 認証トラフィックのすべての AD FS エンドポイントは、HTTPS 経由で排他的に開かれます。 その結果、AD FS http Strict Transport セキュリティポリシー機構が提供する脅威を効果的に軽減できます (http にリスナーが存在しないため、既定では HTTP へのダウングレードは行われません)。 ヘッダーをカスタマイズするには、次のパラメーターを設定します。 
+Web 認証トラフィックのすべての AD FS エンドポイントは、HTTPS 経由で排他的に開かれます。 その結果、AD FS http Strict Transport セキュリティポリシー機構が提供する脅威を効果的に軽減できます (http にリスナーが存在しないため、既定では HTTP へのダウングレードは行われません)。 ヘッダーをカスタマイズするには、次のパラメーターを設定します。
  
 - **最長有効期間 =&lt;&gt;有効期限-** 有効期限 (秒) は、HTTPS を使用してのみサイトにアクセスする必要がある期間を指定します。 既定値と推奨値は31536000秒 (1 年) です。  
 - **includeSubDomains** –これは省略可能なパラメーターです。 指定した場合、HSTS ルールもすべてのサブドメインに適用されます。  
@@ -107,7 +107,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options"
 ```
 
 ### <a name="x-xss-protection"></a>X-XSS-保護 
-この HTTP セキュリティ応答ヘッダーは、クロスサイトスクリプティング (XSS) 攻撃がブラウザーによって検出されたときに、web ページの読み込みを停止するために使用されます。 これは XSS フィルターと呼ばれます。 ヘッダーは、次のいずれかの値に設定できます。 
+この HTTP セキュリティ応答ヘッダーは、クロスサイトスクリプティング (XSS) 攻撃がブラウザーによって検出されたときに、web ページの読み込みを停止するために使用されます。 これは XSS フィルターと呼ばれます。 ヘッダーは、次のいずれかの値に設定できます。
  
 - **0** : XSS フィルター処理を無効にします。 推奨されません。  
 - **1** : XSS フィルター処理を有効にします。 XSS 攻撃が検出されると、ブラウザーによってページがサニタイズされます。   
@@ -138,7 +138,7 @@ Web ブラウザーのセキュリティにより、web ページはスクリプ
 CORS 要求について理解を深めるために、単一ページアプリケーション (SPA) が別のドメインで web API を呼び出す必要があるシナリオについて説明します。 さらに、SPA と API の両方が ADFS 2019 で構成されている AD FS、CORS が有効になっていることを考えてみましょう。 AD FS では、HTTP 要求で CORS ヘッダーを識別し、ヘッダー値を検証し、適切な CORS ヘッダーを応答に含めることができます (とを有効にする方法の詳細)。cors のカスタマイズに関するセクションの AD FS 2019 で CORS を構成します)。 サンプルフロー: 
 
 1. ユーザーは、クライアントブラウザーから SPA にアクセスし、認証のために AD FS 認証エンドポイントにリダイレクトされます。 SPA は暗黙的な許可フロー用に構成されているため、認証が成功した後に、要求からブラウザーにアクセス + ID トークンが返されます。  
-2. ユーザー認証の後、SPA に含まれるフロントエンド JavaScript は、web API へのアクセスを要求します。 要求は次のヘッダーを使用して AD FS にリダイレクトされます
+2. ユーザー認証の後、SPA に含まれるフロントエンド JavaScript は、web API へのアクセスを要求します。 要求は、次のヘッダーを使用して AD FS にリダイレクトされます。
     - オプション–ターゲットリソースの通信オプションについて説明します。 
     - Origin – web API の配信元が含まれます。
     - アクセス制御要求-メソッド–実際の要求が行われたときに使用される HTTP メソッド (例: DELETE) を識別します。 
@@ -150,7 +150,7 @@ CORS 要求について理解を深めるために、単一ページアプリケ
     - アクセス制御-元に戻す-元のヘッダーと同じ値 
     - アクセス制御-許可-メソッド–値は、アクセス制御要求メソッドのヘッダーと同じです 
     - アクセス制御-許可ヘッダー-値は、アクセス制御ヘッダーヘッダーと同じです。 
-4. ブラウザーは、次のヘッダーを含む実際の要求を送信します 
+4. ブラウザーは、次のヘッダーを含む実際の要求を送信します。
     - HTTP メソッド (例、DELETE) 
     - Origin – web API の配信元が含まれます。 
     - アクセス制御-許可ヘッダー応答ヘッダーに含まれるすべてのヘッダー 
@@ -199,7 +199,7 @@ frame-src 'self'; manifest-src 'self'; media-src 'self';"
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src ‘self'; img-src *" 
 ```
-既定の src ポリシーには、次のソースを定義できます。 
+既定の src ポリシーには、次のソースを定義できます。
  
 - ' self ' –これを指定すると、web ページの配信元に読み込むコンテンツの配信元が制限されます。 
 - ' unsafe ' インライン ' –ポリシーでこれを指定すると、インライン JavaScript と CSS を使用できます。 
@@ -223,7 +223,7 @@ Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderV
  
 ![Fiddler](media/customize-http-security-headers-ad-fs/header2.png)
 
-## <a name="web-browswer-compatibility"></a>Web ブラウザーの互換性
+## <a name="web-browser-compatibility"></a>Web ブラウザーの互換性
 次の表とリンクを使用して、各セキュリティ応答ヘッダーと互換性のある web ブラウザーを特定します。
 
 |HTTP セキュリティ応答ヘッダー|ブラウザーの互換性|
@@ -236,5 +236,5 @@ Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderV
 
 ## <a name="next"></a>Next
 
-- [AD FS Help troublehshooting ガイドを使用する](https://aka.ms/adfshelp/troubleshooting )
+- [AD FS ヘルプトラブルシューティングガイドを使用する](https://aka.ms/adfshelp/troubleshooting )
 - [AD FS のトラブルシューティング](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)

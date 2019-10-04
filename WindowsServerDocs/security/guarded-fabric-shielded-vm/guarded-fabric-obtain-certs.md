@@ -7,13 +7,13 @@ ms.assetid: f4b4d1a8-bf6d-4881-9150-ddeca8b48038
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 08/29/2018
-ms.openlocfilehash: b3e6aadbcbf2f2b826ca97d4ebb58c3736528b59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 09/25/2019
+ms.openlocfilehash: e8f4a3696ec5096281ba1ffd130aa97004530cc1
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386520"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940733"
 ---
 # <a name="obtain-certificates-for-hgs"></a>HGS の証明書を取得する
 
@@ -81,7 +81,7 @@ Hyper-v ホストと HGS ノードはどちらも、指定した SSL 証明書�
 
 SSL 証明書のプロパティ | 必須の値
 -------------------------|---------------
-サブジェクト名             | HGS クラスターの名前 (分散ネットワーク名)。 これは、`Initialize-HgsServer` と HGS ドメイン名に指定された HGS サービス名を連結したものになります。
+サブジェクト名             | HGS クラスターの名前 (分散ネットワーク名または仮想コンピューターオブジェクトの FQDN と呼ばれます)。 これは、`Initialize-HgsServer` と HGS ドメイン名に指定された HGS サービス名を連結したものになります。
 サブジェクトの別名 | 別の DNS 名を使用して HGS クラスターに接続する場合は (たとえば、ロードバランサーの背後にある場合)、証明書要求の SAN フィールドにこれらの DNS 名を含めてください。
 
 HGS サーバーを初期化するときにこの証明書を指定するためのオプションについては、「[最初の hgs ノードの構成](guarded-fabric-initialize-hgs.md)」を対象としています。

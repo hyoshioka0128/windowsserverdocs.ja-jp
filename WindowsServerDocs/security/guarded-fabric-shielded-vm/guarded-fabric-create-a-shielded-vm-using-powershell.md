@@ -6,13 +6,13 @@ ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 08/29/2018
-ms.openlocfilehash: 888177c1288216c28f7d4c0a667fd81e93bdce8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 09/25/2019
+ms.openlocfilehash: 317da0ae3c41d142db6f5a076fd3004d9970b815
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402398"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940743"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>PowerShell を使用してシールドされた VM を作成する
 
@@ -90,6 +90,19 @@ Save-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0 -Path
 
 ```powershell
 New-ShieldedVM -Name 'MyShieldedVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Wait
+```
+
+シールドデータ応答ファイルに特殊化された値が含まれている場合は、ShieldedVM に置換値を指定できます。 この例では、静的 IPv4 アドレスのプレースホルダー値を使用して応答ファイルが構成されています。
+
+```powershell
+$specializationValues = @{
+    "@IP4Addr-1@" = "192.168.1.10"
+    "@MacAddr-1@" = "Ethernet"
+    "@Prefix-1-1@" = "192.168.1.0/24"
+    "@NextHop-1-1@" = "192.168.1.254"
+}
+New-ShieldedVM -Name 'MyStaticIPVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -SpecializationValues $specializationValues -Wait
+
 ```
 
 テンプレートディスクに Linux ベースの OS が含まれている場合は、コマンドの実行時に `-Linux` フラグを指定します。

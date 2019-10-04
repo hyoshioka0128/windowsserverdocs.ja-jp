@@ -7,16 +7,17 @@ ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: be817a2c06b13af254b80090b9a7488209d4df0a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 09/25/2019
+ms.openlocfilehash: d34bbeee1a980aba76b5bed994be8db7fc8c8acf
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403531"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940823"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>ホストガーディアンサービスのトラブルシューティング
 
-> 適用対象:Windows Server (半期チャネル)、Windows Server 2016
+> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、保護されたファブリックでホストガーディアンサービス (HGS) サーバーを展開または運用するときに発生する一般的な問題の解決策について説明します。
 問題の性質がわからない場合は、まず HGS サーバーと Hyper-v ホストで保護された[ファブリックの診断](guarded-fabric-troubleshoot-diagnostics.md)を実行して、考えられる原因を絞り込みます。
@@ -80,6 +81,7 @@ $cert.Acl = $cert.Acl | Add-AccessRule $gMSA Read Allow
 
 証明書の秘密キーがハードウェアセキュリティモジュール (HSM) またはカスタムキー格納プロバイダー (KSP) によってサポートされている場合、アクセス許可モデルは特定のソフトウェアベンダーによって異なります。
 最適な結果を得るには、ベンダーのドキュメントまたはサポートサイトで、特定のデバイス/ソフトウェアの秘密キーのアクセス許可をどのように処理するかについて確認してください。
+どのような場合でも、HGS で使用される gMSA には、署名と暗号化の操作を実行できるように、暗号化、署名、および通信証明書の秘密キーに対する*読み取り*アクセス許可が必要です。
 
 一部のハードウェアセキュリティモジュールは、特定のユーザーアカウントに秘密キーへのアクセス権を付与することをサポートしていません。代わりに、コンピューターアカウントが特定のキーセット内のすべてのキーにアクセスできるようにします。
 このようなデバイスでは、通常、コンピューターにキーへのアクセス権を付与するだけで十分です。 HGS はその接続を利用できます。
@@ -93,7 +95,7 @@ $cert.Acl = $cert.Acl | Add-AccessRule $gMSA Read Allow
 HSM ブランド/シリーズ      | 推奨事項
 ----------------------|-------------
 Gemalto SafeNet       | 証明書要求ファイルのキー使用法プロパティが0xa0 に設定されていることを確認して、署名と暗号化に証明書を使用できるようにします。 さらに、ローカルの証明書マネージャーツールを使用して、gMSA アカウントに秘密キーへの*読み取り*アクセス権を付与する必要があります (上記の手順を参照)。
-nCipher nShield        | 各 HGS ノードが、署名キーと暗号化キーを含むセキュリティワールドにアクセスできることを確認します。 GMSA 固有のアクセス許可を構成する必要はありません。
+nCipher nShield        | 各 HGS ノードが、署名キーと暗号化キーを含むセキュリティワールドにアクセスできることを確認します。 さらに、ローカル証明書マネージャーを使用して、秘密キーに gMSA*読み取り*アクセス権を付与する必要があります (上記の手順を参照)。
 Utimaco CryptoServers | 証明書要求ファイルのキー使用法プロパティが0x13 に設定されていることを確認し、暗号化、復号化、署名に証明書を使用できるようにします。
 
 ### <a name="certificate-requests"></a>証明書の要求

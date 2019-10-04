@@ -1,16 +1,16 @@
 ---
-ms.date: 01/07/2019
+ms.date: 09/27/2019
 ms.topic: conceptual
 keywords: OpenSSH、SSH、SSHD、install、setup
 contributor: maertendMSFT
 author: maertendMSFT
 title: Windows 用 OpenSSH のインストール
-ms.openlocfilehash: 6a5d4d47fbb3f962c2a19582eb0a72810145a28c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 3c742e20432d20ea3c402af66f19a803ea1f3a56
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866875"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71934935"
 ---
 # <a name="installation-of-openssh-for-windows-server-2019-and-windows-10"></a>Windows Server 2019 および Windows 10 用 OpenSSH のインストール #
 
@@ -96,7 +96,9 @@ Start-Service sshd
 Set-Service -Name sshd -StartupType 'Automatic'
 # Confirm the Firewall rule is configured. It should be created automatically by setup. 
 Get-NetFirewallRule -Name *ssh*
-# There should be a firewall rule named "OpenSSH-Server-In-TCP", which should be enabled 
+# There should be a firewall rule named "OpenSSH-Server-In-TCP", which should be enabled
+# If the firewall does not exist, create one
+New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
 ```
 
 ## <a name="initial-use-of-ssh"></a>SSH の初回使用

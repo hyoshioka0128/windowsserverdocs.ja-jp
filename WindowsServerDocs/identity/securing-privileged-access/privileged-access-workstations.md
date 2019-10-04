@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 29e3785d1c004d669e0060854acb6af1d2953644
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fb91ca583fd71a7fbe38369606d2dcc4a816d8aa
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357917"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935016"
 ---
 # <a name="privileged-access-workstations"></a>特権アクセス ワークステーション
 
@@ -511,66 +511,136 @@ Domain Admin、Enterprise Admin、または階層 0 の同等のグループ (�
 このセクションでは、権限を持つ管理者アカウントによる下位階層のホストへのログオンを防ぐためのグループ ポリシーを構成します。
 
 1. 新しい **Restrict Workstation Logon** GPO を作成します。この設定は、階層 0 および階層 1 管理者アカウントが標準のワークステーションにログオンすることを制限します。  この GPO は、"ワークステーション" トップレベルの OU にリンクされ、次の設定があります。
-   * Computer Configuration\Policies\Windows \ (コンピューターの構成 \)  権利 権限の設定、バッチジョブとしてログオンを拒否 の順に選択し、**これらのポリシー設定を定義**する を選択し、階層0と階層1のグループを追加   Enterprise Admins Domain Admins スキーマ管理者のアカウント管理者アカウントオペレーターバックアップオペレーターの印刷オペレーターサーバーオペレータードメインコントローラー読み取り専用ドメインコントローラーグループポリシー作成者の所有者の暗号化 Operイニシエーター
+   * Computer Configuration\Policies\Windows \ (コンピューターの構成 \)  権利 権限の設定、バッチジョブとしてログオンを拒否 の順に選択し、**これらのポリシー設定を定義**する を選択し、階層0と階層1のグループを追加
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > 階層0の組み込みグループ。詳細については、「階層0の等価性」を参照してください。
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > 階層0の有効なアクセス権を持つカスタム作成されたグループの詳細については、「階層0の等価性」を参照してください。
 
          Tier 1 Admins
 
-         > [!NOTE]
-         > This Group was created earlier in Phase 1.
+     > [!NOTE]
+     > このグループは、フェーズ1で既に作成されています。
 
-   * Computer Configuration\Policies\Windows \ (コンピューターの構成 \)  権利 権限の設定、サービスとしてログオンを拒否 の順に選択し、**次のポリシー設定を定義**する を選択し、階層0と階層1のグループを追加   Enterprise Admins Domain Admins スキーマ管理者のアカウント管理者アカウントオペレーターバックアップオペレーターの印刷オペレーターサーバーオペレータードメインコントローラー読み取り専用ドメインコントローラーグループポリシー作成者の所有者の暗号化 Operイニシエーター
+   * Computer Configuration\Policies\Windows \ (コンピューターの構成 \)  権利 権限の設定、サービスとしてログオンを拒否 の順に選択し、**次のポリシー設定を定義**する を選択し、階層0と階層1のグループを追加
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Note: Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > メモ:階層0の組み込みグループ。詳細については、「階層0の等価性」を参照してください。
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Note: Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > メモ:階層0の有効なアクセス権を持つカスタム作成されたグループの詳細については、「階層0の等価性」を参照してください。
 
          Tier 1 Admins
 
-         > [!NOTE]
-         > Note: This Group was created earlier in Phase 1
+     > [!NOTE]
+     > メモ:このグループはフェーズ1で作成されました
 
 2. 新しい**制限サーバーログオン**GPO を作成する-この設定は、階層0の管理者アカウントが階層1のサーバーにログオンできないように制限します。  この GPO は、"階層1のサーバー" の最上位 OU にリンクされ、次の設定があります。
-   * [Computer Configuration\Policies\Windows] \ (コンピューターの構成 \) [] 権利] [権限の設定]、[バッチジョブとしてログオンを拒否] の順に選択し、[**これらのポリシー設定を定義**し、階層0のグループを追加します   Enterprise Admins Domain Admins スキーマ管理者のアカウント管理者アカウントオペレーターバックアップオペレーターの印刷オペレーターサーバーオペレータードメインコントローラー読み取り専用ドメインコントローラーグループポリシー作成者の所有者の暗号化 Operイニシエーター
+   * [Computer Configuration\Policies\Windows] \ (コンピューターの構成 \) [] 権利] [権限の設定]、[バッチジョブとしてログオンを拒否] の順に選択し、[**これらのポリシー設定を定義**し、階層0のグループを追加します
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
 
-         > [!NOTE]
-         > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
-
-         Other Delegated Groups
-
-         > [!NOTE]
-         > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
-
-   * [Computer Configuration\Policies\Windows] \ (コンピューターの構成 \) [] 権利]、[サービスとしてログオンを拒否] の順に選択し、[**これらのポリシーの設定を定義**し、階層0のグループを追加します。   Enterprise Admins Domain Admins スキーマ管理者のアカウント管理者アカウントオペレーターバックアップオペレーターの印刷オペレーターサーバーオペレータードメインコントローラー読み取り専用ドメインコントローラーグループポリシー作成者の所有者の暗号化 Operイニシエーター
-
-         > [!NOTE]
-         > Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
-
-         Other Delegated Groups
-
-         > [!NOTE]
-         > Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
-
-   * [Computer Configuration\Policies\Windows] \ (コンピューターの構成 \) [] 権利] [権限の設定]、[ローカルでログオンを拒否] の順に選択し、[**これらのポリシーの設定を定義**し、階層0のグループを追加   Enterprise Admins Domain Admins スキーマ管理者アカウントオペレーターのバックアップオペレーター Print Operators サーバーオペレータードメインコントローラー読み取り専用ドメインコントローラーグループポリシー作成者の所有者の暗号化演算子
-
-         > [!NOTE]
-         > Note: Built-in Tier 0 Groups, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > 階層0の組み込みグループ。詳細については、「階層0の等価性」を参照してください。
 
          Other Delegated Groups
 
-         > [!NOTE]
-         > Note: Any custom created groups with effective Tier 0 access, see Tier 0 equivalency for more details.
+     > [!NOTE]
+     > 階層0の有効なアクセス権を持つカスタム作成されたグループの詳細については、「階層0の等価性」を参照してください。
+
+   * [Computer Configuration\Policies\Windows] \ (コンピューターの構成 \) [] 権利]、[サービスとしてログオンを拒否] の順に選択し、[**これらのポリシーの設定を定義**し、階層0のグループを追加します。
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
+
+     > [!NOTE]
+     > 階層0の組み込みグループ。詳細については、「階層0の等価性」を参照してください。
+
+         Other Delegated Groups
+
+     > [!NOTE]
+     > 階層0の有効なアクセス権を持つカスタム作成されたグループの詳細については、「階層0の等価性」を参照してください。
+
+   * [Computer Configuration\Policies\Windows] \ (コンピューターの構成 \) [] 権利] [権限の設定]、[ローカルでログオンを拒否] の順に選択し、[**これらのポリシーの設定を定義**し、階層0のグループを追加
+     ```
+     Enterprise Admins
+     Domain Admins
+     Schema Admins
+     DOMAIN\Administrators
+     Account Operators
+     Backup Operators
+     Print Operators
+     Server Operators
+     Domain Controllers
+     Read-Only Domain Controllers
+     Group Policy Creators Owners
+     Cryptographic Operators
+     ```
+
+     > [!NOTE]
+     > メモ:階層0の組み込みグループ。詳細については、「階層0の等価性」を参照してください。
+
+         Other Delegated Groups
+
+     > [!NOTE]
+     > メモ:階層0の有効なアクセス権を持つカスタム作成されたグループの詳細については、「階層0の等価性」を参照してください。
 
 #### <a name="deploy-your-paws"></a>PAW を展開します。
 

@@ -6,14 +6,14 @@ ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 2b8c6148af21e94e4a56661402f36dcb2e636461
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 73922a07d8d5396aa9ced377bfc3c9be97a9950d
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871833"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935100"
 ---
 ## <a name="windows-server-2016-improvements"></a>Windows Server 2016 の機能強化
 
@@ -179,7 +179,7 @@ Hyper-v で実行されている Linux ゲストの場合、クライアント�
 NTP で排他的に同期するには、ゲストで TimeSync 統合サービスを無効にすることをお勧めします。
 
 > [!NOTE]
-> 注:Linux ゲストでの正確な時刻のサポートには、最新のアップストリーム Linux カーネルでのみサポートされている機能が必要です。また、すべての Linux ディストリビューションで広く利用できるものではありません。 サポート配布の詳細については[、Windows 上の hyper-v でサポートされている Linux および FreeBSD の仮想マシン](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows)を参照してください。
+> メモ:Linux ゲストでの正確な時刻のサポートには、最新のアップストリーム Linux カーネルでのみサポートされている機能が必要です。また、すべての Linux ディストリビューションで広く利用できるものではありません。 サポート配布の詳細については[、Windows 上の hyper-v でサポートされている Linux および FreeBSD の仮想マシン](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows)を参照してください。
 
 #### <a name="GTIMESERV"></a>GTIMESERV を使用してローカルの Reliable Time サービスを指定する
 GTIMESERV、適切なタイムサーバー、フラグを使用して、1つまたは複数のドメインコントローラーを正確なソースクロックとして指定できます。  たとえば、GPS ハードウェアが搭載されている特定のドメインコントローラーに GTIMESERV というフラグを設定できます。  これにより、ドメインが GPS ハードウェアに基づく時計を参照することが保証されます。
@@ -191,7 +191,7 @@ TIMESERV は、コンピューターが現在権限を持っているかどう�
 
 DC を GTIMESERV として構成する場合は、次のコマンドを使用して手動で構成できます。  この場合、DC はマスタークロックとして別のマシンを使用しています。  アプライアンスまたは専用のコンピューターを使用できます。
 
-    w32tm /config /manualpeerlist:”master_clock1,0x8 master_clock2,0x8” /syncfromflags:manual /reliable:yes /update
+    w32tm /config /manualpeerlist:"master_clock1,0x8 master_clock2,0x8" /syncfromflags:manual /reliable:yes /update
 
 > [!NOTE]
 > 詳細については、「 [Windows タイムサービスを構成する](https://technet.microsoft.com/library/cc731191.aspx)」を参照してください。
@@ -319,7 +319,7 @@ Windows Server 2012 および Windows Server 2008 の場合は、まず修正プ
 2.  W32tm ログで "ピア応答から" を検索するクロックソース。   メッセージテキストの後に、IP アドレスまたは VMIC が示されます。これは、タイムソースと、検証する参照クロックのチェーンの次の部分を表します。
 3.  W32tm ログを使用して、"ClockDispl 統制:\*傾斜\*時間\*が発生しています。  これは、その時点で w32tm がアクティブであることを示します。
 
-### <a name="event-logging"></a>イベント ログ
+### <a name="event-logging"></a>イベントログ
 完全なストーリーを得るには、イベントログ情報も必要です。  システムイベントログを収集し、タイムサーバー、Microsoft-Windows-kernel-Boot、Microsoft-Windows-Kernel-General を使用してフィルター処理することにより、サードパーティなど、時間が変更された他の影響があるかどうかを調べることができます。  外部からの干渉を除外するためにこれらのログが必要になる場合があります。  グループポリシーは、ログに書き込まれるイベントログに影響を与える可能性があります。  詳細については、グループポリシーの使用に関する前のセクションを参照してください。
 
 ### <a name="W32Logging"></a>W32time デバッグログ
@@ -379,7 +379,7 @@ Windows は、特定の境界を超えていなくてもクロックを統制す
 - UpstreamClockSource に PING を送信し、待機時間とソースのホップ数を把握します。
 - Tracert UpstreamClockSource
 
-問題|    症状|   解決方法|
+問題|    現象|   解決方法|
 ----- | ----- | ----- |
 ローカル TSC クロックが安定していません。| Perfmon-物理コンピューター–同期クロック安定クロックを使用しますが、1-2 分ごとに数百米ドルの時間がかかることがわかります。 |   ファームウェアを更新したり、別のハードウェアを検証したりしても、同じ問題は表示されません。|
 ネットワーク待機時間|    w32tm の pchart には、10ミリ秒を超える RoundTripDelay が表示されます。  遅延が変化すると、ラウンドトリップ時間の1/2 のようなノイズが発生します。たとえば、一方向の遅延が発生します。</br></br>UpstreamClockSource は、PING によって示される複数のホップです。  TTL は128に近い必要があります。</br></br>各ホップの待機時間を調べるには、Tracert を使用します。    | 時間の詳細なクロックソースを見つけます。  1つの解決策として、同じセグメントにソースクロックをインストールする方法と、地理的に近い場所にあるソースクロックを手動で指定する方法があります。  ドメインのシナリオでは、GTimeServ ロールを持つコンピューターを追加します。 |  
