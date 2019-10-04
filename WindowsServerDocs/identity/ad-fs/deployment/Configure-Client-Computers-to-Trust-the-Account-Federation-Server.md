@@ -1,62 +1,62 @@
 ---
 ms.assetid: 4ae26970-e42e-4e69-887a-b16d2f8d0695
-title: アカウント フェデレーション サーバーを信頼するクライアント コンピューターを構成します。
+title: アカウントフェデレーションサーバーを信頼するようにクライアントコンピューターを構成する
 description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: e28d050a9aa40c015af16a665e90535cb810b4ff
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 8c047f69cb0cb2db57ea33697c49e53a212fe823
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192330"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359861"
 ---
-# <a name="configure-client-computers-to-trust-the-account-federation-server"></a>アカウント フェデレーション サーバーを信頼するクライアント コンピューターを構成します。
+# <a name="configure-client-computers-to-trust-the-account-federation-server"></a>アカウントフェデレーションサーバーを信頼するようにクライアントコンピューターを構成する
 
-クライアント コンピューターが Active Directory フェデレーション サービスを使用してフェデレーション アプリケーションを正常にアクセスできるように\(AD FS\)ブラウザーの信頼できるように各クライアント コンピューターで Internet Explorer の設定に構成すること最初にする必要がありますアカウント フェデレーション サーバー。 行うことができますこの手動またはグループ ポリシーによって管理好みに応じて、次の手順のいずれかを実行しています。  
+クライアントコンピューターが Active Directory フェデレーションサービス (AD FS) @no__t 0AD FS @ no__t を使用してフェデレーションアプリケーションに正常にアクセスできるようにするには、最初に各クライアントコンピューターで Internet Explorer の設定を構成して、ブラウザーがアカウントを信頼するようにする必要があります。フェデレーションサーバー。 この操作は、管理者の設定に応じて、次のいずれかの手順を実行して、手動またはグループポリシーによって行うことができます。  
   
-## <a name="configuring-internet-explorer-settings-manually"></a>Internet Explorer の設定を構成する手動で  
-次の手順を使用して、AD FS によるフェデレーションをサポートするために各ユーザーの Internet Explorer の設定を手動で構成することができます。 複数のユーザーは、1 台のコンピューターを使用して場合、により、この手順が複数回完了: ユーザー プロファイルごとに 1 回です。  
+## <a name="configuring-internet-explorer-settings-manually"></a>Internet Explorer の設定を手動で構成する  
+次の手順に従って、AD FS を通じてフェデレーションをサポートするように、各ユーザーの Internet Explorer 設定を手動で構成することができます。 複数のユーザーが1台のコンピューターを使用する場合は、ユーザープロファイルごとに1回、この手順を複数回実行します。  
   
-この手順を実行するには、フェデレーション アプリケーションにアクセスするユーザーとしてログオンします。 これは、プロファイル\-特定の設定。 そのため、手動で特定のコンピューターのプロファイルが存在するのにこの設定を追加することが必要です。  
+この手順を実行するには、フェデレーションアプリケーションにアクセスするユーザーとしてログオンします。 これは、プロファイル @ no__t 固有の設定です。 そのため、特定のコンピューターに存在する各プロファイルについて、この設定を手動で追加する必要があります。  
   
-#### <a name="to-manually-configure-client-computers-to-trust-the-account-federation-server"></a>アカウント フェデレーション サーバーを信頼するクライアント コンピューターを手動で構成するには  
+#### <a name="to-manually-configure-client-computers-to-trust-the-account-federation-server"></a>アカウントフェデレーションサーバーを信頼するようにクライアントコンピューターを手動で構成するには  
   
-1.  クライアント コンピューターでは、Internet Explorer を起動します。  
+1.  クライアントコンピューターで、Internet Explorer を起動します。  
   
 2.  **[ツール]** メニューの **[インターネット オプション]** をクリックします。  
   
-3.  **セキュリティ**タブをクリックし、**ローカル イントラネット** アイコンをクリック**サイト**します。  
+3.  **[セキュリティ]** タブで、 **[ローカルイントラネット]** アイコンをクリックし、 **[サイト]** をクリックします。  
   
-4.  をクリックして **詳細設定** 、および**この Web サイトをゾーンに追加**、型の完全なドメイン ネーム システム\(DNS\)アカウント フェデレーション サーバーの名前\(https など:\/\/fs1.fabrikam.com\)、 をクリックし、**追加**します。  
+4.  **[詳細設定]** をクリックし、 **[この Web サイトをゾーンに追加する]** で、完全なドメインネームシステム \(dns @ no__t 名 \(for 例: https: \/\/fs1.fabrikam.com @ no__t) を入力し、[追加] をクリックします。.  
   
 5.  **[OK]** を 3 回クリックします。  
   
-## <a name="configuring-internet-explorer-settings-by-using-grouppolicy"></a>グループ ポリシーを使用して Internet Explorer の設定を構成します。  
-ほとんどの展開では、グループ ポリシーを使用して、各クライアント コンピューターに適切な Internet Explorer の設定をプッシュすることをお勧めします。  
+## <a name="configuring-internet-explorer-settings-by-using-grouppolicy"></a>グループポリシーを使用した Internet Explorer の設定の構成  
+ほとんどの展開では、グループポリシーを使用して、各クライアントコンピューターに適切な Internet Explorer の設定をプッシュすることをお勧めします。  
   
-メンバーシップ**Domain Admins**または**Enterprise Admins**、または Active Directory Domain Services での同等\(AD DS\)はこの手順を実行するために必要な最小値。  適切なアカウントの使用に関する詳細を確認し、グループ メンバーシップ[ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.microsoft.com\/fwlink\/でしょうか。LinkId\=83477\)します。   
+この手順を実行するには、 **Domain admins**または**Enterprise admins**のメンバーシップ、またはそれと同等の Active Directory Domain Services \(ad DS @ no__t が最低限必要です。  適切なアカウントおよびグループメンバーシップの使用に関する詳細については、「[ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.microsoft.com\/fwlink\/?」を参照してください。LinkId\=83477\)。   
   
-#### <a name="to-configure-client-computers-to-trust-the-account-federation-server-by-using-grouppolicy"></a>グループ ポリシーを使用して、アカウント フェデレーション サーバーを信頼するクライアント コンピューターを構成するには  
+#### <a name="to-configure-client-computers-to-trust-the-account-federation-server-by-using-grouppolicy"></a>グループポリシーを使用して、アカウントフェデレーションサーバーを信頼するようにクライアントコンピューターを構成するには  
   
-1.  アカウント パートナー組織のフォレストのドメイン コント ローラーで、開始、 **Group Policy Management**スナップ\-でします。  
+1.  アカウントパートナー組織のフォレスト内のドメインコントローラーで、**グループポリシー管理**スナップ @ no__t-1 を開始します。  
   
-2.  適切なグループ ポリシー オブジェクトを見つける\(GPO\)、右\-をクリックし、クリックして**編集**します。  
+2.  適切なグループポリシーオブジェクト \(GPO @ no__t-1 を見つけ、右 @ no__t をクリックして、 **[編集]** をクリックします。  
   
-3.  コンソール ツリーで開く**ユーザーの構成\\設定\\Windows 設定\\Internet Explorer のメンテナンス**、順にクリックします**セキュリティ**します。  
+3.  コンソールツリーで、[**ユーザーの構成] @ no__t-1Preferences @ no__t-2Windows の設定 @ no__t-3Internet Explorer のメンテナンス**を開き、 **[セキュリティ]** をクリックします。  
   
-4.  詳細ウィンドウでダブルクリック\-クリックして**セキュリティ ゾーンおよびコンテンツの規制**します。  
+4.  詳細ウィンドウで、**セキュリティゾーンおよびコンテンツの規制** をダブルクリックし、no__t をクリックします。  
   
-5.  **セキュリティ ゾーンとプライバシー**、 をクリックして**現行のセキュリティ ゾーンとプライバシーの設定をインポート**、 をクリックし、**設定の変更**します。  
+5.  **[セキュリティゾーンとプライバシー]** で、 **[現在のセキュリティゾーンとプライバシーの設定をインポートする]** をクリックし、 **[設定の変更]** をクリックします。  
   
-6.  クリックして**ローカル イントラネット**、 をクリックし、**サイト**します。  
+6.  **[ローカルイントラネット]** をクリックし、 **[サイト]** をクリックします。  
   
-7.  **この Web サイトをゾーンに追加**、アカウント フェデレーション サーバーの完全な DNS 名を入力\(例: https:\/\/fs1.fabrikam.com\)、 をクリックして**の追加**、 をクリックし、**閉じる**します。  
+7.  **[この Web サイトをゾーンに追加する]** で、アカウントフェデレーション @no__t サーバーの完全な DNS 名 (@no__t 例:-2\/fs1.fabrikam.com) を入力し、 **[追加]** をクリックして、 **[閉じる]** をクリックします。  
   
-8.  クリックして**OK**グループ ポリシーにこれらの変更を適用する 2 つの時刻。  
+8.  **[OK]** を2回クリックして、これらの変更をグループポリシーに適用します。  
   

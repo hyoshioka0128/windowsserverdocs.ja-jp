@@ -1,9 +1,9 @@
 ---
 title: テナント VM ネットワークアダプターのサービス品質 (QoS) の構成
-description: テナント VM ネットワークアダプターの QoS を構成する場合は、データセンター ブリッジング DCBと、ソフトウェアで定義されたネットワーク SDN QoS のどちらかを選択できます。
+description: テナント VM ネットワークアダプターの QoS を構成する場合は、データセンター \(ブリッジング DCB\)と、ソフトウェアで定義された\(ネットワーク\) SDN QoS のどちらかを選択できます。
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -13,12 +13,12 @@ ms.assetid: 6d783ff6-7dd5-496c-9ed9-5c36612c6859
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 99ef286b91bec4bcb008bfd9f62003e75a5a5921
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 1074525abe375e78ab0d2065ce8e98f894f50c61
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870022"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355846"
 ---
 # <a name="configure-quality-of-service-qos-for-a-tenant-vm-network-adapter"></a>テナント VM ネットワークアダプターのサービス品質 (QoS) の構成
 

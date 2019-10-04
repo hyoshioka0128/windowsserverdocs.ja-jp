@@ -1,7 +1,7 @@
 ---
-title: 特権アクセスのセキュリティ保護
+title: 特権アクセスの保護
 description: 特権アクセスをセキュリティで保護する段階的アプローチ
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: conceptual
 ms.assetid: f5dec0c2-06fe-4c91-9bdc-67cc6a3ede60
 ms.date: 02/25/2019
@@ -9,14 +9,14 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 9080f7209660b225d795219127a71ece479855d1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e6ff22d0563fa11aa633004966b2cd2648ba5877
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869233"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357705"
 ---
-# <a name="securing-privileged-access"></a>特権アクセスのセキュリティ保護
+# <a name="securing-privileged-access"></a>特権アクセスの保護
 
 >適用先:Windows Server
 
@@ -96,7 +96,7 @@ LAPS と Paw で環境を運用するための追加のガイダンスについ�
 
 ### <a name="3-administrative-workstations"></a>3.管理ワークステーション
 
-Azure Active Directory と従来のオンプレミス Active Directory 管理者特権を持つユーザーのための最初のセキュリティ対策として、セキュリティが強化された[windows 10 デバイスの標準で構成された windows 10 デバイスを使用していることを確認します。](/windows-hardware/design/device-experiences/oem-highly-secure) 特権のある管理者アカウントは、管理ワークステーションのローカル管理者グループのメンバーになることはできません。  ワークステーションに対する構成の変更が必要な場合は、ユーザー Access Control (UAC) による特権昇格を利用できます。  さらに、Windows 10 のセキュリティベースラインをワークステーションに適用して、デバイスをさらに強化する必要があります。
+Azure Active Directory と従来のオンプレミス Active Directory 管理者特権を持つユーザーのための最初のセキュリティ対策として、セキュリティが強化された[windows 10 デバイスの標準で構成された windows 10 デバイスを使用していることを確認します。](/windows-hardware/design/device-experiences/oem-highly-secure). 特権のある管理者アカウントは、管理ワークステーションのローカル管理者グループのメンバーになることはできません。  ワークステーションに対する構成の変更が必要な場合は、ユーザー Access Control (UAC) による特権昇格を利用できます。  さらに、Windows 10 のセキュリティベースラインをワークステーションに適用して、デバイスをさらに強化する必要があります。
 
 ### <a name="4-identity-attack-detection"></a>4。Id 攻撃の検出
 

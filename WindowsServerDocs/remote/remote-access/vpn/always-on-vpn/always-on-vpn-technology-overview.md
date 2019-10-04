@@ -1,19 +1,19 @@
 ---
 title: Always On VPN テクノロジの概要
 description: 'このページでは、Always On VPN テクノロジの概要と詳細なドキュメントへのリンクを提供します。 '
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 11/05/2018
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: de5dd8e17c07e46db28c529847607eec2a05a069
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 31d0d5c12760fc627ce93972f4a70e85f61dd178
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871394"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404363"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Always On VPN テクノロジの概要
 
@@ -144,7 +144,7 @@ AD DS には、保護された拡張認証プロトコル (PEAP) がユーザー
 
 Active Directory ユーザーとコンピューターは AD DS のコンポーネントであり、コンピューター、個人、セキュリティグループなどの物理的なエンティティを表すアカウントが含まれています。 セキュリティグループは、管理者が1つの単位として管理できるユーザーアカウントまたはコンピューターアカウントのコレクションです。 特定のグループに属するユーザーとコンピューターのアカウントは、グループメンバーと呼ばれます。
 
-Active Directory ユーザーとコンピューターのユーザーアカウントには、nps が承認プロセス中に評価するダイヤルインプロパティがあります。 NPS ネットワークポリシーを使用してアクセスを制御するようにユーザーアカウントの**ネットワークアクセス許可**プロパティが設定されている場合を除きます。 これは、すべてのユーザーアカウントの既定の設定です。 ただし、場合によっては、この設定によって、ユーザーが VPN を使用した接続をブロックする構成が異なる場合があります。 この可能性から保護するために、ユーザーアカウントのダイヤルインプロパティを無視するように NPS サーバーを構成することができます。
+Active Directory ユーザーとコンピューターのユーザーアカウントには、nps が承認プロセス中に評価するダイヤルインプロパティがあります。 NPS ネットワークポリシーを使用してアクセスを制御するようにユーザーアカウントの**ネットワークアクセス許可**プロパティが設定されている場合を除きます。. これは、すべてのユーザーアカウントの既定の設定です。 ただし、場合によっては、この設定によって、ユーザーが VPN を使用した接続をブロックする構成が異なる場合があります。 この可能性から保護するために、ユーザーアカウントのダイヤルインプロパティを無視するように NPS サーバーを構成することができます。
 
 詳細については、「[ユーザーアカウントのダイヤルインプロパティを無視するように NPS を構成する](../../../../networking/technologies/nps/nps-np-configure.md#configure-nps-to-ignore-user-account-dial-in-properties)」を参照してください。
 

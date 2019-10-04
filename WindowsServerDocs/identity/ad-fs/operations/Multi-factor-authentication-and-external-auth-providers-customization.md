@@ -6,15 +6,15 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: 08724d45-9be4-4c56-a5f1-2cf40864e136
 ms.technology: identity-adfs
-ms.openlocfilehash: 23ec5acbe442527b4eb44c4b857e183b5e0c37ea
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8271e65e05a8da1d397f087242308f04a51a6249
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865719"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357934"
 ---
 # <a name="multi-factor-authentication-and-external-authentication-providers-customization"></a>多要素認証と外部認証プロバイダーのカスタマイズ 
 
@@ -40,7 +40,7 @@ AD FS では、多要素認証のサポートがすぐ\-\-\-に提供されま�
   
 -   AD FS 管理者は、AD FS スタイルをカスタマイズできることに注意してください。 . 独自のスタイルをハードコーディングすることはお勧めしません。 代わりに、可能な限り AD FS スタイルを使用することをお勧めします。  
   
--   \-\) \( \(\-\-\-すぐに\-使用できるように、AD FS スタイルは左から右に1つ右の LTR スタイルを使用して作成されます。\-\) 管理者は、両方をカスタマイズしたり\-、web テーマ定義を使用して言語固有のスタイルを提供したりすることができます。 各スタイル シートには次の 3 つのセクションがあり、それぞれにコメントが付いています。  
+-   \-\) \( \(\-\-\-すぐに\-使用できるように、AD FS スタイルは左から右に1つ右の LTR スタイルを使用して作成されます。\-\). 管理者は、両方をカスタマイズしたり\-、web テーマ定義を使用して言語固有のスタイルを提供したりすることができます。 各スタイル シートには次の 3 つのセクションがあり、それぞれにコメントが付いています。  
   
     -   **テーマスタイル**\-これらのスタイルは使用できません。また、使用することもできません。 これらのスタイルは、すべてのページでテーマを定義するために用意されています。 各スタイルは要素 ID によって意図的に定義されており、再利用することはできません。  
   
