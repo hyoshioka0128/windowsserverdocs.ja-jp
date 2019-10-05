@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 51d9636013fef182c4abb74ae196e08c51ff11d8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 30e4c2c7c5cf2668d62e96d8d2a54dc33e3d2a55
+ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71362747"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71960956"
 ---
 # <a name="using-the-remove-imagegroup-command"></a>削除 ImageGroup コマンドを使用してください。
 
@@ -41,8 +41,8 @@ wdsutil /remove-ImageGroumediaGroup:ImageGroup1
 wdsutil /verbose /remove-ImageGroumediaGroup:"My Image Group" /Server:MyWDSServer 
 ```
 #### <a name="additional-references"></a>その他の参照情報
-[コマンドライン構文のポイント](command-line-syntax-key.md)
-[追加 ImageGroup コマンドを使用して](using-the-add-imagegroup-command.md)
-[get AllImageGroups コマンドを使用して](using-the-get-allimagegroups-command.md)
-[get ImageGroup コマンドを使用して](using-the-get-imagegroup-command.md)
-[サブコマンド: セット ImageGroup](subcommand-set-imagegroup.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)  
+[追加 ImageGroup コマンドを使用してください。](using-the-add-imagegroup-command.md)  
+[Get AllImageGroups コマンドの使用](using-the-get-allimagegroups-command.md)  
+[Get ImageGroup コマンドの使用](using-the-get-imagegroup-command.md)  
+[サブコマンド: セット ImageGroup](subcommand-set-imagegroup.md)  
