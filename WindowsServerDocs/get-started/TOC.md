@@ -20,10 +20,20 @@
 ## [Windows Server 2016 で削除された機能または推奨されなくなった機能](Deprecated-Features.md)
 ## [Windows Server 2016 のエディションの比較](2016-Edition-Comparison.md)
 ## [Windows Server 向け Azure ハイブリッド特典](azure-hybrid-benefit.md)
-## [Windows Server 2016 のライセンス認証ガイド](Server-2016-activation.md)
+## Windows Server 2016 のライセンス認証ガイド
+### [Windows Server 2016 のライセンス認証ガイド](Server-2016-activation.md)
 ### [KMS クライアント セットアップ キー](KMSclientkeys.md)
-### [ライセンス認証エラー コードのトラブルシューティング](activation-error-codes.md)
-####[KMS と DNS の問題に関する一般的なトラブルシューティング手順](common-troubleshooting-procedures-kms-dns.md)
+## Windows ボリューム ライセンス認証のトラブルシューティング
+### [Windows ボリューム ライセンス認証のトラブルシューティング](activation-troubleshooting-guide.md)
+### [KMS のトラブルシューティングに関するガイドライン](activation-troubleshoot-kms-general.md)
+### [Slmgr.vbs のオプション](activation-slmgr-vbs-options.md)
+### ライセンス認証に関する一般的な問題の解決方法
+#### [Windows ライセンス認証のエラー コードの解決](activation-error-codes.md)
+#### [KMS ライセンス認証: 既知の問題](activation-troubleshoot-KMS-issues.md)
+#### [MAK ライセンス認証: 既知の問題](activation-troubleshoot-MAK-issues.md)
+#### [DNS に関連するライセンス認証の問題のトラブルシューティングに関するガイドライン](common-troubleshooting-procedures-kms-dns.md)
+#### [Tokens.dat ファイルの再構築](activation-rebuild-tokens-dat-file.md)
+### [例:ライセンス認証を行わない ADBA クライアントのトラブルシューティング](activation-troubleshoot-adba-clients.md)
 ## [Nano Server のインストール](Getting-started-with-Nano-Server.md)
 ### [Windows Server の次期リリースで Nano Server に加えられる変更](nano-in-semi-annual-channel.md)
 ### [Nano Server のクイック スタート](Nano-Server-Quick-start.md)
