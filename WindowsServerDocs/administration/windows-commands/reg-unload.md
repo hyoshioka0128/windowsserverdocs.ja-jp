@@ -1,5 +1,5 @@
 ---
-title: reg アンロード
+title: reg unload
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71384623"
 ---
-# <a name="reg-unload"></a>reg アンロード
+# <a name="reg-unload"></a>reg unload
 
 
 

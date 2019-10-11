@@ -14,12 +14,12 @@ manager: daveba
 ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d11e8ad0cac1f9cf024097450e90d9be95d950b0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 829608ae1a4c6b78b3b191f248ed4a4195500669
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387759"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940711"
 ---
 # <a name="get-started-with-the-android-client"></a>Android クライアントの概要
 
@@ -221,7 +221,7 @@ Android デバイスでリモート デスクトップ クライアントを設�
 |---------------|----------------------|-------------------------------------------------------------------------|
 | 直接タッチ  | 左クリック           | 1 本の指でタップする                                                     |
 | 直接タッチ  | 右クリック          | 1 本の指で長押ししてから離す                              |
-| マウス ポインター | ズーム                 | 2 本の指を使用し、ピンチしてズーム インまたは指を開いてズーム アウトする。 |
+| マウス ポインター | ズーム                 | 2 本の指を使って、ピンチで縮小または指を開いて拡大する。 |
 | マウス ポインター | 左クリック           | 1 本の指でタップする                                                     |
 | マウス ポインター | 左クリックしてドラッグ  | 1 本の指でダブルタップから長押しして、ドラッグする                          |
 | マウス ポインター | 右クリック          | 2 本の指でタップする                                                    |

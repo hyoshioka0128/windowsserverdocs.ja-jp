@@ -1,5 +1,5 @@
 ---
-title: reg 復元
+title: reg restore
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71384671"
 ---
-# <a name="reg-restore"></a>reg 復元
+# <a name="reg-restore"></a>reg restore
 
 
 

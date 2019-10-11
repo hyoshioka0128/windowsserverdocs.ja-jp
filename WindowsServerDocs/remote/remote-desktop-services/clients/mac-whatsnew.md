@@ -13,12 +13,12 @@ manager: daveba
 ms.author: helohr
 ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 092804ea84ba2d0e68eede3a597cb354c53bb8bd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cc09a60882c481cea974508b0ef967aad0ed82fa
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404194"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940644"
 ---
 # <a name="whats-new-in-the-macos-client"></a>macOS クライアントの新機能
 
@@ -189,7 +189,7 @@ ms.locfileid: "71404194"
 - 楕円曲線非対称キーを含む RD エンドポイント証明書のサポートが追加されました。
 - 一部のシナリオで管理対象リソースのダウンロードを妨げていたバグを修正しました。
 - 固定された接続センターに関するクリッピングの問題に対処しました。
-- 機能をさらに連携させるために、表示プロパティ シートのチェック ボックスを修正しました。
+- 機能をさらに連携させるために、[デスクトップの追加] ウィンドウの [表示] タブにあるチェック ボックスを修正しました。
 - 動的表示変更が有効な場合は縦横比のロックが無効になりました。
 - F5 インフラストラクチャとの互換性の問題に対処しました。
 - 接続時に正しいメッセージが表示されるように空白パスワードの処理が更新されました。

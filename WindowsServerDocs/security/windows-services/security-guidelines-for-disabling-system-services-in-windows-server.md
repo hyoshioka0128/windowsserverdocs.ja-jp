@@ -10,12 +10,12 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 35bb2d547c4af2b90d5ed68e32dfa214bee6b3a7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 175c4dbd23bac1822365ce80f05d69509d27321c
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403234"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935019"
 ---
 ## <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>デスクトップ エクスペリエンス搭載 Windows Server 2016 上のシステム サービスを無効にする場合のガイダンス
 
@@ -1729,9 +1729,20 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br /><br/>
-## <a name="sensor-servicebr--br------br---strongservice-descriptionstrong----a-service-for-sensors-that-manages-different-sensors39-functionality-manages-simple-device-orientation-sdo-and-history-for-sensors-loads-the-sdo-sensor-that-reports-device-orientation-changes--if-this-service-is-stopped-or-disabled-the-sdo-sensor-will-not-be-loaded-and-so-auto-rotation-will-not-occur-history-collection-from-sensors-will-also-be-stopped"></a>センサー サービス<br/>| | |<br/>|---|---|<br/>|   <strong>サービスの説明</strong> |   さまざまなセンサーの機能を管理するセンサー用サービス。 センサーの簡易デバイス方向 (SDO) と履歴を管理します。 デバイス方向の変化をレポートする SDO センサーを読み込みます。  このサービスを停止または無効にすると、SDO センサーは読み込まれなくなり、自動回転も行われません。 センサーからの履歴収集も停止されます。
-|   <strong>サービス名</strong>    |   SensorService |   <strong>インストール</strong>    |   デスクトップ エクスペリエンス搭載のみ |   <strong>StartType</strong>   |   手動 |   <strong>推奨</strong>  |   無効にしてもよい |   <strong>コメント</strong>    |<br/>|||<br/>
+<br />
+
+## <a name="sensor-service"></a>センサー サービス
+
+| | |
+|---|---|
+|   **サービスの説明** |   さまざまなセンサーの機能を管理するセンサー用サービス。 センサーの簡易デバイス方向 (SDO) と履歴を管理します。 デバイス方向の変化をレポートする SDO センサーを読み込みます。  このサービスを停止または無効にすると、SDO センサーは読み込まれなくなり、自動回転も行われません。 センサーからの履歴収集も停止されます。
+|   **サービス名**    |   SensorService
+|   **インストール**    |   デスクトップ エクスペリエンス搭載のみ
+|   **StartType**   |   Manual
+|   **推奨**  |   無効にしてもよい
+|   **コメント**    |
+|||
+  
 <br />          
 
 ## <a name="server"></a>Server           

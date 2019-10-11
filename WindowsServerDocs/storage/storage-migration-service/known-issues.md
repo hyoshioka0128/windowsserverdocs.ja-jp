@@ -4,16 +4,16 @@ description: 記憶域移行サービスの既知の問題とトラブルシュ�
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 07/09/2019
+ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 150c9f1e70df4f634886ea65efd9c61ef075f26a
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: e3ec7ee787fb6fd2e8e9f59249a6c4013a76b377
+ms.sourcegitcommit: e2964a803cba1b8037e10d065a076819d61e8dbe
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940707"
+ms.lasthandoff: 10/10/2019
+ms.locfileid: "72252361"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -48,7 +48,7 @@ Windows 管理センターの記憶域移行サービス拡張機能は、Window
 
 Windows 管理センターで Storage Migration Service 拡張機能の0.57 バージョンを使用していて、移行フェーズに進むと、アドレスに静的 IP を選択できません。 DHCP を使用することは強制されています。
 
-この問題を解決するには、Windows 管理センターで、[**設定** > ] **[拡張]** の下で、更新されたバージョンの Storage Migration Service 0.57.2 がインストールに使用できることを示すアラートを探します。 場合によっては、Windows 管理センターのブラウザータブの再起動が必要になることがあります。
+この問題を解決するには、Windows 管理センターで、[**設定** >  の**拡張機能**] を調べて、更新されたバージョンの Storage Migration Service 0.57.2 をインストールできることを示すアラートを表示します。 場合によっては、Windows 管理センターのブラウザータブの再起動が必要になることがあります。
 
 ## <a name="storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer"></a>記憶域移行サービスの切り替えの検証が、"対象コンピューターのトークンフィルターポリシーのアクセスが拒否されました" というエラーで失敗する
 
@@ -225,7 +225,7 @@ StorageMigration で StorageMigration () を実行します。 TransferRequestHa
   ユーザー:        ネットワークサービスコンピューター:    FS02.TailwindTraders.net の説明:コンピューターのインベントリを行うことができませんでした。
 ジョブ: foo2 コンピューター:FS01.TailwindTraders.net の状態:失敗したエラー:-2147463168 エラーメッセージ:ガイダンス:詳細なエラーを確認し、在庫の要件が満たされていることを確認します。 インベントリは、指定されたソースコンピューターの側面を特定できませんでした。 これは、ソースまたはブロックされているファイアウォールポートに対するアクセス許可または特権がないことが原因である可能性があります。
   
-このエラーは、"meghan@contoso.com' などのユーザープリンシパル名 (UPN) の形式で移行資格情報を指定した場合に、ストレージ移行サービスのコードの不具合が原因で発生します。 Storage Migration Service orchestrator サービスは、この形式を正しく解析できません。そのため、KB4512534 と19H1 でのクラスター移行サポートに追加されたドメイン参照でエラーが発生します。
+このエラーは、"meghan@contoso.com" などのユーザープリンシパル名 (UPN) の形式で移行資格情報を指定した場合に、ストレージ移行サービスのコードの不具合が原因で発生します。 Storage Migration Service orchestrator サービスは、この形式を正しく解析できません。そのため、KB4512534 と19H1 でのクラスター移行サポートに追加されたドメイン参照でエラーが発生します。
 
 この問題を回避するには、"Contoso\Meghan" のように、domain\user の形式で資格情報を指定します。
 
@@ -264,6 +264,28 @@ Storage Migration Service orchestrator サーバーで[KB4512534](https://suppor
     There are no more endpoints available from the endpoint mapper  
 
 この問題を回避するには、記憶域移行サービス orchestrator コンピューターから、KB4512534 の累積的な更新プログラム (およびそれを置き換えたもの) を一時的にアンインストールします。 移行が完了したら、最新の累積的な更新プログラムを再インストールします。  
+
+状況によっては、KB4512534 またはその置き換えられる更新プログラムをアンインストールすると、記憶域移行サービスが開始されなくなる場合があることに注意してください。 この問題を解決するには、Storage Migration Service データベースをバックアップして削除します。
+
+1.  管理者特権でのコマンドプロンプトを開きます。ここでは、Storage Migration Service orchestrator サーバーの管理者のメンバーで、次を実行します。
+
+     ```
+     MD c:\ProgramData\Microsoft\StorageMigrationService\backup
+
+     ICACLS c:\ProgramData\Microsoft\StorageMigrationService\* /grant Administrators:(GA)
+
+     XCOPY c:\ProgramData\Microsoft\StorageMigrationService\* .\backup\*
+
+     DEL c:\ProgramData\Microsoft\StorageMigrationService\* /q
+
+     ICACLS c:\ProgramData\Microsoft\StorageMigrationService  /GRANT networkservice:F /T /C
+
+     ICACLS c:\ProgramData\Microsoft\StorageMigrationService /GRANT networkservice:(GA)F /T /C
+     ```
+   
+2.  Storage Migration Service サービスを開始します。これにより、新しいデータベースが作成されます。
+
+
 
 ## <a name="see-also"></a>関連項目
 

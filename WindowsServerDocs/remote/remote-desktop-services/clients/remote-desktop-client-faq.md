@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b1dd3b728f941d9c3732abccf19363cf631284e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 54ed455955053ebb234864f827759385ecf3d3c5
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387751"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935034"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>リモート デスクトップ クライアントについてよく寄せられる質問
 
@@ -166,7 +166,7 @@ Web クライアントは、Windows、macOS、Linux、および ChromeOS をサ�
 2. 有効にする **すべてのモニターを使用して** と **全画面表示**します。
 
 ### <a name="is-bi-directional-sound-supported"></a>双方向のサウンドがサポートされているか。
-リモート デスクトップ クライアントでは、(クライアントからのマイク、サーバーに) 音をアップ ストリームはサポートされていません。
+双方向のサウンドは、Windows クライアントで接続ごとに構成できます。 関連する設定には、 **[ローカル リソース]** オプション タブの **[リモート オーディオ]** セクションでアクセスできます。
 
 ### <a name="what-can-i-do-if-the-sound-wont-play"></a>サウンドが再生されない場合の何か。
 セッションからサインアウトします (しないだけ切断、サインアウトするまで)、もう一度サインインしています。

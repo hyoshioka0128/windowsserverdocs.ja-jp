@@ -1,5 +1,5 @@
 ---
-title: reg インポート
+title: reg import
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71384734"
 ---
-# <a name="reg-import"></a>reg インポート
+# <a name="reg-import"></a>reg import
 
 
 
@@ -38,7 +38,7 @@ Reg import FileName
 
 |パラメーター|説明|
 |---------|-----------|
-|\<ファイル名 >|ローカル コンピューターのレジストリにコピーされるコンテンツを含むファイルのパスと名前を指定します。 使用してこのファイルを事前に作成する必要があります **reg エクスポート**します。|
+|\<ファイル名 >|ローカル コンピューターのレジストリにコピーされるコンテンツを含むファイルのパスと名前を指定します。 使用してこのファイルを事前に作成する必要があります **reg export**します。|
 |/?|ヘルプを表示 **reg import** コマンド プロンプト。|
 
 ## <a name="remarks"></a>コメント

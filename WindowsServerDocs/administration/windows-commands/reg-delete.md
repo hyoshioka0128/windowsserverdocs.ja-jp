@@ -1,5 +1,5 @@
 ---
-title: reg の削除
+title: reg delete
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71384764"
 ---
-# <a name="reg-delete"></a>reg の削除
+# <a name="reg-delete"></a>reg delete
 
 
 

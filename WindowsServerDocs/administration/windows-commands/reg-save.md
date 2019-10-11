@@ -1,5 +1,5 @@
 ---
-title: reg 保存
+title: reg save
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71371696"
 ---
-# <a name="reg-save"></a>reg 保存
+# <a name="reg-save"></a>reg save
 
 
 

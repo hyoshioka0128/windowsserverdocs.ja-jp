@@ -1,5 +1,5 @@
 ---
-title: reg 読み込み
+title: reg load
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71384699"
 ---
-# <a name="reg-load"></a>reg 読み込み
+# <a name="reg-load"></a>reg load
 
 
 
@@ -39,7 +39,7 @@ reg load KeyName FileName
 |パラメーター|説明|
 |---------|-----------|
 |\<KeyName >|読み込むサブキーの完全なパスを指定します。 リモートコンピューターを指定する場合は、コンピューター名を、 *KeyName*の一部として \\ @ No__t-1 computername @ no__t の形式で指定します。 @No__t-0 @ no__t-1 Computername \ を省略すると、操作は既定でローカルコンピューターに設定されます。 *KeyName* 有効なルート キーを含める必要があります。 ローカルコンピューターの有効なルートキーは次のとおりです。HKLM、HKCU、HKCR、HKU、および HKCC。 リモートコンピューターが指定されている場合、有効なルートキーは次のとおりです。HKLM と HKU。|
-|\<ファイル名 >|読み込むファイルのパスと名前を指定します。 使用してこのファイルを事前に作成する必要があります、 **reg 保存** 操作と .hiv 拡張子です。|
+|\<ファイル名 >|読み込むファイルのパスと名前を指定します。 使用してこのファイルを事前に作成する必要があります、 **reg save** 操作と .hiv 拡張子です。|
 |/?|ヘルプを表示 **reg load** コマンド プロンプト。|
 
 ## <a name="remarks"></a>コメント

@@ -1,5 +1,5 @@
 ---
-title: reg コピー
+title: reg copy
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71371782"
 ---
-# <a name="reg-copy"></a>reg コピー
+# <a name="reg-copy"></a>reg copy
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: reg 比較
+title: reg compare
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71384716"
 ---
-# <a name="reg-compare"></a>reg 比較
+# <a name="reg-compare"></a>reg compare
 
 
 
@@ -48,7 +48,7 @@ reg compare <KeyName1> <KeyName2> [{/v ValueName | /ve}] [{/oa | /od | /os | on}
 |       /os       |                                                                                                                                                                                                                                                    一致だけが表示されることを指定します。 既定では、相違点だけが表示されます。                                                                                                                                                                                                                                                     |
 |       /on       |                                                                                                                                                                                                                                                       何も表示されないことを指定します。 既定では、相違点だけが表示されます。                                                                                                                                                                                                                                                        |
 |       /s        |                                                                                                                                                                                                                                                                         すべてのサブキーとエントリを再帰的を比較します。                                                                                                                                                                                                                                                                          |
-|       /?        |                                                                                                                                                                                                                                                                    ヘルプを表示 **reg 比較** コマンド プロンプト。                                                                                                                                                                                                                                                                    |
+|       /?        |                                                                                                                                                                                                                                                                    ヘルプを表示 **reg compare** コマンド プロンプト。                                                                                                                                                                                                                                                                    |
 
 ## <a name="remarks"></a>コメント
 
@@ -80,7 +80,7 @@ REG COMPARE HKLM\Software\MyCo HKLM\Software\MyCo1/v バージョン
 
 HKLM\Software\MyCo の下にあるすべてのサブキーと値を、ローカルコンピューター上の HKLM\Software\MyCo の下のすべてのサブキーと値を使用して比較するには、次のように入力します。
 
-REG COMPARE \\ @ no__t-1ZODIAC\HKLM\Software\MyCo \\ @ no__t。 /s
+REG COMPARE \\\\ZODIAC\HKLM\Software\MyCo \\\\. /s
 
 #### <a name="additional-references"></a>その他の参照情報
 

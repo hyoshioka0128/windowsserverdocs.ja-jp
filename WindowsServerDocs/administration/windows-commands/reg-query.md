@@ -1,5 +1,5 @@
 ---
-title: reg クエリ
+title: reg query
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71371720"
 ---
-# <a name="reg-query"></a>reg クエリ
+# <a name="reg-query"></a>reg query
 
 
 
@@ -48,9 +48,9 @@ reg query <KeyName> [{/v <ValueName> | /ve}] [/s] [/se <Separator>] [/f <Data>] 
 |/d|データのみで検索するよう指定します。|
 |/c|クエリを大文字小文字を区別することを示します。 既定では、クエリでは大文字小文字が区別されません。|
 |/e|完全一致のみを返すように指定します。 既定では、すべての一致が返されます。|
-|/t \<Type >|検索するレジストリの種類を指定します。 有効なデータ型は、次のとおりです。REG_SZ、REG_MULTI_SZ、REG_EXPAND_SZ、REG_DWORD、REG_BINARY、REG_NONE。 指定されていない場合は、すべての型が検索されます。|
+|/t \<Type >|検索するレジストリの種類を指定します。 有効なデータ型は、次のとおりです。REG_SZ, REG_MULTI_SZ, REG_EXPAND_SZ, REG_DWORD, REG_BINARY, REG_NONE. 指定されていない場合は、すべての型が検索されます。|
 |/z|レジストリの型に対応する数値を検索結果に含めるように指定します。|
-|/?|ヘルプを表示 **reg クエリ** コマンド プロンプト。|
+|/?|ヘルプを表示 **reg query** コマンド プロンプト。|
 
 ## <a name="remarks-optional-section"></a>解説 \<optional section >
 

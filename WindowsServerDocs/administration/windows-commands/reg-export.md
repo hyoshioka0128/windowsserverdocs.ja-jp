@@ -1,5 +1,5 @@
 ---
-title: reg エクスポート
+title: reg export
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71384751"
 ---
-# <a name="reg-export"></a>reg エクスポート
+# <a name="reg-export"></a>reg export
 
 
 
@@ -41,7 +41,7 @@ Reg export KeyName FileName [/y]
 |\<KeyName >|サブキーの完全なパスを指定します。 エクスポート操作は、ローカル コンピューターでのみ機能します。 られているキー名では、有効なルート キーを含める必要があります。 有効なルートキーは次のとおりです。HKLM、HKCU、HKCR、HKU、および HKCC。|
 |\<ファイル名 >|操作中に作成されるファイルのパスと名前を指定します。 拡張子が .reg のファイルが必要です。|
 |/y|名前の既存のファイルを上書き *FileName* 確認を求めずにします。|
-|/?|ヘルプを表示 **reg エクスポート** コマンド プロンプト。|
+|/?|ヘルプを表示 **reg export** コマンド プロンプト。|
 
 ## <a name="remarks"></a>コメント
 

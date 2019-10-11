@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b3111d4e980395c1a7c971af715017d455e1a29c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 51693f81e8e394df02bf35f1a6d91ed06b98e4bb
+ms.sourcegitcommit: c9d856c22b42d2a4fb8fe6acc6c5b6be673647f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384919"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72165046"
 ---
 # <a name="qprocess"></a>qprocess
 
@@ -32,7 +32,7 @@ ms.locfileid: "71384919"
 ## <a name="remarks"></a>コメント
 このコマンドと同じ、 **クエリ プロセス** コマンドです。
 
-#### <a name="additional-references"></a>その他の参照情報
-[クエリプロセス](query-process.md)
-[コマンドライン構文のキー](command-line-syntax-key.md)
-[リモートデスクトップサービス&#40;ターミナルサービス&#41;のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+## <a name="additional-references"></a>その他の参照情報
+[query process](query-process.md)  
+[コマンド ライン構文の記号](command-line-syntax-key.md)  
+[リモートデスクトップサービス&#40;ターミナルサービス&#41;のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)  
