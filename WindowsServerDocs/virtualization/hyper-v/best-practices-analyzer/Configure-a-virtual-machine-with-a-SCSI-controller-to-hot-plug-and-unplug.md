@@ -1,7 +1,7 @@
 ---
-title: プラグをホット ストレージ層とホット ストレージを取り外しできる SCSI コント ローラーと仮想マシンの構成します。
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+title: ホットプラグとホットプラグを使用できるように、SCSI コントローラーでバーチャルマシンを構成する
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,47 +10,47 @@ ms.topic: article
 ms.assetid: 511e1172-aeef-463d-b5dd-2bffae411ff1
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 755e7485e54ee58e0acd7ebd75a7ee591aa655f9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5b901ee8f11942b8ad50a3c34c53354a5998e105
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843283"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365069"
 ---
-# <a name="configure-a-virtual-machine-with-a-scsi-controller-to-be-able-to-hot-plug-and-hot-unplug-storage"></a>プラグをホット ストレージ層とホット ストレージを取り外しできる SCSI コント ローラーと仮想マシンの構成します。
+# <a name="configure-a-virtual-machine-with-a-scsi-controller-to-be-able-to-hot-plug-and-hot-unplug-storage"></a>ホットプラグとホットプラグを使用できるように、SCSI コントローラーでバーチャルマシンを構成する
 
 >適用先:Windows Server 2016
 
 
   
-*ベスト プラクティスとスキャンの詳細については、次を参照してください。* [Best Practices Analyzer](https://go.microsoft.com/fwlink/?LinkId=122786)します。  
+*ベストプラクティスとスキャンの詳細については、「* [ベストプラクティスアナライザー](https://go.microsoft.com/fwlink/?LinkId=122786)」を参照してください。  
   
 |プロパティ|詳細|  
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|警告|  
+|**順**|警告|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
   
 ## <a name="issue"></a>問題  
   
-*SCSI コント ローラーでない構成される仮想マシンが検出されました。*  
+*SCSI コントローラーが構成されていない仮想マシンが見つかりました。*  
   
 ## <a name="impact"></a>影響  
   
-*プラグをホット、またはホット次の仮想マシンの記憶域を取り外すことはできません。*  
+*次の仮想マシンのストレージをホットプラグまたはホットプラグで取り外すことはできません。*  
   
-\<仮想マシン名の一覧 >  
+@no__t-仮想マシン名の一覧 >  
   
-プラグをホット、またはホット ストレージを取り外すことにより、ダウンタイムを必要とせず、仮想マシンの記憶域のニーズを管理しやすくします。 追加したり記憶域を削除する前に、SCSI コント ローラーなしの仮想マシンをシャット ダウンする必要があります。  
+ホットプラグまたはホットプラグを切断する機能により、仮想マシンの記憶域のニーズを管理しやすくなります。ダウンタイムは必要ありません。 記憶域を追加または削除する前に、SCSI コントローラーのない仮想マシンをシャットダウンする必要があります。  
   
 ## <a name="resolution"></a>解決方法  
   
-*ホット プラグまたはホットこの仮想マシンの記憶域を取り外す必要がない場合のアクションは必要ありません。それ以外の場合、仮想マシンをシャット ダウンし、構成に SCSI コント ローラーを追加します。*  
+@no__t この仮想マシンのストレージをホットプラグまたはホットプラグで取り外す必要がない場合は、何もする必要はありません。それ以外の場合は、バーチャルマシンをシャットダウンし、構成に SCSI コントローラーを追加します。 *  
   
-ホット プラグに SCSI コント ローラーを使用して、ホット ストレージを取り外しするには、ゲスト オペレーティング システムを現在のバージョンの integration services 実行する必要があります。  
+SCSI コントローラーをホットプラグとホットプラグを使用して記憶域を取り外すには、ゲストオペレーティングシステムが現在のバージョンの integration services を実行している必要があります。  
   
 
 
