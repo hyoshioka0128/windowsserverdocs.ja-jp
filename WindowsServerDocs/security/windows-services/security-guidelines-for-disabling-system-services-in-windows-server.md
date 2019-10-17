@@ -1432,7 +1432,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **インストール**    |   常にインストール
 |   **StartType**   |   自動
 |   **推奨**  |   プリント サーバーでも DC でもない場合は、無効にしても問題ありません
-|   **コメント**    |   ドメイン コントローラーに DC ロールをインストールすると、印刷のプルーニング (古い印刷キュー オブジェクトを Active Directory から削除する処理) を実行するスレッドがスプーラー サービスに追加されます。  スプーラー サービスが各サイトの少なくとも 1 つの DC で実行されていない場合、AD には存在しなくなった古いキューを削除する手段がありません。 https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/
+|   **コメント**    |   ドメイン コントローラーに DC ロールをインストールすると、印刷のプルーニング (古い印刷キュー オブジェクトを Active Directory から削除する処理) を実行するスレッドがスプーラー サービスに追加されます。  スプーラー サービスが各サイトの少なくとも 1 つの DC で実行されていない場合、AD には存在しなくなった古いキューを削除する手段がありません。 [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/ )
 |||         
 
 <br />          
