@@ -51,6 +51,7 @@
 #### [Intel パフォーマンス監視ハードウェアを有効にする](hyper-v/manage/Performance-Monitoring-Hardware.md)
 #### [ライブ マイグレーションで VM を移動する](hyper-v/manage/Live-migration-overview.md)
 ##### [ライブ マイグレーションの概要](hyper-v/manage/Live-migration-overview.md)
+
 ##### [ライブ マイグレーションのホストを設定する](hyper-v/deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md) 
 ##### [フェールオーバー クラスタリングなしでライブ マイグレーションを使用する](hyper-v/manage/Use-live-migration-without-Failover-Clustering-to-move-a-virtual-machine.md)
 
