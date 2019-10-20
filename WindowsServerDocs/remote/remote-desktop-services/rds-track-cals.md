@@ -1,5 +1,5 @@
 ---
-title: リモート デスクトップ サービス クライアント アクセス ラインセンス (RDS CAL) を追跡する
+title: リモート デスクトップ サービス クライアント アクセス ライセンス (RDS CAL) を追跡する
 description: RDS 展開全体で CAL を追跡する方法について説明します。
 ms.custom: na
 ms.prod: windows-server
@@ -20,7 +20,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71387123"
 ---
-# <a name="track-your-remote-desktop-services-client-access-licenses-rds-cals"></a>リモート デスクトップ サービス クライアント アクセス ラインセンス (RDS CAL) を追跡する
+# <a name="track-your-remote-desktop-services-client-access-licenses-rds-cals"></a>リモート デスクトップ サービス クライアント アクセス ライセンス (RDS CAL) を追跡する
 
 >適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
