@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 6ae7bd9ed7aee5835ac1f53b9e10879ad8824f52
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71406941"
@@ -31,19 +31,19 @@ Windows 管理センターをフェールオーバークラスターに展開し
 
 ## <a name="install-windows-admin-center-on-a-failover-cluster"></a>フェールオーバークラスターへの Windows 管理センターのインストール
 
-1. @No__t-0 スクリプトをクラスター内のノードにコピーします。 Windows 管理センターの .msi をダウンロードするか、同じノードにコピーします。
+1. ```Install-WindowsAdminCenterHA.ps1``` スクリプトをクラスター内のノードにコピーします。 Windows 管理センターの .msi をダウンロードするか、同じノードにコピーします。
 2. RDP 経由でノードに接続し、次のパラメーターを使用して、そのノードから ```Install-WindowsAdminCenterHA.ps1``` スクリプトを実行します。
     - `-clusterStorage`: Windows 管理センターデータを格納するためのクラスターの共有ボリュームのローカルパス。
-    - `-clientAccessPoint`: Windows 管理センターへのアクセスに使用する名前を選択します。 たとえば、`-clientAccessPoint contosoWindowsAdminCenter` というパラメーターを指定してスクリプトを実行した場合、@no__t にアクセスして Windows 管理センターサービスにアクセスします。
+    - `-clientAccessPoint`: Windows 管理センターへのアクセスに使用する名前を選択します。 たとえば、`-clientAccessPoint contosoWindowsAdminCenter` というパラメーターを指定してスクリプトを実行した場合、`https://contosoWindowsAdminCenter.<domain>.com` にアクセスして Windows 管理センターサービスにアクセスします。
     - `-staticAddress`:任意。 クラスター汎用サービスの1つまたは複数の静的アドレス。 
     - `-msiPath`:Windows 管理センターの .msi ファイルのパス。
     - `-certPath`:任意。 証明書の .pfx ファイルのパス。
-    - `-certPassword`:任意。 @No__t-0 で提供されている証明書の SecureString パスワード
+    - `-certPassword`:任意。 `-certPath` で提供されている証明書の SecureString パスワード
     - `-generateSslCert`:任意。 署名入り証明書を提供しない場合は、このパラメーターフラグを指定して自己署名証明書を生成します。 自己署名証明書の有効期限は60日であることに注意してください。
-    - `-portNumber`:任意。 ポートを指定しない場合、ゲートウェイサービスはポート 443 (HTTPS) に展開されます。 別のポートを使用するには、このパラメーターにを指定します。 カスタムポート (443 を除く) を使用する場合は、 https://\<clientAccessPoint @ no__t-1: \<port @ no__t-3 に移動して、Windows 管理センターにアクセスします。
+    - `-portNumber`:任意。 ポートを指定しない場合、ゲートウェイサービスはポート 443 (HTTPS) に展開されます。 別のポートを使用するには、このパラメーターにを指定します。 カスタムポート (443 を除く) を使用する場合は、 https://\<clientAccessPoint \>: \<port\> に移動して、Windows 管理センターにアクセスします。
 
 > [!NOTE]
-> @No__t-0 スクリプトでは、```-WhatIf ``` と ```-Verbose``` のパラメーターがサポートされています。
+> ```Install-WindowsAdminCenterHA.ps1``` スクリプトでは、```-WhatIf ``` と ```-Verbose``` のパラメーターがサポートされています。
 
 ### <a name="examples"></a>使用例
 
@@ -62,7 +62,7 @@ $certPassword = Read-Host -AsSecureString
 
 ## <a name="update-an-existing-high-availability-installation"></a>既存の高可用性インストールを更新する
 
-同じ @no__t 0 スクリプトを使用して、接続データを失うことなく、HA デプロイを更新します。
+同じ ```Install-WindowsAdminCenterHA.ps1``` スクリプトを使用して、接続データを失うことなく、HA デプロイを更新します。
 
 ### <a name="update-to-a-new-version-of-windows-admin-center"></a>新しいバージョンの Windows 管理センターに更新する
 
