@@ -7,12 +7,12 @@ ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 99133f2c582b180f240740fc2f39e99527bc0cf8
-ms.sourcegitcommit: 27f0caf74e88781054250455c3c1adf06deb6234
+ms.openlocfilehash: 62fe4f00cef121e6241a403ee339047cda9488b5
+ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71124822"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591089"
 ---
 # <a name="upgrade-windows-server-2016-to-windows-server-2019"></a>Windows Server 2016 を Windows Server 2019 にアップグレードする
 
@@ -24,13 +24,13 @@ Windows Server のアップグレードを開始する前に、診断とトラ�
 
 ### <a name="to-collect-your-info"></a>情報を収集するには
 
-1. コマンドプロンプトを開き、に`c:\Windows\system32`アクセスして、「 **systeminfo**」と入力します。
+1. コマンドプロンプトを開き、`c:\Windows\system32` にアクセスして、「 **systeminfo**」と入力します。
 
 2. 生成されたシステム情報をデバイスのどこかにコピーして貼り付け、保存します。
 
 3. コマンドプロンプトに「 **ipconfig/all** 」と入力し、結果の構成情報をコピーして、上記と同じ場所に貼り付けます。
 
-4. レジストリエディターを開き、HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion hive に移動します。次に、Windows Server **Buildlabex** (バージョン) と**EditionID** (エディション) をコピーして、上記と同じ場所に貼り付けます。
+4. レジストリエディターを開き、`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion` キーに移動します。次に、Windows Server **Buildlabex** (バージョン) と**EditionID** (エディション) をコピーして、上記と同じ場所に貼り付けます。
 
 Windows Server 関連のすべての情報を収集したら、オペレーティングシステム、アプリ、および仮想マシンをバックアップすることを強くお勧めします。 また、サーバーで現在実行されているすべての仮想マシンを**シャットダウン**、**クイックマイグレーション**、または**ライブマイグレーション**する必要があります。 インプレースアップグレード中に仮想マシンを実行することはできません。
 
@@ -80,11 +80,11 @@ Windows Server 関連のすべての情報を収集したら、オペレーテ�
 
 ### <a name="to-make-sure-your-upgrade-was-successful"></a>アップグレードが成功したかどうかを確認するには
 
-1. レジストリエディターを開き、HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion hive にアクセスして、 **ProductName**を表示します。 Windows server **2019 Datacenter**などの windows server 2019 のエディションが表示するはずです。
+1. レジストリエディターを開き、`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion` キーにアクセスして、 **ProductName**を表示します。 Windows server **2019 Datacenter**などの windows server 2019 のエディションが表示するはずです。
 
 2. すべてのアプリケーションが実行されており、アプリケーションへのクライアント接続が正常に行われていることを確認します。
 
-アップグレード中に問題が発生したと思われる場合は、 `%SystemRoot%\Panther` (通常は`C:\Windows\Panther`) ディレクトリをコピーして zip 形式にし、Microsoft サポートに問い合わせてください。
+アップグレード中に問題が発生したと思われる場合は、`%SystemRoot%\Panther` (通常は `C:\Windows\Panther`) ディレクトリをコピーして zip 形式にし、Microsoft サポートに問い合わせてください。
 
 ## <a name="related-articles"></a>関連記事
 

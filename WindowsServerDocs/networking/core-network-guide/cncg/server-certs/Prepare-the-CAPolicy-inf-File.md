@@ -8,15 +8,15 @@ ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 810f6f8ba9e33f1f26f49f542ad6d23819deb463
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2af3a621991627addb94238e84cceb357fb47731
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406285"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588085"
 ---
 # <a name="capolicyinf-syntax"></a>Capolicy.inf 構文
->   適用先:Windows Server (半期チャネル)、Windows Server 2016
+>   適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 Capolicy.inf は、ルート CA 証明書およびルート CA によって発行されたすべての証明書に適用される拡張機能、制約、およびその他の構成設定を定義する構成ファイルです。 ルート CA のセットアップルーチンを開始する前に、Capolicy.inf ファイルをホストサーバーにインストールする必要があります。 ルート CA のセキュリティ制限を変更する場合は、ルート証明書を更新する必要があり、更新プロセスを開始する前に、更新された Capolicy.inf ファイルをサーバーにインストールする必要があります。
 
@@ -42,9 +42,9 @@ Capolicy.inf を使用すると、さまざまな CA 属性とオプションを
 
 -   _Value_ –パラメーターであり、等号の右側に表示されます。
 
-次の例では、 **[Version]** がセクション、 **Signature**がキー、および **"\$windows NT @ no__t-4"** が値です。
+次の例では、 **[Version]** がセクション、 **Signature**がキー、 **"\$Windows NT \$"** が値です。
 
-例:
+以下に例を示します。
 
 ```PowerShell
 [Version]                     #section
@@ -116,7 +116,7 @@ URL=http://pki.wingtiptoys.com/cdp/WingtipToysRootCA.crl
 
 -   引用符は、Url をスペースで囲む必要があります。
 
--   Url が指定されていない場合 (つまり、 **[CRLDistributionPoint]** セクションがファイルに存在していても空の場合)、証明機関情報アクセス拡張機能はルート CA 証明書から除外されます。 これは通常、ルート CA を設定するときに推奨されます。 Windows はルート CA 証明書に対して失効確認を実行しないため、CDP 拡張機能はルート CA 証明書では不要です。
+-   Url が指定されていない場合 (つまり、 **[CRLDistributionPoint]** セクションがファイルに存在していても空の場合)、CRL 配布ポイントの拡張機能はルート CA 証明書から除外されます。 これは通常、ルート CA を設定するときに推奨されます。 Windows はルート CA 証明書に対して失効確認を実行しないため、CDP 拡張機能はルート CA 証明書では不要です。
 
 -    CA は、たとえば、クライアントが HTTP 経由で取得した web サイトのフォルダーを表す共有に、ファイル UNC に発行できます。
 
@@ -142,7 +142,7 @@ URL=http://pki.wingtiptoys.com/Public/myCA.crt
 
 -   スペースを含む Url は引用符で囲む必要があります。
 
--   Url が指定されていない場合 (つまり、 **[AuthorityInformationAccess]** セクションがファイルに存在していても空の場合)、CRL 配布ポイントの拡張機能はルート CA 証明書から除外されます。 ここでも、ルート CA 証明書の場合は、証明書へのリンクによって参照される必要があるルート CA より上位の権限がないため、この設定が推奨されます。
+-   Url が指定されていない場合 (つまり、 **[AuthorityInformationAccess]** セクションがファイルに存在していても空の場合)、証明機関情報アクセス拡張機能はルート CA 証明書から除外されます。 ここでも、ルート CA 証明書の場合は、証明書へのリンクによって参照される必要があるルート CA より上位の権限がないため、この設定が推奨されます。
 
 ### <a name="certsrv_server"></a>certsrv_Server
 
@@ -170,11 +170,11 @@ EnableKeyCounting=0
 
 新しいキーのペアで CA 証明書を更新するときに、キーの長さを増減することができます。 たとえば、ルート CA キーのサイズを4096バイト以上に設定している場合、2048バイトのキーサイズのみをサポートする Java アプリまたはネットワークデバイスがあることを検出します。 サイズを増減するかどうかにかかわらず、その CA によって発行されたすべての証明書を再発行する必要があります。
 
-**RenewalValidityPeriod**と**RenewalValidityPeriodUnits**は、古いルート ca 証明書を更新するときに、新しいルート ca 証明書の有効期間を確立します。 ルート CA にのみ適用されます。 下位 CA の証明書の有効期間は、その上位の証明書の有効期間によって決まります。 RenewalValidityPeriod は次の値を持つことができます。時間、日、週、月、および年。
+**RenewalValidityPeriod**と**RenewalValidityPeriodUnits**は、古いルート ca 証明書を更新するときに、新しいルート ca 証明書の有効期間を確立します。 ルート CA にのみ適用されます。 下位 CA の証明書の有効期間は、その上位の証明書の有効期間によって決まります。 RenewalValidityPeriod には、時間、日、週、月、年の値を指定できます。
 
-**CRLPeriod**と**CRLPeriodUnits**は、base CRL の有効期間を確立します。 **CRLPeriod**は次の値を持つことができます。時間、日、週、月、および年。
+**CRLPeriod**と**CRLPeriodUnits**は、base CRL の有効期間を確立します。 **CRLPeriod**には、時間、日、週、月、年の値を指定できます。
 
-**CRLDeltaPeriod**と**CRLDeltaPeriodUnits**は、delta CRL の有効期間を確立します。 **CRLDeltaPeriod**は次の値を持つことができます。時間、日、週、月、および年。
+**CRLDeltaPeriod**と**CRLDeltaPeriodUnits**は、delta CRL の有効期間を確立します。 **CRLDeltaPeriod**には、時間、日、週、月、年の値を指定できます。
 
 これらの各設定は、CA がインストールされた後で構成できます。
 
@@ -193,18 +193,17 @@ CA の既定のインストールでは、既定の証明書テンプレート�
 
 CA がインストールされた直後に証明書を発行することはできません。そのため、LoadDefaultTemplates 設定を使用して、既定のテンプレートがエンタープライズ CA に追加されないようにすることができます。 CA にテンプレートが構成されていない場合、証明書を発行することはできません。
 
-**AlternateSignatureAlgorithm**は、ca 証明書と証明\#書要求の両方に対して PKCS 1 v1.0 署名形式をサポートするように ca を構成します。 ルート CA で1に設定すると、CA 証明書に PKCS\#1 version 2.1 の署名形式が含められます。 下位 ca で設定されている場合、下位 CA は PKCS\#1 version 2.1 署名形式を含む証明書要求を作成します。
+**AlternateSignatureAlgorithm**は、ca 証明書と証明書要求の両方に対して、PKCS \#1 v1.0 の署名形式をサポートするように ca を構成します。 ルート CA で1に設定すると、CA 証明書には PKCS \#1 v1.0 の署名形式が含められます。 下位 ca で設定されている場合、下位 CA は PKCS \#1 v1.0 の署名形式を含む証明書要求を作成します。
 
 **ForceUTF8**は、件名と発行者の識別名の相対識別名 (RDNs) の既定のエンコードを utf-8 に変更します。 RFC によってディレクトリ文字列型として定義されているものなど、UTF-8 をサポートする RDNs のみが影響を受けます。 たとえば、ドメインコンポーネント (DC) の RDN は、IA5 または UTF-8 としてエンコーディングをサポートしていますが、Country RDN (C) では、エンコード可能な文字列としてエンコードのみがサポートされています。 したがって、ForceUTF8 ディレクティブは DC RDN に影響を与えますが、C RDN には影響しません。
 
 **Enablekeycounting**は、ca の署名キーが使用されるたびに、カウンターをインクリメントするように ca を構成します。 ハードウェアセキュリティモジュール (HSM) と関連する暗号化サービスプロバイダー (CSP) がキーカウントをサポートしていない場合は、この設定を有効にしないでください。 Microsoft の強力な CSP と Microsoft ソフトウェアキー格納プロバイダー (KSP) では、キーカウントはサポートされていません。
 
-
 ## <a name="create-the-capolicyinf-file"></a>Capolicy.inf ファイルを作成する
 
 AD CS をインストールする前に、固有の設定で、展開の CAPolicy.inf ファイルを構成します。
 
-**要件**Administrators グループのメンバーである必要があります。
+**前提条件:** Administrators グループのメンバーである必要があります。
 
 1. AD CS のインストールを計画しているコンピューターで、Windows PowerShell を開き、「 **notepad c:\** 」と入力して、enter キーを押します。
 
@@ -255,4 +254,4 @@ AD CS をインストールする前に、固有の設定で、展開の CAPolic
 9. メモ帳を閉じます。
 
 > [!IMPORTANT]
->   Capolicy.inf には、URL https://pki.corp.contoso.com/pki/cps.txt を指定する行があることがわかります。 この CAPolicy.inf の InternalPolicy セクションは、認証実施規定 (CPS) の場所を指定する方法の例として示されています。 このガイドでは、証明書作成ステートメント (CPS) を作成するように指示されていません。
+>   Capolicy.inf で、 https://pki.corp.contoso.com/pki/cps.txt URL を指定する行があることを確認できます。 この CAPolicy.inf の InternalPolicy セクションは、認証実施規定 (CPS) の場所を指定する方法の例として示されています。 このガイドでは、証明書作成ステートメント (CPS) を作成するように指示されていません。

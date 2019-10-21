@@ -9,16 +9,16 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 00f3851ce74a496bd530c8ea682ea312f8b06a0a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e3f320b67196a2400ebedbaeaf0a5b59969400e8
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390931"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588094"
 ---
 # <a name="demoting-domain-controllers-and-domains"></a>ドメインコントローラーとドメインの降格
 
->適用先:Windows Server
+>適用対象: Windows Server
 
 このトピックでは、サーバー マネージャーまたは Windows PowerShell を使用して AD DC を削除する方法について説明します。
   
@@ -36,7 +36,7 @@ ms.locfileid: "71390931"
 |||  
 |-|-|  
 |**ADDSDeployment と ServerManager コマンドレット**|引数 (**太字** の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。)|  
-|Uninstall-AddsDomainController|-SkipPreChecks<br /><br />*-Localアドミニストレーターパスワード*<br /><br />-Confirm<br /><br />***-Credential***<br /><br />-DemoteOperationMasterRole<br /><br />*-DNSDelegationRemovalCredential*<br /><br />-Force<br /><br />*-ForceRemoval*<br /><br />*-IgnoreLastDCInDomainMismatch*<br /><br />*-IgnoreLastDNSServerForZone*<br /><br />*-Lastdomainコントローラー Indomain*<br /><br />-Norebootoncompletion<br /><br />*-RemoveApplicationPartitions*<br /><br />*-RemoveDNSDelegation*<br /><br />-RetainDCMetadata|  
+|Uninstall-addsdomaincontroller|-SkipPreChecks<br /><br />*-Localアドミニストレーターパスワード*<br /><br />-Confirm<br /><br />***-Credential***<br /><br />-DemoteOperationMasterRole<br /><br />*-DNSDelegationRemovalCredential*<br /><br />-Force<br /><br />*-ForceRemoval*<br /><br />*-IgnoreLastDCInDomainMismatch*<br /><br />*-IgnoreLastDNSServerForZone*<br /><br />*-Lastdomainコントローラー Indomain*<br /><br />-Norebootoncompletion<br /><br />*-RemoveApplicationPartitions*<br /><br />*-RemoveDNSDelegation*<br /><br />-RetainDCMetadata|  
 |Uninstall-WindowsFeature/Remove-WindowsFeature|***-Name***<br /><br />***-IncludeManagementTools***<br /><br />*-再起動*<br /><br />-Remove<br /><br />-Force<br /><br />-ComputerName<br /><br />-Credential<br /><br />-LogPath<br /><br />-Vhd|  
   
 > [!NOTE]  
@@ -104,7 +104,7 @@ Uninstall-windowsfeature
    > [!WARNING]  
    > ドメイン コントローラーが他のドメイン コントローラーに接続できず、そのネットワークの問題を解決するために*他に有効な方法が*ない場合にのみ、このオプションを選択してください。 強制的に降格を行うと、フォレスト内の他のドメイン コントローラーの Active Directory に孤立したメタデータが残ります。 さらに、そのドメイン コントローラーで複製されていないすべての変更 (パスワードや新しいユーザー アカウントなど) が失われます。 孤立したメタデータは、AD DS、Exchange、SQL、他のソフトウェアに関する Microsoft カスタマー サポートへの問い合わせの根本原因として大きな割合を占めます。  
    >
-   > ドメイン コントローラーを強制的に降格する場合は、手動でメタデータのクリーンアップをすぐに実行する *必要があります* 。 手順については、「 [Clean Up Server Metadata (サーバー メタデータのクリーンアップ)](https://technet.microsoft.com/library/cc816907(WS.10).aspx)」をご覧ください。  
+   > ドメイン コントローラーを強制的に降格する場合は、手動でメタデータのクリーンアップをすぐに実行する *必要があります* 。 手順については、「 [Clean Up Server Metadata (サーバー メタデータのクリーンアップ)](ad-ds-metadata-cleanup.md)」をご覧ください。  
 
    ![Active Directory Domain Services 構成ウィザード-資格情報の強制削除](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_RRW_TR_ForceDemote.png)  
   
@@ -170,7 +170,7 @@ ADDSDeployment コマンドレットで同じことを実行する引数は以�
 > [!WARNING]
 > 前の2つのオプションではパスワードが確認されないため、細心の注意を払ってください。パスワードは表示されません。
 
-セキュリティで保護された文字列は、変換されるクリア テキストの変数として指定することもできますが、これはお勧めしません。 以下に例を示します。
+セキュリティで保護された文字列は、変換されるクリア テキストの変数として指定することもできますが、これはお勧めしません。 次に、例を示します。
 
 ```
 -localadministratorpassword (convertto-securestring "Password1" -asplaintext -force)
@@ -188,12 +188,12 @@ ADDSDeployment コマンドレットで同じことを実行する引数は以�
 **[降格]** をクリックすると、以下の AD DS 展開コマンドレットが実行されます
 
 ```
-Uninstall-DomainController
+Uninstall-ADDSDomainController
 ```
 
 オプションの **Whatif** 引数を **Uninstall-ADDSDomainController** とコマンドレットで使用すると、構成情報を確認することができます。 これによって、コマンドレットの引数の明示的な値と暗黙的な値を確認できます。
 
-以下に例を示します。
+次に、例を示します。
 
 ![PowerShell Uninstall-addsdomaincontroller の例](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstall.png)
 
@@ -208,7 +208,7 @@ ADDSDeployment Windows PowerShell を使用している場合は、再開のプ�
 * %systemroot%\debug\dcpromo.log
 * %systemroot%\debug\dcpromoui.log
 
-**Uninstall-AddsDomainController** と **Uninstall-WindowsFeature** にはそれぞれ 1 つしかアクションがないため、この確認段階で、最低限の必須引数とともに表示されます。 Enter キーを押すと、変更できない降格プロセスが開始され、コンピューターが再起動します。
+**Uninstall-addsdomaincontroller**とそれぞれには1つのアクションが含まれているだけなので、ここでは、最低限必要な引数を指定して確認フェーズに**表示します**。 Enter キーを押すと、変更できない降格プロセスが開始され、コンピューターが再起動します。
 
 ![PowerShell Uninstall-addsdomaincontroller の例](media/Demoting-Domain-Controllers-and-Domains--Level-200-/ADDS_PSUninstallConfirm.png)
 

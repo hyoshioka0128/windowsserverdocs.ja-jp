@@ -7,16 +7,16 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: eacb80d89e7bcc95d6b5c12269d7587dc7d6870c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d670add6e4b4fc7369c48905bb297642ae07ff20
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383316"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588063"
 ---
 # <a name="patch-a-server-core-installation"></a>Server Core インストールにパッチを適用する
 
-> 適用対象:Windows Server 2019、Windows Server 2016、および Windows Server (半期チャネル)
+> 適用対象: Windows Server 2019、Windows Server 2016、および Windows Server (半期チャネル)
 
 Server Core インストールを実行しているサーバーには、次の方法で修正プログラムを適用できます。
 
@@ -39,14 +39,14 @@ Windows PowerShell を使用して更新プログラムを表示するには、 
 
 1. 現在の Windows Update 設定を確認します。
    ```
-   %systemroot%\system32\Cscript scregedit.wsf /AU /v 
+   %systemroot%\system32\Cscript %systemroot%\system32\scregedit.wsf /AU /v 
    ```
 
 2. 自動更新を有効にするには:
 
    ```
    Net stop wuauserv 
-   %systemroot%\system32\Cscript scregedit.wsf /AU 4 
+   %systemroot%\system32\Cscript %systemroot%\system32\scregedit.wsf /AU 4 
    Net start wuauserv
    ```  
 
@@ -54,11 +54,11 @@ Windows PowerShell を使用して更新プログラムを表示するには、 
 
    ```
    Net stop wuauserv 
-   %systemroot%\system32\Cscript scregedit.wsf /AU 1 
+   %systemroot%\system32\Cscript %systemroot%\system32\scregedit.wsf /AU 1 
    Net start wuauserv 
    ```
 
-サーバーがドメインのメンバーである場合は、グループ ポリシーを使用して Windows Update を構成することもできます。 詳細については、「 https://go.microsoft.com/fwlink/?LinkId=192470 」を参照してください。 ただし、この方法を使用すると、グラフィカルインターフェイスがないため、Server Core インストールに関連するオプション 4 ("自動ダウンロードしてインストールをスケジュールする") のみが使用されます。 インストールする更新プログラムとインストールするタイミングをより詳細に制御するには、ほとんどの Windows Update グラフィカル インターフェイスと同等のコマンド ライン機能を提供するスクリプトを使用します。 スクリプトの詳細については、「 https://go.microsoft.com/fwlink/?LinkId=192471 」を参照してください。
+サーバーがドメインのメンバーである場合は、グループ ポリシーを使用して Windows Update を構成することもできます。 詳しくは、「 https://go.microsoft.com/fwlink/?LinkId=192470 」をご覧ください。 ただし、この方法を使用すると、グラフィカルインターフェイスがないため、Server Core インストールに関連するオプション 4 ("自動ダウンロードしてインストールをスケジュールする") のみが使用されます。 インストールする更新プログラムとインストールするタイミングをより詳細に制御するには、ほとんどの Windows Update グラフィカル インターフェイスと同等のコマンド ライン機能を提供するスクリプトを使用します。 スクリプトの詳細については、「 https://go.microsoft.com/fwlink/?LinkId=192471 」を参照してください。
 
 Windows Update が使用可能なすべての更新プログラムを即座に検出してインストールするように強制するには、次のコマンドを実行します。
 

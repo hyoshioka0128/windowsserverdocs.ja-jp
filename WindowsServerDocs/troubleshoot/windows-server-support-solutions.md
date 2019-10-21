@@ -1,189 +1,163 @@
 ---
-title: Windows Server 向けの上位のサポート ソリューション
-description: Windows Server の問題のソリューションへのリンクを示します。
+title: Windows Server のトラブルシューティング
+description: Windows Server の問題に関するトラブルシューティング記事へのリンクを取得する
 layout: LandingPage
 ms.prod: windows-server
 ms.service: na
-manager: alant
+manager: ''
 ms.technology: server-general
-ms.date: 03/16/2018
+ms.date: 10/17/2019
 ms.topic: landing-page
 author: kaushika-msft
-ms.author: elizapo
-ms.openlocfilehash: 796f2351813218955a72ee9746dddb63453ac112
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: kaushika
+ms.openlocfilehash: 0d593ab28234d5abfa0b5d2931eb7d2c958efe2a
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365650"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588075"
 ---
-# <a name="top-support-solutions-for-windows-server"></a>Windows Server 向けの上位のサポート ソリューション
+# <a name="troubleshooting-windows-server-components"></a>Windows Server コンポーネントのトラブルシューティング
 
->[!TIP]
-> 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
+>- [!TIP]
+> 以前のバージョンの Windows Server に関する情報をお探しの場合は、 Docs.microsoft.com の他の[Windows Server ライブラリ](/previous-versions/windows/)を確認してください。 また、[このサイト](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)で特定の情報を検索することもできます。
 
-Microsoft では Windows Server 用の更新プログラムとソリューションの両方を定期的にリリースします。 お客様のサーバーでセキュリティ更新プログラムなどの今後の更新プログラムを受信できることを確認するには、サーバーを最新の状態に維持する必要があります。 リリースされた更新プログラムの完全なリストについては、「[Windows 10 および Windows Server 2016 の更新履歴](https://support.microsoft.com/en-us/help/4000825/windows-10-windows-server-2016-update-history)」をご覧ください。
+Microsoft は、Windows Server の両方の更新プログラムを定期的にリリースします。 お客様のサーバーでセキュリティ更新プログラムなどの今後の更新プログラムを受信できることを確認するには、サーバーを最新の状態に維持する必要があります。 リリース済みの更新プログラムの完全な一覧については、 [windows 10 および Windows Server 2016 の更新履歴](https://support.microsoft.com/en-us/help/4000825/windows-10-windows-server-2016-update-history)を確認してください。
 
-これらは、Windows Server 2016 を使用する際に発生する最も一般的な問題に関する上位の Microsoft サポート ソリューションです。 次のリンクには、サポート技術情報の記事、更新プログラム、ライブラリの記事へのリンクが含まれます。
+このセクションには、Windows Server の問題を解決するのに役立つ高度なトラブルシューティングのトピックとリンクが含まれています。 追加のトピックが利用可能になると追加されます。
 
-<HR />
+### <a name="troubleshoot-activation"></a>アクティブ化のトラブルシューティング
+- [Windows ボリューム ライセンス認証のトラブルシューティング](https://docs.microsoft.com/windows-server/get-started/activation-troubleshooting-guide)
+- [KMS のトラブルシューティングに関するガイドライン](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-kms-general)
+- [ボリューム ライセンス認証情報を取得するための Slmgr.vbs オプション](https://docs.microsoft.com/windows-server/get-started/activation-slmgr-vbs-options)
+- [Windows ライセンス認証のエラー コードの解決](https://docs.microsoft.com/windows-server/get-started/activation-error-codes)
+- [KMS ライセンス認証の既知の問題](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-kms-issues)
+- [MAK ライセンス認証の既知の問題](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-mak-issues)
+- [DNS に関連するライセンス認証の問題のトラブルシューティングに関するガイドライン](https://docs.microsoft.com/windows-server/get-started/common-troubleshooting-procedures-kms-dns)
+- [Tokens.dat ファイルの再構築](https://docs.microsoft.com/windows-server/get-started/activation-rebuild-tokens-dat-file)
+- [ADBA クライアントのトラブルシューティング](https://docs.microsoft.com/windows-server/get-started/activation-troubleshoot-adba-clients)
 
-<ul class="cardsF panelContent">
-<li>
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-troubleshoot.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Windows Server のインストールとアップグレード</h3>
-<hr> 
-                        <a href="\windows\deployment\upgrade\resolve-windows-10-upgrade-errors">Windows 10 のアップグレードエラーを解決する:IT 担当者向け技術情報</a>
-<hr> 
-                        <p><a href="https://support.microsoft.com/en-US/help/4035631">Windows 10 バージョン1607および Windows Server 2016 のサービススタック更新プログラム:2017年8月8日)</a></p>
-<hr> 
-                        <p><a href="https://support.microsoft.com/en-US/help/4033524">Windows 10 バージョン1607および Windows Server 2016 にアップグレードする場合の互換性更新プログラム:2017年8月3日)</a></p>
-<hr>
-                        <p><a href="https://support.microsoft.com/en-US/help/4014997">Windows ベースの Azure Vm では、インプレースシステムアップグレードはサポートされていません)</a></p>
-<hr>
-                        <p><a href="..\get-started\supported-upgrade-paths.md">Windows Server 2016 のアップグレードオプションと変換オプション</a></p>
-<hr>
-                       <p><a href="..\get-started\server-role-upgradeability-table.md">Windows Server 2016 のサーバーの役割のアップグレードと移行のマトリックス)</a></p>
-<hr>
-                       <p><a href="..\get-started\installation-and-upgrade.md">Windows Server のインストールとアップグレード)</a></p>
-<hr>
-                       <p><a href="..\get-started\windows-server-2016-ga-release-notes.md">リリース ノート:Windows Server 2016 に関する重要な問題)</a></p>
-<hr>
-                       <p><a href="..\get-started\recommendations-moving-to-server2016.md">Windows Server 2016 への移行に関する推奨事項</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-<li>
- <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-troubleshoot.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>ボリューム ライセンス認証に関するページ</h3>
-<hr> 
-                        <a href="../get-started/server-2016-activation.md">Windows Server 2016 のアクティブ化</a>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/jj134256(ws.11).aspx">ライセンス認証方法の確認と選択</a></p>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/dn502528.aspx">ボリュームライセンス認証のライセンス認証エラーコード</a></p>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/ee939272.aspx">キー管理サービス (KMS) のトラブルシューティング方法</a></p>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/ff793439.aspx">ボリュームライセンス認証のトラブルシューティング</a></p>
-<hr><br/>                        <p><a href="https://technet.microsoft.com/library/ff793399.aspx">アクティベーションエラーコード</a></p>
-<hr>
-                        <p><a href="https://support.microsoft.com/help/2796988/windows-8-or-windows-server-2012-installation-may-fail-with-error-mess">Windows のインストールがエラー &quot;で失敗することがあります。入力したプロダクトキーは、インストール可能な windows イメージのいずれとも一致しません。別のプロダクトキーを入力してください&quot;</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-<li>
- <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-troubleshoot.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>DCPromo およびドメインコントローラーのインストール</h3>
-<hr> 
-                        <a href="https://technet.microsoft.com/library/dd772723(v=ws.10).aspx">Active Directory と Active Directory Domain Services ポートの要件</a>
-<hr>
-                        <p> <a href="http://blogs.msmvps.com/acefekay/2011/11/01/active-directory-firewall-ports-let-s-try-to-make-this-simple/">Active Directory ファイアウォールのポート-単純にする</a></p>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/ff728623(v=exchg.150).aspx">Windows Server 2016 用 Exchange Server のサポート</a></p>
-<hr>
-                        <p><a href="https://support.microsoft.com/kb/255504">Ntdsutil.exe を使用してドメインコントローラーに FSMO の役割を転送または強制する</a></p>
-<hr>
-                        <p><a href="../identity/ad-ds/deploy/troubleshooting-domain-controller-deployment.md">ドメイン コントローラーの展開のトラブルシューティング</a></p>
-<hr>
-                        <p><a href="https://msdn.microsoft.com/library/bb727058.aspx">Active Directory インストールウィザードに関する問題のトラブルシューティング</a></p>
-<hr>
-                        <p><a href="https://technet.microsoft.com/library/cc754463(v=ws.10).aspx">AD DS のインストールと削除に関する既知の問題</a></p>
-                      </div>
-                 </div>
-            </div>
-        </div>
-    </li>
-<li>
- <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-troubleshoot.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Active Directory フェデレーション サービス (AD FS)</h3>
-<hr> 
-                        <a href="/azure/active-directory/active-directory-conditional-access-automatic-device-registration-setup">Azure Active Directory に Windows ドメイン参加済みデバイスの自動登録を構成する方法</a>
-<hr>
-                        <p><a href="/azure/active-directory/device-management-hybrid-azuread-joined-devices-setup#step-2-setup-issuance-of-claims">要求の発行の設定</a></p>
-<hr><br/>                        <p><a href="../identity/ad-fs/operations/configure-ad-fs-to-authenticate-users-stored-in-ldap-directories.md">LDAP ディレクトリに保存されたユーザーを認証するように AD FS を構成する</a></p>
-<hr>
-                        <p><a href="../identity/ad-fs/operations/ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md">AD FS での証明書認証のための代替ホスト名バインドのサポート</a></p>
-<hr>
-                        <p><a href="https://blogs.technet.microsoft.com/tspring/2017/01/20/federated-to-microsoft-cloud-and-account-lockouts/">パスワード</a>
-                        <a href="../identity/ad-fs/deployment/upgrading-to-ad-fs-in-windows-server-2016.md">による攻撃から保護する WID データベースを使用して Windows Server 2016 の AD FS にアップグレードする</a></p>
-<hr>
-                        <p><a href="../identity/ad-fs/operations/configure-device-based-conditional-access-on-premises.md">Windows 10 サインオン– AD FS を使用したデバイス認証の有効化</a></p>
-<hr>
-                        <p><a href="../identity/ad-fs/operations/manage-ssl-certificates-ad-fs-wap-2016.md">Windows Server 2016 での AD FS と WAP での SSL 証明書の管理</a></p>
-<hr>
-                        <p><a href="../identity/ad-fs/operations/access-control-policies-in-ad-fs.md">Windows Server 2016 AD FS の Access Control ポリシー</a></p>
-                      </div>
-                 </div>
-            </div>
-        </div>
-    </li>
-<li>
- <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">
-                            <img src="../media/i-troubleshoot.svg" alt="" />
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>レプリケーションの Active Directory</h3>
-<hr> 
-                         <a href="../identity/ad-ds/manage/troubleshoot/troubleshooting-active-directory-replication-problems.md">Active Directory レプリケーションの問題のトラブルシューティング</a>
-<hr>
-                         <a href="https://www.microsoft.com/en-in/download/details.aspx?id=30005">e2e一般的な Active Directory レプリケーションエラーをトラブルシューティングする方法</a>
-<hr>
-                         <a href="https://support.microsoft.com/kb/3108513">Microsoft ダウンロードセンターから Active Directory Replication Status ツールをダウンロードする</a>
-<hr>
-                         <a href="https://support.microsoft.com/kb/2028495">AD レプリケーションエラー8606のトラブルシューティング:オブジェクトを作成するための十分な属性が指定されていません</a></p>
-<hr>
-                         <a href="https://support.microsoft.com/kb/837932">Windows 2000 サーバーと Windows Server 2003 の Active Directory の入力方向のレプリケーション中にイベント ID 2108 とイベント ID 1084 が発生する</a>
-<hr>
-                         <a href="https://support.microsoft.com/kb/2645996">AD レプリケーションエラー8451のトラブルシューティング:レプリケーション操作でデータベースエラーが発生しました</a>
-<hr>
-                         <a href="https://support.microsoft.com/kb/2025726">AD レプリケーションエラー1127のトラブルシューティング:ハードディスクにアクセスしているときに、再試行後もディスク操作が失敗する</a>
-<hr>
-                         <a href="https://technet.microsoft.com/library/cc816907.aspx">サーバーメタデータのクリーンアップ</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
+### <a name="troubleshoot-ad-forest-recovery"></a>AD フォレストの回復に関するトラブルシューティング
+- [AD フォレストの回復 - FAQ](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/ad-forest-recovery-faq)
+
+### <a name="troubleshoot-ad-replication"></a>AD レプリケーションのトラブルシューティング
+- [Active Directory レプリケーションの問題のトラブルシューティングに関するページ](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/troubleshoot/troubleshooting-active-directory-replication-problems)
+- [仮想化ドメイン コントローラーのトラブルシューティング](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/virtual-dc/virtualized-domain-controller-troubleshooting)
+- [ドメイン コントローラーの展開のトラブルシューティング](https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/troubleshooting-domain-controller-deployment)
+- [トラブルシューティング用にコンピューターを構成する](https://docs.microsoft.com/windows-server/identity/ad-ds/manage/troubleshoot/configuring-a-computer-for-troubleshooting)
+
+### <a name="troubleshoot-ad-fs"></a>AD FS のトラブルシューティング
+- [AD FS のトラブルシューティング](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-overview)
+- [AD FS のトラブルシューティング-イベントとログの監査](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-logging)
+- [AD FS のトラブルシューティング-SQL 接続](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-sql)
+- [AD FS のトラブルシューティング-要求の発行](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-claims-issuance)
+- [AD FS トラブルシューティング-ループ検出](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-loop)
+- [AD FS のトラブルシューティング-証明書](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-certs)
+- [AD FS のトラブルシューティング-Fiddler](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-fiddler)
+- [AD FS のトラブルシューティング-Fiddler](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-fiddler-ws-fed)
+- [AD FS のトラブルシューティング-要求規則](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-claims-rules)
+- [AD FS トラブルシューティング-統合 Windows 認証](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-iwa)
+- [AD FS のトラブルシューティング-Azure AD](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-tshoot-azure)
+- [AD FS FAQ](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-faq)
+- [AD FS ヘルプ診断アナライザー](https://docs.microsoft.com/windows-server/identity/ad-fs/troubleshooting/ad-fs-diagnostics-analyzer)
+
+### <a name="troubleshoot-aovpn"></a>Vpn のトラブルシューティング
+- [Always On VPN のトラブルシューティング](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting)
+
+### <a name="troubleshoot-converged-nic"></a>収束 NIC のトラブルシューティング
+- [収束 NIC 構成のトラブルシューティング](https://docs.microsoft.com/windows-server/networking/technologies/conv-nic/cnic-app-troubleshoot)
+
+### <a name="troubleshoot-dfsr"></a>DFSR のトラブルシューティング
+- [DFS レプリケーション: よく寄せられる質問 (FAQ)](https://docs.microsoft.com/windows-server/storage/dfs-replication/dfsr-faq)
+
+### <a name="troubleshoot-directaccess"></a>DirectAccess のトラブルシューティング
+- [DirectAccess のトラブルシューティング](https://docs.microsoft.com/windows-server/remote/remote-access/directaccess/troubleshooting-directaccess)
+
+### <a name="troubleshoot-disk--management"></a>ディスクの管理のトラブルシューティング
+- [ディスクの管理のトラブルシューティング](https://docs.microsoft.com/windows-server/storage/disk-management/troubleshooting-disk-management)
+
+### <a name="troubleshoot-dns"></a>DNS のトラブルシューティング
+- [ドメインネームシステム (DNS) に関する問題のトラブルシューティング](https://docs.microsoft.com/windows-server/networking/dns/troubleshoot/troubleshoot-dns-data-collection)
+- [DNS クライアントのトラブルシューティング](https://docs.microsoft.com/windows-server/networking/dns/troubleshoot/troubleshoot-dns-client)
+- [DNS クライアントでの DNS クライアント側キャッシュの無効化](https://docs.microsoft.com/windows-server/networking/dns/troubleshoot/disable-dns-client-side-caching)
+- [DNS サーバーのトラブルシューティング](https://docs.microsoft.com/windows-server/networking/dns/troubleshoot/troubleshoot-dns-server)
+
+### <a name="troubleshoot-failover-cluster"></a>フェールオーバークラスターのトラブルシューティング
+- [Windows エラー報告を使用したフェールオーバー クラスターのトラブルシューティング](https://docs.microsoft.com/windows-server/failover-clustering/troubleshooting-using-wer-reports)
+- [クラスター対応更新についてよく寄せられる質問](https://docs.microsoft.com/windows-server/failover-clustering/cluster-aware-updating-faq)
+
+### <a name="troubleshoot-fsrm"></a>FSRM のトラブルシューティング
+- [ファイル サーバー リソース マネージャーのトラブルシューティング](https://docs.microsoft.com/windows-server/storage/fsrm/troubleshooting-file-server-resource-manager)
+
+### <a name="troubleshoot-guarded-fabric"></a>保護されたファブリックのトラブルシューティング
+- [保護されたファブリック診断ツールを使用したトラブルシューティング](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-diagnostics)
+- [ホストガーディアンサービスのトラブルシューティング](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-hgs)
+- [ホストガーディアンサービスのトラブルシューティング](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-hosts)
+
+### <a name="troubleshoot-multi-site-ras"></a>マルチサイト RAS のトラブルシューティング
+- [マルチサイト有効化のトラブルシューティング](https://docs.microsoft.com/windows-server/remote/remote-access/ras/multisite/troubleshoot/troubleshooting-enabling-multisite)
+- [エントリポイント追加のトラブルシューティング](https://docs.microsoft.com/windows-server/remote/remote-access/ras/multisite/troubleshoot/troubleshooting-adding-entry-points)
+- [エントリ ポイント ドメイン コントローラー設定のトラブルシューティング](https://docs.microsoft.com/windows-server/remote/remote-access/ras/multisite/troubleshoot/troubleshooting-setting-the-entry-point-domain-controller)
+- [Web プローブ URL のトラブルシューティング](https://docs.microsoft.com/windows-server/remote/remote-access/ras/multisite/troubleshoot/troubleshooting-web-probe-urls)
+
+### <a name="troubleshoot-nano-server"></a>Nano Server のトラブルシューティング
+- [Nano Server のトラブルシューティング](https://docs.microsoft.com/windows-server/get-started/troubleshooting-nano-server)
+
+### <a name="troubleshoot-nic-teaming"></a>NIC チーミングのトラブルシューティング
+- [NIC チーミングのトラブルシューティング](https://docs.microsoft.com/windows-server/networking/technologies/nic-teaming/troubleshooting-nic-teaming)
+
+### <a name="troubleshoot-otp-authentication"></a>OTP 認証のトラブルシューティング
+- [認証の問題のトラブルシューティング](https://docs.microsoft.com/windows-server/remote/remote-access/ras/otp/troubleshoot/troubleshooting-authentication-issues)
+- [OTP の有効化のトラブルシューティング](https://docs.microsoft.com/windows-server/remote/remote-access/ras/otp/troubleshoot/troubleshooting-enabling-otp)
+
+### <a name="troubleshoot-qos"></a>QoS のトラブルシューティング
+- [QoS に関してよく寄せられる質問](https://docs.microsoft.com/windows-server/networking/technologies/qos/qos-policy-faq)
+
+### <a name="troubleshoot-s2d"></a>S2D のトラブルシューティング
+- [記憶域スペースダイレクトのトラブルシューティング](https://docs.microsoft.com/windows-server/storage/storage-spaces/troubleshooting-storage-spaces)
+- [記憶域スペースダイレクトに関してよく寄せられる質問](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-faq)
+- [正常性と動作状態の記憶域スペースダイレクト](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-states)
+- [記憶域スペースダイレクトを使用した診断データの収集](https://docs.microsoft.com/windows-server/storage/storage-spaces/data-collection)
+- [Windows での記憶域クラスメモリ (NVDIMM) の正常性管理](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-class-memory-health)
+
+### <a name="troubleshoot-sdn"></a>SDN のトラブルシューティング
+- [SDN のトラブルシューティング](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-software-defined-networking)
+- [Windows Server ソフトウェア定義ネットワーク スタックのトラブルシューティング](https://docs.microsoft.com/windows-server/networking/sdn/troubleshoot/troubleshoot-windows-server-software-defined-networking-stack)
+
+### <a name="troubleshoot-rds-session-connectivity"></a>RDS セッション接続のトラブルシューティング
+- [リモート デスクトップ接続の一般的なトラブルシューティング](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/rdp-error-general-troubleshooting)
+- [クライアントが接続できず、クラスが登録されていないというエラーが発生する](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/rdp-error-class-not-registered)
+- [クライアントが接続できず、利用可能なライセンスがないというエラーが表示される](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/rdp-error-no-licenses-available)
+- [ユーザーが認証できない、または 2 回認証する必要がある](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/cannot-authenticate-or-must-authenticate-twice)
+- [接続時に、ユーザーがリモートデスクトップサービスを受信しています。現在ビジー状態です](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/remote-desktop-service-currently-busy)
+- [リモート デスクトップ クライアントが切断され、同じセッションに再接続できない](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/rdp-client-disconnects-cannot-reconnect-same-session)
+- [リモート ラップトップがワイヤレス ネットワークから切断される](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/remote-laptop-disconnects-wireless-network)
+- [リモート デスクトップ接続時のパフォーマンスの低下またはアプリケーションの問題](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/troubleshoot/poor-performance-or-application-problems)
+
+### <a name="troubleshoot-shielded-vm"></a>シールドされた VM のトラブルシューティング
+- [シールドされた Vm のトラブルシューティング](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms)
+
+### <a name="troubleshoot-software-restriction-policies"></a>ソフトウェアの制限のポリシーのトラブルシューティング
+- [ソフトウェア制限ポリシーのトラブルシューティング](https://docs.microsoft.com/windows-server/identity/software-restriction-policies/troubleshoot-software-restriction-policies)
+
+### <a name="troubleshoot-storage-migration"></a>記憶域の移行のトラブルシューティング
+- [記憶域移行サービスの既知の問題](https://docs.microsoft.com/windows-server/storage/storage-migration-service/known-issues)
+- [記憶域移行サービスに関してよく寄せられる質問 (FAQ)](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq)
+
+### <a name="troubleshoot-storage-replica"></a>記憶域レプリカのトラブルシューティング
+- [記憶域レプリカに関する既知の問題](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-known-issues)
+- [記憶域レプリカに関してよく寄せられる質問](https://docs.microsoft.com/windows-server/storage/storage-replica/storage-replica-frequently-asked-questions)
+
+### <a name="troubleshoot-user-profiles"></a>ユーザープロファイルのトラブルシューティング
+- [イベントを使用したユーザープロファイルのトラブルシューティング](https://docs.microsoft.com/windows-server/storage/folder-redirection/troubleshoot-user-profiles-events)
+
+### <a name="troubleshoot-vrss"></a>VRSS のトラブルシューティング
+- [vRSS に関してよく寄せられる質問](https://docs.microsoft.com/windows-server/networking/technologies/vrss/vrss-faq)
+
+### <a name="troubleshoot-webproxy"></a>WebProxy のトラブルシューティング
+- [Web アプリケーション プロキシのトラブルシューティング](https://docs.microsoft.com/windows-server/remote/remote-access/web-application-proxy/troubleshooting-web-application-proxy)
+
+### <a name="troubleshoot-windows-admin-center"></a>Windows Admin Center のトラブルシューティング
+- [Windows 管理センターの一般的なトラブルシューティング手順](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/troubleshooting)
+- [Windows 管理センターの既知の問題](https://docs.microsoft.com/windows-server/manage/windows-admin-center/support/known-issues)
+- [Windows 管理センターに関してよく寄せられる質問](https://docs.microsoft.com/windows-server/manage/windows-admin-center/understand/faq)

@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 61a01a25317bdf42491f05e896ddd5bb022193fe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d59e7365ac4fbead527450ad78a76aad4165d0d9
+ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71372719"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72591037"
 ---
 # <a name="nslookup-view"></a>nslookup view
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-並べ替えを前の出力を一覧表示**ls**サブコマンドまたはコマンド。  
+前の**ls**サブコマンドの出力を並べ替えて一覧表示します。  
 ## <a name="syntax"></a>構文  
 ```  
 view <FileName>  
@@ -33,7 +33,7 @@ view <FileName>
 
 |    パラメーター    |                                            説明                                            |
 |-----------------|---------------------------------------------------------------------------------------------------|
-|   <FileName>    | 以前からの出力を含むファイルの名前を示す**ls**サブコマンドまたはコマンド。 |
+|   <FileName>    | 前の**ls**サブコマンドからの出力を含むファイルの名前を指定します。 |
 | {ヘルプ&#124; ?} |                       **Nslookup**サブコマンドの簡単な概要を表示します。                       |
 
 ## <a name="additional-references"></a>その他の参照情報  
