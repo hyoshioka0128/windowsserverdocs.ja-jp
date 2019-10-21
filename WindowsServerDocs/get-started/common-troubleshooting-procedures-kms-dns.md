@@ -8,12 +8,12 @@ ms.assetid: ''
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: e2bd9c766f07591e0c643a6cea644b2db7a95364
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.openlocfilehash: 3165c926c50c2f91544895e0d328f1dae7424b4a
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71960959"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588036"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>DNS に関連するライセンス認証の問題のトラブルシューティングに関するガイドライン
 
