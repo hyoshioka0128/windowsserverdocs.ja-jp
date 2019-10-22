@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: e3ec7ee787fb6fd2e8e9f59249a6c4013a76b377
-ms.sourcegitcommit: e2964a803cba1b8037e10d065a076819d61e8dbe
+ms.openlocfilehash: 830a2d99443938c25625211f590984819a20d566
+ms.sourcegitcommit: 40e4ba214954d198936341c4d6ce1916dc891169
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72252361"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72690449"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -40,7 +40,7 @@ README で使用状況を確認します。
 
 Windows 管理センターの1809バージョンを使用して Windows Server 2019 orchestrator を管理する場合、記憶域移行サービスのツールオプションは表示されません。 
 
-Windows 管理センターの記憶域移行サービス拡張機能は、Windows Server 2019 バージョン1809以降のオペレーティングシステムのみを管理するようにバージョンにバインドされています。 以前の Windows Server オペレーティングシステムまたは insider preview を管理するために使用する場合、ツールは表示されません。 この動作は仕様による結果です。 
+Windows 管理センターの記憶域移行サービス拡張機能は、Windows Server 2019 バージョン1809以降のオペレーティングシステムのみを管理するようにバージョンにバインドされています。 以前の Windows Server オペレーティングシステムまたは insider preview を管理するために使用する場合、ツールは表示されません。 この動作は仕様です。 
 
 解決するには、Windows Server 2019 ビルド1809以降を使用またはアップグレードします。
 
@@ -48,11 +48,11 @@ Windows 管理センターの記憶域移行サービス拡張機能は、Window
 
 Windows 管理センターで Storage Migration Service 拡張機能の0.57 バージョンを使用していて、移行フェーズに進むと、アドレスに静的 IP を選択できません。 DHCP を使用することは強制されています。
 
-この問題を解決するには、Windows 管理センターで、[**設定** >  の**拡張機能**] を調べて、更新されたバージョンの Storage Migration Service 0.57.2 をインストールできることを示すアラートを表示します。 場合によっては、Windows 管理センターのブラウザータブの再起動が必要になることがあります。
+この問題を解決するには、Windows 管理センターで、更新されたバージョンの記憶域移行サービス0.57.2 がインストールに使用可能であることを示すアラートを [**設定** > **拡張機能**] の下に表示します。 場合によっては、Windows 管理センターのブラウザータブの再起動が必要になることがあります。
 
 ## <a name="storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer"></a>記憶域移行サービスの切り替えの検証が、"対象コンピューターのトークンフィルターポリシーのアクセスが拒否されました" というエラーで失敗する
 
-カットオーバーの検証を実行すると、次のエラーが表示されます。対象コンピューターのトークンフィルターポリシーのアクセスが拒否されました。 " これは、移行元コンピューターと移行先コンピューターの両方に対して、正しいローカル管理者の資格情報を指定した場合でも発生します。
+カットオーバーの検証を実行すると、"失敗: 対象コンピューターのトークンフィルターポリシーのアクセスが拒否されました。" というエラーが表示されます。 これは、移行元コンピューターと移行先コンピューターの両方に対して、正しいローカル管理者の資格情報を指定した場合でも発生します。
 
 この問題は、Windows Server 2019 のコードの不具合が原因で発生します。 この問題は、移行先コンピューターを記憶域移行サービス Orchestrator として使用している場合に発生します。
 
@@ -74,7 +74,7 @@ Windows 管理センターを使用して[Windows server 2019 評価](https://ww
 
 Windows 管理センターまたは PowerShell を使用して転送操作の詳細なエラーのみをダウンロードすると、次のエラーが表示されます。
 
- >   ログの転送-ファイアウォールでファイル共有が許可されていることを確認してください。 :Net.tcp:/localhost: 28940/sms/service/1/transfer に送信されたこの要求操作は、構成されたタイムアウト時間 (00:01:00) 内に応答を受信しませんでした。 この操作に割り当てられた時間は、より長いタイムアウト時間の一部であった可能性があります。 これは、サービスが操作を処理中であるか、サービスが応答メッセージを送信できなかったことが原因である可能性があります。 操作のタイムアウトを増やすことを検討してください (チャネル/プロキシをありにキャストし、OperationTimeout プロパティを設定します)。また、サービスがクライアントに接続できることを確認してください。
+ >   ログの転送-ファイアウォールでファイル共有が許可されていることを確認してください。 : Net.tcp:/localhost: 28940/sms/service/1/transfer に送信されるこの要求操作は、構成されたタイムアウト時間 (00:01:00) 内に応答を受信しませんでした。 この操作に割り当てられた時間は、より長いタイムアウト時間の一部であった可能性があります。 これは、サービスが操作を処理中であるか、サービスが応答メッセージを送信できなかったことが原因である可能性があります。 操作のタイムアウトを増やすことを検討してください (チャネル/プロキシをありにキャストし、OperationTimeout プロパティを設定します)。また、サービスがクライアントに接続できることを確認してください。
 
 この問題は、記憶域移行サービスで許可されている既定の1分のタイムアウトではフィルター処理できない、非常に多くの転送ファイルが原因で発生します。 
 
@@ -120,9 +120,9 @@ Azure IaaS インスタンスなど、ソースとは異なるネットワーク
 転送ジョブを検証するときに、次の警告が表示されます。
 
  > **この資格情報には管理者特権があります。**
- > 警告:操作をリモートで実行することはできません。
+ > 警告: アクションはリモートでは使用できません。
  > **宛先プロキシが登録されています。**
- > 警告:宛先プロキシが見つかりませんでした。
+ > 警告: 宛先プロキシが見つかりませんでした。
 
 Windows Server 2019 の展開先コンピューターに Storage Migration Service Proxy サービスをインストールしていない場合、または対象コンピューターが Windows Server 2016 または Windows Server 2012 R2 の場合、この動作は仕様によるものです。 転送のパフォーマンスを大幅に向上させるために、プロキシがインストールされた Windows Server 2019 コンピューターに移行することをお勧めします。  
 
@@ -130,10 +130,10 @@ Windows Server 2019 の展開先コンピューターに Storage Migration Servi
 
 転送元コンピューターから移行先コンピューターにファイルをインベントリしたり転送したりするときに、管理者グループのアクセス許可が削除されたファイルは移行に失敗します。 記憶域移行サービスの確認-プロキシデバッグは次のように表示されます。
 
-  ログ名:    StorageMigrationService-Proxy/Debug Source:      StorageMigrationService-プロキシの日付:        2/26/2019 9:00:04 AM イベント ID:    1万タスクカテゴリ:None レベル:       エラーキーワード:      
-  ユーザー:        ネットワークサービスコンピューター: srv1.contoso.com の説明:
+  ログ名: StorageMigrationService/Debug Source: StorageMigrationService: 2/26/2019 9:00:04 AM イベント ID: 1万 Task Category: None Level: Error Keywords::-プロキシ/Debug Source::      
+  ユーザー: NETWORK SERVICE Computer: srv1.contoso.com Description:
 
-  02/26/2019-09:00: 04.860 [Error] 転送エラー \\srv1. contoso. com/-png:(5) アクセスが拒否されました。
+  02/26/2019-09:00: 04.860 [Error] \\srv1 の転送エラーが発生しました: (5) アクセスが拒否されました。
 スタックトレース: FileDirUtils での StorageMigration (String fileName、DesiredAccess desiredAccess、ShareMode shareMode、FlagsAndAttributes FlagsAndAttributes) でのスタックトレースの場合、次の場所に移動します。FileDirUtils の StorageMigration (文字列パス) で、StorageMigration (FileInfo ファイル) をに移動します。このファイルには、(FileInfo ファイル) を指定します。StorageMigration () at StorageMigration () で、InitializeSourceFileInfo () をに移動します。このファイルの場所に移動してください。StorageMigration () [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs:: TryTransfer::55]」を実行してください ()。
 
 
@@ -171,7 +171,7 @@ DFSR デバッグログ:
 
 転送操作の終了時に転送ログまたはエラーログをダウンロードしようとすると、次のエラーが表示されます。
 
-  $jobname:転送ログ: ajax エラー404
+  $jobname: 転送ログ: ajax エラー404
 
 このエラーは、orchestrator サーバーで "ファイルとプリンターの共有 (SMB 受信)" ファイアウォール規則を有効にしていない場合に発生します。 Windows 管理センターのファイルのダウンロードには、接続されたコンピューターにポート TCP/445 (SMB) が必要です。  
 
@@ -199,14 +199,14 @@ StorageMigrationService/Admin イベントログを調べると、次のよう�
 
    ストレージを転送できませんでした。
 
-   補足Job1 ID (i):  
-   状態失敗したエラー:36931エラーメッセージ: 
+   ジョブ: Job1 ID:  
+   状態: 失敗したエラー: 36931 エラーメッセージ: 
 
-   ガイダンス:詳細なエラーを確認し、転送要件が満たされていることを確認してください。 転送ジョブで、移行元と移行先のコンピューターを転送できませんでした。 これは、orchestrator コンピューターが移行元または移行先のコンピューターにアクセスできなかったか、ファイアウォール規則が原因の可能性があります。または、アクセス許可が不足している可能性があります。
+   ガイダンス: 詳細なエラーを確認し、転送要件が満たされていることを確認します。 転送ジョブで、移行元と移行先のコンピューターを転送できませんでした。 これは、orchestrator コンピューターが移行元または移行先のコンピューターにアクセスできなかったか、ファイアウォール規則が原因の可能性があります。または、アクセス許可が不足している可能性があります。
 
 StorageMigrationService/Debug ログを調べると、次のように表示されます。
 
-   07/02/2019-13:35: 57.231 [Error] 転送の検証に失敗しました。 ErrorCode40961、ソースエンドポイントに到達できない、または存在しない、または送信元の資格情報が無効である、または認証されたユーザーにアクセスするための十分なアクセス許可がありません。
+   07/02/2019-13:35: 57.231 [Error] 転送の検証に失敗しました。 ErrorCode: 40961、ソースエンドポイントに到達できない、または存在しない、または送信元の資格情報が無効である、または認証されたユーザーにアクセスするための十分なアクセス許可がありません。
 StorageMigration で StorageMigration () を実行します。 TransferRequestHandler には、ProcessRequest (FileTransferRequest fileTransferRequest, Guid operationId) を入力します (FileTransferRequest fileTransferRequest、Guid operationId)   [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
 
 このエラーは、移行アカウントに SMB 共有に対する少なくとも読み取りアクセス許可がない場合に発生します。 このエラーを回避するには、移行元コンピューターの SMB 共有にソース移行アカウントを含むセキュリティグループを追加し、読み取り、変更、またはフルコントロールを付与します。 移行が完了したら、このグループを削除できます。
@@ -215,17 +215,17 @@ StorageMigration で StorageMigration () を実行します。 TransferRequestHa
 
 [KB4512534](https://support.microsoft.com/en-us/help/4512534/windows-10-update-kb4512534)をインストールしてインベントリを実行しようとすると、次のエラーでインベントリが失敗します。
 
-  HRESULT からの例外:0x80005000
+  HRESULT からの例外: 0x80005000
   
-  ログ名:    StorageMigrationService/Admin Source:      StorageMigrationService Date:        9/9/2019 5:21:42 PM イベント ID:    2503タスクカテゴリ:None レベル:       エラーキーワード:      
-  ユーザー:        ネットワークサービスコンピューター:    FS02.TailwindTraders.net の説明:コンピューターのインベントリを行うことができませんでした。
-ジョブ: foo2 ID:20ac3f75-4945-41d1-9a79-d11dbb57798b の状態:失敗したエラー:36934エラーメッセージ:すべてのデバイスでインベントリに失敗した場合のガイダンス:詳細なエラーを確認し、在庫の要件が満たされていることを確認します。 ジョブは、指定されたソースコンピューターのいずれもインベントリできませんでした。 これは、orchestrator コンピューターがネットワーク経由でアクセスできなかったか、ファイアウォール規則またはアクセス許可がないことが原因である可能性があります。
+  ログ名: StorageMigrationService/Admin Source: StorageMigrationService: Date: 9/9/2019 5:21:42 PM イベント ID: 2503 タスクカテゴリ: なしレベル: エラーキーワード:      
+  ユーザー: NETWORK SERVICE Computer: FS02。TailwindTraders.net Description: コンピューターのインベントリを実行できませんでした。
+ジョブ: foo2 ID: 20ac3f75-4945-41d1-9a79-d11dbb57798b State: 失敗したエラー: 36934 エラーメッセージ: すべてのデバイスのインベントリに失敗しました。詳細なエラーを確認し、在庫の要件が満たされていることを確認してください。 ジョブは、指定されたソースコンピューターのいずれもインベントリできませんでした。 これは、orchestrator コンピューターがネットワーク経由でアクセスできなかったか、ファイアウォール規則またはアクセス許可がないことが原因である可能性があります。
   
-  ログ名:    StorageMigrationService/Admin Source:      StorageMigrationService Date:        9/9/2019 5:21:42 PM イベント ID:    2509タスクカテゴリ:None レベル:       エラーキーワード:      
-  ユーザー:        ネットワークサービスコンピューター:    FS02.TailwindTraders.net の説明:コンピューターのインベントリを行うことができませんでした。
-ジョブ: foo2 コンピューター:FS01.TailwindTraders.net の状態:失敗したエラー:-2147463168 エラーメッセージ:ガイダンス:詳細なエラーを確認し、在庫の要件が満たされていることを確認します。 インベントリは、指定されたソースコンピューターの側面を特定できませんでした。 これは、ソースまたはブロックされているファイアウォールポートに対するアクセス許可または特権がないことが原因である可能性があります。
+  ログ名: StorageMigrationService/Admin Source: StorageMigrationService: Date: 9/9/2019 5:21:42 PM イベント ID: 2509 タスクカテゴリ: なしレベル: エラーキーワード:      
+  ユーザー: NETWORK SERVICE Computer: FS02。TailwindTraders.net の説明: コンピューターのインベントリを実行できませんでした。
+Job: foo2 Computer: FS01。TailwindTraders.net State: Failed Error:-2147463168 エラーメッセージ: ガイダンス: 詳細なエラーを確認し、在庫の要件が満たされていることを確認してください。 インベントリは、指定されたソースコンピューターの側面を特定できませんでした。 これは、ソースまたはブロックされているファイアウォールポートに対するアクセス許可または特権がないことが原因である可能性があります。
   
-このエラーは、"meghan@contoso.com" などのユーザープリンシパル名 (UPN) の形式で移行資格情報を指定した場合に、ストレージ移行サービスのコードの不具合が原因で発生します。 Storage Migration Service orchestrator サービスは、この形式を正しく解析できません。そのため、KB4512534 と19H1 でのクラスター移行サポートに追加されたドメイン参照でエラーが発生します。
+このエラーは、' meghan@contoso.com ' などのユーザープリンシパル名 (UPN) の形式で移行資格情報を指定した場合に、ストレージ移行サービスのコードの不具合が原因で発生します。 Storage Migration Service orchestrator サービスは、この形式を正しく解析できません。そのため、KB4512534 と19H1 でのクラスター移行サポートに追加されたドメイン参照でエラーが発生します。
 
 この問題を回避するには、"Contoso\Meghan" のように、domain\user の形式で資格情報を指定します。
 
@@ -270,6 +270,8 @@ Storage Migration Service orchestrator サーバーで[KB4512534](https://suppor
 1.  管理者特権でのコマンドプロンプトを開きます。ここでは、Storage Migration Service orchestrator サーバーの管理者のメンバーで、次を実行します。
 
      ```
+     TAKEOWN /d /a /r /f c:\ProgramData\Microsoft\StorageMigrationService
+     
      MD c:\ProgramData\Microsoft\StorageMigrationService\backup
 
      ICACLS c:\ProgramData\Microsoft\StorageMigrationService\* /grant Administrators:(GA)
@@ -280,7 +282,7 @@ Storage Migration Service orchestrator サーバーで[KB4512534](https://suppor
 
      ICACLS c:\ProgramData\Microsoft\StorageMigrationService  /GRANT networkservice:F /T /C
 
-     ICACLS c:\ProgramData\Microsoft\StorageMigrationService /GRANT networkservice:(GA)F /T /C
+     ICACLS c:\ProgramData\Microsoft\StorageMigrationService /GRANT networkservice:(GA) /T /C
      ```
    
 2.  Storage Migration Service サービスを開始します。これにより、新しいデータベースが作成されます。
