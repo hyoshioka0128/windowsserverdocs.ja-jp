@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 24ae0e11a3e8ca2b50bd6722f7bd7d18b8c1c532
-ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
+ms.openlocfilehash: 2cb368b5ff4723c1afb53c5a9e787d9f8a39bef3
+ms.sourcegitcommit: 40e4ba214954d198936341c4d6ce1916dc891169
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973873"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72690456"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2019"></a>Windows Server 2019 の Standard エディションと Datacenter エディションの比較
 
@@ -155,7 +155,6 @@ ms.locfileid: "71973873"
 |ネットワーク負荷分散|〇|〇|
 |Windows PowerShell|〇|〇|
 |Server Core インストール オプション|〇|〇|
-|Nano Server インストール オプション|〇|〇|
 |サーバー マネージャー|〇|〇|
 |SMB ダイレクトおよび SMB over RDMA|〇|〇|
 |ソフトウェアによるネットワーク制御|X| <strong>はい</strong> |

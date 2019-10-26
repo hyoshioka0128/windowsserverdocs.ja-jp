@@ -10,14 +10,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.author: elizapo
-ms.date: 09/16/2016
+ms.date: 10/22/2019
 manager: dongill
-ms.openlocfilehash: 7429cd9cb87db310a716136c171de47cfe0892f2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9386733911ca81ad60d038854bd68e5603aae4cf
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387365"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812287"
 ---
 # <a name="use-personal-session-desktops-with-remote-desktop-services"></a>リモート デスクトップ サービスで個人用セッション デスクトップを使用する
 
@@ -100,6 +100,3 @@ ms.locfileid: "71387365"
 
 
 新しいコマンドレットはすべて、共通パラメーターの -Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer、および -OutVariable をサポートしています。 詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/p/?LinkID=113216)」を参照してください。
-
-## <a name="hardware-accelerated-graphics"></a>ハードウェア アクセラレータに対応したグラフィックス
-Windows Server 2016 では、OpenGL をサポートするように RemoteFX 3D グラフィックス アダプター (vGPU) テクノロジを拡張し、シングル ユーザー Windows Server 2016 ゲスト VM をサポートします。 個人用セッション デスクトップと新しい vGPU 機能とを組み合わせて、アクセラレータに対応したグラフィックスを必要とするホステッド アプリケーションのサポートを提供できます。 または、個人用セッション デスクトップと新しい個別のデバイスの割り当て (DDA) 機能とを組み合わせて、アクセラレータに対応したグラフィックスを必要とするホステッド アプリケーションのサポートを提供することもできます。
