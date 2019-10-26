@@ -9,16 +9,17 @@ ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
-ms.openlocfilehash: 3b37abaf5a2341aff66ff0064ecc4f52faf47f06
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 08/21/2019
+ms.openlocfilehash: 5466cecf9f11a53dc6e205f36d50d7b27b310ea1
+ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392995"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72923878"
 ---
 # <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>個別のデバイスの割り当てを使用してグラフィックスデバイスをデプロイする
 
->適用先:Microsoft Hyper-V Server 2016、Windows Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019  
+> 適用対象: Microsoft Hyper-V Server 2016、Windows Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019  
 
 Windows Server 2016 以降では、個別のデバイス割り当て (DDA) を使用して、PCIe デバイス全体を VM に渡すことができます。  これにより、デバイスのネイティブドライバーを利用できるのに対して、VM 内から[NVMe ストレージ](./Deploying-storage-devices-using-dda.md)やグラフィックスカードなどのデバイスに高パフォーマンスでアクセスできるようになります。  デバイスの展開については、デバイス[の個別割り当てを使用したデバイスの展開計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)に関するページを参照してください。
 
@@ -60,10 +61,10 @@ VM が特定の方法で構成されていると、一部のハードウェア�
 ## <a name="dismount-the-device-from-the-host-partition"></a>ホストパーティションからデバイスのマウントを解除する
 ### <a name="optional---install-the-partitioning-driver"></a>オプション-パーティションドライバーをインストールする
 個別のデバイスの割り当てにより、ハードウェア venders は、セキュリティ対策ドライバーをデバイスに提供することができます。  このドライバーは、ゲスト VM にインストールされるデバイスドライバーと同じではないことに注意してください。  このドライバーを提供するには、ハードウェアベンダーの判断が必要です。ただし、提供されている場合は、ホストパーティションからデバイスをマウント解除する前にインストールしてください。  軽減ドライバーがあるかどうかの詳細については、ハードウェアベンダーにお問い合わせください。
-> パーティション分割ドライバーが指定されていない場合、マウント`-force`を解除するときに、オプションを使用してセキュリティの警告を回避する必要があります。 [個別のデバイスの割り当てを使用してデバイスを展開する計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)については、セキュリティへの影響について詳しくお読みください。
+> パーティション分割ドライバーが指定されていない場合は、マウント解除中に、`-force` オプションを使用してセキュリティ警告を回避する必要があります。 [個別のデバイスの割り当てを使用してデバイスを展開する計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)については、セキュリティへの影響について詳しくお読みください。
 
 ### <a name="locating-the-devices-location-path"></a>デバイスの場所のパスを特定する
-ホストからデバイスをマウント解除してマウントするには、PCI ロケーションパスが必要です。  ロケーションパスの例は次`"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`のようになります。  ロケーションパスの詳細については、こちらを参照してください。[個別のデバイスの割り当てを使用してデバイスを展開](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)することを計画します。
+ホストからデバイスをマウント解除してマウントするには、PCI ロケーションパスが必要です。  ロケーションパスの例は次のようになります: `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`。  場所のパスの詳細については、「[個別のデバイスの割り当てを使用したデバイスの展開の計画](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md)」を参照してください。
 
 ### <a name="disable-the-device"></a>デバイスを無効にする
 デバイスマネージャーまたは PowerShell を使用して、デバイスが "無効" になっていることを確認します。  
@@ -99,7 +100,7 @@ Mount-VMHostAssignableDevice -LocationPath $locationPath
 ```
 デバイスマネージャーでデバイスを再度有効にすると、ホストオペレーティングシステムがデバイスと再び対話できるようになります。
 
-## <a name="examples"></a>使用例
+## <a name="example"></a>例
 
 ### <a name="mounting-a-gpu-to-a-vm"></a>GPU を VM にマウントする
 この例では、PowerShell を使用して "ddatest1" という名前の VM を構成し、製造元の NVIDIA が使用できる最初の GPU を取得して VM に割り当てます。  
@@ -131,3 +132,13 @@ Dismount-VMHostAssignableDevice -force -LocationPath $locationPath
 #Assign the device to the guest VM.
 Add-VMAssignableDevice -LocationPath $locationPath -VMName $vm
 ```
+
+## <a name="troubleshooting"></a>[トラブルシューティング]
+
+GPU を VM に渡したが、リモートデスクトップまたはアプリケーションが GPU を認識していない場合は、次の一般的な問題を確認してください。
+
+- GPU ベンダーがサポートしているドライバーの最新バージョンがインストールされていること、およびデバイスマネージャーでデバイスの状態を確認することで、ドライバーがエラーを報告していないことを確認します。
+- デバイスに、VM 内に割り当てられている MMIO 領域が十分にあることを確認します。 詳細については、「 [MMIO Space](../plan/Plan-for-Deploying-Devices-using-Discrete-Device-Assignment.md#mmio-space)」を参照してください。
+- この構成で使用されているベンダーがサポートしている GPU を使用していることを確認します。 たとえば、一部のベンダーでは、VM に渡されたときにコンシューマーカードが動作しなくなります。
+- 実行中のアプリケーションが VM 内での実行をサポートしていること、および GPU とそれに関連付けられているドライバーの両方がアプリケーションでサポートされていることを確認します。 一部のアプリケーションでは、Gpu と環境のリストが許可されています。
+- ゲストでリモートデスクトップセッションホストの役割または Windows Multipoint Services を使用している場合は、特定のグループポリシーエントリが既定の GPU の使用を許可するように設定されていることを確認する必要があります。 ゲスト (またはゲストのローカルグループポリシーエディター) に適用されているグループポリシーオブジェクトを使用して、次のグループポリシー項目に移動します:**コンピューターの構成** > **管理者テンプレート** > **Windows コンポーネント** > **リモートデスクトップサービス** > **リモートデスクトップセッションホスト** **リモートセッション環境** > **すべての > セッションでハードウェアの既定のグラフィックスアダプターを使用**リモートデスクトップサービスます。 ポリシーが適用されたら、この値を [有効] に設定し、VM を再起動します。
