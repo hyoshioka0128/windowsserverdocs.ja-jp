@@ -12,7 +12,7 @@
 ### [高可用性](rds-plan-high-availability.md)
 ### [多要素認証](rds-plan-mfa.md)
 ### [セキュリティで保護されたデータ ストレージ](rds-plan-secure-data-storage.md)
-### [グラフィックス レンダリング テクノロジの選択](rds-graphics-virtualization.md)
+### [GPU アクセラレーション](rds-graphics-virtualization.md)
 ### [任意のデバイスからの接続](rds-plan-connect-from-any-device.md)
 ### [支払方法の選択](rds-plan-choose-how-you-pay.md)
 ### [RDS および VDI 展開における Office 2016](https://docs.microsoft.com/deployoffice/rds-office-vdi-rdsh)
@@ -56,7 +56,6 @@
 ##### [ディザスター リカバリー計画を作成する](rds-disaster-recovery-plan.md)
 
 ## [実行と調整](rds-run-and-tune.md)
-### [リモート デスクトップ サービスに RemoteFX vGPU をセットアップして構成](rds-remotefx-vgpu.md)
 ### [個人用デスクトップ セッション コレクションを管理する](rds-manage-personal-collection.md)
 ### [VDI デスクトップで推奨される構成](rds-vdi-recommendations.md)
 ### [仮想デスクトップ インフラストラクチャ (VDI) ロール用の Windows 10 バージョン 1803 の最適化](rds-vdi-recommendations-1803.md)
