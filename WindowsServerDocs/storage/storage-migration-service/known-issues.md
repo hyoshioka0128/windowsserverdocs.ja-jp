@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 830a2d99443938c25625211f590984819a20d566
-ms.sourcegitcommit: 40e4ba214954d198936341c4d6ce1916dc891169
+ms.openlocfilehash: 597bcbe647bca3595dc8251ce4d6bf52265d8731
+ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72690449"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72986431"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -133,7 +133,7 @@ Windows Server 2019 の展開先コンピューターに Storage Migration Servi
   ログ名: StorageMigrationService/Debug Source: StorageMigrationService: 2/26/2019 9:00:04 AM イベント ID: 1万 Task Category: None Level: Error Keywords::-プロキシ/Debug Source::      
   ユーザー: NETWORK SERVICE Computer: srv1.contoso.com Description:
 
-  02/26/2019-09:00: 04.860 [Error] \\srv1 の転送エラーが発生しました: (5) アクセスが拒否されました。
+  02/26/2019-09:00: 04.860 [Error] \\srv1 の転送エラーです。 (5) アクセスが拒否されています。
 スタックトレース: FileDirUtils での StorageMigration (String fileName、DesiredAccess desiredAccess、ShareMode shareMode、FlagsAndAttributes FlagsAndAttributes) でのスタックトレースの場合、次の場所に移動します。FileDirUtils の StorageMigration (文字列パス) で、StorageMigration (FileInfo ファイル) をに移動します。このファイルには、(FileInfo ファイル) を指定します。StorageMigration () at StorageMigration () で、InitializeSourceFileInfo () をに移動します。このファイルの場所に移動してください。StorageMigration () [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs:: TryTransfer::55]」を実行してください ()。
 
 
@@ -287,7 +287,25 @@ Storage Migration Service orchestrator サーバーで[KB4512534](https://suppor
    
 2.  Storage Migration Service サービスを開始します。これにより、新しいデータベースが作成されます。
 
+## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>"CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO がネットリソースに対して失敗しました" というエラーが発生し、Windows Server 2008 R2 クラスターのカットオーバーが失敗する
 
+Windows Server 2008 R2 クラスターソースに対して切り取りを実行しようとすると、"ソースコンピューターの名前を変更しています..." というフェーズでカットオーバーが停止します。次のエラーが表示されます。
+
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Debug
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          10/17/2019 6:44:48 PM
+    Event ID:      10000
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      WIN-RNS0D0PMPJH.contoso.com
+    Description:
+    10/17/2019-18:44:48.727 [Erro] Exception error: 0x1. Message: Control code CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO failed against netName resource 2008r2FS., stackTrace:    at Microsoft.FailoverClusters.Framework.ClusterUtils.NetnameRepairVCO(SafeClusterResourceHandle netNameResourceHandle, String netName)
+       at Microsoft.FailoverClusters.Framework.ClusterUtils.RenameFSNetName(SafeClusterHandle ClusterHandle, String clusterName, String FsResourceId, String NetNameResourceId, String newDnsName, CancellationToken ct)
+       at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
+
+この問題は、以前のバージョンの Windows Server で API が不足していることが原因で発生します。 現時点では、Windows Server 2008 および Windows Server 2003 クラスターを移行する方法はありません。 Windows Server 2008 R2 クラスターでは、インベントリと転送を実行できます。その後、クラスターのソースファイルサーバーリソースのネット名と IP アドレスを手動で変更して、移行先クラスターのネット名と IP アドレスを変更することで、手動でカットオーバーを実行できます。元のソースに一致するアドレス。 
 
 ## <a name="see-also"></a>関連項目
 
