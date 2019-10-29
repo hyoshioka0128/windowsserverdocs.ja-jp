@@ -7,18 +7,18 @@ ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: elizapo
-ms.date: 11/08/2016
+ms.date: 10/22/2019
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae9767e3-864a-4eb2-96c0-626759ce6d60
 author: lizap
 manager: dongill
-ms.openlocfilehash: cec1ae43b51b17da5617f95e13b839d4ecfbb40c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 92af2b4e9fb174f1aa815256148ee8d5c7c7181a
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404008"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812249"
 ---
 # <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>デスクトップとアプリを実行するためのリモート デスクトップ サービス コレクションを作成する
 
@@ -33,7 +33,7 @@ ms.locfileid: "71404008"
  
 プールされたセッションの場合、複数のユーザーがリソースの共有プールにアクセスします。一方、個人用デスクトップ セッションの場合、プール内から固有のデスクトップにユーザーが割り当てられます。 プールされたセッションでは総コストが低くなり、個人用セッションではユーザーによるデスクトップ エクスペリエンスのカスタマイズを可能にします。
 
-グラフィックス集中型のホステッド アプリケーションを共有する必要がある場合、グラフィック アクセラレータ用に構成された RemoteFX vGPU と個人用セッションのデスクトップを組み合わせることができます。 または、個人用セッション デスクトップと新しい個別のデバイス割り当て (DDA) 機能を組み合わせて、アクセラレータに対応したグラフィックスを必要とするホステッド アプリケーションのサポートを提供することもできます。 詳しくは、「[Which graphics virtualization technology is right for you? (どのグラフィックス仮想化技術が適切か)](rds-graphics-virtualization.md)」をご覧ください。
+グラフィックス集中型のホスト型アプリケーションを共有する必要がある場合、個人用セッション デスクトップと新しい個別のデバイス割り当て (DDA) 機能を組み合わせて、アクセラレータに対応したグラフィックスを必要とするホスト型アプリケーションのサポートを提供することもできます。 詳しくは、「[Which graphics virtualization technology is right for you? (どのグラフィックス仮想化技術が適切か)](rds-graphics-virtualization.md)」をご覧ください。
 
 
 選択するコレクションの種類に関係なく、RemoteApps を利用して該当のコレクション (サポートされる任意のデバイスからユーザーがアクセスでき、プログラムがローカルで実行されている場合でも有効なプログラムとリソース) を指定します。

@@ -13,18 +13,37 @@ author: spatnaik
 ms.author: spatnaik
 ms.date: 09/23/2016
 manager: scottman
-ms.openlocfilehash: eaf242309dbdbd4716ea8f39e7ebcb1d9225b53a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c04909e9e0cfbf71b6632c154ac8b9b20b5bac10
+ms.sourcegitcommit: b4b0e73ce35f8b594eb467a2bb2aa91bd6d86369
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387332"
+ms.lasthandoff: 10/24/2019
+ms.locfileid: "72893078"
 ---
 # <a name="remote-desktop-services---cater-to-different-kinds-of-users"></a>リモート デスクトップ サービスのさまざまな種類のユーザーの要求を満たす
 
 >適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
-ユーザーの種類ごとの予想されるニーズに応じて、展開を拡張できます。
-たとえば、ユーザーが軽量のアプリでのデータ入力を実行、Office のような生産性アプリを使用して大規模なデータセットを操作または、高負荷なエンジニア リングやグラフィックスのアプリを使用して作業します。
+リモート デスクトップ サービスは、さまざまな種類のワークロードをサポートします。 ユーザーの種類ごとの予想されるニーズに応じて、展開を拡張できます。
 
-読み込むことをお勧めストレス テストと実際の使用状況のシミュレーションの両方で展開をテストします。 防ぎ読み込みサイズによって異なります。 応答性がユーザーの要件を満たしていること、また、システム全体が回復力のあることを確認します。 シミュレーションなどのツール、LoginVSI、ユーザーのニーズに合わせて、デプロイの機能を確認するには、ロード テストを作成します。 
+## <a name="types-of-users"></a>ユーザーの種類
+
+### <a name="knowledge-user"></a>ナレッジ ユーザー
+
+ナレッジ ユーザーは、Microsoft Word、Excel、Outlook、Microsoft Edge ブラウザーなどの軽量な生産性アプリケーションを使用します。
+
+### <a name="professional-user"></a>プロフェッショナル ユーザー
+
+プロフェッショナル ユーザーは、インターネット ブラウザーや生産性アプリケーションに加えて、ソフトウェアの開発やマルチメディア コンテンツの作成など、より負荷の高いワークロードをサポートします。
+
+### <a name="power-user"></a>パワー ユーザー
+
+パワー ユーザーは、コンピューター支援設計 (CAD) や Adobe Photoshop などのエンジニアリングとグラフィックスのアプリケーションを使用します。 ビデオ レンダリング、3D デザイン、シミュレーションのためにグラフィック集中型のプログラムを定期的に使用するユーザーには、多くの場合 GPU が適しています。
+
+グラフィックス アクセラレーションの詳細については、「[どちらのグラフィックス仮想化テクノロジが適切か](rds-graphics-virtualization.md)を参照してください。
+
+Azure には、他のグラフィックス アクセラレーション展開オプションと、使用可能な複数の GPU VM サイズがあります。 これらについては、「[GPU 最適化済み仮想マシンのサイズ](https://docs.microsoft.com/azure/virtual-machines/windows/sizes-gpu)」を参照してください。
+
+## <a name="test-workload"></a>ワークロードのテスト
+
+ストレス テストと実際の使用状況のシミュレーションの両方で、デプロイのロード テストを行うことをお勧めします。 LoginVSI などのシミュレーション ツールを使用して、デプロイのロード テストを行うことができます。 システムがユーザーのニーズを満たすのに十分な応答性と回復性を備えていることを確認し、予想外の事態を避けるために、ロード サイズを変更してください。
