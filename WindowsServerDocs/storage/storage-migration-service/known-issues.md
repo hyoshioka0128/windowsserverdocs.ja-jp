@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 597bcbe647bca3595dc8251ce4d6bf52265d8731
-ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
+ms.openlocfilehash: 5889ae43c4b572ae75c8df10d0c47fc21337d558
+ms.sourcegitcommit: 9e123d475f3755218793a130dda88455eac9d4ab
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72986431"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73413255"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -270,7 +270,7 @@ Storage Migration Service orchestrator サーバーで[KB4512534](https://suppor
 1.  管理者特権でのコマンドプロンプトを開きます。ここでは、Storage Migration Service orchestrator サーバーの管理者のメンバーで、次を実行します。
 
      ```
-     TAKEOWN /d /a /r /f c:\ProgramData\Microsoft\StorageMigrationService
+     TAKEOWN /d y /a /r /f c:\ProgramData\Microsoft\StorageMigrationService
      
      MD c:\ProgramData\Microsoft\StorageMigrationService\backup
 
