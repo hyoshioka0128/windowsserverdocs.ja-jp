@@ -8,25 +8,18 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: a579d0274ff4b53a72c17760a6d53ef796625d3a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 23943c9567f371f7598c7dcda6db434760cabeab
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356913"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567085"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center の既知の問題
 
-> 適用対象:Windows Admin Center、Windows Admin Center Preview
+> 適用対象: Windows 管理センター、Windows 管理センタープレビュー
 
-このページで説明されている問題が発生した場合は、[お知らせください](http://aka.ms/WACfeedback)。
-
-## <a name="lenovo-xclarity-integrator"></a>Lenovo XClarity インテグレーター
-
-以前に公開されていた Lenovo XClarity インテグレーター拡張と Windows 管理センターバージョン1904の非互換性の問題は、Windows 管理センターバージョン1904.1 で解決されるようになりました。 サポートされている最新バージョンの Windows 管理センターに更新することを強くお勧めします。
-
-- Lenovo XClarity インテグレーター拡張バージョン1.1 は、Windows 管理センター1904.1 と完全に互換性があります。 最新バージョンの Windows 管理センターと Lenovo 拡張機能を更新することを強くお勧めします。
-- 何らかの理由で、Windows 管理センター1809.5 の使用を継続する必要がある場合は、XClarity インテグレーター1.0.4 を使用することができます。これは、windows 管理センターの拡張機能1809.5 フィードでも使用できます。[サポートポリシー](../support/index.md)。
+このページで説明されている問題が発生した場合は、[お知らせください](https://aka.ms/WACfeedback)。
 
 ## <a name="installer"></a>インストーラー
 
@@ -34,20 +27,9 @@ ms.locfileid: "71356913"
 
 - 1024未満のポートの使用はサポートされていません。 サービスモードでは、必要に応じて、指定したポートにリダイレクトするようにポート80を構成できます。
 
-- Windows Update サービス (wuauserv) が停止され、無効になっている場合、インストーラーは失敗します。 [19100629]
+## <a name="general"></a>[全般]
 
-### <a name="upgrade"></a>アップグレード
-
-- 以前のバージョンから Windows 管理センターのサービスモードをアップグレードする場合、msiexec を quiet モードで使用すると、Windows 管理センターのポートの受信ファイアウォール規則が削除されるという問題が発生することがあります。
-  - ルールを再作成するには、管理者特権の PowerShell コンソールから次\<のコマンドを実行し、ポート > を Windows 管理センター用に構成されたポート (既定では 443) に置き換えます。
-
-    ```powershell
-    New-NetFirewallRule -DisplayName "SmeInboundOpenException" -Description "Windows Admin Center inbound port exception" -LocalPort <port> -RemoteAddress Any -Protocol TCP
-    ```
-
-## <a name="general"></a>全般
-
-- Windows **Server 2016**にゲートウェイとしてインストールされている windows 管理センターを使用している場合、サービスがとを```Faulting application name: sme.exe``` ```Faulting module name: WsmSvc.dll```含むイベントログのエラーでクラッシュすることがあります。 これは、Windows Server 2019 で修正されたバグが原因です。 Windows Server 2016 の修正プログラムには、2019の累積的な更新プログラム[KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)が含まれています。
+- Windows **Server 2016**にゲートウェイとしてインストールされている Windows 管理センターを使用している場合は、```Faulting application name: sme.exe``` と ```Faulting module name: WsmSvc.dll```を含むイベントログでエラーが発生すると、サービスがクラッシュする可能性があります。 これは、Windows Server 2019 で修正されたバグが原因です。 Windows Server 2016 の修正プログラムには、2019の累積的な更新プログラム[KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)が含まれています。
 
 - Windows 管理センターがゲートウェイとしてインストールされていて、接続リストが破損していると思われる場合は、次の手順を実行します。
 
@@ -58,15 +40,7 @@ ms.locfileid: "71356913"
   2. **C:\Windows\ServiceProfiles\NetworkService\AppData\Roaming\Microsoft** にある **Server Management Experience** フォルダーを削除します
   3. Windows Admin Center を再インストールします
 
-- このツールを長時間開いたままアイドル状態にすると、次のような**エラーが発生する場合があります。実行空間の状態は、この操作**エラーに対して無効です。 この問題が発生した場合は、お使いのブラウザーを更新してください。 この問題が発生した場合は、[フィードバックをお送り](http://aka.ms/WACfeedback)ください。
-
-- 非常に長い URL を含むページを更新するときに **500 エラー**が発生する場合があります。 [12443710]
-
-- 一部のツールでは、ブラウザーのスペル チェックは、特定のフィールド値をスペルミスとしてマークする可能性があります。 [12425477]
-
-- 一部のツールでは、コマンド ボタンがクリックされた直後に状態変更が反映されない場合があります。また、ツール UI に特定のプロパティへの変更が自動的に反映されない場合があります。 **[更新]** をクリックして、対象サーバーから最新の状態を取得することができます。 [11445790]
-
-- [接続一覧でのタグフィルター]-[複数選択] チェックボックスを使用して接続を選択した場合、接続リストをタグでフィルター処理すると、選択したすべてのコンピューターに対して選択した操作が適用されます。 [18099259]
+- ツールを開いたまま長時間アイドル状態にすると、**Error: The runspace state is not valid for this operation** (エラー: この操作の実行空間の状態が有効ではありません) というエラーが何度か表示されることがあります。 この問題が発生した場合は、お使いのブラウザーを更新してください。 この問題が発生した場合は、[フィードバックをお送り](https://aka.ms/WACfeedback)ください。
 
 - Windows 管理センターのモジュールで実行されている OSS のバージョン番号と、サードパーティのソフトウェアに関する通知に記載されているものとの間には、若干の差異がある場合があります。
 
@@ -79,27 +53,21 @@ ms.locfileid: "71356913"
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- 場合によっては、Microsoft Edge を使用してインターネット経由で Windows Admin Center ゲートウェイにアクセスする場合に、読み込み時間が長くなることがあります。 これは、Windows Admin Center ゲートウェイが自己署名証明書を使用している Azure VM で発生することがあります。 [13819912]
-
-- Azure Active Directory を ID プロバイダーとして使用していて、Windows Admin Center が自己署名証明書またはその他の信頼されていない証明書で構成されている場合は、Microsoft Edge で AAD 認証を完了することはできません。  [15968377]
-
-- Windows 管理センターがサービスとして展開されていて、ブラウザーとして Microsoft Edge を使用している場合は、新しいブラウザーウィンドウを起動した後にゲートウェイを Azure に接続できないことがあります。 追加することで、この問題を回避しようとしています。 https://login.microsoftonline.com 、 https://login.live.com 、として、ゲートウェイの URL が信頼済みサイトとクライアント側のブラウザーでポップアップ ブロックの設定のサイトを許可されているとします。 この問題を解決する方法については、[トラブルシューティングガイド](troubleshooting.md#azure-features-dont-work-properly-in-edge)を参照してください。 [17990376]
-
-- Windows 管理センターがデスクトップモードでインストールされている場合、Microsoft Edge の [ブラウザー] タブに favicon は表示されません。 [17665801]
+- Windows 管理センターがサービスとして展開されていて、ブラウザーとして Microsoft Edge を使用している場合は、新しいブラウザーウィンドウを起動した後にゲートウェイを Azure に接続できないことがあります。 この問題を回避するには、ゲートウェイの https://login.microsoftonline.com 、 https://login.live.com 、および URL を信頼済みサイトとして追加し、クライアント側ブラウザーでポップアップブロックの設定に許可されたサイトを追加します。 この問題を解決する方法については、[トラブルシューティングガイド](troubleshooting.md#azure-features-dont-work-properly-in-edge)を参照してください。 [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
-- バージョン70より前 (10 月、2018)、Chrome には websocket プロトコルと NTLM 認証に関する[バグ](https://bugs.chromium.org/p/chromium/issues/detail?id=423609)がありました。 これは、次のツールに影響します。イベント、PowerShell、リモートデスクトップ。
+- バージョン70より前 (10 月、2018)、Chrome には websocket プロトコルと NTLM 認証に関する[バグ](https://bugs.chromium.org/p/chromium/issues/detail?id=423609)がありました。 これは、イベント、PowerShell、リモート デスクトップのツールに影響します。
 
 - Chrome では、特に**ワークグループ** (非ドメイン) 環境での接続の追加エクスペリエンスの実行中に、複数の資格情報プロンプトが表示される場合があります。
 
-- Windows 管理センターがサービスとしてデプロイされている場合、Azure 統合機能を使用するには、ゲートウェイ URL のポップアップを有効にする必要があります。 これらのサービスには、Azure ネットワークアダプター、Azure Update Management および Azure Site Recovery が含まれます。
+- Windows 管理センターがサービスとしてデプロイされている場合、Azure 統合機能を使用するには、ゲートウェイ URL のポップアップを有効にする必要があります。
 
 ### <a name="mozilla-firefox"></a>Mozilla Firefox
 
 Windows Admin Center は、Mozilla Firefox でテストされていませんが、ほとんどの機能は機能します。
 
-- Windows 10 のインストール:Mozilla Firefox には独自の証明書ストアがあるため、windows ```Windows Admin Center Client``` 10 で windows 管理センターを使用するには、Firefox に証明書をインポートする必要があります。
+- Windows 10 のインストール: Mozilla Firefox には独自の証明書ストアがあるため、Windows 10 で Windows 管理センターを使用するには、```Windows Admin Center Client``` 証明書を Firefox にインポートする必要があります。
 
 ## <a name="websocket-compatibility-when-using-a-proxy-service"></a>プロキシサービスを使用する場合の WebSocket の互換性
 
@@ -124,29 +92,21 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 ## <a name="server-manager-solution"></a>サーバー マネージャー ソリューション
 
-### <a name="server-settings"></a>サーバーの設定
-
-- 設定を変更した後、保存せずに移動しようとすると、未保存の変更についての警告が表示されますが、移動は続行されます。 選択した [設定] タブがページの内容と一致しない状態になることがあります。 [19905798] [19905787]
-
 ### <a name="certificates"></a>証明書
 
 - .PFX の暗号化された証明書を現在のユーザー ストアにインポートすることはできません。 [11818622]
-
-### <a name="devices"></a>デバイス
-
-- キーボードを使用してテーブル内を移動すると、選択した項目がテーブルグループの一番上に移動する場合があります。 [16646059]
 
 ### <a name="events"></a>イベント
 
 - イベントは、[プロキシ サービスを使用する場合に WebSocket の互換性](#websocket-compatibility-when-using-a-proxy-service)に影響を受けます。
 
-- 大きいログ ファイルをエクスポートするときに、“パケット サイズ” を参照するエラーが表示される場合があります。 [16630279]
+- 大きいログ ファイルをエクスポートするときに、“パケット サイズ” を参照するエラーが表示される場合があります。
 
-  - これを解決するには、ゲートウェイコンピューターで管理者特権のコマンドプロンプトで次のコマンドを使用します。```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
+  - これを解決するには、ゲートウェイコンピューターで管理者特権のコマンドプロンプトで次のコマンドを使用します。 ```winrm set winrm/config @{MaxEnvelopeSizekb="8192"}```
 
 ### <a name="files"></a>ファイル
 
-- 大きいファイルのアップロードまたはダウンロードはまだサポートされていません。 (@no__t 0100mb mb の制限)[12524234]
+- 大きいファイルのアップロードまたはダウンロードはまだサポートされていません。 (\~100mb の制限)[12524234]
 
 ### <a name="powershell"></a>PowerShell
 
@@ -164,11 +124,13 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 ### <a name="remote-desktop"></a>リモート デスクトップ
 
+- Windows 管理センターがサービスとして展開されている場合、Windows 管理センターサービスを新しいバージョンに更新すると、リモートデスクトップツールが読み込みに失敗することがあります。 この問題を回避するには、ブラウザーのキャッシュをクリアします。   [23824194]
+
 - Windows Server 2012 を管理している場合、リモートデスクトップツールが接続に失敗することがあります。 [20258278]
 
-- リモートデスクトップを使用して、ドメインに参加していないコンピューターに接続する場合は、の```MACHINENAME\USERNAME```形式でアカウントを入力する必要があります。
+- リモートデスクトップを使用して、ドメインに参加していないコンピューターに接続する場合は、```MACHINENAME\USERNAME``` の形式でアカウントを入力する必要があります。
 
-- 一部の構成では、Windows 管理センターのリモートデスクトップクライアントがグループポリシーでブロックされることがあります。 この問題が発生した```Allow users to connect remotely by using Remote Desktop Services```場合は、```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
+- 一部の構成では、Windows 管理センターのリモートデスクトップクライアントがグループポリシーでブロックされることがあります。 この問題が発生した場合は、[```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```] の下の ```Allow users to connect remotely by using Remote Desktop Services``` を有効にします
 
 - リモートデスクトップは websocket 互換性によって影響を受け[ます。](#websocket-compatibility-when-using-a-proxy-service)
 
@@ -180,9 +142,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
   - Alt + Tab
   - ファンクション キー
   - Windows キー
-  - PrtScn
-
-- リモートアプリ-リモートデスクトップの設定からリモートアプリツールを有効にした後、デスクトップエクスペリエンスを備えたサーバーを管理するときにツールの一覧にツールが表示されない場合があります。 [18906904]
+  - PrintScreen
 
 ### <a name="roles-and-features"></a>役割と機能
 
@@ -192,21 +152,19 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 - 自動的に再起動するように選択した場合、状態が 100% に更新される前に、再起動が行われます。 [13098852]
 
-### <a name="storage"></a>ストレージ
+### <a name="storage"></a>記憶域
 
-- クォータ情報の取得がエラー通知なしに失敗する (ブラウザーのコンソールにエラーが表示される) [18962274]
+- ダウンレベル: DVD/CD/フロッピー ドライブは、ダウンレベルのボリュームとして表示されません。
 
-- ダウンレベル:DVD/CD/フロッピードライブは、下位レベルではボリュームとして表示されません。
+- ダウンレベル: ボリュームとディスクの一部のプロパティはダウンレベルで利用できないため、詳細パネルで不明または空白で表示されます。
 
-- ダウンレベル:[ボリュームとディスク] の一部のプロパティは下位レベルでは使用できないため、[詳細] パネルに [不明] または [空白] と表示されます。
-
-- ダウンレベル:新しいボリュームを作成する場合、ReFS でサポートされるのは、Windows 2012 および 2012 R2 コンピューターでのアロケーションユニットサイズが64K です。 ReFS ボリュームがダウンレベル ターゲットの小さいアロケーション ユニット サイズで作成された場合は、ファイル システムの書式設定が失敗します。 新しいボリュームは使用できません。 解決策は、ボリュームを削除し、64 K のアロケーション ユニット サイズを使用することです。
+- ダウンレベル: 新しいボリュームを作成する場合、ReFS では、Windows 2012 および 2012 R2 コンピューターでの 64K のアロケーション ユニット サイズのみがサポートされます。 ReFS ボリュームがダウンレベル ターゲットの小さいアロケーション ユニット サイズで作成された場合は、ファイル システムの書式設定が失敗します。 新しいボリュームは使用できません。 解決策は、ボリュームを削除し、64 K のアロケーション ユニット サイズを使用することです。
 
 ### <a name="updates"></a>更新プログラム
 
 - 更新プログラムをインストールすると、インストールの状態がキャッシュされ、ブラウザーの更新が必要になる場合があります。
 
-- 次のようなエラーが発生する可能性があります。Azure Update management を設定しようとすると、"キーセットが存在しません" が発生します。 この場合は、管理ノードで次の修復手順を試してください。
+- Azure Update management を設定しようとすると、"キーセットが存在しません" というエラーが発生することがあります。 この場合は、管理ノードで次の修復手順を試してください。
     1. ' Cryptographic Services ' サービスを停止します。
     2. 隠しファイルを表示するようにフォルダーオプションを変更します (必要な場合)。
     3. "%Allusersprofile%\Microsoft\Crypto\RSA\S-1-5-18" フォルダーを受け取って、その内容をすべて削除します。
@@ -223,13 +181,13 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 ### <a name="virtual-switches"></a>仮想スイッチ
 
-- スイッチ埋め込みチーミング (SET):Nic をチームに追加する場合は、同じサブネット上にある必要があります。
+- スイッチ埋め込みチーミング (SET): NIC をチームに追加する場合は、NIC が同じサブネット上にある必要があります。
 
 ## <a name="computer-management-solution"></a>コンピューターの管理ソリューション
 
 コンピューターの管理ソリューションには、サーバー マネージャー ソリューションのツールのサブセットが含まれているため、同じ既知の問題と共に、次のコンピューターの管理ソリューション特有の問題が該当します。
 
-- Microsoft アカウント ([MSA](https://account.microsoft.com/account/)) を使用している場合、または AZURE ACTIVE DIRECTORY (AAD) を使用して Windows 10 コンピューターにログオンしている場合、ローカルコンピューターを管理するには、"管理-as" の資格情報を指定する必要があります [16568455]
+- Microsoft アカウント ([MSA](https://account.microsoft.com/account/)) を使用する場合、または AZURE ACTIVE DIRECTORY (AAD) を使用して Windows 10 コンピューターにログオンする場合は、"manage-as" を使用してローカル管理者アカウントの資格情報を指定する必要があります [16568455]
 
 - ローカル ホストを管理しようとすると、ゲートウェイ プロセスを昇格するように求められます。 続いて表示される [ユーザー アカウント制御] ポップアップで **[いいえ]** をクリックすると、Windows Admin Center でそれを表示することができなくなります。 この場合、システム トレイの Windows Admin Center アイコンを右クリックし、[終了] を選択することでゲートウェイ プロセスを終了し、[スタート] メニューから Windows Admin Center を再起動します。
 
@@ -252,3 +210,20 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 ## <a name="hyper-converged-cluster-manager-solution"></a>ハイパーコンバージド クラスター マネージャー ソリューション
 
 - **Drives - Update firmware**、**Servers - Remove**、および **Volumes - Open** などの一部のコマンドは無効になっていて現在サポートされていません。
+
+## <a name="azure-services"></a>Azure サービス
+
+### <a name="azure-file-sync-permissions"></a>Azure File Sync のアクセス許可
+
+Azure File Sync には、Windows 管理センターがバージョン1910より前に提供していない Azure のアクセス許可が必要です。 Windows 管理センターのバージョン1910より前のバージョンを使用して Windows 管理センターゲートウェイを Azure に登録した場合は、Azure Active Directory アプリケーションを更新して、最新バージョンので Azure File Sync を使用するための正しいアクセス許可を取得する必要があります。Windows 管理センター。 追加のアクセス許可により、この記事の説明に従って、ストレージアカウントへのアクセスの自動構成を実行 Azure File Sync ことができます。 [Azure File Sync にストレージアカウントへのアクセス権があることを確認](https://docs.microsoft.com/azure/storage/files/storage-sync-files-troubleshoot?tabs=portal1%2Cazure-portal#tabpanel_CeZOj-G++Q-5_azure-portal)してください。
+
+Azure Active Directory アプリを更新するには、次の2つのいずれかを実行します。
+1. **[設定]** にアクセスして、 **Azure** > の**登録を解除**し、もう一度 Windows 管理センターを azure に登録して、新しい Azure Active Directory アプリケーションを作成することを確認します。 > ます。 
+2. Azure Active Directory アプリケーションにアクセスし、Windows 管理センターに登録されている既存の Azure Active Directory アプリに必要なアクセス許可を手動で追加します。 これを行うには、 **azure の [** **設定**] > **azure** > ビューにアクセスします。 Azure の **[アプリの登録]** ブレードで、API の **[アクセス許可]** にアクセスし、 **[アクセス許可の追加]** を選択します。 下にスクロールして**Azure Active Directory グラフ**を選択し、委任された **[アクセス許可]** 、 **[ディレクトリ]** の順に展開して、 **[AccessAsUser]** を選択します。 **[アクセス許可の追加]** をクリックして、アプリに更新プログラムを保存します。
+
+### <a name="options-for-setting-up-azure-management-services"></a>Azure 管理サービスを設定するためのオプション
+
+Azure Monitor、Azure Update Management、Azure Security Center を含む azure の管理サービスは、オンプレミスのサーバーと同じエージェントを使用します (Microsoft Monitoring Agent)。 Azure Update Management には、サポートされているリージョンのセットが制限されており、Log Analytics ワークスペースが Azure Automation アカウントにリンクされている必要があります。 この制限により、Windows 管理センターで複数のサービスをセットアップする場合は、まず Azure Update Management を設定してから、Azure Security Center または Azure Monitor する必要があります。 Microsoft Monitoring Agent を使用する Azure 管理サービスを構成した後、Windows 管理センターを使用して Azure Update Management を設定しようとすると、Windows 管理センターでは、既存のものがある場合にのみ Azure Update Management を構成することができます。Microsoft Monitoring Agent にリンクされているリソースは、Azure Update Management をサポートします。 そうでない場合は、次の2つのオプションがあります。
+
+1. [コントロールパネル] > Microsoft Monitoring Agent を選択し[て、既存の Azure 管理ソリューション](https://docs.microsoft.com/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics)(Azure Monitor や Azure Security Center など) からサーバーを切断します。 次に、Windows 管理センターで Azure Update Management を設定します。 その後、Windows 管理センターを使用して、問題なく他の Azure 管理ソリューションを設定することができます。
+2. [Azure Update Management に必要な azure リソースを手動で設定](https://docs.microsoft.com/azure/automation/automation-update-management)し、Microsoft Monitoring Agent (Windows 管理センターの外部) を[手動で更新](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace)して、Update Management ソリューションに対応する新しいワークスペースを追加することができます。を使用します。
