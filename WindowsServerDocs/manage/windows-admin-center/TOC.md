@@ -27,6 +27,7 @@
 ## 使用
 ### [作業の開始](use/get-started.md)
 ### [サーバーの管理](use/manage-servers.md)
+### [ハイパーコンバージド インフラストラクチャの展開](use/deploy-hyperconverged-infrastructure.md)
 ### [ハイパーコンバージド インフラストラクチャの管理](use/manage-hyper-converged.md)
 ### [フェールオーバー クラスターの管理](use/manage-failover-clusters.md)
 ### [Hyper-V 仮想マシンの管理](use/manage-virtual-machines.md)
