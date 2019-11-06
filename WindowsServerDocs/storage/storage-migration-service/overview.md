@@ -1,25 +1,25 @@
 ---
 title: 記憶域移行サービスの概要
-description: ストレージ移行サービスでは、Windows Server の新しいバージョンにサーバーを簡単に移行できます。 これには、アプリやユーザーが何も変更を行わずに、サーバー上のデータのインベントリを作成し、そのデータと構成が新しいサーバーに転送されるグラフィカル ツールがあります。
+description: Storage Migration Service を使用すると、Windows Server または Azure にストレージを簡単に移行できます。 Windows と Linux のサーバー上のデータをインベントリし、そのデータを新しいサーバーまたは Azure virtual machines に転送するグラフィカルツールを提供します。 また、記憶域移行サービスでは、サーバーの id を移行先サーバーに転送するオプションも用意されています。これにより、アプリとユーザーがリンクまたはパスを変更することなくデータにアクセスできるようになります。
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 08/16/2019
+ms.date: 10/25/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 022b0c3445c007960c490159f6580a702233ee41
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 712befacaf1d5bddd4f9bd993ce0d423b15cba36
+ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402979"
+ms.lasthandoff: 10/28/2019
+ms.locfileid: "72986447"
 ---
 # <a name="storage-migration-service-overview"></a>記憶域移行サービスの概要
 
->適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server (半期チャネル)
+>適用対象: Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server (半期チャネル)
 
-ストレージ移行サービスでは、Windows Server の新しいバージョンにサーバーを簡単に移行できます。 これには、アプリやユーザーが何も変更を行わずに、サーバー上のデータのインベントリを作成し、そのデータと構成が新しいサーバーに転送されるグラフィカル ツールがあります。
+Storage Migration Service を使用すると、Windows Server または Azure にストレージを簡単に移行できます。 Windows と Linux のサーバー上のデータをインベントリし、そのデータを新しいサーバーまたは Azure virtual machines に転送するグラフィカルツールを提供します。 また、記憶域移行サービスでは、サーバーの id を移行先サーバーに転送するオプションも用意されています。これにより、アプリとユーザーがリンクまたはパスを変更することなくデータにアクセスできるようになります。
 
 このトピックでは、記憶域移行サービスを使用する理由、移行プロセスのしくみ、および移行元サーバーと移行先サーバーの要件について説明します。
 
@@ -42,17 +42,17 @@ ms.locfileid: "71402979"
 
 1. ファイルと構成に関する情報を収集する**インベントリサーバー** (図2を参照)。
 2. 移行元サーバーから移行先サーバーに**データを転送 (コピー)** します。
-3. **新しいサーバーにカットオーバーする**(省略可能)。<br>移行先サーバーは、アプリとユーザーが何も変更する必要がないように、移行元サーバーの以前の id を想定しています。 <br>移行元サーバーは、常に同じファイル (移行元サーバーからファイルを削除することはありません) が含まれていても、ユーザーとアプリは使用できないというメンテナンス状態になります。 これにより、サーバーを使いやすくすることができます。
+3. **新しいサーバーにカットオーバー**します (省略可能)。<br>移行先サーバーは、アプリとユーザーが何も変更する必要がないように、移行元サーバーの以前の id を想定しています。 <br>移行元サーバーは、常に同じファイル (移行元サーバーからファイルを削除することはありません) が含まれていても、ユーザーとアプリは使用できないというメンテナンス状態になります。 これにより、サーバーを使いやすくすることができます。
 
-![](media/migrate/inventory.png)
-スキャン**の準備ができているサーバーを示すスクリーンショット図 2:記憶域移行サービスのサーバーのインベントリ**
+スキャンの準備ができているサーバーを示すスクリーンショット ![](media/migrate/inventory.png)
+**図 2: Storage Migration Service のサーバーのインベントリ**
 
 ## <a name="requirements"></a>要件
 
 Storage Migration Service を使用するには、次のものが必要です。
 
 - ファイルとデータを移行する**ソースサーバー**または**フェールオーバークラスター**
-- に移行する Windows Server 2019 (クラスター化またはスタンドアロン) を実行している**移行先サーバー** 。 Windows Server 2016 と Windows Server 2012 R2 も同様に動作しますが、約 50% 低速です。
+- に移行する Windows Server 2019 (クラスター化またはスタンドアロン) を実行している**移行先サーバー** 。 Windows Server 2016 と Windows Server 2012 R2 も同様に動作しますが、約50% 低速です。
 - 移行を管理するために Windows Server 2019 を実行する**orchestrator サーバー**  <br>少数のサーバーのみを移行していて、いずれかのサーバーで Windows Server 2019 を実行している場合は、そのサーバーを orchestrator として使用できます。 より多くのサーバーを移行する場合は、別の orchestrator サーバーを使用することをお勧めします。
 - 記憶域移行サービスのユーザーインターフェイスを実行する**PC またはサーバー [Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md)** 。 PowerShell を使用して移行を管理する場合を除きます。 Windows 管理センターと Windows Server 2019 のバージョンの両方が、バージョン1809以降である必要があります。
 
@@ -96,7 +96,7 @@ Orchestrator とセットアップ先のコンピューターには、少なく�
 - Windows Server 2016 Essentials
 - Windows Server 2019 Essentials
 
-メモ:Windows Small Business Server と Windows Server Essentials はドメインコントローラーです。 記憶域移行サービスは、ドメインコントローラーからはまだ切り取れませんが、それらのファイルからファイルをインベントリして転送することはできます。   
+注: Windows Small Business Server と Windows Server Essentials はドメインコントローラーです。 記憶域移行サービスは、ドメインコントローラーからはまだ切り取れませんが、それらのファイルからファイルをインベントリして転送することはできます。   
 
 Orchestrator が Windows Server バージョン1903以降を実行している場合、または orchestrator で[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)がインストールされている以前のバージョンの windows server が実行されている場合は、次の追加のソースの種類を移行できます。
 
