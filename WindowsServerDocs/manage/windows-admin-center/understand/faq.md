@@ -8,16 +8,16 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 06/07/2019
 ms.prod: windows-server
-ms.openlocfilehash: 74d886246eb9d27264c0b8653f90f2eed86b891c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e443616b4fcae3e84cfd00b3c20a4ebbf72749ea
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406823"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567119"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center についてよく寄せられる質問
 
-> 適用対象:Windows Admin Center、Windows Admin Center Preview
+> 適用先:Windows Admin Center、Windows Admin Center Preview
 
 ここでは、Windows Admin Center についてよく寄せられる質問に対する回答を示します。
 
@@ -27,7 +27,7 @@ Windows Admin Center は、IT 管理者が Windows Server および Windows 10 �
 
 ## <a name="can-i-use-windows-admin-center-in-production-environments"></a>運用環境で Windows Admin Center を使用できますか。
 
-[はい]。 Windows Admin Center は一般公開されており、広範な使用法および運用環境の展開で利用可能です。 現在のプラットフォーム機能と主要なツールは Microsoft の標準リリースの基準と、ユーザビリティ、信頼性、パフォーマンス、アクセシビリティ、セキュリティ、導入の品質基準を満たしています。
+対応 Windows Admin Center は一般公開されており、広範な使用法および運用環境の展開で利用可能です。 現在のプラットフォーム機能と主要なツールは Microsoft の標準リリースの基準と、ユーザビリティ、信頼性、パフォーマンス、アクセシビリティ、セキュリティ、導入の品質基準を満たしています。
 
 [!INCLUDE [support-policy](../includes/support-policy.md)]
 
@@ -74,7 +74,7 @@ Active Directory、DHCP、DNS、IIS などの役割には、Windows Admin Center
 
 ## <a name="can-windows-admin-center-be-used-to-manage-the-free-microsoft-hyper-v-server"></a>無料の Microsoft Hyper-V Server を管理するために Windows Admin Center を使用することはできますか。
 
-[はい]。 Windows Admin Center を使用して、Microsoft Hyper-V Server 2016 および Microsoft Hyper-V Server 2012 R2 を管理することができます。
+対応 Windows Admin Center を使用して、Microsoft Hyper-V Server 2016 および Microsoft Hyper-V Server 2012 R2 を管理することができます。
 
 ## <a name="can-i-deploy-windows-admin-center-on-a-windows-10-computer"></a>Windows 10 のコンピューターで Windows Admin Center を展開することができますか。
 
@@ -127,7 +127,7 @@ Windows Admin Center には使用可能な SDK が含まれているため、す
 
 ## <a name="can-i-manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Windows Admin Center でハイパーコンバージド インフラストラクチャを管理することができますか。
 
-[はい]。 Windows Admin Center は、Windows Server 2016 または Windows Server 2019 を実行しているハイパーコンバージド クラスターの管理をサポートしています。 Windows Admin Center のハイパーコンバージド クラスター マネージャー ソリューションは以前はプレビューでしたが現在は**一般公開**され、いくつかの新機能がプレビューになっています。 詳細については、[ハイパーコンバージド インフラストラクチャの管理について確認してください](../use/manage-hyper-converged.md)。
+対応 Windows Admin Center は、Windows Server 2016 または Windows Server 2019 を実行しているハイパーコンバージド クラスターの管理をサポートしています。 Windows Admin Center のハイパーコンバージド クラスター マネージャー ソリューションは以前はプレビューでしたが現在は**一般公開**され、いくつかの新機能がプレビューになっています。 詳細については、[ハイパーコンバージド インフラストラクチャの管理について確認してください](../use/manage-hyper-converged.md)。
 
 ## <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center に System Center は必要ですか。
 
@@ -143,7 +143,7 @@ Windows Admin Center と SCVMM は互いを補完する関係にあります。W
 
 ### <a name="windows-admin-center"></a>Windows Admin Center
 
-* 頻繁に更新できないか、または実稼働環境で使用するリリースの検証時間がさらに必要な IT 管理者には、このバージョンが適しています。 現在一般公開 (GA) されているリリースは、Windows Admin Center 1904 です。
+* 頻繁に更新できないか、または実稼働環境で使用するリリースの検証時間がさらに必要な IT 管理者には、このバージョンが適しています。 現在一般提供 (GA) されているリリースは、Windows Admin Center 1910 です。
 * [!INCLUDE [support-policy](../includes/support-policy.md)]
 * 最新のリリースは、[こちらでダウンロード](https://aka.ms/WACDownload)してください。
 

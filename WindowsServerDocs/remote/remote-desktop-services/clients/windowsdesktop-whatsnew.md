@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/24/2019
+ms.date: 10/31/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4325bd7b33c16d972cac980e17c10bacbfeffd8c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6a8e66398bc61a69250b84101a3cb66f2c8f3548
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387589"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567065"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows デスクトップ クライアントの新機能
 
@@ -31,7 +31,25 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 |ユーザー グループ |バージョン  |
 |-----------|---------|
 |パブリック     |1.2.247  |
-|Insider    |1.2.247  |
+|Insider    |1.2.428  |
+
+## <a name="updates-for-version-12428"></a>バージョン 1.2.428 の更新内容
+
+*公開日:2019 年 10 月 31 日*
+
+- 32 ビットおよび ARM64 バージョンのクライアントのプレビューが利用可能になりました。
+- クライアントでは、接続バーに対して行ったすべての変更 (その位置、サイズ、固定状態など) が保存され、これらの変更がセッション間に適用されます。
+- ゲートウェイ情報と接続状態のダイアログが更新されました。
+- Azure Active Directory トークンの有効期限が切れた後に接続しようとすると、2 つの資格情報が同時に要求される問題に対処しました。
+- Windows 7 では、サーバーで許可されていない資格情報を保存した場合に、ユーザーに資格情報の入力を求めるメッセージが正しく表示されるようになりました。
+- Azure Active Directory プロンプトが、再接続時に接続ウィンドウの前面に表示されるようになりました。
+- タスクバーにピン留めされた項目が、フィードの更新時に更新されるようになりました。
+- タッチ使用時の接続センターでのスクロールが向上しました。
+- [Resolution]\(解像度\) ドロップダウン メニューから空の行を削除しました。
+- Windows Credential Manager の不要なエントリを削除しました。
+- 全画面表示の終了時に、デスクトップ セッションが適切にサイズ変更されるようになりました。
+- スリープ モードに入った後にセッションを再開すると、RemoteApp の切断のダイアログが前景に表示されるようになりました。
+- キーボード ナビゲーションなどアクセシビリティの問題に対処しました。
 
 ## <a name="updates-for-version-12247"></a>バージョン 1.2.247 の更新内容
 

@@ -8,26 +8,26 @@ ms.author: niwashbu
 ms.date: 09/18/2019
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: e235c8013afa573712feaec75bbd1ca195c0e307
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c914a472869f9887c83733d6aab614b5676d17d7
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357000"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567134"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
-> 適用対象:Windows Admin Center、Windows Admin Center Preview
+> 適用先:Windows Admin Center、Windows Admin Center Preview
 
 **Windows Admin Center** (以前はコードネーム **Project Honolulu**) は Windows Server のインボックス管理ツールの進化形です。ローカルおよびリモート サーバー管理のすべての側面を統合する 1 つのウィンドウです。 ローカルに展開されたブラウザーベースの管理エクスペリエンスのため、インターネット接続や Azure は必要ありません。 Windows Admin Center では、インターネットに接続されていないプライベート ネットワークを含む、展開のあらゆる側面を完全に管理できます。
 
-## <a name="introduction"></a>概要
+## <a name="introduction"></a>はじめに
 
 >[!VIDEO https://www.youtube.com/embed/PcQj6ZklmK0]
 
-![Windows Admin Center インフォグラフィック](media/WAC1809Poster_thumb.PNG)
+![Windows Admin Center インフォグラフィック](media/WAC1910Poster_thumb.PNG)
 
-[PDF をダウンロード](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1809Poster.pdf)
+[PDF をダウンロード](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1910Poster.pdf)
 
 ## <a name="quick-start"></a>クイック スタート
 
@@ -53,7 +53,7 @@ ms.locfileid: "71357000"
             </ul>
         </td>
         <td style="vertical-align: top;">
-            <h3>プラン</h3>
+            <h3>計画</h3>
             <ul>
             <li><a href="plan/installation-options.md">お客様に適したインストールの種類はどれか?</a>
             <li><a href="plan/user-access-options.md">ユーザー アクセス オプション</a>
@@ -82,10 +82,11 @@ ms.locfileid: "71357000"
     </tr>
     <tr>
         <td style="vertical-align: top;">
-            <h3>使用</h3>
+            <h3>vmmblue_2</h3>
             <ul>
             <li><a href="use/get-started.md">起動と接続の追加</a>
             <li><a href="use/manage-servers.md">サーバーの管理</a>
+            <li><a href="use/deploy-hyperconverged-infrastructure.md">ハイパーコンバージド インフラストラクチャの展開</a>
             <li><a href="use/manage-hyper-converged.md">ハイパーコンバージド インフラストラクチャの管理</a>
             <li><a href="use/manage-failover-clusters.md">フェールオーバー クラスターの管理</a>
             <li><a href="use/manage-virtual-machines.md">仮想マシンの管理</a>
@@ -129,11 +130,12 @@ ms.locfileid: "71357000"
 
 次の最新の機能について確認してください。
 
+- バージョン [1910](https://aka.ms/wac1910) は、いくつかの新しい Azure ハイブリッド サービスを導入し、プレビュー段階にあった機能を GA チャネルに取り込む最新の GA リリースです。
 - バージョン [1909](https://aka.ms/wac1909) では、Azure VM 固有の接続の種類が導入され、従来のフェールオーバー クラスターと HCI クラスターの接続の種類が統合されています。
 - バージョン [1908](https://aka.ms/wac1908) では、視覚的な更新、Packetmon、FlowLog Audit、クラスター用 Azure Monitor のオンボード、および HTTPS 経由の WinRM (ポート 5986) のサポートが追加されています。
 - バージョン [1907](https://aka.ms/wac1907) では、Azure コスト見積もりのリンクを追加し、仮想マシンのインポート/エクスポートとタグ付けの機能を強化しました。
 - バージョン [1906](https://aka.ms/wac1906) ではインポート/エクスポート VM を追加しました。Azure アカウントの切り替え。Azure からの接続の追加、接続設定の実験、パフォーマンスの向上、およびパフォーマンス プロファイリング ツール。
-- バージョン 1904.1 は最新の GA リリースです。ゲートウェイ プラグインの安定性を改善するためのメンテナンスに関する更新プログラムです。
+- バージョン 1904.1 は、ゲートウェイ プラグインの安定性を改善するためのメンテナンスに関する更新プログラムでした。
 - バージョン [1904](https://aka.ms/wac1904) は、Azure ハイブリッド サービス ツールを導入し、プレビュー段階にあった機能を GA チャネルに取り込んだ GA リリースでした。
 - バージョン [1903](https://aka.ms/wac1903) では、Azure Monitor からの電子メール通知と、Active Directory から Server または PC 接続を追加する機能と、Active Directory、DHCP、および DNS を管理するための新しいツールが追加されました。
 - バージョン [1902](https://aka.ms/wac1902) では、共有接続リストと、ソフトウェア定義のネットワーク (SDN) 管理に対する改良点 (ACL、ゲートウェイ接続、および論理ネットワークを管理するための新しい SDN ツールを含む) が追加されました。
