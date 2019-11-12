@@ -30,9 +30,9 @@ ms.locfileid: "71402317"
 
 ### <a id="install-dedup-via-server-manager"></a>サーバーマネージャーを使用したデータ重複除去のインストール
 1. 役割と機能の追加ウィザードで **[サーバーの役割]** を選択し、 **[データ重複除去]** をオンにします。  
-![Install を使用してデータ重複除去をインストールする: サーバーロールからデータ重複除去を選択する @ no__t-1
+![Install を使用してデータ重複除去をインストールする: サーバーロールからデータ重複除去を選択する](media/install-dedup-via-server-manager-1.png)
 2. **[インストール]** がアクティブになるまで **[次へ]** をクリックし、 **[インストール]** をクリックします。  
-![Install を使用してデータ重複除去をインストールします。 [install @ no__t-1] をクリックします。
+![Install を使用してデータ重複除去をインストールします。](media/install-dedup-via-server-manager-2.png) をクリックします。
 
 ### <a id="install-dedup-via-powershell"></a>PowerShell を使用してデータ重複除去をインストールする
 データ重複除去をインストールするには、管理者として次の PowerShell コマンドを実行します。  
@@ -47,7 +47,7 @@ Nano Server のインストールにデータ重複除去をインストール�
     ```  
     <br />
     <strong>--または--</strong>
-    @ NO__T<br />
+    <br />
     PowerShell のリモート処理を使用して Nano Server インスタンスにリモートで接続し、DISM を使用してデータ重複除去をインストールします。  
     
     ```PowerShell
@@ -76,12 +76,12 @@ Nano Server のインストールにデータ重複除去をインストール�
 
 1. **ワークロードのデータセットに重複除去を有効にすることによるメリットがありますか。**  
     ワークロードのデータ重複除去を有効にする前に、Data Deduplication Savings Evaluation Tool (DDPEval) を使用して、ワークロードのデータセットに含まれている重複の量を調査します。 データ重複除去をインストールすると、このツールは `C:\Windows\System32\DDPEval.exe` にあります。 DDPEval では、直接接続されているボリューム (ローカル ドライブやクラスターの共有ボリュームなど) と、(マップの有無にかかわらず) ネットワーク共有の最適化の可能性を評価できます。  
-    [mailto:johndoe@mydomain.com](&nbsp;)   
+    &nbsp;   
     DDPEval.exe を実行すると、以下のような出力が返されます。  
     &nbsp;  
     `Data Deduplication Savings Evaluation Tool`  
     `Copyright 2011-2012 Microsoft Corporation.  All Rights Reserved.`    
-    [mailto:johndoe@mydomain.com](&nbsp;)   
+    &nbsp;   
     `Evaluated folder: E:\Test`     
     `Processed files: 34`  
     `Processed files size: 12.03MB`  
@@ -115,13 +115,13 @@ Nano Server のインストールにデータ重複除去をインストール�
 
 #### <a id="enable-dedup-via-server-manager"></a>サーバーマネージャーを使用したデータ重複除去の有効化
 1. サーバー マネージャーで **[ファイル サービスと記憶域サービス]** を選択します。  
-![Click File and Storage Services @ no__t
+![Click File and Storage Services](media/enable-dedup-via-server-manager-1.PNG)
 2. **[ファイル サービスと記憶域サービス]** で **[ボリューム]** をクリックします。  
-![Click ボリューム @ no__t-1
+![Click ボリューム](media/enable-dedup-via-server-manager-2.png)
 3. 目的のボリュームを右クリックして、 **[データ重複除去の構成]** を選択します。  
-![Click データ重複除去の構成] @ no__t-1
+![Click データ重複除去の構成](media/enable-dedup-via-server-manager-3.png)
 4. ドロップダウン ボックスから目的とする**使用法の種類**を選択して、 **[OK]** を選択します。  
-![Select down @ no__t-1 から目的の使用法の種類を選択します。
+![Select down から目的の使用法の種類を選択します。](media/enable-dedup-via-server-manager-4.png)
 5. 推奨ワークロードを実行している場合は、これで終了です。 他のワークロードの場合は、「[他の考慮事項](#enable-dedup-sometimes-considerations)」を参照してください。
 
 > [!Note]  
