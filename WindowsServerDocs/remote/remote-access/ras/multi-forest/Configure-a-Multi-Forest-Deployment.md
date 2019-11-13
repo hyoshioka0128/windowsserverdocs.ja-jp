@@ -21,7 +21,7 @@ ms.locfileid: "71404539"
 ---
 # <a name="configure-a-multi-forest-deployment"></a>Configure a Multi-Forest Deployment
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、いくつかの可能なシナリオでリモート アクセス マルチフォレスト展開を構成する方法について説明します。 これらのすべてのシナリオでは、DirectAccess が現在 Forest1 という名前の単一のフォレスに展開されていること、および Forest2 という名前の新しいフォレストと連携するように DirectAccess を構成していることを前提にしています。  
   
@@ -73,7 +73,7 @@ ms.locfileid: "71404539"
   
 -   アカウントフォレスト-トポロジ内の他のすべてのフォレスト。  
   
-この手順には、PowerShell スクリプトの PKISync.ps1 が必要です。 「@No__t-0AD CS:フォレスト間の証明書の登録 @ no__t-0 の Pkisync.ps1 スクリプト。  
+この手順には、PowerShell スクリプトの PKISync.ps1 が必要です。 「 [AD CS:PKISync.ps1 Script for Cross-forest Certificate Enrollment (AD CS: フォレスト間証明書登録のための PKISync.ps1 スクリプト)](https://technet.microsoft.com/library/ff961506.aspx)」を参照してください。  
   
 > [!NOTE]  
 > このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
@@ -100,7 +100,7 @@ ms.locfileid: "71404539"
     certutil -config <Computer-Name>\<Root-CA-Name> -ca.cert <root-ca-cert-filename.cer>  
     ```  
   
-    (ルート CA でコマンドを実行する場合は、接続情報、-config < コンピューター名 > \\ < ルート-CA 名 >) を省略できます。  
+    (ルート CA でコマンドを実行する場合は、接続情報、-config < Computer-Name >\\< ルート-CA 名 >) を省略できます。  
   
     1.  管理者特権でのコマンド プロンプトで次のコマンドを実行して、アカウント フォレスト CA で前の手順のルート CA 証明書をインポートします。  
   
@@ -108,7 +108,7 @@ ms.locfileid: "71404539"
         certutil -dspublish -f <root-ca-cert-filename.cer> RootCA  
         ```  
   
-    2.  リソースフォレストの証明書テンプレートに読み取り/書き込みアクセス許可を @no__t 0Account フォレスト @ no__t @ < no__t に付与します。管理者アカウント @ no__t-3  
+    2.  リソースフォレストの証明書テンプレートに、\<アカウントフォレスト\>\\< 管理者アカウント\>への読み取り/書き込みアクセス許可を付与します。  
   
     3.  管理者特権でのコマンド プロンプトで次のコマンドを実行して、すべてのリソース フォレストのエンタープライズ CA 証明書を抽出します。  
   
@@ -116,7 +116,7 @@ ms.locfileid: "71404539"
         certutil -config <Computer-Name>\<Enterprise-CA-Name> -ca.cert <enterprise-ca-cert-filename.cer>  
         ```  
   
-        (ルート CA でコマンドを実行する場合は、接続情報、-config < コンピューター名 > \\ < ルート-CA 名 >) を省略できます。  
+        (ルート CA でコマンドを実行する場合は、接続情報、-config < Computer-Name >\\< ルート-CA 名 >) を省略できます。  
   
     4.  管理者特権でのコマンド プロンプトで次のコマンドを実行して、アカウント フォレスト CA で前の手順のエンタープライズ CA 証明書をインポートします。  
   

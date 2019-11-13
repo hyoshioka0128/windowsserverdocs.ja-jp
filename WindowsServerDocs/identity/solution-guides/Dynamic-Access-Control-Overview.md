@@ -18,7 +18,7 @@ ms.locfileid: "71357510"
 ---
 # <a name="dynamic-access-control-overview"></a>ダイナミック アクセス制御の概要
 
->適用先:Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2012 R2、Windows Server 2012
 
 この IT プロフェッショナル向けのトピックでは、Windows Server 2012 と Windows 8 で導入されたダイナミック アクセス制御とそれに関連する要素の概要について説明します。  
   
@@ -92,7 +92,7 @@ ms.locfileid: "71357510"
 ### <a name="support-in-active-directory-to-store-user-and-device-claims-resource-properties-and-central-access-policy-objects"></a>Active Directory における、ユーザーの信頼性情報、デバイスの信頼性情報、リソース プロパティ、集約型アクセス ポリシー オブジェクトなどの保存のサポート。  
   
 ### <a name="support-for-using-group-policy-to-deploy-central-access-policy-objects"></a>グループ ポリシーによる集約型アクセス ポリシー オブジェクトの展開のサポート。  
-次のグループポリシー設定を使用すると、集約型アクセスポリシーオブジェクトを組織内のファイルサーバーに展開できます。**Computer Configuration\Policies\ Settings\File System\Central アクセスポリシー**。  
+**[コンピューターの構成]、[ポリシー]、[Windows 設定]、[セキュリティの設定]、[ファイル システム]、[集約型アクセス ポリシー]** の順にアクセスした場所にあるグループ ポリシー設定を使用すると、集約型アクセス ポリシー オブジェクトを組織内のファイル サーバーに展開できます。  
   
 ### <a name="support-for-claims-based-file-authorization-and-auditing-for-file-systems-by-using-group-policy-and-global-object-access-auditing"></a>グループ ポリシーとグローバル オブジェクト アクセスの監査による、ファイル システムを対象にした信頼性情報ベースのファイル承認/監査のサポート。  
 提案されたアクセス許可を使用して集約型アクセス ポリシーの有効なアクセスを監査するには、ステージングされた集約型アクセス ポリシー監査を有効にする必要があります。 コンピューターのこの設定値は、グループ ポリシー オブジェクト (GPO) の **[セキュリティの設定]** の **[監査ポリシーの詳細な構成]** で指定します。 GPO でセキュリティ設定を構成すると、GPO をネットワーク内のコンピューターに展開できます。  
@@ -128,7 +128,7 @@ ms.locfileid: "71357510"
 Windows Server 2012 または Windows Server 2012 R2 を実行するファイル サーバーには、信頼性情報を搬送しないユーザー トークンのためにユーザーの信頼性情報を取得する必要があるかどうかを指定するグループ ポリシー設定が必要です。 この設定値は、既定で **[自動]** に指定されます。この結果、そのファイル サーバー用のユーザー信頼性情報またはデバイス信頼性情報を含む集約型ポリシーが存在する場合には、このグループ ポリシー設定が **[オン]** になります。 ファイル サーバーにユーザーの信頼性情報が入った随意 ACL が含まれる場合は、このグループ ポリシーを **[オン]** にする必要があります。これにより、サーバーは、サーバーにアクセスする際に信頼性情報を提供しないユーザーに代わって信頼性情報を要求する必要があることを認識できます。  
   
 ## <a name="additional-resource"></a>その他のリソース  
-このテクノロジに基づくソリューションの実装の詳細については、@no__t 0Dynamic Access Control を参照してください。シナリオの概要 @ no__t-0。  
+このテクノロジに基づくソリューションの実装の詳細については、「 [Dynamic Access Control: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)」を参照してください。  
   
 
 

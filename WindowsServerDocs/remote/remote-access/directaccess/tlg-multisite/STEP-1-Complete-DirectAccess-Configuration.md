@@ -21,6 +21,6 @@ ms.locfileid: "71404820"
 ---
 # <a name="step-1-complete-the-directaccess-configuration"></a>手順 1 DirectAccess の構成を完了する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-最初の手順では、@no__t 0Test ラボガイドのすべての手順を完了します。IPv4 と IPv6 が混在する DirectAccess のシングルサーバーセットアップのデモンストレーション @ no__t-0 このテストラボガイドの手順を既に完了し、テストラボのスナップショットまたはディスクイメージを保存してある場合は、スナップショットまたはイメージを復元し、次の手順から始めることができます。 
+最初の手順では、 [「テストラボガイド: 混在 IPv4 と IPv6 を使用した DirectAccess シングルサーバーセットアップのデモンストレーション](https://go.microsoft.com/fwlink/p/?LinkId=237004)」に記載されているすべての手順を完了します。 このテストラボガイドの手順を既に完了し、テストラボのスナップショットまたはディスクイメージを保存してある場合は、スナップショットまたはイメージを復元し、次の手順から始めることができます。 

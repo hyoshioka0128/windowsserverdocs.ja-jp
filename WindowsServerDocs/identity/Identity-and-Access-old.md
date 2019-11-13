@@ -19,7 +19,7 @@ ms.locfileid: "71391125"
 ---
 # <a name="identity-and-access-in-windows-server-2016"></a>Windows Server 2016 の ID およびアクセス
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 >[!TIP]
 > 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
@@ -36,7 +36,7 @@ Windows Server 2016 の AD DS で使用できるすべての新機能の概要�
 ## <a name="privileged-access-management-for-active-directory-domain-services-40ad-ds41httpstechnetmicrosoftcomlibrarydn903243aspx"></a>[Active Directory Domain Services &#40;AD DS の Privileged Access Management&#41;](https://technet.microsoft.com/library/dn903243.aspx)
 Active Directory Domain Services (AD DS) の Privileged Access Management (PAM) は、Microsoft Identity Manager (MIM) および Windows Server 2012 R2 と Windows Server 2016 に基づくソリューションです。
 
-## <a name="windows-10-for-the-enterprise-ways-to-use-devices-for-workhttpsazuremicrosoftcomdocumentationarticlesactive-directory-azureadjoin-windows10-devices-overviewrnd1"></a>[Windows 10 for enterprise:作業用デバイスの使用方法 @ no__t-0
+## <a name="windows-10-for-the-enterprise-ways-to-use-devices-for-workhttpsazuremicrosoftcomdocumentationarticlesactive-directory-azureadjoin-windows10-devices-overviewrnd1"></a>[エンタープライズ向け Windows 10: デバイスを仕事に使用する方法](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/?rnd=1)
 Windows 10 では、Azure Active Directory を利用できます。 Windows 10 デバイスは Azure AD に接続できるため、ユーザーは Azure AD アカウントを使って Windows にサインインしたり、Azure ID を追加してビジネス アプリやリソースにアクセスしたりすることができます。
 
 ## <a name="active-directory-domain-servicesidentityad-dsactive-directory-domain-servicesmd"></a>[Active Directory Domain Services](../identity/ad-ds/Active-Directory-Domain-Services.md)

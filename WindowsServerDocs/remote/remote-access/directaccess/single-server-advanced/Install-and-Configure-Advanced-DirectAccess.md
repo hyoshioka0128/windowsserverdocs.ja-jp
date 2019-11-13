@@ -21,19 +21,19 @@ ms.locfileid: "71388641"
 ---
 # <a name="install-and-configure-advanced-directaccess"></a>高度な DirectAccess のインストールと構成
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 この概要では、IPv4 と IPv6 を使用して windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行する単一の DirectAccess サーバーを展開するために必要な構成手順を示します。  
   
--   [ステップ 1: 詳細な DirectAccess インフラストラクチャ @ no__t を構成します。  
+-   [手順 1: 高度な DirectAccess インフラストラクチャを構成](da-adv-configure-s1-infrastructure.md)します。  
   
     このフェーズでは、ネットワークとサーバーの設定、証明書の要件、ドメイン ネーム システム (DNS) 設定、ネットワーク ロケーション サーバーの展開、DirectAccess 管理サーバー、Active Directory 設定、グループ ポリシー オブジェクト (GPO) を構成します。  
   
--   [手順 2:Advanced DirectAccess Servers @ no__t を構成します。  
+-   [手順 2: 高度な DirectAccess サーバーを構成](da-adv-configure-s2-servers.md)します。  
   
     このフェーズでは、DirectAccess クライアント コンピューター、サーバー設定、インフラストラクチャ サーバー、アプリケーション サーバーを構成します。  
   
--   [手順 3:高度な DirectAccess 展開 @ no__t-0 を確認します。  
+-   [手順 3: 高度な DirectAccess 展開を確認](da-adv-configure-s3-verify.md)します。  
   
     この手順では、展開を確認する手順について説明します。  
   

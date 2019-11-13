@@ -21,7 +21,7 @@ ms.locfileid: "71401906"
 ---
 # <a name="ip-address-management-ipam"></a>IP アドレス管理 (IPAM)
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 IP アドレス管理 (IPAM) は、さまざまなユーザーエクスペリエンスを備えた、IP アドレスインフラストラクチャのエンドツーエンドの計画、展開、管理、および監視を可能にするツールの統合スイートです。 IPAM では、ネットワーク上の IP アドレス インフラストラクチャ サーバーとドメイン名システム (DNS) サーバーを自動で検出し、1 つのインターフェイスでこれらのサーバーを管理できます。  
   
@@ -31,4 +31,4 @@ IP アドレス管理 (IPAM) は、さまざまなユーザーエクスペリエ
 > -   [IPAM の新機能](../../technologies/ipam/What-s-New-in-IPAM.md)  
 > -   [IPAM の管理](../../technologies/ipam/Manage-IPAM.md)  
 > -   [Windows PowerShell の IP アドレス管理 (IPAM) サーバーコマンドレット](https://technet.microsoft.com/library/jj553807.aspx)  
-> -   ビデオ:[Windows Server 2016:IPAM @ no__t での DNS 管理  
+> -   ビデオ: [Windows Server 2016: IPAM での DNS 管理](https://channel9.msdn.com/Blogs/windowsserver/Windows-Server-2016-DNS-management-in-IPAM)  

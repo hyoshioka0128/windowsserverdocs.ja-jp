@@ -20,12 +20,12 @@ ms.locfileid: "71404316"
 ---
 # <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>手順 7.4. 条件付きアクセスルート証明書をオンプレミスの AD にデプロイする
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
 このステップでは、オンプレミスの AD への VPN 認証用の信頼されたルート証明書として、条件付きアクセスルート証明書をデプロイします。
 
-- [**先の：** 手順 7.3. 条件付きアクセス ポリシーを構成する](vpn-config-conditional-access-policy.md)
-- [**次に：** 手順 7.5. Windows 10 デバイスに OMA-DM ベースの VPNv2 プロファイルを作成する](vpn-create-oma-dm-based-vpnv2-profiles.md)
+- [**前へ:** 手順 7.3.条件付きアクセスポリシーを構成する](vpn-config-conditional-access-policy.md)
+- [**次のようになります。** 手順 7.5.Windows 10 デバイスに OMA-URI ベースの VPNv2 プロファイルを作成する](vpn-create-oma-dm-based-vpnv2-profiles.md)
 
 1. **[VPN 接続]** ページで、 **[証明書のダウンロード]** を選択します。
 
@@ -39,8 +39,8 @@ ms.locfileid: "71404316"
 
    | コマンド | 説明 |
    | --- | --- |
-   | `certutil -dspublish -f VpnCert.cer RootCA` | **Cn = AIA**および**Cn = 証明機関**のコンテナーに2つの**microsoft vpn ルート CA gen 1**コンテナーを作成し、各ルート証明書を microsoft vpn ルートの_cacertificate を_属性の値として発行します。 **CA gen 1**コンテナー。 |
-   | `certutil -dspublish -f VpnCert.cer NTAuthCA` | Cn = **AIA**および**Cn = 証明機関**コンテナーの下に1つの**cn = ntauthcertificates**コンテナーを作成し、各ルート証明書を cn = の_cacertificate を_属性の値として発行します。 **NTAuthCertificates**コンテナー。 |
+   | `certutil -dspublish -f VpnCert.cer RootCA` | **Cn = AIA**および**Cn = 証明機関**のコンテナーの下に2つの**microsoft vpn ルート ca gen 1**コンテナーを作成し、各ルート証明書を**Microsoft Vpn ルート CA gen 1**コンテナーの_cacertificate を_属性の値として発行します。 |
+   | `certutil -dspublish -f VpnCert.cer NTAuthCA` | Cn = **AIA**および**Cn = 証明機関**コンテナーの下に1つの**cn = ntauthcertificates**コンテナーを作成し、各ルート証明書を**Cn = ntauthcertificates**コンテナーの_cacertificate を_属性の値として発行します。 |
    | `gpupdate /force` | Windows サーバーとクライアントコンピューターにルート証明書を追加します。 |
 
 3. ルート証明書がエンタープライズ NTauth ストアに存在し、信頼済みとして表示されていることを確認します。
@@ -57,6 +57,6 @@ ms.locfileid: "71404316"
       - AIA コンテナー
       - 証明機関コンテナー
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-[手順 7.5.OMA-URI ベースの VPNv2 プロファイルを Windows 10 デバイスに作成する @ no__t-0:この手順では、Intune を使用して OMA-URI ベースの VPNv2 プロファイルを作成し、VPN デバイス構成ポリシーを展開することができます。 VPNv2 プロファイルを作成するために SCCM または PowerShell スクリプトを使用する場合、詳細については、 [VPNV2 CSP 設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)を参照してください。
+[手順 7.5.OMA-URI ベースの VPNv2 プロファイルを Windows 10 デバイスに作成](vpn-create-oma-dm-based-vpnv2-profiles.md)する: この手順では、Intune を使用して oma-uri ベースの VPNv2 プロファイルを作成し、VPN デバイス構成ポリシーを展開することができます。 VPNv2 プロファイルを作成するために SCCM または PowerShell スクリプトを使用する場合、詳細については、 [VPNV2 CSP 設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)を参照してください。

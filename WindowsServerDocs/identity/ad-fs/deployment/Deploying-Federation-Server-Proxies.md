@@ -18,7 +18,7 @@ ms.locfileid: "71408401"
 ---
 # <a name="deploying-federation-server-proxies"></a>フェデレーション サーバー プロキシの展開
 
-Active Directory フェデレーションサービス (AD FS) @no__t 0AD FS @ no__t-1 でフェデレーションサーバープロキシを展開するには、[ チェックリストの各タスクを実行します。フェデレーションサーバープロキシのセットアップ @ no__t-0  
+Active Directory フェデレーションサービス (AD FS) \(AD FS\)でフェデレーションサーバープロキシを展開するには、「[チェックリスト: フェデレーションサーバープロキシの](Checklist--Setting-Up-a-Federation-Server-Proxy.md)セットアップ」の各タスクを実行します。  
   
 > [!NOTE]  
 > このチェックリストを使用する場合は、まず、サーバーの構成手順を開始する前に、 [Windows server 2012 の AD FS 設計ガイド](https://technet.microsoft.com/library/dd807036.aspx)の「フェデレーションサーバープロキシの計画に関するガイダンス」を参照することをお勧めします。 このチェックリストに従うことで、フェデレーションサーバープロキシの設計と展開のプロセスについて理解を深めることができます。  

@@ -18,7 +18,7 @@ ms.locfileid: "71390083"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>LDAP サーバー Cookie の処理方法
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 LDAP では、一部のクエリによって膨大な結果セットが返されます。 このようなクエリにより、Windows Server にいくつかの問題が発生します。  
   
@@ -48,15 +48,15 @@ Windows Server はクライアントに Cookie を返し、Cookie に関連す�
 ## <a name="how-the-cookie-pool-is-managed"></a>Cookie プールの管理方法  
 当然のことながら、LDAP サーバーは一度に複数のクライアントにサービスを提供し、一度に複数のクライアントが、サーバーの Cookie キャッシュを使用する必要のあるクエリを起動できます。そのため、Windows Server の実装では、Cookie プールの使用状況が追跡され、制限が適用されるため、Cookie プールで大量のリソースが消費されることはありません。 制限は、LDAP ポリシーの次の設定を使用して管理者が設定できます。 既定値および説明は次のとおりです。  
   
-**MinResultSets:4 @ no__t-0  
+**MinResultSets: 4**  
   
 サーバーの Cookie キャッシュ内のエントリが MinResultSets よりも少ない場合、LDAP サーバーは、後述の最大プール サイズを確認することはありません。  
   
-**MaxResultSetSize:262144バイト @ no__t-0  
+**MaxResultSetSize: 262、144 バイト**  
   
 サーバー上の Cookie キャッシュの合計サイズが MaxResultSetSize の最大バイト数を超えてはいけません。 超える場合は、プールが MaxResultSetSize のバイト数より小さくなるか、プール内の Cookie が MinResultSets より少なくなるまで、最も古い Cookie から削除されます。 つまり、既定の設定を使用する場合、格納されている Cookie が 3 つしかない場合、LDAP サーバーは 450 KB のプールを問題ないと見なすことを意味しています。  
   
-**Maxresultセット Perconn:10 @ no__t-0  
+**MaxResultSetsPerConn: 10**  
   
 LDAP サーバーは、プール内の 1 つの LDAP 接続に対して、MaxResultSetsPerConn よりも少ない数の Cookie を許可します。  
   

@@ -46,14 +46,14 @@ Azure サブスクリプションをお持ちでない場合は、開始する�
 
 次のスクリプトは、Azure で新しい Active Directory フォレストのドメインコントローラーを構築するために、2つの Windows Server 2019 Vm の構築プロセスを自動化します。 管理者は、必要に応じて以下の変数を変更し、1つの操作として完了することができます。 このスクリプトは、必要なリソースグループ、ネットワークセキュリティグループ、リモートデスクトップ、仮想ネットワークとサブネット、および可用性グループを作成します。 各 Vm は、20 GB のデータディスクを使用して構築され、AD DS をインストールするためにキャッシュが無効になります。
 
-次のスクリプトは、Azure portal から直接実行できます。 CLI をローカルにインストールして使用することを選択した場合、このクイックスタートでは Azure CLI バージョン2.0.4 以降を実行している必要があります。 を`az --version`実行してバージョンを確認します。 をインストールまたはアップグレードする必要がある場合は、「 [install Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)」を参照してください。
+次のスクリプトは、Azure portal から直接実行できます。 CLI をローカルにインストールして使用することを選択した場合、このクイックスタートでは Azure CLI バージョン2.0.4 以降を実行している必要があります。 `az --version` を実行してバージョンを確認します。 をインストールまたはアップグレードする必要がある場合は、「 [install Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)」を参照してください。
 
 | 変数名 | 目的 |
 | :---: | :--- |
 | AdminUsername | ローカル管理者として各 VM で構成されるユーザー名。 |
 | AdminPassword | 各 VM でローカル管理者のパスワードとして構成されるクリアテキストのパスワード。 |
 | ResourceGroupName | リソースグループに使用する名前。 既存の名前を複製することはできません。 |
-| Location | デプロイ先となる Azure の場所の名前。 @No__t-0 を使用して、現在のサブスクリプションでサポートされているリージョンを一覧表示します。 |
+| Location | デプロイ先となる Azure の場所の名前。 `az account list-locations`を使用して、現在のサブスクリプションでサポートされているリージョンを一覧表示します。 |
 | VNetName | Azure 仮想ネットワークに割り当てる名前は、既存の名前と重複させることはできません。 |
 | VNetAddress | Azure ネットワークに使用する IP スコープ。 既存の範囲を複製することはできません。 |
 | SubnetName | IP サブネットを割り当てる名前。 既存の名前を複製することはできません。 |
@@ -159,7 +159,8 @@ az vm create \
 
 Azure で新しいドメインコントローラーを昇格した後、仮想ネットワークのプライマリおよびセカンダリ DNS サーバーに設定する必要があります。オンプレミスの DNS サーバーは、3番目以降に降格されます。 DNS サーバーの変更の詳細については、「[仮想ネットワークの作成、変更、削除](https://docs.microsoft.com/azure/virtual-network/manage-virtual-network#change-dns-servers)」を参照してください。
 
-オンプレミスネットワークを Azure に拡張する方法の詳細については、@no__t 「サイト間 VPN 接続を作成する no__t-1」を参照してください。
+オンプレミスネットワークを Azure に拡張する方法については、「[サイト間 VPN 接続を作成](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal
+)する」を参照してください。
 
 ## <a name="configure-the-vms-and-install-active-directory-domain-services"></a>Vm を構成してインストール Active Directory Domain Services
 
@@ -171,7 +172,7 @@ Azure で新しいドメインコントローラーを昇格した後、仮想�
 
 * データディスクの初期化とフォーマットを F:
    * スタート メニューを開き、**コンピューターの管理** を参照します。
-   * **記憶域**@no__t の参照-1**ディスク管理**
+   * [**記憶域** > **ディスクの管理**] を参照します。
    * MBR としてディスクを初期化する
    * 新しいシンプルボリュームを作成してドライブ文字を割り当てる F: 必要に応じてボリュームラベルを指定できます。
 * サーバーマネージャーを使用して Active Directory Domain Services をインストールする
@@ -201,7 +202,7 @@ VM が再起動すると、使用された資格情報ではなく、この時�
 
 * データディスクの初期化とフォーマットを F:
    * スタート メニューを開き、**コンピューターの管理** を参照します。
-   * **記憶域**@no__t の参照-1**ディスク管理**
+   * [**記憶域** > **ディスクの管理**] を参照します。
    * MBR としてディスクを初期化する
    * 新しいシンプルボリュームを作成してドライブ文字を割り当てる F: 必要に応じてボリュームラベルを指定できます。
 * サーバーマネージャーを使用して Active Directory Domain Services をインストールする
@@ -248,7 +249,7 @@ Azure CLI 次のコマンドを実行します。
 az group delete --name ADonAzureVMs
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 * [Active Directory Domain Services (AD DS) の安全な仮想化](../../Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)
 * [Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-get-started-express)

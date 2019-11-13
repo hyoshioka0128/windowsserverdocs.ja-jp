@@ -17,7 +17,7 @@ ms.locfileid: "71402091"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>Windows Server の SMB 3 プロトコルを使用したファイル共有の概要
 
->適用対象:Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
+>適用対象: Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
 
 このトピックでは、Windows Server®2012、Windows Server 2012 R2、および Windows Server 2016 の SMB 3.0 機能について説明します。この機能の実際の使用方法、このバージョンの新機能または更新された機能については、以前のバージョンと比較してください。必要性.
 
@@ -49,7 +49,7 @@ Windows Server 2012 および Windows Server 2016 の SMB には、新しい SMB
 <tr class="header">
 <th><p>機能</p></th>
 <th><p>新規/更新</p></th>
-<th><p>まとめ</p></th>
+<th><p>概要</p></th>
 </tr>
 </thead>
 <tbody>
@@ -133,4 +133,4 @@ SMB ダイレクトの要件は次のとおりです。
 * [Hyper-v over SMB の展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
 * [SMB マルチチャネルを展開する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn610980(v%3dws.11)>)
 * [サーバーアプリケーション用の高速で効率的なファイルサーバーの展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831723(v%3dws.11)>)
-* [SMB:トラブルシューティングガイド @ no__t-0
+* [SMB: トラブルシューティングガイド](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn659439(v%3dws.11)>)

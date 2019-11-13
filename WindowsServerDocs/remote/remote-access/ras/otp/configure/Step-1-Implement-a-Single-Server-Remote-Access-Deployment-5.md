@@ -21,7 +21,7 @@ ms.locfileid: "71404408"
 ---
 # <a name="step-1-implement-a-single-server-remote-access-deployment"></a>手順1単一サーバーのリモートアクセスの展開を実装する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 OTP を使用してリモートアクセスを展開する最初の構成手順は、高度な単一サーバー展開を実装し、RADIUS サーバーの追加を計画することです。  
   
@@ -30,7 +30,7 @@ OTP を使用したリモートアクセスを構成する前に、「[詳細設
   
 ## <a name="BKMK_Links"></a>関連項目  
   
--   [手順 2:RADIUS サーバーを構成する @ no__t-0  
+-   [手順 2: RADIUS サーバーを構成する](Step-2-Configure-the-RADIUS-Server.md)  
   
 
 

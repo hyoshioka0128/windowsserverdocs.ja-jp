@@ -40,7 +40,7 @@ ms.locfileid: "71395332"
   
 ## <a name="to-limit-web-access-on-all-stations"></a>すべてのステーションの Web アクセスを制限するには  
   
-1. MultiPoint ダッシュボードの **Web 制限** タブで、開始 ドロップ\-ダウンメニューをクリックし、**すべてのデスクトップで Web アクセスを制限**する をクリックします。  
+1. MultiPoint ダッシュボードの **[Web 制限]** タブで、開始 ドロップダウンメニューをクリックし、 **[すべてのデスクトップで Web アクセスを制限]** する をクリックし\-ます。  
   
    **[Web 制限の構成]** ページが開きます。 ユーザーがアクセスできるサイトが一覧表示されます。 次のいずれかの操作を行います。  
   
@@ -49,9 +49,9 @@ ms.locfileid: "71395332"
    ユーザーがアクセスできないようにするサイトを追加するには、 **[これらのサイトのみを許可]** する をクリックし、ユーザーにアクセスしない web アドレスを入力して、 **[追加]** をクリックします。  
   
    > [!NOTE]
-   > たとえば、「Contoso.com」と入力すると、[www.contoso.com](www.contoso.com) に対して相対的なサイトが許可または ブロックされます (たとえば、www\.newpage.contoso.com)。 「Contoso」と入力すると、すべての Contoso 関連サイト (contoso.com、contoso.uk など) が許可または制限されます。  
+   > たとえば、「Contoso.com」と入力すると、www.contoso.com に対して相対的なサイトが許可または ブロックされます (たとえば、www\.newpage.contoso.com)。 「Contoso」と入力すると、すべての Contoso 関連サイト (contoso.com、contoso.uk など) が許可または制限されます。  
   
 3. 許可または禁止するサイトの一覧から Web アドレスを削除するには、Web アドレスを選択し、 **[削除]** をクリックします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ユーザーデスクトップの管理](manage-user-desktops-using-multipoint-dashboard.md)  

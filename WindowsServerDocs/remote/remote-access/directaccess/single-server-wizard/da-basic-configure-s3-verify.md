@@ -21,7 +21,7 @@ ms.locfileid: "71388529"
 ---
 # <a name="step-3-verify-deployments"></a>手順 3 の展開を確認します
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、基本的な DirectAccess 展開が正しく構成されていることを確認する方法について説明します。  
   
@@ -39,7 +39,7 @@ ms.locfileid: "71388529"
   
 ## <a name="BKMK_Links"></a>前の手順  
   
--   [手順 2:DirectAccess サーバーを構成する @ no__t-0  
+-   [手順 2: DirectAccess サーバーを構成する](da-basic-configure-s2-server.md)  
   
 
 

@@ -21,11 +21,11 @@ AD FS 2.0 フェデレーションサーバープロキシを Windows Server 201
   
  AD FS の構成データをエクスポートするには、次の作業を実行します。  
   
--   [ステップ 1: プロキシサービスの設定をエクスポートする @ no__t-0  
+-   [手順 1: プロキシサービスの設定をエクスポートする](#step-1-export-proxy-service-settings)  
   
--   [手順 2:Web ページのカスタマイズをバックアップする @ no__t-0  
+-   [手順 2: web ページのカスタマイズをバックアップする](#step-2-back-up-webpage-customizations)  
   
-##  <a name="step-1-export-proxy-service-settings"></a>手順 1:プロキシ サービス設定をエクスポートする  
+##  <a name="step-1-export-proxy-service-settings"></a>手順 1: プロキシ サービス設定をエクスポートする  
  フェデレーション サーバー プロキシ サービスの設定をエクスポートするには、次の手順を実行します。  
   
 ### <a name="to-export-proxy-service-settings"></a>プロキシ サービスの設定をエクスポートするには  
@@ -49,12 +49,12 @@ Windows PowerShell を開き、コマンド `PSH:>add-pssnapin “Microsoft.adfs
   
 -   HTTP プロキシのアドレスとポート (AD FS フェデレーション サーバー プロキシと AD FS フェデレーション サーバー間に HTTP プロキシがある場合)  
   
-##  <a name="step-2-back-up-webpage-customizations"></a>手順 2:Web ページのカスタマイズをバックアップする  
+##  <a name="step-2-back-up-webpage-customizations"></a>手順 2: Web ページのカスタマイズをバックアップする  
  Web ページのカスタマイズをバックアップするには、IIS で仮想パス **“/adfs/ls”** にマップされたディレクトリから AD FS プロキシ Web ページと **web.config** ファイルをコピーします。  既定では、そのファイルは **%systemdrive%\inetpub\adfs\ls** ディレクトリにあります。  
   
-## <a name="next-steps"></a>次の手順
- [AD FS 2.0 フェデレーションサーバーの移行の準備](prepare-to-migrate-ad-fs-fed-server.md)   
+## <a name="next-steps"></a>次のステップ
+ [AD FS 2.0 フェデレーションサーバー  の移行の準備](prepare-to-migrate-ad-fs-fed-server.md)  
  [AD FS 2.0 フェデレーションサーバープロキシの移行の準備](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [AD FS 2.0 フェデレーションサーバー](migrate-the-ad-fs-fed-server.md)  を移行します。  
- [AD FS 2.0 フェデレーションサーバープロキシ   を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
+ [AD FS 2.0 フェデレーションサーバー  を移行します](migrate-the-ad-fs-fed-server.md)。  
+ [AD FS 2.0 フェデレーションサーバープロキシ  を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
  [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)

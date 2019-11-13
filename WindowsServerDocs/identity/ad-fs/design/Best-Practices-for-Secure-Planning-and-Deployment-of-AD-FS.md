@@ -51,7 +51,7 @@ ms.locfileid: "71359199"
   
     2.  Scwcmd コマンドライン ツールを使用して適切な役割拡張ファイルを登録します。 下記の表で、コンピューターに構成される役割でこのツールを使用する方法の詳細を参照してください。  
   
-    3.  WindowssecurityMsscwLogs ディレクトリにある SCWRegister_log ファイルを調べて、コマンドが正常に完了したことを確認します。  
+    3.  WindowssecurityMsscwLogs ディレクトリにある SCWRegister_log .xml ファイルを調べて、コマンドが正常に完了したことを確認します。  
   
     AD FS ベースの SCW セキュリティ ポリシーを適用するフェデレーション サーバーまたはフェデレーション サーバー プロキシ コンピューターごとに、これらの手順をすべて実行する必要があります。  
   
@@ -62,14 +62,14 @@ ms.locfileid: "71359199"
     |スタンドアロン フェデレーション サーバー|Windows Internal Database|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwStandAlone.xml"`|  
     |ファームに加わったフェデレーション サーバー|Windows Internal Database|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwFarm.xml"`|  
     |ファームに加わったフェデレーション サーバー|SQL Server|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwSQLFarm.xml"`|  
-    |フェデレーション サーバー プロキシ|なし|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
+    |フェデレーション サーバー プロキシ|該当なし|`scwcmd register /kbname:ADFS2Standalone /kbfile:"WindowsADFSscwProxy.xml"`|  
   
     AD FS に使用できるデータベースの詳細については、「[AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)」を参照してください。  
   
 -   **キオスクが使用されている場合など、セキュリティが非常に重要な懸念事項となる状況でトークンリプレイ検出を使用します。**  
     トークンリプレイ検出は、フェデレーションサービスに対して行われたトークン要求の再生試行が検出され、要求が破棄されることを保証する AD FS の機能です。 トークン リプレイ検出は既定で有効になっています。 この機能は、同じトークンが複数回使用されないようにすることで、WS-Federation パッシブ プロファイルと Security Assertion Markup Language (SAML) WebSSO プロファイルの両方に対して機能します。  
   
-    フェデレーション サービスが開始されると、サービスが対応するすべてのトークンの要求のキャッシュを構築し始めます。 時間と共に、キャッシュに後続のトークンの要求が追加されると、フェデレーション サービスにおいて、トークンの要求を複数回リプレイしようとする試みをより一層検出できるようになります。 トークン リプレイ検出を無効にして、後で再度有効にする場合は、リプレイ キャッシュがコンテンツを再構築するのに十分な時間が経過するまで、フェデレーション サービスは以前に使用された可能性のあるトークンを一定期間受け入れることに留意してください。 詳細については、次を参照してください。 [、AD FS 構成データベースの役割](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)します。  
+    フェデレーション サービスが開始されると、サービスが対応するすべてのトークンの要求のキャッシュを構築し始めます。 時間と共に、キャッシュに後続のトークンの要求が追加されると、フェデレーション サービスにおいて、トークンの要求を複数回リプレイしようとする試みをより一層検出できるようになります。 トークン リプレイ検出を無効にして、後で再度有効にする場合は、リプレイ キャッシュがコンテンツを再構築するのに十分な時間が経過するまで、フェデレーション サービスは以前に使用された可能性のあるトークンを一定期間受け入れることに留意してください。 詳細については、「 [The Role of the AD FS Configuration Database](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md)」を参照してください。  
   
 -   **特にサポートされている SAML アーティファクト解決を使用する場合は、トークンの暗号化を使用します。**  
   
@@ -117,11 +117,11 @@ ms.locfileid: "71359199"
 以下のセキュリティのベストプラクティスは、これらのデータベーステクノロジを使用して AD FS の設計と展開でデータを管理する場合の Microsoft SQL Server®または Windows Internal Database (WID) の使用に固有のものです。  
   
 > [!NOTE]  
-> これらの推奨事項は SQL Server 製品のセキュリティ ガイダンスを強化するためのものであって、取って代わるものではありません。 セキュリティで保護された SQL Server のインストールを計画する方法の詳細については、「[セキュリティに関する注意事項](https://go.microsoft.com/fwlink/?LinkID=139831)」 (https://go.microsoft.com/fwlink/?LinkID=139831) ) を参照してください。  
+> これらの推奨事項は SQL Server 製品のセキュリティ ガイダンスを強化するためのものであって、取って代わるものではありません。 セキュリティで保護された SQL Server のインストールを計画する方法の詳細については、「[セキュリティに関する注意事項](https://go.microsoft.com/fwlink/?LinkID=139831)」 (https://go.microsoft.com/fwlink/?LinkID=139831)を参照してください。  
   
 -   **常に、物理的にセキュリティで保護されたネットワーク環境でファイアウォールの内側に SQL Server を展開します。**  
   
-    SQL Server のインストールを直接インターネットに公開しないでください。 データセンター内のコンピューターのみが、AD FS をサポートする SQL server インストールに接続できるようにする必要があります。 詳細については、「[セキュリティのベストプラクティスのチェックリスト](https://go.microsoft.com/fwlink/?LinkID=189229)(https://go.microsoft.com/fwlink/?LinkID=189229) 」を参照してください。  
+    SQL Server のインストールを直接インターネットに公開しないでください。 データセンター内のコンピューターのみが、AD FS をサポートする SQL server インストールに接続できるようにする必要があります。 詳細については、「[セキュリティのベストプラクティスのチェックリスト](https://go.microsoft.com/fwlink/?LinkID=189229)」 (https://go.microsoft.com/fwlink/?LinkID=189229)を参照してください。  
   
 -   **組み込みの既定のシステムサービスアカウントを使用するのではなく、サービスアカウントで SQL Server を実行します。**  
   
@@ -129,11 +129,11 @@ ms.locfileid: "71359199"
   
 -   **SQL Server の表面領域を最小化します。**  
   
-    必要な SQL Server エンドポイントのみを有効にしてください。 SQL Server では、既定で組み込みの TCP エンドポイント (削除不可) が 1 つ提供されています。 AD FS には、この TCP エンドポイントを Kerberos 認証に対して有効にする必要があります。 現状の TCP エンドポイントを確認してユーザー定義の別の TCP ポートが SQL のインストールに追加されていないか調べるには、Transact-SQL (T-SQL) セッションで "SELECT * FROM sys.tcp_endpoints" クエリ ステートメントを使用できます。 SQL Server エンドポイントの構成の詳細については、「@no__t 方法:複数の TCP ポート @ no__t-0 (https://go.microsoft.com/fwlink/?LinkID=189231) でリッスンするようにデータベースエンジンを構成します。  
+    必要な SQL Server エンドポイントのみを有効にしてください。 SQL Server では、既定で組み込みの TCP エンドポイント (削除不可) が 1 つ提供されています。 AD FS には、この TCP エンドポイントを Kerberos 認証に対して有効にする必要があります。 現状の TCP エンドポイントを確認してユーザー定義の別の TCP ポートが SQL のインストールに追加されていないか調べるには、Transact-SQL (T-SQL) セッションで "SELECT * FROM sys.tcp_endpoints" クエリ ステートメントを使用できます。 SQL Server エンドポイント構成の詳細については、「[方法: 複数の TCP ポートでリッスンするようにデータベースエンジンを構成](https://go.microsoft.com/fwlink/?LinkID=189231)する」 (https://go.microsoft.com/fwlink/?LinkID=189231)を参照してください。  
   
 -   **SQL ベースの認証を使用しないでください。**  
   
-    ネットワークでパスワードをクリア テキストとして転送したり、構成設定にパスワードを保存したりすることを避けるために、SQL Server インストールで Windows 認証のみを使用してください。 SQL Server 認証は以前の認証モードです。 SQL Server 認証の使用時に構造化照会言語 (SQL) ログイン資格証明書 (SQL ユーザー名とパスワード) を保存することは推奨されません。 詳細については、「[認証モード](https://go.microsoft.com/fwlink/?LinkID=189232)(https://go.microsoft.com/fwlink/?LinkID=189232) 」を参照してください。  
+    ネットワークでパスワードをクリア テキストとして転送したり、構成設定にパスワードを保存したりすることを避けるために、SQL Server インストールで Windows 認証のみを使用してください。 SQL Server 認証は以前の認証モードです。 SQL Server 認証の使用時に構造化照会言語 (SQL) ログイン資格証明書 (SQL ユーザー名とパスワード) を保存することは推奨されません。 詳細については、「[認証モード](https://go.microsoft.com/fwlink/?LinkID=189232)(https://go.microsoft.com/fwlink/?LinkID=189232)」を参照してください。  
   
 -   **SQL インストールで追加のチャネルセキュリティが必要であるかを慎重に評価します。**  
   
@@ -149,5 +149,5 @@ ms.locfileid: "71359199"
   
     サービスとデータの分離をより確実にするために、すべての属性ストア参照コマンドのためにストアド プロシージャを作成できます。 次に、ストアド プロシージャを実行する権限を付与するデータベースの役割を作成できます。 AD FS Windows サービスのサービス id をこのデータベースロールに割り当てます。 AD FS Windows サービスは、属性参照に使用される適切なストアドプロシージャ以外の他の SQL ステートメントを実行できないようにする必要があります。 このような方法で SQL Server データベースへのアクセスをロックダウンすることで、特権の昇格攻撃のリスクが低減されます。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

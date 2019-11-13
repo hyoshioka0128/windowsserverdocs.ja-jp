@@ -16,19 +16,19 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71368939"
 ---
-# <a name="appendix-m-document-links-and-recommended-reading"></a>付録 M:ドキュメントリンクと推奨資料
+# <a name="appendix-m-document-links-and-recommended-reading"></a>付録 M: ドキュメントのリンクと推奨資料
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
   
-## <a name="appendix-m-document-links-and-recommended-reading"></a>付録 M:ドキュメントリンクと推奨資料  
+## <a name="appendix-m-document-links-and-recommended-reading"></a>付録 M: ドキュメントのリンクと推奨資料  
   
 ### <a name="document-links"></a>ドキュメントのリンク  
 次の表に、このドキュメントのハードコピーのリーダーがこの情報にアクセスできるように、外部ドキュメントとその Url へのリンクの一覧を示します。 リンクは、ドキュメントに表示されている順序で一覧表示されます。  
   
 |||  
 |-|-|  
-|**リンク**|**ハイパーリンク**|  
+|**Links**|**ハイパーリンク**|  
 |[セキュリティ管理に関する10の不変法](https://technet.microsoft.com/library/cc722488.aspx)|[https://technet.microsoft.com/library/cc722488.aspx](https://technet.microsoft.com/library/cc722488.aspx)|  
 |[Microsoft セキュリティコンプライアンスマネージャー](https://technet.microsoft.com/library/cc677002.aspx)|[https://technet.microsoft.com/library/cc677002.aspx](https://technet.microsoft.com/library/cc677002.aspx)|  
 |[Gartner Symposium ITXPO](http://www.gartner.com/technology/symposium/orlando/)|[http://www.gartner.com/technology/symposium/orlando/](http://www.gartner.com/technology/symposium/orlando/)|  
@@ -40,7 +40,7 @@ ms.locfileid: "71368939"
 |[Microsoft サポートの記事814777](https://support.microsoft.com/kb/814777)|[https://support.microsoft.com/kb/814777](https://support.microsoft.com/kb/814777)|  
 |[Web アプリケーションセキュリティプロジェクトを開く (OWASP)](https://www.owasp.org/index.php/Main_Page)|[https://www.owasp.org/index.php/Main_Page](https://www.owasp.org/index.php/Main_Page)|  
 |[Microsoft セキュリティ開発ライフサイクル](https://www.microsoft.com/security/sdl/default.aspx)|[https://www.microsoft.com/security/sdl/default.aspx](https://www.microsoft.com/security/sdl/default.aspx)|  
-|[PtH (パススルー) 攻撃とその他の資格情報の盗難手法の緩和](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)|[https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating パススルー (PtH) 攻撃とその他の資格情報の盗難 Techniques_English](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)|  
+|[PtH (パススルー) 攻撃とその他の資格情報の盗難手法の緩和](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)|[https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating ハッシュ (PtH) 攻撃とその他の資格情報の盗難 Techniques_English](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)|  
 |[特定された敵対者と対象の攻撃](https://www.microsoft.com/download/details.aspx?id=34793)|[https://www.microsoft.com/download/details.aspx?id=34793](https://www.microsoft.com/download/details.aspx?id=34793)|  
 |[GPO を使用してビルトイン Administrator アカウントのパスワードを管理するためのソリューション](https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789)|[https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789](https://code.msdn.microsoft.com/windowsdesktop/Solution-for-management-of-ae44e789)|  
 |[Microsoft サポートの記事817433](https://support.microsoft.com/?id=817433)|[https://support.microsoft.com/?id=817433](https://support.microsoft.com/?id=817433)|  
@@ -90,7 +90,7 @@ ms.locfileid: "71368939"
 |[Retina CS 管理](http://www.wideeyesecurity.com/products.asp)|[http://www.wideeyesecurity.com/products.asp](http://www.wideeyesecurity.com/products.asp)|  
 |[Lumension](http://www.lumension.com/?rpLeadSourceId=5009&gclid=CKuai_e13rMCFal7QgodMFkAyA)|[http://www.lumension.com/?rpLeadSourceId=5009&gclid=CKuai_e13rMCFal7QgodMFkAyA](http://www.lumension.com/?rpLeadSourceId=5009&gclid=CKuai_e13rMCFal7QgodMFkAyA)|  
 |[Lumension 脆弱性管理](http://www.lumension.com/Solutions/Vulnerability-Management.aspx)|[http://www.lumension.com/Solutions/Vulnerability-Management.aspx](http://www.lumension.com/Solutions/Vulnerability-Management.aspx)|  
-|@no__t 0Threats 脅威と対策ガイド:ユーザー権利 @ no__t-0|[https://technet.microsoft.com/library/hh125917(v=ws.10).aspx](https://technet.microsoft.com/library/hh125917(v=ws.10).aspx)|  
+|[脅威と対応策ガイド: ユーザー権利](https://technet.microsoft.com/library/hh125917(v=ws.10).aspx)|[https://technet.microsoft.com/library/hh125917(v=ws.10).aspx](https://technet.microsoft.com/library/hh125917(v=ws.10).aspx)|  
 |[脅威と脆弱性の対策](https://technet.microsoft.com/library/cc755181(v=ws.10).aspx)|[https://technet.microsoft.com/library/cc755181(v=ws.10).aspx](https://technet.microsoft.com/library/cc755181(v=ws.10).aspx)|  
 |[ユーザー権限](https://technet.microsoft.com/library/dd349804(v=WS.10).aspx)|[https://technet.microsoft.com/library/dd349804(v=WS.10).aspx](https://technet.microsoft.com/library/dd349804(v=WS.10).aspx)|  
 |[信頼された呼び出し元として資格情報マネージャーにアクセスする](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_2)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_2](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_2)|  
@@ -166,7 +166,7 @@ ms.locfileid: "71368939"
 |Windows Server 2003 の[Active Directory 管理の委任に関するベストプラクティス](https://www.microsoft.com/download/details.aspx?id=21678)|[https://www.microsoft.com/en-us/download/details.aspx?id=21678](https://www.microsoft.com/download/details.aspx?id=21678)|  
 |[Microsoft サポートのライフサイクル](https://support.microsoft.com/lifecycle/)|[https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx](https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx)|  
 |[Active Directory 技術仕様](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|[https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|  
-|[: 委任されたユーザーが Windows Server 2003 ベースまたは Windows Server 2008 ベースのドメインコントローラーにコンピューターを参加させようとすると、エラーメッセージが表示されます。"アクセスが拒否されました" ](https://support.microsoft.com/kb/932455)|[https://support.microsoft.com/kb/932455](https://support.microsoft.com/kb/932455)| 
+|[Nonadministrator ユーザーが委任されている場合に、Windows Server 2003 ベースまたは Windows Server 2008 ベースのドメインコントローラーにコンピューターを参加させると、エラーメッセージ "アクセスが拒否されました"](https://support.microsoft.com/kb/932455)|[https://support.microsoft.com/kb/932455](https://support.microsoft.com/kb/932455)| 
 |[Windows Server 2008 R2 の AD DS の認証メカニズムの保証ステップバイステップガイド](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|[https://technet.microsoft.com/library/dd378897(WS.10).aspx](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|  
 |[厳密な KDC 検証](https://www.microsoft.com/download/details.aspx?id=6382)|[https://www.microsoft.com/download/details.aspx?id=6382](https://www.microsoft.com/download/details.aspx?id=6382)|  
   
@@ -189,7 +189,7 @@ ms.locfileid: "71368939"
 |Windows Server 2003 の[Active Directory 管理の委任に関するベストプラクティス](https://www.microsoft.com/download/details.aspx?id=21678)|  
 |[Microsoft サポートのライフサイクル](https://support.microsoft.com/lifecycle/)|  
 |[Active Directory 技術仕様](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)-dSHeuristics 情報|  
-|[: 委任されたユーザーが Windows Server 2003 ベースまたは Windows Server 2008 ベースのドメインコントローラーにコンピューターを参加させようとすると、エラーメッセージが表示されます。"アクセスが拒否されました" ](https://support.microsoft.com/kb/932455)|  
+|[Nonadministrator ユーザーが委任されている場合に、Windows Server 2003 ベースまたは Windows Server 2008 ベースのドメインコントローラーにコンピューターを参加させると、エラーメッセージ "アクセスが拒否されました"](https://support.microsoft.com/kb/932455)|  
 |[Active Directory インストールのセキュリティ保護に関するベストプラクティスガイド](https://go.microsoft.com/fwlink/?LinkId=140862)|  
 |[Hyper-v セキュリティガイド](https://www.microsoft.com/download/details.aspx?id=16650)|  
 |[Windows Server 2008 R2 の AD DS の認証メカニズムの保証」](https://technet.microsoft.com/library/dd378897(WS.10).aspx)を参照してください。|  

@@ -19,11 +19,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71388429"
 ---
-# <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>テスト ラボ ガイド:Windows NLB を使用するクラスターでの DirectAccess のデモンストレーション
+# <a name="test-lab-guide-demonstrate-directaccess-in-a-cluster-with-windows-nlb"></a>テスト ラボ ガイド: Windows NLB を使用するクラスターでの DirectAccess のデモンストレーション
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-リモートアクセスは、リモートユーザーが DirectAccess または RRAS VPN を使用して内部ネットワークリソースに安全にアクセスできるようにする、windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 オペレーティングシステムのサーバーの役割です。 このガイドでは、[Test Lab Guide を拡張するための詳細な手順について説明します。Directaccess のネットワーク負荷分散とクラスターの構成を示すために、IPv4 と IPv6 が混在する @ no__t を使用した DirectAccess のシングルサーバーセットアップのデモンストレーションを行います。  
+リモートアクセスは、リモートユーザーが DirectAccess または RRAS VPN を使用して内部ネットワークリソースに安全にアクセスできるようにする、windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 オペレーティングシステムのサーバーの役割です。 このガイドでは、「 [テスト ラボ ガイド: IPv4 と IPv6 の混在環境での DirectAccess 単一サーバー セットアップのデモンストレーション](https://go.microsoft.com/fwlink/p/?LinkId=237004) 」を拡張する詳しい手順について説明し、DirectAccess ネットワーク負荷分散とクラスターの構成を示します。  
   
 ## <a name="about-this-guide"></a>このガイドについて  
 このガイドでは、6 台のサーバーと 2 台のクライアント コンピューターを使うリモート アクセスを構成し、デモンストレーションを行う手順について説明します。 NLB を使うリモート アクセスのテスト ラボが完成すると、イントラネット、インターネット、ホーム ネットワークをシミュレートでき、さまざまなインターネット接続シナリオでリモート アクセス機能のデモンストレーションを行うことができます。  
@@ -34,7 +34,7 @@ ms.locfileid: "71388429"
 ## <a name="KnownIssues"></a>既知の問題  
 クラスター構成シナリオには、次の既知の問題があります。  
   
--   単一のネットワーク アダプターを使用して IPv4 のみの展開で DirectAccess を構成し、既定の DNS64 (":3333::" を含む IPv6 アドレス) がネットワーク アダプターに自動的に構成された後で、リモート アクセス管理コンソールを使用して負荷分散を有効にしようとすると、IPv6 DIP の指定を求められます。 IPv6 DIP を指定すると、 **[コミット]** をクリックした後、次のエラーで構成が失敗します。パラメーターが正しくありません。  
+-   単一のネットワーク アダプターを使用して IPv4 のみの展開で DirectAccess を構成し、既定の DNS64 (":3333::" を含む IPv6 アドレス) がネットワーク アダプターに自動的に構成された後で、リモート アクセス管理コンソールを使用して負荷分散を有効にしようとすると、IPv6 DIP の指定を求められます。 IPv6 DIP を指定すると、 **[コミット]** をクリックした後に "パラメーターが正しくありません" というエラーで構成が失敗します。  
   
     この問題の解決策は、以下のとおりです。  
   
@@ -44,7 +44,7 @@ ms.locfileid: "71388429"
   
     3.  失敗した手順まで、負荷分散の有効化を試みます。 [負荷分散の有効化] ダイアログ ボックスで、詳細領域を展開し、詳細領域内を右クリックして、 **[スクリプトのコピー]** をクリックします。  
   
-    4.  メモ帳を開き、クリップボードの内容を貼り付けます。 以下に例を示します。  
+    4.  メモ帳を開き、クリップボードの内容を貼り付けます。 次に、例を示します。  
   
         ```  
         Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress @('10.244.4.19/255.255.255.0','fdc4:29bd:abde:3333::2/128') -InternetVirtualIPAddress @('fdc4:29bd:abde:3333::1/128', '10.244.4.21/255.255.255.0') -ComputerName 'DA1.domain1.corp.contoso.com' -Verbose  
@@ -52,7 +52,7 @@ ms.locfileid: "71388429"
   
     5.  開いているリモート アクセス ダイアログ ボックスをすべて閉じ、リモート アクセス管理コンソールを閉じます。  
   
-    6.  貼り付けたテキストを編集して、IPv6 アドレスを削除します。 以下に例を示します。  
+    6.  貼り付けたテキストを編集して、IPv6 アドレスを削除します。 次に、例を示します。  
   
         ```  
         Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress @('10.244.4.19/255.255.255.0') -InternetVirtualIPAddress @('10.244.4.21/255.255.255.0') -ComputerName 'DA1.domain1.corp.contoso.com' -Verbose  

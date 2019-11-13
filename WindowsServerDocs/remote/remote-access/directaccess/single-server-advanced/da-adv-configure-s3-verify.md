@@ -21,7 +21,7 @@ ms.locfileid: "71404907"
 ---
 # <a name="step-3-verify-the-advanced-directaccess-deployment"></a>手順 3-高度な DirectAccess 展開を確認する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、DirectAccess 展開が正しく構成されていることを確認する方法について説明します。  
   
@@ -39,7 +39,7 @@ ms.locfileid: "71404907"
   
 ## <a name="BKMK_Links"></a>前の手順  
   
--   [手順 2:DirectAccess サーバーを構成する @ no__t  
+-   [手順 2: DirectAccess サーバーの構成](Step-2-Configuring-DirectAccess-Servers.md)  
   
 
 

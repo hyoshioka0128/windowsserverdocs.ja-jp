@@ -18,10 +18,10 @@ ms.locfileid: "71388142"
 ---
 # <a name="always-on-vpn-deployment-for-windows-server-and-windows-10"></a>Windows Server および Windows 10 用の VPN 展開の Always On
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**先の：** リモートアクセス @ no__t-0<br>
-- [**次に：** Always On VPN の機能について @ no__t-0
+- [**前へ:** リモートアクセス](../../../Remote-Access.md)<br>
+- [**次のようになります。** Always On VPN の機能について説明します。](../../vpn-map-da.md)
 
 Always On VPN は、リモートアクセスのための単一の統合されたソリューションを提供し、ドメインに参加している、ドメインに参加していない (ワークグループ)、または Azure AD 参加しているデバイス (個人所有のデバイスも含む) をサポートします。 Always On VPN では、接続の種類がユーザーまたはデバイス専用である必要はなく、両方の組み合わせにすることができます。 たとえば、リモート デバイス管理用のデバイス認証を有効にし、会社の内部サイトとサービスへの接続に対するユーザー認証を有効にすることができます。
 
@@ -67,7 +67,7 @@ Always On VPN は、リモートアクセスのための単一の統合された
 - リモートユーザーが Always On VPN 接続を介してアクセスできる、アプリケーションやファイルサーバーなどの追加のネットワークリソース。
 - インターネット接続、または Azure AD を使用したインターネット接続のための条件付きアクセス。 詳細については、「 [Azure Active Directory での条件付きアクセス](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)」を参照してください。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [Always On VPN の機能についての詳細情報](../../vpn-map-da.md)
 

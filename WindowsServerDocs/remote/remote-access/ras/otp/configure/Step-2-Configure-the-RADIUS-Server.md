@@ -21,14 +21,14 @@ ms.locfileid: "71367020"
 ---
 # <a name="step-2-configure-the-radius-server"></a>手順 2 RADIUS サーバーを構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 OTP サポートを使用して DirectAccess をサポートするようにリモートアクセスサーバーを構成する前に、RADIUS サーバーを構成します。  
   
 |タスク|説明|  
 |----|--------|  
-|[2.1。RADIUS ソフトウェアの配布トークンを構成する @ no__t-0|RADIUS サーバーで、ソフトウェアの配布トークンを構成します。|  
-|[2.2。RADIUS セキュリティ情報を構成する @ no__t-0|RADIUS サーバーで、使用するポートと共有シークレットを構成します。|  
+|[2.1. RADIUS ソフトウェア配布トークンを構成する](#BKMK_1.1)|RADIUS サーバーで、ソフトウェアの配布トークンを構成します。|  
+|[2.2. RADIUS セキュリティ情報を構成する](#BKMK_1.2)|RADIUS サーバーで、使用するポートと共有シークレットを構成します。|  
 |[2.3 OTP プローブ用のユーザーアカウントの追加](#BKMK_Probe)|RADIUS サーバーで、OTP プローブ用の新しいユーザーアカウントを作成します。|  
 |[2.4 Active Directory との同期](#BKMK_Active)|RADIUS サーバーで、Active Directory アカウントと同期されるユーザーアカウントを作成します。|  
 |[2.5 RADIUS 認証エージェントの構成](#BKMK_AuthAgent)|リモートアクセスサーバーを RADIUS 認証エージェントとして構成します。|  

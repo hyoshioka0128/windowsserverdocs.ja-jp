@@ -22,7 +22,7 @@ ms.locfileid: "71383210"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>サーバーマネージャーでのリモート管理の構成
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server では、サーバーマネージャーを使用してリモートサーバー上で管理タスクを実行できます。 Windows Server 2016 を実行しているサーバーでは、リモート管理が既定で有効になっています。 サーバーマネージャーを使用してサーバーをリモートで管理するには、サーバーをサーバーマネージャーサーバープールに追加します。
 
@@ -32,9 +32,9 @@ Windows Server 2016 より古い Windows Server リリースを実行してい�
 
 |オペレーティング システム|必要なソフトウェア|管理状態|
 |----------|-----------|---------|
-| Windows Server 2012 R2 または Windows Server 2012 |-   [.NET Framework 4.6](https://www.microsoft.com/download/details.aspx?id=45497)<br />-   [Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?LinkID=395058)。 Windows Management Framework 5.0 ダウンロードパッケージは、Windows Server 2012 R2、Windows Server 2012、および Windows Server 2008 R2 の Windows Management Instrumentation (WMI) プロバイダーを更新します。 更新された WMI プロバイダーは、管理対象のサーバーにインストールされている役割と機能に関する情報を収集するサーバー マネージャーを使用できます。 更新が適用されるまで、Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 を実行しているサーバーの管理状態は、 **[アクセス不可]** になります。<br />-パフォーマンスの更新プログラムに関連付けられている [サポート技術情報の記事 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487) は Windows Server 2012 R2 を実行しているサーバーまたは Windows Server 2012 では必要なくなりました。||
-| Windows Server 2008 R2 |-   [.NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)<br />-   [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)。 Windows Management Framework 4.0 ダウンロードパッケージは、Windows Server 2008 R2 の Windows Management Instrumentation (WMI) プロバイダーを更新します。 更新された WMI プロバイダーは、管理対象のサーバーにインストールされている役割と機能に関する情報を収集するサーバー マネージャーを使用できます。 更新が適用されるまで、Windows Server 2008 R2 を実行しているサーバーの管理状態は、 **[アクセス不可]** になります。<br />-[サポート技術情報の記事 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)に関連付けられているパフォーマンスの更新プログラムを使用すると、Windows Server 2008 R2 からパフォーマンスデータを収集サーバーマネージャーことができます。||
-| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />-   [Windows Management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019) Windows management framework 3.0 ダウンロードパッケージは、windows Server 2008 で WINDOWS MANAGEMENT INSTRUMENTATION (WMI) プロバイダーを更新します。 更新された WMI プロバイダーは、管理対象のサーバーにインストールされている役割と機能に関する情報を収集するサーバー マネージャーを使用できます。 更新が適用されるまで、Windows Server 2008 を実行しているサーバーの管理状態は、[アクセス不可] になります。以前のバージョンでは、 **Windows Management Framework 3.0 が実行**されます。<br />-パフォーマンスの更新プログラムに関連付けられている [サポート技術情報の記事 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487) Server manager で Windows Server 2008 からパフォーマンス データを収集します。||
+| Windows Server 2012 R2 または Windows Server 2012 |-   [.NET Framework 4.6](https://www.microsoft.com/download/details.aspx?id=45497)<br />[Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?LinkID=395058)を -   します。 Windows Management Framework 5.0 ダウンロードパッケージは、Windows Server 2012 R2、Windows Server 2012、および Windows Server 2008 R2 の Windows Management Instrumentation (WMI) プロバイダーを更新します。 更新された WMI プロバイダーは、管理対象のサーバーにインストールされている役割と機能に関する情報を収集するサーバー マネージャーを使用できます。 更新が適用されるまで、Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 を実行しているサーバーの管理状態は、 **[アクセス不可]** になります。<br />-パフォーマンスの更新プログラムに関連付けられている [サポート技術情報の記事 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487) は Windows Server 2012 R2 を実行しているサーバーまたは Windows Server 2012 では必要なくなりました。||
+| Windows Server 2008 R2 |-   [.NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)<br />[Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)を -   します。 Windows Management Framework 4.0 ダウンロードパッケージは、Windows Server 2008 R2 の Windows Management Instrumentation (WMI) プロバイダーを更新します。 更新された WMI プロバイダーは、管理対象のサーバーにインストールされている役割と機能に関する情報を収集するサーバー マネージャーを使用できます。 更新が適用されるまで、Windows Server 2008 R2 を実行しているサーバーの管理状態は、 **[アクセス不可]** になります。<br />-[サポート技術情報の記事 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487)に関連付けられているパフォーマンスの更新プログラムを使用すると、Windows Server 2008 R2 からパフォーマンスデータを収集サーバーマネージャーことができます。||
+| Windows Server 2008 |-   [.NET Framework 4](https://www.microsoft.com/download/en/details.aspx?id=17718)<br />windows [Management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019) -   Windows management framework 3.0 ダウンロードパッケージは、windows Server 2008 で WINDOWS MANAGEMENT INSTRUMENTATION (WMI) プロバイダーを更新します。 更新された WMI プロバイダーは、管理対象のサーバーにインストールされている役割と機能に関する情報を収集するサーバー マネージャーを使用できます。 更新が適用されるまで、Windows Server 2008 を実行しているサーバーの管理状態は、[アクセス不可] になります。以前のバージョンでは、 **Windows Management Framework 3.0 が実行**されます。<br />-パフォーマンスの更新プログラムに関連付けられている [サポート技術情報の記事 2682011](https://go.microsoft.com/fwlink/p/?LinkID=245487) Server manager で Windows Server 2008 からパフォーマンス データを収集します。||
 
 ワークグループ内のサーバーを追加して管理する方法、またはサーバーマネージャーを実行しているワークグループコンピューターからリモートサーバーを管理する方法の詳細については、「[サーバーマネージャーへのサーバーの追加](add-servers-to-server-manager.md)」を参照してください。
 
@@ -43,7 +43,7 @@ Windows Server 2016 では、リモート管理が既定で有効になってい
 
 リモート管理が有効になっている場合でも、ビルトイン Administrator アカウント以外のローカル管理者アカウントには、サーバーをリモートで管理するための権限がないことがあります。 リモートユーザーアカウント制御 (UAC) の**LocalAccountTokenFilterPolicy**レジストリ設定を構成し、ビルトイン administrator アカウント以外の Administrators グループのローカルアカウントでサーバーをリモートで管理できるようにする必要があります。
 
-Windows Server 2016 では、サーバーマネージャーはリモート通信用に Windows リモート管理 (WinRM) と分散コンポーネントオブジェクトモデル (DCOM) に依存しています。 **[リモート管理の構成]** ダイアログボックスで制御される設定は、リモート通信に WinRM を使用するサーバーマネージャーおよび Windows PowerShell の一部にのみ影響します。 これらは、リモート通信に DCOM を使用するサーバーマネージャーの一部には影響しません。 たとえば、サーバーマネージャーは、windows server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行しているリモートサーバーとの通信に WinRM を使用しますが、Windows Server 2008 および Windows Server 2008 R2 を実行しているサーバーとの通信には DCOM を使用します。ただし、 [Windows Management framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881)または[windows management framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019)の更新プログラムは適用されていません。 Microsoft 管理コンソール (mmc) およびその他のレガシ管理ツールは、DCOM を使用します。 これらの設定を変更する方法の詳細については、このトピックの「 [DCOM 経由で mmc またはその他のツールのリモート管理を構成するには」を](#to-configure-mmc-or-other-tool-remote-management-over-dcom)参照してください。
+Windows Server 2016 では、サーバーマネージャーはリモート通信用に Windows リモート管理 (WinRM) と分散コンポーネントオブジェクトモデル (DCOM) に依存しています。 **[リモート管理の構成]** ダイアログボックスで制御される設定は、リモート通信に WinRM を使用するサーバーマネージャーおよび Windows PowerShell の一部にのみ影響します。 これらは、リモート通信に DCOM を使用するサーバーマネージャーの一部には影響しません。 たとえば、サーバーマネージャーは、windows server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行しているリモートサーバーとの通信には WinRM を使用しますが、windows Server 2008[および Windows server](https://go.microsoft.com/fwlink/p/?LinkID=229019) 2008 r2 を[実行して](https://go.microsoft.com/fwlink/?LinkId=293881)いるサーバーと通信するために DCOM を使用します。 Microsoft 管理コンソール (mmc) およびその他のレガシ管理ツールは、DCOM を使用します。 これらの設定を変更する方法の詳細については、このトピックの「 [DCOM 経由で mmc またはその他のツールのリモート管理を構成するには」を](#to-configure-mmc-or-other-tool-remote-management-over-dcom)参照してください。
 
 > [!NOTE]
 > このセクションの手順は、Windows Server を実行しているコンピューターでのみ実行することができます。 これらの手順を使用して、Windows 10 を実行しているコンピューターのリモート管理を有効または無効にすることはできません。これは、サーバーマネージャーを使用してクライアントオペレーティングシステムを管理できないためです。
@@ -159,14 +159,14 @@ Windows Server 2016 では、サーバーマネージャーはリモート通信
 
 ### <a name="to-disable-remote-management-by-using-an-answer-file-during-unattended-installation"></a>応答ファイルを使用して無人インストール中にリモート管理を無効にするには
 
-1.  windows システムイメージマネージャー (Windows SIM) を使用して、Windows Server 2016 インストール用の無人インストール応答ファイルを作成します。 応答ファイルを作成して Windows SIM を使用する方法の詳細については、「 [Windows システムイメージマネージャーとは](https://technet.microsoft.com/library/cc766347.aspx)」および「[ ステップバイステップ:IT プロフェッショナルのための基本的な Windows 展開 @ no__t-0。
+1.  windows システムイメージマネージャー (Windows SIM) を使用して、Windows Server 2016 インストール用の無人インストール応答ファイルを作成します。 応答ファイルを作成する方法および Windows SIM を使用する方法の詳細については、「 [Windows システム イメージ マネージャーとは](https://technet.microsoft.com/library/cc766347.aspx) 」および「 [ステップ バイ ステップ ガイド: IT プロ用 Windows の基本展開](https://technet.microsoft.com/library/dd349348.aspx)」を参照してください。
 
 2.  応答ファイルで、設定**Microsoft-Windows-Web-Services-for-Management-Core\EnableServerremoteManagement**を見つけます。
 
 3.  応答ファイルの適用先となるすべてのサーバーでサーバーマネージャーリモート管理を既定で無効にするには、 **[microsoft-windows-web-services-for-management-core \enableserverremotemanagement]** を **[False]** に設定します。
 
     > [!NOTE]
-    > この設定は、オペレーティング システムのセットアップ プロセスの一環としてリモート管理を無効にします。 この設定を構成しても、オペレーティングシステムのセットアップが完了した後で、管理者がサーバーでサーバーマネージャーリモート管理を有効にすることはできません。 管理者は、「」の手順を使用して[、windows インターフェイスを使用](#to-enable-server-manager-remote-management-by-using-the-windows-interface)してリモート管理をサーバーマネージャー構成するか、または[windows PowerShell を使用してリモート管理をサーバーマネージャー有効](#to-enable-server-manager-remote-management-by-using-windows-powershell)にすることにより、サーバーマネージャーのリモート管理を再び有効にすることができます。トピック.
+    > この設定は、オペレーティング システムのセットアップ プロセスの一環としてリモート管理を無効にします。 この設定を構成しても、オペレーティングシステムのセットアップが完了した後で、管理者がサーバーでサーバーマネージャーリモート管理を有効にすることはできません。 管理者は、「」の手順に従って[、windows インターフェイスを使用](#to-enable-server-manager-remote-management-by-using-the-windows-interface)してリモート管理をサーバーマネージャー構成するか、このトピックの「 [windows PowerShell を使用](#to-enable-server-manager-remote-management-by-using-windows-powershell)してリモート管理をサーバーマネージャー有効にする」の手順に従って、サーバーマネージャーリモート管理を再び有効にすることができます。
     > 
     > 無人インストールの一部としてリモート管理を既定で無効にし、インストール後にサーバーでリモート管理を再び有効にしない場合、この応答ファイルが適用されるサーバーはサーバーマネージャーを使用して完全に管理することはできません。 Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 (およびリモート管理が既定で無効になっている) を実行しているサーバーは、サーバーマネージャーサーバーに追加された後、サーバーマネージャーコンソールで管理状態エラーを生成します。管理.
 
@@ -187,10 +187,10 @@ WinRM がリモート コンピューターと通信するために既定のポ�
 
 WinRM リスナー設定の構成方法の詳細については、コマンドプロンプトで「 **winrm help config**」と入力し、enter キーを押します。
 
-## <a name="see-also"></a>関連項目
-[サーバーマネージャーにサーバーを追加する](add-servers-to-server-manager.md)
- windows[PowerShell: About_remote_Troubleshooting windows Server TechCenter](https://technet.microsoft.com/library/dd347642.aspx)
-[ユーザーアカウント制御の説明](https://support.microsoft.com/kb/951016)
+## <a name="see-also"></a>参照
+Windows PowerShell
+[サーバーマネージャーにサーバーを追加する](add-servers-to-server-manager.md) [: Windows Server
+TechCenter の About_remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx) [ユーザーアカウント制御の説明](https://support.microsoft.com/kb/951016)
 
 
 

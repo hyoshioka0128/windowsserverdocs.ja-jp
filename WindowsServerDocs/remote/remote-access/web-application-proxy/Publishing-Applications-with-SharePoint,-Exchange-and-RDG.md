@@ -18,9 +18,9 @@ ms.locfileid: "71404238"
 ---
 # <a name="publishing-applications-with-sharepoint-exchange-and-rdg"></a>SharePoint、Exchange、および RDG によるアプリケーションの発行
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
-@no__t-このコンテンツは、オンプレミスバージョンの Web アプリケーションプロキシに関連しています。クラウド経由でオンプレミスアプリケーションへのセキュリティで保護されたアクセスを有効にするには、 [Azure AD アプリケーションプロキシのコンテンツ](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)を参照してください。 **  
+**このコンテンツは、オンプレミスバージョンの Web アプリケーションプロキシに関連しています。クラウド経由でオンプレミスアプリケーションへの安全なアクセスを実現するには、 [Azure AD アプリケーションプロキシのコンテンツ](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)を参照してください。**  
 
 このトピックでは、Web アプリケーションプロキシを介して SharePoint Server、Exchange Server、またはリモートデスクトップゲートウェイ (RDP) を公開するために必要なタスクについて説明します。  
 
@@ -44,9 +44,9 @@ SharePoint サイトを代替アクセス マッピング (AAM) とホスト名�
 次の表は、Web アプリケーションプロキシ経由で公開できる Exchange サービスと、これらのサービスに対してサポートされている事前認証を示しています。  
 
 
-|    Exchange サービス    |                                                                            事前認証                                                                            |                                                                                                                                       メモ                                                                                                                                        |
+|    Exchange サービス    |                                                                            事前認証                                                                            |                                                                                                                                       説明                                                                                                                                        |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    Outlook Web アプリ     | -要求ベースでない認証を使用して AD FS<br />-パススルー<br />-オンプレミス Exchange 2013 サービスパック 1 (SP1) の要求ベースの認証を使用して AD FS |                                                                  詳しくは、次のトピックをご覧ください。[Outlook Web App と EAC で使用を使用して AD FS 要求ベースの認証を使用する](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
+|    Outlook Web アプリ     | -要求ベースでない認証を使用して AD FS<br />-パススルー<br />-オンプレミス Exchange 2013 サービスパック 1 (SP1) の要求ベースの認証を使用して AD FS |                                                                  詳細については、次のトピックを参照してください。 [AD FS のクレームベース認証を Outlook Web App および EAC で使用する](https://go.microsoft.com/fwlink/?LinkId=393723)                                                                  |
 | Exchange コントロール パネル |                                                                               パススルー                                                                               |                                                                                                                                                                                                                                                                                    |
 |    Outlook Anywhere    |                                                                               パススルー                                                                               | Outlook Anywhere を正しく機能させるには 3 つの URL を公開する必要があります。<br /><br />-自動検出 URL。<br />-Exchange サーバーの外部ホスト名。これは、クライアントが接続するために構成されている URL です。<br />-Exchange サーバーの内部 FQDN。 |
 |  Exchange ActiveSync   |                                                     パススルー<br/> HTTP 基本認証プロトコルを使用した AD FS                                                      |                                                                                                                                                                                                                                                                                    |
@@ -66,11 +66,11 @@ Windows Server 2012 R2 または Windows Server 2012 で実行されている場
 
 1. RD Web アクセス (rdweb) ロールと RD ゲートウェイ (rpc) ロールが同じサーバー上にあるか、異なるサーバーにあるかによって、インストールが異なります。  
 
-2. RD Web アクセスと RD ゲートウェイの役割が同じ RDG サーバーでホストされている場合は、単純 @no__t に、などの Web アプリケーションプロキシにルート FQDN を発行できます。  
+2. RD Web アクセスと RD ゲートウェイの役割が同じ RDG サーバーでホストされている場合は、 https://rdg.contoso.com/などの Web アプリケーションプロキシでルート FQDN を発行するだけで済みます。  
 
-   2つの仮想ディレクトリを個別に発行することもできます。たとえば、<https://rdg.contoso.com/rdweb/> および https://rdg.contoso.com/rpc/ です。  
+   2つの仮想ディレクトリを個別に発行することもできます。たとえば、<https://rdg.contoso.com/rdweb/> と https://rdg.contoso.com/rpc/です。  
 
-3. RD Web アクセスと RD ゲートウェイが別の RDG サーバーでホストされている場合は、2つの仮想ディレクトリを個別に発行する必要があります。 @No__t-0 や https://gateway.contoso.com/rpc/ など、同じまたは異なる外部 FQDN を使用できます。  
+3. RD Web アクセスと RD ゲートウェイが別の RDG サーバーでホストされている場合は、2つの仮想ディレクトリを個別に発行する必要があります。 https://rdweb.contoso.com/rdweb/ や https://gateway.contoso.com/rpc/など、同じまたは異なる外部 FQDN を使用できます。  
 
 4. 外部と内部の FQDN が異なる場合は、RDWeb 発行ルールで要求ヘッダーの変換を無効にしないでください。 これは、Web アプリケーションプロキシサーバーで次の PowerShell スクリプトを実行することで行うことができますが、既定で有効になっている必要があります。
 
@@ -102,11 +102,11 @@ Windows Server 2012 R2 または Windows Server 2012 で実行されている場
 
     3.  すべての既定の設定をそのまま使用します。  
 
-    4.  [証明書利用者信頼の識別子] に、RDG アクセスに使用する外部 FQDN を入力します (たとえば https://rdg.contoso.com/ )。  
+    4.  [証明書利用者信頼の識別子] に、RDG アクセスに使用する外部 FQDN (https://rdg.contoso.com/など) を入力します。  
 
         これは、Web アプリケーションプロキシでアプリを公開するときに使用する証明書利用者の信頼です。  
 
-4.  サイトのルート (たとえば、 https://rdg.contoso.com/ ) を Web アプリケーションプロキシに発行します。 事前認証を AD FS に設定し、上記で作成した証明書利用者信頼を使用します。 これにより、/rdweb と/rpc が同じ Web アプリケーションプロキシ認証 cookie を使用できるようになります。  
+4.  サイトのルート (https://rdg.contoso.com/ など) を Web アプリケーションプロキシに発行します。 事前認証を AD FS に設定し、上記で作成した証明書利用者信頼を使用します。 これにより、/rdweb と/rpc が同じ Web アプリケーションプロキシ認証 cookie を使用できるようになります。  
 
     /Rdweb と/rpc を別のアプリケーションとして公開し、公開されているサーバーを別々に使用することもできます。 証明書利用者信頼に対して Web アプリケーションプロキシトークンが発行されるのと同じ証明書利用者信頼を使用して両方を発行し、同じ証明書利用者信頼で発行された複数のアプリケーション間で有効にする必要があるだけです。  
 
@@ -118,7 +118,7 @@ Windows Server 2012 R2 または Windows Server 2012 で実行されている場
 
 6.  RDG で公開されているアプリケーションで、Web アプリケーションプロキシの HttpOnly クッキープロパティを無効にします。 RDG ActiveX コントロールが Web アプリケーションプロキシの認証 cookie にアクセスできるようにするには、Web アプリケーションプロキシ cookie の HttpOnly プロパティを無効にする必要があります。  
 
-    そのためには、 [Web アプリケーションプロキシ修正プログラム](https://support.microsoft.com/en-gb/kb/3000850)または[https://support.microsoft.com/en-gb/kb/3000850](https://support.microsoft.com/en-gb/kb/3000850)がインストールされている必要があります。  
+    そのためには、 [Web アプリケーションプロキシ修正プログラム](https://support.microsoft.com/en-gb/kb/3000850)または[https://support.microsoft.com/en-gb/kb/3000850](https://support.microsoft.com/en-gb/kb/3000850)をインストールする必要があります。  
 
     修正プログラムをインストールした後、関連するアプリケーション名を指定して、Web アプリケーションプロキシサーバーで次の PowerShell スクリプトを実行します。  
 
@@ -146,7 +146,7 @@ Windows Server 2012 R2 または Windows Server 2012 で実行されている場
 
         1.  管理者特権を持つアカウントを使用して、ターミナルサーバーにログオンします。  
 
-        2.  [**スタート** >**管理ツール** > **ターミナルサービス** >  TS RemoteApp Manager] にアクセスし**ます。**  
+        2.  [**スタート** >**管理ツール** > **ターミナルサービス** > TS RemoteApp マネージャー] にアクセス**します。**  
 
         3.  TS RemoteApp Manager の **[概要]** ウィンドウで、RDP 設定 の横にある **[変更]** をクリックします。  
 

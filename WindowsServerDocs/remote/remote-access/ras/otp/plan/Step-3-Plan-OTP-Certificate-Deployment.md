@@ -21,7 +21,7 @@ ms.locfileid: "71366950"
 ---
 # <a name="step-3-plan-otp-certificate-deployment"></a>手順 3 OTP 証明書の展開を計画する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 RADIUS サーバーを計画した後、ワンタイムパスワード (OTP) 証明書を発行する CA、OTP 証明書テンプレート、およびリモートで使用される登録機関証明書を含む証明機関 (CA) の要件を計画する必要があります。すべての DirectAccess クライアント OTP 証明書要求に署名するためのアクセスサーバー。 これらの証明書は次のように使用されます。  
   
@@ -75,7 +75,7 @@ DirectAccess クライアントが OTP 証明書を要求すると、リモー�
   
 ## <a name="BKMK_Links"></a>関連項目  
   
--   [手順 4:リモートアクセスサーバーの OTP を計画する @ no__t-0  
+-   [手順 4: リモートアクセスサーバーの OTP を計画する](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)  
   
 
 

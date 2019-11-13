@@ -21,12 +21,12 @@ ms.locfileid: "71394546"
 ---
 # <a name="directaccess-test-lab-guides"></a>DirectAccess のテスト ラボ ガイド
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 の DirectAccess のテストラボガイドへのリンクを次に示します。
 
-- [テスト ラボ ガイド:Windows NLB @ no__t を使用するクラスターでの DirectAccess のデモンストレーション
+- [テストラボガイド: Windows NLB を使用するクラスターでの DirectAccess のデモンストレーション](tlg-cluster-nlb/Test-Lab-Guide-Demonstrate-DirectAccess-in-a-Cluster-with-Windows-NLB.md)
 
-- [テスト ラボ ガイド:DirectAccess マルチサイト展開のデモンストレーション @ no__t-0
+- [テストラボガイド: DirectAccess マルチサイト展開のデモンストレーション](tlg-multisite/Test-Lab-Guide-Demonstrate-a-DirectAccess-Multisite-Deployment.md)
 
-- [テスト ラボ ガイド:OTP 認証と RSA SecurID @ no__t を使用した DirectAccess のデモンストレーション
+- [テストラボガイド: OTP 認証と RSA SecurID を使用した DirectAccess のデモンストレーション](tlg-otp-securid/Test-Lab-Guide-Demonstrate-DirectAccess-with-OTP-Authentication-and-RSA-SecurID.md)

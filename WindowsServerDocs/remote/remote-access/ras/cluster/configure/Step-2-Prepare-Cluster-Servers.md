@@ -21,7 +21,7 @@ ms.locfileid: "71367410"
 ---
 # <a name="step-2-prepare-cluster-servers"></a>手順 2 は、クラスター サーバーを準備します。
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 クラスターの展開を構成する前に、クラスターに追加するその他のサーバーを準備します。  
   
@@ -85,7 +85,7 @@ ms.locfileid: "71367410"
   
 ## <a name="BKMK_Links"></a>関連項目  
   
--   [手順 3:負荷分散クラスターを構成する @ no__t-0  
+-   [手順 3: 負荷分散クラスターを構成する](Step-3-Configure-a-Load-Balanced-Cluster.md)  
   
 
 

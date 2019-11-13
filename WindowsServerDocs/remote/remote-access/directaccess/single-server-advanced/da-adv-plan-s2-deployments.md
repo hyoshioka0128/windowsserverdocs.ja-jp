@@ -21,7 +21,7 @@ ms.locfileid: "71404925"
 ---
 # <a name="step-2-plan-advanced-directaccess-deployments"></a>手順 2-高度な DirectAccess 展開を計画する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 DirectAccess インフラストラクチャの計画後、IPv4 と IPv6 を使用した単一サーバーでの高度な DirectAccess 展開の次の手順は、リモート アクセスのセットアップ ウィザードの設定の計画です。  
   
@@ -138,7 +138,7 @@ DirectAccess クライアントと選択した内部アプリケーション サ
 ## <a name="25-plan-directaccess-and-third-party-vpn-clients"></a>2.5 DirectAccess とサードパーティ VPN クライアントを計画する  
 一部のサードパーティ VPN クライアントでは、ネットワーク接続フォルダーで接続が作成されません。 このため、VPN 接続が確立され、イントラネットへの接続が存在しても、DirectAccess はイントラネット接続がないと判断する可能性があります。 これは、サードパーティ VPN クライアントが Network Device Interface Specification (NDIS) エンドポイントの種類として定義して、インターフェイスを登録するときに発生します。 DirectAccess クライアントで次のレジストリ値を 1 に設定して、これらの種類の VPN クライアントとの共存を有効にできます。  
   
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces (REG_DWORD)**  
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\ShowDomainEndpointInterfaces (REG_DWORD)**  
   
 一部のサードパーティ VPN クライアントは、分割トンネル構成を使用します。この構成は、VPN 接続からイントラネットへのトラフィックを送信する必要なく、VPN クライアント コンピューターにインターネットへの直接のアクセスを許可します。  
   
@@ -146,11 +146,11 @@ DirectAccess クライアントと選択した内部アプリケーション サ
   
 VPN 接続で、既定のゲートウェイが空、またはすべてゼロ (0.0.0.0) と表示されている場合は、VPN クライアントがこの方法で構成されています。 既定では、DirectAccess クライアントは分割トンネル構成を識別しません。 DirectAccess クライアントが、これらの種類の VPN クライアント構成を検出して共存するように構成するには、次のレジストリ値を 1 に設定します。  
   
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ Enablの Gatewaylocationdetection (REG_DWORD)**  
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\services\NlaSvc\Parameters\Internet\ Enabl Gatewaylocationdetection (REG_DWORD)**  
   
 ## <a name="previous-step"></a>前のステップ  
   
--   [ステップ 1: DirectAccess インフラストラクチャの計画 @ no__t-0  
+-   [手順 1: DirectAccess インフラストラクチャを計画する](da-adv-plan-s1-infrastructure.md)  
   
 
 

@@ -20,13 +20,13 @@ ms.locfileid: "71366799"
 ---
 # <a name="feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v"></a>Hyper-v 上の Linux および FreeBSD 仮想マシンの機能の説明
 
->適用先:Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server の2012、Windows Server 2008 R2、Windows 10、Windows 8.1、windows 8、Windows 7.1、Windows 7
+>適用対象: Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、windows 8、Windows 7.1、Windows 7。
 
 この記事では、仮想マシンで Linux と FreeBSD を使用するときに、コア、ネットワーク、ストレージ、メモリなどのコンポーネントで使用できる機能について説明します。
 
 ## <a name="core"></a>Core
 
-|**機能**|**[説明]**|
+|**機能**|**説明**|
 |-|-|
 |統合シャットダウン|この機能を使用すると、管理者は Hyper-v マネージャーから仮想マシンをシャットダウンできます。 詳細については、「[オペレーティングシステムのシャットダウン](https://technet.microsoft.com/library/dn798297(WS.11).aspx#BKMK_Shutdown)」を参照してください。|
 |時刻の同期|この機能により、仮想マシン内の保持されている時間は、ホストの維持される時間と同期された状態に保たれます。 詳細については、「[時刻の同期](https://technet.microsoft.com/library/dn798297(WS.11).aspx#BKMK_time)」を参照してください。|
@@ -39,7 +39,7 @@ ms.locfileid: "71366799"
 
 ## <a name="networking"></a>ネットワーク
 
-|**機能**|**[説明]**|
+|**機能**|**説明**|
 |-|-|
 |Jumbo Frame|この機能を使用すると、管理者は1500バイトを超えてネットワークフレームのサイズを増やすことができ、ネットワークのパフォーマンスが大幅に向上します。|
 |VLAN のタグ付けとトランキング|この機能を使用すると、仮想マシンの仮想 LAN (VLAN) トラフィックを構成できます。|
@@ -52,7 +52,7 @@ ms.locfileid: "71366799"
 
 ## <a name="storage"></a>ストレージ
 
-|**機能**|**[説明]**|
+|**機能**|**説明**|
 |-|-|
 |VHDX のサイズ変更|この機能を使用すると、管理者は仮想マシンに接続されている固定サイズの .vhdx ファイルのサイズを変更できます。 詳細については、「[オンライン仮想ハードディスクのサイズ変更の概要](https://technet.microsoft.com/library/dn282286.aspx)」を参照してください。|
 |仮想ファイバー チャネル|この機能により、仮想マシンはファイバーチャネルデバイスを認識し、ネイティブにマウントすることができます。 詳細については、「 [Hyper-V 仮想ファイバー チャネルの概要](https://technet.microsoft.com/library/hh831413.aspx)」を参照してください。|
@@ -60,9 +60,9 @@ ms.locfileid: "71366799"
 |トリムのサポート|TRIM ヒントは、以前に割り当てられた特定のセクターがアプリで不要になったため、削除できることをドライブに通知します。 このプロセスは、通常、アプリがファイルを介して大きな領域を割り当てようとし、ファイルへの割り当てを (たとえば、仮想ハードディスクファイルに) 自己管理する場合に使用されます。|
 |SCSI WWN|Storvsc ドライバーは、仮想マシンに接続されているデバイスのポートとノードからワールドワイド名 (WWN) 情報を抽出し、適切な sysfs ファイルを作成します。 |
 
-## <a name="memory"></a>Memory
+## <a name="memory"></a>メモリ
 
-|**機能**|**[説明]**|
+|**機能**|**説明**|
 |-|-|
 |PAE カーネルサポート|物理アドレス拡張 (PAE) テクノロジでは、32ビットカーネルが 4 GB を超える物理アドレス空間にアクセスできます。 RHEL 5.x などの古い Linux ディストリビューションでは、PAE が有効になっている別のカーネルを出荷するために使用されていました。 RHEL 6.x などの新しいディストリビューションには、事前に構築された PAE サポートがあります。|
 |MMIO ギャップの構成|この機能を使用すると、アプライアンスの製造元は、メモリマップ i/o (MMIO) のギャップの場所を構成できます。 MMIO ギャップは通常、アプライアンスを十分な数のオペレーティングシステム (JeOS) と、アプライアンスを電源にする実際のソフトウェアインフラストラクチャの間で使用可能な物理メモリを分割するために使用されます。|
@@ -72,15 +72,15 @@ ms.locfileid: "71366799"
 
 ## <a name="video"></a>Video
 
-|**機能**|**[説明]**|
+|**機能**|**説明**|
 |-|-|
 |Hyper-v 固有のビデオデバイス|この機能は、高パフォーマンスのグラフィックスと仮想マシンの優れた解像度を提供します。 このデバイスは、拡張セッションモードまたは RemoteFX 機能を提供していません。|
 
 ## <a name="miscellaneous"></a>その他
 
-|**機能**|**[説明]**|
+|**機能**|**説明**|
 |-|-|
-|KVP (キーと値のペア) exchange|この機能は、仮想マシンのキー/値ペア (KVP) exchange サービスを提供します。 通常、管理者は KVP メカニズムを使用して、仮想マシンでのカスタムデータ操作の読み取りと書き込みを実行します。 詳細については、「[Data Exchange:キーと値のペアを使用して、Hyper-v @ no__t のホストとゲストの間で情報を共有します。|
+|KVP (キーと値のペア) exchange|この機能は、仮想マシンのキー/値ペア (KVP) exchange サービスを提供します。 通常、管理者は KVP メカニズムを使用して、仮想マシンでのカスタムデータ操作の読み取りと書き込みを実行します。 詳細については、「[データ交換: キーと値のペアを使用した hyper-v のホストとゲストの間での情報の共有](https://technet.microsoft.com/library/dn798287.aspx)」を参照してください。|
 |マスクなしの割り込み|この機能を使用すると、管理者は非マスク割り込み (NMI) を仮想マシンに発行できます。 NMIs は、アプリケーションのバグによって応答しなくなったオペレーティングシステムのクラッシュダンプを取得する場合に役立ちます。 これらのクラッシュダンプは、再起動後に診断できます。|
 |ホストからゲストへのファイルのコピー|この機能を使用すると、ネットワークアダプターを使用せずに、ホストの物理コンピューターからゲスト仮想マシンにファイルをコピーできます。 詳細については、「[ゲストサービス](https://technet.microsoft.com/library/dn798297(WS.11).aspx#BKMK_guest)」を参照してください。|
 |lsvmbus コマンド|このコマンドは、lspci などの情報コマンドと同様に、Hyper-v 仮想マシンバス (VMBus) 上のデバイスに関する情報を取得します。|
@@ -89,12 +89,12 @@ ms.locfileid: "71366799"
 
 ## <a name="generation-2-virtual-machines"></a>第 2 世代仮想マシン
 
-|**機能**|**[説明]**|
+|**機能**|**説明**|
 |-|-|
 |UEFI を使用したブート|この機能により、Unified Extensible Firmware Interface (UEFI) を使用して仮想マシンを起動できます。<br /><br />詳細については、「 [Generation 2 Virtual Machine Overview](https://technet.microsoft.com/library/dn282285.aspx)」を参照してください。|
 |セキュアブート|この機能により、バーチャルマシンで UEFI ベースのセキュアブートモードを使用できるようになります。 仮想マシンを保護モードで起動すると、UEFI データストアに存在する署名を使用して、さまざまなオペレーティングシステムコンポーネントが検証されます。<br /><br />詳細については、次を参照してください。 [セキュア ブート](https://technet.microsoft.com/library/dn486875.aspx)します。|
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 * [サポートされている CentOS と Hyper-v 上の仮想マシンの Red Hat Enterprise Linux](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 

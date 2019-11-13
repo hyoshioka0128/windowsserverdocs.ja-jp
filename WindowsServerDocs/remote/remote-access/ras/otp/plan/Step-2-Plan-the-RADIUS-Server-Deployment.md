@@ -21,7 +21,7 @@ ms.locfileid: "71404396"
 ---
 # <a name="step-2-plan-the-radius-server-deployment"></a>手順 2 RADIUS サーバーの展開を計画する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 単一のリモートアクセスサーバーを展開した後、ワンタイムパスワード (OTP) 認証サーバーを計画します。  
   
@@ -40,7 +40,7 @@ OTP 認証用に RADIUS サーバーを計画するときは、次の点に注�
   
 -   RADIUS サーバーを展開するときに、RADIUS トラフィックの共有シークレットとポート番号を構成します。 これらの詳細をメモしておきます。リモートアクセスサーバーを構成するときに必要になります。  
   
-RSA SecurID サーバーで OTP 認証を設定するサンプルのテストラボガイドは、@no__t 0Test ラボガイドでご覧いただけます。OTP 認証と RSA SecurID @ no__t を使用した DirectAccess のデモンストレーションを行います。  
+[「Otp 認証と Rsa securid を使用した DirectAccess のデモンストレーション」の「テストラボガイド](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/tlg-otp-securid/test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid)」で、RSA securid サーバーで otp 認証を設定するテストラボガイドの例を見ることができます。  
   
   
   

@@ -22,7 +22,7 @@ ms.locfileid: "71406106"
 ---
 # <a name="configure-datacenter-firewall-access-control-lists-acls"></a>データセンターのファイアウォール Access Control リスト (Acl) の構成
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 ACL を作成して仮想サブネットに割り当てたら、仮想サブネット上の既定の ACL を個々のネットワークインターフェイス用に特定の ACL で上書きすることができます。  この場合は、仮想ネットワークではなく、Vlan に接続されているネットワークインターフェイスに特定の Acl を直接適用します。 ネットワークインターフェイスに接続された仮想サブネットに Acl が設定されている場合、両方の Acl が適用され、仮想サブネット Acl の上にネットワークインターフェイス Acl が優先されます。
 
@@ -31,11 +31,11 @@ ACL を作成して仮想サブネットに割り当てたら、仮想サブネ�
 
 このトピックでは、ネットワークインターフェイスに ACL を追加する方法について説明します。 また、Windows PowerShell とネットワークコントローラー REST API を使用してネットワークインターフェイスから ACL を削除する方法についても説明します。
 
-- [例:ネットワークインターフェイス @ no__t に ACL を追加する
-- [例:Windows Powershell とネットワークコントローラー REST API @ no__t-0 を使用して、ネットワークインターフェイスから ACL を削除します。
+- [例: ネットワークインターフェイスに ACL を追加する](#example-add-an-acl-to-a-network-interface)
+- [例: Windows Powershell とネットワークコントローラーを使用してネットワークインターフェイスから ACL を削除する REST API](#example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api)
 
 
-## <a name="example-add-an-acl-to-a-network-interface"></a>例:ネットワークインターフェイスに ACL を追加する
+## <a name="example-add-an-acl-to-a-network-interface"></a>例: ネットワークインターフェイスに ACL を追加する
 この例では、仮想ネットワークに ACL を追加する方法について説明します。 
 
 >[!TIP]
@@ -65,7 +65,7 @@ ACL を作成して仮想サブネットに割り当てたら、仮想サブネ�
    new-networkcontrollernetworkinterface -ConnectionUri $uri -Properties $nic.properties -ResourceId $nic.resourceid
    ```
  
-## <a name="example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api"></a>例:Windows Powershell とネットワークコントローラーを使用して、ネットワークインターフェイスから ACL を削除 REST API
+## <a name="example-remove-an-acl-from-a-network-interface-by-using-windows-powershell-and-the-network-controller-rest-api"></a>例: Windows Powershell とネットワークコントローラーを使用してネットワークインターフェイスから ACL を削除する REST API
 この例では、ACL を削除する方法について説明します。 ACL を削除すると、既定のルールセットがネットワークインターフェイスに適用されます。 既定のルールセットは、すべての送信トラフィックを許可しますが、すべての受信トラフィックをブロックします。
 
 >[!NOTE]

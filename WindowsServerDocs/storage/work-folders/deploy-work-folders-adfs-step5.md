@@ -15,21 +15,21 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71402777"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する:手順 5. クライアントのセットアップ
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 5: クライアントのセットアップ
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Active Directory フェデレーション サービス (AD FS) と Web アプリケーション プロキシを使用して、ワーク フォルダーを展開する 5 番目の手順について説明します。 このプロセスの他の手順は、次のトピックで確認できます。  
   
--   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。概要](deploy-work-folders-adfs-overview.md)  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 概要](deploy-work-folders-adfs-overview.md)  
   
--   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順 1 AD FS @ no__t を設定します。  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 1. AD FS を設定する](deploy-work-folders-adfs-step1.md)  
   
--   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順2、AD FS 構成後の作業 @ no__t-0  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順2、AD FS 構成後の作業](deploy-work-folders-adfs-step2.md)  
   
--   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順 3. ワークフォルダーをセットアップする @ no__t-0  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 3. ワークフォルダーを設定する](deploy-work-folders-adfs-step3.md)  
   
--   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順 4. Web アプリケーションプロキシの設定 @ no__t-0  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 4. Web アプリケーションプロキシを設定する](deploy-work-folders-adfs-step4.md)  
   
 ドメインに参加している Windows クライアントおよびドメインに参加していない Windowsクライアントをセットアップするには、次の手順を使用します。 これらのクライアントを使用して、クライアントのワーク フォルダーの間でファイルが正しく同期されているかどうかをテストすることができます。  
   
@@ -42,7 +42,7 @@ ms.locfileid: "71402777"
   
 証明書をインストールするには、以下の手順を実行します。  
   
-1.  **[スタート]** ボタンをクリックし、 **[ファイル名を指定して実行]** をクリックします。  
+1.  **[スタート]** ボタンをクリックして **[ファイル名を指定して実行]** をクリックします。  
   
 2.  「**MMC**」と入力します。  
   
@@ -79,7 +79,7 @@ ms.locfileid: "71402777"
   
 2. **[ワーク フォルダーのセットアップ]** をクリックします。  
   
-3. **[職場の電子メールアドレスを入力して]** ください ページで、ユーザーの電子メールアドレス (たとえば、user@contoso.com) またはワークフォルダーの URL (テスト例では、https: \//ワークフォルダー. contoso .com) を入力し、 **[次へ]** をクリックします。  
+3. **[職場の電子メールアドレスを入力]** してください ページで、ユーザーの電子メールアドレス (たとえば、user@contoso.com) またはワークフォルダーの URL (テスト例では、https:\//workfolders.contoso.com) を入力し、 **[次へ]** をクリックします。  
   
 4. ユーザーが企業ネットワークに接続されている場合、Windows 統合認証によって、認証が実行されます。 ユーザーが企業ネットワークに接続されていない場合は、ADFS (OAuth) で認証が実行され、ユーザーは資格情報の入力を求められます。 資格情報を入力して、 **[OK]** をクリックします。  
   
@@ -124,7 +124,7 @@ ms.locfileid: "71402777"
   
 Windows Server の UI を使って、ワーク フォルダー、AD FS、Web アプリケーション プロキシを展開する手順は、以上で完了です。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ワークフォルダーの概要](Work-Folders-Overview.md)  
   
 

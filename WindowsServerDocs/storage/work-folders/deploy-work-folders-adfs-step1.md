@@ -15,21 +15,21 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71365788"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する:手順 1. AD FS を設定する
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-1-set-up-ad-fs"></a>AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 1: AD FS のセットアップ
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Active Directory フェデレーション サービス (AD FS) と Web アプリケーション プロキシを使用して、ワーク フォルダーを展開する最初の手順について説明します。 このプロセスの他の手順は、次のトピックで確認できます。  
   
--   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。概要](deploy-work-folders-adfs-overview.md)  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 概要](deploy-work-folders-adfs-overview.md)  
   
--   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順2、AD FS 構成後の作業 @ no__t-0  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順2、AD FS 構成後の作業](deploy-work-folders-adfs-step2.md)  
   
--   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順 3. ワークフォルダーをセットアップする @ no__t-0  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 3. ワークフォルダーを設定する](deploy-work-folders-adfs-step3.md)  
   
--   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順 4. Web アプリケーションプロキシの設定 @ no__t-0  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 4. Web アプリケーションプロキシを設定する](deploy-work-folders-adfs-step4.md)  
   
--   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順 5. クライアントをセットアップする @ no__t-0  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順5、クライアントをセットアップする](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
 >   このセクションで説明する手順は、Windows Server 2019 または Windows Server 2016 環境向けです。 Windows Server 2012 R2 を使用している場合には、[Windows Server 2012 R2 の手順](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx) に従います。
@@ -104,7 +104,7 @@ AD FS 証明書は、次の値を持つ SAN 証明書である必要がありま
 enterpriseregistration SAN は Workplace Join に必要となります。  
   
 ### <a name="set-the-server-ip-address"></a>サーバー IP アドレスの設定  
-サーバーの IP アドレスを静的 IP アドレスに変更します。 テストの例では、IP クラス A を使用します。これは 192.168.0.160/subnet mask です。255.255.0.0/デフォルトゲートウェイ:192.168.0.1/優先 DNS:192.168.0.150 (ドメインコントローラーの IP アドレス @ no__t-0  
+サーバーの IP アドレスを静的 IP アドレスに変更します。 テストの例では、IP クラス A を使用し、192.168.0.160 / サブネット マスク: 255.255.0.0 / デフォルト ゲートウェイ: 192.168.0.1 / 優先 DNS: 192.168.0.150 (ドメイン コントローラーの IP アドレス\) とします。  
   
 ## <a name="install-the-ad-fs-role-service"></a>AD FS 役割サービスをインストールする  
 AD FS をインストールするには、次の手順に従います。  
@@ -182,9 +182,9 @@ $thumbprint = $cert.Thumbprint
 Install-ADFSFarm -CertificateThumbprint $thumbprint -FederationServiceDisplayName "Contoso Corporation" –FederationServiceName blueadfs.contoso.com -GroupServiceAccountIdentifier contoso\ADFSService$ -OverwriteConfiguration -ErrorAction Stop  
 ```  
   
-次のステップ:[Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順2、AD FS 構成後の作業 @ no__t-0  
+次の手順: [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 2、AD FS の構成後の作業](deploy-work-folders-adfs-step2.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ワークフォルダーの概要](Work-Folders-Overview.md)  
   
 

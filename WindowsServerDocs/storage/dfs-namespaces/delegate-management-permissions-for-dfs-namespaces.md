@@ -17,7 +17,7 @@ ms.locfileid: "71402215"
 ---
 # <a name="delegate-management-permissions-for-dfs-namespaces"></a>DFS 名前空間の管理アクセス許可を委任する
 
-> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用対象: Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 次の表では、基本的な名前空間タスクを既定で実行できるグループと、それらのタスクを実行する権限を委任する方法について説明します。
 
@@ -32,4 +32,4 @@ ms.locfileid: "71402215"
 
 <br />
 
-@no__t は、スタンドアロンの名前空間を管理するために管理アクセス許可を委任しても、ユーザーが名前空間サーバーのローカルの Administrators グループのメンバーでない限り、 **[委任]** タブを使用してセキュリティを表示および管理する権限をユーザーに付与することはできません。 この問題は、DFS 管理スナップインがスタンドアロン名前空間の随意アクセス制御リスト (DACL) をレジストリから取得できないために発生します。 スナップインで委任情報を表示できるようにするには、Microsoft<sup>®</sup>サポート技術情報の記事に記載されている手順に従う必要があります。[KB314837:レジストリへのリモートアクセスを管理する方法 @ no__t-0
+スタンドアロンの名前空間を管理するために管理アクセス許可を委任する \*、ユーザーが名前空間サーバーのローカルの Administrators グループのメンバーでない限り、 **[委任]** タブを使用してセキュリティを表示および管理する権限をユーザーに付与することはできません。 この問題は、DFS 管理スナップインがスタンドアロン名前空間の随意アクセス制御リスト (DACL) をレジストリから取得できないために発生します。 スナップインに委任情報を表示できるようにするには、Microsoft<sup>®</sup> サポート技術情報「[KB314837: レジストリへのリモート アクセスを管理する方法](https://go.microsoft.com/fwlink?linkid=46803)」の手順に従う必要があります。

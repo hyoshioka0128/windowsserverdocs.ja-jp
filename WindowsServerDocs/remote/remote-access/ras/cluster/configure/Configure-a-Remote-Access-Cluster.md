@@ -22,17 +22,17 @@ ms.locfileid: "71404623"
 ---
 # <a name="configure-a-remote-access-cluster"></a>リモート アクセス クラスターを構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
  Windows Server 2016 および Windows Server 2012 は Always On VPN とルーティングとリモートアクセスサービス (RRAS) VPN を1つのリモートアクセスの役割に結合します。 この概要では、負荷分散されたクラスターに単一の Windows Server 2016 または Windows Server 2012 リモートアクセスサーバーを展開するために必要な構成手順の概要を示します。
   
--  手順 1:[高度なオプションを使用して Always ON VPN サーバーを展開](../../../vpn/always-on-vpn/deploy/always-on-vpn-adv-options.md)します。
+-  手順 1:[詳細オプションを使用して Always ON VPN サーバーを展開](../../../vpn/always-on-vpn/deploy/always-on-vpn-adv-options.md)します。
   
--   [手順 2:クラスターサーバーの準備 @ no__t  
+-   [手順 2: クラスターサーバーを準備](Step-2-Prepare-Cluster-Servers.md)します。  
   
--   [手順 3:負荷分散クラスター @ no__t-0 を構成します。  
+-   [手順 3: 負荷分散クラスターを構成](Step-3-Configure-a-Load-Balanced-Cluster.md)します。  
   
--   [手順 4:クラスター @ no__t-0 を確認します。  
+-   [手順 4: クラスターを確認](Step-4-Verify-the-Cluster.md)します。  
   
 
 

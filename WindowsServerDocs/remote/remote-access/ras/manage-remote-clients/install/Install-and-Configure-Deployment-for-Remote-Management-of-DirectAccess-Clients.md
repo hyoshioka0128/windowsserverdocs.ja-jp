@@ -21,15 +21,15 @@ ms.locfileid: "71404599"
 ---
 # <a name="install-and-configure-deployment-for-remote-management-of-directaccess-clients"></a>DirectAccess クライアントのリモート管理の展開をインストールして構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、DirectAccess クライアントのリモート管理に使用できる単一のリモートアクセスサーバーを展開するために必要な構成手順について説明します。  
   
--   [ステップ 1: リモートアクセスインフラストラクチャを構成する @ no__t-0:このトピックでは、ネットワークとサーバーの設定、証明書の要件、DNS 設定、ネットワークロケーションサーバーの展開、DirectAccess 管理サーバー、Active Directory 設定、およびグループポリシーオブジェクトを構成する方法について説明します。  
+-   [手順 1: リモートアクセスインフラストラクチャを構成](Step-1-Configure-the-Remote-Access-Infrastructure.md)する: このトピックでは、ネットワークとサーバーの設定、証明書の要件、DNS 設定、ネットワークロケーションサーバーの展開、DirectAccess 管理サーバー、Active Directory 設定、およびグループポリシーオブジェクトを構成する方法について説明します。  
   
--   [手順 2:リモートアクセスサーバーを構成する @ no__t: 0:このトピックでは、DirectAccess クライアントコンピューター、サーバー設定、およびインフラストラクチャとアプリケーションサーバーを構成する方法について説明します。  
+-   [手順 2: リモートアクセスサーバーを構成](Step-2-Configure-the-Remote-Access-Server.md)する: このトピックでは、DirectAccess クライアントコンピューター、サーバー設定、およびインフラストラクチャとアプリケーションサーバーを構成する方法について説明します。  
   
--   [手順 3:デプロイを確認する @ no__t-0:このトピックでは、展開を確認する方法について説明します。  
+-   [手順 3: 展開を確認](Step-3-Verify-the-Deployment_2.md)する: このトピックでは、展開を確認する方法について説明します。  
   
 
 

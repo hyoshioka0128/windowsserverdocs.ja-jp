@@ -24,10 +24,10 @@ ms.locfileid: "71388073"
 ---
 # <a name="step-71-configure-eap-tls-to-ignore-certificate-revocation-list-crl-checking"></a>手順 7.1. 証明書失効リスト (CRL) が無視されるように EAP-TLS を構成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**先の：** 手順 7.OptionalAzure AD を使用した VPN 接続の条件付きアクセス](ad-ca-vpn-connectivity-windows10.md)
-- [**次に：** 手順 7.2. Azure AD で VPN 認証のルート証明書を作成する](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
+- [**前へ:** 手順 7.OptionalAzure AD を使用した VPN 接続の条件付きアクセス](ad-ca-vpn-connectivity-windows10.md)
+- [**次のようになります。** 手順 7.2.Azure AD を使用した VPN 認証用のルート証明書の作成](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
 
 >[!IMPORTANT]
 >このレジストリ変更を実装しないと、PEAP を使用したクラウド証明書を使用した IKEv2 接続は失敗しますが、オンプレミスの CA から発行されたクライアント認証証明書を使用した IKEv2 接続は引き続き機能します。
@@ -45,7 +45,7 @@ EAP-TLS クライアントは、NPS サーバーが証明書チェーン (ルー
 
 1. NPS サーバーで**regedit.exe**を開きます。
 
-2. **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\13**に移動します。
+2. **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\rasman\ppp\eap\13**に移動します。
 
 3. **[編集 > 新規作成]** を選択し、[ **DWORD (32 ビット)] 値**を選択して、「 **Ignorenorevocationcheck**」と入力します。
 
@@ -62,6 +62,6 @@ EAP-TLS クライアントは、NPS サーバーが証明書チェーン (ルー
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\25     |PEAP         |
 |HKLM\SYSTEM\CurrentControlSet\Services\RasMan\PPP\EAP\26     |EAP-MSCHAP v2         |
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-[手順 7.2.Azure AD @ no__t: 0 を使用して VPN 認証用のルート証明書を作成します。この手順では、Azure AD で VPN 認証用の条件付きアクセスルート証明書を構成します。これにより、VPN サーバークラウドアプリがテナントに自動的に作成されます。
+[手順 7.2.Azure AD を使用した VPN 認証用のルート証明書を作成](vpn-create-root-cert-for-vpn-auth-azure-ad.md)する: この手順では、Azure AD で vpn 認証用の条件付きアクセスルート証明書を構成します。これにより、テナントに Vpn サーバークラウドアプリが自動的に作成されます。

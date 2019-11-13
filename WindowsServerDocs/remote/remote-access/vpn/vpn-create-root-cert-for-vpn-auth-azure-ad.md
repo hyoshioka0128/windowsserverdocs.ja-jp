@@ -20,10 +20,10 @@ ms.locfileid: "71388008"
 ---
 # <a name="step-72-create-conditional-access-root-certificates-for-vpn-authentication-with-azure-ad"></a>手順 7.2. Azure AD を使用した VPN 認証用の条件付きアクセスルート証明書の作成
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**先の：** 手順 7.1. 証明書失効リスト (CRL) の確認が無視されるように EAP-TLS を構成する](vpn-config-eap-tls-to-ignore-crl-checking.md)
-- [**次に：** 手順 7.3. 条件付きアクセス ポリシーを構成する](vpn-config-conditional-access-policy.md)
+- [**前へ:** 手順 7.1.証明書失効リスト (CRL) チェックを無視するように EAP-TLS を構成する](vpn-config-eap-tls-to-ignore-crl-checking.md)
+- [**次のようになります。** 手順 7.3.条件付きアクセスポリシーを構成する](vpn-config-conditional-access-policy.md)
 
 この手順では、Azure AD で VPN 認証用の条件付きアクセスルート証明書を構成します。これにより、テナントに VPN サーバーというクラウドアプリが自動的に作成されます。 VPN 接続の条件付きアクセスを構成するには、次のことを行う必要があります。
 
@@ -51,6 +51,6 @@ VPN クライアントは、資格情報の検証のために Azure AD によっ
 6. **[新規]** ページで、次の手順を実行します。 a. **[期間の選択**] で、1、2、または3年を選択します。
    b. **[作成]** を選択します。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-[手順 7.3.条件付きアクセスポリシー @ no__t を構成します。この手順では、VPN 接続の条件付きアクセスポリシーを構成します。
+[手順 7.3.条件付きアクセスポリシーを構成](vpn-config-conditional-access-policy.md)する: この手順では、VPN 接続の条件付きアクセスポリシーを構成します。

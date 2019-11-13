@@ -22,12 +22,12 @@ ms.locfileid: "71373304"
 ---
 # <a name="net-print"></a>Net print
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 指定された印刷キュー、または指定した印刷ジョブに関する情報を表示または指定した印刷ジョブを制御します。
 このコマンドの使用方法の例については、このドキュメントの「[例](#BKMK_examples)」を参照してください。
 > [!NOTE]
-> このコマンドは、Windows 7 および Windows Server 2008 R2 で廃止されました。 ただし、prnjobs.vbs、Windows Management Instrumentation (WMI)、または Windows PowerShell コマンドレットを使用して、同じタスクの多くを実行することができます。 詳細については、「 [prnjobs.vbs](prnjobs.md)、 [Windows Management Instrumentation](https://go.microsoft.com/fwlink/?LinkID=29991) (@no__t」、「 [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=128426) 」 (https://go.microsoft.com/fwlink/?LinkID=128426) 、および[TechNet スクリプトセンターギャラリー](https://go.microsoft.com/fwlink/?LinkId=164635) (https://go.microsoft.com/fwlink/?LinkId=164635) ) を参照してください。
+> このコマンドは、Windows 7 および Windows Server 2008 R2 で廃止されました。 ただし、prnjobs.vbs、Windows Management Instrumentation (WMI)、または Windows PowerShell コマンドレットを使用して、同じタスクの多くを実行することができます。 詳細については、「 [prnjobs.vbs](prnjobs.md)、 [Windows Management Instrumentation](https://go.microsoft.com/fwlink/?LinkID=29991) (https://go.microsoft.com/fwlink/?LinkID=29991)」、「 [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=128426) (https://go.microsoft.com/fwlink/?LinkID=128426)」、および「 [TechNet スクリプトセンターギャラリー](https://go.microsoft.com/fwlink/?LinkId=164635) (https://go.microsoft.com/fwlink/?LinkId=164635)」を参照してください。
 > ## <a name="syntax"></a>構文
 > ```
 > Net print {\\<computerName>\<Sharename> | 
@@ -39,12 +39,12 @@ ms.locfileid: "71373304"
 > |----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 > |    \\\\<computerName>\\<Sharename>     |                                                                                                                                                                            名前によって、情報を表示するコンピューターと印刷キューを指定します。                                                                                                                                                                             |
 > |           \\\\<computerName>           |                                                                                                                                 (名前) を制御する印刷ジョブをホストするコンピューターを指定します。 コンピューターを指定しない場合、ローカル コンピューターが使用されます。 必要があります、 <JobNumber> パラメーター。                                                                                                                                  |
-> |              <JobNumber>               |                                             制御する印刷ジョブの数を指定します。 この数は、印刷ジョブが送信された印刷キューをホストするコンピューターによって割り当てられます。 コンピューター後数がそのコンピュータがホストされている任意のキューにあるその他の印刷ジョブに割り当てられていないこと、印刷ジョブに番号を割り当てます。 @No__t-0 @ no__t-1 @ no__t パラメーターを使用する場合に必要です。                                             |
+> |              <JobNumber>               |                                             制御する印刷ジョブの数を指定します。 この数は、印刷ジョブが送信された印刷キューをホストするコンピューターによって割り当てられます。 コンピューター後数がそのコンピュータがホストされている任意のキューにあるその他の印刷ジョブに割り当てられていないこと、印刷ジョブに番号を割り当てます。 \\\\<computerName> パラメーターを使用する場合に必要です。                                             |
 > | [/保留と #124;/release &#124;/delete] | 印刷ジョブで実行するアクションを指定します。<br /><br />- **保持/** パラメーターが他の印刷ジョブが解放されるまでにバイパスを許可するジョブを遅延します。<br />- **リリース/** パラメーターは、実行が遅れている印刷ジョブを解放します。<br />- **/Delete** パラメーターは、印刷キューから印刷ジョブを削除します。<br /><br />ジョブ番号を指定しても、何も指定しない場合は、印刷ジョブに関する情報が表示されます。 |
 > |                  ヘルプ                  |                                                                                                                                                                                                     ヘルプを表示、 **Net print** コマンドです。                                                                                                                                                                                                     |
 > 
 > ## <a name="remarks"></a>注釈
-> - **Net print** \\ @ no__t @ no__t は、共有プリンターキューに印刷ジョブに関する情報を表示します。 共有プリンターがレーザーをという名前のキュー内のすべての印刷ジョブのレポートの例を次に示します。
+> - **Net print** \\\\<computerName> では、印刷ジョブに関する情報が共有プリンターキューに表示されます。 共有プリンターがレーザーをという名前のキュー内のすべての印刷ジョブのレポートの例を次に示します。
 >   ```
 >   printers at \\PRODUCTION
 >   Name              Job #      Size      Status

@@ -49,9 +49,9 @@ LSASS 内の最大可変メモリ使用量は、ESE データベースバッフ�
 
 ESE バージョンストア (上の図の赤い部分) によるメモリ使用量が変動しています。 使用されるメモリの量は、Windows Server 2019 以前のバージョンの Windows があるかどうかによって異なります。
 
-- Windows server 2019 の Windows server バージョンでは、既定で LSASS は、ESE バージョンストアの64ビットコンピューター上のメモリの最大 400 MB (Cpu 数によって異なります) を使用する場合があります。 バージョンストアの使用方法の詳細については、ライアン Ries による次の ASKDS ブログ投稿を参照してください。[バージョンストアはを呼び出しましたが、これらはすべてバケット外](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/The-Version-Store-Called-and-They-8217-re-All-Out-of-Buckets/ba-p/400415)です。
+- Windows server 2019 の Windows server バージョンでは、既定で LSASS は、ESE バージョンストアの64ビットコンピューター上のメモリの最大 400 MB (Cpu 数によって異なります) を使用する場合があります。 バージョンストアの使用方法の詳細については、「ASKDS」のブログ投稿「ライアン Ries: バージョンストア」を参照してください。[これらはすべて、バケットから除外](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/The-Version-Store-Called-and-They-8217-re-All-Out-of-Buckets/ba-p/400415)されています。
 
-- Windows Server 2019 では、これは簡略化され、NTDS サービスが最初に開始されたときに、ESE バージョンストアのサイズが物理 RAM の 10% として計算されるようになりました。最小値は 400 MB、最大値は 4 GB です。 このバージョンおよびバージョンストアのトラブルシューティングの詳細については、「ライアン Ries」にあるもう1つの優れたブログを参照してください。[Deep:Active Directory、サーバー 2019 @ no__t で ESE バージョンストアの変更が変更されています。
+- Windows Server 2019 では、これは簡略化され、NTDS サービスが最初に開始されたときに、ESE バージョンストアのサイズが物理 RAM の10% として計算されるようになりました。最小値は 400 MB、最大値は 4 GB です。 このバージョンおよびバージョンストアのトラブルシューティングの詳細については、「ライアン Ries: [ACTIVE DIRECTORY ESE バージョンストアのサーバー2019の変更点」](https://techcommunity.microsoft.com/t5/Ask-the-Directory-Services-Team/Deep-Dive-Active-Directory-ESE-Version-Store-Changes-in-Server/ba-p/400510)を参照してください。
 
 ## <a name="other-memory-use"></a>その他のメモリ使用量
 
@@ -63,7 +63,7 @@ ESE バージョンストア (上の図の赤い部分) によるメモリ使用
 
 このため、およびパフォーマンスを向上させるには、DC 上のプログラムの数を制限または最小限にすることをお勧めします。 メモリ要求がない場合、LSASS はこのメモリを使用して Active Directory データベースをキャッシュするため、最適なパフォーマンスが得られます。
 
-DC にパフォーマンス上の問題があることがわかった場合は、メモリ使用率が非常に高いプロセスも監視してください。 トラブルシューティングに必要な問題が発生している可能性があります。 Microsoft コンポーネントが含まれている場合があります。 最新のサービス更新プログラムを継続的にご利用ください。 @ no__t-0Microsoft は品質更新プログラムの一部としてメモリ使用量が過剰になっているソリューションを含み、DC のパフォーマンスにも役立ちます。
+DC にパフォーマンス上の問題があることがわかった場合は、メモリ使用率が非常に高いプロセスも監視してください。 トラブルシューティングに必要な問題が発生している可能性があります。 Microsoft コンポーネントが含まれている場合があります。 最新のサービス更新プログラムを継続的に使用していることを確認してください&mdash;Microsoft には、品質更新プログラムの一部としてメモリ使用量が過剰になっているソリューションが含まれています。これは、DC のパフォーマンスにも役立ちます。
 
 使用プロファイルに応じて、大量の RAM を消費する OS 機能が組み込まれています。
 

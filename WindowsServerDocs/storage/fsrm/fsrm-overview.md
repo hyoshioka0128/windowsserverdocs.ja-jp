@@ -17,7 +17,7 @@ ms.locfileid: "71394172"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>ファイル サーバー リソース マネージャー (FSRM) の概要
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server (半期チャネル)、 
+> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server (半期チャネル)、 
 
 ファイル サーバー リソース マネージャー (FSRM) は、ファイル サーバーに保存されたデータを管理者が管理および分類できる機能セットを備えています。 ファイルサーバーリソースマネージャーを使用して、自動的にファイルを分類したり、これらの分類に基づいてタスクを実行したり、フォルダーのクォータを設定したり、記憶域の使用状況を監視するレポートを作成したりできます。
 
@@ -61,7 +61,7 @@ Windows Server バージョン1803以降では、サービスの開始時にフ�
 
 サービスの開始時に、ファイルサーバーリソースマネージャーが一部またはすべてのボリュームに変更ジャーナルを作成できないようにするには、次の手順を実行します。 
 
-1. SRMSVC サービスを停止します。 たとえば、管理者として PowerShell セッションを開き、 `Stop-Service SrmSvc`「」と入力します。
+1. SRMSVC サービスを停止します。 たとえば、管理者として PowerShell セッションを開き、「`Stop-Service SrmSvc`」と入力します。
 2. Fsutil コマンドを使用して、領域を節約するボリュームの USN ジャーナルを削除します。 
 
       ```
@@ -69,14 +69,14 @@ Windows Server バージョン1803以降では、サービスの開始時にフ�
       ```
     たとえば次のようになります。`fsutil usn deletejournal /d c:`
 
-3. たとえば、同じ PowerShell セッションで「」と`regedit`入力して、レジストリエディターを開きます。
-4. 次のキーに移動します。**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings**
+3. たとえば、同じ PowerShell セッションで `regedit` を入力して、レジストリエディターを開きます。
+4. 次のキーに移動します: **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\srmsvc\settings**
 5. 必要に応じて、サーバー全体の変更ジャーナルの作成をスキップします (特定のボリュームでのみ無効にする場合は、この手順をスキップします)。
-    1. **[設定]** キーを右クリックし、[**新しい** > **DWORD (32 ビット) 値**] を選択します。 
-    1. 値の名前`SkipUSNCreationForSystem`を指定します。
+    1. **設定**キーを右クリックし、[**新しい** > **DWORD (32 ビット) 値**] を選択します。 
+    1. `SkipUSNCreationForSystem`値の名前を指定します。
     1. 値を**1** (16 進数) に設定します。
 6. 必要に応じて、特定のボリュームの変更ジャーナルの作成をスキップします。
-    1. `fsutil volume list`コマンドまたは次の PowerShell コマンドを使用して、スキップするボリュームパスを取得します。
+    1. `fsutil volume list` コマンドまたは次の PowerShell コマンドを使用して、スキップするボリュームパスを取得します。
         ```PowerShell
         Get-Volume | Format-Table DriveLetter,FileSystemLabel,Path
         ```
@@ -88,9 +88,9 @@ Windows Server バージョン1803以降では、サービスの開始時にフ�
                     System Reserved \\?\Volume{8d3c9e8a-0000-0000-0000-100000000000}\
         C                           \\?\Volume{8d3c9e8a-0000-0000-0000-501f00000000}\
        ```
-    2. レジストリエディターに戻り、 **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings**キーを右クリックし、[ **New** > **複数文字列値**] を選択します。
-    3. 値の名前`SkipUSNCreationForVolumes`を指定します。
-    4. 変更ジャーナルの作成をスキップする各ボリュームのパスを入力し、各パスを別の行に配置します。 以下に例を示します。
+    2. レジストリエディターに戻り、 **HKEY_LOCAL_MACHINE \system\currentcontrolset\services\srmsvc\settings**キーを右クリックし、[**新しい** > **複数文字列値**] を選択します。
+    3. `SkipUSNCreationForVolumes`値の名前を指定します。
+    4. 変更ジャーナルの作成をスキップする各ボリュームのパスを入力し、各パスを別の行に配置します。 次に、例を示します。
 
         ```
         \\?\Volume{8d3c9e8a-0000-0000-0000-100000000000}\
@@ -98,9 +98,9 @@ Windows Server バージョン1803以降では、サービスの開始時にフ�
         ```
 
         > [!NOTE] 
-        > レジストリエディターでは、空の文字列が削除されたことがわかります。この警告は、無視しても安全です。REG_MULTI_SZ 型の @no__t 0Data に空の文字列を含めることはできません。レジストリエディターは、見つかったすべての空の文字列を削除します。*
+        > レジストリエディターでは、空の文字列が削除されたことがわかります。この警告は無視しても問題あり*ません。 REG_MULTI_SZ 型のデータに空の文字列を含めることはできません。レジストリエディターは、見つかったすべての空の文字列を削除します。*
 
-7. SRMSVC サービスを開始します。 たとえば、PowerShell セッションで「」と`Start-Service SrmSvc`入力します。
+7. SRMSVC サービスを開始します。 たとえば、PowerShell セッションで `Start-Service SrmSvc`を入力します。
 
 
 

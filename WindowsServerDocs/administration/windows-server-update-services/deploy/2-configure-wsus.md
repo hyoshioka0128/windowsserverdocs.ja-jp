@@ -17,19 +17,19 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71361670"
 ---
-# <a name="step-2-configure-wsus"></a>手順 2:WSUS の構成
+# <a name="step-2-configure-wsus"></a>手順 2: WSUS を構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 WSUS サーバーの役割をサーバーにインストールした後、その役割を適切に構成する必要があります。 次のチェックリストは、WSUS サーバーの初期構成を実行するために必要な手順をまとめたものです。
 
 |タスク|説明|
 |----|--------|
-|[2.1。ネットワーク接続を構成する @ no__t-0|ネットワーク構成ウィザードを使用して、クラスター ネットワークを構成します。|
-|[2.2。WSUS 構成ウィザードを使用して WSUS を構成する @ no__t-0|WSUS 構成ウィザードを使用して、基本の WSUS 構成を実行します。|
-|[2.3。WSUS コンピューターグループを構成する @ no__t-0|組織内の更新を管理するために、WSUS 管理コンソールでコンピューター グループを作成します。|
-|[2.4。クライアントの更新を構成する @ no__t-0|クライアント コンピューターに自動更新を適用する方法とタイミングを指定します。|
-|[2.5。Secure Sockets Layer プロトコル @ no__t を使用して WSUS をセキュリティで保護する|Windows Server Update Services (WSUS) を保護するために Secure Sockets Layer (SSL) プロトコルを構成します。|
+|[2.1. ネットワーク接続を構成する](#21-configure-network-connections)|ネットワーク構成ウィザードを使用して、クラスター ネットワークを構成します。|
+|[2.2. wsus 構成ウィザードを使用して WSUS を構成する](#22-configure-wsus-by-using-the-wsus-configuration-wizard)|WSUS 構成ウィザードを使用して、基本の WSUS 構成を実行します。|
+|[2.3. WSUS コンピューターグループを構成する](#23-configure-wsus-computer-groups)|組織内の更新を管理するために、WSUS 管理コンソールでコンピューター グループを作成します。|
+|[2.4. クライアントの更新プログラムを構成する](#24-configure-client-updates)|クライアント コンピューターに自動更新を適用する方法とタイミングを指定します。|
+|[2.5. Secure Sockets Layer プロトコルを使用して WSUS をセキュリティで保護する](#25-secure-wsus-with-the-secure-sockets-layer-protocol)|Windows Server Update Services (WSUS) を保護するために Secure Sockets Layer (SSL) プロトコルを構成します。|
 
 ## <a name="21-configure-network-connections"></a>2.1. ネットワーク接続を構成する
 構成プロセスを開始する前に、次の質問に対する回答を確認してください。
@@ -56,33 +56,33 @@ WSUS は、既定で、Microsoft Update を更新プログラムの入手先と�
 ### <a name="211-connection-from-the-wsus-server-to-the-internet"></a>2.1.1. WSUS サーバーからインターネットへの接続
 WSUS とインターネットの間に企業ファイアウォールがある場合は、WSUS で更新プログラムを取得できるようにそのファイアウォールを構成することが必要になることがあります。 WSUS サーバーでは、Microsoft Update から更新プログラムを取得するために、HTTPS プロトコルにはポート 443 を使用します。 ほとんどの企業ファイアウォールはこの種類のトラフィックを許可しますが、会社のセキュリティポリシーによってサーバーからのインターネットアクセスを制限する企業もあります。 会社がアクセスを制限している場合は、WSUS から次の Url の一覧へのインターネットアクセスを許可するための承認を得る必要があります。
 
-- http @ no__t-0//ある windowsupdate.log
+- http\://windowsupdate.microsoft.com
 
-- http @ no__t-0 @ no__t-1\*.windowsupdate.microsoft.com
+- http\://\*. windowsupdate.microsoft.com
 
-- https @ no__t-0 @ no__t-1\*.windowsupdate.microsoft.com
+- https\://\*. windowsupdate.microsoft.com
 
-- http @ no__t-0 @ no__t-1\*.update.microsoft.com
+- http\://\*. update.microsoft.com
 
-- https @ no__t-0 @ no__t-1\*.update.microsoft.com
+- https\://\*. update.microsoft.com
 
-- http @ no__t-0 @ no__t-1\*.windowsupdate.com
+- http\://\*. windowsupdate.com
 
-- http @ no__t-0//ある windowsupdate.log
+- http\://download.windowsupdate.com
 
-- https @ no__t-0//ダウンロード。 microsoft .com
+- https\://download.microsoft.com
 
-- http @ no__t-0 @ no__t-1\*.download.windowsupdate.com
+- http\://\*. download.windowsupdate.com
 
-- http @ no__t-0//wustat. windows .com
+- http\://wustat.windows.com
 
-- http @ no__t-0//ntservicepack
+- http\://ntservicepack.microsoft.com
 
-- http @ no__t-0//. microsoft .com
+- http\://go.microsoft.com
 
-- http @ no__t-0//dl. microsoft .com
+- http\://dl.delivery.mp.microsoft.com
 
-- https @ no__t-0//dl. microsoft .com
+- https\://dl.delivery.mp.microsoft.com
 
 > [!IMPORTANT]
 > ファイアウォール構成が原因で WSUS で更新プログラムを取得できないシナリオについては、Microsoft サポート技術情報の[記事 885819](https://support.microsoft.com/kb/885819)を参照してください。
@@ -232,7 +232,7 @@ WSUS の構成に HTTP プロトコルを使用するプロキシ サーバー�
 基本的な WSUS の構成が完了したら、WSUS 管理コンソールを使用して設定を変更する方法については、以下のセクションを参照してください。
 
 ## <a name="23-configure-wsus-computer-groups"></a>2.3. WSUS コンピューターグループを構成する
-コンピューターグループは、Windows Server Update Services (WSUS) の展開において重要な部分です。 コンピューター グループでは、更新プログラムをテストし、特定のコンピューターを更新プログラムのターゲットに指定することを許可します。 既定のコンピューター グループには、[すべてのコンピューター] と [割り当てられていないコンピューター]。 既定では、クライアント コンピューターが初めて WSUS サーバーに接続すると、サーバーによって、そのクライアント コンピューターがこれら両方のグループに追加されます。
+コンピューターグループは、Windows Server Update Services (WSUS) の展開において重要な部分です。 コンピューター グループでは、更新プログラムをテストし、特定のコンピューターを更新プログラムのターゲットに指定することを許可します。 既定のコンピューターグループは、[すべてのコンピューター] と [割り当てられていないコンピューター] の2つです。 既定では、クライアント コンピューターが初めて WSUS サーバーに接続すると、サーバーによって、そのクライアント コンピューターがこれら両方のグループに追加されます。
 
 カスタム コンピューター グループは、組織で更新プログラムを管理するのに必要な数だけ作成することができます。 更新プログラムを組織内の他のコンピューターに展開する前に、少なくとも 1 つのコンピューター グループを作成して更新プログラムをテストすることをお勧めします。
 
@@ -262,9 +262,9 @@ WSUS セットアップでは、WSUS サーバーに接続する各クライア�
 
 クライアント コンピューターの自動更新を構成するには、次の手順を使用します。
 
--   [手順 4:自動更新のグループ ポリシー設定を構成する](4-configure-group-policy-settings-for-automatic-updates.md)
+-   [手順 4: 自動更新のグループポリシー設定を構成する](4-configure-group-policy-settings-for-automatic-updates.md)
 
--   [2.3。このトピックの「コンピューターグループを構成する @ no__t-0
+-   [2.3. このトピックのコンピューターグループを構成する](#23-configure-wsus-computer-groups)
 
 ### <a name="configure-automatic-updates-in-group-policy"></a>グループ ポリシーで自動更新を構成する
 
@@ -389,13 +389,13 @@ WSUS では、SSL 用に 2 つのポートを必要とします。1 つは暗号
 
 2.  **[スタート]** にアクセスし、「 **CMD**」と入力して、 **[コマンドプロンプト]** を右クリックし、 **[管理者として実行]** をクリックします。
 
-3.  _% ProgramFiles%_ **\\update Services @ No__t-3tools @ no__t**フォルダーに移動します。
+3.  _% ProgramFiles%_ **\\Update Services\\Tools\\** フォルダーに移動します。
 
 4.  コマンドプロンプトウィンドウで、次のコマンドを入力します。
 
     **Wsusutil configuressl**_certificateName_
 
-    それぞれの文字の説明は次のとおりです。
+    この場合
 
     *certificateName* は、WSUS サーバーの DNS 名です。
 

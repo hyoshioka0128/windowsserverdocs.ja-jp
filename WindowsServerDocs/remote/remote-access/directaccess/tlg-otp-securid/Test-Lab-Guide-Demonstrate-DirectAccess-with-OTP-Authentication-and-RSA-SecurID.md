@@ -19,11 +19,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71404665"
 ---
-# <a name="test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid"></a>テスト ラボ ガイド:OTP 認証と RSA SecurID を使用した DirectAccess のデモンストレーション
+# <a name="test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid"></a>テスト ラボ ガイド: OTP 認証と RSA SecurID を使用した DirectAccess のデモンストレーション
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-リモートアクセスは、windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 オペレーティングシステムのサーバーの役割であり、リモートユーザーがルーティングを使用して、DirectAccess または仮想プライベートネットワーク (Vpn) を使用して内部ネットワークリソースに安全にアクセスできるようにします。およびリモートアクセスサービス (RRAS)。 このガイドでは、[Test Lab Guide を拡張するための詳細な手順について説明します。リモートアクセスのワンタイムパスワード (OTP) 構成を示すために、IPv4 と IPv6 が混在する @ no__t を使用した DirectAccess のシングルサーバーセットアップのデモンストレーションを行います。  
+リモートアクセスは、windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 オペレーティングシステムのサーバーの役割であり、リモートユーザーがルーティングを使用して、DirectAccess または仮想プライベートネットワーク (Vpn) を使用して内部ネットワークリソースに安全にアクセスできるようにします。およびリモートアクセスサービス (RRAS)。 このガイドでは、「リモートアクセスのワンタイムパスワード (OTP) 構成をデモンストレーションするための、 [IPv4 と IPv6 の混在を使用した DirectAccess シングルサーバーセットアップのデモンストレーション」の「テストラボガイド」](https://go.microsoft.com/fwlink/p/?LinkId=237004)を拡張する手順について説明します。  
   
 > [!WARNING]  
 > このテストラボガイドの設計には、Windows Server 2012 R2 または Windows Server 2012 を実行しているドメインコントローラー、証明機関 (CA) などのインフラストラクチャサーバーが含まれています。 このテストラボガイドを使用して、他のオペレーティングシステムを実行しているインフラストラクチャサーバーを構成することはできません。また、他のオペレーティングシステムを構成する手順については、このガイドでは説明しません。  

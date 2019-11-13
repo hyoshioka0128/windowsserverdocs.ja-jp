@@ -22,7 +22,7 @@ ms.locfileid: "71403419"
 ---
 # <a name="kerberos-constrained-delegation-overview"></a>Kerberos Constrained Delegation Overview
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 IT プロフェッショナル向けのこの概要トピックでは、Windows Server 2012 R2 および Windows Server 2012 での Kerberos の制約付き委任の新機能について説明します。
 
@@ -36,7 +36,7 @@ Windows Server 2012 R2 および Windows Server 2012 では、サービスの制
 
 Windows Server 2003 で導入された制約付き委任の詳細については、「 [Microsoft Windows Server 2003: Kerberos のプロトコル遷移と制約付き委任](https://technet.microsoft.com/library/cc739587(v=ws.10))」を参照してください。
 
-Windows Server 2012 R2 および Windows Server 2012 の Kerberos プロトコルの実装には、制約付き委任専用の拡張機能が含まれています。  Service for User to Proxy (S4U2Proxy) は、サービスがユーザー用の Kerberos サービス チケットを使用して、キー配布センター (KDC) からバックエンド サービスへのサービス チケットを取得できるようにします。 これらの拡張機能を使用すると、別のドメインにあるバックエンドサービスのアカウントで制約付き委任を構成できます。 これらの拡張機能の詳細については、次を参照してください [ @ no__t-1 ミリ秒-SFU @ no__t:Kerberos プロトコル拡張機能:MSDN ライブラリの「ユーザーおよび制約付き委任プロトコルの仕様 @ no__t-0」のサービス。
+Windows Server 2012 R2 および Windows Server 2012 の Kerberos プロトコルの実装には、制約付き委任専用の拡張機能が含まれています。  Service for User to Proxy (S4U2Proxy) は、サービスがユーザー用の Kerberos サービス チケットを使用して、キー配布センター (KDC) からバックエンド サービスへのサービス チケットを取得できるようにします。 これらの拡張機能を使用すると、別のドメインにあるバックエンドサービスのアカウントで制約付き委任を構成できます。 これらの拡張機能の詳細については、MSDN ライブラリの「 [\[MS-SFU\]: Kerberos プロトコル拡張機能: ユーザー向けのサービスと制約付き委任プロトコルの仕様](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)」を参照してください。
 
 **実用的なアプリケーション**
 
@@ -58,9 +58,9 @@ Windows Server 2012 R2 および Windows Server 2012 のドメイン間で制約
 
 基盤となるプロトコルに対する変更により、ドメインをまたがる制約付き委任が可能になります。 Windows Server 2012 R2 および Windows Server 2012 の Kerberos プロトコルの実装には、User to Proxy (S4U2Proxy) プロトコル用のサービスの拡張機能が含まれています。 これは、Kerberos プロトコルに対する一連の拡張であり、サービスがユーザー用の Kerberos サービス チケットを使用して、キー配布センター (KDC) からバックエンド サービスへのサービス チケットを取得できるようにします。
 
-これらの拡張機能の実装については、「[ @ no__t-1 ミリ秒-SFU @ no__t:Kerberos プロトコル拡張機能:ユーザーのサービスと制約付き委任プロトコルの仕様 @ no__t-0 (MSDN)。
+これらの拡張機能の実装については、MSDN の「 [\[MS-SFU\]: Kerberos プロトコル拡張機能: ユーザー向けのサービスと制約付き委任プロトコルの仕様](https://msdn.microsoft.com/library/cc246071(PROT.10).aspx)」を参照してください。
 
-Service for User (S4U) 拡張機能と比較した、転送されたチケット保証チケット (TGT) を使用した Kerberos 委任の基本的なメッセージシーケンスの詳細については、「 [1.3.3 Protocol の概要](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx)」を参照してください。Kerberos プロトコル拡張機能:ユーザーおよび制約付き委任プロトコルの仕様のサービス。
+Service for User (S4U) 拡張と比較した場合の、転送されたチケット保証チケット (TGT) を使用した Kerberos の委任での基本的なメッセージ シーケンスの詳細については、「[MS-SFU]:Kerberos Protocol Extensions:Service for User and Constrained Delegation Protocol Specification ([MS-SFU]: Kerberos プロトコル拡張: Service for User および制約付き委任プロトコルの仕様)」の、「 [1.3.3 Protocol Overview (1.3.3 プロトコルの概要)](https://msdn.microsoft.com/library/cc246080(v=prot.10).aspx) 」セクションを参照してください。
 
 **リソースベースの制約付き委任のセキュリティへの影響**
 
@@ -81,9 +81,9 @@ KDC ではプロトコルの遷移が制限されないため、このコント�
 
 -   プリンシパルの一覧を取得するには、 **PrincipalsAllowedToDelegateToAccount**パラメーターを指定して、 **get Adcomputer**、 **get Adserviceaccount**、および**get adcomputer**コマンドレットを使用します。
 
--   リソースサービスを構成するには、**新しい-ADComputer**、 **New Adserviceaccount**、 **New ADComputer**、 **Set adcomputer**、Set **adserviceaccount**、および**set adcomputer**コマンドレットを使用します **。PrincipalsAllowedToDelegateToAccount**パラメーター。
+-   リソースサービスを構成するには、 **PrincipalsAllowedToDelegateToAccount**パラメーターを使用して、 **New-Adcomputer**、 **new Adserviceaccount**、 **new Adcomputer**、 **set Adcomputer**、set **adserviceaccount**、および**set adcomputer**コマンドレットを使用します。
 
 ## <a name="BKMK_SOFT"></a>ソフトウェア要件
 リソースベースの制約付き委任は、Windows Server 2012 R2 および Windows Server 2012 を実行しているドメインコントローラーでのみ構成できますが、混在モードのフォレスト内で適用できます。
 
-次の修正プログラムは、Windows Server より前のオペレーティングシステムを実行しているフロントエンドドメインとバックエンドドメイン間の参照パスで、ユーザーアカウントドメイン内の Windows Server 2012 を実行しているすべてのドメインコントローラーに適用する必要があります。Windows Server 2008 R2 ベースのドメインコントローラーを持つ環境では、リソースベースの制約付き委任 KDC_ERR_POLICY エラーが発生します (https://support.microsoft.com/en-gb/help/2665790/resource-based-constrained-delegation-kdc-err-policy-failure-in-enviro) )。
+Windows server より前のオペレーティングシステムを実行しているフロントエンドドメインとバックエンドドメイン間の参照パスで、ユーザーアカウントドメイン内の Windows Server 2012 を実行しているすべてのドメインコントローラーに対して、次の修正プログラムを適用する必要があります。 Windows Server 2008 R2 ベースのドメインコントローラー (https://support.microsoft.com/en-gb/help/2665790/resource-based-constrained-delegation-kdc-err-policy-failure-in-enviro)を持つ環境では、リソースベースの制約付き KDC_ERR_POLICY 委任

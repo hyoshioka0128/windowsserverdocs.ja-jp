@@ -18,10 +18,10 @@ ms.locfileid: "71404273"
 ---
 # <a name="always-on-vpn-features-and-functionalities"></a>Always On VPN の機能
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows 10
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10
 
-- [**先の：** Windows Server および Windows 10 用 VPN 展開の Always On @ no__t-0
-- [**次に：** Always On VPN の機能強化 @ no__t-0 について説明します。
+- [**前へ:** Windows Server および Windows 10 用の VPN 展開の Always On](always-on-vpn/deploy/always-on-vpn-deploy.md)
+- [**次のようになります。** Always On VPN の機能強化について説明します。](../vpn/always-on-vpn/always-on-vpn-enhancements.md)
 
 このトピックでは、Always On VPN の機能について説明します。  次の表は、完全な一覧ではありませんが、リモートアクセスソリューションで使用される最も一般的な機能の一部が含まれています。 
 
@@ -60,7 +60,7 @@ ms.locfileid: "71404273"
 
 
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [Always On VPN の機能強化についての詳細情報](always-on-vpn/always-on-vpn-enhancements.md)
 

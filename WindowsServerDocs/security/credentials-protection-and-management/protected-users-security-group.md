@@ -22,7 +22,7 @@ ms.locfileid: "71403774"
 ---
 # <a name="protected-users-security-group"></a>Protected Users セキュリティ グループ
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 ここでは、IT プロフェッショナル向けに、Active Directory のセキュリティ グループである Protected Users と、そのしくみについて説明します。 このグループは、Windows Server 2012 R2 ドメインコントローラーで導入されました。
 
@@ -31,7 +31,7 @@ ms.locfileid: "71403774"
 このセキュリティグループは、企業内の資格情報の公開を管理する戦略の一環として設計されています。 このグループのメンバーのアカウントには、構成可能ではない保護が自動的に適用されます。 Protected Users グループのメンバーであるということは、既定で制限的であり、予防的にセキュリティで保護されることを示します。 アカウントに関してこのような保護を変更する唯一の方法は、このセキュリティ グループからアカウントを削除することです。
 
 > [!WARNING]
-> サービスとコンピューターのアカウントは、Protected Users グループのメンバーにはなりません。 パスワードまたは証明書が常にホストで使用可能であるため、このグループは不完全な保護を提供します。 認証は、保護されたユーザーグループに追加されたサービスまたはコンピューターのユーザー名またはパスワードが正しくないことを示すエラー @no__t で失敗します。
+> サービスとコンピューターのアカウントは、Protected Users グループのメンバーにはなりません。 パスワードまたは証明書が常にホストで使用可能であるため、このグループは不完全な保護を提供します。 Protected Users グループに追加されたサービスまたはコンピューターのユーザー名またはパスワードが正しく\" ない \"、認証が失敗し、エラーが表示されます。
 
 このドメイン関連のグローバルグループは、windows server 2012 R2 を実行しているプライマリドメインコントローラーを持つドメイン内のユーザーに対して、Windows Server 2012 R2 以降を実行 Windows 8.1 しているデバイスとホストコンピューターで、構成可能ではない保護をトリガーします。 これにより、ユーザーがこれらの保護を使用してコンピューターにサインインするときに、資格情報の既定のメモリフットプリントが大幅に削減されます。
 
@@ -63,16 +63,16 @@ Protected Users グループを作成するには、Windows Server 2012 R2 を�
 
 次の表は、Protected Users グループのプロパティの一覧です。
 
-|属性|値|
+|属性|Value|
 |-------|-----|
 |既知の SID/RID|S-1-5-21-<domain>-525|
 |種類|ドメイン グローバル|
 |既定のコンテナー|CN=Users、DC=<domain>、DC=|
-|既定メンバー|なし|
+|既定のメンバー|なし|
 |～の既定のメンバー|なし|
-|ADMINSDHOLDER で保護されているか|いいえ|
-|既定のコンテナーから移動することができるか|はい|
-|このグループの管理をサービス管理者以外に委任することができるか|いいえ|
+|ADMINSDHOLDER で保護されているか|X|
+|既定のコンテナーから移動することができるか|〇|
+|このグループの管理をサービス管理者以外に委任することができるか|X|
 |既定のユーザー権利|既定のユーザー権利はありません|
 
 ## <a name="BKMK_HowItWorks"></a>Protected Users グループのしくみ
@@ -90,7 +90,7 @@ Protected Users グループを作成するには、Windows Server 2012 R2 を�
 -   Windows 8.1 と Windows Server 2012 R2 以降では、windows digest が有効になっている場合でも、ユーザーのプレーンテキストの資格情報はキャッシュされません。
 
 > [!Note]
-> [Microsoft セキュリティアドバイザリ 2871997](https://technet.microsoft.com/library/security/2871997)をインストールした後、レジストリキーが構成されるまで、Windows ダイジェストは引き続き資格情報をキャッシュします。 「@No__t-0Microsoft セキュリティアドバイザリ:資格情報の保護と管理を向上させるための更新:手順については、2014年5月13日 @ no__t-0。
+> [Microsoft セキュリティアドバイザリ 2871997](https://technet.microsoft.com/library/security/2871997)をインストールした後、レジストリキーが構成されるまで、Windows ダイジェストは引き続き資格情報をキャッシュします。 詳細については[、「マイクロソフトセキュリティアドバイザリ: 資格情報の保護と管理を向上させるための更新プログラム: 2014 年5月 13](https://support.microsoft.com/en-us/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a)日」を参照してください。
 
 -   NTLM では、ユーザーのプレーンテキストの資格情報または NT の一方向の機能 (NTOWF) はキャッシュされません。
 
@@ -120,15 +120,15 @@ Protected Users グループのアカウントごとに、TGT の期限切れに
 
 |イベント ID とログ|説明|
 |----------|--------|
-|104<br /><br />**ProtectedUser-Client**|理由: クライアントのセキュリティ パッケージに資格情報が含まれていません。<br /><br />アカウントが Protected Users セキュリティ グループのメンバーである場合、エラーはクライアント コンピューターのログに記録されます。 このイベントは、サーバーに対して認証するために必要な資格情報をセキュリティ パッケージがキャッシュしていないことを示します。<br /><br />パッケージ名、ユーザー名、ドメイン名、およびサーバー名を表示します。|
-|304<br /><br />**ProtectedUser-Client**|理由: セキュリティパッケージには、保護されたユーザーの資格情報は保存されません。<br /><br />情報イベントは、セキュリティパッケージがユーザーのサインイン資格情報をキャッシュしていないことを示すために、クライアントに記録されます。 ダイジェスト (WDigest)、資格情報の委任 (CredSSP)、および NTLM は、Protected Users のサインオン資格情報を取得できないと想定されます。 アプリケーションは、資格情報の入力を求めれば、成功することができます。<br /><br />パッケージ名、ユーザー名、およびドメイン名を表示します。|
-|100<br /><br />**ProtectedUserFailures-DomainController**|理由: NTLM のサインインの失敗は、Protected Users セキュリティ グループに属するアカウントの場合に発生します。<br /><br />アカウントは Protected Users セキュリティ グループのメンバーだったために NTLM の認証が失敗したことを示すエラーが、ドメイン コントローラーのログに記録されます。<br /><br />アカウント名とデバイス名を表示します。|
-|104<br /><br />**ProtectedUserFailures-DomainController**|理由: DES または RC4 の暗号化の種類は Kerberos 認証に使用されており、Protected Users セキュリティ グループに属するユーザーのサインイン エラーが発生します。<br /><br />アカウントが Protected Users セキュリティ グループのメンバーである場合、DES および RC4 の暗号化の種類を使用できないため、Kerberos の事前認証は失敗しました。<br /><br />(AES は使用できます)|
-|303<br /><br />**ProtectedUserSuccesses-DomainController**|理由: Kerberos ticket-granting-ticket (TGT) は、Protected Users グループのメンバーに対して正常に発行されました。|
+|104<br /><br />**ProtectedUser-Client**|理由:クライアントのセキュリティ パッケージに資格情報が含まれていません。<br /><br />アカウントが Protected Users セキュリティ グループのメンバーである場合、エラーはクライアント コンピューターのログに記録されます。 このイベントは、サーバーに対して認証するために必要な資格情報をセキュリティ パッケージがキャッシュしていないことを示します。<br /><br />パッケージ名、ユーザー名、ドメイン名、およびサーバー名を表示します。|
+|304<br /><br />**ProtectedUser-Client**|理由: セキュリティパッケージに、保護されているユーザーの資格情報が格納されていません。<br /><br />情報イベントは、セキュリティパッケージがユーザーのサインイン資格情報をキャッシュしていないことを示すために、クライアントに記録されます。 ダイジェスト (WDigest)、資格情報の委任 (CredSSP)、および NTLM は、Protected Users のサインオン資格情報を取得できないと想定されます。 アプリケーションは、資格情報の入力を求めれば、成功することができます。<br /><br />パッケージ名、ユーザー名、およびドメイン名を表示します。|
+|100<br /><br />**ProtectedUserFailures-DomainController**|理由:NTLM のサインインの失敗は、Protected Users セキュリティ グループに属するアカウントの場合に発生します。<br /><br />アカウントは Protected Users セキュリティ グループのメンバーだったために NTLM の認証が失敗したことを示すエラーが、ドメイン コントローラーのログに記録されます。<br /><br />アカウント名とデバイス名を表示します。|
+|104<br /><br />**ProtectedUserFailures-DomainController**|理由:DES または RC4 の暗号化の種類は Kerberos 認証に使用されており、Protected Users セキュリティ グループに属するユーザーのサインイン エラーが発生します。<br /><br />アカウントが Protected Users セキュリティ グループのメンバーである場合、DES および RC4 の暗号化の種類を使用できないため、Kerberos の事前認証は失敗しました。<br /><br />(AES は使用できます)|
+|303<br /><br />**ProtectedUserSuccesses-DomainController**|理由:Kerberos ticket-granting-ticket (TGT) は、Protected Users グループのメンバーに対して正常に発行されました。|
 
 
 
-## <a name="additional-resources"></a>その他の技術情報
+## <a name="additional-resources"></a>その他の資料
 
 -   [資格情報の保護と管理](credentials-protection-and-management.md)
 

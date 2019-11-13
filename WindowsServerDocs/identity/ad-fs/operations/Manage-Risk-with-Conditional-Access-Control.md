@@ -38,7 +38,7 @@ AD FS のアクセス制御は、発行承認要求規則を使用して実装�
 
 これらの規則のオプションとロジックの詳細については、「[承認要求規則を使用する場合](https://technet.microsoft.com/library/ee913560.aspx)」を参照してください。
 
-Windows Server 2012 R2 の AD FS では、アクセス制御は、ユーザー、デバイス、場所、認証データを含む複数の要因によって強化されています。 このアクセス制御の拡張は、承認要求規則で利用できるさまざまな種類の要求によって実現されます。  つまり、Windows Server 2012 R2 の AD FS では、ユーザー id またはグループメンバーシップ、ネットワークの場所、デバイス (社内参加しているかどうか) に基づいて条件付きアクセス制御を適用できます。詳細については、「[任意のデバイスからの SSO に対する職場への参加」を参照してください。および](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)認証状態 (多要素認証 (MFA) が実行されたかどうかに関係あります) と認証の状態。
+Windows Server 2012 R2 の AD FS では、アクセス制御は、ユーザー、デバイス、場所、認証データを含む複数の要因によって強化されています。 このアクセス制御の拡張は、承認要求規則で利用できるさまざまな種類の要求によって実現されます。  言い換えると、Windows Server 2012 R2 の AD FS では、ユーザー id またはグループメンバーシップ、ネットワークの場所、デバイス (社内参加しているかどうかにかかわらず) に基づいて条件付きアクセス制御を適用することができます。詳細については、「[任意のデバイスからの職場への参加](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)」を参照してください。
 
 Windows Server 2012 R2 の AD FS での条件付きアクセス制御には、次のような利点があります。
 
@@ -123,7 +123,7 @@ Windows Server 2012 R2 の AD FS での条件付きアクセス制御には、�
 条件付きアクセス制御を実装し、利用可能な設定を使用することで、多くの方法でリスクを管理できます。
 
 ### <a name="common-scenarios"></a>一般的なシナリオ
-たとえば、特定のアプリケーション (証明書利用者信頼) のユーザーのグループメンバーシップデータに基づいて、条件付きアクセス制御を実装する簡単なシナリオを考えてみます。 つまり、フェデレーションサーバーで発行承認規則を設定して、AD ドメイン内の特定のグループに属するユーザーに、AD FS によって保護されている特定のアプリケーションへのアクセスを許可することができます。  このシナリオを実装するための詳細な手順 (UI と Windows PowerShell を使用) については、@no__t 0Walkthrough ガイドを参照してください。条件付き Access Control @ no__t を使用してリスクを管理します。 このチュートリアルの手順を完了するには、ラボ環境を設定し、「 [Windows Server 2012 R2 の AD FS 用のラボ環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)をセットアップする」の手順に従ってください。
+たとえば、特定のアプリケーション (証明書利用者信頼) のユーザーのグループメンバーシップデータに基づいて、条件付きアクセス制御を実装する簡単なシナリオを考えてみます。 つまり、フェデレーションサーバーで発行承認規則を設定して、AD ドメイン内の特定のグループに属するユーザーに、AD FS によって保護されている特定のアプリケーションへのアクセスを許可することができます。  このシナリオを実装する詳細な手順 (UI と Windows PowerShell を使用) については、「 [Walkthrough Guide: Manage Risk with Conditional Access Control](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)」で説明しています。 このチュートリアルの手順を完了するには、ラボ環境を設定し、「 [Windows Server 2012 R2 の AD FS 用のラボ環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)をセットアップする」の手順に従ってください。
 
 ### <a name="advanced-scenarios"></a>高度なシナリオ
 Windows Server 2012 R2 の AD FS での条件付きアクセス制御を実装するその他の例を次に示します。
@@ -174,8 +174,9 @@ Windows Server 2012 R2 の AD FS での条件付きアクセス制御を実装�
 
     ```
 
-## <a name="see-also"></a>関連項目
-[チュートリアル ガイド: 条件付き Access Control @ no__t を使用してリスクを管理する @ no__t-1[Windows Server 2012 R2 で AD FS 用のラボ環境をセットアップする](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+## <a name="see-also"></a>参照
+[チュートリアルガイド: 条件付き Access Control によるリスク管理](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
+[Windows Server 2012 R2 で AD FS のラボ環境をセットアップ](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)する
 
 
 

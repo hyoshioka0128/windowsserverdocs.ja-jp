@@ -21,15 +21,15 @@ ms.locfileid: "71359318"
   
 AD FS の構成データをエクスポートするには、次の作業を実行します。  
   
--   [ステップ 1: サービス設定のエクスポート @ no__t-0  
+-   [手順 1: サービスの設定をエクスポートする](#step-1-export-service-settings)  
   
--   [手順 2:要求プロバイダー信頼をエクスポートする @ no__t-0  
+-   [手順 2: 要求プロバイダー信頼をエクスポートする](#step-2-export-claims-provider-trusts)  
   
--   [手順 3:証明書利用者信頼をエクスポートする @ no__t-0  
+-   [手順 3: 証明書利用者信頼をエクスポートする](#step-3-export-relying-party-trusts)  
   
--   [手順 4:カスタム属性ストアのバックアップ @ no__t-0  
+-   [手順 4: カスタム属性ストアをバックアップする](#step-4-back-up-custom-attribute-stores)  
   
--   [手順 5:Web ページのカスタマイズをバックアップする @ no__t-0  
+-   [手順 5: web ページのカスタマイズをバックアップする](#step-5-back-up-webpage-customizations)  
   
 ## <a name="step-1-export-service-settings"></a>手順 1:サービスの設定をエクスポートする  
  サービスの設定をエクスポートするには、次の手順を実行します。  
@@ -59,7 +59,7 @@ AD FS の構成データをエクスポートするには、次の作業を実�
     
 |**Set-adfsproperties によって報告されたフェデレーションサービスプロパティ名**|**AD FS 管理コンソールのフェデレーションサービスプロパティ名**|
 |------|------|
-|HostName|フェデレーション サービス名|  
+|ホスト名|フェデレーション サービス名|  
 |識別子|フェデレーション サービスの識別子|  
 |DisplayName|フェデレーション サービスの表示名|  
   
@@ -87,29 +87,29 @@ ID 値を検索するには、 **[サービス]** コンソールで **[AD FS 2.
   
 これを行うには、Windows PowerShell を開き、コマンド `PSH:>add-pssnapin “Microsoft.adfs.powershell”`を実行して AD FS コマンドレットを Windows PowerShell セッションに追加します。 次に、コマンド `Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”` を実行して、カスタム要求記述をファイルにエクスポートします。  
   
-##  <a name="step-2-export-claims-provider-trusts"></a>手順 2:要求プロバイダー信頼をエクスポートする  
+##  <a name="step-2-export-claims-provider-trusts"></a>手順 2: 要求プロバイダー信頼をエクスポートする  
  要求プロバイダー信頼をエクスポートするには、次の手順を実行します。  
   
 ### <a name="to-export-claims-provider-trusts"></a>要求プロバイダー信頼をエクスポートするには  
   
 1.  Windows PowerShell を使用して、すべての要求プロバイダー信頼をエクスポートできます。 Windows PowerShell を開き、コマンド `PSH:>add-pssnapin “Microsoft.adfs.powershell”`を実行して、AD FS コマンドレットを Windows PowerShell セッションに追加します。 次に、コマンド `PSH:>Get-ADFSClaimsProviderTrust | Out-File “.\cptrusts.txt”`を実行して、すべての要求プロバイダー信頼をエクスポートします。  
   
-## <a name="step-3-export-relying-party-trusts"></a>手順 3:証明書利用者信頼をエクスポートする  
+## <a name="step-3-export-relying-party-trusts"></a>手順 3: 証明書利用者信頼をエクスポートする  
  証明書利用者信頼をエクスポートするには、次の手順を実行します。  
   
 ### <a name="to-export-relying-party-trusts"></a>証明書利用者信頼をエクスポートするには  
   
 1.  すべての証明書利用者信頼をエクスポートするには、Windows PowerShell を開き、コマンド `PSH:>add-pssnapin “Microsoft.adfs.powershell”`を実行して AD FS コマンドレットを Windows PowerShell セッションに追加します。 次に、コマンド`PSH:>Get-ADFSRelyingPartyTrust | Out-File “.\rptrusts.txt”`を実行して、すべての証明書利用者信頼をエクスポートします。  
   
-## <a name="step-4-back-up-custom-attribute-stores"></a>手順 4:カスタム属性ストアをバックアップする  
+## <a name="step-4-back-up-custom-attribute-stores"></a>手順 4: カスタム属性ストアをバックアップする  
  AD FS によって使用中のカスタム属性ストアに関する情報を検索するには、Windows PowerShell を使用します。 Windows PowerShell を開き、コマンド `PSH:>add-pssnapin “Microsoft.adfs.powershell”`を実行して、AD FS コマンドレットを Windows PowerShell セッションに追加します。 次に、コマンド `PSH:>Get-ADFSAttributeStore`を実行してカスタム属性ストアに関する情報を検索します。 カスタム属性ストアのアップグレードまたは移行手順はさまざまです。  
   
 ## <a name="step-5-back-up-webpage-customizations"></a>手順 5:Web ページのカスタマイズをバックアップする  
  任意の Web ページのカスタマイズをバックアップするには、IIS で仮想パス **“/adfs/ls”** にマップされたディレクトリから AD FS Web ページと **web.config** ファイルをコピーします。 既定では、そのファイルは **%systemdrive%\inetpub\adfs\ls** ディレクトリにあります。  
 
-## <a name="next-steps"></a>次の手順
- [AD FS 2.0 フェデレーションサーバーの移行の準備](prepare-to-migrate-ad-fs-fed-server.md)   
+## <a name="next-steps"></a>次のステップ
+ [AD FS 2.0 フェデレーションサーバー  の移行の準備](prepare-to-migrate-ad-fs-fed-server.md)  
  [AD FS 2.0 フェデレーションサーバープロキシの移行の準備](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [AD FS 2.0 フェデレーションサーバー](migrate-the-ad-fs-fed-server.md)  を移行します。  
- [AD FS 2.0 フェデレーションサーバープロキシ   を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
+ [AD FS 2.0 フェデレーションサーバー  を移行します](migrate-the-ad-fs-fed-server.md)。  
+ [AD FS 2.0 フェデレーションサーバープロキシ  を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
  [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)

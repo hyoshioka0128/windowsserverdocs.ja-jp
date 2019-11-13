@@ -26,15 +26,15 @@ ms.locfileid: "71407465"
 
 このチュートリアルは次のセクションで構成されています。
 
--   [ステップ 1: ラボ環境のセットアップ @ no__t-0
+-   [手順 1: ラボ環境のセットアップ](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
 
--   [手順 2:既定の AD FS アクセス制御メカニズムを確認する @ no__t-0
+-   [手順 2: 既定の AD FS アクセス制御メカニズムを確認する](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_2)
 
--   [手順 3:ユーザーデータに基づく条件付きアクセス制御ポリシーを構成する @ no__t-0
+-   [手順 3: ユーザーデータに基づいて条件付きアクセス制御ポリシーを構成する](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_3)
 
--   [手順 4:条件付きアクセス制御メカニズムを確認する @ no__t-0
+-   [手順 4: 条件付きアクセス制御メカニズムを確認する](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_4)
 
-## <a name="BKMK_1"></a>手順 1:ラボ環境のセットアップ
+## <a name="BKMK_1"></a>手順 1: ラボ環境のセットアップ
 このチュートリアルを完了するには、次のコンポーネントで構成された環境が必要です。
 
 -   テストユーザーアカウントとグループアカウントを持つ Active Directory ドメイン。 windows server 2008、Windows Server 2008 R2、または Windows server 2012 で実行され、スキーマが Windows Server 2012 R2 または windows server 2012 R2 で実行されている Active Directory ドメインにアップグレードされます。
@@ -52,12 +52,12 @@ ms.locfileid: "71407465"
 
 このような環境を設定する方法については、次を参照してください。 [Windows Server 2012 R2 の AD FS のラボ環境を設定](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)します。
 
-## <a name="BKMK_2"></a>手順 2:AD FS の既定のアクセス制御メカニズムを確認する
+## <a name="BKMK_2"></a>手順 2: 既定の AD FS アクセス制御メカニズムを確認する
 この手順では、AD FS の既定のアクセス制御メカニズムにより、ユーザーが AD FS のサインイン ページにリダイレクトされ、有効な資格情報を入力するとアプリケーションへのアクセスが許可されることを確認します。 使用することができます、 **Robert Hatley** AD アカウントと **claimapp** サンプル アプリケーションで構成した [Windows Server 2012 R2 の AD FS のラボ環境を設定](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)します。
 
 #### <a name="to-verify-the-default-ad-fs-access-control-mechanism"></a>AD FS の既定のアクセス制御メカニズムを確認するには
 
-1.  クライアントコンピューターで、ブラウザーウィンドウを開き、サンプルアプリケーション **(https://webserv1.contoso.com/claimapp** ) に移動します。
+1.  クライアントコンピューターで、ブラウザーウィンドウを開き、サンプルアプリケーション ( **https://webserv1.contoso.com/claimapp** ) に移動します。
 
     この操作により、要求がフェデレーション サーバーの役割に自動的にリダイレクトされた後、ユーザー名とパスワードでサインインするように求められます。
 
@@ -65,7 +65,7 @@ ms.locfileid: "71407465"
 
     アプリケーションへのアクセスが許可されます。
 
-## <a name="BKMK_3"></a>手順 3:手順 3: ユーザー データに基づく条件付きアクセス制御ポリシーを構成する
+## <a name="BKMK_3"></a>手順 3: ユーザーデータに基づいて条件付きアクセス制御ポリシーを構成する
 この手順では、ユーザーのグループ メンバーシップ データに基づくアクセス制御ポリシーを設定します。 つまり、サンプル アプリケーションである **claimapp** を表す証明書利用者信頼について、フェデレーション サーバーで **発行承認規則**を構成します。 この規則のロジックにより、 **Robert Hatley** AD ユーザーは**Finance**グループに属しているため、このアプリケーションにアクセスするために必要な要求が発行されます。 **Robert Hatley**アカウントを**Finance**グループに追加しました。「 [Windows Server 2012 R2 の AD FS 用のラボ環境をセットアップ](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)する」をご確認ください。
 
 AD FS 管理コンソールまたは Windows PowerShell のいずれかを使用してこのタスクを完了できます。
@@ -113,10 +113,10 @@ Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $G
 > [!NOTE]
 > <group_SID> を必ず AD グループ **Finance** の SID の値に置き換えます。
 
-## <a name="BKMK_4"></a>手順 4:条件付きアクセス制御メカニズムを確認する
+## <a name="BKMK_4"></a>手順 4: 条件付きアクセス制御メカニズムを確認する
 この手順では、前の手順で設定した条件付きアクセス制御ポリシーを確認します。 次の手順を使用して、**Finance** グループに属している AD ユーザー **Robert Hatley** はサンプル アプリケーションにアクセスでき、**Finance** グループに属していない AD ユーザーはサンプル アプリケーションにアクセスできないことを確認できます。
 
-1.  クライアントコンピューターで、ブラウザーウィンドウを開き、サンプルアプリケーション **(https://webserv1.contoso.com/claimapp** ) に移動します。
+1.  クライアントコンピューターで、ブラウザーウィンドウを開き、サンプルアプリケーションに移動します。 **https://webserv1.contoso.com/claimapp**
 
     この操作により、要求がフェデレーション サーバーの役割に自動的にリダイレクトされた後、ユーザー名とパスワードでサインインするように求められます。
 
@@ -124,13 +124,13 @@ Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $G
 
     アプリケーションへのアクセスが許可されます。
 
-3.  **Finance** グループに属していない別の AD ユーザーの資格情報を入力します (AD でユーザーアカウントを作成する方法の詳細については、 [https://technet.microsoft.com/library/cc7833232.aspx](https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx)を参照してください。
+3.  **Finance** グループに属していない別の AD ユーザーの資格情報を入力します (AD でユーザーアカウントを作成する方法の詳細については、「 [https://technet.microsoft.com/library/cc7833232.aspx](https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx)」を参照してください。
 
-    前の手順でアクセス制御ポリシーが設定されているため、この時点で、 **Finance**グループに属していないこの AD ユーザーに対して "アクセスが拒否されました" というメッセージが表示されます。 既定のメッセージテキストは、このサイトへのアクセスが許可されていない @no__t です。ここをクリックしてサインアウトし、もう一度サインインするか、管理者にアクセス許可を問い合わせてください。 ** " です。ただし、このテキストはカスタマイズできます。 サインイン エクスペリエンスのカスタマイズ方法については、「 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)」を参照してください。
+    前の手順でアクセス制御ポリシーが設定されているため、この時点で、 **Finance**グループに属していないこの AD ユーザーに対して "アクセスが拒否されました" というメッセージが表示されます。 既定のメッセージテキストは、**このサイトへのアクセスが許可されていないことを示します。ここをクリックしてサインアウトし、もう一度サインインするか、管理者にアクセス許可を問い合わせてください。** " です。ただし、このテキストはカスタマイズできます。 サインイン エクスペリエンスのカスタマイズ方法については、「 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
+[Windows Server 2012 R2 で AD FS のラボ環境をセットアップ](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 [条件付き Access Control によるリスク管理](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
-[Windows Server 2012 R2 で AD FS のラボ環境をセットアップ](../deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)する
 
 
 

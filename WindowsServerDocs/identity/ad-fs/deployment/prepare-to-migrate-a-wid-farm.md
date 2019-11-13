@@ -22,9 +22,9 @@ ms.locfileid: "71359264"
   
 -   [手順 1: サービスの設定をエクスポートする](#step-1-export-service-settings)  
   
--   [手順 2:カスタム属性ストアのバックアップ @ no__t-0  
+-   [手順 2: カスタム属性ストアをバックアップする](#step-2-back-up-custom-attribute-stores)  
   
--   [手順 3:Web ページのカスタマイズをバックアップする @ no__t-0  
+-   [手順 3: web ページのカスタマイズをバックアップする](#step-3-back-up-webpage-customizations)  
   
 ## <a name="step-1-export-service-settings"></a>手順 1:サービスの設定をエクスポートする  
  サービスの設定をエクスポートするには、次の手順を実行します。  
@@ -55,9 +55,9 @@ ID 値を検索するには、 **[サービス]** コンソールで **[AD FS 2.
 ## <a name="step-3-back-up-webpage-customizations"></a>手順 3:Web ページのカスタマイズをバックアップする  
  任意の Web ページのカスタマイズをバックアップするには、IIS で仮想パス **“/adfs/ls”** にマップされたディレクトリから AD FS Web ページと **web.config** ファイルをコピーします。 既定では、そのファイルは **%systemdrive%\inetpub\adfs\ls** ディレクトリにあります。  
 
-## <a name="next-steps"></a>次の手順
- [AD FS 2.0 フェデレーションサーバーの移行の準備](prepare-to-migrate-ad-fs-fed-server.md)   
+## <a name="next-steps"></a>次のステップ
+ [AD FS 2.0 フェデレーションサーバー  の移行の準備](prepare-to-migrate-ad-fs-fed-server.md)  
  [AD FS 2.0 フェデレーションサーバープロキシの移行の準備](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [AD FS 2.0 フェデレーションサーバー](migrate-the-ad-fs-fed-server.md)  を移行します。  
- [AD FS 2.0 フェデレーションサーバープロキシ   を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
+ [AD FS 2.0 フェデレーションサーバー  を移行します](migrate-the-ad-fs-fed-server.md)。  
+ [AD FS 2.0 フェデレーションサーバープロキシ  を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
  [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)

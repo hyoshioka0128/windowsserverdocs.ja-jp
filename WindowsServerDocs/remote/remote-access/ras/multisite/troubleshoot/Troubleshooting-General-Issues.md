@@ -21,7 +21,7 @@ ms.locfileid: "71404449"
 ---
 # <a name="troubleshooting-general-issues"></a>一般的な問題のトラブルシューティング
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、リモートアクセスに関連する一般的な問題のトラブルシューティングについて説明します。  
   
@@ -38,12 +38,12 @@ DirectAccess は、展開内のいずれかのエントリポイントの GPO �
   
 展開内の各エントリポイントがドメインコントローラー上に対応する GPO を持っていることを確認し、ログオンしたユーザーに、リモートアクセスの展開で構成されているすべての Gpo に対する読み取りおよび書き込みのアクセス許可があることを確認します。  
   
-回避策として、リモートアクセス管理コンソールを使用する代わりに、構成コマンドレットを使用します。たとえば、`Get-RemoteAccess` および `Get-DAEntryPoint` を使用します。  
+回避策として、リモートアクセス管理コンソールを使用する代わりに、構成コマンドレットを使用します。たとえば、`Get-RemoteAccess` と `Get-DAEntryPoint`を使用します。  
   
 > [!NOTE]  
 > このシナリオは、現在のエントリポイントのサーバー GPO が使用できない場合には発生しません。  
   
-@No__t-0 コマンドレットを使用して、サーバー Gpo を格納しているすべてのドメインコントローラー @no__t を一覧表示し、`Get-RemoteAccess` と組み合わせて、展開内のサーバー Gpo の完全な一覧を取得することができます。 以下に例を示します。  
+`Get-DAEntryPointDC` コマンドレットを使用して、サーバー Gpo を格納 `Get-DAMultiSite` しているすべてのドメインコントローラーの一覧を表示し、`Get-RemoteAccess` と組み合わせて展開内のサーバー Gpo の完全な一覧を取得することができます。 次に、例を示します。  
   
 ```  
 $ServerGpos = Get-DAEntryPointDC | ForEach-Object {   
@@ -86,11 +86,11 @@ Remove-GPRegistryValue -Name <Windows7GpoName> -Domain <DomainName> -Key "HKEY_L
   
     **ソリューション**  
   
-    「@No__t-02.4」で説明されている「サーバーの Gpo を管理するドメインコントローラーを変更するには」の手順に従います。Gpo を構成する @ no__t-0  
+    「2.4」で説明されている「サーバーの Gpo を管理するドメインコントローラーを変更するには」の手順に従い[ます。Gpo を構成する](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs)。  
   
 -   **問題2**  
   
-    **エラーを受信しました**。 ドメイン < ドメイン名 > のプライマリドメインコントローラに到達できません。  
+    **エラーを受信しました**。 ドメイン < domain_name > のプライマリドメインコントローラに到達できません。  
   
     **原因**  
   
@@ -98,7 +98,7 @@ Remove-GPRegistryValue -Name <Windows7GpoName> -Domain <DomainName> -Key "HKEY_L
   
     **ソリューション**  
   
-    「@No__t-02.4」で説明されている「PDC エミュレーターの役割を転送するには」の手順に従います。Gpo を構成する @ no__t-0  
+    「2.4」で説明されている「PDC エミュレーターの役割を転送するには」の手順に従い[ます。Gpo を構成する](assetId:///b1960686-a81e-4f48-83f1-cc4ea484df43#ConfigGPOs)。  
   
 
 

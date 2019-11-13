@@ -15,13 +15,13 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71394332"
 ---
-# <a name="checklist-apply-a-quota-to-a-volume-or-folder"></a>チェックリスト:ボリュームまたはフォルダーにクォータを適用する
+# <a name="checklist-apply-a-quota-to-a-volume-or-folder"></a>チェックリスト: ボリュームまたはフォルダーにクォータを適用する
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server (半期チャネル)
+> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server (半期チャネル)
 
 1. しきい値の通知または記憶域レポートを電子メールで送信する場合は、電子メールの設定を構成します [電子メール通知の構成](configure-email-notifications.md)
 
-2. ボリュームまたはフォルダーの記憶域の要件を評価します。 データを指定するには、 **[記憶域レポートの管理]** ノードのレポートを使用できます (たとえば、必要に応じて所有者ごとのファイルを実行し、大量のディスク領域を使用しているユーザーを特定します)。[オン デマンドでレポートを生成する](generate-reports-on-demand.md)
+2. ボリュームまたはフォルダーの記憶域の要件を評価します。 データを指定するには、 **[記憶域レポートの管理]** ノードのレポートを使用できます (たとえば、所有者ごとのファイルのレポートをオン デマンドで実行して、大量のディスク領域を使用しているユーザーを特定します)。[オン デマンドでレポートを生成する](generate-reports-on-demand.md)
 
 3. 利用可能な構成済みのクォータのテンプレートを確認します ( **[クォータの管理]** で、 **[クォータテンプレート]** ノードをクリックします)。[クォータテンプレートのプロパティの編集](edit-quota-template-properties.md) 
 <br />\- または - <br /> 組織内で記憶域ポリシーを適用するための新しいクォータのテンプレートを作成します。 [クォータテンプレートを作成する](create-quota-template.md)
@@ -32,7 +32,7 @@ ms.locfileid: "71394332"
 6. クォータの使用率を定期的に監視するため、クォータの使用率レポートを含むレポート タスクをスケジュールします。 [レポートのセットをスケジュールする](schedule-set-of-reports.md)
 
 > [!Note]
-> ボリュームまたはフォルダー上のファイルを画面に表示する場合は、「@no__t」チェックリストを参照してください。ボリュームまたはフォルダー @ no__t-0 にファイルスクリーンを適用します。
+> ボリュームまたはフォルダーのファイルをスクリーン処理する場合は、「[チェックリスト: ボリュームまたはフォルダーにファイル スクリーンを適用する](checklist-apply-file-screen-to-volume-or-folder.md)」をご覧ください。
 
 
 

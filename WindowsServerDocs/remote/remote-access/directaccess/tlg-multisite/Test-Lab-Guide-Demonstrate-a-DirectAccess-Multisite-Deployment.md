@@ -19,11 +19,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71388222"
 ---
-# <a name="test-lab-guide-demonstrate-a-directaccess-multisite-deployment"></a>テスト ラボ ガイド:DirectAccess マルチサイト展開のデモンストレーション
+# <a name="test-lab-guide-demonstrate-a-directaccess-multisite-deployment"></a>テスト ラボ ガイド: DirectAccess マルチサイト展開のデモンストレーション
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-リモートアクセスは、リモートユーザーが DirectAccess または RRAS VPN を使用して内部ネットワークリソースに安全にアクセスできるようにする、windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 オペレーティングシステムのサーバーの役割です。 このガイドでは、[Test Lab Guide を拡張するための詳細な手順について説明します。マルチサイトのシナリオでリモートアクセスをデモンストレーションするために、IPv4 と IPv6 が混在する @ no__t-0 を使用した DirectAccess のシングルサーバーセットアップのデモンストレーションを行います。  
+リモートアクセスは、リモートユーザーが DirectAccess または RRAS VPN を使用して内部ネットワークリソースに安全にアクセスできるようにする、windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 オペレーティングシステムのサーバーの役割です。 このガイドでは、マルチサイトシナリオでのリモートアクセスをデモンストレーションするための、 [「IPv4 と IPv6 が混在する DirectAccess シングルサーバーセットアップのテストラボガイド](https://go.microsoft.com/fwlink/p/?LinkId=237004)」を拡張する手順について説明します。  
   
 マルチサイトシナリオでリモートアクセスを展開すると、地理的に多様な場所にリモートアクセスサーバーを構成できます。 以前は、リモートユーザーは、常に特定の DirectAccess サーバーを介して企業ネットワークに接続する必要がありました。 Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 と Windows 10 または windows 8 を使用して、展開内の各地理的な場所のエントリポイントを構成できます。 各エントリポイントは、単一のリモートアクセスサーバーまたはリモートアクセスサーバーのクラスターにすることができます。 リモートユーザーは、任意の組織のリモートアクセスエントリポイントに接続することができます。 たとえば、リモートユーザーが、通常、アジアにあるリモートアクセスエントリポイントに接続し、次にヨーロッパへの出張を行う場合、クライアントコンピューターは最も近いリモートアクセスエントリポイントに自動的に接続します。  
   

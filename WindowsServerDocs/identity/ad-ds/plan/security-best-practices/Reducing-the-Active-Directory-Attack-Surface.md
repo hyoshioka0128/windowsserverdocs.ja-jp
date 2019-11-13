@@ -18,23 +18,23 @@ ms.locfileid: "71367648"
 ---
 # <a name="reducing-the-active-directory-attack-surface"></a>Active Directory の攻撃を削減する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このセクションでは、Active Directory のインストールの攻撃対象領域を減らすために実装する技術コントロールについて説明します。 このセクションには、次の情報が含まれています。  
   
--   [最小限の特権を持つ管理モデルを実装](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)することは、日常の管理に高い特権を持つアカウントを使用するというリスクを特定することに重点を置いています。また、を実装して、特権アカウントが存在します。  
+-   [最小限の特権を持つ管理モデルを実装](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)することは、特権アカウントが存在するリスクを軽減するための推奨事項を提供するだけでなく、日常の管理に高い特権を持つアカウントを使用するというリスクを特定することに重点を置いています。  
   
 -   セキュリティで保護された管理ホストの[実装](../../../ad-ds/plan/security-best-practices/Implementing-Secure-Administrative-Hosts.md)は、セキュリティで保護された管理ホストの展開に対するいくつかのサンプルアプローチに加えて、セキュリティで保護された専用管理システムを展開するための原則について  
   
--   [攻撃からドメインコントローラーを保護](../../../ad-ds/plan/security-best-practices/Securing-Domain-Controllers-Against-Attack.md)するポリシーと設定について説明しますが、セキュリティで保護された管理ホストの実装に関する推奨事項に似ていますが、ドメインコントローラーに固有の推奨事項がいくつか含まれています。ドメインコントローラとそれらを管理するために使用されるシステムが適切にセキュリティで保護されていることを確認します。  
+-   [ドメインコントローラーの攻撃からの保護](../../../ad-ds/plan/security-best-practices/Securing-Domain-Controllers-Against-Attack.md)セキュリティで保護された管理ホストの実装に関する推奨事項に似ていますが、ドメインコントローラーとそれらを管理するために使用するシステムが適切に保護されていることを確認するために、ドメインコントローラーに固有の推奨事項がいくつか含まれています。  
   
 ## <a name="privileged-accounts-and-groups-in-active-directory"></a>Active Directory の特権付きアカウントとグループ  
-このセクションでは、Active Directory の特権アカウントとグループの共通点と相違点を説明するための Active Directory の特権アカウントとグループに関する背景情報について説明します。 これらの違いを理解することで、[最小特権の管理モデルの実装](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)に関する推奨事項をそのまま使用するか、組織に合わせてカスタマイズするかにかかわらず、各グループをセキュリティで保護するために必要なツールが用意されています。適切なアカウント。  
+このセクションでは、Active Directory の特権アカウントとグループの共通点と相違点を説明するための Active Directory の特権アカウントとグループに関する背景情報について説明します。 これらの違いを理解することで、最小限の[特権の管理モデルの実装](../../../ad-ds/plan/security-best-practices/../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)に関する推奨事項をそのまま使用するか、組織に合わせてカスタマイズするかにかかわらず、各グループとアカウントを適切にセキュリティで保護するために必要なツールが用意されています。  
   
 ### <a name="built-in-privileged-accounts-and-groups"></a>組み込みの特権アカウントとグループ  
 Active Directory により、管理の委任が容易になり、権限とアクセス許可を割り当てる際の最小限の特権の原則がサポートされます。 ドメイン内にアカウントを持つ "通常の" ユーザーは、既定では、ディレクトリに格納されているものの多くを読み取ることができますが、ディレクトリ内のデータのごく一部のみを変更することができます。 追加の特権を必要とするユーザーは、ディレクトリに組み込まれているさまざまな "特権のある" グループのメンバーシップを付与することができます。これにより、ロールに関連する特定のタスクを実行できますが、職務に関係のないタスクを実行することはできません。 組織は、特定のジョブの役割に合わせて調整されたグループを作成することもできます。また、IT スタッフが日常的な管理機能を実行するための権限とアクセス許可が付与されます。これらの関数にはが必要です。  
   
-Active Directory 内では、次の3つの組み込みグループが、ディレクトリ内の最上位の特権グループになります。Enterprise Admins、Domain Admins、および Administrators。 これらの各グループの既定の構成と機能については、次のセクションで説明します。  
+Active Directory では、3つの組み込みグループが、エンタープライズ管理者、ドメイン管理者、および管理者というディレクトリ内の最上位の特権グループになります。 これらの各グループの既定の構成と機能については、次のセクションで説明します。  
   
 #### <a name="highest-privilege-groups-in-active-directory"></a>Active Directory の最上位の特権グループ  
   
@@ -103,9 +103,9 @@ Active Directory 内のほとんどのオブジェクトは、ドメインの BA
 Windows Server 2008 より前のバージョンの Windows では、オブジェクトの所有者は、オブジェクトのアクセス許可を変更することができます。これには、元になっていなかったアクセス許可の付与などが含まれます。 そのため、ドメインの AdminSDHolder オブジェクトに対する既定のアクセス許可により、BA グループまたは EA グループのメンバーであるユーザーは、ドメインの AdminSDHolder オブジェクトのアクセス許可を変更できません。 ただし、ドメインの Administrators グループのメンバーは、オブジェクトの所有権を取得し、追加のアクセス許可を与えることができます。つまり、この保護は基本的で、ドメイン内の DA グループのメンバーではありません。 また、BA および EA (該当する場合) グループには、ローカルドメイン (EA のルートドメイン) の AdminSDHolder オブジェクトの属性を変更するアクセス許可があります。  
   
 > [!NOTE]  
-> AdminSDHolder オブジェクト dSHeuristics の属性では、保護されたグループと見なされ、AdminSDHolder と SDProp によって影響を受けるグループの限定されたカスタマイズ (削除) が可能です。 このカスタマイズは、実装されている場合は慎重に検討する必要がありますが、AdminSDHolder で dSHeuristics を変更すると便利な場合があります。 AdminSDHolder オブジェクトでの dSHeuristics 属性の変更の詳細については、Microsoft サポートの記事[817433](https://support.microsoft.com/?id=817433)と[973840](https://support.microsoft.com/kb/973840)、および @no__t 付録 C:Active Directory @ no__t の保護されたアカウントとグループ。  
+> AdminSDHolder オブジェクト dSHeuristics の属性では、保護されたグループと見なされ、AdminSDHolder と SDProp によって影響を受けるグループの限定されたカスタマイズ (削除) が可能です。 このカスタマイズは、実装されている場合は慎重に検討する必要がありますが、AdminSDHolder で dSHeuristics を変更すると便利な場合があります。 AdminSDHolder オブジェクトでの dSHeuristics 属性の変更の詳細については、Microsoft サポートの記事[817433](https://support.microsoft.com/?id=817433)と[973840](https://support.microsoft.com/kb/973840)、および[「付録 C: Active Directory の保護されたアカウントとグループ](Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)」を参照してください。  
   
-ここでは、Active Directory の最も特権の高いグループについて説明しますが、管理者特権のレベルが付与されているグループが他にも多数あります。 Active Directory のすべての既定および組み込みグループと、それぞれに割り当てられているユーザー権利の詳細については、「[Appendix B:Active Directory @ no__t の特権のあるアカウントおよびグループ。  
+ここでは、Active Directory の最も特権の高いグループについて説明しますが、管理者特権のレベルが付与されているグループが他にも多数あります。 Active Directory のすべての既定および組み込みグループと、それぞれに割り当てられているユーザー権利の詳細については、「[付録 B: Active Directory の特権アカウントとグループ](../../../ad-ds/plan/security-best-practices/Appendix-B--Privileged-Accounts-and-Groups-in-Active-Directory.md)」を参照してください。  
   
 
 

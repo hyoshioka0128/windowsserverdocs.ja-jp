@@ -22,7 +22,7 @@ ms.locfileid: "71403506"
 ---
 # <a name="passwords-overview"></a>パスワードの概要
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 IT 担当者向けのこのトピックでは、Windows オペレーティングシステムで使用されるパスワードについて説明し、資格情報管理戦略でのパスワードの使用に関するドキュメントとディスカッションへのリンクを示します。
 
@@ -35,9 +35,9 @@ Windows パスワードの詳細については、「[パスワードの技術�
 Windows およびその他の多くのオペレーティングシステムでは、ユーザーの id を認証する最も一般的な方法は、シークレットパスフレーズまたはパスワードを使用することです。 ネットワーク環境をセキュリティで保護するには、すべてのユーザーが強力なパスワードを使用する必要があります。 これにより、悪意のあるユーザーが悪意のあるユーザーによる脆弱なパスワードの推測を防ぐことができます。これには、手動の方法を使用するか、ツールを使用して、侵害されたユーザーアカウントの資格情報を取得します。 これは、特に管理者アカウントに当てはまります。 複雑なパスワードを定期的に変更すると、パスワード攻撃によってそのアカウントが侵害される可能性が低くなります。
 
 ## <a name="BKMK_NEW"></a>新機能と変更された機能
-Windows Server 2012 と Windows 8 では、ピクチャパスワードが新しくなっています。 ピクチャパスワードは、ユーザーが選択したイメージと一連のジェスチャを組み合わせたものです。 ピクチャパスワード機能は、ドメイン @ no__t に参加しているコンピューターでは無効になっています。 ピクチャパスワードに関する詳細情報へのリンクについては、以下を[参照してください](#BKMK_LINKS)。
+Windows Server 2012 と Windows 8 では、ピクチャパスワードが新しくなっています。 ピクチャパスワードは、ユーザーが選択したイメージと一連のジェスチャを組み合わせたものです。 ドメイン\-参加しているコンピューターでは、ピクチャパスワード機能が無効になっています。 ピクチャパスワードに関する詳細情報へのリンクについては、以下を[参照してください](#BKMK_LINKS)。
 
-Windows Server 2012 および Windows 8 では、パスワード機能が変更されていません。 新しいグループポリシー設定は追加されていません。 ただし、no__t 管理の資格 @no__t 情報 (ピクチャパスワードを使用する場合など)、資格情報を保管して、Microsoft アカウントを使用して Windows 8 にサインインする (以前の Windows Live ID と呼ばれます) といった資格情報には、改良と強化が施されています。
+Windows Server 2012 および Windows 8 では、パスワード機能が変更されていません。 新しいグループポリシー設定は追加されていません。 ただし、資格情報 \(とパスワード\) の管理 (ピクチャパスワードを使用する場合など)、資格情報の保管、Microsoft アカウントで Windows 8 にサインインする (旧称 Windows Live ID) などの機能強化と機能強化が行われました。
 
 ## <a name="BKMK_DEP"></a>非推奨の機能
 Windows Server 2012 および Windows 8 では、パスワード機能が非推奨とされます。
@@ -48,12 +48,12 @@ Windows Server 2012 および Windows 8 では、パスワード機能が非推�
 ## <a name="BKMK_LINKS"></a>関連項目
 次の表に、パスワード機能、テクノロジ、および資格情報の管理に関するその他のリソースを示します。
 
-|コンテンツの種類|リファレンス|
+|コンテンツの種類|参考資料|
 |--------|-------|
 |**シナリオのドキュメント**|[デジタル id の保護](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
 |**運用**|[Active Directory ユーザーとコンピューター](https://technet.microsoft.com/library/cc754217.aspx)|
-|**トラブルシューティング**|[パスワードの有効期限が切れたときに確認 \- Active Directory PowerShell ブログ](http://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
-|**Security**| Windows Server 2008 R2 と Windows 7 [Threats 脅威と対策ガイド:アカウントポリシー @ no__t-0<br /><br />[強力なパスワードを変更および作成](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)するためのガイダンス|
+|**トラブルシューティング**|[パスワードの有効期限が切れたことを確認する \- Active Directory PowerShell ブログ](http://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
+|**セキュリティ**| Windows Server 2008 R2 および Windows 7 の[脅威と対策ガイド: アカウントポリシー](https://technet.microsoft.com/library/hh125920(v=ws.10).aspx)<br /><br />[強力なパスワードを変更および作成](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)するためのガイダンス|
 |**ツールと設定**|[Microsoft ダウンロードセンターの「Windows および Windows Server 用のグループポリシー設定のリファレンス」](https://www.microsoft.com/download/en/details.aspx?amp;displaylang=en&displaylang=en&id=25250)|
 |**コミュニティ リソース**|[デジタル id の保護](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<br /><br />[Windows Live ID を使用した Windows 8 へのサインイン](http://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<br /><br />[ピクチャパスワードを使用したサインイン](http://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<br /><br />[ピクチャパスワードのセキュリティの最適化](http://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
 

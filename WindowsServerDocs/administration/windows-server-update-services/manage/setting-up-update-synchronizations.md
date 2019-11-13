@@ -22,7 +22,7 @@ ms.locfileid: "71361602"
 ---
 # <a name="setting-up-update-synchronizations"></a>更新プログラムの同期を設定する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 同期中には、WSUS サーバーは、更新ソースから更新プログラム (メタデータとファイルの更新) をダウンロードします。 一緒にダウンロード新しい製品の分類、カテゴリ、存在する場合。 WSUS サーバーを初めて同期すると、すべての同期オプションを構成したときに指定した更新プログラムがダウンロードされます。 初回同期後は、WSUS サーバーは、更新プログラムを更新ソースと既存の更新と期限切れのメタデータ内の変更履歴からの更新のみをダウンロードします。
 
@@ -38,7 +38,7 @@ WSUS サーバーは、指定した製品または製品ファミリ (Windows、
 
 更新プログラムの製品と分類を指定することができます、 **オプション** ] ページの [ **製品と分類**します。 階層では、製品ファミリによってグループ化、製品が一覧表示されます。 Windows を選択する場合は、その製品階層の下にあるすべての製品に自動的に選択します。 親のチェック ボックスをオンには、将来のバージョンだけでなく、その下にあるすべての項目を選択します。 子のチェックボックスをオンにしても、親のチェックボックスはオンになりません。 製品がすべての Windows 製品と分類の既定の設定は重要なの既定の設定とセキュリティ更新プログラムです。
 
-WSUS サーバーがレプリカ モードで実行されている場合に、このタスクを実行できなきます。 レプリカモードの詳細については、「 [WSUS レプリカモードの実行](running-wsus-replica-mode.md)」および [step 1:WSUS の展開を準備する @ no__t-0
+WSUS サーバーがレプリカ モードで実行されている場合に、このタスクを実行できなきます。 レプリカモードの詳細については、「 [Wsus レプリカモードの実行](running-wsus-replica-mode.md)」および「[手順 1: Wsus 展開の準備](../plan/plan-your-wsus-deployment.md)」を参照してください。
 
 ##### <a name="to-specify-update-products-and-classifications-for-synchronization"></a>更新プログラムの製品との同期の分類を指定するには
 
@@ -59,7 +59,7 @@ WSUS サーバーがレプリカ モードで実行されている場合に、�
 WSUS サーバーには、指定された言語に基づく更新がダウンロードされます。 すべてが利用可能な言語の更新プログラムを同期するか、一部の言語を指定できます。 WSUS サーバーの階層があり、さまざまな言語の更新プログラムをダウンロードする必要がある場合は、上流のサーバーで必要なすべての言語を指定したことを確認します。 ダウン ストリーム サーバーでは、アップ ストリーム サーバーで指定されている言語のサブセットを指定できます。
 
 ### <a name="synchronizing-updates-from-the-microsoft-update-catalog"></a>Microsoft Update カタログから更新を同期します。
-Microsoft Update カタログサイトからの更新プログラムの同期の詳細については、以下を参照してください。[WSUS とカタログサイト](wsus-and-the-catalog-site.md)。
+Microsoft Update カタログサイトからの更新プログラムの同期の詳細については、 [WSUS とカタログサイト](wsus-and-the-catalog-site.md)に関するページを参照してください。
 
 ## <a name="configuring-proxy-server-settings"></a>プロキシ サーバー設定の構成
 上流のサーバーまたは Microsoft Update との同期中にプロキシ サーバーを使用するように WSUS サーバーを構成することができます。 この設定は、WSUS サーバーの同期の実行時にのみ適用されます。 既定では、WSUS サーバーをアップ ストリーム サーバーまたは Microsoft Update に直接接続する試みます。
@@ -87,9 +87,9 @@ Microsoft Update カタログサイトからの更新プログラムの同期の
 
 WSUS サーバーが更新ソースと同期する方法をカスタマイズするためのオプションを以下に示します。
 
--   同期のためのカスタム ポートを指定できます。 ポートの構成の詳細については、「[Step 3:」を参照してください。Wsus の展開ガイドの「Configure WSUS @ no__t-0」を参照してください。
+-   同期のためのカスタム ポートを指定できます。 ポートを構成する方法の詳細については、次を参照してください。 [手順 3: WSUS を構成する](../deploy/2-configure-wsus.md) WSUS deployment guide の「します。
 
--   WSUS サーバー間での更新情報のセキュリティで保護された同期には、セキュリティで保護されたソケット レイヤー (SSL) を使用できます。 SSL の使用に関する詳細については、"3.5 のセクションを参照してください。 Secure Sockets Layer プロトコルを使用して WSUS をセキュリティで保護する [Step 3:Wsus の展開ガイドの「Configure WSUS @ no__t-0」を参照してください。
+-   WSUS サーバー間での更新情報のセキュリティで保護された同期には、セキュリティで保護されたソケット レイヤー (SSL) を使用できます。 SSL の使用に関する詳細については、"3.5 のセクションを参照してください。 セキュリティで保護された WSUS に Secure Sockets Layer プロトコル"の [手順 3: WSUS を構成する](../deploy/2-configure-wsus.md) WSUS deployment guide の「します。
 
 ## <a name="synchronizing-manually-or-automatically"></a>手動または自動で同期します。
 WSUS サーバーを手動で同期するか、自動的に同期するには、その時刻を指定します。
