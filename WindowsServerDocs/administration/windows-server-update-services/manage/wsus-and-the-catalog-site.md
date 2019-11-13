@@ -21,7 +21,7 @@ ms.locfileid: "71361449"
 ---
 # <a name="wsus-and-the-catalog-site"></a>WSUS とカタログ サイト
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 カタログサイトは、修正プログラムおよびハードウェアドライバーをインポートできる Microsoft の場所です。
 
@@ -40,7 +40,7 @@ WSUS に修正プログラムをインポートするには、WSUS コンピュ�
 
 Microsoft Update カタログサイトからインポートされた承認済みの更新プログラムは、次回 WSUS サーバーが同期したときにダウンロードされます。 これらのファイルは、Microsoft Update カタログサイトからインポートするときにはダウンロードされません。
 
-更新プログラムが WSUS と互換性のある形式でインポートされていることを確認するには、WSUS コンソールで Microsoft Update カタログサイトにアクセスする必要があることに注意してください。 Microsoft Update カタログ web サイトに手動でアクセスした場合、ダウンロードした更新プログラムは WSUS サーバーにインポートされず、個別の * としてダウンロードされます。MSU ファイル。 現在、WSUS には \* でファイルをインポートするためのメカニズムがサポートされていません。MSU 形式。
+更新プログラムが WSUS と互換性のある形式でインポートされていることを確認するには、WSUS コンソールで Microsoft Update カタログサイトにアクセスする必要があることに注意してください。 Microsoft Update カタログ web サイトに手動でアクセスした場合、ダウンロードした更新プログラムは WSUS サーバーにインポートされず、個別の * としてダウンロードされます。MSU ファイル。 現在、WSUS には、\*でファイルをインポートするためのメカニズムがサポートされていません。MSU 形式。
 
 サーバークリーンアップウィザードを実行すると、承認されていない、または拒否済みとして設定された Microsoft Update カタログからインポートされた更新プログラムは、WSUS サーバーから削除される場合があります。 削除されている場合は、Microsoft Update カタログから再インポートできます。
 
@@ -64,7 +64,7 @@ WSUS 管理者は、Microsoft Update カタログサイトからダウンロー�
 
     -   **[Windows 認証]** を選択し、右側の **[操作]** ウィンドウで **[有効にする]** をクリックします。
 
-2.  修正プログラムが必要なコンピューターの WSUS ターゲットグループを作成し、グループに追加します。 コンピューターとグループの詳細については、このガイドの「 [Wsus クライアントコンピューターと wsus コンピューターグループの管理](managing-wsus-client-computers-and-wsus-computer-groups.md)」および「[3.3」を参照してください。WSUS コンピューターグループを構成する @ no__t-0 (手順 3):Wsus を構成する」を参照してください。
+2.  修正プログラムが必要なコンピューターの WSUS ターゲットグループを作成し、グループに追加します。 コンピューターとグループの詳細については、このガイドの「 [Wsus クライアントコンピューターと wsus コンピューターグループの管理](managing-wsus-client-computers-and-wsus-computer-groups.md)」および「3.3 セクション」を参照してください[。](../deploy/2-configure-wsus.md#23-configure-wsus-computer-groups)「Wsus 展開ガイド」の「手順 3: wsus を構成する」の wsus コンピューターグループを構成します。
 
 3.  修正プログラムのファイルをダウンロードします。
 
