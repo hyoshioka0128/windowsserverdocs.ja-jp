@@ -1,6 +1,6 @@
 # [Windows Server 2019 の概要](get-started-19.md) 
 ## [Windows Server 2019 の新機能](whats-new-19.md)
-## [Windows Server バージョン 1903 の新機能](whats-new-in-windows-server-1903.md)
+## [Windows Server バージョン 1903 と 1909 の新機能](whats-new-in-windows-server-1903-1909.md)
 ## [サービス チャネルの比較](servicing-channels-19.md)
 ## [インストール | アップグレード | 移行](install-upgrade-migrate-19.md)
 ## [リリース ノート:Windows Server 2019 に関する重要な問題](rel-notes-19.md)
