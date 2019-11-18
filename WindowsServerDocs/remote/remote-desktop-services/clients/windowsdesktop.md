@@ -11,18 +11,18 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 10/31/2019
+ms.date: 11/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: aff7e6e1f37cad66530679ade024c089a4ba034e
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 2f786a1db0854ae89c1ceb23942793deb7f608e1
+ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567163"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74019599"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Windows デスクトップ クライアントの概要
 
->適用先:Windows 10 および Windows 7
+>適用対象:Windows 10 および Windows 7
 
 Windows デスクトップ用のリモート デスクトップ クライアントを使用して、別の Windows デバイスからリモートで Windows アプリとデスクトップにアクセスできます。
 
@@ -36,8 +36,8 @@ Windows デスクトップ用のリモート デスクトップ クライアン�
 Windows のお使いのバージョンに対応したクライアントを選択してください。
 
 - [Windows 64 ビット](https://go.microsoft.com/fwlink/?linkid=2068602)
-- [Windows 32 ビット プレビュー](https://go.microsoft.com/fwlink/?linkid=2098960)
-- [Windows ARM64 プレビュー](https://go.microsoft.com/fwlink/?linkid=2098961)
+- [Windows 32 ビット](https://go.microsoft.com/fwlink/?linkid=2098960)
+- [Windows ARM64](https://go.microsoft.com/fwlink/?linkid=2098961)
 
 現在のユーザーのクライアントをインストールできます。管理者権限は必要ありません。または、管理者がクライアントをインストールおよび構成し、デバイス上のすべてのユーザーがアクセスできるようにすることができます。
 

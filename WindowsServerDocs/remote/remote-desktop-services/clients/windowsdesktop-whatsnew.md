@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 10/31/2019
+ms.date: 11/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a8e66398bc61a69250b84101a3cb66f2c8f3548
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: db9c2b64e018b41b053974b5459bd320098a6d2d
+ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567065"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74019594"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows デスクトップ クライアントの新機能
 
@@ -30,14 +30,14 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 
 |ユーザー グループ |バージョン  |
 |-----------|---------|
-|パブリック     |1.2.247  |
-|Insider    |1.2.428  |
+|パブリック     |1.2.431  |
+|Insider    |1.2.431  |
 
-## <a name="updates-for-version-12428"></a>バージョン 1.2.428 の更新内容
+## <a name="updates-for-version-12431"></a>バージョン 1.2.431 の更新内容
 
-*公開日:2019 年 10 月 31 日*
+*公開日:2019 年 11 月 12 日*
 
-- 32 ビットおよび ARM64 バージョンのクライアントのプレビューが利用可能になりました。
+- 32 ビットおよび ARM64 バージョンのクライアントが利用可能になりました。
 - クライアントでは、接続バーに対して行ったすべての変更 (その位置、サイズ、固定状態など) が保存され、これらの変更がセッション間に適用されます。
 - ゲートウェイ情報と接続状態のダイアログが更新されました。
 - Azure Active Directory トークンの有効期限が切れた後に接続しようとすると、2 つの資格情報が同時に要求される問題に対処しました。
