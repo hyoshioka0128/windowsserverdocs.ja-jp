@@ -19,7 +19,7 @@ ms.locfileid: "71364737"
 ---
 # <a name="replica-servers-should-be-configured-to-identify-specific-primary-servers-authorized-to-send-replication-traffic"></a>レプリカ サーバーは、特定のプライマリ サーバーがレプリケーション トラフィックを送信する権限を特定するように構成する必要があります。
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71364737"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|警告|  
+|**順**|Warning|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
@@ -39,7 +39,7 @@ ms.locfileid: "71364737"
 *すべてのプライマリサーバーからのすべてのレプリケーションは1つの場所に保存されるため、プライバシーやセキュリティの問題が発生する可能性があります。*  
   
 ## <a name="resolution"></a>解決方法  
-*Use マネージャーを使用して、特定のプライマリサーバーの新しい承認エントリを作成し、それぞれに個別の記憶域の場所を指定します。ワイルドカード文字を使用すると、各承認エントリのセットにプライマリサーバーをグループ化できます。*  
+*Hyper-v マネージャーを使用して、特定のプライマリサーバーの新しい承認エントリを作成し、それぞれに個別の記憶域の場所を指定します。ワイルドカード文字を使用すると、各承認エントリのセットにプライマリサーバーをグループ化できます。*  
   
 #### <a name="create-authorization-entries-using-hyper-v-manager"></a>HYPER-V マネージャーを使用して承認エントリを作成します。  
   
@@ -83,7 +83,7 @@ ms.locfileid: "71364737"
 New-VMReplicationAuthorizationEntry server01.domain01.contoso.com D:\ReplicaVMStorage DEFAULT  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [New-vmreplicationauthorizationentry](https://technet.microsoft.com/library/hh848606.aspx)  
   
 

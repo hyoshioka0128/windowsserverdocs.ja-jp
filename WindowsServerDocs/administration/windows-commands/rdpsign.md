@@ -28,7 +28,7 @@ ms.locfileid: "72588056"
 このコマンドの使用方法の例については、「[例](#BKMK_examples)」を参照してください。
 
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)」を参照してください。
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの[Windows Server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527) を参照してください。
 
 ## <a name="syntax"></a>構文
 ```
@@ -47,7 +47,7 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 |/?|コマンド プロンプトにヘルプを表示します。|
 
 ## <a name="remarks"></a>注釈
--   SHA1 または SHA256 証明書の拇印は、信頼された .rdp ファイルの発行元を表す必要があります。 証明書の拇印を取得するには、証明書スナップインを開き、使用する証明書をダブルクリックします (ローカルコンピューターの証明書ストアまたは個人証明書ストアのいずれか)。 **詳細** タブ**をクリックし、フィールド**の一覧で **拇印** をクリックします。
+-   SHA1 または SHA256 証明書の拇印は、信頼された .rdp ファイルの発行元を表す必要があります。 証明書の拇印を取得するには、証明書スナップインを開き、使用する証明書をダブルクリックします (ローカルコンピューターの証明書ストアまたは個人証明書ストアのいずれか)。次に、 **[詳細]** タブをクリックし、**フィールド**の一覧で **[拇印]** をクリックします。
 
     > [!NOTE]
     > Rdpsign ツールで使用するために拇印をコピーする場合は、スペースを削除する必要があります。
@@ -73,4 +73,4 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
   ```
   ## <a name="see-also"></a>参照
   [コマンドライン構文キー](command-line-syntax-key.md)
-  [リモート デスクトップ サービスと #40 です。ターミナル サービスと #41 です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+  [リモート デスクトップ サービスと&#40;です。ターミナル サービスと&#41;です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)

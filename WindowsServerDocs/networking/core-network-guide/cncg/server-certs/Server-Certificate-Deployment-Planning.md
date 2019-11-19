@@ -17,7 +17,7 @@ ms.locfileid: "71356110"
 ---
 # <a name="server-certificate-deployment-planning"></a>サーバー証明書の展開の計画
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 サーバー証明書を展開する前に、次の項目を計画する必要があります。  
   
@@ -78,7 +78,7 @@ AlternateSignatureAlgorithm=1
 ```  
 このファイルの次の項目を計画する必要があります。  
   
--   **URL**します。 Capolicy.inf ファイルの例では、URL の値が **https://pki.corp.contoso.com/pki/cps.txt** です。 これは、このガイド内の Web サーバーが WEB1 の名前は、pki の DNS の CNAME リソース レコードがあるためです。 Web サーバーは、corp.contoso.com ドメインに参加します。 さらに、仮想ディレクトリにある証明書失効リストが格納されている"pki"という名前の Web サーバー。 ドメイン内、Web サーバー上の仮想ディレクトリには、CAPolicy.inf ファイルのポイントで URL の指定した値を確認します。  
+-   **URL**します。 この例の Capolicy.inf ファイルには、 **https://pki.corp.contoso.com/pki/cps.txt** の URL 値が含まれています。 これは、このガイド内の Web サーバーが WEB1 の名前は、pki の DNS の CNAME リソース レコードがあるためです。 Web サーバーは、corp.contoso.com ドメインに参加します。 さらに、仮想ディレクトリにある証明書失効リストが格納されている"pki"という名前の Web サーバー。 ドメイン内、Web サーバー上の仮想ディレクトリには、CAPolicy.inf ファイルのポイントで URL の指定した値を確認します。  
   
 -   **RenewalKeyLength**します。 Windows Server 2012 で AD CS の既定の更新のキーの長さは 2048 です。 選択したキーの長さを使用するアプリケーションとの互換性を提供しながらできるだけ長くする必要があります。  
   
