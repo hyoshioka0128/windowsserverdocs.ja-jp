@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 5889ae43c4b572ae75c8df10d0c47fc21337d558
-ms.sourcegitcommit: 9e123d475f3755218793a130dda88455eac9d4ab
+ms.openlocfilehash: e20913b1245ce7e453b87e9b88a7a418a5c71de2
+ms.sourcegitcommit: b60fdd2efa57ff23834a324b75de8fe245a7631f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73413255"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74166172"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -44,21 +44,11 @@ Windows 管理センターの記憶域移行サービス拡張機能は、Window
 
 解決するには、Windows Server 2019 ビルド1809以降を使用またはアップグレードします。
 
-## <a name="storage-migration-service-doesnt-let-you-choose-static-ip-on-cutover"></a>Storage Migration Service では、カットオーバー時に静的 IP を選択することはできません
-
-Windows 管理センターで Storage Migration Service 拡張機能の0.57 バージョンを使用していて、移行フェーズに進むと、アドレスに静的 IP を選択できません。 DHCP を使用することは強制されています。
-
-この問題を解決するには、Windows 管理センターで、更新されたバージョンの記憶域移行サービス0.57.2 がインストールに使用可能であることを示すアラートを [**設定** > **拡張機能**] の下に表示します。 場合によっては、Windows 管理センターのブラウザータブの再起動が必要になることがあります。
-
 ## <a name="storage-migration-service-cutover-validation-fails-with-error-access-is-denied-for-the-token-filter-policy-on-destination-computer"></a>記憶域移行サービスの切り替えの検証が、"対象コンピューターのトークンフィルターポリシーのアクセスが拒否されました" というエラーで失敗する
 
 カットオーバーの検証を実行すると、"失敗: 対象コンピューターのトークンフィルターポリシーのアクセスが拒否されました。" というエラーが表示されます。 これは、移行元コンピューターと移行先コンピューターの両方に対して、正しいローカル管理者の資格情報を指定した場合でも発生します。
 
-この問題は、Windows Server 2019 のコードの不具合が原因で発生します。 この問題は、移行先コンピューターを記憶域移行サービス Orchestrator として使用している場合に発生します。
-
-この問題を回避するには、移行先として使用していない Windows Server 2019 コンピューターに Storage Migration Service をインストールし、Windows 管理センターでそのサーバーに接続して、移行を実行します。
-
-これは、Windows Server の今後のリリースで修正されました。 この修正プログラムを作成するバックポートを要求するには、 [Microsoft サポート](https://support.microsoft.com)を使用してサポートケースを開いてください。
+この問題は、 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)更新プログラムで修正されました。 
 
 ## <a name="storage-migration-service-isnt-included-in-windows-server-2019-evaluation-or-windows-server-2019-essentials-edition"></a>Storage Migration Service が Windows Server 2019 評価版または Windows Server 2019 Essentials edition に含まれていない
 
@@ -105,16 +95,6 @@ Windows 管理センターまたは PowerShell を使用して転送操作の詳
 
 この動作は、Windows Server 2019 の今後のリリースで変更される予定です。  
 
-## <a name="cutover-fails-when-migrating-between-networks"></a>ネットワーク間での移行時に、カットオーバーが失敗する
-
-Azure IaaS インスタンスなど、ソースとは異なるネットワークでを実行している移行先コンピューターに移行する場合、ソースが静的 IP アドレスを使用していると、カットオーバーを完了できません。 
-
-この動作は仕様であり、IP アドレス経由で接続するユーザー、アプリケーション、およびスクリプトからの移行後の接続の問題を回避するために設計されています。 IP アドレスが古いソースコンピューターから新しい送信先ターゲットに移動されると、新しいネットワークサブネット情報や DNS や WINS とは一致しません。
-
-この問題を回避するには、同じネットワーク上のコンピューターへの移行を実行します。 その後、そのコンピューターを新しいネットワークに移動し、IP 情報を再割り当てします。 たとえば、Azure IaaS に移行する場合は、最初にローカル VM に移行し、次に Azure Migrate を使用して VM を Azure に移動します。  
-
-この問題は、Windows 管理センターの今後のリリースで修正されました。 移行先サーバーのネットワーク設定を変更しない移行を指定できるようになりました。 更新された拡張機能は、リリース時にここに表示されます。 
-
 ## <a name="validation-warnings-for-destination-proxy-and-credential-administrative-privileges"></a>宛先プロキシと資格情報の管理者特権の検証に関する警告
 
 転送ジョブを検証するときに、次の警告が表示されます。
@@ -153,7 +133,7 @@ Windows Server 2019 の展開先コンピューターに Storage Migration Servi
 
 コピー先ファイル:
 
-  icacls d:\test\thatcher.png/save out .txt/t thatcher (A;;FA、;、BA) (A;; 0x1301bf;;;DU) (A;; 0x1200a9;;;DD) (A; ID; FA;;;BA (A; ID; FA;;;SY) (A; ID; 0x1200a9;;;BU)**S:PAINO_ACCESS_CONTROL**
+  icacls d:\test\thatcher.png/save out .txt/t thatcher (A;;FA、;、BA) (A;; 0x1301bf;;;DU) (A;; 0x1200a9;;;DD) (A; ID; FA;;;BA (A; ID; FA;;;SY) (A; ID; 0x1200a9;;;BU)**S: PAINO_ACCESS_CONTROL**
 
 DFSR デバッグログ:
 
@@ -163,17 +143,7 @@ DFSR デバッグログ:
 
   複製 ACL ハッシュ:**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B** lastwritetime: 20190308 18:09: 44.876 FileSizeLow: 1131654 Filesizelow: 0属性:32 
 
-この問題は、ストレージ移行サービスがセキュリティ監査 Acl (SACL) を設定するために使用するライブラリのコードの欠陥が原因で発生します。 SACL が空のときに、null でない SACL が誤って設定された場合は、DFSR によってハッシュの不一致が正しく識別されます。 
-
-この問題を回避するには、記憶域の移行サービスではなく、 [dfsr のプリシードと Dfsr データベースの複製操作](../dfs-replication/preseed-dfsr-with-robocopy.md)で Robocopy を使用し続けます。 この問題について調査しています。これは、Windows Server の新しいバージョンと、場合によっては移植 Windows Update で解決する予定です。 
-
-## <a name="error-404-when-downloading-csv-logs"></a>CSV ログをダウンロードするときにエラー404が発生する
-
-転送操作の終了時に転送ログまたはエラーログをダウンロードしようとすると、次のエラーが表示されます。
-
-  $jobname: 転送ログ: ajax エラー404
-
-このエラーは、orchestrator サーバーで "ファイルとプリンターの共有 (SMB 受信)" ファイアウォール規則を有効にしていない場合に発生します。 Windows 管理センターのファイルのダウンロードには、接続されたコンピューターにポート TCP/445 (SMB) が必要です。  
+この問題は[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) update によって修正されています
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>Windows Server 2008 R2 から転送するときに、"どのエンドポイントにもストレージを転送できませんでした" というエラーが発生する
 
@@ -213,7 +183,7 @@ StorageMigration で StorageMigration () を実行します。 TransferRequestHa
 
 ## <a name="error-0x80005000-when-running-inventory"></a>インベントリの実行時のエラー0x80005000
 
-[KB4512534](https://support.microsoft.com/en-us/help/4512534/windows-10-update-kb4512534)をインストールしてインベントリを実行しようとすると、次のエラーでインベントリが失敗します。
+[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)をインストールしてインベントリを実行しようとすると、次のエラーでインベントリが失敗します。
 
   HRESULT からの例外: 0x80005000
   
@@ -287,7 +257,7 @@ Storage Migration Service orchestrator サーバーで[KB4512534](https://suppor
    
 2.  Storage Migration Service サービスを開始します。これにより、新しいデータベースが作成されます。
 
-## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>"CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO がネットリソースに対して失敗しました" というエラーが発生し、Windows Server 2008 R2 クラスターのカットオーバーが失敗する
+## <a name="error-clusctl_resource_netname_repair_vco-failed-against-netname-resource-and-windows-server-2008-r2-cluster-cutover-fails"></a>"ネットリソースに対する CLUSCTL_RESOURCE_NETNAME_REPAIR_VCO に失敗しました" というエラーが発生し、Windows Server 2008 R2 クラスターのカットオーバーが失敗する
 
 Windows Server 2008 R2 クラスターソースに対して切り取りを実行しようとすると、"ソースコンピューターの名前を変更しています..." というフェーズでカットオーバーが停止します。次のエラーが表示されます。
 
@@ -306,6 +276,43 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
        at Microsoft.StorageMigration.Proxy.Cutover.CutoverUtils.RenameFSNetName(NetworkCredential networkCredential, Boolean isLocal, String clusterName, String fsResourceId, String nnResourceId, String newDnsName, CancellationToken ct)    [d:\os\src\base\dms\proxy\cutover\cutoverproxy\CutoverUtils.cs::RenameFSNetName::1510]
 
 この問題は、以前のバージョンの Windows Server で API が不足していることが原因で発生します。 現時点では、Windows Server 2008 および Windows Server 2003 クラスターを移行する方法はありません。 Windows Server 2008 R2 クラスターでは、インベントリと転送を実行できます。その後、クラスターのソースファイルサーバーリソースのネット名と IP アドレスを手動で変更して、移行先クラスターのネット名と IP アドレスを変更することで、手動でカットオーバーを実行できます。元のソースに一致するアドレス。 
+
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-comnputer"></a>移行元のネットワークインターフェイスを "38% マッピングしています。 
+
+ソースコンピュータに対して切り取りを実行しようとしたときに、1つまたは複数のネットワークインターフェイスで新しい静的 (DHCP ではない) IP アドレスを使用するようにソースコンピュータを設定した場合、カットオーバーはフェーズで "38%" ソースコンピューターのネットワークインターフェイスのマッピング中にスタックします。 "SMS イベントログに次のエラーが表示されます。
+
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          11/13/2019 3:47:06 PM
+    Event ID:      20494
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      orc2019-rtm.corp.contoso.com
+    Description:
+    Couldn't set the IP address on the network adapter.
+
+    Computer: fs12.corp.contoso.com
+    Adapter: microsoft hyper-v network adapter
+    IP address: 10.0.0.99
+    Network mask: 16
+    Error: 40970
+    Error Message: Unknown error (0xa00a)
+
+    Guidance: Confirm that the Netlogon service on the computer is reachable through RPC and that the credentials provided are correct.
+
+Examinining ソースコンピューターは、元の IP アドレスの変更に失敗したことを示しています。 
+
+この問題は、新しい静的 IP アドレス、サブネット、およびゲートウェイを指定した場合にのみ、Windows 管理センターの [切り替えの構成] 画面で [DHCP を使用する] を選択した場合には発生しません。 
+
+この問題は、 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) update の回帰によって発生します。 現在、この問題には次の2つの回避策があります。
+
+  - カットオーバー前: カットオーバー時に新しい静的 IP アドレスを設定するのではなく、[DHCP を使用する] を選択し、DHCP スコープがそのサブネットを対象としていることを確認します。 SMS では、ソースコンピューターインターフェイスで DHCP を使用するようにソースコンピューターを構成し、カットオーバーを正常に実行します。 
+  
+  - [切り取り] が既にスタックしている場合は、ソースコンピューターにログオンし、dhcp スコープがそのサブネットを対象としていることを確認した後で、そのネットワークインターフェイスで DHCP を有効にします。 ソースコンピュータが DHCP によって提供される IP アドレスを取得すると、SMS は通常どおりカットを続行します。
+  
+どちらの回避策でも、カットオーバーが完了した後で、DHCP の使用に適しているかどうかに応じて、古いソースコンピューターに静的 IP アドレスを設定できます。   
 
 ## <a name="see-also"></a>関連項目
 

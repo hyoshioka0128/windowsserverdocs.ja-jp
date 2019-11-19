@@ -4,23 +4,24 @@ description: ''
 author: Deland-Han
 ms.author: delhan
 manager: dcscontentpm
-ms.date: 11/1/2019
+ms.date: 11/12/2019
 ms.topic: article
 ms.prod: windows-server
-ms.openlocfilehash: a5fea6681376abf6ea9ada67e31b10369256ea81
-ms.sourcegitcommit: 9e123d475f3755218793a130dda88455eac9d4ab
+ms.openlocfilehash: 3d3d08d6abe9daa571dd7365815c1fc61f926501
+ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73413459"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74163103"
 ---
 # <a name="configuring-certificate-enrollment-web-service-for-certificate-key-based-renewal-on-a-custom-port"></a>カスタムポートで証明書キーに基づく更新の証明書の登録 Web サービスを構成する
 
-<!-- <Author(s): Jitesh Thakur, Meera Mohideen, Ankit Tyagi.-->  
+> 執筆者: Windows グループを使用した Jitesh Thakur、Meera Mohideen、Technical advisor。
+Windows グループを使用した ankit Tyagi サポートエンジニア
 
 ## <a name="summary"></a>概要
 
-この記事では、証明書キーに基づく更新を行うために、443以外のカスタムポートに証明書の登録 Web サービス (または証明書の登録ポリシー (CEP)/証明書登録サービス (CES) を実装するための詳細な手順について説明します。CEP および CES の自動更新機能の利点。
+この記事では、443以外のカスタムポートに証明書の登録ポリシー Web サービス (CEP) と証明書の登録 Web サービス (CES) を実装する手順について説明します。この方法では、証明書キーに基づく書き換えによって自動のCEP および CES の更新機能。
 
 この記事では、CEP と CES の動作、およびセットアップガイドラインについても説明します。
 
@@ -134,7 +135,7 @@ Install-AdcsEnrollmentWebService -ApplicationPoolIdentity -CAConfig "CA1.contoso
 インストールが正常に完了すると、インターネットインフォメーションサービス (IIS) マネージャーコンソールに次の表示が表示されます。
 ![IIS マネージャー](media/certificate-enrollment-certificate-key-based-renewal-4.png) 
 
-**[既定の Web サイト]** で、 **[KeyBasedRenewal_ADPolicyProvider_CEP_Certificate]** を選択し、 **[アプリケーションの設定]** を開きます。 **ID**と**URI**をメモしておきます。
+**[既定の Web サイト]** で、 **[ADPolicyProvider_CEP_UsernamePassword]** を選択し、 **[アプリケーションの設定]** を開きます。 **ID**と**URI**をメモしておきます。
 
 管理用の**フレンドリ名**を追加できます。
 
@@ -173,10 +174,10 @@ Install-AdcsEnrollmentWebService -CAConfig "CA1.contoso.com\contoso-CA1-CA" -SSL
 インストールが正常に完了すると、IIS マネージャーコンソールに次の表示が表示されます。
 ![IIS マネージャー](media/certificate-enrollment-certificate-key-based-renewal-5.png) 
 
-既定の **[Web サイト]** で **[KeyBasedRenewal_ADPolicyProvider_CEP_Certificate]** を選択し、 **[アプリケーションの設定]** を開きます。 **ID**と**URI**をメモしておきます。 管理用の**フレンドリ名**を追加できます。
+既定の **[Web サイト]** の **[KeyBasedRenewal_ADPolicyProvider_CEP_Certificate]** を選択し、 **[アプリケーションの設定]** を開きます。 **ID**と**URI**をメモしておきます。 管理用の**フレンドリ名**を追加できます。
 
 > [!Note]
-> 新しいサーバーにインスタンスがインストールされていて、id が異なる場合に id が異なる場合は、ID が CEPCES01 インスタンスで使用されているものと同じであることを確認してください。 値をコピーして、直接貼り付けることができます。
+> インスタンスが新しいサーバーにインストールされている場合は、id を確認して、CEPCES01 インスタンスで生成されたものと同じ ID であることを確認してください。 値が異なる場合は、値を直接コピーして貼り付けることができます。
 
 #### <a name="complete-certificate-enrollment-web-services-configuration"></a>証明書の登録 Web サービスの構成の完了
 
@@ -185,6 +186,9 @@ CEP および CES の機能の代わりに証明書を登録できるように�
 ##### <a name="step-1-create-a-computer-account-of-the-workgroup-computer-in-active-directory"></a>手順 1: Active Directory でワークグループコンピューターのコンピューターアカウントを作成する
 
 このアカウントは、キーベースの書き換えに対する認証と、証明書テンプレートの [Publish to Active Directory] オプションに使用されます。
+
+> [!Note]
+> クライアントコンピューターにドメインを参加させる必要はありません。 KBR for dsmapper サービスで証明書ベースの認証を行うときに、このアカウントは画像に含まれています。
 
 ![新しいオブジェクト](media/certificate-enrollment-certificate-key-based-renewal-6.png) 
  
@@ -198,7 +202,7 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 ```
 
 > [!Note]
-> このコマンドでは、<cepcessvc> がサービスアカウントであり、< CA1 > が証明機関であることを示します。
+> このコマンドでは、\<cepの vc\> がサービスアカウントであり、< CA1 > が証明機関です。
 
 > [!Important]
 > 同じジョブを実行するために制約付き委任を使用しているため、この構成では CA の RENEWALONBEHALOF フラグを有効にしません。 これにより、CA のセキュリティにサービスアカウントのアクセス許可が追加されないようにすることができます。
@@ -212,19 +216,21 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 3. 既定のポート設定を443からカスタムポートに変更します。 例のスクリーンショットは、ポートの設定が49999であることを示しています。
    ポートの変更 ![](media/certificate-enrollment-certificate-key-based-renewal-7.png) 
 
-##### <a name="step-4-edit-the-ca-enrollment-services-object"></a>手順 4: CA 登録サービスオブジェクトを編集する
+##### <a name="step-4-edit-the-ca-enrollment-services-object-on-active-directory"></a>手順 4: Active Directory で CA 登録サービスオブジェクトを編集する
 
 1. ドメインコントローラーで、adsiedit を開きます。
 
-2. 構成パーティションに接続し、CA 登録サービスオブジェクトに移動します。
+2. [構成パーティションに接続](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/ff730188(v=ws.10))し、CA 登録サービスオブジェクトに移動します。
    
    CN = ENTCA、CN = Enrollment Services、CN = Public Key Services、CN = Services、CN = Configuration、DC = contoso、DC = com
 
-3. オブジェクトを編集し、カスタムポートと、アプリケーション設定で見つかった CEP および CES サーバー Uri を使用して、Mspki-site-name 属性を変更します。 次に、例を示します。
+3. CA オブジェクトを右クリックして編集します。 アプリケーション設定で見つかった CEP および CES サーバー Uri でカスタムポートを使用して、 **mspki-site-name**属性を変更します。 次に、例を示します。
 
-   140 https://cepces.contoso.com:49999/ENTCA_CES_UsernamePassword/service.svc/CES0   
-   181 https://cepces.contoso.com:49999/ENTCA_CES_Certificate/service.svc/CES1
-
+   ```
+   140https://cepces.contoso.com:49999/ENTCA_CES_UsernamePassword/service.svc/CES0   
+   181https://cepces.contoso.com:49999/ENTCA_CES_Certificate/service.svc/CES1
+   ```
+   
    ![ADSI エディター](media/certificate-enrollment-certificate-key-based-renewal-8.png) 
 
 #### <a name="configure-the-client-computer"></a>クライアントコンピューターを構成する
@@ -269,9 +275,9 @@ Set-ADUser -Identity cepcessvc -Add @{'msDS-AllowedToDelegateTo'=@('HOST/CA1.con
 
 ## <a name="testing-the-setup"></a>セットアップのテスト
 
-自動更新が機能していることを確認するには、同じキーを使用して手動更新が機能することを確認します。 ユーザー名とパスワードを入力するように求められることはありません。  また、登録時に証明書を選択するように求められます。 これは正常な動作です。
+自動更新が機能していることを確認するには、mmc を使用して同じキーを使用して証明書を更新することで、手動更新が機能することを確認します。 また、更新中に証明書を選択するように求めるメッセージが表示されます。 先ほど登録した証明書を選択できます。 プロンプトが必要です。
 
-コンピューターの個人証明書ストアを開き、[アーカイブ済み証明書] ビューを追加します。 これを行うには、次のいずれかの方法を使用します。
+コンピューターの個人証明書ストアを開き、[アーカイブ済み証明書] ビューを追加します。 これを行うには、ローカルコンピューターアカウントスナップインを mmc.exe に追加し、 **[証明書 (ローカルコンピューター)]** をクリックして強調表示します。 mmc の右側または上部にある [**操作] タブ**で **[表示]** をクリックし、 **[オプションの表示]** をクリックして、アーカイブされた **[証明書]** をクリックし、[ **OK]** を
 
 ### <a name="method-1"></a>方法1 
 
@@ -285,11 +291,11 @@ certreq -machine -q -enroll -cert <thumbprint> renew
 
 ### <a name="method-2"></a>方法 2
 
-証明書の有効期限が切れると、時間の設定を8の倍数で進めます。
+クライアントコンピューターの日時を、証明書テンプレートの更新時間に進めます。
 
-たとえば、例の証明書は、月の18日目に4:00 に発行され、20日に4:00 に有効期限が設定され、2日間の有効期間と8時間の更新設定があります。 自動登録エンジンは、約8時間間隔で再起動時にトリガーされます。
+たとえば、証明書テンプレートの有効期間が2日間で、8時間の更新設定が構成されているとします。 この例の証明書は午前4:00 に発行されています。 月の18日に、は午前4:00 に有効期限が切れます。 20になります。 自動登録エンジンは、再起動時および8時間ごと (約) にトリガーされます。
 
-したがって、時刻を午後8:10 時に進める場合は、 19日に、 **Certutil-pulse** (AE エンジンをトリガーするため) を実行すると、証明書が登録されます。
+したがって、時刻を午後8:10 時に進める場合は、 19日に、更新ウィンドウがテンプレートで8時間に設定されていたため、Certutil-pulse (AE エンジンをトリガーする) を実行すると、証明書が登録されます。
 
 ![コマンドを使用します](media/certificate-enrollment-certificate-key-based-renewal-15.png)
  
