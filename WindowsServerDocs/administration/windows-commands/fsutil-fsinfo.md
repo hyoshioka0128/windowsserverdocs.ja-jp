@@ -17,7 +17,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71376941"
 ---
 # <a name="fsutil-fsinfo"></a>Fsutil fsinfo
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10、Windows Server 2012 R2、Windows 8.1、Windows Server 2012、Windows 8、Windows Server 2008 R2、Windows 7
 
 すべてのドライブの一覧表示、ドライブの種類の照会、ボリューム情報の照会、NTFS 固有のボリューム情報の照会、またはファイルシステムの統計情報の照会を行います。
 

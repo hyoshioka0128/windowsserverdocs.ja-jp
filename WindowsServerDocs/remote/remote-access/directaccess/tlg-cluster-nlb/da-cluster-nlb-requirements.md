@@ -21,7 +21,7 @@ ms.locfileid: "71388418"
 ---
 # <a name="directaccess-cluster-nlb-test-lab-configuration-requirements"></a>DirectAccess クラスター/NLB テスト ラボの構成要件
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 テストラボで DirectAccess を構成するには、次のコンポーネントが必要です。  
   
@@ -29,6 +29,6 @@ ms.locfileid: "71388418"
   
 -   Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 の最小ハードウェア要件を満たす6台のコンピューターまたは仮想マシンこれらの2台のコンピューターには、2つのネットワークアダプターがインストールされています。  
   
--   Windows 10 @ no__t-0 または Windows @ no__t 8 の製品ディスクまたはファイル。  
+-   Windows 10&reg; または Windows&reg; 8 用の製品ディスクまたはファイル。  
   
--   Windows 10 @ no__t-0 または Windows @ no__t 8; の最小ハードウェア要件を満たす2台のコンピューターまたは仮想マシンこれらのコンピューターのいずれかに2つのネットワークアダプターがインストールされています。
+-   Windows 10&reg; または Windows&reg; 8 の最小ハードウェア要件を満たす2台のコンピューターまたは仮想マシンこれらのコンピューターのいずれかに2つのネットワークアダプターがインストールされています。

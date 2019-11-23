@@ -22,7 +22,7 @@ ms.locfileid: "71392301"
 ---
 # <a name="tzutil"></a>tzutil
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows タイムゾーンユーティリティを表示します。 
 ## <a name="syntax"></a>構文
@@ -34,10 +34,10 @@ tzutil [/?] [/g] [/s <timeZoneID>[_dstoff]] [/l]
 |-------|--------|
 |/?|コマンド プロンプトにヘルプを表示します。|
 |/g|現在のタイムゾーン ID を表示します。|
-|/s \<timeZoneID > [/dstoff]|指定されたタイムゾーン ID を使用して、現在のタイムゾーンを設定します。 (該当する場合) タイムゾーンの夏時間調整が無効になります ( **_d** )。|
-|/l|有効なタイムゾーン Id と表示名をすべて一覧表示します。 出力は次のようになります。<br /><br />-    @ no__t-1 表示名 ><br />-    @ no__t-1time ゾーン ID >|
+|/s \<timeZoneID > [_dstoff]|指定されたタイムゾーン ID を使用して、現在のタイムゾーンを設定します。 **_Dstoff**サフィックスは、タイムゾーンの夏時間調整を無効にします (該当する場合)。|
+|/l|有効なタイムゾーン Id と表示名をすべて一覧表示します。 出力は次のようになります。<br /><br />-   \<表示名 ><br />-   \<タイムゾーン ID >|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 終了コード**0**は、コマンドが正常に完了したことを示します。
 
 ## <a name="BKMK_Examples"></a>例

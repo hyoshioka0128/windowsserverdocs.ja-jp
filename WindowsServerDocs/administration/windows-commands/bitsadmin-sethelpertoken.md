@@ -23,7 +23,7 @@ ms.locfileid: "71380568"
 
 現在のコマンドプロンプトのプライマリトークン (または、指定されている場合は任意のローカルユーザーアカウントのトークン) を BITS 転送ジョブの [ヘルパートークン](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)として設定します。
 
-**BITS 3.0 以前**: サポートされていません。
+**BITS 3.0 以前**: サポートされていません。
 
 ## <a name="syntax"></a>構文
 
@@ -36,7 +36,7 @@ bitsadmin /SetHelperToken <Job> [\<username@domain\> \<password\>]
 |パラメーター|説明|
 |---------|-----------|
 |Job|ジョブの表示名または GUID。|
-|\< @ no__t-1 @ no__t \<password @ no__t|省略可能な @ no__t-0 使用するトークンを持つローカルユーザーアカウントの資格情報。|
+|\<username@domain\> \<パスワード\>|必要に応じて、使用するトークンを持つローカルユーザーアカウントの資格情報&mdash;ます。|
 
 #### <a name="additional-references"></a>その他の参照情報
 

@@ -22,9 +22,9 @@ ms.locfileid: "71384191"
 ---
 # <a name="select-vdisk"></a>vdisk の選択
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-指定されたバーチャルハードディスク \(VHD @ no__t-1 を選択し、それにフォーカスを移動します。  
+指定されたバーチャルハードディスク \(VHD\) を選択し、それにフォーカスを移動します。  
   
 > [!NOTE]  
 > このコマンドは、Windows 7 と Windows Server 2008 R2 に該当するだけです。  
@@ -39,7 +39,7 @@ select vdisk file=<full path> [noerr]
   
 |パラメーター|説明|  
 |-------|--------|  
-|ファイル @ no__t-0 @ no__t-1|既存の VHD ファイルの完全パスとファイル名を指定します。|  
+|ファイル\=<full path>|既存の VHD ファイルの完全パスとファイル名を指定します。|  
 |noerr|スクリプト作成にのみ使用されます。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|  
   
 ## <a name="BKMK_examples"></a>例  

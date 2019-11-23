@@ -22,7 +22,7 @@ ms.locfileid: "71373056"
 ---
 # <a name="nslookup-server"></a>nslookup server
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 指定したドメインネームシステム (DNS) ドメインに既定のサーバーを変更します。
 ## <a name="syntax"></a>構文
@@ -36,7 +36,7 @@ server <DNSDomain>
 |   <DNSDomain>   | 必須。 既定のサーバーの新しい DNS ドメインを指定します。 |
 | {ヘルプ&#124; ?} |     **Nslookup**サブコマンドの簡単な概要を表示します。      |
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 - **サーバー**コマンドは、現在の既定のサーバーを使用して、指定された DNS ドメインに関する情報を検索します。 これは、最初のサーバーを使用する**lserver**コマンドとは対照的です。
   ## <a name="additional-references"></a>その他の参照情報
   [コマンドライン構文のキー](command-line-syntax-key.md)

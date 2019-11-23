@@ -17,7 +17,7 @@ ms.locfileid: "71385289"
 ---
 # <a name="install-extension-payload-on-a-managed-node"></a>管理対象ノードに拡張機能のペイロードをインストールする
 
->適用先:Windows Admin Center、Windows Admin Center Preview
+>適用対象: Windows Admin Center、Windows Admin Center Preview
 
 ## <a name="setup"></a>セットアップ
 > [!NOTE]
@@ -25,14 +25,14 @@ ms.locfileid: "71385289"
 
 Windows 管理センター用の[ツール拡張機能](../develop-tool.md)をまだ作成していない場合は、作成します。 完了したら、拡張機能を作成するときに使用される値をメモしておきます。
 
-| 値 | 説明 | 例 |
+| Value | 説明 | 例 |
 | ----- | ----------- | ------- |
 | ```{!Company Name}``` | 会社名 (スペースを含む) | ```Contoso``` |
 | ```{!Tool Name}``` | (スペースを含む) ツール名 | ```InstallOnNode``` |
 
-ツールの拡張フォルダー内で、@no__t 0 のフォルダー (```{!Tool Name}\Node```) を作成します。 この API を使用すると、このフォルダーに格納されているすべてのものが、管理対象ノードにコピーされます。 ユースケースに必要なすべてのファイルを追加します。 
+ツール拡張フォルダー内で、```Node``` フォルダー (```{!Tool Name}\Node```) を作成します。 この API を使用すると、このフォルダーに格納されているすべてのものが、管理対象ノードにコピーされます。 ユースケースに必要なすべてのファイルを追加します。 
 
-また、@no__t 0 スクリプトも作成します。 このスクリプトは、すべてのファイルが @no__t 0 フォルダーから管理対象ノードにコピーされると、管理ノードで実行されます。 ユースケースのロジックを追加します。 @No__t-0 ファイルの例を次に示します。
+また、```{!Tool Name}\Node\installNode.ps1``` スクリプトも作成します。 このスクリプトは、すべてのファイルが ```{!Tool Name}\Node``` フォルダーから管理対象ノードにコピーされると、管理ノードで実行されます。 ユースケースのロジックを追加します。 ```{!Tool Name}\Node\installNode.ps1``` ファイルの例を次に示します。
 
 ``` ps1
 # Add logic for installing payload on managed node
@@ -45,7 +45,7 @@ echo 'Success'
 
 ## <a name="integration-with-ui"></a>UI との統合
 
-@No__t-0 を次のように更新します。
+```\src\app\default.component.ts``` を次のように更新します。
 
 ``` ts
 import { Component } from '@angular/core';
@@ -105,7 +105,7 @@ this.post('contoso.install-on-node', '1.0.0',
       );
 ```
 
-また ```\src\app\default.component.html``` をに更新します。
+また、```\src\app\default.component.html``` を次のものに更新します。
 ``` html
 <button (click)="installOnNode()">Click to install</button>
 <sme-loading-wheel *ngIf="loading" size="large"></sme-loading-wheel>
@@ -138,9 +138,9 @@ export class DefaultModule { }
 
 以前に拡張機能パッケージを作成していない場合は、「[発行拡張機能](../publish-extensions.md)ガイド」に従ってください。 
 > [!IMPORTANT]
-> この拡張機能の nuspec ファイルでは、@no__t 0 の値がプロジェクトの ```manifest.json``` の名前と一致し、```<version>``` が ```\src\app\default.component.ts``` に追加されたものと一致することが重要です。 また ```<files>``` の下にエントリを追加します。 
+> この拡張機能の nuspec ファイルでは、```<id>``` 値がプロジェクトの ```manifest.json``` の名前と一致し、```<version>``` が ```\src\app\default.component.ts```に追加されたものと一致することが重要です。 また、```<files>```の下にエントリを追加します。 
 > 
-> ```<file src="Node\**\*.*" target="Node" />```。
+> ```<file src="Node\**\*.*" target="Node" />```」をご覧ください。
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -165,4 +165,4 @@ export class DefaultModule { }
 </package>
 ```
 
-このパッケージを作成したら、そのフィードへのパスを追加します。 Windows 管理センターで、[設定] [> 拡張機能 > フィード] に移動し、パッケージが存在する場所へのパスを追加します。 拡張機能のインストールが完了すると、@no__t 0 ボタンをクリックすると、API が呼び出されます。  
+このパッケージを作成したら、そのフィードへのパスを追加します。 Windows 管理センターで、[設定] [> 拡張機能 > フィード] に移動し、パッケージが存在する場所へのパスを追加します。 拡張機能のインストールが完了すると、[```install```] ボタンをクリックすると、API が呼び出されます。  

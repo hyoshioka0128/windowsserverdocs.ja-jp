@@ -18,7 +18,7 @@ ms.locfileid: "71388031"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>Windows 10 で VPN デバイストンネルを構成する
 
->適用対象:Windows 10 バージョン1709
+>適用対象: Windows 10 バージョン1709
 
 Always On VPN を使用すると、デバイスまたはコンピューター用の専用 VPN プロファイルを作成できます。 Always On VPN 接続には、次の2種類のトンネルがあります。 
 
@@ -100,7 +100,7 @@ VPN profileXML の例を次に示します。
 
 Windows PowerShell スクリプトを使用し、Windows Management Instrumentation (WMI) ブリッジを使用して、デバイスのトンネルを構成できます。 Always On VPN デバイストンネルは、**ローカルシステム**アカウントのコンテキストで構成する必要があります。 これを実現するには、 [Sysinternals](https://docs.microsoft.com/sysinternals/)スイートのユーティリティに含まれている[PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools)の1つである[PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec)を使用する必要があります。
 
-デバイスごとのを展開する方法に関するガイドラインについては、「 [WMI ブリッジプロバイダーでの PowerShell スクリプトの使用](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)」を参照して、ユーザーごとに1つの @no__t プロファイル @no__t します。
+ユーザー `(.\User)` プロファイルごとにデバイスごとに `(.\Device)` を展開する方法に関するガイドラインについては、「 [WMI ブリッジプロバイダーでの PowerShell スクリプトの使用](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider)」を参照してください。
 
 次の Windows PowerShell コマンドを実行して、デバイスプロファイルが正常に展開されたことを確認します。
 
@@ -108,7 +108,7 @@ Windows PowerShell スクリプトを使用し、Windows Management Instrumentat
   Get-VpnConnection -AllUserConnection
   ```
 
-出力には、デバイスに展開されているデバイスの @ no__t-0wide VPN プロファイルの一覧が表示されます。
+出力には、デバイスに展開されているデバイス\-幅の広い VPN プロファイルの一覧が表示されます。
 
 ### <a name="example-windows-powershell-script"></a>Windows PowerShell スクリプトの例
 
@@ -186,5 +186,5 @@ VPN クライアント構成リソースは次のとおりです。
 - [IKEv2 ベースのリモートアクセスを構成する](https://technet.microsoft.com/library/ff687731.aspx)
 
 >[!IMPORTANT]
->Microsoft RAS ゲートウェイでデバイストンネルを使用する場合は、説明に従って、ikev2 認証方法**に対してコンピューター証明書認証を許可**することで、ikev2 コンピューター証明書認証をサポートするように RRAS サーバーを構成する必要があります。[ここで](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29)説明します。 この設定を有効にした後、 **RootCertificateNameToAccept**オプションのパラメーターと共に、 **Set vpnauthprotocol** PowerShell コマンドレットを使用して、RRAS IKEv2 接続が許可されているかどうかを確認することを強くお勧めします。明示的に定義された内部/プライベートルート証明機関にチェーンされている VPN クライアント証明書。 または、[ここで](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/)説明するように、RRAS サーバーの**信頼されたルート証明機関**ストアを修正して、公開証明機関が含まれていないことを確認する必要があります。 同様の方法は、他の VPN ゲートウェイでも考慮する必要があります。
+>Microsoft RAS ゲートウェイでデバイストンネルを使用する場合は、[こちらで](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29)説明されているように、ikev2 認証方法**に対してコンピューター証明書認証を許可**することで、ikev2 コンピューター証明書認証をサポートするように RRAS サーバーを構成する必要があります。 この設定を有効にした後は、 **RootCertificateNameToAccept**省略可能なパラメーターと共に**Set vpnauthprotocol** PowerShell コマンドレットを使用して、明示的に定義された内部/プライベートルート証明機関にチェーンされている VPN クライアント証明書に対してのみ RRAS IKEv2 接続が許可されるようにすることを強くお勧めします。 または、[ここで](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/)説明するように、RRAS サーバーの**信頼されたルート証明機関**ストアを修正して、公開証明機関が含まれていないことを確認する必要があります。 同様の方法は、他の VPN ゲートウェイでも考慮する必要があります。
 

@@ -19,7 +19,7 @@ ms.locfileid: "71364369"
 ---
 # <a name="windows-server-2016-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Server 2016 にする必要があります最小メモリ量以上で構成
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71364369"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Error|  
+|**順**|エラー|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。
@@ -38,7 +38,7 @@ ms.locfileid: "71364369"
 ## <a name="impact"></a>**よる**  
 *次の仮想マシン上のゲストオペレーティングシステムが実行されていないか、または信頼性の高い動作をしていない可能性があります。*  
   
-@no__t-仮想マシンの > の一覧  
+仮想マシンの一覧を \<>  
   
 ## <a name="resolution"></a>**解決方法**  
 *Hyper-v マネージャーを使用して、この仮想マシンに割り当てられているメモリを少なくとも 512 MB に増やします。*  
@@ -61,13 +61,13 @@ ms.locfileid: "71364369"
   
 2.  右クリック **Windows PowerShell**  をクリック **管理者として実行**します。  
   
-3.  @No__t-0MyVM > を仮想マシンの名前に置き換えた後、次のコマンドを実行します。  
+3.  \<MyVM > を仮想マシンの名前に置き換えた後、次のコマンドを実行します。  
   
 ```  
 Set-VMMemory <MyVM> -StartupBytes 512MB  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [設定-VMMemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

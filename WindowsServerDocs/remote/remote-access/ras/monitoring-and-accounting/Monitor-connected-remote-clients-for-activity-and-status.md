@@ -21,9 +21,9 @@ ms.locfileid: "71367261"
 ---
 # <a name="monitor-connected-remote-clients-for-activity-and-status"></a>接続しているリモート クライアントの活動と状態を監視する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-**注:** Windows Server 2012 では、DirectAccess とリモートアクセスサービス (RAS) が1つのリモートアクセスの役割に統合されています。  
+**注:** Windows Server 2012 は DirectAccess とリモート アクセス サービス (RAS) は単一のリモート アクセス役割に結合します。  
   
 リモート アクセス サーバーで、管理コンソールを使用すると、リモート クライアントの活動と状態を監視します。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "71367261"
   
 4.  リモート アクセス サーバーに接続され、詳細なユーザーの一覧が表示されますに関する統計。 クライアントに対応するリストの最初の行をクリックします。 行を選択すると、リモート ユーザーの活動は、プレビュー ウィンドウに表示されます。  
   
-@no__t 0Windows PowerShell](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -50,10 +50,10 @@ PS> Get-RemoteAccessConnectionStatistics
   
 次の表にフィールドを使用して、条件の選択に基づいて、ユーザーの統計情報をフィルターできます。  
   
-|フィールド名|値|  
+|フィールド名|Value|  
 |-------|-----|  
 |Username|リモート ユーザーのユーザー名またはエイリアス。 Contoso のようなユーザーのグループを選択するワイルドカード文字を使用できる\\* または \*\administrator します。|  
-|hostname|リモート ユーザーのコンピューター アカウント名。 IPv4 または IPv6 アドレスも指定できます。|  
+|ホスト名|リモート ユーザーのコンピューター アカウント名。 IPv4 または IPv6 アドレスも指定できます。|  
 |種類|DirectAccess または VPN。 DirectAccess を選択すると、DirectAccess を使用して接続されているすべてのリモート ユーザーが一覧表示されます。 VPN を選択すると、VPN を使用して接続されているすべてのリモート ユーザーが一覧表示されます。|  
 |ISP アドレス|リモート ユーザーの IPv4 アドレスまたは IPv6 アドレス。|  
 |IPv4 アドレス|リモート ユーザーを企業ネットワークに接続しているトンネルの内部 IPv4 アドレス。|  

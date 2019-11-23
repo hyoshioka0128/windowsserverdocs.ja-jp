@@ -18,7 +18,7 @@ ms.locfileid: "71369428"
 ---
 # <a name="changes-made-by-adprepexe"></a>Changes Made by Adprep.exe
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、Adprep.exe が Windows Server 2012 R2 および Windows Server 2012 で行う変更について説明します。  
   
@@ -30,9 +30,9 @@ ms.locfileid: "71369428"
   
 -   [スキーマの更新](../../../ad-ds/deploy/Schema-Updates.md)  
   
-## <a name="see-also"></a>関連項目  
-[Windows Server 2008 R2:AD DS @ no__t をサポートするための Adprep.exe の変更の付録  
-[Windows Server 2008:AD DS @ no__t をサポートするための Adprep.exe の変更の付録  
+## <a name="see-also"></a>参照  
+[Windows Server 2008 R2: AD DS をサポートするための Adprep.exe の変更点に関する付録](https://technet.microsoft.com/library/dd378876.aspx)  
+[Windows Server 2008: AD DS をサポートするための Adprep.exe の変更点に関する付録](https://technet.microsoft.com/library/cc770703.aspx)  
   
 
 

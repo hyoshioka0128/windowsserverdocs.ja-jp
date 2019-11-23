@@ -22,7 +22,7 @@ ms.locfileid: "71372070"
 ---
 # <a name="prnmngr"></a>prnmngr
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 追加、削除、およびプリンターまたは設定し、既定のプリンターを表示するだけでなく、プリンター接続を一覧表示します。
 
@@ -48,22 +48,22 @@ cscript Prnmngr {-a | -d | -x | -g | -t | -l | -?}[c] [-s <ServerName>]
 |       -p \<printerName >       |                                                                                                                                                                管理するプリンターの名前を指定します。                                                                                                                                                                 |
 |     -m \<DrivermodelName >     |                                                                                                          インストールするドライバーを (名) を指定します。 ドライバーは、サポートするプリンターのモデルの名前は多くの場合です。 詳細については、プリンターのマニュアルを参照してください。                                                                                                           |
 |        -r \<PortName >         |                                                                         プリンターが接続されているポートを指定します。 パラレル ポートまたはシリアル ポートの場合は、ポートの ID を使用して (たとえば、LPT1: や com1 など:)。 TCP/IP ポートである場合は、ポートを追加したときに指定したポート名を使用します。                                                                          |
-| -u \<UserName >-w \< Password > | 管理するプリンターをホストするコンピューターに接続するアクセス許可を持つアカウントを指定します。 ターゲット コンピューターのローカル Administrators グループのすべてのメンバーにこれらのアクセス許可があるが、アクセス許可は、他のユーザーに与えることもできます。 アカウントを指定しない場合は、コマンドを実行するこれらのアクセス許可を持つアカウントでログオンする必要があります。 |
+| -u \<UserName >-w \<パスワード > | 管理するプリンターをホストするコンピューターに接続するアクセス許可を持つアカウントを指定します。 ターゲット コンピューターのローカル Administrators グループのすべてのメンバーにこれらのアクセス許可があるが、アクセス許可は、他のユーザーに与えることもできます。 アカウントを指定しない場合は、コマンドを実行するこれらのアクセス許可を持つアカウントでログオンする必要があります。 |
 |              /?               |                                                                                                                                                                           コマンド プロンプトにヘルプを表示します。                                                                                                                                                                            |
 
 ## <a name="remarks"></a>注釈
--   **Prndrvr.vbs**コマンドは、%WINdir%\System32\printing_Admin_Scripts @ no__t @ no__t ディレクトリにある Visual Basic スクリプトです。 このコマンドを使用するには、コマンドプロンプトで「 **cscript** 」と入力し、 **prnmngr**ファイルへの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 以下に例を示します。
+-   **Prndrvr.vbs**コマンドは、%windir%\system32\ printing_Admin_Scripts\\<language> ディレクトリにある Visual Basic スクリプトです。 このコマンドを使用するには、コマンドプロンプトで「 **cscript** 」と入力し、 **prnmngr**ファイルへの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 次に、例を示します。
     ```
     cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnmngr
     ```
--   入力した情報にスペースが含まれている場合は、テキストを引用符で囲みます (たとえば、`"computer Name"`)。
+-   入力した情報にスペースが含まれている場合は、テキストを引用符で囲みます (`"computer Name"`など)。
 
 ## <a name="BKMK_examples"></a>例
 ローカルコンピューター上の LPT1 に接続され、color printer Driver1 というプリンタードライバーを必要とする colorprinter_2 という名前のプリンターを追加するには、次のように入力します。
 ```
 cscript prnmngr -a -p colorprinter_2 -m "color printer Driver1" -r lpt1:
 ```
-HRServer という名前のリモートコンピューターから、colorprinter_2 という名前のプリンターを削除するには、次のように入力します。
+HRServer という名前のリモートコンピューターから colorprinter_2 という名前のプリンターを削除するには、次のように入力します。
 ```
 cscript prnmngr -d -s HRServer -p colorprinter_2 
 ```

@@ -23,7 +23,7 @@ ms.locfileid: "71383262"
 ---
 # <a name="add-servers-to-server-manager"></a>サーバー マネージャーへのサーバーの追加
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server では、単一のサーバー マネージャー コンソールを使用して複数のリモート サーバーを管理できます。 サーバー マネージャーを使用して管理するサーバーは、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、または Windows Server 2008 が実行されているサーバーです。 新しいリリースの Windows Server を、古いリリースのサーバー マネージャーで管理することはできません。
 
@@ -176,6 +176,6 @@ Windows Server では、単一のサーバー マネージャー コンソール
 
 -   クラスター化された仮想サーバーにロールと機能をインストールすることはできません。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [サーバー マネージャー](server-manager.md)
 [サーバー グループの作成と管理](create-and-manage-server-groups.md)

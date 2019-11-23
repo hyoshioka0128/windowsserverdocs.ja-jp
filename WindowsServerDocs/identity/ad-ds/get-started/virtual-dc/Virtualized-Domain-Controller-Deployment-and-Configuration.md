@@ -18,7 +18,7 @@ ms.locfileid: "71390696"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>仮想化ドメイン コントローラーの展開と構成
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、次の内容について説明します。  
   
@@ -62,10 +62,10 @@ Windows Server 2012 ドメイン コントローラーを使用するには、Wi
 |||  
 |-|-|  
 |**仮想化製品**|**仮想化ドメインコントローラーと Vの ID をサポートします。**|  
-|**Hyper-v 機能を備えた Microsoft Windows Server 2012 server**|はい|  
-|**Microsoft Windows Server 2012 Hyper-v Server**|はい|  
-|**Hyper-v クライアント機能を備えた Microsoft Windows 8**|はい|  
-|**Windows Server 2008 R2 および Windows Server 2008**|いいえ|  
+|**Hyper-v 機能を備えた Microsoft Windows Server 2012 server**|〇|  
+|**Microsoft Windows Server 2012 Hyper-v Server**|〇|  
+|**Hyper-v クライアント機能を備えた Microsoft Windows 8**|〇|  
+|**Windows Server 2008 R2 および Windows Server 2008**|X|  
 |**Microsoft 以外の仮想化ソリューション**|ベンダーにお問い合わせください|  
   
 Microsoft では Windows 7 Virtual PC、Virtual PC 2007、Virtual PC 2004、および Virtual Server 2005 がサポートしていますが、64 ビットのゲストを実行することはできません。また、VM-GenerationID もサポートしていません。  
@@ -75,7 +75,7 @@ Microsoft では Windows 7 Virtual PC、Virtual PC 2007、Virtual PC 2004、お�
 詳細については、「 [マイクロソフト以外のハードウェア仮想化ソフトウェアでマイクロソフトのソフトウェアを実行する場合のサポート ポリシー](https://support.microsoft.com/kb/897615)」を参照してください。  
   
 ### <a name="critical-caveats"></a>重要な注意事項  
-仮想化ドメイン *コ* ントローラーでは、次の安全な復元をサポートしていません。  
+仮想化ドメイン コントローラーでは、次の安全な復元をサポートしていません。  
   
 -   既存の VHD ファイルに手動で上書きコピーされた VHD および VHDX ファイル  
   
@@ -89,36 +89,36 @@ Microsoft では Windows 7 Virtual PC、Virtual PC 2007、Virtual PC 2004、お�
 > [!WARNING]  
 > 仮想化ドメイン コントローラーの安全な復元は、システム状態バックアップおよび AD DS のごみ箱の代わりにはなりません。  
 >   
-> スナップショットの復元後、スナップショット後のドメイン コントローラーから発信された、レプリケートされていない変更のデルタは完全に失われます。 安全な復元では、ドメイン コントローラーのみが誤って検疫されるのを防ぐために、権限のない自動復元が実装されていま *す*。  
+> スナップショットの復元後、スナップショット後のドメイン コントローラーから発信された、レプリケートされていない変更のデルタは完全に失われます。 安全な復元では、ドメイン コントローラーのみが誤って検疫されるのを防ぐために、権限のない自動復元が実装されています。  
   
-USN バブルおよび残留オブジェクトの詳細については、次を参照してください。 [Troubleshooting シューティング Active Directory エラー8606で失敗します。"オブジェクトを作成するのに十分な属性が指定されていません" ](https://support.microsoft.com/kb/2028495)。  
+USN バブルおよび残留オブジェクトの詳細については、「 [エラー 8606: "オブジェクトの作成に必要な属性が足りません" で失敗する Active Directory 操作のトラブルシューティング](https://support.microsoft.com/kb/2028495)」を参照してください。  
   
 ## <a name="BKMK_VDCCloning"></a>仮想化ドメインコントローラーの複製  
 グラフィカル ツールまたは Windows PowerShell のいずれを使用しても、仮想化ドメイン コントローラーを複製は、複数の段階および手順に従って行います。 大きく分けると 3 つの段階があります。  
   
 **環境を準備する**  
   
--   手順 1:ハイパーバイザーで VM-Generation ID、ひいては複製をサポートしているかを検証します。  
+-   手順 1: ハイパーバイザーで VM-Generation ID、ひいては複製をサポートしているかを検証します。  
   
--   手順 2:PDC エミュレーターの役割が、Windows Server 2012 を実行しているドメインコントローラーによってホストされていること、およびその役割がオンラインで、複製中に複製されたドメインコントローラーによって到達可能であることを確認します。  
+-   手順 2: は、PDC エミュレーターの役割は複製中に、ドメイン コント ローラーによって Windows Server 2012 を実行して、それがオンラインであり、到達可能な複製されたドメイン コント ローラーによってホストされていることを確認します。  
   
 **ソースドメインコントローラーを準備する**  
   
--   手順 3:ソース ドメイン コントローラーに複製対象となる許可を付与します  
+-   手順 3: ソース ドメイン コントローラーを複製対象として許可します。  
   
--   手順 4:互換性のないサービスまたはプログラムを削除するか、そのサービスまたはプログラムを CustomDCCloneAllowList.xml ファイルに追加します。  
+-   手順 4: 互換性のないサービスまたはプログラムを削除するか、そのサービスまたはプログラムを CustomDCCloneAllowList.xml ファイルに追加します。  
   
--   手順 5:DCCloneConfig.xml を作成します  
+-   手順 5: DCCloneConfig.xml を作成します  
   
--   手順 6:ソース ドメイン コントローラーをオフラインにします  
+-   手順 6: ソース ドメイン コントローラーをオフラインにします  
   
 **複製されたドメインコントローラーを作成する**  
   
--   手順 7:ソース VM をコピーまたはエクスポートし、XML を追加します (まだコピーされていない場合)  
+-   手順 7: ソース VM をコピーまたはエクスポートし、その XML を追加します (まだコピーされていない場合)  
   
--   手順 8:コピーから新しい仮想マシンを作成します  
+-   手順 8: コピーから新しい仮想マシンを作成します  
   
--   手順 9:新しい仮想マシンを起動して、複製を開始します  
+-   手順 9: 新しい仮想マシンを起動して、複製を開始します  
   
 Hyper-v 管理コンソールなどのグラフィカルツールや、Windows PowerShell などのコマンドラインツールを使用する場合、操作には手順上の違いはありません。そのため、これらの手順は、両方のインターフェイスに1回だけ表示されます。 ここでは、複製プロセスのエンド ツー エンドの自動化について調査するための Windows PowerShell のサンプルを示します。これらのサンプルは、どの手順にも必要がありません。 Windows Server 2012 には、仮想化ドメイン コントローラー用のグラフィカル管理ツールがありません。  
   
@@ -240,7 +240,7 @@ cd c:
 または、サンプル [FixVDCPermissions.ps1](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Technical-Reference-Appendix.md#BKMK_FixPDCPerms) を Windows PowerShell コンソールで実行します。コンソールは、影響を受けるドメインのドメイン コントローラーで管理者特権を持つ管理者として起動します。 アクセス許可は自動的に設定されます。 サンプルは、このモジュールの付録にあります。  
   
 ### <a name="step-4---remove-incompatible-applications-or-services-if-not-using-customdccloneallowlistxml"></a>手順 4 - 互換性のないアプリケーションまたはサービスを削除する (CustomDCCloneAllowList.xml を使用していない場合)  
-Get-ADDCCloningExcludedApplicationList によって以前返され、CustomDCCloneAllowList.xml に追加されていないすべて *の*プログラムまたはサービスを、複製前に削除する必要があります。 アプリケーションまたはサービスはアンインストールすることをお勧めします。  
+Get-ADDCCloningExcludedApplicationList によって以前返され、CustomDCCloneAllowList.xml に追加されていないすべてのプログラムまたはサービスを、複製前に削除する必要があります。 アプリケーションまたはサービスはアンインストールすることをお勧めします。  
   
 > [!WARNING]  
 > 互換性のないプログラムまたはサービスがアンインストールされていない場合、または CustomDCCloneAllowList.xml に追加されていない場合、複製は行われません。  
@@ -330,7 +330,7 @@ Stop-computer は、仮想化に関係なくコンピューターのシャット
   
 システム ドライブだけでなく、仮想マシンのすべてのディスクをコピーする必要があります。 ソース ドメイン コントローラーが差分ディスクを使用しており、複製されたドメイン コントローラーを他の Hyper-V ホストに移動する場合は、エクスポートの必要があります。  
   
-ソース ドメイン コントローラーにドライブが " *1*" つしかない場合は、手動でディスクをコピーすることをお勧めします。 *"複数"* のドライブがある VM、または複数 NIC のように複雑な仮想化ハードウェア カスタマイズが行われた VM については、エクスポート/インポートをお勧めします。  
+ソース ドメイン コントローラーにドライブが "1" つしかない場合は、手動でディスクをコピーすることをお勧めします。 "複数" のドライブがある VM、または複数 NIC のように複雑な仮想化ハードウェア カスタマイズが行われた VM については、エクスポート/インポートをお勧めします。  
   
 ファイルを手動でコピーする場合は、コピー前にすべてのスナップショットを削除します。 VM をエクスポートする場合、スナップショットは、エクスポート前に削除するか、インポート後に新しい VM から削除します。  
   
@@ -546,7 +546,7 @@ copy-item <xml file path><destination path>\dccloneconfig.xml
 dismount-vhd <disk path>  
 ```  
   
-以下に例を示します。  
+次に、例を示します。  
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSMountVHD.png)  
   
@@ -640,7 +640,7 @@ Get-VMSnapshot
 Remove-VMSnapshot  
 ```  
   
-以下に例を示します。  
+次に、例を示します。  
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSGetVMSnap.png)  
   
@@ -664,7 +664,7 @@ Windows PowerShell を使用して VM を起動する場合、新しい Hyper-V 
 Start-VM  
 ```  
   
-以下に例を示します。  
+次に、例を示します。  
   
 ![仮想化 DC の展開](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSStartVM.png)  
   

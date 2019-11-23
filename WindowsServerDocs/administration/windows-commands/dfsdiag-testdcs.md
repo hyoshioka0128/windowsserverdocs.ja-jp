@@ -22,13 +22,13 @@ ms.locfileid: "71378439"
 ---
 # <a name="dfsdiag-testdcs"></a>dfsdiag TestDCs
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 指定されたドメイン内の各ドメインコントローラーで次のテストを実行して、ドメインコントローラーの構成を確認します。  
   
--   分散ファイルシステム \(DFS @ no__t 名前空間サービスが実行されており、そのスタートアップの種類が [自動] に設定されていることを確認します。  
+-   DFS\) 名前空間サービス \(分散ファイルシステムが実行されていて、そのスタートアップの種類が [自動] に設定されていることを確認します。  
   
--   では、NETLOGON と SYSvol のサイト @ no__t-0costed 参照がサポートされているかどうかを確認します。  
+-   では、NETLOGON と SYSvol のサイト\-コストの参照がサポートされているかどうかを確認します。  
   
 -   ホスト名と IP アドレスによるサイトの関連付けの整合性を確認します。  
   
@@ -44,10 +44,10 @@ dfsdiag /TestDCs [/Domain:<Domain name>]
   
 |パラメーター|説明|  
 |-------|--------|  
-|\/Domain: <Domain name>|確認するドメイン。|  
+|\/ドメイン:<Domain name>|確認するドメイン。|  
   
-## <a name="remarks"></a>コメント  
-\/Domain は省略可能なパラメーターです。 既定値は、ローカルホストが参加しているローカルドメインです。  
+## <a name="remarks"></a>注釈  
+\/ドメインは省略可能なパラメーターです。 既定値は、ローカルホストが参加しているローカルドメインです。  
   
 ## <a name="BKMK_Examples"></a>例  
 Contoso.com ドメイン内のドメインコントローラーの構成を確認するには、次のように入力します。  

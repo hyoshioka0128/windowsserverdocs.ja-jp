@@ -22,7 +22,7 @@ ms.locfileid: "71382968"
 ---
 # <a name="manage-software-inventory-logging"></a>ソフトウェア インベントリ ログの管理
 
->適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+>適用対象: Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 このドキュメントでは、データセンターの管理者が Microsoft ソフトウェア資産管理データを時間の経過と共に簡単にログに記録できるようにする機能であるソフトウェアインベントリログを管理する方法について説明します。 このドキュメントでは、ソフトウェア インベントリ ログを管理する方法について説明します。 Windows Server 2012 R2 でソフトウェアインベントリログを使用する前に、インベントリが必要な各システムに Windows Update [kb 3000850](https://support.microsoft.com/kb/3000850)と[kb 3060681](https://support.microsoft.com/kb/3060681)がインストールされていることを確認してください。 Windows Server 2016 には Windows 更新プログラムは必要ありません。 この機能は、インベントリされる各サーバーでローカルに実行されます。 リモート サーバーのデータは収集しません。  
 
@@ -33,7 +33,7 @@ ms.locfileid: "71382968"
 > [!NOTE] 
 > 以下の更新プログラムパッケージを適用する前に、 [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855)がインストールされていることを確認してください。
 
--  Windows Server 2012 用 WMF 4.0 更新パッケージ:[KB 3119938](https://support.microsoft.com/en-us/kb/3119938)
+-  Windows Server 2012 の WMF 4.0 更新プログラム パッケージ: [KB 3119938](https://support.microsoft.com/en-us/kb/3119938)
 
 - **Windows Server 2008 R2 SP1**
 
@@ -44,7 +44,7 @@ ms.locfileid: "71382968"
 - [.NET Framework 4.5](https://www.microsoft.com/en-us/download/details.aspx?id=30653)が必要
 
 
-- Windows Server 2008 R2 の WMF 4.0 更新プログラムパッケージ:[KB 3109118](https://support.microsoft.com/en-us/kb/3109118)
+- Windows Server 2008 R2 の WMF 4.0 更新プログラム パッケージ: [KB 3109118](https://support.microsoft.com/en-us/kb/3109118)
 
 
 この機能を使用したインベントリには、2 つの主な方法があります。  
@@ -75,7 +75,7 @@ SIL ログ記録の開始にはある程度の計画や先見性が含まれま�
   
 -   [ソフトウェアインベントリログに記録されたデータの削除](manage-software-inventory-logging.md#BKMK_Step4)  
   
--   [ソフトウェアインベントリログによってログに記録されたデータのバックアップと復元] 管理-ソフトウェア-インベントリログ。 md # BKMK_Step5)  
+-   [ソフトウェアインベントリログによってログに記録されたデータのバックアップと復元] 管理-ソフトウェア-インベントリログの記録。 md # BKMK_Step5)  
   
 -   [ソフトウェアインベントリログで記録および公開されたデータの読み取り](manage-software-inventory-logging.md#BKMK_Step6)  
   
@@ -140,17 +140,17 @@ SIL フレームワークの全体的な設定の包括的なガイドとして�
 ## <a name="BKMK_Step3"></a>ソフトウェアインベントリログデータの表示  
 前のセクションで説明した PowerShell コマンドレットに加えて、さらに 6 つのコマンドレットをソフトウェア インベントリ ログのデータ収集に使用できます。  
   
--   **[コンピューターの取得](https://technet.microsoft.com/library/dn283392.aspx)** :特定のサーバーのある時点での値とオペレーティング システム関連のデータ、物理ホストの FQDN またはホスト名 (使用可能な場合) を表示します。  
+-   [ **[コンピューターの取得](https://technet.microsoft.com/library/dn283392.aspx)** ]: 特定のサーバーおよびオペレーティングシステムに関連するデータの特定の時点の値、および物理ホストの FQDN またはホスト名 (使用可能な場合) を表示します。  
   
--   **[コンピューター id の取得 (KB 3000850)](https://technet.microsoft.com/library/dn858074.aspx)** :SIL が使用する、個々のサーバーの識別子を表示します。  
+-   **[取得-コンピューター id (KB 3000850)](https://technet.microsoft.com/library/dn858074.aspx)** : 個々のサーバーに対して sil によって使用される識別子を表示します。  
   
--   **[データの取得](https://technet.microsoft.com/library/dn283388.aspx)** :ソフトウェア インベントリ ログのすべてのデータのある時点でのコレクションを表示します。  
+-   **[データの取得](https://technet.microsoft.com/library/dn283388.aspx)** : すべてのソフトウェアインベントリログデータの特定の時点のコレクションを表示します。  
   
--   **[ソフトウェアの入手](https://technet.microsoft.com/library/dn283397.aspx)** :その時点でコンピューターにインストールされているすべてのソフトウェアの ID を表示します。  
+-   **[取得ソフトウェア](https://technet.microsoft.com/library/dn283397.aspx)** : コンピューターにインストールされているすべてのソフトウェアの特定の時点の id を表示します。  
   
--   **[取得-アクセス](https://technet.microsoft.com/library/dn283389.aspx)** :サーバーに対する 2 日前からのクライアントの一意のデバイス要求とユーザー要求の合計数を表示します。  
+-   [ **[取得]-[接続](https://technet.microsoft.com/library/dn283389.aspx)** ]: クライアントデバイスの一意の要求とサーバーのクライアントユーザーの要求の合計数を2日前に表示します。  
   
--   **[Get-silwindowsupdate](https://technet.microsoft.com/library/dn283393.aspx)** :その時点でコンピューターにインストールされているすべての Windows 更新プログラムの一覧を表示します。  
+-   **[Get-silwindowsupdate](https://technet.microsoft.com/library/dn283393.aspx)** : コンピューターにインストールされているすべての Windows 更新プログラムの特定の時点の一覧が表示されます。  
   
 ソフトウェア インベントリ ログのコマンドレットの代表的なユース ケース シナリオは、管理者が [Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)を使用して、ある時点でのソフトウェア インベントリ ログのすべてのデータのコレクションについてクエリを実行する場合です。  
   
@@ -210,7 +210,7 @@ SystemManufacturer        : Microsoft Corporation
   
 2. エクスプローラーを開きます。  
   
-3. **\Windows\System32\Logfiles\SIL\\** にアクセス  
+3. \Windows\System32\Logfiles\SIL にアクセスして **\\**  
   
 4. フォルダー内のすべてのファイルを削除します。  
   
@@ -218,10 +218,10 @@ SystemManufacturer        : Microsoft Corporation
 ネットワーク経由の転送が失敗した場合、1 時間ごとのデータのコレクションが一時的に保存されます。 ログ ファイルの保存場所は \Windows\System32\LogFiles\SIL\ ディレクトリです。 定期的にスケジュールされたサーバー バックアップを使用して、このソフトウェア インベントリ ログのデータのバックアップを作成できます。  
   
 > [!IMPORTANT]  
-> 何らかの理由でインストールの修復やオペレーティング システムのアップグレードが必要になった場合、ローカルに保存されているログ ファイルはすべて失われます。  これが運用上重要なデータである場合は、新しいオペレーティング システムをインストールする前にバックアップすることをお勧めします。 修復またはアップグレードが完了したら、単に同じ場所に復元します。  
+> 何らかの理由でインストールの修復やオペレーティング システムのアップグレードが必要になった場合、ローカルに保存されているログ ファイルはすべて失われます。  このデータが操作にとって重要な場合は、新しいオペレーティングシステムをインストールする前にバックアップすることをお勧めします。 修復またはアップグレードが完了したら、単に同じ場所に復元します。  
   
 > [!NOTE]  
-> SIL によってローカルに記録されたデータのリテンション期間を管理することが重要になる場合は、レジストリ値を次のように変更して構成できます。 \HKEY_LOCAL_MACHINE @ no__t-0SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. 既定値は30日間です。  
+> SIL によってローカルに記録されたデータのリテンション期間を管理する必要がある場合は、次のようにレジストリ値を変更することで構成できます。 \ HKEY_LOCAL_MACHINE\\SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. 既定値は30日間です。  
   
 ## <a name="BKMK_Step6"></a>ソフトウェアインベントリログで記録および公開されたデータの読み取り  
 SIL によって記録されたデータ (ターゲット URI への転送が失敗した場合)、またはターゲット集計サーバーに正常に転送されたデータは、バイナリファイル (毎日のデータ) に格納されます。 PowerShell でこのデータを表示するには、 [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx) コマンドレットを使用します。  
@@ -229,22 +229,22 @@ SIL によって記録されたデータ (ターゲット URI への転送が失
 ## <a name="BKMK_Step7"></a>ソフトウェアインベントリログのセキュリティ  
 ソフトウェア インベントリ ログの WMI と PowerShell API からデータを正常に取得するには、ローカル サーバーの管理特権が必要です。  
   
-時間の経過と共に (1 時間ごとに) 継続的に集計ポイントにデータを転送するソフトウェア インベントリ ログのすべての機能を正常に活用するには、管理者がクライアント証明書を使用して、HTTPS を介したデータ転送のためのセキュリティで保護された SSL セッションを確立する必要があります。 HTTPS 認証の基本的な概要については、次を参照してください。[HTTPS 認証](https://technet.microsoft.com/library/cc736680(v=WS.10).aspx)。  
+時間の経過と共に (1 時間ごとに) 継続的に集計ポイントにデータを転送するソフトウェア インベントリ ログのすべての機能を正常に活用するには、管理者がクライアント証明書を使用して、HTTPS を介したデータ転送のためのセキュリティで保護された SSL セッションを確立する必要があります。 HTTPS 認証の基本的な概要については、「 [HTTPS 認証](https://technet.microsoft.com/library/cc736680(v=WS.10).aspx)」を参照してください。  
   
 Windows Server 上にローカルに保存されているすべてのデータ (この機能が開始されていて、何らかの理由でターゲットに接続できない場合のみ) には、ローカル サーバーの管理特権でのみアクセスできます。  
   
 ## <a name="BKMK_Step8"></a>Windows Server 2012 R2 ソフトウェアインベントリログでの日付と時刻の設定の操作  
   
--   [Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay を使用して SIL ログ記録の実行時刻を設定する場合は、日付と時刻を指定する必要があります。 カレンダーの日付が設定され、ローカル システム時刻でその日付に到達するまでログ記録は実行されません。  
+-   [Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay を使用して SIL ログ記録の実行時刻を設定する場合は、日付と時刻を指定する必要があります。 カレンダーの日付が設定され、ローカルシステム時刻でその日付に達するまでログ記録は行われません。  
   
 -   取得した[ソフトウェア](https://technet.microsoft.com/library/dn283397.aspx)または[get-silwindowsupdate](https://technet.microsoft.com/library/dn283393.aspx)を使用する場合、"installdate" は常に 12:00: 00am (意味のない値) を示します。  
   
--   [Get/Alaccess](https://technet.microsoft.com/library/dn283389.aspx)を使用する場合、"sampledate" は常に 11:59: 00pm (意味のない値) を示します。  日付は、これらのコマンドレットのクエリの関連データです。  
+-   [Get/Alaccess](https://technet.microsoft.com/library/dn283389.aspx)を使用する場合、"sampledate" は常に 11:59: 00pm (意味のない値) を示します。  Date は、これらのコマンドレットクエリに関連するデータです。  
   
 ## <a name="BKMK_Step10"></a>マウントされたバーチャルハードディスクでのソフトウェアインベントリログの有効化と構成  
 ソフトウェア インベントリ ログは、オフラインの仮想マシンでの構成と有効化もサポートしています。 このための実用的な用途は、データセンター全体の大規模な展開に対する "ゴールドイメージ" の設定と、オンプレミスからクラウドデプロイへのエンドユーザーイメージの構成の両方に対応することを目的としています。  
   
-これらの用途をサポートするため、ソフトウェア インベントリ ログにはそれぞれの構成オプションに関連したレジストリ エントリがあります。  これらのレジストリ値は \HKEY_LOCAL_MACHINE @ no__t-0SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. にあります。  
+これらの用途をサポートするため、ソフトウェア インベントリ ログにはそれぞれの構成オプションに関連したレジストリ エントリがあります。  これらのレジストリ値は、\ HKEY_LOCAL_MACHINE\\SOFTWARE\Microsoft\Windows\SoftwareInventoryLogging. にあります。  
   
 |||||  
 |-|-|-|-|  
@@ -252,7 +252,7 @@ Windows Server 上にローカルに保存されているすべてのデータ (
 |機能の開始と停止|CollectionState|1 または 0|[Start-SilLogging](https://technet.microsoft.com/library/dn283391.aspx)、 [Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)|  
 |ネットワーク上のターゲット集計ポイントの指定|TargetUri|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TargetURI|  
 |ターゲット Web サーバーに対する SSL 認証に使用される証明書の拇印または証明書のハッシュを指定します。|CertificateThumbprint|string|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -CertificateThumbprint|  
-|この機能を開始する日付と時刻を指定します (ローカル システム時刻に従って将来の値が設定されている場合)。|CollectionTime|既定値:2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|  
+|この機能を開始する日付と時刻を指定します (ローカル システム時刻に従って将来の値が設定されている場合)。|CollectionTime|既定値:  2000-01-01T03:00:00|[Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay|  
   
 オフラインの VHD (VM OS が実行されていない) でこれらの値を変更するには、最初に VHD をマウントする必要があります。その後、次のコマンドを使用して変更を加えることができます。  
   
@@ -280,22 +280,22 @@ Windows Server 上にローカルに保存されているすべてのデータ (
 > [!NOTE]  
 > この機能は、更新プログラム [KB 3000850](https://support.microsoft.com/kb/3000850) のインストールにより削除されます。  
   
-Windows Server 2012 R2 Hyper-v ホストでソフトウェアインベントリログを使用する場合、SIL ログがゲストで開始されている場合、ローカルで実行されている Windows Server 2012 R2 ゲストから SIL データを取得することができます。 ただし、これが可能なのは、ホストとゲストの両方で WIndows Server 2012 R2 を使用している場合にのみ、データの取り出しと Powershell コマンドレットを使用する場合のみです。  この機能の目的は、ゲスト VM をテナントまたは大企業のその他のエンティティに提供するデータ センター管理者が、ハイパーバイザー ホストでソフトウェア インベントリ データをキャプチャした後、そのデータをすべて集合 (ターゲット URI) に転送できるようにすることです。  
+Windows Server 2012 R2 Hyper-v ホストでソフトウェアインベントリログを使用する場合、SIL ログがゲストで開始されている場合、ローカルで実行されている Windows Server 2012 R2 ゲストから SIL データを取得することができます。 ただし、これが可能なのは、ホストとゲストの両方で WIndows Server 2012 R2 を使用している場合にのみ、データの取り出しと Powershell コマンドレットを使用する場合のみです。  この機能の目的は、ゲスト Vm をテナントまたは大企業のその他のエンティティに提供するデータセンター管理者が、ハイパーバイザーホストでソフトウェアインベントリデータをキャプチャし、その後、すべてのデータをアグリゲーターに転送できるようにすることです (または、ターゲット URI)。  
   
-次に示すのは、SIL ログが開始された Windows Server 2012 R2 のゲスト VM を実行している Windows Server 2012 R2 Hyper-v ホスト上で、PowerShell コンソールの出力がどのようなものか (かなり省略されている) を示しています。  Get-SilData のみを使用した 1 つ目の例では、ホストからのすべてのデータが想定どおりに出力されています。  ゲストからのすべての SIL データも含まれていますが、折りたたまれた形式です。  ゲストからのこのデータを展開して表示するには、次の 2 つ目の例で使用されているスニペットを切り取って貼り付けます。  ゲストからの SIL データ オブジェクトには常に、オブジェクト内で関連付けられている VM GUID があります。  
+次に示すのは、SIL ログが開始された Windows Server 2012 R2 のゲスト VM を実行している Windows Server 2012 R2 Hyper-v ホスト上で、PowerShell コンソールの出力がどのようなものか (かなり省略されている) を示しています。  最初の例では、取得したデータだけを使用して、ホストからのすべてのデータが想定どおりに出力されます。  また、ゲストからのすべての SIL データが、折りたたまれた形式で含まれています。  ゲストからこのデータを展開して表示するには、次の2番目の例で使用しているスニペットを切り取って貼り付けます。  ゲストからの SIL データオブジェクトには常に、オブジェクト内に関連付けられている VM GUID があります。  
   
 > [!NOTE]  
-> Get-SilData コマンドレットを使用した場合、SIL データはデータ ストリームでコンソールに出力されるため、オブジェクトは常に予測された順序で出力されるとは限りません。  次の 2 つの例では、このドキュメントでの説明の都合上、テキストが色分けされています (物理ホストのデータは青、仮想ゲストのデータは緑)。  
+> Get-SilData コマンドレットを使用した場合、SIL データはデータ ストリームでコンソールに出力されるため、オブジェクトは常に予測された順序で出力されるとは限りません。  次の2つの例では、このドキュメントのわかりやすいツールとして、テキストが色分けされています (物理ホストデータの場合は青、仮想ゲストデータの場合は緑)。  
   
 **出力例1**  
   
 ![](../media/software-inventory-logging/SILHyper-VExample1.png)  
   
-**出力例 2**(w/Expand データ関数)  
+**出力例 2** (w/Expand データ関数)  
   
 ![](../media/software-inventory-logging/SILHyper-VExample2.png)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ソフトウェアインベントリログを使ってみる](get-started-with-software-inventory-logging.md)  
 [ソフトウェア インベントリ ログ アグリゲーター](software-inventory-logging-aggregator.md)  
 [Windows PowerShell のソフトウェアインベントリログコマンドレット](https://technet.microsoft.com/library/dn283390.aspx)  

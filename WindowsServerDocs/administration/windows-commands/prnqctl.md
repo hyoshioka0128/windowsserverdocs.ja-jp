@@ -22,7 +22,7 @@ ms.locfileid: "71372032"
 ---
 # <a name="prnqctl"></a>prnqctl
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 テスト ページを印刷を一時停止や、プリンターが再開プリンター キューをクリアします。  
 
@@ -41,18 +41,18 @@ cscript Prnqctl {-z | -m | -e | -x | -?} [-s <ServerName>]
 |-x|指定されているプリンタのすべての印刷ジョブが取り消される、 **-p** パラメーター。|  
 |-s \<ServerName >|管理するプリンターをホストするリモート コンピューターの名前を指定します。 コンピューターを指定しないと、ローカル コンピューターが使用されます。|  
 |-p \<printerName >|管理するプリンターの名前を指定します。 必須。|  
-|-u \<UserName >-w \< Password >|管理するプリンターをホストするコンピューターに接続するアクセス許可を持つアカウントを指定します。 ターゲット コンピューターのローカル Administrators グループのすべてのメンバーにこれらのアクセス許可があるが、アクセス許可は、他のユーザーに与えることもできます。 アカウントを指定しない場合は、コマンドを実行するこれらのアクセス許可を持つアカウントでログオンする必要があります。|  
+|-u \<UserName >-w \<パスワード >|管理するプリンターをホストするコンピューターに接続するアクセス許可を持つアカウントを指定します。 ターゲット コンピューターのローカル Administrators グループのすべてのメンバーにこれらのアクセス許可があるが、アクセス許可は、他のユーザーに与えることもできます。 アカウントを指定しない場合は、コマンドを実行するこれらのアクセス許可を持つアカウントでログオンする必要があります。|  
 |/?|コマンド プロンプトにヘルプを表示します。|  
 
-## <a name="remarks"></a>コメント  
-- **Prnqctl.vbs**コマンドは、%WINdir%\System32\printing_Admin_Scripts @ no__t @ no__t ディレクトリにある Visual Basic スクリプトです。 このコマンドを使用するには、コマンドプロンプトで「 **cscript** 」と入力し、prnqctl.vbs ファイルへの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 以下に例を示します。  
+## <a name="remarks"></a>注釈  
+- **Prnqctl.vbs**コマンドは、%windir%\system32\ printing_Admin_Scripts\\<language> ディレクトリにある Visual Basic スクリプトです。 このコマンドを使用するには、コマンドプロンプトで「 **cscript** 」と入力し、prnqctl.vbs ファイルへの完全なパスを入力するか、ディレクトリを適切なフォルダーに変更します。 次に、例を示します。  
   ```  
   cscript %WINdir%\System32\printing_Admin_Scripts\en-US\prnqctl  
   ```  
-- 入力した情報にスペースが含まれている場合は、テキストを引用符で囲みます (たとえば、`"computer Name"`)。  
+- 入力した情報にスペースが含まれている場合は、テキストを引用符で囲みます (`"computer Name"`など)。  
 
 ## <a name="BKMK_examples"></a>例  
-@No__t 0 から Server1 コンピューターによって共有されている Laserprinter1 プリンターでテストページを印刷するには、次のように入力します。  
+\\Server1 コンピューターによって共有されている Laserprinter1 プリンターでテストページを印刷するには、次のように入力します。  
 ```  
 cscript Prnqctl -e -s Server1 -p Laserprinter1  
 ```  

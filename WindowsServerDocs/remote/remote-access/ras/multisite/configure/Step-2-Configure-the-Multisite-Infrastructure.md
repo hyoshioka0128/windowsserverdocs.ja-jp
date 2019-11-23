@@ -21,7 +21,7 @@ ms.locfileid: "71367198"
 ---
 # <a name="step-2-configure-the-multisite-infrastructure"></a>手順 2 は、マルチサイトのインフラストラクチャを構成します。
 
->適用先:Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2012 R2、Windows Server 2012
 
 マルチサイト展開を構成するのには、いくつかの手順を含むネットワーク インフラストラクチャの設定を変更する必要があります。 その他の Active Directory を構成するサイトとドメイン コント ローラーで、追加のセキュリティ グループを構成すると、自動的に使用しない場合は、グループ ポリシー オブジェクト (Gpo) を構成する構成 Gpo です。  
   
@@ -60,7 +60,7 @@ ms.locfileid: "71367198"
   
 8.  Active Directory サイトとサービスを閉じます。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -169,7 +169,7 @@ New-ADReplicationSubnet -Name "2001:db8:2::/64" -Site "Second-Site"
   
 8.  必要に応じて、すべてのエントリポイントのセキュリティグループを作成するには、この手順を繰り返します。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -187,7 +187,7 @@ Windows 7"、または Windows Server 2008 R2 では、次のコマンドレッ�
 Import-Module ActiveDirectory  
 ```  
   
-Win7_Clients_Entrypoint1 という名前のセキュリティグループを構成し、という名前のクライアントコンピューターを追加するには、次のようにします。  
+Win7_Clients_Entrypoint1 という名前のセキュリティグループを構成し、次のようなクライアントコンピューターを追加するには:  
   
 ```  
 New-ADGroup -GroupScope universal -Name Win7_Clients_Entrypoint1  
@@ -334,6 +334,6 @@ PDC エミュレーターとして実行されているドメインコントロ�
   
 ## <a name="BKMK_Links"></a>関連項目  
   
--   [手順 3:マルチサイト展開を構成する @ no__t-0  
--   [ステップ 1: 単一サーバーのリモートアクセスの展開を実装する @ no__t-0  
+-   [手順 3: マルチサイト展開を構成する](Step-3-Configure-the-Multisite-Deployment.md)  
+-   [手順 1: 単一サーバーのリモートアクセスの展開を実装する](Step-1-Implement-a-Single-Server-Remote-Access-Deployment.md)  
 

@@ -41,19 +41,19 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 |/d|自動実行コマンドの実行を無効にします。|
 |/a|内部コマンドの出力をパイプまたはファイルに米国規格協会 (ANSI) (ANSI) として書式設定します。|
 |/u|内部コマンドの出力を Unicode としてパイプまたはファイルに書式設定します。|
-|/t: {\<B @ no__t @ no__t @ no__t @ no__t @ 5f (@ no__t-6} を実行します。|背景 (*B*) と前景 (*F*) の色を設定します。|
+|/t: {\<B\>\<F\>\|\<F\>}|背景 (*B*) と前景 (*F*) の色を設定します。|
 |/e: オン|コマンド拡張機能を有効にします。|
 |/e: off|コマンドの拡張機能を無効にします。|
 |/f: オン|ファイル名とディレクトリ名の入力候補を有効にします。|
 |/f: オフ|ファイル名とディレクトリ名の入力候補を無効にします。|
 |/v: オン|遅延環境変数の拡張を有効にします。|
 |/v: オフ|遅延環境変数の拡張を無効にします。|
-|\<String >|実行するコマンドを指定します。|
+|\<文字列 >|実行するコマンドを指定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-次の表に、\> と \<F @ no__t の値として使用できる有効な16進数の数字を示します。
+次の表に、\<B\> と \<F の値として使用できる有効な16進数の数字を示し\>
 
-|値|色|
+|Value|色|
 |-----|-----|
 |0|黒|
 |1|青|
@@ -62,7 +62,7 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 |4|[赤]|
 |5|ひし|
 |6|黄|
-|7|White|
+|7|白|
 |8|灰色|
 |9|薄い青|
 |a|明るい緑|
@@ -72,11 +72,11 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 |つまり|薄い黄色|
 |f|明るい白|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 -   複数のコマンドの使用
 
-    @No__t 0String > に複数のコマンドを使用するには、コマンド区切り **@no__t**記号で区切り、それらを引用符で囲みます。 以下に例を示します。
+    \<文字列 > に複数のコマンドを使用するには、それらをコマンド区切り記号で区切り **&&** 、引用符で囲みます。 次に、例を示します。
 
     ```
     "<Command>&&<Command>&&<Command>"
@@ -96,9 +96,9 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
     *文字列*に **/d**を指定しない場合、cmd.exe は次のレジストリサブキーを検索します。
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\AutoRun\REG_SZ**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\AutoRun\ REG_SZ**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\AutoRun\REG_EXPAND_SZ**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\AutoRun\ REG_EXPAND_SZ**
 
     一方または両方のレジストリサブキーが存在する場合は、他のすべての変数の前に実行されます。
 
@@ -107,13 +107,13 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
 
 -   コマンド拡張機能の有効化と無効化
 
-    Windows XP では、コマンド拡張機能は既定で有効になっています。 **/E: off**を使用して、特定のプロセスに対してこれらの設定を無効にすることができます。 コンピューターまたはユーザーセッションで、次の**REG_DWORD**値を設定することにより **、すべてのコマンドライン**オプションの拡張機能を有効または無効にできます。
+    Windows XP では、コマンド拡張機能は既定で有効になっています。 **/E: off**を使用して、特定のプロセスに対してこれらの設定を無効にすることができます。 次の**REG_DWORD**値を設定することにより、コンピューターまたはユーザーセッションのすべての**cmd**コマンドラインオプションに対する拡張機能を有効または無効にできます。
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\EnableExtensions\REG_DWORD**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\EnableExtensions\ REG_DWORD**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command Processor\EnableExtensions\REG_DWORD**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\EnableExtensions\ REG_DWORD**
 
-    Regedit.exe を使用して、レジストリで**REG_DWORD**値を**0 × 1** (有効) または**0 × 0** (無効) に設定します。 ユーザー指定の設定はコンピューターの設定よりも優先され、コマンドラインオプションはレジストリ設定よりも優先されます。
+    Regedit.exe を使用して、レジストリで**REG_DWORD**値を**0 × 1** (有効) または**0 × 0** (無効) のいずれかに設定します。 ユーザー指定の設定はコンピューターの設定よりも優先され、コマンドラインオプションはレジストリ設定よりも優先されます。
 
 > [!CAUTION]
 > レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリを変更する前に、コンピューター上の重要なデータのバックアップを作成する必要があります。
@@ -143,17 +143,17 @@ cmd [/c|/k] [/s] [/q] [/d] [/a|/u] [/t:{<B><F>|<F>}] [/e:{on|off}] [/f:{on|off}]
     遅延環境変数の展開を有効にした場合、感嘆符文字を使用して、実行時に環境変数の値を置き換えることができます。
 -   ファイル名とディレクトリ名の入力候補を有効にする
 
-    ファイル名とディレクトリ名の入力候補は、既定では有効になっていません。 コマンドの特定のプロセスのファイル名の入力候補を有効または無効にするに**は、** **/f:** {**on**@no__t **-3}** を使用します。 次の**REG_DWORD**値を設定することにより、コンピューターまたはユーザーのログオンセッションで、 **cmd**コマンドのすべてのプロセスのファイルおよびディレクトリ名の入力候補を有効または無効にすることができます。
+    ファイル名とディレクトリ名の入力候補は、既定では有効になっていません。 **/F:** {**on**|**off**} を指定すると、 **cmd**コマンドの特定のプロセスに対して、ファイル名の入力候補を有効または無効にすることができます。 次の**REG_DWORD**値を設定することにより、コンピューターまたはユーザーのログオンセッションで、 **cmd**コマンドのすべてのプロセスのファイル名とディレクトリ名の入力候補を有効または無効にすることができます。
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command のプロセッサ名 (_e)**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\ REG_DWORD**
 
-    **HKEY_LOCAL_MACHINE\Software\Microsoft\Command processor_e (DWORD)**
+    **HKEY_LOCAL_MACHINE \Software\Microsoft\Command Processor\ path Char\ REG_DWORD**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command のプロセッサ名 (_e)**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\ REG_DWORD**
 
-    **HKEY_CURRENT_USER\Software\Microsoft\Command processor_e (DWORD)**
+    **HKEY_CURRENT_USER \Software\Microsoft\Command Processor\ path Char\ REG_DWORD**
 
-    **REG_DWORD**値を設定するには、regedit.exe を実行し、特定の関数に対して制御文字の16進値を使用します (たとえば、 **0 × 9**は TAB、 **0 × 08**は BACKSPACE です)。 ユーザー指定の設定はコンピューターの設定よりも優先され、コマンドラインオプションはレジストリ設定よりも優先されます。
+    **REG_DWORD**値を設定するには、regedit.exe を実行し、特定の関数に対して制御文字の16進数値を使用します (たとえば、 **0 × 9**は TAB、 **0 × 08**は BACKSPACE です)。 ユーザー指定の設定はコンピューターの設定よりも優先され、コマンドラインオプションはレジストリ設定よりも優先されます。
 
 > [!CAUTION]
 > レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリを変更する前に、コンピューター上の重要なデータのバックアップを作成する必要があります。

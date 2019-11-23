@@ -21,7 +21,7 @@ ms.locfileid: "71366919"
 ---
 # <a name="troubleshooting-enabling-otp"></a>OTP の有効化のトラブルシューティング
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、 **DAOtpAuthentication** PowerShell コマンドレットまたはリモートアクセス管理コンソールを使用した DirectAccess OTP 認証の有効化に関連する問題のトラブルシューティング情報について説明します。
   
@@ -49,7 +49,7 @@ ms.locfileid: "71366919"
 2.  テンプレートが存在しない場合は、3.3 の説明に従って作成し、登録機関の証明書を計画します。または、別の一致するテンプレートが存在する場合は、新しいテンプレート名を使用して DirectAccess OTP を再構成します。  
   
 ## <a name="failed-to-enable-directaccess-otp-when-webdav-is-installed"></a>WebDAV がインストールされているときに DirectAccess OTP を有効にできませんでした  
-**シナリオ**。 リモートアクセス管理コンソールまたは @no__t 0 の PowerShell コマンドレットを使用して DirectAccess OTP 構成を適用しようとすると、操作は失敗します。  
+**シナリオ**。 リモートアクセス管理コンソールまたは `Enable-DAOtpAuthentication` PowerShell コマンドレットを使用して DirectAccess OTP 構成を適用しようとすると、操作は失敗します。  
   
 **エラーを受信しました**(サーバーイベントログ)。 サーバーで WebDAV IIS 拡張機能が実行されているため、DirectAccess OTP 設定を適用できません。 WebDAV を削除して、もう一度設定を適用してください。  
   
