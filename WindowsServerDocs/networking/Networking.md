@@ -24,7 +24,7 @@ ms.locfileid: "71406775"
 
 <HR />
 
-ネットワークは、ソフトウェアで定義されたデータ\(センター\)のデータセンター (SDDC) プラットフォームの基本部分であり、 \(Windows\) Server 2016 では、組織のための完全に実現した SDDC ソリューション。
+ネットワークは、\(SDDC\) プラットフォームのソフトウェア定義データセンターの基本部分であり、Windows Server 2016 では、ソフトウェアによって定義された新しいネットワーク \(SDN\) テクノロジが提供されており、組織の完全に実現された SDDC ソリューションへの移行に役立ちます。
 
 ネットワークをソフトウェアによって定義されたリソースとして管理する場合、アプリケーションのインフラストラクチャ要件を1回記述し、アプリケーションの実行場所 (オンプレミスまたはクラウド) を選択することができます。 
 
@@ -67,7 +67,7 @@ ms.locfileid: "71406775"
                                         </div>
                                         <div class="cardText">
                                         <h3><a href="https://docs.microsoft.com/windows-server/networking/sdn/">ソフトウェア定義ネットワーク (SDN)</a><hr /></h3>このトピックでは、Windows Server、System Center、および Microsoft Azure で提供される SDN テクノロジについて説明します。</p>
-                                        <p><b>注: </b>ネットワークコントローラーやソフトウェアの負荷分散ノードなど、SDN インフラストラクチャサーバーを実行する Hyper-v ホストと仮想マシン (Vm) については、Windows Server Datacenter edition をインストールする必要があります。 SDN で制御されるネットワークに接続されているテナントワークロード Vm のみが含まれている Hyper-v ホストの場合は、Windows Server Standard edition を実行できます。</p>                                        </div>
+                                        <p><b>注:</b>ネットワークコントローラーやソフトウェアの負荷分散ノードなど、SDN インフラストラクチャサーバーを実行する Hyper-v ホストと仮想マシン (Vm) については、Windows Server Datacenter edition をインストールする必要があります。 SDN で制御されるネットワークに接続されているテナントワークロード Vm のみが含まれている Hyper-v ホストの場合は、Windows Server Standard edition を実行できます。</p>                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -152,7 +152,7 @@ ms.locfileid: "71406775"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                        <h3><a href="sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md">ネットワーク機能の仮想化</a><hr /></h3>ソフトウェア定義データセンターでは、ハードウェアアプライアンス (ロードバランサー、ファイアウォール、ルーター、スイッチなど) によって実行されるネットワーク機能が、仮想アプライアンスとして仮想化されることが増えています。 この&quot;ネットワーク機能の&quot;仮想化は、サーバー仮想化とネットワーク仮想化の自然な流れです。</p>                                        </div>
+                                        <h3><a href="sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md">ネットワーク機能の仮想化</a><hr /></h3>ソフトウェア定義データセンターでは、ハードウェアアプライアンス (ロードバランサー、ファイアウォール、ルーター、スイッチなど) によって実行されるネットワーク機能が、仮想アプライアンスとして仮想化されることが増えています。 この &quot;ネットワーク機能の仮想化&quot; は、サーバーの仮想化とネットワーク仮想化の自然な流れです。</p>                                        </div>
                                     </div>
                                 </div>
                             </div>

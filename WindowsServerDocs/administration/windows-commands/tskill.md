@@ -22,7 +22,7 @@ ms.locfileid: "71392337"
 ---
 # <a name="tskill"></a>tskill
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 リモートデスクトップセッションホスト (rd セッションホスト) サーバー上のセッションで実行されているプロセスを終了します。
 このコマンドの使用方法の例については、「[例](#BKMK_examples)」を参照してください。
@@ -41,13 +41,13 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 |-------|--------|
 |\<ProcessID >|終了するプロセスの ID を指定します。|
 |\<ProcessName >|終了するプロセスの名前を指定します。 このパラメーターには、ワイルドカード文字を含めることができます。|
-|/server: @no__t 0ServerName >|終了するプロセスを含むターミナルサーバーを指定します。 **/Server**が指定されていない場合は、現在の RD セッションホストサーバーが使用されます。|
-|/id: @no__t 0SessionID >|指定されたセッションで実行されているプロセスを終了します。|
+|/server:\<ServerName >|終了するプロセスを含むターミナルサーバーを指定します。 **/Server**が指定されていない場合は、現在の RD セッションホストサーバーが使用されます。|
+|/id:\<SessionID >|指定されたセッションで実行されているプロセスを終了します。|
 |/a|すべてのセッションで実行されているプロセスを終了します。|
 |/v|実行されているアクションに関する情報を表示します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 - **Tskill**を使用すると、管理者でない限り、自分に属しているプロセスのみを終了できます。 管理者は、すべての**tskill**関数にフルアクセスでき、他のユーザーセッションで実行されているプロセスを終了できます。
 - セッションで実行されているすべてのプロセスが終了すると、セッションも終了します。
 - *ProcessName*パラメーターと **/server:** <em>ServerName</em>パラメーターを使用する場合は、 **/id:** <em>SessionID</em>または **/a**パラメーターも指定する必要があります。
@@ -63,4 +63,4 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
   ```
   #### <a name="additional-references"></a>その他の参照情報
   [コマンドライン構文キー](command-line-syntax-key.md)
-  [リモート デスクトップ サービス &#40;ターミナル サービス&#41; コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+  [リモート デスクトップ サービスと&#40;です。ターミナル サービスと&#41;です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)

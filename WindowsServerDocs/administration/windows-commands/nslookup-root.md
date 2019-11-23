@@ -22,7 +22,7 @@ ms.locfileid: "71373390"
 ---
 # <a name="nslookup-root"></a>nslookup root
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ドメインネームシステム (DNS) のドメイン名空間のルートに対して、既定のサーバーをサーバーに変更します。
 ## <a name="syntax"></a>構文
@@ -35,8 +35,8 @@ root
 |-----------------|-------------------------------------------------------|
 | {ヘルプ&#124; ?} | **Nslookup**サブコマンドの簡単な概要を表示します。 |
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 - 現時点では、ns.nic.ddn.mil ネームサーバーが使用されています。 このコマンドは、lserver ns.nic.ddn.mil のシノニムです。 ルートサーバーの名前を変更するには、**ルートの設定**コマンドを使用します。
   ## <a name="additional-references"></a>その他の参照情報
   [コマンドライン構文のキー](command-line-syntax-key.md)
-  [nslookup set root](nslookup-set-root.md)
+  [nslookup](nslookup-set-root.md)によるルートの設定

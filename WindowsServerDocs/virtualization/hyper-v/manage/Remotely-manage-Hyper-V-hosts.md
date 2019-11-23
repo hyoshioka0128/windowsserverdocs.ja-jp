@@ -20,7 +20,7 @@ ms.locfileid: "71392691"
 ---
 # <a name="remotely-manage-hyper-v-hosts-with-hyper-v-manager"></a>Hyper-v マネージャーを使用して Hyper-v ホストをリモートで管理する
 
->適用先:Windows Server 2016、Windows Server 2012 R2、Windows 10、Windows 8.1
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows 10、Windows 8.1
 
 この記事では、Hyper-v ホストと Hyper-v マネージャーバージョンのサポートされる組み合わせの一覧を示し、リモートおよびローカルの Hyper-v ホストに接続して管理できるようにする方法について説明します。 
 
@@ -51,7 +51,7 @@ Hyper-v マネージャーから hyper-v ホストに接続するには、左側
 
 ## <a name="manage-hyper-v-on-a-local-computer"></a>ローカルコンピューターで Hyper-v を管理する
 
-Hyper-v マネージャーには、ローカルコンピューターを含むコンピューターを追加するまで、Hyper-v をホストしているコンピューターは表示されません。 これを行うには :
+Hyper-v マネージャーには、ローカルコンピューターを含むコンピューターを追加するまで、Hyper-v をホストしているコンピューターは表示されません。 これには、次の手順を実行します。
 
 1. 左側のウィンドウで、 **[Hyper-v マネージャー]** を右クリックします。
 2. [**サーバーへの接続] を**クリックします。
@@ -67,7 +67,7 @@ Hyper-v マネージャーには、ローカルコンピューターを含むコ
 
 リモートの Hyper-v ホストを管理するには、ローカルコンピューターとリモートホストの両方でリモート管理を有効にします。
 
-Windows Server でサーバーマネージャー \>**ローカルサーバー** \>**リモート管理**を開き、 **[このコンピューターへのリモート接続を許可する]** をクリックします。 
+Windows Server でサーバーマネージャー \>**ローカルサーバー** \>**リモート管理** を開き、**このコンピューターへのリモート接続を許可する** をクリックします。 
 
 または、いずれかのオペレーティングシステムで、管理者として Windows PowerShell を開き、次を実行します。 
 
@@ -79,13 +79,13 @@ Enable-PSRemoting
 
 Windows 8.1 以前では、リモート管理は、ホストが同じドメイン内にあり、ローカルユーザーアカウントがリモートホスト上にもある場合にのみ機能します。
 
-リモート Hyper-v ホストを Hyper-v マネージャーに追加するには、 **[コンピューターの選択**] ダイアログボックスで **[別のコンピューター]** を選択し、リモートホストのホスト名、NetBIOS 名、または完全修飾ドメイン名 \(fqdn @ no__t-3 を入力します。
+リモート Hyper-v ホストを Hyper-v マネージャーに追加するには、 **[コンピューターの選択**] ダイアログボックスで **[別のコンピューター]** を選択し、リモートホストのホスト名、NetBIOS 名、または完全修飾ドメイン名 \(FQDN\)を入力します。
 
 Windows Server 2016 と Windows 10 の hyper-v マネージャーでは、以前のバージョンよりも多くの種類のリモート接続が提供されます。詳細については、次のセクションで説明します。  
 
 ### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-as-a-different-user"></a>別のユーザーとして Windows 2016 または Windows 10 リモートホストに接続する
 
-これにより、hyper-v ホスト上の Hyper-v Administrators グループまたは Administrators グループのメンバーであるユーザーとしてローカルコンピューター上で実行されていない場合に、Hyper-v ホストに接続できます。 これを行うには :
+これにより、hyper-v ホスト上の Hyper-v Administrators グループまたは Administrators グループのメンバーであるユーザーとしてローカルコンピューター上で実行されていない場合に、Hyper-v ホストに接続できます。 これには、次の手順を実行します。
 
 1. 左側のウィンドウで、 **[Hyper-v マネージャー]** を右クリックします。
 1. [**サーバーへの接続] を**クリックします。
@@ -97,7 +97,7 @@ Windows Server 2016 と Windows 10 の hyper-v マネージャーでは、以前
 
 ### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-using-ip-address"></a>IP アドレスを使用して Windows 2016 または Windows 10 リモートホストに接続する
 
-これを行うには :
+これには、次の手順を実行します。
 
 1. 左側のウィンドウで、 **[Hyper-v マネージャー]** を右クリックします。
 1. [**サーバーへの接続] を**クリックします。
@@ -108,7 +108,7 @@ Windows Server 2016 と Windows 10 の hyper-v マネージャーでは、以前
 
 ### <a name="connect-to-a-windows-2016-or-windows-10-remote-host-outside-your-domain-or-with-no-domain"></a>ドメインの外部またはドメインなしで Windows 2016 または Windows 10 リモートホストに接続する
 
-これを行うには :
+これには、次の手順を実行します。
 
 1. 管理対象の Hyper-v ホストで、管理者として Windows PowerShell セッションを開きます。
 
@@ -153,7 +153,7 @@ Windows Server 2016 と Windows 10 の hyper-v マネージャーでは、以前
 
 UI ツールを使用するには、Hyper-v マネージャーを実行するコンピューターのオペレーティングシステムに適したものを選択します。
 
-Windows Server で @no__t サーバーマネージャーを開きます。0を**管理**\>**役割と機能を追加**します。 **[機能]** ページに移動し、 **[リモートサーバー管理ツール]** \> **[役割管理ツール]** \> **[hyper-v 管理ツール]** の順に展開します。 
+Windows Server でサーバーマネージャーを開き、**役割と機能の追加**\> \>**管理**します。 **[機能]** ページに移動し、 **[リモートサーバー管理ツール]** \> [**役割管理 \> ツール**]、 **[hyper-v 管理ツール]** の順に展開します。 
 
 Windows では、hyper-v マネージャーは、 [hyper-v を含むすべての windows オペレーティングシステム](https://msdn.microsoft.com/virtualization/hyperv_on_windows/quick_start/walkthrough_compatibility)で使用できます。
 

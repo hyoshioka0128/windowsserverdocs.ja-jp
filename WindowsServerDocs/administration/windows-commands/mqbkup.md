@@ -22,7 +22,7 @@ ms.locfileid: "71373511"
 ---
 # <a name="mqbkup"></a>mqbkup
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 MSMQ メッセージファイルとレジストリ設定をストレージデバイスにバックアップし、以前に保存されたメッセージと設定を復元します。   
 バックアップと復元の両方の操作で、ローカル MSMQ サービスが停止されます。 MSMQ サービスが事前に開始されている場合、ユーティリティは、バックアップまたは復元操作の最後に MSMQ サービスの再起動を試みます。 ユーティリティを実行する前にサービスが既に停止していた場合、サービスの再起動は行われません。  
@@ -36,7 +36,7 @@ mqbkup {/b | /r} <folder path_to_storage_device>
 |-------|--------|  
 |/b|バックアップ操作を指定します|  
 |/r|復元操作を指定します|  
-|< フォルダー path_to_storage @ no__t-0device >|MSMQ メッセージファイルとレジストリ設定が格納されるパスを指定します。|  
+|< フォルダー path_to_storage\_デバイス >|MSMQ メッセージファイルとレジストリ設定が格納されるパスを指定します。|  
 |/?|コマンド プロンプトにヘルプを表示します。|  
 ## <a name="BKMK_Examples"></a>例  
 すべての MSMQ メッセージファイルとレジストリ設定をバックアップし、C: ドライブの*Msmqbkup*フォルダーに保存します。  

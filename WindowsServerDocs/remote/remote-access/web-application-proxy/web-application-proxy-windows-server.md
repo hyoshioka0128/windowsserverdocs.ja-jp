@@ -17,9 +17,9 @@ ms.locfileid: "71387975"
 ---
 # <a name="web-application-proxy-in-windows-server-2016"></a>Windows Server 2016 における Web アプリケーション プロキシ
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
-@no__t-このコンテンツは、オンプレミスバージョンの Web アプリケーションプロキシに関連しています。クラウド経由でオンプレミスアプリケーションへのセキュリティで保護されたアクセスを有効にするには、 [Azure AD アプリケーションプロキシのコンテンツ](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)を参照してください。 **  
+**このコンテンツは、オンプレミスバージョンの Web アプリケーションプロキシに関連しています。クラウド経由でオンプレミスアプリケーションへの安全なアクセスを実現するには、 [Azure AD アプリケーションプロキシのコンテンツ](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)を参照してください。**  
   
 このセクションの内容では、Windows Server 2016 用の Web アプリケーションプロキシの新機能と変更された機能について説明します。 ここに記載されている新機能と変更点は、プレビューを操作するときに最も大きな影響を与える可能性の高いものです。  
   
@@ -55,7 +55,7 @@ ms.locfileid: "71387975"
   
 - バックエンドアプリケーションへのクライアント IP アドレスの伝達  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 -   [Windows Server 2016 の新機能](https://technet.microsoft.com/library/dn765472.aspx)  
   

@@ -21,9 +21,9 @@ ms.locfileid: "71388769"
 ---
 # <a name="step-1-configure-the-directaccess-infrastructure"></a>手順 1 は、DirectAccess インフラストラクチャを構成します。
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、既存の VPN の展開で DirectAccess を有効にするために必要なインフラストラクチャを構成する方法について説明します。 展開の手順を開始する前に、「[Step 1:」で説明されている計画の手順を完了していることを確認します。DirectAccess インフラストラクチャの計画 @ no__t-0  
+このトピックでは、既存の VPN の展開で DirectAccess を有効にするために必要なインフラストラクチャを構成する方法について説明します。 展開の手順を開始する前に、計画で説明した手順を完了していることを確認します [手順 1: DirectAccess インフラストラクチャの計画](Step-1-Plan-DirectAccess-Infrastructure.md)します。  
   
 |タスク|説明|  
 |----|--------|  
@@ -144,7 +144,7 @@ IP-HTTPS 認証に使用する Web サイトの証明書が次の要件を満た
   
 ##### <a name="to-install-the-ip-https-certificate-from-an-internal-ca"></a>内部 CA から IP-HTTPS 証明書をインストールするには  
   
-1.  リモート アクセス サーバーで、 **[スタート]** 画面で「**mmc.exe**」と入力し、enter キーを押します。  
+1.  リモート アクセス サーバー上: で、 **開始** 画面で「**mmc.exe**, 、ENTER キーを押します。  
   
 2.  MMC コンソールで、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   
@@ -179,7 +179,7 @@ IP-HTTPS 認証に使用する Web サイトの証明書が次の要件を満た
   
 ### <a name="NLS_DNS"></a>ネットワークロケーションサーバーと web プローブ DNS レコードを作成するには  
   
-1.  内部ネットワーク DNS サーバーで、**スタート**画面で、「* * dnsmgmt.msc * *」と入力し、enter キーを押します。  
+1.  内部ネットワーク DNS サーバーの場合:**スタート**画面で、「* * dnsmgmt.msc * *」と入力し、enter キーを押します。  
   
 2.  **[DNS マネージャー]** コンソールの左側のウィンドウで、ドメインの前方参照ゾーンを展開します。 ドメインを右クリックし、クリックして **新しいホスト (A または AAAA)** します。  
   
@@ -189,7 +189,7 @@ IP-HTTPS 認証に使用する Web サイトの証明書が次の要件を満た
   
 5.  **[完了]** をクリックします。  
 
-@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -233,7 +233,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 9. **システムのプロパティ** ダイアログ ボックスで、閉じる をクリックします。 指示に従い、 **[今すぐ再起動する]** をクリックします。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -277,7 +277,7 @@ Restart-Computer
   
 6.  **[ユーザー、連絡先、コンピューター、サービス アカウントまたはグループの選択]** ダイアログ ボックスで、DirectAccess 用に有効にするクライアント コンピューターを選択し、 **[OK]** をクリックします。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
+windows PowerShell の ![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure_3/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -307,7 +307,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 #### <a name="to-install-the-network-location-server-certificate-from-an-internal-ca"></a>内部 CA からネットワーク ロケーション サーバー証明書をインストールするには  
   
-1.  ネットワーク ロケーション サーバー Web サイトをホストするサーバーで、 **[スタート]** 画面で「**mmc.exe**」と入力し、enter キーを押します。  
+1.  ネットワーク ロケーション サーバー web サイトをホストするサーバー上: で、 **開始** 画面で「**mmc.exe**, 、ENTER キーを押します。  
   
 2.  MMC コンソールで、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   

@@ -22,7 +22,7 @@ ms.locfileid: "71363182"
 ---
 # <a name="using-the-get-drivergroup-command"></a>Get DriverGroup コマンドを使用してください。
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サーバー上のドライバー グループについての情報を表示します。
 ## <a name="syntax"></a>構文
@@ -32,7 +32,7 @@ wdsutil /Get-DriverGroup /DriverGroup:<Group Name> [/Server:<Server name>]
 ## <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-|/Drivergroup: <Group Name>|ドライバー グループの名前を指定します。|
+|/Drivergroup:<Group Name>|ドライバー グループの名前を指定します。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。  サーバー名が指定されていない場合は、ローカルサーバーが使用されます。|
 |[/Show: {行き着きます &#124;文字です。フィルターと &#124; 文字です。All}]|指定したグループ内のすべてのドライバー パッケージのメタデータを表示します。 **行き着きます** ドライバー グループのすべてのフィルターに関する情報を表示します。 **フィルター** すべてのドライバー パッケージのメタデータと、グループのフィルターが表示されます。|
 ## <a name="BKMK_examples"></a>例

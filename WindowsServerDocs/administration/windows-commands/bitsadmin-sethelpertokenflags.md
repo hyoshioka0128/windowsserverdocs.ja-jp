@@ -21,9 +21,9 @@ ms.locfileid: "71380577"
 ---
 # <a name="bitsadmin-sethelpertokenflags"></a>bitsadmin sea pertokenflags
 
-BITS 転送ジョブに関連付けられている [ヘルパートークン](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)  の使用フラグを設定します。
+BITS 転送ジョブに関連付けられている  [ヘルパートークン](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)の使用フラグを設定します。
 
-**BITS 3.0 以前**: サポートされていません。
+**BITS 3.0 以前**: サポートされていません。
 
 ## <a name="syntax"></a>構文
 
@@ -36,7 +36,7 @@ bitsadmin /SetHelperTokenFlags <Job> <Flags>
 |パラメーター|説明|
 |---------|-----------|
 |Job|ジョブの表示名または GUID。|
-|フラグ|使用できる値は次のとおりです。 0x0001 @ no__t: ヘルパートークンを使用して、アップロードジョブのローカルファイルを開き、ダウンロードジョブの一時ファイルを作成または名前を変更するか、アップロード応答ジョブの応答ファイルを作成または名前を変更します。 0x0002 @ no__t ヘルパートークンは、サーバーメッセージブロック (SMB) のアップロードまたはダウンロードジョブのリモートファイルを開くため、または暗黙の NTLM または Kerberos 資格情報に対する HTTP サーバーまたはプロキシのチャレンジに対する応答として使用されます。 @ No__t-0 @ no__t-1to を呼び出す必要があります。これにより、資格情報を HTTP 経由で送信できるようになります。|
+|フラグ|使用できる値は次のとおりです。 0x0001&mdash;、ヘルパートークンを使用して、アップロードジョブのローカルファイルを開き、ダウンロードジョブの一時ファイルを作成または名前を変更するか、アップロード応答ジョブの応答ファイルを作成または名前を変更します。 0x0002&mdash;ヘルパートークンを使用して、サーバーメッセージブロック (SMB) のアップロードまたはダウンロードジョブのリモートファイルを開いたり、暗黙の NTLM または Kerberos 資格情報に対する HTTP サーバーまたはプロキシのチャレンジに応答したりします。 資格情報が HTTP 経由で送信されるようにするには、 `/SetCredentialsJob TargetScheme NULL NULL` を呼び出す必要があります。|
 
 #### <a name="additional-references"></a>その他の参照情報
 

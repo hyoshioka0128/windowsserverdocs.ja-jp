@@ -1,6 +1,6 @@
 ---
 title: auditpol 復元
-description: '**Auditpol 復元**の Windows コマンドトピック-システム監査ポリシー設定、すべてのユーザーのユーザーごとの監査ポリシー設定、およびコンマ区切り値 (CSV) ファイル形式と構文的に一致するファイルからのすべての監査オプションを復元します。/backup オプションで使用されます。'
+description: '**Auditpol 復元**の Windows コマンドトピック-システム監査ポリシー設定、すべてのユーザーのユーザーごとの監査ポリシー設定、および/backup オプションで使用されるコンマ区切り値 (CSV) ファイル形式と構文的に一致するファイルからのすべての監査オプションを復元します。'
 ms.custom: na
 ms.prod: windows-server
 ms.reviewer: na
@@ -22,7 +22,7 @@ ms.locfileid: "71382411"
 ---
 # <a name="auditpol-restore"></a>auditpol 復元
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 システム監査ポリシー設定、すべてのユーザーのユーザーごとの監査ポリシー設定、および/backup オプションで使用されるコンマ区切り値 (CSV) ファイル形式と構文的に一致するファイルからのすべての監査オプションを復元します。
 
@@ -35,7 +35,7 @@ auditpol /restore /file:<filename>
 |-------|--------|
 |/file|監査ポリシーの復元元のファイルを指定します。 このファイルは、/backup オプションを使用して作成されているか、/backup オプションで使用される CSV ファイル形式と構文的に一致している必要があります。|
 |/?|コマンド プロンプトにヘルプを表示します。|
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 ユーザーごとのポリシーとシステムポリシーの復元操作では、セキュリティ記述子でそのオブジェクトセットの書き込みまたはフルコントロールのアクセス許可を持っている必要があります。 また、 **[監査とセキュリティログの管理]** (SeSecurityPrivilege) ユーザー権利を使用して復元操作を実行することもできます。 SeSecurityPrivilege は、不注意なエラーや悪意のある攻撃が発生した場合にセキュリティ記述子を復元するときに役立ちます。
 ## <a name="BKMK_examples"></a>例
 システム監査ポリシー設定、すべてのユーザーのユーザーごとの監査ポリシー設定、および/backup コマンドを使用して作成された auditpolicy .csv という名前のファイルのすべての監査オプションを復元するには、次のように入力します。

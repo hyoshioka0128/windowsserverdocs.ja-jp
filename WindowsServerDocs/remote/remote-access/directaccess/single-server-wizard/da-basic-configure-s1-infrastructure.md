@@ -21,7 +21,7 @@ ms.locfileid: "71388569"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>手順1基本的な DirectAccess インフラストラクチャを構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、IPv4 と IPv6 の混在環境で単一の DirectAccess サーバーを使用して、基本的な DirectAccess 展開に必要なインフラストラクチャを構成する方法について説明します。 展開の手順を開始する前に、計画で説明した手順を完了していることを確認します [基本的な DirectAccess 展開を計画](../../../remote-access/directaccess/single-server-wizard/Plan-a-Basic-DirectAccess-Deployment.md)します。  
   
@@ -121,7 +121,7 @@ IPv4 と IPv6 を使用した環境での単一サーバーの展開には次の
   
 5.  **[完了]** をクリックします。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
 
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -149,7 +149,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 1.  サーバー マネージャーで **[ローカル サーバー]** をクリックします。 詳細ウィンドウで、 **[コンピューター名]** の横にあるリンクをクリックします。  
   
-2.  **[システムのプロパティ]** ダイアログ ボックスの **[コンピューター名]** タブをクリックします。 **[コンピューター名]** タブで、 **[変更]** をクリックします。  
+2.  **[システムのプロパティ]** ダイアログボックスで、 **[コンピューター名]** タブをクリックします。 **[コンピューター名]** タブで、 **[変更]** をクリックします。  
   
 3.  サーバーをドメインに追加するときにコンピューター名も変更する場合は、 **[コンピューター名]** にコンピューター名を入力します。 **[次のメンバー]** で **[ドメイン]** をクリックし、サーバーの追加先のドメイン名 (corp.contoso.com など) 入力し、 **[OK]** をクリックします。  
   
@@ -183,7 +183,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 9. **システムのプロパティ** ダイアログ ボックスで、閉じる をクリックします。 指示に従い、 **[今すぐ再起動する]** をクリックします。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -227,7 +227,7 @@ Restart-Computer
   
 6.  **[ユーザー、連絡先、コンピューター、サービス アカウントまたはグループの選択]** ダイアログ ボックスで、DirectAccess 用に有効にするクライアント コンピューターを選択し、 **[OK]** をクリックします。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
+windows PowerShell の ![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -238,7 +238,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 ## <a name="BKMK_Links"></a>次のステップ  
   
--   [手順 2:基本的な DirectAccess サーバーを構成する](da-basic-configure-s2-server.md)  
+-   [手順 2: 基本的な DirectAccess サーバーを構成する](da-basic-configure-s2-server.md)  
   
 
 

@@ -21,7 +21,7 @@ ms.locfileid: "71370396"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print-with-passthrough-authentication"></a>パススルー認証を使用して Windows Server ハイブリッドクラウド印刷を展開する
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 このトピックでは、IT 管理者向けに、Microsoft ハイブリッドクラウド印刷ソリューションのエンドツーエンドのデプロイについて説明します。 このソリューションレイヤーは、プリントサーバーとして実行されている既存の Windows Server 上にあり、Azure Active Directory 参加済みで、MDM で管理されたデバイスが、組織で管理されているプリンタを検出して印刷できるようにします。
 
@@ -39,7 +39,7 @@ ms.locfileid: "71370396"
 
 -   Active Directory として実行されている Windows Server
 
-    詳細[については、「ステップバイステップ:Active Directory をセットアップする方法につい](https://blogs.technet.microsoft.com/canitpro/2017/02/22/step-by-step-setting-up-active-directory-in-windows-server-2016/)ては、Windows Server 2016 での Active Directory のセットアップ」を参照してください。
+    Active Directory を設定する方法については、「ステップバイ[ステップ: Windows Server 2016 での Active Directory](https://blogs.technet.microsoft.com/canitpro/2017/02/22/step-by-step-setting-up-active-directory-in-windows-server-2016/)のセットアップ」を参照してください。
 
 -   プリントサーバーとして実行されているドメインに参加している Windows Server 2016
     
@@ -61,11 +61,11 @@ ms.locfileid: "71370396"
 
 このガイドでは、5つのインストール手順について説明します。
 
-- 手順 1:Azure AD とオンプレミスの AD 間で同期するために Azure AD Connect をインストールする
-- 手順 2:ハイブリッドクラウド印刷パッケージをプリントサーバーにインストールする
-- 手順 3:パススルー認証を使用して Azure アプリケーションプロキシ (AAP) をインストールする
-- 手順 4:必要な MDM ポリシーを構成する
-- 手順 5:共有プリンターの発行
+- 手順 1: Azure AD とオンプレミスの AD 間で同期するために Azure AD Connect をインストールする
+- 手順 2: ハイブリッドクラウド印刷パッケージをプリントサーバーにインストールする
+- 手順 3: パススルー認証を使用して Azure アプリケーションプロキシ (AAP) をインストールする
+- 手順 4: 必要な MDM ポリシーを構成する
+- 手順 5: 共有プリンターを公開する
 
 ### <a name="step-1---install-azure-ad-connect-to-sync-between-azure-ad-and-on-premises-ad"></a>手順 1-Azure AD とオンプレミスの AD を同期するために Azure AD Connect をインストールする
 1. Windows Server Active Directory コンピューターで、Azure AD Connect ソフトウェアをダウンロードします。
@@ -76,13 +76,13 @@ ms.locfileid: "71370396"
 
 1. ハイブリッドクラウド印刷の PowerShell モジュールをインストールする
    - 管理者特権の PowerShell コマンドプロンプトから次のコマンドを実行します。
-      - `find-module -Name "PublishCloudPrinter"`コンピューターが PowerShell ギャラリーに接続できることを確認するには (PSGallery)
+      - コンピューターが PowerShell ギャラリーに接続できることを確認するための `find-module -Name "PublishCloudPrinter"` (PSGallery)
       - `install-module -Name "PublishCloudPrinter"`
 
      > 注: "PSGallery" が信頼されていないリポジトリであることを示すメッセージが表示される場合があります。  インストールを続行するには、「y」と入力します。
 
 2. ハイブリッドクラウド印刷ソリューションをインストールする
-    - 同じ管理者特権の PowerShell コマンドプロンプトで、ディレクトリをに変更します。`C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0`
+    - 同じ管理者特権の PowerShell コマンドプロンプトで、ディレクトリをに変更し `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0`
     - Run <br>
         `CloudPrintDeploy.ps1 -AzureTenant <Domain name used by Azure AD Connect> -AzureTenantGuid <Azure AD Directory ID>`
 3. 2つの IIS エンドポイントで SSL をサポートするように構成する
@@ -95,10 +95,10 @@ ms.locfileid: "71370396"
    - 次のコマンドを実行して、パッケージをインストールします。<br>
    `Install-Package system.data.sqlite [-requiredversion x.x.x.x] -providername nuget`
 
-   > 注: "-Requiredversion" オプションを残して、最新バージョンをダウンロードしてインストールすることをお勧めします。
+   > 注: "-requiredversion" オプションを残して、最新バージョンをダウンロードしてインストールすることをお勧めします。
 
-5. SQLite dll を\<MopriaCloudService Webapp bin\>フォルダー (**C:\\inetpub\\\\wwwroot\\MopriaCloudService bin**) にコピーします。 <br>
-   - SQLite バイナリ\\は、"Program Files\\PackageManagement\\NuGet\\Packages" にあります。
+5. SQLite dll を MopriaCloudService Webapp \<bin\> フォルダー (**C:\\inetpub\\wwwroot\\MopriaCloudService\\bin**) にコピーします。 <br>
+   - SQLite バイナリは、"\\Program Files\\PackageManagement\\NuGet\\Packages" にある必要があります。
 
            \\System.Data.SQLite.**Core**.x.x.x.x\\lib\\net46\\System.Data.SQLite.dll
            --\> \<bin\>\\System.Data.SQLite.dll  
@@ -113,7 +113,7 @@ ms.locfileid: "71370396"
 
    > 注: x.y は、上記でインストールされた SQLite バージョンです。
 
-6. 次\<のランタイムassemblybindingセクションにSQLiteバージョン2.xを含めるようにファイルを更新します。\>\> `c:\inetpub\wwwroot\MopriaCloudService\web.config` /\<
+6. 次の \<ランタイム\>/\<assemblyBinding\> セクションに SQLite バージョン2.x を含めるように `c:\inetpub\wwwroot\MopriaCloudService\web.config` ファイルを更新します。
 
        <dependentAssembly>
        assemblyIdentity name="System.Data.SQLite" culture="neutral" publicKeyToken="db937bc2d44ff139" /
@@ -133,9 +133,9 @@ ms.locfileid: "71370396"
        </dependentAssembly>
 
 7. SQLite データベースを作成します。
-    -  から SQLite ツールバイナリをダウンロードしてインストールします。<https://www.sqlite.org/>
-    -  **\\C: inetpub\\wwwroot\\MopriaCloudServiceDatabaseディレクトリにアクセスします。\\**
-    -  次のコマンドを実行して、このディレクトリにデータベースを作成します。`sqlite3.exe MopriaDeviceDb.db ".read MopriaSQLiteDb.sql"`
+    -  <https://www.sqlite.org/> から SQLite ツールバイナリをダウンロードしてインストールします。
+    -  **C:\\inetpub\\wwwroot\\MopriaCloudService\\データベース**ディレクトリにアクセスします。
+    -  次のコマンドを実行して、このディレクトリにデータベースを作成します。 `sqlite3.exe MopriaDeviceDb.db ".read MopriaSQLiteDb.sql"`
     -  ファイルエクスプローラーで、Moare Adevicedb. db ファイルのプロパティを開き、[セキュリティ] タブで Mo先読みデータベースへの公開が許可されているユーザーまたはグループを追加します。
         - 必要な管理ユーザーグループのみを追加することをお勧めします。
 8. OAuth2 認証をサポートするために Azure AD で2つの web アプリを登録する
@@ -148,7 +148,7 @@ ms.locfileid: "71370396"
         - サインオン URL = "<http://MopriaDiscoveryService/CloudPrint>"
      3. ネイティブクライアントアプリケーションに対してこの手順を繰り返します。
         -   アプリ名を指定する場合は、[アプリケーションの種類] として [ネイティブクライアントアプリケーション] を選択していることを確認してください。
-        -   Redirect URI = "https://\<\>"/redirecturl "
+        -   リダイレクト URI = "https://\<\>/redirecturl"
      4. ネイティブクライアントアプリの [設定] にアクセスします。
         -   後のセットアップ手順で使用する "アプリケーション ID" の値をコピーします。
         -   [必要なアクセス許可] を選択します。
@@ -159,7 +159,7 @@ ms.locfileid: "71370396"
             5.  各アプリエンドポイントの [委任されたアクセス許可] オプションが有効になっていることを確認します。
             6.  下部にある [完了] ボタンをクリックしてください。
             7.  両方のエンドポイントが追加されたら、[アクセス許可の付与] をクリックします。  要求の承認を求めるメッセージが表示されたら、[はい] を選択します。
-        -   [リダイレクト URI] にアクセスし、一覧に次のリダイレクト Uri を追加します。`ms-appx-web://Microsoft.AAD.BrokerPlugin/\<NativeClientAppID\>`
+        -   "リダイレクト URI" にアクセスし、一覧に次のリダイレクト Uri を追加します: `ms-appx-web://Microsoft.AAD.BrokerPlugin/\<NativeClientAppID\>`
             `ms-appx-web://Microsoft.AAD.BrokerPlugin/S-1-15-2-3784861210-599250757-1266852909-3189164077-45880155-1246692841-283550366`
 
 ### <a name="step-3---install-azure-application-proxy-aap-with-passthrough-authentication"></a>手順 3-パススルー認証を使用して Azure アプリケーションプロキシ (AAP) をインストールする
@@ -174,29 +174,29 @@ ms.locfileid: "71370396"
    - **[エンタープライズアプリケーション]** タブにアクセスします。
    - **[新しいアプリケーション]** をクリックします。
    - **[オンプレミスのアプリケーション**] を選択し、フィールドに入力します。
-       - 名前:任意の名前
-       - 内部 URL:これは、WAP コンピューターがアクセスできる、検出クラウドサービスの内部 URL です
-       - 外部 URL:組織に合わせて構成する
-       - 事前認証方法:パススルー
+       - 名前: 任意の名前を指定します。
+       - 内部 URL: これは、WAP コンピューターがアクセスできる、検出クラウドサービスの内部 URL です
+       - 外部 URL: 組織に合わせて構成します。
+       - 事前認証方法: パススルー
 
-     >   メモ:上記のすべての設定が見つからない場合は、使用可能な設定を使用してプロキシを追加してから、作成したアプリケーションプロキシを選択し、 **[アプリケーションプロキシ]** タブにアクセスして上記のすべての情報を追加します。
+     >   注: 上記のすべての設定が見つからない場合は、使用可能な設定を使用してプロキシを追加してから、作成したアプリケーションプロキシを選択し、 **[アプリケーションプロキシ]** タブにアクセスして、上記のすべての情報を追加します。
 
 4. Enterprise Cloud Print Service の場合は、上記の3を繰り返し、エンタープライズクラウド印刷サービスの内部 URL を指定します。
 
-    >   メモ:以下で&lt;説明する https://&gt;/mcs url は、クラウドサービスまたはエンタープライズクラウド印刷サービス用に設定する外部 url である必要があります。
+    >   注: 以下に記載されている&lt;https://&gt;/mcs URL は、クラウドサービスまたはエンタープライズクラウド印刷サービス用に設定した外部 URL にする必要があります。
 
 
 ### <a name="step-4---configure-the-required-mdm-policies"></a>手順 4-必要な MDM ポリシーを構成する
 - MDM プロバイダーにログインする
 - 次のガイドラインに従って、エンタープライズクラウドの印刷ポリシーグループを見つけ、ポリシーを構成します。
-  - Cloudprintoauthauthority = https://login.microsoftonline.com/\<Azure AD ディレクトリ ID\>
+  - CloudPrintOAuthAuthority = https://login.microsoftonline.com/\<Azure AD ディレクトリ ID\>
   - CloudPrintOAuthClientId = Azure AD 管理ポータルに登録したネイティブ Web アプリの "アプリケーション ID" の値
   - Cloudプリンター Discoveryendpoint = 手順3.3 で作成された Azure アプリケーションプロキシの外部 URL (完全に一致している必要がありますが、末尾は/以外である必要があります)
   - Moの Adiscoveryresourceid = 手順2.8 で登録した探索エンドポイントの Web アプリ/API の "アプリ ID URI"。  これは、アプリの [設定-> のプロパティ] で確認できます。
   - CloudPrintResourceId = 手順2.8 で登録された印刷エンドポイント用の Web アプリ/API の "アプリ ID URI"。 これは、アプリの [設定-> のプロパティ] で確認できます。
-  - Discoverymaxプリンター limit = \<正の整数\>
+  - Discoverymaxプリンター Limit = 正の整数 \<\>
 
->   メモ:Microsoft Intune サービスを使用している場合は、[Cloud Printer] (クラウドプリンター) カテゴリの下にこれらの設定が表示されます。
+>   注: Microsoft Intune サービスを使用している場合は、[Cloud Printer] (クラウドプリンター) カテゴリの下にこれらの設定が表示されます。
 
 |Intune の表示名                     |ポリシー                         |
 |----------------------------------------|-------------------------------|
@@ -208,11 +208,11 @@ ms.locfileid: "71370396"
 |プリンター検出サービスのリソース URI  |Mo先読み Adiscoveryresourceid      |
 
 
->   メモ:クラウド印刷ポリシーグループが使用できないが、MDM プロバイダーが OMA-URI 設定をサポートしている場合は、同じポリシーを設定できます。  詳細については、こちらの<a href="https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority">記事</a>を参照してください。
+>   注: [クラウド印刷ポリシー] グループが使用できないが、MDM プロバイダーが OMA-URI 設定をサポートしている場合は、同じポリシーを設定できます。  詳細については、こちらの<a href="https://docs.microsoft.com/windows/client-management/mdm/policy-csp-enterprisecloudprint#enterprisecloudprint-cloudprintoauthauthority">記事</a>を参照してください。
 
 - OMA-URI
     - `CloudPrintOAuthAuthority = ./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthAuthority`
-        - 値 = `https://login.microsoftonline.com/` \<Azure AD Directory ID\>
+        - 値 = `https://login.microsoftonline.com/`\<Azure AD Directory ID\>
     - `CloudPrintOAuthClientId = ./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintOAuthClientId`
         - 値 = \<Azure AD ネイティブアプリのアプリケーション ID\>
     - `CloudPrinterDiscoveryEndPoint = ./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrinterDiscoveryEndPoint`
@@ -222,7 +222,7 @@ ms.locfileid: "71370396"
     - `CloudPrintResourceId = ./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/CloudPrintResourceId`
         - Value = 手順2.8 で登録された印刷エンドポイント用の Web アプリ/API の "アプリ ID URI"。 これは、アプリの [設定-> のプロパティ] で確認できます。
     - `DiscoveryMaxPrinterLimit = ./Vendor/MSFT/Policy/Config/EnterpriseCloudPrint/DiscoveryMaxPrinterLimit`
-        - 値 = \<正の整数\>
+        - 値 = 正の整数 \<\>
   
 ### <a name="step-5---publish-desired-shared-printers"></a>手順 5-必要な共有プリンターを発行する
 1. プリントサーバーに必要なプリンターをインストールする
@@ -230,8 +230,8 @@ ms.locfileid: "71370396"
 3. アクセス権を付与するユーザーのセットを選択します
 4. 変更を保存し、[プリンターのプロパティ] ウィンドウを閉じます。
 5. Windows 10 フォール Creator 更新コンピューターから、管理者特権の Windows PowerShell コマンドプロンプトを開きます。
-   1. 次のコマンドを実行します。
-      - `find-module -Name "PublishCloudPrinter"`コンピューターが PowerShell ギャラリーに接続できることを確認するには (PSGallery)
+   1. 次のコマンドを実行します
+      - コンピューターが PowerShell ギャラリーに接続できることを確認するための `find-module -Name "PublishCloudPrinter"` (PSGallery)
       - `install-module -Name "PublishCloudPrinter"`
 
         >   注: "PSGallery" が信頼されていないリポジトリであることを示すメッセージが表示される場合があります。  インストールを続行するには、「y」と入力します。
@@ -240,29 +240,29 @@ ms.locfileid: "71370396"
         - Printer = 定義されている共有プリンター名
         - 製造元 = プリンターの製造元
         - モデル = プリンターモデル
-        - OrgLocation = プリンターの場所を指定する JSON 文字列。例:`{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"Microsoft", "depth":1}, {"category":"site", "vs":"Redmond, WA", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor\_number", "vn":1, "depth":4}, {"category":"room\_name", "vs":"1111", "depth":5}]}`
-        - Sddl = プリンターのアクセス許可を表す SDDL 文字列。 これを取得するには、プリンターのプロパティの [セキュリティ] タブを適切に変更し、コマンドプロンプトで次のコマンドを実行します。`(Get-Printer PrinterName -full).PermissionSDDL`
-            など."G: DUD: (A; OICI; FA;;;WD) "
+        - OrgLocation = プリンターの場所を指定する JSON 文字列 (例: `{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"Microsoft", "depth":1}, {"category":"site", "vs":"Redmond, WA", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor\_number", "vn":1, "depth":4}, {"category":"room\_name", "vs":"1111", "depth":5}]}`
+        - Sddl = プリンターのアクセス許可を表す SDDL 文字列。 これを取得するには、プリンターのプロパティの [セキュリティ] タブを適切に変更し、コマンドプロンプトで次のコマンドを実行します。 `(Get-Printer PrinterName -full).PermissionSDDL`
+            例: "G: DUD: (A; OICI; FA;;;WD) "
 
-          > 注: 値を SDDL 設定と **`O:BA`** して設定する前に、上記のコマンドプロンプトから結果にプレフィックスとしてを追加する必要があります。  例:SDDL =`O:BAG:DUD:(A;OICI;FA;;;WD)`
+          > 注: 値を SDDL 設定として設定する前に、上記のコマンドプロンプトコマンドから結果にプレフィックスとして **`O:BA`** を追加する必要があります。  例: SDDL = `O:BAG:DUD:(A;OICI;FA;;;WD)`
 
-        - Discoveryendpoint = https://&lt;services-コンピューター-エンド&gt;ポイント/mcs
-        - Printserverendpoint = https://&lt;サービス-endpoint&gt;/ecp
+        - DiscoveryEndpoint = https://&lt;services&gt;/mcs
+        - PrintServerEndpoint = https://&lt;サービス-コンピューター-エンドポイント&gt;/ecp
         - AzureClientId = 上記の登録済みのネイティブ Web アプリの値のアプリケーション ID
         - AzureTenantGuid = Azure AD テナントのディレクトリ ID
         - DiscoveryResourceId = [省略可能] プロキシ化された検出クラウドサービスのアプリケーション ID
 
-        > 注: 必要なすべてのパラメーター値をコマンドラインに入力することもできます。<br>
+        > 注: すべての必須パラメーター値をコマンドラインに入力することもできます。<br>
         **発行-CloudPrinter**PowerShell コマンドの構文: <br>
-        Publish-CloudPrinter-Printer \<string @ no__t \< string @ no__t-Model \<string @ no__t-5-OrgLocation \<string @ no__t-Sddl-Sddl \<string @ no__t--DiscoveryEndpoint \>0string @ no__t-11-PrintServerEndpoint 2string @ no__t-13-AzureClientId 4string @ no__t-15-AzureTenantGuid 6string @ no__t [-DiscoveryResourceId 8string @ no__t-19] <br>
-        サンプルコマンド:`publish-cloudprinter -Printer EcpPrintTest -Manufacturer Microsoft -Model FilePrinterEcp -OrgLocation '{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"MyCompany", "depth":1}, {"category":"site", "vs":"MyCity, State", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor\_number", "vn":1, "depth":4}, {"category":"room\_name", "vs":"1111", "depth":5}]}' -Sddl "O:BAG:DUD:(A;OICI;FA;;;WD)" -DiscoveryEndpoint https://<services-machine-endpoint>/mcs -PrintServerEndpoint https://<services-machine-endpoint>/ecp -AzureClientId <Native Web App ID> -AzureTenantGuid <Azure AD Directory ID> -DiscoveryResourceId <Proxied Mopria Discovery Cloud Service App ID>`
+        \<文字列\> 製造元 \<文字列\>-モデル \<文字列\>-OrgLocation \<string\>-Sddl \<string\>-DiscoveryEndpoint \<string\>-PrintServerEndpoint \<string\>-AzureClientId \<string\>-AzureTenantGuid \<string\> [-Discoveryendpoint \<string\>] を指定します。 <br>
+        サンプルコマンド: `publish-cloudprinter -Printer EcpPrintTest -Manufacturer Microsoft -Model FilePrinterEcp -OrgLocation '{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"MyCompany", "depth":1}, {"category":"site", "vs":"MyCity, State", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor\_number", "vn":1, "depth":4}, {"category":"room\_name", "vs":"1111", "depth":5}]}' -Sddl "O:BAG:DUD:(A;OICI;FA;;;WD)" -DiscoveryEndpoint https://<services-machine-endpoint>/mcs -PrintServerEndpoint https://<services-machine-endpoint>/ecp -AzureClientId <Native Web App ID> -AzureTenantGuid <Azure AD Directory ID> -DiscoveryResourceId <Proxied Mopria Discovery Cloud Service App ID>`
 
 
 ## <a name="verifing-the-deployment"></a>デプロイの間
 MDM ポリシーが構成されている Azure AD 参加済みデバイスの場合:
-- Web ブラウザーを開き、 https://&lt;&gt;/mcs/services にアクセスします。
+- Web ブラウザーを開き、&lt;https://&gt;/mcs/services にアクセスします。
 - このエンドポイントの一連の機能を説明する JSON テキストが表示されます。
-- [OS の設定-\>デバイス-\>プリンター & スキャナー] にアクセスします。
+- "OS の設定-\> デバイス-\> プリンター & スキャナー" にアクセスします。
     - "クラウドプリンターの検索" リンクが表示できます。
     - リンクをクリックします。
     - [検索場所を選択してください] リンクをクリックします。
@@ -271,4 +271,4 @@ MDM ポリシーが構成されている Azure AD 参加済みデバイスの場
     - プリンター を選択し、**デバイスの追加** ボタンをクリックします。
     - プリンターが正常にインストールされたら、お気に入りのアプリからプリンターに印刷します
 
->   メモ:"Ecpprinttest" プリンターを使用している場合は、"C:\\ecpprinttest\\ecpprinttest. .xps" の場所にあるプリントサーバーコンピューターで出力ファイルを見つけることができます。
+>   注: "EcpPrintTest" プリンターを使用している場合は、プリントサーバーコンピューターの "C:\\Ecpprinttest\\Ecpprinttest. xps" の場所に出力ファイルがあります。

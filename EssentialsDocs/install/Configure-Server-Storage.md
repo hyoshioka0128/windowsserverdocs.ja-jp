@@ -21,7 +21,7 @@ ms.locfileid: "70865035"
 ---
 # <a name="configure-server-storage"></a>サーバー記憶域の構成
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 ## <a name="sample-hard-disk-configurations"></a>ハード ディスク構成例  
  次の表では、ハード ディスク構成例を示します。 見積もりは、標準的な使用量と機能をベースにしていますが、最適なパフォーマンスに影響を与える問題については記載していません。 顧客の好みとニーズに合わせて、構成でサポートされているどのような種類のハード ディスク (SATA、SCSI など) でも使用できます。  
@@ -31,8 +31,8 @@ ms.locfileid: "70865035"
   
 |サーバーのレベル|ディスク構成|  
 |------------------|------------------------|  
-|入力|-2 台の物理ディスク<br /><br /> -次のものを含む RAID 1 ミラーセットとして構成されます。<br /><br /> -C: ボリューム? 60 GB<br /><br /> -D: ボリューム? 1000 GB|  
-|Medium|-3 台の物理ディスク<br /><br /> -次のものを含む RAID 5 セットとして構成されます。<br /><br /> -C: ボリューム? 60 GB<br /><br /> -D: ボリューム? 1500 GB|  
+|エントリ|-2 台の物理ディスク<br /><br /> -次のものを含む RAID 1 ミラーセットとして構成されます。<br /><br /> -C: ボリューム? 60 GB<br /><br /> -D: ボリューム? 1000 GB|  
+|中|-3 台の物理ディスク<br /><br /> -次のものを含む RAID 5 セットとして構成されます。<br /><br /> -C: ボリューム? 60 GB<br /><br /> -D: ボリューム? 1500 GB|  
 |高|-5 台以上の物理ディスク<br /><br /> -C: ボリュームを含む RAID 1 ミラーセット内の2つのディスク 100 GB<br /><br /> -次のものを含む RAID 5 セット内の残りのすべてのディスク。<br /><br /> -D: ボリューム? 1500 GB<br /><br /> -E: ボリューム? 1500 GB|  
   
  これらの推奨値は、インストールされたオペレーティング システムのサイズ、サーバーが使用するデータ記憶域の標準的なサイズ、およびサーバーの稼働期間を通して予想されるデータ記憶域の増分を考慮に入れています。 ボリュームは、1 台の物理ディスク上のパーティションでも、または個別の物理ディスク上に作られたものでもかまいません。 サーバーには顧客の重要なデータが格納されるため、複数の物理ディスクを使用し、ハードウェア RAID または記憶域スペースを使用して顧客のデータを保護することをお勧めします。  
@@ -43,17 +43,17 @@ ms.locfileid: "70865035"
 ## <a name="partition-configuration"></a>パーティション構成  
  サーバーの初期構成中に、共有フォルダーとクライアント コンピューターのバックアップ フォルダーを含む一連の既定のサーバー フォルダーが、ディスク 0 の最大のデータ パーティションに作成されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
- [Windows Server Essentials ADK でのはじめに](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [イメージの作成とカスタマイズ](Creating-and-Customizing-the-Image.md)   
+ [Windows Server ESSENTIALS ADK でのはじめに](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [イメージ  の作成とカスタマイズ](Creating-and-Customizing-the-Image.md)  
  [追加のカスタマイズ](Additional-Customizations.md)   
- [展開のためのイメージの準備](Preparing-the-Image-for-Deployment.md)   
+ [展開  のイメージの準備](Preparing-the-Image-for-Deployment.md)  
  [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)
 
- [Windows Server Essentials ADK でのはじめに](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [イメージの作成とカスタマイズ](../install/Creating-and-Customizing-the-Image.md)   
+ [Windows Server ESSENTIALS ADK でのはじめに](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [イメージ  の作成とカスタマイズ](../install/Creating-and-Customizing-the-Image.md)  
  [追加のカスタマイズ](../install/Additional-Customizations.md)   
- [展開のためのイメージの準備](../install/Preparing-the-Image-for-Deployment.md)   
+ [展開  のイメージの準備](../install/Preparing-the-Image-for-Deployment.md)  
  [カスタマー エクスペリエンスのテスト](../install/Testing-the-Customer-Experience.md)
 

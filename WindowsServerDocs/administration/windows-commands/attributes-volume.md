@@ -22,7 +22,7 @@ ms.locfileid: "71382584"
 ---
 # <a name="attributes-volume"></a>属性のボリューム
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ボリュームの属性を表示、設定、またはクリアします。  
   
@@ -38,19 +38,19 @@ attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | s
   
 |パラメーター|説明|  
 |-------|--------|  
-|セット (set)|フォーカスがあるボリュームの指定された属性を設定します。|  
-|クリア|フォーカスがあるボリュームの指定された属性をクリアします。|  
-|readonly|ボリュームが読み取り専用であることを指定します。 @ no__t-0only です。|  
+|set|フォーカスがあるボリュームの指定された属性を設定します。|  
+|clear|フォーカスがあるボリュームの指定された属性をクリアします。|  
+|readonly|ボリュームが読み取り専用\-ことを指定します。|  
 |表示|ボリュームが非表示であることを指定します。|  
 |nodefaultdriveletter|既定では、ボリュームがドライブ文字を受け取らないことを指定します。|  
 |コピー|ボリュームがシャドウコピーボリュームであることを指定します。|  
 |noerr|スクリプトの場合のみ。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>注釈  
   
--   ベーシックマスタブートレコード \(MBR @ no__t disks では、 **hidden**、 **readonly**、および**nodefaultdriveletter**各パラメータがディスク上のすべてのボリュームに適用されます。  
+-   ベーシックマスタブートレコード \(MBR\) disks では、 **hidden**、 **readonly**、および**nodefaultdriveletter**各パラメータがディスク上のすべてのボリュームに適用されます。  
   
--   基本的な GUID パーティションテーブル \(gpt @ no__t ディスク、およびダイナミック MBR および gpt ディスクでは、 **hidden**、 **readonly**、および**nodefaultdriveletter**各パラメーターは、選択したボリュームにのみ適用されます。  
+-   基本的な GUID パーティションテーブル \(gpt\) ディスク、動的 MBR および gpt ディスクでは、 **hidden**、 **readonly**、および**nodefaultdriveletter**各パラメーターは、選択したボリュームにのみ適用されます。  
   
 -   **属性 volume**コマンドを正常に実行するには、ボリュームを選択する必要があります。 使用して、 **ボリュームを選択して** コマンドのボリュームを選択し、それにフォーカスをします。  
   
@@ -61,13 +61,13 @@ attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | s
 attributes volume  
 ```  
   
-選択したボリュームを非表示として設定し、@ no__t-0only を読み取るには、次のように入力します。  
+選択したボリュームを非表示として設定し、読み取り\-のみにするには、次のように入力します。  
   
 ```  
 attributes volume set hidden readonly  
 ```  
   
-選択したボリュームの hidden および read @ no__t のみの属性を削除するには、次のように入力します。  
+選択したボリュームの hidden 属性と read\-属性のみを削除するには、次のように入力します。  
   
 ```  
 attributes volume clear hidden readonly  

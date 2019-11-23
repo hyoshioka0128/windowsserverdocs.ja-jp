@@ -22,9 +22,9 @@ ms.locfileid: "71378420"
 ---
 # <a name="dfsdiag-testdfsconfig"></a>dfsdiag TestDFSConfig
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-次のアクションを実行して、分散ファイルシステム @no__t 0DFS @ no__t 名前空間の構成を確認します。  
+次の操作を実行して、分散ファイルシステム \(DFS\) 名前空間の構成を確認します。  
   
 -   DFS 名前空間サービスが実行されていること、およびすべての名前空間サーバーでそのスタートアップの種類が [自動] に設定されていることを確認します。  
   
@@ -50,7 +50,7 @@ dfsdiag /TestDFSConfig /DFSRoot:<namespace>
   
 |       パラメーター       |               説明               |
 |-----------------------|-----------------------------------------|
-| \/DFSRoot: <namespace> | 名前空間 \(DFS root @ no__t-1 を診断します。 |
+| \/DFSRoot:<namespace> | 診断する DFS ルート\) \(名前空間。 |
   
 ## <a name="BKMK_Examples"></a>例  
 次のように入力します。  

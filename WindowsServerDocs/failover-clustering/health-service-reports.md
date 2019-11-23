@@ -16,7 +16,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71369679"
 ---
 # <a name="health-service-reports"></a>レポートのヘルスサービス
-> 適用対象:Windows Server 2019、Windows Server 2016
+> 適用対象: Windows Server 2019、Windows Server 2016
 
 ## <a name="what-are-reports"></a>レポートとは  
 
@@ -48,7 +48,7 @@ Get-StorageNode -Name <Name> | Get-StorageHealthReport -Count <Count>
 
 ### <a name="connect"></a>接続
 
-ヘルスサービスを照会するには、クラスターで**CimSession**を確立する必要があります。 これを行うには、完全な .NET でしか使用できないものが必要になります。つまり、web アプリまたはモバイルアプリから直接この操作を行うことはできません。 これらのコードサンプルでは、このデータアクセス層で最も単純な選択である C @ no__t-0 を使用します。
+ヘルスサービスを照会するには、クラスターで**CimSession**を確立する必要があります。 これを行うには、完全な .NET でしか使用できないものが必要になります。つまり、web アプリまたはモバイルアプリから直接この操作を行うことはできません。 これらのコードサンプルでは、このデータアクセス層で最も単純な選択である C\#を使用します。
 
 ``` 
 ...
@@ -80,7 +80,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 **CimSession**を確立したら、クラスターで WINDOWS MANAGEMENT INSTRUMENTATION (WMI) を照会できます。
 
-エラーまたはメトリックを取得するには、いくつかの関連オブジェクトのインスタンスを取得する必要があります。 まず、クラスター上の記憶域スペースダイレクトを表す**MSFT @ no__t-1StorageSubSystem**を指定します。 これを使用すると、クラスター内のすべての**msft @ no__t-1StorageNode**と、すべての**msft @ No__t-3volume**データボリュームを取得できます。 最後に、 **MSFT @ no__t-1StorageHealth**、ヘルスサービス自体も必要です。
+エラーまたはメトリックを取得するには、いくつかの関連オブジェクトのインスタンスを取得する必要があります。 まず、 **MSFT\_StorageSubSystem**がクラスター上の記憶域スペースダイレクトを表します。 これを使用すると、クラスター内のすべての**msft\_storagenode**およびすべての**msft\_ボリューム**(データボリューム) を取得できます。 最後に、 **MSFT\_StorageHealth**、ヘルスサービス自体も必要になります。
 
 ```
 CimInstance Cluster;
@@ -209,14 +209,14 @@ public void BeginStreamingMetrics(CimSession Session, CimInstance HealthService,
 
 メトリックのすべてのサンプルは、個々のメトリックに対応する多くの "レコード" を含む "レポート" です。
 
-完全なスキーマについては、 *storagewmi .mof*の**msft @ no__t-1StorageHealthReport**クラスと**msft @ no__t**クラスを調べます。
+完全なスキーマの場合は、 **msft\_StorageHealthReport**と**msft\_HealthRecord** *クラスを調べます。*
 
 各メトリックには、このテーブルにつき3つのプロパティしかありません。
 
 | **プロパティ** | **例**       |
 | -------------|-------------------|
 | 名前         | IOLatencyAverage  |
-| 値        | 0.00021           |
+| Value        | 0.00021           |
 | 単位        | 3                 |
 
 Units = {0, 1, 2, 3, 4}、0 = "Bytes"、1 = "BytesPerSecond"、2 = "CountPerSecond"、3 = "Seconds"、または 4 = "パーセント"。
@@ -227,7 +227,7 @@ Windows Server 2016 の各スコープで使用可能なメトリックを以下
 
 ### <a name="msft_storagesubsystem"></a>MSFT_StorageSubSystem
 
-| **Name**                        | **部署** |
+| **名前**                        | **部署** |
 |---------------------------------|-----------|
 | CPUUsage                        | 4         |
 | CapacityPhysicalPooledAvailable | 0         |
@@ -251,7 +251,7 @@ Windows Server 2016 の各スコープで使用可能なメトリックを以下
 
 ### <a name="msft_storagenode"></a>MSFT_StorageNode
 
-| **Name**            | **部署** |
+| **名前**            | **部署** |
 |---------------------|-----------|
 | CPUUsage            | 4         |
 | IOLatencyAverage    | 3         |
@@ -268,7 +268,7 @@ Windows Server 2016 の各スコープで使用可能なメトリックを以下
 
 ### <a name="msft_volume"></a>MSFT_Volume
 
-| **Name**            | **部署** |
+| **名前**            | **部署** |
 |---------------------|-----------|
 | CapacityAvailable   | 0         |
 | CapacityTotal       | 0         |

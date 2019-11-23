@@ -22,7 +22,7 @@ ms.locfileid: "71369867"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 セッションをリモートデスクトップセッションホスト (rd セッションホスト) サーバーから切断します。
 このコマンドの使用方法の例については、「[例](#BKMK_examples)」を参照してください。
@@ -40,12 +40,12 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 |パラメーター|説明|
 |-------|--------|
 |\<SessionId >|切断するセッションの ID を指定します。|
-|@no__t ~ 0SessionName セッション >|切断するセッションの名前を指定します。|
-|/server: @no__t 0ServerName >|切断するセッションを含むターミナルサーバーを指定します。 それ以外の場合は、現在の rd セッションホストサーバーが使用されます。|
+|\<のセッション >|切断するセッションの名前を指定します。|
+|/server:\<ServerName >|切断するセッションを含むターミナルサーバーを指定します。 それ以外の場合は、現在の rd セッションホストサーバーが使用されます。|
 |/v|実行されているアクションに関する情報を表示します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 -   別のユーザーをセッションから切断するには、フルコントロールアクセス許可を持っているか、特殊なアクセス許可を切断する必要があります。
 -   セッション ID またはセッション名が指定されていない場合、 **tsdiscon**は現在のセッションを切断します。
 -   セッションを切断したときに実行されていたアプリケーションは、データを失うことなくそのセッションに再接続すると、自動的に実行されます。 **リセットセッション**を使用して、切断されたセッションの実行中のアプリケーションを終了します。ただし、セッションでデータが失われる可能性があることに注意してください。
@@ -67,4 +67,4 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
   ```
   #### <a name="additional-references"></a>その他の参照情報
   [コマンドライン構文キー](command-line-syntax-key.md)
-  [リモート デスクトップ サービス &#40;ターミナル サービス&#41; コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+  [リモート デスクトップ サービスと&#40;です。ターミナル サービスと&#41;です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)

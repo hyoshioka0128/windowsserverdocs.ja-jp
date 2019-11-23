@@ -17,7 +17,7 @@ ms.locfileid: "71393731"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>スタンドアロン サーバーに記憶域スペースを展開する
 
->適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、スタンドアロンサーバーに記憶域スペースを展開する方法について説明します。 クラスター化された記憶域スペースを作成する方法については、「 [Windows Server 2012 R2 での記憶域スペースクラスターの展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>)」を参照してください。
 
@@ -34,7 +34,7 @@ ms.locfileid: "71393731"
 
 ![記憶域スペースのワークフロー](media/deploy-standalone-storage-spaces/storage-spaces-workflow.png)
 
-**図 1: 記憶域スペースのワークフロー @ no__t-0
+**図 1: 記憶域スペースのワークフロー**
 
 >[!NOTE]
 >このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳細については、「 [PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6)」を参照してください。
@@ -46,7 +46,7 @@ ms.locfileid: "71393731"
 > [!IMPORTANT]
 > フェールオーバークラスターに記憶域スペースを展開する方法については、「 [Windows Server 2012 R2 での記憶域スペースクラスターの展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/mt270997(v%3dws.11)>)」を参照してください。 フェールオーバークラスターの展開には、サポートされるディスクバスの種類、サポートされる回復性の種類、必要最小限のディスク数など、さまざまな前提条件があります。
 
-|領域|要件|メモ|
+|エリア|要件|説明|
 |---|---|---|
 |ディスク バスの種類|-シリアル接続 SCSI (SAS)<br>-シリアル高度テクノロジアタッチメント (SATA)<br>-iSCSI およびファイバーチャネルコントローラー。 |USB ドライブを使用することもできます。 ただし、サーバー環境で USB ドライブを使用するのは最適ではありません。<br>記憶域スペースは、上位に作成された仮想ディスクが回復不能 (任意の数の列を含む) である限り、iSCSI およびファイバーチャネル (FC) コントローラーでサポートされます。<br>|
 |ディスク構成|-物理ディスクは 4 GB 以上である必要があります。<br>-ディスクは空白で、フォーマットされていない必要があります。 ボリュームは作成しないでください。||
@@ -61,7 +61,7 @@ ms.locfileid: "71393731"
 |**ミラー**<br><br>-一連の物理ディスクにわたって、データのコピーを2つまたは3つ保存します。<br>-信頼性は向上しますが、容量は削減されます。 書き込みごとに重複が発生します。 また、ミラー スペースは、複数の物理ドライブ全体にデータをストライプ化します。<br>-データスループットが向上し、パリティよりもアクセス待機時間が短くなります。<br>-ダーティ領域追跡 (DRT) を使用して、プール内のディスクの変更を追跡します。 予期しないシャットダウンからシステムが再開され、スペースがオンラインに戻るとと、DRT によって、プール内のディスクの一貫性が相互に保たれます。|1 つのディスク障害が発生した場合に保護するには、少なくとも 2 つの物理ディスクが必要です。<br><br>2 つのディスクの障害が同時に発生した場合に保護するには、少なくとも 5 つの物理ディスクが必要です。|ほとんどの展開に使用できます。 たとえば、ミラー スペースは、汎用的なファイル共有や仮想ハード ディスク (VHD) ライブラリに適しています。|
 |**なし**<br><br>-物理ディスク間でデータとパリティ情報をストライプ化します。<br>-単純なスペースと比較すると信頼性が向上しますが、多少の容量が削減されます。<br>-ジャーナリングによって回復性を向上します。 予期しないシャットダウンが発生した場合、ジャーナリングによってデータの破損を回避できます。|1 つのディスク障害が発生した場合に保護するには、少なくとも 3 つの物理ディスクが必要です。|アーカイブやバックアップなど、連続性が高いワークロードに使用します。|
 
-## <a name="step-1-create-a-storage-pool"></a>手順 1:記憶域プールを作成する
+## <a name="step-1-create-a-storage-pool"></a>手順 1: 記憶域プールを作成する
 
 まず使用可能な物理ディスクを 1 つまたは複数の記憶域プールにグループ化する必要があります。
 
@@ -124,7 +124,7 @@ $PDToAdd = Get-PhysicalDisk –FriendlyName PhysicalDisk5
 Add-PhysicalDisk –StoragePoolFriendlyName StoragePool1 –PhysicalDisks $PDToAdd –Usage HotSpare
 ```
 
-## <a name="step-2-create-a-virtual-disk"></a>手順 2:仮想ディスクを作成する
+## <a name="step-2-create-a-virtual-disk"></a>手順 2: 仮想ディスクを作成する
 
 次に、この記憶域プールから 1 つまたは複数の仮想ディスクを作成する必要があります。 仮想ディスクを作成するときに、物理ディスクにデータを配置する方法を選択できます。 この選択は、信頼性とパフォーマンスの両方に影響があります。 また、仮想プロビジョニング ディスクと固定プロビジョニング ディスクのどちらを作成するかを選択できます。
 
@@ -143,7 +143,7 @@ Add-PhysicalDisk –StoragePoolFriendlyName StoragePool1 –PhysicalDisks $PDToA
     >[!NOTE]
     >十分な物理ディスクがないレイアウトを選択すると、 **[次へ]** を選択したときにエラーメッセージが表示されます。 使用するレイアウトとディスク要件の詳細については、「[前提条件](#prerequisites)」を参照してください。
 
-7. 記憶域レイアウトとして **[ミラー]** を選択し、プールに5つ以上のディスクがある場合、 **[回復性の設定の構成]** ページが表示されます。 以下のオプションの 1 つを選択します。
+7. 記憶域レイアウトとして **[ミラー]** を選択し、プールに5つ以上のディスクがある場合、 **[回復性の設定の構成]** ページが表示されます。 次のいずれかのオプションを選びます。
     
       - **双方向ミラー**
       - **3 方向ミラー**
@@ -215,7 +215,7 @@ New-VirtualDisk –StoragePoolFriendlyName StoragePool1 –FriendlyName VirtualD
 New-VirtualDisk -StoragePoolFriendlyName StoragePool1 -FriendlyName VirtualDisk1 -ResiliencySettingName Mirror -NumberOfDataCopies 3 -Size 20GB -ProvisioningType Fixed
 ```
 
-## <a name="step-3-create-a-volume"></a>手順 3:ボリュームを作成する
+## <a name="step-3-create-a-volume"></a>手順 3: ボリュームを作成する
 
 次に、仮想ディスクからボリュームを作成する必要があります。 オプションのドライブ文字またはフォルダーを割り当ててから、ファイルシステムでボリュームをフォーマットすることができます。
 

@@ -22,7 +22,7 @@ ms.locfileid: "71374359"
 ---
 # <a name="logman-update-cfg"></a>logman 更新 cfg
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 既存の構成データコレクターのプロパティを更新します。  
 
@@ -59,10 +59,10 @@ logman update cfg <[-n] <name>> [options]
 |            -< クエリ [クエリ [...]]>            |                                                      SQL クエリ言語を使用して収集する WMI オブジェクトを指定します。                                                       |
 |             -ftc < パス [path [...]]>             |                                                           収集するファイルの完全パスを指定します。                                                            |
 
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>注釈  
 [-] が一覧表示されている場合は、オプションを追加して否定します。  
 ## <a name="BKMK_examples"></a>例  
-次のコマンドは、既存の構成データコレクター cfg_log を更新して、レジストリキー HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion @ no__t-0 を収集します。  
+次のコマンドは、既存の構成データコレクター cfg_log を更新して、レジストリキー HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\Currentverion\\を収集します。  
 ```  
 logman update cfg cfg_log -reg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\"  
 ```  

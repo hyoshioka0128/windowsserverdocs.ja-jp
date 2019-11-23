@@ -21,7 +21,7 @@ ms.locfileid: "71402349"
 ---
 # <a name="manage-transport-layer-security-tls"></a>トランスポート層セキュリティ (TLS) を管理する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows 10
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10
 
 ## <a name="configuring-tls-cipher-suite-order"></a>TLS 暗号スイートの順序の構成
 
@@ -39,7 +39,7 @@ TLS 暗号スイートの順序の変更は、次回の起動時に有効にな�
 
 SSL 暗号スイートの順序グループポリシー設定を使用して、既定の TLS 暗号スイートの順序を構成できます。
 
-1. グループポリシー管理コンソールから、[コンピューターの**構成** > ] [**管理用テンプレート** > **Networks** > ] **[SSL 構成の設定]** の各ページにアクセスします。
+1. グループポリシー管理コンソールから、コンピューターの**構成** > **管理用テンプレート** > **ネットワーク** > **SSL 構成設定** にアクセスします。
 2. **[SSL 暗号スイートの順序]** をダブルクリックし、 **[有効]** オプションをクリックします。
 3. **[SSL 暗号スイート]** を右クリックし、ポップアップメニューから **[すべて選択]** を選択します。
 
@@ -123,8 +123,8 @@ Certutil.exe –deleteEccCurve curveName
 
 1.  Windows 10 および Windows Server 2016 では、 **certutil**を使用して、登録されている新しい名前付き曲線を windows に追加します。
 2.  同じコンピューターから、グループポリシー管理コンソール (GPMC) を開き、新しいグループポリシーオブジェクトを作成して編集します。
-3.  [コンピューターの構成] に移動します。 **基本設定 |Windows の設定 |レジストリ**。  **[レジストリ]** を右クリックします。 **[新規]** をポイントし、 **[コレクションアイテム]** を選択します。 曲線の名前に一致するように、コレクションアイテムの名前を変更します。 *HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters*の下にあるレジストリキーごとに1つのレジストリコレクション項目を作成します。
-4.  *HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters @ no__t*の下に一覧表示されている各レジストリ値に新しい**レジストリ項目**を追加して、新しく作成されたグループポリシー基本設定レジストリコレクションを構成します.
+3.  [コンピューターの構成] に移動します。 **基本設定 |Windows の設定 |レジストリ**。  **[レジストリ]** を右クリックします。 **[新規]** をポイントし、 **[コレクションアイテム]** を選択します。 曲線の名前に一致するように、コレクションアイテムの名前を変更します。 *HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters*の下にあるレジストリキーごとに1つのレジストリコレクション項目を作成します。
+4.  *HKEY_LOCAL_MACHINE \currentcontrolset\control\cryptography\eccparameters\[Curベンダー名]* の下に一覧表示されている各レジストリ値に新しい**レジストリ項目**を追加して、新しく作成されたグループポリシー基本設定レジストリコレクションを構成します。
 5.  グループポリシーレジストリコレクション項目を含むグループポリシーオブジェクトを、新しい名前付き曲線を受け取る必要がある Windows 10 および Windows Server 2016 コンピューターに展開します。
 
     ![GPP 分散曲線](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)

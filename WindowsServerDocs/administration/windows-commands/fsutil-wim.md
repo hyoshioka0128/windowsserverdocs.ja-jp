@@ -17,7 +17,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71376657"
 ---
 # <a name="fsutil-wim"></a>Fsutil wim
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows 10
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10
 
 Windows イメージ (WIM) でサポートされているファイルを検出および管理するための機能を提供します。
 
@@ -35,17 +35,17 @@ fsutil wim [removewim] <drive name> <data source>
 |パラメーター|説明|
 |-------------|---------------|
 |enumfiles|WIM によってサポートされるファイルを列挙します。|
-|\<drive name >|ドライブ名を指定します。|
-|@no__t 0data source >|データソースを指定します。|
+|\<ドライブ名 >|ドライブ名を指定します。|
+|データソース > の \<|データソースを指定します。|
 |enumwims|バッキング WIM ファイルを列挙します。|
 |queryfile|ファイルが WIM によってバックアップされているかどうかを照会し、その場合は WIM ファイルの詳細を表示します。|
-|\<filename >|ファイル名を指定します。|
+|\<ファイル名 >|ファイル名を指定します。|
 |removewim|バッキングファイルから WIM を削除します。|
 
 
 
 
-### <a name="examples"></a>使用例
+### <a name="examples"></a>例
 
 データソース0からドライブ C のファイルを列挙するには、次のように入力します。
 

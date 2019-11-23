@@ -21,7 +21,7 @@ ms.locfileid: "71355214"
 ---
 # <a name="manage-role-based-access-control-with-windows-powershell"></a>Windows PowerShell で役割ベースのアクセス制御を管理する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Windows PowerShell を使用してロールベースのアクセス制御を管理するために IPAM を使用する方法について説明します。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "71355214"
 |DHCP スーパースコープ|IpamDhcpSuperscope|このコマンドレットは、IPAM 内の DHCP スーパースコープオブジェクトを返します。|  
 |DHCP スコープ|IpamDhcpScope|このコマンドレットは、IPAM 内の DHCP スコープオブジェクトを返します。|  
   
-次のコマンド出力例では、@no__t 0 のコマンドレットは、 **Dublin.contoso.com** DNS ゾーンを取得します。  
+次のコマンド出力例では、`Get-IpamDnsZone` コマンドレットは**Dublin.contoso.com** DNS ゾーンを取得します。  
   
 ```  
 PS C:\Users\Administrator.CONTOSO> Get-IpamDnsZone -ZoneType Forward -ZoneName dublin.contoso.com  
@@ -54,7 +54,7 @@ ScavengeStaleRecords : False
 ```  
   
 ## <a name="setting-access-scopes-on-ipam-objects"></a>IPAM オブジェクトでのアクセススコープの設定  
-@No__t-0 コマンドを使用して、IPAM オブジェクトにアクセススコープを設定できます。 このコマンドを使用すると、オブジェクトの特定の値にアクセススコープを設定したり、オブジェクトが親オブジェクトからアクセススコープを継承するように設定したりできます。 このコマンドを使用して構成できるオブジェクトを次に示します。  
+IPAM オブジェクトにアクセススコープを設定するには、`Set-IpamAccessScope` コマンドを使用します。 このコマンドを使用すると、オブジェクトの特定の値にアクセススコープを設定したり、オブジェクトが親オブジェクトからアクセススコープを継承するように設定したりできます。 このコマンドを使用して構成できるオブジェクトを次に示します。  
   
 -   DHCP スコープ  
   
@@ -78,7 +78,7 @@ ScavengeStaleRecords : False
   
 -   IP アドレスサブネット  
   
-@No__t-0 コマンドの構文を次に示します。  
+`Set-IpamAccessScope` コマンドの構文を次に示します。  
   
 ```  
 NAME  

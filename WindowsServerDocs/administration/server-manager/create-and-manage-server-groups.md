@@ -22,7 +22,7 @@ ms.locfileid: "71383220"
 ---
 # <a name="create-and-manage-server-groups"></a>サーバーグループの作成と管理
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、Windows Server のサーバーマネージャーで、ユーザー定義のカスタムサーバーグループを作成する方法について説明します。
 
@@ -71,9 +71,9 @@ ms.locfileid: "71383220"
 
 3.  グループの変更が完了したら、 **[OK]** をクリックします。
 
-## <a name="see-also"></a>関連項目
-サーバーマネージャー 
-[サーバーマネージャー](server-manager.md) [にサーバーを追加し](add-servers-to-server-manager.md)ます
+## <a name="see-also"></a>参照
+[サーバーマネージャー
+にサーバーを追加](add-servers-to-server-manager.md)[サーバーマネージャー](server-manager.md)
 
 
 

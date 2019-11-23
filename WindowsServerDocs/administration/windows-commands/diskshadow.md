@@ -22,9 +22,9 @@ ms.locfileid: "71377771"
 ---
 # <a name="diskshadow"></a>diskshadow
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-diskshadow は、ボリュームシャドウコピーサービス \(VSS @ no__t-1 で提供される機能を公開するツールです。 既定では、diskshadow は、diskraid や DiskPart と同様の対話型のコマンドインタープリターを使用します。 diskshadow には、スクリプト可能なモードも含まれています。  
+diskshadow は、VSS\)\(ボリュームシャドウコピーサービスによって提供される機能を公開するツールです。 既定では、diskshadow は、diskraid や DiskPart と同様の対話型のコマンドインタープリターを使用します。 diskshadow には、スクリプト可能なモードも含まれています。  
   
 > [!NOTE]  
 > Diskshadow を実行するには、ローカルの Administrators グループのメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
@@ -71,20 +71,20 @@ Diskshadow コマンドインタープリターで、またはスクリプトフ
 |[反転](revert.md)|指定したシャドウコピーにボリュームを戻します。|  
 |[exit_1](exit_1.md)|diskshadow を終了します。|  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>注釈  
   
 -   シャドウコピーを作成するには、少なくとも**追加**と**作成**のみが必要です。 ただし、これによってコンテキストとオプションの設定がプランされ、コピーバックアップが作成されます。バックアップ実行スクリプトを使用しない場合にのみ、シャドウコピーが作成されます。  
   
 ## <a name="BKMK_examples"></a>例  
-これは、バックアップ用にシャドウコピーを作成するコマンドのシーケンスの例です。 これは、ファイルにスクリプトの dsh として保存し、diskshadow @no__t 0 のスクリプトで実行できます。  
+これは、バックアップ用にシャドウコピーを作成するコマンドのシーケンスの例です。 これは、スクリプトとしてファイルに保存し、diskshadow \/s スクリプトを使用して実行できます。  
   
 次のように想定します。  
   
--   C: @no__t という名前の既存のディレクトリがあります。  
+-   C:\\diskshadowdata という名前の既存のディレクトリがあります。  
   
 -   システムボリュームは C: で、データボリュームは "d" です。  
   
--   C: \\diskshadowdata に backupscript .cmd ファイルがあります。  
+-   C:\\diskshadowdata に backupscript .cmd ファイルがあります。  
   
 -   Backupscript. .cmd ファイルは、バックアップドライブに shadow data p: および q: のコピーを実行します。  
   

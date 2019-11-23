@@ -21,9 +21,9 @@ ms.locfileid: "71381568"
 ---
 # <a name="bitsadmin-gethelpertokenflags"></a>bitsadmin gea pertokenflags
 
-BITS 転送ジョブに関連付けられている [ヘルパートークン](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)  の使用フラグを返します。
+BITS 転送ジョブに関連付けられている  [ヘルパートークン](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)の使用フラグを返します。
 
-**BITS 3.0 以前**: サポートされていません。
+**BITS 3.0 以前**: サポートされていません。
 
 ## <a name="syntax"></a>構文
 
@@ -37,7 +37,7 @@ bitsadmin /GetHelperTokenFlags <Job>
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 返される戻り値には、次のようなものがあります。
 

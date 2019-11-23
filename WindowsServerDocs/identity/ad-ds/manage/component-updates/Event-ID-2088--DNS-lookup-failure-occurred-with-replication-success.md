@@ -16,9 +16,9 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71368913"
 ---
-# <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>イベント ID 2088:レプリケーションの成功時に DNS 参照エラーが発生しました
+# <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>イベント ID 2088: DNS 参照エラーが発生しましたが、レプリケーションは成功しました
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
     
     <developerConceptualDocument xmlns="https://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="https://www.w3.org/1999/xlink" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://ddue.schemas.microsoft.com/authoring/2003/5 http://clixdevr3.blob.core.windows.net/ddueschema/developer.xsd">
@@ -46,19 +46,19 @@ ms.locfileid: "71368913"
 
 このドメインコントローラーが DNS を使用してソースドメインコントローラーの IP アドレスを解決できるように、この DNS 構成エラーを直ちに解決する必要があります。 
 
-代替サーバー名:DC1 失敗した DNS ホスト名:4a8717eb-8e58-456c-995a-c92e4add7e8e. contoso .com 
+代替サーバー名: DC1 失敗した DNS ホスト名: _msdcs 4a8717eb-8e58-456c-995a-c92e4add7e8e 
 
 注: 既定では、10個を超えるエラーが発生した場合でも、12時間以内に最大10個の DNS エラーのみが表示されます。  個々のエラーイベントをすべてログに記録するには、次の診断レジストリ値を1に設定します。 
 
-レジストリパス:HKLM\System\CurrentControlSet\Services\NTDS\Diagnostics\22 DS RPC クライアント 
+レジストリパス: HKLM\System\CurrentControlSet\Services\NTDS\Diagnostics\22 DS RPC クライアント 
 
 ユーザーの操作: 
 
 1) ソースドメインコントローラーが機能しなくなった場合、または別のコンピューター名または NTDSDSA オブジェクト GUID を使用してそのオペレーティングシステムが再インストールされている場合は、「MSKB」の記事に記載されている手順を使用して、ソースドメインコントローラーのメタデータを ntdsutil.exe で削除します。216498。 
 
-2) ソースドメインコントローラが Active Directory 実行されていて、ネットワーク上でアクセス可能であることを確認します。「net view \\ @ no__t-1source DC name @ no__t」または「ping &lt;source DC name @ no__t」と入力します。 
+2) ソースドメインコントローラが Active Directory 実行されていて、ネットワーク上でアクセス可能であることを確認するために、「net view \\&lt;source DC name&gt;」または「ping &lt;source DC name&gt;」と入力します。 
 
-3) ソースドメインコントローラが DNS サービスに有効な DNS サーバーを使用しており、ソースドメインコントローラのホストレコードと CNAME レコードが正しく登録されていることを確認します。これには、DNS 拡張バージョンの DCDIAG を使用します。実行可能ファイル <https://www.microsoft.com/dns> 
+3) ソースドメインコントローラが DNS サービスに有効な DNS サーバーを使用しており、ソースドメインコントローラのホストレコードと CNAME レコードが正しく登録されていることを確認します。これには、DNS 拡張バージョンの DCDIAG を使用します。<https://www.microsoft.com/dns> で利用可能な EXE 
 
 dcdiag/test: dns 
 
@@ -68,13 +68,17 @@ dcdiag/test: dns
 
 5) DNS エラーエラーの詳細な分析については、「KB 824449: <https://support.microsoft.com/?kbid=824449>」を参照してください。 
 
-追加のデータ エラー値:11004要求された名前は有効ですが、要求された種類のデータが見つかりませんでした @ no__t-0 </introduction>
+追加データエラー値: 11004 要求された名前は有効ですが、要求された型のデータが</code> 見つかりませんでした </introduction>
   <section>
-    <title>Diagnosis @ no__t @ no__t @ no__t @<para>Dns のエイリアス (CNAME) リソースレコードを使用してソースドメインコントローラー名を解決できない場合は、dns のデータ伝達の誤りまたは遅延が原因である可能性があります。</para>
+    <title>診断</title>
+    <content>
+      <para>Dns のエイリアス (CNAME) リソースレコードを使用してソースドメインコントローラー名を解決できない場合は、dns のデータ伝達の誤りまたは遅延が原因である可能性があります。</para>
     </content>
   </section>
   <section>
-    <title>Resolution @ no__t @ no__t @ no__t @<para>@No__t-0 @ no__t-1 イベント ID 2087 の説明に従って、DNS テストを続行します。DNS 参照のエラーにより、レプリケーションが失敗しました @ no__t-0。 &quot;</para>
+    <title>解決策</title>
+    <content>
+      <para>&quot;イベント ID 2087 の説明に従って DNS テストを続行します。 <link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">dns 参照が失敗したため、レプリケーションが失敗</link>しました。&quot;</para>
     </content>
   </section>
   <relatedTopics />

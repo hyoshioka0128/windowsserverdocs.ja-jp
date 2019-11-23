@@ -21,7 +21,7 @@ ms.locfileid: "71367061"
 ---
 # <a name="troubleshooting-enabling-multisite"></a>マルチサイト有効化のトラブルシューティング
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、`Enable-DAMultisite` コマンドに関連する問題のトラブルシューティング情報を示します。 表示されたエラーがマルチサイト有効化に関連するものであるか確認するには、Windows イベント ログでイベント ID 10051 があるか確認してください。  
   
@@ -53,7 +53,7 @@ DirectAccess では、すべての Windows 10 および Windows 8 クライア�
   
 2.  **リモート アクセス サーバーのセットアップ** ウィザードの **[認証]** ページで、 **[コンピューターの証明書を使用する]** チェック ボックスをオンにし、展開内で証明書を発行するルート証明機関または中間証明機関を選択します。  
   
-Windows PowerShell を使用してコンピューター証明書の認証を有効にするには、@no__t 0 のコマンドレットを使用して、 *Ipsecrootcertificate*パラメーターを指定します。  
+Windows PowerShell を使用してコンピューター証明書の認証を有効にするには、`Set-DAServer` コマンドレットを使用して、 *Ipsecrootcertificate*パラメーターを指定します。  
   
 ## <a name="ip-https-certificates"></a>IP-HTTPS 証明書  
 **エラーを受信しました**。 DirectAccess サーバーは、自己署名された ip-https 証明書を使用します。 既知の CA から発行された署名入りの証明書を使用するように IP-HTTPS を構成してください。  
@@ -118,7 +118,7 @@ IP-HTTPS 証明書を選択するには、次の手順を実行します。
 DirectAccess では、すべての Windows 8 クライアントコンピューター用に少なくとも1つのセキュリティグループと、各エントリポイントの Windows 7 クライアントコンピューターのセキュリティグループが必要です。 各クライアント コンピューターは、1 つのセキュリティ グループにのみ属している必要があります。 このため、windows 8 クライアントのセキュリティグループには Windows 8 を実行しているコンピューターのみが含まれ、各 Windows 7 クライアントコンピューターは、関連するエントリポイント専用の単一のセキュリティグループに属しており、Windows 8 クライアントは存在しないことを確認する必要があります。Windows 7 セキュリティグループに属している。  
   
 ## <a name="active-directory-site"></a>Active Directory サイト  
-**エラーを受信しました**。 サーバー < server_name > は Active Directory サイトに関連付けられていません。  
+**エラーを受信しました**。 サーバー < server_name > が Active Directory サイトに関連付けられていません。  
   
 **原因**  
   
@@ -129,7 +129,7 @@ DirectAccess は、Active Directory サイトを特定できませんでした�
 リモート アクセス サーバーで `nltest /dsgetsite` コマンドを実行して、この問題が生じているかどうかを確認します。 この問題が生じている場合は、このコマンドから ERROR_NO_SITENAME が返されます。 この問題を解決するには、内部サーバーの IP アドレスを含むサブネットが存在すること、およびそのサブネットが Active Directory サイトで定義されていることを確認します。  
   
 ## <a name="SaveGPOSettings"></a>サーバーの GPO 設定を保存しています  
-**エラーを受信しました**。 リモートアクセス設定を GPO < Gpo 名 > に保存中にエラーが発生しました。  
+**エラーを受信しました**。 リモートアクセス設定を GPO < GPO_name > に保存中にエラーが発生しました。  
   
 **原因**  
   

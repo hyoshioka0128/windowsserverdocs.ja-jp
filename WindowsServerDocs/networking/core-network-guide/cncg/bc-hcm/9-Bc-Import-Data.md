@@ -15,15 +15,15 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71356194"
 ---
-# <a name="import-data-packages-on-the-hosted-cache-server-optional"></a>ホスト型キャッシュサーバーにデータパッケージをインポートする \(Optional @ no__t
+# <a name="import-data-packages-on-the-hosted-cache-server-optional"></a>ホスト型キャッシュサーバーにデータパッケージをインポートする \(オプション\)
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 この手順を使用すると、データパッケージをインポートし、ホスト型キャッシュサーバーにコンテンツを事前に読み込むことができます。
 
 ホスト型キャッシュサーバーにコンテンツを事前にハッシュし、事前に読み込む必要がないため、この手順は省略できます。
 
-コンテンツを @ no__t に事前に読み込まない場合、データは WAN 接続を介してクライアントがダウンロードするときに、自動的にホスト型キャッシュに追加されます。
+コンテンツを事前に読み込む\-ない場合、データは WAN 接続を介してクライアントがダウンロードするときに、自動的にホスト型キャッシュに追加されます。
 
 この手順を実行するには、Administrators グループのメンバーである必要があります。
 

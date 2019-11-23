@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71392765"
 ---
->適用先:Windows 10、Windows Server 2016、Windows Server 2019
+>適用対象: Windows 10、Windows Server 2016、Windows Server 2019
 
 # <a name="manage-hyper-v-integration-services"></a>Hyper-v Integration Services を管理する
 
@@ -98,7 +98,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 
 ### <a name="use-windows-services-to-start-or-stop-an-integration-service-within-a-windows-guest"></a>Windows サービスを使用して Windows ゲスト内の統合サービスを開始または停止する
 
-1. 管理者として @no__t 0 を実行するか、コントロールパネルの [サービス] アイコンをダブルクリックして、サービスマネージャーを開きます。
+1. 管理者として ```services.msc``` を実行するか、コントロールパネルの [サービス] アイコンをダブルクリックして、サービスマネージャーを開きます。
 
     ![[Windows サービス] ウィンドウを示すスクリーンショット](media/HVServices.png) 
 
@@ -190,21 +190,21 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     ```
   
    次のような統合サービスデーモンが表示されます。 不足しているものがある場合は、システムでサポートされていないか、インストールされていない可能性があります。 詳細については、「 [Windows 上の hyper-v でサポートされている Linux および FreeBSD 仮想マシン](https://technet.microsoft.com/library/dn531030.aspx)」を参照してください。  
-   - **hv_vss_daemon**:このデーモンは、Linux 仮想マシンのライブバックアップを作成するために必要です。
-   - **hv_kvp_daemon**:このデーモンを使用すると、組み込みキーと外部キーの値のペアを設定および照会できます。
-   - **hv_fcopy_daemon**:このデーモンは、ホストとゲスト間にファイルコピーサービスを実装します。  
+   - **hv_vss_daemon**: このデーモンは、Linux 仮想マシンのライブバックアップを作成するために必要です。
+   - **hv_kvp_daemon**: このデーモンでは、組み込みキーと外部キーの値のペアを設定および照会できます。
+   - **hv_fcopy_daemon**: このデーモンは、ホストとゲスト間にファイルコピーサービスを実装します。  
 
-### <a name="examples"></a>使用例
+### <a name="examples"></a>例
 
-これらの例では、`hv_kvp_daemon` という名前の KVP デーモンを停止して開始する方法を示します。
+これらの例では、`hv_kvp_daemon`という名前の KVP デーモンを停止して開始する方法を示します。
 
-1. プロセス ID \(PID @ no__t-1 を使用して、デーモンのプロセスを停止します。 PID を検索するには、出力の2番目の列を確認するか、`pidof` を使用します。 Hyper-v デーモンはルートとして実行されるため、ルートアクセス許可が必要です。
+1. プロセス ID \(PID\) を使用して、デーモンのプロセスを停止します。 PID を検索するには、出力の2番目の列を確認するか、`pidof`を使用します。 Hyper-v デーモンはルートとして実行されるため、ルートアクセス許可が必要です。
 
     ``` BASH
     sudo kill -15 `pidof hv_kvp_daemon`
     ```
 
-1. すべての @no__t 0 プロセスが失われたことを確認するには、次のように実行します。
+1. すべての `hv_kvp_daemon` プロセスが失われたことを確認するには、次のように実行します。
 
     ```
     ps -ef | hv
@@ -216,7 +216,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     sudo hv_kvp_daemon
     ``` 
 
-1. @No__t 0 のプロセスが新しいプロセス ID と共に一覧表示されていることを確認するには、次のように実行します。
+1. `hv_kvp_daemon` プロセスが新しいプロセス ID と共に一覧表示されていることを確認するには、次のように実行します。
 
     ```
     ps -ef | hv
@@ -231,7 +231,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 > [!NOTE]
 > イメージファイル vmguest .iso は、不要になったため、Windows 10 の Hyper-v には含まれていません。
 
-| Guest  | 更新方法 | メモ |
+| Guest  | 更新方法 | 説明 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
@@ -254,7 +254,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 
 **Windows 8.1 ホストで実行されている仮想マシンの場合:**
 
-| Guest  | 更新方法 | メモ |
+| Guest  | 更新方法 | 説明 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
@@ -279,7 +279,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 
 **Windows 8 ホストで実行されている仮想マシンの場合:**
 
-| Guest  | 更新方法 | メモ |
+| Guest  | 更新方法 | 説明 |
 |:---------|:---------|:---------|
 | Windows 8.1 | Windows Update | |
 | Windows 8 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |

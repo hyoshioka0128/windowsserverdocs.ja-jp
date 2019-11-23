@@ -35,11 +35,11 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 |パラメーター|説明|
 |---------|-----------|
 |auditSystem|オンラインでのドライバーのインストールを指定します。</br>**Pnpunattend**が **/help**または **/?** のいずれかで実行されている場合を除き、必須です。 パラメーター。|
-|/s|任意。 インストールしなくてもドライバーの検索を指定します。|
-|/L|任意。 コマンド プロンプトで、このコマンドのログ情報を指定します。|
-|/?|任意。 コマンド プロンプトで次のコマンドのヘルプを表示します。|
+|/s|(省略可能)。 インストールしなくてもドライバーの検索を指定します。|
+|/L|(省略可能)。 コマンド プロンプトで、このコマンドのログ情報を指定します。|
+|/?|(省略可能)。 コマンド プロンプトで次のコマンドのヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 準備が必要です。 このコマンドを使用する前に、次のタスクを完了する必要があります。
 
@@ -47,10 +47,10 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 2. ダウンロードして、デバイスのドライバー パッケージを抽出します。 オペレーティング システムのバージョンの INF ファイルを含むサブフォルダーおよびサブフォルダーの内容を作成したビデオ フォルダーにコピーします。 たとえば、ビデオ ドライバー ファイルを C:\Drivers\Video にコピーします。
 3. たとえば、手順 1. で作成したフォルダーにシステム環境のパス変数を追加 **C:\Drivers\Video**します。
 4. 次のレジストリ キーを作成し、 **DriverPaths** キーセットを作成する、 **値のデータ** に **1**します。
-5. Windows®7の場合、レジストリパスを移動します。**HKEY_LOCAL_Machine\Software\Microsoft\Windows NT\CurrentVersion @ no__t-1**と入力し、キーを作成します。**UnattendSettings\PnPUnattend\DriverPaths @ no__t-1**
-6. Windows Vista の場合は、レジストリパスに移動します。**HK_LM\Software\Microsoft\Windows NT\CurrentVersion @ no__t**をクリックし、キー = **\UnattendSettings\PnPUnattend\DriverPaths**を作成します。
+5. Windows®7の場合は、レジストリパス**HKEY_LOCAL_Machine \Software\microsoft\windows NT\CurrentVersion\\** に移動し、キー **\\UnattendSettings\PnPUnattend\DriverPaths**を作成します。
+6. Windows Vista では、レジストリ パスに移動: **HK_LM\Software\Microsoft\Windows \currentversion\\** , 、キーを作成し、= **\UnattendSettings\PnPUnattend\DriverPaths**します。
 
-## <a name="examples"></a>使用例
+## <a name="examples"></a>例
 
 次のコマンド例では、 **PNPUnattend**を使用して、可能なドライバーの更新についてコンピューターを監査し、結果をコマンドプロンプトに報告する方法を示します。
 

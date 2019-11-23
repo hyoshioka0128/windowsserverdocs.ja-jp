@@ -22,7 +22,7 @@ ms.locfileid: "71372882"
 ---
 # <a name="nslookup-set-type"></a>nslookup set type
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 クエリのリソースレコードの種類を変更します。
 ## <a name="syntax"></a>構文
@@ -30,9 +30,9 @@ ms.locfileid: "71372882"
 set type=<ResourceRecordtype>
 ```
 ## <a name="parameters"></a>パラメーター
-<ResourceRecordtype>DNS リソースレコードの種類を指定します。 既定のリソースレコードの種類はです。次の表に、このコマンドの有効な値を示します。
+<ResourceRecordtype> DNS リソースレコードの種類を指定します。 既定のリソースレコードの種類はです。次の表に、このコマンドの有効な値を示します。
 
-| 値 |                                                   説明                                                   |
+| Value |                                                   説明                                                   |
 |-------|-----------------------------------------------------------------------------------------------------------------|
 |   A   |                                      コンピューター&#39;の IP アドレスを指定します                                      |
 |  いつ  |                                     コンピューター&#39;の IP アドレスを指定します。                                      |
@@ -54,7 +54,7 @@ set type=<ResourceRecordtype>
 | {ヘルプ |                                                       ?}                                                        |
 
 <strong>Nslookup</strong>サブコマンドの簡単な概要を表示します。
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 - <strong>Set type</strong>コマンドは、 <strong>set querytype</strong>コマンドと同じ機能を実行します。
 - リソースレコードの種類の詳細については、「Request for Comment (Rfc) 1035」を参照してください。
   ## <a name="additional-references"></a>その他の参照情報

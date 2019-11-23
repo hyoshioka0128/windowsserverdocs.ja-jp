@@ -17,7 +17,7 @@ ms.locfileid: "71393936"
 ---
 # <a name="storage-quality-of-service"></a>記憶域のサービスの品質 (QoS)
 
-> 適用対象:Windows Server (半期チャネル)、Windows Server 2016
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 Windows Server 2016 の記憶域のサービスの品質 (QoS) では、Hyper-V とスケールアウト ファイル サーバーの役割を使用して仮想マシンのために記憶域のパフォーマンスを一元的に監視および管理する方法を提供します。 この機能は、同一のファイル サーバー クラスターを使用している複数の仮想マシン間で記憶域リソースの公平性を自動的に向上させ、正規化された IOPS の単位でポリシー ベースの最小と最大のパフォーマンス目標を構成できるようにします。  
 
@@ -45,7 +45,7 @@ Windows Server 2016 の記憶域 QoS を使用して、次の作業を実行で�
 
     記憶域 QoS では、記憶域サーバー上にフェールオーバー クラスターが必要ですが、計算サーバーはフェールオーバー クラスターになる必要はありません。 すべてのサーバー (記憶域用と計算用の両方) で、Windows Server 2016 を実行している必要があります。  
 
-    評価の目的でスケールアウトファイルサーバークラスターをデプロイしていない場合は、既存のサーバーまたは仮想マシンを使用して構築するための手順については、「@no__t 0Windows Server 2012 R2 Storage」を参照してください。記憶域スペースを使用したステップバイステップ (SMB スケールアウトと共有 VHDX (物理) ](http://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx))。  
+    評価を目的とするスケールアウト ファイル サーバーを展開していない場合は、既存のサーバーまたは仮想マシンを使用して構築するための手順について、「[Windows Server 2012 R2 Storage: Step-by-step with Storage Spaces, SMB Scale-Out and Shared VHDX (Physical)](http://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx)」 (Windows Server 2012 R2 記憶域: 記憶域、SMB スケールアウトおよび共有 VHDX を使用した手順 (物理)) を参照してください。  
 
 -   **クラスターの共有ボリュームを使用した hyper-v。** このシナリオでは、次の両方のものが必要です。  
 
@@ -60,7 +60,7 @@ Windows Server 2016 の記憶域 QoS を使用して、次の作業を実行で�
 
 ![スケールアウト ファイル サーバーと記憶域 QoS](media/overview-Clustering_SOFSStorageQoS.png)  
 
-**図 1: スケールアウトファイルサーバー @ no__t でのソフトウェア定義の記憶域ソリューションでの記憶域 QoS の使用  
+**図 1: スケールアウトファイルサーバーのソフトウェアで定義された記憶域ソリューションでの記憶域 QoS の使用**  
 
 Hyper-V サーバーが仮想マシンを起動すると、それらはポリシー マネージャーによって監視されます。 ポリシー マネージャーは、記憶域 QoS ポリシーおよびすべての制限または予約を Hyper-V サーバーに伝達し、Hyper-V サーバーが仮想マシンのパフォーマンスを適切に制御します。  
 
@@ -68,13 +68,13 @@ Hyper-V サーバーが仮想マシンを起動すると、それらはポリシ
 
 ### <a name="BKMK_Glossary"></a>グロッサリ  
 
-|項目|説明|  
+|用語|説明|  
 |--------|---------------|  
 |正規化された IOPS|すべての記憶域の使用状況は、”正規化された IOPS” で測定されます。  これは、1 秒あたりの記憶域の入出力操作の数です。  8 KB 以下の IO はすべて 1 つの正規化された IO と見なされます。  8 KB より大きいすべての IO は、複数の正規化された IO と見なされます。 たとえば、256 KB の要求は、32 の正規化された IOPS として扱われます。<br /><br />Windows Server 2016 には、IO を正規化するために使用するサイズを指定する機能が含まれています。  記憶域クラスター上で、正規化されたサイズを指定し、クラスター全体の正規化の計算に適用することができます。  既定値は、8 KB のままです。|  
 |フロー|VHD または VHDX ファイルに対して Hyper-V サーバーによって開かれる各ファイル ハンドルは ”フロー” と見なされます。 仮想マシンに 2 台の仮想ハードディスクが接続されている場合、ファイルごとに 1 つのファイル サーバー クラスターへのフローがあります。 VHDX が複数の仮想マシンで共有されている場合、仮想マシンごとに 1 つのフローがあります。|  
 |InitiatorName|各フローに対応するスケール アウト ファイル サーバーに報告されている仮想マシンの名前です。|  
 |InitiatorID|仮想マシンの ID と一致する識別子。  仮想マシンに同じ InitiatorName が指定されている場合でも、これを使用して常に個別のフローの仮想マシンを一意に識別することができます。|  
-|ポリシー|記憶域 QoS ポリシーはクラスターデータベースに格納され、次のプロパティがあります。PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy、および PolicyType。|  
+|ポリシー|記憶域 QoS ポリシーは、クラスター データベースに保存され、PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy、PolicyType というプロパティがあります。|  
 |PolicyId|ポリシーの一意の識別子。  既定で生成されますが、必要に応じて指定できます。|  
 |MinimumIOPS|ポリシーによって提供される最小の正規化された IOPS。  ”予約” とも呼ばれます。|  
 |MaximumIOPS|ポリシーによって提供される最大の正規化された IOPS。  ”制限” とも呼ばれます。|  
@@ -95,7 +95,7 @@ Hyper-V サーバーが仮想マシンを起動すると、それらはポリシ
 
 ![クラスター コア リソース内に表示される記憶域 QoS リソース](media/overview-Clustering_StorageQoSFCM.png)  
 
-**図 2:フェールオーバークラスターマネージャー @ no__t でクラスターコアリソースとして表示される記憶域 QoS リソース  
+**図 2: フェールオーバークラスターマネージャーでクラスターコアリソースとして表示される記憶域 QoS リソース**  
 
 記憶域 QoS リソースのステータスを表示するには、以下の PowerShell コマンドレットを使用します。  
 
@@ -115,14 +115,14 @@ Windows Server 2016 の Hyper-V の役割には、記憶域 QoS のサポート�
 
 **RSAT-Clustering** オプション機能には、記憶域 QoS を含むフェールオーバー クラスタリングをリモートで管理するための Windows PowerShell モジュールが含まれています。  
 
--   Windows PowerShell:Add-windowsfeature RSAT-クラスタリング  
+-   Windows PowerShell: Add-WindowsFeature RSAT-Clustering  
 
 **RSAT-Hyper-V-Tools** オプション機能には、Hyper-V をリモートで管理するための Windows PowerShell モジュールが含まれています。  
 
--   Windows PowerShell:Add-windowsfeature を追加する-hyper-v-ツール  
+-   Windows PowerShell: Add-WindowsFeature RSAT-Hyper-V-Tools  
 
 #### <a name="deploy-virtual-machines-to-run-workloads-for-testing"></a>テスト用ワークロードを実行するための仮想マシンを展開する  
-適切なワークロードと共にいくつかの仮想マシンをスケールアウト ファイル サーバー上に保存する必要があります。  負荷をシミュレートし、いくつかのストレステストを実行するためのヒントについては、次のページを参照してください。推奨されるツール (DiskSpd) といくつかの使用例をご覧ください。[DiskSpd、PowerShell、および storage のパフォーマンス: ローカルディスクと SMB ファイル共有の IOPs、スループット、待機時間を測定します。](http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)  
+適切なワークロードと共にいくつかの仮想マシンをスケールアウト ファイル サーバー上に保存する必要があります。  負荷のシミュレーションをおよびいくつかのストレス テストの実行方法のヒントについては、推奨されるツール (DiskSpd) のページおよびいくつかの使用例「[DiskSpd, PowerShell and storage performance: measuring IOPs, throughput and latency for both local disks and SMB file shares](http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)」(DiskSpd、PowerShell、および記憶域のパフォーマンス: ローカル ディスクと SMB ファイル共有の両方の IOPS、スループット、および待機時間の測定) を参照してください。  
 
 このガイドに表示されるシナリオの例には、5 つの仮想マシンが含まれています。 BuildVM1、BuildVM2、BuildVM3、BuildVM4 は、低から中程度の記憶域の需要でデスクトップのワークロードを実行しています。 TestVm1 は、最も大きな記憶域の需要でオンライン トランザクション処理ベンチマークを実行しています。  
 
@@ -300,7 +300,7 @@ MinimumIops    : 781
 異なる仮想マシン用に複数の類似したポリシーを作成し、仮想マシンの記憶域の需要が同等である場合、それらは同等の IOPS の共有を割り当てられます。  1 つの VM の需要が他の VM より多い場合、IOPS は、その需要に従います。  
 
 ### <a name="types-of-storage-qos-policies"></a>記憶域 QoS ポリシーの種類  
-ポリシーには、次の2種類があります。集計 (旧称 SingleInstance) と専用 (以前はマルチインスタンス)。 Aggregated ポリシーは、適用対象者 VHD/VHDX ファイルと仮想マシンを組み合わせたセットの最大値と最小値を適用します。 実際には、指定された IOPS と帯域幅のセットを共有します。 Dedicated ポリシーは、各 VHD/VHDx の最小値と最大値を個別に適用します。 これにより、類似した制限を複数の VHD/VHDx ファイルに適用する単一のポリシーを簡単に作成できます。  
+Aggregated (以前の SingleInstance) と Dedicated (以前の MultiInstance) という 2 種類のポリシーがあります。 Aggregated ポリシーは、適用対象者 VHD/VHDX ファイルと仮想マシンを組み合わせたセットの最大値と最小値を適用します。 実際には、指定された IOPS と帯域幅のセットを共有します。 Dedicated ポリシーは、各 VHD/VHDx の最小値と最大値を個別に適用します。 これにより、類似した制限を複数の VHD/VHDx ファイルに適用する単一のポリシーを簡単に作成できます。  
 
 たとえば、最小値が 300 IOPS で最大値が 500 IOPS の Aggregated ポリシーを作成するとします。 このポリシーを 5 つの異なる VHD/VHDx ファイルに適用する場合、5 つの VHD/VHDx ファイルの合計が、300 IOPS (需要があり、記憶域システムがそのパフォーマンスを提供できる場合) 以上で 500 IOPS 未満であることが保証されるかどうかを確認します。 VHD/VHDx ファイルの IOPS の需要が同程度で、記憶域システムがそれを提供できる場合、各 VHD/VHDx ファイルは約 100 IOPS を取得します。  
 
@@ -386,7 +386,7 @@ IsDeleted                     : False
 ```  
 
 ### <a name="query-for-storage-qos-policies"></a>記憶域 QoS ポリシーのクエリ  
-`Get-StorageQosPolicy` スケールアウトファイルサーバーで構成されているすべてのポリシーとその状態を一覧表示します。  
+`Get-StorageQosPolicy` は、構成されているすべてのポリシーとその状態をスケールアウトファイルサーバーで一覧表示します。  
 
 ```PowerShell
 PS C:\> Get-StorageQosPolicy  
@@ -840,7 +840,7 @@ Windows Server 2016 には、次に示す 2 つの新しい記憶域 QoS 機能�
 
     正規化の計算を変更したために IOPS の正規化を変更すると、記憶域 QoS の出力で、同じ IO パターン/スループットでも異なる IOPS の数値が表示されることに注意する必要があります。  記憶域クラスター間の IOPS を比較している場合は、各クラスターで使用している正規化の値が、報告される正規化済み IOPS に影響するので、その値を確認する必要があります。    
 
-#### <a name="example-1-creating-a-new-policy-and-viewing-the-maximum-bandwidth-on-the-storage-cluster"></a>例 1 : 新しいポリシーを作成し、記憶域クラスターの最大帯域幅を表示する  
+#### <a name="example-1-creating-a-new-policy-and-viewing-the-maximum-bandwidth-on-the-storage-cluster"></a>例 1: 記憶域クラスター上で新しいポリシーを作成して最大帯域幅を表示する  
 PowerShell で、数値を表示する単位を指定できます。  次の例では、最大帯域幅の値として 10 MB を使用します。  記憶域 QoS は、これを変換して、1 秒あたりのバイト数として保存します。そのため、10 MB は 10485760 バイト/秒に変換されます。  
 
 ```PowerShell
@@ -866,7 +866,7 @@ InitiatorLatency   : 1.5455
 InitiatorBandwidth : 37888  
 ```  
 
-#### <a name="example-2-get-iops-normalization-settings-and-specify--a-new-value"></a>例 2:IOPS の正規化の設定を取得し、新しい値を指定します  
+#### <a name="example-2-get-iops-normalization-settings-and-specify--a-new-value"></a>例 2: IOPS 正規化の設定を取得し、新しい値を指定する  
 
 次の例では、記憶域クラスターの IOPS 正規化の設定 (既定値の 8 KB) を取得し、32 KB に設定して、もう一度表示する方法を示します。  この例で、"32 KB" を指定するのは、PowerShell では単位の指定が許可されていて、バイトに変換する必要がないためです。   出力には、1 秒あたりのバイト数で値が表示されます。  
 
@@ -885,7 +885,7 @@ IOPSNormalizationSize
 32768  
 ```    
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  
 - [Windows Server 2016 の記憶域レプリカ](../storage-replica/storage-replica-overview.md)  
 - [Windows Server 2016 の記憶域スペースダイレクト](../storage-spaces/storage-spaces-direct-overview.md)  

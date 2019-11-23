@@ -39,7 +39,7 @@ WID ファームを Windows Server 2012 に移行するには、次の手順を�
 >  
 > 表示されたら、**フェデレーション サービス名の指定**で、準備 WID ファームの移行」で記録したのと同じ SSL 証明書を選択してください ページで、 [to Migrate the AD FS 2.0 フェデレーション サーバーを準備](prepare-to-migrate-a-wid-farm.md).  
   
-5. このサーバーで AD FS Web ページを更新します。 移行の準備中にカスタマイズされた AD FS web ページをバックアップした場合は、バックアップデータを使用して、 **%systemdrive%\inetpub\adfs\ls**ディレクトリに既定で作成された既定の AD FS web ページを、の結果として上書きする必要があり AD FSWindows Server 2012 の構成。  
+5. このサーバーで AD FS Web ページを更新します。 移行の準備中にカスタマイズされた AD FS web ページをバックアップした場合は、Windows Server 2012 の AD FS 構成の結果として **%systemdrive%\inetpub\adfs\ls**ディレクトリに既定で作成された既定の AD FS web ページを、バックアップデータを使用して上書きする必要があります。  
   
 6. Windows Server 2012 にアップグレードしたばかりのサーバーをロードバランサーに追加します。  
   
@@ -65,15 +65,15 @@ WID ファームを Windows Server 2012 に移行するには、次の手順を�
 >  
 > 表示されたら、**フェデレーション サービス名の指定**で記録したのと同じ SSL 証明書を選択してください ページで、 [to Migrate the AD FS 2.0 フェデレーション サーバーを準備](prepare-to-migrate-a-wid-farm.md)します。  
   
-13. WID ファームのこの最後のサーバーで AD FS Web ページを更新します。 移行の準備中にカスタマイズした AD FS web ページをバックアップした場合は、バックアップデータを使用して、 **%systemdrive%\inetpub\adfs\ls**ディレクトリに既定で作成された既定の AD FS web ページを AD FS の結果として上書きします。Windows Server 2012 の構成。  
+13. WID ファームのこの最後のサーバーで AD FS Web ページを更新します。 移行の準備中にカスタマイズされた AD FS web ページをバックアップした場合は、Windows Server 2012 の AD FS 構成の結果として **%systemdrive%\inetpub\adfs\ls**ディレクトリに既定で作成された既定の AD FS web ページを、バックアップデータを使用して上書きします。  
   
 14. Windows Server 2012 にアップグレードした WID ファームの最後のサーバーをロードバランサーに追加します。  
   
 15. カスタム属性ストアなど、その他の AD FS カスタマイズを復元します。  
   
-## <a name="next-steps"></a>次の手順
- [AD FS 2.0 フェデレーションサーバーの移行の準備](prepare-to-migrate-ad-fs-fed-server.md)   
+## <a name="next-steps"></a>次のステップ
+ [AD FS 2.0 フェデレーションサーバー  の移行の準備](prepare-to-migrate-ad-fs-fed-server.md)  
  [AD FS 2.0 フェデレーションサーバープロキシの移行の準備](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [AD FS 2.0 フェデレーションサーバー](migrate-the-ad-fs-fed-server.md)  を移行します。  
- [AD FS 2.0 フェデレーションサーバープロキシ   を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
+ [AD FS 2.0 フェデレーションサーバー  を移行します](migrate-the-ad-fs-fed-server.md)。  
+ [AD FS 2.0 フェデレーションサーバープロキシ  を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
  [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)

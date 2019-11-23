@@ -22,7 +22,7 @@ ms.locfileid: "71382451"
 ---
 # <a name="auditpol-backup"></a>auditpol バックアップ
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 システム監査ポリシー設定、すべてのユーザーのユーザーごとの監査ポリシー設定、およびすべての監査オプションをコンマ区切り値 (CSV) テキストファイルにバックアップします。
 
@@ -37,7 +37,7 @@ auditpol /backup /file:<filename>
 |   /file   | 監査ポリシーがバックアップされるファイルの名前を指定します。 |
 |    /?     |                    コマンド プロンプトにヘルプを表示します。                     |
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 ユーザーごとのポリシーとシステムポリシーのバックアップ操作については、セキュリティ記述子で設定されたそのオブジェクトに対する書き込みまたはフルコントロールのアクセス許可を持っている必要があります。 "**監査とセキュリティログの管理**" (SeSecurityPrivilege) ユーザー権利を使用して、バックアップ操作を実行することもできます。 ただし、この権限により、リスト操作を実行するために必要な追加のアクセス権が許可されます。
 ## <a name="BKMK_examples"></a>例
 すべてのユーザー、システム監査ポリシー設定、およびすべての監査オプションのユーザーごとの監査ポリシー設定を、auditpolicy .csv という名前の CSV 形式のテキストファイルにバックアップするには、次のように入力します。

@@ -21,11 +21,11 @@ ms.locfileid: "71388321"
 ---
 # <a name="step-3-install-and-configure-client2"></a>手順 3. のインストールと構成
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-No__t は、windows Server 2016 サーバーで実行されているリモートアクセスの下位互換性を示すために使用される Windows 7 の @-0 コンピューターです。  
+"手順 1" は、windows Server 2016 サーバーで実行されているリモートアクセスの下位互換性を示すために使用される Windows 7&reg; コンピューターです。  
   
-1. オペレーティングシステムをインストールするには、 Windows @ no__t-0 7 Enterprise または Windows @ no__t-1 7 Ultimate をインストールします。  
+1. オペレーティングシステムをインストールするには、 Windows&reg; 7 Enterprise または Windows&reg; 7 Ultimate にインストールします。  
   
 2. を CORP ドメインに参加させます。 Corp.contoso.com ドメインには、その後に結合します。  
   

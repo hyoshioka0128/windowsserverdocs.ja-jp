@@ -18,7 +18,7 @@ ms.locfileid: "71402382"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-new-shielded-vm-on-premises-and-moving-it-to-a-guarded-fabric"></a>テナント用のシールドされた Vm-オンプレミスで新しいシールドされた VM を作成し、保護されたファブリックに移動する
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Hyper-v のみを使用してシールドされた VM を作成する手順について説明します。つまり、Virtual Machine Manager、テンプレートディスク、またはシールドデータファイルがありません。 これは、ほとんどのパブリッククラウドホスティング環境では一般的ではありませんが、保護されたファブリックをテストする場合や、VM が部門ファブリックから共有 IT インフラストラクチャに移動され、移行の前に暗号化する必要がある場合に便利です。
 
@@ -34,7 +34,7 @@ ms.locfileid: "71402382"
 
     - 機能
 
-        - リモートサーバー管理ツール @ no__t-0Feature 管理ツール @ no__t-1 シールドされた VM ツール
+        - シールドされた VM ツール\\\\機能管理ツールリモートサーバー管理ツール
 
     > [!NOTE]
     > ここで使用するホストは、保護されたファブリック内のホストにすることはでき*ません*。 これは、保護されたファブリックに移行する前に Vm を準備する独立したホストです。
@@ -51,9 +51,9 @@ ms.locfileid: "71402382"
 
 4.  後の手順で必要になるガーディアンキーをインポートするには、次のコマンドを実行します。
 
-    @No__t-0Path @ no__t-1 @ no__t-2Filename @ no__t-3 では、前の手順で保存した XML ファイルのパスとファイル名を置き換えます。次に例を示します。**C: \\temp\\GuardianKey.xml**
+    &lt;パス&gt;&lt;Filename&gt;には、前の手順で保存した XML ファイルのパスとファイル名を置き換えます。例: **C:\\temp\\GuardianKey**
 
-    @No__t @ no__t-1 の場合は、ホスティングプロバイダーまたはエンタープライズデータセンターの名前 (たとえば、 **HostingProvider1**) を指定します。 次の手順の名前を記録します。
+    &lt;GuardianName&gt;には、ホスティングプロバイダーまたはエンタープライズデータセンターの名前を指定します。たとえば、「 **HostingProvider1**」と指定します。 次の手順の名前を記録します。
 
     **-Allowuntrustedroot**は、HGS サーバーが自己署名証明書を使用して設定されている場合にのみ含めます。 (これらの証明書は、HGS のキー保護サービスの一部です)。
 
@@ -65,19 +65,19 @@ ms.locfileid: "71402382"
 
 この手順の一部として、次の2つの重要な要素を含むキープロテクターを作成します。
 
--   **所有者**:キー保護機能では、証明書などのセキュリティ要素を共有するグループが、VM の "所有者" として識別されます。 所有者としての id は、証明書によって表されます。これは、示されているようにコマンドを実行すると、自己署名証明書として生成されます。 必要に応じて、PKI インフラストラクチャでサポートされている証明書を使用し、コマンドで **-allowuntrustedroot**パラメーターを省略することもできます。
+-   **所有者**: キー保護機能では、証明書などのセキュリティ要素を共有するグループが、VM の "所有者" として識別されます。 所有者としての id は、証明書によって表されます。これは、示されているようにコマンドを実行すると、自己署名証明書として生成されます。 必要に応じて、PKI インフラストラクチャでサポートされている証明書を使用し、コマンドで **-allowuntrustedroot**パラメーターを省略することもできます。
 
--   **保護者**:また、キープロテクターでは、ホスティングプロバイダーまたはエンタープライズデータセンター (HGS と保護されたホストを実行) が "ガーディアン" として識別されます。 ガーディアンは、前の手順でインポートしたガーディアンキーによって表され、[テナント hyper-v サーバーでガーディアン構成をインポート](#import-the-guardian-configuration-on-the-tenant-hyper-v-server)します。
+-   **ガーディアン**: キープロテクターでも、ホスティングプロバイダーまたはエンタープライズデータセンター (HGS と保護されたホストを実行) が "ガーディアン" として識別されます。 ガーディアンは、前の手順でインポートしたガーディアンキーによって表され、[テナント hyper-v サーバーでガーディアン構成をインポート](#import-the-guardian-configuration-on-the-tenant-hyper-v-server)します。
 
 シールドデータファイルの要素であるキープロテクターの例については、「[シールドデータとは何ですか?](guarded-fabric-and-shielded-vms.md#what-is-shielding-data-and-why-is-it-necessary)」を参照してください。
 
 1. テナント Hyper-v ホストで、新しい第2世代仮想マシンを作成するには、次のコマンドを実行します。
 
-   @No__t 0ShieldedVMname @ no__t-1 の場合は、VM の名前を指定します。次に例を示します。**ShieldVM1**
+   &lt;ShieldedVMname&gt;の場合は、VM の名前を指定します (例: **ShieldVM1** )。
     
-   0VHDPath @ no__t-1 @no__t の場合は、VM の VHDX を格納する場所を指定します。次に例を示します。**C: \\ Vm @ no__t-2ShieldVM1\\ShieldVM1.vhdx**
+   &lt;VHDPath&gt;では、VM の VHDX を格納する場所を指定します。例: **C:\\VMs\\ShieldVM1\\ShieldVM1**
     
-   @No__t 0nnGB @ no__t-1 の場合、VHDX のサイズを指定します。次に例を示します。**60GB**
+   &lt;nnGB&gt;の場合は、VHDX のサイズを指定します (例: **60GB** )。
 
        New-VM -Generation 2 -Name "<ShieldedVMname>" -NewVHDPath <VHDPath>.vhdx -NewVHDSizeBytes <nnGB>
 
@@ -87,7 +87,7 @@ ms.locfileid: "71402382"
 
 4. 新しいキー保護機能を作成するには (このセクションの冒頭で説明)、次のコマンドを実行します。
 
-   0GuardianName @ no__t-1 @no__t の場合は、前の手順で指定した名前を使用します。次に例を示します。**HostingProvider1**
+   &lt;GuardianName&gt;の場合は、前の手順で指定した名前を使用します。たとえば、「 **HostingProvider1** 」と指定します。
 
    自己署名証明書を許可するには **、-allowuntrustedroot**を含めます。
 
@@ -97,9 +97,9 @@ ms.locfileid: "71402382"
 
        $KP = New-HgsKeyProtector -Owner $Owner -Guardian $Guardian -AllowUntrustedRoot
 
-   複数のデータセンターでシールドされた VM (ディザスターリカバリーサイトやパブリッククラウドプロバイダーなど) を実行できるようにする場合は、 **-ガーディアン**パラメーターにガーディアンの一覧を指定できます。 詳細については、「[HgsKeyProtector] (https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-ps 」を参照してください。
+   複数のデータセンターでシールドされた VM (ディザスターリカバリーサイトやパブリッククラウドプロバイダーなど) を実行できるようにする場合は、 **-ガーディアン**パラメーターにガーディアンの一覧を指定できます。 詳細については、[HgsKeyProtector] (https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-psを参照してください。
 
-5. キー保護機能を使用して vTPM を有効にするには、次のコマンドを実行します。 @No__t 0ShieldedVMname @ no__t-1 の場合は、前の手順で使用したのと同じ VM 名を使用します。
+5. キー保護機能を使用して vTPM を有効にするには、次のコマンドを実行します。 &lt;ShieldedVMname&gt;については、前の手順で使用したのと同じ VM 名を使用してください。
 
        $VMName="<ShieldedVMname>"
 

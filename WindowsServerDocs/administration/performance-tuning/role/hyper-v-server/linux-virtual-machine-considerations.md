@@ -26,7 +26,7 @@ Linux および BSD の仮想マシンには、Hyper-v の Windows 仮想マシ�
 
 既定では、ハードウェアの高速化とオフロードが既定で有効になっています。 ホスト上の NIC のプロパティで vRSS が有効になっていて、Linux ゲストには vRSS を使用する機能がある場合は、機能が有効になります。 Powershell では、`EnableNetAdapterRSS` コマンドを使用して同じパラメーターを変更できます。
 
-同様に、VMMQ (仮想スイッチ RSS) 機能は、ゲストの @no__t**プロパティ**で使用される物理 NIC で有効にすることができ**ます**。 >  **[詳細**設定] タブ > 次を使用して、**仮想スイッチ RSS**を**有効**にするか、Powershell で VMMQ を有効にします。
+同様に、VMMQ (仮想スイッチ RSS) 機能は、ゲストの > **プロパティ**で使用される物理 NIC で有効にすることができ**ます。**  > **詳細**設定 タブでは、次のようにして、Powershell で **仮想スイッチ rss** を **有効** または 有効にする に設定 > ます。
 
 ```PowerShell
  Set-VMNetworkAdapter -VMName **$VMName** -VmmqEnabled $True
@@ -53,7 +53,7 @@ net.ipv4.tcp_abort_on_overflow = 1
 
 ## <a name="linux-storage-performance"></a>Linux ストレージのパフォーマンス
 
-次のようなベストプラクティスについては、「 [hyper-v で Linux を実行するためのベストプラクティス](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v)」に記載されています。 Linux カーネルには、さまざまなアルゴリズムで要求を並べ替えるための異なる i/o スケジューラがあります。 NOOP は、ハイパーバイザーによって実行されるスケジュールの決定を渡す先入れ先出しキューです。 Hyper-v で Linux 仮想マシンを実行する場合は、スケジューラとして NOOP を使用することをお勧めします。 特定のデバイスの scheduler を変更するには、ブートローダーの構成 (/etc/grub.conf など) で、カーネルパラメーターに `elevator=noop` を追加してから、を再起動します。
+次のようなベストプラクティスについては、「 [hyper-v で Linux を実行するためのベストプラクティス](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v)」に記載されています。 Linux カーネルには、さまざまなアルゴリズムで要求を並べ替えるための異なる i/o スケジューラがあります。 NOOP は、ハイパーバイザーによって実行されるスケジュールの決定を渡す先入れ先出しキューです。 Hyper-v で Linux 仮想マシンを実行する場合は、スケジューラとして NOOP を使用することをお勧めします。 特定のデバイスの scheduler を変更するには、ブートローダーの構成 (/etc/grub.conf など) で、`elevator=noop` をカーネルパラメーターに追加してから、を再起動します。
 
 ネットワークの場合と同様に、Linux ゲストのパフォーマンスは、記憶域を使用すると、ホストのビジー状態を維持するのに十分な深さのキューから最大限に活用できます。 Microbaio エンジンを使用した fio ベンチマークツールでは、マイクロベンチマークストレージのパフォーマンスが最も高くなります。
 

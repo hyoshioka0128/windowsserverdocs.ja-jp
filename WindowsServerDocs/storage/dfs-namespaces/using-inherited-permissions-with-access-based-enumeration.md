@@ -17,9 +17,9 @@ ms.locfileid: "71402133"
 ---
 # <a name="using-inherited-permissions-with-access-based-enumeration"></a>継承されたアクセス許可とアクセス ベースの列挙を使う
 
-> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用対象: Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-既定では、DFS フォルダーに使用されるアクセス許可は、名前空間サーバーのローカル ファイル システムから継承されます。 アクセス許可は、システムドライブのルートディレクトリから継承され、ドメイン @ no__t-0Users グループに読み取りアクセス許可が付与されます。 その結果、アクセス ベースの列挙を有効にした後でも、名前空間内のすべてのフォルダーが引き続きすべてのドメイン ユーザーに表示されます。
+既定では、DFS フォルダーに使用されるアクセス許可は、名前空間サーバーのローカル ファイル システムから継承されます。 アクセス許可は、システムドライブのルートディレクトリから継承され、ドメイン\\Users グループに読み取りアクセス許可を付与します。 その結果、アクセス ベースの列挙を有効にした後でも、名前空間内のすべてのフォルダーが引き続きすべてのドメイン ユーザーに表示されます。
 
 ## <a name="advantages-and-limitations-of-inherited-permissions"></a>継承されたアクセス許可の利点と制限事項
 

@@ -22,7 +22,7 @@ ms.locfileid: "71363342"
 ---
 # <a name="using-the-get-allmulticasttransmissions-command"></a>Get AllMulticastTransmissions コマンドを使用してください。
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サーバー上のすべてのマルチキャスト転送に関する情報を表示します。
 ## <a name="syntax"></a>構文
@@ -47,7 +47,7 @@ wdsutil /Get-AllMulticastTransmissions [/Server:<Server name>] [/Show:{Boot | In
 ## <a name="BKMK_examples"></a>例
 すべての転送に関する情報を表示するには、次のように入力します。
 - Windows Server 2008: `wdsutil /Get-AllMulticastTransmissions`
-- Windows Server 2008 R2:非アクティブ化される送信を除くすべての転送に関する情報を表示するには、次のように入力します: 0 @no__t
+- Windows Server 2008 R2: `wdsutil /Get-AllMulticastTransmissions /Show:All` 表示するには非アクティブ化の転送を除くすべての転送に関する情報を入力します。
 - Windows Server 2008: `wdsutil /Get-AllMulticastTransmissions /Server:MyWDSServer /Show:Clients /ExcludedeletePending`
 - Windows Server 2008 R2: `wdsutil /Get-AllMulticastTransmissions /Server:MyWDSServer /Show:All /details:Clients /ExcludedeletePending`
   #### <a name="additional-references"></a>その他の参照情報

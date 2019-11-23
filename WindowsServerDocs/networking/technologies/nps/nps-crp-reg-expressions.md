@@ -18,7 +18,7 @@ ms.locfileid: "71396376"
 ---
 # <a name="use-regular-expressions-in-nps"></a>NPS で正規表現を使用する
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 このトピックでは、Windows Server の NPS でのパターンマッチングに正規表現を使用する方法について説明します。 この構文を使用すると、ネットワークポリシー属性と RADIUS 領域の条件を指定できます。
 
@@ -35,28 +35,28 @@ ms.locfileid: "71396376"
 |     `+`     |                                                              直前の文字と1回以上一致します。                                                              |                                                   `/zo+/ matches "zoo" but not "z."`                                                    |
 |     `?`     |                                                              直前の文字と0回または1回一致します。                                                              |                                                 `/a?ve?/ matches the "ve" in "never."`                                                  |
 |     `.`     |                                                           改行文字を除く任意の1文字と一致します。                                                           |                                                                 &nbsp;                                                                  |
-| `(pattern)` |                         "Pattern" に一致し、一致を記憶します。<br />@No__t-0 および `)` (かっこ) のリテラル文字と一致させるには、`\(` または `\)` を使用します。                         |                                                                 &nbsp;                                                                  |
+| `(pattern)` |                         "Pattern" に一致し、一致を記憶します。<br />リテラル文字 `(` および `)` (かっこ) と一致させるには、`\(` または `\)`を使用します。                         |                                                                 &nbsp;                                                                  |
 |   `x | y `  |                                                                               X または y のいずれかに一致します。                                                          |
-|   `{n} `    |                                                          N 回の繰り返しに一致し \(n は @ no__t-1negative の整数 @ no__t-2 であることを示します。                                                           |               `/o{2}/ does not match the "o" in "Bob," but matches the first two instances of the letter o in "foooood."`               |
-|   `{n,}`    |                                                          N 回以上の @no__t に一致します。-0n は、@ no__t-1negative の整数 @ no__t-2 です。                                                          | `/o{2,}/ does not match the "o" in "Bob" but matches all of the instances of the letter o in "foooood." /o{1,}/ is equivalent to /o+/.` |
-|   `{n,m}`   |                                                N 回以上、m 回以上 \(m と n は、@ no__t-1negative の整数 @ no__t-2 以上に一致します。                                                |                               `/o{1,3}/ matches the first three instances of the letter o in "fooooood."`                               |
-|   `[xyz]`   |                                                       囲まれた文字 \(a 文字セット @ no__t-1 のいずれかと一致します。                                                        |                                                  `/[abc]/ matches the "a" in "plain."`                                                  |
-|  `[^xyz]`   |                                                  @No__t-0a の否定文字セット @ no__t-1 で囲まれていない任意の文字と一致します。                                                  |                                                 `/[^abc]/ matches the "p" in "plain."`                                                  |
-|    `\b`     |                                                              単語の境界 @no__t 0 (スペース @ no__t-1 など) と一致します。                                                               |                                              `/ea*r\b/ matches the "er" in "never early."`                                              |
+|   `{n} `    |                                                          N 回の繰り返しに一致し \(n は\-負の整数\)ではありません。                                                           |               `/o{2}/ does not match the "o" in "Bob," but matches the first two instances of the letter o in "foooood."`               |
+|   `{n,}`    |                                                          N 回以上の n 回の繰り返しに一致し \(n は\-負の整数\)ではありません。                                                          | `/o{2,}/ does not match the "o" in "Bob" but matches all of the instances of the letter o in "foooood." /o{1,}/ is equivalent to /o+/.` |
+|   `{n,m}`   |                                                N 回以上、m と n の \(が負の整数\)\-ではないことを示します。                                                |                               `/o{1,3}/ matches the first three instances of the letter o in "fooooood."`                               |
+|   `[xyz]`   |                                                       文字セット\)\(囲まれた文字のいずれか1つと一致します。                                                        |                                                  `/[abc]/ matches the "a" in "plain."`                                                  |
+|  `[^xyz]`   |                                                  \)の否定文字セット \(囲まれていない任意の文字と一致します。                                                  |                                                 `/[^abc]/ matches the "p" in "plain."`                                                  |
+|    `\b`     |                                                              スペース\)など、ワード境界 \(に一致します。                                                               |                                              `/ea*r\b/ matches the "er" in "never early."`                                              |
 |    `\B`     |                                                                         単語以外境界と一致します。                                                                          |                                             `/ea*r\B/ matches the "ear" in "never early."`                                              |
-|    `\d`     |                                                       0から9までの数字 @no__t 0 ~ 9 @ no__t の数字と一致します。                                                        |                                                                 &nbsp;                                                                  |
-|    `\D`     |                                                           @No__t-1 @ no__t に相当する nondigit 文字 \( と一致します。                                                           |                                                                 &nbsp;                                                                  |
+|    `\d`     |                                                       0から 9\)の数字と等しい \(桁文字と一致します。                                                        |                                                                 &nbsp;                                                                  |
+|    `\D`     |                                                           `[^0-9]`\)と等価 \(nondigit 文字に一致します。                                                           |                                                                 &nbsp;                                                                  |
 |    `\f`     |                                                                        フォームフィード文字と一致します。                                                                        |                                                                 &nbsp;                                                                  |
 |    `\n`     |                                                                        改行文字と一致します。                                                                        |                                                                 &nbsp;                                                                  |
 |    `\r`     |                                                                     キャリッジリターン文字と一致します。                                                                     |                                                                 &nbsp;                                                                  |
-|    `\s`     |                                   スペース、タブ、およびフォームフィードを含む空白文字を @no__t `[ \f\n\r\t\v]` @ no__t-2 に相当します。                                   |                                                                 &nbsp;                                                                  |
-|    `\S`     |                                                  @No__t-1 @ no__t に等しい、空白以外の任意の文字 \( と一致します。                                                   |                                                                 &nbsp;                                                                  |
+|    `\s`     |                                   スペース、タブ、フォームフィードを含む任意の空白文字を、`[ \f\n\r\t\v]`\)に相当する \(検索します。                                   |                                                                 &nbsp;                                                                  |
+|    `\S`     |                                                  `[^ \f\n\r\t\v]`\)と等価 \(、空白以外の任意の文字と一致します。                                                   |                                                                 &nbsp;                                                                  |
 |    `\t`     |                                                                           タブ文字と一致します。                                                                           |                                                                 &nbsp;                                                                  |
 |    `\v`     |                                                                      垂直タブ文字と一致します。                                                                       |                                                                 &nbsp;                                                                  |
-|    `\w`     |                                              @No__t-1 @ no__t に相当するアンダースコア \(equivalent 含む任意の単語文字と一致します。                                              |                                                                 &nbsp;                                                                  |
-|    `\W`     |                                           @No__t-2 @ no__t に相当するアンダースコア \( を除く、@ no__t 文字以外の任意の文字と一致します。                                           |                                                                 &nbsp;                                                                  |
-|   `\num`    | 記憶された一致文字列 \( @ no__t-1 を参照します。 num は、正の整数 @ no__t-2 です。  このオプションは、属性の操作を構成するときに **[置換]** テキストボックスでのみ使用できます。 |                                       `\1` は、最初に記憶された一致項目に格納されている内容を置き換えます。                                       |
-|   `/n/ `    |                      では、ASCII コードを \( @ no__t-1 という正規表現に挿入できます。ここで、n は8進数、16進数、または10進数のエスケープ値 @ no__t-2 です。                       |                                                                 &nbsp;                                                                  |
+|    `\w`     |                                              `[A-Za-z0-9_]`\)に相当するアンダースコア \(を含む任意の単語文字と一致します。                                              |                                                                 &nbsp;                                                                  |
+|    `\W`     |                                           `[^A-Za-z0-9_]`\)に相当するアンダースコア \(を除く、\-以外の単語文字と一致します。                                           |                                                                 &nbsp;                                                                  |
+|   `\num`    | 記憶された一致 \(`?num`を参照します。ここで、num は\)正の整数です。  このオプションは、属性の操作を構成するときに **[置換]** テキストボックスでのみ使用できます。 |                                       `\1` は、最初に記憶された一致項目に格納されている内容を置き換えます。                                       |
+|   `/n/ `    |                      `?n`\(正規表現への ASCII コードの挿入を許可します。ここで、n は8進数、16進数、または10進数のエスケープ値\)ます。                       |                                                                 &nbsp;                                                                  |
 
 ## <a name="examples-for-network-policy-attributes"></a>ネットワークポリシー属性の例
 
@@ -76,33 +76,33 @@ ms.locfileid: "71396376"
 
 **ユーザー名属性の領域部分を削除するには**
 
-インターネットサービスプロバイダー @no__t 0ISP @ no__t が組織の NPS に接続要求をルーティングする、アウトソーシングされたダイヤルアップシナリオでは、認証要求をルーティングするために、ISP RADIUS プロキシが領域名を必要とする場合があります。 ただし、NPS がユーザー名の領域名の部分を認識しない場合があります。 そのため、組織の NPS に転送する前に、ISP RADIUS プロキシによって領域名を削除する必要があります。
+インターネットサービスプロバイダー \(\) ISP が組織の NPS に接続要求をルーティングする、アウトソーシングされたダイヤルアップシナリオでは、ISP RADIUS プロキシは、認証要求をルーティングするために領域名を必要とする場合があります。 ただし、NPS がユーザー名の領域名の部分を認識しない場合があります。 そのため、組織の NPS に転送する前に、ISP RADIUS プロキシによって領域名を削除する必要があります。
 
-- Find: @microsoft @ no__t-1com
+- Find: @microsoft\.com
 
 - 次の内容
 
-**@No__t を com\user に置き換えるには<em>、</em>次のように_します。_**
+**<em>user@example.microsoft.com</em>を_com\user_に置き換えるには**
 
-- 検索: `(.*)@(.*)`
+- 検索:`(.*)@(.*)`
 
-- 置換: `$2\$1`
+- 置換:`$2\$1`
 
 
 
-**_Domain\user_を_specific_domain\user_に置き換えるには**
+**_Domain\user_を_specific_domain 場所:_ に置き換えるには**
 
-- 検索: `(.*)\\(.*)`
+- 検索:`(.*)\\(.*)`
 
-- Replace:*特定*`\$2`
+- 置換: *specific_domain*`\$2`
 
 
 
 <strong>*ユーザー*を *user@specific_domain</strong>に置き換えるには*
 
-- 検索: `$`
+- 検索:`$`
 
-- 置換: @*特定*
+- 置換: @*specific_domain*
 
 ## <a name="example-for-radius-message-forwarding-by-a-proxy-server"></a>プロキシサーバーによる RADIUS メッセージ転送の例
 

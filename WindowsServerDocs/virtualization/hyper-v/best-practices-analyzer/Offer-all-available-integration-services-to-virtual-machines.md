@@ -19,7 +19,7 @@ ms.locfileid: "71393603"
 ---
 # <a name="offer-all-available-integration-services-to-virtual-machines"></a>仮想マシンへのすべての利用可能な統合サービスを提供します。
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 ベスト プラクティスとスキャンの詳細については、「 [ベスト プラクティス アナライザー](https://go.microsoft.com/fwlink/?LinkId=122786)」をご覧ください。
   
@@ -27,7 +27,7 @@ ms.locfileid: "71393603"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|警告|  
+|**順**|Warning|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
@@ -40,7 +40,7 @@ ms.locfileid: "71393603"
   
 *次の仮想マシンでは、一部の機能を使用できません。*  
   
-@no__t-仮想マシン名の一覧 >  
+仮想マシン名の \<一覧 >  
   
 ## <a name="resolution"></a>解決方法  
   
