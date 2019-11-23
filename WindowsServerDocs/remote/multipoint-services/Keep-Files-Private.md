@@ -21,7 +21,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71395342"
 ---
 # <a name="keep-files-private"></a>ファイルをプライベートな状態で保持する
-このトピックは、ドキュメントなどのコンテンツに適用されます。*管理 @no__t ユーザー*として @no__t、*標準ユーザー*は MultiPoint Services システムの他のユーザーと共有しないようにします。  
+このトピックは、*管理\) ユーザー*として \(するドキュメントなどのコンテンツに適用され、*標準ユーザー*は MultiPoint Services システムの他のユーザーと共有しないようにします。  
 
 MultiPoint Services のプライバシーの詳細については、「[プライバシーとセキュリティに関する考慮事項](Privacy-and-Security-Considerations.md)」を参照してください。
   
@@ -32,6 +32,6 @@ MultiPoint Services のプライバシーの詳細については、「[プラ�
 > [!WARNING]  
 > USB フラッシュ ドライブなどの外部の記憶装置が、ホストの USB ポートまたはステーション ハブ以外の USB ハブの USB ポートに接続されている間は、MultiPoint Services システムにログオンしているすべての標準ユーザーと管理ユーザーが、この記憶装置を参照できます。 外部の記憶装置に保存されるコンテンツについて、プライバシーまたはセキュリティ上の懸念がある場合は、MultiPoint Services システムのステーション ハブにのみ、その外部記憶装置を接続するようにします。 USB 記憶装置の使用方法については、「[USB フラッシュ ドライブでのファイルの保存と共有](Save-and-Share-Files-on-a-USB-Flash-Drive.md)」トピックを参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ユーザー ファイルの管理](Manage-User-Files.md)  
 [USB フラッシュ ドライブにファイルを保存して共有する](Save-and-Share-Files-on-a-USB-Flash-Drive.md)

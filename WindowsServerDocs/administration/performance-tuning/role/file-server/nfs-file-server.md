@@ -33,7 +33,7 @@ Microsoft Services for NFS は、Windows および UNIX 環境が混在してい
 
 ### <a name="tuning-parameters-for-nfs-file-servers"></a>NFS ファイルサーバーのチューニングパラメーター
 
-次の REG @ no__t-0DWORD レジストリ設定は、NFS ファイルサーバーのパフォーマンスに影響を与える可能性があります。
+次の REG\_DWORD レジストリ設定は、NFS ファイルサーバーのパフォーマンスに影響を与える可能性があります。
 
 -   **最適化した読み取り**
 
@@ -41,7 +41,7 @@ Microsoft Services for NFS は、Windows および UNIX 環境が混在してい
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\OptimalReads
     ```
 
-    既定値は 0 です。 このパラメーターは、ファイルを開くかどうかを決定します @ no__t-0RANDOM @ no__t ACCESS またはファイル @ no__t-2SEQUENTIAL @ no__t-3ONLY ワークロードの i/o 特性によって異なります。 ファイルを強制的に開かれるようにするには、この値を1に設定します @ no__t-0RANDOM @ no__t アクセスします。 FILE @ no__t-0RANDOM @ no__t-1 ACCESS ファイルシステムとキャッシュマネージャーがプリフェッチできないようにします。
+    既定値は 0 です。 このパラメーターでは、ファイルを\_ランダム\_アクセス用に開くか、ファイル\_シーケンシャル\_に開くかを指定します。これは、ワークロードの i/o 特性によって異なります。 この値を1に設定すると、ファイル\_ランダム\_アクセスに対してファイルを強制的に開くことができます。 ファイル\_ランダム\_アクセスによって、ファイルシステムとキャッシュマネージャーがプリフェッチされないようにします。
 
     >[!NOTE]
     > システムファイルキャッシュの増大に影響する可能性があるため、この設定は慎重に評価する必要があります。
@@ -85,7 +85,7 @@ Microsoft Services for NFS は、Windows および UNIX 環境が混在してい
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\FileHandleCacheSizeinMB
     ```
 
-    既定値は 4 です。 このパラメーターは、ファイルハンドルキャッシュエントリによって消費される最大メモリを指定します。 最小値は1、最大値は 1 @ no__t-01024 @ no__t-11024 @ no__t-21024 (1073741824) です。
+    既定は 4 です。 このパラメーターは、ファイルハンドルキャッシュエントリによって消費される最大メモリを指定します。 最小値は1、最大値は 1\*1024\*1024\*1024 (1073741824) です。
 
 -   **LockFileHandleCacheInMemory**
 

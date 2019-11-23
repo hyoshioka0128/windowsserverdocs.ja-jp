@@ -17,21 +17,21 @@ ms.locfileid: "71356027"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-in-active-directory"></a>Active Directory でスプリット ブレイン DNS に DNS ポリシーを使用する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックを使用して、Windows Server 2016 で Active Directory 統合 DNS ゾーンを使用して、split @ no__t-0brain の展開に対する DNS ポリシーのトラフィック管理機能を活用できます。
+このトピックを使用すると、Windows Server 2016 で Active Directory 統合 DNS ゾーンを使用して、分割\-ブレイン展開における DNS ポリシーのトラフィック管理機能を活用できます。
 
-Windows Server 2016 では、DNS ポリシーのサポートは、統合された DNS ゾーンを Active Directory するように拡張されています。 Active Directory 統合は、DNS サーバーに複数の @ no__t-0master 高可用性機能を提供します。 
+Windows Server 2016 では、DNS ポリシーのサポートは、統合された DNS ゾーンを Active Directory するように拡張されています。 Active Directory 統合により、マルチ\-マスターの高可用性機能を DNS サーバーに提供します。 
 
-以前は、このシナリオは、DNS 管理者の管理 2 台の DNS サーバー、各内部および外部のユーザーのセットごとにサービスを提供することが必要です。 ゾーン内の少数のレコードだけが分割されている場合は、@ no__t-0brained またはゾーンの両方のインスタンス (内部および外部) が同じ親ドメインに委任された場合、これが管理難問になりました。
+以前は、このシナリオは、DNS 管理者の管理 2 台の DNS サーバー、各内部および外部のユーザーのセットごとにサービスを提供することが必要です。 ゾーン内の少数のレコードのみが brained\-分割された場合、またはゾーンの両方のインスタンス (内部および外部) が同じ親ドメインに委任された場合は、管理難問になります。
 
 > [!NOTE]
-> - DNS 展開は、1つのゾーンの2つのバージョン、組織のイントラネット上の内部ユーザー用の1つのバージョン、および外部ユーザー (通常はインターネット上のユーザー) の1つのバージョンが存在する場合に分割されます。
-> - トピック「[スプリットブレイン Dns 展開に Dns ポリシーを使用](split-brain-DNS-deployment.md)する」では、dns ポリシーとゾーンのスコープを使用して、1つの Windows SERVER 2016 DNS サーバーに split @ no__t-1brain dns システムを展開する方法について説明します。
+> - DNS 展開は、1つのゾーンの2つのバージョン、組織のイントラネット上の内部ユーザー用の1つのバージョン、および外部ユーザー (通常はインターネット上のユーザー) の1つのバージョンが存在する場合に、\-ブレインに分割されます。
+> - トピック「[スプリットブレイン Dns 展開に Dns ポリシーを使用](split-brain-DNS-deployment.md)する」では、dns ポリシーとゾーンのスコープを使用して、1つの Windows SERVER 2016 DNS サーバーに分割された\-ブレイン dns システムを展開する方法について説明します。
 
 
 
-##  <a name="example-split-brain-dns-in-active-directory"></a>Active Directory での Split @ no__t-0Brain DNS の例
+##  <a name="example-split-brain-dns-in-active-directory"></a>Active Directory での\-ブレイン DNS の分割の例
 
 この例では、1 つ架空の企業、www.career.contoso.com で仕事紹介 Web サイトを保持する contoso 社で使用します。
 
@@ -43,7 +43,7 @@ DNS のポリシーがない場合を別の Windows Server DNS サーバーで�
 
 DNS ポリシーを使用してこれらのゾーンできますでホストされるよう、同じ DNS サーバーです。
 
-Contoso.com の DNS サーバーが Active Directory 統合されており、2つのネットワークインターフェイスでリッスンしている場合、Contoso の DNS 管理者は、このトピックの手順に従って、@ no__t を分割します。
+Contoso.com の DNS サーバーが Active Directory 統合されており、2つのネットワークインターフェイスでリッスンしている場合、Contoso の DNS 管理者は、このトピックの手順に従って、\-ブレインの展開を分割できます。
 
 Dns 管理者は、次の IP アドレスを使用して DNS サーバーインターフェイスを構成します。
 
@@ -54,7 +54,7 @@ Dns 管理者は、次の IP アドレスを使用して DNS サーバーイン�
 
 ![スプリットブレイン AD 統合 DNS の展開](../../media/DNS-SB-AD/DNS-SB-AD.jpg)
 
-## <a name="how-dns-policy-for-split-brain-dns-in-active-directory-works"></a>Active Directory における Split @ no__t-0Brain DNS の DNS ポリシーのしくみ
+## <a name="how-dns-policy-for-split-brain-dns-in-active-directory-works"></a>Active Directory の分割\-ブレイン DNS の DNS ポリシーのしくみ
 
 必要な DNS ポリシーで、DNS サーバーを構成すると、各名前解決の要求は、DNS サーバー上のポリシーに対して評価されます。
 
@@ -64,7 +64,7 @@ Dns 管理者は、次の IP アドレスを使用して DNS サーバーイン�
 
 そのため、この例ではプライベート ip アドレス (10.0.0.56) で受信した www.career.contoso.com に関する DNS クエリ DNS 応答を受信する内部の IP アドレスを含むパブリック ネットワーク インターフェイスで受信 DNS クエリ応答を受信する DNS ゾーンの既定のスコープ (これは通常のクエリの解決策と同じ) のパブリック IP アドレスを含みます。  
 
-動的 DNS @no__t のサポート-0DDNS @ no__t の更新と清掃は、既定のゾーンのスコープでのみサポートされています。 内部クライアントは既定のゾーンのスコープによって処理されるため、Contoso の DNS 管理者は、引き続き既存のメカニズム (動的 DNS または静的) を使用して contoso.com のレコードを更新できます。 この例では、@ no__t-2、DDNS、または清掃のサポートは使用できません。この例では、外部スコープなど、既定のゾーンスコープ \( はありません。
+動的 DNS \(DDNS\) の更新と清掃のサポートは、既定のゾーンのスコープでのみサポートされています。 内部クライアントは既定のゾーンのスコープによって処理されるため、Contoso の DNS 管理者は、引き続き既存のメカニズム (動的 DNS または静的) を使用して contoso.com のレコードを更新できます。 \-既定以外のゾーンスコープ \((この例では外部スコープなど) の場合\)、DDNS または清掃のサポートは使用できません。
 
 ### <a name="high-availability-of-policies"></a>ポリシーの高可用性
 
@@ -82,7 +82,7 @@ DNS ポリシーは、ローカル DNS サーバーに格納されます。 次�
 - [DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps)
 
 
-## <a name="how-to-configure-dns-policy-for-split-brain-dns-in-active-directory"></a>Active Directory で Split @ no__t-0Brain DNS の DNS ポリシーを構成する方法
+## <a name="how-to-configure-dns-policy-for-split-brain-dns-in-active-directory"></a>Active Directory で Split\-ブレイン DNS の DNS ポリシーを構成する方法
 
 Dns ポリシーを使用して DNS スプリットブレイン展開を構成するには、次のセクションを使用する必要があります。これらのセクションでは、詳細な構成手順を説明します。
 
@@ -112,11 +112,11 @@ Dns ポリシーを使用して DNS スプリットブレイン展開を構成�
 
 ### <a name="add-records-to-the-zone-scopes"></a>レコードをゾーンのスコープに追加します。
 
-次の手順では、web サーバーホストを表すレコードを、外部および @no__t 既定の2つのゾーンスコープ (内部クライアント @ no__t-1) に追加します。 
+次の手順では、web サーバーホストを表すレコードを、\)内部クライアントの外部および既定の \(の2つのゾーンスコープに追加します。 
 
-既定の内部ゾーンスコープでは、レコード www.career.contoso.com は、プライベート IP アドレスである IP アドレス10.0.0.39 を使用して追加されます。外部ゾーンのスコープでは、no__t @ という同じ @no__t レコードが、パブリック IP アドレス65.55.39.10 と共に追加されます。 
+既定の内部ゾーンスコープでは、レコード www.career.contoso.com は、プライベート IP アドレスである IP アドレス10.0.0.39 を使用して追加されます。外部ゾーンスコープでは、www.career.contoso.com\) \(同じレコードがパブリック IP アドレス65.55.39.10 と共に追加されます。 
 
-既定の内部ゾーンスコープと外部ゾーンのスコープ @ no__t の両方で @no__t のレコードは、それぞれのゾーンのスコープと共にドメイン全体で自動的にレプリケートされます。
+レコードは、既定の内部ゾーンのスコープと外部ゾーンのスコープの両方に \(\)、それぞれのゾーンのスコープと共にドメイン全体で自動的にレプリケートされます。
 
 次のコマンド例を使用すると、DNS サーバーのゾーンスコープにレコードを追加できます。
 
@@ -134,7 +134,7 @@ Dns ポリシーを使用して DNS スプリットブレイン展開を構成�
 外部ネットワークおよび内部ネットワーク用のサーバー インターフェイスを識別する、ゾーンのスコープを作成した後は、内部および外部のゾーンのスコープを接続する DNS ポリシーを作成する必要があります。
 
 > [!NOTE]
-> この例では、内部および外部のクライアントを区別するための条件として、@ no__t-1 の下にある例のコマンドの-ServerInterface パラメーターを使用して、サーバー @no__t インターフェイスを使用します。 内部および外部のクライアントを区別するために別の方法では、クライアントのサブネットを使用して、条件として、です。 内部のクライアントが属するサブネットを特定する場合は、クライアントのサブネットに基づいて区別するために DNS のポリシーを構成できます。 クライアントのサブネットの条件を使用したトラフィック管理を構成する方法については、次を参照してください。 [のプライマリ サーバーの地理的な場所ベースのトラフィック管理用の DNS ポリシーを使用して](primary-geo-location.md)します。
+> この例では、内部および外部のクライアントを区別するための条件として\) 下の例のコマンドで-ServerInterface パラメーター \(サーバーインターフェイスを使用します。 内部および外部のクライアントを区別するために別の方法では、クライアントのサブネットを使用して、条件として、です。 内部のクライアントが属するサブネットを特定する場合は、クライアントのサブネットに基づいて区別するために DNS のポリシーを構成できます。 クライアントのサブネットの条件を使用したトラフィック管理を構成する方法については、次を参照してください。 [のプライマリ サーバーの地理的な場所ベースのトラフィック管理用の DNS ポリシーを使用して](primary-geo-location.md)します。
 
 ポリシーを構成した後、パブリックインターフェイスで DNS クエリを受信すると、ゾーンの外部スコープから回答が返されます。 
 

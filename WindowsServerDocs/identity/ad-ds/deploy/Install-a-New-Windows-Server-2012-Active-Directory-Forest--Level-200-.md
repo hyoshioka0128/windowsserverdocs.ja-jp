@@ -18,7 +18,7 @@ ms.locfileid: "71400368"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>Windows Server 2012 の新しい Active Directory フォレストをインストールする (レベル 200)
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、新しい Windows Server 2012 Active Directory ドメイン サービスのドメイン コントローラーの昇格機能について、基本的なレベルでの説明を行います。 Windows Server 2012 において、AD DS は Dcpromo ツールに代えて、サーバー マネージャーおよび Windows PowerShell ベースの展開システムを使用します。  
   
@@ -45,7 +45,7 @@ AD DS の簡略化された管理とは、ドメイン展開の再イメージ�
 -   Windows Server 2012 のフォレストの機能レベルでは新しい機能は実装されず、ドメインの機能レベルは Kerberos の新機能のサブセットについてのみ必要となるので、管理者は同種のドメイン コントローラー環境を頻繁に用意する必要性から解放されます。  
   
 ### <a name="purpose-and-benefits"></a>目的と利点  
-このような変更点は、簡略化されたというよりは、複雑になったように思えるかもしれません。 しかし、AD DS の展開プロセスを再設計することで、多くの手順とベスト プラクティスを、より少ない、より簡単な操作にまとめることができました。 たとえば、新しいレプリカ ドメイン コントローラーの GUI での構成は、以前は 12 個のダイアログが必要でしたが、今では 8 個のダイアログでできるようになりました。 新しい Active Directory フォレストを作成するときは、*1* つの Windows PowerShell コマンドと、 引数を *1* つだけ (ドメインの名前) 指定すれば済みます。  
+このような変更点は、簡略化されたというよりは、複雑になったように思えるかもしれません。 しかし、AD DS の展開プロセスを再設計することで、多くの手順とベスト プラクティスを、より少ない、より簡単な操作にまとめることができました。 たとえば、新しいレプリカ ドメイン コントローラーの GUI での構成は、以前は 12 個のダイアログが必要でしたが、今では 8 個のダイアログでできるようになりました。 新しい Active Directory フォレストを作成するときは、1 つの Windows PowerShell コマンドと、 引数を 1 つだけ (ドメインの名前) 指定すれば済みます。  
   
 Windows Server 2012 の Windows PowerShell がこれほどまでに重要視される理由は何でしょうか。 分散コンピューティングが進化するにつれて、Windows PowerShell は、グラフィカル インターフェイスとコマンドライン インターフェイスの両方から構成と保守を行える単一のエンジンとなりました。 多くの機能を駆使してあらゆるコンポーネントのスクリプト処理が可能で、その最上級の能力は IT 技術者にとって API と同等です。 クラウドベース コンピューティングのユビキタス化と歩調を合わせて、Windows PowerShell もいよいよサーバーをリモート管理する機能を備えるようになりました。グラフィカル インターフェイスを持たないコンピューターが、モニターやマウスのあるコンピューターと同じ管理機能を発揮できるのです。  
   
@@ -242,7 +242,7 @@ Active Directory ドメイン サービスの役割の削除は、作業完了�
 有効なドメイン名の詳細については、サポート技術情報の記事「 [Naming conventions in Active Directory for computers, domains, sites, and OUs (Active Directory 内のコンピューター、ドメイン、サイト、および OU の名前付け規則)](https://support.microsoft.com/kb/909264)」を参照してください。  
   
 > [!WARNING]  
-> 新しい Active Directory フォレストを、外部の DNS 名と同じ名前で作成しないでください。 たとえば、インターネット DNS URL が @no__t 0 の場合は、今後の互換性の問題を回避するために、内部フォレストに別の名前を選択する必要があります。 その名前は、一意で、Web トラフィックにはありそうもないものにする必要があります。 たとえば、corp.contoso.com のようにします。  
+> 新しい Active Directory フォレストを、外部の DNS 名と同じ名前で作成しないでください。 たとえば、インターネット DNS URL が http://contoso.com場合は、今後の互換性の問題を回避するために、内部フォレストに別の名前を選択する必要があります。 その名前は、一意で、Web トラフィックにはありそうもないものにする必要があります。 たとえば、corp.contoso.com のようにします。  
   
 新しいフォレストには、ドメインの Administrator アカウントの新しい資格情報は必要ありません。 ドメイン コントローラーの昇格プロセスでは、フォレスト ルートの作成に使用した最初のドメイン コントローラーの組み込みの Administrator アカウントの資格情報を使用します。 組み込みの Administrator アカウントを、無効にしたり、ロックアウトしたりすることはできません (既定)。他のドメイン管理者アカウントを使用できない場合は、組み込みの Administrator アカウントがフォレストへの唯一のエントリ ポイントとなる場合があります。 新しいフォレストを展開する前に、そのパスワードを知っておくことが重要です。  
   
@@ -251,7 +251,7 @@ Active Directory ドメイン サービスの役割の削除は、作業完了�
 #### <a name="domain-controller-options"></a>ドメイン コントローラー オプション  
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_SMI_DCOptions_Forest.gif)  
   
-**[ドメイン コントローラー オプション]** では、新しいフォレスト ルート ドメインの **フォレストの機能レベル** と **ドメインの機能レベル** を構成できます。 既定では、これらの設定は、新しいフォレストルートドメインの Windows Server 2012 です。 Windows Server 2012 フォレストの機能レベルでは、Windows Server 2008 R2 フォレストの機能レベルよりも新しい機能は提供されません。 Windows Server 2012 ドメインの機能レベルは、新しい Kerberos 設定を実装するためにのみ必要です。 "常に信頼性情報を提供する" と "防御認証要求に失敗" します。 Windows Server 2012 の機能レベルの主な用途は、ドメインへの参加を、最小限のオペレーティングシステム要件を満たすドメインコントローラーに制限することです。 言い換えると、windows server 2012 を2012実行しているドメインコントローラーがドメインをホストできるドメイン機能レベルのみを指定できます。  Windows Server 2012 では、NetLogon の**DSGetDcName**関数で**DS_WIN8_REQUIRED**という新しいドメインコントローラーフラグが実装されています。このフラグは、windows server 2012 ドメインコントローラーを排他的に特定します。 このフラグにより、ドメイン コントローラー上での実行を許可されるオペレーティング システムの種類という観点から、より同種のサーバーまたは同種のフォレストを柔軟に構成できるようになります。  
+**[ドメイン コントローラー オプション]** では、新しいフォレスト ルート ドメインの **フォレストの機能レベル** と **ドメインの機能レベル** を構成できます。 既定では、これらの設定は、新しいフォレストルートドメインの Windows Server 2012 です。 Windows Server 2012 フォレストの機能レベルでは、Windows Server 2008 R2 フォレストの機能レベルよりも新しい機能は提供されません。 Windows Server 2012 ドメインの機能レベルは、新しい Kerberos 設定を実装するためにのみ必要です。 "常に信頼性情報を提供する" と "防御認証要求に失敗" します。 Windows Server 2012 の機能レベルの主な用途は、ドメインへの参加を、最小限のオペレーティングシステム要件を満たすドメインコントローラーに制限することです。 言い換えると、windows server 2012 を2012実行しているドメインコントローラーがドメインをホストできるドメイン機能レベルのみを指定できます。  Windows Server 2012 では、Windows Server 2012 ドメインコントローラーを排他的に特定する NetLogon の**DSGetDcName**関数で**DS_WIN8_REQUIRED**と呼ばれる新しいドメインコントローラーフラグが実装されています。 このフラグにより、ドメイン コントローラー上での実行を許可されるオペレーティング システムの種類という観点から、より同種のサーバーまたは同種のフォレストを柔軟に構成できるようになります。  
   
 ドメイン コントローラー検出の詳細については、「 [Directory Service Functions (ディレクトリ サービスの関数)](https://msdn.microsoft.com/library/ms675900(VS.85).aspx)」を参照してください。  
   
@@ -287,7 +287,7 @@ DNS 委任を作成する必要があるかどうかの詳細については、�
   
 **[オプションの確認]** ページでは、インストールを開始する前に、設定を確認し、それらが要件を満たしているかどうか確認することができます。 これがサーバー マネージャーの使用中においてインストールを中止する最後の機会ではありません。 構成を続行する前に設定を確認するためのオプションにすぎません。  
   
-サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。 これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。 以下に例を示します。  
+サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。 これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。 次に、例を示します。  
   
 ```powershell 
 #  
@@ -367,7 +367,7 @@ ServerManager 内のエイリアスとコマンドレットをエクスポート
 Get-Command -module ServerManager  
 ```  
   
-以下に例を示します。  
+次に、例を示します。  
   
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSGetCommand.png)  
   
@@ -383,7 +383,7 @@ AD DS の管理ツールもインストールしたい場合は (強くお勧め
 Install-WindowsFeature -name AD-Domain-Services -IncludeManagementTools  
 ```  
   
-以下に例を示します。  
+次に、例を示します。  
   
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallWinFeature.png)  
   
@@ -417,7 +417,7 @@ Get-WindowsFeature | where displayname -like "*active dir*"
 Get-WindowsFeature | where {$_.displayname - like "*active dir*"}  
 ```  
   
-Windows PowerShell パイプラインを使用することで、判読しやすい結果が生成されます。 以下に例を示します。  
+Windows PowerShell パイプラインを使用することで、判読しやすい結果が生成されます。 次に、例を示します。  
   
 ```powershell  
 Install-WindowsFeature | Format-List  
@@ -497,7 +497,7 @@ Install-ADDSForest
 -safemodeadministratorpassword (convertto-securestring "Password1" -asplaintext -force)  
 ```  
   
-最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 以下に例を示します。  
+最後に、暗号化したパスワードをファイルに保存して後で使用することができます。こうするとクリア テキストのパスワードを表示せずに済みます。 次に、例を示します。  
   
 ```powershell  
 $file = "c:\pw.txt"  
@@ -544,7 +544,7 @@ ADDSDeployment コマンドレットには、DNS クライアント設定、フ�
   
 構成情報を確認するには、**Install-ADDSForest** コマンドレットと共にオプションの **Whatif** 引数を使用します。 これによって、コマンドレットの引数の明示的な値と暗黙的な値を確認できます。  
   
-以下に例を示します。  
+次に、例を示します。  
   
 ![新しいフォレストをインストールする](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSPaths.png)  
   
@@ -568,12 +568,12 @@ ADDSDeployment コマンドレットには、DNS クライアント設定、フ�
 > [!WARNING]  
 > 再起動の無効化は推奨されません。 ドメイン コントローラーを正常に機能させるには、再起動する必要があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [Active Directory Domain Services (TechNet ポータル)](https://technet.microsoft.com/library/cc770946(WS.10).aspx)  
 [Windows Server 2008 R2 の Active Directory Domain Services](https://technet.microsoft.com/library/dd378801(WS.10).aspx)  
 [Windows Server 2008 の Active Directory Domain Services](https://technet.microsoft.com/library/dd378891(WS.10).aspx)  
 [Windows Server テクニカルリファレンス (Windows Server 2003)](https://technet.microsoft.com/library/cc739127(WS.10).aspx)  
-@no__t 0Active Directory 管理センター:はじめに (Windows Server 2008 R2) ](https://technet.microsoft.com/library/dd560651(WS.10).aspx)  
+[Active Directory 管理センター: はじめに (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd560651(WS.10).aspx)  
 [Windows PowerShell を使用した Active Directory 管理 (Windows Server 2008 R2)](https://technet.microsoft.com/library/dd378937(WS.10).aspx)  
 [ディレクトリサービスチームに質問する (Microsoft の公式テクニカルサポートブログ)](http://blogs.technet.com/b/askds)  
   

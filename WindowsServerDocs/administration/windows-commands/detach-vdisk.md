@@ -22,9 +22,9 @@ ms.locfileid: "71378693"
 ---
 # <a name="detach-vdisk"></a>Vdisk のデタッチ
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-選択したバーチャルハードディスク \(VHD @ no__t が、ホストコンピューターのローカルハードディスクドライブとして表示されなくなります。 VHD をデタッチすると、他の場所に VHD をコピーできます。  
+選択したバーチャルハードディスク \(VHD\) が、ホストコンピューターのローカルハードディスクドライブとして表示されなくなります。 VHD をデタッチすると、他の場所に VHD をコピーできます。  
   
 > [!NOTE]  
 > このコマンドは、Windows 7 と Windows Server 2008 R2 に該当するだけです。  
@@ -41,7 +41,7 @@ detach vdisk [noerr]
 |-------|--------|  
 |noerr|スクリプト作成にのみ使用されます。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>注釈  
   
 -   この操作を成功させるには、VHD を選択してデタッチする必要があります。 使用して、 **vdisk を選択して** コマンド、VHD を選択し、それにフォーカスをします。  
   

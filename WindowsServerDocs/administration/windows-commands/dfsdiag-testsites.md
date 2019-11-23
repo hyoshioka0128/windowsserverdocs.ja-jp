@@ -22,9 +22,9 @@ ms.locfileid: "71378381"
 ---
 # <a name="dfsdiag-testsites"></a>dfsdiag TestSites
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-名前空間サーバーまたはフォルダー \( リンク @ no__t ターゲットとして機能するサーバーがすべてのドメインコントローラーで同じサイトの関連付けを持っていることを確認して、active directory ドメインサービス \(AD DS @ no__t サイトの構成を確認します。  
+Active directory ドメインサービス \(AD DS\) サイトの構成を確認します。これは、名前空間のサーバーまたはフォルダーとして機能するサーバーが、\) ターゲットをリンクする \(、すべてのドメインコントローラーで同じサイトの関連付けを持つことを確認します。  
   
   
   
@@ -38,10 +38,10 @@ dfsdiag /TestSites </Machine:<server name>| /DFSpath:<namespace root or DFS fold
   
 |パラメーター|説明|  
 |-------|--------|  
-|\/Machine: <server name>|サイトの関連付けを確認するサーバーの名前。|  
-|\/DFSpath: <namespace root or DFS folder>|名前空間のルートまたは分散ファイルシステム \(DFS @ no__t フォルダー \(link @ no__t-3、サイトの関連付けを確認するターゲット。|  
-|\/Recurse|指定した名前空間のルートにあるすべてのフォルダーターゲットのサイトの関連付けを列挙し、検証します。|  
-|\/Full|AD DS とサーバーのレジストリに同じサイトの関連付け情報が含まれていることを確認します。|  
+|\/マシン:<server name>|サイトの関連付けを確認するサーバーの名前。|  
+|\/DFSpath:<namespace root or DFS folder>|名前空間のルートまたは分散ファイルシステム \(DFS\) フォルダー \(リンク\)、サイトの関連付けを確認するターゲット。|  
+|再帰 \/|指定した名前空間のルートにあるすべてのフォルダーターゲットのサイトの関連付けを列挙し、検証します。|  
+|\/完全|AD DS とサーバーのレジストリに同じサイトの関連付け情報が含まれていることを確認します。|  
   
 ## <a name="BKMK_Examples"></a>例  
 次のように入力します。  

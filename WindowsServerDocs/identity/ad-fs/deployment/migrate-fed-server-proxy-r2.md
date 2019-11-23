@@ -36,9 +36,9 @@ Web アプリケーション プロキシの展開を計画するには、次の
   
 - [Web アプリケーションプロキシサーバーをインストールして構成する](https://technet.microsoft.com/library/dn383662.aspx)  
   
-## <a name="next-steps"></a>次の手順
- [Active Directory フェデレーションサービス (AD FS) の役割サービスを Windows Server 2012 R2 に移行する](migrate-ad-fs-service-role-to-windows-server-r2.md)   
- [AD FS フェデレーションサーバーを移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)   
- [AD FS フェデレーションサーバーの移行](migrate-ad-fs-fed-server-r2.md)    
+## <a name="next-steps"></a>次のステップ
+ [Active Directory フェデレーションサービス (AD FS) の役割サービスを Windows Server 2012 R2  に移行する](migrate-ad-fs-service-role-to-windows-server-r2.md)  
+ [AD FS フェデレーションサーバー  を移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)  
+ [AD FS フェデレーションサーバー   の移行](migrate-ad-fs-fed-server-r2.md)  
  [Windows Server 2012 R2 への AD FS 移行の検証](verify-ad-fs-migration.md)
 

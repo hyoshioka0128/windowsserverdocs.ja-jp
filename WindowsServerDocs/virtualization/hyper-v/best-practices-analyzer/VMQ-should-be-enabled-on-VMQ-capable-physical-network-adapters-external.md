@@ -19,7 +19,7 @@ ms.locfileid: "71393287"
 ---
 # <a name="vmq-should-be-enabled-on-vmq-capable-physical-network-adapters-bound-to-an-external-virtual-switch"></a>外部仮想スイッチにバインドされている VMQ 対応の物理ネットワーク アダプターで VMQ を有効にする必要があります。
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71393287"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|警告|  
+|**順**|Warning|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
@@ -38,7 +38,7 @@ ms.locfileid: "71393287"
 ## <a name="impact"></a>**よる**  
 *Windows は、次のネットワークアダプターで使用可能なハードウェアオフロードを最大限に活用することができません。*  
   
-@no__t-ネットワークアダプターの一覧 >  
+ネットワークアダプターの一覧を \<>  
   
 ## <a name="resolution"></a>**解決方法**  
 *Get-netadaptervmq Windows PowerShell コマンドレットを使用するか、ネットワークアダプターの詳細プロパティユーザーインターフェイスを使用して、VMQ を有効にします。*  

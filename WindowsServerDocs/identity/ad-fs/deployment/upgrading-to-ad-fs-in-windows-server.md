@@ -75,7 +75,7 @@ Windows Server 2016 の AD FS では、ファームの動作レベル (FBL) が�
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_4.png)  
 
-5.  以前にプライマリとして構成されていた AD FS サーバーで、管理者特権の PowerShell コマンドウィンドウを開き、次の cmdlt: @no__t を実行します。
+5.  以前にプライマリとして構成されていた AD FS サーバーで、管理者特権の PowerShell コマンドウィンドウを開き、次の cmdlt: `Set-AdfsSyncProperties -Role SecondaryComputer -PrimaryComputerName {FQDN} ` を実行します。
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_5.png)  
 
@@ -87,7 +87,7 @@ Windows Server 2016 の AD FS では、ファームの動作レベル (FBL) が�
 
     ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)  
 
-    実行が完了したら `adprep/domainprep`
+    実行が完了すると `adprep/domainprep`
     >[!NOTE]
     >次の手順を実行する前に、[設定] から Windows Update を実行して、Windows Server が最新であることを確認します。 更新の必要がなくなるまで、このプロセスを続けます。
     >

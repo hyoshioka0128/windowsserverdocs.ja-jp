@@ -22,7 +22,7 @@ ms.locfileid: "71403392"
 ---
 # <a name="schannel-security-support-provider-technical-reference"></a>Schannel セキュリティ サポート プロバイダーのテクニカル リファレンス
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows 10
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10
 
 IT プロフェッショナル向けのこのリファレンスには、Schannel セキュリティサポートによって実装されているトランスポート層セキュリティ (TLS) プロトコル、Secure Sockets Layer (SSL) プロトコル、データグラムトランスポート層セキュリティ (DTLS) プロトコルに関する情報が含まれています。プロバイダー (SSP)。
 

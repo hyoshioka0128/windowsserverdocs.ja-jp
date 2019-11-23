@@ -19,7 +19,7 @@ ms.locfileid: "71366376"
 ---
 # <a name="configure-at-least-the-required-amount-of-memory-for-a-virtual-machine-running-windows-8-and-enabled-for-dynamic-memory"></a>Windows 8 を実行し、動的メモリに対して有効にする仮想マシンに対して、少なくとも必要なメモリ容量を構成します。
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71366376"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Error|  
+|**順**|エラー|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
@@ -38,7 +38,7 @@ ms.locfileid: "71366376"
 ## <a name="impact"></a>**よる**  
 *次の仮想マシン上のゲストオペレーティングシステムが実行されていないか、または信頼性の高い動作をしていない可能性があります。*  
   
-@no__t-仮想マシンの > の一覧  
+仮想マシンの一覧を \<>  
   
 ## <a name="resolution"></a>**解決方法**  
 *Hyper-v マネージャーを使用して最小メモリを 256 MB 以上に増やし、起動メモリと最大メモリをこの仮想マシンに対して少なくとも 512 MB に増やします。*  

@@ -16,12 +16,12 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408638"
 ---
-# <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>付録 H:ローカル管理者アカウントとグループをセキュリティで保護する
+# <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>付録 H: ローカル管理者アカウントとグループをセキュリティで保護する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-## <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>付録 H:ローカル管理者アカウントとグループをセキュリティで保護する  
+## <a name="appendix-h-securing-local-administrator-accounts-and-groups"></a>付録 H: ローカル管理者アカウントとグループをセキュリティで保護する  
 現在メインストリームサポートで使用されているすべてのバージョンの Windows では、ローカル管理者アカウントが既定で無効になっています。これにより、ハッシュやその他の資格情報の盗難攻撃でアカウントが使用できなくなります。 ただし、レガシオペレーティングシステムを含む環境やローカルの管理者アカウントが有効になっている環境では、これらのアカウントを前述のように使用して、メンバーのサーバーやワークステーション間でセキュリティを侵害することができます。 各ローカル管理者アカウントとグループは、後で説明する手順に従ってセキュリティで保護する必要があります。  
 
 組み込み管理者 (BA) グループのセキュリティ保護に関する考慮事項の詳細については、「[最小特権の管理モデルの実装](../../../ad-ds/plan/security-best-practices/Implementing-Least-Privilege-Administrative-Models.md)」を参照してください。  
@@ -30,7 +30,7 @@ ms.locfileid: "71408638"
 フォレスト内の各ドメインのローカル管理者アカウントについては、次の設定を構成する必要があります。  
 
 -   ドメインに参加しているシステムでドメインの管理者アカウントの使用を制限するように Gpo を構成する  
-    -   作成した1つ以上の Gpo で各ドメインのワークステーションとメンバーサーバー Ou にリンクするには、Administrator アカウントを Computer Configuration\Policies\Windows の次のユーザー権利に追加します。 **割り当て**:  
+    -   1つまたは複数の Gpo を作成し、各ドメインのワークステーションとメンバーサーバー Ou にリンクするには、Administrator アカウントを**Computer Configuration\Policies\Windows**の次のユーザー権利に追加します。  
 
         -   ネットワークからのこのコンピューターへのアクセスを拒否する  
 
@@ -46,17 +46,17 @@ ms.locfileid: "71408638"
 
 1.  **サーバーマネージャー**で、 **[ツール]** をクリックし、 **[グループポリシーの管理]** をクリックします。  
 
-2.  コンソールツリーで <Forest> \ Domains @ no__t-1 @ no__t を展開し、**オブジェクトをグループポリシー**します (ここで <Forest> はフォレストの名前、<Domain> はグループポリシーを設定するドメインの名前です。)。  
+2.  コンソールツリーで、<Forest>、ドメイン\\<Domain>の順に展開し、**オブジェクトをグループポリシー**します (<Forest> はフォレストの名前、<Domain> はグループポリシーを設定するドメインの名前です)。  
 
 3.  コンソールツリーで、 **[グループポリシーオブジェクト]** を右クリックし、 **[新規]** をクリックします。  
 
     ![ローカル管理者アカウントとグループをセキュリティで保護する](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_101.png)  
 
-4.  **[新しい gpo]** ダイアログボックスで、「 **<GPO Name>** 」と入力し、 **[OK]** をクリックします (<GPO Name> はこの GPO の名前です)。  
+4.  **[新しい gpo]** ダイアログボックスで、「 **<GPO Name>** 」と入力し、 **[OK]** をクリックします (<GPO Name> はこの gpo の名前です)。  
 
     ![ローカル管理者アカウントとグループをセキュリティで保護する](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_102.png)  
 
-5.  詳細ペインで **<GPO Name>** を右クリックし、**編集** をクリックします。  
+5.  詳細ウィンドウで、 **<GPO Name>** を右クリックし、**編集** をクリックします。  
 
 6.  **Computer Configuration\Policies\Windows** 権利 ポリシー に移動し、**ユーザー権利の割り当て** をクリックします。  
 
@@ -118,7 +118,7 @@ ms.locfileid: "71408638"
 
 12. **グループポリシー管理**で、次の手順に従って、GPO をメンバーサーバーとワークステーションの ou にリンクします。  
 
-    1.  @No__t-0 \ Domains @ no__t-1 @ no__t-2 (この場合、@no__t はフォレストの名前、<Domain> はグループポリシーを設定するドメインの名前です) に移動します。  
+    1.  <Forest>\ Domains\\<Domain> に移動します (<Forest> はフォレストの名前、<Domain> はグループポリシーを設定するドメインの名前です)。  
 
     2.  GPO が適用される OU を右クリックし、[既存の**gpo のリンク**] をクリックします。  
 
@@ -148,7 +148,7 @@ GPO の変更の影響を受けないメンバーサーバーまたはワーク�
 
     ![ローカル管理者アカウントとグループをセキュリティで保護する](media/Appendix-H--Securing-Local-Administrator-Accounts-and-Groups/SAD_110.png)  
 
-5.  **コマンドプロンプト**ウィンドウで、「 **net use \\ @ no__t-3 @ no__t-4\c $/user: <Server Name> \ Administrator**」と入力します。ここで <Server Name> は、ネットワーク経由でアクセスしようとしているメンバーサーバーまたはワークステーションの名前です。  
+5.  **コマンドプロンプト**ウィンドウで、「 **net use \\\\<Server Name>\c $/User:<Server Name>\Administrator**」と入力します。ここで <Server Name> は、ネットワーク経由でアクセスしようとしているメンバーサーバーまたはワークステーションの名前です。  
 
     > [!NOTE]  
     > ローカル管理者の資格情報は、ネットワーク経由でアクセスしようとしているシステムと同じである必要があります。  
@@ -170,7 +170,7 @@ GPO の変更の影響を受けたメンバーサーバーまたはワークス�
 
 4.  **[ファイル]** をクリックし、 **[名前を付けて保存]** をクリックします。  
 
-5.  **[ファイル名]** ボックスに、「 **<Filename>** 」と入力します (<Filename> は新しいバッチファイルの名前です)。  
+5.  **[ファイル名]** ボックスに、「<Filename>」と入力し**ます**(<Filename> は新しいバッチファイルの名前です)。  
 
 ###### <a name="schedule-a-task"></a>タスクのスケジュール設定  
 

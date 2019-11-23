@@ -22,7 +22,7 @@ ms.locfileid: "71381865"
 ---
 # <a name="bitsadmin-cache"></a>bitsadmin キャッシュ
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="syntax"></a>構文
 
@@ -43,7 +43,7 @@ bitsadmin /Cache /SetExpirationtime
 
 |パラメーター|説明|
 |-------|--------|
-|[bitsadmin cache および help](bitsadmin-cache-and-help.md)|@No__t-1 キャッシュスイッチのコマンド @ no__t-0line usage を表示します。|
+|[bitsadmin cache および help](bitsadmin-cache-and-help.md)|\/キャッシュスイッチのコマンド\-行の使用法を表示します。|
 |[bitsadmin cache および clear](bitsadmin-cache-clear.md)|ローカルキャッシュを削除します。|
 |[bitsadmin cache および delete](bitsadmin-cache-and-delete.md)|キャッシュエントリを削除します。|
 |[bitsadmin cache および deleteurl](bitsadmin-cache-and-deleteurl.md)|指定された URL のすべてのキャッシュエントリを削除します。|

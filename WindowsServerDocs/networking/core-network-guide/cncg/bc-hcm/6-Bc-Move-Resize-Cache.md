@@ -15,13 +15,13 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71406368"
 ---
-# <a name="move-and-resize-the-hosted-cache-optional"></a>ホスト型キャッシュの移動とサイズ変更 \(Optional @ no__t-1
+# <a name="move-and-resize-the-hosted-cache-optional"></a>ホスト型キャッシュ \(オプション\) の移動とサイズ変更
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 この手順を使用すると、ホスト型キャッシュを目的のドライブとフォルダーに移動したり、ホスト型キャッシュサーバーがホスト型キャッシュに使用できるディスク領域の量を指定したりすることができます。
 
-この手順は省略可能です。 既定のキャッシュの場所 \(% windir% \\ServiceProfiles @ no__t-2NetworkService @ no__t-3AppData @ no__t-4Local @ no__t-5PeerDistPub @ no__t-6 と size (ハードディスクの合計容量の 5%) が展開に適している場合、変更する必要があります。
+この手順は省略可能です。 既定のキャッシュの場所 \(% windir%\\ServiceProfiles\\NetworkService\\AppData\\ローカル\\PeerDistPub\) およびサイズ (ハードディスクの合計容量の 5%) が、展開に適している場合は、それらを変更する必要はありません。
 
 この手順を実行するには、Administrators グループのメンバーである必要があります。
 
@@ -38,10 +38,10 @@ ms.locfileid: "71406368"
     Set-BCCache -Path C:\datacache –MoveTo D:\datacache
     ``` 
 
-3.  次のコマンドを入力して、ローカルコンピューター上のホスト型キャッシュのサイズを変更します (具体的には datacache \-)。 Enter キーを押します。
+3.  次のコマンドを入力して、ホスト型キャッシュのサイズを変更します。具体的には、ローカルコンピューター上の datacache \- です。 Enter キーを押します。
 
     > [!IMPORTANT]
-    > 次のコマンドを実行する前に、\-Percentage などのパラメーター値を、配置に適した値に置き換えます。  
+    > 次のコマンドを実行する前に、\-の割合などのパラメーター値を、配置に適した値に置き換えます。  
 
     ``` 
     Set-BCCache -Percentage 20
@@ -55,8 +55,8 @@ ms.locfileid: "71406368"
 
     コマンドの結果は、BranchCache インストールのすべての側面の状態を表示します。 次に、BranchCache の設定のいくつかと、各項目の正しい値を示します。
 
-    -   DataCache |CacheFileDirectoryPath:SetBCCache コマンドの– MoveTo パラメーターで指定した値と一致するハードディスクの場所が表示されます。 たとえば、値 D: @no__t を指定した場合、その値はコマンドの出力に表示されます。
+    -   DataCache |CacheFileDirectoryPath: SetBCCache コマンドの– MoveTo パラメーターで指定した値と一致するハードディスクの場所が表示されます。 たとえば、値 D:\\datacache を指定した場合、その値はコマンドの出力に表示されます。
 
-    -   DataCache |MaxCacheSizeAsPercentageOfDiskVolume:SetBCCache コマンドの–パーセントパラメーターで指定した値と一致する数値が表示されます。 たとえば、値20を指定した場合、その値はコマンドの出力に表示されます。
+    -   DataCache |MaxCacheSizeAsPercentageOfDiskVolume: SetBCCache コマンドの–パーセントパラメーターで指定した値と一致する数値を表示します。 たとえば、値20を指定した場合、その値はコマンドの出力に表示されます。
 
 このガイドを使用するには、「[ホスト型キャッシュサーバー &#40;でのコンテンツの事前&#41;ハッシュと事前読み込み](7-Bc-Prehash-Preload.md)」を参照してください (省略可能)。

@@ -19,7 +19,7 @@ ms.locfileid: "71358297"
 # <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>AD FS サインインページで会社のロゴを変更する
 
 #### <a name="change-company-logo"></a>会社ロゴの変更  
-[Sign @ no__t-0in] ページに表示される会社のロゴを変更するには、次の PowerShell Windows PowerShell コマンドレットと構文を使用します。  
+[\-のサインイン] ページに表示される会社のロゴを変更するには、次の PowerShell Windows PowerShell コマンドレットと構文を使用します。  
 
 ![ロゴの変更](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   

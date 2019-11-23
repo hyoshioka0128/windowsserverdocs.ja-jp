@@ -18,7 +18,7 @@ ms.locfileid: "71369562"
 ---
 # <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory Domain Services のインストールと削除の新機能
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server 2012 の Active Directory Domain Services (AD DS) の展開は、Windows Server の以前のバージョンよりも簡単かつ高速に行うことができます。 AD DS のインストール処理は Windows PowerShell 上に構築され、サーバー マネージャーに統合されています。 これまで Active Directory 環境へのドメイン コントローラーの導入に必要だった多くの手順が削減されています。 このため、新しい Active Directory 環境を以前よりも簡単かつ効率的に作成することができます。 新しい AD DS 展開プロセスにより、インストールをブロックするようなエラーが発生する可能性が最小限に抑えられます。  
   
@@ -43,7 +43,7 @@ Windows Server 2012 以降では、ドメインコントローラーをインス
 > [!WARNING]  
 > レガシ Active Directory ドメインサービスインストールウィザード (dcpromo.exe) は、Windows Server 2012 以降では非推奨とされます。  
 
-「 [Active Directory Domain Services &#40;レベル 100&#41;のインストール](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)」では、役割の追加ウィザードを起動して AD DS サーバーの役割バイナリをインストールし、Active Directory Domain Services 構成ウィザードを実行して完了する方法について説明します。ドメインコントローラーのインストール。 Windows PowerShell の例では、AD DS 展開コマンドレットを使用して両方の手順を完了する方法を示しています。  
+「 [Active Directory Domain Services &#40;レベル 100&#41;のインストール](../../ad-ds/deploy/Install-Active-Directory-Domain-Services--Level-100-.md)」では、役割の追加ウィザードを起動して AD DS サーバーの役割バイナリをインストールし、Active Directory Domain Services 構成ウィザードを実行してドメインコントローラーのインストールを完了する方法について説明します。 Windows PowerShell の例では、AD DS 展開コマンドレットを使用して両方の手順を完了する方法を示しています。  
   
 ## <a name="BKMK_NewAdprep"></a>Adprep.exe の統合
 
@@ -110,21 +110,21 @@ AD DS インストール ウィザードでは、インストールが開始さ�
   
 たとえば、Adprep 関連の前提条件には次が含まれます。  
 
-- Adprep 資格情報の確認:adprep の実行が必要な場合、ユーザーに操作を実行する十分な権限があるか確認します。  
-- スキーマ マスターの可用性のチェック:インストール ウィザードで adprep /forestprep の実行が必要なことが確認されたら、スキーマ マスターがオンラインになっているか確認され、オンラインでない場合は失敗します。  
-- インフラストラクチャ マスターの可用性のチェック:インストール ウィザードで adprep /domainprep の実行が必要なことが確認されたら、インフラストラクチャ マスターがオンラインになっているか確認され、オンラインでない場合は失敗します。
+- Adprep 資格情報の確認: adprep の実行が必要な場合、ユーザーに操作を実行する十分な権限があるか確認します。  
+- スキーマ マスターの可用性のチェック: インストール ウィザードで adprep /forestprep の実行が必要なことが確認されたら、スキーマ マスターがオンラインになっているか確認され、オンラインでない場合は失敗します。  
+- インフラストラクチャ マスターの可用性のチェック: インストール ウィザードで adprep /domainprep の実行が必要なことが確認されたら、インフラストラクチャ マスターがオンラインになっているか確認され、オンラインでない場合は失敗します。
 
 従来の Active Directory インストール ウィザード (dcpromo.exe) から継承されている、その他の前提条件のチェックは次のとおりです。  
 
-- フォレスト名の確認:フォレスト名が有効で、現在その名前が存在していないことを確認します。  
-- NetBIOS 名の確認:指定されている NetBIOS 名が有効で、既存の名前と競合しないことを確認します。  
-- コンポーネント パスの確認:Active Directory データベース、ログ、および SYSVOL のパスが有効で、それらに使用できるディスク領域が十分であることを確認します。  
-- 子ドメイン名の確認:親ドメイン名および新しい子ドメイン名が有効で、既存のドメインと競合しないことを確認します。  
-- ツリー ドメイン名の確認:指定されたツリー名が有効で、現在その名前が存在していないことを確認します。  
+- フォレスト名の確認: フォレスト名が有効で、現在その名前が存在していないことを確認します。  
+- NetBIOS 名の確認: 指定されている NetBIOS 名が有効で、既存の名前と競合しないことを確認します。  
+- コンポーネント パスの確認: Active Directory データベース、ログ、および SYSVOL のパスが有効で、それらに使用できるディスク領域が十分であることを確認します。  
+- 子ドメイン名の確認: 親ドメイン名および新しい子ドメイン名が有効で、既存のドメインと競合しないことを確認します。  
+- ツリー ドメイン名の確認: 指定されたツリー名が有効で、現在その名前が存在していないことを確認します。  
 
 ## <a name="BKMK_SystemReqs"></a>システム要件
 
-Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変更されていません。 詳細については、「 [Windows Server 2008 R2 SP1 システム要件](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)(https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) 」を参照してください。  
+Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変更されていません。 詳細については、「 [Windows Server 2008 R2 SP1 のシステム要件](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)」 (https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)を参照してください。  
 
 機能によっては、追加の要件がある場合があります。 たとえば、仮想ドメインコントローラーの複製機能を使用するには、PDC エミュレーターが Windows Server 2012 を実行し、Hyper-v の役割がインストールされた Windows Server 2012 を実行しているコンピューターが必要です。  
 
@@ -168,7 +168,7 @@ Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変�
 
    この場合、次のエラー メッセージが返されます。  
 
-   レプリケーション ソース ドメイン コントローラー *source domain controller name* に接続できません。 (例外:ログインに失敗しました: ユーザー名が不明またはパスワードが無効です)  
+   レプリケーション ソース ドメイン コントローラー *source domain controller name* に接続できません。 (例外: ログインに失敗しました: ユーザー名が不明またはパスワードが無効です)  
 
    ターゲット サーバーをドメインに参加させ、スマート カードを使用してインストールを実行すると、インストールは成功します。  
   
@@ -176,7 +176,7 @@ Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変�
 
    この場合は、ADDSDeployment コマンドレットを、ネイティブの 64 ビット プロセスをサポートしていないコマンドレットとは別に実行する必要があります。  
 
-- Windows Server 2012 には、回復力のあるファイルシステムという名前の新しいファイルシステムがあります。 Resilient File System (ReFS) でフォーマットされたデータ ボリュームに Active Directory データベース、ログ ファイル、または SYSVOL を格納しないでください。 ReFS の詳細については、「@no__t-Windows 用次世代ファイルシステムのビルド」を参照してください。ReFS @ no__t-0.  
+- Windows Server 2012 には、回復力のあるファイルシステムという名前の新しいファイルシステムがあります。 Resilient File System (ReFS) でフォーマットされたデータ ボリュームに Active Directory データベース、ログ ファイル、または SYSVOL を格納しないでください。 ReFS の詳細については、「 [Windows の次世代ファイル システム ReFS の構築 (Building the next generation file system for Windows: ReFS)](http://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)」を参照してください。  
 - サーバーマネージャーでは、Server Core インストール上で AD DS またはその他のサーバーの役割を実行していて、Windows Server 2012 にアップグレードされているサーバーでは、イベントと状態が想定どおりに収集されていても、サーバーの役割が赤の状態で表示されることがあります。 プレリリース版の Windows Server 2012 の Server Core インストールを実行するサーバーも影響を受ける可能性があります。  
 
 ### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>エラーが発生して重要なレプリケーションが実行されないと、Active Directory ドメイン サービスのインストールがハングする

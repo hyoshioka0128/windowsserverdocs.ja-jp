@@ -39,13 +39,13 @@ ksetup /setrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsup
 |\<RealmName >|領域名は、CORP などの大文字の DNS 名で表されます。CONTOSO.COM。|
 |領域フラグ|は、次のいずれかのフラグを示します。</br>-SendAddress</br>-TcpSupported</br>-Delegate</br>- NcSupported</br>-RC4|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 領域フラグは、Windows Server オペレーティングシステムに基づいていない Kerberos 領域の追加機能を指定します。 Windows server 2003、Windows Server 2008、または Windows Server 2008 R2 を実行しているコンピューターは、Windows Server オペレーティングシステムを実行しているドメインを使用するのではなく、Kerberos サーバーを使用して認証を管理できます。また、これらのシステムは、Kerberos 領域。 このエントリにより、領域の機能が確立されます。 次の表では、それぞれについて説明します。
 
-|値|領域フラグ|説明|
+|Value|領域フラグ|説明|
 |-----|----------|-----------|
-|0Xf です|All|すべての領域フラグが設定されます。|
+|0Xf です|すべての|すべての領域フラグが設定されます。|
 |0x00|なし|領域フラグが設定されておらず、追加の機能は有効になっていません。|
 |0x01|SendAddress|この IP アドレスは、チケット保証チケット内に含まれます。|
 |0x02|TcpSupported|この領域では、伝送制御プロトコル (TCP) とユーザーデータグラムプロトコル (UDP) の両方がサポートされています。|
@@ -53,7 +53,7 @@ ksetup /setrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsup
 |0x08|NcSupported|この領域では、DNS と領域の名前付け標準を可能にする、名前の正規化がサポートされています。|
 |0x80|RC4|この領域では、RC4 暗号化をサポートして、複数領域にわたる信頼を有効にします。これにより、TLS を使用できるようになります。|
 
-領域フラグは、レジストリの**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains @ no__t-1**<em>realmname</em>の下に格納されます。 既定では、このエントリはレジストリに存在しません。 [Ksetup: addrealmflags](ksetup-addrealmflags.md)コマンドを使用して、レジストリにデータを設定できます。
+領域フラグは**HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains\\** <em>realmname</em>の下のレジストリに格納されます。 既定では、このエントリはレジストリに存在しません。 [Ksetup: addrealmflags](ksetup-addrealmflags.md)コマンドを使用して、レジストリにデータを設定できます。
 
 **Ksetup**の出力を表示することによって、使用可能な領域フラグと設定されているものを確認できます。
 

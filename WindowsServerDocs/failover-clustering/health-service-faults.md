@@ -16,7 +16,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71369710"
 ---
 # <a name="health-service-faults"></a>ヘルスサービスエラー
-> 適用対象:Windows Server 2019、Windows Server 2016
+> 適用対象: Windows Server 2019、Windows Server 2016
 
 ## <a name="what-are-faults"></a>障害とは
 
@@ -74,7 +74,7 @@ Get-FileShare -Name <Name> | Debug-FileShare
 
 ### <a name="connect"></a>接続
 
-ヘルスサービスを照会するには、クラスターで**CimSession**を確立する必要があります。 これを行うには、完全な .NET でしか使用できないものが必要になります。つまり、web アプリまたはモバイルアプリから直接この操作を行うことはできません。 これらのコードサンプルでは、このデータアクセス層で最も単純な選択である C @ no__t-0 を使用します。
+ヘルスサービスを照会するには、クラスターで**CimSession**を確立する必要があります。 これを行うには、完全な .NET でしか使用できないものが必要になります。つまり、web アプリまたはモバイルアプリから直接この操作を行うことはできません。 これらのコードサンプルでは、このデータアクセス層で最も単純な選択である C\#を使用します。
 
 ``` 
 ...
@@ -106,7 +106,7 @@ public CimSession Connect(string Domain = "...", string Computer = "...", string
 
 **CimSession**を確立したら、クラスターで WINDOWS MANAGEMENT INSTRUMENTATION (WMI) を照会できます。
 
-エラーまたはメトリックを取得するには、いくつかの関連オブジェクトのインスタンスを取得する必要があります。 まず、クラスター上の記憶域スペースダイレクトを表す**MSFT @ no__t-1StorageSubSystem**を指定します。 これを使用すると、クラスター内のすべての**msft @ no__t-1StorageNode**と、すべての**msft @ No__t-3volume**データボリュームを取得できます。 最後に、 **MSFT @ no__t-1StorageHealth**、ヘルスサービス自体も必要です。
+エラーまたはメトリックを取得するには、いくつかの関連オブジェクトのインスタンスを取得する必要があります。 まず、 **MSFT\_StorageSubSystem**がクラスター上の記憶域スペースダイレクトを表します。 これを使用すると、クラスター内のすべての**msft\_storagenode**およびすべての**msft\_ボリューム**(データボリューム) を取得できます。 最後に、 **MSFT\_StorageHealth**、ヘルスサービス自体も必要になります。
 
 ```
 CimInstance Cluster;
@@ -176,7 +176,7 @@ public void GetFaults(CimSession Session, CimInstance Target)
 
 ### <a name="optional-myfault-class"></a>省略可能: MyFault クラス
 
-独自のエラー表現を構築して永続化することが適切な場合もあります。 たとえば、この**Myfault**クラスは、 **FaultId**を含む、エラーのいくつかの重要なプロパティを格納します。これは、後で更新または削除通知を関連付けたり、同じエラーが複数回検出された場合に重複除去に使用したりできます。何らかの理由で。
+独自のエラー表現を構築して永続化することが適切な場合もあります。 たとえば、この**Myfault**クラスは、 **FaultId**を含む、エラーのいくつかの重要なプロパティを格納します。このプロパティは、後で更新または削除通知を関連付けたり、同じエラーが何度も検出された場合に重複除去するために使用できます。
 
 ```       
 public class MyFault {
@@ -214,7 +214,7 @@ foreach (CimInstance DiagnoseResult in DiagnoseResults)
 
 エラーを作成、削除、または更新すると、ヘルスサービスによって WMI イベントが生成されます。 これらは、頻繁にポーリングせずにアプリケーションの状態を同期させるために不可欠です。たとえば、電子メール通知を送信するタイミングを決定する場合などに役立ちます。 このサンプルコードでは、これらのイベントをサブスクライブするために、オブザーバーデザインパターンを再度使用します。
 
-まず、 **MSFT @ no__t-1StorageFaultEvent**イベントをサブスクライブします。
+まず、 **MSFT\_StorageFaultEvent**イベントにサブスクライブします。
 
 ```      
 public void ListenForFaultEvents()
@@ -285,13 +285,13 @@ class FaultsObserver : IObserver
 
 ### <a name="properties-of-faults"></a>エラーのプロパティ
 
-次の表は、fault オブジェクトのいくつかの重要なプロパティを示しています。 完全なスキーマについては、 *storagewmi .mof*の**MSFT @ no__t-1StorageDiagnoseResult**クラスを調べます。
+次の表は、fault オブジェクトのいくつかの重要なプロパティを示しています。 完全なスキーマについては、 *storagewmi .mof*の**MSFT\_StorageDiagnoseResult**クラスを調べます。
 
 | **プロパティ**              | **例**                                                     |
 |---------------------------|-----------------------------------------------------------------|
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft. 正常性の種類. Volume. 容量                      |
-| Reason                    | "ボリュームの空き領域が不足しています。"                 |
+| 原因                    | "ボリュームの空き領域が不足しています。"                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N. 123456789                                  |
 | FaultingObjectLocation    | ラック A06、RU 25、スロット11                                        |
@@ -309,7 +309,7 @@ class FaultsObserver : IObserver
 
 ## <a name="properties-of-fault-events"></a>Fault イベントのプロパティ
 
-次の表は、fault イベントのいくつかの重要なプロパティを示しています。 完全なスキーマについては、 *storagewmi .mof*の**MSFT @ no__t-1StorageFaultEvent**クラスを調べます。
+次の表は、fault イベントのいくつかの重要なプロパティを示しています。 完全なスキーマについては、 *storagewmi .mof*の**MSFT\_StorageFaultEvent**クラスを調べます。
 
 **ChangeType**は、エラーが作成、削除、または更新されているかどうか、および**FaultId**を示すことに注意してください。 イベントには、影響を受けたエラーのすべてのプロパティも含まれます。
 
@@ -318,7 +318,7 @@ class FaultsObserver : IObserver
 | ChangeType                | 0                                                               |
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft. 正常性の種類. Volume. 容量                      |
-| Reason                    | "ボリュームの空き領域が不足しています。"                 |
+| 原因                    | "ボリュームの空き領域が不足しています。"                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N. 123456789                                  |
 | FaultingObjectLocation    | ラック A06、RU 25、スロット11                                        |
@@ -332,186 +332,186 @@ Windows Server 2016 では、ヘルスサービスによって次のエラーカ
 
 ### <a name="physicaldisk-8"></a>**PhysicalDisk (8)**
 
-#### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedmedia"></a>FaultTypeMicrosoft. 正常性の種類. PhysicalDisk. 失敗メディア
-* ［重要度］:警告
+#### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedmedia"></a>FaultType: Microsoft. 正常性の種類. PhysicalDisk. このメディア
+* 重要度: 警告
 * 理由: *"物理ディスクに障害が発生しました。"*
-* RecommendedAction: *"物理ディスクを交換してください。"*
+* RecommendedAction: *"物理ディスクを交換します。"*
 
-#### <a name="faulttype-microsofthealthfaulttypephysicaldisklostcommunication"></a>FaultTypeLostCommunication (Microsoft 正常性)
-* ［重要度］:警告
+#### <a name="faulttype-microsofthealthfaulttypephysicaldisklostcommunication"></a>FaultType: Microsoft. Health. LostCommunication
+* 重要度: 警告
 * 理由: *"物理ディスクへの接続が切断されました。"*
 * RecommendedAction: *"物理ディスクが動作し、適切に接続されていることを確認してください。"*
 
-#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunresponsive"></a>FaultType正常性。応答しません。
-* ［重要度］:警告
+#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunresponsive"></a>FaultType: Microsoft. 状態. PhysicalDisk. 応答なし
+* 重要度: 警告
 * 理由: *"物理ディスクに定期的な無応答があります。"*
-* RecommendedAction: *"物理ディスクを交換してください。"*
+* RecommendedAction: *"物理ディスクを交換します。"*
 
-#### <a name="faulttype-microsofthealthfaulttypephysicaldiskpredictivefailure"></a>FaultTypePredictiveFailure (Microsoft 正常性)
-* ［重要度］:警告
-* 理由: *"物理ディスクの障害は近日中に発生することが予測されています。"*
-* RecommendedAction: *"物理ディスクを交換してください。"*
+#### <a name="faulttype-microsofthealthfaulttypephysicaldiskpredictivefailure"></a>FaultType: Microsoft. Health. PredictiveFailure
+* 重要度: 警告
+* 理由: *"物理ディスクの障害が間もなく発生することが予測されています。"*
+* RecommendedAction: *"物理ディスクを交換します。"*
 
-#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedhardware"></a>FaultTypeMicrosoft. 正常性の種類の PhysicalDisk
-* ［重要度］:警告
-* 理由: *"物理ディスクはソリューションベンダーによってサポートされていないため、検疫されています。"*
-* RecommendedAction: *「物理ディスクを、サポートされているハードウェアに交換してください。」*
-
-#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedfirmware"></a>FaultTypeMicrosoft. FaultType. PhysicalDisk........ PhysicalDisk.
-* ［重要度］:警告
+#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedhardware"></a>FaultType: Microsoft. 正常性の種類。
+* 重要度: 警告
 * 理由: *"物理ディスクは、ソリューションベンダーによってサポートされていないため、検疫されています。"*
-* RecommendedAction: *"物理ディスク上のファームウェアをターゲットバージョンに更新してください。"*
+* RecommendedAction: *"物理ディスクをサポートされているハードウェアに交換してください。"*
 
-#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunrecognizedmetadata"></a>FaultTypeMicrosoft. FaultType. PhysicalDisk. メタデータ
-* ［重要度］:警告
-* 理由: *"物理ディスクは認識されていないメタデータを持っています。"*
+#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunsupportedfirmware"></a>FaultType: Microsoft. 正常性の種類。
+* 重要度: 警告
+* 理由: *"物理ディスクのファームウェアバージョンがソリューションのベンダによってサポートされていないため、検疫中です。"*
+* RecommendedAction: *"物理ディスク上のファームウェアをターゲットバージョンに更新します。"*
+
+#### <a name="faulttype-microsofthealthfaulttypephysicaldiskunrecognizedmetadata"></a>FaultType: Microsoft. 正常性の種類. PhysicalDisk-メタデータ
+* 重要度: 警告
+* 理由: *"物理ディスクは認識されていないメタデータを含んでいます。"*
 * RecommendedAction: *"このディスクには、不明な記憶域プールのデータが含まれている可能性があります。まず、このディスクに有用なデータがないことを確認してから、ディスクをリセットしてください。 "*
 
-#### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedfirmwareupdate"></a>FaultTypeFailedFirmwareUpdate (Microsoft 正常性)
-* ［重要度］:警告
+#### <a name="faulttype-microsofthealthfaulttypephysicaldiskfailedfirmwareupdate"></a>FaultType: Microsoft. Health. FailedFirmwareUpdate
+* 重要度: 警告
 * 理由: *"物理ディスクのファームウェアを更新できませんでした。"*
 * RecommendedAction: *"別のファームウェアバイナリを使用してみてください。"*
 
 ### <a name="virtual-disk-2"></a>**仮想ディスク (2)**
 
-#### <a name="faulttype-microsofthealthfaulttypevirtualdisksneedsrepair"></a>FaultTypeMicrosoft. 正常性の種類。仮想ディスクの修復
-* ［重要度］:情報
-* 理由:  *"このボリューム上の一部のデータは完全に回復できません。アクセス可能な状態のままです。 "*
+#### <a name="faulttype-microsofthealthfaulttypevirtualdisksneedsrepair"></a>FaultType: Microsoft. 正常性の種類。仮想ディスクの修復
+* 重大度: 情報
+* 理由: *"このボリュームの一部のデータは完全に回復できません。アクセス可能な状態のままです。 "*
 * RecommendedAction: *"データの回復性を復元しています。"*
 
-#### <a name="faulttype-microsofthealthfaulttypevirtualdisksdetached"></a>FaultTypeMicrosoft... FaultType.
-* ［重要度］:重大
-* 理由:  *"ボリュームにアクセスできません。一部のデータが失われる可能性があります。 "*
-* RecommendedAction: *"すべての記憶装置の物理接続またはネットワーク接続を確認します。バックアップからの復元が必要になる場合があります。 "*
+#### <a name="faulttype-microsofthealthfaulttypevirtualdisksdetached"></a>FaultType: Microsoft. 状態. VirtualDisks. デタッチ済み
+* 重要度: 重大
+* 理由: *"ボリュームにアクセスできません。一部のデータが失われる可能性があります。 "*
+* RecommendedAction: *"すべての記憶装置の物理的な接続またはネットワーク接続を確認します。バックアップからの復元が必要になる場合があります。 "*
 
 ### <a name="pool-capacity-1"></a>**プール容量 (1)**
 
-#### <a name="faulttype-microsofthealthfaulttypestoragepoolinsufficientreservecapacityfault"></a>FaultTypeInsufficientReserveCapacityFault (Microsoft 正常性の種類)
-* ［重要度］:警告
-* 理由:  *"記憶域プールには、推奨される最小予約容量がありません。これにより、ドライブで障害が発生した場合にデータの回復性を復元する機能が制限される可能性があります。 "*
+#### <a name="faulttype-microsofthealthfaulttypestoragepoolinsufficientreservecapacityfault"></a>FaultType: InsufficientReserveCapacityFault を実行します。
+* 重要度: 警告
+* 理由: *"記憶域プールには、推奨される最小予約容量がありません。これにより、ドライブで障害が発生した場合にデータの回復性を復元する機能が制限される可能性があります。 "*
 * RecommendedAction: *"記憶域プールに容量を追加するか、容量を解放します。推奨される最小予約は、デプロイによって異なりますが、約2ドライブの容量に相当します。 "*
 
 ### <a name="volume-capacity-2sup1sup"></a>**ボリューム容量 (2)** <sup>1</sup>
 
-#### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultTypeMicrosoft. 正常性の種類. Volume. 容量
-* ［重要度］:警告
+#### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType: Microsoft. 正常性の種類。容量
+* 重要度: 警告
 * 理由: *"ボリュームの空き領域が不足しています。"*
-* RecommendedAction: *"ボリュームを拡張するか、ワークロードを他のボリュームに移行してください。"*
+* RecommendedAction: *"ボリュームを拡張するか、ワークロードを他のボリュームに移行します。"*
 
-#### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultTypeMicrosoft. 正常性の種類. Volume. 容量
-* ［重要度］:重大
+#### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType: Microsoft. 正常性の種類。容量
+* 重要度: 重大
 * 理由: *"ボリュームの空き領域が不足しています。"*
-* RecommendedAction: *"ボリュームを拡張するか、ワークロードを他のボリュームに移行してください。"*
+* RecommendedAction: *"ボリュームを拡張するか、ワークロードを他のボリュームに移行します。"*
 
 ### <a name="server-3"></a>**サーバー (3)**
 
-#### <a name="faulttype-microsofthealthfaulttypeserverdown"></a>FaultTypeMicrosoft.... サーバー...
-* ［重要度］:重大
+#### <a name="faulttype-microsofthealthfaulttypeserverdown"></a>FaultType: Microsoft. Health. Server. Down
+* 重要度: 重大
 * 理由: *"サーバーに到達できません。"*
-* RecommendedAction: *"サーバーを開始または置換します。"*
+* RecommendedAction: *"Start or replace server."*
 
-#### <a name="faulttype-microsofthealthfaulttypeserverisolated"></a>FaultTypeMicrosoft... サーバー分離
-* ［重要度］:重大
-* 理由: *"接続に問題があるため、サーバーはクラスターから分離されています。"*
-* RecommendedAction: *"分離が維持されている場合は、ネットワークを確認するか、ワークロードを他のノードに移行してください。"*
+#### <a name="faulttype-microsofthealthfaulttypeserverisolated"></a>FaultType: Microsoft. Health. サーバー分離
+* 重要度: 重大
+* 理由:*接続の問題により、サーバーがクラスターから分離されています。*
+* RecommendedAction: *"分離が維持されている場合は、ネットワークを確認するか、ワークロードを他のノードに移行します。"*
 
-#### <a name="faulttype-microsofthealthfaulttypeserverquarantined"></a>FaultTypeMicrosoft. 正常性の種類. サーバー. 検疫済み
-* ［重要度］:重大
-* 理由: *"定期的なエラーが原因で、サーバーがクラスターによって検疫されています。"*
-* RecommendedAction: *"サーバーを交換するか、ネットワークを修正してください。"*
+#### <a name="faulttype-microsofthealthfaulttypeserverquarantined"></a>FaultType: Microsoft. Health. サーバー. 検疫済み
+* 重要度: 重大
+* 理由: *"繰り返し発生するエラーが発生したため、サーバーはクラスターによって検疫されています。"*
+* RecommendedAction: *"サーバーを交換するか、ネットワークを修正します。"*
 
 ### <a name="cluster-1"></a>**クラスター (1)**
 
-#### <a name="faulttype-microsofthealthfaulttypeclusterquorumwitnesserror"></a>FaultTypeClusterQuorumWitness の形式です。エラー
-* ［重要度］:重大
+#### <a name="faulttype-microsofthealthfaulttypeclusterquorumwitnesserror"></a>FaultType: ClusterQuorumWitness を入力します。
+* 重要度: 重大
 * 理由: *"クラスターは、1台のサーバーで障害が発生しています。"*
 * RecommendedAction: *"監視リソースを確認し、必要に応じて再起動します。失敗したサーバーを開始または置換します。 "*
 
 ### <a name="network-adapterinterface-4"></a>**ネットワークアダプター/インターフェイス (4)**
 
-#### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisconnected"></a>FaultTypeネットワークアダプター。切断されました。
-* ［重要度］:警告
+#### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisconnected"></a>FaultType: ネットワークアダプター (接続解除)
+* 重要度: 警告
 * 理由: *"ネットワークインターフェイスが切断されました。"*
-* RecommendedAction: *"ネットワークケーブルを再接続してください。"*
+* RecommendedAction: *"ネットワークケーブルを再接続します。"*
 
-#### <a name="faulttype-microsofthealthfaulttypenetworkinterfacemissing"></a>FaultTypeNetworkInterface がありません。
-* ［重要度］:警告
+#### <a name="faulttype-microsofthealthfaulttypenetworkinterfacemissing"></a>FaultType: NetworkInterface。存在しません。
+* 重要度: 警告
 * 理由: *"サーバー {server} には、クラスターネットワーク {cluster network} に接続されているネットワークアダプターがありません。"*
 * RecommendedAction: *"サーバーを見つからないクラスターネットワークに接続します。"*
 
-#### <a name="faulttype-microsofthealthfaulttypenetworkadapterhardware"></a>FaultTypeネットワークアダプター (Microsoft 正常性)
-* ［重要度］:警告
+#### <a name="faulttype-microsofthealthfaulttypenetworkadapterhardware"></a>FaultType: ネットワークアダプター (正常性)
+* 重要度: 警告
 * 理由: *"ネットワークインターフェイスにハードウェア障害が発生しました。"*
-* RecommendedAction: *"ネットワークインターフェイスアダプターを交換してください。"*
+* RecommendedAction: *"ネットワークインターフェイスアダプターを置き換えます。"*
 
-#### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisabled"></a>FaultTypeネットワークアダプターが無効になりました。
-* ［重要度］:警告
-* 理由: *"ネットワークインターフェイス {network interface} が有効になっておらず、使用されていません。"*
-* RecommendedAction: *"ネットワークインターフェイスを有効にします。"*
+#### <a name="faulttype-microsofthealthfaulttypenetworkadapterdisabled"></a>FaultType: ネットワークアダプターは無効です。
+* 重要度: 警告
+* 理由: *"ネットワークインターフェイス {network interface} が有効になっ*ておらず、使用されていません。"
+* RecommendedAction: *"ネットワークインターフェイスを有効にする"*
 
 ### <a name="enclosure-6"></a>**エンクロージャ (6)**
 
-#### <a name="faulttype-microsofthealthfaulttypestorageenclosurelostcommunication"></a>FaultTypeLostCommunication (Microsoft. 正常性)
-* ［重要度］:警告
+#### <a name="faulttype-microsofthealthfaulttypestorageenclosurelostcommunication"></a>FaultType: LostCommunication を実行します。
+* 重要度: 警告
 * 理由: *"ストレージエンクロージャへの通信が切断されました。"*
-* RecommendedAction: *"記憶域エンクロージャを起動または交換します。"*
+* RecommendedAction: *"ストレージエンクロージャを起動または交換します。"*
 
-#### <a name="faulttype-microsofthealthfaulttypestorageenclosurefanerror"></a>FaultTypeFanError (Microsoft. 正常性)
-* ［重要度］:警告
-* 理由: *"ストレージエンクロージャの位置 {位置} にあるファンが失敗しました。"*
-* RecommendedAction: *「記憶域エンクロージャのファンを交換します。」*
+#### <a name="faulttype-microsofthealthfaulttypestorageenclosurefanerror"></a>FaultType: FanError を実行します。
+* 重要度: 警告
+* 理由: *"記憶域エンクロージャの位置 {位置} にあるファンが失敗しました。"*
+* RecommendedAction: *"記憶域エンクロージャのファンを交換します。"*
 
-#### <a name="faulttype-microsofthealthfaulttypestorageenclosurecurrentsensorerror"></a>FaultTypeMicrosoft....... StorageEnclosure. CurrentSensorError
-* ［重要度］:警告
+#### <a name="faulttype-microsofthealthfaulttypestorageenclosurecurrentsensorerror"></a>FaultType: Microsoft. 正常性の種類。 StorageEnclosure。 CurrentSensorError
+* 重要度: 警告
 * 理由: *"記憶域エンクロージャの位置 {位置} にある現在のセンサーが失敗しました。"*
 * RecommendedAction: *"記憶域エンクロージャの現在のセンサーを交換します。"*
 
-#### <a name="faulttype-microsofthealthfaulttypestorageenclosurevoltagesensorerror"></a>FaultTypeVoltageSensorError (Microsoft. 正常性)
-* ［重要度］:警告
+#### <a name="faulttype-microsofthealthfaulttypestorageenclosurevoltagesensorerror"></a>FaultType: VoltageSensorError を実行します。
+* 重要度: 警告
 * 理由: *"ストレージエンクロージャの位置 {位置} の電圧センサーが失敗しました。"*
-* RecommendedAction: *「ストレージエンクロージャの電圧センサーを交換します。」*
+* RecommendedAction: *"記憶域エンクロージャの電圧センサーを交換します。"*
 
-#### <a name="faulttype-microsofthealthfaulttypestorageenclosureiocontrollererror"></a>FaultTypeMicrosoft. 正常性タイプ. StorageEnclosure ジャエラー
-* ［重要度］:警告
+#### <a name="faulttype-microsofthealthfaulttypestorageenclosureiocontrollererror"></a>FaultType: Microsoft. 正常性の種類. StorageEnclosure ジャエラー
+* 重要度: 警告
 * 理由: *"記憶域エンクロージャの位置 {位置} にある IO コントローラーが失敗しました。"*
-* RecommendedAction: *「ストレージエンクロージャ内の IO コントローラーを交換します。」*
+* RecommendedAction: *"記憶域エンクロージャの IO コントローラーを交換します。"*
 
-#### <a name="faulttype-microsofthealthfaulttypestorageenclosuretemperaturesensorerror"></a>FaultTypeTemperatureSensorError (Microsoft. 正常性)
-* ［重要度］:警告
-* 理由: *"ストレージエンクロージャの位置 {位置} にある温度センサーが失敗しました。"*
-* RecommendedAction: *「ストレージエンクロージャの温度センサーを交換します。」*
+#### <a name="faulttype-microsofthealthfaulttypestorageenclosuretemperaturesensorerror"></a>FaultType: TemperatureSensorError を実行します。
+* 重要度: 警告
+* 理由: *"記憶域エンクロージャの位置 {位置} の温度センサーが失敗しました。"*
+* RecommendedAction: *"ストレージエンクロージャの温度センサーを交換します。"*
 
 ### <a name="firmware-rollout-3"></a>**ファームウェアロールアウト (3)**
 
-#### <a name="faulttype-microsofthealthfaulttypefaultdomainfailedmaintenancemode"></a>FaultTypeFailedMaintenanceMode を入力してください。
-* ［重要度］:警告
-* 理由: *"現在、ファームウェアのロールアウトの実行中に進行を進めることができません。"*
-* RecommendedAction: *"すべての記憶域スペースが正常であり、障害ドメインが現在メンテナンスモードになっていないことを確認してください。"*
+#### <a name="faulttype-microsofthealthfaulttypefaultdomainfailedmaintenancemode"></a>FaultType: FailedMaintenanceMode を実行します。
+* 重要度: 警告
+* 理由: *"ファームウェアのロールアウトの実行中に進行を進めることができません。"*
+* RecommendedAction: *"すべての記憶域スペースが正常であり、障害ドメインが現在メンテナンスモードになっていないことを確認します。"*
 
-#### <a name="faulttype-microsofthealthfaulttypefaultdomainfirmwareverifyversionfaile"></a>FaultTypeFirmwareVerifyVersionFaile を入力してください。
-* ［重要度］:警告
-* 理由: *"ファームウェアの更新を適用した後に、読み取り不能または予期しないファームウェアバージョン情報が原因でファームウェアのロールアウトが取り消されました。"*
-* RecommendedAction: *"ファームウェアの問題が解決されたら、ファームウェアを再起動してください。"*
+#### <a name="faulttype-microsofthealthfaulttypefaultdomainfirmwareverifyversionfaile"></a>FaultType: FirmwareVerifyVersionFaile を実行します。
+* 重要度: 警告
+* 理由: *"ファームウェアの更新プログラムを適用した後に、読み取り不能または予期しないファームウェアバージョン情報が発生したため、ファームウェアのロールアウトが取り消されました。"*
+* RecommendedAction: *"ファームウェアの問題が解決されたら、ファームウェアのロールアウトを再開します。"*
 
-#### <a name="faulttype-microsofthealthfaulttypefaultdomaintoomanyfailedupdates"></a>FaultTypeTooManyFailedUpdates を入力してください。
-* ［重要度］:警告
-* 理由: *"ファームウェアの更新試行に失敗した物理ディスクの数が多すぎるため、ファームウェアのロールアウトが取り消されました。"*
-* RecommendedAction: *"ファームウェアの問題が解決されたら、ファームウェアを再起動してください。"*
+#### <a name="faulttype-microsofthealthfaulttypefaultdomaintoomanyfailedupdates"></a>FaultType: TooManyFailedUpdates を実行します。
+* 重要度: 警告
+* 理由: *"ファームウェアの更新の試行に失敗した物理ディスクの数が多すぎるため、ファームウェアのロールアウトが取り消されました。"*
+* RecommendedAction: *"ファームウェアの問題が解決されたら、ファームウェアのロールアウトを再開します。"*
 
 ### <a name="storage-qos-3sup2sup"></a>**記憶域 QoS (3)** <sup>2</sup>
 
-#### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultTypeInsufficientThroughput (Microsoft 正常性の種類)
-* ［重要度］:警告
+#### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultType: InsufficientThroughput を実行します。
+* 重要度: 警告
 * 理由: *"予約を満たすには、ストレージのスループットが不十分です。"*
-* RecommendedAction: *"記憶域 QoS ポリシーを再構成してください。"*
+* RecommendedAction: *"記憶域 QoS ポリシーを再構成します。"*
 
-#### <a name="faulttype-microsofthealthfaulttypestorqoslostcommunication"></a>FaultTypeLostCommunication (Microsoft 正常性の種類)
-* ［重要度］:警告
-* 理由: *"記憶域 QoS ポリシーマネージャーが、ボリュームとの通信を失いました。"*
+#### <a name="faulttype-microsofthealthfaulttypestorqoslostcommunication"></a>FaultType: LostCommunication を実行します。
+* 重要度: 警告
+* 理由: *"記憶域 QoS ポリシーマネージャーがボリュームと通信できなくなりました。"*
 * RecommendedAction: *"ノード {nodes} を再起動してください"*
 
-#### <a name="faulttype-microsofthealthfaulttypestorqosmisconfiguredflow"></a>FaultTypeMisconfiguredFlow (Microsoft 正常性の種類)
-* ［重要度］:警告
+#### <a name="faulttype-microsofthealthfaulttypestorqosmisconfiguredflow"></a>FaultType: MisconfiguredFlow を実行します。
+* 重要度: 警告
 * 理由: *"1 つ以上のストレージコンシューマー (通常は Virtual Machines) が、id {id} の存在しないポリシーを使用しています。"*
 * RecommendedAction: *"不足している記憶域 QoS ポリシーを再作成します。"*
 

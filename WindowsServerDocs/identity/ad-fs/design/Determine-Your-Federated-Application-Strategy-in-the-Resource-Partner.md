@@ -18,15 +18,15 @@ ms.locfileid: "71359163"
 ---
 # <a name="determine-your-federated-application-strategy-in-the-resource-partner"></a>リソース パートナーでのフェデレーション アプリケーション戦略を決定する
 
-リソースパートナー組織の新しい Active Directory フェデレーションサービス (AD FS) @no__t 0AD FS @ no__t インフラストラクチャを設計する際の重要な部分は、フェデレーションに参加するために使用されるアプリケーションとサービスの完全なセットを決定することです。これらのリソースの受信者になるアカウントパートナーを指定します。 フェデレーション アプリケーションおよびサービスの戦略を設計する前に、以下の質問について調査します。  
+リソースパートナー組織での新しい Active Directory フェデレーションサービス (AD FS) \(AD FS\) インフラストラクチャの設計の重要な部分は、フェデレーションに参加するために使用されるアプリケーションとサービスの完全なセットと、それらのリソースの受信者になるアカウントパートナーを決定することです。 フェデレーション アプリケーションおよびサービスの戦略を設計する前に、以下の質問について調査します。  
   
--   フェデレーションに対して ASP.NET アプリケーションまたは Windows Communication Foundation @no__t 0WCF @ no__t サービスを有効にして展開しますか?  
+-   フェデレーション用の WCF\) サービス \(ASP.NET アプリケーションまたは Windows Communication Foundation を有効にしてデプロイしますか?  
   
 -   企業ネットワーク上のユーザーが Windows 統合認証を使用してフェデレーション アプリケーションまたはサービスにアクセスする必要がありますか。  
   
 -   フェデレーション アプリケーションまたはサービスは境界ネットワークのユーザーによって使用されますか。 使用される場合、Windows 統合認証が必要ですか。  
   
--   フェデレーションアプリケーションをホストするすべての Web サーバーが Windows Server オペレーティングシステムを実行し、インターネットインフォメーションサービス \(IIS @ no__t?  
+-   フェデレーションアプリケーションをホストするすべての Web サーバーが Windows Server オペレーティングシステムを実行しており、IIS\)をインターネットインフォメーションサービス \(。  
   
 -   フェデレーション アプリケーションまたはサービスがリソースを提供する対象は誰ですか。  
   
@@ -38,8 +38,8 @@ ms.locfileid: "71359163"
   
 -   [要求に対応するアプリケーションやサービスへのアクセスを別の組織のユーザーに提供する](Provide-Users-in-Another-Organization-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
   
-要求 @ no__t-0aware ASP.NET アプリケーションまたは WCF サービスを作成する方法の詳細については、「 [Windows Identity FOUNDATION SDK](https://go.microsoft.com/fwlink/?LinkId=122266)」を参照してください。  
+要求\-対応 ASP.NET アプリケーションまたは WCF サービスを作成する方法の詳細については、「 [Windows Identity FOUNDATION SDK](https://go.microsoft.com/fwlink/?LinkId=122266)」を参照してください。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

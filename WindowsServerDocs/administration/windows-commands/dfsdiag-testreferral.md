@@ -22,19 +22,19 @@ ms.locfileid: "71378363"
 ---
 # <a name="dfsdiag-testreferral"></a>dfsdiag TestReferral
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-次のテストを実行して、分散ファイルシステム @no__t 0DFS @ no__t の紹介を確認します。  
+次のテストを実行して、DFS\) の参照を \(分散ファイルシステムを確認します。  
   
 -   引数を指定せずに DFSpath パラメーターを使用すると、このコマンドは、参照リストにすべての信頼されたドメインが含まれているかどうかを検証します。  
   
--   ドメインを指定すると、コマンドによってドメインコントローラーの正常性チェックが実行されます。 \(dfsdiag \/testdcs @ no__t から、ローカルホストのサイトの関連付けとドメインキャッシュをテストします。  
+-   ドメインを指定すると、コマンドにより、\(dfs diag \/testdcs dc の正常性チェックが実行され、ローカルホストのサイトの関連付けとドメインキャッシュがテストされます。\)  
   
--   ドメインを指定し、\\SYSvol または \\NETLOGON を指定した場合、ドメインを指定したときと同じ正常性チェックを実行するだけでなく、コマンドは、time To Live \(TTL @ no__t of SYSvol または NETLOGON 参照が既定値 () と一致することを確認します。900秒。  
+-   ドメインを指定し、SYSvol または \\NETLOGON を \\すると、ドメインを指定したときと同じ正常性チェックを実行するだけでなく、SYSvol または NETLOGON の参照の time To Live \(TTL\) が既定値の900秒と一致するかどうかがチェックされます。  
   
--   名前空間のルートを指定すると、ドメインを指定したときと同じ正常性チェックを実行するだけでなく、DFS の構成チェック \(dfsdiag \/TestDFSConfig @ no__t と名前空間の整合性チェック \(dfsdiag \/TestDFSIntegrity @ no__t-5。  
+-   名前空間のルートを指定すると、ドメインを指定したときと同じ正常性チェックを実行するだけでなく、DFS 構成チェック \(DFS diag \/TestDFSConfig\) と、DFS diag \/Testdfsconfig\)\(名前空間の整合性チェックが実行されます。  
   
--   DFS フォルダー \(link @ no__t-1 を指定した場合、名前空間のルートを指定したときと同じ正常性チェックを実行するだけでなく、フォルダーターゲットのサイト構成が検証され \(dfsdiag \/testsites @ no__t-4 と検証されます。ローカルホストのサイトの関連付け。  
+-   DFS フォルダー \(リンク\)を指定すると、名前空間のルートを指定した場合と同じ正常性チェックが実行されるだけでなく、フォルダー \(ターゲットのサイト構成が検証されて、dfs diag \/testsites\)、ローカルホストのサイトの関連付けが検証されます。  
   
   
   
@@ -48,8 +48,8 @@ dfsdiag /TestReferral /DFSpath:<DFS path for getting referrals> [/Full]
   
 |パラメーター|説明|  
 |-------|--------|  
-|\/DFSpath: <path for getting referrals>|この DFS パスは、次のいずれかになります。<br /><br />-    @ no__t-1blank @ no__t:信頼されたドメインをテストします。<br />-    @ no__t @ no__t-2Domain:ドメインコントローラーの参照。<br />-    @ no__t-1 @ no__t-2Domain @ no__t-3SYSvol:SYSvol 参照。<br />-    @ no__t-1 @ no__t-2Domain @ no__t-3NETLOGON:NETLOGON の紹介。<br />-    @ no__t-1 @ no__t @ no__t @ no__t-5: 次のようになります。名前空間のルート参照。<br />-    @ no__t-1 @ no__t @ no__t @ no__t-5 @ no__t-6 @ no__t のようになります。DFS フォルダー \(link @ no__t の紹介。|  
-|\/Full|ドメインおよびルートの参照にのみ適用されます。 レジストリと active directory ドメインサービス \(AD DS @ no__t-1 の間のサイトの関連付け情報の整合性を確認します。|  
+|\/DFSpath:<path for getting referrals>|この DFS パスは、次のいずれかになります。<br /><br />-   \(blank\): 信頼されたドメインをテストします。<br />-   \\\\ドメイン: ドメインコントローラーの紹介。<br />-   \\\\ドメイン\\SYSvol: SYSvol 参照。<br />-   \\\\ドメイン\\NETLOGON: NETLOGON の紹介。<br />-   \\\\<Domain or server>\\<Namespace Root>: 名前空間のルート参照。<br />-   \\\\<Domain or server>\\<Namespace root>\\<DFS folder>: DFS フォルダー \(リンク\) 参照します。|  
+|\/完全|ドメインおよびルートの参照にのみ適用されます。 レジストリと active directory ドメインサービス \(AD DS\)間のサイトの関連付け情報の整合性を確認します。|  
   
 ## <a name="BKMK_Examples"></a>例  
 次のように入力します。  

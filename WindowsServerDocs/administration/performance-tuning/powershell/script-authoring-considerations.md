@@ -30,20 +30,20 @@ $null = $arrayList.Add($item)
 [void]$arrayList.Add($item)
 ```
 
-@No__t-0 への割り当てまたは `[void]` へのキャストはほぼ同じであり、通常はパフォーマンスが重要な場合に推奨されます。
+`$null` への割り当てまたは `[void]` へのキャストはほぼ同じであり、通常はパフォーマンスが重要な場合に推奨されます。
 
 ```PowerShell
 $arrayList.Add($item) > $null
 ```
 
-@No__t-0 へのファイルのリダイレクトは、前の方法とほとんど同じですが、ほとんどのスクリプトではその違いに気付くことはありません。
+`$null` へのファイルのリダイレクトは、前の方法とほとんど同じですが、ほとんどのスクリプトではその違いに気付くことはありません。
 このシナリオによっては、ファイルのリダイレクトによって若干のオーバーヘッドが生じます。
 
 ```PowerShell
 $arrayList.Add($item) | Out-Null
 ```
 
-@No__t-0 へのパイプは、代替手段と比較すると大きなオーバーヘッドが発生します。
+代替手段と比較すると、`Out-Null` へのパイプに大きなオーバーヘッドが発生します。
 パフォーマンスに影響するコードでは、これを回避する必要があります。
 
 ```PowerShell
@@ -54,7 +54,7 @@ $null = . {
 ```
 
 スクリプトブロックを導入して (ドットソーシングまたはそれ以外の方法を使用して) 呼び出し、その結果を `$null` に割り当てることは、スクリプトの大きなブロックの出力を抑制するための便利な手法です。
-この手法は @no__t 0 にパイプを使用して実行されるため、パフォーマンスに影響するスクリプトでは回避する必要があります。
+この手法は、`Out-Null` にパイプを使用して実行されるため、パフォーマンスに影響するスクリプトでは回避する必要があります。
 この例の追加のオーバーヘッドは、以前インラインスクリプトであったスクリプトブロックを作成して呼び出すことから取得されます。
 
 
@@ -84,8 +84,8 @@ $results.AddRange((Do-SomethingElse))
 $results
 ```
 
-配列が必要な場合は、独自の `ArrayList` を使用して、配列が必要なときに単に `ArrayList.ToArray` を呼び出すことができます。
-または、PowerShell を使用して `ArrayList` と `Array` を作成することもできます。
+配列が必要な場合は、独自の `ArrayList` を使用し、配列が必要なときに単に `ArrayList.ToArray` を呼び出すことができます。
+または、PowerShell で `ArrayList` と `Array` を作成できるようにします。
 
 ```PowerShell
 $results = @(
@@ -94,8 +94,8 @@ $results = @(
 )
 ```
 
-この例では、PowerShell によって @no__t 0 が作成され、配列式内のパイプラインに書き込まれた結果を保持します。
-@No__t-0 に割り当てる直前に、PowerShell は `ArrayList` を `object[]` に変換します。
+この例では、PowerShell によって、配列式内のパイプラインに書き込まれた結果を保持する `ArrayList` が作成されます。
+`$results`に割り当てる直前に、PowerShell によって `ArrayList` が `object[]`に変換されます。
 
 ## <a name="processing-large-files"></a>大きなファイルの処理
 
@@ -127,9 +127,9 @@ finally
 
 ## <a name="avoid-write-host"></a>書き込みホストを避ける
 
-通常、出力をコンソールに直接書き込むのは好ましくありませんが、意味がある場合は、多くのスクリプトで `Write-Host` が使用されます。
+一般に、出力をコンソールに直接書き込むことは不適切であると考えられますが、意味がある場合は、多くのスクリプトで `Write-Host`が使用されます。
 
-多くのメッセージをコンソールに書き込む必要がある場合、`Write-Host` は `[Console]::WriteLine()` よりもはるかに低い順序になります。 ただし、`[Console]::WriteLine()` は、powershell .exe や powershell_ise などの特定のホストに対してのみ適切な代替であることに注意してください。すべてのホストで動作することは保証されていません。
+多くのメッセージをコンソールに書き込む必要がある場合、`Write-Host` は `[Console]::WriteLine()`よりも桁違いに遅くなる可能性があります。 ただし、`[Console]::WriteLine()` は、powershell .exe や powershell_ise などの特定のホストに対してのみ適切な代替であることに注意してください。すべてのホストで動作する保証はありません。
 
-@No__t-0 を使用する代わりに、[書き込み出力](/powershell/module/Microsoft.PowerShell.Utility/Write-Output?view=powershell-5.1)の使用を検討してください。
+`Write-Host`を使用する代わりに、[書き込み出力](/powershell/module/Microsoft.PowerShell.Utility/Write-Output?view=powershell-5.1)の使用を検討してください。
 

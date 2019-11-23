@@ -21,7 +21,7 @@ ms.locfileid: "71404506"
 ---
 # <a name="step-3-configure-the-multisite-deployment"></a>手順3マルチサイト展開を構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 マルチサイトインフラストラクチャを構成したら、次の手順に従って、リモートアクセスのマルチサイト展開を設定します。  
   
@@ -66,7 +66,7 @@ ms.locfileid: "71404506"
 11.  **[インストールの進行状況]** ダイアログで、インストールが正常に完了したことを確認し、 **[閉じる]** をクリックします。  
   
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
 
   
 手順 1-3 は手動で実行する必要があり、この Windows PowerShell コマンドレットを使用して実行することはできません。  
@@ -81,7 +81,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 #### <a name="to-grant-administrator-permissions"></a>管理者権限を付与するには  
   
-1.  追加のエントリポイントのリモートアクセスサーバーで、次のようにします。 **[スタート]** 画面で「**コンピューターの管理**」と入力し、enter キーを押します。  
+1.  追加のエントリポイントのリモートアクセスサーバーで、 **[スタート]** 画面で「**コンピューターの管理**」と入力し、enter キーを押します。  
   
 2.  左側のウィンドウで、 **[ローカルユーザーとグループ]** をクリックします。  
   
@@ -104,7 +104,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 #### <a name="to-obtain-an-ip-https-certificate"></a>Ip-https 証明書を取得するには  
   
-1.  各リモートアクセスサーバーで次のようにします。**スタート**画面で「 **mmc**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  各リモートアクセスサーバーで、**スタート**画面で「 **mmc**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
   
 2.  **[ファイル]** をクリックし、 **[スナップインの追加と削除]** をクリックします。  
   
@@ -142,7 +142,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 #### <a name="to-install-a-certificate-for-network-location"></a>ネットワークの場所の証明書をインストールするには  
   
-1.  リモート アクセス サーバーで、**スタート**画面で「 **mmc**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  リモートアクセスサーバーの場合:**スタート**画面で「 **mmc**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
   
 2.  **[ファイル]** をクリックし、 **[スナップインの追加と削除]** をクリックします。  
   
@@ -180,7 +180,7 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
   
 ### <a name="NLS"></a>ネットワークロケーションサーバーの DNS レコードを作成するには  
   
-1.  DNS サーバーで、次のようにします。**スタート**画面で「 **dnsmgmt.msc**」と入力し、enter キーを押します。  
+1.  DNS サーバー:**スタート**画面で「 **dnsmgmt.msc**」と入力し、enter キーを押します。  
   
 2.  **DNS マネージャー**コンソールの左側のウィンドウで、内部ネットワークの前方参照ゾーンを開きます。 関連するゾーンを右クリックし、 **[新しいホスト (A または AAAA)]** をクリックします。  
   
@@ -195,13 +195,13 @@ Install-WindowsFeature RemoteAccess -IncludeManagementTools
 7.  展開で追加のエントリポイントとしてサーバーを追加する前に、この手順を繰り返します。  
   
 ## <a name="BKMK_Client"></a>3.5。 マルチサイト展開用に DirectAccess クライアントを構成する  
-DirectAccess Windows クライアントコンピューターは、DirectAccess の関連付けを定義するセキュリティグループのメンバーである必要があります。 マルチサイトを有効にする前に、これらのセキュリティグループには、Windows 8 クライアントと Windows 7 クライアントの両方を含めることができます (適切な "ダウンレベル" モードが選択されている場合)。 マルチサイトを有効にすると、シングルサーバーモードの既存のクライアントセキュリティグループは、Windows 8 専用のセキュリティグループに変換されます。 マルチサイトを有効にした後、DirectAccess Windows 7 クライアントコンピューターを、対応する専用 Windows 7 クライアントセキュリティグループ (特定のエントリポイントに関連付けられている) に移動するか、DirectAccess 経由で接続することはできません。 Windows 7 クライアントは、Windows 8 セキュリティグループである既存のセキュリティグループから最初に削除する必要があります。 注意:Windows 7 と windows 8 の両方のクライアントセキュリティグループのメンバーである windows 7 クライアントコンピューターでは、リモート接続が失われ、SP1 がインストールされていない Windows 7 クライアントは、企業接続も失われます。 そのため、すべての Windows 7 クライアントコンピューターを Windows 8 セキュリティグループから削除する必要があります。  
+DirectAccess Windows クライアントコンピューターは、DirectAccess の関連付けを定義するセキュリティグループのメンバーである必要があります。 マルチサイトを有効にする前に、これらのセキュリティグループには、Windows 8 クライアントと Windows 7 クライアントの両方を含めることができます (適切な "ダウンレベル" モードが選択されている場合)。 マルチサイトを有効にすると、シングルサーバーモードの既存のクライアントセキュリティグループは、Windows 8 専用のセキュリティグループに変換されます。 マルチサイトを有効にした後、DirectAccess Windows 7 クライアントコンピューターを、対応する専用 Windows 7 クライアントセキュリティグループ (特定のエントリポイントに関連付けられている) に移動するか、DirectAccess 経由で接続することはできません。 Windows 7 クライアントは、Windows 8 セキュリティグループである既存のセキュリティグループから最初に削除する必要があります。 注意: windows 7 および Windows 8 の両方のクライアントセキュリティグループのメンバーである Windows 7 クライアントコンピューターでは、リモート接続が失われ、SP1 がインストールされていない Windows 7 クライアントは、企業接続も失われます。 そのため、すべての Windows 7 クライアントコンピューターを Windows 8 セキュリティグループから削除する必要があります。  
   
 #### <a name="remove--windows-7--clients-from-windows-8-security-groups"></a>Windows 7 クライアントを Windows 8 セキュリティグループから削除する  
   
 1.  プライマリ ドメイン コント ローラーで、次のようにクリックします。 **開始**, 、クリックして **Active Directory ユーザーとコンピューター**します。  
   
-2.  セキュリティグループからコンピュータを削除するには、セキュリティグループをダブルクリックし、 **[< Group_Name > のプロパティ]** ダイアログボックスの **[メンバ]** タブをクリックします。  
+2.  セキュリティグループからコンピューターを削除するには、セキュリティグループをダブルクリックし、 **[< Group_Name > のプロパティ]** ダイアログボックスで **[メンバー]** タブをクリックします。  
   
 3.  Windows 7 クライアントコンピューターを選択し、 **[削除]** をクリックします。  
   
@@ -221,7 +221,7 @@ DirectAccess Windows クライアントコンピューターは、DirectAccess �
   
 ### <a name="EnabledMultisite"></a>マルチサイト構成を有効にするには  
   
-1.  既存のリモートアクセスサーバーで次のようにします。**スタート**画面で「 **ramgmtui.exe**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  既存のリモートアクセスサーバーで、 **[スタート]** 画面で「 **ramgmtui.exe**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
   
 2.  リモートアクセス管理コンソールで、 **[構成]** をクリックし、 **[タスク]** ウィンドウで **[マルチサイトを有効にする]** をクリックします。  
   
@@ -242,7 +242,7 @@ DirectAccess Windows クライアントコンピューターは、DirectAccess �
         > [!NOTE]  
         > このオプションを選択すると、クライアントコンピューターは、最も近いエントリポイントに自動的に接続します。  
   
-    -   すべてのエントリポイント間でトラフィックをグローバルに負荷分散する場合は **、[はい、グローバル負荷分散を使用**します] をクリックします。 **[すべてのエントリポイントで使用されるグローバル負荷分散 fqdn を入力]** してください に、グローバル負荷分散 fqdn を入力し、最初のリモートアクセスサーバーを含む **[このエントリポイントのグローバル負荷分散 IP アドレスを入力]** してください にグローバル負荷を入力します。このエントリポイントの 分散 IP アドレス を選択し、 **[次へ]** をクリックします。  
+    -   すべてのエントリポイント間でトラフィックをグローバルに負荷分散する場合は **、[はい、グローバル負荷分散を使用**します] をクリックします。 **[すべてのエントリポイントで使用されるグローバル負荷分散 fqdn を入力]** してください に、グローバル負荷分散 fqdn を入力し、最初のリモートアクセスサーバーを含む **[このエントリポイントのグローバル負荷分散 ip アドレス]** を入力してください に、このエントリポイントのグローバル負荷分散 ip アドレスを入力し、 **[次へ]** をクリックします。  
   
 7.  **[クライアントサポート]** ページで、次のいずれかの操作を行います。  
   
@@ -250,7 +250,7 @@ DirectAccess Windows クライアントコンピューターは、DirectAccess �
   
     -   Windows 7 を実行するクライアントコンピューターがこのエントリポイントにアクセスできるようにするには、 **[windows 7 を実行しているクライアントコンピューターにこのエントリポイントへのアクセスを許可]** する をクリックし、 **[追加]** をクリックします。 **[グループの選択]** ダイアログボックスで、Windows 7 クライアントコンピューターを含むセキュリティグループを選択し、 **[OK]** をクリックして、 **[次へ]** をクリックします。  
   
-8.  **[クライアント GPO 設定]** ページで、このエントリポイントに対して Windows 7 クライアントコンピューターの既定の gpo をそのまま使用するか、リモートアクセスを自動的に作成する gpo の名前を入力するか、 **[参照]** をクリックして Windows 7 クライアントコンピューターの gpo を検索します。 **[次へ]** をクリックします。  
+8.  **[クライアントの Gpo 設定]** ページで、このエントリポイントに対して Windows 7 クライアントコンピューターの既定の gpo をそのまま使用するか、リモートアクセスを自動的に作成する gpo の名前を入力します。または、 **[参照]** をクリックして Windows 7 クライアントコンピューターの gpo を見つけ、 **[次へ]** をクリックします。  
   
     > [!NOTE]  
     > -   **[クライアント GPO の設定]** ページは、Windows 7 クライアントコンピューターがエントリポイントにアクセスできるようにエントリポイントを構成した場合にのみ表示されます。  
@@ -260,7 +260,7 @@ DirectAccess Windows クライアントコンピューターは、DirectAccess �
   
 10. **[マルチサイト展開の有効化]** ダイアログボックスで **[閉じる]** をクリックし、マルチサイト展開の有効化ウィザードで **[閉じる]** をクリックします。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -270,7 +270,7 @@ DirectAccess Windows クライアントコンピューターは、DirectAccess �
 Enable-DAMultiSite -Name 'Contoso' -EntryPointName 'Edge1-US' -ManualEntryPointSelectionAllowed 'Enabled'  
 ```  
   
-Windows 7 クライアントコンピューターが、セキュリティグループ DA_Clients_US と GPO DA_W7_Clients_GPO_US を介して最初のエントリポイントを介してアクセスできるようにするには  
+Windows 7 クライアントコンピューターがセキュリティグループ DA_Clients_US の最初のエントリポイントからアクセスし、GPO DA_W7_Clients_GPO_US を使用できるようにするには  
   
 ```  
 Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.contoso.com\DA_Clients_US') -DownlevelGpoName @('corp.contoso.com\DA_W7_Clients_GPO_US)  
@@ -289,7 +289,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
 ### <a name="AddEP"></a>マルチサイト展開にエントリポイントを追加するには  
   
-1.  既存のリモートアクセスサーバーで次のようにします。**スタート**画面で「 **ramgmtui.exe**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  既存のリモートアクセスサーバーで、 **[スタート]** 画面で「 **ramgmtui.exe**」と入力し、enter キーを押します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
   
 2.  リモートアクセス管理コンソールで、 **[構成]** をクリックし、 **[タスク]** ウィンドウで **[エントリポイントの追加]** をクリックします。  
   
@@ -320,7 +320,7 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
   
     -   Windows 7 を実行するクライアントコンピューターがこのエントリポイントにアクセスできるようにするには、 **[windows 7 を実行しているクライアントコンピューターにこのエントリポイントへのアクセスを許可]** する をクリックし、 **[追加]** をクリックします。 **[グループの選択]** ダイアログボックスで、このエントリポイントに接続する Windows 7 クライアントコンピューターを含むセキュリティグループを選択し、 **[OK]** をクリックして、 **[次へ]** をクリックします。  
   
-11. **[クライアント GPO 設定]** ページで、このエントリポイントに対して Windows 7 クライアントコンピューターの既定の gpo をそのまま使用するか、リモートアクセスで自動的に作成する gpo の名前を入力するか、 **[参照]** をクリックして windows 7 クライアントコンピューターの gpo を検索します。、 **[次へ]** をクリックします。  
+11. **[クライアント GPO 設定]** ページで、このエントリポイントに対して Windows 7 クライアントコンピューターの既定の gpo をそのまま使用するか、リモートアクセスで自動的に作成する gpo の名前を入力するか、 **[参照]** をクリックして Windows 7 クライアントコンピューターの gpo を検索し、 **[次へ]** をクリックします。  
   
     > [!NOTE]  
     > -   **[クライアント GPO の設定]** ページは、Windows 7 クライアントコンピューターがエントリポイントにアクセスできるようにエントリポイントを構成した場合にのみ表示されます。  
@@ -338,15 +338,15 @@ Add-DAClient -EntrypointName 'Edge1-US' -DownlevelSecurityGroupNameList @('corp.
 15. **[エントリポイントの追加]** ダイアログボックスで **[閉じる]** をクリックし、エントリポイントの追加ウィザードで **[閉じる]** をクリックします。  
   
     > [!NOTE]  
-    > 追加されたエントリポイントが既存のエントリポイントまたはクライアントコンピューターとは異なるフォレストにある場合は、 **[タスク]** ウィンドウで **[管理サーバーの更新]** をクリックして、ドメインコントローラーと System Center を検出する必要があります。新しいフォレストで Configuration Manager します。  
+    > 追加されたエントリポイントが既存のエントリポイントまたはクライアントコンピューターとは異なるフォレストにある場合は、 **[タスク]** ウィンドウで **[管理サーバーの更新]** をクリックして、新しいフォレストのドメインコントローラーと System Center Configuration Manager を検出する必要があります。  
   
 16. マルチサイト展開に追加するすべてのエントリポイントについて、手順 2. の手順を繰り返します。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
-Edge2 という名前の2番目のエントリポイントとして corp2 ドメインからコンピューター edge2 を追加するには、次のように入力します。 エントリポイントの構成は、クライアント IPv6 プレフィックス ' 2001: db8: 2: 2000::/64 '、接続先アドレス (edge2 コンピューター上の IP-HTTPS 証明書) ' edge2.contoso.com '、"DirectAccess サーバーの設定-Edge2" という名前のサーバー GPO、および内部とインターネットと Corpnet2 という名前の外部インターフェイスはそれぞれ次のようになります。  
+Edge2 という名前の2番目のエントリポイントとして corp2 ドメインからコンピューター edge2 を追加するには、次のように入力します。 エントリポイントの構成は、クライアント IPv6 プレフィックス ' 2001: db8: 2: 2000::/64 '、接続先アドレス (edge2 コンピューター上の IP-HTTPS 証明書) ' edge2.contoso.com '、"DirectAccess サーバーの設定-Edge2" という名前のサーバー GPO、およびインターネットと Corpnet2 という名前の内部インターフェイスと外部インターフェイスです。  
   
 ```  
 Add-DAEntryPoint -RemoteAccessServer 'edge2.corp2.corp.contoso.com' -Name 'Edge2-Europe' -ClientIPv6Prefix '2001:db8:2:2000::/64' -ConnectToAddress 'Europe.contoso.com' -ServerGpoName 'corp2.corp.contoso.com\DirectAccess Server Settings - Edge2-Europe' -InternetInterface 'Internet' -InternalInterface 'Corpnet2'  
@@ -360,4 +360,4 @@ Add-DAClient -EntrypointName 'Edge2-Europe' -DownlevelGpoName @('corp.contoso.co
   
 ## <a name="BKMK_Links"></a>関連項目  
   
--   [手順 2:マルチサイトインフラストラクチャの構成 @ no__t-0
+-   [手順 2: マルチサイトインフラストラクチャを構成する](Step-2-Configure-the-Multisite-Infrastructure.md)

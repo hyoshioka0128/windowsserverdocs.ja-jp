@@ -17,9 +17,9 @@ ms.locfileid: "71405288"
 ---
 # <a name="getting-started-with-qos-policy"></a>QoS ポリシーを使用したはじめに
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-次のトピックを使用して、サービスの品質 \(QoS @ no__t-1 ポリシーを開始することができます。
+次のトピックを使用して、QoS\) ポリシー \(品質のサービスを開始することができます。
 
 - [QoS ポリシーのしくみ](qos-policy-works.md)
 - [QoS ポリシーのアーキテクチャ](qos-policy-architecture.md)

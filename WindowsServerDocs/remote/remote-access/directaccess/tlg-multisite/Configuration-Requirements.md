@@ -21,7 +21,7 @@ ms.locfileid: "71404767"
 ---
 # <a name="configuration-requirements"></a>構成要件
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 テストラボでリモートアクセスを構成するには、次のコンポーネントが必要です。  
   
@@ -29,11 +29,11 @@ ms.locfileid: "71404767"
   
 -   Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 の最小ハードウェア要件を満たす9台のコンピューターまたは仮想マシンこれらのコンピューターのうち3つは、2つのネットワークアダプターがインストールされています。  
   
--   Windows 10 @ no__t-0 または Windows @ no__t 8 の製品ディスクまたはファイル。  
+-   Windows 10&reg; または Windows&reg; 8 用の製品ディスクまたはファイル。  
   
 -   Windows 7 Ultimate の製品ディスクまたはファイル。  
   
--   Windows 10 @ no__t-0、Windows 8、または Windows 7 の最小ハードウェア要件を満たす3台のコンピューターまたは仮想マシンこれらのコンピューターのいずれかに2つのネットワークアダプターがインストールされています。  
+-   Windows 10&reg;、Windows 8、または Windows 7 の最小ハードウェア要件を満たす3台のコンピューターまたは仮想マシンこれらのコンピューターのいずれかに2つのネットワークアダプターがインストールされています。  
   
 
 

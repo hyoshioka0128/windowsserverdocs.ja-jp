@@ -22,7 +22,7 @@ ms.locfileid: "71370836"
 ---
 # <a name="subcommand-set-drivergroup"></a>サブコマンド: セット DriverGroup
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サーバー上の既存のドライバー グループのプロパティを設定します。
 ## <a name="syntax"></a>構文
@@ -32,7 +32,7 @@ wdsutil /Set-DriverGroup /DriverGroup:<Group Name> [/Server:<Server Name>] [/Nam
 ## <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-|/Drivergroup: <Group Name>|ドライバー グループの名前を指定します。|
+|/Drivergroup:<Group Name>|ドライバー グループの名前を指定します。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
 |[/Name:<New Group Name>]|ドライバーグループの新しい名前を指定します。|
 |[/有効: {Yes &#124; No}]|ドライバーグループを有効または無効にします。|

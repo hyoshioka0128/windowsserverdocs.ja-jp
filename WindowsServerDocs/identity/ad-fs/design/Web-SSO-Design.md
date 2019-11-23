@@ -18,17 +18,17 @@ ms.locfileid: "71407836"
 ---
 # <a name="web-sso-design"></a>Web SSO 設計
 
-Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-5 で \(SSO @ no__t design の Web Single @ no__t-0Sign @ no__t-1On 認証する必要があります。ユーザーは、複数の AD FS @ no__t-6secured アプリケーションまたはサービスにアクセスするために1回だけ認証する必要があります。 この設計では、すべてのユーザーが外部ユーザーであり、パートナー組織が存在しないため、フェデレーションの信頼はありません。 通常、次の図に示すように、1つまたは複数の AD FS セキュリティで保護されたサービスまたはアプリケーションに対して、個々のコンシューマーまたは顧客のアクセスをインターネット経由で提供する場合は、この設計をデプロイします。  
+Active Directory フェデレーションサービス (AD FS) \(AD FS\)の SSO\) 設計 \(の Web シングル\-署名\-では、ユーザーは1回だけ認証して、セキュリティで保護された複数のアプリケーションやサービスにアクセスする必要があります。\- この設計では、すべてのユーザーが外部ユーザーであり、パートナー組織が存在しないため、フェデレーションの信頼はありません。 通常、次の図に示すように、1つまたは複数の AD FS セキュリティで保護されたサービスまたはアプリケーションに対して、個々のコンシューマーまたは顧客のアクセスをインターネット経由で提供する場合は、この設計をデプロイします。  
   
 ![web sso の設計](media/adfs2_WebSSODesign.gif)  
   
-Web SSO 設計では、通常、境界ネットワークで AD FS @ no__t で保護されたアプリケーションまたはサービスをホストする組織は、境界ネットワーク内に顧客アカウントを個別に格納することができます。これにより、顧客アカウントの分離が容易になります。従業員アカウント。  
+Web SSO 設計では、通常、セキュリティで保護されたアプリケーションや境界ネットワーク内のサービス\-AD FS をホストする組織は、境界ネットワーク内に顧客アカウントの個別のストアを保持できます。これにより、従業員アカウントから顧客アカウントを簡単に分離できます。  
   
-境界ネットワーク内の顧客のローカルアカウントは、Active Directory Domain Services \(AD DS @ no__t-1、SQL Server、またはカスタム属性ストアのいずれかを使用して管理できます。  
+境界ネットワーク内の顧客のローカルアカウントを管理するには、Active Directory Domain Services \(AD DS\)、SQL Server、またはカスタム属性ストアを使用します。  
   
 この設計は、 [Provide Your Active Directory Users Access to Your Claims-Aware Applications and Services](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)のデプロイ目標と同じです。  
   
-Web SSO 設計を計画してデプロイするために使用できる詳細なタスクの一覧については、「@no__t」チェックリストを参照してください。Web SSO デザイン @ no__t を実装します。  
+Web SSO 設計を計画してデプロイするために使用できる詳細なタスクの一覧については、「 [Checklist: Implementing a Web SSO Design](../../ad-fs/deployment/Checklist--Implementing-a-Web-SSO-Design.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

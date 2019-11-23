@@ -17,7 +17,7 @@ ms.locfileid: "71406897"
 ---
 # <a name="add-an-iframe-to-a-tool-extension"></a>ツール拡張機能に iFrame を追加する
 
->適用先:Windows Admin Center、Windows Admin Center Preview
+>適用対象: Windows Admin Center、Windows Admin Center Preview
 
 この記事では、Windows 管理センター CLI で作成した新しい空のツール拡張機能に iFrame を追加します。
 
@@ -33,9 +33,9 @@ ms.locfileid: "71406897"
 
 ここで、作成した新しい空のモジュールに iFrame を追加します。
 
-\ Src\ app @ no__t で、モジュールフォルダーを参照し、次の名前付け規則で見つかったファイル ```{!module-name}.component.html``` を開きます。
+-Src\ アプリ\, モジュールフォルダーを参照し、次の名前付け規則で見つかったファイル ```{!module-name}.component.html```を開きます。
 
-| 値 | 説明 | ファイル名の例 |
+| Value | 説明 | ファイル名の例 |
 | ----- | ----------- | ------- |
 | ```{!module-name}``` | モジュール名 (小文字、スペースをダッシュに置換) | ```manage-foo-works-portal.component.html``` |
     

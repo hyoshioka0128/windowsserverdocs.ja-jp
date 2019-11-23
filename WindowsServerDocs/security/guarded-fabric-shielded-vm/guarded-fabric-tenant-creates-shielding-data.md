@@ -17,7 +17,7 @@ ms.locfileid: "71940803"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>テナント用のシールドされた Vm-シールドされた VM を定義するシールドデータの作成
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 シールド データ ファイル (別名プロビジョニング データ ファイルまたは PDK ファイル) は、管理者のパスワード、RDP やその他の ID 関連証明書、ドメイン参加の資格情報など、重要な VM 構成情報を保護するために、テナントまたは VM 所有者が作成する暗号化されたファイルです。 このトピックでは、シールドデータファイルを作成する方法について説明します。 ファイルを作成する前に、ホスティングサービスプロバイダーからテンプレートディスクを取得するか、「[テナント用のシールドされた vm-テンプレートディスクを作成する (省略可能)](guarded-fabric-tenant-creates-template-disk.md)」で説明されているように、テンプレートディスクを作成する必要があります。
 
@@ -100,7 +100,7 @@ VMM の署名済みテンプレートディスクは一般化されているた�
     | @Prefix-2-1@        | 10.0.20.0/24         |
     | @NextHop-2-1@       | 10.0.20.1            |
 
-代替文字列を使用する場合は、VM のプロビジョニング処理中に文字列が設定されるようにすることが重要です。 展開時に @ProductKey @ のような文字列が指定されていない場合は、無人セットアップファイルの 1ProductKey @ no__t ノードを空白の @no__t ままにすると、特殊化プロセスは失敗し、VM に接続できなくなります。
+代替文字列を使用する場合は、VM のプロビジョニング処理中に文字列が設定されるようにすることが重要です。 展開時に @ProductKey@ のような文字列が指定されていない場合は、無人セットアップファイルの &lt;ProductKey&gt; ノードを空白のままにすると、特殊化プロセスは失敗し、VM に接続できなくなります。
 
 また、テーブルの末尾に向かうネットワーク関連の代替文字列は、VMM 静的 IP アドレスプールを利用している場合にのみ使用されることに注意してください。 これらの置換文字列が必要であるかどうかは、ホスティングサービスプロバイダーから通知されます。 VMM テンプレートでの静的 IP アドレスの詳細については、VMM のドキュメントの次の情報を参照してください。
 
@@ -161,13 +161,13 @@ VMM の署名済みテンプレートディスクは一般化されているた�
 
 シールドデータファイルウィザードを実行して、シールドデータ (PDK) ファイルを作成します。 ここでは、RDP 証明書、無人セットアップファイル、ボリューム署名カタログ、所有者ガーディアン、および前の手順で取得したダウンロードしたガーディアンメタデータを追加します。
 
-1. サーバーマネージャーまたは次の Windows PowerShell コマンドを使用して、 **&gt; @no__t シールド**された VM ツールをコンピューターにインストールリモートサーバー管理ツールます。
+1. サーバーマネージャーまたは次の Windows PowerShell コマンドを使用して、シールドされた**VM ツール &gt; &gt; 機能管理ツール**をコンピューターにインストールリモートサーバー管理ツールます。
 
     ```powershell
     Install-WindowsFeature RSAT-Shielded-VM-Tools
     ```
 
-2. [スタート] メニューの [管理ツール] セクションからシールドデータファイルウィザードを開くか、次の実行可能ファイル**C: \\Windows @ no__t-2System32\\ShieldingDataFileWizard.exe**を実行します。
+2. [スタート] メニューの [管理ツール] セクションからシールドデータファイルウィザードを開くか、次の実行可能ファイル**C:\\Windows\\System32\\ShieldingDataFileWizard**を実行します。
 
 3. 最初のページで、2番目の [ファイルの選択] ボックスを使用して、シールドデータファイルの場所とファイル名を選択します。 通常、シールドデータファイルには、そのシールドデータを使用して作成された任意の Vm を所有するエンティティ (HR、IT、Finance など) と、実行しているワークロードロール (たとえば、ファイルサーバー、web サーバー、または無人セットアップファイルによって構成されている他のすべてのもの) を所有するエンティティを指定します オプションボタンは、シールドされた**テンプレートのシールドデータ**に設定したままにしておきます。
 
@@ -200,7 +200,7 @@ VMM の署名済みテンプレートディスクは一般化されているた�
 
 6. **[特殊化値]** ページで、 **[参照]** をクリックして、vm を特殊化するために使用する unattend.xml ファイルを選択します。
 
-    下部にある **[追加]** ボタンを使用して、特殊化プロセス中に必要な追加ファイルを PDK に追加します。 たとえば、無人セットアップファイルが VM に RDP 証明書をインストールする場合 (「 [ShieldingDataAnswerFile 関数を使用して応答ファイルを生成](guarded-fabric-sample-unattend-xml-file.md)する」の説明を参照)、rdp 証明書 PFX ファイルと RDPCertificateConfig を追加する必要があります。ここにスクリプトを作成します。 ここで指定するファイルは、作成される VM の C: \\temp @ no__t-1 に自動的にコピーされます。 無人セットアップファイルでは、パスによってファイルを参照するときに、ファイルがそのフォルダー内にあることを想定する必要があります。
+    下部にある **[追加]** ボタンを使用して、特殊化プロセス中に必要な追加ファイルを PDK に追加します。 たとえば、無人セットアップファイルが VM に RDP 証明書をインストールする場合 (「 [ShieldingDataAnswerFile 関数を使用して応答ファイルを生成](guarded-fabric-sample-unattend-xml-file.md)する」の説明を参照)、rdp 証明書 PFX ファイルと RDPCertificateConfig スクリプトをここに追加する必要があります。 ここで指定するファイルは、作成された VM 上の C:\\temp\\ に自動的にコピーされます。 無人セットアップファイルでは、パスによってファイルを参照するときに、ファイルがそのフォルダー内にあることを想定する必要があります。
 
 7. 次のページで選択内容を確認し、 **[生成]** をクリックします。
 
@@ -230,11 +230,11 @@ Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
 ```
 
 > [!TIP]
-> 自己署名証明書を使用した場合、または HGS に登録されている証明書の有効期限が切れている場合は、HgsGuardian コマンドを使用して、セキュリティチェックを回避するために、`-AllowUntrustedRoot` および/または `-AllowExpired` フラグを使用する必要がある場合があります。
+> 自己署名証明書を使用した場合、または HGS に登録されている証明書の有効期限が切れている場合は、HgsGuardian コマンドを使用して、セキュリティチェックをバイパスするために `-AllowUntrustedRoot` や `-AllowExpired` フラグを使用することが必要になる場合があります。
 
 また、このシールドデータファイルと共に使用するテンプレートディスクごとに[ボリューム署名カタログを取得](#get-the-volume-signature-catalog-file)する必要があります。また、オペレーティングシステムが特殊化タスクを自動的に完了できるように、[シールドデータ応答ファイル](#create-an-answer-file)を取得する必要もあります。
 最後に、VM を完全にシールドするか、vTPM のみを有効にするかを決定します。
-完全にシールドされた VM の場合は `-Policy Shielded`、基本的なコンソール接続と PowerShell Direct を許可する vTPM が有効になっている VM の場合は `-Policy EncryptionSupported` を使用します。
+基本的なコンソール接続と PowerShell Direct を許可する vTPM が有効な VM の完全にシールドされた VM または `-Policy EncryptionSupported` には、`-Policy Shielded` を使用します。
 
 すべての準備ができたら、次のコマンドを実行してシールドデータファイルを作成します。
 
@@ -244,14 +244,14 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 ```
 
 > [!TIP]
-> カスタム RDP 証明書、SSH キー、またはシールドデータファイルに含める必要があるその他のファイルを使用している場合は、`-OtherFile` パラメーターを使用して追加します。 ファイルパスのコンマ区切りリストを指定できます (`-OtherFile "C:\source\myRDPCert.pfx", "C:\source\RDPCertificateConfig.ps1"` など)。
+> カスタム RDP 証明書、SSH キー、またはシールドデータファイルに含める必要があるその他のファイルを使用している場合は、`-OtherFile` パラメーターを使用して追加します。 次のように、ファイルパスのコンマ区切りリストを指定でき `-OtherFile "C:\source\myRDPCert.pfx", "C:\source\RDPCertificateConfig.ps1"`
 
 上記のコマンドでは、"Owner" という名前のガーディアン (HgsGuardian から取得) で VM のセキュリティ構成を変更できますが、"米国東部データセンター" では VM を実行できますが、その設定は変更できません。
-複数のガーディアンがある場合は、ガーディアンの名前をコンマで区切って `'EAST-US Datacenter', 'EMEA Datacenter'` のようにします。
+複数のガーディアンがある場合は、`'EAST-US Datacenter', 'EMEA Datacenter'`のように、ガーディアンの名前をコンマで区切ります。
 ボリューム ID 修飾子は、テンプレートディスクまたは将来のバージョン (GreaterThanOrEquals) の正確なバージョン (Equals) のみを信頼するかどうかを指定します。
 ディスク名と署名証明書は、展開時に考慮されるバージョン比較と完全に一致している必要があります。
 ボリューム ID 修飾子のコンマ区切りリストを `-VolumeIDQualifier` パラメーターに指定することで、複数のテンプレートディスクを信頼できます。
-最後に、VM に応答ファイルを添付する必要がある他のファイルがある場合は、`-OtherFile` パラメーターを使用し、コンマ区切りのファイルパスの一覧を指定します。
+最後に、VM に応答ファイルを添付する必要がある他のファイルがある場合は、`-OtherFile` パラメーターを使用して、コンマ区切りのファイルパスの一覧を指定します。
 
 シールドデータファイルを構成するためのその他の方法については、 [ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps)と[New-VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps)のコマンドレットのドキュメントを参照してください。
 

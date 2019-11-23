@@ -20,7 +20,7 @@ ms.locfileid: "71364082"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>HYPER-V でジェネレーション 1 または 2 の仮想マシンを作成するか。
 
->適用先:Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
+>適用対象: Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 > [!NOTE]
 > Windows 仮想マシン (VM) をオンプレミスから Microsoft Azure にアップロードする予定がある場合、第1世代と第2世代の Vm を VHD ファイル形式でアップロードし、容量固定のディスクを使用できます。 Azure でサポートされている第2世代の機能の詳細については、「 [azure での第2世代の vm](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) 」を参照してください。 Windows VHD または VHDX のアップロードの詳細については、「 [Azure にアップロードする WINDOWS vhd または vhdx を準備](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image)する」を参照してください。
@@ -81,7 +81,7 @@ ms.locfileid: "71364082"
 
 ### <a name="centos-and-red-hat-enterprise-linux-guest-operating-system-support"></a>CentOS、Red Hat Enterprise Linux ゲスト オペレーティング システムのサポート
 
-次の表に、第1世代と第2世代の仮想マシンのゲストオペレーティングシステムとして使用できる Red Hat Enterprise Linux \(RHEL @ no__t-1 および CentOS のバージョンを示します。
+次の表に、第1世代と第2世代の仮想マシンのゲストオペレーティングシステムとして使用できる、RHEL\) および CentOS \(Red Hat Enterprise Linux のバージョンを示します。
 
 |オペレーティング システムのバージョン|第 1 世代|第 2 世代|  
 |-----------------------------|----------------|----------------|  
@@ -189,16 +189,16 @@ ms.locfileid: "71364082"
 |IDE CD-ROM|仮想 SCSI CD-ROM|SCSI コントローラーあたり最大 64 台の SCSI DVD デバイスをサポート|  
 |従来の BIOS|UEFI ファームウェア|セキュア ブート|  
 |レガシ ネットワーク アダプター|合成ネットワーク アダプター|IPv4 および IPv6 でのネットワーク ブート|  
-|フロッピー コントローラーおよび DMA コントローラー|フロッピー コントローラーのサポートはなし|なし|  
+|フロッピー コントローラーおよび DMA コントローラー|フロッピー コントローラーのサポートはなし|該当なし|  
 |COM ポートに対する Universal Asynchronous Receiver/Transmitter (UART)|デバッグ用のオプション UART|より高速で高信頼性|  
 |i8042 キーボード コントローラー|ソフトウェア ベースの入力|エミュレーションがないため、使用するリソースが減ります。 また、ゲスト オペレーティング システムから攻撃を受ける機会が減少します。|  
 |PS/2 キーボード|ソフトウェア ベースのキーボード|エミュレーションがないため、使用するリソースが減ります。 また、ゲスト オペレーティング システムから攻撃を受ける機会が減少します。|  
 |PS/2 マウス|ソフトウェア ベースのマウス|エミュレーションがないため、使用するリソースが減ります。 また、ゲスト オペレーティング システムから攻撃を受ける機会が減少します。|  
 |S3 ビデオ|ソフトウェア ベースのビデオ|エミュレーションがないため、使用するリソースが減ります。 また、ゲスト オペレーティング システムから攻撃を受ける機会が減少します。|  
-|PCI バス|必要ありません|なし|  
-|Programmable Interrupt Controller (PIC)|必要ありません|なし|  
-|Programmable Interval Timer (PIT)|必要ありません|なし|  
-|スーパー I/O デバイス|必要ありません|なし|  
+|PCI バス|必要ありません|該当なし|  
+|Programmable Interrupt Controller (PIC)|必要ありません|該当なし|  
+|Programmable Interval Timer (PIT)|必要ありません|該当なし|  
+|スーパー I/O デバイス|必要ありません|該当なし|  
 
 ## <a name="more-about-generation-2-virtual-machines"></a>第 2 世代仮想マシンの詳細について
 
@@ -251,7 +251,7 @@ COM ポートを追加するには:
 > [!NOTE]  
 > 構成済みの COM ポートは、Hyper-v マネージャーの仮想マシンの設定に一覧表示されません。
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
 - [Hyper-v 上の Linux および FreeBSD Virtual Machines](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 - [VMConnect を使用して Hyper-v 仮想マシン上のローカルリソースを使用する](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)

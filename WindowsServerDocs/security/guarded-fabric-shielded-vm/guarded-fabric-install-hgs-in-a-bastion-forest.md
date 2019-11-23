@@ -16,7 +16,7 @@ ms.locfileid: "71403597"
 ---
 # <a name="install-hgs-in-an-existing-bastion-forest"></a>既存の要塞フォレストに HGS をインストールする 
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 
 ## <a name="join-the-hgs-server-to-the-existing-domain"></a>HGS サーバーを既存のドメインに参加させる
@@ -100,7 +100,7 @@ CNO はクラスターの名前を表し、主にフェールオーバークラ�
 VCO は、クラスター上に存在する HGS サービスを表し、DNS サーバーに登録されている名前になります。
 
 > [!IMPORTANT]
-> @No__t-0 を実行するユーザーには、Active Directory の CNO オブジェクトと VCO オブジェクトを**完全に制御**する必要があります。
+> `Initialize-HgsServer` を実行するユーザーには、Active Directory の CNO オブジェクトと VCO オブジェクトを**完全に制御**する必要があります。
 
 CNO と VCO を簡単に事前設定するには、Active Directory 管理者に次の PowerShell コマンドを実行します。
 
@@ -134,19 +134,19 @@ HGS を高度にロックされた環境に展開する場合、特定のグル�
 
 **必須の値:** 値がすべてのローカルアカウントのネットワークログオンをブロックしていないことを確認します。 ただし、ローカルの管理者アカウントは安全にブロックできます。
 
-**理由**フェールオーバークラスタリングでは、CLIUSR という管理者以外のローカルアカウントを利用してクラスターノードを管理します。 このユーザーのネットワークログオンをブロックすると、クラスターが正しく動作しなくなります。
+**理由:** フェールオーバークラスタリングでは、CLIUSR という管理者以外のローカルアカウントを利用してクラスターノードを管理します。 このユーザーのネットワークログオンをブロックすると、クラスターが正しく動作しなくなります。
 
 ### <a name="kerberos-encryption"></a>Kerberos 暗号化
 
-**ポリシーのパス:** コンピューターの構成\Windows の設定\セキュリティの設定\ローカル ポリシー\セキュリティ オプション
+**ポリシーのパス:** コンピューターの設定 \ 権利セキュリティオプション
 
-**ポリシー名:** ネットワークセキュリティ:Kerberos で許可される暗号化の種類を構成する
+**ポリシー名:** ネットワークセキュリティ: Kerberos で許可される暗号化の種類を構成する
 
-**アクション**:このポリシーが構成されている場合は、このポリシーでサポートされている暗号化の種類のみを使用するように、gMSA アカウントを[ADServiceAccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)で更新する必要があります。 たとえば、ポリシーで AES128 @ no__t-0HMAC @ no__t-1SHA1 および AES256 @ no__t-2HMAC @ no__t-3SHA1 のみが許可されている場合は、`Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256` を実行する必要があります。
+**アクション**: このポリシーが構成されている場合、このポリシーでサポートされている暗号化の種類のみを使用するように、gMSA アカウントを[adserviceaccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)に更新する必要があります。 たとえば、ポリシーで AES128\_HMAC\_SHA1 と AES256\_HMAC\_SHA1 のみを許可する場合、`Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256`を実行する必要があります。
 
 
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - TPM ベースの構成証明を設定する次の手順については、「[既存の要塞フォレストで tpm モードを使用して HGS クラスターを初期化](guarded-fabric-initialize-hgs-tpm-mode-bastion.md)する」を参照してください。
 - ホストキーの構成証明を設定する次の手順については、「[既存の要塞フォレストでキーモードを使用して HGS クラスターを初期化](guarded-fabric-initialize-hgs-key-mode-bastion.md)する」を参照してください。

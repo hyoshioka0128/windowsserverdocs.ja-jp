@@ -21,7 +21,7 @@ ms.locfileid: "70865201"
 ---
 # <a name="preconfiguring-a-router"></a>ルーターの事前構成
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 通常、新しくオペレーティング システムをインストールする場合、顧客の内部ネットワークをインターネットに接続するために、インターネット対応のルーターおよびファイアウォールが必要です。 あらかじめ構成されたサーバーに付加価値としてルーターを提供する場合、より良いユーザー エクスペリエンスを提供するため、追加の手順を実行してあらかじめルーターを構成できます。  
   
@@ -31,9 +31,9 @@ ms.locfileid: "70865201"
   
 |構成設定|詳細|  
 |---------------------------|-------------|  
-|DHCP|基準|  
+|DHCP|オン|  
 |ポート フォワーディング|以下のポートをサーバーのアドレスに転送する必要があります。<br /><br /> -80 (ホストされる構成の場合、443のみを使用します)<br />-443|  
-|UPnP サポート|UPnP サポートを有効にして、お客様のための最も簡単なルーター構成と、インストール時の最良のカスタマーエクスペリエンスを提供する必要があります。<br /><br /> **警告:**  UPnP アーキテクチャを有効のままにしておくと、セキュリティ上のリスクを引き起こすことがあります。|  
+|UPnP サポート|UPnP サポートを有効にして、お客様のための最も簡単なルーター構成と、インストール時の最良のカスタマーエクスペリエンスを提供する必要があります。<br /><br /> **警告:** UPnP アーキテクチャが有効のままになっていると、セキュリティ上のリスクが生じる可能性があります。|  
   
  基本的なルーターの事前構成設定に加えて、ルーターを管理するためのより統合されたユーザー エクスペリエンスを提供するために、次のタスクを完了できます。  
   
@@ -48,9 +48,9 @@ ms.locfileid: "70865201"
 > [!NOTE]
 >  ワイヤレス接続の構成の詳細については、「[ワイヤレス ネットワークのサポートの構成](Configure-Support-for-a-Wireless-Network.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
- [Windows Server Essentials ADK でのはじめに](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [イメージの作成とカスタマイズ](Creating-and-Customizing-the-Image.md)   
+## <a name="see-also"></a>参照  
+ [Windows Server ESSENTIALS ADK でのはじめに](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [イメージ  の作成とカスタマイズ](Creating-and-Customizing-the-Image.md)  
  [追加のカスタマイズ](Additional-Customizations.md)   
- [展開のためのイメージの準備](Preparing-the-Image-for-Deployment.md)   
+ [展開  のイメージの準備](Preparing-the-Image-for-Deployment.md)  
  [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)

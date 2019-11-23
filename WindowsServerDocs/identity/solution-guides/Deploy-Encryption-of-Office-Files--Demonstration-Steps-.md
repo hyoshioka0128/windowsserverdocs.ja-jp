@@ -18,7 +18,7 @@ ms.locfileid: "71407101"
 ---
 # <a name="deploy-encryption-of-office-files-demonstration-steps"></a>Deploy Encryption of Office Files (Demonstration Steps)
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Contoso の金融部門には、ドキュメントを格納する多数のファイルサーバーがあります。 これらのドキュメントは、一般的なドキュメントである場合も、ビジネスに大きな影響を与えるもの (HBI) である場合もあります。 たとえば、機密情報が含まれているドキュメントは、ビジネスに大きな影響を与えるものと Contoso によって見なされます。 Contoso では、すべてのドキュメントに最小限の保護を施し、HBI ドキュメントが適切なユーザーに制限されるようにしたいと考えています。 これを実現するために、Contoso では、ファイル分類インフラストラクチャ (FCI) と Windows Server 2012 で利用可能な AD RMS を使用して調査しています。 Contoso では、FCI を使用することで、コンテンツに基づいてファイル サーバー上のすべてのドキュメントを分類してから、AD RMS を使用して適切な権利ポリシーを適用する予定です。  
   
@@ -33,11 +33,11 @@ Contoso の金融部門には、ドキュメントを格納する多数のファ
 |[AD RMS の保護の確認](Deploy-Encryption-of-Office-Files--Demonstration-Steps-.md#BKMK_5)|ドキュメントが AD RMS によって保護されていることを確認します。|  
 |||  
   
-## <a name="BKMK_1.1"></a>手順 1:リソース プロパティを有効にする  
+## <a name="BKMK_1.1"></a>手順 1: リソースのプロパティを有効にする  
   
 #### <a name="to-enable-resource-properties"></a>リソース プロパティを有効にするには  
   
-1. Hyper-V マネージャーでサーバー ID_AD_DC1 に接続します。 Contoso\Administrator を使用してサーバーにサインインし、パスワード<strong>pass@word1</strong>を入力します。  
+1. Hyper-V マネージャーでサーバー ID_AD_DC1 に接続します。 Contoso\Administrator とパスワード<strong>pass@word1</strong>を使用して、サーバーにサインインします。  
   
 2. Active Directory 管理センターを開き、 **[ツリー ビュー]** をクリックします。  
   
@@ -51,7 +51,7 @@ Contoso の金融部門には、ドキュメントを格納する多数のファ
   
 7. **[追加]** をクリックしてから、下にスクロールし、 **[Impact]** をクリックしてリストに追加します。 **[Personally Identifiable Information]** についても同様にします。 **[OK]** を 2 回クリックして完了します。  
   
-@no__t 0solution ガイド](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+![ソリューションガイド](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -60,14 +60,14 @@ Set-ADResourceProperty -Enabled:$true -Identity:"CN=Impact_MS,CN=Resource Proper
 Set-ADResourceProperty -Enabled:$true -Identity:"CN=PII_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com" 
 ```  
   
-## <a name="BKMK_2"></a>手順 2:分類規則を作成する  
+## <a name="BKMK_2"></a>手順 2: 分類規則を作成する  
 この手順では、「 **High Impact** 」分類規則を作成する方法について説明します。 このルールでは、ドキュメントの内容を検索し、文字列 "Contoso Confidential" が見つかった場合は、このドキュメントをビジネスに大きな影響を与えるものとして分類します。 この分類は、以前に割り当てられた LBI (ビジネスへの影響が小さいもの) の分類を上書きします。  
   
 「**High PII**」規則も作成します。 この規則では、ドキュメントのコンテンツを検索し、社会保障番号が見つかった場合に、ドキュメントを高 PII と分類します。  
   
 #### <a name="to-create-the-high-impact-classification-rule"></a>「High Impact」分類規則を作成するには  
   
-1. Hyper-V マネージャーでサーバー ID_AD_FILE1 に接続します。 Contoso\Administrator を使用してサーバーにサインインし、パスワード<strong>pass@word1</strong>を入力します。  
+1. Hyper-V マネージャーでサーバー ID_AD_FILE1 に接続します。 Contoso\Administrator とパスワード<strong>pass@word1</strong>を使用して、サーバーにサインインします。  
   
 2. Active Directory からグローバル リソース プロパティーを更新する必要があります。 Windows PowerShell を開きます。「 `Update-FSRMClassificationPropertyDefinition`」と入力し、Enter キーを押します。 Windows PowerShell を閉じます。  
   
@@ -85,17 +85,17 @@ Set-ADResourceProperty -Enabled:$true -Identity:"CN=PII_MS,CN=Resource Propertie
   
 9. **[スコープ]** タブで **[フォルダー管理プロパティの設定]** をクリックし、 **[フォルダーの使用法]** を選択し、 **[追加]** をクリックし、 **[参照]** をクリックし、パスとして D:\Finance Documents を参照し、 **[OK]** をクリックし、 **[グループ ファイル]** というプロパティ値を選択し、 **[閉じる]** をクリックします。 管理プロパティを設定したら、 **[規則のスコープ]** タブで **[グループ ファイル]** を選択します。  
   
-10. **[分類]** タブをクリックします。ファイルにプロパティを割り当てる方法を選択してください でドロップダウン リストから **[コンテンツ分類子]** を選択します。  
+10. **[分類]** タブをクリックします。 **[プロパティをファイルに割り当てる方法を選択]** してください で、ドロップダウンリストから **[コンテンツ分類子]** を選択します。  
   
 11. **[ファイルに割り当てるプロパティを選択してください]** でドロップダウン リストから **[Impact]** を選択します。  
   
 12. **[値の指定]** でドロップダウン リストから **[High]** を選択します。  
   
-13. **[パラメーター]** の **[構成]** をクリックします。  **[分類パラメーター]** ダイアログ ボックスの **[式の種類]** リストから **[文字列]** を選択します。 **[式]** ボックスに次の文字列を入力します。「Contoso Confidential」。次に、 **[OK]** をクリックします。  
+13. **[パラメーター]** の **[構成]** をクリックします。  **[分類パラメーター]** ダイアログ ボックスの **[式の種類]** リストから **[文字列]** を選択します。 **[式]** ボックスに次の文字列を入力します。「 **Contoso Confidential**」。次に、 **[OK]** をクリックします。  
   
-14. **[評価の種類]** タブをクリックします。既存のプロパティ値を再評価する をクリックし、既存値の **[上書き]** をクリックし、 **[OK]** をクリックして完了します。  
+14. **[評価の種類]** タブをクリックします。 **[既存のプロパティ値を再評価]** する をクリックし、既存の値を **[上書き]** する をクリックして、 **[OK]** をクリックして完了します。  
   
-@no__t 0solution ガイド](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+![ソリューションガイド](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -109,9 +109,9 @@ New-FSRMClassificationRule -Name "High Business Impact" -Property "Impact_MS" -D
   
 #### <a name="to-create-the-high-pii-classification-rule"></a>「High PII」分類規則を作成するには  
   
-1. Hyper-V マネージャーでサーバー ID_AD_FILE1 に接続します。 Contoso\Administrator を使用してサーバーにサインインし、パスワード<strong>pass@word1</strong>を入力します。  
+1. Hyper-V マネージャーでサーバー ID_AD_FILE1 に接続します。 Contoso\Administrator とパスワード<strong>pass@word1</strong>を使用して、サーバーにサインインします。  
   
-2. デスクトップから **[Regular Expressions]** という名前のフォルダーを開き、**RegEx-SSN** という名前のテキスト ドキュメントを開きます。 次の正規表現文字列を強調表示してコピーします: **^ (?!000) ([0-7] \d @ no__t | 7 ([0-7] \d | 7 [012])) ([-]?)(?!00)、(?!)0000) \d @ no__t $** 。 この文字列は、この手順の後半で使用するため、クリップボードに保持しておいてください。  
+2. デスクトップから **[Regular Expressions]** という名前のフォルダーを開き、**RegEx-SSN** という名前のテキスト ドキュメントを開きます。 次の正規表現文字列を強調表示してコピーします: **^ (?!000) ([0-7] \d{2}| 7 ([0-7] \d | 7 [012])) ([-]?)(?!00)、(?!)0000) \d{4}$** 。 この文字列は、この手順の後半で使用するため、クリップボードに保持しておいてください。  
   
 3. ファイル サーバー リソース マネージャーを開きます。 ファイル サーバー リソース マネージャーを開くには、 **[スタート]** をクリックし、「 **ファイル サーバー リソース マネージャー**」と入力してから、 **[ファイル サーバー リソース マネージャー]** をクリックします。  
   
@@ -123,21 +123,21 @@ New-FSRMClassificationRule -Name "High Business Impact" -Property "Impact_MS" -D
   
 7. **[スコープ]** タブで **[グループ ファイル]** チェック ボックスを選択します。  
   
-8. **[分類]** タブをクリックします。ファイルにプロパティを割り当てる方法を選択してください でドロップダウン リストから **[コンテンツ分類子]** を選択します。  
+8. **[分類]** タブをクリックします。 **[プロパティをファイルに割り当てる方法を選択]** してください で、ドロップダウンリストから **[コンテンツ分類子]** を選択します。  
   
 9. **[ファイルに割り当てるプロパティを選択してください]** でドロップダウン リストから **[Personally Identifiable Information]** を選択します。  
   
 10. **[値の指定]** でドロップダウン リストから **[High]** を選択します。  
   
 11. **[パラメーター]** の **[構成]** をクリックします。   
-    分類パラメーター ウィンドウの  式の種類  リストから  正規表現。 **[式]** ボックスに、クリップボードのテキストを貼り付けます。 **^ (?!000) ([0-7] \d @ no__t | 7 ([0-7] \d | 7 [012])) ([-]?)(?!00)、(?!)0000) \d @ no__t $** を入力し、[ **OK]** をクリックします。  
+    **分類パラメーター** ウィンドウの **式の種類** リストから  **正規表現**。 **[式]** ボックスに、クリップボードのテキストを貼り付けます。 **^ (?!000) ([0-7] \d{2}| 7 ([0-7] \d | 7 [012])) ([-]?)(?!00)、(?!)0000) \d{4}$** 」と入力し、[ **OK]** をクリックします。  
   
     > [!NOTE]  
     > この式により、無効な社会保障番号が許可されます。 これにより、デモで架空の社会保障番号を使用できます。  
   
-12. **[評価の種類]** タブをクリックします。既存のプロパティ値を再評価する を選択し、既存値の **[上書き]** を行い、 **[OK]** をクリックして完了します。  
+12. **[評価の種類]** タブをクリックします。 **[既存のプロパティ値を再評価]** する を選択し、既存の値を**上書き**して、 **[OK]** をクリックして完了します。  
   
-@no__t 0solution ガイド](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+![ソリューションガイド](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -151,12 +151,12 @@ New-FSRMClassificationRule -Name "High PII" -Description "Determines if the docu
   
 -   High PII  
   
-## <a name="BKMK_3"></a>手順 3:ファイル管理タスクを使用して、ドキュメントを自動的に保護する AD RMS  
+## <a name="BKMK_3"></a>手順 3: ファイル管理タスクを使用して、AD RMS でドキュメントを自動的に保護する  
 コンテンツに基づいてドキュメントを自動的に分類するルールを作成したので、次の手順では、AD RMS を使用して、分類に基づいて特定のドキュメントを自動的に保護するファイル管理タスクを作成します。 この手順では、高 PII のすべてのドキュメントを自動的に保護するファイル管理タスクを作成します。 PII が含まれたドキュメントにアクセスできるのは、FinanceAdmin グループのメンバーのみにします。  
   
 #### <a name="to-protect-documents-with-ad-rms"></a>AD RMS を使用してドキュメントを保護するには  
   
-1. Hyper-V マネージャーでサーバー ID_AD_FILE1 に接続します。 Contoso\Administrator を使用してサーバーにサインインし、パスワード<strong>pass@word1</strong>を入力します。  
+1. Hyper-V マネージャーでサーバー ID_AD_FILE1 に接続します。 Contoso\Administrator とパスワード<strong>pass@word1</strong>を使用して、サーバーにサインインします。  
   
 2. ファイル サーバー リソース マネージャーを開きます。 ファイル サーバー リソース マネージャーを開くには、 **[スタート]** をクリックし、「 **ファイル サーバー リソース マネージャー**」と入力してから、 **[ファイル サーバー リソース マネージャー]** をクリックします。  
   
@@ -166,15 +166,15 @@ New-FSRMClassificationRule -Name "High PII" -Description "Determines if the docu
   
 5. **[スコープ]** タブで **[グループ ファイル]** チェック ボックスを選択します。  
   
-6. **操作** タブをクリックします。種類 で **RMS 暗号化** を選択します。 **[参照]** をクリックしてテンプレートを選択してから、 **[Contoso Finance Admin のみ]** テンプレートを選択します。  
+6. **[操作]** タブをクリックします。 **[種類]** で **[RMS 暗号化]** を選択します。 **[参照]** をクリックしてテンプレートを選択してから、 **[Contoso Finance Admin のみ]** テンプレートを選択します。  
   
 7. **[条件]** タブをクリックし、 **[追加]** をクリックします。 **[プロパティ]** で **[Personally Identifiable Information]** を選択します。 **[演算子]** で **[等しい]** を選択します。 **[値]** で **[High]** を選択します。 **[OK]** をクリックします。  
   
-8. **[スケジュール]** タブをクリックします。スケジュール  セクションで **[毎週]** をクリックしてから、 **[日曜日]** を選択します。 1 週間に 1 回タスクを実行することで、サービス障害などの中断イベントのために処理されなかった可能性があるドキュメントを捕捉できます。  
+8. **[スケジュール]** タブをクリックします。 **[スケジュール]** セクションで、 **[毎週]** をクリックし、 **[日曜日]** を選択します。 1 週間に 1 回タスクを実行することで、サービス障害などの中断イベントのために処理されなかった可能性があるドキュメントを捕捉できます。  
   
 9. **[連続動作]** セクションで **[タスクを連続実行する: 新規ファイル]** を選択してから、 **[OK]** をクリックします。 これで、「High PII」という名前のファイル管理タスクが作成されました。  
   
-@no__t 0solution ガイド](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+![ソリューションガイド](media/Deploy-Encryption-of-Office-Files--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -186,12 +186,12 @@ $schedule = New-FsrmScheduledTask -Time $date -Weekly @('Sunday')
 $fmj1=New-FSRMFileManagementJob -Name "High PII" -Description "Automatic RMS protection for high PII documents" -Namespace @('D:\Finance Documents') -Action $fmjRmsEncryption -Schedule $schedule -Continuous -Condition @($fmjCondition1)  
 ```  
   
-## <a name="BKMK_4"></a>手順 4:結果を表示する  
+## <a name="BKMK_4"></a>手順 4: 結果を表示する  
 次に、新しい自動分類と AD RMS 保護規則の動作について説明します。 この手順では、ドキュメントの分類を調べ、ドキュメントのコンテンツの変更に伴いどのように変更されるのかを監視します。  
   
 #### <a name="to-view-the-results"></a>結果を表示するには  
   
-1. Hyper-V マネージャーでサーバー ID_AD_FILE1 に接続します。 Contoso\Administrator を使用してサーバーにサインインし、パスワード<strong>pass@word1</strong>を入力します。  
+1. Hyper-V マネージャーでサーバー ID_AD_FILE1 に接続します。 Contoso\Administrator とパスワード<strong>pass@word1</strong>を使用して、サーバーにサインインします。  
   
 2. エクスプローラーで D:\Finance Documents にナビゲートします。  
   
@@ -205,7 +205,7 @@ $fmj1=New-FSRMFileManagementJob -Name "High PII" -Description "Automatic RMS pro
   
 7. デスクトップから **[Finance Documents]** 共有フォルダーを開きます。  
   
-8. **[Finance Memo]** ドキュメントを開きます。 ドキュメントの下の方に「**Confidential**」という語があります。 これを次のように変更します。**Contoso Confidential** ドキュメントを保存して閉じます。  
+8. **[Finance Memo]** ドキュメントを開きます。 ドキュメントの下の方に「**Confidential**」という語があります。 これを次のように変更します。 **Contoso Confidential** ドキュメントを保存して閉じます。  
   
 9. **[Request for Approval to Hire]** ドキュメントを開きます。 **[Social Security#:]** セクションに次の文字列を入力します。777-77-7777。 ドキュメントを保存して閉じます。  
   
@@ -214,13 +214,13 @@ $fmj1=New-FSRMFileManagementJob -Name "High PII" -Description "Automatic RMS pro
   
 10. ID_AD_FILE1 に切り替えて戻ります。 エクスプローラーで D:\Finance Documents にナビゲートします。  
   
-11. Finance Memo ドキュメントを右クリックし、 **[プロパティ]** をクリックします。 **[分類]** タブをクリックします。Impact  プロパティが **[High]** に設定されていることに注目してください。 **[キャンセル]** をクリックします。  
+11. Finance Memo ドキュメントを右クリックし、 **[プロパティ]** をクリックします。 **[分類]** タブをクリックします。 **Impact**プロパティが**High**に設定されていることに注意してください。 **[キャンセル]** をクリックします。  
   
 12. Request for Approval to Hire ドキュメントを右クリックし、 **[プロパティ]** をクリックします。  
   
-13. . **[分類]** タブをクリックします。Personally Identifiable Information プロパティが **[High]** に設定されていることに注目してください。 **[キャンセル]** をクリックします。  
+13. . **[分類]** タブをクリックします。 "**個人を特定できる情報**" プロパティが **[高]** に設定されていることを確認してください。 **[キャンセル]** をクリックします。  
   
-## <a name="BKMK_5"></a>手順 5:AD RMS による保護の検証  
+## <a name="BKMK_5"></a>手順 5: AD RMS で保護を確認する  
   
 #### <a name="to-verify-that-the-document-is-protected"></a>ドキュメントが保護されていることを確認するには  
   

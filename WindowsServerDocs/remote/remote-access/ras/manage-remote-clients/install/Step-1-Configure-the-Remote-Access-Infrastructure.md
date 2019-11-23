@@ -21,11 +21,11 @@ ms.locfileid: "71367324"
 ---
 # <a name="step-1-configure-the-remote-access-infrastructure"></a>手順 1 は、リモート アクセス インフラストラクチャを構成します。
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-**注:** Windows Server 2012 では、DirectAccess およびルーティングとリモート アクセス サービス (RRAS) は単一のリモート アクセスの役割に統合されています。  
+**注:** Windows Server 2012 が DirectAccess およびルーティングとリモート アクセス サービス (RRAS) を 1 つのリモート アクセス役割に結合します。  
   
-このトピックでは、IPv4 と IPv6 の混在環境で単一のリモートアクセスサーバーを使用して、高度なリモートアクセスの展開に必要なインフラストラクチャを構成する方法について説明します。 展開の手順を開始する前に、「[Step 1:」で説明されている計画の手順を完了していることを確認します。リモートアクセスインフラストラクチャ @ no__t-0 を計画します。  
+このトピックでは、IPv4 と IPv6 の混在環境で単一のリモートアクセスサーバーを使用して、高度なリモートアクセスの展開に必要なインフラストラクチャを構成する方法について説明します。 展開の手順を開始する前に、計画で説明した手順を完了していることを確認します [手順 1: リモート アクセス インフラストラクチャを計画](../plan/Step-1-Plan-the-Remote-Access-Infrastructure.md)します。  
   
 |タスク|説明|  
 |----|--------|  
@@ -118,7 +118,7 @@ ms.locfileid: "71367324"
 ### <a name="remote-access-traffic"></a>リモートアクセストラフィック  
 次の内部ネットワークファイアウォール例外をリモートアクセストラフィックに適用します。  
   
--   ISATAPプロトコル41受信と送信  
+-   ISATAP: プロトコル 41 の受信と送信  
   
 -   すべての IPv4 または IPv6 トラフィックに対する TCP/UDP  
   
@@ -198,7 +198,7 @@ IP-HTTPS 認証に使用する Web サイトの証明書が次の要件を満た
   
 ##### <a name="to-install-the-ip-https-certificate-from-an-internal-ca"></a>内部 CA から IP-HTTPS 証明書をインストールするには  
   
-1.  リモート アクセス サーバーで、 **[スタート]** 画面で「**mmc.exe**」と入力し、enter キーを押します。  
+1.  リモート アクセス サーバー上: で、 **開始** 画面で「**mmc.exe**, 、ENTER キーを押します。  
   
 2.  MMC コンソールで、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   
@@ -231,7 +231,7 @@ IP-HTTPS 認証に使用する Web サイトの証明書が次の要件を満た
   
 ### <a name="NLS_DNS"></a>ネットワークロケーションサーバーと web プローブを追加するには  
   
-1.  内部ネットワーク DNS サーバーで、**スタート**画面で「**dnsmgmt.msc**」と入力し、enter キーを押します。  
+1.  内部ネットワーク DNS サーバー上: で、 **開始** 画面で「**dnsmgmt.msc**, 、ENTER キーを押します。  
   
 2.  **[DNS マネージャー]** コンソールの左側のウィンドウで、ドメインの前方参照ゾーンを展開します。 ドメインを右クリックし、をクリックして **新しいホスト (A または AAAA)** します。  
   
@@ -243,7 +243,7 @@ IP-HTTPS 認証に使用する Web サイトの証明書が次の要件を満た
   
 6.  **[完了]** をクリックします。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -315,7 +315,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 10. 指示に従い、 **[今すぐ再起動する]** をクリックします。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -332,7 +332,7 @@ Restart-Computer
   
 グループ ポリシー オブジェクトを作成するを参照してください。 [を作成し、グループ ポリシー オブジェクトを編集](https://technet.microsoft.com/library/cc754740.aspx)します。  
   
-管理者は、組織単位 (OU) に、DirectAccess グループ ポリシー オブジェクトを手動でリンクできます。 次の点を考慮します。  
+管理者は、組織単位 (OU) に、DirectAccess グループ ポリシー オブジェクトを手動でリンクできます。 次に例を示します。  
   
 1.  DirectAccess を構成する前に、作成した Gpo をそれぞれの Ou にリンクします。  
   
@@ -370,7 +370,7 @@ Restart-Computer
   
 7.  **[ユーザー、連絡先、コンピューター、サービス アカウントまたはグループの選択]** ダイアログ ボックスで、DirectAccess 用に有効にするクライアント コンピューターを選択し、 **[OK]** をクリックします。  
   
-@no__t 0Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
+windows PowerShell の ![](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -405,7 +405,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 #### <a name="to-install-the-network-location-server-certificate-from-an-internal-ca"></a>内部 CA からネットワーク ロケーション サーバー証明書をインストールするには  
   
-1.  ネットワーク ロケーション サーバー Web サイトをホストするサーバーで、 **[スタート]** 画面で「**mmc.exe**」と入力し、enter キーを押します。  
+1.  ネットワーク ロケーション サーバー web サイトをホストするサーバー上: で、 **開始** 画面で「**mmc.exe**, 、ENTER キーを押します。  
   
 2.  MMC コンソールで、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   
@@ -455,5 +455,5 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 ## <a name="BKMK_Links"></a>関連項目  
   
--   [手順 2:リモート アクセス サーバーを構成する](Step-2-Configure-the-Remote-Access-Server.md)
+-   [手順 2: リモートアクセスサーバーを構成する](Step-2-Configure-the-Remote-Access-Server.md)
 

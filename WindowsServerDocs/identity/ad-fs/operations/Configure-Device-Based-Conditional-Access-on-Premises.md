@@ -51,7 +51,7 @@ ms.locfileid: "71358149"
 スキーマレベルを確認するには、次の手順を実行します。
 
 1.  ADSIEdit または LDP を使用して、スキーマの名前付けコンテキストに接続することができます。  
-2.  ADSIEdit を使用して、"CN = Schema, CN = Configuration, DC = <domain>, DC = @no__t を右クリックし、[プロパティ] を選択します。  フォレスト情報がある relpace のドメインと com 部分。
+2.  ADSIEdit を使用して、"CN = Schema, CN = Configuration, DC =<domain>, DC =<com> を右クリックし、[プロパティ] を選択します。  フォレスト情報がある relpace のドメインと com 部分。
 3.  属性エディターの下で、objectVersion 属性を見つけ、そのバージョンを確認します。  
 
 ![ADSI エディター](media/Configure-Device-Based-Conditional-Access-on-Premises/adsiedit.png)  
@@ -86,7 +86,7 @@ AD FS ファームがまだデバイス認証用に構成されていない場�
 
 ![デバイスの登録](media/Configure-Device-Based-Conditional-Access-on-Premises/device1.png)
 
->メモ:注: 以下のコマンドでは Active Directory 管理ツールが必要であるため、フェデレーション サーバーがドメイン コントローラーではない場合は、次の手順 1. に従ってツールをインストールします。  それ以外の場合、手順 1. を省略できます。  
+>注: 次のコマンドは、Active Directory 管理ツールを必要と、ので場合は、フェデレーション サーバーは、また、ドメイン コント ローラーではない、まずツールをインストール、1 次の手順を使用しています。  それ以外の場合、手順 1. を省略できます。  
 
 1.  **役割と機能の追加**ウィザードを実行して、 **[リモート サーバー管理ツール]**  ->  **[役割管理ツール]**  ->  **[AD DS および AD LDS ツール]** の機能を選択し、 **[Windows PowerShell の Active Directory モジュール]** と **[AD DS ツール]** の両方を選択します。
 
@@ -98,7 +98,7 @@ AD FS ファームがまだデバイス認証用に構成されていない場�
    `PS C:\> Initialize-ADDeviceRegistration -ServiceAccountName "<your service account>" ` 
 3. ポップアップウィンドウで [はい] をクリックします。
 
->メモ:AD FS サービスが GMSA アカウントを使用するように構成されている場合、アカウント名を「domain \accountname$」の形式で入力します。
+>注: AD FS サービスが GMSA アカウントを使用するように構成されている場合は、アカウント名を "\\ アカウント名 $" の形式で入力します。
 
 ![デバイスの登録](media/Configure-Device-Based-Conditional-Access-on-Premises/device3.png)  
 
@@ -211,7 +211,7 @@ Microsoft Passport for Work で Windows 10 を有効にする方法の詳細に�
 登録済みデバイスの MDM の自動登録を有効にして、アクセス制御ポリシーで isCompliant の要求を使用できるようにするには、こちらの手順に従って[ください。](https://blogs.technet.microsoft.com/ad/2015/08/14/windows-10-azure-ad-and-microsoft-intune-automatic-mdm-enrollment-powered-by-the-cloud/)  
 
 ## <a name="troubleshooting"></a>トラブルシューティング  
-1.  "drs サービスオブジェクトが見つかりませんでした" などの誤った状態にあるオブジェクトが既に間違った状態にあることを示すエラーが `Initialize-ADDeviceRegistration` で発生した場合は、以前に powershell コマンドを Azure AD Connect 実行し、AD DS の部分構成。  **Cn = Device Registration configuration, cn = Services, cn = Configuration, DC = &lt;domain @ no__t-2**のオブジェクトを手動で削除してみて、もう一度やり直してください。  
+1.  "drs サービスオブジェクトが見つかりましたが、必要な属性がありません" など、既に存在しているオブジェクトが誤った状態にあるという `Initialize-ADDeviceRegistration` エラーが発生した場合は、以前に Azure AD Connect powershell コマンドを実行し、AD DS で部分的な構成を行っている可能性があります。  **Cn = Device Registration configuration、cn = Services、CN = Configuration、DC =&lt;domain&gt;** のオブジェクトを手動で削除して、もう一度試してみてください。  
 2.  Windows 10 ドメインに追加のクライアント  
     1. デバイスの認証が機能していることを確認するには、ドメインに参加しているクライアントにテストユーザーアカウントとしてサインオンします。 プロビジョニングをすばやくトリガーするには、デスクトップを少なくとも1回ロックしてロックを解除します。   
     2. AD DS オブジェクトの stk キー資格情報のリンクを確認する手順 (同期は2回実行する必要がありますか)  

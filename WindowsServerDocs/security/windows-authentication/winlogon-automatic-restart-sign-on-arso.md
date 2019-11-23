@@ -22,9 +22,9 @@ ms.locfileid: "71402324"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動再起動サインオン (ARSO)
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-**作成者**:Justin 書籍、シニアサポートエスカレーションエンジニア (Windows グループ)  
+**Author**: Justin 書籍、シニアサポートエスカレーションエンジニア (Windows グループ)  
   
 > [!NOTE]  
 > この内容は Microsoft カスタマー サポート エンジニアによって作成され、TechNet が通常提供しているトピックよりも詳細な Windows Server 2012 R2 の機能やソリューションの技術的説明を求めている、経験豊かな管理者とシステム設計者を対象としています。 ただし、TechNet と同様の編集過程は実施されていないため、言語によっては通常より洗練されていない文章が見られる場合があります。  
@@ -60,7 +60,7 @@ Windows 8 では、ロック画面アプリが導入されました。  これ�
   
     -   Server Sku で既定で無効になっています。  
   
--   なぜでしょうか。  
+-   どうしてでしょうか?  
   
     -   戻り、ユーザーがログオンするまで、一部の更新プログラムを終了できません。  
   
@@ -74,14 +74,14 @@ Windows 8 では、ロック画面アプリが導入されました。  これ�
   
     -   BitLocker が有効になっている場合にのみ有効にできます。  
   
-## <a name="group-policy-sign-in-last-interactive-user-automatically-after-a-system-initiated-restart"></a>グループポリシー:システムによる再起動後に自動的に前回の対話ユーザーでサインインする  
+## <a name="group-policy-sign-in-last-interactive-user-automatically-after-a-system-initiated-restart"></a>グループ ポリシー: サインインが前回の対話ユーザーに自動的に再起動した後に、システムによって開始されます。  
 Windows 8.1/Windows Server 2012 R2、Windows Update 再起動した後に、ロック画面のユーザーの自動ログオンは Server Sku をオプトインされ、クライアントの sku の登録を取り消します。  
   
-**ポリシーの場所:** コンピューターの構成 > ポリシー > 管理用テンプレート > Windows コンポーネント > Windows ログオンオプション  
+**ポリシーの場所:** コンピューターの構成 > ポリシー > 管理用テンプレート > Windows コンポーネント > Windows のログオン オプション  
   
-**ポリシー名:** システムによる再起動後に自動的に前回の対話ユーザーでサインインする  
+**ポリシー名:** サインインが前回の対話ユーザーに自動的に再起動した後に、システムによって開始されます。  
   
-**サポート対象:** Windows Server 2012 R2、Windows 8.1、Windows RT 8.1 またはそれ以降  
+**サポートされている:** には、少なくとも Windows Server 2012 R2、Windows 8.1 または Windows RT 8.1  
   
 **説明/ヘルプ:**  
   
@@ -93,17 +93,17 @@ Windows 8.1/Windows Server 2012 R2、Windows Update 再起動した後に、ロ�
   
 **レジストリエディター**  
   
-|［値の名前］|種類|data|  
+|［値の名前］|種類|データ|  
 |-------|----|----|  
 |DisableAutomaticRestartSignOn|DWORD|0<br /><br />**例:**<br /><br />0 (有効)。<br /><br />1 (無効)|  
   
 **ポリシーのレジストリの場所:** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System  
   
-**種類:** DWORD  
+**型:** DWORD  
   
-**レジストリ名:** DisableAutomaticRestartSignOn  
+**レジストリの名前:** DisableAutomaticRestartSignOn  
   
-値:0 または 1  
+値: 0 または 1  
   
 0 = 有効  
   
@@ -143,9 +143,9 @@ WinLogon が自動的にロックしたときに WinLogon の状態のトレー�
 保護者による制限とログオン時間は、作成すると、新しいユーザー セッションを禁止できます。  再起動がこの期間中に発生した場合、ユーザーはログインを許可されません。  ロックするか、対応するアクションとしてログアウトを原因となるその他のポリシーがあります。  特に、メンテナンス期間がこの期間中に一般がある場合はベッドの時間とウェイク アップのアカウントのロックダウンが発生する、多くの子の例では問題にできます。  
   
 ## <a name="additional-resources"></a>その他のリソース  
-**Table SEQ テーブル \\ @ no__t アラビア語 3:ARSO 用語集 @ no__t-0  
+**テーブル SEQ テーブル \\\* アラビア語 3: ARSO 用語集**  
   
-|項目|定義|  
+|用語|定義|  
 |----|-------|  
 |Autologon|自動ログオンは、いくつかのリリースの Windows に存在した機能です。  これは Windows の自動ログオン v3.01 などのツールがある Windows のドキュメント化された機能 *[http:/technet.microsoft.com/sysinternals/bb963905.aspx](https://technet.microsoft.com/sysinternals/bb963905.aspx)*<br /><br />デバイスの 1 人のユーザーの資格情報を入力しなくても自動的にサインインできます。 資格情報が構成され、暗号化された LSA シークレットとしてレジストリに格納します。|  
   

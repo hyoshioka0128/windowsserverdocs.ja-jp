@@ -21,9 +21,9 @@ ms.locfileid: "71367254"
 ---
 # <a name="generate-a-usage-report-for-remote-clients-using-historical-data"></a>履歴データを使ってリモート クライアントの使用状況レポートを生成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-**注:** Windows Server 2012 では、DirectAccess およびルーティングとリモート アクセス サービス (RRAS) は単一のリモート アクセスの役割に統合されています。  
+**注:** Windows Server 2012 が DirectAccess およびルーティングとリモート アクセス サービス (RRAS) を 1 つのリモート アクセス役割に結合します。  
   
 リモート アクセス サーバーで管理コンソールを使用して、サーバーにアクセスしているリモート クライアントの使用状況レポートを生成することができます。 リモート クライアントの使用状況レポートを生成するには、最初にリモート アクセス サーバーのアカウンティングを有効します。 レポートを生成した後は、サーバーにロード統計を表示するためのリモート アクセス サーバーの管理コンソールで提供される監視ダッシュ ボードを使用することができます。  
   
@@ -59,7 +59,7 @@ ms.locfileid: "71367254"
 >   
 > リモート アクセスのアカウンティングがの概念に基づく **セッション**します。 異なり、 **接続**, 、 **セッション** はリモート クライアントの IP アドレスとユーザー名の組み合わせによって一意に識別します。 たとえば、リモートのクライアントでは、Client1 というコンピューター トンネルが形成される場合、セッションが作成されアカウンティング データベースに格納されています。 名前付きの User1 がしばらくしてからのクライアントから接続するユーザーが渡されます (ただし、コンピューター トンネルがアクティブのまま)、セッションが別のセッションとして記録されます。 セッションの違いは、コンピューター トンネルとユーザーのトンネルの違いを保持します。  
   
-@no__t 0Windows PowerShell](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   

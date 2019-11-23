@@ -21,7 +21,7 @@ ms.locfileid: "71358883"
 
 
 > [!WARNING]
-> ここで作成できる例は&nbsp;、学習のみを目的としています。 &nbsp;これらの手順は、モデルの必須要素を公開するために使用できる、最も単純で最小の実装用です。&nbsp;認証バックエンド、エラー処理、または構成データはありません。 
+> ここで作成できる例は、教育目的でのみ&nbsp;です。 これらの手順は、モデルの必須要素を公開するための最も単純で、最小限の実装のための &nbsp;です。&nbsp; 認証バックエンド、エラー処理、または構成データがありません。 
 > <P></P>
 
 
@@ -56,13 +56,13 @@ ms.locfileid: "71358883"
 
 ## <a name="create-the-provider"></a>プロバイダーを作成する
 
-1.  Visual Studio 2012 の場合:[ファイル]\>、[\>新規作成]、[プロジェクト] の順に選択します。
+1.  Visual Studio 2012: [ファイル]、[新規\>プロジェクトの\>] の順に選択します。
 
 2.  [クラスライブラリ] を選択し、.NET 4.5 を対象としていることを確認します。
 
-    ![プロバイダーを作成する](media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "プロバイダーを作成する")
+    プロバイダー![を作成する]プロバイダー(media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "を")作成する
 
-3.  AD FS がインストールされている Windows Server 2012 R2 サーバーで、% windir% \\ ADFS から、 **Microsoft のサービス**のコピーを作成し、開発用コンピューターのプロジェクトフォルダーに貼り付けます。
+3.  AD FS がインストールされている Windows Server 2012 R2 サーバーで、% windir%\\ADFS から**Microsoft のサービス**をコピーし、開発用コンピューターのプロジェクトフォルダーに貼り付けます。
 
 4.  **ソリューションエクスプローラー**で、 **[参照]** を右クリックし、 **[参照の追加]** をクリックします。
 
@@ -70,13 +70,13 @@ ms.locfileid: "71358883"
 
 6.  **[OK]** をクリックして、新しい参照を確認します。
 
-    ![プロバイダーを作成する](media/ad-fs-build-custom-auth-method/Dn783423.f18df353-9259-4744-b4b6-dd780ce90951(MSDN.10).jpg "プロバイダーを作成する")
+    プロバイダー![を作成する]プロバイダー(media/ad-fs-build-custom-auth-method/Dn783423.f18df353-9259-4744-b4b6-dd780ce90951(MSDN.10).jpg "を")作成する
 
     これで、プロバイダーに必要なすべての型を解決するように設定されました。 
 
 7.  プロジェクトに新しいクラスを追加します (プロジェクトを右クリックし、[追加...] **クラス...** )次に示すように、 **Myadapter**のような名前を付けます。
 
-    ![プロバイダーを作成する](media/ad-fs-build-custom-auth-method/Dn783423.6b6a7a8b-9d66-40c7-8a86-a2e3b9e14d09(MSDN.10).jpg "プロバイダーを作成する")
+    プロバイダー![を作成する]プロバイダー(media/ad-fs-build-custom-auth-method/Dn783423.6b6a7a8b-9d66-40c7-8a86-a2e3b9e14d09(MSDN.10).jpg "を")作成する
 
 8.  新しいファイル MyAdapter.cs で、既存のコードを次のコードに置き換えます。
 
@@ -277,7 +277,7 @@ ms.locfileid: "71358883"
 
    1分以内に修正できますが、最初に、新しく実装された型に基づいて、最後に必要な return ステートメントを最初の MyAdapter クラスに追加してみましょう。  これを行うには、次の*斜体*の項目を既存の IAuthenticationAdapter 実装に追加します。
 
-       クラス MyAdapter:IAuthenticationAdapter {public IAuthenticationAdapterMetadata メタデータ {/get {return <instance of IAuthenticationAdapterMetadata derived class>new;}    get {新しい MyMetadata ();} を返す    }
+       クラス MyAdapter: IAuthenticationAdapter {public IAuthenticationAdapterMetadata {/get {return new <instance of IAuthenticationAdapterMetadata derived class>;}    get {新しい MyMetadata ();} を返す    }
 
         public IAdapterPresentation BeginAuthentication(Claim identityClaim, HttpListenerRequest request, IAuthenticationContext authContext)
         {
@@ -325,7 +325,9 @@ ms.locfileid: "71358883"
         <input id="context" type="hidden" name="Context" value="%Context%"/>
         <!-- End inputs are required by the presentation framework. -->
         <p id="pageIntroductionText">このコンテンツは、MFA サンプルアダプターによって提供されます。 チャレンジ入力は以下に表示されます。</p>
-        <label for="challengeQuestionInput" class="block">Question テキスト @ no__t-1 @ no__t @ no__t @<div id="submissionArea" class="submitMargin">
+        <label for="challengeQuestionInput" class="block">質問テキスト</label>
+        <input id="challengeQuestionInput" name="ChallengeQuestionAnswer" type="text" value="" class="text" placeholder="Answer placeholder" />
+        <div id="submissionArea" class="submitMargin">
         <input id="submitButton" type="submit" name="Submit" value="Submit" onclick="return AuthPage.submitAnswer()"/>
         </div>
         </form>
@@ -339,9 +341,9 @@ ms.locfileid: "71358883"
         //]]>
         </script></div>
 
-14. 次に、 **[プロジェクト\>-コンポーネントの追加...] を選択します。リソース**ファイルにファイル**リソース**の名前を指定し、[追加] をクリックし**ます。**
+14. 次に、[**プロジェクト-\>コンポーネントの追加] を選択します。リソース**ファイルにファイル**リソース**の名前を指定し、[追加] をクリックし**ます。**
 
-   ![プロバイダーを作成する](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "プロバイダーを作成する")
+   プロバイダー![を作成する]プロバイダー(media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "を")作成する
 
 15. 次に、**リソース .resx**ファイル内で、[リソースの追加] を選択します。 **既存のファイルを追加**します。  前の手順で保存したテキストファイル (html フラグメントを含む) に移動します。
 
@@ -357,9 +359,9 @@ ms.locfileid: "71358883"
 
 1.  ソリューションエクスプローラーでプロジェクト名を右クリックし、 **[プロパティ]** をクリックします。
 
-2.  **[署名]** タブで、 **[アセンブリの署名]** チェックボックスをオンにし、[ **\<新規作成] をクリックします。[\>** **厳密な名前のキーファイルを選択してください] の下:** キーファイル名とパスワードを入力し、[ **OK]** をクリックします。  次に **、[アセンブリの署名**がチェックされ、**遅延署名のみ**] がオフになっていることを確認します。  プロパティ **署名** ページは次のようになります。
+2.  **署名** タブで、 **アセンブリの署名** チェックボックスをオンにし、**厳密な名前のキーファイルを選択**してください で  **\<新規作成...\>** を選択します。キーファイル名とパスワードを入力し、 **OK**をクリックします。  次に **、[アセンブリの署名**がチェックされ、**遅延署名のみ**] がオフになっていることを確認します。  プロパティ **署名** ページは次のようになります。
 
-    ![プロバイダーをビルドする](media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "プロバイダーをビルドする")
+    プロバイダーをビルドする(media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "プロバイダーを")![ビルドする]
 
 3.  次に、ソリューションをビルドします。
 
@@ -379,15 +381,15 @@ ms.locfileid: "71358883"
 
 3.  Gacutil.exe ツールをサーバーにコピーします。
 
-    Gacutil.exe は、 **% homedrive% \\Program Files (x86) \\Microsoft sdk @ no__t-3windows @ no__t-4v 8.0 a @ no__t-5bin @ no__t-6NETFX 4.0 Tools @ no__t** 、windows 8 コンピューターにあります。  **Gacutil.exe**ファイル自体に加え、 **1033**、 **En-us**、および**NETFX 4.0 ツール**の場所の下にあるその他のローカライズされたリソースフォルダーが必要です。
+    Gacutil.exe は **、% homedrive%\\Program Files (x86)\\Microsoft sdk\\windows\\v 8.0 a\\bin\\NETFX 4.0 Tools\\** windows 8 コンピューターにあります。  **Gacutil.exe**ファイル自体に加え、 **1033**、 **En-us**、および**NETFX 4.0 ツール**の場所の下にあるその他のローカライズされたリソースフォルダーが必要です。
 
 4.  プロバイダーファイル (1 つ以上の厳密な名前で署名された .dll ファイル) を gacutil.exe と同じフォルダーの場所にコピーし**ます**(場所は便宜上)
 
 5.  ファーム内の各 AD FS フェデレーションサーバーの GAC に .dll ファイルを追加します。
 
-    例: コマンドラインツール Gacutil.exe を使用して、GAC に dll を追加します。`C:\>.\gacutil.exe /if .\<yourdllname>.dll`
+    例: コマンドラインツール Gacutil.exe を使用して GAC に dll を追加する: `C:\>.\gacutil.exe /if .\<yourdllname>.dll`
 
-    GAC に結果のエントリを表示するには、次のようにします。`C:\>.\gacutil.exe /l <yourassemblyname>`
+    GAC で結果として得られるエントリを表示するには、`C:\>.\gacutil.exe /l <yourassemblyname>`
 
 6.  
 
@@ -397,26 +399,26 @@ ms.locfileid: "71358883"
 
 1.  `Register-AdfsAuthenticationProvider –TypeName YourTypeName –Name “AnyNameYouWish” [–ConfigurationFilePath (optional)]`
 
-    ここで、Typename は .NET の厳密な型名です。"YourIAuthenticationAdapterImplementationClassName、自分の Assemblyname、Version =、Assemblyversion、Culture = ニュートラル、PublicKeyToken = a Publickeytokenvalue、processorArchitecture = MSIL"
+    ここで、Typename は .NET の厳密な型名です。 "YourIAuthenticationAdapterImplementationClassName, your Assemblyname, Version = your Assemblyversion, Culture = ニュートラル, PublicKeyToken = your Publickeytokenvalue,processorArchitecture = MSIL "
 
     これにより、外部プロバイダーが AD FS に登録されます。ここで指定した名前が使用されます。
 
 2.  (たとえば、Windows サービススナップインを使用して) AD FS サービスを再起動します。
 
-3.  次のコマンド`Get-AdfsAuthenticationProvider`を実行します。
+3.  次のコマンドを実行します: `Get-AdfsAuthenticationProvider`。
 
     これにより、プロバイダーがシステムのプロバイダーの1つとして表示されます。
 
-    例:
+    以下に例を示します。
 
         PS C:\>$typeName = "MFAadapter.MyAdapter, MFAadapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e675eb33c62805a0, processorArchitecture=MSIL”
         PS C:\>Register-AdfsAuthenticationProvider -TypeName $typeName -Name “MyMFAAdapter”
         PS C:\>net stop adfssrv
         PS C:\>net start adfssrv
 
-    AD FS 環境でデバイス登録サービスが有効になっている場合は、次の項目も実行します。`PS C:\>net start drs`
+    AD FS 環境でデバイス登録サービスが有効になっている場合は、次の項目も実行します。 `PS C:\>net start drs`
 
-    登録されているプロバイダーを確認するには`PS C:\>Get-AdfsAuthenticationProvider`、コマンドを使用します。
+    登録されているプロバイダーを確認するには、次のコマンドを使用します:`PS C:\>Get-AdfsAuthenticationProvider`。
 
     これにより、プロバイダーがシステムのプロバイダーの1つとして表示されます。
 
@@ -436,9 +438,9 @@ ms.locfileid: "71358883"
 
 6.  次のコマンドを使用して結果を確認します。
 
-    最初に`Get-AdfsGlobalAuthenticationPolicy`使用します。 プロバイダー名は、AdditionalAuthenticationProvider 値の1つとして表示されます。
+    最初に `Get-AdfsGlobalAuthenticationPolicy`を使用します。 プロバイダー名は、AdditionalAuthenticationProvider 値の1つとして表示されます。
 
-    次に`Get-AdfsAdditionalAuthenticationRule`、を使用します。 管理者 UI でポリシーを選択した結果として、エクストラネットとイントラネットのルールが構成されていることを確認します。
+    次に、`Get-AdfsAdditionalAuthenticationRule`を使用します。 管理者 UI でポリシーを選択した結果として、エクストラネットとイントラネットのルールが構成されていることを確認します。
 
 #### <a name="create-the-authentication-policy-using-windows-powershell"></a>Windows PowerShell を使用して認証ポリシーを作成する
 
@@ -458,7 +460,7 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 2. 次に、グローバルまたは証明書利用者固有の規則を構成して、MFA をトリガーします。
 
-   例 1: 外部要求に対して MFA を要求するグローバルルールを作成するには、次のようにします。`PS C:\>Set-AdfsAdditionalAuthenticationRule –AdditionalAuthenticationRules 'c:[type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "http://schemas.microsoft.com/claims/multipleauthn" );'`
+   例 1: 外部要求に対して MFA を要求するグローバルルールを作成するには、`PS C:\>Set-AdfsAdditionalAuthenticationRule –AdditionalAuthenticationRules 'c:[type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "http://schemas.microsoft.com/claims/multipleauthn" );'`
 
    例 2: 特定の証明書利用者への外部要求に対して MFA を要求する MFA 規則を作成するには  (個々のプロバイダーは、Windows Server 2012 R2 の AD FS の個々の証明書利用者に接続できないことに注意してください)。
 
@@ -477,7 +479,7 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 2.  エクストラネットとイントラネットの両方の認証方法で、**フォーム認証**が唯一のオプションとして選択されていることを確認します。  **[OK]** をクリックします。
 
-3.  IDP で開始されたサインオン html ページ (\<https://fsname\>/adfs/ls/idpinitiatedsignon.htm) を開き、テスト環境で有効な AD ユーザーとしてサインインします。
+3.  IDP で開始されたサインオン html ページ (https://\<fsname\>/adfs/ls/idpinitiatedsignon.htm) を開き、テスト環境で有効な AD ユーザーとしてサインインします。
 
 4.  プライマリ認証の資格情報を入力してください。
 
@@ -485,9 +487,9 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
     複数のアダプターが構成されている場合は、上記のフレンドリ名を使用して MFA の選択ページが表示されます。
 
-    ![アダプターを使用した認証](media/ad-fs-build-custom-auth-method/Dn783423.c98d2712-cbd3-4cb9-ac03-2838b81c4f63(MSDN.10).jpg "アダプターを使用した認証")
+    アダプターを使用し![た認証]アダプター(media/ad-fs-build-custom-auth-method/Dn783423.c98d2712-cbd3-4cb9-ac03-2838b81c4f63(MSDN.10).jpg "での")認証
 
-    ![アダプターを使用した認証](media/ad-fs-build-custom-auth-method/Dn783423.fd3aefc0-ef6c-4a8c-a737-4914c78ff2d2(MSDN.10).jpg "アダプターを使用した認証")
+    アダプターを使用し![た認証]アダプター(media/ad-fs-build-custom-auth-method/Dn783423.fd3aefc0-ef6c-4a8c-a737-4914c78ff2d2(MSDN.10).jpg "での")認証
 
 これで、インターフェイスを実用的に実装できるようになり、モデルの動作についての知識が得られました。 BeginAuthentication および TryEndAuthentication にブレークポイントを設定するための追加の例として trym を使用できます。  ユーザーが最初に MFA フォームに入力したときに BeginAuthentication が実行され、フォームの送信のたびに TryEndAuthentication がトリガーされることに注意してください。
 
@@ -557,13 +559,13 @@ TryEndAuthentication の実装を思い出してください。
 
 次に示すように、MFA UI で MFA 関連のすべてのチェックボックスをオフにし、[OK] をクリックします。
 
-![ポリシーのクリア](media/ad-fs-build-custom-auth-method/Dn783423.c111b4e7-5b05-413c-8b0f-222a0e91ac1f(MSDN.10).jpg "ポリシーのクリア")
+![ポリシー](media/ad-fs-build-custom-auth-method/Dn783423.c111b4e7-5b05-413c-8b0f-222a0e91ac1f(MSDN.10).jpg "クリアポリシー")のクリア
 
 ### <a name="unregister-provider-windows-powershell"></a>プロバイダーの登録解除 (Windows PowerShell)
 
 `PS C:\> Unregister-AdfsAuthenticationProvider –Name “YourAuthProviderName”`
 
-よう`PS C:\> Unregister-AdfsAuthenticationProvider –Name “MyMFAAdapter”`
+例:`PS C:\> Unregister-AdfsAuthenticationProvider –Name “MyMFAAdapter”`
 
 "Name" に渡す値は、Register-adfsauthenticationprovider コマンドレットに指定した "Name" と同じ値であることに注意してください。  また、Register-adfsauthenticationprovider から出力される "Name" プロパティでもあります。
 
@@ -575,11 +577,11 @@ TryEndAuthentication の実装を思い出してください。
 
 1.  まず、次のコマンドを使用して、エントリの完全修飾された厳密な名前を検索します。`C:\>.\gacutil.exe /l <yourAdapterAssemblyName>`
 
-    よう`C:\>.\gacutil.exe /l mfaadapter`
+    例:`C:\>.\gacutil.exe /l mfaadapter`
 
 2.  次に、次のコマンドを使用して GAC から削除します。`.\gacutil /u “<output from the above command>”`
 
-    よう`C:\>.\gacutil /u “mfaadapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e675eb33c62805a0, processorArchitecture=MSIL”`
+    例:`C:\>.\gacutil /u “mfaadapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e675eb33c62805a0, processorArchitecture=MSIL”`
 
 ### <a name="add-the-updated-assembly-to-gac"></a>更新されたアセンブリを GAC に追加する
 
@@ -621,7 +623,7 @@ TryEndAuthentication の実装を思い出してください。
 
 2.  **エクストラネット**と**イントラネット**の両方の認証方法で、**フォーム認証**が唯一のオプションとして選択されていることを確認します。  **[OK]** をクリックします。
 
-3.  IDP で開始されたサインオン html ページ (\<https://fsname\>/adfs/ls/idpinitiatedsignon.htm) を開き、テスト環境で有効な AD ユーザーとしてサインインします。
+3.  IDP で開始されたサインオン html ページ (https://\<fsname\>/adfs/ls/idpinitiatedsignon.htm) を開き、テスト環境で有効な AD ユーザーとしてサインインします。
 
 4.  プライマリ認証の資格情報を入力します。
 
@@ -631,11 +633,11 @@ TryEndAuthentication の実装を思い出してください。
 
 MFA 認証ページで「adfabric」と入力すると、成功したサインインが表示されます。
 
-![アダプターを使用したサインイン](media/ad-fs-build-custom-auth-method/Dn783423.630d8a91-3bfe-4cba-8acf-03eae21530ee(MSDN.10).jpg "アダプターを使用したサインイン")
+アダプタ(media/ad-fs-build-custom-auth-method/Dn783423.630d8a91-3bfe-4cba-8acf-03eae21530ee(MSDN.10).jpg "を使用")![したサインイン]
 
-![アダプターを使用したサインイン](media/ad-fs-build-custom-auth-method/Dn783423.c340fa73-f70f-4870-b8dd-07900fea4469(MSDN.10).jpg "アダプターを使用したサインイン")
+アダプタ(media/ad-fs-build-custom-auth-method/Dn783423.c340fa73-f70f-4870-b8dd-07900fea4469(MSDN.10).jpg "を使用")![したサインイン]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 #### <a name="other-resources"></a>その他のリソース
 

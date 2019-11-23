@@ -21,7 +21,7 @@ ms.locfileid: "71404919"
 ---
 # <a name="step-2-configure-the-basic-directaccess-server"></a>手順 2. 基本的な DirectAccess サーバーを構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、基本的な DirectAccess の展開に必要なクライアントおよびサーバー設定を構成する方法について説明します。 展開の手順を開始する前に、計画で説明した手順を完了していることを確認します [基本的な DirectAccess 展開を計画](Plan-a-Basic-DirectAccess-Deployment.md)します。  
   
@@ -53,7 +53,7 @@ ms.locfileid: "71404919"
   
 7.  **[インストールの進行状況]** ダイアログで、インストールが正常に完了したことを確認し、 **[閉じる]** をクリックします。  
   
-@no__t 0Windows PowerShell](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 次の Windows PowerShell コマンドレットまたはコマンドレットにより、リモートアクセスの役割がインストールされます。 
 
@@ -95,7 +95,7 @@ ms.locfileid: "71404919"
     > [!NOTE]  
     > 作業の開始ウィザードでは、既定で、WMI フィルターをクライアント設定の GPO に適用して、ドメイン内のすべてのノート PC とノートブック コンピューターに DirectAccess を展開します。  
   
-5.  **[完了]** をクリックします。  
+5.  **[Finish]** (完了) をクリックします。  
   
 6.  この展開には PKI が使用されていないため、証明書が見つからない場合は、ウィザードによって、自動的に IP-HTTPS およびネットワーク ロケーション サーバー用の自己署名証明書がプロビジョニングされ、Kerberos プロキシが有効になります。 IPv4 のみの環境では、プロトコル変換のために NAT64 と DNS64 も有効になります。 ウィザードでは、構成の適用が完了したら、クリックして **閉じる**します。  
   
@@ -121,7 +121,7 @@ ms.locfileid: "71404919"
   
 ## <a name="BKMK_Links"></a>前の手順  
   
--   [ステップ 1: DirectAccess インフラストラクチャを構成する](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
+-   [手順 1: DirectAccess インフラストラクチャを構成する](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
   
 ## <a name="next-step"></a>次の手順  
   

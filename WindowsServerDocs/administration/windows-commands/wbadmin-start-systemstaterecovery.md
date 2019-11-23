@@ -78,7 +78,7 @@ wbadmin start systemstaterecovery
   ```
   wbadmin start systemstaterecovery -version:03/31/2013-09:00
   ```  
-- 04/30/2013 の午前9:00 にバックアップのシステム状態の回復を実行するには 共有リソースに格納されている \\ @ no__t-1servername\share for server01, 次のように入力します。  
+- 04/30/2013 の午前9:00 にバックアップのシステム状態の回復を実行するには 共有リソース \\\\servername\share for server01 に格納されているのは、次のように入力します。  
   ```
   wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
   ```

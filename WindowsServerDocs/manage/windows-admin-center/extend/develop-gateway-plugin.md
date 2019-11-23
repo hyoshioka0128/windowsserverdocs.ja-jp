@@ -17,7 +17,7 @@ ms.locfileid: "71406939"
 ---
 # <a name="develop-a-gateway-plugin"></a>ゲートウェイ プラグインの開発
 
->適用先:Windows Admin Center、Windows Admin Center Preview
+>適用対象: Windows Admin Center、Windows Admin Center Preview
 
 Windows 管理センターのゲートウェイプラグインを使用すると、ツールまたはソリューションの UI からターゲットノードへの API 通信が可能になります。  Windows 管理センターは、ターゲットノードで実行されるゲートウェイプラグインからコマンドとスクリプトをリレーするゲートウェイサービスをホストします。 ゲートウェイサービスを拡張して、既定のプロトコル以外のプロトコルをサポートするカスタムゲートウェイプラグインを含めることができます。
 
@@ -37,10 +37,10 @@ REST など、PowerShell または WMI 以外のプロトコルと通信する�
 
 ## <a name="create-a-gateway-plugin-c-library"></a>ゲートウェイプラグイン (C#ライブラリ) を作成する
 
-カスタムゲートウェイプラグインを作成するには、@no__t C#の名前空間から ```IPlugIn``` インターフェイスを実装する新しいクラスを作成します。  
+カスタムゲートウェイプラグインを作成するには、```Microsoft.ManagementExperience.FeatureInterfaces``` C#名前空間から ```IPlugIn``` インターフェイスを実装する新しいクラスを作成します。  
 
 > [!NOTE]
-> 以前のバージョンの SDK で使用可能な ```IFeature``` インターフェイスには、互換性のために残されています。  すべてのゲートウェイプラグイン開発では、IPlugIn (または必要に応じて HttpPlugIn 抽象クラス) を使用する必要があります。
+> 以前のバージョンの SDK で利用可能な ```IFeature``` インターフェイスには、互換性のために残されているものとしてフラグが付けられました。  すべてのゲートウェイプラグイン開発では、IPlugIn (または必要に応じて HttpPlugIn 抽象クラス) を使用する必要があります。
 
 ### <a name="download-sample-from-github"></a>GitHub からサンプルをダウンロードする
 
@@ -54,22 +54,22 @@ REST など、PowerShell または WMI 以外のプロトコルと通信する�
 
 カスタムゲートウェイプラグイン DLL を Windows 管理センターゲートウェイプロセスに読み込んでテストします。
 
-Windows 管理センターでは、現在のコンピューターの Application Data フォルダー内の @no__t 0 フォルダーにあるすべてのプラグインが検索されます (System.environment.specialfolder 列挙型の CommonApplicationData 値を使用します)。 Windows 10 では、この場所は ```C:\ProgramData\Server Management Experience``` です。  @No__t-0 フォルダーがまだ存在しない場合は、自分でフォルダーを作成することができます。
+Windows 管理センターは、現在のコンピューターの Application Data フォルダーにある ```plugins``` フォルダー内のすべてのプラグインを検索します (System.environment.specialfolder 列挙型の CommonApplicationData 値を使用します)。 Windows 10 では、この場所は ```C:\ProgramData\Server Management Experience```です。  ```plugins``` フォルダーがまだ存在しない場合は、自分でフォルダーを作成することができます。
 
 > [!NOTE]
 > デバッグビルドでプラグインの場所をオーバーライドするには、"StaticsFolder" 構成値を更新します。 ローカルでデバッグしている場合、この設定はデスクトップソリューションの app.config にあります。 
 
-プラグインフォルダー内 (この例では、```C:\ProgramData\Server Management Experience\plugins```)
+プラグインフォルダー内 (この例では ```C:\ProgramData\Server Management Experience\plugins```)
 
-* カスタムゲートウェイプラグイン DLL で ```Feature``` の @no__t 0 プロパティ値と同じ名前の新しいフォルダーを作成します (サンプルプロジェクトでは、```Name``` は "Sample Uno")。
+* カスタムゲートウェイプラグイン DLL 内の ```Feature``` の ```Name``` プロパティ値と同じ名前の新しいフォルダーを作成します (サンプルプロジェクトでは、```Name``` は "Sample Uno")。
 * カスタムゲートウェイプラグイン DLL ファイルをこの新しいフォルダーにコピーします
 * Windows 管理センターのプロセスを再起動する
 
-Windows 管理プロセスが再起動した後、GET、PUT、PATCH、DELETE、または POST を発行して、カスタムゲートウェイプラグイン DLL で Api を実行することができます。 ```http(s)://{domain|localhost}/api/nodes/{node}/features/{feature name}/{identifier}```
+Windows 管理プロセスを再起動した後、GET、PUT、PATCH、DELETE、または POST ```http(s)://{domain|localhost}/api/nodes/{node}/features/{feature name}/{identifier}``` を発行して、カスタムゲートウェイプラグイン DLL で Api を実行できます。
 
-### <a name="optional-attach-to-plugin-for-debugging"></a>省略可能: デバッグ用にプラグインにアタッチ
+### <a name="optional-attach-to-plugin-for-debugging"></a>省略可能: デバッグ用にプラグインにアタッチする
 
-Visual Studio 2017 で、[デバッグ] メニューの [プロセスにアタッチ] をクリックします。 次のウィンドウで、[選択可能なプロセス] ボックスの一覧をスクロールして SMEDesktop を選択し、[アタッチ] をクリックします。 デバッガーが起動したら、機能コードにブレークポイントを設定してから、上記の URL 形式を使用することができます。 サンプルプロジェクトの場合 (機能名:"Sample Uno") URL: "<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>"
+Visual Studio 2017 で、[デバッグ] メニューの [プロセスにアタッチ] をクリックします。 次のウィンドウで、[選択可能なプロセス] ボックスの一覧をスクロールして SMEDesktop を選択し、[アタッチ] をクリックします。 デバッガーが起動したら、機能コードにブレークポイントを設定してから、上記の URL 形式を使用することができます。 サンプルプロジェクト (機能名: "Sample Uno") の場合、URL は "<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>" になります。
 
 ## <a name="create-a-tool-extension-with-the-windows-admin-center-cli"></a>Windows 管理センター CLI を使用してツール拡張機能を作成する ##
 
@@ -79,7 +79,7 @@ Visual Studio 2017 で、[デバッグ] メニューの [プロセスにアタ�
 wac create --company "{!Company Name}" --tool "{!Tool Name}"
 ```
 
-| 値 | 説明 | 例 |
+| Value | 説明 | 例 |
 | ----- | ----------- | ------- |
 | ```{!Company Name}``` | 会社名 (スペースを含む) | ```Contoso Inc``` |
 | ```{!Tool Name}``` | (スペースを含む) ツール名 | ```Manage Foo Works``` |

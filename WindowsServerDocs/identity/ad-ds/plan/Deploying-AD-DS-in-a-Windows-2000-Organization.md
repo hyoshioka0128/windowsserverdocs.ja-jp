@@ -18,7 +18,7 @@ ms.locfileid: "71408910"
 ---
 # <a name="deploying-ad-ds-in-a-windows-2000-organization"></a>Windows Server 2000 組織への AD DS の展開
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 組織で現在 Windows 2000 Active Directory が実行されている場合は、一部またはすべてのドメインコントローラーのオペレーティングシステムを Windows にインプレースアップグレードすることで、Windows Server 2008 Active Directory Domain Services (AD DS) を展開できます。サーバー2008または Windows Server 2008 を実行するドメインコントローラーを環境に導入します。  
   
@@ -34,9 +34,9 @@ Windows Server 2008 を実行しているドメインコントローラーを既
 > [!NOTE]  
 > ドメインまたはフォレストの機能レベルを Windows Server 2008 に設定する場合は、環境内のすべてのドメインコントローラーで Windows Server 2008 オペレーティングシステムを実行する必要があります。  
   
-Windows Server 2008 AD DS の展開の一部として Windows 2000 環境からアップグレードされたリソースおよびアカウントドメインを統合するには、フォレスト間またはフォレスト内のドメイン再構築が必要になることがあります。 フォレスト間で AD DS ドメインを再構築すると、組織の複雑さと、関連する管理コストを削減することができます。 フォレスト内の AD DS ドメインを再構築すると、レプリケーショントラフィックを削減し、必要なユーザーとグループ管理の量を減らし、の管理を簡略化することで、組織の管理オーバーヘッドを削減することができます。グループポリシー。 詳細については、「ADMT v1.0 移行ガイド ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678))」を参照してください。  
+Windows Server 2008 AD DS の展開の一部として Windows 2000 環境からアップグレードされたリソースおよびアカウントドメインを統合するには、フォレスト間またはフォレスト内のドメイン再構築が必要になることがあります。 フォレスト間で AD DS ドメインを再構築すると、組織の複雑さと、関連する管理コストを削減することができます。 フォレスト内の AD DS ドメインを再構築すると、レプリケーショントラフィックを削減し、必要なユーザーとグループ管理の量を減らし、の管理を簡略化することで、組織の管理オーバーヘッドを削減することができます。グループ ポリシー。 詳細については、「ADMT v1.0 移行ガイド」 ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)) を参照してください。  
   
-現在 Windows 2000 Active Directory を実行している組織で AD DS を計画および展開するために使用できる詳細なタスクの一覧については、「[Checklist リスト:Windows 2000 組織に AD DS を展開する @ no__t-0  
+現在 Windows 2000 Active Directory を実行している組織で AD DS を計画および展開するために使用できる詳細なタスクの一覧については、「[チェックリスト: windows 2000 組織での AD DS の展開](https://technet.microsoft.com/library/cc732737.aspx)」を参照してください。  
   
 
 

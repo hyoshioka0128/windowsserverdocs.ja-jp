@@ -20,7 +20,7 @@ ms.locfileid: "71366783"
 ---
 # <a name="hyper-v-technology-overview"></a>HYPER-V テクノロジの概要
 
->適用先:Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
+>適用対象: Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 Hyper-v は、Microsoft のハードウェア仮想化製品です。 これにより、*仮想マシン*と呼ばれるソフトウェアバージョンのコンピューターを作成および実行できます。 各仮想マシンは、オペレーティングシステムとプログラムを実行する完全なコンピューターのように機能します。 コンピューティングリソースが必要な場合、virtual machines を使用すると、柔軟性が向上し、時間とコストを節約できます。また、物理ハードウェア上で1つのオペレーティングシステムを実行するよりも、ハードウェアをより効率的に使用することができます。
 
@@ -90,7 +90,7 @@ Hyper-v には、管理と接続のためのツールも用意されています
 
 - Hyper-V マネージャー
 - [Windows PowerShell 用 hyper-v モジュール](https://docs.microsoft.com/powershell/module/hyper-v/index)
-- [仮想マシン接続](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect)\( (vmconnect @ no__t と呼ばれることもあります)
+- [仮想マシン接続](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect)\(vmconnect と呼ばれる場合があり\)
 - [Windows PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
 
 ## <a name="related-technologies"></a>関連テクノロジ

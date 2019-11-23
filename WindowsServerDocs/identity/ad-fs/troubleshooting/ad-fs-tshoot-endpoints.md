@@ -24,7 +24,7 @@ ms.locfileid: "71366222"
 
 1.  Web ブラウザーを使用して、AD FS フェデレーションメタデータエンドポイントに移動します。  次に例を示します。 https://sts.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml
 2. Xml ファイルは、ローカルコンピューターにダウンロードする必要があります。
-3. それを開き、次の情報のような情報が含まれていることを確認します。![Passive @ no__t-1
+3. それを開き、![パッシブ](media/ad-fs-tshoot-endpoints/meta2.png) のような情報が含まれていることを確認します。
 
 ## <a name="ws-mex-test-active-test"></a>WS-ATOMICTRANSACTION テスト (アクティブなテスト)
 Ws-metadataexchange は web サービスプロトコルであり、WS-FEDERATION ロードマップに含まれています。  SOAP メッセージを使用してメタデータを要求します。  エンドポイントをテストすることで、AD FS サーバーが Ws-metadataexchange の web 要求に応答しているかどうかを判断できます。  エンドポイントをテストするには、次の手順に従います。
@@ -34,6 +34,6 @@ Ws-metadataexchange は web サービスプロトコルであり、WS-FEDERATION
 ![Active](media/ad-fs-tshoot-endpoints/meta3.png)
 
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [AD FS のトラブルシューティング](ad-fs-tshoot-overview.md)

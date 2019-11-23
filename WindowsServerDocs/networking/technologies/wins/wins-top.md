@@ -17,11 +17,11 @@ ms.locfileid: "71405248"
 ---
 #  <a name="windows-internet-name-service-wins"></a>Windows インターネット ネーム サービス (WINS)
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 Windows インターネット ネーム サービス (WINS) は、コンピューターの NetBIOS 名と IP アドレスを対応付け、コンピューター名の登録と解決を行う従来型サービスです。
 
-ネットワークに WINS が展開されていない場合は、WINS を展開せずに、ドメインネームシステム \(DNS @ no__t-1 を展開します。 また、DNS にはコンピューター名の登録と解決のサービスが用意されており、Active Directory Domain Services との統合など、WINS よりも多くの追加の利点があります。
+ネットワークに WINS が展開されていない場合は、WINS を展開せずに、ドメインネームシステム \(DNS\)を展開します。 また、DNS にはコンピューター名の登録と解決のサービスが用意されており、Active Directory Domain Services との統合など、WINS よりも多くの追加の利点があります。
 
 詳細については、「[ドメインネームシステム (DNS)](https://docs.microsoft.com/windows-server/networking/dns/dns-top) 」を参照してください。
 

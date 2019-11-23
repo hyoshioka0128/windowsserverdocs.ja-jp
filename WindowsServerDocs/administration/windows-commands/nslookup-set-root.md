@@ -39,5 +39,5 @@ set root=<RootServer>
 ## <a name="remarks"></a>注釈
 - **Set root**サブコマンドは、**ルート**サブコマンドに影響します。
   ## <a name="additional-references"></a>その他の参照情報
-  [コマンドライン構文のキー](command-line-syntax-key.md) 
+  [コマンドライン構文のキー](command-line-syntax-key.md)
   [nslookup root](nslookup-root.md)

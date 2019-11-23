@@ -17,7 +17,7 @@ ms.locfileid: "71405343"
 ---
 # <a name="network-policies"></a>ネットワーク ポリシー
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、NPS のネットワークポリシーの概要について説明します。
 
@@ -30,7 +30,7 @@ ms.locfileid: "71405343"
 
 接続要求をリモート認証ダイヤルインユーザーサービス (RADIUS) サーバーとして処理する場合、NPS は接続要求に対して認証と承認の両方を実行します。 認証プロセス中に、NPS は、ネットワークに接続しているユーザーまたはコンピューターの id を確認します。 NPS は、承認プロセス中に、ユーザーまたはコンピューターがネットワークへのアクセスを許可されているかどうかを判断します。
 
-これらの決定を行うために、NPS は NPS コンソールで構成されているネットワークポリシーを使用します。 また、NPS は Active Directory @ no__t-0 Domain Services \( AD DS @ no__t-2 のユーザーアカウントのダイヤルインプロパティを調べて、承認を行います。
+これらの決定を行うために、NPS は NPS コンソールで構成されているネットワークポリシーを使用します。 また、NPS は Active Directory&reg; Domain Services \(AD DS\) のユーザーアカウントのダイヤルインプロパティを検証して、承認を実行します。
 
 ## <a name="network-policies---an-ordered-set-of-rules"></a>ネットワークポリシー-順序付けされた一連のルール
 

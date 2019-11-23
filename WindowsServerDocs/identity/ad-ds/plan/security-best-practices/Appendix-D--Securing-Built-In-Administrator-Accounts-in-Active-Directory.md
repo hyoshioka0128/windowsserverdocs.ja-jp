@@ -16,12 +16,12 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71367838"
 ---
-# <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>付録 D:Active Directory でのビルトイン管理者アカウントのセキュリティ保護
+# <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>付録 D: Active Directory の組み込み管理者アカウントをセキュリティで保護する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-## <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>付録 D:Active Directory でのビルトイン管理者アカウントのセキュリティ保護  
+## <a name="appendix-d-securing-built-in-administrator-accounts-in-active-directory"></a>付録 D: Active Directory の組み込み管理者アカウントをセキュリティで保護する  
 Active Directory の各ドメインで、ドメインの作成の一環として管理者アカウントが作成されます。 このアカウントは、既定でドメインの domain Admins グループと Administrators グループのメンバーであり、ドメインがフォレストのルートドメインである場合、そのアカウントは Enterprise Admins グループのメンバーでもあります。
 
 ドメインの管理者アカウントの使用は、最初のビルドアクティビティと、場合によってはディザスターリカバリーシナリオでのみ予約する必要があります。 他のアカウントを使用できない場合に、管理者アカウントを使用して修復を実行できるようにするには、フォレスト内の任意のドメインで管理者アカウントの既定のメンバーシップを変更しないようにする必要があります。 代わりに、次のセクションで説明するように、フォレスト内の各ドメインの管理者アカウントをセキュリティで保護する必要があります。詳細な手順については、次の手順で詳しく説明します。 
@@ -39,7 +39,7 @@ Active Directory の各ドメインで、ドメインの作成の一環として
 
 -   ドメインに参加しているシステムで管理者アカウントの使用を制限するように Gpo を構成する:  
 
-    -   1つまたは複数の Gpo を作成し、各ドメインのワークステーションとメンバーサーバー Ou にリンクするには、各ドメインの管理者アカウントを、Computer Configuration\Policies\Windows の次のユーザー権利に追加します。 **ユーザー権利の割り当て**:  
+    -   1つまたは複数の Gpo を作成し、各ドメインのワークステーションとメンバーサーバーの Ou にリンクする場合は、各ドメインの管理者アカウントを、 **Computer Configuration\Policies\Windows 権利**\ ユーザー権利の割り当ての次のユーザー権利に追加します。  
 
         -   ネットワークからのこのコンピューターへのアクセスを拒否する  
 
@@ -58,7 +58,7 @@ Active Directory の各ドメインで、ドメインの作成の一環として
 ![組み込みの管理者アカウントのセキュリティ保護](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_23.gif)  
 
 -   ドメインコントローラーの管理者アカウントを制限するように Gpo を構成する  
-    -   フォレスト内の各ドメインで、既定のドメインコントローラー GPO またはドメインコントローラー OU にリンクされているポリシーを変更して、各ドメインの管理者アカウントを、 **Computer Configuration\Policies\Windows Settings の次のユーザー権利に追加する必要があります。Security 権利の権限の割り当て**:   
+    -   フォレスト内の各ドメインにおいて、既定のドメインコントローラー GPO またはドメインコントローラー OU にリンクされているポリシーを変更して、各ドメインの管理者アカウントを、 **Computer Configuration\Policies\Windows 権利**\ ユーザー権利の割り当ての次のユーザー権利に追加する必要があります。   
         -   ネットワークからのこのコンピューターへのアクセスを拒否する  
 
         -   バッチ ジョブとしてのログオンを拒否  
@@ -105,17 +105,17 @@ Active Directory の各ドメインで、ドメインの作成の一環として
 
 1.  **サーバーマネージャー**で、 **[ツール]** をクリックし、 **[グループポリシーの管理]** をクリックします。  
 
-2.  コンソールツリーで <Forest> \ Domains @ no__t-1 @ no__t を展開し、**オブジェクトをグループポリシー**します (ここで <Forest> はフォレストの名前、<Domain> はグループポリシーを作成するドメインの名前です。)。  
+2.  コンソールツリーで、<Forest>、ドメイン\\<Domain>の順に展開し、**オブジェクトをグループポリシー**します (<Forest> はフォレストの名前、<Domain> はグループポリシーを作成するドメインの名前です)。  
 
 3.  コンソールツリーで、 **[グループポリシーオブジェクト]** を右クリックし、 **[新規]** をクリックします。  
 
     ![組み込みの管理者アカウントのセキュリティ保護](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_27.gif)  
 
-4.  **[新しい gpo]** ダイアログボックスで、次のスクリーンショットに示されているように、「<GPO Name>」と入力し、[ **OK]** をクリックします (<GPO Name> はこの GPO の名前です)。  
+4.  **[新しい gpo]** ダイアログボックスで、次のスクリーンショットに示すように、「<GPO Name>」と入力し、 **[OK]** (<GPO Name> はこの GPO の名前) をクリックします。  
 
     ![組み込みの管理者アカウントのセキュリティ保護](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_28.gif)  
 
-5.  詳細ペインで <GPO Name> を右クリックし、**編集** をクリックします。  
+5.  詳細ウィンドウで、<GPO Name>を右クリックし、**編集** をクリックします。  
 
 6.  **Computer Configuration\Policies\Windows** 権利 ポリシー に移動し、**ユーザー権利の割り当て** をクリックします。  
 
@@ -127,7 +127,7 @@ Active Directory の各ドメインで、ドメインの作成の一環として
 
     2.  **[ユーザーまたはグループの追加]** をクリックし、 **[参照]** をクリックします。  
 
-    3.  「 **Administrator**」と入力し、 **[名前の確認]** をクリックして、 **[OK]** をクリックします。 次のスクリーンショットに示すように、アカウントが <DomainName> \ ユーザー名の形式で表示されていることを確認します。  
+    3.  「 **Administrator**」と入力し、 **[名前の確認]** をクリックして、 **[OK]** をクリックします。 次のスクリーンショットに示すように、アカウントが <DomainName>\ ユーザー名の形式で表示されていることを確認します。  
 
         ![組み込みの管理者アカウントのセキュリティ保護](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_30.gif)  
 
@@ -139,7 +139,7 @@ Active Directory の各ドメインで、ドメインの作成の一環として
 
     2.  **[ユーザーまたはグループの追加]** をクリックし、 **[参照]** をクリックします。  
 
-    3.  「 **Administrator**」と入力し、 **[名前の確認]** をクリックして、 **[OK]** をクリックします。 次のスクリーンショットに示すように、アカウントが <DomainName> \ ユーザー名の形式で表示されていることを確認します。  
+    3.  「 **Administrator**」と入力し、 **[名前の確認]** をクリックして、 **[OK]** をクリックします。 次のスクリーンショットに示すように、アカウントが <DomainName>\ ユーザー名の形式で表示されていることを確認します。  
 
         ![組み込みの管理者アカウントのセキュリティ保護](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_31.gif)  
 
@@ -151,7 +151,7 @@ Active Directory の各ドメインで、ドメインの作成の一環として
 
     2.  **[ユーザーまたはグループの追加]** をクリックし、 **[参照]** をクリックします。  
 
-    3.  「 **Administrator**」と入力し、 **[名前の確認]** をクリックして、 **[OK]** をクリックします。 次のスクリーンショットに示すように、アカウントが <DomainName> \ ユーザー名の形式で表示されていることを確認します。  
+    3.  「 **Administrator**」と入力し、 **[名前の確認]** をクリックして、 **[OK]** をクリックします。 次のスクリーンショットに示すように、アカウントが <DomainName>\ ユーザー名の形式で表示されていることを確認します。  
 
         ![組み込みの管理者アカウントのセキュリティ保護](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_32.gif)  
 
@@ -163,7 +163,7 @@ Active Directory の各ドメインで、ドメインの作成の一環として
 
     2.  **[ユーザーまたはグループの追加]** をクリックし、 **[参照]** をクリックします。  
 
-    3.  「 **Administrator**」と入力し、 **[名前の確認]** をクリックして、 **[OK]** をクリックします。 次のスクリーンショットに示すように、アカウントが <DomainName> \ ユーザー名の形式で表示されていることを確認します。  
+    3.  「 **Administrator**」と入力し、 **[名前の確認]** をクリックして、 **[OK]** をクリックします。 次のスクリーンショットに示すように、アカウントが <DomainName>\ ユーザー名の形式で表示されていることを確認します。  
 
         ![組み込みの管理者アカウントのセキュリティ保護](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_33.gif)  
 
@@ -173,7 +173,7 @@ Active Directory の各ドメインで、ドメインの作成の一環として
 
 12. **グループポリシー管理**で、次の手順に従って、GPO をメンバーサーバーとワークステーションの ou にリンクします。  
 
-    1.  @No__t-0 \ Domains @ no__t-1 @ no__t-2 (この場合、@no__t はフォレストの名前、<Domain> はグループポリシーを設定するドメインの名前です) に移動します。  
+    1.  <Forest>\ Domains\\<Domain> に移動します (<Forest> はフォレストの名前、<Domain> はグループポリシーを設定するドメインの名前です)。  
 
     2.  GPO が適用される OU を右クリックし、[既存の**gpo のリンク**] をクリックします。  
 
@@ -218,7 +218,7 @@ GPO の変更の影響を受けないメンバーサーバーまたはワーク�
 
     ![組み込みの管理者アカウントのセキュリティ保護](media/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory/SAD_38.gif)  
 
-5.  **コマンドプロンプト**ウィンドウで、「 **net use \\ @ no__t-3 @ No__t-4server name @ no__t-5\c $** 」と入力します。ここで、\<server name @ no__t は、ネットワーク経由でアクセスしようとしているメンバーサーバーまたはワークステーションの名前です。  
+5.  **コマンドプロンプト**ウィンドウで、「 **net use \\\\\<サーバー名\>\c $** 」と入力します。ここで、\<server Name\> は、ネットワーク経由でアクセスしようとしているメンバーサーバーまたはワークステーションの名前です。  
 
 6.  次のスクリーンショットは、表示する必要があるエラーメッセージを示しています。  
 
@@ -238,7 +238,7 @@ GPO の変更の影響を受けたメンバーサーバーまたはワークス�
 
 4.  **[ファイル]** 、名前を付け **[て保存]** の順にクリックします。  
 
-5.  **[ファイル名]** フィールドに、「 **<Filename>** 」と入力します (<Filename> は新しいバッチファイルの名前です)。  
+5.  **[ファイル名]** フィールドに、「<Filename>」と入力し**ます**(<Filename> は新しいバッチファイルの名前です)。  
 
 ###### <a name="schedule-a-task"></a>タスクのスケジュール設定  
 

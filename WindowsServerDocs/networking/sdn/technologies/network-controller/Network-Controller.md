@@ -17,7 +17,7 @@ ms.locfileid: "71355650"
 ---
 # <a name="network-controller"></a>ネットワーク コントローラー
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 新しいネットワーク コント ローラーは、Windows Server 2016 で、管理、構成、監視、およびデータ センター内の仮想および物理ネットワーク インフラストラクチャのトラブルシューティングを行う自動化の集中管理された、プログラミング可能なポイントを提供します。 
 
@@ -34,23 +34,23 @@ ms.locfileid: "71355650"
 
 ## <a name="bkmk_overview"></a>ネットワークコントローラーの概要
 
-ネットワークコントローラーは、可用性が高くスケーラブルなサーバーの役割であり、1つのアプリケーションプログラミング @no__t インターフェイスを提供します。これは、ネットワークコントローラーがネットワークと通信できるようにする no__t と、2番目の API を使用して通信することができます。ネットワークコントローラー。
+ネットワークコントローラーは、可用性が高くスケーラブルなサーバーの役割であり、1つのアプリケーションプログラミングインターフェイス \(API\) を提供して、ネットワークコントローラーがネットワークと通信できるようにします。また、ネットワークコントローラーとの通信を可能にする2つ目の API も用意されています。
 
 ドメインと非ドメイン環境の両方のネットワーク コント ローラーを展開することができます。 ドメイン環境でネットワーク コント ローラーのユーザーとネットワーク デバイスを使用して認証 Kerberos です。非ドメイン環境では、認証に証明書を展開する必要があります。
 
 >[!IMPORTANT]
->ネットワークコントローラーのサーバーの役割を物理ホストに展開しないでください。 ネットワーク コント ローラーを展開するには、ホストにインストールされている HYPER-V 仮想マシン\(VM\)でネットワーク コントローラー サーバーの役割をインストールする必要があります。 次の 3 つの異なる HYPER\-V ホスト上の VM にでネットワーク コントローラーをインストールした後、Windows PowerShell コマンド **New-NetworkControllerServer** を使用してホストをネットワーク コント ローラーに追加して、ソフトウェア定義ネットワーク\(SDN\)のHYPER\-Vホストを有効にする必要があります。 これにより、SDN ソフトウェア ロード バランサーが機能するようになります。 詳細については、[New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver) を参照してください。
+>ネットワークコントローラーのサーバーの役割を物理ホストに展開しないでください。 ネットワーク コント ローラーを展開するには、ホストにインストールされている HYPER-V 仮想マシン\(VM\)でネットワーク コントローラー サーバーの役割をインストールする必要があります。 次の 3 つの異なる HYPER\-V ホスト上の VM にでネットワーク コントローラーをインストールした後、Windows PowerShell コマンド \-New-NetworkControllerServer\( を使用してホストをネットワーク コント ローラーに追加して、ソフトウェア定義ネットワーク\)SDN**のHYPER**Vホストを有効にする必要があります。 これにより、SDN ソフトウェア ロード バランサーが機能するようになります。 詳細については、[New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver) を参照してください。
 
 ネットワーク コントローラーは、Southbound API を使用してネットワーク デバイス、サービス、コンポーネントと通信します。 ネットワーク デバイスの検出、サービス構成の検出、ネットワークについて必要なすべての情報の収集に Southbound API を利用できます。 さらに、Southbound API を使用して、構成の変更などの情報をネットワーク インフラストラクチャに送信することもできます。
 
 ネットワーク コントローラーの Northbound API を利用すると、ネットワーク コントローラーからネットワーク情報を収集し、その情報をネットワークの監視と構成に使用できます。
 
-Network Controller Northbound API を使用すると、ネットワーク上の新しいデバイスの構成、監視、トラブルシューティング、および展開を行うことができます。これには、Windows PowerShell を使用するか、表現による状態の転送 \(REST @ no__t API を使用するか、グラフィカルな管理アプリケーションを使用します。ユーザーインターフェイス (System Center Virtual Machine Manager など)。
+Network Controller Northbound API を使用すると、ネットワーク上の新しいデバイスの構成、監視、トラブルシューティング、および展開を行うことができます。これには、Windows PowerShell、REST\) API \(REST の状態転送、System Center Virtual Machine Manager などのグラフィカルユーザーインターフェイスを備えた管理アプリケーションを使用します。
 
 >[!NOTE]
 >ネットワーク コントローラーの Northbound API は、REST インターフェイスとして実装されています。
 
-ネットワークコントローラーを使用してデータセンターネットワークを管理するには、ネットワークコントローラーを使用して、System Center Virtual Machine Manager @no__t 0SCVMM @ no__t、System Center Operations Manager \(SCOM @ no__t などの管理アプリケーションを使用します。では、制御下にあるネットワークインフラストラクチャの構成、監視、プログラム、およびトラブルシューティングを行うことができます。
+ネットワークコントローラーを使用してデータセンターネットワークを管理するには、System Center Virtual Machine Manager \(SCVMM\)などの管理アプリケーションを使用します。 \(System Center Operations Manager また、ネットワークコントローラーでは、管理下にあるネットワークインフラストラクチャの構成、監視、プログラム、およびトラブルシューティングを行うことができます。\)
 
 Windows PowerShell、REST API、または管理アプリケーションを使用することによって、ネットワーク コントローラーで次の物理および仮想ネットワーク インフラストラクチャを管理できます。
 
@@ -58,7 +58,7 @@ Windows PowerShell、REST API、または管理アプリケーションを使用
 
 - データ センターのファイアウォール
 
-- リモートアクセスサービス \(RAS @ no__t マルチテナントゲートウェイ、仮想ゲートウェイ、ゲートウェイプール
+- リモートアクセスサービス \(RAS\) マルチテナントゲートウェイ、仮想ゲートウェイ、ゲートウェイプール
 
 - ソフトウェアロードバランサー
 
@@ -66,7 +66,7 @@ Windows PowerShell、REST API、または管理アプリケーションを使用
 
 ![ネットワーク コント ローラーの概要](../../../media/Network-Controller/NetController_overview.png)  
 
-テストラボ環境にネットワークコントローラーを展開する場合は、hyper-v ホストにインストールされている Hyper-v 仮想マシン \(VM @ no__t-1 でネットワークコントローラーサーバーの役割を実行できます。
+テストラボ環境にネットワークコントローラーを展開する場合は、hyper-v ホストにインストールされている VM\) \(Hyper-v 仮想マシンでネットワークコントローラーサーバーの役割を実行できます。
 
 大規模なデータセンターで高可用性を実現するために、3つ以上の Hyper-v ホストにインストールされた3つの Vm を使用してクラスターを展開できます。 詳細については、「[ネットワークコントローラーの高可用性](network-controller-high-availability.md)」を参照してください。
 
@@ -95,7 +95,7 @@ Windows PowerShell、REST API、または管理アプリケーションを使用
 
 このネットワーク コントローラーの機能を使用すると、複数のサーバーで同じワークロードをホストし、高可用性とスケーラビリティを実現することができます。  
   
-詳細については、[SDNのソフトウェアロードバランシング (SLB)](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md) を参照してください。  
+詳細については、次を参照してください。 [ソフトウェアによる負荷分散と #40 です。SLB & #41 です。SDN の](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)です。  
   
 ### <a name="bkmk_virtual"></a>Virtual Network 管理
 
@@ -122,13 +122,13 @@ Windows PowerShell、REST API、または管理アプリケーションを使用
 
 ネットワークコントローラーは、テナントの別の接続を別々のゲートウェイに配置できます。 すべてのゲートウェイ接続に対して1つのパブリック IP を使用することも、接続のサブセットに対して異なるパブリック IP を使用することもできます。 ネットワークコントローラーは、すべてのゲートウェイの構成と状態の変更をログに記録します。これは、監査とトラブルシューティングの目的で使用できます。
 
-BGP の詳細については、次を参照してください。 [ボーダー ゲートウェイ プロトコル &#40;BGP&#41;](../../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)します。
+BGP の詳細については、次を参照してください。 [ボーダー ゲートウェイ プロトコル (&) #40 です。BGP & #41;](../../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)します。
 
 RAS ゲートウェイの詳細については、次を参照してください。 [SDN の RAS ゲートウェイ](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)します。
 
 ## <a name="network-controller-deployment-options"></a>ネットワークコントローラーの展開オプション
 
-System Center Virtual Machine Manager @no__t 0VMM @ no__t を使用してネットワークコントローラーを展開するには、「 [vmm ファブリックでの SDN ネットワークコントローラーのセットアップ](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)」を参照してください。
+System Center Virtual Machine Manager \(VMM\)を使用してネットワークコントローラーを展開するには、「 [vmm ファブリックでの SDN ネットワークコントローラーのセットアップ](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)」を参照してください。
 
 スクリプトを使用してネットワークコントローラーを展開する方法については、「[スクリプトを使用したソフトウェア定義ネットワークインフラストラクチャの展開](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)」を参照してください。
 

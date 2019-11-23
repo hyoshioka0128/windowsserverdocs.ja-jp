@@ -22,10 +22,10 @@ ms.locfileid: "71362809"
 ---
 # <a name="using-the-remove-driverpackage-command"></a>削除 DriverPackage コマンドを使用してください。
 
-> 適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 > 
 > 
-> 適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サーバーからドライバーパッケージを削除します。
 ## <a name="syntax"></a>構文

@@ -18,7 +18,7 @@ ms.locfileid: "71407594"
 ---
 # <a name="create-a-rule-to-send-an-ad-fs-1x-compatible-claim"></a>AD FS 1.x と互換性のある要求を送信するルールを作成する
 
-Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 を使用して AD FS 1.0 を実行しているフェデレーションサーバーによって受信される要求を発行する場合 \(Windows Server 2003 R2 @ no__t または AD FS 1.1 \(Windows Server 2008 または Windowsサーバー 2008 R2 @ no__t-5: 次の操作を行う必要があります。  
+Active Directory フェデレーションサービス (AD FS) \(AD FS\) を使用して AD FS 1.0 \(Windows Server 2003 R2\) または AD FS 1.1 \(Windows server 2008 または Windows Server 2008 R2\)を実行しているフェデレーションサーバーによって受信される要求を発行する場合は、次の操作を行う必要があります。  
   
 -   UPN、電子メール、共通名の形式で名前 ID 要求の種類を送信する規則を作成します。  
   
@@ -32,7 +32,7 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
   
     -   グループ  
   
-    -   @No__t-0 で始まる他の要求の種類 (https://schemas.xmlsoap.org/claims/EmployeeID など)  
+    -   https://schemas.xmlsoap.org/claims/で始まる他の要求の種類 (https://schemas.xmlsoap.org/claims/EmployeeID など)  
   
 組織のニーズに応じて、次の手順のいずれかを使用して AD FS 1 を作成します。*x*互換の NameID 要求:  
   
@@ -48,26 +48,26 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
 1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
   
 2.  コンソールツリーの  **AD FS**で、**証明書利用者の信頼** をクリックします。 
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG) を作成 ![には  
   
-3.  選択\-した信頼を右クリックし、 **[要求の発行ポリシーの編集]** をクリックします。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
+3.  選択した信頼を右\-クリックし、 **[要求の発行ポリシーの編集]** をクリックします。
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG) を作成 ![には   
   
 4.  **[要求発行ポリシーの編集]** ダイアログボックスの **[発行変換規則]** で、 **[規則の追加]** をクリックして規則ウィザードを開始します。 
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG) を作成 ![には    
 
 5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、 **[入力方向の要求をパススルーまたはフィルター処理する]** を選択し、 **[次へ]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG) を作成 ![には    
 
 6.  **[規則の構成]** ページで、要求規則の名前を入力します。  
   
 7.  入力 **[方向の要求の種類]** で、一覧から **[名前 ID]** を選択します。  
   
-8.  **[受信した名前 ID の形式]** で、次のいずれかの AD FS 1 を選択します。一覧からの*x*@no__t と互換性のある要求形式:  
+8.  **[受信した名前 ID の形式]** で、次のいずれかの AD FS 1 を選択します。一覧からの*x*\-互換性のある要求形式:  
   
     -   **プリンシパル**  
   
-    -   **E @ no__t-1 メール**  
+    -   **電子メール\-**  
   
     -   **共通名**  
   
@@ -80,7 +80,7 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
     -   **特定の電子メールサフィックスの値に一致する要求値のみをパススルーする**  
   
     -   **特定の値で始まる要求値のみをパススルーする**  
-![ルールの作成](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs3.PNG)   
+ルール](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs3.PNG) を作成 ![には   
 
 10. **[完了]** をクリックし、 **[OK]** をクリックして規則を保存します。  
 
@@ -90,26 +90,26 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
 1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
   
 2.  コンソールツリーの  **AD FS**で、**要求プロバイダー信頼** をクリックします。 
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG) を作成 ![には  
   
-3.  選択\-した信頼を右クリックし、 **[要求規則の編集]** をクリックします。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
+3.  選択した信頼を右\-クリックし、 **[要求規則の編集]** をクリックします。
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG) を作成 ![には   
   
 4.  **[要求規則の編集]** ダイアログボックスの **[受け入れ変換規則]** で、 **[規則の追加]** をクリックして規則ウィザードを開始します。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG) を作成 ![には    
 
 5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、 **[入力方向の要求をパススルーまたはフィルター処理する]** を選択し、 **[次へ]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG) を作成 ![には    
 
 6.  **[規則の構成]** ページで、要求規則の名前を入力します。  
   
 7.  入力 **[方向の要求の種類]** で、一覧から **[名前 ID]** を選択します。  
   
-8.  **[受信した名前 ID の形式]** で、次のいずれかの AD FS 1 を選択します。一覧からの*x*@no__t と互換性のある要求形式:  
+8.  **[受信した名前 ID の形式]** で、次のいずれかの AD FS 1 を選択します。一覧からの*x*\-互換性のある要求形式:  
   
     -   **プリンシパル**  
   
-    -   **E @ no__t-1 メール**  
+    -   **電子メール\-**  
   
     -   **共通名**  
   
@@ -122,7 +122,7 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
     -   **特定の電子メールサフィックスの値に一致する要求値のみをパススルーする**  
   
     -   **特定の値で始まる要求値のみをパススルーする**  
-![ルールの作成](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs3.PNG)
+ルール](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs3.PNG) を作成 ![には
 
 10. **[完了]** をクリックし、 **[OK]** をクリックして規則を保存します。  
 
@@ -132,16 +132,16 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
 1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
   
 2.  コンソールツリーの  **AD FS**で、**証明書利用者の信頼** をクリックします。 
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG) を作成 ![には  
   
-3.  選択\-した信頼を右クリックし、 **[要求の発行ポリシーの編集]** をクリックします。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
+3.  選択した信頼を右\-クリックし、 **[要求の発行ポリシーの編集]** をクリックします。
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG) を作成 ![には
   
 4.  **[要求発行ポリシーの編集]** ダイアログボックスの **[発行変換規則]** で、 **[規則の追加]** をクリックして規則ウィザードを開始します。 
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG) を作成 ![には
 
 5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、 **[入力方向の要求]** を一覧から変換する を選択し、 **[次へ]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
+ルール](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG) を作成 ![には
 
 6.  **[規則の構成]** ページで、要求規則の名前を入力します。  
   
@@ -149,11 +149,11 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
   
 8.  **[出力方向の要求の種類]** で、一覧から **[名前 ID]** を選択します。  
   
-9. **[発信名 ID の形式]** で、次のいずれかの AD FS 1 を選択します。一覧からの*x*@no__t と互換性のある要求形式:  
+9. **[発信名 ID の形式]** で、次のいずれかの AD FS 1 を選択します。一覧からの*x*\-互換性のある要求形式:  
   
     -   **プリンシパル**  
   
-    -   **E @ no__t-1 メール**  
+    -   **電子メール\-**  
   
     -   **共通名**  
   
@@ -163,8 +163,8 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
   
     -   **入力方向の要求の値を別の出力方向の要求の値に置き換える**  
   
-    -   **受信 e @ no__t-1mail サフィックスの要求を新しい e @ no__t-2mail サフィックスに置き換えます。**  
-![ルールの作成](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)
+    -   **受信した電子メールサフィックス要求を新しい電子\-メールサフィックスに置き換える\-**  
+ルール](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG) を作成 ![には
 
 11. **[完了]** をクリックし、 **[OK]** をクリックして規則を保存します。  
 
@@ -176,16 +176,16 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
 1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
   
 2.  コンソールツリーの  **AD FS**で、**要求プロバイダー信頼** をクリックします。 
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG) を作成 ![には  
   
-3.  選択\-した信頼を右クリックし、 **[要求規則の編集]** をクリックします。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
+3.  選択した信頼を右\-クリックし、 **[要求規則の編集]** をクリックします。
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG) を作成 ![には   
   
 4.  **[要求規則の編集]** ダイアログボックスの **[受け入れ変換規則]** で、 **[規則の追加]** をクリックして規則ウィザードを開始します。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG) を作成 ![には    
 
 5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、 **[入力方向の要求]** を一覧から変換する を選択し、 **[次へ]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)      
+ルール](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG) を作成 ![には      
 
 6.  **[規則の構成]** ページで、要求規則の名前を入力します。  
   
@@ -193,11 +193,11 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
   
 8.  **[出力方向の要求の種類]** で、一覧から **[名前 ID]** を選択します。  
   
-9. **[発信名 ID の形式]** で、次のいずれかの AD FS 1 を選択します。一覧からの*x*@no__t と互換性のある要求形式:  
+9. **[発信名 ID の形式]** で、次のいずれかの AD FS 1 を選択します。一覧からの*x*\-互換性のある要求形式:  
   
     -   **プリンシパル**  
   
-    -   **E @ no__t-1 メール**  
+    -   **電子メール\-**  
   
     -   **共通名**  
   
@@ -207,8 +207,8 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
   
     -   **入力方向の要求の値を別の出力方向の要求の値に置き換える**  
   
-    -   **受信 e @ no__t-1mail サフィックスの要求を新しい e @ no__t-2mail サフィックスに置き換えます。**  
-![ルールの作成](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)    
+    -   **受信した電子メールサフィックス要求を新しい電子\-メールサフィックスに置き換える\-**  
+ルール](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG) を作成 ![には    
 
 11. **[完了]** をクリックし、 **[OK]** をクリックして規則を保存します。  
 
@@ -229,12 +229,12 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
   
 1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** をクリックします。  
   
-2.  コンソールツリーの [ **\\AD FS の信頼関係**] で、 **[要求プロバイダー信頼]** または **[証明書利用者信頼]** をクリックし、この規則を作成する一覧内の特定の信頼をクリックします。  
+2.  コンソールツリーの [ **AD FS\\の信頼関係**] で、 **[要求プロバイダー信頼]** または **[証明書利用者信頼]** をクリックし、この規則を作成する一覧内の特定の信頼をクリックします。  
   
-3.  選択\-した信頼を右クリックし、 **[要求規則の編集]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) 
+3.  選択した信頼を右\-クリックし、 **[要求規則の編集]** をクリックします。  
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) を作成 ![には 
   
-4.  **[要求規則の編集]** ダイアログボックスで、編集する信頼とこの規則を作成する規則セットに応じて、次のタブのいずれかを選択し、 **[規則の追加]** をクリックして、その規則セットに関連付けられている規則ウィザードを開始します。:  
+4.  **[要求規則の編集]** ダイアログボックスで、編集する信頼とこの規則を作成する規則セットに応じて、次のタブのいずれかを選択し、 **[規則の追加]** をクリックして、その規則セットに関連付けられている規則ウィザードを開始します。  
   
     -   **受け入れ変換規則**  
   
@@ -243,20 +243,20 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
     -   **発行承認規則**  
   
     -   **委任の承認規則**  
-![ルールの作成](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)    
+ルール](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG) を作成 ![には    
 
 5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、 **[入力方向の要求をパススルーまたはフィルター処理する]** を選択し、 **[次へ]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule7.PNG)  
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule7.PNG) を作成 ![には  
   
 6.  **[規則の構成]** ページで、要求規則の名前を入力します。  
   
 7.  入力 **[方向の要求の種類]** で、一覧から **[名前 ID]** を選択します。  
   
-8.  **[受信した名前 ID の形式]** で、次のいずれかの AD FS 1 を選択します。一覧からの*x*@no__t と互換性のある要求形式:  
+8.  **[受信した名前 ID の形式]** で、次のいずれかの AD FS 1 を選択します。一覧からの*x*\-互換性のある要求形式:  
   
     -   **プリンシパル**  
   
-    -   **E @ no__t-1 メール**  
+    -   **電子メール\-**  
   
     -   **共通名**  
   
@@ -269,7 +269,7 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
     -   **特定の電子メールサフィックスの値に一致する要求値のみをパススルーする**  
   
     -   **特定の値で始まる要求値のみをパススルーする**  
-![ルールの作成](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs1.PNG)
+ルール](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs1.PNG) を作成 ![には
 
 10. **[完了]** をクリックし、 **[OK]** をクリックして規則を保存します。  
 
@@ -278,12 +278,12 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
   
 1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** をクリックします。  
   
-2.  コンソールツリーの [ **\\AD FS の信頼関係**] で、 **[要求プロバイダー信頼]** または **[証明書利用者信頼]** をクリックし、この規則を作成する一覧内の特定の信頼をクリックします。  
+2.  コンソールツリーの [ **AD FS\\の信頼関係**] で、 **[要求プロバイダー信頼]** または **[証明書利用者信頼]** をクリックし、この規則を作成する一覧内の特定の信頼をクリックします。  
   
-3.  選択\-した信頼を右クリックし、 **[要求規則の編集]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) 
+3.  選択した信頼を右\-クリックし、 **[要求規則の編集]** をクリックします。  
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) を作成 ![には 
   
-4.  **[要求規則の編集]** ダイアログボックスで、次のいずれかのタブを選択します。このタブは、編集している信頼と、この規則を作成する規則セットによって異なります。次に、 **[規則の追加]** をクリックして、その規則セットに関連付けられている規則ウィザードを開始します。:  
+4.  **[要求規則の編集]** ダイアログボックスで、次のいずれかのタブを選択します。このタブは、編集している信頼と、この規則を作成する規則セットによって異なります。次に、 **[規則の追加]** をクリックして、その規則セットに関連付けられている規則ウィザードを開始します。  
   
     -   **受け入れ変換規則**  
   
@@ -292,10 +292,10 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
     -   **発行承認規則**  
   
     -   **委任の承認規則**  
-![ルールの作成](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+ルール](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG) を作成 ![には
   
 5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、 **[入力方向の要求]** を一覧から変換する を選択し、 **[次へ]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG)   
+ルール](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG) を作成 ![には   
   
 6.  **[規則の構成]** ページで、要求規則の名前を入力します。  
   
@@ -303,11 +303,11 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
   
 8.  **[出力方向の要求の種類]** で、一覧から **[名前 ID]** を選択します。  
   
-9. **[発信名 ID の形式]** で、次のいずれかの AD FS 1 を選択します。一覧からの*x*@no__t と互換性のある要求形式:  
+9. **[発信名 ID の形式]** で、次のいずれかの AD FS 1 を選択します。一覧からの*x*\-互換性のある要求形式:  
   
     -   **プリンシパル**  
   
-    -   **E @ no__t-1 メール**  
+    -   **電子メール\-**  
   
     -   **共通名**  
   
@@ -317,17 +317,17 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 
   
     -   **入力方向の要求の値を別の出力方向の要求の値に置き換える**  
   
-    -   **受信 e @ no__t-1mail サフィックスの要求を新しい e @ no__t-2mail サフィックスに置き換えます。**  
-![ルールの作成](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs2.PNG)    
+    -   **受信した電子メールサフィックス要求を新しい電子\-メールサフィックスに置き換える\-**  
+ルール](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs2.PNG) を作成 ![には    
 
 11. **[完了]** をクリックし、 **[OK]** をクリックして規則を保存します。  
 
 ## <a name="additional-references"></a>その他の参照情報 
 [要求規則を構成する](Configure-Claim-Rules.md)  
  
-[チェックリスト:証明書利用者信頼の要求規則の作成](https://technet.microsoft.com/library/ee913578.aspx)  
+[チェックリスト: 証明書利用者信頼の要求規則を作成する](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[チェックリスト:要求プロバイダー信頼の要求規則の作成](https://technet.microsoft.com/library/ee913564.aspx)  
+[チェックリスト: 要求プロバイダー信頼の要求規則を作成する](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [承認要求規則を使用する場合](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

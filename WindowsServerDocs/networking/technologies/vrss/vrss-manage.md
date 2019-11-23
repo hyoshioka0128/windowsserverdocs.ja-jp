@@ -19,7 +19,7 @@ ms.locfileid: "71405166"
 ---
 # <a name="manage-vrss"></a>vRSS の管理
 
-このトピックでは、Windows PowerShell コマンドを使用して、仮想マシン @no__t 0VMs @ no__t とハイパー @ no__t-2V ホストで vRSS を管理します。
+このトピックでは、Windows PowerShell コマンドを使用して、仮想マシン \(Vm\) と\-Hyper-v ホスト上の vRSS を管理します。
 
 >[!NOTE]
 >このトピックに記載されているコマンドの詳細については、「 [RSS および vRSS 用の Windows PowerShell コマンド](vrss-wps.md)」を参照してください。
@@ -43,7 +43,7 @@ Set-NetAdapterVmq
 
 ## <a name="vrss-on-hyper-v-switch-ports"></a>Hyper-v スイッチポートでの vRSS
 
-Hyper-v ホストでは、Hyper-v 仮想スイッチポートで vRSS を有効にする必要もあります。
+Hyper-v ホストでは、\-Hyper-v 仮想スイッチポートで vRSS も有効にする必要があります。
 
 **現在の設定を表示します。**
 
@@ -55,13 +55,13 @@ Get-VMNetworkAdapter -ManagementOS | fl
     
 次の設定はどちらも**True**にする必要があります。 
 
-- VrssEnabledRequested:True
-- VrssEnabled:True
+- VrssEnabledRequested: True
+- VrssEnabled: True
     
 >[!IMPORTANT]
->一部のリソース制限条件では、ハイパー @ no__t-0V 仮想スイッチポートでこの機能を有効にできないことがあります。 これは一時的な状態であり、今後この機能を使用できるようになる可能性があります。
+>一部のリソース制限条件では、ハイパー\-V 仮想スイッチポートでこの機能を有効にできない場合があります。 これは一時的な状態であり、今後この機能を使用できるようになる可能性があります。
 >
->**Vrssenabled**が**True**の場合、この機能はこのハイパー @ No__t-2v 仮想スイッチポート (つまり、この VM または vNIC) で有効になります。
+>**Vrssenabled**が**True**の場合、この機能はこの\-hyper-v 仮想スイッチポート (つまり、この VM または vNIC) に対して有効になります。
 
 **スイッチポート vRSS 設定を構成します。**
 
@@ -88,7 +88,7 @@ Set-NetAdapterRss
 ```
 
 >[!NOTE]
-> VM 内でプロファイルを設定しても、作業のスケジュールには影響しません。 ハイパー @ no__t-0V はすべてのスケジューリングの決定を行い、VM 内のプロファイルを無視します。
+> VM 内でプロファイルを設定しても、作業のスケジュールには影響しません。 ハイパー\-V は、すべてのスケジュール設定を行い、VM 内のプロファイルを無視します。
 
 ## <a name="disable-vrss"></a>VRSS を無効にする
 
@@ -97,21 +97,21 @@ Set-NetAdapterRss
 - 物理 NIC または VM の VMQ を無効にします。
 
   >[!CAUTION]
-  >物理 NIC で VMQ を無効にすると、受信パケットを処理するハイパー @ no__t-0V ホストの機能に深刻な影響が及びます。
+  >物理 NIC で VMQ を無効にすると、\-Hyper-v ホストが着信パケットを処理する機能に深刻な影響を及ぼします。
 
-- ハイパー @ no__t-1V ホストのハイパー @ no__t-0V 仮想スイッチポートで、VM の vRSS を無効にします。
+- Hyper-v ホスト\-上のハイパー\-V 仮想スイッチポートにある VM に対して、vRSS を無効にします。
 
    ```PowerShell
    Set-VMNetworkAdapter <vm-name> -VrssEnabled $FALSE
    ```
 
-- Hyper-v ホスト上のハイパー @ no__t-0V 仮想スイッチポートで、ホスト vNIC の vRSS を無効にします。
+- Hyper-v ホスト\-上のハイパー\-V 仮想スイッチポートで、ホスト vNIC の vRSS を無効にします。
 
    ```PowerShell
    Set-VMNetworkAdapter -ManagementOS -VrssEnabled $FALSE
    ```
 
-- Vm で RSS を無効にするか、ホスト vNIC @ no__t を @no__t VM 内 @no__t で無効にするか、ホスト @ no__t-3 を使用します。
+- Vm \(で RSS を無効にするか、VM \(またはホストで vNIC\) をホストして\)
 
    ```PowerShell
    Disable-NetAdapterRSS *

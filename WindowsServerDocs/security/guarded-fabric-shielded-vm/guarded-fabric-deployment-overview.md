@@ -18,7 +18,7 @@ ms.locfileid: "71402415"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>保護されたファブリックの展開のクイックスタート
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、保護されたファブリックとは何か、その要件、および展開プロセスの概要について説明します。 詳細な展開手順については、「保護され[たホストとシールドされた vm のホストガーディアンサービスの展開](https://technet.microsoft.com/windows-server-docs/security/guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview)」を参照してください。
 
@@ -69,19 +69,19 @@ ms.locfileid: "71402415"
 
 ![既存の Hyper-v ファブリック](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-existing-hyper-v.png)
 
-## <a name="step-1-deploy-the-hyper-v-hosts-running-windows-server-2016"></a>手順 1:Windows Server 2016 を実行する Hyper-v ホストを展開する 
+## <a name="step-1-deploy-the-hyper-v-hosts-running-windows-server-2016"></a>手順 1: Windows Server 2016 を実行する Hyper-v ホストを展開する 
 
 Hyper-v ホストでは、Windows Server 2016 Datacenter edition 以降を実行する必要があります。 ホストをアップグレードする場合は、Standard edition から Datacenter edition に[アップグレード](https://technet.microsoft.com/windowsserver/dn527667.aspx)できます。
 
 ![Hyper-v ホストのアップグレード](../../security/media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-one-upgrade-hyper-v.png)
 
-## <a name="step-2-deploy-the-host-guardian-service-hgs"></a>手順 2:ホストガーディアンサービス (HGS) を展開する
+## <a name="step-2-deploy-the-host-guardian-service-hgs"></a>手順 2: ホストガーディアンサービス (HGS) を展開する
 
 次に、HGS サーバーの役割をインストールし、次の図の relecloud.com の例のように、3ノードクラスターとして展開します。 これには、次の3つの PowerShell コマンドレットが必要です。
 
-- HGS ロールを追加するには、を使用します。`Install-WindowsFeature` 
-- HGS をインストールするには、を使用します。`Install-HgsServer` 
-- 選択した構成のモードで HGS を初期化するには、を使用します。`Initialize-HgsServer` 
+- HGS ロールを追加するには、`Install-WindowsFeature` を使用します。 
+- HGS をインストールするには、`Install-HgsServer` を使用します。 
+- 選択した構成のモードで HGS を初期化するには、`Initialize-HgsServer` を使用します 
 
 既存の Hyper-v サーバーが TPM モードの前提条件を満たしていない場合 (たとえば、TPM 2.0 がない場合) は、管理者ベースの構成証明 (AD モード) を使用して HGS を初期化できます。これには、ファブリックドメインとの Active Directory 信頼関係が必要です。 
 
@@ -89,7 +89,7 @@ Hyper-v ホストでは、Windows Server 2016 Datacenter edition 以降を実行
 
 ![HGS のインストール](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-two-deploy-hgs.png)
 
-## <a name="step-3-extract-identities-hardware-baselines-and-code-integrity-policies"></a>手順 3:Id、ハードウェアベースライン、およびコード整合性ポリシーを抽出する
+## <a name="step-3-extract-identities-hardware-baselines-and-code-integrity-policies"></a>手順 3: id、ハードウェアベースライン、およびコード整合性ポリシーを抽出する
 
 Hyper-v ホストから id を抽出するプロセスは、使用されている構成証明モードによって異なります。
 
@@ -105,20 +105,20 @@ LiveKd によって使用されるような代替のデバッグ手法はブロ�
 
 TPM モードでは、次の3つが必要です。 
 
-1.  各 Hyper-v ホスト上の TPM 2.0 からの_公開保証キー_ (または_EKpub_)。 EKpub をキャプチャするには`Get-PlatformIdentifier`、を使用します。 
-2.  _ハードウェアベースライン_。 各 Hyper-v ホストが同一である場合は、1つのベースラインが必要です。 それ以外の場合は、ハードウェアのクラスごとに1つ必要になります。 ベースラインは、信頼できるコンピューティンググループのログファイル (TCGlog) の形式です。 TCGlog には、ホストが完全に起動された場所まで、ホストが UEFI ファームウェアからカーネルを介して実行したすべてのものが含まれています。 ハードウェアのベースラインを取得するには、Hyper-v の役割と Host Guardian Hyper-v のサポート機能をインストールし`Get-HgsAttestationBaselinePolicy`、を使用します。 
-3.  _コード整合性ポリシー_。 各 Hyper-v ホストが同一である場合、必要なのは1つの CI ポリシーだけです。 それ以外の場合は、ハードウェアのクラスごとに1つ必要になります。 Windows Server 2016 と Windows 10 の両方に、_ハイパーバイザーによって適用されるコード整合性 (HVCI)_ と呼ばれる、CI ポリシーの新しい形式が適用されています。 HVCI は強力な強制を実現し、信頼された管理者が実行を許可したバイナリのみをホストで実行できるようにします。 これらの手順は、HGS に追加される CI ポリシーでラップされます。 HGS は、シールドされた Vm の実行が許可される前に、各ホストの CI ポリシーを測定します。 CI ポリシーをキャプチャするには`New-CIPolicy`、を使用します。 その後、を使用して`ConvertFrom-CIPolicy`、ポリシーをバイナリ形式に変換する必要があります。
+1.  各 Hyper-v ホスト上の TPM 2.0 からの_公開保証キー_ (または_EKpub_)。 EKpub をキャプチャするには、`Get-PlatformIdentifier`を使用します。 
+2.  _ハードウェアベースライン_。 各 Hyper-v ホストが同一である場合は、1つのベースラインが必要です。 それ以外の場合は、ハードウェアのクラスごとに1つ必要になります。 ベースラインは、信頼できるコンピューティンググループのログファイル (TCGlog) の形式です。 TCGlog には、ホストが完全に起動された場所まで、ホストが UEFI ファームウェアからカーネルを介して実行したすべてのものが含まれています。 ハードウェアのベースラインを取得するには、Hyper-v の役割と Host Guardian Hyper-v サポート機能をインストールし、`Get-HgsAttestationBaselinePolicy`を使用します。 
+3.  _コード整合性ポリシー_。 各 Hyper-v ホストが同一である場合、必要なのは1つの CI ポリシーだけです。 それ以外の場合は、ハードウェアのクラスごとに1つ必要になります。 Windows Server 2016 と Windows 10 の両方に、_ハイパーバイザーによって適用されるコード整合性 (HVCI)_ と呼ばれる、CI ポリシーの新しい形式が適用されています。 HVCI は強力な強制を実現し、信頼された管理者が実行を許可したバイナリのみをホストで実行できるようにします。 これらの手順は、HGS に追加される CI ポリシーでラップされます。 HGS は、シールドされた Vm の実行が許可される前に、各ホストの CI ポリシーを測定します。 CI ポリシーをキャプチャするには、`New-CIPolicy`を使用します。 次に、`ConvertFrom-CIPolicy`を使用して、ポリシーをバイナリ形式に変換する必要があります。
 
 ![Id、ベースライン、および CI ポリシーを抽出する](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-three-extract-identity-baseline-ci-policy.png)
 
 これはすべて、保護されたファブリックを実行するインフラストラクチャの観点から構築されたものです。  
 シールドされた VM テンプレートディスクとシールドデータファイルを作成して、シールドされた Vm を簡単かつ安全にプロビジョニングできるようになりました。 
 
-## <a name="step-4-create-a-template-for-shielded-vms"></a>手順 4:シールドされた Vm のテンプレートを作成する
+## <a name="step-4-create-a-template-for-shielded-vms"></a>手順 4: シールドされた Vm のテンプレートを作成する
 
 シールドされた VM テンプレートは、既知の信頼できる時点でディスクの署名を作成することによって、テンプレートディスクを保護します。 
 テンプレートディスクがマルウェアによって後で感染した場合、その署名は、セキュリティで保護されたシールドされた VM のプロビジョニングプロセスによって検出される元のテンプレートとは異なります。 
-シールドされたテンプレートディスクは、**シールド**されたテンプレートディスク`Protect-TemplateDisk`作成ウィザードを実行するか、通常のテンプレートディスクに対して作成します。 
+シールドされたテンプレートディスクを作成するには、シールドされたテンプレートディスク**作成ウィザード**を実行するか、通常のテンプレートディスクに対して `Protect-TemplateDisk` します。 
 
 各は、 [Windows 10 のリモートサーバー管理ツール](https://www.microsoft.com/download/details.aspx?id=45520)のシールドされた**VM ツール**機能に含まれています。
 RSAT をダウンロードした後、次のコマンドを実行して、シールドされた**VM ツール**機能をインストールします。
@@ -137,7 +137,7 @@ OS パーティションに何らかの変更が加えられると、署名も�
 
 開始する前に、[テンプレートのディスク要件](guarded-fabric-create-a-shielded-vm-template.md)を確認してください。 
 
-## <a name="step-5-create-a-shielding-data-file"></a>手順 5:シールドデータファイルを作成する 
+## <a name="step-5-create-a-shielding-data-file"></a>手順 5: シールドデータファイルを作成する 
 
 シールドデータファイルは、pdk ファイルとも呼ばれ、仮想マシンに関する機密情報 (管理者パスワードなど) をキャプチャします。 
 
@@ -157,7 +157,7 @@ OS パーティションに何らかの変更が加えられると、署名も�
 
 VMM や Windows Azure Pack などのオプションの管理部分を追加できます。 これらのコンポーネントをインストールせずに VM を作成する場合は、「手順[: VMM なしでシールド](https://blogs.technet.microsoft.com/datacentersecurity/2016/06/06/step-by-step-creating-shielded-vms-without-vmm/)された Vm を作成する」を参照してください。
 
-## <a name="step-6-create-a-shielded-vm"></a>手順 6:シールドされた VM の作成
+## <a name="step-6-create-a-shielded-vm"></a>手順 6: シールドされた VM を作成する
 
 シールドされた仮想マシンの作成は、通常の仮想マシンとほとんど異なります。 Windows Azure Pack では、通常の VM を作成するよりも簡単です。これは、名前、シールドデータファイル (その他の特殊化された情報を含む)、および VM ネットワークのみを指定する必要があるためです。 
 

@@ -17,9 +17,9 @@ ms.locfileid: "71402194"
 ---
 # <a name="choose-a-namespace-type"></a>名前空間の種類を選択する
 
-> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用対象: Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-名前空間を作成するとき、2 種類 (スタンドアロン名前空間またはドメイン ベース名前空間) の名前空間のいずれかを選択する必要があります。 また、ドメインベースの名前空間を選択する場合は、名前空間モードを選択する必要があります。Windows 2000 サーバーモードまたは Windows Server 2008 モード。
+名前空間を作成するとき、2 種類 (スタンドアロン名前空間またはドメイン ベース名前空間) の名前空間のいずれかを選択する必要があります。 また、ドメインベースの名前空間を選択する場合は、名前空間モード (Windows 2000 サーバーモードまたは Windows Server 2008 モード) を選択する必要があります。
 
 ## <a name="choosing-a-namespace-type"></a>名前空間の種類を選択する
 
@@ -59,15 +59,15 @@ Windows Server 2008 モードを使用するには、ドメインと名前空間
 
 |特性|スタンドアロンの名前空間|ドメイン ベースの名前空間 (Windows 2000 Server モード) |ドメイン ベースの名前空間 (Windows Server 2008 モード) | 
 |---|---|---|---|
-|名前空間へのパス|\\ @ no__t-1*ServerName\RootName* |\\ @ no__t-1*NetBIOSDomainName\RootName* <br />\\ @ no__t-1*DNSDomainName\RootName*|\\ @ no__t-1*NetBIOSDomainName\RootName* <br /> \\ @ no__t-1*DNSDomainName\RootName*|
+|名前空間へのパス|\\\ *ServerName\RootName* |\\\ *NetBIOSDomainName\RootName* <br />\\\ *DNSDomainName\RootName*|\\\ *NetBIOSDomainName\RootName* <br /> \\\ *DNSDomainName\RootName*|
 |名前空間情報の格納場所|名前空間サーバー上のレジストリおよびメモリ キャッシュ|各名前空間サーバー上の AD DS およびメモリ キャッシュ|各名前空間サーバー上の AD DS およびメモリ キャッシュ|
 |名前空間のサイズの推奨事項|名前空間には、ターゲットを持つフォルダーを 5,000 以上含めることができます。ターゲットを持つフォルダーの推奨される上限は 50,000 です|AD DS の名前空間オブジェクトのサイズは、Windows Server 2008 を実行していないドメイン コントローラーとの互換性を維持するため、5 メガバイト (MB) 未満にする必要があります。 これは、ターゲットを持つフォルダーがおよそ 5,000 個未満であることを意味します。|名前空間には、ターゲットを持つフォルダーを 5,000 以上含めることができます。ターゲットを持つフォルダーの推奨される上限は 50,000 です |
 |最小 AD DS フォレスト機能レベル|AD DS は必須ではありません|Windows 2000|Windows Server 2003|
 |最小 AD DS ドメイン機能レベル|AD DS は必須ではありません|Windows 2000 混在|Windows Server 2008|
 |サポートされている最小名前空間サーバー|Windows 2000 Server|Windows 2000 Server|Windows Server 2008|
-|アクセス ベースの列挙 (有効な場合) のサポート|○ (Windows Server 2008 名前空間サーバーが必要)|いいえ|はい|
+|アクセス ベースの列挙 (有効な場合) のサポート|○ (Windows Server 2008 名前空間サーバーが必要)|X|〇|
 |名前空間の可用性を確保するためのサポートされる方法|フェールオーバー クラスターにスタンドアロン名前空間を作成します。|複数の名前空間サーバーを使って名前空間をホストします。 (名前空間サーバーは同じドメイン内にある必要があります)。|複数の名前空間サーバーを使って名前空間をホストします。 (名前空間サーバーは同じドメイン内にある必要があります)。|
-|DFS レプリケーションを使ったフォルダー ターゲットのレプリケートのサポート|AD DS ドメインに参加しているときにサポート対象|Supported|Supported|
+|DFS レプリケーションを使ったフォルダー ターゲットのレプリケートのサポート|AD DS ドメインに参加しているときにサポート対象|サポート対象|サポート対象|
 
 ## <a name="see-also"></a>関連項目
 

@@ -17,7 +17,7 @@ ms.locfileid: "71356219"
 ---
 # <a name="install-the-web-server-web1"></a>Web サーバー WEB1 をインストールする
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 Windows Server 2016 で Web サーバー (IIS) ロールは、信頼性の高い web サイト、サービス、およびアプリケーションをホストするため、セキュリティで保護された、管理が容易なモジュール化および拡張可能なプラットフォームを提供します。 IIS では、インターネット、イントラネットまたはエクストラネット上のユーザーと情報を共有できます。 IIS は、IIS、ASP.NET、FTP サービス、PHP、および Windows Communication Foundation (WCF) を一体化した統合 web プラットフォームです。  
 

@@ -22,7 +22,7 @@ ms.locfileid: "71392318"
 ---
 # <a name="tsprof"></a>tsprof
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 1 人のユーザーから別のリモート デスクトップ サービス ユーザーの構成情報をコピーします。
 リモートデスクトップサービスユーザーの構成情報は、[ローカルユーザーとグループ]、[active directory ユーザーとコンピューター] のリモートデスクトップサービスの拡張機能に表示されます。
@@ -45,17 +45,17 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 |パラメーター|説明|
 |-------|--------|
 |/update|ドメイン <*DomainName*> 内の <*ユーザー名*> のプロファイルパス情報を <*Profilepath*> に更新します。|
-|/domain: @no__t 0DomainName >|操作が適用されるドメインの名前を指定します。|
+|/domain:\<DomainName >|操作が適用されるドメインの名前を指定します。|
 |/local|ローカルユーザーアカウントにのみ操作を適用します。|
-|/profile: \<path >|[ローカルユーザーとグループ]、[active directory ユーザーとコンピューター] のリモートデスクトップサービス拡張機能に表示されるプロファイルパスを指定します。|
-|\<UserName >|サーバープロファイルパスを更新または照会するユーザーの名前を指定します。|
-|/copy|ユーザー構成情報を \<*sourceuser*> から \<*destinationuser*> にコピーし、\<*destinationuser*> のプロファイルパス情報を @no__t 6*Profilepath*> に更新します。 @No__t-0*sourceuser*> と \<*destinationuser*> は両方ともローカルであるか、ドメイン \<*DomainName*> に存在している必要があります。|
-|\<Srcusr >|ユーザー構成情報をコピーするユーザーの名前を指定します。|
-|\<Destusr >|ユーザー構成情報をコピーするユーザーの名前を指定します。|
+|/profile:\<パス >|[ローカルユーザーとグループ]、[active directory ユーザーとコンピューター] のリモートデスクトップサービス拡張機能に表示されるプロファイルパスを指定します。|
+|\<ユーザー名 >|サーバープロファイルパスを更新または照会するユーザーの名前を指定します。|
+|/copy|ユーザー構成情報を \<*sourceuser*> から \<*destinationuser*> にコピーし、\<*destinationuser*> のプロファイルパス情報を \<*Profilepath*> に更新します。 \<*sourceuser*> と \<*destinationuser*> は両方ともローカルであるか、ドメイン \<*DomainName*> に存在する必要があります。|
+|\<Src_usr >|ユーザー構成情報をコピーするユーザーの名前を指定します。|
+|\<Dest_usr >|ユーザー構成情報をコピーするユーザーの名前を指定します。|
 |/q|サーバープロファイルパスに対してクエリを実行するユーザーの現在のプロファイルパスを表示します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 -   **Tsprof**コマンドを使用できるのは、windows server 2008 を実行しているコンピューターにターミナルサーバーの役割サービスをインストールした場合、または windows Server 2008 R2 を実行しているコンピューターに RD セッションホスト役割サービスをインストールした場合のみです。
 
 ## <a name="BKMK_examples"></a>例
@@ -70,4 +70,4 @@ tsprof /q {/domain:<DomainName> | /local} <UserName>
 
 #### <a name="additional-references"></a>その他の参照情報
 [コマンドライン構文キー](command-line-syntax-key.md)
-[リモート デスクトップ サービス &#40;ターミナル サービス&#41; コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
+[リモート デスクトップ サービスと&#40;です。ターミナル サービスと&#41;です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)

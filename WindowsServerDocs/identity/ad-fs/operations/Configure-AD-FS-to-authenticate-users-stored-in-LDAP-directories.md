@@ -50,7 +50,7 @@ LDAP ディレクトリからユーザーを認証するように AD FS ファ�
    > [!NOTE]
    > 接続先の LDAP サーバーごとに新しい接続オブジェクトを作成することをお勧めします。 AD FS は、複数のレプリカ LDAP サーバーに接続し、特定の LDAP サーバーがダウンした場合に自動的にフェールオーバーすることができます。 このような場合は、これらのレプリカ LDAP サーバーごとに1つの AdfsLdapServerConnection を作成してから、 **AdfsLocalClaimsProviderTrust**コマンドレットの-**ldapserverconnection**パラメーターを使用して接続オブジェクトの配列を追加します。
 
-   **注:** LDAP インスタンスにバインドするために使用する DN とパスワードを取得して使用すると、特定の入力形式 (たとえば、domain\username や user@domain.tld など) のユーザーインターフェイス要件によって、エラーが発生する可能性があります。 代わりに、次のように Convertto-html コマンドレットを使用することができます (次の例では、LDAP インスタンスにバインドするために使用する資格情報の DN として uid = admin, ou = system を想定しています)。
+   **注:** LDAP インスタンスにバインドするために使用する DN とパスワードを取得するために、資格情報を使用し、パスワードを入力しようとすると、特定の入力形式 (たとえば、domain\username や user@domain.tldなど) のユーザーインターフェイスが必要になるため、エラーが発生する可能性があります。 代わりに、次のように Convertto-html コマンドレットを使用することができます (次の例では、LDAP インスタンスにバインドするために使用する資格情報の DN として uid = admin, ou = system を想定しています)。
 
    ```
    $ldapuser = ConvertTo-SecureString -string "uid=admin,ou=system" -asplaintext -force
@@ -93,9 +93,9 @@ LDAP ディレクトリからユーザーを認証するように AD FS ファ�
    -OrganizationalAccountSuffix "vendors.contoso.com"
    ```
 
-   上記の例では、"ベンダ" という名前のローカル要求プロバイダー信頼を作成しています。 このローカル要求プロバイダー信頼が表す LDAP ディレクトリに接続するために AD FS の接続情報を指定しています。これは、`-LdapServerConnection` パラメーターに `$vendorDirectory` を割り当てることによって表されます。 手順 1. では、特定の LDAP ディレクトリに接続するときに使用する接続文字列を `$vendorDirectory` に割り当てていることに注意してください。 最後に、`$GivenName`、`$Surname`、および @no__t 2 の LDAP 属性 (AD FS の要求にマップしたもの) を条件付きアクセス制御 (多要素認証ポリシーと発行承認規則を含む) に使用することを指定します。AD FS によって発行されたセキュリティトークンの要求による発行用。 Ws-trust などのアクティブなプロトコルを AD FS と共に使用するには、OrganizationalAccountSuffix パラメーターを指定する必要があります。これにより、アクティブな承認要求を処理するときに、AD FS がローカル要求プロバイダー信頼を明確に区別できるようになります。
+   上記の例では、"ベンダ" という名前のローカル要求プロバイダー信頼を作成しています。 `-LdapServerConnection` パラメーターに `$vendorDirectory` を割り当てることによって、このローカル要求プロバイダー信頼が表す LDAP ディレクトリに接続するための AD FS の接続情報を指定します。 手順 1. では、特定の LDAP ディレクトリに接続するときに使用する接続文字列を `$vendorDirectory` 割り当てました。 最後に、`$GivenName`、`$Surname`、および `$CommonName` の LDAP 属性 (AD FS の要求にマップしたもの) を条件付きアクセスの制御に使用するように指定します。これには、多要素認証ポリシーと発行承認規則が含まれます。また、AD FS 発行されたセキュリティトークンの要求を使用して発行することもできます。 Ws-trust などのアクティブなプロトコルを AD FS と共に使用するには、OrganizationalAccountSuffix パラメーターを指定する必要があります。これにより、アクティブな承認要求を処理するときに、AD FS がローカル要求プロバイダー信頼を明確に区別できるようになります。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md)
 
 

@@ -15,9 +15,9 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71356256"
 ---
-# <a name="prehash-and-preload-content-on-the-hosted-cache-server-optional"></a>ホスト型キャッシュサーバー上でのコンテンツの事前ハッシュと事前読み込み \(Optional @ no__t-1
+# <a name="prehash-and-preload-content-on-the-hosted-cache-server-optional"></a>ホスト型キャッシュサーバー上でのコンテンツの事前ハッシュと事前読み込み \(オプション\)
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このセクションの手順を使用して、コンテンツサーバーのコンテンツを事前にハッシュし、データパッケージにコンテンツを追加して、ホスト型キャッシュサーバーにコンテンツを事前に読み込むことができます。 
 

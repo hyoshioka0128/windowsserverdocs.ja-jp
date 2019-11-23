@@ -17,7 +17,7 @@ ms.locfileid: "71356039"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>アプリケーションの負荷分散に DNS ポリシーを使用する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、アプリケーションの負荷分散を実行するように DNS ポリシーを構成する方法について説明します。
 
@@ -33,7 +33,7 @@ ms.locfileid: "71356039"
 
 Contosogiftservices.com web サイトは、それぞれが異なる IP アドレスを持つ複数のデータセンターでホストされています。
 
-Contoso ギフトサービスの主要市場である北米では、Web サイトは次の3つのデータセンターでホストされます。シカゴ、IL、ダラス、TX、シアトル、ワシントン州。
+Contoso ギフトサービスの主要市場である北米では、Web サイトはシカゴ、IL、ダラス、TX、シアトル、ワシントンという3つのデータセンターでホストされています。
 
 シアトルの Web サーバーは最適なハードウェア構成を備えており、他の2つのサイトと同様に2倍の負荷を処理できます。 Contoso ギフトサービスは、次のようにアプリケーショントラフィックを送信します。
 
@@ -48,13 +48,13 @@ Contoso ギフトサービスの主要市場である北米では、Web サイ�
 
 ### <a name="how-application-load-balancing-works"></a>アプリケーションの負荷分散のしくみ
 
-このシナリオ例を使用して、アプリケーションの負荷分散に dns ポリシーを使用して dns サーバーを構成した後、DNS サーバーは、シアトルの Web サーバーアドレス、ダラス Web サーバーのアドレスの 25%、およびの 25% の時間について、50% の時間を返します。シカゴ Web サーバーのアドレス。
+このシナリオ例を使用して、アプリケーションの負荷分散に dns ポリシーを使用して dns サーバーを構成した後、DNS サーバーは、シアトルの Web サーバーアドレス、ダラス Web サーバーのアドレスの25%、およびの25% の時間について、50% の時間を返します。シカゴ Web サーバーのアドレス。
 
 これにより、DNS サーバーが受信する4つのクエリごとに、シアトルの2つの応答と、ダラスとシカゴ用の2つの応答が返されます。
 
 DNS ポリシーを使用した負荷分散で考えられる1つの問題は、dns クライアントおよびリゾルバー/LDNS による DNS レコードのキャッシュです。これは、クライアントまたはリゾルバーがクエリを DNS サーバーに送信しないため、負荷分散に干渉する可能性があります。
 
-この動作の影響を軽減するには、負荷分散の対象となる DNS レコードの no__t-0to @ no__t-1Live \(TTL @ no__t 値を使用します。
+この動作の影響を軽減するには、負荷分散の対象となる DNS レコードのライブ \(TTL\) 値を\-して、時間を短く\-します。
 
 ### <a name="how-to-configure-application-load-balancing"></a>アプリケーションの負荷分散を構成する方法
 
@@ -85,9 +85,9 @@ DNS ポリシーを使用した負荷分散で考えられる1つの問題は、
 
 **SeattleZoneScope**では、シアトルのデータセンターにある IP address 192.0.0.1 を使用して、レコード www.contosogiftservices.com を追加できます。
 
-**ChicagoZoneScope**では、シカゴのデータセンターに IP アドレス182.0.0.1 を使用して、contosogiftservices @ no__t と同じレコード @no__t 追加できます。
+**ChicagoZoneScope**では、シカゴのデータセンターに IP アドレス182.0.0.1 の www.contosogiftservices.com\) \(同じレコードを追加できます。
 
-同様に、 **DallasZoneScope**では、シカゴのデータセンターで IP アドレス162.0.0.1 を使用して、contosogiftservices @ no__t という @no__t レコードを1つ追加することができます。
+同様に、 **DallasZoneScope**では、シカゴのデータセンターに IP アドレス162.0.0.1 の www.contosogiftservices.com\) \(レコードを追加することができます。
 
 次の Windows PowerShell コマンドを使用して、レコードをゾーンのスコープに追加することができます。
     
@@ -102,12 +102,12 @@ DNS ポリシーを使用した負荷分散で考えられる1つの問題は、
 
 #### <a name="bkmk_policies"></a>DNS ポリシーを作成する
 
-パーティション (ゾーンのスコープ) を作成し、レコードを追加した後、contosogiftservices.com に対するクエリの 50% が Web の IP アドレスを使用してに応答するように、これらのスコープに対して受信クエリを分散する DNS ポリシーを作成する必要があります。シアトルのデータセンターのサーバーと残りの部分は、シカゴとダラスのデータセンター間で均等に分散されています。
+パーティション (ゾーンのスコープ) を作成し、レコードを追加した後、contosogiftservices.com に対するクエリの50% が Web の IP アドレスを使用してに応答するように、これらのスコープに対して受信クエリを分散する DNS ポリシーを作成する必要があります。シアトルのデータセンターのサーバーと残りの部分は、シカゴとダラスのデータセンター間で均等に分散されています。
 
 次の Windows PowerShell コマンドを使用すると、これら3つのデータセンター間でアプリケーショントラフィックを分散する DNS ポリシーを作成できます。
 
 >[!NOTE]
->次の例のコマンドでは、式–ゾーン範囲ゾーン "SeattleZoneScope, 2;ChicagoZoneScope, 1;DallasZoneScope, 1 "パラメーターの @no__t 組み合わせを含む配列を使用して DNS サーバーを構成する-0ZoneScope @ no__t-1, \<weight @ no__t-3.
+>次の例のコマンドでは、式–ゾーン範囲ゾーン "SeattleZoneScope, 2;ChicagoZoneScope, 1;DallasZoneScope, 1 "は、パラメーターの組み合わせ \<ゾーン範囲ゾーン\>、\<weight\>を含む配列を使用して DNS サーバーを構成します。
     
     Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1;DallasZoneScope,1" -ZoneName "contosogiftservices.com"
     

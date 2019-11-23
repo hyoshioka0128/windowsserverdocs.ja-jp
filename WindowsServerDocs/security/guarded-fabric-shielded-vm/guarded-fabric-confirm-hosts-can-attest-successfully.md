@@ -17,7 +17,7 @@ ms.locfileid: "71940697"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>保護されたホストが証明できることを確認する
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 ファブリック管理者は、Hyper-v ホストを保護されたホストとして実行できることを確認する必要があります。 少なくとも1つの保護されたホストで、次の手順を実行します。
 
@@ -31,7 +31,7 @@ ms.locfileid: "71940697"
 
 3. ホストのキーの保護と構成証明の Url を構成します。
 
-    - **Windows PowerShell を使用**する場合:管理者特権の Windows PowerShell コンソールで次のコマンドを実行して、キーの保護と構成証明の Url を構成できます。 @No__t 0FQDN @ no__t-1 の場合は、HGS クラスターの完全修飾ドメイン名 (FQDN) を使用します (たとえば、hgs サーバーで**HgsServer**コマンドレットを実行して、url を取得するように hgs 管理者に依頼します)。
+    - **Windows powershell を使用**する: 管理者特権の windows powershell コンソールで次のコマンドを実行して、キーの保護と構成証明の url を構成できます。 &lt;FQDN&gt;の場合は、HGS クラスターの完全修飾ドメイン名 (FQDN) を使用します (たとえば、 **HgsServer**コマンドレットを hgs サーバーで実行して url を取得するように hgs 管理者に指示します)。
 
         ```PowerShell
         Set-HgsClientConfiguration -AttestationServerUrl 'http://<FQDN>/Attestation' -KeyProtectionServerUrl 'http://<FQDN>/KeyProtection'
@@ -39,10 +39,10 @@ ms.locfileid: "71940697"
 
         フォールバック HGS サーバーを構成するには、このコマンドを繰り返し、キーの保護と構成証明サービスのフォールバック Url を指定します。 詳細については、「[フォールバック構成](guarded-fabric-manage-branch-office.md#fallback-configuration)」を参照してください。
 
-    - **VMM 経由**:System Center 2016-Virtual Machine Manager (VMM) を使用している場合は、VMM で構成証明とキー保護の Url を構成できます。 詳細については、「 **VMM で保護**されたホストのプロビジョニング」の「[グローバル HGS 設定を構成する](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts#configure-global-hgs-settings)」を参照してください。
+    - **Vmm から**: System Center 2016-VIRTUAL MACHINE MANAGER (vmm) を使用している場合は、vmm で構成証明とキー保護の url を構成できます。 詳細については、「 **VMM で保護**されたホストのプロビジョニング」の「[グローバル HGS 設定を構成する](https://technet.microsoft.com/system-center-docs/vmm/scenario/guarded-hosts#configure-global-hgs-settings)」を参照してください。
 
     >**メモ**
-    > - Hgs 管理者が[hgs サーバーで HTTPS を有効](guarded-fabric-configure-hgs-https.md)にした場合は、`https://` で url を開始します。
+    > - Hgs 管理者が[hgs サーバーで HTTPS を有効](guarded-fabric-configure-hgs-https.md)にした場合は、`https://`で url を開始します。
     > - Hgs 管理者が HGS サーバーで HTTPS を有効にし、自己署名証明書を使用している場合は、すべてのホストの信頼されたルート証明機関ストアに証明書をインポートする必要があります。 これを行うには、各ホストで次のコマンドを実行します。
        ```PowerShell
        Import-Certificate -FilePath "C:\temp\HttpsCertificate.cer" -CertStoreLocation Cert:\LocalMachine\Root
@@ -55,14 +55,14 @@ ms.locfileid: "71940697"
     Get-HgsClientConfiguration
     ```
 
-    コマンドの出力は、ホストが構成証明を受けたかどうかを示し、現在は保護されています。 @No__t-0 が**True**を返さない場合は、HGS 診断ツール[HgsTrace](https://technet.microsoft.com/library/mt718831.aspx)を実行して調査できます。 診断を実行するには、ホストの管理者特権の Windows PowerShell プロンプトで次のコマンドを入力します。
+    コマンドの出力は、ホストが構成証明を受けたかどうかを示し、現在は保護されています。 `IsHostGuarded` が**True**を返さない場合は、HGS 診断ツール[HgsTrace](https://technet.microsoft.com/library/mt718831.aspx)を実行して調査できます。 診断を実行するには、ホストの管理者特権の Windows PowerShell プロンプトで次のコマンドを入力します。
 
     ```powershell
     Get-HgsTrace -RunDiagnostics -Detailed
     ```
 
     > [!IMPORTANT]
-    > Windows Server 2019 または Windows 10 バージョン1809を使用していて、コード整合性ポリシーを使用している場合、`Get-HgsTrace` は**コード整合性ポリシーのアクティブ**な診断の失敗を返します。
+    > Windows Server 2019 または Windows 10 バージョン1809を使用していて、コード整合性ポリシーを使用している場合は、`Get-HgsTrace`**コード整合性ポリシーのアクティブ**な診断の失敗を返します。
     > 失敗した診断が唯一の場合は、この結果を無視しても問題ありません。
 
 ## <a name="next-step"></a>次の手順

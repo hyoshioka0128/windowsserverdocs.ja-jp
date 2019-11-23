@@ -15,9 +15,9 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71365923"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-overview"></a>AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する:概要
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-overview"></a>AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 概要
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このセクションのトピックでは、Active Directory フェデレーション サービス (AD FS) と Web アプリケーション プロキシを使って、ワーク フォルダーを展開するための手順を提供します。 この手順は、完全に機能するワーク フォルダーの設定を作成し、オンプレミスでもインターネットを経由しても、ワーク フォルダーを使用できるクライアント コンピューターを設定するように、提供されています。  
   
@@ -37,7 +37,7 @@ ms.locfileid: "71365923"
   
 -   複数のファイル サーバーを使用する場合、PC やデバイスでの適切なファイル サーバーの自動参照をサポートする、Windows Server 2012 R2 のスキーマ拡張機能を使用した Active Directory® Domain Services フォレスト。 フォレスト内 では DNS を有効化することを推奨しますが、これは必須ではありません。  
   
--   ドメインコントローラー:AD DS ロールが有効になっていて、ドメインを使用して構成されているサーバー (テスト例、contoso.com)。  
+-   ドメイン コントローラー: AD DS の役割を有効化し、ドメイン (このテストの例では contoso.com) で構成されたサーバー。  
   
     Workplace Join のデバイス登録をサポートするには、Windows Server 2012 R2 以降を実行するドメイン コントローラーが必要です。 Workplace Join を使用しない場合には、ドメイン コント ローラーとして Windows Server 2012 を実行できます。  
   
@@ -51,7 +51,7 @@ ms.locfileid: "71365923"
   
 このガイドで説明するテスト環境のトポロジは、次の図に示すとおりです。 これらのコンピューターは、物理コンピューターまたは仮想マシン (VM) のいずれかを使用できます。 
   
-![インターネット、DMZ、Contoso ネットワーク セグメントを示す図。 インターネットセグメントの場合:Client2DMZ: WAP サーバー。Contoso セグメントの場合:ワークフォルダーサーバー、ドメインコントローラー、AD FS サーバー、Client1](media/deploy-work-folders-adfs/WF_ADFS_WAP_Diagram.png)
+![インターネット、DMZ、Contoso ネットワーク セグメントを示す図。 インターネットのセグメントに Client2、DMZ に WAP サーバー、Contoso セグメントにワーク フォルダー サーバー、ドメイン コントローラー、AD FS サーバー、および Client1 があります](media/deploy-work-folders-adfs/WF_ADFS_WAP_Diagram.png)
 
 ## <a name="deployment-overview"></a>展開の概要  
 この一連のトピックでは、テスト環境において AD FS の設定、Web アプリケーション プロキシの設定、ワーク フォルダーの設定を行う手順の例を詳しく説明します。 次の順序で、コンポーネントのセットアップを行います。  
@@ -69,17 +69,17 @@ Windows PowerShell スクリプトを使用して、自己署名証明書を作�
 ## <a name="deployment-steps"></a>展開の手順  
 Windows Server のユーザー インターフェイスを使用して展開を実行するには、これらのトピックの手順に従います。  
   
--   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順 1 AD FS @ no__t を設定します。  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 1. AD FS を設定する](deploy-work-folders-adfs-step1.md)  
   
--   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順2、AD FS 構成後の作業 @ no__t-0  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順2、AD FS 構成後の作業](deploy-work-folders-adfs-step2.md)  
   
--   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順 3. ワークフォルダーをセットアップする @ no__t-0  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 3. ワークフォルダーを設定する](deploy-work-folders-adfs-step3.md)  
   
--   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順 4. Web アプリケーションプロキシの設定 @ no__t-0  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 4. Web アプリケーションプロキシを設定する](deploy-work-folders-adfs-step4.md)  
   
--   [Deploy と Web アプリケーションプロキシを使用してワークフォルダーを展開します。手順 5. クライアントをセットアップする @ no__t-0  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順5、クライアントをセットアップする](deploy-work-folders-adfs-step5.md)  
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ワークフォルダーの概要](Work-Folders-Overview.md)  
 [ワーク フォルダーの実装の設計](Plan-Work-Folders.md)  
 [ワーク フォルダーの展開](Deploy-Work-Folders.md)  

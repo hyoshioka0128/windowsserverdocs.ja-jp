@@ -16,19 +16,19 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408716"
 ---
-# <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>付録 E:Active Directory での Enterprise Admins グループの保護
+# <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>付録 E: Active Directory の Enterprise Admins グループをセキュリティで保護する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-## <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>付録 E:Active Directory での Enterprise Admins グループの保護  
-フォレストルートドメインに格納されている Enterprise Admins (EA) グループには、次の手順に従ってセキュリティ保護されている場合に、ルートドメインの管理者アカウントを除き、ユーザーが毎日含まれていないことが必要です。 [Appendix D:Active Directory @ no__t-0 でビルトイン Administrator アカウントをセキュリティで保護します。  
+## <a name="appendix-e-securing-enterprise-admins-groups-in-active-directory"></a>付録 E: Active Directory の Enterprise Admins グループをセキュリティで保護する  
+フォレストルートドメインに格納されている Enterprise Admins (EA) グループには、毎日のユーザーが含まれないようにする必要があります。ルートドメインの管理者アカウントを除きます。ただし、 [「付録 D: Active Directory での組み込み管理者アカウントのセキュリティ保護](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)」で説明されているようにセキュリティで保護されている場合は、  
 
 Enterprise Admins は、既定ではフォレスト内の各ドメインの Administrators グループのメンバです。 各ドメインの管理者グループから EA グループを削除しないでください。フォレストのディザスターリカバリーシナリオでは、EA 権限が必要になる可能性があるためです。 フォレストの Enterprise Admins グループは、次の手順で詳細に説明されているようにセキュリティで保護する必要があります。  
 
 フォレスト内の Enterprise Admins グループの場合:  
 
-1.  各ドメイン内のメンバーサーバーとワークステーションを含む Ou にリンクされている Gpo では、Enterprise Admins グループを Computer Configuration\Policies\Windows の次のユーザー権利に追加する必要があります。 **割り当て**:  
+1.  各ドメインのメンバーサーバーとワークステーションが含まれている Ou にリンクされた Gpo では、Enterprise Admins グループを、 **Computer Configuration\Policies\Windows 権利 \** ユーザー権利の割り当ての次のユーザー権利に追加する必要があります。  
 
     -   ネットワークからのこのコンピューターへのアクセスを拒否する  
 
@@ -46,7 +46,7 @@ Enterprise Admins は、既定ではフォレスト内の各ドメインの Admi
 
 1.  **サーバーマネージャー**で、 **[ツール]** をクリックし、 **[Active Directory ユーザーとコンピューター]** をクリックします。  
 
-2.  フォレストのルートドメインを管理していない場合は、コンソールツリーで <Domain> を右クリックし、**ドメインの変更** をクリックします (@no__t は、現在管理しているドメインの名前です)。  
+2.  フォレストのルートドメインを管理していない場合は、コンソールツリーで [<Domain>] を右クリックし、 **[ドメインの変更]** をクリックします (<Domain> は現在管理しているドメインの名前です)。  
 
     ![エンタープライズ管理グループをセキュリティで保護する](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_43.gif)  
 
@@ -68,7 +68,7 @@ Enterprise Admins は、既定ではフォレスト内の各ドメインの Admi
 
 1.  **サーバーマネージャー**で、 **[ツール]** をクリックし、 **[グループポリシーの管理]** をクリックします。  
 
-2.  コンソールツリーで <Forest> \ Domains @ no__t-1 @ no__t を展開し、**オブジェクトをグループポリシー**します (ここで <Forest> はフォレストの名前、<Domain> はグループポリシーを設定するドメインの名前です。)。  
+2.  コンソールツリーで、<Forest>、ドメイン\\<Domain>の順に展開し、**オブジェクトをグループポリシー**します (<Forest> はフォレストの名前、<Domain> はグループポリシーを設定するドメインの名前です)。  
 
     > [!NOTE]  
     > 複数のドメインが含まれているフォレストでは、Enterprise Admins グループをセキュリティで保護することを要求する、類似した GPO を各ドメインに作成する必要があります。  
@@ -77,11 +77,11 @@ Enterprise Admins は、既定ではフォレスト内の各ドメインの Admi
 
     ![エンタープライズ管理グループをセキュリティで保護する](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_46.gif)  
 
-4.  **[新しい gpo]** ダイアログボックスで、「<GPO Name>」と入力し、 **[OK]** をクリックします (<GPO Name> はこの GPO の名前です)。  
+4.  **[新しい gpo]** ダイアログボックスで、「<GPO Name>」と入力し、 **[OK]** をクリックします (<GPO Name> はこの gpo の名前です)。  
 
     ![エンタープライズ管理グループをセキュリティで保護する](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_47.gif)  
 
-5.  詳細ペインで <GPO Name> を右クリックし、**編集** をクリックします。  
+5.  詳細ウィンドウで、<GPO Name>を右クリックし、**編集** をクリックします。  
 
 6.  **Computer Configuration\Policies\Windows** 権利 ポリシー に移動し、**ユーザー権利の割り当て** をクリックします。  
 
@@ -163,7 +163,7 @@ Enterprise Admins は、既定ではフォレスト内の各ドメインの Admi
 
 13. **グループポリシー管理**で、次の手順に従って、GPO をメンバーサーバーとワークステーションの ou にリンクします。  
 
-    1.  @No__t-0 \ Domains @ no__t-1 @ no__t-2 (この場合、@no__t はフォレストの名前、<Domain> はグループポリシーを設定するドメインの名前です) に移動します。  
+    1.  <Forest>\ Domains\\<Domain> に移動します (<Forest> はフォレストの名前、<Domain> はグループポリシーを設定するドメインの名前です)。  
 
     2.  GPO が適用される OU を右クリックし、[既存の**gpo のリンク**] をクリックします。  
 
@@ -197,7 +197,7 @@ GPO の変更 ("ジャンプサーバー" など) の影響を受けていない
 
     ![エンタープライズ管理グループをセキュリティで保護する](media/Appendix-E--Securing-Enterprise-Admins-Groups-in-Active-Directory/SAD_56.gif)  
 
-5.  **コマンドプロンプト**ウィンドウで、「 **net use \\ @ no__t-3 @ No__t-4server name @ no__t-5\c $** 」と入力します。ここで、\<server name @ no__t は、ネットワーク経由でアクセスしようとしているメンバーサーバーまたはワークステーションの名前です。  
+5.  **コマンドプロンプト**ウィンドウで、「 **net use \\\\\<サーバー名\>\c $** 」と入力します。ここで、\<server Name\> は、ネットワーク経由でアクセスしようとしているメンバーサーバーまたはワークステーションの名前です。  
 
 6.  次のスクリーンショットは、表示する必要があるエラーメッセージを示しています。  
 
@@ -217,7 +217,7 @@ GPO の変更の影響を受けたメンバーサーバーまたはワークス�
 
 4.  **[ファイル]** をクリックし、 **[名前を付けて保存]** をクリックします。  
 
-5.  [**ファイル**名] ボックスに、「 **<Filename>** 」と入力します (<Filename> は新しいバッチファイルの名前です)。  
+5.  [**ファイル**名] ボックスに、「<Filename>」と入力し**ます**(<Filename> は新しいバッチファイルの名前です)。  
 
 ##### <a name="schedule-a-task"></a>タスクのスケジュール設定  
 

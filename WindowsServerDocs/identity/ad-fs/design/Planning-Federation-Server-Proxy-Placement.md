@@ -18,7 +18,7 @@ ms.locfileid: "71408010"
 ---
 # <a name="planning-federation-server-proxy-placement"></a>フェデレーション サーバー プロキシの配置の計画
 
-Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t インフラストラクチャを設計するために使用するすべての情報を収集した後、フェデレーションサーバーと Web サーバーの戦略を計画した後、フェデレーションサーバーを配置するタイミングと場所を計画することができます。新しい設計におけるプロキシ。 次のトピックの情報は、フェデレーションサーバープロキシを配置するタイミングと場所、およびアカウントパートナーロールとリソースパートナーロールのどちらを構成するかを決定するのに役立ちます。  
+Active Directory フェデレーションサービス (AD FS) \(を設計するために使用するすべての情報を収集した後\) インフラストラクチャ AD FS、フェデレーションサーバーと Web サーバーの戦略を計画した後は、新しい設計にフェデレーションサーバープロキシを配置するタイミングと場所を計画できます。 次のトピックの情報は、フェデレーションサーバープロキシを配置するタイミングと場所、およびアカウントパートナーロールとリソースパートナーロールのどちらを構成するかを決定するのに役立ちます。  
   
 -   [アカウント パートナー内のフェデレーション サーバーの役割を確認する](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
   
@@ -39,7 +39,7 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t �
   
 2つの主要な AD FS 設計シナリオのいずれかにフェデレーションサーバープロキシを配置する方法の例については、「[配置目標の AD FS 設計へのマッピング](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md)」を参照してください。  
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)
   
 

@@ -18,7 +18,7 @@ ms.locfileid: "71407115"
 ---
 # <a name="deploy-security-auditing-with-central-audit-policies-demonstration-steps"></a>集約型の監査ポリシーを使用したセキュリティ監査の展開 (デモンストレーション手順)
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このシナリオでは、「[集約型アクセス&#40;ポリシー&#41;の展開](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)」で作成した finance ポリシーを使用して、finance Documents フォルダー内のファイルへのアクセスを監査します。 このフォルダーへのアクセスが許可されていないユーザーがこのフォルダーにアクセスしようとすると、イベント ビューアーでそのアクティビティがキャプチャされます。   
  このシナリオをテストするには、次の手順が必要です。  
@@ -34,7 +34,7 @@ ms.locfileid: "71407115"
   
 #### <a name="to-configure-a-global-object-access-policy"></a>グローバル オブジェクト アクセス ポリシーを構成するには  
   
-1. パスワード<strong>pass@word1</strong>で、contoso\administrator としてドメインコントローラー DC1 にサインインします。  
+1. <strong>pass@word1</strong>パスワードを使用して、ドメインコントローラー DC1 に contoso\administrator としてサインインします。  
   
 2. サーバー マネージャーで、 **[ツール]** をポイントし、 **[グループ ポリシーの管理]** をクリックします。  
   
@@ -70,7 +70,7 @@ ms.locfileid: "71407115"
   
 #### <a name="to-update-group-policy-settings"></a>グループ ポリシーの設定を更新するには  
   
-1. パスワード<strong>pass@word1</strong>で、contoso\Administrator としてファイルサーバー FILE1 にサインインします。  
+1. パスワード<strong>pass@word1</strong>を使用して、contoso\Administrator としてファイルサーバー FILE1 にサインインします。  
   
 2. Windows キーを押しながら R キーを押し、「**cmd**」と入力してコマンド プロンプト ウィンドウを開きます。  
   
@@ -84,7 +84,7 @@ ms.locfileid: "71407115"
   
 #### <a name="to-verify-that-the-global-object-access-policy-has-been-applied"></a>グローバル オブジェクト アクセス ポリシーが適用されたことを検証するには  
   
-1.  クライアント コンピューター CLIENT1 に Contoso\MReid としてサインインします。 フォルダーのハイパーリンク "file:///\\ @ no__t-1 @ no__t-2\ID_AD_FILE1 @ no__t-3\Finance @no__t" を参照し、Word 文書2を変更します。  
+1.  クライアント コンピューター CLIENT1 に Contoso\MReid としてサインインします。 フォルダーハイパーリンク "file:///\\\\\\\ ID_AD_FILE1\\\ Finance" \\\ File1\finance documents Documents を参照し、Word 文書2を変更します。  
   
 2.  contoso\administrator としてファイル サーバー FILE1 にサインインします。 イベント ビューアーを開き、 **[Windows ログ]** に移動して **[セキュリティ]** をクリックし、アクティビティの結果として監査イベント **4656** と **4663** が発生したことを確認します (作成、変更、または削除したファイルまたはフォルダーについて明示的な監査 SACL を設定しなかった場合でも、これらの監査イベントが発生します)。  
   
@@ -93,10 +93,10 @@ ms.locfileid: "71407115"
   
 ## <a name="BKMK_Links"></a>関連項目  
   
--   [シナリオ: ファイル アクセスの監査](Scenario--File-Access-Auditing.md)  
+-   [シナリオ: ファイルアクセスの監査](Scenario--File-Access-Auditing.md)  
   
 -   [ファイル アクセスの監査の計画](Plan-for-File-Access-Auditing.md)  
   
--   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [動的 Access Control: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

@@ -43,7 +43,7 @@ SSL 証明書を検索するには、インターネット インフォメーシ
 フェデレーション サービスによって使用される SSL 証明書とその秘密キーを .pfx ファイルにエクスポートする必要があります。 詳細については、[サーバー認証証明書の秘密キー部分のエクスポートに関するページ](export-the-private-key-portion-of-a-server-authentication-certificate.md)を参照してください。  
   
 > [!NOTE]
->  Windows Server 2012 R2 での AD FS の実行の一環としてデバイス登録サービスを展開する予定がある場合は、新しい SSL 証明書を取得する必要があります。詳細については、「[AD FS の SSL 証明書を登録する](enroll-an-ssl-certificate-for-ad-fs.md)」と「[デバイス登録サービスを使用してフェデレーション サーバーを構成する](configure-a-federation-server-with-device-registration-service.md)」を参照してください。  
+>  Windows Server 2012 R2 での AD FS の実行の一環としてデバイス登録サービスを展開する予定がある場合は、新しい SSL 証明書を取得する必要があります。詳細については、「 [AD FS の SSL 証明書を登録](enroll-an-ssl-certificate-for-ad-fs.md)する」および「[デバイス登録サービスを使用してフェデレーションサーバーを構成](configure-a-federation-server-with-device-registration-service.md)する」を参照してください。  
   
 使用中のトークン署名証明書、トークン暗号化証明書、サービス通信証明書を表示するには、次の Windows PowerShell コマンドを実行して、使用中のすべての証明書のリストをファイル内に作成します。  
   
@@ -63,7 +63,7 @@ Get-ADFSProperties | Out-File “.\properties.txt”`.
  
 |**Set-adfsproperties によって報告されたフェデレーションサービスプロパティ名**|**AD FS 管理コンソールのフェデレーションサービスプロパティ名**|
 |-----|-----|  
-|HostName|フェデレーション サービス名|  
+|ホスト名|フェデレーション サービス名|  
 |識別子|フェデレーション サービスの識別子|  
 |DisplayName|フェデレーション サービスの表示名|  
   
@@ -103,14 +103,14 @@ Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`.
   
 ###  <a name="to-export-claims-provider-trusts-and-relying-party-trusts"></a>要求プロバイダー信頼と証明書利用者信頼をエクスポートするには  
   
-1.  AD FS 要求プロバイダー信頼と証明書利用者信頼をエクスポートするには、管理者として (ただし、ドメイン管理者としてではなく) 管理者としてフェデレーションサーバーにログインし、 **media/server_support にある次の Windows PowerShell スクリプトを実行する必要があります。/** Windows Server 2012 R2 のインストール CD の adfs フォルダー: `export-federationconfiguration.ps1`。  
+1.  AD FS 要求プロバイダー信頼と証明書利用者信頼をエクスポートするには、管理者としてフェデレーションサーバーに (ただし、ドメイン管理者としてではなく) ログインし、Windows Server 2012 R2 インストール CD の**media/server_support/adfs**フォルダーにある windows PowerShell スクリプト `export-federationconfiguration.ps1`を実行する必要があります。  
   
 > [!IMPORTANT]
 >  エクスポート スクリプトは次のパラメーターを受け取ります。  
 > 
-> - Export-federationconfiguration.ps1-path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-CertificatePassword < securestring @ no__t-3]  
->   -   Export-federationconfiguration.ps1-path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-CertificatePassword < securestring @ no__t-3] [-RelyingPartyTrustIdentifier < string []>] [-ClaimsProviderTrustIdentifier < string [] >]  
->   -   Export-federationconfiguration.ps1-path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-CertificatePassword < securestring @ no__t-3] [-RelyingPartyTrustName < string [] >] [-ClaimsProviderTrustName < string [] >]  
+> - Export-federationconfiguration.ps1-path-Path < string\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-CertificatePassword < securestring\>]  
+>   -   Export-federationconfiguration.ps1-path < string\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-CertificatePassword < securestring\>] [-RelyingPartyTrustIdentifier < string [] >] [-ClaimsProviderTrustIdentifier < string [] >]  
+>   -   Export-federationconfiguration.ps1-path < string\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-CertificatePassword < securestring\>] [-RelyingPartyTrustName < string [] >] [-ClaimsProviderTrustName < string [] >]  
 > 
 >   **-RelyingPartyTrustIdentifier <string[]>** - このコマンドレットは、識別子が string 配列に指定されている証明書利用者信頼のみをエクスポートします。 既定では、どの証明書利用者信頼もエクスポートしません。 RelyingPartyTrustIdentifier、ClaimsProviderTrustIdentifier、RelyingPartyTrustName、および ClaimsProviderTrustName のいずれも指定されていない場合、このスクリプトはすべての証明書利用者信頼と要求プロバイダー信頼をエクスポートします。  
 > 
@@ -120,17 +120,17 @@ Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`.
 > 
 >   **-ClaimsProviderTrustName <string[]>** - このコマンドレットは、名前が string 配列に指定されている要求プロバイダー信頼のみをエクスポートします。 既定では、どの要求プロバイダー信頼もエクスポートしません。  
 > 
->   **-Path < string\>**  -エクスポートされたファイルを格納するフォルダーへのパス。  
+>   **-Path < string\>** -エクスポートされたファイルを格納するフォルダーへのパス。  
 > 
->   **-ComputerName < string\>**  -STS サーバーのホスト名を指定します。 既定はローカル コンピュータです。 AD FS 2.0 または Windows Server 2012 の AD FS を Windows Server 2012 R2 の AD FS に移行する場合、これはレガシ AD FS サーバーのホスト名です。  
+>   **-ComputerName < string\>** -STS サーバーのホスト名を指定します。 既定はローカル コンピュータです。 AD FS 2.0 または Windows Server 2012 の AD FS を Windows Server 2012 R2 の AD FS に移行する場合、これはレガシ AD FS サーバーのホスト名です。  
 > 
->   **-Credential < PSCredential\>**  -この操作を実行するアクセス許可を持つユーザーアカウントを指定します。 既定値は現在のユーザーです。  
+>   **-Credential < PSCredential\>** -この操作を実行するアクセス許可を持つユーザーアカウントを指定します。 既定値は現在のユーザーです。  
 > 
 >   **-Force** – ユーザーの確認を求めないように指定します。  
 > 
->   **-Certificatepassword < SecureString\>**  -AD FS 証明書の秘密キーをエクスポートするためのパスワードを指定します。 指定しない場合、AD FS の証明書と秘密キーをエクスポートする必要があるときに、スクリプトはパスワードの入力を求めます。  
+>   **-Certificatepassword < SecureString\>** -AD FS 証明書の秘密キーをエクスポートするためのパスワードを指定します。 指定しない場合、AD FS の証明書と秘密キーをエクスポートする必要があるときに、スクリプトはパスワードの入力を求めます。  
 > 
->   **入力**:なし  
+>   **入力**:None  
 > 
 >   **出力**: string - このコマンドレットはエクスポート フォルダーのパスを返します。 返されたオブジェクトを Import-FederationConfiguration にパイプで渡すことができます。  
   
@@ -193,9 +193,9 @@ import-federationconfiguration.ps1
 > [!IMPORTANT]
 >  インポート スクリプトは次のパラメーターを受け取ります。  
 > 
-> - Import-federationconfiguration.ps1-path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-LogPath < string @ no__t-3] [-CertificatePassword < securestring @ no__t-4]  
->   -   Import-federationconfiguration.ps1-path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-LogPath < string @ no__t-3] [-CertificatePassword < securestring @ no__t-4] [-RelyingPartyTrustIdentifier < string [] >] [-ClaimsProviderTrustIdentifier < string [] >  
->   -   Import-federationconfiguration.ps1-path < string @ no__t-0 [-ComputerName < string @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-LogPath < string @ no__t-3] [-CertificatePassword < securestring @ no__t-4] [-RelyingPartyTrustName < string [] >] [-ClaimsProviderTrustName < string [] >]  
+> - Import-federationconfiguration.ps1-path < string\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-LogPath < string\>] [-CertificatePassword < securestring\>]  
+>   -   Import-federationconfiguration.ps1-path < string\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-LogPath < string\>] [-CertificatePassword < securestring\>] [-RelyingPartyTrustIdentifier < string [] >] [-ClaimsProviderTrustIdentifier < string [] >  
+>   -   Import-federationconfiguration.ps1-path < string\> [-ComputerName < string\>] [-Credential < pscredential\>] [-Force] [-LogPath < string\>] [-CertificatePassword < securestring\>] [-RelyingPartyTrustName < string [] >] [-ClaimsProviderTrustName < string [] >]  
 > 
 >   **-RelyingPartyTrustIdentifier <string[]>** - このコマンドレットは、識別子が string 配列に指定されている証明書利用者信頼のみをインポートします。 既定では、どの証明書利用者信頼もインポートしません。 RelyingPartyTrustIdentifier、ClaimsProviderTrustIdentifier、RelyingPartyTrustName、および ClaimsProviderTrustName のいずれも指定されていない場合、このスクリプトはすべての証明書利用者信頼と要求プロバイダー信頼をインポートします。  
 > 
@@ -205,21 +205,21 @@ import-federationconfiguration.ps1
 > 
 >   **-ClaimsProviderTrustName <string[]>** - このコマンドレットは、名前が string 配列に指定されている要求プロバイダー信頼のみをインポートします。 既定では、どの要求プロバイダー信頼もインポートしません。  
 > 
->   **-Path < string\>**  -インポートする構成ファイルが格納されているフォルダーへのパス。  
+>   **-Path < string\>** -インポートする構成ファイルが格納されているフォルダーへのパス。  
 > 
->   **-LogPath < string\>**  -インポートログファイルが格納されるフォルダーへのパス。 "import.log" という名前のログ ファイルがこのフォルダーに作成されます。  
+>   **-LogPath < string\>** -インポートログファイルが格納されるフォルダーへのパス。 "import.log" という名前のログ ファイルがこのフォルダーに作成されます。  
 > 
->   **-ComputerName < string\>**  -STS サーバーのホスト名を指定します。 既定はローカル コンピュータです。 AD FS 2.0 または Windows Server 2012 の AD FS を Windows Server 2012 R2 の AD FS に移行する場合、このパラメーターはレガシ AD FS サーバーのホスト名に設定する必要があります。  
+>   **-ComputerName < string\>** -STS サーバーのホスト名を指定します。 既定はローカル コンピュータです。 AD FS 2.0 または Windows Server 2012 の AD FS を Windows Server 2012 R2 の AD FS に移行する場合、このパラメーターはレガシ AD FS サーバーのホスト名に設定する必要があります。  
 > 
 >   **-Credential < PSCredential\>** -この操作を実行するアクセス許可を持つユーザーアカウントを指定します。 既定値は現在のユーザーです。  
 > 
 >   **-Force** – ユーザーの確認を求めないように指定します。  
 > 
->   **-Certificatepassword < SecureString\>**  -AD FS 証明書の秘密キーをインポートするためのパスワードを指定します。 指定しない場合、AD FS の証明書と秘密キーをインポートする必要があるときに、スクリプトはパスワードの入力を求めます。  
+>   **-Certificatepassword < SecureString\>** -AD FS 証明書の秘密キーをインポートするためのパスワードを指定します。 指定しない場合、AD FS の証明書と秘密キーをインポートする必要があるときに、スクリプトはパスワードの入力を求めます。  
 > 
 >   **入力**: string - このコマンドは入力としてインポート フォルダーのパスを受け取ります。 Export-FederationConfiguration をパイプでこのコマンドに渡すことができます。  
 > 
->   **出力:** [なし] :  
+>   **出力**: なし。  
   
 証明書利用者信頼の WSFedEndpoint プロパティの末尾にあるスペースは、インポート スクリプトのエラーの原因になることがあります。 この場合、インポート前にファイルからスペースを手動で削除します。 たとえば、次のエントリはエラーの原因になります。  
   
@@ -245,7 +245,7 @@ import-federationconfiguration.ps1
   
 4. カスタム AD FS エンドポイントの設定をすべて構成します。 AD FS 管理コンソールで、 **[エンドポイント]** を選択します。 有効な AD FS エンドポイントを、AD FS の移行の準備中にファイルにエクスポートした有効な AD FS エンドポイントのリストと照合します。  
   
-    \-と  
+    \- と-  
   
     カスタム要求記述をすべて構成します。 AD FS 管理コンソールで、 **[要求記述]** を選択します。 AD FS の要求記述のリストを、AD FS の移行の準備中にファイルにエクスポートした要求記述のリストと照合します。 ファイルに含まれるが AD FS の既定のリストに含まれないカスタム要求記述をすべて追加します。 管理コンソール内の要求識別子はファイル内の ClaimType にマップされることに注意してください。  
   
@@ -255,13 +255,13 @@ import-federationconfiguration.ps1
   
    -   AD FS 2.0 または Windows Server 2012 ファームの AD FS で**web.config**ファイルに**いる userelaystateforidpinitiatedsignon**を追加した場合は、windows server 2012 R2 ファームの AD FS で次のサービスプロパティを構成する必要があります。  
   
-       -   Windows Server 2012 R2 の AD FS には、 **%systemroot%\ADFS\Microsoft.IdentityServer.Servicehost.exe.config**ファイルが含まれています。 **Web.config ファイル要素** `<useRelayStateForIdpInitiatedSignOn enabled="true" />`と同じ構文で要素を作成します。 この要素を、 **microsoft**の **<** のファイルの > セクションの一部として含めます。この要素は、次のように指定します。  
+       -   Windows Server 2012 R2 の AD FS には、 **%systemroot%\ADFS\Microsoft.IdentityServer.Servicehost.exe.config**ファイルが含まれています。 **Web.config ファイル要素**と同じ構文で要素を作成します。 `<useRelayStateForIdpInitiatedSignOn enabled="true" />`します。 この要素を、 **microsoft**の **<** のファイルの > セクションの一部として含めます。この要素は、次のように指定します。  
   
-   -   **&#124;< Persistの providerinformation enabled = "true false" lifetimeInDays = "90" enablewhrpersistence = "true&#124;false"/\>** が AD FS 2.0 または Windows Server の AD FS の web.config ファイルに追加された場合2012ファームでは、Windows Server 2012 R2 ファームの AD FS で、次のサービスプロパティを構成する必要があります。  
+   -   **< Persistの Providerinformation enabled = "true&#124;false" lifetimeInDays = "90" enablewhrPersistence = "true&#124;false"/\>** が AD FS 2.0 または AD FS の windows server 2012 ファームにある web.config ファイルに追加されている場合は、windows server 2012 R2 ファームの AD FS で次のサービスプロパティを構成する必要があります。  
   
-       1.  Windows Server 2012 R2 の AD FS で、次の Windows PowerShell コマンド`Set-AdfsWebConfig –HRDCookieEnabled –HRDCookieLifetime`を実行します。  
+       1.  Windows Server 2012 R2 の AD FS で、次の Windows PowerShell コマンドを実行します: `Set-AdfsWebConfig –HRDCookieEnabled –HRDCookieLifetime`。  
   
-   -   **< SingleSignOn enabled = "true&#124;false"/\>** が AD FS 2.0 または windows server 2012 ファーム内の AD FS の**web.config**ファイルに追加されている場合、windows server 2012 で AD FS に追加のサービスプロパティを設定する必要はありません。R2 ファーム。 Windows Server 2012 R2 ファームの AD FS では、シングルサインオンが既定で有効になっています。  
+   -   **< singleSignOn enabled = "true&#124;false"/\>** が AD FS 2.0 または AD FS の windows server 2012 ファームにある web.config ファイルに追加されている場合、windows server 2012 R2 ファームの AD FS に追加のサービスプロパティを設定する必要はありません。 Windows Server 2012 R2 ファームの AD FS では、シングルサインオンが既定で有効になっています。  
   
    -   AD FS 2.0 または Windows Server 2012 ファームの AD FS にある**web.config ファイルに**localAuthenticationTypes 設定が追加された場合は、windows Server 2012 R2 ファームの AD FS で次のサービスプロパティを構成する必要があります。  
   
@@ -269,8 +269,8 @@ import-federationconfiguration.ps1
   
    元の構成データのインポート後、必要に応じて AD FS サインイン ページをカスタマイズできます。 詳細については、「 [Customizing the AD FS Sign-in Pages](../operations/AD-FS-Customization-in-Windows-Server-2016.md)」を参照してください。  
   
-## <a name="next-steps"></a>次の手順
- [Active Directory フェデレーションサービス (AD FS) の役割サービスを Windows Server 2012 R2 に移行する](migrate-ad-fs-service-role-to-windows-server-r2.md)   
- [AD FS フェデレーションサーバーを移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)   
- [AD FS フェデレーションサーバープロキシの移行](migrate-fed-server-proxy-r2.md)   
+## <a name="next-steps"></a>次のステップ
+ [Active Directory フェデレーションサービス (AD FS) の役割サービスを Windows Server 2012 R2  に移行する](migrate-ad-fs-service-role-to-windows-server-r2.md)  
+ [AD FS フェデレーションサーバー  を移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)  
+ [AD FS フェデレーションサーバープロキシ  の移行](migrate-fed-server-proxy-r2.md)  
  [Windows Server 2012 R2 への AD FS 移行の検証](verify-ad-fs-migration.md)

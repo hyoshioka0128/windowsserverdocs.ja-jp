@@ -17,7 +17,7 @@ ms.locfileid: "71402964"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>共有記憶域を使用したストレッチ クラスター レプリケーション
 
->適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+>適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 この評価の例では、単一のストレッチ クラスター内にこれらのコンピューターとその記憶域を構成します。ここでは、2 つのノードがストレージの 1 つのセットを共有し、2 つのノードが別のストレージのセットを共有し、レプリケーションはクラスター内のミラー化された両方のストレージのセットを維持して、直ちにフェールオーバーできるようにします。 これらのノードとその記憶域は個別の物理サイトに配置することをお勧めしますが、必須ではありません。 サンプルのシナリオに示すように、Hyper-V とファイル サーバー クラスターで別々の作成手順があります。  
 
@@ -36,7 +36,7 @@ ms.locfileid: "71402964"
 
 ![Redmond の 2 つのノードと Bellevue サイトにある同一クラスターの 2 つのノードでのレプリケーションを示す図](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_StretchClusterExample.png)  
 
-**FIGURE 1:ストレッチクラスターでの記憶域のレプリケーション @ no__t-0  
+**図 1: ストレッチクラスターでの記憶域のレプリケーション**  
 
 ## <a name="prerequisites"></a>前提条件  
 -   Active Directory Domain Services フォレスト (Windows Server 2016 を実行する必要はありません)。  
@@ -114,7 +114,7 @@ ms.locfileid: "71402964"
 
         1.  ペアリングされた各サーバー ノードのセットがそのサイトのストレージ格納装置 (つまり非対称記憶域) のみを参照できることと、SAS 接続が正しく構成されていることを確認します。  
 
-        2.  記憶域スペースを使用して記憶域をプロビジョニングします。これには、「[スタンドアロン サーバーに記憶域スペースを展開する](../storage-spaces/deploy-standalone-storage-spaces.md)」の**手順 1 - 3** に従い、Windows PowerShell またはサーバー マネージャーを使用します。  
+        2.  記憶域スペースを使用して記憶域をプロビジョニングします。これには、「**スタンドアロン サーバーに記憶域スペースを展開する**」の[手順 1 - 3](../storage-spaces/deploy-standalone-storage-spaces.md) に従い、Windows PowerShell またはサーバー マネージャーを使用します。  
 
     -   **ISCSI ストレージの場合:**  
 
@@ -182,7 +182,7 @@ ms.locfileid: "71402964"
    7. オンライン記憶域をこの空の役割に追加し、「**新しい役割 (2)** 」という名前を付けます。
    8. これで、ドライブ文字を付けてすべての記憶域をマウントしたため、`Test-SRTopology` を使用してクラスターを評価できます。
 
-       以下に例を示します。
+       次に、例を示します。
 
            MD c:\temp  
 
@@ -220,7 +220,7 @@ ms.locfileid: "71402964"
 
 14. **(省略可能)** DNS サイトの高速フェール オーバーのためにクラスター ネットワークと Active Directory を構成します。 HYPER-V ソフトウェア定義ネットワークで拡大された VLAN、ネットワーク抽象化デバイス、短くした DNS の TTL、およびその他の一般的な手法を使用することができます。
 
-    詳細については、Microsoft Ignite セッションを確認してください。[Windows Server vNext での記憶域レプリカの使用と](http://channel9.msdn.com/Events/Ignite/2015/BRK3487)、[サイト間での変更通知の有効化-方法と理由](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)に関するブログの投稿  
+    詳細については、Microsoft Ignite セッション「[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487)」(Windows Server vNext でのフェールオーバー クラスターの拡大と記憶域レプリカの使用) およびブログ記事「[Enable Change Notifications between Sites - How and Why?](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)」(サイト間での変更通知の有効化 - 方法とこれを行う理由) を参照してください。  
 
 15. **(省略可能)** ゲストがノード障害中に長時間一時停止しないように VM の回復性を構成します。 代わりに、10 秒以内に新しいレプリケーション ソース記憶域にフェールオーバーします。  
 
@@ -249,7 +249,7 @@ ms.locfileid: "71402964"
    Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Cluster IP Address] or [NewIPAddress]”
    ```  
 
-3. ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 以下に例を示します。  
+3. ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 次に、例を示します。  
 
    ```PowerShell  
    Set-ClusterQuorum -FileShareWitness \\someserver\someshare  
@@ -287,7 +287,7 @@ ms.locfileid: "71402964"
 
 9. **(省略可能)** DNS サイトの高速フェール オーバーのためにクラスター ネットワークと Active Directory を構成します。 HYPER-V ソフトウェア定義ネットワークで拡大された VLAN、ネットワーク抽象化デバイス、短くした DNS の TTL、およびその他の一般的な手法を使用することができます。  
 
-   詳細については、Microsoft Ignite セッションを確認してください。[Windows Server vNext でのフェールオーバークラスターと記憶域レプリカの使用](http://channel9.msdn.com/Events/Ignite/2015/BRK3487)と、[サイト間での変更通知を有効にする方法とその理由について説明](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)します。  
+   詳細については、「[Stretching Failover Clusters and Using Storage Replica in Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487)」(Windows Server vNext でのフェールオーバー クラスターの拡大と記憶域レプリカの使用) Microsoft Ignite セッションおよび「[Enable Change Notifications between Sites - How and Why?](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx)」(サイト間での変更通知の有効化 - 方法とこれを行う理由) を参照してください。  
 
 10. **(省略可能)** ゲストがノード障害中に長時間一時停止しないように VM の回復性を構成します。 代わりに、10 秒以内に新しいレプリケーション ソース記憶域にフェールオーバーします。  
 
@@ -340,11 +340,11 @@ ms.locfileid: "71402964"
 
 11. データ ボリュームにするディスクを選択して **[次へ]** をクリックします。  
 
-12. 設定を確認して、 **[次へ]** をクリックします。 **[完了]** をクリックします。  
+12. 設定を確認して、 **[次へ]** をクリックします。 **[Finish]** (完了) をクリックします。  
 
 13. 新しいファイル サーバーの役割を右クリックし、 **[ファイル共有の追加]** をクリックします。 共有を構成するウィザードを実行します。  
 
-14. 省略可能: このサイトの他の記憶域を使用する別のファイルサーバーの役割を追加します。  
+14. 省略可能: このサイトの他のストレージを使用する別のファイル サーバーの役割を追加します。  
 
 15. ストレッチ クラスター サイトの認識を構成し、サーバー SR SRV01 と SR SRV02 がサイト Redmond に含まれ、SR SRV03 と SR SRV04 がサイト Bellevue に含まれ、Redmond がソース記憶域と仮想マシンのノードの所有権で優先されるようにします。  
 
@@ -390,7 +390,7 @@ ms.locfileid: "71402964"
     ```
 
 
-3. ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 以下に例を示します。  
+3. ドメイン コントローラーまたはその他のなんらかの独立したサーバーでホストされている共有を指す各クラスター内でファイル共有監視またはクラウド (Azure) 監視を構成します。 次に、例を示します。  
 
     ```PowerShell
     Set-ClusterQuorum -FileShareWitness \\someserver\someshare
@@ -407,7 +407,7 @@ ms.locfileid: "71402964"
 
 5. クラスター ネットワークが最適に構成されていることを確認します。  
 
-6.  ファイル サーバーの役割を構成します。 以下に例を示します。
+6.  ファイル サーバーの役割を構成します。 次に、例を示します。
 
     ```PowerShell  
     Get-ClusterResource  
@@ -478,7 +478,7 @@ ms.locfileid: "71402964"
 
         1.  レプリケーション元サーバー上で、 **[アプリケーションとサービス]、[Microsoft]、[Windows]、[記憶域レプリカ]、[管理]** の順に移動し、イベント 5015、5002、5004、1237、5001、2200 を調べます。  
 
-        2.  レプリケーション先サーバー上で、 **[アプリケーションとサービス]、[Microsoft]、[Windows]、[記憶域レプリカ]、[操作可]** の順に移動し、イベント 1215 を待機します。 このイベントでは、コピーされたバイト数およびかかった時間が示されます。 例:  
+        2.  レプリケーション先サーバー上で、 **[アプリケーションとサービス]、[Microsoft]、[Windows]、[記憶域レプリカ]、[操作可]** の順に移動し、イベント 1215 を待機します。 このイベントでは、コピーされたバイト数およびかかった時間が示されます。 以下に例を示します。  
 
             ```  
             Log Name:      Microsoft-Windows-StorageReplica/Operational  
@@ -578,7 +578,7 @@ ms.locfileid: "71402964"
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20  
         ```  
 
-    2.  レプリケーション先サーバーで、次のコマンドを実行して、パートナーシップの作成を示す記憶域レプリカ イベントを参照します。 このイベントでは、コピーされたバイト数およびかかった時間が示されます。 例:  
+    2.  レプリケーション先サーバーで、次のコマンドを実行して、パートナーシップの作成を示す記憶域レプリカ イベントを参照します。 このイベントでは、コピーされたバイト数およびかかった時間が示されます。 以下に例を示します。  
 
             Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | fl  
 
@@ -604,7 +604,7 @@ ms.locfileid: "71402964"
         Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | FL  
         ```  
 
-    4.  または、レプリカのレプリケーション先サーバー グループでは、コピーの残りのバイト数が常時示されており、PowerShell を使って照会できます。 以下に例を示します。  
+    4.  または、レプリカのレプリケーション先サーバー グループでは、コピーの残りのバイト数が常時示されており、PowerShell を使って照会できます。 次に、例を示します。  
 
         ```PowerShell  
         (Get-SRGroup).Replicas | Select-Object numofbytesremaining  
@@ -699,23 +699,23 @@ ms.locfileid: "71402964"
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of requests for last log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Flush Queue Length  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Current Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of Application Write Requests  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Number of requests per log write  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Number of requests per log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Write Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Write Latency  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Read Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Read Latency  
 
     -   \Storage Replica Statistics(*)\Target RPO  
 
     -   \Storage Replica Statistics(*)\Current RPO  
 
-    -   \Storage Replica Statistics(*)\Avg.Log Queue Length  
+    -   \Storage Replica Statistics(*)\Avg. Log Queue Length  
 
     -   \Storage Replica Statistics(*)\Current Log Queue Length  
 
@@ -723,11 +723,11 @@ ms.locfileid: "71402964"
 
     -   \Storage Replica Statistics(*)\Total Bytes Sent  
 
-    -   \Storage Replica Statistics(*)\Avg.Network Send Latency  
+    -   \Storage Replica Statistics(*)\Avg. Network Send Latency  
 
     -   \Storage Replica Statistics(*)\Replication State  
 
-    -   \Storage Replica Statistics(*)\Avg.Message Round Trip Latency  
+    -   \Storage Replica Statistics(*)\Avg. Message Round Trip Latency  
 
     -   \Storage Replica Statistics(*)\Last Recovery Elapsed Time  
 
@@ -796,9 +796,9 @@ ms.locfileid: "71402964"
 - [記憶域レプリカの概要](storage-replica-overview.md)  
 - [サーバー間の記憶域レプリケーション](server-to-server-storage-replication.md)  
 - [クラスターからクラスターへの記憶域のレプリケーション](cluster-to-cluster-storage-replication.md)  
-- [記憶域レプリカ:既知の問題](storage-replica-known-issues.md) 
-- [記憶域レプリカ:よく寄せられる質問](storage-replica-frequently-asked-questions.md)  
+- [記憶域レプリカ: 既知の問題](storage-replica-known-issues.md) 
+- [記憶域レプリカ: よく寄せられる質問](storage-replica-frequently-asked-questions.md)  
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  
 - [Windows Server 2016 の記憶域スペースダイレクト](../storage-spaces/storage-spaces-direct-overview.md)

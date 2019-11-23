@@ -21,7 +21,7 @@ ms.locfileid: "71355233"
 ---
 # <a name="manage-resources-in-multiple-active-directory-forests"></a>複数の Active Directory フォレスト内のリソースを管理する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、複数の Active Directory フォレスト内のドメインコントローラー、DHCP サーバー、および DNS サーバーを IPAM を使用して管理する方法について説明します。  
   
@@ -32,7 +32,7 @@ IPAM を使用してリモート Active Directory フォレスト内のリソー
 ![サーバー検出の設定](../../media/Manage-Resources-in-Multiple-Active-Directory-Forests/ipam_serverdiscovery.jpg)  
 
 >[!NOTE]
->Active Directory フォレスト間のシナリオで @ no__t によるプロビジョニングをグループポリシーには、信頼する側のドメイン Dc ではなく、IPAM サーバーで次の Windows PowerShell コマンドレットを実行してください。 たとえば、IPAM サーバーがフォレスト corp.contoso.com に参加しており、信頼する側のフォレストが fabrikam.com の場合、グループポリシー corp.contoso.com の IPAM サーバーで次の Windows PowerShell コマンドレットを実行して、fabrikam.com フォレスト。 このコマンドレットを実行するには、fabrikam.com フォレストの Domain Admins グループのメンバーである必要があります。
+>フォレスト間の Active Directory シナリオでグループポリシー\-ベースのプロビジョニングを行う場合は、信頼する側のドメイン Dc ではなく、IPAM サーバーで次の Windows PowerShell コマンドレットを実行してください。 たとえば、IPAM サーバーがフォレスト corp.contoso.com に参加していて、信頼する側のフォレストが fabrikam.com である場合、corp.contoso.com の IPAM サーバーで次の Windows PowerShell コマンドレットを実行して、fabrikam.com フォレストでグループポリシー\-ベースのプロビジョニングを行うことができます。 このコマンドレットを実行するには、fabrikam.com フォレストの Domain Admins グループのメンバーである必要があります。
 
     
     Invoke-IpamGpoProvisioning -Domain fabrikam.COM -GpoPrefixName IPAMSERVER -IpamServerFqdn IPAM.CORP.CONTOSO.COM

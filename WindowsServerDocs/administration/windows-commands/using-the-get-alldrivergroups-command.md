@@ -22,7 +22,7 @@ ms.locfileid: "71363381"
 ---
 # <a name="using-the-get-alldrivergroups-command"></a>Get AllDriverGroups コマンドを使用してください。
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 サーバー上のすべてのドライバー グループに関する情報を表示します。
 ## <a name="syntax"></a>構文

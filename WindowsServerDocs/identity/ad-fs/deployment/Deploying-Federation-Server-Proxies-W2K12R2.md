@@ -18,7 +18,7 @@ ms.locfileid: "71359678"
 ---
 # <a name="deploying-federation-server-proxies"></a>フェデレーション サーバー プロキシの展開
 
-Windows Server 2012 R2 の Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 では、フェデレーションサーバープロキシの役割は、Web アプリケーションプロキシと呼ばれる新しいリモートアクセス役割サービスによって処理されます。 AD FS AD FS のレガシバージョンでフェデレーションサーバープロキシを展開する目的であった企業ネットワークの外部からのアクセスを可能にするには (AD FS 2.0、Windows Server 2012 の AD FS など)、1つまたは複数の web アプリケーションプロキシを展開できます。Windows Server 2012 R2 の D FS。  
+Windows Server 2012 R2 の Active Directory フェデレーションサービス (AD FS) \(AD FS\) では、フェデレーションサーバープロキシの役割は、Web アプリケーションプロキシと呼ばれる新しいリモートアクセス役割サービスによって処理されます。 AD FS AD FS のレガシバージョンでフェデレーションサーバープロキシを展開する目的であった企業ネットワークの外部からのアクセスを可能にするには (AD FS 2.0、Windows Server 2012 の AD FS など)、1つまたは複数の web アプリケーションプロキシを展開できます。Windows Server 2012 R2 の D FS。  
   
 AD FS のコンテキストでは、Web アプリケーションプロキシは AD FS フェデレーションサーバープロキシとして機能します。 さらに、Web アプリケーション プロキシには、企業ネットワーク内部の Web アプリケーション用のリバース プロキシ機能があり、ユーザーは任意のデバイスで企業ネットワーク外部から Web アプリケーションにアクセスできます。 Web アプリケーション プロキシの役割サービスの詳細については、「Web アプリケーション プロキシの概要」を参照してください。  
   
@@ -35,7 +35,7 @@ Web アプリケーション プロキシを展開するには、次のトピッ
 -   [Web アプリケーションプロキシサーバーをインストールして構成する](https://technet.microsoft.com/library/dn383662.aspx)  
   
  
-## <a name="see-also"></a>関連項目 
+## <a name="see-also"></a>参照 
 
 [AD FS 展開](../../ad-fs/AD-FS-Deployment.md)  
 

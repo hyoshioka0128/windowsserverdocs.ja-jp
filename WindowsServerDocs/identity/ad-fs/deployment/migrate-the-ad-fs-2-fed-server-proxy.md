@@ -31,7 +31,7 @@ AD FS 2.0 フェデレーションサーバープロキシを Windows Server 201
 > [!IMPORTANT]
 >  オペレーティング システムをアップグレードすると、このサーバーの AD FS 構成が失われ、AD FS 2.0 サーバーの役割が削除されます。 代わりに、Windows Server 2012 AD FS サーバーロールがインストールされますが、構成されていません。 フェデレーション サーバーの移行を完了するには、元の AD FS プロキシ構成を手動で作成し、その他の AD FS 設定を復元する必要があります。  
   
-4. **AD FS フェデレーション サーバー構成ウィザード**を使用して、元の AD FS プロキシ構成を作成します。 詳細については、次を参照してください。 [、フェデレーション サーバー プロキシ ロール用コンピューターの構成](configure-a-computer-for-the-federation-server-proxy-role.md)します。 ウィザードを実行するときに、AD FS 2.0 フェデレーション サーバー プロキシを移行するための準備を行っている間に収集した情報を、次のように使用します。  
+4. **AD FS フェデレーション サーバー構成ウィザード**を使用して、元の AD FS プロキシ構成を作成します。 詳細については、「 [Configure a Computer for the Federation Server Proxy Role](configure-a-computer-for-the-federation-server-proxy-role.md)」を参照してください。 ウィザードを実行するときに、AD FS 2.0 フェデレーション サーバー プロキシを移行するための準備を行っている間に収集した情報を、次のように使用します。  
   
  
 |**フェデレーションサーバープロキシウィザードの入力オプション**|**次の値を使用します。**|
@@ -41,16 +41,16 @@ AD FS 2.0 フェデレーションサーバープロキシを Windows Server 201
 |**HTTP プロキシサーバーのアドレス**|proxyproperties.txt ファイルの ForwardProxyUrl 値を入力します。|  
 |資格情報プロンプト|AD FS フェデレーション サーバーの管理者のアカウントまたは AD FS フェデレーション サービスを実行するサービス アカウントの資格情報を入力します。|  
   
-5. このサーバーで AD FS Web ページを更新します。 移行のためにフェデレーションサーバープロキシを準備しているときに、カスタマイズした AD FS プロキシ web ページをバックアップした場合は、バックアップデータを使用して、 **%systemdrive%\inetpub\adfs\ls**ディレクトリに既定で作成された既定の AD FS web ページを上書きします。Windows Server 2012 の AD FS プロキシ構成の結果として。  
+5. このサーバーで AD FS Web ページを更新します。 移行のためにフェデレーションサーバープロキシを準備しているときに、カスタマイズされた AD FS プロキシ web ページをバックアップした場合は、バックアップデータを使用して、Windows Server 2012 の AD FS プロキシ構成の結果として **%systemdrive%\inetpub\adfs\ls**ディレクトリに既定で作成された既定の AD FS web ページを上書きします。  
   
 6. このサーバーをロード バランサーに追加して戻します。  
   
 7. 移行する AD FS 2.0 フェデレーション サーバー プロキシが他にもある場合は、残りのフェデレーション サーバー プロキシ コンピューターで、手順 2 から 6 を繰り返します。  
   
   
-## <a name="next-steps"></a>次の手順
- [AD FS 2.0 フェデレーションサーバーの移行の準備](prepare-to-migrate-ad-fs-fed-server.md)   
+## <a name="next-steps"></a>次のステップ
+ [AD FS 2.0 フェデレーションサーバー  の移行の準備](prepare-to-migrate-ad-fs-fed-server.md)  
  [AD FS 2.0 フェデレーションサーバープロキシの移行の準備](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [AD FS 2.0 フェデレーションサーバー](migrate-the-ad-fs-fed-server.md)  を移行します。  
- [AD FS 2.0 フェデレーションサーバープロキシ   を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
+ [AD FS 2.0 フェデレーションサーバー  を移行します](migrate-the-ad-fs-fed-server.md)。  
+ [AD FS 2.0 フェデレーションサーバープロキシ  を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
  [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)

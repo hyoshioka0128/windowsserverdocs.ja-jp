@@ -19,13 +19,13 @@ ms.locfileid: "71358159"
 # <a name="create-a-rule-to-send-an-authentication-method-claim"></a>認証方法の要求を送信する規則を作成する
 
 
-"**グループメンバーシップを要求として送信**" 規則テンプレートまたは "**入力方向の要求の変換**" 規則テンプレートを使用して、認証方法の要求を送信できます。 証明書利用者は、認証方法の要求を使用して、Active Directory フェデレーションサービス (AD FS) @no__t 0AD FS @ no__t から要求を認証および取得するためにユーザーが使用するログオンメカニズムを決定できます。 また、Windows Server 2012 R2 の Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 の認証メカニズム保証機能を入力として使用して、証明書利用者が決定する必要がある状況に対して認証方法の要求を生成することもできます。スマートカードログオンに基づくアクセスレベル。 たとえば、開発者は、証明書利用者アプリケーションのフェデレーションユーザーに対してさまざまなレベルのアクセス権を割り当てることができます。 アクセスのレベルは、ユーザーがスマートカードではなく、ユーザー名とパスワードの資格情報を使用してログオンしたかどうかに基づいて決まります。  
+"**グループメンバーシップを要求として送信**" 規則テンプレートまたは "**入力方向の要求の変換**" 規則テンプレートを使用して、認証方法の要求を送信できます。 証明書利用者は、認証方法の要求を使用して、ユーザーが Active Directory フェデレーションサービス (AD FS) \(AD FS\)から要求を認証および取得するために使用するログオンメカニズムを決定できます。 また、Windows Server 2012 R2 の Active Directory フェデレーションサービス (AD FS) \(AD FS\) の認証メカニズム保証機能を入力として使用して、証明書利用者がスマートカードログオンに基づくアクセスレベルを決定する場合の認証方法要求を生成することもできます。 たとえば、開発者は、証明書利用者アプリケーションのフェデレーションユーザーに対してさまざまなレベルのアクセス権を割り当てることができます。 アクセスのレベルは、ユーザーがスマートカードではなく、ユーザー名とパスワードの資格情報を使用してログオンしたかどうかに基づいて決まります。  
 
 組織の要件に応じて、次のいずれかの手順を実行します。  
 
--   この規則は、"**グループメンバーシップを要求として送信**する" 規則テンプレートを使用して作成します。この規則テンプレートは、このテンプレートで指定したグループで、最終的に発行する認証方法の要求を決定するときに使用でき @no__t ます。  
+-   この規則は、"**グループメンバーシップを要求として送信**する" 規則テンプレートを使用して作成します。この規則テンプレートを使用して、このテンプレートで指定したグループが最終的に発行する認証方法要求を決定するときに使用でき \- ます。  
 
--   "**入力方向の要求を変換**する" 規則テンプレートを使用して、この規則を作成します。この規則テンプレートは、既存の認証方法を、認識しない製品で動作する新しい認証方法に変更する場合に使用でき @no__t標準 AD FS 認証方法の要求。  
+-   "**入力方向の要求の変換**" 規則テンプレートを使用して、この規則を作成します。この規則テンプレートは、既存の認証方法を、標準の AD FS 認証方法の要求を認識しない製品で動作する新しい認証方法に変更する場合に使用でき \- ます。  
 
 
 
@@ -34,16 +34,16 @@ ms.locfileid: "71358159"
 1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
 
 2.  コンソールツリーの  **AD FS**で、**証明書利用者の信頼** をクリックします。 
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG) を作成 ![には  
 
-3.  選択\-した信頼を右クリックし、 **[要求の発行ポリシーの編集]** をクリックします。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
+3.  選択した信頼を右\-クリックし、 **[要求の発行ポリシーの編集]** をクリックします。
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG) を作成 ![には   
 
 4.  **[要求発行ポリシーの編集]** ダイアログボックスの **[発行変換規則]** で、 **[規則の追加]** をクリックして規則ウィザードを開始します。 
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG) を作成 ![には    
 
 5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、一覧から **[グループメンバーシップを要求として送信]** を選択し、 **[次へ]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)      
+ルール](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG) を作成 ![には      
 
 6.  **[規則の構成]** ページで、要求規則の名前を入力します。  
 
@@ -51,14 +51,14 @@ ms.locfileid: "71358159"
 
 8.  **[出力方向の要求の種類]** で、一覧の **[認証方法]** を選択します。  
 
-9. **[出力方向の要求の値]** で、次の表に示す既定の uniform resource identifier \(uri @ no__t のいずれかの値を入力します。優先する認証方法に応じて、 **[完了]** をクリックし、 **[OK]** をクリックして規則を保存します。  
+9. **[出力方向の要求の値]** で、次の表に示す既定の uniform resource IDENTIFIER \(URI\) の値のいずれかを、優先認証方法に応じて入力します。 **[完了]** をクリックし、 **[OK]** をクリックして規則を保存します。  
 
 |                            実際の認証方法                             |                                対応する URI                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        ユーザー名とパスワードの認証                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
-|                               Windows 認証                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| トランスポート層セキュリティ \(TLS @ no__t-1 x.509 証明書を使用する相互認証 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|                  TLS を使用しない x.509 @ no__t-0based 認証                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+|                               [Windows 認証]                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
+| TLS\) x.509 証明書を使用するトランスポート層セキュリティ \(TLS による認証 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|                  TLS を使用しない x.509\-ベースの認証                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![ルールの作成](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
 
@@ -67,16 +67,16 @@ ms.locfileid: "71358159"
 1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
 
 2.  コンソールツリーの  **AD FS**で、**要求プロバイダー信頼** をクリックします。 
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG) を作成 ![には  
 
-3.  選択\-した信頼を右クリックし、 **[要求規則の編集]** をクリックします。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
+3.  選択した信頼を右\-クリックし、 **[要求規則の編集]** をクリックします。
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG) を作成 ![には   
 
 4.  **[要求規則の編集]** ダイアログボックスの **[受け入れ変換規則]** で、 **[規則の追加]** をクリックして規則ウィザードを開始します。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG) を作成 ![には    
 
 5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、一覧から **[グループメンバーシップを要求として送信]** を選択し、 **[次へ]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)     
+ルール](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG) を作成 ![には     
 
 6.  **[規則の構成]** ページで、要求規則の名前を入力します。  
 
@@ -84,14 +84,14 @@ ms.locfileid: "71358159"
 
 8.  **[出力方向の要求の種類]** で、一覧の **[認証方法]** を選択します。  
 
-9. **[出力方向の要求の値]** で、次の表に示す既定の uniform resource identifier \(uri @ no__t のいずれかの値を入力します。優先する認証方法に応じて、 **[完了]** をクリックし、 **[OK]** をクリックして規則を保存します。  
+9. **[出力方向の要求の値]** で、次の表に示す既定の uniform resource IDENTIFIER \(URI\) の値のいずれかを、優先認証方法に応じて入力します。 **[完了]** をクリックし、 **[OK]** をクリックして規則を保存します。  
 
 |                            実際の認証方法                             |                                対応する URI                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        ユーザー名とパスワードの認証                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
-|                               Windows 認証                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| トランスポート層セキュリティ \(TLS @ no__t-1 x.509 証明書を使用する相互認証 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|                  TLS を使用しない x.509 @ no__t-0based 認証                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+|                               [Windows 認証]                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
+| TLS\) x.509 証明書を使用するトランスポート層セキュリティ \(TLS による認証 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|                  TLS を使用しない x.509\-ベースの認証                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![ルールの作成](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth2.PNG)
 
@@ -101,16 +101,16 @@ ms.locfileid: "71358159"
 1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
 
 2.  コンソールツリーの  **AD FS**で、**証明書利用者の信頼** をクリックします。 
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG) を作成 ![には  
 
-3.  選択\-した信頼を右クリックし、 **[要求の発行ポリシーの編集]** をクリックします。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
+3.  選択した信頼を右\-クリックし、 **[要求の発行ポリシーの編集]** をクリックします。
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG) を作成 ![には   
 
 4.  **[要求発行ポリシーの編集]** ダイアログボックスの **[発行変換規則]** で、 **[規則の追加]** をクリックして規則ウィザードを開始します。 
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG) を作成 ![には    
 
 5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、 **[入力方向の要求]** を一覧から変換する を選択し、 **[次へ]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)      
+ルール](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG) を作成 ![には      
 
 6.  **[規則の構成]** ページで、要求規則の名前を入力します。  
 
@@ -127,9 +127,9 @@ ms.locfileid: "71358159"
 |              実際の認証方法              |                                対応する URI                                 |
 |--------------------------------------------------------|----------------------------------------------------------------------------------|
 |         ユーザー名とパスワードの認証          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
-|                 Windows 認証                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
+|                 [Windows 認証]                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | X.509 証明書を使用する TLS 相互認証 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|   TLS を使用しない x.509 @ no__t-0based 認証    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+|   TLS を使用しない x.509\-ベースの認証    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![ルールの作成](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
 
@@ -141,16 +141,16 @@ ms.locfileid: "71358159"
 1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
 
 2.  コンソールツリーの  **AD FS**で、**要求プロバイダー信頼** をクリックします。 
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG) を作成 ![には  
 
-3.  選択\-した信頼を右クリックし、 **[要求規則の編集]** をクリックします。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
+3.  選択した信頼を右\-クリックし、 **[要求規則の編集]** をクリックします。
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG) を作成 ![には   
 
 4.  **[要求規則の編集]** ダイアログボックスの **[受け入れ変換規則]** で、 **[規則の追加]** をクリックして規則ウィザードを開始します。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG) を作成 ![には    
 
 5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、 **[入力方向の要求]** を一覧から変換する を選択し、 **[次へ]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)      
+ルール](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG) を作成 ![には      
 
 6.  **[規則の構成]** ページで、要求規則の名前を入力します。  
 
@@ -167,9 +167,9 @@ ms.locfileid: "71358159"
 |              実際の認証方法              |                                対応する URI                                 |
 |--------------------------------------------------------|----------------------------------------------------------------------------------|
 |         ユーザー名とパスワードの認証          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
-|                 Windows 認証                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
+|                 [Windows 認証]                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | X.509 証明書を使用する TLS 相互認証 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|   TLS を使用しない x.509 @ no__t-0based 認証    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+|   TLS を使用しない x.509\-ベースの認証    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![ルールの作成](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth4.PNG)
 
@@ -199,12 +199,12 @@ ms.locfileid: "71358159"
 
 1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
 
-2.  コンソールツリーの [ **\\AD FS の信頼関係**] で、 **[要求プロバイダー信頼]** または **[証明書利用者信頼]** をクリックし、この規則を作成する一覧内の特定の信頼をクリックします。  
+2.  コンソールツリーの [ **AD FS\\の信頼関係**] で、 **[要求プロバイダー信頼]** または **[証明書利用者信頼]** をクリックし、この規則を作成する一覧内の特定の信頼をクリックします。  
 
-3.  選択\-した信頼を右クリックし、 **[要求規則の編集]** をクリックします。
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)  
+3.  選択した信頼を右\-クリックし、 **[要求規則の編集]** をクリックします。
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) を作成 ![には  
 
-4.  **[要求規則の編集]** ダイアログボックスで、編集する信頼とこの規則を作成する規則セットに応じて、次のタブのいずれかを選択し、 **[規則の追加]** をクリックして、その規則セットに関連付けられている規則ウィザードを開始します。:  
+4.  **[要求規則の編集]** ダイアログボックスで、編集する信頼とこの規則を作成する規則セットに応じて、次のタブのいずれかを選択し、 **[規則の追加]** をクリックして、その規則セットに関連付けられている規則ウィザードを開始します。  
 
     -   **受け入れ変換規則**  
 
@@ -213,10 +213,10 @@ ms.locfileid: "71358159"
     -   **発行承認規則**  
 
     -   **委任の承認規則**  
-![ルールの作成](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+ルール](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG) を作成 ![には
 
 5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、 **[グループメンバーシップを要求として送信する]** を一覧から選択し、 **[次へ]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group1.PNG)
+ルール](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group1.PNG) を作成 ![には
 
 6.  **[規則の構成]** ページで、要求規則の名前を入力します。  
 
@@ -224,14 +224,14 @@ ms.locfileid: "71358159"
 
 8.  **[出力方向の要求の種類]** で、一覧の **[認証方法]** を選択します。  
 
-9. **[出力方向の要求の値]** で、次の表に示す既定の uniform resource identifier \(uri @ no__t のいずれかの値を入力します。優先する認証方法に応じて、 **[完了]** をクリックし、 **[OK]** をクリックして規則を保存します。  
+9. **[出力方向の要求の値]** で、次の表に示す既定の uniform resource IDENTIFIER \(URI\) の値のいずれかを、優先認証方法に応じて入力します。 **[完了]** をクリックし、 **[OK]** をクリックして規則を保存します。  
 
 |                            実際の認証方法                             |                                対応する URI                                 |
 |-------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 |                        ユーザー名とパスワードの認証                        | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
-|                               Windows 認証                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
-| トランスポート層セキュリティ \(TLS @ no__t-1 x.509 証明書を使用する相互認証 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|                  TLS を使用しない x.509 @ no__t-0based 認証                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+|                               [Windows 認証]                                |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
+| TLS\) x.509 証明書を使用するトランスポート層セキュリティ \(TLS による認証 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
+|                  TLS を使用しない x.509\-ベースの認証                  |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![ルールの作成](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth1.PNG)
 
@@ -244,12 +244,12 @@ ms.locfileid: "71358159"
 
 1.  サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** をクリックします。  
 
-2.  コンソールツリーの [ **\\AD FS の信頼関係**] で、 **[要求プロバイダー信頼]** または **[証明書利用者信頼]** をクリックし、この規則を作成する一覧内の特定の信頼をクリックします。  
+2.  コンソールツリーの [ **AD FS\\の信頼関係**] で、 **[要求プロバイダー信頼]** または **[証明書利用者信頼]** をクリックし、この規則を作成する一覧内の特定の信頼をクリックします。  
 
-3.  選択\-した信頼を右クリックし、 **[要求規則の編集]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) 
+3.  選択した信頼を右\-クリックし、 **[要求規則の編集]** をクリックします。  
+ルール](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG) を作成 ![には 
 
-4.  **[要求規則の編集]** ダイアログボックスで、次のいずれかのタブを選択します。このタブは、編集している信頼と、この規則を作成する規則セットによって異なります。次に、 **[規則の追加]** をクリックして、その規則セットに関連付けられている規則ウィザードを開始します。:  
+4.  **[要求規則の編集]** ダイアログボックスで、次のいずれかのタブを選択します。このタブは、編集している信頼と、この規則を作成する規則セットによって異なります。次に、 **[規則の追加]** をクリックして、その規則セットに関連付けられている規則ウィザードを開始します。  
 
     -   **受け入れ変換規則**  
 
@@ -258,10 +258,10 @@ ms.locfileid: "71358159"
     -   **発行承認規則**  
 
     -   **委任の承認規則**  
-![ルールの作成](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+ルール](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG) を作成 ![には
 
 5.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、 **[入力方向の要求]** を一覧から変換する を選択し、 **[次へ]** をクリックします。  
-![ルールの作成](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG)    
+ルール](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform1.PNG) を作成 ![には    
 
 6.  **[規則の構成]** ページで、要求規則の名前を入力します。  
 
@@ -278,9 +278,9 @@ ms.locfileid: "71358159"
 |              実際の認証方法              |                                対応する URI                                 |
 |--------------------------------------------------------|----------------------------------------------------------------------------------|
 |         ユーザー名とパスワードの認証          | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password  |
-|                 Windows 認証                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
+|                 [Windows 認証]                 |  https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/windows  |
 | X.509 証明書を使用する TLS 相互認証 | https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/tlsclient |
-|   TLS を使用しない x.509 @ no__t-0based 認証    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
+|   TLS を使用しない x.509\-ベースの認証    |   https://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/x509    |
 
 ![ルールの作成](media/Create-a-Rule-to-Send-an-Authentication-Method-Claim/auth3.PNG)
 
@@ -290,9 +290,9 @@ ms.locfileid: "71358159"
 ## <a name="additional-references"></a>その他の参照情報 
 [要求規則を構成する](Configure-Claim-Rules.md)  
 
-[チェックリスト:証明書利用者信頼の要求規則の作成](https://technet.microsoft.com/library/ee913578.aspx)  
+[チェックリスト: 証明書利用者信頼の要求規則を作成する](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[チェックリスト:要求プロバイダー信頼の要求規則の作成](https://technet.microsoft.com/library/ee913564.aspx)  
+[チェックリスト: 要求プロバイダー信頼の要求規則を作成する](https://technet.microsoft.com/library/ee913564.aspx)  
 
 [承認要求規則を使用する場合](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 

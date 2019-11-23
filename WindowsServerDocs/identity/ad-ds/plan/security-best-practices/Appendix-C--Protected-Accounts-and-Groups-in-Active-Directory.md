@@ -16,11 +16,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408720"
 ---
-# <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>付録 CActive Directory の保護されたアカウントとグループ
+# <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>付録 C: Active Directory の保護されたアカウントとグループ
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>付録 CActive Directory の保護されたアカウントとグループ
+## <a name="appendix-c-protected-accounts-and-groups-in-active-directory"></a>付録 C: Active Directory の保護されたアカウントとグループ
 
 Active Directory 内では、高い特権を持つアカウントとグループの既定のセットは、保護されたアカウントとグループと見なされます。 Active Directory のほとんどのオブジェクトでは、代理管理者 (Active Directory オブジェクトを管理するためのアクセス許可を委任されたユーザー) は、オブジェクトのメンバーシップを変更するためのアクセス許可を変更するなど、オブジェクトのアクセス許可を変更できます。グループ。たとえば、のようになります。  
 
@@ -53,7 +53,7 @@ Active Directory 内では、高い特権を持つアカウントとグループ
 
 #### <a name="adminsdholder"></a>AdminSDHolder
 
-AdminSDHolder オブジェクトの目的は、ドメイン内の保護されたアカウントとグループに "テンプレート" アクセス許可を提供することです。 AdminSDHolder は、すべての Active Directory ドメインのシステムコンテナーにオブジェクトとして自動的に作成されます。 そのパスは次のとおりです。**CN = AdminSDHolder、CN = System、DC = < domain_component >、DC = < domain_component >?.**  
+AdminSDHolder オブジェクトの目的は、ドメイン内の保護されたアカウントとグループに "テンプレート" アクセス許可を提供することです。 AdminSDHolder は、すべての Active Directory ドメインのシステムコンテナーにオブジェクトとして自動的に作成されます。 そのパスは次のとおりです: **cn = AdminSDHolder、cn = System、dc = < domain_component >、dc = < domain_component >?。**  
 
 Administrators グループによって所有されている Active Directory ドメイン内のほとんどのオブジェクトとは異なり、AdminSDHolder は Domain Admins グループによって所有されています。 既定では、EAs はドメインのドメイン管理者および管理者グループと同様に、任意のドメインの AdminSDHolder オブジェクトに変更を加えることができます。 また、AdminSDHolder の既定の所有者はドメインの Domain Admins グループですが、Administrators または Enterprise Admins のメンバーは、オブジェクトの所有権を取得できます。  
 
@@ -88,11 +88,11 @@ SDProp を強制的に実行するには、Ldp.exe を使用するか、LDAP 変
 
    ![保護されたアカウントとグループ](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_10.png)  
 
-4. @No__t-0Dn で示されているように、正常に接続したことを確認します。(RootDSE) ** 次のスクリーンショットでは、 **[接続]** をクリックし、 **[バインド]** をクリックします。  
+4. 次のスクリーンショットの**Dn: (RootDSE)** で示されているように、正常に接続したことを確認します。 **[接続]** をクリックし、 **[バインド]** をクリックします。  
 
    ![保護されたアカウントとグループ](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_11.png)  
 
-5. **[バインド]** ダイアログボックスで、rootDSE オブジェクトを変更するアクセス許可を持つユーザーアカウントの資格情報を入力します。 (そのユーザーとしてログオンしている場合は、現在のログオンユーザー **[としてバインド]** する を選択できます)。 **[OK]** をクリックします。  
+5. **[バインド]** ダイアログボックスで、rootDSE オブジェクトを変更するアクセス許可を持つユーザーアカウントの資格情報を入力します。 (そのユーザーとしてログオンしている場合は、[現在のログオンユーザー**としてバインド**する] を選択できます)。[ **OK]** をクリックします。  
 
    ![保護されたアカウントとグループ](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_12.png)  
 
@@ -107,7 +107,7 @@ SDProp を強制的に実行するには、Ldp.exe を使用するか、LDAP 変
 8. [設定された変更] ダイアログボックスで、[実行] をクリックし、AdminSDHolder オブジェクトに対して行った変更がそのオブジェクトに表示されていることを確認します。  
 
 > [!NOTE]  
-> 指定した特権のないアカウントが保護されたグループのメンバーシップを変更することを許可するように AdminSDHolder を変更する方法の詳細については、「[Appendix I:Active Directory @ no__t で保護されたアカウントとグループの管理アカウントを作成しています。  
+> 指定した特権のないアカウントが保護されたグループのメンバーシップを変更することを許可するように AdminSDHolder を変更する方法については、「[付録 I: Active Directory で保護されたアカウントとグループの管理アカウントを作成](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)する」をご覧ください。  
 
 LDIFDE またはスクリプトを使用して手動で SDProp を実行する場合は、次に示すように、変更エントリを作成できます。  
 
@@ -127,11 +127,11 @@ LDIFDE またはスクリプトを使用して手動で SDProp を実行する�
 
    ![保護されたアカウントとグループ](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_17.gif)  
 
-4. @No__t-0Dn で示されているように、正常に接続したことを確認します。(RootDSE) ** 次のスクリーンショットでは、 **[接続]** をクリックし、 **[バインド]** をクリックします。  
+4. 次のスクリーンショットの**Dn: (RootDSE)** で示されているように、正常に接続したことを確認します。 **[接続]** をクリックし、 **[バインド]** をクリックします。  
 
    ![保護されたアカウントとグループ](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_18.gif)  
 
-5. **[バインド]** ダイアログボックスで、rootDSE オブジェクトを変更するアクセス許可を持つユーザーアカウントの資格情報を入力します。 (そのユーザーとしてログオンしている場合は、 **[現在のログオンユーザーとしてバインド]** する を選択できます)。 **[OK]** をクリックします。  
+5. **[バインド]** ダイアログボックスで、rootDSE オブジェクトを変更するアクセス許可を持つユーザーアカウントの資格情報を入力します。 (そのユーザーとしてログオンしている場合は、[**現在のログオンユーザーとしてバインド**する] を選択できます)。[ **OK]** をクリックします。  
 
    ![保護されたアカウントとグループ](media/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory/SAD_19.gif)  
 

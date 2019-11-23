@@ -15,9 +15,9 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71405785"
 ---
-# <a name="install-data-center-bridging-dcb-in-windows-server-2016-or-windows-10"></a>データセンターブリッジング @no__t のインストール-0DCB @ no__t-1 (Windows Server 2016 または Windows 10)
+# <a name="install-data-center-bridging-dcb-in-windows-server-2016-or-windows-10"></a>Windows Server 2016 または Windows 10 でデータセンターブリッジング \(DCB\) をインストールする
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Windows Server 2016 または Windows 10 で DCB をインストールする方法について説明します。
 
@@ -31,7 +31,7 @@ DCB を構成および管理するための前提条件は次のとおりです�
 
 - Windows Server (半期チャネル)
 - Windows Server 2016
-- Windows 10 \(all versions @ no__t-1
+- Windows 10 \(すべてのバージョン\)
 
 次のオペレーティングシステムには、Windows Server 2016 および Windows 10 の DCB ドキュメントで使用されるコマンドと互換性のない、以前のバージョンの DCB が含まれています。
 
@@ -42,8 +42,8 @@ DCB を構成および管理するための前提条件は次のとおりです�
 
 DCB のハードウェア要件の一覧を次に示します。
 
-- DCB @ no__t-0capable イーサネットネットワークアダプター @ no__t-1s @ no__t-2 は、Windows Server 2016 DCB を提供しているコンピューターにインストールする必要があります。
-- DCB @ no__t-0capable のハードウェアスイッチをネットワーク上に展開する必要があります。
+- DCB\-対応イーサネットネットワークアダプター\(s\) は、Windows Server 2016 DCB を提供しているコンピューターにインストールする必要があります。
+- DCB\-対応のハードウェアスイッチをネットワーク上に展開する必要があります。
 
 
 ## <a name="install-dcb-in-windows-server-2016"></a>Windows Server 2016 に DCB をインストールする
@@ -81,7 +81,7 @@ Windows PowerShell を使用して DCB をインストールするには、次�
 7. **機能の選択**, をクリックして **次**します。 
 8. 7.In**インストールオプションを確認**し、 **[インストール]** をクリックします。 インストール処理中の **[インストールの進行状況]** ページに状態が表示されます。 インストールが成功したことを示すメッセージが表示されたら、 **[閉じる]** をクリックします。
 
-### <a name="configure-the-kernel-debugger-to-allow-qos-optional"></a>QoS @no__t を許可するようにカーネルデバッガーを構成する-0Optional @ no__t-1
+### <a name="configure-the-kernel-debugger-to-allow-qos-optional"></a>QoS \(オプションを許可するようにカーネルデバッガーを構成し\)
 
  既定では、カーネルデバッガーは NetQos をブロックします。 DCB のインストールに使用した方法に関係なく、コンピューターにカーネルデバッガーがインストールされている場合は、次のコマンドを実行して、QoS が有効になって構成されるように、デバッガーを構成する必要があります。
 

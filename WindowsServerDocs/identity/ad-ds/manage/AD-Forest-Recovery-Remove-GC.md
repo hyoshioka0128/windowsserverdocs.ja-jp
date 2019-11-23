@@ -18,7 +18,7 @@ ms.locfileid: "71409096"
 ---
 # <a name="ad-forest-recovery---removing-the-global-catalog"></a>AD フォレストの回復-グローバルカタログの削除  
 
->適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
+>適用対象: Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
 
  DC からグローバルカタログを削除するには、次の手順に従います。 
   
@@ -31,7 +31,7 @@ ms.locfileid: "71409096"
 3. **[サーバー]** コンテナーを展開し、グローバルカタログを削除する DC の*サーバー*オブジェクトを展開します。 
 4. **[NTDS 設定]** を右クリックし、 **[プロパティ]** をクリックします。 
 5. **[グローバルカタログ]** チェックボックスをオフにします。 
-   ![Remove @ no__t を削除します。
+   GC](media/AD-Forest-Recovery-Remove-GC/removegc1.png) を削除 ![には
 6. **[適用]** をクリックします。
   
 ## <a name="to-remove-the-global-catalog-using-repadmin"></a>Repadmin を使用してグローバルカタログを削除するには  
@@ -42,7 +42,7 @@ ms.locfileid: "71409096"
    repadmin.exe /options DC_NAME –IS_GC  
    ```  
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [AD フォレストの回復ガイド](AD-Forest-Recovery-Guide.md)
 - [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md)

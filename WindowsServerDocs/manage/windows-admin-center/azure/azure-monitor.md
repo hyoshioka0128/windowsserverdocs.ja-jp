@@ -22,7 +22,7 @@ ms.locfileid: "71407016"
 [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)は、オンプレミスとクラウドの両方の Windows サーバーと vm を含むさまざまなリソースからテレメトリを収集、分析、および処理するソリューションです。 この記事では、Azure Vm やその他の Azure リソースからデータをプル Azure Monitor ますが、この記事では、Azure Monitor がオンプレミスのサーバーと Vm (特に Windows 管理センター) でどのように機能するかについて重点的に説明します。 Azure Monitor を使用して、ハイパー収束クラスターに関する電子メールアラートを取得する方法については、 [Azure Monitor を使用したヘルスサービスエラーに](https://docs.microsoft.com/windows-server/storage/storage-spaces/configure-azure-monitor)関する電子メールの送信に関するページを参照してください。
 
 ## <a name="how-does-azure-monitor-work"></a>Azure Monitor はどのように動作しますか。
-オンプレミスの Windows Server から生成された @no__t 0img @ no__t のデータは、Azure Monitor の Log Analytics ワークスペースで収集されます。 ワークスペース内では、さまざまな監視ソリューション (特定のシナリオに関する洞察を提供する一連のロジック) を有効にすることができます。 たとえば、Azure Update Management、Azure Security Center、Azure Monitor for VMs は、ワークスペース内で有効にできるすべての監視ソリューションです。 
+![img](../media/azure-monitor-diagram.png) オンプレミスの Windows Server から生成されたデータは Azure Monitor の Log Analytics ワークスペースに収集されます。 ワークスペース内では、さまざまな監視ソリューション (特定のシナリオに関する洞察を提供する一連のロジック) を有効にすることができます。 たとえば、Azure Update Management、Azure Security Center、Azure Monitor for VMs は、ワークスペース内で有効にできるすべての監視ソリューションです。 
 
 Log Analytics ワークスペースで監視ソリューションを有効にすると、そのワークスペースに報告するすべてのサーバーが、そのソリューションに関連するデータの収集を開始します。これにより、ソリューションはワークスペース内のすべてのサーバーについての洞察を得ることができます。 
 
@@ -51,7 +51,7 @@ WAC 内から、次の2つの監視ソリューションを有効にすること
 別のサーバーに接続していても (WAC を使用して、または Azure Portal で手動で) Log Analytics ワークスペースを設定している場合は、MMA エージェントをサーバーにインストールして、既存のワークスペースに接続することもできます。 サーバーをワークスペースに接続すると、そのワークスペースにインストールされているソリューションへのデータの収集とレポートが自動的に開始されます。
 
 ## <a name="azure-monitor-for-virtual-machines-aka-virtual-machine-insights"></a>仮想マシンの Azure Monitor ( Virtual Machine insights)
->適用先:Windows Admin Center Preview
+>適用対象: Windows 管理センタープレビュー
 
 サーバーの設定で Azure Monitor for VMs を設定すると、Windows 管理センターでは、仮想マシンの洞察とも呼ばれる Azure Monitor for VMs ソリューションが有効になります。 このソリューションでは、サーバーの状態とイベントの監視、電子メールアラートの作成、環境全体でのサーバーパフォーマンスの統合ビューの取得、および特定のサーバーに接続されているアプリ、システム、およびサービスの視覚化を行うことができます。
 

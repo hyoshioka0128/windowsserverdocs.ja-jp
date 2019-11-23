@@ -17,9 +17,9 @@ ms.locfileid: "71404676"
 ---
 # <a name="gre-tunneling-in-windows-server-2016"></a>Windows Server 2016 の GRE トンネリング
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-Windows Server 2016 では、汎用ルーティングカプセル化の更新プログラムが提供されています。この @no__t は、RAS ゲートウェイ用の 0GRE @ no__t トンネル機能です。  
+Windows Server 2016 では、汎用ルーティングカプセル化の更新プログラムとして、RA ゲートウェイの GRE\) トンネル機能 \(ます。  
   
 GRE は軽量のトンネリング プロトコルで、インターネット プロトコル インターネットワークを介して Point-to-Point 仮想リンク内のさまざまなネットワーク レイヤー プロトコルをカプセル化できます。 Microsoft GRE 実装では、IPv4 と IPv6 をカプセル化できます。  
   
@@ -27,11 +27,11 @@ GRE トンネルは、次のような多くのシナリオで役に立ちます�
   
 -   軽量で RFC 2890 に準拠しているため、さまざまなベンダーデバイスとの相互運用が可能です。  
   
--   動的ルーティングには Border Gateway Protocol @no__t 0BGP @ no__t-1 を使用できます。  
+-   動的ルーティングには Border Gateway Protocol \(BGP\) を使用できます。  
   
--   ソフトウェア定義ネットワーク \(SDN @ no__t-1 を使用するように GRE マルチテナント RAS ゲートウェイを構成できます。
+-   ソフトウェアで定義されたネットワーク \(SDN\) で使用するために、GRE マルチテナント RAS ゲートウェイを構成でき
   
--   System Center Virtual Machine Manager を使用して GRE @ no__t-0based RAS ゲートウェイを管理できます。
+-   System Center Virtual Machine Manager を使用して GRE\-ベースの RAS ゲートウェイを管理できます。
   
 -   GRE RAS ゲートウェイとして構成されている6コア仮想マシンで最大 2.0 Gbps のスループットを実現できます。
   
@@ -104,7 +104,7 @@ GRE トンネル機能が対処する主なシナリオを次に示します。
   
 ## <a name="configuration-and-deployment"></a>構成と展開
 
-GRE トンネルは、S2S インターフェイス内で追加のプロトコルとして公開されます。 これは、次のネットワークのブログに記載されている IPSec S2S トンネルと同様の方法で実装されます。[Windows Server 2012 R2 でのマルチテナントサイト間 (S2S) VPN Gateway](https://blogs.technet.com/b/networking/archive/2013/09/29/multi-tenant-site-to-site-s2s-vpn-gateway-with-windows-server-2012-r2.aspx)  
+GRE トンネルは、S2S インターフェイス内で追加のプロトコルとして公開されます。 これは、次のネットワークのブログで説明されている IPSec S2S トンネルと同様の方法で実装されます。 [Windows Server 2012 R2 でのマルチテナントサイト間 (S2S) VPN Gateway](https://blogs.technet.com/b/networking/archive/2013/09/29/multi-tenant-site-to-site-s2s-vpn-gateway-with-windows-server-2012-r2.aspx)  
   
 GRE トンネルゲートウェイを含むゲートウェイを展開する例については、次のトピックを参照してください。  
   
@@ -118,7 +118,7 @@ S2S ゲートウェイの展開の詳細については、次のトピックを�
   
 -   [Border Gateway Protocol &#40;BGP&#41;](../bgp/Border-Gateway-Protocol-BGP.md)  
   
--   [New!Windows Server 2012 R2 RAS マルチテナントゲートウェイ展開ガイド @ no__t-0  
+-   [新機能！Windows Server 2012 R2 RAS マルチテナントゲートウェイ展開ガイド](https://blogs.technet.com/b/wsnetdoc/archive/2014/03/26/new-windows-server-2012-r2-RAS-multitenant-gateway-deployment-guide.aspx)  
   
 -   [RAS マルチテナントゲートウェイを使用して Border Gateway Protocol (BGP) を展開する](https://blogs.technet.com/b/wsnetdoc/archive/2014/04/03/deploy-border-gateway-protocol-bgp-with-the-RAS-multitenant-gateway.aspx)  
   

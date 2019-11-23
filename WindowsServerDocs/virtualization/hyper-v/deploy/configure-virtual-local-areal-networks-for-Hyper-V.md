@@ -19,7 +19,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71364281"
 ---
 # <a name="configure-virtual-local-area-networks-for-hyper-v"></a>Hyper-v の仮想ローカルエリアネットワークを構成する
-仮想ローカルエリアネットワーク \(VLANs @ no__t は、ネットワークトラフィックを分離するための1つの方法を提供します。 Vlan は、802.1 q をサポートするスイッチとルーターで構成されます。 複数の Vlan を構成し、それらの間で通信が行われるようにするには、ネットワークデバイスでそのような構成を行う必要があります。 
+Vlan\) \(仮想ローカルエリアネットワークでは、ネットワークトラフィックを分離する方法が1つ提供されます。 Vlan は、802.1 q をサポートするスイッチとルーターで構成されます。 複数の Vlan を構成し、それらの間で通信が行われるようにするには、ネットワークデバイスでそのような構成を行う必要があります。 
 
 Vlan を構成するには、次のものが必要です。  
   
@@ -30,7 +30,7 @@ Vlan を構成するには、次のものが必要です。
   
 #### <a name="to-allow-a-virtual-switch-to-use-a-vlan"></a>仮想スイッチで VLAN を使用できるようにするには  
   
-1.  ハイパー @ no__t-0V Manager を開きます。  
+1.  Hyper-v\-V Manager を開きます。  
   
 2.  操作 メニューの **仮想スイッチマネージャー** をクリックします。  
   
@@ -42,7 +42,7 @@ Vlan を構成するには、次のものが必要です。
   
 #### <a name="to-allow-a-virtual-machine-to-use-a-vlan"></a>バーチャルマシンで VLAN を使用できるようにするには  
   
-1.  ハイパー @ no__t-0V Manager を開きます。  
+1.  Hyper-v\-V Manager を開きます。  
   
 2.  結果ウィンドウの  **Virtual Machines**で、適切な仮想マシンを選択し、**設定** を右クリックします。  
 
@@ -54,8 +54,8 @@ Vlan を構成するには、次のものが必要です。
   
 -   より多くの仮想ネットワークアダプターを適切な仮想スイッチに接続し、VLAN Id を割り当てます。 IP アドレスが正しく構成されていること、および VLAN 経由でルーティングするトラフィックにも正しい IP アドレスが使用されていることを確認してください。  
   
--   [Set @ no__t-1VMNetworkAdapterVlan](https://technet.microsoft.com/library/hh848475.aspx) cmdlt を使用して、仮想ネットワークワードアダプタをトランクモードで構成します。
+-   [Set\-set-vmnetworkadaptervlan](https://technet.microsoft.com/library/hh848475.aspx) cmdlt を使用して、仮想ネットワークワードアダプタをトランクモードで構成します。
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  
-[ハイパー @ no__t-1V 仮想スイッチ](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/hyper-v-virtual-switch)
+[Hyper-v 仮想スイッチの\-](https://technet.microsoft.com/windows-server-docs/networking/technologies/hyper-v-virtual-switch/hyper-v-virtual-switch)

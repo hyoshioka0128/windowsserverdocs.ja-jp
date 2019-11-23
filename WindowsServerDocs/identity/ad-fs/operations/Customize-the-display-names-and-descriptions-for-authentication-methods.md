@@ -19,7 +19,7 @@ ms.locfileid: "71407566"
 # <a name="customize-the-display-names-and-descriptions-for-authentication-methods"></a>認証方法の表示名と説明をカスタマイズする 
 
 
-認証方法の表示名と説明をカスタマイズするには、 `Set-AdfsAuthenticationProviderWebContent` PowerShell コマンドレットを使用します。  このコマンドレットを使用するには、まず、カスタマイズする認証方法の名前を取得する必要があります。  これは、 `Get-AdfsGlobalAuthenticationPolicy`を使って実行できます。  次の例では、sign @ no__t-0in ページに次のように表示されています。"X.509 証明書を使ってサインインしてください"  これをユーザー向けに簡素化します。  
+認証方法の表示名と説明をカスタマイズするには、 `Set-AdfsAuthenticationProviderWebContent` PowerShell コマンドレットを使用します。  このコマンドレットを使用するには、まず、カスタマイズする認証方法の名前を取得する必要があります。  これは、 `Get-AdfsGlobalAuthenticationPolicy`を使って実行できます。  次の例では、ページの sign\-に、"x.509 証明書を使用してサインイン" と表示されています。  これをユーザー向けに簡素化します。  
   
 ![displayname のカスタマイズ](media/AD-FS-user-sign-in-customization/ADFS_Customize_Update1.PNG)  
   

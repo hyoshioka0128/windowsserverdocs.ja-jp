@@ -17,7 +17,7 @@ ms.locfileid: "71940823"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>ホストガーディアンサービスのトラブルシューティング
 
-> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+> 適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、保護されたファブリックでホストガーディアンサービス (HGS) サーバーを展開または運用するときに発生する一般的な問題の解決策について説明します。
 問題の性質がわからない場合は、まず HGS サーバーと Hyper-v ホストで保護された[ファブリックの診断](guarded-fabric-troubleshoot-diagnostics.md)を実行して、考えられる原因を絞り込みます。
@@ -143,7 +143,7 @@ Start-ScheduledTask -TaskPath \Microsoft\Windows\HGSServer -TaskName
 AttestationSignerCertRenewalTask
 ```
 
-または、**タスクスケジューラ**(taskHGSServer d .msc) を開き、タスクスケジューラライブラリに移動し **> Microsoft > Windows >** を開き、という名前**のタスクを実行して、スケジュールされたタスクを手動で実行することもできます。AttestationSignerCertRenewalTask**。
+また、スケジュールされたタスクを手動で実行するには、**タスクスケジューラ**(taskHGSServer d .msc) を開き、タスクスケジューラライブラリに移動し **> Microsoft > Windows >** を開き、 **AttestationSignerCertRenewalTask**という名前のタスクを実行します。
 
 ## <a name="switching-attestation-modes"></a>構成証明モードの切り替え
 
@@ -161,7 +161,7 @@ HGS サーバーの構成証明モードは、 [HgsServer](https://technet.micro
 
 ## <a name="memory-dump-encryption-policies"></a>メモリダンプの暗号化ポリシー
 
-メモリダンプの暗号化ポリシーを構成しようとしているときに、既定の HGS ダンプポリシー (hgs @ no__t-0NoDumps、hgs @ no__t-1DumpEncryption と Hgs @ no__t)、またはダンプポリシーのコマンドレット (HgsAttestationDumpPolicy) が表示されない場合は、最新の累積的な更新プログラムがインストールされていない可能性があります。
+メモリダンプの暗号化ポリシーを構成しようとしているときに、既定の HGS ダンプポリシー (Hgs\_NoDumps、Hgs\_DumpEncryption および Hgs\_DumpEncryptionKey)、またはダンプポリシーコマンドレット (HgsAttestationDumpPolicy) が表示されない場合は、最新の累積更新プログラムがインストールされていない可能性があります。
 この問題を解決するには、 [HGS サーバー](guarded-fabric-manage-hgs.md#patching-hgs)を最新の累積 Windows 更新プログラムに更新し、[新しい構成証明ポリシーをアクティブ化](guarded-fabric-manage-hgs.md#updates-requiring-policy-activation)します。
 新しい構成証明ポリシーをアクティブ化する前に、Hyper-v ホストを同じ累積的な更新プログラムに更新してください。新しいダンプ暗号化機能がインストールされていないホストは、HGS ポリシーをアクティブ化すると、構成証明に失敗する可能性があります。
 
@@ -179,5 +179,5 @@ EKpub は、特定の TPM を一意に識別します。これは、HGS がシ�
 TPM でこれが発生していると思われる場合は、Tpm に EKcert がないことを OEM に確認し、`-Force` フラグを使用してホストを HGS に手動で登録してください。
 TPM に EKcert が含まれていても、プラットフォーム識別子ファイルに見つからなかった場合は、ホストで[Get PlatformIdentifier](https://docs.microsoft.com/powershell/module/platformidentifier/get-platformidentifier)を実行するときに、管理者 (管理者特権) の PowerShell コンソールを使用していることを確認してください。
 
-EKcert が信頼できないというエラーが表示された場合は、各 HGS サーバーに[信頼できる tpm ルート証明書パッケージがインストールさ](guarded-fabric-install-trusted-tpm-root-certificates.md)れていること、および tpm ベンダーのルート証明書がローカルコンピューターの**trustedtpm @ no__ に存在していることを確認してください。t-2RootCA**ストア。 適用可能な中間証明書は、ローカルコンピューターの**Trustedtpm @ no__t-1IntermediateCA**ストアにもインストールする必要があります。
-ルート証明書と中間証明書をインストールすると、@no__t 0 を正常に実行できるようになります。
+EKcert が信頼できないというエラーが表示された場合は、各 HGS サーバーに[信頼できる tpm ルート証明書パッケージがインストールさ](guarded-fabric-install-trusted-tpm-root-certificates.md)れていること、および tpm ベンダーのルート証明書がローカルコンピューターの**Trustedtpm\_rootca**ストアに存在していることを確認します。 適用可能な中間証明書は、ローカルコンピューター上の**Trustedtpm\_IntermediateCA**ストアにもインストールする必要があります。
+ルート証明書と中間証明書をインストールすると、`Add-HgsAttestationTpmHost` を正常に実行できるようになります。

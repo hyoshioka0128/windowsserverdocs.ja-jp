@@ -18,7 +18,7 @@ ms.locfileid: "71356171"
 ---
 # <a name="configure-the-cdp-and-aia-extensions-on-ca1"></a>CA1 で CDP および AIA 拡張機能を構成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 次の手順を使用して、CA1 で証明書失効リスト (CRL) 配布ポイント (CDP) と機関情報アクセス (AIA) の設定を構成できます。  
   
@@ -31,15 +31,15 @@ ms.locfileid: "71356171"
 2.  証明機関 コンソールツリーで、 **CA1** を右クリックし、**プロパティ** をクリックします。  
   
     > [!NOTE]  
-    > コンピューターに CA1 という名前を指定しておらず、この例で使用しているドメイン名と異なる場合、CA の名前は異なります。 CA 名は、*ドメイン*-*CAComputerName*の形式で指定します。  
+    > コンピューターに CA1 という名前を指定しておらず、この例で使用しているドメイン名と異なる場合、CA の名前は異なります。 CA 名は、*ドメイン*-*CAComputerName*の形式になっています。  
   
-3.  **[拡張]** タブをクリックします。 **[拡張機能の選択] が [** **crl 配布ポイント (CDP)** ] に設定されていることを確認し、[**ユーザーが証明書失効リスト (crl) を取得できる場所を指定**してください] で、次の操作を行います。  
+3.  **[拡張]** タブをクリックします。 [**拡張機能**が**CRL 配布ポイント (CDP)** ] に設定されていることを確認し、 **[ユーザーが証明書失効リスト (Crl) を取得できる場所を指定]** してください で、次の操作を行います。  
   
-    1.  エントリ `file://\\<ServerDNSName>\CertEnroll\<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl` を選択し、 **[削除]** をクリックします。 **[削除の確認]** で、 **[はい]** をクリックします。  
+    1.  `file://\\<ServerDNSName>\CertEnroll\<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl`エントリを選択し、 **[削除]** をクリックします。 **[削除の確認]** で、 **[はい]** をクリックします。  
   
-    2.  エントリ `http://<ServerDNSName>/CertEnroll/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl` を選択し、 **[削除]** をクリックします。 **[削除の確認]** で、 **[はい]** をクリックします。  
+    2.  `http://<ServerDNSName>/CertEnroll/<CaName><CRLNameSuffix><DeltaCRLAllowed>.crl`エントリを選択し、 **[削除]** をクリックします。 **[削除の確認]** で、 **[はい]** をクリックします。  
   
-    3.  パス `ldap:///CN=<CATruncatedName><CRLNameSuffix>,CN=<ServerShortName>` で始まるエントリを選択し、 **[削除]** をクリックします。 **[削除の確認]** で、 **[はい]** をクリックします。  
+    3.  パス `ldap:///CN=<CATruncatedName><CRLNameSuffix>,CN=<ServerShortName>`で始まるエントリを選択し、 **[削除]** をクリックします。 **[削除の確認]** で、 **[はい]** をクリックします。  
   
 4.  **[ユーザーが証明書失効リスト (CRL) を取得できる場所を指定]** します で、 **[追加]** をクリックします。 **[場所の追加]** ダイアログボックスが表示されます。  
   
@@ -47,7 +47,7 @@ ms.locfileid: "71356171"
   
 6.  **[拡張]** タブで、次のチェックボックスをオンにします。  
   
-    -   ** は Crl に含まれています。クライアントはこれを使用して Delta CRL の場所 @ no__t-0 を検索します。  
+    -   **Crl に含めます。クライアントはこれを使用して Delta CRL の場所を検索します**  
   
     -   **発行された証明書の CDP 拡張機能に含める**  
   
@@ -63,11 +63,11 @@ ms.locfileid: "71356171"
   
 10. **[拡張機能の選択] を [** **機関情報アクセス (AIA)** ] に変更します。 [**ユーザーが証明書失効リスト (CRL) を取得できる場所を指定**してください] で、次の操作を行います。  
   
-    1.  パス `ldap:///CN=<CATruncatedName>,CN=AIA,CN=Public Key Services` で始まるエントリを選択し、 **[削除]** をクリックします。 **[削除の確認]** で、 **[はい]** をクリックします。  
+    1.  パス `ldap:///CN=<CATruncatedName>,CN=AIA,CN=Public Key Services`で始まるエントリを選択し、 **[削除]** をクリックします。 **[削除の確認]** で、 **[はい]** をクリックします。  
   
-    2.  エントリ `http://<ServerDNSName>/CertEnroll/<ServerDNSName>_<CaName><CertificateName>.crt` を選択し、 **[削除]** をクリックします。 **[削除の確認]** で、 **[はい]** をクリックします。  
+    2.  `http://<ServerDNSName>/CertEnroll/<ServerDNSName>_<CaName><CertificateName>.crt`エントリを選択し、 **[削除]** をクリックします。 **[削除の確認]** で、 **[はい]** をクリックします。  
   
-    3.  エントリ `file://\\<ServerDNSName>\CertEnroll\<ServerDNSName><CaName><CertificateName>.crt` を選択し、 **[削除]** をクリックします。 **[削除の確認]** で、 **[はい]** をクリックします。  
+    3.  `file://\\<ServerDNSName>\CertEnroll\<ServerDNSName><CaName><CertificateName>.crt`エントリを選択し、 **[削除]** をクリックします。 **[削除の確認]** で、 **[はい]** をクリックします。  
   
 11. **[ユーザーがこの CA の証明書を取得できる場所を指定]** します で、 **[追加]** をクリックします。 **[場所の追加]** ダイアログボックスが表示されます。  
   

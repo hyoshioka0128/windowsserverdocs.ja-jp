@@ -18,7 +18,7 @@ ms.locfileid: "71355497"
 ---
 # <a name="troubleshoot-the-windows-server-software-defined-networking-stack"></a>Windows Server ソフトウェア定義ネットワーク スタックのトラブルシューティング
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このガイドでは、一般的なソフトウェアによるネットワーク制御 (SDN) エラーと障害のシナリオを検証し、使用可能な診断ツールを活用してトラブルシューティングのワークフローを概説します。  
 
@@ -168,7 +168,7 @@ netstat -anp tcp |findstr 6640
   TCP    10.127.132.153:50023   10.127.132.211:6640    ESTABLISHED
 ```
 #### <a name="check-host-agent-services"></a>ホスト エージェント サービスを確認します。
-ネットワークコントローラーは、Hyper-v ホスト上の2つのホストエージェントサービスと通信します。SLB ホストエージェントと NC ホストエージェント。 これらのサービスの一方または両方が実行されていないことことができます。 その状態を確認し、それらを実行していない場合は再起動します。
+ネットワーク コント ローラーは、HYPER-V ホスト上の 2 つのホスト エージェント サービスと通信します。 SLB ホスト エージェントと NC ホスト エージェント。 これらのサービスの一方または両方が実行されていないことことができます。 その状態を確認し、それらを実行していない場合は再起動します。
 
 ```none
 Get-Service SlbHostAgent
@@ -668,7 +668,7 @@ VMM の展開は、既定では、ネットワーク コント ローラーの�
 
 #### <a name="slbm-fabric-errors-hosting-service-provider-actions"></a>SLBM ファブリック エラー (ホスティング サービス プロバイダーの操作)
 
-1.  ソフトウェア Load Balancer マネージャー (SLBM) が機能していること、およびオーケストレーション層が相互に通信できることを確認します。SLBM > SLB Mux および SLBM > SLB ホストエージェント。 実行 [DumpSlbRestState](https://github.com/Microsoft/SDN/blob/master/Diagnostics/DumpSlbRestState.ps1) ネットワーク コント ローラーの REST エンドポイントにアクセス権を持つ任意のノードから。  
+1.  ソフトウェア ロード バランサー マネージャー (SLBM) が機能していることと、オーケストレーションのレイヤーを相互に通信できることを確認します。 SLBM SLB Mux]-> [と SLBM SLB ホスト エージェント]-> [します。 実行 [DumpSlbRestState](https://github.com/Microsoft/SDN/blob/master/Diagnostics/DumpSlbRestState.ps1) ネットワーク コント ローラーの REST エンドポイントにアクセス権を持つ任意のノードから。  
 2.  検証、 *SDNSLBMPerfCounters* ネットワーク コント ローラーのノードの Vm (可能であれば、プライマリ ネットワーク コント ローラー ノード - Get NetworkControllerReplica) のいずれかのパフォーマンス モニターにします。
     1.  ロード バランサー (LB) エンジンが SLBM に接続されているでしょうか。 (*SLBM LBEngine 構成合計* > 0)  
     2.  SLBM 少なくともの認識して、独自のエンドポイントですか。 (*VIP エンドポイント合計* > = 2)  
@@ -706,7 +706,7 @@ VMM の展開は、既定では、ネットワーク コント ローラーの�
     1.  DIP を検証 SLBM で登録されているエンドポイントが LoadBalancer バック エンド アドレス プールの IP 構成に対応するテナントの仮想マシンをホストしています。  
 3.  [ホスト]DIP エンドポイントの検出または接続されていない: 場合   
     1.  確認 *デバッグ NetworkControllerConfigurationState*  
-        1.  @No__t-0 を使用して、NC および SLB ホストエージェントがネットワークコントローラーのイベントコーディネーターに正常に接続されていることを確認します。  
+        1.  ``netstat -anp tcp |findstr 6640)`` を使用して、NC および SLB ホストエージェントがネットワークコントローラーのイベントコーディネーターに正常に接続されていることを検証します  
     2.  確認 *HostId* で *nchostagent* サービス レジストリ キー (参照 *HostNotConnected* 、付録の内容のエラー コード)、対応するサーバー リソースのインスタンス Id と一致する (``Get-NCServer |convertto-json -depth 8``)  
     3.  仮想マシンのポートのポート プロファイルの id に対応するバーチャル マシンの NIC のリソースのインスタンス Id と一致するを確認します。   
 4.  [ホスティング プロバイダー]ログを収集します。   

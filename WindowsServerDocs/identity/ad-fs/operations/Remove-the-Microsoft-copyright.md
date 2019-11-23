@@ -38,9 +38,9 @@ ms.locfileid: "71407516"
    Export-AdfsWebTheme -Name custom -DirectoryPath C:\CustomWebTheme
    ```
 
-3. 出力フォルダーに格納されている @no__t 0 ファイルを見つけます。 前の例を使用すると、パスは `C:\CustomWebTheme\Css\Style.css.` になります。
+3. 出力フォルダーにある `Style.css` ファイルを見つけます。 前の例を使用すると、パスは `C:\CustomWebTheme\Css\Style.css.`
   
-4. メモ帳などのエディターを使用して、@no__t 0 のファイルを開きます。  
+4. メモ帳などのエディターを使用して、`Style.css` ファイルを開きます。  
   
 5. `#copyright` の部分を見つけたら、次のように変更します。  
 
@@ -48,7 +48,7 @@ ms.locfileid: "71407516"
    #copyright {color:#696969; display:none;}
    ```
 
-6. 新しい `Style.css` ファイルに基づくカスタムテーマを作成します。  
+6. 新しい `Style.css` ファイルに基づいたカスタムテーマを作成します。  
 
    ```powershell
    Set-AdfsWebTheme -TargetName custom -StyleSheet @{locale="";path="C:\customWebTheme\css\style.css"}

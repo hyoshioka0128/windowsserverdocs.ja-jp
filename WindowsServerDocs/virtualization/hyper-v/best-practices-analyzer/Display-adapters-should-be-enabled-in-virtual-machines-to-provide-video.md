@@ -19,7 +19,7 @@ ms.locfileid: "71364910"
 ---
 # <a name="display-adapters-should-be-enabled-in-virtual-machines-to-provide-video-capabilities"></a>ビデオ機能を提供するために、仮想マシンでディスプレイアダプターを有効にする必要があります
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 
   
@@ -29,7 +29,7 @@ ms.locfileid: "71364910"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|警告|  
+|**順**|Warning|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
@@ -44,7 +44,7 @@ Microsoft 仮想マシンバスビデオデバイスは、Hyper-v 仮想マシ�
   
 *次の仮想マシンのビデオパフォーマンスが低下します:*  
   
-@no__t-仮想マシン名の一覧 >  
+仮想マシン名の \<一覧 >  
   
 ## <a name="resolution"></a>解決方法  
   

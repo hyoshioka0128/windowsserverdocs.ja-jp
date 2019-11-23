@@ -18,9 +18,9 @@ ms.locfileid: "71367715"
 ---
 # <a name="monitoring-active-directory-for-signs-of-compromise"></a>Active Directory の侵害の兆候を監視する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-*Law 番号 5:永続的の警戒は、セキュリティの価格です。* - [10 の不変のセキュリティ管理の原則](https://technet.microsoft.com/library/cc722488.aspx)  
+*法 5: 永続的の警戒は、セキュリティの価格です。*[セキュリティ管理に関する10の不変法を](https://technet.microsoft.com/library/cc722488.aspx) -   
   
 監視システム ソリッド イベント ログとは、どのようなセキュリティで保護された Active Directory 設計の重要な部分です。 多くのコンピューター セキュリティ侵害だった場合は、検出早期イベント被害者が該当するイベント ログ監視とアラートを施行します。 独立したレポートは、この結論を長い間サポートができます。 たとえば、 [2009 Verizon データ侵害レポート](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf) 状態。  
   
@@ -258,7 +258,7 @@ Windows Server 2012、Windows Server 2008 R2、または Windows 2008 を実行�
   
 #### <a name="object-access"></a>オブジェクト アクセス  
   
-##### <a name="file-system"></a>[ファイル システム]  
+##### <a name="file-system"></a>ファイル システム  
 このサブカテゴリは、ファイル システム オブジェクトがアクセスしたときに報告します。 Sacl でファイル システム オブジェクトのみ的に、生成された唯一の SACL エントリに一致するようにアクセスすると、監査イベントが発生します。 自体は、このポリシー設定のすべてのイベントの監査はされません。 指定したシステム アクセス制御リスト (SACL) をファイル システム オブジェクトにアクセスするユーザーのイベントを監査するかどうかを決定して効果的に監査の有効化を実行します。  
   
 オブジェクト アクセスの監査設定が構成した場合、 **成功**, 、監査エントリが生成するたびに、ユーザーは、独自の sacl が指定したオブジェクトを正常にアクセスします。 このポリシー設定が構成した場合、 **エラー**, 、監査エントリをユーザーが独自の sacl が指定したオブジェクトにアクセスするために失敗するたびに生成します。  
@@ -367,13 +367,13 @@ Auditpol.exe 構文例:
   
 `auditpol /restore /file:<filename>`-以前に保存した監査ポリシーファイルをローカル監査ポリシーにインポートするために使用します。  
   
-`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`-この監査ポリシー設定が有効になっていると、システムがすぐに停止します (STOP:C0000244 {Audit Failed} メッセージ)。何らかの理由でセキュリティ監査をログに記録できない場合。 セキュリティ監査ログがいっぱいとセキュリティ ログの指定された保有期間のメソッドは、ログに記録するイベントが通常は、失敗 **イベントを上書きしない** または **日数を過ぎたら**します。 通常、セキュリティ ログのログをより高い保証を必要とされる環境では有効のみです。 有効な場合、管理者必要があります詳細にセキュリティ ログのサイズを監視して必要に応じてログを回転します。 また、セキュリティオプション **Audit を変更することで、グループポリシーで設定することもできます。セキュリティ監査をログに記録できない場合は、直ちにシステムをシャットダウンする @ no__t-0 (既定 = 無効)。  
+`auditpol /<get/set> /option:<CrashOnAuditFail> /<enable/disable>`-この監査ポリシー設定が有効になっていると、何らかの理由でセキュリティ監査をログに記録できない場合に、システムがすぐに停止します (STOP: C0000244 {Audit Failed} メッセージが表示されます)。 セキュリティ監査ログがいっぱいとセキュリティ ログの指定された保有期間のメソッドは、ログに記録するイベントが通常は、失敗 **イベントを上書きしない** または **日数を過ぎたら**します。 通常、セキュリティ ログのログをより高い保証を必要とされる環境では有効のみです。 有効な場合、管理者必要があります詳細にセキュリティ ログのサイズを監視して必要に応じてログを回転します。 設定することもグループ ポリシーを使用してセキュリティ オプションを変更することによって **監査: セキュリティ監査を記録できない場合にすぐにシステムをシャット ダウン** (既定 = 無効)。  
   
 `auditpol /<get/set> /option:<AuditBaseObjects> /<enable/disable>`-この監査ポリシー設定は、グローバルシステムオブジェクトへのアクセスを監査するかどうかを決定します。 このポリシーが有効にすると、ミュー テックス、イベント、セマフォ、および既定のシステム アクセス制御リスト (SACL) で作成される DOS デバイスなどのシステム オブジェクト。 ほとんどの管理者がノイズが多すぎる"、"へのグローバル システム オブジェクトの監査を検討し、それらのみ行うことは悪意のあるハッキングが疑われる場合。 名前付きのオブジェクトには、SACL が与えられます。 監査オブジェクト アクセス監査ポリシー (またはカーネル オブジェクトの監査サブカテゴリ) も有効である場合は、これらのシステム オブジェクトへのアクセスが監査されます。 このセキュリティ設定を構成するときに変更は反映されませんするには、Windows を再起動します。 グローバル システム オブジェクトのセキュリティ オプション、アクセスの監査を変更することで、このポリシーのグループ ポリシーの設定することも (既定 = 無効)。  
   
-`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`-この監査ポリシー設定は、名前付きカーネルオブジェクト (ミューテックスやセマフォなど) が作成されたときに Sacl を指定することを指定します。 AuditBaseDirectories は AuditBaseObjects が他のオブジェクトを含むことができないオブジェクトを適用中にコンテナー オブジェクトに影響します。  
+`auditpol /<get/set> /option:<AuditBaseDirectories> /<enable/disable>`-この監査ポリシー設定は、名前付きカーネルオブジェクト (ミューテックスやセマフォなど) を作成時に Sacl に指定することを指定します。 AuditBaseDirectories は AuditBaseObjects が他のオブジェクトを含むことができないオブジェクトを適用中にコンテナー オブジェクトに影響します。  
   
-`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>`-この監査ポリシー設定は、ユーザーのセキュリティトークンに1つ以上の特権が割り当てられている場合に、クライアントがイベントを生成するかどうかを指定します。割り当て Primarytokenprivilege、AuditPrivilege、BackupPrivilege、CreateTokenPrivilege、DebugPrivilege、EnableDelegationPrivilege、ImpersonatePrivilege、LoadDriverPrivilege、RestorePrivilege、SecurityPrivilege、System Privilege、TakeOwnershipPrivilege および TcbPrivilege。 このオプションが有効になっていない場合 (既定 = 無効)、BackupPrivilege および RestorePrivilege の特権は記録されません。 このオプションを有効にすると、バックアップ操作中に (場合によって数百ものイベントを 2 回目)、セキュリティ ログを非常にノイズことができます。 このポリシーは、セキュリティオプション **Audit を変更することによって、グループポリシーで設定することもできます。バックアップと復元の特権 @ no__t-0 を使用して監査します。  
+`auditpol /<get/set> /option:<FullPrivilegeAuditing> /<enable/disable>`-この監査ポリシー設定は、1つまたは複数の特権がユーザーのセキュリティトークンに割り当てられている場合に、クライアントがイベントを生成するかどうかを指定します: 割り当て Primarytokenprivilege、AuditPrivilege、BackupPrivilege、CreateTokenPrivilege、DebugPrivilege、EnableDelegationPrivilege、ImpersonatePrivilege、LoadDriverPrivilege、RestorePrivilege、SecurityPrivilege、System このオプションが有効になっていない場合 (既定 = 無効)、BackupPrivilege および RestorePrivilege の特権は記録されません。 このオプションを有効にすると、バックアップ操作中に (場合によって数百ものイベントを 2 回目)、セキュリティ ログを非常にノイズことができます。 セキュリティ オプションを変更することで、このポリシーのグループ ポリシーの設定することも **監査: バックアップと復元の特権の使用の監査**します。  
   
 > [!NOTE]  
 > ここで指定したいくつかの情報を Microsoft から取得した [監査オプションの種類](https://msdn.microsoft.com/library/dd973862(prot.20).aspx) と Microsoft SCM ツールです。  
@@ -388,7 +388,7 @@ Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows 8�
   
 グループ ポリシーやコマンド ライン プログラム、auditpol.exe など、いくつかの方法では、サブカテゴリの監査を構成できます。  
   
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
   
 * [Windows 7 および Windows Server 2008 R2 での高度なセキュリティ監査](https://social.technet.microsoft.com/wiki/contents/articles/advanced-security-auditing-in-windows-7-and-windows-server-2008-r2.aspx)  
   

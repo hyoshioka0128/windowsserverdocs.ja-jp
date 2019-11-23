@@ -22,7 +22,7 @@ ms.locfileid: "71355667"
 ---
 # <a name="whats-new-in-hyper-v-network-virtualization-in-windows-server-2016"></a>Windows Server 2016 での Hyper-v ネットワーク仮想化の新機能
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Windows Server 2016 で新しく追加または変更された Hyper-v ネットワーク仮想化 (HNV) の機能について説明します。  
   
@@ -41,7 +41,7 @@ HNV は、Microsoft が更新したソフトウェアによるネットワーク
   
 Microsoft の新しいネットワークコントローラーは、SouthBound インターフェイス (SBI) として Open vSwitch Database Management Protocol (Interface) を使用して、各ホストで実行されているホストエージェントに HNV ポリシーをプッシュします。 ホストエージェントは、 [Vtep スキーマ](https://github.com/openvswitch/ovs/blob/master/vtep/vtep.ovsschema)のカスタマイズを使用してこのポリシーを保存し、複雑なフロールールを hyper-v スイッチのパフォーマンスの高いフローエンジンにプログラムします。  
   
-Hyper-v スイッチ内のフローエンジンは Microsoft Azure @ no__t-0 で使用されるのと同じエンジンで、Microsoft Azure パブリッククラウドのハイパースケールで実証されています。 さらに、ネットワークコントローラー全体の SDN スタックとネットワークリソースプロバイダー (近日公開予定) は Microsoft Azure と一貫性があるため、Microsoft Azure パブリッククラウドの能力を企業およびホスティングサービスにもたらします。プロバイダーのお客様。  
+Hyper-v スイッチ内のフローエンジンは Microsoft Azure&trade;で使用されるのと同じエンジンであり、Microsoft Azure パブリッククラウドのハイパースケールで実証されています。 さらに、ネットワークコントローラー全体の SDN スタックとネットワークリソースプロバイダー (近日公開予定) は Microsoft Azure と一貫性があるため、Microsoft Azure パブリッククラウドの能力を企業およびホスティングサービスにもたらします。プロバイダーのお客様。  
   
 > [!NOTE]  
 > 詳細については、「 [RFC 7047](https://www.rfc-editor.org/info/rfc7047)」を参照してください。  

@@ -16,7 +16,7 @@ ms.locfileid: "71403633"
 ---
 # <a name="initialize-the-hgs-cluster-using-key-mode-in-an-existing-bastion-forest"></a>既存の要塞フォレストでキーモードを使用して HGS クラスターを初期化する
 
-> 適用対象:Windows Server 2019
+> 適用対象: Windows Server 2019
 > 
 > [!div class="step-by-step"]
 > [«新しいフォレストに HGS をインストール](guarded-fabric-install-hgs-in-a-bastion-forest.md)
@@ -27,7 +27,7 @@ Active Directory Domain Services はコンピューターにインストール�
 [!INCLUDE [Obtain certificates for HGS](../../../includes/guarded-fabric-initialize-hgs-default-step-two.md)] 
 
 続行する前に、ホストガーディアンサービスのクラスターオブジェクトを事前設定し、Active Directory の VCO および CNO オブジェクトに対して、ログインしているユーザーに**フルコントロール**を付与したことを確認してください。
-仮想コンピューターのオブジェクト名は、`-HgsServiceName` パラメーターに、クラスター名を `-ClusterName` パラメーターに渡す必要があります。
+仮想コンピューターのオブジェクト名は `-HgsServiceName` パラメーターに、クラスター名を `-ClusterName` パラメーターに渡す必要があります。
 
 > [!TIP]
 > 続行する前に、AD ドメインコントローラーを再確認して、クラスターオブジェクトがすべての Dc にレプリケートされていることを確認してください。
@@ -43,5 +43,5 @@ Install-ADServiceAccount -Identity 'HGSgMSA'
 Initialize-HgsServer -UseExistingDomain -ServiceAccount 'HGSgMSA' -JeaReviewersGroup 'HgsJeaReviewers' -JeaAdministratorsGroup 'HgsJeaAdmins' -HgsServiceName 'HgsService' -ClusterName 'HgsCluster' -SigningCertificatePath '.\signCert.pfx' -SigningCertificatePassword $signPass -EncryptionCertificatePath '.\encCert.pfx' -EncryptionCertificatePassword $encryptionCertPass -TrustHostKey
 ```
 
-ローカルコンピューターにインストールされている証明書 (HSM ベースの証明書やエクスポートされていない証明書など) を使用している場合は、代わりに `-SigningCertificateThumbprint` と `-EncryptionCertificateThumbprint` のパラメーターを使用します。
+ローカルコンピューターにインストールされている証明書 (HSM ベースの証明書やエクスポートされていない証明書など) を使用している場合は、代わりに `-SigningCertificateThumbprint` パラメーターと `-EncryptionCertificateThumbprint` パラメーターを使用します。
 

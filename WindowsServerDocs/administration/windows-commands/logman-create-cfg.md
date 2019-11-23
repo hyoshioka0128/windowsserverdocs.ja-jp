@@ -22,7 +22,7 @@ ms.locfileid: "71374593"
 ---
 # <a name="logman-create-cfg"></a>logman 作成 cfg
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 構成データコレクターを作成します。  
 
@@ -59,14 +59,14 @@ logman create cfg <[-n] <name>> [options]
 |            -< クエリ [クエリ [...]]>            |                                                      SQL クエリ言語を使用して収集する WMI オブジェクトを指定します。                                                       |
 |             -ftc < パス [path [...]]>             |                                                           収集するファイルの完全パスを指定します。                                                            |
 
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>注釈  
 [-] が一覧表示されている場合は、オプションを追加して否定します。  
 ## <a name="BKMK_examples"></a>例  
-次のコマンドでは、レジストリキー HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion @ no__t-0 を使用して、cfg_log という構成データコレクターを作成します。  
+次のコマンドでは、レジストリキー HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\Currentverion\\を使用して cfg_log という構成データコレクターを作成します。  
 ```  
 logman create cfg cfg_log -reg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\\"  
 ```  
-次のコマンドを実行すると、cfg_log という構成データコレクターが作成され、root\wmi のすべての WMI オブジェクトがデータベース列 MSNdis_Vendordriverversion に記録されます。  
+次のコマンドは、cfg_log という構成データコレクターを作成します。このコレクターは、すべての WMI オブジェクトを、MSNdis_Vendordriverversion データベース列の root\wmi からすべてを記録します。  
 ```  
 logman create cfg cfg_log -mgt "root\wmi:select * FROM MSNdis_Vendordriverversion"  
 ```  

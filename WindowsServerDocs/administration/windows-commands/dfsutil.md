@@ -22,7 +22,7 @@ ms.locfileid: "71377980"
 ---
 # <a name="dfsutil"></a>dfsutil
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Dfsutil コマンドは、DFS 名前空間、サーバー、およびクライアントを管理します。 dfsutil コマンドでは、ほとんどのコマンドについて説明するように、更新された DFS 名前空間の用語を使用して、元の分散ファイルシステム用語を使用します。
 
@@ -39,27 +39,27 @@ command </parameter> </param2>
 |パラメーター|説明|
 |-------|--------|
 |[dfsutil Root](dfsutil-root.md)|名前空間のルートを表示、作成、削除、インポート、エクスポートします。|
-|[dfsutil リンク](dfsutil-link.md)|フォルダーを表示、作成、削除、または移動 \(links @ no__t-1 です。|
+|[dfsutil リンク](dfsutil-link.md)|\)\(リンクを表示、作成、削除、または移動します。|
 |[dfsutil ターゲット](dfsutil-target.md)|フォルダーターゲットまたは名前空間サーバーを表示、作成、削除します。|
 |[dfsutil プロパティ](dfsutil-property.md)|フォルダーターゲットまたは名前空間サーバーを表示または変更します。|
 |[dfsutil クライアント](dfsutil-client.md)|クライアント情報またはレジストリキーを表示または変更します。|
 |[dfsutil サーバー](dfsutil-server.md)|名前空間の構成を表示または変更します。|
-|[dfsutil Diag](dfsutil-diag.md)|診断を実行するか、または dfsdirs @ no__t-0dfspath を表示します。|
-|[dfsutil ドメイン](dfsutil-domain.md)|ドメイン内のすべてのドメイン @ no__t の名前空間を表示します。|
+|[dfsutil Diag](dfsutil-diag.md)|診断を実行するか、dfs ディレクトリ\/dfspath を表示します。|
+|[dfsutil ドメイン](dfsutil-domain.md)|ドメイン内のすべてのドメイン\-ベースの名前空間を表示します。|
 |[dfsutil キャッシュ](dfsutil-cache.md)|クライアントキャッシュを表示またはフラッシュします。|
 |[dfsutil oldcli](dfsutil-oldcli.md)|元の dfsutil 構文を使用するには、dfsutil \/oldcli コマンドを使用します。|
 
 ## <a name="remarks-optional-section"></a>解説 <optional section>
-コマンドの最後に名前空間サーバー @ no__t などのオブジェクト @no__t を指定すると、ほとんどのコマンドには、追加のパラメーターやコマンドを必要とせずに、オブジェクトに関する情報が表示されます。 たとえば、dfsutil Root コマンドを使用する場合、コマンドに名前空間のルートを追加して、ルートに関する情報を表示できます。
+コマンドの最後で\) 名前空間サーバーなどのオブジェクト \(を指定した場合、ほとんどのコマンドには、追加のパラメーターやコマンドを必要とせずに、オブジェクトに関する情報が表示されます。 たとえば、dfsutil Root コマンドを使用する場合、コマンドに名前空間のルートを追加して、ルートに関する情報を表示できます。
 
 ## <a name="BKMK_Examples"></a>例
-ここでは、例の詳細な説明を入力します。 @no__t &gt;
+ここで &lt;、例の詳細な説明を入力します。&gt;
 
 ```
 This /is /the /example /of /calling /command /with /parameters
 ```
 
-ここでは、別の例の詳細な説明を入力します。 &gt; の @no__t
+ここで &lt;、別の例の詳細な説明を入力します。&gt;
 
 ```
 This /is /a:different /example

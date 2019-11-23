@@ -57,13 +57,13 @@ ms.locfileid: "71359388"
 ### <a name="supported-ad-fs-role-services-and-features"></a>サポートされている AD FS 役割サービスと機能  
  次の表では、このガイドで説明されている AD FS の役割サービスとそれぞれの設定の移行シナリオについて説明します。  
   
-|From|Windows Server 2012 R2 と共にインストール AD FS には|  
+|移行元|Windows Server 2012 R2 と共にインストール AD FS には|  
 |----------|----------------------------------------------------------------------------------------------|  
-|Windows Server 2008 または Windows Server 2008 R2 にインストールされている AD FS 2.0 フェデレーションサーバー|同じサーバーでの移行がサポートされています。 詳細については、以下をご覧ください。<br /><br /> [AD FS フェデレーションサーバーを移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [AD FS フェデレーションサーバーの移行](migrate-ad-fs-fed-server-r2.md)|  
+|Windows Server 2008 または Windows Server 2008 R2 にインストールされている AD FS 2.0 フェデレーションサーバー|同じサーバーでの移行がサポートされています。 詳しくは、次のトピックをご覧ください。<br /><br /> [AD FS フェデレーションサーバーを移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [AD FS フェデレーションサーバーの移行](migrate-ad-fs-fed-server-r2.md)|  
 |Windows Server 2012 にインストールされている AD FS フェデレーションサーバー|同じサーバーでの移行がサポートされています。  詳しくは、次のトピックをご覧ください。<br /><br /> [AD FS フェデレーションサーバーを移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [AD FS フェデレーションサーバーの移行](migrate-ad-fs-fed-server-r2.md)|  
   
-## <a name="next-steps"></a>次の手順
- [AD FS フェデレーションサーバーを移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)   
- [AD FS フェデレーションサーバーの移行](migrate-ad-fs-fed-server-r2.md)   
- [AD FS フェデレーションサーバープロキシの移行](migrate-fed-server-proxy-r2.md)   
+## <a name="next-steps"></a>次のステップ
+ [AD FS フェデレーションサーバー  を移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)  
+ [AD FS フェデレーションサーバー  の移行](migrate-ad-fs-fed-server-r2.md)  
+ [AD FS フェデレーションサーバープロキシ  の移行](migrate-fed-server-proxy-r2.md)  
  [Windows Server 2012 R2 への AD FS 移行の検証](verify-ad-fs-migration.md)

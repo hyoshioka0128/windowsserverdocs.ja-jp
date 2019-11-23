@@ -28,7 +28,7 @@ ms.locfileid: "71408351"
   
 2.  **[開始する前に]** ページで、 **[次へ]** をクリックします。  
   
-3.  **[インストールの種類の選択]** ページで、[**ロール @ no__t-2based] または [機能 @ no__t ベースのインストール**] をクリックし、 **[次へ]** をクリックします。  
+3.  **[インストールの種類の選択]** ページで、[**役割\-ベース] または [機能\-ベースのインストール**] をクリックし、 **[次へ]** をクリックします。  
   
 4.  **[対象サーバーの選択]** ページで、 **[サーバー プールからサーバーを選択]** をクリックし、ターゲット コンピューターが選択されていることを確認してから、 **[次へ]** をクリックします。  
   
@@ -36,7 +36,7 @@ ms.locfileid: "71408351"
   
 6.  **[機能の選択]** ページで **[次へ]** をクリックします。 必須の前提条件が事前に選択されています。 他の機能を選択する必要はありません。  
   
-7.  [ **Active Directory フェデレーションサービス \( AD FS @ no__t** ] ページで、 **[次へ]** をクリックします。  
+7.  **Active Directory フェデレーションサービス \(AD FS の\)**  ページで、**次へ** をクリックします。  
   
 8.  **[インストールオプションの確認]** ページで情報を確認した後、 **[インストール]** をクリックします。  
   
@@ -44,9 +44,9 @@ ms.locfileid: "71408351"
   
 ### <a name="to-install-the-ad-fs-server-role-via-windows-powershell"></a>Windows PowerShell を使用して AD FS サーバーの役割をインストールするには  
   
-1.  フェデレーションサーバーとして構成するコンピューターで、Windows PowerShell コマンドウィンドウを開き、コマンド`Install-windowsfeature adfs-federation –IncludeManagementTools`を実行します。  
+1.  フェデレーションサーバーとして構成するコンピューターで、Windows PowerShell コマンドウィンドウを開き、次のコマンドを実行します: `Install-windowsfeature adfs-federation –IncludeManagementTools`。  
   
-## <a name="see-also"></a>関連項目 
+## <a name="see-also"></a>参照 
 
 [AD FS 展開](../../ad-fs/AD-FS-Deployment.md)  
 

@@ -21,7 +21,7 @@ ms.locfileid: "71404938"
 ---
 # <a name="step-1-configure-advanced-directaccess-infrastructure"></a>手順 1. 詳細な DirectAccess インフラストラクチャの構成
 
->適用先:Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、IPv4 と IPv6 の混在環境で単一の DirectAccess サーバーを使用する、高度なリモート アクセスの展開に必要なインフラストラクチャを構成する方法について説明します。 展開の手順を開始する前に記載されている計画の手順が完了したことを確認 [高度な DirectAccess 展開を計画](../../../remote-access/directaccess/single-server-advanced/Plan-an-Advanced-DirectAccess-Deployment.md)します。  
   
@@ -208,7 +208,7 @@ IP-HTTPS 認証に使用する Web サイト証明書が次の要件を満たし
   
 ##### <a name="to-install-the-ip-https-certificate-from-an-internal-ca"></a>内部 CA から IP-HTTPS 証明書をインストールするには  
   
-1.  DirectAccess サーバーで、 **[スタート]** 画面で「**mmc.exe**」と入力し、enter キーを押します。  
+1.  DirectAccess サーバー上: で、 **開始** 画面で「**mmc.exe**, 、ENTER キーを押します。  
   
 2.  MMC コンソールで、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   
@@ -243,7 +243,7 @@ IP-HTTPS 認証に使用する Web サイト証明書が次の要件を満たし
   
 ### <a name="NLS_DNS"></a>ネットワークロケーションサーバーを作成するには  
   
-1.  内部ネットワーク DNS サーバーで、**スタート**画面で「**dnsmgmt.msc**」と入力し、enter キーを押します。  
+1.  内部ネットワーク DNS サーバー上: で、 **開始** 画面で「**dnsmgmt.msc**, 、ENTER キーを押します。  
   
 2.  **[DNS マネージャー]** コンソールの左側のウィンドウで、ドメインの前方参照ゾーンを展開します。 ドメインを右クリックして、 **[新しいホスト (A または AAAA)]** をクリックします。  
   
@@ -263,7 +263,7 @@ IP-HTTPS 認証に使用する Web サイト証明書が次の要件を満たし
   
 5.  **DNS** ダイアログ ボックスで、をクリックして **ok**, 、 をクリックし、 **実行**します。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -335,7 +335,7 @@ DirectAccess サーバーとすべての DirectAccess クライアント コン�
   
 10. コンピューターを再起動するよう求めるメッセージが表示されたら、 **[今すぐ再起動する]** をクリックします。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -424,7 +424,7 @@ Restart-Computer
   
     10. **[バックアップをスキャン中]** ページで **[次へ]** をクリックし、 **[完了]** をクリックします。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -469,7 +469,7 @@ Restart-Computer
   
 6.  **[ユーザー、連絡先、コンピューター、サービス アカウントまたはグループの選択]** ダイアログ ボックスで、DirectAccess 用に有効にするクライアント コンピューターを選択し、 **[OK]** をクリックします。  
   
-@no__t 0Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
+windows PowerShell の ![](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -501,7 +501,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 #### <a name="to-install-the-network-location-server-certificate-from-an-internal-ca"></a>内部 CA からネットワーク ロケーション サーバー証明書をインストールするには  
   
-1.  ネットワーク ロケーション サーバー Web サイトをホストするサーバーで、 **[スタート]** 画面で「**mmc.exe**」と入力し、enter キーを押します。  
+1.  ネットワーク ロケーション サーバー web サイトをホストするサーバー上: で、 **開始** 画面で「**mmc.exe**, 、ENTER キーを押します。  
   
 2.  MMC コンソールで、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   
@@ -555,7 +555,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 ## <a name="BKMK_Links"></a>次のステップ  
   
--   [手順 2:高度な DirectAccess サーバーを構成する](da-adv-configure-s2-servers.md)  
+-   [手順 2: 高度な DirectAccess サーバーを構成する](da-adv-configure-s2-servers.md)  
   
 
 

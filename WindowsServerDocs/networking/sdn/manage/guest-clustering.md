@@ -22,14 +22,14 @@ ms.locfileid: "71406032"
 ---
 # <a name="guest-clustering-in-a-virtual-network"></a>仮想ネットワークでのゲスト クラスタリング
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 仮想ネットワークに接続されている仮想マシンは、ネットワークコントローラーが割り当てた IP アドレスのみを使用してネットワーク上の通信を行うことができます。  Microsoft フェールオーバークラスタリングなど、floating IP アドレスを必要とするクラスタリングテクノロジでは、いくつかの追加の手順を正しく機能させる必要があります。
 
-Floating IP を到達可能にする方法は、ソフトウェア Load Balancer @no__t 0SLB @ no__t 仮想 IP \(VIP @ no__t-3 を使用することです。  ソフトウェアロードバランサーは、その IP 上のポートに対する正常性プローブを使用して構成する必要があります。これにより、SLB は、現在その IP を使用しているコンピューターにトラフィックを送信します。
+Floating IP を到達可能にする方法は、SLB\) 仮想 IP \(VIP\)\(ソフトウェア Load Balancer を使用することです。  ソフトウェアロードバランサーは、その IP 上のポートに対する正常性プローブを使用して構成する必要があります。これにより、SLB は、現在その IP を使用しているコンピューターにトラフィックを送信します。
 
 
-## <a name="example-load-balancer-configuration"></a>例:ロードバランサーの構成
+## <a name="example-load-balancer-configuration"></a>例: ロードバランサーの構成
 
 この例では、クラスターノードとなる Vm を既に作成し、それらを Virtual Network にアタッチしていることを前提としています。  ガイダンスについて[は、VM を作成し、テナント Virtual Network または VLAN に接続](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm)する方法に関する説明を参照してください。  
 
@@ -50,7 +50,7 @@ Floating IP を到達可能にする方法は、ソフトウェア Load Balancer
    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
    ```
 
-3. Front @ no__t-0end IP アドレスを作成します。
+3. フロント\-終了 IP アドレスを作成します。
 
    ```PowerShell
    $LoadBalancerProperties.frontendipconfigurations += $FrontEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
@@ -63,7 +63,7 @@ Floating IP を到達可能にする方法は、ソフトウェア Load Balancer
    $FrontEnd.properties.privateIPAllocationMethod = "Static"
    ```
 
-4. クラスターノードを格納する back @ no__t-0end プールを作成します。
+4. クラスターノードを格納するバック\-のエンドプールを作成します。
 
    ```PowerShell
    $BackEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
@@ -132,7 +132,7 @@ Floating IP を到達可能にする方法は、ソフトウェア Load Balancer
 
 9. OptionalMicrosoft フェールオーバークラスターを使用している場合は、次の例に進んでください。 
 
-## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>例 2:Microsoft フェールオーバークラスターの構成
+## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>例 2: Microsoft フェールオーバークラスターの構成
 
 フェールオーバークラスターを構成するには、次の手順に従います。
 

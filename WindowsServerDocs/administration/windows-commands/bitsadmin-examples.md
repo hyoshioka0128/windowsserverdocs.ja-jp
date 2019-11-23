@@ -48,7 +48,7 @@ Created job {C775D194-090F-431F-B5FB-8334D00D1CB6}.
 
 **/Addfile**スイッチを使用して、ジョブにファイルを追加します。 追加するファイルごとにこの呼び出しを繰り返します。 複数のジョブが myDownloadJob を名前として使用する場合は、ジョブを一意に識別するために、myDownloadJob をジョブの GUID に置き換える必要があります。
 
-**bitsadmin/addfile myDownloadJob https://downloadsrv/10mb.zip c: @no__t は 10 mb .zip です。**
+**bitsadmin/addfile myDownloadJob https://downloadsrv/10mb.zip c:\\10 mb .zip**
 
 転送キューでジョブをアクティブ化するには、 **/resume**スイッチを使用します。
 

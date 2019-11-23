@@ -21,7 +21,7 @@ ms.locfileid: "71394511"
 ---
 # <a name="directaccess"></a>DirectAccess
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、directaccess の簡単な概要について説明します。これには、directaccess をサポートするサーバーとクライアントのオペレーティングシステム、および Windows Server 2016 用の追加の DirectAccess ドキュメントへのリンクも含まれます。  
   
@@ -43,7 +43,7 @@ ms.locfileid: "71394511"
 DirectAccess を使用すると、従来の仮想プライベートネットワーク (VPN) 接続を必要とすることなく、組織のネットワークリソースへのリモートユーザーの接続が可能になります。 DirectAccess 接続では、リモートクライアントコンピューターは常に組織に接続されます。リモートユーザーが VPN 接続で必要とされる接続を開始および停止する必要はありません。 さらに、IT 管理者は、を実行していてインターネットに接続しているときに、DirectAccess クライアントコンピューターを管理できます。
 
 >[!IMPORTANT]
->Microsoft Azure では、仮想マシン \(VM @ no__t-1 にリモートアクセスを展開しないでください。 Microsoft Azure でのリモートアクセスの使用はサポートされていません。 Windows Server 2016 以前のバージョンの Windows Server では、Azure VM でリモートアクセスを使用して VPN、DirectAccess、またはその他のリモートアクセス機能を展開することはできません。 詳細については、「 [Microsoft Azure の仮想マシンに対する Microsoft サーバーソフトウェアのサポート](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)」を参照してください。
+>Microsoft Azure では、仮想マシン \(VM\) にリモートアクセスをデプロイしないでください。 Microsoft Azure でのリモートアクセスの使用はサポートされていません。 Windows Server 2016 以前のバージョンの Windows Server では、Azure VM でリモートアクセスを使用して VPN、DirectAccess、またはその他のリモートアクセス機能を展開することはできません。 詳細については、「 [Microsoft Azure の仮想マシンに対する Microsoft サーバーソフトウェアのサポート](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)」を参照してください。
   
 DirectAccess では、DirectAccess のオペレーティングシステムのサポートを含むドメインに参加しているクライアントのみがサポートされます。  
   

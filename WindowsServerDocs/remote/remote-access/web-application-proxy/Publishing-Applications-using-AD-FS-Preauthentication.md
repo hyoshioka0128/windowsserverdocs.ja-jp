@@ -17,9 +17,9 @@ ms.locfileid: "71404267"
 ---
 # <a name="publishing-applications-using-ad-fs-preauthentication"></a>AD FS 事前認証を使用してアプリケーションを公開する
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
-@no__t-このコンテンツは、オンプレミスバージョンの Web アプリケーションプロキシに関連しています。クラウド経由でオンプレミスアプリケーションへのセキュリティで保護されたアクセスを有効にするには、 [Azure AD アプリケーションプロキシのコンテンツ](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)を参照してください。 **  
+**このコンテンツは、オンプレミスバージョンの Web アプリケーションプロキシに関連しています。クラウド経由でオンプレミスアプリケーションへの安全なアクセスを実現するには、 [Azure AD アプリケーションプロキシのコンテンツ](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)を参照してください。**  
   
 このトピックでは、Active Directory フェデレーションサービス (AD FS) (AD FS) 事前認証を使用して Web アプリケーションプロキシ経由でアプリケーションを公開する方法について説明します。  
   
@@ -30,7 +30,7 @@ AD FS 事前認証を使用して公開できるすべての種類のアプリ�
 > [!NOTE]  
 > この認証フローは、Microsoft Store アプリを使用するクライアントには適用されません。  
   
-1.  クライアントデバイスは、特定のリソース URL で公開された web アプリケーションにアクセスしようとします。たとえば https://app1.contoso.com/ のようになります。  
+1.  クライアントデバイスは、特定のリソース URL で公開された web アプリケーションにアクセスしようとします。たとえば、 https://app1.contoso.com/です。  
   
     リソース URL は、Web アプリケーションプロキシが受信 HTTPS 要求をリッスンするパブリックアドレスです。  
   
@@ -77,7 +77,7 @@ AD FS 事前認証を使用して公開できるすべての種類のアプリ�
   
 要求ベースのアプリケーションを公開し、ブラウザーからアプリケーションにアクセスする場合、一般的な認証フローは次のとおりです。  
   
-1.  クライアントは、web ブラウザーを使用して要求ベースのアプリケーションにアクセスしようとします。たとえば、 https://appserver.contoso.com/claimapp/ です。  
+1.  クライアントは、web ブラウザーを使用して要求ベースのアプリケーションにアクセスしようとします。たとえば、 https://appserver.contoso.com/claimapp/のようにします。  
   
 2.  Web ブラウザーは、要求を AD FS サーバーにリダイレクトする HTTPS 要求を Web アプリケーションプロキシサーバーに送信します。  
   
@@ -119,16 +119,16 @@ AD FS 事前認証を使用して公開できるすべての種類のアプリ�
   
     -   **[外部証明書]** の一覧で、外部 URL に対応するサブジェクトを持つ証明書を選択します。  
   
-    -   **[バックエンド サーバー URL]** ボックスに、バックエンド サーバーの URL を入力します。 外部 URL を入力すると、この値は自動的に入力されることに注意してください。バックエンドサーバーの URL が異なる場合にのみ、この値を変更する必要があります。たとえば、 https://sp/app1/ です。  
+    -   **[バックエンド サーバー URL]** ボックスに、バックエンド サーバーの URL を入力します。 外部 URL を入力すると、この値は自動的に入力されることに注意してください。バックエンドサーバーの URL が異なる場合にのみ、この値を変更する必要があります。たとえば、 https://sp/app1/のようにします。  
   
         > [!NOTE]  
-        > Web アプリケーションプロキシは Url 内のホスト名を変換できますが、パス名を変換することはできません。 そのため、異なるホスト名を入力できますが、同じパス名を入力する必要があります。 たとえば、 https://apps.contoso.com/app1/ の外部 URL と、 https://app-server/app1/ のバックエンドサーバー URL を入力できます。 ただし、外部 URL https://apps.contoso.com/app1/ とバックエンドサーバー URL https://apps.contoso.com/internal-app1/ を入力することはできません。  
+        > Web アプリケーションプロキシは Url 内のホスト名を変換できますが、パス名を変換することはできません。 そのため、異なるホスト名を入力できますが、同じパス名を入力する必要があります。 たとえば、 https://apps.contoso.com/app1/ の外部 URL と、 https://app-server/app1/のバックエンドサーバー URL を入力できます。 ただし、 https://apps.contoso.com/app1/ の外部 URL と、 https://apps.contoso.com/internal-app1/のバックエンドサーバー URL を入力することはできません。  
   
 7.  **[確認]** ページで設定を確認し、 **[公開]** をクリックします。 PowerShell コマンドをコピーして、追加で公開するアプリケーションをセットアップすることができます。  
   
 8.  **[結果]** ページで、アプリケーションが正常に公開されたことを確認し、 **[閉じる]** をクリックします。  
   
-![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -153,7 +153,7 @@ Web アプリケーションプロキシがシングルサインオン (SSO) を
   
 バックエンドサーバーに対して統合 Windows 認証を使用する場合、Web アプリケーションプロキシと公開されたアプリケーションの間の認証は要求ベースではなく、代わりに Kerberos の制約付き委任を使用してアプリケーションに対してエンドユーザーを認証します。 一般的なフローは次のとおりです。  
   
-1.  クライアントは、web ブラウザーを使用して、要求ベースではないアプリケーションにアクセスしようとします。たとえば、 https://appserver.contoso.com/nonclaimapp/ です。  
+1.  クライアントは、web ブラウザーを使用して、要求ベースではないアプリケーションにアクセスしようとします。たとえば、 https://appserver.contoso.com/nonclaimapp/のようにします。  
   
 2.  Web ブラウザーは、要求を AD FS サーバーにリダイレクトする HTTPS 要求を Web アプリケーションプロキシサーバーに送信します。  
   
@@ -199,10 +199,10 @@ Web アプリケーションプロキシがシングルサインオン (SSO) を
   
     -   **[外部証明書]** の一覧で、外部 URL に対応するサブジェクトを持つ証明書を選択します。  
   
-    -   **[バックエンド サーバー URL]** ボックスに、バックエンド サーバーの URL を入力します。 外部 URL を入力すると、この値は自動的に入力されることに注意してください。バックエンドサーバーの URL が異なる場合にのみ、この値を変更する必要があります。たとえば、 https://owa/ です。  
+    -   **[バックエンド サーバー URL]** ボックスに、バックエンド サーバーの URL を入力します。 外部 URL を入力すると、この値は自動的に入力されることに注意してください。バックエンドサーバーの URL が異なる場合にのみ、この値を変更する必要があります。たとえば、 https://owa/のようにします。  
   
         > [!NOTE]  
-        > Web アプリケーションプロキシは Url 内のホスト名を変換できますが、パス名を変換することはできません。 そのため、異なるホスト名を入力できますが、同じパス名を入力する必要があります。 たとえば、 https://apps.contoso.com/app1/ の外部 URL と、 https://app-server/app1/ のバックエンドサーバー URL を入力できます。 ただし、外部 URL https://apps.contoso.com/app1/ とバックエンドサーバー URL https://apps.contoso.com/internal-app1/ を入力することはできません。  
+        > Web アプリケーションプロキシは Url 内のホスト名を変換できますが、パス名を変換することはできません。 そのため、異なるホスト名を入力できますが、同じパス名を入力する必要があります。 たとえば、 https://apps.contoso.com/app1/ の外部 URL と、 https://app-server/app1/のバックエンドサーバー URL を入力できます。 ただし、 https://apps.contoso.com/app1/ の外部 URL と、 https://apps.contoso.com/internal-app1/のバックエンドサーバー URL を入力することはできません。  
   
     -   **[バックエンド サーバー SPN]** ボックスに、バックエンド サーバーのサービス プリンシパル名 (HTTP/owa.contoso.com など) を入力します。  
   
@@ -210,7 +210,7 @@ Web アプリケーションプロキシがシングルサインオン (SSO) を
   
 8.  **[結果]** ページで、アプリケーションが正常に公開されたことを確認し、 **[閉じる]** をクリックします。  
   
-![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -226,7 +226,7 @@ Add-WebApplicationProxyApplication
 ```  
   
 ## <a name="BKMK_1.3"></a>MS-OFBA を使用するアプリケーションを公開する  
-Web アプリケーションプロキシは、バックエンドサーバーのドキュメントやデータにアクセスする Microsoft Word などの Microsoft Office クライアントからのアクセスをサポートします。 これらのアプリケーションと標準的なブラウザーの唯一の違いは、STS へのリダイレクトは通常の HTTP リダイレクトではなく、特別な MS OFBA ヘッダーを使用して行われます[(https://msdn.microsoft.com/library/dd773463(v=office.12).aspx )](https://msdn.microsoft.com/library/dd773463(v=office.12).aspx)。 バックエンド アプリケーションは、要求ベースまたは IWA ベースです。   
+Web アプリケーションプロキシは、バックエンドサーバーのドキュメントやデータにアクセスする Microsoft Word などの Microsoft Office クライアントからのアクセスをサポートします。 これらのアプリケーションと標準的なブラウザーの唯一の違いは、STS へのリダイレクトは通常の HTTP リダイレクトではなく、特別な MS OFBA ヘッダーを使用して行われます。 [https://msdn.microsoft.com/library/dd773463(v=office.12).aspx](https://msdn.microsoft.com/library/dd773463(v=office.12).aspx)を参照してください。 バックエンド アプリケーションは、要求ベースまたは IWA ベースです。   
 MS OFBA を使用するクライアントのアプリケーションを公開するには、アプリケーションの証明書利用者信頼をフェデレーションサービスに追加する必要があります。 アプリケーションに応じて、要求ベースの認証または統合 Windows 認証を使用できます。 そのため、アプリケーションに応じて、関連する証明書利用者信頼を追加する必要があります。  
   
 Web アプリケーションプロキシがシングルサインオン (SSO) を実行し、Kerberos の制約付き委任を使用して資格情報の委任を実行できるようにするには、Web アプリケーションプロキシサーバーがドメインに参加している必要があります。 「 [Plan Active Directory](https://technet.microsoft.com/library/dn383648.aspx#BKMK_AD)」を参照してください。  
@@ -310,7 +310,7 @@ HTTP Basic を使用するクライアントの認証フローについては、
   
 8.  **[結果]** ページで、アプリケーションが正常に公開されたことを確認し、 **[閉じる]** をクリックします。  
   
-![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+![](../../media/Publishing-Applications-using-AD-FS-Preauthentication/PowerShellLogoSmall.gif) ***<em>Windows PowerShell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -409,10 +409,10 @@ Microsoft Store アプリを使用するクライアントの認証フローを�
   
         URL に HTTPS を入力しない場合でも、ユーザーがアプリにアクセスできるようにするには、[ **HTTP から https へのリダイレクトを有効**にする] ボックスをオンにします。  
   
-    -   **[バックエンド サーバー URL]** ボックスに、バックエンド サーバーの URL を入力します。 外部 URL を入力すると、この値は自動的に入力されることに注意してください。バックエンドサーバーの URL が異なる場合にのみ、この値を変更する必要があります。たとえば、 https://sp/app1/ です。  
+    -   **[バックエンド サーバー URL]** ボックスに、バックエンド サーバーの URL を入力します。 外部 URL を入力すると、この値は自動的に入力されることに注意してください。バックエンドサーバーの URL が異なる場合にのみ、この値を変更する必要があります。たとえば、 https://sp/app1/のようにします。  
   
         > [!NOTE]  
-        > Web アプリケーションプロキシは Url 内のホスト名を変換できますが、パス名を変換することはできません。 そのため、異なるホスト名を入力できますが、同じパス名を入力する必要があります。 たとえば、 https://apps.contoso.com/app1/ の外部 URL と、 https://app-server/app1/ のバックエンドサーバー URL を入力できます。 ただし、外部 URL https://apps.contoso.com/app1/ とバックエンドサーバー URL https://apps.contoso.com/internal-app1/ を入力することはできません。  
+        > Web アプリケーションプロキシは Url 内のホスト名を変換できますが、パス名を変換することはできません。 そのため、異なるホスト名を入力できますが、同じパス名を入力する必要があります。 たとえば、 https://apps.contoso.com/app1/ の外部 URL と、 https://app-server/app1/のバックエンドサーバー URL を入力できます。 ただし、 https://apps.contoso.com/app1/ の外部 URL と、 https://apps.contoso.com/internal-app1/のバックエンドサーバー URL を入力することはできません。  
   
 7.  **[確認]** ページで設定を確認し、 **[公開]** をクリックします。 PowerShell コマンドをコピーして、追加で公開するアプリケーションをセットアップすることができます。  
   

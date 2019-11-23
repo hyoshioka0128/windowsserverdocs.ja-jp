@@ -21,11 +21,11 @@ ms.locfileid: "71405967"
 ---
 # <a name="internal-dns-service-idns-for-sdn"></a>SDN の Internal DNS Service (iDNS)
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-Windows Server 2016 でソフトウェア定義のネットワーク \(SDN @ no__t の展開を計画しているクラウドサービスプロバイダー \(CSP @ または Enterprise を使用している場合は、内部 DNS を使用して、ホストされているテナントワークロードに DNS サービスを提供することができ @no__SDN と統合されている t-4iDNS @ no__t-5。
+Windows Server 2016 でソフトウェア定義ネットワーク \(SDN\) の展開を計画しているクラウドサービスプロバイダー \(CSP\) またはエンタープライズの場合は、SDN と統合された内部 DNS \(Idn\)を使用して、ホストされているテナントワークロードに DNS サービスを提供できます。
 
-ホストされている仮想マシン @no__t 0VMs @ no__t とアプリケーションは、独自のネットワーク内およびインターネット上の外部リソースと通信するために DNS を必要とします。 Idn を使用すると、テナントは、分離されたローカルの名前空間とインターネットリソースに対して DNS 名前解決サービスを提供できます。
+ホストされている仮想マシン \(Vm\) とアプリケーションは、自身のネットワーク内およびインターネット上の外部リソースと通信するために DNS を必要とします。 Idn を使用すると、テナントは、分離されたローカルの名前空間とインターネットリソースに対して DNS 名前解決サービスを提供できます。
 
 Idn プロキシを経由するのではなく、テナントの仮想ネットワークから Idn サービスにアクセスできないため、テナントネットワーク上の悪意のあるアクティビティに対してサーバーが脆弱になることはありません。
 
@@ -54,7 +54,7 @@ Idn サーバーは、内部 DNS ゾーンに対して権限のあるサーバ�
 
 仮想ネットワーク上の Vm のホスト名はすべて、同じゾーンに DNS リソースレコードとして保存されます。 たとえば、contoso. local という名前のゾーンに対して Idn を展開する場合、そのネットワーク上の Vm の DNS リソースレコードは、contoso. ローカルゾーンに格納されます。
 
-テナント VM の完全修飾ドメイン名 \(FQDNs @ no__t-1 は、コンピューター名と、GUID 形式の Virtual Network の DNS サフィックス文字列で構成されます。 たとえば、Virtual Network contoso, local という名前のテナント VM がある場合、VM の FQDN は TENANT1 です。*vn*を指定します。 *vn*は、Virtual Network の DNS サフィックス文字列です。
+テナント VM の完全修飾ドメイン名 \(Fqdn\) は、コンピューター名と Virtual Network の DNS サフィックス文字列で構成されます (GUID 形式)。 たとえば、Virtual Network contoso, local という名前のテナント VM がある場合、VM の FQDN は TENANT1 です。*vn*を指定します。 *vn*は、Virtual Network の DNS サフィックス文字列です。
 
 >[!NOTE]
 >ファブリック管理者は、Idn サーバーとして使用するために特別に使用する新しい DNS サーバーを展開するのではなく、CSP サーバーまたはエンタープライズ DNS インフラストラクチャを Idn サーバーとして使用できます。 Idn 用の新しいサーバーを展開するか、既存のインフラストラクチャを使用するかにかかわらず、Idn は Active Directory を利用して高可用性を実現します。 したがって、Idn サーバーは Active Directory に統合されている必要があります。
@@ -82,12 +82,12 @@ Idn を展開するために必要な手順の概要を次に示します。
 >[!NOTE]
 >スクリプトを使用して SDN を展開した場合は、次の手順を実行する必要はありません。 ここで説明する手順は、情報とトラブルシューティングのみを目的として提供されています。
 
-### <a name="step-1-deploy-dns"></a>手順 1:DNS の展開
+### <a name="step-1-deploy-dns"></a>手順 1: DNS を展開する
 DNS サーバーを展開するには、次の Windows PowerShell コマンド例を使用します。
     
     Install-WindowsFeature DNS -IncludeManagementTools
     
-### <a name="step-2-configure-idns-information-in-network-controller"></a>手順 2:ネットワークコントローラーでの Idn 情報の構成
+### <a name="step-2-configure-idns-information-in-network-controller"></a>手順 2: ネットワークコントローラーで Idn 情報を構成する
 このスクリプトセグメントは、管理者がネットワークコントローラーに対して実行する REST 呼び出しであり、Idn ゾーン構成 (iDNSServer の IP アドレスや Idn 名のホストに使用されるゾーンなど) について通知します。 
 
 ```
@@ -114,7 +114,7 @@ Method: PUT
 >[!NOTE]
 >これは、SDNExpress のセクション**構成**の抜粋です。 詳細については、「[スクリプトを使用したソフトウェア定義ネットワークインフラストラクチャの展開](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)」を参照してください。
 
-### <a name="step-3-configure-the-idns-proxy-service"></a>手順 3:Idn プロキシサービスを構成する
+### <a name="step-3-configure-the-idns-proxy-service"></a>手順 3: Idn プロキシサービスを構成する
 Idn プロキシサービスは各 Hyper-v ホスト上で実行され、テナントの仮想ネットワークと Idn サーバーが配置されている物理ネットワークとの間にブリッジを提供します。 次のレジストリキーは、すべての Hyper-v ホスト上に作成する必要があります。
 
 
@@ -148,9 +148,9 @@ Idn プロキシサービスは各 Hyper-v ホスト上で実行され、テナ�
 - ValueData = "aa-bb-cc-bb-cc"
 - ValueType = "String"
 
-**IDN サーバーアドレス:** Idn サーバーのコンマ区切りの一覧。
+**Idn サーバーアドレス:** Idn サーバーのコンマ区切りの一覧。
 
-- レジストリ キー: HKLM\SYSTEM\CurrentControlSet\Services\DNSProxy\Parameters
+- レジストリキー: HKLM\SYSTEM\CurrentControlSet\Services\DNSProxy\Parameters
 - ValueName = "フォワーダー"
 - ValueData = "10.0.0.9"
 - ValueType = "String"
@@ -160,7 +160,7 @@ Idn プロキシサービスは各 Hyper-v ホスト上で実行され、テナ�
 >[!NOTE]
 >これは、SDNExpress のセクション**構成**の抜粋です。 詳細については、「[スクリプトを使用したソフトウェア定義ネットワークインフラストラクチャの展開](https://technet.microsoft.com/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure-using-scripts)」を参照してください。
 
-### <a name="step-4-restart-the-network-controller-host-agent-service"></a>手順 4:ネットワークコントローラーのホストエージェントサービスを再起動します
+### <a name="step-4-restart-the-network-controller-host-agent-service"></a>手順 4: ネットワークコントローラーのホストエージェントサービスを再起動する
 次の Windows PowerShell コマンドを使用して、ネットワークコントローラーのホストエージェントサービスを再起動できます。
     
     Restart-Service nchostagent -Force

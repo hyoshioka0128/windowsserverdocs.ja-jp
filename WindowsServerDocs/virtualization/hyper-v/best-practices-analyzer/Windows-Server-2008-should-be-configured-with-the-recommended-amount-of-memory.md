@@ -19,7 +19,7 @@ ms.locfileid: "71364381"
 ---
 # <a name="windows-server-2008-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows Server 2008 は、推奨されるメモリ量で構成する必要があります。
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 ベスト プラクティスとスキャンの詳細については、「 [ベスト プラクティス アナライザー](https://go.microsoft.com/fwlink/?LinkId=122786)」をご覧ください。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71364381"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|警告|  
+|**順**|Warning|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
@@ -38,9 +38,9 @@ ms.locfileid: "71364381"
   
 ## <a name="impact"></a>影響  
   
-*The オペレーティングシステムとアプリケーションが正常に動作しない可能性があります。複数のアプリケーションを同時に実行するのに十分なメモリがない可能性があります。これは、次の仮想マシンに影響します:*  
+*ゲストオペレーティングシステムとアプリケーションが正常に動作しない可能性があります。複数のアプリケーションを同時に実行するのに十分なメモリがない可能性があります。これは、次の仮想マシンに影響します。*  
    
-@no__t-仮想マシン名の一覧 >  
+仮想マシン名の \<一覧 >  
   
 ## <a name="resolution"></a>解決方法  
   
@@ -64,13 +64,13 @@ ms.locfileid: "71364381"
   
 2.  右クリック **Windows PowerShell**  をクリック **管理者として実行**します。  
   
-3.  次のようなコマンドを実行します。 \<MyVM > は仮想マシンの名前に、メモリ値は少なくとも以下の値で置き換えてください。  
+3.  次のようなコマンドを実行します。 \<MyVM > を仮想マシンの名前に、メモリの値を、少なくとも以下の値に置き換えます。  
   
 ```  
 Set-VMMemory <MyVM> -StartupBytes 2GB  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [設定-VMMemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

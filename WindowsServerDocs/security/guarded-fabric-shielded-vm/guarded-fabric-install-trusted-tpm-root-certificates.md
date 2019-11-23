@@ -16,15 +16,15 @@ ms.locfileid: "71386550"
 ---
 # <a name="install-trusted-tpm-root-certificates"></a>信頼された TPM ルート証明書をインストールする
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 TPM 構成証明を使用するように HGS を構成する場合は、サーバーの Tpm のベンダーを信頼するように HGS を構成する必要もあります。
 この追加の検証プロセスにより、認証された信頼できる Tpm だけが HGS で証明できるようになります。
-信頼されていない TPM を @no__t 0 に登録しようとすると、TPM ベンダが信頼されていないことを示すエラーが表示されます。
+信頼されていない TPM を `Add-HgsAttestationTpmHost`に登録しようとすると、TPM ベンダが信頼されていないことを示すエラーが表示されます。
 
 Tpm を信頼するには、サーバーの Tpm で保証キーの署名に使用されるルート証明書と中間署名証明書を HGS にインストールする必要があります。
 データセンターで複数の TPM モデルを使用する場合は、モデルごとに異なる証明書をインストールすることが必要になる場合があります。
-HGS は、ベンダー証明書の "TrustedTPM_RootCA" および "TrustedTPM_IntermediateCA" 証明書ストアを検索します。
+HGS は、ベンダー証明書の "TrustedTPM_RootCA" と "TrustedTPM_IntermediateCA" の証明書ストアを検索します。
 
 > [!NOTE]
 > TPM ベンダー証明書は、Windows で既定でインストールされる証明書とは異なり、TPM ベンダーによって使用される特定のルート証明書と中間証明書を表します。
@@ -35,7 +35,7 @@ TPM 証明書が以下のパッケージに含まれていない場合は、TPM 
 
 **すべての HGS サーバー**で、次の手順を繰り返します。
 
-1.  [@No__t-1](https://go.microsoft.com/fwlink/?linkid=2097925)から最新のパッケージをダウンロードします。
+1.  [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)から最新のパッケージをダウンロードします。
 
 2.  Cab ファイルの信頼性を確認するために、その署名を確認します。 署名が有効でない場合は、続行しないでください。
 

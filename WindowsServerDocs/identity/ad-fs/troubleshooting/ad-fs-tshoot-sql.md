@@ -23,8 +23,8 @@ SQL 接続をチェックするときに最初にテストするのは、AD FS �
 
 ### <a name="to-acquire-the-sql-connection-string"></a>SQL 接続文字列を取得するには
 1.  Windows PowerShell を開く
-2. 次のように入力します。 `$adfs = gwmi -Namespace root/ADFS -Class SecurityTokenService` で、Enter キーを押します。
-3. 次のように入力します。 `$adfs.ConfigurationDatabaseConnectionString` の場合は、enter キーを押します。
+2. 次のように入力します。 `$adfs = gwmi -Namespace root/ADFS -Class SecurityTokenService`、Enter キーを押します。
+3. 次のように入力します。 `$adfs.ConfigurationDatabaseConnectionString`、enter キーを押します。
 4. 接続文字列の情報が表示されます。
 ![](media/ad-fs-tshoot-sql/sql2.png)
 
@@ -36,7 +36,7 @@ SQL 接続をチェックするときに最初にテストするのは、AD FS �
 1. メモ帳を開き、ファイルを test .udl として保存します。  [**種類] として [保存**] で、**すべてのファイル**が選択されていることを確認します。
 2. [.Udl] をダブルクリックします。
 3. 次の情報を入力します。 a. **サーバー名の選択または入力:** B の上の接続文字列のデータソースを使用します。 **サーバーにログオンするための情報を入力してください:** AD FS サービスアカウント、またはリモートでログオンするためのアクセス許可を持つアカウントを使用します。  アカウントが windows アカウントの場合は、統合認証を使用します。それ以外の場合は、ユーザー名とパスワードを入力します。
-    c. **サーバー上のデータベースを選択します。** 上記の文字列の初期カタログを使用します。  例:AdfsConfigurationV3.
+    c. **サーバー上のデータベースを選択します。** 上記の文字列の初期カタログを使用します。  例: AdfsConfigurationV3。
    ![[接続テスト]](media/ad-fs-tshoot-sql/sql4.png)
 1. **[接続テスト]** をクリックします。</br>
 ![成功](media/ad-fs-tshoot-sql/sql3.png)
@@ -51,8 +51,8 @@ SSMS を[ダウンロード](https://go.microsoft.com/fwlink/?linkid=864329)し�
 2. AD FS サービスアカウント、またはリモートでログオンするためのアクセス許可を持つアカウントを使用します。  アカウントが windows アカウントの場合は、統合認証を使用します。それ以外の場合は、ユーザー名とパスワードを入力します。
 ![Connect](media/ad-fs-tshoot-sql/sql6.png)
 1. 左側に値が設定されていることがわかります。  [データベース] を展開し、AD FS データベースが表示されていることを確認します。
-![AD FS データベース @ no__t-1
+AD FS データベースの ![](media/ad-fs-tshoot-sql/sql7.png)
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [AD FS のトラブルシューティング](ad-fs-tshoot-overview.md)

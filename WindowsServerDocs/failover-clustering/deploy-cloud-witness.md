@@ -18,7 +18,7 @@ ms.locfileid: "71369881"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>フェールオーバー クラスターのクラウド監視を展開する
 
-> 適用対象:Windows Server 2019、Windows Server 2016
+> 適用対象: Windows Server 2019、Windows Server 2016
 
 クラウド監視は、クラスタークォーラムに投票を提供するために Microsoft Azure を使用するフェールオーバークラスタークォーラム監視の一種です。 このトピックでは、クラウド監視機能の概要、サポートされるシナリオ、およびフェールオーバークラスターのクラウド監視を構成する手順について説明します。
 
@@ -27,7 +27,7 @@ ms.locfileid: "71369881"
 図1は、Windows Server 2016 を使用したマルチサイトの拡張フェールオーバークラスタークォーラム構成を示しています。 この例の構成 (図 1) では、2つのノード (サイトと呼ばれます) が2つのデータセンターにあります。 クラスターが2つ以上のデータセンターにまたがる可能性があることに注意してください。 また、各データセンターには2つ以上のノードを含めることができます。 このセットアップでの一般的なクラスタークォーラム構成 (自動フェールオーバー SLA) は、各ノードに投票を提供します。 いずれかのデータセンターで停電が発生した場合でも、クラスターを実行し続けることができるように、クォーラム監視に1つの追加の投票が与えられます。 数値演算は単純であり、投票の合計は5件です。クラスターで実行を維持するには、3票が必要です。  
 
 ![2 つの他の]サイトの2つのノードを持つファイル共有監視 ((media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_1.png "ファイル共有監視"))  
-**図 1: ファイル共有監視をクォーラム監視として使用する @ no__t-0  
+**図 1: ファイル共有監視をクォーラム監視として使用する**  
 
 1つのデータセンターで停電が発生した場合、他のデータセンターのクラスターと同等の機会を提供して実行を維持するには、2つのデータセンター以外の場所でクォーラム監視をホストすることをお勧めします。 通常、これは、クォーラム監視 (ファイル共有監視) として使用されるファイル共有をバッキングするファイルサーバーをホストするために、3つ目の個別のデータセンター (サイト) が必要であることを意味します。  
 
@@ -42,12 +42,12 @@ ms.locfileid: "71369881"
 4. ストレージアカウントへの $cost が非常に低い (blob ファイルごとに書き込まれたデータが非常に少ない場合、blob ファイルはクラスターノードの状態が変化したときに1回だけ更新されます)。  
 5. 組み込みのクラウド監視リソースの種類。  
 
-クラウド監視がクォーラム監視として使用されるマルチサイトのストレッチされるクラスターを示す @no__t 0Diagram @ no__t  
-**図 2:クォーラム監視サーバーとしてクラウド監視を使用するマルチサイトのストレッチされるクラスター @ no__t-0  
+クォーラム監視としてクラウド監視を使用するマルチサイトのストレッチされるクラスターを示す ![図](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_2.png)  
+**図 2: クォーラム監視としてクラウド監視を使用する複数サイトの拡張されるクラスター**  
 
 図2に示すように、3つの独立したサイトは必要ありません。 他のクォーラム監視と同様に、クラウド監視は投票を取得し、クォーラム計算に参加できます。  
 
-## <a name="CloudWitnessSupportedScenarios"></a>クラウド監視:単一の監視の種類でサポートされるシナリオ
+## <a name="CloudWitnessSupportedScenarios"></a>クラウド監視: 単一の監視の種類でサポートされるシナリオ
 フェールオーバークラスターデプロイで、すべてのノードが (Azure の拡張によって) インターネットに接続できる場合は、クラウド監視をクォーラム監視リソースとして構成することをお勧めします。  
 
 次のように、クラウド監視をクォーラム監視として使用するシナリオがサポートされています。  
@@ -96,11 +96,11 @@ Microsoft Azure Storage アカウントを作成すると、自動的に生成�
 
 Azure Portal でストレージアカウントに移動し、すべての **[設定]** 、 **[アクセスキー]** の順にクリックして、アカウントアクセスキーを表示、コピー、再生成します。 [アクセスキー] ブレードには、プライマリキーとセカンダリキーを使用して事前に構成された接続文字列も含まれており、アプリケーションで使用するためにコピーできます (図4参照)。
 
-Microsoft Azure @ no__t-1 の [アクセスキーの管理] ダイアログの @no__t 0Snapshot  
-**図 4:ストレージアクセスキー @ no__t-0
+Microsoft Azure](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_4.png) の [アクセスキーの管理] ダイアログのスナップショットの ![  
+**図 4: ストレージアクセスキー**
 
 ### <a name="view-and-copy-endpoint-url-links"></a>エンドポイント URL リンクの表示とコピー  
-ストレージアカウントを作成すると、という形式で次の Url が生成されます。 `https://<Storage Account Name>.<Storage Type>.<Endpoint>`  
+ストレージアカウントを作成すると、次の Url がという形式で生成されます。 `https://<Storage Account Name>.<Storage Type>.<Endpoint>`  
 
 クラウド監視では、常にストレージの種類として**Blob**が使用されます。 Azure では、エンドポイントとして **. core.windows.net**を使用します。 クラウド監視を構成する場合は、シナリオに従って別のエンドポイントで構成することもできます (たとえば、中国の Microsoft Azure データセンターには異なるエンドポイントがあります)。  
 
@@ -110,8 +110,8 @@ Microsoft Azure @ no__t-1 の [アクセスキーの管理] ダイアログの @
 #### <a name="to-view-and-copy-endpoint-url-links"></a>エンドポイント URL リンクを表示およびコピーするには
 Azure Portal でストレージアカウントに移動し、すべての **[設定]** をクリックし、 **[プロパティ]** をクリックしてエンドポイント url を表示し、コピーします (図5を参照)。  
 
-クラウド監視エンドポイントリンクの @no__t 0Snapshot @ no__t-1  
-**Figure 5:クラウド監視エンドポイント URL リンク @ no__t-0
+クラウド監視エンドポイントリンクの ![スナップショット](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_5.png)  
+**図 5: クラウド監視エンドポイントの URL リンク**
 
 Azure Storage アカウントの作成と管理の詳細については、「 [Azure Storage アカウントについ](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/)て」を参照してください。
 
@@ -120,18 +120,18 @@ Azure Storage アカウントの作成と管理の詳細については、「 [A
 
 ### <a name="to-configure-cloud-witness-as-a-quorum-witness"></a>クラウド監視をクォーラム監視として構成するには
 1. フェールオーバークラスターマネージャーを起動します。
-2. クラスターを右クリックして、 **[その他の操作]** を >  -> **クラスタークォーラム設定を構成**します (図6を参照)。 クラスタークォーラム構成ウィザードが起動します。  
-    ![フェールオーバー クラスター マネージャーの UI でのクラスター クォーラム設定の構成 メニューの パスのスナップショット](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_7.png)**図 6。クラスタークォーラム設定 @ no__t
+2. クラスターを右クリックし、 **[その他のアクション]**  -> **クラスタークォーラム設定**> を構成します (図6を参照)。 クラスタークォーラム構成ウィザードが起動します。  
+    フェールオーバークラスターマネージャー UI](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_7.png) 図6の [構成] クラスタークォーラム設定へのメニューパスのスナップショットを ![し**ます。クラスタークォーラム設定**
 
 3. **[クォーラム構成の選択]** ページで、 **[クォーラム監視の選択]** を選択します (図7を参照)。  
 
-    クラスタークォーラムウィザードの [quotrum 監視を選択してください] オプションボタンの @no__t 0Snapshot @ no__t-1  
-    **Figure 7。クォーラム構成を選択します @ no__t-0
+    クラスタークォーラムウィザードの [quotrum 監視を選択してください] オプションボタンのスナップショットを ![](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_8.png)  
+    **図 7.クォーラム構成の選択**
 
 4. **[クォーラム監視の選択]** ページで、 **[クラウド監視の構成]** を選択します (図8を参照)。  
 
-    クラウドミラーリング監視サーバーを選択するための適切なオプションボタンの @no__t 0Snapshot @ no__t-1  
-    **Figure 8。クォーラム監視の選択 @ no__t-0  
+    適切なラジオボタンのスナップショットを ![して、クラウド監視を選択](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_9.png)  
+    **図 8.クォーラム監視を選択する**  
 
 5. **[クラウド監視の構成]** ページで、次の情報を入力します。  
    1. (必須パラメーター)Azure Storage アカウント名。  
@@ -140,18 +140,18 @@ Azure Storage アカウントの作成と管理の詳細については、「 [A
        2. プライマリアクセスキーをローテーションする場合は、セカンダリアクセスキーを使用します (図5を参照)。  
    3. (省略可能なパラメーター)別の Azure サービスエンドポイント (中国の Microsoft Azure サービスなど) を使用する場合は、エンドポイントサーバー名を更新します。  
 
-      クラスタークォーラムウィザードの [クラウド監視の構成] ウィンドウの @no__t 0Snapshot-1  
-      **Figure 9:クラウド監視を構成する @ no__t-0
+      クラスタークォーラムウィザードの [クラウド監視の構成] ウィンドウの ![スナップショット](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_10.png)  
+      **図 9: クラウド監視を構成する**
 
 6. クラウド監視が正常に構成されたら、フェールオーバークラスターマネージャースナップインに新しく作成した監視リソースを表示できます (図10を参照)。
 
-    クラウド監視の構成が成功した ](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_11.png)  
-    **Figure 10:クラウド監視の構成が成功しました @ no__t-0
+    クラウド監視を正常に構成 ![](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_11.png)  
+    **図 10: クラウド監視を正常に構成する**
 
 ### <a name="configuring-cloud-witness-using-powershell"></a>PowerShell を使用したクラウド監視の構成  
 既存の Set ClusterQuorum PowerShell コマンドには、クラウド監視に対応する新しいパラメーターが追加されています。  
 
-次の PowerShell コマンドを使用して、 [`Set-ClusterQuorum`](https://technet.microsoft.com/library/ee461013.aspx)を使用してクラウド監視を構成できます。  
+クラウド監視を構成するには[`Set-ClusterQuorum`](https://technet.microsoft.com/library/ee461013.aspx)次の PowerShell コマンドを使用します。  
 
 ```PowerShell
 Set-ClusterQuorum -CloudWitness -AccountName <StorageAccountName> -AccessKey <StorageAccountAccessKey>
@@ -172,5 +172,5 @@ Set-ClusterQuorum -CloudWitness -AccountName <StorageAccountName> -AccessKey <St
 ### <a name="proxy-considerations-with-cloud-witness"></a>クラウド監視でのプロキシに関する考慮事項  
 クラウド監視では、HTTPS (既定のポート 443) を使用して Azure blob service との通信を確立します。 ネットワークプロキシ経由で HTTPS ポートにアクセスできることを確認します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 - [Windows Server でのフェールオーバークラスタリングの新機能](whats-new-in-failover-clustering.md)

@@ -29,7 +29,7 @@ AD FS が動作していないか、応答していないかを確認する最�
 
 ### <a name="to-use-a-ping-test"></a>PING テストを使用するには
 1.  コマンドプロンプトを開く
-2. 「PING <name of adfs server> a」と入力します。 例:PING sts.contoso.com
+2. 「PING <name of adfs server> a」と入力します。 例: PING sts.contoso.com
 3. サーバーからの応答が表示されます。
 
 ![Ping](media/ad-fs-tshoot-dns/dns1.png)
@@ -40,7 +40,7 @@ AD FS が動作していないか、応答していないかを確認する最�
 ### <a name="to-use-a-nslookup"></a>NSLookup を使用するには
 1.  コマンドプロンプトを開く
 2. 「PING <name of adfs server> a」と入力します。 例: nslookup sts.contoso.com
-3. サーバー @no__t の dns 情報が表示されます。 0NSLookup @ no__t-1
+3. NSLookup ![サーバーの dns 情報が表示され](media/ad-fs-tshoot-dns/dns2.png)
 
 ## <a name="tracert"></a>Tracert
 インクリメンタルに増加する Time to Live (TTL) フィールド値を使用して、送信先にインターネット制御メッセージプロトコル (ICMP) エコー要求または ICMPv6 メッセージを送信することによって、宛先へのパスを決定します。   詳細については、「 [Tracert](https://technet.microsoft.com/library/ff961507.aspx)」を参照してください。
@@ -48,9 +48,9 @@ AD FS が動作していないか、応答していないかを確認する最�
 
 ### <a name="to-use-tracert"></a>Tracert を使用するには
 1.  コマンドプロンプトを開く
-2. 「Tracert <name of adfs server> a」と入力します。 例: tracert sts.contoso.com
-3. サーバーへの接続先のパスが表示されます ![Tracert @ no__t-1
+2. <name of adfs server> に「tracert」と入力します。 例: tracert sts.contoso.com
+3. サーバー ![Tracert に接続するために使用される宛先パスが表示され](media/ad-fs-tshoot-dns/dns3.png)
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [AD FS のトラブルシューティング](ad-fs-tshoot-overview.md)

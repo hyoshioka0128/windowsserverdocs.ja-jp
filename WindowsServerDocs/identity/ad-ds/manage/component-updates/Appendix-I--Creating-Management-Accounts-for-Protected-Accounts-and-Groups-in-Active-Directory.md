@@ -16,9 +16,9 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71369206"
 ---
-# <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>付録 I:Active Directory で保護されたアカウントおよびグループの管理アカウントを作成する
+# <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>付録 I: Active Directory の保護されたアカウントとグループの管理アカウントを作成する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 高い特権を持つグループの永続的なメンバーシップに依存しない Active Directory モデルを実装する際の課題の1つは、グループの一時的なメンバーシップが必要になったときに、これらのグループを設定するためのメカニズムが必要であることです。 特権 id 管理ソリューションの中には、ソフトウェアのサービスアカウントに、フォレスト内の各ドメインの DA や管理者などのグループに永続的なメンバーシップが付与されていることが必要です。 ただし、Privileged Identity Management (PIM) ソリューションでは、このような高い権限を持つコンテキストでサービスを実行する必要はありません。  
   
@@ -42,7 +42,7 @@ ms.locfileid: "71369206"
 運用環境で実装する前に、これらのすべての手順を十分にテストし、必要に応じて環境に合わせて変更する必要があります。 また、すべての設定が想定どおりに動作することを確認する必要があります (この付録ではいくつかのテスト手順を示しています)。また、保護されたグループの回復を設定するために管理アカウントを使用できないディザスターリカバリーシナリオをテストする必要があります。おい. Active Directory のバックアップと復元の詳細については、 [AD DS のバックアップと回復のステップバイステップガイド](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx)を参照してください。  
   
 > [!NOTE]  
-> この付録で説明されている手順を実行して、EAs、DAs、BAs などの最高レベルの特権 Active Directory グループだけでなく、各ドメインのすべての保護されたグループのメンバーシップを管理できるアカウントを作成します。 Active Directory での保護グループの詳細については、次を参照してください [Appendix C:Active Directory @ no__t の保護されたアカウントとグループ。  
+> この付録で説明されている手順を実行して、EAs、DAs、BAs などの最高レベルの特権 Active Directory グループだけでなく、各ドメインのすべての保護されたグループのメンバーシップを管理できるアカウントを作成します。 Active Directory での保護グループの詳細については、「[付録 C: Active Directory の保護されたアカウントとグループ](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)」を参照してください。  
   
 ### <a name="step-by-step-instructions-for-creating-management-accounts-for-protected-groups"></a>保護されたグループの管理アカウントを作成するための詳細な手順  
   
@@ -60,7 +60,7 @@ ms.locfileid: "71369206"
   
     ![管理アカウントの作成](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_116.png)  
   
-3.  作成したばかりのグループを右クリックし、**プロパティ]** [ をクリックし、] **[オブジェクト** タブをクリックします。グループの **[オブジェクトのプロパティ]** ダイアログボックスで、誤って削除されないように **[保護]** する を選択します。これにより、権限のないユーザーがグループを削除できなくなるだけでなく、属性が最初に設定されていない限り、別の OU に移動することもできません。解除.  
+3.  作成したグループを右クリックし、 **[プロパティ]** をクリックして、 **[オブジェクト]** タブをクリックします。グループの **[オブジェクトのプロパティ]** ダイアログボックスで、誤って削除されないように **[保護]** する を選択します。これにより、他の権限のあるユーザーがグループを削除できなくなるだけでなく、属性を最初にオフにしない限り、別の OU に移動することもできません。  
   
     ![管理アカウントの作成](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_117.png)  
   
@@ -71,7 +71,7 @@ ms.locfileid: "71369206"
   
     ![管理アカウントの作成](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_118.png)  
   
-5.  まだ行っていない場合は、 **Active Directory ユーザーとコンピューター**  コンソールで、**表示** をクリックし、**高度な機能** を選択します。 作成したグループを右クリックし、 **[プロパティ]** をクリックして、 **[セキュリティ]** タブをクリックします。**セキュリティ]** [ タブで、 ] **[詳細設定**をクリックします。  
+5.  まだ行っていない場合は、 **Active Directory ユーザーとコンピューター**  コンソールで、**表示** をクリックし、**高度な機能** を選択します。 作成したグループを右クリックし、 **[プロパティ]** をクリックして、 **[セキュリティ]** タブをクリックします。 **[セキュリティ]** タブで、 **[詳細設定]** をクリックします。  
   
     ![管理アカウントの作成](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_119.png)  
   
@@ -135,12 +135,12 @@ Active Directory のインストールで特権グループのメンバーシッ
 
 8. **[アカウント]** タブをクリックします。  
 
-9. **[アカウントのオプション]** フィールドで、 **[アカウントは重要なので委任できない]** フラグを選択し、 **[このアカウントで kerberos aes 128 ビット暗号化をサポート]** する を選択するか、**このアカウントで kerberos aes 256 暗号化**フラグをサポートします。[ **OK]** をクリックします。  
+9. **[アカウントのオプション]** フィールドで、 **[アカウントは重要なので委任できない]** フラグを選択し、 **[このアカウントで kerberos aes 128 ビット暗号化をサポート]** する または **[このアカウントで kerberos aes 256 暗号化をサポート]** する を選択し、[ **OK]** をクリックします。  
 
    ![管理アカウントの作成](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_124.png)  
 
    > [!NOTE]  
-   > このアカウントは、他のアカウントと同様に、制限がありますが、強力な機能を持ちます。このアカウントは、セキュリティで保護された管理ホストでのみ使用してください。 環境内のセキュリティで保護されたすべての管理ホストについては、グループポリシー設定 **Network セキュリティを実装することを検討してください。Kerberos @ no__t に許可されている暗号化の種類を構成して、セキュリティで保護されたホストに対して実装できる最も安全な暗号化の種類のみを許可します。  
+   > このアカウントは、他のアカウントと同様に、制限がありますが、強力な機能を持ちます。このアカウントは、セキュリティで保護された管理ホストでのみ使用してください。 環境内のすべてのセキュリティで保護された管理ホストについては、ネットワークセキュリティを実装することを検討する必要があります。セキュリティで保護されたホストに実装できる最も安全な暗号化の種類のみを許可するように、 **Kerberos で許可される暗号化の種類を構成**するグループポリシーします。  
    >
    > ホストに対してより安全な暗号化の種類を実装しても、資格情報の盗難攻撃を軽減することはできませんが、セキュリティで保護されたホストの適切な使用と構成が行われます。 特権アカウントによってのみ使用されるホストに対して、より強力な暗号化の種類を設定すると、コンピューターの攻撃対象領域が軽減されます。  
    >
@@ -233,7 +233,7 @@ Active Directory のインストールで特権グループのメンバーシッ
   
 代わりに、保護されたグループを設定および設定解除する権限を委任するグループを作成できますが、グループとそのグループに配置するアカウントをセキュリティで保護する必要があります。 保護されたグループのメンバーシップを管理する権限が付与されているディレクトリ内のアカウントはほとんどないため、個別のアカウントを作成するのが最も簡単な方法である可能性があります。  
   
-管理アカウントを配置するグループをどのように作成するかにかかわらず、前に説明したように、各アカウントがセキュリティで保護されていることを確認する必要があります。 また、[Appendix D に記載されているものと同様の GPO 制限を実装することも検討してください。Active Directory @ no__t-0 でビルトイン Administrator アカウントをセキュリティで保護します。  
+管理アカウントを配置するグループをどのように作成するかにかかわらず、前に説明したように、各アカウントがセキュリティで保護されていることを確認する必要があります。 また、 [「付録 D: Active Directory での組み込み管理者アカウントのセキュリティ保護](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)」で説明されているような GPO 制限の実装も検討してください。  
   
 ##### <a name="auditing-management-accounts"></a>管理アカウントの監査
 
@@ -247,7 +247,7 @@ SIEM ソリューションでは、関連するセキュリティソース (イ�
 
 この手順では、ドメインの AdminSDHolder オブジェクトに対するアクセス許可を構成して、新しく作成された管理アカウントがドメイン内の保護されたグループのメンバーシップを変更できるようにします。 この手順は、グラフィカルユーザーインターフェイス (GUI) を使用して実行することはできません。  
   
-@No__t-0Appendix C:保護されたアカウントとグループ Active Directory @ no__t-0 では、SDProp タスクの実行時に、ドメインの AdminSDHolder オブジェクトの ACL が保護されたオブジェクトに実質的に "コピー" されます。 保護されたグループとアカウントは、AdminSDHolder オブジェクトからアクセス許可を継承しません。これらのアクセス許可は、AdminSDHolder オブジェクトのアクセス許可と一致するように明示的に設定されます。 そのため、AdminSDHolder オブジェクトのアクセス許可を変更する場合は、対象とする保護対象オブジェクトの種類に適した属性に変更する必要があります。  
+[「付録 C: Active Directory の保護されたアカウントとグループ](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)」で説明したように、ドメインの AdminSDHolder オブジェクトの ACL は、SDProp タスクの実行時に保護されたオブジェクトに実質的に "コピー" されます。 保護されたグループとアカウントは、AdminSDHolder オブジェクトからアクセス許可を継承しません。これらのアクセス許可は、AdminSDHolder オブジェクトのアクセス許可と一致するように明示的に設定されます。 そのため、AdminSDHolder オブジェクトのアクセス許可を変更する場合は、対象とする保護対象オブジェクトの種類に適した属性に変更する必要があります。  
   
 この場合、新しく作成された管理アカウントに、グループオブジェクトの members 属性の読み取りと書き込みを許可するように与えます。 ただし、AdminSDHolder オブジェクトはグループオブジェクトではなく、グループ属性はグラフィカル ACL エディターでは公開されません。 この理由から、Dsacls コマンドラインユーティリティを使用してアクセス許可の変更を実装することになります。 保護されたグループのメンバーシップを変更するアクセス許可を (無効) 管理アカウントに付与するには、次の手順を実行します。  
   
@@ -286,7 +286,7 @@ SIEM ソリューションでは、関連するセキュリティソース (イ�
   
    **Dsacls**の使用方法の詳細については、コマンドプロンプトで「dsacls」と入力してください。  
   
-   ドメインに対して複数の管理アカウントを作成した場合は、アカウントごとに Dsacls コマンドを実行する必要があります。 AdminSDHolder オブジェクトの ACL 構成が完了したら、SDProp を強制的に実行するか、スケジュールされた実行が完了するまで待機する必要があります。 SDProp を強制的に実行する方法については、[Appendix C:Active Directory @ no__t の保護されたアカウントとグループ。  
+   ドメインに対して複数の管理アカウントを作成した場合は、アカウントごとに Dsacls コマンドを実行する必要があります。 AdminSDHolder オブジェクトの ACL 構成が完了したら、SDProp を強制的に実行するか、スケジュールされた実行が完了するまで待機する必要があります。 SDProp を強制的に実行する方法の詳細については、「[付録 C: Active Directory の保護されたアカウントとグループ](../../../ad-ds/plan/security-best-practices/Appendix-C--Protected-Accounts-and-Groups-in-Active-Directory.md)」の「SDProp の手動実行」を参照してください。  
   
    SDProp を実行すると、AdminSDHolder オブジェクトに対して行った変更がドメイン内の保護されたグループに適用されていることを確認できます。 これを確認するには、前述の理由により AdminSDHolder オブジェクトの ACL を表示しますが、保護されたグループの Acl を表示して、アクセス許可が適用されていることを確認できます。  
   
@@ -317,7 +317,7 @@ SIEM ソリューションでは、関連するセキュリティソース (イ�
   
 ##### <a name="test-the-group-that-will-enable-and-disable-management-accounts"></a>管理アカウントを有効または無効にするグループをテストする
   
-1.  管理アカウントの有効化とパスワードのリセットをテストするには、[Appendix I で作成したグループのメンバーであるアカウントを使用して、セキュリティで保護された管理ワークステーションにログオンします。Active Directory @ no__t で保護されたアカウントとグループの管理アカウントを作成しています。  
+1.  管理アカウントの有効化とパスワードのリセットをテストするには、 [「付録 I: Active Directory で保護されたアカウントとグループの管理アカウントを作成](../../../ad-ds/manage/component-updates/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory.md)する」で作成したグループのメンバーであるアカウントを使用して、セキュリティで保護された管理ワークステーションにログオンします。  
   
     ![管理アカウントの作成](media/Appendix-I--Creating-Management-Accounts-for-Protected-Accounts-and-Groups-in-Active-Directory/SAD_142.gif)  
   

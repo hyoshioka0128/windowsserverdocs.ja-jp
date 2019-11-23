@@ -35,6 +35,7 @@ Windows 管理センター内でサーバーを管理する場合も、ツール
 
 フェールオーバークラスターとハイパー収束クラスター用のツール拡張機能には、全体的なクラスターハードウェアの正常性状態、状態アラート、ファームウェアの整合性の状態とレポート、電力消費と温度、およびファンと電源装置を示すダッシュボードが用意されています。正常性状態。
 
-![Lenovo Extension @ no__t-1 @ no__t-2Lenovo Extension @ no__t-3
+![Lenovo Extension](../../media/extend-case-study-lenovo/lenovo-4.png)
+![Lenovo Extension](../../media/extend-case-study-lenovo/lenovo-5.png)
 
 詳細については、 [Lenovo web サイト](https://support.lenovo.com/us/en/solutions/ht507549)の「Windows 管理センターの Lenovo Xclarity インテグレーター製品」を参照してください。

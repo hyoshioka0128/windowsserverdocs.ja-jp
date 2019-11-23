@@ -17,9 +17,9 @@ ms.locfileid: "71405773"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>データセンターブリッジング (DCB) の管理
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、Windows PowerShell コマンドを使用して、次のいずれかを\(実行している\-コンピューターにインストールされている DCB と互換性のあるネットワークアダプターにデータセンターブリッジング DCB\)を構成する方法について説明します。Windows Server 2016 または Windows 10。
+このトピックでは、windows PowerShell コマンドを使用して、Windows Server 2016 または Windows 10 のいずれかを実行しているコンピューターにインストールされている DCB\-互換のネットワークアダプターで、データセンターブリッジング \(DCB\) を構成する方法について説明します。
 
 ## <a name="install-dcb-in-windows-server-2016-or-windows-10"></a>Windows Server 2016 または Windows 10 で DCB をインストールする
 
@@ -30,7 +30,7 @@ ms.locfileid: "71405773"
 
 Windows Server 2016 より前では、DCB のすべての構成は、DCB をサポートしているすべてのネットワークアダプターに対して汎用的に適用されていました。 
 
-Windows Server 2016 では、グローバルポリシーストアまたは個別のポリシーストア\(\)に DCB 構成を適用できます。 個々のポリシーが適用されると、すべてのグローバルポリシー設定が上書きされます。
+Windows Server 2016 では、グローバルポリシーストアに DCB 構成を適用することも、\(s\)に個別のポリシーストアを適用することもできます。 個々のポリシーが適用されると、すべてのグローバルポリシー設定が上書きされます。
 
 次の手順を実行するまで、システムレベルでの traffic class、PFC、およびアプリケーションの優先順位割り当ての構成は、ネットワークアダプターに適用されません。
 
@@ -109,11 +109,11 @@ Traffic クラスを管理するための Windows PowerShell コマンドの例�
     SMB  ETS   30   4Global
       
 
-既定では、すべての 802.1 p 値は、物理リンクの帯域幅の 100% を持つ既定の traffic クラスにマップされます。 **Get-netqostrafficclass**コマンドは、802.1 p 優先順位値4のタグが付けられているパケットをマップする新しい traffic クラスを作成します。 転送選択アルゴリズム \(TSA @ no__t は、帯域幅の 30% を使用します。
+既定では、すべての 802.1 p 値は、物理リンクの帯域幅の100% を持つ既定の traffic クラスにマップされます。 **Get-netqostrafficclass**コマンドは、802.1 p 優先順位値4のタグが付けられているパケットをマップする新しい traffic クラスを作成します。 転送選択アルゴリズム \(TSA\) の帯域幅は30% です。
 
 最大7つの新しいトラフィッククラスを作成できます。 既定の traffic クラスを含め、システムに最大8つのトラフィッククラスを含めることができます。 ただし、DCB 対応のネットワークアダプターでは、ハードウェアの多くのトラフィッククラスをサポートしていない場合があります。 ネットワークアダプターでは対応できない数のトラフィッククラスを作成し、そのネットワークアダプターで DCB を有効にすると、ミニポートドライバーはオペレーティングシステムにエラーを報告します。 このエラーは、イベントログに記録されます。
 
-作成されたすべてのトラフィッククラスの帯域幅予約の合計が、帯域幅の 99% を超えることはありません。 既定のトラフィッククラスには、常に、それ自体に予約されている帯域幅の少なくとも 1% があります。
+作成されたすべてのトラフィッククラスの帯域幅予約の合計が、帯域幅の99% を超えることはありません。 既定のトラフィッククラスには、常に、それ自体に予約されている帯域幅の少なくとも1% があります。
 
 ### <a name="display-traffic-classes"></a>トラフィッククラスを表示する
 
@@ -144,11 +144,11 @@ Traffic クラスを管理するための Windows PowerShell コマンドの例�
 
 Traffic クラスを作成したら、その設定を個別に変更できます。 変更できる設定は次のとおりです。
 
-1. 帯域幅\(割り当て-BandwidthPercentage\)
+1. 帯域幅割り当て \(-BandwidthPercentage\)
 
 2. TSA (\-アルゴリズム\)
 
-3. 優先順位\(マッピング-優先順位\)
+3. 優先順位マッピング \(-優先度\)
 
 ### <a name="remove-a-traffic-class"></a>Traffic クラスを削除します。
 
@@ -175,7 +175,7 @@ Traffic クラスを削除すると、その traffic クラスにマップされ
 
 上記のすべての例では、グローバルポリシーを設定します。 次に、NIC ごとのポリシーを設定して取得する方法の例を示します。 
 
-"PolicySet" フィールドがグローバルから AdapterSpecific に変わります。 Adapterspecific のポリシーが表示されると、 \(インターフェイス\)インデックス ifIndex と\(インターフェイス名\) ifalias も表示されます。
+"PolicySet" フィールドがグローバルから AdapterSpecific に変わります。 AdapterSpecific のポリシーが表示されると、インターフェイスインデックス \(ifIndex\) とインターフェイス名 \(ifAlias\) も表示されます。
 
 ```
 PS C:\> Get-NetQosTrafficClass
@@ -476,12 +476,12 @@ Windows Server 2016 と Windows Server 2012 R2 の両方に対応する DCB Wind
 
 ### <a name="windows-server-2016-windows-powershell-commands-for-dcb"></a>Windows Server 2016 DCB 用の Windows PowerShell コマンド
 
-Windows Server 2016 の次のトピックでは、windows PowerShell コマンドレットの説明と構文を\(提供しており\(、\)すべてのデータセンターブリッジング DCB\) Quality of Service QoS\-固有のコマンドレットについて説明しています。 コマンドレットの先頭の動詞に基づいて、アルファベット順に記載しています。
+Windows Server 2016 の次のトピックでは、Windows PowerShell コマンドレットの説明と構文を提供します。すべてのデータセンターのブリッジング \(DCB\) のサービス品質 \(QoS\)\-特定のコマンドレットを使用します。 コマンドレットの先頭の動詞に基づいて、アルファベット順に記載しています。
 
 - [DcbQoS モジュール](https://technet.microsoft.com/itpro/powershell/windows/dcbqos/dcbqos)
 
 ### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>DCB 用の windows Server 2012 R2 Windows PowerShell コマンド
 
-Windows Server 2012 R2 の次のトピックでは、windows PowerShell コマンドレットの説明と構文を\(提供しており\(、\)すべてのデータセンターブリッジング DCB\) Quality of Service QoS\-固有のコマンドレットについて説明します。 コマンドレットの先頭の動詞に基づいて、アルファベット順に記載しています。
+Windows Server 2012 R2 の次のトピックでは、Windows PowerShell コマンドレットの説明と構文を提供します。すべてのデータセンターのブリッジング \(DCB\) のサービス品質 \(QoS\)\-特定のコマンドレットを使用します。 コマンドレットの先頭の動詞に基づいて、アルファベット順に記載しています。
 
 - [Windows PowerShell のデータセンターブリッジング (DCB) のサービス品質 (QoS) コマンドレット](https://technet.microsoft.com/library/hh967440.aspx)

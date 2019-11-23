@@ -20,13 +20,13 @@ ms.locfileid: "71407809"
  
 ユーザーの代わりに別の Web API を呼び出す Web API を構築する方法について説明します。  
  
-この記事を読む前に、 [AD FS の概念](../ad-fs-openid-connect-oauth-concepts.md)と[Behalf_Of flow](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md#on-behalf-of-flow)について理解しておく必要があります。
+この記事を読む前に、 [AD FS の概念](../ad-fs-openid-connect-oauth-concepts.md)と[Behalf_Of フロー](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md#on-behalf-of-flow)について理解しておく必要があります。
 
 ## <a name="overview"></a>概要 
 
 
 - クライアント (Web アプリ)-次の図では示されていません-保護された Web API を呼び出し、その "Authorization" Http ヘッダーに JWT ベアラートークンを提供します。 
-- 保護された Web API は、トークンを検証し、MSAL [AcquireTokenOnBehalfOf](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_)  method を使用して別のトークンを要求 (AD FS) します。これにより、ユーザーの代わりに2つ目の web api (下流の web api) を呼び出すことができます。 
+- 保護された Web API はトークンを検証し、MSAL [AcquireTokenOnBehalfOf](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_) メソッドを使用して別のトークンを要求 (AD FS) します。これにより、ユーザーの代わりに2つ目の web api (下流の web api) を呼び出すことができます。 
 - 保護された web API は、このトークンを使用して下流 API を呼び出します。 また、AcquireTokenSilentlater を呼び出して、他の下流 Api (ただし、同じユーザーの代わりに) のトークンを要求することもできます。 AcquireTokenSilent は、必要に応じてトークンを更新します。  
  
      ![概要](media/adfs-msal-web-api-web-api/webapi1.png)
@@ -49,11 +49,11 @@ ADFS で auth シナリオに代わってを構成する方法を理解するに
 
       ![アプリの登録](media/adfs-msal-web-api-web-api/webapi2.png)
 
-  3. **クライアント識別子**の値をコピーします。 後でアプリケーションの**app.config**ファイルの**ClientId**の値として使用されます。 **リダイレクト URI:**  -  https://ToDoListClient には、次のように入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 
+  3. **クライアント識別子**の値をコピーします。 後でアプリケーションの**app.config**ファイルの**ClientId**の値として使用されます。 **リダイレクト URI:**  - https://ToDoListClientには、次のように入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 
   
       ![アプリの登録](media/adfs-msal-web-api-web-api/webapi3.png)
   
-  4. [Web API の構成] 画面で、**識別子**として「 https://localhost:44321/ 」と入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 この値**は、後でアプリケーションの app.config** **ファイルと web.config ファイル**で使用されます。  
+  4. [Web API の構成] 画面で、**識別子**として「 https://localhost:44321/」と入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 この値**は、後でアプリケーションの app.config** **ファイルと web.config ファイル**で使用されます。  
  
       ![アプリの登録](media/adfs-msal-web-api-web-api/webapi4.png)
 
@@ -61,7 +61,7 @@ ADFS で auth シナリオに代わってを構成する方法を理解するに
   
       ![アプリの登録](media/adfs-msal-web-api-web-api/webapi5.png)  
 
-  6. [アプリケーションのアクセス許可の構成] 画面で、[ **openid** and **user_impersonation**] を選択します。 **[次へ]** をクリックします。  
+  6. [アプリケーションのアクセス許可の構成] 画面で、[ **openid**と**user_impersonation**] を選択します。 **[次へ]** をクリックします。  
   
       ![アプリの登録](media/adfs-msal-web-api-web-api/webapi6.png)  
 
@@ -143,7 +143,7 @@ ADFS で auth シナリオに代わってを構成する方法を理解するに
   29. WebApiToWebApi で [OK] をクリックします。 Web API のプロパティ画面
 
   30. WebApiToWebApi のプロパティ画面で、[WebApiToWebApi – Web API 2 を選択する] を選択し、[編集...] をクリックします。</br> 
-   ![App Reg ](media/adfs-msal-web-api-web-api/webapi22.png)
+  ![App Reg](media/adfs-msal-web-api-web-api/webapi22.png)
 
   31. [WebApiToWebApi – Web API 2 のプロパティ] 画面で、[発行変換規則] タブを選択し、[規則の追加...] をクリックします。 
 

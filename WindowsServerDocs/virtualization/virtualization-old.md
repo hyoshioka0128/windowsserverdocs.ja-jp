@@ -18,14 +18,14 @@ ms.locfileid: "71364037"
 ---
 # <a name="virtualization"></a>仮想化
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016 
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016 
 
 >[!TIP]
 > 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
 
 <img src="../media/landing-icons/virtualization.png" style='float:left; padding:.5em;' alt="Icon showing a box with spokes"> Windows Server 2016 の仮想化は、ソフトウェア定義インフラストラクチャを作成するために必要な基盤技術の 1 つです。 仮想化機能は、ネットワークやストレージとともに、お客様のワークロードの処理に必要な柔軟性を実現します。
 
-Windows Server 仮想化テクノロジには、Hyper-v、Hyper-v 仮想スイッチ、および保護されたファブリックとシールドされた Virtual Machines @no__t 0VMs @ no__t-1 の更新プログラムが含まれており、セキュリティ、スケーラビリティ、および信頼性が向上しています。 フェールオーバー クラスタリング、ネットワーク、記憶域に対する更新により、Hyper-V で使用する場合でも、これらのテクノロジの展開と管理が容易になっています。 
+Windows Server 仮想化テクノロジには、Hyper-v、Hyper-v 仮想スイッチ、および保護されたファブリックとシールドされた Virtual Machines \(Vm\)の更新プログラムが含まれています。これにより、セキュリティ、スケーラビリティ、および信頼性が向上します。 フェールオーバー クラスタリング、ネットワーク、記憶域に対する更新により、Hyper-V で使用する場合でも、これらのテクノロジの展開と管理が容易になっています。 
 
 
 <ul class="cardsI panelContent">
@@ -59,7 +59,7 @@ Windows Server 仮想化テクノロジには、Hyper-v、Hyper-v 仮想スイ�
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>エンタープライズ向け Windows 10: 作業用のデバイスを使用する方法</h3>
+                        <h3>企業における Windows 10 の利用: デバイスを業務に使用する方法</h3>
                         <p>Hyper-V テクノロジは、ハードウェア仮想化によって、コンピューティング リソースを提供します。 Hyper-V では、ソフトウェア バージョンのコンピューター (仮想マシン) が作成され、それを使用してオペレーティング システムとアプリケーションが実行されます。 複数の仮想マシンを同時に実行でき、必要に応じてそれらを作成および削除できます。 </p>
                     </div>
                 </div>

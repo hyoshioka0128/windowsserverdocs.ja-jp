@@ -18,7 +18,7 @@ ms.locfileid: "71408780"
 ---
 # <a name="identifying-your-functional-level-upgrade"></a>機能レベルのアップグレードを識別する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ドメインとフォレストの機能レベルを上げるには、現在の環境を評価し、組織のニーズに最も合った機能レベルの要件を特定する必要があります。 フォレスト内のドメイン、各ドメインに配置されているドメインコントローラー、各ドメインコントローラーで実行されているオペレーティングシステムとサービスパック、およびドメインをアップグレードする予定日を特定して、現在の環境を評価します。コントローラー. ドメインコントローラーのインベントリからの削除を計画している場合は、環境に与える影響について十分に理解しておいてください。  
   
@@ -55,7 +55,7 @@ Windows Server 2008 または Windows Server 2008 R2 のフォレストレベル
   
 -   新しくインストールされた Windows Server 2008 ベースまたは Windows Server 2008 R2 ベースのドメインコントローラーをフォレストに導入し、Windows 2000 を実行しているすべてのドメインコントローラーを削除します。  
   
--   フォレスト内の Windows 2000 を実行しているすべての既存のドメインコントローラーを、Windows Server 2003 を実行しているドメインコントローラーにインプレースアップグレードします。 その後、これらのドメインコントローラーを Windows Server 2008 または Windows Server 2008 R2 にインプレースアップグレードします。 詳細については、「 [Windows Server 2008 AD DS ドメインへの Active Directory ドメインのアップグレード \[LH @ no__t](assetId:///9c91be5f-df14-40b2-b176-2b1852a51e61)」を参照してください。  
+-   フォレスト内の Windows 2000 を実行しているすべての既存のドメインコントローラーを、Windows Server 2003 を実行しているドメインコントローラーにインプレースアップグレードします。 その後、これらのドメインコントローラーを Windows Server 2008 または Windows Server 2008 R2 にインプレースアップグレードします。 詳細については、「 [Active Directory ドメインを Windows Server 2008 AD DS\]\[ドメインにアップグレードする](assetId:///9c91be5f-df14-40b2-b176-2b1852a51e61)」を参照してください。  
   
     > [!IMPORTANT]  
     >  Windows Server 2008 R2 は、x64 ベースのオペレーティングシステムです。 サーバーで x64 ベースバージョンの Windows Server 2003 が実行されている場合は、このコンピューターのオペレーティングシステムを Windows Server 2008 R2 にインプレースアップグレードできます。 サーバーで x86 ベースのバージョンの Windows Server 2003 が実行されている場合は、このコンピューターを Windows Server 2008 R2 にアップグレードすることはできません。  
@@ -67,7 +67,7 @@ Windows 2000 フォレスト全体を windows Server 2008 または Windows Serv
   
 フォレスト内のすべての Windows 2000 ベースのドメインコントローラーを、Windows Server 2008 または Windows Server 2008 R2 を実行するドメインコントローラーに置き換えた後、フォレストの機能レベルを Windows Server 2008 または windows server 2008 R2 に上げることができます。 これにより、windows 2000 ネイティブ以上に設定されているフォレスト内のすべてのドメインの機能レベルが Windows Server 2008 または Windows Server 2008 R2 に自動的に設定されます。  
   
-フォレストおよびドメインの機能レベルを上げる方法、およびこれらのタスクを実行する手順については、「 [Windows Server 2008 のフォレストルートドメインの展開 \[LH @ no__t-2](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1)」を参照してください。  
+フォレストおよびドメインの機能レベルを上げる方法、およびこれらのタスクを実行する手順については、「 [Windows Server 2008 のフォレストルートドメインの展開 \[LH\]](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1)」を参照してください。  
   
 ## <a name="upgrading-functional-levels-in-a-windows-server-2003-active-directory-forest"></a>Windows Server 2003 Active Directory フォレストの機能レベルのアップグレード  
 Windows server 2003 ベースのドメインコントローラーのみで構成される Windows Server 2003 環境では、機能レベルは既定で次のレベルに設定され、手動で起動するまでこれらのレベルにとどまります。  
@@ -80,7 +80,7 @@ Windows Server 2008 または Windows Server 2008 R2 のフォレストレベル
   
 -   新しくインストールされた Windows Server 2008 ベースまたは Windows Server 2008 R2 ベースのドメインコントローラーをフォレストに導入し、Windows Server 2003 を実行しているすべてのドメインコントローラーを削除するか、windows server 2008 または Windows Server 2008 R2 にアップグレードします。  
   
--   Windows server 2003 を実行している既存のすべてのドメインコントローラーを、Windows Server 2008 または Windows Server 2008 R2 を実行しているドメインコントローラーにインプレースアップグレードします。 詳細については、「 [Windows Server 2008 AD DS ドメインへの Active Directory ドメインのアップグレード \[LH @ no__t](assetId:///9c91be5f-df14-40b2-b176-2b1852a51e61)」を参照してください。  
+-   Windows server 2003 を実行している既存のすべてのドメインコントローラーを、Windows Server 2008 または Windows Server 2008 R2 を実行しているドメインコントローラーにインプレースアップグレードします。 詳細については、「 [Active Directory ドメインを Windows Server 2008 AD DS\]\[ドメインにアップグレードする](assetId:///9c91be5f-df14-40b2-b176-2b1852a51e61)」を参照してください。  
   
 > [!IMPORTANT]  
 >  Windows Server 2008 R2 は、x64 ベースのオペレーティングシステムです。 サーバーで x64 ベースバージョンの Windows Server 2003 が実行されている場合は、このコンピューターのオペレーティングシステムを Windows Server 2008 R2 にインプレースアップグレードできます。 サーバーで x86 ベースのバージョンの Windows Server 2003 が実行されている場合は、Windows Server 2008 R2 を実行するようにこのコンピューターをアップグレードすることはできません。  
@@ -92,7 +92,7 @@ Windows server 2003 フォレスト全体を Windows server 2008 または Windo
   
 フォレスト内の Windows Server 2003 ベースのすべてのドメインコントローラーを Windows Server 2008 または windows Server 2008 R2 にアップグレードした後で、フォレストの機能レベルを Windows Server 2008 または windows server 2008 R2 に上げることができます。 これにより、Windows Server 2003 に設定されているフォレスト内のすべてのドメインの機能レベルが、windows server 2008 または Windows Server 2008 R2 に自動的に設定されます。  
   
-フォレストおよびドメインの機能レベルを上げる方法、およびこれらのタスクを実行する手順については、「 [Windows Server 2008 のフォレストルートドメインの展開 \[LH @ no__t-2](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1)」を参照してください。  
+フォレストおよびドメインの機能レベルを上げる方法、およびこれらのタスクを実行する手順については、「 [Windows Server 2008 のフォレストルートドメインの展開 \[LH\]](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1)」を参照してください。  
   
 ## <a name="upgrading-functional-levels-in-a-new-windows-server-2008-forest"></a>新しい Windows Server 2008 フォレストの機能レベルをアップグレードする  
 新しい Windows Server 2008 フォレストに最初のドメインコントローラーをインストールすると、既定では次のレベルに機能レベルが設定され、手動で起動するまでこれらのレベルのままになります。  
@@ -106,7 +106,7 @@ Windows server 2003 フォレスト全体を Windows server 2008 または Windo
 > [!IMPORTANT]  
 > フォレストが Windows Server 2008 の機能レベルで動作し、Windows Server 2003 ベースのメンバーサーバーまたは Windows 2000 ベースのメンバーサーバーに Active Directory をインストールしようとすると、インストールは失敗します。  
   
-フォレストおよびドメインの機能レベルを上げる方法、およびこれらのタスクを実行する手順については、「 [Windows Server 2008 のフォレストルートドメインの展開 \[LH @ no__t-2](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1)」を参照してください。  
+フォレストおよびドメインの機能レベルを上げる方法、およびこれらのタスクを実行する手順については、「 [Windows Server 2008 のフォレストルートドメインの展開 \[LH\]](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1)」を参照してください。  
   
 ## <a name="upgrading-functional-levels-in-a-new-windows-server-2008-r2-forest"></a>新しい Windows Server 2008 R2 フォレストでの機能レベルのアップグレード  
 新しい Windows Server 2008 R2 フォレストに最初のドメインコントローラーをインストールすると、既定では、機能レベルは次のレベルに設定され、手動で起動するまでこれらのレベルのままになります。  
@@ -120,10 +120,10 @@ Windows server 2003 フォレスト全体を Windows server 2008 または Windo
 > [!IMPORTANT]  
 > フォレストが Windows Server 2008 R2 の機能レベルで動作し、windows Server 2008 ベースまたは Windows Server 2003 ベースのメンバーサーバーまたは Windows 2000 ベースのメンバーサーバーに Active Directory をインストールしようとすると、インストールは失敗します。  
   
-フォレストおよびドメインの機能レベルを上げる方法、およびこれらのタスクを実行する手順については、「 [Windows Server 2008 のフォレストルートドメインの展開 \[LH @ no__t-2](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1)」を参照してください。  
+フォレストおよびドメインの機能レベルを上げる方法、およびこれらのタスクを実行する手順については、「 [Windows Server 2008 のフォレストルートドメインの展開 \[LH\]](assetId:///92406e8d-dc1c-4740-a00a-2c4032896dd1)」を参照してください。  
   
 > [!NOTE]  
-> ADMT version 3.1 は Windows Server 2008 にインストールする必要がありますが、ADMT v4.0 を使用して、1つまたは複数の Windows Server 2008 R2 ドメインコントローラーでホストされているドメインにオブジェクトを移行することができます。 詳細については、Microsoft サポート技術情報の[記事 976659](https://go.microsoft.com/fwlink/?LinkId=180398) (https://go.microsoft.com/fwlink/?LinkId=180398) を参照してください。  
+> ADMT version 3.1 は Windows Server 2008 にインストールする必要がありますが、ADMT v4.0 を使用して、1つまたは複数の Windows Server 2008 R2 ドメインコントローラーでホストされているドメインにオブジェクトを移行することができます。 詳細については、Microsoft サポート技術情報の[記事 976659](https://go.microsoft.com/fwlink/?LinkId=180398) (https://go.microsoft.com/fwlink/?LinkId=180398)を参照してください。  
   
 
 

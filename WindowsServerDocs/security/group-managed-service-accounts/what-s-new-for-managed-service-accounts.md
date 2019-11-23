@@ -22,7 +22,7 @@ ms.locfileid: "71403725"
 ---
 # <a name="what39s-new-for-managed-service-accounts"></a>管理&#39;されたサービスアカウントの新機能
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 IT プロフェッショナル向けのこのトピックでは、Windows Server 2012 および Windows 8 でのグループの管理されたサービスアカウント (gMSA) の導入により、管理されたサービスアカウントの機能の変更について説明します。
 
@@ -57,6 +57,6 @@ Windows Server 2012 の場合、Windows PowerShell コマンドレットは、�
 
 -   [Active Directory Domain Services の概要](active-directory-domain-services-overview.md)
 
--   @no__t 0 で管理されるサービスアカウント:@ No__t の理解、実装、ベストプラクティス、およびトラブルシューティング
+-   [管理されたサービスアカウント: 理解、実装、ベストプラクティス、およびトラブルシューティング](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
 
 

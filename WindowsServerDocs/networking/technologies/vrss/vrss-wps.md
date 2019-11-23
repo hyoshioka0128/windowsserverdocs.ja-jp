@@ -19,11 +19,11 @@ ms.locfileid: "71405275"
 ---
 # <a name="windows-powershell-commands-for-rss-and-vrss"></a>RSS および vRSS 用の Windows PowerShell コマンド
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、Receive Side Scaling の Windows PowerShell コマンドに関するテクニカルリファレンス情報をすばやく見つける方法について説明します。 \(RSS @ no__t-1 and virtual RSS \(vRSS @ no__t。
+このトピックでは、Receive Side Scaling \(RSS\) および仮想 RSS \(vRSS\)の Windows PowerShell コマンドに関するテクニカルリファレンス情報をすばやく見つける方法について説明します。
 
-複数のプロセッサまたは複数のコアを持つ物理コンピューターで RSS を構成するには、次の RSS コマンドを使用します。 同じコマンドを使用して、サポートされているオペレーティングシステムを実行している仮想マシン \(VM @ no__t-1 で、vRSS を構成できます。 詳細については、「 [Windows PowerShell のネットワークアダプターコマンドレット](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps)」を参照してください。
+複数のプロセッサまたは複数のコアを持つ物理コンピューターで RSS を構成するには、次の RSS コマンドを使用します。 同じコマンドを使用して、サポートされているオペレーティングシステムを実行している仮想マシン \(VM\) で vRSS を構成できます。 詳細については、「 [Windows PowerShell のネットワークアダプターコマンドレット](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps)」を参照してください。
 
 ## <a name="configure-vmq"></a>VMQ の構成
 
@@ -36,7 +36,7 @@ vRSS を使用するには、VMQ が有効で構成されている必要があ�
 
 ## <a name="enable-and-configure-rss-on-a-native-host"></a>ネイティブホストで RSS を有効にして構成する
 
-次の PowerShell コマンドを使用して、ネイティブホストで RSS を構成し、VM またはホスト仮想 NIC (vNIC) で RSS を管理します。 これらのコマンドのパラメーターの一部は、Hyper-v ホストの仮想マシンキュー @no__t 0VMQ @ no__t にも影響することがあります。  
+次の PowerShell コマンドを使用して、ネイティブホストで RSS を構成し、VM またはホスト仮想 NIC (vNIC) で RSS を管理します。 これらのコマンドのパラメーターの一部は、Hyper-v ホストの仮想マシンキュー \(VMQ\) にも影響することがあります。  
 
 >[!IMPORTANT]
 >VRSS を有効にして使用するには、VM またはホスト vNIC で RSS を有効にする必要があります。
@@ -46,9 +46,9 @@ vRSS を使用するには、VMQ が有効で構成されている必要があ�
 - [Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/get-netadapterrss?view=win10-ps)
 - [Set-netadapterrss](https://docs.microsoft.com/powershell/module/netadapter/Set-NetAdapterRss?view=win10-ps)
 
-## <a name="enable-vrss-on-the-hyper-v-virtual-switch-port"></a>ハイパー @ no__t 仮想スイッチポートでの vRSS の有効化
+## <a name="enable-vrss-on-the-hyper-v-virtual-switch-port"></a>\-Hyper-v 仮想スイッチポートでの vRSS の有効化
 
-VRSS では、VM で RSS を有効にするだけでなく、Hyper-v 仮想スイッチポートで vRSS を有効にする必要があります。 
+VRSS では、VM で RSS を有効にするだけでなく、\-Hyper-v 仮想スイッチポートで vRSS を有効にする必要があります。 
 
 VRSS の現在の設定を確認し、VM の機能を有効または無効にします。
 
@@ -81,7 +81,7 @@ VRSS の現在の設定を確認し、ホスト vNIC の機能を有効または
    ```
 
 ## <a name="configure-the-scheduling-mode-on-the-hyper-v-virtual-switch-port"></a>Hyper-v 仮想スイッチポートでスケジュールモードを構成する 
->適用対象:Windows Server 2019
+>適用対象: Windows Server 2019
 
 Windows Server 2019 では、vRSS はネットワークトラフィックを動的に処理するために使用する論理プロセッサを更新できます。  ドライバーがサポートされているデバイスでは、このスケジュールモードが既定で有効になっています。 
 
@@ -100,7 +100,7 @@ Windows Server 2019 では、vRSS はネットワークトラフィックを動�
    ```
 
 ## <a name="configure-the-scheduling-mode-on-a-host-vnic"></a>ホスト vNIC でスケジュールモードを構成する
->適用対象:Windows Server 2019
+>適用対象: Windows Server 2019
 
 現在のスケジュールモードを確認したり、ホスト vNIC のスケジュールモードを変更したりするには、次の Windows PowerShell コマンドを使用します。
 

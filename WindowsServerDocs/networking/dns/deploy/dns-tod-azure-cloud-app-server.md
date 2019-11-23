@@ -17,7 +17,7 @@ ms.locfileid: "71406195"
 ---
 # <a name="dns-responses-based-on-time-of-day-with-an-azure-cloud-app-server"></a>Azure クラウド アプリケーション サーバーを使用した 1 日の時間に基づく DNS 応答
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを使用すると、1 日の時間に基づき、DNS のポリシーを使用して、アプリケーションの別の地理的に分散インスタンス間でアプリケーションのトラフィックを分散するのに方法について説明します。 
 
@@ -40,14 +40,14 @@ DNS サーバーは、オンプレミスのデータセンターにも配置さ�
 
 Contoso ギフトサービスはサイト分析を実行し、午後6時から午後9時までの間に、シアトルの Web サーバーへのトラフィックが急増していることを検出します。 Web サーバーは、これらのピーク時間で増加したトラフィックを処理するように拡張することはできません。その結果、顧客へのサービス拒否が発生します。 
 
-Contosogiftservices.com のお客様が Web サイトから応答性の高いエクスペリエンスを得られるように、Contoso ギフト Services は、この時間帯に、Microsoft Azure 上の仮想マシン @no__t 0VM @ no__t-1 をレンタルし、Web サーバーのコピーをホストすることを決定します。  
+Contosogiftservices.com のお客様が Web サイトから応答性の高いエクスペリエンスを得られるように、Contoso ギフト Services は、この時間内に、Web サーバーのコピーをホストするために、仮想マシン \(VM\) を Microsoft Azure にレンタルすることを決定します。  
 
 Contoso のギフトサービスは VM (192.68.31.44) の Azure からパブリック IP アドレスを取得し、毎日5-10 の間に Azure で Web サーバーをデプロイするための自動化を開発します。これにより、1時間のコンティンジェンシー期間が可能になります。
 
 > [!NOTE]
 > Azure Vm の詳細については、 [Virtual Machines のドキュメント](https://azure.microsoft.com/documentation/services/virtual-machines/)を参照してください。 
 
-DNS サーバーはゾーンスコープと DNS ポリシーを使用して構成されます。これにより、毎日 5-9 PM に、Azure で実行されている Web サーバーのインスタンスにクエリの 30% が送信されます。
+DNS サーバーはゾーンスコープと DNS ポリシーを使用して構成されます。これにより、毎日 5-9 PM に、Azure で実行されている Web サーバーのインスタンスにクエリの30% が送信されます。
 
 次の図は、このシナリオを示しています。
 
@@ -100,7 +100,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "AzureZoneScope
 
 AzureZoneScope では、レコード www.contosogiftservices.com は、Azure パブリッククラウド内にある IP アドレス192.68.31.44 を使用して追加されます。 
 
-同様に、-0contosogiftservices @ no__t という既定のゾーンの @no__t スコープでは、contosogiftservices が @ no__t という @no__t レコードが、シアトルのオンプレミスデータセンターで実行されている Web サーバーの IP アドレス192.68.30.2 と共に追加されます。
+同様に、既定のゾーンのスコープ \(contosogiftservices.com\)では、シアトルのオンプレミスデータセンターで実行されている Web サーバーの IP アドレス192.68.30.2 を使用して、www.contosogiftservices.com\) \(レコードが追加されます。
 
 次の2番目のコマンドレットでは、–ゾーン範囲ゾーンパラメーターは含まれていません。 このため、レコードは既定のゾーン範囲ゾーンに追加されます。 
 
@@ -117,7 +117,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
 ### <a name="create-the-dns-policies"></a>DNS のポリシーを作成します。 
 ゾーンスコープが作成されたら、次のように、これらのスコープに対して受信クエリを分散する DNS ポリシーを作成できます。
 
-1. 午後6時から午後9時までの間、クライアントの 30% は DNS 応答で Azure データセンター内の Web サーバーの IP アドレスを受け取りますが、クライアントの 70% はシアトルのオンプレミス Web サーバーの IP アドレスを受け取ります。
+1. 午後6時から午後9時までの間、クライアントの30% は DNS 応答で Azure データセンター内の Web サーバーの IP アドレスを受け取りますが、クライアントの70% はシアトルのオンプレミス Web サーバーの IP アドレスを受け取ります。
 2. それ以外の場合、すべてのクライアントは、シアトルのオンプレミス Web サーバーの IP アドレスを受け取ります。
 
 その日の時刻は、DNS サーバーのローカル時刻で表される必要があります。

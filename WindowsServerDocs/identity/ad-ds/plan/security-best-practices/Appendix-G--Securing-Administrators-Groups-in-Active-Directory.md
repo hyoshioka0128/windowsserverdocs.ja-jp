@@ -16,19 +16,19 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408644"
 ---
-# <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>付録 G :Active Directory での管理者グループのセキュリティ保護
+# <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>付録 G: Active Directory の Administrators グループをセキュリティで保護する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-## <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>付録 G :Active Directory での管理者グループのセキュリティ保護  
-Enterprise Admins (EA) グループおよび Domain Admins (DA) グループの場合と同様に、組み込みの管理者 (BA) グループのメンバーシップは、ビルドまたはディザスターリカバリーのシナリオでのみ必要になります。 管理者グループには、ドメインの組み込みの Administrator アカウントを除き、日常のユーザーアカウントは存在しないようにする必要があります。ただし、[Appendix D で説明されているようにセキュリティで保護されている場合は、次のようにします。Active Directory @ no__t-0 でビルトイン Administrator アカウントをセキュリティで保護します。  
+## <a name="appendix-g-securing-administrators-groups-in-active-directory"></a>付録 G: Active Directory の Administrators グループをセキュリティで保護する  
+Enterprise Admins (EA) グループおよび Domain Admins (DA) グループの場合と同様に、組み込みの管理者 (BA) グループのメンバーシップは、ビルドまたはディザスターリカバリーのシナリオでのみ必要になります。 [「付録 D: Active Directory での組み込みの管理者アカウントのセキュリティ保護](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)」の説明に従ってセキュリティ保護されている場合、管理者グループには毎日のユーザーアカウントがないことを考慮してください。  
 
 管理者は、既定では、それぞれのドメイン内の AD DS オブジェクトのほとんどの所有者です。 このグループのメンバーシップは、所有権またはオブジェクトの所有権を取得する機能が必要なビルドまたはディザスターリカバリーのシナリオで必要になる場合があります。 さらに、DAs と EAs には、Administrators グループの既定のメンバーシップによって、多数の権限とアクセス許可が継承されています。 Active Directory の特権グループの既定のグループの入れ子を変更することはできません。また、各ドメインの管理者グループは、後の手順で説明されているようにセキュリティで保護する必要があります。  
 
 フォレスト内の各ドメインの Administrators グループについて、次のようにします。  
 
-1.  管理者グループからすべてのメンバーを削除します。ただし、ドメインの組み込みの Administrator アカウントを例外として使用できます。その場合は、「[Appendix D:Active Directory @ no__t-0 でビルトイン Administrator アカウントをセキュリティで保護します。  
+1.  [「付録 D: Active Directory での組み込み管理者アカウントのセキュリティ保護](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)」の説明に従ってセキュリティ保護されている場合は、管理者グループからすべてのメンバーを削除します。  
 
 2.  各ドメインのメンバーサーバーとワークステーションが含まれている Ou にリンクされた Gpo では、BA グループは、 **Computer Configuration\Policies\Windows 権利 Policies \ User Rights Assignment**の次のユーザー権利に追加する必要があります。  
 
@@ -66,7 +66,7 @@ Enterprise Admins (EA) グループおよび Domain Admins (DA) グループの�
 
 1.  **サーバーマネージャー**で、 **[ツール]** をクリックし、 **[グループポリシーの管理]** をクリックします。  
 
-2.  コンソールツリーで、[&lt;Forest @ no__t-1\Domains @ no__t-2 @ no__t] を展開し、次に**オブジェクトをグループポリシー**します (&lt;forest @ no__t-7 はフォレストの名前、&lt;domain @ no__t-9 は、目的のドメインの名前です。グループポリシー) を設定します。  
+2.  コンソールツリーで、[&lt;フォレスト&gt;\ ドメイン\\&lt;ドメイン&gt;] を展開し、**グループポリシーオブジェクト**(&lt;のフォレスト&gt; がフォレストの名前、&lt;ドメイン&gt; がグループポリシーを設定するドメインの名前である) を展開します。  
 
 3.  コンソールツリーで、 **[グループポリシーオブジェクト]** を右クリックし、 **[新規]** をクリックします。  
 
@@ -76,7 +76,7 @@ Enterprise Admins (EA) グループおよび Domain Admins (DA) グループの�
 
     ![セキュリティで保護された管理グループ](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_81.gif)  
 
-5.  詳細ペインで **<GPO Name>** を右クリックし、**編集** をクリックします。  
+5.  詳細ウィンドウで、 **<GPO Name>** を右クリックし、**編集** をクリックします。  
 
 6.  **Computer Configuration\Policies\Windows** 権利 ポリシー に移動し、**ユーザー権利の割り当て** をクリックします。  
 
@@ -122,7 +122,7 @@ Enterprise Admins (EA) グループおよび Domain Admins (DA) グループの�
 
 11. **グループポリシー管理**で、次の手順に従って、GPO をメンバーサーバーとワークステーションの ou にリンクします。  
 
-    1.  @No__t 0Forest @ no__t-1 > \ Domains @ no__t-2 @ no__t-3Domain @ no__t-4 (ここで &lt;Forest @ no__t-6 はフォレストの名前、&lt;Domain @ no__t-8 はグループポリシーを設定するドメインの名前です) に移動します。  
+    1.  &lt;フォレスト&gt;> \ Domains\\&lt;ドメイン&gt; に移動します (&lt;Forest&gt; はフォレストの名前、&lt;ドメイン&gt; は、グループポリシーを設定するドメインの名前です)。  
 
     2.  GPO が適用される OU を右クリックし、[既存の**gpo のリンク**] をクリックします。  
 
@@ -150,17 +150,17 @@ Enterprise Admins (EA) グループおよび Domain Admins (DA) グループの�
 
 1.  **サーバーマネージャー**で、 **[ツール]** をクリックし、 **[グループポリシーの管理]** をクリックします。  
 
-2.  コンソールツリーで <Forest> \ Domains @ no__t-1 @ no__t を展開し、**オブジェクトをグループポリシー**します (ここで <Forest> はフォレストの名前、<Domain> はグループポリシーを設定するドメインの名前です。)。  
+2.  コンソールツリーで、<Forest>、ドメイン\\<Domain>の順に展開し、**オブジェクトをグループポリシー**します (<Forest> はフォレストの名前、<Domain> はグループポリシーを設定するドメインの名前です)。  
 
 3.  コンソールツリーで、 **[グループポリシーオブジェクト]** を右クリックし、 **[新規]** をクリックします。  
 
     ![セキュリティで保護された管理グループ](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_89.gif)  
 
-4.  **[新しい gpo]** ダイアログボックスで、「<GPO Name>」と入力し、 **[OK]** をクリックします (<GPO Name> はこの GPO の名前です)。  
+4.  **[新しい gpo]** ダイアログボックスで、「<GPO Name>」と入力し、 **[OK]** をクリックします (<GPO Name> はこの gpo の名前です)。  
 
     ![セキュリティで保護された管理グループ](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_90.gif)  
 
-5.  詳細ペインで **<GPO Name>** を右クリックし、**編集** をクリックします。  
+5.  詳細ウィンドウで、 **<GPO Name>** を右クリックし、**編集** をクリックします。  
 
 6.  **Computer Configuration\Policies\Windows** 権利 ポリシー に移動し、**ユーザー権利の割り当て** をクリックします。  
 
@@ -206,7 +206,7 @@ Enterprise Admins (EA) グループおよび Domain Admins (DA) グループの�
 
 11. **グループポリシー管理**で、次の手順を実行して GPO を DOMAIN controllers OU にリンクします。  
 
-    1.  @No__t-0 \ Domains @ no__t-1 @ no__t-2 (この場合、@no__t はフォレストの名前、<Domain> はグループポリシーを設定するドメインの名前です) に移動します。  
+    1.  <Forest>\ Domains\\<Domain> に移動します (<Forest> はフォレストの名前、<Domain> はグループポリシーを設定するドメインの名前です)。  
 
     2.  ドメインコントローラー OU を右クリックし、**既存の GPO のリンク** をクリックします。  
 
@@ -231,7 +231,7 @@ GPO の変更 ("ジャンプサーバー" など) の影響を受けていない
 
     ![セキュリティで保護された管理グループ](media/Appendix-G--Securing-Administrators-Groups-in-Active-Directory/SAD_97.gif)  
 
-5.  **コマンドプロンプト**ウィンドウで、「 **net use \\ @ no__t-3 @ No__t-4server name @ no__t-5\c $** 」と入力します。ここで、\<server name @ no__t は、ネットワーク経由でアクセスしようとしているメンバーサーバーまたはワークステーションの名前です。  
+5.  **コマンドプロンプト**ウィンドウで、「 **net use \\\\\<サーバー名\>\c $** 」と入力します。ここで、\<server Name\> は、ネットワーク経由でアクセスしようとしているメンバーサーバーまたはワークステーションの名前です。  
 
 6.  次のスクリーンショットは、表示する必要があるエラーメッセージを示しています。  
 
@@ -250,7 +250,7 @@ GPO の変更の影響を受けたメンバーサーバーまたはワークス�
 
 4.  **[ファイル]** をクリックし、 **[名前を付けて保存]** をクリックします。  
 
-5.  **[ファイル名]** フィールドに、「 **<Filename>** 」と入力します (<Filename> は新しいバッチファイルの名前です)。  
+5.  **[ファイル名]** フィールドに、「<Filename>」と入力し**ます**(<Filename> は新しいバッチファイルの名前です)。  
 
 ###### <a name="schedule-a-task"></a>タスクのスケジュール設定  
 

@@ -22,9 +22,9 @@ ms.locfileid: "71366189"
 既定では、Windows 2016 の AD FS では、[サインオン] ページが有効になっていません。  有効にするには、PowerShell コマンド Set-adfsproperties を使用します。  ページを有効にするには、次の手順に従います。
 
 1.  Windows PowerShell を開く
-2.  「@No__t-0」と入力し、enter キーを押します。
-3.  **Enableidpinitiatedsignonpage**が false に設定されていることを確認し ![false @ no__t-2
-4.  PowerShell で、次のように入力します。 `Set-AdfsProperties -EnableIdpInitiatedSignonPage $true`
+2.  Enter: `Get-AdfsProperties` を入力し、enter キーを押します。
+3.  **Enableidpinitiatedsignonpage**が False ![false に設定されていることを確認し](media/ad-fs-tshoot-initiatedsignon/idp2.png)
+4.  PowerShell で、次のように入力し `Set-AdfsProperties -EnableIdpInitiatedSignonPage $true`
 5.  確認メッセージが表示されないため、Set-adfsproperties をもう一度入力し、 **Enableidpinitatedsignonpage**が true に設定されていることを確認します。
 ![True](media/ad-fs-tshoot-initiatedsignon/idp4.png)
 
@@ -33,7 +33,7 @@ Idp によって開始されるサインオンページで AD FS 認証をテス
 
 1.  Web ブラウザーを開き、Idp サインオンページに移動します。  例: https://sts.contoso.com/adfs/ls/idpinitiatedsignon.htm
 2.  サインインするように求められます。  資格情報を入力します。
-![Sign @ no__t-1
+![サインオン](media/ad-fs-tshoot-initiatedsignon/idp5.png)
 3.  成功した場合は、サインインする必要があります。
 
 
@@ -42,15 +42,15 @@ AD FS サーバーの URL がインターネットオプションのローカル
 
 1.  Windows 10 クライアントで、[スタート] をクリックし、「インターネットオプション」と入力して、[インターネットオプション] を選択します。
 2.   [セキュリティ] タブをクリックし、[ローカルイントラネット] をクリックして、[サイト] ボタンをクリックします。
-![Seamless @ no__t-1
+シームレスな](media/ad-fs-tshoot-initiatedsignon/idp8.png) の ![
 1.  [詳細設定] をクリックします。
 2.  Url を入力し、[追加] をクリックします。  [閉じる] をクリックします。
-![Add url @ no__t
+url の追加 ![](media/ad-fs-tshoot-initiatedsignon/idp9.png)
 1.  [Ok] をクリックします。  [Ok] をクリックします。  これにより、インターネットオプションが閉じられます。
 2.  Web ブラウザーを開き、Idp サインオンページに移動します。  例: https://sts.contoso.com/adfs/ls/idpinitiatedsignon.htm
 3.  [サインイン] ボタンをクリックします。  自動的にサインインする必要があります。資格情報の入力は求められません。
-![Seamless @ no__t-1
+シームレスな](media/ad-fs-tshoot-initiatedsignon/idp6.png) の ![
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [AD FS のトラブルシューティング](ad-fs-tshoot-overview.md)

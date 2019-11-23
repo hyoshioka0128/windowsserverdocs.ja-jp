@@ -23,17 +23,17 @@ Active Directory フェデレーションサービス (AD FS) ファームから
   
 ### <a name="to-verify-that-a-federation-server-is-operational"></a>フェデレーション サーバーが正常に動作していることを確認するには  
   
-1.  ブラウザーウィンドウを開き、アドレスバーにフェデレーションサーバーの名前を入力し、それをに`federationmetadata/2007-06/federationmetadata.xml`追加して、フェデレーションサービスのメタデータエンドポイントを参照します。 たとえば、 `https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml`のようになります。  
+1.  ブラウザーウィンドウを開き、アドレスバーにフェデレーションサーバーの名前を入力し、`federationmetadata/2007-06/federationmetadata.xml` と共に追加して、フェデレーションサービスのメタデータエンドポイントを参照します。 たとえば、`https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml` のようにします。  
   
 ブラウザー ウィンドウでフェデレーション サーバーのメタデータを表示してみて、SSL のエラーや警告が表示されない場合、フェデレーション サーバーは正常に動作しています。  
   
 2. AD FS サインイン ページを閲覧することもできます (この場合には、フェデレーション サービス名の末尾に「`adfs/ls/idpinitiatedsignon.htm`」を付加して、たとえば「`https://fs.contoso.com/adfs/ls/idpinitiatedsignon.htm`」と入力します)。  このように入力すると、ドメイン管理者の資格情報を使用してサインインできる AD FS サインイン ページが表示されます。  
   
 > [!IMPORTANT]
->  ブラウザーのローカルイントラネットゾーンにフェデレーションサービス名 (など`https://fs.contoso.com`) を追加することによって、フェデレーションサーバーの役割を信頼するようにブラウザーの設定を構成します。  
+>  ブラウザーのローカルイントラネットゾーンにフェデレーションサービス名 (`https://fs.contoso.com`など) を追加することで、フェデレーションサーバーの役割を信頼するようにブラウザーの設定を構成します。  
   
-## <a name="next-steps"></a>次の手順
- [Active Directory フェデレーションサービス (AD FS) の役割サービスを Windows Server 2012 R2 に移行する](migrate-ad-fs-service-role-to-windows-server-r2.md)   
+## <a name="next-steps"></a>次のステップ
+ [Active Directory フェデレーションサービス (AD FS) の役割サービスを Windows Server 2012 R2  に移行する](migrate-ad-fs-service-role-to-windows-server-r2.md)  
  [AD FS フェデレーションサーバーを移行する準備をしています](prepare-migrate-ad-fs-server-r2.md)  
- [AD FS フェデレーションサーバーの移行](migrate-ad-fs-fed-server-r2.md)   
+ [AD FS フェデレーションサーバー  の移行](migrate-ad-fs-fed-server-r2.md)  
  [AD FS フェデレーションサーバープロキシの移行](migrate-fed-server-proxy-r2.md)   

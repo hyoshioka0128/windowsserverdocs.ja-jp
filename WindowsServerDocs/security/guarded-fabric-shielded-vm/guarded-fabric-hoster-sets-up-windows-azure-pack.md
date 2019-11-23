@@ -50,9 +50,9 @@ ms.locfileid: "71403656"
 
 2.  [Web Platform Installer](https://www.microsoft.com/web/downloads/platform.aspx)をダウンロードしてインストールします。 コンピューターがインターネットに接続されていない場合は、[オフラインインストールの手順](http://www.iis.net/learn/install/web-platform-installer/web-platform-installer-v4-command-line-webpicmdexe-rtw-release)に従います。
 
-3.  Web Platform Installer を開き、@no__t 0Windows Azure パックを見つけます。ポータルおよび API Express @ no__t-0 (**製品**) タブにあります。 **[追加]** をクリックし、ウィンドウの下部に **[インストール]** をクリックします。
+3.  Web Platform Installer を開き、[Products] \ (**製品**\) タブで**Windows Azure Pack: ポータルと API Express**を見つけます。 **[追加]** をクリックし、ウィンドウの下部にある **[インストール]** をクリックします。
 
-4.  インストールを続行します。 インストールが完了すると、構成サイト (*https://&lt;wapserver @ no__t: 30101/* ) が web ブラウザーで開きます。 この web サイトで、SQL server に関する情報を提供し、WAP の構成を完了します。
+4.  インストールを続行します。 インストールが完了すると、構成サイト (*https://&lt;wapserver&gt;: 30101/* ) が web ブラウザーで開きます。 この web サイトで、SQL server に関する情報を提供し、WAP の構成を完了します。
 
 Windows Azure Pack の設定の詳細については、「 [Windows Azure Pack の高速展開のインストール](https://technet.microsoft.com/dn296439.aspx)」を参照してください。
 
@@ -63,7 +63,7 @@ Windows Azure Pack の設定の詳細については、「 [Windows Azure Pack �
 
 Windows Azure Pack を使用する前に、インフラストラクチャ用にインストールして構成しておく必要があります。
 
-1.  *Https://&lt;wapserver @ no__t: 30091*で Windows Azure Pack 管理ポータルに移動し、管理者の資格情報を使用してログインします。
+1.  *Https://&lt;wapserver&gt;: 30091*で Windows Azure Pack 管理ポータルに移動し、管理者の資格情報を使用してログインします。
 
 2.  左側のウィンドウで、 **[VM クラウド]** をクリックします。
 
@@ -77,7 +77,7 @@ Windows Azure Pack を使用する前に、インフラストラクチャ用に�
 
 テナントが WAP で Vm を作成できるようにするには、まず、テナントがサブスクライブできるホスティングプランを作成する必要があります。 プランでは、テナントに許可されている VM クラウド、テンプレート、ネットワーク、および課金エンティティを定義します。
 
-1. ポータルの下のウィンドウで、[ **+ 新規**@no__t]、[**プランの** **作成**&gt;] の順にクリックします。
+1. ポータルの下のウィンドウで、[ **+ 新規**&gt;**計画**&gt; 作成] をクリックしてプランを**作成**します。
 
 2. ウィザードの最初の手順で、プランの名前を選択します。 これは、テナントがサブスクライブするときに表示される名前です。
 

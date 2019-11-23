@@ -17,7 +17,7 @@ ms.locfileid: "71402173"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>名前空間でアクセス ベースの列挙を有効にする
 
-> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用対象: Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 アクセス ベースの列挙では、ユーザーがアクセス許可を持たないファイルとフォルダーが非表示になります。 既定では、DFS 名前空間ではこの機能が有効になっていません。 DFS 管理を使って、DFS フォルダーのアクセス ベースの列挙を有効にすることができます。 フォルダー ターゲット内のファイルとフォルダーのアクセス ベースの列挙を制御するには、共有と記憶域の管理を使って各共有フォルダーでアクセス ベースの列挙を有効にする必要があります。
 
@@ -51,7 +51,7 @@ DFS 名前空間でアクセス ベースの列挙を使うには、以下の手
 
 1.  **分散ファイル システム**の役割サービスまたは**分散ファイル システム ツール**機能がインストールされたサーバーでコマンド プロンプト ウィンドウを開きます。
 
-2.  次のコマンドを入力します。ここで *< namespace @ no__t-1 root >* は名前空間のルートです。
+2.  次のコマンドを入力します。ここで *< 名前空間\_ルート >* は名前空間のルートです。
 
     ```  
     dfsutil property abe enable \\ <namespace_root>
@@ -80,13 +80,13 @@ Windows インターフェイスを使うかコマンド ラインを使って�
 
 1. **分散ファイル システム**の役割サービスまたは**分散ファイル システム ツール**機能がインストールされたサーバーでコマンド プロンプト ウィンドウを開きます。
 
-2. 次のコマンドを入力します。ここで、 *@no__t @ no__t*は DFS フォルダーのパス (link)、 *< DOMAIN @ no__t アカウント >* はグループまたはユーザーアカウントの名前、(.. *.)* は追加の Access Control エントリに置き換えられます (Ace):
+2. 次のコマンドを入力します。ここで *&lt;DFSPath&gt;* は、DFS フォルダー (リンク) のパス、 *< ドメイン\\アカウント >* はグループまたはユーザーアカウントの名前、(.. *.)* は追加の Access Control エントリ (ace) に置き換えられます。
 
    ```
    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
    ```
 
-   たとえば、ドメイン管理者と CONTOSO @ no__t-0Trainers グループが \\ office\public\training フォルダーへの読み取り (R) アクセスを許可するアクセス許可を持つ既存のアクセス許可を置き換えるには、次のコマンドを入力します。
+   たとえば、ドメイン管理者と CONTOSO\\トレーナーグループが \\office\public\training フォルダーへの読み取り (R) アクセスを許可するアクセス許可を持つ既存のアクセス許可を置き換えるには、次のコマンドを入力します。
 
    ```
    dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace 

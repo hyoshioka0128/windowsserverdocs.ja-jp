@@ -29,8 +29,8 @@ ms.locfileid: "71407470"
 
 1.  デバイスにワークプレースジョインを参加させる職場アカウントを作成するには、デバイスに Azure Authenticator アプリケーションをインストールする必要があります。 次の URL では、Android デバイスに Azure authenticator アプリをインストールし、仕事用アカウントを追加する方法について説明しています。 職場アカウントによって、Android デバイスが信頼されたデバイスになり、デバイス上のアプリケーションにシングルサインオン (SSO) が提供されます。 IT 管理者が推奨するように、信頼されたデバイスを使用して、web アプリケーションや最新の基幹業務アプリケーションにアクセスできます。 詳細については、「 [Android 用の Azure Authenticator](https://docs.microsoft.com/azure/multi-factor-authentication/end-user/microsoft-authenticator-app-how-to)」を参照してください。
 
-## <a name="see-also"></a>関連項目
-[任意のデバイスからの職場への参加による会社のアプリケーション間の SSO とシームレスな2要素認証の](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
+## <a name="see-also"></a>参照
+[任意のデバイスからの職場への参加による企業アプリケーション間の SSO とシームレスな2要素認証](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 [Azure Active Directory Device Registration サービスを使用したオンプレミスの条件付きアクセスの設定](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup)
 
 

@@ -21,7 +21,7 @@ ms.locfileid: "71404334"
 ---
 # <a name="step-3-configure-the-remote-access-server-for-otp"></a>手順 3 OTP 用にリモートアクセスサーバーを構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 RADIUS サーバーにソフトウェア配布トークンが構成されている場合、通信ポートが開いていて、共有シークレットが作成されており、Active Directory に対応するユーザーアカウントが RADIUS サーバーに作成されていること、およびリモートアクセスサーバーにRADIUS 認証エージェントとして構成されている場合は、OTP をサポートするようにリモートアクセスサーバーを構成する必要があります。  
   
@@ -63,7 +63,7 @@ RADIUS サーバーにソフトウェア配布トークンが構成されてい�
     > [!NOTE]  
     > リモートアクセスサーバーで OTP を有効にした後、[ **otp を使用**する] をオフにして otp を無効にすると、サーバーで ISAPI および CGI 拡張機能がアンインストールされます。  
   
-4.  Windows 7 のサポートが必要な場合は、[ **windows 7 クライアントコンピューターが DirectAccess 経由で接続できるように**する] チェックボックスをオンにします。 メモ:計画のセクションで説明したように、OTP を使用した DirectAccess をサポートするには、Windows 7 クライアントに DCA 2.0 がインストールされている必要があります。  
+4.  Windows 7 のサポートが必要な場合は、[ **windows 7 クライアントコンピューターが DirectAccess 経由で接続できるように**する] チェックボックスをオンにします。 注: 計画セクションで説明したように、OTP を使用した DirectAccess をサポートするには、Windows 7 クライアントに DCA 2.0 がインストールされている必要があります。  
   
 5.  **[次へ]** をクリックします。  
   
@@ -105,7 +105,7 @@ RADIUS サーバーにソフトウェア配布トークンが構成されてい�
   
 PowerShell コマンドを使用して OTP のリモートアクセスを構成するには  
   
-@no__t 0Windows PowerShell](../../../../media/Step-3-Configure-the-Remote-Access-Server-for-OTP/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
+windows PowerShell の ![](../../../../media/Step-3-Configure-the-Remote-Access-Server-for-OTP/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -150,7 +150,7 @@ DirectAccess クライアントは、イントラネットへのアクセスに�
   
 スマートカードを使用できないユーザーにアクセスを許可するには、そのユーザーアカウントを一時的に Active Directory セキュリティグループに追加します。 スマートカードが使用可能な場合は、グループからユーザーアカウントを削除します。  
   
-### <a name="under-the-covers-smart-card-authorization"></a>内部:スマートカードの承認  
+### <a name="under-the-covers-smart-card-authorization"></a>内部: スマートカードの承認  
 スマートカード認証は、特定の Kerberos ベースのセキュリティ識別子 (SID) に対して、DirectAccess サーバーのイントラネットトンネル接続セキュリティ規則でトンネルモード承認を有効にすることによって機能します。 スマートカード認証の場合、これは既知の SID (S-1-5-65-1) です。これは、スマートカードベースのログオンにマップされます。 この SID は、DirectAccess クライアントの Kerberos トークンに存在し、グローバル IPsec トンネルモードの承認設定で構成されている場合、"この組織証明書" と呼ばれます。  
   
 DirectAccess セットアップウィザードの手順2でスマートカードの承認を有効にすると、directaccess セットアップウィザードによって、DirectAccess サーバーグループポリシーオブジェクトのこの SID を使用してグローバル IPsec トンネルモードの承認設定が構成されます。 DirectAccess サーバーグループポリシーオブジェクトの [セキュリティが強化された Windows ファイアウォール] スナップインでこの構成を表示するには、次の操作を行います。  

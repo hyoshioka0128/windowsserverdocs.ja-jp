@@ -47,7 +47,7 @@ wbadmin restore catalog
 |-コンピューター|バックアップカタログを回復するコンピューターの名前を指定します。 複数のコンピューターのバックアップが同じ場所に格納されている場合は、を使用します。 **-BackupTarget**が指定されている場合は、を使用する必要があります。|
 |-通知の停止|ユーザーにプロンプトを表示せずにサブコマンドを実行します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 バックアップを保存する場所 (ディスク、DVD、またはリモート共有フォルダー) が破損または失われ、バックアップカタログの復元に使用できない場合は、 **wbadmin delete catalog**を使用して破損したカタログを削除します。 この場合は、バックアップカタログを削除した後で、新しいバックアップを作成する必要があります。
 
@@ -57,7 +57,7 @@ wbadmin restore catalog
 ```
 wbadmin restore catalog -backupTarget:d
 ```
-共有 @no__t フォルダーに格納されているバックアップからカタログを復元するには、server01 の no__t-1servername\share @ に次のように入力します。
+共有 \\フォルダーに格納されているバックアップからカタログを復元するには、server01 の servername\share \\で、次のように入力します。
 ```
 wbadmin restore catalog -backupTarget:\\servername\share -machine:server01
 ```

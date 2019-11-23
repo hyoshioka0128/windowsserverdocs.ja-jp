@@ -19,7 +19,7 @@ ms.locfileid: "71364933"
 ---
 # <a name="configure-virtual-machines-running-windows-vista-with-1-or-2-virtual-processors"></a>1つまたは2つの仮想プロセッサを使用して Windows Vista を実行する仮想マシンを構成する
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
@@ -28,7 +28,7 @@ ms.locfileid: "71364933"
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
 |**順**|構成|  
-|**カテゴリ**|Error|  
+|**カテゴリ**|エラー|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "71364933"
   
 *Microsoft では、次の仮想マシンの構成をサポートしていません。*  
   
-@no__t-仮想マシン名の一覧 >  
+仮想マシン名の \<一覧 >  
   
 ## <a name="resolution"></a>解決方法  
   

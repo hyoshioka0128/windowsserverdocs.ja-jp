@@ -21,9 +21,9 @@ ms.locfileid: "71404562"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>リモート アクセス サーバーの操作上の問題を特定して解決する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-**注:** Windows Server 2012 では、DirectAccess およびルーティングとリモート アクセス サービス (RRAS) は単一のリモート アクセスの役割に統合されています。  
+**注:** Windows Server 2012 が DirectAccess およびルーティングとリモート アクセス サービス (RRAS) を 1 つのリモート アクセス役割に結合します。  
   
 リモートアクセスサーバーの操作の問題、その根本原因、および問題の解決に必要な解決策を特定するには、次の手順を実行します。  
   
@@ -64,7 +64,7 @@ IP ヘルパーサービスを無効にすると、リモートアクセスサ�
   
 4.  緑または赤のアイコンを持つコンポーネントの一覧が表示されます。これらのアイコンは動作状態を示します。 一覧の**ip-https 行をクリックします**。 行を選択すると、次のように、**詳細**ウィンドウに操作の詳細が表示されます。  
   
-    **Error**  
+    **エラー**  
   
     IP ヘルパーサービス (IPHlpSvc) が停止しました。 DirectAccess が想定どおりに機能しない可能性があります。 IP ヘルパーサービスは、接続プラットフォーム、IPv6 移行テクノロジ、および ip-https を使用してトンネル接続を提供します。  
   
@@ -91,7 +91,7 @@ IP ヘルパーサービスを無効にすると、リモートアクセスサ�
   
 2.  **サービス**の一覧で、下へスクロールして **[IP ヘルパー]** を右クリックし、 **[開始]** をクリックします。  
   
-@no__t 0Windows PowerShell](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Identify-and-resolve-Remote-Access-server-operations-problems/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   

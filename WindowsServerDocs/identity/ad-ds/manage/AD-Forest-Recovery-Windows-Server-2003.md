@@ -18,7 +18,7 @@ ms.locfileid: "71390060"
 ---
 # <a name="ad-forest-recovery---windows-server-2003-recovery"></a>AD フォレストの回復-Windows Server 2003 の回復
 
->適用先:Windows Server 2003
+>適用対象: Windows Server 2003
 
 このトピックでは、Windows Server 2003 を実行するドメインコントローラー (Dc) のフォレスト回復手順について説明します。 フォレストの回復の一般的なプロセスは、Windows Server 2003 Dc とは異なりますが、ツールが異なると、特定の手順が異なる場合があります。 たとえば、Windows Server 2003 Dc を実行する Dc をバックアップおよび復元するために Ntdsutil.exe を使用できます。一方、Windows Server バックアップまたは Wbadmin は、Windows Server 2008 以降を実行する Dc に使用されます。  
   
@@ -61,7 +61,7 @@ Windows Server 2003 を実行している DC の権限のない復元を実行�
 3. 復元モードで起動するオペレーティングシステムを選択します。  
 4. 管理者としてログオンします (ローカルコンピューターアカウントのみ使用でき、ドメインログオンオプションは使用できません)。  
 5. コマンドプロンプトで、「 **ntbackup**」と入力し、enter キーを押します。  
-6. **[ようこそ]** ページで、 **[詳細設定モード]** をクリックし、 **[メディアの復元と管理]** タブを選択します。( **[復元ウィザード]** を選択しないでください)。  
+6. **[ようこそ]** ページで、 **[詳細設定モード]** をクリックし、 **[メディアの復元と管理]** タブを選択します ( **[復元ウィザード]** を選択しないでください)。  
 7. 復元元として適切なバックアップファイルを選択し、 **[システムディスク]** および **[システム状態]** チェックボックスがオンになっていることを確認します。  
 8. **[復元の開始]** をクリックします。  
 9. 復元操作が完了したら、コンピューターを再起動します。  
@@ -77,7 +77,7 @@ Windows Server 2003 を実行している DC で、SYSVOL の権限のある (�
    > [!NOTE]
    > 復元されたデータをバックアップのプライマリデータとしてマークすることは、次のレジストリサブキーの下で、 **BurFlags**エントリを D4 に設定することと同じです。  
    >   
-   > **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NtFrs\Parameters\Cumulative レプリカセット @ no__t-1** *GUID*  
+   > **HKEY_LOCAL_MACHINE \System\currentcontrolset\services\ntfrs\parameters\cumulative レプリカセット\\** *GUID*  
 
 4. 復元操作が完了したら、コンピューターを再起動します。  
   
@@ -100,12 +100,12 @@ Windows Server 2003 を実行している DC で、SYSVOL の権限のある (�
 
 5. **[スタート]** をクリックし、 **[すべてのプログラム]** 、 **[管理ツール]** の順にポイントして、 **[DNS]** をクリックします。  
 6. 重大な誤動作を行う前に、DNS サーバーでホストされていたのと同じ DNS ドメイン名の DNS ゾーンを作成します。 詳細については、「前方参照ゾーンを追加する ([https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574))」を参照してください。  
-7. 重大な障害の前に存在していた DNS データを構成します。 以下に例を示します。  
+7. 重大な障害の前に存在していた DNS データを構成します。 次に、例を示します。  
 
    - AD DS に格納されるように DNS ゾーンを構成します。 詳細については、「ゾーンの種類を変更する ([https://go.microsoft.com/fwlink/?LinkId=74579](https://go.microsoft.com/fwlink/?LinkId=74579))」を参照してください。  
    - ドメインコントローラーロケーター (DC ロケーター) リソースレコードに対して権限のある DNS ゾーンを構成して、セキュリティで保護された動的更新を実行できるようにします。 詳細については、「セキュリティで保護された動的更新のみを許可する ([https://go.microsoft.com/fwlink/?LinkId=74580](https://go.microsoft.com/fwlink/?LinkId=74580))」を参照してください。  
 
-8. 親 DNS ゾーンに、この DNS サーバーでホストされている子ゾーンの委任リソースレコード (ネームサーバー (NS) とグルーホスト (A) リソースレコード) が含まれていることを確認します。 詳細については、「ゾーンの委任を作成する ([https://go.microsoft.com/fwlink/?LinkId=74562](https://go.microsoft.com/fwlink/?LinkId=74562))」を参照してください。  
+8. 親 DNS ゾーンに、この DNS サーバーでホストされている子ゾーンの委任リソースレコード (ネームサーバー (NS) とグルーホスト (A) リソースレコード) が含まれていることを確認します。 詳細については、「ゾーンの委任を作成する」 ([https://go.microsoft.com/fwlink/?LinkId=74562](https://go.microsoft.com/fwlink/?LinkId=74562)) を参照してください。  
 9. DNS を構成した後、コマンドプロンプトで次のコマンドを入力し、enter キーを押します。  
 
    **net stop netlogon**
@@ -117,7 +117,7 @@ Windows Server 2003 を実行している DC で、SYSVOL の権限のある (�
     > [!NOTE]
     > Net Logon は、DC ロケーターリソースレコードをこの DC の DNS に登録します。 子ドメインのサーバーに DNS サーバーサービスをインストールする場合、この DC はそのレコードをすぐに登録できません。 これは、復旧プロセスの一部として現在分離されており、そのプライマリ DNS サーバーがフォレストのルート DNS サーバーであるためです。 DC サービスの参照エラーを回避するために、障害が発生する前と同じ IP アドレスを使用してこのコンピューターを構成してください。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [AD フォレストの回復 - 前提条件](AD-Forest-Recovery-Prerequisties.md)  
 - [AD フォレストの回復-カスタムフォレストの復旧計画の作成](AD-Forest-Recovery-Devising-a-Plan.md)  

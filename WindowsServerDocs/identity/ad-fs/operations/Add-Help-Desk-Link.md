@@ -20,7 +20,7 @@ ms.locfileid: "71358457"
 
 
 ## <a name="to-add-a-help-desk-link"></a>ヘルプデスクのリンクを追加するには  
-[Sign @ no__t-0in] \ (サインイン \) ページに表示されるヘルプデスクリンクを追加するには、次の Windows PowerShell コマンドレットと構文を使用します。  
+[\-のサインイン] ページに表示されるヘルプデスクリンクを追加するには、次の Windows PowerShell コマンドレットと構文を使用します。  
 
 ![ヘルプデスクの追加](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   

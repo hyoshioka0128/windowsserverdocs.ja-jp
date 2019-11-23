@@ -17,7 +17,7 @@ ms.locfileid: "71388841"
 ---
 # <a name="directaccess-unsupported-configurations"></a>DirectAccess には、構成がサポートされていません
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 展開を開始する前に、次のサポートされていない DirectAccess 構成の一覧を確認して、展開を再度開始する必要がないようにしてください。  
 
@@ -30,13 +30,13 @@ FRS SYSVOL レプリケーションを使用して DirectAccess を展開する�
   
 DirectAccess の展開を計画している場合は、Windows Server 2003 R2 以降のオペレーティングシステムを実行しているドメインコントローラーを使用する必要があります。また、DFS-R を使用する必要があります。  
   
-FRS から DFS-R への移行の詳細については、[SYSVOL レプリケーション移行ガイドを参照してください。FRS を DFS レプリケーション](https://technet.microsoft.com/library/dd640019(v=ws.10).aspx)します。  
+FRS から DFS-R への移行の詳細については、「 [SYSVOL レプリケーション移行ガイド: frs から DFS レプリケーション](https://technet.microsoft.com/library/dd640019(v=ws.10).aspx)」を参照してください。  
   
 ## <a name="bkmk_nap"></a>DirectAccess クライアントのネットワークアクセス保護  
 ネットワークアクセス保護 (NAP) を使用して、企業ネットワークへのアクセスが許可される前に、リモートクライアントコンピューターが IT ポリシーを満たしているかどうかを判断します。 NAP は Windows Server 2012 R2 で非推奨とされており、Windows Server 2016 には含まれていません。 このため、NAP を使用した DirectAccess の新しい展開を開始することはお勧めしません。 DirectAccess クライアントのセキュリティをエンドポイントで制御する別の方法をお勧めします。  
   
 ## <a name="bkmk_multi"></a>Windows 7 クライアントのマルチサイトサポート  
-DirectAccess がマルチサイト展開で構成されている場合、Windows 10 @ no__t-0、Windows @ no__t 8.1、および Windows @ no__t 8 クライアントは、最も近いサイトに接続することができます。  Windows 7 @ no__t クライアントコンピューターには、同じ機能がありません。 Windows 7 クライアントのサイト選択は、ポリシーの構成時に特定のサイトに設定されます。これらのクライアントは、場所に関係なく、常に指定されたサイトに接続します。  
+DirectAccess がマルチサイト展開で構成されている場合、Windows 10&reg;、Windows&reg; 8.1、および Windows&reg; 8 クライアントは、最も近いサイトに接続することができます。  Windows 7&reg; のクライアントコンピューターには、同じ機能がありません。 Windows 7 クライアントのサイト選択は、ポリシーの構成時に特定のサイトに設定されます。これらのクライアントは、場所に関係なく、常に指定されたサイトに接続します。  
   
 ## <a name="bkmk_user"></a>ユーザーベースのアクセス制御  
 DirectAccess ポリシーは、ユーザーベースではなく、コンピューターベースです。 企業ネットワークへのアクセスを制御する DirectAccess ユーザーポリシーを指定することはサポートされていません。  
@@ -45,7 +45,7 @@ DirectAccess ポリシーは、ユーザーベースではなく、コンピュ�
 Directaccess は、DirectAccess セットアップウィザード、リモートアクセス管理コンソール、またはリモートアクセス Windows PowerShell コマンドレットを使用して構成できます。 Directaccess セットアップウィザード以外の任意の方法を使用して directaccess を構成する (DirectAccess グループポリシーオブジェクトを直接変更する、サーバーまたはクライアントの既定のポリシー設定を手動で変更するなど) ことはサポートされていません。 これらの変更により、構成が使用できなくなる可能性があります。  
   
 ## <a name="bkmk_kerb"></a>KerbProxy 認証  
-はじめにウィザードを使用して DirectAccess サーバーを構成すると、コンピューターとユーザーの認証に KerbProxy 認証を使用するように DirectAccess サーバーが自動的に構成されます。 このため、はじめにウィザードは、Windows 10 の @ no__t-0、Windows 8.1、または Windows 8 クライアントのみが展開されている単一サイトの展開にのみ使用してください。  
+はじめにウィザードを使用して DirectAccess サーバーを構成すると、コンピューターとユーザーの認証に KerbProxy 認証を使用するように DirectAccess サーバーが自動的に構成されます。 このため、Windows 10&reg;、Windows 8.1、または Windows 8 クライアントのみが展開されている単一サイト展開では、はじめにウィザードのみを使用する必要があります。  
   
 また、次の機能は、KerbProxy 認証では使用しないでください。  
   

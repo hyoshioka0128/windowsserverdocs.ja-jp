@@ -16,7 +16,7 @@ ms.locfileid: "71940743"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>PowerShell を使用してシールドされた VM を作成する
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 運用環境では、通常、ファブリックマネージャー (VMM など) を使用してシールドされた Vm をデプロイします。 ただし、次の手順を実行すると、ファブリックマネージャーを使用せずにシナリオ全体を展開および検証することができます。
 
@@ -42,7 +42,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath "C:\temp\MyTemplateDisk.vhdx" -Vol
 シールドされた VM を実行する仮想化ファブリックごとに、ファブリックの HGS クラスターのガーディアンメタデータを取得する必要があります。
 ホスティングプロバイダーは、この情報を提供できる必要があります。
 
-エンタープライズ環境で、HGS サーバーと通信できる場合、ガーディアンメタデータは*http://\<HGSCLUSTERNAME @ no__t/KeyProtection/service/metadata/2014-07/metadata .xml*で入手できます。
+エンタープライズ環境を使用していて、HGS サーバーと通信できる場合、ガーディアンメタデータは*http://\<HGSCLUSTERNAME\>/Keyprotection/Service/Metadata/xml*にあります。
 
 ## <a name="create-shielding-data-pdk-file"></a>シールドデータ (PDK) ファイルの作成
 
@@ -80,7 +80,7 @@ New-ShieldingDataFile -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Owner $Owner
 Install-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0
 ```
 
-また、インターネットにアクセスできる別のコンピューターにモジュールをダウンロードし、そのモジュールを保護されたホスト上の `C:\Program Files\WindowsPowerShell\Modules` にコピーすることもできます。
+また、インターネットにアクセスできる別のコンピューターでモジュールをダウンロードし、結果のモジュールを保護されたホスト上の `C:\Program Files\WindowsPowerShell\Modules` にコピーすることもできます。
 
 ```powershell
 Save-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0 -Path C:\temp\
@@ -105,7 +105,7 @@ New-ShieldedVM -Name 'MyStaticIPVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vh
 
 ```
 
-テンプレートディスクに Linux ベースの OS が含まれている場合は、コマンドの実行時に `-Linux` フラグを指定します。
+テンプレートディスクに Linux ベースの OS が含まれている場合は、コマンドの実行時に `-Linux` フラグを含めます。
 
 ```powershell
 New-ShieldedVM -Name 'MyLinuxVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Wait -Linux

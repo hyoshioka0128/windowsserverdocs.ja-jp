@@ -62,7 +62,7 @@ ms.locfileid: "71408289"
 ### <a name="supported-ad-fs-role-services-and-features"></a>サポートされている AD FS 役割サービスと機能  
  次の表では、このガイドで説明されている AD FS の役割サービスとそれぞれの設定の移行シナリオについて説明します。  
   
-|From|Windows Server 2012 でインストールされた AD FS するには|  
+|移行元|Windows Server 2012 でインストールされた AD FS するには|  
 |----------|-----|  
 |Windows Server 2003 R2 と共にインストールされた AD FS 1.0 フェデレーションサーバー|移行はサポートされていません|  
 |AD FS 1.0 フェデレーションサーバープロキシが Windows Server 2003 R2 と共にインストールされている|移行はサポートされていません|  
@@ -70,14 +70,14 @@ ms.locfileid: "71408289"
 |AD FS 1.0 Windows Server 2003 R2 と共にインストールされる要求に対応するエージェント)|移行はサポートされていません|  
 |Windows Server 2008 または Windows Server 2008 R2 と共にインストールされた AD FS 1.1 フェデレーションサーバー|移行はサポートされていません|  
 |Windows Server 2008 または Windows Server 2008 R2 と共にインストールされた AD FS 1.1 フェデレーションサーバープロキシ|移行はサポートされていません|  
-|Windows Server 2008 または Windows Server 2008 R2 と共にインストールされた Windows トークンベースのエージェント AD FS 1.1|同じサーバーでの移行はサポートされていますが、移行された AD FS Windows トークンベースのエージェントは、Windows Server 2008 または Windows Server 2008 R2 と共にインストールされた AD FS 1.1 フェデレーションサービスでのみ機能します。 詳細については、以下をご覧ください。<br /><br /> [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)<br /><br /> [AD FS 1.x との相互運用](Interoperating-with-AD-FS-1.x.md)|  
-|AD FS 1.1 Windows Server 2008 または Windows Server 2008 R2 と共にインストールされる要求対応エージェント)|同じサーバーでの移行がサポートされています。 移行された AD FS 1.1 要求に対応する web エージェントは、次の機能を備えています。<br /><br /> Windows Server 2008 または Windows Server 2008 R2 と共にインストールされた AD FS 1.1 フェデレーションサービス<br /><br /> Windows Server 2008 または Windows Server 2008 R2 にインストールされている AD FS 2.0 フェデレーションサービス<br /><br /> Windows Server 2012 にインストールされている AD FS フェデレーションサービス<br /><br /> 詳細については、以下をご覧ください。<br /><br /> [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)<br /><br /> [AD FS 1.x との相互運用](Interoperating-with-AD-FS-1.x.md)|  
-|Windows Server 2008 または Windows Server 2008 R2 にインストールされている AD FS 2.0 フェデレーションサーバー|同じサーバーでの移行がサポートされています。 詳細については、以下をご覧ください。<br /><br /> [AD FS 2.0 フェデレーション サーバーの移行の準備](prepare-to-migrate-ad-fs-fed-server.md)<br /><br /> [AD FS 2.0 フェデレーション サーバーの移行](migrate-the-ad-fs-fed-server.md)|  
+|Windows Server 2008 または Windows Server 2008 R2 と共にインストールされた Windows トークンベースのエージェント AD FS 1.1|同じサーバーでの移行はサポートされていますが、移行された AD FS Windows トークンベースのエージェントは、Windows Server 2008 または Windows Server 2008 R2 と共にインストールされた AD FS 1.1 フェデレーションサービスでのみ機能します。 詳しくは、次のトピックをご覧ください。<br /><br /> [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)<br /><br /> [AD FS 1.x との相互運用](Interoperating-with-AD-FS-1.x.md)|  
+|AD FS 1.1 Windows Server 2008 または Windows Server 2008 R2 と共にインストールされる要求対応エージェント)|同じサーバーでの移行がサポートされています。 移行された AD FS 1.1 要求に対応する web エージェントは、次の機能を備えています。<br /><br /> Windows Server 2008 または Windows Server 2008 R2 と共にインストールされた AD FS 1.1 フェデレーションサービス<br /><br /> Windows Server 2008 または Windows Server 2008 R2 にインストールされている AD FS 2.0 フェデレーションサービス<br /><br /> Windows Server 2012 にインストールされている AD FS フェデレーションサービス<br /><br /> 詳しくは、次のトピックをご覧ください。<br /><br /> [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)<br /><br /> [AD FS 1.x との相互運用](Interoperating-with-AD-FS-1.x.md)|  
+|Windows Server 2008 または Windows Server 2008 R2 にインストールされている AD FS 2.0 フェデレーションサーバー|同じサーバーでの移行がサポートされています。 詳しくは、次のトピックをご覧ください。<br /><br /> [AD FS 2.0 フェデレーション サーバーの移行の準備](prepare-to-migrate-ad-fs-fed-server.md)<br /><br /> [AD FS 2.0 フェデレーション サーバーの移行](migrate-the-ad-fs-fed-server.md)|  
 |Windows Server 2008 または Windows Server 2008 R2 にインストールされている AD FS 2.0 フェデレーションサーバープロキシ|同じサーバーでの移行がサポートされています。  詳しくは、次のトピックをご覧ください。<br /><br /> [AD FS 2.0 フェデレーション サーバー プロキシの移行の準備](prepare-to-migrate-ad-fs-fed-proxy.md)<br /><br /> [AD FS 2.0 フェデレーション サーバー プロキシの移行](migrate-the-ad-fs-2-fed-server-proxy.md)|  
   
-## <a name="see-also"></a>関連項目  
- [AD FS 2.0 フェデレーションサーバーの移行の準備](prepare-to-migrate-ad-fs-fed-server.md)   
+## <a name="see-also"></a>参照  
+ [AD FS 2.0 フェデレーションサーバー  の移行の準備](prepare-to-migrate-ad-fs-fed-server.md)  
  [AD FS 2.0 フェデレーションサーバープロキシの移行の準備](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [AD FS 2.0 フェデレーションサーバー](migrate-the-ad-fs-fed-server.md)  を移行します。  
- [AD FS 2.0 フェデレーションサーバープロキシ   を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
+ [AD FS 2.0 フェデレーションサーバー  を移行します](migrate-the-ad-fs-fed-server.md)。  
+ [AD FS 2.0 フェデレーションサーバープロキシ  を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
  [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)

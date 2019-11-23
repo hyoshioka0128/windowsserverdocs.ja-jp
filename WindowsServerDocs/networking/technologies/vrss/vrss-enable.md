@@ -19,9 +19,9 @@ ms.locfileid: "71405267"
 ---
 # <a name="enable-vrss-on-a-virtual-network-adapter"></a>Virtual Network アダプターでの vRSS の有効化
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-仮想 RSS \(vRSS @ no__t-1 では、物理アダプターからの仮想マシンキュー \(VMQ @ no__t のサポートが必要です。 VMQ が無効になっている場合、またはサポートされていない場合、仮想受信側のスケーリングは無効になります。 
+仮想 RSS \(vRSS\) には、物理アダプターからの仮想マシンキュー \(VMQ\) サポートが必要です。 VMQ が無効になっている場合、またはサポートされていない場合、仮想受信側のスケーリングは無効になります。 
 
 詳細については、「 [vRSS の使用を計画する](vrss-plan.md)」を参照してください。
 

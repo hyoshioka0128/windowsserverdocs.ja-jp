@@ -18,7 +18,7 @@ ms.locfileid: "71405145"
 ---
 # <a name="how-the-windows-time-service-works"></a>Windows タイム サービスのしくみ
 
->適用対象:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 以降
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 以降
 
 **このセクションの内容**  
   
@@ -171,7 +171,7 @@ Windows Server 2003 ネットワークを確立した後は、次のオプショ
 ドメインの階層に基づいている同期では、AD DS ドメインの階層を使用して、時刻同期に使用する信頼できる送信元を見つけます。 ドメインの階層に基づき、Windows タイム サービスは、各タイム サーバーの正確性を決定します。 Windows Server 2003 フォレストでは、プライマリ ドメイン コント ローラー (PDC) エミュレーター操作マスターの役割をフォレスト ルート ドメインにあるを保持するコンピューターは、別の信頼できるタイム ソースが構成されている場合を除きに最適なタイム ソースの位置を保持します。 次の図は、ドメイン階層内のコンピューター間で時刻の同期のパスを示しています。  
   
 **AD DS 階層での時刻の同期**  
-![Windows Time @ no__t-1
+Windows タイム](../media/Windows-Time-Service/How-the-Windows-Time-Service-Works/trnt_ntw_adhc.gif) の ![
   
 #### <a name="reliable-time-source-configuration"></a>信頼性の高いタイム ソースの構成  
 信頼性の高いタイム ソースとして構成されているコンピューターは、タイム サービスのルートとして識別されます。 タイム サービスのルート ドメインに対して権限のあるサーバーは、通常、外部の NTP サーバーまたはハードウェア デバイスから時刻を取得するように構成されます。 タイム サーバーは、ドメイン階層全体で時間を転送する方法を最適化するために信頼できるタイム ソースとして構成できます。 場合は、ドメイン コント ローラーは、信頼性の高いタイム ソースとして構成されている、Net Logon サービスは、ネットワークにログオンすると、信頼性の高いタイム ソースとしてそのドメイン コント ローラーを発表します。 他のドメイン コント ローラーは、同期するタイム ソースを探すときに、信頼できるソースがある場合に、信頼性の高いソースを最初に、選択します。  
@@ -257,12 +257,12 @@ Windows タイム サービスは、信頼性の高いタイム ソースを特�
   
 **Windows タイムサービスのポートの割り当て**  
   
-|[サービス名]|UDP|TCP|  
+|サービス名|UDP|TCP|  
 |----------------|-------|-------|  
-|NTP|123|なし|  
-|SNTP|123|なし|  
+|NTP|123|該当なし|  
+|SNTP|123|該当なし|  
   
-## <a name="see-also"></a>関連項目  
-[Windows タイムサービスのテクニカルリファレンス](windows-time-service-tech-ref.md)
+## <a name="see-also"></a>参照  
+Windows タイム[サービスのテクニカルリファレンス](windows-time-service-tech-ref.md)
 [windows タイムサービスのツールと設定](Windows-Time-Service-Tools-and-Settings.md)
 [マイクロソフトサポート技術情報の記事 902229](https://go.microsoft.com/fwlink/?LinkId=186066)

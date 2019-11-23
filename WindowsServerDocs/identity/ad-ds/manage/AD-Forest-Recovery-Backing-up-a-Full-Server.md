@@ -18,7 +18,7 @@ ms.locfileid: "71369363"
 ---
 # <a name="ad-forest-recovery---backing-up-a-full-server"></a>AD フォレストの回復-完全なサーバーのバックアップ  
 
->適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
+>適用対象: Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
 
 フォレストの回復を準備するには、サーバーの完全バックアップを使用することをお勧めします。これは、別のハードウェアや別のオペレーティングシステムのインスタンスに復元できるためです。  Windows Server バックアップを使用すると、サーバーの完全バックアップを実行できます。 
 
@@ -38,8 +38,8 @@ Windows Server 2008 および Windows Server 2008 R2 にインストールする
 3. **[インストールの種類]** 画面で、既定の**役割ベースまたは機能ベースのインストール**をそのまま使用し、 **[次へ]** をクリックします。
 4. **[サーバーの選択]** 画面で、 **[次へ]** をクリックします。
 5. **[サーバーの役割]** 画面で、 **[次へ]** をクリックします。
-6. **[機能]** 画面で、[ **Windows Server バックアップ**を選択し、 **[次へ]** をクリック 
-    @ no__t-4install Backup @ no__t-5
+6. **[機能]** 画面で、 **[Windows Server バックアップ]** を選択し、 **[次へ]** をクリックしてバックアップ ![インストール
+   ](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup2.png)
 7. **[インストール]** をクリックします。
 8. インストールが完了したら、 **[閉じる]** をクリックします。
 
@@ -85,7 +85,7 @@ Wbadmin は、コマンドプロンプトからオペレーティングシステ
 
    ![バックアップのインストール](media/AD-Forest-Recovery-Backing-up-a-Full-Server/fullbackup5.png)
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [AD フォレストの回復ガイド](AD-Forest-Recovery-Guide.md)
 - [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md)

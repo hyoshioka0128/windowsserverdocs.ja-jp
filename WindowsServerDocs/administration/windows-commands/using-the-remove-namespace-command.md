@@ -22,7 +22,7 @@ ms.locfileid: "71362792"
 ---
 # <a name="using-the-remove-namespace-command"></a>名前空間の削除 コマンドを使用してください。
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 カスタム名前空間を削除します。
 ## <a name="syntax"></a>構文
@@ -32,7 +32,7 @@ wdsutil /remove-Namespace /Namespace:<Namespace name> [/Server:<Server name>] [/
 ## <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-|/Namespace: <Namespace name>|名前空間の名前を指定します。 フレンドリ名ではありませんし、一意である必要があります。<br /><br />@no__t 0**展開サーバーの役割サービス**:名前空間名の構文は/Namespace: WDS: <ImageGroup> @ no__t @ no__t @ no__t @ no__t-4 です。 以下に例を示します。**WDS: ImageGroup1/install. .wim/1**<br />-   **トランスポートサーバーの役割サービス**:この値は、サーバー上で作成されたときに名前空間に指定された名前と一致する必要があります。|
+|/Namespace:<Namespace name>|名前空間の名前を指定します。 フレンドリ名ではありませんし、一意である必要があります。<br /><br />-   **展開サーバーの役割サービス**: 名前空間名の構文は/NAMESPACE: WDS:<ImageGroup>/<ImageName>/<Index>です。 例: **WDS:ImageGroup1/install.wim/1**<br />-   **トランスポートサーバーの役割サービス**: この値は、サーバー上で作成されたときに名前空間に指定された名前と一致する必要があります。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
 |/force|名前空間を直ちに削除し、すべてのクライアントを終了します。 **/Force**を指定しない限り、既存のクライアントは転送を完了できますが、新しいクライアントは参加できません。|
 ## <a name="BKMK_examples"></a>例

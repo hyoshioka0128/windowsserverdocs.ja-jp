@@ -18,7 +18,7 @@ ms.locfileid: "71402679"
 ---
 # <a name="advanced-active-directory-replication-and-topology-management-using-windows-powershell-level-200"></a>Advanced Active Directory Replication and Topology Management Using Windows PowerShell (Level 200)
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、AD DS のレプリケーションとトポロジを管理するための新しいコマンドレットの詳細を説明し、いくつかの例を示します。 概要については、「 [Windows &#40;PowerShell レベル&#41;100 を使用した Active Directory レプリケーションとトポロジ管理の概要](../../../ad-ds/manage/powershell/Introduction-to-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-100-.md)」を参照してください。  
   
@@ -39,7 +39,7 @@ ms.locfileid: "71402679"
 8.  [モジュール](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md#BKMK_Topo)  
   
 ## <a name="BKMK_Intro"></a>基礎  
-Windows Server 2012 では、Windows PowerShell の Active Directory モジュールが拡張され、レプリケーションとフォレスト トポロジを管理するための 25 個の新しいコマンドレットが追加されました。 この前に、汎用 **\* オブジェクト**の名詞を使用するか、.net 関数を呼び出す必要がありました。  
+Windows Server 2012 では、Windows PowerShell の Active Directory モジュールが拡張され、レプリケーションとフォレスト トポロジを管理するための 25 個の新しいコマンドレットが追加されました。 この前に、汎用 **\*AdObject**の名詞を使用するか、.net 関数を呼び出す必要がありました。  
   
 すべての Active Directory Windows PowerShell コマンドレットと同様に、この新しい機能を使用するには、 [Active Directory 管理ゲートウェイ サービス](https://www.microsoft.com/download/details.aspx?displaylang=en&id=2852) を 1 つ以上のドメイン コントローラー (可能であれば、すべてのドメイン コントローラー) にインストールする必要があります。  
   
@@ -82,7 +82,7 @@ Windows Server 2012 では、Windows PowerShell の Active Directory モジュ�
 Get-command -module ActiveDirectory  
 ```  
   
-すべての Active Directory Windows PowerShell コマンドレットの引数の一覧については、ヘルプを参照してください。 以下に例を示します。  
+すべての Active Directory Windows PowerShell コマンドレットの引数の一覧については、ヘルプを参照してください。 次に、例を示します。  
   
 ```  
 Get-help New-ADReplicationSite  
@@ -228,7 +228,7 @@ Repadmin.exe は、サイト、サイト リンク、サイト リンク ブリ�
   
 たとえば、新しいブランチ オフィスを迅速に展開した後に、他のオフィスとの統合作業だけでなく、物理的な場所、ネットワークの変更、および新しいキャパシティ要件に基づいて、サイトに多数の変更を加えることが必要になる場合があります。 このような場合、Dssites.msc や Adsiedit.msc を使用して変更を加える代わりに、変更作業を自動化することができます。 これは、ネットワークおよび施設のチームから提供されたスプレッドシート形式のデータを使用する場合に特に役立ちます。  
   
-**Get adreplication @ no__t*** コマンドレットは、レプリケーショントポロジに関する情報を返します。これは、一括で**Set adreplication @ no__t*** コマンドレットにパイプライン処理する場合に役立ちます。 **Get**コマンドレットはデータを変更しません。データの表示のみを行うか、または **-adreplication @ no__t*** コマンドレットにパイプライン処理できる Windows PowerShell セッションオブジェクトを作成します。 **New** および **Remove** コマンドレットは、Active Directory トポロジ オブジェクトを作成または削除するのに役立ちます。  
+**Get adreplication\\** * コマンドレットは、レプリケーショントポロジに関する情報を返します。これは、 **Set adreplication\\** * コマンドレットを一括でパイプライン処理する場合に役立ちます。 **Get**コマンドレットはデータを変更しません。データの表示のみを行うか、または **、設定-adreplication\\** * コマンドレットにパイプライン処理できる Windows PowerShell セッションオブジェクトを作成します。 **New** および **Remove** コマンドレットは、Active Directory トポロジ オブジェクトを作成または削除するのに役立ちます。  
   
 たとえば、CSV ファイルを使用して新しいサイトを作成できます。  
   
@@ -267,7 +267,7 @@ get-adreplicationsite -filter * -property subnets | where-object {!$_.subnets -e
   
 ![powershell を使用した高度な管理](media/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-/ADDS_PSNewADReplSiteFiltrer.png)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [Windows PowerShell &#40;レベル100を使用した Active Directory レプリケーションとトポロジ管理の概要&#41;](../../../ad-ds/manage/powershell/Introduction-to-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-100-.md)  
   
 

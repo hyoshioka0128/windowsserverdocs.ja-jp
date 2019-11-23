@@ -46,11 +46,11 @@ ms.locfileid: "71408286"
   
 7. SQL Server ファーム内のすべてのサーバーを Windows Server 2012 にアップグレードする場合は、カスタム属性ストアなど、その他の AD FS カスタマイズを復元します。  
 
-## <a name="next-steps"></a>次の手順
- [AD FS 2.0 フェデレーションサーバーの移行の準備](prepare-to-migrate-ad-fs-fed-server.md)   
+## <a name="next-steps"></a>次のステップ
+ [AD FS 2.0 フェデレーションサーバー  の移行の準備](prepare-to-migrate-ad-fs-fed-server.md)  
  [AD FS 2.0 フェデレーションサーバープロキシの移行の準備](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [AD FS 2.0 フェデレーションサーバー](migrate-the-ad-fs-fed-server.md)  を移行します。  
- [AD FS 2.0 フェデレーションサーバープロキシ   を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
+ [AD FS 2.0 フェデレーションサーバー  を移行します](migrate-the-ad-fs-fed-server.md)。  
+ [AD FS 2.0 フェデレーションサーバープロキシ  を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
  [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)
 
 

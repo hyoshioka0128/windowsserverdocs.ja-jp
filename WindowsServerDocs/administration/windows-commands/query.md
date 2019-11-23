@@ -1,5 +1,5 @@
 ---
-title: クエリ (query)
+title: query
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -20,9 +20,9 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71371839"
 ---
-# <a name="query"></a>クエリ (query)
+# <a name="query"></a>query
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 プロセス、セッション、およびリモートデスクトップセッションホスト (RD セッションホスト) サーバーに関する情報を表示します。
 
@@ -47,4 +47,4 @@ query user
 
 #### <a name="additional-references"></a>その他の参照情報
 [コマンドライン構文キー](command-line-syntax-key.md)
-[リモート デスクトップ サービス(ターミナル サービス) のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)
+[リモート デスクトップ サービスと&#40;です。ターミナル サービスと&#41;です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)

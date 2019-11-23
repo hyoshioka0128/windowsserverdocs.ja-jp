@@ -17,7 +17,7 @@ ms.locfileid: "71362594"
 ---
 # <a name="vssadmin-list-shadows"></a>Vssadmin リストの影
 
->適用対象:Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+>適用対象: Windows 10、Windows 8.1、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 指定したボリュームの既存のシャドウコピーをすべて一覧表示します。 パラメーターを指定せずにこのコマンドを使用すると、コンピューター上のすべてのボリュームシャドウコピーが、**シャドウコピーセット**によって指定された順序で表示されます。
 
@@ -31,8 +31,8 @@ vssadmin list shadows [/for=<ForVolumeSpec>] [/shadow=<ShadowID>]
 
 |パラメーター|説明|
 |---|---|
-|/for = @no__t 0ForVolumeSpec >|シャドウコピーが表示されるボリュームを指定します。|
-|/shadow = \<ShadowID >|ShadowID によって指定されたシャドウコピーの一覧を表示します。 シャドウコピー ID を取得するには、 **vssadmin list shadows**コマンドを使用します。 シャドウコピー ID を入力するときは、次の形式を使用します。各*X*は16進文字を表します。<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX-XXXX-XXXX-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
+|/for =\<ForVolumeSpec >|シャドウコピーが表示されるボリュームを指定します。|
+|/shadow =\<ShadowID >|ShadowID によって指定されたシャドウコピーの一覧を表示します。 シャドウコピー ID を取得するには、 **vssadmin list shadows**コマンドを使用します。 シャドウコピー ID を入力するときは、次の形式を使用します。各*X*は16進文字を表します。<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX-XXXX-XXXX-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
 
 ## <a name="additional-references"></a>その他の参照情報
 

@@ -18,7 +18,7 @@ ms.locfileid: "71357500"
 ---
 # <a name="deploy-a-central-access-policy-demonstration-steps"></a>集約型アクセス ポリシーの展開 (デモンストレーション手順)
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このシナリオでは、金融部門のセキュリティ運用では、集約型情報セキュリティを操作して、ファイル サーバーに保管されたアーカイブ金融情報を保護できるように集約型アクセス ポリシーのニーズを指定します。 各国のアーカイブ金融情報には、同じ国の金融従業員が読み取り専用としてアクセスできます。 集約型金融管理グループは、すべての国の金融情報にアクセスできます。  
 
@@ -26,15 +26,15 @@ ms.locfileid: "71357500"
 
 |フェーズ|説明  
 |---------|---------------  
-|[Plan:ポリシーの必要性と、展開に必要な構成を特定する @ no__t-0|ポリシーのニーズおよび展開に必要な構成を特定します。 
-|[Implement:コンポーネントとポリシーを構成する @ no__t-0|コンポーネントおよびポリシーを構成します。  
+|[計画: ポリシーのニーズと展開に必要な構成を特定する](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.2)|ポリシーのニーズおよび展開に必要な構成を特定します。 
+|[実装: コンポーネントとポリシーを構成します。](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.3)|コンポーネントおよびポリシーを構成します。  
 |[集約型アクセスポリシーを展開する](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.4)|ポリシーを展開します。  
-|@no__t の管理:ポリシーを変更してステージングする @ no__t-0|ポリシーの変更とステージング。 
+|[管理: ポリシーを変更してステージングする](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md#BKMK_1.5)|ポリシーの変更とステージング。 
 
 ## <a name="BKMK_1.1"></a>テスト環境のセットアップ  
-開始する前に、このシナリオをテストするラボを設定する必要があります。 ラボを設定する手順の詳細については [Appendix B をご覧ください。テスト環境 @ no__t を設定しています。  
+開始する前に、このシナリオをテストするラボを設定する必要があります。 ラボを設定する手順の詳細については、 [「付録 B: テスト環境の](Appendix-B--Setting-Up-the-Test-Environment.md)セットアップ」をご覧ください。  
 
-## <a name="BKMK_1.2"></a>行うポリシーのニーズおよび展開に必要な構成を特定する  
+## <a name="BKMK_1.2"></a>計画: ポリシーのニーズと展開に必要な構成を特定する  
 このセクションでは、展開の計画フェーズで役立つ一連の大まかな手順を示します。  
 
 ||手順|例|  
@@ -46,10 +46,10 @@ ms.locfileid: "71357500"
 |1.5|ポリシーに必要な要求の種類とグループを決定する|要求の種類:<br /><br />-国<br />-Department<br /><br />ユーザー グループ:<br /><br />-FinanceAdmin<br />-FinanceException|  
 |1.6|このポリシーを適用するサーバーを決定する|すべての金融ファイル サーバーでポリシーを適用します。|  
 
-## <a name="BKMK_1.3"></a>導入コンポーネントおよびポリシーを構成する  
+## <a name="BKMK_1.3"></a>実装: コンポーネントとポリシーを構成します。  
 このセクションでは、金融ドキュメント用の集約型アクセス ポリシーを展開する例を示します。  
 
-|いいえ|手順|例|  
+|X|手順|例|  
 |------|--------|-----------|  
 |2.1|要求の種類を作成する|次の要求の種類を作成します。<br /><br />-Department<br />-国|  
 |2.2|リソース プロパティを作成する|次のリソース プロパティを作成して有効にします。<br /><br />-Department<br />-国|  
@@ -58,11 +58,11 @@ ms.locfileid: "71357500"
 |2.5|集約型アクセス ポリシーのターゲットをファイル サーバーに設定する|金融ポリシー CAP をファイル サーバーにパブリッシュします。|  
 |2.6|KDC での信頼性情報、複合認証、および Kerberos 防御のサポートを有効にする|contoso.com について KDC での信頼性情報、複合認証、および Kerberos 防御のサポートを有効にします。|  
 
-次の手順では、次の 2 つの信頼性情報の種類を作成します。国と部門。  
+次の手順では、Country と Department という2つの要求の種類を作成します。  
 
 #### <a name="to-create-claim-types"></a>要求の種類を作成するには  
 
-1. Hyper-v マネージャーでサーバー DC1 を開き、パスワード<strong>pass@word1</strong>で contoso\administrator としてログオンします。  
+1. Hyper-v マネージャーでサーバー DC1 を開き、パスワード<strong>pass@word1</strong>を使用して contoso\administrator としてログオンします。  
 
 2. Active Directory 管理センターを開きます。  
 
@@ -85,7 +85,7 @@ ms.locfileid: "71357500"
 
 9. 上記ステップを繰り返します。 **[提案された値の追加]** ダイアログ ボックスの **[値]** フィールドおよび **[表示名]** フィールドに **JP** と入力してから、 **[OK]** をクリックします。  
 
-@no__t 0solution ガイド](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+![ソリューションガイド](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
 
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
 
@@ -121,7 +121,7 @@ ms.locfileid: "71357500"
 
     -   部署  
 
-@no__t 0solution ガイド](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+![ソリューションガイド](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
 
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
 
@@ -147,7 +147,7 @@ Add-ADResourcePropertyListMember "Global Resource Property List" -Members Depart
 
 または、Windows Server 2012 の構成要素を使用して規則を表現します。  
 
-ターゲット:Resource.Department Contains Finance  
+ターゲット: Resource. Department が財務を含む  
 
 アクセス規則:  
 
@@ -171,7 +171,7 @@ Add-ADResourcePropertyListMember "Global Resource Property List" -Members Depart
 5. **[アクセス許可]** セクションで **[次のアクセス許可を現在のアクセス許可として使用する]** を選択し、 **[編集]** をクリックし、 **[アクセス許可のセキュリティの詳細設定]** ダイアログ ボックスで **[追加]** をクリックします。  
 
    > [!NOTE]  
-   > **[次のアクセス許可を、提案されたアクセス許可として使用する]** オプションを使用することで、ステージングのポリシーを作成できます。 これを行う方法について詳しくは、「保守:ポリシーを変更およびステージングする」セクション (このトピック内) を参照してください。  
+   > **[次のアクセス許可を、提案されたアクセス許可として使用する]** オプションを使用することで、ステージングのポリシーを作成できます。 これを行う方法の詳細については、このトピックの「管理: ポリシーの変更とステージング」セクションを参照してください。  
 
 6. **[アクセス許可のアクセス許可エントリ]** ダイアログ ボックスで **[プリンシパルの選択]** をクリックし、「**Authenticated Users**」と入力してから、 **[OK]** をクリックします。  
 
@@ -189,7 +189,7 @@ Add-ADResourcePropertyListMember "Global Resource Property List" -Members Depart
 
 11. **[OK]** を 3 回クリックして終了し、Active Directory 管理センターに戻ります。  
 
-    @no__t 0solution ガイド](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+    ![ソリューションガイド](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
 
     以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
 
@@ -206,7 +206,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 
 > [!IMPORTANT]  
-> 上記のコマンドレットの例では、グループ FinanceAdmin およびユーザーのセキュリティ ID (SID) は作成時に決定されるため、お客様の例では異なるものになります。 例えば、FinanceAdmin に指定されている SID 値 (S-1-5-21-1787166779-1215870801-2157059049-1113) は、ご使用の展開で作成する必要がある FinanceAdmin グループの実際の SID に置き換える必要があります。 Windows PowerShell を使用して、このグループの SID 値を検索し、その値を変数に割り当ててから、ここでその変数を使用できます。 詳細については、「[Windows PowerShell ヒント:Sid @ no__t を使用して作業する。  
+> 上記のコマンドレットの例では、グループ FinanceAdmin およびユーザーのセキュリティ ID (SID) は作成時に決定されるため、お客様の例では異なるものになります。 例えば、FinanceAdmin に指定されている SID 値 (S-1-5-21-1787166779-1215870801-2157059049-1113) は、ご使用の展開で作成する必要がある FinanceAdmin グループの実際の SID に置き換える必要があります。 Windows PowerShell を使用して、このグループの SID 値を検索し、その値を変数に割り当ててから、ここでその変数を使用できます。 詳細については、「 [Windows PowerShell ヒント: sid の](https://go.microsoft.com/fwlink/?LinkId=253545)使用」を参照してください。  
 
 これで、ユーザーが同じ国および同じ部門のドキュメントにアクセスできるようにする集約型アクセス規則が作成されました。 この規則により、FinanceAdmin グループはドキュメントを編集でき、FinanceException グループはドキュメントを読み取ることができます。 この規則のターゲットは、金融として分類されているドキュメントのみです。  
 
@@ -224,7 +224,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 6. **[OK]** をクリックして完了します。 これで、金融ポリシーという集約型アクセス ポリシーが作成されました。  
 
-   @no__t 0solution ガイド](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+   ![ソリューションガイド](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
 
    以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
 
@@ -245,7 +245,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
     > [!TIP]  
     > 運用環境では、ファイル サーバー組織単位 (OU) を作成し、このポリシーを適用するすべてのファイル サーバーをその OU に追加する必要があります。 次に、グループ ポリシーを作成し、この OU をそのポリシーに追加できます。  
 
-2.  この手順では、テスト環境のセクション「[ドメイン コントローラーを作成する](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build)」で作成したグループ ポリシー オブジェクトを編集して、作成した集約型アクセス ポリシーを組み込みます。 グループ ポリシー管理エディターで、ドメイン (この例では contoso.com) の組織単位に移動して選択します。 **[グループ ポリシーの管理]** 、 **[フォレスト: contoso.com]** 、 **[ドメイン]** 、 **[contoso.com]** 、 **[Contoso]** 、 **[FileServerOU]** 。  
+2.  この手順では、テスト環境のセクション「[ドメイン コントローラーを作成する](Appendix-B--Setting-Up-the-Test-Environment.md#BKMK_Build)」で作成したグループ ポリシー オブジェクトを編集して、作成した集約型アクセス ポリシーを組み込みます。 グループポリシー管理エディターで、ドメイン内の組織単位 (この例では contoso.com) に移動して選択します。**グループポリシー管理**、**フォレスト: contoso.com**、**ドメイン**、 **contoso.com**、 **contoso**、 **fileserverou**です。  
 
 3.  **[FlexibleAccessGPO]** を右クリックしてから、 **[編集]** をクリックします。  
 
@@ -328,7 +328,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 2.  **[セキュリティ]** タブをクリックし、 **[詳細設定]** をクリックしてから、 **[有効なアクセス]** タブをクリックします。  
 
-3.  ユーザーのアクセス許可を確認するには、 **[ユーザーの選択]** をクリックし、ユーザーの名前を入力して、有効な **[アクセスの表示]** をクリックします。有効なアクセス権が表示されます。 以下に例を示します。  
+3.  ユーザーのアクセス許可を確認するには、 **[ユーザーの選択]** をクリックし、ユーザーの名前を入力して、有効な **[アクセスの表示]** をクリックします。有効なアクセス権が表示されます。 次に、例を示します。  
 
     -   Myriam Delesalle (MDelesalle) は金融部門に属しており、フォルダーに対する読み取りアクセス権を必要としています。  
 
@@ -340,11 +340,11 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
     有効なアクセス ウィンドウの **アクセスの制限者** とう最後の列に注目してください。 この列には、ユーザーのアクセス許可に影響を与えるゲートが示されます。 この場合、共有および NTFS のアクセス許可により、すべてのユーザーにフル コントロールが許可されています。 ただし、集約型アクセス ポリシーは、以前に構成した規則に基づいてアクセスを制限します。  
 
-## <a name="BKMK_1.5"></a>保存ポリシーを変更およびステージングする  
+## <a name="BKMK_1.5"></a>管理: ポリシーを変更してステージングする  
 
 ||||  
 |-|-|-|  
-|数値|手順|例|  
+|Number|手順|例|  
 |4.1|クライアント用のデバイスの信頼性情報を構成する|グループ ポリシー設定を設定してデバイスの信頼性情報を有効にします。|  
 |4.2|デバイスの信頼性情報を有効にする|デバイスの国の信頼性情報の種類を有効にします。|  
 |4.3|変更する既存の集約型アクセス規則にステージング ポリシーを追加する|金融ドキュメント規則を変更して、ステージング ポリシーを追加します。|  
@@ -360,7 +360,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 #### <a name="to-enable-a-claim-for-devices"></a>デバイスの信頼性情報を有効にするには  
 
-1. Hyper-v マネージャーでサーバー DC1 を開き、パスワード<strong>pass@word1</strong>で contoso\Administrator としてログオンします。  
+1. Hyper-v マネージャーでサーバー DC1 を開き、パスワード<strong>pass@word1</strong>を使用して contoso\Administrator としてログオンします。  
 
 2. **[ツール]** メニューから Active Directory 管理センターを開きます。  
 
@@ -373,7 +373,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 #### <a name="to-create-a-staging-policy-rule-and-add-it-to-the-central-access-policy"></a>ステージング ポリシー規則を作成して集約型アクセス ポリシーに追加するには  
 
-1. Hyper-v マネージャーでサーバー DC1 を開き、パスワード<strong>pass@word1</strong>で contoso\Administrator としてログオンします。  
+1. Hyper-v マネージャーでサーバー DC1 を開き、パスワード<strong>pass@word1</strong>を使用して contoso\Administrator としてログオンします。  
 
 2. Active Directory 管理センターを開きます。  
 
@@ -402,7 +402,7 @@ New-ADCentralAccessRule "Finance Documents Rule" -CurrentAcl $currentAcl -Resour
 
 12. **[OK]** を 2 回クリックして完了します。  
 
-@no__t 0solution ガイド](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+![ソリューションガイド](media/Deploy-a-Central-Access-Policy--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
 
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
 
@@ -427,13 +427,13 @@ Set-ADCentralAccessRule
 
 2. コマンド プロンプト ウィンドウを開き、**gpupdate /force** と入力します。 これにより、グループ ポリシーの変更がサーバーで有効になります。  
 
-3. Hyper-V マネージャーでサーバー CLIENT1 に接続します。 現在ログオンしているユーザーをログオフします。 仮想マシン CLIENT1 を再起動します。 次に、contoso\EValle pass@word1 を使用してコンピューターにログオンします。  
+3. Hyper-V マネージャーでサーバー CLIENT1 に接続します。 現在ログオンしているユーザーをログオフします。 仮想マシン CLIENT1 を再起動します。 次に、contoso\EValle pass@word1を使用してコンピューターにログオンします。  
 
-4. デスクトップのショートカットをダブルクリックして \\ \ File1\finance documents ドキュメントにします。 EValle は引き続きファイルにアクセスできます。 FILE1 に切り替えます。  
+4. デスクトップのショートカットをダブルクリックして、\FILE1\Finance ドキュメントを \\します。 EValle は引き続きファイルにアクセスできます。 FILE1 に切り替えます。  
 
 5. デスクトップのショートカットから **[イベント ビューアー]** を開きます。 **[Windows ログ]** を展開してから、 **[セキュリティ]** を選択します。 **[集約型アクセスポリシーステージング]** タスクカテゴリで、**イベント ID 4818**のエントリを開きます。 EValle にアクセスが許可されていたことが分かります。ただし、ステージング ポリシーに従えば、このユーザーはアクセスが拒否されていました。  
 
-## <a name="next-steps"></a>次の手順  
+## <a name="next-steps"></a>次のステップ  
 System Center Operations Manager などの集約型サーバー管理システムがある場合、イベントをモニターするように構成することもできます。 これにより、管理者は、集約型アクセス ポリシーを適用する前にその効果をモニターできます。  
 
 
