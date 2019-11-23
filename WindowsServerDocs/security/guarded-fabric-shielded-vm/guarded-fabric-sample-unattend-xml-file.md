@@ -17,7 +17,7 @@ ms.locfileid: "71386505"
 ---
 # <a name="create-os-specialization-answer-file"></a>OS 特殊化応答ファイルの作成
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 シールドされた Vm を展開する準備として、オペレーティングシステムの特殊化応答ファイルを作成する必要がある場合があります。 Windows では、これは "unattend.xml" ファイルと呼ばれることがよくあります。 **ShieldingDataAnswerFile** Windows PowerShell 関数を使用すると、これを行うことができます。 この応答ファイルは、System Center Virtual Machine Manager (またはその他のファブリックコントローラー) を使用してテンプレートからシールドされた Vm を作成するときに使用できます。
 
@@ -31,9 +31,9 @@ ms.locfileid: "71386505"
 Install-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0
 ```
 
-@No__t 0 の出力を、追加のアーティファクトと共にシールドデータにパッケージ化して、テンプレートからシールドされた Vm を作成することができます。
+`unattend.xml` の出力を、追加のアーティファクトと共にシールドデータにパッケージ化して、テンプレートからシールドされた Vm を作成することができます。
 
-次のセクションでは、さまざまなオプションを含む @no__t 0 ファイルの関数パラメーターを使用する方法について説明します。
+次のセクションでは、さまざまなオプションを含む `unattend.xml` ファイルに対して関数パラメーターを使用する方法について説明します。
 
 - [基本的な Windows 応答ファイル](#basic-windows-answer-file)
 - [ドメイン参加を含む Windows 応答ファイル](#windows-answer-file-with-domain-join)
@@ -76,7 +76,7 @@ New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials
 
 次のコマンドは、System Center Virtual Machine Manager などのファブリックマネージャーによって展開時に提供される静的 IP アドレスを使用する Windows 応答ファイルを作成します。
 
-Virtual Machine Manager は、IP プールを使用して静的 IP アドレスに3つのコンポーネントを提供します。IPv4 アドレス、IPv6 アドレス、ゲートウェイアドレス、および DNS アドレス。 追加のフィールドを含める場合、またはカスタムネットワーク構成が必要な場合は、スクリプトによって生成される応答ファイルを手動で編集する必要があります。
+Virtual Machine Manager は、IP プール (IPv4 アドレス、IPv6 アドレス、ゲートウェイアドレス、DNS アドレス) を使用して、静的 IP アドレスに3つのコンポーネントを提供します。 追加のフィールドを含める場合、またはカスタムネットワーク構成が必要な場合は、スクリプトによって生成される応答ファイルを手動で編集する必要があります。
 
 次のスクリーンショットは、Virtual Machine Manager で構成できる IP プールを示しています。 静的 IP を使用する場合は、これらのプールが必要です。
 
@@ -92,7 +92,7 @@ Virtual Machine Manager は、IP プールを使用して静的 IP アドレス�
 
 ![静的 IP を使用するようにハードウェアを構成する](../media/Guarded-Fabric-Shielded-VM/guarded-host-unattend-static-ip-address-pool-network-adapter-settings.png)
 
-次に、`-StaticIPPool` パラメーターを使用して、応答ファイルに静的 IP 要素を含めることができます。 応答ファイルの `@IPAddr-1@`、`@NextHop-1-1@`、`@DNSAddr-1-1@` のパラメーターは、配置時に Virtual Machine Manager で指定した実際の値に置き換えられます。
+次に、`-StaticIPPool` パラメーターを使用して、静的 IP 要素を応答ファイルに含めることができます。 応答ファイルのパラメーター `@IPAddr-1@`、`@NextHop-1-1@`、および `@DNSAddr-1-1@` は、デプロイ時に Virtual Machine Manager で指定した実際の値に置き換えられます。
 
 ```powershell
 $adminCred = Get-Credential -Message "Local administrator account"

@@ -36,9 +36,9 @@ bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge} 
 
 |パラメーター|説明|
 |---------|-----------|
-|@no__t 0DriveLetter ドライブ文字 >|指定されたターゲットドライブに割り当てられるドライブ文字を定義します。|
+|\<のドライブ文字 >|指定されたターゲットドライブに割り当てられるドライブ文字を定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 ベストプラクティスとして、システムドライブにドライブ文字を割り当てないことをお勧めします。
 

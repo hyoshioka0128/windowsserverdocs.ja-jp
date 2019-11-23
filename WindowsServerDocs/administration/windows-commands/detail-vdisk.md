@@ -22,9 +22,9 @@ ms.locfileid: "71378559"
 ---
 # <a name="detail-vdisk"></a>詳細 vdisk
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-選択したバーチャルハードディスク \(VHD @ no__t-1 のプロパティを表示します。  
+選択したバーチャルハードディスク \(VHD\)のプロパティが表示されます。  
   
 ## <a name="syntax"></a>構文  
   
@@ -32,7 +32,7 @@ ms.locfileid: "71378559"
 detail vdisk  
 ```  
   
-## <a name="remarks"></a>コメント  
+## <a name="remarks"></a>注釈  
   
 -   この操作を成功させるには、VHD を選択する必要があります。 **Select vdisk**コマンドを使用して vdisk を選択し、それにフォーカスを移動します。  
   

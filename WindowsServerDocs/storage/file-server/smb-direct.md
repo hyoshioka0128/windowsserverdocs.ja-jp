@@ -17,11 +17,11 @@ ms.locfileid: "71394460"
 ---
 # <a name="smb-direct"></a>SMB ダイレクト
 
->適用対象:Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
+>適用対象: Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
 
 Windows Server 2012 R2、Windows Server 2012、および Windows Server 2016 には、SMB ダイレクトと呼ばれる機能が含まれています。これにより、リモートダイレクトメモリアクセス (RDMA) 機能を搭載したネットワークアダプターの使用がサポートされます。 RDMA を搭載するネットワーク アダプターは、遅延がきわめて小さく、CPU をほとんど使用せずに、最高速度で動作できます。 Hyper-V や Microsoft SQL Server などのワークロードについては、この機能によってリモート ファイル サーバーをローカル ストレージのように利用することができます。 SMB ダイレクトの特徴を以下に示します。
 
-- スループットの向上:ネットワーク アダプターが回線速度で大量のデータの転送を調整する高速ネットワークの完全スループットを活用します。
+- 高スループット: ネットワーク アダプターが大量のデータの転送を回線速度で調整する高速ネットワークのスループットを最大限に活用できます。
 - 低い待機時間:ネットワーク要求に対する応答が非常に高速であるため、リモート ファイル記憶域を、直接接続されたブロック記憶域のような感覚で使用できます。
 - 低い CPU 使用率:データをネットワークで転送するときに使用される CPU サイクルを節約して、サーバー アプリケーションで使用できる処理能力を増やすことができます。
 
@@ -124,5 +124,5 @@ SMB ダイレクトのフェールオーバー機能を確認するには、次�
 ## <a name="more-information"></a>詳細情報
 
 - [サーバーメッセージブロックの概要](file-server-smb-overview.md)
-- @no__t サーバー、記憶域、およびネットワークの可用性を向上させるには、次のようにします。シナリオの概要](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
+- [サーバー、記憶域、およびネットワークの可用性の向上: シナリオの概要](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
 - [Hyper-v over SMB の展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)

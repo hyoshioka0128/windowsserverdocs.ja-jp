@@ -22,7 +22,7 @@ ms.locfileid: "71403310"
 ---
 # <a name="security-support-provider-interface-architecture"></a>セキュリティ サポート プロバイダー インターフェイスのアーキテクチャ
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 IT プロフェッショナル向けのこのリファレンストピックでは、セキュリティサポートプロバイダインターフェイス (SSPI) アーキテクチャで使用される Windows 認証プロトコルについて説明します。
 
@@ -89,9 +89,9 @@ Kerberos プロトコルは Windows 2000 以降の既定の認証プロトコル
 
 -   [Microsoft Kerberos (Windows)](https://msdn.microsoft.com/library/aa378747(VS.85).aspx)
 
--   [ @ NO__T-1 ミリ秒-KILE @:Kerberos プロトコル拡張機能 @ no__t-0
+-   [\[MS-16\]: Kerberos プロトコル拡張機能](https://msdn.microsoft.com/library/cc233855(PROT.10).aspx)
 
--   [ @ NO__T-1 ミリ秒-SFU @ NO__T:Kerberos プロトコル拡張機能:ユーザーおよび制約付き委任プロトコルの仕様 @ no__t のサービス
+-   [\[MS SFU\]: Kerberos プロトコル拡張機能: ユーザーと制約付き委任プロトコルの仕様のサービス](https://msdn.microsoft.com/library/cc246071(PROT.13).aspx)
 
 -   [Kerberos SSP/AP (Windows)](https://msdn.microsoft.com/library/aa377942(VS.85).aspx)
 
@@ -114,7 +114,7 @@ Ntlm セキュリティサポートプロバイダー (NTLM SSP) は、NTLM チ�
 
 -   リモートプロシージャコールサービスまたは DCOM サービスをセキュリティで保護する
 
-場所:%windir%\Windows\System32\msv1_0.dll
+場所:%windir%\Windows\System32\ msv1_0
 
 このプロバイダーは、このトピックの冒頭にある「**適用対象**」の一覧に記載されているバージョンと、windows Server 2003 および windows XP に既定で含まれています。
 
@@ -145,7 +145,7 @@ Ntlm セキュリティサポートプロバイダー (NTLM SSP) は、NTLM チ�
 
 -   [Microsoft ダイジェスト認証 (Windows)](https://msdn.microsoft.com/library/aa378745(VS.85).aspx)
 
--   [ @ NO__T-1 ミリ秒-DPSP @ NO__T:ダイジェストプロトコル拡張機能 @ no__t-0
+-   [\[MS-DPSP\]: ダイジェストプロトコルの拡張機能](https://msdn.microsoft.com/library/cc227906(PROT.13).aspx)
 
 ### <a name="BKMK_SchannelSSP"></a>Schannel セキュリティサポートプロバイダ
 セキュリティで保護されたチャネル (Schannel) は、ユーザーがセキュリティで保護された web サーバーにアクセスしようとした場合など、web ベースのサーバー認証に使用されます。
@@ -183,7 +183,7 @@ DTLS は、アプリケーションによって明示的に呼び出されたと
 
 -   [TLS/SSL テクニカルリファレンス](https://technet.microsoft.com/library/cc784149(v=ws.10).aspx)
 
--   [ @ NO__T-1 ミリ秒-TLSP @ NO__T:Transport Layer Security (TLS) Profile @ no__t-0
+-   [\[MS TLSP\]: Transport Layer Security (TLS) プロファイル](https://msdn.microsoft.com/library/dd207968(PROT.13).aspx)
 
 ### <a name="BKMK_NegoSSP"></a>セキュリティサポートプロバイダーのネゴシエート
 Simple and Protected GSS API ネゴシエーションメカニズム (SPNEGO) は、特定の認証プロトコルのネゴシエーションに使用できる Negotiate SSP の基礎を形成します。 アプリケーションが SSPI を呼び出してネットワークにログオンするときに、要求を処理する SSP を指定できます。 アプリケーションで Negotiate SSP が指定されている場合は、要求を分析し、顧客が構成したセキュリティポリシーに基づいて、要求を処理するための適切なプロバイダーを選択します。
@@ -200,9 +200,9 @@ SPNEGO は、RFC 2478 で指定されています。
 
 -   [Microsoft Negotiate (Windows)](https://msdn.microsoft.com/library/aa378748(VS.85).aspx)
 
--   [ @ NO__T-1 ミリ秒-SPNG @ NO__T:Simple および Protected GSS-API ネゴシエーションメカニズム (SPNEGO) 拡張機能 @ no__t-0
+-   [\[MS-SPNG\]: Simple および Protected GSS-API ネゴシエーションメカニズム (SPNEGO) の拡張機能](https://msdn.microsoft.com/library/cc247021(PROT.13).aspx)
 
--   [ @ NO__T-1 ミリ秒-N2HT @ NO__T:Negotiate と Nego2 HTTP Authentication Protocol Specification @ no__t-0
+-   [\[N2HT\]: Negotiate と Nego2 HTTP 認証プロトコルの仕様](https://msdn.microsoft.com/library/dd303576(PROT.13).aspx)
 
 ### <a name="BKMK_CredSSP"></a>資格情報セキュリティサポートプロバイダ
 Credential Security Service Provider (CredSSP) は、新しいターミナルサービスとリモートデスクトップサービスセッションを開始するときにシングルサインオン (SSO) ユーザーエクスペリエンスを提供します。 CredSSP を使用すると、アプリケーションは、クライアントのポリシーに基づいて、(クライアント側の SSP を使用して) クライアントコンピューターからターゲットサーバーにユーザーの資格情報を委任することができます。 CredSSP ポリシーはグループポリシーを使用して構成され、資格情報の委任は既定で無効になっています。
@@ -213,7 +213,7 @@ Credential Security Service Provider (CredSSP) は、新しいターミナルサ
 
 **資格情報 SSP に関するその他のリソース**
 
--   [ @ NO__T-1 ミリ秒-CSSP @ NO__T:Credential Security Support Provider (CredSSP) プロトコル Specification @ no__t-0
+-   [\[MS-CSSP\]: Credential Security Support Provider (CredSSP) プロトコル仕様](https://msdn.microsoft.com/library/cc226764(PROT.13).aspx)
 
 -   [資格情報セキュリティサービスプロバイダーとターミナルサービスログオン用 SSO](https://technet.microsoft.com/library/cc749211(v=ws.10).aspx)
 

@@ -19,7 +19,7 @@ ms.locfileid: "71393037"
 ---
 # <a name="windows-vista-should-be-configured-with-at-least-the-minimum-amount-of-memory"></a>Windows Vista をする必要があります最小メモリ量以上で構成
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 ベスト プラクティスとスキャンの詳細については、「 [ベスト プラクティス アナライザー](https://go.microsoft.com/fwlink/?LinkId=122786)」をご覧ください。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71393037"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|Error|  
+|**順**|エラー|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
@@ -40,7 +40,7 @@ ms.locfileid: "71393037"
   
 *次の仮想マシン上のゲストオペレーティングシステムが実行されていないか、または信頼性の高い動作をしていない可能性があります。*  
   
-@no__t-仮想マシン名の一覧 >  
+仮想マシン名の \<一覧 >  
   
 ## <a name="resolution"></a>解決方法  
   
@@ -64,13 +64,13 @@ ms.locfileid: "71393037"
   
 2.  右クリック **Windows PowerShell**  をクリック **管理者として実行**します。  
   
-3.  @No__t-0MyVM > を仮想マシンの名前に置き換えた後、次のコマンドを実行します。  
+3.  \<MyVM > を仮想マシンの名前に置き換えた後、次のコマンドを実行します。  
   
 ```  
 Set-VMMemory <MyVM> -StartupBytes 512MB  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [設定-VMMemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 

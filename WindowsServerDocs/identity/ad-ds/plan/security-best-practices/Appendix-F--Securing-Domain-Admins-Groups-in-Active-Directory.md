@@ -16,21 +16,21 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71408691"
 ---
-# <a name="appendix-f-securing-domain-admins-groups-in-active-directory"></a>付録 F:Active Directory で Domain Admins グループをセキュリティで保護する
+# <a name="appendix-f-securing-domain-admins-groups-in-active-directory"></a>付録 F: Active Directory の Domain Admins グループをセキュリティで保護する
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-## <a name="appendix-f-securing-domain-admins-groups-in-active-directory"></a>付録 F:Active Directory で Domain Admins グループをセキュリティで保護する  
-Enterprise Admins (EA) グループの場合と同様に、ドメイン管理者 (DA) グループのメンバーシップは、ビルドまたはディザスターリカバリーのシナリオでのみ必要になります。 DA グループには、ドメインの組み込みの Administrator アカウントを除き、毎日のユーザーアカウントは存在しないようにする必要があります。ただし、[Appendix D で説明されているようにセキュリティで保護されている場合は、Active Directory @ no__t-0 でビルトイン Administrator アカウントをセキュリティで保護します。  
+## <a name="appendix-f-securing-domain-admins-groups-in-active-directory"></a>付録 F: Active Directory の Domain Admins グループをセキュリティで保護する  
+Enterprise Admins (EA) グループの場合と同様に、ドメイン管理者 (DA) グループのメンバーシップは、ビルドまたはディザスターリカバリーのシナリオでのみ必要になります。 [「付録 D: Active Directory での組み込みの管理者アカウントのセキュリティ保護](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)」の説明に従って保護されている場合は、ドメインの組み込みの administrator アカウントを除き、日常のユーザーアカウントが DA グループに存在しないようにする必要があります。  
 
 ドメイン管理者は、既定では、各ドメインのすべてのメンバーサーバーおよびワークステーション上のローカル Administrators グループのメンバーになります。 この既定の入れ子は、サポート性とディザスターリカバリーのために変更しないでください。 ドメイン管理者がメンバーサーバーのローカルの Administrators グループから削除されている場合は、ドメイン内の各メンバーサーバーおよびワークステーションの Administrators グループにグループを追加する必要があります。 各ドメインの Domain Admins グループは、後で説明する手順に従ってセキュリティで保護する必要があります。  
 
 フォレスト内の各ドメインの Domain Admins グループについて、次のようにします。  
 
-1.  ドメインの組み込みの Administrator アカウントを例外として、グループからすべてのメンバーを削除します。ただし、「[Appendix D:Active Directory @ no__t-0 でビルトイン Administrator アカウントをセキュリティで保護します。  
+1.  [「付録 D: Active Directory での組み込み管理者アカウントのセキュリティ保護](../../../ad-ds/plan/security-best-practices/Appendix-D--Securing-Built-In-Administrator-Accounts-in-Active-Directory.md)」の説明に従ってセキュリティで保護されている場合は、グループからすべてのメンバーを削除します。  
 
-2.  各ドメインのメンバーサーバーとワークステーションが含まれている Ou にリンクされた Gpo では、**コンピューター Configuration\Policies\Windows の設定 \ 権利の権限の割り当て**において、次のユーザー権利に DA グループを追加する必要があります。:  
+2.  各ドメインのメンバーサーバーとワークステーションが含まれている Ou にリンクされた Gpo では、**コンピューター Configuration\Policies\Windows の 権利**\ ユーザー権利の割り当てにおいて、次のユーザー権利に DA グループを追加する必要があります。  
 
     -   ネットワークからのこのコンピューターへのアクセスを拒否する  
 
@@ -62,17 +62,17 @@ Enterprise Admins (EA) グループの場合と同様に、ドメイン管理者
 
 1.  **サーバーマネージャー**で、 **[ツール]** をクリックし、 **[グループポリシーの管理]** をクリックします。  
 
-2.  コンソールツリーで、グループポリシー [\<Forest @ no__t-1 @ no__t-2Domains @ no__t] を展開し、 **[オブジェクト]** をクリックします (\<forest @ no__t-8 はフォレストの名前、\<domain @ no__t-10 はドメインの名前です。グループポリシー) を設定します。  
+2.  コンソールツリーで、\<\>フォレスト を展開して \\ドメイン\\\<ドメイン\> を展開して**グループポリシーオブジェクト**(\<のフォレスト\> はフォレストの名前、\<ドメイン\> はグループポリシーを設定するドメインの名前です)。  
 
 3.  コンソールツリーで、 **[グループポリシーオブジェクト]** を右クリックし、 **[新規]** をクリックします。  
 
     ![セキュリティで保護されたドメイン管理者グループ](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_63.gif)  
 
-4.  **[新しい gpo]** ダイアログボックスで、\<gpo 名 @ no__t-2 を入力し、[ **OK]** をクリックします (\<gpo 名 @ no__t はこの GPO の名前です)。  
+4.  **[新しい gpo]** ダイアログボックスで、「\<gpo 名\>」と入力し、 **[OK]** をクリックします (\<gpo 名\> はこの gpo の名前です)。  
 
     ![セキュリティで保護されたドメイン管理者グループ](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_64.gif)  
 
-5.  詳細ウィンドウで、[\<GPO 名 @ no__t-1] を右クリックし、 **[編集]** をクリックします。  
+5.  詳細ウィンドウで、[\<GPO 名\>] を右クリックし、 **[編集]** をクリックします。  
 
 6.  **Computer Configuration\Policies\Windows** 権利 ポリシー に移動し、**ユーザー権利の割り当て** をクリックします。  
 
@@ -142,7 +142,7 @@ Enterprise Admins (EA) グループの場合と同様に、ドメイン管理者
 
 13. グループポリシー管理で、次の手順に従って、GPO をメンバーサーバーとワークステーションの Ou にリンクします。  
 
-    1.  @No__t-0Forest @ no__t-2 @ no__t-3Domain @ no__t-4 (ここで、\<Forest @ no__t-6 はフォレストの名前、\<Domain @ no__t はグループポリシーを設定するドメインの名前です) に移動します (& a)。  
+    1.  \<フォレスト\>\ Domains\\\<ドメイン\> に移動します (\<Forest\> はフォレストの名前、\<ドメイン\> はグループポリシーを設定するドメインの名前です)。  
 
     2.  GPO が適用される OU を右クリックし、[既存の**gpo のリンク**] をクリックします。  
 
@@ -174,7 +174,7 @@ GPO の変更 ("ジャンプサーバー" など) の影響を受けていない
 
     ![セキュリティで保護されたドメイン管理者グループ](media/Appendix-F--Securing-Domain-Admins-Groups-in-Active-Directory/SAD_73.gif)  
 
-5.  **コマンドプロンプト**ウィンドウで、「 **net use \\ @ no__t-3 @ No__t-4server name @ no__t-5\c $** 」と入力します。ここで、\<server name @ no__t は、ネットワーク経由でアクセスしようとしているメンバーサーバーまたはワークステーションの名前です。  
+5.  **コマンドプロンプト**ウィンドウで、「 **net use \\\\\<サーバー名\>\c $** 」と入力します。ここで、\<server Name\> は、ネットワーク経由でアクセスしようとしているメンバーサーバーまたはワークステーションの名前です。  
 
 6.  次のスクリーンショットは、表示する必要があるエラーメッセージを示しています。  
 
@@ -194,7 +194,7 @@ GPO の変更の影響を受けたメンバーサーバーまたはワークス�
 
 4.  **[ファイル]** をクリックし、 **[名前を付けて保存]** をクリックします。  
 
-5.  [**ファイル**名] フィールドに、「 **\<Filename\>.bat** 」と入力します (\<filename @ no__t は新しいバッチファイルの名前です)。  
+5.  [**ファイル**名] フィールドに **\<filename\>.Bat** (\<filename\> は新しいバッチファイルの名前) を入力します。  
 
 ###### <a name="schedule-a-task"></a>タスクのスケジュール設定  
 
@@ -207,7 +207,7 @@ GPO の変更の影響を受けたメンバーサーバーまたはワークス�
 
 3.  **タスクスケジューラ**のメニューバーで **[アクション]** をクリックし、 **[タスクの作成]** をクリックします。  
 
-4.  **[タスクの作成]** ダイアログボックスで、「 **\<task name @ no__t-3** 」と入力します (\<task name @ no__t-5 は新しいタスクの名前です)。  
+4.  **[タスクの作成]** ダイアログボックスで、「 **\<タスク名\>** 」と入力します (\<タスク名\> は新しいタスクの名前です)。  
 
 5.  **[操作]** タブをクリックし、 **[新規作成]** をクリックします。  
 

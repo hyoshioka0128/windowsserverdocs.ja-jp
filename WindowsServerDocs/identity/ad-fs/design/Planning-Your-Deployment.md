@@ -18,12 +18,12 @@ ms.locfileid: "71407997"
 ---
 # <a name="planning-your-deployment"></a>展開の計画
 
-Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-5 を使用して、クロス @ no__t-0organizational \(federation @ no__t-2based コラボレーションを計画する場合は、まず、組織が他のユーザーによってアクセスされる Web リソースをホストするかどうかを決定します。インターネットを介した組織、または組織内の従業員の Web リソースへのアクセスを提供する場合。 この決定は AD FS の展開方法に影響し、AD FS インフラストラクチャの計画の基礎となります。  
+クロス\-組織 \(フェデレーション\-、Active Directory フェデレーションサービス (AD FS) \(AD FS を使用して\) コラボレーションを計画している場合は、まず、組織がインターネット経由で他の組織からアクセスする Web リソースをホストするか、組織内の従業員の Web リソースへのアクセスを提供するかを決定します。\) この決定は AD FS の展開方法に影響し、AD FS インフラストラクチャの計画の基礎となります。  
   
 > [!NOTE]  
 > 組織がフェデレーション契約で果たす役割をすべての当事者が明確に理解するようにしてください。  
   
-[フェデレーション WEB SSO 設計](Federated-Web-SSO-Design.md)では、AD FS は、*アカウントパートナー*の \(also 管理スナップでは*id プロバイダー*とも呼ばれています。これは、@ no__t と*リソース*@no__t*パートナーの管理スナップの @ no__t-4in も参照されます。* @no__t アカウントをホストしている組織を区別するために、@ no__t-10 の AD FS Management スナップ @ no__t-9 の証明書利用者が、Web @ no__t ベースのリソースをホストする組織のアカウントパートナー @ no__t を区別できるようにしました 4thepartner @ no__t-15。  
+[フェデレーション WEB SSO 設計](Federated-Web-SSO-Design.md)では、AD FS は、\) の AD FS 管理スナップ\-で*id プロバイダー*とも呼ばれる*アカウントパートナー* \(のような用語を*使用し、* \(の AD FS 管理スナップ\-で*証明書利用者*と呼ばれることもあり\) アカウントをホストする組織を、Web \(ベースのリソースをホストしている組織から区別するのに役立ち\)リソースパートナー\)。\-\(  
   
 [Web SSO Design](Web-SSO-Design.md)では、組織はユーザーに対してアプリケーションへのアクセスを提供するため、アカウント パートナーとリソース パートナー両方の役割を実行します。  
   
@@ -41,7 +41,7 @@ Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-5 
   
 -   [リソース パートナー組織での AD FS の展開](Deploying-AD-FS-in-the-Resource-Partner-Organization-2012.md)  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 
 

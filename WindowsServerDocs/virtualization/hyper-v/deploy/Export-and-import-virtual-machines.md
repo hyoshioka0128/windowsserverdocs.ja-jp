@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71392977"
 ---
->適用先:Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
+>適用対象: Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
 # <a name="export-and-import-virtual-machines"></a>仮想マシンのエクスポートとインポート
 
@@ -38,7 +38,7 @@ ms.locfileid: "71392977"
 
 ### <a name="using-powershell"></a>PowerShell を使用する
 
-管理者としてセッションを開き、次のようなコマンドを実行します。 \<vm name @ no__t-1 と \<path @ no__t:
+管理者としてセッションを開き、次のようなコマンドを実行します。 \<vm 名\> と \<パス\>を置き換えます。
 
 ```powershell
 Export-VM -Name \<vm name\> -Path \<path\>
@@ -66,7 +66,7 @@ Export-VM -Name \<vm name\> -Path \<path\>
 
 5. インポートの種類を選択し、 **[次へ]** をクリックします。 (詳細については、以下の「[型のインポート](#import-types)」を参照してください)。
 
-6. **[完了]** をクリックします。
+6. **[Finish]** (完了) をクリックします。
 
 ### <a name="import-using-powershell"></a>PowerShell を使用したインポート
 
@@ -80,7 +80,7 @@ Export-VM -Name \<vm name\> -Path \<path\>
 Import-VM -Path 'C:\<vm export path>\2B91FEB3-F1E0-4FFF-B8BE-29CED892A95A.vmcx' 
 ```
 
-#### <a name="restore"></a>[復元]
+#### <a name="restore"></a>復元
 
 仮想マシンファイルの独自のパスを指定して仮想マシンをインポートするには、次のようなコマンドを実行します。例は実際の値に置き換えてください。
 

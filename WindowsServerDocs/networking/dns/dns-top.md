@@ -17,7 +17,7 @@ ms.locfileid: "71406168"
 ---
 # <a name="domain-name-system-dns"></a>ドメイン ネーム システム (DNS)
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 ドメインネームシステム (DNS) は、TCP/IP を構成する業界標準のプロトコルスイートの1つであり、DNS クライアントと DNS サーバーの組み合わせにより、コンピューター名から IP アドレスへのマッピング名前解決サービスがコンピューターとユーザーに提供されます。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71406168"
 > -   [DNS クライアントの新機能](What-s-New-in-DNS-Client.md)  
 > -   [DNS サーバーの新機能](What-s-New-in-DNS-Server.md)  
 > -   [DNS ポリシーシナリオガイド](deploy/DNS-Policy-Scenario-Guide.md)  
-> -   ビデオ:[Windows Server 2016:IPAM @ no__t での DNS 管理  
+> -   ビデオ: [Windows Server 2016: IPAM での DNS 管理](https://channel9.msdn.com/Blogs/windowsserver/Windows-Server-2016-DNS-management-in-IPAM)  
   
 Windows Server 2016 では、DNS はサーバーの役割であり、サーバーマネージャーまたは Windows PowerShell コマンドを使用してインストールできます。 新しい Active Directory フォレストとドメインをインストールする場合は、フォレストとドメインのグローバルカタログサーバーとして Active Directory と共に DNS が自動的にインストールされます。  
   

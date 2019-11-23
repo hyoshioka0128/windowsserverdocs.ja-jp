@@ -17,7 +17,7 @@ ms.locfileid: "71385232"
 ---
 # <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>ツール拡張機能でカスタムのゲートウェイ プラグインを使用する
 
->適用先:Windows Admin Center、Windows Admin Center Preview
+>適用対象: Windows Admin Center、Windows Admin Center Preview
 
 この記事では、Windows 管理センター CLI で作成した新しい空のツール拡張機能でカスタムゲートウェイプラグインを使用します。
 
@@ -35,7 +35,7 @@ ms.locfileid: "71385232"
 
 ### <a name="create-pluginservicets"></a>プラグインの作成. service. ts
 
-上で作成した新しいツールモジュールのディレクトリ (```\src\app\{!Module-Name}```) に移動し、新しいファイル ```plugin.service.ts``` を作成します。
+上で作成した新しいツールモジュール (```\src\app\{!Module-Name}```) のディレクトリに移動し、新しいファイル ```plugin.service.ts```を作成します。
 
 先ほど作成したファイルに次のコードを追加します。
 ``` ts
@@ -61,14 +61,14 @@ export class PluginService {
 }
 ```
 
-必要に応じて、```Sample Uno``` および ```Sample%20Uno``` への参照を機能名に変更します。
+```Sample Uno``` への参照を変更し、必要に応じて機能名に ```Sample%20Uno``` します。
 
 [!WARNING]
-> カスタムゲートウェイプラグインで定義されている API を呼び出すには、```this.appContextService.node``` の組み込みを使用することをお勧めします。 これにより、ゲートウェイプラグイン内で資格情報が要求された場合に、適切に処理されるようになります。
+> 組み込みの ```this.appContextService.node``` は、カスタムゲートウェイプラグインで定義されている API を呼び出すために使用することをお勧めします。 これにより、ゲートウェイプラグイン内で資格情報が要求された場合に、適切に処理されるようになります。
 
 ### <a name="modify-modulets"></a>モジュールを変更します。
 
-前の手順で作成した新しいモジュールの @no__t 0 ファイルを開きます (つまり、```{!Module-Name}.module.ts```)。
+前の手順で作成した新しいモジュール (```{!Module-Name}.module.ts```) の ```module.ts``` ファイルを開きます。
 
 次の import ステートメントを追加します。
 
@@ -91,7 +91,7 @@ import { PluginService } from './plugin.service';
 
 ### <a name="modify-componentts"></a>コンポーネントを変更します。 ts
 
-前の手順で作成した新しいモジュールの @no__t 0 ファイルを開きます (つまり、```{!Module-Name}.component.ts```)。
+前の手順で作成した新しいモジュール (```{!Module-Name}.component.ts```) の ```component.ts``` ファイルを開きます。
 
 次の import ステートメントを追加します。
 
@@ -135,7 +135,7 @@ import { PluginService } from './plugin.service';
 
 ### <a name="modify-componenthtml"></a>コンポーネント .html を変更する ###
 
-前の手順で作成した新しいモジュールの @no__t 0 ファイルを開きます (つまり、```{!Module-Name}.component.html```)。
+前の手順で作成した新しいモジュール (```{!Module-Name}.component.html```) の ```component.html``` ファイルを開きます。
 
 次の内容を html ファイルに追加します。
 ``` html

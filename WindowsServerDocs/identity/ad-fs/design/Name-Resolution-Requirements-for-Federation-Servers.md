@@ -18,7 +18,7 @@ ms.locfileid: "71408041"
 ---
 # <a name="name-resolution-requirements-for-federation-servers"></a>フェデレーション サーバーの名前解決の要件
 
-企業ネットワーク上のクライアントコンピューターが Active Directory フェデレーションサービス (AD FS) \(AD FS @ no__t-1 で保護されているアプリケーションまたは Web サービスにアクセスしようとすると、最初にフェデレーションサーバーに対して認証を行う必要があります。 認証する方法の 1 つでは、会社のネットワーク クライアントが Windows 統合認証を通じて、ローカルのフェデレーション サーバーにアクセスします。  
+企業ネットワーク上のクライアントコンピューターが Active Directory フェデレーションサービス (AD FS) \(\)AD FS によって保護されているアプリケーションまたは Web サービスにアクセスしようとすると、まずフェデレーションサーバーに対して認証を行う必要があります。 認証する方法の 1 つでは、会社のネットワーク クライアントが Windows 統合認証を通じて、ローカルのフェデレーション サーバーにアクセスします。  
   
 ## <a name="configure-corporate-dns"></a>企業 DNS を構成する  
 ローカルのフェデレーション サーバーで Windows 統合認証を通じて正常な名前解決を実行、ドメイン ネーム システム \(DNS\) アカウントの企業ネットワーク内には、新しいホストのパートナーを構成 \(A\) 完全修飾ドメイン名を解決するリソース レコード \(FQDN\) フェデレーション サーバー クラスターの IP アドレスにフェデレーション サーバーのホスト名です。  
@@ -27,12 +27,12 @@ ms.locfileid: "71408041"
   
 ![名の要件](media/adfs2_deploy_single_fs.gif)  
   
-NLB を使用するクラスターの IP アドレスまたはクラスターの FQDN を構成する方法については、[クラスター パラメーターの指定](https://go.microsoft.com/fwlink/?LinkId=75282)を参照してください。  
+NLB を使用する FQDN をクラスターまたはクラスターの IP アドレスを構成する方法については、次を参照してください。 [クラスター パラメーターを指定して](https://go.microsoft.com/fwlink/?LinkId=75282)します。  
   
-フェデレーション サーバーのために企業 DNS を構成する方法については、[企業 DNS にフェデレーション サーバーのホスト &#40;A&#41; リソース レコードを追加する](../../ad-fs/deployment/Add-a-Host--A--Resource-Record-to-Corporate-DNS-for-a-Federation-Server.md)を参照してください。  
+会社の DNS にフェデレーション サーバーを構成する方法については、次を参照してください [ホストと #40; を追加します。(&) #41 です。フェデレーション サーバー用の会社の DNS リソース レコード](../../ad-fs/deployment/Add-a-Host--A--Resource-Record-to-Corporate-DNS-for-a-Federation-Server.md)します。  
   
 境界ネットワーク内のフェデレーション サーバー プロキシを構成する方法については、 [フェデレーション サーバー プロキシの名前解決の要件](Name-Resolution-Requirements-for-Federation-Server-Proxies.md) を参照してください。  
   
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

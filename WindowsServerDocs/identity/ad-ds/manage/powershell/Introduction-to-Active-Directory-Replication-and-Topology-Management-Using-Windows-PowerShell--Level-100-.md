@@ -18,7 +18,7 @@ ms.locfileid: "71409084"
 ---
 # <a name="introduction-to-active-directory-replication-and-topology-management-using-windows-powershell-level-100"></a>Windows PowerShell を使用した Active Directory レプリケーションおよびトポロジの管理の概要 (レベル 100)
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory 用 Windows PowerShell には、レプリケーション、サイト、ドメイン、フォレスト、ドメイン コントローラー、およびパーティションの管理機能が含まれます。 従来の管理ツール ("Active Directory サイトとサービス" スナップイン、repadmin.exe など) のユーザーにとっては、同様の機能を Active Directory 用 Windows PowerShell のコンテキスト内で利用できることになります。 加えて、これらのコマンドレットは既存の Active Directory 用 Windows PowerShell コマンドレットと互換性があるため、エクスペリエンスが合理化されると共に、ユーザーは簡単に自動化スクリプトを作成できます。
 
@@ -27,10 +27,10 @@ Active Directory 用 Windows PowerShell には、レプリケーション、サ�
 > 
 > -    Windows Server 2012 ドメインコントローラー
 > -    AD DS および AD LDS のリモートサーバー管理ツールがインストールされた Windows Server 2012。
-> -   Windows @ no__t-0 8 (AD DS と AD LDS がインストールされているリモートサーバー管理ツール)。
+> -   Windows&reg; 8 とリモートサーバー管理ツール AD DS および AD LDS インストールされています。
 
 ## <a name="installing-the-active-directory-module-for-windows-powershell"></a>Windows PowerShell 用 Active Directory モジュールのインストール
-Windows Server 2012 を実行しているサーバーに AD DS サーバーの役割がインストールされている場合、Windows PowerShell の Active Directory モジュールは既定でインストールされます。 サーバー役割を追加する以外に、追加の手順は必要ありません。 また、リモートサーバー管理ツールをインストールして、Windows Server 2012 を実行しているサーバーに Active Directory モジュールをインストールすることもできます。また、Windows 8 を実行しているコンピューターに Active Directory モジュールをインストールするには、 [リモートサーバー管理ツール (RSAT)](https://www.microsoft.com/download/details.aspx?id=28972)。 インストール手順については、「 [Instructions (手順)](https://www.microsoft.com/download/details.aspx?id=28972)」を参照してください。
+Windows Server 2012 を実行しているサーバーに AD DS サーバーの役割がインストールされている場合、Windows PowerShell の Active Directory モジュールは既定でインストールされます。 サーバー役割を追加する以外に、追加の手順は必要ありません。 リモートサーバー管理ツールをインストールして、Windows Server 2012 を実行しているサーバーに Active Directory モジュールをインストールすることもできます。また、[リモートサーバー管理ツール (RSAT)](https://www.microsoft.com/download/details.aspx?id=28972)をダウンロードしてインストールすることにより、windows 8 を実行しているコンピューターに Active Directory モジュールをインストールできます。 インストール手順については、「 [Instructions (手順)](https://www.microsoft.com/download/details.aspx?id=28972)」を参照してください。
 
 ## <a name="scenarios-for-testing-windows-powershell-for-active-directory-replication-and-topology-management-cmdlets"></a>Active Directory 用 Windows PowerShell レプリケーションおよびトポロジ管理コマンドレットをテストするためのシナリオ
 次に示すのは、管理者が新しい管理コマンドレットを理解できるように設計されたシナリオです。
@@ -43,7 +43,7 @@ Windows Server 2012 を実行しているサーバーに AD DS サーバーの�
 
 ## <a name="lab-requirements"></a>ラボ要件
 
--   2つの Windows Server 2012 ドメインコントローラー:Contoso.com ドメインの一部であり、そのドメイン内の企業サイトに存在する**DC1**と**DC2** 。
+-   Contoso.com ドメインの一部であり、そのドメイン内の企業サイトに存在する2つの Windows Server 2012 ドメインコントローラー: **DC1**と**DC2** 。
 
 ## <a name="view-domain-controllers-and-their-sites"></a>ドメイン コントローラーとそのサイトの表示
 この手順では、Windows PowerShell 用 Active Directory モジュールを使用して、既存のドメイン コントローラーとドメインのレプリケーション トポロジを表示します。
@@ -63,9 +63,9 @@ Windows Server 2012 を実行しているサーバーに AD DS サーバーの�
     > [!TIP]
     > Tab キーを使用すると、オートコンプリート機能を使用して Windows PowerShell のコマンドを入力できます。
     > 
-    > 例:「`Get-ADRep`」と入力した後、Tab キーを押すと、対応するコマンドが表示されます。ここでは、Tab キーを何度か押して `Get-ADReplicationSite` を取得します。 オートコンプリート機能は、`Filter` などのパラメーター名にも有効です。
+    > 次に例を示します。「 `Get-ADRep` 」と入力した後、Tab キーを押すと、対応するコマンドが表示されます。ここでは、Tab キーを何度か押して `Get-ADReplicationSite`を取得します。 オートコンプリート機能は、`Filter` などのパラメーター名にも有効です。
 
-    @No__t-0 コマンドからの出力をテーブルとして書式設定し、特定のフィールドに表示を制限するには、パイプを使用して `Format-Table` コマンド (または "`ft`") に出力します。
+    `Get-ADReplicationSite` コマンドからの出力をテーブルとして書式設定し、特定のフィールドに表示を制限するには、パイプを使用して `Format-Table` コマンド (または "`ft`") に出力します。
 
     `Get-ADReplicationSite -Filter * | ft Name`
 
@@ -154,7 +154,7 @@ Windows Server 2012 を実行しているサーバーに AD DS サーバーの�
 
     並べ替えを行うことで、特定のレプリケーション パートナーに関して各ドメイン コントローラーから見た最後の USN を簡単に比較できます。 これにより、環境でレプリケーションが発生しているかどうかを簡単に調べることができます。 レプリケーションが適切に動作している場合、特定のレプリケーション パートナーに対して報告される UsnFilter 値は、すべてのドメイン コントローラーで類似しています。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [Windows PowerShell &#40;レベル200を使用した高度な Active Directory レプリケーションとトポロジ管理&#41;](Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md)
 
 

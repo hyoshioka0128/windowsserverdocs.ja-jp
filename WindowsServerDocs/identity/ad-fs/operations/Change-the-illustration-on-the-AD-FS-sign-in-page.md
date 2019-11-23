@@ -21,7 +21,7 @@ ms.locfileid: "71358291"
 ## <a name="change-the-illustration"></a>図を変更する  
 
 
-図を変更するには、左側にある [sign @ no__t-0in] ページに表示されるグラフィックで、次の Windows PowerShell コマンドレットと構文を使用します。  
+左側のグラフィックを変更するには、[\-のサインイン] ページに表示される次の Windows PowerShell コマンドレットと構文を使用します。  
 
 ![図の変更](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   

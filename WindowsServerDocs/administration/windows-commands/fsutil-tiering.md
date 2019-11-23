@@ -17,7 +17,7 @@ ms.lasthandoff: 09/27/2019
 ms.locfileid: "71376783"
 ---
 # <a name="fsutil-tiering"></a>Fsutil 階層化
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows 10
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10
 
 フラグの設定や無効化、層の一覧表示など、記憶域階層の機能の管理を有効にします。
 
@@ -36,7 +36,7 @@ fsutil tiering [tierlist] <volume>
 |パラメーター|説明|
 |-------------|---------------|
 |clearflags|ボリュームの階層化動作フラグを無効にします。|
-|@no__t 0volume >|ボリュームを指定します。|
+|\<ボリューム >|ボリュームを指定します。|
 |/TrNH|階層化された記憶域を持つボリュームでは、熱収集が無効になります。<br /><br>NTFS および ReFS のみに適用されます。|
 |queryflags|ボリュームの階層化動作フラグを照会します。|
 |regionlist|ボリュームの階層化された領域とそれぞれの記憶域階層を一覧表示します。|
@@ -44,7 +44,7 @@ fsutil tiering [tierlist] <volume>
 |tierlist|ボリュームに関連付けられているストレージ tieres の一覧を表示します。|
 
 
-### <a name="examples"></a>使用例
+### <a name="examples"></a>例
 
 ボリューム C のフラグを照会するには、次のように入力します。
 

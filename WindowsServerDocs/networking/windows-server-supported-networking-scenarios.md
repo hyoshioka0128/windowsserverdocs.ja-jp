@@ -18,7 +18,7 @@ ms.locfileid: "71395701"
 ---
 # <a name="windows-server-supported-networking-scenarios"></a>Windows Server でサポートされるネットワーク シナリオ
 
->適用対象:Windows Server \(Semi チャネル @ no__t-1、Windows Server 2016
+>適用対象: Windows Server \(半期チャネル\)、Windows Server 2016
 
 このトピックでは、または Windows Server 2016 のこのリリースで実行できないできるサポート対象およびサポートされていないシナリオに関する情報を提供します。  
 >[!IMPORTANT]
@@ -38,7 +38,7 @@ ms.locfileid: "71395701"
   
 -   [NIC チーミングのシナリオ](#bkmk_nicteam)
 
-- [スイッチ埋め込みチーミング \(SET @ no__t-2 シナリオ](#bkmk_set)
+- [埋め込みチーミング \(SET\) シナリオ](#bkmk_set)
   
 ### <a name="bkmk_sdn"></a>ソフトウェアによるネットワーク制御 (SDN) のシナリオ
  
@@ -96,7 +96,7 @@ NFV シナリオを使用します。
   
 -   最大 2 つのネットワーク アダプター間で SMB ダイレクトと RDMA のトラフィック フローを分散するセットを構成します。  
   
-詳細については、[リモート ダイレクト メモリ アクセス&#40;RDMA&#41;スイッチ埋め込みチーミング&#40;SET&#41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)を参照してください。  
+詳細については、次を参照してください。 [リモート ダイレクト メモリ アクセス (&) #40 です。RDMA と #41 です。スイッチには、チーム化 (&) #40; が含まれているとセットと #41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)します。  
   
 #### <a name="bkmk_switch"></a>Hyper-v 仮想スイッチのシナリオ
 
@@ -136,7 +136,7 @@ DNS サーバーのシナリオを使用します。
   
 -   DNS で不明なレコードのサポートを構成します。  
   
-詳細については、[Windows Server 2016 の DNS クライアントの新機能](dns/What-s-New-in-DNS-Client.md) と [新機能 Windows server DNS サーバーの新機能](dns/What-s-New-in-DNS-Server.md)のトピックを参照してください。  
+詳細については、トピックを参照してください。 [Windows Server 2016 での DNS クライアントの新](dns/What-s-New-in-DNS-Client.md) と [Windows Server 2016 の DNS サーバーの新](dns/What-s-New-in-DNS-Server.md)します。  
   
 ### <a name="bkmk_ipam"></a>DHCP と DNS を使用した IPAM のシナリオ
 
@@ -169,7 +169,7 @@ NIC チーミングのシナリオを使用します。
 
 詳細については、次を参照してください。 [NIC チーミング](technologies/nic-teaming/NIC-Teaming.md)します。 
 
-### <a name="bkmk_set"></a>スイッチ埋め込みチーミング \(SET @ no__t-2 シナリオ
+### <a name="bkmk_set"></a>埋め込みチーミング \(SET\) シナリオ
 
 セットは、Hyper-v ホストと、ソフトウェアによるネットワーク制御 (SDN) スタックを Windows Server 2016 に含まれる環境で使用できる代替 NIC チーミング ソリューションです。 セットは、HYPER-V 仮想スイッチにいくつかの NIC チーミング機能を統合します。 
 

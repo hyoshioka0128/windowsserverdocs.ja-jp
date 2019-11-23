@@ -53,7 +53,7 @@ wbadmin get items
 ```
 wbadmin get items -version:03/31/2013-09:00
 ```
-2013年4月30日に実行された server01 のバックアップからの項目を一覧表示するには、午前9:00 に @no__t 0 の @ no__t-1servername\share に格納されている場合は、次のように入力します。
+2013年4月30日に実行された server01 のバックアップからの項目を一覧表示するには、午前9:00 に \\\\servername\share に格納されている場合は、次のように入力します。
 ```
 wbadmin get items -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
 ```

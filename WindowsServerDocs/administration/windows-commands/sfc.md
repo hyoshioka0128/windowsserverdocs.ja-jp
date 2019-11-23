@@ -22,7 +22,7 @@ ms.locfileid: "71384016"
 ---
 # <a name="sfc"></a>sfc
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 スキャンし、保護されているすべてのシステムの整合性がファイルし、正しいバージョンと正しくないバージョンが置き換えられますことを確認します。
 このコマンドの使用方法の例については、「[例](#BKMK_examples)」を参照してください。
@@ -38,13 +38,13 @@ sfc [/scannow] [/verifyonly] [/scanfile=<file>] [/verifyfile=<file>] [/offwindir
 |/scannow|すべての保護されたシステム ファイルの整合性をスキャンし、可能であれば、問題のあるファイルを修復します。|
 |/verifyonly|すべての保護されたシステム ファイルの整合性をスキャンします。 修復操作は実行されません。|
 |/scanfile|指定されたファイルの整合性をスキャンし、可能であれば、問題が検出された場合、ファイルを修復します。|
-|@no__t 0file >|指定した完全なパスとファイル名|
+|\<ファイル >|指定した完全なパスとファイル名|
 |/verifyfile|指定されたファイルの整合性を検証します。 修復操作は実行されません。|
 |/offwindir|オフライン修復用のオフラインの windows ディレクトリの場所を指定します。|
 |/offbootdir|オフラインのオフライン ブート ディレクトリの場所を指定します|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 -   実行する管理者グループのメンバーとしてログオンする必要があります **sfc.exe**します。
 -   **sfc**によって保護されたファイルが上書きされたことが検出されると、 **systemroot\system32\dllcache**フォルダーから正しいバージョンのファイルが取得され、正しくないファイルが置き換えられます。
 -   Windows Server 2003、windows server 2008、および Windows Server 2008 R2 の**sfc**には、機能上の違いがあります。

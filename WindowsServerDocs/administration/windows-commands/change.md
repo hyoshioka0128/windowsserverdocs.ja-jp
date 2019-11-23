@@ -22,7 +22,7 @@ ms.locfileid: "71379547"
 ---
 # <a name="change"></a>change
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ログオン、COM ポートのマッピング、およびインストールモードのリモートデスクトップセッションホスト (rd セッションホスト) サーバーの設定を変更します。
 > [!NOTE]
@@ -43,4 +43,4 @@ ms.locfileid: "71379547"
 > 
 > #### <a name="additional-references"></a>その他の参照情報
 > [コマンドライン構文キー](command-line-syntax-key.md)
-> [リモート デスクトップ サービス(ターミナル サービス) のコマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)
+> [リモート デスクトップ サービスと&#40;です。ターミナル サービスと&#41;です。コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)
