@@ -22,7 +22,7 @@ ms.locfileid: "71384310"
 ---
 # <a name="scwcmd-transform"></a>Scwcmd: transform
 
-> 適用先:Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server 2012 R2、Windows Server 2012
 
 新しいグループ ポリシー オブジェクト (GPO) で Active Directory ドメイン サービス セキュリティ構成ウィザード (SCW) を使用して、生成されたセキュリティ ポリシー ファイルを変換します。 変換の処理には、実行されるサーバー上のすべての設定は変わりません。 変換の操作が完了した後、管理者は、サーバーにポリシーを展開する目的の Ou に GPO をリンクする必要があります。
 
@@ -43,11 +43,11 @@ scwcmd transform /p:<Policyfile.xml> /g:<GPODisplayName>
 
 |パラメーター|説明|
 |---------|-----------|
-|/p: @no__t 05 >|適用される .xml ポリシー ファイルのパスとファイル名を指定します。 このパラメーターを指定する必要があります。|
-|/g: \<GPODisplayName >|GPO の表示名を指定します。 このパラメーターを指定する必要があります。|
+|/p:\<Policyfile .xml >|適用される .xml ポリシー ファイルのパスとファイル名を指定します。 このパラメーターを指定する必要があります。|
+|/g:\<GPODisplayName >|GPO の表示名を指定します。 このパラメーターを指定する必要があります。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 
 Scwcmd.exe は Windows Server 2008 R2、Windows Server 2008 または Windows Server 2003 を実行するコンピューターにできるだけです。
 

@@ -17,9 +17,9 @@ ms.locfileid: "71356346"
 ---
 # <a name="install-the-branchcache-feature-and-configure-the-hosted-cache-server-by-service-connection-point"></a>BranchCache 機能をインストールし、サービス接続ポイントによってホスト型キャッシュ サーバーを構成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-次の手順を使用して、ホスト型キャッシュサーバー、HCS1 に BranchCache 機能をインストールし、サービス接続ポイントを登録するようにサーバーを構成することができます。 Active Directory Domain Services \(AD DS @ no__t で、\(SCP @ no__t です。
+この手順を使用して、ホスト型キャッシュサーバー、HCS1 に BranchCache 機能をインストールし、Active Directory Domain Services \(AD DS\)に SCP\) \(サービス接続ポイントを登録するようにサーバーを構成することができます。
 
 AD DS で SCP を使用してホスト型キャッシュサーバーを登録すると、scp の AD DS に対してクエリを実行することで、ホスト型キャッシュサーバーを自動的に検出するように構成されているクライアントコンピューターでは、この scp が許可されます。 この操作を実行するようにクライアントコンピューターを構成する方法については、このガイドの後半で説明します。
 
@@ -50,11 +50,11 @@ AD DS で SCP を使用してホスト型キャッシュサーバーを登録す
   
     コマンドの結果は、BranchCache インストールのすべての側面の状態を表示します。 次に、BranchCache の設定のいくつかと、各項目の正しい値を示します。  
   
-    -   BranchCacheIsEnabled:True
+    -   BranchCacheIsEnabled: True
 
-    -   HostedCacheServerIsEnabled:True
+    -   HostedCacheServerIsEnabled: True
 
-    -   HostedCacheScpRegistrationEnabled:True
+    -   HostedCacheScpRegistrationEnabled: True
 
 4. コンテンツサーバーからホスト型キャッシュサーバーにデータパッケージをコピーする手順を準備するには、ホスト型キャッシュサーバー上の既存の共有を識別するか、新しいフォルダーを作成して、コンテンツサーバーからアクセスできるようにフォルダーを共有します。 コンテンツサーバーにデータパッケージを作成した後は、データパッケージをホスト型キャッシュサーバー上のこの共有フォルダーにコピーします。
   

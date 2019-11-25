@@ -18,7 +18,7 @@ ms.locfileid: "71390718"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、更新された Active Directory 管理センターと、そこで使用できる新しい Active Directory のごみ箱、細かい設定が可能なパスワード ポリシー、および Windows PowerShell 履歴ビューアーについて詳しく説明します。これには、アーキテクチャ、一般的なタスクの例、トラブルシューティング情報などが含まれます。 概要については、「 [Active Directory 管理センターの&#40;拡張レベル&#41;100 の概要](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)」を参照してください。  
   
@@ -46,7 +46,7 @@ Active Directory 管理センターのモジュールと基盤となるアーキ
   
 ## <a name="BKMK_EnableRecycleBin"></a>Active Directory 管理センターを使用した Active Directory のごみ箱の有効化と管理  
   
-### <a name="capabilities"></a>Capabilities  
+### <a name="capabilities"></a>機能  
   
 - Windows Server 2012 以降の Active Directory 管理センターを使用すると、フォレスト内の任意のドメインパーティションに対して Active Directory のごみ箱を構成して管理することができます。 Active Directory のごみ箱の有効化や、ドメイン パーティション内のオブジェクトの復元を行うために Windows PowerShell または Ldp.exe を使用する必要はなくなりました。
 - Active Directory 管理センターは高度なフィルター条件を備えており、大規模な環境で意図的に削除された多数のオブジェクトがある場合でも、必要なオブジェクトを簡単に復元できます。
@@ -98,7 +98,7 @@ Active Directory のごみ箱には、フォレストで削除されたすべて
   
 **[削除済みオブジェクト]** コンテナーには、そのドメイン パーティションで復元可能なすべてのオブジェクトが表示されます。 **msDS-deletedObjectLifetime** で指定された期間より前に削除されたオブジェクトは、リサイクルされたオブジェクトと呼ばれます。 Active Directory 管理センターには、リサイクルされたオブジェクトは表示されないため、Active Directory 管理センターを使用してこれらのオブジェクトを復元することはできません。  
   
-ごみ箱のアーキテクチャと処理ルールの詳細については、AD のごみ箱の @no__t を参照してください。@ No__t-0 の理解、実装、ベストプラクティス、およびトラブルシューティングを行います。  
+ごみ箱のアーキテクチャと処理ルールに関する詳細については「 [The AD Recycle Bin:Understanding, Implementing, Best Practices, and Troubleshooting (AD のごみ箱: 理解、実装、ベスト プラクティス、およびトラブルシューティング)](http://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx)」を参照してください。  
   
 Active Directory 管理センターでは、コンテナーから返される既定のオブジェクト数を 20,000 に制限しています。 **[管理]** メニューの **[管理の一覧のオプション]** をクリックすると、この制限を 100,000 オブジェクトに増やすことができます。  
   
@@ -124,7 +124,7 @@ Active Directory 管理センターは、強力な条件およびフィルター
 - 最後に確認された親  
 - 種類  
 - 説明  
-- City  
+- 市区町村  
 - 国/地域  
 - 部署  
 - 社員 ID  
@@ -202,7 +202,7 @@ Active Directory 管理センターを更新して、削除したユーザーオ
   
 **Sales** OU に子 OU が含まれていた場合は、最初に子 OU を復元してから、その子オブジェクトを復元します。さらに階層がある場合は、親から順次、復元していきます。  
   
-削除された親コンテナーを指定して、入れ子になったすべての削除済みオブジェクトを復元する方法については、「[Appendix B:複数の削除された Active Directory オブジェクトを復元します (サンプルスクリプト) ](https://technet.microsoft.com/library/dd379504(WS.10).aspx)。  
+削除済みの親コンテナーを指定して、入れ子になっている削除済みオブジェクトをすべて復元するには、「 [付録 B:、複数の削除された Active Directory オブジェクトを復元する (サンプル スクリプト)](https://technet.microsoft.com/library/dd379504(WS.10).aspx)」を参照してください。  
   
 次の Active Directory Windows PowerShell コマンドレットは、削除済みオブジェクトを復元します。  
 
@@ -447,7 +447,7 @@ Verbose レベルに設定すると、各関数の .NET スタックも表示さ
 
 Active Directory Web Services インスタンスが使用できない場合は、次のエラーが表示されます。  
   
-|Error|操作|
+|エラー|操作|
 | --- | --- |  
 |"どのドメインにも接続できません。 接続できるようになったら、更新するか、再試行してください"|Active Directory 管理センター アプリケーションの開始時に表示されます|
 |"Active Directory Web サービス (ADWS) を実行している *<NetBIOS domain name>* ドメインで利用可能なサーバーが見つかりません"|Active Directory 管理センター アプリケーションでドメイン ノードの選択を試行したときに表示されます|
@@ -470,7 +470,7 @@ Active Directory Web Services インスタンスが使用できない場合は�
    Netstat -anob > ports.txt  
    ```
 
-   ports.txt ファイルを調査して、ADWS サービスがポート 9389 でリッスン中であることを確認します。 例:  
+   ports.txt ファイルを調査して、ADWS サービスがポート 9389 でリッスン中であることを確認します。 以下に例を示します。  
 
    ```
    TCP    0.0.0.0:9389    0.0.0.0:0    LISTENING    1828  
@@ -484,6 +484,6 @@ Active Directory Web Services インスタンスが使用できない場合は�
   
 4. Active Directory 管理センターが実行されているコンピューターと、NLTEST で返されたドメイン コントローラーに、NetMon または他のネットワーク キャプチャ ユーティリティをインストールします。 両方のコンピューターからネットワーク キャプチャを同時に収集し、その状態で Active Directory 管理センターを起動して、エラーを確認したらキャプチャを停止します。 クライアントが TCP ポート 9389 でドメイン コントローラーと送受信できることを確認します。 パケットが送信されているが到着していない場合、またはパケットが到着しているがドメイン コントローラーの応答がクライアントに到着していない場合は、ネットワーク上のコンピューター間に存在するファイアウォールがそのポートのパケットを破棄している可能性があります。 このファイアウォールは、ソフトウェア、ハードウェア、またはサードパーティ エンドポイント保護 (ウイルス対策) ソフトウェアの一部である可能性があります。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [AD のごみ箱、細かい設定が可能なパスワード ポリシー、PowerShell 履歴](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)  

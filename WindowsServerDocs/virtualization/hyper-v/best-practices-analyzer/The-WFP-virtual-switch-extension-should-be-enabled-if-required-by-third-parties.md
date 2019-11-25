@@ -19,7 +19,7 @@ ms.locfileid: "71364617"
 ---
 # <a name="the-wfp-virtual-switch-extension-should-be-enabled-if-it-is-required-by-third-party-extensions"></a>The WFP virtual switch extension should be enabled if it is required by third party extensions (Hyper-V: サード パーティ製の拡張機能で必要とされている場合、WFP 仮想スイッチ拡張機能を有効にする必要がある)
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71364617"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**順**|警告|  
+|**順**|Warning|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
@@ -38,7 +38,7 @@ ms.locfileid: "71364617"
 ## <a name="impact"></a>**よる**  
 *次の仮想スイッチでは、一部のサードパーティの仮想スイッチ拡張機能が正しく動作しない可能性があります。*  
   
-@no__t-仮想マシンの > の一覧  
+仮想マシンの一覧を \<>  
   
 ## <a name="resolution"></a>**解決方法**  
 *Windows PowerShell コマンドレット VMSwitchExtension を使用して、サードパーティ製の拡張機能に必要な場合は Windows フィルタリングプラットフォームを有効にします。*  
@@ -55,7 +55,7 @@ ms.locfileid: "71364617"
 Enable-VMSwitchExtension -VMSwitchName External -Name "Microsoft Windows Filtering Platform"  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [VMSwitchExtension](https://technet.microsoft.com/library/hh848541.aspx)  
   
 

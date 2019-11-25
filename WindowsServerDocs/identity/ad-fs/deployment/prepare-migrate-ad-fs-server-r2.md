@@ -150,8 +150,8 @@ adprep/forestprep を実行するには、Schema Admins グループ、Enterpris
   
 -   SQL Server の AD FS ファームを移行する場合は、移行プロセスに新しい SQL データベース インスタンスの作成が含まれ、そのインスタンスに元の構成データをインポートする必要があることに注意してください。  
   
-## <a name="next-steps"></a>次の手順
- [Active Directory フェデレーションサービス (AD FS) の役割サービスを Windows Server 2012 R2 に移行する](migrate-ad-fs-service-role-to-windows-server-r2.md)   
- [AD FS フェデレーションサーバーの移行](migrate-ad-fs-fed-server-r2.md)   
- [AD FS フェデレーションサーバープロキシの移行](migrate-fed-server-proxy-r2.md)   
+## <a name="next-steps"></a>次のステップ
+ [Active Directory フェデレーションサービス (AD FS) の役割サービスを Windows Server 2012 R2  に移行する](migrate-ad-fs-service-role-to-windows-server-r2.md)  
+ [AD FS フェデレーションサーバー  の移行](migrate-ad-fs-fed-server-r2.md)  
+ [AD FS フェデレーションサーバープロキシ  の移行](migrate-fed-server-proxy-r2.md)  
  [Windows Server 2012 R2 への AD FS 移行の検証](verify-ad-fs-migration.md)

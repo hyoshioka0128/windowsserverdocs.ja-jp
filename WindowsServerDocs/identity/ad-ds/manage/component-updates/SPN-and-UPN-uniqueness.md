@@ -18,9 +18,9 @@ ms.locfileid: "71390030"
 ---
 # <a name="spn-and-upn-uniqueness"></a>SPN と UPN の一意性
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-**作成者**:Justin 書籍、シニアサポートエスカレーションエンジニア (Windows グループ)  
+**Author**: Justin 書籍、シニアサポートエスカレーションエンジニア (Windows グループ)  
   
 > [!NOTE]  
 > この内容は Microsoft カスタマー サポート エンジニアによって作成され、TechNet が通常提供しているトピックよりも詳細な Windows Server 2012 R2 の機能やソリューションの技術的説明を求めている、経験豊かな管理者とシステム設計者を対象としています。 ただし、TechNet と同様の編集過程は実施されていないため、言語によっては通常より洗練されていない文章が見られる場合があります。  
@@ -28,16 +28,16 @@ ms.locfileid: "71390030"
 ## <a name="overview"></a>概要  
 Windows Server 2012 R2 のブロックの作成を実行しているドメイン コント ローラーには、サービス プリンシパル名 (SPN) とユーザー プリンシパル名 (UPN) が重複しています。 これには、復元または削除されたオブジェクトの復元またはオブジェクトの名前の変更の結果と重複してになる場合が含まれます。  
   
-### <a name="background"></a>背景情報  
+### <a name="background"></a>背景  
 重複するサービス プリンシパル名 (SPN) がよく発生し認証エラーが発生し、LSASS の CPU 使用率が過剰につながる可能性があります。 重複する SPN または UPN の追加をブロックするインボックス メソッドはありません。 *  
   
 重複する UPN の値は、内部設置型の間で同期を中断 AD および Office 365 です。  
   
 *Setspn.exe では、一般的に新しい Spn を作成するために使用し、重複の確認を追加する Windows Server 2008 と共にリリースされたバージョンに組み込まれていた機能します。  
   
-**Table SEQ テーブル \\ @ no__t アラビア 1:UPN と SPN の一意性 @ no__t-0  
+**テーブル SEQ テーブル \\\* アラビア 1: UPN と SPN の一意性**  
   
-|機能|解説|  
+|機能|Comment|  
 |-----------|-----------|  
 |UPN の一意性|重複する Upn 中断同期の内部設置型 Windows Azure AD ベースのサービスと Office 365 などの AD アカウントです。|  
 |SPN の一意性|Kerberos では、相互認証用の Spn が必要です。  Spn が重複すると、認証エラーが発生します。|  
@@ -49,9 +49,9 @@ Upn と Spn の一意性の要件の詳細については、次を参照して�
   
 -   書き込みは、Windows Server 2012 R2 の DC によって処理されます。  
   
-**Table SEQ テーブル \\ @ no__t アラビア 2:UPN と SPN の一意性のエラーコード @ no__t-0  
+**テーブル SEQ テーブル \\\* アラビア 2: UPN と SPN の一意性のエラーコード**  
   
-|10 進数|Hex|シンボル|String|  
+|10 進数|16 進数|シンボル|String|  
 |-----------|-------|------------|----------|  
 |8467|21C 7|ERROR_DS_SPN_VALUE_NOT_UNIQUE_IN_FOREST|追加/変更するために提供される SPN 値が一意なフォレスト全体ではないため、操作が失敗しました。|  
 |8648|21C 8|ERROR_DS_UPN_VALUE_NOT_UNIQUE_IN_FOREST|追加/変更するための UPN 値が一意なフォレスト全体ではないため、操作が失敗しました。|  
@@ -74,18 +74,18 @@ Upn と Spn の一意性の要件の詳細については、次を参照して�
   
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig03_DupUPNADAC.gif)  
   
-**図 SEQ 図 @no__t 新しいユーザーの作成が UPN の重複によって失敗した場合に AD 管理センターに表示される、アラビア語の1つの @ no__t のエラー**  
+**図 SEQ 図 \\新しいユーザーの作成が UPN の重複によって失敗したときに、AD 管理センターに表示されるアラビア語1のエラー \***  
   
-### <a name="event-2974-source-activedirectory_domainservice"></a>イベント2974のソース:ActiveDirectory_DomainService  
+### <a name="event-2974-source-activedirectory_domainservice"></a>イベント 2974 ソース: ActiveDirectory_DomainService  
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig04_Event2974.gif)  
   
-**図 SEQ 図 \\ @ no__t: 2 アラビア語2イベント ID 2974 (エラー 8648)**  
+**図 SEQ 図 \\\* アラビア語2イベント ID 2974 とエラー8648**  
   
-イベント 2974 では、ブロックされていた値とその値がまだ含まれている (最大 10) 1 つまたは複数のオブジェクトの一覧を示します。  次の図では、UPN 属性値 **<em>dhunt@blue.contoso.com は、</em>** 他の4つのオブジェクトに既に存在していることがわかります。  これが Windows Server 2012 R2 の新機能であるため、ダウンレベルのドメイン コント ローラーの書き込み試行の処理時に混在環境で重複する UPN と Spn の偶発的な作成がまだ発生します。  
+イベント 2974 では、ブロックされていた値とその値がまだ含まれている (最大 10) 1 つまたは複数のオブジェクトの一覧を示します。  次の図では、他の4つのオブジェクトに **<em>dhunt@blue.contoso.com</em>** UPN 属性値が既に存在していることがわかります。  これが Windows Server 2012 R2 の新機能であるため、ダウンレベルのドメイン コント ローラーの書き込み試行の処理時に混在環境で重複する UPN と Spn の偶発的な作成がまだ発生します。  
   
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig05_Event2974ShowAllDups.gif)  
   
-**図 SEQ 図 \\ @ no__t: 2 アラビア語3イベント 2974 (重複する UPN を含むすべてのオブジェクトを表示する)**  
+**図 SEQ 図 \\\* アラビア語3イベント2974で重複する UPN を含むすべてのオブジェクトを表示する**  
   
 > [!TIP]  
 > イベント ID 2974s を定期的に確認してください。  
@@ -96,7 +96,7 @@ Upn と Spn の一意性の要件の詳細については、次を参照して�
 8648 =「操作の追加および変更の UPN 値が一意なフォレスト全体ではないために失敗しました」。  
   
 ### <a name="setspn"></a>SetSPN:  
-使用する場合、Setspn.exe は、Windows Server 2008 のリリース以降に組み込み重複データの SPN の検出には、 **"-S"** オプション。  SPN の重複の検出をバイパスするにを使用して、 **"-A"** ただしオプションします。  SetSPN を使用するには、オプションを使用して Windows Server 2012 R2 DC を対象とする場合、重複する SPN の作成がブロックされます。  表示されるエラーメッセージは、-S オプションを使用したときに表示されるものと同じです。"重複する SPN が見つかりました。操作を中止しています"  
+使用する場合、Setspn.exe は、Windows Server 2008 のリリース以降に組み込み重複データの SPN の検出には、 **"-S"** オプション。  SPN の重複の検出をバイパスするにを使用して、 **"-A"** ただしオプションします。  SetSPN を使用するには、オプションを使用して Windows Server 2012 R2 DC を対象とする場合、重複する SPN の作成がブロックされます。  表示されるエラー メッセージが表示されている、-s オプションを使用する場合と同じ:"Duplicate SPN 見つかると、操作を中止しています"。  
   
 ### <a name="adsiedit"></a>ADSIEDIT:  
   
@@ -108,7 +108,7 @@ The operation failed because UPN value provided for addition/modification is not
   
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig06_ADSI21c8.gif)  
   
-**図 SEQ 図 @no__t 重複する UPN の追加がブロックされたときに ADSIEdit に表示されるエラーメッセージを表示する-1 @ no__t**  
+**図 SEQ 図 \\\* 重複する UPN の追加がブロックされたときに ADSIEdit に表示されるアラビア語4のエラーメッセージ**  
   
 ### <a name="windows-powershell"></a>Windows PowerShell  
 Windows Server 2012 R2  
@@ -123,11 +123,11 @@ Windows Server 2012 R2 の DC を対象とする Windows Server 2012 で実行�
   
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig09_UserCreateError.gif)  
   
-**図 SEQ 図 \\ @ no__t: 2 アラビア語 5 DSAC ユーザー作成エラー (windows server 2012 R2 DC を対象としている場合 2012)**  
+**図 SEQ 図 \\Windows server 2012 R2 DC を対象としているときに、Windows Server 2012 R2 以外で \* アラビア語 5 DSAC ユーザー作成エラーが発生する**  
   
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig10_UserModError.gif)  
   
-**図 SEQ 図 \\ @ no__t; アラビア語 6 DSAC ユーザー変更エラー 2012 (windows server 2012 r2 DC を対象とする)**  
+**図 SEQ 図 \\Windows server 2012 R2 DC を対象としているときに、Windows Server 2012 R2 以外でアラビア語 6 DSAC ユーザー変更エラーが発生した \***  
   
 ### <a name="restore-of-an-object-that-would-result-in-a-duplicate-upn-fails"></a>重複する UPN になるオブジェクトの復元が失敗します。  
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig11_RestoreDupUPN.gif)  
@@ -210,7 +210,7 @@ Windows PowerShell を使用する UserPrincipalName 属性を null。
 ### <a name="duplicate-spn"></a>重複する SPN  
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig16_DupSPN.gif)  
   
-**図 SEQ 図 @no__t 重複する SPN の追加がブロックされたときに ADSIEdit に表示されるエラーメッセージ**  
+**図 SEQ 図 \\重複する SPN の追加がブロックされると、ADSIEdit に表示されるアラビア語8のエラーメッセージ \***  
   
 ディレクトリ サービス イベント ログに記録する **ActiveDirectory_DomainService** イベント ID **2974**します。  
   
@@ -224,7 +224,7 @@ servicePrincipalName Value=<SPN>
   
 ![SPN と UPN の一意性](media/SPN-and-UPN-uniqueness/GTR_ADDS_Fig17_DupSPN2974.gif)  
   
-**図 SEQ 図 \\ @ no__t。重複する SPN の作成がブロックされたときにログに記録されるアラビア語9エラー**  
+**図 SEQ 図 \\\* 重複する SPN の作成がブロックされたときに、アラビア語9のエラーが記録される**  
   
 ### <a name="workflow"></a>ワークフロー  
   
@@ -322,7 +322,7 @@ servicePrincipalName Value=<SPN>
   
 重複する SPN の新しい値のいずれかの場合は、変更が失敗します。 上記の一覧の重要な属性は、ATT_DNS_HOST_NAME (コンピューター名) と ATT_SAM_ACCOUNT_NAME (SAM アカウント名) です。  
   
-### <a name="try-this-exploring-spn-and-upn-uniqueness"></a>次のことを試してみてください。SPN と UPN の一意性の探索  
+### <a name="try-this-exploring-spn-and-upn-uniqueness"></a>SPN と UPN の一意性の表示にしてください。  
 これは、最初のいくつかの"**実際に使ってみる**"、モジュール内の活動です。  このモジュールの別のラボ ガイドではありません。  **実際に使ってみる** アクティビティは、本質的に自由に使用できるアクティビティがラボ環境のレッスンの内容を表示します。  次のプロンプトまたはスクリプトのオプションを独自のアクティビティを思い付くなりません。  
   
 > [!NOTE]  

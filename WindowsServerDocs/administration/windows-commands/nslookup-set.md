@@ -22,7 +22,7 @@ ms.locfileid: "71372732"
 ---
 # <a name="nslookup-set"></a>nslookup set
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 参照の機能に影響する構成設定を変更します。
 ## <a name="syntax"></a>構文
@@ -37,7 +37,7 @@ set <KeyWord>[=<Value>]
 |     <Value>     |                                                                                      各サブコマンドの nslookup 構成設定値を指定します。                                                                                      |
 | {ヘルプ&#124; ?} |                                                                                               **Nslookup**サブコマンドの簡単な概要を表示します。                                                                                               |
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>注釈
 現在の設定の一覧を表示するには、 **[すべて設定]** を使用します。
 ## <a name="additional-references"></a>その他の参照情報
 [コマンドライン構文のキー](command-line-syntax-key.md)

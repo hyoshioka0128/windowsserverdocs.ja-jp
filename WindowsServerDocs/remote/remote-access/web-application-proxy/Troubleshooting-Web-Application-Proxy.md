@@ -17,9 +17,9 @@ ms.locfileid: "71388024"
 ---
 # <a name="troubleshooting-web-application-proxy"></a>Web アプリケーション プロキシのトラブルシューティング
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
-@no__t-このコンテンツは、オンプレミスバージョンの Web アプリケーションプロキシに関連しています。クラウド経由でオンプレミスアプリケーションへのセキュリティで保護されたアクセスを有効にするには、 [Azure AD アプリケーションプロキシのコンテンツ](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)を参照してください。 **  
+**このコンテンツは、オンプレミスバージョンの Web アプリケーションプロキシに関連しています。クラウド経由でオンプレミスアプリケーションへの安全なアクセスを実現するには、 [Azure AD アプリケーションプロキシのコンテンツ](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)を参照してください。**  
   
 ここでは、イベントの説明や解決策など、Web アプリケーションプロキシのトラブルシューティング手順について説明します。 エラーが表示される場所は3つあります。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "71388024"
   
     管理コンソールに表示されている各イベント ID は、Windows イベントビューアーで表示できます。対応する説明と解決策については、以下を参照してください。  
   
-    イベントビューアーを開き、 **[アプリケーションとサービスログ]** の下の Web アプリケーションプロキシに関連するイベントを探します  > **Microsoft** > **Windows** > **Web アプリケーションプロキシ** > **Admin**  
+    イベントビューアーを開き、**アプリケーションとサービスログ** > **Microsoft** > **Windows** > **web アプリケーションプロキシ** > **Admin**  の下にある web アプリケーションプロキシに関連するイベントを探します。  
   
     ![](media/Troubleshooting-Web-Application-Proxy/WebApplicationProxyTroubleshooting.png)  
   
@@ -50,19 +50,19 @@ ms.locfileid: "71388024"
 |信頼証明書 ("ADFS ProxyTrust-<WAP machine name>") が有効ではありません|これは、次のうちのいずれかが原因と考えられます。<br /><br />-アプリケーションプロキシコンピューターが長時間ダウンしました。<br />-Web アプリケーションプロキシと AD FS 間の切断<br />-証明書インフラストラクチャの問題<br />-AD FS マシンでの変更、または Web アプリケーションプロキシと AD FS 間の更新プロセスが、8時間ごとに計画どおりに実行されなかった場合は、信頼関係を更新する必要があります。<br />-Web アプリケーションプロキシコンピューターのクロックと AD FS が同期されていません。|クロックが同期されていることを確認します。 Install-webapplicationproxy コマンドレットを実行します。|  
 |構成データが AD FS に見つかりませんでした|これは、Web アプリケーションプロキシがまだ完全にインストールされていないか、AD FS データベースが変更されたか、データベースが破損していることが原因である可能性があります。|Install-webapplicationproxy コマンドレットを実行します。|  
 |Web アプリケーションプロキシが AD FS から構成を読み取ろうとしたときにエラーが発生しました。|これは、AD FS に到達できないこと、また AD FS は AD FS データベースから構成を読み取ろうとして内部で問題が発生したことを示している可能性があります。|AD FS が到達可能で、正常に動作していることを確認します。|  
-|AD FS に格納された構成データが壊れているか、Web アプリケーションプロキシで解析できませんでした。<br /><br />スイッチまたは<br /><br />Web アプリケーション Proxywas、AD FS から証明書利用者の一覧を取得できませんでした。|これは、AD FS で構成データが変更された場合に発生する可能性があります。|Web アプリケーション Proxyservice を再起動します。 問題が引き続き発生する場合は、Install-webapplicationproxy コマンドレットを実行します。|  
+|AD FS に格納された構成データが壊れているか、Web アプリケーションプロキシで解析できませんでした。<br /><br />または<br /><br />Web アプリケーション Proxywas、AD FS から証明書利用者の一覧を取得できませんでした。|これは、AD FS で構成データが変更された場合に発生する可能性があります。|Web アプリケーション Proxyservice を再起動します。 問題が引き続き発生する場合は、Install-webapplicationproxy コマンドレットを実行します。|  
   
 ## <a name="administrator-console-events"></a>管理コンソールイベント  
 次の管理者コンソールイベントは、一般的に認証エラー、無効な tokes または期限切れの cookie を示しています。  
   
 |イベントまたは症状|考えられる原因|解決方法|  
 |--------------------|------------------|--------------|  
-|11005<br /><br />Web アプリケーションプロキシは、構成のシークレットを使用して cookie 暗号化キーを作成できませんでした。|グローバル構成 "AccessCookiesEncryptionKey" パラメーターは、PowerShell コマンドによって次のように変更されました。設定-WebApplicationProxyConfiguration-RegenerateAccessCookiesEncryptionKey|操作は必要ありません。 問題のあるクッキーが削除され、ユーザーは認証のために STS にリダイレクトされました。|  
-|12000<br /><br />Web アプリケーションプロキシは、60分以上の構成の変更を確認できませんでした|Web アプリケーションプロキシは、コマンド Get WebApplicationProxyConfiguration/Application を使用して Web アプリケーションプロキシの構成にアクセスすることはできません。 これは通常、AD FS との接続が欠如しているか、AD FS との信頼を更新する必要があることが原因で発生します。|AD FS の接続を確認してください。 これを行うには、リンク https://< FQDN_AD_FS_Proxy >/FederationMetadata/2007-06/FederationMetadata.xmlMake を使用して、AD FS と Web アプリケーションプロキシの間に信頼関係が確立されていることを確認します。 これらのソリューションが機能しない場合は、Install-webapplicationproxy コマンドレットを実行します。|  
-|12003<br /><br />Web アプリケーションプロキシがアクセス cookie を解析できませんでした。|これは、Web アプリケーションプロキシと AD FS が接続されていないか、同じ構成を受信していないことを示している可能性があります。|AD FS の接続を確認してください。 これを行うには、リンク https://< FQDN_AD_FS_Proxy >/FederationMetadata/2007-06/FederationMetadata.xmlMake を使用して、AD FS と Web アプリケーションプロキシの間に信頼関係が確立されていることを確認します。 これらのソリューションが機能しない場合は、Install-webapplicationproxy コマンドレットを実行します。|  
-|12004<br /><br />Web アプリケーションプロキシは、無効なアクセスクッキーを使用して要求を受信しました。|このイベントは、Web アプリケーションプロキシと AD FS が接続されていないか、同じ構成を受信していないことを示している可能性があります。<br /><br />"AccessCookiesEncryptionKey" パラメーターが Set-WebApplicationProxyConfiguration-RegenerateAccessCookiesEncryptionKey PowerShell コマンドによって実行された場合、このイベントは正常であり、解決手順は必要ありません。|AD FS の接続を確認してください。 これを行うには、リンク https://< FQDN_AD_FS_Proxy >/FederationMetadata/2007-06/FederationMetadata.xmlMake を使用して、AD FS と Web アプリケーションプロキシの間に信頼関係が確立されていることを確認します。 これらのソリューションが機能しない場合は、Install-webapplicationproxy コマンドレットを実行します。|  
+|11005<br /><br />Web アプリケーションプロキシは、構成のシークレットを使用して cookie 暗号化キーを作成できませんでした。|グローバル構成 "AccessCookiesEncryptionKey" パラメーターは、PowerShell コマンド: Set WebApplicationProxyConfiguration-RegenerateAccessCookiesEncryptionKey によって変更されました。|操作は必要ありません。 問題のあるクッキーが削除され、ユーザーは認証のために STS にリダイレクトされました。|  
+|12000<br /><br />Web アプリケーションプロキシは、60分以上の構成の変更を確認できませんでした|Web アプリケーションプロキシは、コマンド Get WebApplicationProxyConfiguration/Application を使用して Web アプリケーションプロキシの構成にアクセスすることはできません。 これは通常、AD FS との接続が欠如しているか、AD FS との信頼を更新する必要があることが原因で発生します。|AD FS の接続を確認してください。 これを行うには、リンク https://< FQDN_AD_FS_Proxy >、AD FS と Web アプリケーションプロキシの間に信頼が確立されていることを確認します。 これらのソリューションが機能しない場合は、Install-webapplicationproxy コマンドレットを実行します。|  
+|12003<br /><br />Web アプリケーションプロキシがアクセス cookie を解析できませんでした。|これは、Web アプリケーションプロキシと AD FS が接続されていないか、同じ構成を受信していないことを示している可能性があります。|AD FS の接続を確認してください。 これを行うには、リンク https://< FQDN_AD_FS_Proxy >、AD FS と Web アプリケーションプロキシの間に信頼が確立されていることを確認します。 これらのソリューションが機能しない場合は、Install-webapplicationproxy コマンドレットを実行します。|  
+|12004<br /><br />Web アプリケーションプロキシは、無効なアクセスクッキーを使用して要求を受信しました。|このイベントは、Web アプリケーションプロキシと AD FS が接続されていないか、同じ構成を受信していないことを示している可能性があります。<br /><br />"AccessCookiesEncryptionKey" パラメーターが Set-WebApplicationProxyConfiguration-RegenerateAccessCookiesEncryptionKey PowerShell コマンドによって実行された場合、このイベントは正常であり、解決手順は必要ありません。|AD FS の接続を確認してください。 これを行うには、リンク https://< FQDN_AD_FS_Proxy >、AD FS と Web アプリケーションプロキシの間に信頼が確立されていることを確認します。 これらのソリューションが機能しない場合は、Install-webapplicationproxy コマンドレットを実行します。|  
 |12008<br /><br />Web アプリケーションプロキシが、バックエンドサーバーに対して許可されている Kerberos 認証試行の最大数を超えました。|このイベントは、Web アプリケーションプロキシとバックエンドアプリケーションサーバーの構成が正しくないこと、または両方のコンピューターの日付と時刻の構成に問題があることを示している可能性があります。|バックエンドサーバーは、Web アプリケーションプロキシによって作成された Kerberos チケットを拒否しました。 Web アプリケーションプロキシとバックエンドアプリケーションサーバーの構成が正しく構成されていることを確認します。<br /><br />Web アプリケーションプロキシとバックエンドアプリケーションサーバーの日付と時刻の構成が同期されていることを確認します。|  
-|12011<br /><br />Web アプリケーションプロキシは、有効でないアクセス cookie 署名の要求を受信しました。|このイベントは、Web アプリケーションプロキシと AD FS が接続されていないか、同じ構成を受信していないことを示している可能性があります。 "AccessCookiesEncryptionKey" パラメーターが Set-WebApplicationProxyConfiguration-RegenerateAccessCookiesEncryptionKey PowerShell コマンドによって実行された場合、このイベントは正常であり、解決手順は必要ありません。|AD FS の接続を確認してください。 これを行うには、リンク https://< FQDN_AD_FS_Proxy >/FederationMetadata/2007-06/FederationMetadata.xmlMake を使用して、AD FS と Web アプリケーションプロキシの間に信頼関係が確立されていることを確認します。 これらのソリューションが機能しない場合は、Install-webapplicationproxy コマンドレットを実行します。|  
+|12011<br /><br />Web アプリケーションプロキシは、有効でないアクセス cookie 署名の要求を受信しました。|このイベントは、Web アプリケーションプロキシと AD FS が接続されていないか、同じ構成を受信していないことを示している可能性があります。 "AccessCookiesEncryptionKey" パラメーターが Set-WebApplicationProxyConfiguration-RegenerateAccessCookiesEncryptionKey PowerShell コマンドによって実行された場合、このイベントは正常であり、解決手順は必要ありません。|AD FS の接続を確認してください。 これを行うには、リンク https://< FQDN_AD_FS_Proxy >、AD FS と Web アプリケーションプロキシの間に信頼が確立されていることを確認します。 これらのソリューションが機能しない場合は、Install-webapplicationproxy コマンドレットを実行します。|  
 |12027<br /><br />プロキシで、要求の処理中に予期しないエラーが発生しました。 指定された名前は、適切な形式のアカウント名ではありません。|このイベントは、Web アプリケーションプロキシとドメインコントローラーサーバーの構成が正しくないこと、または両方のコンピューターの時刻と日付の構成に問題があることを示している可能性があります。|ドメインコントローラは、Web アプリケーションプロキシによって作成された Kerberos チケットを拒否しました。 Web アプリケーションプロキシとバックエンドアプリケーションサーバーの構成が正しく構成されていること、特に SPN の構成が正しいことを確認します。 Web アプリケーションプロキシがドメインコントローラーと同じドメインに参加していることを確認して、ドメインコントローラーが Web アプリケーションプロキシとの信頼関係を確立していることを確認してください。 Web アプリケーションプロキシの日付と時刻の構成とドメインコントローラーは同期されています。|  
 |13012<br /><br />Web アプリケーションプロキシが無効なエッジトークン署名を受け取りました||Web アプリケーションプロキシが[KB 2955164](https://go.microsoft.com/fwlink/?LinkId=400701)で更新されていることを確認します。|  
 |13013<br /><br />Web アプリケーションプロキシは、期限切れのエッジトークンを含む要求を受信しました。|Web アプリケーションプロキシと AD FS に同期されたクロックがありません。|Web アプリケーションプロキシと AD FS の間でクロックを同期します。|  
@@ -89,10 +89,10 @@ ms.locfileid: "71388024"
 |12020<br /><br />Web アプリケーションプロキシは、次の URL の予約を作成できませんでした。|イベントの原因として、別のサービスが同じ URL に予約を持っていることが考えられます。|管理者は、同じ Url にバインドされているものがないことを確認する必要があります。 これを確認するには、netsh http show urlacl コマンドを実行します。 この URL が Web アプリケーションプロキシコンピューター上で実行されている別のコンポーネントによって使用されている場合は、この URL を削除するか、別の URL を使用して Web アプリケーションプロキシ経由でアプリケーションを発行します。|  
 |12021<br /><br />Web アプリケーションプロキシは、SSL サーバー証明書をバインドできませんでした。 他のすべての構成設定が適用されました。|SSL 証明書データの構成レコードを作成および設定できません。|Web アプリケーションプロキシアプリケーション用に構成されている証明書の拇印が、ローカルコンピューターストアに秘密キーを持つすべての Web アプリケーションプロキシコンピューターにインストールされていることを確認します。|  
 |13001<br /><br />バックエンドサーバーによって Web アプリケーションプロキシに提示された SSL サーバー証明書が有効ではありません。証明書が信頼されていません。|サーバーによって送信された Secure Sockets Layer (SSL) 証明書に1つ以上のエラーが見つかりました。 これは、バックエンドサーバーが無効な SSL を提供したか、Web アプリケーションプロキシとバックエンドサーバー間に信頼関係がないことを示している可能性があります。|バックエンドサーバーの SSL 証明書を検証します。 Web アプリケーションプロキシコンピューターが、バックエンドサーバー証明書を信頼する正しいルート Ca で構成されていることを確認します。|  
-|13006|エラーコードが0x80072ee7 の場合、failurrre はバックエンドサーバーの URL を解決できないことが原因で発生します。 その他のエラーコードについては[https://msdn.microsoft.com/library/windows/desktop/aa384110(v=vs.85)](https://msdn.microsoft.com/library/windows/desktop/aa384110(v=vs.85))を参照してください。|バックエンドサーバーの URL が正しいことと、その名前が Web アプリケーションプロキシコンピューターから正しく解決できることを確認してください。|  
+|13006|エラーコードが0x80072ee7 の場合、failurrre はバックエンドサーバーの URL を解決できないことが原因で発生します。 その他のエラーコードについては、「」を参照してください[https://msdn.microsoft.com/library/windows/desktop/aa384110(v=vs.85)](https://msdn.microsoft.com/library/windows/desktop/aa384110(v=vs.85))|バックエンドサーバーの URL が正しいことと、その名前が Web アプリケーションプロキシコンピューターから正しく解決できることを確認してください。|  
 |13007<br /><br />バックエンドサーバーからの HTTP 応答が、予期された期間内に受信されませんでした。|バックエンドサーバーの要求がタイムアウトしたか、速度が遅いか応答していません。|バックエンドサーバーの構成を確認します。 速度が非常に遅い場合は、バックエンドサーバーへの接続を確認し、InactiveTransactionsTimeoutSec の Web アプリケーションプロキシのグローバル構成パラメーターコマンドレットを変更することも検討してください。|  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [Windows Server 2016 の Web アプリケーションプロキシの新機能](web-application-proxy-windows-server.md)  
 [Web アプリケーションプロキシの使用](assetId:///b607b717-2172-4271-98d1-fa8162e0bb2e)  
   

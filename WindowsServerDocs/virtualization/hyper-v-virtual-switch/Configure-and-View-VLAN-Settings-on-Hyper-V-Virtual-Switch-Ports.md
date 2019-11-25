@@ -17,11 +17,11 @@ ms.locfileid: "71366871"
 ---
 # <a name="configure-and-view-vlan-settings-on-hyper-v-virtual-switch-ports"></a>Hyper-V 仮想スイッチ ポートで VLAN 設定を構成および表示する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Hyper-v 仮想スイッチポートで仮想ローカルエリアネットワーク (VLAN) の設定を構成および表示するためのベストプラクティスについて説明します。
 
-Hyper-v 仮想スイッチポートで VLAN 設定を構成する場合は、Windows @ no__t-0 Server 2016 Hyper-v マネージャーまたは System Center Virtual Machine Manager (VMM) のいずれかを使用できます。
+Hyper-v 仮想スイッチポートで VLAN 設定を構成する場合は、Windows&reg; Server 2016 Hyper-v マネージャーまたは System Center Virtual Machine Manager (VMM) のいずれかを使用できます。
 
 VMM を使用している場合、VMM は次の Windows PowerShell コマンドを使用してスイッチポートを構成します。
 
@@ -48,12 +48,12 @@ VLAN スイッチのポート設定を構成および表示するには、次の
 
 これらのガイドラインに従っていない場合は、次の問題が発生する可能性があります。
 
-- SDN を展開し、VMM、ネットワークコントローラー、または**VMNetworkAdapterIsolation**コマンドレットを使用して Hyper-v 仮想スイッチポートで VLAN 設定を構成する場合:Hyper-v マネージャーまたは**Get set-vmnetworkadaptervlan**を使用して構成設定を表示する場合、コマンドの出力には VLAN の設定は表示されません。 代わりに、 **VMNetworkIsolation**コマンドレットを使用して、VLAN 設定を表示する必要があります。
-- SDN を展開していない場合は、代わりに Hyper-v マネージャーまたは**set-vmnetworkadaptervlan**コマンドレットを使用して、Hyper-v 仮想スイッチポートで VLAN 設定を構成します。**VMNetworkIsolation**コマンドレットを使用して構成設定を表示した場合、コマンドの出力には VLAN 設定は表示されません。 代わりに、 **Get set-vmnetworkadaptervlan**コマンドレットを使用して、VLAN 設定を表示する必要があります。
+- SDN を展開し、VMM、ネットワークコントローラー、または**VMNetworkAdapterIsolation**コマンドレットを使用して Hyper-v 仮想スイッチポートで vlan 設定を構成する場合: hyper-v マネージャーを使用するか、 **set-vmnetworkadaptervlan を取得**して構成設定を表示すると、コマンド出力に VLAN 設定が表示されません。 代わりに、 **VMNetworkIsolation**コマンドレットを使用して、VLAN 設定を表示する必要があります。
+- SDN を展開していない状況で、代わりに Hyper-v マネージャーまたは**set-vmnetworkadaptervlan**コマンドレットを使用して Hyper-v 仮想スイッチポートの VLAN 設定を構成する場合: **VMNetworkIsolation**コマンドレットを使用して構成設定を表示すると、コマンド出力に VLAN 設定が表示されません。 代わりに、 **Get set-vmnetworkadaptervlan**コマンドレットを使用して、VLAN 設定を表示する必要があります。
 
 また、両方の構成方法を使用して、同じスイッチポート VLAN 設定を構成しないようにすることも重要です。 この場合、スイッチポートが正しく構成されていないため、ネットワーク通信でエラーが発生する可能性があります。
 
-### <a name="resources"></a>リソース
+### <a name="resources"></a>参考資料
 
 このトピックで説明されている Windows PowerShell コマンドの詳細については、以下を参照してください。
 

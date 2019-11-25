@@ -17,7 +17,7 @@ ms.locfileid: "71402053"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>フォルダー リダイレクト、オフライン ファイル、移動ユーザー プロファイルの概要
 
->適用対象:Windows 10、windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2012 R2
+>適用対象: Windows 10、windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2012 R2
 
 このトピックでは、フォルダーリダイレクト、オフラインファイル (クライアント側のキャッシュまたは CSC)、移動ユーザープロファイル (RUP) テクノロジについて説明します。これには、新機能や追加情報の入手先などが含まれます。
 
@@ -26,12 +26,12 @@ ms.locfileid: "71402053"
 フォルダー リダイレクトとオフライン ファイルを同時に使うと、フォルダーの内容をローカルでキャッシュすることで速度と可用性を向上しつつ、(ドキュメント フォルダーなどの) ローカル フォルダーのパスをネットワーク上の場所にリダイレクトできます。 移動ユーザー プロファイルは、ユーザー プロファイルをネットワーク上の場所にリダイレクトするために使われます。 ここに挙げた機能は、以前は Intellimirror と呼ばれていました。
 
 - **フォルダーリダイレクト** を使用すると、ユーザーと管理者は、手動またはグループポリシーを使用して、既知のフォルダーのパスを新しい場所にリダイレクトできます。 新しい場所は、ローカル コンピューター上のフォルダーでも、ファイル共有上のディレクトリでもかまいません。 ユーザーは、リダイレクトされたフォルダー内のファイルが依然としてローカル ドライブに存在しているかのようにファイルを操作できます。 たとえば、通常はローカル ドライブに格納されているドキュメント フォルダーを、ネットワーク上の場所にリダイレクトできます。 これによって、ユーザーがネットワーク上のどのコンピューターからでもフォルダー内のファイルを利用できるようになります。
-- **オフラインファイルを使用**すると、サーバーへのネットワーク接続が利用できない場合や低速の場合でも、ネットワークファイルをユーザーが使用できるようになります。  オンラインで作業している場合、ファイル アクセスのパフォーマンスはネットワークとサーバーの速度によって決まりますが、 オフラインで作業している場合には、ローカル アクセスの速度でオフライン ファイル フォルダーからファイルが取得されます。 次の場合には、コンピューターがオフライン モードに切り替わります。
+- **オフラインファイル** では、サーバーへのネットワーク接続が利用できない場合や低速の場合でも、ネットワークファイルをユーザーが使用できるようになります。 オンラインで作業している場合、ファイル アクセスのパフォーマンスはネットワークとサーバーの速度によって決まりますが、 オフラインで作業している場合には、ローカル アクセスの速度でオフライン ファイル フォルダーからファイルが取得されます。 次の場合には、コンピューターがオフライン モードに切り替わります。
   - **常時オフライン**モードが有効になっている
   - サーバーが利用できない場合
   - ネットワーク接続が構成可能なしきい値より遅くなった場合
   - ユーザーは、Windows Explorer の **[オフライン作業]** ボタンを使って、手動でオフライン モードに切り替えることができます。
-- **移動ユーザープロファイル** は、ユーザーが複数のコンピューターで同じオペレーティングシステムとアプリケーションの設定を受信できるように、ユーザープロファイルをファイル共有にリダイレクトします。 プロファイルパスとしてファイル共有を設定したアカウントを使用してユーザーがコンピューターにサインインすると、ユーザーのプロファイルがローカルコンピューターにダウンロードされ、ローカルプロファイル (存在する場合) にマージされます。 ユーザーがコンピューターからサインアウトすると、ローカル プロファイルが (変更部分も含め) サーバーにあるプロファイルに結合されます。 通常、ネットワーク管理者は、ドメインアカウントで移動ユーザープロファイルを有効にします。
+- **移動ユーザープロファイル** ユーザープロファイルをファイル共有にリダイレクトし、ユーザーが複数のコンピューターで同じオペレーティングシステムとアプリケーションの設定を受信できるようにします。 プロファイルパスとしてファイル共有を設定したアカウントを使用してユーザーがコンピューターにサインインすると、ユーザーのプロファイルがローカルコンピューターにダウンロードされ、ローカルプロファイル (存在する場合) にマージされます。 ユーザーがコンピューターからサインアウトすると、ローカル プロファイルが (変更部分も含め) サーバーにあるプロファイルに結合されます。 通常、ネットワーク管理者は、ドメインアカウントで移動ユーザープロファイルを有効にします。
 
 ## <a name="practical-applications"></a>実際の適用例
 
@@ -69,7 +69,7 @@ Windows 8、Windows Server 2012 より前では、低速リンクモード (低�
 
 常時オフラインモードでは、[**低速リンクモードを構成**する] グループポリシー設定が構成されており、[**待機時間**のしきい値] パラメーターが1ミリ秒に設定されている場合、コンピューターがオンラインモードに移行することはありません。 既定では、変更はバックグラウンドで 120 分ごとに同期されますが、 **[Configure Background Sync]** グループ ポリシー設定を使えば同期を構成できます。
 
-詳細については、「[ファイル アクセスを高速化するための常時オフライン モードの有効化](enable-always-offline.md)」を参照してください。
+詳細については、「 [Enable the Always Offline Mode to Provide Faster Access to Files](enable-always-offline.md)」を参照してください。
 
 ## <a name="cost-aware-synchronization"></a>コスト意識型同期
 
@@ -107,7 +107,7 @@ Windows 8 および Windows Server 2012 より前では、従量制課金ネッ�
 
 プライベート ユーザー データのダウンロードをプライマリ コンピューターだけに制限する目的から、ユーザーがコンピューターにサインインするときにはフォルダー リダイレクトと移動ユーザー プロファイルの機能によって次のロジック チェックを実行します。
 
-1. Windows オペレーティングシステムは、新しいグループポリシー設定 (**プライマリコンピューターでのみ移動プロファイルをダウンロード**し、**プライマリコンピューターでのみフォルダーをリダイレクト**する) を確認して、**プライマリコンピューター**の属性がアクティブであるかどうかを判断します。ディレクトリドメインサービス (AD DS) は、ユーザーのプロファイルをローミングするか、フォルダーリダイレクトを適用するかの決定に影響を与える必要があります。
+1. Windows オペレーティングシステムは、新しいグループポリシーの設定 (**プライマリコンピューターでのみ移動プロファイルをダウンロード**し、**プライマリコンピューターのフォルダー**のみをリダイレクトする) を確認し、Active Directory Domain Services (AD DS) の**プライマリコンピューター**の属性が、ユーザーのプロファイルのローミングまたはフォルダーリダイレクトの適用の決定に影響を与えるかどうかを判断します。
 2. ポリシー設定でプライマリ コンピューターのサポートが有効な場合、AD DS スキーマで **msDS-Primary-Computer** 属性がサポートされるかどうかが確認されます。 この属性がサポートされる場合、次の手順で、ユーザーがログオンしているコンピューターがユーザーのプライマリ コンピューターとして指定されているかどうかが確認されます。
     1. コンピューターがユーザーのプライマリコンピューターの1つである場合、移動ユーザープロファイルとフォルダーリダイレクトの設定が適用されます。
     2. コンピューターがユーザーのプライマリコンピューターの1つでない場合は、ユーザーのキャッシュされたローカルプロファイル (存在する場合) が読み込まれるか、新しいローカルプロファイルが作成されます。 さらに、ローカル フォルダー リダイレクト構成に格納されている、以前に適用されたグループ ポリシー設定に指定された削除動作に従って、既存のリダイレクトされたフォルダーが削除されます。
@@ -129,10 +129,10 @@ Windows 8 および Windows Server 2012 より前では、従量制課金ネッ�
 
 その他の関連情報については、次の情報を参照してください。
 
-| コンテンツの種類 | リファレンス |
+| コンテンツの種類 | 参考資料 |
 | --- | --- |
-| 製品評価 | [信頼性の高いファイルサービスとストレージによるインフォメーションワーカーのサポート](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[オフラインファイルの新機能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>)(Windows 7 および Windows Server 2008 R2)<br>[Windows Vista のオフラインファイルの新機能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Windows Vista でのオフラインファイルの変更点](<https://technet.microsoft.com/library/2007.11.offline.aspx>)(TechNet マガジン) |
-| 展開 | [フォルダーリダイレクト、オフラインファイル、移動ユーザープロファイルを展開する](deploy-folder-redirection.md)<br>[エンドユーザーデータの集中管理ソリューションの実装:フォルダーリダイレクトとオフラインファイルテクノロジの検証と展開](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[ローミングユーザーデータ展開ガイドの管理](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Windows 7 コンピューターの新しいオフラインファイル機能の構成手順ガイド](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[フォルダーリダイレクトの使用](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[フォルダーリダイレクトの実装](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>)(Windows Server 2003) |
+| 製品評価 | [信頼性の高いファイルサービスとストレージによるインフォメーションワーカーのサポート](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[オフラインファイルの新機能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>)(windows 7 および windows Server 2008 R2)<br>[Windows Vista のオフラインファイルの新機能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Windows Vista でのオフラインファイルの変更点](<https://technet.microsoft.com/library/2007.11.offline.aspx>)(TechNet Magazine) |
+| 展開 | [フォルダーリダイレクト、オフラインファイル、移動ユーザープロファイルを展開する](deploy-folder-redirection.md)<br>[エンドユーザーデータの集中管理ソリューションの実装: フォルダーリダイレクトとオフラインファイルテクノロジの検証と展開](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[ローミングユーザーデータ展開ガイドの管理](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Windows 7 コンピューターの新しいオフラインファイル機能の構成手順ガイド](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[フォルダーリダイレクトの使用](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[フォルダーリダイレクトの実装](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>)(Windows Server 2003) |
 | ツールと設定 | [MSDN のオフラインファイル](https://msdn.microsoft.com/library/cc296092.aspx)<br>[オフラインファイルグループポリシーリファレンス](https://msdn.microsoft.com/library/ms878937.aspx)(Windows 2000) |
 | コミュニティ リソース | [ファイルサービスとストレージフォーラム](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[Scripting Guy さん、こんにちは。Windows のオフラインファイル機能を使用するにはどうすればよいですか。](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[Scripting Guy さん、こんにちは。オフラインファイルを有効または無効にするにはどうすればよいですか。](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
 | 関連テクノロジ|[Windows Server での id とアクセス](../../identity/identity-and-access.md)<br>[Windows Server の記憶域](../storage.md)<br>[リモートアクセスとサーバー管理](../../remote/index.md) |

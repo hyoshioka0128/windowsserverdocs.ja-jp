@@ -17,9 +17,9 @@ ms.locfileid: "71356761"
 ---
 # <a name="configure-the-server-certificate-template"></a>サーバー証明書テンプレートを構成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-この手順を使用すると、ネットワーク上のサーバーに登録されているサーバー証明書のベースとして @ no__t-0 証明書サービス (AD CS) が使用 Active Directory する証明書テンプレートを構成できます。  
+この手順を使用すると、ネットワーク上のサーバーに登録されているサーバー証明書のベースとして&reg; 証明書サービス (AD CS) が使用する証明書テンプレートを構成 Active Directory できます。  
   
 このテンプレートを構成するときに、AD CS からサーバー証明書を自動的に受信する Active Directory グループ別のサーバーを指定できます。   
   
