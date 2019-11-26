@@ -9,10 +9,10 @@ ms.date: 02/26/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: c52870178e7caff0abc8ddcccc62966d637dd3c9
-ms.sourcegitcommit: 214847318401cebdcb7f1924a731b4439c9d8a24
+ms.sourcegitcommit: ac9946deb4fa70203a9b05e0386deb4244b8ca55
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2019
+ms.lasthandoff: 11/25/2019
 ms.locfileid: "71357059"
 ---
 # <a name="migrate-from-windows-admin-center-sdk-01-to-10"></a>Migrate from Windows Admin Center SDK 0.1 to 1.0
