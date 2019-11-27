@@ -8,16 +8,16 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: 68b5c7b2c5bc8e93d653514b2664d96b97b07a9e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fac17cd5975eeb699f205888edbe3f1c30b43394
+ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406848"
+ms.lasthandoff: 11/04/2019
+ms.locfileid: "73567152"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Windows 管理センターを使ってみる
 
->適用先:Windows Admin Center、Windows Admin Center Preview
+>適用対象: Windows Admin Center、Windows Admin Center Preview
 
 > [!Tip]
 > Windows Admin Center を初めて使用する場合
@@ -56,9 +56,9 @@ Windows 管理センターのインストールが完了したら、メインの
 
    ![](../media/launch/addserver0.png)
 
-2. サーバー、フェールオーバークラスター、またはハイパー集約されるクラスター接続を追加することを選択します。
+2. サーバー、クラスター、Windows PC、または Azure VM を追加することを選択します。
     
-   ![](../media/launch/addserver1.png)
+   ![](../media/launch/ChooseConnectionType.png)
 
 3. 管理するサーバーまたはクラスターの名前を入力し、 **[送信]** をクリックします。 サーバーまたはクラスターが [概要] ページの接続リストに追加されます。
 
@@ -117,7 +117,7 @@ Windows 管理センターが Windows Server でサービスモードで実行�
 
 **ローカル管理者パスワードソリューション (LAPS)**
 
-お使いの環境で[LAPS](https://technet.microsoft.com/mt227395.aspx)を使用していて、Windows 管理センターが WINDOWS 10 PC にインストールされている場合は、LAPS の資格情報を使用して、管理対象ノードで認証を行うことができます。 **このシナリオを使用する場合は、** [フィードバックを提供](http://aka.ms/WACFeedback)します。
+お使いの環境で[LAPS](https://technet.microsoft.com/mt227395.aspx)を使用していて、Windows 管理センターが WINDOWS 10 PC にインストールされている場合は、LAPS の資格情報を使用して、管理対象ノードで認証を行うことができます。 **このシナリオを使用する場合は、フィードバックを提供してください** [](https://aka.ms/WACFeedback)。
 
 ## <a name="using-tags-to-organize-your-connections"></a>タグを使用した接続の整理
 
@@ -166,7 +166,7 @@ Import-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
 
 ### <a name="csv-file-format-for-importing-connections"></a>接続をインポートするための CSV ファイル形式
 
-CSV ファイルの形式は、4つの見出し```"name","type","tags","groupId"```で始まり、その後に新しい行に各接続が続きます。
+CSV ファイルの形式は、4つの見出し ```"name","type","tags","groupId"```で始まり、その後に新しい行に各接続が続きます。
 
 **name**は接続の FQDN です。
 
@@ -181,7 +181,7 @@ CSV ファイルの形式は、4つの見出し```"name","type","tags","groupId"
 
 **タグ**は、パイプで区切られます。
 
-**groupId**は共有接続に使用されます。 この列の```global```値を使用して、共有接続を作成します。
+**groupId**は共有接続に使用されます。 この列の値 ```global``` を使用して、共有接続にします。
 
 ### <a name="example-csv-file-for-importing-connections"></a>接続をインポートするための CSV ファイルの例
 

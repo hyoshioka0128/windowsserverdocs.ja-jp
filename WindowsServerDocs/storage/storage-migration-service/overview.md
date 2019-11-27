@@ -1,6 +1,6 @@
 ---
-title: Storage Migration Service overview
-description: Storage Migration Service makes it easier to migrate storage to Windows Server or to Azure. It provides a graphical tool that inventories data on Windows and Linux servers and then transfers the data to newer servers or to Azure virtual machines. Storage Migration Service also provides the option to transfer the identity of a server to the destination server so that apps and users can access their data without changing links or paths.
+title: 記憶域移行サービスの概要
+description: Storage Migration Service を使用すると、Windows Server または Azure にストレージを簡単に移行できます。 Windows と Linux のサーバー上のデータをインベントリし、そのデータを新しいサーバーまたは Azure virtual machines に転送するグラフィカルツールを提供します。 また、記憶域移行サービスでは、サーバーの id を移行先サーバーに転送するオプションも用意されています。これにより、アプリとユーザーがリンクまたはパスを変更することなくデータにアクセスできるようになります。
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
@@ -15,69 +15,69 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74310383"
 ---
-# <a name="storage-migration-service-overview"></a>Storage Migration Service overview
+# <a name="storage-migration-service-overview"></a>記憶域移行サービスの概要
 
->Applies to: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server (Semi-Annual Channel)
+>適用対象: Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server (半期チャネル)
 
-Storage Migration Service makes it easier to migrate storage to Windows Server or to Azure. It provides a graphical tool that inventories data on Windows and Linux servers and then transfers the data to newer servers or to Azure virtual machines. Storage Migration Service also provides the option to transfer the identity of a server to the destination server so that apps and users can access their data without changing links or paths.
+Storage Migration Service を使用すると、Windows Server または Azure にストレージを簡単に移行できます。 Windows と Linux のサーバー上のデータをインベントリし、そのデータを新しいサーバーまたは Azure virtual machines に転送するグラフィカルツールを提供します。 また、記憶域移行サービスでは、サーバーの id を移行先サーバーに転送するオプションも用意されています。これにより、アプリとユーザーがリンクまたはパスを変更することなくデータにアクセスできるようになります。
 
-This topic discusses why you'd want to use Storage Migration Service, how the migration process works, and what the requirements are for source and destination servers.
+このトピックでは、記憶域移行サービスを使用する理由、移行プロセスのしくみ、および移行元サーバーと移行先サーバーの要件について説明します。
 
-## <a name="why-use-storage-migration-service"></a>Why use Storage Migration Service
+## <a name="why-use-storage-migration-service"></a>記憶域移行サービスを使用する理由
 
-Use Storage Migration Service because you've got a server (or a lot of servers) that you want to migrate to newer hardware or virtual machines. Storage Migration Service is designed to help by doing the following:
+新しいハードウェアまたは仮想マシンに移行するサーバー (または多数のサーバー) があるため、記憶域移行サービスを使用してください。 記憶域移行サービスは、次の操作を行うことによって役立つように設計されています。
 
-- Inventory multiple servers and their data
-- Rapidly transfer files, file shares, and security configuration from the source servers
-- Optionally take over the identity of the source servers (also known as cutting over) so that users and apps don't have to change anything to access existing data
-- Manage one or multiple migrations from the Windows Admin Center user interface
+- 複数のサーバーとそのデータのインベントリ
+- 移行元サーバーからファイル、ファイル共有、およびセキュリティ構成を迅速に転送する
+- 必要に応じて、ユーザーとアプリが既存のデータにアクセスするために変更する必要がないように、移行元サーバーの id を引き継ぎます。
+- Windows 管理センターのユーザーインターフェイスからの1つまたは複数の移行の管理
 
-![Diagram showing Storage Migration Service migrating files & configuration from source servers to destination servers, Azure VMs, or Azure File Sync.](media/overview/storage-migration-service-diagram.png)
+![移行元サーバーから移行先サーバー、Azure Vm、または Azure File Sync にファイル & 構成を移行するストレージ移行サービスを示す図](media/overview/storage-migration-service-diagram.png)
 
-**Figure 1: Storage Migration Service sources and destinations**
+**図 1: 記憶域移行サービスのソースと変換先**
 
-## <a name="how-the-migration-process-works"></a>How the migration process works
+## <a name="how-the-migration-process-works"></a>移行プロセスのしくみ
 
-Migration is a three-step process:
+移行は、3つの手順からなるプロセスです。
 
-1. **Inventory servers** to gather info about their files and configuration (shown in Figure 2).
-2. **Transfer (copy) data** from the source servers to the destination servers.
-3. **Cut over to the new servers** (optional).<br>The destination servers assume the source servers' former identities so that apps and users don't have to change anything. <br>The source servers enter a maintenance state where they still contain the same files they always have (we never remove files from the source servers) but are unavailable to users and apps. You can then decommission the servers at your convenience.
+1. ファイルと構成に関する情報を収集する**インベントリサーバー** (図2を参照)。
+2. 移行元サーバーから移行先サーバーに**データを転送 (コピー)** します。
+3. **新しいサーバーにカットオーバー**します (省略可能)。<br>移行先サーバーは、アプリとユーザーが何も変更する必要がないように、移行元サーバーの以前の id を想定しています。 <br>移行元サーバーは、常に同じファイル (移行元サーバーからファイルを削除することはありません) が含まれていても、ユーザーとアプリは使用できないというメンテナンス状態になります。 これにより、サーバーを使いやすくすることができます。
 
-![Screenshot showing a server ready to be scanned](media/migrate/inventory.png)
-**Figure 2: Storage Migration Service inventorying servers**
+スキャンの準備ができているサーバーを示すスクリーンショット ![](media/migrate/inventory.png)
+**図 2: Storage Migration Service のサーバーのインベントリ**
 
 ## <a name="requirements"></a>要件
 
-To use Storage Migration Service, you need the following:
+Storage Migration Service を使用するには、次のものが必要です。
 
-- A **source server** or **failover cluster** to migrate files and data from
-- A **destination server** running Windows Server 2019 (clustered or standalone) to migrate to. Windows Server 2016 and Windows Server 2012 R2 work as well but are around 50% slower
-- An **orchestrator server** running Windows Server 2019 to manage the migration  <br>If you're migrating only a few servers and one of the servers is running Windows Server 2019, you can use that as the orchestrator. If you're migrating more servers, we recommend using a separate orchestrator server.
-- A **PC or server running [Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md)** to run the Storage Migration Service user interface, unless you prefer using PowerShell to manage the migration. The Windows Admin Center and Windows Server 2019 version must both be at least version 1809.
+- ファイルとデータを移行する**ソースサーバー**または**フェールオーバークラスター**
+- に移行する Windows Server 2019 (クラスター化またはスタンドアロン) を実行している**移行先サーバー** 。 Windows Server 2016 と Windows Server 2012 R2 も同様に動作しますが、約50% 低速です。
+- 移行を管理するために Windows Server 2019 を実行する**orchestrator サーバー**  <br>少数のサーバーのみを移行していて、いずれかのサーバーで Windows Server 2019 を実行している場合は、そのサーバーを orchestrator として使用できます。 より多くのサーバーを移行する場合は、別の orchestrator サーバーを使用することをお勧めします。
+- 記憶域移行サービスのユーザーインターフェイスを実行する**PC またはサーバー [](../../manage/windows-admin-center/understand/windows-admin-center.md)**  。 PowerShell を使用して移行を管理する場合を除きます。 Windows 管理センターと Windows Server 2019 のバージョンの両方が、バージョン1809以降である必要があります。
 
-We strongly recommend that the orchestrator and destination computers have at least two cores or two vCPUs, and at least 2 GB of memory. Inventory and transfer operations are significantly faster with more processors and memory.
+Orchestrator とセットアップ先のコンピューターには、少なくとも2つのコアまたは2つの vCPUs と、少なくとも 2 GB のメモリがあることを強くお勧めします。 プロセッサとメモリが増えると、インベントリおよび転送操作の速度が大幅に向上します。
 
-### <a name="security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports"></a>Security requirements, the Storage Migration Service proxy service, and firewall ports
+### <a name="security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports"></a>セキュリティ要件、記憶域移行サービスプロキシサービス、およびファイアウォールポート
 
-- A migration account that is an administrator on the source computers and the orchestrator computer.
-- A migration account that is an administrator on the destination computers and the orchestrator computer.
-- The orchestrator computer must have the File and Printer Sharing (SMB-In) firewall rule enabled *inbound*.
-- The source and destination computers must have the following firewall rules enabled *inbound* (though you might already have them enabled):
+- 移行元コンピューターと orchestrator コンピューターの管理者である移行アカウント。
+- 移行先コンピューターと orchestrator コンピューターの管理者である移行アカウント。
+- Orchestrator コンピューターでは、[ファイルとプリンターの共有 (SMB*受信*)] ファイアウォール規則が有効になっている必要があります。
+- 移行元と移行先のコンピューターでは、次のファイアウォール規則の*受信*が有効になっている必要があります (ただし、既に有効になっている可能性があります)。
   - ファイルとプリンターの共有 (SMB 受信)
-  - Netlogon Service (NP-In)
-  - Windows Management Instrumentation (DCOM-In)
+  - Netlogon サービス (NP 受信)
+  - Windows Management Instrumentation (DCOM)
   - Windows Management Instrumentation (WMI-In)
   
   > [!TIP]
-  > Installing the Storage Migration Service Proxy service on a Windows Server 2019 computer automatically opens the necessary firewall ports on that computer. To do so, connect to the destination server in Windows Admin Center and then go to **Server Manager** (in Windows Admin Center) > **Roles and features**, select **Storage Migration Service Proxy**, and then select **Install**.
+  > Windows Server 2019 コンピューターに Storage Migration Service プロキシサービスをインストールすると、そのコンピューターで必要なファイアウォールポートが自動的に開きます。 これを行うには、Windows 管理センターで移行先サーバーに接続し、 **[サーバーマネージャー]** (Windows 管理センター) > **[役割と機能]** の順に選択し、 **[記憶域移行サービスプロキシ]** を選択して **[インストール]** を選択します。
 
 
-- If the computers belong to an Active Directory Domain Services domain, they should all belong to the same forest. The destination server must also be in the same domain as the source server if you want to transfer the source's domain name to the destination when cutting over. Cutover technically works across domains, but the fully-qualified domain name of the destination will be different from the source...
+- コンピューターが Active Directory Domain Services ドメインに属している場合は、すべてが同じフォレストに属している必要があります。 移行元のドメイン名を移行先に転送する場合は、移行先サーバーが移行元サーバーと同じドメインにある必要もあります。 ドメイン間での移行は技術的には可能ですが、移行先の完全修飾ドメイン名はソースとは異なります...
 
-### <a name="requirements-for-source-servers"></a>Requirements for source servers
+### <a name="requirements-for-source-servers"></a>移行元サーバーの要件
 
-The source server must run one of the following operating systems:
+移行元サーバーでは、次のいずれかのオペレーティングシステムを実行する必要があります。
 
 - Windows Server 半期チャネル
 - Windows Server 2019
@@ -101,22 +101,22 @@ The source server must run one of the following operating systems:
 - Windows Storage Server 2012 R2
 - Windows Storage Server 2016
 
-Note: Windows Small Business Server and Windows Server Essentials are domain controllers. Storage Migration Service can't yet cut over from domain controllers, but can inventory and transfer files from them.   
+注: Windows Small Business Server と Windows Server Essentials はドメインコントローラーです。 記憶域移行サービスは、ドメインコントローラーからはまだ切り取れませんが、それらのファイルからファイルをインベントリして転送することはできます。   
 
-You can migrate the following additional source types if the orchestrator is running Windows Server, version 1903 or later, or if the orchestrator is running an earlier version of Windows Server with [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) installed:
+Orchestrator が Windows Server バージョン1903以降を実行している場合、または orchestrator で[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)がインストールされている以前のバージョンの windows server が実行されている場合は、次の追加のソースの種類を移行できます。
 
 - フェールオーバー クラスター
-- Linux servers that use Samba. We've tested the following:
+- Samba を使用する Linux サーバー。 次のことをテストしました。
     - CentOS 7
     - Debian GNU/Linux 8
     - RedHat Enterprise Linux 7.6
     - SUSE Linux Enterprise Server (SLES) 11 SP4
-    - Ubuntu 16.04 LTS and 12.04.5 LTS
-    - Samba 4.8, 4.7, 4.3, 4.2, and 3.6
+    - Ubuntu 16.04 LTS と 12.04.5 LTS
+    - Samba 4.8、4.7、4.3、4.2、および3.6
 
-### <a name="requirements-for-destination-servers"></a>Requirements for destination servers
+### <a name="requirements-for-destination-servers"></a>移行先サーバーの要件
 
-The destination server must run one of the following operating systems:
+移行先サーバーでは、次のいずれかのオペレーティングシステムを実行する必要があります。
 
 - Windows Server 半期チャネル
 - Windows Server 2019
@@ -124,20 +124,20 @@ The destination server must run one of the following operating systems:
 - Windows Server 2012 R2
 
 > [!TIP]
-> Destination servers running Windows Server 2019 or Windows Server, Semi-Annual Channel or later have double the transfer performance of earlier versions of Windows Server. This performance boost is due to the inclusion of a built-in Storage Migration Service proxy service, which also opens the necessary firewall ports if they're not already open.
+> Windows Server 2019 または Windows Server を実行している移行先サーバー、半期チャネル以降では、以前のバージョンの Windows Server の転送パフォーマンスが2倍になっています。 このパフォーマンスの向上は、組み込みの Storage Migration Service プロキシサービスが含まれていることによるものであり、まだ開いていない場合は、必要なファイアウォールポートも開きます。
 
-## <a name="whats-new-in-storage-migration-service"></a>What's new in Storage Migration Service
+## <a name="whats-new-in-storage-migration-service"></a>Storage Migration Service の新機能
 
-The following new features are available when running the Storage Migration Server orchestrator on Windows Server, version 1903 or later, or an earlier version of Windows Server with [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) installed:
+Windows Server バージョン1903以降、または[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)がインストールされている以前のバージョンの windows Server で Storage Migration Server orchestrator を実行する場合は、次の新機能を使用できます。
 
 - 新しいサーバーへのローカル ユーザーとローカル グループの移行
-- Migrate storage from failover clusters, migrate to failover clusters, and migrate between standalone servers and failover clusters
+- フェールオーバークラスターから記憶域を移行し、フェールオーバークラスターに移行して、スタンドアロンサーバーとフェールオーバークラスター間で移行する
 - Samba を使用する Linux サーバーからの記憶域の移行
 - Azure File Sync を使用した Azure へ移行された共有のより簡単な同期
 - Azure などの新しいネットワークへの移行
 
 ## <a name="see-also"></a>関連項目
 
-- [Migrate a file server by using Storage Migration Service](migrate-data.md)
-- [Storage Migration Services frequently asked questions (FAQ)](faq.md)
-- [Storage Migration Service known issues](known-issues.md)
+- [記憶域移行サービスを使用してファイルサーバーを移行する](migrate-data.md)
+- [記憶域移行サービスに関してよく寄せられる質問 (FAQ)](faq.md)
+- [記憶域移行サービスの既知の問題](known-issues.md)

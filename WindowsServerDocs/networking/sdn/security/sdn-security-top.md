@@ -1,6 +1,6 @@
 ---
 title: SDN のセキュリティ
-description: このセクションのトピックでは、Windows Server 2016 Datacenter のソフトウェア定義ネットワーク \(SDN @ no__t-1 のセキュリティについて説明します。
+description: このセクションのトピックでは、Windows Server 2016 Datacenter のソフトウェア定義ネットワーク \(SDN\) のセキュリティについて説明します。
 manager: brianlic
 ms.prod: windows-server
 ms.technology: networking-sdn
@@ -17,9 +17,9 @@ ms.locfileid: "71355722"
 ---
 # <a name="security-for-sdn"></a>SDN のセキュリティ
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-このセクションのトピックでは、ソフトウェア定義ネットワーク \(SDN @ no__t-1 のセキュリティについて説明します。
+このセクションのトピックでは、ソフトウェア定義ネットワーク \(SDN\)のセキュリティについて説明します。
 
 >[!Note]
 >その他のソフトウェア定義ネットワークのドキュメントについては、次のライブラリのセクションを参照してください。
@@ -30,7 +30,7 @@ ms.locfileid: "71355722"
 > - [SDN の管理](../manage/manage-sdn.md)  
 > - [SDN のトラブルシューティング](../troubleshoot/Troubleshoot-Software-Defined-Networking.md)
 
-このセクションでは、次のトピックを扱います。
+ここでは、次のトピックについて説明します。
 
 - [ネットワークコントローラーのセキュリティ](nc-security.md)
 - [ソフトウェア定義ネットワークの証明書の管理](sdn-manage-certs.md)

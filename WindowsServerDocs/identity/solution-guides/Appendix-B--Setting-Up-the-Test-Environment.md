@@ -18,7 +18,7 @@ ms.locfileid: "71407140"
 ---
 # <a name="appendix-b-setting-up-the-test-environment"></a>付録 B:テスト環境のセットアップ
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、ダイナミック アクセス制御をテストする実践的ラボを作成する手順の概要を示します。 依存関係のあるコンポーネントが多数存在するため、手順には順に従ってください。  
 
@@ -100,7 +100,7 @@ Windows Server 2008 R2 (SP1) を実行しているコンピューターに Hyper
 
 ##### <a name="to-install-active-directory-domain-services"></a>Active Directory ドメイン サービスをインストールするには  
 
-1. 仮想マシンを ID_AD_Network に接続します。 パスワード<strong>pass@word1</strong>を使用して、管理者として DC1 にサインインします。  
+1. 仮想マシンを ID_AD_Network に接続します。 <strong>pass@word1</strong>パスワードを使用して管理者として DC1 にサインインします。  
 
 2. サーバー マネージャーで、 **[管理]** をクリックし、 **[役割と機能の追加]** をクリックします。  
 
@@ -164,11 +164,11 @@ Active Directory 管理センターを使用して、次のユーザーを作成
 4. 示されている属性を使用して次のユーザーを作成します。  
 
 
-   |       User       |  Username  |     メール アドレス      | 部署 |      グループ       | 国/地域 |
+   |       ユーザー       |  Username  |     メール アドレス      | 部署 |      グループ       | 国/地域 |
    |------------------|------------|------------------------|------------|------------------|----------------|
    | Myriam Delesalle | MDelesalle | MDelesalle@contoso.com |  ファイナンス   |                  |       US       |
    |    Miles Reid    |   MReid    |   MReid@contoso.com    |  ファイナンス   |   FinanceAdmin   |       US       |
-   |   Esther Valle   |   EValle   |   EValle@contoso.com   | 操作 | FinanceException |       US       |
+   |   Esther Valle   |   EValle   |   EValle@contoso.com   | 運用 | FinanceException |       US       |
    |   Maira Wenzel   |  MWenzel   |  MWenzel@contoso.com   |     HR     |                  |       US       |
    |     Jeff Low     |    JLow    |    JLow@contoso.com    |     HR     |                  |       US       |
    |    RMS Server    |    rms     |    rms@contoso.com     |            |                  |                |
@@ -245,7 +245,7 @@ IFilters をダウンロードしてインストールするには、「 [Micros
 
 3. **電子メールの通知** タブの SMTP サーバー名または IP アドレス  に、電子メールによる通知を転送する SMTP サーバーのホスト名または IP アドレスを入力します。  
 
-4. クォータまたはファイルスクリーンのイベントを特定の管理者に定期的に通知する場合は、[**既定の管理**者の受信者] に、fileadmin@contoso.com などの各電子メールアドレスを入力します。 @No__t-0 という形式を使用し、セミコロンを使用して複数のアカウントを区切ります。  
+4. クォータまたはファイルスクリーンのイベントを特定の管理者に定期的に通知する場合は、[**既定の管理**者の受信者] の下に、各電子メールアドレス (fileadmin@contoso.comなど) を入力します。 account@domainの形式を使用し、複数のアカウントを区切るにはセミコロンを使用します。  
 
 #### <a name="create-groups-on-file1"></a>FILE1 でグループを作成する  
 
@@ -263,7 +263,7 @@ IFilters をダウンロードしてインストールするには、「 [Micros
 
     -   **Finance Memo.docx**:ドキュメントに金融関連のテキストを追加します。 たとえば、「finance ドキュメントにアクセスできるユーザーに関するビジネスルールが変更されました。 金融ドキュメントにアクセスできるのは、FinanceExpert グループのメンバーのみになりました。 他の部門やグループはアクセスできません。 ' この変更を環境に実装する前にその影響を評価する必要があります。 このドキュメントの各ページのフッターには、「CONTOSO CONFIDENTIAL」と記載してください。  
 
-    -   **Request for Approval to Hire.docx**:このドキュメントでは、応募者情報を収集するフォームを作成します。 ドキュメント内には次のフィールドが含まれている必要があります。**応募者名、社会保障番号、職名、提案した給料、開始日、上司名、部門**。 このドキュメントでは、 **上司署名、承認された給料、オファー確認**、および **オファー状態**用のフォームが含まれたセクションを追加します。   
+    -   **Request for Approval to Hire.docx**:このドキュメントでは、応募者情報を収集するフォームを作成します。 ドキュメント内には次のフィールドが含まれている必要があります。 **応募者名、社会保障番号、職名、提案した給料、開始日、上司名、部門**。 このドキュメントでは、 **上司署名、承認された給料、オファー確認**、および **オファー状態**用のフォームが含まれたセクションを追加します。   
         ドキュメント Rights Management は有効にします。  
 
     -   **Word Document1.docx**:このドキュメントには、テスト内容を追加します。  
@@ -275,7 +275,7 @@ IFilters をダウンロードしてインストールするには、「 [Micros
     -   **Workbook2**  
 
     -   「Regular Expressions」というフォルダーをデスクトップに作成します。 このフォルダー内に **RegEx-SSN** というテキスト ドキュメントを作成します。 ファイル内に次の内容を入力してから、ファイルを保存して閉じます。   
-        ^(?!000)([0-7]\d{2}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$  
+        ^(?!000)([0-7]\d{4}|7([0-7]\d|7[012]))([ -]?)(?!00)\d\d\3(?!0000)\d{4}$  
 
 3.  フォルダー D:\Finance Documents を「Finance Documents」として共有し、この共有に対する読み取りアクセスと書き込みアクセスを全員に許可します。  
 
@@ -329,7 +329,7 @@ IFilters をダウンロードしてインストールするには、「 [Micros
     > [!NOTE]  
     > Windows Internal Database では、AD RMS クラスター内の複数のサーバーがサポートされないため、テスト環境のみで使用することをお勧めします。 運用展開では、別個のデータベース サーバーを使用する必要があります。  
 
-19. **[サービスアカウント]** 画面の **[ドメインユーザーアカウント]** で **[指定]** をクリックし、ユーザー名 (**contoso\rms**) とパスワード (<strong>@no__t 5</strong>) を指定して、 **[OK]** をクリックし、 **[次へ]** をクリックします。  
+19. **[サービスアカウント]** 画面の **[ドメインユーザーアカウント]** で **[指定**] をクリックし、ユーザー名 (**contoso\rms**) とパスワード (<strong>pass@word1</strong>) を指定して、 **[OK]** をクリックし、 **[次へ]** をクリックします。  
 
 20. **[暗号化モード]** 画面で **[暗号化モード 2]** をクリックします。  
 
@@ -369,7 +369,7 @@ IFilters をダウンロードしてインストールするには、「 [Micros
 
 33. 残りのタブを変更せずにクリックして完了してから、 **[完了]** をクリックします。 CONTOSO\Administrator としてサインインします。  
 
-34. C:\inetpub\wwwroot @ no__t-0_wmcs\certification フォルダーを参照し、ServerCertification .asmx ファイルを選択し、認証されたユーザーを追加して、ファイルに対する読み取りと書き込みのアクセス許可を付与します。  
+34. フォルダーを参照し、C:\inetpub\wwwroot\\_wmcs 証明書を選択して、サーバー証明 .asmx ファイルを選択し、認証されたユーザーを追加して、ファイルに対する読み取りと書き込みのアクセス許可を付与します。  
 
 35. Windows PowerShell を開き、 `Get-FsrmRmsTemplate`を実行します。 このコマンドを使用して、この手順のこれより前の手順で作成した RMS テンプレートを表示できることを確認します。  
 
@@ -388,7 +388,7 @@ IFilters をダウンロードしてインストールするには、「 [Micros
 
 ###### <a name="to-install-and-configure-an-ad-rms-cluster-in-windows-server-2012-using-windows-powershell"></a>Windows Server 2012 で Windows PowerShell を使用して AD RMS クラスターをインストールして構成するには  
 
-1. 次のパスワードを使用して CONTOSO\Administrator としてログオンします<strong>@no__t。-1</strong>  
+1. <strong>pass@word1</strong>パスワードを使用して CONTOSO\Administrator としてログオンします。  
 
    > [!IMPORTANT]  
    > AD RMS サーバーの役割をインストールするために、AD RMS をインストールするサーバー コンピューター上のローカル管理者グループのメンバーシップと、Active Directory 内の Enterprise Admins グループのメンバーシップをインストーラー アカウント (この場合、CONTOSO\Administrator) に付与する必要があります。  
@@ -532,7 +532,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
    - ユーザー名: fileadmin@contoso.com  
 
-   - パスワードを保存する:Select  
+   - パスワードを保存する:選択  
 
 4. contoso\administrator のデスクトップに Outlook へのショートカットを作成する  
 
@@ -540,7 +540,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
 6. 生成されたすべてのテスト メッセージを削除します。  
 
-7. @No__t-0 \ File1\finance documents Documents を指すクライアントバーチャルマシン上のすべてのユーザーに対して、新しいショートカットをデスクトップに作成します。  
+7. クライアント仮想マシン上のすべてのユーザーに対して、\\\FILE1\Finance ドキュメントを指す新しいショートカットをデスクトップに作成します。  
 
 8. 必要に応じて、再起動します。  
 
@@ -642,7 +642,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 8.  引き続き、ウィザードの手順に従います。  
 
 ### <a name="BKMK_2.4"></a>Adatum フォレストに追加のユーザーを作成する  
-パスワード<strong>pass@word1</strong>を指定してユーザー Jeff Low を作成し、値**Adatum**を使用して company 属性を割り当てます。  
+パスワード<strong>pass@word1</strong>を使用してユーザー Jeff Low を作成し、値**Adatum**で company 属性を割り当てます。  
 
 ##### <a name="to-create-a-user-with-the-company-attribute"></a>Company 属性を指定してユーザーを作成するには  
 
@@ -752,7 +752,7 @@ SRV1 は SMTP/POP3 メール サーバーです。 アクセス拒否アシス�
 
 7. **[OK]** を 3 回クリックして終了し、Active Directory 管理センターに戻ります。  
 
-   @no__t 0solution ガイド](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+   ![ソリューションガイド](media/Appendix-B--Setting-Up-the-Test-Environment/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
 
    以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
 
@@ -821,7 +821,7 @@ FILE1 で新規 NTFS ボリュームを作成し、次のフォルダーを作�
 
 ##### <a name="to-assign-the-central-access-policy-on-the-file-server"></a>ファイル サーバーで集約型アクセス ポリシーを割り当てるには  
 
-1. Hyper-V マネージャーでサーバー FILE1 に接続します。 Contoso\Administrator を使用してサーバーにサインインし、パスワード<strong>pass@word1</strong>を使用します。  
+1. Hyper-V マネージャーでサーバー FILE1 に接続します。 Contoso\Administrator を使用して、パスワード<strong>pass@word1</strong>でサーバーにサインインします。  
 
 2. 管理者特権でのコマンド プロンプトを開き、コマンド **gpupdate /force** を入力します。 これにより、グループ ポリシーの変更がサーバーで有効になります。  
 
@@ -829,11 +829,11 @@ FILE1 で新規 NTFS ボリュームを作成し、次のフォルダーを作�
 
 4. エクスプローラーを開き、D:\EARNINGS に移動します。 **[Earnings]** フォルダーを右クリックし、 **[プロパティ]** をクリックします。  
 
-5. **[分類]** タブをクリックします。Company を選択してから、 **[値]** フィールドで **[Adatum]** を選択します。  
+5. **[分類]** タブをクリックします。 **[会社]** を選択し、 **[値]** フィールドで **[Adatum]** を選択します。  
 
 6. **[変更]** をクリックし、ドロップダウン メニューから **[Adatum Only Access Policy]** を選択してから、 **[適用]** をクリックします。  
 
-7. **[セキュリティ]** タブをクリックし、 **[詳細設定]** をクリックしてから、 **[集約ポリシー]** タブをクリックします。**AdatumEmployeeAccessRule** が一覧表示されています。 この項目を展開して、Active Directory の規則を作成したときに設定したすべてのアクセス許可を表示できます。  
+7. **[セキュリティ]** タブをクリックし、 **[詳細設定]** をクリックして、 **[集約型ポリシー]** タブをクリックします。**Adatumemployeeaccessrule が**が表示されます。 この項目を展開して、Active Directory の規則を作成したときに設定したすべてのアクセス許可を表示できます。  
 
 8. **[OK]** をクリックしてエクスプローラーに戻ります。  
 
