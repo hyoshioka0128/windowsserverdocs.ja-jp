@@ -32,7 +32,7 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 | 目的の処理    | 使用するリソース   |
 |--------------------|------------------------|
 | ボリュームライセンス認証シナリオ以外で Windows のライセンスを認証する (つまり、製品版の Windows のライセンスを認証する) 場合、**これらのキーは機能しません**。 | 製品版の Windows には次のリンクを使用します。 |
-| Windows 8.1 または Windows Server 2012 R2 システムのライセンスを認証するときに発生する次のエラーを修正する。“Error:0xC004F050 The Software Licensing Service reported that the product key is invalid”… | Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012 を実行している場合、KMS ホストに[この更新プログラムをインストールします](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2)。 |
+| Windows 8.1 または Windows Server 2012 R2 システムのライセンスを認証するときに発生する次のエラーを修正する。“Error:0xC004F050 ソフトウェア ライセンス サービスで、プロダクト キーは無効であることが報告されました”… | Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012 を実行している場合、KMS ホストに[この更新プログラムをインストールします](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2)。 |
 
 -   [Windows 10 を入手する](https://www.microsoft.com/en-us/windows/get-windows-10)
 
