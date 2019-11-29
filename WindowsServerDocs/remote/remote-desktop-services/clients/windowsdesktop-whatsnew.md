@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/12/2019
+ms.date: 11/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: db9c2b64e018b41b053974b5459bd320098a6d2d
-ms.sourcegitcommit: 315f015102c42c6fa7694e76adecdfb448390391
+ms.openlocfilehash: 54994aad08c2f428b429082ed450235ed8bbe7e7
+ms.sourcegitcommit: 244b89505c5131dfdb90628857cc7e31741c84c2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2019
-ms.locfileid: "74019594"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74265925"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows デスクトップ クライアントの新機能
 
@@ -31,11 +31,22 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 |ユーザー グループ |バージョン  |
 |-----------|---------|
 |パブリック     |1.2.431  |
-|Insider    |1.2.431  |
+|Insider    |1.2.524  |
+
+## <a name="updates-for-version-12524"></a>バージョン 1.2.524 の更新内容
+
+*公開日:2019 年 11 月 20 日*
+
+ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4e7Nj)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dZCo)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dX1s)
+
+- クライアントの上部にあるコマンド バーの [その他のオプション] ボタンを使用して、更新プログラムに関する情報に直接アクセスできるようになりました。
+- クライアントのコマンド バーからフィードバックを報告できるようになりました。
 
 ## <a name="updates-for-version-12431"></a>バージョン 1.2.431 の更新内容
 
 *公開日:2019 年 11 月 12 日*
+
+ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48kow)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48koA)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE48zYj)
 
 - 32 ビットおよび ARM64 バージョンのクライアントが利用可能になりました。
 - クライアントでは、接続バーに対して行ったすべての変更 (その位置、サイズ、固定状態など) が保存され、これらの変更がセッション間に適用されます。
@@ -55,15 +66,12 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 
 *公開日:2019 年 9 月 17 日*
 
-- 接続中に認証を行うときに発生するクラッシュを修正しました。
-- クライアントを閉じるときに発生するクラッシュを修正しました。
-
-## <a name="updates-for-version-12246"></a>バージョン 1.2.246 の更新内容
-
-*公開日:2019 年 8 月 28 日*
+ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3LkSa)
 
 - ローカライズされたバージョンのフォールバック言語が強化されました (たとえば、FR-CA は英語ではなくフランス語で正しく表示されます)。
 - サブスクリプションを削除すると、クライアントでは、保存された資格情報が Credential Manager から適切に削除されるようになりました。
 - クライアントの更新プロセスは、開始後は無人で実行され、完了すると、クライアントは再起動されます。
 - クライアントを Windows 10 の S モードで使用できるようになりました。
 - ユーザー名にスペースが含まれるユーザーの更新プロセスが失敗する原因となっていた問題を修正しました。
+- 接続中に認証を行うときに発生するクラッシュを修正しました。
+- クライアントを閉じるときに発生するクラッシュを修正しました。

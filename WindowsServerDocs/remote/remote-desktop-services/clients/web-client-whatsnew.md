@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 10/18/2019
+ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: bcbd3292bcd4653a4568492a996d53c17f465aa8
-ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
+ms.openlocfilehash: 41f5bd7be03e61471683d5fc04df9ee10bc09e58
+ms.sourcegitcommit: 89aea00fe0e00fc8b1a6e20af36ad04df8c9fe5b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591040"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74189475"
 ---
 # <a name="whats-new-in-the-web-client"></a>Web クライアントの新機能
 
@@ -26,6 +26,14 @@ ms.locfileid: "72591040"
 
 > [!NOTE]
 > Web クライアントのバージョン管理システムが変更されています。 バージョン 1.0.18.0 以降、すべての Web クライアントのリリース バージョンには ("W.X.Y.Z" 形式の) 数値が含まれます。 リモート デスクトップ Web クライアントのリリース番号は常に 0 で終わります (例: W.X.Y.0)。 Windows 仮想デスクトップ Web クライアントの各リリースでは、次のリモート デスクトップ Web クライアントがリリースされるまで、最後の桁が変更されます (例: 1.0.18.1)。
+
+## <a name="updates-for-version-10210"></a>バージョン 1.0.21.0 の更新内容
+*公開日:2019 年 11 月 15 日*
+
+- リモート セッションで入力方式エディター (IME) を使用して複雑な文字を入力するためのサポートが追加されました。
+- ユーザーがリモート セッションで macOS デバイスのコピーして貼り付けることができないという不具合が修正されました。
+- Firefox でローカル Windows キーがリモート セッションに送信されるという不具合が修正されました。
+- 管理者が有効にした場合に、RDWeb パスワードの変更へのリンクが追加されました。
 
 ## <a name="updates-for-version-10200"></a>バージョン 1.0.20.0 の更新内容
 *公開日:2019 年 10 月 18 日*

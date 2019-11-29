@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: 7d4641e2bb40a9a70264c68d0268208a30f36a69
-ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
+ms.openlocfilehash: e501d550e5371c668f7e243f00106a0b79f694dc
+ms.sourcegitcommit: 214847318401cebdcb7f1924a731b4439c9d8a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72812299"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74187883"
 ---
 # <a name="supported-configurations-for-remote-desktop-services"></a>リモート デスクトップ サービスにおいてサポートされる構成
 
@@ -57,7 +57,7 @@ Windows Server 2016 も実行しているリモート デスクトップ セッ�
 
 リモート デスクトップ サービスは GPU を備えたシステムをサポートします。 GPU を必要とするアプリケーションを、リモート接続を介して使用できます。 さらに、GPU でアクセラレーションされたレンダリングとエンコードを有効にして、アプリのパフォーマンスとスケーラビリティを向上させることができます。
 
-リモート デスクトップ サービスのセッション ホストと単一セッションのクライアント オペレーティングシステム システムは、[Azure の GPU が最適化された仮想マシン サイズ](/en-us/azure/virtual-machines/windows/sizes-gpu)、物理 RDSH サーバーで利用可能な GPU、RemoteFX vGPU (Windows Server 2016  のみ)、サポートされるハイパーバイザーにより VM に提供される GPU など、オペレーティング システムに提供される物理的または仮想の GPU のメリットを活かすことができます。
+リモート デスクトップ サービスのセッション ホストと単一セッションのクライアント オペレーティングシステム システムは、[Azure の GPU が最適化された仮想マシン サイズ](/en-us/azure/virtual-machines/windows/sizes-gpu)、物理 RDSH サーバーで利用可能な GPU、RemoteFX vGPU (Windows Server 2016 のみ)、サポートされるハイパーバイザーにより VM に提供される GPU など、オペレーティング システムに提供される物理的または仮想の GPU のメリットを活かすことができます。
 
 何が必要かを明確にするには、「[Which graphics virtualization technology is right for you? (どのグラフィックス仮想化技術が適切か)](rds-graphics-virtualization.md)」をご覧ください。 DDA に関する特定の情報については、[個別のデバイス割り当てを展開する計画](../../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md)に関するページを参照してください。
 

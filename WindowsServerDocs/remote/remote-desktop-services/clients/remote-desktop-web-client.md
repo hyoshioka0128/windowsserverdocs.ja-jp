@@ -8,12 +8,12 @@ ms.date: 08/27/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 69beba2c59617da5b501dc55e2509e41ce4ee3fd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6c37c28fded08ba68e46a10a534ee0269c714938
+ms.sourcegitcommit: 89aea00fe0e00fc8b1a6e20af36ad04df8c9fe5b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404114"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74189468"
 ---
 # <a name="get-started-with-the-web-client"></a>Web クライアントの概要
 
@@ -58,6 +58,10 @@ Web クライアントから印刷するには、次の手順に従います。
 ## <a name="copy-and-paste-from-the-remote-desktop-web-client"></a>リモート デスクトップ Web クライアントからのコピーと貼り付け
 
 Web クライアントでは現在、テキストのコピーと貼り付けのみをサポートしています。 Web クライアントに対して、ファイルをコピーまたは貼り付けすることはできません。 さらに、テキストをコピーして貼り付けるには、**Ctrl + C** と **Ctrl + V** だけを使用できます。
+
+## <a name="use-an-input-method-editor-ime-in-the-remote-session"></a>リモート セッションで入力方式エディター (IME) を使用する
+
+リモート セッションで入力方式エディターを使用して複雑な文字を入力するには、ナビゲーション バーの歯車アイコンを選択して **[設定]** サイド パネルを開き、 **[入力方式エディターを有効にする]** を **[オン]** に切り替えます。 入力方式エディターがインストールされ、リモート セッションで有効になっている必要があります。 
 
 ## <a name="get-help-with-the-web-client"></a>Web クライアントに関するヘルプの表示
 
