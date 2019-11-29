@@ -11,7 +11,7 @@ ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 52f77e2cb60be66d8be2e3927fe0f97c2c945994
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71391023"
@@ -21,11 +21,11 @@ ms.locfileid: "71391023"
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
   
-このページには、Active Directory ドメイン services のコンテンツへのリンクが掲載されています。   
+このページで、Active Directory Domain Services のコンテンツへのリンクを見つけることができます。   
 
 
 * [Active Directory Domain Services の新機能](../whats-new-active-directory-domain-services.md)  
-* [AD DS はじめに](../ad-ds/AD-DS-Getting-Started.md)   
+* [AD DS の概要](../ad-ds/AD-DS-Getting-Started.md)   
 * [AD DS の設計と計画](../ad-ds/plan/AD-DS-Design-and-Planning.md)  
 * [AD DS 展開](../ad-ds/deploy/AD-DS-Deployment.md)  
 * [AD DS の運用](../ad-ds/manage/component-updates/AD-DS-Operations.md)   
