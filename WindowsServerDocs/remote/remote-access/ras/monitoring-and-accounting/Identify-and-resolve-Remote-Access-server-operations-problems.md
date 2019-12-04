@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 7ce84c9f-fd1f-4463-8fc7-d2f33344a2c9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: db10f784f383938edb29b18d7e8febf869378abc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 831f484db8325bf9a27e9065ac5cf74913d0805c
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404562"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791164"
 ---
 # <a name="identify-and-resolve-remote-access-server-operations-problems"></a>リモート アクセス サーバーの操作上の問題を特定して解決する
 
@@ -76,7 +76,7 @@ IP ヘルパーサービスを無効にすると、リモートアクセスサ�
   
     **解決方法**  
   
-    1.  サービスが実行されていることを確認するには、Windows PowerShell プロンプトで「 **Get service iphlpsc** 」と入力します。  
+    1.  サービスが実行されていることを確認するには、Windows PowerShell プロンプトで「 **Get service iphlpsvc** 」と入力します。  
   
     2.  サービスを有効にするには、管理者特権の Windows PowerShell プロンプトで「 **iphlpsvc** 」と入力します。  
   
@@ -95,9 +95,6 @@ windows PowerShell の ![](../../../media/Identify-and-resolve-Remote-Access-ser
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
-```  
+```PowerShell
 PS> Get-RemoteAccessHealth | Where-Object {$_.Component -eq "IP-HTTPS"} | Format-List -Property *  
-```  
-  
-
-
+```

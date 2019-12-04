@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1fb0875c972f8259b47f48ef84ed486fc678d8b0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3e481048c23e634869b0238188d4a0ef8b49cb3e
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370890"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781309"
 ---
 # <a name="start"></a>スタート
 
@@ -31,7 +31,7 @@ ms.locfileid: "71370890"
 ## <a name="syntax"></a>構文
 
 ```
-start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/b {<Command> | <Program>} [<Parameters>]]
+start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b {<Command> | <Program>} [<Parameters>]]
 ```
 
 ## <a name="parameters"></a>パラメーター
@@ -46,6 +46,7 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 |/低 \|/標準 \|/高 \|/リアルタイム \|/abovenormal \|/belownormal|指定した優先度クラスでは、アプリケーションを起動します。 有効な優先度クラスの値は **低/** , 、**通常/** , 、 **/高**, 、 **/realtime**, 、 **/abovenormal**, と **/belownormal**します。|
 |/アフィニティ \<HexAffinity >|新しいアプリケーションを (16 進数として表されます)、指定されたプロセッサ関係マスクを適用します。|
 |/wait|アプリケーションを起動し、終了するまで待機します。|
+|/昇格|管理者としてアプリケーションを実行します。|
 |/b|新しいコマンド プロンプト ウィンドウを開くことがなく、アプリケーションを起動します。 CTRL キーを押しながら C キーの処理には、アプリケーションは CTRL + C 処理を有効にしない限りは無視されます。 アプリケーションを中断するのにには、CTRL キーを押しながら BREAK キーを使用します。|
 |/b \<コマンド > \| \<プログラム >|開始するコマンドまたはプログラムを指定します。|
 |\<パラメーター >|コマンドまたはプログラムに渡すパラメーターを指定します。|

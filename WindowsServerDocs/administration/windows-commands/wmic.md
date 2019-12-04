@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e9840bc20ddf6193241fe36055698e2bd3222496
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f5096ab82ebbd01cb4f3a7dc0cf0b15e4b9fae8e
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361876"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781329"
 ---
 # <a name="wmic"></a>wmic
 
@@ -31,7 +31,7 @@ ms.locfileid: "71361876"
 ## <a name="syntax"></a>構文
 
 ```
-command </parameter>
+wmic </parameter>
 ```
 
 ## <a name="sub-commands"></a>サブコマンド
@@ -44,14 +44,6 @@ command </parameter>
 |パス|WMIC の既定のエイリアスモードをエスケープして、WMI スキーマ内のインスタンスに直接アクセスできるようにします。|
 |コンテキスト|すべてのグローバルスイッチの現在の値を表示します。|
 |[終了 \| 終了]|WMIC コマンドシェルを終了します。|
-
-## <a name="parameters"></a>パラメーター
-
-|パラメーター|説明|
-|---------|-----------|
-|</parameter>|簡潔な説明 \<、動詞で始まります。 >|
-|</param2>|もう1つ簡潔な説明 \<、動詞で始まります。 >|
-
 
 ## <a name="BKMK_examples"></a>例
 
