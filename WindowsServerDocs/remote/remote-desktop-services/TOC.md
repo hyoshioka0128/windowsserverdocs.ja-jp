@@ -8,6 +8,8 @@
 ## [計画と設計](rds-plan-and-design.md)
 ### [任意の場所での構築](rds-plan-build-anywhere.md)
 ### [さまざまな種類のユーザーの要求を満たす](rds-plan-cater-to-users.md)
+### [リモート デスクトップのワークロード](remote-desktop-workloads.md)
+### [仮想マシンのサイズ変更](virtual-machine-recs.md)
 ### [どこからでもアクセス](rds-plan-access-from-anywhere.md)
 ### [高可用性](rds-plan-high-availability.md)
 ### [多要素認証](rds-plan-mfa.md)
