@@ -10,12 +10,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: ac6d9abf96348a596fbd2f886cb67b5d97f686e2
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+ms.openlocfilehash: f3b580b108677b391065ad83f61e52504fe9ac91
+ms.sourcegitcommit: 68483ee9284285f5643dd67dce06f5a102cb9469
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700155"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74823850"
 ---
 # <a name="networking"></a>のネットワーク
 
@@ -252,7 +252,7 @@ ms.locfileid: "74700155"
             </div>
         </div>
     </li>
-    <hr />
+   <hr />
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -263,7 +263,7 @@ ms.locfileid: "74700155"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3><a href="dns/dns-top.md">ドメインネームシステム (DNS)&quot;&gt;</a></h3>
+                        <h3><a href="dns/dns-top.md">ドメイン ネーム システム (DNS)</a></h3>
                         <hr />
                         <p>ドメインネームシステム (DNS) は、TCP/IP を構成する業界標準のプロトコルスイートの1つであり、DNS クライアントと DNS サーバーの組み合わせにより、コンピューター名から IP アドレスへのマッピング名前解決サービスがコンピューターとユーザーに提供されます。</p>
                     </div>
@@ -382,7 +382,7 @@ ms.locfileid: "74700155"
                         <p>Windows Server 2016 のネットワーク オフロードおよび最適化テクノロジには、ソフトウェアのみ (SO) の機能とテクノロジー、ソフトウェアとハードウェア (SH) の統合機能とテクノロジー、ハードウェアのみ (HO) の機能とテクノロジーがあります。</p>
                         <p>オフロードおよび最適化テクノロジに関する以下のドキュメントも参照してください。<p>
                         <hr />
-                        <a href="technologies/conv-nic/cnic-top.md">高パフォーマンスのネットワーク</a>
+                        <a href="technologies/conv-nic/cnic-top.md">収束ネットワークインターフェイスカード (NIC)</a>の
                         <hr />
                         <a href="technologies/dcb/dcb-top.md">データセンターブリッジング (DCB)</a>
                         <hr />

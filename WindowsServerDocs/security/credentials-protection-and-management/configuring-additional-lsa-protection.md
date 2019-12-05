@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: eaebac19119525b659c09b5506c497afdbd9a263
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 40e489089fc0c15c3e6ebf7b654377f4d6f7e482
+ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386990"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74829631"
 ---
 # <a name="configuring-additional-lsa-protection"></a>追加の LSA の保護の構成
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 IT プロフェッショナル向けのこのトピックでは、資格情報に損害を与える可能性があるコード インジェクションを防止する、ローカル セキュリティ機関 (LSA) のプロセスに対して、追加の保護を構成する方法について説明します。
 
@@ -71,7 +71,7 @@ LSA の保護が有効になっている場合は、カスタム LSA プラグ�
 
 ##### <a name="to-enable-the-audit-mode-for-lsassexe-on-a-single-computer-by-editing-the-registry"></a>レジストリを編集して単一のコンピューターで Lsass.exe の監査モード有効にするには
 
-1.  レジストリ エディター (RegEdit.exe) を開き、次の場所にあるレジストリ キーに移動します。HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe
+1.  レジストリ エディター (Regedit.exe) を開き、次の場所にあるレジストリ キーに移動します。HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe。
 
 2.  レジストリ キーの値を **AuditLevel=dword:00000008** に設定します。
 
@@ -79,9 +79,9 @@ LSA の保護が有効になっている場合は、カスタム LSA プラグ�
 
 イベント 3065 およびイベント 3066 の結果を解析します。
 
-その後、次のようなイベントがイベントビューアーに表示されることがあります。Microsoft-Windows-Codeintegrity/Operational:
+その後、次のようなイベントがイベントビューアーに表示されることがあります: Microsoft-Windows-Codeintegrity/Operational:
 
--   **イベント 3065**:このイベントは、プロセス (通常は lsass.exe) が共有セクションのセキュリティ要件を満たしていない特定のドライバーの読み込みを試行したことを、コードの整合性チェックによって特定したことを記録します。 ただし、設定されたシステム ポリシーのために、イメージの読み込みは許可されました。
+-   **イベント 3065**: このイベントは、プロセス (通常は lsass.exe) が共有セクションのセキュリティ要件を満たしていない特定のドライバーの読み込みを試行したことを、コードの整合性チェックによって特定したことを記録します。 ただし、設定されたシステム ポリシーのために、イメージの読み込みは許可されました。
 
 -   **イベント 3066**:このイベントは、プロセス (通常は lsass.exe) が Microsoft 署名のレベル要件を満たしていない特定のドライバーの読み込みを試行したことを、コードの整合性チェックによって特定したことを記録します。 ただし、設定されたシステム ポリシーのために、イメージの読み込みは許可されました。
 
@@ -126,11 +126,11 @@ LSA の保護が有効になっている場合は、カスタム LSA プラグ�
 
 イベント 3033 およびイベント 3063 の結果を解析します。
 
-その後、次のようなイベントがイベントビューアーに表示されることがあります。Microsoft-Windows-Codeintegrity/Operational:
+その後、次のようなイベントがイベントビューアーに表示されることがあります: Microsoft-Windows-Codeintegrity/Operational:
 
 -   **イベント 3033**:このイベントは、プロセス (通常は lsass.exe) が Microsoft 署名のレベル要件を満たしていないドライバーの読み込みを試行したことを、コードの整合性チェックによって特定したことを記録します。
 
--   **イベント 3063**:このイベントは、プロセス (通常は lsass.exe) が共有セクションのセキュリティ要件を満たしていないドライバーの読み込みを試行したことを、コードの整合性チェックによって特定したことを記録します。
+-   **イベント 3063**: このイベントは、プロセス (通常は lsass.exe) が共有セクションのセキュリティ要件を満たしていないドライバーの読み込みを試行したことを、コードの整合性チェックによって特定したことを記録します。
 
 共有セクションは、通常、インスタンス データが同じセキュリティ コンテキストを使用するその他のプロセスを操作するためのプログラミング手法の結果です。 これによりセキュリティの脆弱性が高くなる場合があります。
 
@@ -138,7 +138,7 @@ LSA の保護が有効になっている場合は、カスタム LSA プラグ�
 Windows 8.1 を実行しているデバイスでは (セキュアブートまたは UEFI の有無にかかわらず)、このセクションで説明されている手順を実行して構成を行うことができます。 Windows RT 8.1 を実行しているデバイスの場合、lsass.exe の保護は常に有効になり、無効にすることはできません。
 
 ### <a name="on-x86-based-or-x64-based-devices-using-secure-boot-and-uefi-or-not"></a>x86 ベースまたは x64 ベースのデバイスでセキュア ブートや UEFI を使用するかどうか
-セキュア ブートおよび UEFI を使用する x86 ベースまたは x64 ベースのデバイスで、レジストリ キーを使用することによって LSA の保護が有効になっている場合、UEFI 変数は UEFI ファームウェアで設定されます。 設定がファームウェアに格納されている場合、UEFI 変数はレジストリ キーで削除または変更できません。 UEFI 変数はリセットする必要があります。
+セキュアブートまたは UEFI を使用する x86 ベースまたは x64 ベースのデバイスでは、レジストリキーを使用して LSA の保護を有効にしたときに uefi ファームウェアで UEFI 変数が設定されます。 設定がファームウェアに格納されている場合、UEFI 変数はレジストリ キーで削除または変更できません。 UEFI 変数はリセットする必要があります。
 
 UEFI またはセキュア ブートをサポートしていない x86 ベースまたは x64 ベースのデバイスは無効になり、ファームウェアに LSA の保護の構成を格納することはできず、レジストリ キーの存在にのみ依存します。 このシナリオでは、デバイスへのリモート アクセスを使って LSA の保護を無効にできます。
 
@@ -194,9 +194,9 @@ UEFI またはセキュア ブートをサポートしていない x86 ベース
 ### <a name="verifying-lsa-protection"></a>LSA の保護の確認
 Windows が起動したときに LSA が保護モードで起動されたかどうかを検出するには、 **[Windows ログ]** の下にある **[System]** ログで次の WinInit イベントを検索します。
 
--   12:LSASS.exe がレベル4
+-   12: LSASS.exe がレベル 4 で保護されたプロセスとして起動されました
 
-## <a name="additional-resources"></a>その他の技術情報
+## <a name="additional-resources"></a>その他の資料
 [資格情報の保護と管理](credentials-protection-and-management.md)
 
 [LSA のファイル署名サービス](https://go.microsoft.com/fwlink/?LinkId=392590)
