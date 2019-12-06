@@ -10,12 +10,12 @@ metadata:
   ms.topic: hub-page
   ms.date: 06/06/2019
   ms.author: lizross
-  ms.openlocfilehash: 804ee13541fbade07ff6c1f98add09980801988a
-  ms.sourcegitcommit: 27f0caf74e88781054250455c3c1adf06deb6234
+  ms.openlocfilehash: b16b9235cbcb149ec7f10ce76b0cf594e9bb2a29
+  ms.sourcegitcommit: 30de12eebeb0fc79567d6bb6ab513692ea2415d3
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/19/2019
-  ms.locfileid: "71124330"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74853577"
 highlightedContent:
   items:
   - title: Windows Server 2019 の新着情報
@@ -171,7 +171,7 @@ conceptualContent:
       itemType: how-to-guide
       text: ディスク管理のトラブルシューティング
     footerLink:
-      url: /windows-server/troubleshoot/windows-server-support-solutions
+      url: /windows-server/troubleshoot/windows-server-troubleshooting
       text: さらに詳しく
   - title: 仮想化
     links:

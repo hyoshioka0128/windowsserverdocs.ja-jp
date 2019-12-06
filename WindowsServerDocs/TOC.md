@@ -11,5 +11,5 @@
 ## [セキュリティおよび保証](security/security-and-assurance.md)
 ## [ストレージ](storage/storage.md)
 ## [仮想化](virtualization/virtualization.md)
-## [トラブルシューティング](troubleshoot/windows-server-support-solutions.md)
+## [トラブルシューティング](troubleshoot/windows-server-troubleshooting.md)
 ## [他の Windows Server バージョン](windows-server-versions.md)

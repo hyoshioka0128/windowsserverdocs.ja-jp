@@ -197,6 +197,7 @@
 
 ### [AD DS のトラブルシューティング](ad-ds/manage/AD-DS-Troubleshooting.md)
 #### [コンピューターをトラブルシューティング用に構成する](ad-ds/manage/troubleshoot/Configuring-a-computer-for-Troubleshooting.md)
+#### [ETW を使用した LDAP 接続のトラブルシューティング](ad-ds/manage/troubleshoot/troubleshoot-ldap-using-etw.md)
 #### [Active Directory レプリケーションの問題のトラブルシューティングに関するページ](ad-ds/manage/troubleshoot/Troubleshooting-active-directory-Replication-Problems.md)
 ##### [その他のリソース](additional-Resources_12.md)
 
