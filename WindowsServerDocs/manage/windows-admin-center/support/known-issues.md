@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 23943c9567f371f7598c7dcda6db434760cabeab
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: c05987360256f7b7ed58911c1ded86586fc8b3aa
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567085"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903904"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center の既知の問題
 
@@ -53,7 +53,7 @@ ms.locfileid: "73567085"
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- Windows 管理センターがサービスとして展開されていて、ブラウザーとして Microsoft Edge を使用している場合は、新しいブラウザーウィンドウを起動した後にゲートウェイを Azure に接続できないことがあります。 この問題を回避するには、ゲートウェイの https://login.microsoftonline.com 、 https://login.live.com 、および URL を信頼済みサイトとして追加し、クライアント側ブラウザーでポップアップブロックの設定に許可されたサイトを追加します。 この問題を解決する方法については、[トラブルシューティングガイド](troubleshooting.md#azure-features-dont-work-properly-in-edge)を参照してください。 [17990376]
+- Windows 管理センターがサービスとして展開されていて、ブラウザーとして Microsoft Edge を使用している場合は、新しいブラウザーウィンドウを起動した後にゲートウェイを Azure に接続できないことがあります。 追加することで、この問題を回避しようとしています。 https://login.microsoftonline.com 、 https://login.live.com 、として、ゲートウェイの URL が信頼済みサイトとクライアント側のブラウザーでポップアップ ブロックの設定のサイトを許可されているとします。 この問題を解決する方法については、[トラブルシューティングガイド](troubleshooting.md#azure-features-dont-work-properly-in-edge)を参照してください。 [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
@@ -82,7 +82,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://www.microsoft.com/en-us/download/details.aspx?id=54616)できます。
 
-## <a name="role-based-access-control-rbac"></a>ロールベースの Access Control (RBAC)
+## <a name="role-based-access-control-rbac"></a>ロールベースのアクセス制御 (RBAC)
 
 - Windows Defender アプリケーション制御 (WDAC、旧称はコードの整合性) を使用するように構成されているコンピューターでは、RBAC 展開は成功しません。[16568455]
 
@@ -189,9 +189,9 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 - Microsoft アカウント ([MSA](https://account.microsoft.com/account/)) を使用する場合、または AZURE ACTIVE DIRECTORY (AAD) を使用して Windows 10 コンピューターにログオンする場合は、"manage-as" を使用してローカル管理者アカウントの資格情報を指定する必要があります [16568455]
 
-- ローカル ホストを管理しようとすると、ゲートウェイ プロセスを昇格するように求められます。 続いて表示される [ユーザー アカウント制御] ポップアップで **[いいえ]** をクリックすると、Windows Admin Center でそれを表示することができなくなります。 この場合、システム トレイの Windows Admin Center アイコンを右クリックし、[終了] を選択することでゲートウェイ プロセスを終了し、[スタート] メニューから Windows Admin Center を再起動します。
+- ローカル ホストを管理しようとすると、ゲートウェイ プロセスを昇格するように求められます。 次のユーザーアカウント制御ポップアップで **[いいえ]** をクリックすると、接続試行を取り消してからやり直す必要があります。
 
-- Windows 10 では既定で WinRM/PowerShell リモート処理が有効になっていません。
+- 既定では、Windows 10 では WinRM と PowerShell のリモート処理が行われません。
   
   - Windows 10 クライアントの管理を有効にするには、管理者特権の PowerShell プロンプトから ```Enable-PSRemoting``` コマンドを実行する必要があります。
 
@@ -226,4 +226,4 @@ Azure Active Directory アプリを更新するには、次の2つのいずれ�
 Azure Monitor、Azure Update Management、Azure Security Center を含む azure の管理サービスは、オンプレミスのサーバーと同じエージェントを使用します (Microsoft Monitoring Agent)。 Azure Update Management には、サポートされているリージョンのセットが制限されており、Log Analytics ワークスペースが Azure Automation アカウントにリンクされている必要があります。 この制限により、Windows 管理センターで複数のサービスをセットアップする場合は、まず Azure Update Management を設定してから、Azure Security Center または Azure Monitor する必要があります。 Microsoft Monitoring Agent を使用する Azure 管理サービスを構成した後、Windows 管理センターを使用して Azure Update Management を設定しようとすると、Windows 管理センターでは、既存のものがある場合にのみ Azure Update Management を構成することができます。Microsoft Monitoring Agent にリンクされているリソースは、Azure Update Management をサポートします。 そうでない場合は、次の2つのオプションがあります。
 
 1. [コントロールパネル] > Microsoft Monitoring Agent を選択し[て、既存の Azure 管理ソリューション](https://docs.microsoft.com/azure/azure-monitor/platform/log-faq#q-how-do-i-stop-an-agent-from-communicating-with-log-analytics)(Azure Monitor や Azure Security Center など) からサーバーを切断します。 次に、Windows 管理センターで Azure Update Management を設定します。 その後、Windows 管理センターを使用して、問題なく他の Azure 管理ソリューションを設定することができます。
-2. [Azure Update Management に必要な azure リソースを手動で設定](https://docs.microsoft.com/azure/automation/automation-update-management)し、Microsoft Monitoring Agent (Windows 管理センターの外部) を[手動で更新](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace)して、Update Management ソリューションに対応する新しいワークスペースを追加することができます。を使用します。
+2. [Azure Update Management に必要な azure リソースを手動で設定](https://docs.microsoft.com/azure/automation/automation-update-management)し、Microsoft Monitoring Agent (Windows 管理センターの外部) を[手動で更新](https://docs.microsoft.com/azure/azure-monitor/platform/agent-manage#adding-or-removing-a-workspace)して、使用する Update Management ソリューションに対応する新しいワークスペースを追加することができます。

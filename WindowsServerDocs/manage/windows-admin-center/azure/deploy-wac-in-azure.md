@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.date: 04/12/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 42216375d1784a5bc853994a9de7cff72920088d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1da4df284febbf18b5796322868451c45ab247ab
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357324"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903934"
 ---
 # <a name="deploy-windows-admin-center-in-azure"></a>Windows 管理センターを Azure にデプロイする
 
@@ -26,14 +26,14 @@ ms.locfileid: "71357324"
 ### <a name="prerequisites"></a>前提条件
 
 * [Azure Cloud Shell](https://shell.azure.com)でアカウントを設定します。 初めて Cloud Shell を使用する場合は、Cloud Shell を使用して Azure ストレージアカウントを関連付けるか、作成するかを確認するメッセージが表示されます。
-* **PowerShell** Cloud Shell で、ホームディレクトリに移動します。```PS Azure:\> cd ~```
-* ```Deploy-WACAzVM.ps1```ファイルをアップロードするには、ローカルコンピューターから [Cloud Shell] ウィンドウの任意の場所にファイルをドラッグアンドドロップします。
+* **PowerShell** Cloud Shell で、ホームディレクトリに移動します。 ```PS Azure:\> cd ~```
+* ```Deploy-WACAzVM.ps1``` ファイルをアップロードするには、ローカルコンピューターから [Cloud Shell] ウィンドウの任意の場所にドラッグアンドドロップします。
 
 独自の証明書を指定する場合:
 
 * 証明書を[Azure Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-whatis)にアップロードします。 まず、Azure Portal でキーコンテナーを作成し、その証明書を key vault にアップロードします。 または、Azure ポータルを使用して証明書を生成することもできます。
 
-### <a name="script-parameters"></a>スクリプトパラメーター
+### <a name="script-parameters"></a>スクリプト パラメーター
 
 * **ResourceGroupName** -[STRING] VM が作成されるリソースグループの名前を指定します。
 
@@ -41,7 +41,7 @@ ms.locfileid: "71357324"
 
 * **Credential** -[PSCREDENTIAL] VM の資格情報を指定します。
 
-* **Msipath** -[文字列] 既存の VM に Windows 管理センターを展開するときに、Windows 管理センターの MSI のローカルパスを指定します。 省略した場合、 http://aka.ms/WACDownload 既定値はからのバージョンになります。
+* **Msipath** -[文字列] 既存の VM に Windows 管理センターを展開するときに、Windows 管理センターの MSI のローカルパスを指定します。 省略した場合、既定値は https://aka.ms/WACDownload からのバージョンになります。
 
 * **VaultName** -[String] 証明書を含むキーコンテナーの名前を指定します。
 
@@ -55,7 +55,7 @@ ms.locfileid: "71357324"
 
 * **Location** -[STRING] VM の場所を指定します。
 
-* **サイズ**-[文字列] VM のサイズを指定します。 省略した場合、既定値は "Standard_DS1_v2" です。
+* **サイズ**-[文字列] VM のサイズを指定します。 省略した場合、既定値は "Standard_DS1_v2" になります。
 
 * **Image** -[STRING] VM のイメージを指定します。 省略した場合、既定値は "Win2016Datacenter" です。
 
@@ -89,7 +89,7 @@ $Image = "Win2016Datacenter"
 $Credential = Get-Credential
 ```
 
-#### <a name="example-1-use-the-script-to-deploy-wac-gateway-on-a-new-vm-in-a-new-virtual-network-and-resource-group-use-the-msi-from-akamswacdownload-and-a-self-signed-cert-from-the-msi"></a>例 1 : 新しい仮想ネットワークとリソースグループの新しい VM に WAC gateway をデプロイするには、スクリプトを使用します。 Aka.ms/WACDownload から MSI を使用し、MSI から自己署名証明書を使用します。
+#### <a name="example-1-use-the-script-to-deploy-wac-gateway-on-a-new-vm-in-a-new-virtual-network-and-resource-group-use-the-msi-from-akamswacdownload-and-a-self-signed-cert-from-the-msi"></a>例 1: スクリプトを使用して、新しい仮想ネットワークおよびリソースグループの新しい VM に WAC gateway をデプロイします。 Aka.ms/WACDownload から MSI を使用し、MSI から自己署名証明書を使用します。
 
 ```PowerShell
 $scriptParams = @{
@@ -103,7 +103,7 @@ $scriptParams = @{
 ./Deploy-WACAzVM.ps1 @scriptParams
 ```
 
-#### <a name="example-2-same-as-1-but-using-a-certificate-from-azure-key-vault"></a>例 2:#1 と同じですが、Azure Key Vault の証明書を使用しています。
+#### <a name="example-2-same-as-1-but-using-a-certificate-from-azure-key-vault"></a>例 2: #1 と同じですが、Azure Key Vault の証明書を使用します。
 
 ```PowerShell
 $scriptParams = @{
@@ -118,7 +118,7 @@ $scriptParams = @{
 ./Deploy-WACAzVM.ps1 @scriptParams
 ```
 
-#### <a name="example-3-using-a-local-msi-on-an-existing-vm-to-deploy-wac"></a>例 3: 既存の VM でローカル MSI を使用して WAC をデプロイする。
+#### <a name="example-3-using-a-local-msi-on-an-existing-vm-to-deploy-wac"></a>例 3: 既存の VM でローカル MSI を使用して WAC をデプロイする
 
 ```PowerShell
 $MsiPath = "C:\Users\<username>\Downloads\WindowsAdminCenter<version>.msi"
@@ -147,7 +147,7 @@ Set-AzNetworkSecurityGroup -NetworkSecurityGroup $newNSG
 ### <a name="requirements-for-managed-azure-vms"></a>管理対象の Azure VM の要件
 
 ポート 5985 (WinRM over HTTP) は開いている必要があり、アクティブなリスナーを持っている必要があります。
-Azure Cloud Shell の次のコードを使用して、管理対象ノードを更新できます。 ```$ResourceGroupName```と```$Name```は配置スクリプトと同じ変数を使用しますが、管理対象の VM ```$Credential```に固有のを使用する必要があります。
+Azure Cloud Shell の次のコードを使用して、管理対象ノードを更新できます。 ```$ResourceGroupName``` と ```$Name``` は、デプロイスクリプトと同じ変数を使用しますが、管理対象の VM に固有の ```$Credential``` を使用する必要があります。
 
 ```powershell
 Enable-AzVMPSRemoting -ResourceGroupName $ResourceGroupName -Name $Name
@@ -190,10 +190,10 @@ Invoke-AzVMCommand -ResourceGroupName $ResourceGroupName -Name $Name -ScriptBloc
 この時点で、ゲートウェイ VM の DNS 名に移動することで、ローカルコンピューター上の最新のブラウザー (Edge または Chrome) から Windows 管理センターにアクセスできるようになります。 
 
 > [!NOTE]
-> 443以外のポートを選択した場合は、VM\<\>の https://DNS 名: カスタムポートに移動すると、Windows\<管理センターにアクセスできます。\>
+> 443以外のポートを選択した場合は、Windows 管理センターにアクセスするには、VM の https://\<DNS 名\>:\<カスタムポートに移動し\>
 
 Windows 管理センターにアクセスしようとすると、Windows 管理センターがインストールされている仮想マシンにアクセスするための資格情報を要求するプロンプトが表示されます。 ここでは、仮想マシンのローカルユーザーまたはローカルの administrators グループにある資格情報を入力する必要があります。 
 
-VNet 内の他の Vm を追加するには、PowerShell で次のコマンドを実行するか、ターゲット VM でコマンドプロンプトを実行して、ターゲット Vm で WinRM が実行されていることを確認します。`winrm quickconfig`
+VNet 内に他の Vm を追加するには、PowerShell で次のコマンドを実行するか、ターゲット VM でコマンドプロンプトを実行して、ターゲット Vm で WinRM が実行されていることを確認します。 `winrm quickconfig`
 
 Azure VM にドメイン参加していない場合、VM はワークグループ内のサーバーのように動作するため、[ワークグループで Windows 管理センターを使用](../support/troubleshooting.md#using-windows-admin-center-in-a-workgroup)することを確認する必要があります。

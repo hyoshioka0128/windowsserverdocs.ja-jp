@@ -12,12 +12,12 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: df467921f8a8f5633d2b0bd792885fe2c9ae2212
-ms.sourcegitcommit: a937eb17915a4a0e444a36ddb0fac9c9771cfbfa
+ms.openlocfilehash: 3bc43b08df30d03f29d9f343b7d6ed4d63c85eda
+ms.sourcegitcommit: 39244de670f712857a5fdd56630e95d57b7001a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 12/06/2019
-ms.locfileid: "74877907"
+ms.locfileid: "74897670"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>Windows Server Essentials Log Collector の使用
 
@@ -30,6 +30,7 @@ ms.locfileid: "74877907"
 > [!NOTE]
 >Log Collector がネットワークの問題を分析したり、サーバーやネットワーク上のコンピューターに変更を加えることはありません。 ネットワークの問題をトラブルシューティングする方法の詳細については、サーバー製品のヘルプ ドキュメントを参照してください。  
 >このガイドでは、サーバー以外のネットワーク上のコンピューターをネットワークコンピューターと呼びます。  
+>
 >[Windows Server Essentials Log Collector インストールパッケージをダウンロード](https://www.microsoft.com/download/details.aspx?id=34821)します。  
   
  Log Collector をインストールし実行するには、次のトピックの手順を実行します。  
