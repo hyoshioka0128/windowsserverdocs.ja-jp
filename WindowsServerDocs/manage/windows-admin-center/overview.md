@@ -8,20 +8,20 @@ ms.author: niwashbu
 ms.date: 09/18/2019
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: c914a472869f9887c83733d6aab614b5676d17d7
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 37be666643dee4e5b9051ae29562a86b23fb71f7
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567134"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903964"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
-> 適用先:Windows Admin Center、Windows Admin Center Preview
+> 適用対象:Windows Admin Center、Windows Admin Center Preview
 
 **Windows Admin Center** (以前はコードネーム **Project Honolulu**) は Windows Server のインボックス管理ツールの進化形です。ローカルおよびリモート サーバー管理のすべての側面を統合する 1 つのウィンドウです。 ローカルに展開されたブラウザーベースの管理エクスペリエンスのため、インターネット接続や Azure は必要ありません。 Windows Admin Center では、インターネットに接続されていないプライベート ネットワークを含む、展開のあらゆる側面を完全に管理できます。
 
-## <a name="introduction"></a>はじめに
+## <a name="introduction"></a>概要
 
 >[!VIDEO https://www.youtube.com/embed/PcQj6ZklmK0]
 
@@ -53,7 +53,7 @@ ms.locfileid: "73567134"
             </ul>
         </td>
         <td style="vertical-align: top;">
-            <h3>計画</h3>
+            <h3>プラン</h3>
             <ul>
             <li><a href="plan/installation-options.md">お客様に適したインストールの種類はどれか?</a>
             <li><a href="plan/user-access-options.md">ユーザー アクセス オプション</a>
@@ -77,12 +77,13 @@ ms.locfileid: "73567134"
             <li><a href="configure/user-access-control.md">ユーザー アクセスの制御とアクセス許可</a>
             <li><a href="configure/shared-connections.md">共有接続</a>
             <li><a href="configure/using-extensions.md">拡張機能</a>
+            <li><a href="configure/use-powershell.md">PowerShell を使用した自動化</a>
             </ul>
         </td>
     </tr>
     <tr>
         <td style="vertical-align: top;">
-            <h3>vmmblue_2</h3>
+            <h3>使用</h3>
             <ul>
             <li><a href="use/get-started.md">起動と接続の追加</a>
             <li><a href="use/manage-servers.md">サーバーの管理</a>

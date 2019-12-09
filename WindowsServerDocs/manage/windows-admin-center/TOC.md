@@ -23,6 +23,7 @@
 ### [ユーザー アクセスの制御とアクセス許可](configure/user-access-control.md)
 ### [拡張機能の使用](configure/using-extensions.md)
 ### [共有接続](configure/shared-connections.md)
+### [PowerShell を使用した自動化](configure/use-powershell.md)
 
 ## 使用
 ### [作業の開始](use/get-started.md)
