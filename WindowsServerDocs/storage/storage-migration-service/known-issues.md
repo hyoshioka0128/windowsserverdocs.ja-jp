@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 46a1e2aa8c116f79c164448ab5644a7dda9607c8
-ms.sourcegitcommit: ac9946deb4fa70203a9b05e0386deb4244b8ca55
+ms.openlocfilehash: 9abe199399e577eb06044377c30d5a2dc0e35dd1
+ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74310371"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74945227"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -64,11 +64,11 @@ Windows 管理センターを使用して[Windows server 2019 評価](https://ww
 
 Windows 管理センターまたは PowerShell を使用して転送操作の詳細なエラーのみをダウンロードすると、次のエラーが表示されます。
 
- >   ログの転送-ファイアウォールでファイル共有が許可されていることを確認してください。 : Net.tcp:/localhost: 28940/sms/service/1/transfer に送信されるこの要求操作は、構成されたタイムアウト時間 (00:01:00) 内に応答を受信しませんでした。 この操作に割り当てられた時間は、より長いタイムアウト時間の一部であった可能性があります。 これは、サービスが操作を処理中であるか、サービスが応答メッセージを送信できなかったことが原因である可能性があります。 操作のタイムアウトを増やすことを検討してください (チャネル/プロキシをありにキャストし、OperationTimeout プロパティを設定します)。また、サービスがクライアントに接続できることを確認してください。
+ >   ログの転送-ファイアウォールでファイル共有が許可されていることを確認してください。 : Net.tcp:/localhost: 28940/sms/service/1/transfer に送信されるこの要求操作は、構成されたタイムアウト時間 (00:01:00) 内に応答を受信しませんでした。 この操作に割り当てられている時間はより長いタイムアウトの一部である可能性があります。 サービスが処理中であるか、応答メッセージを送信できない可能性があります。 操作のタイムアウトを増やすことを検討してください (チャネル/プロキシをありにキャストし、OperationTimeout プロパティを設定します)。また、サービスがクライアントに接続できることを確認してください。
 
 この問題は、記憶域移行サービスで許可されている既定の1分のタイムアウトではフィルター処理できない、非常に多くの転送ファイルが原因で発生します。 
 
-この問題を回避するには:
+この問題の回避方法:
 
 1. Orchestrator コンピューターで Notepad.exe を使用して *%SYSTEMROOT%\SMS\Microsoft.StorageMigration.Service.exe.config*ファイルを編集し、"sendtimeout" を1分の既定値から10分に変更します。
 
@@ -90,7 +90,7 @@ Windows 管理センターまたは PowerShell を使用して転送操作の詳
 7. "WcfOperationTimeoutInMinutes" を右クリックし、[変更] をクリックします。 
 8. [基本データ] ボックスで、[10 進] をクリックします。
 9. [値のデータ] ボックスに「10」と入力し、[OK] をクリックします。
-10. レジストリエディターを終了します。
+10. レジストリ エディターを終了します。
 11. エラーのみの CSV ファイルをもう一度ダウンロードします。 
 
 この動作は、Windows Server 2019 の今後のリリースで変更される予定です。  
@@ -125,7 +125,7 @@ Windows Server 2019 の展開先コンピューターに Storage Migration Servi
 
 記憶域移行サービスを使用してファイルを新しい宛先に転送する場合は、DFS レプリケーション (DFSR) を構成して、事前シードされたレプリケーションまたは DFSR データベースの複製を使用して、既存の DFSR サーバーを使用してそのデータをレプリケートします。すべてのファイルはハッシュを experiemce ます。不一致とが再レプリケートされます。 データストリーム、セキュリティストリーム、サイズ、および属性はすべて、SMS を使用して転送した後、完全に一致しているように見えます。 ICACLS または DFSR データベース複製デバッグログを使用してファイルを調べると、次のようになります。
 
-ソースファイル:
+ソース ファイル:
 
   icacls d:\test\Source:
 
@@ -313,6 +313,13 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
   - [切り取り] が既にスタックしている場合は、ソースコンピューターにログオンし、dhcp スコープがそのサブネットを対象としていることを確認した後で、そのネットワークインターフェイスで DHCP を有効にします。 ソースコンピュータが DHCP によって提供される IP アドレスを取得すると、SMS は通常どおりカットを続行します。
   
 どちらの回避策でも、カットオーバーが完了した後で、DHCP の使用に適しているかどうかに応じて、古いソースコンピューターに静的 IP アドレスを設定できます。   
+
+## <a name="slower-than-expected-re-transfer-performance"></a>予想される再転送パフォーマンスを低下させる
+
+転送を完了し、その後同じデータの再転送を実行すると、移行元サーバー上でデータがほとんど変更されていない場合でも、転送時間が大幅に短縮されないことがあります。
+
+非常に多数のファイルと入れ子になったフォルダーを転送する場合は、この動作が想定されます。 データのサイズが関連していません。 まず、 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)でこの動作を改善し、転送のパフォーマンスを最適化しています。 パフォーマンスをさらに調整するには、「[インベントリと転送のパフォーマンスの最適化](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)」を参照してください。
+
 
 ## <a name="see-also"></a>関連項目
 
