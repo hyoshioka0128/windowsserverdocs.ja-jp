@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 11/20/2019
+ms.date: 12/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 54994aad08c2f428b429082ed450235ed8bbe7e7
-ms.sourcegitcommit: 244b89505c5131dfdb90628857cc7e31741c84c2
+ms.openlocfilehash: 5526d401ba26cabcaccfc0b88df9b0e69f8149a5
+ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74265925"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74829606"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows デスクトップ クライアントの新機能
 
@@ -30,17 +30,21 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 
 |ユーザー グループ |バージョン  |
 |-----------|---------|
-|パブリック     |1.2.431  |
-|Insider    |1.2.524  |
+|パブリック     |1.2.535  |
+|Insider    |1.2.535  |
 
-## <a name="updates-for-version-12524"></a>バージョン 1.2.524 の更新内容
+## <a name="updates-for-version-12535"></a>バージョン 1.2.535 の更新内容
 
-*公開日:2019 年 11 月 20 日*
+*公開日:2019/12/04*
 
-ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4e7Nj)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dZCo)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4dX1s)
+ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jH)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k7jL)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4k27O)
 
 - クライアントの上部にあるコマンド バーの [その他のオプション] ボタンを使用して、更新プログラムに関する情報に直接アクセスできるようになりました。
 - クライアントのコマンド バーからフィードバックを報告できるようになりました。
+- [フィードバック] オプションは、フィードバック ハブを使用できる場合にのみ表示されるようになりました。
+- ポリシーで通知が無効な場合、更新通知が表示されないようになりました。
+- 一部の RDP ファイルを起動できない問題を修正しました。
+- 一部の永続的な設定の破損が原因で発生するクライアントの起動時のクラッシュを修正しました。
 
 ## <a name="updates-for-version-12431"></a>バージョン 1.2.431 の更新内容
 
