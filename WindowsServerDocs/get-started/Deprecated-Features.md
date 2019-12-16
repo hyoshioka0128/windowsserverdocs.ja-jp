@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: b3f531325c338224d7ac69e46a9d16c9d236ee87
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e13886395040619a7509c3cf896112288c48115
+ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360357"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74945207"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Windows Server 2016 で削除された機能または推奨されなくなった機能
 
@@ -79,7 +79,7 @@ Journal.dll は Windows Server 2016 から削除されました。 これに置�
 
 -   **Scregedit.exe** は非推奨となりました。 Scregedit.exe に依存するスクリプトを使っている場合は、Reg.exe または Windows PowerShell のメソッドを使用するように調整してください。  
 
--   **Sconfig.exe** は非推奨となりました。 代わりに Windows PowerShell を使用してください。  
+-   **Sconfig.exe** は非推奨となりました。 代わりに [Sconfig.cmd](https://docs.microsoft.com/windows-server/get-started/sconfig-on-ws2016) を使用してください。 
 
 ### <a name="netcfg-custom-apis"></a>NetCfg のカスタム API
 
