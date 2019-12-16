@@ -1,6 +1,6 @@
 ---
-title: Windows 管理センターを使ってみる
-description: Windows 管理センターを使ってみる
+title: Windows 管理センターの使用を開始する
+description: Windows 管理センターの使用を開始する
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: fac17cd5975eeb699f205888edbe3f1c30b43394
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 1643568cd1a0cdbb693d773a8357d2c36b701fd3
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567152"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903981"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Windows 管理センターを使ってみる
 
@@ -153,134 +153,7 @@ Windows 管理センターが Windows Server でサービスモードで実行�
 
 ## <a name="use-powershell-to-import-or-export-your-connections-with-tags"></a>PowerShell を使用した接続のインポートまたはエクスポート (タグあり)
 
-```powershell
-# Load the module
-Import-Module "$env:ProgramFiles\windows admin center\PowerShell\Modules\ConnectionTools"
-# Available cmdlets: Export-Connection, Import-Connection
-
-# Export connections (including tags) to .csv files
-Export-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
-# Import connections (including tags) from .csv files
-Import-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
-```
-
-### <a name="csv-file-format-for-importing-connections"></a>接続をインポートするための CSV ファイル形式
-
-CSV ファイルの形式は、4つの見出し ```"name","type","tags","groupId"```で始まり、その後に新しい行に各接続が続きます。
-
-**name**は接続の FQDN です。
-
-**種類**は接続の種類です。 Windows 管理センターに含まれる既定の接続については、次のいずれかを使用します。
-
-| 接続の種類 | 接続文字列 |
-|------|-------------------------------|
-| Windows Server | msft. 接続の種類。サーバー |
-| Windows 10 PC | msft. 接続の種類。 windows-クライアント |
-| フェールオーバー クラスター | msft. 接続の種類. クラスター |
-| ハイパー収束クラスター | msft. 接続の種類. ハイパー収束-クラスター |
-
-**タグ**は、パイプで区切られます。
-
-**groupId**は共有接続に使用されます。 この列の値 ```global``` を使用して、共有接続にします。
-
-### <a name="example-csv-file-for-importing-connections"></a>接続をインポートするための CSV ファイルの例
-
-```
-"name","type","tags","groupId"
-"myServer.contoso.com","msft.sme.connection-type.server","hyperv"
-"myDesktop.contoso.com","msft.sme.connection-type.windows-client","hyperv"
-"teamcluster.contoso.com","msft.sme.connection-type.cluster","legacyCluster|WS2016","global"
-"myHCIcluster.contoso.com,"msft.sme.connection-type.hyper-converged-cluster","myHCIcluster|hyperv|JIT|WS2019"
-"teamclusterNode.contoso.com","msft.sme.connection-type.server","legacyCluster|WS2016","global"
-"myHCIclusterNode.contoso.com","msft.sme.connection-type.server","myHCIcluster|hyperv|JIT|WS2019"
-```
-
-## <a name="import-rdcman-connections"></a>RDCman 接続のインポート
-
-次のスクリプトを使用して、保存されている接続を[RDCman](https://blogs.technet.microsoft.com/rmilne/2014/11/19/remote-desktop-connection-manager-download-rdcman-2-7/)内のファイルにエクスポートします。 その後、Windows 管理センターにファイルをインポートし、タグを使用して RDCMan グループ化階層を維持することができます。 試してみてください。
-
-1. 次のコードをコピーし、PowerShell セッションに貼り付けます。
-
-   ```powershell
-   #Helper function for RdgToWacCsv
-   function AddServers {
-    param (
-    [Parameter(Mandatory = $true)]
-    [Xml.XmlLinkedNode]
-    $node,
-    [Parameter()]
-    [String[]]
-    $tags,
-    [Parameter(Mandatory = $true)]
-    [String]
-    $csvPath
-    )
-    if ($node.LocalName -eq 'server') {
-        $serverName = $node.properties.name
-        $tagString = $tags -join "|"
-        Add-Content -Path $csvPath -Value ('"'+ $serverName + '","msft.sme.connection-type.server","'+ $tagString +'"')
-    } 
-    elseif ($node.LocalName -eq 'group' -or $node.LocalName -eq 'file') {
-        $groupName = $node.properties.name
-        $tags+=$groupName
-        $currNode = $node.properties.NextSibling
-        while ($currNode) {
-            AddServers -node $currNode -tags $tags -csvPath $csvPath
-            $currNode = $currNode.NextSibling
-        }
-    } 
-    else {
-        # Node type isn't relevant to tagging or adding connections in WAC
-    }
-    return
-   }
-
-   <#
-   .SYNOPSIS
-   Convert an .rdg file from Remote Desktop Connection Manager into a .csv that can be imported into Windows Admin Center, maintaining groups via server tags. This will not modify the existing .rdg file and will create a new .csv file
-
-    .DESCRIPTION
-    This converts an .rdg file into a .csv that can be imported into Windows Admin Center.
-
-    .PARAMETER RDGfilepath
-    The path of the .rdg file to be converted. This file will not be modified, only read.
-
-    .PARAMETER CSVdirectory
-    Optional. The directory you wish to export the new .csv file. If not provided, the new file is created in the same directory as the .rdg file.
-
-    .EXAMPLE
-    C:\PS> RdgToWacCsv -RDGfilepath "rdcmangroup.rdg"
-    #>
-   function RdgToWacCsv {
-    param(
-        [Parameter(Mandatory = $true)]
-        [String]
-        $RDGfilepath,
-        [Parameter(Mandatory = $false)]
-        [String]
-        $CSVdirectory
-    )
-    [xml]$RDGfile = Get-Content -Path $RDGfilepath
-    $node = $RDGfile.RDCMan.file
-    if (!$CSVdirectory){
-        $csvPath = [System.IO.Path]::GetDirectoryName($RDGfilepath) + [System.IO.Path]::GetFileNameWithoutExtension($RDGfilepath) + "_WAC.csv"
-    } else {
-        $csvPath = $CSVdirectory + [System.IO.Path]::GetFileNameWithoutExtension($RDGfilepath) + "_WAC.csv"
-    }
-    New-item -Path $csvPath
-    Add-Content -Path $csvPath -Value '"name","type","tags"'
-    AddServers -node $node -csvPath $csvPath
-    Write-Host "Converted $RDGfilepath `nOutput: $csvPath"
-   }
-   ```
-
-2. を作成する場合は。CSV ファイルで、次のコマンドを実行します。
-
-   ```powershell
-   RdgToWacCsv -RDGfilepath "path\to\myRDCManfile.rdg"
-   ```
-
-3. 生成されたをインポートします。Windows 管理センターに CSV ファイルを配置すると、すべての RDCMan grouping 階層が接続リストのタグによって表されます。 詳細については、「 [PowerShell を使用した接続のインポートまたはエクスポート (タグあり)」を](#use-powershell-to-import-or-export-your-connections-with-tags)参照してください。
+[!INCLUDE [ps-connections](../includes/ps-connections.md)]
 
 ## <a name="view-powershell-scripts-used-in-windows-admin-center"></a>Windows 管理センターで使用される PowerShell スクリプトを表示する
 
