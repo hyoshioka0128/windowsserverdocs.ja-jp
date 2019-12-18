@@ -1,5 +1,5 @@
 ---
-title: 向けファイルとプリンターの共有ポートを開く
+title: 'SMB: ファイルとプリンターの共有ポートが開いていること'
 TOCTitle: 'SMB: File and printer sharing ports should be open'
 ms.date: 07/02/2012
 ms.prod: windows-server
@@ -14,14 +14,14 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71385832"
 ---
-# <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>向けファイルとプリンターの共有ポートを開く
+# <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB: ファイルとプリンターの共有ポートが開いていること
 
 
-更新:2011年2月2日
+更新日: 2011 年2月2日
 
-適用先:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、windows server 2012、windows server 2008 R2
+適用対象: windows Server 2019、Windows Server 2016、Windows Server 2012 R2、windows server 2012、windows server 2008 R2
 
-*This トピックは、ベストプラクティスアナライザースキャンによって識別される特定の問題に対処するためのものです。このトピックの情報は、ファイルベストプラクティスアナライザーサービスが実行されていて、このトピックで対処している問題が発生しているコンピューターにのみ適用する必要があります。ベストプラクティスとスキャンの詳細については、「@ no__t-0[ベストプラクティスアナライザー](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a)」を参照してください。
+*このトピックは、ベストプラクティスアナライザースキャンによって識別される特定の問題に対処することを目的としています。このトピックの情報は、ファイルベストプラクティスアナライザーサービスが実行されていて、このトピックで対処している問題が発生しているコンピューターにのみ適用する必要があります。ベストプラクティスとスキャンの詳細については、「* [ベストプラクティスアナライザー](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a)」を参照してください。
 
 
 <table>
@@ -40,7 +40,7 @@ ms.locfileid: "71385832"
 </tr>
 <tr class="odd">
 <td><p><strong>順</strong></p></td>
-<td><p>Error</p></td>
+<td><p>エラー</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>カテゴリ</strong></p></td>
