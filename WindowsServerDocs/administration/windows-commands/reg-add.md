@@ -1,8 +1,8 @@
 ---
-title: Reg を追加します。
-description: 'Windows コマンド」のトピック * * *- '
+title: reg add
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d46fc2df23391a1dbb782014addc68d9522d603a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 5b478ce0c98ec77f1387d8f894364f53cf8d2142
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441913"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371767"
 ---
-# <a name="reg-add"></a>Reg を追加します。
+# <a name="reg-add"></a>reg add
 
 
 新しいサブキーまたはエントリをレジストリに追加します。
@@ -36,12 +36,12 @@ reg add <KeyName> [{/v ValueName | /ve}] [/t DataType] [/s Separator] [/d Data] 
 
 |      パラメーター      |                                                                                                                                                                                                                                                                   説明                                                                                                                                                                                                                                                                   |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \<キー名<em>></em> | サブキーまたは追加されるエントリの完全なパスを指定します。 リモート コンピューターを指定するには、コンピューター名を含める (形式の\\ \\ \<ComputerName >\)の一部として、 *KeyName*します。 省略すると\\ \\ComputerName\ によりローカル コンピューターに既定値に操作します。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キーは次のとおりです。HKLM、HKCU、HKCR、HKU、および hkcc します。 リモート コンピューターが指定されている場合は、有効なルート キーは。HKLM および hku です。 レジストリ キーの名前にスペースが含まれている場合は、キー名を引用符で囲みます。 |
-|   /v \<ValueName>   |                                                                                                                                                                                                                                指定したサブキーの下に追加されるレジストリ エントリの名前を指定します。                                                                                                                                                                                                                                 |
+| \<KeyName<em>></em> | サブキーまたは追加されるエントリの完全なパスを指定します。 リモートコンピューターを指定するには、コンピューター名 (\\\\\<ComputerName >\) を*KeyName*の一部として指定します。 \\\\ComputerName \ を省略すると、操作は既定でローカルコンピューターに設定されます。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キー: HKLM、HKCU、HKCR、HKU、および HKCC します。 有効なルート キーは、リモート コンピューターが指定されている場合: HKLM および HKU します。 レジストリキー名にスペースが含まれている場合は、キー名を引用符で囲みます。 |
+|   /v \<ValueName >   |                                                                                                                                                                                                                                指定したサブキーの下に追加されるレジストリ エントリの名前を指定します。                                                                                                                                                                                                                                 |
 |         /ve         |                                                                                                                                                                                                                                レジストリに追加されるレジストリ エントリが null 値を持つことを指定します。                                                                                                                                                                                                                                |
-|     /t\<型 >      |                                                                                                                                          レジストリ エントリの種類を指定します。 *型* 、次のいずれかを指定する必要があります。</br>REG_SZ</br>REG_MULTI_SZ</br>REG_DWORD_BIG_ENDIAN</br>REG_DWORD</br>REG_BINARY</br>REG_DWORD_LITTLE_ENDIAN</br>REG_LINK</br>REG_FULL_RESOURCE_DESCRIPTOR</br>REG_EXPAND_SZ                                                                                                                                          |
-|   /s\<区切り記号 >   |                                                                                                                                                              REG_MULTI_SZ データ型が指定されている複数のエントリがリストに表示される必要がある場合は、データの複数のインスタンスを分離するために使用する文字を指定します。 既定の区切り記号は、指定しない場合、 **\0**します。                                                                                                                                                              |
-|     /d\<データ >      |                                                                                                                                                                                                                                                 新しいレジストリ エントリのデータを指定します。                                                                                                                                                                                                                                                  |
+|     /t \<種類 >      |                                                                                                                                          レジストリ エントリの種類を指定します。 *型* 、次のいずれかを指定する必要があります。</br>REG_SZ</br>REG_MULTI_SZ</br>REG_DWORD_BIG_ENDIAN</br>REG_DWORD</br>REG_BINARY</br>REG_DWORD_LITTLE_ENDIAN</br>REG_LINK</br>REG_FULL_RESOURCE_DESCRIPTOR</br>REG_EXPAND_SZ                                                                                                                                          |
+|   /s \<Separator >   |                                                                                                                                                              REG_MULTI_SZ データ型が指定されている複数のエントリがリストに表示される必要がある場合は、データの複数のインスタンスを分離するために使用する文字を指定します。 既定の区切り記号は、指定しない場合、 **\0**します。                                                                                                                                                              |
+|     /d \<データ >      |                                                                                                                                                                                                                                                 新しいレジストリ エントリのデータを指定します。                                                                                                                                                                                                                                                  |
 |         /f          |                                                                                                                                                                                                                                           確認を求めずに、レジストリ エントリを追加します。                                                                                                                                                                                                                                           |
 |         /?          |                                                                                                                                                                                                                                              ヘルプを表示 **reg 追加** コマンド プロンプト。                                                                                                                                                                                                                                               |
 

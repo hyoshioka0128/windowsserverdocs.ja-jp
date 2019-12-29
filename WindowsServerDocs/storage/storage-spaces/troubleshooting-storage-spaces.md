@@ -2,19 +2,19 @@
 title: 記憶域スペースダイレクトのトラブルシューティング
 description: 記憶域スペースダイレクトのデプロイのトラブルシューティング方法について説明します。
 keywords: 記憶域スペース
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: ''
 ms.technology: storage-spaces
 ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cc5709723b300f46ce108b36501e7ace272cd45
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: ace19b711445106956ae223f17afb6b4181d352d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544564"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365941"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>記憶域スペースダイレクトのトラブルシューティング
 
@@ -95,7 +95,7 @@ ms.locfileid: "68544564"
 
 ## <a name="detached-status-in-a-cluster"></a>クラスターでのデタッチされた状態 
 
-**VirtualDisk**コマンドレットを実行すると、1つまたは複数の記憶域スペースダイレクトの仮想ディスクの OperationalStatus が切断されます。 ただし、 **HealthStatus コマンドレット**によって報告されるのは、すべての物理ディスクが正常な状態であることを示しています。
+**VirtualDisk**コマンドレットを実行すると、1つまたは複数の記憶域スペースダイレクトの仮想ディスクの OperationalStatus が切断されます。 ただし **、HealthStatus コマンドレット**によって報告されるのは、すべての物理ディスクが正常な状態であることを示しています。
 
 **VirtualDisk**コマンドレットからの出力の例を次に示します。
 
@@ -203,7 +203,7 @@ Volume Name:
 
 詳細については、「[記憶域スペースダイレクトの正常性と動作状態のトラブルシューティング](storage-spaces-states.md)」を参照してください。
 
-## <a name="event-5120-with-statusiotimeout-c00000b5"></a>STATUS_IO_TIMEOUT c00000b5 を使用したイベント5120 
+## <a name="event-5120-with-status_io_timeout-c00000b5"></a>STATUS_IO_TIMEOUT c00000b5 を使用したイベント5120 
 
 > [!Important]
 > **Windows Server 2016 の場合:** 修正プログラムを適用している間にこれらの現象が発生する可能性を減らすために、以下のストレージメンテナンスモードの手順を使用して、 [Windows Server 2016 以降の累積的な更新プログラム (2018)](https://support.microsoft.com/help/4462928)をインストールすることをお勧めします。現在、ノードに2016年5月[2018 8](https://support.microsoft.com/help/4103723)日から[2018](https://support.microsoft.com/help/KB4462917)日にリリースされた Windows Server の累積的な更新プログラムがインストールされている場合。
@@ -217,7 +217,7 @@ Event Source: Microsoft-Windows-FailoverClustering
 Event ID: 5120
 Description:    Cluster Shared Volume 'CSVName' ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_IO_TIMEOUT(c00000b5)'. All I/O will temporarily be queued until a path to the volume is reestablished. 
 
-Cluster Shared Volume ‘CSVName’ ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_CONNECTION_DISCONNECTED(c000020c)'. All I/O will temporarily be queued until a path to the volume is reestablished.    
+Cluster Shared Volume ‘CSVName' ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_CONNECTION_DISCONNECTED(c000020c)'. All I/O will temporarily be queued until a path to the volume is reestablished.    
 ```
 
 イベント5120がログに記録されると、デバッグ情報を収集するためにライブダンプが生成されます。これにより、追加の現象が発生したり、パフォーマンスに影響が生じたりする可能性があります。 ライブダンプを生成すると、短い一時停止が作成され、メモリのスナップショットを取得してダンプファイルを書き込むことができるようになります。 大量のメモリを搭載し、負荷がかかっているシステムでは、ノードがクラスターメンバーシップから削除され、次のイベント1135がログに記録される可能性があります。

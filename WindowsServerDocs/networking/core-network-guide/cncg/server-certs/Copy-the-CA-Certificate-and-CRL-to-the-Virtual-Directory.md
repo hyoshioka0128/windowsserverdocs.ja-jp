@@ -4,17 +4,17 @@ description: このトピックでは、802.1 X ワイヤードおよびワイ�
 manager: dougkim
 ms.topic: article
 ms.assetid: a1b5fa23-9cb1-4c32-916f-2d75f48b42c7
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
 ms.date: 07/19/2018
-ms.openlocfilehash: 9dbe14bec1c39ab5b967276c4faf3e9fc5a9aae3
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 335efc4fae1f12f2af8443e91c67ff6ba936edb0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546537"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356212"
 ---
 # <a name="copy-the-ca-certificate-and-crl-to-the-virtual-directory"></a>CA 証明書と CRL を仮想ディレクトリにコピーする
 
@@ -30,11 +30,11 @@ ms.locfileid: "69546537"
   
     - 「`certutil -crl`」と入力し、Enter キーを押します。  
 
-    - CA1 証明書を Web サーバー上のファイル共有にコピーするには`copy C:\Windows\system32\certsrv\certenroll\*.crt \\WEB1\pki`、「」と入力し、enter キーを押します。  
+    - CA1 証明書を Web サーバー上のファイル共有にコピーするには、「`copy C:\Windows\system32\certsrv\certenroll\*.crt \\WEB1\pki`」と入力し、enter キーを押します。  
     
-    - 証明書失効リストを Web サーバー上のファイル共有にコピーするには`copy C:\Windows\system32\certsrv\certenroll\*.crl \\WEB1\pki`、「」と入力し、enter キーを押します。  
+    - 証明書失効リストを Web サーバー上のファイル共有にコピーするには、「`copy C:\Windows\system32\certsrv\certenroll\*.crl \\WEB1\pki`」と入力し、enter キーを押します。  
   
-2.  CDP と AIA の拡張機能の場所が正しく構成されて`pkiview.msc`いることを確認するには、「」と入力し、enter キーを押します。 Pkiview Enterprise PKI MMC が開きます。  
+2.  CDP と AIA の拡張機能の場所が正しく構成されていることを確認するには、「`pkiview.msc`」と入力し、enter キーを押します。 Pkiview Enterprise PKI MMC が開きます。  
   
 3.  左側のウィンドウで、CA 名をクリックします。<p>たとえば、CA の名前が CA1 の場合は、 **CA1**をクリックします。 
 

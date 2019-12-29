@@ -1,8 +1,8 @@
 ---
 title: jetpack
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3bffc29519df139921bdb1de53e67acd558b306
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b011658c6a745d62707cf88404379b17b0e05eef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858013"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375323"
 ---
 # <a name="jetpack"></a>jetpack
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Windows インターネット ネーム サービス (WINS) または動的ホスト構成プロトコル (DHCP) のデータベースが圧縮されます。 マイクロソフトでは、30 MB に近づくたびに、WINS データベースを最適化することをお勧めします。 
+Windows インターネットネームサービス (WINS) または動的ホスト構成プロトコル (DHCP) データベースを圧縮します。 Microsoft では、30 MB に近づいたときに WINS データベースを圧縮することをお勧めします。 
 
 ## <a name="syntax"></a>構文
 ```
@@ -34,33 +34,33 @@ jetpack.EXE <database name> <temp database name>
 ### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-|<database name>|元のデータベース ファイルを指定します。|
-|<temp database name>|一時データベース ファイルを指定します。|
+|<database name>|元のデータベースファイルを指定します。|
+|<temp database name>|一時データベースファイルを指定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
 ## <a name="BKMK_Examples"></a>例
-WINS データベースを最適化します。
+WINS データベースを圧縮するには、次のようにします。
 ```
 cd %SYSTEMROOT%\SYSTEM32\WINS
 NET STOP WINS
 jetpack WINS.MDB TMP.MDB
 NET start WINS
 ```
-DHCP データベースを最適化します。
+DHCP データベースを圧縮するには:
 ```
 cd %SYSTEMROOT%\SYSTEM32\DHCP
 NET STOP DHCPSERver
 jetpack DHCP.MDB TMP.MDB
 NET start DHCPSERver
 ```
-上記の例では**Tmp.mdb** jetpack.exe で使用される一時データベースです。 **Wins.mdb**は WINS データベースです。 **Dhcp.mdb**は DHCP データベースです。
-jetpack.exe 圧縮、WINS、または、次の手順を実行して DHCP データベース:
-1.  データベースと呼ばれる一時データベース ファイルに情報をコピー **Tmp.mdb**します。
-2.  元のデータベース ファイルを削除します**Wins.mdb**または**Dhcp.mdb**します。
-3.  一時データベース ファイルを元のファイル名に変更します。
+上記の例で、 **Tmp**は、jetpack によって使用される一時データベースです。 **Wins-a**は wins データベースです。 **Dhcp**は dhcp データベースです。
+jetpack は、次の手順に従って、WINS または DHCP データベースを圧縮します。
+1.  データベース情報を**Tmp**という名前の一時データベースファイルにコピーします。
+2.  元のデータベースファイル ( **wins-a**または**Dhcp .mdb**) を削除します。
+3.  一時データベースファイルの名前を元のファイル名に変更します。
 
 > [!NOTE]
-> Jetpack.exe がで指定された名前の一時ファイルを作成、最適化プロセス中に、*一時データベース名*パラメーター。 最適化プロセスが完了すると、一時ファイルが削除されます。 WINS または DHCP 内の既存のファイルがないことを確認で指定された 1 つとして同じ名前のフォルダー、*一時データベース名*パラメーター。
+> 圧縮処理中に、jetpack によって一時*データベース名*パラメーターで指定された名前の一時ファイルが作成されます。 一時ファイルは、コンパクトプロセスが完了すると削除されます。 WINS または DHCP フォルダーに既に存在するファイルが、 *temp データベース名*パラメーターに指定されている名前と同じでないことを確認します。
 
-## <a name="additional-references"></a>その他の参照
--   [コマンドライン構文キー](command-line-syntax-key.md)
+## <a name="additional-references"></a>その他の参照情報
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

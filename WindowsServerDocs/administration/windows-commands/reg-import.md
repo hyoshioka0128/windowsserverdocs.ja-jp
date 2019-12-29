@@ -1,8 +1,8 @@
 ---
-title: Reg のインポート
-description: 'Windows コマンド」のトピック * * *- '
+title: reg import
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d1dd1b61848671b528c62fd22fe656e14fda7b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2e1c7920a64469717c30cfcddda7b8002db5ba10
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861843"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384734"
 ---
-# <a name="reg-import"></a>Reg のインポート
+# <a name="reg-import"></a>reg import
 
 
 
@@ -38,10 +38,10 @@ Reg import FileName
 
 |パラメーター|説明|
 |---------|-----------|
-|\<FileName>|ローカル コンピューターのレジストリにコピーされるコンテンツを含むファイルのパスと名前を指定します。 使用してこのファイルを事前に作成する必要があります **reg エクスポート**します。|
-|/?|ヘルプを表示 **reg インポート** コマンド プロンプト。|
+|\<ファイル名 >|ローカル コンピューターのレジストリにコピーされるコンテンツを含むファイルのパスと名前を指定します。 使用してこのファイルを事前に作成する必要があります **reg export**します。|
+|/?|ヘルプを表示 **reg import** コマンド プロンプト。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 次の表に、戻り値の **reg インポート** 操作します。
 
@@ -59,4 +59,4 @@ reg import AppBkUp.reg
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

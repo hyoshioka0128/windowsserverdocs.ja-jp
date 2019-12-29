@@ -1,8 +1,8 @@
 ---
 title: ftp ディレクトリ
-description: Ftp ディレクトリの Windows コマンド」のトピック
+description: Ftp ディレクトリの Windows コマンドに関するトピック
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 78ac8ac5e9fc4894f55401bb234aa98de981adf7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c47971c52135d79ce62f935bfed981f6eefcecaa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835253"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376443"
 ---
-# <a name="ftp-dir"></a>ftp: dir
+# <a name="ftp-dir"></a>ftp: ディレクトリ
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモート コンピューター上のディレクトリのファイルとサブディレクトリの一覧を表示します。   
+リモートコンピューター上のディレクトリファイルとサブディレクトリの一覧を表示します。   
 ## <a name="syntax"></a>構文  
 ```  
 dir [<remotedirectory>] [<LocalFile>]  
@@ -32,16 +32,16 @@ dir [<remotedirectory>] [<LocalFile>]
 ### <a name="parameters"></a>パラメーター  
 |パラメーター|説明|  
 |-------|--------|  
-|[<remotedirectory>]|一覧を表示するディレクトリを指定します。 ディレクトリが指定されていない場合は、リモート コンピューター上の現在の作業ディレクトリが使用されます。|  
-|[<LocalFile>]|ディレクトリの一覧を格納するローカル ファイルを指定します。 ローカル ファイルが指定されていない場合は、結果が画面に表示されます。|  
+|[<remotedirectory>]|一覧を表示するディレクトリを指定します。 ディレクトリが指定されていない場合は、リモートコンピューター上の現在の作業ディレクトリが使用されます。|  
+|[<LocalFile>]|ディレクトリの一覧を格納するローカルファイルを指定します。 ローカルファイルが指定されていない場合、結果は画面に表示されます。|  
 ## <a name="BKMK_Examples"></a>例  
-ディレクトリの一覧を表示**dir1**リモート コンピューター。  
+リモートコンピューター上の**dir1**のディレクトリ一覧を表示します。  
 ```  
 dir dir1  
 ```  
-ローカル ファイルにリモート コンピューターで、現在のディレクトリの一覧を保存**dirlist.txt**します。  
+リモートコンピューター上の現在のディレクトリの一覧をローカルファイル**dirlist .txt**に保存します。  
 ```  
 dir . dirlist.txt  
 ```  
-## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+## <a name="additional-references"></a>その他の参照情報  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  

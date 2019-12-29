@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setdescription
-description: Windows コマンド」のトピック**bitsadmin setdescription** -指定したジョブの説明を設定します。
+description: '**Bitsadmin setdescription**の Windows コマンドトピック-指定したジョブの説明を設定します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e3323c20eebc8ba633ccfd478daa0753e506f46
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d140ee9d575828a1a4d536073e468c9b4e56799f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830753"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380932"
 ---
 # <a name="bitsadmin-setdescription"></a>bitsadmin setdescription
 
 
 
-指定したジョブの説明を設定します。
+指定されたジョブの説明を設定します。
 
 ## <a name="syntax"></a>構文
 
@@ -37,15 +37,15 @@ bitsadmin /SetDescription <Job> <Description>
 |パラメーター|説明|
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
-|説明|ジョブの記述に使用するテキスト。|
+|説明|ジョブを説明するために使用されるテキストです。|
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブの説明を取得する*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブの説明を取得します。
 ```
 C:\>bitsadmin /SetDescription myDownloadJob "Music Downloads"
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

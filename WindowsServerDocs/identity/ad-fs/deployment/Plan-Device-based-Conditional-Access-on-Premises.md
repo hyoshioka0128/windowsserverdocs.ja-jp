@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3a78334f64d9e51515757b01f2d788bf87f67a35
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 79dfc7fbf9e2dcc753829cc53d914f374010f925
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501610"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408331"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>オンプレミスのデバイス ベースの条件付きアクセスを計画する
 
@@ -32,18 +32,18 @@ Azure AD でデバイス オブジェクトとして表されもオンプレミ�
 
 | |作業を追加または学校のアカウント  |Azure AD への参加  |Windows 10 ドメイン参加    
 | --- | --- |--- | --- |
-|説明    |  ユーザーは、作業内容を追加または学校のアカウントを BYOD デバイスを対話的にします。  **注:** 職場または学校アカウントは、ワークプ レース ジョイン Windows 8/8.1 で置換を追加       | ユーザーは、その作業の Windows 10 デバイスを Azure AD に参加します。|Windows 10 ドメインに参加したデバイスは、Azure AD に自動的に登録します。|           
+|説明    |  ユーザーは、作業内容を追加または学校のアカウントを BYOD デバイスを対話的にします。  **注:** 職場または学校のアカウントを追加することは、Windows 8/8.1 の Workplace Join に代わるものです。       | ユーザーは、その作業の Windows 10 デバイスを Azure AD に参加します。|Windows 10 ドメインに参加したデバイスは、Azure AD に自動的に登録します。|           
 |デバイスへのユーザーのログオン     |  職場または学校のアカウントとしての windows ログインはありません。  Microsoft アカウントを使用してログインします。       |   デバイスの登録 (職場または学校) のアカウントとして Windows にログインします。      |     AD のアカウントを使用してログインします。|      
 |デバイスの管理方法    |      MDM ポリシー (とその他の Intune 登録)   | MDM ポリシー (とその他の Intune 登録)        |   グループ ポリシー、System Center Configuration Manager (SCCM) |
-|Azure AD 信頼の種類|社内参加しています。|Azure AD 参加済み|ドメインに参加する  |     
+|Azure AD の信頼の種類|社内参加済み|Azure AD 参加済み|ドメインに参加する  |     
 |W10 設定の場所    | 設定 > アカウント > お客様のアカウント > 職場または学校のアカウントを追加        | 設定 > システム > に関する > Azure AD に参加       |   設定 > システム > に関する > ドメインに参加します。 |       
-|IOS および Android デバイスにも使用可能ですか。   |    〇     |       X  |   X   |   
+|IOS および Android デバイスにも使用可能ですか。   |    はい     |       いいえ  |   いいえ   |   
 
   
 
 デバイスを登録するさまざまな方法の詳細についても参照してください。  
-* [Windows 10 デバイスを職場で使用](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices/)  
-* [作業用に Windows 10 デバイスの設定](https://jairocadena.com/2016/01/18/setting-up-windows-10-devices-for-work-domain-join-azure-ad-join-and-add-work-or-school-account/)  
+* [職場での Windows 10 デバイスの使用](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices/)  
+* [作業用の Windows 10 デバイスのセットアップ](https://jairocadena.com/2016/01/18/setting-up-windows-10-devices-for-work-domain-join-azure-ad-join-and-add-work-or-school-account/)  
 [Windows 10 Mobile を Azure Active Directory に参加させる](https://technet.microsoft.com/itpro/windows/manage/join-windows-10-mobile-to-azure-active-directory)  
 
 ### <a name="how-windows-10-user-and-device-sign-on-is-different-from-previous-versions"></a>Windows 10 のユーザーとデバイスのサインオンが以前のバージョンから別の方法  
@@ -89,7 +89,7 @@ AD FS の構成の詳細については、アクセス制御ポリシーは、�
 AD FS 2016 デバイスと条件付きアクセスの信頼性情報の一覧については、次を参照してください。 [参照](#reference)します。  
 
 
-## <a name="reference"></a>リファレンス  
+## <a name="reference"></a>参照  
 #### <a name="complete-list-of-new-ad-fs-2016-and-device-claims"></a>新しい AD FS 2016 とデバイスの要求の完全なリスト  
 
 * https://schemas.microsoft.com/ws/2014/01/identity/claims/anchorclaimtype  

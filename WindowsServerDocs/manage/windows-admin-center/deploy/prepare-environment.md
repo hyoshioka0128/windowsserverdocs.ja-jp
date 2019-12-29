@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 5924a6a2304bd8e883c43628e3c6c05b69cbd46c
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.prod: windows-server
+ms.openlocfilehash: 72e71ce2d1427f392aa02d32597f92d031f9a5c9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980322"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407009"
 ---
 # <a name="prepare-your-environment-for-windows-admin-center"></a>Windows Admin Center のための環境の準備
 
@@ -36,7 +36,7 @@ Windows Admin Center には、既定で Windows Server 2012 および 2012 R2 �
 
 PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。
 
-インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)できます。
+インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://docs.microsoft.com/powershell/wmf/setup/install-configure)できます。
 
 ## <a name="prepare-windows-server-2008-r2"></a>Windows Server 2008 R2 の準備
 
@@ -48,7 +48,7 @@ Windows Admin Center では、既定で Windows Server 2008 R2 に含まれて�
 
 PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。
 
-インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)できます。
+インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://docs.microsoft.com/powershell/wmf/setup/install-configure)できます。
 
 PowerShell コンソールで `Enable-PSRemoting –force` を実行して Powershell リモート接続を有効にします。 
 
@@ -114,7 +114,7 @@ Windows Admin Center では、既定で Microsoft Hyper-V Server 2012 R2 に含�
 
 PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。 
 
-インストールされていない場合は、[WMF 5.1 をダウンロード](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)することができます。
+インストールされていない場合は、[WMF 5.1 をダウンロード](https://docs.microsoft.com/powershell/wmf/setup/install-configure)することができます。
 
 ### <a name="step-2-enable-remote-management"></a>手順 2:リモート管理の有効化
 

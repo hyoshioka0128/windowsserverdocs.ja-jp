@@ -1,7 +1,7 @@
 ---
-title: Windows Server 2016 での HYPER-V のスケーラビリティの計画します。
+title: Windows Server 2016 および Windows Server 2019 での Hyper-v のスケーラビリティの計画
 description: Hyper-V と仮想マシンで追加または削除できるコンポーネントのサポートされている最大値を一覧表示します (メモリの量や仮想プロセッサの数など)。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,20 +10,20 @@ ms.topic: article
 author: KBDAzure
 ms.author: kathydav
 ms.date: 09/28/2016
-ms.openlocfilehash: b54d3e655d10d2dbb015d57f2b1be86a803d9911
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 493f7926a6ef686e6d47c1a3120a65ed0799b0db
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546638"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71934957"
 ---
-# <a name="plan-for-hyper-v-scalability-in-windows-server-2016"></a>Windows Server 2016 での HYPER-V のスケーラビリティの計画します。
+# <a name="plan-for-hyper-v-scalability-in-windows-server-2016-and-windows-server-2019"></a>Windows Server 2016 および Windows Server 2019 での Hyper-v のスケーラビリティの計画
 
 > 適用先:Windows Server 2016、Windows Server 2019
   
 この記事では、Hyper-V ホストまたはその仮想マシンで追加および削除できるコンポーネント (仮想プロセッサやチェックポイントなど) の最大構成の詳細を示します。 展開を計画する際は、各仮想マシンだけでなく、Hyper-v ホストに適用されるものに適用される最大値を検討してください。 
 
-メモリおよび論理プロセッサの最大値は、machine learning およびデータの分析などの新しいシナリオをサポートする要求に対する応答として Windows Server 2012 から最大の増加です。 Windows Server のブログと 5.5 数テラバイト メモリと 4 TB のメモリ内のデータベースを実行している 128 の仮想プロセッサの仮想マシンのパフォーマンスの結果が最近発行されました。 物理サーバーのパフォーマンスが 95% を超えています。 詳細については、「 [メモリ内のトランザクション処理が大規模な VM パフォーマンスを Windows Server 2016 HYPER-V](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/)します。 その他の番号は、Windows Server 2012 に適用されるものと似ています。 \(Windows Server 2012 R2 の最大値は、Windows Server 2012 と同じでした。\) 
+メモリおよび論理プロセッサの最大値は、machine learning およびデータの分析などの新しいシナリオをサポートする要求に対する応答として Windows Server 2012 から最大の増加です。 Windows Server のブログと 5.5 数テラバイト メモリと 4 TB のメモリ内のデータベースを実行している 128 の仮想プロセッサの仮想マシンのパフォーマンスの結果が最近発行されました。 物理サーバーのパフォーマンスが 95% を超えています。 詳細については、「 [メモリ内のトランザクション処理が大規模な VM パフォーマンスを Windows Server 2016 HYPER-V](https://blogs.technet.microsoft.com/windowsserver/2016/09/28/windows-server-2016-hyper-v-large-scale-vm-performance-for-in-memory-transaction-processing/)します。 その他の番号は、Windows Server 2012 に適用されるものと似ています。 Windows Server 2012 R2 の \( の最大値は、Windows Server 2012 と同じでした。 \) 
   
 > [!NOTE]  
 > System Center Virtual Machine Manager (VMM) についての情報を参照してください。 [Virtual Machine Manager](https://technet.microsoft.com/system-center-docs/vmm/vmm)します。 VMM は仮想データ センターを管理するためのマイクロソフト製品であり、別途購入する必要があります。  

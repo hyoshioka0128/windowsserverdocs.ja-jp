@@ -1,8 +1,8 @@
 ---
 title: bdehdcfg quiet
-description: Windows コマンド」のトピック bdehdcfg quiet - すべてのアクションおよびエラーを表示しない bdehdcfg を示します。
+description: Bdehdcfg quiet の Windows コマンドに関するトピックでは、すべてのアクションとエラーを表示しないように bdehdcfg に指示しています。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f0d98f6ae76e9bf6357689c97e091766b9645c2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d59a14e34200e3fa8e18e36e166ef62ceca1afe7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865753"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382221"
 ---
 # <a name="bdehdcfg-quiet"></a>bdehdcfg: quiet
 
 
 
-すべての操作やエラーは、コマンド ライン インターフェイスに表示される、Bdehdcfg コマンド ライン ツールを通知します。 このコマンドの使用方法の例は、次を参照してください。[例](#BKMK_Examples)します。
+Bdehdcfg コマンドラインツールに、すべてのアクションとエラーがコマンドラインインターフェイスに表示されないことを通知します。 このコマンドを使用する方法の例については、「[例](#BKMK_Examples)」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -36,18 +36,18 @@ bdehdcfg -target {default|unallocated|<DriveLetter> shrink|<DriveLetter> merge} 
 
 このコマンドは、追加のパラメーターを受け取りません。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-場合、[はい]/(Y/N) プロンプトが表示されていますないドライブの準備中に、"Yes"の応答が使用されます。 ドライブの準備中に発生したエラーを表示するには、システム イベント ログを確認、 **Microsoft Windows BitLocker DrivePreparationTool**イベント プロバイダー。
+ドライブの準備中に "yes/No (Y/N)" プロンプトが表示された場合は、"Yes" という答えが想定されます。 ドライブの準備中に発生したエラーを表示するには、 **DrivePreparationTool**イベントプロバイダーの下にあるシステムイベントログを確認します。
 
 ## <a name="BKMK_Examples"></a>例
 
-次の例を使用して、 **quiet**コマンド。
+次の例は、 **quiet**コマンドの使用方法を示しています。
 ```
 bdehdcfg -target default -quiet
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)
 -   [Bdehdcfg](bdehdcfg.md)

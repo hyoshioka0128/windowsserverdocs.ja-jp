@@ -1,19 +1,19 @@
 ---
 title: Windows Server Version 1809 の新機能
 description: Windows Server Version 1809 の新機能
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/21/2019
 ms.localizationpriority: high
-ms.openlocfilehash: d268550112236daecbe3dc1a9d9da21bc8ec67fb
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: edac405073421f96236854d888a0c08ddc5b8830
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "65976640"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391297"
 ---
 # <a name="whats-new-in-windows-server-version-1809"></a>Windows Server Version 1809 の新機能
 

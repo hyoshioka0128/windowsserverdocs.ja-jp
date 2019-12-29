@@ -13,12 +13,12 @@ manager: ''
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 85e332f5f66b59676ddd3b5383b1e5844c2b4c83
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 8af2b1a171a77def2bbb74cc7301e0562cb5b92c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529922"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870599"
 ---
 # <a name="user-cant-authenticate-or-must-authenticate-twice"></a>ユーザーが認証できない、または 2 回認証する必要がある
 
@@ -35,7 +35,7 @@ ms.locfileid: "68529922"
 
 この問題を解決するには、次のいずれかを実行します。
 
-  - [ユーザーのグループ メンバーシップまたはユーザー権利の割り当てを変更します](#modify-the-users-group-membership-or-user-rights-assignment)。
+  - [ユーザーのグループ メンバーシップまたはユーザー権利の割り当てを変更する](#modify-the-users-group-membership-or-user-rights-assignment)
   - NLA をオフにします (非推奨)。
   - Windows 10 以外のリモート デスクトップ クライアントを使います。 たとえば、Windows 7 クライアントではこの問題は発生しません。
 

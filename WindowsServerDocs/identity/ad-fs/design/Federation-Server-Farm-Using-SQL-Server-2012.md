@@ -7,60 +7,60 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 66c8bae2fbccca2bf618e46ffd3ccc05cb52f911
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 358199fd37cdbb320bc8f3e3e5b2900d261986f0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191499"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359154"
 ---
 # <a name="federation-server-farm-using-sql-server"></a>SQL Server を使用するフェデレーション サーバー ファーム
 
-Active Directory フェデレーション サービスのこのトポロジ\(AD FS\) Windows Internal Database を使用してフェデレーション サーバー ファームとは異なります\(WID\)展開トポロジでデータを複製されません。ファームの各フェデレーション サーバー。 代わりに、ファーム内のすべてのフェデレーション サーバーは、読み取りし、は、企業ネットワークにある Microsoft SQL Server を実行しているサーバーに格納されている一般的なデータベースにデータを書き込みます。  
+この Active Directory フェデレーションサービス (AD FS) \(\) AD FS のトポロジは、ファーム内の各フェデレーションサーバーにデータをレプリケートしないという点で、Windows Internal Database \(WID\) 展開トポロジを使用したフェデレーションサーバーファームとは異なります。 代わりに、ファーム内のすべてのフェデレーションサーバーは、企業ネットワーク内に配置されている Microsoft SQL Server を実行しているサーバーに格納されている共通のデータベースにデータの読み取りと書き込みを行うことができます。  
   
 ## <a name="deployment-considerations"></a>展開に関する考慮事項  
-このセクションでは、対象となるユーザー、利点、およびこの配置トポロジに関連付けられている制限事項についてさまざまな考慮事項について説明します。  
+このセクションでは、この展開トポロジに関連する対象ユーザー、利点、および制限事項に関するさまざまな考慮事項について説明します。  
   
 ### <a name="who-should-use-this-topology"></a>このトポロジを使用する必要がありますか。  
   
--   1 つの記号の内部ユーザーと外部ユーザーの両方を指定する必要が 100 以上の信頼関係を持つ大規模な組織\-で\(SSO\)フェデレーション アプリケーションまたはサービスへのアクセス  
+-   100を超える信頼関係を持つ大規模な組織は、\(SSO\) フェデレーションアプリケーションまたはサービスへのアクセスに対して、内部ユーザーと外部ユーザーの両方にシングルサイン\-を提供する必要があります。  
   
--   組織が既に SQL Server を使用して、およびその既存のツールと専門知識を活用します。  
+-   既に SQL Server を使用し、既存のツールと専門知識を活用する組織  
   
 ### <a name="what-are-the-benefits-of-using-this-topology"></a>このトポロジを使用する利点とは  
   
--   信頼関係の数が大きくサポート\(100 を超える\)  
+-   100を超える \(の信頼関係のサポート\)  
   
--   トークン リプレイ検出のサポート\(セキュリティ機能\)とアーティファクト解決\(、Security Assertion Markup Language の一部\(SAML\) 2.0 プロトコル\)  
+-   トークンリプレイ検出のサポートは、セキュリティ機能\) とアーティファクト解決 \(Security Assertion Markup Language \(SAML\) 2.0 プロトコルの一部 \(\)  
   
--   データベース ミラーリング、フェールオーバー クラスタ リング、レポート、および管理ツールなど、SQL Server のすべてのメリットのサポート  
+-   データベースミラーリング、フェールオーバークラスタリング、レポート、管理ツールなどの SQL Server の利点のすべてのサポート  
   
 ### <a name="what-are-the-limitations-of-using-this-topology"></a>このトポロジを使用する場合の制限事項を挙げてください。  
   
--   このトポロジでは、既定ではデータベースの冗長性は提供されません。 SQL Server のトポロジを使用したフェデレーション サーバー ファームには、データベースのコピー 1 つだけにはが含まれていますが、WID トポロジを使用したフェデレーション サーバー ファームでは、ファーム内の各フェデレーション サーバー上の WID データベースが自動的にレプリケートします、  
+-   このトポロジでは、データベースの冗長性は既定では提供されません。 WID トポロジを持つフェデレーションサーバーファームは、ファーム内の各フェデレーションサーバーで WID データベースを自動的にレプリケートしますが、SQL Server トポロジを持つフェデレーションサーバーファームには、データベースのコピーが1つだけ含まれます。  
   
 > [!NOTE]  
-> SQL Server には、多くのさまざまなデータやフェールオーバー クラスタ リング、データベース ミラーリングは、さまざまな種類の SQL Server レプリケーションなど、アプリケーションの冗長性オプションがサポートしています。  
+> SQL Server は、フェールオーバークラスタリング、データベースミラーリング、およびさまざまな種類の SQL Server レプリケーションなど、さまざまなデータおよびアプリケーション冗長オプションをサポートしています。  
   
-Microsoft の Information Technology \(IT\)部門が高で SQL Server データベースのミラーリングを使用して\-安全\(同期\)モードとフェールオーバー クラスターを高\-SQL Server インスタンスの可用性のサポート。 SQL Server トランザクション\(ピア\-に\-ピア\)とマージ レプリケーションは Microsoft の AD FS 製品チームがテストされていません。 SQL Server の詳細については、次を参照してください。[高可用性ソリューションの概要](https://go.microsoft.com/fwlink/?LinkId=179853)または[適切なレプリケーションの種類を選択すると](https://go.microsoft.com/fwlink/?LinkId=214648)します。  
+IT\) 部門の \(Microsoft の情報技術では、SQL Server データベースミラーリングを高\-安全性で使用し、同期 \(モードとフェールオーバークラスタリングを使用して\) インスタンスの高\-可用性をサポートしています。 トランザクション \(ピア\-を\-ピア\) に SQL Server、マージレプリケーションは、Microsoft の AD FS 製品チームによってテストされていません。 SQL Server の詳細については、「[高可用性ソリューションの概要](https://go.microsoft.com/fwlink/?LinkId=179853)」または[適切な種類のレプリケーションの選択](https://go.microsoft.com/fwlink/?LinkId=214648)に関するトピックを参照してください。  
   
-### <a name="supported-sql-server-versions"></a>サポートされている SQL Server のバージョン  
-Windows Server 2012 と共にインストールされる AD FS では、次の SQL server のバージョンがサポートされています。  
+### <a name="supported-sql-server-versions"></a>サポートされている SQL Server バージョン  
+Windows Server 2012 と共にインストールされた AD FS では、次のバージョンの SQL server がサポートされています。  
   
 -   SQL Server 2008 \/ R2  
   
 -   SQL Server 2012  
   
-## <a name="server-placement-and-network-layout-recommendations"></a>サーバーの配置とネットワーク レイアウトの推奨事項  
-WID トポロジを使用したフェデレーション サーバー ファームと同様に、すべてのファームにフェデレーション サーバーが構成されて 1 つのクラスターのドメイン ネーム システムを使用して\(DNS\)名前\(フェデレーションサービス名を表す\)とネットワーク負荷分散の一部として 1 つのクラスター IP アドレス\(NLB\)クラスターの構成。 これにより、個々 のフェデレーション サーバーにクライアント要求の割り当ての NLB ホストできます。 クライアント要求のプロキシ、フェデレーション サーバー ファームにフェデレーション サーバー プロキシを使用できます。  
+## <a name="server-placement-and-network-layout-recommendations"></a>サーバーの配置とネットワークレイアウトに関する推奨事項  
+WID トポロジを持つフェデレーションサーバーファームと同様に、ファーム内のすべてのフェデレーションサーバーは、1つのクラスタードメインネームシステム \(DNS\) 名 \(を使用するように構成されています。これは、フェデレーションサービス名\) と、NLB \(クラスター構成\) ネットワーク負荷分散の一部として1つのクラスター IP アドレスを使用します。 これにより、NLB ホストは個々のフェデレーションサーバーにクライアント要求を割り当てることができます。 フェデレーションサーバープロキシは、フェデレーションサーバーファームにクライアント要求をプロキシするために使用できます。  
   
-次の図は、架空の Contoso Pharmaceuticals 会社が企業ネットワーク内の SQL Server トポロジでそのフェデレーション サーバー ファームを展開する方法を示します。 その会社が DNS サーバー、同じクラスター DNS 名を使用する追加の NLB ホストにアクセスできる境界ネットワークを構成する方法も示します\(fs.contoso.com\)企業ネットワークの NLB クラスターで 2 つを使用して使用します。フェデレーション サーバー プロキシ\(fsp1 および fsp2\)します。  
+次の図は、架空の Contoso 薬品企業が企業ネットワークに SQL Server トポロジを使用してフェデレーションサーバーファームを展開した方法を示しています。 また、企業が DNS サーバーへのアクセスを使用して境界ネットワークを構成した方法、企業ネットワーク NLB クラスターで使用されている同じクラスター DNS 名 \(fs.contoso.com\) を使用する追加の NLB ホスト、および2つのフェデレーションサーバープロキシ \(fsp1 と fsp2\)を使用していることも示します。  
   
-![SQL を使用してサーバー ファーム](media/FarmSQLProxies.gif)  
+![SQL を使用したサーバーファーム](media/FarmSQLProxies.gif)  
   
-フェデレーション サーバーまたはフェデレーション サーバー プロキシを使用するため、ネットワーク環境を構成する方法の詳細については、のいずれかの操作を参照して[フェデレーション サーバーの名前解決要件](Name-Resolution-Requirements-for-Federation-Servers.md)または[名フェデレーション サーバー プロキシの解決の要件](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)します。  
+フェデレーションサーバーまたはフェデレーションサーバープロキシで使用するネットワーク環境を構成する方法の詳細については、「フェデレーションサーバー[の名前解決の要件](Name-Resolution-Requirements-for-Federation-Servers.md)」または「[フェデレーションサーバープロキシの名前解決の要件](Name-Resolution-Requirements-for-Federation-Server-Proxies.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -23,10 +23,12 @@
 ### [ユーザー アクセスの制御とアクセス許可](configure/user-access-control.md)
 ### [拡張機能の使用](configure/using-extensions.md)
 ### [共有接続](configure/shared-connections.md)
+### [PowerShell を使用した自動化](configure/use-powershell.md)
 
 ## 使用
 ### [作業の開始](use/get-started.md)
 ### [サーバーの管理](use/manage-servers.md)
+### [ハイパーコンバージド インフラストラクチャの展開](use/deploy-hyperconverged-infrastructure.md)
 ### [ハイパーコンバージド インフラストラクチャの管理](use/manage-hyper-converged.md)
 ### [フェールオーバー クラスターの管理](use/manage-failover-clusters.md)
 ### [Hyper-V 仮想マシンの管理](use/manage-virtual-machines.md)
@@ -65,6 +67,7 @@
 #### [ツール拡張機能でカスタムのゲートウェイ プラグインを使用する](extend/guides/use-custom-gateway-plugin.md)
 #### [接続プロバイダーの作成](extend/guides/create-connection-provider.md)
 #### [ルート ナビゲーション動作の変更](extend/guides/modify-root-navigation.md)
+#### [Windows Admin Center v1909 でのクラスター接続の種類の変更](extend/guides/cluster-connection-change-wac-1909.md)
 #### [ツールの可視性の制御](extend/guides/dynamic-tool-display.md)
 #### [文字列とローカライズ](extend/guides/strings-localization.md)
 #### [UI テキストおよびデザイン スタイル ガイド](extend/guides/ui-text-style-guide.md)

@@ -1,8 +1,8 @@
 ---
 title: ftp hash_1
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,31 +13,31 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 87c4466ba1bf89f9eb548d7d7ed134246c810811
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 495306902bf68b451158d89794b47c273ae8a7e7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438693"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376354"
 ---
-# <a name="ftp-hash1"></a>ftp: hash_1
+# <a name="ftp-hash_1"></a>ftp: hash_1
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-切り替えは番号記号 (#) は、転送されたデータ ブロックごとに印刷します。   
+転送されるデータブロックごとにシャープ記号 (#) の印刷を切り替えます。   
 ## <a name="syntax"></a>構文  
 ```  
 hash  
 ```  
 ### <a name="parameters"></a>パラメーター  
 なし  
-## <a name="remarks"></a>注釈  
-- データ ブロックのサイズは、2,048 バイトです。  
-- 既定では、**ハッシュ**はオフです。  
+## <a name="remarks"></a>コメント  
+- データブロックのサイズは2048バイトです。  
+- 既定では、 **hash**はオフになっています。  
   ## <a name="BKMK_Examples"></a>例  
-  シャープ記号 (#) は、転送されたデータ ブロックの印刷機能を切り替えます。  
+  転送されるデータブロックごとにシャープ記号 (#) の印刷を切り替えます。  
   ```  
   hash  
   ```  
-  ## <a name="additional-references"></a>その他の参照  
+  ## <a name="additional-references"></a>その他の参照情報  
 - [コマンド ライン構文の記号](command-line-syntax-key.md)  

@@ -1,38 +1,38 @@
 ---
 title: Windows Server のコア ネットワーク ガイド
-description: このトピックでは、計画およびネットワークが完全に機能と Windows Server 2016 で、新しいフォレスト内の新しい Active Directory ドメインに必要なコア コンポーネントを展開することができます、コア ネットワーク ガイドの概要を提供します。
+description: このトピックでは、コアネットワークガイドの概要について説明します。これにより、完全に機能するネットワークに必要なコアコンポーネントと、Windows Server 2016 を使用する新しいフォレストの新しい Active Directory ドメインに必要なコアコンポーネントを計画および展開することができます。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.date: ''
 ms.assetid: 9b3ef3eb-4246-4e0e-8bf1-53224ca5f2f9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a905fd0c11237edd3a408998f8f71aa25a054328
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 52f8b9e1446b5b3f3b1e7060cc737204771d1eae
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847903"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356068"
 ---
 # <a name="core-network-guidance-for-windows-server"></a>Windows Server のコア ネットワーク ガイド
 
->適用対象:Windows Server、Windows Server 2016
+>適用対象: Windows Server、Windows Server 2016
 
-このトピックでは、Windows server コア ネットワーク ガイドの概要を示します&reg;2016 では、次のセクションが含まれています。  
+このトピックでは、Windows Server&reg; 2016 のコアネットワークガイダンスの概要について説明します。次のセクションが含まれています。  
   
--   [Windows Server のコア ネットワークの概要](#bkmk_intro)  
+-   [Windows Server Core ネットワークの概要](#bkmk_intro)  
   
--   [Windows server コア ネットワーク ガイド](#bkmk_core)  
+-   [Windows Server 用コアネットワークガイド](#bkmk_core)  
   
-## <a name="bkmk_intro"></a>Windows Server のコア ネットワークの概要
+## <a name="bkmk_intro"></a>Windows Server Core ネットワークの概要
 
 コア ネットワークは、ネットワーク ハードウェア、デバイス、およびソフトウェアのコレクションであり、組織の情報テクノロジ (IT) ニーズに対応するための基盤サービスを提供します。
 
 Windows Server コア ネットワークには、次のような機能を提供する多くのメリットがあります。
 
-- コンピューターと他の伝送制御プロトコル/インターネット プロトコル (TCP/IP) 互換デバイスとの間のネットワーク接続のためのコア プロトコル。 TCP/IP は、コンピューターを接続してネットワークを構築するための標準プロトコル スイートです。 TCP/IP ネットワーク プロトコル ソフトウェアでマイクロソフトに提供されるは&reg;Windows&reg;プロトコル スイートを実装し、TCP/IP をサポートしているオペレーティング システム。
+- コンピューターと他の伝送制御プロトコル/インターネット プロトコル (TCP/IP) 互換デバイスとの間のネットワーク接続のためのコア プロトコル。 TCP/IP は、コンピューターを接続してネットワークを構築するための標準プロトコル スイートです。 TCP/IP は、TCP/IP プロトコルスイートを実装およびサポートする Microsoft&reg; Windows&reg; オペレーティングシステムと共に提供されるネットワークプロトコルソフトウェアです。
 
 - 動的ホスト構成プロトコル (DHCP) サーバーの IP アドレスの自動割り当て。 ネットワーク上のすべてのコンピューターに手動で IP アドレスを構成する作業は、DHCP サーバーからリースされる IP アドレスを、コンピューターおよびその他のデバイスに動的に割り当てるように構成する作業に比べ、時間がかかり柔軟性にも欠けます。
 
@@ -44,11 +44,11 @@ Windows Server コア ネットワークには、次のような機能を提供�
 
 - ユーザーおよびコンピューターのアカウント データベース。 ディレクトリ サービスには、一元管理のユーザー アカウント データベースが用意されています。このデータベースを使用して、アプリケーション、データベース、共有のファイルおよびフォルダー、プリンターなどのネットワーク リソースに対する接続を承認されたユーザーとコンピューターのために、ユーザー アカウントおよびコンピューター アカウントを作成できます。
 
-また、コア ネットワークにより、組織の成長と IT 要件の変化に合わせてネットワークの規模を拡張できます。 たとえば、コア ネットワークと、ドメイン、IP サブネット、リモート アクセス サービス、ワイヤレス サービスなど、他の機能および Windows Server 2016 で提供されるサーバーの役割を追加できます。
+また、コア ネットワークにより、組織の成長と IT 要件の変化に合わせてネットワークの規模を拡張できます。 たとえば、コアネットワークでは、ドメイン、IP サブネット、リモートアクセスサービス、ワイヤレスサービス、および Windows Server 2016 によって提供されるその他の機能とサーバーの役割を追加できます。
 
-## <a name="bkmk_core"></a>Windows server コア ネットワーク ガイド
+## <a name="bkmk_core"></a>Windows Server 用コアネットワークガイド
 
-Windows Server 2016 コア ネットワーク ガイドは計画およびネットワークが完全に機能し、新しい Active Directory に必要なコア コンポーネントを展開する方法について説明&reg;新しいフォレストのドメイン。 このガイドを使用して、次の Windows サーバー コンポーネントで構成されたコンピューターを展開できます。
+Windows Server 2016 コアネットワークガイドでは、新しいフォレストで、完全に機能するネットワークと新しい Active Directory&reg; ドメインに必要なコアコンポーネントを計画および展開する方法について説明します。 このガイドを使用して、次の Windows サーバー コンポーネントで構成されたコンピューターを展開できます。
 
 - Active Directory Domain Services (AD DS) サーバー役割
 
@@ -62,9 +62,9 @@ Windows Server 2016 コア ネットワーク ガイドは計画およびネッ�
 
 - 個々のサーバーでの伝送制御プロトコル/インターネット プロトコル バージョン 4 (TCP/IP) 接続
 
-このガイドは、次の場所で使用できます。
+このガイドは次の場所から入手できます。
 
-- [コア ネットワーク ガイド](../core-network-guide/Core-Network-Guide.md)Windows Server 2016 テクニカル ライブラリ。
+- Windows Server 2016 テクニカルライブラリの[コアネットワークガイド](../core-network-guide/Core-Network-Guide.md)。
   
 
 

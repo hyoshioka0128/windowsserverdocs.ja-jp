@@ -1,56 +1,56 @@
 ---
-title: Windows Admin Center SDK のケース スタディ - 2 乗
-description: Windows Admin Center SDK のケース スタディ - 2 乗
+title: Windows 管理センター SDK ケーススタディ-二乗アップ
+description: Windows 管理センター SDK ケーススタディ-二乗アップ
 ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 05/23/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: ab0a7bdcf2388ffc867763c04e183b7388fd13e9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.prod: windows-server
+ms.openlocfilehash: 620d3d9f4b5c3638d49fe9141e83ebdcb9eb245c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863943"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406920"
 ---
-# <a name="squared-up-extension"></a>拡張機能を 2 乗
+# <a name="squared-up-extension"></a>2乗されるアップ拡張
 
-## <a name="bringing-scom-based-monitoring-server-dependency-visibility-and-external-data-insights-into-windows-admin-center"></a>SCOM ベースの監視、サーバー依存関係の可視性、および Windows Admin Center に外部データの洞察
+## <a name="bringing-scom-based-monitoring-server-dependency-visibility-and-external-data-insights-into-windows-admin-center"></a>SCOM ベースの監視、サーバー依存関係の可視性、外部データ分析を Windows 管理センターに
 
-2 乗がデータの視覚化を使用して、エンタープライズ IT の複雑さの課題を解決するためのビジョンを創設しました。 一意、ライトウェイト乗上の Microsoft の強力な System Center Operations Manager のプラットフォームだけでなく Microsoft の Azure Log Analytics、Application Insights とシステムからの追加のデータ ソースとの統合の上には、UI のみのソフトウェアサード パーティの製品、オンプレミス インフラストラクチャとアプリケーションの資産を大規模なエンタープライズの可視性を提供するには、ServiceNow、Splunk、さらに多くのように、ハイブリッド クラウド環境で Service Manager が中央にします。
+二乗型アップは、企業の IT の複雑さの課題を解決するために、データの視覚化を使用するビジョンによって設立されました。 2乗された、軽量の UI 専用のソフトウェアは、Microsoft の強力な System Center Operations Manager プラットフォームの上に構築されます。また、Microsoft 独自の Azure Log Analytics、Application Insights、システムからの追加のデータソースとの統合にも対応しています。オンプレミスとハイブリッドクラウド環境の両方で、大規模なエンタープライズインフラストラクチャとアプリケーション資産の可視性を実現するために、ServiceNow、などのサードパーティ製品にセンターを Service Manager します。
 
-> <cite>"私たちした大きくを利用して、Technical Preview で Windows Admin Center と本当に、構成 labs に簡単にアクセスを取得するエンジニアなどの課題を解決を支援ヒット大きな既にとなっていますしようとすることをプライマリ管理コンソールは完全リリース版にヒットしたとします。We love を 2 乗との統合を 1 か所ですべてのデータを表示すること、および潜在的な。"</cite>
+> <cite>「Technical Preview 全体にわたって Windows 管理センターを利用してきましたが、これは既に大きなヒットでした。私たちのエンジニアが私たちの構成ラボに簡単にアクセスできるようにするという課題を解決するために、microsoft は主な管理を行います。完全リリースに達した後のコンソール。2乗との統合の可能性と、すべてのデータを1か所に格納する機能があります。」</cite>
 >
-> -- David Acevedo, I/S Specialist at NuStar Energy L.P.
+> --David Acevedo, I/S スペシャリスト (NuStar エネルギー L.P.)
 
-2 乗をクライアント管理の数百、何千も多くの場合、Windows サーバーと、両方の 2 乗と Microsoft によって提供されるポートフォリオは、IT チームにミッション クリティカルでは、さまざまなアプリケーションの最良の高速で最新の web UI 分析情報を提供する必要があります。 その結果、チームの 2 乗をそれら同じの値とプリンシパルを次世代の Windows サーバーの管理に提供する Windows Admin Center で魅力的な配置をすぐに説明しました。 具体的には、チームでは、長期的なパフォーマンス データやリアルタイムのサーバー依存関係の洞察を 2 乗して表示されるアプリケーションのコンテキストが完全に補完、光沢のある、リアルタイムのデータとサーバーの管理機能によって提供されると考えられるWindows Admin Center。
+2乗されたクライアントは、数百、数千もの Windows サーバーを管理しており、それらによって提供されるさまざまなアプリケーションポートフォリオを1平方アップし、Microsoft は、IT チームが必要な洞察を提供するための高速で最新の web UI に最適になるようにしています。 結果として、2乗アップのチームは、Windows 管理センターとの優れた配置をすぐに見ました。これにより、同じ値とプリンシパルが次世代の Windows Server 管理に導入されます。 特に、このチームでは、2乗されたパフォーマンスデータ、リアルタイムのサーバー依存関係の洞察、およびアプリケーションコンテキストが、によって提供される流線型のリアルタイムのデータおよびサーバー管理機能を完全に補完すると考えました。Windows 管理センター。
 
-![拡張機能を 2 乗](../../media/extend-case-study-squared-up/squared-up-1.png)
+![2乗されるアップ拡張](../../media/extend-case-study-squared-up/squared-up-1.png)
 
-> <cite>"を 2 乗の大規模なサーバー資産を管理する組織として Windows Admin Center の統合は、ローカライズされた一元的なツールや中など、サーバーをメンテナンス モードに直接格納内からスローすることの完璧な結婚/Windows Admin Center は、私たちにとって優れたの小さな wins"</cite>
+> <cite>「大規模なサーバー資産を管理する組織では、2乗されたアップ/Windows 管理センターの統合は、ローカライズおよび一元化されたツールに最適な結婚であり、内部からメンテナンスモードにサーバーを簡単に組み込むことができます。Windows 管理センターは、お客様にとって非常に簡単です。</cite>
 >
-> --Kip Granson、Purdue 大学での仮想化システム管理者
+> -–キープ Granson、仮想化システム管理者 (Purdue 大学)
 
-Windows Admin Center 内でそのデータをシームレスに提示する必要があるの明確なビジョンは、有効活用 2 乗を初期のプライベート プレビュー バージョンの Windows Admin Center SDK と協力して、簡単で適切に文書化された柔軟な。
+Windows 管理センター内でデータをシームレスに表示したいという明確なビジョンにより、二乗アップは Windows 管理センター SDK の早期プライベートプレビュー版を使用して機能し、わかりやすく、ドキュメント化された柔軟性があります。
 
-Windows Admin Center SDK を使用して、2 乗を構築することが拡張機能を動的に関連する 2 乗を Windows Admin Center 内のビューのエクスペリエンスを埋め込みます。 など、特定のサーバーまたはクラスターのコンテキスト内でビューの 2 乗を自動的に埋め込まれているに拡張表示が実現します。 ビューには、主要なパフォーマンスと容量のメトリック (CPU、メモリ、ディスク) などの傾向の履歴スタック (クラウド データ センターのプラットフォームや仮想化)、SQL データベースやサービスなどのアプリケーション コンポーネントをホストとクラウド ベースのログ分析ITSM データです。
+Windows 管理センター SDK を使用すると、二乗 Up は、Windows 管理センターのエクスペリエンス内で、関連する2乗されたビューを動的に埋め込む拡張機能を構築できました。 たとえば、特定のサーバーまたはクラスターのコンテキスト内では、四角形のアップビューは拡張された可視性に自動的に埋め込まれます。 ビューには、主要なパフォーマンスと容量のメトリック (CPU、メモリ、ディスクなど)、ホストスタック (クラウドプラットフォームまたはデータセンターの仮想化)、SQL データベースやサービスなどのアプリケーションコンポーネント、クラウドベースのログ分析などの履歴傾向が含まれます。データを ITSM します。
 
-![拡張機能を 2 乗](../../media/extend-case-study-squared-up/squared-up-2.png)
+![2乗されるアップ拡張](../../media/extend-case-study-squared-up/squared-up-2.png)
 
-2 乗を Windows Admin Center は、最新の web アーキテクチャと設計功を奏した、単純な技術的な統合とシームレスなユーザー エクスペリエンスの両方が有効になっているを共有します。 ますます、norm web ベースの管理のさまざまなシステム間の統合には、このメソッドは、最新の統一された管理エクスペリエンスのロックを解除するキーと考えています。
+二乗アップと Windows 管理センターは、最新の web アーキテクチャと設計ためしを共有しています。これにより、シンプルな技術的統合とシームレスなユーザーエクスペリエンスの両方が実現しました。 Web ベースの管理が従来よりも一般的になっているため、さまざまなシステム間でこのような統合を行うことは、統合された最新の管理エクスペリエンスをロック解除するための鍵となります。
 
-> <cite>"がわかります Windows Admin Center として最先端の最新の Windows Server 管理のため、チームやこのような速度、情熱、柔軟性と内などの根本的に操作がいるという事実と密接に作業するための優れたエクスペリエンスとなっています最新の開発パラダイムが行ったに最適な方法で、リーンのテンポの速いアジャイル ソフトウェア開発会社で私たちは自分たちです"。</cite>
+> <cite>"Windows 管理センターは、windows Server の最新の管理の最先端として機能しています。そのため、チームと密接に連携していて、このような速度、小学校、柔軟性などを使用して作業しています。現代的な開発のパラダイムにより、アジャイルで迅速に発展する、迅速なソフトウェア開発会社であるという形で、非常に優れた機能を実現しました。」</cite>
 >
-> --2 乗 Richard Benwell、製品のアーキテクトで
+> --Richard Benwell、製品アーキテクト (二乗)
 
-この自然な配置では、2 乗の開発チームがネイティブは、Windows Admin Center エクスペリエンス内で、2 乗を表示するプロトタイプの統合を迅速に進行状況を独自早期導入者、技術の手に取得することが可能クライアントをプレビューします。 顧客の反応からには、ストーリーに優勝したことがすぐにクリアしました。
+この自然な配置では、2乗された開発チームが、Windows 管理センターのエクスペリエンス内でネイティブに正方形を表示し、それを早期導入者の手に入れるために、プロトタイプの統合に迅速に進めることができました。クライアントをプレビューします。 顧客の反応から、ストーリーが勝者になったことがすぐに明らかになりました。
 
-> <cite>"3,500 を超えるサーバー、環境全体で優れたサービスは、多様な統合が維持するための主要な課題の 1 つ landscape 管理と監視ツールなどの 2 乗とが表示されます - Windows Admin Center の統合まとめて 1 つのコンソール – 多くのさまざまなソースからの大量のデータは私たちにとって大きなです。"</cite>
+> <cite>"3500 サーバーを超える環境で未処理のサービスを維持するための主な課題の1つは、管理ツールと監視ツールのさまざまなランドスケープを統合することです。これにより、2乗された Up と Windows 管理センター間の統合が実現します。多くの異なるソースから1つのコンソールに至るまで、膨大な量のデータをまとめています。」</cite>
 >
-> --Martin Ehrnst、Intility A/S で Azure のテクニカル リード
+> --Martin Ehrnst、Intility A/S での Azure の技術リーダー
 
-その種の 2 乗のクライアントから既に情熱ともの優れた新機能の核と Windows Admin Center に付属する 2 乗はきわめて興奮この統合と、クライアントを起動してすばらしい可能性の将来についてと、true 単一-ウィンドウ-の-の入ったグラスの IT 運用管理のためには工程をします。
+この種の小学校は、既に Windows 管理センターに提供されている多数の優れた新機能を備えています。また、この統合の未来と、クライアント向けに開いているすばらしい可能性については、作っ興奮になります。IT 運用管理の真の単一のウィンドウを表示します。
 
-2 乗を]、[Windows Admin Center の統合は現在ベータ版です。アクセスする場合は、くださいチェック アウト[専用ページ 2 乗の](https://squaredup.com/product/honolulu/windows-admin-center-extension/?utm_source=microsoft-wac&utm_medium=public-relations&utm_campaign=honolulu)の詳細。 組織で Microsoft System Center Operations Manager を使用して、2 乗を (これは、拡張機能を操作するために不可欠な) がまだない場合は、フル機能 30 日間無料試用版と同じ場所から自分の手も取得できます。 
+二乗された Up/Windows 管理センターの統合は、現在ベータ版です。アクセスする場合、詳細については、2乗された[専用ページ](https://squaredup.com/product/honolulu/windows-admin-center-extension/?utm_source=microsoft-wac&utm_medium=public-relations&utm_campaign=honolulu)をご確認ください。 組織で Microsoft System Center Operations Manager を使用していて、まだ2乗していない場合 (拡張機能を機能させるために不可欠)、同じ場所から、完全な機能を備えた30日間の無料試用版を入手することもできます。 

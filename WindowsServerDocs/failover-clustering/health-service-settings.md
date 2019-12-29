@@ -1,6 +1,6 @@
 ---
-title: ヘルス サービスの設定
-ms.prod: windows-server-threshold
+title: ヘルスサービスの設定
+ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
@@ -8,21 +8,21 @@ ms.topic: article
 ms.assetid: ''
 author: cosmosdarwin
 ms.date: 08/14/2017
-ms.openlocfilehash: 569cf7ba30fd3f993394efd3735a56d116c067e0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1b10d7c5432b10262e8df85d427f17f402d4f64a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858333"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361040"
 ---
-# <a name="health-service-settings"></a>ヘルス サービスの設定
-> 適用対象: Windows Server 2016
+# <a name="health-service-settings"></a>ヘルスサービスの設定
+> 適用対象:Windows Server 2019、Windows Server 2016
 
-ヘルス サービスは、日常的な監視を強化する Windows Server 2016 で記憶域スペース ダイレクトを実行するクラスターの運用エクスペリエンスの新しい機能です。
+ヘルスサービスは、Windows Server 2016 の新機能であり、記憶域スペースダイレクトを実行しているクラスターの日常的な監視と操作エクスペリエンスを向上させます。
 
-ヘルス サービスの動作を制御するパラメーターの多くは、設定として公開されます。 これらの障害またはアクションの強度を調整は、オン/オフ、特定の動作を有効にして詳細を変更できます。
+ヘルスサービスの動作を制御するパラメーターの多くは、設定として公開されます。 これらを変更して、障害やアクションの強度を調整したり、特定の動作をオン/オフにしたりすることができます。
 
-次の PowerShell コマンドレットを使用して、設定を設定または変更します。
+設定を設定または変更するには、次の PowerShell コマンドレットを使用します。
 
 ### <a name="usage"></a>使用方法
 
@@ -38,7 +38,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 
 ### <a name="common-settings"></a>共通設定
 
-一部のよく変更される設定は、既定値と共に、以下に示します。
+一般的に変更された設定の一部を既定値と共に以下に示します。
 
 #### <a name="volume-capacity-threshold"></a>ボリューム容量のしきい値
 
@@ -48,13 +48,13 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 "System.Storage.Volume.CapacityThreshold.Critical" = 90
 ```
 
-#### <a name="pool-reserve-capacity-threshold"></a>プールの予約容量のしきい値
+#### <a name="pool-reserve-capacity-threshold"></a>プール予約容量のしきい値
 
 ```
 "System.Storage.StoragePool.CheckPoolReserveCapacity.Enabled" = True
 ```
 
-#### <a name="physical-disk-lifecycle"></a>物理ディスクのライフ サイクル
+#### <a name="physical-disk-lifecycle"></a>物理ディスクのライフサイクル
 
 ```
 "System.Storage.PhysicalDisk.AutoPool.Enabled"                             = True
@@ -65,7 +65,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 "System.Storage.PhysicalDisk.Unresponsive.Reset.CountAllowed"              = 3
 ```
 
-#### <a name="supported-components-document"></a>サポートされているコンポーネントのドキュメント
+#### <a name="supported-components-document"></a>サポートされているコンポーネントドキュメント
 
 前のセクションを参照してください。
 
@@ -80,7 +80,7 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 "System.Storage.PhysicalDisk.AutoFirmwareUpdate.RollOut.FailureTolerance"  = 3
 ```
 
-#### <a name="platform--quiescence"></a>プラットフォーム/休止
+#### <a name="platform--quiescence"></a>Platform/休止
 
 ```
 "Platform.Quiescence.MinDelaySeconds" = 120 (i.e. 2 minutes)
@@ -101,5 +101,5 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.V
 
 ## <a name="see-also"></a>関連項目
 
-- [Windows Server 2016 でヘルス サービス](health-service-overview.md)
-- [Windows Server 2016 での記憶域スペース ダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md)
+- [Windows Server 2016 のヘルスサービス](health-service-overview.md)
+- [Windows Server 2016 の記憶域スペースダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md)

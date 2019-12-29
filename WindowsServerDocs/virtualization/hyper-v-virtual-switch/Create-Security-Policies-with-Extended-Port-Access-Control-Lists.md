@@ -1,9 +1,9 @@
 ---
 title: 拡張ポート アクセス制御リストを使用してセキュリティ ポリシーを作成する
-description: このトピックでは、拡張ポートが Windows Server 2016 でのアクセス制御リスト (Acl) に関する情報を提供します。
+description: このトピックでは、Windows Server 2016 の拡張ポート Access Control リスト (Acl) について説明します。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-hv-switch
@@ -12,29 +12,29 @@ ms.topic: article
 ms.assetid: a92e61c3-f7d4-4e42-8575-79d75d05a218
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: d847213f0332b57ae38ada444d7a6cd98ab325ca
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f76a3146c1cb38dab26019be655fadbd15d924c5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848983"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365601"
 ---
 # <a name="create-security-policies-with-extended-port-access-control-lists"></a>拡張ポート アクセス制御リストを使用してセキュリティ ポリシーを作成する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、拡張ポートが Windows Server 2016 でのアクセス制御リスト (Acl) に関する情報を提供します。 仮想ネットワーク アダプターによってスイッチに接続された仮想マシン (VM) に対するネットワーク トラフィックの許可および禁止するために、Hyper-V 仮想スイッチの拡張 ACL を構成できます。  
+このトピックでは、Windows Server 2016 の拡張ポート Access Control リスト (Acl) について説明します。 仮想ネットワーク アダプターによってスイッチに接続された仮想マシン (VM) に対するネットワーク トラフィックの許可および禁止するために、Hyper-V 仮想スイッチの拡張 ACL を構成できます。  
   
 このトピックは次のセクションで構成されます。  
   
 -   [詳細な ACL 規則](#bkmk_detailed)  
   
--   [ステートフルな ACL 規則](#bkmk_stateful)  
+-   [ステートフル ACL ルール](#bkmk_stateful)  
   
 ## <a name="bkmk_detailed"></a>詳細な ACL 規則  
-HYPER-V 仮想スイッチ拡張 Acl を使用すると、HYPER-V 仮想スイッチに接続されている個々 の VM ネットワーク アダプターに適用できる詳細な規則を作成できます。 詳細な規則を作成する機能は、マルチ テナント共有サーバー環境でネットワーク ベースのセキュリティ脅威に対処する企業およびクラウド サービス プロバイダー (Csp) を許可します。  
+Hyper-v 仮想スイッチ拡張 Acl を使用すると、Hyper-v 仮想スイッチに接続されている個々の VM ネットワークアダプターに適用できる詳細な規則を作成できます。 詳細なルールを作成する機能により、企業およびクラウドサービスプロバイダー (Csp) は、マルチテナント共有サーバー環境におけるネットワークベースのセキュリティの脅威に対処できます。  
   
-拡張 ACL によって、VM に対して、すべてのプロトコルのすべてのトラフィックを禁止または許可する広範な規則を作成するのではなく、VM で実行する個別のプロトコルのネットワーク トラフィックを拒否または許可できるようになります。 パラメーターの次の 5 タプル セットを含む Windows Server 2016 で拡張 ACL 規則を作成することができます。 ソース IP アドレス、宛先 IP アドレス、プロトコル、発信元ポート、および宛先ポートです。 さらに各規則では、ネットワーク トラフィックの方向 (入力または出力)、および規則がサポートする操作 (トラフィックの禁止または許可) を指定できます。  
+拡張 ACL によって、VM に対して、すべてのプロトコルのすべてのトラフィックを禁止または許可する広範な規則を作成するのではなく、VM で実行する個別のプロトコルのネットワーク トラフィックを拒否または許可できるようになります。 Windows Server 2016 で拡張 ACL ルールを作成できます。これには、ソース IP アドレス、宛先 IP アドレス、プロトコル、発信元ポート、および宛先ポートの5組のパラメーターセットが含まれます。 さらに各規則では、ネットワーク トラフィックの方向 (入力または出力)、および規則がサポートする操作 (トラフィックの禁止または許可) を指定できます。  
   
 たとえば、VM がポート 80 ですべての入出力 HTTP トラフィックおよび HTTPS トラフィックを許可するようにポート ACL を構成しながら、全ポートでその他すべてのプロトコルのネットワーク トラフィックを禁止できます。  
   
@@ -43,10 +43,10 @@ HYPER-V 仮想スイッチ拡張 Acl を使用すると、HYPER-V 仮想スイ�
 ### <a name="configuring-acl-rules-with-windows-powershell"></a>Windows PowerShell による ACL 規則の構成  
 拡張 ACL を構成するには、Windows PowerShell コマンド **Add-VMNetworkAdapterExtendedAcl** を使用する必要があります。 このコマンドには、4 つの異なる構文があり、各構文の使用法は異なります。  
   
-1.  すべての最初のパラメーター - VMName によって指定される名前付き VM のネットワーク アダプターに拡張 ACL を追加します。 構文:  
+1.  名前付き VM のすべてのネットワークアダプターに拡張 ACL を追加します。これは、最初のパラメーターである-VMName によって指定されます。 構文:  
   
     > [!NOTE]  
-    > すべてではなく 1 つのネットワーク アダプターに拡張 ACL を追加する場合は、パラメーターで、ネットワーク アダプターを指定できます - VMNetworkAdapterName します。  
+    > 拡張 ACL をすべてではなく1つのネットワークアダプターに追加する場合は、-Vmnetworkadaptername はパラメーターを使用してネットワークアダプターを指定できます。  
   
     ```  
     Add-VMNetworkAdapterExtendedAcl [-VMName] <string[]> [-Action] <VMNetworkAdapterExtendedAclAction> {Allow | Deny}  
@@ -69,7 +69,7 @@ HYPER-V 仮想スイッチ拡張 Acl を使用すると、HYPER-V 仮想スイ�
 3.  Hyper-V ホスト管理オペレーティング システム用に予約されたすべての仮想ネットワーク アダプターに拡張 ACL を追加します。  
   
     > [!NOTE]  
-    > すべてではなく 1 つのネットワーク アダプターに拡張 ACL を追加する場合は、パラメーターで、ネットワーク アダプターを指定できます - VMNetworkAdapterName します。  
+    > 拡張 ACL をすべてではなく1つのネットワークアダプターに追加する場合は、-Vmnetworkadaptername はパラメーターを使用してネットワークアダプターを指定できます。  
   
     ```  
     Add-VMNetworkAdapterExtendedAcl [-Action] <VMNetworkAdapterExtendedAclAction> {Allow | Deny} [-Direction]  
@@ -79,7 +79,7 @@ HYPER-V 仮想スイッチ拡張 Acl を使用すると、HYPER-V 仮想スイ�
         [-ComputerName <string[]>] [-WhatIf] [-Confirm]  [<CommonParameters>]  
     ```  
   
-4.  拡張 ACL など、Windows PowerShell で作成した VM オブジェクトを追加 **$vm = get vm"my_vm"** します。 次のコード行では、次の構文により拡張 ACL を作成するためのコマンドを実行できます。  
+4.  Windows PowerShell で作成した VM オブジェクトに拡張 ACL を追加します ( **$vm = my_vm**"など)。 次のコード行では、次の構文により拡張 ACL を作成するためのコマンドを実行できます。  
   
     ```  
     Add-VMNetworkAdapterExtendedAcl [-VM] <VirtualMachine[]> [-Action] <VMNetworkAdapterExtendedAclAction> {Allow |  
@@ -92,40 +92,40 @@ HYPER-V 仮想スイッチ拡張 Acl を使用すると、HYPER-V 仮想スイ�
 ### <a name="detailed-acl-rule-examples"></a>詳細な ACL 規則の例  
 次に、拡張ポート ACL を構成し、VM のセキュリティ ポリシーを作成するために、**Add-VMNetworkAdapterExtendedAcl** コマンドを使用する方法を示す例をいくつか示します。  
   
--   [アプリケーション レベルのセキュリティを適用します。](#bkmk_enforce)  
+-   [アプリケーションレベルのセキュリティを適用する](#bkmk_enforce)  
   
--   [ユーザー レベルおよびアプリケーション レベルの両方のセキュリティを適用します。](#bkmk_both)  
+-   [ユーザーレベルとアプリケーションレベルの両方のセキュリティを適用する](#bkmk_both)  
   
--   [非 TCP/UDP アプリケーションに対するセキュリティ サポートを提供します。](#bkmk_tcp)  
+-   [TCP/UDP 以外のアプリケーションにセキュリティサポートを提供する](#bkmk_tcp)  
   
 > [!NOTE]  
 > 次の表の規則パラメーター **Direction** の値は、規則の作成対象である VM に対するトラフィック フローに基づきます。 VM がトラフィックを受信している場合にはトラフィックは入力であり、VM がトラフィックを送信している場合にはトラフィックは出力です。 たとえば、入力トラフィックを禁止する規則を VM に適用する場合、入力トラフィックの方向は外部リソースから VM です。 送信トラフィックを拒否する規則を適用する場合、送信トラフィックの方向はローカル VM から外部リソースです。  
   
-### <a name="bkmk_enforce"></a>アプリケーション レベルのセキュリティを適用します。  
+### <a name="bkmk_enforce"></a>アプリケーションレベルのセキュリティを適用する  
 多数のアプリケーション サーバーがクライアント コンピューターと通信するために標準化された TCP/UDP ポートを使用するので、アプリケーションに対して指定されたポートに送受信されるトラフィックをフィルターすることにより、アプリケーション サーバーへのアクセスを拒否または許可する規則を簡単に作成できます。  
   
 たとえば、リモート デスクトップ接続 (RDP) を使用することにより、データセンターのアプリケーション サーバーにユーザーがログインできるようにする場合を考えます。 RDP では TCP ポート 3389 を使用するため、次の規則をすぐに設定できます。  
   
-|Source IP|宛先 IP|プロトコル|Source Port|宛先ポート|Direction|アクション|  
+|Source IP|宛先 IP|プロトコル|Source Port|宛先ポート|Direction|操作|  
 |-------------|------------------|------------|---------------|--------------------|-------------|----------|  
 |*|*|TCP|*|3389|In|許可|  
   
-次に、Windows PowerShell コマンドにより規則を作成する方法を説明する 2 つの例を示します。 ルールの最初の例は、"ApplicationServer"という名前の VM へのすべてのトラフィックをブロックします。 2 番目の例の規則は、"ApplicationServer"という名前の VM のネットワーク アダプターに適用するには、VM への受信 RDP トラフィックのみができます。  
+次に、Windows PowerShell コマンドにより規則を作成する方法を説明する 2 つの例を示します。 最初のルール例では、"ApplicationServer" という名前の VM へのすべてのトラフィックがブロックされます。 "ApplicationServer" という名前の VM のネットワークアダプターに適用される2番目のルール例では、VM への受信 RDP トラフィックのみが許可されます。  
   
 > [!NOTE]  
-> ルールを作成するときに使用できます、 **-重み**HYPER-V 仮想スイッチが規則を処理する順序を決定するパラメーター。 値を **-重み**は整数で表される、大きな整数の規則が小さな整数ルールより前に処理されます。 たとえば、VM ネットワーク アダプターに 2 つの規則が適用されており、それぞれが 1 の重みと 10 の重みを持つ場合、10 の重みを持つ規則が最初に適用されます。  
+> ルールを作成するときに、 **-Weight**パラメーターを使用して、Hyper-v 仮想スイッチがルールを処理する順序を決定できます。 **-Weight**の値は整数として表されます。整数が大きいルールは、より小さい整数を持つルールより前に処理されます。 たとえば、VM ネットワーク アダプターに 2 つの規則が適用されており、それぞれが 1 の重みと 10 の重みを持つ場合、10 の重みを持つ規則が最初に適用されます。  
   
 ```  
 Add-VMNetworkAdapterExtendedAcl -VMName "ApplicationServer" -Action "Deny" -Direction "Inbound" -Weight 1  
 Add-VMNetworkAdapterExtendedAcl -VMName "ApplicationServer" -Action "Allow" -Direction "Inbound" -LocalPort 3389 -Protocol "TCP" -Weight 10  
 ```  
   
-### <a name="bkmk_both"></a>ユーザー レベルおよびアプリケーション レベルの両方のセキュリティを適用します。  
+### <a name="bkmk_both"></a>ユーザーレベルとアプリケーションレベルの両方のセキュリティを適用する  
 規則は 5 タプル IP パケット (発信元 IP、宛先 IP、プロトコル、発信元ポート、および宛先ポート) に一致するため、この規則ではポート ACL よりも詳細なセキュリティ ポリシーを強制できます。  
   
-たとえば、特定の DHCP サーバー セットを使用してコンピューターにクライアントの数に制限する DHCP サービスを提供する場合は、ユーザー Vm がホストされている、HYPER-V を実行している Windows Server 2016 コンピューターで、次の規則を構成できます。  
+たとえば、特定の DHCP サーバーセットを使用して限られた数のクライアントコンピューターに DHCP サービスを提供する場合、ユーザー Vm がホストされている Hyper-v を実行する Windows Server 2016 コンピューターで、次の規則を構成できます。  
   
-|Source IP|宛先 IP|プロトコル|Source Port|宛先ポート|Direction|アクション|  
+|Source IP|宛先 IP|プロトコル|Source Port|宛先ポート|Direction|操作|  
 |-------------|------------------|------------|---------------|--------------------|-------------|----------|  
 |*|255.255.255.255|UDP|*|67|外|許可|  
 |*|10.175.124.0/25|UDP|*|67|外|許可|  
@@ -140,13 +140,13 @@ Add-VMNetworkAdapterExtendedAcl -VMName "ServerName" -Action "Allow" -Direction 
 Add-VMNetworkAdapterExtendedAcl -VMName "ServerName" -Action "Allow" -Direction "Inbound" -RemoteIPAddress 10.175.124.0/25 -RemotePort 68 -Protocol "UDP"-Weight 20  
 ```  
   
-### <a name="bkmk_tcp"></a>非 TCP/UDP アプリケーションに対するセキュリティ サポートを提供します。  
+### <a name="bkmk_tcp"></a>TCP/UDP 以外のアプリケーションにセキュリティサポートを提供する  
 データセンター内の大半のネットワーク トラフィックは TCP および UDP ですが、他のプロトコルを使用するトラフィックもいくつか存在します。 たとえば、サーバー グループがインターネット グループ管理プロトコル (IGMP) を使用する IP マルチキャスト アプリケーションを実行する場合、次の規則を作成できます。  
   
 > [!NOTE]  
 > IGMP には、IP プロトコル番号 0x02 が指定されています。  
   
-|Source IP|宛先 IP|プロトコル|Source Port|宛先ポート|Direction|アクション|  
+|Source IP|宛先 IP|プロトコル|Source Port|宛先ポート|Direction|操作|  
 |-------------|------------------|------------|---------------|--------------------|-------------|----------|  
 |*|*|0x02|*|*|In|許可|  
 |*|*|0x02|*|*|外|許可|  
@@ -158,8 +158,8 @@ Add-VMNetworkAdapterExtendedAcl -VMName "ServerName" -Action "Allow" -Direction 
 Add-VMNetworkAdapterExtendedAcl -VMName "ServerName" -Action "Allow" -Direction "Outbound" -Protocol 2 -Weight 20  
 ```  
   
-## <a name="bkmk_stateful"></a>ステートフルな ACL 規則  
-拡張 ACL のもう 1 つの新機能では、ステートフルな規則を構成できます。 ステートフルな規則には、ソース IP、接続先 IP、プロトコル、発信元ポート、および接続先ポート、パケット内の 5 つ属性に基づいてパケットがフィルター処理します。  
+## <a name="bkmk_stateful"></a>ステートフル ACL ルール  
+拡張 ACL のもう 1 つの新機能では、ステートフルな規則を構成できます。 ステートフルルールは、パケットソース IP、宛先 IP、プロトコル、発信元ポート、および宛先ポートの5つの属性に基づいてパケットをフィルター処理します。  
   
 ステートフルな規則には次の機能があります。  
   
@@ -191,8 +191,8 @@ Add-VMNetworkAdapterExtendedAcl -VMName "ServerName" -Action "Allow" -Direction 
 |Source Port|*|*|*|  
 |宛先ポート|*|*|80|  
 |Direction|In|外|外|  
-|アクション|拒否|拒否|許可|  
-|ステートフル|いいえ|X|〇|  
+|操作|拒否|拒否|許可|  
+|ステートフル|いいえ|いいえ|はい|  
 |Timeout (in seconds)|なし|なし|3600|  
   
 ステートフルな規則によって、VM アプリケーション サーバーがリモート Web サーバーに接続できます。 Hyper-V 仮想スイッチは、最初にパケットを送信するときに、リモート Web サーバーに対してすべてのパケットの送信と返信を可能にする 2 つのフロー状態を動的に作成します。 サーバー間のパケットのフローが停止した場合、フロー状態は所定のタイムアウト値 3600 秒 (1 時間) でタイムアウトします。  

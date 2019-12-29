@@ -1,7 +1,7 @@
 ---
 ms.assetid: 87174225-a60f-4718-b4cc-9b172f205b72
 title: ストレージ トピックの変更履歴
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
@@ -9,12 +9,12 @@ manager: brianlic
 ms.author: jgerend
 ms.date: 08/19/2019
 description: IT 担当者向け Windows Server 向けのオンプレミスストレージドキュメントの新しいトピックと更新されたトピック。
-ms.openlocfilehash: d5ab2d8ae4ca90e259f8bc996494439190bc5279
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: ce937dfb5c6c0b46c8085cbb202590567ea829d3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69584824"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393933"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server のストレージ トピックの変更履歴
 
@@ -41,7 +41,7 @@ ms.locfileid: "69584824"
 
 |新しいトピックまたは変更されたトピック                                        |説明|
 |---                                                         |---           |
-|[ボリュームの削除](storage-spaces/delete-volumes.md)| 新規作成        |
+|[ボリュームの削除](storage-spaces/delete-volumes.md)| 新規        |
 |[ボリュームの作成](storage-spaces/create-volumes.md)| Windows 管理センターでボリュームを作成するための手順とビデオを追加しました。|
 |[ボリュームの拡張](storage-spaces/resize-volumes.md)| Windows 管理センターでボリュームのサイズを変更するための手順とビデオを追加しました。|
 
@@ -49,9 +49,9 @@ ms.locfileid: "69584824"
 
 |新しいトピックまたは変更されたトピック                                        |説明|
 |---                                                         |---           |
-| [Azure Monitor で監視する](storage-spaces/configure-azure-monitor.md) | 新規作成 |
-| [永続的なメモリの理解とデプロイ](storage-spaces/deploy-pmem.md) | 新規作成 |
-| [記憶域スペース ダイレクト クラスターを Windows Server 2019 にアップグレードする](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| 新規作成        |
+| [Azure Monitor で監視する](storage-spaces/configure-azure-monitor.md) | 新規 |
+| [永続的なメモリの理解とデプロイ](storage-spaces/deploy-pmem.md) | 新規 |
+| [記憶域スペース ダイレクト クラスターを Windows Server 2019 にアップグレードする](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| 新規        |
 | [DFS レプリケーション](dfs-replication/dfsr-overview.md)        | [以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11))のライブラリから移行済み|
 
 ## <a name="february-2019"></a>2019 年 2 月
@@ -103,7 +103,7 @@ ms.locfileid: "69584824"
 | [iSCSI ターゲット サーバー](iscsi/iscsi-target-server.md) | [以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
 | [iSCSI ターゲット サーバーのスケーラビリティ制限](iscsi/iscsi-target-server-limits.md) |[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
 
-## <a name="june-2018"></a>2018 年 6 月
+## <a name="june-2018"></a>2018年6月
 
 |新しいトピックまたは変更されたトピック|説明|
 |---|---|

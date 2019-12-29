@@ -1,8 +1,8 @@
 ---
 title: bitsadmin util
-description: Windows コマンド」のトピック**bitsadmin util** -の一覧、 **Util**スイッチ
+description: '**Bitsadmin util**の Windows コマンドに関するトピック- **util**スイッチの一覧'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: edc8c5b2d2d42a50902603c56ef7326133bb22f6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a192df3254ac28cbbd9c8186e321b77e087e63e8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867013"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380171"
 ---
 # <a name="bitsadmin-util"></a>bitsadmin util
 
@@ -38,12 +38,12 @@ bitsadmin /Util /version
 
 |パラメーター|説明|
 |-------|--------|
-|[bitsadmin util とヘルプ](bitsadmin-util-and-help.md)|/Util スイッチの使用法を表示します。 指定することも/ですか。 **1.5 およびそれ以前の BITSAdmin**: サポートされません。|
-|[bitsadmin util と getieproxy](bitsadmin-util-and-getieproxy.md)|特定のサービス アカウントのプロキシの使用状況を取得します。|
-|[bitsadmin util と repairservice](bitsadmin-util-and-repairservice.md)|BITS サービスに関する既知の問題の修復|
-|[bitsadmin util と setieproxy](bitsadmin-util-and-setieproxy.md)|サービス アカウントを使用してファイルを転送するときに使用するプロキシ設定を指定します。|
-|[bitsadmin util とバージョン](bitsadmin-util-and-version.md)|BITS サービスのバージョンを表示します|
+|[bitsadmin util および help](bitsadmin-util-and-help.md)|/Util スイッチのコマンドラインの使用法を表示します。 /? を指定することもできます。 **BITSAdmin 1.5 以前**: サポートされていません。|
+|[bitsadmin util および getieproxy](bitsadmin-util-and-getieproxy.md)|指定されたサービスアカウントのプロキシの使用状況を取得します。|
+|[bitsadmin util および repairservice](bitsadmin-util-and-repairservice.md)|BITS サービスに関する既知の問題を修復します|
+|[bitsadmin util および setieproxy](bitsadmin-util-and-setieproxy.md)|サービスアカウントを使用してファイルを転送するときに使用するプロキシ設定を指定します。|
+|[bitsadmin util および version](bitsadmin-util-and-version.md)|BITS サービスのバージョンが表示されます。|
 
-#### <a name="additional-references"></a>その他の参照
+#### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

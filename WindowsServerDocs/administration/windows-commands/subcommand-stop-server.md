@@ -1,8 +1,8 @@
 ---
-title: サーバーの停止をサブコマンドします。
-description: 'Windows コマンド」のトピック * * *- '
+title: サブコマンドの停止-サーバー
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ddb681234cfcbe6d02e56f2e366167faeeb25280
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7584dcbca5bfc52d303f187f62be24cbad407416
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834733"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383745"
 ---
 # <a name="subcommand-stop-server"></a>サブコマンド: 停止サーバー
 
@@ -39,7 +39,7 @@ wdsutil [Options] /Stop-Server [/Server:<Server name>]
 wdsutil /Stop-Server
 wdsutil /verbose /Stop-Server /Server:MyWDSServer
 ```
-#### <a name="additional-references"></a>その他の参照
+#### <a name="additional-references"></a>その他の参照情報
 [コマンドライン構文のポイント](command-line-syntax-key.md)
 [、無効にするサーバーのコマンドを使用して](using-the-disable-server-command.md)
 [、有効にするサーバーのコマンドを使用して](using-the-enable-server-command.md)

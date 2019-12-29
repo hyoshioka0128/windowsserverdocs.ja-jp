@@ -2,7 +2,7 @@
 title: ソフトウェアの制限のポリシーの許可/拒否リストおよびアプリケーション インベントリの決定
 description: Windows Server のセキュリティ
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-software-restriction-policies
@@ -13,65 +13,65 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 60e78912284715649938567d66ffb90b9890b1b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4ddea6daeb2150bd9fd3131a8457a6a4b408cfc3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847293"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357660"
 ---
 # <a name="determine-allow-deny-list-and-application-inventory-for-software-restriction-policies"></a>ソフトウェアの制限のポリシーの許可/拒否リストおよびアプリケーション インベントリの決定
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-IT プロフェッショナル向けのこのトピックでは、許可を作成し、Windows Server 2008 および Windows Vista 以降のソフトウェア制限ポリシー (SRP) によって管理されるアプリケーションの一覧を拒否する方法にガイダンスを提供します。
+IT プロフェッショナル向けのこのトピックでは、Windows Server 2008 および Windows Vista 以降のソフトウェア制限ポリシー (SRP) によって管理されるアプリケーションの許可リストと拒否リストを作成する方法について説明します。
 
 ## <a name="introduction"></a>概要
-ソフトウェアの制限のポリシー (SRP) はグループ ポリシー ベースの機能で、ドメイン内のコンピューターで実行されているソフトウェア プログラムを識別し、これらのプログラムを実行する機能を制御します。 ソフトウェアの制限のポリシーを使えば、コンピューターの構成に厳格な制限を加え、指定したアプリケーションに限って実行を許可することができます。 これらは、Microsoft Active Directory Domain Services とグループ ポリシーに統合されますが、スタンドアロン コンピューター上で構成することもできます。 SRP の開始点は、次を参照してください。、[ソフトウェア制限ポリシー](software-restriction-policies.md)します。
+ソフトウェアの制限のポリシー (SRP) はグループ ポリシー ベースの機能で、ドメイン内のコンピューターで実行されているソフトウェア プログラムを識別し、これらのプログラムを実行する機能を制御します。 ソフトウェアの制限のポリシーを使えば、コンピューターの構成に厳格な制限を加え、指定したアプリケーションに限って実行を許可することができます。 これらは Microsoft Active Directory Domain Services およびグループポリシーと統合されていますが、スタンドアロンコンピューターで構成することもできます。 SRP の開始点については、「[ソフトウェアの制限のポリシー](software-restriction-policies.md)」を参照してください。
 
-Windows Server 2008 R2 および Windows 7 以降、Windows AppLocker できますの代わりに、または SRP と連携してアプリケーション制御戦略の一部。
+Windows Server 2008 R2 および Windows 7 以降では、アプリケーション制御戦略の一部として、または SRP と連携して Windows AppLocker を使用できます。
 
-SRP を使用して特定のタスクを実行する方法については、次を参照してください。
+SRP を使用して特定のタスクを実行する方法については、以下を参照してください。
 
--   [ソフトウェア制限ポリシー ルールを操作します。](work-with-software-restriction-policies-rules.md)
+-   [ソフトウェア制限ポリシーの規則の使用](work-with-software-restriction-policies-rules.md)
 
--   [ソフトウェア制限ポリシーを使用した電子メール ウイルスからコンピューターを保護するには](use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus.md)
+-   [ソフトウェアの制限のポリシーを使用して、電子メールのウイルスからコンピューターを保護する](use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus.md)
 
-### <a name="what-default-rule-to-choose-allow-or-deny"></a>選択するどのような既定の規則:許可または拒否
-ソフトウェア制限ポリシーは、既定のルールの基礎である 2 つのモードのいずれかで展開できます。許可リストまたはリストを拒否します。 環境内で実行が許可されているすべてのアプリケーションを識別するポリシーを作成することができます。ポリシー内で既定の規則が制限され実行を明示的に許可しないすべてのアプリケーションをブロックします。 またはを実行できません。 すべてのアプリケーションを識別するポリシーを作成することができます。既定のルールは [制限しない] が明示的に一覧表示するアプリケーションのみが制限されます。
+### <a name="what-default-rule-to-choose-allow-or-deny"></a>選択する既定の規則は次のとおりです。許可または拒否
+ソフトウェアの制限のポリシーは、既定の規則の基礎となる2つのモードのいずれかで展開できます。許可リストまたは拒否リスト。 環境内で実行が許可されているすべてのアプリケーションを識別するポリシーを作成できます。ポリシー内の既定の規則は制限されており、明示的に実行を許可していないすべてのアプリケーションはブロックされます。 または、実行できないすべてのアプリケーションを識別するポリシーを作成することもできます。既定の規則は無制限で、明示的に一覧表示されているアプリケーションのみを制限します。
 
 > [!IMPORTANT]
-> 拒否リスト モードには、アプリケーションの制御に関する組織の高メンテナンス戦略可能性があります。 作成して、すべてのマルウェアやその他の問題のあるアプリケーションを禁止する進化のリストを保持するは、時間がかかり、間違いやすいになります。
+> 拒否リストモードは、アプリケーションの制御に関して、組織にとって高いメンテナンス戦略である可能性があります。 すべてのマルウェアやその他の問題のあるアプリケーションを禁止する進化したリストを作成して維持することは、時間がかかり、誤りの影響を受ける可能性があります。
 
-### <a name="create-an-inventory-of-your-applications-for-the-allow-list"></a>許可一覧については、アプリケーションのインベントリを作成します。
-許可する既定のルールを効果的に使用するには、組織でどのアプリケーションが必要な正確に判断する必要があります。 インベントリ コレクターは、Microsoft Application Compatibility Toolkit などのアプリケーション インベントリを生成するためのツールがあります。 SRP が正確に実行されるアプリケーションを環境内の理解に役立つ、詳細ログ機能。
+### <a name="create-an-inventory-of-your-applications-for-the-allow-list"></a>許可一覧のアプリケーションのインベントリを作成する
+既定の許可規則を効果的に使用するには、組織で必要なアプリケーションを正確に特定する必要があります。 Microsoft Application Compatibility Toolkit のインベントリコレクターなど、アプリケーションインベントリを作成するためのツールが用意されています。 ただし、SRP には、環境内でどのアプリケーションが実行されているかを正確に把握するのに役立つ高度なログ記録機能があります。
 
-##### <a name="to-discover-which-applications-to-allow"></a>許可するには、どのアプリケーションを検出するには
+##### <a name="to-discover-which-applications-to-allow"></a>許可するアプリケーションを検出するには
 
-1.  テスト環境では、ソフトウェア制限ポリシーを制限しない に既定の規則セットをデプロイし、追加の規則を削除します。 すべてのアプリケーションを制限することを強制せず SRP を有効にした場合 SPR は同じアプリケーションされるはどのように実行を監視することができます。
+1.  テスト環境で、既定の規則を [無制限] に設定してソフトウェアの制限ポリシーを展開し、追加の規則をすべて削除します。 アプリケーションの制限を強制せずに SRP を有効にすると、SPR は実行されているアプリケーションを監視できるようになります。
 
-2.  詳細ログ機能を有効にして、ログ ファイルの書き込み先となるパスを設定するには、次のレジストリ値を作成します。
+2.  詳細ログ機能を有効にし、ログファイルを書き込む場所のパスを設定するために、次のレジストリ値を作成します。
 
     **"HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Safer\ CodeIdentifiers"**
 
-    文字列値。*NameLogFile NameLogFile パス*
+    文字列値:*Namelogfile への namelogfile パス*
 
-    ログ ファイルにエントリが書き込まれるため、SRP では、実行時に、すべてのアプリケーションを評価するが、 *NameLogFile*アプリケーションを実行するたびにします。
+    SRP では実行時にすべてのアプリケーションが評価されるため、アプリケーションが実行されるたびに、エントリがログファイルの*Namelogfile*に書き込まれます。
 
-3.  ログ ファイルを評価します。
+3.  ログファイルを評価する
 
-    各ログ エントリを状態します。
+    各ログエントリの状態は次のとおりです。
 
-    -   ソフトウェア制限ポリシーとプロセス ID (PID) 呼び出し元のプロセスの呼び出し元
+    -   ソフトウェアの制限のポリシーの呼び出し元と、呼び出し元のプロセスのプロセス ID (PID)
 
-    -   評価されているターゲット
+    -   評価されるターゲット
 
-    -   そのアプリケーションの実行時に発生した SRP の規則
+    -   アプリケーションの実行時に発生した SRP 規則
 
-    -   SRP の規則の識別子です。
+    -   SRP 規則の識別子。
 
-    ログ ファイルに書き込まれた出力の例:
+    ログファイルに書き込まれる出力の例を次に示します。
 
-**explorer.exe (PID = 4728) identifiedC:\Windows\system32\onenote.exe 無制限 usingpath 規則として、Guid = {320bd852-aa7c-4674-82c5-9a80321670a3}** すべてのアプリケーションと関連付けられているコードを SRP チェックし、ブロックする設定には、ログに記録されますファイルは、し、使用する実行可能ファイルを許可されている一覧考慮すべきかを判断することができます。
+explorer.exe **(PID = 4728) identifiedC:\ Windows\system32\onenote.exe As 無制限の実行パスの規則、Guid = {320bd852-aa7c-4674-82c5-9a80321670a3}**   SRP によってチェックされブロックに設定されるすべてのアプリケーションと関連するコードは、ログファイルに記録されます。その後、許可リストについて考慮する必要がある実行可能ファイルを決定するために使用できます。
 
 

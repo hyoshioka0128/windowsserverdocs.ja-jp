@@ -1,73 +1,73 @@
 ---
 ms.assetid: d282bb4e-38a0-4c7c-83d8-f6ea89278057
-title: AD FS 2016 で OpenID Connect を使用してアプリケーションおよびそれ以降の web をビルドします。
+title: AD FS 2016 以降で OpenID Connect を使用して web アプリケーションを構築する
 description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: dbd42941f8952fc7f649636d2f3645f941240d49
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 9b3d64558c27e7b4bda20b6af27e02d55431c94d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190417"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358790"
 ---
-# <a name="build-a-web-application-using-openid-connect-with-ad-fs-2016-and-later"></a>AD FS 2016 で OpenID Connect を使用してアプリケーションおよびそれ以降の web をビルドします。
+# <a name="build-a-web-application-using-openid-connect-with-ad-fs-2016-and-later"></a>AD FS 2016 以降で OpenID Connect を使用して web アプリケーションを構築する
 
 ## <a name="pre-requisites"></a>前提条件  
-このドキュメントを完了する前に必要な前提条件の一覧を次に示します。 このドキュメントは、AD FS がインストールされており、AD FS ファームが作成されたことを想定しています。  
+このドキュメントを完了する前に必要な前提条件の一覧を次に示します。 このドキュメントでは、AD FS がインストールされ、AD FS ファームが作成されていることを前提としています。  
 
--   GitHub のクライアント ツール  
+-   GitHub クライアントツール  
 
 -   Windows Server 2016 TP4 以降の AD FS  
 
--   Visual Studio 2013 またはそれ以降。  
+-   Visual Studio 2013 以降。  
 
-## <a name="create-an-application-group-in-ad-fs-2016-and-later"></a>2016 以降、AD FS でアプリケーション グループを作成します。
-次のセクションでは、AD FS 2016 でグループ化し、後でアプリケーションを構成する方法について説明します。  
+## <a name="create-an-application-group-in-ad-fs-2016-and-later"></a>AD FS 2016 以降でアプリケーショングループを作成する
+次のセクションでは、AD FS 2016 以降でアプリケーショングループを構成する方法について説明します。  
 
-#### <a name="create-application-group"></a>アプリケーション グループを作成します。  
+#### <a name="create-application-group"></a>アプリケーショングループの作成  
 
-1.  AD FS の管理、アプリケーション グループを右クリックし、選択**アプリケーション グループの追加**します。  
+1.  AD FS 管理 で、アプリケーショングループ を右クリックし、**アプリケーショングループの追加** を選択します。  
 
-2.  アプリケーション グループ ウィザードで、名前の入力**ADFSSSO** **クライアント/サーバー アプリケーション**選択、 **web アプリケーションにアクセスする Web ブラウザー**テンプレート。   **[次へ]** をクリックします。
+2.  アプリケーショングループウィザードの [名前] に「 **ADFSSSO** 」と入力し、 **[クライアント-サーバーアプリケーション]** で、web**アプリケーションテンプレートにアクセスする web ブラウザー**を選択します。  **[次へ]** をクリックします。
 
-    ![AD FS の OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_1.PNG)  
+    ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_1.PNG)  
 
-3.  コピー、**クライアント識別子**値。  これは後で値として使用、ida: ClientId、アプリケーションの web.config ファイルでの。  
+3.  **クライアント識別子**の値をコピーします。  この値は、アプリケーションの web.config ファイルの ida: ClientId の値として後で使用されます。  
 
-4.  次の入力**リダイレクト URI:**  -  **https://localhost:44320/** します。  **[追加]** をクリックします。  **[次へ]** をクリックします。  
+4.  **リダイレクト URI** - には、次のよう **https://localhost:44320/** に入力します。  **[追加]** をクリックします。 **[次へ]** をクリックします。  
 
-    ![AD FS の OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_2.PNG)  
+    ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_2.PNG)  
 
-5.  **概要**画面で、**次**します。  
+5.  **[概要]** 画面で、 **[次へ]** をクリックします。  
 
-    ![AD FS の OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_3.PNG)
+    ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_3.PNG)
 
-6.  **完了**画面で、**閉じる**します。  
+6.  **[完了]** 画面で、 **[閉じる]** をクリックします。  
 
-## <a name="download-and-modify-sample-application-to-authenticate-via-openid-connect-and-ad-fs"></a>ダウンロードして、OpenID Connect と AD FS での認証のサンプル アプリケーションを変更します。  
-このセクションでは、サンプル Web アプリをダウンロードして Visual Studio で変更する方法について説明します。   Azure AD のサンプルを使用する[ここ](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect)します。  
+## <a name="download-and-modify-sample-application-to-authenticate-via-openid-connect-and-ad-fs"></a>OpenID Connect と AD FS を使用して認証するサンプルアプリケーションをダウンロードして変更する  
+このセクションでは、サンプル Web アプリをダウンロードし、Visual Studio で変更する方法について説明します。   [ここに記載](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect)されている Azure AD サンプルを使用します。  
 
-サンプル プロジェクトをダウンロードし、Git Bash を使用して、次を入力します。  
+サンプルプロジェクトをダウンロードするには、Git Bash を使用し、次のように入力します。  
 
 ```  
 git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect  
 ```  
 
-![AD FS の OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_8.PNG)  
+![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_8.PNG)  
 
-#### <a name="to-modify-the-app"></a>アプリケーションを変更するには  
+#### <a name="to-modify-the-app"></a>アプリを変更するには  
 
 1.  Visual Studio を使用してサンプルを開きます。  
 
-2.  すべての不足している Nuget が復元されるように、アプリをリビルドします。  
+2.  不足しているすべての Nuget が復元されるように、アプリをリビルドします。  
 
-3.  Web.config ファイルを開きます。  次のように、検索するため、次の値を変更します。  
+3.  Web.config ファイルを開きます。  次のように、次の値を変更します。  
 
     ```  
     <add key="ida:ClientId" value="[Replace this Client Id from #3 in above section]" />  
@@ -77,17 +77,17 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
     <add key="ida:PostLogoutRedirectUri" value="[Replace this with Redirect URI from #4 in the above section]" />  
     ```  
 
-    ![AD FS の OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_9.PNG)  
+    ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_9.PNG)  
 
-4.  Startup.Auth.cs ファイルを開き、次の変更を行います。  
+4.  Startup.Auth.cs ファイルを開き、次のように変更します。  
 
-    -   コメントを以下の記事。  
+    -   次のことをコメントアウトします。  
 
         ```  
         //string Authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);  
         ```  
 
-    -   次の変更と OpenId Connect ミドルウェアの初期化ロジックを調整します。  
+    -   次の変更を加えて、OpenId Connect ミドルウェア初期化ロジックを調整します。  
 
         ```  
         private static string clientId = ConfigurationManager.AppSettings["ida:ClientId"];  
@@ -97,9 +97,9 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
         private static string postLogoutRedirectUri = ConfigurationManager.AppSettings["ida:PostLogoutRedirectUri"];  
         ```  
 
-        ![AD FS の OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_10.PNG)  
+        ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_10.PNG)  
 
-    -   さらに、下には、次のように OpenId Connect ミドルウェアのオプションを変更します。  
+    -   さらに、次のように OpenId Connect ミドルウェアのオプションを変更します。  
 
         ```  
         app.UseOpenIdConnectAuthentication(  
@@ -112,26 +112,26 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
                 RedirectUri = postLogoutRedirectUri
         ```  
 
-        ![AD FS の OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_11.PNG)  
+        ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_11.PNG)  
 
-        上記の変更によっては、次の操作を行っています。  
+        上記を変更することで、次の操作を実行します。  
 
-        -   信頼された発行者に関するデータを通信するための権限を使用せずに MetadataAddress 経由で直接検出ドキュメントの場所を指定します  
+        -   信頼された発行者に関するデータの通信に証明機関を使用する代わりに、MetadataAddress を使用して探索ドキュメントの場所を直接指定します。  
 
-        -   Azure AD では、要求での redirect_uri の存在は強制されませんが、ADFS は。 そのため、ここに追加する必要があります。  
+        -   Azure AD では、要求に redirect_uri が存在するかどうかは強制されませんが、ADFS では実行されます。 そのため、ここに追加する必要があります。  
 
-## <a name="verify-the-app-is-working"></a>アプリが動作を確認します。  
-上記の変更が完了したら後、は、f5 キーを押します。  サンプルのページが表示されます。  サインインをクリックします。  
+## <a name="verify-the-app-is-working"></a>アプリが動作していることを確認する  
+上記の変更が加えられたら、F5 キーを押します。  これにより、サンプルページが表示されます。  [サインイン] をクリックします。  
 
-![AD FS の OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_12.PNG)  
+![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_12.PNG)  
 
-AD FS サインイン ページにリダイレクトできます。  サインインしてください。  
+AD FS サインインページにリダイレクトされます。  さあ、サインインします。  
 
-![AD FS の OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_13.PNG)  
+![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_13.PNG)  
 
-これが成功した後署名されたようになりましたことがわかります。  
+これが成功すると、サインインしたことがわかります。  
 
-![AD FS の OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_14.PNG)  
+![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_14.PNG)  
 
 ## <a name="next-steps"></a>次の手順
 [AD FS の開発](../../ad-fs/AD-FS-Development.md)  

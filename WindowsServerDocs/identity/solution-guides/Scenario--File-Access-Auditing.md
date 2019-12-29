@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 93d78bbefce38173198f991543fb3a06d145b373
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 37a3b17360112d958b59a7e9c3f64aed5e6f6a5b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867683"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406995"
 ---
 # <a name="scenario-file-access-auditing"></a>シナリオ:ファイル アクセスの監査
 
@@ -67,11 +67,11 @@ Windows Server 2012 に信頼性情報およびリソースのプロパティを
 ## <a name="in-this-scenario"></a>このシナリオの内容  
 次のトピックには、このシナリオの追加情報が示されています。  
   
--   [計画ファイル アクセスの監査](Plan-for-File-Access-Auditing.md)  
+-   [ファイル アクセスの監査の計画](Plan-for-File-Access-Auditing.md)  
   
--   [セキュリティ監査サーバーの全体の監査ポリシーを展開&#40;デモンストレーション手順&#41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)  
+-   [中央監査ポリシー &#40;を使用したセキュリティ監査の展開のデモンストレーション手順&#41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)  
   
-## <a name="BKMK_NEW"></a>役割と機能がこのシナリオに含まれる  
+## <a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
 次の表で、このシナリオに含まれている役割と機能を紹介すると共に、それをシナリオに活かす方法について説明します。  
   
 |役割/機能|このシナリオのサポート方法|  

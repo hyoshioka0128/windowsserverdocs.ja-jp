@@ -2,7 +2,7 @@
 title: Windows Server 2016 のシステム サービスに関するセキュリティ ガイドライン
 description: デスクトップ エクスペリエンスで Windows Server 2016 のサービスを無効にするためのセキュリティ ガイドライン
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: techgroup-security
 ms.tgt_pltfrm: na
 ms.topic: article
@@ -10,14 +10,14 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 1a9496a121fc45df0b788ea56d50db922fd24536
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 1711eb94b622775feaf02f6bada596fe03b08ea9
+ms.sourcegitcommit: b8e120fc574450e9eee13e7315424137a43e6a6c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66749451"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74044808"
 ---
-## <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>デスクトップ エクスペリエンス搭載 Windows Server 2016 上のシステム サービスを無効にする場合のガイダンス
+# <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>デスクトップ エクスペリエンス搭載 Windows Server 2016 上のシステム サービスを無効にする場合のガイダンス
 
 適用対象:Windows Server 2016
 
@@ -47,7 +47,7 @@ Microsoft は、デスクトップ エクスペリエンス搭載 Windows Server
 
 (この記事に記載されているすべてのサービスの情報にアクセスするには、添付の Microsoft Excel スプレッドシート「[Guidance on Disabling System Services on Windows Server 2016 with Desktop Experience (デスクトップ エクスペリエンス搭載 Windows Server 2016 上でシステム サービスを無効にする場合のガイダンス)](https://msdnshared.blob.core.windows.net/media/2017/05/Service-management-WS2016.xlsx)」を参照してください)
 
-<br />
+
 
 ### <a name="disabling-services-not-installed-by-default"></a>既定でインストールされていないサービスを無効にする
 
@@ -57,10 +57,10 @@ Microsoft は、既定でインストールされないサービスを無効に�
 -  既定以外の Windows サービス (たとえば W3SVC) を無効にするベースラインまたはベンチマークは、テクノロジ (たとえば IIS) が本質的に安全ではないので使用すべきではないという誤った印象を監査役に与える可能性があります。
 -  機能 (とサービス) がインストールされない場合、これはベースラインと検証作業に不要な一括処理が追加されるだけです。
 
-<br />
+
 このドキュメントに記載されているすべてのシステム サービスについて、デスクトップ エクスペリエンス搭載 Windows Server 2016 でシステム サービスを有効または無効にする場合の列と Microsoft の推奨の説明を以下の 2 つの表に示します。 
 
-<br />
+
 
 ### <a name="explanation-of-columns"></a>例の説明
 
@@ -68,12 +68,12 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |---|---|
 |**サービスの説明**|   sc.exe qdescription からのサービスの説明。|
 |**名前** |サービスのキー (内部) 名|
-|**インストール** |常にインストール:サービスは Server Core とデスクトップ エクスペリエンス搭載サーバー上にあります  <br /> デスクトップ エクスペリエンス搭載のみ:サービスはデスクトップ エクスペリエンス搭載 Windows Server 2016 上にありますが、Server Core 上には***ありません*** |
+|**インストール** | *常にインストール*:サービスは Windows Server 2016 Core およびデスクトップ エクスペリエンス搭載 Windows Server 2016 にインストールされます。 *デスクトップ エクスペリエンス搭載のみ*:サービスはデスクトップ エクスペリエンス搭載 Windows Server 2016 上にありますが、Server Core 上にはインストール***されません***。 |
 |**StartType**  |Windows Server 2016 上のサービス開始の種類|
 |**推奨** |一般的な適切に管理されているエンタープライズ展開の Windows Server 2016 上で、そのサーバーがエンドユーザー デスクトップの代替として使用されていない場合に、このサービスを無効にすることに関する Microsoft の推奨またはアドバイス。|
 |**コメント** |追加の説明|
 
-<br />
+
 
 ### <a name="explanation-of-microsoft-recommendations"></a>Microsoft の推奨の説明
 
@@ -84,11 +84,11 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |**既に無効**|  このサービスは既定で無効なので、ポリシーを強制する必要はありません|
 |**無効にすることが推奨される** |適切に管理されたエンタープライズ システムの場合、このサービスは有効にしないでください。|
 
-<br />
+
 
 次の表は、デスクトップ エクスペリエンス搭載 Windows Server 2016 上でシステム サービスを無効にする場合に関する Microsoft のガイダンスをまとめたものです。
 
-<br />
+
 
 ##  <a name="activex-installer-axinstsv"></a>ActiveX Installer (AxInstSV)
 
@@ -102,7 +102,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   機能が不要な場合は無効にしても問題ありません |
 
 
-<br />
+
 
 ## <a name="alljoyn-router-service"></a>AllJoyn Router Service   
 
@@ -116,7 +116,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |       |
 | | |
 
-<br />
+
 
 ## <a name="app-readiness"></a>App Readiness
 
@@ -130,7 +130,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 **コメント**    |   
 | | |
 
-<br />
+
 
 ##  <a name="application-identity"></a>アプリケーション ID
 
@@ -144,7 +144,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 **コメント**    |   
 |||     
 
-<br />
+
 
 ##  <a name="application-information"></a>アプリケーション情報 
 
@@ -158,7 +158,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   UAC の同一デスクトップの昇格をサポート
 |||     
 
-<br />
+
 
 ##  <a name="application-layer-gateway-service"></a>アプリケーション層ゲートウェイ サービス       
 
@@ -172,7 +172,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||     
 
-<br />
+
 
 ##  <a name="application-management"></a>アプリケーション管理      
 
@@ -186,7 +186,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="appx-deployment-service-appxsvc"></a>AppX Deployment Service (AppXSVC)       
 
@@ -200,7 +200,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="auto-time-zone-updater"></a>タイム ゾーンの自動更新機能           
 
@@ -214,7 +214,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="background-intelligent-transfer-service"></a>バックグラウンド インテリジェント転送サービス          
 
@@ -228,7 +228,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 
 ## <a name="background-tasks-infrastructure-service"></a>バックグラウンド タスク インフラストラクチャ サービス      
@@ -243,7 +243,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="base-filtering-engine"></a>ベース フィルター エンジン            
 
@@ -257,7 +257,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="bluetooth-support-service"></a>Bluetooth サポート サービス            
 
@@ -271,7 +271,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   使用しない場合は無効にしても問題ありません。 もう 1 つの無効にするメカニズム: https://technet.microsoft.com/library/dd252791.aspx
 |||         
 
-<br />          
+
 
 
 ## <a name="cdpusersvc"></a>CDPUserSvc           
@@ -286,7 +286,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   ユーザー サービス テンプレート
 |||         
 
-<br />          
+
 
 
 ##  <a name="certificate-propagation"></a>証明書伝達     
@@ -301,7 +301,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="client-license-service-clipsvc"></a>クライアント ライセンス サービス (ClipSVC)        
 
@@ -315,7 +315,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="cng-key-isolation"></a>CNG キーの分離
 
@@ -329,7 +329,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="com-event-system"></a>COM+ イベント システム       
 
@@ -343,7 +343,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="com-system-application"></a>COM+ システム アプリケーション     
 
@@ -357,7 +357,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="computer-browser"></a>コンピューター ブラウザー        
 
@@ -371,7 +371,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="connected-devices-platform-service"></a>Connected Devices Platform サービス       
 
@@ -385,7 +385,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="connected-user-experiences-and-telemetry"></a>接続ユーザー エクスペリエンスとテレメトリ     
 
@@ -399,7 +399,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="contact-data"></a>連絡先データ        
 
@@ -413,7 +413,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   ユーザー サービス テンプレート
 |||         
 
-<br />          
+
 
 ## <a name="coremessaging"></a>CoreMessaging            
 
@@ -427,7 +427,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="credential-manager"></a>資格情報マネージャー           
 
@@ -441,7 +441,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="cryptographic-services"></a>暗号化サービス           
 
@@ -455,7 +455,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="data-sharing-service"></a>データ共有サービス         
 
@@ -469,7 +469,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="datacollectionpublishingservice"></a>DataCollectionPublishingService          
 
@@ -483,7 +483,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="dcom-server-process-launcher"></a>DCOM Server Process Launcher         
 
@@ -497,7 +497,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />
+
 
 ##  <a name="device-association-service"></a>デバイス関連付けサービス      
 
@@ -511,7 +511,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />
+
 
 ##  <a name="device-install-service"></a>Device Install Service
 
@@ -525,7 +525,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |
 |||
 
-<br />          
+
 
 ##  <a name="device-management-enrollment-service"></a>デバイス管理登録サービス        
 
@@ -539,7 +539,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="device-setup-manager"></a>デバイス セットアップ マネージャー         
 
@@ -553,7 +553,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="devquery-background-discovery-broker"></a>DevQuery バックグラウンド探索ブローカー         
 
@@ -567,7 +567,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="dhcp-client"></a>DHCP クライアント          
 
@@ -581,7 +581,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="diagnostic-policy-service"></a>診断ポリシー サービス            
 
@@ -595,7 +595,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="diagnostic-service-host"></a>診断サービス ホスト     
 
@@ -609,7 +609,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="diagnostic-system-host"></a>診断システム ホスト           
 
@@ -623,7 +623,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="distributed-link-tracking-client"></a>分散リンク トラッキング クライアント            
 
@@ -637,7 +637,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="distributed-transaction-coordinator"></a>分散トランザクション コーディネーター     
 
@@ -651,7 +651,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />  
+
 
 ##  <a name="dmwappushsvc"></a>dmwappushsvc        
 
@@ -665,7 +665,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   Intune、MDM などの管理テクノロジ、および統合書き込みフィルター用のクライアント デバイスに必要なサービス。 サーバーには不要です。
 |||         
 
-<br />      
+
 
 ##  <a name="dns-client"></a>DNS クライアント      
 
@@ -679,7 +679,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="downloaded-maps-manager"></a>ダウンロード地図マネージャー     
 
@@ -693,7 +693,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   無効にすると、サービスに依存しているアプリが中断します。アプリが依存していない場合は無効にしても問題ありません。
 |||         
 
-<br />          
+
 
 ## <a name="embedded-mode"></a>埋め込みモード            
 
@@ -707,7 +707,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="encrypting-file-system-efs"></a>暗号化ファイル システム (EFS)
 
@@ -721,7 +721,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**   |
 |||                 
 
-<br />  
+
 
 ## <a name="enterprise-app-management-service"></a>エンタープライズ アプリ管理サービス            
 
@@ -735,7 +735,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="extensible-authentication-protocol"></a>拡張認証プロトコル           
 
@@ -749,7 +749,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="function-discovery-provider-host"></a>機能探索プロバイダー ホスト         
 
@@ -763,7 +763,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="function-discovery-resource-publication"></a>機能探索リソース公開      
 
@@ -777,7 +777,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="geolocation-service"></a>位置情報サービス          
 
@@ -791,7 +791,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   無効にすると、サービスに依存しているアプリが中断します。アプリが依存していない場合は無効にしても問題ありません。
 |||         
 
-<br />          
+
 
 ##  <a name="group-policy-client"></a>グループ ポリシー クライアント     
 
@@ -805,7 +805,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 
 ## <a name="human-interface-device-service"></a>Human Interface Device Service           
@@ -820,7 +820,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="hv-host-service"></a>HV ホスト サービス     
 
@@ -834,7 +834,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   ゲスト VM 用のパフォーマンス エンハンサー。 明示的に設定された VM を除き、現在は使用されていませんが、Application Guard で使用されます。
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-data-exchange-service"></a>Hyper-V データ交換サービス        
 
@@ -848,7 +848,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   HvHost を参照してください
 |||         
 
-<br />      
+
 
 ## <a name="hyper-v-guest-service-interface"></a>Hyper-V ゲスト サービス インターフェイス          
 
@@ -862,7 +862,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   HvHost を参照してください
 |||         
 
-<br />  
+
 
 ## <a name="hyper-v-guest-shutdown-service"></a>Hyper-V ゲスト シャットダウン サービス           
 
@@ -876,7 +876,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   HvHost を参照してください
 |||         
 
-<br />
+
 
 ## <a name="hyper-v-heartbeat-service"></a>Hyper-V ハートビート サービス
 | | |
@@ -889,7 +889,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   HvHost を参照してください
 |||
 
-<br />          
+
 
 ## <a name="hyper-v-powershell-direct-service"></a>Hyper-V PowerShell ダイレクト サービス            
 
@@ -903,7 +903,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   HvHost を参照してください
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-remote-desktop-virtualization-service"></a>Hyper-V リモート デスクトップ仮想化サービス            
 
@@ -917,7 +917,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   HvHost を参照してください
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-time-synchronization-service"></a>Hyper-V 時刻の同期サービス         
 
@@ -931,7 +931,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   HvHost を参照してください
 |||         
 
-<br />          
+
 
 ## <a name="hyper-v-volume-shadow-copy-requestor"></a>Hyper-V ボリューム シャドウ コピー リクエスター         
 
@@ -945,7 +945,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   HvHost を参照してください
 |||         
 
-<br />          
+
 
 ## <a name="ike-and-authip-ipsec-keying-modules"></a>IKE および AuthIP IPsec のキー モジュール          
 
@@ -959,7 +959,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |    
 |||         
 
-<br />          
+
 
 ## <a name="interactive-services-detection"></a>対話型サービスの検出           
 
@@ -973,7 +973,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />  
+
 
 ## <a name="internet-connection-sharing-ics"></a>インターネット接続の共有 (ICS)            
 
@@ -987,7 +987,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   WiFi ホットスポットとして使用されるクライアントと、Miracast プロジェクションの両側にも必要です。 ICS は GPO 設定 [DNS ドメイン ネットワーク上でインターネット接続の共有の使用を禁止する] を使ってブロックできます
 |||         
 
-<br />          
+
 
 ## <a name="ip-helper"></a>IP ヘルパー            
 
@@ -1001,7 +1001,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 
 ##  <a name="ipsec-policy-agent"></a>IPSec ポリシー エージェント      
@@ -1016,7 +1016,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />
+
 
 ##  <a name="kdc-proxy-server-service-kps"></a>KDC プロキシ サーバー サービス (KPS)      
 
@@ -1030,7 +1030,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="ktmrm-for-distributed-transaction-coordinator"></a>分散トランザクション コーディネーター向け KtmRm            
 
@@ -1044,7 +1044,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />
+
 
 ##  <a name="link-layer-topology-discovery-mapper"></a>Link-Layer Topology Discovery Mapper        
 
@@ -1058,7 +1058,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   ネットワーク マップに依存関係がない場合は無効にしても問題ありません
 |||         
 
-<br />
+
 
 ## <a name="local-session-manager"></a>ローカル セッション マネージャー                    
 
@@ -1072,7 +1072,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||                 
 
-<br />                  
+
 
 ## <a name="microsoft-r-diagnostics-hub-standard-collector"></a>Microsoft (R) 診断ハブ標準コレクター サービス         
 
@@ -1086,7 +1086,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />
+
 
 ## <a name="microsoft-account-sign-in-assistant"></a>Microsoft アカウント サインイン アシスタント
 | | |
@@ -1099,7 +1099,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   Windows Server 上では Microsoft アカウントは適用されません
 |||
 
-<br />          
+
 
 ##  <a name="microsoft-app-v-client"></a>Microsoft App-V クライアント      
 
@@ -1113,7 +1113,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-iscsi-initiator-service"></a>Microsoft iSCSI イニシエーター サービス            
 
@@ -1127,7 +1127,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   Microsoft の診断データでは、これがサーバーと同様にクライアントで使用されていることが示されています。 これを無効にしても利点はありません。
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-passport"></a>Microsoft Passport           
 
@@ -1141,7 +1141,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   サーバーではサポートされていない PIN/Hello ログオンに必要です
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-passport-container"></a>Microsoft Passport コンテナー         
 
@@ -1155,7 +1155,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-software-shadow-copy-provider"></a>Microsoft Software Shadow Copy Provider          
 
@@ -1169,7 +1169,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="microsoft-storage-spaces-smp"></a>Microsoft Storage Spaces SMP         
 
@@ -1183,7 +1183,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   このサービスがない場合、ストレージ管理 API は失敗します。 以下に例を示します。"Get-WmiObject -class MSFT_Disk -Namespace Root\Microsoft\Windows\Storage".
 |||         
 
-<br />          
+
 
 ## <a name="nettcp-port-sharing-service"></a>Net.Tcp ポート共有サービス         
 
@@ -1197,7 +1197,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="netlogon"></a>Netlogon         
 
@@ -1211,7 +1211,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="network-connection-broker"></a>ネットワーク接続ブローカー            
 
@@ -1225,7 +1225,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="network-connections"></a>ネットワーク接続         
 
@@ -1239,7 +1239,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="network-connectivity-assistant"></a>Network Connectivity Assistant      
 
@@ -1253,7 +1253,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />  
+
 
 ##  <a name="network-list-service"></a>Network List Service        
 
@@ -1267,7 +1267,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="network-location-awareness"></a>Network Location Awareness           
 
@@ -1281,7 +1281,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="network-setup-service"></a>Network Setup Service       
 
@@ -1295,7 +1295,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="network-store-interface-service"></a>Network Store Interface Service      
 
@@ -1309,7 +1309,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="offline-files"></a>オフライン ファイル            
 
@@ -1323,7 +1323,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="optimize-drives"></a>ドライブの最適化          
 
@@ -1337,7 +1337,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />
+
 
 ## <a name="performance-counter-dll-host"></a>Performance Counter DLL Host         
 
@@ -1351,7 +1351,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="performance-logs--alerts"></a>パフォーマンス ログと警告            
 
@@ -1365,7 +1365,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="phone-service"></a>電話サービス       
 
@@ -1379,7 +1379,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   最近の VoIP アプリで使用されています
 |||         
 
-<br />          
+
 
 ##      <a name="plug-and-play"></a>プラグ アンド プレイ       
 
@@ -1393,7 +1393,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="portable-device-enumerator-service"></a>ポータブル デバイス列挙サービス           
 
@@ -1407,7 +1407,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="power"></a>Power            
 
@@ -1421,7 +1421,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="print-spooler"></a>印刷スプーラー            
 
@@ -1432,10 +1432,10 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **インストール**    |   常にインストール
 |   **StartType**   |   自動
 |   **推奨**  |   プリント サーバーでも DC でもない場合は、無効にしても問題ありません
-|   **コメント**    |   ドメイン コントローラーに DC ロールをインストールすると、印刷のプルーニング (古い印刷キュー オブジェクトを Active Directory から削除する処理) を実行するスレッドがスプーラー サービスに追加されます。  スプーラー サービスが各サイトの少なくとも 1 つの DC で実行されていない場合、AD には存在しなくなった古いキューを削除する手段がありません。 https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/
+|   **コメント**    |   ドメイン コントローラーに DC ロールをインストールすると、印刷のプルーニング (古い印刷キュー オブジェクトを Active Directory から削除する処理) を実行するスレッドがスプーラー サービスに追加されます。  スプーラー サービスが各サイトの少なくとも 1 つの DC で実行されていない場合、AD には存在しなくなった古いキューを削除する手段がありません。 [https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/ )
 |||         
 
-<br />          
+
 
 ##  <a name="printer-extensions-and-notifications"></a>プリンターの拡張機能と通知        
 
@@ -1449,7 +1449,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="problem-reports-and-solutions-control-panel-support"></a>[問題のレポートと解決策] コントロール パネル サポート     
 
@@ -1463,7 +1463,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="program-compatibility-assistant-service"></a>プログラム互換性アシスタント サービス     
 
@@ -1477,7 +1477,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="quality-windows-audio-video-experience"></a>高品質な Windows オーディオ ビデオ エクスペリエンス      
 
@@ -1491,7 +1491,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   クライアント側 QoS サービス
 |||         
 
-<br />          
+
 
 ##      <a name="radio-management-service"></a>無線管理サービス        
 
@@ -1505,7 +1505,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-access-auto-connection-manager"></a>リモート アクセス自動接続マネージャー            
 
@@ -1519,7 +1519,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-access-connection-manager"></a>リモート アクセス接続マネージャー         
 
@@ -1533,7 +1533,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-desktop-configuration"></a>リモート デスクトップの構成         
 
@@ -1547,7 +1547,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="remote-desktop-services"></a>リモート デスクトップ サービス          
 
@@ -1561,7 +1561,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="remote-desktop-services-usermode-port-redirector"></a>リモート デスクトップ サービス ユーザー モード ポート リダイレクター        
 
@@ -1575,7 +1575,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   接続のサーバー側でのリダイレクトをサポートします。
 |||         
 
-<br />          
+
 
 ## <a name="remote-procedure-call-rpc"></a>リモート プロシージャ コール (RPC)          
 
@@ -1589,7 +1589,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="remote-procedure-call-rpc-locator"></a>リモート プロシージャ コール (RPC) ロケーター             
 
@@ -1603,7 +1603,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |       |
 |||             
 
-<br />              
+
 
 ## <a name="remote-registry"></a>リモート レジストリ          
 
@@ -1617,7 +1617,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="resultant-set-of-policy-provider"></a>Resultant Set of Policy Provider            
 
@@ -1631,7 +1631,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="routing-and-remote-access"></a>ルーティングとリモート アクセス            
 
@@ -1645,7 +1645,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   既に無効
 |||         
 
-<br />          
+
 
 ## <a name="rpc-endpoint-mapper"></a>RPC エンドポイント マッパー          
 
@@ -1659,7 +1659,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="secondary-logon"></a>セカンダリ ログオン     
 
@@ -1673,7 +1673,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="secure-socket-tunneling-protocol-service"></a>Secure Socket トンネリング プロトコル サービス            
 
@@ -1687,7 +1687,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   無効にすると、RRAS が中断します   |
 |||             
 
-<br />              
+
 
 ## <a name="security-accounts-manager"></a>セキュリティ アカウント マネージャー            
 
@@ -1701,7 +1701,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="sensor-data-service"></a>センサー データ サービス  
 
@@ -1715,7 +1715,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />  
+
 
 ## <a name="sensor-monitoring-service"></a>センサー監視サービス            
 
@@ -1729,10 +1729,17 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br /><br/>
-## <a name="sensor-servicebr--br------br---strongservice-descriptionstrong----a-service-for-sensors-that-manages-different-sensors39-functionality-manages-simple-device-orientation-sdo-and-history-for-sensors-loads-the-sdo-sensor-that-reports-device-orientation-changes--if-this-service-is-stopped-or-disabled-the-sdo-sensor-will-not-be-loaded-and-so-auto-rotation-will-not-occur-history-collection-from-sensors-will-also-be-stopped"></a>センサー サービス<br/>| | |<br/>|---|---|<br/>|   <strong>サービスの説明</strong> |   さまざまなセンサーの機能を管理するセンサー用サービス。 センサーの簡易デバイス方向 (SDO) と履歴を管理します。 デバイス方向の変化をレポートする SDO センサーを読み込みます。  このサービスを停止または無効にすると、SDO センサーは読み込まれなくなり、自動回転も行われません。 センサーからの履歴収集も停止されます。
-|   <strong>サービス名</strong>    |   SensorService |   <strong>インストール</strong>    |   デスクトップ エクスペリエンス搭載のみ |   <strong>StartType</strong>   |   手動 |   <strong>推奨</strong>  |   無効にしてもよい |   <strong>コメント</strong>    |<br/>|||<br/>
-<br />          
+## <a name="sensor-service"></a>センサー サービス
+
+| | |
+|---|---|
+|   **サービスの説明** |   さまざまなセンサーの機能を管理するセンサー用サービス。 センサーの簡易デバイス方向 (SDO) と履歴を管理します。 デバイス方向の変化をレポートする SDO センサーを読み込みます。  このサービスを停止または無効にすると、SDO センサーは読み込まれなくなり、自動回転も行われません。 センサーからの履歴収集も停止されます。
+|   **サービス名**    |   SensorService
+|   **インストール**    |   デスクトップ エクスペリエンス搭載のみ
+|   **StartType**   |   Manual
+|   **推奨**  |   無効にしてもよい
+|   **コメント**    |
+|||
 
 ## <a name="server"></a>Server           
 
@@ -1746,7 +1753,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   リモート管理、IPC$、SMB ファイル共有に必要です
 |||         
 
-<br />          
+
 
 ## <a name="shell-hardware-detection"></a>Shell Hardware Detection             
 
@@ -1760,7 +1767,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="smart-card"></a>スマート カード           
 
@@ -1774,7 +1781,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="smart-card-device-enumeration-service"></a>スマート カード デバイス列挙サービス                    
 
@@ -1788,7 +1795,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   WinRT アプリにほぼ例外なく必要です    |
 |||             
 
-<br />              
+
 
 ## <a name="smart-card-removal-policy"></a>スマート カードの取り出しポリシー        
 
@@ -1802,7 +1809,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="snmp-trap"></a>SNMP トラップ            
 
@@ -1816,7 +1823,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="software-protection"></a>ソフトウェア保護             
 
@@ -1830,7 +1837,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="special-administration-console-helper"></a>Special Administration Console Helper        
 
@@ -1844,7 +1851,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="spot-verifier"></a>スポット検証機能            
 
@@ -1858,7 +1865,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="ssdp-discovery"></a>SSDP 探索           
 
@@ -1872,7 +1879,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="state-repository-service"></a>State Repository Service         
 
@@ -1886,7 +1893,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="still-image-acquisition-events"></a>静止イメージ取得イベント
 
@@ -1900,7 +1907,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />  
+
 
 ## <a name="storage-service"></a>記憶域サービス          
 
@@ -1914,7 +1921,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="storage-tiers-management"></a>記憶域階層管理        
 
@@ -1928,7 +1935,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="superfetch"></a>Superfetch          
 
@@ -1942,7 +1949,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="sync-host"></a>ホストの同期            
 
@@ -1956,7 +1963,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   ユーザー サービス テンプレート
 |||         
 
-<br />          
+
 
 ## <a name="system-event-notification-service"></a>システム イベント通知サービス            
 
@@ -1970,7 +1977,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="system-events-broker"></a>システム イベント ブローカー             
 
@@ -1984,7 +1991,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   説明には WinRT アプリ専用であると示されていますが、タスク スケジューラ、ブローカー インフラストラクチャ サービス、およびその他の内部コンポーネントに必要です。
 |||         
 
-<br />          
+
 
 ## <a name="task-scheduler"></a>タスク スケジューラ           
 
@@ -1998,7 +2005,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="tcpip-netbios-helper"></a>TCP/IP NetBIOS ヘルパー            
 
@@ -2012,7 +2019,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="telephony"></a>Telephony           
 
@@ -2026,7 +2033,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   無効にすると、RRAS が中断します
 |||         
 
-<br />          
+
 
 ## <a name="themes"></a>テーマ           
 
@@ -2040,7 +2047,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   このサービスを無効にするとアクセシビリティ テーマを設定できなくなります
 |||         
 
-<br />  
+
 
 ## <a name="tile-data-model-server"></a>タイル データ モデル サーバー           
 
@@ -2054,7 +2061,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   このサービスを無効にすると、スタート メニューが中断します
 |||         
 
-<br />          
+
 
 ##  <a name="time-broker"></a>Time Broker     
 
@@ -2068,7 +2075,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   説明には WinRT アプリ専用であると示されていますが、タスク スケジューラ、ブローカー インフラストラクチャ サービス、およびその他の内部コンポーネントに必要です。
 |||         
 
-<br />          
+
 
 ## <a name="touch-keyboard-and-handwriting-panel-service"></a>タッチ キーボードおよび手書きパネル サービス         
 
@@ -2082,7 +2089,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="update-orchestrator-service-for-windows-update"></a>Update Orchestrator Service for Windows Update           
 
@@ -2096,7 +2103,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   v1607 にはサービスの説明がありませんでした。Windows Update (WSUS を含む) はこのサービスに依存しています。
 |||         
 
-<br />          
+
 
 ## <a name="upnp-device-host"></a>UPnP デバイス ホスト         
 
@@ -2110,7 +2117,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="user-access-logging-service"></a>ユーザー アクセス ログ サービス          
 
@@ -2124,7 +2131,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="user-data-access"></a>ユーザー データ アクセス        
 
@@ -2138,7 +2145,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   ユーザー サービス テンプレート
 |||         
 
-<br />          
+
 
 ## <a name="user-data-storage"></a>ユーザー データ記憶域            
 
@@ -2152,7 +2159,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   ユーザー サービス テンプレート
 |||         
 
-<br />          
+
 
 ## <a name="user-experience-virtualization-service"></a>ユーザー エクスペリエンス仮想化サービス           
 
@@ -2166,7 +2173,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="user-manager"></a>ユーザー マネージャー        
 
@@ -2180,7 +2187,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="user-profile-service"></a>ユーザー プロファイル サービス         
 
@@ -2194,7 +2201,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="virtual-disk"></a>仮想ディスク             
 
@@ -2208,7 +2215,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="volume-shadow-copy"></a>ボリューム シャドウ コピー           
 
@@ -2222,7 +2229,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="walletservice"></a>WalletService           
 
@@ -2236,7 +2243,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-audio"></a>Windows オーディオ            
 
@@ -2250,7 +2257,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-audio-endpoint-builder"></a>Windows Audio Endpoint Builder           
 
@@ -2264,7 +2271,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-biometric-service"></a>Windows 生体認証サービス            
 
@@ -2278,7 +2285,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-camera-frame-server"></a>Windows カメラ フレーム サーバー         
 
@@ -2292,7 +2299,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-connection-manager"></a>Windows 接続マネージャー           
 
@@ -2306,7 +2313,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-defender-network-inspection-service"></a>Windows Defender のネットワーク検査サービス          
 
@@ -2320,7 +2327,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-defender-service"></a>Windows Defender サービス         
 
@@ -2334,7 +2341,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-driver-foundation---user-mode-driver-framework"></a>Windows Driver Foundation - ユーザー モード ドライバー フレームワーク           
 
@@ -2348,7 +2355,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-encryption-provider-host-service"></a>Windows 暗号化プロバイダー ホスト サービス     
 
@@ -2362,7 +2369,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-error-reporting-service"></a>Windows エラー報告サービス          
 
@@ -2376,7 +2383,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   MS とサード パーティの ISV/IHV の両方で使用されるクラッシュ/ハング データを収集して送信します。 このデータは、セキュリティ バグなどのクラッシュを引き起こすバグを診断するために使用されます。 企業内エラー報告にも必要です
 |||         
 
-<br />          
+
 
 ## <a name="windows-event-collector"></a>Windows イベント コレクター          
 
@@ -2390,7 +2397,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   管理の容易さ、診断のために ETW イベント (セキュリティ イベントなど) を収集します。  セキュリティ監査ツールなど、多くの機能とサードパーティ製ツールが依存しています
 |||         
 
-<br />          
+
 
 ## <a name="windows-event-log"></a>Windows イベント ログ            
 
@@ -2404,7 +2411,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-firewall"></a>Windows ファイアウォール         
 
@@ -2418,7 +2425,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-font-cache-service"></a>Windows フォント キャッシュ サービス      
 
@@ -2432,7 +2439,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-image-acquisition-wia"></a>Windows Image Acquisition (WIA)          
 
@@ -2446,7 +2453,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-insider-service"></a>Windows Insider サービス     
 
@@ -2460,13 +2467,13 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   サーバーはフライティングをサポートしていないので、サーバー上では操作なしです。 機能は GP からも無効にできます。
 |||         
 
-<br />          
+
 
 ##  <a name="windows-installer"></a>Windows インストーラー       
 
 | | |           
 |---|---|
-|   **サービスの説明** |   Windows インストーラー (*.msi、*.msp) パッケージとして提供されたアプリケーションを追加、修正、および削除します。 このサービスを無効にすると、このサービスに明示的に依存しているすべてのサービスが開始されなくなります。
+|   **サービスの説明** |   Windows インストーラー (\*.msi、\*.msp) パッケージとして提供されたアプリケーションを追加、修正、および削除します。 このサービスを無効にすると、このサービスに明示的に依存しているすべてのサービスが開始されなくなります。
 |   **サービス名**    |   msiserver
 |   **インストール**    |   常にインストール
 |   **StartType**   |   Manual
@@ -2474,7 +2481,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-license-manager-service"></a>Windows ライセンス マネージャー サービス          
 
@@ -2488,7 +2495,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-management-instrumentation"></a>Windows Management Instrumentation       
 
@@ -2502,7 +2509,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-mobile-hotspot-service"></a>Windows モバイル ホットスポット サービス          
 
@@ -2516,7 +2523,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-modules-installer"></a>Windows Modules Installer        
 
@@ -2530,7 +2537,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-push-notifications-system-service"></a>Windows プッシュ通知システム サービス            
 
@@ -2544,7 +2551,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   ライブ タイルやその他の機能に必要です
 |||         
 
-<br />      
+
 
 ## <a name="windows-push-notifications-user-service"></a>Windows プッシュ通知ユーザー サービス          
 
@@ -2558,7 +2565,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   ユーザー サービス テンプレート
 |||         
 
-<br />
+
 
 ## <a name="windows-remote-management-ws-management"></a>Windows リモート管理 (WS-Management)
 | | |
@@ -2571,7 +2578,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   リモート管理に必要です
 |||
 
-<br />          
+
 
 ##  <a name="windows-search"></a>Windows Search      
 
@@ -2585,7 +2592,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ##  <a name="windows-time"></a>Windows タイム        
 
@@ -2599,7 +2606,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="windows-update"></a>Windows Update           
 
@@ -2613,7 +2620,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="winhttp-web-proxy-auto-discovery-service"></a>WinHTTP Web プロキシ自動発見サービス         
 
@@ -2627,7 +2634,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   ネットワーク スタックを使用するすべてのものが、このサービスに機能的に依存している可能性があります。 多くの組織は、内部ネットワークの HTTP プロキシ ルーティングを構成するためにこれに依存しています。  これがない場合、内部からインターネットに送信される HTTP 接続はすべて失敗します。
 |||         
 
-<br />          
+
 
 ## <a name="wired-autoconfig"></a>ワイヤード自動構成         
 
@@ -2641,7 +2648,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="wmi-performance-adapter"></a>WMI Performance Adapter          
 
@@ -2655,7 +2662,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="workstation"></a>ワークステーション          
 
@@ -2669,7 +2676,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />
+
 
 ## <a name="xbox-live-auth-manager"></a>Xbox Live Auth Manager           
 
@@ -2683,7 +2690,7 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   
 |||         
 
-<br />          
+
 
 ## <a name="xbox-live-game-save"></a>Xbox Live セーブ データ          
 
@@ -2697,6 +2704,6 @@ Microsoft は、既定でインストールされないサービスを無効に�
 |   **コメント**    |   このサービスは、Xbox Live セーブ対応ゲームのセーブ データを同期します。  このサービスを停止すると、ゲームのセーブ データを Xbox Live にアップロードまたは Xbox Live からダウンロードされなくなります。
 |||         
 
-<br /> 
-<br /> 
+
+
 

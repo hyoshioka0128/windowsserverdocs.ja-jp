@@ -1,33 +1,33 @@
 ---
 title: 仮想ネットワークの使用状況測定の送信
-description: クラウド ネットワークの収益化の基本的な側面では、ネットワーク帯域幅のエグレスです。 たとえば、送信データは、Microsoft Azure でビジネス モデルを転送します。 送信データは、特定の請求サイクルで、インターネット経由での Azure データ センターから移動するデータの合計量に基づいて課金されます。
+description: クラウドネットワーク収益化の基本的な側面は、ネットワーク帯域幅の送信です。 たとえば、Microsoft Azure ビジネスモデルでの送信データ転送。 送信データは、特定の請求サイクルで、インターネット経由で Azure データセンターから移動されるデータの合計量に基づいて課金されます。
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
 ms.author: pashort
 author: shortpatti
 ms.date: 10/02/2018
-ms.openlocfilehash: bdfb2b7321d5a4d119c9710e9ad93fc2e91ea536
-ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
+ms.openlocfilehash: e68a3889867b75152ea941ac1d8eb113b9acd3cb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67792293"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406010"
 ---
 # <a name="egress-metering-in-a-virtual-network"></a>仮想ネットワークの使用状況測定の送信
 
 >適用対象:Windows Server 2019
 
 
-クラウド ネットワークの収益化の基本的な側面は、ネットワーク帯域幅の使用率別の請求にできることです。 送信データは、特定の請求サイクルで、インターネット経由で、データ センターから移動するデータの合計量に基づいて課金されます。
+クラウドネットワーク収益化の基本的な側面は、ネットワーク帯域幅の使用量によって課金できるようになっています。 送信データは、特定の請求サイクルにおいて、インターネット経由でデータセンターから移動されるデータの総量に基づいて課金されます。
 
-Windows Server 2019 の SDN ネットワーク トラフィックの使用状況測定エグレス送信データ転送の使用状況メーターを提供する機能を使用できます。 データ センター内に維持されますが、各仮想ネットワークがネットワーク トラフィックを追跡できますとは別にため、これは、課金の計算から除外できます。 送信データ転送の請求と未請求のアドレス範囲のいずれかに含まれていない宛先 IP アドレスにバインドされているパケットが追跡されます。
+Windows Server 2019 の SDN ネットワークトラフィックの送信測定機能を使用すると、送信データ転送の使用量メーターを提供できます。 各仮想ネットワークを離れたネットワークトラフィックは、データセンター内に保持されるため、個別に追跡することで、課金の計算から除外することができます。 未請求のいずれかのアドレス範囲に含まれていない宛先 IP アドレスにバインドされたパケットは、送信データ転送の課金として追跡されます。
 
-## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>未請求の仮想ネットワークのアドレス範囲 (範囲の IP のホワイト リストに登録)
+## <a name="virtual-network-unbilled-address-ranges-whitelist-of-ip-ranges"></a>Virtual network 未請求のアドレス範囲 (IP 範囲のホワイトリスト)
 
-未請求のアドレス範囲を見つけることができます、 **UnbilledAddressRanges**既存の仮想ネットワークのプロパティ。 既定では、追加のアドレス範囲はありません。
+未請求のアドレス範囲は、既存の仮想ネットワークの "非**実体**化" プロパティの下にあります。 既定では、アドレス範囲は追加されていません。
 
    ```PowerShell
    import-module NetworkController
@@ -51,11 +51,11 @@ Windows Server 2019 の SDN ネットワーク トラフィックの使用状況
    ```
 
 
-## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>例:仮想ネットワークの未請求のアドレス範囲を管理します
+## <a name="example-manage-the-unbilled-address-ranges-of-a-virtual-network"></a>例:仮想ネットワークの未請求のアドレス範囲を管理する
 
-設定して使用状況測定エグレスの課金対象から除外する IP サブネット プレフィックスのセットを管理することができます、 **UnbilledAddressRange**仮想ネットワークのプロパティ。  プレフィックスのいずれかに一致する宛先 IP アドレスで仮想ネットワーク上のネットワーク インターフェイスによって送信されたすべてのトラフィックを BilledEgressBytes プロパティに含まれていません。
+仮想ネットワークの "非ユーザー設定" プロパティを設定することに**より、請求**された送信測定から除外する IP サブネットプレフィックスのセットを管理できます。  仮想ネットワーク上のネットワークインターフェイスによって送信された、プレフィックスのいずれかに一致する宛先 IP アドレスを持つトラフィックは、BilledEgressBytes プロパティに含まれません。
 
-1.  更新プログラム、 **UnbilledAddressRanges**プロパティにアクセスするためには課金されませんサブネットが含まれています。
+1.  アクセスに対して課金されないサブネットが含まれるように、"非**実体**化" プロパティを更新します。
 
     ```PowerShell
     $vnet = Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceID "VNet1"
@@ -63,9 +63,9 @@ Windows Server 2019 の SDN ネットワーク トラフィックの使用状況
     ```
 
     >[!TIP]
-    >複数の IP サブネットを追加する場合は、各 IP サブネットの間にコンマを使用します。  コンマの前後にスペースを含めないでください。
+    >複数の IP サブネットを追加する場合は、各 IP サブネット間にコンマを使用します。  コンマの前または後にスペースを入れないでください。
 
-2.  変更した仮想ネットワーク リソースの更新**UnbilledAddressRanges**プロパティ。
+2.  **"変更**されていない" プロパティを使用して、Virtual Network リソースを更新します。
 
     ```PowerShell
     New-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceId "VNet1" -Properties $unbilled.Properties -PassInnerException
@@ -90,7 +90,7 @@ Windows Server 2019 の SDN ネットワーク トラフィックの使用状況
       ```
 
 
-3. 仮想ネットワークを構成済みの確認**UnbilledAddressRanges**します。
+3. Virtual Network を確認して、構成されていない**アドレス範囲**を確認します。
 
    ```PowerShell
    (Get-NetworkControllerVirtualNetwork -ConnectionUri $uri -ResourceID "VNet1").properties
@@ -110,17 +110,17 @@ Windows Server 2019 の SDN ネットワーク トラフィックの使用状況
    LogicalNetwork         : Microsoft.Windows.NetworkController.LogicalNetwork
    ```
 
-## <a name="check-the-billed-the-unbilled-egress-usage-of-a-virtual-network"></a>確認料金請求が発生、仮想ネットワークのエグレス未請求の使用状況
+## <a name="check-the-billed-the-unbilled-egress-usage-of-a-virtual-network"></a>仮想ネットワークの未請求送信の使用量の請求を確認する
 
-構成した後、 **UnbilledAddressRanges**プロパティ、仮想ネットワーク内の各サブネットのエグレスの課金と未請求の使用状況を確認することができます。 エグレス トラフィックは、4 つ分に 1 で、課金と未請求の範囲の合計バイト数を更新します。
+"未請求" プロパティ**を構成**した後、仮想ネットワーク内の各サブネットの請求および送信の使用状況を確認できます。 送信トラフィックは、課金対象と未請求範囲の合計バイト数で4分ごとに更新されます。
 
-各仮想サブネットに使用できるは、次のプロパティです。
+各仮想サブネットでは、次のプロパティを使用できます。
 
--   **UnbilledEgressBytes**をこの仮想サブネットに接続されているネットワーク インターフェイスから送信された未請求のバイト数が表示されます。 未請求のバイトが含まれているアドレスの範囲に送信バイト、 **UnbilledAddressRanges**親仮想ネットワークのプロパティ。
+-   **UnbilledEgressBytes**は、この仮想サブネットに接続されているネットワークインターフェイスによって送信された未請求バイト数を示します。 未請求 bytes は、親仮想ネットワークの "非**実体**化" プロパティの一部であるアドレス範囲に送信されるバイト数です。
 
--   **BilledEgressBytes**をこの仮想サブネットに接続されているネットワーク インターフェイスによって送信される課金対象のバイト数が表示されます。 課金対象のバイトはないアドレス範囲に送信されたバイトの一部、 **UnbilledAddressRanges**親仮想ネットワークのプロパティ。
+-   **BilledEgressBytes**は、この仮想サブネットに接続されているネットワークインターフェイスによって送信された、課金されたバイト数を示します。 課金されるバイト数は、親仮想ネットワーク**の "非**" 特性の値に含まれていないアドレス範囲に送信されたバイト数です。
 
-クエリの送信の使用状況を次の例を使用します。
+次の例を使用して、送信の使用状況をクエリします。
 
 ```PowerShell
 (Get-NetworkControllerVirtualNetwork -ConnectionURI $URI -ResourceId "VNet1").properties.subnets.properties | ft AddressPrefix,BilledEgressBytes,UnbilledEgressBytes

@@ -1,8 +1,8 @@
 ---
 title: bitsadmin
-description: Windows コマンド」のトピック**bitsadmin** -bitsadmin は、作成、ダウンロード、またはアップロード ジョブと進行状況の監視に使用できるコマンド ライン ツール。
+description: '**Bitsadmin**の Windows コマンドのトピック bitsadmin は、ジョブの作成、ダウンロード、アップロード、および進行状況の監視に使用できるコマンドラインツールです。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,36 +13,36 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da0f05ec716cffb7d7532ebac50a091729a6bb18
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b53293b28a83ecced34d248741996c958531d517
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821073"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380096"
 ---
 # <a name="bitsadmin"></a>bitsadmin
 
-> **適用対象**:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10
+> **適用対象**: windows Server (半期チャネル)、windows server 2016、windows Server 2012 R2、windows server 2012、windows 10
 
-bitsadmin は、ダウンロードを作成またはアップロード ジョブと進行状況の監視に使用できるコマンド ライン ツールです。 Bitsadmin ツールを実行するのに作業を識別するために、スイッチを使用します。  呼び出すことができます`bitsadmin /?`または`bitsadmin /HELP`スイッチの一覧を取得します。
+bitsadmin はコマンドラインツールです。このツールを使用すると、ジョブのダウンロードやアップロードを行ったり、ジョブの進行状況を監視したりすることができます。 Bitsadmin ツールは、実行する作業を識別するためにスイッチを使用します。  `bitsadmin /?` または `bitsadmin /HELP` を呼び出して、スイッチの一覧を取得できます。
 
-ほとんどのスイッチが必要とする\<ジョブ\>ジョブの表示名、または GUID に設定するパラメーターです。 あるジョブの表示名は一意できない可能性がありますに注意してください。 **/Create**と **/list**スイッチは、ジョブの GUID を返します。
+ほとんどのスイッチには、ジョブの表示名 (GUID) に設定する \<ジョブ\> パラメーターが必要です。 ジョブの表示名は一意ではない場合があることに注意してください。 **/Create**スイッチと **/list**スイッチは、ジョブの GUID を返します。
 
-既定では、自分のジョブに関する情報にアクセスすることができます。 別のユーザーのジョブの情報にアクセスするには、管理者特権が必要です。 ジョブは、管理者特権での状態で作成されている場合する必要がありますから実行する bitsadmin; 管理者特権のウィンドウそれ以外の場合、ジョブに読み取り専用アクセスがあります。
+既定では、自分のジョブに関する情報にアクセスできます。 別のユーザーのジョブに関する情報にアクセスするには、管理者特権が必要です。 ジョブが管理者特権で作成された場合は、管理者特権のウィンドウから bitsadmin を実行する必要があります。それ以外の場合は、ジョブへの読み取り専用アクセス権が付与されます。
 
-多くのスイッチ メソッドに対応する、[ビット インターフェイス](/windows/desktop/bits/bits-interfaces)します。 スイッチの使用に関連する可能性のある追加の詳細については、対応するメソッドを参照してください。
+スイッチの多くは、 [BITS インターフェイス](/windows/desktop/bits/bits-interfaces)のメソッドに対応しています。 スイッチの使用に関連する可能性のあるその他の詳細については、対応するメソッドを参照してください。
 
-次のスイッチを使用して、ジョブを作成、設定し、ジョブのプロパティを取得し、ジョブの状態を監視します。 これらのスイッチの一部を使用してタスクを実行する方法を示す例については、次を参照してください。 [bitsadmin 例](bitsadmin-examples.md)します。
+ジョブの作成、ジョブのプロパティの設定と取得、およびジョブの状態の監視を行うには、次のスイッチを使用します。 これらのスイッチのいくつかを使用してタスクを実行する方法を示す例については、「 [bitsadmin の例](bitsadmin-examples.md)」を参照してください。
 
 ## <a name="switches"></a>スイッチ
 
 [bitsadmin addfile](bitsadmin-addfile.md)  
 [bitsadmin addfileset](bitsadmin-addfileset.md)  
 [bitsadmin addfilewithranges](bitsadmin-addfilewithranges.md)  
-[bitsadmin キャッシュ](bitsadmin-cache.md)  
-[bitsadmin キャンセル](bitsadmin-cancel.md)  
-[完全な bitsadmin](bitsadmin-complete.md)  
-[bitsadmin を作成します。](bitsadmin-create.md)  
+[bitsadmin cache](bitsadmin-cache.md)  
+[bitsadmin cancel](bitsadmin-cancel.md)  
+[bitsadmin complete](bitsadmin-complete.md)  
+[bitsadmin create](bitsadmin-create.md)  
 [bitsadmin getaclflags](bitsadmin-getaclflags.md)  
 [bitsadmin getbytestotal](bitsadmin-getbytestotal.md)  
 [bitsadmin getbytestransferred](bitsadmin-getbytestransferred.md)  
@@ -80,21 +80,21 @@ bitsadmin は、ダウンロードを作成またはアップロード ジョブ
 [bitsadmin gettemporaryname](bitsadmin-gettemporaryname.md)  
 [bitsadmin gettype](bitsadmin-gettype.md)  
 [bitsadmin getvalidationstate](bitsadmin-getvalidationstate.md)  
-[bitsadmin ヘルプ](bitsadmin-help.md)  
-[bitsadmin 情報](bitsadmin-info.md)  
-[bitsadmin 一覧](bitsadmin-list.md)  
-[bitsadmin/listfiles という](bitsadmin-listfiles.md)  
+[bitsadmin help](bitsadmin-help.md)  
+[bitsadmin info](bitsadmin-info.md)  
+[bitsadmin list](bitsadmin-list.md)  
+[bitsadmin listfiles](bitsadmin-listfiles.md)  
 [bitsadmin makecustomheaderswriteonly](bitsadmin-makecustomheaderswriteonly.md)
-[bitsadmin モニター](bitsadmin-monitor.md)  
+[bitsadmin monitor](bitsadmin-monitor.md)  
 [bitsadmin nowrap](bitsadmin-nowrap.md)  
-[bitsadmin ピア キャッシュ](bitsadmin-peercaching.md)  
-[bitsadmin ピア](bitsadmin-peers.md)  
+[bitsadmin peercaching](bitsadmin-peercaching.md)  
+[bitsadmin peers](bitsadmin-peers.md)  
 [bitsadmin rawreturn](bitsadmin-rawreturn.md)  
 [bitsadmin removeclientcertificate](bitsadmin-removeclientcertificate.md)  
 [bitsadmin removecredentials](bitsadmin-removecredentials.md)  
 [bitsadmin replaceremoteprefix](bitsadmin-replaceremoteprefix.md)  
-[bitsadmin リセット](bitsadmin-reset.md)  
-[bitsadmin の再開](bitsadmin-resume.md)  
+[bitsadmin reset](bitsadmin-reset.md)  
+[bitsadmin resume](bitsadmin-resume.md)  
 [bitsadmin setaclflag](bitsadmin-setaclflag.md)  
 [bitsadmin setclientcertificatebyid](bitsadmin-setclientcertificatebyid.md)  
 [bitsadmin setclientcertificatebyname](bitsadmin-setclientcertificatebyname.md)  
@@ -116,8 +116,8 @@ bitsadmin は、ダウンロードを作成またはアップロード ジョブ
 [bitsadmin setreplyfilename](bitsadmin-setreplyfilename.md)  
 [bitsadmin setsecurityflags](bitsadmin-setsecurityflags.md)  
 [bitsadmin setvalidationstate](bitsadmin-setvalidationstate.md)  
-[bitsadmin 中断します。](bitsadmin-suspend.md)  
+[bitsadmin suspend](bitsadmin-suspend.md)  
 [bitsadmin takeownership](bitsadmin-takeownership.md)  
-[bitsadmin 転送](bitsadmin-transfer.md)  
-[bitsadmin ユーティリティ](bitsadmin-util.md)  
-[bitsadmin ラップ](bitsadmin-wrap.md)  
+[bitsadmin transfer](bitsadmin-transfer.md)  
+[bitsadmin util](bitsadmin-util.md)  
+[bitsadmin wrap](bitsadmin-wrap.md)  

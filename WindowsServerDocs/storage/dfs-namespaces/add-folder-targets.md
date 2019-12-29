@@ -1,19 +1,19 @@
 ---
 title: フォルダー ターゲットの追加
 description: このトピックでは、フォルダー ターゲット (UNC パス) を追加する方法について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: jgerend
 ms.manager: brianlic
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms-date: 06/05/2017
-ms.openlocfilehash: 8cc61189076669d5c24244294b2f0eee2b783517
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b0685ea795d53b36fad92d54f817f67de57e3a82
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831003"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403184"
 ---
 # <a name="add-folder-targets"></a>フォルダー ターゲットの追加
 
@@ -25,11 +25,11 @@ ms.locfileid: "59831003"
 
 DFS の管理を使ってフォルダー ターゲットを追加するには、次の手順を使用します。
 
-1.  **[スタート]** をクリックし、**[管理ツール]** をポイントして、**[DFS 管理]** をクリックします。
+1.  **[スタート]** をクリックし、 **[管理ツール]** をポイントして、 **[DFS 管理]** をクリックします。
 
-2.  コンソール ツリーの **[名前空間]** ノードで、フォルダーを右クリックし、**[フォルダー ターゲットを追加]** をクリックします。
+2.  コンソール ツリーの **[名前空間]** ノードで、フォルダーを右クリックし、 **[フォルダー ターゲットを追加]** をクリックします。
 
-3.  フォルダー ターゲットのパスを入力するか、**[参照]** をクリックしてフォルダー ターゲットを見つけます。
+3.  フォルダー ターゲットのパスを入力するか、 **[参照]** をクリックしてフォルダー ターゲットを見つけます。
 
 4.  フォルダーが DFS レプリケーションを使ってレプリケートされる場合、レプリケーション グループに新しいフォルダー ターゲットを追加するかどうかを指定できます。
 
@@ -41,6 +41,6 @@ DFS の管理を使ってフォルダー ターゲットを追加するには、
 
 ## <a name="see-also"></a>関連項目
 
--   [DFS 名前空間を展開します。](deploying-dfs-namespaces.md)
--   [Delegate Management Permissions for DFS 名前空間](delegate-management-permissions-for-dfs-namespaces.md)
--   [DFS レプリケーションを使用してフォルダー ターゲットをレプリケートします。](replicate-folder-targets-using-dfs-replication.md)
+-   [DFS 名前空間を展開する](deploying-dfs-namespaces.md)
+-   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)
+-   [DFS レプリケーションを使用してフォルダーターゲットをレプリケートする](replicate-folder-targets-using-dfs-replication.md)

@@ -7,14 +7,14 @@ ms.author: billmath
 manager: samueld
 ms.date: 01/18/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 058433f98d986c0daa720dd19f283135763cfe30
-ms.sourcegitcommit: c307886e96622e9595700c94128103b84f5722ce
+ms.openlocfilehash: 82d826d41e95be18fba689706025ce6f5195f726
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70108755"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407661"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>ユーザー証明書認証の AD FS の構成
 
@@ -54,7 +54,7 @@ Chrome 用にこれを構成する方法の詳細については、こちらの[
 このドキュメントでは、ユーザーの証明書認証用に AD FS が構成されている場合の一般的な問題のトラブルシューティングに焦点を当てています。 
 
 ### <a name="check-if-certificate-trusted-issuers-is-configured-properly-in-all-the-ad-fswap-servers"></a>証明書の信頼された発行者がすべての AD FS/WAP サーバーで適切に構成されているかどうかを確認する
-*一般的な症状:HTTP 204 "からの https://certuath.adfs.contoso.com コンテンツはありません"*
+*一般的な症状:HTTP 204 "https\://certuath.adfs.contoso.com からのコンテンツはありません"*
 
 AD FS は、基になる windows オペレーティングシステムを使用してユーザー証明書を所有していることを証明し、証明書信頼チェーン検証を行って信頼された発行者と一致していることを確認します。 信頼された発行者と一致させるには、すべてのルートと中間機関がローカルコンピューターの証明機関ストアの信頼された発行者として構成されていることを確認する必要があります。 これを自動的に検証するには、 [AD FS 診断アナライザーツール](https://adfshelp.microsoft.com/DiagnosticsAnalyzer/Analyze)を使用してください。 このツールはすべてのサーバーに対してクエリを行い、適切な証明書が正しくプロビジョニングされていることを確認します。 
 1)  上記のリンクに記載されている手順に従って、ツールをダウンロードして実行します。
@@ -76,7 +76,7 @@ AD FS は、AD FS と同じホスト名を持つポート49443で、既定でユ
 2)  各 AD FS/WAP サーバーで、使用されているプロトコル (通常は HTTPS または HTTP) を介して CRL エンドポイントに到達可能であることを確認します。
 3)  高度な検証を行うには、各 AD FS/WAP サーバーで[CAPI2 イベントログを有効に](https://blogs.msdn.microsoft.com/benjaminperkins/2013/09/30/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues/)します。
 4) CAPI2 操作ログでイベント ID 41 (失効の確認) を確認します。
-5) 確認する対象`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>’`
+5) 確認する対象`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>'`
 
 ***ヒント***:特定のサーバーを指すように DNS 解決 (Windows 上の HOSTS ファイル) を構成することで、トラブルシューティングを容易にするために1つの AD FS または WAP サーバーを対象にすることができます。 これにより、サーバーを対象とするトレースを有効にすることができます。 
 

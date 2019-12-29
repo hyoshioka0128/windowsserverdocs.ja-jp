@@ -1,8 +1,8 @@
 ---
-title: 'secedit: 検証'
-description: 'Windows コマンド」のトピック * * *- '
+title: 'secedit: validate'
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cca64f6b2904ed11f6b45e316c8e4da0093c373e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ece0a0324b77eb4226b679bc29f7bd599f15a120
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877913"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371103"
 ---
-# <a name="seceditvalidate"></a>secedit: 検証
+# <a name="seceditvalidate"></a>secedit: validate
 
 
 
@@ -39,7 +39,7 @@ Secedit /validate <configuration file name>
 |---------|-----------|
 |構成ファイルの名前|必須。</br>検証で適用するセキュリティ テンプレートのパスとファイル名を指定します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 セキュリティ テンプレートを検証する場合に役立ちますが破損しているまたは不適切に設定します。
 
@@ -58,6 +58,6 @@ Secedit /validate secRBKcontoso.inf
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [secedit:generaterollback](secedit-generaterollback.md)
+-   [Secedit:generaterollback](secedit-generaterollback.md)
 -   [Secedit](secedit.md)
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

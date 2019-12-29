@@ -6,14 +6,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/21/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bfa305103e81f316dc5ad5df22cd238f6fb5ec31
-ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
+ms.openlocfilehash: 5985fc022a084e0e36e12ea60f18d1650c8c6b51
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314343"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366205"
 ---
 # <a name="ad-fs-troubleshooting---events-and-logging"></a>AD FS のトラブルシューティング-イベントとログ
 AD FS は、トラブルシューティングで使用できる2つの主要なログを提供します。  これらは次のとおりです。

@@ -1,49 +1,49 @@
 ---
 title: ドメインに参加しているデバイスの公開キー認証
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 7bd17803-6e42-4a3b-803f-e47c74725813
 manager: alanth
 author: michikos
 ms.technology: security-authentication
 ms.date: 08/18/2017
-ms.openlocfilehash: 80906e7cfe3740200938704a4b4eaf0759af303a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 616ebf1a8e01f84618d22d535609a0dc8414d718
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885033"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403496"
 ---
 # <a name="domain-joined-device-public-key-authentication"></a>ドメインに参加しているデバイスの公開キー認証
 
 >適用対象:Windows Server 2016 の場合は Windows 10
 
-Kerberos には、Windows Server 2012 および Windows 8 で証明書の先頭を使用してサインインをドメインに参加しているデバイスのサポートが追加されます。 この変更により、サードパーティのベンダーをプロビジョニングして、ドメインの認証に使用するドメインに参加しているデバイスの証明書を初期化するソリューションを作成します。 
+Kerberos では、Windows Server 2012 および Windows 8 以降の証明書を使用してサインインするために、ドメインに参加しているデバイスのサポートが追加されました。 この変更により、サードパーティベンダーは、ドメインに参加しているデバイスでドメイン認証に使用する証明書をプロビジョニングおよび初期化するソリューションを作成できます。 
 
 ## <a name="automatic-public-key-provisioning"></a>自動公開キーのプロビジョニング
 
-Windows 10 バージョン 1507、Windows Server 2016 以降、ドメイン参加済みデバイスは自動的に、Windows Server 2016 ドメイン コント ローラー (DC) にバインドされている公開キーをプロビジョニングします。 キーをプロビジョニングすると、Windows は、ドメインに公開キー認証を使用することができます。
+Windows 10 バージョン1507および Windows Server 2016 以降では、ドメインに参加しているデバイスによって、バインドされた公開キーが Windows Server 2016 ドメインコントローラー (DC) に自動的にプロビジョニングされます。 キーがプロビジョニングされると、Windows は公開キー認証をドメインに使用できるようになります。
 
-### <a name="public-key-generation"></a>パブリック キーの生成
-Credential Guard を実行してデバイスの場合は、公開キーが Credential Guard で保護されて作成されます。 
+### <a name="public-key-generation"></a>公開キーの生成
+デバイスで Credential Guard が実行されている場合は、Credential Guard によって保護される公開キーが作成されます。 
 
-Credential Guard をご利用いただけません、TPM は、の場合は、公開キーが TPM によって保護されている作成されます。 
+Credential Guard が使用できず、TPM がの場合は、公開キーが TPM によって保護されます。 
 
-使用可能な場合、どちらもキーは生成されませんし、デバイスは、パスワードを使用してのみ認証できます。
+どちらも使用できない場合、キーは生成されず、デバイスはパスワードを使用してのみ認証できます。
 
-### <a name="provisioning-computer-account-public-key"></a>コンピューター アカウントのパブリック キーのプロビジョニング
-Windows の起動時に、コンピューター アカウントの公開キーがプロビジョニングされるかどうかが確認されます。 できない場合は、バインドされた公開キーを生成し、Windows Server 2016 または高い DC を使用して AD でそのアカウントを構成します。 すべての Dc が下位レベルの場合は、キーが提供されません。
+### <a name="provisioning-computer-account-public-key"></a>コンピューターアカウントの公開キーを準備しています
+Windows が起動すると、そのコンピューターアカウントに公開キーがプロビジョニングされているかどうかを確認します。 そうでない場合は、バインドされた公開キーを生成し、Windows Server 2016 以降の DC を使用して AD のアカウント用に構成します。 すべての Dc がダウンレベルの場合、キーはプロビジョニングされません。
 
-### <a name="configuring-device-to-only-use-public-key"></a>公開キーのみを使用するデバイスを構成します。
-場合、グループ ポリシー設定**証明書を使用してデバイス認証のサポート**に設定されている**Force**デバイスは、Windows Server 2016 を実行している DC を検索するか、後で認証を必要があります。 管理用テンプレートは、設定 > システム > Kerberos。
+### <a name="configuring-device-to-only-use-public-key"></a>公開キーのみを使用するようにデバイスを構成する
+**[証明書を使用したデバイス認証のサポート]** をグループポリシー設定 が **[強制]** に設定されている場合、デバイスは、Windows Server 2016 以降を実行している DC を認証する必要があります。 この設定は、[管理用テンプレート > システム > Kerberos] の下にあります。
 
-### <a name="configuring-device-to-only-use-password"></a>のみのパスワードを使用するデバイスを構成します。
-場合、グループ ポリシー設定**証明書を使用してデバイス認証のサポート**が無効で、パスワードが常に使用します。 管理用テンプレートは、設定 > システム > Kerberos。
+### <a name="configuring-device-to-only-use-password"></a>パスワードのみを使用するようにデバイスを構成する
+[**証明書を使用したデバイス認証のサポート**をグループポリシー設定] が無効になっている場合は、常にパスワードが使用されます。 この設定は、[管理用テンプレート > システム > Kerberos] の下にあります。
 
-## <a name="domain-joined-device-authentication-using-public-key"></a>公開キーを使用してドメイン参加済みデバイスの認証
-Windows ドメイン参加済みデバイスの証明書が Kerberos 最初を使用して認証証明書とパスワードを使用してエラーの再試行します。 これにより、ダウンレベルのドメイン コント ローラーへの認証にデバイスができます。
+## <a name="domain-joined-device-authentication-using-public-key"></a>公開キーを使用した、ドメインに参加しているデバイスの認証
+Windows がドメインに参加しているデバイス用の証明書を持っている場合、Kerberos はまず、証明書を使用して認証を行い、パスワードを使用して失敗したときに再試行します。 これにより、デバイスはダウンレベルの Dc に対して認証を行うことができます。
 
-自動的にプロビジョニングされたパブリック キーがあるため、自己署名証明書、キー信頼アカウントのマッピングをサポートしていないドメイン コント ローラーで証明書の検証が失敗します。 既定では、Windows は、デバイスのドメインのパスワードを使用して認証を再試行します。
+自動的にプロビジョニングされた公開キーには自己署名証明書があるため、キー信頼アカウントマッピングをサポートしていないドメインコントローラーでは証明書の検証に失敗します。 既定では、Windows はデバイスのドメインパスワードを使用して認証を再試行します。
 
 

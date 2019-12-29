@@ -1,8 +1,8 @@
 ---
 title: break
-description: Windows コマンド」のトピック**break** -2 つのシンプル ボリュームにフォーカスがあるミラー化されたボリュームを分割します。
+description: Windows コマンドに関するトピックでは、ミラーボリューム**を分割し**、2つのシンプルボリュームにフォーカスを移します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4934e4d2d0f74a5b3ac1944e230f55282a712898
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9a2501c2a72ec216dad294a187f21ab2c86155e2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847623"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379820"
 ---
 # <a name="break"></a>break
 
 
 
-フォーカスのあるミラー化されたボリュームを 2 つのシンプル ボリュームに分割します。
+フォーカスがあるミラーボリュームを2つのシンプルボリュームに分割します。
 

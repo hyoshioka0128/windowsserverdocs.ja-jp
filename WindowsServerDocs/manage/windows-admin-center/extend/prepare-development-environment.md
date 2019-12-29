@@ -7,19 +7,19 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 09/18/2018
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 7b1a0672ee374f3e2d1339c43576db0e5cabdc36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.prod: windows-server
+ms.openlocfilehash: 2aff8c0e43c6813c543511e643471c9cd9bcc292
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834763"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357036"
 ---
 # <a name="prepare-your-development-environment"></a>開発環境の準備
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
-Windows Admin Center SDK を使用して拡張機能の開発を始めましょう。  このドキュメントでは、環境を構築し、Windows Admin Center の拡張機能をテストする稼働させるためのプロセスを説明します。
+Windows 管理センター SDK を使用して拡張機能の開発を開始しましょう。  このドキュメントでは、Windows 管理センターの拡張機能をビルドしてテストするために、環境を稼働させるためのプロセスについて説明します。
 
 > [!NOTE]
 > Windows Admin Center SDK を初めて使用する場合  [Windows Admin Center の拡張機能](extensibility-overview.md)の詳細
@@ -30,9 +30,9 @@ Windows Admin Center SDK を使用して拡張機能の開発を始めましょ�
 
 SDK で開発を開始するには、次の前提条件をダウンロードしてインストールします。
 
-* [Windows Admin Center](https://aka.ms/WACDownloadPage) (GA またはプレビュー バージョン)
+* [Windows 管理センター](https://aka.ms/WACDownloadPage)(GA またはプレビューバージョン)
 * Visual Studio または [Visual Studio Code](http://code.visualstudio.com)
-* [Node Package Manager](https://npmjs.com/get-npm) (8.12.0 またはそれ以降)
+* [ノードパッケージマネージャー](https://npmjs.com/get-npm)(8.12.0 以降)
 * [Nuget](https://www.nuget.org/downloads) (拡張機能の公開用)
 
 > [!NOTE]
@@ -42,9 +42,9 @@ SDK で開発を開始するには、次の前提条件をダウンロードし�
 >
 > ```msiexec /i WindowsAdminCenter<version>.msi DEV_MODE=1```
 
-## <a name="install-global-dependencies"></a>グローバルの依存関係をインストールします。
+## <a name="install-global-dependencies"></a>グローバル依存関係のインストール
 
-次に、インストールや、ノード パッケージ マネージャーで、プロジェクトに必要な依存関係を更新します。 これらの依存関係は、グローバルにインストールされ、すべてのプロジェクトで使用可能になります。
+次に、ノードパッケージマネージャーを使用して、プロジェクトに必要な依存関係をインストールまたは更新します。 これらの依存関係は、グローバルにインストールされ、すべてのプロジェクトで使用可能になります。
 
 ```
 npm install -g npm
@@ -58,18 +58,18 @@ npm install -g windows-admin-center-cli
 ```
 
 >[!NOTE]
->以降のバージョンをインストールする@angular/cli、ただし 1.6.5 より新しいバージョンをインストールする場合、ローカルの cli バージョンがインストールされているバージョンと一致しないこと、gulp のビルド手順の中に警告が表示されることに注意します。
+>新しいバージョンの@angular/cliをインストールすることはできますが、1.6.5 よりも大きいバージョンをインストールすると、gulp のビルド手順で、ローカル cli のバージョンがインストールされているバージョンと一致しないという警告が表示されます。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
-これで、お客様の環境を準備するは、コンテンツの作成を開始する準備が完了したら。
+環境が準備できたので、コンテンツの作成を開始する準備ができました。
 
 - [ツール](develop-tool.md)の拡張機能の作成
 - [ソリューション](develop-solution.md)の拡張機能の作成
 - [ゲートウェイのプラグイン](develop-gateway-plugin.md)の作成
 - [ガイド](guides.md)での詳細の確認
 
-## <a name="sdk-design-toolkit"></a>SDK のデザイン ツールキット
+## <a name="sdk-design-toolkit"></a>SDK design toolkit
 
-チェック アウト、Windows Admin Center [SDK デザイン ツールキット](https://github.com/Microsoft/windows-admin-center-sdk/blob/master/WindowsAdminCenterDesignToolkit.zip)! このツールキットは、Windows Admin Center スタイル、コントロール、およびページ テンプレートを使用して PowerPoint の拡張機能を迅速に模擬テストを実行するために設計されています。 拡張機能はどのように Windows Admin Center でコーディングを開始する前に参照してください。
+Windows 管理センター [SDK design toolkit](https://github.com/Microsoft/windows-admin-center-sdk/blob/master/WindowsAdminCenterDesignToolkit.zip)をご覧ください。 このツールキットは、Windows 管理センターのスタイル、コントロール、およびページテンプレートを使用して、PowerPoint の拡張機能を迅速にモックアップできるように設計されています。 コーディングを開始する前に、Windows 管理センターで拡張機能がどのように表示されるかを確認してください。
 

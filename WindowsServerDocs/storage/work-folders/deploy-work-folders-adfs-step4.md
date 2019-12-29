@@ -1,40 +1,40 @@
 ---
-title: 'AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 4: Web アプリケーション プロキシのセットアップ'
-ms.prod: windows-server-threshold
+title: AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開 - 手順 4、Web アプリケーション プロキシの設定
+ms.prod: windows-server
 ms.technology: storage-work-folders
 ms.topic: article
 manager: klaasl
 ms.author: jeffpatt
 author: JeffPatt24
-ms.date: 6/242017
+ms.date: 6/24/2017
 ms.assetid: 4a11ede0-b000-4188-8190-790971504e17
-ms.openlocfilehash: 4cbf85f8413353801f048f253859c9f3ef9c7691
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 17adf89d3a26767bbc736a31da7b7b2b204570a2
+ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812555"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74945230"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 4 では、Web アプリケーション プロキシのセットアップ
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 4: Web アプリケーション プロキシのセットアップ
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Active Directory フェデレーション サービス (AD FS) と Web アプリケーション プロキシを使用して、ワーク フォルダーを展開する 4 番目の手順について説明します。 このプロセスの他の手順は、次のトピックで確認できます。  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。概要](deploy-work-folders-adfs-overview.md)  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 概要](deploy-work-folders-adfs-overview.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 1、AD FS の設定](deploy-work-folders-adfs-step1.md)  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 1. AD FS を設定する](deploy-work-folders-adfs-step1.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 2 では、AD FS の構成後の作業](deploy-work-folders-adfs-step2.md)  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順2、AD FS 構成後の作業](deploy-work-folders-adfs-step2.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 3 では、ワーク フォルダーの設定](deploy-work-folders-adfs-step3.md)  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 3. ワークフォルダーを設定する](deploy-work-folders-adfs-step3.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 5 では、クライアントをセットアップします。](deploy-work-folders-adfs-step5.md)  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順5、クライアントをセットアップする](deploy-work-folders-adfs-step5.md)  
 
 > [!NOTE]
->   このセクションで説明する手順については、Windows Server 2019 または Windows Server 2016 環境です。 Windows Server 2012 R2 を使用している場合には、[Windows Server 2012 R2 の手順](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx) に従います。
+>   このセクションで説明する手順は、Windows Server 2019 または Windows Server 2016 環境向けです。 Windows Server 2012 R2 を使用している場合には、[Windows Server 2012 R2 の手順](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx) に従います。
 
-ワーク フォルダーで使用する Web アプリケーション プロキシをセットアップするには、次の手順を使用します。  
+ワーク フォルダーで使用する Web アプリケーション プロキシを設定するには、次の手順を使用します。  
   
 ## <a name="install-the-ad-fs-and-work-folder-certificates"></a>AD FS とワーク フォルダーの証明書のインストール  
 手順 1、AD FS の設定、および手順 3、ワーク フォルダーの設定で作成した、AD FS とワーク フォルダーの証明書を、Web アプリケーション プロキシの役割をインストールするローカル コンピューターの証明書ストアにインストールする必要があります。  
@@ -43,7 +43,7 @@ ms.locfileid: "66812555"
   
 証明書をインストールするには、以下の手順を実行します。  
   
-1.  **[スタート]** ボタンをクリックして **[ファイル名を指定して実行]** をクリックします。  
+1.  **[スタート]** をクリックし、 **[実行]** をクリックします。  
   
 2.  「**MMC**」と入力します。  
   
@@ -88,7 +88,7 @@ Web アプリケーション プロキシをインストールするには、次
   
 6.  **[役割サービス]** ページで **[Web アプリケーション プロキシ]** を選択して、 **[機能の追加]** をクリックして、 **[次へ]** をクリックします。
 
-7.  **[インストール オプションの確認]** ページで、 **[インストール]** をクリックします。  
+7.  **[Confirm installation selections]** ページで、 **[Install]** をクリックします。  
   
 ## <a name="configure-web-application-proxy"></a>Web アプリケーション プロキシの構成  
 Web アプリケーション プロキシを構成するには、次の手順に従います。  
@@ -103,7 +103,7 @@ Web アプリケーション プロキシを構成するには、次の手順に
   
 5.  **[AD FS プロキシの証明書]** ページで、以前にインポートした AD FS 証明書を選択します。 このテストの例では、**blueadfs.contoso.com** です。 **[次へ]** をクリックします。  
   
-6.  確認ページでは、サービスの構成を実行する、Windows PowerShell コマンドが表示されます。 をクリックして**構成**です。  
+6.  確認ページでは、サービスの構成を実行する、Windows PowerShell コマンドが表示されます。 **[構成]** をクリックします。  
   
 ## <a name="publish-the-work-folders-web-application"></a>ワーク フォルダーの Web アプリケーションの公開  
 次の手順では、クライアントでワーク フォルダーを利用可能にする、Web アプリケーションを公開します。 ワーク フォルダー Web アプリケーションを公開するには、次の手順に従います。  
@@ -136,23 +136,23 @@ Web アプリケーション プロキシを構成するには、次の手順に
   
    テストの例では、以下の値を使います。  
   
-   名前:**WorkFolders**  
+   名前: **WorkFolders**  
   
    外部 URL: **https://workfolders.contoso.com**  
   
-   外部の証明書:**以前にインストールしたワーク フォルダーの証明書**  
+   外部証明書:**以前にインストールしたワーク フォルダー証明書**  
   
-   バックエンド サーバーの URL: **https://workfolders.contoso.com**  
+   バックエンドサーバーの URL: **https://workfolders.contoso.com**  
   
-9. 確認ページでは、アプリケーションの公開を実行する、Windows PowerShell コマンドが表示されます。 **[パブリッシュ]** をクリックします。  
+9. 確認ページでは、アプリケーションの公開を実行する、Windows PowerShell コマンドが表示されます。 **[公開]** をクリックします。  
   
 10. **[結果]** ページで、アプリケーションが正常に公開されたことを確認します。
     >[!NOTE]
     > ワーク フォルダー サーバーが複数ある場合は、ワーク フォルダー サーバーごとに手順 1 ～ 10 を繰り返して、ワーク フォルダー Web アプリケーションを公開する必要があります。  
   
-次のステップ:[AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 5 では、クライアントをセットアップします。](deploy-work-folders-adfs-step5.md)  
+次の手順: [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 5、クライアントの設定](deploy-work-folders-adfs-step5.md)  
   
-## <a name="see-also"></a>関連項目  
-[ワーク フォルダーの概要](Work-Folders-Overview.md)  
+## <a name="see-also"></a>参照  
+[ワークフォルダーの概要](Work-Folders-Overview.md)  
   
 

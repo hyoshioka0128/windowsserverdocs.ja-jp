@@ -1,8 +1,8 @@
 ---
 title: serverceipoptin
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fca2497af308faf298e1df03d8b07c68bf9e8b98
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f400a8f66f15e5a138cf355ad54d276cfa7f3ce3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840563"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371006"
 ---
 # <a name="serverceipoptin"></a>serverceipoptin
 
@@ -32,7 +32,7 @@ serverceipoptin [/query] [/enable] [/disable]
 ### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-|/query|現在の設定を確認します。|
+|/query|現在の設定を検証します。|
 |/enable|参加を有効にします。|
 |/disable|参加を無効にします。|
 |/?|コマンド プロンプトにヘルプを表示します。|
@@ -49,6 +49,6 @@ serverceipoptin /enable
 ```
 serverceipoptin /disable
 ```
-## <a name="additional-references"></a>その他の参照
--   [コマンドライン構文キー](command-line-syntax-key.md)
+## <a name="additional-references"></a>その他の参照情報
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)
 

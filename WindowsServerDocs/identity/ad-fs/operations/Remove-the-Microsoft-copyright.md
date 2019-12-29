@@ -1,28 +1,28 @@
 ---
 ms.assetid: c89a977c-b09f-44ec-be42-41e76a6cf3ad
-title: Microsoft 著作権情報を削除します。
+title: Microsoft 著作権情報を削除する
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6e15f9d1490ad62f1458cd32da6e78a6febec58d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 0c24173dd03e03f9e8a19ef5981a6dc1259d62d7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189028"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407516"
 ---
-# <a name="remove-the-microsoft-copyright"></a>Microsoft 著作権情報を削除します。 
+# <a name="remove-the-microsoft-copyright"></a>Microsoft 著作権情報を削除する 
 
 
  
-既定では、AD FS ページには Microsoft 著作権情報が含まれます。 この著作権情報をカスタマイズ済みページから削除するには、次の手順に従います。 
+既定では、AD FS のページには Microsoft 著作権情報が含まれています。 この著作権情報をカスタマイズ済みページから削除するには、次の手順に従います。 
 
-![著作権情報を削除します。](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1.png) 
+![著作権情報の削除](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1.png) 
   
 ## <a name="to-remove-the-microsoft-copyright"></a>Microsoft 著作権情報を削除するには  
   
@@ -38,9 +38,9 @@ ms.locfileid: "66189028"
    Export-AdfsWebTheme -Name custom -DirectoryPath C:\CustomWebTheme
    ```
 
-3. 検索、`Style.css`出力フォルダーにあるファイル。 前の例を使用すると、パスになります。 `C:\CustomWebTheme\Css\Style.css.`
+3. 出力フォルダーにある `Style.css` ファイルを見つけます。 前の例を使用すると、パスは `C:\CustomWebTheme\Css\Style.css.`
   
-4. 開く、`Style.css`ファイルをメモ帳などのエディター。  
+4. メモ帳などのエディターを使用して、`Style.css` ファイルを開きます。  
   
 5. `#copyright` の部分を見つけたら、次のように変更します。  
 
@@ -48,7 +48,7 @@ ms.locfileid: "66189028"
    #copyright {color:#696969; display:none;}
    ```
 
-6. 新しいに基づいているカスタム テーマを作成する`Style.css`ファイル。  
+6. 新しい `Style.css` ファイルに基づいたカスタムテーマを作成します。  
 
    ```powershell
    Set-AdfsWebTheme -TargetName custom -StyleSheet @{locale="";path="C:\customWebTheme\css\style.css"}
@@ -60,9 +60,9 @@ ms.locfileid: "66189028"
    Set-AdfsWebConfig -ActiveThemeName custom
    ```
 
-ここで、サインイン ページの下部の著作権を不要になった表示されます。
+サインインページの下部に著作権情報が表示されなくなります。
 
-![著作権情報を削除します。](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1a.png) 
+![著作権情報の削除](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom1a.png) 
 
 ## <a name="additional-references"></a>その他の参照情報 
-[AD FS のユーザー サインイン カスタマイズ](AD-FS-user-sign-in-customization.md) 
+[AD FS ユーザーサインインのカスタマイズ](AD-FS-user-sign-in-customization.md) 

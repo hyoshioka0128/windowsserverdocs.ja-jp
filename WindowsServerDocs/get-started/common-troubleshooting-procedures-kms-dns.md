@@ -1,21 +1,21 @@
 ---
-title: KMS と DNS の問題に関する一般的なトラブルシューティング手順
+title: DNS に関連するライセンス認証の問題のトラブルシューティングに関するガイドライン
 description: ''
 ms.topic: article
-ms.date: 07/22/2019
+ms.date: 09/10/2019
 ms.technology: server-general
 ms.assetid: ''
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 12e3c1fa82a567c43507df2f2ffd72595c3903ba
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 3165c926c50c2f91544895e0d328f1dae7424b4a
+ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68664894"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72588036"
 ---
-# <a name="common-troubleshooting-procedures-for-kms-and-dns-issues"></a>KMS と DNS の問題に関する一般的なトラブルシューティング手順
+# <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>DNS に関連するライセンス認証の問題のトラブルシューティングに関するガイドライン
 
 次の条件の 1 つ以上に該当する場合は、これらの方法のいくつかを使用する必要があります。
 

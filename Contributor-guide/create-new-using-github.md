@@ -4,12 +4,12 @@ description: GitHub と Visual Studio Code を使用して、Microsoft の従業
 author: eross-msft
 ms.author: lizross
 ms.date: 05/02/2019
-ms.openlocfilehash: f5e7e3d0cd17c64175fddaaac73c12daa2c2a32c
-ms.sourcegitcommit: ffd9c42374c7448deb5f53f7a865cb427b5e4e9e
+ms.openlocfilehash: 3f09c36c1e3960728ff016f5801deb854e3d3c96
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887948"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865064"
 ---
 # <a name="create-new-windows-server-articles-using-github-and-visual-studio-code"></a>GitHub と Visual Studio Code を使用して新しい Windows Server の記事を作成する
 
@@ -17,7 +17,7 @@ Windows Server の技術コンテンツを保持する場所は2つあります�
 
 - **私は Microsoft の従業員です。** Microsoft の従業員は、何をしようとしているかに応じて、オプションがあります。
 
-    - **新しい記事を作成します。** 新しい記事を作成するには、GitHub アカウントとツールを作成して設定し、windowsserverdocs-pr リポジトリをフォークして複製し、リモートブランチを設定して、記事を作成し、最後に承認と発行のための新しいプル要求を作成する必要があります。 この手順については、この記事の内容をお読みください。
+    - **新しい記事を作成します。** 新しい記事を作成するには、GitHub アカウントとツールの作成と設定、windowsserverdocs-pr リポジトリのフォークと複製、リモート ブランチの設定、記事の作成をする必要があり、最後に承認および発行するための新しいプル要求を作成します。 この手順については、この記事の内容をお読みください。
 
     - **既存の記事に大きな変更を加えます。** 既存の記事に大幅な変更を加えるには、GitHub を使用した[既存の Windows Server の編集に関する記事と Visual Studio Code](edit-existing-using-github.md)の記事の手順に従ってください。
 

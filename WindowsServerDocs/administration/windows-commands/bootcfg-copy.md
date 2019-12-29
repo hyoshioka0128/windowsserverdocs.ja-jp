@@ -1,8 +1,8 @@
 ---
 title: bootcfg copy
-description: Windows コマンド」のトピック**bootcfg コピー** -コマンド ライン オプションに追加することができます、既存のブート エントリのコピーを作成します。
+description: '**Bootcfg copy**の Windows コマンドに関するトピックでは、既存のブートエントリのコピーを作成します。これには、コマンドラインオプションを追加できます。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b76ecfe953d1a462e311fdaaeba35e8f962165c4
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 42a408443cbe6722c25780f7c27d70b05da7eb8e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434861"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380121"
 ---
 # <a name="bootcfg-copy"></a>bootcfg copy
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-コマンド ライン オプションを追加することができます、既存のブート エントリのコピーを作成します。
+既存のブートエントリのコピーを作成します。これには、コマンドラインオプションを追加できます。
 
 ## <a name="syntax"></a>構文
 ```
@@ -35,16 +35,16 @@ bootcfg /copy [/s <computer> [/u <Domain>\<User> /p <Password>]] [/d <Descriptio
 |      パラメーター       |                                                                                             説明                                                                                             |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    /s <computer>     |                                         名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定はローカル コンピュータです。                                          |
-| /u <Domain>\\<User>  | 指定されたユーザーのアカウント権限でコマンドを実行<User>または<Domain> \\<User>します。 既定では現在のコマンドを実行するコンピューターのユーザー ログオンのアクセス許可です。 |
+| /u <Domain>\\<User>  | <User>または <Domain>\\<User>によって指定されたユーザーのアカウントアクセス許可を使用してコマンドを実行します。 既定値は、コマンドを実行しているコンピューターの現在のログオンユーザーのアクセス許可です。 |
 |    /p <Password>     |                                                        指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。                                                        |
-|   /d <Description>   |                                                                    新しいオペレーティング システム エントリの説明を指定します。                                                                    |
-| /id <OSEntryLineNum> |         コピーする Boot.ini ファイルの [operating systems] セクションでは、オペレーティング システム エントリの行番号を指定します。 [オペレーティング システム] セクション ヘッダーの後の最初の行には 1 です。         |
+|   /d <Description>   |                                                                    新しいオペレーティングシステムエントリの説明を指定します。                                                                    |
+| /id <OSEntryLineNum> |         コピーする Boot.ini ファイルの [オペレーティングシステム] セクションにあるオペレーティングシステムエントリの行番号を指定します。 [オペレーティングシステム] セクションヘッダーの後の最初の行は1です。         |
 |          /?          |                                                                                コマンド プロンプトにヘルプを表示します。                                                                                 |
 
 ## <a name="BKMK_examples"></a>例
-次の例を使用する方法、 **bootcfg/copy** 1 のブート エントリをコピーしてコマンド"\ABC Server\\"説明として。
+次の例では、 **bootcfg/copy**コマンドを使用してブートエントリ1をコピーし、説明として「\ ABC Server\\」と入力する方法を示します。
 ```
 bootcfg /copy /d "\ABC Server\" /id 1
 ```
-#### <a name="additional-references"></a>その他の参照
+#### <a name="additional-references"></a>その他の参照情報
 [コマンド ライン構文の記号](command-line-syntax-key.md)

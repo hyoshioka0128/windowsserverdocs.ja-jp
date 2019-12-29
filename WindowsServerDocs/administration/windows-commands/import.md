@@ -1,8 +1,8 @@
 ---
 title: import
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ddef3958bc431519e3cb89b658a58d1f4dba6938
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 50a095c323806dd523994c36c5b427d4ecedf8ef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835263"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375496"
 ---
 # <a name="import"></a>import
 
 
 
-システムに読み込まれたメタデータ ファイルからの移植可能なシャドウ コピーをインポートします。
+読み込まれたメタデータファイルからシステムに転送可能なシャドウコピーをインポートします。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
@@ -34,14 +34,14 @@ ms.locfileid: "59835263"
 import
 ```
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   移動可能なシャドウ コピーはすぐに、システムでは保存されません。 その詳細は、DiskShadow は自動的に要求し、作業ディレクトリで .cab メタデータ ファイルに保存のバックアップ コンポーネント ドキュメントの XML ファイルに格納されます。 使用してこのファイルの名前とパスを変更することができます、**メタデータ設定**コマンド。
--   使用する前に**インポート**、DiskShadow メタデータ ファイルを使用して、読み込む必要があります、**メタデータの読み込み**コマンド。
+-   転送可能なシャドウコピーは、システムにすぐには保存されません。 これらの詳細は、バックアップコンポーネントドキュメント XML ファイルに格納されます。この XML ファイルは、自動的に要求され、.cab メタデータファイルを作業ディレクトリに保存します。 このファイルのパスと名前は、 **[メタデータの設定]** コマンドを使用して変更できます。
+-   **Import**を使用するには、 **[メタデータの読み込み]** コマンドを使用して、DiskShadow メタデータファイルを読み込む必要があります。
 
 ## <a name="BKMK_examples"></a>例
 
-使用方法を示すサンプル DiskShadow スクリプトを次に、**インポート**コマンド。
+**Import**コマンドの使用方法を示す DiskShadow スクリプトの例を次に示します。
 ```
 #Sample DiskShadow script demonstrating IMPORT
 SET CONTEXT PERSISTENT
@@ -61,4 +61,4 @@ IMPORT
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

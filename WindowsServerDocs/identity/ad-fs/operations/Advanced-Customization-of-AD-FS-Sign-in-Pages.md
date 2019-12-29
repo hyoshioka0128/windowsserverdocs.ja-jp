@@ -1,94 +1,94 @@
 ---
 ms.assetid: 882abec8-0189-4f73-99c5-792987168080
-title: AD FS サインイン ページのカスタマイズの詳細
+title: AD FS サインインページの高度なカスタマイズ
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 01/16/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: ee7bef2afe61500fe75b2d3c61b92b902f9757fa
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 35d2c6dfaf509434aa8f61099b8440138904d450
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444262"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407727"
 ---
-# <a name="advanced-customization-of-ad-fs-sign-in-pages"></a>AD FS サインイン ページのカスタマイズの詳細
+# <a name="advanced-customization-of-ad-fs-sign-in-pages"></a>AD FS サインインページの高度なカスタマイズ
 
   
-## <a name="advanced-customization-of-ad-fs-sign-in-pages"></a>AD FS のサインインのカスタマイズを高度な\-ページ  
-Windows Server 2012 R2 で AD FS は、ビルドを提供します。\-符号をカスタマイズするためのサポートの\-エクスペリエンス。 これらのシナリオは、組み込みの大半\-コマンドレットでは Windows PowerShell では必要なのです。  組み込みを使用することをお勧め\-AD FS の標準的な要素をカスタマイズする Windows PowerShell コマンドでは、サインイン\-エクスペリエンスが可能な場合。  参照してください[AD FS のユーザーのサインイン カスタマイズ](AD-FS-user-sign-in-customization.md)詳細についてはします。  
+## <a name="advanced-customization-of-ad-fs-sign-in-pages"></a>AD FS サインイン\-ページの高度なカスタマイズ  
+Windows Server 2012 R2 の AD FS には\-、サインイン\-エクスペリエンスをカスタマイズするためのサポートが組み込まれています。 これらのシナリオの大部分では、\-組み込みの Windows PowerShell コマンドレットが必要です。  組み込み\-の Windows PowerShell コマンドを使用して、可能な限り AD FS サインイン\-エクスペリエンスの標準要素をカスタマイズすることをお勧めします。  詳細については[、「AD FS ユーザーサインインのカスタマイズ](AD-FS-user-sign-in-customization.md)」を参照してください。  
   
-追加のサインインを提供する必要は場合によっては、AD FS 管理者\-れないエクスペリエンスで、既存の PowerShell コマンドに出荷する\-と AD FS のボックスです。 特定のインスタンスが可能な\(以下のガイドライン内\)符号をカスタマイズする管理者用\-エクスペリエンスで追加のロジックを追加することによってさらに**onload.js**ですAD FS によって提供され、AD FS のすべてのページで実行されます。  
+場合によっては、AD FS 管理者が、AD FS\-box で\-出荷される既存の PowerShell コマンドを使用して実行できない追加のサインインエクスペリエンスを提供することがあります。 特定のインスタンスでは、管理\(者がサインイン\-エクスペリエンスを\)さらにカスタマイズするために、次に示すガイドラインに従うことをお勧めし**ます。** これは、AD FS によって提供される追加のロジックを追加することにより、すべての AD FS ページで実行されます。  
   
-## <a name="things-to-know-before-you-start"></a>開始する前に知っておくべきこと  
+## <a name="things-to-know-before-you-start"></a>開始する前に理解しておくべきこと  
   
--   リダイレクトのフローに影響を与えますまたは AD FS の連携プロトコル パラメーターを変更する変更はサポートされていません。
+-   リダイレクトフローに影響を与える変更や、で動作する AD FS プロトコルパラメーターを変更することはサポートされていません。
   
--   既定の web テーマが付属している元の onload.js には、フォーム ファクター別のページのレンダリングを処理するコードが含まれています。 Onload.js の元のコンテンツの変更が、カスタム ロジックを処理する既存の onload.js にのみ、コードを追加していないことをお勧めします。  
+-   既定の web テーマに付属する元の onload には、さまざまなフォームファクターのページレンダリングを処理するコードが含まれています。 元の onload コンテンツを変更しないことをお勧めしますが、カスタムロジックを処理する既存の onload にコードを追加するだけです。  
   
--   AD FS が組み込まれているが付属しています\-と呼ばれる既定の web テーマです。 既定の web テーマの onload.js を変更することはできません。 Onload.js を更新するには、作成して AD FS のサインインのカスタム web テーマを使用する必要がある\-ページ。  参照してください[AD FS のユーザーのサインイン カスタマイズ](AD-FS-user-sign-in-customization.md)については、カスタム web テーマを作成する方法。  
+-   AD FS には、既定\-と呼ばれる組み込みの web テーマが付属しています。 既定の web テーマの onload を変更することはできません。 Onload を更新するには、AD FS サインイン\-ページのカスタム web テーマを作成して使用する必要があります。  カスタム web テーマを作成する方法については[、「AD FS ユーザーサインインのカスタマイズ](AD-FS-user-sign-in-customization.md)」を参照してください。  
   
--   ADFS のすべてのページの実行は同じ onload.js \(ex。 フォーム\-ベースのログオン ページ、ホーム領域検出ページなど\)します。 コードをスクリプトにのみ実行は設計されていて、予期しない実行されないことを確認する必要があります。  
+-   同じ onload がすべての ADFS ページ\(ex で実行されます。 フォーム\-ベースのログオンページ、ホーム領域検出ページ\)など。 スクリプト内のコードがデザイン時にのみ実行されるようにし、予期せずに実行されないようにする必要があります。  
   
--   任意の HTML 要素を参照するときに、要素で動作する前に、要素の存在をチェックを常に確認します。 これにより、堅牢性を提供し、カスタム ロジックをこの要素が含まれていないページで実行されませんが。 AD FS のサインインで単に HTML ソースを表示できます\-で既存の要素を表示するページ。  
+-   HTML 要素を参照する場合は、要素に対して動作する前に、必ず要素の存在を確認してください。 これにより、堅牢性が提供され、この要素が含まれていないページでカスタムロジックが実行されないようにします。 AD FS サインイン\-ページで HTML ソースを表示するだけで、既存の要素を表示できます。  
   
--   別の環境に、カスタマイズ設定を検証し、それらを運用環境に AD FS サーバーのロール アウトする前にテストを強くお勧めします。 これにより、エンド ユーザーを検証する前にこれらのカスタマイズに公開される可能性が減少します。  
+-   カスタマイズを代替環境で検証し、運用 AD FS サーバーにロールアウトする前にテストすることを強くお勧めします。 これにより、エンドユーザーが検証の前にこれらのカスタマイズに公開される可能性が低くなります。  
   
-## <a name="customizing-the-ad-fs-sign-in-experience-by-using-onloadjs"></a>AD FS のサインインのカスタマイズ\-onload.js を使用してエクスペリエンス  
-AD FS サービスの onload.js をカスタマイズする際に、次の手順を使用します。  
+## <a name="customizing-the-ad-fs-sign-in-experience-by-using-onloadjs"></a>Onload を使用し\-た AD FS サインインエクスペリエンスのカスタマイズ  
+AD FS サービスに対して onload をカスタマイズする場合は、次の手順に従います。  
   
-#### <a name="customizing-onloadjs-for-the-ad-fs-service"></a>AD FS サービスの onload.js をカスタマイズします。  
+#### <a name="customizing-onloadjs-for-the-ad-fs-service"></a>AD FS サービス用に onload をカスタマイズする  
   
-1.  Onload.js には、カスタム ロジックを追加するには、まず、カスタム web テーマを作成する必要があります。 同梱されているテーマ\-の\-、\-ボックスは既定値と呼ばれます。 既定のテーマをエクスポートして使用すると、カスタマイズを簡単に開始できます。 次のコマンドレットでは、既定の web テーマを複製するカスタム web テーマを作成します。  
+1.  カスタムロジックを onload に追加するには、最初にカスタム web テーマを作成する必要があります。 既定と呼ばれるのは\-、\-その\-まま出荷されるテーマです。 既定のテーマをエクスポートして使用すると、カスタマイズを簡単に開始できます。 次のコマンドレットは、既定の web テーマを複製するカスタム web テーマを作成します。  
   
     ```  
     New-AdfsWebTheme –Name custom –SourceName default  
   
     ```  
   
-2.  ユーザー設定をエクスポートしたり、既定の web テーマ onload.js ファイルを取得できます。 Web テーマをエクスポートするには、次のコマンドレットを使用します。  
+2.  その後、カスタムまたは既定の web テーマをエクスポートして、ファイルを取り込むことができます。 Web テーマをエクスポートするには、次のコマンドレットを使用します。  
   
     ```  
     Export-AdfsWebTheme –Name default –DirectoryPath c:\theme  
   
     ```  
   
-    Onload.js スクリプト フォルダーの下で見つかりますディレクトリ エクスポート コマンドレットは、上記で指定し、スクリプトに、カスタム ロジックを追加する\(を参照してください以下のセクションの例のユース ケース\)します。  
+    上記の export コマンドレットで指定したディレクトリのスクリプトフォルダーの下に、onload があることを確認し、カスタムロジックをスクリプト\(に追加します。次\)の「例」の「ユースケース」を参照してください。  
   
-3.  必要に応じて onload.js をカスタマイズするために必要な変更を行います。  
+3.  必要に応じて、onload をカスタマイズするために必要な変更を行います。  
   
-4.  変更された onload.js でテーマを更新します。 Update onload.js をカスタム web テーマを適用するには、次のコマンドレットを使用します。  
+4.  変更した onload でテーマを更新します。 次のコマンドレットを使用して、更新プログラムの onload をカスタム web テーマに適用します。  
 
-     Windows Server 2012 R2 で AD FS:  
+     Windows Server 2012 R2 の AD FS:  
 
     ```  
-    Set-AdfsWebTheme -TargetName custom -AdditionalFileResource @{Uri=’/adfs/portal/script/onload.js’;path="c:\theme\script\onload.js"}  
+    Set-AdfsWebTheme -TargetName custom -AdditionalFileResource @{Uri='/adfs/portal/script/onload.js';path="c:\theme\script\onload.js"}  
   
     ```  
-    Windows server 2016 の AD FS:
+    Windows Server 2016 の AD FS:
 
      ```  
     Set-AdfsWebTheme -TargetName custom -OnLoadScriptPath "c:\ADFStheme\script\onload.js"   
   
     ```  
   
-5.  AD FS には、カスタム web テーマを適用するには、次のコマンドレットを使用します。  
+5.  AD FS にカスタム web テーマを適用するには、次のコマンドレットを使用します。  
   
     ```  
     Set-AdfsWebConfig -ActiveThemeName custom  
     ```  
   
-## <a name="additional-customization-examples"></a>その他のカスタマイズ例  
-さまざまな細かい onload.js に追加されたカスタム コードの例を次に\-目的を調整します。 カスタム コードを追加する場合は、onload.js の下部に、カスタム コードを追加してください常にします。  
+## <a name="additional-customization-examples"></a>その他のカスタマイズの例  
+次に、さまざまな\-微調整を目的として、onload に追加されたカスタムコードの例を示します。 カスタムコードを追加するときは、必ずカスタムコードを onload の末尾に追加してください。  
   
-### <a name="example-1-change-sign-in-with-organizational-account-string"></a>例 1:「組織アカウントでサインイン」の文字列を変更します。  
-既定の AD FS のフォーム\-ベースのサインオン\- ページでユーザーの入力ボックスの上の「組織アカウントでサインイン」のタイトルが付いています。  
+### <a name="example-1-change-sign-in-with-organizational-account-string"></a>例 1: "組織のアカウントでサインインする" 文字列を変更する  
+既定の AD FS フォーム\-ベースの\-サインインページには、ユーザー入力ボックスの上に "組織のアカウントでサインイン" というタイトルが付いています。  
   
-この文字列を独自の文字列に置き換える場合は、onload.js に次のコードを追加できます。  
+この文字列を独自の文字列に置き換える場合は、次のコードを追加することができます。  
   
 ```  
 // Sample code to change “Sign in with organizational account” string.  
@@ -103,8 +103,8 @@ if (loginMessage)
   
 ```  
   
-### <a name="example-2-accept-sam-account-name-as-a-login-format-on-an-ad-fs-form-based-sign-in-page"></a>例 2: SAM を受け入れる\-アカウント名には、AD FS のフォームをログイン形式\-ベースのサインオン\- ページ  
-既定の AD FS フォーム\-ベースのサインオン\- ページでユーザー プリンシパル名のログインの形式をサポートしています\(Upn\) \(など<strong>johndoe@contoso.com</strong> \) 。ドメイン修飾 sam または\-アカウント名\( **contoso\\johndoe**または**contoso.com\\johndoe**\)します。 場合は、同じドメインから取得すべてのユーザーと sam について知らないのみ\-アカウント名、sam それらを使用して、ユーザーがサインインできる場所のシナリオをサポートするためにすることがあります\-アカウント名のみです。 このシナリオをサポートするには、ドメイン"contoso.com"の例では、以下を使用するドメインに置き換えます onload.js に次のコードを追加できます。  
+### <a name="example-2-accept-sam-account-name-as-a-login-format-on-an-ad-fs-form-based-sign-in-page"></a>例 2: AD FS フォーム\-\-ベースのサインイン\-ページで SAM アカウント名をログイン形式として受け入れる  
+既定の AD FS フォーム\-ベースの\-サインインページでは、ユーザープリンシパル名\) \( \(upn のログイン形式 ( <strong>johndoe@contoso.com</strong>たとえば、ドメイン修飾 sam \) \-)がサポートされています。アカウント名\( **contosojohndoe\\** また**はcontoso.com\\johndoe。** \) すべてのユーザーが同じドメインからのものであり、sam\-アカウント名のみを認識している場合は、ユーザーが sam\-アカウント名のみを使用してサインインできるシナリオをサポートすることをお勧めします。 次のコードを、このシナリオをサポートするために、次の例のドメイン "contoso.com" を使用するドメインに置き換えるだけで、このシナリオをサポートすることができます。  
   
 ```  
 if (typeof Login != 'undefined'){  
@@ -137,6 +137,6 @@ if (typeof Login != 'undefined'){
 ```  
   
 ## <a name="additional-references"></a>その他の参照情報 
-[AD FS のユーザー サインイン カスタマイズ](AD-FS-user-sign-in-customization.md)  
+[AD FS ユーザーサインインのカスタマイズ](AD-FS-user-sign-in-customization.md)  
   
 

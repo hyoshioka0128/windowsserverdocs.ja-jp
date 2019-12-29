@@ -1,8 +1,8 @@
 ---
-title: 非公開にします
-description: 'Windows コマンド」のトピック * * *- '
+title: を非公開
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fe9cb5dfd8ae6c71fdc72ddc1e8421229f98f5d0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e10126739ef82b060e271e9b804a77658b5ec82
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837473"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392267"
 ---
-# <a name="unexpose"></a>非公開にします
+# <a name="unexpose"></a>を非公開
 
 
 
-使用して公開されたシャドウ コピーを unexposes、**公開**コマンド。 公開されているシャドウ コピーは、そのシャドウ ID、ドライブ文字、共有、またはマウント ポイントで指定できます。
+**[公開]** コマンドを使用して公開されたシャドウコピーを公開しません。 公開されたシャドウコピーは、シャドウ ID、ドライブ文字、共有、またはマウントポイントによって指定できます。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
@@ -38,22 +38,22 @@ unexpose {<ShadowID> | <Drive:> | <Share> | <MountPoint>}
 
 |パラメーター|説明|
 |---------|-----------|
-|\<ShadowID>|指定したシャドウ ID で指定されたシャドウ コピーを unexposes します。|
-|\<ドライブ: >|指定したドライブ文字 (たとえば、ドライブ P) に関連付けられているシャドウ コピーを unexposes します。|
-|\<Share>|指定した共有に関連付けられたシャドウ コピーを unexposes (たとえば、 \\ \\ *MachineName*\)します。|
-|\<MountPoint>|指定されたマウント ポイントに関連付けられたシャドウ コピーを unexposes (C:\shadowcopy など\)します。|
+|\<ShadowID >|指定したシャドウ ID によって指定されたシャドウコピーを非公開にします。|
+|\<ドライブ: >|指定したドライブ文字 (ドライブ P など) に関連付けられているシャドウコピーを非公開にします。|
+|\<共有 >|指定した共有に関連付けられているシャドウコピーを公開しないようにします (たとえば、\\\\*MachineName*\)。|
+|マウントポイントの \<>|指定されたマウントポイントに関連付けられているシャドウコピーを公開しないようにします (たとえば、C:\ シャドウ\)します。|
 
 ## <a name="remarks"></a>注釈
 
--   既存のエイリアスまたは環境変数の代わりに使用できます*ShadowID*します。 使用**追加**パラメーターに既存の別名を参照してください。
+-   *ShadowID*の代わりに、既存のエイリアスまたは環境変数を使用できます。 既存のエイリアスを表示するには、パラメーターを指定せずに**add**を使用します。
 
 ## <a name="BKMK_examples"></a>例
 
-P のドライブに関連付けられているシャドウ コピーを非公開には、次のように入力します。
+ドライブ P に関連付けられたシャドウコピーを公開しないようにするには、次のように入力します。
 ```
 unexpose P:
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

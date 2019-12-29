@@ -1,7 +1,7 @@
 ---
 title: Nano Server の展開
 description: カスタム イメージ、パッケージ、ドライバー、ドメイン、役割、機能を作成および展開する方法について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -12,12 +12,12 @@ ms.assetid: 9f109c91-7c2e-4065-856c-ce9e2e9ce558
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: e61844cfb04f95723fe9d08b9bd2e8b481714eea
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 34cb9a50fad7ea64cd8af5b893f5fbd5217a95e1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66442225"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391848"
 ---
 # <a name="deploy-nano-server"></a>Nano Server の展開
 
@@ -344,7 +344,7 @@ Find-NanoServerPackage
 
    **dism /online /get-packages**  
 
-   "Release Type : Language Pack" と "Release Type : Feature Pack" の 2 か所に "Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~en-US~10.0.10586.0" が表示されます。  
+   "Release Type : Language Pack" と"Release Type : Feature Pack" の 2 か所に"Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~en-US~10.0.10586.0"が表示されます。  
 
 ## <a name="customizing-an-existing-nano-server-vhd"></a>既存の Nano Server VHD のカスタマイズ  
 次の例に示すように、Edit-NanoServerImage コマンドレットを使用して既存の VHD の詳細を変更できます。  
@@ -481,7 +481,7 @@ Nano Server で WSA パッケージを作成してインストールするには
 
 パッケージの発行者は、次の手順を実行する必要があります。
 
-1. [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) をインストールします。これには、WSA パッケージを作成するために必要なツール (MakeAppx、MakeCert、Pvk2Pfx、SignTool) が含まれています。
+1. [Windows 10 SDK](https://developer.microsoft.com/windows/downloads/windows-10-sdk) をインストールします。これには、WSA パッケージを作成するために必要なツールであるMakeAppx、MakeCert、Pvk2Pfx、SignTool が含まれています。
 2. マニフェストを宣言します。[WSA マニフェスト拡張スキーマ](https://msdn.microsoft.com/library/windows/apps/mt670653.aspx)に従って、AppxManifest.xml マニフェスト ファイルを作成します。
 3. **MakeAppx** ツールを使用して WSA パッケージを作成します。
 4. **MakeCert** ツールと **Pvk2Pfx** ツールを使用して証明書を作成し、**Signtool** ツールを使用してパッケージに署名します。

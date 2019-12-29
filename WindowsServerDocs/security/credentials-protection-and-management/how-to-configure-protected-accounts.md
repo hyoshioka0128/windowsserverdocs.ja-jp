@@ -1,7 +1,7 @@
 ---
 title: 保護されるアカウントの構成方法
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.service: na
 ms.suite: na
@@ -12,28 +12,28 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 9bd03beb81d4a3031b80d0633607efea2f2fe1f7
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: e728265f42289aeceb22c78053f0d84f9bdb9941
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266820"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387389"
 ---
 # <a name="how-to-configure-protected-accounts"></a>保護されるアカウントの構成方法
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
 Pass-the-hash (PtH) 攻撃では、攻撃者はユーザーのパスワード (または他の資格情報の派生物) の基盤となる NTLM ハッシュを使用して、リモートのサーバーまたはサービスに対する認証を行うことができます。 マイクロソフトは以前に、Pass-the-Hash 攻撃を軽減させるための [ガイダンスを公開](https://www.microsoft.com/download/details.aspx?id=36036) しています。  Windows Server 2012 R2 には、さらに、このような攻撃を軽減するために新しい機能が含まれています。 資格情報の盗用を防ぐのに役立つ、その他のセキュリティ機能の詳細については、「 [資格情報の保護と管理](https://technet.microsoft.com/library/dn408190.aspx)」を参照してください。 このトピックでは、次の新機能を構成する方法を説明します。  
   
--   [保護されているユーザー](#protected-users)  
+-   [保護されたユーザー](#protected-users)  
   
 -   [認証ポリシー](#authentication-policies)  
   
--   [認証ポリシー サイロ](#authentication-policy-silos)  
+-   [認証ポリシーサイロ](#authentication-policy-silos)  
   
 Windows 8.1 および Windows Server 2012 R2 には、資格情報の盗用を防ぐために役立つ追加の軽減機能が内蔵されています。これらの機能については、以下のトピックで説明しています。  
   
--   [リモート デスクトップの制限付き管理モード](http://blogs.technet.com/b/kfalde/archive/20../restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2.aspx)  
+-   [リモートデスクトップの制限付き管理モード](http://blogs.technet.com/b/kfalde/archive/20../restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2.aspx)  
   
 -   [LSA の保護](https://technet.microsoft.com/library/dn408187)  
   
@@ -86,7 +86,7 @@ Protected Users グループのメンバーは、Kerberos で高度暗号化標�
 このセクションでは、Protected Users に関連するイベントのトラブルシューティングに役立つ新しいログについて説明します。さらに、チケット保証チケット (TGT) の有効期限または委任に関する問題のいずれかのトラブルシューティングを行う際に、Protected Users がどのような影響を与えるかを説明します。  
   
 #### <a name="new-logs-for-protected-users"></a>Protected Users 向けの新しいログ  
-2 つの新しい運用管理ログを使用して、Protected Users に関連するイベントのトラブルシューティングに役立てることができます。ユーザー - クライアントのログと Protected User Failures - ドメイン コント ローラーのログを保護します。 これらの新しいログはイベント ビューアーにありますが、既定では無効になっています。 ログを有効化するには、 **[アプリケーションとサービス ログ]** 、 **[Microsoft]** 、 **[Windows]** 、 **[Authentication]** の順にクリックし、ログの名前をクリックして **[操作]** をクリックし (またはログを右クリック)、 **[ログの有効化]** をクリックします。  
+2 つの新しい運用管理ログを使用して、Protected Users に関連するイベントのトラブルシューティングに役立てることができます。保護されたユーザー-クライアントログと保護されているユーザーのエラー: ドメインコントローラーのログ。 これらの新しいログはイベント ビューアーにありますが、既定では無効になっています。 ログを有効化するには、 **[アプリケーションとサービス ログ]** 、 **[Microsoft]** 、 **[Windows]** 、 **[Authentication]** の順にクリックし、ログの名前をクリックして **[操作]** をクリックし (またはログを右クリック)、 **[ログの有効化]** をクリックします。  
   
 これらのログのイベント詳細については、「 [認証ポリシーと認証ポリシー サイロ](https://technet.microsoft.com/library/dn486813.aspx)」をご覧ください。  
   
@@ -112,9 +112,9 @@ Protected Users グループのメンバーは、Kerberos で高度暗号化標�
 ### <a name="provide-dc-side-protections-for-services-and-computers"></a>サービスとコンピューターに対して DC 側の保護を提供する  
 サービスおよびコンピューター用のアカウントは、**Protected Users** のメンバーにすることはできません。 このセクションでは、これらのアカウントに提供できるドメイン コントローラー ベースの保護について説明します。  
   
--   NTLM 認証の拒否:経由でのみ構成可能な[NTLM ブロック ポリシー](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)します。  
+-   NTLM 認証の拒否:[NTLM ブロックポリシー](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)によってのみ構成できます。  
   
--   Kerberos 事前認証でのデータ暗号化標準 (DES) の拒否:Kerberos と共にリリースされた Windows のすべてのバージョンは、RC4 もサポートしています。 理由だけ des 構成されている場合を除き、Windows Server 2012 R2 のドメイン コント ローラーは、コンピューター アカウントで DES を許可されません。  
+-   Kerberos 事前認証でのデータ暗号化標準 (DES) の拒否:Windows Server 2012 R2 ドメインコントローラーは、コンピューターアカウントの DES を受け入れません。ただし、Kerberos でリリースされた Windows のすべてのバージョンも RC4 をサポートしているためです。  
   
 -   Kerberos 事前認証での RC4 の拒否: 構成できません。  
   
@@ -132,9 +132,9 @@ Protected Users グループのメンバーは、Kerberos で高度暗号化標�
   
 Windows Server 2012 では、ダイナミック アクセス制御には、組織全体でファイル サーバーを構成する簡単な方法を提供する集約型アクセス ポリシーと呼ばれる Active Directory フォレスト スコープ オブジェクトのクラスが導入されました。 Windows Server 2012 r2、Windows Server 2012 R2 のドメイン内のアカウント クラスに認証の構成を適用する認証ポリシー (objectClass Msds-authnpolicies) と呼ばれる新しいオブジェクト クラスを使用できます。 次の Active Directory アカウント クラスがあります。  
   
--   ユーザー  
+-   User  
   
--   コンピューター  
+-   [Computer]  
   
 -   管理されたサービス アカウントおよびグループの管理されたサービス アカウント (GMSA)  
   
@@ -174,10 +174,10 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
   
 ### <a name="requirements-for-using-authentication-policies"></a>認証ポリシーを使用するための要件  
   
-|ポリシー|必要条件|  
+|ポリシー|要件|  
 |-----|--------|  
 |TGT の有効期間のカスタマイズ| Windows Server 2012 R2 のドメイン機能レベルのアカウント ドメイン|  
-|ユーザー サインオンの制限|-ダイナミック アクセス制御のサポート Windows Server 2012 R2 のドメイン機能レベルのアカウント ドメイン<br />-Windows 8、Windows 8.1、Windows Server 2012 または Windows Server 2012 R2 のデバイスでダイナミック アクセス制御をサポートします。|  
+|ユーザー サインオンの制限|-ダイナミック アクセス制御のサポート Windows Server 2012 R2 のドメイン機能レベルのアカウント ドメイン<br />-動的 Access Control サポートを備えた windows 8、Windows 8.1、Windows Server 2012、または Windows Server 2012 R2 のデバイス|  
 |ユーザー アカウントとセキュリティ グループに基づくサービス チケット発行の制限| Windows Server 2012 R2 のドメイン機能レベルのリソース ドメイン|  
 |ユーザー要求またはデバイス アカウント、セキュリティ グループ、または要求に基づくサービス チケット発行の制限| Windows Server 2012 R2 のドメイン機能レベルのリソース ドメインでダイナミック アクセス制御のサポート|  
   
@@ -187,7 +187,7 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
 #### <a name="configure-domain-controller-support"></a>ドメイン コントローラーのサポートを構成する  
 ユーザーのアカウント ドメインは、Windows Server 2012 R2 のドメイン機能レベル (DFL) にする必要があります。 すべてのドメイン コント ローラーは、Active Directory ドメインと信頼関係を使用して、Windows Server 2012 R2 では、ように [dfl](https://technet.microsoft.com/library/cc753104.aspx) Windows Server 2012 R2 にします。  
   
-**ダイナミック アクセス制御のサポートを構成するには**  
+**動的 Access Control のサポートを構成するには**  
   
 1.  既定のドメイン コントローラー ポリシーで、[コンピューターの構成]、[管理用テンプレート]、[システム]、[KDC] の順に展開し、 **[有効]** をクリックして **[要求、複合認証、および Kerberos 防御のキー配布センター (KDC) クライアント サポート]** を有効化します。  
   
@@ -224,9 +224,9 @@ AP 交換は通常、アプリケーション プロトコル内部のデータ�
   
     認証ポリシーは、Active Directory のアカウントの種類に基づいて適用されます。 それぞれの種類に対する設定を構成することで、1 つのポリシーを 3 つのアカウントの種類すべてに適用できます。 次のアカウントの種類があります。  
   
-    -   ユーザー  
+    -   User  
   
-    -   コンピューター  
+    -   [Computer]  
   
     -   管理されたサービス アカウントおよびグループの管理されたサービス アカウント  
   

@@ -1,37 +1,37 @@
 ---
-title: AD FS 2.0 WID ファームの移行を準備します。
-description: Windows Server 2012 への AD FS 2.0 サーバー WID ファームの移行の準備について説明します。
+title: AD FS 2.0 WID ファームの移行の準備
+description: AD FS 2.0 server WID ファームを Windows Server 2012 に移行するための準備について説明します。
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 06/28/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a0e4bb77003ab24e0e31268509fb8667a671bea6
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: e6612856a2e00c47e9cc87c75c802ff86697b781
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445537"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359264"
 ---
-# <a name="prepare-to-migrate-an-ad-fs-20-wid-farm"></a>AD FS 2.0 WID ファームの移行を準備します。  
- Windows Server 2012 への Windows Internal Database (WID) ファームに属している AD FS 2.0 フェデレーション サーバーの移行の準備をするには、エクスポートし、これらのサーバーから AD FS 構成データをバックアップする必要があります。  
+# <a name="prepare-to-migrate-an-ad-fs-20-wid-farm"></a>AD FS 2.0 WID ファームの移行の準備  
+ Windows Internal Database (WID) ファームに属している AD FS 2.0 フェデレーションサーバーを Windows Server 2012 に移行する準備を行うには、これらのサーバーから AD FS 構成データをエクスポートしてバックアップする必要があります。  
   
  AD FS の構成データをエクスポートするには、次の作業を実行します。  
   
--   [手順 1: - サービスの設定をエクスポートします。](#step-1-export-service-settings)  
+-   [手順 1: サービスの設定をエクスポートする](#step-1-export-service-settings)  
   
--   [手順 2:カスタム属性ストアをバックアップします。](#step-2-back-up-custom-attribute-stores)  
+-   [手順 2: カスタム属性ストアをバックアップする](#step-2-back-up-custom-attribute-stores)  
   
--   [手順 3:Web ページのカスタマイズをバックアップします。](#step-3-back-up-webpage-customizations)  
+-   [手順 3: web ページのカスタマイズをバックアップする](#step-3-back-up-webpage-customizations)  
   
 ## <a name="step-1-export-service-settings"></a>手順 1:サービスの設定をエクスポートする  
  サービスの設定をエクスポートするには、次の手順を実行します。  
   
 ### <a name="to-export-service-settings"></a>サービスの設定をエクスポートするには  
   
-1.  フェデレーション サービスによって使用される SSL 証明書の証明書サブジェクト名と拇印の値を記録します。 To find the SSL certificate, open the Internet Information Services (IIS) management console, select **[既定の Web サイト]** を選択します。 **[操作]** **アクション**ペイン、検索、および https バインドを選択します をクリックして**編集**、 をクリックし、**ビュー**します。  
+1.  フェデレーション サービスによって使用される SSL 証明書の証明書サブジェクト名と拇印の値を記録します。 To find the SSL certificate, open the Internet Information Services (IIS) management console, select **[既定の Web サイト]** を選択します。 **[操作]** **[操作]** ウィンドウで、https バインドを検索して選択し、 **[編集]** をクリックして、 **[表示]** をクリックします。  
   
 > [!NOTE]
 >  オプションで、SSL 証明書とその秘密キーを .pfx ファイルにエクスポートすることもできます。 詳細については、[サーバー認証証明書の秘密キー部分のエクスポートに関するページ](Export-the-Private-Key-Portion-of-a-Server-Authentication-Certificate.md)を参照してください。  
@@ -55,9 +55,9 @@ ID 値を検索するには、 **[サービス]** コンソールで **[AD FS 2.
 ## <a name="step-3-back-up-webpage-customizations"></a>手順 3:Web ページのカスタマイズをバックアップする  
  任意の Web ページのカスタマイズをバックアップするには、IIS で仮想パス **“/adfs/ls”** にマップされたディレクトリから AD FS Web ページと **web.config** ファイルをコピーします。 既定では、そのファイルは **%systemdrive%\inetpub\adfs\ls** ディレクトリにあります。  
 
-## <a name="next-steps"></a>次の手順
- [AD FS 2.0 フェデレーション サーバーの移行を準備します。](prepare-to-migrate-ad-fs-fed-server.md)   
- [AD FS 2.0 フェデレーション サーバー プロキシの移行を準備します。](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [AD FS 2.0 フェデレーション サーバーを移行します。](migrate-the-ad-fs-fed-server.md)   
- [AD FS 2.0 フェデレーション サーバー プロキシを移行します。](migrate-the-ad-fs-2-fed-server-proxy.md)   
+## <a name="next-steps"></a>次のステップ
+ [AD FS 2.0 フェデレーションサーバー  の移行の準備](prepare-to-migrate-ad-fs-fed-server.md)  
+ [AD FS 2.0 フェデレーションサーバープロキシの移行の準備](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [AD FS 2.0 フェデレーションサーバー  を移行します](migrate-the-ad-fs-fed-server.md)。  
+ [AD FS 2.0 フェデレーションサーバープロキシ  を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
  [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)

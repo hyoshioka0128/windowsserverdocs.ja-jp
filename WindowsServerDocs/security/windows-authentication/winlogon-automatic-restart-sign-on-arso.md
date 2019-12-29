@@ -1,7 +1,7 @@
 ---
 title: Winlogon 自動再起動サインオン (ARSO)
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.service: na
 ms.suite: na
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 172eb34fbfdb8a91adf55e35f888e90f5688d0e7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f085cf78a01148f97a450577131213ce977a432a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849243"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402324"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動再起動サインオン (ARSO)
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-**作成者**:Justin Turner、シニア サポート エスカレーション エンジニア、Windows グループ  
+**Author**: Justin 書籍、シニアサポートエスカレーションエンジニア (Windows グループ)  
   
 > [!NOTE]  
 > この内容は Microsoft カスタマー サポート エンジニアによって作成され、TechNet が通常提供しているトピックよりも詳細な Windows Server 2012 R2 の機能やソリューションの技術的説明を求めている、経験豊かな管理者とシステム設計者を対象としています。 ただし、TechNet と同様の編集過程は実施されていないため、言語によっては通常より洗練されていない文章が見られる場合があります。  
@@ -40,11 +40,11 @@ Windows 8 では、ロック画面アプリが導入されました。  これ�
 > [!NOTE]  
 > Windows Update には、再起動が強制実行され、前回の対話ユーザーが自動的にサインオンしている、セッションがロックされているそのユーザーのロック画面アプリを実行できます。  
   
-![ロック画面のスクリーン ショット](../media/winlogon-automatic-restart-sign-on-arso/GTR_ADDS_LockScreenApp.gif)  
+![ロック画面を示すスクリーンショット](../media/winlogon-automatic-restart-sign-on-arso/GTR_ADDS_LockScreenApp.gif)  
   
-![ロック画面アプリを示すスクリーン ショット](../media/winlogon-automatic-restart-sign-on-arso/GTR_ADDS_LockScreen.gif)  
+![ロック画面のアプリを示すスクリーンショット](../media/winlogon-automatic-restart-sign-on-arso/GTR_ADDS_LockScreen.gif)  
   
-**簡単な概要**  
+**概要**  
   
 -   Windows Update の再起動が必要  
   
@@ -60,7 +60,7 @@ Windows 8 では、ロック画面アプリが導入されました。  これ�
   
     -   Server Sku で既定で無効になっています。  
   
--   なぜでしょうか。  
+-   どうしてでしょうか?  
   
     -   戻り、ユーザーがログオンするまで、一部の更新プログラムを終了できません。  
   
@@ -74,14 +74,14 @@ Windows 8 では、ロック画面アプリが導入されました。  これ�
   
     -   BitLocker が有効になっている場合にのみ有効にできます。  
   
-## <a name="group-policy-sign-in-last-interactive-user-automatically-after-a-system-initiated-restart"></a>グループ ポリシー:システムによる再起動後に自動的に前回の対話ユーザーでサインインする  
+## <a name="group-policy-sign-in-last-interactive-user-automatically-after-a-system-initiated-restart"></a>グループ ポリシー: サインインが前回の対話ユーザーに自動的に再起動した後に、システムによって開始されます。  
 Windows 8.1/Windows Server 2012 R2、Windows Update 再起動した後に、ロック画面のユーザーの自動ログオンは Server Sku をオプトインされ、クライアントの sku の登録を取り消します。  
   
 **ポリシーの場所:** コンピューターの構成 > ポリシー > 管理用テンプレート > Windows コンポーネント > Windows のログオン オプション  
   
-**ポリシー名:** システムによる再起動後に自動的に前回の対話ユーザーでサインインする  
+**ポリシー名:** サインインが前回の対話ユーザーに自動的に再起動した後に、システムによって開始されます。  
   
-**サポートされています。** Windows Server 2012 R2、Windows 8.1、Windows RT 8.1 またはそれ以降  
+**サポートされている:** には、少なくとも Windows Server 2012 R2、Windows 8.1 または Windows RT 8.1  
   
 **説明/ヘルプ:**  
   
@@ -91,7 +91,7 @@ Windows 8.1/Windows Server 2012 R2、Windows Update 再起動した後に、ロ�
   
 このポリシー設定を無効にした場合、デバイスでは、Windows Update による再起動後の自動サインインのためにユーザーの資格情報が保存されることはありません。 システムの再起動後、ユーザーのロック画面アプリは再起動されません。  
   
-**レジストリ エディター**  
+**レジストリエディター**  
   
 |［値の名前］|種類|データ|  
 |-------|----|----|  
@@ -99,17 +99,17 @@ Windows 8.1/Windows Server 2012 R2、Windows Update 再起動した後に、ロ�
   
 **ポリシーのレジストリの場所:** HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System  
   
-**種類:** DWORD  
+**型:** DWORD  
   
-**レジストリ名:** DisableAutomaticRestartSignOn  
+**レジストリの名前:** DisableAutomaticRestartSignOn  
   
-値:0 または 1  
+値: 0 または 1  
   
 0 = 有効  
   
 1 = 無効  
   
-![UI かどうかデバイスが自動的にサインインが前回の対話ユーザー Windows 更新プログラム、システムの再起動後に指定することができますを制御するポリシー設定を示すスクリーン ショット](../media/winlogon-automatic-restart-sign-on-arso/GTR_ADDS_SignInPolicy.gif)  
+![システム Windows Update 再起動した後に、デバイスが最後の対話ユーザーに自動的にサインインするかどうかを指定できる、ポリシー設定コントロールのスクリーンショット](../media/winlogon-automatic-restart-sign-on-arso/GTR_ADDS_SignInPolicy.gif)  
   
 ## <a name="troubleshooting"></a>トラブルシューティング  
 WinLogon が自動的にロックしたときに WinLogon の状態のトレースは WinLogon イベント ログに格納されます。  
@@ -143,7 +143,7 @@ WinLogon が自動的にロックしたときに WinLogon の状態のトレー�
 保護者による制限とログオン時間は、作成すると、新しいユーザー セッションを禁止できます。  再起動がこの期間中に発生した場合、ユーザーはログインを許可されません。  ロックするか、対応するアクションとしてログアウトを原因となるその他のポリシーがあります。  特に、メンテナンス期間がこの期間中に一般がある場合はベッドの時間とウェイク アップのアカウントのロックダウンが発生する、多くの子の例では問題にできます。  
   
 ## <a name="additional-resources"></a>その他のリソース  
-**SEQ テーブル\\\*アラビア語 3。ARSO 用語集**  
+**テーブル SEQ テーブル \\\* アラビア語 3: ARSO 用語集**  
   
 |用語|定義|  
 |----|-------|  

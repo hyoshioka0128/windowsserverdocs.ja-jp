@@ -1,8 +1,8 @@
 ---
 title: autoconv
-description: Windows コマンド」のトピック**autoconv** - 変換ファイル アロケーション テーブル (Fat) および Fat32 ボリュームを NTFS ファイル システム。
+description: '**Autoconv**の Windows コマンドに関するトピックでは、ファイルアロケーションテーブル (Fat) および Fat32 ボリュームを NTFS ファイルシステムに変換します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,22 +13,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1d135da085558f12a51c8febfd72aa805e1d12f1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bf36be6bcf3dd8f6c61c6ab0d8780ed77dd8903a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872493"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383446"
 ---
 # <a name="autoconv"></a>autoconv
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-変換ファイル アロケーション テーブル (Fat) および Fat32 ボリュームを NTFS ファイル システムの既存のファイルとディレクトリを後の起動時にそのまま残して**autochk**を実行します。 Fat に戻す、NTFS ファイル システムに変換するボリュームを変換することはできませんまたは Fat32 です。
-## <a name="remarks"></a>注釈
-実行することはできません**autoconv**コマンドラインでします。 これは場合にのみ実行起動時に、使用して設定**convert.exe**します。
-## <a name="additional-references"></a>その他の参照
-[コマンドライン構文のポイント](command-line-syntax-key.md)
+ファイルアロケーションテーブル (Fat) および Fat32 ボリュームを NTFS ファイルシステムに変換します。これにより、 **autochk**が実行された後も、既存のファイルやディレクトリはそのまま残ります。 NTFS ファイルシステムに変換されたボリュームは、Fat または Fat32 に変換することはできません。
+## <a name="remarks"></a>コメント
+コマンドラインで**autoconv**を実行することはできません。 このは、 **convert.exe**を使用して設定した場合にのみ、スタートアップ時に実行されます。
+## <a name="additional-references"></a>その他の参照情報
+[コマンドライン構文のキー](command-line-syntax-key.md)
 [autochk](autochk.md)
-[変換](convert.md)
-[ファイル システムの操作](https://go.microsoft.com/fwlink/?LinkId=4509)
+[Convert](convert.md)
+[ファイルシステムの操作](https://go.microsoft.com/fwlink/?LinkId=4509)

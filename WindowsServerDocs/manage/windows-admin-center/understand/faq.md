@@ -6,14 +6,14 @@ ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
-ms.date: 06/07/2019
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 53f34992b875730be80ba479f387095aebbc8132
-ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
+ms.date: 12/02/2019
+ms.prod: windows-server
+ms.openlocfilehash: 6d04b641c56e9461f0134bfc4734fea36955106c
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67469559"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74904066"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Windows Admin Center についてよく寄せられる質問
 
@@ -94,7 +94,7 @@ Windows Admin Center は現在 Windows Server 2008 R2 を管理するための**
 
 ## <a name="which-web-browsers-are-supported-by-windows-admin-center"></a>Windows Admin Center でサポートされているのはどの Web ブラウザーですか。
 
-最新バージョンの Microsoft Edge (Windows 10 バージョン 1709 以降) および Google Chrome のブラウザーが Windows 10 でテストおよびサポートされています。 [ブラウザー固有の既知の問題をご覧ください](../support/known-issues.md#browser-specific-issues)。 他の最新の Web ブラウザーまたは他のプラットフォームは、現在、弊社のテスト マトリックスには含まれていないため、*正式には*サポートされていません。
+Microsoft Edge (Windows 10 バージョン 1709 以降)、Google Chrome、および [Microsoft Edge Insider](https://microsoftedgeinsider.com) の最新バージョンは、Windows 10 上でテストされ、サポートされています。 [ブラウザー固有の既知の問題をご覧ください](../support/known-issues.md#browser-specific-issues)。 他の最新の Web ブラウザーまたは他のプラットフォームは、現在、弊社のテスト マトリックスには含まれていないため、*正式には*サポートされていません。
 
 ## <a name="how-does-windows-admin-center-handle-security"></a>Windows Admin Center ではセキュリティをどのように処理していますか。
 
@@ -143,7 +143,7 @@ Windows Admin Center と SCVMM は互いを補完する関係にあります。W
 
 ### <a name="windows-admin-center"></a>Windows Admin Center
 
-* 頻繁に更新できないか、または実稼働環境で使用するリリースの検証時間がさらに必要な IT 管理者には、このバージョンが適しています。 現在一般公開 (GA) されているリリースは、Windows Admin Center 1904 です。
+* 頻繁に更新できないか、または実稼働環境で使用するリリースの検証時間がさらに必要な IT 管理者には、このバージョンが適しています。 現在一般提供 (GA) されているリリースは、Windows Admin Center 1910 です。
 * [!INCLUDE [support-policy](../includes/support-policy.md)]
 * 最新のリリースは、[こちらでダウンロード](https://aka.ms/WACDownload)してください。
 

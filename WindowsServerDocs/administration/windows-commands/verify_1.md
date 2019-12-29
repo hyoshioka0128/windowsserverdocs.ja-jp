@@ -1,8 +1,8 @@
 ---
 title: verify
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e5e99237c2bac93625dedec0254c274e4f8dbc9f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 840fd3609ed3aded1c9cfebd4e395ddcc6d5588b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827253"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363099"
 ---
 # <a name="verify"></a>verify
 
@@ -38,7 +38,7 @@ verify [on | off]
 
 |パラメーター|説明|
 |---------|-----------|
-|[\|オフ]|スイッチ、 **確認** オンまたはオフに設定します。|
+|[\| off]|スイッチ、 **確認** オンまたはオフに設定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
 ## <a name="BKMK_examples"></a>例
@@ -54,4 +54,4 @@ Verify on
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

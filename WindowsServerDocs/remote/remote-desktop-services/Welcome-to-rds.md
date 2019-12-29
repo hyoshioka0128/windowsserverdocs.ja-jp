@@ -2,7 +2,7 @@
 title: Windows Server 2016 リモート デスクトップ サービスへようこそ
 description: リモート デスクトップ サービスの概要を説明します
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -14,12 +14,12 @@ ms.assetid: 52b9e09f-39e0-41a9-9d3b-4d5f4eacf3e0
 author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d148c99911be0cebfc29429d93241f24c2b9606
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 46a04905d5247ae940ca900297171d1112cf936b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66453008"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404203"
 ---
 # <a name="welcome-to-remote-desktop-services"></a>リモート デスクトップ サービスへようこそ 
 
@@ -31,13 +31,13 @@ RDS では、Windows Server 2016 (オンプレミス展開の場)、Microsoft Az
 
 お客様の環境や構成に応じて、RDS ソリューションをセッション ベースの仮想化または仮想デスクトップ インフラストラクチャ (VDI) として、または 2 つの組み合わせとして設定できます。
 
-- **セッション ベースの仮想化**:Windows Server のコンピューティング能力を活用し、ユーザーの日常業務を効率化するコスト効率に優れたマルチ セッション環境を提供します。
+- **セッション ベースの仮想化**:Windows Server のコンピューティング能力を活用してコスト効率に優れたマルチ セッション環境を提供し、ユーザーの日常業務を効率化します。
 - **VDI**:Windows クライアントを活用し、高パフォーマンス、アプリの互換性、ユーザーが Windows デスクトップ エクスペリエンスに期待する操作性を提供します。
 
 これらの仮想化環境内では、ユーザーに発行するものをより柔軟に制御できます。
 
 - **デスクトップ**:お客様がインストールおよび管理するさまざまなアプリケーションを使用して、ユーザーに完全なデスクトップ エクスペリエンスを提供します。 これらのコンピューターをプライマリ ワークステーションとして利用するユーザーや、シン クライアントのユーザーに最適です (MultiPoint Services の使用など)。
-- **RemoteApps**:ユーザーのデスクトップ上で実行するローカル アプリケーションのように見える、仮想マシン上でホスト/実行する個々のアプリケーションを指定します。 アプリには独自のタスク バー エントリがあり、サイズの変更やモニター間での移動ができます。 主要なアプリケーションをセキュリティで保護されたリモート環境に展開し、ユーザーが自分のデスクトップから作業したり、カスタマイズしたりできるようにする場合に最適です。
+- **RemoteApps**:ユーザーのデスクトップ上で実行するローカル アプリケーションのように見える、仮想マシン上でホストまたは実行する個々のアプリケーションを指定します。 アプリには独自のタスク バー エントリがあり、サイズの変更やモニター間での移動ができます。 主要なアプリケーションをセキュリティで保護されたリモート環境に展開し、ユーザーが自分のデスクトップから作業したり、カスタマイズしたりできるようにする場合に最適です。
 
 費用対効果が非常に重要であり、セッション ベースの仮想化環境に完全なデスクトップを展開する利点を幅広く活用したい場合は、[MultiPoint Services](../multipoint-services/multipoint-services.md) を使用することによって最も高い価値を提供できます。 
 

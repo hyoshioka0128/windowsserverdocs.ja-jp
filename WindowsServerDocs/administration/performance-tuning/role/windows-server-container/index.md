@@ -1,18 +1,18 @@
 ---
 title: Windows Server コンテナーのパフォーマンス チューニング
 description: Windows Server 16 上のコンテナーに対するパフォーマンス チューニングに関する推奨事項
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: DavSo; Ericam; YaShi
 author: akino
 ms.date: 10/16/2017
-ms.openlocfilehash: 072d71a7825907ada7d4bc02eb5390722692e81d
-ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
+ms.openlocfilehash: 890632c9e8adf221e56ffa91331e5371a3fcdf86
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863419"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384941"
 ---
 # <a name="performance-tuning-windows-server-containers"></a>Windows Server コンテナーのパフォーマンス チューニング
 

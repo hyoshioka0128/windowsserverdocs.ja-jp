@@ -1,18 +1,18 @@
 ---
 title: AD パフォーマンスチューニングにおけるハードウェアの考慮事項
 description: AD パフォーマンスチューニングにおけるハードウェアの考慮事項
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0f1aa1e3c07c5cb9238a332156abfec248e74176
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 8e9b121036d33bc36cabb92ca682407bc2382fca
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "63721162"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355101"
 ---
 # <a name="hardware-considerations-in-adds-performance-tuning"></a>のハードウェアの考慮事項により、パフォーマンスチューニングが追加されます。 
 
@@ -61,7 +61,7 @@ Active Directory は、メモリと同じくらいの量のデータベースを
 
 -   CPU 負荷を軽減するために、ハードウェアの追加、負荷の最適化、クライアントの他の場所への接続、または環境からの負荷の削除を行います。
 
--   プロセッサ情報 (\_Total)\\% processor 使用率&lt; 60% パフォーマンスカウンタを使用してください。
+-   プロセッサ情報 (\_Total) \\% のプロセッサ使用率 &lt; 60% パフォーマンスカウンタを使用します。
 
 ## <a name="avoid-overloading-the-network-adapter"></a>ネットワークアダプターの過負荷を回避する
 

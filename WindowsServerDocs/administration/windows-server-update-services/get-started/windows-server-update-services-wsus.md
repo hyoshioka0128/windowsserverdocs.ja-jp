@@ -1,7 +1,7 @@
 ---
-title: Windows Server Update Services (WSUS) の概要します。
-description: Windows Server Update Service (WSUS) のトピックで、サーバーの役割とその実際のアプリケーションの概要
-ms.prod: windows-server-threshold
+title: Windows Server Update Services (WSUS) を使ってみる
+description: Windows Server Update Service (WSUS) のトピック - サーバー ロールとその実際の適用例の概要
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-wsus
@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 5/22/2017
-ms.openlocfilehash: 7a6c64e0a4321553162b426e3d6857ff6ac3581c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.openlocfilehash: 89247f91f616233fc6e4967a0457ff34fac221da
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830263"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361647"
 ---
 # <a name="windows-server-update-services-wsus"></a>Windows Server Update Services (WSUS)
 
@@ -54,7 +54,7 @@ Windows Server Update Services は組み込みのサーバーの役割で、次�
 
 -   セキュリティ強化のための SHA256 ハッシュ機能が追加されています。
 
--   クライアントとサーバーの分離を提供します Windows Update エージェント (WUA) のバージョンが WSUS に関係なく出荷できる。
+-   クライアントとサーバーの分離が可能になりました。WSUS に関係なく、Windows Update エージェント (WUA) のバージョンが提供可能
 
 ### <a name="using-windows-powershell-to-manage-wsus"></a>Windows PowerShell を使用した WSUS の管理
 操作を自動化するシステム管理者は、コマンド ラインの自動化への対応が必要です。 主な目的は、システム管理者が日常的な操作を自動化できるようにすることで、WSUS 管理を容易にすることです。
@@ -68,10 +68,10 @@ Windows Server Update Services は組み込みのサーバーの役割で、次�
 以前のバージョンの Windows Server オペレーティング システムでは、Windows PowerShell コマンドレットがなかったため、更新プログラムの管理の自動化は困難でした。 WSUS 操作用の Windows PowerShell コマンドレットにより、システム管理者に柔軟性と迅速さが加わりました。
 
 ## <a name="in-this-collection"></a>このコレクションに
-計画するため、次のガイド、展開、および WSUS の管理は、このコレクションには。
+このコレクションには、WSUS の計画、展開、および管理に関する次のガイドが含まれています。
 
--   [Windows Server Update Services をデプロイします。](../deploy/deploy-windows-server-update-services.md)
+-   [Windows Server Update Services を展開する](../deploy/deploy-windows-server-update-services.md)
 
--   [Windows Server Update Services を使用して更新プログラムを管理します。](../manage/update-management-with-windows-server-update-services.md)
+-   [Windows Server Update Services を使用して更新プログラムを管理する](../manage/update-management-with-windows-server-update-services.md)
 
 

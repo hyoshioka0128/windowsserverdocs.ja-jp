@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 61f447f68ec6c85ed1554e176c78c4caec5dfde4
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.prod: windows-server
+ms.openlocfilehash: b0707f8aa7a09fdd18c2107e375ad06d3909955e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63747884"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356899"
 ---
 # <a name="windows-admin-center-case-studies"></a>Windows Admin Center ケース スタディ
 

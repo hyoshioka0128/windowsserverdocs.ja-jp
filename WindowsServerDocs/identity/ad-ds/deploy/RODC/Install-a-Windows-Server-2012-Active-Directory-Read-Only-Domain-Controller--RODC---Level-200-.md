@@ -7,18 +7,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c8d34d7b35f3cd5209fd6096f69b16162229bc3a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 82b0035075c981d123ab3b90d56768940f65558e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863083"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391112"
 ---
 # <a name="install-a-windows-server-2012-active-directory-read-only-domain-controller-rodc-level-200"></a>Windows Server 2012 の Active Directory 読み取り専用ドメイン コントローラー (RODC) をインストールする (レベル 200)
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、段階的 RODC アカウントを作成して、RODC インストール中にそのアカウントにサーバーをアタッチする方法について説明します。 また、段階的インストールを実行せずに RODC をインストールする方法についても説明します。  
   
@@ -33,12 +33,12 @@ ms.locfileid: "59863083"
   
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/adds_stagedcreation.png)  
   
-## <a name="BKMK_StagePS"></a>段階 RODC Windows PowerShell  
+## <a name="BKMK_StagePS"></a>ステージ RODC Windows PowerShell  
   
 |||  
 |-|-|  
 |**ADDSDeployment コマンドレット**|引数 (**太字** の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。)|  
-|Add-addsreadonlydomaincontrolleraccount|-SkipPreChecks<br /><br />***-DomainControllerAccountName***<br /><br />***-DomainName***<br /><br />***-SiteName***<br /><br />*-AllowPasswordReplicationAccountName*<br /><br />***-Credential***<br /><br />*-DelegatedAdministratorAccountName*<br /><br />*-DenyPasswordReplicationAccountName*<br /><br />*-NoGlobalCatalog*<br /><br />*-InstallDNS*<br /><br />-ReplicationSourceDC|  
+|Add-addsreadonlydomaincontrolleraccount|-SkipPreChecks<br /><br />***-Domainコントローラー Accountname***<br /><br />***-DomainName***<br /><br />***-SiteName***<br /><br />*-AllowPasswordReplicationAccountName*<br /><br />***-Credential***<br /><br />*-DelegatedAdministratorAccountName*<br /><br />*-デ Ypasswordreplicationaccountname*<br /><br />*-NoGlobalCatalog*<br /><br />*-InstallDNS*<br /><br />-ReplicationSourceDC|  
   
 > [!NOTE]  
 > **-credential** 引数は、Domain Admins グループのメンバーとしてログオンしていない場合にのみ必須です。  
@@ -48,12 +48,12 @@ ms.locfileid: "59863083"
   
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/adds_stageddeploy_beta1.png)  
   
-## <a name="BKMK_AttachPS"></a>RODC Windows PowerShell をアタッチします。  
+## <a name="BKMK_AttachPS"></a>RODC の接続 Windows PowerShell  
   
 |||  
 |-|-|  
 |**ADDSDeployment コマンドレット**|引数 (**太字** の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。)|  
-|Install-AddsDomaincontroller|-SkipPreChecks<br /><br />***-DomainName***<br /><br />*-SafeModeAdministratorPassword*<br /><br />*-ApplicationPartitionsToReplicate*<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />-CriticalReplicationOnly<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />*-InstallationMediaPath*<br /><br />*-LogPath*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />*SystemKey-*<br /><br />*-SYSVOLPath*<br /><br />***-Useexistingaccount***|  
+|Install-AddsDomaincontroller|-SkipPreChecks<br /><br />***-DomainName***<br /><br />*-SafeModeAdministratorPassword*<br /><br />*-ApplicationPartitionsToReplicate*<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />-CriticalReplicationOnly<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />*-InstallationMediaPath*<br /><br />*-LogPath*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />***-UseExistingAccount***|  
   
 > [!NOTE]  
 > **-credential** 引数は、Domain Admins グループのメンバーとしてログオンしていない場合にのみ必須です。  
@@ -63,13 +63,13 @@ ms.locfileid: "59863083"
   
 読み取り専用ドメイン コントローラー コンピューター アカウントのステージングを行うには、Active Directory 管理センター (**Dsac.exe**) を開きます。 ナビゲーション ウィンドウ内でドメインの名前をクリックします。 管理リスト内で **[ドメイン コントローラー]** をダブルクリックします。 タスク ウィンドウ内で **[読み取り専用ドメイン コントローラー アカウントの事前作成]** をクリックします。  
   
-Active Directory 管理センターの詳細については、次を参照してください[高度な AD DS の管理を使用して Active Directory 管理センター&#40;レベル 200&#41; ](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md)確認[Active Directory。管理センター:Getting Started](https://technet.microsoft.com/library/dd560651(WS.10).aspx)します。  
+Active Directory 管理センターの詳細については、「 [Active Directory 管理センター &#40;レベル 200&#41;を使用した高度な AD DS 管理](../../../ad-ds/get-started/adac/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-.md)」と「Active Directory 管理センターを確認する[: はじめに](https://technet.microsoft.com/library/dd560651(WS.10).aspx)」を参照してください。  
   
 読み取り専用ドメイン コントローラー作成の経験をお持ちの場合は、インストール ウィザードのグラフィカル インターフェイスが Windows Server 2008 の Active Directory ユーザーとコンピューター スナップインと同じで、さらに非推奨の dcpromo で使用される無人セットアップ ファイル形式に構成をエクスポートすることを含め同じコードを使用することにお気づきになるでしょう。  
   
 Windows Server 2012 では RODC コンピューター アカウントをステージングするための新しい ADDSDeployment コマンドレットを使用しますが、ウィザードではこの操作にコマンドレットを使用しません。 以降のセクションでは、それぞれの情報についてよりよくご理解いただくため、同じことを実行するコマンドレットと引数を示します。  
   
-**読み取り専用ドメイン コント ローラー アカウントの事前作成**Active Directory 管理センターのタスク ウィンドウのリンクは、Windows PowerShell の ADDSDeployment コマンドレットと同じです。  
+Active Directory 管理センターの作業ウィンドウの **[読み取り専用ドメインコントローラーアカウントの事前作成]** リンクは、ADDSDeployment Windows PowerShell コマンドレットと同じです。  
   
 ```  
 Add-addsreadonlydomaincontrolleraccount  
@@ -79,12 +79,12 @@ Add-addsreadonlydomaincontrolleraccount
 ### <a name="welcome"></a>Welcome  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_WelcomeStage1.png)  
   
-**[Active Directory ドメイン サービス インストール ウィザードの開始]** ダイアログには、**[詳細モード インストールを使用する]** というオプションがあります。 このオプションを選択して **[次へ]** をクリックすると、パスワード レプリケーション ポリシー オプションが表示されます。 パスワード レプリケーション ポリシー オプションに既定値を使用するには、このオプションをオフにします (これについては、このセクションでさらに詳しく説明します)。  
+**[Active Directory ドメイン サービス インストール ウィザードの開始]** ダイアログには、 **[詳細モード インストールを使用する]** というオプションがあります。 このオプションを選択して **[次へ]** をクリックすると、パスワード レプリケーション ポリシー オプションが表示されます。 パスワード レプリケーション ポリシー オプションに既定値を使用するには、このオプションをオフにします (これについては、このセクションでさらに詳しく説明します)。  
   
 ### <a name="network-credentials"></a>ネットワーク資格情報  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1Creds.png)  
   
-**[ネットワーク資格情報]** ダイアログのドメイン名オプションは、Active Directory 管理センターが既定で対象とするドメインを表示します。 既定では現在の資格情報が使用されます。 その資格情報に Domain Admins グループのメンバーシップがない場合は、**[代替の資格情報]** をクリックし、**[設定]** をクリックして、Domain Admins のメンバーであるユーザー名とパスワードをウィザードに指定してください。  
+**[ネットワーク資格情報]** ダイアログのドメイン名オプションは、Active Directory 管理センターが既定で対象とするドメインを表示します。 既定では現在の資格情報が使用されます。 その資格情報に Domain Admins グループのメンバーシップがない場合は、 **[代替の資格情報]** をクリックし、 **[設定]** をクリックして、Domain Admins のメンバーであるユーザー名とパスワードをウィザードに指定してください。  
   
 ADDSDeployment Windows PowerShell で同じことを実行する引数は以下のとおりです。  
   
@@ -123,7 +123,7 @@ ADDSDeployment Windows PowerShell で同じことを実行する引数は以下�
 ### <a name="additional-domain-controller-options"></a>追加ドメイン コント ローラーのオプション  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1DCOptions.png)  
   
-**[追加のドメイン コントローラー オプション]** ダイアログでは、ドメイン コントローラーが、**[DNS サーバー]** および **[グローバル カタログ]** としても実行されることを指定できます。 Microsoft では、読み取り専用ドメイン コントローラーが DNS と GC サービスを提供することを推奨しているため、どちらも既定でインストールされます。RODC 役割の目的の 1 つは支社のシナリオであり、広域ネットワークが利用できず、これらの DNS およびグローバル カタログサービスなしには支社のコンピューターが AD DS リソースと機能を使用できないような場合を想定しています。  
+**[追加のドメイン コントローラー オプション]** ダイアログでは、ドメイン コントローラーが、 **[DNS サーバー]** および **[グローバル カタログ]** としても実行されることを指定できます。 Microsoft では、読み取り専用ドメイン コントローラーが DNS と GC サービスを提供することを推奨しているため、どちらも既定でインストールされます。RODC 役割の目的の 1 つは支社のシナリオであり、広域ネットワークが利用できず、これらの DNS およびグローバル カタログサービスなしには支社のコンピューターが AD DS リソースと機能を使用できないような場合を想定しています。  
   
 **[読み取り専用ドメイン コントローラー (RODC)]** オプションはあらかじめ選択されており、無効化できません。 ADDSDeployment Windows PowerShell で同じことを実行する引数は以下のとおりです。  
   
@@ -134,7 +134,7 @@ ADDSDeployment Windows PowerShell で同じことを実行する引数は以下�
 ```  
   
 > [!NOTE]  
-> 既定で、 **- NoGlobalCatalog**値は $false 引数が指定されていない場合、ドメイン コント ローラーはグローバル カタログ サーバーになります。  
+> 既定では、 **-NoGlobalCatalog**の値は $false です。これは、引数が指定されていない場合に、ドメインコントローラーがグローバルカタログサーバーになることを意味します。  
   
 ### <a name="specify-the-password-replication-policy"></a>パスワード レプリケーション ポリシーの指定  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1PRP.png)  
@@ -163,7 +163,7 @@ ADDSDeployment Windows PowerShell で同じことを実行する引数は以下�
 ### <a name="delegation-of-rodc-installation-and-administration"></a>RODC のインストールと管理の委任  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1DelegateAdmin.png)  
   
-**[RODC のインストールと管理の委任]** ダイアログでは、サーバーを RODC コンピューター アカウントにアタッチすることが許可されているユーザーまたはユーザー グループを構成することができます。 ドメイン内のユーザーまたはグループを参照するには **[設定]** をクリックします。 このダイアログで指定したユーザーまたはグループには、RODC へのローカル管理者アクセス権が与えられます。 指定したユーザーまたは指定されたグループのメンバーは、コンピューターの Administrators グループと同じ特権で RODC の操作を実行できます。 ただし Domain Admins やドメインのビルトイン管理者グループのメンバーでは*ありません*。  
+**[RODC のインストールと管理の委任]** ダイアログでは、サーバーを RODC コンピューター アカウントにアタッチすることが許可されているユーザーまたはユーザー グループを構成することができます。 ドメイン内のユーザーまたはグループを参照するには **[設定]** をクリックします。 このダイアログで指定したユーザーまたはグループには、RODC へのローカル管理者アクセス権が与えられます。 指定されたユーザーまたは指定されたグループのメンバーは、コンピューターの管理者グループと同等の権限を持つ RODC に対して操作を実行できます。 ただし Domain Admins やドメインのビルトイン管理者グループのメンバーでは*ありません*。  
   
 このオプションを使用すると、Domain Admins グループに支社の管理者メンバーシップを与えずに支社の管理を委任することができます。 RODC 管理の委任は必須ではありません。  
   
@@ -176,7 +176,7 @@ ADDSDeployment Windows PowerShell で同じことを実行する引数は以下�
 ### <a name="summary"></a>概要  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1Summary.png)  
   
-**[要約]** ダイアログでは、設定を確認することができます。 これは、ウィザードが段階的アカウントを作成する前にインストールを停止する最後の機会です。 段階的 RODC コンピューター アカウントを作成する準備ができたら **[次へ]** をクリックします。  応答ファイルを非推奨の dcpromo 無人セットアップファイル形式で保存するには、**[設定のエクスポート]** をクリックします。  
+**[要約]** ダイアログでは、設定を確認することができます。 これは、ウィザードが段階的アカウントを作成する前にインストールを停止する最後の機会です。 段階的 RODC コンピューター アカウントを作成する準備ができたら **[次へ]** をクリックします。  応答ファイルを非推奨の dcpromo 無人セットアップファイル形式で保存するには、 **[設定のエクスポート]** をクリックします。  
   
 ### <a name="creation"></a>作成  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage1InstallProgress.png)  
@@ -200,7 +200,7 @@ Add-addsreadonlydomaincontrolleraccount
   
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_PSAddRODCValidating.png)  
   
-段階 RODC 操作により、Active Directory 内に RODC コンピューター アカウントが作成されます。 Active Directory 管理センターでは、**[ドメイン コントローラーの種類]** として **[使用されていないドメイン コントローラー アカウント]** と表示されます。 このドメイン コントローラーの種類は、段階的 RODC アカウントに読み取り専用ドメイン コントローラーとしてサーバーをアタッチできる準備が整っていることを示しています。  
+段階 RODC 操作により、Active Directory 内に RODC コンピューター アカウントが作成されます。 Active Directory 管理センターでは、 **[ドメイン コントローラーの種類]** として **[使用されていないドメイン コントローラー アカウント]** と表示されます。 このドメイン コントローラーの種類は、段階的 RODC アカウントに読み取り専用ドメイン コントローラーとしてサーバーをアタッチできる準備が整っていることを示しています。  
   
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Unoccupied.png)  
   
@@ -214,7 +214,7 @@ Add-addsreadonlydomaincontrolleraccount
   
 サーバー マネージャーは各ドメイン コントローラーの昇格を **[配置構成]** ページで開始します。 このページおよび以降のページの他のオプションおよび必須フィールドは、選択した展開操作によって異なります。  
   
-既存のドメインに読み取り専用のドメイン コントローラーを追加するには、**[既存のドメインにドメイン コントローラーを追加する]** を選択し、**[選択]** ボタンをクリックして **[このドメインのドメイン情報を指定する]** に進みます。 サーバー マネージャーが有効な資格情報を求めます。または **[変更]** をクリックして指定することもできます。  
+既存のドメインに読み取り専用のドメイン コントローラーを追加するには、 **[既存のドメインにドメイン コントローラーを追加する]** を選択し、 **[選択]** ボタンをクリックして **[このドメインのドメイン情報を指定する]** に進みます。 サーバー マネージャーが有効な資格情報を求めます。または **[変更]** をクリックして指定することもできます。  
   
 RODC をアタッチするには、Windows Server 2012 の Domain Admins グループのメンバーシップが必要です。 現在の資格情報に適切なアクセス許可またはグループ メンバーシップがない場合、Active Directory Domain Services 構成ウィザードでは後で入力を求められます。  
   
@@ -229,10 +229,10 @@ Install-AddsDomainController
 ### <a name="domain-controller-options"></a>ドメイン コントローラー オプション  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage2DCOptions.png)  
   
-**[ドメイン コントローラー オプション]** ページに、新しいドメイン コントローラーのドメイン コントローラー オプションが表示されます。 このページが表示される際、Active Directory Domain Services 構成ウィザードが既存のドメイン コントローラーに LDAP クエリを送信し、使用されていないアカウントがないかどうか調べます。 クエリが検索に使用されていないドメイン コント ローラー コンピューター アカウント、現在のコンピューターと同じ名前を共有するかどうかは、ウィザード ページの上部にある情報メッセージが表示されます"**名前に一致する事前に作成した RODC アカウントターゲットのサーバーは、ディレクトリに存在します。この既存の RODC アカウントを使用するか、このドメイン コント ローラーを再インストールするかどうかを選択して**"。 ウィザードは **[既存の RODC アカウントを使用する]** を既定の構成として使用します。  
+**[ドメイン コントローラー オプション]** ページに、新しいドメイン コントローラーのドメイン コントローラー オプションが表示されます。 このページが表示される際、Active Directory Domain Services 構成ウィザードが既存のドメイン コントローラーに LDAP クエリを送信し、使用されていないアカウントがないかどうか調べます。 クエリによって、現在のコンピューターと同じ名前を共有している非アクティブなドメインコントローラーのコンピューターアカウントが検出されると、ページの上部に、"**ターゲットサーバーの名前と一致する事前に作成された RODC アカウントがディレクトリに存在します" という情報メッセージが表示されます。この既存の RODC アカウントを使用するか、このドメインコントローラーを再インストールするかを選択**してください。 " ウィザードは **[既存の RODC アカウントを使用する]** を既定の構成として使用します。  
   
 > [!IMPORTANT]  
-> ドメイン コントローラーに物理的な問題があって機能が回復できない場合は **[このドメイン コントローラーを再インストール]** を使用することができます。 これにより、Active Directory のドメイン コントローラー コンピューター アカウントとオブジェクト メタデータを残すことができるため、代わりのドメイン コントローラーの構成時間が節約できます。 新しいコンピューターを*同じ名前で*インストールし、ドメイン内のドメイン コントローラーとして昇格します。 **このドメイン コント ローラーを再インストール**オプションは Active Directory (メタデータ クリーンアップ) からドメイン コント ローラー オブジェクトのメタデータを削除した場合は使用できません。  
+> ドメイン コントローラーに物理的な問題があって機能が回復できない場合は **[このドメイン コントローラーを再インストール]** を使用することができます。 これにより、Active Directory のドメイン コントローラー コンピューター アカウントとオブジェクト メタデータを残すことができるため、代わりのドメイン コントローラーの構成時間が節約できます。 新しいコンピューターを*同じ名前で*インストールし、ドメイン内のドメイン コントローラーとして昇格します。 ドメインコントローラーオブジェクトのメタデータを Active Directory から削除した場合 (メタデータのクリーンアップ)、[**このドメインコントローラーを再インストール**する] オプションは使用できません。  
   
 サーバーを RODC コンピューター アカウントにアタッチする場合はドメイン コントローラー オプションを構成できません。 段階的 RODC コンピューター アカウントを作成する際にドメイン コントローラーを構成します。  
   
@@ -297,7 +297,12 @@ $pw | ConvertFrom-SecureString | Set-Content $file
   
 **[追加オプション]** ページには、レプリケーション ソースとして特定のドメイン コントローラーを指定するか、またはどのドメイン コントローラーでもレプリケーション ソースとして使用できるかを指定する構成オプションがあります。  
   
-また、メディアからのインストール (IFM) オプションを使用して、バックアップされているメディアからドメイン コントローラーをインストールすることもできます。 **[メディアからのインストール]** チェック ボックスをオンにすると参照オプションが表示されます。指定したパスが有効なメディアであることを示すため **[検証]** をクリックする必要があります。 IFM オプションで使用するメディアは、Windows Server バックアップまたは Ntdsutil.exe を使用して、既存の別の Windows Server 2012 コンピューターからのみ作成します。Windows Server 2008 R2 以前のオペレーティング システムを使用して Windows Server 2012 のドメイン コントローラー用のメディアを作成することはできません。 IFM の変更内容について詳しくは、[Ntdsutil.exe メディアからのインストールの変更に関する説明](../../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)をご覧ください。 SYSKEY で保護されているメディアを使用する場合、サーバー マネージャーは確認の間にイメージのパスワードの入力を求めます。  
+また、メディアからのインストール (IFM) オプションを使用して、バックアップされているメディアからドメイン コントローラーをインストールすることもできます。 **[メディアからのインストール]** チェック ボックスをオンにすると参照オプションが表示されます。指定したパスが有効なメディアであることを示すため **[検証]** をクリックする必要があります。
+
+IFM ソースのガイドライン: • IFM オプションによって使用されるメディアは、Windows Server バックアップまたは Ntdsutil.exe と同じオペレーティングシステムのバージョンを持つ別の既存の Windows Server ドメインコントローラーから作成されます。 たとえば、windows server 2008 R2 以前のオペレーティングシステムを使用して、Windows Server 2012 ドメインコントローラー用のメディアを作成することはできません。
+• IFM ソースデータは書き込み可能なドメインコントローラーからのものである必要があります。 RODC からのソースは、技術的に新しい RODC の作成に使用されますが、IFM ソース RODC がレプリケートされていないことを示す偽陽性のレプリケーション警告があります。
+
+IFM の変更内容について詳しくは、[Ntdsutil.exe メディアからのインストールの変更に関する説明](../../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)をご覧ください。 SYSKEY で保護されているメディアを使用する場合、サーバー マネージャーは確認の間にイメージのパスワードの入力を求めます。 
   
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_StagedIFM.png)  
   
@@ -323,7 +328,7 @@ $pw | ConvertFrom-SecureString | Set-Content $file
 ### <a name="review-options-and-view-script"></a>オプションの確認とスクリプトの表示  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage2ReviewOptions.png)  
   
-**[オプションの確認]** ページでは、インストールを開始する前に、設定を検証し、設定が要件を満たしていることを確認できます。 これがサーバー マネージャーを使用するインストールを停止する最後の機会ではありません。 このページでは、構成を続行する前に設定を検討して確認することだけができます。 サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。 これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。 例:  
+**[オプションの確認]** ページでは、インストールを開始する前に、設定を検証し、設定が要件を満たしていることを確認できます。 これがサーバー マネージャーを使用するインストールを停止する最後の機会ではありません。 このページでは、構成を続行する前に設定を検討して確認することだけができます。 サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。 これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。 次に、例を示します。  
   
 ```  
 #  
@@ -370,7 +375,7 @@ Install-ADDSDomainController `
 > [!WARNING]  
 > ただし Microsoft では前提条件のチェックを省略することはお勧めしません。ドメイン コントローラーの昇格が部分的に行われたり、AD DS フォレストに障害が発生したりする恐れがあります。  
   
-ドメイン コントローラーの昇格プロセスを開始するには、**[インストール]** をクリックします。 ここが、インストールをキャンセルする最後のチャンスとなります。 昇格プロセスが開始されると、キャンセルすることはできません。 昇格の結果に関係なく、昇格プロセスの最後でコンピューターが自動的に再起動します。  
+ドメイン コントローラーの昇格プロセスを開始するには、 **[インストール]** をクリックします。 ここが、インストールをキャンセルする最後のチャンスとなります。 昇格プロセスが開始されると、キャンセルすることはできません。 昇格の結果に関係なく、昇格プロセスの最後でコンピューターが自動的に再起動します。  
   
 ### <a name="installation"></a>インストール  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_Stage2Installation.png)  
@@ -390,13 +395,13 @@ Install-addsdomaincontroller
   
 必須およびオプションの引数について詳しくは、[RODC アタッチの Windows PowerShell に関する説明](../../../ad-ds/deploy/RODC/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-.md#BKMK_AttachPS)をご覧ください。  
   
-**Install-addsdomaincontroller** コマンドレットのフェーズは 2 つだけです (前提条件のチェックとインストール)。 以下の 2 つの図は、**-domainname**、**-useexistingaccount**、および **-credential** の最低限の必須引数を使用したインストール フェーズを示しています。 **Install-ADDSDomainController** は、サーバー マネージャーと同様、昇格プロセスによって自動的にサーバーが再起動されることを知らせます。  
+**Install-addsdomaincontroller** コマンドレットのフェーズは 2 つだけです (前提条件のチェックとインストール)。 以下の 2 つの図は、 **-domainname**、 **-useexistingaccount**、および **-credential** の最低限の必須引数を使用したインストール フェーズを示しています。 **Install-ADDSDomainController** は、サーバー マネージャーと同様、昇格プロセスによって自動的にサーバーが再起動されることを知らせます。  
   
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_PSStage2.png)  
   
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_PSStage2Complete.png)  
   
-再起動プロンプトを自動的に受け入れるには、ADDSDeployment Windows PowerShell コマンドレットで **-force** または **-confirm:$false** 引数を使用します。 昇格の終了時にサーバーが自動的に再起動されないようにするには、**-norebootoncompletion** 引数を使用します。  
+再起動プロンプトを自動的に受け入れるには、ADDSDeployment Windows PowerShell コマンドレットで **-force** または **-confirm:$false** 引数を使用します。 昇格の終了時にサーバーが自動的に再起動されないようにするには、 **-norebootoncompletion** 引数を使用します。  
   
 > [!WARNING]  
 > 再起動の無効化は推奨されません。 ドメイン コントローラーを正常に機能させるには、再起動する必要があります。  
@@ -416,7 +421,7 @@ Install-addsdomaincontroller
 |||  
 |-|-|  
 |**ADDSDeployment コマンドレット**|引数 (**太字** の引数は必須です。 *斜体*の引数は、Windows PowerShell または AD DS 構成ウィザードを使用して指定できます。)|  
-|Install-AddsDomainController|-SkipPreChecks<br /><br />***-DomainName***<br /><br />*-SafeModeAdministratorPassword*<br /><br />***-SiteName***<br /><br />*-ApplicationPartitionsToReplicate*<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />*-CriticalReplicationOnly*<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-DNSOnNetwork<br /><br />*-InstallationMediaPath*<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-MoveInfrastructureOperationMasterRoleIfNecessary<br /><br />*-NoGlobalCatalog*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />-SkipAutoConfigureDNS<br /><br />*SystemKey-*<br /><br />*-SYSVOLPath*<br /><br />*-AllowPasswordReplicationAccountName*<br /><br />*-DelegatedAdministratorAccountName*<br /><br />*-DenyPasswordReplicationAccountName*<br /><br />***-ReadOnlyReplica***|  
+|Install-AddsDomainController|-SkipPreChecks<br /><br />***-DomainName***<br /><br />*-SafeModeAdministratorPassword*<br /><br />***-SiteName***<br /><br />*-ApplicationPartitionsToReplicate*<br /><br />*-CreateDNSDelegation*<br /><br />***-Credential***<br /><br />*-CriticalReplicationOnly*<br /><br />*-DatabasePath*<br /><br />*-DNSDelegationCredential*<br /><br />-DNSOnNetwork<br /><br />*-InstallationMediaPath*<br /><br />*-InstallDNS*<br /><br />*-LogPath*<br /><br />-MoveInfrastructureOperationMasterRoleIfNecessary<br /><br />*-NoGlobalCatalog*<br /><br />-Norebootoncompletion<br /><br />*-ReplicationSourceDC*<br /><br />-SkipAutoConfigureDNS<br /><br />*-SystemKey*<br /><br />*-SYSVOLPath*<br /><br />*-AllowPasswordReplicationAccountName*<br /><br />*-DelegatedAdministratorAccountName*<br /><br />*-デ Ypasswordreplicationaccountname*<br /><br />***-ReadOnlyReplica***|  
   
 > [!NOTE]  
 > **-credential** 引数は、Domain Admins グループのメンバーとしてログオンしていない場合にのみ必須です。  
@@ -428,7 +433,7 @@ Install-addsdomaincontroller
   
 サーバー マネージャーは各ドメイン コントローラーの昇格を **[配置構成]** ページで開始します。 このページおよび以降のページの他のオプションおよび必須フィールドは、選択した展開操作によって異なります。  
   
-既存の Windows Server 2012 ドメインに非段階的な読み取り専用ドメイン コントローラーを追加するには、**[既存のドメインにドメイン コントローラーを追加する]** を選択し、**[選択]** ボタンをクリックして **[このドメインのドメイン情報を指定する]** に進みます。 サーバー マネージャーが有効な資格情報を求めます。または **[変更]** をクリックして指定することもできます。  
+既存の Windows Server 2012 ドメインに非段階的な読み取り専用ドメイン コントローラーを追加するには、 **[既存のドメインにドメイン コントローラーを追加する]** を選択し、 **[選択]** ボタンをクリックして **[このドメインのドメイン情報を指定する]** に進みます。 サーバー マネージャーが有効な資格情報を求めます。または **[変更]** をクリックして指定することもできます。  
   
 RODC をアタッチするには、Windows Server 2012 の Domain Admins グループのメンバーシップが必要です。 現在の資格情報に適切なアクセス許可またはグループ メンバーシップがない場合、Active Directory Domain Services 構成ウィザードでは後で入力を求められます。  
   
@@ -443,7 +448,7 @@ Install-AddsDomainController
 ### <a name="domain-controller-options"></a>ドメイン コントローラー オプション  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_RODCDCOptions.png)  
   
-**[ドメイン コントローラー オプション]** ページでは、新しいドメイン コントローラーのドメイン コントローラー機能を指定します。 構成可能なドメイン コントローラー機能は、**[DNS サーバー]**、**[グローバル カタログ]**、**[読み取り専用ドメイン コントローラー]** です。 Microsoft では、分散環境で高可用性を実現するため、すべてのドメイン コントローラーで、DNS と GC サービスを提供することをお勧めします。 GC は常に既定で選択されます。DNS サーバーは、現在のドメインが、Start of Authority クエリに基づいて既にその DC 上にある DNS をホストする場合に、既定で選択されます。  
+**[ドメイン コントローラー オプション]** ページでは、新しいドメイン コントローラーのドメイン コントローラー機能を指定します。 構成可能なドメイン コントローラー機能は、 **[DNS サーバー]** 、 **[グローバル カタログ]** 、 **[読み取り専用ドメイン コントローラー]** です。 Microsoft では、分散環境で高可用性を実現するため、すべてのドメイン コントローラーで、DNS と GC サービスを提供することをお勧めします。 GC は常に既定で選択されます。DNS サーバーは、現在のドメインが、Start of Authority クエリに基づいて既にその DC 上にある DNS をホストする場合に、既定で選択されます。  
   
 **[ドメイン コントローラー オプション]** ページでは、フォレストの構成から適切な Active Directory 論理**サイト名**を選択することもできます。 既定では、最も適切なサブネットのサイトが選択されます。 サイトが 1 つだけの場合は、そのサイトが自動的に選択されます。  
   
@@ -515,7 +520,7 @@ $pw | ConvertFrom-SecureString | Set-Content $file
   
 -   パスワードを RODC にレプリケートすることが許可されていないアカウント  
   
-委任される管理者アカウントには、RODC に対するローカル管理アクセス許可が与えられます。 これらのユーザーは、ローカル コンピューターの Administrators グループと同じ特権で操作できます。  これらのユーザーは、Domain Admins グループまたはドメインの組み込みの Administrator グループのメンバーではありません。 このオプションは、ドメインの管理アクセス許可を与えることなく支社の管理を委任する場合に便利です。 管理の委任の構成は必要ありません。  
+委任される管理者アカウントには、RODC に対するローカル管理アクセス許可が与えられます。 これらのユーザーは、ローカルコンピューターの Administrators グループに相当する特権を使用して操作できます。  これらのユーザーは、Domain Admins グループまたはドメインの組み込みの Administrator グループのメンバーではありません。 このオプションは、ドメインの管理アクセス許可を与えることなく支社の管理を委任する場合に便利です。 管理の委任の構成は必要ありません。  
   
 ADDSDeployment Windows PowerShell で同じことを実行する引数は以下のとおりです。  
   
@@ -549,7 +554,12 @@ ADDSDeployment Windows PowerShell で同じことを実行する引数は以下�
   
 **[追加オプション]** ページには、レプリケーション ソースとして特定のドメイン コントローラーを指定するか、またはどのドメイン コントローラーでもレプリケーション ソースとして使用できるかを指定する構成オプションがあります。  
   
-また、メディアからのインストール (IFM) オプションを使用して、バックアップされているメディアからドメイン コントローラーをインストールすることもできます。 **[メディアからのインストール]** チェック ボックスをオンにすると参照オプションが表示されます。指定したパスが有効なメディアであることを示すため **[検証]** をクリックする必要があります。 IFM オプションで使用するメディアは、Windows Server バックアップまたは Ntdsutil.exe を使用して、既存の別の Windows Server 2012 コンピューターからのみ作成します。Windows Server 2008 R2 以前のオペレーティング システムを使用して Windows Server 2012 のドメイン コントローラー用のメディアを作成することはできません。  IFM の変更内容は、付録で詳しく説明されています。 SYSKEY で保護されているメディアを使用する場合、サーバー マネージャーは確認の間にイメージのパスワードの入力を求めます。  
+また、メディアからのインストール (IFM) オプションを使用して、バックアップされているメディアからドメイン コントローラーをインストールすることもできます。 **[メディアからのインストール]** チェック ボックスをオンにすると参照オプションが表示されます。指定したパスが有効なメディアであることを示すため **[検証]** をクリックする必要があります。
+
+IFM ソースのガイドライン: • IFM オプションによって使用されるメディアは、Windows Server バックアップまたは Ntdsutil.exe と同じオペレーティングシステムのバージョンを持つ別の既存の Windows Server ドメインコントローラーから作成されます。 たとえば、windows server 2008 R2 以前のオペレーティングシステムを使用して、Windows Server 2012 ドメインコントローラー用のメディアを作成することはできません。
+• IFM ソースデータは書き込み可能なドメインコントローラーからのものである必要があります。 RODC からのソースは、技術的に新しい RODC の作成に使用されますが、IFM ソース RODC がレプリケートされていないことを示す偽陽性のレプリケーション警告があります。
+
+IFM の変更内容について詳しくは、[Ntdsutil.exe メディアからのインストールの変更に関する説明](../../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)をご覧ください。 SYSKEY で保護されているメディアを使用する場合、サーバー マネージャーは確認の間にイメージのパスワードの入力を求めます。
   
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_PSIFM.png)  
   
@@ -579,7 +589,7 @@ ADDSDeployment Windows PowerShell で同じことを実行する引数は以下�
   
 **[次へ]** をクリックしても、スキーマの拡張やドメインの更新は実行されません。 これらのイベントは、インストール フェーズでのみ発生します。 このページの目的は、インストール中の後の段階で発生するイベントについて通知することだけです。  
   
-このページでは、現在のユーザーの資格情報が Schema Admin と Enterprise Admins グループのメンバーであるかどうかも確認します。これは、ドメイン準備のためにスキーマを拡張するにはこれらのグループのメンバーシップが必要であるためです。 現在の資格情報に十分なアクセス権がないと表示された場合は、**[変更]** をクリックして適切なユーザー資格情報を指定してください。  
+このページでは、現在のユーザーの資格情報が Schema Admin と Enterprise Admins グループのメンバーであるかどうかも確認します。これは、ドメイン準備のためにスキーマを拡張するにはこれらのグループのメンバーシップが必要であるためです。 現在の資格情報に十分なアクセス権がないと表示された場合は、 **[変更]** をクリックして適切なユーザー資格情報を指定してください。  
   
 [追加オプション] の ADDSDeployment コマンドレットの引数は以下のとおりです。  
   
@@ -597,7 +607,7 @@ ADDSDeployment Windows PowerShell で同じことを実行する引数は以下�
   
 **[オプションの確認]** ページでは、インストールを開始する前に、設定を検証し、設定が要件を満たしていることを確認できます。 これがサーバー マネージャーを使用するインストールを停止する最後の機会ではありません。 このページでは、構成を続行する前に設定を検討して確認することだけができます。  
   
-サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。 これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。 例:  
+サーバー マネージャーの **[オプションの確認]** ページにあるオプションの **[スクリプトの表示]** ボタンを使用すると、現在の ADDSDeployment モジュール構成を単一の Windows PowerShell スクリプトとして含む Unicode テキスト ファイルを作成することもできます。 これにより、サーバー マネージャーのグラフィカル インターフェイスを Windows PowerShell 展開スタジオとして使用できます。 Active Directory ドメイン サービス構成ウィザードを使用してオプションを構成し、構成をエクスポートした後、ウィザードをキャンセルします。 これによって有効で正しい構文のサンプルが作成されるので、それをさらに変更したり、直接使用したりできます。 次に、例を示します。  
   
 ```  
 #  
@@ -645,7 +655,7 @@ Install-ADDSDomainController `
   
 ```  
   
-ドメイン コントローラーの昇格プロセスを開始するには、**[インストール]** をクリックします。 ここが、インストールをキャンセルする最後のチャンスとなります。 昇格プロセスが開始されると、キャンセルすることはできません。 昇格の結果に関係なく、昇格プロセスの最後でコンピューターが自動的に再起動します。  
+ドメイン コントローラーの昇格プロセスを開始するには、 **[インストール]** をクリックします。 ここが、インストールをキャンセルする最後のチャンスとなります。 昇格プロセスが開始されると、キャンセルすることはできません。 昇格の結果に関係なく、昇格プロセスの最後でコンピューターが自動的に再起動します。  
   
 ### <a name="installation"></a>インストール  
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_SMI_TR_RODCInstallation.png)  
@@ -665,13 +675,13 @@ Install-addsdomaincontroller
   
 必須およびオプションの引数については、このセクションの最初にある **ADDSDeployment コマンドレット** の表をご覧ください。  
   
-**Install-addsdomaincontroller** コマンドレットのフェーズは 2 つだけです (前提条件のチェックとインストール)。 以下の 2 つの図は、**-domainname**、**-readonlyreplica**、**-sitename**、および **-credential** の最低限の必須引数を使用したインストール フェーズを示しています。 **Install-ADDSDomainController** は、サーバー マネージャーと同様、昇格プロセスによって自動的にサーバーが再起動されることを知らせます。  
+**Install-addsdomaincontroller** コマンドレットのフェーズは 2 つだけです (前提条件のチェックとインストール)。 以下の 2 つの図は、 **-domainname**、 **-readonlyreplica**、 **-sitename**、および **-credential** の最低限の必須引数を使用したインストール フェーズを示しています。 **Install-ADDSDomainController** は、サーバー マネージャーと同様、昇格プロセスによって自動的にサーバーが再起動されることを知らせます。  
   
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_PSInstallRODC.png)  
   
 ![RODC のインストール](media/Install-a-Windows-Server-2012-Active-Directory-Read-Only-Domain-Controller--RODC---Level-200-/ADDS_PSInstallRODCProgress.png)  
   
-再起動プロンプトを自動的に受け入れるには、ADDSDeployment Windows PowerShell コマンドレットで **-force** または **-confirm:$false** 引数を使用します。 昇格の終了時にサーバーが自動的に再起動されないようにするには、**-norebootoncompletion** 引数を使用します。  
+再起動プロンプトを自動的に受け入れるには、ADDSDeployment Windows PowerShell コマンドレットで **-force** または **-confirm:$false** 引数を使用します。 昇格の終了時にサーバーが自動的に再起動されないようにするには、 **-norebootoncompletion** 引数を使用します。  
   
 > [!WARNING]  
 > 再起動の上書きはお勧めしません。 ドメイン コントローラーを正常に機能させるには、再起動する必要があります。 ドメイン コントローラーからログオフすると、再起動するまで、対話的にログオンし直すことはできません。  

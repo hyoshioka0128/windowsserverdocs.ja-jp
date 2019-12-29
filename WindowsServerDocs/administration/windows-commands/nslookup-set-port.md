@@ -1,8 +1,8 @@
 ---
 title: nslookup set port
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 47eb780631da766f49c0ca2cac8ef90007a95c7e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 5e1d7565499b87d861b727be54442a86527a85a7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436713"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372920"
 ---
 # <a name="nslookup-set-port"></a>nslookup set port
 
 
 
-指定された値には、既定の TCP または UDP ドメイン ネーム システム (DNS) 名サーバー ポートを変更します。
+既定の TCP/UDP ドメインネームシステム (DNS) ネームサーバーポートを、指定された値に変更します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,8 +36,8 @@ set port=<Port>
 
 | パラメーター |                                          説明                                          |
 |-----------|-----------------------------------------------------------------------------------------------|
-|  \<Port>  | 既定の TCP または UDP の DNS 名サーバー ポートの新しい値を指定します。 既定のポートは 53 です。 |
-|   {0} のヘルプ   |                                              ?}                                               |
+|  \<Port >  | 既定の TCP/UDP DNS ネームサーバーポートの新しい値を指定します。 既定のポートは53です。 |
+|   {ヘルプ   |                                              ?}                                               |
 
 #### <a name="additional-references"></a>その他の参照情報
 

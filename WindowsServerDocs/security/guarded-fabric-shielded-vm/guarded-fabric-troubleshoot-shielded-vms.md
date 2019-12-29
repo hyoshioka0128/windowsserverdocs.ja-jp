@@ -1,37 +1,37 @@
 ---
-title: シールドされた Vm をトラブルシューティングします。
+title: シールドされた Vm のトラブルシューティング
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 10/3/2018
-ms.openlocfilehash: 13ff0dad1519d394ce74a91efbfcc9e2f237e4a5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b0d4338d20238eb528c19221151f380cc154a2db
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850033"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386366"
 ---
-# <a name="troubleshoot-shielded-vms"></a>シールドされた Vm をトラブルシューティングします。
+# <a name="troubleshoot-shielded-vms"></a>シールドされた Vm のトラブルシューティング
 
 >適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
-Windows Server バージョン 1803 以降では、拡張セッション モードの仮想マシン接続 (VMConnect) と PS ダイレクトは、完全にシールドされた Vm を再び有効にします。 VM ゲストの資格情報、VM へのアクセスを取得する必要があります、仮想化管理者が、ホストは、そのネットワークの構成が壊れている場合、シールドされた VM のトラブルシューティングが簡単になります。 します。
+Windows Server バージョン1803以降では、完全にシールドされた Vm に対して、仮想マシン接続 (VMConnect) の拡張セッションモードと PS Direct が再度有効になります。 仮想化管理者は vm にアクセスするために VM ゲストの資格情報を必要としますが、これにより、ネットワーク構成が切断されたときに、ホスト側がシールドされた VM のトラブルシューティングを簡単に行うことができます。
 
-シールドされた Vm の VMConnect と PS ダイレクトを有効にする、単に移動 1803 以降のバージョンの Windows Server を実行する HYPER-V ホストにします。 これらの機能のための仮想デバイスは再自動的に有効にします。 シールドされた VM を移動する場合、実行するホストと Windows Server の以前のバージョン、VMConnect と PS の直接が再び無効にします。
+シールドされた Vm に対して VMConnect と PS Direct を有効にするには、Windows Server バージョン1803以降を実行している Hyper-v ホストに移動するだけです。 これらの機能を許可する仮想デバイスは、自動的に再び有効になります。 シールドされた VM が、以前のバージョンの Windows Server を実行しているホストに移動した場合、VMConnect と PS Direct は再び無効になります。
 
-セキュリティに影響するホスティング企業が、VM にアクセスすること、および動作を元に返される場合の心配をお客様には、ゲスト OS で、次の機能を無効にする必要があります。
+ホストに VM へのアクセス権があり、元の動作に戻す必要がある場合、セキュリティを重視するお客様には、ゲスト OS で次の機能を無効にする必要があります。
 
-- VM で PowerShell ダイレクト サービスを無効にします。
+- VM で PowerShell ダイレクトサービスを無効にします。
 
   ```powershell
   Stop-Service vmicvmsession
   Set-Service vmicvmsession -StartupType Disabled
   ```
 
-- 場合、ゲスト OS は、少なくとも、VMConnect 拡張セッション モードを無効にできますのみ Windows Server 2019 または Windows 10、バージョンは 1809 します。 VMConnect の拡張セッションのコンソール接続を無効にする VM では、次のレジストリ キーを追加します。
+- VMConnect 拡張セッションモードは、ゲスト OS が Windows Server 2019 または Windows 10 バージョン1809以降である場合にのみ無効にすることができます。 VMConnect 拡張セッションコンソール接続を無効にするには、VM に次のレジストリキーを追加します。
 
   ```
   reg add "HKLM\Software\Microsoft\Virtual Machine\Guest" /v DisableEnhancedSessionConsoleConnection /t REG_DWORD /d 1

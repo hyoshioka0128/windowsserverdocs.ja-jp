@@ -2,7 +2,7 @@
 title: 仮想化
 description: ''
 layout: LandingPage
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: brianlic
 ms.technology: compute
 ms.assetid: c248b41f-0de3-7136-9a25-b4b07e41ebf0
@@ -10,12 +10,12 @@ ms.topic: landing-page
 author: shortpatti
 ms.author: pashort
 ms.localizationpriority: high
-ms.openlocfilehash: 53c927f89fd3ccaa212c998f7102d0fdb9f41bde
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 50d30631a6c2bbf9a94ab6c59bbd006323458241
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66447939"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364047"
 ---
 # <a name="virtualization"></a>仮想化
 

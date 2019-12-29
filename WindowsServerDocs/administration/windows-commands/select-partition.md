@@ -1,8 +1,8 @@
 ---
-title: パーティションを選択します。
-description: 'Windows コマンド」のトピック * * *- '
+title: パーティションの選択
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 79449bc74dd09246b380b3f892acc1b338650d20
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9a186e2678fde64396a8b4b57a2d14e4b0b7bf26
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441502"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371068"
 ---
-# <a name="select-partition"></a>パーティションを選択します。
+# <a name="select-partition"></a>パーティションの選択
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-指定したパーティションを選択し、それに、フォーカスを移動します。 このコマンドは、現在フォーカスが、選択したディスクのパーティションを表示することもできます。  
+指定されたパーティションを選択し、そのパーティションにフォーカスを移動します。 このコマンドは、現在フォーカスが、選択したディスクのパーティションを表示することもできます。  
   
   
   
@@ -44,11 +44,11 @@ select partition=<n>
   
 -   使用して、ディスクを選択するパーティションを選択する前にまず必要があります、 **select ディスク** コマンドです。  
   
--   パーティションの数が指定されていない場合、このコマンドは、選択したディスクにフォーカスが置かれているパーティションを表示します。  
+-   パーティション番号が指定されていない場合、このコマンドは、現在選択されているディスクにフォーカスがあるパーティションを表示します。  
   
--   対応するパーティションを持つ、ボリュームを選択すると、パーティションが自動的に選択します。  
+-   ボリュームに対応するパーティションが選択されている場合は、パーティションが自動的に選択されます。  
   
--   対応するボリュームにパーティションを選択すると、ボリュームが自動的に選択します。  
+-   対応するボリュームを持つパーティションを選択すると、ボリュームが自動的に選択されます。  
   
 ## <a name="BKMK_examples"></a>例  
 フォーカスをパーティション 3 に、次のように入力します。  
@@ -63,7 +63,7 @@ select partitition=3
 select partition  
 ```  
   
-#### <a name="additional-references"></a>その他の参照  
+#### <a name="additional-references"></a>その他の参照情報  
 [コマンド ライン構文の記号](command-line-syntax-key.md)  
   
 

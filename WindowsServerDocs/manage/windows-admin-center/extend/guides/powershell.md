@@ -1,41 +1,41 @@
 ---
 title: 拡張機能で PowerShell を使用する
-description: Windows Admin Center SDK (プロジェクト ホノルル) 拡張機能で PowerShell を使用します。
+description: 拡張機能での PowerShell の使用 Windows 管理センター SDK (Project ホノルル)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 7375732fd464519cd1533043d271065e488fd46a
-ms.sourcegitcommit: 7cb939320fa2613b7582163a19727d7b77debe4b
+ms.prod: windows-server
+ms.openlocfilehash: 6e99fc43d4acb7a70dfd3a8ba19dae6492c41b2b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65621358"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357051"
 ---
 # <a name="using-powershell-in-your-extension"></a>拡張機能で PowerShell を使用する #
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
-Windows Admin Center の拡張機能 SDK にさらに深くしましょう: 拡張機能への PowerShell コマンドを追加する方法について説明します。
+Windows 管理センターの拡張機能 SDK の詳細について説明します。拡張機能に PowerShell コマンドを追加する方法について説明します。
 
 ## <a name="powershell-in-typescript"></a>TypeScript での PowerShell ##
 
-Gulp のビルド プロセスがいずれかを実行する生成手順```{!ScriptName}.ps1```に配置する、```\src\resources\scripts```フォルダーにそれらをビルドし、```powershell-scripts```クラスの下で、```\src\generated```フォルダー。
+Gulp ビルド```{!ScriptName}.ps1```プロセスには、 ```\src\resources\scripts```フォルダー内に配置されたを取得して、フォルダーの```\src\generated```下の```powershell-scripts```クラスにビルドする生成手順があります。
 
 >[!NOTE] 
-> 手動で更新しない、```powershell-scripts.ts```も```strings.ts```ファイル。 [次へ] の生成に対して行った変更が上書きされます。
+> ```powershell-scripts.ts``` またはファイルを手動で```strings.ts```更新しないでください。 行った変更は、次の生成時に上書きされます。
 
-## <a name="running-a-powershell-script"></a>PowerShell スクリプトを実行します。 ##
-ノードで実行する任意のスクリプトを配置できる```\src\resources\scripts\{!ScriptName}.ps1```します。 
+## <a name="running-a-powershell-script"></a>PowerShell スクリプトの実行 ##
+ノードで実行するすべてのスクリプトは、に```\src\resources\scripts\{!ScriptName}.ps1```配置できます。 
 >[!IMPORTANT] 
-> 変更、```{!ScriptName}.ps1```までプロジェクトのファイルは反映されません```gulp generate```が実行されています。
+> ```{!ScriptName}.ps1```ファイルに加えられた変更は、が実行されるまで```gulp generate```プロジェクトに反映されません。
 
-API の動作を対象とする、渡される必要があるすべてのパラメーターで、PowerShell スクリプトを作成して作成されたセッションでスクリプトを実行し、ノードで PowerShell セッションを作成します。
+API は、まずターゲットとするノードで PowerShell セッションを作成し、渡す必要があるパラメーターを使用して PowerShell スクリプトを作成し、作成されたセッションでスクリプトを実行することで機能します。
 
-たとえば、このスクリプトがある```\src\resources\scripts\Get-NodeName.ps1```:
+たとえば、次のスクリプト```\src\resources\scripts\Get-NodeName.ps1```があります。
 ``` ps1
 Param
  (
@@ -45,11 +45,11 @@ Param
  Write-Output $nodeName
 ```
 
-ターゲット ノードは、PowerShell セッションを作成します。
+ここでは、ターゲットノードの PowerShell セッションを作成します。
 ``` ts
 const session = this.appContextService.powerShell.createSession('{!TargetNode}'); 
 ```
-入力パラメーターは、PowerShell スクリプトを作成します。
+次に、入力パラメーターを使用して PowerShell スクリプトを作成します。
 ```ts
 const script = PowerShell.createScript(PowerShellScripts.Get_NodeName, {stringFormat: 'The name of the node is {0}!'});
 ```
@@ -79,7 +79,7 @@ const script = PowerShell.createScript(PowerShellScripts.Get_NodeName, {stringFo
   }
 
 ```
-今すぐは先ほど作成した監視可能な関数をサブスクライブする必要があります。 この PowerShell スクリプトを実行する関数を呼び出す必要がありますに配置します。
+ここでは、作成した観測可能な関数をサブスクライブする必要があります。 次のようにして、PowerShell スクリプトを実行する関数を呼び出す必要があります。
 ```ts
 this.getNodeName().subscribe(
      response => {
@@ -87,17 +87,17 @@ this.getNodeName().subscribe(
      }
 );
 ```
-CreateSession メソッドに、ノードの名前を指定して、新しい PowerShell セッションが作成、使用、および PowerShell 呼び出しの完了時にすぐに破棄します。 
+CreateSession メソッドにノード名を指定すると、新しい PowerShell セッションが作成され、使用された後、PowerShell 呼び出しの完了時にすぐに破棄されます。 
 
-### <a name="key-options"></a>キーのオプション ###
-PowerShell API を呼び出すときに、いくつかのオプションがあります。 セッションが作成されるたびに作成できます、キーの有無。 
+### <a name="key-options"></a>キーオプション ###
+PowerShell API を呼び出すときに使用できるオプションがいくつかあります。 セッションが作成されるたびに、キーの有無に関係なく作成できます。 
 
-**キー:** これには、検索して (つまり Component2 がその同じセッションを使用して Component1"SME ROCKS、"キーを使用してセッションを作成できます) のコンポーネントでも、再利用が可能なキー付きのセッションが作成されます。キーが指定されている場合に作成されるセッション破棄する必要がの呼び出し元の dispose() 上記の例で作成しました。 5 分以上の破棄されず、セッションを保持する必要があります。 
+**キー:** これにより、コンポーネント間でも検索と再利用が可能なキー付きセッションが作成されます (つまり、Component1 はキー "SME-岩" を使用してセッションを作成でき、Component2 は同じセッションを使用できます)。キーが指定されている場合は、上記の例のように dispose () を呼び出すことによって、作成されたセッションを破棄する必要があります。 セッションは、5分を超えて破棄されることなく保持されません。 
 ```ts
   const session = this.appContextService.powerShell.createSession('{!TargetNode}', '{!Key}');
 ```
 
-**キーを使用しません。** キーは、セッションに自動的に作成されます。 このセッションでは、3 分後に自動的に破棄します。 キーを使用しないを使用すると、セッションの作成時に使用可能な既にすべての実行空間の使用をリサイクルする、拡張機能ができます。 実行空間がない場合よりも、新たに作成されます。 この機能は、1 回限りの呼び出しが繰り返し使用されるパフォーマンスに影響することができます。 セッションは作成するには約 1 秒、速度低下を招くので継続的にセッションをリサイクルします。
+**キーなし**セッションのキーが自動的に作成されます。 このセッションは、3分後に自動的に破棄されます。 キーなしを使用すると、セッションの作成時に既に使用可能な実行空間の使用を拡張でリサイクルできます。 新しい実行空間が使用できない場合は、それが作成されます。 この機能は1回限りの呼び出しに適していますが、繰り返し使用するとパフォーマンスに影響する場合があります。 セッションの作成には約1秒かかります。そのため、継続的なリサイクルセッションによって、パフォーマンスが低下する可能性があります。
 
 ```ts
   const session = this.appContextService.powerShell.createSession('{!TargetNodeName}');
@@ -106,19 +106,19 @@ PowerShell API を呼び出すときに、いくつかのオプションがあ�
 ``` ts 
 const session = this.appContextService.powerShell.createAutomaticSession('{!TargetNodeName}');
 ```
-ほとんどの場合、キー付きのセッションを作成、```ngOnInit()```メソッド、および内のイメージの dispose```ngOnDestroy()```します。 コンポーネントがコンポーネント間で共有されていない、基になるセッション内の複数の PowerShell スクリプトがある場合、このパターンに従います。
-最良の結果をサービスではなく、コンポーネントの内部で管理されるセッションの作成 - その有効期間を維持するかどうかを確認し、クリーンアップを適切に管理することができます。
+ほとんどの場合、 ```ngOnInit()```メソッドでキー付きセッションを作成し、で```ngOnDestroy()```そのセッションを破棄します。 1つのコンポーネントに複数の PowerShell スクリプトがあり、基になるセッションがコンポーネント間で共有されていない場合は、このパターンに従います。
+最良の結果を得るには、セッションの作成がサービスではなくコンポーネント内で管理されていることを確認してください。これにより、有効期間とクリーンアップを適切に管理できるようになります。
 
-最良の結果をサービスではなく、コンポーネントの内部で管理されるセッションの作成 - その有効期間を維持するかどうかを確認し、クリーンアップを適切に管理することができます。
+最良の結果を得るには、セッションの作成がサービスではなくコンポーネント内で管理されていることを確認してください。これにより、有効期間とクリーンアップを適切に管理できるようになります。
 
-### <a name="powershell-stream"></a>PowerShell Stream ###
-実行時間の長いスクリプトとデータがある場合を出力段階的に、PowerShell ストリームには、スクリプトを完了するまで待機することがなく、データを処理することができます。 監視可能な next() は、データを受信すると、すぐに呼び出されます。
+### <a name="powershell-stream"></a>PowerShell ストリーム ###
+実行時間の長いスクリプトがあり、データが徐々に出力される場合、PowerShell ストリームを使用すると、スクリプトが終了するのを待たずにデータを処理できます。 観測可能な次の () は、データが受信されるとすぐに呼び出されます。
 ```ts
 this.appContextService.powerShellStream.run(session, script);
 ```
 
-### <a name="long-running-scripts"></a>長時間実行されるスクリプト ###
-バック グラウンドで実行するには実行時間の長いスクリプトがあれば、作業項目を送信できます。 スクリプトの状態は、ゲートウェイによって追跡され、ステータスの更新は通知を送信できます。 
+### <a name="long-running-scripts"></a>実行時間の長いスクリプト ###
+バックグラウンドで実行するスクリプトが長時間実行されている場合は、作業項目を送信できます。 スクリプトの状態はゲートウェイによって追跡され、状態の更新を通知に送信できます。 
 ```ts
 const workItem: WorkItemSubmitRequest = {
     typeId: 'Long Running Script',
@@ -151,23 +151,23 @@ return this.appContextService.workItem.submit('{!TargetNode}', workItem);
 ```
 
 >[!NOTE] 
-> 表示される進行状況は、Write-progress を記述したスクリプトに含める必要があります。 例:
+> 進行状況を表示するには、記述したスクリプトに書き込みの進行状況が含まれている必要があります。 以下に例を示します。
 > ``` ps1
->  Write-Progress -Activity ‘The script is almost done!’ -percentComplete 95
+>  Write-Progress -Activity ‘The script is almost done!' -percentComplete 95
 >```
 
-#### <a name="workitem-options"></a>作業項目のオプション ####
+#### <a name="workitem-options"></a>WorkItem オプション ####
 
 | 関数 (function) | 説明 |
 | ----- | ----------- |
-| submit() | 作業項目を送信します。 
-| submitAndWait() | 作業項目を送信し、その実行の完了を待つ
-| wait() | 既存の職場の待機を完了する項目
-| query() | 既存の作業項目 id でのクエリ
-| find() | 既存の TargetNodeName、ModuleName、または typeId によって作業項目を見つけてします。
+| submit () | 作業項目を送信します 
+| submitAndWait () | 作業項目を送信し、実行が完了するまで待機する
+| wait () | 既存の作業項目が完了するまで待機する
+| query () | Id による既存の作業項目のクエリ
+| find () | TargetNodeName、ModuleName、または typeId を使用して、作業項目を検索します。
 
-### <a name="powershell-batch-apis"></a>PowerShell の Batch Api ###
-複数のノードで同じスクリプトを実行する必要があります、batch の PowerShell セッションを使用できます。 例:
+### <a name="powershell-batch-apis"></a>PowerShell Batch Api ###
+同じスクリプトを複数のノードで実行する必要がある場合は、batch PowerShell セッションを使用できます。 以下に例を示します。
 ```ts
 const batchSession = this.appContextService.powerShell.createBatchSession(
     ['{!TargetNode1}', '{!TargetNode2}', sessionKey);
@@ -190,6 +190,6 @@ const batchSession = this.appContextService.powerShell.createBatchSession(
 #### <a name="powershellbatch-options"></a>PowerShellBatch オプション ####
 | オプション | 説明 |
 | ----- | ----------- |
-| runSingleCommand | 配列内のすべてのノードに対して 1 つのコマンドを実行します。 
-| 実行 | ペアになっているノードに対応するコマンドを実行します。
-| キャンセル | 配列内のすべてのノードでコマンドをキャンセルします。
+| runSingleCommand | 配列内のすべてのノードに対して1つのコマンドを実行します。 
+| 実行 | ペアのノードで対応するコマンドを実行する
+| cancel | 配列内のすべてのノードでコマンドを取り消します。

@@ -2,7 +2,7 @@
 title: デスクトップ ホスティング環境の概要
 description: Azure IaaS を使用した RDS 展開の概要。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 1bdf4e3e25facfa8cc49459ada8d9b1b6309a724
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 1bd672c52c892430339bb6c17c6324bf4d6d79a1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63744031"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387811"
 ---
 # <a name="understanding-the-desktop-hosting-environment"></a>デスクトップ ホスティング環境の概要
 
@@ -26,7 +26,7 @@ ms.locfileid: "63744031"
 ここでは、デスクトップ ホスティング サービスのコンポーネントについて説明します。  
   
 ## <a name="tenant-environment"></a>テナント環境  
-プロバイダーのデスクトップ ホスティング サービスは、分離された一連のテナント環境として実装されます。 各テナントの環境は、ストレージ コンテナー、一連の仮想マシン、および Azure サービスの組み合わせで構成され、そのすべてが分離された仮想ネットワークを介して通信します。 各仮想マシンには、テナントのホストされたデスクトップ環境を構成する 1 つ以上のコンポーネントが含まれています。 以降のサブセクションでは、各テナントのホストされたデスクトップ環境を構成するコンポーネントについて説明します。
+プロバイダーのデスクトップ ホスティング サービスは、分離された一連のテナント環境として実装されます。 各テナントの環境は、ストレージ コンテナー、一連の仮想マシン、および Azure サービスの組み合わせで構成されます。これらはすべて、分離された仮想ネットワークを介して通信します。 各仮想マシンには、テナントのホストされたデスクトップ環境を構成する 1 つ以上のコンポーネントが含まれています。 以降のサブセクションでは、各テナントのホストされたデスクトップ環境を構成するコンポーネントについて説明します。
 
 ## <a name="remote-desktop-services"></a>リモート デスクトップ サービス
 デスクトップ ホスティング環境では、さまざまな仮想マシン間で次のリモート デスクトップ サービス ロールがインストールされます。

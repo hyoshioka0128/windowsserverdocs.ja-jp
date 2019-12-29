@@ -1,8 +1,8 @@
 ---
-title: ksetup:setrealmflags
-description: 'Windows コマンド」のトピック * * *- '
+title: 'ksetup: setrealmflags'
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 249eb82bb40890e071bd7d1eca3a0201064fa01e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: b594ae0a1c3c9814d93496ac76e82a594ff4ee00
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437939"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374812"
 ---
-# <a name="ksetupsetrealmflags"></a>ksetup:setrealmflags
+# <a name="ksetupsetrealmflags"></a>ksetup: setrealmflags
 
 
 
-指定された領域の領域のフラグを設定します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+指定された領域の領域フラグを設定します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,38 +36,38 @@ ksetup /setrealmflags <RealmName> [sendaddress] [tcpsupported] [delegate] [ncsup
 
 |パラメーター|説明|
 |---------|-----------|
-|\<RealmName>|CORP. などの大文字の DNS 名と領域名が指定されています。CONTOSO.COM です。|
-|領域のフラグ|次のフラグのいずれかを示しています。</br>-SendAddress</br>-TcpSupported</br>デリゲート型</br>-NcSupported</br>RC4|
+|\<RealmName >|領域名は、CORP などの大文字の DNS 名で表されます。CONTOSO.COM。|
+|領域フラグ|は、次のいずれかのフラグを示します。</br>-SendAddress</br>-TcpSupported</br>-Delegate</br>- NcSupported</br>-RC4|
 
 ## <a name="remarks"></a>注釈
 
-領域のフラグは、Windows Server オペレーティング システムに基づいていないいる Kerberos 領域の他の機能を指定します。 Windows Server 2003、Windows Server 2008、または Windows Server 2008 R2 を実行しているコンピューターが、Windows Server オペレーティング システムを実行しているドメインを使用する代わりに認証を管理するサーバーを Kerberos を使用し、これらのシステムに参加します。Kerberos 領域。 このエントリは、領域の機能を確立します。 次の表では、それぞれについて説明します。
+領域フラグは、Windows Server オペレーティングシステムに基づいていない Kerberos 領域の追加機能を指定します。 Windows server 2003、Windows Server 2008、または Windows Server 2008 R2 を実行しているコンピューターは、Windows Server オペレーティングシステムを実行しているドメインを使用するのではなく、Kerberos サーバーを使用して認証を管理できます。また、これらのシステムは、Kerberos 領域。 このエントリにより、領域の機能が確立されます。 次の表では、それぞれについて説明します。
 
-|Value|領域のフラグ|説明|
+|Value|領域フラグ|説明|
 |-----|----------|-----------|
-|0 xf です.|すべての|すべての領域フラグが設定されます。|
-|0x00|なし|領域のフラグが設定されていないと、その他の機能が有効なことはありません。|
-|0x01|SendAddress|IP アドレスは、チケット保証チケット内に含まれるになります。|
-|0x02|TcpSupported|この領域では、伝送制御プロトコル (TCP) とユーザー データグラム プロトコル (UDP) の両方がサポートされています。|
-|0x04|委任|この領域のすべてのユーザーは、委任に対して信頼されています。|
-|0x08|NcSupported|この領域は、名の正規化は、DNS と領域の名前付け標準をサポートします。|
-|0x80|RC4|この領域は、TLS の使用できる領域間の信頼を有効にする RC4 暗号化をサポートします。|
+|0Xf です|すべての|すべての領域フラグが設定されます。|
+|0x00|なし|領域フラグが設定されておらず、追加の機能は有効になっていません。|
+|0x01|SendAddress|この IP アドレスは、チケット保証チケット内に含まれます。|
+|0x02|TcpSupported|この領域では、伝送制御プロトコル (TCP) とユーザーデータグラムプロトコル (UDP) の両方がサポートされています。|
+|0x04|委任|この領域のすべてのユーザーが委任に対して信頼されています。|
+|0x08|NcSupported|この領域では、DNS と領域の名前付け標準を可能にする、名前の正規化がサポートされています。|
+|0x80|RC4|この領域では、RC4 暗号化をサポートして、複数領域にわたる信頼を有効にします。これにより、TLS を使用できるようになります。|
 
-領域のフラグが下のレジストリに格納されている**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\\** <em>RealmName</em>します。 既定では、このエントリはレジストリに存在しません。 使用することができます、 [Ksetup:addrealmflags](ksetup-addrealmflags.md)レジストリの作成にコマンド。
+領域フラグは**HKEY_LOCAL_MACHINE \system\currentcontrolset\control\lsa\kerberos\domains\\** <em>realmname</em>の下のレジストリに格納されます。 既定では、このエントリはレジストリに存在しません。 [Ksetup: addrealmflags](ksetup-addrealmflags.md)コマンドを使用して、レジストリにデータを設定できます。
 
-どのような領域のフラグが使用可能で設定を確認できますの出力を表示して**ksetup**します。
+**Ksetup**の出力を表示することによって、使用可能な領域フラグと設定されているものを確認できます。
 
 ## <a name="BKMK_Examples"></a>例
 
-CONTOSO の領域を設定して使用可能な領域のフラグを一覧表示します。
+領域 CONTOSO の利用可能な領域フラグと設定領域フラグを一覧表示します。
 ```
 ksetup
 ```
-現在設定されていない 2 つのフラグを設定します。
+現在設定されていない2つのフラグを設定します。
 ```
 ksetup /setrealmflags CONTOSO ncsupported delegate
 ```
-実行、 **ksetup**コマンド出力を表示し、領域のフラグが設定されていることを確認する**領域フラグ =** します。
+**Ksetup**コマンドを実行して、領域フラグが設定されていることを確認します。これを行うには、出力を表示し、 **realm flags =** を探します。
 
 #### <a name="additional-references"></a>その他の参照情報
 

@@ -7,18 +7,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 873953155d22bafef5b042887b22e953ff580b5c
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: c825ae9c9b52068b58b99bc6ff597304c9643d17
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280570"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390083"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>LDAP サーバー Cookie の処理方法
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 LDAP では、一部のクエリによって膨大な結果セットが返されます。 このようなクエリにより、Windows Server にいくつかの問題が発生します。  
   
@@ -26,17 +26,17 @@ LDAP では、一部のクエリによって膨大な結果セットが返され
   
 別の問題として、何万個ものオブジェクトを持つ結果セットは、簡単に数百メガバイトの巨大なサイズになる点が挙げられます。 そのため、多くの仮想アドレス空間が必要になります。また、TCP セッションが転送中に停止した場合、すべての作業が失われるため、ネットワークでの転送にも問題があります。  
   
-これらの容量と運用上の問題の良好な Microsoft LDAP の開発者は、「ページング クエリ」と呼ばれる LDAP 拡張機能を作成します。 LDAP コントロールを実装し、1 つの膨大なクエリを大量の小さな結果セットに分割します。 [RFC 2696](http://www.ietf.org/rfc/rfc2696)として RFC 標準になりました。  
+これらの容量およびロジスティックの問題により、Microsoft LDAP 開発者は、"ページングクエリ" と呼ばれる LDAP 拡張機能を作成するようになりました。 LDAP コントロールを実装し、1 つの膨大なクエリを大量の小さな結果セットに分割します。 [RFC 2696](http://www.ietf.org/rfc/rfc2696)として RFC 標準になりました。  
   
 ## <a name="cookie-handling-on-client"></a>クライアント上の Cookie 処理  
-ページング クエリ メソッドがいずれかを設定して、クライアントまたはページ サイズを使用して、 [LDAP ポリシー](https://support.microsoft.com/kb/315071/en-us) ("MaxPageSize")。 クライアントは、LDAP コントロールを送信してページングを常に有効にする必要があります。  
+ページングクエリメソッドは、クライアントまたは[LDAP ポリシー](https://support.microsoft.com/kb/315071/en-us) ("maxpagesize") のいずれかで設定されたページサイズを使用します。 クライアントは、LDAP コントロールを送信してページングを常に有効にする必要があります。  
 
   
 多くの結果を照会するクエリを使用する場合、ある時点でオブジェクトの最大許容数に到達します。 LDAP サーバーは、応答メッセージをパッケージ化し、後で検索を継続するために必要な情報を含む Cookie を追加します。  
   
 クライアント アプリケーションは、不透明な BLOB として Cookie を処理する必要があります。 応答内のオブジェクト数を取得し、Cookie の有無に基づいて検索を継続できます。クライアントは、ベース オブジェクトやフィルターなど、同じパラメーターのクエリを LDAP サーバーに再度送信して検索を継続し、前の応答で返された Cookie 値を追加します。  
   
-オブジェクトの数がページを入力していない場合は、LDAP クエリが完了して、応答にページ クッキーが含まれていません。 サーバーから Cookie が返されない場合、クライアントはページング検索が正常に完了したと見なす必要があります。  
+オブジェクトの数がページに収まらない場合、LDAP クエリは完了し、応答にページ cookie は含まれません。 サーバーから Cookie が返されない場合、クライアントはページング検索が正常に完了したと見なす必要があります。  
   
 サーバーからエラーが返された場合、クライアントはページング検索が失敗したと見なす必要があります。 検索を再実行すると、検索が最初のページから再度開始されます。  
   
@@ -48,15 +48,15 @@ Windows Server はクライアントに Cookie を返し、Cookie に関連す�
 ## <a name="how-the-cookie-pool-is-managed"></a>Cookie プールの管理方法  
 当然のことながら、LDAP サーバーは一度に複数のクライアントにサービスを提供し、一度に複数のクライアントが、サーバーの Cookie キャッシュを使用する必要のあるクエリを起動できます。そのため、Windows Server の実装では、Cookie プールの使用状況が追跡され、制限が適用されるため、Cookie プールで大量のリソースが消費されることはありません。 制限は、LDAP ポリシーの次の設定を使用して管理者が設定できます。 既定値および説明は次のとおりです。  
   
-**MinResultSets:4**  
+**MinResultSets: 4**  
   
 サーバーの Cookie キャッシュ内のエントリが MinResultSets よりも少ない場合、LDAP サーバーは、後述の最大プール サイズを確認することはありません。  
   
-**MaxResultSetSize:262, 144 バイト**  
+**MaxResultSetSize: 262、144 バイト**  
   
 サーバー上の Cookie キャッシュの合計サイズが MaxResultSetSize の最大バイト数を超えてはいけません。 超える場合は、プールが MaxResultSetSize のバイト数より小さくなるか、プール内の Cookie が MinResultSets より少なくなるまで、最も古い Cookie から削除されます。 つまり、既定の設定を使用する場合、格納されている Cookie が 3 つしかない場合、LDAP サーバーは 450 KB のプールを問題ないと見なすことを意味しています。  
   
-**MaxResultSetsPerConn:10**  
+**MaxResultSetsPerConn: 10**  
   
 LDAP サーバーは、プール内の 1 つの LDAP 接続に対して、MaxResultSetsPerConn よりも少ない数の Cookie を許可します。  
   
@@ -72,10 +72,10 @@ LDAP サーバーのキャッシュから Cookie 情報を削除しても、す�
 ```  
   
 > [!NOTE]  
-> "Dsid"16 進数の値は、LDAP サーバー バイナリのビルド バージョンによって異なります。  
+> "DSID" の背後にある16進値は、LDAP サーバーバイナリのビルドバージョンによって異なります。  
   
 ## <a name="reporting-on-the-cookie-pool"></a>Cookie プールのレポート機能  
-LDAP サーバー「16 Ldap インターフェイス」のカテゴリのイベント ログに記録する機能を持つ、 [NTDS 診断キー](https://support.microsoft.com/kb/314980/en-us)します。 このカテゴリを「2」を設定する場合は、次のイベントを取得できます。  
+LDAP サーバーには、 [NTDS 診断キー](https://support.microsoft.com/kb/314980/en-us)のカテゴリ "16 LDAP インターフェイス" を使用してイベントをログに記録する機能があります。 このカテゴリを "2" に設定すると、次のイベントを取得できます。  
   
 ```  
 Log Name:      Directory Service  
@@ -126,11 +126,11 @@ The client should consider a more efficient search filter.  The limit for Maximu
   
 DC や LDAP サーバーにイベント 2898 が表示された場合は、MaxResultSetsPerConn を 25 に設定することをお勧めします。 1 つの LDAP 接続で 25 を超える並列ページング検索は普通ではありません。 イベント 2898 が引き続き表示される場合は、エラーが発生した LDAP クライアント アプリケーションを調査してみてください。 何らかの理由で余分なページング検索結果の取得から抜け出せなくなり、Cookie が保留のまま、新しいクエリが再度開始された可能性があります。 そのため、ある時点で目的に応じた十分な Cookie がアプリケーションにあるかを確認し、MaxResultSetsPerConn に 25 よりも大きな値を設定することもできます。ドメイン コントローラーにイベント 2899 が記録されている場合、計画は異なります。 DC および LDAP サーバーが、十分なメモリ (数 GB の空きメモリ) を搭載したマシンで稼動する場合、LDAP サーバーの MaxResultsetSize を 250 MB 以上に設定することをお勧めします。 この制限は、非常に大規模なディレクトリであっても、大量の LDAP ページ検索に十分に対応できます。  
   
-250 MB 以上のプールでイベント 2899 が変わらず表示される場合は、多くのクライアントに非常に大量のオブジェクトが返され、非常に高い頻度でクエリを実行している可能性があります。 [Active Directory のデータ コレクター セット](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx) を使用して収集できるデータは、LDAP サーバーを常にビジー状態にする、反復ページング クエリを検索するのに役立ちます。 これらのクエリが使用されるページのサイズに一致する「のエントリが返されます」の数をすべて表示されます。  
+250 MB 以上のプールでイベント 2899 が変わらず表示される場合は、多くのクライアントに非常に大量のオブジェクトが返され、非常に高い頻度でクエリを実行している可能性があります。 [Active Directory のデータ コレクター セット](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx) を使用して収集できるデータは、LDAP サーバーを常にビジー状態にする、反復ページング クエリを検索するのに役立ちます。 これらのクエリはすべて、使用されたページのサイズに一致する "返されたエントリ" が多数表示されます。  
   
-可能であれば、アプリケーションの設計を確認し、頻度、データ ボリューム、またはこのデータのクエリを実行するクライアント インスタンスと別のアプローチを実装する必要があります。ソース コードへのアクセスには、このガイドのあるアプリケーションが発生した場合[AD-Enabled の効率的なアプリケーションを作成する](https://msdn.microsoft.com/library/ms808539.aspx)アプリケーションが AD にアクセスするための最適な方法を理解するのに役立ちます。  
+可能であれば、アプリケーションの設計を確認し、頻度が低く、データ量が少なく、このデータを照会するクライアントインスタンスの数が少ない別のアプローチを実装する必要があります。ソースコードにアクセスできるアプリケーションの場合、[効率的な Ad 対応アプリケーションを作成](https://msdn.microsoft.com/library/ms808539.aspx)するためのこのガイドは、アプリケーションが ad にアクセスするための最適な方法を理解するのに役立ちます。  
   
-クエリの動作を変更できない場合 1 つの方法はよりレプリケートされたインスタンスのために必要な名前付けコンテキストとに、クライアントを再配布して、最終的に、各 LDAP サーバーの負荷を軽減も追加します。  
+クエリの動作を変更できない場合は、必要な名前付けコンテキストのレプリケートされたインスタンスをさらに追加し、クライアントを再配布し、最終的に個々の LDAP サーバーの負荷を軽減する方法もあります。  
   
 
 

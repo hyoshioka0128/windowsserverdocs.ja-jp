@@ -2,7 +2,7 @@
 title: 仮想デスクトップ インフラストラクチャ (VDI) ロール用の Windows 10 バージョン 1803 の最適化
 description: VDI イメージとして使用される Windows 10 1803 デスクトップのオーバーヘッドを最小限に抑える推奨の設定および構成
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: robsmi
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: 6320e9459e1460225a9920c2a23d596fa6bb4aa7
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 830a4213efd9ca47b88c307776d7c00ad24c574f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805204"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387097"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>仮想デスクトップ インフラストラクチャ (VDI) ロール用の Windows 10 バージョン 1803 の最適化
 
@@ -214,7 +214,7 @@ Get-WindowsOptionalFeature -Online
 Enable-WindowsOptionalFeature -Online -FeatureName "DirectPlay" -All
 ```
 
-この詳細については、[PowerShell を使用した Windows 10 オプション機能の管理](https://social.technet.microsoft.com/wiki/contents/articles/39386.windows-10-managing-optional-features-with-powershell.aspx)に関するページを参照してください。
+詳細については、「[Windows 10:PowerShell を使用したオプションの機能の管理](https://social.technet.microsoft.com/wiki/contents/articles/39386.windows-10-managing-optional-features-with-powershell.aspx)」を参照してください。
 
 #### <a name="enable-or-disable-windows-features-by-using-dism"></a>DISM を使用して Windows 機能を有効または無効にする
 
@@ -388,7 +388,7 @@ VDI 環境での Windows 10 の多数の最適化は、Windows ポリシーを�
 |                                                              **検索**                                                              |                                                      ロック画面で Cortana を許可する                                                      |                                                                                                                               |                                                                                                                                                                                                                                                                                                                                                                  **無効**                                                                                                                                                                                                                                                                                                                                                                   |
 |                                                             \***検索**                                                             |                                                 検索と Cortana による位置情報の使用を許可する                                                  |                                                                                                                               |                                                                                                                                                                                                                                                                                                                                                                  **無効**                                                                                                                                                                                                                                                                                                                                                                   |
 |                                                              **検索**                                                              |                                                          Web 検索を許可しない                                                          |                                                                                                                               |                                                                                                                                                                                                                                                                                                                                                                   **Enabled**                                                                                                                                                                                                                                                                                                                                                                   |
-|                                                             \***検索**                                                             |                                           Don’t search the web or display web results in Search (Web を検索したり [検索] に Web の検索結果を表示したりしない)                                           |                                                                                                                               |                                                                                                                                                                                                                                                                                        **有効** (このポリシー設定を有効にした場合、ユーザーが [検索] でクエリを実行しても、クエリは Web に対して実行されず、Web の検索結果は表示されません)。                                                                                                                                                                                                                                                                                        |
+|                                                             \***検索**                                                             |                                           Web を検索したり [検索] に Web の検索結果を表示したりしない                                           |                                                                                                                               |                                                                                                                                                                                                                                                                                        **有効** (このポリシー設定を有効にした場合、ユーザーが [検索] でクエリを実行しても、クエリは Web に対して実行されず、Web の検索結果は表示されません)。                                                                                                                                                                                                                                                                                        |
 |                                                              **検索**                                                              |                                         コントロール パネルからインデックスに UNC の場所を追加することを禁止する                                          |                                                                                                                               |                                                                                                                                                                                                                                                                                                                                                                   **Enabled**                                                                                                                                                                                                                                                                                                                                                                   |
 |                                                              **検索**                                                              |                                               オフライン ファイル キャッシュのファイルのインデックス作成を禁止する                                               |                                                                                                                               |                                                                                                                                                                                                                                                                                                                                                                   **Enabled**                                                                                                                                                                                                                                                                                                                                                                   |
 |                                                             \***検索**                                                             |                                                 [検索] で共有する情報を設定する                                                  |                                                        匿名情報                                                         |                                                                                                                                                                                                                                                                                                               **有効** (使用情報は共有しますが、検索履歴、Microsoft アカウント情報、または特定の位置情報を共有しません)。                                                                                                                                                                                                                                                                                                                |
@@ -451,7 +451,7 @@ VDI 環境での Windows 10 の多数の最適化は、Windows ポリシーを�
 | **ローカル コンピューター ポリシー\\コンピューターの構成\\管理用テンプレート** |          |                         |                     |
 | **タスク バーと [スタート] メニュー**                  | ネットワーク アイコンを削除する               |                         | **有効** (システム通知領域にネットワーク アイコンが表示されません)。 |
 
-ネットワーク接続状態インジケーター (NCSI) の詳細については、[ネットワーク接続状態アイコン](https://blogs.technet.microsoft.com/networking/2012/12/20/the-network-connection-status-icon/)に関するページを参照してください
+ネットワーク接続状態インジケーター (NCSI) の詳細については、[ ネットワーク接続状態アイコン ](https://blogs.technet.microsoft.com/networking/2012/12/20/the-network-connection-status-icon/) に関するページを参照してください
 
 ### <a name="system-services"></a>システム サービス
 
@@ -618,7 +618,7 @@ VDI を使用した Windows Defender の最適化の詳細については、こ�
 
 HKLM\\System\\CurrentControlSet\\Services\\LanmanWorkstation\\Parameters\\DisableBandwidthThrottling
 
-Windows 10 に適用されます。 既定値は **0** です。 既定では、SMB リダイレクターは、ネットワーク関連のタイムアウトを回避するために、待機時間の長いネットワーク接続全体のスループットを調整します。 このレジストリ値を **1** に設定すると、この調整が無効になり、待機時間の長いネットワーク接続でのファイル転送のスループットがより高くなるので、この設定を検討する必要があります。
+Windows 10 に適用されます。 既定値は **0** です。 既定では、SMB リダイレクターは、ネットワーク関連のタイムアウトを回避するために、待機時間の長いネットワーク接続全体のスループットを調整する場合があります。 このレジストリ値を **1** に設定すると、この調整が無効になり、待機時間の長いネットワーク接続でのファイル転送のスループットがより高くなるので、この設定を検討する必要があります。
 
 #### <a name="fileinfocacheentriesmax"></a>FileInfoCacheEntriesMax
 

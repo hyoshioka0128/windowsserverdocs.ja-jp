@@ -1,9 +1,9 @@
 ---
-title: 手順 2 は、基本的な DirectAccess サーバーを構成します。
-description: このトピックは、作業の開始ウィザードの Windows Server 2016 を使用して単一の DirectAccess サーバー展開ガイドの一部です。
+title: 手順 2. 基本的な DirectAccess サーバーを構成する
+description: このトピックは、「Windows Server 2016 用はじめにウィザードを使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: 82bf5fed-93b3-4fa6-8e71-522146eccdb1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5bd248e36c316b11ea5e272707b75624d73dc49a
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: a21e5799824c968b29c719585ca16b6b45a9ef37
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283429"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404919"
 ---
-# <a name="step-2-configure-the-basic-directaccess-server"></a>手順 2 は、基本的な DirectAccess サーバーを構成します。
+# <a name="step-2-configure-the-basic-directaccess-server"></a>手順 2. 基本的な DirectAccess サーバーを構成する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、基本的な DirectAccess の展開に必要なクライアントおよびサーバー設定を構成する方法について説明します。 展開の手順を開始する前に、計画で説明した手順を完了していることを確認します [基本的な DirectAccess 展開を計画](Plan-a-Basic-DirectAccess-Deployment.md)します。  
   
@@ -34,7 +34,7 @@ ms.locfileid: "67283429"
 > [!NOTE]  
 > このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
   
-## <a name="BKMK_Role"></a>リモート アクセスの役割をインストールします。  
+## <a name="BKMK_Role"></a>リモートアクセスの役割をインストールする  
 リモート アクセスを展開するには、組織でリモート アクセス サーバーとして機能するサーバーにリモート アクセスの役割をインストールする必要があります。  
   
 #### <a name="to-install-the-remote-access-role"></a>リモート アクセスの役割をインストールするには  
@@ -53,13 +53,13 @@ ms.locfileid: "67283429"
   
 7.  **[インストールの進行状況]** ダイアログで、インストールが正常に完了したことを確認し、 **[閉じる]** をクリックします。  
   
-![Windows PowerShell](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
-次の Windows PowerShell コマンドレットまたはコマンドレットは、リモート アクセスの役割をインストールします。 
+次の Windows PowerShell コマンドレットまたはコマンドレットにより、リモートアクセスの役割がインストールされます。 
 
 1. 管理者として PowerShell を開きます。
 
-2. リモート アクセス機能をインストールします。
+2. リモートアクセス機能のインストール:
 
    ```  
    Install-WindowsFeature RemoteAccess   
@@ -71,7 +71,7 @@ ms.locfileid: "67283429"
    Restart-Computer
    ```
    
-4. リモート アクセス PowerShell をインストールします。
+4. リモートアクセス PowerShell のインストール:
 
    ```
    Install-WindowsFeature RSAT-RemoteAccess-PowerShell
@@ -121,11 +121,11 @@ ms.locfileid: "67283429"
   
 ## <a name="BKMK_Links"></a>前の手順  
   
--   [ステップ 1: DirectAccess インフラストラクチャを構成する](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
+-   [手順 1: DirectAccess インフラストラクチャを構成する](Step-1-Configure-the-DirectAccess-Infrastructure.md)  
   
 ## <a name="next-step"></a>次の手順  
   
--   [手順 3 は、基本的な DirectAccess 展開を確認します。](da-basic-configure-s3-verify.md)  
+-   [手順 3. 基本的な DirectAccess 展開を確認する](da-basic-configure-s3-verify.md)  
   
 
 

@@ -1,104 +1,104 @@
 ---
-title: AD フォレストの回復 - サーバーの完全回復を実行します。
+title: AD フォレストの回復-サーバーの完全回復の実行
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: 1a1182a6-4462-4a13-806e-0e642a0d5db2
 ms.technology: identity-adds
-ms.openlocfilehash: 9cf89c9f4875f602abea89e366cadfba8d0599c3
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 1ade1f2e316387fbe84209c1bc7a986fff6f2a71
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66443011"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390543"
 ---
-# <a name="ad-forest-recovery---performing-a-full-server-recovery"></a>AD フォレストの回復 - サーバーの完全回復を実行します。 
+# <a name="ad-forest-recovery---performing-a-full-server-recovery"></a>AD フォレストの回復-サーバーの完全回復の実行 
 
->適用先:Windows Server 2016、Windows Server 2012 および 2012 R2、Windows Server 2008 および 2008 R2
+>適用対象: Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
 
-Windows Server 2016、2012 R2、または 2012 用のサーバーの完全回復を実行するのにには、次の手順を使用します。 
+Windows Server 2016、2012 R2、または2012のサーバーの完全復旧を実行するには、次の手順に従います。 
 
-## <a name="active-directory-full-server-recovery"></a>Active Directory サーバー全体の回復
+## <a name="active-directory-full-server-recovery"></a>サーバーの完全復旧の Active Directory
 
-サーバー全体の回復は、別のハードウェアまたはオペレーティング システムの異なるインスタンスに復元する場合は、必要があります。 次の点に留意してください。
+別のハードウェアまたは別のオペレーティングシステムのインスタンスに復元する場合は、完全なサーバー回復が必要です。 次の点に留意してください。
 
-- ターゲット サーバーがバックアップ内の数と同じでする必要がドライブの数とサイズ以上に同じである必要があります。
-- ターゲット サーバーがアクセスするには、オペレーティング システム DVD から起動する必要があります、**コンピューターの修復**オプション。 
-- Hyper-v ホストと、バックアップで DC が VM で実行されているターゲットがネットワークの場所に格納されている場合は、レガシ ネットワーク アダプターをインストールする必要があります。 
-- サーバーの完全回復を実行した後必要があります、SYSVOL の authoritative restore を個別に実行する」の説明に従って[DFSR でレプリケートされた SYSVOL の権限のある同期の実行 - AD フォレストの回復](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)します。
+- 対象サーバー上のドライブの数は、バックアップ内の数値と同じである必要があり、同じサイズ以上である必要があります。
+- 対象サーバーは、 **[コンピューターの修復]** オプションにアクセスするために、オペレーティングシステム DVD から起動する必要があります。 
+- ターゲット DC が Hyper-v 上の VM で実行されていて、バックアップがネットワーク上の場所に格納されている場合は、レガシネットワークアダプターをインストールする必要があります。 
+- サーバーの完全復旧を実行した後、「 [AD フォレストの回復-DFSR によってレプリケートされた sysvol の権限のある同期を実行](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)する」の説明に従って、SYSVOL の authoritative restore を個別に実行する必要があります。
 
-シナリオによっては、完全な復元を実行するのに手順は次のいずれかを使用します。 
+シナリオによっては、次のいずれかの手順に従って完全な復元を実行します。 
   
-## <a name="perform-a-full-server-restore-with-a-local-backup-with-the-latest-image"></a>最新のイメージをローカルのバックアップによるサーバーの完全復元を実行します。
+## <a name="perform-a-full-server-restore-with-a-local-backup-with-the-latest-image"></a>最新のイメージでローカルバックアップを使用してサーバーの完全復元を実行する
   
-1. Windows セットアップを開始し、言語、時間と通貨の形式とキーボード オプションを指定しをクリックして**次**します。 
+1. Windows セットアップを開始するには、言語、時刻と通貨の形式、およびキーボードのオプションを指定し、 **[次へ]** をクリックします。 
 2. **[コンピューターの修復]** をクリックします。
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore1.png)
 3. **[トラブルシューティング]** をクリックします。</br>
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore2.png)
-4. クリックして**システム イメージの回復**します。</br>
+4. **[システムイメージの回復]** をクリックします。</br>
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore3.png)
-5. クリックして**Windows Server 2016**します。 
+5. **[Windows Server 2016]** をクリックします。 
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore4.png)
-6. 最新のローカル バックアップを復元する場合にクリックします **(推奨)、最新の利用可能なシステム イメージを使用して、**  をクリック**次**。
+6. 最新のローカルバックアップを復元する場合は、使用 **[可能な最新のシステムイメージを使用する (推奨)]** をクリックし、 **[次へ]** をクリックします。
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore5.png)
-7. ためのオプションを提供するようになりましたされます。
-   -  ディスクをフォーマットしてパーティションを再作成
-   -  ドライバーをインストールします。
-   -  選択解除、**詳細**ディスク エラーを自動的に再起動して確認の機能です。 既定ではこれらを有効にします。
+7. 次のオプションが表示されます。
+   -  ディスクのフォーマットと再パーティション
+   -  ドライバーのインストール
+   -  自動的に再起動し、ディスクエラーをチェックする**高度な**機能の選択を解除します。 これらは既定で有効になっています。
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore6.png)
 8. **[次へ]** をクリックします。
-9. **[Finish]** (完了) をクリックします。 続行することを確認して確認を求められます。 **[はい]** をクリックします。 
+9. **[Finish]** (完了) をクリックします。 続行するかどうかを確認するメッセージが表示されます。 **[はい]** をクリックします。 
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore11.png) 
-10. これが完了」の説明に従って、SYSVOL の authoritative restore を実行[DFSR でレプリケートされた SYSVOL の権限のある同期の実行 - AD フォレストの回復](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)します。
+10. これが完了したら、「 [AD フォレストの回復-DFSR によってレプリケートされた sysvol の権限のある同期を実行する](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)」の説明に従って、SYSVOL の authoritative restore を実行します。
 
-## <a name="perform-a-full-server-restore-with-any-image-local-or-remote"></a>任意のイメージは、ローカルまたはリモートでのサーバーの完全復元を実行します。
+## <a name="perform-a-full-server-restore-with-any-image-local-or-remote"></a>ローカルまたはリモートで任意のイメージを使用してサーバーの完全復元を実行する
 
-1. Windows セットアップを開始し、言語、時間と通貨の形式とキーボード オプションを指定しをクリックして**次**します。 
+1. Windows セットアップを開始するには、言語、時刻と通貨の形式、およびキーボードのオプションを指定し、 **[次へ]** をクリックします。 
 2. **[コンピューターの修復]** をクリックします。</br>
-3. クリックして**トラブルシューティング**、 をクリックして**システム イメージの回復**、 をクリック**Windows Server 2016**します。 
-4. 最新のローカル バックアップを復元する場合にクリックします**システム イメージを選択** をクリック**次**します。
-5. 復元するバックアップの場所を選択します。 イメージがローカルの場合は、一覧から選択できます。 
-6. イメージがネットワーク共有上にある場合は、選択**詳細**します。 選択することも**詳細**ドライバーをインストールする必要がある場合。
+3. **[トラブルシューティング]** をクリックし、 **[システムイメージの回復]** をクリックして、 **[Windows Server 2016]** をクリックします。 
+4. 最新のローカルバックアップを復元する場合は、 **[システムイメージの選択]** をクリックし、 **[次へ]** をクリックします。
+5. ここで、復元するバックアップの場所を選択できます。 画像がローカルの場合は、一覧から選択できます。 
+6. イメージがネットワーク共有上にある場合は、 **[詳細設定]** を選択します。 ドライバーをインストールする必要がある場合は、 **[詳細設定]** を選択することもできます。
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore7.png)
-7. クリックした後、ネットワークから復元する場合**詳細**選択 **、ネットワーク上のシステム イメージの検索**。 ネットワーク接続を復元するように求める可能性があります。 [Ok] を選択します。 </br>
+7. **[詳細設定]** をクリックした後にネットワークから復元する場合は **、[ネットワーク上のシステムイメージを検索**する] を選択します。 ネットワーク接続を復元するように求めるメッセージが表示される場合があります。 [Ok] を選択します。 </br>
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore8.png)
-8. バックアップ共有の場所への UNC パスを入力 (たとえば、 \\\server1\backups) をクリック**OK**します。 など、ターゲット サーバーの IP アドレスを入力することもできます。 \\\192.168.1.3\backups します。 
+8. バックアップ共有の場所への UNC パス (たとえば、\\\server1\backups) を入力し、[ **OK]** をクリックします。 ターゲットサーバーの IP アドレス (\\\192.168.1.3\backups. など) を入力することもできます。 
    ![サーバーの復元](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore9.png)
-9. 共有へのアクセスし、[ok] をクリックします。 必要な資格情報を入力します。 
-10. 今すぐ**を復元するには、日付と時刻システム イメージの選択** をクリック**次**します。
-11. ためのオプションを提供するようになりましたされます。
-    - ディスクをフォーマットしてパーティションを再作成
-    - ドライバーをインストールします。
-    - 選択解除、**詳細**ディスク エラーを自動的に再起動して確認の機能です。 既定ではこれらを有効にします。
+9. 共有にアクセスするために必要な資格情報を入力し、[OK] をクリックします。 
+10. **復元するシステムイメージの日付と時刻を選択**し、 **[次へ]** をクリックします。
+11. 次のオプションが表示されます。
+    - ディスクのフォーマットと再パーティション
+    - ドライバーのインストール
+    - 自動的に再起動し、ディスクエラーをチェックする**高度な**機能の選択を解除します。 これらは既定で有効になっています。
 12. **[次へ]** をクリックします。
-13. **[Finish]** (完了) をクリックします。 続行することを確認して確認を求められます。 **[はい]** をクリックします。  
-14. これが完了」の説明に従って、SYSVOL の authoritative restore を実行[DFSR でレプリケートされた SYSVOL の権限のある同期の実行 - AD フォレストの回復](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)します。
+13. **[Finish]** (完了) をクリックします。 続行するかどうかを確認するメッセージが表示されます。 **[はい]** をクリックします。  
+14. これが完了したら、「 [AD フォレストの回復-DFSR によってレプリケートされた sysvol の権限のある同期を実行する](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md)」の説明に従って、SYSVOL の authoritative restore を実行します。
 
-## <a name="enabling-the-network-adapter-for-a-network-backup"></a>ネットワークのバックアップ用のネットワーク アダプターを有効にします。
+## <a name="enabling-the-network-adapter-for-a-network-backup"></a>ネットワークバックアップ用にネットワークアダプターを有効にする
 
-ネットワーク共有から復元するコマンド プロンプトからのネットワーク アダプターを有効にする必要がある場合は、次の手順を使用します。
+ネットワーク共有から復元するために、コマンドプロンプトからネットワークアダプターを有効にする必要がある場合は、次の手順を実行します。
 
-1. Windows セットアップを開始し、言語、時間と通貨の形式とキーボード オプションを指定しをクリックして**次**します。 
+1. Windows セットアップを開始するには、言語、時刻と通貨の形式、およびキーボードのオプションを指定し、 **[次へ]** をクリックします。 
 2. **[コンピューターの修復]** をクリックします。 I
-3. クリックして**トラブルシューティング**、 をクリックして**コマンド プロンプト**します。 
+3. **[トラブルシューティング]** をクリックし、 **[コマンドプロンプト]** をクリックします。 
 4. 次のコマンドを入力し、Enter キーを押します。  
 
    ```  
    wpeinit  
    ```
 
-5. ネットワーク アダプターの名前を確認するには、次のように入力します。  
+5. ネットワークアダプターの名前を確認するには、次のように入力します。  
 
    ```  
    show interfaces  
    ```  
 
-   次のコマンドを入力し、各コマンドの後 ENTER キーを押します。  
+   次のコマンドを入力し、各コマンドの後に enter キーを押します。  
 
    ```  
    netsh  
@@ -126,11 +126,11 @@ Windows Server 2016、2012 R2、または 2012 用のサーバーの完全回復
    set address "Local Area Connection" static 192.168.1.2 255.0.0.0 192.168.1.1 1  
    ```  
 
-   型`quit`コマンド プロンプトに戻ります。 型`ipconfig /all`ネットワークを確認するアダプターには、IP アドレスと接続の確認、バックアップ共有をホストするサーバーの IP アドレスに ping を実行してください。 完了したら、コマンド プロンプトを閉じます。 
+   コマンドプロンプトに戻るには、「`quit`」と入力します。 「`ipconfig /all`」と入力して、ネットワークアダプターに IP アドレスがあることを確認し、バックアップ共有をホストしているサーバーの IP アドレスに対して ping を実行し、接続を確認します。 完了したら、コマンドプロンプトを閉じます。 
 
-6. これで、ネットワーク アダプターを使用すると、復元を完了する前の手順を選択します。
+6. ネットワークアダプターが動作しているので、上記の手順を選択して復元を完了します。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [AD フォレストの回復ガイド](AD-Forest-Recovery-Guide.md)
 - [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md)

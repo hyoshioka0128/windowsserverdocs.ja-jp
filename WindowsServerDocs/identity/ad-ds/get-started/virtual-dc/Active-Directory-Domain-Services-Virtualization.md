@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b43b88699d9392156be5f9846e98c5c74490c8fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 35b6d7277a1498f5b3bda5a3e45eb5337b1b81ca
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881963"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390504"
 ---
 # <a name="active-directory-domain-services-virtualization"></a>Active Directory Domain Services の仮想化
 
@@ -22,13 +22,13 @@ ms.locfileid: "59881963"
 
 このトピックでは、仮想化ドメイン コントローラーで使用できるリソースの一覧を示します。  
   
--   [Active Directory Domain Services の概要&#40;AD DS&#41; Virtualization&#40;レベル 100&#41;](../../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)  
+-   [Active Directory Domain Services &#40;AD DS&#41;の仮想化&#40;レベル100の概要&#41;](../../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)  
   
--   [ドメイン コント ローラーのテクニカル リファレンスを仮想化&#40;レベル 300&#41;](../../../ad-ds/deploy/virtual-dc/Virtualized-Domain-Controller-Technical-Reference--Level-300-.md)  
+-   [仮想化ドメインコントローラーの&#40;テクニカルリファレンスレベル300&#41;](../../../ad-ds/deploy/virtual-dc/Virtualized-Domain-Controller-Technical-Reference--Level-300-.md)  
   
--   [仮想化ドメイン コント ローラーの複製のベンダーのアプリケーションのテストのガイダンス](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Cloning-Test-Guidance-for-Application-Vendors.md)  
+-   [アプリケーション ベンダー向けの仮想化ドメイン コントローラー複製のテスト ガイダンス](../../../ad-ds/reference/virtual-dc/Virtualized-Domain-Controller-Cloning-Test-Guidance-for-Application-Vendors.md)  
   
--   [HYPER-V レプリカを仮想化ドメイン コント ローラーを使用するためのサポート](../../../ad-ds/get-started/virtual-dc/Support-for-using-Hyper-V-Replica-for-virtualized-domain-controllers.md)  
+-   [仮想化ドメイン コントローラー用 Hyper-V レプリカの使用のサポート](../../../ad-ds/get-started/virtual-dc/Support-for-using-Hyper-V-Replica-for-virtualized-domain-controllers.md)  
   
 
 

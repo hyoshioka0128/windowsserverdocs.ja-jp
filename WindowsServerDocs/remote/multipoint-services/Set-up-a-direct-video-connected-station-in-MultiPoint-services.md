@@ -1,9 +1,9 @@
 ---
 title: MultiPoint サービスに直接ビデオ接続ステーションを設定します。
-description: MultiPoint Services で直接ビデオ接続ステーションを作成する方法について説明します
+description: MultiPoint Services で直接ビデオ接続ステーションを作成する方法について説明します。
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,19 +13,19 @@ ms.assetid: 82ba3517-9743-4cde-8eea-63a17edb016f
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 58197164c91ab6b69b0ef331c025287f593f94c2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ab57f3d996cfe9196fd256a76516a44dc146043b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850743"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389362"
 ---
 # <a name="set-up-a-direct-video-connected-station-in-multipoint-services"></a>MultiPoint サービスに直接ビデオ接続ステーションを設定します。
 直接ビデオ接続ステーション、モニターが MultiPoint Server コンピューターのビデオ ポートに直接接続されています。 キーボードとマウス USB ハブにし、接続されているし、モニターに関連付けられました。  
   
 次の図は、単一の MultiPoint Server コンピューターと 4 つの直接のビデオ接続ステーションを持つ MultiPoint Server 環境を示します。 詳細については、次を参照してください。 [MultiPoint Server ステーション](MultiPoint-services-Stations.md)します。  
   
-**MultiPoint Services システムに 4 つに直接ビデオ接続**  
+**4つの直接ビデオ接続がある MultiPoint Services システム**  
   
 ![MultiPoint サービス USB ベース システム レイアウトのイメージ](./media/WMSMultiPointServerUSBSystemLayout.gif)  
   
@@ -63,7 +63,7 @@ MultiPoint サービス環境内に 2 つ以上の直接のビデオ接続ステ
   
 ## <a name="to-find-out-which-direct-video-connected-station-is-the-primary-station"></a>確認するには、プライマリ ステーションは、ステーションのビデオ接続をダイレクトします。  
   
-1.  コンピューターのディスプレイ アダプター (ビデオ カード) に直接接続されているすべてのモニターを有効にします。  
+1.  コンピューターのディスプレイアダプター (ビデオカード) に直接接続されているすべてのモニターを有効にします。  
   
 2.  開始 (または再開) MultiPoint サービス コンピューターおよびモニターの起動画面に表示を参照してください。 そのステーションとは、プライマリ ステーションです。  
   

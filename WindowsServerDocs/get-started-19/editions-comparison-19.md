@@ -1,46 +1,44 @@
 ---
 title: Windows Server 2019 の Standard エディションと Datacenter エディションの比較
-ms.custom: na
-ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
+ms.prod: windows-server
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c5ca3bfe-7ced-49f6-2932-80cab33fe914
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: e6ec6934b5c2cfcc33a95a0336e22a20dbd60d82
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 2cb368b5ff4723c1afb53c5a9e787d9f8a39bef3
+ms.sourcegitcommit: 40e4ba214954d198936341c4d6ce1916dc891169
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "64772398"
+ms.lasthandoff: 10/21/2019
+ms.locfileid: "72690456"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2019"></a>Windows Server 2019 の Standard エディションと Datacenter エディションの比較
 
 > 適用先:Windows Server 2019
   
 ## <a name="locks-and-limits"></a>ロックと制限
-|ロックと制限|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
-|-------------------|----------|---------------------------|  
-|最大ユーザー数|CAL に基づく|CAL に基づく|
-|最大 SMB 接続数|16777216|16777216|
-|最大 RRAS 接続数|無制限|無制限|
-|最大 IAS 接続数|2147483647|2147483647|
-|最大 RDS 接続数|65535|65535|
-|64 ビット ソケットの最大数|64|64|
-|コアの最大数|無制限|無制限|
-|最大 RAM|24 TB|24 TB|
-|仮想化ゲストとしての使用|○ (2 台の仮想マシン、およびライセンスごとに 1 台の Hyper-V ホスト)|○ (台数無制限の仮想マシン、およびライセンスごとに 1 台の Hyper-V ホスト)|
-|サーバーのドメインへの参加|○|○|
-|境界ネットワーク保護/ファイアウォール|no|no|
-|DirectAccess|○|○|
-|DLNA コーデックおよび Web メディア ストリーミング|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|
+
+| ロックと制限                 | Windows Server 2019 Standard | Windows Server 2019 Datacenter |  
+| -------------------              | ---------------------------  | --------------------------- |  
+| 最大ユーザー数          | CAL に基づく                | CAL に基づく |
+| 最大 SMB 接続数          | 16,777,216                   | 16,777,216 |
+| 最大 RRAS 接続数         | 無制限                    | 無制限 |
+| 最大 IAS 接続数          | 2,147,483,647                | 2,147,483,647 |
+| 最大 RDS 接続数          | 65,535                       | 65,535 |
+| 64 ビット ソケットの最大数 | 64                           | 64 |
+| コアの最大数          | 無制限                    | 無制限 |
+| 最大 RAM                      | 24 TB                        | 24 TB |
+| 仮想化ゲストとしての使用 | ○ (2 台の仮想マシン、およびライセンスごとに 1 台の Hyper-V ホスト)|○ (<strong>無制限の仮想マシン</strong>、およびライセンスごとに 1 台の Hyper-V ホスト) |
+| サーバーのドメインへの参加        | ○                           | ○ |
+| 境界ネットワーク保護/ファイアウォール| no                            | no    |
+| DirectAccess                    | ○                           | ○ |
+| DLNA コーデックおよび Web メディア ストリーミング | ○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合) | ○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合) |
 
 ## <a name="server-roles"></a>サーバーの役割
+
 |使用できる Windows Server の役割|役割サービス|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|----------|---------------------------|  
 |Active Directory 証明書サービス| |〇|〇|
@@ -66,7 +64,7 @@ ms.locfileid: "64772398"
 |ファイル サービスおよび記憶域サービス|記憶域サービス|〇|〇|
 |ホスト ガーディアン サービス| |〇|〇|
 |Hyper-V| |〇|○ (シールドされた仮想マシン含む)|
-|ネットワーク コントローラー| |X|〇|
+|ネットワーク コントローラー| |X| <strong>はい</strong> |
 |ネットワーク ポリシーとアクセス サービス| |○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|
 |印刷とドキュメント サービス| |〇|〇|
 |リモート アクセス| |〇|〇|
@@ -74,7 +72,7 @@ ms.locfileid: "64772398"
 |ボリューム ライセンス認証サービス| |〇|〇|
 |Web サービス (IIS)| |〇|〇|
 |Windows 展開サービス| |○*|○*|
-|Windows Server Essentials エクスペリエンス| |〇|〇|
+|Windows Server Essentials エクスペリエンス| |X | X |
 |Windows Server Update Services| |〇|〇|
 
 *WDS トランスポート サーバーは、Windows Server 2019 (Windows Server バージョン 1803 からは、半期チャネルでも) の Server Core インストールに新しく導入されました
@@ -84,20 +82,20 @@ ms.locfileid: "64772398"
 
 |サーバー マネージャー (または PowerShell) を使用してインストールできる Windows Server の機能|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|---------------------------|  
-|.NET Framework 3.5|〇|〇|
-|.NET Framework 4.6|〇|〇|
+|.NET Framework 3.5 |〇|〇|
+|.NET Framework 4.7 |〇|〇|
 |バックグラウンド インテリジェント転送サービス (BITS)|〇|〇|
 |役割と機能の追加ウィザード|〇|〇|
 |BitLocker ネットワーク ロック解除|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|
 |BranchCache|〇|〇|
 |NFS クライアント|〇|〇|
-|コンテナー|〇 (Windows コンテナーは無制限。Hyper-V コンテナーは最大 2)|〇 (すべてのコンテナーの種類が無制限)|
+|コンテナー|〇 (無制限の Windows コンテナー、最大 2 台の Hyper-V コンテナー)|〇 (<strong>無制限の Windows コンテナーと Hyper-V コンテナー</strong>) |
 |データ センター ブリッジング|〇|〇|
 |Direct Play|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|
 |拡張記憶域|〇|〇|
 |フェールオーバー クラスタリング|〇|〇|
 |グループ ポリシーの管理|〇|〇|
-|Host Guardian Hyper-V サポート|X|〇|
+|Host Guardian Hyper-V サポート|X| <strong>はい</strong> |
 |サービスの I/O 品質|〇|〇|
 |IIS ホスト可能な Web コア|〇|〇|
 |インターネット印刷クライアント|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|○ (デスクトップ エクスペリエンス搭載サーバーとしてインストールされている場合)|
@@ -149,7 +147,6 @@ ms.locfileid: "64772398"
 |通常使用できる機能|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|---------------------------|  
 |ベスト プラクティス アナライザー|〇|〇|
-|制約付き記憶域レプリカ|〇 (単一の 2 TB ボリュームがある 1 つのパートナーシップと 1 つのリソース グループ)|〇 (無制限)|
 |直接アクセス|〇|〇|
 |動的メモリ (仮想化の場合)|〇|〇|
 |ホット アド/リプレース RAM|〇|〇|
@@ -158,18 +155,17 @@ ms.locfileid: "64772398"
 |ネットワーク負荷分散|〇|〇|
 |Windows PowerShell|〇|〇|
 |Server Core インストール オプション|〇|〇|
-|Nano Server インストール オプション|〇|〇|
 |サーバー マネージャー|〇|〇|
 |SMB ダイレクトおよび SMB over RDMA|〇|〇|
-|ソフトウェアによるネットワーク制御|X|〇|
-|記憶域管理サービス|〇|〇|
+|ソフトウェアによるネットワーク制御|X| <strong>はい</strong> |
+|ストレージ移行サービス|〇|〇|
+| 記憶域レプリカ         | 〇 (単一の 2 TB ボリュームがある 1 つのパートナーシップと 1 つのリソース グループ)    | 〇 (<strong>無制限</strong>) |
 |記憶域スペース|〇|〇|
-|記憶域スペース ダイレクト|X|〇|
+|記憶域スペース ダイレクト|X| <strong>はい</strong> |
 |ボリューム ライセンス認証サービス|〇|〇|
 |VSS (ボリューム シャドウ コピー サービス) 統合|〇|〇|
 |Windows Server Update Services|〇|〇|
 |Windows システム リソース マネージャー|〇|〇|
 |サーバー ライセンス ログ|〇|〇|
-|継承されたライセンス認証|Datacenter でホストされている場合のゲストとして|ホストまたはゲストになることが可能|
+|継承されたライセンス認証|Datacenter でホストされている場合のゲストとして| <strong>ホストまたはゲストになることが可能</strong> |
 |ワーク フォルダー|〇|〇|
-

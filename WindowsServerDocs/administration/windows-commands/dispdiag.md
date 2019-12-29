@@ -1,8 +1,8 @@
 ---
 title: dispdiag
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9c96c70aac1b3329e050fa8b02743e61fed44d15
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9b640883a207648d2ef6c9a7d6e5366cd0bb384c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831463"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377756"
 ---
 # <a name="dispdiag"></a>dispdiag
 
 
 
-ログは、ファイルに情報を表示します。
+ログには、ファイルの情報が表示されます。
 
 ## <a name="syntax"></a>構文
 
@@ -36,8 +36,8 @@ dispdiag [-testacpi] [-d] [-delay <Seconds>] [-out <FilePath>]
 
 |パラメーター|説明|
 |---------|-----------|
-|-testacpi|ホットキー診断テストを実行します。 テスト中にコードとスキャンのコードを任意のキーが押されたキーの名前を表示します。|
-|-d|テスト結果のダンプ ファイルを生成します。|
-|-遅延\<(秒) >|指定した時間のデータのコレクションを遅らせます*秒*します。|
-|-アウト\<FilePath >|パスと収集されたデータを保存するファイル名を指定します。 これには、最後のパラメーターがあります。|
-|-?|使用可能なコマンドのパラメーターを表示し、それらの使用に関するヘルプを提供します。|
+|-testacpi|ホットキー診断テストを実行します。 テスト中に押されたキーのキー名、コード、およびスキャンコードを表示します。|
+|-d|テスト結果と共にダンプファイルを生成します。|
+|-delay \<Seconds >|指定された時間 *(秒単位)* でデータの収集を遅らせます。|
+|-out \<FilePath >|収集したデータを保存するパスとファイル名を指定します。 これは、最後のパラメーターである必要があります。|
+|-?|使用可能なコマンドパラメーターを表示し、それらを使用するためのヘルプを提供します。|

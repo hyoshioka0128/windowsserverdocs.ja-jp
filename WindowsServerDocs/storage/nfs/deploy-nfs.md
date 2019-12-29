@@ -1,19 +1,19 @@
 ---
 title: ネットワーク ファイル システムの展開
 description: ネットワークファイルシステムを展開する方法について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cc02f0a82b4143b80fc1107a63d234b117502d2d
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 22c8725c227719ee143baa8f4abd3a5cc5dcf883
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544650"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393967"
 ---
 # <a name="deploy-network-file-system"></a>ネットワーク ファイル システムの展開
 

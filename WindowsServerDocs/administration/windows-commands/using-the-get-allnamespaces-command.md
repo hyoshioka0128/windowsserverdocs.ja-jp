@@ -1,8 +1,8 @@
 ---
 title: Get AllNamespaces コマンドを使用してください。
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b77bb80238ee63cc0d71d88592d75850720e33b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0cd90fc650271c863459dd809e47ca6309132de5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440524"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363290"
 ---
 # <a name="using-the-get-allnamespaces-command"></a>Get AllNamespaces コマンドを使用してください。
 
@@ -41,8 +41,8 @@ wdsutil /Get-AllNamespaces [/Server:<Server name>] [/ContentProvider:<name>] [/d
 |  [/Server:<Server name>]  | サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。 |                        |
 | [/ContentProvider:<name>] |                                                        名前空間が、指定したコンテンツ プロバイダーに対してのみ表示されます。                                                         |                        |
 |      [/ショー: クライアント]      |                            Windows Server 2008 のみサポートされます。 名前空間に接続されているクライアント コンピューターに関する情報を表示します。                             |                        |
-|    [/details:Clients]     |                           Windows Server 2008 R2 のみサポートされます。 名前空間に接続されているクライアント コンピューターに関する情報を表示します。                           |                        |
-|  [/ExcludedeletePending]  |                                                              一覧から任意の非アクティブ化された転送を除外します。                                                              |                        |
+|    [詳細: クライアント]     |                           Windows Server 2008 R2 のみサポートされます。 名前空間に接続されているクライアント コンピューターに関する情報を表示します。                           |                        |
+|  [/Excludedeletepending]  |                                                              一覧から任意の非アクティブ化された転送を除外します。                                                              |                        |
 
 ## <a name="BKMK_examples"></a>例
 すべての名前空間を表示するには、次のように入力します。
@@ -58,7 +58,7 @@ wdsutil /Get-AllNamespaces
   ```
   wdsutil /Get-AllNamespaces /Server:MyWDSServer /ContentProvider:"MyContentProv" /details:Clients /ExcludedeletePending
   ```
-  #### <a name="additional-references"></a>その他の参照
+  #### <a name="additional-references"></a>その他の参照情報
   [コマンドライン構文のポイント](command-line-syntax-key.md)
   [新しい名前空間のコマンドを使用して](using-the-new-namespace-command.md)
   [名前空間の削除 コマンドを使用して](using-the-remove-namespace-command.md)

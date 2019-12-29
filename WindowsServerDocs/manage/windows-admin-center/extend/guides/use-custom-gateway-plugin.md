@@ -1,43 +1,43 @@
 ---
 title: ツール拡張機能でカスタムのゲートウェイ プラグインを使用する
-description: ツールの拡張機能 Windows Admin Center SDK (プロジェクト ホノルル) の作成 - ゲートウェイのカスタム プラグインを使用して、ツールの拡張機能で
+description: ツール拡張機能の開発 Windows 管理センター SDK (Project ホノルル)-ツール拡張機能でカスタムゲートウェイプラグインを使用する
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 348ebf5b99de7f582a3edf57b0a190f87f1c4a5b
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.prod: windows-server
+ms.openlocfilehash: 829cbf6df8cc2738bf4066b36210b860595774ed
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452601"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385232"
 ---
 # <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>ツール拡張機能でカスタムのゲートウェイ プラグインを使用する
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+>適用対象: Windows Admin Center、Windows Admin Center Preview
 
-この記事では、Windows Admin Center CLI を使用して作成した新しい、空のツールの拡張機能でゲートウェイのカスタム プラグインを使用します。
+この記事では、Windows 管理センター CLI で作成した新しい空のツール拡張機能でカスタムゲートウェイプラグインを使用します。
 
 ## <a name="prepare-your-environment"></a>環境の準備 ##
 
-まだインストールしていない場合の手順を実行[ツールの拡張機能を開発](../develop-tool.md)環境の準備を新規作成は、ツールの拡張機能を空にします。
+まだ行っていない場合は、「[ツール拡張機能の開発](../develop-tool.md)」の指示に従って、環境を準備し、新しい空のツール拡張を作成します。
 
-## <a name="add-a-module-to-your-project"></a>モジュール プロジェクトへの追加します。 ##
+## <a name="add-a-module-to-your-project"></a>モジュールをプロジェクトに追加する ##
 
-まだインストールしていない場合は、新しい追加[空モジュール](add-module.md)をプロジェクトに次の手順で使用します。  
+新しい[空のモジュール](add-module.md)をプロジェクトに追加していない場合は、次の手順で使用します。  
 
-## <a name="add-integration-to-custom-gateway-plugin"></a>カスタム ゲートウェイ プラグインに統合を追加します。 ##
+## <a name="add-integration-to-custom-gateway-plugin"></a>カスタムゲートウェイプラグインに統合を追加する ##
 
-先ほど作成した新しい、空のモジュールでカスタム ゲートウェイ プラグインを使用します。
+ここでは、先ほど作成した新しい空のモジュールでカスタムゲートウェイプラグインを使用します。
 
-### <a name="create-pluginservicets"></a>Plugin.service.ts を作成します。
+### <a name="create-pluginservicets"></a>プラグインの作成. service. ts
 
-上記で作成した新しいツール モジュールのディレクトリに変更 (```\src\app\{!Module-Name}```)、新しいファイルを作成および```plugin.service.ts```します。
+上で作成した新しいツールモジュール (```\src\app\{!Module-Name}```) のディレクトリに移動し、新しいファイル ```plugin.service.ts```を作成します。
 
-先ほど作成したファイルには、次のコードを追加します。
+先ほど作成したファイルに次のコードを追加します。
 ``` ts
 import { Injectable } from '@angular/core';
 import { AppContextService, HttpService } from '@microsoft/windows-admin-center-sdk/angular';
@@ -61,14 +61,14 @@ export class PluginService {
 }
 ```
 
-参照を変更する```Sample Uno```と```Sample%20Uno```に応じて、機能名にします。
+```Sample Uno``` への参照を変更し、必要に応じて機能名に ```Sample%20Uno``` します。
 
 [!WARNING]
-> 推奨するで組み込み```this.appContextService.node```カスタム ゲートウェイ プラグインで定義されている任意の API を呼び出すために使用します。 これは、ようにする資格情報が適切に処理ゲートウェイ プラグイン内で必要な場合。
+> 組み込みの ```this.appContextService.node``` は、カスタムゲートウェイプラグインで定義されている API を呼び出すために使用することをお勧めします。 これにより、ゲートウェイプラグイン内で資格情報が要求された場合に、適切に処理されるようになります。
 
-### <a name="modify-modulets"></a>Module.ts を変更します。
+### <a name="modify-modulets"></a>モジュールを変更します。
 
-開く、```module.ts```前に作成した新しいモジュールのファイル (つまり```{!Module-Name}.module.ts```)。
+前の手順で作成した新しいモジュール (```{!Module-Name}.module.ts```) の ```module.ts``` ファイルを開きます。
 
 次の import ステートメントを追加します。
 
@@ -78,7 +78,7 @@ import { Http } from '@microsoft/windows-admin-center-sdk/core';
 import { PluginService } from './plugin.service';
 ```
 
-(宣言) 後に、次のプロバイダーを追加します。
+次のプロバイダーを追加します (宣言後)。
 
 ``` ts
   ,
@@ -89,9 +89,9 @@ import { PluginService } from './plugin.service';
   ]
 ```
 
-### <a name="modify-componentts"></a>Component.ts を変更します。
+### <a name="modify-componentts"></a>コンポーネントを変更します。 ts
 
-開く、```component.ts```前に作成した新しいモジュールのファイル (つまり```{!Module-Name}.component.ts```)。
+前の手順で作成した新しいモジュール (```{!Module-Name}.component.ts```) の ```component.ts``` ファイルを開きます。
 
 次の import ステートメントを追加します。
 
@@ -110,7 +110,7 @@ import { PluginService } from './plugin.service';
   private responseResult: string;
 ```
 
-コンス トラクターを変更し、次の関数の変更/追加します。
+コンストラクターを変更し、次の関数を変更/追加します。
 
 ``` ts
   constructor(private appContextService: AppContextService, private plugin: PluginService) {
@@ -133,9 +133,9 @@ import { PluginService } from './plugin.service';
   }
 ```
 
-### <a name="modify-componenthtml"></a>Component.html を変更します。 ###
+### <a name="modify-componenthtml"></a>コンポーネント .html を変更する ###
 
-開く、```component.html```前に作成した新しいモジュールのファイル (つまり```{!Module-Name}.component.html```)。
+前の手順で作成した新しいモジュール (```{!Module-Name}.component.html```) の ```component.html``` ファイルを開きます。
 
 次の内容を html ファイルに追加します。
 ``` html
@@ -143,6 +143,6 @@ import { PluginService } from './plugin.service';
 {{ responseResult }}
 ```
 
-## <a name="build-and-side-load-your-extension"></a>ビルドと側は、拡張機能を読み込む
+## <a name="build-and-side-load-your-extension"></a>拡張機能をビルドしてサイドロードする
 
-準備ができましたに[ビルドおよび負荷の側](../develop-tool.md#build-and-side-load-your-extension)Windows Admin Center で、拡張機能。
+これで、Windows 管理センターで拡張機能を[ビルドしてサイドロード](../develop-tool.md#build-and-side-load-your-extension)する準備ができました。

@@ -1,29 +1,29 @@
 ---
-title: 保護されたホスト (AD) の fabric の DNS を構成します。
+title: 保護されたホスト (AD) のファブリック DNS を構成する
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 074b6d09-f16e-49bf-b88a-377139d35067
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9d302dcd06b7a3a40afbb6f613c39caaabbeba91
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 411b845d57c36916dcbc73d51675f5d9f92bfa0e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66443719"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386758"
 ---
-# <a name="configure-the-fabric-dns-for-guarded-hosts"></a>保護されたホストの fabric の DNS を構成します。
+# <a name="configure-the-fabric-dns-for-guarded-hosts"></a>保護されたホストのファブリック DNS を構成する
 
 >適用先:Windows Server 2016
 
 
 >[!IMPORTANT]
->AD モードでは、Windows Server 2019 以降推奨されていません。 TPM 構成証明が可能な環境では、次のように構成します。[ホスト キーの構成証明](guarded-fabric-initialize-hgs-key-mode.md)します。 ホスト キーの構成証明は、AD モードのような保証しを設定する方が簡単です。 
+>AD モードは、Windows Server 2019 以降では非推奨とされます。 TPM の構成証明が不可能な環境では、[ホストキー](guarded-fabric-initialize-hgs-key-mode.md)の構成証明を構成します。 ホストキーの構成証明により、AD モードと同様の保証が提供され、セットアップが簡単になります。 
 
-ファブリック管理者は、DNS が HGS クラスターを解決するのには、保護されたホストできるようにするのには、ファブリックを構成する必要があります。 HGS クラスターが既にあります[HGS 管理者によってセットアップ](/WindowsServerDocs/virtualization/guarded-fabric-shielded-vm/guarded-fabric-setting-up-the-host-guardian-service-hgs.md)します。
+ファブリック管理者は、保護されたホストが HGS クラスターを解決できるようにするために、ファブリック DNS が必要とする構成を行う必要があります。 Hgs クラスターは、既に[hgs 管理者によって設定](/WindowsServerDocs/virtualization/guarded-fabric-shielded-vm/guarded-fabric-setting-up-the-host-guardian-service-hgs.md)されている必要があります。
 
 
 

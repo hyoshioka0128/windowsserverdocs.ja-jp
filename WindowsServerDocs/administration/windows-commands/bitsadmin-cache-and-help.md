@@ -1,8 +1,8 @@
 ---
-title: bitsadmin キャッシュとヘルプ
-description: Windows コマンド」のトピック**bitsadmin キャッシュとヘルプ**-コマンドラインの使用法を表示、**キャッシュ**スイッチ。
+title: bitsadmin cache とヘルプ
+description: '**Bitsadmin cache および help**の Windows コマンドに関するトピックでは、**キャッシュ**スイッチのコマンドラインの使用方法を示しています。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7af78c21f4d96886d1050a95dc16594159bc2c0b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 453464ebcc305bdc2fbbc73f2e46f7392bba1033
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869063"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381980"
 ---
-# <a name="bitsadmin-cache-and-help"></a>bitsadmin キャッシュとヘルプ
+# <a name="bitsadmin-cache-and-help"></a>bitsadmin cache とヘルプ
 
 
 
-コマンドラインの使用法を表示、**キャッシュ**スイッチ。
+**キャッシュ**スイッチのコマンドラインの使用法を表示します。
 
 ## <a name="syntax"></a>構文
 
@@ -34,11 +34,11 @@ Bitsadmin /Cache /Help
 
 ## <a name="BKMK_examples"></a>例
 
-次のコマンドのコマンド ライン ヘルプを表示する、**キャッシュ**スイッチ。
+次のコマンドは、**キャッシュ**スイッチのコマンドラインヘルプを表示します。
 ```
 Bitsadmin /Cache /Help
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

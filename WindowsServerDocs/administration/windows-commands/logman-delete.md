@@ -1,8 +1,8 @@
 ---
 title: logman delete
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e396d79dc936f56a69fac9469c020348640f1094
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8360a4955a5ebed3eb25fda77acf587c56fbf5d6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437782"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374426"
 ---
 # <a name="logman-delete"></a>logman delete
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-既存のデータ コレクターを削除します。  
+既存のデータコレクターを削除します。  
 
 ## <a name="syntax"></a>構文  
 ```  
@@ -34,17 +34,17 @@ logman delete <[-n] <name>> [options]
 
 |        パラメーター        |                                                                               説明                                                                               |
 |-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|           /?            |                                                                    ヘルプ コンテキストを表示します。                                                                     |
-|   -s <computer name>    |                                                          指定したリモート コンピューター上のコマンドを実行します。                                                          |
-|     -config <value>     |                                                         コマンド オプションを含む設定ファイルを指定します。                                                         |
-|       [-n] <name>       |                                                                   ターゲットのデータ コレクターの名前です。                                                                    |
-|          -ets           |                                              イベント トレース セッションを保存したり、スケジュール設定なしで直接コマンドを送信します。                                               |
-| -[-] u < ユーザー [password] > | 実行するユーザーを指定します。 入力、\*のパスワードがパスワードのプロンプトが生成されます。 パスワード プロンプトで入力すると、パスワードは表示されません。 |
+|           /?            |                                                                    状況依存のヘルプを表示します。                                                                     |
+|   -s <computer name>    |                                                          指定したリモートコンピューターでコマンドを実行します。                                                          |
+|     -config <value>     |                                                         コマンドオプションを含む設定ファイルを指定します。                                                         |
+|       [-n] <name>       |                                                                   ターゲットデータコレクターの名前。                                                                    |
+|          -/           |                                              イベントを保存またはスケジュールせずに直接イベントトレースセッションに送信します。                                               |
+| -[-] u < ユーザー [パスワード] > | として実行するユーザーを指定します。 パスワードの \* を入力すると、パスワードの入力を求めるプロンプトが生成されます。 パスワードは、パスワードプロンプトで入力しても表示されません。 |
 
 ## <a name="BKMK_examples"></a>例  
-次のコマンドは、データ コレクターの perf_log を削除します。  
+次のコマンドを実行すると、データコレクター perf_log が削除されます。  
 ```  
 logman delete perf_log  
 ```  
-#### <a name="additional-references"></a>その他の参照  
+#### <a name="additional-references"></a>その他の参照情報  
 [logman](logman.md)  

@@ -1,8 +1,8 @@
 ---
-title: ksetup:server
-description: 'Windows コマンド」のトピック * * *- '
+title: 'ksetup: サーバー'
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f370d4dede278e1facdda829503ea3793502b9e6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dd05fd294640c63e633b7b866307197ae6770476
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814573"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374961"
 ---
-# <a name="ksetupserver"></a>ksetup:server
+# <a name="ksetupserver"></a>ksetup: サーバー
 
 
 
-使用して、変更が行われるため、Windows オペレーティング システムを実行するコンピューターの名前を指定することができます**ksetup**ターゲット コンピューターに更新されます。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
+Windows オペレーティングシステムを実行しているコンピューターの名前を指定できます。これにより、 **ksetup**を使用して行われた変更によって対象のコンピューターが更新されます。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,17 +36,17 @@ ksetup /server <ServerName>
 
 |パラメーター|説明|
 |---------|-----------|
-|\<サーバー名 >|フル コンピューター名を構成は IPops897.corp.contoso.com など、適用されます。</br>不完全な完全修飾されている場合は、ドメインのコンピューター名が指定されて、コマンドは失敗します。|
+|\<ServerName >|IPops897.corp.contoso.com など、構成を有効にするフルコンピューター名。</br>不完全な完全修飾ドメインコンピュータ名が指定されている場合、コマンドは失敗します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-は、対象のサーバー名を削除する方法はありません既定値は、ローカル コンピューターの名前にのみ変更できます。
+対象のサーバー名を削除する方法はありません。これは、既定のローカルコンピューター名にのみ変更できます。
 
-対象のサーバー名がレジストリに格納されている**HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\LSA\Kerberos**します。 使用しては報告されません**ksetup**します。
+対象サーバー名は、 **HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\LSA\Kerberos**のレジストリに格納されます。 **Ksetup**を使用して報告されることはありません。
 
 ## <a name="BKMK_Examples"></a>例
 
-ように、 **ksetup**構成は、Contoso ドメインに接続されている IPops897 コンピューターで有効になります。
+Contoso ドメインに接続されている IPops897 コンピューターで**ksetup**の構成を有効にします。
 ```
 ksetup /server IPops897.corp.contoso.com
 ```
@@ -54,4 +54,4 @@ ksetup /server IPops897.corp.contoso.com
 #### <a name="additional-references"></a>その他の参照情報
 
 -   [Ksetup](ksetup.md)
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

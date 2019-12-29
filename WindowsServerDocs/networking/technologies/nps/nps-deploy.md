@@ -1,45 +1,45 @@
 ---
 title: ネットワーク ポリシー サーバーの展開
-description: このトピックでは、Windows Server 2016 では、ネットワーク ポリシー サーバーの展開のコンテンツへのリンクを提供し、詳細なガイダンスについては、NPS へのリンクが含まれています。
+description: このトピックでは、Windows Server 2016 のネットワークポリシーサーバー展開コンテンツへのリンクを示し、NPS に関する追加のガイダンスへのリンクを示します。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 6cfb50e0-7088-4295-97c5-14ff8776cbf8
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 8da8951a9c6ed5022c892bbf01b33614d38abc5f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 33cada472c314088bc1485bab6d9631226b0ffaf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814843"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405413"
 ---
 # <a name="deploy-network-policy-server"></a>ネットワーク ポリシー サーバーの展開
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-ネットワーク ポリシー サーバーの展開については、このトピックを使用できます。
+このトピックでは、ネットワークポリシーサーバーの展開について説明します。
 
 >[!NOTE]
->他のネットワーク ポリシー サーバー ドキュメント ライブラリの次のセクションで使用できます。  
->- [ネットワーク ポリシー サーバーの概要](nps-getstart-top.md)
->- [ネットワーク ポリシー サーバーを計画します。](nps-plan-top.md)
->- [ネットワーク ポリシー サーバーを管理します。](nps-manage-top.md)
+>ネットワークポリシーサーバーのその他のドキュメントについては、次のライブラリのセクションを参照してください。  
+>- [ネットワークポリシーサーバーを使用したはじめに](nps-getstart-top.md)
+>- [ネットワークポリシーサーバーを計画する](nps-plan-top.md)
+>- [ネットワークポリシーサーバーの管理](nps-manage-top.md)
 
-Windows Server 2016 コア ネットワーク ガイドには計画およびネットワーク ポリシー サーバーのインストールに関するセクションが含まれています\(NPS\)、Active Directory ドメインに NPS を展開するための前提条件として、ガイドで紹介するテクノロジが機能します。 詳細については、"NPS1 の展開"では、Windows Server 2016 のセクションを参照してください。[コア ネットワーク ガイド](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide#BKMK_deployNPS1)します。
+Windows Server 2016 コアネットワークガイドには \(NPS\)のネットワークポリシーサーバーの計画とインストールに関するセクションが含まれており、ガイドに記載されているテクノロジは、Active Directory ドメインに NPS を展開するための前提条件として機能します。 詳細については、「Windows Server 2016 [Core ネットワークガイド](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide#BKMK_deployNPS1)」の「Deploy NPS1」セクションを参照してください。
 
-## <a name="deploy-nps-certificates-for-vpn-and-8021x-access"></a>VPN と 802.1 X アクセス NPS 証明書を展開します。
+## <a name="deploy-nps-certificates-for-vpn-and-8021x-access"></a>VPN および 802.1 X アクセス用に NPS 証明書を展開する
 
-拡張認証プロトコルなどの認証方式を展開する場合\(EAP\) 、NPS でサーバーの使用を必要とする保護された EAP の証明書しは、NPS の証明書を展開するには、ガイドに[802.1 X ワイヤード (有線) およびワイヤレス展開にサーバー証明書展開](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments)します。
+NPS でサーバー証明書を使用する必要がある拡張認証プロトコル \(EAP\) および保護された EAP などの認証方法を展開する場合は、「 [802.1 x ワイヤードおよびワイヤレス展開用のサーバー証明書の展開](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/server-certs/deploy-server-certificates-for-802.1x-wired-and-wireless-deployments)」ガイドを使用して nps 証明書を展開できます。
 
-## <a name="deploy-nps-for-8021x-wireless-access"></a>802.1 X ワイヤレス アクセス用の NPS を展開します。
+## <a name="deploy-nps-for-8021x-wireless-access"></a>802.1 X ワイヤレスアクセス用に NPS を展開する
 
-ワイヤレス アクセスのためには、NPS を展開するには、ガイドを使用することができます[デプロイ パスワード ベース 802.1 X 認証ワイヤレス アクセス](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access)します。
+ワイヤレスアクセス用に NPS を展開する方法については、「[パスワードベースの 802.1 x 認証ワイヤレスアクセスの展開](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/cncg/wireless/a-deploy-8021x-wireless-access)」ガイドを参照してください。
 
-## <a name="deploy-nps-for-windows-10-vpn-access"></a>Windows 10 の VPN アクセス用の NPS を展開します。
+## <a name="deploy-nps-for-windows-10-vpn-access"></a>Windows 10 VPN アクセス用に NPS を展開する
 
-NPS を使用して、常に仮想プライベート ネットワークの接続要求を処理することができます\(VPN\)コンピューターと Windows 10 を実行しているデバイスを使用しているリモートの社員用の接続。
+NPS を使用すると、Windows 10 を実行しているコンピューターとデバイスを使用しているリモート従業員の Always On 仮想プライベートネットワーク \(VPN\) 接続に対する接続要求を処理できます。
 
-詳細については、次を参照してください。、[リモート アクセス常に VPN 展開ガイドの Windows Server 2016 および Windows 10](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy)します。
+詳細については、「 [Windows Server 2016 および windows 10 用のリモートアクセス ALWAYS ON VPN 展開ガイド](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy)」を参照してください。
 

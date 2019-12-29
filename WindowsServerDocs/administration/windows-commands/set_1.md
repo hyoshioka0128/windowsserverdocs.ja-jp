@@ -1,8 +1,8 @@
 ---
-title: セット (set)
-description: 'Windows コマンド」のトピック * * *- '
+title: set
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21661b30c5779907e8cac417439a0935a2126ad8
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 12dce38bf8ad050c65a7a8c0fca4a71267cca93f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441272"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384102"
 ---
-# <a name="set"></a>セット (set)
+# <a name="set"></a>set
 
 
 
@@ -75,16 +75,16 @@ set /a <Variable>=<Expression>
   |-------------------------|----------------------|
   |           ( )           |       グループ化       |
   |          ! ~ -          |        単項         |
-  |         \* / %          |      算術演算子      |
+  |         \*/%          |      算術演算子      |
   |           + -           |      算術演算子      |
-  |          << >>          |    論理シフト     |
+  |          < < > >          |    論理シフト     |
   |            &            |     ビットごとの AND      |
   |            ^            | ビットごとの排他的 OR |
   |                         |                      |
-  | = \*= /= %= += -= &= ^= |      = <<= >>=       |
-  |            、            | 式の区切り記号 |
+  | = \*=/=% = + =-= & = ^ = |      = < < = > > =       |
+  |            ,            | 式の区切り記号 |
 
-  論理を使用する場合 ( **&&** または **||** ) または剰余 ( **%** ) 演算子、式の文字列を引用符で囲みます。 式で任意の数値ではない文字列には、環境変数の名前と見なされ、それらの値は、処理される前に、数値に変換します。 現在の環境で定義されていない環境変数名を指定する値は 0 が割り当てられている、% を使用して値を取得することがなく環境変数の値の算術演算を実行できます。
+  Logical ( **&&** または **||** ) または剰余 ( **%** ) 演算子を使用する場合は、式の文字列を引用符で囲みます。 式で任意の数値ではない文字列には、環境変数の名前と見なされ、それらの値は、処理される前に、数値に変換します。 現在の環境で定義されていない環境変数名を指定する値は 0 が割り当てられている、% を使用して値を取得することがなく環境変数の値の算術演算を実行できます。
 
   実行すると **set/a** コマンド スクリプトの外部でコマンドラインから、式の最終的な値が表示されます。
 
@@ -135,7 +135,7 @@ set testVar=test^^1
 > ```
 > このコマンドが処理されるときに、文字列 C:\Inc を置き換えます **% 含める %** します。
 
-使用することも **設定** 新しいディレクトリを PATH 環境変数に追加するバッチ ファイルでします。 例:
+使用することも **設定** 新しいディレクトリを PATH 環境変数に追加するバッチ ファイルでします。 次に、例を示します。
 ```
 @echo off
 rem ADDPATH.BAT adds a new directory

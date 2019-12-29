@@ -1,8 +1,8 @@
 ---
-title: 動的変換します。
-description: 'Windows コマンド」のトピック * * *- '
+title: 動的変換
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 353c1e4558ab2b0c948ec78c0cd87b579c738ec8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 15c15d14aeb440c5d7862f0a304f223988f52bbe
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841613"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379098"
 ---
-# <a name="convert-dynamic"></a>動的変換します。
+# <a name="convert-dynamic"></a>動的変換
 
 
 
-ベーシック ディスクをダイナミック ディスクに変換します。
+ベーシックディスクをダイナミックディスクに変換します。
 
-このコマンドを使用する方法に関する手順については、次を参照してください。[ベーシック ディスクをダイナミック ディスクに変更](https://go.microsoft.com/fwlink/?LinkId=207047)(https://go.microsoft.com/fwlink/?LinkId=207047)します。
+このコマンドの使用方法については、「[ベーシックディスクをダイナミックディスクに変更](https://go.microsoft.com/fwlink/?LinkId=207047)する方法」 (https://go.microsoft.com/fwlink/?LinkId=207047) を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -38,21 +38,21 @@ convert dynamic [noerr]
 
 |パラメーター|説明|
 |---------|-----------|
-|noerr|スクリプト専用です。 エラーが発生すると、DiskPart は、エラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
+|noerr|スクリプトの場合のみ。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   ベーシック ディスク上の既存のパーティションでは、シンプル ボリュームになります。
--   この操作を成功させるのには、ベーシック ディスクを選択してください。 使用して、 **select ディスク**コマンドをベーシック ディスクを選択し、それにフォーカスをします。
+-   ベーシックディスク上の既存のパーティションは、単純ボリュームになります。
+-   この操作を成功させるには、ベーシックディスクを選択する必要があります。 **[ディスクの選択**] コマンドを使用してベーシックディスクを選択し、それにフォーカスを移動します。
 
 ## <a name="BKMK_examples"></a>例
 
-ベーシック ディスクをダイナミック ディスクに変換するには、次のように入力します。
+ベーシックディスクをダイナミックディスクに変換するには、次のように入力します。
 ```
 convert dynamic
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
 

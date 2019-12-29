@@ -1,8 +1,8 @@
 ---
-title: Reg delete
-description: 'Windows コマンド」のトピック * * *- '
+title: reg delete
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 369ef3bda37ab8e143a14f0f9707b9bbf14bd5f8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7156bf58b27da1602931f0dc1903de71d86764e7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877083"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384764"
 ---
-# <a name="reg-delete"></a>Reg delete
+# <a name="reg-delete"></a>reg delete
 
 
 
@@ -38,8 +38,8 @@ Reg delete <KeyName> [{/v ValueName | /ve | /va}] [/f]
 
 |パラメーター|説明|
 |---------|-----------|
-|\<キー名 >|サブキーまたは削除するエントリの完全なパスを指定します。 リモート コンピューターを指定するには、コンピューター名を含める (形式の\\ \\ComputerName\)の一部として、 *KeyName*します。 省略すると\\ \\ComputerName\ によりローカル コンピューターに既定値に操作します。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キーは次のとおりです。HKLM、HKCU、HKCR、HKU、および hkcc します。 リモート コンピューターが指定されている場合は、有効なルート キーは。HKLM および hku です。|
-|/v \<ValueName>|サブキーの特定のエントリを削除します。 エントリが指定されていない場合、すべてのエントリとサブキーの下のサブキーは削除されます。|
+|\<KeyName >|サブキーまたは削除するエントリの完全なパスを指定します。 リモートコンピューターを指定するには、コンピューター名を、 *KeyName*の一部として \\\\ComputerName\) の形式で含めます。 \\\\ComputerName \ を省略すると、操作は既定でローカルコンピューターに設定されます。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キー: HKLM、HKCU、HKCR、HKU、および HKCC します。 有効なルート キーは、リモート コンピューターが指定されている場合: HKLM および HKU します。|
+|/v \<ValueName >|サブキーの特定のエントリを削除します。 エントリが指定されていない場合、すべてのエントリとサブキーの下のサブキーは削除されます。|
 |/ve|値を持たないエントリのみが削除されることを指定します。|
 |/va|指定したサブキーの下のすべてのエントリを削除します。 指定したサブキーの下のサブキーは削除されません。|
 |/f|確認を求めずに、既存のレジストリ サブキーまたはエントリを削除します。|
@@ -49,7 +49,7 @@ Reg delete <KeyName> [{/v ValueName | /ve | /va}] [/f]
 
 次の表に、戻り値の **reg 削除** 操作します。
 
-|値|説明|
+|Value|説明|
 |-----|-----------|
 |0|成功|
 |1|失敗|
@@ -67,4 +67,4 @@ REG DELETE \\ZODIAC\HKLM\Software\MyCo /v MTU
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

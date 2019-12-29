@@ -1,7 +1,7 @@
 ---
 title: エラー修正機能を提供する RAM を使用します。
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,12 +10,12 @@ ms.topic: article
 ms.assetid: 67eb6cef-b045-4748-90e1-406af5345d6a
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: b220465aed0cf9c634eb35424709195ced0d6df9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c6f232ba44631e35190688d6c48a3bc53224bc17
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871123"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393445"
 ---
 # <a name="use-ram-that-provides-error-correction"></a>エラー修正機能を提供する RAM を使用します。
 
@@ -27,22 +27,22 @@ ms.locfileid: "59871123"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|エラー|  
+|**順**|Error|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
   
 ## <a name="issue"></a>問題  
   
-*このコンピューターで使用中の RAM がないエラー修正 (ECC) の RAM。*  
+*このコンピューターで使用されている RAM は、エラー修正 (ECC) RAM ではありません。*  
   
 ## <a name="impact"></a>影響  
   
-*Microsoft はサポートしていません Windows Server 2016 コンピューターの RAM を修正するエラーは発生しません。*  
+*Microsoft では、エラーを修正せずにコンピューターで Windows Server 2016 をサポートしていません。*  
   
 ## <a name="resolution"></a>解決方法  
   
-*サーバーが、Windows Server catalog に掲載して HYPER-V の修飾を確認します。*  
+*サーバーが Windows Server カタログに表示され、Hyper-v 用に修飾されていることを確認します。*  
   
 サーバーが一覧表示するかどうかを確認するを参照してください。、 [Windows Server カタログ](https://www.windowsservercatalog.com/)します。  
   

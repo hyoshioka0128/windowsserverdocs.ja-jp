@@ -2,7 +2,7 @@
 title: RDS コレクションでのユーザーの管理
 description: リモート デスクトップ サービスでユーザーを管理する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ author: christianmontoya
 ms.author: chrimo
 ms.date: 03/27/2018
 manager: scottman
-ms.openlocfilehash: 91d032d1a7131fd0bc84e33bd2806d807eb1dafe
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 870a6360f685c2de31485135202b0f1415c90d85
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63711992"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403859"
 ---
 # <a name="manage-users-in-your-rds-collection"></a>RDS コレクションでのユーザーの管理
 

@@ -1,25 +1,25 @@
 ---
 title: Windows Server バージョン 1903 以降で削除された機能と置換が計画されている機能
 description: 次の一覧に、Windows Server バージョン 1903 の機能のうち、このリリースで製品から削除された機能および今後のリリースで置換が検討されるようになった機能を示します。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
-ms.date: 08/22/2019
+ms.date: 10/15/2019
 author: jasongerend
 ms.author: jgerend
 manager: daveba
-ms.openlocfilehash: 079f1a6544aac606358a741ecb3fffae791a4985
-ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
+ms.openlocfilehash: b72f75509e9a50477bb1857782ef5dd4e2670b3f
+ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000671"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73956119"
 ---
-# <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1903"></a>Windows Server バージョン 1903 以降で削除された機能と置換が計画されている機能
+# <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1903-and-1909"></a>Windows Server バージョン 1903 および 1909 以降で削除された機能と置換が計画されている機能
 
->適用先:Windows Server バージョン 1903
+>適用対象:Windows Server バージョン 1903 および 1909
 
-次の一覧に、Windows Server バージョン 1903 の機能のうち、このリリースで製品から削除された機能および今後のリリースで置換が検討されるようになった機能を示します。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。 **この一覧は、今後のリリースで変更される可能性があります。また、影響を受ける機能でこの一覧に含まれていないものもあります。**
+次の一覧に、Windows Server バージョン 1903 および 1909 の機能のうち、このリリースで製品から削除された機能および今後のリリースで置換が検討されるようになった機能を示します。 商用環境でオペレーティング システムを更新する IT 担当者を対象としています。 **この一覧は、今後のリリースで変更される可能性があります。また、影響を受ける機能でこの一覧に含まれていないものもあります。**
 
 「[Windows Server で削除された機能と置換が計画されている機能](removed-features.md)」もご覧ください。
 
@@ -32,7 +32,7 @@ ms.locfileid: "70000671"
 
 |                         機能                         |                                                                                                                                                                                                                                                                                                                                                                                                                           代わりに使用できる機能                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|              Wi-Fi WEP および TKIP (**新機能**)               |                                                                                                                                                                  古い WEP および TKIP の暗号を使用している Wi-Fi ネットワークは、WPA2 および WPA3 などの AES を使用しているものと比べて安全性が劣ります。 Windows 10 バージョン 1903 では、WEP または TKIP ネットワークに接続すると、ネットワークが安全ではないという警告メッセージが表示されますが、Windows Server バージョンが 1903 では何のメッセージも表示されません。 将来のリリースでは、これらの古い暗号を使用している Wi-Fi ネットワークへの接続は許可されなくなります。 WEP および TKIP のセキュリティ リスクの詳細については、この[ブログ記事](https://go.microsoft.com/fwlink/p/?linkid=2008426)を参照してください。                                                                                                                                                                   |
+|              LBFO 上の Hyper-V vSwitch                |                                                                                                                                                                  今後のリリースでは、Hyper-V vSwitch を LBFO チームにバインドすることはできなくなります。 代わりに、 [スイッチ埋め込みチーミング (SET)](../virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md#switch-embedded-teaming-set) 経由でバインドする必要があります。                                                                                                                                                                    |
 |       XDDM ベースのリモート ディスプレイ ドライバー (**新機能**)        |                                                                                                                                          このリリースから、リモート デスクトップ サービスでは、1 つのセッションのリモート デスクトップに対して Windows Display Driver Model (WDDM) ベースの Indirect Display Driver (IDD) が使用されます。 Windows 2000 Display Driver Model (XDDM) ベースのリモート ディスプレイ ドライバーのサポートは、将来のリリースで削除されます。 XDDM ベースのリモート ディスプレイ ドライバーを使用している独立系ソフトウェア ベンダーは、WDDM ドライバー モデルへの移行を計画する必要があります。 リモート ディスプレイの Indirect Display Driver ISV の実装に関する詳細については、[rdsdev@microsoft.com](mailto:rdsdev@microsoft.com) にお問い合わせください。                                                                                                                                           |
 |            UCS ログ収集ツール (**新機能**)            |                                                                                                                                                                                                                                                                                                                                                         UCS ログ収集ツールは、Windows Server での使用を明示的に意図したものではありませんが、Windows 10 フィードバック Hub によって置き換えられています。                                                                                                                                                                                                                                                                                                                                                         |
 |              Hyper-V のキー記憶域ドライブ               |                                                                                                                                                                                                        Hyper-V のキー記憶域ドライブ機能に対する取り組みはなくなりました。 第 1 世代の VM を使用している場合は、「[第 1 世代 VM の仮想化セキュリティ](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/generation-1-virtual-machine-security-settings-for-hyper-v)」で今後のオプションの情報をご覧ください。 新しい VM を作成している場合は、より安全なソリューションのため TPM デバイスで第 2 世代仮想マシンを使用してください。                                                                                                                                                                                                         |

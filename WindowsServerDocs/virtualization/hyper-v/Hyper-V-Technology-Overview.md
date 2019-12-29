@@ -1,7 +1,7 @@
 ---
 title: HYPER-V テクノロジの概要
-description: HYPER-V はについて説明します、主要な機能、および一般的な使用法を取得する方法。
-ms.prod: windows-server-threshold
+description: Hyper-v とは何か、それを取得する方法、主な機能、および一般的な使用方法について説明します。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,96 +11,96 @@ ms.assetid: ac069fed-7bf5-4cc3-aff5-25a2766040b8
 author: KBDAzure
 ms.author: kathydav
 ms.date: 11/29/2016
-ms.openlocfilehash: 9ae3c9dce36ad7d67a19ce167c9cb875b3c91810
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 053f92f1ef07a2e574c93412626ee792d4d982e3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864313"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366783"
 ---
 # <a name="hyper-v-technology-overview"></a>HYPER-V テクノロジの概要
 
->適用先:Windows Server 2016、Microsoft HYPER-V Server 2016、Windows Server 2019、Microsoft HYPER-V Server 2019
+>適用対象: Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
-HYPER-V は、Microsoft のハードウェア仮想化製品です。 作成しと呼ばれる、コンピューターのソフトウェア バージョンを実行することができます、*仮想マシン*します。 各仮想マシンは、オペレーティング システムとプログラムを実行する、完全なコンピューターのように機能します。 コンピューティング リソースを必要があるときに仮想マシンは、柔軟性が向上、時間とコストを節約でき、同じ物理ハードウェア上で 1 つのオペレーティング システムを実行するよりもハードウェアを使用するより効率的な方法です。
+Hyper-v は、Microsoft のハードウェア仮想化製品です。 これにより、*仮想マシン*と呼ばれるソフトウェアバージョンのコンピューターを作成および実行できます。 各仮想マシンは、オペレーティングシステムとプログラムを実行する完全なコンピューターのように機能します。 コンピューティングリソースが必要な場合、virtual machines を使用すると、柔軟性が向上し、時間とコストを節約できます。また、物理ハードウェア上で1つのオペレーティングシステムを実行するよりも、ハードウェアをより効率的に使用することができます。
 
-HYPER-V は、同時に同じハードウェア上で 1 つ以上の仮想マシンを実行することを意味する独自の独立した領域で各仮想マシンを実行します。 このまたは他のワークロードに影響を与えるクラッシュなどの問題を避けるために、さまざまなシステムに別のユーザー、グループ、またはサービスのアクセス権を付与する可能性があります。
+Hyper-v では、各仮想マシンが独自の分離された領域で実行されるため、同じハードウェア上で複数の仮想マシンを同時に実行することができます。 これは、他のワークロードに影響を与えるクラッシュや、異なるユーザー、グループ、またはサービスに異なるシステムへのアクセスを許可するなどの問題を回避するために必要になる場合があります。
 
-## <a name="some-ways-hyper-v-can-help-you"></a>いくつかの方法、HYPER-V が役立つ
+## <a name="some-ways-hyper-v-can-help-you"></a>Hyper-v が役に立ちます。
 
-HYPER-V には、するのに役立ちます。
+Hyper-v は、次のことを支援します。
 
-- **確立またはプライベート クラウド環境を拡大します。** 移動または共有リソースの使用を拡張してより柔軟で、オンデマンドの IT サービスを提供し、需要の変化に使用率を調整します。
+- **プライベートクラウド環境を確立または拡張します。** 共有リソースの使用を拡大したり拡張したり、需要の変化に応じて使用率を調整したりして、より柔軟なオンデマンドの IT サービスを提供します。
 
-- **ご使用のハードウェアをより効果的に使用します。** サーバーとワークロードをより少ない電源と物理領域を使用するより少ないより強力な物理コンピューターに統合します。
+- **ハードウェアをより効果的に使用できます。** サーバーとワークロードをより少ない数の強力な物理コンピューターに統合することで、電力と物理領域を節約できます。
 
-- **ビジネス継続性を向上します。** ワークロードのおよび予定外のダウンタイムの影響を最小限に抑えます。
+- **ビジネス継続性を向上させます。** ワークロードのスケジュールされたダウンタイムと予定外のダウンタイムの両方の影響を最小限に抑えます。
 
-- **確立または仮想デスクトップ インフラストラクチャ (VDI) を展開します。** Vdi の一元化されたデスクトップ戦略の使用は、ビジネスの機敏性とデータのセキュリティを向上させるだけでなく法令遵守を簡素化およびデスクトップ オペレーティング システムとアプリケーションの管理に役立ちます。 個人用仮想デスクトップまたは仮想デスクトップ プールをユーザーに使用できるようにする同じサーバー上の Hyper-v ホストとリモート デスクトップ仮想化ホスト (RD 仮想化ホスト) をデプロイします。
+- **仮想デスクトップインフラストラクチャ (VDI) を確立または拡張します。** VDI で集中管理されたデスクトップ戦略を使用すると、ビジネスの機敏性とデータのセキュリティを向上させることができます。また、法令順守を簡素化し、デスクトップオペレーティングシステムとアプリケーションを管理することもできます。 個人用仮想デスクトップまたは仮想デスクトッププールをユーザーが使用できるようにするには、Hyper-v とリモートデスクトップ仮想化ホスト (RD 仮想化ホスト) を同じサーバーに展開します。
 
-- **開発を行いより効率的にテストします。** 購入や保守が必要になりますのみ、物理システムを使用した場合、すべてのハードウェアをしなくても、異なるコンピューティング環境を再現します。
+- **開発とテストの効率を高めます。** 物理システムのみを使用している場合は、必要なハードウェアを購入したり保守したりしなくても、さまざまなコンピューティング環境を再現できます。
 
-## <a name="hyper-v-and-other-virtualization-products"></a>Hyper-v ホストとその他の仮想化製品
+## <a name="hyper-v-and-other-virtualization-products"></a>Hyper-v とその他の仮想化製品
 
-Windows および Windows Server HYPER-V では、Microsoft Virtual PC、Microsoft Virtual Server、Windows Virtual PC などの古いハードウェア仮想化製品が置き換えられます。 HYPER-V には、これらの古い製品では使用できないネットワーク、パフォーマンス、ストレージ、およびセキュリティの機能が提供されます。
+Windows および Windows Server の hyper-v は、以前のハードウェア仮想化製品 (Microsoft Virtual PC、Microsoft Virtual Server、Windows Virtual PC など) に代わるものです。 Hyper-v では、これらの古い製品では利用できないネットワーク、パフォーマンス、ストレージ、およびセキュリティ機能を提供しています。
 
-Hyper-v ホストと同じプロセッサ機能を必要とするほとんどのサード パーティ製の仮想化アプリケーションは、互換性がありません。 ハードウェア仮想化拡張機能と呼ばれる、プロセッサの機能は、共有できないためにです。 詳細については、次を参照してください。[仮想化アプリケーションは、Hyper-v、Device Guard、Credential Guard とは動作しません](https://support.microsoft.com/kb/3204980)します。
+Hyper-v と、同じプロセッサの機能を必要とするほとんどのサードパーティの仮想化アプリケーションには互換性がありません。 これは、ハードウェア仮想化拡張機能と呼ばれるプロセッサ機能が共有されないように設計されているためです。 詳細については、「[仮想化アプリケーションが hyper-v、Device guard、および Credential guard と連携](https://support.microsoft.com/kb/3204980)して動作しない」を参照してください。
 
-## <a name="what-features-does-hyper-v-have"></a>HYPER-V には、どのような機能はありますか。
+## <a name="what-features-does-hyper-v-have"></a>Hyper-v にはどのような機能がありますか。
 
-HYPER-V では、多くの機能を提供します。 これは、概要については、機能が提供または操作に役立つどのようなグループ化します。
+Hyper-v には、多くの機能が用意されています。 これは、機能によって提供または支援される概要です。
 
-**コンピューティング環境**-A HYPER-V 仮想マシンには、メモリ、プロセッサ、ストレージ、およびネットワー キングなどの物理コンピューターと同じ基本的なパーツが含まれています。 これらすべての部分がある機能とオプションのさまざまなニーズを満たすためにさまざまな方法を構成することができます。 記憶域やネットワーク見なすことができるそれぞれ独自のカテゴリ、さまざまな方法により、それらを構成できます。
+**コンピューティング環境**-hyper-v 仮想マシンには、メモリ、プロセッサ、記憶域、ネットワークなど、物理コンピューターと同じ基本部分が含まれています。 これらのすべての部分には、さまざまなニーズを満たすためにさまざまな方法を構成できる機能とオプションがあります。 ストレージとネットワークは、さまざまな方法で構成できるため、それぞれが独自のカテゴリと考えることができます。
 
-**ディザスター リカバリーとバックアップ**-ディザスター リカバリーを HYPER-V レプリカは、コピーから、仮想マシンを復元できるように、別の物理的な場所に格納するためのもので、仮想マシンのコピーを作成します。 バックアップの場合は、HYPER-V は、2 つの型を提供します。 いずれかで保存された状態が使用して、VSS をサポートするプログラムのアプリケーション整合性バックアップを作成するため、ボリューム シャドウ コピー サービス (VSS) を使用して、その他
+**ディザスターリカバリーとバックアップ**-ディザスターリカバリーのために、hyper-v レプリカは仮想マシンのコピーを作成します。これは別の物理的な場所に格納することを目的としています。そのため、仮想マシンをコピーから復元することができます。 バックアップの場合、Hyper-v では2種類が提供されます。 1つは保存された状態を使用し、もう1つはボリュームシャドウコピーサービス (VSS) を使用して、VSS をサポートするプログラムのアプリケーション整合性バックアップを作成できるようにします。
 
-**最適化**-各サポートされているゲスト オペレーティング システムが、カスタマイズされた一連のサービスとドライバーと呼ばれる*統合サービス*、簡単に、HYPER-V 仮想マシンでオペレーティング システムを使用するようにします。
+**最適化**-サポートされる各ゲストオペレーティングシステムには、*統合サービス*と呼ばれる、カスタマイズされたサービスとドライバーのセットがあり、hyper-v 仮想マシンでのオペレーティングシステムの使用が簡単になります。
 
-**移植性**- などの機能のライブ マイグレーション、記憶域の移行し、インポート/エクスポートでは、移動、または仮想マシンの配布に簡単です。
+**移植性**-ライブマイグレーション、記憶域の移行、インポート/エクスポートなどの機能により、仮想マシンを簡単に移動または配布することができます。
 
-**リモート接続**-HYPER-V には仮想マシンの接続、Windows と Linux の両方で使用するためのリモート接続ツールが含まれています。 リモート デスクトップでこのツールで、アクセスのコンソールは、ご覧のようで起きているゲスト オペレーティング システムがまだ起動されていない場合でもです。
+**リモート接続**-hyper-v には、Windows と Linux の両方で使用するリモート接続ツールである仮想マシン接続が含まれています。 リモートデスクトップとは異なり、このツールはコンソールへのアクセスを提供します。そのため、オペレーティングシステムがまだ起動していない場合でも、ゲストで何が起こっているかを確認できます。
 
-**セキュリティ**-マルウェアやその他の不正アクセス、仮想マシンとそのデータをセキュリティで保護された boot とシールドされた仮想マシンを保護します。
+**セキュリティ**-セキュアブートとシールドされた仮想マシンは、仮想マシンとそのデータへのマルウェアやその他の承認されていないアクセスから保護するのに役立ちます。
 
-このバージョンで導入された機能の概要については、次を参照してください。[新機能については、Hyper-v で Windows Server](What-s-new-in-Hyper-V-on-Windows.md)します。 一部の機能やパーツが構成されている数に制限があります。 詳細については、次を参照してください。[の Windows Server 2016 で Hyper-v のスケーラビリティの計画](plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)します。
+このバージョンで導入された機能の概要については、「 [Windows Server の hyper-v の新](What-s-new-in-Hyper-V-on-Windows.md)機能」を参照してください。 一部の機能やパーツには、構成できる数に制限があります。 詳細については、「 [Windows Server 2016 での hyper-v のスケーラビリティの計画](plan/Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)」を参照してください。
 
-## <a name="how-to-get-hyper-v"></a>HYPER-V を取得する方法
+## <a name="how-to-get-hyper-v"></a>Hyper-v を取得する方法
 
-X64 の使用可能なサーバーの役割として HYPER-V は Windows Server および Windows では、使用可能なバージョンの Windows Server。 サーバーの手順については、次を参照してください。 [Windows server、Hyper-v の役割をインストール](get-started/Install-the-Hyper-V-role-on-Windows-Server.md)します。 として使用できますが、Windows で[機能](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index)64 ビット バージョンの Windows でします。 ダウンロード可能なスタンドアロンのサーバー製品で使用可能なも[Microsoft HYPER-V Server](https://www.microsoft.com/evalcenter/evaluate-hyper-v-server-2019)します。
+Hyper-v は、windows server および Windows では、x64 バージョンの Windows Server で使用できるサーバーの役割として使用できます。 サーバーの手順については、「 [Windows server に hyper-v の役割をインストールする](get-started/Install-the-Hyper-V-role-on-Windows-Server.md)」を参照してください。 Windows では、一部の64ビットバージョンの Windows で[機能](https://docs.microsoft.com/virtualization/hyper-v-on-windows/index)として使用できます。 また、ダウンロード可能なスタンドアロンサーバー製品である[Microsoft Hyper-V サーバー](https://www.microsoft.com/evalcenter/evaluate-hyper-v-server-2019)としても利用できます。
 
 ## <a name="supported-operating-systems"></a>サポートされるオペレーティング システム
 
-多くのオペレーティング システムは、仮想マシンで実行されます。 一般に、オペレーティング システムを使用する、x86 アーキテクチャは、HYPER-V 仮想マシンで実行されます。 実行できるすべてのオペレーティング システムがテストされ、ただし、Microsoft によってサポートされています。 サポートされている機能の一覧を参照してください。
+多くのオペレーティングシステムは、仮想マシン上で実行されます。 一般に、x86 アーキテクチャを使用するオペレーティングシステムは、Hyper-v 仮想マシン上で実行されます。 ただし、実行できるすべてのオペレーティングシステムが Microsoft によってテストおよびサポートされているわけではありません。 サポートされる内容の一覧については、以下を参照してください。
 
-- [Windows 上の HYPER-V ではサポートされている Linux および FreeBSD 仮想マシン](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
+- [Windows 上の Hyper-v でサポートされている Linux および FreeBSD の仮想マシン](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
 
-- [Windows server、HYPER-V 用の Windows ゲスト オペレーティング システムがサポートされています。](Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows.md)
+- [Windows Server 上の Hyper-v でサポートされている Windows ゲストオペレーティングシステム](Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows.md)
 
-## <a name="how-hyper-v-works"></a>HYPER-V のしくみ
+## <a name="how-hyper-v-works"></a>Hyper-v の動作
 
-HYPER-V は、ハイパーバイザー ベースの仮想化テクノロジです。 HYPER-V では、特定機能を持つ物理プロセッサを必要とする Windows ハイパーバイザーを使用します。 ハードウェアの詳細については、次を参照してください。 [Windows server、Hyper-v のシステム要件](System-requirements-for-Hyper-V-on-Windows.md)します。
+Hyper-v は、ハイパーバイザーベースの仮想化テクノロジです。 Hyper-v では、特定の機能を搭載した物理プロセッサを必要とする Windows ハイパーバイザーを使用します。 ハードウェアの詳細については、「 [Windows Server の hyper-v のシステム要件](System-requirements-for-Hyper-V-on-Windows.md)」を参照してください。
 
-ほとんどの場合は、ハイパーバイザーはハードウェアと仮想マシン間の相互作用を管理します。 このハイパーバイザー制御のアクセス、ハードウェアには、実行される分離された環境の仮想マシンを示します。 一部の構成で仮想マシンまたは仮想マシンで実行されているオペレーティング システムは、グラフィックス、ネットワーク、または記憶域のハードウェアに直接アクセスを持っています。
+ほとんどの場合、ハイパーバイザーはハードウェアと仮想マシン間の相互作用を管理します。 このハイパーバイザーによって制御されたハードウェアへのアクセスは、仮想マシンが実行される分離された環境を提供します。 一部の構成では、仮想マシンまたは仮想マシンで実行されているオペレーティングシステムが、グラフィックス、ネットワーク、または記憶域のハードウェアに直接アクセスできます。
 
-## <a name="what-does-hyper-v-consist-of"></a>HYPER-V が構成しますか。
+## <a name="what-does-hyper-v-consist-of"></a>Hyper-v の構成要素
 
-HYPER-V を作成して仮想マシンを実行できるように連携する部分が必要です。 同時に、これらの部分は、仮想化プラットフォームと呼ばれます。 セットとしてインストールされている HYPER-V の役割をインストールするときにします。 必要な部分は、Windows ハイパーバイザー、HYPER-V 仮想マシン管理サービス、仮想化 WMI プロバイダーを仮想マシン バス (VMbus)、仮想化サービス プロバイダー (VSP) および仮想インフラストラクチャ ドライバー (VID)。
+Hyper-v には、仮想マシンを作成して実行できるようにするために必要な部分があります。 これらの部分は、仮想化プラットフォームと呼ばれます。 これらは、Hyper-v の役割をインストールするときにセットとしてインストールされます。 必要な部分には、Windows ハイパーバイザー、Hyper-v 仮想マシン管理サービス、仮想化 WMI プロバイダー、仮想マシンバス (VMbus)、仮想化サービスプロバイダー (VSP)、仮想インフラストラクチャドライバー (VID) などがあります。
 
-HYPER-V では、管理および接続するためのツールもあります。 同じコンピューターで HYPER-V ロールがインストールされている、およびコンピューター上で HYPER-V ロールをインストールせずにこれらをインストールすることができます。 これらのツールは次のとおりです。
+Hyper-v には、管理と接続のためのツールも用意されています。 これらは、Hyper-v の役割がインストールされているのと同じコンピューター、および Hyper-v の役割がインストールされていないコンピューターにインストールできます。 これらのツールは次のとおりです。
 
 - Hyper-V マネージャー
-- [Windows PowerShell 用 HYPER-V モジュール](https://docs.microsoft.com/powershell/module/hyper-v/index)
-- [仮想マシン接続](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect) \(VMConnect とも呼ばれます。\)
-- [Windows PowerShell ダイレクト](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
+- [Windows PowerShell 用 hyper-v モジュール](https://docs.microsoft.com/powershell/module/hyper-v/index)
+- [仮想マシン接続](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/hyper-v-virtual-machine-connect)\(vmconnect と呼ばれる場合があり\)
+- [Windows PowerShell Direct](manage/Manage-Windows-virtual-machines-with-PowerShell-Direct.md)
 
 ## <a name="related-technologies"></a>関連テクノロジ
 
-これらは、マイクロソフトの HYPER-V でよく使用されるいくつかのテクノロジ
+次に、Hyper-v でよく使用される Microsoft のテクノロジをいくつか示します。
 
-- [フェールオーバー クラスタ リング](../../failover-clustering/whats-new-in-failover-clustering.md)
+- [フェールオーバー クラスタリング](../../failover-clustering/whats-new-in-failover-clustering.md)
 - [リモート デスクトップ サービス](../../remote/remote-desktop-services/Host-desktops-and-apps-in-Remote-Desktop-Services.md)
 - [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/overview)
 
-さまざまなストレージ テクノロジ: クラスターの共有ボリューム、SMB 3.0 では、記憶域スペース ダイレクト
+さまざまな記憶域テクノロジ: クラスターの共有ボリューム、SMB 3.0、記憶域スペースダイレクト
 
-Windows コンテナーは、仮想化する別のアプローチを提供します。 参照してください、 [Windows コンテナー](https://docs.microsoft.com/virtualization/windowscontainers/index) msdn ライブラリ。
+Windows コンテナーは、仮想化にもう1つのアプローチを提供します。 MSDN の[Windows コンテナー](https://docs.microsoft.com/virtualization/windowscontainers/index)ライブラリを参照してください。

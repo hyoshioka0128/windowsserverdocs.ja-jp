@@ -1,8 +1,8 @@
 ---
 title: ftp literal_1
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 693916507488a9a480315a8e9299baa93a223b8a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 393dea27e8567a72a5bd25c927282ade93e317c9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438661"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376271"
 ---
-# <a name="ftp-literal1"></a>ftp: literal_1
+# <a name="ftp-literal_1"></a>ftp: literal_1
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2 のリモート ftp サーバーへの逐語的引数の Windows Server 2012 を送信します。 1 つの ftp 応答コードが返されます。   
+>適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 は、逐語的引数をリモート ftp サーバーに送信します。 単一の ftp 応答コードが返されます。   
 
 ## <a name="syntax"></a>構文  
 ```  
@@ -34,13 +34,13 @@ literal <Argument> [ ]
 |------------|---------------------------------------------------|
 | <Argument> | Ftp サーバーに送信する引数を指定します。 |
 
-## <a name="remarks"></a>注釈  
-**リテラル**コマンドと同じ、**見積もり**コマンド。  
+## <a name="remarks"></a>コメント  
+**Literal**コマンドは、 **quote**コマンドと同じです。  
 ## <a name="BKMK_Examples"></a>例  
-送信、**終了**リモート ftp サーバーにコマンド。  
+リモート ftp サーバーに**quit**コマンドを送信します。  
 ```  
 literal quit  
 ```  
-## <a name="additional-references"></a>その他の参照  
--   [ftp: quote](ftp-quote.md)  
+## <a name="additional-references"></a>その他の参照情報  
+-   [ftp: 引用](ftp-quote.md)  
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)  

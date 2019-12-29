@@ -4,20 +4,20 @@ description: このトピックでは、802.1 X ワイヤードおよびワイ�
 manager: brianlic
 ms.topic: article
 ms.assetid: 4acdc3ad-078e-45cc-b54c-e9456e0c90f5
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 1774d235703bd75d810f2649cb8ed3f2f92622d5
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 024fc73c4ed089d81808cf44d7cfe8b01bfffaa0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811594"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406330"
 ---
 # <a name="install-the-certification-authority"></a>証明機関をインストールする
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
 この手順を使用すると、ネットワーク ポリシー サーバー (NPS)、ルーティングとリモート アクセス サービス (RRAS)、またはその両方を実行しているサーバーにサーバー証明書を登録できるように、Active Directory 証明書サービス (AD CS) をインストールします。  
   
@@ -39,7 +39,7 @@ ms.locfileid: "66811594"
 ### <a name="to-install-active-directory-certificate-services"></a>Active Directory Certificate Services をインストールするには  
 
 > [!TIP]
-> Active Directory Certificate Services をインストールするを参照してください、Windows PowerShell を使用したい場合[Install-adcscertificationauthority](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcscertificationauthority?view=win10-ps)コマンドレットおよび省略可能なパラメーター。
+> Windows PowerShell を使用して Active Directory 証明書サービスをインストールする場合は、コマンドレットとオプションのパラメーターの[AdcsCertificationAuthority](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcscertificationauthority?view=win10-ps)を参照してください。
   
 1.  Enterprise Admins グループとルート ドメインの Domain Admins グループの両方のメンバーとしてログオンします。  
   
@@ -70,7 +70,7 @@ ms.locfileid: "66811594"
   
 13. **秘密キーの種類を指定** いることを確認 ページで、 **新しい秘密キーを作成** クリックして選択すると、 **次**します。  
   
-14. **CA の暗号化**ページで、CSP の既定の設定を保持 (**RSA #Microsoft Software Key Storage Provider**) とハッシュ アルゴリズム (**SHA2**)、最適な決定とデプロイのキーの文字長。 大規模なキー文字列の長さが最適なセキュリティを提供します。ただし、サーバーのパフォーマンスに影響を与えることができますが、従来のアプリケーションと互換性がない可能性があります。 2048 の既定の設定を維持することをお勧めします。 **[次へ]** をクリックします。  
+14. **[CA の暗号化]** ページで、CSP (**RSA # Microsoft Software Key Storage Provider**) とハッシュアルゴリズム (**SHA2**) の既定の設定をそのままにして、展開に最適なキー文字の長さを決定します。 大規模なキー文字列の長さが最適なセキュリティを提供します。ただし、サーバーのパフォーマンスに影響を与えることができますが、従来のアプリケーションと互換性がない可能性があります。 2048 の既定の設定を維持することをお勧めします。 **[次へ]** をクリックします。  
   
 15. **CA 名** ページで、CA の推奨される共通名を保持するか、必要に応じて名前を変更します。 している AD CS をインストールした後、CA の名前を変更できないために、CA 名は名前付け規則と目的で、互換性のあることを確認します。 **[次へ]** をクリックします。  
   

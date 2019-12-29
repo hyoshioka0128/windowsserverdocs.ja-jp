@@ -1,8 +1,8 @@
 ---
 title: 更新プログラム ServerFiles コマンド
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec96e2ba9aea14ed9a203dabbb697187736b33a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 93eeb0deaa527921db35f4ab955d2ccc46b57d7a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817443"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385846"
 ---
 # <a name="the-update-serverfiles-command"></a>更新プログラム ServerFiles コマンド
 
@@ -36,7 +36,7 @@ WDSUTIL [Options] /Update-ServerFiles [/Server:<Server name>]
 
 |パラメーター|説明|
 |---------|-----------|
-|[/Server:\<サーバー名 >]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
+|[/Server: \<Server name >]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
 
 ## <a name="BKMK_examples"></a>例
 
@@ -48,4 +48,4 @@ WDSUTIL /Verbose /Progress /Update-ServerFiles /Server:MyWDSServer
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

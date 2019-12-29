@@ -1,8 +1,8 @@
 ---
 title: nslookup set vc
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b70cd343ce0ff2c6b4dfd61750882939153b795
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d46e60d6c755a75928c801494c385578c3b5bc5d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436765"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372739"
 ---
 # <a name="nslookup-set-vc"></a>nslookup set vc
 
 
 
-またはを使用して、サーバーへの要求を送信するときに、仮想回線を使用しないことを指定します。
+サーバーに要求を送信するときに、仮想回線を使用するかどうかを指定します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,9 +36,9 @@ set [no]vc
 
 | パラメーター |                                              説明                                               |
 |-----------|--------------------------------------------------------------------------------------------------------|
-| **novc**  | サーバーに要求を送信するときは、仮想回線を使用しないを指定します。 既定値は**novc**します。 |
-|  **vc**   |             サーバーに要求を送信するときに常に仮想回線を使用することを指定します。             |
-|   {0} のヘルプ   |                                                   ?}                                                   |
+| **novc**  | サーバーに要求を送信するときに、仮想回線を使用しないように指定します。 既定値は**novc**です。 |
+|  **vc-1**   |             サーバーに要求を送信するときに常に仮想回線を使用するように指定します。             |
+|   {ヘルプ   |                                                   ?}                                                   |
 
 #### <a name="additional-references"></a>その他の参照情報
 

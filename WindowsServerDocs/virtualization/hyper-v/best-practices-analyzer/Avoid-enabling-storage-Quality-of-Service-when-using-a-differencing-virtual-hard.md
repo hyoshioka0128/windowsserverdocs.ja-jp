@@ -1,7 +1,7 @@
 ---
-title: 親と子の仮想ハード_ディスクが別々 のボリューム上にある場合は、差分仮想ハード_ディスクを使用する場合は、記憶域サービスの品質を有効にしないように
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+title: 親と子のバーチャルハードディスクが異なるボリュームにある場合に差分バーチャルハードディスクを使用すると、記憶域のサービスの品質を有効にしない
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,38 +10,38 @@ ms.topic: article
 ms.assetid: aa9ed408-65cf-40dc-aad2-118b54c70179
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 2bdc8462c4d9dc50dbb69792f2f294add0ca3a74
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 716a32de2f9327e5eca38c470fa1b7c44150e9cb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856203"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366441"
 ---
-# <a name="avoid-enabling-storage-quality-of-service-when-using-a-differencing-virtual-hard-disk-when-the-parent-and-child-virtual-hard-disks-are-on-different-volumes"></a>親と子の仮想ハード_ディスクが別々 のボリューム上にある場合は、差分仮想ハード_ディスクを使用する場合は、記憶域サービスの品質を有効にしないように
+# <a name="avoid-enabling-storage-quality-of-service-when-using-a-differencing-virtual-hard-disk-when-the-parent-and-child-virtual-hard-disks-are-on-different-volumes"></a>親と子のバーチャルハードディスクが異なるボリュームにある場合に差分バーチャルハードディスクを使用すると、記憶域のサービスの品質を有効にしない
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
-ベスト プラクティスとスキャンの詳細については、次を参照してください。 [Run Best Practices Analyzer Scans and Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177)します。  
+ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
 |プロパティ|詳細|  
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|警告|  
+|**順**|Warning|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。
   
 ## <a name="issue"></a>**問題**  
-*別のボリュームの親と子の仮想ハード ディスクでは差分仮想ハード_ディスクが、記憶域サービスの品質を有効にします。*  
+*異なるボリューム上の親および子のバーチャルハードディスクを持つ差分バーチャルハードディスクで、記憶域のサービスの品質が有効になっています。*  
   
-## <a name="impact"></a>**影響**  
-*この構成は、予期しないストレージ差分仮想ハード ディスクとその他のバーチャル ハード_ディスク、親と子のボリュームでのサービスの品質の動作があります。これは、次に影響仮想ハード ディスク。*  
+## <a name="impact"></a>**よる**  
+*この構成では、差分仮想ハードディスクと、親ボリュームおよび子ボリューム上のその他の仮想ハードディスクに、予期しない記憶域のサービス品質の動作が発生する可能性があります。これは、次の仮想ハードディスクに影響します。*  
   
-\<仮想ハード ディスクの一覧 >  
+バーチャルハードディスクの一覧を \<>  
   
 ## <a name="resolution"></a>**解決方法**  
-*参照先の仮想ハード ディスク上の記憶域サービスの品質を無効にするか、または親と子の仮想ハード_ディスクを同じボリュームに移動する記憶域の移行を実行します。*  
+*参照されるバーチャルハードディスク上の記憶域のサービス品質を無効にするか、記憶域の移行を実行して親と子の仮想ハードディスクを同じボリュームに移動してください。*  
   
 
 

@@ -1,61 +1,61 @@
 ---
-title: HYPER-V VHD 設定ファイルを作成します。
-description: Hyper-v 2016 VHDset ファイルを作成する手順
+title: Hyper-v VHD セットファイルの作成
+description: Hyper-v 2016 で VHDset ファイルを作成する手順
 author: jiwool
 ms.author: jiwool
 manager: senthilr
 ms.date: 01/26/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: compute-hyper-v
 ms.assetid: 444e1496-9e5a-41cf-bfbc-306e2ed8e00a
 audience: IT Pros
 ms.reviewer: kathydav
-ms.openlocfilehash: a5a6f79d362b9058ca29d979457a1dcdfc0c9f82
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f5c9b932cabfea8df55ba8622165bbb04b4a4113
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445691"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392721"
 ---
-# <a name="create-hyper-v-vhd-set-files"></a>HYPER-V VHD 設定ファイルを作成します。
-ファイルの VHD の設定は、Windows Server 2016 でのゲスト クラスター用の新しい共有仮想ディスク モデルです。 ファイルの VHD の設定を共有の仮想ディスクのオンライン サイズ変更をサポート、HYPER-V レプリカをサポート、およびアプリケーション整合性のチェックポイントに含めることができます。 
+# <a name="create-hyper-v-vhd-set-files"></a>Hyper-v VHD セットファイルの作成
+VHD セットファイルは、Windows Server 2016 のゲストクラスター用の新しい共有仮想ディスクモデルです。 VHD セットファイルは、共有仮想ディスクのオンラインサイズ変更をサポートし、Hyper-v レプリカをサポートします。また、アプリケーション整合性チェックポイントに含めることができます。 
 
-ファイルの VHD の設定は、新しい VHD ファイルの種類を使用します。VHD をします。 ファイルの VHD の設定は、メタデータの形式でのゲスト クラスターで使用されるグループのバーチャル ディスクに関するチェックポイント情報を格納します。
+VHD セットファイルは、新しい VHD ファイルの種類を使用します。Vhd. VHD セットファイルは、ゲストクラスターで使用されるグループ仮想ディスクに関するチェックポイント情報をメタデータの形式で格納します。
 
-HYPER-V がチェックポイントのチェーンを管理するすべての側面を処理し、設定、共有 VHD をマージします。 場合と同様に VHD の設定ファイルのオンライン サイズ変更などのディスク操作を実行できるは、管理ソフトウェア。VHDX ファイル。 これは、管理ソフトウェアが、VHD の設定ファイルの形式について知っておく必要があることを意味します。
+Hyper-v では、チェックポイントチェーンの管理と共有 VHD セットのマージのすべての側面が処理されます。 管理ソフトウェアでは、の場合と同じように、VHD セットファイルのオンラインサイズ変更などのディスク操作を実行できます。VHDX ファイル。 これは、管理ソフトウェアが VHD セットのファイル形式について認識する必要がないことを意味します。
 
-## <a name="create-a-vhd-set-file-from-hyper-v-manager"></a>HYPER-V マネージャーから VHD の設定ファイルを作成します。
+## <a name="create-a-vhd-set-file-from-hyper-v-manager"></a>Hyper-v マネージャーからの VHD セットファイルの作成
 
 1.  Hyper-V マネージャーを開きます。 **[スタート]** ボタンをクリックし、 **[管理ツール]** をポイントして **[Hyper-V マネージャー]** をクリックします。
-2.  操作ウィンドウで次のようにクリックします。**新規**、順にクリックします**ハード_ディスク**します。
-3.  **ディスク フォーマットの選択**] ページで、[ **VHD 設定**バーチャル ハード ディスクのフォーマットとします。
-4.  仮想ハード_ディスクをカスタマイズするウィザードの各ページの手順を続行します。 クリックすることができます**次**間を移動するか、ウィザードの各ページの左側のウィンドウにそのページに直接移動するページの名前をクリックできます。
-5.  仮想ハード_ディスクの構成が完了したら後でクリックして**完了**します。
+2.  操作 ウィンドウで **新規作成** をクリックし、**ハードディスク** をクリックします。
+3.  **[ディスクフォーマットの選択]** ページで、バーチャルハードディスクの形式として **[VHD Set]** を選択します。
+4.  ウィザードのページに進み、バーチャルハードディスクをカスタマイズします。 **[次へ]** をクリックしてウィザードの各ページを移動するか、左ペインでページの名前をクリックすると、そのページに直接移動できます。
+5.  バーチャルハードディスクの構成が完了したら、 **[完了]** をクリックします。
 
-## <a name="create-a-vhd-set-file-from-windows-powershell"></a>Windows PowerShell から VHD の設定ファイルを作成します。
+## <a name="create-a-vhd-set-file-from-windows-powershell"></a>Windows PowerShell からの VHD セットファイルの作成
 
-使用して、 [NEW-VHD](https://technet.microsoft.com/library/hh848503.aspx)コマンドレットは、ファイルの種類にします。VHD ファイルのパス。 この例では、10 ギガバイトのサイズは base.vhds をという名前の VHD 設定ファイルを作成します。
+ファイルの種類を使用して、[新しい VHD](https://technet.microsoft.com/library/hh848503.aspx)コマンドレットを使用します。ファイルパス内の VHD。 この例では、10 Gb の base .vhd という名前の VHD セットファイルを作成します。
 
 ``` PowerShell
 PS c:\>New-VHD -Path c:\base.vhds -SizeBytes 10GB
 ```
 
-## <a name="migrate-a-shared-vhdx-file-to-a-vhd-set-file"></a>共有 VHDX ファイルを VHD に設定ファイルに移行します。
+## <a name="migrate-a-shared-vhdx-file-to-a-vhd-set-file"></a>共有 VHDX ファイルを VHD セットファイルに移行する
 
-VHD に既存の共有 VHDX を移行するには、VM をオフラインにする必要があります。 これは、Windows PowerShell を使用して、推奨されるプロセスです。
+既存の共有 VHDX を VHD に移行するには、VM をオフラインにする必要があります。 Windows PowerShell を使用した推奨プロセスは次のとおりです。
 
-1. VHDX を VM から削除します。 たとえばを実行します。 
+1. VHDX を VM から削除します。 たとえば、次のように実行します。 
    ``` PowerShell
    PS c:\>Remove-VMHardDiskDrive existing.vhdx
    ```
   
-2. VHDX を VHD に変換します。 たとえばを実行します。
+2. VHDX を VHD に変換します。 たとえば、次のように実行します。
    ``` PowerShell
    PS c:\>Convert-VHD existing.vhdx new.vhds
    ```
   
-3. VM に VHD を追加します。 たとえばを実行します。
+3. VHD を VM に追加します。 たとえば、次のように実行します。
    ``` PowerShell
    PS c:\>Add-VMHardDiskDrive new.vhds
    ```

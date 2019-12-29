@@ -1,7 +1,7 @@
 ---
-title: 収束の NIC の物理スイッチの構成
-description: このトピックで提供していますガイドライン、物理スイッチを構成するためです。
-ms.prod: windows-server-threshold
+title: 収束 NIC の物理スイッチ構成
+description: このトピックでは、物理スイッチを構成するためのガイドラインを提供します。
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 6d53c797-fb67-4b9e-9066-1c9a8b76d2aa
@@ -9,52 +9,52 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/14/2018
-ms.openlocfilehash: e31d7b83fee84d9055d938f77b49389205786244
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d10e8ca6e4689b89a8b9532f77613f17280282b1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829403"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355475"
 ---
-# <a name="physical-switch-configuration-for-converged-nic"></a>収束の NIC の物理スイッチの構成
+# <a name="physical-switch-configuration-for-converged-nic"></a>収束 NIC の物理スイッチ構成
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックで提供していますガイドライン、物理スイッチを構成するためです。 
+このトピックでは、物理スイッチを構成するためのガイドラインを提供します。 
 
 
-これらは、コマンドとその用途; のみ環境内での Nic が接続されているポートを決定する必要があります。 
+コマンドとその用途は次のとおりです。Nic が接続されている環境のポートを確認する必要があります。 
 
 >[!IMPORTANT]
->SMB を構成する優先度の VLAN と非ドロップ ポリシーを設定することを確認します。
+>VLAN および非ドロップポリシーが、SMB が構成されている優先順位に設定されていることを確認します。
 
-## <a name="arista-switch-dcs-7050s-64-eos-4137m"></a>Arista スイッチ\(dc\-7050s\-64、EOS\-4.13.7M\)
+## <a name="arista-switch-dcs-7050s-64-eos-4137m"></a>Arista スイッチ \(dc\-7050s\-64、EOS\-4.13.7 M\)
 
-1.  en\(管理者モードに移動し、通常、パスワードの確認\)
-2.  config \(to enter into configuration mode\)
-3.  実行の表示\(現在実行中の構成を示しています。\)
-4.  Nic が接続するスイッチのポートを確認します。 これらの例では 14/1,15/1,16/1,17/1 です。
-5.  int eth 14/1,15/1,16/1,17/1\(これらのポートの構成モードに切り替わります\)
+1.  en \(管理者モードに移行すると、通常はパスワードの入力が求められ\)
+2.  構成モードに入るように構成 \(\)
+3.  実行中の構成を表示して現在実行中の構成を表示 \(\)
+4.  Nic が接続されているスイッチポートを見つけます。 これらの例では、14/1、15/1、16/1、17/1 です。
+5.  int eth 14/1、15/1、16/1、17/1 \(これらのポートの構成モードに入り\)
 6.  dcbx モード ieee
-7.  優先度のフロー制御モード
-8.  switchport トランク ネイティブ vlan 225
-9.  switchport トランク vlan 100 ~ 225 台の許可
-10. switchport モード トランク
-11. フロー制御の優先度の優先順位 3 非ドロップ
+7.  優先順位-フロー制御モードオン
+8.  switchport トランクネイティブ vlan 225
+9.  switchport トランクが許可された vlan 100-225
+10. switchport モードのトランク
+11. 優先順位フロー制御優先順位3×ドロップ
 12. qos 信頼 cos
-13. 実行の表示\(その構成が、ポートに正しくセットアップであることを確認\)
-14. wr\(設定を行うには、スイッチの再起動をまたいで維持\)
+13. [実行 \(表示] ポートで構成が正しくセットアップされていることを確認し\)
+14. スイッチを再起動する間に設定を維持するには、wr \(\)
 
-### <a name="tips"></a>ヒント:
-1.  Command # 否定コマンドなし
-2.  新しい VLAN を追加する方法: int vlan 100\(記憶域ネットワークが VLAN 100 にある場合\)
-3.  既存の Vlan を確認する方法: vlan を表示します。
-4.  Arista スイッチの構成の詳細については、オンラインで検索します。Arista EOS 手動
-5.  このコマンドを使用して、PFC 設定を確認する: フロー制御の優先度のカウンターの詳細を表示します。
+### <a name="tips"></a>テクニック
+1.  No #command # はコマンドを否定します。
+2.  新しい VLAN を追加する方法: ストレージネットワークが VLAN 100 にある場合は、int vlan 100 \(\)
+3.  既存の Vlan を確認する方法: vlan を表示する
+4.  Arista スイッチの構成の詳細については、次を参照してください: Arista EOS 手動
+5.  次のコマンドを使用して、PFC 設定を確認します: 優先順位フロー制御カウンターの詳細を表示します。
 
 --- 
 
-## <a name="dell-switch-s4810-ftos-99-00"></a>Dell スイッチ\(S4810、FTOS 9.9 \(0.0\)\)
+## <a name="dell-switch-s4810-ftos-99-00"></a>Dell スイッチ \(S4810、FTOS 9.9 \(0.0\)\)
 
     
     !
@@ -74,7 +74,7 @@ ms.locfileid: "59829403"
     
 --- 
 
-## <a name="cisco-switch-nexus-3132-version-602u61"></a>Cisco のスイッチ\(Nexus 3132、バージョン 6.0\(2\)U6\(1\)\)
+## <a name="cisco-switch-nexus-3132-version-602u61"></a>Cisco スイッチ 3132 \(、バージョン 6.0\(2\)U6\(1\)\)
 
 ### <a name="global"></a>グローバル
     
@@ -105,7 +105,7 @@ ms.locfileid: "59829403"
     service-policy type network-qos QOS_NETWORK
     
 
-### <a name="port-specific"></a>特定のポート
+### <a name="port-specific"></a>ポート固有
 
     
     switchport mode trunk
@@ -121,8 +121,8 @@ ms.locfileid: "59829403"
 
 ## <a name="related-topics"></a>関連トピック
 
-- [1 つのネットワーク アダプターに収束の NIC の構成](cnic-single.md)
-- [収束の NIC チーミングされた NIC の構成](cnic-datacenter.md)
-- [集約型のない NIC 構成のトラブルシューティング](cnic-app-troubleshoot.md)
+- [単一のネットワークアダプターを使用した収束 NIC 構成](cnic-single.md)
+- [収束 NIC チーミング NIC 構成](cnic-datacenter.md)
+- [収束 NIC 構成のトラブルシューティング](cnic-app-troubleshoot.md)
 
 --- 

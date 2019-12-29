@@ -1,7 +1,7 @@
 ---
 title: Windows にインストールされた Hyper-v の Linux および FreeBSD 仮想マシンがサポートされています。
 description: 各バージョンに含まれる Linux integration services と機能の一覧を示します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,12 +11,12 @@ ms.assetid: 990ff94a-30fb-434b-b4a2-3804a5245ba6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 593068f4fc2015c7f8f94bfe49c5a11c23cb6599
-ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
+ms.openlocfilehash: a3b0df5065427b48bbc9c32d3e8502bfe234fe7b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314980"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366741"
 ---
 # <a name="supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows"></a>Windows にインストールされた Hyper-v の Linux および FreeBSD 仮想マシンがサポートされています。
 

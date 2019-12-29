@@ -1,8 +1,8 @@
 ---
-title: ストライプのボリュームを作成します。
-description: 'Windows コマンド」のトピック * * *- '
+title: ボリュームストライプの作成
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 55ed731df4613e215fb4d0954a5b8424035b1166
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 46c1367b5667294a7a9df742861a011090e7a337
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433998"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379136"
 ---
-# <a name="create-volume-stripe"></a>ストライプのボリュームを作成します。
+# <a name="create-volume-stripe"></a>ボリュームストライプの作成
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-指定した 2 つ以上のダイナミック ディスクを使用してストライプ ボリュームを作成します。  
+2つ以上の指定されたダイナミックディスクを使用してストライプボリュームを作成します。  
   
 > [!IMPORTANT]  
-> Windows vista の場合、この DiskPart コマンドでは、Windows Vista Ultimate、Windows Vista Enterprise、および Windows Vista Business edition で提供のみ。  
+> Windows Vista では、この DiskPart コマンドは、Windows Vista Ultimate、Windows Vista Enterprise、および Windows Vista Business edition でのみ使用できます。  
   
   
   
@@ -41,23 +41,23 @@ create volume stripe [size=<n>] disk=<n>,<n>[,<n>,...] [align=<n>] [noerr]
   
 |         パラメーター         |                                                                                                                            説明                                                                                                                            |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         サイズ\=<n>         |             メガバイト単位でのディスク領域の量\(MB\)ボリュームが各ディスクで占有します。 サイズを指定しないと、新しいボリュームは最小のディスクと後続の各ディスクに同じメモリ領域の残りの空き領域を占有。             |
-| ディスク\=<n>、<n>\[、<n>、.\] |                                  ストライプ ボリュームを作成するダイナミック ディスクです。 少なくとも 2 つのダイナミック ディスクをストライプ ボリュームを作成する必要があります。 等しい領域の量**サイズ\=<n>** が各ディスクに割り当てられます。                                   |
-|        配置\=<n>         | すべてのボリュームのエクステント近いシリンダー境界に揃えて配置します。 ハードウェア RAID の論理ユニット番号で通常使用\(LUN\)パフォーマンスを向上させるために配列。 *n*キロバイト数は、 \(KB\)近いシリンダー境界にディスクの先頭から。 |
-|           noerr           |                               スクリプト専用です。 エラーが発生すると、DiskPart は、エラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。                                |
+|         サイズ\=<n>         |             ボリュームが各ディスク上で占有するディスク領域の容量 (mb \(MB\))。 サイズが指定されていない場合、新しいボリュームでは、最小のディスクの残りの空き領域と、それ以降の各ディスクの容量が同じになります。             |
+| ディスク\=<n>、<n>\[、<n>,...\] |                                  ストライプボリュームを作成するダイナミックディスク。 ストライプボリュームを作成するには、少なくとも2つのダイナミックディスクが必要です。 **\=<n>サイズ**と同じ大きさの領域が各ディスクに割り当てられます。                                   |
+|        align\=<n>         | すべてのボリュームエクステントを最も近い配置境界に配置します。 通常、パフォーマンスを向上させるために、LUN\) 配列 \(ハードウェア RAID 論理ユニット番号と共に使用します。 *n*は、ディスクの先頭から最も近いアラインメント境界までの \(KB\) kb 数です。 |
+|           noerr           |                               スクリプトの場合のみ。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。                                |
   
 ## <a name="remarks"></a>注釈  
   
--   ボリュームを作成すると、フォーカスは自動的に新しいボリュームに移動します。  
+-   ボリュームを作成すると、フォーカスは自動的に新しいボリュームに移ります。  
   
 ## <a name="BKMK_examples"></a>例  
-1 と 2 は、ディスク上のサイズで 1000 メガバイトのストライプ ボリュームを作成するには、次のように入力します。  
+ディスク1と2で、サイズが 1000 mb のストライプボリュームを作成するには、次のように入力します。  
   
 ```  
 create volume stripe size=1000 disk=1,2  
 ```  
   
-#### <a name="additional-references"></a>その他の参照  
+#### <a name="additional-references"></a>その他の参照情報  
 [コマンド ライン構文の記号](command-line-syntax-key.md)  
   
 

@@ -1,8 +1,8 @@
 ---
-title: エイリアスの追加します。
-description: Windows コマンド」のトピック**エイリアスの追加**-別名の環境にエイリアスを追加します。
+title: エイリアスの追加
+description: '**エイリアスの追加**に関する Windows コマンドのトピック-エイリアス環境にエイリアスを追加します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 50de932ea0153546816face61f0852a08707ea85
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f2834376e497f54eadf1d9077e74f9c398202c5a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862223"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382817"
 ---
-# <a name="add-alias"></a>エイリアスの追加します。
+# <a name="add-alias"></a>エイリアスの追加
 
 
 
-エイリアスの環境にエイリアスを追加します。 パラメーターを指定せずに使用されている場合**エイリアスの追加**コマンド プロンプトでヘルプを表示します。
+エイリアスをエイリアス環境に追加します。 パラメーターを指定せずに使用する場合、**エイリアスの追加**コマンドプロンプトでヘルプを表示します。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
@@ -38,34 +38,34 @@ add alias <AliasName> <AliasValue>
 
 |パラメーター|説明|
 |---------|-----------|
-|\<AliasName>|エイリアスの名前を指定します。|
-|\<AliasValue>|エイリアスの値を指定します。|
+|\<AliasName >|エイリアスの名前を指定します。|
+|\<エイリアス値 >|エイリアスの値を指定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   エイリアスは、メタデータ ファイルに保存されに読み込まれます、**メタデータの読み込み**コマンド。
+-   エイリアスはメタデータファイルに保存され、**メタデータの読み込み**コマンドを使用して読み込まれます。
 
 ## <a name="BKMK_examples"></a>例
 
-など、別名では、すべての影を一覧表示するには、次のように入力します。
+エイリアスを含むすべての影を一覧表示するには、次のように入力します。
 ```
 list shadows all
 ```
-VSS_SHADOW_x で、既定のエイリアスが割り当てられているシャドウ コピーを次に示します。
+次の抜粋は、既定のエイリアスである VSS_SHADOW_x が割り当てられているシャドウコピーを示しています。
 ```
 * Shadow Copy ID = {ff47165a-1946-4a0c-b7f4-80f46a309278}
 %VSS_SHADOW_1%
 ```
-このシャドウ コピーに割り当てる System1 という名前の新しいエイリアスには、次のように入力します。
+System1 という名前の新しいエイリアスをこのシャドウコピーに割り当てるには、次のように入力します。
 ```
 add alias System1 %VSS_SHADOW_1%
 ```
-または、シャドウ コピー ID を使用して別名を割り当てることができます。
+または、シャドウコピー ID を使用してエイリアスを割り当てることもできます。
 ```
 add alias System1 {ff47165a-1946-4a0c-b7f4-80f46a309278}
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

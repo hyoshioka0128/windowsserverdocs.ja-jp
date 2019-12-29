@@ -2,7 +2,7 @@
 title: リモート デスクトップ サービスの展開を Windows Server 2016 に移行する
 description: この記事では、新しい Windows Server 2016 サーバーに、リモート デスクトップ サービスの展開を移行する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 msreviewer: ''
 nams.suite: ''
 nams.technology: remote-desktop-services
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 9b1fa833-4325-48a8-bf34-46265f40c001
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 0e4736f753fc0ad2ece6135de84d481eecb8b7a1
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e8471d67c8b9978d8b3c08fd3ef497e4e329d84b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66812589"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387599"
 ---
 # <a name="migrate-your-remote-desktop-services-deployment-to-windows-server-2016"></a>リモート デスクトップ サービスの展開を Windows Server 2016 に移行する
 
@@ -74,7 +74,7 @@ Windows Server 2012 R2 のセッション コレクションを Windows Server 2
 3. RD セッション ホスト サーバーのすべてのセッションからサインアウトし、セッション コレクションから移行を必要とするサーバーを削除します。
 
    > [!NOTE]
-   > UVHD テンプレート (UVHD-template.vhdx) がセッション コレクションで有効になっており、ファイル サーバーが新しいサーバーに移行されている場合は、新しいパスを使用して、[User Profile Disks:Location]\(ユーザー プロファイル ディスク: 場所\) コレクション プロパティを更新します。 ユーザー プロファイル ディスクを利用するための新しい場所の相対パスは、移行元サーバーでの相対パスと同じになっている必要があります。
+   > UVHD テンプレート (UVHD-template.vhdx) がセッション コレクションで有効になっており、ファイル サーバーが新しいサーバーに移行されている場合は、新しいパスを使用して、[ユーザー プロファイル ディスク:場所] コレクション プロパティを更新します。 ユーザー プロファイル ディスクを利用するための新しい場所の相対パスは、移行元サーバーでの相対パスと同じになっている必要があります。
    >
    > Windows Server 2012 R2 と Windows Server 2016 を実行しているサーバーが混在する RD セッション ホスト サーバーのセッション コレクションはサポートされていません。
 
@@ -94,7 +94,7 @@ Windows Server 2012 R2 を実行している移行元サーバーから Windows 
 4. 移行元サーバーの仮想デスクトップ コレクションから、移行したすべての RD 仮想化ホスト サーバーを削除します。
 
 > [!NOTE]
-> UVHD テンプレート (UVHD-template.vhdx) がセッション コレクションで有効になっており、ファイル サーバーが新しいサーバーに移行されている場合は、新しいパスを使用して、[User Profile Disks:Location]\(ユーザー プロファイル ディスク: 場所\) コレクション プロパティを更新します。 ユーザー プロファイル ディスクを利用するための新しい場所の相対パスは、移行元サーバーでの相対パスと同じになっている必要があります。
+> UVHD テンプレート (UVHD-template.vhdx) がセッション コレクションで有効になっており、ファイル サーバーが新しいサーバーに移行されている場合は、新しいパスを使用して、[ユーザー プロファイル ディスク:場所] コレクション プロパティを更新します。 ユーザー プロファイル ディスクを利用するための新しい場所の相対パスは、移行元サーバーでの相対パスと同じになっている必要があります。
 >
 > Windows Server 2012 R2 と Windows Server 2016 を実行しているサーバーが混在する RD 仮想化ホスト サーバーの仮想デスクトップ コレクションはサポートされていません。
 

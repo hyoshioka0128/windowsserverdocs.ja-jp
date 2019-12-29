@@ -1,47 +1,47 @@
 ---
 title: シールドされた VMの展開
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 5d1a06c9-24e1-4e14-9c9a-efb2adbfeddd
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9badbfcb709c29451425aaecc56b46ac98837e18
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f7892dabb028b99cb4cb1c9045764a8e36aba7dc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66443805"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386766"
 ---
 # <a name="deploy-shielded-vms"></a>シールドされた VMの展開
 
 
 >適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
-次のトピックでは、テナントをシールドされた Vm と連携する方法について説明します。
+次のトピックでは、テナントがシールドされた Vm を操作する方法について説明します。
 
-1. (省略可能)[Windows テンプレート ディスクを作成する](guarded-fabric-create-a-shielded-vm-template.md)または[Linux テンプレート ディスクを作成する](guarded-fabric-create-a-linux-shielded-vm-template.md)します。 テンプレート ディスクは、テナントまたはホスティング サービス プロバイダーのいずれかで作成できます。 
+1. Optional[Windows テンプレートディスクを作成](guarded-fabric-create-a-shielded-vm-template.md)するか[、Linux テンプレートディスクを作成](guarded-fabric-create-a-linux-shielded-vm-template.md)します。 テンプレートディスクは、テナントまたはホスティングサービスプロバイダーによって作成できます。 
 
-2. (省略可能)[既存の Windows VM をシールドされた VM に変換](guarded-fabric-vm-shielding-helper-vhd.md)します。 
+2. Optional[既存の WINDOWS VM をシールドされた vm に変換](guarded-fabric-vm-shielding-helper-vhd.md)します。 
 
-3. [定義のシールドされた VM をシールド データを作成する](guarded-fabric-tenant-creates-shielding-data.md)します。
+3. シールドされ[た VM を定義するシールドデータを作成](guarded-fabric-tenant-creates-shielding-data.md)します。
 
-    説明と図は、シールド データ ファイルのでは、次を参照してください[シールド データを使用するものが、なぜ必要ですか?。](guarded-fabric-and-shielded-vms.md#what-is-shielding-data-and-why-is-it-necessary)
+    シールドデータファイルの説明と図については、「[シールドデータとは何ですか?](guarded-fabric-and-shielded-vms.md#what-is-shielding-data-and-why-is-it-necessary) 」を参照してください。
     
-    シールド データ ファイルに含める応答ファイルを作成する方法の詳細については、次を参照してください。[シールドされた Vm - New-shieldingdataanswerfile 関数を使用して応答ファイルを生成する](guarded-fabric-sample-unattend-xml-file.md)します。
+    シールドされたデータファイルに含める応答ファイルの作成の詳細については、「シールドされ[た vm-ShieldingDataAnswerFile 関数を使用して応答ファイルを生成](guarded-fabric-sample-unattend-xml-file.md)する」を参照してください。
 
 4. シールドされた VM を作成します。
  
-    - 使用して**Windows Azure Pack**:[Windows Azure Pack を使用して、シールドされた VM をデプロイします。](guarded-fabric-shielded-vm-windows-azure-pack.md)
+    - **Windows Azure Pack**の使用:[Windows Azure Pack を使用してシールドされた VM をデプロイする](guarded-fabric-shielded-vm-windows-azure-pack.md)
 
-    - 使用して**Virtual Machine Manager**:[Virtual Machine Manager を使用して、シールドされた VM をデプロイします。](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)
+    - **Virtual Machine Manager**の使用:[Virtual Machine Manager を使用してシールドされた VM をデプロイする](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)
 
 ## <a name="next-step"></a>次の手順
 
 > [!div class="nextstepaction"]
-> [シールドされた VM テンプレートを作成します。](guarded-fabric-create-a-shielded-vm-template.md)
+> [シールドされた VM テンプレートを作成する](guarded-fabric-create-a-shielded-vm-template.md)
 
 ## <a name="see-also"></a>関連項目
 

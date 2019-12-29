@@ -1,6 +1,6 @@
 ---
 title: 記憶域レプリカについてよく寄せられる質問
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
 ms.technology: storage-replica
@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: d4eb2ad65f436db28264650b8c8d7b0cf69b2cee
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: d369e7f2d3d725fe8b3871fea199da1cac044456
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544680"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393804"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>記憶域レプリカについてよく寄せられる質問
 
@@ -183,13 +183,13 @@ Windows Server バックアップ、Microsoft Azure Backup、Microsoft DPM、ま
 
  445 (SMB レプリケーショントランスポートプロトコル、クラスター RPC 管理プロトコル) 5445 (iwarp RDMA ネットワークを使用する場合にのみ必要) 5985 (WMI/CIM/PowerShell 用の WSManHTTP 管理プロトコル)
 
-注:Test-srtopology コマンドレットは、ICMPv4/ICMPv6 を必要としますが、レプリケーションまたは管理には必要ありません。
+メモ:Test-srtopology コマンドレットは、ICMPv4/ICMPv6 を必要としますが、レプリケーションまたは管理には必要ありません。
 
 ## <a name="FAQ15.5"></a>ログボリュームのベストプラクティスは何ですか?
 ログの最適なサイズは環境やワークロードごとに大きく異なり、ワークロードが実行する書き込み IO の量によって決まります。 
 
-1.  ログの大きさは、処理速度には影響を与えません。
-2.  ログのサイズ、またデータ ボリュームが、たとえば、10 GB か 10 TB かは、パフォーマンスに影響を及ぼしません。
+1.  ログのサイズを大きくしたり小さくしたりしても、高速または低速になることはありません。
+2.  たとえば、サイズの大きいログまたは小さいログには、10 GB のデータボリュームと 10 TB データボリュームに対する影響はありません。
 
 サイズの大きいログは、単純に、一杯になるまでに多くの書き込み IO を収集して保持できます。これにより、ログのソースと保存先コンピューターの間での、長時間にわたるサービス中断に対処できます (ネットワークの切断や保存先コンピューターのオフラインなど)。 ログが 10 時間分の書き込みを保持できる場合、ネットワークが 2 時間ダウンしても、ネットワークの復旧時にソース側から保存先に対して同期されていない変更の差分を素早く同期すれば、短時間で保護された状態に回復します。 しかし保持されるログが 10 時間分である場合に、ネットワークが 2 日間ダウンすると、ソース側はビットマップと呼ばれる別のログから再生する必要があるため、同期状態への回復に時間がかかります。同期された後は、元どおりログを使用できます。
 

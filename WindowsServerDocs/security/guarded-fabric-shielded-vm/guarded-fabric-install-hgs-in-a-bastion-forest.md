@@ -1,55 +1,55 @@
 ---
-title: 既存の要塞フォレスト内での HGS をインストールします。
+title: 既存の要塞フォレストに HGS をインストールする
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 147610d9dcb36dfedab3aca11ee1a64731715519
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5c503331893dbea65c99d79eb7444893d5f3b657
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842223"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403597"
 ---
-# <a name="install-hgs-in-an-existing-bastion-forest"></a>既存の要塞フォレスト内での HGS をインストールします。 
+# <a name="install-hgs-in-an-existing-bastion-forest"></a>既存の要塞フォレストに HGS をインストールする 
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 
 ## <a name="join-the-hgs-server-to-the-existing-domain"></a>HGS サーバーを既存のドメインに参加させる
 
-既存の要塞フォレストのルート ドメインに HGS を追加する必要があります。 サーバー マネージャーを使用してまたは[Add-computer](https://go.microsoft.com/fwlink/?LinkId=821564) HGS サーバーをルート ドメインに参加させる。
+既存の要塞フォレストでは、HGS をルートドメインに追加する必要があります。 サーバーマネージャーまたは[コンピューターの追加](https://go.microsoft.com/fwlink/?LinkId=821564)を使用して、HGS サーバーをルートドメインに参加させます。
 
-## <a name="add-the-hgs-server-role"></a>HGS サーバーの役割を追加します。
+## <a name="add-the-hgs-server-role"></a>HGS サーバーロールを追加する
 
 管理者特権の PowerShell セッションで、このトピックのすべてのコマンドを実行します。
 
 [!INCLUDE [Install the HGS server role](../../../includes/guarded-fabric-install-hgs-server-role.md)] 
 
-データ センターに HGS ノードを追加するセキュリティで保護された要塞フォレストがある場合は、以下の手順を実行します。
-同じドメインに参加している 2 つまたは複数の独立した HGS クラスターを構成するのに手順を使用することもできます。
+データセンターに、HGS ノードを参加させるセキュリティで保護された要塞フォレストがある場合は、次の手順を実行します。
+これらの手順を使用して、同じドメインに参加している2つ以上の独立した HGS クラスターを構成することもできます。
 
 ## <a name="join-the-hgs-server-to-the-existing-domain"></a>HGS サーバーを既存のドメインに参加させる
 
-サーバー マネージャーを使用してまたは[Add-computer](https://go.microsoft.com/fwlink/?LinkId=821564) HGS サーバーを目的のドメインに参加させる。
+サーバーマネージャーまたは[コンピューターの追加](https://go.microsoft.com/fwlink/?LinkId=821564)を使用して、HGS サーバーを目的のドメインに参加させます。
 
-## <a name="prepare-active-directory-objects"></a>Active Directory オブジェクトを準備します。
+## <a name="prepare-active-directory-objects"></a>Active Directory オブジェクトを準備する
 
-グループの管理されたサービス アカウントと 2 つのセキュリティ グループを作成します。
-またをプレステージングできるクラスター オブジェクトでの HGS を初期化するアカウントがドメインにコンピューター オブジェクトを作成する権限を持たない場合です。
+グループの管理されたサービスアカウントと2つのセキュリティグループを作成します。
+HGS を初期化するアカウントにドメイン内のコンピューターオブジェクトを作成するためのアクセス許可がない場合は、クラスターオブジェクトを事前にステージングすることもできます。
 
-## <a name="group-managed-service-account"></a>グループ管理サービス アカウント
+## <a name="group-managed-service-account"></a>グループの管理されたサービスアカウント
 
-グループ管理サービス アカウント (gMSA) は、HGS を取得し、その証明書を使用して、使用する id です。 使用[New-adserviceaccount](https://technet.microsoft.com/itpro/powershell/windows/addsadministration/new-adserviceaccount) gMSA を作成します。
-ドメイン内の最初の gMSA の場合は、キー配布サービスのルート キーを追加する必要があります。
+グループの管理されたサービスアカウント (gMSA) は、HGS が証明書を取得して使用するために使用する id です。 GMSA を作成するには、 [New-ADServiceAccount](https://technet.microsoft.com/itpro/powershell/windows/addsadministration/new-adserviceaccount)を使用します。
+ドメイン内の最初の gMSA の場合は、キー配布サービスのルートキーを追加する必要があります。
 
-HGS の各ノードは、gMSA パスワードにアクセスできるようにする必要があります。
-これを構成する最も簡単な方法は、すべての HGS ノードを含むセキュリティ グループを作成して、gMSA パスワードを取得するセキュリティ グループ アクセスを許可します。
+各 HGS ノードには、gMSA パスワードへのアクセスが許可されている必要があります。
+これを構成する最も簡単な方法は、すべての HGS ノードを含むセキュリティグループを作成し、そのセキュリティグループに gMSA パスワードを取得するアクセス権を付与することです。
 
-その新しいグループのメンバーシップを取得することを確認するセキュリティ グループに追加した後は、HGS サーバーを再起動する必要があります。
+新しいグループメンバーシップが確実に取得されるようにするには、セキュリティグループに追加した後で HGS サーバーを再起動する必要があります。
 
 ```powershell
 # Check if the KDS root key has been set up
@@ -69,40 +69,40 @@ Add-ADGroupMember -Identity $hgsNodes -Members "HGS01"
 New-ADServiceAccount -Name 'HGSgMSA' -DnsHostName 'HGSgMSA.yourdomain.com' -PrincipalsAllowedToRetrieveManagedPassword $hgsNodes
 ```
 
-GMSA は、各 HGS サーバー上のセキュリティ ログにイベントを生成する権限が必要です。
-グループ ポリシーを使用してユーザー権利の割り当てを構成する場合は、gMSA アカウントが許可されていることを確認、[イベントの監査の特権を生成](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn221956%28v=ws.11%29)HGS サーバー。
+GMSA は、各 HGS サーバーのセキュリティログにイベントを生成する権限を必要とします。
+グループポリシーを使用してユーザー権利の割り当てを構成する場合は、HGS サーバーで gMSA アカウントに "[監査イベントの生成" 権限](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn221956%28v=ws.11%29)が付与されていることを確認してください。
 
 > [!NOTE]
-> グループ管理サービス アカウントとは、以降、Windows Server 2012 の Active Directory スキーマで利用可能です。
-> 詳細については、次を参照してください。[グループ管理サービス アカウント要件](https://technet.microsoft.com/library/jj128431.aspx)します。
+> グループの管理されたサービスアカウントは、Windows Server 2012 Active Directory スキーマから使用できます。
+> 詳細については、「グループの管理された[サービスアカウントの要件](https://technet.microsoft.com/library/jj128431.aspx)」を参照してください。
 
-## <a name="jea-security-groups"></a>JEA セキュリティ グループ
+## <a name="jea-security-groups"></a>JEA セキュリティグループ
 
-HGS を構成するときに、 [Just Enough Administration (JEA)](https://aka.ms/JEAdocs) PowerShell エンドポイントの完全なローカル管理者権限が必要なく HGS を管理する管理者の許可されています。
-JEA を使用して、HGS を管理する必要はありませんが、まだ必要があります構成初期化 HgsServer を実行している場合。
-HGS 管理者および HGS のレビュー担当者を含む 2 つのセキュリティ グループを指定する場合に、JEA エンドポイントの構成で構成されます。
-管理グループに属しているユーザーは、追加、変更、または HGS; 上のポリシーの削除レビュー担当者は、現在の構成のみを表示できます。
+HGS を設定すると、[十分な管理 (JEA)](https://aka.ms/JEAdocs) PowerShell エンドポイントが構成され、管理者は完全なローカル管理者特権を必要とせずに hgs を管理できるようになります。
+HGS を管理するために JEA を使用する必要はありませんが、HgsServer の実行時に構成する必要があります。
+JEA エンドポイントの構成は、HGS 管理者と HGS レビューアーを含む2つのセキュリティグループを指定することで構成されます。
+管理者グループに属するユーザーは、HGS でポリシーを追加、変更、または削除できます。レビュー担当者は、現在の構成のみを表示できます。
 
-Active Directory 管理ツールを使用してこれらの JEA グループに対して 2 つのセキュリティ グループを作成または[New-adgroup](https://technet.microsoft.com/itpro/powershell/windows/addsadministration/new-adgroup)します。
+Active Directory 管理ツールまたは[新しい-ADGroup](https://technet.microsoft.com/itpro/powershell/windows/addsadministration/new-adgroup)を使用して、これらの jea グループに2つのセキュリティグループを作成します。
 
 ```powershell
 New-ADGroup -Name 'HgsJeaReviewers' -GroupScope DomainLocal
 New-ADGroup -Name 'HgsJeaAdmins' -GroupScope DomainLocal
 ```
 
-## <a name="cluster-objects"></a>クラスター オブジェクト
+## <a name="cluster-objects"></a>クラスターオブジェクト
 
-HGS の設定を使用しているアカウントがドメインに新しいコンピューター オブジェクトを作成する権限を持たない場合は、クラスター オブジェクトを事前に展開する必要があります。
-次の手順についてで[Active Directory Domain Services で Prestage Cluster Computer Objects](https://technet.microsoft.com/library/dn466519(v=ws.11).aspx)します。
+HGS のセットアップに使用しているアカウントに、ドメインに新しいコンピューターオブジェクトを作成するためのアクセス許可がない場合は、クラスターオブジェクトを事前にステージングする必要があります。
+これらの手順については、「 [Active Directory Domain Services でクラスターコンピューターオブジェクトをプレステージ](https://technet.microsoft.com/library/dn466519(v=ws.11).aspx)する」をご説明します。
 
-最初、HGS ノードを設定するには 1 つのクラスター名オブジェクト (CNO) と 1 つの仮想コンピューター オブジェクト (VCO) を作成する必要があります。
-CNO は、クラスターの名前を表すし、フェールオーバー クラスタ リングによって内部的に使用が主にします。
+最初の HGS ノードを設定するには、1つのクラスター名オブジェクト (CNO) と1つの仮想コンピューターオブジェクト (VCO) を作成する必要があります。
+CNO はクラスターの名前を表し、主にフェールオーバークラスタリングによって内部的に使用されます。
 VCO は、クラスター上に存在する HGS サービスを表し、DNS サーバーに登録されている名前になります。
 
 > [!IMPORTANT]
-> 実行するユーザー`Initialize-HgsServer`必要があります**フル コントロール**Active Directory 内の CNO と VCO オブジェクト。
+> `Initialize-HgsServer` を実行するユーザーには、Active Directory の CNO オブジェクトと VCO オブジェクトを**完全に制御**する必要があります。
 
-CNO と VCO をプレステージ迅速に、次の PowerShell コマンドを実行して Active Directory 管理者があります。
+CNO と VCO を簡単に事前設定するには、Active Directory 管理者に次の PowerShell コマンドを実行します。
 
 ```powershell
 # Create the CNO
@@ -121,34 +121,34 @@ Set-Acl -Path $vcoPath -AclObject $acl
 # Allow time for your new CNO and VCO to replicate to your other Domain Controllers before continuing
 ```
 
-## <a name="security-baseline-exceptions"></a>セキュリティ ベースラインの例外
+## <a name="security-baseline-exceptions"></a>セキュリティベースラインの例外
 
-HGS を展開する、高ロックダウンの環境には、特定のグループ ポリシー設定によって HGS が正常に動作できない可能性があります。
-次の設定、グループ ポリシー オブジェクトをチェックし、影響を受ける場合の指示に従います。
+HGS を高度にロックされた環境に展開する場合、特定のグループポリシー設定を使用すると、HGS が正常に動作しなくなる可能性があります。
+グループポリシーオブジェクトで次の設定を確認し、影響を受ける場合はガイダンスに従います。
 
-### <a name="network-logon"></a>ネットワークへのログオン
+### <a name="network-logon"></a>ネットワークログオン
 
-**ポリシーのパス:** コンピューター構成 \windows 設定 \ セキュリティ settings \local policies \user 権利の割り当て
+**ポリシーのパス:** コンピューターのシステムの保護 \ 権利の権限の割り当て
 
 **ポリシー名:** ネットワークからのこのコンピューターへのアクセスを拒否する
 
-**必要な値:** 値がすべてのローカル アカウントのネットワーク ログオンをブロックしないことを確認します。 ただし、ローカル管理者アカウントに安全にブロックできます。
+**必須の値:** 値がすべてのローカルアカウントのネットワークログオンをブロックしていないことを確認します。 ただし、ローカルの管理者アカウントは安全にブロックできます。
 
-**理由:** フェールオーバー クラスタ リングは、クラスター ノードを管理する CLIUSR と呼ばれる管理者以外のローカル アカウントに依存します。 このユーザーのブロックのネットワーク ログオンすると、クラスターが正常に動作できなくなります。
+**理由:** フェールオーバークラスタリングでは、CLIUSR という管理者以外のローカルアカウントを利用してクラスターノードを管理します。 このユーザーのネットワークログオンをブロックすると、クラスターが正しく動作しなくなります。
 
-### <a name="kerberos-encryption"></a>Kerberos の暗号化
+### <a name="kerberos-encryption"></a>Kerberos 暗号化
 
-**ポリシーのパス:** コンピューターの構成\Windows の設定\セキュリティの設定\ローカル ポリシー\セキュリティ オプション
+**ポリシーのパス:** コンピューターの設定 \ 権利セキュリティオプション
 
-**ポリシー名:** ネットワーク セキュリティ:Kerberos で許可する暗号化の種類を構成します。
+**ポリシー名:** ネットワークセキュリティ: Kerberos で許可される暗号化の種類を構成する
 
-**アクション**:このポリシーが構成されている場合で、gMSA アカウントを更新する必要があります[Set-adserviceaccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)このポリシーでサポートされている暗号化の種類のみを使用します。 たとえば、ポリシーでは、AES128 のみが許可する場合\_HMAC\_SHA1 および AES256\_HMAC\_実行するには SHA1、`Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256`します。
+**アクション**: このポリシーが構成されている場合、このポリシーでサポートされている暗号化の種類のみを使用するように、gMSA アカウントを[adserviceaccount](https://docs.microsoft.com/powershell/module/addsadministration/set-adserviceaccount?view=win10-ps)に更新する必要があります。 たとえば、ポリシーで AES128\_HMAC\_SHA1 と AES256\_HMAC\_SHA1 のみを許可する場合、`Set-ADServiceAccount -Identity HGSgMSA -KerberosEncryptionType AES128,AES256`を実行する必要があります。
 
 
 
 ## <a name="next-steps"></a>次のステップ
 
-- TPM ベースの構成証明を設定する次の手順を参照してください。 [HGS クラスターを既存の要塞フォレスト内の TPM のモードを使用して初期化](guarded-fabric-initialize-hgs-tpm-mode-bastion.md)します。
-- ホスト キーの構成証明を設定する次の手順を参照してください。 [HGS クラスター キーのモードを使用して、既存の要塞フォレスト内の初期化](guarded-fabric-initialize-hgs-key-mode-bastion.md)します。
-- (Windows Server 2019 で非推奨) 管理ベースの認証、設定する手順を参照してください、次の[初期化 AD モードを使用して、既存の要塞フォレストの HGS クラスター](guarded-fabric-initialize-hgs-ad-mode-bastion.md)します。
+- TPM ベースの構成証明を設定する次の手順については、「[既存の要塞フォレストで tpm モードを使用して HGS クラスターを初期化](guarded-fabric-initialize-hgs-tpm-mode-bastion.md)する」を参照してください。
+- ホストキーの構成証明を設定する次の手順については、「[既存の要塞フォレストでキーモードを使用して HGS クラスターを初期化](guarded-fabric-initialize-hgs-key-mode-bastion.md)する」を参照してください。
+- 管理者ベースの2019構成証明を設定する次の手順については、「[既存の要塞フォレストの AD モードを使用して HGS クラスターを初期化](guarded-fabric-initialize-hgs-ad-mode-bastion.md)する」を参照してください。
 

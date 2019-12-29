@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a7fec85301e2b70fb64f35f0b6e345adde29eed0
-ms.sourcegitcommit: 67833e36b8b2c6194a1426a974c5ad9c859fa4c9
+ms.openlocfilehash: 5e72c18d3aa49774cf73d5365748e7bf20764b22
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/19/2019
-ms.locfileid: "68329648"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390838"
 ---
 # <a name="install-a-replica-windows-server-2012-domain-controller-in-an-existing-domain-level-200"></a>Windows Server 2012 のレプリカ ドメイン コントローラーを既存のドメインにインストールする (レベル 200)
 
@@ -312,14 +312,14 @@ Windows PowerShell を使用してドメインコントローラーをリモー�
 invoke-command {install-addsdomaincontroller "domainname <domain> -credential (get-credential)} -computername <dc name>  
 ```  
   
-例:  
+以下に例を示します。  
   
 ![レプリカをインストールする](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeExample.gif)  
   
 > [!NOTE]  
 > インストールと Adprep プロセスの動作の詳細については、[ドメイン コントローラーの展開のトラブルシューティング](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)をご覧ください。  
   
-### <a name="results"></a>[結果]  
+### <a name="results"></a>結果  
 ![レプリカをインストールする](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_SMI_TR_ForestSignOff.png)  
   
 **[結果]** ページには、昇格の成功または失敗と、重要な管理情報が表示されます。 正常に昇格された場合、ドメイン コントローラーは、10 秒後に自動的に再起動します。  

@@ -1,8 +1,8 @@
 ---
 title: bootcfg raw
-description: Windows コマンド」のトピック**生 bootcfg** -オペレーティング システムのエントリを文字列として指定するオペレーティング システムの読み込みオプションを追加します、 **[オペレーティング システム]** Boot.ini ファイルのセクション。
+description: '**Bootcfg raw**の Windows コマンドトピック: boot.ini ファイルの **[オペレーティングシステム]** セクションのオペレーティングシステムエントリに、文字列として指定されたオペレーティングシステムの読み込みオプションを追加します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5334ff8a1c5d15343b4a48814b52012c641016a4
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: fb5c052f85f54656c54a9e534f867d287407d2d4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434690"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379900"
 ---
 # <a name="bootcfg-raw"></a>bootcfg raw
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-オペレーティング システムのエントリを文字列として指定するオペレーティング システムの読み込みオプションを追加します、 **[オペレーティング システム]** Boot.ini ファイルのセクション。
+boot.ini ファイルの **[オペレーティングシステム]** セクションのオペレーティングシステムエントリに、文字列として指定されたオペレーティングシステムの読み込みオプションを追加します。
 
 ## <a name="syntax"></a>構文
 ```
@@ -32,26 +32,26 @@ bootcfg /raw [/s <computer> [/u <Domain>\<User> /p <Password>]] <OSLoadOptionsSt
 ```
 ## <a name="parameters"></a>パラメーター
 
-|         項目          |                                                                                                            定義                                                                                                             |
+|         用語          |                                                                                                            定義                                                                                                             |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |     /s <computer>     |                                                        名前またはリモート コンピューターの IP アドレスを指定します (円記号を使用しない)。 既定はローカル コンピュータです。                                                         |
-| /u <Domain> \\<User>  |               指定されたユーザーのアカウント権限でコマンドを実行<User>または<Domain> \\<User>します。 既定では現在のコマンドを実行するコンピューターのユーザー ログオンのアクセス許可です。                |
+| /u <Domain> \\<User>  |               <User> または <Domain>\\<User>によって指定されたユーザーのアカウントアクセス許可を使用してコマンドを実行します。 既定値は、コマンドを実行しているコンピューターの現在のログオンユーザーのアクセス許可です。                |
 |     /p <Password>     |                                                                       指定されているユーザー アカウントのパスワードを指定します、 **/u** パラメーター。                                                                       |
-| <OSLoadOptionsString> | オペレーティング システム エントリに追加するオペレーティング システムの読み込みオプションを指定します。 これらのロード オプション、オペレーティング システム エントリに関連付けられている既存のロード オプションに置き換えられます。 検証なし<OSLoadOptions>は行われます。 |
-| /id <OSEntryLineNum>  |                       更新する Boot.ini ファイルの [operating systems] セクションでは、オペレーティング システム エントリの行番号を指定します。 [オペレーティング システム] セクション ヘッダーの後の最初の行には 1 です。                       |
-|          /a           |                                                       オペレーティング システムのオプションが追加されているが、既存のオペレーティング システムのオプションを追加することを指定します。                                                        |
+| <OSLoadOptionsString> | オペレーティングシステムエントリに追加するオペレーティングシステムの読み込みオプションを指定します。 これらの読み込みオプションは、オペレーティングシステムエントリに関連付けられている既存の読み込みオプションを置き換えます。 <OSLoadOptions> の検証は行われません。 |
+| /id <OSEntryLineNum>  |                       更新する Boot.ini ファイルの [オペレーティングシステム] セクションにあるオペレーティングシステムエントリの行番号を指定します。 [オペレーティングシステム] セクションヘッダーの後の最初の行は1です。                       |
+|          /a           |                                                       追加するオペレーティングシステムオプションを既存のオペレーティングシステムオプションに追加することを指定します。                                                        |
 |          /?           |                                                                                               コマンド プロンプトにヘルプを表示します。                                                                                                |
 
 ##### <a name="remarks"></a>注釈
-- **bootcfg 生**既存のオペレーティング システム エントリのオプションを上書きする、オペレーティング システム エントリの末尾にテキストを追加するために使用します。 このテキストはなど、有効な OS ロード オプションを含める必要があります **/debug**、 **/fastdetect**、 **/nodebug**、 **/baudrate**、 **/なりません**、および **/sos**します。 たとえば、次のコマンドを追加します" **/debug/fastdetect**"最初のオペレーティング システム エントリのために、置換、以前のオペレーティング システム エントリのオプション。
+- **bootcfg raw**は、オペレーティングシステムエントリの末尾にテキストを追加し、既存のオペレーティングシステムの入力オプションを上書きするために使用されます。 このテキストに**は、有効**な OS 読み込みオプション ( **/debug**、 **/fastdetect**、 **/nodebug**、 **/crashdebug**、 **/sos**など) が含まれている必要があります。 たとえば、次のコマンドは、最初のオペレーティングシステムエントリの末尾に " **/debug/fastdetect**" を追加して、以前のオペレーティングシステムエントリのオプションを置き換えます。
   ```
   bootcfg /raw "/debug /fastdetect" /id 1
   ```
   ## <a name="BKMK_examples"></a>例
-  次の例を使用する方法、 **bootcfg/生**コマンド。
+  次の例は、 **bootcfg/raw**コマンドを使用する方法を示しています。
   ```
   bootcfg /raw "/debug /sos" /id 2
   bootcfg /raw /s srvmain /u maindom\hiropln /p p@ssW23 "/crashdebug " /id 2
   ```
-  #### <a name="additional-references"></a>その他の参照
+  #### <a name="additional-references"></a>その他の参照情報
   [コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,48 +1,48 @@
 ---
-title: Windows Admin Center SDK のケース スタディ - データ
-description: Windows Admin Center SDK のケース スタディ - データ
+title: Windows 管理センター SDK ケーススタディ-DataON
+description: Windows 管理センター SDK ケーススタディ-DataON
 ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 01/11/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 1adf538792763bf05a43d431d9751d275a6fcd04
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.prod: windows-server
+ms.openlocfilehash: 0e4def5cd8a88cd5cb5d4df71d2f3a192ae23701
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858223"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406965"
 ---
-# <a name="dataon-must-extension"></a>データに拡張する必要があります。
+# <a name="dataon-must-extension"></a>DataON には拡張機能が必要です
 
-## <a name="integrated-monitoring-and-management-for-microsoft-hyper-converged-infrastructure"></a>統合された監視と、マイクロソフト ハイパー コンバージド インフラストラクチャの管理
+## <a name="integrated-monitoring-and-management-for-microsoft-hyper-converged-infrastructure"></a>Microsoft ハイパー集約型インフラストラクチャの統合された監視と管理
 
-[データ](http://www.dataonstorage.com/)はハイパー コンバージド インフラストラクチャとストレージ システムの Microsoft Windows Server 環境用に最適化された、業界をリードするプロバイダーです。 超える 650 のエンタープライズ展開と記憶域スペース ダイレクトの展開の超過 120PB がある排他的 Microsoft アプリケーション、仮想化、データ保護、およびハイブリッドのクラウド サービスを提供することに重点を置いて、します。
+[Dataon](http://www.dataonstorage.com/)は、Microsoft Windows Server 環境向けに最適化された、ハイパー集約型インフラストラクチャおよびストレージシステムの業界最高レベルのプロバイダーです。 Microsoft アプリケーション、仮想化、データ保護、およびハイブリッドクラウドサービスの提供にのみ重点を置いているため、650を超えるエンタープライズデプロイと 120 PB を超える記憶域スペースダイレクトのデプロイがあります。
 
-[データの必要があります](http://www.dataonstorage.com/must)Windows Admin Center の拡張機能は、2 つの補完的な製品を統合することにハードウェアとソフトウェアの監視し管理およびエンド ツー エンドの分析情報をまとめて、顧客に配信できますを値の典型的な例統合されたエクスペリエンスでクラスター全体。
+Windows 管理センター向けの[Dataon の](http://www.dataonstorage.com/must)拡張機能は、2つの補完的製品を統合して顧客に提供することによって、監視と管理、およびエンドツーエンドの洞察をハードウェアとソフトウェアの間でまとめて行うことができる値の代表的な例です。クラスター全体を統合されたエクスペリエンスで実現します。
 
-> <cite>"私たち、スタンドアロンの必要がありますの可視性、監視、および管理ツールを実行して Windows Admin Center 内で動作するように有効になっています。提供する必要がありますが、拡張された機能からメリットし、単一のコンソールからの必要がありますし、Windows Admin Center の組み合わせは Windows Server ベースのインフラストラクチャの最終的な管理エクスペリエンスを提供します。"</cite>
+> <cite>「スタンドアロンで可視性、監視、管理ツールを使用して、Windows 管理センター内で動作させることができました。お客様は、によって提供される拡張機能を活用できます。また、1つのコンソールからのと Windows 管理センターの組み合わせによって、Windows Server ベースのインフラストラクチャの究極の管理エクスペリエンスが提供されます。 "</cite>
 >
-> --Howard Lo、副社長の販売とマーケティングをデータ
+> --Howard Lo、売上およびマーケティング担当副社長、DataON
 
-必要がありますの拡張機能などの機能を提供することで、Windows Admin Center の機能を拡張します。
-- **データの履歴レポート**– IOPS、待機時間、スループットをクラスター、記憶域プール、ボリューム、およびノードを含むシステム パフォーマンス データのリアルタイムと月単位のダッシュ ボードを提供します。
-- **ディスクのマッピング**– の各ノードは、ノード全体のディスク マップを提供することで、デバイスの種類とコンポーネントを表示する必要があります。 これには、ディスク、ディスクの種類、場所、および各ドライブ、およびディスクの正常性状態のスロットの数が表示されます。
-- **システム警告**– ハードウェアの障害、構成の問題、およびリソースの飽和を識別するために活用して Windows のヘルス サービスのエラー。 また、特定の場所、エラーの説明、および回復操作の複数レベルの評価も提供します。 ディスク、またはハードウェアの交換する必要があるときにアラート サード パーティ製 SNMP トラップの監視を利用することもできます。
-- **SAN のようなホーム サービスの呼び出し**– システム アラートが表示されたら、管理者が自動化できるキーの連絡先に送信される電子メールのアラート。
+次のような機能を提供することで、Windows 管理センターの機能を拡張する必要があります。
+- **履歴データレポート**– IOPS、待機時間、クラスター上のスループット、記憶域プール、ボリューム、ノードなど、システムパフォーマンスデータのリアルタイムおよび月ごとのダッシュボードを提供します。
+- **ディスクマッピング**–ノードのデバイスの種類とコンポーネントを表示し、ノード全体のディスクマップを明確にします。 ディスクの数、ディスクの種類、各ドライブの場所とスロット、およびディスクのヘルス状態が表示されます。
+- **システムアラート**-Windows ヘルスサービス障害を利用して、ハードウェア障害、構成の問題、およびリソースの飽和度を特定します。 また、特定の場所、エラーの説明、および回復操作の複数レベルの評価も提供します。 また、サードパーティの SNMP 監視トラップを利用して、ディスクまたはハードウェアの交換が必要なときにアラートを通知することもできます。
+- **SAN と同様の通話ホームサービス**–システムアラートによって、管理者は自動電子メールアラートを主要な連絡先に送信できます。
 
-![データ拡張機能](../../media/extend-case-study-dataon/dataon-1.png)
-*Windows Admin Center のデータにする必要がありますの拡張機能でのディスクのマッピング*
+![*Windows 管理センターの dataon 拡張機能のディスクマッピングにおける dataon 拡張機能のディスクマッピング*](../../media/extend-case-study-dataon/dataon-1.png)
 
-> <cite>「すばらしい Windows Admin Center データにする必要がありますなどの拡張機能など、その統合は、シームレスな方法と、同じコンソール内でどちらのツールを使用するためです。Windows Admin Center とデータが連携する必要があります本当に当社はより効率的では許可し、私たちのチームを大量に保存します時間。これにより以前よりもずっと高速管理者タスクを実現するためにできます。"</cite>
+
+> <cite>"Windows 管理センターでは、同じコンソール内で両方のツールを使用できるようにする必要があるため、同じコンソール内で両方のツールを使用できるようにする必要があります。Windows 管理センターと DataON を組み合わせて使用すると、より効率的になり、チームの時間を節約することができます。これにより、管理者のタスクを前に行ったのと比べて、より迅速に実現できます。 "</cite>
 >
-> -Matt Roper、テクノロジのサポート サービス、チェロキー郡 (公開 GA) の進行役学区の学校
+> --Roper、テクノロジサポートサービスのファシリテータ、チェロキー郡 (GA) School 地区
 
-![データ拡張機能](../../media/extend-case-study-dataon/dataon-2.png)
-*Windows Admin Center のデータにする必要があります拡張機能のアラート サービス*
+![*Windows 管理センターの dataon 拡張機能警告サービスの dataon 拡張機能の警告サービス*](../../media/extend-case-study-dataon/dataon-2.png)
 
-> <cite>"非常に役に立つされている必要があり、大きなセールス_ポイントでした。私たちには、マイクロソフト ハイパー コンバージド インフラストラクチャをサポートするデータからのコミットメントについて説明します。その S2D のアプライアンスを使用する必要がありますを含めることは記憶域スペース ダイレクト SAN の代わりに、実行可能なソリューションが完了したものです。" </cite>
+
+> <cite>「非常に貴重で、大きな販売ポイントでした。Microsoft では、Microsoft ハイパースレッディングインフラストラクチャをサポートするために DataON のコミットメントを実証しました。S2D アプライアンスでを含める必要があります。これは、実行可能な SAN 交換として記憶域スペースダイレクトでソリューションを完了するためのものです。 "</cite>
 >
-> --Benjamin Clements、プレジデント、戦略的なオンライン Systems, inc.
+> --Benjamin Clements、社長、戦略的オンラインシステム、Inc.

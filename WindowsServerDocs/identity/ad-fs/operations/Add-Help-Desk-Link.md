@@ -7,22 +7,22 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fb186c3ba5cfb3acb9bfd0c3139b09b992fb8863
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 1673e6ee6357a9d59e8ac5891625d453bb434088
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190209"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358457"
 ---
 # <a name="add-help-desk-link"></a>ヘルプ デスク リンクの追加 
 
 
-## <a name="to-add-a-help-desk-link"></a>ヘルプ デスク リンクを追加するには  
-符号に表示されるヘルプ デスク リンクを追加する\- ページで、次の Windows PowerShell コマンドレットと構文を使用します。  
+## <a name="to-add-a-help-desk-link"></a>ヘルプデスクのリンクを追加するには  
+[\-のサインイン] ページに表示されるヘルプデスクリンクを追加するには、次の Windows PowerShell コマンドレットと構文を使用します。  
 
-![ヘルプ デスクを追加します。](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
+![ヘルプデスクの追加](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   
 
 `Set-AdfsGlobalWebContent -HelpDeskLink https://fs1.contoso.com/help/ -HelpDeskLinkText Help`  
@@ -33,4 +33,4 @@ ms.locfileid: "66190209"
 
 
 ## <a name="additional-references"></a>その他の参照情報 
-[AD FS のユーザー サインイン カスタマイズ](AD-FS-user-sign-in-customization.md)  
+[AD FS ユーザーサインインのカスタマイズ](AD-FS-user-sign-in-customization.md)  

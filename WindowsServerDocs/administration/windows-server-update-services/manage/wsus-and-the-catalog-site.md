@@ -1,7 +1,7 @@
 ---
 title: WSUS とカタログ サイト
-description: Windows Server Update Service (WSUS) のトピックでは、Microsoft Update カタログのサイトにアクセスして、修正プログラムを WSUS にインポートする方法
-ms.prod: windows-server-threshold
+description: Windows Server Update Service (WSUS) のトピック-Microsoft Update カタログサイトにアクセスして WSUS に修正プログラムをインポートする方法
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-wsus
@@ -12,65 +12,65 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 298df36b856cba97ec19126f77456785e5eb6f50
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: c30fad5f38a1b3088c6b4d12ac92d8b8a15aee83
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66810929"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361449"
 ---
 # <a name="wsus-and-the-catalog-site"></a>WSUS とカタログ サイト
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-カタログのサイトでは、修正プログラムとハードウェアのドライバーのインポート元の Microsoft 場所です。
+カタログサイトは、修正プログラムおよびハードウェアドライバーをインポートできる Microsoft の場所です。
 
-## <a name="the-microsoft-update-catalog-site"></a>Microsoft Update カタログ サイト
-、修正プログラムを WSUS にインポートするには WSUS コンピューターから、Microsoft Update カタログ サイトにアクセスする必要があります。 カタログのサイトからの修正プログラムをインポートするのには、WSUS サーバーであるかどうかに WSUS 管理コンソールがインストールされているどのコンピューターを使用できます。 修正プログラムをインポートするには、コンピューターに管理者としてログオンする必要があります。
+## <a name="the-microsoft-update-catalog-site"></a>Microsoft Update カタログサイト
+WSUS に修正プログラムをインポートするには、WSUS コンピューターから Microsoft Update カタログサイトにアクセスする必要があります。 Wsus 管理コンソールがインストールされているコンピューターは、WSUS サーバーであるかどうかにかかわらず、カタログサイトから修正プログラムをインポートするために使用できます。 修正プログラムをインポートするには、コンピューターに管理者としてログオンする必要があります。
 
-#### <a name="to-access-the-microsoft-update-catalog-site"></a>Microsoft Update カタログのサイトにアクセスするには
+#### <a name="to-access-the-microsoft-update-catalog-site"></a>Microsoft Update カタログサイトにアクセスするには
 
-1.  WSUS 管理コンソールで、上位のサーバー ノードを選択します。 または**更新**、し、**アクション**ペイン をクリックします**更新プログラムをインポート**。 Microsoft Update カタログの Web サイト、ブラウザー ウィンドウが開きます。
+1.  WSUS 管理コンソールで、最上位のサーバーノードまたは**更新プログラム**を選択し、 **[操作]** ウィンドウで **[更新プログラムのインポート]** をクリックします。 Microsoft Update カタログ Web サイトでブラウザーウィンドウが開きます。
 
-2.  このサイトで更新するには、Microsoft Update カタログ activeX コントロールをインストールする必要があります。
+2.  このサイトで更新プログラムにアクセスするには、Microsoft Update Catalog activeX コントロールをインストールする必要があります。
 
-3.  Windows 修正プログラムとハードウェアのドライバーのこのサイトを参照することができます。 必要なものが見つかったら、カートに追加します。
+3.  このサイトで Windows 修正プログラムおよびハードウェアドライバーを参照することができます。 必要なものが見つかったら、バスケットに追加します。
 
-4.  参照が完了したら、バスケットに移動し、インポートをインポート、更新プログラムをクリックします。 インポートしなくても、更新プログラムをダウンロードするには、オフ、 **Windows Server Update Services に直接インポート**チェック ボックスをオンします。
+4.  参照が終了したら、バスケットに移動し、[インポート] をクリックして更新プログラムをインポートします。 更新プログラムをインポートせずにダウンロードするには、[ **Windows Server Update Services に直接インポート**する] チェックボックスをオフにします。
 
-Microsoft Update カタログのサイトからインポートされた承認済み更新プログラムは、次回 WSUS サーバーが同期にダウンロードされます。 Microsoft Update カタログ サイトからのインポート時にダウンロードされません。
+Microsoft Update カタログサイトからインポートされた承認済みの更新プログラムは、次回 WSUS サーバーが同期したときにダウンロードされます。 これらのファイルは、Microsoft Update カタログサイトからインポートするときにはダウンロードされません。
 
-アクセスを確認する必要があります、Microsoft Update カタログ サイトも、更新プログラムが WSUS と互換性のある形式でインポートされたことを確認する WSUS コンソール。 Microsoft Update カタログ web サイトを手動でアクセスすると、更新プログラムをダウンロードすることがあれば、WSUS サーバーにインポートされていないが代わりに、個人としてダウンロードは * です。MSU ファイル。 WSUS が内のファイルをインポートするためのサポートされているメカニズムを現在持っていない、\*します。MSU 形式です。
+更新プログラムが WSUS と互換性のある形式でインポートされていることを確認するには、WSUS コンソールで Microsoft Update カタログサイトにアクセスする必要があることに注意してください。 Microsoft Update カタログ web サイトに手動でアクセスした場合、ダウンロードした更新プログラムは WSUS サーバーにインポートされず、個別の * としてダウンロードされます。MSU ファイル。 現在、WSUS には、\*でファイルをインポートするためのメカニズムがサポートされていません。MSU 形式。
 
-サーバー クリーンアップ ウィザードを実行する場合は、WSUS サーバーから承認されていない、または拒否済みとして設定されている Microsoft Update カタログからインポートされた更新を削除する可能性があります。 削除される場合が Microsoft Update カタログから再インポートできないことができます。
+サーバークリーンアップウィザードを実行すると、承認されていない、または拒否済みとして設定された Microsoft Update カタログからインポートされた更新プログラムは、WSUS サーバーから削除される場合があります。 削除されている場合は、Microsoft Update カタログから再インポートできます。
 
 > [!NOTE]
-> 更新プログラム、Microsoft Update カタログからインポートされている WSUS サーバー クリーンアップ ウィザードを実行していない承認または拒否済み のいずれかとして設定されているを削除することができます。 以前、Microsoft Update カタログから WSUS システムから削除された更新プログラムを再度インポートすることができます。
+> WSUS サーバークリーンアップウィザードを実行して、[承認されていない] または [拒否済み] として設定されている Microsoft Update カタログからインポートされた更新プログラムを削除することができます。 Microsoft Update カタログを使用して、WSUS システムから以前に削除された更新プログラムを再インポートすることができます。
 
-## <a name="restricting-access-to-hotfixes"></a>修正プログラムへのアクセスを制限します。
-WSUS 管理者、Microsoft Update カタログ サイトからダウンロードした修正プログラムへのアクセスを制限することを検討します。 次の手順に従って、この制限できるようにします。
+## <a name="restricting-access-to-hotfixes"></a>修正プログラムへのアクセスの制限
+WSUS 管理者は、Microsoft Update カタログサイトからダウンロードした修正プログラムへのアクセスを制限することを検討できます。 この制限を行うには、次の手順に従います。
 
 #### <a name="to-restrict-access-to-hotfixes"></a>修正プログラムへのアクセスを制限するには
 
-1.  IIS コンテンツの vroot に Windows 認証を有効にします。
+1.  IIS コンテンツ vroot で Windows 認証を有効にします。
 
     -   IIS マネージャーを起動します。
 
-    -   WSUS 管理 web サイトの下のコンテンツ ノードに移動します。
+    -   WSUS 管理 web サイトの下にあるコンテンツノードに移動します。
 
-    -   **コンテンツ ホーム**ウィンドウで、ダブルクリックで、**認証**オプション。
+    -   コンテンツの**ホーム**ウィンドウで、[Authentication] \ (**認証**\) オプションをダブルクリックします。
 
-    -   選択**匿名認証** をクリック**を無効にする**で、**アクション**右側のウィンドウ。
+    -   **[匿名認証]** を選択し、右側の **[操作]** ウィンドウで **[無効化]** をクリックします。
 
-    -   選択**Windows 認証** をクリック**を有効にする**で、**アクション**右側のウィンドウ。
+    -   **[Windows 認証]** を選択し、右側の **[操作]** ウィンドウで **[有効にする]** をクリックします。
 
-2.  修正プログラムは、必要なコンピューターの WSUS ターゲット グループを作成し、グループに追加します。 コンピューターおよびグループの詳細については、次を参照してください。 [WSUS クライアントを管理するコンピューターおよび WSUS コンピューター グループ](managing-wsus-client-computers-and-wsus-computer-groups.md)このガイドでは、とセクション[3.3 です。WSUS コンピューター グループを構成する](../deploy/2-configure-wsus.md#23-configure-wsus-computer-groups)手順 3。WSUS 展開ガイドでは、WSUS を構成します。
+2.  修正プログラムが必要なコンピューターの WSUS ターゲットグループを作成し、グループに追加します。 コンピューターとグループの詳細については、このガイドの「 [Wsus クライアントコンピューターと wsus コンピューターグループの管理](managing-wsus-client-computers-and-wsus-computer-groups.md)」および「3.3 セクション」を参照してください[。](../deploy/2-configure-wsus.md#23-configure-wsus-computer-groups)「Wsus 展開ガイド」の「手順 3: wsus を構成する」の wsus コンピューターグループを構成します。
 
 3.  修正プログラムのファイルをダウンロードします。
 
-4.  これらのファイルのアクセス許可を設定するは、これらのマシンのマシン アカウントのみが読み取ることができるようにします。 また、ファイルをネットワーク サービス アカウントの完全なアクセスを許可する必要があります。
+4.  これらのファイルのアクセス許可を設定して、これらのコンピューターのコンピューターアカウントのみが読み取り可能になるようにします。 また、Network Service アカウントにファイルへのフルアクセスを許可する必要があります。
 
-5.  手順 2 で作成した WSUS の対象グループの修正プログラムを承認します。
+5.  手順2で作成した WSUS ターゲットグループの修正プログラムを承認します。
 
-## <a name="importing-updates-in-different-languages"></a>さまざまな言語の更新プログラムをインポートします。
-Microsoft Update カタログの Web サイトには、複数の言語をサポートする更新プログラムが含まれています。 これは非常に**重要な**これらの更新プログラムでサポートされる言語で、WSUS サーバーでサポートされる言語に一致するようにします。 WSUS サーバーが、更新プログラムに含まれるすべての言語をサポートしていない場合、更新プログラムはクライアント コンピュータに展開されません。 同様に、管理者の選択を解除し、複数の言語をサポートしている更新プログラムが WSUS サーバーにダウンロードされましたが、クライアント コンピューターに展開されていない場合、更新プログラム、言語のいずれかに含まれる、更新プログラムは、クライアントには配置されません。
+## <a name="importing-updates-in-different-languages"></a>異なる言語での更新プログラムのインポート
+Microsoft Update カタログ Web サイトには、複数の言語をサポートする更新プログラムが含まれています。 WSUS サーバーでサポートされている言語と、これらの更新プログラムでサポートされている言語を一致させることが非常に**重要**です。 WSUS サーバーが更新プログラムに含まれるすべての言語をサポートしていない場合、更新プログラムはクライアントコンピューターに展開されません。 同様に、複数の言語をサポートする更新プログラムが WSUS サーバーにダウンロードされていても、まだクライアントコンピューターに展開されていない場合に、管理者がその更新プログラムに含まれている言語のいずれかを選択解除すると、更新プログラムはクライアントに展開されません。

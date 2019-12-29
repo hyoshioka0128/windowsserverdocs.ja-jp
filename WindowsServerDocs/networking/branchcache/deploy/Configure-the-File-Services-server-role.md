@@ -2,28 +2,28 @@
 title: ファイル サービス サーバーの役割を構成する
 description: このトピックは、BranchCache 展開ガイドの Windows Server 2016、ブランチ オフィスに WAN 帯域幅使用量を最適化するために分散され、ホスト型キャッシュ モードで BranchCache を展開する方法を示しますの一部
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 68b0f5a0-1ae8-489e-b8f8-1190267a0e1d
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9674f125adad7d278954dcd07534dfb8e3d78026
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9c28f23a79b80e4d7a1917c424ad5a9817c698e3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855583"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356724"
 ---
 # <a name="configure-the-file-services-server-role"></a>ファイル サービス サーバーの役割を構成する
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-BranchCache ファイル サーバー ベース コンテンツ サーバーを Windows Server 2016 およびファイル サービス サーバーの役割で実行するコンピューターを展開することができます、**ネットワーク ファイル用 BranchCache**役割サービスをインストールします。  
+BranchCache ファイルサーバーベースのコンテンツサーバーは、Windows Server 2016 を実行しているコンピューターに展開できます。また、ファイルサービスサーバーの役割は、**ネットワークファイル用 branchcache**役割サービスがインストールされている必要があります。  
   
--   ファイル サービスがインストールされていないコンピューターで BranchCache コンテンツ サーバーをインストールするを参照してください。[コンテンツ サーバーとして新しいファイル サーバーをインストール](../../branchcache/deploy/Install-a-New-File-Server-as-a-Content-Server.md)します。  
+-   ファイルサービスがまだインストールされていないコンピューターに BranchCache コンテンツサーバーをインストールする方法については、「[コンテンツサーバーとして新しいファイルサーバーをインストール](../../branchcache/deploy/Install-a-New-File-Server-as-a-Content-Server.md)する」を参照してください。  
   
--   ファイル サービス サーバーの役割が既に構成されているコンピューターで BranchCache コンテンツ サーバーをインストールするを参照してください。[コンテンツ サーバーとして既存のファイル サーバーを構成する](../../branchcache/deploy/Configure-an-Existing-File-Server-as-a-Content-Server.md)します。  
+-   既にファイルサービスサーバーの役割が構成されているコンピューターに BranchCache コンテンツサーバーをインストールする方法については、「[既存のファイルサーバーをコンテンツサーバーとして構成](../../branchcache/deploy/Configure-an-Existing-File-Server-as-a-Content-Server.md)する」を参照してください。  
   
 
 

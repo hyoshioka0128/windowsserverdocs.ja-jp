@@ -1,23 +1,23 @@
 ---
 title: ネットワーク コントローラー
-description: このトピックでは、Windows Server 2016 でネットワーク コント ローラーの概要を示します。
+description: このトピックでは、Windows Server 2016 のネットワークコントローラーの概要について説明します。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: 31f3fa4e-cd25-4bf3-89e9-a01a6cec7893
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7ace628c6ae9802c0c65d360aedfac8c80ac5537
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 13f535b9a91f26b30600b637b46817cfa33ccd7b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875683"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355650"
 ---
 # <a name="network-controller"></a>ネットワーク コントローラー
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 新しいネットワーク コント ローラーは、Windows Server 2016 で、管理、構成、監視、およびデータ センター内の仮想および物理ネットワーク インフラストラクチャのトラブルシューティングを行う自動化の集中管理された、プログラミング可能なポイントを提供します。 
 
@@ -25,32 +25,32 @@ ms.locfileid: "59875683"
 
 > [!NOTE]
 > このトピックに加え、次のネットワーク コント ローラーのドキュメントは使用できます。
-> - [ネットワーク コント ローラーの高可用性](network-controller-high-availability.md)
-> - [インストールとネットワーク コント ローラーを展開するための準備要件](../../plan/Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md)  
-> - [Windows PowerShell を使用してネットワーク コント ローラーを展開します。](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)  
-> - [サーバー マネージャーを使用して、ネットワーク コント ローラー サーバーの役割をインストールします。](Install-the-Network-Controller-server-role-using-Server-Manager.md)
-> - [ネットワーク コント ローラーの展開後の手順](post-deploy-steps-nc.md)
-> - [ネットワーク コント ローラーのコマンドレット](https://technet.microsoft.com/library/mt576401.aspx) 
+> - [ネットワークコントローラーの高可用性](network-controller-high-availability.md)
+> - [ネットワークコントローラーを展開するためのインストールおよび準備の要件](../../plan/Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md)  
+> - [Windows PowerShell を使用してネットワーク コントローラーを展開する](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)  
+> - [サーバー マネージャーを使用してネットワーク コントローラー サーバーの役割をインストールする](Install-the-Network-Controller-server-role-using-Server-Manager.md)
+> - [ネットワークコントローラーの展開後の手順](post-deploy-steps-nc.md)
+> - [ネットワークコントローラーのコマンドレット](https://technet.microsoft.com/library/mt576401.aspx) 
 
-## <a name="bkmk_overview"></a>ネットワーク コント ローラーの概要
+## <a name="bkmk_overview"></a>ネットワークコントローラーの概要
 
-ネットワーク コント ローラーは、高可用性と拡張性の高いサーバー ロール、および 1 つのアプリケーション プログラミング インターフェイスを提供します\(API\)ネットワークと通信するために、ネットワーク コント ローラーおよび 2 つ目の API をできるようにすることができますネットワーク コント ローラーと通信します。
+ネットワークコントローラーは、可用性が高くスケーラブルなサーバーの役割であり、1つのアプリケーションプログラミングインターフェイス \(API\) を提供して、ネットワークコントローラーがネットワークと通信できるようにします。また、ネットワークコントローラーとの通信を可能にする2つ目の API も用意されています。
 
 ドメインと非ドメイン環境の両方のネットワーク コント ローラーを展開することができます。 ドメイン環境でネットワーク コント ローラーのユーザーとネットワーク デバイスを使用して認証 Kerberos です。非ドメイン環境では、認証に証明書を展開する必要があります。
 
 >[!IMPORTANT]
->物理ホストでネットワーク コント ローラー サーバーの役割を展開しないでください。 ネットワーク コント ローラーを展開するには、HYPER-V 仮想マシンでネットワーク コント ローラー サーバーの役割をインストールする必要があります\(VM\) HYPER-V ホストにインストールされています。 次の 3 つの異なるハイパースレッディング上の Vm でネットワーク コント ローラーをインストールした後\-V のホスト、ハイパースレッディングが有効にする必要があります\-ソフトウェアによるネットワーク制御の V ホスト\(SDN\)ネットワーク コント ローラーを使用するホストを追加することでWindows PowerShell コマンド**新規 NetworkControllerServer**します。 これにより、関数には、SDN ソフトウェア ロード バランサーを有効にします。 詳細については、次を参照してください。[新規 NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)します。
+>ネットワークコントローラーのサーバーの役割を物理ホストに展開しないでください。 ネットワーク コント ローラーを展開するには、ホストにインストールされている HYPER-V 仮想マシン\(VM\)でネットワーク コントローラー サーバーの役割をインストールする必要があります。 次の 3 つの異なる HYPER\-V ホスト上の VM にでネットワーク コントローラーをインストールした後、Windows PowerShell コマンド \-New-NetworkControllerServer\( を使用してホストをネットワーク コント ローラーに追加して、ソフトウェア定義ネットワーク\)SDN**のHYPER**Vホストを有効にする必要があります。 これにより、SDN ソフトウェア ロード バランサーが機能するようになります。 詳細については、[New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver) を参照してください。
 
 ネットワーク コントローラーは、Southbound API を使用してネットワーク デバイス、サービス、コンポーネントと通信します。 ネットワーク デバイスの検出、サービス構成の検出、ネットワークについて必要なすべての情報の収集に Southbound API を利用できます。 さらに、Southbound API を使用して、構成の変更などの情報をネットワーク インフラストラクチャに送信することもできます。
 
 ネットワーク コントローラーの Northbound API を利用すると、ネットワーク コントローラーからネットワーク情報を収集し、その情報をネットワークの監視と構成に使用できます。
 
-ネットワーク コント ローラーの Northbound API を使用すると、構成、監視、トラブルシューティング、および Windows PowerShell、Representational State Transfer を使用して、ネットワーク上の新しいデバイスをデプロイ\(REST\) API、または管理アプリケーショングラフィカル ユーザー インターフェイスでは、System Center Virtual Machine Manager など。
+Network Controller Northbound API を使用すると、ネットワーク上の新しいデバイスの構成、監視、トラブルシューティング、および展開を行うことができます。これには、Windows PowerShell、REST\) API \(REST の状態転送、System Center Virtual Machine Manager などのグラフィカルユーザーインターフェイスを備えた管理アプリケーションを使用します。
 
 >[!NOTE]
 >ネットワーク コントローラーの Northbound API は、REST インターフェイスとして実装されています。
 
-ネットワーク コント ローラーで、データ センター ネットワークを管理するには、System Center Virtual Machine Manager などの管理アプリケーションを使用して\(SCVMM\)、および System Center Operations Manager \(SCOM\)、ネットワーク コント ローラーを構成することができます、ため、監視、プログラム、およびその制御下にあるネットワーク インフラストラクチャのトラブルシューティングを行います。
+ネットワークコントローラーを使用してデータセンターネットワークを管理するには、System Center Virtual Machine Manager \(SCVMM\)などの管理アプリケーションを使用します。 \(System Center Operations Manager また、ネットワークコントローラーでは、管理下にあるネットワークインフラストラクチャの構成、監視、プログラム、およびトラブルシューティングを行うことができます。\)
 
 Windows PowerShell、REST API、または管理アプリケーションを使用することによって、ネットワーク コントローラーで次の物理および仮想ネットワーク インフラストラクチャを管理できます。
 
@@ -58,27 +58,27 @@ Windows PowerShell、REST API、または管理アプリケーションを使用
 
 - データ センターのファイアウォール
 
-- リモート アクセス サービス\(RAS\)マルチ テナント ゲートウェイ、仮想ゲートウェイおよびゲートウェイ プール
+- リモートアクセスサービス \(RAS\) マルチテナントゲートウェイ、仮想ゲートウェイ、ゲートウェイプール
 
-- ソフトウェア ロード バランサー
+- ソフトウェアロードバランサー
 
 次の図で、管理者は、ネットワーク コントローラーを直接操作できる管理ツールを使用しています。 ネットワーク コント ローラーは、管理ツールへの仮想および物理の両方のインフラストラクチャを含む、ネットワーク インフラストラクチャに関する情報を提供し、ツールを使用する場合、管理者のアクションに従って構成変更を加えます。  
 
 ![ネットワーク コント ローラーの概要](../../../media/Network-Controller/NetController_overview.png)  
 
-HYPER-V 仮想マシンで、ネットワーク コント ローラー サーバーの役割を実行するには、テスト ラボ環境でネットワーク コント ローラーを展開する場合\(VM\) HYPER-V ホストにインストールされています。
+テストラボ環境にネットワークコントローラーを展開する場合は、hyper-v ホストにインストールされている VM\) \(Hyper-v 仮想マシンでネットワークコントローラーサーバーの役割を実行できます。
 
-大規模なデータ センターで高可用性のためには、3 つ以上の HYPER-V ホストにインストールされている 3 つの Vm を使用してクラスターを展開することができます。 詳細については、次を参照してください。[ネットワーク コント ローラーの高可用性](network-controller-high-availability.md)します。
+大規模なデータセンターで高可用性を実現するために、3つ以上の Hyper-v ホストにインストールされた3つの Vm を使用してクラスターを展開できます。 詳細については、「[ネットワークコントローラーの高可用性](network-controller-high-availability.md)」を参照してください。
 
-## <a name="bkmk_features"></a>ネットワーク コント ローラーの機能
+## <a name="bkmk_features"></a>ネットワークコントローラーの機能
 
 次のネットワーク コントローラーの機能を使用すると、仮想および物理ネットワーク デバイスとサービスの構成と管理を行うことができます。  
   
 -   [ファイアウォールの管理](#bkmk_firewall)  
   
--   [ソフトウェア ロード バランサーの管理](#bkmk_slb)  
+-   [ソフトウェアの Load Balancer 管理](#bkmk_slb)  
   
--   [仮想ネットワークの管理](#bkmk_virtual)  
+-   [Virtual Network 管理](#bkmk_virtual)  
   
 -   [RAS ゲートウェイの管理](#bkmk_gateway)
 
@@ -91,13 +91,13 @@ HYPER-V 仮想マシンで、ネットワーク コント ローラー サーバ
 
 詳細については、次を参照してください。 [データ センターのファイアウォールの概要](../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)します。
 
-### <a name="bkmk_slb"></a>ソフトウェア ロード バランサーの管理
+### <a name="bkmk_slb"></a>ソフトウェアの Load Balancer 管理
 
 このネットワーク コントローラーの機能を使用すると、複数のサーバーで同じワークロードをホストし、高可用性とスケーラビリティを実現することができます。  
   
-詳細については、[SDNのソフトウェアロードバランシング (SLB)](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md) を参照してください。  
+詳細については、次を参照してください。 [ソフトウェアによる負荷分散と #40 です。SLB & #41 です。SDN の](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)です。  
   
-### <a name="bkmk_virtual"></a>仮想ネットワークの管理
+### <a name="bkmk_virtual"></a>Virtual Network 管理
 
 このネットワーク コントローラーの機能を使用すると、Hyper-V 仮想スイッチ、個々の VM 上の仮想ネットワーク アダプターなど、Hyper-V のネットワーク仮想化の展開と構成を行うことができます。また、仮想ネットワーク ポリシーの格納と配布を行うこともできます。
 
@@ -105,7 +105,7 @@ HYPER-V 仮想マシンで、ネットワーク コント ローラー サーバ
 
 ### <a name="bkmk_gateway"></a>RAS ゲートウェイの管理
 
-このネットワーク コント ローラーの機能を使用すると、デプロイ、構成、およびゲートウェイ サービスをテナントに提供する、RAS ゲートウェイ プールのメンバーである仮想マシン (Vm) を管理できます。 ネットワーク コント ローラーでは、次のゲートウェイの機能が RAS ゲートウェイを実行する Vm を自動的に展開することができます。
+このネットワークコントローラーの機能を使用すると、ゲートウェイサービスをテナントに提供する、RAS ゲートウェイプールのメンバーである仮想マシン (Vm) を展開、構成、および管理することができます。 ネットワーク コント ローラーでは、次のゲートウェイの機能が RAS ゲートウェイを実行する Vm を自動的に展開することができます。
 
 > [!NOTE]
 > System Center Virtual Machine Manager で、RAS ゲートウェイには、Windows Server ゲートウェイはという名前です。
@@ -120,16 +120,16 @@ HYPER-V 仮想マシンで、ネットワーク コント ローラー サーバ
 
 - ボーダー ゲートウェイ プロトコル (BGP) ルーティングでは、そのリモート サイトとテナントの VM ネットワーク間のネットワーク トラフィックのルーティングを管理できます。
 
-ネットワーク コント ローラーは、テナントのさまざまな接続を別のゲートウェイに配置できます。 1 つのパブリック IP を使用して、すべてのゲートウェイ接続または接続のサブセットに対して異なるパブリック ip できます。 ネットワーク コント ローラーのログすべてのゲートウェイの構成と状態の変更は、監査とトラブルシューティングのために使用できます。
+ネットワークコントローラーは、テナントの別の接続を別々のゲートウェイに配置できます。 すべてのゲートウェイ接続に対して1つのパブリック IP を使用することも、接続のサブセットに対して異なるパブリック IP を使用することもできます。 ネットワークコントローラーは、すべてのゲートウェイの構成と状態の変更をログに記録します。これは、監査とトラブルシューティングの目的で使用できます。
 
-BGP の詳細については、次を参照してください。 [ボーダー ゲートウェイ プロトコル &#40;BGP&#41;](../../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)します。
+BGP の詳細については、次を参照してください。 [ボーダー ゲートウェイ プロトコル (&) #40 です。BGP & #41;](../../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)します。
 
 RAS ゲートウェイの詳細については、次を参照してください。 [SDN の RAS ゲートウェイ](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)します。
 
-## <a name="network-controller-deployment-options"></a>ネットワーク コント ローラーの展開オプション
+## <a name="network-controller-deployment-options"></a>ネットワークコントローラーの展開オプション
 
-System Center Virtual Machine Manager を使用してネットワーク コント ローラーを展開する\(VMM\)を参照してください[VMM ファブリックで SDN ネットワーク コント ローラー設定](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)します。
+System Center Virtual Machine Manager \(VMM\)を使用してネットワークコントローラーを展開するには、「 [vmm ファブリックでの SDN ネットワークコントローラーのセットアップ](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-network-controller)」を参照してください。
 
-スクリプトを使用してネットワーク コント ローラーを展開するを参照してください。 [、ソフトウェア定義ネットワーク インフラストラクチャを使用してスクリプトをデプロイ](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)します。
+スクリプトを使用してネットワークコントローラーを展開する方法については、「[スクリプトを使用したソフトウェア定義ネットワークインフラストラクチャの展開](../../deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)」を参照してください。
 
-Windows PowerShell を使用してネットワーク コント ローラーを展開するを参照してください[展開ネットワーク コント ローラーが Windows PowerShell を使用します。](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)
+Windows PowerShell を使用してネットワークコントローラーを展開するには、「 [Windows powershell を使用したネットワークコントローラーの展開](../../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)」を参照してください。

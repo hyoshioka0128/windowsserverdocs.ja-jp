@@ -1,8 +1,8 @@
 ---
 title: 復元 (recover)
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d6b9b5544394bfc69a2dc9f7be26ed8355a3f690
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 415efe2d1e60ca70d68059b5702108440da735f3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441959"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371770"
 ---
 # <a name="recover"></a>復元 (recover)
 
@@ -38,15 +38,15 @@ recover [<Drive>:][<Path>]<FileName>
 
 |           パラメーター           |                                          説明                                          |
 |-------------------------------|-----------------------------------------------------------------------------------------------|
-| [\<Drive>:][<Path>]<FileName> | 回復するファイルの名前と場所を指定します。 *ファイル名* が必要です。 |
+| [\<Drive >:][<Path>] <FileName> | 回復するファイルの名前と場所を指定します。 *ファイル名* が必要です。 |
 |              /?               |                             コマンド プロンプトにヘルプを表示します。                              |
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   **回復** コマンドは、ファイル、セクターごとを読み取り、データを正常なセクターから回復します。 不良セクターのデータは失われます。
 -   によって報告された不良セクター **chkdsk** 操作用にディスクに作成されたときに"bad"が設定されました。 これらに問題ありません、および **回復** 影響しません。
 -   ファイルを回復するときに不良セクターのすべてのデータが失われたために、一度に 1 つのファイルを回復する必要があります。
--   ワイルドカード文字を使用することはできません ( **&#42;** と **?** ) で、**回復**コマンド。 ファイル (および現在のディレクトリになっていない場合は、ファイルの場所) を指定する必要があります。
+-   [回復] コマンドでは **&#42;** 、ワイルドカード文字 (および **?** ) は使用できません。 ファイル (および現在のディレクトリになっていない場合は、ファイルの場所) を指定する必要があります。
 
 ## <a name="BKMK_examples"></a>例
 

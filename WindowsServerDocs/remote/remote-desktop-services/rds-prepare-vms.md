@@ -2,7 +2,7 @@
 title: リモート デスクトップの仮想マシンを準備する
 description: VM をリモート デスクトップ コンポーネント用に準備します
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 2fc39dff-61ca-4eba-81ab-52289081bead
 author: lizap
 manager: dongill
-ms.openlocfilehash: f51fb057070ba84f93e00266018535b74ab45ae1
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 6a1f0bfef21351894d3b9c2cfd8d044491834f6c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63753203"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387251"
 ---
 # <a name="create-virtual-machines-for-remote-desktop"></a>リモート デスクトップの仮想マシンを作成する
 
@@ -65,6 +65,6 @@ VM を作成した後、次の手順を使用して RDS 用に準備します。
     5.  **[このフォルダーを共有する]** を選択し、 **[アクセス許可]** をクリックします。  
     6.  **[Everyone]** を選択し、 **[削除]** をクリックします。 次に **[追加]** をクリックし、 **[Domain Admins]** を入力して、 **[OK]** をクリックします。  
     7.  **[Allow Full Control]\(フル コントロールを許可する\)** を選択し、 **[OK] > [OK] > [閉じる]** をクリックします。  
-    8.  手順 c から g を繰り返して、証明書用の共有フォルダーを作成します to g. 。   
+    8.  手順 c. から g. を繰り返して 証明書用の共有フォルダーを作成します。   
 
 

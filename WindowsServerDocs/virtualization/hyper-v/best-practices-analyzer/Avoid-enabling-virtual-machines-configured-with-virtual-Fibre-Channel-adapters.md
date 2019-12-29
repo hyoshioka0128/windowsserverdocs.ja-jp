@@ -1,7 +1,7 @@
 ---
-title: 構成ソースよりも先に論理ユニット (Lun) ファイバー チャネルの少ないパスがある場合は、ライブ マイグレーションを許可する仮想ファイバー チャネル アダプターの仮想マシンを有効にしないように
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+title: 仮想ファイバーチャネルアダプターで構成された仮想マシンが、コピー先のファイバーチャネル論理ユニット (Lun) へのパスがソースよりも小さい場合にライブマイグレーションを実行できるようにしない
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -9,35 +9,35 @@ ms.author: kathydav
 ms.topic: article
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 6ff69d5cb09133a806c2a2df3446713264a4e892
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c55a8c76391ae1b01f43492dc5c72e3760371b80
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849553"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365277"
 ---
-# <a name="avoid-enabling-virtual-machines-configured-with-virtual-fibre-channel-adapters-to-allow-live-migrations-when-there-are-fewer-paths-to-fibre-channel-logical-units-luns-on-the-destination-than-on-the-source"></a>構成ソースよりも先に論理ユニット (Lun) ファイバー チャネルの少ないパスがある場合は、ライブ マイグレーションを許可する仮想ファイバー チャネル アダプターの仮想マシンを有効にしないように
+# <a name="avoid-enabling-virtual-machines-configured-with-virtual-fibre-channel-adapters-to-allow-live-migrations-when-there-are-fewer-paths-to-fibre-channel-logical-units-luns-on-the-destination-than-on-the-source"></a>仮想ファイバーチャネルアダプターで構成された仮想マシンが、コピー先のファイバーチャネル論理ユニット (Lun) へのパスがソースよりも小さい場合にライブマイグレーションを実行できるようにしない
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
-ベスト プラクティスとスキャンの詳細については、次を参照してください。 [Run Best Practices Analyzer Scans and Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177)します。  
+ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
 |プロパティ|詳細|  
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|警告|  
+|**順**|Warning|  
 |**カテゴリ**|構成|
 
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。
   
 ## <a name="issue"></a>**問題**  
-*1 つまたは複数の仮想マシンには、仮想化 WMI プロバイダーの設定 AllowReducedFcRedunancy プロパティが設定されています。*  
+*1つ以上の仮想マシンで、仮想化 WMI プロバイダーに AllowReducedFcRedunancy プロパティが設定されています。*  
   
-## <a name="impact"></a>**影響**  
-*次の仮想マシンのライブ マイグレーションは、データが失われる可能性があります。 またはストレージへの I/O の割り込み。*  
+## <a name="impact"></a>**よる**  
+*次の仮想マシンのライブマイグレーションにより、データが失われたり、記憶域への i/o が中断されることがあります。*  
   
-\<仮想マシンの一覧 >  
+仮想マシンの一覧を \<>  
   
 ## <a name="resolution"></a>**解決方法**  
-*影響を受ける仮想マシンで AllowReducedFcRedundancy WMI プロパティをクリアすることを検討してください。このプロパティがオフの場合は、先にファイバー チャネルへのパスの数が同じ、またはソース上のパスの数を超える場合にのみ、仮想ファイバー チャネル アダプターで構成された仮想マシンのライブ マイグレーションを実行できます。これらのチェックでは、ストレージにデータの損失や I/O の中断を防ぐのに役立ちます。* 
+*影響を受ける仮想マシンで AllowReducedFcRedundancy WMI プロパティをクリアすることを検討してください。このプロパティをオフにすると、仮想ファイバーチャネルアダプターが構成されている仮想マシンでライブマイグレーションを実行できるのは、移行先でファイバーチャネルするパスの数が、ソースのパスの数と同じか、それよりも多い場合のみです。これらのチェックにより、データの損失や記憶域への i/o の中断を防ぐことができます。* 

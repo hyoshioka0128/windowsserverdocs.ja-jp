@@ -1,23 +1,23 @@
 ---
-title: 現在の Windows Admin Center でのアイコンの一覧
-description: 現在の Windows Admin Center sdk (プロジェクト ホノルル) アイコンの一覧
+title: Windows 管理センターの現在のアイコンの一覧
+description: Windows 管理センター SDK の現在のアイコンの一覧 (プロジェクトホノルル)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: e908e088cd92127a785004e22d51934c13afc1ff
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.prod: windows-server
+ms.openlocfilehash: 4b9ffe55b97bac93ab983b25e0971e2c07eeb520
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844563"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357091"
 ---
-# <a name="current-list-of-icons-in-windows-admin-center"></a>現在の Windows Admin Center でのアイコンの一覧
+# <a name="current-list-of-icons-in-windows-admin-center"></a>Windows 管理センターの現在のアイコンの一覧
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
 ```
 .icon-win-globalNavButton:before { content: "\E700"; }

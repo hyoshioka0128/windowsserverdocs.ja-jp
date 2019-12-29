@@ -1,8 +1,8 @@
 ---
 title: Get AllImageGroups コマンドを使用してください。
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 917f61327a3d39ee97c5fd59072884f7844c487e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 54e302dca5014d084c7277154eb491f9e33a536b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822353"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363313"
 ---
 # <a name="using-the-get-allimagegroups-command"></a>Get AllImageGroups コマンドを使用してください。
 
@@ -33,14 +33,14 @@ wdsutil [Options] /Get-AllImageGroups [/Server:<Server name>] [/detailed]
 |パラメーター|説明|
 |-------|--------|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) のいずれかを指定できます。 サーバー名が指定されていない場合は、ローカルのサーバーが使用されます。|
-|[/詳細]|各イメージからイメージのメタデータを返します。 このパラメーターを使用しない場合、既定の動作は、イメージの名前、説明、および各イメージのファイル名のみを返すには。|
+|詳細/|各イメージからイメージのメタデータを返します。 このパラメーターを使用しない場合、既定の動作は、イメージの名前、説明、および各イメージのファイル名のみを返すには。|
 ## <a name="BKMK_examples"></a>例
 イメージ グループに関する情報を表示するには、次のいずれかを入力します。
 ```
 wdsutil /Get-AllImageGroups
 wdsutil /verbose /Get-AllImageGroups /Server:MyWDSServer /detailed
 ```
-#### <a name="additional-references"></a>その他の参照
+#### <a name="additional-references"></a>その他の参照情報
 [コマンドライン構文のポイント](command-line-syntax-key.md)
 [追加 ImageGroup コマンドを使用して](using-the-add-imagegroup-command.md)
 [get ImageGroup コマンドを使用して](using-the-get-imagegroup-command.md)

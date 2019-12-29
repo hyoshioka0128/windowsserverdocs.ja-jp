@@ -1,7 +1,7 @@
 ---
 title: Server Core のインストール
 description: コア インストールを取得して、Windows Server 2019、Windows Server 2016 または Windows Server (半期チャネル) にインストールする方法。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.date: 05/21/2019
 ms.technology: server-general
 ms.tgt_pltfrm: na
@@ -11,12 +11,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f685ce29088b56bb243d21315787ab90e6863a4
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e6264a59a837003e49e82529750cfb153cc37b92
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "65976718"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360340"
 ---
 # <a name="install-server-core"></a>Server Core のインストール
 

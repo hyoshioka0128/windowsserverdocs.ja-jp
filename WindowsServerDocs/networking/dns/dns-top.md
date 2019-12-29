@@ -1,41 +1,41 @@
 ---
 title: ドメイン ネーム システム (DNS)
-description: このトピックでは、Windows Server 2016 での DNS の概要を提供します。
+description: このトピックでは、Windows Server 2016 の DNS の概要について説明します。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 1324ba18-4e28-4b9d-bbe7-75707e6d30ab
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3d4ec63e904dd899a3ddc53a59274ad607136edd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6ad3b66ff0b271c3b6f6134a96aaf6b5171bc7d4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870823"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406168"
 ---
 # <a name="domain-name-system-dns"></a>ドメイン ネーム システム (DNS)
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-ドメイン ネーム システム (DNS) は、業界標準の TCP/IP を構成するプロトコル群のいずれかと、まとめて DNS クライアントおよび DNS サーバー コンピューターとユーザーにコンピューター名と IP アドレスのマッピング名前解決サービスを提供します。  
+ドメインネームシステム (DNS) は、TCP/IP を構成する業界標準のプロトコルスイートの1つであり、DNS クライアントと DNS サーバーの組み合わせにより、コンピューター名から IP アドレスへのマッピング名前解決サービスがコンピューターとユーザーに提供されます。  
   
 > [!NOTE]  
-> このトピックに加え、次の DNS コンテンツは使用できます。  
+> このトピックに加えて、次の DNS コンテンツを利用できます。  
 >   
-> -   [DNS クライアントの新機能新機能](What-s-New-in-DNS-Client.md)  
-> -   [DNS サーバーの新機能新機能](What-s-New-in-DNS-Server.md)  
-> -   [DNS ポリシー シナリオ ガイド](deploy/DNS-Policy-Scenario-Guide.md)  
-> -   ビデオ:[Windows Server 2016:IPAM の DNS の管理](https://channel9.msdn.com/Blogs/windowsserver/Windows-Server-2016-DNS-management-in-IPAM)  
+> -   [DNS クライアントの新機能](What-s-New-in-DNS-Client.md)  
+> -   [DNS サーバーの新機能](What-s-New-in-DNS-Server.md)  
+> -   [DNS ポリシーシナリオガイド](deploy/DNS-Policy-Scenario-Guide.md)  
+> -   ビデオ: [Windows Server 2016: IPAM での DNS 管理](https://channel9.msdn.com/Blogs/windowsserver/Windows-Server-2016-DNS-management-in-IPAM)  
   
-Windows Server 2016 では、DNS とは、サーバー マネージャーまたは Windows PowerShell コマンドを使用して、インストール可能なサーバーの役割です。 新しい Active Directory フォレストおよびドメインをインストールする場合に自動的に DNS がインストールされていると Active Directory フォレストおよびドメインのグローバル カタログ サーバーとして。  
+Windows Server 2016 では、DNS はサーバーの役割であり、サーバーマネージャーまたは Windows PowerShell コマンドを使用してインストールできます。 新しい Active Directory フォレストとドメインをインストールする場合は、フォレストとドメインのグローバルカタログサーバーとして Active Directory と共に DNS が自動的にインストールされます。  
   
-Active Directory Domain Services (AD DS) では、そのドメイン コント ローラーの場所のメカニズムとして DNS を使用します。 プリンシパルの Active Directory 操作のいずれかが実行されると、認証など、更新、または検索するには、コンピューター DNS を使用して Active Directory ドメイン コント ローラーを特定します。 さらに、ドメイン コント ローラーは、お互いを検索するのに DNS を使用します。  
+Active Directory Domain Services (AD DS) は、ドメインコントローラーの場所のメカニズムとして DNS を使用します。 認証、更新、検索などのプリンシパル Active Directory 操作が実行されると、コンピューターは DNS を使用して Active Directory ドメインコントローラーを検索します。 さらに、ドメインコントローラーは、DNS を使用して互いを検索します。  
   
-DNS クライアント サービスは、Windows オペレーティング システムのすべてのクライアントとサーバー バージョンが用意されており、オペレーティング システムのインストール時に既定で実行しています。 DNS サーバーの IP アドレスで、TCP/IP ネットワーク接続を構成するときに、DNS クライアントは、ドメイン コント ローラーを検出して、コンピューター名を IP アドレスに解決するのには、DNS サーバーを照会します。 たとえば、Active Directory ユーザー アカウントを持つネットワーク ユーザーが Active Directory ドメインにログインすると、DNS クライアント サービスは、Active Directory ドメインのドメイン コント ローラーに DNS サーバーを照会します。 DNS サーバーは、クエリに応答すると、ドメイン コント ローラーの IP アドレスをクライアントに提供する、クライアントは、ドメイン コント ローラーに接続し、認証プロセスを開始できます。  
+DNS クライアントサービスは、Windows オペレーティングシステムのすべてのクライアントバージョンとサーバーバージョンに含まれており、オペレーティングシステムのインストール時に既定で実行されます。 Dns サーバーの IP アドレスを使用して TCP/IP ネットワーク接続を構成すると、dns クライアントは dns サーバーに対してクエリを行い、ドメインコントローラーを検出し、コンピューター名を IP アドレスに解決します。 たとえば、Active Directory ユーザーアカウントを持つネットワークユーザーが Active Directory ドメインにログインすると、DNS クライアントサービスは DNS サーバーに対してクエリを行い、Active Directory ドメインのドメインコントローラーを検索します。 DNS サーバーがクエリに応答し、ドメインコントローラーの IP アドレスをクライアントに提供すると、クライアントはドメインコントローラーに接続し、認証プロセスを開始できます。  
   
-Windows Server 2016 の DNS サーバーと DNS クライアント サービスは、TCP/IP プロトコル スイートに含まれている、DNS プロトコルを使用します。 次の図に示すように、DNS は、TCP/IP 参照モデルのアプリケーション層の一部です。  
+Windows Server 2016 の DNS サーバーと DNS クライアントサービスは、TCP/IP プロトコルスイートに含まれている DNS プロトコルを使用します。 DNS は、次の図に示すように、TCP/IP 参照モデルのアプリケーション層の一部です。  
   
 ![TCP/IP の DNS](../media/Domain-Name-System--DNS-/dns_in_tcpip.jpg)  
   

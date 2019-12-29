@@ -1,8 +1,8 @@
 ---
 title: autochk
-description: Windows コマンド」のトピック**autochk** - コンピューターの起動時に実行し、Windows Server の前に、ファイル システムの論理整合性を確認して開始します。
+description: Windows コマンドの**autochk** -コンピューターが起動されたときと、windows Server の前にファイルシステムの論理的な整合性の検証を開始するときに実行します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,37 +13,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e6c26d42410e5466950ede4f9aa059e315030588
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 76e54d14879cefd4661a1ca7f1c3b8ee7ec58de2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435029"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382354"
 ---
 # <a name="autochk"></a>autochk
 
 
 
-コンピューターの起動時に実行と Windows Server® 2008 R2 する前に、ファイル システムの論理整合性を検証を開始しています。
+コンピューターが起動したとき、および Windows Server® 2008 R2 より前に、ファイルシステムの論理的な整合性の検証を開始するときに実行されます。
 
-**Autochk.exe**のバージョンは、 **Chkdsk** NTFS ディスク上にのみ、および Windows Server 2008 R2 を開始する前にのみ実行します。 **Autochk**コマンドラインから直接実行することはできません。 代わりに、 **Autochk**は、次の状況で実行されます。
--   実行しようとする場合**Chkdsk**ブート ボリュームで
--   場合**Chkdsk**ボリュームを排他的に使用することができません
--   ボリュームがダーティとしてフラグが設定された場合
+**Autochk.exe**は、NTFS ディスク上でのみ実行され、Windows Server 2008 R2 が開始される前にのみ実行される**Chkdsk**のバージョンです。 コマンドラインから**Autochk**を直接実行することはできません。 代わりに、次のような状況で**Autochk**が実行されます。
+-   ブートボリュームで**Chkdsk**を実行しようとすると、
+-   **Chkdsk**でボリュームを排他的に使用できない場合
+-   ボリュームにダーティのフラグが設定されている場合
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 > -   [!WARNING]
->     **Autochk**コマンド ライン ツールは、コマンドラインから直接実行できません。 代わりに、使用、 **Chkntfs**方法を構成するコマンド ライン ツール**Autochk**スタートアップ時に実行します。
-> -   使用することができます**Chkntfs**で、 **/x**を防ぐためにパラメーター **Autochk**特定または複数のボリュームで実行されているからです。
-> -   使用して、 **Chkntfs.exe**とコマンド ライン ツール、 **/t** Autochk 遅延を 0 秒から 3 日 (259, 200 秒) に変更するパラメーター。 ただし、長時間の遅延は、時間が経過するまで、またはキャンセルするキーを押すと、コンピューターが起動しないことを意味**Autochk**します。
+>     **Autochk**コマンドラインツールは、コマンドラインから直接実行することはできません。 代わりに、 **Chkntfs**コマンドラインツールを使用して、起動時に**Autochk**を実行する方法を構成します。
+> -   **Chkntfs**を **/x**パラメーターと共に使用すると、 **Autochk**が特定のボリュームまたは複数のボリュームで実行されないようにすることができます。
+> -   **Chkntfs**コマンドラインツールと **/t**パラメーターを使用して、Autochk 遅延時間を0秒から最大3日 (259200 秒) に変更します。 ただし、長い遅延とは、時間が経過するまで、またはキーを押して**Autochk**をキャンセルするまで、コンピューターが起動しないことを意味します。
 
 #### <a name="additional-references"></a>その他の参照情報
 
 [コマンド ライン構文の記号](command-line-syntax-key.md)
 
-[chkdsk](chkdsk.md)
+[Chkdsk](chkdsk.md)
 
-[chkntfs](chkntfs.md)
+[Chkntfs](chkntfs.md)
 
-[ディスクとファイル システムのトラブルシューティング](https://go.microsoft.com/fwlink/?LinkId=4527)
+[ディスクとファイルシステムのトラブルシューティング](https://go.microsoft.com/fwlink/?LinkId=4527)

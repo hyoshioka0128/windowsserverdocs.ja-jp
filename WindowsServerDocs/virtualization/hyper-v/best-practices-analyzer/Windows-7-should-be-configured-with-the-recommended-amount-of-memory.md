@@ -1,7 +1,7 @@
 ---
-title: Windows 7 は、推奨されるメモリ量を構成する必要があります。
-description: このベスト プラクティス アナライザー ルールによって報告された問題を解決する方法を説明します。
-ms.prod: windows-server-threshold
+title: Windows 7 は、推奨されるメモリ量で構成する必要があります。
+description: このベストプラクティスアナライザー規則によって報告された問題を解決するための手順を示します。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,14 +10,14 @@ ms.topic: article
 ms.assetid: d77d648c-6e26-43fa-be0a-6eb4b28f9cb4
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: e91e3d5f2ddb374a6e5fd5b60ac1adee125257c2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3ce8d31b13664f09c97755399503de1c12ef070a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812293"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364524"
 ---
-# <a name="windows-7-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 7 は、推奨されるメモリ量を構成する必要があります。
+# <a name="windows-7-should-be-configured-with-the-recommended-amount-of-memory"></a>Windows 7 は、推奨されるメモリ量で構成する必要があります。
 
 >適用先:Windows Server 2016
 
@@ -27,51 +27,51 @@ ms.locfileid: "59812293"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|警告|  
+|**順**|警告|  
 |**カテゴリ**|構成|  
 
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。
 
 ## <a name="issue"></a>問題  
   
-*Windows 7 を実行する仮想マシンは、1 gb の RAM の推奨される量よりも少ないリソースで構成されます。*  
+*Windows 7 を実行する仮想マシンは、推奨される RAM 容量 (1 GB) 未満で構成されます。*  
   
 ## <a name="impact"></a>影響  
   
-*ゲスト オペレーティング システムとアプリケーションをも実行しない可能性があります。メモリ不足のため、一度に複数のアプリケーションを実行できない可能性があります。これには、次の仮想マシンに影響します。*  
+*The オペレーティングシステムとアプリケーションが正常に動作しない可能性があります。複数のアプリケーションを同時に実行するのに十分なメモリがない可能性があります。これは、次の仮想マシンに影響します:*  
 ```  
 <list of virtual machine names>  
 ```  
 ## <a name="resolution"></a>解決方法  
   
-*HYPER-V マネージャーを使用して、1 GB 以上をこの仮想マシンに割り当てられたメモリを増やします。*  
+*Hyper-v マネージャーを使用して、この仮想マシンに割り当てられているメモリを少なくとも 1 GB に増やします。*  
   
-### <a name="to-increase-the-memory-using-hyper-v-manager"></a>HYPER-V マネージャーを使用してメモリを増やす  
+### <a name="to-increase-the-memory-using-hyper-v-manager"></a>Hyper-v マネージャーを使用してメモリを増やすには  
   
-1.  Hyper-V マネージャーを開きます。 **[スタート]** ボタンをクリックし、**[管理ツール]** をポイントして **[Hyper-V マネージャー]** をクリックします。  
+1.  Hyper-V マネージャーを開きます。 **[スタート]** ボタンをクリックし、 **[管理ツール]** をポイントして **[Hyper-V マネージャー]** をクリックします。  
   
-2.  結果ウィンドウで  **仮想マシン**, 、構成する仮想マシンを選択します。 仮想マシンの状態として表示されるはず**オフ**します。 そうでない場合は、仮想マシンを右クリックし、順にクリックします**シャット ダウン**します。  
+2.  結果ウィンドウで  **仮想マシン**, 、構成する仮想マシンを選択します。 バーチャルマシンの状態は **オフ (オフ**)」と表示されます。 そうでない場合は、バーチャルマシンを右クリックし、 **[シャットダウン]** をクリックします。  
   
 3.  **アクション** ウィンドウの 仮想マシン名をクリックして **設定**します。  
   
-4.  ナビゲーション ウィンドウで、**メモリ**します。  
+4.  ナビゲーションウィンドウで、 **[メモリ]** をクリックします。  
   
-5.  **メモリ** ページで、設定、**スタートアップ RAM** 1 GB 以上を順にクリックします**OK**。  
+5.  **[メモリ]** ページで、**スタートアップ RAM**を 1 GB 以上に設定し、[ **OK]** をクリックします。  
   
 ### <a name="increase-the-memory-using-windows-powershell"></a>Windows PowerShell を使用してメモリを増やす  
   
-1.  Windows PowerShell を開きます。 (デスクトップで、次のようにクリックします**開始**の入力を開始および**Windows PowerShell**。)。  
+1.  Windows PowerShell を開きます。 (デスクトップから **[スタート]** をクリックし、「 **Windows PowerShell**」と入力を開始します)。  
   
 2.  右クリック **Windows PowerShell**  をクリック **管理者として実行**します。  
   
-3.  交換した後、次のコマンドを実行\<MyVM > 仮想マシンの名前に置き換えます。  
+3.  @No__t-0MyVM > を仮想マシンの名前に置き換えた後、次のコマンドを実行します。  
   
 ```  
 Set-VMMemory <MyVM> -StartupBytes 1GB  
 ```  
   
 ## <a name="see-also"></a>関連項目  
-[Set-vmmemory](https://technet.microsoft.com/library/hh848572.aspx)  
+[設定-VMMemory](https://technet.microsoft.com/library/hh848572.aspx)  
   
 
 

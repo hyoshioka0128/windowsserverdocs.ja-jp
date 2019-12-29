@@ -1,7 +1,7 @@
 ---
 title: Nano Server の IIS
 description: Nano Server 上での IIS の構成の詳細
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -12,12 +12,12 @@ ms.assetid: 16984724-2d77-4d7b-9738-3dff375ed68c
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 54c8d05c028cbca364b6a46052d12cdcb12c01b0
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 04c2d7eab2f149505758ab21f08cd6b8bdb74b85
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66443615"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360304"
 ---
 # <a name="iis-on-nano-server"></a>Nano Server の IIS
 
@@ -129,7 +129,7 @@ IIS の他の構成 (ASP.NET、PHP、Java の使用など) に関する一連の
 
    **dism /online /get-packages**  
 
-   "Release Type : Language Pack" と "Release Type : Feature Pack" の 2 か所に "Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000" が表示されます。  
+   "Release Type : Language Pack" と"Release Type : Feature Pack" の 2 か所に "Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000"が表示されます。  
 
 6. **net start w3svc** を実行するか、Nano Server を再起動して、W3SVC サービスを開始します。  
 

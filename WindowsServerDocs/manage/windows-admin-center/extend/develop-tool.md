@@ -1,47 +1,47 @@
 ---
 title: ツール拡張機能の開発
-description: 開発ツールの拡張機能 Windows Admin Center SDK (プロジェクト ホノルル)
+description: ツール拡張機能の開発 Windows 管理センター SDK (Project ホノルル)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 31d8dbd3df4c44b6e0a3780b022dfbd9fffdffec
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.prod: windows-server
+ms.openlocfilehash: de2cbf3a47771555eef02cd7d18f93b2b33227b3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452580"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406909"
 ---
 # <a name="develop-a-tool-extension"></a>ツール拡張機能の開発
 
->適用先:Windows Admin Center、Windows Admin Center プレビュー
+>適用先:Windows Admin Center、Windows Admin Center Preview
 
-ツールの拡張機能は、サーバーまたはクラスターなどの接続を管理する Windows Admin Center でユーザーが操作する主な方法です。 Windows Admin Center のホーム画面での接続 をクリックし、接続するととき、に、左側のナビゲーション ウィンドウでツールの一覧が表示し、されます。 ツールをクリックすると、ツールの拡張機能が読み込まれ、右側のウィンドウに表示されます。
+ツール拡張機能は、ユーザーがサーバーやクラスターなどの接続を管理するために Windows 管理センターと対話する主な方法です。 Windows 管理センターのホーム画面で接続をクリックして接続すると、左側のナビゲーションウィンドウにツールの一覧が表示されます。 ツールをクリックすると、ツールの拡張機能が読み込まれ、右側のウィンドウに表示されます。
 
-ツールの拡張機能が読み込まれるときに対象サーバーまたはクラスター上の WMI 呼び出しまたは PowerShell スクリプトを実行する UI に情報を表示し、ユーザー入力に基づいてコマンドを実行もできます。 ツールの拡張は、それが表示、各ソリューション用のツールのさまざまなセットを生成するソリューションを定義します。
+ツール拡張機能が読み込まれると、対象サーバーまたはクラスターで WMI 呼び出しまたは PowerShell スクリプトを実行し、UI に情報を表示したり、ユーザー入力に基づいてコマンドを実行したりできます。 ツールの拡張機能では、表示するソリューションを定義します。これにより、ソリューションごとに異なるツールセットが生成されます。
 
 > [!NOTE]
-> 別の拡張機能の種類に精通していないか。 詳細については、[機能拡張のアーキテクチャと拡張機能の種類](understand-extensions.md)します。
+> さまざまな拡張機能の種類に慣れていない場合は、 拡張[機能のアーキテクチャと拡張機能の種類](understand-extensions.md)の詳細については、こちらを参照してください。
 
 ## <a name="prepare-your-environment"></a>環境の準備
 
-既に、していない場合は[環境を準備する](prepare-development-environment.md)依存関係とすべてのプロジェクトに必要なグローバルの前提条件をインストールすることで。
+まだインストールしていない場合は、すべてのプロジェクトに必要な依存関係とグローバルな前提条件をインストールして[環境を準備](prepare-development-environment.md)します。
 
-## <a name="create-a-new-tool-extension-with-the-windows-admin-center-cli"></a>Windows Admin Center CLI を使用した新しいツールの拡張機能を作成します。 ##
+## <a name="create-a-new-tool-extension-with-the-windows-admin-center-cli"></a>Windows 管理センター CLI を使用して新しいツール拡張機能を作成する ##
 
-インストールされているすべての依存関係を作成したら、新しいツールの拡張機能を作成する準備が整いました。  作成またはプロジェクト ファイルを含むフォルダーを参照、コマンド プロンプトを開いておよびそのフォルダーを作業ディレクトリとして設定します。  以前にインストールされた Windows Admin Center CLI を使用して、次の構文で、新しい拡張機能を作成します。
+すべての依存関係をインストールしたら、新しいツール拡張機能を作成できます。  プロジェクトファイルが格納されているフォルダーを作成または参照し、コマンドプロンプトを開き、そのフォルダーを作業ディレクトリとして設定します。  以前にインストールされた Windows 管理センター CLI を使用して、次の構文で新しい拡張機能を作成します。
 
 ``` cmd
 wac create --company "{!Company Name}" --tool "{!Tool Name}"
 ```
 
-| Value | 説明 | 例 |
+| 値 | 説明 | 例 |
 | ----- | ----------- | ------- |
-| ```{!Company Name}``` | (スペース) を会社名 | ```Contoso Inc``` |
-| ```{!Tool Name}``` | (スペース) を含む、ツール名 | ```Manage Foo Works``` |
+| ```{!Company Name}``` | 会社名 (スペースを含む) | ```Contoso Inc``` |
+| ```{!Tool Name}``` | (スペースを含む) ツール名 | ```Manage Foo Works``` |
 
 次に使用方法の例を示します。
 
@@ -49,49 +49,49 @@ wac create --company "{!Company Name}" --tool "{!Tool Name}"
 wac create --company "Contoso Inc" --tool "Manage Foo Works"
 ```
 
-これは、ツールに指定されたプロジェクトにすべての必要なテンプレート ファイルをコピー、および、会社とツールの名前を持つファイルを構成します。 名前を使用して現在の作業ディレクトリ内の新しいフォルダーを作成します。  
+これにより、ツールで指定した名前を使用して現在の作業ディレクトリ内に新しいフォルダーが作成され、必要なすべてのテンプレートファイルがプロジェクトにコピーされ、会社名とツール名を使用してファイルが構成されます。  
 
-次に、先ほど作成したフォルダーにディレクトリを変更し、次のコマンドを実行して、必要なローカルの依存関係をインストールします。
+次に、作成したフォルダーにディレクトリを変更し、次のコマンドを実行して必要なローカルの依存関係をインストールします。
 
 ``` cmd
 npm install
 ```
 
-これが完了すると、Windows Admin Center に新しい拡張機能を読み込む必要があるすべてのものを設定します。 
+これが完了すると、Windows 管理センターに新しい拡張機能を読み込むために必要なすべての設定が完了します。 
 
-## <a name="add-content-to-your-extension"></a>拡張機能へのコンテンツを追加します。
+## <a name="add-content-to-your-extension"></a>拡張機能にコンテンツを追加する
 
-Windows Admin Center CLI を使用した拡張機能を作成するので、コンテンツをカスタマイズする準備が整いました。  例については、何ができるは、これらのガイドを参照してください。
+Windows 管理センター CLI を使用して拡張機能を作成したので、コンテンツをカスタマイズする準備ができました。  実行できる操作の例については、次のガイドを参照してください。
 
-- 追加、[空のモジュール](guides/add-module.md)
-- 追加、 [iFrame](guides/add-iframe.md)
+- 空の[モジュール](guides/add-module.md)を追加する
+- [IFrame](guides/add-iframe.md)を追加する
  
-さらに多くの例を参照して、 [SDK の GitHub サイト](https://aka.ms/wacsdk):
--  [開発者ツール](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools)Windows Admin Center にサイドロードできる完全に機能の拡張機能は、サンプルの機能とツール例を参照して、独自の拡張機能で使用できますの豊富なコレクションが含まれています。
+その他の例については、 [GITHUB SDK サイト](https://aka.ms/wacsdk)を参照してください。
+-  [開発者ツール](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools)は、完全に機能する拡張機能であり、Windows 管理センターにサイドロードすることができます。また、独自の拡張機能で参照して使用できる、サンプル機能とツール例の豊富なコレクションが含まれています。
 
-## <a name="customize-your-extensions-icon"></a>拡張機能のアイコンをカスタマイズします。
+## <a name="customize-your-extensions-icon"></a>拡張機能のアイコンをカスタマイズする
 
-ツールの一覧に、拡張機能のアイコンが表示されますをカスタマイズできます。  これを行うには、すべての変更```icon```エントリ```manifest.json```拡張機能。
+ツール一覧に表示される拡張機能のアイコンをカスタマイズできます。  これを行うには、拡張機能に対して ```manifest.json``` のすべての ```icon``` エントリを変更します。
 
 ``` json
 "icon": "{!icon-uri}",
 ```
 
-| Value | 説明 | Uri の例 |
+| 値 | 説明 | Uri の例 |
 | ----- | ----------- | ------- |
-| ```{!icon-uri}``` | アイコン リソースの場所 | ```assets/foo-icon.svg``` |
+| ```{!icon-uri}``` | アイコンリソースの場所 | ```assets/foo-icon.svg``` |
 
-注: 現時点では、カスタム アイコンは、側の開発モードで、拡張機能を読み込むときに表示されません。  この問題を回避するには、内容を削除```target```次のようにします。
+注: 現時点では、開発モードで拡張機能をサイドローディングするときに、カスタムアイコンは表示されません。  回避策として、次のように ```target``` の内容を削除します。
 
 ``` json
 "target": "",
 ```
 
-この構成に含まれている値を保持することが重要であるために、開発モードでのサイド ローディングの有効なのみ```target```し、拡張機能を公開する前に復元します。
+この構成は、開発モードでサイドローディングする場合にのみ有効です。したがって、```target``` に含まれる値を保持してから、拡張機能を発行する前に復元することが重要です。
 
-## <a name="build-and-side-load-your-extension"></a>ビルドと側は、拡張機能を読み込む
+## <a name="build-and-side-load-your-extension"></a>拡張機能をビルドしてサイドロードする
 
-次に、ビルドと側は、Windows Admin Center に、拡張機能を読み込みます。  コマンド ウィンドウを開き、ビルドする準備ができたし、ソース ディレクトリにディレクトリを変更します。
+次に、拡張機能をビルドして Windows 管理センターに読み込みます。  コマンドウィンドウを開き、ディレクトリをソースディレクトリに変更します。その後、ビルドする準備が整います。
 
 * 次のように gulp build および gulp serve を指定します。
 
@@ -116,6 +116,6 @@ Windows Admin Center CLI を使用した拡張機能を作成するので、コ�
 
 これで、プロジェクトは、名前の横に (side loaded) が追加された状態でツール一覧に表示されるようになります。
 
-## <a name="target-a-different-version-of-the-windows-admin-center-sdk"></a>別のバージョン、Windows Admin Center SDK の対象します。
+## <a name="target-a-different-version-of-the-windows-admin-center-sdk"></a>別のバージョンの Windows 管理センター SDK をターゲットにする
 
-拡張機能の最新の SDK の変更点とプラットフォームの変更を維持することは簡単です。  」を参照して[別のバージョンをターゲット](target-sdk-version.md)Windows Admin Center SDK の。
+SDK の変更とプラットフォームの変更によって拡張機能を最新の状態に保つことは簡単です。  [別のバージョン](target-sdk-version.md)の Windows 管理センター SDK をターゲットにする方法については、こちらを参照してください。

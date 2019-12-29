@@ -1,8 +1,8 @@
 ---
 title: 属性
-description: Windows コマンド」のトピック**属性**-表示、設定、またはディスクまたはボリュームの属性をクリアします。
+description: '**属性**に関する Windows コマンドのトピック-ディスクまたはボリュームの属性を表示、設定、またはクリアします。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b60599180808354fd27c2faa58655734ef79d777
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d0cdfbc5bcc60596c7e42d2668d4c2b8a9b4450b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883723"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382591"
 ---
 # <a name="attributes"></a>属性
 
 
 
-表示、設定、またはディスクまたはボリュームの属性をクリアします。
+ディスクまたはボリュームの属性を表示、設定、またはクリアします。
 
 ## <a name="syntax"></a>構文
 
@@ -37,10 +37,10 @@ Attributes volume
 
 |パラメーター|説明|
 |---------|-----------|
-|[属性のディスク](attributes-disk.md)|表示、設定、またはディスクの属性をクリアします。|
-|[ボリュームを属性します。](attributes-volume.md)|表示、設定、またはボリュームの属性をクリアします。|
+|[属性ディスク](attributes-disk.md)|ディスクの属性を表示、設定、またはクリアします。|
+|[属性のボリューム](attributes-volume.md)|ボリュームの属性を表示、設定、またはクリアします。|
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
 

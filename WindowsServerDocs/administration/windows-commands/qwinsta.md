@@ -1,8 +1,8 @@
 ---
 title: qwinsta
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1961cb2dbbcad378a5ef350f4be01a74aab9c96f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4ca046d50ba45b6052dda69f1bf4c26cb856bcb8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843473"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371817"
 ---
 # <a name="qwinsta"></a>qwinsta
 
@@ -27,12 +27,12 @@ ms.locfileid: "59843473"
 リモート デスクトップ セッション ホスト (RD セッション ホスト) サーバー上のセッションに関する情報を表示します。
 
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 新機能については、最新バージョンについてを参照してください。 [Windows Server 2012 でのリモート デスクトップ サービスでどのような s の新しい](https://technet.microsoft.com/library/hh831527)、Windows Server TechNet ライブラリです。
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの[Windows Server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527) を参照してください。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 このコマンドと同じ、 **クエリ セッション** コマンドです。
 
-#### <a name="additional-references"></a>その他の参照
-[クエリ セッション](query-session.md)
-[コマンドライン構文キー](command-line-syntax-key.md)
-[Remote Desktop Services&#40;ターミナル サービス&#41;コマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)
+#### <a name="additional-references"></a>その他の参照情報
+[クエリセッション](query-session.md)
+[コマンドライン構文のキー](command-line-syntax-key.md)
+[リモートデスクトップサービス&#40;ターミナルサービス&#41;のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)

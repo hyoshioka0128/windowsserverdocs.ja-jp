@@ -6,14 +6,14 @@ ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 99f1a9a32ef69ba8322b2dba902003f8a750a4d2
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 110e1442b6660c24dc1e3fd9649138390117ffd6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66811647"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406817"
 ---
 # <a name="what-is-windows-admin-center"></a>Windows Admin Center とは
 

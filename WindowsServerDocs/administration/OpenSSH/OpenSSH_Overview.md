@@ -2,35 +2,35 @@
 ms.date: 01/07/2019
 contributor: damaerteMSFT
 author: maertendMSFT
-keywords: OpenSSH を SSH での Win32 OpenSSH
-title: Windows で OpenSSH
+keywords: OpenSSH、SSH、Win32-OpenSSH
+title: Windows での OpenSSH
 ms.product: w10
 ms.openlocfilehash: c6563fbe4fe69acad4d295a3f7fe166e92d38444
 ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/20/2019
 ms.locfileid: "67280057"
 ---
-# <a name="openssh-in-windows"></a>Windows で OpenSSH
+# <a name="openssh-in-windows"></a>Windows での OpenSSH
 
-OpenSSH は、Linux の管理者およびその他の非 Windows リモート システムのクロス プラットフォームの管理に使用する Secure Shell (SSH) ツールのオープン ソース バージョンです。 OpenSSH は、2018 年の秋の時点で Windows に追加されたおよび Windows 10 および Windows Server 2019 が含まれます。 
+OpenSSH は、Linux と非 Windows の管理者が、リモート システムのクロスプラットフォーム管理を行うために使用するオープンソース バージョンの Secure Shell (SSH) ツールです。 2018 年の秋以降、Windows に OpenSSH が追加され、Windows 10 と Windows Server 2019 に含まれています。 
 
-SSH は、クライアント サーバー アーキテクチャ、ユーザーが使用システムがクライアントであり、管理されているリモート システムがサーバーに基づきます。 OpenSSH には、さまざまなコンポーネントをリモート システムの管理のセキュリティで保護された、簡単なアプローチを提供するよう設計されたツールが含まれています。 など。
+SSH は、ユーザーが操作しているシステムがクライアントであり、管理対象のリモート システムがサーバーである、クライアント/サーバー アーキテクチャに基づいています。 OpenSSH には、次のようなリモート システム管理に安全で簡単なアプローチを提供するように設計されたさまざまなコンポーネントとツールが含まれています。
 
-* これは、リモートで管理されているシステムで実行する必要がある SSH サーバー コンポーネント、sshd.exe 
-* これは、ユーザーのローカル システムで実行されている SSH クライアント コンポーネント、ssh.exe
-* ssh-keygen.exe は、生成され、管理の SSH 認証キーに変換します 
-* ssh-agent.exe 公開キー認証に使用される秘密キーを格納します。
-* ssh-add.exe は、秘密キーをサーバーで許可されている、一覧に追加されます。
-* ssh-keyscan.exe ホストの数からの SSH の公開ホスト キーの収集を支援
-* sftp.exe は、セキュリティで保護されたファイル転送プロトコルを提供し、SSH 経由で実行されるサービスです。
-* scp.exe が SSH で実行されているファイルのコピー ユーティリティです。
+* sshd.exe。リモートで管理されるシステム上で実行されている必要がある SSH サーバー コンポーネントです。 
+* ssh.exe: ユーザーのローカル システム上で実行される SSH クライアント コンポーネントです
+* ssh-keygen.exe: SSH 用の認証キーを生成、管理、および変換します 
+* ssh-agent.exe: 公開キーの認証に使用される秘密キーを格納します
+* ssh-add.exe: サーバーで許可される一覧に秘密キーを追加します
+* ssh-keyscan.exe: 複数のホストから公開 SSH ホスト キーを収集するのに役立ちます
+* sftp.exe: セキュア ファイル転送プロトコルを提供し、SSH 経由で実行されます
+* scp.exe： SSH で実行されるファイル コピー ユーティリティです
 
-このセクションでは、OpenSSH をインストール、および Windows に固有の構成と使用例を含む、Windows で使用する方法について説明します。 トピックでは、次に示します。
-* インストールと Windows Server 2019 および Windows 10 の OpenSSH をアンインストールします。
+このセクションのドキュメントでは、Windows での OpenSSH の使用方法 (インストール、Windows 固有の構成、およびユース ケースなど) を中心に説明します。 次のトピックがあります。
+* Windows Server 2019 および Windows 10 用 OpenSSH のインストールとアンインストール
 
-OpenSSH の一般的な機能の追加の詳細なドキュメントはオンラインで[OpenSSH.com](https://www.openssh.com/manual.html)します。 
+OpenSSH の一般的な 機能に関するその他の詳細なドキュメントについては、[OpenSSH.com](https://www.openssh.com/manual.html) でオンラインで確認できます。 
 
-マスター [OpenSSH オープン ソース プロジェクト](https://www.openssh.com)OpenBSD プロジェクトの開発者によって管理されます。 このプロジェクトの Microsoft のフォークが[GitHub](https://github.com/PowerShell/openssh-portable)します。
-Windows OpenSSH に関するフィードバックのことし、で GitHub の issue を作成して指定することができます、 [OpenSSH GitHub リポジトリ](https://github.com/PowerShell/openssh-portable)します。 
+マスター [OpenSSH オープン ソース プロジェクト](https://www.openssh.com) は、OpenBSD プロジェクトで開発者によって管理されています。 このプロジェクトの Microsoft フォークは [GitHub](https://github.com/PowerShell/openssh-portable) にあります。
+Windows OpenSSH に関するフィードバックをお寄せください。[OpenSSH GitHub リポジトリ](https://github.com/PowerShell/openssh-portable)で GitHub Issue を作成することで提供できます。 

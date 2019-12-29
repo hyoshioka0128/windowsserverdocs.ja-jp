@@ -7,47 +7,47 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f6d896213708f8c3ec5de44a1f85fb4ebd86b8c0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5b017582dad68938377fde4055d9a37b0c0af29b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819073"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402741"
 ---
 # <a name="creating-a-site-design"></a>サイト設計の作成
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-サイトの設計を作成するには、サイトにするどの場所を決定する、サイト オブジェクトを作成する、サブネット オブジェクトを作成する、およびサイトとサブネットの関連付けが含まれます。  
+サイトの設計を作成するには、サイトにする場所の決定、サイトオブジェクトの作成、サブネットオブジェクトの作成、およびサブネットのサイトへの関連付けを行います。  
   
-## <a name="deciding-which-locations-will-become-sites"></a>サイトにする場所を決定します。
+## <a name="deciding-which-locations-will-become-sites"></a>サイトになる場所の決定
 
-次のようにサイトを作成する場所を決定します。  
+次のように、サイトを作成する場所を決定します。  
   
-- ドメイン コント ローラーを配置するすべての場所のサイトを作成します。 ドメイン コント ローラーが含まれている場所を識別するために、「ドメイン コント ローラー配置」(DSSTOPO_4.doc) ワークシートに記載されている情報を参照してください。  
-- サイトの作成を必要とするアプリケーションを実行しているサーバーを含む場所に対してサイトを作成します。 など分散ファイル システム名前空間 (DFSN)、特定のアプリケーションでは、サイト オブジェクトを使用して、クライアントに最も近いサーバーを探します。  
+- ドメインコントローラーを配置するすべての場所のサイトを作成します。 ドメインコントローラーを含む場所を特定するには、「ドメインコントローラーの配置」 (DSSTOPO_4 .doc) ワークシートに記載されている情報を参照してください。  
+- サイトを作成する必要があるアプリケーションを実行しているサーバーを含む場所のサイトを作成します。 分散ファイルシステム名前空間 (DFSN) などの特定のアプリケーションでは、サイトオブジェクトを使用して、クライアントに最も近いサーバーを検索します。  
 
    > [!NOTE]  
-   > 高速で信頼性の高い接続での近接の組織に複数のネットワークした場合、1 つの Active Directory サイトでこれらのネットワークのサブネットのすべてを含めることができます。 たとえば、ラウンドト リップの戻り値が異なる 2 つのサーバー間の待機時間をネットワーク サブネットが 10 ミリ秒か、以下の場合、同じ Active Directory サイトで両方のサブネットを含めることができます。 2 つの場所間のネットワーク待機時間が 10 ミリ秒よりも大きい場合は、1 つの Active Directory サイト内のサブネットを含めないでください。 でもと待機時間は 10 ミリ秒または以下の場合、Active Directory ベースのアプリケーション用にサイト間のトラフィックを分割する場合は、個別のサイトをデプロイすることもできます。  
+   > 組織に、高速で信頼性の高い接続と近接した複数のネットワークがある場合は、それらのネットワークのすべてのサブネットを1つの Active Directory サイトに含めることができます。 たとえば、異なるサブネットにある2つのサーバー間のラウンドトリップがネットワーク待機時間を返す場合、同じ Active Directory サイトに両方のサブネットを含めることができます。 2つの場所の間のネットワーク待機時間が10ミリ秒を超える場合は、サブネットを1つの Active Directory サイトに含めないでください。 待機時間が10ミリ秒以下の場合でも、サイト間のトラフィックを Active Directory ベースのアプリケーション用に分割する場合は、個別のサイトを展開することを選択できます。  
 
-- サイトでの場所に必要ない場合は、場所が、最大のワイド エリア ネットワーク (WAN) の速度と利用可能な帯域幅をサイトに場所のサブネットを追加します。  
+- ある場所にサイトが必要ない場合は、場所のサブネットをサイトに追加して、その場所のワイドエリアネットワーク (WAN) の最大速度と使用可能な帯域幅を指定します。  
   
-サイトとのネットワーク アドレスとサブネット マスクそれぞれの場所となる場所を文書化します。 サイトを文書化するために、ワークシートでは、次を参照してください[ジョブ エイドの Windows Server 2003 展開キット](https://go.microsoft.com/fwlink/?LinkID=102558)、Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip をダウンロードして"関連付けサブネットでを開きます。サイト"(DSSTOPO_6.doc)。  
+サイトになるドキュメントの場所と、各場所内のネットワークアドレスとサブネットマスク。 サイトの文書化に役立つワークシートについては、「 [Windows Server 2003 Deployment Kit 用のジョブエイド](https://go.microsoft.com/fwlink/?LinkID=102558)」を参照して Job_Aids_Designing_and_Deploying_Directory_and_Security_Services .zip をダウンロードし、「サブネットとサイトの関連付け」 (DSSTOPO_6) を参照してください。  
   
-## <a name="creating-a-site-object-design"></a>サイト オブジェクト設計の作成
+## <a name="creating-a-site-object-design"></a>サイトオブジェクトの設計を作成する
 
-サイトを作成することが決定されました、すべての場所には、Active Directory Domain Services (AD DS) にサイト オブジェクトを作成する予定です。 「に関連付けるサブネットをサイト」ワークシート内のサイトになるドキュメントの場所。  
+サイトの作成を決定した場所ごとに、Active Directory Domain Services (AD DS) でサイトオブジェクトの作成を計画します。 "サブネットとサイトの関連付け" ワークシート内のサイトになるドキュメントの場所。  
   
-サイト オブジェクトを作成する方法の詳細については、記事を参照してください。[サイトを作成する](https://go.microsoft.com/fwlink/?LinkId=107067)します。  
+サイトオブジェクトの作成方法の詳細については、「[サイトを作成](https://go.microsoft.com/fwlink/?LinkId=107067)する」を参照してください。  
   
-## <a name="creating-a-subnet-object-design"></a>サブネット オブジェクト設計の作成
+## <a name="creating-a-subnet-object-design"></a>サブネットオブジェクトの設計を作成する
 
-すべての IP サブネットと各場所に関連付けられたサブネット マスクを使用してには、サイト内のすべての IP アドレスを表す AD DS にサブネット オブジェクトを作成する予定です。  
+各場所に関連付けられているすべての IP サブネットとサブネットマスクについて、サイト内のすべての IP アドレスを表す AD DS でサブネットオブジェクトを作成することを計画します。  
   
-ネットワークの IP サブネットとサブネット マスクに関する情報がネットワーク プレフィックス長表記形式に変換が自動的に Active Directory サブネット オブジェクトを作成するときに<IP address> /<prefix length>します。 たとえば、ネットワーク IP バージョン 4 (IPv4) アドレス 172.16.4.0 サブネット 255.255.252.0 の 172.16.4.0/22 として表示されます。 IPv4 アドレスだけでなく Windows Server 2008 もサポートしている IP version 6 (IPv6) のサブネット プレフィックス、たとえば、3ffe:ffff:0:c 000::/64 です。 各場所の IP サブネットの詳細については、「場所とサブネット」(DSSTOPO_2.doc) のワークシートを参照してください[ネットワーク情報の収集](../../ad-ds/plan/Collecting-Network-Information.md)と[付録 a:。場所とサブネットのプレフィックス](Appendix-A--Locations-and-Subnet-Prefixes.md)します。  
+Active Directory サブネットオブジェクトを作成すると、ネットワーク IP サブネットとサブネットマスクに関する情報が、<prefix length>/<IP address>ネットワークプレフィックス長表記形式に自動的に変換されます。 たとえば、サブネットマスク255.255.252.0 を持つネットワーク IP version 4 (IPv4) アドレス172.16.4.0 は、172.16.4.0/22 として表示されます。 IPv4 アドレスに加えて、Windows Server 2008 では IP version 6 (IPv6) のサブネットプレフィックスもサポートされています。たとえば、3FFE: FFFF: 0: C000::/64 のようになります。 各場所の IP サブネットの詳細については、「[ネットワーク情報の収集](../../ad-ds/plan/Collecting-Network-Information.md)」および「[付録 a: 場所とサブネットプレフィックス](Appendix-A--Locations-and-Subnet-Prefixes.md)」の「場所とサブネット」 (DSSTOPO_2 .doc) ワークシートを参照してください。  
   
-サブネットを決定する「を決定する場所になるサイト」セクションでは「に関連付けるサブネットをサイト」(DSSTOPO_6.doc) ワークシートを参照して、サイト オブジェクトの場合は、各サブネット オブジェクトがどのサイトと関連付ける関連付けします。 Active Directory サブネット オブジェクトを「に関連付けるサブネットをサイト」(DSSTOPO_6.doc) ワークシート内の各場所に関連付けられているドキュメントです。  
+各サブネットオブジェクトをサイトオブジェクトに関連付けるには、「サイトになる場所を決定する」の「サブネットをサイトに関連付ける」 (DSSTOPO_6 .doc) ワークシートを参照して、どのサブネットをどのサイトに関連付けるかを決定します。 "サブネットをサイトに関連付ける" (DSSTOPO_6 .doc) ワークシートの各場所に関連付けられている Active Directory サブネットオブジェクトを文書化します。  
   
-サブネット オブジェクトを作成する方法の詳細については、記事を参照してください。[サブネットを作成する](https://go.microsoft.com/fwlink/?LinkId=107068)します。
+サブネットオブジェクトを作成する方法の詳細については、「[サブネットの作成](https://go.microsoft.com/fwlink/?LinkId=107068)」を参照してください。

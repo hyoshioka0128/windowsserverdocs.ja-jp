@@ -1,8 +1,8 @@
 ---
 title: serverweroptin
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 29545be99b14042d16a6f3a4118e0746f18b14ab
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a7d5791e059d31e416f848f6e8df648c8f9bd27d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869643"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371020"
 ---
 # <a name="serverweroptin"></a>serverweroptin
 
@@ -32,7 +32,7 @@ serverweroptin [/query] [/detailed] [/summary]
 ### <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-|/query|現在の設定を確認します。|
+|/query|現在の設定を検証します。|
 |詳細な/|送信では、レポートが自動的に詳しく説明します。|
 |概要/|概要レポートを自動的に送信します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
@@ -49,6 +49,6 @@ serverweroptin /detailed
 ```
 serverweroptin /summary
 ```
-## <a name="additional-references"></a>その他の参照
--   [コマンドライン構文キー](command-line-syntax-key.md)
+## <a name="additional-references"></a>その他の参照情報
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)
 

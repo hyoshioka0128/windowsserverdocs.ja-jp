@@ -1,8 +1,8 @@
 ---
 title: setlocal
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70e58e3c3a7c3de594c620f7530816b57727d4c3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 997c996854f488bb1776f135e3288e3b094e683c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868863"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384093"
 ---
 # <a name="setlocal"></a>setlocal
 
@@ -38,13 +38,13 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
 
 |引数|説明|
 |--------|-----------|
-|使って|一致するまでコマンド拡張機能を有効 **endlocal** する前に設定に関係なく、コマンドが発生しました、 **setlocal** コマンドが実行されました。|
+|enableextensions|一致するまでコマンド拡張機能を有効 **endlocal** する前に設定に関係なく、コマンドが発生しました、 **setlocal** コマンドが実行されました。|
 |disableextensions|一致するまでコマンド拡張機能を無効に **endlocal** する前に設定に関係なく、コマンドが発生しました、 **setlocal** コマンドが実行されました。|
 |enabledelayedexpansion|により、一致するまで遅延環境変数の拡張 **endlocal** する前に設定に関係なく、コマンドが発生しました、 **setlocal** コマンドが実行されました。|
 |disabledelayedexpansion|一致するまで遅延環境変数の拡張を無効に **endlocal** する前に設定に関係なく、コマンドが発生しました、 **setlocal** コマンドが実行されました。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   使用して **setlocal**
 
@@ -57,13 +57,13 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
     1 つ以上を持つことができます **setlocal** または **endlocal** コマンド バッチ プログラム (つまり、入れ子になったコマンド) を実行します。
 -   バッチ ファイルでコマンド拡張機能のためのテスト
 
-    **Setlocal** ERRORLEVEL 変数を設定します。 渡した場合 {**使って** | **disableextensions**} または {**enabledelayedexpansion** | **disabledelayedexpansion**}、ERRORLEVEL 変数に設定されている **0** (ゼロ)。 設定されている場合は、 **1**します。 バッチ スクリプトでこの情報を使用すると、次の例で示すように拡張機能は、使用できるかどうかを決定します。  
+    **Setlocal** ERRORLEVEL 変数を設定します。 渡した場合 {**enableextensions** | **disableextensions**} または {**enabledelayedexpansion** | **disabledelayedexpansion**}、ERRORLEVEL 変数に設定されている **0** (ゼロ)。 設定されている場合は、 **1**します。 バッチ スクリプトでこの情報を使用すると、次の例で示すように拡張機能は、使用できるかどうかを決定します。  
     ```
     setlocal enableextensions
     verify other 2>nul
     if errorlevel 1 echo Unable to enable extensions
     ```  
-    **Cmd** コマンド拡張機能を無効にすると、ERRORLEVEL 変数を設定しない、 **確認** に無効な引数を使用する場合、コマンドを 0 以外の値を ERRORLEVEL 変数を初期化します。 またを使用する場合、 **setlocal** コマンドの引数に {**使って** | **disableextensions**} または {**enabledelayedexpansion** | **disabledelayedexpansion**} と、ERRORLEVEL 変数を設定しません **1**, 、コマンド拡張機能は使用できません。
+    **Cmd** コマンド拡張機能を無効にすると、ERRORLEVEL 変数を設定しない、 **verify** に無効な引数を使用する場合、コマンドを 0 以外の値を ERRORLEVEL 変数を初期化します。 またを使用する場合、 **setlocal** コマンドの引数に {**enableextensions** | **disableextensions**} または {**enabledelayedexpansion** | **disabledelayedexpansion**} と、ERRORLEVEL 変数を設定しません **1**, 、コマンド拡張機能は使用できません。
 
 ## <a name="BKMK_examples"></a>例
 
@@ -84,4 +84,4 @@ start notepad c:\superapp.out
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

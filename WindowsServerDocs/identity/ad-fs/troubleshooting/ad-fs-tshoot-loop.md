@@ -1,54 +1,54 @@
 ---
-title: AD FS のトラブルシューティング - ループが検出
-description: このドキュメントは、ループの検出のトラブルシューティングを行う方法を説明します
+title: AD FS トラブルシューティング-ループ検出
+description: このドキュメントでは、ループ検出をトラブルシューティングする方法について説明します。
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 02/21/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cc8eeb11e44da3b8f26b1ab94143c189bca9ed38
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2f8842dc53756cc4f65b6d6794a8c4952e111c00
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830913"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385337"
 ---
-# <a name="ad-fs-troubleshooting---loop-detection"></a>AD FS のトラブルシューティング - ループが検出 
+# <a name="ad-fs-troubleshooting---loop-detection"></a>AD FS トラブルシューティング-ループ検出 
  
-AD FS でのループには、証明書利用者は継続的に有効なセキュリティ トークンを拒否し、AD FS にリダイレクトするときに発生します。
+AD FS のループは、証明書利用者が有効なセキュリティトークンを継続的に拒否し、AD FS にリダイレクトするときに発生します。
 
-## <a name="loop-detection-cookie"></a>ループ検出 cookie
-これが事態を防ぐためにループ検出 cookie と呼ばれる AD FS を実装しました。 既定では、AD FS は web のパッシブ クライアントという名前にクッキーを書き込みます**MSISLoopDetectionCookie**します。 この cookie はタイムスタンプ値を保持し、トークンの数は、値を発行します。  これにより、AD FS の特定の期間内のフェデレーション サービスが何度もクライアントにアクセスしたどのくらいの頻度とどのように追跡できます。
+## <a name="loop-detection-cookie"></a>ループ検出クッキー
+これが起こらないように、AD FS では、ループ検出クッキーと呼ばれるものが実装されています。 既定では、AD FS は**MSISLoopDetectionCookie**という名前の web パッシブクライアントに cookie を書き込みます。 この cookie には、タイムスタンプ値と、発行されたトークンの数が格納されます。  これにより、AD FS が特定の期間内にクライアントがフェデレーションサービスにアクセスした頻度と回数を追跡できます。
 
-パッシブ クライアントにアクセスする場合は 5 倍 (5) 内で 20 秒、AD FS トークンをフェデレーション サービスに、次のエラーがスローされます。
+パッシブクライアントがトークンのフェデレーションサービスを20秒以内に5回アクセスする場合、AD FS は次のエラーをスローします。
 
-**MSIS7042:同じクライアント ブラウザー セッションが行われた '{0}'、最後の要求'{1}' 秒。詳細については、管理者にお問い合わせください。**
+**MSIS7042: 同じクライアントブラウザーセッションが、最後の '{1}' 秒間に '{0}' 要求を行いました。詳細については、管理者に問い合わせてください。**
 
-誤動作が、AD FS によって発行されたトークンは正常に使用していないことをアプリケーションに証明書利用者によって多くの場合、原因は、無限ループに入ると、アプリケーションが送信パッシブ クライアント、AD FS に繰り返し、新しいトークンです。  AD FS はパッシブ クライアント新しいトークンが発行するたびに、20 秒で 5 つの要求を超えていない限り、します。 
+無限ループに入るのは、多くの場合、AD FS によって発行されたトークンを正常に使用できない、正常に動作していない証明書利用者アプリケーションによって発生し、アプリケーションが新しいトークンに対して AD FS にパッシブクライアントを繰り返し送信しているためです。  AD FS は、20秒以内に5つの要求を超えない限り、パッシブクライアントに毎回新しいトークンを発行します。 
 
-## <a name="adjusting-the-loop-detection-cookie"></a>ループの検出の cookie を調整します。
-PowerShell を使用して、トークンの発行元の値および timespan の値の数を変更することができます。
+## <a name="adjusting-the-loop-detection-cookie"></a>ループ検出クッキーの調整
+PowerShell を使用して、発行されるトークンの数と timespan 値を変更できます。
 
 ```powershell
 Set-AdfsProperties -LoopDetectionMaximumTokensIssuedInterval 5  -LoopDetectionTimeIntervalInSeconds 20
 ```
-最小値**LoopDetectionMaximumTokensIssuedInterval**は 1 です。
+**LoopDetectionMaximumTokensIssuedInterval**の最小値は1です。
 
-最小値**LoopDetectionTimeIntervalInSeconds**は 5 です。
+**LoopDetectionTimeIntervalInSeconds**の最小値は5です。
 
-パフォーマンス テストを行っているときも、ループの検出を無効にすることができます。
+また、パフォーマンステストを実行するときにループ検出を無効にすることもできます。
 
 ```powershell
 Set-AdfsProperties -EnableLoopDetection $false
 ```
 
 >[!IMPORTANT]
->これは、無限ループ状態に入るをユーザーが妨げられるこのループの検出を完全に無効にすること勧めしません。
+>ループの検出を完全に無効にすることはお勧めしません。これにより、ユーザーが無限ループ状態に入るのを防ぐことができます。
 
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [AD FS のトラブルシューティング](ad-fs-tshoot-overview.md)
 

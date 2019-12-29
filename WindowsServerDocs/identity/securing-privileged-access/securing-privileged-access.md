@@ -1,7 +1,7 @@
 ---
 title: 特権アクセスの保護
-description: 特権アクセスの保護を段階的なアプローチ
-ms.prod: windows-server-threshold
+description: 特権アクセスをセキュリティで保護するための段階的アプローチ
+ms.prod: windows-server
 ms.topic: conceptual
 ms.assetid: f5dec0c2-06fe-4c91-9bdc-67cc6a3ede60
 ms.date: 02/25/2019
@@ -9,65 +9,65 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 0d54a94d51a4d1e0a1d28f78ec39bf16bc3d9100
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6ff22d0563fa11aa633004966b2cd2648ba5877
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822013"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357705"
 ---
 # <a name="securing-privileged-access"></a>特権アクセスの保護
 
 >適用先:Windows Server
 
-特権アクセスをセキュリティで保護することは、現代の組織においてビジネス資産のセキュリティ保証を確立するための重要な第一歩です。 IT 組織内のほとんどまたはすべてのビジネス資産のセキュリティは、管理、管理、および開発するために使用する特権アカウントの整合性に依存します。 サイバー攻撃者は、これらのアカウントおよびデータとなどの資格情報の盗難攻撃を使用してシステムにアクセスする特権アクセスの他の要素に多くの場合、対象[Pass the Hash、Pass the Ticket](https://www.microsoft.com/pth)します。
+特権アクセスをセキュリティで保護することは、現代の組織においてビジネス資産のセキュリティ保証を確立するための重要な第一歩です。 IT 組織内のほとんどまたはすべてのビジネス資産のセキュリティは、管理や開発に使用される特権アカウントの整合性に依存します。 サイバー攻撃者は、多くの場合これらのアカウントや特権アクセスの他の要素を攻撃の標的にし、[Pass-the-Hash および Pass-the-Ticket](https://www.microsoft.com/pth) のような資格情報を盗難する攻撃を使用して、データやシステムへのアクセスを取得します。
 
-敵対者に対して特権アクセスを保護するには、これらのシステム リスクからを分離する完全かつ熟慮されたアプローチを採用する必要があります。
+断固とした敵対者に対して特権アクセス権を保護するには、これらのシステムからリスクを切り離すための完全で十分に考慮されたアプローチを採用する必要があります。
 
 ## <a name="what-are-privileged-accounts"></a>特権アカウントとは
 
-それらをセキュリティで保護する方法について説明する前に、特権アカウントを定義することができます。
+セキュリティで保護する方法について説明する前に、特権アカウントを定義しましょう。
 
-Active Directory Domain Services の管理者はこれらのアカウントのセキュリティ侵害の重要なビジネス リスクを行うのでは、IT 組織では、ほとんどまたはすべての資産を直接的または間接的なアクセスをいるような特権を持つアカウント。
+Active Directory Domain Services の管理者のような特権アカウントは、IT 組織内のほとんどまたはすべての資産に直接または間接的にアクセスできるため、これらのアカウントのセキュリティ侵害は重大なビジネス リスクになります。
 
-## <a name="why-securing-privileged-access-is-important"></a>なぜ特権アクセスをセキュリティで保護することが重要ですか。
+## <a name="why-securing-privileged-access-is-important"></a>特権アクセスのセキュリティ保護が重要な理由
 
-すべての組織に迅速にアクセスする Active Directory (AD) には、データが対象となるようにシステムへのアクセス権限でサイバー攻撃フォーカスします。 従来のセキュリティの手法が、主要なセキュリティ境界としてネットワークとファイアウォールに重点を置いて、ネットワーク セキュリティの有効性が 2 つの傾向によって大幅に低下しました。
+サイバー攻撃は、組織の標的とするすべてのデータに迅速にアクセスするために、Active Directory (AD) のようなシステムの特権アクセスに焦点を合わせます。 従来のセキュリティの手法は、主要なセキュリティ境界としてネットワークとファイアウォールを重視してきましたが、次の 2 つの傾向によって、ネットワーク セキュリティの有効性は大幅に低下しました。
 
-* 組織がデータをホストしていると、モバイル エンタープライズ Pc、タブレット、携帯電話などのデバイスでの従来のネットワークの境界外のリソースがクラウド サービス、および独自デバイス (BYOD)
+* 組織はデータやリソースを、従来のネットワークの境界外にあるモバイル エンタープライズ PC 、携帯電話やタブレットなどのデバイス、クラウド サービスおよび Bring Your Own Device (BYOD) でホストしています
 * 敵対者は、フィッシングやその他の Web および電子メール攻撃を通じて、ネットワーク境界内のワークステーションへのアクセスを入手する、一貫性のある継続的な能力を実証しています。
 
-これらの要因の認証と承認から最新のセキュリティ境界を構築するには、id コントロールだけでなく、従来のネットワーク境界の戦略が必要になります。 セキュリティの境界をここでは、一貫性のある資産とそれらの脅威についての間でのコントロールのセットとして定義されます。 特権アカウントが効果的に管理この新しいセキュリティ境界の特権アクセスを保護することが重要であるようにします。
+これらの要因により、従来のネットワーク境界戦略に加えて、認証および承認 ID 制御から最新のセキュリティ境界を構築する必要があります。 ここでのセキュリティ境界は、資産とそれらに対する脅威との間の一貫した制御のセットとして定義されています。 特権アカウントは実際上この新しいセキュリティ境界の管理下におかれるため、特権アクセスを保護することが重要になります。
 
 ![組織の ID 層を示す図](../media/securing-privileged-access/PAW_LP_Fig2.JPG)
 
-管理アカウントの制御を取得した攻撃者は、次のように、対象となる組織への影響を向上させるそれらの特権を使用できます。
+管理アカウントを制御できるようになった攻撃者は、次の図のように、それらの権限を使用し、対象となる組織への影響を高めることができます。
 
 ![管理アカウントを制御できるようになった敵対者は、それらの権限を使用し、対象となる組織を犠牲にして、利益を追求できることを示す図](../media/securing-privileged-access/PAW_LP_Fig3.JPG)
 
 次の図は、2 つのパスを示しています。
 
-* 電子メールと web 閲覧や日々 の作業などのリソースへのアクセスを特権のない標準ユーザー アカウントが使用されている"blue"パスが完了しました。
+* "青色" のパス。メールや Web 閲覧、日単位の作業など、リソースへの非特権アクセスには、標準ユーザー アカウントを使用します。
 
    > [!NOTE]
-   > 後で説明されている青色のパス項目は、管理者アカウントを越える保護機能が広範な環境を示します。
+   > 後で説明する青色のパス項目は、管理者アカウントを超えて拡張される広範な環境保護を示しています。
 
-* "Red"のパスをフィッシングやその他の web および電子メール攻撃のリスクを軽減するセキュリティを強化したデバイスの特権アクセスが発生します。
+* "赤色" のパス。フィッシングやその他の Web およびメール攻撃のリスクを軽減するために、特権アクセスはセキュリティが強化されたデバイスで発生します。
 
-![管理用 web の閲覧や電子メールへのアクセスなど、危険度の高い標準ユーザー タスクから特権アクセスのタスクを分離するロードマップを確立する個別の"path"を示す図](../media/securing-privileged-access/PAW_LP_Fig4.JPG)
+![Web の閲覧やメールへのアクセスのような危険度の高い標準ユーザーのタスクから特権アクセスのタスクを分離するために、ロードマップによって確立される管理用の個別の "パス" を示す図](../media/securing-privileged-access/PAW_LP_Fig4.JPG)
 
-## <a name="securing-privileged-access-roadmap"></a>特権アクセスのロードマップをセキュリティで保護します。
+## <a name="securing-privileged-access-roadmap"></a>特権アクセスのセキュリティ保護のロードマップ
 
-ロードマップは、既にデプロイした Microsoft テクノロジの使用、セキュリティを強化し、サード パーティ製のセキュリティ ツールが既に展開したを統合するクラウド テクノロジの活用を最大化する設計されています。
+ロードマップは、既に展開されている Microsoft テクノロジを最大限に利用し、クラウド テクノロジを活用してセキュリティを向上させ、既に展開されている可能性のあるサード パーティ製のセキュリティ ツールを統合するように設計されています。
 
-Microsoft の推奨事項のロードマップは、3 つのフェーズに分かれています。
+Microsoft が推奨するロードマップは、次の 3 つのフェーズに分かれています。
 
-* [フェーズ 1:最初の 30 日]()
-   * 意味のある正の値への影響をすばやく有効になります。
-* [フェーズ 2:90 日間]()
-   * 増分大幅に向上します。
-* [フェーズ 3:進行中]()
-   * セキュリティの向上と sustainment します。
+* [フェーズ 1: 最初の 30 日間]()
+   * 有意義なプラスの影響を伴う迅速な勝利。
+* [フェーズ 2: 90 日間]()
+   * 大幅な漸進的な改善。
+* [フェーズ 3: 継続]()
+   * セキュリティの向上と維持。
 
 このロードマップは、これらの攻撃と解決方法の実装に関する経験に基づいて、最も効果的で最も迅速な実装をスケジュールするように、優先順位が設定されています。 
 
@@ -76,101 +76,99 @@ Microsoft では、断固とした敵対者に対して特権アクセスをセ�
 > [!NOTE]
 > 特権アクセスをセキュリティで保護するには、技術コンポーネント (ホストの防御、アカウントの保護、ID 管理など) を含むさまざまな要素だけでなく、プロセスへの変更や、管理業務と知識が必要になります。 ロードマップのタイムラインは概算であり、お客様の実装の経験に基づきます。 お客様の環境と、変更管理プロセスの複雑さによって、組織内で所要期間が異なることがあります。
 
-## <a name="phase-1-quick-wins-with-minimal-operational-complexity"></a>フェーズ 1:最小限の運用の複雑さのクイック wins
+## <a name="phase-1-quick-wins-with-minimal-operational-complexity"></a>フェーズ 1: 操作の複雑さを最小限に抑えた迅速な勝利
 
-ロードマップの第 1 段階は、資格情報の盗難や誤用の最も頻繁に使用される攻撃手法を迅速に軽減する重視されています。 フェーズ 1 では、約 30 日以内に実装する設計されており、この図に示すようには。
+ロードマップのフェーズ 1 は、資格情報の盗難や悪用で最も頻繁に使用される攻撃手法を迅速に軽減することに焦点を当てています。 フェーズ 1 は約 30 日間で実装するよう設計されており、以下の図に内容を示しています。
 
-![フェーズ 1 図に示します。1. 独立した管理者とユーザー アカウント、2 です。 ジャスト イン タイムのローカル管理者パスワード、3。 管理ワークステーション ステージ 1、4 です。 Id 攻撃の検出](../media/securing-privileged-access/PAW_LP_Fig6.JPG)
+![フェーズ 1 の図:1. 管理者とユーザーの個別のアカウント、2. Just in Time ローカル管理者パスワード、3. 管理ワークステーションのステージ 1、4. ID 攻撃の検出](../media/securing-privileged-access/PAW_LP_Fig6.JPG)
 
 ### <a name="1-separate-accounts"></a>1. 個別のアカウント
 
-インターネット上のリスクを分離するために (フィッシング攻撃、web 閲覧) 特権からアカウントへのアクセス、特権アクセスを持つすべてのスタッフに専用のアカウントを作成します。 管理者が自分の電子メールをチェックし、高い特権を持つアカウントを使用して日常の生産性のタスクの実行に対して、web は参照されませんする必要があります。 これの詳細については、セクションではあります[個別の管理アカウント](securing-privileged-access-reference-material.md#separate-administrative-accounts)のリファレンス ドキュメント。
+インターネット上のリスク (フィッシング攻撃、Web サイトの参閲覧) を特権アクセス アカウントから切り離すために、特権アクセスを持つすべてのスタッフに専用アカウントを作成します。 管理者は、高い特権のアカウントを使用して、Web を閲覧したり、メールをチェックしたり、日常の生産性タスクを実行したりしないでください。 詳細については、参考資料の[個別の管理アカウント](securing-privileged-access-reference-material.md#separate-administrative-accounts)に関するセクションをご覧ください。
 
-この記事のガイダンスに従って[Azure AD で緊急アクセス用アカウントを管理](/azure/active-directory/users-groups-roles/directory-emergency-access)アカウントを作成するには少なくとも 2 つの緊急アクセス、両方で、オンプレミスで、完全に割り当てられている管理者の権限を持つ AD と Azure AD 環境. 従来の管理者アカウントで必要なタスクを実行できない場合に、これらのアカウントが使用するためだけは、災害の場合。
+オンプレミスの AD 環境と Azure AD 環境の両方で、管理者権限が永続的に割り当てられた、少なくとも 2 つの緊急アクセス用アカウントを作成するには、「[Azure AD で緊急アクセス用アカウントを管理する](/azure/active-directory/users-groups-roles/directory-emergency-access)」の記事のガイダンスに従ってください。 これらのアカウントは、従来の管理者アカウントが障害発生時などに必要なタスクを実行できない場合にのみ使用するためのものです。
 
-### <a name="2-just-in-time-local-admin-passwords"></a>2. ジャスト イン タイムのローカル管理者パスワード
+### <a name="2-just-in-time-local-admin-passwords"></a>2. Just in Time ローカル管理者パスワード
 
-組織はその他のコンピューターを攻撃する攻撃者に悪用してほか、ローカルの SAM データベースからローカル管理者アカウントのパスワード ハッシュを盗むことのリスクを軽減するために、すべてのコンピューターが一意のローカル管理者のパスワードを確認してください。 サーバーに格納で Active Directory (AD)、ACL によって保護されているし、ローカル管理者パスワード Solution (LAPS) ツールは、各ワークステーション上で一意のランダムなパスワードを構成できます。 資格のある承認されたユーザーのみでは、読み取るしたり、これらのローカル管理者アカウント パスワードのリセットを依頼することができます。 ワークステーションやサーバー上で使用するため、LAPS を取得する[、Microsoft ダウンロード センター](http://Aka.ms/LAPS)します。
+敵対者がローカルの SAM データベースからローカル管理者アカウントのパスワード ハッシュを盗み、それを悪用してほかのコンピューターを攻撃するリスクを軽減するためには、組織で必ず、各マシンに一意の管理者パスワードを設定する必要があります。 ローカル管理者パスワード ソリューション (LAPS) ツールでは、ワークステーションごとに一意のランダム パスワードを構成できます。サーバーはそれらを、ACL によって保護された Active Directory (AD) に保存します。 これらのローカル管理者アカウントのパスワードのリセットを読み取ったり要求したりできるのは、資格のある承認済みユーザーのみです。 ワークステーションとサーバーで使用するための LAPS は [Microsoft ダウンロード センター](http://Aka.ms/LAPS)で取得できます。
 
-LAPS と Paw の環境を操作するために追加のガイダンスについては、セクションで見つかる[クリーン ソースの原則に基づいて運用基準](securing-privileged-access-reference-material.md#operational-standards-based-on-clean-source-principle)します。
+LAPS と PAW を使用する環境に関する追加のガイダンスは、「[クリーン ソースの原則に基づく運用基準](securing-privileged-access-reference-material.md#operational-standards-based-on-clean-source-principle)」のセクションでご確認いただけます。
 
 ### <a name="3-administrative-workstations"></a>3.管理ワークステーション
 
-Azure Active Directory とオンプレミスでの従来の Active Directory の管理者特権を持つユーザーの初期のセキュリティ措置として確実に構成されている Windows 10 デバイスを使用している、[安全性の高い Windows 向けの標準案10 のデバイス](/windows-hardware/design/device-experiences/oem-highly-secure)します。 
+Azure Active Directory と従来のオンプレミス Active Directory の管理者特権を持つユーザーのための最初のセキュリティ対策として、それらのユーザーが、[セキュリティが強化された Windows 10 デバイスの標準](/windows-hardware/design/device-experiences/oem-highly-secure)で構成された Windows 10 デバイスを使用していることを確認します。 特権のある管理者アカウントは、管理ワークステーションのローカル管理者グループのメンバーになることはできません。  ワークステーションに対する構成の変更が必要な場合は、ユーザー アクセス制御 (UAC) による特権の昇格を利用できます。  さらに、Windows 10 セキュリティ ベースラインをワークステーションに適用して、デバイスをさらに強化する必要があります。
 
-### <a name="4-identity-attack-detection"></a>4。Id 攻撃の検出
+### <a name="4-identity-attack-detection"></a>4。ID 攻撃の検出
 
-[Azure の高度な Threat Protection (ATP)](/azure-advanced-threat-protection/what-is-atp)は高度な脅威、侵害された id、および悪意のある内部関係者のアクションが、オンプレミスでのアクティブな転送を識別、検出すると、しに役立つクラウド ベースのセキュリティ ソリューションの調査ディレクトリの環境です。
+[Azure Advanced Threat Protection (ATP)](/azure-advanced-threat-protection/what-is-atp) はクラウド ベースのセキュリティ ソリューションであり、オンプレミスの Active Directory 環境を対象とする高度な脅威、侵害された ID、および悪意のあるインサイダーによるアクションの識別、検出、調査支援を行います。
 
-## <a name="phase-2-significant-incremental-improvements"></a>フェーズ 2:重要な漸進的改良
+## <a name="phase-2-significant-incremental-improvements"></a>フェーズ 2:大幅な漸進的な改善
 
-フェーズ 2 では、フェーズ 1 で実行された作業はし、約 90 日間に完了するのには設計されています。 このステージの手順を次の図で示します。
+フェーズ 2 は、フェーズ 1 で実行された作業に基づいており、約 90 日間で完了するように設計されています。 このステージの手順を次の図で示します。
 
-![フェーズ 2 図に示します。1. Windows Hello for Business/MFA、2 です。 PAW ロールアウトでは、3。 ジャスト イン タイムの特権 4 です。 Credential Guard では、5 です。 漏洩した資格情報、6。 水平方向の活動の脆弱性の検出](../media/securing-privileged-access/PAW_LP_Fig7.JPG)
+![フェーズ 2 の図:1. Windows Hello for Business/MFA、2. PAW のロールアウト、3. Just in Time 特権、4. Credential Guard、5. 漏洩した資格情報、6. 横方向の移動の脆弱性の検出](../media/securing-privileged-access/PAW_LP_Fig7.JPG)
 
 ### <a name="1-require-windows-hello-for-business-and-mfa"></a>1. Windows Hello for Business と MFA が必要
 
-管理者は、Windows Hello for Business に関連付けられている使いやすさを活用できます。 管理者は、各自の Pc で強力な 2 要素認証を使用した複雑なパスワードを置き換えることができます。 攻撃者は、デバイスと生体認証情報または暗証番号 (pin) の両方が必要、従業員の知識がなくてもアクセスする非常に困難です。 Windows Hello for Business とロールアウトへのパスの詳細については、情報の記事では[Windows Hello for Business の概要](/windows/security/identity-protection/hello-for-business/hello-overview)
+管理者は、Windows Hello for Business に関連した使いやすさを活用できます。 管理者は、複雑なパスワードを PC の強力な 2 要素認証に置き換えることができます。 攻撃者はデバイスと生体認証情報または PIN の両方を手に入れる必要があり、従業員に知られずにアクセスを獲得することは非常に困難です。 Windows Hello for Business とロールアウトのパスの詳細については、[Windows Hello for Business の概要](/windows/security/identity-protection/hello-for-business/hello-overview)に関する記事を参照してください
 
-Azure MFA を使用して Azure AD での管理者アカウントの多要素認証 (MFA) を有効にします。 最小有効にする で、[ベースラインの保護の条件付きアクセス ポリシー](/azure/active-directory/conditional-access/baseline-protection#require-mfa-for-admins) Azure Multi-factor Authentication の詳細については、情報の記事では[クラウド ベース Azure Multi-factor Authentication のデプロイ](/azure/active-directory/authentication/howto-mfa-getstarted)
+Azure MFA を使用した Azure AD で、管理者アカウントの多要素認証 (MFA) を有効にします。 少なくとも、[ベースライン保護の条件付きアクセス ポリシー](/azure/active-directory/conditional-access/baseline-protection#require-mfa-for-admins)を有効にします。Azure Multi-Factor Authentication の詳細については、[クラウドベースの Azure Multi-Factor Authentication の Azure のデプロイ](/azure/active-directory/authentication/howto-mfa-getstarted)に関する記事を参照してください
 
-### <a name="2-deploy-paw-to-all-privileged-identity-access-account-holders"></a>2. すべての特権ユーザー アクセス アカウントの所有者に PAW を展開します。
+### <a name="2-deploy-paw-to-all-privileged-identity-access-account-holders"></a>2. すべての特権付き ID アクセス アカウントの所有者に PAW をデプロイする
 
-電子メール、web の閲覧、およびその他の非管理タスクで検出された脅威から特権アカウントを分離するという処理を続行するには、実装することを専用の Privileged Access Workstations (PAW) へのアクセス権限を持つすべてのスタッフの組織の情報システム。 PAW の展開の追加のガイダンスについては、情報の記事で見つかる[Privileged Access Workstation](privileged-access-workstations.md#paw-phased-implementation)します。
+メール、Web 閲覧、およびその他の管理以外のタスクで検出された脅威から特権アカウントを分離するプロセスを続行するには、組織の情報システムへの特権アクセス権を持つすべての担当者に専用の特権アクセス ワークステーション (PAW) を実装する必要があります。 PAW のデプロイに関するその他のガイダンスについては、[特権アクセス ワークステーション](privileged-access-workstations.md#paw-phased-implementation)に関する記事を参照してください。
 
-### <a name="3-just-in-time-privileges"></a>3.ジャスト イン タイムの特権
+### <a name="3-just-in-time-privileges"></a>3.Just in Time 特権
 
-特権の露出時間を削減し、可視性の使用を増やすするには、ジャスト イン タイム (JIT) の以下のように適切なソリューションまたはその他のサード パーティ製ソリューションを使用して権限を指定します。
+特権の露出時間を削減し、使用の可視性を増やすには、次のように適切なソリューションや他のサードパーティのソリューションを使用して Just-In-Time (JIT) で特権を付与します。
 
 * Active Directory Domain Services (AD DS) の場合は、Microsoft Identity Manager (MIM) の[特権アクセス マネージャー (PAM)](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services) 機能を使用してください。
 * Azure Active Directory の場合は、[Azure AD Privileged Identity Management (PIM)](/azure/active-directory/privileged-identity-management/pim-deployment-plan) 機能を使用してください。
 
 ### <a name="4-enable-windows-defender-credential-guard"></a>4。Windows Defender Credential Guard を有効にする
 
-Credential Guard を有効にすると、NTLM パスワード ハッシュ、Kerberos Ticket Granting Ticket およびドメインの資格情報としてのアプリケーションによって保存された資格情報を保護するのに役立ちます。 この機能は、Pass the Hash、Pass The Ticket 盗まれた資格情報を使用して、環境でのピボットの難しさを増やすことでなどの資格情報盗難攻撃を防ぐのに役立ちます。 Credential Guard のしくみとデプロイする方法については、記事ではあります[保護は、Windows Defender Credential Guard でのドメイン資格情報を派生](/windows/security/identity-protection/credential-guard/credential-guard)します。
+Credential Guard を有効にすると、NTLM パスワード ハッシュ、Kerberos チケット保証チケット、およびアプリケーションによってドメイン資格情報として保存された資格情報を保護することができます。 この機能により、盗難に遭った資格情報を使用した環境でのピボットの難易度を高めることで、Pass-the-Hash や Pass-the-Ticket などの資格情報盗用攻撃を防ぐことができます。 Credential Guard のしくみと展開方法については、「[Windows Defender Credential Guard によるドメインの派生資格情報の保護](/windows/security/identity-protection/credential-guard/credential-guard)」の記事をご覧ください。
 
-### <a name="5-leaked-credentials-reporting"></a>5。漏洩した資格情報の報告
+### <a name="5-leaked-credentials-reporting"></a>5。漏洩した資格情報レポート
 
-「毎日では、Microsoft 分析して新たな脅威を識別し、お客様を保護するために信号を超える 6.5 兆」-[番号によって Microsoft](https://news.microsoft.com/bythenumbers/cyber-attacks)
+"Microsoft では、毎日、新たな脅威を特定し、顧客を保護するために、6 兆 5000 億の信号を分析しています" - [Microsoft By the Numbers](https://news.microsoft.com/bythenumbers/cyber-attacks)
 
-漏洩した資格情報を持つユーザーをレポートを修復できるようにする Microsoft Azure AD Identity Protection を有効にします。 [Azure AD Identity Protection](/azure/active-directory/identity-protection/index)組織のクラウドおよびハイブリッド環境を脅威から保護支援を活用することができます。
+Microsoft Azure AD Identity Protection を有効にすると、資格情報が漏洩したユーザーについてレポートを作成し、修復できるようにすることができます。 [Azure AD Identity Protection](/azure/active-directory/identity-protection/index) を利用して、組織が脅威からクラウド環境やハイブリッド環境を保護できるようにすることができます。
 
 ### <a name="6-azure-atp-lateral-movement-paths"></a>6。Azure ATP の横移動パス
 
-特権を確認します。 アカウント所有者を使用している、PAW 管理のセキュリティを侵害された、特権のないアカウントは Pass the Hash、Pass The Ticket などの資格情報盗難攻撃を使用して特権のアカウントにアクセスできないようにするためだけにアクセスします。 [Azure ATP 横移動パス (LMPs)](/azure-advanced-threat-protection/use-case-lateral-movement-path)特権アカウントが侵害を開いてありますを識別するためにレポートを理解する容易な提供します。
+特権アクセス アカウントの所有者が PAW を管理にのみ使用していることを確認して、侵害された特権のないアカウントが、Pass-the-Hash や Pass-the-Ticket などの資格情報盗用攻撃を介して特権アカウントにアクセスできないようにします。 [Azure ATP の横移動パス (LMP)](/azure-advanced-threat-protection/use-case-lateral-movement-path) では、特権アカウントが危険にさらされる可能性がある場所を特定するためのレポートを簡単に理解できます。
 
-## <a name="phase-3-security-improvement-and-sustainment"></a>フェーズ 3:セキュリティの向上と sustainment
+## <a name="phase-3-security-improvement-and-sustainment"></a>フェーズ 3: セキュリティの向上と維持
 
-ロードマップのフェーズ 3 は、セキュリティに対する姿勢を強化するために、フェーズ 1 および 2 で実行される手順に基づいています。 フェーズ 3 は、この図では視覚的に示します。
+ロードマップのフェーズ 3 では、フェーズ 1 と 2 で実行した手順に基づいて、セキュリティ体制を強化します。 次の図にフェーズ 3 を視覚的に表現します。
 
-![フェーズ 3:1. RBAC、2 を確認します。 攻撃対象領域、3 を削減します。 SEIM、4 と、ログを統合します。 漏洩した資格情報の自動化](../media/securing-privileged-access/PAW_LP_Fig8.JPG)
+![フェーズ 3: 1. RBAC を確認する、2. 攻撃を受ける可能性の低減、3. ログを SEIM と統合する、4. 漏洩した資格情報の自動化](../media/securing-privileged-access/PAW_LP_Fig8.JPG)
 
-これらの機能は、前のフェーズの手順でビルドしより予防的な対策を防御を移動します。 このフェーズでは、特定のタイムラインを持たず、時間がかかる実装するために個別の組織に基づきます。
+これらの機能は前のフェーズからの手順を基盤とし、防御策をより予防的なものにします。 このフェーズには特定のタイムラインはなく、個々の組織に基づいて実装する時間が長くなる場合があります。
 
-### <a name="1-review-role-based-access-control"></a>1. ロールベースのアクセス制御を確認します。
+### <a name="1-review-role-based-access-control"></a>1. ロールベースのアクセス制御を確認する
 
-記事に記載されている 3 つの階層化モデルを使用して[Active Directory 管理階層モデル](securing-privileged-access-reference-material.md)を確認して、下位層の管理者には、上位階層のリソース (グループ メンバーシップ、上の Acl への管理アクセスはありません確認します。ユーザー アカウントなど.)。
+「[Active Directory 管理層モデル](securing-privileged-access-reference-material.md)」の記事で説明されている 3 つの階層モデルを使用して、下位層の管理者が上位層のリソース (グループ メンバーシップ、ユーザー アカウントの ACL など) への管理アクセス権を持っていないことを確認します。
 
-### <a name="2-reduce-attack-surfaces"></a>2. 攻撃対象領域を減らす
+### <a name="2-reduce-attack-surfaces"></a>2. 攻撃を受ける可能性の低減
 
-ドメインを含む、identity ワークロードを強化する、ドメイン コント ローラー、ad FS、およびこれらのシステムを損なうこととして Azure AD Connect は、組織の他のシステムの侵害になる可能性があります。 記事[Active Directory の攻撃対象領域を減らすこと](../ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface.md)と[5 つの手順で、id インフラストラクチャをセキュリティで保護する](/azure/security/azure-ad-secure-steps)オンプレミスおよびハイブリッド セキュリティで保護するためのガイダンスを提供する identity 環境。
+ドメイン、ドメイン コントローラー、ADFS、Azure AD Connect などのシステムのいずれかが侵害されると、組織内の他のシステムが侵害される可能性があるため、これらの ID ワークロードを強化します。 「[Active Directory の攻撃を削減する](../ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface.md)」および「[ID インフラストラクチャを保護するための 5 つのステップ](/azure/security/azure-ad-secure-steps)」の記事で、オンプレミス環境とハイブリッド ID 環境をセキュリティで保護するためのガイダンスを提供しています。
 
-### <a name="3-integrate-logs-with-siem"></a>3.ログを SIEM に統合します。
+### <a name="3-integrate-logs-with-siem"></a>3.ログを SIEM と統合する
 
-ログ記録を一元的な SIEM ツールに統合すると、分析、検出、およびセキュリティ イベントに応答する組織できます。 記事[侵害の兆候の監視の Active Directory](../ad-ds/plan/security-best-practices/monitoring-active-directory-for-signs-of-compromise.md)と[付録 l:監視するイベント](../ad-ds/plan/appendix-l--events-to-monitor.md)環境内で監視する必要があるイベントに関するガイダンスを提供します。
+一元管理された SIEM ツールにログを統合することにより、組織でセキュリティ イベントの分析、検出、対応を行うことができます。 「[Active Directory の侵害の兆候を監視する](../ad-ds/plan/security-best-practices/monitoring-active-directory-for-signs-of-compromise.md)」および「[付録 L: 監視するイベント](../ad-ds/plan/appendix-l--events-to-monitor.md)」の記事で、環境で監視する必要があるイベントに関するガイダンスを提供しています。
 
-これは、他の部分を作成する、集計、ためにの計画し、(ボックス アラート外を含む 30 日間計画に Azure ATP) とは異なり、熟練したアナリストのセキュリティ情報およびイベント管理 (SIEM) でアラートの調整が必要です
+セキュリティ情報およびイベント管理 (SIEM) でのアラートの集計、作成、およびチューニングには熟練したアナリストが必要なため、これは計画を超える部分です (すぐに使用できるアラートが含まれている 30 日の計画の Azure ATP とは異なります)
 
-### <a name="4-leaked-credentials---force-password-reset"></a>4。漏洩した資格情報のパスワードのリセットを強制
+### <a name="4-leaked-credentials---force-password-reset"></a>4。漏洩した資格情報 - パスワードのリセットを強制する
 
-
-パスワードにセキュリティ侵害の疑いがあるときに自動的にパスワードのリセットを強制する Azure AD Identity Protection を有効にすることによって、引き続きセキュリティ体制を強化してください。「[チュートリアル: リスク イベントを使用して多要素認証とパスワード変更をトリガーする](/azure/active-directory/authentication/tutorial-risk-based-sspr-mfa)」に記載されているガイダンスでは、条件付きアクセス ポリシーを使用してこれを有効にする方法について説明しています。
-
+パスワードが侵害された疑いがある場合に、Azure AD Identity Protection でパスワードのリセットを自動的に強制できるようにすることで、引き続きセキュリティ体制を強化します。 「[リスク イベントを使用して多要素認証とパスワード変更をトリガーする](/azure/active-directory/authentication/tutorial-risk-based-sspr-mfa)」の記事のガイダンスで、条件付きアクセス ポリシーを使用してこれを有効にする方法について説明しています。
 
 ## <a name="am-i-done"></a>ロードマップの完了
 
-答えはありません。
+一言で答えると「いいえ」です。
 
-悪意のあるユーザーが停止しない、どちらもすることができます。 このロードマップは、組織の保護を支援できます現在認識されている脅威攻撃者が常に進化し、シフトします。 コストを発生させると、環境を対象とする敵対者の成功率を減らすことに重点を置いた継続的なプロセスとしてセキュリティを表示することをお勧めします。
+悪意のある人は決して止まることがないため、あなたも止まることはできません。 攻撃者は絶えず進化し、うまく立ち回っていきますが、このロードマップは、現在知られている脅威から組織を保護するのに役立ちます。 ご使用の環境を狙う敵対者のコストを増加させることと、成功率を減らすことに重点を置いた継続的なプロセスとしてセキュリティを監視することをお勧めします。
 
-特権アクセスをセキュリティで保護する組織のセキュリティ プログラムの一部だけではありませんが、セキュリティ戦略の重要なコンポーネントです。
+組織のセキュリティ プログラムの唯一の部分ではありませんが、特権アクセスをセキュリティで保護することは、セキュリティ戦略の重要な要素です。

@@ -7,20 +7,20 @@ ms.author: billmath
 manager: femila
 ms.date: 12/05/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e9d6161666be89673cff6ef1a975d3205fa4b5c9
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 05a8b8bb5685c31ece29ed8eb38d37a424e478b8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189091"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357942"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証
 
 
 
-コンシューマー デバイスの数が急速に増加し、時間と場所を問わずに情報にアクセスできるようになった現在、人々のテクノロジに対する考え方も変化しています。 情報技術を一日中使用し続けるようになり、情報に簡単にアクセスできるようになったことで、従来の仕事とプライベートの区別はあいまいなものになっています。 信念を伴うこのようなテクノロジを選択し、ユーザーの個性、活動、およびスケジュールに合わせてカスタマイズされたその個人のワークプ レースに拡張する必要があります。 個人用のコンシューマー デバイスを企業ネットワークに接続したいという多数の要望に応えるため、Microsoft では次のような価値提供を行っています。
+コンシューマー デバイスの数が急速に増加し、時間と場所を問わずに情報にアクセスできるようになった現在、人々のテクノロジに対する考え方も変化しています。 情報技術を一日中使用し続けるようになり、情報に簡単にアクセスできるようになったことで、従来の仕事とプライベートの区別はあいまいなものになっています。 これらの変動は、個人のテクノロジを選択し、ユーザーの個性、活動、スケジュールに合わせてカスタマイズしたという確信を持っています。ワークプレースに拡張する必要があります。 個人用のコンシューマー デバイスを企業ネットワークに接続したいという多数の要望に応えるため、Microsoft では次のような価値提供を行っています。
 
 -   管理者は、社内リソースにアクセスできるユーザーをアプリケーション、ユーザー、デバイス、および場所に基づいて制御できます。
 
@@ -34,7 +34,7 @@ ms.locfileid: "66189091"
 ### <a name="BKMK_DRS"></a>Azure Active Directory Device Registration サービス
 ワークプレース ジョインは、Azure Active Directory Device Registration サービスによって可能になります。 デバイスをワークプレース ジョインによって参加させると、このサービス は Azure Active Directory にデバイス オブジェクトをプロビジョニングし、デバイス ID を表すために使用されるキーをローカル デバイスに設定します。 このデバイス ID は、クラウドとオンプレミスでホストされているアプリケーションのアクセス制御規則と共に使用できます。
 
-詳細については、次を参照してください。 [Azure Active Directory でデバイス管理の概要](https://docs.microsoft.com/azure/active-directory/device-management-introduction)します。
+詳細については、「 [Azure Active Directory でのデバイス管理の概要](https://docs.microsoft.com/azure/active-directory/device-management-introduction)」を参照してください。
 
 ### <a name="workplace-join-as-a-seamless-second-factor-authentication"></a>シームレスな 2 要素認証としてのワークプレース ジョイン
 会社は、コンシューマー デバイスに社内リソースへのアクセスを許可しつつ、情報へのアクセスに関連するリスクを管理して、ガバナンスとコンプライアンスを実施することができます。 デバイスのワークプレース ジョインでは、管理者は次の操作を実行できます。
@@ -61,7 +61,7 @@ ms.locfileid: "66189091"
 3.  [チュートリアル: Workplace Join で Android デバイスをワークプレースに参加させる](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
 
 ## <a name="see-also"></a>関連項目
-[デバイス登録サービスによるフェデレーション サーバーを構成します。](../deployment/configure-a-federation-server-with-device-registration-service.md)
+[デバイス登録サービスを使用してフェデレーションサーバーを構成する](../deployment/configure-a-federation-server-with-device-registration-service.md)
 
 
 

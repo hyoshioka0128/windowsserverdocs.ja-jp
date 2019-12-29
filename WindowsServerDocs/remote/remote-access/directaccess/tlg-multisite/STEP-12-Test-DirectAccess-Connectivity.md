@@ -1,9 +1,9 @@
 ---
-title: 手順 12 テスト DirectAccess の接続
-description: このトピックは一部のテスト ラボ ガイド-DirectAccess マルチサイト展開の Windows Server 2016 のデモンストレーション
+title: 手順 12. DirectAccess 接続のテスト
+description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,188 +12,188 @@ ms.topic: article
 ms.assetid: 65ac1c23-3a47-4e58-888d-9dde7fba1586
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9c87f1823140fd6c92cf7df1f9d807545b50504e
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: bd0f8ba10536a28479269abafadaaacaffd3d0a8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281543"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388383"
 ---
-# <a name="step-12-test-directaccess-connectivity"></a>手順 12 テスト DirectAccess の接続
+# <a name="step-12-test-directaccess-connectivity"></a>手順 12. DirectAccess 接続のテスト
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-クライアント コンピューターからの接続をテストするには、インターネットまたはホームネット ネットワークに配置されているときに、前に、適切なグループ ポリシー設定があることを確認の操作を行う必要があります。  
+クライアントコンピューターがインターネットまたは Homenet ネットワークに配置されている場合に、そのコンピューターからの接続をテストするには、グループポリシー設定が正しいことを確認する必要があります。  
   
-- クライアントが適切なグループ ポリシーを持つことを確認するには  
+- クライアントに適切なグループポリシーがあることを確認するには  
   
-- EDGE1 経由でインターネットから DirectAccess 接続をテストします。  
+- EDGE1 を使用してインターネットからの DirectAccess 接続をテストする  
   
-- CLIENT2 を Win7_Clients_Site2 セキュリティ グループに移動します。  
+- Win7_Clients_Site2 セキュリティグループへの変更の移動  
   
-- 2 EDGE1 経由でインターネットから DirectAccess 接続をテストします。  
+- 2-EDGE1 を使用してインターネットからの DirectAccess 接続をテストする  
   
 ## <a name="prerequisites"></a>前提条件  
-両方のクライアント コンピューターを企業ネットワークのネットワークに接続して、両方のクライアント コンピューターを再起動します。  
+両方のクライアントコンピューターを企業ネットワークネットワークに接続し、両方のクライアントコンピューターを再起動します。  
   
-## <a name="policy"></a>クライアントが適切なグループ ポリシーを確認します  
+## <a name="policy"></a>クライアントに適切なグループポリシーがあることを確認する  
   
-1.  Client1 で、次のようにクリックします**開始**、型**powershell.exe**、を右クリック**powershell**、 をクリック**詳細設定**、をクリックして **。管理者として実行**します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+1.  CLIENT1 で、 **[スタート]** をクリックし、「 **powershell**」と入力して、 **[powershell]** を右クリックし、 **[詳細設定]** 、 **[管理者として実行]** の順にクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
   
-2.  Windows PowerShell ウィンドウで、入力**ipconfig** ENTER キーを押します。  
+2.  Windows PowerShell ウィンドウで、「 **ipconfig** 」と入力し、enter キーを押します。  
   
-    企業ネットワーク アダプター IPv4 アドレスが 10.0.0 で始まっていることを確認します。  
+    ネットワークアダプターの IPv4 アドレスが10.0.0 で始まることを確認します。  
   
-3.  Windows PowerShell ウィンドウで「 **Get-dnsclientnrptpolicy** ENTER キーを押します。 DirectAccess の名前解決ポリシー テーブル (NRPT) エントリが表示されます。  
+3.  Windows PowerShell ウィンドウで、「 **get-dnsclientnrptpolicy** 」と入力し、enter キーを押します。 DirectAccess の名前解決ポリシー テーブル (NRPT) エントリが表示されます。  
   
-    -   。 corp.contoso.com-これらの設定は、を corp.contoso.com にすべての接続が DirectAccess の DNS サーバーの IPv6 アドレス 2001:db8:1::2 または 2001:db8:2::20、のいずれかで解決することを示します。  
+    -   corp.contoso.com-これらの設定は、corp.contoso.com へのすべての接続を、IPv6 アドレス 2001: db8: 1:: 2 または 2001: db8: 2::20 で、いずれかの DirectAccess DNS サーバーで解決する必要があることを示します。  
   
-    -   nls.corp.contoso.com というこれらの設定は、nls.corp.contoso.com という名前の除外対象があることを示します。  
+    -   nls.corp.contoso.com-これらの設定は、nls.corp.contoso.com という名前の除外があることを示します。  
   
-4.  Windows PowerShell ウィンドウは、次の手順を開いたままにしておきます。  
+4.  次の手順については、Windows PowerShell ウィンドウを開いたままにしておきます。  
   
-5.  Client2 で、次のようにクリックします**開始**、 をクリック**すべてのプログラム**、 をクリック**アクセサリ**、 をクリック**Windows PowerShell**、を右クリック **。Windows PowerShell**、 をクリックし、**管理者として実行**します。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+5.  次に、 **[スタート]** ボタンをクリックし、 **[すべてのプログラム]** 、 **[アクセサリ]** 、 **[windows powershell]** の順にクリックし、 **[windows powershell]** を右クリックして **[管理者として実行]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
   
-6.  Windows PowerShell ウィンドウで、入力**ipconfig** ENTER キーを押します。  
+6.  Windows PowerShell ウィンドウで、「 **ipconfig** 」と入力し、enter キーを押します。  
   
-    企業ネットワーク アダプター IPv4 アドレスが 10.0.0 で始まっていることを確認します。  
+    ネットワークアダプターの IPv4 アドレスが10.0.0 で始まることを確認します。  
   
-7.  Windows PowerShell ウィンドウで、入力**netsh 名前空間は、ポリシーを表示する**ENTER キーを押します。  
+7.  Windows PowerShell ウィンドウで、「 **netsh namespace show policy** 」と入力し、enter キーを押します。  
   
-    出力では、2 つのセクションがあります。  
+    出力には、次の2つのセクションがあります。  
   
-    -   。 corp.contoso.com-これらの設定は、DirectAccess の DNS サーバー、IPv6 アドレスの 2001:db8:1::2 を corp.contoso.com にすべての接続を解決する必要があることを示します。  
+    -   . corp.contoso.com-これらの設定は、IPv6 アドレス 2001: db8: 1:: 2 を使用して、corp.contoso.com へのすべての接続を DirectAccess DNS サーバーで解決する必要があることを示します。  
   
-    -   nls.corp.contoso.com というこれらの設定は、nls.corp.contoso.com という名前の除外対象があることを示します。  
+    -   nls.corp.contoso.com-これらの設定は、nls.corp.contoso.com という名前の除外があることを示します。  
   
-8.  Windows PowerShell ウィンドウは、次の手順を開いたままにしておきます。  
+8.  次の手順については、Windows PowerShell ウィンドウを開いたままにしておきます。  
   
-## <a name="EDGE1"></a>EDGE1 経由でインターネットから DirectAccess 接続をテストします。  
+## <a name="EDGE1"></a>EDGE1 を使用してインターネットからの DirectAccess 接続をテストする  
   
-1. インターネット ネットワークから 2 EDGE1 を取り外します。  
+1. インターネットネットワークから EDGE1 を抜いてください。  
   
-2. Corpnet スイッチから CLIENT1 および CLIENT2 を取り外すし、インターネット スイッチに接続します。 30 秒間待機します。  
+2. CLIENT1 とユーザーをネットワークスイッチから抜いて、インターネットスイッチに接続します。 30秒間待機します。  
   
-3. Client1 で Windows PowerShell ウィンドウで、次のように入力します。 **ipconfig/all** ENTER キーを押します。  
+3. CLIENT1 の Windows PowerShell ウィンドウで、「 **ipconfig/all** 」と入力し、enter キーを押します。  
   
 4. Ipconfig コマンドの出力を確認します。  
   
-   クライアント コンピューターでは、インターネットに接続されているようになりましたし、パブリック IPv4 アドレスを持ちます。 DirectAccess クライアントは、パブリック IPv4 アドレスがある、DirectAccess クライアントとリモート アクセス サーバー間、IPv4 インターネット経由で IPv6 メッセージをトンネリングするのに Teredo または IP-HTTPS IPv6 移行テクノロジが使用されます。 Teredo は、推奨される移行テクノロジであることに注意してください。  
+   クライアントコンピューターがインターネットに接続され、パブリック IPv4 アドレスを持つようになります。 DirectAccess クライアントにパブリック IPv4 アドレスがある場合は、Teredo または IP-HTTPS IPv6 移行テクノロジを使用して、DirectAccess クライアントとリモートアクセスサーバー間の IPv4 インターネット経由で IPv6 メッセージをトンネリングします。 Teredo が推奨される移行テクノロジであることに注意してください。  
   
-5. Windows PowerShell ウィンドウで、入力**ipconfig/flushdns** ENTER キーを押します。 これにより、クライアント コンピューターが、企業ネットワークに接続されているときにまだクライアント DNS キャッシュに存在する名前解決エントリがフラッシュします。  
+5. Windows PowerShell ウィンドウで、「 **ipconfig/flushdns** 」と入力し、enter キーを押します。 これにより、クライアントコンピューターが企業ネットワークに接続されたときに、クライアント DNS キャッシュに存在する可能性のある名前解決エントリがフラッシュされます。  
   
-6. 次のコマンドを使用して企業ネットワークに接続するクライアント コンピューターが IP-HTTPS を使用することを確認して、Teredo インターフェイスを無効にします。  
+6. 次のコマンドを使用して、クライアントコンピューターが企業ネットワークに接続するために ip-https を使用するように、Teredo インターフェイスを無効にします。  
   
    ```  
    netsh interface teredo set state disable  
    ```  
   
-7. EDGE1 経由で接続していることを確認します。 型**netsh インターフェイス httpstunnel インターフェイスを表示する**ENTER キーを押します。  
+7. EDGE1 経由で接続されていることを確認します。 「 **Netsh interface httpstunnel show** interface」と入力し、enter キーを押します。  
   
-   出力は、URL を含める必要があります: https://edge1.contoso.com:443/IPHTTPS します。  
-  
-   > [!TIP]  
-   > Client1 で、次の Windows PowerShell コマンドを実行することもできます。**Get NetIPHTTPSConfiguration**します。 使用可能なサーバーの URL の接続と、現在アクティブなプロファイルが出力されます。  
-  
-8. Windows PowerShell ウィンドウで、入力**ping app1** ENTER キーを押します。 2001:db8:1::3 この例では、APP1 に割り当てられた IPv6 アドレスからの応答を表示する必要があります。  
-  
-9. Windows PowerShell ウィンドウで、入力**ping 2 app1** ENTER キーを押します。 2001:db8:2::3 この例では、2 APP1 に割り当てられている IPv6 アドレスからの応答を表示する必要があります。  
-  
-10. Windows PowerShell ウィンドウで、入力**ping app2** ENTER キーを押します。 ここでは、fd APP2 EDGE1 から割り当てられた NAT64 アドレスからの応答が表示**c9:9f4e:eb1b**: 7777::a00:4 します。 太字の値がアドレスを生成する方法のために異なることに注意してください。  
-  
-    APP2 の ping を実行する機能は、成功した場合は、APP2 が IPv4 唯一のリソースは、NAT64 と DNS64 を使用して接続を確立することができたことを示しているため、重要です。  
-  
-11. Internet Explorer のアドレス バーに Internet Explorer を開き、入力 **https://app1/** ENTER キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
-  
-12. Internet Explorer のアドレス バーに次のように入力します。 **https://2-app1/** ENTER キーを押します。 2 APP1 の既定の web サイトが表示されます。  
-  
-13. Internet Explorer のアドレス バーに次のように入力します。 **https://app2/** ENTER キーを押します。 APP2 の既定の Web サイトが表示されます。  
-  
-14. **開始**画面で「<strong>\\\2-App1\Files</strong>し、ENTER キーを押します。 例のテキスト ファイルをダブルクリックします。  
-  
-    これは、corp2.corp.contoso.com ドメイン EDGE1 を通して接続したときに、ファイル サーバーに接続することができたことを示します。  
-  
-15. **開始**画面で「<strong>\\\App2\Files</strong>し、ENTER キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
-  
-    これは、SMB を使用して、リソース ドメイン内のリソースを取得する IPv4 のみのサーバーに接続することができたことを示します。  
-  
-16. **開始**画面で「**wf.msc**、し、ENTER キーを押します。  
-  
-17. **セキュリティが強化された Windows ファイアウォール**コンソールで、だけであることを確認、**パブリック プロファイル**がアクティブになっています。 正常に動作する DirectAccess には、Windows ファイアウォールを有効にする必要があります。 Windows ファイアウォールを無効にすると、DirectAccess の接続は機能しません。  
-  
-18. コンソールの左側のウィンドウで、展開、**監視**ノード、およびクリック、**接続セキュリティ規則**ノード。 アクティブな接続のセキュリティ規則が表示されます。**DirectAccess ポリシー-ClientToCorp**、 **DirectAccess ポリシー-ClientToDNS64NAT64PrefixExemption**、 **DirectAccess ポリシー-ClientToInfra**、および**DirectAccessポリシー ClientToNlaExempt**します。 右を表示するのには、中央のウィンドウのスクロール、 **1 番目の認証方法**と**2 番目の認証方法**列。 最初のルール (ClientToCorp) では、Kerberos V5 を使用して、イントラネット トンネルを確立するために 3 番目の規則 (ClientToInfra) は、インフラストラクチャ トンネルを確立するために NTLMv2 を使用していることを確認します。  
-  
-19. コンソールの左側のウィンドウで、展開、**セキュリティ アソシエーション**ノード、およびクリック、**メイン モード**ノード。 NTLMv2 を使用して、インフラストラクチャ トンネルのセキュリティ アソシエーションと Kerberos V5 を使用して、イントラネット トンネルのセキュリティ アソシエーションに注意してください。 表示するエントリを右クリックして**ユーザー (Kerberos V5)** として、 **2 番目の認証方法** をクリック**プロパティ**します。 **全般** タブに注意してください、 **2 番目の認証のローカル ID**は**corp \user1**User1 を使用して CORP ドメインに正常に認証できるようにしたことを示すKerberos。  
-  
-20. CLIENT2 で、手順 3 からこの手順を繰り返します。  
-  
-## <a name="secgroup"></a>CLIENT2 を Win7_Clients_Site2 セキュリティ グループに移動します。  
-  
-1.  DC1 で、次のようにクリックします。**開始**、型**dsa.msc**、し、ENTER キーを押します。  
-  
-2.  Active Directory ユーザーとコンピューター コンソールで、開き**corp.contoso.com/Users**  をダブルクリックします**Win7_Clients_Site1**します。  
-  
-3.  **Win7_Clients_Site1 プロパティ**ダイアログ ボックスで、をクリックして、**メンバー**  タブで、をクリックして**CLIENT2**、 をクリックして**削除**をクリックします **。はい**、 をクリックし、 **OK**。  
-  
-4.  ダブルクリック**Win7_Clients_Site2**、し、 **Win7_Clients_Site2 プロパティ**ダイアログ ボックスで、をクリックして、**メンバー**  タブ。  
-  
-5.  をクリックして**追加**、し、 **[ユーザー、連絡先、コンピューター、またはサービス アカウント**ダイアログ ボックスで、をクリックして**オブジェクトの種類**を選択します**コンピューター**、] をクリックし、 **OK**します。  
-  
-6.  **を選択するオブジェクト名の入力**、型**CLIENT2**、順にクリックします**OK**。  
-  
-7.  CLIENT2 を再起動し、corp/User1 アカウントを使用してログオンします。  
-  
-8.  CLIENT2 で、管理者特権の Windows PowerShell ウィンドウを開き型**netsh 名前空間は、ポリシーを表示する**ENTER キーを押します。  
-  
-    出力では、2 つのセクションがあります。  
-  
-    -   。 corp.contoso.com-これらの設定は、DirectAccess の DNS サーバー、IPv6 アドレスの 2001:db8:2::20 を corp.contoso.com にすべての接続を解決する必要があることを示します。  
-  
-    -   nls.corp.contoso.com というこれらの設定は、nls.corp.contoso.com という名前の除外対象があることを示します。  
-  
-## <a name="DAConnect"></a>2 EDGE1 経由でインターネットから DirectAccess 接続をテストします。  
-  
-1. 2 EDGE1 をインターネット ネットワークに接続します。  
-  
-2. インターネット ネットワークから EDGE1 を取り外します。  
-  
-3. CLIENT1 で管理者特権での Windows PowerShell ウィンドウを開きます。  
-  
-4. Windows PowerShell ウィンドウで、入力**ipconfig/flushdns** ENTER キーを押します。 これにより、クライアント コンピューターが、企業ネットワークに接続されているときにまだクライアント DNS キャッシュに存在する名前解決エントリがフラッシュします。  
-  
-5. 2 EDGE1 経由で接続していることを確認します。 型**netsh インターフェイス httpstunnel インターフェイスを表示する**ENTER キーを押します。  
-  
-   出力は、URL を含める必要があります: https://2-edge1.contoso.com:443/IPHTTPS します。  
+   出力には、URL: https://edge1.contoso.com:443/IPHTTPS が含まれている必要があります。  
   
    > [!TIP]  
-   > Client1 で、次のコマンドを実行することもできます。**Get NetIPHTTPSConfiguration**します。 使用可能なサーバーの URL の接続と、現在アクティブなプロファイルが出力されます。  
+   > CLIENT1 では、次の Windows PowerShell コマンドを実行することもできます。**NetIPHTTPSConfiguration**。 出力には、使用可能なサーバー URL 接続と現在アクティブなプロファイルが表示されます。  
+  
+8. Windows PowerShell ウィンドウで、「 **ping** 」と入力し、enter キーを押します。 この場合は、"2001: db8: 1:: 3" に割り当てられた IPv6 アドレスからの応答が表示されます。  
+  
+9. Windows PowerShell ウィンドウで、「 **ping 2-** Windows」と入力し、enter キーを押します。 2-3 に割り当てられた IPv6 アドレスからの応答が表示されます。この例では、2001: db8: 2:: 3 です。  
+  
+10. Windows PowerShell ウィンドウで、「 **ping app2** 」と入力し、enter キーを押します。 EDGE1 によって割り当てられた NAT64 アドレスからの応答が APP2 に表示されます。この例では、fd**c9: 9f4e: eb1b**: 7777:: a00: 4 です。 太字の値は、アドレスが生成される方法によって異なることに注意してください。  
+  
+    APP2 に ping を実行する機能は重要です。成功は、APP2 が IPv4 専用のリソースであるため、NAT64/DNS64 を使用して接続を確立できたことを示しているからです。  
+  
+11. Internet explorer を開き、Internet Explorer のアドレスバーに **https://app1/** を入力して、enter キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
+  
+12. Internet Explorer のアドレスバーに「 **https://2-app1/** 」と入力し、enter キーを押します。 2-3 の既定の web サイトが表示されます。  
+  
+13. Internet Explorer のアドレスバーに「 **https://app2/** 」と入力し、enter キーを押します。 APP2 の既定の Web サイトが表示されます。  
+  
+14. **スタート**画面で、「<strong>\\ \ 2-App1\Files</strong>」と入力し、enter キーを押します。 サンプルテキストファイルをダブルクリックします。  
+  
+    これは、EDGE1 経由で接続されているときに、corp2.corp.contoso.com ドメイン内のファイルサーバーに接続できることを示しています。  
+  
+15. **スタート**画面で、「<strong>\\ \ App2\Files</strong>」と入力し、enter キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
+  
+    これは、SMB を使用して IPv4 のみのサーバーに接続し、リソースドメイン内のリソースを取得できることを示しています。  
+  
+16. **スタート**画面で「**wf**」と入力し、enter キーを押します。  
+  
+17. セキュリティが強化された**Windows ファイアウォール**コンソールで、**パブリックプロファイル**のみがアクティブになっていることに注意してください。 DirectAccess が正しく機能するためには、Windows ファイアウォールが有効になっている必要があります。 Windows ファイアウォールが無効になっている場合、DirectAccess 接続は機能しません。  
+  
+18. コンソールの左側のウィンドウで、 **[監視]** ノードを展開し、 **[接続セキュリティの規則]** ノードをクリックします。 アクティブな接続セキュリティ規則が表示されます。**Directaccess ポリシー-ClientToCorp**、 **Directaccess ポリシー-ClientToDNS64NAT64PrefixExemption**、 **Directaccess ポリシー-Clienttocorp**、および**directaccess ポリシー-clienttonla免除**。 中央のペインを右にスクロールすると、 **1 番目の [認証方法**] 列と **[2 番目の認証方法]** 列が表示されます。 最初のルール (ClientToCorp) が Kerberos V5 を使用してイントラネットトンネルを確立し、3番目のルール (clienttocorp) が NTLMv2 を使用してインフラストラクチャトンネルを確立することに注意してください。  
+  
+19. コンソールの左側のウィンドウで、 **[セキュリティアソシエーション]** ノードを展開し、 **[メインモード]** ノードをクリックします。 「インフラストラクチャトンネルのセキュリティアソシエーション」では、NTLMv2 と、Kerberos V5 を使用したイントラネットトンネルセキュリティの関連付けに注意してください。 **2 番目の認証方法**として **[ユーザー (Kerberos V5)]** と表示されているエントリを右クリックし、 **[プロパティ]** をクリックします。 **[全般]** タブで、 **2 番目の認証ローカル ID**が**CORP\User1**であることを確認します。これは、User1 が Kerberos を使用して CORP ドメインに対して正常に認証できたことを示します。  
+  
+20. この手順を、手順 3. で実行します。  
+  
+## <a name="secgroup"></a>Win7_Clients_Site2 セキュリティグループへの変更の移動  
+  
+1.  DC1 で **[スタート]** をクリックし、「 **dsa.msc**」と入力して、enter キーを押します。  
+  
+2.  Active Directory ユーザーとコンピューター コンソールで、 **corp.contoso.com/Users**を開き、**Win7_Clients_Site1** をダブルクリックします。  
+  
+3.  **[Win7_Clients_Site1 のプロパティ]** ダイアログボックスで、 **[メンバー]** タブをクリックし **、[** 削除]、 **[削除]** 、 **[はい]** の順にクリックして、 **[OK]** をクリックします。  
+  
+4.  **Win7_Clients_Site2**をダブルクリックし、Win7_Clients_Site2 の **[プロパティ]** ダイアログボックスで **[メンバー]** タブをクリックします。  
+  
+5.  **[追加]** をクリックし、 **[ユーザー、連絡先、コンピューター、またはサービスアカウントの選択]** ダイアログボックスで、 **[オブジェクトの種類]** をクリックし、 **[コンピューター]** を選択して、[ **OK]** をクリックします。  
+  
+6.  **[選択するオブジェクト名を入力してください**] ボックスに **「「」と入力し**、 **[OK]** をクリックします。  
+  
+7.  それを再起動し、corp/User1 アカウントを使用してログオンします。  
+  
+8.  その後、管理者特権の Windows PowerShell ウィンドウを開き、「 **netsh namespace show policy** 」と入力し、enter キーを押します。  
+  
+    出力には、次の2つのセクションがあります。  
+  
+    -   . corp.contoso.com-これらの設定は、corp.contoso.com へのすべての接続を、IPv6 アドレス 2001: db8: 2::20 と共に、DirectAccess DNS サーバーで解決する必要があることを示します。  
+  
+    -   nls.corp.contoso.com-これらの設定は、nls.corp.contoso.com という名前の除外があることを示します。  
+  
+## <a name="DAConnect"></a>2-EDGE1 を使用してインターネットからの DirectAccess 接続をテストする  
+  
+1. 2 ~ EDGE1 をインターネットネットワークに接続します。  
+  
+2. インターネットネットワークから EDGE1 を取り外します。  
+  
+3. CLIENT1 で、管理者特権の Windows PowerShell ウィンドウを開きます。  
+  
+4. Windows PowerShell ウィンドウで、「 **ipconfig/flushdns** 」と入力し、enter キーを押します。 これにより、クライアントコンピューターが企業ネットワークに接続されたときに、クライアント DNS キャッシュに存在する可能性のある名前解決エントリがフラッシュされます。  
+  
+5. EDGE1 を使用して接続していることを確認します。 「 **Netsh interface httpstunnel show** interface」と入力し、enter キーを押します。  
+  
+   出力には、URL: https://2-edge1.contoso.com:443/IPHTTPS が含まれている必要があります。  
+  
+   > [!TIP]  
+   > CLIENT1 では、次のコマンドを実行することもできます。**NetIPHTTPSConfiguration**。 出力には、使用可能なサーバー URL 接続と現在アクティブなプロファイルが表示されます。  
   
    > [!NOTE]  
-   > CLIENT1 は、会社のリソースに接続するサーバーを自動的に変更します。 コマンドの出力では、EDGE1 への接続が表示される場合約 5 分間待機してからやり直してください。  
+   > CLIENT1 は、企業リソースへの接続に使用するサーバーを自動的に変更します。 コマンドの出力に EDGE1 への接続が表示されている場合は、約5分間待ってから、もう一度やり直してください。  
   
-6. Windows PowerShell ウィンドウで、入力**ping app1** ENTER キーを押します。 2001:db8:1::3 この例では、APP1 に割り当てられた IPv6 アドレスからの応答を表示する必要があります。  
+6. Windows PowerShell ウィンドウで、「 **ping** 」と入力し、enter キーを押します。 この場合は、"2001: db8: 1:: 3" に割り当てられた IPv6 アドレスからの応答が表示されます。  
   
-7. Windows PowerShell ウィンドウで、入力**ping 2 app1** ENTER キーを押します。 2001:db8:2::3 この例では、2 APP1 に割り当てられている IPv6 アドレスからの応答を表示する必要があります。  
+7. Windows PowerShell ウィンドウで、「 **ping 2-** Windows」と入力し、enter キーを押します。 2-3 に割り当てられた IPv6 アドレスからの応答が表示されます。この例では、2001: db8: 2:: 3 です。  
   
-8. Windows PowerShell ウィンドウで、入力**ping app2** ENTER キーを押します。 ここでは、fd APP2 EDGE1 から割り当てられた NAT64 アドレスからの応答が表示**c9:9f4e:eb1b**: 7777::a00:4 します。 太字の値がアドレスを生成する方法のために異なることに注意してください。  
+8. Windows PowerShell ウィンドウで、「 **ping app2** 」と入力し、enter キーを押します。 EDGE1 によって割り当てられた NAT64 アドレスからの応答が APP2 に表示されます。この例では、fd**c9: 9f4e: eb1b**: 7777:: a00: 4 です。 太字の値は、アドレスが生成される方法によって異なることに注意してください。  
   
-   APP2 の ping を実行する機能は、成功した場合は、APP2 が IPv4 唯一のリソースは、NAT64 と DNS64 を使用して接続を確立することができたことを示しているため、重要です。  
+   APP2 に ping を実行する機能は重要です。成功は、APP2 が IPv4 専用のリソースであるため、NAT64/DNS64 を使用して接続を確立できたことを示しているからです。  
   
-9. Internet Explorer のアドレス バーに Internet Explorer を開き、入力 **https://app1/** ENTER キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
+9. Internet explorer を開き、Internet Explorer のアドレスバーに **https://app1/** を入力して、enter キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
   
-10. Internet Explorer のアドレス バーに次のように入力します。 **https://2-app1/** ENTER キーを押します。 APP2 の既定の Web サイトが表示されます。  
+10. Internet Explorer のアドレスバーに「 **https://2-app1/** 」と入力し、enter キーを押します。 APP2 の既定の Web サイトが表示されます。  
   
-11. Internet Explorer のアドレス バーに次のように入力します。 **https://app2/** ENTER キーを押します。 APP3 の既定の web サイトが表示されます。  
+11. Internet Explorer のアドレスバーに「 **https://app2/** 」と入力し、enter キーを押します。 APP3 の既定の web サイトが表示されます。  
   
-12. **開始**画面で「<strong>\\\App1\Files</strong>し、ENTER キーを押します。 例のテキスト ファイルをダブルクリックします。  
+12. **スタート**画面で、「<strong>\\ \ App1\Files</strong>」と入力し、enter キーを押します。 サンプルテキストファイルをダブルクリックします。  
   
-    これは、2 EDGE1 を通して接続したときに、corp.contoso.com ドメイン内のファイル サーバーに接続することができたことを示します。  
+    これは、EDGE1 経由で接続されている場合に、corp.contoso.com ドメイン内のファイルサーバーに接続できたことを示しています。  
   
-13. **開始**画面で「<strong>\\\App2\Files</strong>し、ENTER キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
+13. **スタート**画面で、「<strong>\\ \ App2\Files</strong>」と入力し、enter キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
   
-    これは、SMB を使用して、リソース ドメイン内のリソースを取得する IPv4 のみのサーバーに接続することができたことを示します。  
+    これは、SMB を使用して IPv4 のみのサーバーに接続し、リソースドメイン内のリソースを取得できることを示しています。  
   
-14. 手順 3 から CLIENT2 では、この手順を繰り返します。  
+14. 手順 3. の手順を繰り返します。  
   
 
 

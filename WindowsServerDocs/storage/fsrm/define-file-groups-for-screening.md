@@ -2,22 +2,22 @@
 title: スクリーン処理のためにファイル グループを定義する
 description: この記事では、ファイル グループを定義する方法について説明します。ファイル グループは、ファイル スクリーン、ファイル スクリーンの例外、ファイル グループごとのファイル記憶域レポートの名前空間を作成するために使用されます。
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 6e043692500370b6c084a4db068027d13afc957f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b56d7b0439e3dc6f1a2e0a1c96f761dbb77cb0a0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838433"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394387"
 ---
 # <a name="define-file-groups-for-screening"></a>スクリーン処理のためにファイル グループを定義する
 
-> 適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 *ファイル グループ*は、ファイル スクリーン、ファイル スクリーンの例外、または**ファイル グループごとのファイル**記憶域レポートの名前空間を定義するために使用されます。 これは、次のようにグループ分けされる一連のファイル名パターンで構成されます。
 
@@ -33,24 +33,24 @@ ms.locfileid: "59838433"
 
 2.  **[操作]** ウィンドウで **[ファイル グループの作成]** をクリックします。 **[ファイル グループのプロパティの作成]** ダイアログ ボックスが表示されます。
 
-    または、ファイル スクリーン、ファイル スクリーンの例外、ファイル スクリーン テンプレート、または**ファイル グループごとのファイル レポート**のプロパティの編集中に、**[ファイル グループの管理]** の下の **[作成]** をクリックすることもできます。
+    または、ファイル スクリーン、ファイル スクリーンの例外、ファイル スクリーン テンプレート、または**ファイル グループごとのファイル レポート**のプロパティの編集中に、 **[ファイル グループの管理]** の下の **[作成]** をクリックすることもできます。
 
 3.  **[ファイル グループのプロパティの作成]** ダイアログ ボックスで、ファイル グループ名を入力します。
 
 4.  含めるファイルと除外するファイルを追加します。
 
-    -   ファイル グループに含めるファイル セットごとに、**[含めるファイル]** ボックスにファイル名パターンを入力し、**[追加]** をクリックします。
-    -   ファイル グループから除外するファイル セットごとに、**[除外するファイル]** ボックスにファイル名パターンを入力し、**[追加]** をクリックします。
-        たとえば、標準のワイルドカード規則が適用されますので注意 **\*.exe**すべての実行可能ファイルを選択します。
+    -   ファイル グループに含めるファイル セットごとに、 **[含めるファイル]** ボックスにファイル名パターンを入力し、 **[追加]** をクリックします。
+    -   ファイル グループから除外するファイル セットごとに、 **[除外するファイル]** ボックスにファイル名パターンを入力し、 **[追加]** をクリックします。
+        標準のワイルドカード規則が適用されることに注意してください。たとえば、 **\*** は、すべての実行可能ファイルを選択します。
 
 5.  **[OK]** をクリックします。
 
 ## <a name="see-also"></a>関連項目
 
--   [ファイル スクリーンの管理](file-screening-management.md)
--   [ファイル スクリーンを作成します。](create-file-screen.md)
--   [ファイル スクリーンの例外を作成します。](create-file-screen-exception.md)
--   [ファイル スクリーン テンプレートを作成します。](create-file-screen-template.md)
+-   [ファイルスクリーン処理の管理](file-screening-management.md)
+-   [ファイル スクリーンを作成する](create-file-screen.md)
+-   [ファイル スクリーンの例外を作成する](create-file-screen-exception.md)
+-   [ファイル スクリーン テンプレートを作成する](create-file-screen-template.md)
 -   [記憶域レポートの管理](storage-reports-management.md)
 
 

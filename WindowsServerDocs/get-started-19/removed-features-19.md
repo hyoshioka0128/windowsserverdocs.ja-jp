@@ -2,7 +2,7 @@
 title: Windows Server 2019 で削除される、または削除が計画されている機能
 description: Windows Server 2019 以降で削除される、または削除が計画されている機能について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: server-general
@@ -11,14 +11,14 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 manager: jasgro
-ms.date: 08/22/2019
+ms.date: 10/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 59a31d01d1c5775c837010eca964c72fad8b5c92
-ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
+ms.openlocfilehash: a2d3a871165812ac3a27e65b5f52cc56a05c9efe
+ms.sourcegitcommit: 3262c5c7cece9f2adf2b56f06b7ead38754a451c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000689"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72812291"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-windows-server-2019"></a>Windows Server 2019 以降で削除される、または置換が計画されている機能
 
@@ -41,6 +41,7 @@ Windows Server 2019 でインストールされている製品イメージから
 | ビジネス スキャン (分散スキャン管理 (DSM) とも呼ばれます)|このセキュリティで保護されたスキャンおよびスキャナー管理機能を削除しています。この機能をサポートするデバイスはありません。 |
 | 印刷コンポーネント - 現在はコア インストールのためのオプションのコンポーネント|Windows Server の以前のリリースでは、印刷コンポーネントは Server Core インストール オプションで、既定で*無効になっていました*。 Windows Server 2016 ではこれを変更し、既定で有効にしました。 Windows Server 2019 で、この印刷コンポーネントを Server Core でもう一度既定で無効にしました。 印刷コンポーネントを有効にする必要がある場合は、**Install-WindowsFeature Print-Server** コマンドレットを実行します。 |
 | Server Core インストールでの[リモート デスクトップ接続ブローカーおよびリモート デスクトップ仮想化ホスト](../remote/remote-desktop-services/desktop-hosting-service.md)|ほとんどのリモート デスクトップ サービス展開には、リモート デスクトップ セッション ホスト (RDSH) と共存するこれらの役割があり、RDSH にはデスクトップ エクスペリエンス搭載サーバーが必要になります。RDSH との一貫性が保たれるように、これらの役割でもデスクトップ エクスペリエンス搭載サーバーを必要とするように変更を行っています。 これらの RDS の役割は、[コア インストール](../administration/server-core/what-is-server-core.md)で使用できなくなりました。 [リモート デスクトップ インフラストラクチャの一部としてこれらの役割を展開する](../remote/remote-desktop-services/rds-deploy-infrastructure.md)必要がある場合は、[デスクトップ エクスペリエンスがインストールされている Windows Server に役割をインストールする](../get-started/getting-started-with-server-with-desktop-experience.md)ことができます。 <br/><br/>これらの役割は、Windows Server 2019 のデスクトップ エクスペリエンスのインストール オプションにも含まれています。 |
+| [RemoteFX 3D ビデオ アダプター (vGPU)](../remote/remote-desktop-services/rds-remotefx-vgpu.md)|仮想化環境のための新しいグラフィック アクセラレータ オプションを開発しています。 [個別のデバイスの割り当て (DDA)](../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md) を代わりに使用することもできます。 |
 
 ## <a name="features-were-no-longer-developing"></a>開発を行っていない機能
 

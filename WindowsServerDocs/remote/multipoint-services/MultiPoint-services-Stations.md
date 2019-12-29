@@ -3,7 +3,7 @@ title: MultiPoint ステーション
 description: ユーザーのさまざまなオプションを含む、MultiPoint Services のステーションについて説明します。
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: f9f9d618-ccfe-41ea-a52c-00c3c7adb51a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 43386f0f4d4020d5e127e7b7cbd918e4c48cec6e
-ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
+ms.openlocfilehash: 7b8f757d552bf54cd7f4eed0783ba8e0062b9d30
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863455"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405081"
 ---
 # <a name="multipoint--stations"></a>MultiPoint ステーション
 MultiPoint サービス システムの環境で *ステーション* MultiPoint サービスを実行しているコンピューターに接続するためのユーザーのエンドポイントします。 各ステーションは、ユーザーに独立した Windows 10 エクスペリエンスを提供します。 次のステーションの種類がサポートされています。  
@@ -31,7 +31,7 @@ MultiPoint サービス システムの環境で *ステーション* MultiPoint
   
 MultiPoint コネクタがインストールされているすべての Pc では、監視こともでき、MultiPoint ダッシュ ボードを使用して制御します。 Windows 10 では Windows の機能のコントロール パネルから MultiPoint コネクタを有効にすることができます。 
 
-Multipoint サービスは、これらのステーション型の任意の組み合わせをサポートしていますが、あるステーションにプライマリ ステーションとして使用できる、直接ビデオ接続ステーションがあることをお勧めします。 これが推奨される理由は、サポートのシナリオを予測できます。 たとえば、システムとの連携の BIOS MultiPoint サービスを実行する前にします。  
+Multipoint サービスは、これらのステーション型の任意の組み合わせをサポートしていますが、あるステーションにプライマリ ステーションとして使用できる、直接ビデオ接続ステーションがあることをお勧めします。 これが推奨される理由は、サポートのシナリオを予測できます。 たとえば、MultiPoint サービスを実行する前にシステムの BIOS と対話します。  
   
 ## <a name="primary-stations-and-standard-stations"></a>プライマリ ステーションと標準ステーション  
 1 つの直接のビデオ接続ステーションとは見なさ、 *プライマリ ステーション*します。 残りのステーションと呼びます *標準局*します。  
@@ -64,7 +64,7 @@ USB ゼロ-クライアントの接続されたステーションを利用、 *U
 USB over Ethernet 0 クライアントは、LAN 経由で MultiPoint サービス システムに USB を送信する USB ゼロ クライアントの一種です。 これらの種類の USB ゼロ クライアントは、同様に機能の他の USB ゼロ クライアントが、USB ケーブルの長さの最大値による制限はありません。 USB over Ethernet 0 クライアントは、従来のシン クライアントではありませんし、MultiPoint サービスのシステム上の仮想の USB デバイスとして表示されます。 これらのデバイスを使用する場合は、デバイスの製造元固有のパフォーマンスやサイトの計画に関する推奨事項を参照してください。 ほとんどのデバイスでは、関連付け、MultiPoint サービス システムにデバイスを接続することができます MultiPoint マネージャー用のサード パーティ プラグインがあります。  
   
 ## <a name="rdp-over-lan-connected-stations"></a>RDP over LAN 接続されたステーション  
-シン クライアントと従来のデスクトップ、ラップトップ、またはタブレット コンピューターは、リモート デスクトップ プロトコル (RDP) または独自のプロトコルとリモート デスクトップ プロトコルのプロバイダーを使用して、ローカル エリア ネットワーク (LAN) を介して MultiPoint サービスを実行しているコンピューターに接続できます。 RDP 接続が他の MultiPoint ステーションによく似ているエンド ユーザー エクスペリエンスを提供しますが、ローカル クライアント コンピューターのハードウェアを利用します。 詳細については、リモート デスクトップ アプリケーション使用可能な Android、iOS、Mac と Windows で [リモート デスクトップ クライアント](../remote-desktop-services/clients/remote-desktop-clients.md)です。 
+シン クライアントと従来のデスクトップ、ラップトップ、またはタブレット コンピューターは、リモート デスクトップ プロトコル (RDP) または独自のプロトコルとリモート デスクトップ プロトコルのプロバイダーを使用して、ローカル エリア ネットワーク (LAN) を介して MultiPoint サービスを実行しているコンピューターに接続できます。 RDP 接続は、他の MultiPoint ステーションと非常によく似たエンドユーザーエクスペリエンスを提供しますが、ローカルクライアントコンピューターのハードウェアを利用します。 詳細については、リモート デスクトップ アプリケーション使用可能な Android、iOS、Mac と Windows で [リモート デスクトップ クライアント](../remote-desktop-services/clients/remote-desktop-clients.md)です。 
   
 クライアントと Microsoft RemoteFX を実行しているデバイスは、プロセッサとビデオ ハードウェアの機能のローカルのシン クライアントまたはコンピューター ネットワーク経由で高解像度ビデオを提供することで、リッチ マルチ メディア エクスペリエンスを提供することができます。  
   
@@ -121,7 +121,7 @@ MultiPoint サービス ステーション、モニターにある 1024 x 768 �
 |物理的な制限|ビデオケーブルの長さと USB ハブ、およびケーブルの長さによって制限されます (推奨15メーターの最大長)|USB ハブとケーブルの長さによる制限 (推奨15メーターの最大長)|LAN 配布によって制限されます。|  
 |許可局の数 |ビデオ カード 1 枚あたりビデオ ポート時間のマザーボード上の利用可能な PCIe スロットの数によって制限されます。|USB ゼロ クライアント製造元別に合計数が制限される可能性が (詳細については、次の表の下の注を参照してください)。|ネットワーク スイッチで使用できるポートによって制限されます。|  
 |分割画面|はい|[はい]|いいえ|  
-|MultiPoint マネージャーのステーション周辺機器の状態、自動ログオンの構成、ワークステーションの名前を変更します。|[はい]|[はい]|いいえ|  
+|MultiPoint マネージャーのステーション周辺機器の状態、自動ログオンの構成、ワークステーションの名前を変更します。|はい|[はい]|いいえ|  
 |サーバーのスタートアップ メニューへのアクセス|はい|いいえ|いいえ|  
   
 > [!NOTE]  

@@ -1,8 +1,8 @@
 ---
-title: Reg 復元
-description: 'Windows コマンド」のトピック * * *- '
+title: reg restore
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0025a37ed8ca50b47e7750501a7362659b500537
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d6c121256cecaebc26e2c402d9b9ced8890eddc2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858773"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384671"
 ---
-# <a name="reg-restore"></a>Reg 復元
+# <a name="reg-restore"></a>reg restore
 
 
 
@@ -38,14 +38,14 @@ Reg restore <KeyName> <FileName>
 
 |パラメーター|説明|
 |---------|-----------|
-|\<キー名 >|復元するサブキーの完全なパスを指定します。 復元操作は、ローカル コンピューターでのみ機能します。 られているキー名では、有効なルート キーを含める必要があります。 有効なルート キーは次のとおりです。HKLM、HKCU、HKCR、HKU、および hkcc します。|
-|\<FileName>|レジストリに書き込まれるコンテンツを含むファイルのパスと名前を指定します。 このファイルはで事前に作成する必要があります、 **reg 保存** .hiv 拡張機能を使用して操作します。|
-|/?|ヘルプを表示 **reg 復元** コマンド プロンプト。|
+|\<KeyName >|復元するサブキーの完全なパスを指定します。 復元操作は、ローカル コンピューターでのみ機能します。 られているキー名では、有効なルート キーを含める必要があります。 有効なルートキーは次のとおりです。HKLM、HKCU、HKCR、HKU、および HKCC。|
+|\<ファイル名 >|レジストリに書き込まれるコンテンツを含むファイルのパスと名前を指定します。 このファイルはで事前に作成する必要があります、 **reg 保存** .hiv 拡張機能を使用して操作します。|
+|/?|ヘルプを表示 **reg restore** コマンド プロンプト。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   すべてのレジストリ エントリを編集する前に保存された親サブキー、 **reg 保存** 操作します。 復元と元のサブキーの編集に失敗した場合、 **reg 復元** 操作します。
--   次の表に、戻り値の **reg 復元** 操作します。
+-   すべてのレジストリ エントリを編集する前に保存された親サブキー、 **reg save** 操作します。 復元と元のサブキーの編集に失敗した場合、 **reg restore** 操作します。
+-   次の表に、戻り値の **reg restore** 操作します。
 
 |値|説明|
 |-----|-----------|
@@ -61,4 +61,4 @@ REG RESTORE HKLM\Software\Microsoft\ResKit NTRKBkUp.hiv
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

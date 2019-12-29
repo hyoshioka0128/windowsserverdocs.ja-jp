@@ -7,28 +7,28 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2c399467a8bb70e723a86618aa37fc54425f4e7d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: e73cf77e9590496f0ff3f881fd8ac4556450b5f0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189050"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357759"
 ---
 # <a name="manage-risk-with-conditional-access-control"></a>条件付きアクセス制御によってリスクを管理する
 
 
 
 
--   [AD FS でのキーの概念: 条件付きアクセスの制御](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
+-   [主要な概念-AD FS での条件付きアクセス制御](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
 
--   [条件付きアクセス制御によるリスクを管理](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_2)
+-   [条件付き Access Control によるリスク管理](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_2)
 
-## <a name="BKMK_1"></a>主要な概念 - AD FS での条件付きアクセスの制御
-AD FS の全体的な機能は、一連の要求を含むアクセス トークンを発行するためです。 AD FS が許可して、発行は、どのようなクレームに関する決定は、要求規則が適用されます。
+## <a name="BKMK_1"></a>主要な概念-AD FS での条件付きアクセス制御
+AD FS の全体的な機能は、クレームのセットを含むアクセストークンを発行することです。 AD FS が許可して、発行は、どのようなクレームに関する決定は、要求規則が適用されます。
 
-AD FS でのアクセス制御が許可または拒否要求がユーザーかどうかを判別するために使用される発行承認要求規則を実装またはか AD FS で保護されたリソースにアクセスするユーザーのグループが許可されます。 承認規則は証明書利用者信頼を基づいてのみ設定できます。
+AD FS のアクセス制御は、発行承認要求規則を使用して実装されます。この規則は、ユーザーまたはユーザーグループが AD FS セキュリティで保護されたリソースにアクセスできるかどうかを決定する許可要求または拒否要求を発行するために使用されます。 承認規則は証明書利用者信頼を基づいてのみ設定できます。
 
 |規則のオプション|規則のロジック|
 |---------------|--------------|
@@ -38,9 +38,9 @@ AD FS でのアクセス制御が許可または拒否要求がユーザーか�
 
 これらの規則のオプションとロジックの詳細については、「[承認要求規則を使用する場合](https://technet.microsoft.com/library/ee913560.aspx)」を参照してください。
 
-Windows Server 2012 R2 で AD FS では、アクセス制御はユーザー、デバイス、場所、および認証データを含む、複数の要因に拡張されます。 このアクセス制御の拡張は、承認要求規則で利用できるさまざまな種類の要求によって実現されます。  つまり、Windows Server 2012 R2 で AD FS で適用できますユーザー id またはグループのメンバーシップ、ネットワークの場所、デバイスに基づいて条件付きアクセス制御 (社内参加している、詳細についてでかどうかを参照してください[いずれかからの職場への参加。デバイスの SSO およびシームレスな 2 つ目 Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md))、認証状態 (かどうか多要素認証 (MFA) が実行されます)。
+Windows Server 2012 R2 の AD FS では、アクセス制御は、ユーザー、デバイス、場所、認証データを含む複数の要因によって強化されています。 このアクセス制御の拡張は、承認要求規則で利用できるさまざまな種類の要求によって実現されます。  言い換えると、Windows Server 2012 R2 の AD FS では、ユーザー id またはグループメンバーシップ、ネットワークの場所、デバイス (社内参加しているかどうかにかかわらず) に基づいて条件付きアクセス制御を適用することができます。詳細については、「[任意のデバイスからの職場への参加](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)」を参照してください。
 
-Windows Server 2012 R2 で AD FS での条件付きアクセス制御には次の利点があります。
+Windows Server 2012 R2 の AD FS での条件付きアクセス制御には、次のような利点があります。
 
 -   アプリケーションごとにさまざまに設定できる柔軟な認証ポリシー。ユーザー、デバイス、ネットワーク上の位置情報、認証状態に基づいてアクセスを許可または拒否できます。
 
@@ -50,9 +50,9 @@ Windows Server 2012 R2 で AD FS での条件付きアクセス制御には次�
 
 -   高度な条件付きアクセス制御シナリオに対応する豊富な要求の定義と Windows PowerShell のサポート。
 
--   カスタム (証明書利用者ごと製のアプリケーション) アクセス拒否のメッセージ。 詳細については、「 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)」を参照してください。 これらのメッセージをカスタマイズできることで、ユーザーがアクセスを拒否されている理由を説明し、可能であればセルフサービスで修復するように促すことができます。たとえば、ユーザーに職場へのデバイスの参加を促すことができます。 詳細については、「 [任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)」を参照してください。
+-   カスタム (証明書利用者アプリケーションごと) の "アクセスが拒否されました" メッセージ。 詳細については、「 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)」を参照してください。 これらのメッセージをカスタマイズできることで、ユーザーがアクセスを拒否されている理由を説明し、可能であればセルフサービスで修復するように促すことができます。たとえば、ユーザーに職場へのデバイスの参加を促すことができます。 詳細については、「 [任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)」を参照してください。
 
-次の表には、条件付きアクセス制御を実装するために使用する Windows Server 2012 R2 で AD FS で使用できるすべての要求種類が含まれています。
+次の表には、条件付きアクセス制御を実装するために使用される Windows Server 2012 R2 の AD FS で使用できるすべての要求の種類が含まれています。
 
 |要求の種類|説明|
 |--------------|---------------|
@@ -119,16 +119,16 @@ Windows Server 2012 R2 で AD FS での条件付きアクセス制御には次�
 |パスワード更新 URL|パスワード更新サービスの Web アドレスを表示するために使用されます。|
 |認証方法の参照|ユーザーを認証するために使用される認証方法を示すために使用されます。|
 
-## <a name="BKMK_2"></a>条件付きアクセス制御によるリスクを管理
+## <a name="BKMK_2"></a>条件付き Access Control によるリスク管理
 条件付きアクセス制御を実装し、利用可能な設定を使用することで、多くの方法でリスクを管理できます。
 
 ### <a name="common-scenarios"></a>一般的なシナリオ
-たとえば、特定のアプリケーション (証明書利用者信頼) に、ユーザーのグループ メンバーシップ データに基づく条件付きアクセス制御を実装する単純なシナリオを想像してください。 つまりを設定できます発行承認規則をフェデレーション サーバーでの AD で特定のグループに属しているユーザーを許可するドメイン、AD FS で保護されている特定のアプリケーションへのアクセス。  ステップ バイ ステップの手順 (UI と Windows PowerShell を使用して) このシナリオを実装するは、「[チュートリアル ガイド。条件付きアクセス制御によるリスク管理](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)します。 このチュートリアルの手順を完了するのには必要がありますラボ環境を設定して、次の手順では、 [Windows Server 2012 R2 で AD FS のラボ環境をセットアップ](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)します。
+たとえば、特定のアプリケーション (証明書利用者信頼) のユーザーのグループメンバーシップデータに基づいて、条件付きアクセス制御を実装する簡単なシナリオを考えてみます。 つまり、フェデレーションサーバーで発行承認規則を設定して、AD ドメイン内の特定のグループに属するユーザーに、AD FS によって保護されている特定のアプリケーションへのアクセスを許可することができます。  このシナリオを実装する詳細な手順 (UI と Windows PowerShell を使用) については、「 [Walkthrough Guide: Manage Risk with Conditional Access Control](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)」で説明しています。 このチュートリアルの手順を完了するには、ラボ環境を設定し、「 [Windows Server 2012 R2 の AD FS 用のラボ環境](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)をセットアップする」の手順に従ってください。
 
 ### <a name="advanced-scenarios"></a>高度なシナリオ
-Windows Server 2012 R2 で AD FS での条件付きアクセス制御を実装するその他の例を以下に示します。
+Windows Server 2012 R2 の AD FS での条件付きアクセス制御を実装するその他の例を次に示します。
 
--   このユーザーの id が MFA で検証された場合にのみ、AD FS によって保護されたアプリケーションへのアクセスを許可します。
+-   このユーザーの id が MFA で検証された場合にのみ、AD FS によって保護されたアプリケーションへのアクセスを許可する
 
     次のコードを使用できます。
 
@@ -139,7 +139,7 @@ Windows Server 2012 R2 で AD FS での条件付きアクセス制御を実装�
 
     ```
 
--   ユーザーにアクセス要求が送らから職場未参加のデバイスに登録されている場合にのみ、AD FS によって保護されたアプリケーションへのアクセスを許可します。
+-   ユーザーに登録されている社内参加デバイスからアクセス要求が送られている場合にのみ、AD FS によって保護されたアプリケーションへのアクセスを許可する
 
     次のコードを使用できます。
 
@@ -150,7 +150,7 @@ Windows Server 2012 R2 で AD FS での条件付きアクセス制御を実装�
 
     ```
 
--   Id が MFA で検証済みユーザーにアクセス要求が送らから職場未参加のデバイスに登録されている場合にのみ、AD FS によって保護されたアプリケーションへのアクセスを許可します。
+-   Id が MFA で検証済みのユーザーに登録されている職場参加済みのデバイスからアクセス要求が送られている場合にのみ、AD FS によって保護されたアプリケーションへのアクセスを許可する
 
     次のコードを使用できます。
 
@@ -162,7 +162,7 @@ Windows Server 2012 R2 で AD FS での条件付きアクセス制御を実装�
 
     ```
 
--   Id が MFA で検証済みのユーザーからアクセス要求が送信される場合にのみ、AD FS によって保護されたアプリケーションへのエクストラネット アクセスを許可します。
+-   Id が MFA で検証済みのユーザーからアクセス要求が送られている場合にのみ、AD FS によって保護されたアプリケーションへのエクストラネットアクセスを許可します。
 
     次のコードを使用できます。
 
@@ -174,9 +174,9 @@ Windows Server 2012 R2 で AD FS での条件付きアクセス制御を実装�
 
     ```
 
-## <a name="see-also"></a>関連項目
-[チュートリアル ガイド: 条件付きアクセス制御によるリスク管理](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
-[Windows Server 2012 R2 で AD FS のラボ環境のセットアップ](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+## <a name="see-also"></a>参照
+[チュートリアルガイド: 条件付き Access Control によるリスク管理](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
+[Windows Server 2012 R2 で AD FS のラボ環境をセットアップ](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)する
 
 
 

@@ -7,27 +7,27 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0206197b24f13d80019cbc864057e99e195ebc4b
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 607dc34c8f44d8d96a8dc0c9d1ed004edc799167
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191140"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407997"
 ---
 # <a name="planning-your-deployment"></a>展開の計画
 
-計画するときクロス\-組織\(フェデレーション\-ベース\)Active Directory フェデレーション サービスを使用してコラボレーション\(AD FS\)、突き止める場合、組織他の組織がインターネット経由でアクセスする Web リソースをホストするか、組織内の従業員は Web リソースへのアクセスを提供します。 この決定は、AD FS を展開する方法に影響し、AD FS インフラストラクチャの計画の基本的なことをします。  
+クロス\-組織 \(フェデレーション\-、Active Directory フェデレーションサービス (AD FS) \(AD FS を使用して\) コラボレーションを計画している場合は、まず、組織がインターネット経由で他の組織からアクセスする Web リソースをホストするか、組織内の従業員の Web リソースへのアクセスを提供するかを決定します。\) この決定は AD FS の展開方法に影響し、AD FS インフラストラクチャの計画の基礎となります。  
   
 > [!NOTE]  
 > 組織がフェデレーション契約で果たす役割をすべての当事者が明確に理解するようにしてください。  
   
-[フェデレーション Web SSO 設計](Federated-Web-SSO-Design.md)、AD FS の使用条件*アカウント パートナー* \(とも呼ば*id プロバイダー* ADFS管理スナップインで\-で\)と*リソース パートナー* \(とも呼ば*証明書利用者*AD FS 管理スナップインで\-で\)にアカウントをホストしている組織を区別するために役立つ\(アカウント パートナー\) Web をホストする組織から\-ベースのリソース\(リソース パートナー\)します。  
+[フェデレーション WEB SSO 設計](Federated-Web-SSO-Design.md)では、AD FS は、\) の AD FS 管理スナップ\-で*id プロバイダー*とも呼ばれる*アカウントパートナー* \(のような用語を*使用し、* \(の AD FS 管理スナップ\-で*証明書利用者*と呼ばれることもあり\) アカウントをホストする組織を、Web \(ベースのリソースをホストしている組織から区別するのに役立ち\)リソースパートナー\)。\-\(  
   
 [Web SSO Design](Web-SSO-Design.md)では、組織はユーザーに対してアプリケーションへのアクセスを提供するため、アカウント パートナーとリソース パートナー両方の役割を実行します。  
   
-次のトピックでは、AD FS のいくつかのパートナーの組織の概念について説明します。 AD FS 展開ガイドを設定して、アカウント パートナー組織と AD FS 展開目標に基づいて、リソース パートナー組織の構成に関する情報が含まれているトピックへのリンクも含まれます。  
+次のトピックでは、AD FS パートナー組織の概念について説明します。 また、AD FS の展開目標に基づいてアカウントパートナー組織およびリソースパートナー組織のセットアップと構成に関する情報が記載されている、AD FS 展開ガイドのトピックへのリンクも含まれています。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   
@@ -41,7 +41,7 @@ ms.locfileid: "66191140"
   
 -   [リソース パートナー組織での AD FS の展開](Deploying-AD-FS-in-the-Resource-Partner-Organization-2012.md)  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 
 

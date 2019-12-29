@@ -7,38 +7,38 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4e8f55428271771e612fd3b35c0e650c62d35ac8
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 77cf91126cc628fb7fefef3eca8e7189f3e9eb10
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191173"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408022"
 ---
 # <a name="planning-federation-server-placement"></a>フェデレーション サーバーの配置の計画
 
-Active の Directory フェデレーション サービスの最も重要なコンポーネント\(AD FS\)展開は、フェデレーション サーバー。 そのため、これが、戦略を計画するフェデレーション サーバーの配置、慎重にフェデレーション サーバーを展開するタイミングと場所を含む重要です。 次のトピックの情報は、フェデレーションを作成するサーバーまたはフェデレーション サーバー ファームと、アカウントでそのフェデレーション サーバーを使用するかどうかのパートナー ロール、リソース パートナーのロールのどちらか一方または両方の状況を判断するのに役立ちます。  
+Active Directory フェデレーションサービス (AD FS) \(AD FS\) 展開の最も重要なコンポーネントは、フェデレーションサーバーです。 そのため、フェデレーションサーバーを展開するタイミングや場所など、フェデレーションサーバーの配置方法を慎重に計画することが重要です。 次のトピックの情報は、フェデレーションサーバーまたはフェデレーションサーバーファームをいつどのように作成するか、およびそのフェデレーションサーバーをアカウントパートナーロールとリソースパートナーロールのどちらか、または両方で使用するかを決定するのに役立ちます。  
   
 -   [アカウント パートナー内のフェデレーション サーバーの役割を確認する](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
   
 -   [リソース パートナー内のフェデレーション サーバーの役割を確認する](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md)  
   
--   [フェデレーション サーバーを作成する場合](When-to-Create-a-Federation-Server.md)  
+-   [フェデレーションサーバーを作成する場合](When-to-Create-a-Federation-Server.md)  
   
 -   [フェデレーション サーバーを配置する場所](Where-to-Place-a-Federation-Server.md)  
   
--   [フェデレーション サーバー ファームを作成する場合](When-to-Create-a-Federation-Server-Farm.md)  
+-   [フェデレーションサーバーファームを作成する場合](When-to-Create-a-Federation-Server-Farm.md)  
   
 -   [フェデレーション サーバーの証明書の要件](Certificate-Requirements-for-Federation-Servers.md)  
   
 -   [フェデレーション サーバーの名前解決の要件](Name-Resolution-Requirements-for-Federation-Servers.md)  
   
 > [!NOTE]  
-> この情報は、フェデレーション サーバーの配置計画に役立つ可能性が、これが、フェデレーション サーバーの適切な数と各 AD FS 設計のハードウェア要件を確認する方法は説明しません。  
+> この情報は、フェデレーションサーバーの配置計画に役立つ場合がありますが、適切な数のフェデレーションサーバーと各 AD FS 設計のハードウェア要件を決定する方法については説明しません。  
   
-フェデレーション サーバーを配置して、2 つのプライマリ AD FS のいずれかの方法の例では、シナリオを設計、参照してください[AD FS 設計への展開の目標をマッピング](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md)します。  
+2つの主要な AD FS 設計シナリオのいずれかにフェデレーションサーバーを配置する方法の例については、「[配置目標の AD FS 設計へのマッピング](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

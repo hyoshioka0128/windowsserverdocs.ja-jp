@@ -1,8 +1,8 @@
 ---
-title: Dfsdiag TestReferral
-description: 'Windows コマンド」のトピック * * *- '
+title: dfsdiag TestReferral
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,28 +13,28 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cd1b87befa8a9cfda5ea27a4ce5a5105ea1a1009
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: af22520d2c89f9d9f9d91ea6f43a33f3ff9c57f1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848023"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378363"
 ---
-# <a name="dfsdiag-testreferral"></a>Dfsdiag TestReferral
+# <a name="dfsdiag-testreferral"></a>dfsdiag TestReferral
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-分散ファイル システムを確認します。 \(DFS\) 、次のテストを実行することで参照します。  
+次のテストを実行して、DFS\) の参照を \(分散ファイルシステムを確認します。  
   
--   引数を指定せず、DFSpath パラメーターを使用する場合、このコマンドは、参照一覧に、信頼されたドメインすべてが含まれているを検証します。  
+-   引数を指定せずに DFSpath パラメーターを使用すると、このコマンドは、参照リストにすべての信頼されたドメインが含まれているかどうかを検証します。  
   
--   ドメインを指定すると、コマンドは、ドメイン コント ローラーの正常性チェックを実行します\(dfsdiag \/testdcs\)サイトの関連付けと、ローカル ホストのドメイン キャッシュしてテストします。  
+-   ドメインを指定すると、コマンドにより、\(dfs diag \/testdcs dc の正常性チェックが実行され、ローカルホストのサイトの関連付けとドメインキャッシュがテストされます。\)  
   
--   ドメインを指定する場合と\\SYSvol または\\NETLOGON の 同じ正常性を実行するだけでなく、ドメインを指定すると、コマンドがチェックされるときを To Live の時間をチェック\(TTL\) SYSvol、または NETLOGON の紹介900 秒間の既定値に一致します。  
+-   ドメインを指定し、SYSvol または \\NETLOGON を \\すると、ドメインを指定したときと同じ正常性チェックを実行するだけでなく、SYSvol または NETLOGON の参照の time To Live \(TTL\) が既定値の900秒と一致するかどうかがチェックされます。  
   
--   同じ正常性を実行するだけでなく、名前空間のルートを指定すると、コマンドが DFS 構成のチェックを実行するドメインを指定するときに確認します\(dfsdiag \/TestDFSConfig\)と名前空間の整合性の確認\(dfsdiag \/TestDFSIntegrity\)します。  
+-   名前空間のルートを指定すると、ドメインを指定したときと同じ正常性チェックを実行するだけでなく、DFS 構成チェック \(DFS diag \/TestDFSConfig\) と、DFS diag \/Testdfsconfig\)\(名前空間の整合性チェックが実行されます。  
   
--   DFS フォルダーを指定すると\(リンク\)、コマンドにフォルダー ターゲットのサイトの構成が検証される間、名前空間のルートを指定する場合に同じ正常性がチェックを実行するだけでなく\(dfsdiag \/testsites\)し、ローカル ホストのサイトの関連付けを検証します。  
+-   DFS フォルダー \(リンク\)を指定すると、名前空間のルートを指定した場合と同じ正常性チェックが実行されるだけでなく、フォルダー \(ターゲットのサイト構成が検証されて、dfs diag \/testsites\)、ローカルホストのサイトの関連付けが検証されます。  
   
   
   
@@ -48,24 +48,24 @@ dfsdiag /TestReferral /DFSpath:<DFS path for getting referrals> [/Full]
   
 |パラメーター|説明|  
 |-------|--------|  
-|\/DFSpath:<path for getting referrals>|この DFS パスには、次のいずれかを指定できます。<br /><br />-   \(空白\):信頼されたドメインをテストします。<br />-   \\\\ドメイン:ドメイン コント ローラーの参照。<br />-   \\\\ドメイン\\SYSvol:SYSvol の参照。<br />-   \\\\ドメイン\\NETLOGON:NETLOGON の参照。<br />-   \\\\<Domain or server>\\<Namespace Root>:Namespace のルートの紹介。<br />-   \\\\<Domain or server>\\<Namespace root>\\<DFS folder>:DFS フォルダー\(リンク\)紹介します。|  
-|\/完全です|ドメインとルートの参照にのみ適用されます。 レジストリと active directory ドメイン サービス間でサイトの関連付け情報の整合性を検証\(AD DS\)します。|  
+|\/DFSpath:<path for getting referrals>|この DFS パスは、次のいずれかになります。<br /><br />-   \(blank\): 信頼されたドメインをテストします。<br />-   \\\\ドメイン: ドメインコントローラーの紹介。<br />-   \\\\ドメイン\\SYSvol: SYSvol 参照。<br />-   \\\\ドメイン\\NETLOGON: NETLOGON の紹介。<br />-   \\\\<Domain or server>\\<Namespace Root>: 名前空間のルート参照。<br />-   \\\\<Domain or server>\\<Namespace root>\\<DFS folder>: DFS フォルダー \(リンク\) 参照します。|  
+|\/完全|ドメインおよびルートの参照にのみ適用されます。 レジストリと active directory ドメインサービス \(AD DS\)間のサイトの関連付け情報の整合性を確認します。|  
   
 ## <a name="BKMK_Examples"></a>例  
-TBD を入力します。  
+次のように入力します。  
   
 ```  
 dfsdiag /TestReferral /DFSpath:\\Contoso.com\MyNamespace  
 ```  
   
-TBD を入力します。  
+次のように入力します。  
   
 ```  
 dfsdiag /TestReferral /DFSpath:  
 ```  
   
-## <a name="additional-references"></a>その他の参照  
+## <a name="additional-references"></a>その他の参照情報  
   
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  
   
 

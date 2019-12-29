@@ -1,8 +1,8 @@
 ---
 title: perfmon
-description: 'パフォーマンス モニターの Windows コマンド」のトピック '
+description: 'Perfmon の Windows コマンドに関するトピック '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/25/2018
-ms.openlocfilehash: 000ed11a0eaae36d158ae7a9f044871d4b18aacc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 52503952f2212f7de00d8e7677925b0123f0bbef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814583"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372328"
 ---
 # <a name="perfmon"></a>perfmon
 
-特定のスタンドアロン モードでは、Windows 信頼性およびパフォーマンス モニターを起動します。
+特定のスタンドアロンモードで Windows 信頼性とパフォーマンスモニターを起動します。
 
 ## <a name="syntax"></a>構文
 
@@ -34,11 +34,11 @@ perfmon </res|report|rel|sys>
 
 |パラメーター|説明|
 |---------|-----------|
-|/res|リソース ビューを起動します。|
-|/report|システム診断データ コレクター セットを開始し、結果のレポートを表示します。|
-|/rel」|信頼性モニターを起動します。|
-|/sys|パフォーマンス モニターを起動します。|
+|/res|リソースビューを開始します。|
+|/report」|システム診断データコレクターセットを起動し、結果のレポートを表示します。|
+|/rel|信頼性モニターを起動します。|
+|/sys|パフォーマンスモニターを起動します。|
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[Windows パフォーマンス モニター](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749154(v%3dws.11))
+[Windows パフォーマンスモニター](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749154(v%3dws.11))

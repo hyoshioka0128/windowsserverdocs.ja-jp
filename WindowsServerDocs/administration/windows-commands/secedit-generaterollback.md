@@ -1,8 +1,8 @@
 ---
-title: secedit:generaterollback
-description: 'Windows コマンド」のトピック * * *- '
+title: 'secedit: generaterollback'
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa655d80c2698430827ad814c2b476e526529323
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 3ce4bd83e6eda24c10f65bd9d450a204906ff7fd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441556"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384220"
 ---
-# <a name="seceditgeneraterollback"></a>secedit:generaterollback
+# <a name="seceditgeneraterollback"></a>secedit: generaterollback
 
 
 
@@ -48,7 +48,7 @@ Secedit /generaterollback /db <database file name> /cfg <configuration file name
 
 Windows Server 2008 で始まる `Secedit /refreshpolicy` に置き換えられました `gpupdate`します。 セキュリティ設定を更新する方法については、次を参照してください。 [Gpupdate](gpupdate.md)します。
 
-このコマンドの成功した実行中は状態の「タスクが正常に完了します」 指定されたセキュリティ テンプレートとセキュリティ ポリシーの構成間の不一致のみのログ。 Scesrv.log、これらの不一致が一覧表示します。
+このコマンドが正常に実行されると、"タスクが正常に完了しました。" という状態が表示されます。 指定されたセキュリティ テンプレートとセキュリティ ポリシーの構成間の不一致のみのログ。 Scesrv.log、これらの不一致が一覧表示します。
 
 既存のロールバック テンプレートが指定されている場合、このコマンドが上書きされます。 次のコマンドでは、新しいロールバック テンプレートを作成できます。 どちらの条件は、追加のパラメーターは必要ありません。
 

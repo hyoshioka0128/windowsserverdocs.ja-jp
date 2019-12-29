@@ -1,8 +1,8 @@
 ---
 title: 有効にするコマンドを使用してください。
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1634ce163a232726bee06bbba63b713fe7920c0d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cd886fa6f84e4d52ef90e998871d84ded8fdaf53
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848643"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392242"
 ---
 # <a name="using-the-enable-command"></a>有効にするコマンドを使用してください。
 
@@ -28,5 +28,5 @@ Windows 展開サービスのすべてのサービスを有効にします。
 ## <a name="subcommands"></a>サブコマンド
 |Subommand|説明|
 |-------|--------|
-|[有効にするサーバーのコマンドを使用します。](using-the-enable-server-command.md)|指定された Windows 展開サービス サーバー (展開サーバー) のすべてのサービスを有効にします。|
-|[有効にする TransportServer コマンドを使用してください。](using-the-enable-transportserver-command.md)|指定されたトランスポート サーバーのすべてのサービスを有効にします。|
+|[Enable Server コマンドの使用](using-the-enable-server-command.md)|指定された Windows 展開サービス サーバー (展開サーバー) のすべてのサービスを有効にします。|
+|[Enable TransportServer コマンドの使用](using-the-enable-transportserver-command.md)|指定されたトランスポート サーバーのすべてのサービスを有効にします。|

@@ -8,14 +8,14 @@ manager: mtillman
 ms.reviewer: cahick
 ms.date: 08/20/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 180ffbd1e96448d7a7ea12c5e08e9fc5b35f7f8b
-ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
+ms.openlocfilehash: 53626c4cfac17cb11402ada9ce3397c487cd0720
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/26/2019
-ms.locfileid: "70031599"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389853"
 ---
 # <a name="winlogon-automatic-restart-sign-on-arso"></a>Winlogon 自動再起動サインオン (ARSO)
 
@@ -51,7 +51,7 @@ Windows 10 では、サーバーの Sku に対して ARSO が無効になって�
 
 **Intune ポリシー:**
 
-- プラットフォーム:Windows 10 以降
+- プラットフォームWindows 10 以降
 - プロファイルの種類:管理用テンプレート
 - パス: \Windows \Windows ログオンオプション
 
@@ -73,7 +73,7 @@ Windows 10 では、サーバーの Sku に対して ARSO が無効になって�
 
 **レジストリエディター:**
 
-| 値名 | 種類 | data |
+| ［値の名前］ | 種類 | data |
 | --- | --- | --- |
 | DisableAutomaticRestartSignOn | DWORD | 0 (ARSO を有効にする) |
 |   |   | 1 (ARSO を無効にする) |
@@ -92,7 +92,7 @@ Windows 10 では、サーバーの Sku に対して ARSO が無効になって�
 
 **Intune ポリシー:**
 
-- プラットフォーム:Windows 10 以降
+- プラットフォームWindows 10 以降
 - プロファイルの種類:管理用テンプレート
 - パス: \Windows \Windows ログオンオプション
 
@@ -114,7 +114,7 @@ Windows 10 では、サーバーの Sku に対して ARSO が無効になって�
 
 **レジストリエディター**
 
-| 値名 | 種類 | data |
+| ［値の名前］ | 種類 | data |
 | --- | --- | --- |
 | AutomaticRestartSignOnConfig | DWORD | 0 (セキュリティで保護されている場合は ARSO を有効にする) |
 |   |   | 1 (常に ARSO を有効にする) |

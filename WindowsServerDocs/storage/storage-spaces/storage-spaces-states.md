@@ -1,38 +1,38 @@
 ---
-title: 記憶域スペース ダイレクトの正常性と操作状態
-description: 検索して、別の正常性と記憶域スペース ダイレクトと (物理ディスク、プール、および仮想ディスクを含む)、記憶域スペースの操作の状態を理解する方法とそれらについての対処方法。
-keywords: 記憶域スペース、デタッチするには、仮想ディスク、物理ディスクは、機能低下
+title: 記憶域スペースと記憶域スペースダイレクトの正常性と動作状態
+description: 記憶域スペースダイレクトと記憶域スペース (物理ディスク、プール、仮想ディスクを含む) のさまざまな正常性と動作状態と、その対処方法について説明します。
+keywords: 記憶域スペース、デタッチ済み、仮想ディスク、物理ディスク、低下
 author: jasongerend
 ms.author: jgerend
-ms.date: 10/17/2018
+ms.date: 12/06/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-spaces
 manager: brianlic
-ms.openlocfilehash: 5090a68270438bd9a06c7d50f9d4abca066d31e6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 40e820971f9d2ab0ba48fe30b100f07302ed7206
+ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849143"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74945279"
 ---
-# <a name="troubleshoot-storage-spaces-direct-health-and-operational-states"></a>記憶域スペース ダイレクトの正常性と操作状態をトラブルシューティングします。
+# <a name="troubleshoot-storage-spaces-and-storage-spaces-direct-health-and-operational-states"></a>記憶域スペースのトラブルシューティングと、正常性と動作状態の記憶域スペースダイレクト
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server (半期チャネル)、Windows 10、Windows 8.1
+> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server (半期チャネル)、Windows 10、Windows 8.1
 
-このトピックでは、正常性と仮想ディスク (記憶域スペースでボリュームの下に配置) を記憶域プールの操作の状態について説明しに存在するドライブ[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)と[記憶域スペース](overview.md)します。 これらの状態理由読み取り専用の構成があるため、仮想ディスクを削除することはできませんなどのさまざまな問題をトラブルシューティングする際に役に立つことができます。 プール (CannotPoolReason) にドライブを追加できない理由も説明します。
+このトピックでは、記憶域プール、仮想ディスク (記憶域スペース内のボリュームの下にある)、および[記憶域スペースダイレクト](storage-spaces-direct-overview.md)と[記憶域スペース](overview.md)のドライブの状態と動作状態について説明します。 これらの状態は、読み取り専用の構成のために仮想ディスクを削除できない理由など、さまざまな問題のトラブルシューティングを試みる場合に非常に重要です。 また、ドライブをプールに追加できない理由 (CannotPoolReason) についても説明します。
 
-記憶域スペースが 3 つのプライマリ オブジェクト -*物理ディスク*(ハード ドライブ、Ssd など) に追加される、*記憶域プール*、作成できるように、記憶域を仮想化*の仮想ディスク*から次のように、プールのディスク領域を解放します。 プールのメタデータは、プール内の各ドライブに書き込まれます。 ボリュームが仮想ディスク上に作成され、ファイルを格納しますが、ここでのボリュームについては説明しません。
+記憶域スペースには、次に示すように、記憶域*プール*に追加された*物理ディスク*(ハードドライブ、ssd など) と3つの主要なオブジェクトがあります。これにより、プール内の空き領域から*仮想ディスク*を作成できるようになります。 プールのメタデータは、プール内の各ドライブに書き込まれます。 ボリュームは仮想ディスク上に作成され、ファイルが格納されますが、ここではボリュームについては説明しません。
 
-![物理ディスクを記憶域プールを追加してから仮想ディスクを作成し、プールの領域](media/storage-spaces-states/storage-spaces-object-model.png)
+![物理ディスクが記憶域プールに追加され、プール領域から作成された仮想ディスク](media/storage-spaces-states/storage-spaces-object-model.png)
 
-サーバー マネージャーで、または PowerShell を使用した正常性と操作状態を表示できます。 さまざまな (不適切なほとんどの場合) の正常性とそのクラスター ノードの大部分が不足している記憶域スペース ダイレクト クラスターでの操作の状態の例を次に示します (追加する列ヘッダーを右クリックして**動作状態**)。 これは、満足のクラスターがありません。
+状態と動作状態は、サーバーマネージャー、または PowerShell を使用して表示できます。 次に、クラスターノードのほとんどが不足している記憶域スペースダイレクトクラスターでの (ほとんど問題のない) 正常性状態と操作状態の例を示します (**操作状態**を追加するには、列ヘッダーを右クリックします)。 これはすばらしいクラスターではありません。
 
-![サーバー マネージャーの多数の物理ディスクと異常な状態に仮想ディスクがありません - 記憶域スペース ダイレクト クラスターに不足している 2 つのノードの結果を表示](media/storage-spaces-states/unhealthy-disks-in-server-manager.png)
+![記憶域スペースダイレクトクラスターに存在しない2つのノードの結果を表示するサーバーマネージャー (不足している物理ディスクと仮想ディスクの多くは異常な状態にあります)](media/storage-spaces-states/unhealthy-disks-in-server-manager.png)
 
 ## <a name="storage-pool-states"></a>記憶域プールの状態
 
-すべての記憶域プールが正常性状態の**健全**、**警告**、または**不明な**/**異常**も、1 つ以上操作の状態。
+各記憶域プールの正常性状態は、**正常**、**警告**、または**不明**/**異常**、および1つ以上の動作状態です。
 
 プールの状態を確認するには、次の PowerShell コマンドを使用します。
 
@@ -40,7 +40,7 @@ ms.locfileid: "59849143"
 Get-StoragePool -IsPrimordial $False | Select-Object HealthStatus, OperationalStatus, ReadOnlyReason
 ```
 
-読み取り専用の動作状態は不明な正常性の状態で、記憶域プールを示す出力の例を次に示します。
+次の出力例は、読み取り専用の動作状態の不明なヘルス状態の記憶域プールを示しています。
 
 ```
 FriendlyName                OperationalStatus HealthStatus IsPrimordial IsReadOnly
@@ -48,45 +48,45 @@ FriendlyName                OperationalStatus HealthStatus IsPrimordial IsReadOn
 S2D on StorageSpacesDirect1 Read-only         Unknown      False        True
 ```
 
-次のセクションでは、正常性と操作状態を示します。
+以降のセクションでは、正常性状態と操作状態について説明します。
 
-### <a name="pool-health-state-healthy"></a>プールの正常性の状態:正常
+### <a name="pool-health-state-healthy"></a>プールのヘルス状態: 正常
 
-|動作状態    |説明|
+| 運用状態    | 説明 |
+| ---------            | ---------  |
+| [OK] を選びます | 記憶域プールは正常です。 |
+
+### <a name="pool-health-state-warning"></a>プールのヘルス状態: 警告
+
+記憶域プールが**警告**のヘルス状態にある場合、プールにアクセスできることを意味しますが、1つまたは複数のドライブに障害が発生しているか、または不足しています。 その結果、記憶域プールの回復性が低下する可能性があります。
+
+|運用状態    |説明|
 |---------            |---------  |
-|OK|記憶域プールは正常です。|
+|［低下］|記憶域プールに障害が発生しているか、ドライブが不足しています。 この状態は、プールメタデータをホストしているドライブでのみ発生します。 <br><br>**操作**: ドライブの状態を確認し、障害が発生したドライブを交換してから、追加のエラーが発生します。|
 
-### <a name="pool-health-state-warning"></a>プールの正常性の状態:警告
+### <a name="pool-health-state-unknown-or-unhealthy"></a>プールのヘルス状態: 不明または異常
 
-記憶域プールの場合、**警告**正常性状態では、プールは、アクセスできるが、1 つまたは複数のドライブが失敗したかが不足していることを意味します。 結果として、記憶域プールに回復性を低下がある可能性があります。
+記憶域プールが不明または異常**な**状態にある場合は、記憶域プールが読み取り専用で、プールが**警告**または**OK**の正常性状態に戻るまで変更できないことを意味します。
 
-|動作状態    |説明|
-|---------            |---------  |
-|［低下］|記憶域プールには、不足しているかどうかのドライブがあります。 この状態は、プールのメタデータをホストしているドライブでのみ発生します。 <br><br>**アクション**:ドライブの状態を確認しはその他の障害が発生する前に、失敗したすべてのドライブを交換します。|
-
-### <a name="pool-health-state-unknown-or-unhealthy"></a>プールの正常性の状態:不明または異常
-
-記憶域プールの場合、**不明な**または**異常**正常性状態、つまり記憶域プールは読み取り専用にプールが返されるまでに変更することはできません、**警告**または**OK**正常性状態。
-
-|動作状態    |読み取り専用の理由 |説明|
+|運用状態    |読み取り専用の理由 |説明|
 |---------            |---------       |--------   |
-|読み取り専用かどうか|不完全です|これは、記憶域プールが失った場合に発生することがその[クォーラム](understand-quorum.md)プール内のほとんどのドライブが失敗したか、何らかの理由がオフラインにすることを意味します。 プールのクォーラムを失ったときに記憶域スペースが自動的に設定、プールの構成を読み取り専用に十分なドライブが再び使用可能になるまでです。<br><br>**アクション:** <br>1. 不足しているドライブを再接続し、記憶域スペース ダイレクトを使用して、場合は、オンラインのすべてのサーバーを表示します。 <br>2. プールを管理者権限で PowerShell セッションを開く」と入力し、読み取り/書き込みに設定します。<br><br> <code>Get-StoragePool <PoolName> -IsPrimordial $False \| Set-StoragePool -IsReadOnly $false</code>|
-||ポリシー|管理者は、読み取り専用に記憶域プールを設定します。<br><br>**アクション:** 読み取り/書き込みアクセスでは、フェールオーバー クラスター マネージャーにクラスター化された記憶域プールを設定するに移動して**プール**プールを右クリックし、**オンライン**します。<br><br>その他のサーバーや Pc を使用して、管理者権限で PowerShell セッションを開くし、入力します。<br><br><code>Get-StoragePool <PoolName> \| Set-StoragePool -IsReadOnly $false</code><br><br> |
-||Starting|記憶域スペースの開始またはドライブをプールに接続するために待機しています。 これは、一時的な状態でなければなりません。 完全に開始されると、プールは、さまざまな動作状態に移行する必要があります。<br><br>**アクション:** プール内に保持している場合、*開始*状態、プール内のすべてのドライブが正しく接続されているかどうかを確認してください。|
+|読み取り専用かどうか|未完成|これは、記憶域プールが[クォーラム](understand-quorum.md)を失った場合に発生する可能性があります。つまり、プール内のほとんどのドライブが故障しているか、何らかの理由でオフラインになっていることを意味します。 プールがクォーラムを失った場合、記憶域スペースは、十分な数のドライブが再び使用可能になるまで、プールの構成を自動的に読み取り専用に設定します。<br><br>**アクション:** <br>1. 不足しているドライブを再接続します。記憶域スペースダイレクトを使用している場合は、すべてのサーバーをオンラインにします。 <br>2. 管理アクセス許可を使用して PowerShell セッションを開き、次のように入力して、プールを読み取り/書き込みに戻します。<br><br> <code>Get-StoragePool <PoolName> -IsPrimordial $False \| Set-StoragePool -IsReadOnly $false</code>|
+||ポリシー|管理者が記憶域プールを読み取り専用に設定している。<br><br>**アクション:** クラスター化された記憶域プールをフェールオーバークラスターマネージャーの読み取り/書き込みアクセスに設定するには、 **[プール]** に移動し、プールを右クリックして、 **[オンライン]** にする を選択します。<br><br>その他のサーバーと Pc については、管理アクセス許可を使用して PowerShell セッションを開き、次のように入力します。<br><br><code>Get-StoragePool <PoolName> \| Set-StoragePool -IsReadOnly $false</code><br><br> |
+||Starting|記憶域スペースは、プール内でのドライブの接続を開始または待機しています。 これは一時的な状態である必要があります。 完全に開始されると、プールは別の動作状態に移行する必要があります。<br><br>**アクション:** プールが*開始*状態のままである場合は、プール内のすべてのドライブが正常に接続されていることを確認します。|
 
-参照してください[読み取り専用の構成を持つ記憶域プールを変更する](https://social.technet.microsoft.com/wiki/contents/articles/14861.modifying-a-storage-pool-that-has-a-read-only-configuration.aspx)します。
+「[読み取り専用構成を持つ記憶域プールの変更](https://social.technet.microsoft.com/wiki/contents/articles/14861.modifying-a-storage-pool-that-has-a-read-only-configuration.aspx)」も参照してください。
 
 ## <a name="virtual-disk-states"></a>仮想ディスクの状態
 
-記憶域スペースのボリュームは、プールに空き領域から分割した仮想ディスク (記憶域スペース) 上に配置されます。 すべての仮想ディスクが正常性状態の**健全**、**警告**、**異常**、または**不明な**と 1 つまたは複数の操作状態。
+記憶域スペースでは、ボリュームは、プール内の空き領域から分割される仮想ディスク (記憶域スペース) に配置されます。 すべての仮想ディスクの正常性状態は、**正常**、**警告**、**異常**、または**不明**であり、1つまたは複数の動作状態です。
 
-状態の仮想ディスクの中を確認するには、次の PowerShell コマンドを使用します。
+仮想ディスクの状態を確認するには、次の PowerShell コマンドを使用します。
 
 ```PowerShell
 Get-VirtualDisk | Select-Object FriendlyName,HealthStatus, OperationalStatus, DetachedReason
 ```
 
-デタッチされた仮想ディスクと低下/未完了の仮想ディスクを表示出力の例を次に示します。
+デタッチされた仮想ディスクと、低下または不完全な仮想ディスクを示す出力の例を次に示します。
 
 ```
 FriendlyName HealthStatus OperationalStatus      DetachedReason
@@ -95,89 +95,89 @@ Volume1      Unknown      Detached               By Policy
 Volume2      Warning      {Degraded, Incomplete} None
 ```
 
-次のセクションでは、正常性と操作状態を示します。
+以降のセクションでは、正常性状態と操作状態について説明します。
 
-### <a name="virtual-disk-health-state-healthy"></a>仮想ディスクのヘルス状態:正常
+### <a name="virtual-disk-health-state-healthy"></a>仮想ディスクの正常性状態: 正常
 
-|動作状態    |説明|
+|運用状態    |説明|
 |---------            |---------          |
-|OK    |仮想ディスクは正常です。|
-|最適ではないです。    |データはないドライブ間で均等に書き込まれます。 <br><br>**アクション**:実行して、記憶域プールのドライブ使用率の最適化、 [Optimize-storagepool](https://technet.microsoft.com/itpro/powershell/windows/storage/optimize-storagepool)コマンドレット。|
+|[OK] を選びます    |仮想ディスクは正常です。|
+|Suboptimal (最適でない)    |データが複数のドライブに均等に書き込まれていません。 <br><br>**操作**:[最適化-storagepool](https://technet.microsoft.com/itpro/powershell/windows/storage/optimize-storagepool)コマンドレットを実行して、記憶域プールのドライブ使用率を最適化します。|
 
-### <a name="virtual-disk-health-state-warning"></a>仮想ディスクのヘルス状態:警告
+### <a name="virtual-disk-health-state-warning"></a>仮想ディスクの正常性状態: 警告
 
-仮想ディスクの場合、**警告**正常性状態、記憶域スペースは、少なくとも 1 つのデータのコピーを読み取ることはできますが、データの 1 つまたは複数のコピーは使用できないことを意味します。
+仮想ディスクの正常性状態が "**警告**" の場合、1つまたは複数のデータのコピーが使用できないことを意味しますが、記憶域スペースはデータのコピーを少なくとも1つ読み取ることができます。
 
-|動作状態    |説明|
+|運用状態    |説明|
 |---------            |---------          |
-|サービスで            |追加またはドライブを削除した後のなどの仮想ディスクは、Windows で修復しています。 修復が完了したら、仮想ディスクは、[ok] のヘルス状態に戻ります。|
-|不完全です           |1 つまたは複数のドライブが失敗したかが欠落しているために、仮想ディスクの回復性が減少します。 ただし、不足しているドライブには、データのコピー最新の状態にはが含まれます。<br><br> **アクション**: <br>1. 不足している、すべてのドライブを再接続、失敗したドライブを交換および記憶域スペース ダイレクトを使用して場合、オンライン オフラインになっているすべてのサーバー。 <br>2. 仮想ディスクを使用して、次を修復するを使用していない記憶域スペース ダイレクトの場合、 [Repair-virtualdisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)コマンドレット。<br> 記憶域スペース ダイレクト自動的に起動、修復を再接続またはドライブの交換後に必要な場合。|
-|［低下］             |1 つまたは複数のドライブが失敗したかがないと、これらのドライブ上のデータのコピーが古くなったために、仮想ディスクの回復性が減少します。 <br><br>**アクション**: <br> 1. 不足している、すべてのドライブを再接続、失敗したドライブを交換および記憶域スペース ダイレクトを使用して場合、オンライン オフラインになっているすべてのサーバー。 <br> 2. 仮想ディスクを使用して、次を修復するを使用していない記憶域スペース ダイレクトの場合、 [Repair-virtualdisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)コマンドレット。 <br>記憶域スペース ダイレクト自動的に起動、修復を再接続またはドライブの交換後に必要な場合。|
+|サービス中            |Windows は、ドライブを追加または削除した後など、仮想ディスクを修復しています。 修復が完了すると、仮想ディスクが "OK" の正常性状態に戻ります。|
+|未完成           |1つ以上のドライブで障害が発生したか、ドライブが不足しているため、仮想ディスクの回復性が低下します。 ただし、見つからないドライブにはデータの最新のコピーが格納されています。<br><br> **[操作]** : <br>1. 不足しているドライブを再接続し、障害が発生したドライブを交換します。記憶域スペースダイレクトを使用している場合は、オフラインになっているすべてのサーバーをオンラインにします。 <br>2. 記憶域スペースダイレクトを使用していない場合は、次に[VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)コマンドレットを使用して仮想ディスクを修復します。<br> 記憶域スペースダイレクトは、ドライブの再接続または交換後に、必要に応じて修復を自動的に開始します。|
+|［低下］             |1つまたは複数のドライブに障害が発生したか、ドライブに不足しているため、仮想ディスクの回復性が低下します。 <br><br>**[操作]** : <br> 1. 不足しているドライブを再接続し、障害が発生したドライブを交換します。記憶域スペースダイレクトを使用している場合は、オフラインになっているすべてのサーバーをオンラインにします。 <br> 2. 記憶域スペースダイレクトを使用していない場合は、次に[VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)コマンドレットを使用して仮想ディスクを修復します。 <br>記憶域スペースダイレクトは、ドライブの再接続または交換後に、必要に応じて修復を自動的に開始します。|
 
-### <a name="virtual-disk-health-state-unhealthy"></a>仮想ディスクのヘルス状態:Unhealthy
+### <a name="virtual-disk-health-state-unhealthy"></a>仮想ディスクの正常性状態: 異常
 
-仮想ディスクの場合、**異常**正常性状態、仮想ディスク上のデータのすべてまたは一部が現在アクセスできません。
+仮想ディスクのヘルス状態が**異常**な場合は、仮想ディスク上のデータの一部またはすべてに現在アクセスできません。
 
-|動作状態    |説明|
+|運用状態    |説明|
 |---------            |--------   |
-|非冗長|仮想ディスクが多すぎるドライブが失敗したため、データを失った。<br><br>**アクション**:失敗したドライブを交換し、バックアップからデータを復元します。|
+|No redundancy (冗長性なし)|ドライブの数が多すぎるため、仮想ディスクのデータが失われました。<br><br>**操作**: 障害が発生したドライブを交換し、バックアップからデータを復元します。|
 
-### <a name="virtual-disk-health-state-informationunknown"></a>仮想ディスクのヘルス状態:情報/不明
+### <a name="virtual-disk-health-state-informationunknown"></a>仮想ディスクのヘルス状態: 情報/不明
 
-仮想ディスクにも、**情報**正常性状態に示すように、記憶域スペースのコントロール パネル項目) または**不明な**正常性状態 (PowerShell で表示される) と、管理者が仮想ディスクを要したかどうかオフラインまたは仮想ディスクがデタッチ済みになります。
+また、管理者が仮想ディスクをオフラインにした場合、または仮想ディスクが切断された場合、仮想ディスクは、([記憶域スペース] コントロールパネル項目に示されているように)**情報**の正常性状態または**不明な**正常性状態 (PowerShell に表示されます) に配置できます。
 
-|動作状態    |デタッチされた理由 |説明|
+|運用状態    |デタッチされた理由 |説明|
 |---------            |---------       |--------   |
-|Detached             |ポリシーによって            |この場合は、Windows が起動するたびに、仮想ディスクを手動でアタッチする必要があります、管理者が仮想ディスクをオフラインまたは手動の添付ファイルを必要とする仮想ディスクを設定します、。<br><br>**アクション**:仮想ディスクをオンラインに戻すを表示します。 フェールオーバー クラスター マネージャーでを選択するためには、仮想ディスクがクラスター化された記憶域プールの場合、**ストレージ** > **プール** > **仮想ディスク**、表示する仮想ディスクを選択、**オフライン**状態と、選択**オンライン**します。 <br><br>まとめる仮想ディスクをオンラインに戻すには、クラスターではないとき、PowerShell セッションを管理者として開きから次のコマンドを使用して再試行してください。<br><br> <code>Get-VirtualDisk \| Where-Object -Filter { $_.OperationalStatus -eq "Detached" } \| Connect-VirtualDisk</code><br><br>Windows の再起動後に自動的にすべての非クラスター化の仮想ディスクをアタッチ、管理者として PowerShell セッションを開くし、次のコマンドを使用しています。<br><br> <code>Get-VirtualDisk \| Set-VirtualDisk -ismanualattach $false</code>|
-|            |異常な場合のマジョリティ ディスク |この仮想ディスクによって使用される多数のドライブは、失敗したかが指定されて、データは古いデータします。   <br><br>**アクション**: <br> 1. 不足しているドライブを再接続して場合、記憶域スペース ダイレクトを使用して、オンライン、オフラインになっているサーバー。 <br> 2. すべてのドライブやサーバーがオンライン後、失敗したすべてのドライブを交換してください。 参照してください[ヘルス サービス](../../failover-clustering/health-service-overview.md)詳細についてはします。 <br>記憶域スペース ダイレクト自動的に起動、修復を再接続またはドライブの交換後に必要な場合。<br>3.仮想ディスクを使用して、次を修復するを使用していない記憶域スペース ダイレクトの場合、 [Repair-virtualdisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)コマンドレット。  <br><br>データのコピーがあるし、仮想ディスクが修復された中間の障害よりも多くのディスクが失敗した場合は、仮想ディスク上のすべてのデータを完全に失われます。 残念ながらここでは仮想ディスクを削除、仮想ディスクの新規作成し、バックアップから復元します。|
-|                     |不完全です |十分なドライブでは、仮想ディスクの読み取りに存在します。    <br><br>**アクション**: <br> 1. 不足しているドライブを再接続して場合、記憶域スペース ダイレクトを使用して、オンライン、オフラインになっているサーバー。 <br> 2. すべてのドライブやサーバーがオンライン後、失敗したすべてのドライブを交換してください。 参照してください[ヘルス サービス](../../failover-clustering/health-service-overview.md)詳細についてはします。 <br>記憶域スペース ダイレクト自動的に起動、修復を再接続またはドライブの交換後に必要な場合。<br>3.仮想ディスクを使用して、次を修復するを使用していない記憶域スペース ダイレクトの場合、 [Repair-virtualdisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)コマンドレット。<br><br>データのコピーがあるし、仮想ディスクが修復された中間の障害よりも多くのディスクが失敗した場合は、仮想ディスク上のすべてのデータを完全に失われます。 残念ながらここでは仮想ディスクを削除、仮想ディスクの新規作成し、バックアップから復元します。|
-| |Timeout|仮想ディスクをアタッチする時間がかかりすぎます <br><br> **アクション:** これは、ことはできません発生する多くの場合、ため、時間条件を満たすかどうかに参照してください。 行うこともできます。 仮想ディスクを取り外し、または、 [Disconnect-virtualdisk](https://docs.microsoft.com/powershell/module/storage/disconnect-virtualdisk?view=win10-ps)コマンドレットを使用して、 [Connect-virtualdisk](https://docs.microsoft.com/powershell/module/storage/connect-virtualdisk?view=win10-ps)コマンドレットを再接続します。 |
+|Detached             |ポリシー別            |管理者が仮想ディスクをオフラインにしたか、または手動でアタッチするように仮想ディスクを設定しました。その場合は、Windows を再起動するたびに、仮想ディスクを手動で接続する必要があります。<br><br>**操作**: 仮想ディスクをオンラインに戻します。 これを行うには、仮想ディスクがクラスター化された記憶域プールにあるときに、フェールオーバークラスターマネージャー [**記憶域** > **プール** > **仮想ディスク**] を選択し、 **[オフライン]** 状態を表示する仮想ディスクを選択して、 **[オンライン]** にする を選択します。 <br><br>クラスターにないときに仮想ディスクをオンラインに戻すには、管理者として PowerShell セッションを開き、次のコマンドを使用します。<br><br> <code>Get-VirtualDisk \| Where-Object -Filter { $_.OperationalStatus -eq "Detached" } \| Connect-VirtualDisk</code><br><br>Windows の再起動後に、クラスター化されていないすべての仮想ディスクを自動的に接続するには、管理者として PowerShell セッションを開き、次のコマンドを使用します。<br><br> <code>Get-VirtualDisk \| Set-VirtualDisk -ismanualattach $false</code>|
+|            |異常なディスクの過半数 |この仮想ディスクで使用されているドライブが多すぎる、不足している、または古いデータがある。   <br><br>**[操作]** : <br> 1. 不足しているドライブを再接続します。記憶域スペースダイレクトを使用している場合は、オフラインになっているすべてのサーバーをオンラインにします。 <br> 2. すべてのドライブとサーバーがオンラインになったら、障害が発生したドライブを置き換えます。 詳細については、「[ヘルスサービス](../../failover-clustering/health-service-overview.md)」を参照してください。 <br>記憶域スペースダイレクトは、ドライブの再接続または交換後に、必要に応じて修復を自動的に開始します。<br>3. 記憶域スペースダイレクトを使用していない場合は、次に、 [VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)コマンドレットを使用して仮想ディスクを修復します。  <br><br>データのコピー数よりも多くのディスクで障害が発生し、仮想ディスクが障害の発生時に修復されなかった場合は、仮想ディスク上のすべてのデータが永久に失われます。 このような場合は、仮想ディスクを削除し、新しい仮想ディスクを作成してから、バックアップから復元します。|
+|                     |未完成 |仮想ディスクを読み取るための十分なドライブがありません。    <br><br>**[操作]** : <br> 1. 不足しているドライブを再接続します。記憶域スペースダイレクトを使用している場合は、オフラインになっているすべてのサーバーをオンラインにします。 <br> 2. すべてのドライブとサーバーがオンラインになったら、障害が発生したドライブを置き換えます。 詳細については、「[ヘルスサービス](../../failover-clustering/health-service-overview.md)」を参照してください。 <br>記憶域スペースダイレクトは、ドライブの再接続または交換後に、必要に応じて修復を自動的に開始します。<br>3. 記憶域スペースダイレクトを使用していない場合は、次に、 [VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)コマンドレットを使用して仮想ディスクを修復します。<br><br>データのコピー数よりも多くのディスクで障害が発生し、仮想ディスクが障害の発生時に修復されなかった場合は、仮想ディスク上のすべてのデータが永久に失われます。 このような場合は、仮想ディスクを削除し、新しい仮想ディスクを作成してから、バックアップから復元します。|
+| |Timeout|仮想ディスクの接続に時間がかかりすぎました <br><br> **アクション:** 頻繁に発生することはないので、条件が経過したかどうかを確認してみてください。 または、VirtualDisk コマンドレットを使用して仮想ディスクの接続を[解除](https://docs.microsoft.com/powershell/module/storage/disconnect-virtualdisk?view=win10-ps)してから、 [VirtualDisk](https://docs.microsoft.com/powershell/module/storage/connect-virtualdisk?view=win10-ps)コマンドレットを使用して再接続することもできます。 |
 
 ## <a name="drive-physical-disk-states"></a>ドライブ (物理ディスク) の状態
 
-次に、正常性状態がドライブであることを説明します。 プール内のドライブとして PowerShell で表される*物理ディスク*オブジェクト。
+以降のセクションでは、ドライブの正常性状態について説明します。 プール内のドライブは、PowerShell では*物理ディスク*オブジェクトとして表されます。
 
-### <a name="drive-health-state-healthy"></a>ドライブの正常性の状態:正常
+### <a name="drive-health-state-healthy"></a>ドライブの正常性の状態: 正常
 
-|動作状態    |説明|
+|運用状態    |説明|
 |---------            |---------          |
-|OK|ドライブは正常です。|
-|サービスで|ドライブがいくつかの内部ハウスキープ処理操作を実行しています。 アクションが完了したら、ドライブを返す必要があります、 *OK*正常性状態。|
+|[OK] を選びます|ドライブは正常です。|
+|サービス中|ドライブ内部でハウスキープ処理を実行中です。 操作が完了すると、ドライブは*OK*のヘルス状態に戻ります。|
 
-### <a name="drive-health-state-warning"></a>ドライブの正常性の状態:警告
+### <a name="drive-health-state-warning"></a>ドライブの正常性状態: 警告
 
-警告状態は、ドライブの読み取りとデータを適切に記述が問題です。
+ドライブが [警告] 状態の場合には、データの読み取りと書き込みは正常に実行できるものの、ドライブに何らかの問題が発生しています。
 
-|動作状態    |説明|
+|運用状態    |説明|
 |---------            |---------          |
-|通信の切断|ドライブがありません。 記憶域スペース ダイレクトを使用して場合、これは、サーバーがダウン可能性があります。<br><br>**アクション**:記憶域スペース ダイレクトを使用して、場合は、すべてのサーバーをオンラインに戻すを提供します。 ドライブを再接続、置換、または Windows エラー報告を使用したトラブルシューティングの手順に従ってそのドライブについての詳細な診断情報の取得を試みる場合、これが解決しない、>[物理ディスクがタイムアウト](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-timed-out)します。|
-|プールから削除します。|記憶域スペースは、その記憶域プールからドライブを削除する予定です。 <br><br> これは、一時的な状態です。 削除が完了すると、ドライブがシステムに接続されている場合、ドライブに遷移別の動作状態 (通常は OK) primordial プールでします。|
-|メンテナンス モードの開始|記憶域スペースは、管理者は、ドライブをメンテナンス モードにした後は、メンテナンス モードでドライブを配置する予定です。 これは一時的な状態です - ドライブがである必要があります間もなく、*メンテナンス モードで*状態。|
-|メンテナンス モード|管理者は、読み取りし、ドライブから書き込みを停止する、ドライブをメンテナンス モードで配置されます。 ドライブのファームウェアを更新する前に、または失敗をテストするときに、これは通常に行われます。<br><br>**アクション**:メンテナンス モードからドライブを使用、[無効 StorageMaintenanceMode](https://technet.microsoft.com/itpro/powershell/windows/storage/disable-storagemaintenancemode)コマンドレット。|
-|メンテナンス モードを停止しています|管理者が、ドライブをメンテナンス モードを終了し、記憶域スペースは、ドライブをオンラインに戻すプロセスではします。 これは一時的な状態です - ドライブする必要がありますが理想的です - 別の状態である早く*健全*します。|
-|予測される障害|ドライブは、失敗した場合の近くにあることを報告します。<br><br>**アクション**:ドライブを交換します。|
-|IO エラー|ドライブへのアクセス、一時的なエラーが発生しました。<br><br>**アクション**: <br>1. ドライブに移行しない場合、 **OK**状態を使用してもかまいません、 [Reset-physicaldisk](https://docs.microsoft.com/powershell/module/storage/reset-physicaldisk)コマンドレットは、ドライブをワイプします。 <br> 2. 使用[Repair-virtualdisk](https://docs.microsoft.com/powershell/module/storage/repair-virtualdisk)に影響を受けた仮想ディスクの回復性を復元します。 <br>3.これが発生している場合は、ドライブを交換します。|
-|一時的なエラー|ドライブと一時エラーが発生しました。 これは通常、ドライブが応答ではありませんでしたも考えられますが保護パーティションがドライブから削除された不適切な記憶域スペースに意味します。 <br><br>**アクション**: <br>1. ドライブに移行しない場合、 **OK**状態を使用してもかまいません、 [Reset-physicaldisk](https://docs.microsoft.com/powershell/module/storage/reset-physicaldisk)コマンドレットは、ドライブをワイプします。 <br> 2. 使用[Repair-virtualdisk](https://docs.microsoft.com/powershell/module/storage/repair-virtualdisk)に影響を受けた仮想ディスクの回復性を復元します。 <br>3.これが発生している場合、ドライブを交換または Windows エラー報告を使用したトラブルシューティングの手順に従ってそのドライブについての詳細な診断情報の取得を試みる >[物理ディスクがオンラインにできない](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)します。|
-|異常な待機時間|ドライブのパフォーマンスが低いに、記憶域スペース ダイレクトにヘルス サービスで測定されます。<br><br>**アクション**:これが発生している場合は、全体としての記憶域スペースのパフォーマンスは削減されないので、ドライブを交換します。
+|通信の切断|ドライブが見つかりません。 記憶域スペースダイレクトを使用している場合は、サーバーがダウンしている可能性があります。<br><br>**操作**: 記憶域スペースダイレクトを使用している場合は、すべてのサーバーをオンラインに戻します。 それでも解決しない場合は、ドライブを再接続するか、交換してください。「> Windows エラー報告使用した[物理ディスク](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-timed-out)のトラブルシューティング」の手順に従って、このドライブに関する詳細な診断情報を取得してください。|
+|Removing from pool (プールから削除中)|記憶域スペースは、記憶域プールからドライブを削除する処理中です。 <br><br> これは一時的な状態です。 削除が完了すると、ドライブがシステムにまだ接続されている場合、ドライブはルートプール内の別の動作状態 (通常は OK) に移行します。|
+|Starting maintenance mode (メンテナンス モードを起動中)|管理者がドライブをメンテナンスモードにすると、記憶域スペースがメンテナンスモードになります。 これは一時的な状態です。ドライブはまもなく*メンテナンスモード*の状態になります。|
+|メンテナンス モード|管理者はドライブをメンテナンスモードにし、ドライブからの読み取りと書き込みを停止します。 これは通常、ドライブのファームウェアを更新する前、またはエラーをテストする前に行います。<br><br>**操作**: ドライブのメンテナンスモードを終了するには、 [Disable-storagemtenantの](https://technet.microsoft.com/itpro/powershell/windows/storage/disable-storagemaintenancemode)コマンドレットを使用します。|
+|Stopping maintenance mode (メンテナンス モードを停止中)|管理者はドライブのメンテナンスモードを終了しましたが、記憶域スペースはドライブをオンラインに戻す処理を行っています。 これは一時的な状態です。ドライブはすぐに別の状態になります (理想的には*正常*)。|
+|予測される障害|ドライブは、エラーが発生したことを報告しました。<br><br>**操作**: ドライブを交換します。|
+|IO エラー|ドライブにアクセスする際に一時的なエラーが発生しました。<br><br>**[操作]** : <br>1. ドライブが**OK**状態に戻らない場合は、 [Reset-PhysicalDisk](https://docs.microsoft.com/powershell/module/storage/reset-physicaldisk)コマンドレットを使用してドライブをワイプすることができます。 <br> 2. [VirtualDisk](https://docs.microsoft.com/powershell/module/storage/repair-virtualdisk)を使用して、影響を受けている仮想ディスクの回復性を復元します。 <br>3. これが引き続き発生する場合は、ドライブを交換します。|
+|一時的なエラー|ドライブに一時的なエラーが発生しました。 これは通常、ドライブが応答していないことを意味しますが、記憶域スペース保護パーティションがドライブから不適切に削除されたことを意味する可能性もあります。 <br><br>**[操作]** : <br>1. ドライブが**OK**状態に戻らない場合は、 [Reset-PhysicalDisk](https://docs.microsoft.com/powershell/module/storage/reset-physicaldisk)コマンドレットを使用してドライブをワイプすることができます。 <br> 2. [VirtualDisk](https://docs.microsoft.com/powershell/module/storage/repair-virtualdisk)を使用して、影響を受けている仮想ディスクの回復性を復元します。 <br>3. この問題が引き続き発生する場合は、ドライブを交換するか、「> Windows エラー報告を使用したトラブルシューティング」の手順に従って、[物理ディスクをオンラインにできなかった](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)ことを確認してください。|
+|Abnormal latency (待機時間の異常)|ドライブのパフォーマンスが低下しています。記憶域スペースダイレクトのヘルスサービスによって測定されています。<br><br>**操作**: これが引き続き発生する場合は、記憶域スペース全体のパフォーマンスを低下させないようにドライブを交換します。
 
-### <a name="drive-health-state-unhealthy"></a>ドライブの正常性の状態:Unhealthy
+### <a name="drive-health-state-unhealthy"></a>ドライブの正常性の状態: 異常
 
-異常な状態では、ドライブに書き込まれた現在またはアクセスできません。
+状態が [異常] のドライブには、書き込みまたはアクセスができません。
 
-|動作状態    |説明|
+|運用状態    |説明|
 |---------            |---------          |
-|使用できません。|このドライブは、記憶域スペースでは使用できません。 詳細については、次を参照してください。[記憶域スペース ダイレクトのハードウェア要件](storage-spaces-direct-hardware-requirements.md)場合使用していない記憶域スペース ダイレクト; を参照してください。[記憶域スペースの概要](https://technet.microsoft.com/library/hh831739(v=ws.11).aspx#Requirements)します。|
-|分割|ドライブは、プールから区切られたになります。<br><br>**アクション**:ドライブからすべてのデータを消去して、空のドライブとしてプールに追加して、ドライブをリセットします。 これを行うには、実行、管理者として PowerShell セッションを開く、 [Reset-physicaldisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk)コマンドレット、し、実行[Repair-virtualdisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)します。 <br><br>そのドライブについての詳細な診断情報を取得するには、Windows エラー報告を使用したトラブルシューティングの手順に従います >[物理ディスクがオンラインにできない](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)します。|
-|古いメタデータ|記憶域スペースでは、ドライブの古いメタデータが見つかりました。<br><br>**アクション**:これは、一時的な状態でなければなりません。 実行することができる場合は、ドライブは、OK に移行しない、 [Repair-virtualdisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)で修復操作を開始する影響を受けた仮想ディスク。 使用してドライブをリセットするには、問題が解決されない場合、 [Reset-physicaldisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk)コマンドレットは、ドライブ、および実行のすべてのデータをワイプ[Repair-virtualdisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)します。|
-|認識されないメタデータ|記憶域スペースでは、通常はドライブがそれを別のプールからメタデータがあることを意味すると、ドライブの認識できないメタデータが見つかりました。<br><br>**アクション**:ドライブをワイプし、現在のプールに追加して、ドライブをリセットします。 ドライブをリセットするには、管理者は、実行、PowerShell セッションを開きます、 [Reset-physicaldisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk)コマンドレットを実行し、 [Repair-virtualdisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)。|
-|失敗したメディア|ドライブは失敗し、記憶域スペースではもう使われません。<br><br>**アクション**:ドライブを交換します。 <br><br>そのドライブについての詳細な診断情報を取得するには、Windows エラー報告を使用したトラブルシューティングの手順に従います >[物理ディスクがオンラインにできない](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)します。|
-|デバイスのハードウェア障害|このドライブでハードウェア障害が発生しました。 <br><br>**アクション**:ドライブを交換します。|
-|ファームウェアの更新|Windows は、ドライブのファームウェアを更新しています。 これは、通常は 1 分未満を継続して、プール内の他のドライブがすべて処理時間の読み取りし、書き込みを一時的な状態です。 詳細については、次を参照してください。[ドライブのファームウェア更新](../update-firmware.md)します。|
-|Starting|ドライブは、操作の準備ができます。 一時的な状態で完了すると、ドライブは、さまざまな動作状態に移行する必要がありますがあります。|
+|使用不可|このドライブを記憶域スペースで使用することはできません。 詳細については、「[記憶域スペースダイレクトのハードウェア要件](storage-spaces-direct-hardware-requirements.md)」を参照してください。記憶域スペースダイレクトを使用していない場合は、「[記憶域スペースの概要](https://technet.microsoft.com/library/hh831739(v=ws.11).aspx#Requirements)」を参照してください。|
+|Split|ドライブがプールから隔離されています。<br><br>**操作**: ドライブをリセットし、ドライブのすべてのデータを消去して、空のドライブとしてプールに追加し直します。 これを行うには、管理者として PowerShell セッションを開き、VirtualDisk コマンドレットを実行して[から、](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk) [修復](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)を実行します。 <br><br>このドライブに関する詳細な診断情報を取得するには、「Windows エラー報告を使用したトラブルシューティング」の手順に従って >[物理ディスクをオンラインにできませんでした](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)。|
+|古いメタデータ|記憶域スペースにより、ドライブに古いメタデータが見つかりました。<br><br>**Action**: これは一時的な状態である必要があります。 ドライブの状態が [OK] に戻らない場合は、 [VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)を実行して、影響を受けている仮想ディスクに対する修復操作を開始できます。 それでも問題が解決しない場合は、 [PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk)コマンドレットを使用してドライブをリセットし、ドライブからすべてのデータをワイプしてから、 [VirtualDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)を実行します。|
+|認識されないメタデータ|記憶域スペースがドライブに認識できないメタデータを検出しました。これは通常、ドライブに別のプールのメタデータがあることを意味します。<br><br>**操作**: ドライブをワイプし、現在のプールに追加するには、ドライブをリセットします。 ドライブをリセットするには、管理者として PowerShell セッションを開き、VirtualDisk コマンドレットを実行して[から、](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk) [修復](https://technet.microsoft.com/itpro/powershell/windows/storage/repair-virtualdisk)を実行します。|
+|エラーのあるメディア|ドライブにエラーが発生したので、このドライブが今後記憶域スペースで使われることはありません。<br><br>**操作**: ドライブを交換します。 <br><br>このドライブに関する詳細な診断情報を取得するには、「Windows エラー報告を使用したトラブルシューティング」の手順に従って >[物理ディスクをオンラインにできませんでした](../../failover-clustering/troubleshooting-using-wer-reports.md#physical-disk-failed-to-come-online)。|
+|Device hardware failure (デバイスのハードウェア障害)|このデバイスでハードウェア障害が発生しました。 <br><br>**操作**: ドライブを交換します。|
+|ファームウェアの更新|ドライブのファームウェアを更新しています。 これは通常 1 分未満で終了する一時的な状態であり、その間の読み取りと書き込みはすべて、プール内の別のドライブにより処理されます。 詳細については、「[ドライブのファームウェアを更新](../update-firmware.md)する」を参照してください。|
+|Starting|ドライブが稼働開始のための準備をしている状態です。 これは一時的な状態であり、準備が完了すると、ドライブが別の操作状態に移行します。|
 
-## <a name="reasons-a-drive-cant-be-pooled"></a>上の理由から、ドライブをプールすることはできません。
+## <a name="reasons-a-drive-cant-be-pooled"></a>ドライブをプールできない理由
 
-だけいくつかのドライブは、記憶域プールに配置する準備ができていません。 ドライブを調べることでプールを対象となるできない理由を見つけることができます、`CannotPoolReason`物理ディスクのプロパティ。 CannotPoolReason プロパティを表示する PowerShell スクリプトの例を次に示します。
+一部のドライブは、記憶域プールに配置する準備ができていません。 物理ディスクの `CannotPoolReason` プロパティを見ると、ドライブがプールに適合していない理由を確認できます。 CannotPoolReason プロパティを表示する PowerShell スクリプトの例を次に示します。
 
 ```PowerShell
 Get-PhysicalDisk | Format-Table FriendlyName,MediaType,Size,CanPool,CannotPoolReason
@@ -193,23 +193,23 @@ Msft Virtual Disk     SSD         10737418240    True
 Generic Physical Disk SSD        119990648832   False In a Pool
 ```
 
-次の表では、それぞれの理由について少し詳しく説明を示します。
+次の表は、それぞれの理由をもう少し詳しく説明したものです。
 
-|Reason|説明|
+|原因|説明|
 |---|---|
-|プール内|ドライブは、既に記憶域プールに属しています。 <br><br>ドライブは、一度に 1 つのストレージ プールのみに属することができます。 このドライブを別の記憶域プールで使用するには、最初に既存のプール、記憶域スペース プール上で、ドライブ上の他のドライブにデータを移動するように指示するからドライブを削除します。 または、ドライブは、記憶域スペースを通知することがなく、プールから切断されている場合、ドライブをリセットします。 <br><br>記憶域プールからドライブを安全に削除するには、次のように使用します[Remove-physicaldisk](https://technet.microsoft.com/itpro/powershell/windows/storage/remove-physicaldisk)、サーバー マネージャーに移動または > **File and Storage Services** > **記憶域プール**、。>**物理ディスク**ドライブを右クリックし、**ディスクの削除**します。<br><br>ドライブをリセットするには、使用[Reset-physicaldisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk)します。|
-|正常ではありません。|ドライブは、正常な状態にないし、交換する必要があります。|
-|リムーバブル メディア|ドライブは、リムーバブル ドライブとして分類されます。 <br><br>記憶域スペースは、ブルーレイ ドライブなどのリムーバブルと Windows によって認識されるメディアをサポートしていません。 固定の多くがドライブは、リムーバブルのスロットに一般に、メディアの*分類*リムーバブルとしての Windows では、記憶域スペースで使用に適していません。|
-|クラスターで使用中|ドライブは、フェールオーバー クラスターによって使用されています。|
-|オフライン|ドライブがオフラインです。 <br><br>すべてのオフラインのドライブをオンラインと読み取り/書き込みに設定するには、PowerShell セッションを管理者としてを開きを次のスクリプトを使用します。<br><br><code>Get-Disk \| Where-Object -Property OperationalStatus -EQ "Offline" \| Set-Disk -IsOffline $false</code><br><br><code>Get-Disk \| Where-Object -Property IsReadOnly -EQ $true \| Set-Disk -IsReadOnly $false</code>|
-|容量の不足|これは通常、ドライブの空き領域を占有するパーティションがある場合に発生します。 <br><br>**アクション**:ドライブ上のすべてのデータを消去、ドライブ上にあるボリュームを削除します。 1 つの簡単な方法が使用するには、 [Clear-disk](https://docs.microsoft.com/powershell/module/storage/clear-disk?view=win10-ps) PowerShell コマンドレット。|
-|検証中です。|[ヘルス サービス](../../failover-clustering/health-service-overview.md#supported-components-document)はかどうか、ドライブまたはドライブのファームウェアの使用が承認サーバーの管理者を確認します。|
-|検証に失敗しました|[ヘルス サービス](../../failover-clustering/health-service-overview.md#supported-components-document)かどうか、ドライブまたはドライブのファームウェアの使用が承認サーバーの管理者を確認できませんでした。|
-|ファームウェアに準拠していません。|物理ドライブのファームウェアが承認されたファームウェアのリビジョンを使用して、サーバー管理者によって指定のリストにない、[ヘルス サービス](../../failover-clustering/health-service-overview.md#supported-components-document)します。 |
-|準拠していないハードウェア|使用して、サーバー管理者によって指定された承認済みのストレージ モデルの一覧で、ドライブがない、[ヘルス サービス](../../failover-clustering/health-service-overview.md#supported-components-document)します。|
+|プール内|ドライブは既に記憶域プールに属しています。 <br><br>ドライブは、一度に1つの記憶域プールにしか属することができません。 このドライブを別の記憶域プールで使用するには、まず既存のプールからドライブを削除します。これにより、ドライブ上のデータをプール上の他のドライブに移動するように記憶域スペースに指示されます。 または、記憶域スペースに通知せずにドライブがプールから切断されている場合は、ドライブをリセットします。 <br><br>記憶域プールからドライブを安全に削除するには、[[削除-PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/remove-physicaldisk) を使用するか、サーバーマネージャー >**ファイルサービスおよび記憶域サービス** > **記憶域プール**、>**物理ディスク** の順に選択し、ドライブを右クリックして、 **[ディスクの削除]** を選択します。<br><br>ドライブをリセットするには、"[リセット-PhysicalDisk](https://technet.microsoft.com/itpro/powershell/windows/storage/reset-physicaldisk)" を使用します。|
+|異常|ドライブが正常な状態にないため、交換が必要な可能性があります。|
+|リムーバル メディア|ドライブがリムーバブル ドライブとして分類されています。 <br><br>記憶域スペースは、Windows によってリムーバブルとして認識されるメディア (ブルーレイドライブなど) をサポートしていません。 多くの固定ドライブはリムーバブルスロットにありますが、一般に、Windows によってリムーバブルとして*分類*されるメディアは、記憶域スペースでの使用に適していません。|
+|In use by cluster (クラスターで使用中)|ドライブが現在、フェールオーバー クラスターによって使用されています。|
+|オフライン|ドライブがオフラインになっています。 <br><br>すべてのオフラインドライブをオンラインにして、を読み取り/書き込みに設定するには、PowerShell セッションを管理者として開き、次のスクリプトを使用します。<br><br><code>Get-Disk \| Where-Object -Property OperationalStatus -EQ "Offline" \| Set-Disk -IsOffline $false</code><br><br><code>Get-Disk \| Where-Object -Property IsReadOnly -EQ $true \| Set-Disk -IsReadOnly $false</code>|
+|Insufficient capacity (容量の不足)|これは通常、ドライブの空き領域を占有しているパーティションがある場合に発生します。 <br><br>**操作**: ドライブ上のすべてのデータを消去して、ドライブ上のすべてのボリュームを削除します。 これを行う1つの方法は、[ディスクの消去](https://docs.microsoft.com/powershell/module/storage/clear-disk?view=win10-ps)PowerShell コマンドレットを使用することです。|
+|Verification in progress (検証中)|[ヘルスサービス](../../failover-clustering/health-service-overview.md#supported-components-document)は、ドライブ上のドライブまたはファームウェアがサーバー管理者による使用が承認されているかどうかを確認しています。|
+|検証に失敗しました|[ヘルスサービス](../../failover-clustering/health-service-overview.md#supported-components-document)は、ドライブ上のドライブまたはファームウェアがサーバー管理者による使用が承認されているかどうかを確認できませんでした。|
+|Firmware not compliant (非準拠ファームウェア)|[ヘルスサービス](../../failover-clustering/health-service-overview.md#supported-components-document)を使用して、物理ドライブのファームウェアが、サーバー管理者によって指定された承認済みファームウェアのリビジョンの一覧にありません。 |
+|Hardware not compliant (非準拠ハードウェア)|このドライブは、[ヘルスサービス](../../failover-clustering/health-service-overview.md#supported-components-document)を使用して、サーバー管理者によって指定された承認済みストレージモデルの一覧に含まれていません。|
 
 ## <a name="see-also"></a>関連項目
 
 - [記憶域スペース ダイレクト](storage-spaces-direct-overview.md)
-- [記憶域スペース ダイレクトのハードウェア要件](storage-spaces-direct-hardware-requirements.md)
-- [クラスターとプールのクォーラムを理解します。](understand-quorum.md)
+- [ハードウェア要件の記憶域スペースダイレクト](storage-spaces-direct-hardware-requirements.md)
+- [クラスターとプール クォーラムの概要](understand-quorum.md)

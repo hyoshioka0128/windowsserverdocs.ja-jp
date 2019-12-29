@@ -1,48 +1,48 @@
 ---
-title: HYPER-V 統合サービスを管理します。
-description: 統合サービスを有効または無効にし、必要な場合は、それらをインストールする方法について説明します
+title: Hyper-v Integration Services を管理する
+description: 統合サービスをオンまたはオフにし、必要に応じてインストールする方法について説明します。
 ms.technology: compute-hyper-v
 author: KBDAzure
 ms.author: kathydav
 manager: dongill
 ms.date: 12/20/2016
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: e2c14e471abb9af7a9182100969a8dd94a17205a
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 39d57afbd8c4df78764c5975d4cc3d48848475c1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812194"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392765"
 ---
->適用先:Windows 10、Windows Server 2016、Windows Server 2019
+>適用対象: Windows 10、Windows Server 2016、Windows Server 2019
 
-# <a name="manage-hyper-v-integration-services"></a>HYPER-V 統合サービスを管理します。
+# <a name="manage-hyper-v-integration-services"></a>Hyper-v Integration Services を管理する
 
-HYPER-V 統合サービスは仮想マシンのパフォーマンスを強化し、HYPER-V ホストとの双方向通信を利用して、便利な機能を提供します。 これらのサービスの多くは、合成デバイス ドライバーなどの仮想マシンの機能に重要な他のユーザーは、ゲスト ファイル コピーなど、便利な機能です。 これは、一連のサービスとドライバーは、「統合コンポーネント」と呼ばれることがあります。 個々 の便利なサービスが、指定された仮想マシンの動作するかどうかを制御できます。 ドライバー コンポーネントは、手動で処理されるものではありません。
+Hyper-v では、仮想マシンのパフォーマンスを向上させ、Hyper-v ホストとの双方向通信を活用することにより便利な機能を提供 Integration Services ます。 これらのサービスの多くは便利な (ゲストファイルコピーなど) であり、他のサービスは、統合されたデバイスドライバーなど、仮想マシンの機能にとって重要です。 この一連のサービスとドライバーは、"統合コンポーネント" と呼ばれることもあります。 個々の便宜的サービスが特定の仮想マシンに対して動作するかどうかを制御できます。 ドライバーのコンポーネントは、手動でサービスを提供するためのものではありません。
 
-各統合サービスに関する詳細については、次を参照してください。 [Hyper-v 統合サービス](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services)します。
+各統合サービスの詳細については、「 [hyper-v Integration Services](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services)」を参照してください。
 
 > [!IMPORTANT]
-> 使用する各サービスは、機能するために、ホストとゲストの両方で有効にする必要があります。 「HYPER-V ゲスト サービス インターフェイス」を除くすべての integration services では、Windows ゲスト オペレーティング システムでは既定でです。 サービスを有効または無効に個別にします。 方法については、次のセクションで説明します。
+> を機能させるには、使用する各サービスがホストとゲストの両方で有効になっている必要があります。 Windows ゲストオペレーティングシステムでは、"Hyper-V ゲストサービスインターフェイス" を除くすべての統合サービスが既定でオンになっています。 サービスは、個別にオンまたはオフにすることができます。 次のセクションでは、その方法について説明します。
 
-## <a name="turn-an-integration-service-on-or-off-using-hyper-v-manager"></a>オンまたはオフ、HYPER-V マネージャーを使用して、統合サービスを有効にします。
+## <a name="turn-an-integration-service-on-or-off-using-hyper-v-manager"></a>Hyper-v マネージャーを使用して統合サービスをオンまたはオフにする
 
-1. 中央のウィンドウから仮想マシンを右クリックし、をクリックして**設定**します。
+1. 中央のウィンドウで、仮想マシンを右クリックし、 **[設定]** をクリックします。
   
-2. 左側のウィンドウから、**設定**ウィンドウで、**管理**、 をクリックして**Integration Services**します。
+2. **[設定]** ウィンドウの左ペインで、 **[管理]** の下にある **[Integration Services]** をクリックします。
   
-Integration Services ウィンドウには、HYPER-V ホストで、使用可能なすべての integration services が一覧表示し、ホストがそれらを使用する仮想マシンを有効にするかどうか。
+Integration Services ウィンドウには、Hyper-v ホストで使用可能なすべての統合サービスの一覧と、ホストがバーチャルマシンを使用できるようにしたかどうかが表示されます。
 
-### <a name="turn-an-integration-service-on-or-off-using-powershell"></a>オンまたはオフ、PowerShell を使用して、統合サービスを有効にします。
+### <a name="turn-an-integration-service-on-or-off-using-powershell"></a>PowerShell を使用して統合サービスをオンまたはオフにする
 
-これを PowerShell では、使用[Enable-vmintegrationservice](https://technet.microsoft.com/library/hh848500.aspx)と[Disable-vmintegrationservice](https://technet.microsoft.com/library/hh848488.aspx)します。
+PowerShell でこれを行うには、 [Enable-VMIntegrationService](https://technet.microsoft.com/library/hh848500.aspx)を使用し、 [-Vmintegrationservice を無効](https://technet.microsoft.com/library/hh848488.aspx)にします。
 
-次の例では、ゲスト ファイル コピー統合サービス オン/オフ"demovm"という名前の仮想マシンにすることを示します。
+次の例では、"demovm" という名前の仮想マシンのゲストファイルコピー統合サービスをオンまたはオフにする方法を示します。
 
-1. 統合サービスを実行しているの一覧を取得します。
+1. 実行中の統合サービスの一覧を取得します。
   
     ``` PowerShell
     Get-VMIntegrationService -VMName "DemoVM"
@@ -61,54 +61,54 @@ Integration Services ウィンドウには、HYPER-V ホストで、使用可能
    DemoVM      VSS                     True    OK
    ```
 
-1. ゲスト サービス インターフェイスをオンにします。
+1. ゲストサービスインターフェイスを有効にする:
 
    ``` PowerShell
    Enable-VMIntegrationService -VMName "DemoVM" -Name "Guest Service Interface"
    ```
 
-1. ゲスト サービス インターフェイスが有効になっていることを確認します。
+1. ゲストサービスインターフェイスが有効になっていることを確認します。
 
    ```
    Get-VMIntegrationService -VMName "DemoVM" 
    ``` 
 
-1. ゲスト サービス インターフェイスをオフにします。
+1. ゲストサービスインターフェイスをオフにする:
 
     ```
     Disable-VMIntegrationService -VMName "DemoVM" -Name "Guest Service Interface"
     ```
    
-## <a name="checking-the-guests-integration-services-version"></a>ゲストの統合サービスのバージョンの確認
-一部の機能が機能しないか正しく、またはまったくゲストの統合サービスが最新でない場合。 Windows、ログオン、ゲスト オペレーティング システムのバージョン情報を取得するには、コマンド プロンプトを開きし、このコマンドを実行します。
+## <a name="checking-the-guests-integration-services-version"></a>ゲストの integration services のバージョンを確認しています
+ゲストの統合サービスが最新でない場合、一部の機能が正しく機能しないか、まったく動作しない可能性があります。 Windows のバージョン情報を取得するには、ゲストオペレーティングシステムにログオンし、コマンドプロンプトを開き、次のコマンドを実行します。
 
 ```
 REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesVersion
 ```
 
-以前のゲスト オペレーティング システムのすべての利用可能なサービスではありません。 たとえば、Windows Server 2008 R2 ゲストでは、「HYPER-V ゲスト サービス インターフェイス」を含めることはできません。
+以前のゲストオペレーティングシステムでは、利用可能なすべてのサービスが提供されません。 たとえば、Windows Server 2008 R2 ゲストに "Hyper-V ゲストサービスインターフェイス" を含めることはできません。
 
-## <a name="start-and-stop-an-integration-service-from-a-windows-guest"></a>開始および停止から Windows ゲスト統合サービス
-統合サービスを完全に機能させるためには、その対応するサービスは、ホストで有効にされているだけでなく、ゲスト内で実行する必要があります。 Windows ゲストでは、各統合サービスは、標準の Windows サービスとして一覧表示されます。 コントロール パネルまたは PowerShell でのサービス アプレットを使用して、停止し、これらのサービスを開始できます。
+## <a name="start-and-stop-an-integration-service-from-a-windows-guest"></a>Windows ゲストから統合サービスを開始および停止する
+統合サービスを完全に機能させるには、対応するサービスがホスト上で有効になっていることに加え、ゲスト内で実行されている必要があります。 Windows ゲストでは、各統合サービスは標準の Windows サービスとして一覧表示されます。 コントロールパネルまたは PowerShell の [サービス] アプレットを使用して、これらのサービスを停止および開始できます。
 
 > [!IMPORTANT]
-> 統合サービスを停止すると、仮想マシンを管理するホストの機能に大きく影響可能性があります。 正常に機能するには、ホストとゲストの両方で使用する各統合サービスを有効にする必要があります。
-> ベスト プラクティスとして、上記の手順を使用して HYPER-V から統合サービスを制御する必要がありますだけです。 ゲスト オペレーティング システムに一致するサービスを停止または HYPER-V では、その状態を変更すると、自動的に開始します。
-> ゲスト オペレーティング システムでサービスを開始する、HYPER-V で無効になっている場合は、サービスは停止します。 HYPER-V で有効になっているゲスト オペレーティング システムでサービスを停止した場合、HYPER-V 最終的に再び開始されます。 ゲスト サービスを無効にした場合、HYPER-V は起動できません。
+> 統合サービスを停止すると、バーチャルマシンを管理するホストの機能に重大な影響を及ぼす可能性があります。 正しく機能するには、ホストとゲストの両方で、使用する各統合サービスを有効にする必要があります。
+> ベストプラクティスとして、上記の手順に従って、Hyper-v からの統合サービスのみを制御することをお勧めします。 Hyper-v で状態を変更すると、ゲストオペレーティングシステムの一致するサービスが停止または自動的に開始されます。
+> ゲストオペレーティングシステムでサービスを開始したが、Hyper-v で無効になっている場合、サービスは停止します。 Hyper-v で有効になっているゲストオペレーティングシステムでサービスを停止すると、Hyper-v によって、最終的に再び開始されます。 ゲストでサービスを無効にすると、Hyper-v は起動できなくなります。
 
-### <a name="use-windows-services-to-start-or-stop-an-integration-service-within-a-windows-guest"></a>Windows サービスを使用して開始または Windows ゲスト内で統合サービスを停止するには
+### <a name="use-windows-services-to-start-or-stop-an-integration-service-within-a-windows-guest"></a>Windows サービスを使用して Windows ゲスト内の統合サービスを開始または停止する
 
-1. 実行してサービス マネージャーを開く```services.msc```管理者として、またはコントロール パネルの [サービス] アイコンをダブルクリックします。
+1. 管理者として ```services.msc``` を実行するか、コントロールパネルの [サービス] アイコンをダブルクリックして、サービスマネージャーを開きます。
 
-    ![Windows サービス ウィンドウを示すスクリーン ショット](media/HVServices.png) 
+    ![[Windows サービス] ウィンドウを示すスクリーンショット](media/HVServices.png) 
 
-1. "ハイパー-V"で始まるサービスを検索します。 
+1. "Hyper-v" で始まるサービスを検索します。 
 
-1. 開始または停止サービスを右クリックします。 目的のアクションをクリックします。
+1. 開始または停止するサービスを右クリックします。 目的のアクションをクリックします。
 
-### <a name="use-windows-powershell-to-start-or-stop-an-integration-service-within-a-windows-guest"></a>Windows PowerShell を使用して開始または Windows ゲスト内で統合サービスを停止するには
+### <a name="use-windows-powershell-to-start-or-stop-an-integration-service-within-a-windows-guest"></a>Windows PowerShell を使用して Windows ゲスト内の統合サービスを開始または停止する
 
-1. Integration services の一覧を取得するには、次のコマンドを実行します。
+1. Integration services の一覧を取得するには、次のように実行します。
 
     ```
     Get-Service -Name vm*
@@ -129,17 +129,17 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     Running  vmicvss            Hyper-V Volume Shadow Copy Requestor
     ```
 
-1. いずれかを実行[Start-service](https://technet.microsoft.com/library/hh849825.aspx)または[Stop-service](https://technet.microsoft.com/library/hh849790.aspx)します。 たとえば、Windows PowerShell ダイレクトを無効にするには、次のように実行します。
+1. サービスの[開始](https://technet.microsoft.com/library/hh849825.aspx)または[停止の](https://technet.microsoft.com/library/hh849790.aspx)いずれかを実行します。 たとえば、Windows PowerShell Direct を無効にするには、次のように実行します。
 
     ```
     Stop-Service -Name vmicvmsession
     ```
 
-## <a name="start-and-stop-an-integration-service-from-a-linux-guest"></a>起動し、Linux ゲストから統合サービスの停止 
+## <a name="start-and-stop-an-integration-service-from-a-linux-guest"></a>Linux ゲストから統合サービスを開始および停止する 
 
-一般的に、Linux 統合サービスは Linux カーネルで提供されます。 Linux 統合サービス ドライバーの名前は**hv_utils**します。
+一般的に、Linux 統合サービスは Linux カーネルで提供されます。 Linux integration services ドライバーには**hv_utils**という名前が付けられています。
 
-1. 確認する**hv_utils**が読み込まれる場合は、このコマンドを使用します。
+1. **Hv_utils**が読み込まれているかどうかを確認するには、次のコマンドを使用します。
 
    ``` BASH
    lsmod | grep hv_utils
@@ -153,7 +153,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     hv_vmbus               61440   8 hv_balloon,hyperv_keyboard,hv_netvsc,hid_hyperv,hv_utils,hyperv_fb,hv_storvsc
     ```
 
-3. 必要なデーモンが実行されているかどうかに検索するには、このコマンドを使用します。
+3. 必要なデーモンが実行されているかどうかを確認するには、次のコマンドを使用します。
   
     ``` BASH
     ps -ef | grep hv
@@ -189,49 +189,49 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
     hv_fcopy_daemon     
     ```
   
-   表示される統合サービス デーモンは、次に示します。 いずれかが存在しない場合は、システムでサポートされる可能性がありますいないまたは、インストールできない可能性があります。 詳細については、「 [Windows 上の HYPER-V ではサポートされている Linux および FreeBSD の仮想マシン](https://technet.microsoft.com/library/dn531030.aspx)します。  
-   - **hv_vss_daemon**:Linux 仮想マシンのライブ バックアップを作成するには、このデーモンが必要です。
-   - **hv_kvp_daemon**:このデーモンは、設定および照会の組み込みと外部キー値のペアを使用できます。
-   - **hv_fcopy_daemon**:このデーモンは、ファイル サービス、ホストとゲスト間のコピーを実装します。  
+   次のような統合サービスデーモンが表示されます。 不足しているものがある場合は、システムでサポートされていないか、インストールされていない可能性があります。 詳細については、「 [Windows 上の hyper-v でサポートされている Linux および FreeBSD 仮想マシン](https://technet.microsoft.com/library/dn531030.aspx)」を参照してください。  
+   - **hv_vss_daemon**: このデーモンは、Linux 仮想マシンのライブバックアップを作成するために必要です。
+   - **hv_kvp_daemon**: このデーモンでは、組み込みキーと外部キーの値のペアを設定および照会できます。
+   - **hv_fcopy_daemon**: このデーモンは、ホストとゲスト間にファイルコピーサービスを実装します。  
 
 ### <a name="examples"></a>例
 
-これらの例を示しますの停止と開始という、KVP デーモン`hv_kvp_daemon`します。
+これらの例では、`hv_kvp_daemon`という名前の KVP デーモンを停止して開始する方法を示します。
 
-1. プロセス ID を使用して、 \(PID\)デーモンのプロセスを停止します。 PID を検索するには、出力の 2 番目の列を確認または使用`pidof`します。 HYPER-V デーモンは、ルート アクセスを許可する必要がありますので、ルートとして実行します。
+1. プロセス ID \(PID\) を使用して、デーモンのプロセスを停止します。 PID を検索するには、出力の2番目の列を確認するか、`pidof`を使用します。 Hyper-v デーモンはルートとして実行されるため、ルートアクセス許可が必要です。
 
     ``` BASH
     sudo kill -15 `pidof hv_kvp_daemon`
     ```
 
-1. 確認するすべて`hv_kvp_daemon`プロセスはなくなりを実行します。
+1. すべての `hv_kvp_daemon` プロセスが失われたことを確認するには、次のように実行します。
 
     ```
     ps -ef | hv
     ```
 
-1. デーモンをもう一度開始するには、ルートとしてデーモンを実行します。
+1. デーモンを再起動するには、次のようにデーモンを root として実行します。
 
     ``` BASH
     sudo hv_kvp_daemon
     ``` 
 
-1. 確認する、`hv_kvp_daemon`プロセスの実行、新しいプロセス ID が記載されています。
+1. `hv_kvp_daemon` プロセスが新しいプロセス ID と共に一覧表示されていることを確認するには、次のように実行します。
 
     ```
     ps -ef | hv
     ```
 
-## <a name="keep-integration-services-up-to-date"></a>統合サービスを常に最新の状態に保つ
+## <a name="keep-integration-services-up-to-date"></a>統合サービスを最新の状態に保つ
 
-統合サービス、仮想マシンの最適なパフォーマンスと最新の機能を取得する最新の状態をままことをお勧めします。 これは既定で Windows ゲストのほとんどは Windows Update から重要な更新プログラムを取得するように設定する場合がします。 現在のカーネルを使用して Linux ゲストのカーネルを更新するときに、最新の統合コンポーネントが表示されます。
+仮想マシンの最高のパフォーマンスと最新機能を利用するには、統合サービスを最新の状態に保つことをお勧めします。 これは、Windows Update から重要な更新プログラムを取得するように設定されている場合、ほとんどの Windows ゲストで既定で発生します。 現在のカーネルを使用している Linux ゲストは、カーネルを更新すると最新の統合コンポーネントを受け取ります。
 
 **Windows 10 ホストで実行されている仮想マシンの場合:**
 
 > [!NOTE]
-> イメージ ファイルの vmguest.iso は不要になったため、Windows 10 での HYPER-V に含まれてはありません。
+> イメージファイル vmguest .iso は、不要になったため、Windows 10 の Hyper-v には含まれていません。
 
-| Guest  | 更新方法 | メモ |
+| Guest  | 更新方法 | 説明 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
@@ -244,72 +244,72 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 | Windows Server 2012 R2 | Windows Update | |
 | Windows Server 2012 | Windows Update | データ交換統合サービスが必要です。* |
 | Windows Server 2008 R2 (SP 1) | Windows Update | データ交換統合サービスが必要です。* |
-| Windows Server 2008 (SP 2) | Windows Update | Windows Server 2016 でのみサポートを拡張 ([についてお読みください](https://support.microsoft.com/lifecycle?p1=12925))。 |
-| Windows Home Server 2011 | Windows Update | Windows Server 2016 ではサポートされません ([についてお読みください](https://support.microsoft.com/lifecycle?p1=15820))。 |
+| Windows Server 2008 (SP 2) | Windows Update | Windows Server 2016 での拡張サポートのみ ([詳細](https://support.microsoft.com/lifecycle?p1=12925)はこちら)。 |
+| Windows Home Server 2011 | Windows Update | Windows Server 2016 ではサポートされません ([詳細につい](https://support.microsoft.com/lifecycle?p1=15820)てはこちらを参照)。 |
 | Windows Small Business Server 2011 | Windows Update | メインストリーム サポートではありません ([詳細](https://support.microsoft.com/lifecycle?p1=15817))。 |
 | - | | |
-| Linux ゲスト | パッケージ マネージャー | Linux 用の統合サービスは、ディストリビューションに組み込まれてもありますオプションの更新プログラム利用可能です。 ******** |
+| Linux ゲスト | パッケージ マネージャー | Linux 用 Integration services はディストリビューションに組み込まれていますが、オプションの更新プログラムが利用可能な場合もあります。 ******** |
 
-\* これらのゲスト統合サービスはから利用可能な場合は、データ交換統合サービスを有効にすることはできません、[ダウンロード センター](https://support.microsoft.com/kb/3071740)で、キャビネット (cab) ファイル。 Cab を適用する手順については、この[ブログの投稿](https://blogs.technet.com/b/virtualization/archive/2015/07/24/integration-components-available-for-virtual-machines-not-connected-to-windows-update.aspx)します。
+\* データ交換統合サービスを有効にできない場合、これらのゲストの統合サービスは、[ダウンロードセンター](https://support.microsoft.com/kb/3071740)からキャビネット (cab) ファイルとして入手できます。 Cab を適用する手順については、こちらの[ブログ記事](https://blogs.technet.com/b/virtualization/archive/2015/07/24/integration-components-available-for-virtual-machines-not-connected-to-windows-update.aspx)をご覧ください。
 
 **Windows 8.1 ホストで実行されている仮想マシンの場合:**
 
-| Guest  | 更新方法 | メモ |
+| Guest  | 更新方法 | 説明 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
-| Windows 8 | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows 7 | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows Vista (SP 2) | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows XP (SP 2、SP 3) | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
+| Windows 8 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows 7 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows Vista (SP 2) | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows XP (SP 2、SP 3) | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | - | | |
 | Windows Server 2016 | Windows Update | |
 | Windows Server 半期チャネル | Windows Update | |
 | Windows Server 2012 R2 | Windows Update | |
-| Windows Server 2012 | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows Server 2008 R2 | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows Server 2008 (SP 2) | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows Home Server 2011 | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows Small Business Server 2011 | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows Server 2003 R2 (SP 2) | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows Server 2003 (SP 2) | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
+| Windows Server 2012 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows Server 2008 R2 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows Server 2008 (SP 2) | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows Home Server 2011 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows Small Business Server 2011 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows Server 2003 R2 (SP 2) | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows Server 2003 (SP 2) | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | - | | |
-| Linux ゲスト | パッケージ マネージャー | Linux 用の統合サービスは、ディストリビューションに組み込まれてもありますオプションの更新プログラム利用可能です。 ** |
+| Linux ゲスト | パッケージ マネージャー | Linux 用 Integration services はディストリビューションに組み込まれていますが、オプションの更新プログラムが利用可能な場合もあります。 ** |
 
 
 **Windows 8 ホストで実行されている仮想マシンの場合:**
 
-| Guest  | 更新方法 | メモ |
+| Guest  | 更新方法 | 説明 |
 |:---------|:---------|:---------|
 | Windows 8.1 | Windows Update | |
-| Windows 8 | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows 7 | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows Vista (SP 2) | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows XP (SP 2、SP 3) | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
+| Windows 8 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows 7 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows Vista (SP 2) | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows XP (SP 2、SP 3) | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | - | | |
 | Windows Server 2012 R2 | Windows Update | |
-| Windows Server 2012 | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows Server 2008 R2 | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。|
-| Windows Server 2008 (SP 2) | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows Home Server 2011 | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows Small Business Server 2011 | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows Server 2003 R2 (SP 2) | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
-| Windows Server 2003 (SP 2) | 統合サービス ディスク | 参照してください[指示](#install-or-update-integration-services)、後述します。 |
+| Windows Server 2012 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows Server 2008 R2 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。|
+| Windows Server 2008 (SP 2) | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows Home Server 2011 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows Small Business Server 2011 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows Server 2003 R2 (SP 2) | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
+| Windows Server 2003 (SP 2) | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | - | | |
-| Linux ゲスト | パッケージ マネージャー | Linux 用の統合サービスは、ディストリビューションに組み込まれてもありますオプションの更新プログラム利用可能です。 ** |
+| Linux ゲスト | パッケージ マネージャー | Linux 用 Integration services はディストリビューションに組み込まれていますが、オプションの更新プログラムが利用可能な場合もあります。 ** |
 
-Linux ゲストの詳細については、次を参照してください。 [Windows 上の Hyper-v ではサポートされている Linux および FreeBSD の仮想マシン](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows)します。
+Linux ゲストの詳細については、「 [Windows 上の hyper-v のサポートされている linux および FreeBSD 仮想マシン](https://technet.microsoft.com/windows-server-docs/virtualization/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows)」を参照してください。
 
-## <a name="install-or-update-integration-services"></a>インストールまたは統合サービスの更新
+## <a name="install-or-update-integration-services"></a>Integration services のインストールまたは更新
 
-ホストの Windows Server 2016 および Windows 10 より前する必要があります手動でインストールまたはゲスト オペレーティング システムの統合サービスを更新します。 
+Windows Server 2016 と Windows 10 より前のホストでは、ゲストオペレーティングシステムの統合サービスを手動でインストールまたは更新する必要があります。 
   
-1.  Hyper-V マネージャーを開きます。 サーバー マネージャーの [ツール] メニューからクリックして **、HYPER-V Manager**します。  
+1.  Hyper-V マネージャーを開きます。 サーバーマネージャーの ツール メニューで、 **Hyper-v マネージャー** をクリックします。  
   
-2.  仮想マシンに接続します。 仮想マシンを右クリックし、をクリックして**Connect**します。  
+2.  仮想マシンに接続します。 仮想マシンを右クリックし、 **[接続]** をクリックします。  
   
-3.  [仮想マシン接続] の [操作] メニューで、 **[統合サービス セットアップ ディスクの挿入]** をクリックします。 この操作により、仮想 DVD ドライブにセットアップ ディスクが読み込まれます。 ゲスト オペレーティング システムによっては、手動でインストールを開始する必要があります。  
+3.  [仮想マシン接続] の [操作] メニューで、 **[統合サービス セットアップ ディスクの挿入]** をクリックします。 この操作により、仮想 DVD ドライブにセットアップ ディスクが読み込まれます。 ゲストオペレーティングシステムによっては、インストールを手動で開始する必要がある場合があります。  
   
 4.  インストールが完了すると、すべての統合サービスを使用できるようになります。
 
-次の手順は、自動またはオンラインの仮想マシンの Windows PowerShell セッションで行われたことはできません。 オフラインの VHDX イメージに適用することができます。[このブログの投稿を参照してください。](https://blogs.technet.microsoft.com/virtualization/2013/04/18/how-to-install-integration-services-when-the-virtual-machine-is-not-running/)します。
+これらの手順は、オンライン仮想マシン用の Windows PowerShell セッション内で自動化または実行することはできません。 オフラインの VHDX イメージに適用できます。こちらの[ブログ記事をご覧](https://blogs.technet.microsoft.com/virtualization/2013/04/18/how-to-install-integration-services-when-the-virtual-machine-is-not-running/)ください。

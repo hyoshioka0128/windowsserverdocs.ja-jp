@@ -2,7 +2,7 @@
 title: RDS で個人用デスクトップ セッション コレクションを管理する
 description: RDS の展開に、RDSH および RemoteApp プログラムを追加する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 286c7ba4bd4428669d135c35c825033d22b8f40e
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 6bf0ad3a2cd35c9794fd13631ed29df94725685c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743517"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387406"
 ---
 ## <a name="manage-your-personal-desktop-session-collections"></a>個人用デスクトップ セッション コレクションを管理する
 

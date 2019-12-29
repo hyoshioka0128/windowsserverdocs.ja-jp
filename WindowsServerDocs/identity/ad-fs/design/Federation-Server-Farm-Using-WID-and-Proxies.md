@@ -7,63 +7,63 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d49ae34d83d4a0b912bd92dbb9de16e18cc5b7ff
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 6a123afaebba002b8ee4fb98d5cee5aded286a96
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191342"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359133"
 ---
 # <a name="federation-server-farm-using-wid-and-proxies"></a>WID とプロキシを使用するフェデレーション サーバー ファーム
 
-Active Directory フェデレーション サービスの場合は、この配置トポロジ\(AD FS\)が Windows Internal Database のフェデレーション サーバー ファームと同じ\(WID\)トポロジをプロキシ コンピューターを追加します、。外部ユーザーをサポートするために境界ネットワーク。 これらのプロキシでは、フェデレーション サーバー ファームに、企業ネットワーク外から取得したクライアントの認証要求をリダイレクトします。 AD FS の以前のバージョンでこれらのプロキシにフェデレーション サーバー プロキシが呼び出されました。  
+Active Directory フェデレーションサービス (AD FS) \(AD FS\) のこの展開トポロジは、Windows Internal Database \(WID\) トポロジを持つフェデレーションサーバーファームと同じですが、外部ユーザーをサポートするために、境界ネットワークにプロキシコンピューターを追加します。 これらのプロキシは、企業ネットワークの外部からのクライアント認証要求をフェデレーションサーバーファームにリダイレクトします。 以前のバージョンの AD FS では、これらのプロキシはフェデレーションサーバープロキシと呼ばれていました。  
   
 > [!IMPORTANT]  
-> Active Directory フェデレーション サービスで\(AD FS\)で Windows Server 2012 R2 では、フェデレーション サーバー プロキシの役割は、Web アプリケーション プロキシという新しいリモート アクセス役割サービスによって処理されます。 AD FS の以前のバージョンの AD FS 2.0 および Windows Server 2012 の AD FS などの AD FS でフェデレーション サーバー プロキシの展開の目的であった、企業ネットワークの外部からのアクセスを有効にするには、A の 1 つまたは複数の web アプリケーション プロキシをデプロイすることができます。Windows Server 2012 R2 の D FS します。  
+> Windows Server 2012 R2 の Active Directory フェデレーションサービス (AD FS) \(AD FS\) では、フェデレーションサーバープロキシの役割は、Web アプリケーションプロキシと呼ばれる新しいリモートアクセス役割サービスによって処理されます。 AD FS AD FS のレガシバージョンでフェデレーションサーバープロキシを展開する目的であった企業ネットワークの外部からのアクセスを可能にするには (AD FS 2.0、Windows Server 2012 の AD FS など)、1つまたは複数の web アプリケーションプロキシを展開できます。Windows Server 2012 R2 の D FS。  
 >   
-> AD FS のコンテキストでは、Web アプリケーション プロキシは、AD FS フェデレーション サーバー プロキシとして機能します。 さらに、Web アプリケーション プロキシには、企業ネットワーク内部の Web アプリケーション用のリバース プロキシ機能があり、ユーザーは任意のデバイスで企業ネットワーク外部から Web アプリケーションにアクセスできます。 Web アプリケーション プロキシの役割サービスの詳細については、「Web アプリケーション プロキシの概要」を参照してください。  
+> AD FS のコンテキストでは、Web アプリケーションプロキシは AD FS フェデレーションサーバープロキシとして機能します。 さらに、Web アプリケーション プロキシには、企業ネットワーク内部の Web アプリケーション用のリバース プロキシ機能があり、ユーザーは任意のデバイスで企業ネットワーク外部から Web アプリケーションにアクセスできます。 Web アプリケーション プロキシの役割サービスの詳細については、「Web アプリケーション プロキシの概要」を参照してください。  
 >   
 > Web アプリケーション プロキシの展開を計画するには、次のトピックの情報を確認できます。  
 >   
-> -   [インフラストラクチャを計画する Web アプリケーション プロキシ (WAP)](https://technet.microsoft.com/library/dn383648.aspx)  
-> -   [Web アプリケーション プロキシ サーバーを計画します。](https://technet.microsoft.com/library/dn383647.aspx)  
+> -   [Web アプリケーションプロキシインフラストラクチャ (WAP) を計画する](https://technet.microsoft.com/library/dn383648.aspx)  
+> -   [Web アプリケーションプロキシサーバーを計画する](https://technet.microsoft.com/library/dn383647.aspx)  
   
 ## <a name="deployment-considerations"></a>展開に関する考慮事項  
-このセクションでは、対象となるユーザー、利点、およびこの配置トポロジに関連付けられている制限事項についてさまざまな考慮事項について説明します。  
+このセクションでは、この展開トポロジに関連する対象ユーザー、利点、および制限事項に関するさまざまな考慮事項について説明します。  
   
 ### <a name="who-should-use-this-topology"></a>このトポロジを使用する必要がありますか。  
   
--   組織の内部ユーザーと外部ユーザーの両方を指定する必要がある 100 以下の構成済みの信頼関係を持つ\(企業ネットワークの外部に物理的に配置されているコンピューターにログオンしたユーザーは\)1 回サインオン\-で\(SSO\)フェデレーション アプリケーションまたはサービスへのアクセス  
+-   100以下の信頼関係を持つ組織は、企業ネットワークの外部に物理的に配置されているコンピューターにログオンしているコンピューター \(\-\) 内部ユーザーと外部ユーザーの両方を提供する必要があります。 \(SSO\) フェデレーションアプリケーションまたはサービスへのアクセス  
   
--   Microsoft Office 365 に SSO アクセス権を持つ、内部ユーザーと外部ユーザーの両方を提供する必要がある組織  
+-   内部ユーザーと外部ユーザーの両方に Microsoft Office 365 への SSO アクセスを提供する必要がある組織  
   
--   外部ユーザーが、重複した、スケーラブルなサービスを必要とする小規模な組織  
+-   外部ユーザーを持ち、冗長でスケーラブルなサービスを必要とする小規模の組織  
   
 ### <a name="what-are-the-benefits-of-using-this-topology"></a>このトポロジを使用する利点とは  
   
--   場合と同じメリットがあります、 [WID フェデレーション サーバー ファームを使用して](Federation-Server-Farm-Using-WID.md)トポロジ、および外部ユーザーを追加のアクセスを提供するための特典  
+-   [WID トポロジを使用するフェデレーションサーバーファーム](Federation-Server-Farm-Using-WID.md)と同じ利点に加えて、外部ユーザーに追加のアクセスを提供する利点もあります。  
   
 ### <a name="what-are-the-limitations-of-using-this-topology"></a>このトポロジを使用する場合の制限事項を挙げてください。  
   
--   表示されていると同じ制限、 [WID フェデレーション サーバー ファームを使用して](Federation-Server-Farm-Using-WID.md)トポロジ  
+-   [WID トポロジを使用したフェデレーションサーバーファーム](Federation-Server-Farm-Using-WID.md)の一覧と同じ制限事項  
 
-||1 \- 100 の RP 信頼|100 を超える RP 信頼 
+||1 \- 100 RP 信頼|100を超える RP 信頼 
 | ----- |-----| ------ |
-|1 \- 30年の AD FS ノード|WID のサポート|WID を使用してサポートされていません\-のために必要な SQL 
-|複数の 30年の AD FS ノード|WID を使用してサポートされていません\-のために必要な SQL|WID を使用してサポートされていません\-のために必要な SQL  
+|1 \- 30 AD FS ノード|WID がサポートされる|WID を使用してサポートされていません \- SQL が必要です 
+|30を超える AD FS ノード|WID を使用してサポートされていません \- SQL が必要です|WID を使用してサポートされていません \- SQL が必要です  
   
-## <a name="server-placement-and-network-layout-recommendations"></a>サーバーの配置とネットワーク レイアウトの推奨事項  
-2 つの web アプリケーション プロキシを追加するだけでなく、このトポロジをデプロイする必要がありますを確認することを境界ネットワークもにアクセスできるように、ドメイン ネーム システム\(DNS\)サーバーと 2 番目ネットワーク負荷分散に\(NLB\)ホスト。 2 番目の NLB ホストは、インターネットを使用する NLB クラスターを構成する必要があります\-企業ネットワーク上に構成されて以前の NLB クラスターと同じクラスター DNS 名の設定を使用する必要がありますアクセス可能なクラスター IP アドレス、およびその\(fs.fabrikam.com\)します。 インターネットと web アプリケーション プロキシを構成する必要があることも\-アクセス可能な IP アドレス。  
+## <a name="server-placement-and-network-layout-recommendations"></a>サーバーの配置とネットワークレイアウトに関する推奨事項  
+このトポロジを展開するには、2つの web アプリケーションプロキシを追加するだけでなく、境界ネットワークがドメインネームシステム \(DNS\) サーバーにアクセスし、2番目のネットワーク負荷分散 \(NLB\) ホストにもアクセスできるようにする必要があります。 2番目の NLB ホストは、インターネット\-アクセス可能なクラスター IP アドレスを使用する NLB クラスターを使用して構成する必要があります。また、企業ネットワーク \(fs.fabrikam.com\)で構成した前の NLB クラスターと同じクラスター DNS 名設定を使用する必要があります。 Web アプリケーションプロキシは、インターネット\-のアクセス可能な IP アドレスで構成する必要もあります。  
   
-次の図は、以前に説明した WID トポロジと架空の会社の Fabrikam, Inc. が境界の DNS サーバーへのアクセスを提供する方法は、既存のフェデレーション サーバー ファームを同じクラスター DNS 名2番目のNLBホストを追加します\(fs.fabrikam.com\)、2 つの web アプリケーション プロキシを追加および\(wap1 と wap2\)境界ネットワークにします。  
+次の図は、既に説明した WID トポロジを持つ既存のフェデレーションサーバーファームと、架空の Fabrikam, Inc. が境界 DNS サーバーへのアクセスを提供する方法を示しています。また、fs.fabrikam.com\)と同じクラスター DNS \(名を持つ2つ目の NLB ホストを追加し、境界ネットワークに2つの web アプリケーションプロキシ\) \(追加します。  
   
-![Wid とプロキシ](media/WIDFarmADFSBlue.gif)  
+![WID ファームとプロキシ](media/WIDFarmADFSBlue.gif)  
   
-フェデレーション サーバーまたは web アプリケーション プロキシを使用するため、ネットワーク環境を構成する方法の詳細については、「名前解決の要件」を参照してください。 セクション[AD FS の要件](AD-FS-Requirements.md)と[Web の計画アプリケーション プロキシ インフラストラクチャ (WAP)](https://technet.microsoft.com/library/dn383648.aspx)します。  
+フェデレーションサーバーまたは web アプリケーションプロキシで使用するためのネットワーク環境を構成する方法の詳細については、「AD FS の[要件](AD-FS-Requirements.md)」の「名前解決の要件」セクションを参照して、 [Web アプリケーションプロキシインフラストラクチャ (WAP) を計画](https://technet.microsoft.com/library/dn383648.aspx)してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [AD FS 展開トポロジの計画](Plan-Your-AD-FS-Deployment-Topology.md)  
 [Windows Server 2012 R2 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   

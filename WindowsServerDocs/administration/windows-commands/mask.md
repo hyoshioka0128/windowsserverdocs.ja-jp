@@ -1,8 +1,8 @@
 ---
 title: マスク
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 353e6080d1f6c548bc907b58655f31d0bce6de8b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2f0dc83d7d9f7204f56e95c62b7cfad991f539ef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858023"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373714"
 ---
 # <a name="mask"></a>マスク
 
 
 
-使用してインポートされたハードウェアのシャドウ コピーを削除、**インポート**コマンド。
+**インポート**コマンドを使用してインポートされたハードウェアシャドウコピーを削除します。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
@@ -38,19 +38,19 @@ mask <ShadowSetID>
 
 |パラメーター|説明|
 |---------|-----------|
-|ShadowSetID|シャドウ コピー、指定したシャドウ コピー セット ID に属しているを削除します|
+|ShadowSetID|指定されたシャドウコピーセット ID に属するシャドウコピーを削除します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   既存のエイリアスまたは環境変数の代わりに使用できます*ShadowSetID*します。 使用**追加**パラメーターに既存の別名を参照してください。
+-   *ShadowSetID*の代わりに、既存のエイリアスまたは環境変数を使用できます。 既存のエイリアスを表示するには、パラメーターを指定せずに**add**を使用します。
 
 ## <a name="BKMK_examples"></a>例
 
-インポートされたシャドウ コピーの %import_1% を削除するには、次のように入力します。
+インポートされたシャドウコピー% Import_1% を削除するには、次のように入力します。
 ```
 mask %Import_1%
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

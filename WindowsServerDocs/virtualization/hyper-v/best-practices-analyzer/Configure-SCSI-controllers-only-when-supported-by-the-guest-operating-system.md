@@ -1,7 +1,7 @@
 ---
-title: ゲスト オペレーティング システムでサポートされている場合にのみ、SCSI コント ローラーを構成します。
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+title: ゲストオペレーティングシステムでサポートされている場合にのみ SCSI コントローラーを構成する
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,16 +10,16 @@ ms.topic: article
 ms.assetid: 861f194f-467e-4b07-a1c5-55b35f6327c4
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 3dc48602ab6c71c60fdb734ca98cf1359f58d87c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: da8d929a8f06f58610913d28d2f1e90299efb235
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830393"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366419"
 ---
-# <a name="configure-scsi-controllers-only-when-supported-by-the-guest-operating-system"></a>ゲスト オペレーティング システムでサポートされている場合にのみ、SCSI コント ローラーを構成します。
+# <a name="configure-scsi-controllers-only-when-supported-by-the-guest-operating-system"></a>ゲストオペレーティングシステムでサポートされている場合にのみ SCSI コントローラーを構成する
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
 
   
@@ -27,24 +27,24 @@ ms.locfileid: "59830393"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|警告|  
+|**順**|Warning|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
   
 ## <a name="issue"></a>問題  
   
-*仮想マシンは、ゲスト オペレーティング システムが SCSI コント ローラーをサポートしていないために使用することはできません、SCSI コント ローラーで構成されます。*  
+*ゲストオペレーティングシステムが SCSI コントローラーをサポートしていないため、バーチャルマシンには使用できない SCSI コントローラーが構成されています。*  
   
 ## <a name="impact"></a>影響  
   
-*仮想マシンは SCSI コント ローラーに接続されているストレージを使用できません。これには、次の仮想マシンに影響します。*  
+*バーチャルマシンは、SCSI コントローラーに接続された記憶域を使用できません。これは、次の仮想マシンに影響します。*  
   
-\<仮想マシンの一覧 >  
+仮想マシンの一覧を \<>  
   
 ## <a name="resolution"></a>解決方法  
   
-*仮想マシンをシャット ダウンし、HYPER-V マネージャーを使用して、仮想マシンから SCSI コント ローラーを削除します。仮想マシンを再起動します。*  
+*バーチャルマシンをシャットダウンし、Hyper-v マネージャーを使用してバーチャルマシンから SCSI コントローラーを削除します。次に、仮想マシンを再起動します。*  
   
 
 

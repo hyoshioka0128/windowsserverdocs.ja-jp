@@ -1,5 +1,5 @@
 ---
-title: 仮想マシン リソースの管理
+title: 仮想マシンのリソースコントロール
 description: VM の CPU グループの使用
 keywords: Windows 10, Hyper-V
 author: allenma
@@ -8,128 +8,128 @@ ms.topic: article
 ms.prod: windows-10-hyperv
 ms.service: windows-10-hyperv
 ms.assetid: cc7bb88e-ae75-4a54-9fb4-fc7c14964d67
-ms.openlocfilehash: 7c4ddf3e5d2ff58eef844c50960327c27a3e0a3d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 41390421c9e3126915cdf2e827e251e84495bafd
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854763"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70872018"
 ---
->適用先:Windows Server 2016、Microsoft HYPER-V Server 2016、Windows Server 2019、Microsoft HYPER-V Server 2019
+>適用先:Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
-# <a name="virtual-machine-resource-controls"></a>仮想マシン リソースの管理
+# <a name="virtual-machine-resource-controls"></a>仮想マシンのリソースコントロール
 
-この記事では、仮想マシンの HYPER-V リソースと分離のコントロールについて説明します。  これらの機能では、仮想マシンの CPU グループ、またはだけ「CPU グループ」と呼びますは、Windows Server 2016 で導入されました。  CPU のグループを使用するより優れたに HYPER-V 管理者を管理およびゲスト仮想マシン間で、ホストの CPU リソースを割り当てます。  CPU のグループを使用して、HYPER-V 管理者は次のことができます。
+この記事では、仮想マシンの Hyper-v リソースと分離の制御について説明します。  これらの機能は、仮想マシンの CPU グループとして、または "CPU グループ" と呼ばれますが、Windows Server 2016 で導入されました。  CPU グループを使用すると、Hyper-v 管理者は、ゲスト仮想マシン間でホストの CPU リソースの管理と割り当てをより適切に行うことができます。  Hyper-v 管理者は、CPU グループを使用して次のことができます。
 
-* 異なる割り当てグループ全体で共有仮想化ホストの合計 CPU リソースの各グループで、仮想マシンのグループを作成します。 これにより、さまざまな種類の Vm 用のサービスのクラスを実装するホストの管理者ができます。
+* 仮想マシンのグループを作成します。各グループは、仮想化ホストの合計 CPU リソースの割り当てが異なるため、グループ全体で共有されます。 これにより、ホスト管理者は、さまざまな種類の Vm に対してサービスのクラスを実装できます。
 
-* 特定のグループには、CPU リソースの制限を設定します。 この「グループの上限」は、ホストの上限の境界に、そのグループ用のサービスの目的のクラスを効果的に強制するグループ全体が消費する CPU リソースを設定します。
+* CPU リソースの制限を特定のグループに設定します。 この "グループ上限" は、グループ全体が使用する可能性があるホスト CPU リソースの上限を設定し、そのグループに必要なサービスのクラスを効果的に適用します。
 
-* 特定のホスト システムのプロセッサ セットでのみ実行する CPU のグループを制限します。 これは、互いに別の CPU グループに属している Vm の分離を使用できます。
+* CPU グループがホストシステムのプロセッサの特定のセットでのみ実行されるように制約を設定します。 これは、異なる CPU グループに属する Vm を相互に分離するために使用できます。
 
-## <a name="managing-cpu-groups"></a>CPU のグループを管理します。
+## <a name="managing-cpu-groups"></a>CPU グループの管理
 
-CPU のグループは、HYPER-V ホストのコンピューティング サービス、または HCS によって管理されます。 HCS、その起源の優れた説明 HCS api などへのリンクは、Microsoft Virtualization チームのブログ投稿でご確認いただけます[ホスト コンピューティング サービス (HCS) を導入](https://blogs.technet.microsoft.com/virtualization/2017/01/27/introducing-the-host-compute-service-hcs/)します。
+CPU グループは、Hyper-v ホストコンピューティングサービス (HCS) を介して管理されます。 HCS、その genesis、HCS Api へのリンクの詳細については、Microsoft 仮想化チームのブログで[ホストコンピューティングサービス (hcs) の導入](https://blogs.technet.microsoft.com/virtualization/2017/01/27/introducing-the-host-compute-service-hcs/)に関する投稿を参照してください。
 
 >[!NOTE] 
->CPU のグループです。 作成および管理に HCS だけことができます。HYPER-V Manager アプレット、WMI と PowerShell の管理インターフェイスが CPU グループをサポートしません。
+>CPU グループを作成および管理するために使用できるのは HCS だけです。Hyper-v マネージャーアプレット、WMI および PowerShell 管理インターフェイスは、CPU グループをサポートしていません。
 
-Microsoft は、コマンド ライン ユーティリティ、cpugroups.exe、上、 [Microsoft ダウンロード センター](https://go.microsoft.com/fwlink/?linkid=865968) HCS インターフェイスを使用する CPU のグループを管理します。  このユーティリティは、ホストの CPU のトポロジを表示できます。
+Microsoft では、HCS インターフェイスを使用して CPU グループを管理する、 [Microsoft ダウンロードセンター](https://go.microsoft.com/fwlink/?linkid=865968)にコマンドラインユーティリティ (cpu) を提供しています。  このユーティリティでは、ホストの CPU トポロジを表示することもできます。
 
-## <a name="how-cpu-groups-work"></a>CPU グループの動作
+## <a name="how-cpu-groups-work"></a>CPU グループのしくみ
 
-ホストのコンピューティング リソースの CPU グループの割り当ては、計算の CPU グループ cap を使用して、HYPER-V ハイパーバイザーによって強制されます。 CPU のグループの上限は、CPU のグループの合計 CPU 容量の一部です。 グループのキャップの値は、グループのクラス、またはレベルが割り当てられた優先度によって異なります。 計算されたグループの上限は、「CPU 時間の分 LP's 数」として考えることができます。 このグループの予算を共有すると、それ自身のグループ全体の CPU 割り当てを使用できるように、単一の VM がアクティブであった、だけの場合。
+CPU グループ間でのホストコンピューティングリソースの割り当ては、計算された CPU グループの上限を使用して Hyper-v ハイパーバイザーによって実施されます。 Cpu グループの上限は、cpu グループの合計 CPU 容量の割合を示します。 グループキャップの値は、グループクラス、または割り当てられた優先度レベルによって異なります。 計算されたグループキャップは、"大量の LP の CPU 時間" と考えることができます。 このグループの予算は共有されているので、1つの VM だけがアクティブだった場合は、グループの CPU 割り当て全体を使用できます。
 
-CPU のグループの上限は G として計算されます = *n* x *C*、場所。
+CPU グループの上限は、G = *n* x *C*として計算されます。
 
     *G* is the amount of host LP we'd like to assign to the group
     *n* is the total number of logical processors (LPs) in the group
-    *C* is the maximum CPU allocation — that is, the class of service desired for the group, expressed as a percentage of the system’s total compute capacity
+    *C* is the maximum CPU allocation — that is, the class of service desired for the group, expressed as a percentage of the system's total compute capacity
 
-たとえば、4 つの論理プロセッサ (LPs) と上限の 50% に構成されている CPU グループがあるとします。
+たとえば、CPU グループが4つの論理プロセッサ (LPs) で構成され、キャップが 50% であるとします。
 
     G = n * C
     G = 4 * 50%
     G = 2 LP's worth of CPU time for the entire group
 
-この例では、G の CPU グループには CPU 時間の分の 2 LP's が割り当てられます。  
+この例では、CPU グループ G に2世代の CPU 時間が割り当てられています。  
 
-仮想マシンまたはグループにバインドされている仮想プロセッサの数に関係なく、状態に関係なく、グループの上限が適用されます (シャット ダウンなどの開始または) の CPU グループに割り当てられている仮想マシン。 したがって、同じの CPU グループにバインドされている各 VM の CPU 割り当ての合計をグループの一部が表示されます、これが CPU グループにバインドされている Vm の数に変更されます。 そのため、Vm がバインドされているか、または CPU のグループから Vm をバインド解除、全体的な CPU グループ上限あり必要があります再調整されます必要な結果として得られる VM あたりの上限を維持するために設定します。 VM ホストの管理者または仮想化管理ソフトウェア レイヤーは、VM あたりの必要な CPU リソースの割り当てを実現するために必要に応じてグループの上限を管理する責任を負います。
+グループキャップは、グループにバインドされている仮想マシンまたは仮想プロセッサの数に関係なく、CPU グループに割り当てられている仮想マシンの状態 (シャットダウンや開始など) に関係なく適用されることに注意してください。 そのため、同じ CPU グループにバインドされている各 VM は、グループの合計 CPU 割り当ての割合を受け取り、CPU グループにバインドされている Vm の数によって変化します。 そのため、vm が CPU グループからバインドまたはバインド解除されている場合、CPU グループ全体の上限を readjusted に設定し、結果として得られる VM あたりの上限を維持するように設定する必要があります。 VM ホスト管理者または仮想化管理ソフトウェアレイヤーは、必要に応じてグループキャップを管理し、必要に応じて VM ごとの CPU リソース割り当てを実現します。
 
-## <a name="example-classes-of-service"></a>サービスの例のクラス
+## <a name="example-classes-of-service"></a>サービスのクラスの例
 
-簡単な例を見てみましょう。 最初に、HYPER-V ホストの管理者がゲスト Vm 用のサービスの 2 つの階層をサポートしたいとします。
+いくつかの簡単な例を見てみましょう。 まず、Hyper-v ホスト管理者がゲスト Vm 用に2層のサービスをサポートするとします。
 
-1. ローエンドの"C"層。 この層に全体のホストのコンピューティング リソースの 10% お任せします。
+1. ローエンドの "C" 層。 このレベルには、ホストのコンピューティングリソース全体の 10% を与えます。
 
-1. ミッドレンジ"B"層。 この層には、ホスト全体のコンピューティング リソースの 50% が割り当てられます。
+1. 中間範囲 "B" 層。 この層には、ホストのコンピューティングリソース全体の 50% が割り当てられます。
 
-この時点でこの例では、その他の CPU リソースの管理は、重みを個々 の VM cap など、使用し、予約をアサートします。
-ただし、少し後で表示されるように、個々 の VM の上限は重要ですと。
+この例のこの時点では、個々の VM キャップ、重み、予約など、他の CPU リソース制御が使用されていないことをアサートします。
+ただし、後で説明するように、個々の VM の上限は重要です。
 
-わかりやすくするために、仮定が各 VM に 1 VP、およびホストに 8 LPs します。 まず、空のホスト。
+わかりやすくするために、各 VM には VP が1つあり、ホストには8個の LPs があると仮定してみましょう。 空のホストから始めます。
 
-"B"層を作成するには、ホスト adminstartor は、グループの上限を 50% に設定します。
+"B" 層を作成するために、ホストの管理は、グループの上限を 50% に設定します。
 
     G = n * C
     G = 8 * 50%
     G = 4 LP's worth of CPU time for the entire group
 
-ホストの管理者は、1 つの"B"層 VM を追加します。
-この時点で、"B"レベルの VM で使用できます多くて、ホストの CPU、または 4 LPs のそれと同等の価値が 50%、システムの例。
+ホスト管理者は、1つの "B" 層の VM を追加します。
+この時点で、"B" 層の VM は、ホストの CPU のうち最大 50% を使用できます。また、この例のシステムでは、4つの LPs に相当します。
 
-ここで、管理者は、2 番目"層 B"VM を追加します。 CPU のグループの割り当て-すべての Vm 間で均等に分割されます。 各 VM を今すぐ取得 50%、25%、それぞれまたはコンピューティング時間の分の 2 LPs の同等のグループ B の総数の半数グループ b の 2 つの Vm の合計ものがいます。
+これで、管理者は2つ目の "Tier B" VM を追加します。 CPU グループの割り当ては、すべての Vm 間で均等に分割されます。 グループ B には合計2つの Vm があります。そのため、各 VM は、グループ B の合計である 50%、25%、またはそれに相当する2つのコンピューティング時間の半分を獲得します。
 
-## <a name="setting-cpu-caps-on-individual-vms"></a>個々 の Vm 上の CPU 上限の設定
+## <a name="setting-cpu-caps-on-individual-vms"></a>個々の Vm での CPU キャップの設定
 
-グループの上限だけでなく、各 VM は、各「VM の上限」ことができます。 CPU の上限、重量、予約など、VM あたりの CPU リソースの制御以来、HYPER-V の一部であった。
-グループの上限と組み合わせると、グループが使用可能な CPU リソースを持つ場合でも、VM の上限は各担当副社長が取得できる、CPU の最大量を指定します。
+グループキャップに加えて、各 VM は個別の "VM cap" も持つことができます。 CPU の上限、重量、予約など、VM ごとの CPU リソース制御は、その概要以降、Hyper-v に含まれていました。
+グループの上限と組み合わせると、VM の上限は、グループに使用可能な CPU リソースがある場合でも、各 VP が取得できる CPU の最大量を指定します。
 
-たとえば、ホストの管理者は"C"の Vm 上で、cap を 10 %vm を配置する可能性があります。
-そうすること"C"Vp のほとんどがアイドル状態になった場合でも各担当副社長でした達しません 10% を超える。
-VM の上限では、なし"C"Vm はさせる以外の階層によって許可されるレベルのパフォーマンスを得ることができます。
+たとえば、ホスト管理者は、"C" Vm に 10% の VM キャップを配置することができます。
+このようにして、ほとんどの "C" VPs がアイドル状態であっても、各 VP が 10% を超えることはありません。
+VM cap を使用しない場合、"C" Vm は、その層で許可されているレベルを超えてパフォーマンスをさせる可能性があります。
 
-## <a name="isolating-vm-groups-to-specific-host-processors"></a>特定のホストのプロセッサに VM のグループを分離します。
+## <a name="isolating-vm-groups-to-specific-host-processors"></a>特定のホストプロセッサに VM グループを分離する
 
-HYPER-V ホストの管理者には、VM にコンピューティング リソースを専用に使用できる必要もあります。
-たとえば、管理者は、premium を提供しようとしています"A"を 100% のクラスのキャップを持つ VM。
-スケジュールの最小の待機時間を必要とし、ジッター可能であればこれらの premium Vm可能性がありますいない解除によってスケジュールされる他の VM。
-この分離を実現するために CPU グループを特定の LP アフィニティ マッピングを構成こともできます。
+Hyper-v ホスト管理者は、コンピューティングリソースを VM に専用にすることもできます。
+たとえば、管理者が、クラスキャップが 100% の premium "A" VM を提供したいとします。
+これらの premium Vm では、最小のスケジューリング待機時間とジッターも必要です。つまり、他の VM によってスケジュール解除されていない可能性があります。
+この分離を実現するために、特定の LP アフィニティマッピングで CPU グループを構成することもできます。
 
-やなどの"A"の VM は、この例では、ホスト上に合わせて、管理者が新しい CPU グループを作成、ホストの LPs のサブセットにグループのプロセッサのアフィニティを設定します。
-グループ B と C は、残りの LPs に関連付け。
-管理者でしたはおそらく下位のレベル グループ B の中に、グループ a すべて LPs への排他アクセスを持ち、グループ A の 1 つの VM を作成し、残りの LPs 共有 C の場合します。
+たとえば、この例でホストの "A" VM に適合させるために、管理者は新しい CPU グループを作成し、グループのプロセッサアフィニティをホストの LPs のサブセットに設定します。
+グループ B と C は、残りの LPs に関連付けられます。
+管理者は、グループ A に1つの VM を作成できます。これにより、グループ A のすべての LPs に排他的にアクセスできます。一方、下位層グループ B と C は残りの LPs を共有します。
 
-## <a name="segregating-root-vps-from-guest-vps"></a>ゲストの Vp から分離したルート Vp
+## <a name="segregating-root-vps-from-guest-vps"></a>ルート VPs とゲスト VPs の分離
 
-既定では、HYPER-V は、基になる各物理 LP で、担当副社長、ルートを作成します。
-これらルート Vp 厳密にマップされた 1 対 1 LPs、システムでは、移行しない-は、各ルート担当副社長は、同じ物理 LP で実行が常にします。
-ゲスト Vp は、使用可能な LP で実行することがあり、実行はルート Vp、共有します。
+既定では、Hyper-v は基礎となる各物理 LP にルート VP を作成します。
+これらのルート VPs は、厳密には1:1 とシステム LPs にマップされており、移行されません。つまり、各ルート VP は常に同じ物理 LP で実行されます。
+ゲスト VPs は、利用可能なすべての LP で実行でき、ルート VPs との実行を共有します。
 
-ただし、かもしれません望ましいまったく別のルート アクティビティの担当副社長にゲストの Vp から。
-Premium"A"レベルの VM を実装して上記の例を検討してください。
-"A"VM の Vp は最短の待機時間と「ジッター」、またはスケジュールのバリエーションがあることを確認するには、LPs の専用セット上で実行し、ルートがこれら LPs で稼働していないことを確認することをおいただきます。
+ただし、ルート VP アクティビティをゲスト VPs から完全に分離することが望ましい場合があります。
+上の例では、premium "A" 層の VM を実装しています。
+"A" VM の VPs が可能な限り最短の待機時間と "ジッター"、またはスケジュールのバリエーションを持つようにするには、それらを専用の LPs で実行し、ルートがこれらの LPs で実行されないようにします。
 
-これは、システム全体の論理プロセッサと 1 つのサブセットで実行されているホスト OS のパーティションを制限する"minroot"構成の組み合わせを使用して実現できます。 または複数の CPU グループが関連付けられます。
+これを行うには、"minroot" 構成を組み合わせて使用します。これにより、ホスト OS パーティションは、合計システム論理プロセッサのサブセット上で実行されるように制限され、1つまたは複数の関連付けられた CPU グループが適用されます。
 
-残り LPs に関連付けられた 1 つまたは複数の CPU グループで特定の LPs をホストのパーティションを制限するのには、仮想化ホストを構成できます。
-この方法で、ルートおよびゲスト パーティションは、専用の CPU リソースを実行し、CPU を共有せず、完全に分離します。
+仮想化ホストは、ホストパーティションを特定の LPs に制限するように構成できます。これは、残りの LPs に関連付けられた1つ以上の CPU グループで構成できます。
+この方法では、ルートパーティションとゲストパーティションは専用の CPU リソースで実行でき、CPU を共有せずに完全に分離されます。
 
-"Minroot"構成の詳細については、次を参照してください。[で Hyper-v ホストの CPU リソースの管理](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-minroot-2016)します。
+"Minroot" 構成の詳細については、「 [Hyper-v ホスト CPU リソース管理](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-minroot-2016)」を参照してください。
 
-## <a name="using-the-cpugroups-tool"></a>CpuGroups ツールを使用します。
+## <a name="using-the-cpugroups-tool"></a>Cpu 使用グループツールの使用
 
-CpuGroups ツールを使用する方法の例をいくつか見てみましょう。
+Cpu 使用率ツールの使用方法の例をいくつか見てみましょう。
 
 >[!NOTE] 
->区切り記号としてスペースのみを使用して、CpuGroups ツールのコマンド ライン パラメーターが渡されます。 いいえ '/' または '-' 文字は、必要なコマンド ライン スイッチを続行する必要があります。
+>Cpu グループツールのコマンドラインパラメーターは、区切り記号としてスペースのみを使用して渡されます。 '/' または '-' 文字は、必要なコマンドラインスイッチを続行できません。
 
-### <a name="discovering-the-cpu-topology"></a>CPU のトポロジを検出します。
+### <a name="discovering-the-cpu-topology"></a>CPU トポロジの検出
 
-CpuGroups、GetCpuTopology でを実行すると、次に示す、LP インデックス、LP が所属する、パッケージ、およびコアの Id とルート担当副社長インデックス NUMA ノードを含む現在のシステムに関する情報が返されます。
+次に示すように、Getcpu トポロジで Cpu グループを実行すると、現在のシステムに関する情報が返されます。これには、LP インデックス、LP が属する NUMA ノード、パッケージとコア Id、およびルート VP インデックスが含まれます。
 
-次の例は、2 つの CPU ソケットを使用してシステムを示しています。 NUMA ノード、32 の LPs とマルチ スレッドの合計を有効になっており、8 ルート Vp、各 NUMA ノードから 4 Minroot を有効にするように構成します。
-持つルート Vp LPs がある、RootVpIndex > = 0 になります。-1 の RootVpIndex で LPs は、ルート パーティションを使用できません、ハイパーバイザーでまだ管理されていて、他の構成設定で許可されているゲスト Vp を実行します。
+次の例は、2つの CPU ソケットと NUMA ノード、合計 32 LPs、およびマルチスレッド化が有効になっているシステムを示しています。また、各 NUMA ノードの8つのルート VPs である Minroot を有効にするように構成されています。
+ルート VPs を持つ LPs は RootVpIndex > = 0 です。RootVpIndex が-1 の LPs は、ルートパーティションでは使用できませんが、ハイパーバイザーによって引き続き管理されており、他の構成設定で許可されているようにゲスト VPs を実行します。
 
 ```console
 C:\vm\tools>CpuGroups.exe GetCpuTopology
@@ -170,11 +170,11 @@ LpIndex NodeNumber PackageId CoreId RootVpIndex
      31          1         1     23          -1
 ```
 
-### <a name="example-2--print-all-cpu-groups-on-the-host"></a>例 2: ホスト上のすべての CPU グループを印刷します。
+### <a name="example-2--print-all-cpu-groups-on-the-host"></a>例2–ホスト上のすべての CPU グループを印刷する
 
-ここでは、現在のホスト、GroupId、グループの CPU の上限、およびそのグループに割り当てられている LPs のインデックス上のすべての CPU グループをリストします。
+ここでは、現在のホスト上のすべての CPU グループ、GroupId、グループの CPU 上限、およびそのグループに割り当てられた LPs の決まっの一覧を示します。
 
-有効な CPU の上限値は範囲 [0, 65536] で、これらの値は % で、グループの上限を express (たとえば、32768 = 50%)。
+有効な CPU 上限値は [0, 65536] の範囲内であり、これらの値はグループの上限をパーセントで表します (例: 32768 = 50%)。
 
 ```console
 C:\vm\tools>CpuGroups.exe GetGroups
@@ -186,9 +186,9 @@ CpuGroupId                          CpuCap  LpIndexes
 36AB08CB-3A76-4B38-992E-000000000004 65536  24,25,26,27,28,29,30,31
 ```
 
-### <a name="example-3--print-a-single-cpu-group"></a>例 3-1 つの CPU グループを印刷します。
+### <a name="example-3--print-a-single-cpu-group"></a>例3–単一の CPU グループを印刷する
 
-この例で、フィルターとして、GroupId を使用して 1 つの CPU グループをクエリします。
+この例では、GroupId をフィルターとして使用して、単一の CPU グループに対してクエリを実行します。
 
 ```console
 C:\vm\tools>CpuGroups.exe GetGroups /GroupId:36AB08CB-3A76-4B38-992E-000000000003
@@ -197,15 +197,15 @@ CpuGroupId                          CpuCap   LpIndexes
 36AB08CB-3A76-4B38-992E-000000000003 65536  12,13,14,15
 ```
 
-### <a name="example-4--create-a-new-cpu-group"></a>例 4-新しい CPU グループの作成
+### <a name="example-4--create-a-new-cpu-group"></a>例4–新しい CPU グループを作成する
 
-ここでは、グループに割り当てるには、グループ ID と LPs のセットを指定する、新しい CPU グループを作成します。
+ここでは、グループ ID とグループに割り当てる LPs のセットを指定して、新しい CPU グループを作成します。
 
 ```console
 C:\vm\tools>CpuGroups.exe CreateGroup /GroupId:36AB08CB-3A76-4B38-992E-000000000001 /GroupAffinity:0,1,16,17
 ```
 
-これで、新しく追加されたグループを表示します。
+新しく追加したグループを表示します。
 
 ```console
 C:\vm\tools>CpuGroups.exe GetGroups
@@ -217,15 +217,15 @@ CpuGroupId                          CpuCap LpIndexes
 36AB08CB-3A76-4B38-992E-000000000004 65536 24,25,26,27,28,29,30,31
 ```
 
-### <a name="example-5--set-the-cpu-group-cap-to-50"></a>例 5: 50% に、CPU のグループの上限を設定します。
+### <a name="example-5--set-the-cpu-group-cap-to-50"></a>例 5-CPU グループの上限を 50% に設定する
 
-ここでは、50 %cpu グループの上限を設定します。
+ここでは、CPU グループの上限を 50% に設定します。
 
 ```console
 C:\vm\tools>CpuGroups.exe SetGroupProperty /GroupId:36AB08CB-3A76-4B38-992E-000000000001 /CpuCap:32768
 ```
 
-今すぐ更新しましたグループを表示することの設定を確認しましょう。
+次に、更新したばかりのグループを表示して設定を確認してみましょう。
 
 ```console
 C:\vm\tools>CpuGroups.exe GetGroups /GroupId:36AB08CB-3A76-4B38-992E-000000000001
@@ -235,7 +235,7 @@ CpuGroupId                          CpuCap LpIndexes
 36AB08CB-3A76-4B38-992E-000000000001 32768 0,1,16,17
 ```
 
-### <a name="example-6--print-cpu-group-ids-for-all-vms-on-the-host"></a>例 6 – ホスト上のすべての Vm の印刷の CPU グループ id
+### <a name="example-6--print-cpu-group-ids-for-all-vms-on-the-host"></a>例6–ホスト上のすべての Vm の CPU グループ id を出力する
 
 ```console
 C:\vm\tools>CpuGroups.exe GetVmGroup
@@ -249,9 +249,9 @@ VmName                                 VmId                           CpuGroupId
     G1 F699B50F-86F2-4E48-8BA5-EB06883C1FDC 36ab08cb-3a76-4b38-992e-000000000002
 ```
 
-### <a name="example-7--unbind-a-vm-from-the-cpu-group"></a>例 7-CPU のグループから VM をバインド解除
+### <a name="example-7--unbind-a-vm-from-the-cpu-group"></a>例 7: CPU グループからの VM のバインドを解除する
 
-CPU グループから VM を削除するには、NULL の GUID に VM の CpuGroupId に設定します。 これは、CPU のグループから VM をバインド解除します。
+CPU グループから VM を削除するには、VM の cpu の Groupid を NULL の GUID に設定します。 これにより、VM が CPU グループからバインド解除されます。
 
 ```console
 C:\vm\tools>CpuGroups.exe SetVmGroup /VmName:g1 /GroupId:00000000-0000-0000-0000-000000000000
@@ -266,16 +266,16 @@ VmName                                 VmId                           CpuGroupId
     G1 F699B50F-86F2-4E48-8BA5-EB06883C1FDC 00000000-0000-0000-0000-000000000000
 ```
 
-### <a name="example-8--bind-a-vm-to-an-existing-cpu-group"></a>例 8: VM を既存の CPU グループにバインドします。
+### <a name="example-8--bind-a-vm-to-an-existing-cpu-group"></a>例 8-既存の CPU グループに VM をバインドする
 
 ここでは、既存の CPU グループに VM を追加します。
-既存の CPU グループに VM をバインドしない必要がありますまたは CPU グループ id の設定が失敗することに注意してください。
+VM が既存の CPU グループにバインドされていないこと、または CPU グループ id の設定が失敗することに注意してください。
 
 ```console
 C:\vm\tools>CpuGroups.exe SetVmGroup /VmName:g1 /GroupId:36AB08CB-3A76-4B38-992E-000000000001
 ```
 
-ここで、VM G1 が CPU グループに必要なことを確認します。
+ここで、VM G1 が目的の CPU グループにあることを確認します。
 
 ```console
 C:\vm\tools>CpuGroups.exe GetVmGroup
@@ -288,7 +288,7 @@ VmName                                 VmId                           CpuGroupId
     G1 F699B50F-86F2-4E48-8BA5-EB06883C1FDC 36AB08CB-3A76-4B38-992E-000000000001
 ```
 
-### <a name="example-9--print-all-vms-grouped-by-cpu-group-id"></a>例 9 – CPU グループ id でグループ化されたすべての Vm を印刷します。
+### <a name="example-9--print-all-vms-grouped-by-cpu-group-id"></a>例 9: CPU グループ id でグループ化されたすべての Vm を印刷する
 
 ```console
 C:\vm\tools>CpuGroups.exe GetGroupVms
@@ -301,7 +301,7 @@ CpuGroupId                           VmName                                 VmId
 36ab08cb-3a76-4b38-992e-000000000004     P2 A593D93A-3A5F-48AB-8862-A4350E3459E8
 ```
 
-### <a name="example-10--print-all-vms-for-a-single-cpu-group"></a>例 10-1 つの CPU グループのすべての Vm を印刷します。
+### <a name="example-10--print-all-vms-for-a-single-cpu-group"></a>例10–1つの CPU グループのすべての Vm を印刷する
 
 ```console
 C:\vm\tools>CpuGroups.exe GetGroupVms /GroupId:36ab08cb-3a76-4b38-992e-000000000002
@@ -312,10 +312,10 @@ CpuGroupId                           VmName                                VmId
 36ab08cb-3a76-4b38-992e-000000000002     G3 B0F3FCD5-FECF-4A21-A4A2-DE4102787200
 ```
 
-### <a name="example-11--attempting-to-delete-a-non-empty-cpu-group"></a>例 11-空ではない CPU グループを削除しようとしています。
+### <a name="example-11--attempting-to-delete-a-non-empty-cpu-group"></a>例 11: 空でない CPU グループを削除しようとしています
 
-空の CPU グループにのみ-なしでの CPU グループに Vm がバインドされている、-削除することができます。
-空ではない CPU グループを削除することは失敗します。
+空の CPU グループ (つまり、バインドされた Vm のない CPU グループ) のみを削除できます。
+空でない CPU グループを削除しようとすると失敗します。
 
 ```console
 C:\vm\tools>CpuGroups.exe DeleteGroup /GroupId:36ab08cb-3a76-4b38-992e-000000000001
@@ -323,11 +323,11 @@ C:\vm\tools>CpuGroups.exe DeleteGroup /GroupId:36ab08cb-3a76-4b38-992e-000000000
 Failed with error 0xc0350070
 ```
 
-### <a name="example-12--unbind-the-only-vm-from-a-cpu-group-and-delete-the-group"></a>例 – 12 が CPU グループからの唯一の VM のバインドを解除し、グループを削除します
+### <a name="example-12--unbind-the-only-vm-from-a-cpu-group-and-delete-the-group"></a>例 12: CPU グループからのみ VM をバインド解除し、グループを削除する
 
-この例では、いくつかのコマンドを使用して、CPU のグループを調べて、そのグループに属する 1 つの VM を削除するをし、グループを削除します。
+この例では、複数のコマンドを使用して CPU グループを調べ、そのグループに属する単一の VM を削除してから、グループを削除します。
 
-最初に、グループ内の Vm を列挙してみましょう。
+まず、グループ内の Vm を列挙してみましょう。
 
 ```console
 C:\vm\tools>CpuGroups.exe GetGroupVms /GroupId:36AB08CB-3A76-4B38-992E-000000000001
@@ -336,14 +336,14 @@ CpuGroupId                           VmName                                VmId
 36AB08CB-3A76-4B38-992E-000000000001     G1 F699B50F-86F2-4E48-8BA5-EB06883C1FDC
 ```
 
-G1、という名前の単一 VM のみがこのグループに属していることがわかります。
-VM のグループ ID を NULL に設定して、グループから G1 VM の削除しましょう。
+G1 という名前の単一の VM のみがこのグループに属していることがわかります。
+グループから G1 VM を削除してみましょう。 VM のグループ ID を NULL に設定します。
 
 ```console
 C:\vm\tools>CpuGroups.exe SetVmGroup /VmName:g1 /GroupId:00000000-0000-0000-0000-000000000000
 ```
 
-移動を確認してください.
+変更を確認してください...
 
 ```console
 C:\vm\tools>CpuGroups.exe GetVmGroup /VmName:g1
@@ -352,13 +352,13 @@ VmName                                 VmId                           CpuGroupId
     G1 F699B50F-86F2-4E48-8BA5-EB06883C1FDC 00000000-0000-0000-0000-000000000000
 ```
 
-これで、グループが空、安全に削除ができます。
+グループが空になったので、安全に削除できます。
 
 ```console
 C:\vm\tools>CpuGroups.exe DeleteGroup /GroupId:36ab08cb-3a76-4b38-992e-000000000001
 ```
 
-グループがなくなったことを確認します。
+グループが消えていることを確認します。
 
 ```console
 C:\vm\tools>CpuGroups.exe GetGroups
@@ -369,7 +369,7 @@ CpuGroupId                          CpuCap                     LpIndexes
 36AB08CB-3A76-4B38-992E-000000000004 65536 24,25,26,27,28,29,30,31
 ```
 
-### <a name="example-13--bind-a-vm-back-to-its-original-cpu-group"></a>13-の例は、元の CPU グループに VM をバインドします。
+### <a name="example-13--bind-a-vm-back-to-its-original-cpu-group"></a>例13– VM を元の CPU グループにバインドする
 
 ```console
 C:\vm\tools>CpuGroups.exe SetVmGroup /VmName:g1 /GroupId:36AB08CB-3A76-4B38-992E-000000000002

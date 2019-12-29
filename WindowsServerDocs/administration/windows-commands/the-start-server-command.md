@@ -1,8 +1,8 @@
 ---
-title: 開始サーバー コマンド
-description: 'Windows コマンド」のトピック * * *- '
+title: '[サーバーの開始] コマンド'
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,22 +13,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4580c98b3f43decf8989965abe6d2fee63eda78b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e18ed6a7707516410e96ecf4b6bd43e668667c2d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889103"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385101"
 ---
-# <a name="the-start-server-command"></a>開始サーバー コマンド
+# <a name="the-start-server-command"></a>[サーバーの開始] コマンド
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Windows 展開サービス サーバーでマルチキャスト転送、名前空間、トランスポート サーバー、またはすべてのサービスを開始します。
+マルチキャスト転送、名前空間、トランスポートサーバー、または Windows 展開サービスサーバー上のすべてのサービスを開始します。
 ## <a name="subcommands"></a>サブコマンド
 |サブコマンド|説明|
 |-------|--------|
-|[サブコマンド:/start-multicasttransmission](subcommand-start-multicasttransmission.md)|転送を開始します。|
-|[サブコマンド: 開始-Namespace](subcommand-start-namespace.md)|名前空間を開始します。|
-|[サブコマンド: 開始サーバー](subcommand-start-server.md)|Windows 展開サービス サーバー上のすべてのサービスを開始します。|
-|[サブコマンド: 開始 TransportServer](subcommand-start-transportserver.md)|トランスポート サーバーでは、すべてのサービスを開始します。|
+|[サブコマンド:/Get-multicasttransmission](subcommand-start-multicasttransmission.md)|転送を開始します。|
+|[サブコマンド: 名前空間の開始](subcommand-start-namespace.md)|名前空間を開始します。|
+|[サブコマンド: start-Server](subcommand-start-server.md)|Windows 展開サービスサーバー上のすべてのサービスを開始します。|
+|[サブコマンド: 開始 TransportServer](subcommand-start-transportserver.md)|トランスポートサーバー上のすべてのサービスを開始します。|

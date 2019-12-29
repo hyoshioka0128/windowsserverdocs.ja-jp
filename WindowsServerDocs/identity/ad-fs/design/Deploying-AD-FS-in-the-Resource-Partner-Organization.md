@@ -7,22 +7,22 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: acdecd4afd9c55bdbd71cea9e01f3b3024870ced
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 55291293349ce77337c5b35585dd3ea8e0d8c9e2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191518"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359170"
 ---
 # <a name="deploying-ad-fs-in-the-resource-partner-organization"></a>リソース パートナー組織での AD FS の展開
 
-Active Directory フェデレーション サービスでリソース パートナー組織\(AD FS\)リソースによって保護されている Web サーバーの組織を表す\-側フェデレーション サーバー。 リソース パートナーのフェデレーション サーバーでは、リソース パートナー内に配置されている Web サーバーに信頼性情報を提供するアカウント パートナーによって作成されたセキュリティ トークンを使用します。  
+Active Directory フェデレーションサービス (AD FS) \(AD FS\) のリソースパートナー組織は、Web サーバーがリソース\-側フェデレーションサーバーによって保護されている可能性のある組織を表します。 リソースパートナーのフェデレーションサーバーは、アカウントパートナーによって生成されたセキュリティトークンを使用して、リソースパートナーに配置されている Web サーバーに要求を提供します。  
   
-フェデレーション サービスへのアクセスまたは多数のユーザーにアプリケーションを提供する必要があるシナリオで — 一部のユーザーが別の組織に存在する: 複数のアカウント パートナーをデプロイできるように、リソース フェデレーション サーバーを構成することができます。  
+フェデレーションサービスまたはアプリケーションへのアクセスを多数のユーザーに提供する必要があるシナリオでは、一部のユーザーが異なる組織に存在する場合、複数のアカウントパートナーをデプロイできるように、リソースフェデレーションサーバーを構成できます。  
   
-設定して、リソース パートナー組織を構成する方法の詳細については、次を参照してください。[チェックリスト。Configuring the Resource Partner Organization](../../ad-fs/deployment/Checklist--Configuring-the-Resource-Partner-Organization.md)します。  
+リソース パートナー組織のセットアップ方法と構成方法の詳細については、「 [Checklist: Configuring the Resource Partner Organization](../../ad-fs/deployment/Checklist--Configuring-the-Resource-Partner-Organization.md)」を参照してください。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   
@@ -33,5 +33,5 @@ Active Directory フェデレーション サービスでリソース パート�
 -   [リソース パートナーでのフェデレーション アプリケーション戦略を決定する](Determine-Your-Federated-Application-Strategy-in-the-Resource-Partner.md)  
   
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

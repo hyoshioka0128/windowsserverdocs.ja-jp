@@ -1,8 +1,8 @@
 ---
-title: ファイル システム
-description: 'Windows コマンド」のトピック * * *- '
+title: ファイルシステム
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f19d1977c5a66f5835326b31b1fae573af43d455
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6ebb65223bd69af2253bc77dcbe2c433255513b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848563"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377177"
 ---
-# <a name="filesystems"></a>ファイル システム
+# <a name="filesystems"></a>ファイルシステム
 
 
 
-フォーカスがあるボリュームの現在のファイル システムに関する情報が表示され、ボリュームのフォーマットがサポートされているファイル システムの一覧します。
+フォーカスがあるボリュームの現在のファイルシステムに関する情報を表示し、ボリュームのフォーマットがサポートされているファイルシステムの一覧を表示します。
 
 ## <a name="syntax"></a>構文
 
@@ -32,7 +32,7 @@ ms.locfileid: "59848563"
 filesystems
 ```
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   この操作を成功させるのには、ボリュームを選択してください。 使用して、 **ボリュームを選択して** コマンドのボリュームを選択し、それにフォーカスをします。
 

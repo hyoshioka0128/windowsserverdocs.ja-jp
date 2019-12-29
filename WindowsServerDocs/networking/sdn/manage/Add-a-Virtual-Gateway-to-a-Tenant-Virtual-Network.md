@@ -1,9 +1,9 @@
 ---
 title: テナントの仮想ネットワークに仮想ゲートウェイを追加する
-description: Windows PowerShell コマンドレットとスクリプトを使用して、テナントの仮想ネットワークのサイト対サイト接続を提供する方法について説明します。
+description: Windows PowerShell のコマンドレットとスクリプトを使用して、テナントの仮想ネットワークのサイト間接続を提供する方法について説明します。
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -13,37 +13,37 @@ ms.assetid: b9552054-4eb9-48db-a6ce-f36ae55addcd
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 768a25c8c452a8c4bc85b38736b4241fa2570b32
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: deeb226d81c48e0e389ea4d2619c43aca01e25c2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446362"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355888"
 ---
 # <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>テナントの仮想ネットワークに仮想ゲートウェイを追加する 
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル) 
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016 
 
-Windows PowerShell コマンドレットとスクリプトを使用して、テナントの仮想ネットワークのサイト対サイト接続を提供する方法について説明します。 このトピックでは、ネットワーク コント ローラーを使用して、ゲートウェイ プールのメンバーである RAS ゲートウェイのインスタンスにテナント仮想ゲートウェイを追加します。 RAS ゲートウェイは、各テナントで使用される帯域幅に応じて、最大 100 個のテナントをサポートします。 ネットワーク コント ローラーには、テナントの新しい仮想ゲートウェイを展開するときに使用する最適な RAS ゲートウェイが自動的に決定します。  
+Windows PowerShell のコマンドレットとスクリプトを使用して、テナントの仮想ネットワークのサイト間接続を提供する方法について説明します。 このトピックでは、ネットワークコントローラーを使用して、ゲートウェイプールのメンバーである RAS ゲートウェイのインスタンスにテナント仮想ゲートウェイを追加します。 RAS ゲートウェイは、各テナントで使用される帯域幅に応じて、最大100のテナントをサポートします。 ネットワークコントローラーは、テナント用の新しい仮想ゲートウェイを展開するときに使用する最適な RAS ゲートウェイを自動的に決定します。  
 
-各仮想ゲートウェイは、特定のテナントに対応し、1 つまたは複数のネットワーク接続 (サイト対サイト VPN トンネル) とボーダー ゲートウェイ プロトコル (BGP) の接続オプションで構成されます。 サイト対サイト接続を提供する場合、お客様は、テナントの仮想ネットワークをテナントのエンタープライズ ネットワーク サービス プロバイダーのネットワークやインターネットなどの外部ネットワークに接続できます。
+各仮想ゲートウェイは特定のテナントに対応し、1つまたは複数のネットワーク接続 (サイト間 VPN トンネル) と、必要に応じて Border Gateway Protocol (BGP) 接続で構成されます。 サイト間接続を提供すると、顧客はテナントの仮想ネットワークをテナントのエンタープライズネットワーク、サービスプロバイダーのネットワーク、インターネットなどの外部ネットワークに接続できます。
 
-**テナントの仮想ゲートウェイを展開するときに、次の構成オプションがあります。**  
+**テナント仮想ゲートウェイをデプロイする場合は、次の構成オプションがあります。**  
 
 
-|                                                        ネットワーク接続オプション                                                         |                                              BGP の構成オプション                                               |
+|                                                        ネットワーク接続オプション                                                         |                                              BGP 構成オプション                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| <ul><li>IPSec サイト対サイトの仮想プライベート ネットワーク (VPN)</li><li>汎用ルーティング カプセル化 (GRE)</li><li>レイヤー 3 転送</li></ul> | <ul><li>BGP ルーターの構成</li><li>BGP ピアの構成</li><li>BGP ルーティング ポリシーの構成</li></ul> |
+| <ul><li>IPSec サイト間仮想プライベートネットワーク (VPN)</li><li>汎用ルーティングカプセル化 (GRE)</li><li>レイヤー 3 転送</li></ul> | <ul><li>BGP ルーターの構成</li><li>BGP ピアの構成</li><li>BGP ルーティングポリシーの構成</li></ul> |
 
 ---
 
-Windows PowerShell スクリプトの例とこのトピックのコマンドは、これらの各オプションと RAS ゲートウェイでのテナント仮想ゲートウェイをデプロイする方法を示します。  
+このトピックの「Windows PowerShell のサンプルスクリプトとコマンド」では、これらの各オプションを使用して、RAS ゲートウェイにテナント仮想ゲートウェイをデプロイする方法を示します。  
 
 
 >[!IMPORTANT]  
->すべての Windows PowerShell コマンドの例と提供されるスクリプトを実行する前に、値が展開に適したようにすべての変数の値を変更する必要があります。  
+>提供されている Windows PowerShell コマンドとスクリプトの例を実行する前に、すべての変数値を変更して、値が配置に適したものになるようにする必要があります。  
 
-1.  ネットワーク コント ローラーにゲートウェイ プールのオブジェクトが存在することを確認します。 
+1.  ゲートウェイプールオブジェクトがネットワークコントローラーに存在することを確認してください。 
 
     ```PowerShell
     $uri = "https://ncrest.contoso.com"   
@@ -56,7 +56,7 @@ Windows PowerShell スクリプトの例とこのトピックのコマンドは�
 
     ```  
 
-2.  テナントの仮想ネットワーク外にパケットをルーティングに使用されるサブネットがネットワーク コント ローラーに存在することを確認します。 また、テナント ゲートウェイと仮想ネットワーク間のルーティングに使用される仮想サブネットを取得します。  
+2.  テナントの仮想ネットワークからパケットをルーティングするために使用されるサブネットがネットワークコントローラーに存在することを確認します。 テナントゲートウェイと仮想ネットワーク間のルーティングに使用される仮想サブネットを取得することもできます。  
 
     ```PowerShell 
     $uri = "https://ncrest.contoso.com"   
@@ -75,7 +75,7 @@ Windows PowerShell スクリプトの例とこのトピックのコマンドは�
 
     ```  
 
-3.  テナントの仮想ゲートウェイ用の新しいオブジェクトを作成し、ゲートウェイ プールのリファレンスを更新します。  また、ゲートウェイと仮想ネットワーク間のルーティングに使用される仮想サブネットを指定します。  仮想サブネットを指定した後は、仮想ゲートウェイ オブジェクトのプロパティの残りの部分を更新し、テナントの新しい仮想ゲートウェイを追加します。
+3.  テナント仮想ゲートウェイ用の新しいオブジェクトを作成し、ゲートウェイプール参照を更新します。  ゲートウェイと仮想ネットワーク間のルーティングに使用する仮想サブネットを指定することもできます。  仮想サブネットを指定した後、残りの仮想ゲートウェイオブジェクトのプロパティを更新し、テナントの新しい仮想ゲートウェイを追加します。
 
     ```PowerShell  
     # Create a new object for Tenant Virtual Gateway  
@@ -99,12 +99,12 @@ Windows PowerShell スクリプトの例とこのトピックのコマンドは�
 
     ```  
 
-4. Ipsec、GRE、サイト対サイト VPN 接続を作成またはレイヤー 3 の (L3) 転送します。  
+4. IPsec、GRE、またはレイヤー 3 (L3) 転送を使用してサイト間 VPN 接続を作成します。  
 
    >[!TIP]
-   >必要に応じて、前の手順をすべての結合でき、すべての 3 つの接続オプションを使用してテナントの仮想ゲートウェイを構成できます。  詳細については、次を参照してください。[すべて次の 3 つの接続の種類 (IPsec、GRE、L3) でゲートウェイを構成すると、BGP](#optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp)します。
+   >必要に応じて、上記のすべての手順を組み合わせて、3つの接続オプションすべてを使用してテナント仮想ゲートウェイを構成できます。  詳細については、「3種類の[接続 (IPsec、GRE、L3) と BGP のすべてを使用してゲートウェイを構成する](#optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp)」を参照してください。
 
-   **IPsec VPN サイト対サイトのネットワーク接続**
+   **IPsec VPN サイト対サイトネットワーク接続**
 
    ```PowerShell  
    # Create a new object for Tenant Network Connection  
@@ -154,7 +154,7 @@ Windows PowerShell スクリプトの例とこのトピックのコマンドは�
 
    ```  
 
-   **GRE VPN サイト対サイトのネットワーク接続**
+   **GRE VPN サイト対サイトネットワーク接続**
 
    ```PowerShell  
    # Create a new object for the Tenant Network Connection  
@@ -190,9 +190,9 @@ Windows PowerShell スクリプトの例とこのトピックのコマンドは�
    ```  
 
    **L3 転送ネットワーク接続**<p>
-   L3 を適切に機能するネットワーク接続を転送するには、対応する論理ネットワークを構成する必要があります。   
+   L3 転送ネットワーク接続を正常に動作させるには、対応する論理ネットワークを構成する必要があります。   
 
-   1. 論理ネットワークを L3 転送ネットワーク接続を構成します。  <br>
+   1. L3 転送ネットワーク接続用に論理ネットワークを構成します。  <br>
 
       ```PowerShell  
       # Create a new object for the Logical Network to be used for L3 Forwarding  
@@ -216,7 +216,7 @@ Windows PowerShell スクリプトの例とこのトピックのコマンドは�
 
       ```  
 
-   2. ネットワーク接続の JSON オブジェクトを作成し、ネットワーク コント ローラーに追加します。  
+   2. ネットワーク接続の JSON オブジェクトを作成し、ネットワークコントローラーに追加します。  
 
       ```PowerShell 
       # Create a new object for the Tenant Network Connection  
@@ -254,7 +254,7 @@ Windows PowerShell スクリプトの例とこのトピックのコマンドは�
 
       ```  
 
-5. ゲートウェイ BGP ルーターとして構成し、ネットワーク コント ローラーに追加します。 
+5. ゲートウェイを BGP ルーターとして構成し、ネットワークコントローラーに追加します。 
 
    1. テナントの BGP ルーターを追加します。  
 
@@ -272,7 +272,7 @@ Windows PowerShell スクリプトの例とこのトピックのコマンドは�
 
       ```  
 
-   2. このテナントは、上で追加サイト対サイト VPN ネットワーク接続に対応する BGP ピアを追加します。  
+   2. 上記で追加したサイト間 VPN ネットワーク接続に対応する、このテナントの BGP ピアを追加します。  
 
       ```PowerShell
       # Create a new object for Tenant BGP Peer  
@@ -288,8 +288,8 @@ Windows PowerShell スクリプトの例とこのトピックのコマンドは�
 
       ```  
 
-## <a name="optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp"></a>(省略可能)すべての 3 つの接続の種類 (IPsec、GRE、L3) でゲートウェイを構成して、BGP  
-必要に応じて、前の手順をすべてを結合およびすべての 3 つの接続オプションを使用してテナントの仮想ゲートウェイを構成できます。   
+## <a name="optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp"></a>(省略可能な手順)3種類のすべての接続 (IPsec、GRE、L3) と BGP を使用してゲートウェイを構成する  
+必要に応じて、上記のすべての手順を結合し、3つの接続オプションすべてを使用してテナント仮想ゲートウェイを構成できます。   
 
 ```PowerShell  
 # Create a new Virtual Gateway Properties type object  
@@ -458,47 +458,47 @@ New-NetworkControllerVirtualGateway -ConnectionUri $uri  -ResourceId "Contoso_Vi
 
 ```  
 
-## <a name="modify-a-gateway-for-a-virtual-network"></a>仮想ネットワーク ゲートウェイを変更します。  
+## <a name="modify-a-gateway-for-a-virtual-network"></a>仮想ネットワークのゲートウェイを変更する  
 
 
-**コンポーネントの構成を取得し、変数に格納**
+**コンポーネントの構成を取得し、変数に格納します。**
 
 ```PowerShell  
 $nwConnection = Get-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId "Contoso_IPSecGW"  
 ```  
 
-**必要なプロパティに到達し、更新プログラムの値に設定する変数の構造を移動します。**
+**変数構造内を移動して必要なプロパティにアクセスし、updates 値に設定します。**
 
 ```PowerShell  
 $nwConnection.properties.IpSecConfiguration.SharedSecret = "C0mplexP@ssW0rd"  
 ```  
 
-**ネットワーク コント ローラー上の古い構成を置換する、変更した構成を追加します。**
+**変更した構成を追加して、ネットワークコントローラー上の古い構成を置き換えます**
 
 ```PowerShell  
 New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId $nwConnection.ResourceId -Properties $nwConnection.Properties -Force  
 ```  
 
 
-## <a name="remove-a-gateway-from-a-virtual-network"></a>仮想ネットワークからゲートウェイを削除します。 
-次の Windows PowerShell コマンドを使用すると、ゲートウェイ全体または個々 のゲートウェイの機能を削除します。  
+## <a name="remove-a-gateway-from-a-virtual-network"></a>仮想ネットワークからのゲートウェイの削除 
+次の Windows PowerShell コマンドを使用して、個々のゲートウェイ機能またはゲートウェイ全体を削除できます。  
 
-**ネットワーク接続を削除します。**  
+**ネットワーク接続の削除**  
 ```PowerShell  
 Remove-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId "Contoso_IPSecGW" -Force  
 ```  
 
-**BGP ピアを削除します。** 
+**BGP ピアの削除** 
 ```PowerShell  
 Remove-NetworkControllerVirtualGatewayBgpPeer -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -BgpRouterName "Contoso_BgpRouter1" -ResourceId "Contoso_IPSec_Peer" -Force  
 ```  
 
-**BGP ルーターを削除します。**
+**BGP ルーターを削除する**
 ```PowerShell  
 Remove-NetworkControllerVirtualGatewayBgpRouter -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId "Contoso_BgpRouter1" -Force  
 ```
 
-**ゲートウェイを削除します。**  
+**ゲートウェイを削除する**  
 ```PowerShell  
 Remove-NetworkControllerVirtualGateway -ConnectionUri $uri -ResourceId "Contoso_VirtualGW" -Force   
 ```  

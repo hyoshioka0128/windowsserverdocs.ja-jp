@@ -1,144 +1,144 @@
 ---
 ms.assetid: abf69b09-6528-42e0-b164-813c7c2c78e7
 title: Windows Server でのスキーマの更新
-description: オペレーティング システムのバージョンによって adprep によって行われたスキーマの変更
+description: オペレーティングシステムのバージョンによって adprep によって行われたスキーマの変更
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 11/30/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 41b9837ab73dc12f134dcdba8b9f2b02a0a86b65
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f168b76ca953e648c41f5ab6e6436c885d04ef6d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822663"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369608"
 ---
 # <a name="windows-server-active-directory-schema-updates"></a>Windows Server Active Directory スキーマの更新
 
 >適用先:Windows Server
 
-このトピックでは、Adprep.exe が加える変更を含む LDF ファイルを使用します。  
+このトピックでは、Adprep.exe によって行われる変更を含む LDF ファイルの一覧を示します。  
 
-これは、Windows Server 2019 に含まれる LDF ファイルです。
+Windows Server 2019 に含まれる .LDF ファイルを次に示します。
 
--   [Sch88.ldf](#BKMK_Sch88)
+-   [Sch88](#BKMK_Sch88)
 
-Windows Server 2016 に含まれる LDF ファイルを次に示します。
+Windows Server 2016 に含まれる .LDF ファイルを次に示します。
 
--   [Sch58.ldf](#BKMK_Sch58)
+-   [Sch58](#BKMK_Sch58)
 
--   [Sch59.ldf](#BKMK_Sch59)
+-   [Sch59](#BKMK_Sch59)
 
--   [Sch60.ldf](#BKMK_Sch60)
+-   [Sch60](#BKMK_Sch60)
 
--   [Sch61.ldf](#BKMK_Sch61)
+-   [Sch61](#BKMK_Sch61)
 
--   [Sch62.ldf](#BKMK_Sch62)
+-   [Sch62](#BKMK_Sch62)
 
--   [Sch63.ldf](#BKMK_Sch63)
+-   [Sch63](#BKMK_Sch63)
 
--   [Sch64.ldf](#BKMK_Sch64)
+-   [Sch64](#BKMK_Sch64)
 
--   [Sch65.ldf](#BKMK_Sch65)
+-   [Sch65](#BKMK_Sch65)
 
--   [Sch66.ldf](#BKMK_Sch66)
+-   [Sch66](#BKMK_Sch66)
 
--   [Sch67.ldf](#BKMK_Sch67)
+-   [Sch67](#BKMK_Sch67)
 
--   [Sch68.ldf](#BKMK_Sch68)
+-   [Sch68](#BKMK_Sch68)
 
--   [Sch69.ldf](#BKMK_Sch69)
+-   [Sch69](#BKMK_Sch69)
 
--   [Sch70.ldf](#BKMK_Sch70)
+-   [Sch70](#BKMK_Sch70)
 
--   [Sch71.ldf](#BKMK_Sch71)
+-   [Sch71](#BKMK_Sch71)
 
--   [Sch72.ldf](#BKMK_Sch72)
+-   [Sch72](#BKMK_Sch72)
 
--   [Sch73.ldf](#BKMK_Sch73)
+-   [Sch73](#BKMK_Sch73)
 
--   [Sch74.ldf](#BKMK_Sch74)
+-   [Sch74](#BKMK_Sch74)
 
--   [Sch75.ldf](#BKMK_Sch75)
+-   [Sch75](#BKMK_Sch75)
 
--   [Sch76.ldf](#BKMK_Sch76)
+-   [Sch76](#BKMK_Sch76)
 
--   [Sch77.ldf](#BKMK_Sch77)
+-   [Sch77](#BKMK_Sch77)
 
--   [Sch78.ldf](#BKMK_Sch78)
+-   [Sch78](#BKMK_Sch78)
 
--   [Sch79.ldf](#BKMK_Sch79)
+-   [Sch79](#BKMK_Sch79)
 
--   [Sch80.ldf](#BKMK_Sch80)
+-   [Sch80](#BKMK_Sch80)
 
--   [Sch81.ldf](#BKMK_Sch81)
+-   [Sch81](#BKMK_Sch81)
 
--   [Sch82.ldf](#BKMK_Sch82)
+-   [Sch82](#BKMK_Sch82)
 
--   [Sch83.ldf](#BKMK_Sch83)
+-   [Sch83](#BKMK_Sch83)
 
--   [Sch84.ldf](#BKMK_Sch84)
+-   [Sch84](#BKMK_Sch84)
 
--   [Sch85.ldf](#BKMK_Sch85)
+-   [Sch85](#BKMK_Sch85)
 
--   [Sch86.ldf](#BKMK_Sch86)
+-   [Sch86](#BKMK_Sch86)
 
--   [Sch87.ldf](#BKMK_Sch87)
+-   [Sch87](#BKMK_Sch87)
 
-Windows Server 2012 R2 に含まれる LDF ファイルを次に示します。  
+Windows Server 2012 R2 に含まれる .LDF ファイルは次のとおりです。  
   
--   [Sch57.ldf](#BKMK_Sch57)  
+-   [Sch57](#BKMK_Sch57)  
   
--   [Sch58.ldf](#BKMK_Sch58)  
+-   [Sch58](#BKMK_Sch58)  
   
--   [Sch59.ldf](#BKMK_Sch59)  
+-   [Sch59](#BKMK_Sch59)  
   
--   [Sch60.ldf](#BKMK_Sch60)  
+-   [Sch60](#BKMK_Sch60)  
   
--   [Sch61.ldf](#BKMK_Sch61)  
+-   [Sch61](#BKMK_Sch61)  
   
--   [Sch62.ldf](#BKMK_Sch62)  
+-   [Sch62](#BKMK_Sch62)  
   
--   [Sch63.ldf](#BKMK_Sch63)  
+-   [Sch63](#BKMK_Sch63)  
   
--   [Sch64.ldf](#BKMK_Sch64)  
+-   [Sch64](#BKMK_Sch64)  
   
--   [Sch65.ldf](#BKMK_Sch65)  
+-   [Sch65](#BKMK_Sch65)  
   
--   [Sch66.ldf](#BKMK_Sch66)  
+-   [Sch66](#BKMK_Sch66)  
   
--   [Sch67.ldf](#BKMK_Sch67)  
+-   [Sch67](#BKMK_Sch67)  
   
--   [Sch68.ldf](#BKMK_Sch68)  
+-   [Sch68](#BKMK_Sch68)  
   
--   [Sch69.ldf](#BKMK_Sch69)  
+-   [Sch69](#BKMK_Sch69)  
   
-Windows Server 2012 に含まれる LDF ファイルを次に示します。  
+Windows Server 2012 に含まれる .LDF ファイルを次に示します。  
   
--   [Sch48.ldf](#BKMK_Sch48)  
+-   [Sch48](#BKMK_Sch48)  
   
--   [Sch49.ldf](#BKMK_Sch49)  
+-   [Sch49](#BKMK_Sch49)  
   
--   [Sch50.ldf](#BKMK_Sch50)  
+-   [Sch50](#BKMK_Sch50)  
   
--   [Sch51.ldf](#BKMK_Sch51)  
+-   [Sch51](#BKMK_Sch51)  
   
--   [Sch52.ldf](#BKMK_Sch52)  
+-   [Sch52](#BKMK_Sch52)  
   
--   [Sch53.ldf](#BKMK_Sch53)  
+-   [Sch53](#BKMK_Sch53)  
   
--   [Sch54.ldf](#BKMK_Sch54)  
+-   [Sch54](#BKMK_Sch54)  
   
--   [Sch55.ldf](#BKMK_Sch55)  
+-   [Sch55](#BKMK_Sch55)  
   
--   [Sch56.ldf](#BKMK_Sch56)  
+-   [Sch56](#BKMK_Sch56)  
 
-## <a name="schema-update-in-windows-server-2019"></a>Windows Server 2019 でスキーマの更新
+## <a name="schema-update-in-windows-server-2019"></a>Windows Server 2019 でのスキーマの更新
   
-### <a name="BKMK_Sch88"></a>Sch88.ldf
+### <a name="BKMK_Sch88"></a>Sch88
 
 ```
 dn: CN=ms-DS-Preferred-Data-Location,CN=schema,CN=configuration,DC=X
@@ -199,7 +199,7 @@ schemaUpdateNow: 1
 
 ## <a name="schema-updates-in-windows-server-2016"></a>Windows Server 2016 でのスキーマの更新
   
-### <a name="BKMK_Sch58"></a>Sch58.ldf
+### <a name="BKMK_Sch58"></a>Sch58
 
 ```
 dn: CN=ms-DS-Resource-Property-List,CN=Schema,CN=Configuration,DC=X
@@ -221,7 +221,7 @@ objectVersion: 58
 -
 ```
 
-### <a name="BKMK_Sch59"></a>Sch59.ldf  
+### <a name="BKMK_Sch59"></a>Sch59  
 
 ```
 dn: CN=ms-DS-User-Device-Registration,CN=Schema,CN=Configuration,DC=X
@@ -453,7 +453,7 @@ objectVersion: 59
 -
 ```
 
-### <a name="BKMK_Sch60"></a>Sch60.ldf  
+### <a name="BKMK_Sch60"></a>Sch60  
 
 ```
 dn: CN=ms-DS-Is-Member-Of-DL-Transitive,CN=Schema,CN=Configuration,DC=X
@@ -597,7 +597,7 @@ objectVersion: 60
 -
 ```
 
-### <a name="BKMK_Sch61"></a>Sch61.ldf  
+### <a name="BKMK_Sch61"></a>Sch61  
 
 ```
 dn: CN=ms-DS-Drs-Farm-ID,CN=Schema,CN=Configuration,DC=X
@@ -645,7 +645,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch62"></a>Sch62.ldf  
+### <a name="BKMK_Sch62"></a>Sch62  
 
 ```
 dn: CN=ms-DS-Issuer-Public-Certificates,CN=Schema,CN=Configuration,DC=X
@@ -694,7 +694,7 @@ objectVersion: 62
 
 ```
 
-### <a name="BKMK_Sch63"></a>Sch63.ldf  
+### <a name="BKMK_Sch63"></a>Sch63  
 
 ```
 dn: CN=ms-DS-Issuer-Certificates,CN=Schema,CN=Configuration,DC=X
@@ -729,7 +729,7 @@ objectVersion: 63
 
 ```
 
-### <a name="BKMK_Sch64"></a>Sch64.ldf  
+### <a name="BKMK_Sch64"></a>Sch64  
 
 ```
 dn: CN=ms-DS-Device-Registration-Service,CN=Schema,CN=Configuration,DC=X
@@ -770,7 +770,7 @@ objectVersion: 64
 
 ```
 
-### <a name="BKMK_Sch65"></a>Sch65.ldf  
+### <a name="BKMK_Sch65"></a>Sch65  
 
 ```
 dn: CN=ms-DS-Registration-Quota,CN=Schema,CN=Configuration,DC=X
@@ -972,7 +972,7 @@ objectVersion: 65
 
 ```
 
-### <a name="BKMK_Sch66"></a>Sch66.ldf  
+### <a name="BKMK_Sch66"></a>Sch66  
 
 ```
 dn: CN=ms-DS-SyncServerUrl,CN=Schema,CN=Configuration,DC=X
@@ -1020,7 +1020,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch67"></a>Sch67.ldf  
+### <a name="BKMK_Sch67"></a>Sch67  
 
 ```
 dn: CN=ms-DS-Device-Registration-Service,CN=Schema,CN=Configuration,DC=X
@@ -1055,7 +1055,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch68"></a>Sch68.ldf  
+### <a name="BKMK_Sch68"></a>Sch68  
 
 ```
 dn: CN=ms-DS-User-Allowed-To-Authenticate-To,CN=Schema,CN=Configuration,DC=X
@@ -1567,7 +1567,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch69"></a>Sch69.ldf  
+### <a name="BKMK_Sch69"></a>Sch69  
 
 ```
 dn: CN=ms-DS-AuthN-Policy-Silo,CN=Schema,CN=Configuration,DC=X
@@ -1596,7 +1596,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch70"></a>Sch70.ldf  
+### <a name="BKMK_Sch70"></a>Sch70  
 
 ```
 dn: CN=ms-DS-Device-MDMStatus,CN=Schema,CN=Configuration,DC=X
@@ -1644,7 +1644,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch71"></a>Sch71.ldf  
+### <a name="BKMK_Sch71"></a>Sch71  
 
 ```
 dn: CN=ms-DS-GeoCoordinates-Altitude,CN=Schema,CN=Configuration,DC=X
@@ -1692,7 +1692,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch72"></a>Sch72.ldf  
+### <a name="BKMK_Sch72"></a>Sch72  
 
 ```
 dn: CN=ms-DS-External-Directory-Object-Id,CN=Schema,CN=Configuration,DC=X
@@ -1741,7 +1741,7 @@ objectVersion: 72
 
 ```
 
-### <a name="BKMK_Sch73"></a>Sch73.ldf  
+### <a name="BKMK_Sch73"></a>Sch73  
 
 ```
 dn: CN=ms-DS-Is-Compliant,CN=Schema,CN=Configuration,DC=x
@@ -1788,7 +1788,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch74"></a>Sch74.ldf  
+### <a name="BKMK_Sch74"></a>Sch74  
 
 ```
 dn: CN=ms-DS-Key-Id,CN=Schema,CN=Configuration,DC=X
@@ -2017,7 +2017,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch75"></a>Sch75.ldf  
+### <a name="BKMK_Sch75"></a>Sch75  
 
 ```
 dn: CN=ms-DS-Device-Trust-Type,CN=Schema,CN=Configuration,DC=X
@@ -2079,7 +2079,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch76"></a>Sch76.ldf  
+### <a name="BKMK_Sch76"></a>Sch76  
 
 ```
 dn: CN=ms-DS-Shadow-Principal-Sid,CN=Schema,CN=Configuration,DC=X
@@ -2176,7 +2176,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch77"></a>Sch77.ldf  
+### <a name="BKMK_Sch77"></a>Sch77  
 
 ```
 dn: CN=ms-DS-Key-Id,CN=Schema,CN=Configuration,DC=X
@@ -2253,7 +2253,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch78"></a>Sch78.ldf  
+### <a name="BKMK_Sch78"></a>Sch78  
 
 ```
 #
@@ -2305,7 +2305,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch79"></a>Sch79.ldf  
+### <a name="BKMK_Sch79"></a>Sch79  
 
 ```
 dn: CN=ms-DS-Device,CN=Schema,CN=Configuration,DC=X
@@ -2328,7 +2328,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch80"></a>Sch80.ldf  
+### <a name="BKMK_Sch80"></a>Sch80  
 
 ```
 dn: CN=ms-DS-Key-Credential-Link,CN=schema,CN=configuration,DC=X
@@ -2396,7 +2396,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch81"></a>Sch81.ldf  
+### <a name="BKMK_Sch81"></a>Sch81  
 
 ```
 dn: CN=DS-Validated-Write-Computer,CN=Extended-Rights,CN=Configuration,DC=X
@@ -2428,7 +2428,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch82"></a>Sch82.ldf  
+### <a name="BKMK_Sch82"></a>Sch82  
 
 ```
 dn: CN=Dns-Zone-Scope-Container,CN=Schema,CN=Configuration,DC=X
@@ -2506,7 +2506,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch83"></a>Sch83.ldf  
+### <a name="BKMK_Sch83"></a>Sch83  
 
 ```
 dn: CN=ms-DS-Expire-Passwords-On-Smart-Card-Only-Accounts,CN=Schema,CN=Configuration,DC=X
@@ -2552,7 +2552,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch84"></a>Sch84.ldf  
+### <a name="BKMK_Sch84"></a>Sch84  
 
 ```
 dn: CN=ms-DS-Token-Group-Names,CN=Schema,CN=Configuration,DC=X
@@ -2658,7 +2658,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch85"></a>Sch85.ldf  
+### <a name="BKMK_Sch85"></a>Sch85  
 
 ```
 dn: CN=ms-DS-User-Allowed-NTLM-Network-Authentication,CN=Schema,CN=Configuration,DC=X
@@ -2746,7 +2746,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch86"></a>Sch86.ldf
+### <a name="BKMK_Sch86"></a>Sch86
 
 ```
 dn: CN=ms-DS-Source-Anchor,CN=Schema,CN=Configuration,DC=X
@@ -2819,7 +2819,7 @@ schemaUpdateNow: 1
 
 ```
 
-### <a name="BKMK_Sch87"></a>Sch87.ldf  
+### <a name="BKMK_Sch87"></a>Sch87  
 
 ```
 dn: CN=Send-As,CN=Extended-Rights,CN=Configuration,DC=X
@@ -2880,7 +2880,7 @@ schemaUpdateNow: 1
 
 ## <a name="BKMK_SchemaUpdates2012R2"></a>Windows Server 2012 R2 でのスキーマの更新  
   
-### <a name="BKMK_Sch57"></a>Sch57.ldf  
+### <a name="BKMK_Sch57"></a>Sch57  
   
 ```  
 dn: CN=ms-DS-Issuer-Certificates,CN=Schema,CN=Configuration,DC=X  
@@ -3143,7 +3143,7 @@ objectVersion: 57
 -  
 ```  
   
-### <a name="BKMK_Sch58"></a>Sch58.ldf  
+### <a name="BKMK_Sch58"></a>Sch58  
   
 ```  
 dn: CN=ms-DS-Resource-Property-List,CN=Schema,CN=Configuration,DC=X  
@@ -3165,7 +3165,7 @@ objectVersion: 58
 -  
 ```  
   
-### <a name="BKMK_Sch59"></a>Sch59.ldf  
+### <a name="BKMK_Sch59"></a>Sch59  
   
 ```  
 dn: CN=ms-DS-User-Device-Registration,CN=Schema,CN=Configuration,DC=X  
@@ -3397,7 +3397,7 @@ objectVersion: 59
 -  
 ```  
   
-### <a name="BKMK_Sch60"></a>Sch60.ldf  
+### <a name="BKMK_Sch60"></a>Sch60  
   
 ```  
 dn: CN=ms-DS-Is-Member-Of-DL-Transitive,CN=Schema,CN=Configuration,DC=X  
@@ -3541,7 +3541,7 @@ objectVersion: 60
 -  
 ```  
   
-### <a name="BKMK_Sch61"></a>Sch61.ldf  
+### <a name="BKMK_Sch61"></a>Sch61  
   
 ```  
 dn: CN=ms-DS-Drs-Farm-ID,CN=Schema,CN=Configuration,DC=X  
@@ -3588,7 +3588,7 @@ schemaUpdateNow: 1
 -  
 ```  
   
-### <a name="BKMK_Sch62"></a>Sch62.ldf  
+### <a name="BKMK_Sch62"></a>Sch62  
   
 ```  
 dn: CN=ms-DS-Issuer-Public-Certificates,CN=Schema,CN=Configuration,DC=X  
@@ -3637,7 +3637,7 @@ objectVersion: 62
   
 ```  
   
-### <a name="BKMK_Sch63"></a>Sch63.ldf  
+### <a name="BKMK_Sch63"></a>Sch63  
   
 ```  
 dn: CN=ms-DS-Issuer-Certificates,CN=Schema,CN=Configuration,DC=X  
@@ -3672,7 +3672,7 @@ objectVersion: 63
   
 ```  
   
-### <a name="BKMK_Sch64"></a>Sch64.ldf  
+### <a name="BKMK_Sch64"></a>Sch64  
   
 ```  
 dn: CN=ms-DS-Device-Registration-Service,CN=Schema,CN=Configuration,DC=X  
@@ -3712,7 +3712,7 @@ objectVersion: 64
 -  
 ```  
   
-### <a name="BKMK_Sch65"></a>Sch65.ldf  
+### <a name="BKMK_Sch65"></a>Sch65  
   
 ```  
 dn: CN=ms-DS-Registration-Quota,CN=Schema,CN=Configuration,DC=X  
@@ -3913,7 +3913,7 @@ objectVersion: 65
 -  
 ```  
   
-### <a name="BKMK_Sch66"></a>Sch66.ldf  
+### <a name="BKMK_Sch66"></a>Sch66  
   
 ```  
 dn: CN=ms-DS-SyncServerUrl,CN=Schema,CN=Configuration,DC=X  
@@ -3960,7 +3960,7 @@ schemaUpdateNow: 1
 -  
 ```  
   
-### <a name="BKMK_Sch67"></a>Sch67.ldf  
+### <a name="BKMK_Sch67"></a>Sch67  
   
 ```  
 dn: CN=ms-DS-Device-Registration-Service,CN=Schema,CN=Configuration,DC=X  
@@ -3994,7 +3994,7 @@ schemaUpdateNow: 1
 -  
 ```  
   
-### <a name="BKMK_Sch68"></a>Sch68.ldf  
+### <a name="BKMK_Sch68"></a>Sch68  
   
 ```  
 dn: CN=ms-DS-User-Allowed-To-Authenticate-To,CN=Schema,CN=Configuration,DC=X  
@@ -4505,7 +4505,7 @@ schemaUpdateNow: 1
 -  
 ```  
   
-### <a name="BKMK_Sch69"></a>Sch69.ldf  
+### <a name="BKMK_Sch69"></a>Sch69  
   
 ```  
 dn: CN=ms-DS-AuthN-Policy-Silo,CN=Schema,CN=Configuration,DC=X  
@@ -4535,7 +4535,7 @@ schemaUpdateNow: 1
   
 ## <a name="BKMK_SchemaUpdates2012"></a>Windows Server 2012 でのスキーマの更新  
   
-### <a name="BKMK_Sch48"></a>Sch48.ldf  
+### <a name="BKMK_Sch48"></a>Sch48  
   
 ```  
 dn: CN=ms-DS-Members-Of-Resource-Property-List,CN=Schema,CN=Configuration,DC=X  
@@ -5180,7 +5180,7 @@ objectVersion: 48
 -  
 ```  
   
-### <a name="BKMK_Sch49"></a>Sch49.ldf  
+### <a name="BKMK_Sch49"></a>Sch49  
   
 ```  
 dn: CN=ms-DNS-Is-Signed,CN=Schema,CN=Configuration,DC=X  
@@ -5929,7 +5929,7 @@ objectVersion: 49
 -  
 ```  
   
-### <a name="BKMK_Sch50"></a>Sch50.ldf  
+### <a name="BKMK_Sch50"></a>Sch50  
   
 ```  
 dn: CN=ms-DS-Allowed-To-Act-On-Behalf-Of-Other-Identity,CN=Schema,CN=Configuration,DC=X  
@@ -6413,7 +6413,7 @@ objectVersion: 50
 -  
 ```  
   
-### <a name="BKMK_Sch51"></a>Sch51.ldf  
+### <a name="BKMK_Sch51"></a>Sch51  
   
 ```  
 dn: CN=ms-DS-Transformation-Rules,CN=Schema,CN=Configuration,DC=X  
@@ -6781,7 +6781,7 @@ objectVersion: 51
 -  
 ```  
   
-### <a name="BKMK_Sch52"></a>Sch52.ldf  
+### <a name="BKMK_Sch52"></a>Sch52  
   
 ```  
 dn: CN=ms-DS-RID-Pool-Allocation-Enabled,CN=Schema,CN=Configuration,DC=X  
@@ -7307,7 +7307,7 @@ objectVersion: 52
 -  
 ```  
   
-### <a name="BKMK_Sch53"></a>Sch53.ldf  
+### <a name="BKMK_Sch53"></a>Sch53  
   
 ```  
 dn: CN=ms-Authz-Central-Access-Rule,CN=Schema,CN=Configuration,DC=X  
@@ -7323,7 +7323,7 @@ objectVersion: 53
 -  
 ```  
   
-### <a name="BKMK_Sch54"></a>Sch54.ldf  
+### <a name="BKMK_Sch54"></a>Sch54  
   
 ```  
 dn: CN=User-Account-Restrictions,CN=Extended-Rights,CN=Configuration,DC=X  
@@ -7345,7 +7345,7 @@ objectVersion: 54
 -  
 ```  
   
-### <a name="BKMK_Sch55"></a>Sch55.ldf  
+### <a name="BKMK_Sch55"></a>Sch55  
   
 ```  
 dn: CN=DNS-Host-Name-Attributes,CN=Extended-Rights,CN=Configuration,DC=X  
@@ -7367,7 +7367,7 @@ objectVersion: 55
 -  
 ```  
   
-### <a name="BKMK_Sch56"></a>Sch56.ldf  
+### <a name="BKMK_Sch56"></a>Sch56  
   
 ```  
 # Update element: computer. Remove netboot-DUID from mayContain  

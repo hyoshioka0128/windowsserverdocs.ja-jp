@@ -1,29 +1,29 @@
 ---
 title: 個別のデバイスの割り当てを使用したデバイスの展開の計画
 description: Windows Server で DDA がどのように機能するかについて説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 ms.technology: hyper-v
 ms.tgt_pltfrm: na
 ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
-ms.date: 02/06/2018
-ms.openlocfilehash: 7df7dbd1e7252f5bab451ed9272f9cbede63d223
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.date: 08/21/2019
+ms.openlocfilehash: 114dd87b86bfffd1070229af57ae65deea2c2db0
+ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476497"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72923861"
 ---
 # <a name="plan-for-deploying-devices-using-discrete-device-assignment"></a>個別のデバイスの割り当てを使用したデバイスの展開の計画
->適用先:Microsoft Hyper-v Server 2016、Windows Server 2016、Microsoft Hyper-v Server 2019、Windows Server 2019
+>適用対象: Microsoft Hyper-V Server 2016、Windows Server 2016、Microsoft Hyper-V Server 2019、Windows Server 2019
 
 個別のデバイス割り当てでは、物理 PCIe ハードウェアに仮想マシン内から直接アクセスできます。  このガイドでは、デバイスの個別割り当てを使用できるデバイスの種類、ホストシステム要件、仮想マシンに課せられる制限事項、および個別のデバイス割り当てのセキュリティへの影響について説明します。
 
-個別のデバイス割り当ての最初のリリースでは、Microsoft によって正式にサポートされる2つのデバイスクラスに重点を置いています。グラフィックスアダプターと NVMe 記憶装置。  他のデバイスは動作する可能性が高く、ハードウェアベンダーはそれらのデバイスに対してサポートステートメントを提供できます。  その他のデバイスについては、これらのハードウェアベンダーに問い合わせてください。
+個別のデバイス割り当ての最初のリリースでは、Microsoft によって正式にサポートされている2つのデバイスクラス (グラフィックスアダプターと NVMe ストレージデバイス) に重点を置いています。  他のデバイスは動作する可能性が高く、ハードウェアベンダーはそれらのデバイスに対してサポートステートメントを提供できます。  その他のデバイスについては、これらのハードウェアベンダーに問い合わせてください。
 
-個別のデバイスの割り当てを試す準備ができている場合は、個別のデバイス割り当てを使用して[グラフィックスデバイスをデプロイ](../deploy/Deploying-graphics-devices-using-dda.md)するか、[個別のデバイス割り当てを使用してストレージデバイスを展開](../deploy/Deploying-storage-devices-using-dda.md)して開始することができます。
+GPU 仮想化のその他の方法については、「 [Windows Server での gpu 高速化の計画](plan-for-gpu-acceleration-in-windows-server.md)」を参照してください。 個別のデバイスの割り当てを試す準備ができている場合は、個別のデバイス割り当てを使用して[グラフィックスデバイスをデプロイ](../deploy/Deploying-graphics-devices-using-dda.md)するか、[個別のデバイス割り当てを使用してストレージデバイスを展開](../deploy/Deploying-storage-devices-using-dda.md)し、作業を開始することができます。
 
 ## <a name="supported-virtual-machines-and-guest-operating-systems"></a>サポートされている Virtual Machines とゲストオペレーティングシステム
 個別のデバイスの割り当ては、第1または第2世代の Vm でサポートされています。  また、サポートされているゲストには、Windows 10、Windows Server 2019、Windows Server 2016、 [KB 3133690](https://support.microsoft.com/kb/3133690)が適用された windows server 2012r2、および Linux OS のさまざまなディストリビューションが含まれ[ます。](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)
@@ -57,13 +57,13 @@ ms.locfileid: "68476497"
 
 管理者が信頼されていないテナントのデバイスを使用することを希望している場合は、デバイスの製造元に、ホストにインストールできるデバイス軽減ドライバーを作成する機能が用意されています。  デバイスの対策ドライバーが提供されているかどうかの詳細については、デバイスの製造元に問い合わせてください。
 
-デバイスの軽減ドライバーがないデバイスのセキュリティチェックをバイパスする場合は、 `-Force`パラメーターを`Dismount-VMHostAssignableDevice`コマンドレットに渡す必要があります。  そうすることで、そのシステムのセキュリティプロファイルが変更され、プロトタイプ作成または信頼された環境でのみ推奨されることがわかります。
+デバイスの軽減ドライバーがないデバイスのセキュリティチェックをバイパスする場合は、`-Force` パラメーターを `Dismount-VMHostAssignableDevice` コマンドレットに渡す必要があります。  そうすることで、そのシステムのセキュリティプロファイルが変更され、プロトタイプ作成または信頼された環境でのみ推奨されることがわかります。
 
 ## <a name="pcie-location-path"></a>PCIe ロケーションパス
-ホストからデバイスをマウント解除してマウントするには、PCIe ロケーションパスが必要です。  ロケーションパスの例は次`"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`のようになります。   [コンピュータープロファイルスクリプト](#machine-profile-script)は、PCIe デバイスの場所のパスも返します。
+ホストからデバイスをマウント解除してマウントするには、PCIe ロケーションパスが必要です。  ロケーションパスの例は次のようになります: `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`。   [コンピュータープロファイルスクリプト](#machine-profile-script)は、PCIe デバイスの場所のパスも返します。
 
 ### <a name="getting-the-location-path-by-using-device-manager"></a>デバイスマネージャーを使用した場所のパスの取得
-![デバイス マネージャー](../deploy/media/dda-devicemanager.png)
+![「デバイス マネージャー」](../deploy/media/dda-devicemanager.png)
 - デバイスマネージャーを開き、デバイスを見つけます。  
 - デバイスを右クリックし、[プロパティ] を選択します。
 - [詳細] タブに移動し、プロパティドロップダウンで [ロケーションパス] を選択します。  
@@ -104,7 +104,7 @@ Low MMIO 領域は、32ビットのオペレーティングシステムと32ビ�
 MMIO 領域の詳細については、技術コミュニティブログの「[個別のデバイスの割り当て-gpu](https://techcommunity.microsoft.com/t5/Virtualization/Discrete-Device-Assignment-GPUs/ba-p/382266) 」を参照してください。
 
 ## <a name="machine-profile-script"></a>コンピュータープロファイルスクリプト
-サーバーが正しく構成されているかどうか、および個別のデバイス割り当てを使用して渡すことができるデバイスを特定するために、エンジニアの1人は次の PowerShell スクリプトをまとめました。[SurveyDDA。](https://github.com/Microsoft/Virtualization-Documentation/blob/live/hyperv-tools/DiscreteDeviceAssignment/SurveyDDA.ps1)
+サーバーが正しく構成されているかどうか、および個別のデバイス割り当てを使用して渡すことができるデバイスを識別しやすくするために、エンジニアの1人が、次の PowerShell スクリプトをまとめました: [SurveyDDA。](https://github.com/Microsoft/Virtualization-Documentation/blob/live/hyperv-tools/DiscreteDeviceAssignment/SurveyDDA.ps1)
 
 スクリプトを使用する前に、Hyper-v の役割がインストールされていることを確認し、管理者特権を持つ PowerShell コマンドウィンドウからスクリプトを実行してください。
 
@@ -113,42 +113,3 @@ MMIO 領域の詳細については、技術コミュニティブログの「[�
 検出されたデバイスごとに、個別のデバイス割り当てで使用できるかどうかがツールによって表示されます。 デバイスが個別のデバイス割り当てと互換性があると識別された場合、スクリプトによって理由が示されます。  デバイスが互換性のあるものとして正しく識別されると、デバイスの場所のパスが表示されます。  さらに、そのデバイスに[MMIO 領域](#mmio-space)が必要な場合は、表示されます。
 
 ![SurveyDDA](./images/hyper-v-surveydda-ps1.png)
-
-## <a name="frequently-asked-questions"></a>よく寄せられる質問
-
-### <a name="how-does-remote-desktops-remotefx-vgpu-technology-relate-to-discrete-device-assignment"></a>リモートデスクトップの RemoteFX vGPU テクノロジは、個別のデバイス割り当てとどのように関連していますか。
-完全に独立したテクノロジです。 個別のデバイス割り当てを機能させるには、RemoteFX vGPU をインストールする必要はありません。 また、追加の役割をインストールする必要はありません。 Remotefx vgpu を使用するには、remotefx vGPU ドライバーが VM 内に存在するためには、RDVH ロールがインストールされている必要があります。 ハードウェアベンダーのドライバーを仮想マシンにインストールするため、デバイスの個別割り当てには、追加の役割は必要ありません。  
-
-### <a name="ive-passed-a-gpu-into-a-vm-but-remote-desktop-or-an-application-isnt-recognizing-the-gpu"></a>GPU を VM に渡しましたが、リモートデスクトップまたはアプリケーションが GPU を認識していません
-これはさまざまな原因で発生する可能性がありますが、いくつかの一般的な問題を以下に示します。
-- 最新の GPU ベンダーのドライバーがインストールされており、デバイスマネージャーでデバイスの状態を確認することでエラーが報告されていないことを確認します。
-- デバイスに VM 内に割り当てられている[MMIO 領域](#mmio-space)が十分にあることを確認します。
-- この構成で使用されているベンダーがサポートしている GPU を使用していることを確認します。 たとえば、一部のベンダーでは、VM に渡されたときにコンシューマーカードが動作しなくなります。
-- 実行中のアプリケーションが VM 内での実行をサポートしていること、および GPU とそれに関連付けられているドライバーの両方がアプリケーションでサポートされていることを確認します。 一部のアプリケーションには、Gpu と環境のホワイトリストがあります。
-- ゲストでリモートデスクトップセッションホストの役割または Windows Multipoint Services を使用している場合は、特定のグループポリシーエントリが既定の GPU の使用を許可するように設定されていることを確認する必要があります。 ゲスト (またはゲストのローカルグループポリシーエディター) に適用されているグループポリシーオブジェクトを使用して、次のグループポリシーの項目に移動します。
-   - コンピューターの構成
-   - 管理者テンプレート
-   - Windows コンポーネント
-   - リモート デスクトップ サービス
-   - リモート デスクトップ セッション ホスト
-   - リモート セッション環境
-   - すべてのリモート デスクトップ サービス セッションにハードウェアの既定のグラフィックス アダプターを使用する
-
-    ポリシーが適用されたら、この値を [有効] に設定し、VM を再起動します。
-
-### <a name="can-discrete-device-assignment-take-advantage-of-remote-desktops-avc444-codec"></a>個別のデバイス割り当てで、リモートデスクトップの AVC444 コーデックを利用できますか。
-はい。詳細については、こちらのブログ投稿をご覧ください。[Windows 10 および Windows Server 2016 Technical Preview でのリモートデスクトッププロトコル (RDP) 10 AVC/h.264 の機能強化。](https://blogs.technet.microsoft.com/enterprisemobility/2016/01/11/remote-desktop-protocol-rdp-10-avch-264-improvements-in-windows-10-and-windows-server-2016-technical-preview/)
-
-### <a name="can-i-use-powershell-to-get-the-location-path"></a>PowerShell を使用して場所のパスを取得できますか。
-はい、これを行うにはさまざまな方法があります。 1つの例を次に示します。
-```
-#Enumerate all PNP Devices on the system
-$pnpdevs = Get-PnpDevice -presentOnly
-#Select only those devices that are Display devices manufactured by NVIDIA
-$gpudevs = $pnpdevs |where-object {$_.Class -like "Display" -and $_.Manufacturer -like "NVIDIA"}
-#Select the location path of the first device that's available to be dismounted by the host.
-$locationPath = ($gpudevs | Get-PnpDeviceProperty DEVPKEY_Device_LocationPaths).data[0]
-```
-
-### <a name="can-discrete-device-assignment-be-used-to-pass-a-usb-device-into-a-vm"></a>個別のデバイス割り当てを使用して、USB デバイスを VM に渡すことができますか。
-公式にはサポートされていませんが、お客様は USB3 コントローラー全体を VM に渡すことによって、これを行うために個別のデバイス割り当てを使用しています。  コントローラー全体が渡されると、そのコントローラーに接続されている各 USB デバイスにも VM でアクセスできるようになります。  一部の USB3 コントローラーのみが動作する場合があり、USB2 コントローラーは個別のデバイス割り当てでは使用できないことに注意してください。

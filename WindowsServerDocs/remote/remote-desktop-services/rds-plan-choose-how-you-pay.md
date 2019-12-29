@@ -2,7 +2,7 @@
 title: リモート デスクトップ サービスでは、支払方法を選択します。
 description: RDS ライセンスに関する計画情報。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ author: spatnaik
 ms.author: spatnaik
 ms.date: 09/23/2016
 manager: scottman
-ms.openlocfilehash: 5d6b0b230bace0ce66d9956fad231eac5b679403
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 59fe73e0563a3ff0308b6dfc0edc49d0fdaf6f09
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63712066"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403938"
 ---
 # <a name="remote-desktop-services---choose-how-you-pay"></a>リモート デスクトップ サービスでは、支払方法を選択します。
 

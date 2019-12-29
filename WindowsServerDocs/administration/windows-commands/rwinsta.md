@@ -1,8 +1,8 @@
 ---
 title: rwinsta
-description: コマンドラインから、RDSH sessionf をリセットする方法について説明します。
+description: コマンドラインから RDSH sessionf をリセットする方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,26 +13,26 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ad57f33f3bbdb3ac34d8c27f1854fb86855e69f8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 05e14c468d8f78cfcc4017b966e779d4c8f9eb9c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837083"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371373"
 ---
 # <a name="rwinsta"></a>rwinsta
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモート デスクトップ セッション ホスト (rd セッション ホスト) サーバー上のセッションのリセット (削除) できます。
+リモートデスクトップセッションホスト (rd セッションホスト) サーバー上のセッションをリセット (削除) できます。
 
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 新機能については、最新バージョンについてを参照してください。[リモート デスクトップ サービスの Windows Server 2012 における新](https://technet.microsoft.com/library/hh831527)、Windows Server TechNet ライブラリです。
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの「 [Windows server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527)」を参照してください。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 このコマンドと同じ、 **セッションをリセット** コマンドです。
 
-#### <a name="additional-references"></a>その他の参照
-[セッションをリセット](reset-session.md)
-[コマンドライン構文キー](command-line-syntax-key.md)
-[Remote Desktop Services&#40;ターミナル サービス&#41;コマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)
+#### <a name="additional-references"></a>その他の参照情報
+[セッションのリセット](reset-session.md)
+[コマンドライン構文のキー](command-line-syntax-key.md)
+[リモートデスクトップサービス&#40;ターミナル&#41;サービスのコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)

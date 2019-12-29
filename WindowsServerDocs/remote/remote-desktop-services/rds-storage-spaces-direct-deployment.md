@@ -2,7 +2,7 @@
 title: Azure での UPD 記憶域用に 2 ノードの記憶域スペース ダイレクト SOFS を展開する
 description: RDS で記憶域スペース ダイレクトを使用する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,18 +13,18 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 manager: scottman
-ms.openlocfilehash: 792c9320f6976a4fc7f2ccd235f66daa0cb19b19
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 2d82379dfbc03d28ec174e66862f130f2a3c50a6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805193"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387132"
 ---
 # <a name="deploy-a-two-node-storage-spaces-direct-scale-out-file-server-for-upd-storage-in-azure"></a>Azure での UPD 記憶域用に 2 ノードの記憶域スペース ダイレクト スケールアウト ファイル サーバーを展開する
 
 >適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
-リモート デスクトップ サービス (RDS) では、ユーザー プロファイル ディスク (Upd) のドメインに参加しているファイル サーバーが必要です。 Azure で高可用性のドメインに参加しているスケール アウト ファイル サーバー (SOFS) を展開するには、Windows Server 2016 で直接記憶域スペースを使用します。 Upd またはリモート デスクトップ サービスに慣れていない場合はチェック アウト [リモート デスクトップ サービスの開始](welcome-to-rds.md)します。
+リモート デスクトップ サービス (RDS) では、ユーザー プロファイル ディスク (Upd) のドメインに参加しているファイル サーバーが必要です。 Azure で高可用性のドメインに参加しているスケール アウト ファイル サーバー (SOFS) を展開するには、Windows Server 2016 で直接記憶域スペースを使用します。 UPD またはリモート デスクトップ サービスに慣れていない場合は、「[リモート デスクトップ サービスへようこそ](welcome-to-rds.md)」を参照してください。
 
 > [!NOTE] 
 > Microsoft は、[記憶域スペース ダイレクト スケール アウト ファイル サーバーを展開するための Azure テンプレート](https://azure.microsoft.com/documentation/templates/301-storage-spaces-direct/)を公開しました。 テンプレートを使用して展開を作成することも、この記事の手順を使用することもできます。 

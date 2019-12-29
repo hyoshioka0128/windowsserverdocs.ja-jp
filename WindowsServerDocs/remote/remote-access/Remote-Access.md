@@ -1,77 +1,77 @@
 ---
 title: リモート アクセス
-description: このトピックでは、Windows Server 2016 でのリモート アクセス サーバーの役割の概要を示します。
+description: このトピックでは、Windows Server 2016 のリモートアクセスサーバーの役割の概要について説明します。
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
 ms.author: pashort
 author: shortpatti
 ms.date: 05/18/2018
-ms.openlocfilehash: faf12ad22678fa58ea933613759e3e8414966bca
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d2fa9c82c4cab05b2a60916fee3f09c1ea48a472
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818363"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388913"
 ---
 # <a name="remote-access"></a>リモート アクセス
 
->適用先:Windows Server 2016、Windows Server 2012 R2、Windows 10 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-リモート アクセス ガイドでは、Windows Server 2016 でのリモート アクセス サーバーの役割の概要を提供し、次の項目について説明します。
+リモートアクセスガイドでは、Windows Server 2016 のリモートアクセスサーバーの役割の概要について説明し、次の項目について説明します。
 
 - [Always On VPN 展開ガイド](vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)
-- [ボーダー ゲートウェイ プロトコル&#40;BGP&#41;](bgp/Border-Gateway-Protocol-BGP.md)
+- [Border Gateway Protocol &#40;BGP&#41;](bgp/Border-Gateway-Protocol-BGP.md)
 - [RAS ゲートウェイ](ras-gateway/RAS-Gateway.md) 
 - [リモート アクセス サーバーの役割のドキュメント](ras/Remote-Access-Server-Role-Documentation.md)
 - [SDN の RAS ゲートウェイ](../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)
 - [仮想プライベート ネットワーク (VPN)](vpn/vpn-top.md)
  
-その他のネットワーク テクノロジの詳細については、次を参照してください。 [Windows Server 2016 でのネットワー キング](https://docs.microsoft.com/windows-server/networking/networking)します。
+その他のネットワークテクノロジの詳細については、「 [Windows Server 2016 のネットワーク](https://docs.microsoft.com/windows-server/networking/networking)」を参照してください。
 
-リモート アクセス サーバーの役割は、これらの関連するネットワーク アクセス テクノロジの論理的なグループを示します。[リモート アクセス サービス (RAS)](#bkmk_da)、[ルーティング](#bkmk_rras)、および[Web アプリケーション プロキシ](#bkmk_proxy)します。 これらのテクノロジは、リモート アクセス サーバーの役割の*役割サービス*です。 リモート アクセス サーバーの役割をインストールすると、**追加の役割と機能ウィザード**または Windows PowerShell では、これらの 3 つの役割サービスの 1 つ以上をインストールできます。
-
->[!IMPORTANT]
->仮想マシンにリモート アクセスの展開をしないで\(VM\) Microsoft Azure でします。 Microsoft Azure でのリモート アクセスの使用はサポートされていません。 Azure VM でリモート アクセスを使用して、VPN、DirectAccess、または Windows Server 2016 または Windows Server の以前のバージョンでその他のリモート アクセス機能をデプロイすることはできません。 詳細については、次を参照してください。 [Microsoft Azure 仮想マシンのマイクロソフト サーバー ソフトウェア サポート](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)します。
-
-## <a name="bkmk_da"></a>リモート アクセス サービス\(RAS\) -RAS ゲートウェイ
-
-インストールするときに、 **DirectAccess と VPN (RAS)** 役割サービス、リモート アクセス サービスのゲートウェイを展開する\( **RAS ゲートウェイ**\)します。 RAS ゲートウェイの 1 つのテナント RAS ゲートウェイの仮想プライベート ネットワークをデプロイする\(VPN\)サーバー、マルチ テナントの RAS ゲートウェイの VPN サーバー、および DirectAccess サーバーとして。
-
-- **RAS ゲートウェイの 1 つのテナント**します。 RAS ゲートウェイを使用して、組織のネットワークおよびリソースへのリモート アクセスでエンドユーザーに提供する VPN 接続を展開できます。 クライアントが Windows 10 を実行している場合は、Always On VPN、リモート コンピューターがインターネットに接続するたびに、クライアントと、組織のネットワークの間で永続的な接続を維持するを展開できます。 RAS ゲートウェイを使用しても、プライマリ オフィスとブランチ オフィス間など、異なる場所にある 2 つのサーバー間のサイト対サイト VPN 接続を作成およびネットワーク アドレス変換を使用することができます\(NAT\)ように内部のユーザー、ネットワークは、インターネットなどの外部リソースにアクセスできます。 さらに、RAS ゲートウェイでは、リモート オフィスの場所では、BGP をサポートするエッジ ゲートウェイもがある場合は、動的ルーティング サービスを提供するボーダー ゲートウェイ プロトコル (BGP) をサポートしています。
-
-- **RAS ゲートウェイのマルチ テナント**します。 ハイパースレッディングを使用している場合は、マルチ テナント、ソフトウェア ベースのエッジ ゲートウェイおよびルーターとして RAS ゲートウェイを展開できます\-仮想ローカル エリア ネットワークにデプロイされた VM ネットワークがあるか、ネットワーク仮想化\(Vlan\)します。 RAS ゲートウェイ、クラウド サービス プロバイダーと\(Csp\)企業はデータ センターを有効にして、インターネットを含む、仮想および物理ネットワーク間のネットワーク トラフィックのルーティングをクラウドとします。 RAS ゲートウェイを使用して、テナントは、どこからでも、データ センター内の VM ネットワークのリソースにアクセスするのにポイントようにサイト VPN 接続を使用できます。 そのリモート サイトと CSP のデータ センター間のサイト対サイト VPN 接続でテナントを指定することもできます。 さらに、BGP で RAS ゲートウェイを構成するには、動的ルーティング用と、ネットワーク アドレス変換を有効にすることができます\(NAT\)に VM ネットワークで Vm のインターネット アクセスを提供します。
+リモートアクセスサーバーの役割は、[リモートアクセスサービス (RAS)](#bkmk_da)、[ルーティング](#bkmk_rras)、 [Web アプリケーションプロキシ](#bkmk_proxy)という、関連するネットワークアクセステクノロジを論理的にグループ化したものです。 これらのテクノロジは、リモート アクセス サーバーの役割の*役割サービス*です。 **役割と機能の追加ウィザード**または Windows PowerShell を使用してリモートアクセスサーバーの役割をインストールする場合は、これら3つの役割サービスの1つまたは複数をインストールできます。
 
 >[!IMPORTANT]
-> マルチ テナント機能を備えた RAS ゲートウェイも Windows Server 2012 R2 で使用できます。
+>Microsoft Azure では、仮想マシン \(VM\) にリモートアクセスをデプロイしないでください。 Microsoft Azure でのリモートアクセスの使用はサポートされていません。 Windows Server 2016 以前のバージョンの Windows Server では、Azure VM でリモートアクセスを使用して VPN、DirectAccess、またはその他のリモートアクセス機能を展開することはできません。 詳細については、「 [Microsoft Azure の仮想マシンに対する Microsoft サーバーソフトウェアのサポート](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines)」を参照してください。
 
-- **Always On VPN**します。 Always On VPN には、リモート ユーザーが VPN に接続しなくても、共有リソース、イントラネット Web サイト、および内部ネットワーク上でアプリケーションを安全にアクセスができるようにします。 
+## <a name="bkmk_da"></a>RAS\) \(リモートアクセスサービス-RAS ゲートウェイ
 
-詳細については、次を参照してください。 [RAS ゲートウェイ](ras-gateway/RAS-Gateway.md)と[ボーダー ゲートウェイ プロトコル (BGP)](bgp/Border-Gateway-Protocol-BGP.md)します。
+**DirectAccess および VPN (ras)** 役割サービスをインストールするときに、 **ras ゲートウェイ**\)\(リモートアクセスサービスゲートウェイを展開します。 RAS ゲートウェイは、単一テナントの RAS ゲートウェイ仮想プライベートネットワーク \(VPN\) サーバー、マルチテナント RAS ゲートウェイ VPN サーバー、および DirectAccess サーバーとして展開できます。
 
-## <a name="bkmk_rras"></a>ルーティング
+- **RAS ゲートウェイ-シングルテナント**。 RAS ゲートウェイを使用すると、VPN 接続を展開して、エンドユーザーが組織のネットワークとリソースにリモートアクセスできるようにすることができます。 クライアントで Windows 10 が実行されている場合、リモートコンピューターがインターネットに接続されている場合は常に、クライアントと組織のネットワークの間に永続的な接続を維持する Always On VPN を展開できます。 RAS ゲートウェイを使用すると、プライマリオフィスとブランチオフィスの間など、異なる場所にある2つのサーバー間にサイト間 VPN 接続を作成し、ネットワーク内のユーザーがインターネットなどの外部リソースにアクセスできるように、NAT\) \(ネットワークアドレス変換を使用することもできます。 さらに、RAS ゲートウェイでは Border Gateway Protocol (BGP) がサポートされています。これは、リモートオフィスの場所に BGP をサポートするエッジゲートウェイもある場合に動的ルーティングサービスを提供します。
 
-リモート アクセスを使用して、ローカル エリア ネットワーク上のサブネット間のネットワーク トラフィックをルーティングすることができます。 ルーティングでは、ネットワーク アドレス変換 (NAT) ルーター、BGP ルーティング情報プロトコル (RIP) やインターネット グループ管理プロトコル (IGMP) を使用してマルチキャスト対応のルーターを実行している LAN ルーターのサポートを提供します。 フル装備のルーターでは、サーバー コンピューターまたは HYPER-V を実行しているコンピューター上の仮想マシン (VM) として RAS をデプロイできます。
+- **RAS ゲートウェイ-マルチテナント**。 \-Hyper-v ネットワーク仮想化を使用している場合、または Vlan\)\(仮想ローカルエリアネットワークを使用してデプロイされた VM ネットワークがある場合は、マルチテナント、ソフトウェアベースのエッジゲートウェイ、およびルーターとして RAS ゲートウェイを展開できます。 RAS ゲートウェイを使用すると、クラウドサービスプロバイダーは Csp\) を \(し、企業は仮想ネットワークと物理ネットワーク (インターネットを含む) の間でデータセンターとクラウドネットワークのトラフィックをルーティングできるようになります。 RAS ゲートウェイを使用すると、テナントはポイント対サイト VPN 接続を使用して、どこからでもデータセンター内の VM ネットワークリソースにアクセスできます。 テナントに、リモートサイトと CSP データセンター間のサイト間 VPN 接続を提供することもできます。 また、動的ルーティング用の BGP を使用して RAS ゲートウェイを構成できます。また、NAT\) \(ネットワークアドレス変換を有効にして、VM ネットワーク上の Vm にインターネットアクセスを提供できます。
 
-サーバー マネージャーで、追加の役割と機能ウィザードを使用していずれかの LAN ルーターとしてリモート アクセスをインストールして、選択、**リモート アクセス**サーバー ロールおよび**ルーティング**役割サービスですまたは、次の種類。Windows PowerShell プロンプトでコマンドし、し、ENTER キーを押します。
+>[!IMPORTANT]
+> マルチテナント機能を備えた RAS ゲートウェイは、Windows Server 2012 R2 でも使用できます。
+
+- **ALWAYS ON VPN**。 Always On VPN を使用すると、リモートユーザーは VPN に接続しなくても、内部ネットワーク上の共有リソース、イントラネット Web サイト、およびアプリケーションに安全にアクセスできます。 
+
+詳細については、「 [RAS Gateway](ras-gateway/RAS-Gateway.md) and [Border Gateway Protocol (BGP)](bgp/Border-Gateway-Protocol-BGP.md)」を参照してください。
+
+## <a name="bkmk_rras"></a>配線
+
+リモートアクセスを使用して、ローカルエリアネットワーク上のサブネット間でネットワークトラフィックをルーティングすることができます。 ルーティングでは、インターネットグループ管理プロトコル (IGMP) を使用して、ネットワークアドレス変換 (NAT) ルーター、BGP を実行する LAN ルーター、ルーティング情報プロトコル (RIP)、およびマルチキャスト対応のルーターがサポートされます。 全機能を備えたルーターとして、Hyper-v を実行しているコンピューター上のサーバーコンピューターまたは仮想マシン (VM) に RAS を展開できます。
+
+LAN ルーターとしてリモートアクセスをインストールするには、サーバーマネージャーの役割と機能の追加ウィザードを使用して、**リモートアクセス**サーバーの役割と**ルーティング**の役割サービスを選択します。または、Windows PowerShell プロンプトで次のコマンドを入力し、enter キーを押します。
 
 ```  
 Install-RemoteAccess -VpnType RoutingOnly
 ```  
 
-## <a name="bkmk_proxy"></a>Web アプリケーション プロキシ
+## <a name="bkmk_proxy"></a>Web アプリケーションプロキシ
 
-Web アプリケーション プロキシとは、Windows Server 2016 でのリモート アクセス役割サービスです。 Web アプリケーション プロキシには、企業ネットワーク内部の Web アプリケーション用のリバース プロキシ機能があり、ユーザーは任意のデバイスで企業ネットワーク外部から Web アプリケーションにアクセスできます。 Web アプリケーション プロキシは、Active Directory フェデレーション サービス (AD FS) を使用して web アプリケーションへのアクセスを事前に認証し、AD FS プロキシとしても機能します。
+Web アプリケーションプロキシは、Windows Server 2016 のリモートアクセスの役割サービスです。 Web アプリケーション プロキシには、企業ネットワーク内部の Web アプリケーション用のリバース プロキシ機能があり、ユーザーは任意のデバイスで企業ネットワーク外部から Web アプリケーションにアクセスできます。 Web アプリケーションプロキシは、Active Directory フェデレーションサービス (AD FS) (AD FS) を使用して web アプリケーションへのアクセスを事前認証し、AD FS プロキシとしても機能します。
 
-サーバー マネージャーで、追加の役割と機能ウィザードを使用していずれかの Web アプリケーション プロキシとしてリモート アクセスをインストールして、選択、**リモート アクセス**サーバー ロールおよび**Web アプリケーション プロキシ**; の役割サービスまたはWindows PowerShell プロンプトで次のコマンドを入力し、ENTER キーを押します。  
+リモートアクセスを Web アプリケーションプロキシとしてインストールするには、サーバーマネージャーの役割と機能の追加ウィザードを使用して、**リモートアクセス**サーバーの役割と**web アプリケーションプロキシ**の役割サービスを選択します。または、Windows PowerShell プロンプトで次のコマンドを入力し、enter キーを押します。  
 
 ```  
 Install-RemoteAccess -VpnType SstpProxy  
 ```  
 
-詳細については、次を参照してください。 [Web アプリケーション プロキシ](https://technet.microsoft.com/windows-server-docs/identity/web-application-proxy/web-application-proxy-windows-server)します。
+詳細については、「 [Web アプリケーションプロキシ](https://technet.microsoft.com/windows-server-docs/identity/web-application-proxy/web-application-proxy-windows-server)」を参照してください。
 
 
 ---

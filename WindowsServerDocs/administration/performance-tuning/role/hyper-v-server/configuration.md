@@ -1,18 +1,18 @@
 ---
 title: Hyper-V の構成
 description: Hyper-v 構成のパフォーマンスチューニングに関する考慮事項
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: baea091482818c581414ba1d9c1c01db2a52e3d7
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: f21115265ca7d2788fc0be078860048602d82c0f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "66435665"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370161"
 ---
 # <a name="hyper-v-configuration"></a>Hyper-V の構成
 
@@ -24,7 +24,7 @@ Hyper-v を実行するサーバーのハードウェアに関する考慮事項
 
     Windows Server 2016 の hyper-v では、各アクティブな仮想マシンの論理プロセッサが1つまたは複数の仮想プロセッサとして提供されます。 Hyper-v では、拡張ページテーブル (EPT) や入れ子になったページテーブル (NPT) などの、第2レベルのアドレス変換 (SLAT) テクノロジをサポートするプロセッサが必要になりました。
 
--   **キャッシュ**
+-   **Cache**
 
     Hyper-v では、大きなプロセッサキャッシュを利用できます。特に、メモリ内のワーキングセットが大きく、仮想プロセッサと論理プロセッサの比率が高い負荷の場合に適しています。
 
@@ -76,15 +76,15 @@ Hyper-v では、仮想化サーバーの動作を特徴付けることができ
 
 常に、Hyper-v ハイパーバイザー論理プロセッサのパフォーマンスカウンターを使用して、物理システムの CPU 使用率を測定する必要があります。 CPU 使用率カウンターは、ルートおよび子パーティションのタスクマネージャーとパフォーマンスモニターのレポートに、実際の物理 CPU 使用率を反映していません。 パフォーマンスを監視するには、次のパフォーマンスカウンターを使用します。
 
-- **Hyper-v ハイパーバイザー論理プロセッサ (\*)\\% 合計実行時間**論理プロセッサの非アイドル時間の合計
+- **Hyper-v ハイパーバイザー論理プロセッサ (\*) \\% 合計実行時間**論理プロセッサの非アイドル時間の合計
 
-- **Hyper-v ハイパーバイザー論理プロセッサ (\*)\\% ゲスト実行時間**は、ゲストまたはホスト内でサイクルを実行するのに費やされた時間です
+- **Hyper-v ハイパーバイザー論理プロセッサ (\*) \\% Guest の実行時間**ゲスト内またはホスト内でサイクルを実行するために費やされた時間
 
-- **Hyper-v ハイパーバイザー論理プロセッサ (\*)\\% ハイパーバイザー実行時間**ハイパーバイザー内での実行に費やされた時間
+- **Hyper-v ハイパーバイザー論理プロセッサ (\*) \\% ハイパーバイザー実行時間**ハイパーバイザー内での実行に費やされた時間
 
-- **Hyper-v ハイパーバイザールート仮想プロセッサ\*() *\\は、ルートパーティションの CPU 使用率を測定します。\\**
+- **Hyper-v ハイパーバイザールート仮想プロセッサ\*()\\は\\** *、ルートパーティションの CPU 使用率を測定します。
 
-- **Hyper-v ハイパーバイザー仮想\*プロセッサ () *\\は、ゲストパーティションの CPU 使用率を測定します。\\**
+- **Hyper-v ハイパーバイザー仮想\*プロセッサ ()\\は\\** *、ゲストパーティションの CPU 使用率を測定します。
 
 
 ## <a name="see-also"></a>関連項目

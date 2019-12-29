@@ -1,8 +1,8 @@
 ---
-title: bitsadmin sethelpertoken
-description: Windows コマンド」のトピック**bitsadmin sethelpertoken** -BITS 転送ジョブのヘルパー トークンとして現在のコマンド プロンプトのプライマリ トークン (または任意のローカル ユーザー アカウントのトークン、指定されている場合) を設定します。
+title: bitsadmin sei pertoken
+description: '**Bitsadmin se pertoken**の Windows コマンドのトピック-現在のコマンドプロンプトのプライマリトークン (または、指定されている場合は任意のローカルユーザーアカウントのトークン) を BITS 転送ジョブのヘルパートークンとして設定します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,18 +12,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 558a1aca66a7b3ec447136ceff9237d13efe4ede
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 91c03366998168dad9ab4530ef36a5020b8ad6ec
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853003"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380568"
 ---
-# <a name="bitsadmin-sethelpertoken"></a>bitsadmin sethelpertoken
+# <a name="bitsadmin-sethelpertoken"></a>bitsadmin sei pertoken
 
-BITS 転送ジョブのとして現在のコマンド プロンプトのプライマリ トークン (または任意のローカル ユーザー アカウントのトークン、指定されている場合) を設定する [ヘルパー トークン](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)します。
+現在のコマンドプロンプトのプライマリトークン (または、指定されている場合は任意のローカルユーザーアカウントのトークン) を BITS 転送ジョブの [ヘルパートークン](/windows/desktop/bits/helper-tokens-for-bits-transfer-jobs)として設定します。
 
-**3.0 と以前の BITS**: サポートされません。
+**BITS 3.0 以前**: サポートされていません。
 
 ## <a name="syntax"></a>構文
 
@@ -36,8 +36,8 @@ bitsadmin /SetHelperToken <Job> [\<username@domain\> \<password\>]
 |パラメーター|説明|
 |---------|-----------|
 |Job|ジョブの表示名または GUID。|
-|\<username@domain\> \<パスワード\>|省略可能な&mdash;アカウントを使用するトークンのローカル ユーザーの資格情報。|
+|\<username@domain\> \<パスワード\>|必要に応じて、使用するトークンを持つローカルユーザーアカウントの資格情報&mdash;ます。|
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

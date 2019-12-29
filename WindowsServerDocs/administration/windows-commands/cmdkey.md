@@ -1,8 +1,8 @@
 ---
 title: cmdkey
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5c06a04fa6473bc30c3b354f049a55775d2308a0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: dc2b12cb53eef930d05c1e291de5574a8ba94306
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434315"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379310"
 ---
 # <a name="cmdkey"></a>cmdkey
 
@@ -34,32 +34,32 @@ cmdkey [{/add:<TargetName>|/generic:<TargetName>}] {/smartcard|/user:<UserName> 
 
 |             パラメーター             |                                                                                    説明                                                                                     |
 |------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|         /を追加します。<TargetName>          | ユーザー名とパスワードを一覧に追加します。<br /><br />パラメーターが必要です<TargetName>このエントリの関連付けられているコンピューターまたはドメイン名を識別します。 |
-|       /generic:<TargetName>        |   汎用の資格情報を一覧に追加します。<br /><br />パラメーターが必要です<TargetName>このエントリの関連付けられているコンピューターまたはドメイン名を識別します。    |
-|             /smartcard             |                                                                    スマート カードから資格情報を取得します。                                                                     |
-|          /user:<UserName>          |                                 このエントリに格納するには、ユーザーまたはアカウント名を指定します。 場合*UserName*が指定されていないことが要求されます。                                  |
-|          /pass:<Password>          |                                       このエントリに格納するためのパスワードを指定します。 場合*パスワード*が指定されていないことが要求されます。                                        |
-| /delete{:<TargetName> &#124; /ras} |  一覧からユーザー名とパスワードを削除します。 場合*TargetName*エントリが削除されることを指定します。 /Ras が指定されている場合は、保存されているリモート アクセス エントリが削除されます。   |
-|         /list:<TargetName>         |                  保存されたユーザー名と資格情報を一覧表示します。 場合*TargetName*が指定すると、保存されているすべてのユーザー名と資格情報を一覧表示されます。                   |
+|         /add: <TargetName>          | ユーザー名とパスワードを一覧に追加します。<br /><br />@No__t-0 のパラメーターが必要です。このパラメーターは、このエントリが関連付けられるコンピューターまたはドメイン名を識別します。 |
+|       /汎用: <TargetName>        |   汎用的な資格情報をリストに追加します。<br /><br />@No__t-0 のパラメーターが必要です。このパラメーターは、このエントリが関連付けられるコンピューターまたはドメイン名を識別します。    |
+|             /smartcard             |                                                                    スマートカードから資格情報を取得します。                                                                     |
+|          /user: <UserName>          |                                 このエントリで格納するユーザー名またはアカウント名を指定します。 *UserName*が指定されていない場合は、要求されます。                                  |
+|          /pass: <Password>          |                                       このエントリで格納するパスワードを指定します。 *パスワード*が指定されていない場合は、要求されます。                                        |
+| /delete{: <TargetName> &#124; /ras} |  ユーザー名とパスワードを一覧から削除します。 *TargetName*を指定すると、そのエントリは削除されます。 /Ras を指定した場合、格納されているリモートアクセスエントリが削除されます。   |
+|         /list: <TargetName>         |                  保存されているユーザー名と資格情報の一覧を表示します。 *TargetName*が指定されていない場合、保存されているすべてのユーザー名と資格情報が一覧表示されます。                   |
 |                 /?                 |                                                                        コマンド プロンプトにヘルプを表示します。                                                                        |
 
-## <a name="remarks"></a>注釈
-- /smartcard コマンド ライン オプションを使用する場合に、システムでは、複数のスマート カードが検出された場合**cmdkey**使用可能なすべてのスマート カードに関する情報が表示され、ユーザーを指定するメッセージが表示されます。
-- 格納されていると、パスワードは表示されません。
+## <a name="remarks"></a>コメント
+- /smartcard コマンドラインオプションを使用しているときに、システムに複数のスマートカードが見つかった場合、使用可能なすべてのスマートカードに関する情報が表示され、使用するスマートカードを指定するように**求められ**ます。
+- パスワードは、保存されると表示されません。
   ## <a name="BKMK_examples"></a>例
-  すべてのユーザー名と保存されている資格情報の一覧を表示するには、次のように入力します。
+  保存されているすべてのユーザー名と資格情報の一覧を表示するには、次のように入力します。
   ```
   cmdkey /list
   ```
-  Kleo パスワードを使用してアクセス コンピューター Server01 にユーザー名とユーザー Mikedan のパスワードを追加するに次のように入力します。
+  パスワード Kleo でコンピューター Server01 にアクセスするためのユーザー名とパスワードを追加するには、次のように入力します。
   ```
   cmdkey /add:server01 /user:mikedan /pass:Kleo
   ```
-  Server01 がアクセスされるたびに、ユーザー名と Mikedan コンピューター Server01 にアクセスするユーザーのパスワードとパスワードのプロンプトを追加するに次のように入力します。
+  コンピューター Server01 にアクセスするためのユーザー名とパスワードを追加して、Server01 にアクセスするたびにパスワードの入力を求めるには、次のように入力します。
   ```
   cmdkey /add:server01 /user:mikedan
   ```
-  リモート アクセスが格納されている資格情報を削除するには、次のように入力します。
+  リモートアクセスに格納されている資格情報を削除するには、次のように入力します。
   ```
   cmdkey /delete /ras
   ```
@@ -67,5 +67,5 @@ cmdkey [{/add:<TargetName>|/generic:<TargetName>}] {/smartcard|/user:<UserName> 
   ```
   cmdkey /delete:Server01
   ```
-  ## <a name="additional-references"></a>その他の参照
+  ## <a name="additional-references"></a>その他の参照情報
   [コマンド ライン構文の記号](command-line-syntax-key.md)

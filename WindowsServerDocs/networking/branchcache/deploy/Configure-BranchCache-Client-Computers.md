@@ -2,32 +2,32 @@
 title: BranchCache クライアント コンピューターを構成する
 description: このトピックは、BranchCache 展開ガイドの Windows Server 2016、ブランチ オフィスに WAN 帯域幅使用量を最適化するために分散され、ホスト型キャッシュ モードで BranchCache を展開する方法を示しますの一部
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: e16dbea9-0f0a-41db-b460-14a1a7ad7540
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f0161f31ecb595fbf1df3515790610fd2c75d1a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d301d2bccac4ce2aae92fe6824601603195d3ef7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876973"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406503"
 ---
 # <a name="configure-branchcache-client-computers"></a>BranchCache クライアント コンピューターを構成する
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-次のトピックを使用すると、ドメインのメンバーと非ドメイン メンバー クライアント コンピューターの BranchCache 分散キャッシュまたはホスト型キャッシュ モード クライアントとして構成します。  
+次のトピックを使用して、ドメインメンバーおよび非ドメインメンバークライアントコンピューターを BranchCache 分散キャッシュまたはホスト型キャッシュモードクライアントとして構成することができます。  
   
--   [グループ ポリシーを使用して、ドメイン メンバー クライアント コンピューターを構成するには](../../branchcache/deploy/Use-Group-Policy-to-Configure-Domain-Member-Client-Computers.md)  
+-   [グループポリシーを使用してドメインメンバーのクライアントコンピューターを構成する](../../branchcache/deploy/Use-Group-Policy-to-Configure-Domain-Member-Client-Computers.md)  
   
--   [Windows PowerShell を使用して非ドメイン メンバー クライアント コンピューターを構成するには](../../branchcache/deploy/Use-Windows-PowerShell-to-Configure-Non-Domain-Member-Client-Computers.md)  
+-   [Windows PowerShell を使用して、ドメインメンバー以外のクライアントコンピューターを構成する](../../branchcache/deploy/Use-Windows-PowerShell-to-Configure-Non-Domain-Member-Client-Computers.md)  
   
--   [BranchCache トラフィックを許可する非ドメイン メンバーのファイアウォール規則を構成します。](../../branchcache/deploy/Configure-Firewall-Rules-for-Non-Domain-Members-to-Allow-BranchCache-Traffic.md)  
+-   [ドメイン以外のメンバーのファイアウォール規則を構成して BranchCache トラフィックを許可する](../../branchcache/deploy/Configure-Firewall-Rules-for-Non-Domain-Members-to-Allow-BranchCache-Traffic.md)  
   
--   [クライアント コンピューターの設定を確認します。](../../branchcache/deploy/Verify-Client-Computer-Settings.md)  
+-   [クライアントコンピューターの設定を確認する](../../branchcache/deploy/Verify-Client-Computer-Settings.md)  
   
 
 

@@ -1,135 +1,135 @@
 ---
-title: Robocopy を使用して、DFS レプリケーション用にファイルをプレシード
-description: DFS レプリケーション用にファイルをプレシードする Robocopy.exe を使用する方法。
-ms.prod: windows-server-threshold
+title: Robocopy を使用して DFS レプリケーション用にファイルをプリシードする
+description: Robocopy を使用して DFS レプリケーション用にファイルをプリシードする方法。
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: eaec563157a77fd4e782842a81e5b59e49a5ea09
-ms.sourcegitcommit: 7cb939320fa2613b7582163a19727d7b77debe4b
+ms.openlocfilehash: ea5cd954dde6d4fa8fcaa7874f75cb9588115ab1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65621303"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402127"
 ---
-# <a name="use-robocopy-to-preseed-files-for-dfs-replication"></a>Robocopy を使用して、DFS レプリケーション用にファイルをプレシード
+# <a name="use-robocopy-to-preseed-files-for-dfs-replication"></a>Robocopy を使用して DFS レプリケーション用にファイルをプリシードする
 
 >適用対象:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-このトピックでは、コマンド ライン ツールを使用する方法を説明します。 **Robocopy.exe**、Windows Server の分散ファイル システム (DFS) レプリケーション (DFSR または Dfs-r とも呼ばれます) のレプリケーションを設定するときに、ファイルをプレシードします。 DFS レプリケーションをセットアップする前に、ファイルを事前シード処理、新しいレプリケーション パートナーを追加またはサーバーに置き換える、初期同期を高速化し、Windows Server 2012 R2 の DFS レプリケーション データベースの複製を有効にすることができます。 Robocopy メソッドは、いくつか preseeding メソッドのいずれか概要については、次を参照してください。[手順 1: DFS レプリケーション用にファイルをプレシード](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495046(v%3dws.11)>)します。
+このトピックでは、Windows Server で分散ファイルシステム (DFS) レプリケーション (DFSR または DFS-R とも呼ばれます) のレプリケーションを設定するときに、コマンドラインツール**Robocopy**を使用してファイルをプリシードする方法について説明します。 DFS レプリケーションを設定したり、新しいレプリケーションパートナーを追加したり、サーバーを交換したりする前にファイルをプリシードすることにより、初期同期を高速化し、Windows Server 2012 R2 で DFS レプリケーションデータベースの複製を有効にすることができます。 Robocopy メソッドは、いくつかのプリシードメソッドの1つです。概要については、「 [Step 1: プレシード files for DFS レプリケーション](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495046(v%3dws.11)>)」を参照してください。
 
-Robocopy (堅牢なファイル コピー) コマンド ライン ユーティリティは、Windows Server に含まれています。 このユーティリティは、コピー セキュリティ、バックアップ API サポート、再試行機能、およびログ記録を含む広範なオプションを提供します。 以降のバージョンには、マルチ スレッド処理とされていないバッファー内の I/O のサポートが含まれます。
+Robocopy (堅牢なファイルコピー) コマンドラインユーティリティは、Windows Server に付属しています。 このユーティリティには、セキュリティのコピー、バックアップ API のサポート、再試行機能、ログ記録など、さまざまなオプションが用意されています。 それ以降のバージョンには、マルチスレッドおよびバッファーなしの i/o サポートが含まれています。
 
 >[!IMPORTANT]
->Robocopy では、排他的ロックされたファイルはコピーしません。 ユーザーは、長時間にわたって、ファイル サーバー上の多数のファイルをロックする傾向がある、異なる preseeding メソッドを使用してを検討してください。 事前シード処理は完全に一致するファイルのリスト、ソースと移行先サーバーの間は必要ありませんが、DFS レプリケーション、下がります事前シード処理の初期同期が実行されるときに存在しないファイルは。 ロックの競合を最小限に抑えるには、ピーク時以外に、組織の Robocopy を使用します。 常に排他ロックのためにどのファイルがスキップされたかを理解していることを確認する事前シード処理の後に Robocopy のログを調べる。
+>Robocopy は、排他的にロックされたファイルをコピーしません。 ファイルサーバー上の長い期間、ユーザーが多くのファイルをロックする傾向がある場合は、別の preseeding 処理方法を使用することを検討してください。 事前シード処理では、移行元サーバーと移行先サーバーのファイルリストの間で完全に一致する必要はありませんが、DFS レプリケーションに対して初期同期を実行したときに存在しないファイルが多いほど、事前シード処理の効率が低下します。 ロックの競合を最小限に抑えるには、組織のピーク時以外の時間帯に Robocopy を使用します。 事前シード処理の後、常に Robocopy ログを調べて、排他ロックが原因でスキップされたファイルを確実に把握できるようにします。
 
-Robocopy を使用して、DFS レプリケーション用にファイルをプレシードする、次の手順に従います。
+Robocopy を使用して DFS レプリケーション用にファイルをプリシードするには、次の手順を実行します。
 
-1. [ダウンロードして、Robocopy の最新バージョンをインストールします。](#step-1-download-and-install-the-latest-version-of-robocopy)
+1. [最新バージョンの Robocopy をダウンロードしてインストールします。](#step-1-download-and-install-the-latest-version-of-robocopy)
 2. [レプリケートされるファイルを安定化します。](#step-2-stabilize-files-that-will-be-replicated)
-3. [移行先サーバーにレプリケートされたファイルをコピーします。](#step-3-copy-the-replicated-files-to-the-destination-server)
+3. [レプリケートされたファイルを移行先サーバーにコピーします。](#step-3-copy-the-replicated-files-to-the-destination-server)
 
 ## <a name="prerequisites"></a>前提条件
 
-事前シード処理も、DFS レプリケーションは直接関係は、ためだけの Robocopy ファイル コピーを実行するための要件を満たす必要があります。
+事前シード処理には DFS レプリケーションが直接含まれないため、Robocopy でファイルコピーを実行するための要件を満たす必要があります。
 
-- ソースと宛先の両方のサーバー上でローカルの Administrators グループのメンバーであるアカウントが必要です。
+- 移行元サーバーと移行先サーバーの両方で、ローカルの Administrators グループのメンバーであるアカウントが必要です。
 
-- Robocopy の最新バージョンを使用するファイルをコピーするサーバーにインストール、移行元サーバーまたは対象サーバーのいずれかオペレーティング システムのバージョンの最新バージョンをインストールする必要があります。 手順については、次を参照してください。[手順 2。レプリケートされるファイルを安定化](#step-2-stabilize-files-that-will-be-replicated)します。 Windows Server 2003 R2 を実行しているサーバーからファイルを事前シード処理は、しない限り、ソースまたは移行先サーバーで Robocopy を実行できます。 通常より新しいオペレーティング システムのバージョンを移行先サーバーでは、Robocopy の最新バージョンにアクセスできます。
+- ファイルのコピーに使用するサーバー (移行元サーバーまたは移行先サーバー) に、最新バージョンの Robocopy をインストールします。オペレーティングシステムのバージョンの最新バージョンをインストールする必要があります。 手順について[は、「手順 2:レプリケート](#step-2-stabilize-files-that-will-be-replicated)されるファイルを安定化します。 Windows Server 2003 R2 を実行しているサーバーからファイルをプリシードする場合を除き、移行元または移行先のサーバーで Robocopy を実行できます。 移行先サーバーでは、通常、より新しいバージョンのオペレーティングシステムが使用されているため、最新バージョンの Robocopy にアクセスできます。
 
-- インストール先ドライブ上に十分な記憶域があることを確認します。 パスにコピーするには、フォルダーを作成できません。Robocopy には、ルート フォルダーを作成する必要があります。
+- コピー先のドライブに十分な記憶域スペースがあることを確認してください。 コピー先のパスにフォルダーを作成しないでください。Robocopy はルートフォルダーを作成する必要があります。
     
     >[!NOTE]
-    >Preseeded ファイル用に割り当てる領域の量を決定する場合は、DFS レプリケーションの時間と記憶域の要件に予想されるデータの増加を検討してください。 ヘルプを計画するには、次を参照してください。[ステージング フォルダーおよび競合して削除済みフォルダーのクォータ サイズを編集する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754229(v=ws.11))で[DFS レプリケーションを管理する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>)します。
+    >プリシードされたファイルに割り当てられる領域を決定するときは、時間の経過と共に予想されるデータ増加と DFS レプリケーションのストレージ要件を考慮してください。 計画のヘルプについては、「 [DFS レプリケーションの管理](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754771(v=ws.11)>)」の「[ステージングフォルダーと競合して削除されたフォルダーのクォータサイズを編集](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754229(v=ws.11))する」を参照してください。
 
-- ソース サーバーでは、必要に応じてプロセス モニターまたはファイルをロックしているアプリケーションの確認に使用できるプロセス エクスプ ローラーをインストールします。 ダウンロードについては、次を参照してください。[プロセス モニター](https://docs.microsoft.com/sysinternals/downloads/procmon)と[Process Explorer](https://docs.microsoft.com/sysinternals/downloads/process-explorer)します。
+- 移行元サーバーで、必要に応じてプロセスモニターまたはプロセスエクスプローラーをインストールします。これを使用すると、ファイルをロックしているアプリケーションを確認できます。 ダウンロードについては、「[プロセスモニター](https://docs.microsoft.com/sysinternals/downloads/procmon)と[プロセスエクスプローラー](https://docs.microsoft.com/sysinternals/downloads/process-explorer)」を参照してください。
 
-## <a name="step-1-download-and-install-the-latest-version-of-robocopy"></a>手順 1:ダウンロードして Robocopy の最新バージョンのインストール
+## <a name="step-1-download-and-install-the-latest-version-of-robocopy"></a>手順 1:最新バージョンの Robocopy をダウンロードしてインストールする
 
-ファイルをプレシードを Robocopy を使用する前に、ダウンロードしての最新バージョンをインストールする必要があります**Robocopy.exe**します。 これにより、DFS レプリケーションが Robocopy の出荷バージョン内で問題があるためファイルをスキップしません。
+Robocopy を使用してファイルをプリシードする前に、最新バージョンの**robocopy**をダウンロードしてインストールする必要があります。 これにより、Robocopy の出荷バージョン内の問題により、DFS レプリケーションがファイルをスキップしないようにします。
 
-最新の互換性のある Robocopy バージョンのソースは、サーバーで実行されている Windows Server のバージョンによって異なります。 Windows Server 2008 R2 の Robocopy または Windows Server 2008 の最新バージョンで修正プログラムをダウンロードする方法の詳細については、次を参照してください[分散ファイル システム (DFS) テクノロジ Windows Server 2008 で現在使用可能な修正プログラムの一覧。および Windows Server 2008 R2 で](https://support.microsoft.com/help/968429/list-of-currently-available-hotfixes-for-distributed-file-system-dfs-t)します。
+最新の互換性のある Robocopy バージョンのソースは、サーバーで実行されている Windows Server のバージョンによって異なります。 Windows Server 2008 R2 または Windows Server 2008 で最新バージョンの Robocopy を使用して修正プログラムをダウンロードする方法については、「 [Windows server 2008 およびでの分散ファイルシステム (DFS) テクノロジで現在利用可能な修正プログラムの一覧」を参照してください。Windows Server 2008 R2](https://support.microsoft.com/help/968429/list-of-currently-available-hotfixes-for-distributed-file-system-dfs-t)。
 
-または、検索して、次の手順を実行してオペレーティング システムの最新の修正プログラムをインストールできます。
+または、次の手順を実行して、オペレーティングシステムの最新の修正プログラムを見つけてインストールすることもできます。
 
-### <a name="locate-and-install-the-latest-version-of-robocopy-for-a-specific-version-of-windows-server"></a>検索して、特定のバージョンの Windows Server 用の Robocopy の最新バージョンのインストール
+### <a name="locate-and-install-the-latest-version-of-robocopy-for-a-specific-version-of-windows-server"></a>Windows Server の特定のバージョンに対応する Robocopy の最新バージョンを見つけてインストールする
 
-1. Web ブラウザーで開きます[ https://support.microsoft.com](https://support.microsoft.com/)します。
+1. Web ブラウザーでを開き[https://support.microsoft.com](https://support.microsoft.com/)ます。
 
-2. **検索をサポート**、次の入力文字列`<operating system version>`Enter キーを押します, 適切なオペレーティング システム。
+2. **検索サポート**で、次の文字列を入力し`<operating system version>` 、を適切なオペレーティングシステムに置き換えて、enter キーを押します。
     
     ```robocopy.exe kbqfe "<operating system version>"```
     
-    たとえば、入力**robocopy.exe カードを"Windows Server 2008 R2"** します。
+    たとえば、 **「robocopy kbqfe "Windows Server 2008 R2"」** と入力します。
 
-3. 見つけて最高の ID 番号 (これは、最新のバージョン) を持つ修正プログラムをダウンロードします。
+3. 最も大きい ID 番号 (つまり、最新バージョン) を使用して、修正プログラムを見つけてダウンロードします。
 
 4. サーバーに修正プログラムをインストールします。
 
-## <a name="step-2-stabilize-files-that-will-be-replicated"></a>手順 2:安定した状態にレプリケートされるファイル
+## <a name="step-2-stabilize-files-that-will-be-replicated"></a>手順 2:レプリケートされるファイルの安定化
 
-Robocopy の最新バージョンをサーバーにインストールした後はロックされているファイルを防ぐためから次の表で説明する方法を使用してブロックをコピーする必要があります。 ほとんどのアプリケーションでは、ファイルは排他的ロックしないでください。 ただし、通常の操作中にファイルのごく一部をファイル サーバー上でロックする可能性があります。
+最新バージョンの Robocopy をサーバーにインストールした後、次の表に示す方法を使用して、ロックされたファイルがコピーをブロックしないようにする必要があります。 ほとんどのアプリケーションでは、ファイルを排他的にロックしません。 ただし、通常の操作では、ファイルサーバーでファイルのごく一部がロックされている可能性があります。
 
 |ロックのソース|説明|軽減策|
 |---|---|---|
-|ユーザーは、リモート共有上のファイルを開きます。|従業員は、標準的なファイル サーバーに接続して、ドキュメント、マルチ メディア コンテンツ、またはその他のファイルを編集します。 従来のホーム フォルダーまたは共有データのワークロードとも呼ばれます。|Robocopy の操作中にのみ実行ピーク時以外に、非営業時間。 これには、Robocopy は、事前シード処理中にスキップする必要があるファイルの数が最小限に抑えます。<br><br>Windows PowerShell を使用してレプリケートされるファイル共有の読み取り専用アクセスを一時的に設定することも**Grant SmbShareAccess**と**閉じる SmbSession**コマンドレット。 読み取り専用に Everyone または Authenticated Users などの一般的なグループのアクセス許可を設定すると、標準ユーザーが排他ロック (この場合、アプリケーションは、ファイルが開かれたときに、読み取り専用アクセスを検出) ファイルを開くことはあまり可能性があります。<br><br>一時的なファイアウォール規則を設定することも検討 SMB ポート 445 の受信をサーバーにファイルへのアクセスをブロックまたはを使用して、**ブロック SmbShareAccess**コマンドレット。 ただし、これらのメソッドの両方がユーザーの操作に非常に悪影響を与えるです。|
-|アプリケーションでは、ローカル ファイルを開きます。|場合によって、ファイル サーバーで実行されているアプリケーション ワークロードでは、ファイルをロックします。|一時的に無効にするか、ファイルをロックしているアプリケーションをアンインストールします。 プロセス モニターまたはプロセス エクスプ ローラーを使用すると、ファイルをロックしているアプリケーションを決定します。 Process Monitor またはプロセス エクスプ ローラーをダウンロードするには、次を参照してください。、[プロセス モニター](https://docs.microsoft.com/sysinternals/downloads/procmon)と[Process Explorer](https://docs.microsoft.com/sysinternals/downloads/process-explorer)ページ。|
+|ユーザーは、共有上のファイルをリモートで開きます。|従業員は、標準のファイルサーバーに接続し、ドキュメント、マルチメディアコンテンツ、またはその他のファイルを編集します。 従来のホームフォルダーや共有データワークロードと呼ばれることもあります。|オフピークで営業時間外には、Robocopy 操作のみを実行します。 これにより、Robocopy がプリシード中にスキップする必要があるファイルの数が最小限に抑えられます。<br><br>Windows PowerShell **SmbShareAccess**コマンドレットと**SmbSession**コマンドレットを使用して、レプリケートされるファイル共有に対して読み取り専用アクセスを一時的に設定することを検討してください。 Everyone や認証されたユーザーなどの一般的なグループに対してアクセス許可を設定した場合、標準ユーザーは排他的なロックでファイルを開く可能性が低くなります (ファイルを開いたときにアプリケーションが読み取り専用アクセスを検出した場合)。<br><br>また、ファイルへのアクセスをブロックしたり、 **SmbShareAccess**コマンドレットを使用したりするために、SMB ポート445を受信する一時的なファイアウォール規則をそのサーバーに設定することも検討してください。 ただし、この2つの方法は、ユーザー操作の中断に非常に悪影響を及ぼします。|
+|アプリケーションはローカルでファイルを開きます。|ファイルサーバーで実行されているアプリケーションワークロードでは、ファイルがロックされることがあります。|ファイルをロックしているアプリケーションを一時的に無効にするか、アンインストールします。 プロセスモニターまたはプロセスエクスプローラーを使用して、ファイルをロックしているアプリケーションを特定できます。 プロセスモニターまたはプロセスエクスプローラーをダウンロードするには、[プロセスモニター](https://docs.microsoft.com/sysinternals/downloads/procmon)と[プロセスエクスプローラー](https://docs.microsoft.com/sysinternals/downloads/process-explorer)のページにアクセスしてください。|
 
-## <a name="step-3-copy-the-replicated-files-to-the-destination-server"></a>手順 3:移行先サーバーにレプリケートされたファイルをコピーします。
+## <a name="step-3-copy-the-replicated-files-to-the-destination-server"></a>手順 3:レプリケートされたファイルを移行先サーバーにコピーする
 
-レプリケートされるファイルのロックを最小限に抑えると後、は、移行先サーバーに移行元サーバーからファイルをプレシードことができます。
+レプリケートされるファイルのロックを最小限にすると、移行元サーバーから移行先サーバーにファイルを事前にシードすることができます。
 
 >[!NOTE]
->Robocopy は、元のコンピューターまたは対象のコンピューターのいずれかで実行できます。 次の手順では、通常より新しいオペレーティング システムが提供する追加の Robocopy 機能を活用するためより新しいオペレーティング システムを実行している移行先サーバーでの Robocopy の実行について説明します。
+>Robocopy は、移行元コンピューターと移行先コンピューターのどちらでも実行できます。 次の手順では、移行先サーバーで Robocopy を実行する方法について説明します。通常は、より新しいオペレーティングシステムを実行しているため、より新しいオペレーティングシステムで提供される追加の Robocopy 機能を利用できます。
 
-### <a name="preseed-the-replicated-files-onto-the-destination-server-with-robocopy"></a>Robocopy で移行先サーバーにレプリケートされたファイルをプレシードします。
+### <a name="preseed-the-replicated-files-onto-the-destination-server-with-robocopy"></a>レプリケートされたファイルを Robocopy を使用して移行先サーバーにプリシードする
 
-1. ソースと宛先の両方のサーバー上でローカルの Administrators グループのメンバーであるアカウントを使用して移行先サーバーにサインインします。
+1. 移行元サーバーと移行先サーバーの両方で、ローカルの Administrators グループのメンバーであるアカウントを使用して、移行先サーバーにサインインします。
 
 2. 管理者特権でのコマンド プロンプトを開きます。
 
-3. 移行先サーバーに元のファイルをプレシードするには、独自のソース、宛先、およびログ ファイルのパスのかっこで囲まれた値を置き換えて、次のコマンドを実行します。
+3. 転送元サーバーから転送先サーバーにファイルを事前にシード処理するには、次のコマンドを実行します。これには、角かっこで囲まれた値のソース、ターゲット、ログファイルの各パスを指定します。
     
     ```PowerShell
     robocopy "<source replicated folder path>" "<destination replicated folder path>" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:<log file path> /v
     ```
     
-    このコマンドは、次のパラメーターを使用して、移行先フォルダーにソース フォルダーのすべての内容をコピーします。
+    このコマンドは、ソースフォルダーのすべての内容をコピー先フォルダーにコピーします。パラメーターは次のとおりです。
     
     |パラメーター|説明|
     |---|---|
-    |"\<ソース フォルダーのパスをレプリケートする\>"|移行先サーバーにプレシードするソース フォルダーを指定します。|
-    |"\<先フォルダーのパスをレプリケートする\>"|Preseeded ファイルを保存するフォルダーへのパスを指定します。<br><br>コピー先のフォルダーは、移行先サーバーに既に存在する必要があります。 一致するファイルのハッシュを取得するには、とき、ファイルを preseeds Robocopy がルート フォルダーを作成する必要があります。|
-    |/e|サブディレクトリのファイルと空のサブディレクトリにコピーします。|
+    |"\<ソースのレプリケートフォルダー\>のパス"|転送先サーバーで事前シードを行うソースフォルダーを指定します。|
+    |"\<レプリケート先のレプリケート\>フォルダーのパス"|プリシードされたファイルを格納するフォルダーへのパスを指定します。<br><br>コピー先のフォルダーは、移行先サーバーに既に存在していてはなりません。 一致するファイルハッシュを取得するには、Robocopy は、ファイルを事前にシードするときにルートフォルダーを作成する必要があります。|
+    |/e|サブディレクトリとそのファイル、および空のサブディレクトリをコピーします。|
     |/b|Backup モードでファイルをコピーします。|
-    |/copyall|すべてのファイルは、データ、属性、タイムスタンプ、NTFS アクセス制御リスト (ACL)、所有者情報、および監査情報をコピーします。|
-    |/r:6|エラーが発生したときに 6 回の操作を再試行します。|
-    |/w:5|5 秒間再試行を待機します。|
-    |MT:64|64 のファイルを同時にコピーします。|
+    |/copyall|データ、属性、タイムスタンプ、NTFS アクセス制御リスト (ACL)、所有者情報、および監査情報を含む、すべてのファイル情報をコピーします。|
+    |/r: 6|エラーが発生したときに、操作を6回再試行します。|
+    |/w: 5|再試行を5秒間待機します。|
+    |MT:64|64ファイルを同時にコピーします。|
     |/xd DfsrPrivate|DfsrPrivate フォルダーを除外します。|
-    |/tee|ログ ファイルのほか、コンソール ウィンドウには、状態の出力を書き込みます。|
-    |/log\<ログ ファイルのパス >|書き込み先のログ ファイルを指定します。 ファイルの既存の内容を上書きします。 (既存のログ ファイルにエントリを追加するには使用`/log+ <log file path>`)。|
-    |/v|含まれる詳細出力の生成には、ファイルがスキップされます。|
+    |/tee|ログファイルだけでなく、コンソールウィンドウに状態出力を書き込みます。|
+    |/log \<ログファイルのパス >|書き込むログファイルを指定します。 ファイルの既存の内容を上書きします。 (既存のログファイルにエントリを追加するには`/log+ <log file path>`、を使用します)。|
+    |/v|スキップされたファイルを含む詳細な出力を生成します。|
     
-    次のコマンドが e: レプリケートするソース フォルダーからファイルを複製するなど、\\RF01、移行先サーバー上のデータ ドライブ D に。
+    たとえば、次のコマンドは、ソースのレプリケートされたフォルダー E:\\RF01 からコピー先のサーバー上のデータドライブ D にファイルをレプリケートします。
     
     ```PowerShell
     robocopy.exe "\\srv01\e$\rf01" "d:\rf01" /e /b /copyall /r:6 /w:5 /MT:64 /xd DfsrPrivate /tee /log:c:\temp\preseedsrv02.log
     ```
     
     >[!NOTE]
-    >Robocopy を使用して、DFS レプリケーション用にファイルをプレシードする場合は、上記のパラメーターを使用することをお勧めします。 ただし、その値の一部を変更または追加のパラメーターを追加できます。 より高い値 (スレッド数) を設定する容量があることをテスト見つける可能性がありますなど、 */MT*パラメーター。 またより大きなファイルを複製し、主に場合、できますを追加して、コピーのパフォーマンスを向上させること、 **/j**バッファなし I/O のオプション。 Robocopy のパラメーターの詳細については、次を参照してください。、 [Robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy)コマンド ライン リファレンス。
+    >Robocopy を使用して DFS レプリケーション用にファイルをプリシードする場合は、上記のパラメーターを使用することをお勧めします。 ただし、一部の値を変更したり、パラメーターを追加したりすることはできます。 たとえば、 */mt*パラメーターにより高い値 (スレッド数) を設定できる容量があることをテストすることができます。 また、主に大きなファイルをレプリケートする場合は、バッファーを使用しない i/o に対して **/j**オプションを追加することで、コピーのパフォーマンスを向上させることができます。 Robocopy パラメーターの詳細については、「 [robocopy](https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy)コマンドラインリファレンス」を参照してください。
 
     >[!WARNING]
-    >Robocopy を使用して、DFS レプリケーション用にファイルをプレシードする場合は、データ損失の可能性を避けるため、次の変更にしないで推奨パラメーター。
-    >- 使用しないでください、 */mir*パラメーター (つまり、ディレクトリ ツリーをミラー化) または */mov*パラメーター (つまり、ファイルを移動し、それらをソースから削除します)。
-    >-  削除しないでください、 **/e**、 **/b**、および **/copyall**オプション。
+    >Robocopy を使用して DFS レプリケーション用にファイルをプリシードする場合、データ損失の可能性を回避するために、推奨されるパラメーターを次のように変更しないでください。
+    >- */Mir*パラメーター (ディレクトリツリーをミラー化) または */mov*パラメーター (ファイルを移動してソースから削除する) は使用しないでください。
+    >-  **/E**、 **/b**、および **/copyall**オプションは削除しないでください。
 
-4. コピーが完了したら後、は、エラーまたはスキップされたファイルのログを調べます。 ファイルのセット全体を再コピーではなく、個別にスキップされたファイルをコピーするのにには、Robocopy を使用します。 排他ロックのためファイルをスキップした場合は、個々 のファイルを Robocopy 後で、コピーを試すか、それらのファイルをネットワーク経由のレプリケーション DFS レプリケーションで初期同期中に要求することに同意します。
+4. コピーが完了したら、エラーまたはスキップされたファイルのログを調べます。 ファイルのセット全体を再コピーするのではなく、Robocopy を使用して、スキップされたファイルを個別にコピーします。 排他ロックのためにファイルがスキップされた場合は、後で Robocopy を使用して個々のファイルをコピーするか、初期同期中に DFS レプリケーションによってネットワーク経由でのレプリケーションが必要であることを受け入れます。
 
 ## <a name="next-step"></a>次の手順
 
-使用する初期のコピーが完了し、Robocopy、できるだけ多くのスキップしたファイルに関する問題の解決を使用して後、 **Get DfsrFileHash**で Windows PowerShell コマンドレットまたは**Dfsrdiag**コマンドソースと移行先サーバー上のファイル ハッシュを比較することによって、preseeded ファイルを検証します。 詳細については、次を参照してください。[手順 2。DFS レプリケーションの Preseeded ファイルを検証する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495042(v%3dws.11)>)します。
+最初のコピーを完了し、Robocopy を使用して、スキップされたファイルの数ができるだけ多い問題を解決する場合は、Windows PowerShell または**dfsrdiag.exe**コマンドで**DfsrFileHash**コマンドレットを使用して、移行元サーバーと移行先サーバーのファイルハッシュ。 詳細な手順につい[ては、「手順 2:DFS レプリケーション](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn495042(v%3dws.11)>)のプリシードファイルを検証します。

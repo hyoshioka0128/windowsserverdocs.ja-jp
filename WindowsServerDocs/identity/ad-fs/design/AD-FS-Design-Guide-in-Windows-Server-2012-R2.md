@@ -7,25 +7,25 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2d15f680f28c54da75100a03f7b85e880442d9be
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 614bc2b4571dd8a1b35c075ae1dec6934e77e148
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191738"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408166"
 ---
-# <a name="ad-fs-design-guide-in-windows-server"></a>Windows Server で AD FS 設計ガイドします。 
+# <a name="ad-fs-design-guide-in-windows-server"></a>Windows Server の AD FS 設計ガイド 
 
-Active Directory フェデレーション サービス\(AD FS\)シンプルで安全な id フェデレーションと Web シングル サインオンを提供します\-で\(SSO\)アプリケーションへのアクセスを希望するエンドユーザー向け機能。AD FS 内\-enterprise、またはクラウドでフェデレーション パートナー組織では、セキュリティで保護します。  
+Active Directory フェデレーションサービス (AD FS) \(AD FS\) を使用すると、セキュリティで保護されたエンタープライズ、フェデレーションパートナー組織、またはクラウド内のアプリケーションへのアクセスを必要とするエンドユーザー向けに、シンプルで安全な id フェデレーションと Web シングルサイン\-を \(SSO\) 機能に提供できます。\-  
   
-Windows Server® 2012 R2 では、AD FS には id プロバイダーとして機能するフェデレーション サービス役割サービスが含まれます\(AD FS を信頼するアプリケーションにセキュリティ トークンを提供するユーザーを認証\)またはフェデレーション プロバイダー \(他の id プロバイダーからトークンを使用して、AD FS を信頼するアプリケーションにセキュリティ トークン\)します。  
+Windows Server® 2012 R2 では、AD FS に、id プロバイダーとして機能するフェデレーションサービス役割サービスが含まれています。これは、ユーザーを認証して AD FS\) を信頼するアプリケーションにセキュリティトークンを提供し \(フェデレーションプロバイダーとして使用して、他の id プロバイダーからのトークンを使用し、\(を信頼するアプリケーションにセキュリティトークンを提供\)  
   
-Windows Server 2012 R2 の AD FS によって保護されたアプリケーションやサービスへのエクストラネット アクセスを提供する機能は、Web アプリケーション プロキシと呼ばれる新しいリモート アクセス役割サービスによて実行されるようになりました。 以前のバージョンの Windows Server では、この機能は AD FS フェデレーション サーバー プロキシによって処理されていました。 Web アプリケーション プロキシは、AD FS のアクセスを提供するサーバーの役割\-エクストラネット シナリオとその他のエクストラネット シナリオに関連します。 Web アプリケーション プロキシの詳細については、次を参照してください。 [Web アプリケーション プロキシのチュートリアル ガイド](https://technet.microsoft.com/library/dn280944.aspx)します。  
+Windows Server 2012 R2 の AD FS によって保護されたアプリケーションやサービスへのエクストラネット アクセスを提供する機能は、Web アプリケーション プロキシと呼ばれる新しいリモート アクセス役割サービスによて実行されるようになりました。 以前のバージョンの Windows Server では、この機能は AD FS フェデレーション サーバー プロキシによって処理されていました。 Web アプリケーションプロキシは、関連するエクストラネットシナリオやその他のエクストラネットシナリオに AD FS\-アクセスできるように設計されたサーバーの役割です。 Web アプリケーションプロキシの詳細については、 [Web アプリケーションプロキシのチュートリアルガイド](https://technet.microsoft.com/library/dn280944.aspx)を参照してください。  
   
 ## <a name="about-this-guide"></a>このガイドについて  
-このガイドでは、組織の要件に基づいて、AD FS の新しい展開を計画に役立つ推奨事項を提供します。 このガイドの対象読者は、インフラストラクチャ専門家またはシステム アーキテクトです。 AD FS の展開を計画するときの主要な判断基準が強調表示されます。 このガイドを読む前に、AD FS が機能レベルでどのように動作するしくみをよく理解が必要です。 詳細については、「 [Understanding Key AD FS Concepts](../../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md)」を参照してください。  
+このガイドでは、組織の要件に基づいて、AD FS の新しい展開を計画する際に役立つ推奨事項について説明します。 このガイドの対象読者は、インフラストラクチャ専門家またはシステム アーキテクトです。 AD FS の展開を計画する際に、主な意思決定点に焦点を当てます。 このガイドを読む前に、AD FS が機能レベルでどのように機能するかについて十分に理解しておく必要があります。 詳細については、「 [Understanding Key AD FS Concepts](../../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md)」を参照してください。  
   
 ## <a name="in-this-guide"></a>このガイドについて  
   
@@ -36,7 +36,7 @@ Windows Server 2012 R2 の AD FS によって保護されたアプリケーシ�
 -   [AD FS の要件](AD-FS-Requirements.md)  
   
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [AD FS の設計](../../ad-fs/AD-FS-Design.md)  
   
 

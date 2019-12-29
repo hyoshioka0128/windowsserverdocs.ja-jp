@@ -1,7 +1,7 @@
 ---
 title: パフォーマンス カウンターを使用して、リモート デスクトップ セッション ホストでのアプリケーションの応答性の問題を診断する
 description: RDS でのアプリの実行速度が遅いですか。 RDS でのアプリのパフォーマンス問題を診断するために使用できるパフォーマンス カウンターについて説明する
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: remote-desktop-services
 ms.author: elizapo
 ms.date: 07/11/2019
@@ -10,12 +10,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a302e775d3304db9304cc51e09ede19fa2eba802
-ms.sourcegitcommit: f75d9496f345d73fdda88037617763e7a2f614b7
+ms.openlocfilehash: b59d93d576967ee83b3efecc2630034eab919bf2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67863114"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403905"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>パフォーマンス カウンターを使用して、リモート デスクトップ セッション ホストでのアプリのパフォーマンス問題を診断する
 
@@ -40,7 +40,7 @@ ms.locfileid: "67863114"
 
 このカウンターの 1 つの重要な詳細な内容は、構成可能な間隔内での最大のユーザー入力遅延を報告しているという点です。 これは、入力がアプリケーションに到達するまでにかかる最長の時間であり、タイピングなどの重要で目に見えるアクションの速度に影響する場合があります。
 
-たとえば、次の表では、ユーザー入力遅延はこの間隔内で 1,000 ミリ秒として報告されます。 ユーザーの "低い" という感覚は、すべての入力合計の平均速度ではなく、ユーザーが経験する最も遅い入力時間 (最長) によって決まるため、このカウンターは最も遅いユーザー入力遅延を報告します。
+たとえば、次の表では、ユーザー入力遅延はこの間隔内で 1,000 ミリ秒として報告されます。 ユーザーの "低い" という感覚は、すべての入力合計の平均速度ではなく、ユーザーが経験する最も遅い入力時間 (最長) によって決まるため、このカウンターでは最も遅いユーザー入力遅延が報告されます。
 
 |数値| 0 | 1 | 2 |
 |------|---|---|---|

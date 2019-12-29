@@ -1,8 +1,8 @@
 ---
 title: logman update
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4f238fa95761e8e561e3a2c10e599bfe8980ae05
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e56a20d622f70f442f605e8ecbb64b7c70a2e02
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841433"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374252"
 ---
 # <a name="logman-update"></a>logman update
 
 
 
-既存のデータ コレクターを更新します。
+既存のデータコレクターを更新します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,11 +36,11 @@ logman update <counter | trace | alert | cfg | api> <[-n] <name>> [options]
 
 |パラメーター|説明|
 |---------|-----------|
-|[logman update カウンター](logman-update-counter.md)|カウンターのデータ コレクターを更新します。|
-|[logman update trace](logman-update-trace.md)|トレースのデータ コレクターを更新します。|
-|[logman の更新の通知](logman-update-alert.md)|アラート データ コレクターを更新します。|
-|[logman update cfg](logman-update-cfg.md)|データ コレクターの構成を更新します。|
-|[logman api を更新します。](logman-update-api.md)|API のトレース データ コレクターを更新します。|
+|[logman 更新カウンター](logman-update-counter.md)|カウンターデータコレクターを更新します。|
+|[logman 更新トレース](logman-update-trace.md)|トレースデータコレクターを更新します。|
+|[logman 更新アラート](logman-update-alert.md)|アラートデータコレクターを更新します。|
+|[logman 更新 cfg](logman-update-cfg.md)|構成データコレクターを更新します。|
+|[logman 更新 api](logman-update-api.md)|API トレースデータコレクターを更新します。|
 
 #### <a name="additional-references"></a>その他の参照情報
 

@@ -1,8 +1,8 @@
 ---
 title: type
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,23 +12,23 @@ ms.assetid: c44fe905-a865-4c97-8cc5-fb95fec7d4d5
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 4ceb7365d34a2aeca21d1a699730a589f98fd549
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 37f66d54983c002d5d09db5cb255d01635a534de
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887403"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392322"
 ---
 # <a name="type"></a>type
 
 
-Windows コマンド シェルで**型**は組み込みのコマンドをテキスト ファイルの内容を表示します。 使用して、**型**を変更せずにテキスト ファイルを表示するコマンド。
+Windows コマンドシェルの**type**は、テキストファイルの内容を表示する組み込みコマンドです。 **Type**コマンドを使用して、テキストファイルを変更せずに表示します。
 
 
-PowerShell では、**型**を組み込みエイリアスでは、 **[Get-content](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content)** コマンドレットに渡しても、構文が異なりますが、ファイルの内容を表示します。
+PowerShell では、 **type**は **[Get Content](https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-content)** コマンドレットへの組み込みエイリアスであり、ファイルの内容も表示されますが、構文は異なります。
 
 
-Windows コマンド シェル (Cmd.exe) 内でこのコマンドを使用する方法の例については、次を参照してください。[例](#BKMK_examples)します。
+Windows コマンドシェル (Cmd.exe) 内でこのコマンドを使用する方法の例については、「[例](#BKMK_examples)」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -40,25 +40,25 @@ type [<Drive>:][<Path>]<FileName>
 
 |パラメーター|説明|
 |---------|-----------|
-|[\<ドライブ >:] [\<パス >]\<ファイル名 >|ファイルまたは表示するファイルの名前と場所を指定します。 複数のファイル名を空白で区切ります。|
+|[\<Drive >:][\< パス >] \<FileName >|表示するファイルの場所と名前を指定します。 複数のファイル名をスペースで区切ります。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   場合*FileName*スペースが含まれています (たとえば、"ファイル名を含む Spaces.txt") の引用符で囲みます。
--   バイナリ ファイルまたはプログラムによって作成されるファイルを表示する場合は、フォーム フィード文字とエスケープ シーケンスのシンボルを含む画面で、異常な文字を参照してください可能性があります。 これらの文字は、バイナリ ファイルで使用される制御コードを表します。 一般に、使用しないでください、**型**バイナリ ファイルを表示するコマンド。
+-   *FileName*にスペースが含まれている場合は、引用符で囲みます (たとえば、"Spaces .Txt を含むファイル名")。
+-   プログラムによって作成されたバイナリファイルまたはファイルを表示すると、フォームフィード文字やエスケープシーケンスのシンボルなど、画面に奇妙な文字が表示されることがあります。 これらの文字は、バイナリファイルで使用される制御コードを表します。 一般に、バイナリファイルの表示には**type**コマンドを使用しないでください。
 
 ## <a name="BKMK_examples"></a>例
 
-Holiday.mar という名前のファイルの内容を表示するには、次のように入力します。
+祭日という名前のファイルの内容を表示するには、次のように入力します。
 ```
 type holiday.mar 
 ```
-一度に 1 画面ずつ Holiday.mar をという名前の時間のかかるファイルの内容を表示するには、次のように入力します。
+祝日という名前の長いファイルの内容を一度に1画面ずつ表示するには、次のように入力します。
 ```
 type holiday.mar | more 
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

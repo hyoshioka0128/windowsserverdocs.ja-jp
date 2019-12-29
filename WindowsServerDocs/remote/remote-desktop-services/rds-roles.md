@@ -1,19 +1,19 @@
 ---
 title: リモート デスクトップ サービス ロール
 description: デスクトップ ホスティング サービスのコンポーネントについて説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: remote-desktop-services
 ms.author: helohr
 ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: dougkim
-ms.openlocfilehash: 717f6c714ce95793a9a7b5fcf0ddd304c77daa32
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: f26f75b8ce3f5438362c15b84aeca9339b95ebbc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63753173"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387204"
 ---
 # <a name="remote-desktop-services-roles"></a>リモート デスクトップ サービス ロール
 

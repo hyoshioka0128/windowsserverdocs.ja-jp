@@ -1,8 +1,8 @@
 ---
-title: Reg ロード
-description: 'Windows コマンド」のトピック * * *- '
+title: reg load
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ebc75ad78b7334f4d48a085f6870a443b31fa2a9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: db661e311e3fe8c393750716de5dab375e7817f4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852193"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384699"
 ---
-# <a name="reg-load"></a>Reg ロード
+# <a name="reg-load"></a>reg load
 
 
 
@@ -38,15 +38,15 @@ reg load KeyName FileName
 
 |パラメーター|説明|
 |---------|-----------|
-|\<キー名 >|読み込むサブキーの完全なパスを指定します。 リモート コンピューターに指定する場合、コンピューター名を含める (形式の\\ \\ComputerName\)の一部として、 *KeyName*します。 省略すると\\ \\ComputerName\ によりローカル コンピューターに既定値に操作します。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キーは次のとおりです。HKLM、HKCU、HKCR、HKU、および hkcc します。 リモート コンピューターが指定されている場合は、有効なルート キーは。HKLM および hku です。|
-|\<FileName>|読み込むファイルのパスと名前を指定します。 使用してこのファイルを事前に作成する必要があります、 **reg 保存** 操作と .hiv 拡張子です。|
+|\<KeyName >|読み込むサブキーの完全なパスを指定します。 リモートコンピューターを指定する場合は、コンピューター名 (\\\\ComputerName\) を*KeyName*の一部として指定します。 \\\\ComputerName \ を省略すると、操作は既定でローカルコンピューターに設定されます。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キー: HKLM、HKCU、HKCR、HKU、および HKCC します。 有効なルート キーは、リモート コンピューターが指定されている場合: HKLM および HKU します。|
+|\<ファイル名 >|読み込むファイルのパスと名前を指定します。 使用してこのファイルを事前に作成する必要があります、 **reg 保存** 操作と .hiv 拡張子です。|
 |/?|ヘルプを表示 **reg ロード** コマンド プロンプト。|
 
 ## <a name="remarks"></a>注釈
 
 次の表に、戻り値の **reg ロード** 操作します。
 
-|値|説明|
+|Value|説明|
 |-----|-----------|
 |0|成功|
 |1|失敗|
@@ -60,4 +60,4 @@ REG LOAD HKLM\TempHive TempHive.hiv
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

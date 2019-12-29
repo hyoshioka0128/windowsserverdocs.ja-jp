@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 594e1605f44dad69ab7eee8b22e6a620ade02ad0
-ms.sourcegitcommit: c307886e96622e9595700c94128103b84f5722ce
+ms.openlocfilehash: 99167850ff9ee193aca888d34d98503ea0554c30
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70108742"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408552"
 ---
 # <a name="ad-fs-operations"></a>AD FS の運用
 
@@ -77,7 +77,7 @@ ms.locfileid: "70108742"
 - [パスワードの有効期限クレームを送信するように AD FS を構成する](../ad-fs/operations/Configure-AD-FS-to-Send-Password-Expiry-Claims.md)
 - [WIA をサポートしないデバイス用にイントラネット フォーム ベースの認証を構成する](../ad-fs/operations/Configure-intranet-forms-based-authentication-for-devices-that-do-not-support-WIA.md)
 
-## <a name="other"></a>Other
+## <a name="other"></a>その他
 - [任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証](../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 - [追加の多要素認証による個人情報アプリケーションのリスク管理](../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [条件付きアクセス制御によってリスクを管理する](../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)

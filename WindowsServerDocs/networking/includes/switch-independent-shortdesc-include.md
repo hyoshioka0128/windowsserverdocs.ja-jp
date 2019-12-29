@@ -2,13 +2,13 @@
 author: shortpatti
 ms.author: pashort
 ms.date: 10/02/2018
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms:topic: include
-ms.openlocfilehash: e96aedc7f45cbc4e812110ddc6dcbe737134a981
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ef22deaf9ae8631e16565a4b339f2a2f92b3e23a
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841453"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935095"
 ---
-独立したスイッチのモードでは、スイッチまたはスイッチを NIC チームのメンバーが接続されている NIC チームの存在に対応していないし、NIC チームのメンバーへのネットワーク トラフィックを分散させる方法を特定できません代わりに、NIC チーム分散受信ネットワークNIC チーム メンバー間でトラフィックをします。 
+スイッチ非依存モードでは、nic チームのメンバーが接続されているスイッチまたはスイッチが nic チームの存在を認識せず、nic チームのメンバーにネットワークトラフィックを分散する方法が決定されません。代わりに、NIC チームが受信ネットワークを分散します。NIC チームメンバー間のトラフィック。 

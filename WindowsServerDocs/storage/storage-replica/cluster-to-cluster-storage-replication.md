@@ -1,6 +1,6 @@
 ---
 title: クラスター間の記憶域のレプリケーション
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: siroy
 ms.author: nedpyle
 ms.technology: storage-replica
@@ -8,26 +8,26 @@ ms.topic: get-started-article
 ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
 ms.date: 04/26/2019
-description: 記憶域レプリカを使用して、Windows Server を実行している別のクラスターを 1 つのクラスター内のボリュームをレプリケートする方法。
-ms.openlocfilehash: 9d4b7eb05576095abd5d8c905211b2a5e88555bd
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+description: 記憶域レプリカを使用して、あるクラスターのボリュームを、Windows Server を実行している別のクラスターにレプリケートする方法について説明します。
+ms.openlocfilehash: 81c1357ba3d37fcecc0aeb59a92472044bb9ce3b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447636"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393790"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>クラスター間の記憶域のレプリケーション
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
-記憶域レプリカは、記憶域スペース ダイレクトを使用してクラスターのレプリケーションなど、クラスター間でボリュームをレプリケートできます。 管理と構成は、サーバー間のレプリケーションに似ています。  
+記憶域レプリカは、記憶域スペースダイレクトを使用したクラスターのレプリケーションなど、クラスター間でボリュームをレプリケートできます。 管理と構成は、サーバー間のレプリケーションに似ています。  
 
 これらのコンピューターと記憶域をクラスター間構成で構成します。クラスター間構成では、1 つのクラスターがそれ自体の一連の記憶域、および別のクラスターとその一連の記憶域をレプリケートします。 これらのノードとその記憶域は個別の物理サイトに配置することをお勧めしますが、必須ではありません。  
 
 > [!IMPORTANT]
-> このテストでは、4 台のサーバーは一例です。 記憶域スペース ダイレクト クラスターの 8 および 64 ビットの共有記憶域クラスターでは現在、各クラスターで Microsoft によってサポートされているサーバーの任意の数を使用することができます。  
+> このテストでは、4 台のサーバーは一例です。 各クラスターでは、Microsoft がサポートしている任意の数のサーバーを使用できます。これは現在、記憶域スペースダイレクトクラスターの場合は8、共有記憶域クラスターの場合は64です。  
 >   
-> このガイドでは、記憶域スペース ダイレクトの構成については説明しません。 記憶域スペース ダイレクトを構成する方法の詳細については、次を参照してください。[記憶域スペース ダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)します。  
+> このガイドでは、記憶域スペース ダイレクトの構成については説明しません。 記憶域スペースダイレクトの構成の詳細については、「[記憶域スペースダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)」を参照してください。  
 
 このチュートリアルでは、例として、次の環境を使用します。  
 
@@ -39,25 +39,25 @@ ms.locfileid: "66447636"
 
 ![例の環境を示す図。Redmond サイトのクラスターで Bellevue サイトのクラスターがレプリケートされます](./media/Cluster-to-Cluster-Storage-Replication/SR_ClustertoCluster.png)  
 
-**図 1:クラスター間のレプリケーション**  
+**図 1: クラスターからクラスターへのレプリケーション**  
 
 ## <a name="prerequisites"></a>前提条件  
 
 * Active Directory Domain Services フォレスト (Windows Server 2016 を実行する必要はありません)。  
-* 4-128 サーバー (2 から 64 のサーバーの 2 つのクラスター) Windows Server 2019 または Windows Server 2016 Datacenter Edition を実行します。 [Ok] を 1 つのボリュームだけをレプリケートする場合に、代わりに Standard Edition を使用する Windows Server 2019 を実行している場合に最大 2 TB のサイズ。  
+* 4-128 サーバー (2-64 サーバーの2つのクラスター) は、Windows Server 2019 または Windows Server 2016 (Datacenter Edition) を実行しています。 Windows Server 2019 を実行している場合は、通常は Standard Edition を使用することができます。これにより、1つのボリュームのみを最大 2 TB までレプリケートできます。  
 * SAS JBOD、ファイバー チャネル SAN、共有 VHDX、記憶域スペース ダイレクト、または iSCSI ターゲットを使う 2 セットのストレージ。 記憶域では HDD メディアと SSD メディアを混在させる必要があります。 各記憶域は、クラスター間に共有アクセスなしで、各クラスターでのみ利用可能となるように設定します。  
 * 各記憶域セットでは、2 つ以上の仮想ディスク (レプリケートされたデータ用とログ用) を作成できる必要があります。 物理記憶域のセクター サイズは、すべてのデータ ディスクで同じである必要があります。 物理記憶域のセクター サイズは、すべてのログ ディスクで同じである必要があります。  
 * 同期レプリケーションのために各サーバーで少なくとも 1 つのイーサネット/TCP 接続 (可能であれば RDMA)。   
 * すべてのノード間での ICMP、SMB (ポート 445 と、SMB ダイレクト用のポート 5445)、WS-MAN (ポート 5985) の双方向トラフィックを許可する適切なファイアウォール規則およびルーター規則。  
 * 書き込みの IO 負荷に十分対応できる帯域幅を持ちラウンド トリップ遅延時間が平均 5 ミリ秒である、同期レプリケーション用のサーバー間ネットワーク。 非同期レプリケーションには、遅延時間に関する推奨事項はありません。  
 * レプリケート対象の記憶域を、Windows オペレーティング システムのフォルダーが含まれるドライブに配置することはできません。
-* 重要な考慮事項と記憶域スペース ダイレクトのレプリケーションの制限事項がある - 以下の詳細な情報を確認してください。
+* 記憶域スペースダイレクトレプリケーションの & には、重要な考慮事項があります。以下の詳細情報を確認してください。
 
 これらの要件の多くは、`Test-SRTopology` コマンドレットを使用して判別できます。 記憶域レプリカまたは記憶域レプリカ管理ツール機能を 1 つ以上のサーバーにインストールすると、このツールにアクセスできるようになります。 このツールを使用するために、記憶域レプリカを構成する必要はありません。記憶域レプリカは、コマンドレットをインストールするためだけに構成します。 詳細は、以下の手順に記載されています。  
 
-## <a name="step-1-provision-operating-system-features-roles-storage-and-network"></a>手順 1:オペレーティング システム、機能、役割、記憶域、およびネットワークのプロビジョニング
+## <a name="step-1-provision-operating-system-features-roles-storage-and-network"></a>手順 1: オペレーティング システム、機能、役割、記憶域、およびネットワークのプロビジョニング
 
-1.  Windows Server のインストールの種類で 4 つのサーバー ノードすべてに Windows Server をインストール **(デスクトップ エクスペリエンス)** します。 
+1.  Windows server **(デスクトップエクスペリエンス)** のインストールの種類を使用して、4つのサーバーノードすべてに windows server をインストールします。 
 
 2.  ネットワークの情報を追加し、ドメインに参加させてから再起動します。  
 
@@ -83,7 +83,7 @@ ms.locfileid: "66447636"
 
         2.  各ノードに**ファイル サーバー**と**記憶域レプリカ**の役割と機能をインストールし、再起動します。  
 
-    -   **Windows PowerShell による方法**  
+    -   **Windows PowerShell メソッド**  
 
         SR-SRV04 またはリモート管理コンピューター上で、Windows PowerShell コンソール内で次のコマンドを実行して、4 つのノード上でストレッチ クラスター用に必要な機能と役割をインストールし、ノードを再起動します。  
 
@@ -106,34 +106,34 @@ ms.locfileid: "66447636"
     > -   すべてのログ ディスクのセクター サイズは、同じである必要があります。  
     > -   ログ ボリュームには、SSD など、フラッシュ ベースのストレージを使用する必要があります。  ログ ストレージには、データ ストレージよりも大きな速度を確保することをお勧めします。 ログ ボリュームは、絶対に他のワークロードに使用しないでください。
     > -   データ ディスクには、HDD、SSD、または階層型の組み合わせを使用でき、ミラーまたはパリティ スペースか、RAID 1 または 10 もしくは RAID 5 または RAID 50 のいずれかを使用できます。  
-    > -   ログ ボリュームは、既定では、少なくとも 8 GB である必要があり、ログ要件に応じて増減する可能性があります。
-    > -   値が高い表示、NVME または SSD のキャッシュを使用して記憶域スペース ダイレクト (記憶域スペース ダイレクト) を使用する場合の待機時間の記憶域スペース ダイレクト クラスター間で記憶域レプリカ レプリケーションを構成するときに予想よりもします。 待機時間の変更が、それに比例してより大幅に高く、パフォーマンス + 容量の構成となしの HDD 層も容量レベルで NVME と SSD を使用する場合を参照してください。
+    > -   ログボリュームは、既定では 8 GB 以上である必要があり、ログ要件に基づいて、より大きいか小さくなることがあります。
+    > -   NVME または SSD のキャッシュで記憶域スペースダイレクト (記憶域スペースダイレクト) を使用すると、記憶域スペースダイレクトクラスター間で記憶域レプリカのレプリケーションを構成するときに予想よりも長い待機時間が増加することがわかります。 待機時間の変更は、パフォーマンス + 容量の構成で NVME と SSD を使用する場合よりも大幅に高くなります。また、HDD 階層も容量レベルもありません。
 
-    この問題は、低速のメディアと比較した場合、NVME の非常に短い待機時間と組み合わせて記憶域レプリカのログ メカニズム内でのアーキテクチャの制限のために発生します。 記憶域スペース ダイレクト記憶域スペース ダイレクトのキャッシュを使用する場合と、パフォーマンスや容量のレベルではなく、キャッシュ内にすべて最近読み取り/書き込み、アプリケーションの IO と共に、すべての IO の SR ログが発生します。 つまり、同じ速度メディアでは、記憶域レプリカのすべてのアクティビティ - この構成は推奨されませんをサポートしていません (を参照してください https://aka.ms/srfaqのログの推奨事項)。 
+    この問題は、低速メディアと比べて、SR のログメカニズムにおけるアーキテクチャの制限により、NVME の待機時間が非常に短いことが原因で発生します。 記憶域スペースダイレクト記憶域スペースダイレクトキャッシュを使用する場合、すべての最新の読み取り/書き込み IO と共に、SR ログのすべての IO がキャッシュ内で発生し、パフォーマンスレベルまたは容量レベルには反映されません。 これは、すべての SR アクティビティが同じ速度のメディアで行われることを意味します。この構成はサポートされていません (ログの推奨事項については https://aka.ms/srfaq を参照してください)。 
 
-    Hdd の記憶域スペース ダイレクトを使用する場合は、無効にするか、キャッシュを回避することはできません。 回避策として、SSD、NVME だけを使用する場合、パフォーマンスと容量レベルだけを構成できます。 その構成を使用して、容量レベルのみで処理すること、データ ボリュームでのみ、パフォーマンス レベルの記憶域レプリカのログを配置することを上記で説明した待ち時間の問題を回避できます。 同じは、さまざまな高速および低速の Ssd および NVME なしで実行できました。
+    Hdd で記憶域スペースダイレクトを使用する場合、キャッシュを無効にしたり回避したりすることはできません。 回避策として、SSD と NVME のみを使用する場合は、パフォーマンスレベルと容量レベルのみを構成できます。 この構成を使用していて、そのサービスがキャパシティレベルのみにあるデータボリュームに対してのみ、パフォーマンスレベルに SR ログを配置した場合は、前述の高待機時間の問題を回避できます。 これは、高速で低速な Ssd と NVME が混在している場合にも実行できます。
 
-    この回避策はありません理想的なもちろんと一部の顧客が作成できないに使用します。 最適化と発生する人工的なボトルネックを軽減する今後の更新のログ メカニズム SR チームの作業です。 これは、ETA はありませんが、テスト用の顧客をタップします。 有効な場合、この FAQ が更新されます。 
+    この回避策はもちろん理想的ではなく、一部のお客様はそれを利用できない可能性があります。 SR チームは、今後発生する人為的なボトルネックを減らすために、最適化および更新されたログメカニズムを使用しています。 これには ETA はありませんが、テストのために顧客をタップできる場合は、この FAQ が更新されます。 
 
--   **JBOD 格納装置の。**  
+-   **JBOD エンクロージャの場合:**  
 
 1. 各クラスターがそのサイトの記憶域エンクロージャのみを参照できることと、SAS 接続が正しく構成されていることを確認します。  
 
-2. 記憶域スペースを使用して記憶域をプロビジョニングします。これには、「[スタンドアロン サーバーに記憶域スペースを展開する](../storage-spaces/deploy-standalone-storage-spaces.md)」の**手順 1 - 3** に従い、Windows PowerShell またはサーバー マネージャーを使用します。  
+2. 記憶域スペースを使用して記憶域をプロビジョニングします。これには、「**スタンドアロン サーバーに記憶域スペースを展開する**」の[手順 1 - 3](../storage-spaces/deploy-standalone-storage-spaces.md) に従い、Windows PowerShell またはサーバー マネージャーを使用します。  
 
--   **Iscsi ターゲット記憶域。**  
+-   **ISCSI ターゲットストレージの場合:**  
 
 1. 各クラスターがそのサイトのストレージ格納装置のみを参照できることを確認します。 iSCSI を使用する場合は、複数の単一ネットワーク アダプターを使用する必要があります。  
 
 2. ベンダーのドキュメントを参照して記憶域をプロビジョニングします。 Windows ベースの iSCSI ターゲットを使用する場合は、「[iSCSI ターゲット ブロック記憶域: 操作方法](../iscsi/iscsi-target-server.md)」を参照してください。  
 
--   **FC SAN ストレージ。**  
+-   **FC SAN ストレージの場合:**  
 
 1. 各クラスターがそのサイトのストレージ格納装置のみを参照できることと、ホストのゾーンが正しく設定されていることを確認します。  
 
 2. ベンダーのドキュメントを参照して記憶域をプロビジョニングします。  
 
--   **記憶域スペース ダイレクトします。**  
+-   **記憶域スペースダイレクトの場合:**  
 
 1. 記憶域スペース ダイレクトを展開することで、各クラスターがそのサイトのストレージ格納装置のみを参照できることを確認します。 (https://docs.microsoft.com/windows-server/storage/storage-spaces/hyper-converged-solution-using-storage-spaces-direct) 
 
@@ -156,8 +156,8 @@ ms.locfileid: "66447636"
 
    ![レプリケーション トポロジのレポートの結果を示す画面](./media/Cluster-to-Cluster-Storage-Replication/SRTestSRTopologyReport.png)      
 
-## <a name="step-2-configure-two-scale-out-file-server-failover-clusters"></a>手順 2:2 つのスケールアウト ファイル サーバー フェールオーバー クラスターを構成する  
-ここで、2 つの通常のフェールオーバー クラスターを作成します。 構成、検証、テストを完了した後で、記憶域レプリカを使用してレプリケートします。 クラスター ノードを直接または Windows Server のリモート サーバー管理ツールを含むリモート管理コンピューターから、すべての次の手順を実行することができます。  
+## <a name="step-2-configure-two-scale-out-file-server-failover-clusters"></a>手順 2: 2 つのスケールアウト ファイル サーバー フェールオーバー クラスターを構成する  
+ここで、2 つの通常のフェールオーバー クラスターを作成します。 構成、検証、テストを完了した後で、記憶域レプリカを使用してレプリケートします。 次のすべての手順は、クラスターノードで直接実行することも、Windows Server リモートサーバー管理ツールを含むリモート管理コンピューターから実行することもできます。  
 
 ### <a name="graphical-method"></a>グラフィカルな方法  
 
@@ -170,10 +170,10 @@ ms.locfileid: "66447636"
 4.  ファイル共有監視またはクラウド監視を構成します。  
 
     > [!NOTE]  
-    > WIndows Server ではクラウド (Azure) のオプションが含まれるようになりました-ベースの監視。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。  
+    > WIndows Server には、クラウド (Azure) ベースの監視のオプションが追加されました。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。  
 
     > [!WARNING]  
-    > クォーラム構成の詳細については、次を参照してください。、**監視の構成**セクション[クォーラムの管理と構成](../../failover-clustering/manage-cluster-quorum.md)します。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。  
+    > クォーラム構成の詳細については、「[クォーラムの構成と管理](../../failover-clustering/manage-cluster-quorum.md)」の「**監視の構成**」セクションを参照してください。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。  
 
 5.  **Redmond** サイトでクラスター CSV に 1 台のディスクを追加します。 これを行うには、 **[記憶域]** セクションの **[ディスク]** ノードでソース ディスクを右クリックして、 **[クラスターの共有ボリュームへの追加]** をクリックします。  
 
@@ -202,23 +202,23 @@ ms.locfileid: "66447636"
     ```  
 
     > [!NOTE]  
-    > WIndows Server ではクラウド (Azure) のオプションが含まれるようになりました-ベースの監視。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。  
+    > WIndows Server には、クラウド (Azure) ベースの監視のオプションが追加されました。 ファイル共有監視に代えてこのクォーラム オプションを選択できます。  
 
     > [!WARNING]  
-    > クォーラム構成の詳細については、次を参照してください。、**監視の構成**セクション[クォーラムの管理と構成](../../failover-clustering/manage-cluster-quorum.md)します。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。  
+    > クォーラム構成の詳細については、「[クォーラムの構成と管理](../../failover-clustering/manage-cluster-quorum.md)」の「**監視の構成**」セクションを参照してください。 `Set-ClusterQuorum` コマンドレットの詳細については、「[Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum)」を参照してください。  
 
 4.  [スケールアウト ファイル サーバーの構成](https://technet.microsoft.com/library/hh831718.aspx)の手順に従って、両方のクラスターにクラスター化されたスケールアウト ファイル サーバーを作成します。  
 
-## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>手順 3:Windows PowerShell を使用してクラスター間レプリケーションを設定します。  
-次に、Windows PowerShell を使用してクラスター間のレプリケーションを設定します。 ノードを直接または Windows Server のリモート サーバー管理ツールを含むリモート管理コンピューターから次の手順をすべて実行できます。  
+## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>手順 3: Windows PowerShell を使用してクラスター間のレプリケーションを設定する  
+次に、Windows PowerShell を使用してクラスター間のレプリケーションを設定します。 次のすべての手順は、ノード上で直接実行することも、Windows Server が含まれているリモート管理コンピューターから実行することもできリモートサーバー管理ツール  
 
-1. 実行して、他のクラスターへの最初のクラスター フル アクセスを許可、 **Grant SRAccess**最初のクラスター内のノードでコマンドレットまたはリモートでします。  Windows Server のリモート サーバー管理ツール
+1. 最初のクラスターの任意のノードで**Grant-sraccess**コマンドレットを実行して、またはリモートで、他のクラスターへのフルアクセスを最初のクラスターに許可します。  Windows Server リモートサーバー管理ツール
 
    ```PowerShell
    Grant-SRAccess -ComputerName SR-SRV01 -Cluster SR-SRVCLUSB  
    ```  
 
-2. 実行して、他のクラスターへの 2 番目のクラスター フル アクセスを許可、 **Grant SRAccess** 2 番目のクラスター内のノードでコマンドレットまたはリモートでします。  
+2. 2番目のクラスター内の任意のノードで**grant-SRAccess**コマンドレットを実行して、またはリモートで、もう一方のクラスターに対して、2番目のクラスターへのフルアクセスを許可します。  
 
    ```PowerShell
    Grant-SRAccess -ComputerName SR-SRV03 -Cluster SR-SRVCLUSA  
@@ -296,11 +296,11 @@ ms.locfileid: "66447636"
    > [!NOTE]
    > 宛先クラスター ディスクは、レプリケート中は常に **[Online (No Access) (オンライン (アクセスなし))]** と表示されます。  
 
-## <a name="step-4-manage-replication"></a>手順 4:レプリケーションを管理する
+## <a name="step-4-manage-replication"></a>手順 4: レプリケーションを管理する
 
-次に、クラスター間レプリケーションの管理と操作を行います。 クラスター ノードを直接または Windows Server のリモート サーバー管理ツールを含むリモート管理コンピューターから、すべての次の手順を実行することができます。  
+次に、クラスター間レプリケーションの管理と操作を行います。 次のすべての手順は、クラスターノードで直接実行することも、Windows Server リモートサーバー管理ツールを含むリモート管理コンピューターから実行することもできます。  
 
-1.  **Get-ClusterGroup** または**フェールオーバー クラスター マネージャー**を使用して、レプリケーションの現在のソースと宛先およびそれらの状態を判別します。  Windows Server のリモート サーバー管理ツール
+1.  **Get-ClusterGroup** または**フェールオーバー クラスター マネージャー**を使用して、レプリケーションの現在のソースと宛先およびそれらの状態を判別します。  Windows Server リモートサーバー管理ツール
 
 2.  レプリケーションのパフォーマンスを測定するには、ソースと宛先の両方のノードで **Get-Counter** コマンドレットを使用します。 カウンター名は次のとおりです。  
 
@@ -310,23 +310,23 @@ ms.locfileid: "66447636"
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of requests for last log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Flush Queue Length  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Current Flush Queue Length  
 
     -   \Storage Replica Partition I/O Statistics(*)\Number of Application Write Requests  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.Number of requests per log write  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. Number of requests per log write  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Write Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Write Latency  
 
-    -   \Storage Replica Partition I/O Statistics(*)\Avg.App Read Latency  
+    -   \Storage Replica Partition I/O Statistics(*)\Avg. App Read Latency  
 
     -   \Storage Replica Statistics(*)\Target RPO  
 
     -   \Storage Replica Statistics(*)\Current RPO  
 
-    -   \Storage Replica Statistics(*)\Avg.Log Queue Length  
+    -   \Storage Replica Statistics(*)\Avg. Log Queue Length  
 
     -   \Storage Replica Statistics(*)\Current Log Queue Length  
 
@@ -334,11 +334,11 @@ ms.locfileid: "66447636"
 
     -   \Storage Replica Statistics(*)\Total Bytes Sent  
 
-    -   \Storage Replica Statistics(*)\Avg.Network Send Latency  
+    -   \Storage Replica Statistics(*)\Avg. Network Send Latency  
 
     -   \Storage Replica Statistics(*)\Replication State  
 
-    -   \Storage Replica Statistics(*)\Avg.Message Round Trip Latency  
+    -   \Storage Replica Statistics(*)\Avg. Message Round Trip Latency  
 
     -   \Storage Replica Statistics(*)\Last Recovery Elapsed Time  
 
@@ -365,14 +365,14 @@ ms.locfileid: "66447636"
     ```  
 
     > [!NOTE]  
-    > Windows Server には、初期レプリケーションが完了するを許可する前に切り替えを行おうとする場合は、データ損失につながるよう、最初の同期が進行中で、役割の切り替えができないようにします。 最初の同期が完了するまでは、強制的に方向を切り替えないでください。
+    > Windows Server では、初期同期の実行中に役割の切り替えが行われないようにします。これは、初期レプリケーションの完了を許可する前に切り替えようとした場合にデータが失われる可能性があるためです。 最初の同期が完了するまでは、強制的に方向を切り替えないでください。
 
     イベント ログを調べてレプリケーションの方向の変更と回復モードが発生しているかどうかを確認し、調整してください。 調整後、書き込み IO で、新しいレプリケーション元サーバーの所有する記憶域に書き込むことができます。 レプリケーションの方向を変更すると、前のソース コンピューター上で書き込み IO がブロックされます。  
 
     > [!NOTE]  
     > 宛先クラスター ディスクは、レプリケート中は常に **[Online (No Access) (オンライン (アクセスなし))]** と表示されます。  
 
-4.  既定の 8 GB からログのサイズを変更するを使用して、 **Set-srgroup**ソースと宛先の両方の記憶域レプリカ グループにします。  
+4.  ログサイズを既定の 8 GB から変更するには、ソースとターゲットの両方のストレージレプリカグループで**セット-SRGroup**を使用します。  
 
     > [!IMPORTANT]  
     > 既定のログのサイズは、8 GB です。 **Test-SRTopology** コマンドレットの結果に応じて、より大きい値または小さい値を指定して -LogSizeInBytes を使用することを検討してください。  
@@ -390,8 +390,8 @@ ms.locfileid: "66447636"
 ## <a name="see-also"></a>関連項目
 
 -   [記憶域レプリカの概要](storage-replica-overview.md) 
--   [共有記憶域を使用してストレッチ クラスター レプリケーション](stretch-cluster-replication-using-shared-storage.md)  
--   [サーバー対サーバーの記憶域レプリケーション](server-to-server-storage-replication.md)  
--   [記憶域レプリカ:既知の問題](storage-replica-known-issues.md)  
--   [記憶域レプリカ:よく寄せられる質問](storage-replica-frequently-asked-questions.md)  
--   [Windows Server 2016 での記憶域スペース ダイレクト](../storage-spaces/storage-spaces-direct-overview.md)  
+-   [共有記憶域を使用した拡張クラスターレプリケーション](stretch-cluster-replication-using-shared-storage.md)  
+-   [サーバー間の記憶域レプリケーション](server-to-server-storage-replication.md)  
+-   [記憶域レプリカ: 既知の問題](storage-replica-known-issues.md)  
+-   [記憶域レプリカ: よく寄せられる質問](storage-replica-frequently-asked-questions.md)  
+-   [Windows Server 2016 の記憶域スペースダイレクト](../storage-spaces/storage-spaces-direct-overview.md)  

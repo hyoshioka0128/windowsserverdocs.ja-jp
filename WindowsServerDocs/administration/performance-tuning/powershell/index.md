@@ -1,18 +1,18 @@
 ---
 title: PowerShell のパフォーマンス チューニング
 description: PowerShell のパフォーマンス チューニング
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: JasonSh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: 628cc98033d8be3ee3c5db5c6747f0ea2b161b2e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cdc284f5787234e586af2c1ec87e8dee4305486b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891803"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355056"
 ---
 # <a name="performance-tuning-for-powershell"></a>PowerShell のパフォーマンス チューニング
 

@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 07/02/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 188e635543e13154622f52bf02cf877b05cc8fda
-ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
+ms.openlocfilehash: 77655ab414f83f2c74873b12719f9718c6fb59e5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68300716"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358524"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>AD FS の迅速な復元ツール
 
@@ -88,7 +88,7 @@ import-module 'C:\Program Files (x86)\ADFS Rapid Recreation Tool\ADFSRapidRecrea
 
 - **Serviceaccountcredential &lt;pscredential&gt;**  -現在実行中の AD FS サービスに使用されているサービスアカウントを指定します。 このパラメーターは、ユーザーが DKM をバックアップする必要があり、ドメイン管理者ではない場合、またはコンテナーの内容にアクセスできない場合にのみ必要です。 
 
-- **Backupcomment &lt;string []&gt;**  -復元中に表示されるバックアップに関する情報文字列。 hyper-v チェックポイントの名前付けの概念と似ています。 既定値は空の文字列です。
+- **Backupcomment &lt;string [] &gt;** -復元中に表示されるバックアップに関する情報文字列。 hyper-v チェックポイントの名前付けの概念と似ています。 既定値は空の文字列です。
 
  
 ## <a name="backup-examples"></a>バックアップの例
@@ -218,14 +218,14 @@ RngCryptoServiceProvider は、AES と Rfc2898DeriveBytes クラスで使用さ�
 ## <a name="version-release-history"></a>バージョンのリリース履歴
 
 ### <a name="version-10820"></a>バージョン1.0.82.0
-リリース:2019年7月
+解除2019年7月
 
 **修正済みの問題:**
 - LDAP エスケープ文字を含む AD FS サービスアカウント名のバグ修正
 
 
 ### <a name="version-10810"></a>バージョン:1.0.81.0
-リリース:2019 年 4 月
+解除2019 年 4 月
 
 **修正済みの問題:**
 
@@ -235,13 +235,13 @@ RngCryptoServiceProvider は、AES と Rfc2898DeriveBytes クラスで使用さ�
 
 
 ### <a name="version-10750"></a>バージョン:1.0.75.0
-リリース:2018 年 8 月
+解除2018 年 8 月
 
 **修正済みの問題:**
 * バックアップの更新-BackupDKM スイッチを使用する場合の ADFS。  ツールは、現在のコンテキストが DKM コンテナーにアクセスできるかどうかを判断します。  その場合は、ドメイン管理者特権またはサービスアカウント資格情報は必要ありません。  これにより、資格情報を明示的に指定したり、ドメイン管理者アカウントとして実行したりすることなく、自動バックアップを実行できます。
 
 ### <a name="version-10730"></a>バージョン:1.0.73.0
-リリース:2018 年 8 月
+解除2018 年 8 月
 
 **修正済みの問題:**
 * アプリケーションが FIPS に準拠するように暗号化アルゴリズムを更新する
@@ -252,14 +252,14 @@ RngCryptoServiceProvider は、AES と Rfc2898DeriveBytes クラスで使用さ�
 * マージレプリケーションを使用する SQL クラスターのサポートを追加する
 
 ### <a name="version-10720"></a>バージョン:1.0.72.0
-リリース:2018 年 7 月
+解除2018 年 7 月
 
 **修正済みの問題:**
 
    - バグの修正:を修正します。インプレースアップグレードをサポートするための MSI インストーラー 
 
 ### <a name="10180"></a>1.0.18.0
-リリース:2018 年 7 月
+解除2018 年 7 月
 
 **修正済みの問題:**
 

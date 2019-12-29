@@ -2,51 +2,51 @@
 title: ホストされたキャッシュ サーバーを展開する (省略可能)
 description: このトピックは、BranchCache 展開ガイドの Windows Server 2016、ブランチ オフィスに WAN 帯域幅使用量を最適化するために分散され、ホスト型キャッシュ モードで BranchCache を展開する方法を示しますの一部
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 96d03b42-6cd9-4905-b6a2-dc36130dd24f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b19680e933e7a33871816578b63c5a141db0ce00
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 69dc525a093c86d57b665e26ff5acaf2679c81a5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826213"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356435"
 ---
 # <a name="deploy-hosted-cache-servers-optional"></a>ホストされたキャッシュ サーバーを展開する (省略可能)
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-インストールして構成する BranchCache ホスト型キャッシュ モードを展開するブランチ オフィスに配置されている BranchCache ホスト型キャッシュ サーバーは、この手順を使用することができます。 Windows Server 2016 での branchcache では、1 つのブランチ オフィス内の複数のホスト型キャッシュ サーバーをデプロイできます。  
+BranchCache ホスト型キャッシュモードを展開するブランチオフィスに配置されている BranchCache ホスト型キャッシュサーバーをインストールして構成するには、次の手順に従います。 Windows Server 2016 の BranchCache では、1つのブランチオフィスに複数のホスト型キャッシュサーバーを展開できます。  
   
 > [!IMPORTANT]  
-> 分散キャッシュ モードでブランチ オフィスでホスト型キャッシュ サーバーのコンピューターが必要ないために、この手順は省略可能です。 予定がない場合は、ブランチ オフィスのキャッシュ モードがホストされているを展開して、ホスト型キャッシュ サーバーを展開する必要はありませんこの手順の手順を実行する必要はありません。  
+> 分散キャッシュモードではブランチオフィスにホスト型キャッシュサーバーコンピューターを必要としないため、この手順は省略可能です。 ブランチオフィスにホスト型キャッシュモードを展開する予定がない場合は、ホスト型キャッシュサーバーを配置する必要はありません。この手順を実行する必要はありません。  
   
 メンバーである必要があります **管理者**, 、またはこの手順を実行に相当します。  
   
-### <a name="to-install-and-configure-a-hosted-cache-server"></a>インストールしてホスト型キャッシュ サーバーを構成するには  
+### <a name="to-install-and-configure-a-hosted-cache-server"></a>ホスト型キャッシュサーバーをインストールして構成するには  
   
-1.  をホスト型キャッシュ サーバーとして構成するコンピューターには、BranchCache 機能をインストールする Windows PowerShell プロンプトで次のコマンドを実行します。  
+1.  ホスト型キャッシュサーバーとして構成するコンピューターで、Windows PowerShell プロンプトで次のコマンドを実行して BranchCache 機能をインストールします。  
   
     `Install-WindowsFeature BranchCache -IncludeManagementTools`  
   
-2.  ホスト型キャッシュ サーバーとしてコンピューターを構成するには、次のコマンドのいずれかを使用します。  
+2.  次のコマンドのいずれかを使用して、コンピューターをホスト型キャッシュサーバーとして構成します。  
   
-    -   ドメイン非参加しているコンピューターでホスト型キャッシュ サーバーとして構成するには、Windows PowerShell プロンプトで次のコマンドを入力し、ENTER キーを押します。  
+    -   ドメインに参加していないコンピューターをホスト型キャッシュサーバーとして構成するには、Windows PowerShell プロンプトで次のコマンドを入力し、enter キーを押します。  
   
         `Enable-BCHostedServer`  
   
-    -   ホスト型キャッシュ サーバーとドメイン参加済みコンピューターを構成し、クライアント コンピューターで自動ホスト型キャッシュ サーバーの検出用の Active Directory でサービス接続ポイントを登録するには、Windows PowerShell プロンプトで次のコマンドを入力し、ENTER キーを押します。  
+    -   ドメインに参加しているコンピューターをホスト型キャッシュサーバーとして構成し、クライアントコンピューターによるホスト型キャッシュサーバーの自動検出のために Active Directory にサービス接続ポイントを登録するには、Windows PowerShell プロンプトで次のコマンドを入力し、enter キーを押します。  
   
         `Enable-BCHostedServer -RegisterSCP`  
   
-3.  ホスト型キャッシュ サーバーの適切な構成を確認し、Windows PowerShell プロンプトで次のコマンドを入力し、ENTER キーを押します。  
+3.  ホスト型キャッシュサーバーが正しく構成されていることを確認するには、Windows PowerShell プロンプトで次のコマンドを入力し、enter キーを押します。  
   
     `Get-BCStatus`  
   
     > [!NOTE]  
-    > セクションで、このコマンドを実行した後**HostedCacheServerConfiguration**の値は、 **HostedCacheServerIsEnabled**は**True**します。 Active directory での値は、サービス接続ポイント (SCP) を登録するドメイン参加しているホスト型キャッシュ サーバーを構成した場合**HostedCacheScpRegistrationEnabled**は**True**します。  
+    > このコマンドを実行すると、セクション**HostedCacheServerConfiguration**で、 **HostedCacheServerIsEnabled**の値が**True**になります。 Active Directory にサービス接続ポイント (SCP) を登録するように、ドメインに参加しているホスト型キャッシュサーバーを構成した場合、 **HostedCacheScpRegistrationEnabled**の値は**True**になります。  
   
 

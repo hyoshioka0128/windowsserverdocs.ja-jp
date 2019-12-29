@@ -1,8 +1,8 @@
 ---
 title: wmic
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,53 +13,45 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c68866fbe0c8f5b16dae77e2121331f06cdc726
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f5096ab82ebbd01cb4f3a7dc0cf0b15e4b9fae8e
+ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885843"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74781329"
 ---
 # <a name="wmic"></a>wmic
 
 
 
-対話型コマンド シェル内で WMI 情報を表示します。
+対話型コマンドシェル内に WMI 情報を表示します。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
 ## <a name="syntax"></a>構文
 
 ```
-command </parameter>
+wmic </parameter>
 ```
 
-## <a name="sub-commands"></a>サブ コマンド
+## <a name="sub-commands"></a>サブコマンド
 
-次のサブ コマンドは、常に使用できます。
+次のサブコマンドは常に使用できます。
 
-|サブ コマンド|説明|
+|サブコマンド|説明|
 |-----------|-----------|
-|クラス|WMI スキーマ内のクラスに直接アクセスする WMIC の既定のエイリアス モードからエスケープします。|
-|path|WMI スキーマのインスタンスに直接アクセスする WMIC の既定のエイリアス モードからエスケープします。|
-|コンテキスト|すべてのグローバル スイッチの現在の値が表示されます。|
-|[終了\|終了]|終了、WMIC はコマンド シェルです。|
-
-## <a name="parameters"></a>パラメーター
-
-|パラメーター|説明|
-|---------|-----------|
-|</parameter>|\<簡潔な説明が始まる動詞 >。|
-|</param2>|\<もう 1 つの簡潔な説明が始まる動詞 >。|
-
+|クラス|WMIC の既定のエイリアスモードをエスケープして、WMI スキーマ内のクラスに直接アクセスします。|
+|パス|WMIC の既定のエイリアスモードをエスケープして、WMI スキーマ内のインスタンスに直接アクセスできるようにします。|
+|コンテキスト|すべてのグローバルスイッチの現在の値を表示します。|
+|[終了 \| 終了]|WMIC コマンドシェルを終了します。|
 
 ## <a name="BKMK_examples"></a>例
 
-すべてのグローバル スイッチの現在の値を表示するには、次のように入力します。
+すべてのグローバルスイッチの現在の値を表示するには、次のように入力します。
 ```
 wmic context
 ```
-次のような出力:
+次のような出力が表示されます。
 ```
 NAMESPACE    : root\cimv2
 ROLE         : root\cli
@@ -78,11 +70,11 @@ APPEND       : STDOUT
 USER         : N/A
 AGGREGATE    : ON
 ```
-言語を変更するのには、ID は、型を英語 (ロケール ID 409) するためのコマンドラインで使用。
+コマンドラインで使用される言語 ID を英語 (ロケール ID 409) に変更するには、次のように入力します。
 ```
 wmic /locale:ms_409
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

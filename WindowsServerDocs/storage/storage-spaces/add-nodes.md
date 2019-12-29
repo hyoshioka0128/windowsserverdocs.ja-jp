@@ -1,21 +1,21 @@
 ---
 ms.assetid: 898d72f1-01e7-4b87-8eb3-a8e0e2e6e6da
 title: サーバーまたはドライブを記憶域スペース ダイレクトに追加する
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: cosdar
 ms.manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 11/06/2017
-description: サーバーまたはドライブを記憶域スペース ダイレクト クラスターに追加する方法
+description: 記憶域スペースダイレクトクラスターにサーバーまたはドライブを追加する方法
 ms.localizationpriority: medium
-ms.openlocfilehash: ae639b920788911dbc16952d7b61aab85b0a391b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 3d5949b8fce7253371ee7ecea5118596f713f037
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833453"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393782"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>サーバーまたはドライブを記憶域スペース ダイレクトに追加する
 
@@ -23,11 +23,11 @@ ms.locfileid: "59833453"
 
 このトピックでは、サーバーやドライブを記憶域スペース ダイレクトに追加する方法について説明します。
 
-## <a name="adding-servers"></a> サーバーの追加
+## <a name="adding-servers"></a>サーバーの追加
 
 サーバーの追加 (スケール アウトとも呼ばれます) によって、記憶域容量が増えます。また、記憶域のパフォーマンスを向上したり、より優れた記憶域の効率を実現したりすることができます。 展開がハイパーコンバージされている場合、サーバーを追加すると、ワークロードのコンピューティング リソースも増えます。
 
-![4 ノード クラスターにサーバーを追加するアニメーション](media/add-nodes/Scaling-Out.gif)
+![4ノードクラスターにサーバーを追加するアニメーション](media/add-nodes/Scaling-Out.gif)
 
 一般的な展開では、サーバーを追加することで簡単にスケール アウトできます。 次の 2 つの手順を実行するだけです。
 
@@ -53,7 +53,7 @@ Add-ClusterNode -Name NewNode
 
 ### <a name="from-2-to-3-servers-unlocking-three-way-mirroring"></a>サーバーを 2 台から 3 台にスケーリングする: 3 方向ミラーリングのロック解除
 
-![3 番目のサーバーを 2 ノード クラスターに追加します。](media/add-nodes/Scaling-2-to-3.png)
+![2番目のサーバーを2ノードクラスターに追加する](media/add-nodes/Scaling-2-to-3.png)
 
 サーバーが 2 台の場合は、双方向ミラーリングを行うボリュームを作成するだけです (分散型 RAID-1 に相当)。 サーバーが 3 台の場合は、3 方向ミラーリングを行うボリュームを作成して、フォールト トレランスを向上させることができます。 可能な限り、3 方向ミラーリングを使用することをお勧めします。
 
@@ -91,7 +91,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 
 ### <a name="from-3-to-4-servers-unlocking-dual-parity"></a>サーバーを 3 台から 4 台にスケーリングする: デュアル パリティのロック解除
 
-![4 番目のサーバーを 3 ノード クラスターに追加します。](media/add-nodes/Scaling-3-to-4.png)
+![4番目のサーバーを3ノードクラスターに追加する](media/add-nodes/Scaling-3-to-4.png)
 
 サーバーが 4 台の場合は、デュアル パリティ (一般的にイレイジャー コーディングとも呼ばれます) を使用できます (分散型 RAID-6 に相当)。 3 方向ミラーリングと同じフォールト トレランスが実現されますが、記憶域の効率はより優れています。 詳しくは、「[フォールト トレランスと記憶域の効率](storage-spaces-fault-tolerance.md)」をご覧ください。
 
@@ -130,7 +130,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -MediaType HDD -PhysicalDiskRedund
 New-StorageTier -StoragePoolFriendlyName S2D* -MediaType HDD -PhysicalDiskRedundancy 2 -ResiliencySettingName Parity -FriendlyName Capacity
 ```
 
-以上で作業は終了です。 これらの階層テンプレートを参照することにより、ミラーリングによってパリティが高速化されたボリュームを作成することができます。
+これで完了です。 これらの階層テンプレートを参照することにより、ミラーリングによってパリティが高速化されたボリュームを作成することができます。
 
 #### <a name="example"></a>例
 
@@ -142,7 +142,7 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 
 サーバーの台数が 4 台を超えるスケーリングの場合、新しいボリュームによって、パリティ エンコーディングの効率が向上します。 たとえば、6 ～ 7 台のサーバーの場合、効率は 50.0% から 66.7% に改善されます。これは、(リード-ソロモン 2+2 ではなく) リード-ソロモン 4+2 を使用できるようになるためです。 この新しい効率を実現するために追加の手順は必要ありません。ボリュームを作成するたびに、最適なエンコーディングが自動的に決定されます。
 
-ただし、既存のボリュームは新しい広範なエンコーディングに "変換" されません。** その理由の 1 つは、変換には、展開全体の文字通り*あらゆるビット*に影響を与える大量の計算が必要になるためです。 既存のデータを高い効率でエンコーディングできるようにするには、既存のデータを新しいボリュームに移行します。
+ただし、既存のボリュームは新しい広範なエンコーディングに "変換" されません。 その理由の 1 つは、変換には、展開全体の文字通り*あらゆるビット*に影響を与える大量の計算が必要になるためです。 既存のデータを高い効率でエンコーディングできるようにするには、既存のデータを新しいボリュームに移行します。
 
 詳しくは、「[フォールト トレランスと記憶域の効率](storage-spaces-fault-tolerance.md)」をご覧ください。
 
@@ -156,7 +156,7 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
    New-ClusterFaultDomain -Type Node -Name <NewNode> 
    ```
 
-2. この一時的なフォールト ドメインを、新しいサーバーを実際に配置するシャーシまたはラックに移行します (*\<ParentName>* で指定します)。
+2. この一時的なフォールト ドメインを、新しいサーバーを実際に配置するシャーシまたはラックに移行します ( *\<ParentName>* で指定します)。
 
    ```PowerShell
    Set-ClusterFaultDomain -Name <NewNode> -Parent <ParentName> 
@@ -166,14 +166,14 @@ New-Volume -FriendlyName "Sir-Mix-A-Lot" -FileSystem CSVFS_ReFS -StoragePoolFrie
 
 3. 「[サーバーの追加](#adding-servers)」に従ってクラスターにサーバーを追加します。 新しいサーバーがクラスターに参加すると、(その名前を使用して) プレースホルダー フォールト ドメインに自動的に関連付けられます。
 
-## <a name="adding-drives"></a> ドライブの追加
+## <a name="adding-drives"></a>ドライブの追加
 
 ドライブの追加 (スケール アップとも呼ばれます) によって、記憶域容量が増え、パフォーマンスも改善できます。 空きスロットがある場合、サーバーを追加することなく、各サーバーにドライブを追加して記憶域容量を拡張することができます。 キャッシュ ドライブやデータ格納用ドライブはいつでも個別に追加できます。
 
    >[!IMPORTANT]
    > 同じ記憶域構成ですべてのサーバーを構成することを強くお勧めします。
 
-![システムにドライブを追加することを示すアニメーション](media/add-nodes/Scale-Up.gif)
+![システムへのドライブの追加を示すアニメーション](media/add-nodes/Scale-Up.gif)
 
 スケール アップするには、ドライブを接続し、Windows から検出されることを確認します。 PowerShell の **Get-PhysicalDisk** コマンドレットを使用し、**CanPool** プロパティを **True** に設定して実行すると、接続したドライブがコマンドレットの出力に表示されます。 **CanPool = False** と表示された場合、**CannotPoolReason** プロパティを調べることでその原因を確認できます。
 
@@ -183,24 +183,24 @@ Get-PhysicalDisk | Select SerialNumber, CanPool, CannotPoolReason
 
 短時間で、記憶域スペース ダイレクトから対象のドライブに自動的に要求が送信され、記憶域プールに追加されます。ボリュームは、自動的に、[すべてのドライブ全体で均等に再分散されます](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/)。 以上で作業は終了です。[ボリュームを拡張](resize-volumes.md)したり、[新しいボリュームを作成](create-volumes.md)したりする準備が整いました。
 
-ドライブが表示されない場合、ハードウェアの変更を手動でスキャンします。 スキャンするには、**デバイス マネージャー**の **[操作]** メニューを使用します。 古いデータまたはメタデータが含まれている場合は、再フォーマットすることを検討してください。 これを行うには、**[ディスクの管理]** を使用するか、**Reset-PhysicalDisk** コマンドレットを使用します。
+ドライブが表示されない場合、ハードウェアの変更を手動でスキャンします。 スキャンするには、**デバイス マネージャー**の **[操作]** メニューを使用します。 古いデータまたはメタデータが含まれている場合は、再フォーマットすることを検討してください。 これを行うには、 **[ディスクの管理]** を使用するか、**Reset-PhysicalDisk** コマンドレットを使用します。
 
    >[!NOTE]
    > 自動プール機能を使用するには、プール数が 1 つである必要があります。 標準構成を避けて複数のプールを作成した場合、**Add-PhysicalDisk** を使用して手動で目的のプールに新しいドライブを追加する必要があります。
 
-## <a name="optimizing-drive-usage-after-adding-drives-or-servers"></a>ドライブまたはサーバーを追加した後のドライブ使用率を最適化します。
+## <a name="optimizing-drive-usage-after-adding-drives-or-servers"></a>ドライブまたはサーバーを追加した後のドライブ使用率の最適化
 
-時間の経過と共にドライブが追加または削除されると、プール内のドライブ間でデータの分布になりますが不均等になります。 場合によっては、その結果で特定のドライブがいっぱいプール内の他のドライブがある程度消費の削減になります。
+ドライブを追加または削除すると、プール内のドライブ間でのデータの分散が不安定になることがあります。 場合によっては、特定のドライブがいっぱいになり、プール内の他のドライブの消費量がはるかに少なくなることがあります。
 
-プール全体でもドライブの割り当てに保つためには、記憶域スペース ダイレクトが自動的に最適化ドライブ使用率 (これは、エンクロージャの共有の SAS を使用する記憶域スペースのシステムの手動プロセス) プールにドライブやサーバーを追加した後。 最適化では、プールに新しいドライブを追加した後、15 分を開始します。 プールの最適化のため、かかる時間または日で完了すると、特に大容量のハード ドライブを使用している場合、優先順位の低いバック グラウンド操作として実行します。
+プール全体でもドライブ記憶域スペースダイレクトの割り当てを維持するために、ドライブまたはサーバーをプールに追加した後にドライブの使用率が自動的に最適化されます (これは、共有 SAS エンクロージャを使用する記憶域スペースシステムの手動プロセスです)。 プールに新しいドライブを追加すると、15分後に最適化が開始されます。 プールの最適化は、優先度の低いバックグラウンド操作として実行されるので、特に大容量ハードドライブを使用している場合は、完了までに数時間または数日かかることがあります。
 
-最適化と呼ばれる 1 つの 2 つのジョブを使用して*最適化*もう 1 つ*を再調整*- し、次のコマンドでその進行状況を監視できます。
+最適化では2つのジョブが使用されます。1つは*Optimize* 、もう1つは再調整*と呼ばれ*、次のコマンドを使用して進行状況を監視できます。
 
 ```powershell
 Get-StorageJob
 ```
 
-記憶域プールを手動で最適化することができます、 [Optimize-storagepool](https://docs.microsoft.com/powershell/module/storage/optimize-storagepool?view=win10-ps)コマンドレット。 次に例を示します。
+記憶域プールは、 [optimize-storagepool](https://docs.microsoft.com/powershell/module/storage/optimize-storagepool?view=win10-ps)コマンドレットを使用して手動で最適化できます。 次に例を示します。
 
 ```powershell
 Get-StoragePool <PoolName> | Optimize-StoragePool

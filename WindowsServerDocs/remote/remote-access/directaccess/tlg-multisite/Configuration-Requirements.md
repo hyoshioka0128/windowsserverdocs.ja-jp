@@ -1,9 +1,9 @@
 ---
 title: 構成要件
-description: このトピックは一部のテスト ラボ ガイド-DirectAccess マルチサイト展開の Windows Server 2016 のデモンストレーション
+description: このトピックは、「Windows Server 2016 用の DirectAccess マルチサイト展開のテストラボガイド」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,28 +12,28 @@ ms.topic: article
 ms.assetid: aaabdf3b-d926-48d9-9d01-358668da88ba
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e9117aa3d241a0375f67e6b337f02d699aeabd5b
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 0140c58cd955fabe87710b1530f2de3132b4147c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281526"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404767"
 ---
 # <a name="configuration-requirements"></a>構成要件
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-テスト ラボでのリモート アクセスを構成するのには、次のコンポーネントが必要です。  
+テストラボでリモートアクセスを構成するには、次のコンポーネントが必要です。  
   
--   製品ディスクまたは Windows Server 2016、Windows Server 2012 R2 または Windows Server 2012 のファイル。  
+-   Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 の製品ディスクまたはファイル。  
   
--   9 つのコンピューターまたは Windows Server 2016、Windows Server 2012 R2 または Windows Server 2012; の最小ハードウェア要件を満たす仮想マシンこれらのコンピューターのうち 3 つが、インストールされている 2 つのネットワーク アダプターがあります。  
+-   Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 の最小ハードウェア要件を満たす9台のコンピューターまたは仮想マシンこれらのコンピューターのうち3つは、2つのネットワークアダプターがインストールされています。  
   
--   製品ディスクまたは Windows 10 用のファイル&reg;または Windows&reg; 8。  
+-   Windows 10&reg; または Windows&reg; 8 用の製品ディスクまたはファイル。  
   
--   製品ディスクまたは Windows 7 Ultimate のファイル。  
+-   Windows 7 Ultimate の製品ディスクまたはファイル。  
   
--   次の 3 つのコンピューターまたは仮想マシンを Windows 10 の最小ハードウェア要件を満たす&reg;Windows 8 または Windows 7 では、これらのコンピューターのいずれかが、2 つのネットワーク アダプターがインストールされています。  
+-   Windows 10&reg;、Windows 8、または Windows 7 の最小ハードウェア要件を満たす3台のコンピューターまたは仮想マシンこれらのコンピューターのいずれかに2つのネットワークアダプターがインストールされています。  
   
 
 

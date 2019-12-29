@@ -2,87 +2,87 @@
 title: BranchCache 展開ガイド
 description: このトピックは、BranchCache 展開ガイドの Windows Server 2016、ブランチ オフィスに WAN 帯域幅使用量を最適化するために分散され、ホスト型キャッシュ モードで BranchCache を展開する方法を示しますの一部
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 3830b356-36d3-44f9-a1d7-990ff3e57403
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 9bccf69f0a913159a395fabc670a63e2c159bd91
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 14eb9e5b4d5a28a64d3cfa0d27b5294ba7168da9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888183"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356730"
 ---
 # <a name="branchcache-deployment-guide"></a>BranchCache 展開ガイド
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-このガイドを使用すると、Windows Server 2016 での BranchCache を展開するのに方法について説明します。  
+このガイドでは、Windows Server 2016 で BranchCache を展開する方法について説明します。  
   
-このトピックに加えは、このガイドには、次のセクションが含まれています。  
+このトピックに加えて、このガイドには次のセクションが含まれています。  
   
 -   [BranchCache 設計の選択](../../branchcache/plan/Choosing-a-BranchCache-Design.md)  
   
--   [BranchCache を展開します。](../../branchcache/deploy/Deploy-BranchCache.md)  
+-   [BranchCache を展開する](../../branchcache/deploy/Deploy-BranchCache.md)  
   
 ## <a name="branchcache-deployment-overview"></a>BranchCache の展開の概要
 
-BranchCache は Windows Server 2016、Windows Server の一部のエディションに含まれているワイド エリア ネットワーク (WAN) 帯域幅最適化テクノロジ&reg;2012 R2、Windows Server&reg; 2012、Windows Server&reg; 2008 R2、および関連します。Windows クライアント オペレーティング システム。  
+BranchCache は、Windows Server 2016、Windows Server&reg; 2012 R2、Windows Server&reg; 2012、Windows Server&reg; 2008 R2、および関連する Windows クライアントオペレーティングシステムの一部のエディションに組み込まれているワイドエリアネットワーク (WAN) 帯域幅最適化テクノロジです。  
   
 WAN の帯域幅を最適化するため、BranchCache ではメイン オフィスのコンテンツ サーバーからコンテンツがコピーされ、ブランチ オフィスの場所にキャッシュされます。これにより、ブランチ オフィスのクライアント コンピューターは WAN を経由せずにローカルにコンテンツにアクセスできます。  
   
-ブランチ オフィスには、コンテンツがキャッシュには、Windows Server 2016 の BranchCache 機能を実行しているサーバー、Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2、またはがある場合、ブランチ オフィスは、コンテンツで使用可能なサーバーがない cacWindows 10 を実行しているクライアント コンピューターで hed&reg;、Windows&reg; 8.1、Windows 8、または Windows 7&reg;します。  
+ブランチオフィスでは、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 の BranchCache 機能を実行しているサーバーにコンテンツがキャッシュされます。また、ブランチオフィスで使用可能なサーバーがない場合は、Windows 10&reg;、Windows&reg; 8.1、Windows 8、または Windows 7&reg; を実行しているクライアントコンピューターにコンテンツ  
   
-経由でコンテンツ サーバーに接続するのではなく、コンテンツをローカルに、同じブランチ オフィスのある他のコンピューターを取得できます、クライアント コンピューターを要求してメイン オフィスまたはクラウドのデータ センターからコンテンツを受信すると、コンテンツがブランチ オフィスにキャッシュされた、WAN リンクです。  
+クライアントコンピューターがメインオフィスまたはクラウドデータセンターのコンテンツを要求して受信し、コンテンツがブランチオフィスにキャッシュされた後、同じブランチオフィスにある他のコンピューターは、コンテンツサーバーに接続するのではなく、コンテンツをローカルに取得できます。WAN リンク。  
   
 **BranchCache を展開する利点**  
   
-BranchCache キャッシュのファイル、web、およびブランチ オフィスの場所にアプリケーションのコンテンツは、低速の WAN 接続経由でコンテンツにアクセスするのではなく、ローカル エリア ネットワーク (LAN) を使用してデータにアクセスするコンピューターをクライアントに許可します。  
+BranchCache は、ブランチオフィスの場所にファイル、web、およびアプリケーションのコンテンツをキャッシュすることで、低速 WAN 接続を介してコンテンツにアクセスするのではなく、クライアントコンピューターがローカルエリアネットワーク (LAN) を使用してデータにアクセスできるようにします。  
   
-BranchCache は、WAN のトラフィックとブランチ オフィスのユーザー、ネットワーク上のファイルを開くために必要な時間の両方が軽減されます。  BranchCache が常に最新のデータをユーザーに提供し、ホスト型キャッシュ サーバーおよびクライアント コンピューター上のキャッシュを暗号化することで、コンテンツのセキュリティを保護します。  
+BranchCache は、WAN トラフィックと、ブランチオフィスのユーザーがネットワーク上のファイルを開くために必要な時間の両方を削減します。  BranchCache は常に最新のデータをユーザーに提供し、ホスト型キャッシュサーバーとクライアントコンピューターのキャッシュを暗号化することによってコンテンツのセキュリティを保護します。  
   
 ### <a name="what-this-guide-provides"></a>このガイドの内容  
-このデプロイ ガイドでは、次のモードで BranchCache を展開できます。  
+この展開ガイドでは、次のモードで BranchCache を展開できます。  
   
--   分散キャッシュ モード。 このモードでは、ブランチ オフィスのクライアント コンピューターは、メイン オフィスまたはクラウドでのコンテンツ サーバーからコンテンツをダウンロードし、同じブランチ オフィスの他のコンピューターのコンテンツがキャッシュされます。 分散キャッシュ モードでは、ブランチ オフィスのサーバー コンピューターは必要ありません。  
+-   分散キャッシュモード。 このモードでは、ブランチオフィスのクライアントコンピューターは、メインオフィスまたはクラウドのコンテンツサーバーからコンテンツをダウンロードし、同じブランチオフィスにある他のコンピューターのコンテンツをキャッシュします。 分散キャッシュモードでは、ブランチオフィスのサーバーコンピューターは必要ありません。  
   
--   ホスト型キャッシュ モード。 このモードでは、ブランチ オフィス クライアント コンピューター ダウンロードからメイン オフィスまたはクラウドでのコンテンツ サーバーとホスト型キャッシュ サーバーのコンテンツは、クライアントからコンテンツを取得します。 ホスト型キャッシュ サーバーは、他のクライアント コンピューターのコンテンツをキャッシュします。  
+-   ホスト型キャッシュモード。 このモードでは、ブランチオフィスのクライアントコンピューターがメインオフィスまたはクラウドのコンテンツサーバーからコンテンツをダウンロードし、ホスト型キャッシュサーバーがクライアントからコンテンツを取得します。 ホスト型キャッシュサーバーは、他のクライアントコンピューターのコンテンツをキャッシュします。  
   
-このガイドには、次の 3 つの種類のコンテンツ サーバーをデプロイする方法の手順も提供します。 コンテンツ サーバーはブランチ オフィスのクライアント コンピューターによってダウンロードされたソース コンテンツを含み、どちらのモードで BranchCache を展開する 1 つまたは複数のコンテンツ サーバーが必要です。 コンテンツ サーバーの種類があります。  
+このガイドでは、3種類のコンテンツサーバーを展開する方法についても説明します。 コンテンツサーバーには、ブランチオフィスのクライアントコンピューターによってダウンロードされるソースコンテンツが含まれています。また、いずれかのモードで BranchCache を展開するには、1つまたは複数のコンテンツサーバーが必要です。 コンテンツサーバーの種類は次のとおりです。  
   
--   **Web コンテンツ サーバーのサーバー ベース**します。 これらのコンテンツ サーバーは、HTTP および HTTPS プロトコルを使用して、BranchCache クライアント コンピューターにコンテンツを送信します。 これらのコンテンツ サーバーが BranchCache をサポートする Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 のバージョンを実行する必要があり、BranchCache 機能がインストールされている時にします。  
+-   **Web サーバーベースのコンテンツサーバー**。 これらのコンテンツサーバーは、HTTP および HTTPS プロトコルを使用して、BranchCache クライアントコンピューターにコンテンツを送信します。 これらのコンテンツサーバーは、branchcache 機能がインストールされている Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 バージョンを実行している必要があります。  
   
--   **BITS ベースのアプリケーション サーバー**します。 これらのコンテンツ サーバーは、コンテンツをバック グラウンド インテリジェント転送サービス (BITS) を使用して、BranchCache クライアント コンピューターに送信します。 これらのコンテンツ サーバーが BranchCache をサポートする Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 のバージョンを実行する必要があり、BranchCache 機能がインストールされている時にします。  
+-   **BITS ベースのアプリケーションサーバー**。 これらのコンテンツサーバーは、バックグラウンドインテリジェント転送サービス (BITS) を使用して BranchCache クライアントコンピューターにコンテンツを送信します。 これらのコンテンツサーバーは、branchcache 機能がインストールされている Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 バージョンを実行している必要があります。  
   
--   **ファイル コンテンツ サーバーのサーバー ベース**します。 これらのコンテンツ サーバーが BranchCache をサポートする Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 のバージョンを実行する必要があり、ファイルがサービスにサーバーの役割をインストールします。 さらに、**ネットワーク ファイル用 BranchCache**ファイル サービス サーバーの役割の役割サービスをインストールして構成する必要があります。 これらのコンテンツ サーバーは、サーバー メッセージ ブロック (SMB) プロトコルを使用して、BranchCache クライアント コンピューターにコンテンツを送信します。  
+-   **ファイルサーバーベースのコンテンツサーバー**。 これらのコンテンツサーバーは、BranchCache をサポートし、ファイルサービスサーバーの役割がインストールされている windows server 2016、Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 バージョンを実行している必要があります。 また、ファイルサービスサーバー役割の**ネットワークファイル用 BranchCache**役割サービスをインストールして構成する必要があります。 これらのコンテンツサーバーは、サーバーメッセージブロック (SMB) プロトコルを使用して、BranchCache クライアントコンピューターにコンテンツを送信します。  
   
-詳細については、次を参照してください。[オペレーティング システムのバージョンの BranchCache](https://technet.microsoft.com/windows-server-docs/networking/branchcache/branchcache#a-namebkmkosaoperating-system-versions-for-branchcache)します。  
+詳細については、「[オペレーティングシステムのバージョン (BranchCache](https://technet.microsoft.com/windows-server-docs/networking/branchcache/branchcache#a-namebkmkosaoperating-system-versions-for-branchcache))」を参照してください。  
   
-### <a name="branchcache-deployment-requirements"></a>BranchCache の展開の要件
+### <a name="branchcache-deployment-requirements"></a>BranchCache の展開要件
 
 このガイドを使用して BranchCache を展開するための要件を次に示します。  
   
--   **ファイル サービスおよび Web コンテンツ サーバー** BranchCache 機能を提供する次のオペレーティング システムのいずれかを実行する必要があります。Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2。 Windows 8 およびそれ以降のクライアントを続行することはない Windows Server 2008 R2 を実行しているコンテンツ サーバーにアクセスするときに、BranchCache からメリットを表示する、新しいチャンクと Windows Server 2016、Windows Server 2012 でのテクノロジのハッシュの使用R2、および Windows Server 2012。  
+-   **ファイルと Web コンテンツサーバー**は、BranchCache 機能を提供するために、windows server 2016、windows Server 2012 R2、windows server 2012、または windows Server 2008 R2 のいずれかのオペレーティングシステムを実行している必要があります。 Windows 8 以降のクライアントでは、Windows Server 2008 R2 を実行しているコンテンツサーバーにアクセスするときに BranchCache のメリットが引き続き表示されますが、windows server 2016、Windows Server 2012 で新しいチャンキングとハッシュテクノロジを利用することはできません。R2 および Windows Server 2012。  
   
--   **クライアント コンピューター**させるには、Windows 10、Windows 8.1、または Windows 8 を実行する必要があります、最新のデプロイ モデルのチャンキングおよび Windows Server 2012 で導入された機能強化のハッシュを使用します。  
+-   最新の展開モデルを使用し、Windows Server 2012 で導入されたチャンキングとハッシュの機能強化を利用するには、**クライアントコンピューター**で windows 10、Windows 8.1、または windows 8 を実行している必要があります。  
   
--   **キャッシュ サーバーがホストされている**展開の機能強化を使用し、このドキュメントで説明する機能を拡張するには、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行する必要があります。  これを行うに適したトランスポート層セキュリティ (TLS 証明書を使用できる必要がありますが、Windows 7 を実行しているクライアント コンピューターを処理するために、ホスト型キャッシュ サーバーとして構成されているこれらのオペレーティング システムのいずれかを実行しているコンピューターは続行できます。)、Windows Server 2008 R2 および Windows 7」の説明に従って[BranchCache 展開ガイド](https://technet.microsoft.com/library/ee649232.aspx)します。  
+-   **ホスト型キャッシュサーバー**では、windows server 2016、windows Server 2012 R2、または windows server 2012 が実行されている必要があります。これにより、このドキュメントで説明する展開の機能強化とスケールの機能が利用できます。  ホスト型キャッシュサーバーとして構成されているこれらのオペレーティングシステムのいずれかを実行しているコンピューターは、Windows 7 を実行しているクライアントコンピューターに引き続きサービスを提供できますが、そのためには、「Windows Server 2008 R2 および Windows 7 [BranchCache 展開ガイド](https://technet.microsoft.com/library/ee649232.aspx)」で説明されているように、トランスポート層セキュリティ (TLS) に適した  
   
--   **Active Directory ドメイン**グループ ポリシーとホスト型キャッシュの自動検出を利用するために必要なは、ドメインは、BranchCache を使用する必要はありません。  Windows PowerShell を使用して、個々 のコンピューターを構成できます。 さらに、新しい BranchCache グループ ポリシー設定を利用するには、2012 以降に、ドメイン コント ローラーが Windows Server を実行が必要です以前のオペレーティング システムを実行しているドメイン コント ローラー上に BranchCache の管理用テンプレートをインポートするか、Windows 10、Windows Server 2016、Windows 8.1 を実行している他のコンピューターにリモートでグループ ポリシー オブジェクトを作成します。Windows Server 2012 R2、Windows 8、または Windows Server 2012。
+-   グループポリシーとホスト型キャッシュの自動検出を利用するには、 **Active Directory ドメイン**が必要ですが、ドメインは BranchCache を使用する必要はありません。  Windows PowerShell を使用して、個々のコンピューターを構成できます。 また、新しい BranchCache グループポリシー設定を利用するために、ドメインコントローラーで Windows Server 2012 以降を実行している必要はありません。BranchCache 管理用テンプレートは、以前のオペレーティングシステムを実行しているドメインコントローラーにインポートできます。また、Windows 10、Windows Server 2016、Windows 8.1 を実行している他のコンピューターでリモートからグループポリシーオブジェクトを作成することもできます。Windows Server 2012 R2、Windows 8、または Windows Server 2012。
 
--   **Active Directory サイト**は自動的に検出できるホスト型キャッシュ サーバーのスコープを制限するために使用します。  ホスト型キャッシュ サーバーを自動的に検出するには、クライアントとサーバーの両方のコンピューターは、同じサイトに属している必要があります。 BranchCache では、クライアントとサーバーに最小限の影響を与える設計されており、追加のハードウェア要件にそれぞれのオペレーティング システムを実行するために必要なもの以外は設定されていません。  
+-   **Active Directory サイト**は、自動的に検出されるホスト型キャッシュサーバーの範囲を制限するために使用されます。  ホスト型キャッシュサーバーを自動的に検出するには、クライアントとサーバーの両方のコンピューターが同じサイトに属している必要があります。 BranchCache は、クライアントとサーバーへの影響が最小限に抑えられるように設計されており、それぞれのオペレーティングシステムを実行するために必要な追加のハードウェア要件を課していません。  
 
 **BranchCache の履歴とドキュメント**
 
-BranchCache は Windows 7 で初めて導入されました&reg;および Windows Server&reg; 2008 R2、および Windows Server 2012、Windows 8、および以降のオペレーティング システムが強化されました。
+BranchCache は、windows 7&reg; および Windows Server&reg; 2008 R2 で初めて導入され、Windows Server 2012、Windows 8、およびそれ以降のオペレーティングシステムで改善されました。
 
 > [!NOTE]
-> Windows Server 2016 以外のオペレーティング システムで BranchCache を展開する場合は、次のドキュメント リソースを使用です。
+> Windows Server 2016 以外のオペレーティングシステムで BranchCache を展開する場合は、次のドキュメントリソースを参照してください。
 > 
-> - Windows 8、Windows 8.1、Windows Server 2012、および Windows Server 2012 R2 の BranchCache の詳細については、次を参照してください。 [BranchCache の概要](https://technet.microsoft.com/library/hh831696.aspx)します。  
-> - Windows 7 および Windows Server 2008 R2 の BranchCache の詳細については、次を参照してください。 [Windows Server 2008 R2 の BranchCache](https://technet.microsoft.com/library/dd996634.aspx)します。  
+> - Windows 8、Windows 8.1、Windows Server 2012、および Windows Server 2012 R2 の BranchCache の詳細については、「 [branchcache の概要](https://technet.microsoft.com/library/hh831696.aspx)」を参照してください。  
+> - Windows 7 と Windows Server 2008 R2 の BranchCache の詳細については、「 [Windows server 2008 r2 の branchcache](https://technet.microsoft.com/library/dd996634.aspx)」を参照してください。  
   
 
 

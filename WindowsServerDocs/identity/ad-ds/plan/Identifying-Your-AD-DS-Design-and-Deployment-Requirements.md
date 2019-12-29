@@ -7,24 +7,24 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 160ebf65348aaff0095f359766c65aebd6fdd3c3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8a01fde69ebdd5a14899bd888a3c282ded74caaa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889543"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408809"
 ---
 # <a name="identifying-your-ad-ds-design-and-deployment-requirements"></a>AD DS の設計と展開の要件を識別する
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-現在の環境の高度な評価を実行して、Active Directory Domain Services (AD DS) の展開タスクを正しく特定するは、AD DS の展開戦略の成功に不可欠です。  
+現在の環境に対する高レベルの評価を実行し、Active Directory Domain Services (AD DS) の展開タスクを正しく特定することは、AD DS の展開戦略を成功させるために不可欠です。  
   
-AD DS 展開戦略は、既存のネットワーク構成によって異なります。 たとえば、組織は、現在 Windows Server 2003 を実行する場合は、Windows Server 2008 に、オペレーティング システムをアップグレードできます。 Active Directory フォレスト間または Active Directory フォレスト内の既存のドメインの再構築、デプロイ プロセスがあります。 Windows Server 2008 AD DS を展開した後、または組織の変更や企業買収の後に、既存のドメインを再構築する必要があります。  
+AD DS の展開方法は、既存のネットワーク構成によって異なります。 たとえば、組織で現在 Windows Server 2003 を実行している場合は、オペレーティングシステムを Windows Server 2008 にアップグレードできます。 展開プロセスでは、Active Directory フォレスト内または Active Directory フォレスト間で、既存のドメインを再構築することが必要になる場合があります。 Windows Server 2008 AD DS を展開した後、または組織の変更や企業の買収後に、既存のドメインを再構築することが必要になる場合があります。  
   
--   [AD DS の設計要件](../../ad-ds/plan/AD-DS-Design-Requirements.md)  
+-   [AD DS の設計の要件](../../ad-ds/plan/AD-DS-Design-Requirements.md)  
   
 -   [AD DS の展開の要件](../../ad-ds/plan/AD-DS-Deployment-Requirements.md)  
   

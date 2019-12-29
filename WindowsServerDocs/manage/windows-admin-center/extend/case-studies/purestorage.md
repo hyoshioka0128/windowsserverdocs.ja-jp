@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 1/7/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: cfd9d31d388b9acb1a4a4fa40b3975b235a8634b
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.prod: windows-server
+ms.openlocfilehash: c6ab75a2375368d7c87d9dffd6175eb611508dd5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546614"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406959"
 ---
 # <a name="pure-storage-extension"></a>純粋なストレージ拡張機能
 
@@ -27,7 +27,7 @@ ms.locfileid: "69546614"
 
 ![純粋なストレージ拡張機能](../../media/extend-case-study-purestorage/purestorage-1.png)
 
-> <cite>"Windows 管理センター内からのダイレクト管理を有効にするために、FlashArray web インターフェイスを模倣した機能セットを統合しました。Microsoft のお客様とパートナーは、1つのウィンドウガラスからメリットを得ることができ、2つの異なる管理ツールを使用する必要があります。単一の管理の利点に加えて、FlashArray に接続されている Windows サーバーをコンテキストで管理できます。 "</cite>
+> <cite> "Windows 管理センター内からのダイレクト管理を有効にするために、FlashArray web インターフェイスを模倣した機能セットを統合しました。Microsoft のお客様とパートナーは、1つのウィンドウガラスからメリットを得ることができ、2つの異なる管理ツールを使用する必要があります。単一の管理の利点に加えて、FlashArray に接続されている Windows サーバーをコンテキストで管理できます。 "</cite>
 >
 > --Barkz、テクニカルディレクターの Microsoft ソリューション & 統合、純粋なストレージ
 

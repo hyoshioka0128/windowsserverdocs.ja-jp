@@ -1,36 +1,36 @@
 ---
 title: HGS の構成を確認する
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 8f01df37-f18e-4386-ae73-ecf84feaa9df
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 8098edd1eea475cea1face5541459b262364a07b
-ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
+ms.openlocfilehash: d219b7aa9ca1e17df3281fd756106a6f07864116
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67469552"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386350"
 ---
 # <a name="verify-the-hgs-configuration"></a>HGS の構成を確認する
 
 >適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 
-次に、モ ノが想定どおりに動作するかを検証する必要があります。 これを行うには、管理者特権での Windows PowerShell コンソールで、次のコマンドを実行します。
+次に、予期したとおりに動作していることを検証する必要があります。 これを行うには、管理者特権の Windows PowerShell コンソールで次のコマンドを実行します。
 
 ```powershell
 Get-HgsTrace -RunDiagnostics
 ```
 
-HGS の構成で保護されたファブリックに追加するホストに関する情報がまだ含まれないため、診断はホストできなくなるなしに、まだ正常に証明を示します。 この結果を無視し、診断によって提供されるその他の情報を確認します。
+HGS 構成には、保護されたファブリック内のホストに関する情報がまだ含まれていないため、正常に証明できないホストがないことが診断によって示されます。 この結果を無視し、診断によって提供されるその他の情報を確認します。
 
 [!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)] 
 
-HGS クラスター内の各ノードで、診断を実行します。
+HGS クラスター内の各ノードで診断を実行します。
 
 ## <a name="next-step"></a>次の手順
 

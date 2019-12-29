@@ -2,22 +2,22 @@
 title: BranchCache 機能をインストールする
 description: このトピックは、BranchCache 展開ガイドの Windows Server 2016、ブランチ オフィスに WAN 帯域幅使用量を最適化するために分散され、ホスト型キャッシュ モードで BranchCache を展開する方法を示しますの一部
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 4f31dc61-2dbe-4c7e-b3f9-85ae49a45049
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 8b4aecd9e9355a6c2d5ac485ac77c76428fe295f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5ee438ef57d3355cf19713d8574591aeea6ae06f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872193"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406439"
 ---
 # <a name="install-the-branchcache-feature"></a>BranchCache 機能をインストールする
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
 この手順を使用するには、BranchCache 機能をインストールして Windows Server を実行するコンピューターで BranchCache サービスを開始する&reg; 2016、Windows Server 2012 R2、または Windows Server 2012 です。  
   
@@ -34,17 +34,17 @@ ms.locfileid: "59872193"
   
 ### <a name="to-install-and-enable-the-branchcache-feature"></a>インストールして、BranchCache 機能を有効にします。  
   
-1.  サーバー マネージャーで、**[管理]** をクリックし、**[役割と機能の追加]** をクリックします。 追加の役割と機能のウィザードが開きます。 **[次へ]** をクリックします。  
+1.  サーバー マネージャーで、 **[管理]** をクリックし、 **[役割と機能の追加]** をクリックします。 役割と機能の追加ウィザードが開きます。 **[次へ]** をクリックします。  
   
-2.  **インストールの種類を選択します。**、いることを確認**役割ベースまたは機能ベースのインストール**が選択されていると、[] をクリックし、 **[次へ]** します。  
+2.  **[インストールの種類の選択**] で、 **[役割ベースまたは機能ベースのインストール]** が選択されていることを確認し、 **[次へ]** をクリックします。  
   
 3.  **対象サーバーの選択**, 、適切なサーバーが選択されていることを確認し、をクリックして **次**します。  
   
-4.  **[サーバーの役割の選択]** で、**[次へ]** をクリックします。  
+4.  **[サーバーの役割の選択]** で、 **[次へ]** をクリックします。  
   
 5.  **機能の選択**, 、 をクリックして **BranchCache**, 、 をクリックし、 **次**します。  
   
-6.  **[インストール オプションの確認]** で、**[インストール]** をクリックします。 **インストールの進行状況**, 、BranchCache 機能のインストールを実行します。 インストールが完了したら、クリックして **閉じる**します。  
+6.  **[インストール オプションの確認]** で、 **[インストール]** をクリックします。 **インストールの進行状況**, 、BranchCache 機能のインストールを実行します。 インストールが完了したら、クリックして **閉じる**します。  
   
 BranchCache 機能をインストールした後、PeerDistSvc - とも呼ばれます。-BranchCache サービスが有効になっているし、開始の種類が自動です。  
   

@@ -1,34 +1,34 @@
 ---
-title: 要塞フォレスト内の TPM のモードを使用して HGS クラスターを初期化します。
+title: 要塞フォレストで TPM モードを使用して HGS クラスターを初期化する
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 458642eedbfdc94ef0f3d6f6fe08ed4ead475ab0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: b360f0f5195bea3c61f9a181b4b75a681f7e29b9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447432"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403604"
 ---
-# <a name="initialize-the-hgs-cluster-using-tpm-mode-in-an-existing-bastion-forest"></a>既存の要塞フォレスト内の TPM のモードを使用して HGS クラスターを初期化します。
+# <a name="initialize-the-hgs-cluster-using-tpm-mode-in-an-existing-bastion-forest"></a>既存の要塞フォレストで TPM モードを使用して HGS クラスターを初期化する
 
 >適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
-Active Directory Domain Services は、コンピューターにインストールされますが、構成されていないままにする必要があります。
+Active Directory Domain Services はコンピューターにインストールされますが、未構成のままにしておく必要があります。
 
 [!INCLUDE [Obtain certificates for HGS](../../../includes/guarded-fabric-initialize-hgs-default-step-two.md)]
 
-続行する前にいることを確認するが、ホスト ガーディアン サービスのクラスター オブジェクトを事前設定されたユーザーでログオンしたを付与**フルコントロール**Active Directory 内の VCO と CNO オブジェクト。
-渡される必要がある仮想コンピューター オブジェクトの名前、`-HgsServiceName`パラメーター、およびクラスター名を`-ClusterName`パラメーター。
+続行する前に、ホストガーディアンサービスのクラスターオブジェクトを事前設定し、Active Directory の VCO および CNO オブジェクトに対して、ログインしているユーザーに**フルコントロール**を付与したことを確認してください。
+仮想コンピューターのオブジェクト名は、`-HgsServiceName` パラメーターに、クラスター名を `-ClusterName` パラメーターに渡す必要があります。
 
 > [!TIP]
-> 再確認、AD ドメイン コント ローラー、クラスター オブジェクトにが続行する前に、すべての Dc にレプリケートします。
+> 続行する前に、AD ドメインコントローラーを再確認して、クラスターオブジェクトがすべての Dc にレプリケートされていることを確認してください。
 
-PFX に基づく証明書を使用している場合は、HGS サーバーで次のコマンドを実行します。
+PFX ベースの証明書を使用している場合は、HGS サーバーで次のコマンドを実行します。
 
 ```powershell
 $signingCertPass = Read-Host -AsSecureString -Prompt "Signing certificate password"
@@ -39,7 +39,7 @@ Install-ADServiceAccount -Identity 'HGSgMSA'
 Initialize-HgsServer -UseExistingDomain -ServiceAccount 'HGSgMSA' -JeaReviewersGroup 'HgsJeaReviewers' -JeaAdministratorsGroup 'HgsJeaAdmins' -HgsServiceName 'HgsService' -SigningCertificatePath '.\signCert.pfx' -SigningCertificatePassword $signPass -EncryptionCertificatePath '.\encCert.pfx' -EncryptionCertificatePassword $encryptionCertPass -TrustTpm
 ```
 
-(証明書の HSM を基盤と証明書をエクスポートできない) など、ローカル コンピューターにインストールされている証明書を使用している場合は、使用、`-SigningCertificateThumbprint`と`-EncryptionCertificateThumbprint`パラメーター代わりにします。
+ローカルコンピューターにインストールされている証明書 (HSM ベースの証明書やエクスポートされていない証明書など) を使用している場合は、代わりに `-SigningCertificateThumbprint` と `-EncryptionCertificateThumbprint` のパラメーターを使用します。
 
 ## <a name="next-step"></a>次の手順
 

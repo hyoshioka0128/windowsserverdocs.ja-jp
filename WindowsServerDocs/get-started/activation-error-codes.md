@@ -1,69 +1,199 @@
 ---
-title: ライセンス認証エラー コードのトラブルシューティング
+title: Windows ライセンス認証のエラー コードの解決
 description: ライセンス認証エラー コードのトラブルシューティングの方法について説明します
 ms.topic: article
-ms.date: 07/22/2019
+ms.date: 9/18/2019
 ms.technology: server-general
 ms.assetid: ''
 author: kaushika-msft
 ms.author: kaushika-msft; v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 506aa5969228a17fe64581ec2a7143537b1fa05a
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: d4d9a8917bf455d8ed84207e2f9ecc6d13d01c3d
+ms.sourcegitcommit: b18ee742662b24b25d29ef1079b1c49f220f1d57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658868"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74691865"
 ---
-# <a name="troubleshooting-activation-error-codes"></a>ライセンス認証エラー コードのトラブルシューティング
+# <a name="resolve-windows-activation-error-codes"></a>Windows ライセンス認証のエラー コードの解決
 
 > **ホーム ユーザー**  
 > この記事は、サポート エージェントおよび IT 担当者によって使用されることを目的としています。 Windows ライセンス認証のエラーメッセージの詳細については、[Windows のライセンス認証エラーに関するヘルプ](https://support.microsoft.com/help/10738/windows-10-get-help-with-activation-errors)を参照してください。  
 
 この記事では、マルチ ライセンス認証キー (MAK) またはキー管理サービス (KMS) を使用して、1 台以上の Windows ベースのコンピューターでボリューム ライセンス認証を実行しようとしたときに発生する可能性があるエラー メッセージに対処するためのトラブルシューティング情報を提供します。 次の表に示すエラー コードを探し、リンクを選択すると、そのエラー コードと解決方法に関する詳細情報が表示されます。
 
-ボリューム ライセンス認証の詳細については、[ボリューム ライセンス認証の計画](https://docs.microsoft.com/en-us/windows/deployment/volume-activation/plan-for-volume-activation-client)のページを参照してください。
+ボリューム ライセンス認証の詳細については、[ボリューム ライセンス認証の計画](https://docs.microsoft.com/windows/deployment/volume-activation/plan-for-volume-activation-client)のページを参照してください。
 
 Windows の現在のバージョンと最新バージョンのボリューム ライセンス認証の詳細については、[ボリュームライセンス認証 [クライアント]](https://docs.microsoft.com/windows/deployment/volume-activation/volume-activation-windows-10) のページを参照してください。
 
 以前のバージョンの Windows でのボリューム ライセンス認証の詳細については、KB 929712 の「 [Windows Vista、Windows Server 2008、Windows Server 2008 R2、および Windows 7 のボリューム アクティベーション情報](https://support.microsoft.com/en-us/help/929712/volume-activation-information-for-windows-vista-windows-server-2008-wi)」を参照してください。
 
+## <a name="diagnostic-tool"></a>診断ツール
+
+Microsoft サポート/回復アシスタント (SaRA) を使うと、Windows KMS ライセンス認証のトラブルシューティングが簡単になります。 診断ツールは[こちら](https://aka.ms/SaRA-WindowsActivation)からダウンロードしてください。
+
+このツールでは、Windows のライセンス認証が試行されます。 ライセンス認証のエラー コードが返された場合は、既知のエラー コードに対応する解決策がツールに表示されます。
+
+次のエラー コードがサポートされています。0xC004F038、0xC004F039、0xC004F041、0xC004F074、0xC004C008。
+
 ## <a name="summary-of-error-codes"></a>エラー コードの概要
 
-|エラー コード |エラー メッセージ |ライセンス認証の種類 |
+|エラー コード |エラー メッセージ |ライセンス認証の種類&nbsp;|
 |-----------|--------------|----------------|
+|[0x8004FE21](#0x8004fe21-this-computer-is-not-running-genuine-windows) |このコンピューターは、正規品の Windows を実行していません。  |MAK<br />KMS クライアント |
+|[0x80070005](#0x80070005-access-denied) |アクセスが拒否されました。 要求された操作には管理者特権が必要です。 |MAK<br />KMS クライアント<br />KMS ホスト |
+|[0x8007007b](#0x8007007b-dns-name-does-not-exist) |0x8007007b DNS 名がありません。 |KMS クライアント |
+|[0x80070490](#0x80070490-the-product-key-you-entered-didnt-work) |入力したプロダクト キーは使用できませんでした。 プロダクト キーを確認してもう一度やり直してください。 |MAK |
+|[0x800706BA](#0x800706ba-the-rpc-server-is-unavailable) |RPC サーバーが利用できません。 |KMS クライアント |
+|[0x8007232A](#0x8007232a-dns-server-failure) |DNS サーバーにエラーが発生しました。  |KMS ホスト  |
+|[0x8007232B](#0x8007232b-dns-name-does-not-exist) |DNS 名がありません。 |KMS クライアント |
+|[0x8007251D](#0x8007251d-no-records-found-for-dns-query) |DNS クエリのレコードが見つかりません。 |KMS クライアント |
+|[0x80092328](#0x80092328-dns-name-does-not-exist) |DNS 名がありません。  |KMS クライアント |
+|[0xC004B100](#0xc004b100-the-activation-server-determined-that-the-computer-could-not-be-activated) |ライセンス認証サーバーで、コンピューターのライセンス認証手続きを完了できなかったことが判明しました。 |MAK |
 |[0xC004C001](#0xc004c001-the-activation-server-determined-the-specified-product-key-is-invalid) |ライセンス認証サーバーで、指定されたプロダクト キーは無効であることが判明しました。 |MAK|
 |[0xC004C003](#0xc004c003-the-activation-server-determined-the-specified-product-key-is-blocked) |ライセンス認証サーバーで、指定されたプロダクト キーがブロックされていることが判明しました。 |MAK |
 |[0xC004C008](#0xc004c008-the-activation-server-determined-that-the-specified-product-key-could-not-be-used) |ライセンス認証サーバーで、指定されたプロダクト キーは使用できないことが判明しました。 |KMS |
-|[0xC004B100](#0xc004b100-the-activation-server-determined-that-the-computer-could-not-be-activated) |ライセンス認証サーバーで、コンピューターのライセンス認証手続きを完了できなかったことが判明しました。 |MAK |
 |[0xC004C020](#0xc004c020-the-activation-server-reported-that-the-multiple-activation-key-has-exceeded-its-limit) |ライセンス認証サーバーで、マルチ ライセンス認証キーが制限値を超えたことが報告されました。 |MAK |
 |[0xC004C021](#0xc004c021-the-activation-server-reported-that-the-multiple-activation-key-extension-limit-has-been-exceeded) |ライセンス認証サーバーで、マルチ ライセンス認証キーの拡張が制限値を超えたことが報告されました。 |MAK |
 |[0xC004F009](#0xc004f009-the-software-protection-service-reported-that-the-grace-period-expired) |ソフトウェア保護サービスで、猶予期間の期限が切れたことが報告されました。 |MAK |
-|[0xC004F00F](#0xc004f00f-the-software-licensing-server-reported-that-the-hardware-id-binding-is-beyond-level-of-tolerance) |ソフトウェア ライセンス サーバーで、ハードウェア ID バインドが許容範囲のレベルを超えていることが報告されました。 |MAK/KMS クライアント/KMS ホスト |
-|[0xC004F014](#0xc004f014-the-software-protection-service-reported-that-the-product-key-is-not-available) |ソフトウェア保護サービスで、プロダクト キーが使用できないことが報告されました。 |MAK/KMS クライアント |
-|[0xC004F02C](#0xc004f02c-the-software-protection-service-reported-that-the-format-for-the-offline-activation-data-is-incorrect) |ソフトウェア保護サービスで、オフラインのライセンス認証データの形式が正しくないことが報告されました。 |MAK/KMS クライアント |
-|[0xC004F035](#0xc004f035-invalid-volume-license-key) |このエラー コードは、"The Software Protection Service reported that the computer could not be activated with a Volume license product key..." (ソフトウェア保護サービスで、ボリューム ライセンス プロダクト キーではコンピューターのライセンス認証の手続きを完了できなかったことが報告されました...) と同じです。このエラー テキストは正しいですが、あいまいです。 このエラーは、Windows の使用条件を満たしているエディションを搭載して出荷されているコンピューターを示すために OEM システムで提供されている Windows マーカーが、このコンピューターの BIOS にないことを示しています。これは、KMS クライアントのライセンス認証の要件です。 エラー:無効なボリューム ライセンス キー。ライセンス認証をするには、プロダクト キーをマルチ ライセンス認証キー (MAK) または販売キーに変更する必要があります。 You must have a qualifying operating system license AND a Volume license Windows 7 upgrade license, or a full license for Windows 7 from a retail source. (使用条件を満たしているオペレーティング システムのライセンスおよびボリューム ライセンスの Windows 7 アップグレード ライセンスか、または販売元からの Windows 7 完全ライセンスが必要です。) このソフトウェアをこれ以外のどのような状況においてもインストールすることは、契約および該当する著作権に関する法律に違反することになります。 |KMS クライアント/KMS ホスト |
+|[0xC004F00F](#0xc004f00f-the-software-licensing-server-reported-that-the-hardware-id-binding-is-beyond-level-of-tolerance) |ソフトウェア ライセンス サーバーで、ハードウェア ID バインドが許容範囲のレベルを超えていることが報告されました。 |MAK<br />KMS クライアント<br />KMS ホスト |
+|[0xC004F014](#0xc004f014-the-software-protection-service-reported-that-the-product-key-is-not-available) |ソフトウェア保護サービスで、プロダクト キーが使用できないことが報告されました。 |MAK<br />KMS クライアント |
+|[0xC004F02C](#0xc004f02c-the-software-protection-service-reported-that-the-format-for-the-offline-activation-data-is-incorrect) |ソフトウェア保護サービスで、オフラインのライセンス認証データの形式が正しくないことが報告されました。 |MAK<br />KMS クライアント |
+|[0xC004F035](#0xc004f035-invalid-volume-license-key) |ソフトウェア保護サービスで、ボリューム ライセンス プロダクト キーではコンピューターのライセンス認証の手続きを完了できなかったことが報告されました。 |KMS クライアント<br />KMS ホスト |
 |[0xC004F038](#0xc004f038-the-count-reported-by-your-key-management-service-kms-is-insufficient) |ソフトウェア保護サービスで、コンピューターをライセンス認証できなかったことが報告されました。 キー管理サービス (KMS) で報告された数が不足しています。 システム管理者に問い合わせてください。 |KMS クライアント |
 |[0xC004F039](#0xc004f039-the-key-management-service-kms-is-not-enabled) |ソフトウェア保護サービスで、コンピューターをライセンス認証できなかったことが報告されました。 キー管理サービス (KMS) が有効になっていません。 |KMS クライアント |
 |[0xC004F041](#0xc004f041-the-software-protection-service-determined-that-the-key-management-server-kms-is-not-activated) |The Software Protection Service determined that the Key Management Server (KMS) is not activated. (ソフトウェア保護サービスで、キー管理サービス (KMS) がライセンス認証されていないことが判明しました。) KMS をライセンス認証する必要があります。  |KMS クライアント |
 |[0xC004F042](#0xc004f042-the-software-protection-service-determined-that-the-specified-key-management-service-kms-cannot-be-used) |ソフトウェア保護サービスで、指定されたキー管理サービス (KMS) が使用できないことが報告されました。 |KMS クライアント |
-|[0xC004F050](#0xc004f050-the-software-protection-service-reported-that-the-product-key-is-invalid) |ソフトウェア保護サービスで、プロダクト キーが無効であることが報告されました。 |KMS、KMS クライアント、MAK |
-|[0xC004F051](#0xc004f051-the-software-protection-service-reported-that-the-product-key-is-blocked) |ソフトウェア保護サービスで、プロダクト キーがブロックされたことが報告されました。 |MAK/KMS |
+|[0xC004F050](#0xc004f050-the-software-protection-service-reported-that-the-product-key-is-invalid) |ソフトウェア保護サービスで、プロダクト キーが無効であることが報告されました。 |MAK<br />KMS<br />KMS クライアント |
+|[0xC004F051](#0xc004f051-the-software-protection-service-reported-that-the-product-key-is-blocked) |ソフトウェア保護サービスで、プロダクト キーがブロックされたことが報告されました。 |MAK<br />KMS |
 |[0xC004F064](#0xc004f064-the-software-protection-service-reported-that-the-non-genuine-grace-period-expired) |The Software Protection Service reported that the non-genuine grace period expired. (ソフトウェア保護サービスで、猶予期間の期限 (非正規版) が切れたことが報告されました。) |MAK |
-|[0xC004F065](#0xc004f065-the-software-protection-service-reported-that-the-application-is-running-within-the-valid-non-genuine-period) |The Software Protection Service reported that the application is running within the valid non-genuine period. (ソフトウェア保護サービスで、アプリケーションは有効な期間内 (非正規版) で実行されていることが報告されました。) |MAK/KMS クライアント |
+|[0xC004F065](#0xc004f065-the-software-protection-service-reported-that-the-application-is-running-within-the-valid-non-genuine-period) |The Software Protection Service reported that the application is running within the valid non-genuine period. (ソフトウェア保護サービスで、アプリケーションは有効な期間内 (非正規版) で実行されていることが報告されました。) |MAK<br />KMS クライアント |
 |[0xC004F06C](#0xc004f06c-the-request-timestamp-is-invalid) |ソフトウェア保護サービスで、コンピューターをライセンス認証できなかったことが報告されました。 キー管理サービス (KMS) で、要求されたタイムスタンプが無効であることが判明しました。  |KMS クライアント |
-|[0x80070005](#0x80070005-access-denied) |アクセスが拒否されました。 要求された操作には管理者特権が必要です。 |KMS クライアント/MAK/KMS ホスト |
-|[0x8007232A](#0x8007232a-dns-server-failure) |DNS サーバーにエラーが発生しました。  |KMS ホスト  |
-|[0x8007232B](#0x8007232b-dns-name-does-not-exist) |DNS 名がありません。 |KMS クライアント |
-|[0x800706BA](#0x800706ba-the-rpc-server-is-unavailable) |RPC サーバーが利用できません。 |KMS クライアント |
-|[0x8007251D](#0x8007251d-no-records-found-for-dns-query) |DNS クエリのレコードが見つかりません。 |KMS クライアント |
 |[0xC004F074](#0xc004f074-no-key-management-service-kms-could-be-contacted) |ソフトウェア保護サービスで、コンピューターをライセンス認証できなかったことが報告されました。 キー管理サービス (KMS) に接続できませんでした。 詳細については、アプリケーション イベント ログを参照してください。  |KMS クライアント |
-|[0x8004FE21](#0x8004fe21-this-computer-is-not-running-genuine-windows) |このコンピューターは、正規品の Windows を実行していません。  |MAK/KMS クライアント |
-|[0x80092328](#0x80092328-dns-name-does-not-exist) |0x80092328 DNS 名がありません。  |KMS クライアント |
-|[0x8007007b](#0x8007007b-dns-name-does-not-exist) |0x8007007b DNS 名がありません。 |KMS クライアント |
-|[0x80070490](#0x80070490-the-product-key-you-entered-didnt-work) |入力したプロダクト キーは使用できませんでした。 プロダクト キーを確認してもう一度やり直してください。 |MAK |
 
 ## <a name="causes-and-resolutions"></a>原因と解決策
+
+### <a name="0x8004fe21-this-computer-is-not-running-genuine-windows"></a>0x8004FE21 このコンピューターは、正規品の Windows を実行していません  
+
+#### <a name="possible-cause"></a>考えられる原因
+
+この問題が発生する原因として、いくつかのことが考えられます。 最も可能性の高い原因として、追加の言語パックのライセンスを供与されていない Windows エディションを実行しているコンピューターに言語パック (MUI) がインストールされていることが考えられます。  
+
+> [!NOTE]
+> この問題は、必ずしも改ざんを示すものではありません。 一部のアプリケーションでは、そのエディションの Windows にそうした言語パックがライセンス認証されていない場合であっても、多言語サポートをインストールできます。  
+
+この問題は、追加の機能をインストールできるように Windows がマルウェアによって変更されている場合にも発生することがあります。 また、特定のシステム ファイルが破損している場合にもこの問題が起こることがあります。  
+
+#### <a name="resolution"></a>解決方法
+
+この問題を解決するには、オペレーティング システムを再インストールする必要があります。  
+
+### <a name="0x80070005-access-denied"></a>0x80070005 アクセス拒否
+
+このエラー メッセージの全文は次のような内容です。
+
+> アクセスが拒否されました。 要求された操作には管理者特権が必要です。
+
+#### <a name="possible-cause"></a>考えられる原因
+
+ユーザー アカウント制御 (UAC) により、管理者特権でないコマンド プロンプト ウィンドウでライセンス認証処理を実行することは禁止されます。  
+
+#### <a name="resolution"></a>解決方法
+
+管理者特権でのコマンド プロンプトでコマンド **slmgr.vbs** を実行します。 これを行うには、 **[スタート] メニュー**で **cmd.exe** を右クリックし、 **[管理者として実行]** を選択します。  
+
+### <a name="0x8007007b-dns-name-does-not-exist"></a>0x8007007b DNS 名が存在しません
+
+#### <a name="possible-cause"></a>考えられる原因
+
+この問題は、KMS クライアントが DNS で KMS SRV リソース レコードを検出できない場合に発生することがあります。  
+
+#### <a name="resolution"></a>解決方法
+
+このような DNS に関連する問題のトラブルシューティングについては、「[KMS と DNS の問題に関する一般的なトラブルシューティング手順](common-troubleshooting-procedures-kms-dns.md)」を参照してください。  
+
+### <a name="0x80070490-the-product-key-you-entered-didnt-work"></a>0x80070490 入力したプロダクト キーは使用できませんでした
+
+このエラーの全文は次のような内容です。
+> 入力したプロダクト キーは使用できませんでした。 プロダクト キーを確認してもう一度やり直してください。  
+
+#### <a name="possible-cause"></a>考えられる原因
+
+この問題は、入力された MAK が無効であるか、Windows Server 2019 の既知の問題が原因で発生します。  
+
+#### <a name="resolution"></a>解決方法
+
+この問題を回避してコンピューターをライセンス認証するには、管理者特権でのコマンド プロンプトで、**slmgr -ipk <5x5 key>** を実行します。
+
+### <a name="0x800706ba-the-rpc-server-is-unavailable"></a>0x800706BA RPC サーバーを利用できません
+
+#### <a name="possible-cause"></a>考えられる原因
+
+KMS ホストでファイアウォール設定が構成されていないか、または古い DNS SRV レコードです。  
+
+#### <a name="resolution"></a>解決方法
+
+KMS ホストで、キー管理サービス (TCP ポート 1688) に対してファイアウォールの例外が有効になっていることを確認します。
+
+DNS SRV レコードが有効な KMS ホストを指していることを確認します。 
+
+ネットワーク接続をトラブルシューティングします。  
+
+このような DNS に関連する問題のトラブルシューティングについては、「[KMS と DNS の問題に関する一般的なトラブルシューティング手順](common-troubleshooting-procedures-kms-dns.md)」を参照してください。  
+
+### <a name="0x8007232a-dns-server-failure"></a>0x8007232A DNS サーバー エラー
+
+#### <a name="possible-cause"></a>考えられる原因
+
+システムにはネットワークまたは DNS の問題があります。
+
+#### <a name="resolution"></a>解決方法
+
+ネットワークおよび DNS をトラブルシューティングします。  
+
+### <a name="0x8007232b-dns-name-does-not-exist"></a>0x8007232B DNS 名が存在しません
+
+#### <a name="possible-cause"></a>考えられる原因
+
+KMS クライアントで、DNS の KMS サーバー リソース レコード (SRV RR) を見つけることができません。  
+
+#### <a name="resolution"></a>解決方法
+
+KMS ホストがインストールされており、DNS の公開が有効である (既定値) ことを確認します。 DNS が利用不可である場合は、**slmgr.vbs /skms <*kms_host_name*>** を使用して KMS クライアントに KMS ホストを指示します。  
+
+KMS ホストがない場合は、MAK を入手してインストールします。 次に、システムをライセンス認証します。
+
+このような DNS に関連する問題のトラブルシューティングについては、「[KMS と DNS の問題に関する一般的なトラブルシューティング手順](common-troubleshooting-procedures-kms-dns.md)」を参照してください。  
+
+### <a name="0x8007251d-no-records-found-for-dns-query"></a>0x8007251D DNS クエリのレコードが見つかりません
+
+#### <a name="possible-cause"></a>考えられる原因
+
+KMS クライアントで、DNS の KMS SRV レコードを見つけることができません。
+
+#### <a name="resolution"></a>解決方法
+
+ネットワーク接続および DNS のトラブルシューティング このような DNS に関連する問題のトラブルシューティング方法については、「[KMS と DNS の問題に関する一般的なトラブルシューティング手順](common-troubleshooting-procedures-kms-dns.md)」を参照してください。  
+
+### <a name="0x80092328-dns-name-does-not-exist"></a>0x80092328 DNS 名が存在しません
+
+#### <a name="possible-cause"></a>考えられる原因
+
+この問題は、KMS クライアントが DNS で KMS SRV リソース レコードを検出できない場合に発生することがあります。
+
+#### <a name="resolution"></a>解決方法
+
+このような DNS に関連する問題のトラブルシューティングについては、「[KMS と DNS の問題に関する一般的なトラブルシューティング手順](common-troubleshooting-procedures-kms-dns.md)」を参照してください。  
+
+### <a name="0xc004b100-the-activation-server-determined-that-the-computer-could-not-be-activated"></a>0xC004B100 ライセンス認証サーバーで、コンピューターのライセンス認証手続きを完了できなかったことが判明しました。
+
+#### <a name="possible-cause"></a>考えられる原因
+
+MAK はサポートされていません。  
+
+#### <a name="resolution"></a>解決方法
+
+この問題を解決するには、使用している MAK が、Microsoft によって提供された MAK であることを確認してください。 MAK が有効かどうかを確認するには、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)にお問い合わせください。
 
 ### <a name="0xc004c001-the-activation-server-determined-the-specified-product-key-is-invalid"></a>0xC004C001 ライセンス認証サーバーで、指定されたプロダクト キーは無効であることが判明しました。
 
@@ -94,16 +224,6 @@ KMS キーがライセンス認証の制限を超えました。 1 つの KMS �
 #### <a name="resolution"></a>解決方法
 
 追加のライセンス認証が必要な場合は、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)にお問い合わせください。  
-
-### <a name="0xc004b100-the-activation-server-determined-that-the-computer-could-not-be-activated"></a>0xC004B100 ライセンス認証サーバーで、コンピューターのライセンス認証手続きを完了できなかったことが判明しました。
-
-#### <a name="possible-cause"></a>考えられる原因
-
-MAK はサポートされていません。  
-
-#### <a name="resolution"></a>解決方法
-
-この問題を解決するには、使用している MAK が、Microsoft によって提供された MAK であることを確認してください。 MAK が有効かどうかを確認するには、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)にお問い合わせください。
 
 ### <a name="0xc004c020-the-activation-server-reported-that-the-multiple-activation-key-has-exceeded-its-limit"></a>0xC004C020 ライセンス認証サーバーで、マルチ ライセンス認証キーが制限値を超えたことが報告されました。
 
@@ -175,15 +295,23 @@ CID が正しく入力されたことを確認します。
 
 > エラー:無効なボリューム ライセンス キー。 ライセンス認証をするには、プロダクト キーをマルチ ライセンス認証キー (MAK) または販売キーに変更する必要があります。 You must have a qualifying operating system license AND a Volume license Windows 7 upgrade license, or a full license for Windows 7 from a retail source. (使用条件を満たしているオペレーティング システムのライセンスおよびボリューム ライセンスの Windows 7 アップグレード ライセンスか、または販売元からの Windows 7 完全ライセンスが必要です。) このソフトウェアをこれ以外のどのような状況においてもインストールすることは、契約および該当する著作権に関する法律に違反することになります。  
 
+このエラー テキストは正しいですが、あいまいです。 このエラーは、Windows の正規のエディションを実行している OEM システムとして認識する Windows マーカーが、コンピューターの BIOS にないことを示しています。 この情報は、KMS クライアントのライセンス認証に必要です。 このコードの具体的な意味: "エラー: 無効なボリューム ライセンス キー"
+
 #### <a name="possible-cause"></a>考えられる原因
 
 Windows 7 ボリューム エディションは、アップグレードのみを対象としてライセンスが供与されています。 Microsoft は、使用条件を満たしているオペレーティング システムがインストールされていないコンピューターにボリューム オペレーティング システムをインストールすることをサポートしていません。  
 
-このエラー コードは、次のことを示します。"The Software Protection Service reported that the computer could not be activated with a Volume license product key..." (ソフトウェア保護サービスで、ボリューム ライセンス プロダクト キーではコンピューターのライセンス認証の手続きを完了できなかったことが報告されました...)このエラー テキストは正しくはありますが、あいまいです。 このエラーは、コンピューターの BIOS に Windows マーカーがないことを示します。 このマーカーは、Windows の正規のエディションと共に出荷されたコンピューターであることを示すために、OEM システムに表示されます。 このマーカーは、KMS クライアントのライセンス認証に必要です。  
-
 #### <a name="resolution"></a>解決方法
 
-使用条件を満たしている Microsoft オペレーティング システムのバージョンをインストールしてから、MAK を使ってライセンス認証します。
+ライセンス認証をするには、次のいずれかを行う必要があります。
+
+- プロダクト キーをマルチ ライセンス認証キー (MAK) または販売キーに変更します。 You must have a qualifying operating system license AND a Volume license Windows 7 upgrade license, or a full license for Windows 7 from a retail source. (使用条件を満たしているオペレーティング システムのライセンスおよびボリューム ライセンスの Windows 7 アップグレード ライセンスか、または販売元からの Windows 7 完全ライセンスが必要です。)
+  > [!NOTE]
+  > ライセンス認証をしようとしたときにエラー 0x80072ee2 が発生した場合は、代わりに以下の電話によるライセンス認証方法を使用します。
+- 次の手順に従って、電話でライセンス認証を行います。
+   1. **slmgr /dti** を実行し、インストール ID の値を記録します。 </li>
+   1. 確認 ID を受け取るために、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)にお問い合わせいただき、インストール ID をお伝えください。</li>
+   1. 確認 ID を使用してライセンス認証をするには、**slmgr /atp &lt;確認 ID&gt;** を実行します。
 
 ### <a name="0xc004f038-the-count-reported-by-your-key-management-service-kms-is-insufficient"></a>0xC004F038 キー管理サービス (KMS) で報告された数が不足しています。
 
@@ -290,70 +418,6 @@ Windows ライセンス認証ツールで、システムが正規ではないこ
 
 この問題は、KMS ホストと同期するようにクライアントのシステム時刻を変更することにより解決します。 時刻の同期には、ネットワーク タイム プロトコル (NTP) のタイム ソースまたは Active Directory Domain Services を使用することをお勧めします。 この問題には UTP 時間が使用されており、タイム ゾーンの選択には依存していません。  
 
-### <a name="0x80070005-access-denied"></a>0x80070005 アクセス拒否
-
-このエラー メッセージの全文は次のような内容です。
-
-> アクセスが拒否されました。 要求された操作には管理者特権が必要です。
-
-#### <a name="possible-cause"></a>考えられる原因
-
-ユーザー アカウント制御 (UAC) により、管理者特権でないコマンド プロンプト ウィンドウでライセンス認証処理を実行することは禁止されます。  
-
-#### <a name="resolution"></a>解決方法
-
-管理者特権でのコマンド プロンプトでコマンド **slmgr.vbs** を実行します。 これを行うには、 **[スタート] メニュー**で **cmd.exe** を右クリックし、 **[管理者として実行]** を選択します。  
-
-### <a name="0x8007232a-dns-server-failure"></a>0x8007232A DNS サーバー エラー
-
-#### <a name="possible-cause"></a>考えられる原因
-
-システムにはネットワークまたは DNS の問題があります。
-
-#### <a name="resolution"></a>解決方法
-
-ネットワークおよび DNS をトラブルシューティングします。  
-
-### <a name="0x8007232b-dns-name-does-not-exist"></a>0x8007232B DNS 名が存在しません
-
-#### <a name="possible-cause"></a>考えられる原因
-
-KMS クライアントで、DNS の KMS サーバー リソース レコード (SRV RR) を見つけることができません。  
-
-#### <a name="resolution"></a>解決方法
-
-KMS ホストがインストールされており、DNS の公開が有効である (既定値) ことを確認します。 DNS が利用不可である場合は、**slmgr.vbs /skms <*kms_host_name*>** を使用して KMS クライアントに KMS ホストを指示します。  
-
-KMS ホストがない場合は、MAK を入手してインストールします。 次に、システムをライセンス認証します。
-
-このような DNS に関連する問題のトラブルシューティングについては、「[KMS と DNS の問題に関する一般的なトラブルシューティング手順](common-troubleshooting-procedures-kms-dns.md)」を参照してください。  
-
-### <a name="0x800706ba-the-rpc-server-is-unavailable"></a>0x800706BA RPC サーバーを利用できません
-
-#### <a name="possible-cause"></a>考えられる原因
-
-KMS ホストでファイアウォール設定が構成されていないか、または古い DNS SRV レコードです。  
-
-#### <a name="resolution"></a>解決方法
-
-KMS ホストで、キー管理サービス (TCP ポート 1688) に対してファイアウォールの例外が有効になっていることを確認します。
-
-DNS SRV レコードが有効な KMS ホストを指していることを確認します。 
-
-ネットワーク接続をトラブルシューティングします。  
-
-このような DNS に関連する問題のトラブルシューティングについては、「[KMS と DNS の問題に関する一般的なトラブルシューティング手順](common-troubleshooting-procedures-kms-dns.md)」を参照してください。  
-
-### <a name="0x8007251d-no-records-found-for-dns-query"></a>0x8007251D DNS クエリのレコードが見つかりません
-
-#### <a name="possible-cause"></a>考えられる原因
-
-KMS クライアントで、DNS の KMS SRV レコードを見つけることができません。
-
-#### <a name="resolution"></a>解決方法
-
-ネットワーク接続および DNS のトラブルシューティング このような DNS に関連する問題のトラブルシューティング方法については、「[KMS と DNS の問題に関する一般的なトラブルシューティング手順](common-troubleshooting-procedures-kms-dns.md)」を参照してください。  
-
 ### <a name="0xc004f074-no-key-management-service-kms-could-be-contacted"></a>0xC004F074 キー管理サービス (KMS) に接続できませんでした
 
 このエラー メッセージの全文は次のような内容です。
@@ -369,51 +433,3 @@ KMS クライアントで、DNS の KMS SRV レコードを見つけることが
 アプリケーション イベント ログで、イベント ID が 12288 で、ライセンス認証の試行に関連付けられている各イベントを特定します。 これらのイベントのエラーを解決します。
 
 DNS に関連する問題のトラブルシューティングについては、「[KMS と DNS の問題に関する一般的なトラブルシューティング手順](common-troubleshooting-procedures-kms-dns.md)」を参照してください。  
-
-### <a name="0x8004fe21-this-computer-is-not-running-genuine-windows"></a>0x8004FE21 このコンピューターは、正規品の Windows を実行していません  
-
-#### <a name="possible-cause"></a>考えられる原因
-
-この問題が発生する原因として、いくつかのことが考えられます。 最も可能性の高い原因として、追加の言語パックのライセンスを供与されていない Windows エディションを実行しているコンピューターに言語パック (MUI) がインストールされていることが考えられます。  
-
-> [!NOTE]
-> この問題は、必ずしも改ざんを示すものではありません。 一部のアプリケーションでは、そのエディションの Windows にそうした言語パックがライセンス認証されていない場合であっても、多言語サポートをインストールできます。  
-
-この問題は、追加の機能をインストールできるように Windows がマルウェアによって変更されている場合にも発生することがあります。 また、特定のシステム ファイルが破損している場合にもこの問題が起こることがあります。  
-
-#### <a name="resolution"></a>解決方法
-
-この問題を解決するには、オペレーティング システムを再インストールする必要があります。  
-
-### <a name="0x80092328-dns-name-does-not-exist"></a>0x80092328 DNS 名が存在しません
-
-#### <a name="possible-cause"></a>考えられる原因
-
-この問題は、KMS クライアントが DNS で KMS SRV リソース レコードを検出できない場合に発生することがあります。 
-
-#### <a name="resolution"></a>解決方法
-
-このような DNS に関連する問題のトラブルシューティングについては、「[KMS と DNS の問題に関する一般的なトラブルシューティング手順](common-troubleshooting-procedures-kms-dns.md)」を参照してください。  
-
-### <a name="0x8007007b-dns-name-does-not-exist"></a>0x8007007b DNS 名が存在しません
-
-#### <a name="possible-cause"></a>考えられる原因
-
-この問題は、KMS クライアントが DNS で KMS SRV リソース レコードを検出できない場合に発生することがあります。  
-
-#### <a name="resolution"></a>解決方法
-
-このような DNS に関連する問題のトラブルシューティングについては、「[KMS と DNS の問題に関する一般的なトラブルシューティング手順](common-troubleshooting-procedures-kms-dns.md)」を参照してください。  
-
-### <a name="0x80070490-the-product-key-you-entered-didnt-work"></a>0x80070490 入力したプロダクト キーは使用できませんでした
-
-このエラーの全文は次のような内容です。
-> 入力したプロダクト キーは使用できませんでした。 プロダクト キーを確認してもう一度やり直してください。  
-
-#### <a name="possible-cause"></a>考えられる原因
-
-この問題は、入力された MAK が無効であるか、Windows Server 2019 の既知の問題が原因で発生します。  
-
-#### <a name="resolution"></a>解決方法
-
-この問題を回避してコンピューターをライセンス認証するには、管理者特権でのコマンド プロンプトで、**slmgr -ipk <5x5 key>** を実行します。

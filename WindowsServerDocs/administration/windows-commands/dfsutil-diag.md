@@ -1,7 +1,7 @@
 ---
-title: dfsutil 診断
+title: dfsutil Diag
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,17 +13,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e0d44dbc795684b96f2ba7cc58801ebd39bece50
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5b0d19192395b5d283b7557088bff837a24b6223
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871053"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378238"
 ---
-# <a name="dfsutil-diag"></a>dfsutil 診断
+# <a name="dfsutil-diag"></a>dfsutil Diag
 
 
 
-## <a name="this-topic-is-no-longer-available"></a>このトピックでは使用できなく
+## <a name="this-topic-is-no-longer-available"></a>このトピックは使用できなくなりました
 
-申し訳ありません、要求されたトピックは使用できなくします。
+申し訳ございません。要求されたトピックは利用できなくなりました。

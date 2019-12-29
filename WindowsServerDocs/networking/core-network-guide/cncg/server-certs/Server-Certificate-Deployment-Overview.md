@@ -4,28 +4,28 @@ description: このトピックでは、802.1 X ワイヤードおよびワイ�
 manager: brianlic
 ms.topic: article
 ms.assetid: ca5c3e04-ae25-4590-97f3-0376a9c2a9a2
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0cafa4bdeb80b22d6bac4ad09bcae9436cda97c8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d4b713437f031e4a381d2759bdcbf7f41bd573d5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877823"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406346"
 ---
 # <a name="server-certificate-deployment-overview"></a>サーバー証明書の展開の概要
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックは次のセクションで構成されます。  
   
--   [サーバー証明書展開コンポーネント](#bkmk_components)
+-   [サーバー証明書の展開コンポーネント](#bkmk_components)
   
 -   [サーバー証明書の展開プロセスの概要](#bkmk_process)
   
-## <a name="bkmk_components"></a>サーバー証明書展開コンポーネント
+## <a name="bkmk_components"></a>サーバー証明書の展開コンポーネント
 このガイドを使用すると、エンタープライズ ルート証明機関 (CA) として Active Directory 証明書サービス (AD CS) をインストールしてネットワーク ポリシー サーバー (NPS)、ルーティングとリモート アクセス サービス (RRAS)、または NPS および RRAS の両方を実行しているサーバーにサーバー証明書を登録することができます。
 
 
@@ -36,7 +36,7 @@ SDN 証明書ベースの認証を展開すると、サーバーがセキュリ�
 ![サーバー証明書の展開の必要なインフラストラクチャ](../../../media/Nps-Certs/Nps-Certs.jpg)  
   
 > [!NOTE]  
-> 上の図では、複数のサーバーが表されています。DC1、CA1、WEB1、および多くの SDN サーバーです。 CA1 および WEB1 を展開および構成との DC1 に、このガイドでは、ネットワークに既にインストールするいると仮定の構成手順を説明します。 Active Directory ドメインをすでにインストールしない場合、これを行うを使用して、 [コア ネットワーク ガイド](https://technet.microsoft.com/library/mt604042.aspx) Windows Server 2016 用です。  
+> 上の図では、複数のサーバーが示されています。DC1、CA1、WEB1、および多くの SDN サーバー。 CA1 および WEB1 を展開および構成との DC1 に、このガイドでは、ネットワークに既にインストールするいると仮定の構成手順を説明します。 Active Directory ドメインをすでにインストールしない場合、これを行うを使用して、 [コア ネットワーク ガイド](https://technet.microsoft.com/library/mt604042.aspx) Windows Server 2016 用です。  
   
 上の図に示すように各項目の詳細については、次を参照してください。  
   
@@ -48,7 +48,7 @@ SDN 証明書ベースの認証を展開すると、サーバーがセキュリ�
   
 -   [NPS1](#bkmk_nps1)  
   
-### <a name="bkmk_ca1"></a>CA1 AD CS サーバー役割を実行して  
+### <a name="bkmk_ca1"></a>AD CS サーバーの役割を実行している CA1  
 このシナリオでは、エンタープライズ ルート証明機関 (CA) と、発行元 CA ではまたです。 CA は、証明書を登録する適切なセキュリティ権限を持つサーバー コンピューターに証明書を発行します。 Active Directory 証明書サービス (AD CS) は、CA1 にインストールされます。  
   
 大規模なネットワークまたはセキュリティに関する注意事項が根拠は、ルート CA と発行元 CA の役割を分離し、ca は下位の Ca を展開できます。  
@@ -66,13 +66,13 @@ AD CS をインストールする前に、固有の設定で、展開の CAPolic
 #### <a name="additional-ca1-configuration"></a>CA1 に追加の構成  
 CA は、識別の証拠としてそれらに提示される証明書が有効な証明書であることを確認し、失効していないコンピューターを確認する必要があります証明書失効リスト (CRL) を公開します。 コンピューターは、認証プロセス中に、CRL を検索する場所を知ることは、CRL の正しい場所を CA を構成する必要があります。  
   
-### <a name="bkmk_web1"></a>WEB1 Web サービス (IIS) サーバーの役割を実行しています。  
+### <a name="bkmk_web1"></a>WEB1 Web サービス (IIS) サーバーの役割を実行している  
 WEB1 で、Web サーバー (IIS) サーバーの役割を実行しているコンピューターで CRL と AIA の場所として使用するため、Windows エクスプ ローラーでフォルダーを作成する必要があります。  
   
 #### <a name="virtual-directory-for-the-crl-and-aia"></a>CRL と AIA の仮想ディレクトリ  
 Windows エクスプ ローラーでフォルダーを作成した後は、インターネット インフォメーション サービス (IIS) マネージャーだけでなく、仮想ディレクトリのアクセス制御リストを構成するコンピューターを許可するようが公開された後、AIA と CRL にアクセスする仮想ディレクトリとしてフォルダーを構成する必要があります。  
   
-### <a name="bkmk_dc1"></a>DC1 AD DS および DNS サーバーの役割を実行しています。  
+### <a name="bkmk_dc1"></a>AD DS と DNS サーバーの役割を実行している DC1  
 DC1 は、ドメイン コント ローラーで、ネットワーク上の DNS サーバーです。  
   
 #### <a name="group-policy-default-domain-policy"></a>ポリシーの既定のドメイン ポリシーをグループ化します。  
@@ -81,8 +81,8 @@ CA で証明書テンプレートを構成した後は、証明書は、NPS と 
 #### <a name="dns-alias-cname-resource-record"></a>DNS エイリアス (CNAME) リソース レコード  
 その他のコンピュータが、サーバーだけでなく、AIA と、サーバーに格納されている CRL を検出できることを確認する Web サーバーのエイリアス (CNAME) リソース レコードを作成する必要があります。 Web および FTP サイトをホストしているなどの他の目的の Web サーバーを使用できるように、柔軟性がさらに、提供エイリアス CNAME リソース レコードを使用します。  
   
-### <a name="bkmk_nps1"></a>NPS1 ネットワーク ポリシー サーバーの役割サービス、ネットワーク ポリシーとアクセス サービス サーバーの役割を実行  
-Windows Server 2016 コア ネットワーク ガイドで、タスクを実行すると、NPS がインストールされている、NPSs の 1 つまたは複数が、ネットワークにインストールされているため、このガイドのタスクを実行する前に既にがある必要です。  
+### <a name="bkmk_nps1"></a>ネットワークポリシーとアクセスサービスサーバーの役割のネットワークポリシーサーバーの役割サービスを実行している NPS1  
+NPS は、Windows Server 2016 コアネットワークガイドのタスクを実行するときにインストールされるため、このガイドのタスクを実行する前に、ネットワークに1つ以上の NPSs がインストールされている必要があります。  
   
 #### <a name="group-policy-applied-and-certificate-enrolled-to-servers"></a>グループ ポリシーが適用され、サーバーに証明書の登録  
 証明書テンプレートおよび自動登録を構成した後は、すべての対象サーバーのグループ ポリシーを更新できます。 この時点では、サーバーは、CA1 からサーバー証明書を登録します。  

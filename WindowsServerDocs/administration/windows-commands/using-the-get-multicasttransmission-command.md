@@ -1,8 +1,8 @@
 ---
 title: /Get-multicasttransmission コマンドを使用してください。
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fdbb9283285bcf56cd83c18ea076e3d36a51b966
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 54c503abda871d1f2a4fd8a30d7f12317eee6a48
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823233"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392126"
 ---
 # <a name="using-the-get-multicasttransmission-command"></a>/Get-multicasttransmission コマンドを使用してください。
 
@@ -31,7 +31,7 @@ ms.locfileid: "59823233"
 wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name> [/Server:<Server name>mediatype:InstallmediaGroup:<Image group name>] 
 [/Filename:<File name>] [/Show:Clients]
 ```
-**Windows Server 2008 R2**のブート イメージの転送。
+**Windows Server 2008 R2**ブートイメージの転送:
 ```
 wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name>
     [/Server:<Server name>]
@@ -40,7 +40,7 @@ wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name>
     /Architecture:{x86 | ia64 | x64}
         [/Filename:<File name>]
 ```
-インストール イメージの転送。
+インストールイメージの転送:
 ```
 wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name>
          [/Server:<Server name>]
@@ -52,20 +52,20 @@ wdsutil [Options] /Get-MulticastTransmissiomedia:<Image name>
 ## <a name="parameters"></a>パラメーター
 |パラメーター|説明|
 |-------|--------|
-メディア:<Image name>|このイメージに関連付けられているマルチキャスト転送を表示します。|
+メディア: <Image name>|このイメージに関連付けられているマルチキャスト転送を表示します。|
 |[/Server:<Server name>]|サーバーの名前を指定します。 NetBIOS 名または完全修飾ドメイン名 (FQDN) を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
-mediatype:Install|イメージの種類を指定します。 このオプションに設定する必要があります **インストール**します。|
+mediatype: インストール|イメージの種類を指定します。 このオプションに設定する必要があります **インストール**します。|
 |\mediaGroup:<Image group name>]|イメージを含むイメージ グループを指定します。 イメージ グループ名が指定されていないサーバーに 1 つだけのイメージ グループが存在する場合は、そのイメージ グループを使用します。 サーバーの 1 つ以上のイメージ グループが存在する場合は、イメージ グループを指定するこのオプションを使用する必要があります。|
 |/アーキテクチャ: {x86 &#124; ia64 &#124; x64}|転送に関連付けられているブート イメージのアーキテクチャを指定します。 さまざまなアーキテクチャでブート イメージで同じイメージの名前を指定することも可能であるために、適切なイメージが使用されるようにするアーキテクチャを指定してください。|
 |[/ファイル名:<File name>]|イメージを含むファイルを指定します。 イメージは、名前によって一意に識別できない場合、は、ファイル名を指定するこのオプションを使用する必要があります。|
-|[/ショー: クライアント]<br /><br />または<br /><br />[/details:Clients]|マルチキャスト転送に接続されているクライアント コンピューターに関する情報を表示します。|
+|[/ショー: クライアント]<br /><br />または<br /><br />[詳細: クライアント]|マルチキャスト転送に接続されているクライアント コンピューターに関する情報を表示します。|
 ## <a name="BKMK_examples"></a>例
-**Windows Server 2008** Office に Vista という名前のイメージの転送に関する情報を表示するには、次のいずれかを入力します。
+**Windows Server 2008**"Vista with Office" という名前のイメージの転送に関する情報を表示するには、次のいずれかを入力します。
 ```
 wdsutil /Get-MulticastTransmissiomedia:"Vista with Officemediatype:Install
 wdsutil /Get-MulticastTransmission /Server:MyWDSServemedia:"Vista with Officemediatype:InstalmediaGroup:ImageGroup1 /Filename:install.wim /Show:Clients
 ```
-**Windows Server 2008 R2** Office に Vista という名前のイメージの転送に関する情報を表示するには、次のいずれかを入力します。
+**Windows Server 2008 R2**"Vista with Office" という名前のイメージの転送に関する情報を表示するには、次のいずれかを入力します。
 ```
 wdsutil /Get-MulticastTransmissiomedia:"Vista with Office"
  /Imagetype:Install
@@ -76,7 +76,7 @@ wdsutil /Get-MulticastTransmission /Server:MyWDSServemedia:"Vista with Officemed
 ```
 wdsutil /Get-MulticastTransmission /Server:MyWDSServemedia:"X64 Boot Imagemediatype:Boot /Architecture:x64 /Filename:boot.wim /details:Clients
 ```
-#### <a name="additional-references"></a>その他の参照
+#### <a name="additional-references"></a>その他の参照情報
 [コマンドライン構文のポイント](command-line-syntax-key.md)
 [get AllMulticastTransmissions コマンドを使用して](using-the-get-allmulticasttransmissions-command.md)
 [MulticastTransmission 新しいコマンドを使用して](using-the-new-multicasttransmission-command.md)

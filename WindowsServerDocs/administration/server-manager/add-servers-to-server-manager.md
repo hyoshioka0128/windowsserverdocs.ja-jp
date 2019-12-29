@@ -2,7 +2,7 @@
 title: サーバー マネージャーへのサーバーの追加
 description: サーバー マネージャー
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-server-manager
@@ -14,16 +14,16 @@ ms.author: coreyp
 manager: dongill
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: a47ecbc0c7359438ed60ed34c94adf0096b14967
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: ad30a8f1c4c1e0aa317512eb68fffbd76413175b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435452"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383262"
 ---
 # <a name="add-servers-to-server-manager"></a>サーバー マネージャーへのサーバーの追加
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server では、単一のサーバー マネージャー コンソールを使用して複数のリモート サーバーを管理できます。 サーバー マネージャーを使用して管理するサーバーは、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、または Windows Server 2008 が実行されているサーバーです。 新しいリリースの Windows Server を、古いリリースのサーバー マネージャーで管理することはできません。
 
@@ -38,11 +38,11 @@ Windows Server では、単一のサーバー マネージャー コンソール
 
 このトピックは次のセクションで構成されます。
 
--   [管理するサーバーを追加します。](#BKMK_add)
+-   [管理するサーバーの追加](#BKMK_add)
 
--   [管理にコマンドを使用して資格情報を提供します。](#BKMK_creds)
+-   [[管理に使用する資格情報] コマンドで資格情報を指定する](#BKMK_creds)
 
-## <a name="BKMK_creds"></a>管理にコマンドを使用して資格情報を提供します。
+## <a name="BKMK_creds"></a>[管理に使用する資格情報] コマンドで資格情報を指定する
 サーバー マネージャーに追加するリモート サーバーの一部では、アクセスまたは管理するために異なるユーザー アカウントの資格情報が必要になる場合があります。 サーバー マネージャーを実行しているコンピューターへのログオンに使用するものとは異なる資格情報を管理対象サーバーに指定するには、サーバー マネージャーにサーバーを追加した後で、 **[管理に使用する資格情報]** コマンドを使用します。このコマンドには、ロールまたはグループのホーム ページの **[サーバー]** タイルで管理対象サーバーのエントリを右クリックしてアクセスできます。 **[管理に使用する資格情報]** をクリックすると **[Windows セキュリティ]** ダイアログ ボックスが開き、そこでは管理対象サーバーでのアクセス権限を持つユーザー名を次のいずれかの形式で入力できます。
 
 -   *ユーザー名*
@@ -64,7 +64,7 @@ Windows Server では、単一のサーバー マネージャー コンソール
 > [!NOTE]
 > **[管理に使用する資格情報]** コマンドをサポートしないロールおよび機能としては、リモート デスクトップ サービス (RDS) や IP アドレス管理 (IPAM) サーバーなどがあります。 サーバー マネージャーを実行しているコンピューターで使用しているものと同じ資格情報を使用して、リモート RDS または IPAM サーバーを管理できない場合は、これらのリモート サーバーの管理に通常使用するアカウントを、サーバー マネージャーを実行しているコンピューターの Administrators グループに追加してみてください。 次に、RDS または IPAM を実行しているリモート サーバーの管理に使用するアカウントで、サーバー マネージャーを実行しているコンピューターにログオンします。
 
-## <a name="BKMK_add"></a>管理するサーバーを追加します。
+## <a name="BKMK_add"></a>管理するサーバーの追加
 **[サーバーの追加]** ダイアログ ボックスでは、次の 3 種類の方法で、管理対象サーバーをサーバー マネージャーに追加できます。
 
 -   **Active Directory® Domain Services** ローカル コンピューターと同じドメインにある Active Directory によって検出されたサーバーを管理対象として追加します。
@@ -176,6 +176,6 @@ Windows Server では、単一のサーバー マネージャー コンソール
 
 -   クラスター化された仮想サーバーにロールと機能をインストールすることはできません。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [サーバー マネージャー](server-manager.md)
 [サーバー グループの作成と管理](create-and-manage-server-groups.md)

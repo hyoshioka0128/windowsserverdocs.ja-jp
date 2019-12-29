@@ -1,7 +1,7 @@
 ---
 title: HYPER-V でサポートされている FreeBSD 仮想マシン
 description: 各バージョンに含まれる Linux integration services と機能の一覧を示します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,12 +11,12 @@ ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 author: shirgall
 ms.author: kathydav
 ms.date: 08/30/2017
-ms.openlocfilehash: a6e9c6e3bec2001c73254ffd813954f04a37a714
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: b7b02e1ec93d6255412a89e7e7d7b8246cf5e50e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544715"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365509"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>HYPER-V でサポートされている FreeBSD 仮想マシン
 
@@ -77,7 +77,7 @@ ms.locfileid: "68544715"
 
 2. 次のコマンドを使用してレガシ ATA ドライバーを有効にしない限り、BIS ドライバーが FreeBSD 2.x と1.x に読み込まれるときに、バーチャル DVD ドライブが認識されないことがあります。
     ```sh
-    # echo ‘hw.ata.disk_enable=1’ >> /boot/loader.conf
+    # echo ‘hw.ata.disk_enable=1' >> /boot/loader.conf
     # shutdown -r now
     ```
 

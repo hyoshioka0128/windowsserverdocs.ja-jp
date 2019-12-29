@@ -1,43 +1,43 @@
 ---
-title: 信頼済み TPM ルート証明書をインストールします。
+title: 信頼された TPM ルート証明書をインストールする
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 06/27/2019
-ms.openlocfilehash: 0d42befcfacfffd302cfcb27f9f3c2c973534398
-ms.sourcegitcommit: 2c2c37170c65434179bcf2989d557f97dcbe1b9f
+ms.openlocfilehash: 15614ce1065170bc557fad10a168b3dda6a5b05a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67419230"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386550"
 ---
-# <a name="install-trusted-tpm-root-certificates"></a>信頼済み TPM ルート証明書をインストールします。
+# <a name="install-trusted-tpm-root-certificates"></a>信頼された TPM ルート証明書をインストールする
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
-TPM 構成証明を使用するように HGS を構成するときに、サーバーで Tpm のベンダーを信頼するように HGS を構成する必要があります。
-この余分な検証プロセスでは、のみ、信頼できる Tpm は、HGS を証明することにより、します。
-信頼されていない TPM の登録を試みる場合`Add-HgsAttestationTpmHost`、TPM ベンダーが信頼されていないことを示すエラーが表示されます。
+TPM 構成証明を使用するように HGS を構成する場合は、サーバーの Tpm のベンダーを信頼するように HGS を構成する必要もあります。
+この追加の検証プロセスにより、認証された信頼できる Tpm だけが HGS で証明できるようになります。
+信頼されていない TPM を `Add-HgsAttestationTpmHost`に登録しようとすると、TPM ベンダが信頼されていないことを示すエラーが表示されます。
 
-を、Tpm を信頼するには、ルートとでは、サーバーの Tpm 保証キーの署名に使用される中間の署名証明書は、HGS にインストールする必要があります。
-データ センターでは、複数の TPM モデルを使用する場合は、モデルごとに異なる証明書をインストールする必要があります。
-HGS は"TrustedTPM_RootCA"になり、仕入先の証明書の"TrustedTPM_IntermediateCA"証明書を格納します。
+Tpm を信頼するには、サーバーの Tpm で保証キーの署名に使用されるルート証明書と中間署名証明書を HGS にインストールする必要があります。
+データセンターで複数の TPM モデルを使用する場合は、モデルごとに異なる証明書をインストールすることが必要になる場合があります。
+HGS は、ベンダー証明書の "TrustedTPM_RootCA" と "TrustedTPM_IntermediateCA" の証明書ストアを検索します。
 
 > [!NOTE]
-> TPM ベンダーの証明書は、既定では Windows にインストールされているものとは異なる特定のルートと TPM ベンダーで使用される中間証明書を表します。
+> TPM ベンダー証明書は、Windows で既定でインストールされる証明書とは異なり、TPM ベンダーによって使用される特定のルート証明書と中間証明書を表します。
 
-信頼済み TPM ルートおよび中間証明書のコレクションは便宜を図るマイクロソフトによって発行されました。
-次の手順を使用して、これらの証明書をインストールすることができます。
-TPM 証明書は、以下のパッケージには含まれません、ルートと、特定の TPM モデルの中間証明書を取得するには、TPM ベンダーやサーバー OEM にお問い合わせください。
+信頼できる TPM ルート証明書と中間証明書のコレクションは、お客様の便宜を目的として Microsoft によって公開されています。
+これらの証明書をインストールするには、次の手順を実行します。
+TPM 証明書が以下のパッケージに含まれていない場合は、TPM ベンダーまたはサーバー OEM に問い合わせて、特定の TPM モデルのルート証明書と中間証明書を取得します。
 
-次の手順を繰り返します**HGS サーバーがすべて**:
+**すべての HGS サーバー**で、次の手順を繰り返します。
 
-1.  最新パッケージをダウンロード[ https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)します。
+1.  [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)から最新のパッケージをダウンロードします。
 
-2.  信頼性を保証する cab ファイルの署名を確認します。 署名が有効でない場合は、続行しないでください。
+2.  Cab ファイルの信頼性を確認するために、その署名を確認します。 署名が有効でない場合は、続行しないでください。
 
     ```powershell
     Get-AuthenticodeSignature .\TrustedTpm.cab
@@ -60,17 +60,17 @@ TPM 証明書は、以下のパッケージには含まれません、ルート�
     expand.exe -F:* <Path-To-TrustedTpm.cab> .\TrustedTPM
     ```
 
-3.  既定では、構成スクリプトはすべて TPM ベンダーの証明書をインストールします。 特定の TPM ベンダーの証明書をインポートする場合は、組織によって信頼されていない TPM ベンダーのフォルダーを削除します。
+3.  既定では、構成スクリプトによって、TPM ベンダーごとに証明書がインストールされます。 特定の TPM ベンダーの証明書のみをインポートする場合は、組織によって信頼されていない TPM ベンダーのフォルダーを削除します。
 
-4.  信頼された証明書パッケージをインストールするには、展開したフォルダーで、セットアップ スクリプトを実行します。
+4.  展開されたフォルダーでセットアップスクリプトを実行して、信頼された証明書パッケージをインストールします。
 
     ```
     cd .\TrustedTPM
     .\setup.cmd
     ```
 
-新しい証明書またはそれ以前のインストール中にスキップ意図的に追加するを HGS クラスター内のすべてのノードで上記の手順を繰り返します。
-既存の証明書信頼されたままになりますが、展開された cab ファイルを新しい証明書を信頼済み TPM に追加されますを格納します。
+以前のインストール時に、新しい証明書または意図的にスキップされた証明書を追加するには、HGS クラスター内のすべてのノードで上記の手順を繰り返します。
+既存の証明書は信頼されたままですが、拡張された cab ファイルで見つかった新しい証明書は、信頼された TPM ストアに追加されます。
 
 ## <a name="next-step"></a>次の手順
 

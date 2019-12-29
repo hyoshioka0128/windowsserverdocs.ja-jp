@@ -1,8 +1,8 @@
 ---
 title: time
-description: 設定し、システム時刻を表示する方法について説明します。
+description: システム時刻を設定および表示する方法について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5c1f43be98a19c4b150c247cc7fd48d62edeb5c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 484653ed65d5e5c16d74b2cb45b2c9da71aa62aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861913"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369951"
 ---
 # <a name="time"></a>time
 
@@ -38,7 +38,7 @@ time [/t | [<HH>[:<MM>[:<SS>]] [am|pm]]]
 
 |パラメーター|説明|
 |---------|-----------|
-|\<HH > [:\<MM > [:\<SS > [.\<NN >]] [います\|pm]|システム時刻を指定された、新しい時間に設定 *HH* (必要)、時間単位で *MM* 分単位で、 *SS* の秒数。 *NN* の秒を指定するために使用できます。 場合 **いる** または **pm** が指定されていない **時間** 既定で 24 時間制を使用します。|
+|\<HH > [:\<MM > [:\<SS > [.\<NN >]]] [am\|pm]|システム時刻を指定された、新しい時間に設定 *HH* (必要)、時間単位で *MM* 分単位で、 *SS* の秒数。 *NN* の秒を指定するために使用できます。 場合 **いる** または **pm** が指定されていない **時間** 既定で 24 時間制を使用します。|
 |/t|ときに、新しいメッセージを表示せずには、現在の時刻を表示します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
@@ -69,4 +69,4 @@ Enter the new time:
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

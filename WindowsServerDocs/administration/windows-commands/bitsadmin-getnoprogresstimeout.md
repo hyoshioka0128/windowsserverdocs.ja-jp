@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getnoprogresstimeout
-description: Windows コマンド」のトピック**bitsadmin getnoprogresstimeout** -一時的なエラーが発生した後に、ファイルを転送しようとするサービスを秒単位での時間の長さを取得します。
+description: '**Bitsadmin getnoprogresstimeout**の Windows コマンドに関するトピックでは、一時的なエラーが発生した後にサービスがファイルの転送を試行する時間の長さを秒単位で取得します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9563b68b8012a49471b56e3b8f2fbd60d1c69756
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7dcc0e445f4cae25c27f5ff70c73f4f2f23975aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850803"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381503"
 ---
 # <a name="bitsadmin-getnoprogresstimeout"></a>bitsadmin getnoprogresstimeout
 
 
 
-一時的なエラーが発生した後に、ファイルを転送しようとするサービスを秒単位での時間の長さを取得します。
+一時的なエラーが発生した後にサービスがファイルの転送を試行する時間 (秒単位) を取得します。
 
 ## <a name="syntax"></a>構文
 
@@ -40,11 +40,11 @@ bitsadmin /GetNoProgressTimeout <Job>
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブの進行状況のタイムアウト値を取得する*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブの進行状況のタイムアウト値を取得します。
 ```
 C:\>bitsadmin /GetNoProgressTimeout myDownloadJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

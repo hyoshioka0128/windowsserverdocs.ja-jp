@@ -1,37 +1,37 @@
 ---
 ms.assetid: 4b81ac66-3f34-4a39-a8bf-5411131a69c2
-title: AD FS からの要求を使用する AD FS の構成のチェックリスト - 1.x
+title: チェックリスト-AD FS 1.x からの要求を使用するように AD FS を構成する
 description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: bd4c436c806074f63bf51f497429532d7be32f75
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: f91944333da9ce4c1d78bbbf7b3652f1118e1f08
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192407"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408497"
 ---
-# <a name="checklist-configuring-ad-fs-to-send-claims-to-an-ad-fs-1x-federation-service"></a>チェックリスト:AD FS 1.x のフェデレーション サービスに対するクレームを送信する AD FS を構成します。
+# <a name="checklist-configuring-ad-fs-to-send-claims-to-an-ad-fs-1x-federation-service"></a>チェックリスト: AD FS 1.x のフェデレーション サービスに要求を送信するように AD FS を構成する
 
   
-## <a name="checklist-configuring-ad-fs-to-send-claims-to-an-adfs1x-federation-service"></a>チェックリスト:AD FS の要求を送信する AD FS を構成する 1.x Federation Service  
-このチェックリストには、Active Directory フェデレーション サービスを構成するために必要なタスクが含まれた\(AD FS\) 、AD FS 1 によって認識できる要求を送信する Windows Server 2012 でのフェデレーション サービス *。x*フェデレーション サービス。  
+## <a name="checklist-configuring-ad-fs-to-send-claims-to-an-adfs1x-federation-service"></a>チェックリスト: AD FS 1.x フェデレーションサービスに要求を送信するように AD FS を構成する  
+このチェックリストには、Active Directory フェデレーションサービス (AD FS) \(を構成するために必要なタスクが含まれています。このタスクは、Windows Server 2012 の\) フェデレーションサービス AD FS AD FS 1 で認識できる要求を送信するために使用します。*x*フェデレーションサービス。  
   
 > [!NOTE]  
 > このチェックリストのタスクは順番に実行してください。 参照リンクによって手順に移動した場合は、このチェックリストの残りのタスクを進めることができるように、その手順の作業が完了したらこのトピックに戻ります。  
   
-![要求を送信する AD FS 構成](media/2b05dce3-938f-4168-9b8f-1f4398cbdb9b.gif)**チェックリスト。AD FS の要求を送信する AD FS を構成する 1.x Federation Service**  
+要求を送信するための AD FS を構成する ![](media/2b05dce3-938f-4168-9b8f-1f4398cbdb9b.gif)**チェックリスト: AD FS 1.x に要求を送信するための AD FS の構成フェデレーションサービス**  
   
 ||タスク|リファレンス|  
 |-|--------|-------------|  
-|![要求を送信する AD FS を構成します。](media/icon_checkboxo.gif)|Windows Server 2012 で AD FS と AD FS の以前のバージョン間の相互運用性の計画し、要求の種類の名前 ID の詳細について説明します。|![要求を送信する AD FS 構成](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[AD FS との相互運用の計画 1.x](https://technet.microsoft.com/library/ff678040.aspx)|  
-|![要求を送信する AD FS を構成します。](media/icon_checkboxo.gif)|AD FS の以前のバージョンとの相互運用を行う前に、まず証明書利用者信頼を AD FS 1 に AD FS フェデレーション サービスを作成する必要があります。*x*フェデレーション サービス。 **注:** AD FS 1 で信頼を作成することはできません。*x*フェデレーション メタデータを使用してフェデレーション サービス。<br /><br />右へのリンクの手順を使用する信頼を設定すると、追加証明書利用者信頼のウィザード、AD FS 1 との相互運用するこの信頼を設定するでは、次を行う必要があります。*x*フェデレーション サービス。<br /><br />1. **データ ソースの選択**] ページで [**パーティの信頼の手動で証明書利用者に関するデータを入力**します。<br />2. **プロファイルの選択**] ページで、[ **AD FS 1.0 および 1.1 プロファイル**します。<br />3.**URL の構成**] ページ [ **WS\-フェデレーション パッシブ URL**、型、**フェデレーション サービス エンドポイントの URL** AD FS 1 で定義されている *。x*パートナーのフェデレーション サービス。<br />4。**識別子の構成**] ページ [**部分信頼の証明書利用者識別子**、型、**フェデレーション サービスの URI** AD FS 1 で定義されている *。x*パートナーのフェデレーション サービス。|![要求を送信する AD FS 構成](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[証明書利用者信頼を手動で作成](../../ad-fs/operations/Create-a-Relying-Party-Trust.md)|  
-|![要求を送信する AD FS を構成します。](media/icon_checkboxo.gif)|先ほど作成した証明書利用者のパーティ信頼に要求が属性ストアから抽出された入力方向の要求を実行しを通過、フィルター処理、または名前 ID に変換される規則の要求の種類を理解し、AD によって消費されることができますを作成する必要があります。FS 1。*x*フェデレーション サービス。 **注:** このルールを作成する前にこの規則を作成する要求規則セットに最初に、ライトウェイト ディレクトリ アクセス プロトコルを抽出する前に、ルールがあること確認\(LDAP\)属性ストアからの要求を属性。 この要求は、AD FS 1 を送信するために作成するルールを入力として使用されます。*x*\-互換の要求。 LDAP 属性を抽出するルールを作成する方法の詳細については、次を参照してください。[要求として LDAP 属性を送信するルールを作成](../../ad-fs/operations/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims.md)です。|![要求を送信する AD FS 構成](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[AD FS を送信するルールを作成する 1.x 互換の要求](../../ad-fs/operations/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim.md)|  
-|![要求を送信する AD FS を構成します。](media/icon_checkboxo.gif)|AD FS 1 の管理者に問い合わせてください。*x*フェデレーション サービスと AD FS 1 の管理者を持っている *。x*フェデレーション サービスは、新しいアカウント パートナーの信頼を設定します。 また、その管理者をフェデレーション サービスの URI を提供\(フェデレーション サービスのプロパティで\)、WS\-フェデレーション パッシブ エンドポイント URL\(フェデレーション サービス エンドポイントの URL\)、エクスポートされたトークン\-署名証明書ファイル\(公開キーのみで\)します。 その管理者は、これらの項目の信頼を設定する必要があります。|N\/A|  
+|![要求を送信するように AD FS を構成する](media/icon_checkboxo.gif)|Windows Server 2012 と以前のバージョンの AD FS の AD FS 間の相互運用性を計画し、Name ID 要求の種類の詳細について説明します。|](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[AD FS 1.x との相互運用性の要求の計画](https://technet.microsoft.com/library/ff678040.aspx)を送信するように AD FS を構成 ![には|  
+|![要求を送信するように AD FS を構成する](media/icon_checkboxo.gif)|以前のバージョンの AD FS との相互運用性を実現するには、まず AD FS 1 にフェデレーションサービス AD FS で証明書利用者の信頼を作成する必要があります。*x*フェデレーションサービス。 **注:** AD FS 1 を持つ信頼を作成することはできません。*x*フェデレーションサービスフェデレーションメタデータを使用します。<br /><br />右側のリンクにある手順を使用して信頼を設定する場合は、証明書利用者信頼の追加ウィザードで次の操作を行って、AD FS 1 と相互運用するようにこの信頼を設定する必要があります。*x*フェデレーションサービス:<br /><br />1. **[データソースの選択]** ページで、 **[証明書利用者の信頼に関するデータを手動で入力]** する を選択します。<br />2. **[プロファイルの選択]** ページで、 **[AD FS 1.0 および1.1 プロファイル]** を選択します。<br />3. **[URL の構成]** ページで、[ **WS\-フェデレーションパッシブ URL**] に、AD FS 1 で定義されている**フェデレーションサービスエンドポイント url**を入力します。パートナーの*x*フェデレーションサービス。<br />4. **[識別子の構成]** ページの **[証明書パーツ信頼識別子]** に、AD FS 1 で定義されている**フェデレーションサービス URI**を入力します。パートナーの*x*フェデレーションサービス。|要求を送信するように AD FS を構成 ![](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[証明書利用者信頼を手動で作成](../../ad-fs/operations/Create-a-Relying-Party-Trust.md)する|  
+|![要求を送信するように AD FS を構成する](media/icon_checkboxo.gif)|前の手順で作成した証明書利用者の信頼では、属性ストアから抽出された入力方向の要求を受け取り、それをパススルー、フィルター処理、または名前 ID 要求の種類に変換する要求規則を作成する必要があります。これは、AD FS 1 で理解して使用することができます。*x*フェデレーションサービス。 **注:** この規則を作成する前に、この規則を作成する要求規則セットに、まず、ライトウェイトディレクトリアクセスプロトコル \(LDAP\) 属性要求を属性ストアから抽出する規則が含まれていることを確認します。 この要求は、AD FS 1 を送信するために作成するルールへの入力として使用されます。*x*\-互換性のある要求です。 LDAP 属性を抽出するルールを作成する方法の詳細については、「 [Ldap 属性を要求として送信するルールを作成](../../ad-fs/operations/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims.md)する」を参照してください。|要求を送信するための AD FS を構成 ![](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[AD FS 1. x 互換の要求を送信する規則を作成](../../ad-fs/operations/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim.md)する|  
+|![要求を送信するように AD FS を構成する](media/icon_checkboxo.gif)|AD FS 1 の管理者に連絡してください。*x*フェデレーションサービス、AD FS 1 の管理者がいます。*x*フェデレーションサービス新しいアカウントパートナー信頼を設定します。 また、管理者には、フェデレーションサービスプロパティ\)内のフェデレーションサービス URI \(、WS\-フェデレーションパッシブエンドポイント URL \(フェデレーションサービスエンドポイント URL\)、および公開キーのみ\-署名証明書ファイル \(署名証明書ファイル\)を指定します。 この管理者は、信頼を設定するためにこれらの項目を必要とします。|N\/A|  
   
 

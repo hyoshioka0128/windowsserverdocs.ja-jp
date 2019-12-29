@@ -2,7 +2,7 @@
 title: RDS - 実行と調整
 description: RD の展開を設計するのに役立つ計画に関する情報。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 047b08be-7f91-4194-a641-5b6941b92515
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 534fbef473c2627f65189c6f3dfcc9a89200f289
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e3a70f420d841311481962040f9d9ee78c08dd6a
+ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743491"
+ms.lasthandoff: 10/25/2019
+ms.locfileid: "72923793"
 ---
 # <a name="plan-and-design-your-remote-desktop-services-environment"></a>リモート デスクトップ サービス環境の計画と設計
 
@@ -33,7 +33,7 @@ ms.locfileid: "63743491"
 - [高可用性](rds-plan-high-availability.md)
 - [多要素認証](rds-plan-mfa.md)
 - [セキュリティで保護されたデータ ストレージ](rds-plan-secure-data-storage.md)
-- [ハイエンド グラフィックス レンダリングの有効化](rds-graphics-virtualization.md)
+- [GPU アクセラレーション](rds-graphics-virtualization.md)
 - [任意のデバイスからの接続](rds-plan-connect-from-any-device.md)
 - [支払方法の選択](rds-plan-choose-how-you-pay.md)
 

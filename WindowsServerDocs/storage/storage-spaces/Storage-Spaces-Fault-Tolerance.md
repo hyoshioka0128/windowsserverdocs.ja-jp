@@ -1,6 +1,6 @@
 ---
 title: 記憶域スペース ダイレクトでのフォールト トレランスと記憶域の効率
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: cosmosdarwin
 ms.manager: eldenc
 ms.technology: storage-spaces
@@ -10,16 +10,16 @@ ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: ミラーリングとパリティを含む記憶域スペース ダイレクトにおける回復性オプションの説明。
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e6a29e82a85ec9570cda827060dfe1cdf192c53
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d2220584c0021352110b27c3107d1113eb17ef59
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849573"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393809"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>記憶域スペース ダイレクトでのフォールト トレランスと記憶域の効率
 
->適用先:Windows Server 2016
+>適用対象:Windows Server 2016
 
 このトピックでは、[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)で利用できる回復オプションを紹介し、規模に関する要件、記憶域の効率、一般的な利点、およびそれぞれのトレードオフの概要について説明します。 また、作業を開始するための使用方法についても説明します。このトピックでは、詳細を確認する際に役立つ優れたドキュメントやブログなどのコンテンツを参照しています。
 
@@ -179,29 +179,29 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 次の 6 つの例は、3 方向ミラーリングやデュアル パリティで対処**できる**状態を示しています。
 
-- **1.**  1 つのドライブを紛失 (キャッシュ ドライブを含む)
-- **2.**  1 つのサーバーが失われる
+- **1.**  1つのドライブが失われた (キャッシュドライブを含む)
+- **2.**  1台のサーバーが失われました
 
 ![fault-tolerance-examples-1-and-2](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-12.png)
 
-- **3.**  1 つのサーバーと 1 つのドライブの紛失
-- **4.**  別のサーバーで 2 つのドライブが失われる
+- **番.**  1台のサーバーと1台のドライブが失われました
+- **4/4.**  異なるサーバーで2つのドライブが失われた
 
 ![fault-tolerance-examples-3-and-4](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-34.png)
 
-- **5.**  複数の 2 つのドライブが失われ、最大で 2 つのサーバーが影響を受ける限り
-- **6.**  2 つのサーバーが失われる
+- **5/5.**  2台以上のドライブが失われ、最大で2台のサーバーが影響を受ける
+- **4/6.**  2つのサーバーが失われました
 
 ![fault-tolerance-examples-5-and-6](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-56.png)
 
-... いずれの場合も、すべてのボリュームのオンライン状態が維持されます  (クラスターがクォーラムを維持することを確認してください)。
+... いずれの場合も、すべてのボリュームのオンライン状態が維持されます (クラスターがクォーラムを維持することを確認してください)。
 
 ### <a name="examples-where-everything-goes-offline"></a>すべてがオフラインになる例
 
 有効期間中は、記憶域スペースでは任意の数の障害に対応できます。これは、各障害が発生した後で、十分な時間があれば、完全な回復状態に復元されるためです。 ただし、特定の時点で、最大で 2 つの障害ドメインが障害の影響を受けても安全です。 したがって、次に示す例は、3 方向ミラーリングやデュアル パリティでは対処**できない**状態です。
 
-- **7.** 次の 3 つまたは複数のサーバーでドライブが一度に失われること
-- **8.** 次の 3 つまたは複数のサーバーが一度に失われる
+- **7.** 3台以上のサーバーで一度にドライブが失われる
+- **8.** 3台以上のサーバーが一度に失われました
 
 ![fault-tolerance-examples-7-and-8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
@@ -213,10 +213,10 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 以下のすべてのリンクは、このトピックの本文内に記載されています。
 
-- [Windows Server 2016 での記憶域スペース ダイレクト](storage-spaces-direct-overview.md)
+- [Windows Server 2016 の記憶域スペースダイレクト](storage-spaces-direct-overview.md)
 - [Windows Server 2016 での障害ドメインの認識](../../failover-clustering/fault-domains.md)
-- [Azure では、Microsoft Research のイレイジャー コーディング](https://www.microsoft.com/en-us/research/publication/erasure-coding-in-windows-azure-storage/)
-- [ローカルの再構築コードと加速度的パリティ ボリューム](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
-- [記憶域管理 API でのボリューム](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
-- [Ignite 2016 の microsoft 記憶域の効率性のデモ](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
-- [容量の計算ツール PREVIEW の記憶域スペース ダイレクト](http://aka.ms/s2dcalc)
+- [Microsoft Research による Azure での消去コーディング](https://www.microsoft.com/en-us/research/publication/erasure-coding-in-windows-azure-storage/)
+- [ローカル再構築コードとパリティボリュームの高速化](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
+- [Storage Management API のボリューム](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
+- [Microsoft Ignite 2016 でのストレージの効率に関するデモ](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
+- [記憶域スペースダイレクトの容量計算ツールのプレビュー](http://aka.ms/s2dcalc)

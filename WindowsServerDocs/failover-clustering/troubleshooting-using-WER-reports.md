@@ -1,39 +1,39 @@
 ---
-title: Windows エラー報告を使用してフェールオーバー クラスターのトラブルシューティング
-description: レポートを収集し、一般的な問題を診断する方法の詳細と、WER のレポートを使用するフェールオーバー クラスターをトラブルシューティングします。
-keywords: フェールオーバー クラスター、WER レポート、診断、クラスター、Windows エラー報告
-ms.prod: windows-server-threshold
+title: Windows エラー報告を使用したフェールオーバークラスターのトラブルシューティング
+description: WER レポートを使用したフェールオーバークラスターのトラブルシューティング。レポートを収集して一般的な問題を診断する方法の詳細については、「」を確認してください。
+keywords: フェールオーバークラスター、WER レポート、診断、クラスター、Windows エラー報告
+ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.author: vpetter
 ms.topic: article
 author: vpetter
 ms.date: 03/27/2018
 ms.localizationpriority: ''
-ms.openlocfilehash: 0b0c75f8e2d09a1fc17374428c48fb856465bb5a
-ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
+ms.openlocfilehash: 46c633af8cf82ac43d2a787a7193685d88ad0ecc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67469536"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361009"
 ---
-# <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Windows エラー報告を使用してフェールオーバー クラスターのトラブルシューティング 
+# <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Windows エラー報告を使用したフェールオーバークラスターのトラブルシューティング 
 
 > 適用対象:Windows Server 2019、Windows Server 2016、Windows Server
 
-Windows エラー報告 (WER) は、上級管理者、3 層のサポートを Windows が検出できるハードウェアおよびソフトウェアの問題に関する情報を収集したりするよう設計された柔軟なイベントに基づくフィードバック インフラストラクチャを Microsoft に情報を報告使用可能なソリューションをユーザーに提供します。 これは、[参照](https://docs.microsoft.com/powershell/module/windowserrorreporting/)WindowsErrorReporting のすべてのコマンドレットの説明と構文を示します。
+Windows エラー報告 (WER) は、高度な管理者または階層3のサポートが Windows によって検出された情報を収集し、マイクロソフトに報告するために役立つ、柔軟なイベントベースのフィードバックインフラストラクチャです。とは、使用可能な任意のソリューションをユーザーに提供します。 この[リファレンス](https://docs.microsoft.com/powershell/module/windowserrorreporting/)では、すべての WindowsErrorReporting コマンドレットの説明と構文について説明します。
 
-次に示すトラブルシューティングの情報は、エスカレート済みし、トリアージを Microsoft に送信されるデータが必要な高度な問題のトラブルシューティングに役立つになります。
+以下に示すトラブルシューティングの情報は、エスカレートされた高度な問題のトラブルシューティングに役立ちます。また、トリアージのためにデータをマイクロソフトに送信することが必要になる場合もあります。
 
-## <a name="enabling-event-channels"></a>イベント チャネルを有効にします。
+## <a name="enabling-event-channels"></a>イベントチャネルの有効化
 
-Windows Server がインストールされているときに、多くのイベント チャネルは既定で有効にします。 問題を診断するときのトリアージとシステムの問題を診断するのに役立つために、これらのイベント チャネルの一部を有効にできるようにします。
+Windows Server をインストールすると、多くのイベントチャネルが既定で有効になります。 しかし、問題を診断する際には、システムの問題のトリアージと診断に役立つことがあるため、これらのイベントチャネルの一部を有効にすることが必要になる場合があります。
 
-必要な場合、クラスター内の各サーバー ノードの追加のイベントのチャネルを有効にします。ただし、このアプローチでは、2 つの問題が表示されます。
+必要に応じて、クラスター内の各サーバーノードで追加のイベントチャネルを有効にすることができます。ただし、このアプローチには2つの問題があります。
 
-1. クラスターに追加するすべての新しいサーバー ノードで同じイベント チャネルを有効にするがあります。
-2. 診断する場合、特定のイベントのチャネルを有効にする、エラーを再現して根本原因になるまでこのプロセスを繰り返します面倒になります。
+1. クラスターに追加するすべての新しいサーバーノードで同じイベントチャネルを有効にする必要があります。
+2. 診断時には、特定のイベントチャネルを有効にし、エラーを再現し、根本原因になるまでこのプロセスを繰り返すことが面倒な場合があります。
 
-これらの問題を回避するには、クラスターの起動時にイベント チャネルを有効にすることができます。 パブリック プロパティを使用して、クラスターで有効になっているイベントのチャネルの一覧を構成する**EnabledEventLogs**します。 既定では、次のイベント チャネルが有効になります。
+これらの問題を回避するには、クラスターの起動時にイベントチャネルを有効にします。 クラスターで有効になっているイベントチャネルの一覧は、パブリックプロパティ**EnabledEventLogs**を使用して構成できます。 既定では、次のイベントチャネルが有効になっています。
 
 ```powershell
 PS C:\Windows\system32> (get-cluster).EnabledEventLogs
@@ -47,26 +47,26 @@ Microsoft-Windows-SMBServer/Analytic
 Microsoft-Windows-Kernel-LiveDump/Analytic
 ```
 
-**EnabledEventLogs**プロパティは、各文字列の形式が、複数文字列:**チャネル名、ログ レベル、キーワード マスク**します。 **キーワード マスク**を 16 進数を指定できます (0 x プレフィックス)、8 進数 (プレフィックス 0)、または 10 進数 (プレフィックスなし) の数。 たとえば、一覧に新しいイベント チャネルを追加して、両方を構成する**ログ レベル**と**キーワード マスク**行うことができます。
+**EnabledEventLogs**プロパティは、次の形式の文字列です。各文字列は、**チャネル名、ログレベル、キーワードマスク**の形式です。 **キーワードマスク**には、16進数 (プレフィックス 0x)、8進数 (プレフィックス 0)、または10進数 (プレフィックスなし) の番号を指定できます。 たとえば、新しいイベントチャネルを一覧に追加し、**ログレベル**と**キーワードマスクの**両方を構成するには、次のように実行します。
 
 ```powershell
 (get-cluster).EnabledEventLogs += "Microsoft-Windows-WinINet/Analytic,2,321"
 ```
 
-設定する場合、**ログ レベル**を残して、**キーワード マスク**その既定値では、次のコマンドのいずれかを使用できます。
+**ログレベル**を設定するが、既定値では**キーワードマスク**をそのまま使用する場合は、次のコマンドのいずれかを使用できます。
 
 ```powershell
 (get-cluster).EnabledEventLogs += "Microsoft-Windows-WinINet/Analytic,2"
 (get-cluster).EnabledEventLogs += "Microsoft-Windows-WinINet/Analytic,2,"
 ```
 
-保持する場合、**ログ レベル**の既定値の設定が、**キーワード マスク**次のコマンドを実行することができます。
+**ログレベル**を既定値のままにしておき、**キーワードマスク**を設定する場合は、次のコマンドを実行します。
 
 ```powershell
 (get-cluster).EnabledEventLogs += "Microsoft-Windows-WinINet/Analytic,,0xf1"
 ```
 
-両方を保持する場合、**ログ レベル**と**キーワード マスク**は既定値では、次のコマンドを実行できます。
+**ログレベル**と**キーワードマスク**の両方を既定値で保持する場合は、次のコマンドのいずれかを実行します。
 
 ```powershell
 (get-cluster).EnabledEventLogs += "Microsoft-Windows-WinINet/Analytic"
@@ -74,36 +74,36 @@ Microsoft-Windows-Kernel-LiveDump/Analytic
 (get-cluster).EnabledEventLogs += "Microsoft-Windows-WinINet/Analytic,,"
 ```
 
-これらのイベント チャネルが有効にすべてのクラスター ノードまたはクラスター サービスの起動時にされるたびに、 **EnabledEventLogs**プロパティを変更します。
+これらのイベントチャネルは、クラスターサービスの開始時または**EnabledEventLogs**プロパティが変更されたときに、すべてのクラスターノードで有効になります。
 
-## <a name="gathering-logs"></a>ログを収集しています
+## <a name="gathering-logs"></a>ログの収集
 
-使用することができますイベント チャネルを有効にした後、 **DumpLogQuery**ログを収集します。 パブリック リソースの種類プロパティ**DumpLogQuery** mutistring 値です。 各文字列は、 [」の説明に従って、XPATH クエリ](https://msdn.microsoft.com/library/windows/desktop/dd996910(v=vs.85).aspx)します。
+イベントチャネルを有効にした後、 **DumpLogQuery**を使用してログを収集できます。 パブリックリソースの種類のプロパティ**DumpLogQuery**は mutistring の値です。 各文字列は、[ここで説明する XPATH クエリ](https://msdn.microsoft.com/library/windows/desktop/dd996910(v=vs.85).aspx)です。
 
-トラブルシューティング、チャンネルの追加のイベントを収集する必要がある場合と、変更ができます、 **DumpLogQuery**プロパティを追加のクエリを追加または一覧を変更します。
+トラブルシューティングを行うときに、追加のイベントチャネルを収集する必要がある場合は、追加のクエリを追加したり、一覧を変更したりして、 **DumpLogQuery**プロパティを変更できます。
 
-これを行うには、最初にテストして、XPATH クエリを使用して、 [Get-winevent](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent?view=powershell-5.1) PowerShell コマンドレット。
+これを行うには、[まず、次のよう](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent?view=powershell-5.1)に使用して、XPATH クエリをテストします。
 
 ```powershell
 get-WinEvent -FilterXML "<QueryList><Query><Select Path='Microsoft-Windows-GroupPolicy/Operational'>*[System[TimeCreated[timediff(@SystemTime) &gt;= 600000]]]</Select></Query></QueryList>"
 ```
 
-次に、クエリを追加、 **DumpLogQuery**リソースのプロパティ。
+次に、リソースの**DumpLogQuery**プロパティにクエリを追加します。
 
 ```powershell
 (Get-ClusterResourceType -Name "Physical Disk".DumpLogQuery += "<QueryList><Query><Select Path='Microsoft-Windows-GroupPolicy/Operational'>*[System[TimeCreated[timediff(@SystemTime) &gt;= 600000]]]</Select></Query></QueryList>"
 ```
 
-を使用するクエリの一覧を取得するかどうか、次のコマンドを実行します。
+使用するクエリの一覧を取得するには、次のように実行します。
 ```powershell
 (Get-ClusterResourceType -Name "Physical Disk").DumpLogQuery
 ```
 
-## <a name="gathering-windows-error-reporting-reports"></a>Windows エラー報告のレポートを収集しています
+## <a name="gathering-windows-error-reporting-reports"></a>Windows エラー報告レポートの収集
 
-Windows エラー報告のレポートが格納されている **%ProgramData%\Microsoft\Windows\WER**
+Windows エラー報告レポートは **%ProgramData%\Microsoft\Windows\WER**に格納されます。
 
-内で、 **WER**フォルダー、 **ReportsQueue**フォルダーには、ワトソン博士にアップロードするを待機しているレポートが含まれています。
+**WER**フォルダー内のレポートに**は、Watson**にアップロードされるのを待機しているレポートが含まれています。
 
 ```powershell
 PS C:\Windows\system32> dir c:\ProgramData\Microsoft\Windows\WER\ReportQueue
@@ -140,7 +140,7 @@ Directory of C:\ProgramData\Microsoft\Windows\WER\ReportQueue
               20 Dir(s)  23,291,658,240 bytes free
 ```
 
-内で、 **WER**フォルダー、 **ReportsArchive**フォルダーには、ワトソン博士に既にアップロードされているレポートが含まれています。 これらのレポート内のデータを削除するが、 **Report.wer**ファイルが引き続き発生します。
+**WER**フォルダー内に、レポート**アーカイブ**フォルダーには、既に Watson にアップロードされているレポートが含まれています。 これらのレポートのデータは削除されますが、**レポートの wer**ファイルは保持されます。
 
 ```powershell
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive
@@ -161,14 +161,14 @@ Directory of c:\ProgramData\Microsoft\Windows\WER\ReportArchive
 
 ```
 
-Windows エラー報告を問題のレポートのエクスペリエンスをカスタマイズする多くの設定を提供します。 詳細については、Windows エラー報告を参照してください[ドキュメント](https://msdn.microsoft.com/library/windows/desktop/bb513638(v=vs.85).aspx)します。
+Windows エラー報告には、問題レポートのエクスペリエンスをカスタマイズするための多くの設定が用意されています。 詳細については、Windows エラー報告の[ドキュメント](https://msdn.microsoft.com/library/windows/desktop/bb513638(v=vs.85).aspx)を参照してください。
 
 
-## <a name="troubleshooting-using-windows-error-reporting-reports"></a>Windows エラー報告による報告を使用したトラブルシューティング
+## <a name="troubleshooting-using-windows-error-reporting-reports"></a>Windows エラー報告レポートの使用に関するトラブルシューティング
 
-### <a name="physical-disk-failed-to-come-online"></a>物理ディスクがオンラインにできませんでした。
+### <a name="physical-disk-failed-to-come-online"></a>物理ディスクをオンラインにできませんでした
 
-この問題を診断するには、WER のレポート フォルダーに移動します。
+この問題を診断するには、WER レポートフォルダーに移動します。
 
 ```powershell
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive\Critical_PhysicalDisk_b46b8883d892cfa8a26263afca228b17df8133d_00000000_cab_08abc39c
@@ -228,7 +228,7 @@ Volume Serial Number is 4031-E397
 <date>  <time>            13,340 WERC38D.tmp.txt
 ```
 
-次に、開始からの方針、 **Report.wer**ファイル-これがわかります失敗の内容。
+次に、**レポートの wer**ファイルからトリアージを開始します。これにより、失敗したことがわかります。
 
 ```
 EventType=Failover_clustering_resource_error 
@@ -255,7 +255,7 @@ DynamicSig[29].Name=FailureTime
 DynamicSig[29].Value=2017//12//12-22:38:05.485
 ```
 
-リソースがオンラインにできませんでした後、は、ダンプが収集されませんが、Windows エラー報告による報告は、ログを収集しました。 すべてを開いた場合 **.evtx** Microsoft Message Analyzer を使用してファイルをすべて表示されますシステム チャネルでは、アプリケーション チャネル、フェールオーバー クラスター診断チャネルを通じて、次のクエリを使用して収集した情報の、およびその他のいくつかの汎用チャネル。
+リソースをオンラインにできなかったため、ダンプは収集されませんでしたが、Windows エラー報告レポートはログを収集しました。 Microsoft Message Analyzer を使用してすべての .evtx ファイルを開くと、システムチャネル、アプリケーションチャネル、フェールオーバークラスター診断チャネル、およびその他のクエリを使用して収集されたすべての情報が表示されます **。** 汎用チャネル。
 
 ```powershell
 PS C:\Windows\system32> (Get-ClusterResourceType -Name "Physical Disk").DumpLogQuery
@@ -294,22 +294,22 @@ PS C:\Windows\system32> (Get-ClusterResourceType -Name "Physical Disk").DumpLogQ
 <QueryList><Query Id="0"><Select Path="Microsoft-Windows-Hyper-V-VmSwitch-Diagnostic">*[System[TimeCreated[timediff(@SystemTime) &lt;= 600000]]]</Select></Query></QueryList>
 ```
 
-Message Analyzer を使用すると、キャプチャ、表示、およびプロトコル メッセージング トラフィックを分析できます。 トレースおよびシステム イベントと Windows のコンポーネントからその他のメッセージを評価することもできます。 ダウンロードできる[ここから Microsoft Message Analyzer](https://www.microsoft.com/download/details.aspx?id=44226)します。 Message Analyzer からログを読み込むときに、次のプロバイダーとログ チャネルからのメッセージが表示されます。
+Message Analyzer を使用すると、プロトコルメッセージングトラフィックをキャプチャ、表示、および分析できます。 また、Windows コンポーネントからのシステムイベントやその他のメッセージをトレースおよび評価することもできます。 [Microsoft Message Analyzer はここから](https://www.microsoft.com/download/details.aspx?id=44226)ダウンロードできます。 メッセージアナライザーにログを読み込むと、ログチャネルから次のプロバイダーとメッセージが表示されます。
 
-![Message Analyzer にログを読み込む](media/troubleshooting-using-WER-reports/loading-logs-into-message-analyzer.png)
+![メッセージアナライザーへのログの読み込み](media/troubleshooting-using-WER-reports/loading-logs-into-message-analyzer.png)
 
-次のビューを取得するプロバイダーもグループ化できます。
+プロバイダー別にグループ化して、次のビューを取得することもできます。
 
-![ログ プロバイダーによってグループ化](media/troubleshooting-using-WER-reports/logs-grouped-by-providers.png)
+![プロバイダー別にグループ化されたログ](media/troubleshooting-using-WER-reports/logs-grouped-by-providers.png)
 
-ディスクが失敗した理由を特定するには、下にあるイベントに移動**リング/診断**と**リング/DiagnosticVerbose**します。 次のクエリを実行します。**EventLog.EventData["LogString"] は、「クラスター ディスク 10」を含む**します。  これにより、次の出力を表示します。
+ディスクが失敗した原因を特定するには、 **FailoverClustering/diagnostics**と**FailoverClustering/DiagnosticVerbose**の下のイベントに移動します。 その後、次のクエリを実行します。**EventData ["LogString"] に "Cluster Disk 10" が含まれて**います。  これにより、次の出力が得られます。
 
-![ログ クエリの実行の出力](media/troubleshooting-using-WER-reports/output-of-running-log-query.png)
+![実行中のログクエリの出力](media/troubleshooting-using-WER-reports/output-of-running-log-query.png)
 
 
-### <a name="physical-disk-timed-out"></a>物理ディスクがタイムアウトをしました
+### <a name="physical-disk-timed-out"></a>物理ディスクがタイムアウトしました
 
-この問題を診断するには、WER のレポート フォルダーに移動します。 フォルダーには、ログ ファイルとのダンプ ファイルが含まれています。 **RHS**、 **clussvc.exe**、およびホストするプロセスの、"**smphost**"サービスを、次に示します。
+この問題を診断するには、WER レポートフォルダーに移動します。 このフォルダーには、次に示すように、 **RHS**、 **resgen.exe、および**"**smphost**" サービスをホストするプロセスのログファイルとダンプファイルが含まれています。
 
 ```powershell
 PS C:\Windows\system32> dir C:\ProgramData\Microsoft\Windows\WER\ReportArchive\Critical_PhysicalDisk_64acaf7e4590828ae8a3ac3c8b31da9a789586d4_00000000_cab_1d94712e
@@ -373,7 +373,7 @@ Volume Serial Number is 4031-E397
 <date>  <time>            13,340 WER7100.tmp.txt
 ```
 
-次に、開始からの方針、 **Report.wer**ファイル-これによりするどのような呼び出しまたはリソースがハングしています。
+次に、**レポートの wer**ファイルからトリアージを開始します。これにより、どの呼び出しまたはリソースがハングしているかがわかります。
 
 ```
 EventType=Failover_clustering_resource_timeout_2
@@ -398,13 +398,13 @@ DynamicSig[29].Name=HangThreadId
 DynamicSig[29].Value=10008
 ```
 
-サービスと、ダンプの収集プロセスの一覧は、次のプロパティによって制御されます。**PS C:\Windows\system32> (Get-ClusterResourceType -Name "Physical Disk").DumpServicesSmphost**
+ダンプで収集するサービスとプロセスの一覧は、次のプロパティによって制御されます。**PS C:\Windows\system32 > (Get ClusterResourceType-Name "Physical Disk")。DumpServicesSmphost**
 
-ハングが発生した理由を特定するには、dum ファイルを開きます。 次のクエリを実行します。**EventLog.EventData["LogString"]「クラスター ディスク 10」が含まれています**これにより、次の出力を表示します。
+ハングが発生した原因を特定するには、dum ファイルを開きます。 その後、次のクエリを実行します。**EventData ["LogString"] に "Cluster Disk 10" が含まれています。** これにより、次の出力が得られます。
 
-![ログ クエリの実行 2 の出力](media/troubleshooting-using-WER-reports/output-of-running-log-query-2.png)
+![実行中のログクエリ2の出力](media/troubleshooting-using-WER-reports/output-of-running-log-query-2.png)
 
-スレッドに cross-examine このことができます、 **memory.hdmp**ファイル。
+このことは、次のように、メモリの**hdmp**ファイルのスレッドでクロス検証できます。
 
 ```
 # 21  Id: 1d98.2718 Suspend: 0 Teb: 0000000b`f1f7b000 Unfrozen

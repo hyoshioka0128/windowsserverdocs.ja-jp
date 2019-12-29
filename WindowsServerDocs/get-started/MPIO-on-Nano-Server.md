@@ -1,7 +1,7 @@
 ---
 title: Nano Server の MPIO
 description: Nano Server での MPIO の構成
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.date: 09/06/2017
@@ -12,12 +12,12 @@ ms.assetid: fbef4d91-e18c-4f1b-952f-a9a7ad46cd74
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 15d9ebfe72744ed26239587ef297b06361233425
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 7b1f352fbdc625ee2b0fd6fa1fa28eeb576215b9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63687681"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360202"
 ---
 # <a name="mpio-on-nano-server"></a>Nano Server の MPIO
 

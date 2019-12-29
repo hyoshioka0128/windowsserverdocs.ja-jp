@@ -1,6 +1,6 @@
 ---
 title: 記憶域スペース ダイレクトのハードウェア要件
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 description: 記憶域スペース ダイレクトをテストするための最小ハードウェア要件です。
 ms.author: eldenc
 ms.manager: eldenc
@@ -9,16 +9,16 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 08/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2f3f8bff39550108b0417b9513bee4a248dca432
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 63a7152ec6abb318a096ac321ae7ccfaaef4d199
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546373"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402940"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>記憶域スペース ダイレクトのハードウェア要件
 
-> 適用対象:Windows Server 2019、Windows Server 2016
+> 適用対象: Windows Server 2019、Windows Server 2016
 
 このトピックでは、記憶域スペース ダイレクトを使用するための最小ハードウェア要件について説明します。
 
@@ -29,11 +29,11 @@ ms.locfileid: "69546373"
 
 ## <a name="base-requirements"></a>基本要件
 
-システム、コンポーネント、デバイス、およびドライバーは、windows [Server カタログ](https://www.windowsservercatalog.com)に従って**Windows server 2016 認定**を受ける必要があります。 さらに、サーバー、ドライブ、ホストバスアダプター、およびネットワークアダプターには、**ソフトウェア定義データセンター (sddc) 標準**または**ソフトウェア定義データセンター (Sddc** ) の Premium 追加の要件 ((またはその両方) が含まれていることをお勧めします。以下に。 これには、1000以上のコンポーネントが含まれています。
+システム、コンポーネント、デバイス、およびドライバーは、windows [Server カタログ](https://www.windowsservercatalog.com)に従って**Windows server 2016 認定**を受ける必要があります。 さらに、以下に示すように、サーバー、ドライブ、ホストバスアダプター、およびネットワークアダプターには、**ソフトウェア定義データセンター (sddc) 標準**または**ソフトウェア定義データセンター (sddc) Premium**追加の要件 (aqs) があることをお勧めします。 これには、1000以上のコンポーネントが含まれています。
 
 ![SDDC が表示されている Windows Server カタログのスクリーンショット](media/hardware-requirements/sddc-aqs.png)
 
-完全に構成されたクラスター (サーバー、ネットワーク、および記憶域) は、フェールオーバークラスターマネージャーのウィザードまたは`Test-Cluster` PowerShell の[コマンドレット](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)に従って、すべての[クラスター検証テスト](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)に合格する必要があります。
+完全に構成されたクラスター (サーバー、ネットワーク、および記憶域) は、フェールオーバークラスターマネージャーのウィザードに従って、または PowerShell の `Test-Cluster`[コマンドレット](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)を使用して、すべての[クラスター検証テスト](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx)に合格する必要があります。
 
 また、次の要件が適用されます。
 
@@ -47,7 +47,7 @@ ms.locfileid: "69546373"
 - Intel Nehalem 以降の互換性のあるプロセッサ。もしくは
 - AMD EPYC 以降の互換性のあるプロセッサ
 
-## <a name="memory"></a>Memory
+## <a name="memory"></a>メモリ
 
 - Windows Server、Vm、およびその他のアプリやワークロード用のメモリ足
 - 各サーバーのキャッシュドライブ容量が 1 tb あたり 4 GB の RAM (記憶域スペースダイレクトメタデータ用)
@@ -56,7 +56,7 @@ ms.locfileid: "69546373"
 
 - Windows Server でサポートされているすべてのブートデバイスで、 [SATADOM が含まれるようになりました](https://cloudblogs.microsoft.com/windowsserver/2017/08/30/announcing-support-for-satadom-boot-drives-in-windows-server-2016/)。
 - RAID 1 ミラーは必要**ありません**が、ブートではサポートされています。
-- 推奨:200 GB の最小サイズ
+- 推奨: 200 GB の最小サイズ
 
 ## <a name="networking"></a>ネットワーク
 
@@ -72,8 +72,8 @@ Small scale 2-3 ノードの最小相互接続
 - 25 Gbps NIC 以上
 
 スイッチまたは switchless ノードの相互接続
-- 相手ネットワークスイッチは、帯域幅とネットワークの種類を処理するように適切に構成されている必要があります。  RoCE プロトコルを実装する RDMA を使用している場合は、ネットワークデバイスとスイッチの構成がさらに重要になります。 
-- Switchless:スイッチの使用を避けるために、直接接続を使用してノードを相互接続することができます。  すべてのノードがクラスターの他のすべてのノードと直接接続している必要があります。
+- スイッチ: ネットワークスイッチが帯域幅とネットワークの種類を処理するように適切に構成されている必要があります。  RoCE プロトコルを実装する RDMA を使用している場合は、ネットワークデバイスとスイッチの構成がさらに重要になります。 
+- Switchless: ノードは、直接接続を使用して相互接続できます。スイッチの使用は避けてください。  すべてのノードがクラスターの他のすべてのノードと直接接続している必要があります。
 
 
 ## <a name="drives"></a>ドライブ
@@ -87,8 +87,8 @@ Small scale 2-3 ノードの最小相互接続
 - キャッシュデバイスは 32 GB 以上である必要があります
 - 永続メモリデバイスをキャッシュデバイスとして使用する場合は、NVMe または SSD 容量デバイスを使用する必要があります (Hdd は使用できません)。
 - NVMe ドライバーは、Windows に付属している Microsoft 提供のドライバーです。 (stornvme .sys)
-- 推奨:容量ドライブの数は、キャッシュドライブの数の倍数です。
-- 推奨:キャッシュドライブには、1日あたり少なくとも3つのドライブ書き込み (DWPD) または少なくとも4テラバイト (tbw) の書き込み (TBW) が必要です。また、1日[あたり記憶域スペースダイレクトのドライブの書き込み量 (DWPD)、テラバイトの書き込み (TBW)、および推奨される最小値について説明します。](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
+- 推奨: 容量ドライブの数は、キャッシュドライブの数の倍数になります。
+- 推奨: キャッシュドライブには、1日あたり少なくとも3つのドライブ書き込み (DWPD)、または少なくとも4テラバイトの書き込み (tbw) が必要です。1日[あたり記憶域スペースダイレクトのドライブの書き込み量 (dwpd)、テラバイトの書き込み (TBW)、および推奨される最小値](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)について確認してください。
 
 ドライブを記憶域スペースダイレクトに接続する方法を次に示します。
 

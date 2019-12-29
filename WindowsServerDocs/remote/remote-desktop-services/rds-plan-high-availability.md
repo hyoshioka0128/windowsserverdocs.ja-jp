@@ -2,7 +2,7 @@
 title: リモート デスクトップ サービス - 高可用性
 description: 高可用性 RDS 展開の設定に関する計画情報。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,18 +13,18 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: 79fd05458d0d838e34402bf28ef83b9327bfcceb
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 3d3d216c528b0b83d9dfd5265fe153a388c7382a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743457"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387278"
 ---
 # <a name="remote-desktop-services---high-availability"></a>リモート デスクトップ サービス - 高可用性
 
 >適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
-失敗と調整は、大規模なシステムでは避けられません。 高可用性をサポートし、エンド ユーザーがいつでもシームレスに接続できるようにするように、リモート デスクトップ インフラストラクチャのロールを設定することは単純です。
+失敗と調整は、大規模なシステムでは避けられません。 高可用性をサポートし、エンド ユーザーがいつでもシームレスに接続できるようにするように、リモート デスクトップ インフラストラクチャのロールを簡単に設定できます。
 
 リモート デスクトップ サービスでは、次の項目はリモート デスクトップ インフラストラクチャのロールを表し、高可用性を確立するためのそれぞれのガイダンスが付けられています。
 - [リモート デスクトップ接続ブローカー](Deploy-a-Remote-Desktop-Connection-Broker-cluster.md)

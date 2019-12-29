@@ -1,8 +1,8 @@
 ---
 title: chdir
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db30ab6cbfd4d88aabf736e24535443be23c9b53
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5f7d4753c42ec9f992895b92bea7b901982c6d8f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877103"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379525"
 ---
 # <a name="chdir"></a>chdir
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-このコマンドと同じ、 **cd**コマンド。  
-参照してください[cd](cd.md)構文およびパラメーターについてです。  
-## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+このコマンドは**cd**コマンドと同じです。  
+構文とパラメーターについては、「 [cd](cd.md) 」を参照してください。  
+## <a name="additional-references"></a>その他の参照情報  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  
   

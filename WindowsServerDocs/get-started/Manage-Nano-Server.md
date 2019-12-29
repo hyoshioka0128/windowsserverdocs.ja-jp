@@ -1,7 +1,7 @@
 ---
 title: Nano Server の管理
 description: 更新プログラム、サービス パッケージ、ネットワーク トレース、パフォーマンスの監視
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -12,12 +12,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 165b7e7aea7a7d0bb56d21f350f6ee646d5fa973
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 132f4e1966b332cd6bb6e21402984db7ceed4497
+ms.sourcegitcommit: d599eea5203f95609fb21801196252d5dd9f2669
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "67280404"
+ms.lasthandoff: 10/07/2019
+ms.locfileid: "72005214"
 ---
 # <a name="manage-nano-server"></a>Nano Server の管理
 
@@ -206,9 +206,9 @@ $scanResults = Invoke-CimMethod -InputObject $sess -MethodName ScanForUpdates -A
 
 **注:**  
 これらのコマンドでは、インストールされている更新プログラムの一覧が返されますが、出力に "インストール済み" とは明記されません。 レポートなどのために、明記された出力が必要な場合は、次を実行できます。  
-```  
-Get-WindowsPackage--Online  
-```  
+```PowerShell
+Get-WindowsPackage -Online
+```
 
 ### <a name="using-wsus"></a>WSUS の使用  
 ---  

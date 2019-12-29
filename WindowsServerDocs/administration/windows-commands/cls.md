@@ -1,8 +1,8 @@
 ---
 title: cls
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c09053ebc842b35e5eee02f783c343497da047ce
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5baf217529017228ecf3e3c1b9ddecc5ecfb59b9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889513"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379543"
 ---
 # <a name="cls"></a>cls
 
 
 
-コマンド プロンプト ウィンドウをクリアします。
+コマンドプロンプトウィンドウをクリアします。
 
 このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。
 
@@ -42,11 +42,11 @@ cls
 
 ## <a name="BKMK_examples"></a>例
 
-空のウィンドウに戻って、コマンド プロンプト ウィンドウに表示されるすべての情報をクリアするには、次のように入力します。
+コマンドプロンプトウィンドウに表示されたすべての情報をクリアし、空白のウィンドウに戻るには、次のように入力します。
 ```
 cls 
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

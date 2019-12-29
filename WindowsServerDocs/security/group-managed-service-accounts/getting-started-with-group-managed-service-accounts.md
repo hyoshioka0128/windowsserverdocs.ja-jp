@@ -2,7 +2,7 @@
 title: グループの管理されたサービス アカウントの概要
 description: Windows Server のセキュリティ
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-gmsa
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3d07f137aa40b26b4f4fd69c050415b82608ed7e
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 45fe605228189f49d40543e5da703f9afe0d962e
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546367"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791217"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>グループの管理されたサービス アカウントの概要
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 
 このガイドでは、Windows Server 2012 でグループの管理されたサービスアカウントを有効にして使用するための詳細な手順と背景情報について説明します。
@@ -45,7 +45,7 @@ ms.locfileid: "69546367"
 > [!NOTE]
 > このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。
 
-## <a name="BKMK_Prereqs"></a>応募
+## <a name="BKMK_Prereqs"></a>前提条件
 [グループの管理されたサービス アカウントの要件](#BKMK_gMSA_Req)については、このトピックのセクションを参照してください。
 
 ## <a name="BKMK_Intro"></a>基礎
@@ -56,14 +56,14 @@ ms.locfileid: "69546367"
 
 サービスは次のプリンシパルを選択肢として備えており、各プリンシパルには特定の制限があります。
 
-|プリンシパル|スコープ|サポートされるサービス|パスワード管理|
+|プリンシパル|適用範囲|サポートされるサービス|パスワード管理|
 |-------|-----|-----------|------------|
-|Windows システムのコンピューター アカウント|[ドメイン]|ドメインに参加している 1 つのサーバーに限定|コンピューターによる管理|
-|Windows システムなしのコンピューター アカウント|[ドメイン]|ドメインに参加している任意のサーバー|なし|
+|Windows システムのコンピューター アカウント|ドメイン|ドメインに参加している 1 つのサーバーに限定|コンピューターによる管理|
+|Windows システムなしのコンピューター アカウント|ドメイン|ドメインに参加している任意のサーバー|なし|
 |仮想アカウント|ローカル|1 つのサーバーに限定|コンピューターによる管理|
-|Windows 7 スタンドアロンの管理されたサービス アカウント|[ドメイン]|ドメインに参加している 1 つのサーバーに限定|コンピューターによる管理|
-|ユーザー アカウント|[ドメイン]|ドメインに参加している任意のサーバー|なし|
-|グループ管理サービス アカウント|[ドメイン]|任意の Windows Server 2012 ドメインに参加しているサーバー|ドメイン コントローラーによる管理、ホストによる取得|
+|Windows 7 スタンドアロンの管理されたサービス アカウント|ドメイン|ドメインに参加している 1 つのサーバーに限定|コンピューターによる管理|
+|ユーザー アカウント|ドメイン|ドメインに参加している任意のサーバー|なし|
+|グループ管理サービス アカウント|ドメイン|任意の Windows Server 2012 ドメインに参加しているサーバー|ドメイン コントローラーによる管理、ホストによる取得|
 
 Windows コンピューター アカウント、Windows 7 スタンドアロンの管理されたサービス アカウント (sMSA)、または仮想アカウントを複数のシステムで共有することはできません。 1 つのアカウントをサーバー ファームのサービスで共有するように構成する場合は、Windows システムとは別にユーザー アカウントまたはコンピューター アカウントを選択する必要があります。 いずれにしても、これらのアカウントには、シングルポイントコントロールでパスワードを管理する機能はありません。 このため問題が生じます。各組織は Active Directory のサービスのキーを更新してそのキーを該当するすべてのサービスのインスタンスに配布するために、コストの高いソリューションを作成する必要があります。
 
@@ -109,7 +109,7 @@ Windows Server 2012 では、サービスまたはサービス管理者は、グ
 
 -   Active Directory の最初のマスター ルート キーがドメインに展開されていない場合または作成されていない場合は、それを作成します。 作成した結果は、KdsSvc 操作ログ (Event ID 4004) で検証できます。
 
-キーを作成する方法については、「 [Active Directory キー サービス KDS ルート キーの作成](create-the-key-distribution-services-kds-root-key.md)」を参照してください。 Microsoft キー配布サービス (kdssvc.dll)、AD のルート キー。
+キーを作成する方法については、「 [create The Key Distribution SERVICES KDS Root key](create-the-key-distribution-services-kds-root-key.md)」を参照してください。 Microsoft キー配布サービス (kdssvc.dll)、AD のルート キー。
 
 **・**
 
@@ -142,7 +142,7 @@ gMSA 機能を使用するサーバー ファームのライフサイクルは�
 
 -   パスワード変更間隔 (既定では 30 日)。
 
-### <a name="BKMK_Step1"></a>手順 1:グループの管理されたサービス アカウントのプロビジョニング
+### <a name="BKMK_Step1"></a>手順 1: グループの管理されたサービスアカウントをプロビジョニングする
 GMSA を作成できるのは、フォレストのスキーマが Windows Server 2012 に更新されていて、Active Directory のマスタールートキーが展開されており、gMSA が作成されるドメインに少なくとも1つの Windows Server 2012 DC がある場合のみです。
 
 次の手順を完了するには、 **[Domain Admins]** または **[Account Operators]** のメンバーシップ、あるいは msDS-GroupManagedServiceAccount オブジェクトを作成する機能が最低限必要です。
@@ -153,7 +153,7 @@ GMSA を作成できるのは、フォレストのスキーマが Windows Server
 
 2.  Windows PowerShell のコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します (Active Directory モジュールが自動的にロードされます)。
 
-    **New-adserviceaccount [-Name] <string> -DNSHostName <string> [-KerberosEncryptionType <ADKerberosEncryptionType>] [-managedpasswordintervalindays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < adprincipal []>]-SamAccountName <string> -serviceprincipalnames < string [] >**
+    **New-ADServiceAccount [-Name] <string>-DNSHostName <string> [-KerberosEncryptionType <ADKerberosEncryptionType>] [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]-SamAccountName <string>-ServicePrincipalNames < string [] >**
 
     |パラメーター|String|例|
     |-------|-----|------|
@@ -172,9 +172,8 @@ GMSA を作成できるのは、フォレストのスキーマが Windows Server
 
     コマンドレットを単一行に入力します。ただし、書式上の制約から複数行に改行されて表示される場合があります。
 
-    ```
-    New-ADServiceAccount ITFarm1 -DNSHostName ITFarm1.contoso.com -PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts -KerberosEncryptionType RC4, AES128, AES256 -ServicePrincipalNames http/ITFarm1.contoso.com/contoso.com, http/ITFarm1.contoso.com/contoso, http/ITFarm1/contoso.com, http/ITFarm1/contoso
-
+    ```Powershell
+    New-ADServiceAccount ITFarm1 -DNSHostName ITFarm1.contoso.com -PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts$ -KerberosEncryptionType RC4, AES128, AES256 -ServicePrincipalNames http/ITFarm1.contoso.com/contoso.com, http/ITFarm1.contoso.com/contoso, http/ITFarm1/contoso.com, http/ITFarm1/contoso
     ```
 
 この手順を完了するには、 **[Domain Admins]** または **[Account Operators]** のメンバーシップ、あるいは msDS-GroupManagedServiceAccount オブジェクトを作成する機能が最低限必要です。 適切なアカウントおよびグループ メンバーシップの使用方法の詳細については、「 [ローカルおよびドメインの既定のグループ](https://technet.microsoft.com/library/dd728026(WS.10).aspx)」を参照してください。
@@ -185,7 +184,7 @@ GMSA を作成できるのは、フォレストのスキーマが Windows Server
 
 2.  Windows PowerShell Active Directory モジュールのコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します。
 
-    **New-adserviceaccount [-Name] <string> -RestrictToOutboundAuthenticationOnly [-managedpasswordintervalindays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < adprincipal [] >]**
+    **New-ADServiceAccount [-Name] <string>-RestrictToOutboundAuthenticationOnly [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]**
 
     |パラメーター|String|例|
     |-------|-----|------|
@@ -198,12 +197,11 @@ GMSA を作成できるのは、フォレストのスキーマが Windows Server
 
 **例**
 
+```PowerShell
+New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts$
 ```
-New-ADServiceAccount ITFarm1 -RestrictToOutboundAuthenticationOnly - PrincipalsAllowedToRetrieveManagedPassword ITFarmHosts
 
-```
-
-### <a name="BKMK_ConfigureServiceIdentity"></a>手順 2:サービス ID アプリケーション サービスの構成
+### <a name="BKMK_ConfigureServiceIdentity"></a>手順 2: サービス id アプリケーションサービスの構成
 Windows Server 2012 でサービスを構成するには、次の機能に関するドキュメントを参照してください。
 
 -   IIS アプリケーション プール
@@ -247,11 +245,11 @@ gMSA をサポートするサービスが他に存在する場合があります
 
 2.  Windows PowerShell Active Directory モジュールのコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します。
 
-    **Get-adserviceaccount [-Name] <string> -PrincipalsAllowedToRetrieveManagedPassword**
+    **Get-ADServiceAccount [-Name] <string>-PrincipalsAllowedToRetrieveManagedPassword**
 
 3.  Windows PowerShell Active Directory モジュールのコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します。
 
-    **Set-adserviceaccount [-Name] <string> -PrincipalsAllowedToRetrieveManagedPassword < adprincipal [] >**
+    **Set-ADServiceAccount [-Name] <string>-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
 
 |パラメーター|String|例|
 |-------|-----|------|
@@ -262,14 +260,12 @@ gMSA をサポートするサービスが他に存在する場合があります
 
 たとえば、メンバー ホストを追加するには、次のコマンドを入力し、ENTER キーを押します。
 
-```
+```PowerShell
 Get-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
-
 ```
 
-```
-Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1,Host2,Host3
-
+```PowerShell
+Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1$,Host2$,Host3$
 ```
 
 ## <a name="BKMK_Update_gMSA"></a>グループの管理されたサービスアカウントのプロパティを更新しています
@@ -307,11 +303,11 @@ Windows PowerShell 用の Active Directory モジュールを開き、Set-ADServ
 
 2.  Windows PowerShell Active Directory モジュールのコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します。
 
-    **Get-adserviceaccount [-Name] <string> -PrincipalsAllowedToRetrieveManagedPassword**
+    **Get-ADServiceAccount [-Name] <string>-PrincipalsAllowedToRetrieveManagedPassword**
 
 3.  Windows PowerShell Active Directory モジュールのコマンド プロンプトで、次のコマンドを入力し、ENTER キーを押します。
 
-    **Set-adserviceaccount [-Name] <string> -PrincipalsAllowedToRetrieveManagedPassword < adprincipal [] >**
+    **Set-ADServiceAccount [-Name] <string>-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
 
 |パラメーター|String|例|
 |-------|-----|------|
@@ -322,17 +318,15 @@ Windows PowerShell 用の Active Directory モジュールを開き、Set-ADServ
 
 たとえば、メンバー ホストを削除するには、次のコマンドを入力し、ENTER キーを押します。
 
-```
+```PowerShell
 Get-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
-
 ```
 
+```PowerShell
+Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1$,Host3$
 ```
-Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword Host1,Host3
 
-```
-
-### <a name="BKMK_RemoveGMSA"></a>手順 2:グループの管理されたサービス アカウントをシステムから削除する
+### <a name="BKMK_RemoveGMSA"></a>手順 2: グループの管理されたサービスアカウントをシステムから削除する
 ホスト システム上で Uninstall-ADServiceAccount または NetRemoveServiceAccount API を使用して、キャッシュされた gMSA 資格情報をメンバー ホストから削除します。
 
 これらの手順を完了するには、 **[Administrators]** のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。
@@ -349,7 +343,7 @@ Set-ADServiceAccount [-Name] ITFarm1 -PrincipalsAllowedToRetrieveManagedPassword
 
     たとえば、ITFarm1 という名前の gMSA のキャッシュされた資格情報を削除するには、次のコマンドを入力し、ENTER キーを押します。
 
-    ```
+    ```PowerShell
     Uninstall-ADServiceAccount ITFarm1
     ```
 
@@ -360,6 +354,3 @@ Uninstall-ADServiceAccount コマンドレットの詳細については、Windo
 ## <a name="BKMK_Links"></a>関連項目
 
 -   [グループの管理されたサービスアカウントの概要](group-managed-service-accounts-overview.md)
-
-
-

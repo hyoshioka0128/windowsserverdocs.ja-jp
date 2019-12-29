@@ -2,31 +2,31 @@
 title: 名前空間でアクセス ベースの列挙を有効にする
 description: この記事では、名前空間でアクセス ベースの列挙を有効にする方法について説明します。
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7e9a5b397127e9eb88352fb4d7bc28955023d4b7
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 246df5b13a1dbea614886ab7fe445dd448ae1763
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447214"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402173"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>名前空間でアクセス ベースの列挙を有効にする
 
-> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用対象: Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 アクセス ベースの列挙では、ユーザーがアクセス許可を持たないファイルとフォルダーが非表示になります。 既定では、DFS 名前空間ではこの機能が有効になっていません。 DFS 管理を使って、DFS フォルダーのアクセス ベースの列挙を有効にすることができます。 フォルダー ターゲット内のファイルとフォルダーのアクセス ベースの列挙を制御するには、共有と記憶域の管理を使って各共有フォルダーでアクセス ベースの列挙を有効にする必要があります。
 
-名前空間でアクセス ベースの列挙を有効にするには、名前空間のすべてのサーバーで、Windows Server 2008 以降を実行するされてする必要があります。 さらに、ドメイン ベースの名前空間には、Windows Server 2008 モードを使用する必要があります。 Windows Server 2008 モードの要件については、次を参照してください。 [Namespace の種類を選択](choose-a-namespace-type.md)します。
+名前空間でアクセスベースの列挙を有効にするには、すべての名前空間サーバーで Windows Server 2008 以降が実行されている必要があります。 また、ドメインベースの名前空間では、Windows Server 2008 モードを使用する必要があります。 Windows Server 2008 モードの要件の詳細については、「[名前空間の種類を選択する](choose-a-namespace-type.md)」を参照してください。
 
 一部の環境では、アクセス ベースの列挙を有効にすると、サーバーの CPU 使用率が高くなり、ユーザーの応答時間が遅くなります。
 
 > [!NOTE]
-> ドメインの機能をアップグレードする場合はレベルを Windows Server 2008 はありますが、既存のドメイン ベース名前空間、DFS の管理により、これらの名前空間でアクセス ベースの列挙を有効にすること。 ただし、名前空間を Windows Server 2008 モードに移行する場合を除き、すべてのグループまたはユーザーからのフォルダーを非表示にするアクセス許可を編集することはできません。 詳しくは、「[ドメイン ベースの名前空間を Windows Server 2008 モードに移行する](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)」をご覧ください。
+> ドメインの機能レベルを Windows Server 2008 にアップグレードしても、既存のドメインベースの名前空間が存在する場合は、DFS の管理を使用して、これらの名前空間でアクセスベースの列挙を有効にすることができます。 ただし、名前空間を Windows Server 2008 モードに移行しない限り、グループまたはユーザーのフォルダーを非表示にするためのアクセス許可を編集することはできません。 詳しくは、「[ドメイン ベースの名前空間を Windows Server 2008 モードに移行する](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)」をご覧ください。
 
 
 DFS 名前空間でアクセス ベースの列挙を使うには、以下の手順を実行する必要があります。
@@ -51,7 +51,7 @@ DFS 名前空間でアクセス ベースの列挙を使うには、以下の手
 
 1.  **分散ファイル システム**の役割サービスまたは**分散ファイル システム ツール**機能がインストールされたサーバーでコマンド プロンプト ウィンドウを開きます。
 
-2.  次のコマンドを入力、 *< 名前空間\_ルート >* 名前空間のルートです。
+2.  次のコマンドを入力します。ここで *< 名前空間\_ルート >* は名前空間のルートです。
 
     ```  
     dfsutil property abe enable \\ <namespace_root>
@@ -80,13 +80,13 @@ Windows インターフェイスを使うかコマンド ラインを使って�
 
 1. **分散ファイル システム**の役割サービスまたは**分散ファイル システム ツール**機能がインストールされたサーバーでコマンド プロンプト ウィンドウを開きます。
 
-2. 次のコマンドでは、入力場所 *&lt;DFSPath&gt;* DFS フォルダー (リンク) のパスは、 *< ドメイン\\アカウント >* グループまたはユーザー アカウントの名前を指定します *([...])* は追加のアクセス制御エントリ (Ace) に置き換えられます。
+2. 次のコマンドを入力します。ここで *&lt;DFSPath&gt;* は、DFS フォルダー (リンク) のパス、 *< ドメイン\\アカウント >* はグループまたはユーザーアカウントの名前、(.. *.)* は追加の Access Control エントリ (ace) に置き換えられます。
 
    ```
    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
    ```
 
-   たとえば、アクセス許可を持つ既存のアクセス許可を置換することができるようにする、Domain Admins と CONTOSO\\へのアクセスをトレーナー グループ Read (R)、 \\contoso.office\public\training フォルダーでは、次のコマンドを入力します。
+   たとえば、ドメイン管理者と CONTOSO\\トレーナーグループが \\office\public\training フォルダーへの読み取り (R) アクセスを許可するアクセス許可を持つ既存のアクセス許可を置き換えるには、次のコマンドを入力します。
 
    ```
    dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace 
@@ -97,13 +97,13 @@ Windows インターフェイスを使うかコマンド ラインを使って�
 
 | コマンド | 説明 |
 |---|---|
-|[Dfsutil プロパティ sd を拒否します。](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|グループまたはユーザーによるフォルダーの表示を拒否します。|
-|[Dfsutil プロパティ sd のリセット](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |フォルダーからすべてのアクセス許可を削除します。|
+|[Dfsutil プロパティ sd deny](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|グループまたはユーザーによるフォルダーの表示を拒否します。|
+|[Dfsutil プロパティ sd reset](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |フォルダーからすべてのアクセス許可を削除します。|
 |[Dfsutil プロパティ sd revoke](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| フォルダーからグループまたはユーザー ACE を削除します。 |
 
 ## <a name="see-also"></a>関連項目
 
 -   [DFS 名前空間を作成する](create-a-dfs-namespace.md)
 -   [DFS 名前空間の管理アクセス許可を委任する](delegate-management-permissions-for-dfs-namespaces.md)
--   [DFS をインストールします。](https://technet.microsoft.com/library/cc731089(v=ws.11).aspx)
--   [アクセス ベースの列挙で継承されたアクセス許可の使用](using-inherited-permissions-with-access-based-enumeration.md)
+-   [DFS のインストール](https://technet.microsoft.com/library/cc731089(v=ws.11).aspx)
+-   [アクセスベースの列挙で継承されたアクセス許可を使用する](using-inherited-permissions-with-access-based-enumeration.md)

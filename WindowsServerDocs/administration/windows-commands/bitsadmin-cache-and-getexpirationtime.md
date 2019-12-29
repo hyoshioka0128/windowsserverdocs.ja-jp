@@ -1,8 +1,8 @@
 ---
-title: bitsadmin キャッシュと getexpirationtime
-description: Windows コマンド」のトピック**bitsadmin キャッシュと getexpirationtime** -キャッシュ有効期限の時間を取得します。
+title: bitsadmin cache と getexpirationtime
+description: '**Bitsadmin cache と getexpirationtime**の Windows コマンドに関するトピックでは、キャッシュの有効期限を取得します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8f5bf145b02de111cc6c009375d6ab46e46c18ac
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 01a2443a5f2ff78adfdead3e17b4bd1c24dd4b5b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868063"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382051"
 ---
-# <a name="bitsadmin-cache-and-getexpirationtime"></a>bitsadmin キャッシュと getexpirationtime
+# <a name="bitsadmin-cache-and-getexpirationtime"></a>bitsadmin cache と getexpirationtime
 
 
 
@@ -34,11 +34,11 @@ bitsadmin /Cache /GetExpirationTime
 
 ## <a name="BKMK_examples"></a>例
 
-次に、キャッシュの有効期限を取得します。
+次の例では、キャッシュの有効期限を取得します。
 ```
 C:\>bitsadmin /Cache /GetExpirationTime
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,7 +1,7 @@
 ---
 title: HYPER-V が有効になっている唯一の役割をする必要があります。
-description: このベスト プラクティス アナライザー ルールによって報告された問題を解決する方法を説明します。
-ms.prod: windows-server-threshold
+description: このベストプラクティスアナライザー規則によって報告された問題を解決するための手順を示します。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,12 +10,12 @@ ms.topic: article
 ms.assetid: 5a0ed176-048f-40b1-b56c-8391b805fd37
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: bd03554396696a43b4821aff0f4ed893933484c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9b16a3be1e2f842c251ff3ab31d467ef7f128c8a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886463"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364763"
 ---
 # <a name="hyper-v-should-be-the-only-enabled-role"></a>HYPER-V が有効になっている唯一の役割をする必要があります。
 
@@ -27,26 +27,26 @@ ms.locfileid: "59886463"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|警告|  
+|**順**|警告|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
   
 ## <a name="issue"></a>問題  
   
-*このサーバーでは、HYPER-V 以外の役割が有効にします。*  
+*このサーバーでは、Hyper-v 以外の役割が有効になっています。*  
   
 ほとんどの場合に、Hyper-v の役割を実行するサーバーで他の役割をインストールすることをお勧めします。 リモート デスクトップ仮想化ホスト ロール サービスは、リモート デスクトップ サービス ロールの一部と同じサーバーにインストールするには、HYPER-V を必要とするために、例外です。  
   
 ## <a name="impact"></a>影響  
   
-*HYPER-V の役割には、唯一の役割をサーバーで有効になっている必要があります。*  
+*Hyper-v ロールは、サーバー上で有効になっている唯一のロールである必要があります。*  
   
 このベスト プラクティスは、ホスト オペレーティング システムの役割、機能、および HYPER-V を実行する必要があるアプリケーションの無料に保持できます。 このベスト プラクティスに従うと、Nano サーバーで HYPER-V を実行する必要 Nano Server のみは HYPER-V サービスのコンポーネントと Windows ハイパーバイザー、ソフトウェアの更新の対象ではための更新の数を削減に役立ちます。  
   
 ## <a name="resolution"></a>解決方法  
   
-*HYPER-V を除くすべてのロールを削除するのにには、サーバー マネージャーを使用します。*  
+*サーバーマネージャーを使用して、Hyper-v 以外のすべての役割を削除します。*  
   
 サーバー マネージャーには、役割の削除ウィザードが含まれています。 このウィザードでは、一度に 1 つ以上のロールを削除することができます。 ロールを削除する前に、役割の削除ウィザードは、他の役割に依存するソフトウェアを削除した場合のリスクを軽減する依存関係をチェックします。 依存関係が見つかった場合、その他の役割、役割サービス、またはインストールされている役割に必要なソフトウェアの削除を承認することを求めるメッセージが表示されます。   
   

@@ -1,7 +1,7 @@
 ---
-title: SR-IOV 対応のゲスト オペレーティング システムでサポートされている場合にのみを使用する仮想マシンの構成します。
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+title: 仮想マシンが、ゲストオペレーティングシステムでサポートされている場合にのみ sr-iov を使用するように構成する
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,40 +10,40 @@ ms.topic: article
 ms.assetid: 33cf5b68-e43e-47ef-adbc-6b266c1d4dce
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: e5c2acb21fe8b11e8f020c6d2ab1742116c23b28
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8c43e06806f66ce0faae255f0f34d80a653fbe10
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833363"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366259"
 ---
-# <a name="configure-virtual-machines-to-use-sr-iov-only-when-supported-by-the-guest-operating-system"></a>SR-IOV 対応のゲスト オペレーティング システムでサポートされている場合にのみを使用する仮想マシンの構成します。
+# <a name="configure-virtual-machines-to-use-sr-iov-only-when-supported-by-the-guest-operating-system"></a>仮想マシンが、ゲストオペレーティングシステムでサポートされている場合にのみ sr-iov を使用するように構成する
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
-ベスト プラクティスとスキャンの詳細については、次を参照してください。 [Run Best Practices Analyzer Scans and Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177)します。  
+ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
 |プロパティ|詳細|  
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|警告|  
+|**順**|Warning|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
   
 ## <a name="issue"></a>問題  
-*シングル ルート I/O 仮想化 (SR-IOV) を使用する 1 つまたは複数の仮想マシンが構成されているが、ゲスト オペレーティング システムは、SR-IOV をサポートしていません*  
+*1つ以上の仮想マシンがシングルルート i/o 仮想化 (SR-IOV) を使用するように構成されていますが、ゲストオペレーティングシステムが sr-iov をサポートしていません*  
   
 ## <a name="impact"></a>影響  
-*SR-IOV 仮想機能を次の仮想マシンに割り当てられていません。*  
+*Sr-iov 仮想機能は、次の仮想マシンには割り当てられません。*  
   
-\<仮想マシンの一覧 >  
+仮想マシンの一覧を \<>  
   
 ## <a name="resolution"></a>解決方法  
-*SR-IOV をサポートしていないゲスト オペレーティング システムを実行するすべての仮想マシンで SR-IOV を無効にします。*  
+*Sr-iov をサポートしていないゲストオペレーティングシステムを実行しているすべての仮想マシンで sr-iov を無効にします。*  
   
-SR-IOV は、いくつかの 64 ビット Windows ゲストでのみサポートされます。 詳細については、次を参照してください。[生成とゲストでの Hyper-v 機能の互換性](../Hyper-V-feature-compatibility-by-generation-and-guest.md)します。  
+Sr-iov は、一部の64ビット Windows ゲストでのみサポートされています。 詳細については、「 [hyper-v の機能と世代とゲストの互換性](../Hyper-V-feature-compatibility-by-generation-and-guest.md)」を参照してください。  
   
 
 

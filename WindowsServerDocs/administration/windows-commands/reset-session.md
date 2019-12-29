@@ -1,8 +1,8 @@
 ---
 title: reset session
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,22 +13,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5a0991c76ba890bb94b0dcf258df6207ed228e72
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 67a4e910ba87209c9700f2242f7859a6cc9e725f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441796"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384527"
 ---
 # <a name="reset-session"></a>reset session
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモート デスクトップ セッション ホスト (rd セッション ホスト) サーバー上のセッションのリセット (削除) できます。  
-このコマンドを使用する方法の例については、次を参照してください。[例](#BKMK_examples)します。  
+リモートデスクトップセッションホスト (rd セッションホスト) サーバー上のセッションをリセット (削除) できます。  
+このコマンドの使用方法の例については、「[例](#BKMK_examples)」を参照してください。  
 
 > [!NOTE]  
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 新機能については、最新バージョンについてを参照してください。 [Windows Server 2012 でのリモート デスクトップ サービスでどのような s の新しい](https://technet.microsoft.com/library/hh831527)、Windows Server TechNet ライブラリです。  
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの[Windows Server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527) を参照してください。  
 
 ## <a name="syntax"></a>構文  
 ```  
@@ -39,10 +39,10 @@ reset session {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 
 |パラメーター|説明|  
 |-------|--------|  
-|\<SessionName>|リセットするセッションの名前を指定します。 セッションの名前を確認するのには、使用、 **クエリ セッション** コマンドです。|  
-|\<SessionID>|リセットするセッションの ID を指定します。|  
-|/server:\<ServerName >|リセットするセッションに含まれる、ターミナル サーバーを指定します。 それ以外の場合、現在の rd セッション ホスト サーバーが使用されます。|  
-|/v|実行する操作についての情報を表示します。|  
+|\<のセッション >|リセットするセッションの名前を指定します。 セッションの名前を確認するのには、使用、 **クエリ セッション** コマンドです。|  
+|\<SessionID >|リセットするセッションの ID を指定します。|  
+|/server:\<ServerName >|リセットするセッションに含まれる、ターミナル サーバーを指定します。 それ以外の場合は、現在の rd セッションホストサーバーが使用されます。|  
+|/v|実行されているアクションに関する情報を表示します。|  
 |/?|コマンド プロンプトにヘルプを表示します。|  
 
 ## <a name="remarks"></a>注釈  
@@ -63,4 +63,4 @@ reset session {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 
 #### <a name="additional-references"></a>その他の参照情報  
 [コマンド ライン構文の記号](command-line-syntax-key.md)  
-[リモート デスクトップ サービス&#40;ターミナル サービス&#41;コマンドのリファレンス](remote-desktop-services-terminal-services-command-reference.md)  
+[リモートデスクトップサービス&#40;ターミナルサービス&#41;のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)  

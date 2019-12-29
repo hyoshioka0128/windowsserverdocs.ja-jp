@@ -7,17 +7,17 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 06f2f0d1fb48c6b9dea89762a30fdf77643d0e53
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 47ad71c9bfab6740873ca50de9d18435c8479853
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188575"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385480"
 ---
 # <a name="the-role-of-claim-rules"></a>要求規則の役割
-Active Directory フェデレーション サービスでフェデレーション サービスの全体的な関数\(AD FS\)は一連の要求を含むトークンを発行します。 AD FS が許可して、発行は、どのようなクレームに関する決定は、要求規則が適用されます。  
+Active Directory フェデレーションサービス (AD FS) \(ADFS\)のフェデレーションサービスの全体的な機能は、クレームのセットを含むトークンを発行することです。 AD FS が許可して、発行は、どのようなクレームに関する決定は、要求規則が適用されます。  
   
 ## <a name="what-are-claim-rules"></a>要求規則とは  
 要求規則は、1 つまたは複数の入力方向の要求の実行は、条件を適用するビジネス ロジックのインスタンスを表します \(x、y if\) 条件パラメーターに基づく 1 つまたは複数の送信要求を生成します。 着信および発信のクレームの詳細については、次を参照してください。 [、ロール クレーム](The-Role-of-Claims.md)します。  
@@ -37,7 +37,7 @@ Active Directory フェデレーション サービスでフェデレーショ�
 ### <a name="how-claim-rules-are-processed"></a>要求規則の処理方法  
 要求規則が要求パイプラインを使用して、処理、 *要求エンジン*します。 要求エンジンは、ユーザーによって提示される入力方向の要求のセットを調査し、各規則のロジックに応じて要求の出力セットを生成する、フェデレーション サービスの論理コンポーネントです。  
   
-要求規則エンジンと特定のフェデレーションによる信頼に関連付けられた要求規則のセットにより、入力方向の要求は、そのまま渡されるか、特定の条件に一致するようフィルター選択されるか、または完全に新しい要求セットに変換された後、フェデレーション サービスによって出力方向の要求として発行されます。  
+また、要求規則エンジンと特定のフェデレーション信頼に関連付けられている要求規則のセットによって、入力方向の要求をそのまま渡す必要があるかどうかが決定され、特定の条件を満たすようにフィルター処理するか、まったく新しいセットに変換します。要求は、フェデレーションサービスによって出力方向の要求として発行される前に行われます。  
   
 このプロセスの詳細については、次を参照してください。 [要求エンジンの役割](The-Role-of-the-Claims-Engine.md)します。  
   
@@ -84,7 +84,7 @@ AD FS 管理スナップインで\-、ルールのみを作成できます要求
 標準の要求規則テンプレートの範囲を超えるビジネス規則に対しては、カスタム規則テンプレートで要求規則言語を使用して一連の複雑なロジック条件を表現することができます。 詳細については、カスタム ルールを使用して、次を参照してください。 [カスタム要求規則を使用する場合](When-to-Use-a-Custom-Claim-Rule.md)します。  
   
 #### <a name="using-windowspowershell"></a>Windows PowerShell の使用  
-作成または AD FS で規則を管理する Windows PowerShell を使用した ADFSClaimRuleSet コマンドレット オブジェクトを使用することもできます。 このコマンドレットを使用した Windows PowerShell を使用する方法の詳細については、次を参照してください。 [Windows PowerShell による AD FS の管理](https://go.microsoft.com/fwlink/?LinkID=179634)します。  
+Windows PowerShell で ADFSClaimRuleSet コマンドレットオブジェクトを使用して、AD FS で規則を作成または管理することもできます。 このコマンドレットで Windows PowerShell を使用する方法の詳細については、「 [Windows powershell を](https://go.microsoft.com/fwlink/?LinkID=179634)使用した AD FS 管理」を参照してください。  
   
 ## <a name="what-is-a-claim-rule-set"></a>要求規則セットとは  
 次の図に示すように、要求規則セットは、要求規則エンジンによる要求の処理方法を定義する、特定のフェデレーションによる信頼の 1 つまたは複数の規則のグループです。 入力方向の要求がフェデレーション サービスによって受信されると、要求規則エンジンは、適切な要求規則セットで指定されたロジックを適用します。 セット内の各規則のロジックを適用した最終的な結果によって、特定の信頼に対して発行される要求が決まります。  

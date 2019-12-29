@@ -1,8 +1,8 @@
 ---
 title: msinfo32
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8ad4cf5480492042cdd1e372abae652aff71b90
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9ec08171816476cf04bbfb70637ff8253192e21b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437193"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373383"
 ---
 # <a name="msinfo32"></a>msinfo32
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-ローカル コンピューターのハードウェア、システム コンポーネント、およびソフトウェア環境の包括的なビューを表示するシステム情報ツールを開きます。 
+システム情報ツールを開き、ローカルコンピューター上のハードウェア、システムコンポーネント、およびソフトウェア環境の包括的なビューを表示します。 
 ## <a name="syntax"></a>構文
 ```
 msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/showcategories] [/category <CategoryID>] [/categories {+<CategoryID>(+<CategoryID>)|+all(-<CategoryID>)}]
@@ -33,37 +33,37 @@ msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/show
 
 |    パラメーター    |                                                                                                                                 説明                                                                                                                                  |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     <path>      | ファイル形式で開くことを指定して*C:\Folder1\File1.XXX*ここで、 *C*は、ドライブ文字を*Folder1*フォルダー *File1*ファイルの名前と*XXX*はファイル名の拡張子です。<br /><br />このファイルを指定できます、 **.nfo**、 **.xml**、 **.txt**、または **.cab**ファイル。 |
-| <computerName>  |                                                                             ローカル コンピューターまたは複数のターゲットの名前を指定します。 UNC 名、IP アドレス、またはフル コンピューター名を指定できます。                                                                              |
-|  <CategoryID>   |                                                                                     カテゴリの項目の ID を指定します。 カテゴリ ID を取得するを使用して **/showcategories**します。                                                                                      |
-|      /pch       |                                                                                                       システム情報ツールで、システムの履歴ビューを表示します。                                                                                                       |
-|      /nfo       |                                     エクスポート ファイルを保存、 **.nfo**ファイル。 場合は、ファイル名がで指定された*パス*で終わらない、 **.nfo**拡張機能、 **.nfo**拡張機能が自動的にファイル名に付加されます。                                      |
-|     /report     |                                               ファイルを保存します*パス*テキスト ファイルとして。 表示されているとおり、ファイル名が保存された*パス*します。 パスに指定されている場合を除き、.txt 拡張子がファイルに追加されません。                                                |
-|    /computer    |                                                                指定したリモート コンピューターのシステム情報ツールを起動します。 リモート コンピューターにアクセスする適切なアクセス許可が必要です。                                                                |
-| /showcategories |                         わかりやすいまたはローカライズされた名前を表示するのではなく、Id が表示されたら、使用可能なすべてのカテゴリとシステム情報ツールを起動します。 として環境のソフトウェア カテゴリを表示するなど、 **SWEnv**カテゴリ。                         |
-|    /category    |                                                                     選択されている指定したカテゴリには、システム情報を開始します。 使用 **/showcategories**利用可能なカテゴリ Id の一覧を表示します。                                                                     |
-|   /categories   |                          システム情報を指定したカテゴリまたはカテゴリの表示のみに始まります。 選択したカテゴリまたはカテゴリへの出力も制限されます。 使用 **/showcategories**利用可能なカテゴリ Id の一覧を表示します。                          |
+|     <path>      | *C:\Folder1\File1.XXX*の形式で開くファイルを指定します。 *C*はドライブ文字、 *Folder1*はフォルダー、 *File1*はファイル名、 *XXX*はファイル名拡張子です。<br /><br />このファイルには、 **.nfo**、 **.xml**、 **.txt**、または **.cab**ファイルを指定できます。 |
+| <computerName>  |                                                                             ターゲットコンピューターまたはローカルコンピューターの名前を指定します。 UNC 名、IP アドレス、または完全なコンピューター名を指定できます。                                                                              |
+|  <CategoryID>   |                                                                                     カテゴリ項目の ID を指定します。 **/Showcategories**を使用して、カテゴリ ID を取得できます。                                                                                      |
+|      /pch       |                                                                                                       システム情報ツールのシステム履歴ビューを表示します。                                                                                                       |
+|      /nfo       |                                     エクスポートされたファイルを **.nfo**ファイルとして保存します。 *Path*に指定されているファイル名の末尾が **.nfo**でない場合、 **.nfo**拡張子はファイル名に自動的に追加されます。                                      |
+|     /report」     |                                               ファイルを*パス*にテキストファイルとして保存します。 ファイル名は*パス*に表示されているとおりに保存されます。 .Txt 拡張子は、path に指定されていない限り、ファイルに追加されません。                                                |
+|    /コンピューター    |                                                                指定されたリモートコンピューターのシステム情報ツールを起動します。 リモートコンピューターにアクセスするには、適切なアクセス許可が必要です。                                                                |
+| /showcategories |                         表示またはローカライズされた名前を表示するのではなく、使用可能なすべてのカテゴリ Id を使用してシステム情報ツールを起動します。 たとえば、ソフトウェア環境 カテゴリが  **Swenv** カテゴリとして表示されます。                         |
+|    /category    |                                                                     指定されたカテゴリでシステム情報を開始します。 使用可能なカテゴリ Id の一覧を表示するには、 **/showcategories**を使用します。                                                                     |
+|   /カテゴリ   |                          指定されたカテゴリまたはカテゴリのみを含むシステム情報を開始します。 また、選択したカテゴリに出力を制限します。 使用可能なカテゴリ Id の一覧を表示するには、 **/showcategories**を使用します。                          |
 |       /?        |                                                                                                                     コマンド プロンプトにヘルプを表示します。                                                                                                                     |
 
-## <a name="remarks"></a>注釈
-一部のシステム情報カテゴリには、大量データにはが含まれます。 使用することができます、 **start/wait**これらのカテゴリのレポートの作成のパフォーマンスを最適化するためにコマンド。 詳細については、次を参照してください。[システム情報](https://technet.microsoft.com/library/cc783305(v=ws.10).aspx)します。
+## <a name="remarks"></a>コメント
+システム情報のカテゴリによっては、大量のデータが含まれている場合があります。 **Start/wait**コマンドを使用すると、これらのカテゴリのレポートパフォーマンスを最適化できます。 詳細については、「[システム情報](https://technet.microsoft.com/library/cc783305(v=ws.10).aspx)」を参照してください。
 ## <a name="BKMK_Examples"></a>例
-利用可能なカテゴリ Id を一覧表示するには、次のように入力します。
+使用可能なカテゴリ Id の一覧を表示するには、次のように入力します。
 ```
 msinfo32 /showcategories
 ```
-起動してシステム情報ツールを利用可能なすべての情報表示、読み込まれたモジュール、型を除く。
+読み込まれたモジュールを除く、利用可能なすべての情報を含むシステム情報ツールを起動するには、次のように入力します。
 ```
 msinfo32 /categories +all -loadedmodules
 ```
-システムの概要情報のみをシステムの概要 で情報を含む syssum.nfo と呼ばれる .nfo ファイルを作成するには、次のように入力します。
+システムの概要情報のみを表示し、[システムの概要] カテゴリに情報が含まれている .nfo ファイルを作成するには、次のように入力します。
 ```
 msinfo32 /nfo syssum.nfo /categories +systemsummary
 ```
-リソースの競合情報をリソースの競合に関する情報を含む conflicts.nfo と呼ばれる .nfo ファイルを作成するには、次のように入力します。
+リソースの競合情報を表示し、リソースの競合に関する情報を含む .nfo ファイルを作成するには、次のように入力します。
 ```
 msinfo32 /nfo conflicts.nfo /categories    +componentsproblemdevices+resourcesconflicts+resourcesforcedhardware
 ```
-## <a name="additional-references"></a>その他の参照
+## <a name="additional-references"></a>その他の参照情報
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)
 

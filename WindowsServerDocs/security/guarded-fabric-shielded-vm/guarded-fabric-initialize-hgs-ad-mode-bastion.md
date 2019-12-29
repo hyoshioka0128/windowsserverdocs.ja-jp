@@ -1,38 +1,38 @@
 ---
-title: 要塞フォレストの AD モードを使用して、HGS クラスターを初期化します。
+title: 要塞フォレストで AD モードを使用して HGS クラスターを初期化する
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 887fc8655a6ff3e862fa04b5b450456b04c55718
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: c69561f7d17bb1d36d90fc66cf4c1a196072fc72
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447465"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402370"
 ---
-# <a name="initialize-the-hgs-cluster-using-ad-mode-in-an-existing-bastion-forest"></a>既存の要塞フォレストの AD モードを使用して、HGS クラスターを初期化します。
+# <a name="initialize-the-hgs-cluster-using-ad-mode-in-an-existing-bastion-forest"></a>既存の要塞フォレストの AD モードを使用して HGS クラスターを初期化する
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
 
 >[!IMPORTANT]
->管理者によって信頼された構成証明 (AD モード) では、Windows Server 2019 以降推奨されていません。 TPM 構成証明が可能な環境では、次のように構成します。[ホスト キーの構成証明](guarded-fabric-initialize-hgs-key-mode-bastion.md)します。 ホスト キーの構成証明は、AD モードのような保証しを設定する方が簡単です。 
+>管理者によって信頼された構成証明 (AD モード) は、Windows Server 2019 以降では非推奨とされます。 TPM の構成証明が不可能な環境では、[ホストキー](guarded-fabric-initialize-hgs-key-mode-bastion.md)の構成証明を構成します。 ホストキーの構成証明により、AD モードと同様の保証が提供され、セットアップが簡単になります。 
 
-Active Directory Domain Services は、コンピューターにインストールされますが、構成されていないままにする必要があります。
+Active Directory Domain Services はコンピューターにインストールされますが、未構成のままにしておく必要があります。
 
 [!INCLUDE [Obtain certificates for HGS](../../../includes/guarded-fabric-initialize-hgs-default-step-two.md)] 
 
-続行する前にいることを確認するが、ホスト ガーディアン サービスのクラスター オブジェクトを事前設定されたユーザーでログオンしたを付与**フルコントロール**Active Directory 内の VCO と CNO オブジェクト。
-渡される必要がある仮想コンピューター オブジェクトの名前、`-HgsServiceName`パラメーター、およびクラスター名を`-ClusterName`パラメーター。
+続行する前に、ホストガーディアンサービスのクラスターオブジェクトを事前設定し、Active Directory の VCO および CNO オブジェクトに対して、ログインしているユーザーに**フルコントロール**を付与したことを確認してください。
+仮想コンピューターのオブジェクト名は、`-HgsServiceName` パラメーターに、クラスター名を `-ClusterName` パラメーターに渡す必要があります。
 
 > [!TIP]
-> 再確認、AD ドメイン コント ローラー、クラスター オブジェクトにが続行する前に、すべての Dc にレプリケートします。
+> 続行する前に、AD ドメインコントローラーを再確認して、クラスターオブジェクトがすべての Dc にレプリケートされていることを確認してください。
 
-PFX に基づく証明書を使用している場合は、HGS サーバーで次のコマンドを実行します。
+PFX ベースの証明書を使用している場合は、HGS サーバーで次のコマンドを実行します。
 
 ```powershell
 $signingCertPass = Read-Host -AsSecureString -Prompt "Signing certificate password"
@@ -43,7 +43,7 @@ Install-ADServiceAccount -Identity 'HGSgMSA'
 Initialize-HgsServer -UseExistingDomain -ServiceAccount 'HGSgMSA' -JeaReviewersGroup 'HgsJeaReviewers' -JeaAdministratorsGroup 'HgsJeaAdmins' -HgsServiceName 'HgsService' -ClusterName 'HgsCluster' -SigningCertificatePath '.\signCert.pfx' -SigningCertificatePassword $signPass -EncryptionCertificatePath '.\encCert.pfx' -EncryptionCertificatePassword $encryptionCertPass -TrustActiveDirectory
 ```
 
-(証明書の HSM を基盤と証明書をエクスポートできない) など、ローカル コンピューターにインストールされている証明書を使用している場合は、使用、`-SigningCertificateThumbprint`と`-EncryptionCertificateThumbprint`パラメーター代わりにします。
+ローカルコンピューターにインストールされている証明書 (HSM ベースの証明書やエクスポートされていない証明書など) を使用している場合は、代わりに `-SigningCertificateThumbprint` と `-EncryptionCertificateThumbprint` のパラメーターを使用します。
 
 ## <a name="next-step"></a>次の手順
 

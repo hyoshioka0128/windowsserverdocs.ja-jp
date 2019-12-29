@@ -2,7 +2,7 @@
 title: certutil
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3bc1e544c0e0684678bc168f286b52e5573f3ac2
-ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
+ms.openlocfilehash: 45c9946cc53fe3a901c3f6ee53f082a5b3d086c0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68300685"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379653"
 ---
 # <a name="certutil"></a>certutil
 
@@ -29,13 +29,13 @@ Certutil は、証明書サービスの一部としてインストールされ�
 > [!WARNING]
 > 以前のバージョンの certutil では、このドキュメントで説明されているすべてのオプションが提供されない場合があります。 「[構文表記](#syntax-notations)」セクションに示されているコマンドを実行すると、certutil の特定のバージョンで提供されるすべてのオプションを確認できます。
 
-## <a name="menu"></a>メニュー
+## <a name="menu"></a>Menu
 
 このドキュメントの主なセクションは次のとおりです。
 
 - [助動詞](#verbs)
 - [構文表記](#syntax-notations)
-- [[オプション]](#options)
+- [[オプション](#options)]
 - [その他の certutil の例](#additional-certutil-examples)
 
 ## <a name="verbs"></a>[動詞]
@@ -130,15 +130,15 @@ Certutil は、証明書サービスの一部としてインストールされ�
 |[-MergePFX](#-mergepfx)|PFX ファイルのマージ|
 |[-収束 Tepf](#-convertepf)|PFX ファイルを EPF ファイルに変換する|
 |-?|動詞の一覧を表示します|
-|-動詞 >-?  *\<*|指定された動詞のヘルプを表示します。|
+|- *\<動詞 >* -?|指定された動詞のヘルプを表示します。|
 |-? -v|動詞との完全な一覧を表示します。|
 
 [メニュー](#menu)に戻る
 
 ## <a name="syntax-notations"></a>構文表記
 
-- 基本的なコマンドライン構文については、を実行します。`certutil -?`
-- 特定の動詞で certutil を使用する構文については、 **certutil**  *\<動詞 >* **-?**
+- 基本的なコマンドライン構文については、`certutil -?` を実行してください。
+- 特定の動詞で certutil を使用する構文については、 **certutil** *\<verb >* **-?**
 - すべての certutil 構文をテキストファイルに送信するには、次のコマンドを実行します。  
   - `certutil -v -? > certutilhelp.txt`
   - `notepad certutilhelp.txt`
@@ -146,10 +146,10 @@ Certutil は、証明書サービスの一部としてインストールされ�
 次の表では、コマンドライン構文を示すために使用される表記法について説明します。
 
 
-|            Notation             |                  説明                  |
+|            表し             |                  説明                  |
 |---------------------------------|-----------------------------------------------|
 | 角かっこまたは中かっこを含まないテキスト |         表示されるように入力する必要がある項目          |
-|  \<山かっこ内のテキスト >  | 値を指定する必要があるプレースホルダー |
+|  山かっこ内のテキストを \<>  | 値を指定する必要があるプレースホルダー |
 |  [角かっこ内のテキスト]  |                省略可能な項目                 |
 |      {中かっこ内のテキスト}       |       必須項目のセット1つ選択する       |
 |         縦棒 (          |                       )                       |
@@ -175,7 +175,7 @@ CertUtil [オプション]-asn ファイル [種類]
 
 Asn.1 ファイルを解析する
 
-型: 数値 CRYPT\_文字列\_ \*デコード型
+型: numeric CRYPT\_STRING\_\* デコード型
 
 [メニュー](#menu)に戻る
 
@@ -183,7 +183,7 @@ Asn.1 ファイルを解析する
 
 CertUtil [オプション]-decodehex InFile 出力 [種類]
 
-種類: 数値 CRYPT\_文字列\_ \*のエンコードの種類
+型: numeric CRYPT\_STRING\_\* encoding 型
 
 [-f]
 
@@ -278,19 +278,19 @@ CertUtil [オプション]-シリアル化を取り消す [理由]
 
 証明書の失効
 
-SerialNumber失効する証明書のシリアル番号のコンマ区切りの一覧
+シリアル化: 失効する証明書のシリアル番号のコンマ区切りの一覧
 
 理由: 数値またはシンボルの失効理由
 
-- 0CRL_REASON_UNSPECIFIED:未指定 (既定値)
-- 1:CRL_REASON_KEY_COMPROMISE:キーの侵害
-- 2:CRL_REASON_CA_COMPROMISE:CA の侵害
-- 3:CRL_REASON_AFFILIATION_CHANGED:所属の変更
-- 4時CRL_REASON_SUPERSEDED:置き換え済み
-- 5時CRL_REASON_CESSATION_OF_OPERATION:中断の操作
-- 4/6CRL_REASON_CERTIFICATE_HOLD:証明書保留
-- 8CRL_REASON_REMOVE_FROM_CRL:CRL から削除
-- -1:失効失効
+- 0: CRL_REASON_UNSPECIFIED: 指定されていません (既定)。
+- 1: CRL_REASON_KEY_COMPROMISE: キーのセキュリティ侵害
+- 2: CRL_REASON_CA_COMPROMISE: CA のセキュリティ侵害
+- 3: CRL_REASON_AFFILIATION_CHANGED: 所属の変更
+- 4: CRL_REASON_SUPERSEDED: 置き換えられる
+- 5: CRL_REASON_CESSATION_OF_OPERATION: 操作の中断
+- 6: CRL_REASON_CERTIFICATE_HOLD: 証明書保留
+- 8: CRL_REASON_REMOVE_FROM_CRL: CRL からの削除
+- -1: 取り消し取り消し: 失効取り消し
 
 [-config Machine\CAName]
 
@@ -337,7 +337,7 @@ CertUtil [オプション]-CAInfo [InfoName [Index |ErrorCode]]
 
 CA 情報を表示する
 
-InfoName--表示する CA プロパティを示します (下記参照)。 すべての\*プロパティに対して "" を使用します。
+InfoName--表示する CA プロパティを示します (下記参照)。 すべてのプロパティに対して "\*" を使用します。
 
 Index--省略可能な0から始まるプロパティインデックス
 
@@ -347,54 +347,54 @@ ErrorCode--数値エラーコード
 
 InfoName 引数の構文:
 
-- 拡張子ファイル バージョン
-- 梱包製品バージョン
-- exitcount:終了モジュール数
-- 終了 [インデックス]:モジュールの終了の説明
-- ポリシーポリシーモジュールの説明
-- 指定CA 名
-- sanitizedname:校正した CA 名
-- dsname校正した CA の短い名前 (DS 名)
-- 共有フォルダ共有フォルダー
-- error1 ErrorCode:エラーメッセージのテキスト
-- error2 ErrorCode:エラーメッセージテキストとエラーコード
-- 各種CA の種類
-- インフォメーションCA 情報
-- 所属親 CA
-- certcount:CA 証明書数
-- xchgcount:CA exchange 証明書数
-- kracount:KRA cert 数
-- kraused:KRA cert used count
-- propidmax:最大 CA PropId
-- certstate [インデックス]:CA 証明書
-- certversion [Index]:CA 証明書のバージョン
-- certstatuscode [Index]:CA 証明書検証の状態
-- crlstate [インデックス]:.CRL
-- krastate [インデックス]:KRA cert
-- クロス状態 + [インデックス]:クロス証明書を転送する
-- クロス状態-[インデックス]:下位のクロス証明書
-- 証明書 [インデックス]:CA 証明書
-- certchain [インデックス]:CA 証明書チェーン
-- certcrlchain [インデックス]:Crl を使用した CA 証明書チェーン
-- xchg [インデックス]:CA exchange 証明書
-- xchgchain [インデックス]:CA exchange 証明書チェーン
-- xchgcrlchain [インデックス]:Crl を使用した CA exchange 証明書チェーン
-- kra [インデックス]:KRA cert
-- クロス + [インデックス]:クロス証明書を転送する
-- クロス [インデックス]:下位のクロス証明書
-- CRL [インデックス]:Base CRL
-- deltacrl [インデックス]:Delta CRL
-- crlstatus [インデックス]:CRL 発行ステータス
-- deltacrlstatus [インデックス]:Delta CRL の発行ステータス
-- dnsDNS 名
-- 果たす役割の分離
-- キャンペーンAdvanced Server
-- テンプレートテンプレート
-- csp [インデックス]:OCSP Url
-- aia [インデックス]:AIA Url
-- cdp [インデックス]:CDP Url
-- localenameCA のロケール名
-- subjecttemplateoids:サブジェクトテンプレート Oid
+- ファイル: ファイルバージョン
+- 製品: 製品バージョン
+- exitcount: 終了モジュール数
+- 終了 [インデックス]: モジュールの終了の説明
+- ポリシー: ポリシーモジュールの説明
+- 名前: CA 名
+- sanitizedname: 校正した CA 名
+- dsname: 校正 CA の短い名前 (DS 名)
+- sharedfolder: 共有フォルダー
+- error1 ErrorCode: エラーメッセージテキスト
+- error2 ErrorCode: エラーメッセージテキストとエラーコード
+- 種類: CA の種類
+- 情報: CA 情報
+- 親: 親 CA
+- certcount: CA 証明書数
+- xchgcount: CA exchange 証明書数
+- kracount: KRA cert count
+- kraused: KRA cert used count
+- propidmax: 最大 CA PropId
+- certstate [インデックス]: CA 証明書
+- certversion [Index]: CA 証明書のバージョン
+- certstatuscode [Index]: CA 証明書検証の状態
+- crlstate [インデックス]: CRL
+- krastate [Index]: KRA cert
+- クロスステート + [Index]: クロス証明書を転送します
+- クロス状態-[インデックス]: 下位のクロス証明書
+- 証明書 [インデックス]: CA 証明書
+- certchain [インデックス]: CA 証明書チェーン
+- certcrlchain [Index]: Crl を持つ CA 証明書チェーン
+- xchg [Index]: CA exchange cert
+- xchgchain [インデックス]: CA exchange 証明書チェーン
+- xchgcrlchain [Index]: Crl を使用する CA exchange 証明書チェーン
+- kra [インデックス]: KRA cert
+- クロス + [インデックス]: クロス証明書を転送する
+- クロス [インデックス]: 下位のクロス証明書
+- CRL [インデックス]: Base CRL
+- deltacrl [Index]: Delta CRL
+- crlstatus [Index]: CRL 発行ステータス
+- deltacrlstatus [Index]: Delta CRL の公開ステータス
+- dns: DNS 名
+- 役割: 役割の分離
+- 広告: 高度なサーバー
+- テンプレート: テンプレート
+- csp [インデックス]: OCSP Url
+- aia [インデックス]: AIA Url
+- cdp [インデックス]: CDP Url
+- localename: CA のロケール名
+- subjecttemplateoids: サブジェクトテンプレート Oid
 
 [メニュー](#menu)に戻る
 
@@ -406,7 +406,7 @@ CA の証明書を取得する
 
 OutCACertFile: 出力ファイル
 
-化CA 証明書の更新インデックス (既定で最新)
+インデックス: CA 証明書の更新インデックス (既定では最新)
 
 [-f][-split][-config Machine\CAName]
 
@@ -420,7 +420,7 @@ CA の証明書チェーンを取得する
 
 OutCACertChainFile: 出力ファイル
 
-化CA 証明書の更新インデックス (既定で最新)
+インデックス: CA 証明書の更新インデックス (既定では最新)
 
 [-f][-split][-config Machine\CAName]
 
@@ -432,7 +432,7 @@ CertUtil [オプション]-GetCRL 出力 [インデックス] [差分]
 
 CRL を取得する
 
-化CRL インデックスまたはキーインデックス (最新のキーの既定値は CRL)
+インデックス: CRL インデックスまたはキーインデックス (最新のキーの既定値は CRL)
 
 デルタ: delta CRL (既定は base CRL)
 
@@ -496,11 +496,11 @@ CertUtil [オプション]-schema [Ext |Attrib |.CRL
 
 要求と証明書テーブルの既定値
 
-Ext拡張テーブル
+Ext: 拡張テーブル
 
-Attrib属性テーブル
+Attrib: 属性テーブル
 
-.CRLCRL テーブル
+CRL: CRL テーブル
 
 [-split][-config Machine\CAName]
 
@@ -512,33 +512,33 @@ CertUtil [オプション]-view [Queue |Log |LogFail |取り消し |Ext |Attrib 
 
 証明書ビューのダンプ
 
-キュー:要求キュー
+Queue: 要求キュー
 
-ログ :発行または失効した証明書、および失敗した要求
+ログ: 発行または失効した証明書、および失敗した要求
 
-LogFail:失敗した要求
+LogFail: 失敗した要求
 
-化失効した証明書
+失効: 失効した証明書
 
-Ext拡張テーブル
+Ext: 拡張テーブル
 
-Attrib属性テーブル
+Attrib: 属性テーブル
 
-.CRLCRL テーブル
+CRL: CRL テーブル
 
-市区コンマ区切り値として出力する
+csv: コンマ区切り値として出力
 
 すべてのエントリの StatusCode 列を表示するには:-out StatusCode
 
 最後のエントリのすべての列を表示する場合:-restrict "RequestId = = $"
 
-3つの要求に対して requestid と後処理を表示する場合:-restrict "\<requestid > = 37, requestid 40"-out "requestid, ディスポジション"
+3つの要求に対して RequestId と後処理を表示するには:-restrict "RequestId > = 37, RequestId\<40"-out "RequestId, ディスポジション"
 
 すべての Base Crl の行 Id と CRL 番号を表示するには:-restrict "CRLMinBase = 0"-out "CRLRowId, CRLNumber" CRL
 
 Base CRL Number 3 を表示するには:-v-制限 "CRLMinBase = 0, CRLNumber = 3"-out "CRLRawCRL" CRL
 
-CRL テーブル全体を表示するには、次のようにします.CRL
+CRL テーブル全体を表示するには: CRL
 
 日付制限には、"Date [+ |-dd: hh]" を使用します。
 
@@ -564,23 +564,23 @@ CertUtil [オプション]-deleterow RowId |日付 [Request |Cert |Ext |Attrib |
 
 サーバーデータベース行の削除
 
-要求:失敗した要求と保留中の要求 (送信日)
+要求: 失敗した要求と保留中の要求 (送信日)
 
-Cert:期限切れの証明書と失効した証明書 (有効期限)
+証明書: 期限切れおよび失効した証明書 (有効期限)
 
-Ext拡張テーブル
+Ext: 拡張テーブル
 
-Attrib属性テーブル
+Attrib: 属性テーブル
 
-.CRLCRL テーブル (有効期限)
+CRL: CRL テーブル (有効期限)
 
-2001年1月22日までに送信された失敗した要求と保留中の要求を削除するには:1/22/2001 要求
+2001: 1/22/2001 要求によって送信された失敗した要求と保留中の要求を削除するには
 
-2001年1月22日に期限切れになったすべての証明書を削除するには:1/22/2001 証明書
+2001年1月22日に期限切れになったすべての証明書を削除するには 1/22/2001 Cert
 
-RequestId 37 の証明書行、属性、および拡張を削除するには、次のようにします。37
+RequestId 37:37 の証明書行、属性、および拡張機能を削除するには
 
-2001年1月22日に期限切れになった Crl を削除するには:1/22/2001 CRL
+2001年1月22日に期限切れになった Crl を削除するには 1/22/2001 CRL
 
 [-f][-config Machine\CAName]
 
@@ -662,7 +662,7 @@ Active Directory 証明書サービス証明書と秘密キーを復元する
 
 BackupDirectory: 復元する PFX ファイルを含むディレクトリ
 
-PFXFile:復元する PFX ファイル
+PFXFile: 復元する PFX ファイル
 
 [-f][-config Machine\CAName][-p パスワード]
 
@@ -674,20 +674,20 @@ CertUtil [オプション]-importPFX [証明] PFXFile [Modifiers]
 
 証明書と秘密キーのインポート
 
-証明証明書ストアの名前。  「 [-Store」を](#-store)参照してください。
+証明: 証明書ストアの名前。  「 [-Store」を](#-store)参照してください。
 
-PFXFile:インポートする PFX ファイル
+PFXFile: インポートする PFX ファイル
 
-ド次の1つまたは複数のコンマ区切りの一覧。
+修飾子: 次の1つまたは複数のコンマ区切りのリスト。
 
-1. AT_SIGNATURE:KeySpec を署名に変更する
-2. AT_KEYEXCHANGE:KeySpec をキー交換に変更する
-3. NoExport:秘密キーをエクスポート不可にする
-4. NoCert:証明書をインポートしない
-5. NoChain:証明書チェーンをインポートしない
-6. NoRoot:ルート証明書をインポートしない
-7. 防止パスワードを使用してキーを保護する
-8. NoProtect:キーをパスワードで保護しない
+1. AT_SIGNATURE: KeySpec を署名に変更する
+2. AT_KEYEXCHANGE: KeySpec をキー交換に変更する
+3. NoExport: 秘密キーをエクスポート不可にします。
+4. NoCert: 証明書をインポートしません
+5. NoChain: 証明書チェーンをインポートしません
+6. NoRoot: ルート証明書をインポートしない
+7. 保護: パスワードを使用してキーを保護する
+8. NoProtect: パスワード保護キーを入力しません
 
 既定値はパーソナルコンピューターストアです。
 
@@ -729,17 +729,17 @@ CertUtil [オプション]-store [証明 [CertId [OutputFile]]]
 
 証明書ストアのダンプ
 
-証明証明書ストアの名前。 例 :
+証明: 証明書ストアの名前。 例:
 
 - "My"、"CA" (既定値)、"Root"、
 - "ldap:///CN=Certification オーソリティ, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? one? objectClass = Microsoft-windows-certificationauthority" (ルート証明書の表示)
 - "ldap:///CN=CAName,CN=Certification オーソリティ, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority" (ルート証明書の変更)
 - "ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? certificateRevocationList? base? objectClass = cRLDistributionPoint" (Crl の表示)
 - "ldap:///CN=NTAuthCertificates,CN=Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority" (エンタープライズ CA 証明書)
-- ldap(AD コンピューターオブジェクトの証明書)
-- -ユーザー ldap:(AD ユーザーオブジェクト証明書)
+- ldap: (AD コンピューターオブジェクトの証明書)
+- -ユーザー ldap: (AD ユーザーオブジェクト証明書)
 
-CertId証明書または CRL の一致トークン。  これには、シリアル番号、SHA-1 証明書、CRL、CTL または公開キーハッシュ、数値証明書インデックス (0、1など)、数値の CRL インデックス (.0、.1 など)、数値 CTL インデックス (.) を指定できます。0、.1など)、公開キー、署名、または拡張 ObjectId、証明書のサブジェクトの共通名、電子メールアドレス、UPN または DNS 名、キーコンテナー名または CSP 名、テンプレート名または ObjectId、EKU またはアプリケーションポリシーの ObjectId、または CRL 発行者の共通名。 多くの場合、複数の一致が発生する可能性があります。
+CertId: 証明書または CRL 一致トークン。  これには、シリアル番号、SHA-1 証明書、CRL、CTL または公開キーハッシュ、数値証明書インデックス (0、1など)、数値の CRL インデックス (.0、.1 など)、数値 CTL インデックス (.) を指定できます。0、..1など)、公開キー、署名、または拡張 ObjectId、証明書のサブジェクトの共通名、電子メールアドレス、UPN または DNS 名、キーコンテナー名または CSP 名、テンプレート名または ObjectId、EKU またはアプリケーションポリシーの ObjectId、または CRL 発行者の共通名。 多くの場合、複数の一致が発生する可能性があります。
 
 OutputFile: 一致する証明書を保存するファイル
 
@@ -751,7 +751,7 @@ OutputFile: 一致する証明書を保存するファイル
 
 コンピューターグループポリシーストアにアクセスするには、-grouppolicy を使用します。
 
-例 :
+例:
 
 - -エンタープライズ NTAuth
 - -エンタープライズルート37
@@ -768,9 +768,9 @@ CertUtil [オプション]-addstore 証明 InFile
 
 証明書をストアに追加
 
-証明証明書ストアの名前。  「 [-Store」を](#-store)参照してください。
+証明: 証明書ストアの名前。  「 [-Store」を](#-store)参照してください。
 
-InFileストアに追加する証明書または CRL ファイル。
+InFile: ストアに追加する証明書または CRL ファイル。
 
 [-f][-enterprise][-ユーザー][-GroupPolicy][-dc DCName]
 
@@ -782,9 +782,9 @@ CertUtil [オプション]-delstore 証明 CertId
 
 ストアから証明書を削除
 
-証明証明書ストアの名前。  「 [-Store」を](#-store)参照してください。
+証明: 証明書ストアの名前。  「 [-Store」を](#-store)参照してください。
 
-CertId証明書または CRL の一致トークン。  「 [-Store」を](#-store)参照してください。
+CertId: 証明書または CRL 一致トークン。  「 [-Store」を](#-store)参照してください。
 
 [-enterprise][-ユーザー][-GroupPolicy][-dc DCName]
 
@@ -796,9 +796,9 @@ CertUtil [オプション]-verifystore 証明 [CertId]
 
 ストアの証明書を確認する
 
-証明証明書ストアの名前。  「 [-Store」を](#-store)参照してください。
+証明: 証明書ストアの名前。  「 [-Store」を](#-store)参照してください。
 
-CertId証明書または CRL の一致トークン。  「 [-Store」を](#-store)参照してください。
+CertId: 証明書または CRL 一致トークン。  「 [-Store」を](#-store)参照してください。
 
 [-enterprise][-ユーザー][-GroupPolicy][-silent][-split][-dc DCName][-t タイムアウト]
 
@@ -810,7 +810,7 @@ CertUtil [オプション]-repairstore 証明 CertIdList [PropertyInfFile |SDDLS
 
 キーの関連付けを修復するか、証明書のプロパティまたはキーのセキュリティ記述子を更新します。
 
-証明証明書ストアの名前。  「 [-Store」を](#-store)参照してください。
+証明: 証明書ストアの名前。  「 [-Store」を](#-store)参照してください。
 
 CertIdList: 証明書または CRL 一致トークンのコンマ区切りの一覧。 「 [-Store](#-store) CertId description」を参照してください。
 
@@ -849,17 +849,17 @@ CertUtil [オプション]-viewstore [証明 [CertId [OutputFile]]]
 
 証明書ストアのダンプ
 
-証明証明書ストアの名前。 例 :
+証明: 証明書ストアの名前。 例:
 
 - "My"、"CA" (既定値)、"Root"、
 - "ldap:///CN=Certification オーソリティ, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? one? objectClass = Microsoft-windows-certificationauthority" (ルート証明書の表示)
 - "ldap:///CN=CAName,CN=Certification オーソリティ, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority" (ルート証明書の変更)
 - "ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? certificateRevocationList? base? objectClass = cRLDistributionPoint" (Crl の表示)
 - "ldap:///CN=NTAuthCertificates,CN=Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority" (エンタープライズ CA 証明書)
-- ldap(AD コンピューターオブジェクトの証明書)
-- -ユーザー ldap:(AD ユーザーオブジェクト証明書)
+- ldap: (AD コンピューターオブジェクトの証明書)
+- -ユーザー ldap: (AD ユーザーオブジェクト証明書)
 
-CertId証明書または CRL の一致トークン。 これには、シリアル番号、SHA-1 証明書、CRL、CTL または公開キーハッシュ、数値証明書インデックス (0、1など)、数値の CRL インデックス (.0、.1 など)、数値 CTL インデックス (.) を指定できます。0、.1など)、公開キー、署名、または拡張 ObjectId、証明書のサブジェクトの共通名、電子メールアドレス、UPN または DNS 名、キーコンテナー名または CSP 名、テンプレート名または ObjectId、EKU またはアプリケーションポリシーの ObjectId、または CRL 発行者の共通名。 多くの場合、複数の一致が発生する可能性があります。
+CertId: 証明書または CRL 一致トークン。 これには、シリアル番号、SHA-1 証明書、CRL、CTL または公開キーハッシュ、数値証明書インデックス (0、1など)、数値の CRL インデックス (.0、.1 など)、数値 CTL インデックス (.) を指定できます。0、..1など)、公開キー、署名、または拡張 ObjectId、証明書のサブジェクトの共通名、電子メールアドレス、UPN または DNS 名、キーコンテナー名または CSP 名、テンプレート名または ObjectId、EKU またはアプリケーションポリシーの ObjectId、または CRL 発行者の共通名。 多くの場合、複数の一致が発生する可能性があります。
 
 OutputFile: 一致する証明書を保存するファイル
 
@@ -871,7 +871,7 @@ OutputFile: 一致する証明書を保存するファイル
 
 コンピューターグループポリシーストアにアクセスするには、-grouppolicy を使用します。
 
-例 :
+例:
 
 1. -エンタープライズ NTAuth
 2. -エンタープライズルート37
@@ -888,17 +888,17 @@ CertUtil [オプション]-viewdelstore [証明 [CertId [OutputFile]]]
 
 ストアから証明書を削除
 
-証明証明書ストアの名前。 例 :
+証明: 証明書ストアの名前。 例:
 
 - "My"、"CA" (既定値)、"Root"、
 - "ldap:///CN=Certification オーソリティ, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? one? objectClass = Microsoft-windows-certificationauthority" (ルート証明書の表示)
 - "ldap:///CN=CAName,CN=Certification オーソリティ, CN = Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority" (ルート証明書の変更)
 - "ldap:///CN=CAName,CN=MachineName,CN=CDP,CN=Public Key Services、CN = Services、CN = Configuration、DC = cpandl、DC = com? certificateRevocationList? base? objectClass = cRLDistributionPoint" (Crl の表示)
 - "ldap:///CN=NTAuthCertificates,CN=Public Key Services, CN = Services, CN = Configuration, DC = cpandl, DC = com? Cacertificate を? base? objectClass = Microsoft-windows-certificationauthority" (エンタープライズ CA 証明書)
-- ldap(AD コンピューターオブジェクトの証明書)
-- -ユーザー ldap:(AD ユーザーオブジェクト証明書)
+- ldap: (AD コンピューターオブジェクトの証明書)
+- -ユーザー ldap: (AD ユーザーオブジェクト証明書)
 
-CertId証明書または CRL の一致トークン。 これには、シリアル番号、SHA-1 証明書、CRL、CTL または公開キーハッシュ、数値証明書インデックス (0、1など)、数値の CRL インデックス (.0、.1 など)、数値 CTL インデックス (.) を指定できます。0、.1など)、公開キー、署名、または拡張 ObjectId、証明書のサブジェクトの共通名、電子メールアドレス、UPN または DNS 名、キーコンテナー名または CSP 名、テンプレート名または ObjectId、EKU またはアプリケーションポリシーの ObjectId、または CRL 発行者の共通名。 多くの場合、複数の一致が発生する可能性があります。
+CertId: 証明書または CRL 一致トークン。 これには、シリアル番号、SHA-1 証明書、CRL、CTL または公開キーハッシュ、数値証明書インデックス (0、1など)、数値の CRL インデックス (.0、.1 など)、数値 CTL インデックス (.) を指定できます。0、..1など)、公開キー、署名、または拡張 ObjectId、証明書のサブジェクトの共通名、電子メールアドレス、UPN または DNS 名、キーコンテナー名または CSP 名、テンプレート名または ObjectId、EKU またはアプリケーションポリシーの ObjectId、または CRL 発行者の共通名。 多くの場合、複数の一致が発生する可能性があります。
 
 OutputFile: 一致する証明書を保存するファイル
 
@@ -910,7 +910,7 @@ OutputFile: 一致する証明書を保存するファイル
 
 コンピューターグループポリシーストアにアクセスするには、-grouppolicy を使用します。
 
-例 :
+例:
 
 1. -エンタープライズ NTAuth
 2. -エンタープライズルート37
@@ -931,25 +931,25 @@ CertUtil [オプション]-dsPublish CRLFile [Dsc/Container [DSCDPCN]]
 
 CertFile: 発行する証明書ファイル
 
-NTAuthCA:証明書を DS Enterprise store に発行する
+NTAuthCA: DS Enterprise store に証明書を発行します
 
-Rootca.cer証明書を DS の信頼されたルートストアに発行する
+RootCA: 証明書を DS の信頼されたルートストアに発行する
 
-SubCACA 証明書を DS CA オブジェクトに発行する
+SubCA: DS CA オブジェクトに CA 証明書を発行します。
 
-CrossCA:クロス証明書を DS CA オブジェクトに発行する
+CrossCA: クロス証明書を DS CA オブジェクトに発行する
 
-KRA証明書を DS キー回復エージェントオブジェクトに発行します
+KRA: 証明書を DS キー回復エージェントオブジェクトに発行します
 
-ユーザー:ユーザー DS オブジェクトに証明書を発行する
+ユーザー: ユーザー DS オブジェクトに証明書を発行します
 
-装置証明書をコンピューター DS オブジェクトに発行する
+コンピューター: 証明書をコンピューター DS オブジェクトに発行します
 
-CRLFile:発行する CRL ファイル
+CRLFile: 発行する CRL ファイル
 
-Dsc: コンテナー:DS CDP コンテナー CN、通常は CA マシン名
+Dsc(コンテナー): DS CDP コンテナー CN、通常は CA マシン名
 
-DSCDPCN:DS CDP オブジェクト CN。通常は、校正された CA の短い名前とキーのインデックスに基づいています。
+DSCDPCN: DS CDP オブジェクト CN。通常は、校正された CA の短い名前とキーのインデックスに基づいています。
 
 DS オブジェクトを作成するには、-f を使用します。
 
@@ -1025,12 +1025,12 @@ CertUtil [オプション]-enrollmentServerURL URL の削除
 
 CA に関連付けられている登録サーバーの Url を表示、追加、または削除する
 
-AuthenticationTypeURL を追加するときに、次のいずれかのクライアント認証方法を指定します。
+AuthenticationType: URL を追加するときに、次のいずれかのクライアント認証方法を指定します。
 
-1. 満たさKerberos SSL 資格情報を使用する
-2. ユーザー名SSL 資格情報に名前付きアカウントを使用する
-3. ClientCertificateX.509 証明書の SSL 資格情報を使用する
-4. Anonymous:匿名の SSL 資格情報を使用する
+1. Kerberos: Kerberos SSL 資格情報を使用する
+2. ユーザー名: SSL 資格情報に名前付きアカウントを使用する
+3. ClientCertificate: x.509 証明書の SSL 資格情報を使用します。
+4. 匿名: 匿名の SSL 資格情報を使用する
 
 削除: CA に関連付けられている指定された URL を削除します。
 
@@ -1038,8 +1038,8 @@ Priority: URL を追加するときに指定しない場合、既定値は ' 1 '
 
 [修飾子]--次の1つ以上のコンマ区切りのリスト。
 
-1. AllowRenewalsOnly:この URL を使用してこの CA に送信できるのは更新要求のみです
-2. Allowkeyベースの更新:AD 内にアカウントが関連付けられていない証明書を使用できるようにします。 これは、ClientCertificate および AllowRenewalsOnly モードでのみ適用されます。
+1. AllowRenewalsOnly: この URL を使用してこの CA に送信できるのは更新要求のみです
+2. Allowkeyベースの更新: AD に関連付けられているアカウントがない証明書を使用できます。 これは、ClientCertificate および AllowRenewalsOnly モードでのみ適用されます。
 
 [-config Machine\CAName][-dc DCName]
 
@@ -1097,7 +1097,7 @@ CertUtil [オプション]-CredStore の URL の削除
 
 資格情報ストアのエントリを表示、追加、または削除する
 
-URL: ターゲット URL。  すべて\*のエントリを照合するには、を使用します。 URL https://machine\ プレフィックスと一致させるには、* を使用します。
+URL: ターゲット URL。  すべてのエントリを一致させるには、\* を使用します。 URL プレフィックスと一致させるには、 https://machine\* を使用します。
 
 追加: 資格情報ストアエントリを追加します。 SSL 資格情報も指定する必要があります。
 
@@ -1194,11 +1194,11 @@ CA 情報を表示する
 
 ## <a name="-scinfo"></a>-SCInfo
 
-CertUtil [オプション]-SCInfo [ReaderName [CRYPT_DELETEKEYSET]]
+CertUtil [オプション]-SCInfo [CRYPT_DELETEKEYSET]]
 
 スマートカードの情報を表示する
 
-CRYPT_DELETEKEYSET:スマートカードのすべてのキーを削除する
+CRYPT_DELETEKEYSET: スマートカードのすべてのキーを削除します。
 
 [-silent][-split][-urlfetch][-t タイムアウト]
 
@@ -1208,7 +1208,7 @@ CRYPT_DELETEKEYSET:スマートカードのすべてのキーを削除する
 
 CertUtil [オプション]-SCRoots update [+] [InputRootFile] [ReaderName]
 
-CertUtil [オプション]-scroots save \@outputrootfile [readername]
+CertUtil [オプション]-SCRoots \@OutputRootFile [ReaderName]
 
 CertUtil [オプション]-SCRoots ビュー [InputRootFile |ReaderName]
 
@@ -1250,7 +1250,7 @@ CertUtil [オプション]-CRLFile CACertFile を確認する [DeltaCRLFile]
 
 証明書、CRL、またはチェーンの検証
 
-CertFile検証する証明書
+CertFile: 検証する証明書
 
 ApplicationPolicyList: 必要なアプリケーションポリシー ObjectIds のコンマ区切りのリスト (省略可能)
 
@@ -1260,7 +1260,7 @@ CACertFile: オプションで検証する発行元 CA 証明書
 
 CrossedCACertFile: 省略可能な証明書 (CertFile によるクロス認定)
 
-CRLFile:検証する CRL
+CRLFile: 検証する CRL
 
 IssuedCertFile: 省略可能な発行済み証明書 (CRLFile)
 
@@ -1290,7 +1290,7 @@ CertUtil [オプション]-verifyCTL CTLObject [CertDir] [CertFile]
 
 AuthRoot または許可されていない証明書の CTL を確認する
 
-CTLObject:検証する CTL を識別します。
+CTLObject: 検証する CTL を識別します。
 
 - AuthRootWU: AuthRoot CAB と一致する証明書を URL キャッシュから読み取ります。 代わりに、-f を使用して Windows Update からダウンロードしてください。
 - DisallowedWU: 許可されていない証明書の CAB と、URL キャッシュからの許可されていない証明書ストアファイルを読み取ります。  代わりに、-f を使用して Windows Update からダウンロードしてください。
@@ -1308,7 +1308,7 @@ CertFile: 検証する証明書を含むファイル。 証明書は CTL エン�
 
 ## <a name="-sign"></a>-sign
 
-CertUtil [オプション]-署名 InFileList |シリアルの |CRL OutFileList [StartDate + dd: hh] [+ SerialNumberList |-SerialNumberList |-ObjectIdList |\@Extensionfile]
+CertUtil [オプション]-署名 InFileList |シリアルの |CRL OutFileList [StartDate + dd: hh] [+ SerialNumberList |-SerialNumberList |-ObjectIdList | \@ExtensionFile]
 
 CertUtil [オプション]-署名 InFileList |シリアルの |CRL OutFileList [#HashAlgorithm] [+ AlternateSignatureAlgorithm | AlternateSignatureAlgorithm]
 
@@ -1316,9 +1316,9 @@ CRL または証明書に再署名する
 
 InFileList: 変更および再署名する証明書または CRL ファイルのコンマ区切りの一覧
 
-SerialNumber作成する証明書のシリアル番号。 有効期間とその他のオプションを指定することはできません。
+シリアル値: 作成する証明書のシリアル番号。 有効期間とその他のオプションを指定することはできません。
 
-.CRL空の CRL を作成します。 有効期間とその他のオプションを指定することはできません。
+CRL: 空の CRL を作成します。 有効期間とその他のオプションを指定することはできません。
 
 OutFileList: 変更された証明書または CRL 出力ファイルのコンマ区切りの一覧。 ファイルの数は、InFileList と一致している必要があります。
 
@@ -1328,7 +1328,7 @@ SerialNumberList: コンマ区切りのシリアル番号リストを追加ま�
 
 ObjectIdList: コンマ区切りの拡張 ObjectId リストを削除します。
 
-\@ExtensionFile:更新または削除する拡張機能を含む INF ファイル:
+\@ExtensionFile: 更新または削除する拡張子を含む INF ファイル:
 
 ```
 [Extensions]
@@ -1337,7 +1337,7 @@ ObjectIdList: コンマ区切りの拡張 ObjectId リストを削除します�
      _continue_="03 02 01 86"
 ```
 
-HashAlgorithm# 記号を前に付けたハッシュアルゴリズムの名前
+HashAlgorithm: # 記号を前に付けたハッシュアルゴリズムの名前
 
 AlternateSignatureAlgorithm: 代替署名アルゴリズム指定子
 
@@ -1371,10 +1371,10 @@ CertUtil [オプション]-addEnrollmentServer Kerberos |UserName |ClientCertifi
 
 必要に応じて、指定した CA の登録サーバーアプリケーションとアプリケーションプールを追加します。 このコマンドでは、バイナリまたはパッケージはインストールされません。 次のいずれかの認証方法を使用して、クライアントが証明書登録サーバーに接続します。
 
-- 満たさKerberos SSL 資格情報を使用する
-- ユーザー名SSL 資格情報に名前付きアカウントを使用する
-- ClientCertificateX.509 証明書の SSL 資格情報を使用する
-- AllowRenewalsOnly:この URL を使用してこの CA に送信できるのは更新要求のみです
+- Kerberos: Kerberos SSL 資格情報を使用する
+- ユーザー名: SSL 資格情報に名前付きアカウントを使用する
+- ClientCertificate: x.509 証明書の SSL 資格情報を使用します。
+- AllowRenewalsOnly: この URL を使用してこの CA に送信できるのは更新要求のみです
 - Allowkey: 書き換え--AD にアカウントが関連付けられていない証明書を使用できるようにします。 これは、ClientCertificate および AllowRenewalsOnly モードでのみ適用されます。
 
 [-config Machine\CAName]
@@ -1389,9 +1389,9 @@ CertUtil [オプション]-deleteEnrollmentServer Kerberos |UserName |ClientCert
 
 必要に応じて、指定した CA の登録サーバーアプリケーションとアプリケーションプールを削除します。 このコマンドでは、バイナリやパッケージは削除されません。 次のいずれかの認証方法を使用して、クライアントが証明書登録サーバーに接続します。
 
-1. 満たさKerberos SSL 資格情報を使用する
-2. ユーザー名SSL 資格情報に名前付きアカウントを使用する
-3. ClientCertificateX.509 証明書の SSL 資格情報を使用する
+1. Kerberos: Kerberos SSL 資格情報を使用する
+2. ユーザー名: SSL 資格情報に名前付きアカウントを使用する
+3. ClientCertificate: x.509 証明書の SSL 資格情報を使用します。
 
 [-config Machine\CAName]
 
@@ -1405,10 +1405,10 @@ CertUtil [オプション]-addPolicyServer Kerberos |UserName |ClientCertificate
 
 必要に応じて、ポリシーサーバーアプリケーションとアプリケーションプールを追加します。 このコマンドでは、バイナリまたはパッケージはインストールされません。 次のいずれかの認証方法で、クライアントが証明書ポリシーサーバーに接続します。
 
-- 満たさKerberos SSL 資格情報を使用する
-- ユーザー名SSL 資格情報に名前付きアカウントを使用する
-- ClientCertificateX.509 証明書の SSL 資格情報を使用する
-- キーベースの更新:キーベースの更新テンプレートを含むポリシーのみがクライアントに返されます。 このフラグは、ユーザー名と ClientCertificate 認証にのみ適用されます。
+- Kerberos: Kerberos SSL 資格情報を使用する
+- ユーザー名: SSL 資格情報に名前付きアカウントを使用する
+- ClientCertificate: x.509 証明書の SSL 資格情報を使用します。
+- キーベースの更新: キーベースの更新テンプレートを含むポリシーのみがクライアントに返されます。 このフラグは、ユーザー名と ClientCertificate 認証にのみ適用されます。
 
 [メニュー](#menu)に戻る
 
@@ -1420,10 +1420,10 @@ CertUtil [オプション]-deletePolicyServer Kerberos |UserName |ClientCertific
 
 必要に応じて、ポリシーサーバーアプリケーションとアプリケーションプールを削除します。 このコマンドでは、バイナリやパッケージは削除されません。 次のいずれかの認証方法で、クライアントが証明書ポリシーサーバーに接続します。
 
-1. 満たさKerberos SSL 資格情報を使用する
-2. ユーザー名SSL 資格情報に名前付きアカウントを使用する
-3. ClientCertificateX.509 証明書の SSL 資格情報を使用する
-4. キーベースの更新:キーベース更新ポリシーサーバー
+1. Kerberos: Kerberos SSL 資格情報を使用する
+2. ユーザー名: SSL 資格情報に名前付きアカウントを使用する
+3. ClientCertificate: x.509 証明書の SSL 資格情報を使用します。
+4. キーベースの更新: キーベースの更新ポリシーサーバー
 
 [メニュー](#menu)に戻る
 
@@ -1443,8 +1443,8 @@ ObjectId を表示するか、表示名を設定します
 - AlgorithmName--検索する ObjectId のアルゴリズム名
 - DisplayName--DS に格納する表示名
 - 削除--表示名の削除
-- LanguageId--言語 Id (既定で現在の値に設定):1033)
-- 「--DS オブジェクトの種類」と入力します。テンプレートの場合は 1 (既定)、発行ポリシーの場合は2、アプリケーションポリシーの場合は3
+- LanguageId--言語 Id (既定値は 1033)
+- 次のように入力します。作成するオブジェクトの種類は、テンプレートの場合は 1 (既定)、発行ポリシーの場合は2、アプリケーションポリシーの場合は3です。
 - DS オブジェクトを作成するには、-f を使用します。
 
 [-f]
@@ -1461,37 +1461,37 @@ CertUtil [オプション]-エラー ErrorCode
 
 ## <a name="-getreg"></a>-getreg
 
-CertUtil [オプション]-getreg [{ca | restore | policy | exit | template | enroll | chain |Policyservers}\[ProgId\]] [registryvaluename]
+CertUtil [オプション]-getreg [{ca | restore | policy | exit | template | enroll | chain |PolicyServers}\[ProgId\]] [RegistryValueName]
 
 レジストリ値の表示
 
-コンテンツCA のレジストリキーを使用する
+ca: CA のレジストリキーを使用する
 
-復元CA の復元レジストリキーを使用する
+復元: CA の復元レジストリキーを使用します。
 
-ポリシーポリシーモジュールのレジストリキーを使用する
+ポリシー: ポリシーモジュールのレジストリキーを使用します。
 
-終了最初の終了モジュールのレジストリキーを使用する
+終了: 最初の終了モジュールのレジストリキーを使用します
 
-テンプレートテンプレートのレジストリキーを使用する (ユーザーテンプレートにユーザーを使用)
+テンプレート: テンプレートレジストリキーを使用します (ユーザーテンプレートにユーザーを使用します)
 
-登録登録レジストリキーを使用する (ユーザーコンテキストでユーザーを使用)
+登録: 登録レジストリキーを使用します (ユーザーコンテキストにユーザーを使用します)
 
-一連チェーン構成のレジストリキーを使用する
+チェーン: チェーン構成のレジストリキーを使用する
 
-PolicyServers:ポリシーサーバーのレジストリキーを使用する
+PolicyServers: ポリシーサーバーのレジストリキーを使用します。
 
-ProgIdポリシーまたは終了モジュールの ProgId (レジストリサブキー名) を使用する
+ProgId: ポリシーまたは終了モジュールの ProgId (レジストリサブキー名) を使用します。
 
-Registryvaluename: レジストリ値の名前 (プレフィックスと\*一致するには "name" を使用します)
+RegistryValueName: レジストリ値の名前 (プレフィックスと一致するには "Name\*" を使用します)
 
 値: 新しい数値、文字列、または日付のレジストリ値またはファイル名。 数値が "+" または "-" で始まる場合は、新しい値に指定されたビットが既存のレジストリ値で設定またはクリアされます。
 
-文字列値が "+" または "-" で始まる場合、既存の値が REG_MULTI_SZ 値の場合は、既存のレジストリ値に対して文字列が追加または削除されます。 REG_MULTI_SZ 値を強制的に作成するには、文字列値の末尾に "\n" を追加します。
+文字列値が "+" または "-" で始まっていて、既存の値が REG_MULTI_SZ 値の場合は、既存のレジストリ値に対して文字列が追加または削除されます。 REG_MULTI_SZ 値を強制的に作成するには、文字列値の末尾に "\n" を追加します。
 
 値が "\@" で始まる場合、値の残りの部分は、バイナリ値の16進数のテキスト表現を含むファイルの名前になります。 有効なファイルを参照していない場合は、代わりに [Date] [+ |-] [dd: hh]--省略可能な日付またはマイナス (省略可能) として解析されます。 両方が指定されている場合は、正符号 (+) または負符号 (-) の区切り記号を使用します。 現在の時刻を基準とした日付には、"now + dd: hh" を使用します。
 
-キャッシュされ\@た crl を効果的にフラッシュするには、"chain\ChainCacheResyncFiletime now" を使用します。
+キャッシュされた Crl を効果的にフラッシュするには、"chain\ChainCacheResyncFiletime \@now" を使用します。
 
 [-f][-ユーザー][-GroupPolicy][-config Machine\CAName]
 
@@ -1499,37 +1499,37 @@ Registryvaluename: レジストリ値の名前 (プレフィックスと\*一致
 
 ## <a name="-setreg"></a>-setreg
 
-CertUtil [オプション]-setreg [{ca | restore | policy | exit | template | enroll | chain |Policyservers}\[ProgId\]] registryvaluename 値
+CertUtil [オプション]-setreg [{ca | restore | policy | exit | template | enroll | chain |PolicyServers}\[ProgId\]] RegistryValueName 値
 
 レジストリ値の設定
 
-コンテンツCA のレジストリキーを使用する
+ca: CA のレジストリキーを使用する
 
-復元CA の復元レジストリキーを使用する
+復元: CA の復元レジストリキーを使用します。
 
-ポリシーポリシーモジュールのレジストリキーを使用する
+ポリシー: ポリシーモジュールのレジストリキーを使用します。
 
-終了最初の終了モジュールのレジストリキーを使用する
+終了: 最初の終了モジュールのレジストリキーを使用します
 
-テンプレートテンプレートのレジストリキーを使用する (ユーザーテンプレートにユーザーを使用)
+テンプレート: テンプレートレジストリキーを使用します (ユーザーテンプレートにユーザーを使用します)
 
-登録登録レジストリキーを使用する (ユーザーコンテキストでユーザーを使用)
+登録: 登録レジストリキーを使用します (ユーザーコンテキストにユーザーを使用します)
 
-一連チェーン構成のレジストリキーを使用する
+チェーン: チェーン構成のレジストリキーを使用する
 
-PolicyServers:ポリシーサーバーのレジストリキーを使用する
+PolicyServers: ポリシーサーバーのレジストリキーを使用します。
 
-ProgIdポリシーまたは終了モジュールの ProgId (レジストリサブキー名) を使用する
+ProgId: ポリシーまたは終了モジュールの ProgId (レジストリサブキー名) を使用します。
 
-Registryvaluename: レジストリ値の名前 (プレフィックスと\*一致するには "name" を使用します)
+RegistryValueName: レジストリ値の名前 (プレフィックスと一致するには "Name\*" を使用します)
 
 値: 新しい数値、文字列、または日付のレジストリ値またはファイル名。 数値が "+" または "-" で始まる場合は、新しい値に指定されたビットが既存のレジストリ値で設定またはクリアされます。
 
-文字列値が "+" または "-" で始まる場合、既存の値が REG_MULTI_SZ 値の場合は、既存のレジストリ値に対して文字列が追加または削除されます。 REG_MULTI_SZ 値を強制的に作成するには、文字列値の末尾に "\n" を追加します。
+文字列値が "+" または "-" で始まっていて、既存の値が REG_MULTI_SZ 値の場合は、既存のレジストリ値に対して文字列が追加または削除されます。 REG_MULTI_SZ 値を強制的に作成するには、文字列値の末尾に "\n" を追加します。
 
 値が "\@" で始まる場合、値の残りの部分は、バイナリ値の16進数のテキスト表現を含むファイルの名前になります。 有効なファイルを参照していない場合は、代わりに [Date] [+ |-] [dd: hh]--省略可能な日付またはマイナス (省略可能) として解析されます。 両方が指定されている場合は、正符号 (+) または負符号 (-) の区切り記号を使用します。 現在の時刻を基準とした日付には、"now + dd: hh" を使用します。
 
-キャッシュされ\@た crl を効果的にフラッシュするには、"chain\ChainCacheResyncFiletime now" を使用します。
+キャッシュされた Crl を効果的にフラッシュするには、"chain\ChainCacheResyncFiletime \@now" を使用します。
 
 [-f][-ユーザー][-GroupPolicy][-config Machine\CAName]
 
@@ -1537,37 +1537,37 @@ Registryvaluename: レジストリ値の名前 (プレフィックスと\*一致
 
 ## <a name="-delreg"></a>-delreg
 
-CertUtil [オプション]-delreg [{ca | restore | policy | exit | template | enroll | chain |Policyservers}\[ProgId\]] [registryvaluename]
+CertUtil [オプション]-delreg [{ca | restore | policy | exit | template | enroll | chain |PolicyServers}\[ProgId\]] [RegistryValueName]
 
 レジストリ値の削除
 
-コンテンツCA のレジストリキーを使用する
+ca: CA のレジストリキーを使用する
 
-復元CA の復元レジストリキーを使用する
+復元: CA の復元レジストリキーを使用します。
 
-ポリシーポリシーモジュールのレジストリキーを使用する
+ポリシー: ポリシーモジュールのレジストリキーを使用します。
 
-終了最初の終了モジュールのレジストリキーを使用する
+終了: 最初の終了モジュールのレジストリキーを使用します
 
-テンプレートテンプレートのレジストリキーを使用する (ユーザーテンプレートにユーザーを使用)
+テンプレート: テンプレートレジストリキーを使用します (ユーザーテンプレートにユーザーを使用します)
 
-登録登録レジストリキーを使用する (ユーザーコンテキストでユーザーを使用)
+登録: 登録レジストリキーを使用します (ユーザーコンテキストにユーザーを使用します)
 
-一連チェーン構成のレジストリキーを使用する
+チェーン: チェーン構成のレジストリキーを使用する
 
-PolicyServers:ポリシーサーバーのレジストリキーを使用する
+PolicyServers: ポリシーサーバーのレジストリキーを使用します。
 
-ProgIdポリシーまたは終了モジュールの ProgId (レジストリサブキー名) を使用する
+ProgId: ポリシーまたは終了モジュールの ProgId (レジストリサブキー名) を使用します。
 
-Registryvaluename: レジストリ値の名前 (プレフィックスと\*一致するには "name" を使用します)
+RegistryValueName: レジストリ値の名前 (プレフィックスと一致するには "Name\*" を使用します)
 
 値: 新しい数値、文字列、または日付のレジストリ値またはファイル名。 数値が "+" または "-" で始まる場合は、新しい値に指定されたビットが既存のレジストリ値で設定またはクリアされます。
 
-文字列値が "+" または "-" で始まる場合、既存の値が REG_MULTI_SZ 値の場合は、既存のレジストリ値に対して文字列が追加または削除されます。 REG_MULTI_SZ 値を強制的に作成するには、文字列値の末尾に "\n" を追加します。
+文字列値が "+" または "-" で始まっていて、既存の値が REG_MULTI_SZ 値の場合は、既存のレジストリ値に対して文字列が追加または削除されます。 REG_MULTI_SZ 値を強制的に作成するには、文字列値の末尾に "\n" を追加します。
 
 値が "\@" で始まる場合、値の残りの部分は、バイナリ値の16進数のテキスト表現を含むファイルの名前になります。 有効なファイルを参照していない場合は、代わりに [Date] [+ |-] [dd: hh]--省略可能な日付またはマイナス (省略可能) として解析されます。 両方が指定されている場合は、正符号 (+) または負符号 (-) の区切り記号を使用します。 現在の時刻を基準とした日付には、"now + dd: hh" を使用します。
 
-キャッシュされ\@た crl を効果的にフラッシュするには、"chain\ChainCacheResyncFiletime now" を使用します。
+キャッシュされた Crl を効果的にフラッシュするには、"chain\ChainCacheResyncFiletime \@now" を使用します。
 
 [-f][-ユーザー][-GroupPolicy][-config Machine\CAName]
 
@@ -1584,7 +1584,7 @@ UserKeyAndCertFile--アーカイブされるユーザーの秘密キーと証明
 - Exchange キー管理サーバー (KMS) エクスポートファイル
 - PFX ファイル
 
-CertIdKMS エクスポートファイルの暗号化解除証明書の一致トークン。  「 [-Store」を](#-store)参照してください。
+CertId: KMS エクスポートファイルの暗号化解除証明書の一致トークン。  「 [-Store」を](#-store)参照してください。
 
 CA によって発行されていない証明書をインポートするには、-f を使用します。
 
@@ -1602,7 +1602,7 @@ CertUtil [オプション]-ImportCert Certfile [ExistingRow]
 
 CA によって発行されていない証明書をインポートするには、-f を使用します。
 
-CA は、外部証明書のインポートをサポートするように構成することも必要になる場合があります。 certutil-setreg ca\KRAFlags + KRAF_ENABLEFOREIGN
+CA は、外部証明書のインポートをサポートするように構成する必要がある場合もあります。 certutil-setreg ca\KRAFlags + KRAF_ENABLEFOREIGN
 
 [-f][-config Machine\CAName]
 
@@ -1624,7 +1624,7 @@ CertUtil [オプション]-GetKey SearchToken の取得 |OutputFileBaseName の�
 
 回復: 1 回の手順で秘密キーを取得して回復します (キー回復エージェントの証明書と秘密キーが必要です)
 
-SearchToken:回復するキーと証明書を選択するために使用します。
+SearchToken: 回復するキーと証明書を選択するために使用します。
 
 次のいずれかを指定できます。
 
@@ -1659,13 +1659,13 @@ CertUtil [オプション]-回復キー RecoveryBlobInFile [PFXOutFile [受信�
 
 CertUtil [オプション]-MergePFX PFXInFileList PFXOutFile [ExtendedProperties]
 
-PFXInFileList:コンマ区切りの PFX 入力ファイルリスト
+PFXInFileList: コンマ区切りの PFX 入力ファイルリスト
 
-PFXOutFile:PFX 出力ファイル
+PFXOutFile: PFX 出力ファイル
 
-ExtendedProperties拡張プロパティを含める
+ExtendedProperties: 拡張プロパティを含める
 
-コマンドラインで指定したパスワードは、コンマで区切られたパスワードの一覧です。  複数のパスワードを指定した場合は、最後のパスワードが出力ファイルに使用されます。  パスワードが1つしか指定されていない場合、\*または最後のパスワードが "" の場合、ユーザーは出力ファイルのパスワードの入力を求められます。
+コマンドラインで指定したパスワードは、コンマで区切られたパスワードの一覧です。  複数のパスワードを指定した場合は、最後のパスワードが出力ファイルに使用されます。  パスワードが1つしか指定されていない場合、または最後のパスワードが "\*" の場合、ユーザーは出力ファイルのパスワードの入力を求められます。
 
 [-f][-ユーザー][-split][-p パスワード][-ProtectTo SAMNameAndSIDList][-csp プロバイダー]
 
@@ -1677,29 +1677,29 @@ CertUtil [オプション]-収束 Tepf PFXInFileList EPFOutFile [cast | cast-] [
 
 PFX ファイルを EPF ファイルに変換する
 
-PFXInFileList:コンマ区切りの PFX 入力ファイルリスト
+PFXInFileList: コンマ区切りの PFX 入力ファイルリスト
 
-EPF:EPF 出力ファイル
+EPF: EPF 出力ファイル
 
-詠唱CAST 64 暗号化を使用する
+cast: CAST 64 encryption を使用します。
 
-cast-:CAST 64 encryption (export) を使用する
+cast-: CAST 64 encryption (export) を使用します。
 
-V3CACertId:V3 CA 証明書の一致トークン。  「 [-Store](#-store) CertId description」を参照してください。
+V3CACertId: V3 CA 証明書の一致トークン。  「 [-Store](#-store) CertId description」を参照してください。
 
-SaltEPF 出力ファイルの salt 文字列
+Salt: EPF 出力ファイル salt 文字列
 
-コマンドラインで指定したパスワードは、コンマで区切られたパスワードの一覧です。 複数のパスワードを指定した場合は、最後のパスワードが出力ファイルに使用されます。  パスワードが1つしか指定されていない場合、\*または最後のパスワードが "" の場合、ユーザーは出力ファイルのパスワードの入力を求められます。
+コマンドラインで指定したパスワードは、コンマで区切られたパスワードの一覧です。 複数のパスワードを指定した場合は、最後のパスワードが出力ファイルに使用されます。  パスワードが1つしか指定されていない場合、または最後のパスワードが "\*" の場合、ユーザーは出力ファイルのパスワードの入力を求められます。
 
 [-f][-silent][-split][-dc DCName][-p パスワード][-csp プロバイダー]
 
 [メニュー](#menu)に戻る
 
-## <a name="options"></a>および
+## <a name="options"></a>オプション
 
 このセクションでは、コマンドで指定できるオプションを定義します。
 
-|および|説明|
+|オプション|説明|
 |-------|-----------|
 |-nullsign|データのハッシュを署名として使用する|
 |-f|強制的に上書きする|
@@ -1719,20 +1719,20 @@ SaltEPF 出力ファイルの salt 文字列
 |-pin のピン留め|スマートカードの PIN|
 |-urlfetch|AIA 証明書と CDP Crl を取得して検証する|
 |-config Machine\CAName|CA とコンピューター名の文字列|
-|-PolicyServer URLOrId|ポリシーサーバーの URL または Id。選択 U/I の場合は、-PolicyServer を使用します。 すべてのポリシーサーバーで、-PolicyServer を使用します。\*|
+|-PolicyServer URLOrId|ポリシーサーバーの URL または Id。選択 U/I の場合は、-PolicyServer を使用します。 すべてのポリシーサーバーで、-PolicyServer \* を使用します。|
 |-匿名|匿名の SSL 資格情報を使用する|
 |-Kerberos|Kerberos SSL 資格情報を使用する|
 |-ClientCertificate ClientCertId|X.509 証明書の SSL 資格情報を使用します。 選択 U/I の場合は、-clientCertificate を使用します。|
 |-ユーザー名|SSL 資格情報には名前付きアカウントを使用します。 選択 U/I の場合は、-UserName を使用します。|
 |-Cert CertId|署名用の証明書|
 |-dc DCName|特定のドメインコントローラーをターゲットにする|
-|-RestrictionList を制限する|コンマ区切りの制限リスト。 各制限は、列名、関係演算子、および定数整数、文字列、または日付で構成されます。 並べ替え順序を示すには、1つの列名の前にプラスまたはマイナス記号を付けることができます。 例 :</br>"RequestId = 47"</br>"+ RequesterName > = a, RequesterName < b"</br>"-RequesterName > ドメイン、ディスポジション = 21"|
+|-RestrictionList を制限する|コンマ区切りの制限リスト。 各制限は、列名、関係演算子、および定数整数、文字列、または日付で構成されます。 並べ替え順序を示すには、1つの列名の前にプラスまたはマイナス記号を付けることができます。 例:</br>"RequestId = 47"</br>"+ RequesterName > = a, RequesterName < b"</br>"-RequesterName > ドメイン、ディスポジション = 21"|
 |-out ColumnList|コンマ区切りの列リスト|
-|-p パスワード|Password|
+|-p パスワード|パスワード|
 |-ProtectTo SAMNameAndSIDList|SAM 名/SID リストをコンマで区切って指定します。|
 |-csp プロバイダー|プロバイダー|
 |-t タイムアウト|URL フェッチのタイムアウト (ミリ秒)|
-|-symkeyalg SymmetricKeyAlgorithm [, KeyLength]|オプションのキー長を持つ対称キーアルゴリズムの名前。例:AES、128、または3DES|
+|-symkeyalg SymmetricKeyAlgorithm [, KeyLength]|オプションのキー長を持つ対称キーアルゴリズムの名前 (例: AES、128、または 3DES)|
 
 [メニュー](#menu)に戻る
 

@@ -1,19 +1,19 @@
 ---
 title: Windows Server 2019 の新機能
 description: デスクトップ エクスペリエンス、ストレージ移行サービス、システム インサイト、Azure ネットワーク アダプター、記憶域スペース ダイレクトの機能強化、およびその他の変更を含む、Windows Server 2019 での新機能の概要。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: 7110fe78982fec616174a93514d86fb2e1cf9fa5
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 13eed225dfc144d5e7e59be13dbed14d4de8bb01
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810768"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360780"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 の新機能
 

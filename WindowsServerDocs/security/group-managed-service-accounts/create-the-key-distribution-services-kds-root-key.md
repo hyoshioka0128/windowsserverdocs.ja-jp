@@ -2,7 +2,7 @@
 title: キー配布サービス KDS ルート キーの作成
 description: Windows Server のセキュリティ
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-gmsa
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 8a3743d1ce430f605244408dc6b26779965aa99f
-ms.sourcegitcommit: d83933c6a2e180b747c2db910392117569348901
+ms.openlocfilehash: fd335d61eae7cf753d09436d54f14c7d6004d643
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807876"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386905"
 ---
 # <a name="create-the-key-distribution-services-kds-root-key"></a>キー配布サービス KDS ルート キーの作成
 

@@ -6,15 +6,15 @@ ms.author: jgerend
 manager: dmoss
 ms.date: 10/16/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.assetid: 1f1215cd-404f-42f2-b55f-3888294d8a1f
-ms.openlocfilehash: 11f0a696fb843f5cd8b4a7ff3318c28d6c1adeb8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0e41d7ae577bf7e9227ff0c02689d916f1008a3d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871343"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403037"
 ---
 # <a name="refs-integrity-streams"></a>ReFS 整合性ストリーム
 >適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server (半期チャネル)、Windows 10
@@ -27,7 +27,7 @@ ms.locfileid: "59871343"
 
 整合性ストリームを有効にすると、ReFS は指定したファイルのメタデータ内にそのファイルのチェックサムを作成して保持します。 このチェックサムによって、ReFS では、データにアクセスする前にデータの整合性を検証できます。 ReFS は、整合性ストリームが有効になっているデータを返す前に、まずそのチェックサムを計算します。
 
-![ファイル データのチェックサムを計算します。](media/compute-checksum.gif)
+![ファイルデータの計算チェックサム](media/compute-checksum.gif)
 
 次に、このチェックサムが、ファイルのメタデータに含まれているチェックサムと比較されます。 チェックサムが一致した場合、データは有効とマークされ、ユーザーに返されます。 チェックサムが一致しない場合、データは破損しています。 ボリュームの回復性によって、ReFS で破損に対応する方法が決定されます。
 
@@ -38,7 +38,7 @@ ms.locfileid: "59871343"
 
 ReFS では、すべての破損がシステム イベント ログに記録され、このログに破損が修正されたかどうかが反映されます。 
 
-![是正書き込みデータの整合性を復元します。](media/corrective-write.gif)
+![修正書き込みによるデータの整合性の復元](media/corrective-write.gif)
 
 ## <a name="performance"></a>パフォーマンス 
 
@@ -57,7 +57,7 @@ ReFS では、すべての破損がシステム イベント ログに記録さ�
 
 既定ではスクラブ機能が 4 週間ごとに実行されますが、この間隔は、タスク スケジューラーの [Microsoft]\[Windows]\[データ整合性スキャン ]で構成できます。 
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 ファイル データの整合性の設定を監視および変更するには、ReFS は **Get-FileIntegrity** および **Set-FileIntegrity** コマンドレットを使用します。
 
 ### <a name="get-fileintegrity"></a>Get-FileIntegrity
@@ -96,5 +96,5 @@ PS C:\> Set-FileIntegrity H:\Docs -Enable $True
 ## <a name="see-also"></a>関連項目
 
 -   [ReFS の概要](refs-overview.md)
--   [ReFS ブロック複製](block-cloning.md)
--   [記憶域スペース ダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)
+-   [ReFS ブロックの複製](block-cloning.md)
+-   [記憶域スペースダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)

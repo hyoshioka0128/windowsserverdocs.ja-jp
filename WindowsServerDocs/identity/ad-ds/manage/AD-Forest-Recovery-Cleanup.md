@@ -1,34 +1,34 @@
 ---
-title: AD フォレストの回復のクリーンアップ
+title: AD フォレストの回復-クリーンアップ
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: fa7193cc800eac0fee6425a66bd5cd82d8c822c1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c4e800f380cf75022c03e21b91f3b6f71cf79708
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868963"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369242"
 ---
-# <a name="ad-forest-recovery---cleanup"></a>AD フォレストの回復のクリーンアップ
+# <a name="ad-forest-recovery---cleanup"></a>AD フォレストの回復-クリーンアップ
 
->適用先:Windows Server 2016、Windows Server 2012 および 2012 R2、Windows Server 2008 および 2008 R2
+>適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
 
- 必要に応じて、次の後の復旧手順を実行します。  
+ 必要に応じて、次の回復後の手順を実行します。  
   
-- フォレスト全体を回復すると後、は、Dc の各優先および代替 DNS サーバーの構成を含む元の DNS 構成に戻すことができます。 DNS サーバーが構成され、障害前に、と、その前の名前解決機能が復元されます。 復旧されていない dc には、すべての DNS レコードを削除します。  
-- 復旧されていないすべての dc には、Windows インターネット ネーム サービス (WINS) レコードを削除します。  
-- 操作マスターの役割をドメインまたはフォレスト内の他の Dc に転送し、障害発生前に、構成に基づいて、グローバル カタログ サーバーを追加します。  
-- フォレスト全体を以前の状態に復元すると、追加された任意のオブジェクト (ユーザーとコンピューター など、この時点より後の既存のオブジェクトに加えられた (パスワードの変更) などのすべての更新は失われます。 そのため、これら不足しているオブジェクトを再作成し、適切な更新プログラムを再適用する必要があります。  
-- バックアップからこれらの外部の信頼関係が自動的に復元されなかったので、外部のドメインとフォレスト、出力方向の信頼を復元する必要もあります。
+- フォレスト全体が回復された後、元の DNS 構成に戻すことができます。これには、各 Dc の優先 DNS サーバーおよび代替 DNS サーバーの構成が含まれます。 DNS サーバーが誤動作前として構成されると、以前の名前解決機能が復元されます。 回復されていない Dc の DNS レコードを削除します。  
+- 回復されていないすべての Dc の Windows インターネットネームサービス (WINS) レコードを削除します。  
+- 操作マスタの役割をドメインまたはフォレスト内の他の Dc に転送し、障害発生前の構成に基づいて、より多くのグローバルカタログサーバーを追加することができます。  
+- フォレスト全体が以前の状態に復元されるので、追加されたすべてのオブジェクト (ユーザーやコンピューターなど) と、この時点以降に既存のオブジェクトに対して行われたすべての更新 (パスワードの変更など) が失われます。 そのため、不足しているオブジェクトを再作成し、必要に応じて不足している更新プログラムを再適用する必要があります。  
+- 外部の信頼関係がバックアップから自動的に復元されないため、外部のドメインおよびフォレストとの出力方向の信頼を復元する必要がある場合もあります。
 
 ## <a name="next-steps"></a>次の手順
 
 - [AD フォレストの回復ガイド](AD-Forest-Recovery-Guide.md)
-- [AD フォレストの回復の手順](AD-Forest-Recovery-Procedures.md)  
+- [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md)  

@@ -6,42 +6,42 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 0eb9265513d5ca18da1150d3be6752d364b7cd1a
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: f2aaca5ffc846c41af82c276750c564db38b5020
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192078"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359513"
 ---
 # <a name="interoperating-with-ad-fs-1x"></a>AD FS 1.x との相互運用
 
-Active Directory フェデレーション サービスの相互運用性\(AD FS\) Windows Server® 2012 および AD FS 1 *。x*、1 つ以上の組織のニーズに応じて、次のタスクを完了します。  
+Active Directory フェデレーションサービス (AD FS) \(間の相互運用性のために、Windows Server®2012および AD FS 1 で\) AD FS ます。*x*では、組織のニーズに応じて、次の1つ以上のタスクを実行します。  
   
--   Windows Server 2012 で AD FS と AD FS の以前のバージョン間の相互運用性の計画し、要求の種類の名前 ID の詳細について説明します。 詳細については、次を参照してください。 [AD FS との相互運用の計画 1.x](https://technet.microsoft.com/library/ff678040.aspx)します。  
+-   Windows Server 2012 と以前のバージョンの AD FS の AD FS 間の相互運用性を計画し、Name ID 要求の種類の詳細について説明します。 詳細については、「 [AD FS 1.x との相互運用性の計画](https://technet.microsoft.com/library/ff678040.aspx)」を参照してください。  
   
--   場合は、AD fs 1 使用できる Windows Server 2012 で AD FS フェデレーション サービスから要求が送信されます。*x*フェデレーション サービスを参照してください[チェックリスト。AD FS 1.x のフェデレーション サービスに対するクレームを送信する AD FS を構成する](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Federation-Service.md)します。  
+-   AD FS 1 で使用できる Windows Server 2012 の AD FS フェデレーションサービスから要求を送信する場合は。*x*フェデレーションサービス、「[チェックリスト: AD FS 1.X フェデレーションサービスに要求を送信するための AD FS の構成](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Federation-Service.md)」を参照してください。  
   
--   場合は、AD FS 1 を実行している Web サーバーによってホストされているアプリケーションで使用できる Windows Server 2012 で AD FS フェデレーション サービスから要求が送信されます。*x*クレーム\-、対応する Web エージェントを参照してください[チェックリスト。AD FS 1.x Claims-aware Web エージェントを要求を送信する AD FS を構成する](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Claims-Aware-Web-Agent.md)します。  
+-   AD FS 1 を実行している Web サーバーでホストされているアプリケーションで使用できる Windows Server 2012 の AD FS フェデレーションサービスから要求を送信する場合。*x*要求\-対応 web エージェント、「[チェックリスト: AD FS 1.X 要求に対応する Web エージェントに要求を送信するための AD FS の構成](Checklist--Configuring-AD-FS-to-Send-Claims-to-an-AD-FS-1.x-Claims-Aware-Web-Agent.md)」を参照してください。  
   
--   場合は、AD FS 1 から要求が送信されます。*x* Windows Server 2012 の AD FS フェデレーション サービスで使用するフェデレーション サービスを参照してください[チェックリスト。Configuring AD FS からの要求を使用する AD FS 1.x](Checklist--Configuring-AD-FS--to-Consume-Claims-from-AD-FS-1.x.md)します。  
+-   AD FS 1 から要求を送信する場合は。*x*フェデレーションサービス Windows Server 2012 の AD FS フェデレーションサービスによって使用される場合は、「[チェックリスト: AD FS 1.X からの要求を使用するように AD FS を構成](Checklist--Configuring-AD-FS--to-Consume-Claims-from-AD-FS-1.x.md)する」を参照してください。  
   
-## <a name="differences-between-federation-service-settings"></a>フェデレーション サービスの設定の相違点  
-ほとんどの AD FS 1。*x*同様の方法として Windows Server 2012 の設定では、AD FS フェデレーション サービスでフェデレーション サービスの設定作業をいくつかの設定名が変更されました。 次の表は、AD FS 1 の設定の名前を一覧表示します。*x*フェデレーション サービスと Windows Server 2012 で AD FS フェデレーション サービスの名前と同じです。  
+## <a name="differences-between-federation-service-settings"></a>フェデレーションサービス設定の相違点  
+ほとんどの AD FS 1 です。*x*フェデレーションサービス設定は、Windows Server 2012 設定の AD FS フェデレーションサービスと同様の方法で動作します。一部の設定名が変更されています。 次の表に、AD FS 1 の設定の名前を示します。Windows Server 2012 の AD FS フェデレーションサービスの*x*フェデレーションサービスとそれに相当する名前。  
   
-|AD FS 1.x Federation Service の設定|Windows Server 2012 の設定で AD FS のフェデレーション サービスと同じです。  
+|AD FS 1.x フェデレーションサービス設定|Windows Server 2012 の設定で AD FS フェデレーションサービスと同じです。  
 |----------------------------------------|---------------------------------------------------------------------------------------------------------- 
-|アカウント パートナー|要求プロバイダー信頼  
-|リソース パートナー|証明書利用者信頼 
+|アカウントパートナー|要求プロバイダー信頼  
+|リソースパートナー|証明書利用者信頼 
 |アプリケーション|証明書利用者信頼  
-|Application Properties|証明書利用者信頼のプロパティをパーティ  
-|アプリケーションの URL|証明書利用者のパーティの識別子と WS\-フェデレーション パッシブ エンドポイント URL  
-|フェデレーション サービス URI|フェデレーション サービスの識別子  
-|フェデレーション サービス エンドポイントの URL|WS\-フェデレーション パッシブ エンドポイント URL  
+|Application Properties|証明書利用者信頼のプロパティ  
+|アプリケーションの URL|証明書利用者識別子と WS\-フェデレーションパッシブエンドポイント URL  
+|フェデレーションサービス URI|フェデレーション サービスの識別子  
+|フェデレーションサービスエンドポイント URL|WS\-フェデレーションパッシブエンドポイント URL  
   
-## <a name="see-also"></a>関連項目  
-[AD FS と AD FS 1.x の相互運用性](https://go.microsoft.com/fwlink/?LinkId=200776)  
+## <a name="see-also"></a>参照  
+[AD FS と AD FS 1. x 相互運用性](https://go.microsoft.com/fwlink/?LinkId=200776)  
   
 

@@ -1,8 +1,8 @@
 ---
-title: オフライン
-description: 'Windows コマンド」のトピック * * *- '
+title: なっ
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5fd79b597eaa89d986723717c862665eded490c9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c05b171426dde9c16116882af9f64e9ad80c130c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883813"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372537"
 ---
-# <a name="offline"></a>オフライン
+# <a name="offline"></a>なっ
 
 
 
@@ -37,8 +37,8 @@ Offline volume
 
 |パラメーター|説明|
 |---------|-----------|
-|[オフラインのディスク](offline-disk.md)|オフラインの状態にフォーカスがあるオンライン ディスクを移動します。|
-|[オフライン ボリューム](offline-volume.md)|オフラインの状態に、オンラインのボリュームがフォーカスを移動します。|
+|[オフラインディスク](offline-disk.md)|オフラインの状態にフォーカスがあるオンライン ディスクを移動します。|
+|[オフラインボリューム](offline-volume.md)|オフラインの状態に、オンラインのボリュームがフォーカスを移動します。|
 
 #### <a name="additional-references"></a>その他の参照情報
 

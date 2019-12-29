@@ -1,7 +1,7 @@
 ---
-title: システム ディスクでのスマート ページング ファイルを保存しないように
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+title: スマートページングファイルをシステムディスクに保存しない
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,38 +10,38 @@ ms.topic: article
 ms.assetid: 9b57c9b8-76c5-43c7-bfa6-2c95b3cb6510
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 6abc84b406de7e7c33628ccee4e3af706efe5c70
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3ddb662d14545693e26eb680527d93eb65d5d13
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886173"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365241"
 ---
-# <a name="avoid-storing-smart-paging-files-on-a-system-disk"></a>システム ディスクでのスマート ページング ファイルを保存しないように
+# <a name="avoid-storing-smart-paging-files-on-a-system-disk"></a>スマートページングファイルをシステムディスクに保存しない
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
-ベスト プラクティスとスキャンの詳細については、次を参照してください。 [Run Best Practices Analyzer Scans and Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177)します。  
+ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
 |プロパティ|詳細|  
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|警告|  
-|**カテゴリ**|操作|  
+|**順**|Warning|  
+|**カテゴリ**|運用|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示されるテキストを示します。  
   
 ## <a name="issue"></a>問題  
-*1 つまたは複数の仮想マシンのメモリ構成は、仮想マシンが再起動され、スマート ページング ファイルの指定した場所は、HYPER-V を実行しているサーバーのシステム ディスクの場合、スマート ページングの使用を必要があります。*  
+*仮想マシンが再起動され、スマートページングファイル用に指定された場所が Hyper-v を実行するサーバーのシステムディスクである場合、1つまたは複数の仮想マシンのメモリ構成でスマートページングを使用することが必要になる場合があります。*  
   
 ## <a name="impact"></a>影響  
-*スマート ページングのシステム ディスクの使用に問題が発生するには、HYPER-V を実行しているサーバーがあります。これには、次の仮想マシンに影響します。*  
+*システムディスクをスマートページングに使用すると、Hyper-v を実行しているサーバーで問題が発生する可能性があります。これは、次の仮想マシンに影響します。*  
   
-\<仮想マシンの一覧 >  
+仮想マシンの一覧を \<>  
   
 ## <a name="resolution"></a>解決方法  
-*非システムのディスク上のスマート ページング ファイルを格納する仮想マシンを再構成します。*  
+*非システムディスクにスマートページングファイルを格納するように仮想マシンを再構成します。*  
   
 
 

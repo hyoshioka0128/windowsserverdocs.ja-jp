@@ -1,103 +1,103 @@
 ---
-title: 複合 Active Directory フェデレーション サービスで認証と Active Directory Domain Services の要求
-description: 次のドキュメントでは、複合認証、および AD FS での AD DS 信頼性情報について説明します。
+title: Active Directory フェデレーションサービス (AD FS) における複合認証と Active Directory Domain Services 要求
+description: 次のドキュメントでは、AD FS での複合認証と AD DS 要求について説明します。
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 09/07/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2380060894ff2f365451bbabfd41b8aa7e6792a0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 78db6f8b6961cecea55b8d371e9abf952cafdab3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445295"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358668"
 ---
 # <a name="compound-authentication-and-ad-ds-claims-in-ad-fs"></a>AD FS での複合認証と AD DS クレーム
-Windows Server 2012 では、複合認証を導入することで Kerberos 認証を強化します。  複合認証を使用すると、Kerberos チケット保証サービス (TGS) 要求を 2 つの id が含まれます。 
+Windows Server 2012 では、複合認証の導入によって Kerberos 認証が強化されています。  複合認証を使用すると、Kerberos チケット保証サービス (TGS) の要求に2つの id を含めることができます。 
 
 - ユーザーの id
 - ユーザーのデバイスの id。  
 
-Windows で複合認証を行う拡張を[Kerberos フレキシブル認証セキュア トンネリング (FAST)、または Kerberos 防御](https://technet.microsoft.com/library/hh831747.aspx)します。 
+Windows[は、kerberos の柔軟な認証 (高速) または kerberos 防御](https://technet.microsoft.com/library/hh831747.aspx)を拡張することによって、複合認証を行います。 
 
-AD FS 2012 およびそれ以降のバージョンは、AD DS を Kerberos 認証チケット内に存在するユーザーまたはデバイスの要求を発行の消費量を使用できます。 AD FS の以前のバージョンでは、要求エンジンは、Kerberos からユーザーとグループのセキュリティ Id (Sid) を読み取る可能性がありますのみが、いずれかを読み取ることができませんでしたは Kerberos チケット内に含まれる情報を要求します。
+AD FS 2012 以降のバージョンでは、Kerberos 認証チケットに存在する AD DS 発行されたユーザーまたはデバイスの信頼性情報を使用できます。 以前のバージョンの AD FS では、要求エンジンは Kerberos からユーザーとグループのセキュリティ Id (Sid) のみを読み取ることができましたが、Kerberos チケット内に含まれる要求情報を読み取ることができませんでした。
 
-Active Directory Domain Services (AD DS) を使用してフェデレーション アプリケーションの高度なアクセス制御を有効にすることができます-Active Directory フェデレーション サービス (AD FS) を同時に、ユーザーとデバイスの要求を発行します。
+Active Directory フェデレーションサービス (AD FS) (AD FS) を使用して、Active Directory Domain Services (AD DS) によって発行されたユーザーとデバイスの信頼性情報を使用することにより、フェデレーションアプリケーションの高度なアクセス制御を有効にすることができます。
 
 ## <a name="requirements"></a>要件
-1.  AD FS を使用するフェデレーション アプリケーションへのアクセス、コンピューターを認証する必要があります**Windows 統合認証**します。 
-    - Windows 統合認証は、バックエンドの AD FS サーバーに接続するときにのみ使用できます。
-    - コンピューターは、フェデレーション サービス名、バックエンドの AD FS サーバーに到達できる必要があります。
-    - AD FS サーバーは、そのイントラネット設定でプライマリ認証方法として Windows 統合認証を提供する必要があります。
+1.  フェデレーションアプリケーションにアクセスするコンピューターは、 **Windows 統合認証**を使用して AD FS に対して認証を行う必要があります。 
+    - Windows 統合認証は、バックエンド AD FS サーバーに接続する場合にのみ使用できます。
+    - コンピューターがフェデレーションサービス名のバックエンド AD FS サーバーに接続できる必要がある
+    - AD FS サーバーは、イントラネット設定で Windows 統合認証をプライマリ認証方法として提供する必要があります。
 
-2.  ポリシー**クレーム複合認証および Kerberos 防御の Kerberos クライアント サポート**複合認証によって保護されているフェデレーション アプリケーションにアクセスするすべてのコンピューターに適用する必要があります。 これは、1 つのフォレストが発生した場合、またはクロス フォレストのシナリオに適用します。
+2.  複合認証によって保護されているフェデレーションアプリケーションにアクセスするすべてのコンピューターに、**信頼性情報の複合認証および kerberos 防御に対するポリシー Kerberos クライアントのサポート**が適用されている必要があります。 これは、フォレスト間またはフォレスト間のシナリオの場合に適用されます。
 
-3.  ドメインの AD FS サーバーを格納している必要があります、**要求は複合認証、および Kerberos 防御 KDC のサポート**ポリシー設定がドメイン コント ローラーに適用します。
+3.  AD FS サーバーをハウジングするドメインには、ドメインコントローラーに適用される **[要求の複合認証および Kerberos 防御をサポートするための KDC]** ポリシー設定が必要です。
 
 ## <a name="steps-for-configuring-ad-fs-in-windows-server-2012-r2"></a>Windows Server 2012 R2 で AD FS を構成する手順
-次の手順を使用して、複合認証、およびクレームを構成します。 
+複合認証と要求を構成するには、次の手順を使用します。 
 
-### <a name="step-1--enable-kdc-support-for-claims-compound-authentication-and-kerberos-armoring-on-the-default-domain-controller-policy"></a>手順 1:KDC 信頼性情報、複合認証、および既定のドメイン コント ローラー ポリシーでの Kerberos 防御をサポートを有効にします。
-1.  サーバー マネージャーで、選択ツール、 **Group Policy Management**します。
-2.  下に移動し、**既定のドメイン コント ローラー ポリシー**を右クリックし、**編集**します。
-![グループ ポリシーの管理](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc1.png)
+### <a name="step-1--enable-kdc-support-for-claims-compound-authentication-and-kerberos-armoring-on-the-default-domain-controller-policy"></a>手順 1:既定のドメインコントローラーポリシーで KDC による信頼性情報、複合認証、および Kerberos 防御のサポートを有効にする
+1.  サーバーマネージャーで、ツール、**グループポリシーの管理** を選択します。
+2.  **既定のドメインコントローラーポリシー**に移動し、右クリックして、 **[編集]** を選択します。
+![グループポリシー管理](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc1.png)
 3.  **グループ ポリシー管理エディター** **コンピューターの構成**、展開**ポリシー**、展開**管理用テンプレート**、展開**システム**、選び**KDC**します。
-4.  右側のウィンドウでダブルクリック**KDC で信頼性情報、複合認証、および Kerberos 防御をサポート**します。
-![グループ ポリシーの管理](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc2.png)
-5.  新しいダイアログ ウィンドウにセットの要求を KDC サポート**有効**します。
-6.  [オプション] の選択**サポートされている**クリックしてドロップダウン メニューから**適用**と**OK**。
-![グループ ポリシーの管理](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc3.png)
+4.  右側のウィンドウで、[KDC で**信頼性情報、複合認証、および Kerberos 防御をサポートする**] をダブルクリックします。
+![グループポリシー管理](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc2.png)
+5.  新しいダイアログウィンドウで、KDC サポート を **有効** に設定します。
+6.  オプション で、ドロップダウンメニューから **サポート** を選択し、**適用** をクリックして、 **OK**をクリックします。
+![グループポリシー管理](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc3.png)
 
-### <a name="step-2-enable-kerberos-client-support-for-claims-compound-authentication-and-kerberos-armoring-on-computers-accessing-federated-applications"></a>手順 2:信頼性情報、複合認証、およびフェデレーション アプリケーションにアクセスするコンピューターでの Kerberos 防御の Kerberos クライアント サポートを有効にします。
+### <a name="step-2-enable-kerberos-client-support-for-claims-compound-authentication-and-kerberos-armoring-on-computers-accessing-federated-applications"></a>手順 2:フェデレーションアプリケーションにアクセスするコンピューターで、信頼性情報、複合認証、および Kerberos 防御の Kerberos クライアントサポートを有効にする
 
 1.  フェデレーションのアプリケーションにアクセスするコンピューターに適用されるグループ ポリシーで、**グループ ポリシー管理エディター** **コンピューターの構成**、展開**ポリシー**、展開**管理用テンプレート**、展開**システム**、選び**Kerberos**します。
-2.  グループ ポリシー管理エディター ウィンドウの右側のウィンドウでダブルクリック**信頼性情報、複合認証、および Kerberos 防御の Kerberos クライアント サポートします。**
-3.  新しいダイアログ ウィンドウに Kerberos クライアント サポートを設定**有効** をクリック**適用**と**OK**。
-![グループ ポリシーの管理](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc4.png)
+2.  グループポリシー管理エディター ウィンドウの右側のウィンドウで、 **kerberos クライアントで信頼性情報、複合認証、および kerberos 防御をサポートする** をダブルクリックします。
+3.  新しいダイアログウィンドウで、Kerberos クライアントサポート を **有効** に設定し、**適用** と  **OK**をクリックします。
+![グループポリシー管理](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc4.png)
 4.  グループ ポリシー管理エディターを閉じます。
 
-### <a name="step-3-ensure-the-ad-fs-servers-have-been-updated"></a>手順 3:AD FS サーバーが更新されたことを確認します。
-次の更新プログラムが、AD FS サーバーにインストールされていることを確認する必要があります。
+### <a name="step-3-ensure-the-ad-fs-servers-have-been-updated"></a>手順 3:AD FS サーバーが更新されていることを確認します。
+AD FS サーバーに次の更新プログラムがインストールされていることを確認する必要があります。
 
 |更新|説明|
 |----- | ----- |
-|[KB2919355](https://www.microsoft.com/download/details.aspx?id=42335)|(、KB2919355、KB2932046、KB2934018、KB2937592 KB2938439 を含む) の累積的なセキュリティ更新プログラム|
-|[KB2959977](https://www.microsoft.com/download/details.aspx?id=42530)|Server 2012 R2 の更新|
-|[修正プログラム 3052122](https://support.microsoft.com/help/3052122/update-adds-support-for-compound-id-claims-in-ad-fs-tokens-in-windows)|この更新プログラムは、Active Directory フェデレーション サービスで、複合 ID のクレームのサポートを追加します。|
+|[KB2919355](https://www.microsoft.com/download/details.aspx?id=42335)|累積的なセキュリティ更新プログラム (KB2919355、KB2932046、KB2934018、KB2937592、KB2938439 を含む)|
+|[KB2959977](https://www.microsoft.com/download/details.aspx?id=42530)|サーバー 2012 R2 の更新|
+|[修正プログラム3052122](https://support.microsoft.com/help/3052122/update-adds-support-for-compound-id-claims-in-ad-fs-tokens-in-windows)|この更新プログラムは、Active Directory フェデレーションサービス (AD FS) で複合 ID 要求のサポートを追加します。|
 
-### <a name="step-4-configure-the-primary-authentication-provider"></a>手順 4:プライマリ認証プロバイダーを構成します。
+### <a name="step-4-configure-the-primary-authentication-provider"></a>手順 4:プライマリ認証プロバイダーを構成する
 
-1. プライマリ認証プロバイダーを設定**Windows 認証**for AD FS のイントラネット設定します。
+1. イントラネット設定を AD FS には、プライマリ認証プロバイダーを **[Windows 認証]** に設定します。
 2. AD FS の管理 [**認証ポリシー**を選択します**プライマリ認証** **グローバル設定**] をクリックして**編集**します。
 3. **グローバル認証ポリシーの編集** **イントラネット**選択**Windows 認証**します。
-4. クリックして**適用**と**Ok**します。
+4. **[適用]** をクリックし、[ **Ok]** をクリックします。
 
 ![グループ ポリシーの管理](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc5.png)
 
-5. PowerShell を使用することができますを使用して、**セット AdfsGlobalAuthenticationPolicy**コマンドレット。
+5. PowerShell を使用する場合は、 **AdfsGlobalAuthenticationPolicy**コマンドレットを使用できます。
 
 ``` powershell
 Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'WindowsAuthentication'
 ```
 >[!NOTE]
->WID でファーム、プライマリ AD FS サーバーでコマンドを実行する必要があります、PowerShell に基づいています。
->SQL ベースのファームでは、ファームのメンバーである任意の AD FS サーバー上の PowerShell コマンドを実行できます。
+>WID ベースのファームでは、プライマリ AD FS サーバーで PowerShell コマンドを実行する必要があります。
+>SQL ベースのファームでは、ファームのメンバーである任意の AD FS サーバーで PowerShell コマンドを実行できます。
 
-### <a name="step-5--add-the-claim-description-to-ad-fs"></a>手順 5:AD fs のクレームの説明を追加します。
-1. ファームには、次のクレームの説明を追加します。 このクレームの説明が ADFS 2012 R2 では、既定で存在しないと、手動で追加する必要があります。
-2. AD FS の管理 **サービス**を右クリックして**請求の説明**選択と**追加請求の説明**
-3. クレームの説明で、次の情報を入力します。
-   - 表示名:' Windows デバイスのグループ ' 
-   - クレームの説明: '<https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup>' '
-4. 両方のボックスに、チェックを配置します。
+### <a name="step-5--add-the-claim-description-to-ad-fs"></a>手順 5:要求の説明をに追加し AD FS
+1. 次の要求の説明をファームに追加します。 この要求の説明は、既定では ADFS 2012 R2 に存在しないため、手動で追加する必要があります。
+2. AD FS 管理 の **サービス** で、**要求の説明** を右クリックし、**要求の説明の追加** を選択します。
+3. 要求の説明に次の情報を入力します。
+   - 表示名:' Windows デバイスグループ ' 
+   - 要求の説明:<https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup>' ' '
+4. 両方のチェックボックスをオンにします。
 5. **[OK]** をクリックします。
 
-![クレームの説明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc6.png)
+![要求の説明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc6.png)
 
-6. PowerShell を使用することができますを使用して、**追加 AdfsClaimDescription**コマンドレット。
+6. PowerShell を使用する場合は、 **AdfsClaimDescription**コマンドレットを使用できます。
    ``` powershell
    Add-AdfsClaimDescription -Name 'Windows device group' -ClaimType 'https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup' `
    -ShortName 'windowsdevicegroup' -IsAccepted $true -IsOffered $true -IsRequired $false -Notes 'The windows group SID of the device' 
@@ -105,15 +105,15 @@ Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'Windo
 
 
 >[!NOTE]
->WID でファーム、プライマリ AD FS サーバーでコマンドを実行する必要があります、PowerShell に基づいています。
->SQL ベースのファームでは、ファームのメンバーである任意の AD FS サーバー上の PowerShell コマンドを実行できます。
+>WID ベースのファームでは、プライマリ AD FS サーバーで PowerShell コマンドを実行する必要があります。
+>SQL ベースのファームでは、ファームのメンバーである任意の AD FS サーバーで PowerShell コマンドを実行できます。
 
-### <a name="step-6--enable-the-compound-authentication-bit-on-the-msds-supportedencryptiontypes-attribute"></a>手順 6:Msds-supportedencryptiontypes 属性に複合認証のビットを有効にします。
+### <a name="step-6--enable-the-compound-authentication-bit-on-the-msds-supportedencryptiontypes-attribute"></a>手順 6:"属性の暗号化" 属性で複合認証ビットを有効にします。
 
-1.  ビットを使用する AD FS サービスを実行するように指定するアカウントの Msds-supportedencryptiontypes 属性に複合認証を有効にする、 **Set-adserviceaccount** PowerShell コマンドレット。  
+1.  **Set ADServiceAccount** PowerShell コマンドレットを使用して、AD FS サービスを実行するように指定したアカウントの [複合認証ビット] 属性の [複合認証ビット] を有効にします。  
 
 >[!NOTE]
->サービス アカウントを変更するかどうかは、実行して複合認証を有効にする必要があります手動で、 **Set-aduser compoundIdentitySupported: $true** Windows PowerShell コマンドレット。
+>サービスアカウントを変更する場合は、 **compoundIdentitySupported: $true** Windows PowerShell コマンドレットを実行して、複合認証を手動で有効にする必要があります。
 
 ``` powershell
 Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true 
@@ -121,70 +121,70 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 2. ADFS サービスを再起動します。
 
 >[!NOTE]
->新しいサーバー (2012R2/2016) 障害が発生した次のエラー – 同じ gMSA の true の場合、インストールに設定すると、'CompoundIdentitySupported' **Install-adserviceaccount:サービス アカウントをインストールすることはできません。エラー メッセージ :' 指定されたコンテキストが一致しません、ターゲット。 '** .
+>' CompoundIdentitySupported ' が true に設定されている場合、新しいサーバー (2012r2/2016) に同じ gMSA をインストールすると、 **次のエラーが発生します-adserviceaccount:サービスアカウントをインストールできません。エラー メッセージ :' 指定されたコンテキストはターゲットと一致しませんでした。 '** .
 >
->**解決方法**:一時的に CompoundIdentitySupported を $false に設定します。 この手順では ADFS WindowsDeviceGroup 要求の発行を停止します。 Set-adserviceaccount-Identity 'ADFS サービス アカウント' - CompoundIdentitySupported: $false が、新しいサーバーで、gMSA をインストールし、CompoundIdentitySupported を $True に有効にします。
-CompoundIdentitySupported を無効にして、再有効化は、ADFS サービスの再起動は必要ありません。
+>**解決方法**:一時的に CompoundIdentitySupported を $false に設定します。 この手順により、ADFS は WindowsDeviceGroup 要求の発行を停止します。 Set ADServiceAccount-Identity ' ADFS Service Account '-CompoundIdentitySupported: $false 新しいサーバーに gMSA をインストールしてから、CompoundIdentitySupported を $True に戻します。
+CompoundIdentitySupported を無効にしてから再度有効化する場合、ADFS サービスを再起動する必要はありません。
 
-### <a name="step-7-update-the-ad-fs-claims-provider-trust-for-active-directory"></a>手順 7:Active Directory の更新、AD FS の要求プロバイダー信頼
+### <a name="step-7-update-the-ad-fs-claims-provider-trust-for-active-directory"></a>手順 7:Active Directory の AD FS 要求プロバイダー信頼を更新します
 
-1. AD FS の要求プロバイダー信頼の 'WindowsDeviceGroup' 要求の次の 'パススルー' の要求規則を含めるように Active Directory を更新します。
-2.  **AD FS 管理**、 をクリックして**要求プロバイダー信頼**と右側のウィンドウで右クリックして**Active Directory**選択**要求規則の編集**.
-3.  **Active Director の要求規則の編集**クリックして**規則の追加**します。
+1. Active Directory の AD FS 要求プロバイダー信頼を更新して、' WindowsDeviceGroup ' 要求に対して次の ' パススルー ' 要求規則を含めます。
+2.  **AD FS 管理** で、 **要求プロバイダー信頼** をクリックし、右側のウィンドウで **Active Directory** をクリックして、**要求規則の編集** を選択します。
+3.  **[アクティブなディレクターの要求規則の編集]** で **[規則の追加]** をクリックします。
 4.  **変換要求規則追加ウィザード**選択 **パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
-5.  表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
-6.  **[Finish]** (完了) をクリックします。  クリックして**適用**と**Ok**します。 
-![クレームの説明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc7.png)
+5.  表示名を追加し、入力 **[方向の要求の種類]** ドロップダウンから **[Windows デバイスグループ]** を選択します。
+6.  **[完了]** をクリックします。  **[適用]** をクリックし、[ **Ok]** をクリックします。 
+![要求の説明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc7.png)
 
-### <a name="step-8-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>手順 8:'WindowsDeviceGroup' 要求が予想される証明書利用者のパーティでは、'パススルー' または '変換' のような要求規則を追加します。
-2. **AD FS 管理**、 をクリックして**証明書利用者信頼**と右側のウィンドウで右クリックして、RP と選択**要求規則の編集**します。
-3. **発行変換規則**クリックして**規則の追加**します。
+### <a name="step-8-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>手順 8:' WindowsDeviceGroup ' 要求がある証明書利用者には、同様の "パススルー" または "変換" 要求規則を追加します。
+2. **AD FS 管理** で、**証明書利用者信頼** をクリックし、右側のウィンドウで RP を右クリックして、**要求規則の編集** を選択します。
+3. **[発行変換規則]** で、 **[規則の追加]** をクリックします。
 4. **変換要求規則追加ウィザード**選択 **パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
-5. 表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
-6. **[Finish]** (完了) をクリックします。  クリックして**適用**と**Ok**します。
-   ![クレームの説明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc8.png)
+5. 表示名を追加し、入力 **[方向の要求の種類]** ドロップダウンから **[Windows デバイスグループ]** を選択します。
+6. **[完了]** をクリックします。  **[適用]** をクリックし、[ **Ok]** をクリックします。
+   ![要求の説明](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc8.png)
 
 
 ## <a name="steps-for-configuring-ad-fs-in-windows-server-2016"></a>Windows Server 2016 で AD FS を構成する手順
-次は、Windows Server 2016 の AD FS で複合認証を構成する手順について説明します。
+以下では、Windows Server 2016 の AD FS で複合認証を構成する手順について詳しく説明します。
 
-### <a name="step-1--enable-kdc-support-for-claims-compound-authentication-and-kerberos-armoring-on-the-default-domain-controller-policy"></a>手順 1:KDC 信頼性情報、複合認証、および既定のドメイン コント ローラー ポリシーでの Kerberos 防御をサポートを有効にします。
-1.  サーバー マネージャーで、選択ツール、 **Group Policy Management**します。
-2.  下に移動し、**既定のドメイン コント ローラー ポリシー**を右クリックし、**編集**します。
+### <a name="step-1--enable-kdc-support-for-claims-compound-authentication-and-kerberos-armoring-on-the-default-domain-controller-policy"></a>手順 1:既定のドメインコントローラーポリシーで KDC による信頼性情報、複合認証、および Kerberos 防御のサポートを有効にする
+1.  サーバーマネージャーで、ツール、**グループポリシーの管理** を選択します。
+2.  **既定のドメインコントローラーポリシー**に移動し、右クリックして、 **[編集]** を選択します。
 3.  **グループ ポリシー管理エディター** **コンピューターの構成**、展開**ポリシー**、展開**管理用テンプレート**、展開**システム**、選び**KDC**します。
-4.  右側のウィンドウでダブルクリック**KDC で信頼性情報、複合認証、および Kerberos 防御をサポート**します。
-5.  新しいダイアログ ウィンドウにセットの要求を KDC サポート**有効**します。
-6.  [オプション] の選択**サポートされている**クリックしてドロップダウン メニューから**適用**と**OK**。
+4.  右側のウィンドウで、[KDC で**信頼性情報、複合認証、および Kerberos 防御をサポートする**] をダブルクリックします。
+5.  新しいダイアログウィンドウで、KDC サポート を **有効** に設定します。
+6.  オプション で、ドロップダウンメニューから **サポート** を選択し、**適用** をクリックして、 **OK**をクリックします。
 
 
-### <a name="step-2-enable-kerberos-client-support-for-claims-compound-authentication-and-kerberos-armoring-on-computers-accessing-federated-applications"></a>手順 2:信頼性情報、複合認証、およびフェデレーション アプリケーションにアクセスするコンピューターでの Kerberos 防御の Kerberos クライアント サポートを有効にします。
+### <a name="step-2-enable-kerberos-client-support-for-claims-compound-authentication-and-kerberos-armoring-on-computers-accessing-federated-applications"></a>手順 2:フェデレーションアプリケーションにアクセスするコンピューターで、信頼性情報、複合認証、および Kerberos 防御の Kerberos クライアントサポートを有効にする
 
 1.  フェデレーションのアプリケーションにアクセスするコンピューターに適用されるグループ ポリシーで、**グループ ポリシー管理エディター** **コンピューターの構成**、展開**ポリシー**、展開**管理用テンプレート**、展開**システム**、選び**Kerberos**します。
-2.  グループ ポリシー管理エディター ウィンドウの右側のウィンドウでダブルクリック**信頼性情報、複合認証、および Kerberos 防御の Kerberos クライアント サポートします。**
-3.  新しいダイアログ ウィンドウに Kerberos クライアント サポートを設定**有効** をクリック**適用**と**OK**。
+2.  グループポリシー管理エディター ウィンドウの右側のウィンドウで、 **kerberos クライアントで信頼性情報、複合認証、および kerberos 防御をサポートする** をダブルクリックします。
+3.  新しいダイアログウィンドウで、Kerberos クライアントサポート を **有効** に設定し、**適用** と  **OK**をクリックします。
 4.  グループ ポリシー管理エディターを閉じます。
 
-### <a name="step-3-configure-the-primary-authentication-provider"></a>手順 3:プライマリ認証プロバイダーを構成します。
+### <a name="step-3-configure-the-primary-authentication-provider"></a>手順 3:プライマリ認証プロバイダーを構成する
 
-1. プライマリ認証プロバイダーを設定**Windows 認証**for AD FS のイントラネット設定します。
+1. イントラネット設定を AD FS には、プライマリ認証プロバイダーを **[Windows 認証]** に設定します。
 2. AD FS の管理 [**認証ポリシー**を選択します**プライマリ認証** **グローバル設定**] をクリックして**編集**します。
 3. **グローバル認証ポリシーの編集** **イントラネット**選択**Windows 認証**します。
-4. クリックして**適用**と**Ok**します。
-5. PowerShell を使用することができますを使用して、**セット AdfsGlobalAuthenticationPolicy**コマンドレット。
+4. **[適用]** をクリックし、[ **Ok]** をクリックします。
+5. PowerShell を使用する場合は、 **AdfsGlobalAuthenticationPolicy**コマンドレットを使用できます。
 
 ``` powershell
 Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'WindowsAuthentication'
 ```
 >[!NOTE]
->WID でファーム、プライマリ AD FS サーバーでコマンドを実行する必要があります、PowerShell に基づいています。
->SQL ベースのファームでは、ファームのメンバーである任意の AD FS サーバー上の PowerShell コマンドを実行できます。
+>WID ベースのファームでは、プライマリ AD FS サーバーで PowerShell コマンドを実行する必要があります。
+>SQL ベースのファームでは、ファームのメンバーである任意の AD FS サーバーで PowerShell コマンドを実行できます。
 
-### <a name="step-4--enable-the-compound-authentication-bit-on-the-msds-supportedencryptiontypes-attribute"></a>手順 4:Msds-supportedencryptiontypes 属性に複合認証のビットを有効にします。
+### <a name="step-4--enable-the-compound-authentication-bit-on-the-msds-supportedencryptiontypes-attribute"></a>手順 4:"属性の暗号化" 属性で複合認証ビットを有効にします。
 
-1.  ビットを使用する AD FS サービスを実行するように指定するアカウントの Msds-supportedencryptiontypes 属性に複合認証を有効にする、 **Set-adserviceaccount** PowerShell コマンドレット。  
+1.  **Set ADServiceAccount** PowerShell コマンドレットを使用して、AD FS サービスを実行するように指定したアカウントの [複合認証ビット] 属性の [複合認証ビット] を有効にします。  
 
 >[!NOTE]
->サービス アカウントを変更するかどうかは、実行して複合認証を有効にする必要があります手動で、 **Set-aduser compoundIdentitySupported: $true** Windows PowerShell コマンドレット。
+>サービスアカウントを変更する場合は、 **compoundIdentitySupported: $true** Windows PowerShell コマンドレットを実行して、複合認証を手動で有効にする必要があります。
 
 ``` powershell
 Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true 
@@ -192,39 +192,39 @@ Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySuppo
 2. ADFS サービスを再起動します。
 
 >[!NOTE]
->新しいサーバー (2012R2/2016) 障害が発生した次のエラー – 同じ gMSA の true の場合、インストールに設定すると、'CompoundIdentitySupported' **Install-adserviceaccount:サービス アカウントをインストールすることはできません。エラー メッセージ :' 指定されたコンテキストが一致しません、ターゲット。 '** .
+>' CompoundIdentitySupported ' が true に設定されている場合、新しいサーバー (2012r2/2016) に同じ gMSA をインストールすると、 **次のエラーが発生します-adserviceaccount:サービスアカウントをインストールできません。エラー メッセージ :' 指定されたコンテキストはターゲットと一致しませんでした。 '** .
 >
->**解決方法**:一時的に CompoundIdentitySupported を $false に設定します。 この手順では ADFS WindowsDeviceGroup 要求の発行を停止します。 Set-adserviceaccount-Identity 'ADFS サービス アカウント' - CompoundIdentitySupported: $false が、新しいサーバーで、gMSA をインストールし、CompoundIdentitySupported を $True に有効にします。
-CompoundIdentitySupported を無効にして、再有効化は、ADFS サービスの再起動は必要ありません。
+>**解決方法**:一時的に CompoundIdentitySupported を $false に設定します。 この手順により、ADFS は WindowsDeviceGroup 要求の発行を停止します。 Set ADServiceAccount-Identity ' ADFS Service Account '-CompoundIdentitySupported: $false 新しいサーバーに gMSA をインストールしてから、CompoundIdentitySupported を $True に戻します。
+CompoundIdentitySupported を無効にしてから再度有効化する場合、ADFS サービスを再起動する必要はありません。
 
-### <a name="step-5-update-the-ad-fs-claims-provider-trust-for-active-directory"></a>手順 5:Active Directory の更新、AD FS の要求プロバイダー信頼
+### <a name="step-5-update-the-ad-fs-claims-provider-trust-for-active-directory"></a>手順 5:Active Directory の AD FS 要求プロバイダー信頼を更新します
 
-1. AD FS の要求プロバイダー信頼の 'WindowsDeviceGroup' 要求の次の 'パススルー' の要求規則を含めるように Active Directory を更新します。
-2.  **AD FS 管理**、 をクリックして**要求プロバイダー信頼**と右側のウィンドウで右クリックして**Active Directory**選択**要求規則の編集**.
-3.  **Active Director の要求規則の編集**クリックして**規則の追加**します。
+1. Active Directory の AD FS 要求プロバイダー信頼を更新して、' WindowsDeviceGroup ' 要求に対して次の ' パススルー ' 要求規則を含めます。
+2.  **AD FS 管理** で、 **要求プロバイダー信頼** をクリックし、右側のウィンドウで **Active Directory** をクリックして、**要求規則の編集** を選択します。
+3.  **[アクティブなディレクターの要求規則の編集]** で **[規則の追加]** をクリックします。
 4.  **変換要求規則追加ウィザード**選択 **パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
-5.  表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
-6.  **[Finish]** (完了) をクリックします。  クリックして**適用**と**Ok**します。 
+5.  表示名を追加し、入力 **[方向の要求の種類]** ドロップダウンから **[Windows デバイスグループ]** を選択します。
+6.  **[完了]** をクリックします。  **[適用]** をクリックし、[ **Ok]** をクリックします。 
 
 
-### <a name="step-6-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>手順 6:'WindowsDeviceGroup' 要求が予想される証明書利用者のパーティでは、'パススルー' または '変換' のような要求規則を追加します。
-2. **AD FS 管理**、 をクリックして**証明書利用者信頼**と右側のウィンドウで右クリックして、RP と選択**要求規則の編集**します。
-3. **発行変換規則**クリックして**規則の追加**します。
+### <a name="step-6-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>手順 6:' WindowsDeviceGroup ' 要求がある証明書利用者には、同様の "パススルー" または "変換" 要求規則を追加します。
+2. **AD FS 管理** で、**証明書利用者信頼** をクリックし、右側のウィンドウで RP を右クリックして、**要求規則の編集** を選択します。
+3. **[発行変換規則]** で、 **[規則の追加]** をクリックします。
 4. **変換要求規則追加ウィザード**選択 **パススルーまたはフィルター処理の入力方向の要求** をクリック**次**。
-5. 表示名を追加し、選択**Windows デバイスのグループ**から、**着信要求の種類**ドロップダウンします。
-6. **[Finish]** (完了) をクリックします。  クリックして**適用**と**Ok**します。
+5. 表示名を追加し、入力 **[方向の要求の種類]** ドロップダウンから **[Windows デバイスグループ]** を選択します。
+6. **[完了]** をクリックします。  **[適用]** をクリックし、[ **Ok]** をクリックします。
 
 ## <a name="validation"></a>［確認］
-'WindowsDeviceGroup' 要求のリリースを検証、テストを作成するには、.Net 4.6 を使用して対応するアプリケーションを要求します。 WIF sdk 4.0。
-ADFS で証明書利用者としてアプリケーションを構成し、上記の手順で指定されている要求規則を使って更新します。
-ADFS の Windows 統合認証プロバイダーを使用してアプリケーションに、認証時に次の要求はキャストします。
-![検証](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc9.png)
+"WindowsDeviceGroup" 要求のリリースを検証するには、.Net 4.6 を使用してテスト要求対応アプリケーションを作成します。 WIF SDK 4.0 を使用します。
+ADFS で証明書利用者としてアプリケーションを構成し、前述の手順で指定したとおりに要求規則で更新します。
+Windows 統合認証プロバイダーの ADFS を使用してアプリケーションを認証する場合、次の要求がキャストされます。
+![検査](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc9.png)
 
-コンピューター/デバイスの信頼性情報は、多数のアクセス制御のようになりました使用可能性があります。
+コンピューターまたはデバイスの信頼性情報を使用して、より豊富なアクセス制御を行うことができるようになりました。
 
-たとえば – 次**AdditionalAuthenticationRules** – 認証ユーザーは、セキュリティ グループのメンバーではない場合、MFA を呼び出すための AD FS の通知"-1-5-21-2134745077-1211275016-3050530490-1117"とコンピューター (場所は、認証をユーザーには)"S-1-5-21-2134745077-1211275016-3050530490-1115 (WindowsDeviceGroup)"のセキュリティ グループのメンバーではありません
+たとえば、次の**Additionalauthenticationrules**は、認証を行うユーザーがセキュリティグループ "-1-5-21-2134745077-1211275016-3050530490-1117" のメンバーではなく、コンピューターである場合に、MFA を呼び出すように AD FS に指示します (ユーザーはからの認証は、セキュリティグループ "S-1-5-21-2134745077-1211275016-3050530490-1115 (WindowsDeviceGroup)" のメンバーではありません。
 
-ただし、上記の条件のいずれかが満たされた場合は MFA 呼び出されません。
+ただし、上記の条件のいずれかが満たされている場合は、MFA を呼び出さないでください。
 
 ```
 'NOT EXISTS([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup", Value =~ "S-1-5-21-2134745077-1211275016-3050530490-1115"])

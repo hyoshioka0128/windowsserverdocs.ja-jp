@@ -1,7 +1,7 @@
 ---
-title: 仮想スイッチにバインドされているチームは、公開されているチーム インターフェイスの 1 つのみにあります。
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+title: 仮想スイッチにバインドされたチームには、公開されているチームインターフェイスが1つだけ必要です
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,38 +10,38 @@ ms.topic: article
 ms.assetid: 1074f086-1a2e-42e1-b58c-f55e657d5ce1
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 108bbec1439959bb7ab4475b59c7231653952ea8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6baa9e4ae900c9b671003872b4eb4589efb2f085
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838463"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365405"
 ---
-# <a name="a-team-bound-to-a-virtual-switch-should-only-have-one-exposed-team-interface"></a>仮想スイッチにバインドされているチームは、公開されているチーム インターフェイスの 1 つのみにあります。
+# <a name="a-team-bound-to-a-virtual-switch-should-only-have-one-exposed-team-interface"></a>仮想スイッチにバインドされたチームには、公開されているチームインターフェイスが1つだけ必要です
 
 >適用先:Windows Server 2016
 
-ベスト プラクティスとスキャンの詳細については、次を参照してください。 [Run Best Practices Analyzer Scans and Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177)します。  
+ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
 |プロパティ|詳細|
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|警告|  
+|**順**|警告|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
   
 ## <a name="issue"></a>**問題**  
-*1 つまたは複数の仮想スイッチは、複数のチームのインターフェイスがあるチームにバインドされます。*  
+*1つ以上の仮想スイッチが、複数のチームインターフェイスを持つチームにバインドされています。*  
   
-## <a name="impact"></a>**影響**  
-*次の仮想スイッチは Vlan とその他のチームのインターフェイスで使用される帯域幅へのアクセスがありません。*  
+## <a name="impact"></a>**よる**  
+*次の仮想スイッチは、他のチームインターフェイスで使用されている Vlan および帯域幅にアクセスできない可能性があります。*  
   
-\<仮想スイッチの一覧 >  
+\<list スイッチの一覧 >  
   
 ## <a name="resolution"></a>**解決方法**  
-*既定のチーム インターフェイス以外のチームからチームのすべてのインターフェイスを削除するのにには、削除 NetLbfoTeamNic の Windows PowerShell コマンドレットを使用します。*  
+*Windows PowerShell コマンドレット NetLbfoTeamNic を使用して、既定のチームインターフェイス以外のチームのすべてのチームインターフェイスを削除します。*  
   
 
 

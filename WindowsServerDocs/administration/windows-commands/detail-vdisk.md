@@ -1,8 +1,8 @@
 ---
 title: 詳細 vdisk
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8e3401eaeb9afb452b6e7e36abdcba69f00e59ce
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1e507c496aa053d6345a383b2867976fc1550e09
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886323"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378559"
 ---
 # <a name="detail-vdisk"></a>詳細 vdisk
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-選択した仮想ハード_ディスクのプロパティを表示します\(VHD\)します。  
+選択したバーチャルハードディスク \(VHD\)のプロパティが表示されます。  
   
 ## <a name="syntax"></a>構文  
   
@@ -34,7 +34,7 @@ detail vdisk
   
 ## <a name="remarks"></a>注釈  
   
--   この操作を成功させるのには、VHD を選択してください。 使用して、 **vdisk を選択**コマンドを vdisk を選択し、それにフォーカスをします。  
+-   この操作を成功させるには、VHD を選択する必要があります。 **Select vdisk**コマンドを使用して vdisk を選択し、それにフォーカスを移動します。  
   
 ## <a name="BKMK_examples"></a>例  
 選択した VHD の詳細を表示するには、次のように入力します。  
@@ -43,23 +43,23 @@ detail vdisk
 detail vdisk  
 ```  
   
-#### <a name="additional-references"></a>その他の参照  
+#### <a name="additional-references"></a>その他の参照情報  
   
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  
   
--   [attach vdisk](attach-vdisk.md)  
+-   [vdisk のアタッチ](attach-vdisk.md)  
   
--   [vdisk を最適化します。](compact-vdisk.md)  
+-   [compact vdisk](compact-vdisk.md)  
   
   
   
--   [Vdisk をデタッチします。](detach-vdisk.md)  
+-   [Vdisk のデタッチ](detach-vdisk.md)  
   
--   [vdisk を展開します。](expand-vdisk.md)  
+-   [vdisk を展開する](expand-vdisk.md)  
   
--   [Vdisk をマージします。](merge-vdisk.md)  
+-   [マージ vdisk](merge-vdisk.md)  
   
--   [vdisk を選択します。](select-vdisk.md)  
+-   [vdisk の選択](select-vdisk.md)  
   
 -   [list_1](list_1.md)  
   

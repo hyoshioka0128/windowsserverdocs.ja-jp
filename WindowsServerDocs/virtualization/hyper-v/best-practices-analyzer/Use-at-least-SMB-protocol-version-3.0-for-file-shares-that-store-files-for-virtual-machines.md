@@ -1,7 +1,7 @@
 ---
-title: 以上のバーチャル マシンのファイルを保存するファイル共有の SMB プロトコル バージョン 3.0。
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+title: バーチャルマシンのファイルを保存するファイル共有には、SMB プロトコルバージョン3.0 以降を使用してください。
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,38 +10,38 @@ ms.topic: article
 ms.assetid: 4bb832b8-f1aa-4c1f-a0f2-324dd53553ea
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 28e0f3769fd4fc993710d0a0b800dfad7c9ab157
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: af23c3c860a47d0dd9096bc3f5ff466aca7836b6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834343"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393323"
 ---
-# <a name="use-at-least-smb-protocol-version-30-for-file-shares-that-store-files-for-virtual-machines"></a>以上のバーチャル マシンのファイルを保存するファイル共有の SMB プロトコル バージョン 3.0。
+# <a name="use-at-least-smb-protocol-version-30-for-file-shares-that-store-files-for-virtual-machines"></a>バーチャルマシンのファイルを保存するファイル共有には、SMB プロトコルバージョン3.0 以降を使用してください。
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
-ベスト プラクティスとスキャンの詳細については、次を参照してください。 [Run Best Practices Analyzer Scans and Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177)します。  
+ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
 |プロパティ|詳細|  
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|エラー|  
+|**順**|エラー|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
   
 ## <a name="issue"></a>**問題**  
-*仮想マシンのファイルまたは仮想ハード ディスク ファイルが少なくともがサポートされていないファイル共有に格納されている SMB プロトコルのバージョン 3.0。*  
+*仮想マシンファイルまたは仮想ハードディスクファイルは、SMB プロトコルバージョン3.0 以降をサポートしていないファイル共有に格納されます。*  
   
-## <a name="impact"></a>**影響**  
-*Microsoft は、この構成をサポートしていません。これには、次の仮想マシンに影響します。*  
+## <a name="impact"></a>**よる**  
+*Microsoft では、この構成をサポートしていません。これは、次の仮想マシンに影響します。*  
   
-\<仮想マシンの一覧 >  
+仮想マシンの一覧を \<>  
   
 ## <a name="resolution"></a>**解決方法**  
-*ファイルを少なくともを使用するファイル共有に移動します。 SMB プロトコルのバージョン 3.0。*  
+*SMB プロトコルバージョン3.0 以降を使用しているファイル共有にファイルを移動します。*  
   
 
 

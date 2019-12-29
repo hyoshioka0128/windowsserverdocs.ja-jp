@@ -1,9 +1,9 @@
 ---
 title: DirectAccess オフライン ドメイン参加
-description: このガイドでは、Windows Server 2016 への DirectAccess のオフライン ドメイン参加を実行する手順について説明します。
+description: このガイドでは、Windows Server 2016 で DirectAccess を使用してオフラインドメイン参加を実行する手順について説明します。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,151 +12,151 @@ ms.topic: article
 ms.assetid: 55528736-6c19-40bd-99e8-5668169ef3c7
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 59b5933a81c7021e58ea14e6ea4c4da374ce35cb
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 229e2955c7f382ff630829990a9dd6485d62652e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283657"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388876"
 ---
 # <a name="directaccess-offline-domain-join"></a>DirectAccess オフライン ドメイン参加
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用先:Windows Server (半期チャネル)、Windows Server 2016
 
-このガイドでは、DirectAccess と、オフライン ドメイン参加を実行する手順について説明します。 オフライン ドメイン参加では、中に物理接続または VPN 接続なしのドメインに参加するコンピューターが構成されています。  
+このガイドでは、DirectAccess でオフラインドメイン参加を実行する手順について説明します。 オフラインドメイン参加中に、コンピューターが物理的または VPN 接続を使用せずにドメインに参加するように構成されている。  
   
 このガイドには次のセクションが含まれます。  
   
-- オフライン ドメイン参加の概要  
+- オフラインドメイン参加の概要  
   
-- オフライン ドメイン参加するための要件
+- オフラインドメイン参加の要件
   
-- オフライン ドメイン参加プロセス
+- オフラインドメイン参加プロセス
   
-- オフライン ドメイン参加を実行する手順  
+- オフラインドメイン参加を実行するための手順  
   
-## <a name="offline-domain-join-overview"></a>オフライン ドメイン参加の概要  
-Windows Server 2008 R2 で導入された、ドメイン コント ローラーには、オフライン ドメイン参加と呼ばれる機能が含まれます。 Djoin.exe をという名前のコマンド ライン ユーティリティを使用して、ドメイン参加操作の完了中にドメイン コント ローラーに物理的に接続せずにコンピューターをドメインに参加できます。 Djoin.exe を使用するための一般的な手順は次のとおりです。  
+## <a name="offline-domain-join-overview"></a>オフラインドメイン参加の概要  
+Windows Server 2008 R2 で導入されたドメインコントローラーには、Offline Domain Join と呼ばれる機能が含まれています。 Djoin .exe という名前のコマンドラインユーティリティを使用すると、ドメインへの参加操作の完了中にドメインコントローラーに物理的に接続しなくても、コンピューターをドメインに参加させることができます。 Djoin を使用するための一般的な手順は次のとおりです。  
   
-1.  実行**させる djoin/provision**コンピューター アカウントのメタデータを作成します。 このコマンドの出力は、base 64 でエンコードされた blob を含む .txt ファイルです。  
+1.  **Djoin.exe/プロビジョニング**を実行して、コンピューターアカウントのメタデータを作成します。 このコマンドの出力は、base-64 でエンコードされた blob を含む .txt ファイルです。  
   
-2.  実行**させる djoin/requestODJ** .txt ファイルから展開先コンピューターの Windows ディレクトリにコンピューター アカウントのメタデータを挿入します。  
+2.  **Djoin.exe/requestODJ**を実行して、コンピューターアカウントのメタデータを .txt ファイルから対象コンピューターの Windows ディレクトリに挿入します。  
   
-3.  セットアップ先のコンピューターを再起動し、コンピューターがドメインに参加します。  
+3.  対象のコンピューターを再起動すると、コンピューターがドメインに参加します。  
   
-### <a name="BKMK_ODJOverview"></a>オフライン ドメイン参加に DirectAccess ポリシー シナリオの概要  
-DirectAccess オフライン ドメイン参加は、Windows Server 2016、Windows Server 2012、Windows 10 および Windows 8 を実行しているコンピューターが企業のネットワークに物理的に結合することがなくドメインに参加することができますを使用して、または VPN 経由で接続するプロセスです。 場所からコンピューターをドメインに参加させるが可能になります。 企業ネットワークへの接続が存在しません。 Directaccess オフライン ドメイン参加では、リモートのプロビジョニングを許可するクライアントに DirectAccess ポリシーを提供します。  
+### <a name="BKMK_ODJOverview"></a>DirectAccess ポリシーを使用したオフラインドメイン参加のシナリオの概要  
+DirectAccess オフラインドメイン参加とは、windows Server 2016、Windows Server 2012、Windows 10、および Windows 8 を実行しているコンピューターが、企業ネットワークに物理的に参加したり、VPN 経由で接続したりせずにドメインに参加するために使用できるプロセスです。 これにより、企業ネットワークに接続されていない場所からドメインにコンピューターを参加させることができます。 DirectAccess のオフラインドメイン参加により、リモートプロビジョニングを可能にする DirectAccess ポリシーがクライアントに提供されます。  
   
-ドメイン参加では、コンピューター アカウントを作成し、Windows オペレーティング システムと Active Directory ドメインを実行するコンピューター間の信頼関係を確立します。  
+ドメイン参加は、コンピューターアカウントを作成し、Windows オペレーティングシステムを実行しているコンピューターと Active Directory ドメインとの間に信頼関係を確立します。  
   
-## <a name="BKMK_ODJRequirements"></a>オフライン ドメイン参加を準備します。  
+## <a name="BKMK_ODJRequirements"></a>オフラインドメイン参加の準備  
   
-1.  コンピューター アカウントを作成します。  
+1.  コンピューターアカウントを作成します。  
   
-2.  コンピューター アカウントが所属するすべてのセキュリティ グループのメンバーシップをインベントリします。  
+2.  コンピューターアカウントが属しているすべてのセキュリティグループのメンバーシップをインベントリします。  
   
-3.  必要なコンピューター証明書、グループ ポリシー、および新しいクライアントに適用するグループ ポリシー オブジェクトを収集します。  
+3.  新しいクライアントに適用される、必要なコンピューター証明書、グループポリシー、およびグループポリシーオブジェクトを収集します。  
   
-. 次のセクションでは、オペレーティング システムの要件と Djoin.exe を使用して DirectAccess オフライン ドメイン参加を実行するための資格情報の要件について説明します。  
+. 次のセクションでは、Djoin を使用して DirectAccess のオフラインドメイン参加を実行するためのオペレーティングシステムの要件と資格情報の要件について説明します。  
   
 ### <a name="operating-system-requirements"></a>オペレーティング システムの要件  
-Windows Server 2016、Windows Server 2012 または Windows 8 を実行しているコンピューターでのみ、DirectAccess の Djoin.exe を行うことができます。 実行する Djoin.exe プロビジョニング コンピューター アカウントのデータを AD DS にコンピューターでは、Windows Server 2016、Windows 10、Windows Server 2012 または Windows 8 が実行されている必要があります。 Windows Server 2016、Windows 10、Windows Server 2012、または Windows 8、ドメインに参加するコンピューターを実行してもする必要があります。  
+DirectAccess では、Windows Server 2016、Windows Server 2012、または Windows 8 を実行しているコンピューターでのみ、Djoin を実行できます。 コンピューターアカウントデータを AD DS にプロビジョニングするために Djoin を実行するコンピューターでは、Windows Server 2016、Windows 10、Windows Server 2012、または Windows 8 が実行されている必要があります。 ドメインに参加させるコンピューターは、Windows Server 2016、Windows 10、Windows Server 2012、または Windows 8 も実行している必要があります。  
   
 ### <a name="credential-requirements"></a>資格情報の要件  
-を、オフライン ドメイン参加を実行するには、ワークステーションをドメインに参加させるために必要な権限が必要です。 Domain Admins グループのメンバーは、既定では、これらの権限を持っています。 Domain Admins グループのメンバーでない場合は、ワークステーションをドメインに参加できるように、次の操作のいずれかの Domain Admins グループのメンバーが完了する必要があります。  
+オフラインドメイン参加を実行するには、ワークステーションをドメインに参加させるために必要な権限を持っている必要があります。 Domain Admins グループのメンバーには、これらの権限が既定で与えられています。 Domain Admins グループのメンバーでない場合、domain Admins グループのメンバーは、次のいずれかの操作を完了して、ワークステーションをドメインに参加させることができます。  
   
--   グループ ポリシーを使用して、必要なユーザー権利を付与します。 このメソッドでは、既定の Computers コンテナーおよび (Deny アクセス制御エントリ (Ace) には追加されません) 場合、後で作成された組織単位 (OU) では、コンピューターを作成できます。  
+-   グループポリシーを使用して、必要なユーザー権利を付与します。 この方法では、[既定のコンピューター] コンテナーと、後で作成される組織単位 (OU) にコンピューターを作成できます (アクセス制御エントリ (Ace) を拒否しない場合)。  
   
--   適切なアクセス許可を委任するドメインの既定の Computers コンテナーのアクセス制御リスト (ACL) を編集します。  
+-   ドメインの [既定のコンピューター] コンテナーのアクセス制御リスト (ACL) を編集して、適切なアクセス許可を委任します。  
   
--   OU を作成しを付与するには、その OU の ACL を編集、 **- 子の作成を許可する**権限。 渡す、 **/machineOU**パラメーターを**させる djoin/provision**コマンド。  
+-   OU を作成し、その OU の ACL を編集して、 **create child-Allow**権限を付与します。 **/Machineou**パラメーターを**djoin.exe/プロビジョン**コマンドに渡します。  
   
-次の手順では、グループ ポリシーを備えたユーザー権利を付与する方法と、適切なアクセス許可を委任する方法を示しています。  
+次の手順では、グループポリシーにユーザー権利を付与する方法と、適切なアクセス許可を委任する方法について説明します。  
   
-#### <a name="granting-user-rights-to-join-workstations-to-the-domain"></a>ワークステーションをドメインに参加するユーザーの権限を付与します。  
-グループ ポリシー管理コンソール (GPMC) を使用して、ドメイン ポリシーを変更またはドメインにワークステーションを追加するユーザーの権限を与える設定を持つ新しいポリシーを作成することができます。  
+#### <a name="granting-user-rights-to-join-workstations-to-the-domain"></a>ワークステーションをドメインに参加させるためのユーザー権限を付与する  
+グループポリシー管理コンソール (GPMC) を使用してドメインポリシーを変更したり、ユーザーにワークステーションをドメインに追加する権限を付与する設定を持つ新しいポリシーを作成したりできます。  
   
-メンバーシップ**Domain Admins**、またはそれと同等のユーザーの権限を付与するために必要な最低限です。  適切なアカウントの使用に関する詳細を確認し、グループ メンバーシップ[ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)(https://go.microsoft.com/fwlink/?LinkId=83477) します。   
+ユーザー権限を付与するには、 **Domain Admins**のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  適切なアカウントおよびグループメンバーシップの使用方法の詳細については、「[ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)(https://go.microsoft.com/fwlink/?LinkId=83477) 」を参照してください。   
   
-###### <a name="to-grant-rights-to-join-workstations-to-a-domain"></a>ワークステーションをドメインに参加させる権限を付与するには  
+###### <a name="to-grant-rights-to-join-workstations-to-a-domain"></a>ドメインにワークステーションを参加させる権限を付与するには  
   
-1.  をクリックして**開始**、 をクリックして**管理ツール**、順にクリックします**Group Policy Management**します。  
+1.  **[スタート]** 、 **[管理ツール]** 、 **[グループポリシー管理]** の順にクリックします。  
   
-2.  フォレストの名前をダブルクリックし、ダブルクリックして**ドメイン**を右クリックして、コンピューターを参加するドメインの名前をダブルクリック**既定のドメイン ポリシー**、 をクリックし、 **編集**します。  
+2.  フォレストの名前をダブルクリックし、 **[ドメイン]** をダブルクリックします。次に、コンピューターに参加するドメインの名前をダブルクリックし、 **[既定のドメインポリシー]** を右クリックして、 **[編集]** をクリックします。  
   
-3.  コンソール ツリーで、ダブルクリック**コンピューターの構成**、 をダブルクリックします**ポリシー**、 をダブルクリックします**Windows 設定**、ダブルクリックして**セキュリティ設定**、ダブルクリック**ローカル ポリシー**、し、ダブルクリック**ユーザー権利の割り当て**します。  
+3.  コンソールツリーで、**コンピューターの構成** をダブルクリックし、**ポリシー** をダブルクリックします。次に、**Windows の設定** をダブルクリックし、**セキュリティの設定** をダブルクリックし、**ローカルポリシー** をダブルクリックしてから、 をダブルクリック**します。ユーザー権利の割り当て**。  
   
-4.  詳細ウィンドウでダブルクリック**ワークステーションをドメインに追加**します。  
+4.  詳細ウィンドウで、 **[ドメインへのワークステーションの追加]** をダブルクリックします。  
   
-5.  選択、**これらのポリシー設定を定義**チェック ボックスをオンにして**追加のユーザーまたはグループ**します。  
+5.  **[これらのポリシーの設定を定義]** する チェックボックスをオンにし、 **[ユーザーまたはグループの追加]** をクリックします。  
   
-6.  クリックして、ユーザーの権限を付与するアカウントの名前を入力**OK** 2 回クリックします。  
+6.  ユーザーに権限を付与するアカウントの名前を入力し、[ **OK]** を2回クリックします。  
   
-## <a name="BKMK_ODKSxS"></a>オフライン ドメイン参加プロセス  
-コンピューター アカウントのメタデータをプロビジョニングする管理者特権のコマンド プロンプトで Djoin.exe を実行します。 プロビジョニングのコマンドを実行すると、コンピューター アカウントのメタデータは、コマンドの一部として指定したバイナリ ファイルに作成されます。  
+## <a name="BKMK_ODKSxS"></a>オフラインドメイン参加プロセス  
+管理者特権のコマンドプロンプトで Djoin を実行し、コンピューターアカウントのメタデータをプロビジョニングします。 プロビジョニングコマンドを実行すると、コンピューターアカウントのメタデータが、コマンドの一部として指定したバイナリファイルに作成されます。  
   
-詳細については、オフライン ドメイン参加中のコンピューター アカウントのプロビジョニングに使用される NetProvisionComputerAccount 関数を参照してください。 [NetProvisionComputerAccount 関数](https://go.microsoft.com/fwlink/?LinkId=162426)(https://go.microsoft.com/fwlink/?LinkId=162426) します。 対象のコンピューターでローカルに実行される NetRequestOfflineDomainJoin 関数に関する詳細については、次を参照してください。 [NetRequestOfflineDomainJoin 関数](https://go.microsoft.com/fwlink/?LinkId=162427)(https://go.microsoft.com/fwlink/?LinkId=162427) します。  
+オフラインドメイン参加時にコンピューターアカウントをプロビジョニングするために使用される NetProvisionComputerAccount 関数の詳細については、「 [NetProvisionComputerAccount 関数](https://go.microsoft.com/fwlink/?LinkId=162426)(https://go.microsoft.com/fwlink/?LinkId=162426) 」を参照してください。 対象のコンピューターでローカルに実行される NetRequestOfflineDomainJoin 関数の詳細については、「 [Netrequestofflinedomainjoin 関数](https://go.microsoft.com/fwlink/?LinkId=162427)(https://go.microsoft.com/fwlink/?LinkId=162427) 」を参照してください。  
   
-## <a name="BKMK_ODJSteps"></a>DirectAccess のオフライン ドメイン参加を実行する手順  
-オフライン ドメイン参加のプロセスには、次の手順が含まれています。  
+## <a name="BKMK_ODJSteps"></a>DirectAccess オフラインドメイン参加を実行するための手順  
+オフラインドメイン参加プロセスには、次の手順が含まれます。  
   
-1.  各リモート クライアントの新しいコンピューター アカウントを作成しから Djoin.exe コマンドを使用してプロビジョニング パッケージを生成、既にドメインは、企業ネットワーク内のコンピューターを参加しています。  
+1.  リモートクライアントごとに新しいコンピューターアカウントを作成し、企業ネットワーク内の既存のドメインに参加しているコンピューターから、Djoin .exe コマンドを使用してプロビジョニングパッケージを生成します。  
   
-2.  クライアント コンピューターを DirectAccessClients セキュリティ グループに追加します。  
+2.  クライアントコンピューターを DirectAccessClients セキュリティグループに追加する  
   
-3.  ドメインに参加するリモート コンピューター (s) にプロビジョニング パッケージを安全に転送します。  
+3.  プロビジョニングパッケージを、ドメインに参加するリモートコンピューターに安全に転送します。  
   
-4.  プロビジョニング パッケージを適用し、クライアントをドメインに参加します。  
+4.  プロビジョニングパッケージを適用し、クライアントをドメインに参加させます。  
   
-5.  ドメインへの参加を完了して、接続を確立するクライアントを再起動します。  
+5.  クライアントを再起動して、ドメインへの参加を完了し、接続を確立します。  
   
-クライアントのプロビジョニングのパケットを作成するときに考慮すべき 2 つのオプションがあります。 PKI なしの DirectAccess をインストールする作業の開始ウィザードを使用した場合は、次の 1 のオプションを使用する必要があります。 高度なセットアップ ウィザードを使用して、PKI と DirectAccess をインストールした場合は、次の 2 のオプションを使用する必要があります。  
+クライアントのプロビジョニングパケットの作成時に考慮する必要があるオプションは2つあります。 はじめにウィザードを使用して PKI なしで DirectAccess をインストールした場合は、次のオプション1を使用する必要があります。 高度なセットアップウィザードを使用して、PKI と共に DirectAccess をインストールした場合は、次のオプション2を使用する必要があります。  
   
-オフライン ドメイン参加を実行する次の手順を完了するには。  
+オフラインドメイン参加を実行するには、次の手順を実行します。  
   
-##### <a name="option1-create-a-provisioning-package-for-the-client-without-pki"></a>オプション 1:PKI せず、クライアントのプロビジョニング パッケージを作成します。  
+##### <a name="option1-create-a-provisioning-package-for-the-client-without-pki"></a>オプション 1:PKI を使用しないクライアント用のプロビジョニングパッケージを作成する  
   
-1.  リモート アクセス サーバーのコマンド プロンプトで、コンピューター アカウントをプロビジョニングするには、次のコマンドを入力します。  
+1.  リモートアクセスサーバーのコマンドプロンプトで、次のコマンドを入力してコンピューターアカウントをプロビジョニングします。  
   
     ```  
     Djoin /provision /domain <your domain name> /machine <remote machine name> /policynames DA Client GPO name /rootcacerts /savefile c:\files\provision.txt /reuse  
     ```  
   
-##### <a name="option2-create-a-provisioning-package-for-the-client-with-pki"></a>Option2:Pki クライアントのプロビジョニング パッケージを作成します。  
+##### <a name="option2-create-a-provisioning-package-for-the-client-with-pki"></a>Option2PKI を使用してクライアントのプロビジョニングパッケージを作成する  
   
-1.  リモート アクセス サーバーのコマンド プロンプトで、コンピューター アカウントをプロビジョニングするには、次のコマンドを入力します。  
+1.  リモートアクセスサーバーのコマンドプロンプトで、次のコマンドを入力してコンピューターアカウントをプロビジョニングします。  
   
     ```  
     Djoin /provision /machine <remote machine name> /domain <Your Domain name> /policynames <DA Client GPO name> /certtemplate <Name of client computer cert template> /savefile c:\files\provision.txt /reuse  
     ```  
   
-##### <a name="add-the-client-computer-to-the-directaccessclients-security-group"></a>クライアント コンピューターを DirectAccessClients セキュリティ グループに追加します。  
+##### <a name="add-the-client-computer-to-the-directaccessclients-security-group"></a>クライアントコンピューターを DirectAccessClients セキュリティグループに追加する  
   
-1.  ドメイン コント ローラーでから**開始**画面で「 **Active**選択**Active Directory ユーザーとコンピューター**から**アプリ**画面.  
+1.  ドメインコントローラーの**スタート**画面で「 **Active** 」と入力し、[**アプリ**から**ユーザーとコンピューターを Active Directory** ] 画面を選択します。  
   
-2.  ドメインの下のツリーを展開し、選択、**ユーザー**コンテナー。  
+2.  ドメインの下のツリーを展開し、 **[ユーザー]** コンテナーを選択します。  
   
-3.  詳細ペインで右クリックして**DirectAccessClients**、 をクリック**プロパティ**します。  
+3.  詳細ウィンドウで、 **[Directaccessclients]** を右クリックし、 **[プロパティ]** をクリックします。  
   
 4.  **[メンバー]** タブで **[追加]** をクリックします。  
   
-5.  をクリックして**オブジェクトの種類**を選択します**コンピューター**、順にクリックします**OK**します。  
+5.  **[オブジェクトの種類]** をクリックし、 **[コンピューター]** を選択して、[ **OK]** をクリックします。  
   
-6.  クリックして追加するには、クライアント名を入力**OK**します。  
+6.  追加するクライアント名を入力し、[ **OK]** をクリックします。  
   
-7.  をクリックして**OK**を閉じる、 **DirectAccessClients**プロパティ ダイアログ ボックスを閉じます**Active Directory ユーザーとコンピューター**します。  
+7.  **OK** をクリックして **directaccessclients**のプロパティ ダイアログボックスを閉じ、 **Active Directory ユーザーとコンピューター** を閉じます。  
   
-##### <a name="copy-and-then-apply-the-provisioning-package-to-the-client-computer"></a>コピーし、クライアント コンピューターにプロビジョニング パッケージを適用  
+##### <a name="copy-and-then-apply-the-provisioning-package-to-the-client-computer"></a>クライアントコンピューターにプロビジョニングパッケージをコピーして適用する  
   
-1.  保存した場所、c:\provision\provision.txt クライアント コンピューターに、リモート アクセス サーバーで c:\files\provision.txt からプロビジョニング パッケージをコピーします。  
+1.  クライアントコンピューターの c:\provision\provision.txt に、保存されたリモートアクセスサーバーの c:\files\provision.txt からプロビジョニングパッケージをコピーします。  
   
-2.  クライアント コンピューターでは、管理者特権でコマンド プロンプトを開くし、ドメインへの参加を要求する次のコマンドを入力します。  
+2.  クライアントコンピューターで、管理者特権でのコマンドプロンプトを開き、次のコマンドを入力して、ドメインへの参加を要求します。  
   
     ```  
     Djoin /requestodj /loadfile C:\provision\provision.txt /windowspath %windir% /localos  
     ```  
   
-3.  クライアント コンピューターを再起動します。 コンピューターはドメインに参加します。 再起動の後、クライアントはドメインに結合し、DirectAccess で企業ネットワークに接続されています。  
+3.  クライアントコンピューターを再起動します。 コンピューターがドメインに参加します。 再起動後、クライアントはドメインに参加し、DirectAccess を使用して企業ネットワークに接続されます。  
   
 ## <a name="see-also"></a>関連項目  
 [NetProvisionComputerAccount 関数](https://go.microsoft.com/fwlink/?LinkId=162426)  

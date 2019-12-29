@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getminretrydelay
-description: Windows コマンド」のトピック**bitsadmin getminretrydelay** -ファイルの転送を試行する前に一時的なエラーが発生したとき、サービスが待機する秒単位の時間の長さを取得します。
+description: '**Bitsadmin getminretrydelay**の Windows コマンドトピックでは、ファイルの転送を試行する前に、サービスが一時的なエラーを検出した後に待機する時間 (秒単位) を取得します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a6df9faab8340994ad9219a863ad8e50186ccd1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0a2bde6340034e48b97b4c86f48a3b2ef72560a5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832203"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381550"
 ---
 # <a name="bitsadmin-getminretrydelay"></a>bitsadmin getminretrydelay
 
 
 
-ファイルの転送を試行する前に一時的なエラーが発生したとき、サービスが待機する秒単位の時間の長さを取得します。
+ファイルの転送を試行する前に、サービスが一時的なエラーを検出した後に待機する時間 (秒単位) を取得します。
 
 ## <a name="syntax"></a>構文
 
@@ -40,11 +40,11 @@ bitsadmin /GetMinRetryDelay <Job>
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブの最小再試行間隔を取得する*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブの最小再試行間隔を取得します。
 ```
 C:\>bitsadmin /GetMinRetryDelay myDownloadJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

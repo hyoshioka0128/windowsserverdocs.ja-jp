@@ -1,7 +1,7 @@
 ---
 title: HYPER-V でサポートされている Oracle Linux 仮想マシン
 description: 各バージョンに含まれる Linux integration services と機能の一覧を示します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,12 +11,12 @@ ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 author: shirgall
 ms.author: kathydav
 ms.date: 06/01/2017
-ms.openlocfilehash: 3005907a085d1769716105f570f47f0114eae68d
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 4b09b8e760ce716da7f5aa6abecbead52293e77b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544705"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365493"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>HYPER-V でサポートされている Oracle Linux 仮想マシン
 
@@ -145,7 +145,7 @@ Oracle Linux Unbreakable Enterprise カーネル (UEK) 64 ビットのみ、LIS 
 
    1. ファイルを作成する **/etc/udev/rules.d/100-balloon.rules**します。 ファイルの他の目的の名前を使用することがあります。
 
-   2. 次の内容をファイルに追加します。`SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
+   2. 次の内容をファイルに追加します。 `SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
 
    3. ホット アド サポートを有効にするシステムを再起動します。
 

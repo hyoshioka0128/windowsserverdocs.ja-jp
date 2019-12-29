@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setnoprogresstimeout
-description: Windows コマンド」のトピック**bitsadmin setnoprogresstimeout** -一時的なエラーが発生した後に、ファイルを転送しようとするサービスを秒単位で時間の長さを設定します。
+description: '**Bitsadmin setnoprogresstimeout**の Windows コマンドに関するトピックでは、一時的なエラーが発生した後にサービスがファイルの転送を試行する時間の長さを秒単位で設定します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45dd8a7ddfae877984a98db66c742e0af4d18f0d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 761d0d76a2c70af9d4ad68aa564c1a9816691d0d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873773"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380500"
 ---
 # <a name="bitsadmin-setnoprogresstimeout"></a>bitsadmin setnoprogresstimeout
 
-最初の一時的なエラーが発生した後に、ファイルを転送しようとするビットを秒単位で時間の長さを設定します。
+最初の一時的なエラーが発生した後に、BITS がファイルの転送を試行する時間を秒単位で設定します。
 
 ## <a name="syntax"></a>構文
 
@@ -37,19 +37,19 @@ bitsadmin /SetNoProgressTimeout <Job> <TimeOutvalue>
 |Job|ジョブの表示名または GUID|
 |TimeOutvalue|秒単位で表された数値。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   なしの進行状況のタイムアウト間隔は、一時的なエラーを検出すると、ジョブを開始します。
--   タイムアウト間隔が停止またはバイトのデータが正常に転送されるときにリセットします。
--   進行状況のタイムアウト間隔がない場合、 *TimeOutvalue*ジョブが致命的なエラー状態で保存されます。
+-   ジョブで一時的なエラーが発生した場合、進行状況のタイムアウト間隔は開始されません。
+-   データのバイトが正常に転送されると、タイムアウト間隔が停止またはリセットされます。
+-   進行状況のタイムアウト間隔が*TimeOutvalue*を超えると、ジョブは致命的なエラー状態になります。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブのない進行状況のタイムアウト値が設定*myDownloadJob*を 20 秒
+次の例では、 *Mydownloadjob*という名前のジョブの 進行状況なしのタイムアウト値を20秒に設定します。
 ```
 C:\>bitsadmin /SetNoProgressTimeout myDownloadJob 20
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

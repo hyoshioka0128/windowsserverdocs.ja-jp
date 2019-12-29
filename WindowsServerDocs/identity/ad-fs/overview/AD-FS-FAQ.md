@@ -8,14 +8,14 @@ manager: mtillman
 ms.date: 04/17/2019
 ms.topic: article
 ms.custom: it-pro
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 46e8548e24f0d0991f69427741b0e04da6398334
-ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
+ms.openlocfilehash: 0a2bbeeb459fd364db728579dc20015a2474fd25
+ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70009095"
+ms.lasthandoff: 11/18/2019
+ms.locfileid: "74163093"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS に関してよく寄せられる質問 (FAQ)
 
@@ -71,6 +71,8 @@ AD FS は複数のフォレスト構成をサポートしており、基盤と�
 - パートナー id を含む DMZ フォレストなど一方向のフォレストの信頼がある場合は、corp フォレストに ADFS を展開し、LDAP 経由で接続された別のローカル要求プロバイダー信頼として DMZ フォレストを扱うことをお勧めします。 この場合、Windows 統合認証は、DMZ フォレストのユーザーに対しては機能しません。また、LDAP でサポートされている唯一のメカニズムであるため、パスワード認証を実行する必要があります。 このオプションを追求することができない場合は、DMZ フォレストで別の ADFS を設定し、corp フォレストの ADFS で要求プロバイダー信頼として追加する必要があります。 ユーザーはホーム領域検出を行う必要がありますが、Windows 統合認証とパスワード認証の両方が機能します。 Corp フォレストの ADFS が、DMZ フォレストからユーザーに関する追加のユーザー情報を取得できないようにするため、DMZ フォレストの ADFS で、発行規則に適切な変更を加えてください。
 - ドメインレベルの信頼はサポートされており、機能しますが、フォレストレベルの信頼モデルに移行することを強くお勧めします。 また、名前の UPN ルーティングおよび NETBIOS 名前解決を正確に機能させる必要があります。
 
+>[!NOTE]  
+>双方向の信頼構成で選択可能な認証を使用する場合、発信先のサービスアカウントに対する "認証を許可する" アクセス許可が呼び出し元ユーザーに付与されていることを確認します。 
 
 
 ## <a name="design"></a>設計
@@ -101,19 +103,19 @@ Apple は、AD FS に認証する iOS アプリからの呼び出しに影響す
 
 AD FS と WAP サーバーが ATP をサポートする TLS 暗号スイートのみをネゴシエートするように、 [atp 準拠の暗号スイートの一覧](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57)に含まれていないすべての暗号スイートを無効にすることができます。  これを行うには、 [WINDOWS TLS PowerShell コマンドレット](https://technet.microsoft.com/itpro/powershell/windows/tls/index)を使用します。
 
-## <a name="developer"></a>Developer
+## <a name="developer"></a>開発者
 
-### <a name="when-generating-an-id_token-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-id_token"></a>AD に対して認証されたユーザーの ADFS を使用して id_token を生成する場合、id_token で "sub" 要求がどのように生成されますか?
+### <a name="when-generating-an-id_token-with-adfs-for-a-user-authenticated-against-ad-how-is-the-sub-claim-generated-in-the-id_token"></a>AD に対して認証されたユーザーの ADFS を使用して id_token を生成する場合、id_token で "sub" 要求はどのように生成されますか?
 "Sub" 要求の値は、クライアント ID + アンカー要求の値のハッシュです。
 
 ### <a name="what-is-the-lifetime-of-the-refresh-tokenaccess-token-when-the-user-logs-in-via-a-remote-claims-provider-trust-over-ws-fedsaml-p"></a>ユーザーが WS フィード/SAML でリモート要求プロバイダー信頼を使用してログインした場合、更新トークン/アクセストークンの有効期間はどのくらいですか?
 更新トークンの有効期間は、ADFS がリモート要求プロバイダー信頼から受け取ったトークンの有効期間です。 アクセストークンの有効期間は、アクセストークンが発行されている証明書利用者のトークンの有効期間になります。
 
 ### <a name="i-need-to-return-profile-and-email-scopes-as-well-in-addition-to-the-openid-scope-can-i-obtain-additional-information-using-scopes-how-to-do-it-in-ad-fs"></a>OpenId スコープに加えて、プロファイルと電子メールのスコープも返す必要があります。 スコープを使用して追加情報を取得できますか。 AD FS で実行する方法
-カスタマイズした id_token を使用して、id_token 自体に関連情報を追加できます。 詳細については、「 [id_token で出力される要求をカスタマイズする](../development/Custom-Id-Tokens-in-AD-FS.md)」を参照してください。
+カスタマイズされた id_token を使用して、id_token 自体に関連情報を追加できます。 詳細については、「 [id_token で出力される要求をカスタマイズする](../development/Custom-Id-Tokens-in-AD-FS.md)」を参照してください。
 
 ### <a name="how-to-issue-json-blobs-inside-jwt-tokens"></a>JWT トークン内で json blob を発行する方法
-このに対する特殊な<http://www.w3.org/2001/XMLSchema#json>ValueType ("") とエスケープ文字 (\x22) が AD FS 2016 で追加されました。 発行規則と、アクセストークンからの最終的な出力については、次のサンプルを参照してください。
+このに対する特殊な ValueType ("<http://www.w3.org/2001/XMLSchema#json>") とエスケープ文字 (\x22) が AD FS 2016 で追加されました。 発行規則と、アクセストークンからの最終的な出力については、次のサンプルを参照してください。
 
 発行規則の例:
 
@@ -131,16 +133,16 @@ AD FS と WAP サーバーが ATP をサポートする TLS 暗号スイート�
 サーバー2019の AD FS では、OAuth 認証コード付与フロー用のコード交換 (PKCE) の証明キーがサポートされています
 
 ### <a name="what-permitted-scopes-are-supported-by-ad-fs"></a>AD FS では、許可されるスコープは何ですか。
-- aza-[ブローカークライアントに OAuth 2.0 プロトコル拡張](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)を使用していて、スコープパラメーターにスコープ "aza" が含まれている場合、サーバーは新しいプライマリ更新トークンを発行し、それを応答の refresh_token フィールドに設定し、refresh_token_ を設定します。expires_in フィールドが適用されている場合は、新しいプライマリ更新トークンの有効期間を設定します。
+- aza-[ブローカークライアントに OAuth 2.0 プロトコル拡張](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)を使用していて、スコープパラメーターにスコープ "aza" が含まれている場合、サーバーは新しいプライマリ更新トークンを発行し、応答の refresh_token フィールドにそれを設定します。また、新しいプライマリ更新トークンが適用されている場合は、その有効期間に refresh_token_expires_in フィールドを設定します。
 - openid-アプリケーションが OpenID Connect 承認プロトコルの使用を要求できるようにします。
-- logon_cert-logon_cert スコープを使用すると、アプリケーションはログオン証明書を要求することができます。これは、認証されたユーザーを対話的にログオンするために使用できます。 AD FS サーバーは、応答から access_token パラメーターを除外し、代わりに base64 でエンコードされた CMS 証明書チェーンまたは CMC 完全 PKI 応答を提供します。 詳細について[は、こちら](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)を参照してください。 
-- user_impersonation-user_impersonation スコープは、AD FS からの代理アクセストークンを正常に要求するために必要です。 このスコープを使用する方法の詳細については[、AD FS 2016 で OAuth を使用して、(OBO) を使用して多層アプリケーションを構築](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md)する方法に関する説明を参照してください。
-- vpn_cert-vpn_cert スコープは、アプリケーションが VPN 証明書を要求できるようにします。この証明書は、eap-tls 認証を使用して VPN 接続を確立するために使用できます。 これはサポートされなくなりました。
+- logon_cert-logon_cert スコープを使用すると、アプリケーションはログオン証明書を要求できます。この証明書は、認証されたユーザーを対話的にログオンするために使用できます。 AD FS サーバーは、応答から access_token パラメーターを省略し、代わりに base64 でエンコードされた CMS 証明書チェーンまたは CMC 完全 PKI 応答を提供します。 詳細について[は、こちら](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e)を参照してください。 
+- user_impersonation-AD FS から代理アクセストークンを正常に要求するには、user_impersonation スコープが必要です。 このスコープを使用する方法の詳細については[、AD FS 2016 で OAuth を使用して、(OBO) を使用して多層アプリケーションを構築](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md)する方法に関する説明を参照してください。
+- vpn_cert-vpn_cert スコープでは、アプリケーションが VPN 証明書を要求することができます。 VPN 証明書は、eap-tls 認証を使用して VPN 接続を確立するために使用できます。 これはサポートされなくなりました。
 - 電子メール-アプリケーションは、サインインしたユーザーの電子メール要求を要求できます。 これはサポートされなくなりました。 
 - プロファイル-アプリケーションがサインインユーザーのプロファイル関連の要求を要求できるようにします。 これはサポートされなくなりました。 
 
 
-## <a name="operations"></a>操作
+## <a name="operations"></a>運用
 
 ### <a name="how-do-i-replace-the-ssl-certificate-for-ad-fs"></a>AD FS の SSL 証明書操作方法置き換えますか?
 AD FS SSL 証明書が、AD FS 管理スナップインで見つかった AD FS サービス通信証明書と同じではありません。  AD FS SSL 証明書を変更するには、PowerShell を使用する必要があります。 次の記事のガイダンスに従ってください。
@@ -185,22 +187,22 @@ Adfs を使用したデバイスに基づくアクセス制御ポリシーがな
 
 **登録済みデバイス**
 
-- PRT と SSO cookie:PSSOLifeTimeMins によって管理される最大90日。 (指定されたデバイスは、少なくとも14日ごとに使用されます。これは Deviceon ウィンドウによって制御されます)
+- PRT および SSO cookie: PSSOLifeTimeMins によって管理される最大90日。 (指定されたデバイスは、少なくとも14日ごとに使用されます。これは Deviceon ウィンドウによって制御されます)
 
 - 更新トークン: 一貫性のある動作を提供するために、上記の基準に基づいて計算されます。
 
-- access_token:既定では、証明書利用者に基づいて1時間
+- access_token: 証明書利用者に基づいて既定で1時間
 
 - id_token: アクセストークンと同じ
 
 **登録されていないデバイス**
 
-- SSO cookie:既定では、SSOLifetimeMins によって管理される8時間です。  [サインインしたままにする (KMSI)] が有効になっている場合、既定値は24時間で、KMSILifetimeMins を使用して構成できます。
+- SSO cookie: 既定では8時間で、SSOLifetimeMins によって管理されます。  [サインインしたままにする (KMSI)] が有効になっている場合、既定値は24時間で、KMSILifetimeMins を使用して構成できます。
 
 
-- 更新トークン:既定では8時間。 KMSI が有効になっている24時間
+- 更新トークン: 既定では8時間。 KMSI が有効になっている24時間
 
-- access_token:既定では、証明書利用者に基づいて1時間
+- access_token: 証明書利用者に基づいて既定で1時間
 
 - id_token: アクセストークンと同じ
 
@@ -216,9 +218,9 @@ Web 認証トラフィックのすべての AD FS エンドポイントは、HTT
 
 ### <a name="x-ms-forwarded-client-ip-does-not-contain-the-ip-of-the-client-but-contains-ip-of-the-firewall-in-front-of-the-proxy-where-can-i-get-the-right-ip-of-the-client"></a>-Ms-chap-クライアント ip にはクライアントの IP は含まれませんが、プロキシの前にファイアウォールの IP が格納されます。 クライアントの適切な IP はどこで入手できますか。
 WAP の前に SSL を終了することはお勧めしません。 WAP の前に SSL ターミネーションが行われた場合は、WAP の前にネットワークデバイスの IP アドレスが含まれます (例:)。 AD FS によってサポートされる IP 関連のさまざまな要求の簡単な説明を次に示します。
- - クライアント ip アドレス:STS に接続されているデバイスのネットワーク IP。  エクストラネット要求の場合、これには常に WAP の IP が含まれます。
- - -ms-chap-クライアント-ip:複数値の要求。これには、Exchange Online によって ADFS に転送されるすべての値と、WAP に接続されているデバイスの IP アドレスが含まれます。
- - Userip:エクストラネット要求の場合、この要求には、---転送されたクライアント ip の値が含まれます。  イントラネット要求の場合、この要求には、x.y と同じ値が含まれます。
+ - -ms-chap-クライアント ip: STS に接続されているデバイスのネットワーク IP。  エクストラネット要求の場合、これには常に WAP の IP が含まれます。
+ - -ms-chap-転送済み-クライアント ip: 複数値の要求です。これには、Exchange Online によって ADFS に転送されるすべての値と、WAP に接続されているデバイスの IP アドレスが含まれます。
+ - Userip: エクストラネット要求の場合、この要求には、-ms-chap-クライアント ip アドレスの値が含まれます。  イントラネット要求の場合、この要求には、x.y と同じ値が含まれます。
 
  さらに、AD FS 2016 (最新の更新プログラムが適用されています) では、より高いバージョンでは、x の転送ヘッダーのキャプチャもサポートしています。 レイヤー 3 (IP が保持されている) で転送されないすべてのロードバランサーまたはネットワークデバイスは、受信クライアント IP を業界標準の x 転送ヘッダーに追加する必要があります。 
 
@@ -236,7 +238,7 @@ AD FS userinfo エンドポイントは、OpenID 標準で指定されている�
 4.  **クリック**進め. **クリック**アドイン. **クリック**プリンシパルを選択します。
 5.  [ユーザー、コンピューター、サービスアカウントまたはグループの選択] ダイアログボックスが表示されます。  [選択するオブジェクト名を入力してください] テキストボックスに、「キー管理者グループ」と入力します。  [OK] をクリックします。
 6.  適用先 ボックスの一覧で、**子孫ユーザーオブジェクト** を選択します。
-7.  スクロール バーを使用して、ページの下部までスクロールし、 **をクリックして** すべてクリアします。
+7.  スクロールバーを使用して、ページの一番下までスクロールし、[すべてクリア **] をクリック**します。
 8.  **[プロパティ]** セクションで、 **[キーの取得]** を選択して、"キーの入力" リンクを**書き込み**ます。
 
 ### <a name="why-does-modern-authentication-from-android-devices-fail-if-the-server-does-not-send-all-the-intermediate-certificates-in-the-chain-with-the-ssl-cert"></a>サーバーが SSL 証明書を使用してチェーン内のすべての中間証明書を送信しない場合、Android デバイスからの先進認証が失敗するのはなぜですか。
@@ -274,11 +276,11 @@ WAP サーバーでは、WebApplicationProxySslCertificate を引き続き使用
 2. #1 で選択したサーバーで、MMC を使用して新しい証明書をインポートします。
 3. 既存の証明書を削除する
 
-    a. netsh http delete sslcert hostnameport = fs. contoso .com: 443 b. netsh http delete sslcert hostnameport = localhost: 443 c。 netsh http delete sslcert hostnameport = fs. contoso .com: 49443
+    」を参照します。 netsh http delete sslcert hostnameport = fs. contoso .com: 443 b. netsh http delete sslcert hostnameport = localhost: 443 c。 netsh http delete sslcert hostnameport = fs. contoso .com: 49443
 
 4.  新しい証明書を追加する
 
-    a. netsh http add sslcert hostnameport = fs. contoso .com: 443 certhash = CERTTHUMBPRINT appid = {5d89a20cx beab4-388-71-324788 ebcertstorename 4a} = MY sslctlstorename = AdfsTrustedDevices
+    」を参照します。 netsh http add sslcert hostnameport = fs. contoso .com: 443 certhash = CERTTHUMBPRINT appid = {5d89a20cx beab4-388-71-324788 ebcertstorename 4a} = MY sslctlstorename = AdfsTrustedDevices
 
     b. netsh http add sslcert hostnameport = localhost: 443 certhash = CERTTHUMBPRINT appid = {5d89a20cx beab47 38388 8-324788 eb71 4a} certstorename = MY sslctlstorename = AdfsTrustedDevices
 
@@ -289,7 +291,7 @@ WAP サーバーでは、WebApplicationProxySslCertificate を引き続き使用
 7. 選択した WAP サーバーで、MMC を使用して新しい証明書をインポートします。
 8. コマンドレットを使用して、WAP に新しい証明書を設定する
 
-    a. WebApplicationProxySslCertificate-Thumbprint "CERTTHUMBPRINT"
+    」を参照します。 WebApplicationProxySslCertificate-Thumbprint "CERTTHUMBPRINT"
 
 9. 選択した WAP サーバーでサービスを再起動します
 10. 選択した WAP と AD FS サーバーを運用環境に戻します。
@@ -299,7 +301,7 @@ WAP サーバーでは、WebApplicationProxySslCertificate を引き続き使用
 ### <a name="is-adfs-supported-when-web-application-proxy-wap-servers-are-behind-azure-web-application-firewallwaf"></a>Web アプリケーションプロキシ (WAP) サーバーが Azure Web アプリケーションファイアウォール (WAF) の内側にある場合、ADFS はサポートされますか?
 ADFS と Web アプリケーションサーバーは、エンドポイントで SSL 終了を実行しないすべてのファイアウォールをサポートします。 さらに、ADFS/WAP サーバーには、クロスサイトスクリプティング、ADFS プロキシ、 [MS ADFSPIP プロトコル](https://msdn.microsoft.com/library/dn392811.aspx)で定義されているすべての要件を満たす一般的な web 攻撃を防ぐためのメカニズムが組み込まれています。
 
-### <a name="i-am-seeing-an-event-441-a-token-with-a-bad-token-binding-key-was-found-what-should-i-do-to-resolve-this"></a>"イベント 441:トークンのバインドキーが正しくないトークンが見つかりました。 " これを解決するにはどうすればよいですか。
+### <a name="i-am-seeing-an-event-441-a-token-with-a-bad-token-binding-key-was-found-what-should-i-do-to-resolve-this"></a>"イベント 441: トークンのバインドキーが正しくないトークンが見つかりました。" が表示されます。 これを解決するにはどうすればよいですか。
 AD FS 2016 では、トークンのバインドが自動的に有効になり、プロキシとフェデレーションのシナリオで複数の既知の問題が発生し、このエラーが発生します。 これを解決するには、次の Powershell コマンドを実行し、トークンのバインディングサポートを削除します。
 
 `Set-AdfsProperties -IgnoreTokenBinding $true`

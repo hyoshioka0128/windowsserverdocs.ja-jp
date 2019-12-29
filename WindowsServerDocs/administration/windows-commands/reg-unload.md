@@ -1,8 +1,8 @@
 ---
-title: Reg アンロード
-description: 'Windows コマンド」のトピック * * *- '
+title: reg unload
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aaa7d7a9fa82db2968d988e3b7b3fb8275a72337
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 32df397b597291269dcfb1449d00e86b2f4f5836
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834983"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384623"
 ---
-# <a name="reg-unload"></a>Reg アンロード
+# <a name="reg-unload"></a>reg unload
 
 
 
@@ -38,14 +38,14 @@ reg unload <KeyName>
 
 |パラメーター|説明|
 |---------|-----------|
-|\<キー名 >|アンロードするサブキーの完全なパスを指定します。 リモート コンピューターに指定する場合、コンピューター名を含める (形式の\\ \\ComputerName\)の一部として、 *KeyName*します。 省略すると\\ \\ComputerName\ によりローカル コンピューターに既定値に操作します。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キーは、HKLM、HKCU、HKCR、HKU、および HKCC です。 リモート コンピューターが指定されている場合は、有効なルート キーは HKLM および HKU です。|
+|\<KeyName >|アンロードするサブキーの完全なパスを指定します。 リモートコンピューターを指定する場合は、コンピューター名 (\\\\ComputerName\) を*KeyName*の一部として指定します。 \\\\ComputerName \ を省略すると、操作は既定でローカルコンピューターに設定されます。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キーは、HKLM、HKCU、HKCR、HKU、および HKCC です。 リモート コンピューターが指定されている場合は、有効なルート キーは HKLM および HKU です。|
 |/?|ヘルプを表示 **reg アンロード** コマンド プロンプト。|
 
 ## <a name="remarks"></a>注釈
 
 次の表に、戻り値の **reg アンロード** オプション。
 
-|値|説明|
+|Value|説明|
 |-----|-----------|
 |0|成功|
 |1|失敗|
@@ -58,8 +58,8 @@ REG UNLOAD HKLM\TempHive
 ```
 
 > [!CAUTION]
-> 代替手段があるない場合は、直接、レジストリを編集しないでください。 レジストリ エディターは、標準の保護をバイパスする、設定にパフォーマンスが低下することができます、システムの破損やでも Windows を再インストールする必要があります。 ほとんどのレジストリ設定は、コントロール パネルまたは Microsoft 管理コンソール (MMC) では、プログラムを使用して安全に変更できます。 レジストリを直接編集する必要がある場合は、最初にバックアップします。
+> 代替手段があるない場合は、直接、レジストリを編集しないでください。 レジストリエディターでは、標準のセーフガードがバイパスされるため、パフォーマンスを低下させたり、システムに損害を与えたり、Windows の再インストールが必要になることもあります。 ほとんどのレジストリ設定は、コントロールパネルまたは Microsoft 管理コンソール (MMC) のプログラムを使用して、安全に変更できます。 レジストリを直接編集する必要がある場合は、最初にバックアップします。
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

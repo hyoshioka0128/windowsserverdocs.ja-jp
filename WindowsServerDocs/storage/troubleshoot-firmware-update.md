@@ -1,30 +1,30 @@
 ---
 ms.assetid: 13210461-1e92-48a1-91a2-c251957ba256
 title: ドライブのファームウェア更新のトラブルシューティング
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: toklima
 ms.manager: masriniv
 ms.technology: storage
 ms.topic: article
 author: toklima
 ms.date: 04/18/2017
-ms.openlocfilehash: 7ee5c57839f32d71053e983fc14f76c481236779
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9c9c1083def53e09b063a0ca9879e4d4527e98c0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884163"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365886"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>ドライブのファームウェア更新のトラブルシューティング
 
->適用対象:Windows 10、Windows Server (半期チャネル)
+>適用対象:Windows 10、Windows Server (半期チャネル)、
 
 Windows 10 バージョン 1703 以降と Windows Server (半期チャネル) には、ファームウェア更新可能 AQ (追加修飾子) によって認定済みの HDD と SSD のファームウエアを PowerShell を介して更新する機能が含まれています。
 
 この機能について詳しくは、以下をご覧ください。
 
-- [Windows Server 2016 でドライブのファームウェアを更新しています](update-firmware.md)
-- [ダウンタイムなしで記憶域スペースのドライブのファームウェアを直接更新します。](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
+- [Windows Server 2016 でのドライブのファームウェアの更新](update-firmware.md)
+- [記憶域スペースダイレクトにダウンタイムを発生させずにドライブのファームウェアを更新する](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
 
 ファームウェア更新では、さまざまな理由によって障害が発生します。 この記事では、高度なトラブルシューティングに役立つ情報を提供します。
 
@@ -64,7 +64,7 @@ FirmwareVersionInSlot : {0013}
 
 SAS デバイスが、必要なコマンド セットをサポートしているかどうかを確認するには、以下の 2 つの方法があります。
 1.  適切なファームウェア イメージを使って Update-StorageFirmware コマンドレットを実行してみる
-2.  SAS デバイスは、FW 更新 AQ (を獲得しましたが正常に識別するために Windows Server カタログを参照してください。 https://www.windowsservercatalog.com/)
+2.  Windows Server カタログを参照して、FW 更新プログラム AQ が正常に取得された SAS デバイスを特定します (https://www.windowsservercatalog.com/)
 
 ### <a name="remediation-options"></a>考えられる解決方法
 テスト対象のデバイスが適切なコマンド セットをサポートしていない場合、必要なコマンド セットを備えた新しいファームウェアの提供についてベンダーに問い合わせるか、「Windows Server Catalogue」を参照して、適切なコマンド セットを実装する調達可能なデバイスを探します。
@@ -119,7 +119,7 @@ CdbBytes    3B0E0000000001000000
 NumberOfRetriesDone 0
 ```
 
-このチャネルからの ETW イベント 507 は、SCSI SRB 要求が失敗したことを示すとともに、SenseKey が "5" (無効な要求) であり、AdditionalSense 情報が "36" (CDB の無効なフィールド) であったという追加情報を提供しています。
+チャネルからの ETW イベント507は、SCSI SRB 要求が失敗したことを示し、SenseKey が "5" (無効な要求) であること、および AdditionalSense 情報が ' 36 ' (CDB の無効なフィールド) であることを示しています。
 
    > [!Note]
    > この情報は対象のミニポートから直接提供されるため、この情報の精度はミニポート ドライバーの実装と性能に依存します。
@@ -134,7 +134,7 @@ NumberOfRetriesDone 0
 ## <a name="additional-troubleshooting-with-microsoft-drivers-satanvme"></a>マイクロソフト製ドライバー (SATA/NVMe) の高度なトラブルシューティング
 StorAHCI.sys や StorNVMe.sys などの Windows ネイティブ ドライバーがストレージ デバイスで使われている場合、ファームウェアの更新作業中に発生したエラーについて詳細情報を取得できる可能性があります。
 
-StorAHCI と StorNVMe は、ClassPnP Operational チャネルの情報に加え、次の ETW チャネルのログにデバイスのプロトコル固有のリターン コードを記録します。
+ClassPnP 運用チャネルを超えると、StorAHCI と Storahci によって、次の ETW チャネルでデバイスのプロトコル固有のリターンコードがログに記録されます。
 
 イベント ビューアー - [アプリケーションとサービス ログ] - [Microsoft] - [Windows] - [StorDiag] - **[Microsoft-Windows-Storage-StorPort/Diagnose]**
 
@@ -142,7 +142,7 @@ StorAHCI と StorNVMe は、ClassPnP Operational チャネルの情報に加え�
 
 このような詳細なログ エントリを収集するには、ログを有効にしたうえでファームウェア更新時の障害を再現し、診断ログを保存します。
 
-イメージをダウンロードするが無効なため、SATA デバイス失敗した場合、上のファームウェア更新の例を示します (イベント ID:258):
+次に、SATA デバイスでのファームウェア更新の失敗の例を示します。ダウンロードするイメージが無効であるためです (イベント ID:258):
 
 ``` 
 EventData
@@ -174,11 +174,11 @@ Parameter8Value 0
 ```
 
 上記のイベントでは、パラメーター値 2 ～ 6 にデバイスの詳細情報が含まれています。 ここで、これらの ATA レジスタ値を検討してみましょう。 Download Microcode コマンドの失敗に関する以下の値は、ATA ACS 仕様を参照して解釈できます。
-- コードが返されます。0 (0000 0000) (なし - ペイロードが転送されていないので意味のない)
-- 機能:15 (0000 1111) (ビット 1 は、'1' に設定されているし、「中止」を示します)
-- SectorCount:0 (0000 0000) (なし)
-- DriveHead:160 (1010 0000) (該当なし-のみ不使用ビットが設定)
-- コマンド:146 (1001 0010) ('1' センス データの可用性を示すビット 1 が設定されます)
+- リターンコード:0 (0000 0000) (ペイロードが転送されなかったため、N/A-意味なし)
+- 機能:15 (0000 1111) (ビット1は ' 1 ' に設定され、"abort" を示します)
+- SectorCount:0 (0000 0000) (N/A)
+- ドライブの先頭:160 (1010 0000) (N/A –古いビットのみが設定されています)
+- メニュー146 (1001 0010) (sense データの可用性を示すビット1は ' 1 ' に設定されています)
 
 この情報から、ファームウェア更新操作はデバイスによって中止されたことがわかります。
 

@@ -1,36 +1,36 @@
 ---
 title: ネットワーク インターフェイスの順序を構成する
-description: このトピックでは、Windows Server 2016 は、ネットワーク サブシステムのパフォーマンス チューニング ガイドの一部です。
-ms.prod: windows-server-threshold
+description: このトピックは、Windows Server 2016 のネットワークサブシステムのパフォーマンスチューニングガイドに含まれています。
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 3266328c-ca82-40d2-90ca-854b7088ccaa
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 18bc9a268b4e69e4b87b6b1e310f1162473adb10
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4368d0709a22e9c122245c6a0131c5c9bee894a3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821773"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405536"
 ---
 # <a name="configure-the-order-of-network-interfaces"></a>ネットワーク インターフェイスの順序を構成する
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-Windows Server 2016 および Windows 10 では、ネットワーク インターフェイスの順序を構成するのにインターフェイス メトリックを使用できます。
+Windows Server 2016 と Windows 10 では、インターフェイスメトリックを使用してネットワークインターフェイスの順序を構成できます。
 
-これは以前のバージョンの Windows と Windows Server は、ユーザー インターフェイスまたはコマンドを使用してネットワーク アダプターのバインドの順序を構成することを許可されている異なる**INetCfgComponentBindings::MoveBefore**と**INetCfgComponentBindings::MoveAfter**します。 ネットワーク インターフェイスを順序付けの 2 つのメソッドでは、Windows Server 2016 および Windows 10 で使用できません。
+これは、以前のバージョンの Windows および Windows Server とは異なります。これにより、ユーザーインターフェイスまたはコマンド ( **Inetcfgcomponentbindings:: MoveBefore** **) を使用して、ネットワークアダプターのバインド順序を構成できます。INetCfgComponentBindings:: MoveAfter**。 ネットワークインターフェイスの順序付けの2つの方法は、Windows Server 2016 と Windows 10 では使用できません。
 
-代わりに、各アダプターのインターフェイス メトリックを構成することでネットワーク アダプターの列挙の順序を設定するため、新しいメソッドを使用することができます。 使用して、インターフェイス メトリックを構成することができます、[セット NetIPInterface](https://docs.microsoft.com/powershell/module/nettcpip/set-netipinterface) Windows PowerShell コマンド。
+代わりに、新しい方法を使用して、各アダプターのインターフェイスメトリックを構成することによって、ネットワークアダプターの列挙順序を設定できます。 インターフェイスメトリックを構成するには、Windows PowerShell コマンドの[Set ne?](https://docs.microsoft.com/powershell/module/nettcpip/set-netipinterface)を使用します。
 
-ネットワーク トラフィック ルートを選択し、構成した場合、**インターフェイス メトリック**のパラメーター、**セット NetIPInterface**コマンドをインターフェイスを決定するために使用する全体的なメトリック基本設定は、ルートのメトリックと、インターフェイス メトリックの合計です。 通常、インターフェイス メトリックは、どちらもワイヤード (有線) ワイヤレスが利用可能な場合にワイヤード (有線) を使用してなどの特定のインターフェイスの基本設定を示します。
+ネットワークトラフィックルートを選択し、 **InterfaceMetric** **インターフェイス**コマンドのパラメーターを構成した場合、インターフェイス設定を決定するために使用される全体的なメトリックは、ルートメトリックの合計とインターフェイスメトリック。 通常、インターフェイスメトリックは、ワイヤードとワイヤレスの両方が使用可能な場合に、ワイヤードを使用するなど、特定のインターフェイスを優先します。
 
-次の Windows PowerShell コマンドの例では、このパラメーターの使用を示します。
+次の Windows PowerShell コマンドの例は、このパラメーターの使用方法を示しています。
 
     Set-NetIPInterface -InterfaceIndex 12 -InterfaceMetric 15
 
-アダプターが一覧に表示される順序については、IPv4 または IPv6 インターフェイス メトリックによって決まります。  詳細については、次を参照してください。 [GetAdaptersAddresses 関数](https://msdn.microsoft.com/library/windows/desktop/aa365915%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)します。
+アダプターが一覧に表示される順序は、IPv4 または IPv6 のインターフェイスメトリックによって決まります。  詳細については、「 [Getadaptersaddresses 関数](https://msdn.microsoft.com/library/windows/desktop/aa365915%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396)」を参照してください。
 
-このガイドのすべてのトピックへのリンクを参照してください。[ネットワーク サブシステムのパフォーマンス チューニング](net-sub-performance-top.md)します。
+このガイドのすべてのトピックへのリンクについては、「[ネットワークサブシステムのパフォーマンスチューニング](net-sub-performance-top.md)」を参照してください。

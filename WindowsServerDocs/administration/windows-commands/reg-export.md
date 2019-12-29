@@ -1,8 +1,8 @@
 ---
-title: Reg のエクスポート
-description: 'Windows コマンド」のトピック * * *- '
+title: reg export
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d7aeddb4b069b1baf5b8f7aaea2730a2b25bdad7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7fb3a779ffe5a4e7d513ca9a3afed8ee90901688
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889653"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384751"
 ---
-# <a name="reg-export"></a>Reg のエクスポート
+# <a name="reg-export"></a>reg export
 
 
 
@@ -38,14 +38,14 @@ Reg export KeyName FileName [/y]
 
 |パラメーター|説明|
 |---------|-----------|
-|\<キー名 >|サブキーの完全なパスを指定します。 エクスポート操作は、ローカル コンピューターでのみ機能します。 られているキー名では、有効なルート キーを含める必要があります。 有効なルート キーは次のとおりです。HKLM、HKCU、HKCR、HKU、および hkcc します。|
-|\<FileName>|操作中に作成されるファイルのパスと名前を指定します。 拡張子が .reg のファイルが必要です。|
+|\<KeyName >|サブキーの完全なパスを指定します。 エクスポート操作は、ローカル コンピューターでのみ機能します。 られているキー名では、有効なルート キーを含める必要があります。 有効なルートキーは次のとおりです。HKLM、HKCU、HKCR、HKU、および HKCC。|
+|\<ファイル名 >|操作中に作成されるファイルのパスと名前を指定します。 拡張子が .reg のファイルが必要です。|
 |/y|名前の既存のファイルを上書き *FileName* 確認を求めずにします。|
-|/?|ヘルプを表示 **reg エクスポート** コマンド プロンプト。|
+|/?|ヘルプを表示 **reg export** コマンド プロンプト。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-次の表に、戻り値の **reg エクスポート** 操作します。
+次の表に、戻り値の **reg export** 操作します。
 
 |値|説明|
 |-----|-----------|
@@ -61,4 +61,4 @@ reg export HKLM\Software\MyCo\MyApp AppBkUp.reg
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

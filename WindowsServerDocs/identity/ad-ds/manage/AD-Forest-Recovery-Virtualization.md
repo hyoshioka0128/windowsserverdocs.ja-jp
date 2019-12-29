@@ -1,47 +1,47 @@
 ---
-title: AD フォレスト回復の仮想化
+title: AD フォレストの回復の仮想化
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: c49b40b2-598d-49aa-85b4-766bce960e0d
 ms.technology: identity-adds
-ms.openlocfilehash: 23317f55fdce18e78ac3e7e1490f6fc4937fd062
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c055445c2d3aecd8c6d92e94799f556962c977bf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858453"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390128"
 ---
 # <a name="active-directory-forest-recovery-virtualization"></a>Active Directory フォレスト回復の仮想化
 
->適用先:Windows Server 2016、Windows Server 2012 および 2012 R2、Windows Server 2008 および 2008 R2
+>適用先:Windows Server 2016、Windows Server 2012、および 2012 R2、Windows Server 2008 および 2008 R2
 
-このトピックでは、Windows Server 2016、2012 R2、および 2012 で仮想化ドメイン コント ローラーの複製機能について説明します。  
+このトピックでは、Windows Server 2016、2012 R2、および2012の仮想化ドメインコントローラーの複製機能について説明します。  
 
-## <a name="using-virtualized-domain-controller-cloning-to-expedite-forest-recovery"></a>仮想化ドメイン コント ローラーの複製を使用して、フォレストの回復を高速化するには
+## <a name="using-virtualized-domain-controller-cloning-to-expedite-forest-recovery"></a>仮想化ドメインコントローラーの複製を使用してフォレストの回復を迅速に行う
 
-仮想化ドメイン コント ローラー (DC) の複製を簡略化し、ハイパーバイザー上いくつかの Dc を実行しているデータ センターなどの一元的な場所で特に、ドメインの追加の仮想化 Dc をインストールするプロセスを迅速化します。 ドメインごとに 1 つの仮想 DC をバックアップから復元した後各ドメイン内の他の Dc は迅速にオンラインにする、仮想化 DC の複製プロセスを使用しています。 準備するには、最初の仮想化 DC の回復、シャット ダウンし、コピーをその仮想ハード ディスクのために必要な回数だけが複製された作成は、ドメインを構築するための Dc を仮想化します。  
+仮想化ドメインコントローラー (DC) の複製では、特に、複数の Dc がハイパーバイザー上で実行されているデータセンターなどの集中管理された場所で、追加の仮想化された Dc をドメインにインストールするプロセスを簡素化および迅速化します。 バックアップから各ドメインで1つの仮想 DC を復元すると、仮想化された DC 複製プロセスを使用して、各ドメインの追加の Dc を迅速にオンラインにすることができます。 回復する最初の仮想化 DC を準備してシャットダウンし、複製された仮想化 Dc を作成してドメインを構築するために必要な回数だけその仮想ハードディスクをコピーすることができます。  
   
-仮想化 DC の複製するための要件は次のとおりです。  
+仮想化 DC の複製の要件は次のとおりです。  
   
-- ハイパーバイザーが Vm-generationid をサポートする必要があります。 HYPER-V は Windows Server 2016、2012、Windows 8 は、Vm-generationid をサポートするハイパーバイザーの例とします。 Vm-generationid がサポートされている場合、ハイパーバイザー ベンダーに確認します。  
-- 複製のソースとして使用される仮想化 DC は、Windows Server 2016 または 2012 を実行し、Cloneable Domain Controllers グループのメンバーである必要があります。 
-- PDC エミュレーターは、Windows Server 2016 または 2012 を実行する必要があります。 仮想化されている場合は、PDC エミュレーターを複製することができます。  
+- ハイパーバイザーは Vm-generationid をサポートする必要があります。 Windows Server 2016、2012、および Windows 8 の hyper-v は、Vm-generationid をサポートするハイパーバイザーの一例です。 Vm-generationid がサポートされている場合は、ハイパーバイザーベンダーに確認してください。  
+- 複製のソースとして使用される仮想化 DC は、Windows Server 2016 または2012を実行し、複製可能なドメインコントローラーグループのメンバーである必要があります。 
+- PDC エミュレーターは、Windows Server 2016 または2012を実行している必要があります。 PDC エミュレーターが仮想化されている場合は、複製できます。  
   
-詳細な手順を実行する方法については、DC の複製を仮想化を参照してください[Active Directory Domain Services (AD DS) Virtualization (Level 100) の概要](../Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)します。 方法の詳細については、DC の複製機能を仮想化を参照してください[仮想化ドメイン コント ローラーのテクニカル リファレンス (レベル 300)](../deploy/virtual-dc/virtualized-domain-controller-technical-reference--level-300-.md)します。 
+仮想化 DC の複製を実行する詳細な手順については、「 [Active Directory Domain Services (AD DS) の仮想化 (レベル 100) の概要」を](../Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md)参照してください。 仮想化 DC の複製のしくみの詳細については、「[仮想化ドメインコントローラーのテクニカルリファレンス (レベル 300)](../deploy/virtual-dc/virtualized-domain-controller-technical-reference--level-300-.md)」を参照してください。 
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 - [AD フォレストの回復 - 前提条件](AD-Forest-Recovery-Prerequisties.md)  
-- [AD フォレストの回復 - カスタム フォレスト回復の計画を立てる](AD-Forest-Recovery-Devising-a-Plan.md)  
-- [AD フォレストの回復の問題の特定](AD-Forest-Recovery-Identify-the-Problem.md)
-- [AD フォレストの回復に回復する方法を決定](AD-Forest-Recovery-Determine-how-to-Recover.md)
-- [AD フォレストの回復 - 最初の回復を実行します。](AD-Forest-Recovery-Perform-initial-recovery.md)  
-- [AD フォレストの回復の手順](AD-Forest-Recovery-Procedures.md)  
-- [AD フォレストの回復 - よく寄せられる質問](AD-Forest-Recovery-FAQ.md)  
-- [AD フォレストの回復 - Multidomain フォレスト内の 1 つのドメインを回復します。](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
-- [AD フォレストの回復 - Windows Server 2003 ドメイン コント ローラーとフォレストの回復](AD-Forest-Recovery-Windows-Server-2003.md) 
+- [AD フォレストの回復-カスタムフォレストの復旧計画の作成](AD-Forest-Recovery-Devising-a-Plan.md)  
+- [AD フォレストの回復-問題の特定](AD-Forest-Recovery-Identify-the-Problem.md)
+- [AD フォレストの回復-回復方法を決定する](AD-Forest-Recovery-Determine-how-to-Recover.md)
+- [AD フォレストの回復-最初の回復を実行する](AD-Forest-Recovery-Perform-initial-recovery.md)  
+- [AD フォレストの回復 - 手順](AD-Forest-Recovery-Procedures.md)  
+- [AD フォレストの回復-よく寄せられる質問](AD-Forest-Recovery-FAQ.md)  
+- [AD フォレストの回復-マルチドメインフォレスト内の単一ドメインの回復](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
+- [AD フォレストの回復-Windows Server 2003 ドメインコントローラーを使用したフォレストの回復](AD-Forest-Recovery-Windows-Server-2003.md) 

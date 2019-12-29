@@ -1,8 +1,8 @@
 ---
-title: 元に戻す
-description: 'Windows コマンド」のトピック * * *- '
+title: 反転
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5bc77b17317f602d642c7a9e025b67be10ad7256
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3243f13a4997824d9fff7c874ce26d56325fefa4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875113"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371451"
 ---
-# <a name="revert"></a>元に戻す
+# <a name="revert"></a>反転
 
 
 
@@ -36,8 +36,8 @@ revert <ShadowCopyID>
 
 |パラメーター|説明|
 |---------|-----------|
-|\<ShadowCopyID>|ボリュームを元に戻すシャドウ コピー ID を指定します。|
+|\<ShadowCopyID >|ボリュームを元に戻すシャドウ コピー ID を指定します。|
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

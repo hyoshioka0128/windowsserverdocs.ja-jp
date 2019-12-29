@@ -7,36 +7,36 @@ ms.author: pashort
 manager: dougkim
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 3233434403594ef9e2555c0329c4791d1fb99709
-ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
+ms.openlocfilehash: e3dbaa188426ac81073e706db3adc6ab0a655c01
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67469586"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405190"
 ---
-# <a name="windows-time-service-w32time"></a>Windows タイム サービス (W32Time)
+# <a name="windows-time-service-w32time"></a>Windows タイムサービス (W32Time)
 
 >適用対象:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 以降
 
-Windows タイム サービス (W32Time) では、日付と Active Directory Domain Services (AD DS) で実行されているすべてのコンピューターの時刻を同期します。 時刻の同期は、多くの Windows サービスや基幹業務 (LOB) アプリケーションの適切な操作にとって重要です。 Windows タイム サービスは、ネットワーク上のコンピューター クロックの同期をネットワーク タイム プロトコル (NTP) を使用します。 NTP によりネットワーク アクセス要求を検証し、リソースを割り当てることができる、正確な時刻の値とタイムスタンプのようになります。
+Windows タイムサービス (W32Time) は、Active Directory Domain Services (AD DS) で実行されているすべてのコンピューターの日付と時刻を同期します。 多くの Windows サービスと基幹業務 (LOB) アプリケーションを適切に動作させるには、時刻の同期が不可欠です。 Windows タイムサービスは、ネットワークタイムプロトコル (NTP) を使用して、ネットワーク上のコンピューターの時計を同期します。 NTP を使用すると、正確なクロック値 (タイムスタンプ) をネットワーク検証およびリソースアクセス要求に割り当てることができます。
 
-Windows タイム サービス (W32Time) のトピックでは、次のコンテンツは利用できます。
-- **[Windows Server 2016 の正確な時刻](accurate-time.md)します。** 時刻同期の精度の Windows Server 2016 では、完全な下位 NTP の古いバージョンの Windows 互換性を維持しながら、大幅に向上しています。 1 を維持する運用状態で妥当な UTC または Windows Server 2016 および Windows 10 Anniversary Update のドメイン メンバーに対してより良いに関してミリ秒の精度。
-- **[高精度の環境サポート境界](support-boundary.md)します。** この記事では、正確かつ安定したシステム時刻を必要とする環境で Windows タイム サービス (W32Time) のサポート範囲を説明します。
-- **[高精度のシステムを構成する](configuring-systems-for-high-accuracy.md)します。** Windows 10 および Windows Server 2016 での時刻の同期が大幅に改善されました。  1 ミリ秒 (ミリ秒) を維持するために妥当な条件下でシステムを構成することができます (UTC) に関して以上の精度。
-- **[Windows の時間の追跡可能性を](windows-time-for-traceability.md)します。** 多くの分野の規制を UTC にトレース可能システムが必要です。  これは、システムのオフセットは、UTC に対して証明できることを意味します。  Windows 10 およびサーバー 2016年は、規制遵守のシナリオを有効にするには、システム クロックに実行されるアクションの理解を形成するオペレーティング システムの観点から画像を提供する新しいイベント ログを提供します。  これらのイベント ログは Windows タイム サービスの継続的に生成されると、検査または後で分析のためのアーカイブすることができます。
-- **[Windows タイム サービスのテクニカル リファレンス](windows-time-service-tech-ref.md)します。** W32Time サービスは、ネットワークの広範な構成を必要としないコンピューターのクロックの同期を提供します。 W32Time サービスは、重要なは、Kerberos V5 認証の成功した操作と、そのためは AD DS ベースの認証です。
-    - **[Windows タイム サービスのしくみ](How-the-Windows-Time-Service-Works.md)します。** Windows タイム サービスは、ネットワーク タイム プロトコル (NTP) の正確な実装ではありませんが、ネットワーク全体のコンピューターのクロックが可能な限り正確であることを確認する NTP 仕様で定義されているアルゴリズムの複雑なスイートを使用します。
-    - **[Windows タイム サービスのツールと設定](Windows-Time-Service-Tools-and-Settings.md)します。** ほとんどのドメイン メンバー コンピューターがある NT5DS、ドメインの階層からの時間を同期することを意味するのにクライアントの種類。 のみの一般的な例外は、通常は、外部タイム ソースと時刻を同期する構成は、フォレスト ルート ドメインのプライマリ ドメイン コント ローラー (PDC) エミュレーター操作マスターとして機能するドメイン コント ローラーです。
+Windows タイムサービス (W32Time) のトピックでは、次の内容を利用できます。
+- **[Windows Server 2016 の正確な時刻](accurate-time.md)。** Windows Server 2016 での同期精度が大幅に向上し、以前のバージョンの Windows との NTP の完全な互換性が維持されています。 合理的な運用条件下では、Windows Server 2016 および Windows 10 記念日更新ドメインのメンバーに対して、UTC またはそれ以上の精度で1ミリ秒の精度を維持できます。
+- **[高精度の環境のサポート境界](support-boundary.md)。** この記事では、非常に正確で安定したシステム時刻を必要とする環境での Windows タイムサービス (W32Time) のサポート境界について説明します。
+- **[システムの精度を高めるための構成](configuring-systems-for-high-accuracy.md)。** Windows 10 と Windows Server 2016 での時刻の同期が大幅に改善されました。  合理的な運用条件下では、1ミリ秒 (ミリ秒) の精度以上 (UTC に関して) を維持するようにシステムを構成できます。
+- **[追跡可能性のための Windows タイム](windows-time-for-traceability.md)。** 多くの部門では、システムが UTC に対して追跡可能である必要があります。  これは、システムのオフセットを UTC に対して証明できることを意味します。  規制遵守シナリオを有効にするために、Windows 10 およびサーバー2016では、オペレーティングシステムの観点から画像を提供してシステムクロックで実行されるアクションを理解するための新しいイベントログを提供しています。  これらのイベントログは、Windows タイムサービスに対して継続的に生成され、後で分析するために調査またはアーカイブできます。
+- **[Windows タイムサービスのテクニカルリファレンス](windows-time-service-tech-ref.md)。** W32Time サービスを使用すると、広範な構成を必要とせずに、コンピューターのネットワーククロック同期を行うことができます。 W32Time サービスは、Kerberos V5 認証を正常に動作させるために不可欠であり、したがって AD DS ベースの認証に必要です。
+    - **[Windows タイムサービスの動作について説明](How-the-Windows-Time-Service-Works.md)します。** Windows タイム サービスは、ネットワーク タイム プロトコル (NTP) の正確な実装ではありませんが、ネットワーク全体のコンピューターのクロックが可能な限り正確であることを確認する NTP 仕様で定義されているアルゴリズムの複雑なスイートを使用します。
+    - **[Windows タイムサービスのツールと設定](Windows-Time-Service-Tools-and-Settings.md)** ほとんどのドメインメンバーコンピューターには、time クライアントタイプの NT5DS があります。これは、ドメイン階層から時刻を同期することを意味します。 この唯一の一般的な例外は、フォレストルートドメインのプライマリドメインコントローラー (PDC) エミュレーター操作マスタとして機能するドメインコントローラーです。これは通常、時間を外部タイムソースと同期するように構成されています。
 
 
 ## <a name="related-topics"></a>関連トピック
-ドメインの階層とシステムのスコア付けの詳細については、次を参照してください、 ["Windows タイム サービスは何でしょうか。"。](https://blogs.msdn.microsoft.com/w32time/2007/07/07/what-is-windows-time-service/) をご覧ください。
+ドメイン階層とスコアリングシステムの詳細については、「 [Windows タイムサービスとは](https://blogs.msdn.microsoft.com/w32time/2007/07/07/what-is-windows-time-service/)」を参照してください。 をご覧ください。
 
-Windows タイム プロバイダー プラグイン モデルは[TechNet に記載されている](https://msdn.microsoft.com/library/windows/desktop/ms725475%28v=vs.85%29.aspx)します。
+Windows タイムプロバイダプラグインモデルは[TechNet に記載](https://msdn.microsoft.com/library/windows/desktop/ms725475%28v=vs.85%29.aspx)されています。
 
-Windows 2016 の正確性の時間の記事で参照されている補遺がダウンロードできる[ここ](https://windocs.blob.core.windows.net/windocs/WindowsTimeSyncAccuracy_Addendum.pdf)
+Windows 2016 の正確な時刻に関する記事で言及されている補遺は[ここ](https://windocs.blob.core.windows.net/windocs/WindowsTimeSyncAccuracy_Addendum.pdf)からダウンロードできます
 
-Windows タイム サービスの簡単な概要については、これを参照してください[概要ビデオ](https://aka.ms/WS2016TimeVideo)します。
+Windows タイムサービスの簡単な概要については、この[概要ビデオ](https://aka.ms/WS2016TimeVideo)をご覧ください。

@@ -1,7 +1,7 @@
 ---
 ms.assetid: c9844427-27cf-4d76-b5bb-e06368b092f7
 title: フェールオーバー クラスタリング
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 layout: LandingPage
 ms.topic: landing-page
 ms.manager: dongill
@@ -10,12 +10,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: high
-ms.openlocfilehash: a7f6dd847d2762dbc616189ed729449479788f98
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 116627059856f5815ec0d89ce63094a0852913ab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810905"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361119"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Windows Server のフェールオーバー クラスタリング
 

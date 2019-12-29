@@ -7,129 +7,129 @@ ms.author: billmath
 manager: femila
 ms.date: 08/17/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 97e1fa441c5fe4fb7d23743387392732663326de
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 311789fdec160faeeeba0ecf26491d1e0cd6105d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501585"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407397"
 ---
-# <a name="ad-fs-single-sign-on-settings"></a>AD FS のシングル サインオンの設定
+# <a name="ad-fs-single-sign-on-settings"></a>AD FS のシングルサインオンの設定
 
-シングル サインオン (SSO) では、1 回認証を追加の資格情報を入力することがなく複数のリソースにアクセスできます。  この記事では、この動作をカスタマイズするための構成設定と、SSO、既定の AD FS の動作について説明します。  
+シングルサインオン (SSO) を使用すると、ユーザーは1回認証するだけで、追加の資格情報の入力を求められることなく、複数のリソースにアクセスできます。  この記事では、SSO の既定の AD FS 動作、およびこの動作をカスタマイズするための構成設定について説明します。  
 
-## <a name="supported-types-of-single-sign-on"></a>サポートされている種類のシングル サインオン
+## <a name="supported-types-of-single-sign-on"></a>サポートされているシングルサインオンの種類
 
-AD FS では、シングル サインオン エクスペリエンスのいくつかの種類をサポートします。  
+AD FS は、いくつかの種類のシングルサインオンエクスペリエンスをサポートしています。  
   
--   **SSO セッション**  
+-   **セッション SSO**  
   
-     ユーザーが特定のセッション中にアプリケーションを切り替えると、さらにメッセージを排除する認証済みユーザーに対しては、セッションの SSO cookie が書き込まれます。 ただし、特定のセッションが終了した場合、ユーザーが求められることの資格情報。  
+     セッション SSO cookie は認証されたユーザー向けに記述されており、ユーザーが特定のセッション中にアプリケーションを切り替えると、さらにプロンプトが表示されなくなります。 ただし、特定のセッションが終了した場合、ユーザーは資格情報を再入力するように求められます。  
   
-     AD FS がセッションが設定された SSO クッキーの既定ではユーザーのデバイスが登録されていない場合。 場合は、ブラウザー セッションが終了し、再起動は、このセッションの cookie が削除され、有効でないかを確認します。  
+     ユーザーのデバイスが登録されていない場合、既定では、AD FS によってセッション SSO cookie が設定されます。 ブラウザーセッションが終了して再起動された場合、このセッションクッキーは削除され、それ以上有効ではありません。  
   
--   **永続的な SSO**  
+-   **永続的 SSO**  
   
-     永続的な SSO cookie が有効な限り、ユーザーがアプリケーションを切り替えるときに、画面の指示によりさらに、認証済みユーザーは、永続的な SSO cookie が書き込まれます。 SSO と SSO セッションを永続的な違いは、異なるセッション間で永続的な SSO を管理することができます。  
+     永続的 sso cookie は認証されたユーザー用に書き込まれます。これにより、永続的な SSO クッキーが有効である限り、ユーザーがアプリケーションを切り替えるときに、プロンプトが表示されなくなります。 永続 SSO とセッション SSO の違いは、永続 SSO を異なるセッション間で保持できることです。  
   
-     デバイスが登録されている場合、AD FS は永続的な SSO cookie を設定します。 「サインインしたまま」オプションを選択した場合、AD FS は永続的な SSO cookie 設定もできます。 永続的な SSO cookie が有効かどうかをでない場合は、拒否、削除されます。  
+     デバイスが登録されている場合、AD FS は永続的な SSO cookie を設定します。 また AD FS は、ユーザーが [サインインしたままにする] オプションを選択した場合に、永続的な SSO cookie を設定します。 永続 SSO クッキーが有効でない場合は、拒否および削除されます。  
   
--   **アプリケーションの特定の SSO**  
+-   **アプリケーション固有の SSO**  
   
-     OAuth では、更新トークンは特定のアプリケーションのスコープ内でユーザーの SSO の状態を維持するために使用します。  
+     OAuth シナリオでは、更新トークンを使用して、特定のアプリケーションのスコープ内でユーザーの SSO 状態を維持します。  
   
-     AD FS が自分のデバイスを使用している場合、2012R2 の AD FS と AD FS 2016 で 90 日間の最大既定では 7 日をある登録済みデバイスの永続的な SSO cookie 有効期間に基づく更新トークンの有効期限を設定、デバイスが登録されている場合14 日のウィンドウ内の AD FS のリソースにアクセスします。 
+     デバイスが登録されている場合、AD FS は、登録されているデバイスの永続 SSO cookie の有効期間に基づいて更新トークンの有効期限を設定します。これは、既定では AD FS 2012R2 では7日間、AD FS 2016 では最大90日です。14日の期間内に AD FS リソースにアクセスします。 
 
-場合は、デバイスが登録されていませんが、ユーザーが「サインインしたまま」オプションを選択、更新トークンの有効期限、永続的な SSO cookie の有効期間「サインインしたまま」になります、既定では最大 7 日間の 1 日があります。 それ以外の場合、更新トークンの有効期間 equals セッション SSO cookie の有効期間は既定では 8 時間  
+デバイスが登録されておらず、ユーザーが [サインインしたままにする] オプションを選択した場合、更新トークンの有効期限は、"サインインしたままにする" の永続 SSO cookie の有効期間と同じになります。これは、既定では最大7日間になります。 それ以外の場合、更新トークンの有効期間は、既定では8時間のセッション SSO cookie の有効期間と同じになります。  
   
- 上記のように、登録済みデバイスのユーザーには、永続的な SSO を無効にしない限り、永続的な SSO を常に取得します。 「サインインしたままで」を有効にすると、デバイスの登録解除の永続的な SSO を実現できます (KMSI) 機能です。 
+ 前述のように、永続的 SSO が無効になっている場合を除き、登録済みデバイスのユーザーは常に永続的 SSO を取得します。 登録されていないデバイスの場合は、"サインインしたままにする" (KMSI) 機能を有効にすることで、永続的 SSO を実現できます。 
  
- 「サインインしたまま」のシナリオで PSSO を有効にする Windows Server 2012 r2 では、これをインストールする必要が[修正プログラム](https://support.microsoft.com/en-us/kb/2958298/)もあるの一部の[Windows RT 8.1、Windows 8.1、および Windows Server 2012 の 2014 年 8 月更新プログラムのロールアップR2](https://support.microsoft.com/en-us/kb/2975719)します。   
+ Windows Server 2012 R2 では、"サインインしたままにする" シナリオで PSSO を有効にするには、この修正プログラムをインストールする必要があります。この[修正プログラム](https://support.microsoft.com/en-us/kb/2958298/)は、 [windows RT 8.1、Windows 8.1、および Windows Server 2012 R2 の年 8 2014 月の更新プログラムのロールアップ](https://support.microsoft.com/en-us/kb/2975719)の一部でもあります。   
 
 タスク | PowerShell | 説明
 ------------ | ------------- | -------------
-永続的な SSO を有効/無効にします。 | ```` Set-AdfsProperties –EnablePersistentSso <Boolean> ````| 永続的な SSO は既定で有効にします。 無効の場合は、PSSO cookie は書き込まれません。
-「有効/無効にする"サインインしたまま」 | ```` Set-AdfsProperties –EnableKmsi <Boolean> ```` | 既定では、「サインインしたまま」機能が無効です。 エンドユーザーが AD FS サインイン ページ「サインインしたまま」の選択肢を表示、有効な場合
+永続的 SSO の有効化/無効化 | ```` Set-AdfsProperties –EnablePersistentSso <Boolean> ````| 永続的 SSO は既定で有効になっています。 無効になっている場合は、PSSO クッキーは書き込まれません。
+[サインインしたままにする] を有効または無効にする | ```` Set-AdfsProperties –EnableKmsi <Boolean> ```` | "サインインしたままにする" 機能は、既定では無効になっています。 有効になっている場合、エンドユーザーは AD FS サインインページで [サインインしたままにする] を選択できます。
 
 
 
-## <a name="ad-fs-2016---single-sign-on-and-authenticated-devices"></a>AD FS 2016 でのシングル サインオン、認証済みのデバイス
-AD FS 2016 は、最大 90 日間に増やすことが、14 日間の期間 (デバイスの使用状況 ウィンドウ) 内で認証を必要とする登録済みのデバイスから要求元を認証するときに、PSSO を変更します。
-資格情報を提供する、最初に、後に既定で登録済みデバイスを持つユーザーでシングル サインオンの取得 90 日間の最大期間に 14 日間に少なくとも 1 回を AD FS のリソースにアクセスするデバイスを使用します。  資格情報の提供後 15 日間、待機する場合ユーザーが求められることの資格情報。  
+## <a name="ad-fs-2016---single-sign-on-and-authenticated-devices"></a>AD FS 2016-シングルサインオンと認証されたデバイス
+AD FS 2016 は、要求元が登録されているデバイスから最大90日まで増加し、14日以内に認証が要求される場合、PSSO を変更します ([デバイスの使用状況] ウィンドウ)。
+最初に資格情報を入力した後、既定では、登録されたデバイスを持つユーザーは、少なくとも14日ごとに1回以上 AD FS リソースにアクセスするためにデバイスを使用するため、最大90日間のシングルサインオンを利用できます。  資格情報を指定してから15日間待っている場合、ユーザーは資格情報の入力を再度求められます。  
 
-永続的な SSO は既定で有効にします。 無効の場合、PSSO cookie は書き込まれません |。  
+永続的 SSO は既定で有効になっています。 無効になっている場合、PSSO クッキーは書き込まれません |。  
 
 ``` powershell
 Set-AdfsProperties –EnablePersistentSso <Boolean\>
 ```     
   
-デバイスの使用状況 ウィンドウ (既定では 14 日間) は、AD FS プロパティの影響を受ける**DeviceUsageWindowInDays**します。
+[デバイスの使用量] ウィンドウ (既定では14日) は、AD FS プロパティ**DeviceUsageWindowInDays**によって管理されます。
 
 ``` powershell
 Set-AdfsProperties -DeviceUsageWindowInDays
 ```   
-AD FS プロパティ、最大 1 つでサインオン期間 (既定では 90 日間) に準拠するもの**PersistentSsoLifetimeMins**します。
+シングルサインオンの最大期間 (既定では90日) は AD FS プロパティ**PersistentSsoLifetimeMins**によって管理されます。
 
 ``` powershell
 Set-AdfsProperties -PersistentSsoLifetimeMins
 ```    
 
-## <a name="keep-me-signed-in-for-unauthenticated-devices"></a>認証されていないデバイスのサインインを維持します。 
-デバイスの登録されていない場合はシングル サインオン期間によって決定されます、**保持 Me 署名で (KMSI)** 機能設定します。  KMSI は、既定では無効になり、KmsiEnabled AD FS プロパティを True に設定して有効にすることができます。
+## <a name="keep-me-signed-in-for-unauthenticated-devices"></a>認証されていないデバイスにサインインしたままにする 
+登録されていないデバイスの場合、シングルサインオンの期間は、[サインインした**ままにする (KMSI)** ] 機能の設定によって決まります。  KMSI は既定で無効になっており、AD FS プロパティ KmsiEnabled を True に設定することによって有効にすることができます。
 
 ``` powershell
 Set-AdfsProperties -EnableKmsi $true  
 ```    
 
-KMSI を無効になっていると既定シングル サインオン期間は 8 時間です。  これは、SsoLifetime プロパティを使用して構成できます。  プロパティは、既定値は 480 分単位で測定されます。  
+KMSI を無効にした場合、既定のシングルサインオン期間は8時間です。  これは、プロパティ SsoLifetime を使用して構成できます。  プロパティは分単位で測定されるため、既定値は480です。  
 
 ``` powershell
 Set-AdfsProperties –SsoLifetime <Int32\> 
 ```   
 
-KMSI を有効になっていると既定シングル サインオン期間は 24 時間です。  これは、KmsiLifetimeMins プロパティを使用して構成できます。  プロパティは、既定値は 1440 分単位で測定されます。
+KMSI が有効になっている場合、既定のシングルサインオン期間は24時間です。  これは、プロパティ KmsiLifetimeMins を使用して構成できます。  プロパティは分単位で測定されるため、既定値は1440です。
 
 ``` powershell
 Set-AdfsProperties –KmsiLifetimeMins <Int32\> 
 ```   
 
-## <a name="multi-factor-authentication-mfa-behavior"></a>多要素認証 (MFA) の動作  
-比較的長時間シングル サインオンの提供することで、中に AD FS が求められます追加の認証 (多要素認証) に注意してください前サインオンは、プライマリ資格情報と、MFA ではないに基づいていたが、現在のアクセスを設定するときに。MFA が必要です。  これは、SSO の構成に関係なく。 認証要求を受け取るときに、AD FS が最初に、SSO のコンテキスト (cookie) などがあるかどうかを決定しますうえで、MFA が必要な場合 (場合など、要求が送られてからの外部) SSO コンテキストには、MFA にはが含まれているかどうかを評価すること。  それ以外の場合は、MFA のメッセージが表示されます。  
+## <a name="multi-factor-authentication-mfa-behavior"></a>Multi-factor authentication (MFA) の動作  
+重要なのは、比較的長いシングルサインオンを提供している間に、AD FS は追加の認証 (多要素認証) を要求します。これは、以前のサインオンが MFA ではなくプライマリ資格情報に基づいており、現在のサインオンMFA が必要です。  これは SSO 構成には関係ありません。 AD FS は、認証要求を受信すると、まず SSO コンテキスト (cookie など) があるかどうかを判断し、MFA が必要な場合 (外部から要求が送信される場合など) は、SSO コンテキストに MFA が含まれているかどうかを評価します。  それ以外の場合は、MFA が要求されます。  
 
 
   
-## <a name="psso-revocation"></a>PSSO 失効  
- セキュリティ保護のため、AD FS では、次の条件が満たされたときに事前に発行したすべての永続的な SSO cookie を拒否します。 AD FS を使用した再認証するために、資格情報を提供するユーザーが必要になります。 
+## <a name="psso-revocation"></a>PSSO の失効  
+ セキュリティを保護するために、次の条件が満たされたときに以前に発行されたすべての永続的な SSO cookie を拒否する AD FS ます。 これには、AD FS での認証を行うために、ユーザーが資格情報を入力する必要があります。 
   
-- ユーザーがパスワードを変更  
+- ユーザーによるパスワードの変更  
   
-- AD FS で永続的な SSO の設定は無効です。  
+- 永続 SSO 設定が AD FS で無効になっています  
   
-- デバイスが紛失または盗難にあった場合、管理者によって無効になっています  
+- デバイスが紛失または盗難にあった場合、管理者によって無効にされている  
   
-- AD FS が登録済みユーザーがユーザーに発行される永続的な SSO cookie を受信するか、またはデバイスがもはやに登録されていません  
+- AD FS は、登録されているユーザーに対して発行された永続的な SSO cookie を受信しますが、ユーザーまたはデバイスは登録されていません  
   
-- AD FS が登録されているユーザーの永続的な SSO cookie を受け取りますが、ユーザーが再登録  
+- AD FS は、登録されているユーザーに対して永続的な SSO cookie を受信しますが、ユーザーは再登録します。  
   
-- AD FS の受信「サインインしたまま」、「サインアウト」の結果として発行される永続的な SSO cookie で AD FS の設定は無効です  
+- AD FS は、"サインインしたままにする" の結果として発行される永続的な SSO cookie を受信しますが、[サインインしたままにする] 設定は、では無効になってい AD FS  
   
-- AD FS が登録されているユーザーに対して発行される永続的な SSO cookie を受け取りますが、認証時にデバイスの証明書が見つからないか、変更されました。  
+- AD FS は、登録されているユーザーに対して発行された永続的な SSO cookie を受け取りますが、認証時にデバイス証明書が見つからないか変更されています  
   
-- AD FS の管理者が永続的な SSO の終了時刻を設定します。 この時刻より前に発行されたすべての永続的な SSO cookie が構成されて、AD FS は拒否します  
+- AD FS 管理者が永続的 SSO のカットオフ時間を設定しました。 これを構成すると、AD FS は、この時間より前に発行されたすべての永続 SSO cookie を拒否します。  
   
-  終了時刻を設定するには、次の PowerShell コマンドレットを実行します。  
+  カットオフ時間を設定するには、次の PowerShell コマンドレットを実行します。  
   
 
 ``` powershell
 Set-AdfsProperties -PersistentSsoCutoffTime <DateTime>
 ```
   
-## <a name="enable-psso-for-office-365-users-to-access-sharepoint-online"></a>SharePoint Online へのアクセスに Office 365 ユーザー PSSO を有効にします。  
- PSSO が有効になっているし、AD FS で構成されている、ユーザーが認証された後 AD FS は永続的なクッキーを記述します。 永続的な cookie がまだ有効な場合で、ユーザーが次回、ユーザーは、再認証する資格情報を提供する必要はありません。 Office 365 の追加の認証プロンプトを回避でき、次の 2 つを構成することで SharePoint Online のユーザーが Microsoft Azure AD と SharePoint Online トリガーの永続化する AD FS で規則を要求します。  PSSO SharePoint online へのアクセスに Office 365 ユーザーを有効にするのには、これをインストールする必要があります[修正プログラム](https://support.microsoft.com/en-us/kb/2958298/)もあるの一部の[Windows RT 8.1、Windows 8.1、および Windows Server 2012 R22014年8月更新プログラムのロールアップ](https://support.microsoft.com/en-us/kb/2975719).  
+## <a name="enable-psso-for-office-365-users-to-access-sharepoint-online"></a>Office 365 ユーザーが SharePoint Online にアクセスできるように PSSO を有効にする  
+ PSSO が有効になり AD FS で構成されると、ユーザーが認証された後、AD FS は永続的な cookie を書き込みます。 次回ユーザーがサインインしたときに、永続的な cookie がまだ有効である場合、ユーザーは資格情報を入力して再度認証する必要はありません。 また、Microsoft Azure AD と SharePoint Online で永続化をトリガーするために AD FS で次の2つの要求規則を構成することで、Office 365 および SharePoint Online ユーザーの追加の認証プロンプトを回避することもできます。  Office 365 ユーザーが SharePoint online にアクセスできるようにするには、この修正プログラムをインストールする必要があります。この[修正プログラム](https://support.microsoft.com/en-us/kb/2958298/)は、 [windows RT 8.1、Windows 8.1、および Windows Server 2012 R2 の年 8 2014 月の更新プログラムのロールアップ](https://support.microsoft.com/en-us/kb/2975719)の一部でもあります。  
   
- InsideCorporateNetwork クレームを通過する発行変換規則  
+ InsideCorporateNetwork 要求を通過する発行変換規則  
   
 ```  
 @RuleTemplate = "PassThroughClaims"  
@@ -143,66 +143,66 @@ c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
   
 ```
   
-要約。
+概要:
 <table>
   <tr>
-    <th colspan="1">シングル サインオン エクスペリエンス</th>
-    <th colspan="3">ADFS 2012 R2 <br> デバイスが登録されているか。</th>
+    <th colspan="1">シングルサインオンエクスペリエンス</th>
+    <th colspan="3">ADFS 2012 R2 <br> デバイスは登録されていますか?</th>
         <th colspan="1"></th>
-    <th colspan="3">ADFS 2016 <br> デバイスが登録されているか。</th>
+    <th colspan="3">ADFS 2016 <br> デバイスは登録されていますか?</th>
   </tr>
 
   <tr align="center">
     <th></th>
     <th>使用不可</th>
-    <th>KMSI はなし</th>
+    <th>いいえ、KMSI</th>
     <th>使用可能</th>
     <th></th>
     <th>使用不可</th>
-    <th>KMSI はなし</th>
+    <th>いいえ、KMSI</th>
     <th>使用可能</th>
   </tr>
  <tr align="center">
-    <td>SSO =&gt;更新トークン設定 =&gt;</td>
-    <td>8 時間以内</td>
+    <td>SSO =&gt;設定更新トークン =&gt;</td>
+    <td>8時間</td>
     <td>なし</td>
     <td>なし</td>
     <th></th>
-    <td>8 時間以内</td>
+    <td>8時間</td>
     <td>なし</td>
     <td>なし</td>
   </tr>
 
  <tr align="center">
-    <td>PSSO =&gt;更新トークン設定 =&gt;</td>
+    <td>Psso =&gt;設定更新トークン =&gt;</td>
     <td>なし</td>
-    <td>24 時間以内</td>
-    <td>7 日間</td>
+    <td>24時間</td>
+    <td>7日間</td>
     <th></th>
     <td>なし</td>
-    <td>24 時間以内</td>
-    <td>最大 14 日間のウィンドウで 90 日間</td>
+    <td>24時間</td>
+    <td>14日の期間の最大90日</td>
   </tr>
 
  <tr align="center">
     <td>トークンの有効期間</td>
-    <td>1 時間</td>
-    <td>1 時間</td>
-    <td>1 時間</td>
+    <td>1時間</td>
+    <td>1時間</td>
+    <td>1時間</td>
     <th></th>
-    <td>1 時間</td>
-    <td>1 時間</td>
-    <td>1 時間</td>
+    <td>1時間</td>
+    <td>1時間</td>
+    <td>1時間</td>
   </tr>
 </table>
 
-**デバイスを登録しますか。** PSSO の取得/永続的な SSO <br>
-**デバイスを登録されていませんか。** SSO を取得します。 <br>
-**デバイスが登録されていませんが、KMSI でしょうか。** PSSO の取得/永続的な SSO <p>
+**登録済みのデバイスですか?** PSSO/Persistent SSO を取得する <br>
+**登録されていないデバイスですか?** SSO を取得する <br>
+**登録されていないデバイスですが、KMSI ですか?** PSSO/Persistent SSO を取得する <p>
 もし：
- - [x] は、管理者には、KMSI 機能 [AND] が有効に
- - [x] は、ユーザーがフォームのログイン ページに KMSI チェック ボックスをクリックします。
+ - [x] 管理者が KMSI 機能を有効にしました [および]
+ - [x] ユーザーがフォームログインページで KMSI チェックボックスをクリックします。
  
-**適切な情報:** <br>
-持っていないユーザーをフェデレーション、 **LastPasswordChangeTimestamp**セッションの cookie と更新トークンを持つ属性が同期が発行された、 **12 時間の最大年齢値**します。<br>
-これは、Azure AD は、古い資格情報が変更されているパスワード) などに関連するトークンを取り消すタイミングを決定できないために発生します。 そのため、Azure AD は、ユーザーと関連付けられているトークンがまだ良好であるかどうかを確認するより頻繁に確認する必要があります。
+**次のことをお勧めします。** <br>
+**Lastpasswordchangetimestamp**属性が同期されていないフェデレーションユーザーは、**最大有効期間の値が12時間の**セッション cookie と更新トークンを発行します。<br>
+これは、古い資格情報 (変更されたパスワードなど) に関連付けられているトークンを取り消すタイミングを Azure AD が判断できないために発生します。 したがって、ユーザーとそれに関連付けられているトークンが良好な状態であることを確認するために、Azure AD を頻繁に確認する必要があります。

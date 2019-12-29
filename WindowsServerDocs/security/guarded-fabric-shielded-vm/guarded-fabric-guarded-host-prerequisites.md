@@ -1,88 +1,88 @@
 ---
 title: 保護されたホストの前提条件
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 40c0f6df31061268b1e1ef8c15b0a02b0f50b0de
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8a9273eef906130b11b98148cf1e84f7e18812b0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447474"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402374"
 ---
 # <a name="prerequisites-for-guarded-hosts"></a>保護されたホストの前提条件
 
 >適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
-ホストの前提条件の構成証明モードを選択したらを確認し、保護されたホストを追加するには、次の手順をクリックします。
+選択した構成証明のモードについてホストの前提条件を確認し、次の手順をクリックして、保護されたホストを追加します。
 
-## <a name="tpm-trusted-attestation"></a>TPM によって信頼された構成証明
+## <a name="tpm-trusted-attestation"></a>TPM-信頼された構成証明
 
-TPM のモードを使用して保護されたホストは、次の前提条件を満たす必要があります。
+TPM モードを使用する保護されたホストは、次の前提条件を満たしている必要があります。
 
--   **ハードウェア**:1 つのホストは、最初の展開に必要です。 シールドされた Vm の HYPER-V のライブ マイグレーションをテストするには、少なくとも 2 つのホストが必要です。
+-   **ハードウェア**:初期デプロイには1つのホストが必要です。 シールドされた Vm の Hyper-v ライブマイグレーションをテストするには、少なくとも2つのホストが必要です。
 
-    ホストが必要です。
+    ホストには次のものが必要です。
     
-    - IOMMU と 2 番目のレベルのアドレス変換 (SLAT)
+    - IOMMU と第2レベルのアドレス変換 (SLAT)
     - TPM 2.0
     - UEFI 2.3.1 以降
-    - ブート UEFI (BIOS や「レガシ」モード) を使用するように構成
-    - セキュア ブートが有効になっています。
+    - UEFI (BIOS または "レガシ" モードではなく) を使用して起動するように構成されています
+    - セキュアブートが有効
         
--   **オペレーティング システム**:Windows Server 2016 Datacenter edition またはそれ以降
+-   **オペレーティングシステム**:Windows Server 2016 Datacenter edition 以降
 
     > [!IMPORTANT]
-    > インストールするかどうかを確認、[最新の累積的な更新プログラム](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)します。  
+    > [最新の累積的な更新プログラム](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)がインストールされていることを確認してください。  
 
--   **役割と機能**:Hyper-v の役割と Host Guardian HYPER-V サポート機能。 Host Guardian HYPER-V サポート機能は、Windows Server の Datacenter の各エディションで使用できるのみです。 
+-   **役割と機能**:Hyper-v の役割と Host Guardian Hyper-v のサポート機能。 Host Guardian Hyper-v サポート機能は、Windows Server の Datacenter エディションでのみ使用できます。 
 
 > [!WARNING]
-> Host Guardian HYPER-V サポート機能は、一部のデバイスと互換性がない可能性があります、コードの整合性の仮想化ベースの保護を使用できます。 この機能を有効にする前に、ラボでこの構成のテストを強くお勧めします。 そうしないと、データ損失やブルー スクリーン エラー (Stop エラーとも呼ばれます) などを含む予期しないエラーが発生することがあります。 詳細については、次を参照してください。[コードの整合性の Windows Server 仮想化ベースの保護との互換性のあるハードウェア](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)します。
+> Host Guardian Hyper-v サポート機能を使用すると、一部のデバイスと互換性のない、コードの整合性を仮想化ベースで保護できます。 この機能を有効にする前に、ラボでこの構成をテストすることを強くお勧めします。 そうしないと、データ損失やブルー スクリーン エラー (Stop エラーとも呼ばれます) などを含む予期しないエラーが発生することがあります。 詳細については、「[互換性のあるハードウェアと Windows Server 仮想化によるコードの整合性の保護](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)」を参照してください。
 
-**次の手順:** 
+**次のステップ:** 
 > [!div class="nextstepaction"]
-> [TPM の情報をキャプチャします。](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
+> [TPM 情報のキャプチャ](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
 
-## <a name="host-key-attestation"></a>ホスト キーの構成証明
+## <a name="host-key-attestation"></a>ホストキーの構成証明
 
-ホスト キーの構成証明を使用して保護されたホストは、次の前提条件を満たす必要があります。
+ホストキーの構成証明を使用する保護されたホストは、次の前提条件を満たす必要があります。
 
-- **ハードウェア**:Windows Server 2019 で HYPER-V の先頭を実行できる任意のサーバー
-- **オペレーティング システム**:Windows Server 2019 Datacenter Edition
-- **役割と機能**:HYPER-V の役割と Host Guardian HYPER-V サポート機能 
+- **ハードウェア**:Windows Server 2019 以降で Hyper-v を実行できる任意のサーバー
+- **オペレーティングシステム**:Windows Server 2019 Datacenter Edition
+- **役割と機能**:Hyper-v の役割と Host Guardian Hyper-v のサポート機能 
 
-ホストは、ドメインまたはワークグループに参加することができます。 
+ホストをドメインまたはワークグループに参加させることができます。 
 
-ホスト キーの構成証明は、HGS を Windows Server 2019 を実行していると v2 の構成証明で動作する必要があります。 詳細については、次を参照してください。 [HGS の前提条件](guarded-fabric-prepare-for-hgs.md#prerequisites)します。 
+ホストキーの構成証明については、HGS は Windows Server 2019 を実行し、v2 構成証明を使用して動作している必要があります。 詳細については、「 [HGS の前提条件](guarded-fabric-prepare-for-hgs.md#prerequisites)」を参照してください。 
 
-**次の手順:** 
+**次のステップ:** 
 > [!div class="nextstepaction"]
-> [キーのペアを作成します。](guarded-fabric-create-host-key.md)
+> [キーペアを作成する](guarded-fabric-create-host-key.md)
 
-## <a name="admin-trusted-attestation"></a>管理者によって信頼された構成証明
+## <a name="admin-trusted-attestation"></a>管理者-信頼された構成証明
 
 >[!IMPORTANT]
->管理者によって信頼された構成証明 (AD モード) では、Windows Server 2019 以降推奨されていません。 TPM 構成証明が可能な環境では、次のように構成します。[ホスト キーの構成証明](#host-key-attestation)します。 ホスト キーの構成証明は、AD モードのような保証しを設定する方が簡単です。 
+>管理者によって信頼された構成証明 (AD モード) は、Windows Server 2019 以降では非推奨とされます。 TPM の構成証明が不可能な環境では、[ホストキー](#host-key-attestation)の構成証明を構成します。 ホストキーの構成証明により、AD モードと同様の保証が提供され、セットアップが簡単になります。 
 
-HYPER-V ホストには、AD モードの次の前提条件を満たす必要があります。
+Hyper-v ホストは、AD モードに関して次の前提条件を満たしている必要があります。
 
--   **ハードウェア**:任意のサーバーは Windows Server 2016 で HYPER-V の先頭を実行できます。 1 つのホストは、最初の展開に必要です。 シールドされた Vm の HYPER-V のライブ マイグレーションをテストするには、少なくとも 2 つのホストが必要です。
+-   **ハードウェア**:Windows Server 2016 以降で Hyper-v を実行できる任意のサーバー。 初期デプロイには1つのホストが必要です。 シールドされた Vm の Hyper-v ライブマイグレーションをテストするには、少なくとも2つのホストが必要です。
 
--   **オペレーティング システム**:Windows Server 2016 Datacenter edition
+-   **オペレーティングシステム**:Windows Server 2016 Datacenter edition
 
     > [!IMPORTANT]
-    > インストール、[最新の累積的な更新プログラム](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)します。
+    > 最新の[累積的な更新プログラム](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)をインストールします。
 
--   **役割と機能**:Hyper-v の役割と Host Guardian HYPER-V サポート機能は、Windows Server 2016 Datacenter edition でのみ使用します。 
+-   **役割と機能**:Hyper-v の役割と Host Guardian Hyper-v サポート機能。これは、Windows Server 2016 Datacenter edition でのみ使用できます。 
 
 > [!WARNING]
-> Host Guardian HYPER-V サポート機能は、一部のデバイスと互換性がない可能性があります、コードの整合性の仮想化ベースの保護を使用できます。 この機能を有効にする前に、ラボでこの構成のテストを強くお勧めします。 そうしないと、データ損失やブルー スクリーン エラー (Stop エラーとも呼ばれます) などを含む予期しないエラーが発生することがあります。 詳細については、次を参照してください。[コードの整合性の Windows Server 2016 の仮想化ベースの保護との互換性のあるハードウェア](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)します。
+> Host Guardian Hyper-v サポート機能を使用すると、一部のデバイスと互換性のない、コードの整合性を仮想化ベースで保護できます。 この機能を有効にする前に、ラボでこの構成をテストすることを強くお勧めします。 そうしないと、データ損失やブルー スクリーン エラー (Stop エラーとも呼ばれます) などを含む予期しないエラーが発生することがあります。 詳細については、「[互換性のあるハードウェアと Windows Server 2016 の仮想化によるコードの整合性の保護](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md)」を参照してください。
 
-**次の手順:** 
+**次のステップ:** 
 > [!div class="nextstepaction"]
-> [セキュリティ グループに保護されたホストを配置します。](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)
+> [保護されたホストをセキュリティグループに配置する](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)

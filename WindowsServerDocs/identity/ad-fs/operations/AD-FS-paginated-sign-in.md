@@ -1,67 +1,67 @@
 ---
-title: AD FS がサインインに改ページ調整されました。
-description: このドキュメントでは、AD FS 2019 の新しいサインイン エクスペリエンスについて説明します。
+title: 改ページ調整されたサインインの AD FS
+description: このドキュメントでは、AD FS 2019 の新しいサインインエクスペリエンスについて説明します。
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 09/19/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c528b9c4e944849b7ed9a2fc5213a7b263be70c7
-ms.sourcegitcommit: ccc802338b163abdad2e53b55f39addcfea04603
+ms.openlocfilehash: ca13ebe29b0a9260302599110f333d166681abdb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66687379"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358563"
 ---
-# <a name="ad-fs-paginated-sign-in"></a>AD FS がサインインに改ページ調整されました。
+# <a name="ad-fs-paginated-sign-in"></a>改ページ調整されたサインインの AD FS
 
 
-Windows Server 2019、AD FS のサインイン UI 再設計しました。  ここで、AD FS サインインは、Azure AD の同じのルック アンド フィールがあります。  ユーザーより一貫したサインイン エクスペリエンスを中央揃えと改ページ調整されたユーザー フローを組み込むこれ提供されます。
+Windows Server 2019 の AD FS では、サインイン UI が再設計されました。  これで、AD FS のサインインのルックアンドフィールが Azure AD と同じになります。  これにより、ユーザーはより一貫したサインインエクスペリエンスを提供し、中央のユーザーフローと改ページ調整されたユーザーフローを組み込むことができます。
 
 ## <a name="whats-changing"></a>変更点
-Windows Server 2012 R2 および 2016 の AD FS では、サインイン画面は、このようなものを検索しました。
+Windows Server 2012 R2 および2016の AD FS では、サインイン画面は次のようになります。
 
 ![oldsignin](media/AD-FS-paginated-sign-in/signin1.png)
 
-画面の右側にある 1 つのフォームを表示するからに移行します。
+画面の右側にある1つのフォームを表示しないようにしています。
 
-Windows Server 2019、AD FS では、表示される主要な設計の変更。
+Windows Server 2019 の AD FS では、次のような主な設計変更が表示されます。
 
 
-- **A UI を中央揃え**します。 以前は、上記には、画面の右側にあるサインイン UI が存在しています。 UI の前面と経験を近代化するセンター移行しました。
-- **改ページ調整**します。 長い形式の入力を提供する、代わりにステップ バイ ステップのエクスペリエンスにサインインを実行する新しいフローを反映します。 利用統計情報は、この方法でのお客様があるより成功したサインインを示します。さまざまな認証方法、このような米国の電話要素認証を組み込む柔軟性も提供します。
+- **中央の UI**。 以前は、上記のように、画面の右側にサインイン UI が存在していました。 UI フロントとセンターを移動して、エクスペリエンスを最新化しました。
+- **ページ**割り当て。 長い形式のフォームを提供するのではなく、サインインエクスペリエンスを段階的に説明する新しいフローを導入しましたが、 製品利用統計情報は、このアプローチにより、お客様のサインインがより成功したことを示しています。また、米国の電話要因認証など、さまざまな認証方法を柔軟に組み込むことができます。
 
 ![newsignin](media/AD-FS-paginated-sign-in/signin2.png)
 
-最初のページでは、ユーザー名を入力を求め。 「サインインしたまま」するオプションを選択することも可能性があります。 サインイン プロンプトが表示の頻度を減らすと、これを行うには安全ではときにサインインしたままにします。 (このオプションは既定で無効です)。
+最初のページで、ユーザー名を入力するように求められます。 サインインプロンプトの頻度を下げ、安全にサインインしたままにしておくために、[サインインしたままにする] オプションを選択することもできます。 既定では、このオプションは無効になっています。
 
 ![newsignin](media/AD-FS-paginated-sign-in/signin3.png)
 
-2 番目のページでは、するは、管理者によって構成の認証オプションを使用して表示されます。 プライマリと外部の認証が有効になっている場合は、これが含まれますも。
+2番目のページには、管理者によって構成された認証オプションが表示されます。 [プライマリとして外部認証を許可する] が有効になっている場合は、これも含まれます。
 
 ![newsignin](media/AD-FS-paginated-sign-in/signin4.png)
 
-3 番目のページでは、(と仮定すると"Password"を選択した認証オプションとして) パスワードの入力を求め。
+3番目のページでは、パスワードを入力するように求められます (認証オプションとして [パスワード] を選択した場合)。
 
-## <a name="how-to-get-the-new-experience"></a>新しいエクスペリエンスを取得する方法
+## <a name="how-to-get-the-new-experience"></a>新しいエクスペリエンスを得る方法
 
-### <a name="new-installation-of-ad-fs"></a>AD FS の新しいインストール
-AD FS に新しい顧客の場合は、既定では、新しいデザインを受け取ります。
+### <a name="new-installation-of-ad-fs"></a>AD FS の新規インストール
+新しい顧客が AD FS する場合は、既定で新しいデザインを受け取ります。
 
 ### <a name="upgrading-a-farm"></a>ファームのアップグレード
-既存の顧客の AD FS 2012 R2 または 2016 の場合は、2019年に FBL になり、AD FS 2019 にサーバーのアップグレード後に、新しいデザインを受信する 2 つの方法があります。
+既存の顧客 AD FS 2012 R2 または2016の場合は、サーバーを AD FS 2019 にアップグレードし、FBL を2019にするという2つの方法があります。
 
-- Powershell を使用して新しいサインインできます。 改ページ調整を有効にするのには、次のコマンドを実行します。 ``Set-AdfsGlobalAuthenticationPolicy -EnablePaginatedAuthenticationPages $true``
+- Powershell を使用して新しいサインインを許可します。 次のコマンドを実行して、改ページ位置の自動修正を有効にします。``Set-AdfsGlobalAuthenticationPolicy -EnablePaginatedAuthenticationPages $true``
 
- - Powershell を使用または AD FS サーバー マネージャーでは主として、外部の認証を有効にします。 この機能が有効にすると、ページの改ページ調整されたサインインを有効になります。
-AD FS に新しい顧客の場合は、既定では、新しいデザインを受け取ります。 ただし、既存の顧客と AD FS 2012 R2 または 2016 の場合は、いくつかの手順を新しいデザインを受信する必要があります。 ``Set-AdfsGlobalAuthenticationPolicy -AllowAdditionalAuthenticationAsPrimary $true``
+ - Powershell または AD FS サーバーマネージャーを使用して、外部認証をプライマリとして有効にします。 この機能を有効にすると、改ページ調整された新しいサインインページが有効になります。
+新しい顧客が AD FS する場合は、既定で新しいデザインを受け取ります。 ただし、AD FS 2012 R2 または2016を使用している既存のお客様の場合、新しい設計を受けるにはいくつかの手順を実行する必要があります。``Set-AdfsGlobalAuthenticationPolicy -AllowAdditionalAuthenticationAsPrimary $true``
 
 ## <a name="customization"></a>カスタマイズ
-カスタマイズするためのオプションは、AD FS 2019 の適用されます。
+カスタマイズのオプションは、AD FS 2019 にも適用できます。
 参照用の他のドキュメントへのリンクを次に示します。
 
-AD FS 2019 に、サーバーをアップグレードする予定がないせずに、新しいデザイン場合方のため •:[Active Directory フェデレーション サービスで Azure AD のユーザー エクスペリエンスの Web テーマを使用します。](azure-ux-web-theme-in-ad-fs.md)
+•サーバーを AD FS 2019 にアップグレードする予定がなくても、新しい設計が必要な場合は、次のようになります。[Active Directory フェデレーションサービス (AD FS) での Azure AD UX Web テーマの使用](azure-ux-web-theme-in-ad-fs.md)
 
-• カスタマイズの中央の場所:[AD FS のユーザー サインインのカスタマイズ](ad-fs-user-sign-in-customization.md)
+•カスタマイズのための一元的な場所:[AD FS のユーザー サインインのカスタマイズ](ad-fs-user-sign-in-customization.md)

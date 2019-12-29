@@ -1,9 +1,9 @@
 ---
-title: 手順 1 は、基本的な DirectAccess インフラストラクチャを構成します。
-description: このトピックは、作業の開始ウィザードの Windows Server 2016 を使用して単一の DirectAccess サーバー展開ガイドの一部です。
+title: 手順1基本的な DirectAccess インフラストラクチャを構成する
+description: このトピックは、「Windows Server 2016 用はじめにウィザードを使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2a8fb9565c5a84844104b202d749e74337101601
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 2cd84949dddf75730aca6302f1244f784b5933d0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281735"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388569"
 ---
-# <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>手順 1 は、基本的な DirectAccess インフラストラクチャを構成します。
+# <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>手順1基本的な DirectAccess インフラストラクチャを構成する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、IPv4 と IPv6 の混在環境で単一の DirectAccess サーバーを使用して、基本的な DirectAccess 展開に必要なインフラストラクチャを構成する方法について説明します。 展開の手順を開始する前に、計画で説明した手順を完了していることを確認します [基本的な DirectAccess 展開を計画](../../../remote-access/directaccess/single-server-wizard/Plan-a-Basic-DirectAccess-Deployment.md)します。  
   
@@ -38,7 +38,7 @@ ms.locfileid: "67281735"
 > [!NOTE]  
 > このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
   
-## <a name="ConfigNetworkSettings"></a>サーバーのネットワーク設定を構成します。  
+## <a name="ConfigNetworkSettings"></a>サーバーのネットワーク設定を構成する  
 IPv4 と IPv6 を使用した環境での単一サーバーの展開には次のネットワーク インフラストラクチャ設定が必要です。 使用してすべての IP アドレスが構成されている **アダプターの設定を変更する** で、 **Windows ネットワークと共有センター**します。  
   
 -   エッジ トポロジ  
@@ -74,14 +74,14 @@ IPv4 と IPv6 を使用した環境での単一サーバーの展開には次の
 >   
 >     IPsec ポリシーの名前は、DirectAccess DaServerToInfra と DirectAccess DaServerToCorp です。  
   
-## <a name="ConfigRouting"></a>企業ネットワークでルーティングを構成します。  
+## <a name="ConfigRouting"></a>企業ネットワークでルーティングを構成する  
 次のように、企業ネットワークでルーティングを構成します。  
   
 -   組織でネィティブ IPv6 が展開されている場合、内部ネットワーク上のルーターがリモート アクセス サーバー経由で IPv6 トラフィックをルーティングするようにルートを追加します。  
   
 -   リモート アクセス サーバー上で組織の IPv4 および IPv6 ルートを手動で構成します。 組織 (/48) の IPv6 プレフィックスが付いたすべてのトラフィックが内部ネットワークに転送されるように、公開されたルートを追加します。 さらに、IPv4 トラフィックの場合、IPv4 トラフィックが内部ネットワークに転送されるように、明示的なルートを追加します。  
   
-## <a name="ConfigFirewalls"></a>ファイアウォールを構成します。  
+## <a name="ConfigFirewalls"></a>ファイアウォールを構成する  
 展開で追加のファイアウォールを使用し、リモート アクセス サーバーが IPv4 インターネット上にある場合は、次のインターネットに接続するファイアウォール例外をリモート アクセス トラフィックに適用します。  
   
 -   6to4 トラフィックの IP プロトコル 41 の受信および送信します。  
@@ -106,10 +106,10 @@ IPv4 と IPv6 を使用した環境での単一サーバーの展開には次の
   
 -   すべての IPv4/IPv6 トラフィックに対する TCP/UDP  
   
-## <a name="ConfigDNS"></a>DNS サーバーを構成します。  
+## <a name="ConfigDNS"></a>DNS サーバーを構成する  
 展開内の内部ネットワークのネットワーク ロケーション サーバー Web サイトの DNS エントリを手動で構成する必要があります。  
   
-### <a name="NLS_DNS"></a>ネットワークの場所を作成するには、サーバーおよび NCSI プローブ DNS レコード  
+### <a name="NLS_DNS"></a>ネットワークロケーションサーバーと NCSI プローブ DNS レコードを作成するには  
   
 1.  内部ネットワークの DNS サーバー上で実行 **dnsmgmt.msc** ENTER キーを押します。  
   
@@ -121,7 +121,7 @@ IPv4 と IPv6 を使用した環境での単一サーバーの展開には次の
   
 5.  **[完了]** をクリックします。  
   
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
 
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -136,7 +136,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 -   **CRL 失効確認** の DirectAccess は DirectAccess クライアントとリモート アクセス サーバー間の IP-HTTPS 接続、DirectAccess クライアントとネットワーク ロケーション サーバー間での HTTPS ベースの接続、証明書の失効確認を使用します。 どちらの場合も、DirectAccess クライアントは、CRL 配布ポイントの場所の解決とアクセスができる必要があります。  
   
-## <a name="ConfigAD"></a>Active Directory を構成します。  
+## <a name="ConfigAD"></a>Active Directory の構成  
 リモート アクセス サーバーとすべての DirectAccess クライアント コンピューターは Active Directory ドメインに参加している必要があります。 DirectAccess クライアント コンピューターは、次のいずれかのドメインの種類のメンバーである必要があります。  
   
 -   リモート アクセス サーバーと同じフォレストに属するドメイン。  
@@ -149,7 +149,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 1.  サーバー マネージャーで **[ローカル サーバー]** をクリックします。 詳細ウィンドウで、 **[コンピューター名]** の横にあるリンクをクリックします。  
   
-2.  **[システムのプロパティ]** ダイアログ ボックスの **[コンピューター名]** タブをクリックします。 **[コンピューター名]** タブで、 **[変更]** をクリックします。  
+2.  **[システムのプロパティ]** ダイアログボックスで、 **[コンピューター名]** タブをクリックします。 **[コンピューター名]** タブで、 **[変更]** をクリックします。  
   
 3.  サーバーをドメインに追加するときにコンピューター名も変更する場合は、 **[コンピューター名]** にコンピューター名を入力します。 **[次のメンバー]** で **[ドメイン]** をクリックし、サーバーの追加先のドメイン名 (corp.contoso.com など) 入力し、 **[OK]** をクリックします。  
   
@@ -183,7 +183,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 9. **システムのプロパティ** ダイアログ ボックスで、閉じる をクリックします。 指示に従い、 **[今すぐ再起動する]** をクリックします。  
   
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -194,7 +194,7 @@ Add-Computer -DomainName <domain_name>
 Restart-Computer  
 ```  
   
-## <a name="ConfigGPOs"></a>Gpo を構成します。  
+## <a name="ConfigGPOs"></a>Gpo を構成する  
 リモート アクセスを展開する 2 つのグループ ポリシー オブジェクトの最小値を必要とします。 1 つのグループ ポリシー オブジェクトは、リモート アクセス サーバーの設定を格納し、DirectAccess クライアント コンピューターの設定が含まれています。 リモート アクセスを構成するときに、ウィザードは自動的に必要なグループ ポリシー オブジェクトを作成します。 ただし、名前付け規則を実施する組織、またはグループ ポリシー オブジェクトを作成または更新に必要なアクセス許可がないは、リモート アクセスを構成する前に、作成する必要があります。  
   
 グループ ポリシー オブジェクトを作成するを参照してください。 [を作成し、グループ ポリシー オブジェクトを編集](https://technet.microsoft.com/library/cc754740.aspx)します。  
@@ -210,10 +210,10 @@ Restart-Computer
 > [!NOTE]  
 > グループ ポリシー オブジェクトは、手動で作成されている場合ことは、グループ ポリシー オブジェクトが使用できないこと、DirectAccess 構成中に。 グループ ポリシー オブジェクトは、管理コンピューターに最も近いドメイン コント ローラーにレプリケートするされていない可能性があります。 この場合、管理者はレプリケーションが完了するまで待つか、レプリケーションを強制的に実行できます。  
   
-## <a name="ConfigSGs"></a>セキュリティ グループを構成します。  
+## <a name="ConfigSGs"></a>セキュリティグループの構成  
 クライアント コンピューターのグループ ポリシー オブジェクトに含まれる DirectAccess 設定は、リモート アクセスを構成するときに指定したセキュリティ グループのメンバーであるコンピューターにのみ適用されます。  
   
-### <a name="Sec_Group"></a>DirectAccess クライアントのセキュリティ グループを作成するには  
+### <a name="Sec_Group"></a>DirectAccess クライアントのセキュリティグループを作成するには  
   
 1.  実行 **dsa.msc**します。 **Active Directory ユーザーとコンピューター** コンソールの左側のウィンドウで、セキュリティ グループを含むを右クリックし、ドメインを展開する **ユーザー**, 、 をポイント **新規**, 、クリックして **グループ**します。  
   
@@ -227,7 +227,7 @@ Restart-Computer
   
 6.  **[ユーザー、連絡先、コンピューター、サービス アカウントまたはグループの選択]** ダイアログ ボックスで、DirectAccess 用に有効にするクライアント コンピューターを選択し、 **[OK]** をクリックします。  
   
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows PowerShell の同等のコマンド**  
+windows PowerShell の ![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -236,9 +236,9 @@ New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>
 Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_name>  
 ```  
   
-## <a name="BKMK_Links"></a>次の手順  
+## <a name="BKMK_Links"></a>次のステップ  
   
--   [手順 2:基本的な DirectAccess サーバーを構成する](da-basic-configure-s2-server.md)  
+-   [手順 2: 基本的な DirectAccess サーバーを構成する](da-basic-configure-s2-server.md)  
   
 
 

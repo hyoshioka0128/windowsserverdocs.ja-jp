@@ -1,7 +1,7 @@
 ---
 title: VHD 形式の動的な仮想ハード ディスクは、運用環境でサーバーのワークロードを実行する仮想マシンには推奨されません。
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,38 +10,38 @@ ms.topic: article
 ms.assetid: 324a60a0-1d15-4ef2-9f17-23cbd2eb42ce
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 6acd27fa0efa27ba74c28e290c789edca599f66f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bf5464208fc145a31571f01822bb5ba54efe89c4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849883"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364590"
 ---
 # <a name="vhd-format-dynamic-virtual-hard-disks-are-not-recommended-for-virtual-machines-that-run-server-workloads-in-a-production-environment"></a>VHD 形式の動的な仮想ハード ディスクは、運用環境でサーバーのワークロードを実行する仮想マシンには推奨されません。
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
-ベスト プラクティスとスキャンの詳細については、次を参照してください。 [Run Best Practices Analyzer Scans and Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177)します。  
+ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
 |プロパティ|詳細|  
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|警告|  
+|**順**|Warning|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。
   
 ## <a name="issue"></a>**問題**  
-*1 つまたは複数の仮想マシンは、VHD 形式容量可変仮想ハード_ディスクの拡張を使用します。*  
+*1つまたは複数の仮想マシンで、VHD 形式の動的な拡張バーチャルハードディスクを使用します。*  
   
-## <a name="impact"></a>**影響**  
-*VHD 形式の動的な仮想ハード ディスクには、電源障害が発生した場合に一貫性の問題が発生します。一貫性の問題は、物理ディスクは、電源障害が発生したときに変更されている .vhd ファイルに不完全または不正確、セクターに更新プログラムを実行する場合に発生することができます。これには、次の仮想マシンに影響します。*  
+## <a name="impact"></a>**よる**  
+*VHD 形式の動的な仮想ハードディスクでは、電源障害が発生した場合に一貫性の問題が発生する可能性があります。整合性の問題は、物理ディスクが、電源障害が発生したときに変更されている .vhd ファイル内のセクターに対して不完全または不適切な更新を実行すると発生する可能性があります。これは、次の仮想マシンに影響します。*  
   
-\<仮想マシンの一覧 >  
+仮想マシンの一覧を \<>  
   
 ## <a name="resolution"></a>**解決方法**  
-*仮想マシンをシャット ダウンし、VHDX 形式のバーチャル ハード ディスクと固定容量仮想ハード_ディスクを VHD 形式ダイナミック仮想ハード ディスクを変換します。(VHDX 形式とは、システム電源障害による破損からディスクを保護するための信頼性メカニズムのことです)。ただし、変換しないバーチャル ハード ディスクにある時点で Windows の以前のリリースに接続する可能性が高い場合。VHDX 形式をサポートしない Windows Server 2012 より前の Windows リリースします。*  
+*仮想マシンをシャットダウンし、VHD 形式の動的仮想ハードディスクを VHDX 形式の仮想ハードディスクまたは容量固定の仮想ハードディスクに変換します。(VHDX 形式には、システム電源障害によりディスクを破損から保護するのに役立つ信頼性機構があります)。ただし、仮想ハードディスクが、ある時点で以前のリリースの Windows に接続されている可能性がある場合は、変換しないでください。Windows Server 2012 より前の windows リリースでは、VHDX 形式はサポートされていません。*  
   
 
 

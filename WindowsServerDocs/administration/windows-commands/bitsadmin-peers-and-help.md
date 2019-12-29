@@ -1,8 +1,8 @@
 ---
-title: bitsadmin ピアとヘルプ
-description: Windows コマンド」のトピック**bitsadmin ピアし、ヘルプ**-コマンドラインの使用法を表示、**ピア**スイッチ。
+title: bitsadmin のピアとヘルプ
+description: '**Bitsadmin ピアとヘルプ**に関する Windows コマンドトピックでは、**ピア**スイッチのコマンドラインの使用方法を示します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 90231e6bbc467b0798548e098491aae2de9616ca
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0a61c16c9fb390409697b11586ac05384b56f07e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856313"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380942"
 ---
-# <a name="bitsadmin-peers-and-help"></a>bitsadmin ピアとヘルプ
+# <a name="bitsadmin-peers-and-help"></a>bitsadmin のピアとヘルプ
 
 
 
-コマンドラインの使用法を表示、**ピア**スイッチ。
+**ピア**スイッチのコマンドラインの使用法を表示します。
 
 ## <a name="syntax"></a>構文
 
@@ -34,11 +34,11 @@ Bitsadmin /Peers /Help
 
 ## <a name="BKMK_examples"></a>例
 
-次のコマンドのコマンド ライン ヘルプを表示する、**ピア**スイッチ。
+次のコマンドは、**ピア**スイッチのコマンドラインヘルプを表示します。
 ```
 Bitsadmin /Peers /Help
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

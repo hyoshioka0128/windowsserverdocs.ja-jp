@@ -1,21 +1,21 @@
 ---
-title: リモート デスクトップ Web クライアントへのアクセス
+title: Web クライアントの概要
 description: リモート デスクトップ Web クライアントにサインインする方法について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: remote-desktop-services
 ms.author: helohr
-ms.date: 07/20/2018
+ms.date: 08/27/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: f4433ad592219d6ed15b28fd0514790b078525fd
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 6c37c28fded08ba68e46a10a534ee0269c714938
+ms.sourcegitcommit: 89aea00fe0e00fc8b1a6e20af36ad04df8c9fe5b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743837"
+ms.lasthandoff: 11/19/2019
+ms.locfileid: "74189468"
 ---
-# <a name="access-the-remote-desktop-web-client"></a>リモート デスクトップ Web クライアントへのアクセス
+# <a name="get-started-with-the-web-client"></a>Web クライアントの概要
 
 リモート デスクトップ Web クライアントでは、互換性のある Web ブラウザーを使用して、管理者によって公開されている組織のリモート リソース (アプリとデスクトップ) にアクセスできます。どこにいても、ローカル PC を使用するようにリモートのアプリおよびデスクトップを操作でき、別のデスクトップ PC に切り替える必要はありません。 管理者がリモート リソースを設定すれば、ご自身のドメイン、ユーザー名、パスワード、管理者から送信された URL、サポートされる Web ブラウザーを指定するだけで、問題なく進めることができます。
 
@@ -58,6 +58,10 @@ Web クライアントから印刷するには、次の手順に従います。
 ## <a name="copy-and-paste-from-the-remote-desktop-web-client"></a>リモート デスクトップ Web クライアントからのコピーと貼り付け
 
 Web クライアントでは現在、テキストのコピーと貼り付けのみをサポートしています。 Web クライアントに対して、ファイルをコピーまたは貼り付けすることはできません。 さらに、テキストをコピーして貼り付けるには、**Ctrl + C** と **Ctrl + V** だけを使用できます。
+
+## <a name="use-an-input-method-editor-ime-in-the-remote-session"></a>リモート セッションで入力方式エディター (IME) を使用する
+
+リモート セッションで入力方式エディターを使用して複雑な文字を入力するには、ナビゲーション バーの歯車アイコンを選択して **[設定]** サイド パネルを開き、 **[入力方式エディターを有効にする]** を **[オン]** に切り替えます。 入力方式エディターがインストールされ、リモート セッションで有効になっている必要があります。 
 
 ## <a name="get-help-with-the-web-client"></a>Web クライアントに関するヘルプの表示
 

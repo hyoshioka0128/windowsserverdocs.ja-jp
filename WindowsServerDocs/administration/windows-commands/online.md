@@ -1,8 +1,8 @@
 ---
 title: オンライン
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a8063ac09b1d8d9bf4dd4e6665c1725fcb77ae89
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 489cef1ad4dc5fec5f477f95a6f2fad391b3bf02
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828113"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372494"
 ---
 # <a name="online"></a>オンライン
 
@@ -37,8 +37,8 @@ Offline volume
 
 |パラメーター|説明|
 |---------|-----------|
-|[オフラインのディスク](offline-disk.md)|オンライン状態にフォーカスがあるオフライン ディスクを移動します。|
-|[オフライン ボリューム](offline-volume.md)|オンライン状態に、オフラインのボリュームがフォーカスを移動します。|
+|[オフラインディスク](offline-disk.md)|オンライン状態にフォーカスがあるオフライン ディスクを移動します。|
+|[オフラインボリューム](offline-volume.md)|オンライン状態に、オフラインのボリュームがフォーカスを移動します。|
 
 #### <a name="additional-references"></a>その他の参照情報
 

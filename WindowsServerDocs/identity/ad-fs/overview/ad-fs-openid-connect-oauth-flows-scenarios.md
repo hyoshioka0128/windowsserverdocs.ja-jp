@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b83cc7c4c9062c68298e52f6f3b366e6953cb442
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: e1e0235e50945fadd09fe9dd5ffeaf6d7119e482
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69983510"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385598"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>OpenID Connect/OAuth フローとアプリケーションシナリオの AD FS
 AD FS 2016 以降に適用されます
@@ -22,11 +22,11 @@ AD FS 2016 以降に適用されます
 
 |シナリオ|サンプルを使用したシナリオのチュートリアル|OAuth 2.0 フロー/許可|クライアントの種類|
 |-----|-----|-----|-----|
-|シングルページアプリ</br> | &bull;[ADAL を使用したサンプル](../development/Single-Page-Application-with-AD-FS.md)|[順序](#implicit-grant-flow)|パブリック| 
-|ユーザーがサインインする Web アプリ</br> | &bull;[OWIN を使用したサンプル](../development/enabling-openid-connect-with-ad-fs.md)|[認証コード](#authorization-code-grant-flow)|パブリック、社外秘|  
-|ネイティブアプリ呼び出し Web API</br>|&bull;[MSAL を使用したサンプル](../development/msal/adfs-msal-native-app-web-api.md)</br>&bull;[ADAL を使用したサンプル](../development/native-client-with-ad-fs.md)|[認証コード](#authorization-code-grant-flow)|パブリック|   
-|Web アプリが Web API を呼び出します</br>|&bull;[MSAL を使用したサンプル](../development/msal/adfs-msal-web-app-web-api.md)</br>&bull;[ADAL を使用したサンプル](../development/enabling-oauth-confidential-clients-with-ad-fs.md)|[認証コード](#authorization-code-grant-flow)|部外| 
-|Web API は、ユーザーの代わりに別の web API を呼び出します (OBO)。</br>|&bull;[MSAL を使用したサンプル](../development/msal/adfs-msal-web-api-web-api.md)</br>&bull;[ADAL を使用したサンプル](../development/ad-fs-on-behalf-of-authentication-in-windows-server.md)|[代理](#on-behalf-of-flow)|Web アプリは社外秘として機能します| 
+|シングルページアプリ</br> | [ADAL を使用し](../development/Single-Page-Application-with-AD-FS.md)た &bull; サンプル|[順序](#implicit-grant-flow)|Public| 
+|ユーザーがサインインする Web アプリ</br> | [OWIN を使用し](../development/enabling-openid-connect-with-ad-fs.md)た &bull; サンプル|[認証コード](#authorization-code-grant-flow)|パブリック、社外秘|  
+|ネイティブアプリ呼び出し Web API</br>|[MSAL を使用し](../development/msal/adfs-msal-native-app-web-api.md)た &bull; サンプル</br>[ADAL を使用し](../development/native-client-with-ad-fs.md)た &bull; サンプル|[認証コード](#authorization-code-grant-flow)|Public|   
+|Web アプリが Web API を呼び出します</br>|[MSAL を使用し](../development/msal/adfs-msal-web-app-web-api.md)た &bull; サンプル</br>[ADAL を使用し](../development/enabling-oauth-confidential-clients-with-ad-fs.md)た &bull; サンプル|[認証コード](#authorization-code-grant-flow)|部外| 
+|Web API は、ユーザーの代わりに別の web API を呼び出します (OBO)。</br>|[MSAL を使用し](../development/msal/adfs-msal-web-api-web-api.md)た &bull; サンプル</br>[ADAL を使用し](../development/ad-fs-on-behalf-of-authentication-in-windows-server.md)た &bull; サンプル|[代理](#on-behalf-of-flow)|Web アプリは社外秘として機能します| 
 |デーモンアプリが Web API を呼び出します||[クライアント資格情報](#client-credentials-grant-flow)|部外| 
 |Web アプリがユーザーの資格情報を使用して Web API を呼び出す||[リソース所有者のパスワード資格情報](#resource-owner-password-credentials-grant-flow-not-recommended)|パブリック、社外秘| 
 |Browserless アプリ呼び出し Web API||[デバイスコード](#device-code-flow)|パブリック、社外秘| 
@@ -63,22 +63,22 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |パラメーター|必須/オプション|説明| 
 |-----|-----|-----|
 |client_id|required|AD FS アプリに割り当てられているアプリケーション (クライアント) ID。| 
-|response_type|required|OpenID connect `id_token`サインインにはを含める 必要があります。 Response_type `token`が含まれている場合もあります。 ここでトークンを使用すると、トークンエンドポイントに対して2番目の要求を行うことなく、アプリが承認エンドポイントからすぐにアクセストークンを受信できるようになります。| 
-|redirect_uri|required|アプリの redirect_uri。アプリで認証応答を送受信できます。 AD FS で構成した redirect_uris の1つと完全に一致している必要があります。| 
+|response_type|required|OpenID Connect サインインに `id_token` を含める必要があります。 また、response_type `token`が含まれている場合もあります。 ここでトークンを使用すると、トークンエンドポイントに対して2番目の要求を行うことなく、アプリが承認エンドポイントからすぐにアクセストークンを受信できるようになります。| 
+|redirect_uri|required|アプリの redirect_uri。認証応答をアプリで送受信できます。 AD FS で構成した redirect_uris のいずれかと正確に一致している必要があります。| 
 |nonce|required|要求に含まれる、アプリによって生成される値。この値は、結果の id_token に要求として含まれます。 その後、アプリはこの値を検証して、トークン再生攻撃を軽減できます。 通常、この値はランダム化された一意の文字列であり、要求の発生元を識別するために使用できます。 Id_token が要求された場合にのみ必要です。|
-|スコープ (scope)|オプション|スペースで区切られたスコープのリスト。 OpenID Connect には、スコープ `openid`が含まれている必要があります。|
-|resource|オプション|Web API の url。</br>注: MSAL クライアントライブラリを使用している場合、resource パラメーターは送信されません。 代わりに、リソース url はスコープパラメーターの一部として送信されます。`scope = [resource url]//[scope values e.g., openid]`</br>リソースがここで渡されない場合、またはスコープ内にある場合、ADFS は既定のリソース urn: microsoft: userinfo を使用します。 MFA、発行、承認ポリシーなどの userinfo リソースポリシーはカスタマイズできません。| 
-|response_mode|オプション| 生成されたトークンをアプリに返すために使用するメソッドを指定します。 デフォルトは `fragment` です。| 
+|scope|オプション|スペースで区切られたスコープのリスト。 OpenID Connect の場合、スコープ `openid`を含める必要があります。|
+|resource|オプション|Web API の url。</br>注: MSAL クライアントライブラリを使用している場合、resource パラメーターは送信されません。 代わりに、リソース url はスコープパラメーターの一部として送信されます: `scope = [resource url]//[scope values e.g., openid]`</br>リソースがここで渡されない場合、またはスコープ内にある場合、ADFS は既定のリソース urn: microsoft: userinfo を使用します。 MFA、発行、承認ポリシーなどの userinfo リソースポリシーはカスタマイズできません。| 
+|response_mode|オプション| 生成されたトークンをアプリに返すために使用するメソッドを指定します。 既定値は `fragment` です。| 
 |state|オプション|要求に含まれる値。トークンの応答でも返されます。 任意のコンテンツの文字列を指定できます。 ランダムに生成された一意の値は、通常、クロスサイト要求偽造攻撃を防止するために使用されます。 また、状態は、認証要求が発生する前にアプリ内でユーザーの状態に関する情報をエンコードするためにも使用されます (ページやビューなど)。| 
-|prompt|オプション|必要なユーザー操作の種類を示します。 現時点で有効な値は、login と none だけです。</br>- `prompt=login` では、ユーザーは、シングルサインオンを否定して、その要求に対して資格情報を入力するように強制されます。 </br>- `prompt=none` は反対です。ユーザーには、対話的なプロンプトが表示されないようにします。 シングルサインオンを使用して要求をサイレントモードで完了できない場合、AD FS は interaction_required エラーを返します。| 
-|login_hint|オプション|を使用すると、ユーザー名が事前にわかっている場合に、ユーザーのサインインページのユーザー名/電子メールアドレスフィールドに事前に入力できます。 多くの場合、アプリでは再認証時にこのパラメーターが使用され、からの `upn`  `id_token`要求を使用して以前のサインインからユーザー名が既に抽出されています。| 
+|prompt|オプション|必要なユーザー操作の種類を示します。 現時点で有効な値は、login と none だけです。</br>- `prompt=login` では、ユーザーがその要求に対して資格情報を入力するように強制し、シングルサインオンを否定します。 </br>- `prompt=none` は反対です。ユーザーには対話型のプロンプトが表示されないようにします。 シングルサインオンを使用して要求をサイレントモードで完了できない場合、AD FS は interaction_required エラーを返します。| 
+|login_hint|オプション|を使用すると、ユーザー名が事前にわかっている場合に、ユーザーのサインインページのユーザー名/電子メールアドレスフィールドに事前に入力できます。 多くの場合、アプリは再認証時にこのパラメーターを使用し、`id_token`からの `upn` 要求を使用して以前のサインインからユーザー名を抽出しています。| 
 |domain_hint|オプション|含まれている場合は、サインインページでユーザーが実行するドメインベースの検出プロセスがスキップされ、ユーザーエクスペリエンスが少し簡素化されます。| 
 
 この時点で、ユーザーは資格情報の入力を求められ、認証が完了します。 ユーザーが認証されると、AD FS 承認エンドポイントは、response_mode パラメーターで指定されたメソッドを使用して、指定された redirect_uri でアプリに応答を返します。  
  
 ### <a name="successful-response"></a>成功した応答 
  
-を使用し `response_mode=fragment and response_type=id_token+token` た正常な応答は次のようになります。  
+ `response_mode=fragment and response_type=id_token+token` を使用した正常な応答は次のようになります。  
  
 ```
 // Line breaks for legibility only 
@@ -95,19 +95,19 @@ access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik5HVEZEstZnl0aEV...
 
 |パラメーター|説明| 
 |-----|-----|
-|access_token|Response_type にが含ま `token`れる場合に含まれます。|
-|token_type|Response_type にが含ま `token`れる場合に含まれます。 は常にベアラーです。| 
-|expires_in| Response_type にが含ま `token`れる場合に含まれます。 キャッシュのためにトークンが有効である秒数を示します。| 
-|スコープ (scope)| Access_token が有効になるスコープを示します。|  
-|id_token|Response_type にが含ま `id_token`れる場合に含まれます。 署名された JSON Web トークン (JWT)。 アプリは、このトークンのセグメントをデコードして、サインインしたユーザーに関する情報を要求することができます。 アプリは値をキャッシュして表示できますが、承認やセキュリティの境界に依存することはできません。| 
+|access_token|Response_type に `token`が含まれている場合に含まれます。|
+|token_type|Response_type に `token`が含まれている場合に含まれます。 は常にベアラーです。| 
+|expires_in| Response_type に `token`が含まれている場合に含まれます。 キャッシュのためにトークンが有効である秒数を示します。| 
+|scope| Access_token が有効になるスコープを示します。|  
+|id_token|Response_type に `id_token`が含まれている場合に含まれます。 署名された JSON Web トークン (JWT)。 アプリは、このトークンのセグメントをデコードして、サインインしたユーザーに関する情報を要求することができます。 アプリは値をキャッシュして表示できますが、承認やセキュリティの境界に依存することはできません。| 
 |state|状態パラメーターが要求に含まれている場合、同じ値が応答に表示されます。 アプリでは、要求と応答の状態値が同一であることを確認する必要があります。|
 
 ### <a name="refresh-tokens"></a>トークンの更新 
-暗黙的な許可は、更新トークンを提供しません。  `id_tokens` と `access_tokens`はどちらも短時間で期限切れになるため、アプリはこれらのトークンを定期的に更新するように準備する必要があります。 どちらの種類のトークンを更新する場合でも、 `prompt=none` パラメーターを使用して、上記と同じ非表示の iframe 要求を実行して、id プラットフォームの動作を制御することができます。 を受信`new id_token`する場合は、必ずを使用 `response_type=id_token`してください。 
+暗黙的な許可は、更新トークンを提供しません。  `id_tokens` と `access_tokens` はどちらも短時間で有効期限が切れます。そのため、アプリはこれらのトークンを定期的に更新するように準備する必要があります。 どちらの種類のトークンを更新する場合でも、上記と同じ非表示の iframe 要求を実行するには、 `prompt=none` パラメーターを使用して id プラットフォームの動作を制御します。 `new id_token`を受信する場合は、必ず `response_type=id_token`を使用してください。 
 
 ## <a name="authorization-code-grant-flow"></a>認証コード付与フロー 
  
-Web アプリで OAuth 2.0 認証コード付与を使用して、web Api などの保護されたリソースにアクセスできます。 OAuth 2.0 認証コードフローは、 [oauth 2.0 仕様のセクション 4.1](https://tools.ietf.org/html/rfc6749)で説明されています。 Web アプリやネイティブにインストールされているアプリなど、大部分のアプリの種類で認証と承認を実行するために使用されます。 このフローにより、アプリケーションは、AD FS を信頼するリソースにアクセスするために使用できる access_tokens を安全に取得できます。  
+Web アプリで OAuth 2.0 認証コード付与を使用して、web Api などの保護されたリソースにアクセスできます。 OAuth 2.0 認証コードフローは、 [oauth 2.0 仕様のセクション 4.1](https://tools.ietf.org/html/rfc6749)で説明されています。 Web アプリやネイティブにインストールされているアプリなど、大部分のアプリの種類で認証と承認を実行するために使用されます。 このフローにより、アプリは、AD FS 信頼されているリソースにアクセスするために使用できる access_tokens を安全に取得できます。  
  
 ### <a name="protocol-diagram"></a>プロトコルダイアグラム 
  
@@ -136,22 +136,22 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |-----|-----|-----| 
 |client_id|required|AD FS アプリに割り当てられているアプリケーション (クライアント) ID。|  
 |response_type|required| 承認コードフローのコードを含める必要があります。| 
-|redirect_uri|required|アプリ`redirect_uri`の。アプリで認証応答を送受信することができます。 クライアントの AD FS に登録した redirect_uris の1つと完全に一致している必要があります。|  
-|resource|オプション|Web API の url。</br>注: MSAL クライアントライブラリを使用している場合、resource パラメーターは送信されません。 代わりに、リソース url はスコープパラメーターの一部として送信されます。`scope = [resource url]//[scope values e.g., openid]`</br>リソースがここで渡されない場合、またはスコープ内にある場合、ADFS は既定のリソース urn: microsoft: userinfo を使用します。 MFA、発行、承認ポリシーなどの userinfo リソースポリシーはカスタマイズできません。| 
-|スコープ (scope)|オプション|スペースで区切られたスコープのリスト。|
-|response_mode|オプション|生成されたトークンをアプリに返すために使用するメソッドを指定します。 次のいずれかになります。 </br>-クエリ </br>-fragment </br>- form_post</br>`query` コードをリダイレクト URI のクエリ文字列パラメーターとして提供します。 コードを要求している場合は、query、fragment、または form_post を使用できます。 `form_post`コードを含む投稿をリダイレクトURIに対し て実行します。|
+|redirect_uri|required|アプリの `redirect_uri`。認証応答をアプリで送受信できます。 クライアントの AD FS に登録した redirect_uris のいずれかと完全に一致させる必要があります。|  
+|resource|オプション|Web API の url。</br>注: MSAL クライアントライブラリを使用している場合、resource パラメーターは送信されません。 代わりに、リソース url はスコープパラメーターの一部として送信されます: `scope = [resource url]//[scope values e.g., openid]`</br>リソースがここで渡されない場合、またはスコープ内にある場合、ADFS は既定のリソース urn: microsoft: userinfo を使用します。 MFA、発行、承認ポリシーなどの userinfo リソースポリシーはカスタマイズできません。| 
+|scope|オプション|スペースで区切られたスコープのリスト。|
+|response_mode|オプション|生成されたトークンをアプリに返すために使用するメソッドを指定します。 次のいずれかになります。 </br>-クエリ </br>-fragment </br>-form_post</br>`query` は、リダイレクト URI でコードをクエリ文字列パラメーターとして提供します。 コードを要求している場合は、クエリ、フラグメント、または form_post を使用できます。 `form_post` は、コードを含む投稿をリダイレクト URI に対して実行します。|
 |state|オプション|要求に含まれる値。トークンの応答でも返されます。 任意のコンテンツの文字列を指定できます。 ランダムに生成された一意の値は、通常、クロスサイト要求偽造攻撃を防止するために使用されます。 この値は、認証要求が発生する前にアプリ内でユーザーの状態に関する情報をエンコードすることもできます (ページやビューなど)。|
-|prompt|オプション|必要なユーザー操作の種類を示します。 現時点で有効な値は、login と none だけです。</br>- `prompt=login` では、ユーザーは、シングルサインオンを否定して、その要求に対して資格情報を入力するように強制されます。 </br>- `prompt=none` は反対です。ユーザーには、対話的なプロンプトが表示されないようにします。 シングルサインオンを使用して要求をサイレントモードで完了できない場合、AD FS は interaction_required エラーを返します。|
-|login_hint|オプション|を使用すると、ユーザー名が事前にわかっている場合に、ユーザーのサインインページのユーザー名/電子メールアドレスフィールドに事前に入力できます。 多くの場合、アプリでは再認証時にこのパラメーターが使用され、からの `upn` `id_token`要求を使用して以前のサインインからユーザー名が既に抽出されています。|
+|prompt|オプション|必要なユーザー操作の種類を示します。 現時点で有効な値は、login と none だけです。</br>- `prompt=login` では、ユーザーがその要求に対して資格情報を入力するように強制し、シングルサインオンを否定します。 </br>- `prompt=none` は反対です。ユーザーには対話型のプロンプトが表示されないようにします。 シングルサインオンを使用して要求をサイレントモードで完了できない場合、AD FS は interaction_required エラーを返します。|
+|login_hint|オプション|を使用すると、ユーザー名が事前にわかっている場合に、ユーザーのサインインページのユーザー名/電子メールアドレスフィールドに事前に入力できます。 多くの場合、アプリは再認証時にこのパラメーターを使用し、`id_token`の `upn`要求を使用して以前のサインインからユーザー名を抽出しています。|
 |domain_hint|オプション|含まれている場合は、サインインページでユーザーが実行するドメインベースの検出プロセスがスキップされ、ユーザーエクスペリエンスが少し簡素化されます。|
-|code_challenge_method|オプション|Code_challenge パラメーターの code_verifier をエンコードするために使用されるメソッド。 次の値のいずれかです。 </br>-plain </br>- S256 </br>除外されている場合、code_challenge は、 `code_challenge`が含まれている場合 はプレーンテキストと見なされます。 AD FS は、plain と S256 の両方をサポートしています。 詳細については、「 [Pkce RFC](https://tools.ietf.org/html/rfc7636)」を参照してください。|
-|code_challenge|オプション| ネイティブクライアントからのコード交換 (PKCE) の証明キーを使用して承認コードの付与をセキュリティで保護するために使用されます。 が含ま `code_challenge_method`れている場合 は必須です。 詳細については、「 [Pkce RFC](https://tools.ietf.org/html/rfc7636) 」を参照してください。|
+|code_challenge_method|オプション|Code_challenge パラメーターの code_verifier をエンコードするために使用されるメソッド。 次の値のいずれかです。 </br>-plain </br>- S256 </br>除外した場合、 `code_challenge` が含まれている場合、code_challenge はプレーンテキストであると見なされます。 AD FS は、plain と S256 の両方をサポートしています。 詳細については、「 [Pkce RFC](https://tools.ietf.org/html/rfc7636)」を参照してください。|
+|code_challenge|オプション| ネイティブクライアントからのコード交換 (PKCE) の証明キーを使用して承認コードの付与をセキュリティで保護するために使用されます。  `code_challenge_method` が含まれている場合は必須です。 詳細については、「 [Pkce RFC](https://tools.ietf.org/html/rfc7636) 」を参照してください。|
 
-この時点で、ユーザーは資格情報の入力を求められ、認証が完了します。 ユーザーが認証されると、AD FS は、 `redirect_uri` パラメーター `response_mode`に指定されたメソッドを使用して、指定されたでアプリに応答を返します。  
+この時点で、ユーザーは資格情報の入力を求められ、認証が完了します。 ユーザーが認証されると、AD FS は `response_mode` パラメーターで指定されたメソッドを使用して、指定された `redirect_uri`でアプリに応答を返します。  
  
 ### <a name="successful-response"></a>成功した応答 
  
-Response_mode = query を使用した正常な応答は次のようになります。 
+Response_mode を使用した正常な応答: クエリは次のようになります。 
  
 ```
 GET https://adfs.contoso.com/common/oauth2/nativeclient? 
@@ -162,12 +162,12 @@ code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
 
 |パラメーター|説明|
 |-----|-----|
-|code|`authorization_code`アプリが要求した。 アプリは承認コードを使用して、ターゲットリソースのアクセストークンを要求できます。 Authorization_codes は有効期間が短いため、通常は約10分後に期限切れになります。|
-|state|要求に`state`パラメーターが含まれている場合は、同じ値が応答に表示されます。 アプリでは、要求と応答の状態値が同一であることを確認する必要があります。|
+|code|アプリが要求した `authorization_code`。 アプリは承認コードを使用して、ターゲットリソースのアクセストークンを要求できます。 Authorization_codes は有効期間が短いため、通常は約10分後に期限切れになります。|
+|state|`state` パラメーターが要求に含まれている場合、同じ値が応答に表示されます。 アプリでは、要求と応答の状態値が同一であることを確認する必要があります。|
 
 ### <a name="request-an-access-token"></a>アクセストークンを要求する 
  
-を取得`authorization_code`し、ユーザーによるアクセス許可が付与されたので、 `access_token` のコードを目的のリソースに利用できます。 これを行うには、/トークンエンドポイントに POST 要求を送信します。  
+`authorization_code` を取得し、ユーザーによるアクセス許可が付与されたので、目的のリソースに   `access_token`のコードを利用できます。 これを行うには、/トークンエンドポイントに POST 要求を送信します。  
  
 ```
 // Line breaks for legibility only 
@@ -186,11 +186,11 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |パラメーター|必須/省略可能|説明|
 |-----|-----|-----| 
 |client_id|required|AD FS アプリに割り当てられているアプリケーション (クライアント) ID。| 
-|grant_type|required|承認コード `authorization_code`フローの場合は、で ある必要があります。| 
-|code|required|`authorization_code`フローの最初の区間で取得した。| 
-|redirect_uri|required|`redirect_uri` を`authorization_code`取得するために使用したものと同じ値。| 
-|client_secret|web アプリに必要|AD FS でのアプリの登録時に作成したアプリケーションシークレット。 デバイスに client_secrets を確実に格納することはできないため、ネイティブアプリではアプリケーションシークレットを使用しないでください。 これは web apps と web Api に必要であり、client_secret をサーバー側に安全に格納する機能を備えています。 クライアントシークレットは、送信する前に URL エンコードする必要があります。 これらのアプリでは、JWT に署名し、それを client_assertion パラメーターとして追加することで、キーベースの認証を使用することもできます。| 
-|code_verifier|オプション|Authorization_code を`code_verifier`取得するために使用されたものと同じです。 認証コード付与要求で PKCE が使用されている場合は必須です。 詳細については、「 [Pkce RFC](https://tools.ietf.org/html/rfc7636)」を参照してください。</br>注– AD FS 2019 以降に適用されます。| 
+|grant_type|required|承認コードフローの `authorization_code` である必要があります。| 
+|code|required|フローの最初の区間で取得した `authorization_code`。| 
+|redirect_uri|required|`authorization_code`を取得するために使用されたのと同じ `redirect_uri` 値。| 
+|client_secret|web アプリに必要|AD FS でのアプリの登録時に作成したアプリケーションシークレット。 Client_secrets はデバイスに安全に格納できないため、ネイティブアプリではアプリケーションシークレットを使用しないでください。 これは web アプリと web Api に必要であり、サーバー側で client_secret を安全に格納する機能を備えています。 クライアントシークレットは、送信する前に URL エンコードする必要があります。 これらのアプリでは、JWT に署名して client_assertion パラメーターとして追加することで、キーベースの認証を使用することもできます。| 
+|code_verifier|オプション|Authorization_code を取得するために使用されたのと同じ `code_verifier`。 認証コード付与要求で PKCE が使用されている場合は必須です。 詳細については、「 [Pkce RFC](https://tools.ietf.org/html/rfc7636)」を参照してください。</br>注– AD FS 2019 以降に適用されます。| 
 
 ### <a name="successful-response"></a>成功した応答 
  
@@ -231,7 +231,7 @@ Access_tokens は有効期間が短いため、リソースへのアクセスを
  
 更新トークンには、有効期間が指定されていません。 通常、更新トークンの有効期間は比較的長くなります。 ただし、場合によっては、更新トークンの有効期限が切れたか、失効しているか、必要な操作に必要な特権が不足しています。 アプリケーションでは、トークン発行エンドポイントから返されたエラーを正しく処理し、処理する必要があります。  
  
-新しいアクセストークンを取得するために更新トークンを使用しても、更新トークンは取り消されませんが、古い更新トークンを破棄する必要があります。 OAuth 2.0 仕様では、次のことが示されます。"承認サーバーが新しい更新トークンを発行する可能性があります。この場合、クライアントは古い更新トークンを破棄し、新しい更新トークンで置き換える必要があります。 承認サーバーは、クライアントに新しい更新トークンを発行した後に、古い更新トークンを失効させることができます。 
+新しいアクセストークンを取得するために更新トークンを使用しても、更新トークンは取り消されませんが、古い更新トークンを破棄する必要があります。 OAuth 2.0 仕様では、"承認サーバーが新しい更新トークンを発行する可能性があります。この場合、クライアントは古い更新トークンを破棄し、新しい更新トークンに置き換える必要があります。 承認サーバーは、クライアントに新しい更新トークンを発行した後に、古い更新トークンを失効させることができます。 
  
 ```
 // Line breaks for legibility only 
@@ -250,11 +250,11 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |パラメーター|必須/オプション|説明| 
 |-----|-----|-----|
 |client_id|required|AD FS アプリに割り当てられているアプリケーション (クライアント) ID。| 
-|grant_type|required|承認コード `refresh_token`フローのこの区間では、で ある必要があります。| 
-|resource|オプション|Web API の url。</br>注: MSAL クライアントライブラリを使用している場合、resource パラメーターは送信されません。 代わりに、リソース url はスコープパラメーターの一部として送信されます。`scope = [resource url]//[scope values e.g., openid]`</br>リソースがここで渡されない場合、またはスコープ内にある場合、ADFS は既定のリソース urn: microsoft: userinfo を使用します。 MFA、発行、承認ポリシーなどの userinfo リソースポリシーはカスタマイズできません。|
-|スコープ (scope)|オプション|スペースで区切られたスコープのリスト。| 
+|grant_type|required|承認コードフローのこの段階では、 `refresh_token` である必要があります。| 
+|resource|オプション|Web API の url。</br>注: MSAL クライアントライブラリを使用している場合、resource パラメーターは送信されません。 代わりに、リソース url はスコープパラメーターの一部として送信されます: `scope = [resource url]//[scope values e.g., openid]`</br>リソースがここで渡されない場合、またはスコープ内にある場合、ADFS は既定のリソース urn: microsoft: userinfo を使用します。 MFA、発行、承認ポリシーなどの userinfo リソースポリシーはカスタマイズできません。|
+|scope|オプション|スペースで区切られたスコープのリスト。| 
 |refresh_token|required|フローの2番目の段階で取得した refresh_token。| 
-|client_secret|web アプリに必要| アプリのアプリ登録ポータルで作成したアプリケーションシークレット。 デバイスに client_secrets を確実に格納することはできないため、ネイティブアプリでは使用しないでください。 これは web apps と web Api に必要であり、client_secret をサーバー側に安全に格納する機能を備えています。 これらのアプリでは、JWT に署名し、それを client_assertion パラメーターとして追加することで、キーベースの認証を使用することもできます。|
+|client_secret|web アプリに必要| アプリのアプリ登録ポータルで作成したアプリケーションシークレット。 Client_secrets はデバイスに安全に格納できないため、ネイティブアプリでは使用しないでください。 これは web アプリと web Api に必要であり、サーバー側で client_secret を安全に格納する機能を備えています。 これらのアプリでは、JWT に署名して client_assertion パラメーターとして追加することで、キーベースの認証を使用することもできます。|
 
 ### <a name="successful-response"></a>成功した応答 
 成功したトークン応答は次のようになります。 
@@ -274,7 +274,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |access_token|要求されたアクセストークン。 アプリは、このトークンを使用して、セキュリティで保護されたリソース (web API など) に対する認証を行うことができます。| 
 |token_type|トークンの種類の値を示します。 AD FS がサポートする型はベアラーだけです。|
 |expires_in|アクセストークンの有効期間 (秒単位)。|
-|スコープ (scope)|Access_token が有効なスコープ。| 
+|scope|Access_token が有効なスコープ。| 
 |refresh_token|OAuth 2.0 更新トークン。 アプリは、このトークンを使用して、現在のアクセストークンの有効期限が切れた後に追加のアクセストークンを取得できます。 Refresh_tokens は有効期間が長く、リソースへのアクセスを長期間保持するために使用できます。| 
 |refresh_token_expires_in|更新トークンの有効期間 (秒単位)。| 
 |id_token|JSON Web トークン (JWT)。 アプリは、このトークンのセグメントをデコードして、サインインしたユーザーに関する情報を要求することができます。 アプリは値をキャッシュして表示できますが、承認やセキュリティの境界に依存することはできません。|
@@ -284,15 +284,15 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 OAuth 2.0 の代理フロー (OBO) は、アプリケーションがサービス/web API を呼び出し、その後、別のサービス/web API を呼び出す必要があるユースケースに対応します。 この考え方は、委任されたユーザーの id とアクセス許可を要求チェーンによって伝達することです。 中間層サービスがダウンストリームサービスに対して認証された要求を行うには、ユーザーの代わりに、AD FS からアクセストークンをセキュリティで保護する必要があります。  
  
 ### <a name="protocol-diagram"></a>プロトコルダイアグラム 
-前述の OAuth 2.0 認証コード付与フローを使用して、ユーザーがアプリケーションで認証されていることを前提としています。 この時点で、アプリケーションは、中間層の web API (API A) にアクセスするためのユーザーの要求と同意を持つ API A (トークン A) 用のアクセストークンを持っています。 クライアントがトークンの user_impersonation スコープを要求していることを確認します。 現在、API A では、ダウンストリーム web API (API B) に対して認証された要求を行う必要があります。 
+前述の OAuth 2.0 認証コード付与フローを使用して、ユーザーがアプリケーションで認証されていることを前提としています。 この時点で、アプリケーションは、中間層の web API (API A) にアクセスするためのユーザーの要求と同意を持つ API A (トークン A) 用のアクセストークンを持っています。 クライアントがトークン内の user_impersonation スコープを要求していることを確認します。 現在、API A では、ダウンストリーム web API (API B) に対して認証された要求を行う必要があります。 
 
 次の手順では、OBO フローを構成します。次の図では、その方法について説明します。 
 
 ![代理フロー](media/adfs-scenarios-for-developers/obo.png)
 
   1. クライアントアプリケーションは、トークン A を使用して API A に要求を行います。  
-  注:AD FS で obo フローを構成している`user_impersonation`ときに、スコープが選択`user_impersonation`されていること、およびクライアントが要求でスコープを要求していることを確認してください。 
-  2. API A は AD FS トークン発行エンドポイントに対して認証を行い、API B にアクセスするためのトークンを要求します。注:AD FS でこのフローを構成するときに、api A も API A のリソース ID と同じ値を持つ clientID を使用してサーバーアプリケーションとして登録されていることを確認します。詳細については、こちらの「リンクの追加」を参照してください。  
+  注: AD FS で OBO フローを構成しているときに、スコープ `user_impersonation` が選択されていること、およびクライアントが要求で `user_impersonation` スコープを要求していることを確認してください。 
+  2. API A は、AD FS トークン発行エンドポイントに対して認証を行い、API B にアクセスするためのトークンを要求します。注: この AD FS フローを構成する際には、api A も、api A のリソース ID と同じ値を持つ clientID を持つサーバーアプリケーションとして登録されていることを確認してください。詳細については、こちらの「リンクの追加」を参照してください。  
   3. AD FS トークン発行エンドポイントは、トークン A を使用して API A の資格情報を検証し、API B (トークン B) のアクセストークンを発行します。 
   4. トークン B は、API B に対する要求の authorization ヘッダーに設定されます。 
   5. セキュリティで保護されたリソースからのデータが API B によって返されます。 
@@ -302,7 +302,7 @@ OAuth 2.0 の代理フロー (OBO) は、アプリケーションがサービス
 アクセストークンを要求するには、次のパラメーターを使用して、AD FS トークンエンドポイントに HTTP POST を実行します。  
 
 
-### <a name="first-case-access-token-request-with-a-shared-secret"></a>最初のケース:共有シークレットを使用したアクセストークン要求 
+### <a name="first-case-access-token-request-with-a-shared-secret"></a>最初のケース: 共有シークレットを使用したアクセストークン要求 
  
 共有シークレットを使用する場合、サービス間のアクセストークン要求には次のパラメーターが含まれます。 
 
@@ -313,13 +313,13 @@ OAuth 2.0 の代理フロー (OBO) は、アプリケーションがサービス
 |client_id|required|最初の Web API をサーバーアプリ (中間層アプリ) として登録するときに構成するクライアント ID。 これは、1番目のレッグ (最初の Web API の url) で使用されているリソース ID と同じである必要があります。| 
 |client_secret|required|AD FS でのサーバーアプリの登録時に作成したアプリケーションシークレット。| 
 |主張|required|要求で使用されるトークンの値。|  
-|requested_token_use|required|要求の処理方法を指定します。 OBO フローでは、値を on_behalf_of に設定する必要があります。| 
+|requested_token_use|required|要求の処理方法を指定します。 OBO フローでは、値をに設定する必要があり on_behalf_of| 
 |resource|required|最初の Web API をサーバーアプリとして登録するときに指定されたリソース ID (中間層アプリ)。 リソース ID は、中間層アプリがクライアントの代わりに呼び出す2番目の Web API の url である必要があります。|
-|スコープ (scope)|オプション|トークン要求のスコープのスペース区切りリスト。| 
+|scope|オプション|トークン要求のスコープのスペース区切りリスト。| 
 
 #### <a name="example"></a>例 
  
-次`HTTP POST`のは、アクセストークンと更新トークンを要求します。 
+次の `HTTP POST` は、アクセストークンと更新トークンを要求します 
  
 ```
 //line breaks for legibility only 
@@ -337,7 +337,7 @@ grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
 &scope=openid    
 ```
 
-### <a name="second-case-access-token-request-with-a-certificate"></a>2番目のケース:証明書を使用したアクセストークン要求 
+### <a name="second-case-access-token-request-with-a-certificate"></a>2番目のケース: 証明書を使用したアクセストークン要求 
  
 証明書を使用したサービス間アクセストークン要求には、次のパラメーターが含まれています。 
 
@@ -349,12 +349,12 @@ grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
 |client_assertion_type|required|値は urn: ietf: params: oauth: client-assertion: jwt-ベアラーである必要があります。| 
 |client_assertion|required|アプリケーションの資格情報として登録した証明書を作成して署名する必要があるアサーション (JSON web トークン)。|  
 |主張|required|要求で使用されるトークンの値。| 
-|requested_token_use|required|要求の処理方法を指定します。 OBO フローでは、値を on_behalf_of に設定する必要があります。| 
+|requested_token_use|required|要求の処理方法を指定します。 OBO フローでは、値をに設定する必要があり on_behalf_of| 
 |resource|required|最初の Web API をサーバーアプリとして登録するときに指定されたリソース ID (中間層アプリ)。 リソース ID は、中間層アプリがクライアントの代わりに呼び出す2番目の Web API の url である必要があります。|
-|スコープ (scope)|オプション|トークン要求のスコープのスペース区切りリスト。|
+|scope|オプション|トークン要求のスコープのスペース区切りリスト。|
 
 
-パラメーターは、共有シークレットによる要求の場合とほぼ同じです。ただし、client_secret パラメーターは client_assertion_type と client_assertion の2つのパラメーターに置き換えられます。 
+パラメーターは、共有シークレットによる要求の場合とほぼ同じです。ただし、client_secret パラメーターが client_assertion_type と client_assertion の2つのパラメーターに置き換えられる点が異なります。 
 
 #### <a name="example"></a>例 
 次の HTTP POST は、証明書を使用して Web API のアクセストークンを要求します。
@@ -383,7 +383,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 |パラメーター|説明|
 |-----|-----| 
 |token_type|トークンの種類の値を示します。 AD FS がサポートする型はベアラーだけです。 | 
-|スコープ (scope)|トークンで付与されるアクセスのスコープ。| 
+|scope|トークンで付与されるアクセスのスコープ。| 
 |expires_in|アクセストークンが有効である時間の長さ (秒単位)。| 
 |access_token|要求されたアクセストークン。 呼び出し元のサービスは、このトークンを使用して受信側のサービスに対する認証を行うことができます。| 
 |id_token|JSON Web トークン (JWT)。 アプリは、このトークンのセグメントをデコードして、サインインしたユーザーに関する情報を要求することができます。 アプリは値をキャッシュして表示できますが、承認やセキュリティの境界に依存することはできません。| 
@@ -430,9 +430,9 @@ OAuth 2.0 クライアント資格情報付与フローでは、web サービス
 
 ### <a name="request-a-token"></a>トークンの要求 
  
-クライアント資格情報の付与を使用してトークンを取得する`POST`には、/トークン AD FS エンドポイントに要求を送信します。  
+クライアント資格情報の付与を使用してトークンを取得するには、次のように `POST` 要求を/トークン AD FS エンドポイントに送信します。  
  
-### <a name="first-case-access-token-request-with-a-shared-secret"></a>最初のケース:共有シークレットを使用したアクセストークン要求 
+### <a name="first-case-access-token-request-with-a-shared-secret"></a>最初のケース: 共有シークレットを使用したアクセストークン要求 
  
 ```
 POST /adfs/oauth2/token HTTP/1.1            
@@ -449,11 +449,11 @@ client_id=535fb089-9ff3-47b6-9bfb-4f1264799865
 |パラメーター|必須/オプション|説明|
 |-----|-----|-----| 
 |client_id|required|AD FS アプリに割り当てられているアプリケーション (クライアント) ID。| 
-|スコープ (scope)|オプション|ユーザーに同意させるスコープのスペース区切りの一覧。| 
+|scope|オプション|ユーザーに同意させるスコープのスペース区切りの一覧。| 
 |client_secret|required|アプリ登録ポータルでアプリ用に生成したクライアントシークレット。 クライアントシークレットは、送信する前に URL エンコードする必要があります。| 
-|grant_type|required|をに `client_credentials`設定する必要があります。|
+|grant_type|required| `client_credentials`に設定する必要があります。|
 
-### <a name="second-case-access-token-request-with-a-certificate"></a>2番目のケース:証明書を使用したアクセストークン要求 
+### <a name="second-case-access-token-request-with-a-certificate"></a>2番目のケース: 証明書を使用したアクセストークン要求 
 
 ``` 
 POST /adfs/oauth2/token HTTP/1.1                
@@ -473,9 +473,9 @@ Content-Type: application/x-www-form-urlencoded
 |-----|-----|-----|
 |client_assertion_type|required|この値は urn: ietf: params: oauth: クライアントアサーションの種類: jwt-ベアラーに設定する必要があります。| 
 |client_assertion|required|アプリケーションの資格情報として登録した証明書を作成して署名する必要があるアサーション (JSON web トークン)。|  
-|grant_type|required|をに `client_credentials`設定する必要があります。|
+|grant_type|required| `client_credentials`に設定する必要があります。|
 |client_id|オプション|AD FS アプリに割り当てられているアプリケーション (クライアント) ID。 これは client_assertion の一部であるため、ここで渡す必要はありません。| 
-|スコープ (scope)|オプション|ユーザーに同意させるスコープのスペース区切りの一覧。| 
+|scope|オプション|ユーザーに同意させるスコープのスペース区切りの一覧。| 
 
 ### <a name="use-a-token"></a>トークンを使用する 
  
@@ -521,7 +521,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |grant_type|required|Password に設定する必要があります。| 
 |username|required|ユーザーの電子メール アドレス。| 
 |password|required|ユーザーのパスワード。| 
-|スコープ (scope)|オプション|スペースで区切られたスコープのリスト。|
+|scope|オプション|スペースで区切られたスコープのリスト。|
 
 ### <a name="successful-authentication-response"></a>成功した認証応答 
 次の例は、正常なトークン応答を示しています。 
@@ -542,7 +542,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |パラメーター|説明| 
 |-----|-----|
 |token_type|常にベアラーに設定します。| 
-|スコープ (scope)|アクセストークンが返された場合、このパラメーターは、アクセストークンが有効なスコープの一覧を表示します。| 
+|scope|アクセストークンが返された場合、このパラメーターは、アクセストークンが有効なスコープの一覧を表示します。| 
 |expires_in|含まれているアクセストークンが有効である秒数。| 
 |access_token|要求されたスコープに対して発行されます。| 
 |id_token|JSON Web トークン (JWT)。 アプリは、このトークンのセグメントをデコードして、サインインしたユーザーに関する情報を要求することができます。 アプリは値をキャッシュして表示できますが、承認やセキュリティの境界に依存することはできません。| 
@@ -562,7 +562,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 ![デバイスコードフロー](media/adfs-scenarios-for-developers/device.png)
 
 ### <a name="device-authorization-request"></a>デバイスの承認要求 
-クライアントは、まず認証サーバーで認証を開始するために使用されるデバイスとユーザーコードを確認する必要があります。 クライアントは、この要求を/devicecode エンドポイントから収集します。 この要求では、クライアントには、ユーザーから取得する必要のあるアクセス許可も含める必要があります。 この要求が送信された時点から、ユーザーがサインインできるのは15分 (expires_in の通常の値) であるため、ユーザーがサインインの準備ができていることを示す場合にのみ、この要求を行います。 
+クライアントは、まず認証サーバーで認証を開始するために使用されるデバイスとユーザーコードを確認する必要があります。 クライアントは、この要求を/devicecode エンドポイントから収集します。 この要求では、クライアントには、ユーザーから取得する必要のあるアクセス許可も含める必要があります。 この要求が送信された時点から、ユーザーがサインインできるのは15分 (expires_in の通常の値) であるため、ユーザーがサインインする準備ができている場合にのみ、この要求を行います。 
 
 ```
 // Line breaks are for legibility only. 
@@ -578,7 +578,7 @@ scope=openid
 |パラメーター|条件|説明|
 |-----|-----|-----| 
 |client_id|required|AD FS アプリに割り当てられているアプリケーション (クライアント) ID。| 
-|スコープ (scope)|オプション|スペースで区切られたスコープのリスト。|
+|scope|オプション|スペースで区切られたスコープのリスト。|
 
 ### <a name="device-authorization-response"></a>デバイス承認応答 
 成功した応答は、ユーザーにサインインを許可するために必要な情報を含む JSON オブジェクトになります。 
@@ -589,13 +589,13 @@ scope=openid
 |device_code|クライアントと承認サーバー間のセッションを検証するために使用される長い文字列。 クライアントはこのパラメーターを使用して、承認サーバーからアクセストークンを要求します。| 
 |user_code|セカンダリデバイスでセッションを識別するために使用される、ユーザーに表示される短い文字列。| 
 |verification_uri|サインインするためにユーザーが user_code を使用してアクセスする必要がある URI。| 
-|verification_uri_complete|サインインするためにユーザーが user_code を使用してアクセスする必要がある URI。 これは、ユーザーが user_code を入力する必要がないように user_code に事前ます。| 
+|verification_uri_complete|サインインするためにユーザーが user_code を使用してアクセスする必要がある URI。 これは user_code を使用すると、ユーザーが入力する必要がなくなり user_code| 
 |expires_in|Device_code と user_code の有効期限が切れるまでの秒数。| 
 |定期的|クライアントがポーリング要求の間に待機する秒数。| 
 |メッセージ|ユーザーに指示がある、ユーザーが判読できる文字列。 これは、適切な言語のカルチャコードを入力するという形式の要求にクエリパラメーターを含めることでローカライズできます。  
 
 ### <a name="authenticating-the-user"></a>ユーザーの認証 
-User_code と verification_uri を受信すると、クライアントはこれらをユーザーに表示し、携帯電話または PC ブラウザーを使用してサインインするように指示します。 さらに、クライアントは、QR コードまたは同様のメカニズムを使用して verfication_uri_complete を表示できます。これにより、ユーザーの user_code が入力されます。 ユーザーが verification_uri で認証を行っている間、クライアントは、device_code を使用して、要求されたトークンのトークンエンドポイントをポーリングする必要があります。 
+クライアントは、user_code と verification_uri を受信した後、携帯電話または PC ブラウザーを使用してサインインするように指示して、これらをユーザーに表示します。 さらに、クライアントは、QR コードまたは同様のメカニズムを使用して verfication_uri_complete を表示できます。これにより、ユーザーの user_code を入力する手順が実行されます。 ユーザーが verification_uri で認証を行っている間、クライアントは、device_code を使用して、要求されたトークンの/トークンエンドポイントをポーリングする必要があります。 
 
 ```
 POST https://adfs.contoso.com /adfs/oauth2/token 
@@ -609,9 +609,9 @@ device_code: GMMhmHCXhWEzkobqIHGG_EnNYYsAkukHspeYUk9E8
 
 |パラメーター|required|説明|
 |-----|-----|-----| 
-|grant_type|required|Urn: ietf: params: oauth: grant type: device_code である必要があります。| 
+|grant_type|required|Urn: ietf: params: oauth: grant type: device_code| 
 |client_id|required|最初の要求で使用された client_id と一致する必要があります。| 
-|code|required|デバイスの承認要求で device_code が返されました。|
+|code|required|デバイスの承認要求で device_code が返されます。|
 
 ### <a name="successful-authentication-response"></a>成功した認証応答 
 成功したトークン応答は次のようになります。  
@@ -620,7 +620,7 @@ device_code: GMMhmHCXhWEzkobqIHGG_EnNYYsAkukHspeYUk9E8
 |パラメーター|説明|
 |-----|-----| 
 |token_type|常に "ベアラー"。| 
-|スコープ (scope)|アクセストークンが返された場合は、アクセストークンが有効なスコープが一覧表示されます。| 
+|scope|アクセストークンが返された場合は、アクセストークンが有効なスコープが一覧表示されます。| 
 |expires_in|含まれているアクセストークンが有効になるまでの秒数。| 
 |access_token|要求されたスコープに対して発行されます。| 
 |id_token|元のスコープパラメーターに openid スコープが含まれている場合に発行されます。| 
@@ -628,5 +628,5 @@ device_code: GMMhmHCXhWEzkobqIHGG_EnNYYsAkukHspeYUk9E8
 |refresh_token_expires_in|含まれている更新トークンが有効になるまでの秒数。| 
 
 
-## <a name="related-content"></a>関連コンテンツ  
+## <a name="related-content"></a>関連するコンテンツ  
 関連するフローの使用方法についての詳細な手順については、「 [AD FS 開発](../AD-FS-Development.md)」を参照してください。 

@@ -1,8 +1,8 @@
 ---
-title: telnet の設定を解除
-description: 'Windows コマンド」のトピック * * *- '
+title: telnet の設定解除
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 37c4d84d1664fdc13ea7ffec60bf981b264dba00
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6f0eb98c4168d2f664780dad42ca1aea5463d24
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853893"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383483"
 ---
 # <a name="telnet-unset"></a>telnet: 未設定
 
@@ -34,7 +34,7 @@ u[nset] {bsasdel | crlf | delasbs | escape | localecho | logging | ntlm} [?]
 |-------|--------|  
 |bsasdel|送信 **Backspace** として、 **Backspace**します。|  
 |crlf|送信、 **Enter** CR としてキー。 呼ばれるモードを改行します。|  
-|delasbs|送信**削除**として**削除**します。|  
+|delasbs|Delete**を** **delete**として送信します。|  
 |エスケープ|エスケープ文字の設定を削除します。|  
 |localecho|Localecho オフにします。|  
 |logging|ログをオフにします。|  
@@ -45,5 +45,5 @@ u[nset] {bsasdel | crlf | delasbs | escape | localecho | logging | ntlm} [?]
 ```  
 u logging  
 ```  
-## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+## <a name="additional-references"></a>その他の参照情報  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  

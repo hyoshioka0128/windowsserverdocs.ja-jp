@@ -1,8 +1,8 @@
 ---
-title: bitsadmin キャッシュと deleteurl
-description: Windows コマンド」のトピック**bitsadmin キャッシュと deleteurl** -指定された URL のすべてのキャッシュ エントリを削除します。
+title: bitsadmin cache と deleteurl
+description: '**Bitsadmin cache と deleteurl**の Windows コマンドに関するトピックでは、指定された url のすべてのキャッシュエントリが削除されます。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a831c49e1461761cb7466b46e7a5ad8e037f4ec9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 869d3bc0f011cc82aaea9b7468667964051e1c00
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816653"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382058"
 ---
-# <a name="bitsadmin-cache-and-deleteurl"></a>bitsadmin キャッシュと deleteurl
+# <a name="bitsadmin-cache-and-deleteurl"></a>bitsadmin cache と deleteurl
 
 
 
-指定された url には、すべてのキャッシュ エントリを削除します。
+指定された URL のすべてのキャッシュエントリを削除します。
 
 ## <a name="syntax"></a>構文
 
@@ -36,15 +36,15 @@ bitsadmin /DeleteURL url
 
 |パラメーター|説明|
 |---------|-----------|
-|url|リモート ファイルを識別する Uniform Resource Locator します。|
+|url|リモートファイルを識別する Uniform Resource Locator。|
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、すべてのキャッシュ エントリを削除します。 https://www.microsoft.com/en/us/default.aspx
+次の例では、 https://www.microsoft.com/en/us/default.aspx のすべてのキャッシュエントリを削除します。
 ```
 C:\>bitsadmin /DeleteURL https://www.microsoft.com/en/us/default.aspx 
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

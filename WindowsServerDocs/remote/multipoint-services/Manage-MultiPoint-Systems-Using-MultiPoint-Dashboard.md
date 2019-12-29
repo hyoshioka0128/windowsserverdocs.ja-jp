@@ -1,8 +1,8 @@
 ---
 title: MultiPoint ダッシュボードを使用した MultiPoint システムの管理
-description: MultiPoint ダッシュ ボードの使用の概要を説明します
+description: MultiPoint ダッシュボードの使用の概要について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,15 +13,15 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 2d1f7fbcd42b5157c441a12023c89d929f68ad7b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5d33d216c5c69c3f2eeb90b3abe9e68da3c64692
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830733"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395262"
 ---
 # <a name="manage-multipoint-systems-using-multipoint-dashboard"></a>MultiPoint ダッシュボードを使用した MultiPoint システムの管理
-MultiPoint ダッシュ_ボードでの**システム** タブで、次を行うことができます。  
+MultiPoint ダッシュボードの **[システム]** タブで、次の操作を行うことができます。  
   
 - 選択したシステムの再起動またはシャットダウン  
 選択した MultiPoint Services システムを再起動またはシャットダウンすることができます。 選択したシステムの再起動またはシャットダウンについては、「[MultiPoint システムの再起動またはシャットダウン](Restart-or-Shut-Down-MultiPoint-Systems.md)」トピックを参照してください。   
@@ -29,5 +29,5 @@ MultiPoint ダッシュ_ボードでの**システム** タブで、次を行う
 選択した MultiPoint Services システムを再マップすることができます。 選択したシステムの再マップの詳細については、「[選択した MultiPoint Systems のマッピング変更](Remap-Selected-MultiPoint-Systems.md)」トピックを参照してください。  
   
 ## <a name="see-also"></a>関連項目  
-[再起動または MultiPoint システムのシャット ダウン](Restart-or-Shut-Down-MultiPoint-Systems.md)  
-[選択した MultiPoint システムを再マップします。](Remap-Selected-MultiPoint-Systems.md)  
+[MultiPoint システムを再起動またはシャットダウンする](Restart-or-Shut-Down-MultiPoint-Systems.md)  
+[選択した MultiPoint システムを再マップする](Remap-Selected-MultiPoint-Systems.md)  

@@ -6,67 +6,67 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 7d046c720c5c6250b6efa03e068aa66e2a6bbe3d
-ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
+ms.openlocfilehash: de4627f2e03e6432f4e678cd9ca932819cb483d5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828526"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408433"
 ---
 # <a name="configure-name-resolution-for-a-federation-server-proxy-in-a-dns-zone-that-serves-only-the-perimeter-network"></a>境界ネットワークのみを対象とする DNS ゾーンでフェデレーション サーバー プロキシの名前解決を構成する
 
 
-Active の Directory フェデレーション サービスでフェデレーション サーバーの名前解決が正常に作業できるように\(AD FS\)シナリオを 1 つまたは複数のドメイン名システム\(DNS\)ゾーン境界のみを提供します。ネットワークを次のタスクを完了する必要があります。  
+名前解決が Active Directory フェデレーションサービス (AD FS) \(のフェデレーションサーバーに対して正常に機能するように、AD FS\) シナリオで、1つ以上のドメインネームシステム \(DNS\) ゾーンが境界ネットワークのみを提供する場合は、次のタスクを完了する必要があります。  
   
--   フェデレーション サーバーの IP アドレスを追加するフェデレーション サーバー プロキシで hosts ファイルを更新する必要があります。  
+-   フェデレーションサーバープロキシ上の hosts ファイルを更新して、フェデレーションサーバーの IP アドレスを追加する必要があります。  
   
--   AD FS のすべてのクライアント要求のホスト名、フェデレーション サーバー プロキシを解決するのには、境界ネットワークで DNS を構成する必要があります。 ホストを追加するには、 \(A\)フェデレーション サーバー プロキシの境界の DNS リソース レコード。  
+-   AD FS ホスト名に対するすべてのクライアント要求をフェデレーションサーバープロキシに解決するように、境界ネットワークの DNS を構成する必要があります。 これを行うには、\) リソースレコード \(ホストをフェデレーションサーバープロキシの境界 DNS に追加します。  
   
 > [!NOTE]  
-> これらの手順は、あるホスト\(A\)リソース レコードのフェデレーション サーバーは、企業で既に作成されているネットワーク DNS。 このレコードが存在しない場合は、このレコードを作成し、これらの手順を実行します。 詳細については、ホストを作成する方法についての\(A\) 、フェデレーション サーバーのリソース レコードを参照してください[ホストを追加する&#40;A&#41;をフェデレーション サーバーの会社の DNS リソース レコード](Add-a-Host--A--Resource-Record-to-Corporate-DNS-for-a-Federation-Server.md)します。  
+> これらの手順では、フェデレーションサーバーの\) リソースレコード \(ホストが、企業ネットワークの DNS に既に作成されていることを前提としています。 このレコードがまだ存在しない場合は、このレコードを作成してから、次の手順を実行します。 フェデレーションサーバーの\) リソースレコード \(ホストを作成する方法の詳細については、「 [Add a host &#40;a&#41; Resource record to a federation server](Add-a-Host--A--Resource-Record-to-Corporate-DNS-for-a-Federation-Server.md)」を参照してください。  
   
-## <a name="add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>Hosts ファイルにフェデレーション サーバーの IP アドレスを追加します。  
-フェデレーション サーバーの DNS ホスト名を指すフェデレーション サーバー プロキシで hosts ファイルにエントリを追加する必要があります、フェデレーション サーバー プロキシは、アカウント パートナーの境界ネットワークで期待どおりに作業できる、ように\(fs.fabrikam.com など\)と IP アドレス\(例: 192.168.1.4\)アカウント パートナーの企業ネットワークにします。 フェデレーション サーバー プロキシがクライアントを解決するのにはそれ自体に接続するを防ぎますこのエントリを hosts ファイルに追加\-アカウント パートナー フェデレーション サーバーへの呼び出しを開始します。  
+## <a name="add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>フェデレーションサーバーの IP アドレスをホストファイルに追加する  
+フェデレーションサーバープロキシがアカウントパートナーの境界ネットワーク内で期待どおりに動作するようにするには、フェデレーションサーバーの DNS ホスト \(名を指すフェデレーションサーバープロキシの hosts ファイルにエントリを追加する必要があります。たとえば、fs.fabrikam.com\) や IP アドレス \(、アカウントパートナーの企業ネットワークの 192.168.1.4\) などです。 このエントリを hosts ファイルに追加すると、フェデレーションサーバープロキシは、アカウントパートナー内のフェデレーションサーバーへのクライアント\-開始された呼び出しを解決するために、それ自体に接続できなくなります。  
   
 この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
-#### <a name="to-add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>Hosts ファイルにフェデレーション サーバーの IP アドレスを追加するには  
+#### <a name="to-add-the-ip-address-of-a-federation-server-to-the-hosts-file"></a>フェデレーションサーバーの IP アドレスを hosts ファイルに追加するには  
   
-1.  %Systemroot% に移動します\\Winnt\\System32\\ドライバー ディレクトリのフォルダーを検索し、**ホスト**ファイル。  
+1.  % Systemroot%\\Winnt\\System32\\Drivers ディレクトリフォルダに移動し、 **hosts**ファイルを見つけます。  
   
-2.  メモ帳を起動し、開きます、**ホスト**ファイル。  
+2.  メモ帳を起動し、 **hosts**ファイルを開きます。  
   
-3.  アカウント パートナーで、IP アドレスとのフェデレーション サーバーのホスト名を追加、**ホスト**ファイルを次の例に示すようにします。  
+3.  次の例に示すように、アカウントパートナーのフェデレーションサーバーの IP アドレスとホスト名を**ホスト**ファイルに追加します。  
   
     **192.168.1.4fs.fabrikam.com**  
   
 4.  ファイルを保存し、閉じます。  
   
-## <a name="add-a-host-a-resource-record-to-perimeter-dns-for-a-federation-server-proxy"></a>ホストの追加\(A\)フェデレーション サーバー プロキシの境界の DNS リソース レコード  
-ホストを作成する必要があります最初に、インターネット上のクライアントが、新しく展開されるフェデレーション サーバー プロキシを介してフェデレーション サーバーに正常にアクセスできるように\(A\)境界 DNS リソース レコード。 このリソース レコードは、アカウント フェデレーション サーバーのホスト名を解決\(fs.fabrikam.com など\)、アカウント フェデレーション サーバー プロキシの IP アドレスに\(など 131.107.27.68\)で、境界ネットワーク。  
+## <a name="add-a-host-a-resource-record-to-perimeter-dns-for-a-federation-server-proxy"></a>フェデレーションサーバープロキシの境界 DNS に\) リソースレコード \(ホストを追加する  
+新しく展開されたフェデレーションサーバープロキシを使用して、インターネット上のクライアントがフェデレーションサーバーに正常にアクセスできるようにするには、まず、境界 DNS で\) リソースレコード \(ホストを作成する必要があります。 このリソースレコードは、アカウントフェデレーションサーバーのホスト名 \(を解決します。たとえば、境界ネットワーク内の 131.107.27.68\) など、アカウントフェデレーションサーバー \(プロキシの IP アドレスには、fs.fabrikam.com\) ます。  
   
 > [!NOTE]  
-> 使用している DNS サーバー、DNS サーバー サービスが、Windows 2000 Server、Windows Server 2003、または Windows Server 2008 を実行している境界の DNS ゾーンを制御することが前提です。  
+> 境界 DNS ゾーンを制御するには、Windows 2000 Server、Windows Server 2003、または Windows Server 2008 を DNS サーバーサービスと共に実行している DNS サーバーを使用していることを前提としています。  
   
 メンバーシップ **管理者**, 、または同等の権限は、この手順を実行するために必要な最小値。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
-#### <a name="to-add-a-host-a-resource-record-to-perimeter-dns-for-a-federation-server-proxy"></a>ホストを追加する\(A\)フェデレーション サーバー プロキシの境界の DNS リソース レコード  
+#### <a name="to-add-a-host-a-resource-record-to-perimeter-dns-for-a-federation-server-proxy"></a>\) リソースレコード \(ホストをフェデレーションサーバープロキシの境界 DNS に追加するには  
   
-1.  境界ネットワークの DNS サーバー、DNS スナップインを開きます\-でします。 クリックして**開始**、 をポイント**管理ツール**、順にクリックします**DNS**します。  
+1.  境界ネットワークの DNS サーバーで、の DNS スナップ\-を開きます。 **[スタート]** をクリックし、 **[管理ツール]** をポイントして、 **[DNS]** をクリックします。  
   
-2.  コンソール ツリーで、右\-、適切な前方参照ゾーンをクリックし、クリックして**新しいホスト\(A または AAAA\)** します。  
+2.  コンソールツリーで、該当する前方参照ゾーンを右\-クリックし、[**新しいホスト \(A または AAAA\)** ] をクリックします。  
   
-3.  **名前**、フェデレーション サーバーのコンピューター名のみを入力します。 たとえば、完全修飾ドメイン名\(FQDN\) fs.fabrikam.com、型**fs**します。  
+3.  **[名前]** に、フェデレーションサーバーのコンピューター名のみを入力します。 たとえば、完全修飾ドメイン名 \(FQDN\) fs.fabrikam.com の場合は、「 **fs**」と入力します。  
   
-4.  **IP アドレス**、たとえば、新しいフェデレーション サーバー プロキシの IP アドレスを入力**131.107.27.68**します。  
+4.  **[Ip アドレス]** に、新しいフェデレーションサーバープロキシの ip アドレス (たとえば、 **131.107.27.68**) を入力します。  
   
 5.  **[ホストの追加]** をクリックします。  
   
 ## <a name="additional-references"></a>その他の参照情報  
-[チェックリスト:フェデレーション サーバー プロキシのセットアップ](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[チェックリスト: フェデレーションサーバープロキシの設定](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 [フェデレーション サーバー プロキシの名前解決の要件](https://technet.microsoft.com/library/dd807055.aspx)  
   

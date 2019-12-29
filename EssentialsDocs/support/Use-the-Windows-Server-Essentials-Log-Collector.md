@@ -1,6 +1,6 @@
 ---
 title: Windows Server Essentials Log Collector の使用
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -12,38 +12,39 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ba5c0de9d8689c63c95ea3410a74fc9a7289aeab
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 3bc43b08df30d03f29d9f343b7d6ed4d63c85eda
+ms.sourcegitcommit: 39244de670f712857a5fdd56630e95d57b7001a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435993"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74897670"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>Windows Server Essentials Log Collector の使用
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-コンピューターの問題をトラブルシューティングするときに担当者から、Microsoft カスタマー サービス & サポートに、サーバー、ネットワーク、または Windows Server Essentials Log Collector を使用して両方のコンピューターからのログを収集するように指示することがあります。  
+コンピューターの問題のトラブルシューティングを行うときに、Microsoft カスタマーサービスサポートの担当者から、Windows Server Essentials Log Collector を使用して、サーバー、ネットワーク上のコンピューター、またはその両方からログを収集するように指示される場合があります。  
   
  Log Collector は、プログラム ログ、イベント レビュー担当者のログ、および関連する環境情報を指定された場所で 1 つの ZIP ファイルにコピーします。 サーバーまたはネットワーク上のコンピューターから、またはコンピューターへのリモート接続を使用して、Log Collector を実行できます。  
   
 > [!NOTE]
-> - Log Collector がネットワークの問題を分析したり、サーバーやネットワーク上のコンピューターに変更を加えることはありません。 ネットワークの問題をトラブルシューティングする方法の詳細については、サーバー製品のヘルプ ドキュメントを参照してください。  
->   -   このガイドでは、サーバー以外のネットワーク上のコンピューターを"ネットワーク コンピューター"と呼びます。  
->   -   [Windows Server Essentials Log Collector インストール パッケージをダウンロード](https://go.microsoft.com/fwlink/?LinkID=266341)します。  
+>Log Collector がネットワークの問題を分析したり、サーバーやネットワーク上のコンピューターに変更を加えることはありません。 ネットワークの問題をトラブルシューティングする方法の詳細については、サーバー製品のヘルプ ドキュメントを参照してください。  
+>このガイドでは、サーバー以外のネットワーク上のコンピューターをネットワークコンピューターと呼びます。  
+>
+>[Windows Server Essentials Log Collector インストールパッケージをダウンロード](https://www.microsoft.com/download/details.aspx?id=34821)します。  
   
  Log Collector をインストールし実行するには、次のトピックの手順を実行します。  
   
 
-1.  [Log Collector をインストールします。](Install-the-Windows-Server-Essentials-Log-Collector.md)  
+1. [Log Collector をインストールする](Install-the-Windows-Server-Essentials-Log-Collector.md)  
   
-2.  [Log Collector を実行します。](Run-the-Windows-Server-Essentials-Log-Collector.md)  
+2. [Log Collector の実行](Run-the-Windows-Server-Essentials-Log-Collector.md)  
 
-1.  [Log Collector をインストールします。](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
+3. [Log Collector をインストールする](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
   
-2.  [Log Collector を実行します。](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
+4. [Log Collector の実行](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
 
-  
+
 ## <a name="environment-information-collected"></a>収集される環境情報  
  指定したネットワーク コンピューターまたはサーバーごとに、Log Collector は次の環境情報を収集し、ログ コレクション ファイルに配置します。  
   
@@ -55,7 +56,7 @@ ms.locfileid: "66435993"
   
 -   TCP/IP にバインドされているネットワーク アダプター  
   
--   ロケール  
+-   Locale  
   
 -   Processes (プロセス)  
   
@@ -112,7 +113,7 @@ ms.locfileid: "66435993"
   
 ### <a name="server-logs-and-registry-information"></a>サーバー ログとレジストリ情報  
   
--   サーバー製品のログから < ProgramData\>\Microsoft\Windows Server\Logs  
+-   < ProgramData\>\Microsoft\Windows サーバーログのサーバー製品ログ  
   
 -   Scheduled tasks (スケジュールされたタスク)  
   
@@ -132,17 +133,17 @@ ms.locfileid: "66435993"
   
 -   次に配置されたレジストリ キー  
   
-    -   \\\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\  
+    -   \\\ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows サーバー \  
   
-    -   \\\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DevicesProviderSvc  
+    -   \\\ HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\DevicesProviderSvc  
   
-    -   \\\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DomainManagerProviderSvc  
+    -   \\\ HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\DomainManagerProviderSvc  
   
 ### <a name="network-computer-logs-and-registry-information"></a>ネットワーク コンピューターのログおよびレジストリ情報  
   
--   ネットワーク コンピューター製品のログは < ProgramData\>\Microsoft\Windows Server\Logs  
+-   < ProgramData\>\Microsoft\Windows のネットワークコンピューターの製品ログ  
   
--   正常性アラート ファイル < ProgramData\>\Microsoft\Windows Server\Data  
+-   < ProgramData\>\Microsoft\Windows の正常性アラートファイル  
   
 -   Windows Update のログ  
   
@@ -150,7 +151,7 @@ ms.locfileid: "66435993"
   
 -   スケジュールされたタスクの情報  
   
--   レジストリ キーを\\\HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows Server\  
+-   \\\ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows サーバー \ のレジストリキー  
   
 ## <a name="logs-for-computers-that-do-not-run-a-version-of-the-windows-operating-system"></a>Windows 版のオペレーティング システムを実行していないコンピューターのログ  
  Log Collector は Windows 版のオペレーティング システムを実行していないコンピューターからログ ファイルを収集しません。 Windows 以外のコンピューターの場合、次のログ ファイルを Log Collector ファイルを保存しているのと同じ場所に手動でコピーします。  
@@ -159,14 +160,14 @@ ms.locfileid: "66435993"
   
 -   Library/Logs/Windows Server.log  
   
--   ライブラリ/ログ/CrashReporter/スタート パッドの < nnn\> (すべての launchpad-コピー < nnn\>.crash ファイル)  
+-   Library/Logs/CrashReporter/スタートパッド-< nnn\> (スタートパッドのすべてのファイルをコピーします-< nnn\>)  
   
--   ライブラリ/ログ/DiagnosticReports/スタート パッドの < nnn\> (すべての launchpad-コピー < nnn\>.crash ファイル)  
+-   Library/Logs/DiagnosticReports/スタートパッド-< nnn\> (スタートパッドのすべてのファイルをコピーします-< nnn\>)  
   
 ## <a name="see-also"></a>関連項目  
   
 
--   [Log Collector エラーをトラブルシューティングします。](Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
+-   [Log Collector エラーのトラブルシューティング](Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
 
--   [Log Collector エラーをトラブルシューティングします。](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
+-   [Log Collector エラーのトラブルシューティング](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
 

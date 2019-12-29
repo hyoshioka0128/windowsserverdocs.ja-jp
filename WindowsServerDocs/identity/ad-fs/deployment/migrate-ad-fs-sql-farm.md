@@ -1,35 +1,35 @@
 ---
-title: AD FS 2.0 フェデレーション サーバーの SQL ファームを移行します。
-description: Windows Server 2012 への AD FS 2.0 サーバー SQL ファームの移行に関する情報を提供します。
+title: AD FS 2.0 フェデレーションサーバーの SQL ファームを移行する
+description: AD FS 2.0 server SQL ファームを Windows Server 2012 に移行する方法について説明します。
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 06/28/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: afecbf80d78688b66b2392647ea3195be95e9f54
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 3c43d26868f39896ec8632397dc0fce1dfe2dd2a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445584"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408286"
 ---
-# <a name="migrate-an-ad-fs-20-wid-farm"></a>AD FS 2.0 WID ファームを移行します。  
-このドキュメントでは、Windows Server 2012 への AD FS 2.0 SQL ファームの移行に関する詳細情報を示します。
+# <a name="migrate-an-ad-fs-20-wid-farm"></a>AD FS 2.0 WID ファームの移行  
+このドキュメントでは、AD FS 2.0 SQL ファームを Windows Server 2012 に移行する方法の詳細について説明します。
 
 
 ## <a name="migrate-a-sql-server-farm"></a>SQL Server ファームの移行  
  SQL Server ファームを Windows Server 2012 に移行するには、次の手順を実行します。  
   
-1.  SQL Server ファームの各サーバーについて確認し、実行手順では、 [SQL Server ファームの移行](prepare-to-migrate-a-sql-server-farm.md)します。  
+1.  SQL Server ファーム内の各サーバーについて、「 [SQL Server ファームの移行](prepare-to-migrate-a-sql-server-farm.md)」の手順を確認して実行します。  
   
 2.  SQL Server ファームのすべてのサーバーをロード バランサーから削除します。  
   
-3.  Windows Server 2008 R2 または Windows Server 2008 から SQL Server ファーム内のこのサーバー上のオペレーティング システムを Windows Server 2012 にアップグレードします。 詳細については、「[Windows Server 2012 のインストール](https://technet.microsoft.com/library/jj134246.aspx)」を参照してください。  
+3.  SQL Server ファーム内のこのサーバーのオペレーティングシステムを Windows Server 2008 R2 または Windows Server 2008 から Windows Server 2012 にアップグレードします。 詳細については、「[Windows Server 2012 のインストール](https://technet.microsoft.com/library/jj134246.aspx)」を参照してください。  
   
 > [!IMPORTANT]
->  オペレーティング システムをアップグレードすると、このサーバーの AD FS 構成が失われ、AD FS 2.0 サーバーの役割が削除されます。 Windows Server 2012 の AD FS サーバーの役割が代わりに、インストールされているが構成されていません。 元の AD FS 構成を手動で作成し、その他の AD FS 設定を復元して、フェデレーション サーバーの移行を完了する必要があります。  
+>  オペレーティング システムをアップグレードすると、このサーバーの AD FS 構成が失われ、AD FS 2.0 サーバーの役割が削除されます。 代わりに、Windows Server 2012 AD FS サーバーロールがインストールされますが、構成されていません。 元の AD FS 構成を手動で作成し、その他の AD FS 設定を復元して、フェデレーション サーバーの移行を完了する必要があります。  
   
 4. AD FS Windows PowerShell コマンドレットを使用して SQL Server ファームのこのサーバーで元の AD FS 構成を作成し、サーバーを既存のファームに追加します。  
   
@@ -40,17 +40,17 @@ ms.locfileid: "66445584"
   - SQL Server ファームの移行の準備を行っているときに記録したサービス アカウントの名前とパスワードを入力します。  
   - `Add-AdfsFarmNode -ServiceAccountCredential $fscredential -SQLConnectionString "Data Source=<Data Source>;Integrated Security=True"`コマンドを実行します。 `Data Source` は `%programfiles%\Active Directory Federation Services 2.0\Microsoft.IdentityServer.Servicehost.exe.config`ファイルのポリシー ストア接続文字列値のデータ ソース値です。  
   
-5. ロード バランサーに Windows Server 2012 にアップグレードしたサーバーを追加します。  
+5. Windows Server 2012 にアップグレードしたばかりのサーバーをロードバランサーに追加します。  
   
 6. SQL Server ファームのその他のノードについて、手順 2. ～ 6. を繰り返します。  
   
-7. すべての SQL Server ファームにサーバーが Windows Server 2012 にアップグレードするときに、カスタム属性ストアなど、他の AD FS カスタマイズを復元します。  
+7. SQL Server ファーム内のすべてのサーバーを Windows Server 2012 にアップグレードする場合は、カスタム属性ストアなど、その他の AD FS カスタマイズを復元します。  
 
-## <a name="next-steps"></a>次の手順
- [AD FS 2.0 フェデレーション サーバーの移行を準備します。](prepare-to-migrate-ad-fs-fed-server.md)   
- [AD FS 2.0 フェデレーション サーバー プロキシの移行を準備します。](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [AD FS 2.0 フェデレーション サーバーを移行します。](migrate-the-ad-fs-fed-server.md)   
- [AD FS 2.0 フェデレーション サーバー プロキシを移行します。](migrate-the-ad-fs-2-fed-server-proxy.md)   
+## <a name="next-steps"></a>次のステップ
+ [AD FS 2.0 フェデレーションサーバー  の移行の準備](prepare-to-migrate-ad-fs-fed-server.md)  
+ [AD FS 2.0 フェデレーションサーバープロキシの移行の準備](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [AD FS 2.0 フェデレーションサーバー  を移行します](migrate-the-ad-fs-fed-server.md)。  
+ [AD FS 2.0 フェデレーションサーバープロキシ  を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
  [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)
 
 

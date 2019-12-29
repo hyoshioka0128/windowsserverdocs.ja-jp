@@ -1,8 +1,8 @@
 ---
-title: logman cfg を作成します。
-description: 'Windows コマンド」のトピック * * *- '
+title: logman 作成 cfg
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1521ae20091f2c57094fa1c75bd583e517628126
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9a9dffb308c9c5b73777aa2a2b4dd6e0204699ec
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437776"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374593"
 ---
-# <a name="logman-create-cfg"></a>logman cfg を作成します。
+# <a name="logman-create-cfg"></a>logman 作成 cfg
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-データ コレクターの構成を作成します。  
+構成データコレクターを作成します。  
 
 ## <a name="syntax"></a>構文  
 ```  
@@ -34,41 +34,41 @@ logman create cfg <[-n] <name>> [options]
 
 |                    パラメーター                     |                                                                               説明                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                        /?                        |                                                                    ヘルプ コンテキストを表示します。                                                                     |
-|                -s <computer name>                |                                                          指定したリモート コンピューター上のコマンドを実行します。                                                          |
-|                 -config <value>                  |                                                         コマンド オプションを含む設定ファイルを指定します。                                                         |
-|                   [-n] <name>                    |                                                                       ターゲット オブジェクトの名前。                                                                        |
-| -f <bin&#124;bincirc&#124;csv&#124;tsv&#124;sql> |                                                            データ コレクターのログの形式を指定します。                                                             |
-|             -[-] u < ユーザー [password] >              | 実行するユーザーを指定します。 入力、\*のパスワードがパスワードのプロンプトが生成されます。 パスワード プロンプトで入力すると、パスワードは表示されません。 |
-|    -m <[start] [stop] [[start] [stop] [...]]>    |                                                変更を手動で開始またはスケジュールされた begin または end の時間ではなく停止します。                                                 |
-|                -rf < [hh:] mm:] ss >                |                                                        指定した期間には、データ コレクターを実行します。                                                         |
-|        -b < m/d/yyyy h:mm:ss [AM&#124;PM] >         |                                                              指定した時刻のデータの収集を開始します。                                                               |
-|        -e < m/d/yyyy h:mm:ss [AM&#124;PM] >         |                                                               指定した時間にデータ収集を終了します。                                                                |
-|                -si < [hh:] mm:] ss >                |                                                 パフォーマンス カウンターのデータ コレクターのサンプリング間隔を指定します。                                                  |
-|              -o <path&#124;dsn!log>              |                                              出力ログ ファイルまたは DSN とログは、SQL database の名を設定を指定します。                                               |
-|                      -[-] r                       |                                                  指定した開始と終了時刻に毎日データ コレクターを繰り返します。                                                  |
-|                      -[-]、                       |                                                                     既存のログ ファイルに追加します。                                                                     |
-|                      -[-] ow                      |                                                                     既存のログ ファイルを上書きします。                                                                     |
-|           -[-] v < ウズベキスタン&#124;指定されない >           |                                                   ファイルのバージョン管理情報をログ ファイル名の末尾にアタッチします。                                                   |
-|                  -[-] rc <task>                   |                                                         指定されたコマンドを実行するたびに、ログは閉じられます。                                                          |
-|                 -[-] の最大数 <value>                  |                                                 最大ログ ファイルのサイズは、mb 単位または SQL ログ レコードの最大数。                                                  |
-|              -[-] cnf < [hh:] mm:] ss >              |     時間を指定すると、指定した時間が経過すると、新しいファイルを作成します。 時間が指定されていない場合は、最大サイズを超えたときに新しいファイルを作成します。     |
-|                        -y                        |                                                             メッセージを表示せず、すべての質問に [はい] 回答します。                                                              |
-|                      -[-] ni                      |                                                         有効にする (-ni) または無効にする (-ni) ネットワーク インターフェイスのクエリ。                                                          |
-|             -reg <path [path [...]]>             |                                                                 収集するレジストリ値を指定します。                                                                 |
-|            管理 - < クエリ [クエリ [...]>            |                                                      SQL クエリ言語を使用して収集するために WMI オブジェクトを指定します。                                                       |
-|             -ftc < パス [パス [...]>             |                                                           収集するファイルへの完全パスを指定します。                                                            |
+|                        /?                        |                                                                    状況依存のヘルプを表示します。                                                                     |
+|                -s <computer name>                |                                                          指定したリモートコンピューターでコマンドを実行します。                                                          |
+|                 -config <value>                  |                                                         コマンドオプションを含む設定ファイルを指定します。                                                         |
+|                   [-n] <name>                    |                                                                       ターゲットオブジェクトの名前。                                                                        |
+| -f < ビン&#124;ビン circ&#124;csv&#124;tsv&#124;sql > |                                                            データコレクターのログの形式を指定します。                                                             |
+|             -[-] u < ユーザー [パスワード] >              | として実行するユーザーを指定します。 パスワードの \* を入力すると、パスワードの入力を求めるプロンプトが生成されます。 パスワードは、パスワードプロンプトで入力しても表示されません。 |
+|    -m < [開始] [停止] [[開始] [停止] [...]]>    |                                                スケジュールされた開始時刻または終了時刻ではなく、手動の開始または停止に変更します。                                                 |
+|                -rf < [[hh:] mm:] ss >                |                                                        指定された期間、データコレクターを実行します。                                                         |
+|        -b < M/d/yyyy h:mm: ss [AM&#124;PM] >         |                                                              指定された時間にデータの収集を開始します。                                                               |
+|        -e < M/d/yyyy h:mm: ss [AM&#124;PM] >         |                                                               指定された時刻にデータ収集を終了します。                                                                |
+|                -si < [[hh:] mm:] ss >                |                                                 パフォーマンスカウンターデータコレクターのサンプル間隔を指定します。                                                  |
+|              -o < path&#124;dsn! ログ >              |                                              SQL データベースの出力ログファイルまたは DSN およびログセット名を指定します。                                               |
+|                      -[-] r                       |                                                  指定された開始時刻と終了時刻にデータコレクターを毎日繰り返します。                                                  |
+|                      -[-] a                       |                                                                     既存のログファイルに追加します。                                                                     |
+|                      -[-] o                      |                                                                     既存のログファイルを上書きします。                                                                     |
+|           -[-] v < nnnnnn&#124;mmddhhmm >           |                                                   ファイルのバージョン管理情報をログファイル名の末尾にアタッチします。                                                   |
+|                  -[-] rc <task>                   |                                                         ログが閉じられるたびに、指定されたコマンドを実行します。                                                          |
+|                 -[-] 最大 <value>                  |                                                 SQL ログの最大ログファイルサイズ (MB 単位または最大レコード数)。                                                  |
+|              -[-] my.cnf < [[hh:] mm:] ss >              |     時間を指定した場合は、指定した時間が経過した時点で新しいファイルを作成します。 時間が指定されていない場合は、最大サイズを超えたときに新しいファイルを作成します。     |
+|                        -y                        |                                                             確認を求めずにすべての質問に対して [はい] を回答します。                                                              |
+|                      -[-] ni                      |                                                         有効 (-ni) または無効 (-ni) ネットワークインターフェイスクエリ。                                                          |
+|             -reg < パス [パス [...]]>             |                                                                 収集するレジストリ値を指定します。                                                                 |
+|            -< クエリ [クエリ [...]]>            |                                                      SQL クエリ言語を使用して収集する WMI オブジェクトを指定します。                                                       |
+|             -ftc < パス [path [...]]>             |                                                           収集するファイルの完全パスを指定します。                                                            |
 
 ## <a name="remarks"></a>注釈  
-[-] がリスト表示と、余分なオプションを無効にします。  
+[-] が一覧表示されている場合は、オプションを追加して否定します。  
 ## <a name="BKMK_examples"></a>例  
-次のコマンドは、レジストリ キー hkey_local_machine \software\microsoft\windows NT\Currentverion を使用する cfg_log と呼ばれる構成データ コレクターを作成します。\\します。  
+次のコマンドでは、レジストリキー HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\Currentverion\\を使用して cfg_log という構成データコレクターを作成します。  
 ```  
 logman create cfg cfg_log -reg "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\Currentverion\\"  
 ```  
-次のコマンドは、データベース列 MSNdis_Vendordriverversion に root \wmi からすべての WMI オブジェクトを記録する cfg_log と呼ばれる構成データ コレクターを作成します。  
+次のコマンドは、cfg_log という構成データコレクターを作成します。このコレクターは、すべての WMI オブジェクトを、MSNdis_Vendordriverversion データベース列の root\wmi からすべてを記録します。  
 ```  
 logman create cfg cfg_log -mgt "root\wmi:select * FROM MSNdis_Vendordriverversion"  
 ```  
-#### <a name="additional-references"></a>その他の参照  
+#### <a name="additional-references"></a>その他の参照情報  
 [logman](logman.md)  

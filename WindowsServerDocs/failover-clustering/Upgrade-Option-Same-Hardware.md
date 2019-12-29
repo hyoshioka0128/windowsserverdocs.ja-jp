@@ -1,107 +1,107 @@
 ---
-title: 同じハードウェアを使用してフェールオーバー クラスターのアップグレード
-ms.prod: windows-server-threshold
+title: 同じハードウェアを使用したフェールオーバークラスターのアップグレード
+ms.prod: windows-server
 ms.manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.date: 02/28/2019
-description: この記事では、同じハードウェアを使用して 2 ノード フェールオーバー クラスターのアップグレードについて説明します
+description: この記事では、同じハードウェアを使用した2ノードフェールオーバークラスターのアップグレードについて説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 6787d852cc5075e306373a163814135190f27fd6
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 5fe93f1d43e0c3a1bc4269b585cb9d021d3461aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280245"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361398"
 ---
-# <a name="upgrading-failover-clusters-on-the-same-hardware"></a>同じハードウェア上でフェールオーバー クラスターのアップグレード
+# <a name="upgrading-failover-clusters-on-the-same-hardware"></a>同じハードウェアでのフェールオーバークラスターのアップグレード
 
 > 適用対象:Windows Server 2019、Windows Server 2016
 
-フェールオーバー クラスターとは、アプリケーションやサービスの可用性を向上するために、互いに連携する独立したコンピューターで構成されるグループを指します。 クラスター サーバー (ノード) は、物理ケーブルとソフトウェアにより接続されます。 クラスター ノードの 1 つに障害が発生すると、他のノードがサービスの提供を開始します (フェールオーバーと呼ばれる処理)。 ユーザーには、サービスの中断の最小値が発生します。
+フェールオーバー クラスターとは、アプリケーションやサービスの可用性を向上するために、互いに連携する独立したコンピューターで構成されるグループを指します。 クラスター サーバー (ノード) は、物理ケーブルとソフトウェアにより接続されます。 クラスター ノードの 1 つに障害が発生すると、他のノードがサービスの提供を開始します (フェールオーバーと呼ばれる処理)。 ユーザーはサービスの中断を最小限に抑えます。
 
-このガイドでは、同じハードウェアを使用して、以前のバージョンから Windows Server 2019 または Windows Server 2016 へのクラスター ノードをアップグレードする手順について説明します。
+このガイドでは、同じハードウェアを使用して、以前のバージョンから Windows Server 2019 または Windows Server 2016 にクラスターノードをアップグレードする手順について説明します。
 
 ## <a name="overview"></a>概要
 
-既存のフェールオーバーのオペレーティング システムをアップグレードするクラスターは場合にのみ Windows Server 2016 から Windows 2019 にしようとします。  フェールオーバー クラスターは、Windows Server 2012 R2 と以前では、以前のバージョンを実行している場合、クラスター サービスが実行中のアップグレードは許可されません結合ノード。  同じハードウェアを使用する場合の手順を実行、新しいバージョンを入手します。  
+既存のフェールオーバークラスター上のオペレーティングシステムのアップグレードは、Windows Server 2016 から Windows 2019 に移行する場合にのみサポートされます。  フェールオーバークラスターで Windows Server 2012 R2 以前のバージョンが実行されている場合、クラスターサービスの実行中にアップグレードしても、ノードを結合することはできません。  同じハードウェアを使用する場合は、新しいバージョンにアクセスするための手順を実行できます。  
 
-フェールオーバー クラスターのアップグレードの前に参照してください、 [Windows アップグレード Center](https://www.microsoft.com/upgradecenter)します。  場所で Windows Server をアップグレードすると、同じハードウェアに移るより新しいリリースを既存のオペレーティング システム リリースから移動します。 Windows Server は、アップグレードされたインプレース、少なくとも 1 つとも 2 バージョン フォワードできます。 たとえば、Windows Server 2012 R2 および Windows Server 2016 をアップグレードできます Windows Server 2019 を適用します。  またことに注意、[クラスターの移行ウィザード](https://blogs.msdn.microsoft.com/clustering/2012/06/25/how-to-move-highly-available-clustered-vms-to-windows-server-2012-with-the-cluster-migration-wizard/)使用できますが、2 つのバージョンに戻すまではのみサポートされます。 次の図は、Windows Server のアップグレードのパスを示します。 ポインティングの下向きの矢印は、Windows Server 2019 までの以前のバージョンからの移行サポートされるアップグレード パスを表します。
+フェールオーバークラスターをアップグレードする前に、 [Windows Server のアップグレード](../upgrade/upgrade-overview.md)に関するコンテンツを参照してください。  Windows Server をインプレースアップグレードする場合は、既存のオペレーティングシステムのリリースからより新しいリリースに移行し、同じハードウェア上に保持します。 Windows Server は、少なくとも1つのインプレースでアップグレードでき、場合によっては2つのバージョンを転送できます。 たとえば、windows Server 2012 R2 と Windows Server 2016 は、windows Server 2019 にインプレースアップグレードできます。  また、[クラスター移行ウィザード](https://blogs.msdn.microsoft.com/clustering/2012/06/25/how-to-move-highly-available-clustered-vms-to-windows-server-2012-with-the-cluster-migration-wizard/)を使用することはできますが、サポートされるバージョンは2つまでです。 次の図は、Windows Server のアップグレードパスを示しています。 下向き矢印は、以前のバージョンから Windows Server 2019 に移行するためにサポートされているアップグレードパスを表します。
 
-![インプレース アップグレードの図](media/In-Place-Upgrade/In-Place-Upgrade-1.png)
+![一括アップグレードの図](media/In-Place-Upgrade/In-Place-Upgrade-1.png)
 
-次の手順では、同じハードウェアを使用して Windows Server 2019 に、Windows Server 2012 フェールオーバー クラスターのサーバーから移動の例があります。  
+次の手順は、同じハードウェアを使用して Windows Server 2012 フェールオーバークラスターサーバーから Windows Server 2019 に移行する例です。  
 
-アップグレードを開始する前に確認してくださいシステムの状態を含む、現在のバックアップが行われてきました。  またすべてのドライバーとファームウェアが使用する場合は、オペレーティング システムの認定レベルに更新されたことを確認します。  これら 2 つの注意事項がここで取り上げていないされます。
+アップグレードを開始する前に、システム状態を含む現在のバックアップが完了していることを確認してください。  また、すべてのドライバーとファームウェアが、使用するオペレーティングシステムの認定レベルに更新されていることを確認します。  これらの2つの注意事項については、ここでは説明しません。
 
-次の例ではクラスターのフェールオーバー クラスターの名前であり、ノード名は NODE1 および NODE2 します。
+次の例では、フェールオーバークラスターの名前は CLUSTER、ノード名は NODE1 と NODE2 です。
 
-## <a name="step-1-evict-first-node-and-upgrade-to-windows-server-2016"></a>手順 1:最初のノードを削除し、Windows Server 2016 にアップグレード
+## <a name="step-1-evict-first-node-and-upgrade-to-windows-server-2016"></a>手順 1:最初のノードを削除して Windows Server 2016 にアップグレードする
 
-1. フェールオーバー クラスター マネージャーでは、すべてのリソース NODE1 から NODE2 にノードをクリックしを選択するとマウスの右のドレイン**一時停止**と**役割をドレイン**します。  PowerShell コマンドを使用する代わりに、 [SUSPEND-CLUSTERNODE](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode)します。
+1. フェールオーバークラスターマネージャーで、ノードを右クリックし、[ロールの**一時停止**と**ドレイン**] を選択して、NODE1 から NODE2 にすべてのリソースをドレインします。  または、PowerShell コマンド[start-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode)を使用することもできます。
 
-    ![ノードをドレインします。](media/In-Place-Upgrade/In-Place-Upgrade-2.png)
+    ![ノードのドレイン](media/In-Place-Upgrade/In-Place-Upgrade-2.png)
 
-2. マウスの右ノードをクリックして、選択して、クラスターからノード 1 を削除**その他のアクション**と**削除**します。  PowerShell コマンドを使用する代わりに、[クラスタ ノードの削除](https://docs.microsoft.com/powershell/module/failoverclusters/remove-clusternode)します。
+2. ノードを右クリックして **[その他のアクション]** を選択し、 **[削除]** を選択して、クラスターから NODE1 を削除します。  または、PowerShell コマンド[start-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/remove-clusternode)を使用することもできます。
 
-    ![ノードをドレインします。](media/In-Place-Upgrade/In-Place-Upgrade-3.png)
+    ![ノードのドレイン](media/In-Place-Upgrade/In-Place-Upgrade-3.png)
 
-3. 念のため、NODE1 を使用しているストレージからデタッチします。  場合によっては、マシンから記憶域のケーブルの切断は十分です。  必要な場合、デタッチを適切な手順については、記憶域ベンダーに確認します。  によって、ストレージでは、これは必要ありません。
+3. 念のため、使用している記憶域から NODE1 をデタッチしてください。  場合によっては、マシンからストレージケーブルを切断するだけで十分です。  必要に応じて適切なデタッチ手順については、記憶域のベンダーに問い合わせてください。  ストレージによっては、これは必要ない場合があります。
 
-4. Windows Server 2016 で NODE1 を再構築します。  すべての必要な役割、機能、ドライバーおよびセキュリティ更新プログラムを追加したことを確認します。
+4. Windows Server 2016 で NODE1 を再構築します。  必要なすべての役割、機能、ドライバー、およびセキュリティ更新プログラムが追加されていることを確認します。
 
-5. NODE1 と CLUSTER1 と呼ばれる新しいクラスターを作成します。  フェールオーバー クラスター マネージャーを開くと、**管理**ウィンドウで、選択**クラスターの作成**ウィザードの指示に従います。
+5. NODE1 と CLUSTER1 という名前の新しいクラスターを作成します。  フェールオーバークラスターマネージャーを開き、 **[管理]** ウィンドウで **[クラスターの作成]** を選択し、ウィザードの指示に従います。
 
-    ![ノードをドレインします。](media/In-Place-Upgrade/In-Place-Upgrade-4.png)
+    ![ノードのドレイン](media/In-Place-Upgrade/In-Place-Upgrade-4.png)
 
-6. クラスターが作成されると、ロールは、元のクラスターからこの新しいクラスターに移行する必要があります。  マウスを右に、新しいクラスターをクラスター名 (CLUSTER1) をクリックし、選択**他の操作**と**クラスターの役割のコピー**。  役割を移行するウィザードで作業を進めるにします。
+6. クラスターが作成されたら、役割を元のクラスターからこの新しいクラスターに移行する必要があります。  新しいクラスターで、クラスター名 (CLUSTER1) を右クリックし、 **[その他の操作]** を選択して、**クラスターの役割をコピー**します。  ウィザードの指示に従って、役割を移行します。
 
-    ![ノードをドレインします。](media/In-Place-Upgrade/In-Place-Upgrade-5.png)
+    ![ノードのドレイン](media/In-Place-Upgrade/In-Place-Upgrade-5.png)
 
-7.  すべてのリソースを移行すると後の電源を切る NODE2 (元のクラスター) と、干渉が発生しないため、記憶域を切断します。  NODE1 を記憶域を接続します。  すべてが接続されると、すべてのリソースをオンラインとどおりに機能していることを確認します。
+7.  すべてのリソースが移行されたら、NODE2 (元のクラスター) の電源を切り、記憶域を切断して、干渉が発生しないようにします。  記憶域を NODE1 に接続します。  すべてのリソースをオンラインにして、必要に応じて機能していることを確認します。
 
-## <a name="step-2-rebuild-second-node-to-windows-server-2019"></a>手順 2:Windows Server 2019 に 2 番目のノードを再構築します。
+## <a name="step-2-rebuild-second-node-to-windows-server-2019"></a>手順 2:2番目のノードを Windows Server 2019 に再構築する
 
-すべてが動作することを確認、NODE2 を Windows Server 2019 に再構築し、クラスターに参加していることができます。
+すべてが正常に動作していることを確認したら、NODE2 を Windows Server 2019 に再構築し、クラスターに参加させることができます。
 
-1. NODE2 で Windows Server 2019 のクリーン インストールを実行します。 すべての必要な役割、機能、ドライバーおよびセキュリティ更新プログラムを追加したことを確認します。
+1. NODE2 で Windows Server 2019 のクリーンインストールを実行します。 必要なすべての役割、機能、ドライバー、およびセキュリティ更新プログラムが追加されていることを確認します。
 
-2. これで、元のクラスター (クラスター) が削除されている CLUSTER1 として新しいクラスターの名前をそのまままたは元の名前に戻ることがことができます。  元の名前に戻る場合は、次の手順に従います。
+2. 元のクラスター (クラスター) が失われたので、新しいクラスター名を CLUSTER1 として使用するか、元の名前に戻すことができます。  元の名前に戻る場合は、次の手順を実行します。
    
-   a. Node1 で、マウスの右にフェールオーバー クラスター マネージャーでクラスター (CLUSTER1) の名前をクリックして、**プロパティ**します。
+   a. NODE1 でフェールオーバークラスターマネージャー右マウスをクリックし、クラスターの名前 (CLUSTER1) をクリックして、 **[プロパティ]** を選択します。
    
-   b. **全般** タブで、クラスターにクラスターの名前を変更します。
+   b. **[全般]** タブで、クラスターの名前を cluster に変更します。
 
-   c. 適用する または ok を選択すると表示されます、次のダイアログ ポップアップします。
+   c. [OK] または [適用] を選択すると、次のダイアログポップアップが表示されます。
 
-    ![ノードをドレインします。](media/In-Place-Upgrade/In-Place-Upgrade-6.png)
+    ![ノードのドレイン](media/In-Place-Upgrade/In-Place-Upgrade-6.png)
 
-    d. クラスター サービスは停止し、名前の変更を完了するためもう一度開始するために必要な。
+    d. クラスターサービスは停止され、名前の変更を完了するために再起動する必要があります。
 
-3. Node1 で、フェールオーバー クラスター マネージャーを開きます。  マウスの右クリック**ノード**選択**ノードの追加**します。  クラスター NODE2 の追加ウィザードを実行します。
+3. NODE1 でフェールオーバークラスターマネージャーを開きます。  **ノード**を右クリックし、 **[ノードの追加]** を選択します。  クラスターに NODE2 を追加するウィザードを実行します。
 
-4. NODE2 に記憶域をアタッチします。 これには、記憶域のケーブルの再接続が含まれます。 
+4. NODE2 にストレージを接続します。 これには、ストレージケーブルの再接続が含まれる場合があります。 
 
-5. すべてのリソース NODE1 から NODE2 にノードをクリックしを選択するとマウスの右のドレイン**一時停止**と**役割をドレイン**します。  PowerShell コマンドを使用する代わりに、 [SUSPEND-CLUSTERNODE](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode)します。  すべてのリソースがオンラインでありが機能していることを確認します。
+5. ノードを右クリックし、[ロールの**一時停止**と**ドレイン**] を選択して、NODE1 から NODE2 にすべてのリソースをドレインします。  または、PowerShell コマンド[start-clusternode](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode)を使用することもできます。  すべてのリソースがオンラインであり、必要に応じて機能していることを確認します。
 
-## <a name="step-3-rebuild-first-node-to-windows-server-2019"></a>手順 3:Windows Server 2019 する最初のノードを再構築します。
+## <a name="step-3-rebuild-first-node-to-windows-server-2019"></a>手順 3:最初のノードを Windows Server 2019 に再構築する
 
-1. クラスターからノード 1 を削除してから方法 ノードから、記憶域を切断した以前。
+1. クラスターから NODE1 を削除し、以前の方法でノードから記憶域を切断します。
 
-2. 再構築または Windows Server 2019 に NODE1 をアップグレードします。  すべての必要な役割、機能、ドライバーおよびセキュリティ更新プログラムを追加したことを確認します。
+2. NODE1 を Windows Server 2019 に再構築またはアップグレードします。  必要なすべての役割、機能、ドライバー、およびセキュリティ更新プログラムが追加されていることを確認します。
 
-3. 記憶域を再アタッチし、NODE1 をクラスターに追加します。
+3. 記憶域を再接続し、クラスターに NODE1 を追加し直します。
 
-4. NODE1 にすべてのリソースを移動して、オンラインにして必要に応じて機能できるようにします。
+4. すべてのリソースを NODE1 に移動し、必要に応じてオンラインで機能していることを確認します。
 
-5. 現在のクラスターの機能レベルは、Windows 2016 のままです。  PowerShell コマンドを使用する Windows 2019 の機能レベルを更新[UPDATE-CLUSTERFUNCTIONALLEVEL](https://docs.microsoft.com/powershell/module/failoverclusters/update-clusterfunctionallevel)します。
+5. 現在のクラスターの機能レベルは、Windows 2016 のままです。  PowerShell コマンド[CLUSTERFUNCTIONALLEVEL](https://docs.microsoft.com/powershell/module/failoverclusters/update-clusterfunctionallevel)を使用して、機能レベルを Windows 2019 に更新します。
 
-完全に機能の Windows Server 2019 のフェールオーバー クラスターとしているようになりました。
+これで、完全に機能する Windows Server 2019 フェールオーバークラスターを使用して実行されます。
 
-## <a name="additional-notes"></a>追加説明
+## <a name="additional-notes"></a>補足メモ
 
-- 前述のように、記憶域を切断することがあります。 または必要ありません。  このドキュメントでは、慎重を期してします。  記憶域のベンダーに問い合わせてください。
-- 開始点は、Windows Server 2008 または 2008 R2 クラスターには場合の手順で追加の実行が必要です。
-- クラスターで仮想マシンが実行されている場合は、PowerShell コマンドを使用して、クラスターの機能レベルが完了したら、仮想マシンのレベルをアップグレードすることを確認[更新 VMVERSION](https://docs.microsoft.com/powershell/module/hyper-v/update-vmversion)します。
-- など、SQL Server、Exchange Server などのアプリケーションを実行している場合、アプリケーションは移行されませんクラスターの役割のコピー ウィザードを使用に注意してください。  アプリケーションの適切な移行手順については、アプリケーションの開発を参照してください。
+- 既に説明したように、記憶域を切断する必要があるか、または必要でない場合があります。  このドキュメントでは、注意を払う必要があります。  ストレージベンダーに問い合わせてください。
+- 開始位置が Windows Server 2008 または 2008 R2 のクラスターの場合は、手順を追加で実行する必要があります。
+- クラスターが仮想マシンを実行している場合は、PowerShell コマンド[更新プログラム VMVERSION](https://docs.microsoft.com/powershell/module/hyper-v/update-vmversion)でクラスターの機能レベルが完了したら、必ず仮想マシンレベルをアップグレードしてください。
+- SQL Server、Exchange Server などのアプリケーションを実行している場合は、クラスターの役割のコピーウィザードを使用してアプリケーションを移行することはできないことに注意してください。  アプリケーションの適切な移行手順については、アプリケーションベンダーに問い合わせてください。

@@ -1,7 +1,7 @@
 ---
 title: 記憶域スペース ダイレクトのキャッシュについて
 ms.assetid: 69b1adc0-ee64-4eed-9732-0fb216777992
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: cosdar
 ms.manager: dongill
 ms.technology: storage-spaces
@@ -9,12 +9,12 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0050a8931162e37408895ef664293be2349d1bde
-ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
+ms.openlocfilehash: f2c2e0435d06c18dbacab4e85db770ba86e654b3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68315006"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366001"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>記憶域スペース ダイレクトのキャッシュについて
 
@@ -117,7 +117,7 @@ SSD と HDD がある場合は、SSD が HDD のキャッシュになります�
 
 3 種類すべてのドライブが存在する場合は、NVMe ドライブが SSD と HDD の両方のキャッシュを提供します。 動作は既に説明したとおりで、SSD に対しては書き込みだけがキャッシュされ、HDD に対しては読み取りと書き込みの両方がキャッシュされます。 HDD をキャッシュするための負荷は、キャッシュ ドライブ間で均等に分散されます。 
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 次の表は、それぞれの組み合わせの展開について、キャッシュとして使われるドライブ、容量として使われるドライブ、キャッシュ動作をまとめたものです。
 

@@ -1,8 +1,8 @@
 ---
-title: 属性のディスク
-description: Windows コマンド」のトピック**属性ディスク**-表示、設定、またはディスクの属性をクリアします。
+title: 属性ディスク
+description: '**Attributes ディスク**の Windows コマンドに関するトピック-ディスクの属性を表示、設定、またはクリアします。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7cacc2fb6b47d095f5e452ca470c89f228949594
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 415125208b13d82adeed736107f59fda9489a953
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890353"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382569"
 ---
-# <a name="attributes-disk"></a>属性のディスク
+# <a name="attributes-disk"></a>属性ディスク
 
 
 
-表示、設定、またはディスクの属性をクリアします。
+ディスクの属性を表示、設定、またはクリアします。
 
 > [!IMPORTANT]
-> このパラメーターは、Windows Vista のエディションでご利用いただけません。
+> このパラメーターは、Windows Vista のどのエディションでも使用できません。
 
 ## <a name="syntax"></a>構文
 
@@ -39,15 +39,15 @@ attributes disk [{set | clear}] [readonly] [noerr]
 
 |パラメーター|説明|
 |---------|-----------|
-|セット (set)|フォーカスのあるディスクの指定した属性を設定します。|
-|クリア|フォーカスのあるディスクの指定した属性をクリアします。|
-|読み取り専用|ディスクが読み取り専用であることを指定します。|
-|noerr|スクリプト専用です。 エラーが発生すると、DiskPart は、エラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
+|セット (set)|フォーカスがあるディスクの指定された属性を設定します。|
+|クリア|フォーカスがあるディスクの指定された属性をクリアします。|
+|readonly|ディスクが読み取り専用であることを指定します。|
+|noerr|スクリプトの場合のみ。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
--   ときに**属性ディスク**はスタートアップ ディスクの属性、ディスクの現在の属性を表示するために使用、コンピューターを起動するために使用するディスクを表します。 ダイナミック ミラーでは、ブート ボリュームのブート プレックスを含むディスクのことが表示されます。
--   ディスクを選択する必要があります、**属性ディスク**コマンドは成功します。 使用して、 **select ディスク** コマンド ディスクを選択し、それにフォーカスをします。
+-   **Attributes disk**を使用してディスクの現在の属性を表示すると、スタートアップディスク属性は、コンピューターを起動するために使用されるディスクを表します。 ダイナミックミラーの場合は、ブートボリュームのブートプレックスが格納されているディスクに対して表示されます。
+-   **[ディスクの属性]** コマンドを正常に実行するには、ディスクを選択する必要があります。 使用して、 **select ディスク** コマンド ディスクを選択し、それにフォーカスをします。
 
 ## <a name="BKMK_examples"></a>例
 
@@ -55,12 +55,12 @@ attributes disk [{set | clear}] [readonly] [noerr]
 ```
 attributes disk
 ```
-読み取り専用で、選択したディスクを設定するには、次のように入力します。
+選択したディスクを読み取り専用に設定するには、次のように入力します。
 ```
 attributes disk set readonly
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)
 

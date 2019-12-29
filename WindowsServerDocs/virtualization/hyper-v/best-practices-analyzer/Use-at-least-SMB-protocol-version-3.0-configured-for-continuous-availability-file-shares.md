@@ -1,7 +1,7 @@
 ---
-title: 使用して、少なくとも SMB プロトコルのバージョン 3.0 の継続的な可用性のバーチャル マシンのファイルを保存するファイル共有の構成
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+title: 仮想マシンのファイルを格納するファイル共有での継続的な可用性を実現するように構成された SMB プロトコルバージョン3.0 以降を使用する
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,42 +10,42 @@ ms.topic: article
 ms.assetid: a1fa5cf9-8a48-4f63-bb57-d81e63e77b30
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 67f41293433bd8d14096688fbaa23eb43334c738
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3a6cbb6052e2e50b7fd78792c5e01885d7672932
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877873"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393339"
 ---
-# <a name="use-at-least-smb-protocol-version-30-configured-for-continuous-availability-on-file-shares-that-store-files-for-virtual-machines"></a>使用して、少なくとも SMB プロトコルのバージョン 3.0 の継続的な可用性のバーチャル マシンのファイルを保存するファイル共有の構成
+# <a name="use-at-least-smb-protocol-version-30-configured-for-continuous-availability-on-file-shares-that-store-files-for-virtual-machines"></a>仮想マシンのファイルを格納するファイル共有での継続的な可用性を実現するように構成された SMB プロトコルバージョン3.0 以降を使用する
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
-ベスト プラクティスとスキャンの詳細については、次を参照してください。 [Run Best Practices Analyzer Scans and Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177)します。  
+ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
 |プロパティ|詳細|  
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|警告|  
+|**順**|Warning|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
   
 ## <a name="issue"></a>**問題**  
-*仮想マシンのファイルまたは仮想ハード ディスク ファイルは、SMB プロトコルのバージョン 3.0 の継続的可用性機能で構成されていないネットワーク ファイル共有に格納されます。*  
+*バーチャルマシンファイルまたはバーチャルハードディスクファイルは、SMB プロトコルバージョン3.0 の継続的可用性機能が構成されていないネットワークファイル共有に保管されます。*  
   
-## <a name="impact"></a>**影響**  
-*Microsoft は、サーバーを使用して仮想マシンの可用性に影響を与える可能性があるために、この構成を勧めしません。これには、次の仮想マシンに影響します。*  
+## <a name="impact"></a>**よる**  
+*この構成は、サーバーを使用した仮想マシンの可用性に影響を与える可能性があるため、Microsoft は推奨しません。これは、次の仮想マシンに影響します。*  
   
-\<仮想マシンの一覧 >  
+仮想マシンの一覧を \<>  
   
 ## <a name="resolution"></a>**解決方法**  
 次のいずれかの操作を行います。  
   
--   ファイルを継続的な可用性が構成されている SMB 3.0 ファイル共有に移動します。  
+-   継続的な可用性を確保するように構成されている SMB 3.0 ファイル共有にファイルを移動します。  
   
--   継続的な可用性を提供する現在のファイル共有を再構成します。  
+-   現在のファイル共有を再構成して、継続的な可用性を提供します。  
   
 
 

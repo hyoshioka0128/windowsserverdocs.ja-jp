@@ -6,14 +6,14 @@ ms.author: nedpyle
 manager: siroy
 ms.date: 08/19/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: f086143ae2e02a2d049189ff248e02fc44fe3cb2
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: 6895c4b5f74beb237378060f82135d6f578986b7
+ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69584803"
+ms.lasthandoff: 10/05/2019
+ms.locfileid: "71973863"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>記憶域移行サービスに関してよく寄せられる質問 (FAQ)
 
@@ -34,15 +34,15 @@ Storage Migration Service は、Windows の操作に干渉する可能性があ�
 
 ## <a name="are-clusters-supported-as-sources-or-destinations"></a>クラスターは変換元または変換先としてサポートされていますか。
 
-記憶域移行サービスは、Windows Server 2019 のクラスター間で現在移行されていません。 将来のリリースの Storage Migration Service でクラスターサポートを追加する予定です。
+記憶域移行サービスは、累積的な更新プログラム[KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)またはそれ以降の更新プログラムのインストール後のクラスターからクラスターへの移行をサポートしています。 これには、ソースクラスターから移行先クラスターへの移行だけでなく、デバイス統合のためにスタンドアロンの移行元サーバーから移行先クラスターに移行することも含まれます。 
 
 ## <a name="do-local-groups-and-local-users-migrate"></a>ローカルグループとローカルユーザーを移行しますか?
 
-現在、Storage Migration Service では、ローカルユーザーまたはローカルグループを Windows Server 2019 で移行することはできません。 Storage Migration Service の将来のリリースでは、ローカルユーザーとローカルグループの移行サポートを追加する予定です。
+記憶域移行サービスでは、累積的な更新プログラム[KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)またはそれ以降の更新プログラムのインストール後のローカルユーザーとグループの移行がサポートされています。 
 
 ## <a name="is-domain-controller-migration-supported"></a>ドメインコントローラーの移行はサポートされていますか?
 
-Storage Migration Service は、Windows Server 2019 のドメインコントローラを現在移行していません。 回避策として、Active Directory ドメインに複数のドメインコントローラーがある場合は、移行する前にドメインコントローラーを降格し、カットオーバーが完了した後で移行先を昇格させます。 将来のリリースの Storage Migration Service では、ドメインコントローラーの移行サポートを追加する予定です。
+現在、記憶域移行サービスでは、Windows Server 2019 のドメインコントローラーは移行されません。 回避策として、Active Directory ドメインに複数のドメインコントローラーがある場合は、移行する前にドメインコントローラーを降格し、カットオーバーが完了した後で移行先を昇格させます。
 
 ## <a name="what-attributes-are-migrated-by-the-storage-migration-service"></a>Storage Migration Service によってどのような属性が移行されますか?
 
@@ -73,11 +73,11 @@ Storage Migration Service は、Windows Server 2019 のドメインコントロ�
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>複数のサーバーを1台のサーバーに統合することはできますか。
 
-Windows Server 2019 に出荷された Storage Migration Service のバージョンでは、複数のサーバーを1台のサーバーに統合することはできません。 統合の例としては、3つの異なるソースサーバーを移行する場合があります。これには、同じ共有名とローカルファイルパスが存在することがあります。これにより、これらのパスと共有を仮想化して重複や衝突を防ぐことができます。以前のサーバー名と IP アドレス。 この機能は、今後のバージョンの Storage Migration Service で追加される予定です。 
+Windows Server 2019 に出荷された Storage Migration Service のバージョンでは、複数のサーバーを1台のサーバーに統合することはできません。 統合の例としては、3つの異なるソースサーバーを移行する場合があります。これには、同じ共有名とローカルファイルパスが存在することがあります。これにより、これらのパスと共有を仮想化して重複や衝突を防ぐことができます。以前のサーバー名と IP アドレス。 ただし、スタンドアロンサーバーを1つのクラスター上の複数のファイルサーバーリソースに移行することはできます。 
 
 ## <a name="can-i-migrate-from-sources-other-than-windows-server"></a>Windows Server 以外のソースから移行できますか?
 
-Windows Server 2019 に同梱されている Storage Migration Service のバージョンは、Windows Server 2003 以降のオペレーティングシステムからの移行をサポートしています。 また、Samba を使用する Linux サーバーまたはデバイスから記憶域を移行することもできます。これを行うには、Windows Server バージョン1903以降を実行しているサーバーで Storage Migration Service を実行します。
+記憶域移行サービスは、累積的な更新プログラム[KB4513534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)またはそれ以降の更新プログラムのインストール後に、Samba Linux サーバーからの移行をサポートします。 サポートされている Samba のバージョンと Linux ディストリビューションの一覧については、要件を参照してください。
 
 ## <a name="can-i-migrate-previous-file-versions"></a>以前のバージョンのファイルを移行できますか?
 
@@ -89,11 +89,13 @@ Storage Migration Service には、Storage Migration Service プロキシサー�
 
 - **対象のオペレーティングシステムに Windows Server 2019 を使用します。** Windows Server 2019 には、Storage Migration Service プロキシサービスが含まれています。 この機能をインストールして Windows Server 2019 の変換先に移行すると、すべての転送は、ソースと宛先の間で直接表示されるように動作します。 対象のコンピューターが Windows Server 2012 R2 または Windows Server 2016 の場合、このサービスは、転送中に orchestrator 上で実行されます。これは、転送がダブルホップで、処理速度が大幅に低下することを意味します。 Windows Server 2012 R2 または Windows Server 2016 の変換先で複数のジョブが実行されている場合、orchestrator はボトルネックになります。 
 
-- **既定の転送スレッドを変更します。** 記憶域移行サービスのプロキシサービスは、指定されたジョブで8個のファイルを同時にコピーします。 SMS プロキシを実行しているすべてのノードで、次のレジストリの REG_DWORD 値の名前を10進数で調整することにより、同時コピースレッド数を増やすことができます。
+- **既定の転送スレッドを変更します。** 記憶域移行サービスのプロキシサービスは、指定されたジョブで8個のファイルを同時にコピーします。 Storage Migration Service プロキシを実行しているすべてのノードで、次のレジストリの REG_DWORD 値の名前を10進数で調整することにより、同時コピースレッド数を増やすことができます。
 
-    HKEY_Local_Machine\Software\Microsoft\SMSProxy FileTransferThreadCount
+    HKEY_Local_Machine\Software\Microsoft\SMSProxy
+    
+    FileTransferThreadCount
 
-   Windows Server 2019 では、有効な範囲は 1 ~ 128 です。 変更後は、移行に参加しているすべてのコンピューターで、Storage Migration Service プロキシサービスを再起動する必要があります。 この設定には注意してください。この値を高く設定すると、追加のコア、記憶域のパフォーマンス、およびネットワーク帯域幅が必要になる場合があります。 設定値が高すぎると、既定の設定と比較してパフォーマンスが低下する可能性があります。 CPU、メモリ、ネットワーク、およびストレージに基づいてスレッド設定をヒューリスティックに変更する機能は、SMS の新しいバージョンに対して計画されています。
+   Windows Server 2019 では、有効な範囲は 1 ~ 128 です。 変更後は、移行に参加しているすべてのコンピューターで、Storage Migration Service プロキシサービスを再起動する必要があります。 この設定には注意してください。この値を高く設定すると、追加のコア、記憶域のパフォーマンス、およびネットワーク帯域幅が必要になる場合があります。 設定値が高すぎると、既定の設定と比較してパフォーマンスが低下する可能性があります。
 
 - **コアとメモリを追加します。**  ソース、orchestrator、および対象のコンピューターには少なくとも2つのプロセッサコアまたは2つの vCPUs があることを強くお勧めします。これにより、特に FileTransferThreadCount (上記の) と組み合わせた場合に、インベントリと転送のパフォーマンスを大幅に向上させることができます。 通常の Office 形式 (ギガバイト以上) を超えるファイルを転送する場合は、既定の2GB よりも多くのメモリを利用した方がパフォーマンスが向上します。
 
@@ -127,7 +129,7 @@ Windows Server 2019 に出荷された記憶域移行サービスのバージョ
 Storage Migration Service では、hidden c:\programdata\microsoft\storagemigrationservice フォルダーに既定でインストールされる拡張ストレージエンジン (ESE) データベースを使用します。 ジョブが追加され、転送が完了すると、このデータベースは拡張されます。ジョブを削除しない場合は、何百万ものファイルを移行した後で、大きなドライブ領域を消費する可能性があります。 データベースを移動する必要がある場合は、次の手順を実行します。
 
 1. Orchestrator コンピューターの "Storage Migration Service" サービスを停止します。
-2. フォルダーの所有権`%programdata%/Microsoft/StorageMigrationService`を取得する
+2. @No__t-0 フォルダーの所有権を取得する
 3. ユーザーアカウントを追加して、その共有とそのすべてのファイルとサブフォルダーを完全に制御できるようにします。
 4. フォルダーを orchestrator コンピューターの別のドライブに移動します。
 5. 次のレジストリ REG_SZ 値を設定します。
@@ -143,7 +145,7 @@ Storage Migration Service では、hidden c:\programdata\microsoft\storagemigrat
 
 - Windows 10 に含まれているフィードバックハブツールを使用して、[機能の提案] をクリックし、[Windows Server] と [記憶域の移行] のカテゴリを指定します。
 - [Windows Server UserVoice](https://windowsserver.uservoice.com)サイトを使用する
-- 電子メールsmsfeed@microsoft.com
+- 電子メール smsfeed@microsoft.com
 
 バグを報告するには:
 

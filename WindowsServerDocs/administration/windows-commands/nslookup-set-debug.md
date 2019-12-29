@@ -1,8 +1,8 @@
 ---
 title: nslookup set debug
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: af0d028e3886e6743f402c2c9aa934d6046abf9b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 63423481e685daac821ae75864f20783f96c56c5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436741"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372952"
 ---
 # <a name="nslookup-set-debug"></a>nslookup set debug
 
 
 
-デバッグ モードを有効または無効にします。
+デバッグモードをオンまたはオフにします。
 
 ## <a name="syntax"></a>構文
 
@@ -36,13 +36,13 @@ set [no]debug
 
 |  パラメーター  |                         説明                          |
 |-------------|--------------------------------------------------------------|
-| **nodebug** | デバッグ モードをオフにします。 既定の構文は**nodebug**します。 |
-|  **debug**  |                   デバッグ モードをオンにします。                   |
-|  \*\*{0} のヘルプ  |                            ?}\*\*                            |
+| **nodebug** | デバッグモードをオフにします。 既定の構文は**nodebug**です。 |
+|  **debug**  |                   デバッグモードをオンにします。                   |
+|  \*\*{help  |                            ?}\*\*                            |
 
 ## <a name="remarks"></a>注釈
 
--   デバッグ モードをオンになって、サーバーとその応答に送信されるパケットに関する詳細情報が印刷します。
+-   デバッグモードを有効にすると、サーバーに送信されたパケットと結果の解答に関する詳細情報が出力されます。
 
 #### <a name="additional-references"></a>その他の参照情報
 

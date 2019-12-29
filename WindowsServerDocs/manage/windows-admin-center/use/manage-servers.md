@@ -5,25 +5,25 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 03/07/2019
+ms.date: 11/21/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 72524fcc71f722daeb8238bc3cffc6d38a611098
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.prod: windows-server
+ms.openlocfilehash: 9a116cc9d86dfe0bb4450efa0f18580a062af722
+ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590582"
+ms.lasthandoff: 12/07/2019
+ms.locfileid: "74903721"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Windows 管理センターを使用してサーバーを管理する
 
->適用先:Windows Admin Center、Windows Admin Center Preview
+>適用対象: Windows Admin Center、Windows Admin Center Preview
 
 > [!Tip]
 > Windows Admin Center を初めて使用する場合
 > [Windows Admin Center についての詳細を確認する](../understand/windows-admin-center.md)か、[今すぐダウンロード](https://aka.ms/windowsadmincenter)してください。
 
-## <a name="managing-windows-server-machines"></a>Windows Server コンピューターの管理
+## <a name="managing-windows-server-machines"></a>Windows Server マシンの管理
 
 Windows Server 2012 以降を実行している個々のサーバーを Windows 管理センターに追加して、証明書、デバイス、イベント、プロセス、役割と機能、更新プログラム、Virtual Machines などの包括的なツールセットを使用してサーバーを管理できます。
 
@@ -33,7 +33,7 @@ Windows Server 2012 以降を実行している個々のサーバーを Windows 
 
 Windows 管理センターにサーバーを追加するには:
 
-1. [すべての接続] の下にある **[+ 追加]** をクリックします。
+1. すべての接続 の下にある  **+ 追加** をクリックします。
 2. **サーバー接続**を追加することを選択します。
 3. サーバーの名前を入力し、メッセージが表示されたら、使用する資格情報を入力します。
 4. **[送信]** をクリックして完了します。
@@ -53,29 +53,31 @@ Windows 管理センターにサーバーを追加するには:
 | [Active Directory](#active-directory-preview) | Active Directory の管理 |
 | [Backup](#backup) | Azure Backup の表示と構成 |  
 | [証明書](#certificates) | 証明書の表示と変更 |
-| [コンテナー](#containers) | コンテナーの表示 |
+| [コンテナー](#containers) | コンテナー表示 |
 | [デバイス](#devices) | デバイスの表示と変更 |
 | [[DHCP]](#dhcp) | DHCP サーバー構成の表示と管理 |
 | [DNS](#dns) | DNS サーバー構成の表示と管理 |
 | [イベント](#events) | イベントの表示 |
-| [ファイル](#files) | ファイルとフォルダーの参照 |
+| [ファイル](#files) | ファイルとフォルダーを参照する |
 | [Firewall](#firewall) | ファイアウォール規則の表示と変更 |
 | [インストール済みアプリ](#installed-apps) | インストールされているアプリを表示および削除する |
 | [ローカルユーザーとグループ](#local-users-and-groups) | ローカルユーザーとグループを表示および変更する |
 | [Network](#network) | ネットワークデバイスの表示と変更 |
+| [パケットの監視](https://aka.ms/wac1908) | ネットワークパケットを監視する |
+| [パフォーマンスモニター](https://aka.ms/perfmon-blog) | パフォーマンスカウンターとレポートの表示 |
 | [PowerShell](#powershell) | PowerShell を使用したサーバーとの対話 |
 | [プロセス](#processes) | 実行中のプロセスの表示と変更 |
-| [登録](#registry) | レジストリエントリの表示と変更 |
-| [リモートデスクトップ](#remote-desktop) | リモートデスクトップを使用したサーバーとの対話 |
+| [Registry](#registry) | レジストリエントリの表示と変更 |
+| [リモート デスクトップ](#remote-desktop) | リモートデスクトップを使用したサーバーとの対話 |
 | [役割と機能](#roles-and-features) | 役割と機能を表示および変更する |
 | [スケジュールされたタスク](#scheduled-tasks) | スケジュールされたタスクの表示と変更 |
-| [Services](#services) | サービスの表示と変更 |
-| [[設定]](#settings) | サービスの表示と変更 |
+| [サービス](#services) | サービスの表示と変更 |
+| [設定](#settings) | サービスの表示と変更 |
 | [ストレージ](#storage) | 記憶装置の表示と変更 |
 | [記憶域移行サービス](#storage-migration-service) | サーバーとファイル共有を Azure または Windows Server 2019 に移行する |
 | [記憶域レプリカ](#storage-replica) | 記憶域レプリカを使用してサーバー間の記憶域レプリケーションを管理する |
 | [システム インサイト](#system-insights) | System Insights を使用すると、サーバーの機能についての洞察を高めることができます。 |
-| [版](#updates) | インストールされていることを確認し、新しい更新プログラムを確認します |
+| [Updates](#updates) | インストールされていることを確認し、新しい更新プログラムを確認します |
 | [仮想マシン](manage-virtual-machines.md) | バーチャルマシンの表示と管理 |
 | [仮想スイッチ](#virtual-switches) | 仮想スイッチの表示と管理 |
 
@@ -119,7 +121,7 @@ Windows 管理センターにサーバーを追加するには:
 
 [**Active Directory のフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BActive%20Directory%5D)します。
 
-## <a name="backup"></a>バックアップ
+## <a name="backup"></a>[バックアップ]
 
 **バックアップ**を使用すると、サーバーを Microsoft Azure に直接バックアップして、Windows server を破損、攻撃、災害から保護することができます。
 [詳細については、Azure Backup を参照してください。](https://aka.ms/windows-admin-center-backup)
@@ -135,7 +137,7 @@ Windows 管理センターにサーバーを追加するには:
 - バックアップジョブの開始または停止
 - バックアップジョブの履歴と状態の表示
 - 回復ポイントの表示とデータの回復
-- バックアップデータの削除
+- バックアップ データの削除
 
 ## <a name="certificates"></a>証明書
 
@@ -148,7 +150,7 @@ Windows 管理センターにサーバーを追加するには:
 - 既存の証明書を参照して検索する
 - 証明書の詳細の表示
 - 証明書のエクスポート
-- 証明書の更新
+- 証明書の書き換え
 - 新しい証明書を要求する
 - 証明書の削除
 
@@ -156,7 +158,7 @@ Windows 管理センターにサーバーを追加するには:
 
 ## <a name="containers"></a>コンテナー
 
-コンテナー**を使用する**と、Windows Server コンテナーホスト上のコンテナーを表示できます。 Windows Server Core コンテナーが実行されている場合は、イベントログを表示し、コンテナーの CLI にアクセスできます。
+**コンテナーを使用する**と、Windows Server コンテナーホスト上のコンテナーを表示できます。 Windows Server Core コンテナーが実行されている場合は、イベントログを表示し、コンテナーの CLI にアクセスできます。
 
 [**コンテナーのフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BContainers%5D)します。
 
@@ -211,7 +213,7 @@ Windows 管理センターにサーバーを追加するには:
 イベントでは、次の機能がサポートされています。
 
 - イベントの参照と検索
-- イベントの詳細の表示
+- イベントの詳細を表示する
 - ログからイベントを消去します
 - ログからイベントをエクスポートする
 
@@ -225,12 +227,12 @@ Windows 管理センターにサーバーを追加するには:
 
 ファイルでは、次の機能がサポートされています。
 
-- ファイルとフォルダーの参照
-- ファイルまたはフォルダーの検索
-- 新しいフォルダーの作成
+- ファイルとフォルダーを参照する
+- ファイルやフォルダーを検索する
+- 新しいフォルダーを作成する
 - ファイルまたはフォルダーを削除する
 - ファイルまたはフォルダーをダウンロードする
-- ファイルまたはフォルダーをアップロードする
+- ファイルまたはフォルダーをアップロード
 - ファイルまたはフォルダーの名前を変更する
 - Zip ファイルを抽出する
 - ファイルまたはフォルダーのプロパティの表示
@@ -252,7 +254,7 @@ Windows 管理センターにサーバーを追加するには:
 - 送信ファイアウォール規則の表示
 - ファイアウォール規則の検索
 - ファイアウォール規則の詳細の表示
-- 新しいファイアウォール規則を作成する
+- 新しいファイアウォール ルールを作成する
 - ファイアウォール規則を有効または無効にする
 - ファイアウォール規則の削除
 - ファイアウォール規則のプロパティを編集する
@@ -277,12 +279,12 @@ Windows 管理センターにサーバーを追加するには:
 - 新しいユーザーまたはグループを作成する
 - ユーザーのグループメンバーシップを管理する
 - ユーザーまたはグループを削除する
-- ユーザーのパスワードを変更する
+- ユーザーのパスワードを変更します
 - ユーザーまたはグループのプロパティを編集する
 
 [**ローカルユーザーとグループのフィードバックと提案された機能を表示する**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BLocal%20users%20and%20Groups%5D)
 
-## <a name="network"></a>ネットワーク
+## <a name="network"></a>[ネットワーク]
 
 **ネットワーク**では、コンピューターまたはサーバー上のネットワークデバイスと設定を管理できます。
 
@@ -310,7 +312,7 @@ PowerShell では、次の機能がサポートされています。
 
 [**PowerShell のフィードバックと提案された機能を表示する**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BPowerShell%5D)
 
-## <a name="processes"></a>プロセス
+## <a name="processes"></a>Processes (プロセス)
 
 **プロセス**を使用すると、コンピューターまたはサーバー上で実行中のプロセスを管理できます。
 
@@ -386,7 +388,7 @@ PowerShell では、次の機能がサポートされています。
 
 スケジュールされた[**タスクのフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BScheduled%20Tasks%5D)します。
 
-## <a name="services"></a>Services
+## <a name="services"></a>サービス
 
 **サービス**を使用すると、コンピューターまたはサーバー上のサービスを管理できます。
 
@@ -415,7 +417,7 @@ PowerShell では、次の機能がサポートされています。
 - ロールベースのアクセス制御設定を表示および変更する
 - Hyper-v ホストの設定を表示および変更する (該当する場合)
 
-## <a name="storage"></a>ストレージ
+## <a name="storage"></a>記憶域
 
 **記憶域**を使用すると、コンピューターまたはサーバー上の記憶装置を管理できます。
 
@@ -430,9 +432,9 @@ PowerShell では、次の機能がサポートされています。
 - バーチャルハードディスク (VHD) の作成、アタッチ、および切断
 - ディスクをオフラインにする
 - ボリュームのフォーマット
-- ボリュームのサイズを変更する
+- ボリュームをサイズ変更する
 - ボリュームのプロパティの編集
-- ボリュームの削除
+- ボリュームを削除する
 - クォータ管理のインストール
 - ファイルサーバーリソースマネージャーのクォータ[の記憶域の管理-> のクォータの作成と更新](https://docs.microsoft.com/windows-server/storage/fsrm/quota-management)
 
@@ -454,7 +456,7 @@ PowerShell では、次の機能がサポートされています。
 ## <a name="system-insights"></a>システム インサイト
 
 **System Insights**では、予測分析が Windows server にネイティブで導入され、サーバーの機能に関する洞察が向上しています。
-[System Insights の概要を見る](http://aka.ms/systeminsights)
+[System Insights の概要を見る](https://aka.ms/systeminsights)
 
 >[!NOTE]
 >System Insights には Windows Server 2019 が必要です。

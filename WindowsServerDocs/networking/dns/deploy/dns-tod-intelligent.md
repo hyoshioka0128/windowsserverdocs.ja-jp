@@ -1,29 +1,29 @@
 ---
 title: 1 日の時間に基づくインテリジェントなDNS 応答に DNS ポリシーを使用する
-description: このトピックは、DNS ポリシー シナリオ ガイドの Windows Server 2016 の一部です。
+description: このトピックは、Windows Server 2016 の DNS ポリシーシナリオガイドに含まれています。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 161446ff-a072-4cc4-b339-00a04857ff3a
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c36475dacb8664352f4ab270878357118d281c60
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: e497b0d73c816f0295588aa77a21c49d376c0dcf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446423"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406191"
 ---
 # <a name="use-dns-policy-for-intelligent-dns-responses-based-on-the-time-of-day"></a>1 日の時間に基づくインテリジェントなDNS 応答に DNS ポリシーを使用する
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを使用すると、1 日の時間に基づき、DNS のポリシーを使用して、アプリケーションの別の地理的に分散インスタンス間でアプリケーションのトラフィックを分散するのに方法について説明します。  
   
 このシナリオは、別のタイム ゾーンに配置されている Web サーバーなどの別のアプリケーション サーバーに 1 つのタイム ゾーンでトラフィックを転送場合に便利です。 これにより、トラフィックを負荷分散アプリケーションのインスタンス間でのピーク時のトラフィックがプライマリ サーバーが、いつ過負荷の期間します。   
   
-### <a name="bkmk_example1"></a>1 日の時間に基づくインテリジェント DNS 応答の例  
+### <a name="bkmk_example1"></a>1日の時間に基づくインテリジェント DNS 応答の例  
 1 日の時間に基づくアプリケーションのトラフィックを分散する DNS ポリシーを使用する方法の例を次に示します。  
   
 この例は、1 つ架空の会社の Web サイトを通じて、世界各地でオンライン gifting ソリューションを提供する Contoso ギフト サービスを使用して contosogiftservices.com します。   
@@ -38,7 +38,7 @@ Contoso ギフト サービスは、サイトの分析を実行し、毎日午�
   
 ![1 日の DNS のポリシーの例の時間](../../media/DNS-Policy-Tod1/dns_policy_tod1.jpg)  
   
-### <a name="bkmk_works1"></a>日の作業時間に基づくインテリジェントの DNS 応答  
+### <a name="bkmk_works1"></a>時間帯に基づくインテリジェント DNS 応答のしくみ  
   
 DNS サーバーがで時間が午後 6 時と各地理的な場所での午後 9 時の間の日 DNS ポリシーで構成されている DNS サーバーは次のです。  
   
@@ -53,13 +53,13 @@ DNS では、複数の DNS ポリシーが構成されていると順序付け�
   
 ポリシーの種類と条件の詳細については、次を参照してください。 [DNS のポリシーの概要](../../dns/deploy/DNS-Policies-Overview.md)します。  
   
-### <a name="bkmk_how1"></a>時間帯に基づくインテリジェント DNS 応答の DNS のポリシーを構成する方法  
+### <a name="bkmk_how1"></a>時間帯に基づいてインテリジェント DNS 応答の DNS ポリシーを構成する方法  
 分散アプリケーションの負荷を 1 日の時間ベースのクエリの応答の DNS のポリシーを構成するには、次の手順を実行する必要があります。  
   
-- [DNS クライアントのサブネットを作成します。](#bkmk_subnets)  
-- [ゾーンのスコープを作成します。](#bkmk_zscopes)  
-- [レコードをゾーンのスコープに追加します。](#bkmk_records)  
-- [DNS ポリシーを作成します。](#bkmk_policies)  
+- [DNS クライアントサブネットを作成する](#bkmk_subnets)  
+- [ゾーンのスコープを作成する](#bkmk_zscopes)  
+- [ゾーンのスコープにレコードを追加する](#bkmk_records)  
+- [DNS ポリシーを作成する](#bkmk_policies)  
   
 >[!NOTE]
 >構成する場合、ゾーンに対して権限のある DNS サーバーでは、これらの手順を実行する必要があります。 メンバーシップ **DnsAdmins**, 、または同等の権限が必要で、次の手順を実行します。  
@@ -67,9 +67,9 @@ DNS では、複数の DNS ポリシーが構成されていると順序付け�
 次のセクションでは、詳細な構成手順を説明します。  
   
 >[!IMPORTANT]
->次のセクションでには、多くのパラメーターの値例にはが含まれている Windows PowerShell コマンド例にはが含まれます。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。  
+>以下のセクションには、多くのパラメーターの値の例を含む Windows PowerShell コマンドの例が含まれています。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。  
   
-#### <a name="bkmk_subnets"></a>DNS クライアントのサブネットを作成します。  
+#### <a name="bkmk_subnets"></a>DNS クライアントサブネットを作成する  
 最初の手順では、サブネットまたは IP アドレス空間のトラフィックをリダイレクトする領域を識別します。 たとえば、米国およびヨーロッパのトラフィックをリダイレクトする場合は、サブネットまたは IP アドレス空間がこれらの領域を識別する必要があります。  
   
 この情報は、地理的 IP のマップから取得できます。 これらの地理的 IP のディストリビューションに基づき、「DNS クライアント サブネット」を作成する必要があります。 DNS クライアントのサブネットは、クエリが DNS サーバーに送信元 IPv4 または IPv6 サブネットの論理グループです。  
@@ -84,12 +84,12 @@ Add-DnsServerClientSubnet -Name "EuropeSubnet" -IPv4Subnet "141.1.0.0/24, 151.1.
 ```  
 詳細については、次を参照してください。 [追加 DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)します。  
   
-#### <a name="bkmk_zscopes"></a>ゾーンのスコープを作成します。  
+#### <a name="bkmk_zscopes"></a>ゾーンのスコープを作成する  
 クライアントのサブネットを構成した後は、2 つの異なるゾーン スコープにリダイレクトするトラフィックの 1 つのスコープに構成されている DNS クライアントのサブネットごとのゾーンをパーティション分割する必要があります。  
   
 など DNS 名 www.contosogiftservices.com のトラフィックをリダイレクトする場合は、contosogiftservices.com ゾーン、米国およびヨーロッパの 2 つの別のゾーン スコープを作成する必要があります。  
   
-ゾーンのスコープは、ゾーンの一意のインスタンスです。 DNS ゾーンは、独自の DNS レコード セットを格納している各ゾーンのスコープを持つ、複数のゾーン スコープを持つことができます。 同じレコードは、別の IP アドレスを持つ、複数のスコープまたは同じ IP アドレスに存在することができます。  
+ゾーンのスコープは、ゾーンの一意のインスタンスです。 DNS ゾーンは複数のゾーンスコープを持つことができ、各ゾーンスコープには独自の DNS レコードセットが含まれます。 同じレコードが複数のスコープに存在し、異なる IP アドレスまたは同じ IP アドレスを持つことができます。  
   
 >[!NOTE]
 >既定では、ゾーンのスコープは、DNS ゾーンに存在します。 このゾーンのスコープでは、ゾーンと同じ名前と、従来の DNS の機能がこのスコープで動作します。  
@@ -104,7 +104,7 @@ Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "DublinZoneScop
 ```  
 詳細については、次を参照してください。 [追加 DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)します。  
   
-#### <a name="bkmk_records"></a>レコードをゾーンのスコープに追加します。  
+#### <a name="bkmk_records"></a>ゾーンのスコープにレコードを追加する  
 2 つのゾーンのスコープに web サーバーのホストを表すレコードを追加する必要があります。  
   
 たとえば、 **SeattleZoneScope**, 、レコード <strong>www.contosogiftservices.com</strong> はシアトルのデータ センターにある IP アドレス、192.0.0.1 で追加します。 同様に、 **DublinZoneScope**, 、レコード <strong>www.contosogiftservices.com</strong> Dublin データ センター内の IP アドレス 141.1.0.3 の追加  
@@ -121,7 +121,7 @@ Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -
   
 詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。  
   
-#### <a name="bkmk_policies"></a>DNS ポリシーを作成します。  
+#### <a name="bkmk_policies"></a>DNS ポリシーを作成する  
 サブネットを作成した後は、しパーティション (ゾーン スコープ) には、レコードを追加した、サブネット、およびパーティションに接続しているポリシーは、DNS クライアントのサブネットのいずれかのソースから、クエリの結果が、クエリの応答が、ゾーンの正しい範囲から返されます。 を作成する必要があります。 ポリシーの既定のゾーンのスコープをマッピングするため必要はありません。  
   
 これらの DNS のポリシーを構成した後、DNS サーバーの動作は次に示します。  

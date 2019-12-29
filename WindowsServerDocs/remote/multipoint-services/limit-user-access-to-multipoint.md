@@ -1,9 +1,9 @@
 ---
-title: サーバーへのユーザー アクセスを制限します。
-description: MultiPoint Services のユーザーやグループへのアクセスを拒否または許可する方法について説明します
+title: サーバーへのユーザーアクセスを制限する
+description: ユーザーおよびグループの MultiPoint サービスへのアクセスを許可または拒否する方法について説明します。
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,26 +13,26 @@ ms.assetid: 4cabd4f1-a764-4be6-bc6e-0a5f5566390c
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 1466e19152847a6c7d88f77162c50ec73a5a7d27
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 62f2a3f9b94ac3f0474636c34e8ec1f81c568cad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830813"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389057"
 ---
-# <a name="limit-users-access-to-the-multipoint-server"></a>Multipoint サーバーへのユーザー アクセスを制限します。
-MultiPoint server を Active Directory ドメインに参加するか、ローカル ユーザー アカウントを使用するかどうかは、既定で MultiPoint サーバーへのアクセスがあるすべてのユーザー。 MultiPoint サービス環境内でステーションにログオンするユーザーを許可する前に、サーバーへのアクセスを制限する必要があります。  
+# <a name="limit-users-access-to-the-multipoint-server"></a>Multipoint サーバーへのユーザーのアクセスを制限する
+MultiPoint server を Active Directory ドメインに参加させるか、ローカルユーザーアカウントを使用するかにかかわらず、既定ではすべてのユーザーが MultiPoint server にアクセスできます。 ユーザーが MultiPoint Services 環境でステーションにログオンできるようにするには、サーバーへのアクセスを制限する必要があります。  
   
-Remote Desktop Users グループの他のユーザーは MultiPoint サーバーにログオンできます。 既定では、ユーザーはグループのすべてのユーザー、Remote Desktop Users グループのメンバーであるし、そのためすべてのローカル ユーザーとドメイン ユーザーにログオンできます MultiPoint Server。 MultiPoint サーバーへのアクセスを制限するには、ユーザーは、リモート デスクトップ ユーザー グループからグループ化し、Remote Desktop Users グループに特定のユーザーまたはグループを追加で、Everyone を削除します。  
+Remote Desktop Users グループのすべてのユーザーが MultiPoint server にログオンできます。 既定では、ユーザーグループ Everyone は Remote Desktop Users グループのメンバであるため、すべてのローカルユーザーとドメインユーザーが MultiPoint サーバーにログオンできます。 MultiPoint Server へのアクセスを制限するには、Remote Desktop Users グループから Everyone ユーザーグループを削除してから、特定のユーザーまたはグループを Remote Desktop Users グループに追加します。  
   
-## <a name="add-or-remove-users-or-groups-to-the-remote-desktop-users-group"></a>ユーザーまたはグループを Remote Desktop Users グループに追加または削除  
+## <a name="add-or-remove-users-or-groups-to-the-remote-desktop-users-group"></a>リモートデスクトップユーザーグループにユーザーまたはグループを追加または削除する  
   
-1.  **開始** 画面で、開いている**コンピュータの管理**します。  
+1.  **[スタート]** 画面で、 **[コンピューターの管理]** を開きます。  
   
-2.  コンソール ツリーで [**ローカル ユーザーとグループ**、] をクリックして**グループ**します。  
+2.  コンソールツリーの **[ローカルユーザーとグループ]** で、 **[グループ]** をクリックします。  
   
-3.  ダブルクリック**Remote Desktop Users**、しを追加または削除する指示に従います。  
+3.  **[リモートデスクトップユーザー]** をダブルクリックし、指示に従ってユーザーを追加または削除します。  
   
     -   サーバーへの一般的なアクセスを制限するには、Everyone グループを削除します。  
   
-    -   ステーションを MultiPoint サーバー ユーザーへのアクセスを付与するには、Remote Desktop Users グループに各ローカル アカウントまたは各ドメイン ユーザーまたはグループ アカウントを追加します。  
+    -   MultiPoint server ユーザーにステーションへのアクセスを許可するには、各ローカルアカウント、または各ドメインユーザーまたはグループアカウントを Remote Desktop Users グループに追加します。  

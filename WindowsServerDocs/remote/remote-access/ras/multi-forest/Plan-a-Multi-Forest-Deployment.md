@@ -1,9 +1,9 @@
 ---
 title: マルチフォレスト展開の計画
-description: このトピックでは、Windows Server 2016 でのマルチ フォレスト環境でのリモート アクセスの展開ガイドの一部です。
+description: このトピックは、「Windows Server 2016 のマルチフォレスト環境にリモートアクセスを展開する」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: 8acc260f-d6d1-4d32-9e3a-1fd0b2a71586
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a2f14fdb2fd3ab6f0a89c8d8c1a8853041dcba94
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 2a0f04a3ff7797d18f7647416dc99319860c7030
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281011"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404519"
 ---
 # <a name="plan-a-multi-forest-deployment"></a>マルチフォレスト展開の計画
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、マルチフォレスト展開でリモート アクセスを構成するときに必要な計画手順について説明します。  
   
@@ -38,19 +38,19 @@ ms.locfileid: "67281011"
   
 さらに、リモート アクセス管理者は、すべてのリモート アクセス サーバーのローカル管理者である必要があります。これには、元のリモート アクセス展開へのエントリ ポイントとして追加される新しいフォレストのリモート アクセス サーバーも含まれます。  
   
-## <a name="ClientSG"></a>クライアント セキュリティ グループを計画します。  
+## <a name="ClientSG"></a>クライアントセキュリティグループを計画する  
 新しいフォレストの DirectAccess クライアント コンピューターに対して、少なくとも 1 つのセキュリティ グループを新しいフォレストに構成する必要があります。 これは、1 つのセキュリティ グループに複数のフォレストのアカウントを含めることはできないためです。  
   
 > [!NOTE]  
-> -   DirectAccess が少なくとも 1 つの Windows 10 が必要です&reg;または Windows&reg;フォレストごとに 8 クライアント セキュリティ グループ。 ただし、1 つの Windows 10 または Windows 8 クライアント セキュリティ グループを Windows 10 または Windows 8 クライアントを含むドメインごとにことをお勧めします。  
-> -   DirectAccess が少なくとも 1 つの Windows 7 を必要とマルチサイトを有効にすると、&reg;どの Windows 7 クライアント コンピューターがサポートされている各 DirectAccess エントリ ポイントに対するフォレストごとにクライアント セキュリティ グループ。 ただし、Windows 7 クライアントを含む各ドメインに対するエントリ ポイントごとに別の Windows 7 クライアント セキュリティ グループをことをお勧めします。  
+> -   DirectAccess では、各フォレストに少なくとも1つの Windows 10&reg; または Windows&reg; 8 クライアントセキュリティグループが必要です。 ただし、Windows 10 または Windows 8 クライアントを含むドメインごとに1つの Windows 10 または Windows 8 クライアントセキュリティグループを作成することをお勧めします。  
+> -   マルチサイトを有効にすると、DirectAccess では、Windows 7 クライアントコンピューターがサポートされている各 DirectAccess エントリポイントに対して、フォレストごとに少なくとも1つの Windows 7&reg; クライアントセキュリティグループが必要になります。 ただし、Windows 7 クライアントを含む各ドメインのエントリポイントごとに個別の Windows 7 クライアントセキュリティグループを用意することをお勧めします。  
 >   
 > 追加のドメインでクライアント コンピューターに DirectAccess を適用する場合は、それらのドメインでクライアント GPO を作成する必要があります。 セキュリティ グループを追加すると、新しいドメインに対する新しいクライアント GPO が作成されます。したがって、新しいドメインから DirectAccess クライアント セキュリティ グループの一覧に新しいセキュリティ グループを追加する場合は、クライアント GPO が新しいドメインで自動的に作成され、新しいドメインのクライアント コンピューターはクライアント GPO を介して DirectAccess の設定を取得します。  
 >   
 > DirectAccess クライアント セキュリティ グループとして既に構成されている既存のセキュリティ グループに新しいドメインのクライアントを追加する場合は、新しいドメインの DirectAccess によってクライアント GPO が自動的に作成されないことに注意してください。 新しいドメインのクライアントは、DirectAccess の設定を受け取らず、DirectAcecss を使用して接続できません。  
   
 ## <a name="plan-certification-authorities"></a>証明機関を計画する  
-ワンタイム パスワード (OTP) 認証を使用するように DirectAccess 展開を構成する場合、各フォレストに含まれる署名証明書テンプレートは同じですが、OID の値は異なります。 このため、フォレストを 1 つの構成単位として構成することはできません。 でこの問題を解決して、マルチ フォレスト環境で OTP を構成する」の「マルチ フォレスト展開で OTP を構成する」セクションを参照してください。[マルチ フォレスト展開構成](Configure-a-Multi-Forest-Deployment.md)します。  
+ワンタイム パスワード (OTP) 認証を使用するように DirectAccess 展開を構成する場合、各フォレストに含まれる署名証明書テンプレートは同じですが、OID の値は異なります。 このため、フォレストを 1 つの構成単位として構成することはできません。 この問題を解決し、マルチフォレスト環境で OTP を構成する方法については、「[マルチフォレスト展開の構成](Configure-a-Multi-Forest-Deployment.md)」の「マルチフォレスト展開で Otp を構成する」セクションを参照してください。  
   
 IPsec コンピューター証明書認証を使用するときは、すべてのクライアントおよびサーバー コンピューターが、それらが属しているフォレストに関係なく、同じルート証明機関または中間証明機関によって発行されたコンピューター証明書を所持している必要があります。  
   

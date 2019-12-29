@@ -2,7 +2,7 @@
 title: Windows Server 2016 への移行に関する推奨事項
 description: Windows Server 2016 への移行に関する推奨事項。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.date: 10/18/2016
@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 08a92188446d018edd36a638abb30745721bd601
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 379808e861f087bdda800ae6877c73c02d242a7b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63687480"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391629"
 ---
 # <a name="recommendations-for-moving-to-windows-server-2016"></a>Windows Server 2016 への移行に関する推奨事項
 
@@ -28,9 +28,9 @@ ms.locfileid: "63687480"
 
 |使用している Windows オペレーティング システム|Windows Server 2012 R2 または Windows Server 2012|Windows Server 2008 R2 または Windows Server 2008|  
 |-------------------|----------|--------------|--------------|---------------------------------------|  
-|**Windows Server の役割のインフラストラクチャ**|[特定の役割のガイダンス](https://technet.microsoft.com/windowsserver/jj554790)に関するページに従って、更新または移行のいずれかを選択します。|- Windows Server 2016 の新機能を利用するには、新しいハードウェアを展開するか、または既存のホスト上のバーチャル マシンに Windows Server 2016 をインストールします。 一部の新機能は、Hyper-V を実行する Windows Server 2016 物理ホストで最適に動作します。 <br>- [特定の役割のガイダンス](https://technet.microsoft.com/windowsserver/jj554790)に関するページを参照してください。|
-|**Microsoft サーバーの管理とアプリケーションのワークロード**|- アプリケーションのアップグレードには Windows Server 2016 への*移行*を含める必要があります。 [互換性リスト](Server-Application-Compatibility.md)を参照してください。 <br>- Windows Server 2016 へのアップグレードのみ (つまり、アプリケーションのアップグレードは行わない) 場合は、アプリケーションに固有のガイダンスを使用する必要があります。|- Windows Server 2016 の新機能を利用するには、新しいハードウェアを展開するか、または既存のホスト上のバーチャル マシンに Windows Server 2016 をインストールします。 一部の新機能は、Hyper-V を実行する Windows Server 2016 物理ホストで最適に動作します。 必要に応じて移行ガイドに従ってください。 <br>- または、現在の OS 上に残り、Windows Server 2016 ホスト上で動作する仮想マシン内、あるいは Microsoft Azure で実行します。 [ソフトウェア アシュアランス](https://www.microsoft.com/en-us/Licensing/licensing-programs/software-assurance-default.aspx)による拡張サポート オプションについては、EA 販売店、TAM、または Microsoft にお問い合わせください。|
-|**ISV アプリケーションのワークロード**|- Windows Server 2016 へのアップグレードには、アプリケーションに固有のガイダンスを使用する必要があります。 <br>- Windows Server と Microsoft 製品以外のアプリケーションとの互換性については、[Windows Server Logo Certification (Windows Server ロゴ認証) ポータル](https://msdn.microsoft.com/enterprisecloudcertified)にアクセスしてください。|- Windows Server 2016 の新機能を利用するには、新しいハードウェアを展開するか、または既存のホスト上のバーチャル マシンに Windows Server 2016 をインストールします。 一部の新機能は、Hyper-V を実行する Windows Server 2016 物理ホストで最適に動作します。 必要に応じて移行ガイドに従ってください。 <br>- または、現在の OS 上に残り、Windows Server 2016 ホスト上で動作する仮想マシン内、あるいは Microsoft Azure で実行します。 [ソフトウェア アシュアランス](https://www.microsoft.com/en-us/Licensing/licensing-programs/software-assurance-default.aspx)による拡張サポート オプションについては、EA 販売店、TAM、または Microsoft にお問い合わせください。|
+|**Windows Server の役割のインフラストラクチャ**|[特定の役割のガイダンス](https://technet.microsoft.com/windowsserver/jj554790)に関するページに従って、更新または移行のいずれかを選択します。|- Windows Server 2016 の新機能を利用するには、新しいハードウェアを展開するか、または既存のホスト上の仮想マシンに Windows Server 2016 をインストールします。 一部の新機能は、Hyper-V を実行する Windows Server 2016 物理ホストで最適に動作します。 <br>- [特定の役割のガイダンス](https://technet.microsoft.com/windowsserver/jj554790)に関するページを参照してください。|
+|**Microsoft サーバーの管理とアプリケーションのワークロード**|- アプリケーションのアップグレードには Windows Server 2016 への*移行*を含める必要があります。 [互換性リスト](Server-Application-Compatibility.md)を参照してください。 <br>- Windows Server 2016 へのアップグレードのみ (つまり、アプリケーションのアップグレードは行わない) 場合は、アプリケーションに固有のガイダンスを使用する必要があります。|- Windows Server 2016 の新機能を利用するには、新しいハードウェアを展開するか、または既存のホスト上の仮想マシンに Windows Server 2016 をインストールします。 一部の新機能は、Hyper-V を実行する Windows Server 2016 物理ホストで最適に動作します。 必要に応じて移行ガイドに従ってください。 <br>- または、現在の OS 上に残り、Windows Server 2016 ホスト上で動作する仮想マシン内、あるいは Microsoft Azure で実行します。 [ソフトウェア アシュアランス](https://www.microsoft.com/en-us/Licensing/licensing-programs/software-assurance-default.aspx)による拡張サポート オプションについては、EA 販売店、TAM、または Microsoft にお問い合わせください。|
+|**ISV アプリケーションのワークロード**|- Windows Server 2016 へのアップグレードには、アプリケーションに固有のガイダンスを使用する必要があります。 <br>- Windows Server と Microsoft 製品以外のアプリケーションとの互換性については、[Windows Server Logo Certification (Windows Server ロゴ認証) ポータル](https://msdn.microsoft.com/enterprisecloudcertified)にアクセスしてください。|- Windows Server 2016 の新機能を利用するには、新しいハードウェアを展開するか、または既存のホスト上の仮想マシンに Windows Server 2016 をインストールします。 一部の新機能は、Hyper-V を実行する Windows Server 2016 物理ホストで最適に動作します。 必要に応じて移行ガイドに従ってください。 <br>- または、現在の OS 上に残り、Windows Server 2016 ホスト上で動作する仮想マシン内、あるいは Microsoft Azure で実行します。 [ソフトウェア アシュアランス](https://www.microsoft.com/en-us/Licensing/licensing-programs/software-assurance-default.aspx)による拡張サポート オプションについては、EA 販売店、TAM、または Microsoft にお問い合わせください。|
 |**カスタム アプリケーションのワークロード**|- Windows Server 2016 との互換性およびアップグレード ガイダンスについては、アプリケーションの開発者に問い合わせてください。 <br>- 切り替えを行う前に、Microsoft Azure を活用して Windows Server 2016 上でアプリケーションをテストします。 <br>- 次のセクションに示したオプション一覧を参照してください。|- Windows Server 2016 との互換性およびアップグレード ガイダンスについては、アプリケーションの開発者に問い合わせてください。 <br>- 切り替えを行う前に、Microsoft Azure を活用して Windows Server 2016 上でアプリケーションをテストします。 <br>- Windows Server 2016 の新機能を利用するには、新しいハードウェアを展開するか、または既存のホスト上の仮想マシンに Windows Server 2016 をインストールします。 一部の新機能は、Hyper-V を実行する Windows Server 2016 物理ホストで最適に動作します。 <br>- 次のセクションに示したオプション一覧を参照してください。|
 
 ## <a name="complete-options-for-moving-servers-running-custom-or-in-house-applications-on-older-versions-of-windows-server-to-windows-server-2016"></a>Windows Server の古いバージョンでカスタム アプリケーションまたは "社内" アプリケーションを実行するサーバーを Windows Server 2016 に移行するためのオプション一覧

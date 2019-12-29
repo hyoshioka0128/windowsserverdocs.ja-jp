@@ -7,42 +7,42 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 756434c39b08c8572356e6099791abd781e163e0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d9d170678b845446706c148c8816b5dc83e19371
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66442594"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360113"
 ---
 # <a name="ad-fs-development"></a>AD FS の開発
 
 
-このドキュメントには、すべての AD FS の開発については、ドキュメントのチュートリアルの一覧が含まれています。 これには、次のデータが含まれます。  
+このドキュメントには、AD FS 開発に関するドキュメントのすべてのチュートリアルの一覧が含まれています。 これには、次の内容が含まれます。  
   
  
 - [AD FS のカスタム認証方法を構築する](../ad-fs/development/ad-fs-build-custom-auth-method.md)
 
 - [AD FS 2019 リスク評価モデルでプラグインを構築する](../ad-fs/development/ad-fs-risk-assessment-model.md)
   
-- [AD FS 2016 で OpenID Connect を使用して web アプリケーションを作成します。](../ad-fs/development/Enabling-OpenId-Connect-with-AD-FS.md)  
+- [AD FS 2016 で OpenID Connect を使用して web アプリケーションを構築する](../ad-fs/development/Enabling-OpenId-Connect-with-AD-FS.md)  
 
-- [OAuth および ADAL を使用して 1 つのページの web アプリケーションをビルドします。AD FS 2016 と JS](../ad-fs/development/Single-Page-Application-with-AD-FS.md)
+- [OAuth と ADAL を使用して単一ページの web アプリケーションを構築します。AD FS 2016 を使用した JS](../ad-fs/development/Single-Page-Application-with-AD-FS.md)
   
-- [AD FS 2016 で OAuth 機密クライアントを使用してサーバー側アプリケーションを構築します。](../ad-fs/development/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016.md)
+- [AD FS 2016 で OAuth 機密クライアントを使用してサーバー側アプリケーションを構築する](../ad-fs/development/Enabling-Oauth-Confidential-Clients-with-AD-FS-2016.md)
 
-- [On-Behalf-Of (OBO) の AD FS 2016 で OAuth を使用してを使用して、多層アプリケーションを構築します。](../ad-fs/development/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016.md) 
+- [AD FS 2016 で OAuth を使用して、の代理 (OBO) を使用して多層アプリケーションを構築する](../ad-fs/development/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016.md) 
 
-- [AD FS 2012 R2 を使用した OAuth パブリック クライアントを使用してアプリケーションまたはそれ以降のネイティブ クライアントを構築します。](https://msdn.microsoft.com/library/dn633593.aspx)
+- [AD FS 2012 R2 以降の OAuth パブリッククライアントを使用してネイティブクライアントアプリケーションを構築する](https://msdn.microsoft.com/library/dn633593.aspx)
 
-- [AD FS 2016 で OAuth パブリック クライアントを使用してネイティブ クライアント アプリケーションを構築します。](../ad-fs/development/native-client-with-ad-fs.md)
+- [AD FS 2016 の OAuth パブリッククライアントを使用してネイティブクライアントアプリケーションを構築する](../ad-fs/development/native-client-with-ad-fs.md)
 
-- [AD FS 2016 で OpenID Connect または OAuth を使用する場合は、id_token に出力される要求をカスタマイズします。](../ad-fs/development/Customize-Id-Token-AD-FS-2016.md)
+- [AD FS 2016 で OpenID Connect または OAuth を使用するときに id_token で出力される要求をカスタマイズする](../ad-fs/development/Customize-Id-Token-AD-FS-2016.md)
 
-- [AD FS と id 委任](../ad-fs/development/ad-fs-identity-delegation.md)
+- [AD FS による id 委任](../ad-fs/development/ad-fs-identity-delegation.md)
 
-- [AD FS 2016 での OpenID Connect のシングル ログアウト時](../ad-fs/development/ad-fs-logout-openid-connect.md)
+- [AD FS 2016 を使用した OpenID Connect のシングルログアウト](../ad-fs/development/ad-fs-logout-openid-connect.md)
 
 
 

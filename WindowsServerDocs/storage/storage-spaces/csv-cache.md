@@ -1,6 +1,6 @@
 ---
-title: 記憶域スペース ダイレクト-メモリ内キャッシュを読み取る
-ms.prod: windows-server-threshold
+title: メモリ内読み取りキャッシュの記憶域スペースダイレクト
+ms.prod: windows-server
 ms.author: eldenc
 ms.manager: siroy
 ms.technology: storage-spaces
@@ -8,58 +8,58 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 02/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7ed5894a569d4c42a3a4b0e018de5171f2c84a62
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 83fc923f505531f955fc0131d7dcc1ce98974daa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850553"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394090"
 ---
-# <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>CSV のインメモリで記憶域スペース ダイレクトを使用してキャッシュを読み取る
+# <a name="using-storage-spaces-direct-with-the-csv-in-memory-read-cache"></a>CSV インメモリ読み取りキャッシュでの記憶域スペースダイレクトの使用
 > 適用先:Windows Server 2016、Windows Server 2019
 
-このトピックでは、システム メモリを使用してのパフォーマンスを向上する方法を説明します。[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)します。
+このトピックでは、システムメモリを使用して[記憶域スペースダイレクト](storage-spaces-direct-overview.md)のパフォーマンスを向上させる方法について説明します。
 
-記憶域スペース ダイレクトは、クラスター共有ボリューム (CSV) のインメモリ キャッシュを読み取るとの互換性です。 システム メモリ キャッシュの読み取りに使用すると、VHD または VHDX ファイルにアクセスするバッファなし I/O を使用する HYPER-V などのアプリケーションのパフォーマンスを向上できます。 (バッファなし IOs、Windows のキャッシュ マネージャーによってキャッシュされないすべての操作です)。
+記憶域スペースダイレクトは、メモリ内の読み取りキャッシュクラスターの共有ボリューム (CSV) と互換性があります。 システムメモリを使用して読み取りをキャッシュすると、Hyper-v などのアプリケーションのパフォーマンスを向上させることができます。 Hyper-v では、バッファーを使用しない i/o を使用して VHD または VHDX ファイルにアクセスします。 (バッファリングされていない IOs とは、Windows キャッシュマネージャーによってキャッシュされない操作のことです)。
 
-ハイパーコンバージド記憶域スペース ダイレクト展開のデータの局所性が向上するメモリ内キャッシュがローカル サーバーであるため、:、最近の読み取りはキャッシュで、仮想マシンが実行されている同じホスト上のメモリをどのくらいの頻度を減らす読み取り移動、ネットワーク経由でします。 これにより、低待機時間と記憶域のパフォーマンスが向上します。
+メモリ内キャッシュはサーバーローカルであるため、ハイパー集約記憶域スペースダイレクト配置のデータの局所性が向上します。最近の読み取りは、仮想マシンが実行されているのと同じホスト上のメモリにキャッシュされるので、ネットワーク経由での読み取り回数を減らすことができます。 これにより、待機時間が短くなり、ストレージのパフォーマンスが向上します。
 
 ## <a name="planning-considerations"></a>計画時の注意事項
 
-メモリの読み取りキャッシュは読み取りが集中するワークロードを仮想デスクトップ インフラストラクチャ (VDI) などの最も効果的です。 逆に、作業負荷が非常に書き込み中心の場合は、キャッシュ値よりも多くのオーバーヘッドを生じる可能性があり、無効にする必要があります。
+インメモリ読み取りキャッシュは、仮想デスクトップインフラストラクチャ (VDI) などの読み取り負荷の高いワークロードで最も効果的です。 逆に、ワークロードの書き込みが非常に多い場合は、キャッシュのオーバーヘッドが値より多くなり、無効にする必要があります。
 
-インメモリ CSV 読み取りキャッシュの合計物理メモリの最大 80% を使用することができます。
+CSV インメモリ読み取りキャッシュでは、合計物理メモリの最大 80% を使用できます。
 
   > [!TIP]
-  > ハイパー コンバージド展開では、コンピューティング、および記憶域が同じサーバー上で実行する仮想マシンに十分なメモリのままにするように注意してください。 収束のスケール アウト ファイル サーバー (SoFS) 展開は、メモリ、競合が減りで、この適用されません。
+  > コンピューティングとストレージが同じサーバー上で実行されるハイパー収束デプロイの場合は、仮想マシン用に十分なメモリを確保するように注意してください。 収束スケールアウトファイルサーバー (SoFS) のデプロイでは、メモリの競合が少ないため、この設定は適用されません。
 
   > [!NOTE]
-  > DISKSPD などの特定の microbenchmarking ツールと[VM Fleet](https://github.com/Microsoft/diskspd/tree/master/Frameworks/VMFleet)悪い結果が生じる、csv 形式でメモリ内の読み取りキャッシュをよりもなしで有効にします。 既定で Fleet を VM 10 GiB あたり約 1 TiB の仮想マシン – VHDX 100 の vm を合計し、実行する 1 つ作成します*一様乱数*それらに対して読み取りし、書き込み。 実際のワークロードとは異なり、読み取りはメモリ内キャッシュが有効ではなく、オーバーヘッドが発生したため、予測可能なや反復的なパターンを実行しないでください。
+  > DISKSPD や[VM](https://github.com/Microsoft/diskspd/tree/master/Frameworks/VMFleet)などの一部のマイクロベンチマークツールでは、CSV インメモリ読み取りキャッシュが有効になっていない場合に比べて、より悪い結果が生じる可能性があります。 既定では、VM は仮想マシンごとに 1 10 の GiB VHDX を作成し、100 Vm では約 1 TiB の合計を作成した後、*一様にランダム*な読み取りと書き込みを実行します。 実際のワークロードとは異なり、読み取りは予測可能パターンまたは反復パターンに従わないので、メモリ内キャッシュは有効ではなく、オーバーヘッドが発生します。
 
-## <a name="configuring-the-in-memory-read-cache"></a>キャッシュの読み取りでメモリを構成します。
+## <a name="configuring-the-in-memory-read-cache"></a>インメモリ読み取りキャッシュの構成
 
-CSV、インメモリの読み取りキャッシュが同じ機能の Windows Server 2016 および Windows Server 2019 の両方で利用できます。 Windows Server 2016 では、これは既定で無効です。 Windows Server 2019 は既定で 1 gb が割り当てられます。
+CSV インメモリ読み取りキャッシュは、Windows Server 2016 と Windows Server 2019 の両方で同じ機能を使用して利用できます。 Windows Server 2016 では、既定で無効になっています。 Windows Server 2019 では、既定で 1 GB が割り当てられています。
 
-| OS バージョン          | CSV キャッシュの既定のサイズ |
+| OS バージョン          | 既定の CSV キャッシュサイズ |
 |---------------------|------------------------|
 | Windows Server 2016 | 0 (無効)           |
-| Windows Server 2019 | 1 giB                   |
+| Windows Server 2019 | 1 GiB                   |
 
-PowerShell を使用して、割り当てるメモリ量を表示するには、次のコマンドを実行します。
+PowerShell を使用して割り当てられているメモリの量を確認するには、次のように実行します。
 
 ```PowerShell
 (Get-Cluster).BlockCacheSize
 ```
 
-返される値が、サーバーあたり mebibytes (MiB)。 たとえば、 `1024` 1 ギビバイト (GiB) を表します。
+返される値は、サーバーごとに mebibytes (MiB) です。 たとえば、`1024` は1ギビバイト (GiB) を表します。
 
-割り当てられているメモリの量を変更するには、PowerShell を使用してこの値を変更します。 たとえば、サーバーあたり 2 GiB を割り当てるには、次のように実行します。
+割り当てられるメモリの量を変更するには、PowerShell を使用してこの値を変更します。 たとえば、サーバーごとに2つの GiB を割り当てるには、次のように実行します。
 
 ```PowerShell
 (Get-Cluster).BlockCacheSize = 2048
 ```
 
-変更を有効にするには、すぐに、一時停止または、CSV ボリュームを再開し、サーバー間で移行します。 たとえば、各 CSV を別のサーバー ノードに移動し、再びこの PowerShell のフラグメントを使用します。
+変更がすぐに有効になるようにするには、一時停止し、CSV ボリュームを再開するか、サーバー間で移動します。 たとえば、次の PowerShell フラグメントを使用して、各 CSV を別のサーバーノードに移動してから再び復元します。
 
 ```PowerShell
 Get-ClusterSharedVolume | ForEach {
@@ -71,4 +71,4 @@ Get-ClusterSharedVolume | ForEach {
 
 ## <a name="see-also"></a>関連項目
 
-- [記憶域スペース ダイレクトの概要](storage-spaces-direct-overview.md)
+- [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)

@@ -1,8 +1,8 @@
 ---
-title: ボリュームを属性します。
-description: Windows コマンド」のトピック**属性ボリューム**-表示、設定、またはボリュームの属性をクリアします。
+title: 属性のボリューム
+description: '**Attributes volume**の Windows コマンドのトピック-ボリュームの属性を表示、設定、またはクリアします。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 37af55ee2a041fbcf8068e0def72147732d3a687
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 225a10307123763d1a024fcc08fbae536fd0b5df
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846583"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382584"
 ---
-# <a name="attributes-volume"></a>ボリュームを属性します。
+# <a name="attributes-volume"></a>属性のボリューム
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-表示、設定、またはボリュームの属性をクリアします。  
+ボリュームの属性を表示、設定、またはクリアします。  
   
   
   
@@ -38,43 +38,43 @@ attributes volume [{set | clear}] [{hidden | readonly | nodefaultdriveletter | s
   
 |パラメーター|説明|  
 |-------|--------|  
-|セット (set)|フォーカスがあるボリュームの指定した属性を設定します。|  
-|クリア|フォーカスがあるボリュームの指定した属性をクリアします。|  
-|読み取り専用|ボリュームが読み込まれることを指定します。\-のみです。|  
-|非表示|ボリュームが非表示になっているを指定します。|  
-|nodefaultdriveletter|ボリュームが既定でドライブ文字を受信しないことを指定します。|  
-|シャドウ コピー|シャドウ コピー ボリュームにボリュームを指定します。|  
-|noerr|スクリプト専用です。 エラーが発生すると、DiskPart は、エラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|  
+|set|フォーカスがあるボリュームの指定された属性を設定します。|  
+|clear|フォーカスがあるボリュームの指定された属性をクリアします。|  
+|readonly|ボリュームが読み取り専用\-ことを指定します。|  
+|表示|ボリュームが非表示であることを指定します。|  
+|nodefaultdriveletter|既定では、ボリュームがドライブ文字を受け取らないことを指定します。|  
+|コピー|ボリュームがシャドウコピーボリュームであることを指定します。|  
+|noerr|スクリプトの場合のみ。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|  
   
 ## <a name="remarks"></a>注釈  
   
--   ベーシック マスター ブート レコードに\(MBR\) 、ディスク、**隠し**、 **readonly**と**nodefaultdriveletter**パラメーターは、上のすべてのボリュームに適用されます。ディスク。  
+-   ベーシックマスタブートレコード \(MBR\) disks では、 **hidden**、 **readonly**、および**nodefaultdriveletter**各パラメータがディスク上のすべてのボリュームに適用されます。  
   
--   ベーシック GUID パーティション テーブルで\(gpt\)ディスク、および動的 MBR と gpt ディスクでは、**隠し**、 **readonly**と**nodefaultdriveletter**パラメーターは、選択したボリュームにのみ適用されます。  
+-   基本的な GUID パーティションテーブル \(gpt\) ディスク、動的 MBR および gpt ディスクでは、 **hidden**、 **readonly**、および**nodefaultdriveletter**各パラメーターは、選択したボリュームにのみ適用されます。  
   
--   ボリュームを選択する必要があります、**ボリュームを属性**コマンドは成功します。 使用して、 **ボリュームを選択して** コマンドのボリュームを選択し、それにフォーカスをします。  
+-   **属性 volume**コマンドを正常に実行するには、ボリュームを選択する必要があります。 使用して、 **ボリュームを選択して** コマンドのボリュームを選択し、それにフォーカスをします。  
   
 ## <a name="BKMK_examples"></a>例  
-を、選択したボリューム上の現在の属性を表示するには、次のように入力します。  
+選択したボリュームの現在の属性を表示するには、次のように入力します。  
   
 ```  
 attributes volume  
 ```  
   
-非表示と読み取りとして、選択したボリュームを設定する\-のみを入力します。  
+選択したボリュームを非表示として設定し、読み取り\-のみにするには、次のように入力します。  
   
 ```  
 attributes volume set hidden readonly  
 ```  
   
-非表示と読み取りを削除する\-、選択されたボリューム上の属性のみを入力します。  
+選択したボリュームの hidden 属性と read\-属性のみを削除するには、次のように入力します。  
   
 ```  
 attributes volume clear hidden readonly  
 ```  
   
-#### <a name="additional-references"></a>その他の参照  
-[コマンドライン構文キー](command-line-syntax-key.md)  
+#### <a name="additional-references"></a>その他の参照情報  
+[コマンド ライン構文の記号](command-line-syntax-key.md)  
   
 
   

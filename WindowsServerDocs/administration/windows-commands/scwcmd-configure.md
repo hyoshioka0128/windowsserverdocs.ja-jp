@@ -1,8 +1,8 @@
 ---
-title: Scwcmd を構成します。
-description: 'Windows コマンド」のトピック * * *- '
+title: Scwcmd の構成
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 31838ac7299cc30a7b7dde3beb47669df772487c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 43bd70c33294b09f63b9718e4c0f2cdc6cace156
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857503"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384293"
 ---
 # <a name="scwcmd-configure"></a>Scwcmd: configure
 
-> 適用先:Windows Server 2012 R2、Windows Server 2012
+> 適用対象: Windows Server 2012 R2、Windows Server 2012
 
 コンピューターには、セキュリティ構成ウィザード SCW によって生成されたセキュリティ ポリシーを適用します。 このコマンド ライン ツールでは、入力としてコンピューター名の一覧も受け取ります。
 
@@ -37,12 +37,12 @@ scwcmd configure [[[/m:<ComputerName> | /ou:<OuName>] /p:<Policy>] | /i:<Compute
 |パラメーター|説明|
 |---------|-----------|
 |/m:\<ComputerName >|NetBIOS 名、DNS 名、または構成するコンピューターの IP アドレスを指定します。 場合、 **/m** パラメーターが指定されている、 **/p** パラメーターも指定する必要があります。|
-|/ou:\<OuName>|Active Directory ドメイン サービスでは、組織単位 (OU) の完全修飾ドメイン名 (FQDN) を指定します。 場合、 **/ou** パラメーターが指定されている、 **/p** パラメーターも指定する必要があります。 指定したポリシーに従って、OU 内のすべてのコンピューターが分析されます。|
+|/ou:\<OuName >|Active Directory ドメイン サービスでは、組織単位 (OU) の完全修飾ドメイン名 (FQDN) を指定します。 場合、 **/ou** パラメーターが指定されている、 **/p** パラメーターも指定する必要があります。 指定したポリシーに従って、OU 内のすべてのコンピューターが分析されます。|
 |/p:\<ポリシー >|構成の実行に使用する .xml ポリシー ファイルのパスとファイル名を指定します。|
-|/i:\<ComputerList>|予想されるポリシー ファイルと共にコンピューターの一覧を含む .xml ファイルのパスとファイル名を指定します。 .Xml ファイル内のすべてのコンピューターは、対応するポリシー ファイルに基づいて構成されます。 サンプルの .xml ファイルは、%windir%\security\samplemachinelist.xml です。|
-|/u:\<UserName>|リモート コンピューターを構成するときに使用する、代替のユーザー資格情報を指定します。 既定値は、ユーザーには、ログオンしています。|
+|/i:\<ComputerList >|予想されるポリシー ファイルと共にコンピューターの一覧を含む .xml ファイルのパスとファイル名を指定します。 .Xml ファイル内のすべてのコンピューターは、対応するポリシー ファイルに基づいて構成されます。 サンプルの .xml ファイルは、%windir%\security\samplemachinelist.xml です。|
+|/u:\<ユーザー名 >|リモート コンピューターを構成するときに使用する、代替のユーザー資格情報を指定します。 既定値は、ユーザーには、ログオンしています。|
 |/pw:\<パスワード >|リモート コンピューターを構成するときに使用する、代替のユーザー資格情報を指定します。 既定値は、ログオン ユーザーのパスワードです。|
-|/t:\<スレッド >|構成処理中に保守する必要が未処理の構成の同時操作の数を指定します (既定値 = 40、MinValue = 1、最大値 = 1000)。|
+|/t:\<のスレッド >|構成処理中に保守する必要が未処理の構成の同時操作の数を指定します (既定値 = 40、MinValue = 1、最大値 = 1000)。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
 ## <a name="remarks"></a>注釈
@@ -70,4 +70,4 @@ scwcmd configure /ou:OU=WebServers,DC=Marketing,DC=ABCCompany,DC=com /p:webpolic
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

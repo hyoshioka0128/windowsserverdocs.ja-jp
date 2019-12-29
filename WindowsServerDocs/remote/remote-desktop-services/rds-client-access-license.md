@@ -2,7 +2,7 @@
 title: クライアント アクセス ライセンス (CAL) を使用して RDS 展開をライセンスする
 description: リモート デスクトップ サービスでのクライアントのライセンスの概要。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/20/2018
 manager: dongill
-ms.openlocfilehash: 0254c03396cba69a86eed021319ca2e2483ca625
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 252ee776946ba0c387d7a6cdf3dc97ffdc55a591
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743865"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387580"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>クライアント アクセス ライセンス (CAL) を使用して RDS 展開をライセンスする
 
@@ -45,7 +45,7 @@ ms.locfileid: "63743865"
 
 次の表に、2 種類の CAL の違いの概要を示します。
 
-| デバイスごと                                                     | ユーザーごと                                                                         |
+| 接続デバイス数                                                     | 接続ユーザー数                                                                         |
 |----------------------------------------------------------------|----------------------------------------------------------------------------------|
 | CAL は各デバイスに物理的に割り当てられます。                   | CAL は Active Directory 内のユーザーに割り当てられます。                                 |
 | CAL はライセンス サーバーによって追跡されます。                        | CAL はライセンス サーバーによって追跡されます。                                          |

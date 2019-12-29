@@ -1,49 +1,49 @@
 ---
-title: 構成の AD FS には、記述した IP アドレスが禁止されています
+title: AD FS 禁止 IP アドレスの構成
 description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 06/28/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 01ef992554a1e0961d8d795e9baa7730a1a1d682
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 2b518f92f80d06e4bd0854fde94013a412aae515
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189889"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407714"
 ---
-# <a name="ad-fs-and-banned-ip-addresses"></a>AD FS と禁止された IP アドレスします。
+# <a name="ad-fs-and-banned-ip-addresses"></a>AD FS と禁止された IP アドレス
 
 
-2018 年 6 月に、Windows Server 2016 での AD FS が導入された**Ip の禁止**と AD FS の 2018 年 6 月の更新します。  この更新プログラムを使用する AD FS でグローバルに一連の IP アドレスを構成またはこれらの IP アドレスからの要求にこれらの IP アドレスがあるように、 **x-転送-の**または**x ms-転送-クライアントの ip**ヘッダーは、AD FS によってブロックされます。
+2018年6月に、Windows Server 2016 の AD FS では、AD FS 6 月の2018更新プログラムで禁止された**ip**が導入されました。  この更新プログラムを使用すると、AD FS でグローバルに IP アドレスのセットを構成できます。これにより、これらの IP アドレスから送信された要求や、 **x 転送**された-**クライアント-ip**ヘッダー内の ip アドレスを持つ要求が AD FS によってブロックされるようになります。
 
-## <a name="adding-banned-ips"></a>禁止の ip アドレスを追加します。
-グローバル リストに禁止されている ip アドレスを追加するを使用して、以下の Powershell コマンドレット。
+## <a name="adding-banned-ips"></a>禁止 Ip の追加
+禁止された Ip をグローバルリストに追加するには、次の Powershell コマンドレットを使用します。
 
 ``` powershell
 PS C:\ >Set-AdfsProperties -AddBannedIps "1.2.3.4", "::3", "1.2.3.4/16"
 ```
 
-許可されている形式
+許可される形式
 
-1.  IPv4
+1.  Ipv4/ipv6
 2.  IPv6
-3.  CIDR 形式では、IPv4 または v6
+3.  IPv4 または v6 を使用した CIDR 形式
 
-禁止されている IP アドレスのエントリを 300 の制限があります。 CIDR または範囲の形式を使用すると、大きなブロックを 1 つのエントリを持つエントリを拒否します。
+禁止された IP アドレスには、300エントリの制限があります。 CIDR または範囲形式を使用すると、エントリの大きなブロックを1つのエントリで拒否できます。
 
-## <a name="removing-banned-ips"></a>禁止の ip アドレスを削除します。
-グローバル リストから、禁止されている ip アドレスを削除するを使用して、以下の Powershell コマンドレット。
+## <a name="removing-banned-ips"></a>禁止 Ip の削除
+グローバルリストから禁止 Ip を削除するには、次の Powershell コマンドレットを使用します。
 
 ``` powershell
 PS C:\ >Set-AdfsProperties -RemoveBannedIps "1.2.3.4"
 ```
 
-#### <a name="read-banned-ips"></a>読み取り禁止の ip アドレス
-現在禁止されている IP アドレスのセットを読み取るには、以下の Powershell コマンドレット。
+#### <a name="read-banned-ips"></a>禁止 Ip の読み取り
+現在禁止されている IP アドレスのセットを読み取るには、次の Powershell コマンドレットを使用します。
 
 ``` powershell
 PS C:\ >Get-AdfsProperties 
@@ -58,7 +58,7 @@ BannedIpList                   : {1.2.3.4, ::3,1.2.3.4/16}
 
 
 ## <a name="additional-references"></a>その他の参照情報  
-[Active Directory フェデレーション サービスをセキュリティで保護するためのベスト プラクティス](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
+[Active Directory フェデレーションサービス (AD FS) をセキュリティで保護するためのベストプラクティス](../../ad-fs/deployment/best-practices-securing-ad-fs.md)
 
 [Set-adfsproperties](https://technet.microsoft.com/itpro/powershell/windows/adfs/set-adfsproperties)
 

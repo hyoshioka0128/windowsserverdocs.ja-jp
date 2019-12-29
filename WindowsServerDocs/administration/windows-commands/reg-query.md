@@ -1,8 +1,8 @@
 ---
-title: Reg クエリ
-description: 'Windows コマンド」のトピック * * *- '
+title: reg query
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e239184cc5d118a858d012528fd8135f0b834e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d2f616fb33974df4327c7b2536b3143b75d116be
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827753"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371720"
 ---
-# <a name="reg-query"></a>Reg クエリ
+# <a name="reg-query"></a>reg query
 
 
 
@@ -38,21 +38,21 @@ reg query <KeyName> [{/v <ValueName> | /ve}] [/s] [/se <Separator>] [/f <Data>] 
 
 |パラメーター|説明|
 |---------|-----------|
-|\<キー名 >|サブキーの完全なパスを指定します。 リモート コンピューターに指定する場合、コンピューター名を含める (形式の\\ \\ComputerName\)の一部として、 *KeyName*します。 省略すると\\ \\ComputerName\ によりローカル コンピューターに既定値に操作します。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キーは次のとおりです。HKLM、HKCU、HKCR、HKU、および hkcc します。 リモート コンピューターが指定されている場合は、有効なルート キーは。HKLM および hku です。|
-|/v \<ValueName>|照会するレジストリ値の名前を指定します。 すべての値の名前を省略すると、 *KeyName* が返されます。 *ValueName* このパラメーターは省略可能な場合は、 **/f** オプションも使用します。|
+|\<KeyName >|サブキーの完全なパスを指定します。 リモートコンピューターを指定する場合は、コンピューター名 (\\\\ComputerName\) を*KeyName*の一部として指定します。 \\\\ComputerName \ を省略すると、操作は既定でローカルコンピューターに設定されます。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キー: HKLM、HKCU、HKCR、HKU、および HKCC します。 有効なルート キーは、リモート コンピューターが指定されている場合: HKLM および HKU します。|
+|/v \<ValueName >|照会するレジストリ値の名前を指定します。 すべての値の名前を省略すると、 *KeyName* が返されます。 *ValueName* このパラメーターは省略可能な場合は、 **/f** オプションも使用します。|
 |/ve|値の名前が空のクエリを実行します。|
 |/s|すべてのサブキーと値の名前を再帰的にクエリを指定します。|
-|/se\<区切り記号 >|REG_MULTI_SZ 値名の種類で検索する 1 つの値の区切り記号を指定します。 場合 *区切り* が指定されていない **\0** を使用します。|
-|/f\<データ >|データを検索するパターンを指定します。 文字列にスペースが含まれている場合は、二重引用符を使用します。 ワイルドカードを指定しない場合 (**&#42;**)、検索パターンとして使用されます。|
+|/se \<区切り記号 >|REG_MULTI_SZ 値名の種類で検索する 1 つの値の区切り記号を指定します。 場合 *区切り* が指定されていない **\0** を使用します。|
+|/f \<データ >|データを検索するパターンを指定します。 文字列にスペースが含まれている場合は、二重引用符を使用します。 指定しない場合、ワイルドカード **&#42;** () が検索パターンとして使用されます。|
 |/k|キー名のみで検索を指定します。|
 |/d|データのみで検索するよう指定します。|
 |/c|クエリを大文字小文字を区別することを示します。 既定では、クエリでは大文字小文字が区別されません。|
 |/e|完全一致のみを返すように指定します。 既定では、すべての一致が返されます。|
-|/t\<型 >|検索するレジストリの種類を指定します。 有効なデータ型は、次のとおりです。REG_SZ、REG_MULTI_SZ、REG_EXPAND_SZ、REG_DWORD、REG_BINARY、REG_NONE します。 指定されていない場合は、すべての型が検索されます。|
+|/t \<種類 >|検索するレジストリの種類を指定します。 有効な型します。 REG_SZ、REG_MULTI_SZ、REG_EXPAND_SZ、REG_DWORD、REG_BINARY、REG_NONE します。 指定されていない場合は、すべての型が検索されます。|
 |/z|レジストリの型に対応する数値を検索結果に含めるように指定します。|
-|/?|ヘルプを表示 **reg クエリ** コマンド プロンプト。|
+|/?|ヘルプを表示 **reg query** コマンド プロンプト。|
 
-## <a name="remarks-optional-section"></a>「解説」\<省略可能なセクション >
+## <a name="remarks-optional-section"></a>省略可能なセクション > \<注釈
 
 次の表に、戻り値の **reg クエリ** 操作します。
 
@@ -90,4 +90,4 @@ REG QUERY HKLM\SOFTWARE /ve
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

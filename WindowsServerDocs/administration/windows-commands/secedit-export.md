@@ -1,8 +1,8 @@
 ---
-title: secedit:export
-description: 'Windows コマンド」のトピック * * *- '
+title: 'secedit: エクスポート'
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 398d2fa47f2418aec910569c2eb85aec408ad482
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2aed2774bcba1ac3d5ba828901586acbbe24d255
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441592"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384253"
 ---
-# <a name="seceditexport"></a>secedit:export
+# <a name="seceditexport"></a>secedit: エクスポート
 
 
 

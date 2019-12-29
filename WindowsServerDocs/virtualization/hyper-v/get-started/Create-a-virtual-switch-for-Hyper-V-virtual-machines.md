@@ -1,7 +1,7 @@
 ---
 title: HYPER-V 仮想マシン用の仮想スイッチを作成します。
 description: Hyper-v マネージャーまたは Windows PowerShell を使用して仮想スイッチを作成する手順について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,16 +11,16 @@ ms.assetid: fdc8063c-47ce-4448-b445-d7ff9894dc17
 author: KBDAzure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 3c0ba19183dd68a86d995293f663accf10e91df9
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: f1a814060e763545411b5c4345367638a5161ac2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546383"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392928"
 ---
 # <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>HYPER-V 仮想マシン用の仮想スイッチを作成します。
 
->適用先:Windows 10、Windows Server 2016、Microsoft Hyper-v Server 2016、Windows Server 2019、Microsoft Hyper-v Server 2019
+>適用先:Windows 10、Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
   
 仮想スイッチを使用すると、Hyper-v ホスト上で作成された仮想マシンが他のコンピューターと通信できるようになります。 Windows Server に Hyper-v の役割を初めてインストールするときに、仮想スイッチを作成できます。 追加の仮想スイッチを作成するには、Hyper-v マネージャーまたは Windows PowerShell を使用します。 仮想スイッチの詳細については、「 [Hyper-v 仮想スイッチ](../../hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md)」を参照してください。  
   
@@ -30,7 +30,7 @@ ms.locfileid: "69546383"
   
 1.  Hyper-v マネージャーを開き、Hyper-v ホストコンピューター名を選択します。  
   
-2.  [**アクション** > ] **[仮想スイッチマネージャー]** を選択します。  
+2.  [**アクション** > **仮想スイッチマネージャー**] を選択します。  
   
     ![仮想スイッチマネージャー > メニューオプションアクションを示すスクリーンショット](../media/Hyper-V-Action-VSwitchManager.png)  
   

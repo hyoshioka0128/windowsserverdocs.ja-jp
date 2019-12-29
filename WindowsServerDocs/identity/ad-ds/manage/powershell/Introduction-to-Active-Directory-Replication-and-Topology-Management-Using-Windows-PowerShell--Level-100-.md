@@ -7,30 +7,30 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: d5760820613c3b791b577a600cae543621eee257
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c8a5863865d465d55f1d5865fdcbdeeb942ce194
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845593"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71409084"
 ---
 # <a name="introduction-to-active-directory-replication-and-topology-management-using-windows-powershell-level-100"></a>Windows PowerShell を使用した Active Directory レプリケーションおよびトポロジの管理の概要 (レベル 100)
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 Active Directory 用 Windows PowerShell には、レプリケーション、サイト、ドメイン、フォレスト、ドメイン コントローラー、およびパーティションの管理機能が含まれます。 従来の管理ツール ("Active Directory サイトとサービス" スナップイン、repadmin.exe など) のユーザーにとっては、同様の機能を Active Directory 用 Windows PowerShell のコンテキスト内で利用できることになります。 加えて、これらのコマンドレットは既存の Active Directory 用 Windows PowerShell コマンドレットと互換性があるため、エクスペリエンスが合理化されると共に、ユーザーは簡単に自動化スクリプトを作成できます。
 
 > [!NOTE]
 > Active Directory 用 Windows PowerShell レプリケーションおよびトポロジ コマンドレットは、次の環境で使用できます。
 > 
-> -    Windows Server 2012 ドメイン コント ローラー
-> -    Windows Server 2012 AD DS および AD LDS 用リモート サーバー管理ツールをインストールします。
-> -   Windows&reg; 8 AD DS および AD LDS がインストールされているリモート サーバー管理ツールとします。
+> -    Windows Server 2012 ドメインコントローラー
+> -    AD DS および AD LDS のリモートサーバー管理ツールがインストールされた Windows Server 2012。
+> -   Windows&reg; 8 とリモートサーバー管理ツール AD DS および AD LDS インストールされています。
 
 ## <a name="installing-the-active-directory-module-for-windows-powershell"></a>Windows PowerShell 用 Active Directory モジュールのインストール
-Windows Server 2012 を実行しているサーバーに AD DS サーバーの役割がインストールされている場合、既定では、Active Directory Module for Windows PowerShell がインストールされます。 サーバー役割を追加する以外に、追加の手順は必要ありません。 リモート サーバー管理ツールをインストールすることで、Windows Server 2012 を実行しているサーバーで、Active Directory モジュールをインストールすることもでき。、ダウンロードしてインストール、 Windows8を実行するコンピューターで、ActiveDirectoryモジュールをインストールすることができます。[リモート サーバー管理ツール (RSAT)](https://www.microsoft.com/download/details.aspx?id=28972)します。 インストール手順については、「 [Instructions (手順)](https://www.microsoft.com/download/details.aspx?id=28972)」を参照してください。
+Windows Server 2012 を実行しているサーバーに AD DS サーバーの役割がインストールされている場合、Windows PowerShell の Active Directory モジュールは既定でインストールされます。 サーバー役割を追加する以外に、追加の手順は必要ありません。 リモートサーバー管理ツールをインストールして、Windows Server 2012 を実行しているサーバーに Active Directory モジュールをインストールすることもできます。また、[リモートサーバー管理ツール (RSAT)](https://www.microsoft.com/download/details.aspx?id=28972)をダウンロードしてインストールすることにより、windows 8 を実行しているコンピューターに Active Directory モジュールをインストールできます。 インストール手順については、「 [Instructions (手順)](https://www.microsoft.com/download/details.aspx?id=28972)」を参照してください。
 
 ## <a name="scenarios-for-testing-windows-powershell-for-active-directory-replication-and-topology-management-cmdlets"></a>Active Directory 用 Windows PowerShell レプリケーションおよびトポロジ管理コマンドレットをテストするためのシナリオ
 次に示すのは、管理者が新しい管理コマンドレットを理解できるように設計されたシナリオです。
@@ -43,7 +43,7 @@ Windows Server 2012 を実行しているサーバーに AD DS サーバーの�
 
 ## <a name="lab-requirements"></a>ラボ要件
 
--   2 つの Windows Server 2012 ドメイン コント ローラー:**DC1**と**DC2**を contoso.com ドメインの一部であるし、そのドメイン内の CORPORATE サイトに存在します。
+-   Contoso.com ドメインの一部であり、そのドメイン内の企業サイトに存在する2つの Windows Server 2012 ドメインコントローラー: **DC1**と**DC2** 。
 
 ## <a name="view-domain-controllers-and-their-sites"></a>ドメイン コントローラーとそのサイトの表示
 この手順では、Windows PowerShell 用 Active Directory モジュールを使用して、既存のドメイン コントローラーとドメインのレプリケーション トポロジを表示します。
@@ -63,9 +63,9 @@ Windows Server 2012 を実行しているサーバーに AD DS サーバーの�
     > [!TIP]
     > Tab キーを使用すると、オートコンプリート機能を使用して Windows PowerShell のコマンドを入力できます。
     > 
-    > 以下に例を示します。「`Get-ADRep`」と入力した後、Tab キーを押すと、対応するコマンドが表示されます。ここでは、Tab キーを何度か押して `Get-ADReplicationSite` を取得します。 オートコンプリート機能は、`Filter` などのパラメーター名にも有効です。
+    > 次に例を示します。「 `Get-ADRep` 」と入力した後、Tab キーを押すと、対応するコマンドが表示されます。ここでは、Tab キーを何度か押して `Get-ADReplicationSite`を取得します。 オートコンプリート機能は、`Filter` などのパラメーター名にも有効です。
 
-    出力を書式設定、`Get-ADReplicationSite`テーブルとしてコマンドを実行し、表示を制限する特定のフィールドへの出力をパイプ処理できます、`Format-Table`コマンド (または"`ft`"略して)。
+    `Get-ADReplicationSite` コマンドからの出力をテーブルとして書式設定し、特定のフィールドに表示を制限するには、パイプを使用して `Format-Table` コマンド (または "`ft`") に出力します。
 
     `Get-ADReplicationSite -Filter * | ft Name`
 
@@ -123,13 +123,13 @@ Windows Server 2012 を実行しているサーバーに AD DS サーバーの�
 
 ##### <a name="to-verify-site-creation-new-site-link-and-cost-and-replication-frequency"></a>サイトの作成、新しいサイト リンク、コスト、およびレプリケーションの頻度を検証するには
 
--   **[サーバー マネージャー]** をクリックし、**[ツール]** をクリックします。次に、**[Active Directory サイトとサービス]** をクリックし、次のことを確認します。
+-   **[サーバー マネージャー]** をクリックし、 **[ツール]** をクリックします。次に、 **[Active Directory サイトとサービス]** をクリックし、次のことを確認します。
 
     **BRANCH1** サイトに Windows PowerShell コマンドの正しい値がすべて含まれていることを確認します。
 
     **CORPORATE-BRANCH1** サイト リンクが作成され、**BRANCH1** サイトと **CORPORATE** サイトが接続されていることを確認します。
 
-    **DC2** が **BRANCH1** サイトに属していることを確認します。 または、**[Windows PowerShell の Active Directory モジュール]** を開き、次のコマンドを入力して、**DC2** が **BRANCH1** サイトに属していることを確認できます: `Get-ADDomainController -Filter * | ft Hostname,Site`。
+    **DC2** が **BRANCH1** サイトに属していることを確認します。 または、 **[Windows PowerShell の Active Directory モジュール]** を開き、次のコマンドを入力して、**DC2** が **BRANCH1** サイトに属していることを確認できます: `Get-ADDomainController -Filter * | ft Hostname,Site`。
 
 ## <a name="view-replication-status-information"></a>レプリケーションの状態情報を表示する
 ここでは、Active Directory 用 Windows PowerShell レプリケーションおよびトポロジ管理コマンドレットの `Get-ADReplicationUpToDatenessVectorTable DC1` を使用して、各ドメイン コントローラーによって保守される最新のベクター テーブルを使用した単純なレプリケーション レポートを生成します。 この最新のベクター テーブルは、フォレスト内の各ドメイン コントローラーから見た最大発信書き込み USN を追跡します。
@@ -142,7 +142,7 @@ Windows Server 2012 を実行しているサーバーに AD DS サーバーの�
 
     `Get-ADReplicationUpToDatenessVectorTable DC1`
 
-    このコマンドは、フォレスト内のすべてのドメイン コントローラーについて **DC1** から見た最大 USN のリストを表示します。 **Server** 値は、テーブルを保守しているサーバーを表します (この場合は **DC1**)。 **Partner** 値は、変更が加えられた (直接または間接) レプリケーション パートナーを表します。 UsnFilter 値は、Partner の **DC1** から見た最大 USN です。 、新しいドメイン コント ローラーをフォレストに追加すると、もには表示されません**DC1**のテーブルまで**DC1** 、新しいドメインから発信された変更を受信します。
+    このコマンドは、フォレスト内のすべてのドメイン コントローラーについて **DC1** から見た最大 USN のリストを表示します。 **Server** 値は、テーブルを保守しているサーバーを表します (この場合は **DC1**)。 **Partner** 値は、変更が加えられた (直接または間接) レプリケーション パートナーを表します。 UsnFilter 値は、Partner の **DC1** から見た最大 USN です。 新しいドメインコントローラーがフォレストに追加された場合、新しいドメインコントローラーは、新しいドメインからの変更を**dc1**が受け取るまで**dc1**のテーブルに表示されません。
 
 #### <a name="to-view-the-up-to-dateness-vector-table-for-all-domain-controllers-in-a-domain"></a>ドメイン内のすべてのドメイン コントローラーの最新のベクター テーブルを表示するには
 
@@ -154,7 +154,7 @@ Windows Server 2012 を実行しているサーバーに AD DS サーバーの�
 
     並べ替えを行うことで、特定のレプリケーション パートナーに関して各ドメイン コントローラーから見た最後の USN を簡単に比較できます。 これにより、環境でレプリケーションが発生しているかどうかを簡単に調べることができます。 レプリケーションが適切に動作している場合、特定のレプリケーション パートナーに対して報告される UsnFilter 値は、すべてのドメイン コントローラーで類似しています。
 
-## <a name="see-also"></a>関連項目
-[Active Directory レプリケーションおよびトポロジ管理の Windows PowerShell を使用して高度な&#40;レベル 200&#41;](Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md)
+## <a name="see-also"></a>参照
+[Windows PowerShell &#40;レベル200を使用した高度な Active Directory レプリケーションとトポロジ管理&#41;](Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md)
 
 

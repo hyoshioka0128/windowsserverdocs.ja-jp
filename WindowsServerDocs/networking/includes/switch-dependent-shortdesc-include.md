@@ -2,13 +2,13 @@
 author: shortpatti
 ms.author: pashort
 ms.date: 10/02/2018
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms:topic: include
-ms.openlocfilehash: cdd92fcb1e4caab18d12f276f8090ffe449d3623
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 616f61fbb82cdda6351e5f717d93d3a31a4e340f
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823943"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935050"
 ---
-スイッチ依存モードでは、スイッチで NIC チームのメンバーが接続されている NIC チームのメンバー間で着信ネットワーク トラフィックを分散する方法を決定します。 スイッチは、NIC チーム メンバー間でネットワーク トラフィックを分散させる方法を判断する完全な独立性を持ちます。
+スイッチ依存モードでは、NIC チームメンバーが接続されているスイッチによって、受信ネットワークトラフィックを NIC チームメンバー間で配布する方法が決まります。 スイッチは、NIC チームメンバー間でネットワークトラフィックを分散する方法を決定するために、完全に独立しています。

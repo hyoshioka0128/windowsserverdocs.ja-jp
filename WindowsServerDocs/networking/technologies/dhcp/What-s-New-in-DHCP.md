@@ -1,64 +1,64 @@
 ---
 title: DHCP の新機能
-description: このトピックでは、動的ホスト構成プロトコル (DHCP) で Windows Server 2016 の新機能の概要を示します。
+description: このトピックでは、Windows Server 2016 の動的ホスト構成プロトコル (DHCP) の新機能の概要について説明します。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-dhcp
 ms.topic: get-started-article
 ms.assetid: c6f36998-5b64-45d1-b1f0-0f0d6604dbe3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 73cc5134f7af5063c912ad578fa7d660b3194aa1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8032b7c8e78170d57b0367775672577d9fd900e2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840233"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355452"
 ---
 # <a name="whats-new-in-dhcp"></a>DHCP の新機能
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、Windows Server 2016 で追加または変更している動的ホスト構成プロトコル (DHCP) 機能について説明します。
+このトピックでは、Windows Server 2016 で新しく追加または変更された動的ホスト構成プロトコル (DHCP) の機能について説明します。
   
-DHCP は、管理上の負担とホストの TCP/IP 構成の複雑さを軽減するように設計されたインターネット技術標準化委員会 (IETF) 標準\-ベースのプライベート イントラネットなどのネットワーク。 DHCP クライアントに TCP/IP を構成するプロセスは、DHCP サーバー サービスを使うことによって自動化されます。
+DHCP は、インターネット技術標準化委員会 (IETF) 標準であり、プライベートイントラネットなど、TCP/IP\-ベースのネットワーク上でホストを構成する際の管理負担と複雑さを軽減するように設計されています。 DHCP クライアントに TCP/IP を構成するプロセスは、DHCP サーバー サービスを使うことによって自動化されます。
 
-次のセクションは、機能、DHCP の新機能と変更に関する情報を提供します。
+次のセクションでは、DHCP の新機能と機能の変更について説明します。
 
 ## <a name="dhcp-subnet-selection-options"></a>DHCP サブネットの選択オプション
 
-DHCP オプション 118 および 82 サポート\(サブ オプション 5\)します。 これらのオプションを使用すると、特定のサブネットと、特定の IP アドレス範囲とスコープから IP アドレスを要求するのにには、DHCP プロキシ クライアントとリレー エージェントを許可します。
+DHCP では、オプション118と 82 \(サブオプション 5\)がサポートされるようになりました。 これらのオプションを使用すると、DHCP プロキシクライアントおよびリレーエージェントが特定のサブネットの IP アドレス、および特定の IP アドレス範囲とスコープを要求できるようになります。
 
 
-DHCP オプション 82 で構成されている DHCP リレー エージェントを使用している場合は、サブ\-オプション 5、リレー エージェントは、特定の IP アドレス範囲からの DHCP クライアントの IP アドレスのリースを要求することができます。
+Dhcp オプション82、サブ\-オプション5で構成されている DHCP リレーエージェントを使用している場合、リレーエージェントは特定の IP アドレス範囲から DHCP クライアントの IP アドレスリースを要求できます。
 
-詳細については、次を参照してください。 [DHCP サブネットの選択オプション](dhcp-subnet-options.md)します。
+詳細については、「 [DHCP サブネットの選択オプション](dhcp-subnet-options.md)」を参照してください。
 
-## <a name="new-logging-events-for-dns-registration-failures-by-the-dhcp-server"></a>新しい DHCP サーバーによって DNS 登録エラーのイベントのログ記録
+## <a name="new-logging-events-for-dns-registration-failures-by-the-dhcp-server"></a>DHCP サーバーによる DNS 登録エラーの新しいログ記録イベント
 
-DHCP には、DNS サーバーで dhcp サーバーの DNS レコードの登録が失敗する状況のログ イベントが含まれています。
+DHCP には、DHCP サーバーの DNS レコードの登録が DNS サーバーで失敗する状況のログ記録イベントが含まれるようになりました。
 
-詳細については、次を参照してください。 [DHCP DNS レコードの登録のためのイベントのログ記録](dhcp-dns-events.md)します。
+詳細については、「 [DNS レコードの登録の DHCP ログイベント](dhcp-dns-events.md)」を参照してください。
 
-## <a name="dhcp-nap-is-not-supported-in-windows-server-2016"></a>DHCP NAP は Windows Server 2016 でサポートされていません
+## <a name="dhcp-nap-is-not-supported-in-windows-server-2016"></a>DHCP NAP は Windows Server 2016 ではサポートされていません
 
-ネットワーク アクセス保護\(NAP\)は Windows Server 2012 R2 で非推奨し、Windows Server 2016、DHCP サーバーの役割で NAP をサポートしていません。 詳細については、次を参照してください。 [Features Removed or Deprecated in Windows Server 2012 R2](https://technet.microsoft.com/library/dn303411.aspx)します。  
+Windows Server 2012 R2 では、ネットワークアクセス保護 \(NAP\) は非推奨とされます。 Windows Server 2016 では、DHCP サーバーの役割は NAP をサポートしなくなりました。 詳細については、「 [Windows Server 2012 R2 で削除された機能または非推奨の機能](https://technet.microsoft.com/library/dn303411.aspx)」を参照してください。  
   
-NAP サポートは、Windows Server 2008 では、DHCP サーバーの役割が導入され、Windows 10 および Windows Server 2016 より前の Windows クライアントとサーバー オペレーティング システムではサポートされてです。 次の表では、Windows Server における NAP のサポートをまとめたものです。  
+NAP サポートは、windows Server 2008 で DHCP サーバーの役割に導入され、windows 10 および Windows Server 2016 より前の Windows クライアントおよびサーバーオペレーティングシステムでサポートされています。 次の表は、Windows Server での NAP のサポートをまとめたものです。  
   
 |オペレーティング システム|NAP サポート|  
 |--------------------|---------------|  
-| Windows Server 2008 |サポートされている|  
-| Windows Server 2008 R2 |サポートされている|  
-| Windows Server 2012 |サポートされている|  
-| Windows Server 2012 R2 |サポートされている|  
-| Windows Server 2016|サポートされていません|  
+| Windows Server 2008 |サポート対象|  
+| Windows Server 2008 R2 |サポート対象|  
+| Windows Server 2012 |サポート対象|  
+| Windows Server 2012 R2 |サポート対象|  
+| Windows Server 2016|サポートされない|  
   
-NAP の展開で NAP をサポートするオペレーティング システムを実行している DHCP サーバーは、NAP DHCP 強制方法の NAP 強制ポイントとして機能できます。 DHCP の NAP の詳細については、次を参照してください。[チェックリスト。DHCP 強制の設計を実装する](https://technet.microsoft.com/library/dd314186.aspx)します。  
+Nap 展開では、nap をサポートするオペレーティングシステムを実行している DHCP サーバーは、nap DHCP 強制方法の NAP 強制ポイントとして機能できます。 NAP の DHCP の詳細については、「[チェックリスト: Dhcp 強制設計の実装](https://technet.microsoft.com/library/dd314186.aspx)」を参照してください。  
   
-Windows Server 2016 での DHCP サーバーを適用しない NAP のポリシーと、DHCP スコープで NAP をすることはできません\-を有効にします。 NAP クライアントでもある DHCP クライアント コンピューターの正常性ステートメントを送信する\(SoH\) DHCP 要求にします。 DHCP サーバーで Windows Server 2016 が実行されている場合、これらの要求は、SoH が存在しないかのように処理されます。 DHCP サーバーは、通常 DHCP リースをクライアントに付与します。 
+Windows Server 2016 では、DHCP サーバーは NAP ポリシーを強制しません。また、DHCP スコープを NAP\-有効にすることはできません。 また、NAP クライアントである DHCP クライアントコンピューターは、DHCP 要求と共に正常性ステートメント \(SoH\) を送信します。 DHCP サーバーで Windows Server 2016 が実行されている場合、これらの要求は SoH が存在しないかのように処理されます。 DHCP サーバーは、クライアントに通常の DHCP リースを付与します。 
 
-Windows Server 2016 を実行しているサーバーが RADIUS プロキシ、ネットワーク ポリシー サーバーに認証要求を転送する場合は\(NPS\) NAP をサポートする、非 NAP として機能する NPS によって、これらの NAP クライアントが評価\-対応、およびNAP の処理に失敗します。
+Windows Server 2016 を実行しているサーバーが、NAP をサポートする NPS\) \(ネットワークポリシーサーバーに認証要求を転送する RADIUS プロキシである場合、これらの NAP クライアントは NPS によって NAP 以外の\-対応として評価され、NAP 処理は失敗します。
   
 ## <a name="see-also"></a>関連項目  
   

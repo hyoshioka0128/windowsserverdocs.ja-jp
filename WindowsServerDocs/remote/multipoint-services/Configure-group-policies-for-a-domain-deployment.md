@@ -3,7 +3,7 @@ title: ドメイン展開用のグループ ポリシーを構成する
 description: MultiPoint Services でグループポリシーを設定する方法について説明します。
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: 13e5fa90-d330-4155-a6b8-78eb650cbbfa
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 5c9d8efc1ed4a2f498ffce6c69d443ae819dced9
-ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
+ms.openlocfilehash: 5ac6524289d231d152e366d2ba750a59d27ce14f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314320"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395523"
 ---
 # <a name="configure-group-policies-for-a-domain-deployment"></a>ドメイン展開用のグループ ポリシーを構成する
 MultiPoint Services のドメインの展開が正常に機能するようにするには、MultiPoint Services システムの WMSshell ユーザーアカウントに次のグループポリシー設定を適用します。  
@@ -32,30 +32,30 @@ WMSshell ユーザーアカウントは、MultiPoint services がコンソール
 > [!NOTE]  
 > グループポリシーを更新する方法については、「[ローカルグループポリシーエディター](https://technet.microsoft.com/library/dn265982.aspx)」を参照してください。  
   
-**ポリシー**コントロールパネルのユーザー構成 > 管理用テンプレート >**個人用設定**>  
+**ポリシー:** コントロールパネルのユーザー構成 > 管理用テンプレート >**個人用設定**>  
   
 次の値を割り当てます。  
   
 |設定|値|  
 |-----------|----------|  
-|スクリーン セーバーを有効にする|Disabled|  
-|スクリーン セーバーのタイムアウト|Disabled<br /><br />秒: xxx|  
-|スクリーン セーバーをパスワードで保護する|Disabled|  
+|スクリーン セーバーを有効にする|無効|  
+|スクリーン セーバーのタイムアウト|無効<br /><br />秒: xxx|  
+|スクリーン セーバーをパスワードで保護する|無効|  
   
-**ポリシー**コンピューターの構成 > Windows の設定 > セキュリティ設定 > ローカルポリシー > ユーザー権利**の割り当て > ローカルログオンを許可する**  
+**ポリシー:** コンピューターの構成 > Windows の設定 > セキュリティ設定 > ローカルポリシー > ユーザー権利**の割り当て > ローカルログオンを許可する**  
   
 |設定|値|  
 |-----------|----------|  
 |ローカル ログオンを許可|アカウントの一覧に WMSshell アカウントが含まれていることを確認します。<br /><br />**注:** 既定では、WMSshell アカウントは Users グループのメンバーです。 ユーザーグループが一覧にあり、WMSshell が Users グループのメンバーである場合は、WMSshell アカウントを一覧に追加する必要はありません。|  
   
 > [!IMPORTANT]  
-> グループポリシーを設定する場合は、ポリシーによって自動更新が妨げられないようにし、MultiPoint サーバーで Windows エラー報告のエラーを報告するようにしてください。 これらは、Windows MultiPoint Server のインストール時に選択された [**更新プログラムを自動的にインストール**する] と [**自動 Windows エラー報告**設定] で設定されます。 [**サーバー設定の編集**] を使用して multipoint Manager で構成されます。ディスク保護のスケジュールされた更新プログラムで構成されます。  
+> グループポリシーを設定する場合は、ポリシーによって自動更新が妨げられないようにし、MultiPoint サーバーで Windows エラー報告のエラーを報告するようにしてください。 これらの設定は、Windows MultiPoint Server のインストール中に選択された **[更新プログラムを自動的にインストール]** する と **[自動 Windows エラー報告]** 設定 で設定します。 **[サーバー設定の編集]** を使用して multipoint マネージャーで構成するか、ディスク保護のスケジュールされた更新プログラムで構成します。  
   
 ## <a name="update-the-registry"></a>レジストリを更新する  
 MultiPoint Services をドメインに展開する場合は、次のレジストリサブキーを更新する必要があります。  
   
 > [!IMPORTANT]  
-> レジストリを間違って編集すると、システムが壊れる可能性があります。 レジストリを変更する前に、コンピューターにある重要なデータをバックアップしてください。  
+> レジストリを正しく編集しないと、システムが正常に動作しなくなる場合があります。 レジストリを変更する前に、コンピューター上の重要なデータのバックアップを作成する必要があります。  
   
 #### <a name="to-update-registry-subkeys-for-a-domain-deployment-of-multipoint-services"></a>MultiPoint Services のドメイン展開のレジストリサブキーを更新するには  
   
@@ -65,7 +65,7 @@ MultiPoint Services をドメインに展開する場合は、次のレジスト
   
     HKEY_USERS\<SIDofWMSshell > \Software\Policies\Microsoft\Windows\Control Panel\Desktop  
   
-    ここで<SIDofWMSshell>、' ' は WMSshell アカウントのセキュリティ識別子 (SID) です。 SID の識別方法については、「[ユーザー名をセキュリティ識別子 (sid) に関連付ける方法](https://support.microsoft.com/kb/154599)」を参照してください。  
+    ここで、'<SIDofWMSshell>' は WMSshell アカウントのセキュリティ識別子 (SID) です。 SID の識別方法については、「[ユーザー名をセキュリティ識別子 (sid) に関連付ける方法](https://support.microsoft.com/kb/154599)」を参照してください。  
   
 3.  右側の一覧で、次のサブキーを更新します。  
   
@@ -77,8 +77,8 @@ MultiPoint Services をドメインに展開する場合は、次のレジスト
   
     レジストリサブキーを更新するには:  
   
-    1.  左側のウィンドウでレジストリキーを選択し、右ペインでサブキーを右クリックして、[**変更**] をクリックします。  
+    1.  左側のウィンドウでレジストリキーを選択し、右ペインでサブキーを右クリックして、 **[変更]** をクリックします。  
   
-    2.  [文字列の編集] ダイアログボックスで、[値の**データ**] に新しい値を入力し、[ **OK**] をクリックします。  
+    2.  文字列の編集 ダイアログボックスで、値の**データ** に新しい値を入力し、**OK** をクリックします。  
   
 4.  レジストリサブキーの更新が完了したら、コンピューターを再起動して変更を有効にします。 

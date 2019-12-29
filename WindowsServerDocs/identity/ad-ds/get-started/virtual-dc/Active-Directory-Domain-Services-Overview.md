@@ -7,52 +7,52 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ed8a22881cd20633e6fcd61b146f3b0aad7a757b
-ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
+ms.openlocfilehash: 2d5630ece940e5bd7895510c245d14b67c847a70
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67792281"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791128"
 ---
 # <a name="active-directory-domain-services-overview"></a>Active Directory Domain Services の概要
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 
-ディレクトリは、ネットワーク上のオブジェクトに関する情報を格納する階層構造です。 Active Directory Domain Services (AD DS) などのディレクトリ サービスは、ディレクトリ データを格納すると、ネットワーク ユーザーおよび管理者にこのデータを使用できるようにするメソッドを提供します。 たとえば、AD DS では、名、パスワード、電話番号、およびなどのユーザー アカウントに関する情報が格納され、により、この情報にアクセスする権限のある他のユーザーを同じネットワーク上。
+ディレクトリは、ネットワーク上のオブジェクトに関する情報を格納する階層構造です。 Active Directory Domain Services (AD DS) などのディレクトリサービスには、ディレクトリデータを格納し、そのデータをネットワークユーザーと管理者が使用できるようにするためのメソッドが用意されています。 たとえば、AD DS は、名前、パスワード、電話番号などのユーザーアカウントに関する情報を格納し、同じネットワーク上の他の承認されたユーザーがこの情報にアクセスできるようにします。
 
-Active Directory では、ネットワーク上のオブジェクトに関する情報を格納し、この情報を検索して使用するには、管理者とユーザーの簡単します。 Active Directory では、ディレクトリ情報の論理的かつ階層組織の基準として構造化データ ストアを使用します。
+Active Directory は、ネットワーク上のオブジェクトに関する情報を格納すると共に、管理者とユーザーがその情報を簡単に検索および利用できるようにします。 Active Directory は、構造化されたデータ ストアを、ディレクトリ情報の論理的で階層的な編成の基盤として使用します。
 
-ディレクトリとも呼ばれる、このデータ ストアには、Active Directory オブジェクトに関する情報が含まれています。 通常、これらのオブジェクトには、サーバー、ボリューム、プリンター、およびネットワークのユーザーおよびコンピューター アカウントなどの共有リソースが含まれます。 Active Directory データ ストアの詳細については、次を参照してください。 [Directory データ ストア](https://technet.microsoft.com/library/cc736627(v=ws.10).aspx)します。
+このデータストアは、ディレクトリとも呼ばれ、Active Directory オブジェクトに関する情報を格納します。 これらのオブジェクトには、通常、サーバー、ボリューム、プリンターなどの共有リソース、およびネットワークユーザーとコンピューターアカウントが含まれます。 Active Directory データストアの詳細については、「[ディレクトリデータストア](https://technet.microsoft.com/library/cc736627(v=ws.10).aspx)」を参照してください。
 
-セキュリティは、ログオン認証およびディレクトリ内のオブジェクトへのアクセス制御によって、Active Directory と統合されます。 シングル ネットワーク ログオン管理者は、ディレクトリのデータと組織、ネットワーク全体を管理でき、承認済みネットワーク ユーザーがネットワーク上の任意のリソースにアクセスできます。 ポリシー ベースの管理により、複雑なネットワークの管理を容易に行うことができます。 Active Directory のセキュリティの詳細については、次を参照してください。[セキュリティの概要](../../plan/security-best-practices/best-practices-for-securing-active-directory.md)します。
+セキュリティは、ログオン認証およびディレクトリ内のオブジェクトに対するアクセス制御によって、Active Directory に統合されます。 管理者は、単一のネットワークログオンで、ネットワーク全体のディレクトリデータと組織を管理できます。また、承認されたネットワークユーザーは、ネットワーク上の任意の場所にあるリソースにアクセスできます。 ポリシー ベースの管理により、複雑なネットワークの管理を容易に行うことができます。 Active Directory セキュリティの詳細については、「[セキュリティの概要](../../plan/security-best-practices/best-practices-for-securing-active-directory.md)」を参照してください。
 
-Active Directory が含まれています。
-* ルールのセットを**スキーマ**オブジェクトのクラスを定義して、属性に含まれる、ディレクトリ、制約、およびこれらのオブジェクトのインスタンスと名前の形式に制限します。 スキーマの詳細については、スキーマを参照してください。
-
-
-* A**グローバル カタログ**ディレクトリ内のすべてのオブジェクトに関する情報を格納します。 これにより、ユーザーと管理者情報を検索するディレクトリに関係なく、ディレクトリ内のどのドメイン データを実際に格納できます。 グローバル カタログの詳細については、グローバル カタログの役割を参照してください。
+Active Directory には次のものも含まれます。
+* スキーマである一連の規則。**スキーマ**では、ディレクトリに格納されているオブジェクトと属性のクラス、これらのオブジェクトのインスタンスの制約と制限、および名前の形式を定義します。 スキーマの詳細については、「スキーマ」を参照してください。
 
 
-* A**クエリとインデックス機能**いるため、オブジェクトとそのプロパティを公開してネットワークのユーザーまたはアプリケーションが見つかりました。 ディレクトリのクエリの詳細については、ディレクトリ情報を検索するを参照してください。
+* ディレクトリ内のすべてのオブジェクトに関する情報を含む**グローバルカタログ**。 これにより、ユーザーと管理者は、ディレクトリ内のどのドメインにデータが実際に格納されているかに関係なく、ディレクトリ情報を検索できます。 グローバルカタログの詳細については、「グローバルカタログの役割」を参照してください。
 
 
-* A**レプリケーション サービス**をネットワーク経由でディレクトリ データを分散します。 ドメイン内のすべてのドメイン コント ローラーは、レプリケーションに参加し、そのドメインのすべてのディレクトリ情報の完全なコピーを含みます。 ディレクトリ データへの変更は、ドメイン内のすべてのドメイン コントローラーに対してレプリケートされます。 Active Directory レプリケーションの詳細については、レプリケーションの概要を参照してください。
+* **クエリとインデックスのメカニズム**。オブジェクトとそのプロパティを発行して、ネットワークユーザーやアプリケーションが検出することができます。 ディレクトリに対するクエリの詳細については、「ディレクトリ情報の検索」を参照してください。
 
-## <a name="understanding-active-directory"></a>Active Directory を理解します。
- ここでは、Active Directory の中心概念へのリンクを示します。
+
+* ネットワーク経由でディレクトリデータを分散する**レプリケーションサービス**。 ドメイン内のすべてのドメインコントローラーは、レプリケーションに参加し、ドメインのすべてのディレクトリ情報の完全なコピーを格納します。 ディレクトリ データへの変更は、ドメイン内のすべてのドメイン コントローラーに対してレプリケートされます。 Active Directory レプリケーションの詳細については、「レプリケーションの概要」を参照してください。
+
+## <a name="understanding-active-directory"></a>Active Directory について
+ このセクションでは、コア Active Directory の概念へのリンクを示します。
  
-* [Active Directory 構造と記憶域テクノロジ](https://technet.microsoft.com/library/cc759186(v=ws.10).aspx)
-* [ドメイン コント ローラーの役割](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
+* [Active Directory 構造およびストレージテクノロジ](https://technet.microsoft.com/library/cc759186(v=ws.10).aspx)
+* [ドメインコントローラーの役割](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
 * [Active Directory スキーマ](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771796(v=ws.10))
 * [信頼とは](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771568(v=ws.10)) 
-* [Active Directory のレプリケーション テクノロジ](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
-* [Active Directory の検索とパブリケーションのテクノロジ](https://technet.microsoft.com/library/cc775686(v=ws.10).aspx) 
-* [DNS とグループ ポリシーとの相互運用](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd197486(v=ws.10))
-* [スキーマとは](https://technet.microsoft.com/library/cc759402(v=ws.10).aspx) 
+* [Active Directory レプリケーションテクノロジ](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
+* [Active Directory 検索と発行のテクノロジ](https://technet.microsoft.com/library/cc775686(v=ws.10).aspx) 
+* [DNS とグループポリシーとの相互運用](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd197486(v=ws.10))
+* [スキーマについて](https://technet.microsoft.com/library/cc759402(v=ws.10).aspx) 
 
-Active Directory の概念の詳細な一覧についてを参照してください。 [Understanding Active Directory](https://technet.microsoft.com/library/cc781408(v=ws.10).aspx)します。 
+Active Directory の概念の詳細な一覧については、「 [Active Directory につい](https://technet.microsoft.com/library/cc781408(v=ws.10).aspx)て」を参照してください。 
 
 

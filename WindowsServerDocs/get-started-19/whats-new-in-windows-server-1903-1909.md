@@ -1,24 +1,26 @@
 ---
-title: Windows Server バージョン 1903 の新機能
-description: このトピックでは、半期チャネル リリースである Windows Server バージョン 1903 の一部の新機能について説明します。
-ms.prod: windows-server-threshold
+title: Windows Server バージョン 1903 および 1909 の新機能
+description: このトピックでは、半期チャネル リリースである Windows Server バージョン 1903 および 1909 の一部の新機能について説明します。
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
-ms.date: 05/21/2019
-ms.openlocfilehash: 0ec6a7ec624818b92fb306089f3dea3c786c0827
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.date: 11/12/2019
+ms.openlocfilehash: 13b9c1b004f57d46307664427f7ea3483c04c00f
+ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280316"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73962014"
 ---
-# <a name="whats-new-in-windows-server-version-1903"></a>Windows Server バージョン 1903 の新機能
+# <a name="whats-new-in-windows-server-versions-1903-and-1909"></a>Windows Server バージョン 1903 と 1909 の新機能
 
 >適用対象:Windows Server (半期チャネル)
 
 このトピックでは、半期チャネル リリースである Windows Server バージョン 1903 の一部の新機能について説明します。 それらの機能には、コンテナーを実行および管理する拡張機能、コア インストールで作業を行うためのツールおよび Linux デバイスから記憶域を移行する機能が含まれます。
+
+Windows Server バージョン 1909 は、信頼性、パフォーマンス、およびその他の一般的な機能強化に重点を置いた、Windows Server の次期半期チャネル リリースですが、新機能はありません。 他の半期チャネル リリースと同様に、最初の提供開始から 18 か月間サポートされます。 半期チャネル リリースのサポート日付の詳細については、「[Windows Server のリリース情報](../get-started/windows-server-release-info.md)」を参照してください。
 
 代わりに Windows Server の長期サービス チャネル (LTSC) リリースの新機能について調べるには、「[Windows Server 2019 の新機能](../get-started-19/whats-new-19.md)」を参照してください。 [Windows 10 バージョン 1903 の IT 技術者向けコンテンツの新機能](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1903)に関するページも参照してください。
 

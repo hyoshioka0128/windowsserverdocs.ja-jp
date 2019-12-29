@@ -1,40 +1,40 @@
 ---
 title: Linux 仮想マシンに関する考慮事項
 description: Linux および BSD の仮想マシン
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: cc6aab7825754579269eb05e591ca2a3cf5a561b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5668629e7eded214525561d30fec496a4e91b8dc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869683"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385069"
 ---
 # <a name="linux-virtual-machine-considerations"></a>Linux 仮想マシンに関する考慮事項
 
-Linux と BSD の仮想マシン、HYPER-V で Windows 仮想マシンと比較する追加の考慮事項があります。
+Linux および BSD の仮想マシンには、Hyper-v の Windows 仮想マシンと比較して、追加の考慮事項があります。
 
-最初の考慮事項は、Integration Services が存在するかどうか、または啓蒙なしで、エミュレートされたハードウェアで単に、VM が実行されているかどうかは。 Integration services の組み込みまたはダウンロード可能な Linux および BSD のリリースのテーブルが表示されます。 [Windows 上の Hyper-v ではサポートされている Linux および FreeBSD の仮想マシン](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows)します。 これらのページの該当する Linux のディストリビューション リリース、およびそれらの機能に関する注意事項を使用できる HYPER-V 機能が利用可能なグリッドがあります。
+最初の考慮事項は、Integration Services が存在するか、または VM が、啓蒙されていないエミュレートされたハードウェア上でのみ実行されているかどうかです。 組み込みまたはダウンロード可能な Integration Services を持つ Linux および BSD リリースの表は、 [Windows 上の hyper-v のサポートされている linux および FreeBSD 仮想マシン](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows)で利用できます。 これらのページには、Linux ディストリビューションリリースで利用できる使用可能な Hyper-v 機能のグリッドと、該当する場合はそれらの機能に関する注意事項があります。
 
-ゲストで Integration Services が実行されている場合でも、最適なパフォーマンスは見られないレガシ ハードウェアを構成できます。 たとえば、構成し、レガシ ネットワーク アダプターを使用する代わりに、ゲストの仮想イーサネット アダプターを使用します。 Windows Server 2016 では、ネットワーク、SR-IOV はも利用できるように高度な。
+ゲストが Integration Services 実行されている場合でも、最適なパフォーマンスを発揮しないレガシハードウェアで構成できます。 たとえば、レガシネットワークアダプターを使用する代わりに、ゲストの仮想イーサネットアダプターを構成して使用します。 Windows Server 2016 では、sr-iov などの高度なネットワークも利用できます。
 
-## <a name="linux-network-performance"></a>Linux のネットワークのパフォーマンス
+## <a name="linux-network-performance"></a>Linux ネットワークパフォーマンス
 
-既定では Linux では、ハードウェア アクセラレータを有効および、既定の負荷を軽減します。 ホスト上の NIC のプロパティで vRSS を有効にして、Linux ゲストおり、vRSS を使用する場合は、機能を有効になります。 Powershell でこの同じパラメーターを変更できます、`EnableNetAdapterRSS`コマンド。
+既定では、ハードウェアの高速化とオフロードが既定で有効になっています。 ホスト上の NIC のプロパティで vRSS が有効になっていて、Linux ゲストには vRSS を使用する機能がある場合は、機能が有効になります。 Powershell では、`EnableNetAdapterRSS` コマンドを使用して同じパラメーターを変更できます。
 
-同様に、ゲストによって使用される物理 NIC で VMMQ (仮想スイッチの RSS) 機能を有効にする**プロパティ** > **構成しています.**  > **詳細**タブ > 設定**仮想スイッチの RSS**に**有効**または、次を使用して、Powershell で VMMQ を有効にします。
+同様に、VMMQ (仮想スイッチ RSS) 機能は、ゲストの > **プロパティ**で使用される物理 NIC で有効にすることができ**ます。**  > **詳細**設定 タブでは、次のようにして、Powershell で **仮想スイッチ rss** を **有効** または 有効にする に設定 > ます。
 
 ```PowerShell
  Set-VMNetworkAdapter -VMName **$VMName** -VmmqEnabled $True
  ```
 
-ゲストで追加の TCP チューニング実行できる制限を増やすことで。 最適なパフォーマンスを複数の Cpu 負荷を分散させることと、ワークロードの詳細が生成されます最高のスループットでは、仮想化されたワークロードに「ベア メタル」よりも待機時間が長くなるものです。
+ゲストでは、追加の TCP チューニングを制限を増やすことによって実行できます。 仮想化されたワークロードは、複数の Cpu に対して最適なパフォーマンスを拡散し、仮想化されたワークロードは "ベアメタル" よりも待機時間が長くなるため、最適なスループットが得られます。
 
-ネットワークのベンチマークで有効ないくつか例チューニング パラメーターは次のとおりです。
+ネットワークベンチマークで有用なチューニングパラメーターの例を次に示します。
 
 ```PowerShell
 net.core.netdev_max_backlog = 30000
@@ -49,28 +49,28 @@ net.ipv4.ip_local_port_range = 10240 65535
 net.ipv4.tcp_abort_on_overflow = 1
 ```
 
-ネットワーク microbenchmarks に役立つツールは Linux と Windows の両方で使用可能なある ntttcp、です。 Linux バージョンはオープン ソースから使用可能な[github.com ntttcp は linux 用](https://github.com/Microsoft/ntttcp-for-linux)します。 Windows のバージョンが記載されて、[ダウンロード センター](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769)します。 ワークロードのチューニング時に、必要な数だけストリームを使用して、最適なスループットを取得することをお勧めします。 モデルのトラフィックに ntttcp を使用して、`-P`パラメーターは、使用の並列接続の数を設定します。
+ネットワークマイクロベンチマークの便利なツールは ntttcp です。これは、Linux と Windows の両方で使用できます。 Linux バージョンはオープンソースであり、 [github.com の ntttcp-linux](https://github.com/Microsoft/ntttcp-for-linux)から入手できます。 Windows のバージョンについては、[ダウンロードセンター](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769)を参照してください。 ワークロードをチューニングする場合は、スループットを最大にするために必要な数のストリームを使用することをお勧めします。 Ntttcp を使用してトラフィックをモデル化すると、`-P` パラメーターによって、使用する並列接続の数が設定されます。
 
-## <a name="linux-storage-performance"></a>Linux の記憶域のパフォーマンス
+## <a name="linux-storage-performance"></a>Linux ストレージのパフォーマンス
 
-一覧表示されます、次のようないくつかのベスト プラクティス、 [HYPER-V 上の Linux で実行するためのベスト プラクティス](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v)します。 Linux カーネルでは、さまざまなアルゴリズムの要求の順序を変更するさまざまな I/O スケジューラが。 NOOP は、スケジュールの決定、ハイパーバイザーによってを通過する先入れ先出しキューです。 Linux 仮想マシンを HYPER-V で実行されている場合、スケジューラとして NOOP を使用することをお勧めします。 ブート ローダーの構成では、特定のデバイスのスケジューラを変更する (/例については、etc/grub.conf)、追加`elevator=noop`カーネル パラメーター、および再起動します。
+次のようなベストプラクティスについては、「 [hyper-v で Linux を実行するためのベストプラクティス](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/best-practices-for-running-linux-on-hyper-v)」に記載されています。 Linux カーネルには、さまざまなアルゴリズムで要求を並べ替えるための異なる i/o スケジューラがあります。 NOOP は、ハイパーバイザーによって実行されるスケジュールの決定を渡す先入れ先出しキューです。 Hyper-v で Linux 仮想マシンを実行する場合は、スケジューラとして NOOP を使用することをお勧めします。 特定のデバイスの scheduler を変更するには、ブートローダーの構成 (/etc/grub.conf など) で、`elevator=noop` をカーネルパラメーターに追加してから、を再起動します。
 
-ネットワークと同様に、記憶域での Linux ゲストのパフォーマンスには、ホストをビジー状態に維持するための十分な深さの複数のキューからのほとんどがメリットがあります。 Microbenchmarking 記憶域のパフォーマンスは libaio エンジンと fio ベンチマーク ツールを使用しておそらく最適です。
+ネットワークの場合と同様に、Linux ゲストのパフォーマンスは、記憶域を使用すると、ホストのビジー状態を維持するのに十分な深さのキューから最大限に活用できます。 Microbaio エンジンを使用した fio ベンチマークツールでは、マイクロベンチマークストレージのパフォーマンスが最も高くなります。
 
 ## <a name="see-also"></a>関連項目
 
--   [HYPER-V 用語](terminology.md)
+-   [Hyper-V の用語](terminology.md)
 
--   [HYPER-V のアーキテクチャ](architecture.md)
+-   [Hyper-V のアーキテクチャ](architecture.md)
 
--   [HYPER-V サーバーの構成](configuration.md)
+-   [Hyper-V サーバーの構成](configuration.md)
 
--   [HYPER-V のプロセッサのパフォーマンス](processor-performance.md)
+-   [Hyper-V プロセッサのパフォーマンス](processor-performance.md)
 
--   [HYPER-V でメモリのパフォーマンス](memory-performance.md)
+-   [Hyper-V メモリのパフォーマンス](memory-performance.md)
 
--   [HYPER-V ストレージの I/O パフォーマンス](storage-io-performance.md)
+-   [Hyper-V 記憶域の I/O のパフォーマンス](storage-io-performance.md)
 
--   [HYPER-V ネットワークの I/O パフォーマンス](network-io-performance.md)
+-   [Hyper-V ネットワークの I/O のパフォーマンス](network-io-performance.md)
 
 -   [仮想化環境のボトルネックの検出](detecting-virtualized-environment-bottlenecks.md)

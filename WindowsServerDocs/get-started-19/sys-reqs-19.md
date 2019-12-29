@@ -1,28 +1,24 @@
 ---
 title: Windows Server 2019 のシステム要件
 description: Windows Server 2019 のクリーン インストールでの記憶域、CPU、ネットワーク、メモリ、RAM の最小要件。
-ms.custom: na
-ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
+ms.prod: windows-server
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4a8b42d7-9fe5-4efe-9ea1-ace2131f860e
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: d97ec0efee86165f82bdf99a316d24d9c39ec958
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: eb328b9a80eb9d73b7230e0eaa7f820307baf294
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810718"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391934"
 ---
 # <a name="system-requirements"></a>システム要件
 
->適用先:Windows Server 2019 
+> 適用対象:Windows Server 2019
 
 このトピックでは、Windows Server&reg; 2019 を実行するための最小システム要件の概要を説明します。
 
@@ -48,7 +44,8 @@ ms.locfileid: "66810718"
 
 [Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx) は、お使いの CPU が備えている機能を確認するために使用できるツールです。
 
-## <a name="ram"></a>RAM  
+## <a name="ram"></a>RAM
+
 この製品で予想される RAM の要件を次に示します。  
 
 **最小**:  
@@ -60,7 +57,7 @@ ms.locfileid: "66810718"
 >   
 > この問題を回避するには、次のいずれかの操作を行います。  
 >   
-> -   このリリースをインストールする仮想マシンに 800 MB を超える RAM を割り当てます。 セットアップが完了したら、実際のサーバーの構成に応じて、割り当てを最小の 512 MB RAM に変更できます。  
+> -   このリリースをインストールする仮想マシンに 800 MB を超える RAM を割り当てます。 セットアップが完了したら、実際のサーバーの構成に応じて、割り当てを最小の 512 MB RAM に変更できます。 言語と更新プログラムを追加してセットアップ用のブート イメージを変更した場合は、インストールを完了するために、800 MB より多くの RAM を割り当てることが必要になる場合があります  
 > -   Shift + F10 キーを押して仮想マシン上のこのリリースのブート プロセスを中断します。 開いたコマンド プロンプトで、Diskpart.exe を使用してインストール パーティションを作成してフォーマットします。 **Wpeutil createpagefile /path=C:\pf.sys** を実行します (作成したインストール パーティションを C: とする)。 コマンド プロンプトを閉じ、セットアップを続行します。  
 
 ## <a name="storage-controller-and-disk-space-requirements"></a>記憶域コントローラーとディスク領域の要件  

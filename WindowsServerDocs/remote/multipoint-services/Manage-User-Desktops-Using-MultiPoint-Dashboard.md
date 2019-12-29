@@ -1,8 +1,8 @@
 ---
 title: MultiPoint ダッシュボードを使用したユーザー デスクトップの管理
-description: MultiPoint ダッシュ ボードの概要を説明します
+description: MultiPoint ダッシュボードの概要について説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,17 +13,17 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 049910029f0ed2623ae34131d3755964d3499d0e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b250d820e7086054d18d62eebe8ce9d3686f8d5d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837343"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405093"
 ---
 # <a name="manage-user-desktops-using-multipoint-dashboard"></a>MultiPoint ダッシュボードを使用したユーザー デスクトップの管理
-MultiPoint Services システムでデスクトップは、各ユーザーの*ステーション*のモニターに表示されるソフトウェアのユーザー インターフェイスを指します。 MultiPoint ダッシュ ボードは、これらのデスクトップの管理に役立つツールです。   
+MultiPoint Services システムでデスクトップは、各ユーザーの*ステーション*のモニターに表示されるソフトウェアのユーザー インターフェイスを指します。 MultiPoint ダッシュボードは、これらのデスクトップを管理するのに役立つツールです。   
   
-MultiPoint ダッシュ_ボードでの**ホーム** タブで、次を行うことができます。  
+MultiPoint ダッシュボードの **[ホーム]** タブで、次の操作を行うことができます。  
   
 - デスクトップを表示する  
 アクティブな各デスクトップのサムネイル画像を表示できます。 サムネイルの表示方法の詳細については、トピック「[セッション サムネイルの表示オプション](View-Options-for-Session-Thumbnails-in-MultiPoint-Dashboard.md)」を参照してください。  
@@ -40,7 +40,7 @@ MultiPoint ダッシュ_ボードでの**ホーム** タブで、次を行うこ
 - IM を使用する  
 選択したユーザーとチャットすることができます。 チャット メッセージは、ダッシュボード ユーザーと、選択したセッションのユーザーにのみ表示されます。 詳細については、「[IM を使用する](Use-IM.md)」を参照してください。  
 - サムネイル画像のサイズを変更する  
-MultiPoint ダッシュ ボードに表示されるサムネイルのサイズを変更することができます。 サムネイルのサイズを変更する方法については、「[セッション サムネイルの表示オプション](View-Options-for-Session-Thumbnails-in-MultiPoint-Dashboard.md)」を参照してください。
+MultiPoint ダッシュボードに表示されるサムネイルのサイズを変更できます。 サムネイルのサイズを変更する方法については、「[セッション サムネイルの表示オプション](View-Options-for-Session-Thumbnails-in-MultiPoint-Dashboard.md)」を参照してください。
 - すべてのステーションを表示する  
 非アクティブなステーションを含めて、システムに接続されているステーションのすべてを表示できます。 すべてのステーションの表示に関する詳細については、トピック「[すべてのステーションを表示する](Show-All-Stations.md)」を参照してください。  
 - サムネイルの検索および並べ替え  

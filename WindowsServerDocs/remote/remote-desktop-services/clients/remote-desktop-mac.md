@@ -1,8 +1,8 @@
 ---
-title: Mac でリモート デスクトップを使ってみる
+title: macOS クライアントの概要
 description: Mac 用のリモート デスクトップ クライアントをセットアップする方法について説明する
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -12,16 +12,16 @@ ms.assetid: 7afc65f8-3158-49c9-9d48-4dab1c69afba
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 10/09/2018
+ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 17df3ca3b88404a2775790d7a4a8206b7aa5befa
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 1512589315489f5bc351ff105a56694e0947463b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546348"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404136"
 ---
-# <a name="get-started-with-remote-desktop-on-mac"></a>Mac でリモート デスクトップを使ってみる
+# <a name="get-started-with-the-macos-client"></a>macOS クライアントの概要
 
 >適用先:Windows 10、Windows 8.1、Windows Server 2012 R2、Windows Server 2016
 
@@ -54,7 +54,7 @@ HockeyApp 上のプレビュー チャネルで新機能をテストしていま
       - *MyDesktop:3389* のように、この名前の末尾にポート情報も追加できます。
    - **ユーザー アカウント** - リモート PC のアクセスに使用するユーザー アカウントを追加します。
      - Active Directory (AD) に参加するコンピューターまたはローカル アカウントの場合、*user_name*、*domain\user_name*、または <em>user_name@domain.com</em> のいずれかの形式を使用します。
-     - Azure Active Directory (AAD) に参加するコンピューターの場合は、*AzureAD\user_name* または <em>AzureAD\user_name@domain.com</em> のいずれかの形式を使用します。
+     - Azure Active Directory (AAD) に参加するコンピューターの場合は、次のいずれかの形式を使用します。*AzureAD\user_name* または <em>AzureAD\user_name@domain.com</em>。
      - パスワードを要求するかどうかを選択することもできます。
      - 同じユーザー名を持つ複数のユーザー アカウントを管理する場合、アカウントを区別するためにわかりやすい名前を設定します。
      - アプリの基本設定で、保存されているユーザー アカウントを管理します。 
@@ -113,7 +113,7 @@ HockeyApp 上のプレビュー チャネルで新機能をテストしていま
 
 1. 接続センターで、 **[基本設定] > [ゲートウェイ]** の順にクリックします。 
 2. 表の下部にある **+** ボタンをクリックし、次の情報を入力します。
-   - **サーバー名** – ゲートウェイとして使用するコンピューターの名前。 Windows コンピューター名、インターネット ドメイン名、または IP アドレスを指定できます。 サーバー名に、ポート情報を追加することもできます (例: **RDGateway:443** または **10.0.0.1:443**)。
+   - **サーバー名** – ゲートウェイとして使用するコンピューターの名前。 Windows コンピューター名、インターネット ドメイン名、または IP アドレスを指定できます。 サーバー名に、ポート情報を追加することもできます (例:**RDGateway:443** または **10.0.0.1:443**)。
    - **ユーザー名** -ユーザー名とは、接続先のリモート デスクトップ ゲートウェイに使用するパスワード。 選択することも **接続の資格情報を使用して** 、リモート デスクトップ接続に使用されるものと同じユーザー名とパスワードを使用します。
 
 
@@ -155,11 +155,11 @@ HockeyApp 上のプレビュー チャネルで新機能をテストしていま
 Mac のキーボード レイアウトは、Windows キーボードのレイアウトによって異なります。 
 
 - Mac のキーボード上のコマンド キーでは、Windows キーと同じです。
-- Mac でコマンド ボタンを使用するアクションを実行するには、Windows のコントロール ボタンを使用する必要があります (例: コピー = Ctrl + C)。
-- ファンクション キーは、FN キーを同時に押してセッションでアクティブにすることができます (例: FN + F1)。
+- Mac でコマンド ボタンを使用するアクションを実行するには、Windows のコントロール ボタンを使用する必要があります (例:コピー = Ctrl + C)。
+- ファンクション キーは、FN キーを同時に押してセッションでアクティブにすることができます (例:FN + F1)。
 - Mac キーボードのスペース バーの右側に Alt キーでは、Windows の Alt Gr/右 Alt キーと同じです。
 
-既定では、リモート セッションは、クライアントを実行している OS と同じキーボード ロケールを使用します。 (Mac で en-us OS が実行されている場合、これはリモート セッションにも使用されます。 OS キーボード ロケールを使用しない場合は、リモート PC のキーボード設定を確認し、手動で設定を変更します。 キーボードおよびロケールの詳細については、「[リモート デスクトップ クライアントに関する FAQ](remote-desktop-client-faq.md)」を参照してください。
+既定では、リモート セッションは、クライアントを実行している OS と同じキーボード ロケールを使用します。 (Mac で en-us OS が実行されている場合、これはリモート セッションにも使用されます。)OS キーボード ロケールを使用しない場合は、リモート PC のキーボード設定を確認し、それを手動で更します。 キーボードおよびロケールの詳細については、「[リモート デスクトップ クライアントに関する FAQ](remote-desktop-client-faq.md)」を参照してください。
 
 
 ## <a name="support-for-remote-desktop-gateway-pluggable-authentication-and-authorization"></a>リモート デスクトップ ゲートウェイのプラグ可能な認証と承認のためのサポート

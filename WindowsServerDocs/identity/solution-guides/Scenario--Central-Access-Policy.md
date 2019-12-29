@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 1ec4165209b726609b1f9b2caeab02fb5072c756
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 91fd437895e765d4d73f3a200f76a5f8f96b52f2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873413"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407090"
 ---
 # <a name="scenario-central-access-policy"></a>シナリオ:集約型アクセス ポリシー
 
@@ -79,13 +79,13 @@ ms.locfileid: "59873413"
 ## <a name="in-this-scenario"></a>このシナリオの内容  
 次のガイダンスは、集約型のアクセス ポリシーに使用できます。  
   
--   [集約型アクセス ポリシーの展開を計画します。](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f)  
+-   [集約型アクセスポリシーの展開を計画する](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f)  
   
--   [集約型アクセス ポリシーを展開&#40;デモンストレーション手順&#41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)  
+-   [集約型アクセスポリシー &#40;のデモンストレーション手順を展開する&#41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)  
   
--   [ダイナミック アクセス制御:シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [ダイナミック アクセス制御: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="BKMK_NEW"></a>役割と機能がこのシナリオに含まれる  
+## <a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
 次の表で、このシナリオに含まれている役割と機能を紹介すると共に、それをシナリオに活かす方法について説明します。  
   
 |役割/機能|このシナリオのサポート方法|  

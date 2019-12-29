@@ -1,8 +1,8 @@
 ---
 title: ftp disconnect_1
-description: Ftp disconnect_1 の Windows コマンド」のトピック
+description: Ftp disconnect_1 の Windows コマンドに関するトピック
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 49aeb97ab679c22cbd6faa94380eb2c7a7ee8abe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6c9aa880063784fa0ac4fb6251e3e2cc5ed16f8e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853943"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376418"
 ---
-# <a name="ftp-disconnect1"></a>ftp: disconnect_1
+# <a name="ftp-disconnect_1"></a>ftp: disconnect_1
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモート コンピューターから切断し、保持、 **ftp >** プロンプト。   
+リモートコンピューターから切断し、 **ftp >** プロンプトを保持します。   
 ## <a name="syntax"></a>構文  
 ```  
 disconnect  
@@ -32,9 +32,9 @@ disconnect
 ### <a name="parameters"></a>パラメーター  
 なし  
 ## <a name="BKMK_Examples"></a>例  
-リモート コンピューターから切断し、保持、 **ftp >** プロンプト。  
+リモートコンピューターから切断し、 **ftp >** プロンプトを保持します。  
 ```  
 disconnect  
 ```  
-## <a name="additional-references"></a>その他の参照  
--   [コマンドライン構文キー](command-line-syntax-key.md)  
+## <a name="additional-references"></a>その他の参照情報  
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)  

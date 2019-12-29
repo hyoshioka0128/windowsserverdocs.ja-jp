@@ -1,8 +1,8 @@
 ---
-title: Reg 保存
-description: 'Windows コマンド」のトピック * * *- '
+title: reg save
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a46dfe081421ed727bd7ffeeab364e6c23dd801
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6ae07cd3c90c51e7bd494bc6c35919680cde912a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841083"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371696"
 ---
-# <a name="reg-save"></a>Reg 保存
+# <a name="reg-save"></a>reg save
 
 
 
@@ -38,12 +38,12 @@ reg save <KeyName> <FileName> [/y]
 
 |パラメーター|説明|
 |---------|-----------|
-|\<キー名 >|サブキーの完全なパスを指定します。 リモート コンピューターに指定する場合、コンピューター名を含める (形式の\\ \\ComputerName\)の一部として、 *KeyName*します。 省略すると\\ \\ComputerName\ によりローカル コンピューターに既定値に操作します。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キーは次のとおりです。HKLM、HKCU、HKCR、HKU、および hkcc します。 リモート コンピューターが指定されている場合は、有効なルート キーは。HKLM および hku です。|
-|\<FileName>|作成されるファイルのパスと名前を指定します。 パスが指定されていない場合は、現在のパスが使用されます。|
+|\<KeyName >|サブキーの完全なパスを指定します。 リモートコンピューターを指定する場合は、コンピューター名 (\\\\ComputerName\) を*KeyName*の一部として指定します。 \\\\ComputerName \ を省略すると、操作は既定でローカルコンピューターに設定されます。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キー: HKLM、HKCU、HKCR、HKU、および HKCC します。 有効なルート キーは、リモート コンピューターが指定されている場合: HKLM および HKU します。|
+|\<ファイル名 >|作成されるファイルのパスと名前を指定します。 パスが指定されていない場合は、現在のパスが使用されます。|
 |/y|名前の既存のファイルを上書き *FileName* 確認を求めずにします。|
 |/?|ヘルプを表示 **reg 保存** コマンド プロンプト。|
 
-## <a name="remarks-optional-section"></a>「解説」\<省略可能なセクション >
+## <a name="remarks-optional-section"></a>省略可能なセクション > \<注釈
 
 -   次の表に、戻り値の **reg 保存** 操作します。
 
@@ -62,4 +62,4 @@ REG SAVE HKLM\Software\MyCo\MyApp AppBkUp.hiv
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

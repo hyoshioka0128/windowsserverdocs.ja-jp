@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bd21f2d6e8dcb167aa2c614d096807305a7728d6
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 08aadcf0322fcb937bdde17d18aa5d30e3da68ce
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188889"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357786"
 ---
 # <a name="walkthrough-guide-manage-risk-with-additional-multi-factor-authentication-for-sensitive-applications"></a>チュートリアル ガイド:追加の多要素認証による個人情報アプリケーションのリスク管理
 
@@ -28,15 +28,15 @@ AD FS での MFA と認証メカニズムの詳細については、次を参照
 
 このチュートリアルは次のセクションで構成されています。
 
--   [ステップ 1: ラボ環境のセットアップ](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
+-   [手順 1: ラボ環境のセットアップ](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
 
--   [手順 2:既定の AD FS の認証メカニズムを確認します。](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_2)
+-   [手順 2: 既定の AD FS の認証メカニズムを確認する](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_2)
 
--   [手順 3:フェデレーション サーバーで MFA を構成します。](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_3)
+-   [手順 3: フェデレーションサーバーで MFA を構成する](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_3)
 
--   [手順 4:MFA メカニズムを確認します。](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_4)
+-   [手順 4: MFA メカニズムを確認する](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_4)
 
-## <a name="BKMK_1"></a>手順 1:ラボ環境のセットアップ
+## <a name="BKMK_1"></a>手順 1: ラボ環境のセットアップ
 このチュートリアルを完了するには、次のコンポーネントで構成された環境が必要です。
 
 -   テスト ユーザー アカウントとグループ アカウント、Windows Server 2012 R2 または Windows Server 2012 R2 へのアップグレード対象のスキーマと Windows Server 2008、Windows Server 2008 R2、または Windows Server 2012 で実行されている Active Directory ドメインで実行されていると、Active Directory ドメイン
@@ -54,10 +54,10 @@ AD FS での MFA と認証メカニズムの詳細については、次を参照
 
 このような環境を設定する方法については、次を参照してください。 [Windows Server 2012 R2 の AD FS のラボ環境を設定](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)します。
 
-## <a name="BKMK_2"></a>手順 2:AD FS での既定の認証メカニズムを確認する
+## <a name="BKMK_2"></a>手順 2: 既定の AD FS の認証メカニズムを確認する
 この手順では、AD FS の既定のアクセス制御メカニズム (エクストラネットの場合は **[フォーム認証]** 、イントラネットの場合は **[Windows 認証]** ) により、ユーザーが AD FS のサインイン ページにリダイレクトされ、有効な資格情報を入力するとアプリケーションへのアクセスが許可されることを確認します。 使用することができます、 **Robert Hatley** AD アカウントと **claimapp** サンプル アプリケーションで構成した [Windows Server 2012 R2 の AD FS のラボ環境を設定](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)します。
 
-1.  クライアント コンピューターに、ブラウザー ウィンドウを開くし、サンプル アプリケーションに移動します:  **https://webserv1.contoso.com/claimapp** します。
+1.  クライアントコンピューターで、ブラウザーウィンドウを開き、サンプルアプリケーション ( **https://webserv1.contoso.com/claimapp** ) に移動します。
 
     この操作により、要求がフェデレーション サーバーの役割に自動的にリダイレクトされた後、ユーザー名とパスワードでサインインするように求められます。
 
@@ -65,14 +65,14 @@ AD FS での MFA と認証メカニズムの詳細については、次を参照
 
     アプリケーションへのアクセスが許可されます。
 
-## <a name="BKMK_3"></a>手順 3:フェデレーション サーバーで MFA を構成する
+## <a name="BKMK_3"></a>手順 3: フェデレーションサーバーで MFA を構成する
 Windows Server 2012 R2 の AD FS で MFA を構成する 2 つの部分があります。
 
--   [追加の認証方法を選択します。](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_5)
+-   [追加の認証方法を選択してください](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_5)
 
--   [MFA ポリシーを設定します。](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_6)
+-   [MFA ポリシーを設定する](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_6)
 
-### <a name="BKMK_5"></a>追加の認証方法を選択します。
+### <a name="BKMK_5"></a>追加の認証方法を選択してください
 MFA を設定するには、追加の認証方法を選択する必要があります。 このチュートリアルでは、追加の認証方法に次のいずれかのオプションを選択できます。
 
 -   選択 [証明書の認証](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_7) 既定では、Windows Server 2012 R2 の AD FS で使用できるメソッド
@@ -100,18 +100,18 @@ MFA を設定するには、追加の認証方法を選択する必要があり�
     > [!WARNING]
     > このコマンドが正常に実行されたことを確認するには、 `Get-AdfsGlobalAuthenticationPolicy` コマンドを実行できます。
 
-#### <a name="BKMK_8"></a>Windows Azure Multi-factor Authentication
+#### <a name="BKMK_8"></a>Windows Azure Multi-Factor Authentication
 フェデレーション サーバーで追加の認証として **Windows Azure の Multi-Factor Authentication** をダウンロード、構成、選択するには、次の手順を完了します。
 
-1.  [Windows を使用して多要素認証プロバイダーを作成する Azure Portal](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_a)
+1.  [Windows Azure ポータルを使用して Multi-Factor Authentication プロバイダーを作成する](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_a)
 
-2.  [Windows Azure Multi-factor Authentication Server をダウンロードします。](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_b)
+2.  [Windows Azure Multi-Factor Authentication Server のダウンロード](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_b)
 
-3.  [フェデレーション サーバーで、Windows Azure Multi-factor Authentication Server をインストールします。](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_c)
+3.  [フェデレーションサーバーへの Windows Azure Multi-Factor Authentication Server のインストール](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_c)
 
-4.  [追加の認証方法として Windows Azure Multi-factor Authentication を構成します。](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_d)
+4.  [追加の認証方法として Windows Azure Multi-Factor Authentication を構成する](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md#BKMK_d)
 
-##### <a name="BKMK_a"></a>Windows を使用して多要素認証プロバイダーを作成する Azure Portal
+##### <a name="BKMK_a"></a>Windows Azure ポータルを使用して Multi-Factor Authentication プロバイダーを作成する
 
 1.  管理者として Windows Azure Portal にログオンします。
 
@@ -141,7 +141,7 @@ MFA を設定するには、追加の認証方法を選択する必要があり�
 
 次に、Windows Azure の Multi-Factor Authentication Server をダウンロードする必要があります。 そのためには、Windows Azure ポータルから Windows Azure の Multi-Factor Authentication ポータルを起動します。
 
-##### <a name="BKMK_b"></a>Windows Azure Multi-factor Authentication Server をダウンロードします。
+##### <a name="BKMK_b"></a>Windows Azure Multi-Factor Authentication Server のダウンロード
 
 1.  Windows Azure ポータルに Administrator としてログオンし、前に示した手順で作成した多要素認証プロバイダーをクリックします。 その後、 **[管理]** ボタンをクリックします。
 
@@ -151,7 +151,7 @@ MFA を設定するには、追加の認証方法を選択する必要があり�
 
 Windows Azure の Multi-Factor Authentication Server の実行可能ファイルをダウンロードしたら、フェデレーション サーバーにインストールする必要があります。
 
-##### <a name="BKMK_c"></a>フェデレーション サーバーで、Windows Azure Multi-factor Authentication Server をインストールします。
+##### <a name="BKMK_c"></a>フェデレーションサーバーへの Windows Azure Multi-Factor Authentication Server のインストール
 
 1.  Windows Azure の Multi-Factor Authentication Server の実行可能ファイルをダウンロードしてダブルクリックします。  これによりインストールが開始されます。
 
@@ -163,7 +163,7 @@ Windows Azure の Multi-Factor Authentication Server の実行可能ファイル
 
 これで、フェデレーション サーバーにインストールした Windows Azure の Multi-Factor Authentication Server を起動し、追加の認証方法として構成する準備ができました。
 
-##### <a name="BKMK_d"></a>追加の認証方法として Windows Azure Multi-factor Authentication を構成します。
+##### <a name="BKMK_d"></a>追加の認証方法として Windows Azure Multi-Factor Authentication を構成する
 
 1.  **Windows Azure の Multi-Factor Authentication** をフェデレーション サーバーにインストールした場所から起動します。ようこそページで **[認証構成ウィザードの使用をスキップする]** チェック ボックスをオンにし、 **[次へ]** をクリックします。
 
@@ -196,9 +196,9 @@ Windows Azure の Multi-Factor Authentication Server の実行可能ファイル
 9. Windows Azure の Multi-Factor Authentication を追加の認証方法として構成するには、AD FS 管理コンソールで **[認証ポリシー]** ノードに移動し、 **[多要素認証]** セクションで **[グローバル設定]** サブセクションの横にある **[編集]** リンクをクリックします。 **[グローバル認証ポリシーの編集]** ウィンドウで、追加の認証方法として **[多要素認証]** を選択し、 **[OK]** をクリックします。
 
     > [!NOTE]
-    > Windows Azure の Multi-Factor Authentication の名前と説明はカスタマイズできます。サード パーティの認証方法も同様です。この名前と説明は **Set-AdfsAuthenticationProviderWebContent** コマンドレット実行することで AD FS の UI に表示されます。 詳細については、次を参照してください。 [https://technet.microsoft.com/library/dn479401.aspx](https://technet.microsoft.com/library/dn479401.aspx)
+    > Windows Azure の Multi-Factor Authentication の名前と説明はカスタマイズできます。サード パーティの認証方法も同様です。この名前と説明は **Set-AdfsAuthenticationProviderWebContent** コマンドレット実行することで AD FS の UI に表示されます。 詳細については、「」を参照してください[https://technet.microsoft.com/library/dn479401.aspx](https://technet.microsoft.com/library/dn479401.aspx)
 
-### <a name="BKMK_6"></a>MFA ポリシーを設定します。
+### <a name="BKMK_6"></a>MFA ポリシーを設定する
 MFA を有効にするには、フェデレーション サーバーで MFA ポリシーを設定する必要があります。 このチュートリアルでは、MFA ポリシーごと、 **Robert Hatley** MFA を受けるために属しているアカウントが必要な **Finance** で設定したグループ [Windows Server 2012 R2 の AD FS のラボ環境を設定](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)します。
 
 AD FS 管理コンソールまたは Windows PowerShell のいずれかを使用して MFA ポリシーを設定できます。
@@ -232,10 +232,10 @@ AD FS 管理コンソールまたは Windows PowerShell のいずれかを使用
     > [!NOTE]
     > <group_SID> は AD グループ **Finance** の SID の値に置き換えてください。
 
-## <a name="BKMK_4"></a>手順 4:MFA メカニズムを確認する
+## <a name="BKMK_4"></a>手順 4: MFA メカニズムを確認する
 この手順では、前の手順で設定した MFA 機能を確認します。 次の手順を使用して、AD ユーザー **Robert Hatley** がサンプル アプリケーションにアクセスできることを確認できますが、今回は MFA を受ける必要があります。このユーザーは **Finance** グループに属しているためです。
 
-1.  クライアント コンピューターに、ブラウザー ウィンドウを開くし、サンプル アプリケーションに移動します:  **https://webserv1.contoso.com/claimapp** します。
+1.  クライアントコンピューターで、ブラウザーウィンドウを開き、サンプルアプリケーション ( **https://webserv1.contoso.com/claimapp** ) に移動します。
 
     この操作により、要求がフェデレーション サーバーの役割に自動的にリダイレクトされた後、ユーザー名とパスワードでサインインするように求められます。
 
@@ -243,11 +243,11 @@ AD FS 管理コンソールまたは Windows PowerShell のいずれかを使用
 
     MFA のポリシーが構成されているため、この時点で、ユーザーは追加の認証を受けるよう求められます。 既定のメッセージ テキストは "**セキュリティ上の理由から、アカウントを確認するための追加の情報が必要です**" です。 " です。ただし、このテキストはカスタマイズできます。 サインイン エクスペリエンスのカスタマイズ方法については、「 [Customizing the AD FS Sign-in Pages](https://technet.microsoft.com/library/dn280950.aspx)」を参照してください。
 
-    既定のメッセージ テキストは、追加の認証方法として証明書の認証が構成されている場合 **認証を使用する証明書を選択します。操作をキャンセルする場合、ブラウザーを閉じてやり直してください。**
+    追加の認証方法として証明書の認証を構成した場合、既定のメッセージ テキストは "**認証に使用する証明書を選択してください。操作をキャンセルする場合は、ブラウザーを閉じてからやり直してください。** " です
 
     追加認証方法として Windows Azure の Multi-Factor Authentication を構成した場合、既定のメッセージ テキストは " **認証を完了するため、ユーザーに電話を差し上げます。** Windows Azure 多要素認証を使用してサインインし、検証の推奨方法のさまざまなオプションの使用に関する詳細については、次を参照してください。 [Windows Azure 多要素認証の概要](https://technet.microsoft.com/library/dn249479.aspx)します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [追加の多要素認証による個人情報アプリケーションのリスク管理](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 [Windows Server 2012 R2 の AD FS でのラボ環境の設定](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 

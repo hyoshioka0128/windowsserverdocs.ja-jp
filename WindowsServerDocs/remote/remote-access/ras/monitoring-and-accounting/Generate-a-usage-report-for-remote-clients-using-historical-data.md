@@ -1,9 +1,9 @@
 ---
 title: 履歴データを使ってリモート クライアントの使用状況レポートを生成する
-description: このトピックでは、リモート アクセスの監視とアカウンティング Windows Server 2016 では、ガイドの一部です。
+description: このトピックは、Windows Server 2016 のリモートアクセスの監視とアカウンティングに関するガイドの一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: 0305467b-ce39-4532-a05a-2cc5ff946f55
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: cfbac18f64123f97c54b29c1aeef7364af55e49a
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: bae50345e8a6fd4018857e2a754d0274ce02855d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281132"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71367254"
 ---
 # <a name="generate-a-usage-report-for-remote-clients-using-historical-data"></a>履歴データを使ってリモート クライアントの使用状況レポートを生成する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-**注:** Windows Server 2012 では、DirectAccess およびルーティングとリモート アクセス サービス (RRAS) は単一のリモート アクセスの役割に統合されています。  
+**注:** Windows Server 2012 が DirectAccess およびルーティングとリモート アクセス サービス (RRAS) を 1 つのリモート アクセス役割に結合します。  
   
 リモート アクセス サーバーで管理コンソールを使用して、サーバーにアクセスしているリモート クライアントの使用状況レポートを生成することができます。 リモート クライアントの使用状況レポートを生成するには、最初にリモート アクセス サーバーのアカウンティングを有効します。 レポートを生成した後は、サーバーにロード統計を表示するためのリモート アクセス サーバーの管理コンソールで提供される監視ダッシュ ボードを使用することができます。  
   
@@ -59,7 +59,7 @@ ms.locfileid: "67281132"
 >   
 > リモート アクセスのアカウンティングがの概念に基づく **セッション**します。 異なり、 **接続**, 、 **セッション** はリモート クライアントの IP アドレスとユーザー名の組み合わせによって一意に識別します。 たとえば、リモートのクライアントでは、Client1 というコンピューター トンネルが形成される場合、セッションが作成されアカウンティング データベースに格納されています。 名前付きの User1 がしばらくしてからのクライアントから接続するユーザーが渡されます (ただし、コンピューター トンネルがアクティブのまま)、セッションが別のセッションとして記録されます。 セッションの違いは、コンピューター トンネルとユーザーのトンネルの違いを保持します。  
   
-![Windows PowerShell](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   

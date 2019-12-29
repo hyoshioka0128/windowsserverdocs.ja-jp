@@ -1,50 +1,50 @@
 ---
-title: NFS のファイル サーバーのパフォーマンス チューニング
-description: NFS のファイル サーバーのパフォーマンス チューニング
-ms.prod: windows-server-threshold
+title: NFS ファイルサーバーのパフォーマンスチューニング
+description: NFS ファイルサーバーのパフォーマンスチューニング
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
 ms.author: RoopeshB, NedPyle
 ms.date: 10/16/2017
-ms.openlocfilehash: 06a2a7206d3673046bd5a926a657bac91b02bf5f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 07e5005c1bc38e791e847c8965cbc9a6c0ac96f4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879013"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355181"
 ---
-# <a name="performance-tuning-nfs-file-servers"></a>パフォーマンス チューニングの NFS のファイル サーバー
+# <a name="performance-tuning-nfs-file-servers"></a>NFS ファイルサーバーのパフォーマンスチューニング
 
-## <a href="" id="servicesnfs"></a>モデルの NFS 用サービス
+## <a href="" id="servicesnfs"></a>NFS 用サービスモデル
 
 
-次のセクションは、Microsoft Services for Network File System (NFS) モデルのクライアント/サーバー通信に関する情報を提供します。 NFS v2 および NFS v3 は、大半のバージョンのプロトコルを広く展開するため、MaxConcurrentConnectionsPerIp を除き、レジストリ キーのすべてが、v2 の NFS および NFS v3 のみに適用されます。
+次のセクションでは、クライアントとサーバー間の通信用の Microsoft サービス for Network File System (NFS) モデルについて説明します。 NFS v2 と NFS v3 は、最も広く展開されているバージョンのプロトコルであるため、MaxConcurrentConnectionsPerIp を除くすべてのレジストリキーは NFS v2 と NFS v3 にのみ適用されます。
 
-レジストリ チューニング NFS v4.1 プロトコルの必要はありません。
+NFS version 4.1 プロトコルには、レジストリの調整は必要ありません。
 
-### <a name="service-for-nfs-model-overview"></a>モデルの概要の NFS 用サービス
+### <a name="service-for-nfs-model-overview"></a>NFS 用サービスモデルの概要
 
-NFS 用 Microsoft サービスでは、Windows と UNIX の混在環境を所有している企業のファイル共有ソリューションを提供します。 この通信モデルは、クライアント コンピューターとサーバーで構成されます。 クライアント アプリケーションでは、リダイレクター (Rdbss.sys) および NFS ミニ リダイレクター (Nfsrdr.sys) 経由でサーバーに配置されているファイルを要求します。 ミニ リダイレクターは、NFS プロトコルを使用して、TCP/IP 経由で要求を送信します。 サーバーは、TCP/IP 経由のクライアントから複数の要求を受信し、記憶域スタックにアクセスするローカル ファイル システム (Ntfs.sys) に要求をルーティングします。
+Microsoft Services for NFS は、Windows および UNIX 環境が混在している企業向けのファイル共有ソリューションを提供します。 この通信モデルは、クライアントコンピューターとサーバーで構成されています。 クライアント上のアプリケーションは、リダイレクター (Rdbss) および NFS ミニリダイレクター () を介してサーバーにあるファイルを要求します。 ミニリダイレクターは、NFS プロトコルを使用して、TCP/IP 経由で要求を送信します。 サーバーは、TCP/IP を介してクライアントから複数の要求を受信し、ローカルファイルシステム (ntfs.sys) に要求をルーティングして、記憶域スタックにアクセスします。
 
-次の図は、nfs 通信モデルを示します。
+次の図は、NFS の通信モデルを示しています。
 
 ![nfs 通信モデル](../../media/perftune-guide-nfs-model.png)
 
-### <a name="tuning-parameters-for-nfs-file-servers"></a>NFS のファイル サーバーのパラメーターのチューニング
+### <a name="tuning-parameters-for-nfs-file-servers"></a>NFS ファイルサーバーのチューニングパラメーター
 
-次の REG\_DWORD のレジストリ設定の NFS のファイル サーバーのパフォーマンスに影響することができます。
+次の REG\_DWORD レジストリ設定は、NFS ファイルサーバーのパフォーマンスに影響を与える可能性があります。
 
--   **OptimalReads**
+-   **最適化した読み取り**
 
     ```
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\OptimalReads
     ```
 
-    既定値は 0 です。 このパラメーターは、ファイルのファイルを開くかどうかを決定します。\_ランダム\_アクセスまたはファイルの\_シーケンシャル\_I/O ワークロードの特性によってのみ。 1 ファイル用に開かれるファイルを強制的にこの値を設定\_ランダム\_アクセスします。 ファイル\_ランダム\_プリフェッチをファイル システムとキャッシュ マネージャーができません。
+    既定値は 0 です。 このパラメーターでは、ファイルを\_ランダム\_アクセス用に開くか、ファイル\_シーケンシャル\_に開くかを指定します。これは、ワークロードの i/o 特性によって異なります。 この値を1に設定すると、ファイル\_ランダム\_アクセスに対してファイルを強制的に開くことができます。 ファイル\_ランダム\_アクセスによって、ファイルシステムとキャッシュマネージャーがプリフェッチされないようにします。
 
     >[!NOTE]
-    > この設定は、拡張システム ファイル キャッシュの潜在的な影響する可能性がありますので、慎重に評価する必要があります。
+    > システムファイルキャッシュの増大に影響する可能性があるため、この設定は慎重に評価する必要があります。
 
 
 -   **RdWrHandleLifeTime**
@@ -53,15 +53,15 @@ NFS 用 Microsoft サービスでは、Windows と UNIX の混在環境を所有
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\RdWrHandleLifeTime
     ```
 
-    既定は 5 です。 このパラメーターは、ファイル ハンドル キャッシュでの NFS キャッシュ エントリの有効期間を制御します。 パラメーターは、関連付けられている NTFS ファイルを開く処理を持つキャッシュ エントリを参照します。 実際の有効期間は、RdWrHandleLifeTime とほぼ等しくなりますを掛けた値にします。 最小値は 1、最大値は 60 です。
+    既定は 5 です。 このパラメーターは、ファイルハンドルキャッシュ内の NFS キャッシュエントリの有効期間を制御します。 パラメーターは、関連付けられている NTFS ファイルハンドルを持つキャッシュエントリを参照します。 実際の有効期間は、RdWrHandleLifeTime と RdWrThreadSleepTime を乗算した値とほぼ同じです。 最小値は1、最大値は60です。
 
--   **RdWrNfsHandleLifeTime**
+-   **Rdwrシャード Andlelifetime**
 
     ```
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\RdWrNfsHandleLifeTime
     ```
 
-    既定は 5 です。 このパラメーターは、ファイル ハンドル キャッシュでの NFS キャッシュ エントリの有効期間を制御します。 パラメーターは、関連付けられている NTFS ファイルを開く処理がないキャッシュ エントリを参照します。 NFS 用サービスでは、これらのキャッシュ エントリを使用して、ファイル システムで開いているハンドルを保持することがなく、ファイルのファイル属性を格納します。 実際の有効期間は、RdWrNfsHandleLifeTime とほぼ等しくなりますを掛けた値にします。 最小値は 1、最大値は 60 です。
+    既定は 5 です。 このパラメーターは、ファイルハンドルキャッシュ内の NFS キャッシュエントリの有効期間を制御します。 パラメーターは、NTFS ファイルハンドルが関連付けられていないキャッシュエントリを参照します。 NFS 用サービスは、ファイルシステムでハンドルを開いたままにして、ファイルのファイル属性を格納するためにこれらのキャッシュエントリを使用します。 実際の有効期間は、RdwrRdWrThreadSleepTime Shandlelifetime とを乗算した値とほぼ同じです。 最小値は1、最大値は60です。
 
 -   **RdWrNfsReadHandlesLifeTime**
 
@@ -69,7 +69,7 @@ NFS 用 Microsoft サービスでは、Windows と UNIX の混在環境を所有
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\RdWrNfsReadHandlesLifeTime
     ```
 
-    既定は 5 です。 このパラメーターは、ファイル ハンドル キャッシュでキャッシュ エントリを読み取り、NFS の有効期間を制御します。 実際の有効期間は、RdWrNfsReadHandlesLifeTime とほぼ等しくなりますを掛けた値にします。 最小値は 1、最大値は 60 です。
+    既定は 5 です。 このパラメーターは、ファイルハンドルキャッシュ内の NFS 読み取りキャッシュエントリの有効期間を制御します。 実際の有効期間は、RdWrNfsReadHandlesLifeTime と RdWrThreadSleepTime を乗算した値とほぼ同じです。 最小値は1、最大値は60です。
 
 -   **RdWrThreadSleepTime**
 
@@ -77,7 +77,7 @@ NFS 用 Microsoft サービスでは、Windows と UNIX の混在環境を所有
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\RdWrThreadSleepTime
     ```
 
-    既定は 5 です。 このパラメーターは、ファイル ハンドル キャッシュでクリーンアップ スレッドを実行する前に、待機間隔を制御します。 値はティック単位であり、非決定的です。 1 ティックは約 100 ナノ秒に相当します。 最小値は 1、最大値は 60 です。
+    既定は 5 です。 このパラメーターは、ファイルハンドルキャッシュでクリーンアップスレッドを実行するまでの待機時間を制御します。 値はティック単位であり、非決定的です。 ティックは約100ナノ秒に相当します。 最小値は1、最大値は60です。
 
 -   **FileHandleCacheSizeinMB**
 
@@ -85,7 +85,7 @@ NFS 用 Microsoft サービスでは、Windows と UNIX の混在環境を所有
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\FileHandleCacheSizeinMB
     ```
 
-    既定値は 4 です。 このパラメーターは、ファイル ハンドル キャッシュ エントリが消費する最大メモリ量を指定します。 最小値は 1、最大値は 1\*1024\*1024\*1024 (1073741824)。
+    既定は 4 です。 このパラメーターは、ファイルハンドルキャッシュエントリによって消費される最大メモリを指定します。 最小値は1、最大値は 1\*1024\*1024\*1024 (1073741824) です。
 
 -   **LockFileHandleCacheInMemory**
 
@@ -93,7 +93,7 @@ NFS 用 Microsoft サービスでは、Windows と UNIX の混在環境を所有
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\LockFileHandleCacheInMemory
     ```
 
-    既定値は 0 です。 このパラメーターは、FileHandleCacheSizeInMB で指定されたキャッシュ サイズに割り当てられている物理ページがメモリ内にロックされているかどうかを指定します。 この値を 1 に設定すると、このアクティビティが有効になります。 メモリ (ディスクにページングされない)、ファイル ハンドル、解決のパフォーマンスが向上しますが、アプリケーションで使用可能なメモリを削減するには、ページがロックされています。
+    既定値は 0 です。 このパラメーターは、FileHandleCacheSizeInMB で指定されたキャッシュサイズに割り当てられている物理ページがメモリ内でロックされているかどうかを指定します。 この値を1に設定すると、このアクティビティが有効になります。 ページはメモリ内でロックされ (ディスクにページングされません)、ファイルハンドルの解決のパフォーマンスが向上しますが、アプリケーションで使用可能なメモリが減少します。
 
 -   **MaxIcbNfsReadHandlesCacheSize**
 
@@ -101,7 +101,7 @@ NFS 用 Microsoft サービスでは、Windows と UNIX の混在環境を所有
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\MaxIcbNfsReadHandlesCacheSize
     ```
 
-    既定値は、64 です。 このパラメーターは、読み取りデータ キャッシュのボリュームごとのハンドルの最大数を指定します。 読み取りキャッシュ エントリは、1 GB を超えるメモリを搭載したシステムでのみ作成されます。 最小値は 0、最大値は 0 xffffffff です。
+    既定値は64です。 このパラメーターは、読み取りデータキャッシュのボリュームごとのハンドルの最大数を指定します。 読み取りキャッシュエントリは、メモリが 1 GB を超えるシステムでのみ作成されます。 最小値は0、最大値は0xFFFFFFFF です。
 
 -   **HandleSigningEnabled**
 
@@ -109,7 +109,7 @@ NFS 用 Microsoft サービスでは、Windows と UNIX の混在環境を所有
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\HandleSigningEnabled
     ```
 
-    既定値は 1 です。 このパラメーターは、NFS のファイル サーバー与えられているハンドルが暗号署名かどうかを制御します。 0 に設定するには、ハンドルの署名が無効にします。
+    既定値は 1 です。 このパラメーターは、NFS ファイルサーバーによって指定されたハンドルが暗号方式で署名されているかどうかを制御します。 0に設定すると、ハンドルの署名が無効になります。
 
 -   **RdWrNfsDeferredWritesFlushDelay**
 
@@ -117,7 +117,7 @@ NFS 用 Microsoft サービスでは、Windows と UNIX の混在環境を所有
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\RdWrNfsDeferredWritesFlushDelay
     ```
 
-    既定値は 60 です。 このパラメーターは、NFS V3 不安定な書き込みデータのキャッシュの期間を制御する論理的なタイムアウトです。 最小値は 1 であり、最大値は 600。 実際の有効期間は、約 RdWrNfsDeferredWritesFlushDelay とほぼ等しくなりますを掛けた値です。
+    既定値は 60 です。 このパラメーターは、NFS V3 の不安定な書き込みデータキャッシュの期間を制御するソフトタイムアウトです。 最小値は1、最大値は600です。 実際の有効期間は、RdWrNfsDeferredWritesFlushDelay と RdWrThreadSleepTime を乗算した値とほぼ同じです。
 
 -   **CacheAddFromCreateAndMkDir**
 
@@ -125,7 +125,7 @@ NFS 用 Microsoft サービスでは、Windows と UNIX の混在環境を所有
     HKLM\System\CurrentControlSet\Services\NfsServer\Parameters\CacheAddFromCreateAndMkDir
     ```
 
-    既定では 1 (有効です)。 このパラメーターは、NFS V2 および V3 を作成し、MKDIR RPC プロシージャ ハンドラーは、ファイルに保持される時に開いているハンドルがキャッシュを処理するかどうかを制御します。 この値の作成と MKDIR コード パス内のキャッシュに追加するエントリを無効にするには 0 に設定します。
+    既定値は 1 (有効) です。 このパラメーターは、NFS V2 および V3 の CREATE および MKDIR RPC プロシージャハンドラーで開かれたハンドルがファイルハンドルキャッシュに保持されるかどうかを制御します。 CREATE および MKDIR コードパスでキャッシュへのエントリの追加を無効にするには、この値を0に設定します。
 
 -   **AdditionalDelayedWorkerThreads**
 
@@ -133,7 +133,7 @@ NFS 用 Microsoft サービスでは、Windows と UNIX の混在環境を所有
     HKLM\SYSTEM\CurrentControlSet\Control\SessionManager\Executive\AdditionalDelayedWorkerThreads
     ```
 
-    指定された作業をキューの作成は遅延のワーカー スレッドの数が増えます。 遅延するワーカー スレッド作業項目を処理しては見なされずタイム クリティカルのメモリ スタックを作業項目の待機中にページ アウトすることがあります。 スレッド数が不足して削減率をどの作業アイテムのサービスです。大きすぎる値では、システム リソースが不必要に消費されます。
+    指定されたワークキューに対して作成される遅延ワーカースレッドの数を増やします。 遅延ワーカースレッドは、タイムクリティカルではない作業項目を処理し、作業項目を待機している間にメモリスタックをページアウトすることができます。 スレッド数が不足すると、作業項目の処理速度が低下します。値が大きすぎると、システムリソースが不必要に消費されます。
 
 -   **NtfsDisable8dot3NameCreation**
 
@@ -141,10 +141,10 @@ NFS 用 Microsoft サービスでは、Windows と UNIX の混在環境を所有
     HKLM\System\CurrentControlSet\Control\FileSystem\NtfsDisable8dot3NameCreation
     ```
 
-    Windows Server 2012 および Windows Server 2012 R2 の既定の設定には 2 です。 Windows Server 2012 より前のリリースでは、既定値は 0 です。 このパラメーターは、NTFS が、8dot3 で短い名前を生成するかどうかを決定します。 長いファイル名と、拡張文字セットの文字を含むファイル名 (MSDOS) の名前付け規則。 このエントリの値が 0 の場合も、ファイルには 2 つの名前があります。 ユーザーが指定した名前とは NTFS が生成するための短い名前。 ユーザーが指定した名前は、8dot3 名前付け規則に従って、NTFS は短い名前を生成しません。 ボリュームごとにこのパラメーターを構成する 2 つの手段の値。
+    Windows Server 2012 および Windows Server 2012 R2 の既定値は2です。 Windows Server 2012 より前のリリースでは、既定値は0です。 このパラメーターは、長いファイル名と拡張文字セットの文字を含むファイル名に対して、NTFS が 8dot3 (MSDOS.SYS) の名前付け規則に短い名前を生成するかどうかを決定します。 このエントリの値が0の場合、ファイルは2つの名前を持つことができます。ユーザーが指定する名前と、NTFS によって生成される短い名前です。 ユーザー指定の名前が8dot3 の名前付け規則に従っている場合、NTFS は短い名前を生成しません。 値が2の場合、このパラメーターはボリュームごとに構成できることを意味します。
 
     >[!NOTE]
-    > システム ボリュームには、既定で有効になっている 8dot3 があります。 Windows Server 2012 および Windows Server 2012 R2 での他のすべてのボリュームがある 8dot3 が既定で無効になっています。 この値を変更しても、ファイルの内容は変更されませんが、NTFS の表示し、管理、ファイルも変更すると、ファイルの短い名前属性の作成を回避できます。 ほとんどのファイル サーバーでは、推奨設定値は 1 (無効です)。
+    > システムボリュームでは、既定で8dot3 が有効になっています。 Windows Server 2012 および Windows Server 2012 R2 の他のすべてのボリュームでは、既定で8dot3 が無効になっています。 この値を変更しても、ファイルの内容は変更されませんが、ファイルの短縮名属性の作成が回避されます。これにより、NTFS がファイルを表示および管理する方法も変わります。 ほとんどのファイルサーバーでは、推奨される設定は 1 (無効) です。
 
 
 -   **NtfsDisableLastAccessUpdate**
@@ -153,7 +153,7 @@ NFS 用 Microsoft サービスでは、Windows と UNIX の混在環境を所有
     HKLM\System\CurrentControlSet\Control\FileSystem\NtfsDisableLastAccessUpdate
     ```
 
-    既定値は 1 です。 このシステム グローバルのスイッチは、最後のファイルまたはディレクトリのアクセスの日付と時刻のスタンプの更新を無効にしてディスク I/O の負荷と待機時間を減少します。
+    既定値は 1 です。 このシステムグローバルスイッチでは、最後のファイルまたはディレクトリへのアクセスの日付とタイムスタンプの更新を無効にすることで、ディスク i/o の負荷と待機時間を削減できます。
 
 -   **MaxConcurrentConnectionsPerIp**
 
@@ -161,4 +161,4 @@ NFS 用 Microsoft サービスでは、Windows と UNIX の混在環境を所有
     HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Rpcxdr\Parameters\MaxConcurrentConnectionsPerIp
     ```
 
-    MaxConcurrentConnectionsPerIp パラメーターの既定値は、16 です。 最大数は、8192 IP アドレスごとの接続の数を増やすには、この値を増やすことができます。
+    MaxConcurrentConnectionsPerIp パラメーターの既定値は16です。 この値は最大8192まで増やすことで、IP アドレスあたりの接続数を増やすことができます。

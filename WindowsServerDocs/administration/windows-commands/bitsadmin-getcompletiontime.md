@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getcompletiontime
-description: Windows コマンド」のトピック**bitsadmin getcompletiontime** -ジョブは、データの転送を完了する時間を取得します。
+description: '**Bitsadmin get time**の Windows コマンドトピック-ジョブがデータの転送を終了した時刻を取得します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3790a91c4b347b982c0f0a023d5977a8d6cd1f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 190467d5f3a7b7244ed0d7ab3b75d4cbbf56c8d5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857383"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381738"
 ---
 # <a name="bitsadmin-getcompletiontime"></a>bitsadmin getcompletiontime
 
 
 
-データを転送する、ジョブの終了時刻を取得します。
+ジョブがデータの転送を終了した時刻を取得します。
 
 ## <a name="syntax"></a>構文
 
@@ -40,11 +40,11 @@ bitsadmin /GetCompletionTime <Job>
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、時間、ジョブの名前を*myDownloadJob*データの転送が終了しました。
+次の例では、 *Mydownloadjob*という名前のジョブがデータの転送を終了した時刻を取得します。
 ```
 C:\>bitsadmin /GetCompletionTime myDownloadJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

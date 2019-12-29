@@ -1,8 +1,8 @@
 ---
 title: finger
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 526363db3ecff4a9138c9cf13cbf330196e14ced
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8e16120eb19ff2f194fe2c8bdeb3af80ca459ebe
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439253"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377163"
 ---
 # <a name="finger"></a>finger
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-本の指のサービスまたはデーモンが実行されている指定されたリモート コンピューター (通常は UNIX を実行しているコンピューター) 上のユーザーまたはユーザーに関する情報を表示します。 リモート コンピューターには、書式設定とユーザー情報の表示の出力を指定します。 パラメーターを指定せずに使用される**指**ヘルプを表示します。 
+指サービスまたはデーモンを実行している、指定されたリモートコンピューター (通常は UNIX を実行しているコンピューター) 上のユーザーに関する情報を表示します。 リモートコンピューターは、ユーザー情報の表示形式と出力形式を指定します。 パラメーターを指定せずに使用すると、**指**でヘルプが表示されます。 
 ## <a name="syntax"></a>構文
 ```
 finger [-l] [<User>] [@<Host>] [...]
@@ -33,24 +33,24 @@ finger [-l] [<User>] [@<Host>] [...]
 
 | パラメーター |                                                                            説明                                                                            |
 |-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    -l     |                                                          長いリスト形式でユーザー情報を表示します。                                                           |
-|  <User>   | 情報を表示ユーザーを指定します。 省略した場合、*ユーザー*パラメーター、**指**指定したコンピューター上のすべてのユーザーに関する情報を表示します。 |
-|  @<Host>  |        ユーザー情報を調べる本の指のサービスを実行するリモート コンピューターを指定します。 コンピューター名または IP アドレスを指定することができます。        |
+|    -l     |                                                          長い一覧形式でユーザー情報を表示します。                                                           |
+|  <User>   | 情報を必要とするユーザーを指定します。 *User*パラメーターを省略すると、**指**を使用すると、指定したコンピューター上のすべてのユーザーに関する情報が表示されます。 |
+|  @<Host>  |        ユーザー情報を探している finger サービスを実行しているリモートコンピューターを指定します。 コンピューター名または IP アドレスを指定できます。        |
 |    /?     |                                                               コマンド プロンプトにヘルプを表示します。                                                                |
 
-## <a name="remarks"></a>注釈
-複数User@Hostパラメーターを指定することができます。
-プレフィックスにする必要があります**指**スラッシュ (/) ではなくハイフン (-) を持つパラメーター。
+## <a name="remarks"></a>コメント
+複数の User@Host パラメーターを指定できます。
+**指**パラメーターの前には、スラッシュ (/) ではなくハイフン (-) を付ける必要があります。
 このコマンドは、インターネット プロトコル (TCP/IP) プロトコルがネットワーク接続のネットワーク アダプターのプロパティでコンポーネントとしてインストールされている場合にのみ使用できます。
-Windows Server 2003 では、本の指のサービスは提供されません。
+Windows Server 2003 では、finger サービスは提供されていません。
 ## <a name="BKMK_Examples"></a>例
-をコンピューター users.microsoft.com 上 user1 の情報を表示するには、次のように入力します。
+コンピューター users.microsoft.com に user1 の情報を表示するには、次のように入力します。
 ```
 finger user1@users.microsoft.com
 ```
-をコンピューター users.microsoft.com 上のすべてのユーザーの情報を表示するには、次のように入力します。
+コンピューター users.microsoft.com のすべてのユーザーの情報を表示するには、次のように入力します。
 ```
 finger @users.microsoft.com
 ```
-## <a name="additional-references"></a>その他の参照
+## <a name="additional-references"></a>その他の参照情報
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)

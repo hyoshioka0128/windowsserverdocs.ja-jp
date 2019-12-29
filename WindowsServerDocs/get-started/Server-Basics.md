@@ -1,7 +1,7 @@
 ---
 title: 開始
 description: 'サーバーの基礎: システム要件、リリース ノートは、アップグレード オプション'
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: get-started
@@ -10,12 +10,12 @@ ms.topic: article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: e7ff669b1a1ca3bed5d7c827c40bc46e81ea3f02
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 4b8d346ceafb81b02ebbffc62e558800b77f0086
+ms.sourcegitcommit: 8fbd2d877612a9feb02d7d91ed0372d7cd441d5c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810601"
+ms.lasthandoff: 09/30/2019
+ms.locfileid: "71678809"
 ---
 # <a name="get-started-with-windows-server-2016"></a>Windows Server 2016 の概要
 

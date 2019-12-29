@@ -7,49 +7,49 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e94b07d7fa654732526d0b43daadc9ad0ad4f3a8
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: b0ea877170a07db6abe9ac82e72d1722600ec933
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444931"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358112"
 ---
-# <a name="create-a-non-claims-aware-relying-party-trust"></a>要求対応の証明書利用者のパーティの信頼を作成します。
+# <a name="create-a-non-claims-aware-relying-party-trust"></a>要求対応ではない証明書利用者信頼を作成する
 
 
-AD FS 管理スナップインで\-以外で\-クレーム\-証明書利用者の信頼は、フェデレーション サービスと 1 つの web の間の信頼を表すために作成されたオブジェクトに注意してください\-ベースでないアプリケーションクレーム\-対応 Web アプリケーション プロキシ経由でアクセスされるとします。  
+の AD FS 管理スナップ\-では、非\-要求\-対応証明書利用者信頼は、フェデレーションサービスと、Web アプリケーションプロキシ経由でアクセスされる要求\-認識されない単一の web\-ベースのアプリケーションとの間の信頼を表すために作成されるオブジェクトです。  
   
-非\-クレーム\-証明書利用者の信頼は、証明書利用者信頼で構成される識別子、名前、および認証と承認規則、証明書利用者の信頼は、Web アプリケーション プロキシを介してアクセスするときに注意してください。 これらの web\-ベースのアプリケーションの信頼性情報、つまり、これら統合 Windows 認証を使用しない\-ベースのアプリケーションは、アクセスがときに、クレームに基づくアクセスを適用する承認規則を持つことができますWeb アプリケーション プロキシ経由で企業ネットワークの外部です。  
+非\-要求\-対応証明書利用者信頼は、証明書利用者信頼が Web アプリケーションプロキシ経由でアクセスされるときの認証と承認のための識別子、名前、および規則で構成される証明書利用者の信頼です。 要求に依存しないこれらの web\-ベースのアプリケーション (つまり、統合 Windows 認証\-ベースのアプリケーション) は、アクセスが Web アプリケーションプロキシ経由で企業ネットワークの外部にある場合に、要求に基づいてアクセスを強制する承認規則を持つことができます。  
   
-新しいを追加する非\-クレーム\-対応証明書利用者信頼、AD FS 管理スナップインを使用して\-で、次の手順を実行します。  
+の AD FS 管理スナップ\-を使用して、新しい非\-要求\-対応証明書利用者信頼を追加するには、次の手順を実行します。  
   
 この手順を実行するには、ローカル コンピューターの **Administrators**グループのメンバーシップか、それと同等のメンバーシップが最低限必要です。  適切なアカウントの使用方法の詳細を確認し、グループ メンバーシップ [ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)します。   
   
-## <a name="to-create-a-non-claims-aware-relying-party-trust-manually"></a>手動で要求に非対応証明書利用者の信頼を作成するには 
-1. サーバー マネージャーで、**ツール**、し、 **AD FS 管理**します。  
+## <a name="to-create-a-non-claims-aware-relying-party-trust-manually"></a>要求対応ではない証明書利用者信頼を手動で作成するには 
+1. サーバーマネージャーで、 **[ツール]** をクリックし、 **[AD FS の管理]** を選択します。  
   
-2.  [**アクション**、] をクリックして**証明書利用者信頼の追加**します。  
-![証明書利用者](media/Create-a-Relying-Party-Trust/addtrust1.PNG)   
+2.  **[操作]** の **[証明書利用者信頼の追加]** をクリックします。  
+証明書利用者](media/Create-a-Relying-Party-Trust/addtrust1.PNG) の ![   
 
-3.  **ようこそ**ページで、選択**以外の要求に対応** をクリック**開始**します。  
-![証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon1.PNG) 
+3.  **[ようこそ]** ページで、 **[要求に対応しない]** を選択し、 **[開始]** をクリックします。  
+証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon1.PNG) の ![ 
   
-4.  **表示名の指定**に名前を入力] ページで、**表示名**[**ノート**この証明書利用者のパーティの信頼の説明を入力し、クリックして **[次へ]** .  
-![証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon2.PNG)
+4.  **[表示名の指定]** ページで、 **[表示名]** に名前を入力し、 **[メモ]** にこの証明書利用者信頼の説明を入力して、 **[次へ]** をクリックします。  
+証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon2.PNG) の ![
 
 5. **[識別子の構成]** ページで、この証明書利用者の識別子を 1 つ以上指定し、 **[追加]** をクリックして一覧に追加したら、 **[次へ]** をクリックします。  
-![証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon3.PNG)
+証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon3.PNG) の ![
 
-6.  **へのアクセス制御ポリシーの選択**ポリシーを選択し、をクリックして**次**します。  アクセス制御ポリシーの詳細については、次を参照してください。 [AD FS でのアクセス制御ポリシー](Access-Control-Policies-in-AD-FS.md)します。 
-![証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon4.PNG)
+6.  **[Access Control ポリシーの選択]** でポリシーを選択し、 **[次へ]** をクリックします。  Access Control ポリシーの詳細については、「 [AD FS でのポリシーの Access Control](Access-Control-Policies-in-AD-FS.md)」を参照してください。 
+証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon4.PNG) の ![
 
 7. **[信頼の追加の準備完了]** ページで、設定を確認し、 **[次へ]** をクリックして、証明書利用者信頼情報を保存します。  
-   ![証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon5.PNG) 
+   証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon5.PNG) の ![ 
 
 8. **[完了]** ページで、 **[閉じる]** をクリックします。 これにより、自動的に **[要求規則の編集]** ダイアログ ボックスが表示されます。  
-![証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon6.PNG)  
+証明書利用者](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon6.PNG) の ![  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md) 

@@ -1,9 +1,9 @@
 ---
 title: テスト ラボのシナリオの概要
-description: このトピックでは、OTP 認証と Windows Server 2016 で RSA SecurID を使用した DirectAccess のデモンストレーションのテスト ラボ ガイドの一部
+description: このトピックは、「テストラボガイド-OTP 認証を使用した DirectAccess のデモンストレーション」と「RSA SecurID for Windows Server 2016」に含まれています。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,24 +12,24 @@ ms.topic: article
 ms.assetid: ce584811-b209-48fe-ab2b-4c399bd0bd79
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 944a38438d81bfffcff002336a5eb0427ab9e5ea
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: ba3981c79d1441797f21c8ed8051ace6ac490cab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283153"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404741"
 ---
 # <a name="overview-of-the-test-lab-scenario"></a>テスト ラボのシナリオの概要
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-リモート アクセス サーバーの役割では、Windows Server 2016 とは、リモート ユーザーの内部に安全にアクセスできるようにする Windows Server 2012 R2 および Windows Server 2012 のオペレーティング システムが DirectAccess を使用してリソースをネットワークまたは仮想プライベート ネットワーク (Vpn) を使用しますルーティングとリモート アクセスのサービス (RRAS)。 このガイドには拡張するための手順が含まれています、[テスト ラボ ガイド。IPv4 と IPv6 混在での DirectAccess 単一サーバー セットアップのデモンストレーション](https://go.microsoft.com/fwlink/p/?LinkId=237004)をリモート アクセスのワンタイム パスワード (OTP) 構成を示します。  
+リモートアクセスは、windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 オペレーティングシステムのサーバーの役割であり、リモートユーザーは、を使用して、DirectAccess または仮想プライベートネットワーク (Vpn) を使用して内部ネットワークリソースに安全にアクセスできます。ルーティングとリモートアクセスサービス (RRAS)。 このガイドでは、「リモートアクセスのワンタイムパスワード (OTP) 構成をデモンストレーションするための、 [IPv4 と IPv6 の混在を使用した DirectAccess シングルサーバーセットアップのデモンストレーション」の「テストラボガイド」](https://go.microsoft.com/fwlink/p/?LinkId=237004)を拡張する手順について説明します。  
   
 > [!WARNING]  
-> このテスト ラボ ガイドの設計には、インフラストラクチャ サーバー、ドメイン コント ローラーと Windows Server 2016、Windows Server 2012 R2 または Windows Server 2012 のいずれかを実行している証明機関 (CA) などが含まれています。 このテスト ラボ ガイドを使用して、他のオペレーティング システムを実行しているインフラストラクチャ サーバーを構成するがテストされていない、および他のオペレーティング システムを構成する手順については、このガイドには含まれません。  
+> このテストラボガイドの設計には、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行するドメインコントローラー、証明機関 (CA) などのインフラストラクチャサーバーが含まれています。 このテストラボガイドを使用して、他のオペレーティングシステムを実行しているインフラストラクチャサーバーを構成することはできません。また、他のオペレーティングシステムを構成する手順については、このガイドでは説明しません。  
   
 ## <a name="about-this-guide"></a>このガイドについて  
-Windows Server 2016、Windows Server 2012 R2 および Windows Server 2012 でのリモート アクセスは、otp クライアント認証のサポートを追加します。 このテスト ラボの目的では、RSA SecurID のみを使用してをリモート アクセス権を持つ OTP の機能を示します。 その他の RADIUS ベースの OTP ソリューションは、同様に、サポートされますが、このテスト ラボの範囲外です。 このガイドでは、6 台のサーバーと 2 台のクライアント コンピューターを使うリモート アクセスを構成し、デモンストレーションを行う手順について説明します。 OTP のテスト ラボを完成したリモート アクセスは、イントラネット、インターネットと、ホーム ネットワークをシミュレートし、さまざまなインターネット接続のシナリオでのリモート アクセス機能を紹介します。  
+Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 のリモートアクセスでは、OTP を使用したクライアント認証のサポートが追加されます。 このテストラボでは、リモートアクセスを使用した OTP 機能を示すために RSA SecurID のみを使用します。 その他の RADIUS ベースの OTP ソリューションもサポートされていますが、このテストラボの範囲外です。 このガイドでは、6 台のサーバーと 2 台のクライアント コンピューターを使うリモート アクセスを構成し、デモンストレーションを行う手順について説明します。 「OTP を使用したリモートアクセスの完了」テストラボでは、イントラネット、インターネット、ホームネットワークをシミュレートし、さまざまなインターネット接続シナリオでリモートアクセス機能を示します。  
   
 > [!IMPORTANT]  
 > このラボは、最小限のコンピューターを使って概念を実証するためのものです。 このガイドで詳しく説明されている構成は、テスト ラボでの使用のみを目的としています。運用環境では使用しないでください。  

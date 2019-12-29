@@ -1,22 +1,22 @@
 ---
 title: サーバーのハードウェア パフォーマンスに関する考慮事項
 description: Windows Server 2016 のサーバーのハードウェア パフォーマンスに関する考慮事項
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: phstee
 author: phstee
 ms.date: 01/08/2018
-ms.openlocfilehash: d12a6c66c5e76852900828af04f4c6ec63a9a4f5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9c012711dff3746587b4a04b31d9c23ebb7de4cd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891983"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370553"
 ---
 # <a name="server-hardware-performance-considerations"></a>サーバーのハードウェア パフォーマンスに関する考慮事項
 
-次のセクションでは、サーバーのハードウェアを選ぶときに考慮すべき重要な項目を一覧にしています。 これらのガイドラインに従うと、サーバーのパフォーマンスを妨げる可能性があるパフォーマンスのボトルネックを取り除くのに役立ちます。
+次のセクションでは、サーバーのハードウェアを選ぶときに考慮すべき重要な項目を一覧にしています。 これらのガイドラインは、サーバーのパフォーマンスを妨げる可能性があるパフォーマンスのボトルネックを取り除くのに役立ちます。
 
 ## <a name="processor-recommendations"></a>プロセッサに関する推奨事項
 

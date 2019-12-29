@@ -1,8 +1,8 @@
 ---
 title: change port
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ced5b9f0198179ab8b388f56aaea848b7a966081
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0e587572acd1af1cc7dbd2550e1eae5244d0d1dd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434507"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379597"
 ---
 # <a name="change-port"></a>change port
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リストまたは MS-DOS アプリケーションと互換性がある COM ポートのマッピングを変更します。
-このコマンドを使用する方法の例については、次を参照してください。[例](#BKMK_examples)します。
+MS-DOS アプリケーションと互換性があるように、COM ポートのマッピングを一覧表示または変更します。
+このコマンドの使用方法の例については、「[例](#BKMK_examples)」を参照してください。
 > [!NOTE]
-> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 新機能については、最新バージョンについてを参照してください。 [Windows Server 2012 でのリモート デスクトップ サービスでどのような s の新しい](https://technet.microsoft.com/library/hh831527)、Windows Server TechNet ライブラリです。
+> Windows Server 2008 R2 で、「ターミナル サービス」は「リモート デスクトップ サービス」に名前変更されました。 最新バージョンの新機能については、Windows Server TechNet ライブラリの[Windows Server 2012 のリモートデスクトップサービスの新機能](https://technet.microsoft.com/library/hh831527) を参照してください。
 > ## <a name="syntax"></a>構文
 > ```
 > change port [<PortX>=<PortY> | /d <PortX> | /query]
@@ -36,24 +36,24 @@ ms.locfileid: "66434507"
 > 
 > |    パラメーター    |              説明               |
 > |-----------------|----------------------------------------|
-> | <PortX>=<PortY> |    COM マップ <*マッピング*> を <*PortY*>。    |
-> |   /d <PortX>    | COM のマッピングを削除します <*マッピング*>。 |
-> |     /query      |  現在のポート マッピングを表示します。   |
+> | <PortX>=<PortY> |    COM <*PortX*>*を < の*> にマップします。    |
+> |   /d <PortX>    | COM <*PortX*> のマッピングを削除します。 |
+> |     /query      |  現在のポートマッピングが表示されます。   |
 > |       /?        |  コマンド プロンプトにヘルプを表示します。  |
 > 
-> ## <a name="remarks"></a>注釈
-> - ほとんどの MS-DOS アプリケーションは、COM4 シリアル ポート経由の COM1 のみをサポートします。 **ポートを変更**コマンドは、大きい番号の COM をサポートしていないアプリケーション、シリアル ポートにアクセスするポートを許可する、別のポート番号をシリアル ポートをマップします。 再マップでは、現在のセッションでのみ機能し、セッションからログオフし、もう一度ログオンする場合は保持されません。
-> - 使用**ポートを変更**利用可能な COM ポートとその現在のマッピングを表示するパラメーターなし。
+> ## <a name="remarks"></a>コメント
+> - ほとんどの MS-DOS アプリケーションは、COM1 ~ COM4 のシリアルポートのみをサポートしています。 **ポートの変更**コマンドは、シリアルポートを別のポート番号にマップします。これにより、高番号の COM ポートをサポートしていないアプリケーションでシリアルポートにアクセスできるようになります。 再マッピングは現在のセッションに対してのみ機能し、セッションからログオフして再度ログオンした場合は保持されません。
+> - パラメーターを指定せずに**ポートを変更**して、使用可能な COM ポートとその現在のマッピングを表示します。
 >   ## <a name="BKMK_examples"></a>例
-> - Ms-dos アプリケーションを使用するための COM1 に COM12 をマップして、次のように入力します。
+> - MS-DOS ベースのアプリケーションで使用するために COM12 を COM1 にマップするには、次のように入力します。
 >   ```
 >   change port com12=com1
 >   ```
-> - 現在のポート マッピングを表示するには、次のように入力します。
+> - 現在のポートマッピングを表示するには、次のように入力します。
 >   ```
 >   change port /query
 >   ```
->   #### <a name="additional-references"></a>その他の参照
->   [コマンドライン構文のポイント](command-line-syntax-key.md)
+>   #### <a name="additional-references"></a>その他の参照情報
+>   [コマンドライン構文のキー](command-line-syntax-key.md)
 >   [変更](change.md)
->   [Remote Desktop Services&#40;ターミナル サービス&#41;コマンド リファレンス](remote-desktop-services-terminal-services-command-reference.md)
+>   [リモートデスクトップサービス&#40;ターミナルサービス&#41;のコマンドリファレンス](remote-desktop-services-terminal-services-command-reference.md)

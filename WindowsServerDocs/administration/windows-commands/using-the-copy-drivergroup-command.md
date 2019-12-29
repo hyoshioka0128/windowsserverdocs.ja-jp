@@ -1,8 +1,8 @@
 ---
 title: コピー DriverGroup コマンドを使用してください。
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68d9c6f4ca78991bb4c286042a6172211161dd1e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c08ce616c9b0e2bf79c7f13f922e27d7f7f7ca62
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842083"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363594"
 ---
 # <a name="using-the-copy-drivergroup-command"></a>コピー DriverGroup コマンドを使用してください。
 
@@ -36,9 +36,9 @@ WDSUTIL /Copy-DriverGroup [/Server:<Server name>] /DriverGroup:<Source Group Nam
 
 |パラメーター|説明|
 |---------|-----------|
-|[/Server:\<サーバー名 >]|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
-|/DriverGroup:\<ソース グループ名 >|ソースのドライバー グループの名前を指定します。|
-|/GroupName:\<新しいグループ名 >|新しいドライバー グループの名前を指定します。|
+|[/Server: \<Server name >]|サーバーの名前を指定します。 これには、NetBIOS 名または FQDN を指定できます。 サーバー名が指定されていない場合は、ローカル サーバーが使用されます。|
+|/Drivergroup: \<Source Group Name >|ソースのドライバー グループの名前を指定します。|
+|/GroupName: \<New Group Name >|新しいドライバー グループの名前を指定します。|
 
 ## <a name="BKMK_examples"></a>例
 
@@ -52,4 +52,4 @@ WDSUTIL /Copy-DriverGroup /DriverGroup:PrinterDrivers /GroupName:ColorPrinterDri
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

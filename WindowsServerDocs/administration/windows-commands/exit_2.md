@@ -1,8 +1,8 @@
 ---
 title: exit
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4e599f84389b23e527e3718a620d5fdfefe24edb
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d6d3a4d0bfc74644f6fda43abe57e0e4e7c1264a
+ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439462"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74791232"
 ---
 # <a name="exit"></a>exit
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-Cmd.exe プログラム (コマンド インタープリター) または現在のバッチ スクリプトを終了します。  
-このコマンドを使用する方法の例については、次を参照してください。[例](#BKMK_examples)します。  
+Cmd.exe プログラム (コマンドインタープリター) または現在のバッチスクリプトを終了します。  
+このコマンドを使用する方法の例については、[例](#BKMK_examples)を参照してください。  
 ## <a name="syntax"></a>構文  
 ```  
 exit [/b] [<exitCode>]  
@@ -34,15 +34,15 @@ exit [/b] [<exitCode>]
 
 | パラメーター  |                                                                                         説明                                                                                          |
 |------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     /b     |                                      Cmd.exe を終了せず、現在のバッチ スクリプトを終了します。 バッチ スクリプトの外から実行する場合は、Cmd.exe を終了します。                                      |
-| <exitCode> | 数値の数を指定します。 場合 **/b**を指定すると、ERRORLEVEL 環境変数は、その番号に設定されます。 終了が場合**Cmd.exe**、プロセス終了コードは、その番号に設定されます。 |
+|     /b     |                                      Cmd.exe を終了する代わりに、現在のバッチスクリプトを終了します。 バッチスクリプトの外部から実行された場合は、Cmd.exe を終了します。                                      |
+| `<exitCode>` | 数値を指定します。 **/B**が指定されている場合、ERRORLEVEL 環境変数はその数値に設定されます。 **Cmd.exe**を終了すると、プロセス終了コードはその番号に設定されます。 |
 |     /?     |                                                                             コマンド プロンプトにヘルプを表示します。                                                                             |
 
 ## <a name="BKMK_examples"></a>例  
-閉じるには、コマンド インタープリターを Cmd.exe、次のように入力します。  
+コマンドインタープリター Cmd.exe を閉じるには、次のように入力します。  
 ```  
 exit  
 ```  
-## <a name="additional-references"></a>その他の参照  
+## <a name="additional-references"></a>その他の参照情報  
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)  
 

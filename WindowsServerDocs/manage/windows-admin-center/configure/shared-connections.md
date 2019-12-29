@@ -7,13 +7,13 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 03/28/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 46075154a225590376458881768ae86f74a572ad
-ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
+ms.prod: windows-server
+ms.openlocfilehash: c632c178e91b92e0a80d8c72e8ea0ce3ce37b502
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68300727"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357287"
 ---
 # <a name="configure-shared-connections-for-all-users-of-the-windows-admin-center-gateway"></a>Windows 管理センターゲートウェイのすべてのユーザーの共有接続を構成する
 

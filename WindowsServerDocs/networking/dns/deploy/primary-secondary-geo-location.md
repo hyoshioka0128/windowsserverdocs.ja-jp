@@ -1,27 +1,27 @@
 ---
 title: プライマリ-セカンダリの展開での地理的な場所ベースのトラフィック管理に DNS ポリシーを使用する
-description: このトピックは、DNS ポリシー シナリオ ガイドの Windows Server 2016 の一部です。
+description: このトピックは、Windows Server 2016 の DNS ポリシーシナリオガイドに含まれています。
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: cf66a306c7f023852cec93d6458e74a99c46c831
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 6a7836160fc7363ec3d7b2fb11e194db82970f9a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812104"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406152"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>プライマリ-セカンダリの展開での地理的な場所ベースのトラフィック管理に DNS ポリシーを使用する
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを使用すると、プライマリとセカンダリの両方の DNS サーバーが、DNS の展開に含まれている場合は、地理的な場所ベースのトラフィック管理用の DNS ポリシーを作成するのに方法について説明します。  
 
-前のシナリオでは、[のプライマリ サーバーの地理的場所ベースのトラフィック管理用に DNS ポリシーを使用する](primary-geo-location.md)、プライマリ DNS サーバーの地理的場所ベースのトラフィック管理用の DNS ポリシーを構成する手順を提供します。 インターネット インフラストラクチャにただし、DNS サーバーは広く導入されているモデルでは、プライマリ セカンダリ、場所を選択し、セキュリティで保護されたプライマリ サーバーでゾーンの書き込み可能なコピーが格納されているし、ゾーンの読み取り専用のコピーが複数のセカンダリ サーバーに保存します。   
+前のシナリオでは、プライマリサーバーでの地理的な場所[ベースのトラフィック管理に Dns ポリシーを使用](primary-geo-location.md)します。これは、プライマリ dns サーバーで地理的な場所ベースのトラフィック管理用の dns ポリシーを構成するための手順を示しています。 インターネット インフラストラクチャにただし、DNS サーバーは広く導入されているモデルでは、プライマリ セカンダリ、場所を選択し、セキュリティで保護されたプライマリ サーバーでゾーンの書き込み可能なコピーが格納されているし、ゾーンの読み取り専用のコピーが複数のセカンダリ サーバーに保存します。   
   
 セカンダリ サーバーは、要求およびプライマリ DNS サーバー上のゾーンへの新しい変更を含むゾーンの更新を受信する権限を持つ転送 (AXFR) と増分ゾーン転送 (IXFR) は、ゾーン転送のプロトコルを使用します。   
   
@@ -37,7 +37,7 @@ Woodgrove.com お客様が企業の web サイトから応答性の高いエク�
   
 Contoso クラウド サービスとは、米国とヨーロッパ、Contoso が woodgrove.com 用のポータルを順序付け、食品をホストするのに 2 つのデータ センターです。  
   
-Contoso の DNS 展開には、2 つのセカンダリ サーバーが含まれています。**SecondaryServer1**、10.0.0.2; IP アドレスを持つと**SecondaryServer2**、IP アドレス 10.0.0.3 します。 これらのセカンダリ サーバーは、2 つの異なるリージョン内のネーム サーバーとして、ヨーロッパと米国 SecondaryServer2 SecondaryServer1 で動作しています。
+Contoso の DNS 展開には、次の2つのセカンダリサーバーが含まれています。**SecondaryServer1**、IP アドレスは10.0.0.2 です。と**SecondaryServer2**、IP アドレスは10.0.0.3 です。 これらのセカンダリ サーバーは、2 つの異なるリージョン内のネーム サーバーとして、ヨーロッパと米国 SecondaryServer2 SecondaryServer1 で動作しています。
   
 プライマリの書き込み可能なゾーンのコピーがある **PrimaryServer** (IP アドレス 10.0.0.1) ゾーンの変更が行われる場所です。 セカンダリ サーバーへの転送を正規のゾーン、セカンダリ サーバーも、PrimaryServer のゾーンに新しいデータを最新されます。
   
@@ -49,8 +49,8 @@ Contoso の DNS 展開には、2 つのセカンダリ サーバーが含まれ�
 
 プライマリ-セカンダリ DNS 展開での地理的な場所ベースのトラフィック管理を展開するときに、ゾーン転送をスコープ レベルについて学習する前に転送を行う方法の通常のプライマリ セカンダリ ゾーンを理解する必要があります。 次のセクションでは、ゾーンとゾーン転送をスコープ レベルについてを説明します。  
   
-- [DNS プライマリ セカンダリ展開でゾーン転送](#zone-transfers-in-a-dns-primary-secondary-deployment)  
-- [ゾーン転送をスコープ レベル DNS プライマリ セカンダリ展開](#zone-scope-level-transfers-in-a-dns-primary-secondary-deployment)  
+- [DNS プライマリセカンダリ展開でのゾーン転送](#zone-transfers-in-a-dns-primary-secondary-deployment)  
+- [DNS プライマリセカンダリ展開でのゾーンスコープレベルの転送](#zone-scope-level-transfers-in-a-dns-primary-secondary-deployment)  
   
 ### <a name="zone-transfers-in-a-dns-primary-secondary-deployment"></a>プライマリ-セカンダリの DNS 展開でゾーン転送
 
@@ -87,16 +87,16 @@ OPT RR の値は、要求が送信されるゾーンのスコープの名前で�
   
 プライマリ-セカンダリの地理的な場所ベースのクエリ応答の DNS のポリシーを構成するには、次の手順を実行する必要があります。  
   
-- [セカンダリ ゾーンを作成します。](#create-the-secondary-zones)  
-- [プライマリ ゾーンのゾーン転送設定を構成します。](#configure-the-zone-transfer-settings-on-the-primary-zone)  
-- [DNS クライアントのサブネットをコピーします。](#copy-the-dns-client-subnets)  
-- [セカンダリ サーバー上のゾーンのスコープを作成します。](#create-the-zone-scopes-on-the-secondary-server)  
-- [DNS のポリシーを構成します。](#configure-dns-policy)  
+- [セカンダリゾーンを作成する](#create-the-secondary-zones)  
+- [プライマリゾーンのゾーン転送設定を構成する](#configure-the-zone-transfer-settings-on-the-primary-zone)  
+- [DNS クライアントのサブネットをコピーする](#copy-the-dns-client-subnets)  
+- [セカンダリサーバーでゾーンのスコープを作成する](#create-the-zone-scopes-on-the-secondary-server)  
+- [DNS ポリシーの構成](#configure-dns-policy)  
   
 次のセクションでは、詳細な構成手順を説明します。  
   
 > [!IMPORTANT]
-> 次のセクションでには、多くのパラメーターの値例にはが含まれている Windows PowerShell コマンド例にはが含まれます。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。  
+> 以下のセクションには、多くのパラメーターの値の例を含む Windows PowerShell コマンドの例が含まれています。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。  
 > 
 > メンバーシップ **DnsAdmins**, 、または同等の権限が必要で、次の手順を実行します。  
   
@@ -151,7 +151,7 @@ SecondaryServer1 と SecondaryServer2 にレプリケートするゾーンのセ
   
 ### <a name="create-the-zone-scopes-on-the-secondary-server"></a>セカンダリ サーバーでゾーンのスコープを作成します。
 
-セカンダリ サーバーでは、ゾーンのスコープを作成する必要があります。 DNS では、xfr 可能をプライマリ サーバーから要求をゾーンのスコープも起動します。 プライマリ サーバー上のゾーンのスコープの変更、ゾーンのスコープ情報を含む通知はセカンダリ サーバーに送信されます。 セカンダリ サーバーは、増分の変更で、ゾーンのスコープを更新できます。  
+セカンダリ サーバーでは、ゾーンのスコープを作成する必要があります。 DNS では、ゾーンのスコープによって、プライマリサーバーからの XFRs の要求も開始されます。 プライマリ サーバー上のゾーンのスコープの変更、ゾーンのスコープ情報を含む通知はセカンダリ サーバーに送信されます。 セカンダリ サーバーは、増分の変更で、ゾーンのスコープを更新できます。  
   
 次の Windows PowerShell コマンドを使用すると、セカンダリ サーバーでゾーンのスコープを作成します。  
   

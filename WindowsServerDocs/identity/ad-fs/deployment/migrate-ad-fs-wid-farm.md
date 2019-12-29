@@ -1,34 +1,34 @@
 ---
-title: AD FS 2.0 フェデレーション サーバーの WID ファームを移行します。
-description: Windows Server 2012 への AD FS 2.0 サーバー WID ファームの移行に関する情報を提供します。
+title: AD FS 2.0 フェデレーションサーバー WID ファームの移行
+description: AD FS 2.0 server WID ファームを Windows Server 2012 に移行する方法について説明します。
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 06/28/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c85a02ae6a71cf31fd172ec012a14cd81c126e16
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 89da3de4bc626e12a1fc34752841f2de1afb5322
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445653"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408241"
 ---
-# <a name="migrate-an-ad-fs-20-wid-farm"></a>AD FS 2.0 WID ファームを移行します。  
-このドキュメントは、広告の移行に関する詳細な情報を提供します FS 2.0 Windows Internal Database (WID) ファームを Windows Server 2012。
+# <a name="migrate-an-ad-fs-20-wid-farm"></a>AD FS 2.0 WID ファームの移行  
+このドキュメントでは、AD FS 2.0 Windows Internal Database (WID) ファームを Windows Server 2012 に移行する方法について詳しく説明します。
 
-## <a name="migrate-an-ad-fs-wid-farm"></a>AD FS WID ファームを移行します。
+## <a name="migrate-an-ad-fs-wid-farm"></a>AD FS WID ファームの移行
 WID ファームを Windows Server 2012 に移行するには、次の手順を実行します。  
   
-1.  すべてのノード (サーバー) で、WID ファームを確認し、実行手順では、 [WID ファームの移行の準備](prepare-to-migrate-a-wid-farm.md)します。  
+1.  WID ファーム内のすべてのノード (サーバー) について、「 [wid ファームの移行の準備](prepare-to-migrate-a-wid-farm.md)」の手順を確認して実行します。  
   
 2.  プライマリ ノード以外をロード バランサーから削除します。  
   
-3.  このサーバーから Windows Server 2008 R2 または Windows Server 2012 への Windows Server 2008 上のオペレーティング システムのアップグレードします。 詳細については、「[Windows Server 2012 のインストール](https://technet.microsoft.com/library/jj134246.aspx)」を参照してください。  
+3.  このサーバーのオペレーティングシステムを windows Server 2008 R2 または Windows Server 2008 から Windows Server 2012 にアップグレードします。 詳細については、「[Windows Server 2012 のインストール](https://technet.microsoft.com/library/jj134246.aspx)」を参照してください。  
   
 > [!IMPORTANT]
->  オペレーティング システムをアップグレードすると、このサーバーの AD FS 構成が失われ、AD FS 2.0 サーバーの役割が削除されます。 Windows Server 2012 の AD FS サーバーの役割が代わりに、インストールされているが構成されていません。 元の AD FS 構成を作成し、その他の AD FS 設定を復元して、フェデレーション サーバーの移行を完了する必要があります。  
+>  オペレーティング システムをアップグレードすると、このサーバーの AD FS 構成が失われ、AD FS 2.0 サーバーの役割が削除されます。 代わりに、Windows Server 2012 AD FS サーバーロールがインストールされますが、構成されていません。 元の AD FS 構成を作成し、その他の AD FS 設定を復元して、フェデレーション サーバーの移行を完了する必要があります。  
   
 4. このサーバーで元の AD FS 構成を作成します。  
   
@@ -39,9 +39,9 @@ WID ファームを Windows Server 2012 に移行するには、次の手順を�
 >  
 > 表示されたら、**フェデレーション サービス名の指定**で、準備 WID ファームの移行」で記録したのと同じ SSL 証明書を選択してください ページで、 [to Migrate the AD FS 2.0 フェデレーション サーバーを準備](prepare-to-migrate-a-wid-farm.md).  
   
-5. このサーバーで AD FS Web ページを更新します。 移行の準備中、カスタマイズされた AD FS web ページをバックアップしている場合は、バックアップ データを使用して、AD FS web ページで既定で作成された既定値を上書きする必要があります、 **%systemdrive%\inetpub\adfs\ls**ディレクトリWindows Server 2012 で AD FS 構成の結果。  
+5. このサーバーで AD FS Web ページを更新します。 移行の準備中にカスタマイズされた AD FS web ページをバックアップした場合は、Windows Server 2012 の AD FS 構成の結果として **%systemdrive%\inetpub\adfs\ls**ディレクトリに既定で作成された既定の AD FS web ページを、バックアップデータを使用して上書きする必要があります。  
   
-6. ロード バランサーに Windows Server 2012 にアップグレードしたサーバーを追加します。  
+6. Windows Server 2012 にアップグレードしたばかりのサーバーをロードバランサーに追加します。  
   
 7. WID ファームのその他のセカンダリ サーバーについて、手順 1. ～ 6. を繰り返します。  
   
@@ -51,10 +51,10 @@ WID ファームを Windows Server 2012 に移行するには、次の手順を�
   
 10. Windows PowerShell を使用して、WID ファームの元のプライマリ サーバーをセカンダリ サーバーに降格します。 Windows PowerShell を開き、コマンド `PSH:>add-pssnapin “Microsoft.adfs.powershell”`を実行して、AD FS コマンドレットを Windows PowerShell セッションに追加します。 次に、 `PSH:> Set-AdfsSyncProperties – Role SecondaryComputer –PrimaryComputerName <FQDN of the Primary Federation Server>`コマンドを実行し、元のプライマリ サーバーをセカンダリ サーバーに降格します。  
   
-11. Windows Server 2012 から Windows Server 2008 R2 または Windows Server 2008、WID ファームのこの最後のノード (サーバー) 上のオペレーティング システムのアップグレードします。 詳細については、「[Windows Server 2012 のインストール](https://technet.microsoft.com/library/jj134246.aspx)」を参照してください。  
+11. WID ファームのこの最後のノード (サーバー) にあるオペレーティングシステムを Windows Server 2008 R2 または Windows Server 2008 から Windows Server 2012 にアップグレードします。 詳細については、「[Windows Server 2012 のインストール](https://technet.microsoft.com/library/jj134246.aspx)」を参照してください。  
   
 > [!IMPORTANT]
->  オペレーティング システムをアップグレードすると、このサーバーの AD FS 構成が失われ、AD FS 2.0 サーバーの役割が削除されます。 Windows Server 2012 の AD FS サーバーの役割が代わりに、インストールされているが構成されていません。 元の AD FS 構成を手動で作成し、その他の AD FS 設定を復元して、フェデレーション サーバーの移行を完了する必要があります。  
+>  オペレーティング システムをアップグレードすると、このサーバーの AD FS 構成が失われ、AD FS 2.0 サーバーの役割が削除されます。 代わりに、Windows Server 2012 AD FS サーバーロールがインストールされますが、構成されていません。 元の AD FS 構成を手動で作成し、その他の AD FS 設定を復元して、フェデレーション サーバーの移行を完了する必要があります。  
   
 12. WID ファームのこの最後のノード (サーバー) で元の AD FS 構成を作成します。  
   
@@ -65,15 +65,15 @@ WID ファームを Windows Server 2012 に移行するには、次の手順を�
 >  
 > 表示されたら、**フェデレーション サービス名の指定**で記録したのと同じ SSL 証明書を選択してください ページで、 [to Migrate the AD FS 2.0 フェデレーション サーバーを準備](prepare-to-migrate-a-wid-farm.md)します。  
   
-13. WID ファームのこの最後のサーバーで AD FS Web ページを更新します。 移行の準備中、カスタマイズされた AD FS web ページをバックアップしている場合は、バックアップ データを使用して、AD FS web ページで既定で作成された既定値を上書きする、 **%systemdrive%\inetpub\adfs\ls**の結果としてディレクトリWindows Server 2012 で AD FS の構成。  
+13. WID ファームのこの最後のサーバーで AD FS Web ページを更新します。 移行の準備中にカスタマイズされた AD FS web ページをバックアップした場合は、Windows Server 2012 の AD FS 構成の結果として **%systemdrive%\inetpub\adfs\ls**ディレクトリに既定で作成された既定の AD FS web ページを、バックアップデータを使用して上書きします。  
   
-14. ロード バランサーに Windows Server 2012 にアップグレードした WID ファームのこの最後のサーバーを追加します。  
+14. Windows Server 2012 にアップグレードした WID ファームの最後のサーバーをロードバランサーに追加します。  
   
 15. カスタム属性ストアなど、その他の AD FS カスタマイズを復元します。  
   
-## <a name="next-steps"></a>次の手順
- [AD FS 2.0 フェデレーション サーバーの移行を準備します。](prepare-to-migrate-ad-fs-fed-server.md)   
- [AD FS 2.0 フェデレーション サーバー プロキシの移行を準備します。](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [AD FS 2.0 フェデレーション サーバーを移行します。](migrate-the-ad-fs-fed-server.md)   
- [AD FS 2.0 フェデレーション サーバー プロキシを移行します。](migrate-the-ad-fs-2-fed-server-proxy.md)   
+## <a name="next-steps"></a>次のステップ
+ [AD FS 2.0 フェデレーションサーバー  の移行の準備](prepare-to-migrate-ad-fs-fed-server.md)  
+ [AD FS 2.0 フェデレーションサーバープロキシの移行の準備](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [AD FS 2.0 フェデレーションサーバー  を移行します](migrate-the-ad-fs-fed-server.md)。  
+ [AD FS 2.0 フェデレーションサーバープロキシ  を移行します](migrate-the-ad-fs-2-fed-server-proxy.md)。  
  [AD FS 1.1 Web エージェントの移行](migrate-the-ad-fs-web-agent.md)

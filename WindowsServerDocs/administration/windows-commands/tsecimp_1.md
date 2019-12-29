@@ -2,7 +2,7 @@
 title: tsecimp
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 85fea84ed9dcb0f85bfa80e56f0c2c04d2c8e85b
-ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
+ms.openlocfilehash: 1c596d6d24a611882c0ecf234c22c83a268ec53c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314312"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363933"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -141,7 +141,6 @@ tsecimp /d
     ```
 
 -   次のサンプル出力は、現在の TAPI 構成を表示するために **/d**コマンドラインオプションを指定した後に表示されます。 テレフォニープロバイダーごとに、関連付けられた回線デバイスと、各回線デバイスに関連付けられているアドレスおよびユーザーが一覧表示されます。  
-
     ```
     NDIS Proxy TAPI Service Provider
             Line: "WAN Miniport (L2TP)"

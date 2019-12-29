@@ -1,0 +1,201 @@
+### YamlMime:Hub
+title: Windows Server に関するドキュメント
+summary: Windows Server は、ワークグループからデータ センターに至るまで、接続型アプリケーション、ネットワーク、および Web サービスのインフラストラクチャを構築するためのプラットフォームです。
+metadata:
+  title: Windows Server に関するドキュメント - Microsoft Docs
+  description: Windows Server は、ワークグループからデータ センターに至るまで、接続型アプリケーション、ネットワーク、および Web サービスのインフラストラクチャを構築するためのプラットフォームです。
+  author: eross-msft
+  manager: daveba
+  ms.service: windows-server-threshold
+  ms.topic: hub-page
+  ms.date: 06/06/2019
+  ms.author: lizross
+  ms.openlocfilehash: b16b9235cbcb149ec7f10ce76b0cf594e9bb2a29
+  ms.sourcegitcommit: 30de12eebeb0fc79567d6bb6ab513692ea2415d3
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74853577"
+highlightedContent:
+  items:
+  - title: Windows Server 2019 の新着情報
+    itemType: whats-new
+    url: /windows-server/get-started-19/whats-new-19
+  - title: Windows Server 2019 の概要
+    itemType: overview
+    url: /windows-server/get-started-19/get-started-19
+  - title: Windows Admin Center
+    itemType: how-to-guide
+    url: /windows-server/manage/windows-admin-center/overview
+  - title: ハイパーコンバージド インフラストラクチャ
+    itemType: overview
+    url: /windows-server/hyperconverged/index
+  - title: Azure ハイブリッド サービスへの接続
+    itemType: how-to-guide
+    url: /windows-server/azure-hybrid-services/index
+  - title: Windows Server 2016 の概要
+    itemType: how-to-guide
+    url: /windows-server/get-started/server-basics
+  - title: Windows Server 2008 R2 および Windows Server 2008 のサービスの終了
+    itemType: overview
+    url: /windows-server/get-started/modernize-windows-server-2008
+  - title: Windows Insider Program for Server
+    itemType: overview
+    url: /windows-insider/at-work/
+conceptualContent:
+  items:
+  - title: Windows Server のアップグレード
+    links:
+    - url: /windows-server/upgrade/upgrade-2016-to-2019
+      itemType: how-to-guide
+      text: Windows Server 2016 のアップグレード
+    - url: /windows-server/upgrade/upgrade-2012r2-to-2019
+      itemType: how-to-guide
+      text: Windows Server 2012 R2 のアップグレード
+    - url: /windows-server/upgrade/upgrade-2012-to-2016
+      itemType: how-to-guide
+      text: Windows Server 2012 のアップグレード
+    - url: /windows-server/upgrade/upgrade-2008r2-to-2012r2
+      itemType: how-to-guide
+      text: Windows Server 2008 R2 のアップグレード
+    footerLink:
+      url: /windows-server/upgrade/upgrade-overview
+      text: さらに詳しく
+  - title: ID とアクセス
+    links:
+    - url: /windows-server/identity/ad-ds/ad-ds-getting-started
+      itemType: overview
+      text: Active Directory Domain Services (AD DS) の概要
+    - url: /windows-server/identity/active-directory-federation-services
+      itemType: overview
+      text: Active Directory フェデレーション サービス (AD FS)
+    - url: /windows-server/identity/securing-privileged-access/securing-privileged-access
+      itemType: concept
+      text: 特権アクセスの保護
+    footerLink:
+      url: /windows-server/identity/identity-and-access
+      text: さらに詳しく
+  - title: フェールオーバー クラスタリング
+    links:
+    - url: /windows-server/failover-clustering/whats-new-in-failover-clustering
+      itemType: whats-new
+      text: フェールオーバー クラスタリングの新機能
+    - url: /windows-server/failover-clustering/create-failover-cluster
+      itemType: how-to-guide
+      text: フェールオーバー クラスターを作成する
+    - url: /windows-server/failover-clustering/cluster-aware-updating
+      itemType: overview
+      text: クラスター対応更新の概要
+    footerLink:
+      url: /windows-server/failover-clustering/failover-clustering-overview
+      text: さらに詳しく
+  - title: 管理
+    links:
+    - url: /windows-server/manage/windows-admin-center/overview
+      itemType: overview
+      text: Windows Admin Center を使用して環境を管理する
+    - url: /windows-server/manage/system-insights/overview
+      itemType: overview
+      text: システム インサイトの概要
+    - url: /windows-server/administration/performance-tuning/
+      itemType: overview
+      text: Windows Server 2016 のパフォーマンス チューニング ガイドライン
+    footerLink:
+      url: /windows-server/administration/manage-windows-server
+      text: さらに詳しく
+  - title: ネットワーク
+    links:
+    - url: /windows-server/networking/what-s-new-in-networking
+      itemType: whats-new
+      text: ネットワークの新機能
+    - url: /windows-server/networking/sdn/
+      itemType: overview
+      text: ソフトウェア定義ネットワーク (SDN) の概要
+    - url: /windows-server/networking/sdn/technologies/network-controller/network-controller
+      itemType: overview
+      text: ネットワーク コントローラー
+    footerLink:
+      url: /windows-server/networking/networking
+      text: さらに詳しく
+  - title: リモート
+    links:
+    - url: /windows-server/remote/remote-desktop-services/welcome-to-rds
+      itemType: overview
+      text: リモート デスクトップ サービスの概要
+    - url: /windows-server/remote/remote-desktop-services/clients/remote-desktop-clients
+      itemType: overview
+      text: リモート デスクトップ クライアント
+    - url: /windows-server/remote/remote-desktop-services/clients/remote-desktop-allow-access
+      itemType: how-to-guide
+      text: リモート デスクトップ - PC へのアクセスを許可する
+    footerLink:
+      url: /windows-server/remote/index
+      text: さらに詳しく
+  - title: セキュリティおよび保証
+    links:
+    - url: /windows-server/security/windows-authentication/windows-authentication-overview
+      itemType: overview
+      text: Windows 認証の概要
+    - url: /windows-server/security/group-managed-service-accounts/getting-started-with-group-managed-service-accounts
+      itemType: how-to-guide
+      text: グループ管理サービス アカウントの概要
+    - url: /windows-server/security/windows-authentication/credentials-processes-in-windows-authentication
+      itemType: overview
+      text: Windows 認証での資格情報の処理
+    footerLink:
+      url: /windows-server/security/security-and-assurance
+      text: さらに詳しく
+  - title: ストレージ
+    links:
+    - url: /windows-server/storage/whats-new-in-storage
+      itemType: whats-new
+      text: 記憶域の新機能
+    - url: /windows-server/storage/disk-management/overview-of-disk-management
+      itemType: overview
+      text: ディスク管理の概要
+    - url: /windows-server/storage/storage-spaces/understand-quorum
+      itemType: overview
+      text: クラスターとプール クォーラムの概要
+    footerLink:
+      url: /windows-server/storage/storage
+      text: さらに詳しく
+  - title: トラブルシューティング
+    links:
+    - url: /windows-server/manage/windows-admin-center/support/troubleshooting
+      itemType: how-to-guide
+      text: Windows Admin Center のトラブルシューティング
+    - url: /windows-server/failover-clustering/troubleshooting-using-wer-reports
+      itemType: how-to-guide
+      text: Windows エラー報告を使用したフェールオーバー クラスターのトラブルシューティング
+    - url: /windows-server/storage/disk-management/troubleshooting-disk-management
+      itemType: how-to-guide
+      text: ディスク管理のトラブルシューティング
+    footerLink:
+      url: /windows-server/troubleshoot/windows-server-troubleshooting
+      text: さらに詳しく
+  - title: 仮想化
+    links:
+    - url: /virtualization/windowscontainers/
+      itemType: overview
+      text: Windows のコンテナーの概要
+    - url: /windows-server/virtualization/hyper-v/hyper-v-on-windows-server
+      itemType: overview
+      text: Windows Server 上の Hyper-V
+    - url: /windows-server/virtualization/hyper-v-virtual-switch/hyper-v-virtual-switch
+      itemType: overview
+      text: Hyper-V 仮想スイッチの概要
+    footerLink:
+      url: /windows-server/virtualization/virtualization
+      text: さらに詳しく
+additionalContent:
+  sections:
+  - items:
+    - title: Windows Server 2012 R2 および Windows Server 2012
+      summary: Windows Server 2012 R2 および Windows Server 2012 を管理する IT 担当者向けの技術コンテンツです。
+      url: https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh801901(v=ws.11)
+    - title: Windows Server 2008 R2 および Windows Server 2008
+      summary: Windows Server 2008 R2 および Windows Server 2008 を管理する IT 担当者向けの技術コンテンツです。
+      url: https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd349801(v=ws.10)
+    - title: Windows Server 2008 開発者向けストーリー
+      summary: Windows Server 2008 の新機能や拡張機能のいくつかを検討している開発者やその他のテクノロジの専門家および管理者向けのコンテンツです。
+      url: https://docs.microsoft.com/previous-versions/windows/server-2008/bb852234(v=msdn.10)

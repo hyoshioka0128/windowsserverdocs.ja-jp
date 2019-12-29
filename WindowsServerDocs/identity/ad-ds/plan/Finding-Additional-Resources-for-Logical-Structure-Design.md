@@ -7,55 +7,55 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 56b49993d2bc58381bfb3ad4d8f54b9d95ed5dd0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 257e78b58962b5a91d1c3845efdd1452a93efdfb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883893"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402577"
 ---
 # <a name="finding-additional-resources-for-logical-structure-design"></a>論理構造の設計に関するその他のリソースの検索
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-Active Directory Domain Services (AD DS) の詳細については、次のドキュメントで、その他のリソースの論理構造の設計をご覧ください。  
+論理構造の設計に関するその他のリソースについては、Active Directory Domain Services (AD DS) に関する次のドキュメントを参照してください。  
   
-- サイトのトポロジ設計に関する詳細については、次を参照してください。[サイト トポロジの Windows Server 2008 AD DS の設計](Designing-the-Site-Topology.md)します。  
+- サイトトポロジの設計の詳細については、「 [Windows Server 2008 用のサイトトポロジの設計 AD DS](Designing-the-Site-Topology.md)」を参照してください。  
 
-- 提案されたフォレスト、ドメイン、ドメイン ネーム システム (DNS) インフラストラクチャ、および組織単位 (OU) の設計を文書化するためにワークシートからのジョブ エイド Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip をダウンロードします。Windows Server 2003 展開キット ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558))。  
+- 提案されたフォレスト、ドメイン、ドメインネームシステム (DNS) インフラストラクチャ、および組織単位 (OU) の設計を文書化するのに役立つワークシートについては、ジョブエイドから Job_Aids_Designing_and_Deploying_Directory_and_Security_Services をダウンロードしてください。Windows Server 2003 Deployment Kit ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558))。  
   
-- 認証の委任と制約付き委任の詳細については、認証を委任するを参照してください ([https://go.microsoft.com/fwlink/?LinkID=106614](https://go.microsoft.com/fwlink/?LinkID=106614))。  
+- 委任された認証と制約付き委任の詳細については、「認証の委任 ([https://go.microsoft.com/fwlink/?LinkID=106614](https://go.microsoft.com/fwlink/?LinkID=106614))」を参照してください。  
   
-- AD DS を使用するためのファイアウォールを構成する方法の詳細については、ファイアウォールによってネットワーク セグメント化されたで Active Directory を参照してください ([https://go.microsoft.com/fwlink/?LinkId=37928](https://go.microsoft.com/fwlink/?LinkId=37928))。  
+- AD DS で使用するファイアウォールの構成の詳細については、「ファイアウォールでセグメント化されたネットワークでの Active Directory」 ([https://go.microsoft.com/fwlink/?LinkId=37928](https://go.microsoft.com/fwlink/?LinkId=37928)) を参照してください。  
   
-- Active Directory ドメインを Windows Server 2008 にアップグレードする方法の詳細については、次を参照してください。[を Windows Server 2008 および Windows Server 2008 R2 の AD DS ドメインの Active Directory ドメインのアップグレード](https://technet.microsoft.com/library/cc731188.aspx)します。  
+- Active Directory ドメインを Windows Server 2008 にアップグレードする方法の詳細については、「 [Active Directory ドメインを Windows server 2008 および Windows server 2008 R2 AD DS ドメインにアップグレードする](https://technet.microsoft.com/library/cc731188.aspx)」を参照してください。  
   
-- AD DS ドメイン内およびフォレスト間での再構築の詳細については、Active Directory 移行ツール バージョン 3.1 を参照してください。 移行ガイド ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678))。  
+- フォレスト内およびフォレスト間の AD DS ドメインの再構築の詳細については、「Active Directory 移行ツールバージョン3.1 移行ガイド ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678))」を参照してください。  
   
-- フォレスト ルート ドメインの展開に関する詳細については、次を参照してください。 [Windows Server 2008 フォレスト ルート ドメインを展開する](https://technet.microsoft.com/library/cc731174.aspx)します。  
+- フォレストルートドメインの展開の詳細については、「 [Windows Server 2008 のフォレストルートドメインの展開](https://technet.microsoft.com/library/cc731174.aspx)」を参照してください。  
   
-- DNS の展開に関する詳細については、デプロイ ドメイン ネーム システム (DNS) を参照してください ([https://go.microsoft.com/fwlink/?LinkId=93656](https://go.microsoft.com/fwlink/?LinkId=93656))。  
+- DNS の展開の詳細については、「ドメインネームシステム (DNS) の展開 ([https://go.microsoft.com/fwlink/?LinkId=93656](https://go.microsoft.com/fwlink/?LinkId=93656))」を参照してください。  
   
-- DNS 階層と名前解決プロセスの詳細については、DNS のテクニカル リファレンスを参照してください ([https://go.microsoft.com/fwlink/?LinkId=106636](https://go.microsoft.com/fwlink/?LinkId=106636))。 DNS は AD DS をサポートする方法の詳細については、Active Directory に関するテクニカル リファレンスの DNS のサポートを参照して ([https://go.microsoft.com/fwlink/?LinkId=106660](https://go.microsoft.com/fwlink/?LinkId=106660))。  
+- DNS 階層と名前解決プロセスの詳細については、DNS のテクニカルリファレンス ([https://go.microsoft.com/fwlink/?LinkId=106636](https://go.microsoft.com/fwlink/?LinkId=106636)) を参照してください。 DNS が AD DS をサポートする方法の詳細については、「Active Directory テクニカルリファレンスの DNS サポート ([https://go.microsoft.com/fwlink/?LinkId=106660](https://go.microsoft.com/fwlink/?LinkId=106660))」を参照してください。  
   
-- WINS の詳細については、WINS のテクニカル リファレンスを参照してください ([https://go.microsoft.com/fwlink/?LinkId=106661](https://go.microsoft.com/fwlink/?LinkId=106661))。  
+- WINS の詳細については、「WINS テクニカルリファレンス ([https://go.microsoft.com/fwlink/?LinkId=106661](https://go.microsoft.com/fwlink/?LinkId=106661))」を参照してください。  
   
-- 不整合な名前空間を作成する方法の詳細については、不整合のある Namespace を作成するを参照してください ([https://go.microsoft.com/fwlink/?LinkID=106638](https://go.microsoft.com/fwlink/?LinkID=106638))。  
+- 不整合な名前空間を作成する方法の詳細については、「不整合な名前空間を作成する ([https://go.microsoft.com/fwlink/?LinkID=106638](https://go.microsoft.com/fwlink/?LinkID=106638))」を参照してください。  
   
-- サービス プリンシパル名 (Spn) を設定する方法についての詳細については、サービスのログオン失敗 Due Spn を正しく設定を参照してください ([https://go.microsoft.com/fwlink/?LinkId=102304](https://go.microsoft.com/fwlink/?LinkId=102304))。  
+- サービスプリンシパル名 (Spn) の設定の詳細については、「Spn が正しく設定されていないためサービスのログオンが失敗する ([https://go.microsoft.com/fwlink/?LinkId=102304](https://go.microsoft.com/fwlink/?LinkId=102304))」を参照してください。  
   
-- 下位の管理者にするには Spn を変更するアクセス許可を委任する方法の詳細については、Spn を変更する権限を委任するを参照してください ([https://go.microsoft.com/fwlink/?LinkID=106639](https://go.microsoft.com/fwlink/?LinkID=106639))。  
+- Spn を下位管理者に変更するアクセス許可を委任する方法の詳細については、「Spn を変更するための権限を委任する ([https://go.microsoft.com/fwlink/?LinkID=106639](https://go.microsoft.com/fwlink/?LinkID=106639))」を参照してください。  
   
-- ドメイン コント ローラーの証明書の要件の詳細については、321051 でマイクロソフト サポート技術情報の記事を参照してください ([https://go.microsoft.com/fwlink/?LinkId=102307](https://go.microsoft.com/fwlink/?LinkId=102307))。  
+- ドメインコントローラー証明書の要件の詳細については、Microsoft サポート技術情報の記事 321051 ([https://go.microsoft.com/fwlink/?LinkId=102307](https://go.microsoft.com/fwlink/?LinkId=102307)) を参照してください。  
   
-- 詳細についてはライトウェイト ディレクトリ アクセス プロトコル (LDAP) の Secure Sockets Layer (SSL) (LDAPS) の認証と、関連する更新プログラムを Windows Server 2003、932834 でマイクロソフト サポート技術情報の記事を参照してください ([ https://go.microsoft.com/fwlink/?LinkId=102308 ](https://go.microsoft.com/fwlink/?LinkId=102308)).  
+- ライトウェイトディレクトリアクセスプロトコル (LDAP) over Secure Sockets Layer (LDAPS) 認証および Windows Server 2003 の関連する更新プログラムの詳細については、Microsoft サポート技術情報の記事 932834 ([https://go.microsoft.com/fwlink/?LinkId=102308](https://go.microsoft.com/fwlink/?LinkId=102308)) を参照してください。  
   
-- グループ ポリシー インフラストラクチャの詳細については、グループ ポリシー インフラストラクチャの設計を参照してください ([https://go.microsoft.com/fwlink/?LinkID=106655](https://go.microsoft.com/fwlink/?LinkID=106655))。  
+- グループポリシーインフラストラクチャの詳細については、「グループポリシーインフラストラクチャの設計 ([https://go.microsoft.com/fwlink/?LinkID=106655](https://go.microsoft.com/fwlink/?LinkID=106655))」を参照してください。  
   
-- 読み取り専用ドメイン コント ローラー (Rodc) の詳細については、AD DS を参照してください。読み取り専用ドメイン コント ローラー ([https://go.microsoft.com/fwlink/?LinkID=106616](https://go.microsoft.com/fwlink/?LinkID=106616))。  
+- 読み取り専用ドメインコントローラー (Rodc) の詳細については、AD DS を参照してください。読み取り専用ドメインコントローラー ([https://go.microsoft.com/fwlink/?LinkID=106616](https://go.microsoft.com/fwlink/?LinkID=106616))。  
   
-- きめ細かなパスワードおよびアカウント ロックアウト ポリシーの詳細については、細かいパスワードおよびアカウント ロックアウトのポリシー構成のステップ バイ ステップ ガイドを参照してください。 ([https://go.microsoft.com/fwlink/?LinkID=91477](https://go.microsoft.com/fwlink/?LinkID=91477))。  
+- 細かい設定が可能なパスワードとアカウントロックアウトのポリシーの詳細については、細かい設定が可能なパスワードとアカウントロックアウトのポリシー構成 ([https://go.microsoft.com/fwlink/?LinkID=91477](https://go.microsoft.com/fwlink/?LinkID=91477)) に関するステップバイステップガイドを参照してください。  
   
-- AD DS での名前付け規則の詳細については、909264 でマイクロソフト サポート技術情報の記事を参照してください ([https://go.microsoft.com/fwlink/?LinkID=106629](https://go.microsoft.com/fwlink/?LinkID=106629))。  
+- AD DS での名前付け規則の詳細については、Microsoft サポート技術情報の記事 909264 ([https://go.microsoft.com/fwlink/?LinkID=106629](https://go.microsoft.com/fwlink/?LinkID=106629)) を参照してください。  

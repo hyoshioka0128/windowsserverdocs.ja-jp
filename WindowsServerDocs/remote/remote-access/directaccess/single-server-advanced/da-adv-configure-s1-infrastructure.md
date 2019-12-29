@@ -1,9 +1,9 @@
 ---
-title: 手順 1 は、高度な DirectAccess インフラストラクチャを構成します。
-description: このトピックは高度な設定を Windows Server 2016 での単一の DirectAccess サーバー展開ガイドの一部です。
+title: 手順 1. 詳細な DirectAccess インフラストラクチャの構成
+description: このトピックは、「Windows Server 2016 の詳細設定を使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: 43abc30a-300d-4752-b845-10a6b9f32244
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 42cec0d2e6ded443d24d787191bcb72a17a92306
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 30705a9aa55cdc652280c27c327cf865a47c5a11
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283531"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404938"
 ---
-# <a name="step-1-configure-advanced-directaccess-infrastructure"></a>手順 1 は、高度な DirectAccess インフラストラクチャを構成します。
+# <a name="step-1-configure-advanced-directaccess-infrastructure"></a>手順 1. 詳細な DirectAccess インフラストラクチャの構成
 
->適用先:Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、IPv4 と IPv6 の混在環境で単一の DirectAccess サーバーを使用する、高度なリモート アクセスの展開に必要なインフラストラクチャを構成する方法について説明します。 展開の手順を開始する前に記載されている計画の手順が完了したことを確認 [高度な DirectAccess 展開を計画](../../../remote-access/directaccess/single-server-advanced/Plan-an-Advanced-DirectAccess-Deployment.md)します。  
   
@@ -41,10 +41,10 @@ ms.locfileid: "67283531"
 > [!NOTE]  
 > このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
   
-## <a name="ConfigNetworkSettings"></a>1.1 サーバーのネットワーク設定を構成します。  
+## <a name="ConfigNetworkSettings"></a>1.1 サーバーのネットワーク設定を構成する  
 次のネットワーク インターフェイス設定は、IPv4 と IPv6 を使用する環境での単一サーバーの展開に必要です。 使用してすべての IP アドレスが構成されている **アダプターの設定を変更する** で、 **Windows ネットワークと共有センター**します。  
   
-**エッジ トポロジ**  
+**エッジトポロジ**  
   
 -   インターネットに接続された連続する 2 つの静的パブリック IPv4 または IPv6 アドレス  
   
@@ -53,13 +53,13 @@ ms.locfileid: "67283531"
   
 -   単一の内部静的 IPv4 または IPv6 アドレス  
   
-**(2 つのネットワーク アダプター) と NAT デバイスの内側**  
+**NAT デバイスの内側 (2 つのネットワークアダプターを使用)**  
   
 -   インターネットに接続された単一の静的 IPv4 または IPv6 アドレス  
   
 -   ネットワークに接続された単一の内部静的 IPv4 または IPv6 アドレス  
   
-**(1 つのネットワーク アダプター) を使用した NAT デバイスの内側**  
+**NAT デバイスの内側 (1 つのネットワークアダプターを使用)**  
   
 -   ネットワークに接続された単一の内部静的 IPv4 または IPv6 アドレス  
   
@@ -75,7 +75,7 @@ ms.locfileid: "67283531"
 >     Save-NetGPO "GPOSession $gposession  
 >     ```  
   
-## <a name="BKMK_forcetunnel"></a>1.2 強制トンネリングを構成します。  
+## <a name="BKMK_forcetunnel"></a>1.2 強制トンネリングを構成する  
 強制トンネリングは、リモート アクセスのセットアップ ウィザードを使用して構成できます。 リモート クライアントの構成ウィザードにチェック ボックスとして表示されます。 この設定は DirectAccess クライアントのみに影響します。 VPN を有効にしている場合、VPN クライアントは既定で強制トンネリングを使用します。 管理者は、VPN クライアントの設定をクライアント プロファイルから変更できます。  
   
 強制トンネリングのチェック ボックスを選択すると、次の操作が実行されます。  
@@ -98,14 +98,14 @@ Set-DAClientDNSConfiguration "DNSSuffix "." "ProxyServer <Name of the proxy serv
 > [!NOTE]  
 > 組織が DirectAccess クライアントに Web プロキシを使用してインターネット リソースにアクセスしていて、企業プロキシで内部ネットワーク リソースが処理できない場合、DirectAccess クライアントは、イントラネットの外側の内部リソースにアクセスできません。 このようなシナリオで、DirectAccess クライアントが内部リソースにアクセスするには、インフラストラクチャ ウィザードの DNS ページを使用して、内部ネットワーク サフィックスに手動で NRPT エントリを作成する必要があります。 これらの NRPT サフィックスにプロキシ設定を適用しないでください。 サフィックスには、既定の DNS サーバー エントリが設定される必要があります。  
   
-## <a name="ConfigRouting"></a>1.3 企業ネットワークでのルーティングを構成します。  
+## <a name="ConfigRouting"></a>1.3 企業ネットワークでルーティングを構成する  
 次のように、企業ネットワークでルーティングを構成します。  
   
 -   ネイティブ IPv6 が組織に展開されている場合、内部ネットワークのルーターが IPv6 トラフィックを DirectAccess サーバーで返すルートを追加します。  
   
 -   手動でルートを構成する、組織"s IPv4 と IPv6 の DirectAccess サーバーにします。 組織 (/48) の IPv6 プレフィックスが付いたすべてのトラフィックが内部ネットワークに転送されるように、公開されたルートを追加します。 IPv4 トラフィックの場合は、IPv4 トラフィックが内部ネットワークに転送されるように、明示的なルートを追加します。  
   
-## <a name="ConfigFirewalls"></a>1.4 ファイアウォールを構成します。  
+## <a name="ConfigFirewalls"></a>1.4 ファイアウォールを構成する  
 展開で追加のファイアウォールを使用し、DirectAccess サーバーが IPv4 インターネット上にある場合は、次のインターネットに接続するファイアウォール例外をリモート アクセス トラフィックに適用します。  
   
 -   Teredo トラフィック"ユーザー データグラム プロトコル (UDP) 宛先ポート 3544 受信と、udp 発信元ポート 3544 の送信します。  
@@ -136,7 +136,7 @@ Set-DAClientDNSConfiguration "DNSSuffix "." "ProxyServer <Name of the proxy serv
   
 -   すべての IPv4/IPv6 トラフィックに対する ICMP  
   
-## <a name="ConfigCAs"></a>1.5 Ca および証明書を構成します。  
+## <a name="ConfigCAs"></a>1.5 Ca と証明書を構成する  
 Windows Server 2012 でのリモート アクセスでは、コンピューターの認証に証明書を使用して、組み込みの Kerberos プロキシ ユーザー名とパスワードを使用して認証を使用するかを選択することができます。 DirectAccess サーバーで、IP-HTTPS 証明書も構成する必要があります。  
   
 詳細については、次を参照してください。 [Active Directory Certificate Services](https://technet.microsoft.com/library/cc770357.aspx)します。  
@@ -155,7 +155,7 @@ IPsec 認証を使用するには、DirectAccess サーバーとすべての Dir
   
 3.  必要に応じて、証明書テンプレートを自動登録に構成します。 詳細については、次を参照してください。 [Configure Certificate Autoenrollment](https://technet.microsoft.com/library/cc731522.aspx)します。  
   
-### <a name="ConfigCertTemp"></a>1.5.2 証明書テンプレートを構成します。  
+### <a name="ConfigCertTemp"></a>1.5.2 証明書テンプレートを構成する  
 内部 CA を使用して証明書を発行する場合、IP-HTTPS 証明書およびネットワーク ロケーション サーバー Web サイト証明書の証明書テンプレートを構成する必要があります。  
   
 ##### <a name="to-configure-a-certificate-template"></a>証明書テンプレートを構成するには  
@@ -167,7 +167,7 @@ IPsec 認証を使用するには、DirectAccess サーバーとすべての Dir
 ### <a name="153-configure-the-ip-https-certificate"></a>1.5.3 IP-HTTPS 証明書を構成する  
 リモート アクセスには、DirectAccess サーバーへの IP-HTTPS 接続の認証に IP-HTTPS 証明書が必要です。 IP-HTTPS 認証には、次の 3 つの証明書オプションが使用できます。  
   
-**証明書の公開**  
+**パブリック証明書**  
   
 パブリック証明書はサード パーティによって提供されます。 証明書のサブジェクト名にワイルドカードが含まれていない場合、DirectAccess サーバー IP-HTTPS 接続にのみ使用される、外部で解決可能な完全修飾ドメイン名 (FQDN) の URL である必要があります。  
   
@@ -208,7 +208,7 @@ IP-HTTPS 認証に使用する Web サイト証明書が次の要件を満たし
   
 ##### <a name="to-install-the-ip-https-certificate-from-an-internal-ca"></a>内部 CA から IP-HTTPS 証明書をインストールするには  
   
-1.  DirectAccess サーバーで、**開始**画面で「**mmc.exe**、し、ENTER キーを押します。  
+1.  DirectAccess サーバー上: で、 **開始** 画面で「**mmc.exe**, 、ENTER キーを押します。  
   
 2.  MMC コンソールで、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   
@@ -238,12 +238,12 @@ IP-HTTPS 認証に使用する Web サイト証明書が次の要件を満たし
   
 15. 証明書スナップインの詳細ウィンドウで、新しい証明書が [サーバー認証の目的] とともに登録されていることを確認します。  
   
-## <a name="ConfigDNS"></a>1.6 DNS サーバーを構成します。  
+## <a name="ConfigDNS"></a>1.6 DNS サーバーを構成する  
 展開内の内部ネットワークのネットワーク ロケーション サーバー Web サイトの DNS エントリを手動で構成する必要があります。  
   
-### <a name="NLS_DNS"></a>ネットワーク ロケーション サーバーを作成するには  
+### <a name="NLS_DNS"></a>ネットワークロケーションサーバーを作成するには  
   
-1.  内部ネットワーク DNS サーバーで、**開始**画面で「**dnsmgmt.msc**、し、ENTER キーを押します。  
+1.  内部ネットワーク DNS サーバー上: で、 **開始** 画面で「**dnsmgmt.msc**, 、ENTER キーを押します。  
   
 2.  **[DNS マネージャー]** コンソールの左側のウィンドウで、ドメインの前方参照ゾーンを展開します。 ドメインを右クリックして、 **[新しいホスト (A または AAAA)]** をクリックします。  
   
@@ -263,7 +263,7 @@ IP-HTTPS 認証に使用する Web サイト証明書が次の要件を満たし
   
 5.  **DNS** ダイアログ ボックスで、をクリックして **ok**, 、 をクリックし、 **実行**します。  
   
-![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -274,7 +274,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 次の DNS エントリも構成する必要があります。  
   
--   **IP-HTTPS サーバー**  
+-   **Ip-https サーバー**  
   
     DirectAccess クライアントは、インターネットから DirectAccess サーバーの DNS 名を解決できる必要があります。  
   
@@ -286,7 +286,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
     ISATAP (Intra-Site Automatic Tunnel Addressing Protocol) では、トンネリングを使用して、DirectAccess クライアントが IPv4 インターネットで DirectAccess サーバーに接続して、IPv4 ヘッダー内で IPv6 パケットをカプセル化できるようにします。 イントラネットで、ISATAP ホストへの IPv6 接続を提供するため、リモート アクセスによって使用されます。 ネイティブではない IPv6 ネットワーク環境で、DirectAccess サーバーは自身を自動的に ISATAP ルーターとして構成します。 ISATAP 名の解決のサポートが必要です。  
   
-## <a name="ConfigAD"></a>1.7 Active Directory を構成します。  
+## <a name="ConfigAD"></a>1.7 Active Directory の構成  
 DirectAccess サーバーとすべての DirectAccess クライアント コンピューターは、Active Directory ドメインに追加する必要があります。 DirectAccess クライアント コンピューターは、次のいずれかのドメインの種類のメンバーである必要があります。  
   
 -   DirectAccess サーバーと同じフォレストに属するドメイン  
@@ -335,7 +335,7 @@ DirectAccess サーバーとすべての DirectAccess クライアント コン�
   
 10. コンピューターを再起動するよう求めるメッセージが表示されたら、 **[今すぐ再起動する]** をクリックします。  
   
-![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -347,7 +347,7 @@ Add-Computer -DomainName <domain_name>
 Restart-Computer  
 ```  
   
-## <a name="ConfigGPOs"></a>1.8 Gpo を構成します。  
+## <a name="ConfigGPOs"></a>1.8 Gpo を構成する  
 リモート アクセスの展開には、2 つのグループ ポリシー オブジェクトの最小値が必要です。  
   
 -   DirectAccess サーバーの設定が含まれるものが 1 つ  
@@ -424,7 +424,7 @@ Restart-Computer
   
     10. **[バックアップをスキャン中]** ページで **[次へ]** をクリックし、 **[完了]** をクリックします。  
   
-![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>Windows PowerShell の同等のコマンド</em>***  
+windows PowerShell の ![](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -452,10 +452,10 @@ Restart-Computer
     Import-GPO "BackupId $backup.Id "Path $backup.BackupDirectory "TargetName 'DirectAccess Client Settings - Production' "Domain 'corp.contoso.com'  
     ```  
   
-## <a name="ConfigSGs"></a>1.9 セキュリティ グループを構成します。  
+## <a name="ConfigSGs"></a>1.9 セキュリティグループを構成する  
 クライアント コンピューターのグループ ポリシー オブジェクトに含まれる DirectAccess 設定は、リモート アクセスを構成するときに指定したセキュリティ グループのメンバーであるコンピューターにのみ適用されます。 さらに、アプリケーション サーバーを管理するためにセキュリティ グループを使用する場合、これらのサーバーのセキュリティ グループを作成します。  
   
-### <a name="Sec_Group"></a>DirectAccess クライアントのセキュリティ グループを作成するには  
+### <a name="Sec_Group"></a>DirectAccess クライアントのセキュリティグループを作成するには  
   
 1.  **開始** 画面で「**dsa.msc**, 、ENTER キーを押します。 **Active Directory ユーザーとコンピューター** コンソールの左側のウィンドウで、セキュリティ グループを含むを右クリックし、ドメインを展開する **ユーザー**, 、 をポイント **新規**, 、クリックして **グループ**します。  
   
@@ -469,7 +469,7 @@ Restart-Computer
   
 6.  **[ユーザー、連絡先、コンピューター、サービス アカウントまたはグループの選択]** ダイアログ ボックスで、DirectAccess 用に有効にするクライアント コンピューターを選択し、 **[OK]** をクリックします。  
   
-![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows PowerShell の同等のコマンド**  
+windows PowerShell の ![](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
   
 以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。  
   
@@ -478,7 +478,7 @@ New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>
 Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_name>  
 ```  
   
-## <a name="ConfigNLS"></a>1.10 ネットワーク ロケーション サーバーを構成します。  
+## <a name="ConfigNLS"></a>1.10 ネットワークロケーションサーバーを構成する  
 ネットワーク ロケーション サーバーには高可用性サーバーが必要であり、DirectAccess クライアントによって信頼された有効な SSL 証明書が必要です。 ネットワーク ロケーション サーバー証明書には、次の 2 つの証明書オプションがあります。  
   
 -   **プライベート証明書**  
@@ -501,7 +501,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 #### <a name="to-install-the-network-location-server-certificate-from-an-internal-ca"></a>内部 CA からネットワーク ロケーション サーバー証明書をインストールするには  
   
-1.  ネットワーク ロケーション サーバー Web サイトをホストするサーバーで、**開始**画面で「**mmc.exe**、し、ENTER キーを押します。  
+1.  ネットワーク ロケーション サーバー web サイトをホストするサーバー上: で、 **開始** 画面で「**mmc.exe**, 、ENTER キーを押します。  
   
 2.  MMC コンソールで、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   
@@ -545,7 +545,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
     CRL 配布ポイントは、次の方法でアクセスできます。  
   
-    -   などの HTTP ベースの URL を使用して、web サーバー: https://crl.corp.contoso.com/crld/corp-APP1-CA.crl  
+    -   次のような HTTP ベースの URL を使用した Web サーバー: https://crl.corp.contoso.com/crld/corp-APP1-CA.crl  
   
     -   ファイル サーバーなど、汎用名前付け規則 (UNC) パスを介してアクセスされる \\\crl.corp.contoso.com\crld\corp-APP1-CA.crl  
   
@@ -553,9 +553,9 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 4.  内部ネットワーク上の DirectAccess クライアントが、ネットワーク ロケーション サーバーの名前を解決できることを確認します。 名前がインターネット上の DirectAccess クライアントによって解決されないことを確認します。  
   
-## <a name="BKMK_Links"></a>次の手順  
+## <a name="BKMK_Links"></a>次のステップ  
   
--   [手順 2:高度な DirectAccess サーバーを構成する](da-adv-configure-s2-servers.md)  
+-   [手順 2: 高度な DirectAccess サーバーを構成する](da-adv-configure-s2-servers.md)  
   
 
 

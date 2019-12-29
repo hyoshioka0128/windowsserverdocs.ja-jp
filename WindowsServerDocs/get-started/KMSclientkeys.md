@@ -1,20 +1,20 @@
 ---
 title: KMS クライアント セットアップ キー
 description: KMS サーバーから Windows 製品をアクティブ化するために必要なキーです。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.date: 05/21/2019
+ms.date: 11/12/2019
 ms.topic: get-started-article
-ms.openlocfilehash: c0d85da8a51a43acd7765957b34220829a43b086
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e2879c56b1dd41b8d357959cca473dd69da77d10
+ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810706"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73956082"
 ---
 # <a name="kms-client-setup-keys"></a>KMS クライアント セットアップ キー
 
@@ -31,8 +31,8 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 
 | 目的の処理    | 使用するリソース   |
 |--------------------|------------------------|
-| ボリューム ライセンス認証のシナリオ以外で Windows のライセンスを認証する (つまり、製品版の Windows のライセンスを認証する)。**これらのキーは機能しない**。 | 製品版の Windows には次のリンクを使用します。 |
-| Windows 8.1 または Windows Server 2012 R2 システムのライセンスを認証するときに発生する次のエラーを修正する。“Error:0xC004F050 The Software Licensing Service reported that the product key is invalid”… | Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012 を実行している場合、KMS ホストに[この更新プログラムをインストールします](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2)。 |
+| ボリュームライセンス認証シナリオ以外で Windows のライセンスを認証する (つまり、製品版の Windows のライセンスを認証する) 場合、**これらのキーは機能しません**。 | 製品版の Windows には次のリンクを使用します。 |
+| Windows 8.1 または Windows Server 2012 R2 システムのライセンスを認証するときに発生する次のエラーを修正する。“Error:0xC004F050 ソフトウェア ライセンス サービスで、プロダクト キーは無効であることが報告されました”… | Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012 を実行している場合、KMS ホストに[この更新プログラムをインストールします](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2)。 |
 
 -   [Windows 10 を入手する](https://www.microsoft.com/en-us/windows/get-windows-10)
 
@@ -45,26 +45,12 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 
 ## <a name="windows-server-semi-annual-channel-versions"></a>Windows Server 半期チャネル バージョン
 
-### <a name="windows-server-version-1903-and-windows-server-version-1809"></a>Windows Server バージョン 1903 および Windows Server バージョン 1809
+### <a name="windows-server-version-1909-version-1903-and-version-1809"></a>Windows Server バージョン 1909、バージョン 1903、およびバージョン 1809
 
 | オペレーティング システムのエディション  | KMS クライアント セットアップ キー          |
 |---------------------------|-------------------------------|
 | Windows Server Datacenter | 6NMRW-2C8FM-D24W7-TQWMY-CWH2D |
 | Windows Server Standard   | N2KJX-J94YW-TQVFB-DG9YT-724CC |
-
-### <a name="windows-server-version-1803"></a>Windows Server Version 1803
-
-| オペレーティング システムのエディション       | KMS クライアント セットアップ キー          |
-|--------------------------------|-------------------------------|
-| Windows Server Datacenter | 2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG  | 
-| Windows Server Standard   | PTXN8-JFHJM-4WC78-MPCBR-9W4KR  |
-
-### <a name="windows-server-version-1709"></a>Windows Server バージョン 1709
-
-| オペレーティング システムのエディション       | KMS クライアント セットアップ キー          |
-|--------------------------------|-------------------------------|
-| Windows Server Datacenter | 6Y6KB-N82V8-D8CQV-23MJW-BWTG6  | 
-| Windows Server Standard   | DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4  |
 
 ## <a name="windows-server-ltscltsb-versions"></a>Windows Server LTSC/LTSB バージョン
 
@@ -91,8 +77,8 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 |-----------------------------------|-------------------------------|
 |Windows 10 Pro|W269N-WFGWX-YVC9B-4J6C9-T83GX|
 |Windows 10 Pro N|MH37W-N47XK-V7XM9-C7227-GCQG9|
-|Windows 10 Pro Workstations|NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J|
-|Windows 10 Pro Workstations N|9FNHH-K3HBT-3W4TD-6383H-6XYWF|
+|Windows 10 Pro for Workstations|NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J|
+|Windows 10 Pro for Workstations N|9FNHH-K3HBT-3W4TD-6383H-6XYWF|
 |Windows 10 Pro Education|6TP4R-GNPTD-KYYHQ-7B7DP-J447Y|
 |Windows 10 Pro Education N|YVWGF-BXNMC-HTQYQ-CPQ99-66QFC|
 |Windows 10 Education|NW6C2-QMPVW-D7KKK-3GKT6-VCFB2|
@@ -126,6 +112,21 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 | Windows 10 Enterprise 2015 LTSB N | 2F77B-TNFGY-69QQF-B8YKP-D69TJ |
 
 ## <a name="earlier-versions-of-windows-server"></a>旧バージョンの Windows Server
+
+### <a name="windows-server-version-1803"></a>Windows Server Version 1803
+
+| オペレーティング システムのエディション       | KMS クライアント セットアップ キー          |
+|--------------------------------|-------------------------------|
+| Windows Server Datacenter | 2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG  | 
+| Windows Server Standard   | PTXN8-JFHJM-4WC78-MPCBR-9W4KR  |
+
+### <a name="windows-server-version-1709"></a>Windows Server バージョン 1709
+
+| オペレーティング システムのエディション       | KMS クライアント セットアップ キー          |
+|--------------------------------|-------------------------------|
+| Windows Server Datacenter | 6Y6KB-N82V8-D8CQV-23MJW-BWTG6  | 
+| Windows Server Standard   | DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4  |
+
 ### <a name="windows-server-2012-r2"></a>Windows Server 2012 R2
 
 | オペレーティング システムのエディション               | KMS クライアント セットアップ キー          |

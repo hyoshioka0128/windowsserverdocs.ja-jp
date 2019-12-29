@@ -7,20 +7,20 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 634bcf8566d403ea9defc76d22d1ca1af7defc31
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b25a60e616264ce706c3ae0b1bf5576945b65e48
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835303"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390660"
 ---
 # <a name="read-only-domain-controller-updates"></a>読み取り専用ドメイン コントローラーの最新情報
 
 >適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
-Windows Server 2012 または Windows Server 2012 R2 で adprep/rodcprep を変更することはありません。  
+Windows Server 2012 R2 または Windows Server 2012 では、adprep/rodcprep に変更はありません。  
   
 
 

@@ -1,7 +1,7 @@
 ---
-title: HYPER-V Vm の永続的なメモリ デバイスを構成するためのコマンドレット
-description: HYPER-V Vm の永続的なメモリ デバイスを構成する方法
-ms.prod: windows-server-threshold
+title: Hyper-v Vm 用の永続メモリデバイスを構成するためのコマンドレット
+description: Hyper-v Vm の永続メモリデバイスを構成する方法
+ms.prod: windows-server
 ms.service: na
 manager: jasgroce
 ms.technology: compute-hyper-v
@@ -10,30 +10,30 @@ ms.topic: article
 ms.assetid: b5715c02-a90f-4de9-a71e-0fc08039ba1d
 author: coreyp-at-msft
 ms.author: coreyp
-ms.openlocfilehash: fd1b04ce74f0b8d490529d2a7f65091f5847d0f4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ecae1fe96bc5088fa840c6e2e24a75bb72a9e8f3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878183"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392534"
 ---
-# <a name="cmdlets-for-configuring-persistent-memory-devices-for-hyper-v-vms"></a>HYPER-V Vm の永続的なメモリ デバイスを構成するためのコマンドレット
+# <a name="cmdlets-for-configuring-persistent-memory-devices-for-hyper-v-vms"></a>Hyper-v Vm 用の永続メモリデバイスを構成するためのコマンドレット
 
 >適用先:Windows Server 2019
 
-この記事では、永続的なメモリ (記憶域クラス メモリまたは NVDIMM とも呼ばれます) での HYPER-V Vm の構成に関する情報をシステム管理者および IT プロフェッショナルを提供します。 JDEC 準拠 NVDIMM-N の永続的なメモリ デバイスは、Windows Server 2016 と Windows 10 でサポートされ、バイト レベルのアクセスを非常に低待機時間の非揮発性のデバイスを指定します。 VM の永続的なメモリ デバイスは、Windows Server 2019 でサポートされます。 
+この記事では、システム管理者および IT プロフェッショナルに、永続メモリ (ストレージクラスメモリまたは NVDIMM) を使用した Hyper-v Vm の構成に関する情報を提供します。 JDEC に準拠している NVDIMM-N 永続メモリデバイスは、Windows Server 2016 と Windows 10 でサポートされており、非常に短い待機時間の少ない非揮発性デバイスへのバイトレベルのアクセスを提供します。 VM 永続メモリデバイスは、Windows Server 2019 でサポートされています。 
 
-## <a name="create-a-persistent-memory-device-for-a-vm"></a>VM の永続的なメモリ デバイスを作成します。
+## <a name="create-a-persistent-memory-device-for-a-vm"></a>VM の永続メモリデバイスを作成する
 
-使用して、 **[NEW-VHD](https://docs.microsoft.com/powershell/module/hyper-v/new-vhd?view=win10-ps)** コマンドレットで VM の永続的なメモリ デバイスを作成します。 既存の NTFS DAX ボリュームでは、デバイスを作成する必要があります。  新しいファイル名拡張子 (.vhdpmem) を使用して、デバイスが、永続的なメモリ デバイスを指定します。 固定の VHD ファイル形式のみがサポートされています。
+VM の永続メモリデバイスを作成するには、 **[新しい VHD](https://docs.microsoft.com/powershell/module/hyper-v/new-vhd?view=win10-ps)** コマンドレットを使用します。 デバイスは、既存の NTFS DAX ボリューム上に作成する必要があります。  新しいファイル名拡張子 (. vhdpmem) は、デバイスが永続的なメモリデバイスであることを指定するために使用されます。 固定の VHD ファイル形式のみがサポートされています。
 
 **例:** `New-VHD d:\VMPMEMDevice1.vhdpmem -Fixed -SizeBytes 4GB`
 
-## <a name="create-a-vm-with-a-persistent-memory-controller"></a>永続的なメモリのコント ローラー VM を作成します。
+## <a name="create-a-vm-with-a-persistent-memory-controller"></a>永続的なメモリコントローラーを備えた VM を作成する
 
 
 
-使用して、 **NEW-VM コマンドレット**指定されたメモリ サイズと VHDX イメージのパスを持つ 2 世代の VM を作成します。 使用して、**追加 VMPmemController** VM に永続的なメモリのコント ローラーを追加します。
+**新しい vm コマンドレット**を使用して、指定されたメモリサイズと VHDX イメージへのパスを持つ第2世代 vm を作成します。 次に、 **VMPmemController**を使用して、永続的なメモリコントローラーを VM に追加します。
 
 **例:** 
     
@@ -41,13 +41,13 @@ ms.locfileid: "59878183"
 
     Add-VMPmemController ProductionVM1x
 
-## <a name="attach-a-persistent-memory-device-to-a-vm"></a>VM に永続的なメモリ デバイスを接続します。
+## <a name="attach-a-persistent-memory-device-to-a-vm"></a>永続メモリデバイスを VM に接続する
 
-使用**[Add-vmharddiskdrive](https://docs.microsoft.com/powershell/module/hyper-v/add-vmharddiskdrive?view=win10-ps)** を VM に永続的なメモリ デバイスを接続するには
+**[Add-vmharddiskdrive](https://docs.microsoft.com/powershell/module/hyper-v/add-vmharddiskdrive?view=win10-ps)** を使用して永続メモリデバイスを VM に接続する
 
 **例:** `Add-VMHardDiskDrive ProductionVM1 PMEM -ControllerLocation 1 -Path D:\VPMEMDevice1.vhdpmem`
 
-HYPER-V VM 内で永続的なメモリ デバイスは、永続的なメモリ消費およびゲスト オペレーティング システムによって管理されるデバイスとして表示されます。 ゲスト オペレーティング システムは、デバイスをブロックまたは DAX ボリュームとして使用できます。 DAX ボリュームとして、VM 内で永続的なメモリ デバイスを使用している場合は、低待機時間バイト レベル アドレス-機能のホスト デバイス (しないコード パスに I/O virtualization) からに活用します。 
+Hyper-v VM 内の永続メモリデバイスは、ゲストオペレーティングシステムによって使用および管理される永続的なメモリデバイスとして表示されます。 ゲストオペレーティングシステムでは、デバイスをブロックまたは DAX ボリュームとして使用できます。 VM 内の永続的なメモリデバイスが DAX ボリュームとして使用されている場合、ホストデバイスの低待機時間のバイトレベルのアドレス機能 (コードパスに i/o 仮想化が存在しない) の恩恵を受けられます。 
 
 >[!NOTE] 
->永続的なメモリは HYPER-V Gen2 Vm にのみサポートされます。 ライブ マイグレーションと記憶域の移行はサポートされていません Vm の永続的なメモリとします。 Vm の運用チェックポイントは、永続的なメモリの状態を含めないでください。 
+>永続メモリは、Hyper-v Gen2 Vm でのみサポートされます。 ライブマイグレーションと記憶域の移行は、永続メモリを持つ Vm ではサポートされていません。 Vm の運用チェックポイントには、永続メモリの状態は含まれません。 

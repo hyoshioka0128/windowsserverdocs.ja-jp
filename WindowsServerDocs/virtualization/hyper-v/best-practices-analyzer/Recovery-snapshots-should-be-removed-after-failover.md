@@ -1,7 +1,7 @@
 ---
 title: フェールオーバー後に回復スナップショットを削除する必要があります。
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,38 +10,38 @@ ms.topic: article
 ms.assetid: 922115fa-e8dd-4055-aaf1-4a4437c5cf28
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 4663320df91019fc7dc1d8ca7ffdb2fcc3e0de42
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4b8574956fb1b46ca0cf9678187fffcd68c2d261
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837683"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393532"
 ---
 # <a name="recovery-snapshots-should-be-removed-after-failover"></a>フェールオーバー後に回復スナップショットを削除する必要があります。
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
-ベスト プラクティスとスキャンの詳細については、次を参照してください。 [Run Best Practices Analyzer Scans and Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177)します。  
+ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
 |プロパティ|詳細|  
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016| 
 |**製品/機能**|Hyper-V|  
-|**重要度**|警告|  
-|**カテゴリ**|操作|  
+|**順**|Warning|  
+|**カテゴリ**|運用|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
   
 ## <a name="issue"></a>**問題**  
-*仮想マシンのフェールオーバーを持つ 1 つまたは複数の復旧スナップショットです。*  
+*フェールオーバーされた仮想マシンには、1つまたは複数の回復スナップショットがあります。*  
   
-## <a name="impact"></a>**影響**  
-*スナップショット ファイルを格納する物理ディスクの使用可能な領域が不足します。このような場合、物理記憶域に対して追加のディスク操作を実行できるはされません。物理ストレージに依存する任意の仮想マシンを受ける可能性があります。これには、次の仮想マシンに影響します。*  
+## <a name="impact"></a>**よる**  
+*使用可能な領域は、スナップショットファイルが格納されている物理ディスク上で実行される可能性があります。これが発生した場合は、物理記憶域に対して追加のディスク操作を実行することはできません。物理記憶域に依存しているすべての仮想マシンが影響を受ける可能性があります。これは、次の仮想マシンに影響します。*  
   
-\<仮想マシンの一覧 >  
+仮想マシンの一覧を \<>  
   
 ## <a name="resolution"></a>**解決方法**  
-*フェールオーバーされた仮想マシンごとには、回復スナップショットを削除し、フェールオーバーの完了を示すために Windows PowerShell で Complete-vmfailover コマンドレットを使用します。*  
+*フェールオーバーされた仮想マシンごとに、Windows PowerShell の Start-vmfailover コマンドレットを使用して、回復スナップショットを削除し、フェールオーバーの完了を示します。*  
   
 
 

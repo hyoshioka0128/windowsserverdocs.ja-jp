@@ -1,8 +1,8 @@
 ---
 title: bitsadmin addfilewithranges
-description: Windows コマンド」のトピック**bitsadmin addfilewithranges** -指定されたジョブにファイルを追加します。 BITS では、リモート ファイルから指定した範囲をダウンロードします。
+description: '**Bitsadmin addfilewithranges**の Windows コマンドに関するトピックでは、指定されたジョブにファイルを追加します。 BITS は、指定された範囲をリモートファイルからダウンロードします。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d5e1e4f8af9117928f9ab044d29e65f57aa5a119
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 557f19f6e106e5fb73b3a229090eecf0fc048758
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811281"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382021"
 ---
 # <a name="bitsadmin-addfilewithranges"></a>bitsadmin addfilewithranges
 
-指定したジョブには、ファイルを追加します。 BITS では、リモート ファイルから指定した範囲をダウンロードします。 このスイッチは、ダウンロード ジョブでのみ有効です。
+指定されたジョブにファイルを追加します。 BITS は、指定された範囲をリモートファイルからダウンロードします。 このスイッチは、ダウンロードジョブに対してのみ有効です。
 
 ## <a name="syntax"></a>構文
 
@@ -35,22 +35,22 @@ bitsadmin /AddFileWithRanges <Job> <RemoteURL> <LocalName> <RangeList>
 |パラメーター|説明|
 |---------|-----------|
 |Job|ジョブの表示名または GUID|
-|RemoteURL|*RemoteURL*は、サーバー上のファイルの URL です。|
-|LocalName|*LocalName*ローカル コンピューター上のファイルの名前を指定します。 *LocalName*ファイルへの絶対パスを含める必要があります。|
-|RangeList|*RangeList*がオフセットの長さ: ペアのコンマ区切りの一覧。 コロンを使用して、長さの値からオフセット値を区切ります。 たとえばの値`0:100,2000:100,5000:eof`からのオフセット 0、100 バイト オフセット 2000 から 100 バイトが転送には BITS を指示しから残りのバイト オフセット、ファイルの末尾に 5000 です。|
+|RemoteURL|*Remoteurl*は、サーバー上のファイルの url です。|
+|LocalName|*LocalName*ローカルコンピューター上のファイルの名前を指定します。 *LocalName*には、ファイルへの絶対パスが含まれている必要があります。|
+|RangeList|*Rangelist*は、オフセットの長さをコンマで区切ったリストです。 長さの値からオフセット値を区切るには、コロンを使用します。 たとえば、値 `0:100,2000:100,5000:eof` の場合、オフセット0から100バイト、オフセット2000からの100バイト、およびオフセット5000からファイルの末尾までの残りのバイトを転送するビットを示します。|
 
 ## <a name="more-information"></a>詳細情報
 
--   トークン**eof**オフセットと長さのペア内で有効な長さの値は、  *\<RangeList >* します。 サービスを指定したファイルの末尾まで読み取るように指示します。
--   長さ 0 の範囲を指定すると共に、同じオフセットは、別の範囲など AddFileWithRanges が失敗しエラー コード 0x8020002c ことに注意してください。C:\bits > bitsadmin/addfilewithranges j2 http://bitsdc/dload/1k.zip c:\1k.zip 100:0、100:5
+-   トークン**eof**は、 *\<rangelist >* のオフセットと長さのペア内の有効な長さの値です。 このメソッドは、指定されたファイルの末尾に読み取るようにサービスに指示します。
+-   0の長さの範囲が指定されていて、同じオフセットを持つ別の範囲が指定されている場合、AddFileWithRanges はエラーコード0x8020002c で失敗します。次に例を示します。C:\ ビット > bitsadmin/addfilewithranges j2 http://bitsdc/dload/1k.zip c:\ 1 k.zip 100: 0100: 5
 
-    エラー メッセージ:ジョブ - 0x8020002c にファイルを追加できません。 バイト範囲の一覧には、サポートされていない、重複する範囲が含まれています。
+    エラー メッセージ:ジョブにファイルを追加できません-0x8020002c。 バイト範囲の一覧に、重複する範囲が含まれていますが、これはサポートされていません。
 
-    回避策: は、長さ 0 の範囲を最初は指定できません。 例: bitsadmin/addfilewithranges j2 http://bitsdc/dload/1k.zip c:\1k.zip 100:5、100:0 します。
+    回避策: 最初に長さ0の範囲を指定しないでください。 例: bitsadmin/addfilewithranges j2 http://bitsdc/dload/1k.zip c:\-: 5100: 0
 
-## <a name="examples"></a>例
+## <a name="examples"></a>使用例
 
-次の例からのオフセット 0、100 バイト オフセットの 2000 から 100 バイトが転送には BITS およびから残りのバイト オフセット 5000 ファイルの末尾にします。
+次の例では、オフセット0から100バイト、オフセット2000からの100バイト、およびオフセット5000からファイルの末尾までの残りのバイトを転送するようにビットに指示します。
 
 ```
 C:\>bitsadmin /addfilewithranges http://downloadsrv/10mb.zip c:\10mb.zip "0:100,2000:100,5000:eof"

@@ -1,8 +1,8 @@
 ---
 title: 有効にする TransportServer コマンドを使用してください。
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 40793ac0b9dc7d8b4a80d6a66b55244202aa37d1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 732a021b02193a3bfb5cb573a33879dbecb840b9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834333"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363427"
 ---
 # <a name="using-the-enable-transportserver-command"></a>有効にする TransportServer コマンドを使用してください。
 
@@ -39,7 +39,7 @@ wdsutil [Options] /Enable-TransportServer [/Server:<Server name>]
 wdsutil /Enable-TransportServer
 wdsutil /verbose /Enable-TransportServer /Server:MyWDSServer
 ```
-#### <a name="additional-references"></a>その他の参照
+#### <a name="additional-references"></a>その他の参照情報
 [コマンドライン構文のポイント](command-line-syntax-key.md)
 [TransportServer 無効にするコマンドを使用して](using-the-disable-transportserver-command.md)
 [get TransportServer コマンドを使用して](using-the-get-transportserver-command.md)

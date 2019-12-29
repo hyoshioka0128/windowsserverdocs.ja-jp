@@ -1,8 +1,8 @@
 ---
-title: Reg のコピー
-description: 'Windows コマンド」のトピック * * *- '
+title: reg copy
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 11cbfce39433ea18632bec16c524da191def2a07
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a82b17b631d4242fa6affdec0ff67b5b09380550
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867563"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371782"
 ---
-# <a name="reg-copy"></a>Reg のコピー
+# <a name="reg-copy"></a>reg copy
 
 
 
@@ -38,8 +38,8 @@ reg copy <KeyName1> <KeyName2> [/s] [/f]
 
 |パラメーター|説明|
 |---------|-----------|
-|\<KeyName1 >|コピーするサブキーの完全なパスを指定します。 リモート コンピューターを指定するには、コンピューター名を含める (形式の\\ \\ComputerName\)の一部として、 *KeyName*します。 省略すると\\ \\ComputerName\ によりローカル コンピューターに既定値に操作します。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キーは次のとおりです。HKLM、HKCU、HKCR、HKU、および hkcc します。 リモート コンピューターが指定されている場合は、有効なルート キーは。HKLM および hku です。|
-|\<KeyName2 >|サブキーの完全なパスを指定します。 リモート コンピューターを指定するには、コンピューター名を含める (形式の\\ \\ComputerName\)の一部として、 *KeyName*します。 省略すると\\ \\ComputerName\ によりローカル コンピューターに既定値に操作します。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キーは次のとおりです。HKLM、HKCU、HKCR、HKU、および hkcc します。 リモート コンピューターが指定されている場合は、有効なルート キーは。HKLM および hku です。|
+|\<KeyName1 >|コピーするサブキーの完全なパスを指定します。 リモートコンピューターを指定するには、コンピューター名を、 *KeyName*の一部として \\\\ComputerName\) の形式で含めます。 \\\\ComputerName \ を省略すると、操作は既定でローカルコンピューターに設定されます。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キー: HKLM、HKCU、HKCR、HKU、および HKCC します。 有効なルート キーは、リモート コンピューターが指定されている場合: HKLM および HKU します。|
+|\<KeyName2 >|サブキーの完全なパスを指定します。 リモートコンピューターを指定するには、コンピューター名を、 *KeyName*の一部として \\\\ComputerName\) の形式で含めます。 \\\\ComputerName \ を省略すると、操作は既定でローカルコンピューターに設定されます。 *KeyName* 有効なルート キーを含める必要があります。 ローカル コンピューターの有効なルート キー: HKLM、HKCU、HKCR、HKU、および HKCC します。 有効なルート キーは、リモート コンピューターが指定されている場合: HKLM および HKU します。|
 |/s|すべてのサブキーと、指定したサブキーの下にエントリをコピーします。|
 |/f|確認を求めずに、サブキーをコピーします。|
 |/?|ヘルプを表示 **reg** コマンド プロンプトでコピーします。|
@@ -49,7 +49,7 @@ reg copy <KeyName1> <KeyName2> [/s] [/f]
 -   Reg は、サブキーのコピー時に確認を求めません。
 -   次の表に、戻り値の **reg コピー** 操作します。
 
-|値|説明|
+|Value|説明|
 |-----|-----------|
 |0|成功|
 |1|失敗|
@@ -67,4 +67,4 @@ REG COPY \\ZODIAC\HKLM\Software\MyCo HKLM\Software\MyCo1
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

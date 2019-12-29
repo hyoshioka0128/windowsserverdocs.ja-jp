@@ -1,8 +1,8 @@
 ---
-title: bitsadmin 例
-description: 次の例では、bitsadmin ツールを使用して、最も一般的なタスクを実行する方法を示します。
+title: bitsadmin の例
+description: 次の例は、bitsadmin ツールを使用して最も一般的なタスクを実行する方法を示しています。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,60 +13,60 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/31/2018
-ms.openlocfilehash: a98e1a876c972b0f146ff37aff0a77399b684e99
-ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
+ms.openlocfilehash: c675f08752b3464f7ab1eddd4e9fddf3b16db5f4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66308560"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381775"
 ---
-# <a name="bitsadmin-examples"></a>bitsadmin 例
+# <a name="bitsadmin-examples"></a>bitsadmin の例
 
-次の例を使用する方法を示して、`bitsadmin`ツールで最も一般的なタスクを実行します。
+次の例は、`bitsadmin` ツールを使用して最も一般的なタスクを実行する方法を示しています。
 
-## <a name="transfer-a-file"></a>ファイルを転送します。
+## <a name="transfer-a-file"></a>ファイルの転送
 
-**/転送**スイッチは下記のタスクを実行するためのショートカットです。 このスイッチにジョブを作成、ジョブにファイルが追加されます、転送キュー内のジョブがアクティブになります、およびジョブが完了するとします。 BITSAdmin、転送が完了するか、エラーが発生するまで、MS-DOS ウィンドウに進行状況に関する情報を表示し続けます。
+**/転送**スイッチは、以下に示すタスクを実行するためのショートカットです。 このスイッチは、ジョブを作成し、ファイルをジョブに追加し、転送キューでジョブをアクティブ化して、ジョブを完了します。 BITSAdmin は、転送が完了するかエラーが発生するまで、MS-DOS ウィンドウに進行状況の情報を表示し続けます。
 
-**bitsadmin/transfer myDownloadJob/download/priority 通常 `https://downloadsrv/10mb.zip c:\\10mb.zip`**
+**bitsadmin/transfer myDownloadJob/download/priority normal `https://downloadsrv/10mb.zip c:\\10mb.zip`**
 
-## <a name="create-a-download-job"></a>ダウンロード ジョブを作成します。
+## <a name="create-a-download-job"></a>ダウンロードジョブを作成する
 
-使用して、 **/create** myDownloadJob をという名前のダウンロード ジョブを作成するスイッチ。
+**/Create**スイッチを使用して、mydownloadjob という名前のダウンロードジョブを作成します。
 
-**bitsadmin/myDownloadJob の作成**
+**bitsadmin/create myDownloadJob**
 
-BITSAdmin では、ジョブを一意に識別する GUID を返します。 後続の呼び出しで、GUID またはジョブの名前を使用します。 次のテキストは、サンプルの出力を示します。
+BITSAdmin は、ジョブを一意に識別する GUID を返します。 その後の呼び出しでは、GUID またはジョブ名を使用します。 次のテキストはサンプル出力です。
 
 ``` syntax
 Created job {C775D194-090F-431F-B5FB-8334D00D1CB6}.
 ```
 
-次に、使用、 **/addfile**ダウンロード ジョブに 1 つまたは複数のファイルを追加するスイッチ。
+次に、 **/addfile**スイッチを使用して、ダウンロードジョブに1つ以上のファイルを追加します。
 
-## <a name="add-files-to-the-download-job"></a>ダウンロード ジョブにファイルを追加します。
+## <a name="add-files-to-the-download-job"></a>ダウンロードジョブにファイルを追加する
 
-使用して、 **/addfile**ジョブにファイルを追加するスイッチ。 各ファイルを追加するには、この呼び出しを繰り返します。 複数のジョブでは、myDownloadJob を使用して、名前に場合、は、ジョブを一意に識別するために、ジョブの GUID を持つ myDownloadJob を置き換える必要があります。
+**/Addfile**スイッチを使用して、ジョブにファイルを追加します。 追加するファイルごとにこの呼び出しを繰り返します。 複数のジョブが myDownloadJob を名前として使用する場合は、ジョブを一意に識別するために、myDownloadJob をジョブの GUID に置き換える必要があります。
 
-**bitsadmin/addfile myDownloadJob https://downloadsrv/10mb.zip c:\\10mb.zip**
+**bitsadmin/addfile myDownloadJob https://downloadsrv/10mb.zip c:\\10 mb .zip**
 
-転送キュー内のジョブを有効にするには、使用、 **/再開**スイッチします。
+転送キューでジョブをアクティブ化するには、 **/resume**スイッチを使用します。
 
-## <a name="activate-the-download-job"></a>ダウンロード ジョブをアクティブ化します。
+## <a name="activate-the-download-job"></a>ダウンロードジョブのアクティブ化
 
-新しいジョブを作成するときに、BITS はジョブを中断します。 転送キュー内のジョブを有効にするには、使用、 **/再開**スイッチします。 複数のジョブでは、myDownloadJob を使用して、名前に場合、は、ジョブを一意に識別するために、ジョブの GUID を持つ myDownloadJob を置き換える必要があります。
+新しいジョブを作成すると、BITS によってジョブが中断されます。 転送キューでジョブをアクティブ化するには、 **/resume**スイッチを使用します。 複数のジョブが myDownloadJob を名前として使用する場合は、ジョブを一意に識別するために、myDownloadJob をジョブの GUID に置き換える必要があります。
 
-**bitsadmin/resume myDownloadJob**
+**bitsadmin/再開 myDownloadJob**
 
-ジョブの進行状況を調べるには、 **/list**、 **/info**、または**監視/** スイッチします。
+ジョブの進行状況を確認するには、 **/list**、 **/info**、または **/monitor**スイッチを使用します。
 
-## <a name="determine-the-progress-of-the-download-job"></a>ダウンロード ジョブの進行状況を把握します。
+## <a name="determine-the-progress-of-the-download-job"></a>ダウンロードジョブの進行状況を確認する
 
-使用して、 **/info**スイッチ、ジョブの進行状況を判断します。 複数のジョブでは、myDownloadJob を使用して、名前に場合、は、ジョブを一意に識別するために、ジョブの GUID を持つ myDownloadJob を置き換える必要があります。
+**/Info**スイッチを使用して、ジョブの進行状況を確認します。 複数のジョブが myDownloadJob を名前として使用する場合は、ジョブを一意に識別するために、myDownloadJob をジョブの GUID に置き換える必要があります。
 
 **bitsadmin/info myDownloadJob/verbose**
 
-**/Info**スイッチは、ジョブの状態とファイルの転送されたバイト数を返します。 状態を転送すると、BITS はジョブ内のすべてのファイルを正常に転送が。 **/Verbose**引数は、ジョブの完全な詳細を提供します。 次のテキストは、サンプルの出力を示します。
+**/Info**スイッチは、ジョブの状態と転送されたファイルの数とバイト数を返します。 状態が転送されると、BITS はジョブ内のすべてのファイルを正常に転送しました。 **/Verbose**引数は、ジョブの完全な詳細を提供します。 次のテキストはサンプル出力です。
 
 ``` syntax
 GUID: {482FCAF0-74BF-469B-8929-5CCD028C9499} DISPLAY: myDownloadJob
@@ -87,21 +87,21 @@ JOB FILES:
 NOTIFICATION COMMAND LINE: none
 ```
 
-転送キュー内のすべてのジョブの情報を受信するには、使用、 **/list**または**監視/** スイッチします。
+転送キュー内のすべてのジョブに関する情報を取得するには、 **/list**または **/monitor**スイッチを使用します。
 
-## <a name="completing-the-download-job"></a>ダウンロード ジョブの完了
+## <a name="completing-the-download-job"></a>ダウンロードジョブの完了
 
-ジョブの状態を転送すると、BITS はジョブのすべてのファイルを正常に転送が。 ただし、ファイルは使用できませんを使用するまで、**完了/** スイッチします。 複数のジョブでは、myDownloadJob を使用して、名前に場合、は、ジョブを一意に識別するために、ジョブの GUID を持つ myDownloadJob を置き換える必要があります。
+ジョブの状態が [転送済み] になると、そのジョブ内のすべてのファイルが BITS によって正常に転送されます。 ただし、 **[完了]** スイッチを使用するまで、ファイルは使用できません。 複数のジョブが myDownloadJob を名前として使用する場合は、ジョブを一意に識別するために、myDownloadJob をジョブの GUID に置き換える必要があります。
 
-**bitsadmin myDownloadJob 完了/**
+**bitsadmin/完全な myDownloadJob**
 
 ## <a name="monitoring-jobs-in-the-transfer-queue"></a>転送キュー内のジョブの監視
 
-使用して、 **/list**、**監視/** 、または **/info**転送キュー内のジョブを監視するスイッチ。 **/List**スイッチは、キュー内のすべてのジョブの情報を提供します。
+**/List**、 **/monitor**、または **/info**スイッチを使用して、転送キュー内のジョブを監視します。 **/List**スイッチは、キュー内のすべてのジョブに関する情報を提供します。
 
 **bitsadmin/list**
 
-**/List**スイッチは、ジョブの状態とファイルの転送キュー内のすべてのジョブに転送されたバイト数を返します。 次のテキストは、サンプルの出力を示します。
+**/List**スイッチは、ジョブの状態と転送キュー内のすべてのジョブについて転送されたファイルの数およびバイト数を返します。 次のテキストはサンプル出力です。
 
 ``` syntax
 {6AF46E48-41D3-453F-B7AF-A694BBC823F7} job1 SUSPENDED 0 / 0 0 / 0
@@ -110,11 +110,11 @@ NOTIFICATION COMMAND LINE: none
 Listed 2 job(s).
 ```
 
-使用して、 **監視/** キュー内のすべてのジョブを監視するスイッチ。 **監視/** スイッチは、データを 5 秒ごとに更新します。 更新を停止するには、CTRL キーを押しながら C キーを入力します。
+**監視**スイッチを使用して、キュー内のすべてのジョブを監視します。 **/モニター**スイッチは、5秒ごとにデータを更新します。 更新を停止するには、CTRL + C キーを押します。
 
-**bitsadmin/monitor**
+**bitsadmin/モニタ**
 
-**監視/** スイッチは、ジョブの状態とファイルの転送キュー内のすべてのジョブに転送されたバイト数を返します。 次のテキストは、サンプルの出力を示します。
+**/モニター**スイッチは、ジョブの状態と転送キュー内のすべてのジョブについて転送されたファイルの数およびバイト数を返します。 次のテキストはサンプル出力です。
 
 ``` syntax
 MONITORING BACKGROUND COPY MANAGER(5 second refresh)
@@ -123,13 +123,13 @@ MONITORING BACKGROUND COPY MANAGER(5 second refresh)
 {0B138008-304B-4264-B021-FD04455588FF} job3 TRANSFERRED 1 / 1 100379370 / 100379370
 ```
 
-## <a name="deleting-jobs-from-the-transfer-queue"></a>転送キューからジョブを削除します。
+## <a name="deleting-jobs-from-the-transfer-queue"></a>転送キューからジョブを削除しています
 
-使用して、 **/リセット**転送キューからすべてのジョブを削除するスイッチ。
+転送キューからすべてのジョブを削除するには、 **/リセット**スイッチを使用します。
 
-**bitsadmin /reset**
+**bitsadmin/リセット**
 
-次のテキストは、サンプルの出力を示します。
+次のテキストはサンプル出力です。
 
 ``` syntax
 {DC61A20C-44AB-4768-B175-8000D02545B9} canceled.

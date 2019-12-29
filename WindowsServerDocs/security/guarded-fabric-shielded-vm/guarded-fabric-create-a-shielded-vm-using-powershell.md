@@ -1,60 +1,60 @@
 ---
-title: PowerShell を使用して、シールドされた VM を作成します。
+title: PowerShell を使用してシールドされた VM を作成する
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 08/29/2018
-ms.openlocfilehash: 0086edb7781a604cc90b9e76d34e5a3dc2725547
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.date: 09/25/2019
+ms.openlocfilehash: 317da0ae3c41d142db6f5a076fd3004d9970b815
+ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447525"
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71940743"
 ---
-# <a name="create-a-shielded-vm-using-powershell"></a>PowerShell を使用して、シールドされた VM を作成します。
+# <a name="create-a-shielded-vm-using-powershell"></a>PowerShell を使用してシールドされた VM を作成する
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
-運用環境では、シールドされた Vm をデプロイする通常 fabric manager (VMM など) を使用します。 ただし、次の図の手順を使用すると、デプロイし、ファブリック マネージャーがないシナリオ全体を検証できます。
+運用環境では、通常、ファブリックマネージャー (VMM など) を使用してシールドされた Vm をデプロイします。 ただし、次の手順を実行すると、ファブリックマネージャーを使用せずにシナリオ全体を展開および検証することができます。
 
-簡単に言うと、すべてのコンピューターでテンプレート ディスク、シールド データ ファイルを無人インストール応答ファイル、およびその他のセキュリティ アーティファクトを作成は保護されたホストにこれらのファイルをコピーし、シールドされた VM のプロビジョニングとします。
+簡単に言うと、テンプレートディスク、シールドデータファイル、無人インストール応答ファイル、およびその他のセキュリティアーティファクトを任意のコンピューターに作成し、これらのファイルを保護されたホストにコピーして、シールドされた VM をプロビジョニングします。
 
-## <a name="create-a-signed-template-disk"></a>署名付きテンプレート ディスクを作成します。
+## <a name="create-a-signed-template-disk"></a>署名済みテンプレートディスクを作成する
 
-新しいシールドされた VM を作成するには、最初は、OS ボリューム (または Linux 上のブートとルート パーティション) で署名済み暗号化は、シールドされた VM テンプレート ディスクを必要します。
-テンプレート ディスクを作成する方法の詳細については、以下のリンクに従います。
+新しいシールドされた VM を作成するには、まず、その OS ボリューム (または Linux 上のブートとルートパーティション) に署名されたシールドされた VM テンプレートディスクが必要です。
+テンプレートディスクを作成する方法の詳細については、次のリンク先を参照してください。
 
-- [Windows のテンプレート ディスクを準備します。](guarded-fabric-create-a-shielded-vm-template.md)
-- [Linux のテンプレート ディスクを準備します。](guarded-fabric-create-a-linux-shielded-vm-template.md)
+- [Windows テンプレートディスクを準備する](guarded-fabric-create-a-shielded-vm-template.md)
+- [Linux テンプレートディスクを準備する](guarded-fabric-create-a-linux-shielded-vm-template.md)
 
-シールド データ ファイルを作成するディスクのボリューム署名カタログのコピーも必要になります。
-このファイルを保存するには、テンプレート ディスクを作成したコンピューターの次のコマンドを実行します。
+また、シールドデータファイルを作成するには、ディスクのボリューム署名カタログのコピーが必要です。
+このファイルを保存するには、テンプレートディスクを作成したコンピューターで次のコマンドを実行します。
 
 ```powershell
 Save-VolumeSignatureCatalog -TemplateDiskPath "C:\temp\MyTemplateDisk.vhdx" -VolumeSignatureCatalogPath "C:\temp\MyTemplateDiskCatalog.vsc"
 ```
 
-## <a name="download-guardian-metadata"></a>ガーディアン メタデータをダウンロードします。
+## <a name="download-guardian-metadata"></a>ガーディアンメタデータのダウンロード
 
-シールドされた VM を実行する仮想化ファブリックのそれぞれについては HGS クラスターのファブリックのガーディアン メタデータを取得する必要があります。
-ホスティング プロバイダーは、この情報を提供できる必要があります。
+シールドされた VM を実行する仮想化ファブリックごとに、ファブリックの HGS クラスターのガーディアンメタデータを取得する必要があります。
+ホスティングプロバイダーは、この情報を提供できる必要があります。
 
-ガーディアン メタデータは、エンタープライズ環境では、HGS サーバーと通信できる場合は、 *http://\<HGSCLUSTERNAME\>/KeyProtection/service/metadata/2014-07/metadata.xml*
+エンタープライズ環境を使用していて、HGS サーバーと通信できる場合、ガーディアンメタデータは*http://\<HGSCLUSTERNAME\>/Keyprotection/Service/Metadata/xml*にあります。
 
-## <a name="create-shielding-data-pdk-file"></a>シールド データ (PDK) ファイルを作成します。
+## <a name="create-shielding-data-pdk-file"></a>シールドデータ (PDK) ファイルの作成
 
-シールド データが作成されるとテナント VM の所有者によって所有されているし、シールドされた VM の管理者パスワードなど、ファブリック管理者から保護する必要がシールドされた Vm を作成するために必要な機密情報が含まれています。
-HGS サーバーとテナントのみ暗号化を解除できるように、シールド データが暗号化されます。
-テナント VM/所有者によって作成されると、結果として得られる PDK ファイルが保護されたファブリックをコピーする必要があります。
-詳細については、次を参照してください。[シールド データを使用するものが、なぜ必要ですか?](guarded-fabric-and-shielded-vms.md#what-is-shielding-data-and-why-is-it-necessary)します。
+シールドデータは、テナント VM の所有者によって作成および所有され、シールドされた VM の管理者パスワードなど、ファブリック管理者から保護する必要があるシールドされた Vm を作成するために必要なシークレットを含みます。
+シールドデータは、HGS サーバーとテナントのみが暗号化を解除できるように暗号化されます。
+テナントまたは VM の所有者によって作成された後、結果として得られる PDK ファイルを保護されたファブリックにコピーする必要があります。
+詳細については、「[シールドデータとは」および「必要な理由](guarded-fabric-and-shielded-vms.md#what-is-shielding-data-and-why-is-it-necessary)」を参照してください。
 
-さらに、必要があります、無人インストール応答ファイル (、Windows の unattend.xml for Linux は異なります)。 参照してください[応答ファイルを作成](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file)ガイダンスについては、応答ファイルに含める内容にします。
+また、無人インストール応答ファイルが必要になります (Windows の場合は unattend.xml、Linux では異なる)。 応答ファイルに含める内容のガイダンスについては[、「応答ファイルの作成](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file)」を参照してください。
 
-シールドされた Vm がインストールされているため、コンピューター、リモート サーバー管理ツールで、次のコマンドレットを実行します。
-PDK を Linux VM を作成する場合は、Windows Server バージョン 1709 以降を実行するサーバーでこれを行う必要があります。
+シールドされた Vm のリモートサーバー管理ツールがインストールされているコンピューターで、次のコマンドレットを実行します。
+Linux VM 用の PDK を作成する場合は、Windows Server バージョン1709以降を実行しているサーバーでこれを行う必要があります。
 
  
 ```powershell
@@ -71,49 +71,62 @@ $Guardian = Import-HgsGuardian -Path C:\HGSGuardian.xml -Name 'TestFabric'
 New-ShieldingDataFile -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Owner $Owner –Guardian $guardian –VolumeIDQualifier (New-VolumeIDQualifier -VolumeSignatureCatalogFilePath 'C:\temp\MyTemplateDiskCatalog.vsc' -VersionRule Equals) -WindowsUnattendFile 'C:\unattend.xml' -Policy Shielded
 ```
     
-## <a name="provision-shielded-vm-on-a-guarded-host"></a>保護されたホストでシールドされた VM のプロビジョニング
-保護されたホストの展開を準備するには、テンプレート ディスク ファイル (ServerOS.vhdx) と PDK ファイル (contoso.pdk) をコピーします。
+## <a name="provision-shielded-vm-on-a-guarded-host"></a>保護されたホストでのシールドされた VM のプロビジョニング
+テンプレートディスクファイル (ServerOS .vhdx) と PDK ファイル (contoso. pdk) を保護されたホストにコピーして、展開の準備をします。
 
-保護されたホストでは、プロビジョニング プロセスを簡略化する新しい shieldedvm の各コマンドレットを含む保護されたファブリックのツールの PowerShell モジュールをインストールします。 保護されたホストにインターネットへのアクセスがある場合は、次のコマンドを実行します。
+保護されたホストで、保護されたファブリックツールの PowerShell モジュールをインストールします。このモジュールには、プロビジョニングプロセスを簡略化する ShieldedVM コマンドレットが含まれています。 保護されたホストがインターネットにアクセスできる場合は、次のコマンドを実行します。
 
 ```powershell
 Install-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0
 ```
 
-インターネットにアクセスし、結果として得られるモジュールのコピーを持つ別のコンピューター上のモジュールをダウンロードすることもできます。`C:\Program Files\WindowsPowerShell\Modules`で保護されたホストです。
+また、インターネットにアクセスできる別のコンピューターでモジュールをダウンロードし、結果のモジュールを保護されたホスト上の `C:\Program Files\WindowsPowerShell\Modules` にコピーすることもできます。
 
 ```powershell
 Save-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0 -Path C:\temp\
 ```
 
-モジュールをインストールするには、シールドされた VM をプロビジョニングする準備ができました。
+モジュールをインストールすると、シールドされた VM をプロビジョニングする準備が整います。
 
 ```powershell
 New-ShieldedVM -Name 'MyShieldedVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Wait
 ```
 
-テンプレート ディスクに Linux ベースの OS が含まれている場合は、`-Linux`コマンドの実行時フラグを設定します。
+シールドデータ応答ファイルに特殊化された値が含まれている場合は、ShieldedVM に置換値を指定できます。 この例では、静的 IPv4 アドレスのプレースホルダー値を使用して応答ファイルが構成されています。
+
+```powershell
+$specializationValues = @{
+    "@IP4Addr-1@" = "192.168.1.10"
+    "@MacAddr-1@" = "Ethernet"
+    "@Prefix-1-1@" = "192.168.1.0/24"
+    "@NextHop-1-1@" = "192.168.1.254"
+}
+New-ShieldedVM -Name 'MyStaticIPVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -SpecializationValues $specializationValues -Wait
+
+```
+
+テンプレートディスクに Linux ベースの OS が含まれている場合は、コマンドの実行時に `-Linux` フラグを含めます。
 
 ```powershell
 New-ShieldedVM -Name 'MyLinuxVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -Wait -Linux
 ```
 
-ヘルプ コンテンツを使用して、確認`Get-Help New-ShieldedVM -Full`詳細については、その他のオプションをコマンドレットに渡すことができます。
+コマンドレットに渡すことができる他のオプションの詳細については、`Get-Help New-ShieldedVM -Full` を使用してヘルプコンテンツを確認してください。
 
-VM では、プロビジョニングが完了すると、過ぎた後ことが使用できるように、OS 固有の特殊化フェーズを入力します。
-(RDP、PowerShell、SSH、または任意の管理ツールを使用して) 実行後に接続するために、有効なネットワークに VM を接続することを確認します。
+VM のプロビジョニングが完了すると、OS 固有の特殊化フェーズが開始され、その後で使用できるようになります。
+VM を実行した後に接続できるように、VM を有効なネットワークに接続してください (RDP、PowerShell、SSH、または任意の管理ツールを使用します)。
 
-## <a name="running-shielded-vms-on-a-hyper-v-cluster"></a>シールドされた Vm を HYPER-V クラスターで実行されています。
+## <a name="running-shielded-vms-on-a-hyper-v-cluster"></a>Hyper-v クラスターでのシールドされた Vm の実行
 
-(Windows フェールオーバー クラスターを使用して) クラスターの保護されたホストでシールドされた Vm をデプロイしようとする場合に高い可用性を次のコマンドレットを使用して、シールドされた VM を構成できます。
+(Windows フェールオーバークラスターを使用して) クラスター化された保護されたホストにシールドされた Vm を展開する場合は、次のコマンドレットを使用して、シールドされた VM を高可用性として構成できます。
 
 ```powershell
 Add-ClusterVirtualMachineRole -VMName 'MyShieldedVM' -Cluster <Hyper-V cluster name>
 ```
 
-シールドされた VM できるようになりましたライブ クラスター内で移行します。
+シールドされた VM をクラスター内でライブ移行できるようになりました。
 
 ## <a name="next-step"></a>次の手順
 
 > [!div class="nextstepaction"]
-> [デプロイをシールドされた VMM を使用して](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)
+> [VMM を使用してシールドを展開する](guarded-fabric-tenant-deploys-shielded-vm-using-vmm.md)

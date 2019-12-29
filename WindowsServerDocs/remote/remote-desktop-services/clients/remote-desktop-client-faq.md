@@ -2,7 +2,7 @@
 title: リモート デスクトップ クライアントに関する FAQ
 description: リモート デスクトップ クライアントについてよく寄せられる質問
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e6f91aa02cd0f19d480c24309be5797c273b0f2e
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 54ed455955053ebb234864f827759385ecf3d3c5
+ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66804951"
+ms.lasthandoff: 10/03/2019
+ms.locfileid: "71935034"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>リモート デスクトップ クライアントについてよく寄せられる質問
 
@@ -75,7 +75,7 @@ Windows 8.1 用内のリモート接続を許可するように表示される�
 
 ### <a name="why-cant-i-connect-using-remote-desktop"></a>リモート デスクトップを使用して接続できないのはなぜですか。
 
-リモート PC に接続しようとするときに発生する可能性が一般的な問題に対する解決策を次に示します。 複数のヘルプを探すことができますがこれらのソリューションが機能しない場合、 [マイクロソフト コミュニティ web サイト](https://go.microsoft.com/fwlink/p/?LinkId=242079)します。
+リモート PC に接続しようとするときに発生する可能性が一般的な問題に対する解決策を次に示します。 これらの解決策で解決しない場合は、[Microsoft コミュニティ Web サイト](https://go.microsoft.com/fwlink/p/?LinkId=242079)のヘルプを参照してください。
 
 - **リモート PC が見つかりません。** 適切な PC 名を付けていることを確かめ、その名前を正しく入力したことを確認します。 これでも接続できない場合は、PC 名の代わりに、リモート PC の IP アドレスを使用してみてください。
 - **ネットワークに問題があります。** インターネットに接続していることを確認します。 
@@ -89,7 +89,7 @@ Windows 8.1 用内のリモート接続を許可するように表示される�
      別のファイアウォールを使用している場合は、リモート デスクトップ (通常は 3389) のポートが開いているを確認します。
 - **リモート PC にリモート接続がセットアップされていません。** これを解決するには、このトピックの「[リモート デスクトップに適した PC の設定方法](#how-do-i-set-up-a-pc-for-remote-desktop)」にスクロールして戻ってください。
 - **リモート PC が、ネットワーク レベル認証が設定されている PC だけに接続を許可している可能性があります。** 
-- **リモート PC がオフになっている可能性があります。** オフになっている PC に接続したり、休止状態にならないようにしてください、設定のスリープとリモート PC に休止状態に設定されます **Never** (休止状態は、すべての Pc では利用できない) です。 します。
+- **リモート PC がオフになっている可能性があります。** 電源がオフ、スリープ、または休止の PC に接続することはできません。そのため、リモート PC のスリープと休止の設定を **[なし]** (すべての PC で休止を使用できません) に設定します。
 
 ### <a name="why-cant-i-find-or-connect-to-my-pc"></a>なぜことはできませんが見つからなかったり、自分の PC への接続ですか。
 
@@ -166,7 +166,7 @@ Web クライアントは、Windows、macOS、Linux、および ChromeOS をサ�
 2. 有効にする **すべてのモニターを使用して** と **全画面表示**します。
 
 ### <a name="is-bi-directional-sound-supported"></a>双方向のサウンドがサポートされているか。
-リモート デスクトップ クライアントでは、(クライアントからのマイク、サーバーに) 音をアップ ストリームはサポートされていません。
+双方向のサウンドは、Windows クライアントで接続ごとに構成できます。 関連する設定には、 **[ローカル リソース]** オプション タブの **[リモート オーディオ]** セクションでアクセスできます。
 
 ### <a name="what-can-i-do-if-the-sound-wont-play"></a>サウンドが再生されない場合の何か。
 セッションからサインアウトします (しないだけ切断、サインアウトするまで)、もう一度サインインしています。
@@ -234,7 +234,7 @@ Mac キーボード レイアウトがキーボード (たとえば、フラン�
 ### <a name="what-does-the-failed-to-parse-ntlm-challenge-error-mean"></a>"Failed to parse NTLM challenge" (NTLM チャレンジの解析に失敗しました) のエラーはどのような意味ですか。
 このエラーは、リモート PC での構成が正しくない場合に発生します。 リモート PC での RDP セキュリティ レベル設定が [クライアントと互換] に設定されていることを確認します。 (これを行うときにサポートが必要な場合は、システム管理者に問い合わせてください)。
 
-### <a name="what-does-tsrap-you-are-not-allowed-to-connect-to-the-given-host-mean"></a>"TS_RAP You are not allowed to connect to the given host" (TS_RAP 所定のホストに接続することは許可されていません) はどのような意味ですか。
+### <a name="what-does-ts_rap-you-are-not-allowed-to-connect-to-the-given-host-mean"></a>"TS_RAP You are not allowed to connect to the given host" (TS_RAP 所定のホストに接続することは許可されていません) はどのような意味ですか。
 このエラーは、ゲートウェイ サーバー上のリソース承認ポリシーにより、ユーザー名がリモート PC に接続できなくなったときに発生します。 これは、次の場合に発生することがあります。
 
 - リモート PC の名前は、ゲートウェイの名前と同じです。 この場合、リモート PC に接続しようとすると、代わりに、おそらくアクセス許可を持っていないゲートウェイに接続します。 ゲートウェイに接続する必要がある場合は、PC の名前として外部ゲートウェイ名を使わないでください。 代わりに "localhost" または IP アドレス (127.0.0.1)、あるいは内部サーバー名を使用してください。

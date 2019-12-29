@@ -1,31 +1,31 @@
 ---
-title: SMB ダイレクトとファイル サーバーのパフォーマンスを向上させる
-description: Windows Server 2012 R2、Windows Server 2012、および Windows Server 2016 で SMB ダイレクトの機能について説明します。
-ms.prod: windows-server-threshold
+title: SMB ダイレクトを使用してファイルサーバーのパフォーマンスを向上させる
+description: Windows Server 2012 R2、Windows Server 2012、および Windows Server 2016 の SMB ダイレクト機能について説明します。
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ed8fd5b4114fc9fd9c7dc278a98cea8cc67a8749
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 41126aa0d054607449d57928c1777679e5087e73
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826443"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394460"
 ---
 # <a name="smb-direct"></a>SMB ダイレクト
 
->適用対象:Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
+>適用対象: Windows Server 2012 R2、Windows Server 2012、Windows Server 2016
 
-Windows Server 2012 R2、Windows Server 2012、および Windows Server 2016 には、リモート ダイレクト メモリ アクセス (RDMA) 機能を搭載するネットワーク アダプターの使用をサポートする SMB ダイレクトと呼ばれる機能が含まれます。 RDMA を搭載するネットワーク アダプターは、遅延がきわめて小さく、CPU をほとんど使用せずに、最高速度で動作できます。 Hyper-V や Microsoft SQL Server などのワークロードについては、この機能によってリモート ファイル サーバーをローカル ストレージのように利用することができます。 SMB ダイレクトの特徴を以下に示します。
+Windows Server 2012 R2、Windows Server 2012、および Windows Server 2016 には、SMB ダイレクトと呼ばれる機能が含まれています。これにより、リモートダイレクトメモリアクセス (RDMA) 機能を搭載したネットワークアダプターの使用がサポートされます。 RDMA を搭載するネットワーク アダプターは、遅延がきわめて小さく、CPU をほとんど使用せずに、最高速度で動作できます。 Hyper-V や Microsoft SQL Server などのワークロードについては、この機能によってリモート ファイル サーバーをローカル ストレージのように利用することができます。 SMB ダイレクトの特徴を以下に示します。
 
-- スループットの向上:ネットワーク アダプターが回線速度で大量のデータの転送を調整する高速ネットワークの完全スループットを活用します。
+- 高スループット: ネットワーク アダプターが大量のデータの転送を回線速度で調整する高速ネットワークのスループットを最大限に活用できます。
 - 低い待機時間:ネットワーク要求に対する応答が非常に高速であるため、リモート ファイル記憶域を、直接接続されたブロック記憶域のような感覚で使用できます。
 - 低い CPU 使用率:データをネットワークで転送するときに使用される CPU サイクルを節約して、サーバー アプリケーションで使用できる処理能力を増やすことができます。
 
-SMB ダイレクトは、Windows Server 2012 R2 と Windows Server 2012 では構成に自動的に。
+SMB ダイレクトは、Windows Server 2012 R2 および Windows Server 2012 によって自動的に構成されます。
 
 ## <a name="smb-multichannel-and-smb-direct"></a>SMB マルチチャネルと SMB ダイレクト
 
@@ -41,7 +41,7 @@ SMB マルチチャネルを使用する場合は、ネットワーク アダプ
 
 SMB ダイレクトの要件は次のとおりです。
 
-- Windows Server 2012 R2 または Windows Server 2012 を実行している少なくとも 2 つのコンピューター
+- Windows Server 2012 R2 または Windows Server 2012 を実行している2台以上のコンピューター
 - RDMA 機能を搭載しているネットワーク アダプター 1 つ以上。
 
 ### <a name="considerations-when-using-smb-direct"></a>SMB ダイレクトを使用する場合の考慮事項
@@ -49,14 +49,14 @@ SMB ダイレクトの要件は次のとおりです。
 - SMB ダイレクトはフェールオーバー クラスターで使用できますが、クライアント アクセスに使用するクラスター ネットワークが SMB ダイレクトに適していることを確認する必要があります。 フェールオーバー クラスタリングでは、クライアント アクセスに複数のネットワークを使用することも、RSS (Receive Side Scaling) 対応および RDMA 対応のネットワーク アダプターを使用することもサポートされています。
 - Hyper-V 管理オペレーティング システムで SMB ダイレクトを使用して、Hyper-V over SMB を使用できるようにしたり、Hyper-V 記憶域スタックを使用する仮想マシンに記憶域を提供したりできます。 ただし、RDMA 対応ネットワーク アダプターは Hyper-V クライアントに直接公開されません。 RDMA 対応ネットワーク アダプターを仮想スイッチに接続すると、そのスイッチからの仮想ネットワーク アダプターは RDMA 対応ではなくなります。
 - SMB マルチチャネルを無効にすると、SMB ダイレクトも無効になります。 SMB マルチチャネルによって、ネットワーク アダプターの機能が検出され、ネットワーク アダプターが RDMA 対応かどうかが確認されるため、SMB マルチチャネルが無効になっていると、クライアントが SMB ダイレクトを使用できません。
-- SMB ダイレクトではサポートされません Windows RT. SMB ダイレクト サポートを必要と rdma 対応ネットワーク アダプターでは、これは Windows Server 2012 R2 および Windows Server 2012 でのみ使用できます。
-- SMB ダイレクトは、ダウンレベル バージョンの Windows Server ではサポートされていません。 これは、Windows Server 2012 R2 および Windows Server 2012 でのみサポートされます。
+- SMB ダイレクトは、Windows RT ではサポートされていません。 SMB ダイレクトでは、RDMA 対応ネットワークアダプターのサポートが必要です。これは、Windows Server 2012 R2 および Windows Server 2012 でのみ使用できます。
+- SMB ダイレクトは、ダウンレベル バージョンの Windows Server ではサポートされていません。 Windows Server 2012 R2 および Windows Server 2012 でのみサポートされています。
 
 ## <a name="enabling-and-disabling-smb-direct"></a>SMB ダイレクトを有効および無効にする
 
-SMB ダイレクトを有効に既定で Windows Server 2012 R2 または Windows Server 2012 がインストールされている場合。 SMB クライアントは、適切な構成が見つかると、自動的に複数のネットワーク接続を検出して使用します。
+SMB ダイレクトは、Windows Server 2012 R2 または Windows Server 2012 がインストールされている場合、既定で有効になります。 SMB クライアントは、適切な構成が見つかると、自動的に複数のネットワーク接続を検出して使用します。
 
-### <a name="disable-smb-direct"></a>直接 SMB を無効にします。
+### <a name="disable-smb-direct"></a>SMB ダイレクトを無効にする
 
 通常は、SMB ダイレクトを無効にする必要はありませんが、無効にする場合は、次のいずれかの Windows PowerShell スクリプトを実行します。
 
@@ -72,9 +72,9 @@ Disable-NetAdapterRdma <name>
 Set-NetOffloadGlobalSetting -NetworkDirect Disabled
 ```
 
-クライアントかサーバーのいずれかで RDMA を無効にすると、RDMA を使用できなくなります。 *Network Direct* RDMA インターフェイスの基本的なネットワーク サポートを Windows Server 2012 R2 および Windows Server 2012 の内部名です。
+クライアントかサーバーのいずれかで RDMA を無効にすると、RDMA を使用できなくなります。 *Network Direct*は、RDMA インターフェイスに対する windows Server 2012 R2 および windows server 2012 の基本的なネットワークサポートの内部名です。
 
-### <a name="re-enable-smb-direct"></a>再度直接 SMB を有効にします。
+### <a name="re-enable-smb-direct"></a>SMB ダイレクトを再度有効にする
 
 RDMA を無効にした後、再び有効にするには、次のいずれかの Windows PowerShell スクリプトを実行します。
 
@@ -98,7 +98,7 @@ RDMA の使用を再開するには、クライアントとサーバーの両方
 
 ### <a name="compare-a-file-copy-with-and-without-using-smb-direct"></a>SMB ダイレクトを使用する場合と使用しない場合のファイル コピーのパフォーマンスを比較する
 
-SMB ダイレクトのスループットを測定する方法を次に示します。
+SMB ダイレクトのスループットの増加を測定する方法を次に示します。
 
 1. SMB ダイレクトを構成します。
 2. SMB ダイレクトを使用して大きなファイル コピーを実行して、所要時間を測定します。
@@ -112,7 +112,7 @@ SMB ダイレクトのスループットを測定する方法を次に示しま�
 
 ### <a name="fail-one-of-multiple-network-adapters-during-a-file-copy-with-smb-direct"></a>SMB ダイレクトを使用してファイルをコピーしているときにいずれかのネットワーク アダプターに障害が発生した状況をシミュレートする
 
-SMB ダイレクトのフェールオーバー機能を確認する方法を次に示します。
+SMB ダイレクトのフェールオーバー機能を確認するには、次の手順を実行します。
 
 1. SMB ダイレクトが複数のネットワーク アダプターの構成で機能していることを確認します。
 2. 大きなファイル コピーを実行します。 コピーの実行中にいずれかのケーブルを外して (または、いずれかのネットワーク アダプターを無効にして)、いずれかのネットワーク パスで障害が発生した状況をシミュレートします。
@@ -123,6 +123,6 @@ SMB ダイレクトのフェールオーバー機能を確認する方法を次�
 
 ## <a name="more-information"></a>詳細情報
 
-- [サーバー メッセージ ブロックの概要](file-server-smb-overview.md)
-- [サーバー、ストレージ、およびネットワークの可用性の向上。シナリオの概要](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
-- [SMB 経由での Hyper V を展開します。](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)
+- [サーバーメッセージブロックの概要](file-server-smb-overview.md)
+- [サーバー、記憶域、およびネットワークの可用性の向上: シナリオの概要](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831437(v%3dws.11)>)
+- [Hyper-v over SMB の展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134187(v%3dws.11)>)

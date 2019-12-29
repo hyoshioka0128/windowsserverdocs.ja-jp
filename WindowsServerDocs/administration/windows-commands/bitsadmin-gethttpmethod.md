@@ -1,8 +1,8 @@
 ---
 title: bitsadmin gethttpmethod
-description: Windows コマンド」のトピック**bitsadmin gethttpmethod** -使用する HTTP 動詞を取得します。
+description: '**Bitsadmin gethttpmethod**の Windows コマンドに関するトピックでは、使用する HTTP 動詞を取得します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 7f34e9e22fbb8051f9d8595cf5d54573344459c8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8b5b933d402ff5b621cc6073a54f34b5d3095533
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861623"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381560"
 ---
 # <a name="bitsadmin-gethttpmethod"></a>bitsadmin gethttpmethod
 
@@ -37,4 +37,4 @@ bitsadmin /GetHttpMethod <Job>
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

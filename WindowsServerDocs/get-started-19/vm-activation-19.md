@@ -3,7 +3,7 @@ title: 仮想マシンの自動ライセンス認証
 TOCTitle: Automatic VM Activation
 description: Windows Server 2019、Windows Server 2016、および Windows Server 2012 R2 で VM のライセンス認証を行う方法
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: server-general
@@ -12,12 +12,12 @@ ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
-ms.openlocfilehash: 18e20433050371dc02782fb8630a885e53ae31ad
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 43c0ce500058bd4115d58b68dc79068a52c0bb3e
+ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63688702"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73956093"
 ---
 # <a name="automatic-virtual-machine-activation"></a>仮想マシンの自動ライセンス認証
 
@@ -88,7 +88,7 @@ Windows Server 2019 には以下の AVMA キーを使用できます。
 |標準|  TNK62-RXVTB-4P47B-2D623-4GF74|
 |Essentials|    2CTP7-NHT64-BP62M-FV6GG-HFV28|
  
-Windows Server バージョン 1809 には以下の AVMA キーを使用できます。
+Windows Server バージョン 1909、1903、および 1809 には以下の AVMA キーを使用できます。
 
 |エディション|   AVMA キー|
 |-|-|
@@ -134,7 +134,7 @@ Windows Server 2012 R2 では、次の AVMA キーを使用できます。
 
   - RDP アドレス
 
-この情報を取得する方法について詳しくは、[Hyper-V スクリプトでのKVP GuestIntrinsicExchangeItems の参照](http://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx)に関するページを参照してください。
+この情報を取得する方法について詳しくは、[Hyper-V スクリプトでのKVP GuestIntrinsicExchangeItems の参照](https://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx)に関するページを参照してください。
 
 
 > [!NOTE]

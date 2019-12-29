@@ -2,42 +2,42 @@
 ms.assetid: d11acbc2-40c6-4ab2-9514-2bc3ad81499a
 title: データ重複除去の新機能
 ms.technology: storage-deduplication
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 04/17/2019
-ms.openlocfilehash: 44a08443312d4e48b8fa518755e2a9b7aa50643c
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 577926035840fbd571c8a1157f1da0c2e1b4851b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476093"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403170"
 ---
 # <a name="whats-new-in-data-deduplication"></a>データ重複除去の新機能
 
 > 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
-[データ重複除去](overview.md)Windows Server ではパフォーマンス、柔軟性が高く、管理しやすいプライベート クラウド規模である高度に適しています。 Windows server ソフトウェア定義記憶域スタックの詳細についてを参照してください[Windows Server での記憶域の新](../whats-new-in-storage.md)します。
+Windows Server での[データ重複除去](overview.md)は、プライベートクラウドのスケールで、パフォーマンスと柔軟性が高く、管理しやすいように最適化されています。 Windows Server のソフトウェアで定義された記憶域スタックの詳細については、「 [Windows server の記憶域の新機能](../whats-new-in-storage.md)」を参照してください。
 
-データ重複除去では、Windows Server 2019 に次の拡張機能があります。
-
-| 機能 | 新規/更新 | 説明 |
-|---------------|----------------|-------------|
-| ReFS のサポート  | 新規            | 重複除去と圧縮 ReFS ファイル システムを同じボリューム上には、最大 10 倍のデータを格納します。 (が[1 回のクリック](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)Windows Admin Center を有効にします)。省略可能な圧縮を使用して可変サイズのチャンク ストアはマルチ スレッドの処理後のアーキテクチャがパフォーマンスに与える影響を最小限の保持中に削減率を最大化します。 ボリュームをサポートしている最大 64 TB は各ファイルの最初の 4 TB の重複除去とします。|
-
-データ重複除去では、Windows Server 2016 以降、次の機能強化があります。
+Windows Server 2019 では、データ重複除去の機能が次のように強化されています。
 
 | 機能 | 新規/更新 | 説明 |
 |---------------|----------------|-------------|
-| [大量ボリュームのサポート](whats-new.md#large-volume-support) | 更新 | Windows Server 2016 以前では、想定されるチャーンに合わせてボリュームのサイズを具体的に設定する必要があり、10 TB を超えるサイズのボリュームは重複除去に適していませんでした。 Windows Server 2016 のデータ重複除去では、最大 64 TB のボリューム サイズがサポートされます。 |
-| [大きいファイルのサポート](whats-new.md#large-file-support) | 更新 | Windows Server 2016 の前では、1 TB に近いサイズのファイルは重複除去に適した候補ではありませんでした。 Windows Server 2016 では、1 TB までのファイルが完全にサポートされます。 |
+| ReFS のサポート  | 新規            | 同じボリューム上に、ReFS ファイルシステムの重複除去と圧縮を使用して最大10倍のデータを格納します。 ( [1 回クリックするだけ](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be)で、Windows 管理センターで有効にすることができます)。オプションの圧縮を使用した可変サイズのチャンクストアでは、節約率が最大になりますが、マルチスレッドの後処理アーキテクチャではパフォーマンスに影響を最小限に抑えることができます。 は、最大 64 TB のボリュームをサポートし、各ファイルの最初の 4 TB を重複除去します。|
+
+データ重複除去では、Windows Server 2016 以降、次の点が強化されています。
+
+| 機能 | 新規/更新 | 説明 |
+|---------------|----------------|-------------|
+| [大容量ボリュームのサポート](whats-new.md#large-volume-support) | 更新 | Windows Server 2016 以前では、想定されるチャーンに合わせてボリュームのサイズを具体的に設定する必要があり、10 TB を超えるサイズのボリュームは重複除去に適していませんでした。 Windows Server 2016 のデータ重複除去では、最大 64 TB のボリューム サイズがサポートされます。 |
+| [大きなファイルのサポート](whats-new.md#large-file-support) | 更新 | Windows Server 2016 の前では、1 TB に近いサイズのファイルは重複除去に適した候補ではありませんでした。 Windows Server 2016 では、1 TB までのファイルが完全にサポートされます。 |
 | [Nano Server のサポート](whats-new.md#nano-server-support) | 新規 | Windows Server 2016 の新しい Nano Server 展開オプションでは、データ重複除去が利用可能で、完全にサポートされています。 |
 | [簡略化されたバックアップのサポート](whats-new.md#simple-backup-support) | 新規 | Windows Server 2012 R2 では、Microsoft の [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx) などの仮想化バックアップ アプリケーションをサポートするには、一連の手動による構成手順を実行する必要がありました。 Windows Server 2016 では、仮想化バックアップ アプリケーションに対してデータ重複除去をシームレスに展開するために、使用法の種類の新しい既定値 (バックアップ) が追加されました。|
 | [クラスター OS のローリング アップグレードのサポート](whats-new.md#cluster-upgrade-support) | 新規 | データ重複除去では、Windows Server 2016 の新しい[クラスター OS のローリング アップグレード](../..//failover-clustering/cluster-operating-system-rolling-upgrade.md)機能を完全にサポートしています。 |
 
-## <a name="large-volume-support"></a>大量ボリュームのサポート
+## <a name="large-volume-support"></a>大容量ボリュームのサポート
 
 **この変更の利点**  
 Windows Server 2012 R2 でデータ重複除去のパフォーマンスを最適化するには、最適化ジョブがデータ変化の速度 ("チャーン") に対応できるように、ボリュームのサイズを適切に設定する必要がありました。 すなわち、ワークロードの書き込みパターンによっても異なりますが、通常は、ボリューム が 10 TB 以下でなければデータ重複除去で高いパフォーマンスを達成できません。
@@ -53,7 +53,7 @@ Windows Server 2016 では、データ重複除去ジョブのパイプライン
 
 これらの最適化は、最適化ジョブだけでなく、[すべてのデータ重複除去ジョブ](understand.md#job-info)に適用されます。
 
-## <a name="large-file-support"></a>大きいファイルのサポート
+## <a name="large-file-support"></a>大きなファイルのサポート
 **この変更の利点**  
 Windows Server 2012 R2 では、非常に大きなファイルは、重複除去処理パイプラインのパフォーマンス低下を引き起こすことから、データ重複除去に適していません。 Windows Server 2016 では、1 TB までのファイルの重複除去を非常に高いパフォーマンスで実行できることから、管理者はさまざまなワークロードで重複除去による削減を実現できます。 たとえば、バックアップ ワークロードに通常付随する非常に大きなファイルの重複除去を行うことができます。
 

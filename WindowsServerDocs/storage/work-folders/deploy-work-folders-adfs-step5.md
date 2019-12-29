@@ -1,6 +1,6 @@
 ---
 title: 'AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 5: クライアントのセットアップ'
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-work-folders
 ms.topic: article
 manager: klaasl
@@ -8,28 +8,28 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: f168292b-0dbc-44b9-965f-d480e5134a0c
-ms.openlocfilehash: 44e3ab06ac29d770ad47b43db5eba06f0eb08a60
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f0a50913cbcf7773f792df4ce119b83d796a7155
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447788"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402777"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 5 では、クライアントのセットアップ
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>AD FS と Web アプリケーション プロキシを使ったワーク フォルダーの展開: 手順 5: クライアントのセットアップ
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、Active Directory フェデレーション サービス (AD FS) と Web アプリケーション プロキシを使用して、ワーク フォルダーを展開する 5 番目の手順について説明します。 このプロセスの他の手順は、次のトピックで確認できます。  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。概要](deploy-work-folders-adfs-overview.md)  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 概要](deploy-work-folders-adfs-overview.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 1、AD FS の設定](deploy-work-folders-adfs-step1.md)  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 1. AD FS を設定する](deploy-work-folders-adfs-step1.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 2 では、AD FS の構成後の作業](deploy-work-folders-adfs-step2.md)  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順2、AD FS 構成後の作業](deploy-work-folders-adfs-step2.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 3 では、ワーク フォルダーの設定](deploy-work-folders-adfs-step3.md)  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 3. ワークフォルダーを設定する](deploy-work-folders-adfs-step3.md)  
   
--   [AD FS と Web アプリケーション プロキシを使ったワーク フォルダーを展開します。手順 4、Web アプリケーション プロキシの設定](deploy-work-folders-adfs-step4.md)  
+-   [AD FS と Web アプリケーションプロキシを使用してワークフォルダーを展開する: 手順 4. Web アプリケーションプロキシを設定する](deploy-work-folders-adfs-step4.md)  
   
 ドメインに参加している Windows クライアントおよびドメインに参加していない Windowsクライアントをセットアップするには、次の手順を使用します。 これらのクライアントを使用して、クライアントのワーク フォルダーの間でファイルが正しく同期されているかどうかをテストすることができます。  
   
@@ -79,7 +79,7 @@ ms.locfileid: "66447788"
   
 2. **[ワーク フォルダーのセットアップ]** をクリックします。  
   
-3. **職場の電子メール アドレスを入力** ページで、ユーザーの電子メール アドレスを入力します (たとえば、 user@contoso.com) またはワーク フォルダーの URL (テスト例では、https で:\//workfolders.contoso.com)、順にクリックします**次へ**します。  
+3. **[職場の電子メールアドレスを入力]** してください ページで、ユーザーの電子メールアドレス (たとえば、user@contoso.com) またはワークフォルダーの URL (テスト例では、https:\//workfolders.contoso.com) を入力し、 **[次へ]** をクリックします。  
   
 4. ユーザーが企業ネットワークに接続されている場合、Windows 統合認証によって、認証が実行されます。 ユーザーが企業ネットワークに接続されていない場合は、ADFS (OAuth) で認証が実行され、ユーザーは資格情報の入力を求められます。 資格情報を入力して、 **[OK]** をクリックします。  
   
@@ -124,7 +124,7 @@ ms.locfileid: "66447788"
   
 Windows Server の UI を使って、ワーク フォルダー、AD FS、Web アプリケーション プロキシを展開する手順は、以上で完了です。  
   
-## <a name="see-also"></a>関連項目  
-[ワーク フォルダーの概要](Work-Folders-Overview.md)  
+## <a name="see-also"></a>参照  
+[ワークフォルダーの概要](Work-Folders-Overview.md)  
   
 

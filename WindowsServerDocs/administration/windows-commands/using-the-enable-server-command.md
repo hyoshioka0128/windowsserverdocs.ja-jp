@@ -1,8 +1,8 @@
 ---
 title: 有効にするサーバーのコマンドを使用します。
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: fdf03a778a6c646aa79c2f844212b1728c5c73eb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0b90621ec14c6cf451d7a05eace79f2e0679b2f4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852723"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363455"
 ---
 # <a name="using-the-enable-server-command"></a>有効にするサーバーのコマンドを使用します。
 
@@ -39,7 +39,7 @@ wdsutil [Options] /Enable-Server [/Server:<Server name>]
 wdsutil /Enable-Server
 wdsutil /verbose /Enable-Server /Server:MyWDSServer
 ```
-#### <a name="additional-references"></a>その他の参照
+#### <a name="additional-references"></a>その他の参照情報
 [コマンドライン構文のポイント](command-line-syntax-key.md)
 [、無効にするサーバーのコマンドを使用して](using-the-disable-server-command.md)
 [get サーバー コマンドを使用して](using-the-get-server-command.md)

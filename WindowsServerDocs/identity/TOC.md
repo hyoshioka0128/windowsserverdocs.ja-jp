@@ -20,7 +20,7 @@
 ##### [要求変換規則言語](solution-guides/Claims-Transformation-Rules-Language.md)
 #### [付録 A: ダイナミック アクセス制御の用語集](solution-guides/appendix-A--Dynamic-Access-Control-Glossary.md)
 #### [付録 B: テスト環境のセットアップ](solution-guides/appendix-B--Setting-Up-the-Test-Environment.md)
-
+### [カスタム ポート上で証明書キーベースの書き換え用の証明書の登録 Web サービスを構成する](solution-guides/certificate-enrollment-certificate-key-based-renewal.md)
 
 ## [Active Directory Domain Services](ad-ds/active-directory-Domain-Services.md)
 
@@ -197,6 +197,7 @@
 
 ### [AD DS のトラブルシューティング](ad-ds/manage/AD-DS-Troubleshooting.md)
 #### [コンピューターをトラブルシューティング用に構成する](ad-ds/manage/troubleshoot/Configuring-a-computer-for-Troubleshooting.md)
+#### [ETW を使用した LDAP 接続のトラブルシューティング](ad-ds/manage/troubleshoot/troubleshoot-ldap-using-etw.md)
 #### [Active Directory レプリケーションの問題のトラブルシューティングに関するページ](ad-ds/manage/troubleshoot/Troubleshooting-active-directory-Replication-Problems.md)
 ##### [その他のリソース](additional-Resources_12.md)
 

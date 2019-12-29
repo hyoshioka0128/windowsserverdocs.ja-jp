@@ -1,8 +1,8 @@
 ---
 title: ftp の名前変更
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 80d1a15f038017444c7654a44748bfd22be8e487
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 977baa042a6b0d9c23db7cb398bee997c2049227
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438381"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376018"
 ---
 # <a name="ftp-rename"></a>ftp: 名前の変更
 
 >適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-リモート ファイルの名前を変更します。   
+リモートファイルの名前を変更します。   
 ## <a name="syntax"></a>構文  
 ```  
 rename <FileName> <NewFileName>  
@@ -37,9 +37,9 @@ rename <FileName> <NewFileName>
 | <NewFileName> |        新しいファイル名を指定します。         |
 
 ## <a name="BKMK_Examples"></a>例  
-リモート ファイルの名前を変更**example.txt**に**example1.txt**  
+リモートファイルの**例**の名前を example1 に変更し**ます**。  
 ```  
 rename example.txt example1.txt  
 ```  
-## <a name="additional-references"></a>その他の参照  
+## <a name="additional-references"></a>その他の参照情報  
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)  

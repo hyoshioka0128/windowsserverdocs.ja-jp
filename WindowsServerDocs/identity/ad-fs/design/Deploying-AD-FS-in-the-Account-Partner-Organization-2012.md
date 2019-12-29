@@ -7,24 +7,24 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bf21860603b3055c2ef2c9e7b77bb106eb06e238
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 62d7549f124b96cd7addf7e54cc5d0c1d9897098
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191625"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408129"
 ---
 # <a name="deploying-ad-fs-in-the-account-partner-organization"></a>アカウント パートナー組織での AD FS の展開
 
-Active Directory フェデレーション サービスのアカウント パートナー \(AD FS\)サポートされている属性ストアでユーザー アカウントを物理的に格納するフェデレーションの信頼関係内の組織を表します。 ストアがサポートされている属性の詳細については、次を参照してください。 [The Role of Attribute Stores](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)します。  
+Active Directory フェデレーションサービス (AD FS) \(AD FS\) のアカウントパートナーは、サポートされている属性ストアにユーザーアカウントを物理的に格納するフェデレーションの信頼関係にある組織を表します。 サポートされている属性ストアの詳細については、「[属性ストアの役割](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)」を参照してください。  
   
-アカウント パートナー組織のフェデレーション サーバーでは、ローカル ユーザーを認証し、承認決定を行う、リソース パートナーで使用されるセキュリティ トークンを作成します。 Web サイトと Web サービスなどの証明書利用者のパーティが簡単に自身をフェデレーション サーバーに登録し、発行済みトークンの認証とアクセス制御を使用できます。  
+アカウントパートナー組織のフェデレーションサーバーは、ローカルユーザーを認証し、リソースパートナーが承認の決定を行うときに使用するセキュリティトークンを作成します。 これにより、Web サイトや Web サービスなどの証明書利用者は、自身をフェデレーションサーバーに簡単に登録し、発行されたトークンを使用して認証とアクセス制御を行うことができます。  
   
-複数のフェデレーション アプリケーションまたはサービスへのアクセスをユーザーに提供する必要があるシナリオで、各アプリケーションまたはサービスがホストされている場合は別の組織で-デプロイできるように、アカウント パートナーのフェデレーション サーバーを構成することができます複数の証明書利用者のパーティです。  
+複数のフェデレーションアプリケーションまたはサービスへのアクセスをユーザーに提供する必要があるシナリオでは、各アプリケーションまたはサービスが別の組織によってホストされている場合、アカウントパートナーフェデレーションサーバーを構成して、展開できるようにすることができます。複数の証明書利用者。  
   
-設定して、アカウント パートナー組織を構成する方法の詳細については、次を参照してください。[チェックリスト。アカウント パートナー組織の構成](../../ad-fs/deployment/Checklist--Configuring-the-Account-Partner-Organization.md)します。  
+アカウント パートナー組織のセットアップ方法と構成方法の詳細については、「 [Checklist: Configuring the Account Partner Organization](../../ad-fs/deployment/Checklist--Configuring-the-Account-Partner-Organization.md)」を参照してください。  
   
 ## <a name="in-this-section"></a>このセクションの内容  
   
@@ -32,7 +32,7 @@ Active Directory フェデレーション サービスのアカウント パー�
   
 -   [アカウント パートナー内のフェデレーション サーバー プロキシの役割を確認する](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Account-Partner.md)  
   
--   [アカウント パートナー内のクライアント コンピューターを準備します。](Prepare-Client-Computers-in-the-Account-Partner.md)  
+-   [アカウントパートナーでクライアントコンピューターを準備する](Prepare-Client-Computers-in-the-Account-Partner.md)  
   
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 [Windows Server 2012 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012.md)

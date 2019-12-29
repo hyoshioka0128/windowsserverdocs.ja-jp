@@ -1,8 +1,8 @@
 ---
 title: bitsadmin キャッシュ
-description: Windows コマンド」のトピック**bitsadmin キャッシュ**スイッチ -/Cache スイッチ bitsadmin の一覧が含まれています
+description: '**Bitsadmin cache**スイッチに関する Windows コマンドのトピック-bitsadmin/cache スイッチの一覧が含まれています。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 80077957df0891d738364552491a66a00e831168
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: aaf1df20c7f0be97a9449fc952523dc7dfacc16b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435054"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381865"
 ---
 # <a name="bitsadmin-cache"></a>bitsadmin キャッシュ
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="syntax"></a>構文
 
@@ -43,18 +43,18 @@ bitsadmin /Cache /SetExpirationtime
 
 |パラメーター|説明|
 |-------|--------|
-|[bitsadmin cache および help](bitsadmin-cache-and-help.md)|コマンドが表示されます\-の使用状況を行、\/スイッチをキャッシュします。|
-|[bitsadmin cache および clear](bitsadmin-cache-clear.md)|ローカル キャッシュを削除します。|
-|[bitsadmin cache および delete](bitsadmin-cache-and-delete.md)|キャッシュ エントリを削除します。|
-|[bitsadmin cache および deleteurl](bitsadmin-cache-and-deleteurl.md)|指定された url には、すべてのキャッシュ エントリを削除します。|
-|[bitsadmin cache および list](bitsadmin-cache-and-list.md)|すべてのキャッシュ エントリを一覧表示します。|
-|[bitsadmin cache および info](bitsadmin-cache-and-info.md)|特定のキャッシュ エントリをダンプします。|
-|[bitsadmin cache および getlimit](bitsadmin-cache-and-getlimit.md)|キャッシュの制限値を取得します。|
+|[bitsadmin cache および help](bitsadmin-cache-and-help.md)|\/キャッシュスイッチのコマンド\-行の使用法を表示します。|
+|[bitsadmin cache および clear](bitsadmin-cache-clear.md)|ローカルキャッシュを削除します。|
+|[bitsadmin cache および delete](bitsadmin-cache-and-delete.md)|キャッシュエントリを削除します。|
+|[bitsadmin cache および deleteurl](bitsadmin-cache-and-deleteurl.md)|指定された URL のすべてのキャッシュエントリを削除します。|
+|[bitsadmin cache および list](bitsadmin-cache-and-list.md)|すべてのキャッシュエントリを一覧表示します。|
+|[bitsadmin cache および info](bitsadmin-cache-and-info.md)|特定のキャッシュエントリをダンプします。|
+|[bitsadmin cache および getlimit](bitsadmin-cache-and-getlimit.md)|キャッシュ制限を取得します。|
 |[bitsadmin cache および setlimit](bitsadmin-cache-and-setlimit.md)|キャッシュの制限を設定します。|
 |[bitsadmin cache および getexpirationtime](bitsadmin-cache-and-getexpirationtime.md)|キャッシュの有効期限を取得します。|
 |[bitsadmin cache および setexpirationtime](bitsadmin-cache-and-setexpirationtime.md)|キャッシュの有効期限を設定します。|
 
-## <a name="additional-references"></a>その他の参照
+## <a name="additional-references"></a>その他の参照情報
 [コマンド ライン構文の記号](command-line-syntax-key.md)
 
 

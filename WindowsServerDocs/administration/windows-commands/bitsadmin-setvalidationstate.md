@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setvalidationstate
-description: Windows コマンド」のトピック**bitsadmin setvalidationstate** -ジョブ内の指定されたファイルのコンテンツの検証状態を設定します。
+description: '**Bitsadmin setvalidationstate**の Windows コマンドトピック-ジョブ内の指定されたファイルのコンテンツ検証の状態を設定します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a832e8f3d21681f67a4486df33c387e5a8456718
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 37d7fa3a8a91abf1e7b6ac5a51b6cebd78984a91
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434872"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380398"
 ---
 # <a name="bitsadmin-setvalidationstate"></a>bitsadmin setvalidationstate
 
 
 
-ジョブ内の指定されたファイルのコンテンツの検証の状態を設定します。
+ジョブ内の指定されたファイルのコンテンツ検証の状態を設定します。
 
 ## <a name="syntax"></a>構文
 
@@ -37,12 +37,12 @@ bitsadmin /SetValidationState <Job> <file index> <true|false>
 | パラメーター  |          説明           |
 |------------|--------------------------------|
 |    Job     | ジョブの表示名または GUID |
-| ファイルのインデックス |         0 から始まります          |
+| ファイルインデックス |         0から開始          |
 |    True    |             False              |
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、ファイル 2 のコンテンツの検証の状態を設定を TRUE という名前のジョブに*myJob*します。
+次の例では、 *myjob*という名前のジョブについて、ファイル2のコンテンツ検証の状態を TRUE に設定します。
 ```
 C:\>bitsadmin /SetValidationState myJob 2 TRUE 
 ```

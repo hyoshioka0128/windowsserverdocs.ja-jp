@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getproxybypasslist
-description: Windows コマンド」のトピック**bitsadmin getproxybypasslist** -指定したジョブのプロキシ バイ パスの一覧を取得します。
+description: '**Bitsadmin getproxybypasslist**の Windows コマンドトピックでは、指定されたジョブのプロキシバイパスリストを取得します。'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 020b8fc0019eb103a0e469258be8705b80dd45de
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 87cc131402707eac40329750e98218ec52083b94
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854113"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381422"
 ---
 # <a name="bitsadmin-getproxybypasslist"></a>bitsadmin getproxybypasslist
 
-指定したジョブのプロキシ バイ パスの一覧を取得します。
+指定されたジョブのプロキシバイパスリストを取得します。
 
 ## <a name="syntax"></a>構文
 
@@ -38,15 +38,15 @@ bitsadmin /GetProxyBypassList <Job>
 
 ## <a name="remarks"></a>注釈
 
-バイパス リストには、ホスト名または IP アドレス、またはその両方が含まれています。 プロキシを経由してルーティングするはありません。 一覧に含めることができます"\<ローカル >"を同じ LAN 上のすべてのサーバーを参照してください。 一覧は、セミコロンは、またはスペースで区切られました。
+バイパスリストには、プロキシ経由でルーティングされないホスト名または IP アドレス (またはその両方) が含まれます。 この一覧には、同じ LAN 上のすべてのサーバーを参照する "\<ローカル >" を含めることができます。 リストは、セミコロンまたはスペースで区切ることができます。
 
 ## <a name="BKMK_examples"></a>例
 
-次の例では、という名前のジョブのプロキシ バイ パス一覧を取得する*myDownloadJob*します。
+次の例では、 *Mydownloadjob*という名前のジョブのプロキシバイパスリストを取得します。
 ```
 C:\>bitsadmin /GetProxyBypassList myDownloadJob
 ```
 
 #### <a name="additional-references"></a>その他の参照情報
 
-[コマンドライン構文キー](command-line-syntax-key.md)
+[コマンド ライン構文の記号](command-line-syntax-key.md)

@@ -1,18 +1,18 @@
 ---
 title: Server Core とは
 description: Windows Server の Server Core インストールオプションについて説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 02/20/2018
-ms.openlocfilehash: ce00bc973b7b750e33326cdec24193ba537b5294
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 269be253367ba2bc692a5903e7d519a40f487d8b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476476"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383340"
 ---
 # <a name="what-is-the-server-core-installation-option-in-windows-server"></a>Windows Server の Server Core インストールオプションとは
 

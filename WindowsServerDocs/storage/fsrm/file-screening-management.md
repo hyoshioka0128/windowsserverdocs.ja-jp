@@ -2,18 +2,18 @@
 title: ファイル スクリーンの管理
 description: この記事では、ファイル スクリーンの作成、通知の生成、ファイル スクリーン処理のテンプレートの定義、およびファイル スクリーンの例外の作成の方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 05fcaf402347d16bf8c28528d402664ae5f99165
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: ac5032630f960329675f896a303ef197d6a4dbb3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476052"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403109"
 ---
 # <a name="file-screening-management"></a>ファイル スクリーンの管理
 
@@ -33,7 +33,7 @@ ms.locfileid: "65476052"
 ここでは、次のトピックについて説明します。
 
 -   [スクリーン処理のためにファイル グループを定義する](define-file-groups-for-screening.md)
--   [ファイル スクリーンを作成します。](create-file-screen.md)
+-   [ファイル スクリーンを作成する](create-file-screen.md)
 -   [ファイル スクリーンの例外を作成する](create-file-screen-exception.md)
 -   [ファイル スクリーン テンプレートを作成する](create-file-screen-template.md)
 -   [ファイル スクリーンのテンプレートのプロパティを編集する](edit-file-screen-template-properties.md)

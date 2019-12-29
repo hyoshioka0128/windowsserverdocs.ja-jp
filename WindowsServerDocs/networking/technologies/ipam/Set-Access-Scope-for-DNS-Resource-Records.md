@@ -1,9 +1,9 @@
 ---
 title: DNS リソース レコードのアクセス スコープを設定する
-description: このトピックでは、Windows Server 2016 での IP アドレス管理 (IPAM) の管理ガイドの一部です。
+description: このトピックは、Windows Server 2016 の IP アドレス管理 (IPAM) 管理ガイドに含まれています。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ipam
@@ -12,41 +12,41 @@ ms.topic: article
 ms.assetid: a96a8752-5678-49c5-b069-d2cce8042a51
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c79e1f63b9bcb43520a57defca8228b76db68a31
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: b1790f2cbf84fd68f33ca30d2fe7663dde824240
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283872"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405646"
 ---
 # <a name="set-access-scope-for-dns-resource-records"></a>DNS リソース レコードのアクセス スコープを設定する
 
->適用対象:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象:Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、IPAM クライアント コンソールを使用して DNS リソース レコードのアクセス スコープの設定を使用できます。  
+このトピックを使用して、IPAM クライアントコンソールを使用して DNS リソースレコードのアクセススコープを設定できます。  
   
 メンバーシップ **管理者**, 、同等の権限をこの手順を実行するために必要な最低限のですか。  
   
-### <a name="to-set-access-scope-for-dns-resource-records"></a>DNS リソース レコードのアクセス スコープを設定するには  
+### <a name="to-set-access-scope-for-dns-resource-records"></a>DNS リソースレコードのアクセススコープを設定するには  
   
-1.  サーバー マネージャーで、クリックして  **IPAM**します。 IPAM クライアント コンソールに表示されます。  
+1.  サーバー マネージャーで、クリックして  **IPAM**します。 IPAM クライアントコンソールが表示されます。  
   
-2.  ナビゲーション ウィンドウで、 **DNS ゾーン**します。  下のナビゲーション ウィンドウで **前方参照**とを参照して、リソース レコードを変更するアクセス スコープが含まれるゾーンを選択します。  
+2.  ナビゲーションウィンドウで、 **[DNS ゾーン数]** をクリックします。  下のナビゲーションウィンドウで、 **[前方参照]** を展開し、アクセススコープを変更するリソースレコードが含まれているゾーンを参照して選択します。  
   
-3.  表示ウィンドウで検索し、リソース レコードを変更するアクセス スコープを選択します。  
+3.  表示ウィンドウで、アクセススコープを変更するリソースレコードを見つけて選択します。  
   
-    ![リソース レコードを選択します。](../../media/Set-Access-Scope-for-DNS-Resource-Records/ipam_RestrictUserToRRControl_02.jpg)  
+    ![リソースレコードを選択します](../../media/Set-Access-Scope-for-DNS-Resource-Records/ipam_RestrictUserToRRControl_02.jpg)  
   
-4.  選択された DNS リソース レコードを右クリックし、をクリックし、**アクセス スコープの設定**します。  
+4.  選択した DNS リソースレコードを右クリックし、 **[アクセススコープの設定]** をクリックします。  
   
     ![アクセス スコープの設定](../../media/Set-Access-Scope-for-DNS-Resource-Records/ipam_RestrictUserToRRControl_03.jpg)  
   
-5.  **アクセス スコープの設定** ダイアログ ボックスが表示されます。 展開に、必要な場合は、選択を解除する をクリックして**親から継承されたアクセス スコープ**します。 **アクセス スコープの選択**、項目を選択し、をクリックし、 **OK**します。  
+5.  **[アクセススコープの設定]** ダイアログボックスが表示されます。 デプロイに必要な場合は、 **[親からのアクセススコープの継承]** をクリックして選択を解除します。 **[アクセススコープの選択]** で項目を選択し、 **[OK]** をクリックします。  
   
-    ![アクセス スコープを選択します。](../../media/Set-Access-Scope-for-DNS-Resource-Records/ipam_RestrictUserToRRControl_04.jpg)  
+    ![アクセススコープの選択](../../media/Set-Access-Scope-for-DNS-Resource-Records/ipam_RestrictUserToRRControl_04.jpg)  
   
 ## <a name="see-also"></a>関連項目  
-[ロール ベース Access Control](Role-based-Access-Control.md)  
+[ロールベースの Access Control](Role-based-Access-Control.md)  
 [IPAM の管理](Manage-IPAM.md)  
   
 

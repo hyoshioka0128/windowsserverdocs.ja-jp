@@ -1,8 +1,8 @@
 ---
 title: nslookup set timeout
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1f6c8863d0a9330fd3a8499b0e6dbc802bd95022
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 32fcfcaeccb6599e9aaca21f9c085bb00857479c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436509"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372758"
 ---
 # <a name="nslookup-set-timeout"></a>nslookup set timeout
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-初期の参照要求に応答を待機する秒数を変更します。
+検索要求への応答を待機する秒数の初期値を変更します。
 ## <a name="syntax"></a>構文
 ```
 set timeout=<Number>
@@ -33,16 +33,16 @@ set timeout=<Number>
 
 |    パラメーター    |                                           説明                                            |
 |-----------------|--------------------------------------------------------------------------------------------------|
-|    <Number>     | 応答を待機する秒数を指定します。 既定を待機する秒数には 5 です。 |
-| {help &#124; ?} |                      簡単な概要を表示します。 **nslookup**サブコマンドします。                       |
+|    <Number>     | 応答を待機する秒数を指定します。 待機する既定の秒数は5です。 |
+| {ヘルプ&#124; ?} |                      **Nslookup**サブコマンドの簡単な概要を表示します。                       |
 
 ## <a name="remarks"></a>注釈
-- 指定した期間中、要求への応答が受信していない場合は、タイムアウトが倍になり、要求を再送信します。 使用することができます、**セット再試行**再試行の回数を制御するコマンド。
+- 指定された期間内に要求への応答が受信されない場合、タイムアウトは2倍になり、要求は再度送信されます。 **[再試行の設定]** コマンドを使用して、再試行回数を制御できます。
   ## <a name="BKMK_examples"></a>例
-  次の例は、2 秒への応答を取得するためのタイムアウトを設定します。
+  次の例では、応答を2秒に取得するためのタイムアウトを設定します。
   ```
   set timeout=2
   ```
-  ## <a name="additional-references"></a>その他の参照
-  [コマンドライン構文のポイント](command-line-syntax-key.md)
-  [nslookup 再試行の設定](nslookup-set-retry.md)
+  ## <a name="additional-references"></a>その他の参照情報
+  [コマンドライン構文のキー](command-line-syntax-key.md)
+  [nslookup](nslookup-set-retry.md)による再試行の設定

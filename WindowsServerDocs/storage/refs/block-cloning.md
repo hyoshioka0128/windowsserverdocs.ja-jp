@@ -7,14 +7,14 @@ ms.author: gawatu
 manager: gawatu
 ms.date: 10/17/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-file-systems
-ms.openlocfilehash: 54165700209320eee50fc63d98d78cbf4a92d053
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 81186624e19f9235cbdf8c7f0d44bd2927a68099
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838113"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394020"
 ---
 # <a name="block-cloning-on-refs"></a>ReFS でのブロックの複製
 
@@ -55,7 +55,7 @@ ReFS のブロックの複製では、ファイル データの操作ではな�
 - 複製される領域は、4 GB 未満の長さにする必要があります。 
 - 同じ物理領域にマップできるファイル領域の最大数は、8175 個です。
 - コピー先の領域は、ファイルの終わりを超えて拡張しないでしてください。 アプリケーションで複製されるデータのコピー先を拡張する必要がある場合は、最初に [SetEndOfFile](https://msdn.microsoft.com/library/windows/desktop/aa365531(v=vs.85).aspx) を呼び出す必要があります。 
-- コピー元とコピー先の領域が同じファイルに含まれている場合、それらの領域は重複してコピーされません  (場合によっては、ブロックの複製操作を、重複を回避する複数のブロックの複製に分割することによって、アプリケーションを続行することができます)。
+- コピー元とコピー先の領域が同じファイルに含まれている場合、それらの領域は重複してコピーされません (場合によっては、ブロックの複製操作を、重複を回避する複数のブロックの複製に分割することによって、アプリケーションを続行することができます)。
 - コピー元とコピー先のファイルは、同じ ReFS ボリューム上にある必要があります。 
 - コピー元とコピー先のファイルは、[整合性ストリーム](https://msdn.microsoft.com/library/windows/desktop/gg258117(v=vs.85).aspx)の設定が同じになっている必要があります。 
 - コピー元のファイルがスパース ファイルである場合は、コピー先のファイルもスパース ファイルであることが必要です。 
@@ -65,7 +65,7 @@ ReFS のブロックの複製では、ファイル データの操作ではな�
 ## <a name="see-also"></a>関連項目
 
 -   [ReFS の概要](refs-overview.md)
--   [ReFS の整合性ストリーム](integrity-streams.md)
--   [記憶域スペース ダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)
+-   [ReFS 整合性ストリーム](integrity-streams.md)
+-   [記憶域スペースダイレクトの概要](../storage-spaces/storage-spaces-direct-overview.md)
 -   [DUPLICATE_EXTENTS_DATA](https://msdn.microsoft.com/library/windows/desktop/mt590821(v=vs.85).aspx)
 -   [FSCTL_DUPLICATE_EXTENTS_TO_FILE](https://msdn.microsoft.com/library/windows/desktop/mt590823(v=vs.85).aspx)

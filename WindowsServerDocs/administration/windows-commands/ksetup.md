@@ -1,8 +1,8 @@
 ---
 title: ksetup
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0194cf81d069d7a5c1223f0a514d593e4870d397
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 265f67bff65794938485472a41064837551c7699
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868843"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374796"
 ---
 # <a name="ksetup"></a>ksetup
 
 
 
-設定して、Kerberos プロトコルと Windows ドメインではない Kerberos レルムをサポートするためにキー配布センター (KDC) の管理に関連するタスクを実行します。 このコマンドの使用方法の例については、関連するサブトピックの各例」セクションを参照してください。
+Kerberos プロトコルとキー配布センター (KDC) を設定して管理するタスクを実行して、Kerberos 領域をサポートします。これは、Windows ドメインでもありません。 このコマンドを使用する方法の例については、関連する各サブトピックの「例」を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -59,38 +59,38 @@ ksetup
 
 |パラメーター|説明|
 |---------|-----------|
-|[ksetup:setrealm](ksetup-setrealm.md)|このコンピューターを Kerberos 領域のメンバーになります。|
-|[ksetup:mapuser](ksetup-mapuser.md)|Kerberos プリンシパルをアカウントにマップします。|
-|[ksetup:addkdc](ksetup-addkdc.md)|特定の領域の KDC エントリを定義します。|
-|[ksetup:delkdc](ksetup-delkdc.md)|領域の KDC エントリを削除します。|
-|[ksetup:addkpasswd](ksetup-addkpasswd.md)|レルムの Kpasswd サーバー アドレスを追加します。|
-|[ksetup:delkpasswd](ksetup-delkpasswd.md)|レルムの Kpasswd サーバー アドレスを削除します。|
-|[ksetup:server](ksetup-server.md)|変更を適用する Windows コンピューターの名前を指定することができます。|
-|[ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)|コンピューターのドメイン アカウント (またはホスト プリンシパル) のパスワードを設定します。|
-|[ksetup:removerealm](ksetup-removerealm.md)|指定された領域のすべての情報をレジストリから削除します。|
-|[ksetup:domain](ksetup-domain.md)|ドメインを指定することができます (場合\<DomainName > を使用して設定されていない **/domain**)。|
-|[ksetup:changepassword](ksetup-changepassword.md)|ログオンしたユーザーのパスワードを変更する、Kpasswd を使用することができます。|
-|[ksetup:listrealmflags](ksetup-listrealmflags.md)|使用可能なを一覧表示フラグを設定する領域**ksetup**を検出できます。|
-|[ksetup:setrealmflags](ksetup-setrealmflags.md)|特定の領域の領域のフラグを設定します。|
-|[ksetup:addrealmflags](ksetup-addrealmflags.md)|領域に追加の領域のフラグを追加します。|
-|[ksetup:delrealmflags](ksetup-delrealmflags.md)|領域から領域のフラグを削除します。|
-|[ksetup:dumpstate](ksetup-dumpstate.md)|指定したコンピューターに Kerberos の構成を分析します。 レジストリには、ホスト領域へのマッピングからを追加します。|
-|[ksetup:addhosttorealmmap](ksetup-addhosttorealmmap.md)|Kerberos 領域にホストをマップするレジストリ値を追加します。|
-|[ksetup:delhosttorealmmap](ksetup-delhosttorealmmap.md)|ホスト コンピューターを Kerberos 領域にマップされているレジストリ値を削除します。|
-|[ksetup:setenctypeattr](ksetup-setenctypeattr.md)|ドメインの信頼の属性を 1 つまたは複数の暗号化の種類を設定します。|
-|[ksetup:getenctypeattr](ksetup-getenctypeattr.md)|ドメインの暗号化の種類の信頼の属性を取得します。|
-|[ksetup:addenctypeattr](ksetup-addenctypeattr.md)|ドメインの暗号化の種類の信頼属性には、暗号化の種類を追加します。|
-|[ksetup:delenctypeattr](ksetup-delenctypeattr.md)|ドメインの暗号化の種類の信頼属性を削除します。|
+|[Ksetup:setrealm](ksetup-setrealm.md)|このコンピューターを Kerberos 領域のメンバーにします。|
+|[Ksetup:mapuser](ksetup-mapuser.md)|Kerberos プリンシパルをアカウントにマップします。|
+|[Ksetup:addkdc](ksetup-addkdc.md)|指定された領域の KDC エントリを定義します。|
+|[Ksetup:delkdc](ksetup-delkdc.md)|領域の KDC エントリを削除します。|
+|[Ksetup:addkpasswd](ksetup-addkpasswd.md)|領域の Kpasswd サーバーアドレスを追加します。|
+|[Ksetup:delkpasswd](ksetup-delkpasswd.md)|領域の Kpasswd サーバーアドレスを削除します。|
+|[Ksetup:server](ksetup-server.md)|変更を適用する Windows コンピューターの名前を指定できます。|
+|[Ksetup:setcomputerpassword](ksetup-setcomputerpassword.md)|コンピューターのドメインアカウント (またはホストプリンシパル) のパスワードを設定します。|
+|[Ksetup:removerealm](ksetup-removerealm.md)|指定された領域のすべての情報をレジストリから削除します。|
+|[Ksetup:domain](ksetup-domain.md)|ドメインを指定できます (\<DomainName > が **/domain**を使用して設定されていない場合)。|
+|[Ksetup:changepassword](ksetup-changepassword.md)|Kpasswd を使用して、ログオンしているユーザーのパスワードを変更できます。|
+|[Ksetup:listrealmflags](ksetup-listrealmflags.md)|**Ksetup**が検出できる領域フラグを一覧表示します。|
+|[Ksetup:setrealmflags](ksetup-setrealmflags.md)|特定の領域の領域フラグを設定します。|
+|[Ksetup:addrealmflags](ksetup-addrealmflags.md)|領域に領域フラグを追加します。|
+|[Ksetup:delrealmflags](ksetup-delrealmflags.md)|領域から領域フラグを削除します。|
+|[Ksetup:dumpstate](ksetup-dumpstate.md)|指定されたコンピューターの Kerberos 構成を分析します。 レジストリに対するレルムマッピングにホストを追加します。|
+|[Ksetup:addhosttorealmmap](ksetup-addhosttorealmmap.md)|ホストを Kerberos 領域にマップするレジストリ値を追加します。|
+|[Ksetup:delhosttorealmmap](ksetup-delhosttorealmmap.md)|ホストコンピューターを Kerberos 領域にマップしたレジストリ値を削除します。|
+|[Ksetup:setenctypeattr](ksetup-setenctypeattr.md)|ドメインの1つ以上の暗号化の種類の信頼属性を設定します。|
+|[Ksetup:getenctypeattr](ksetup-getenctypeattr.md)|ドメインの暗号化の種類の信頼属性を取得します。|
+|[Ksetup:addenctypeattr](ksetup-addenctypeattr.md)|ドメインの暗号化の種類の信頼属性に暗号化の種類を追加します。|
+|[Ksetup:delenctypeattr](ksetup-delenctypeattr.md)|ドメインの暗号化の種類の信頼属性を削除します。|
 |/?|コマンド プロンプトでヘルプを表示します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
-**Ksetup** Kerberos 領域を検索するためにコンピューターの設定を変更するために使用します。 Microsoft Kerberos ベースの実装でこの情報は通常 Krb5.conf ファイルで保持されます。 Windows Server オペレーティング システムで、レジストリ内に保持されます。 これらの設定を変更するのには、このツールを使用することができます。 これらの設定は、Kerberos 領域の領域間の信頼関係を検索するドメイン コント ローラーと Kerberos 領域を検索するワークステーションによって使用されます。
+**Ksetup**は、Kerberos 領域を検索するためにコンピューターの設定を変更するために使用されます。 Microsoft 以外の Kerberos ベースの実装では、通常、この情報は Krb5.conf ファイルに保存されます。 Windows Server オペレーティングシステムでは、レジストリに保持されます。 このツールを使用すると、これらの設定を変更できます。 これらの設定は、ワークステーションが Kerberos 領域を検索するために使用され、ドメインコントローラーによって、複数の領域にわたる信頼関係の Kerberos 領域を特定します。
 
-**Ksetup** Kerberos セキュリティ サポート プロバイダー (SSP) を使用して、コンピューターが Windows Server 2003、Windows Server 2008、または Windows Server 2008 R2 が実行されていると、Windows のメンバーでない場合、KDC Kerberos 領域を検索するレジストリ キーを初期化しますドメイン。 構成の後、オペレーティング システムにログオンに Windows を実行しているクライアント コンピューターのユーザー アカウントを Kerberos 領域にします。
+**Ksetup**コンピューターが windows server 2003、windows server 2008、または windows Server 2008 R2 を実行していて、windows のメンバーではない場合、Kerberos セキュリティサポートプロバイダー (SSP) が kerberos 領域の KDC を見つけるために使用するレジストリキーを初期化します。領域. 構成が完了すると、Windows オペレーティングシステムを実行しているクライアントコンピューターのユーザーが、Kerberos 領域内のアカウントにログオンできるようになります。
 
-Kerberos version 5 プロトコルは、Windows XP Professional、Windows Vista、および Windows 7 を実行するコンピューターでネットワーク認証の既定値です。 Kerberos SSP では、ユーザーの領域のドメイン名のレジストリを検索し、名前を DNS サーバーのクエリを実行して IP アドレスに解決します。 Kerberos プロトコルは、領域名のみを使用して Kdc を検索する DNS を使用できますが、そのためには特別に構成する必要があります。
+Kerberos version 5 プロトコルは、Windows XP Professional、Windows Vista、および Windows 7 を実行しているコンピューターでのネットワーク認証の既定値です。 Kerberos SSP は、レジストリ内でユーザーの領域のドメイン名を検索し、DNS サーバーを照会することによって、名前を IP アドレスに解決します。 Kerberos プロトコルでは、DNS を使用して、領域名のみを使用して Kdc を検索できますが、これを行うように特別に構成する必要があります。
 
 #### <a name="additional-references"></a>その他の参照情報
 
--   [コマンドライン構文キー](command-line-syntax-key.md)
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)

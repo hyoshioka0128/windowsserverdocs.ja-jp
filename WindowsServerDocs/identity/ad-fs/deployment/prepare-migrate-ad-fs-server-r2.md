@@ -1,33 +1,33 @@
 ---
-title: AD FS 2.0 フェデレーション サーバーを Windows Server 2012 R2 で AD FS に移行を準備します。
-description: Windows Server 2012 R2 に AD FS サーバーの移行の準備について説明します。
+title: Windows Server 2012 R2 で AD FS に AD FS 2.0 フェデレーションサーバーを移行する準備をする
+description: AD FS サーバーを Windows Server 2012 R2 に移行するための準備について説明します。
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 07/10/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cb301d0d68f00625ccea8c11d315b9defffe40f3
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 149e3d3fc4d4eee22fa9330475f0eed9d945f8b9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444536"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359311"
 ---
-# <a name="prepare-to-migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>AD FS 2.0 フェデレーション サーバーを Windows Server 2012 R2 で AD FS に移行を準備します。
+# <a name="prepare-to-migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>Windows Server 2012 R2 で AD FS に AD FS 2.0 フェデレーションサーバーを移行する準備をする
 
-このドキュメントでは、Windows Server 2012 R2 AD FS ファーム、AD FS 2.0 または Windows Server 2012 のフェデレーション サーバー ファームを移行する方法について説明します。  手順は、基になるデータベースとして WID または SQL Server のいずれかを使用して AD FS ファームで使用できます。  
+このドキュメントでは、AD FS 2.0 または Windows Server 2012 のフェデレーションサーバーファームを Windows Server 2012 R2 AD FS ファームに移行する方法について説明します。  これらの手順は、基になるデータベースとして WID または SQL Server を使用する AD FS ファームで使用できます。  
   
 -   [移行プロセスの概要](prepare-migrate-ad-fs-server-r2.md#migration-process-outline)  
   
--   [Windows Server 2012 R2 AD FS の新機能](prepare-migrate-ad-fs-server-r2.md#new-ad-fs-functionality-in-windows-server-2012-r2)  
+-   [Windows Server 2012 R2 の新しい AD FS 機能](prepare-migrate-ad-fs-server-r2.md#new-ad-fs-functionality-in-windows-server-2012-r2)  
   
--   [Windows Server 2012 R2 で AD FS の要件](prepare-migrate-ad-fs-server-r2.md#ad-fs-requirements-in-windows-server-2012-r2)  
+-   [Windows Server 2012 R2 での AD FS の要件](prepare-migrate-ad-fs-server-r2.md#ad-fs-requirements-in-windows-server-2012-r2)  
   
 -   [Windows PowerShell の制限を増やす](prepare-migrate-ad-fs-server-r2.md#increasing-your-windows-powershell-limits)  
   
--   [その他の移行タスクおよび考慮事項](prepare-migrate-ad-fs-server-r2.md#other-migration-tasks-and-considerations)  
+-   [その他の移行タスクと考慮事項](prepare-migrate-ad-fs-server-r2.md#other-migration-tasks-and-considerations)  
   
 ##  <a name="migration-process-outline"></a>移行プロセスの概要
 
@@ -35,7 +35,7 @@ ms.locfileid: "66444536"
   
 1.  既存の AD FS ファームで以下の構成データをエクスポート、記録、バックアップします。 これらのタスクの完了方法の詳細については、「[AD FS フェデレーション サーバーの移行](migrate-ad-fs-fed-server-r2.md)」を参照してください。  
   
-次の設定は、Windows Server 2012 R2 のインストール CD の \support\adfs フォルダーにあるスクリプトを使用に移行されます。  
+次の設定は、Windows Server 2012 R2 のインストール CD の \support\adfs フォルダーにあるスクリプトと共に移行されます。  
   
 -   要求プロバイダー信頼。ただし、Active Directory 要求プロバイダー信頼のカスタム要求規則は除きます。 詳細については、「[AD FS フェデレーション サーバーの移行](migrate-ad-fs-fed-server-r2.md)」を参照してください。  
   
@@ -55,7 +55,7 @@ ms.locfileid: "66444536"
   
     -   任意のフェデレーション サービス プロパティの既定以外の値 (AutoCertificateRollover や SSO 有効期間など)。  
   
-    -   既定以外の AD FS エンドポイントの設定と要求記述します。  
+    -   既定以外の AD FS エンドポイント設定と要求の説明。  
   
 -   Active Directory 要求プロバイダー信頼のカスタム要求規則。  
   
@@ -70,14 +70,14 @@ ms.locfileid: "66444536"
 4. AD FS サインイン ページを構成およびカスタマイズします。  
   
 ##  <a name="new-ad-fs-functionality-in-windows-server-2012-r2"></a>Windows Server 2012 R2 の AD FS の新機能  
- 次の AD FS 機能 Windows Server 2012 R2 への影響で、移行から変更 AD FS 2.0 または Windows Server 2012 で AD FS:  
+ Windows Server 2012 R2 の次の AD FS 機能の変更は、Windows Server 2012 の AD FS 2.0 または AD FS からの移行に影響します。  
   
 **IIS の依存関係**  
    - Windows Server 2012 R2 の AD FS は自己ホスト型になり、IIS のインストールは不要になりました。 この変更の結果として次の点に注意してください。  
    -   AD FS ファーム内のフェデレーション サーバーとプロキシ コンピューターの両方の SSL 証明書は、Windows PowerShell を使用して管理する必要があります。  
   
-**AD FS サインイン ページの設定とカスタマイズの変更**  
--   Windows Server 2012 R2 で AD FS で管理者とユーザーのサインイン エクスペリエンスを向上させるためのいくつかの変更があります。 AD FS の以前のバージョンにあった IIS ホスト型の Web ページは削除されました。 AD FS サインイン Web ページのルック アンド フィールは AD FS での自己ホスト型になり、ユーザー エクスペリエンスに合わせてカスタマイズできるようになりました。 それらの変更を次に示します。  
+**AD FS サインインページの設定とカスタマイズに対する変更**  
+-   Windows Server 2012 R2 の AD FS では、管理者とユーザーの両方のサインインエクスペリエンスを向上させるためにいくつかの変更が加えられています。 AD FS の以前のバージョンにあった IIS ホスト型の Web ページは削除されました。 AD FS サインイン Web ページのルック アンド フィールは AD FS での自己ホスト型になり、ユーザー エクスペリエンスに合わせてカスタマイズできるようになりました。 それらの変更を次に示します。  
     -   AD FS のサインイン エクスペリエンスのカスタマイズ (会社名、ロゴ、イラスト、サインインの説明などのカスタマイズ)  
     -   エラー メッセージのカスタマイズ  
     -   ADFS のホーム領域の検出エクスペリエンスのカスタマイズ  
@@ -86,15 +86,15 @@ ms.locfileid: "66444536"
         -   イントラネットのホーム領域の検出のバイパス  
         -   カスタム Web テーマの作成  
   
-AD FS サインイン ページのルック アンド フィールを構成する詳細については、次を参照してください。 [AD FS サインイン ページのカスタマイズ](../operations/AD-FS-Customization-in-Windows-Server-2016.md)します。  
+AD FS サインインページのルックアンドフィールを構成する手順の詳細については、「 [AD FS サインインページのカスタマイズ](../operations/AD-FS-Customization-in-Windows-Server-2016.md)」を参照してください。  
   
-Windows Server 2012 R2 に移行したい既存の AD FS ファームに web ページのカスタマイズがあれば、Windows Server 2012 R2 で新しいカスタマイズ機能を使用して、移行プロセスの一部としてを再作成できます。  
+既存の AD FS ファームに Windows Server 2012 R2 に移行する web ページのカスタマイズがある場合は、Windows Server 2012 R2 の新しいカスタマイズ機能を使用して、移行プロセスの一部として web ページを再作成することができます。  
   
 -   **その他の変更**  
   
-    -   Windows Server 2012 R2 で AD FS は、Windows Identity Foundation (WIF) 3.5 では、WIF 4.5 ではないに基づいています。 したがって、WIF 4.5 (Kerberos 要求やダイナミック アクセス制御など) の一部の機能は、Windows Server 2012 R2 で AD FS ではサポートされません。  
+    -   Windows Server 2012 R2 の AD FS は、WIF 4.5 ではなく、Windows Identity Foundation (WIF) 3.5 に基づいています。 そのため、Windows Server 2012 R2 の AD FS では、WIF 4.5 (Kerberos 信頼性情報やダイナミックアクセス制御など) の一部の機能はサポートされていません。  
   
-    -   Windows Server 2012 R2 でデバイス登録サービス (DRS) はポート 443 で動作します。ユーザー証明書認証用の ClientTLS はポート 49443 で動作します。  
+    -   Windows Server 2012 R2 のデバイス登録サービス (DRS) は、ポート443で動作します。ユーザー証明書認証用の ClientTLS はポート49443で動作します  
   
         -   ブラウザー以外のアクティブ クライアントで、ポート 443 を参照するように特別にハードコードされている証明書トランスポート モード認証を使用する場合、ユーザー証明書認証をポート 49443 で使用し続けるには、そのコードの変更が必要です。  
   
@@ -103,11 +103,11 @@ Windows Server 2012 R2 に移行したい既存の AD FS ファームに web ペ
         -   クライアントとプロキシとの間のファイアウォール ポートでは、ユーザー証明書認証のトラフィックがポート 49443 を通過できるようにする必要があります。  
   
 ##  <a name="ad-fs-requirements-in-windows-server-2012-r2"></a>Windows Server 2012 R2 の AD FS の要件  
- Windows Server 2012 R2 に AD FS ファームを適切に移行するには、するには、次の要件を満たす必要があります。  
+ AD FS ファームを Windows Server 2012 R2 に正常に移行するには、次の要件を満たしている必要があります。  
   
- AD fs が機能する、フェデレーションする各コンピューターをドメインに参加する必要があります。  
+ AD FS を機能させるには、フェデレーションを行う各コンピューターがドメインに参加している必要があります。  
   
- 関数には、Windows Server 2012 R2 で実行されている AD fs では、Active Directory ドメインは、次のいずれかを実行する必要があります。  
+ Windows Server 2012 R2 で実行されている AD FS を機能させるには、Active Directory ドメインが次のいずれかを実行している必要があります。  
   
 - Windows Server 2012 R2  
   
@@ -117,19 +117,19 @@ Windows Server 2012 R2 に移行したい既存の AD FS ファームに web ペ
   
 - Windows Server 2008  
   
-  AD FS のサービス アカウントとしてグループ管理サービス アカウント (gMSA) を使用する場合は、Windows Server 2012 または Windows Server 2012 R2 のオペレーティング システムで実行されている環境で少なくとも 1 つのドメイン コント ローラーが必要です。  
+  AD FS のサービスアカウントとしてグループの管理されたサービスアカウント (gMSA) を使用する場合は、Windows Server 2012 または Windows Server 2012 R2 オペレーティングシステムで実行されている環境内に少なくとも1つのドメインコントローラーが必要です。  
   
-  AD ワークプ レース ジョイン用に AD FS 展開の一部としてデバイス登録サービス (DRS) をデプロイする場合は、AD DS スキーマを Windows Server 2012 R2 のレベルを更新する必要があります。 スキーマを更新するには 3 種類の方法があります。  
+  AD FS の展開の一部として AD Workplace Join 用のデバイス登録サービス (DRS) を展開する予定がある場合は、AD DS スキーマを Windows Server 2012 R2 レベルに更新する必要があります。 スキーマを更新するには 3 種類の方法があります。  
   
-1.  既存の Active Directory フォレスト内には、2008 またはそれ以降、Windows Server を実行する任意の 64 ビット サーバーで Windows Server 2012 R2 オペレーティング システム DVD の \support\adprep フォルダーから adprep/forestprep を実行します。 この場合は、追加のドメイン コントローラーをインストールする必要はなく、既存のドメイン コントローラーのアップグレードも必要ありません。  
+1.  既存の Active Directory フォレストで、windows Server 2012 R2 オペレーティングシステム DVD の \support\adprep フォルダーから、Windows Server 2008 以降を実行している任意の64ビットサーバーの adprep/forestprep を実行します。 この場合は、追加のドメイン コントローラーをインストールする必要はなく、既存のドメイン コントローラーのアップグレードも必要ありません。  
   
 adprep/forestprep を実行するには、Schema Admins グループ、Enterprise Admins グループ、およびスキーマ マスターをホストするドメインの Domain Admins グループのメンバーである必要があります。  
   
-2. 既存の Active Directory フォレストでは、Windows Server 2012 R2 を実行するドメイン コント ローラーをインストールします。 この場合は、adprep/forestprep がドメイン コント ローラーのインストールの一部として自動的に実行されます。  
+2. 既存の Active Directory フォレストに、Windows Server 2012 R2 を実行するドメインコントローラーをインストールします。 この場合、adprep/forestprep は、ドメインコントローラーのインストールの一部として自動的に実行されます。  
   
 ドメイン コントローラーのインストール時に、adprep /forestprep を実行するための追加の資格情報の入力が必要になる場合があります。  
   
-3. 新しい Active Directory フォレストを作成するには、Windows Server 2012 R2 を実行しているサーバーに AD DS をインストールします。 この場合は、adprep/forestprep がスキーマは最初にすべての必要なコンテナーと DRS をサポートするためにオブジェクトを作成するために実行する必要はありません。  
+3. Windows Server 2012 R2 を実行しているサーバーに AD DS をインストールして、新しい Active Directory フォレストを作成します。 この場合、DRS をサポートするために必要なすべてのコンテナーとオブジェクトを使用してスキーマが最初に作成されるため、adprep/forestprep を実行する必要はありません。  
   
 ### <a name="sql-server-support-for-ad-fs-in-windows-server-2012-r2"></a>Windows Server 2012 R2 の AD FS のための SQL Server のサポート  
  AD FS ファームを作成し、SQL Server を使用して構成データを保存する場合は、SQL Server 2012 など、SQL Server 2008 以降のバージョンを使用できます。  
@@ -146,12 +146,12 @@ adprep/forestprep を実行するには、Schema Admins グループ、Enterpris
 ## <a name="other-migration-tasks-and-considerations"></a>その他の移行作業と考慮事項  
  レガシ AD FS ファームを Windows Server 2012 R2 に移行するには、次のことに注意してください。  
   
--   Windows Server 2012 R2 のインストール CD の \support\adfs フォルダーにある移行スクリプトでは、同じフェデレーション サーバー ファーム名および Windows に移行するときに、レガシ AD FS ファームで使用したサービス アカウント識別名を保持することが必要です。Server 2012 R2。  
+-   Windows Server 2012 R2 のインストール CD の \support\adfs フォルダーにある移行スクリプトでは、Windows に移行するときに、従来の AD FS ファームで使用していたものと同じフェデレーションサーバーファーム名とサービスアカウント id 名を保持する必要があります。サーバー 2012 R2。  
   
 -   SQL Server の AD FS ファームを移行する場合は、移行プロセスに新しい SQL データベース インスタンスの作成が含まれ、そのインスタンスに元の構成データをインポートする必要があることに注意してください。  
   
-## <a name="next-steps"></a>次の手順
- [Windows Server 2012 R2 への Active Directory フェデレーション サービス役割サービスを移行します。](migrate-ad-fs-service-role-to-windows-server-r2.md)   
- [AD FS フェデレーション サーバーの移行](migrate-ad-fs-fed-server-r2.md)   
- [AD FS フェデレーション サーバー プロキシの移行](migrate-fed-server-proxy-r2.md)   
- [Windows Server 2012 R2 への AD FS の移行の検証](verify-ad-fs-migration.md)
+## <a name="next-steps"></a>次のステップ
+ [Active Directory フェデレーションサービス (AD FS) の役割サービスを Windows Server 2012 R2  に移行する](migrate-ad-fs-service-role-to-windows-server-r2.md)  
+ [AD FS フェデレーションサーバー  の移行](migrate-ad-fs-fed-server-r2.md)  
+ [AD FS フェデレーションサーバープロキシ  の移行](migrate-fed-server-proxy-r2.md)  
+ [Windows Server 2012 R2 への AD FS 移行の検証](verify-ad-fs-migration.md)

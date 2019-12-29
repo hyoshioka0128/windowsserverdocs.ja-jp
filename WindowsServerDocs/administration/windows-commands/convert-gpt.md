@@ -1,8 +1,8 @@
 ---
 title: convert gpt
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 433e30efeecec4e4ec51d67c40c14cacf986d12e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9a6392cbcff618c642b9d0f168fe555e8be9e759
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434227"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379093"
 ---
 # <a name="convert-gpt"></a>convert gpt
 
 
 
-マスター ブート レコード (MBR) パーティション スタイルに空のベーシック ディスクを GUID パーティション テーブル (GPT) パーティション スタイルを持つベーシック ディスクに変換します。
+マスターブートレコード (MBR) パーティションスタイルを持つ空のベーシックディスクを、GUID パーティションテーブル (GPT) パーティションスタイルを持つベーシックディスクに変換します。
 
-このコマンドを使用する方法に関する手順については、次を参照してください。[マスター ブート レコード ディスクを GUID パーティション テーブル ディスクに変更](https://go.microsoft.com/fwlink/?LinkId=207049)(https://go.microsoft.com/fwlink/?LinkId=207049)します。
+このコマンドの使用方法については、「[マスターブートレコードディスクを GUID パーティションテーブルディスクに変更](https://go.microsoft.com/fwlink/?LinkId=207049)する」 (https://go.microsoft.com/fwlink/?LinkId=207049) を参照してください。
 
 ## <a name="syntax"></a>構文
 
@@ -38,18 +38,18 @@ convert gpt [noerr]
 
 |パラメーター|説明|
 |---------|-----------|
-|noerr|スクリプト専用です。 エラーが発生すると、DiskPart は、エラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
+|noerr|スクリプトの場合のみ。 エラーが発生した場合、DiskPart はエラーが発生しなかったかのようにコマンドを処理し続けます。 このパラメーターは、エラー発生すると、DiskPart はエラー コードを生成して終了します。|
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 > [!IMPORTANT]
-> ディスクを GPT ディスクに変換する空にする必要があります。 データのバックアップし、ディスクを変換する前にすべてのパーティションまたはボリュームを削除します。
-> -   GPT への変換の必要な最小ディスク サイズは、128 メガバイトです。
-> -   この操作を成功させるのには、ベーシック MBR ディスクを選択してください。 使用して、 **select ディスク**コマンドをベーシック ディスクを選択し、それにフォーカスをします。
+> GPT ディスクに変換するには、ディスクを空にする必要があります。 データをバックアップしてから、ディスクを変換する前にすべてのパーティションまたはボリュームを削除します。
+> -   GPT への変換に必要な最小ディスクサイズは 128 mb です。
+> -   この操作を成功させるには、ベーシック MBR ディスクを選択する必要があります。 **[ディスクの選択**] コマンドを使用してベーシックディスクを選択し、それにフォーカスを移動します。
 
 ## <a name="BKMK_examples"></a>例
 
-ベーシック ディスクを MBR パーティション スタイルを GPT パーティション スタイルに変換するには、次のように入力します。
+ベーシックディスクを MBR パーティションスタイルから GPT パーティションスタイルに変換するには、次のように入力します。
 ```
 convert gpt
 ```

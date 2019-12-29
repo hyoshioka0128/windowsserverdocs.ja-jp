@@ -1,9 +1,9 @@
 ---
-title: 手順 3 は、高度な DirectAccess 展開を確認します。
-description: このトピックは高度な設定を Windows Server 2016 での単一の DirectAccess サーバー展開ガイドの一部です。
+title: 手順 3-高度な DirectAccess 展開を確認する
+description: このトピックは、「Windows Server 2016 の詳細設定を使用して単一の DirectAccess サーバーを展開する」の一部です。
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,26 +12,26 @@ ms.topic: article
 ms.assetid: ae8bbff0-c981-4bc6-8df1-861621d0627f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 386d10dda9f61724a012801840e6471e48c0905a
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 51ce3fa1a72420f7272141bb5361b20360b7000c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283538"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404907"
 ---
-# <a name="step-3-verify-the-advanced-directaccess-deployment"></a>手順 3 は、高度な DirectAccess 展開を確認します。
+# <a name="step-3-verify-the-advanced-directaccess-deployment"></a>手順 3-高度な DirectAccess 展開を確認する
 
->適用先:Windows Server 2016 の Windows Server (半期チャネル)
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、DirectAccess の展開が正しく構成されていることを確認する方法について説明します。  
+このトピックでは、DirectAccess 展開が正しく構成されていることを確認する方法について説明します。  
   
 ### <a name="to-verify-access-to-internal-resources-through-directaccess"></a>DirectAccess を通じた内部リソースへのアクセスを確認するには  
   
-1.  DirectAccess クライアント コンピューターを企業ネットワークに接続し、グループ ポリシー オブジェクトを取得します。  
+1.  DirectAccess クライアントコンピューターを企業ネットワークに接続し、グループポリシーオブジェクトを取得します。  
   
-2.  をクリックして、**ネットワーク接続**DirectAccess のメディア マネージャーにアクセスする通知領域にアイコン。  
+2.  通知領域の **[ネットワーク接続]** アイコンをクリックして、DirectAccess メディアマネージャーにアクセスします。  
   
-3.  をクリックして**DirectAccess 接続**、状態が表示されます、**ローカル接続**します。  
+3.  **[DirectAccess 接続]** をクリックすると、状態が**ローカルに接続**されていることがわかります。  
   
 4.  クライアント コンピューターを外部ネットワークに接続して、内部リソースへのアクセスを試行します。  
   
@@ -39,7 +39,7 @@ ms.locfileid: "67283538"
   
 ## <a name="BKMK_Links"></a>前の手順  
   
--   [手順 2:DirectAccess サーバーを構成します。](Step-2-Configuring-DirectAccess-Servers.md)  
+-   [手順 2: DirectAccess サーバーの構成](Step-2-Configuring-DirectAccess-Servers.md)  
   
 
 

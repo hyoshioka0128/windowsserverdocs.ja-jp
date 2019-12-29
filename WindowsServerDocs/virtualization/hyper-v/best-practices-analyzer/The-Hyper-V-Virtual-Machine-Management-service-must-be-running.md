@@ -1,7 +1,7 @@
 ---
 title: HYPER-V 仮想マシン管理サービスを実行する必要があります。
-description: このベスト プラクティス アナライザー ルールによって報告された問題を解決する方法を説明します。
-ms.prod: windows-server-threshold
+description: このベストプラクティスアナライザー規則によって報告された問題を解決するための手順を示します。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,12 +10,12 @@ ms.topic: article
 ms.assetid: f44d6887-6458-4438-9d93-574587e3f7d1
 author: KBDAzure
 ms.date: 10/03/2016
-ms.openlocfilehash: 58886b68ca30ddeb064fc12c6cb4c00183399715
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: de1e2ed9fc24afe7d1ccc12bc11eb94a846f0664
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826113"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364681"
 ---
 # <a name="the-hyper-v-virtual-machine-management-service-must-be-running"></a>HYPER-V 仮想マシン管理サービスを実行する必要があります。
 
@@ -27,31 +27,31 @@ ms.locfileid: "59826113"
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|エラー|  
+|**順**|Error|  
 |**カテゴリ**|前提条件|  
 
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。
 
 ## <a name="issue"></a>問題  
   
-*仮想マシンを管理するために必要なサービスが実行されていません。*  
+*バーチャルマシンの管理に必要なサービスが実行されていません。*  
   
 ## <a name="impact"></a>影響  
   
-*仮想マシンの管理操作は実行されません。*  
+*バーチャルマシンの管理操作を実行することはできません。*  
   
-実行されている仮想マシンは引き続き実行します。 ただし、バーチャル マシンを管理または作成またはサービスが実行されるまでは、それらを削除することはできません。  
+実行されている仮想マシンは引き続き実行します。 ただし、仮想マシンを管理または作成またはサービスが実行されるまでは、それらを削除することはできません。  
   
 ## <a name="resolution"></a>解決方法  
   
-*サービス スナップインまたは Sc config コマンド ライン ツールを使用して、自動的に開始するサービスを再構成します。*  
+*サービススナップインまたは Sc config コマンドラインツールを使用して、サービスを自動的に開始するように再構成します。*  
   
 > [!TIP]  
-> デスクトップ アプリで、サービスが見つからないか、コマンド ライン ツールをレポートしたサービスが存在しない、HYPER-V 管理ツール可能性がありますがインストールされていません。 [スタート] メニューから HYPER-V MMC コンソールが表示されない場合は、HYPER-V 管理ツールをインストールする必要があります。
+> デスクトップ アプリで、サービスが見つからないか、コマンド ライン ツールをレポートしたサービスが存在しない、HYPER-V 管理ツール可能性がありますがインストールされていません。 また、[スタート] メニューから Hyper-v MMC コンソールを表示できない場合は、Hyper-v 管理ツールをインストールする必要があります。
 
-HYPER-V 管理ツールをインストールするには。  
+Hyper-v 管理ツールをインストールするには、次のようにします。  
 >   
-> - Windows Server で、サーバー マネージャーを開き 役割と機能のウィザードを使用します。 詳細については、次を参照してください。 [Windows Server 2016 に Hyper-v の役割をインストール](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md)します。  PowerShell を使用して、ツールをインストールすることもできます (`Install-WindowsFeature -Name Hyper-V-Tools, Hyper-V-PowerShell`) 
+> - Windows Server で、サーバー マネージャーを開き 役割と機能のウィザードを使用します。 詳細については、次を参照してください。 [Windows Server 2016 に Hyper-v の役割をインストール](../get-started/Install-the-Hyper-V-role-on-Windows-Server.md)します。  PowerShell を使用してツールをインストールすることもできます (`Install-WindowsFeature -Name Hyper-V-Tools, Hyper-V-PowerShell`)。 
 > - Windows では、デスクトップで、入力を開始 **プログラム**, 、 をクリックして **プログラムと機能** (コントロール パネル) > **に Windows の機能のオンとオフ** > **HYPER-V** > **HYPER-V 管理ツール**します。 クリックして **OK**します。  
   
 ### <a name="to-reconfigure-the-service-to-start-automatically-using-the-services-desktop-app"></a>サービスのデスクトップ アプリを使用して自動的に開始するサービスを再構成するには  
@@ -66,7 +66,7 @@ HYPER-V 管理ツールをインストールするには。
   
 ### <a name="to-reconfigure-the-service-to-start-automatically-using-sc-config"></a>SC Config を自動的に使用を開始するサービスを再構成するには  
   
-1.  Windows PowerShell を開きます。 (デスクトップで、次のようにクリックします**開始**の入力を開始および**Windows PowerShell**。)。  
+1.  Windows PowerShell を開きます。 (デスクトップから **[スタート]** をクリックし、「 **Windows PowerShell**」と入力を開始します)。  
   
 2.  右クリック **Windows PowerShell**  をクリック **管理者として実行**します。  
   
@@ -86,7 +86,7 @@ HYPER-V 管理ツールをインストールするには。
   
 #### <a name="to-restart-the-service-from-hyper-v-manager"></a>HYPER-V マネージャーからサービスを再起動するには  
   
-1.  Hyper-V マネージャーを開きます。 **[スタート]** ボタンをクリックし、**[管理ツール]** をポイントして **[Hyper-V マネージャー]** をクリックします。  
+1.  Hyper-V マネージャーを開きます。 **[スタート]** ボタンをクリックし、 **[管理ツール]** をポイントして **[Hyper-V マネージャー]** をクリックします。  
   
 2.  ナビゲーション ウィンドウでは、選択されていない場合、サーバーの名前をクリックします。  
   

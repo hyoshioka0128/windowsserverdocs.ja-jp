@@ -1,104 +1,104 @@
 ---
-title: OAuth および ADAL を使用して 1 つのページの web アプリケーションをビルドします。AD FS 2016 以降で JS
-description: AngularJS をセキュリティで保護する JavaScript 用 ADAL を使用して AD FS に対して認証を行うための手順を提供するチュートリアル ベースのシングル ページ アプリケーション
+title: OAuth と ADAL を使用して単一ページの web アプリケーションを構築します。AD FS 2016 以降を使用した JS
+description: AngularJS ベースのシングルページアプリケーションをセキュリティで保護する JavaScript 用 ADAL を使用して AD FS に対して認証するための手順を提供するチュートリアルです。
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 06/13/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: f8a8d6b81f63a691954eecf02dba4e33215a462a
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: d54c33e092204f208590bd15db0d3c7fe7f852f3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811749"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407894"
 ---
-# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>OAuth および ADAL を使用して 1 つのページの web アプリケーションをビルドします。AD FS 2016 以降で JS
+# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>OAuth と ADAL を使用して単一ページの web アプリケーションを構築します。AD FS 2016 以降を使用した JS
 
-このチュートリアルでは、AngularJS をセキュリティで保護する JavaScript 用 ADAL を使用して AD FS に対して認証するための命令ベースのシングル ページ アプリケーション、ASP.NET Web API バックエンドで実装を提供します。
+このチュートリアルでは、ASP.NET Web API バックエンドで実装された AngularJS ベースのシングルページアプリケーションをセキュリティで保護する JavaScript 用の ADAL を使用して AD FS に対して認証するための手順を示します。
 
-このシナリオで、ユーザーがサインインするときに、JavaScript フロント エンドは[Active の Directory Authentication Library for JavaScript (ADAL します。JS)](https://github.com/AzureAD/azure-activedirectory-library-for-js)と Azure AD から ID トークン (id_token) を取得する暗黙的な認証付与します。 トークンがキャッシュ クライアントに接続されると、要求、ベアラー トークンとして OWIN ミドルウェアを使用して保護されているバックエンド Web API を呼び出すとき。
+このシナリオでは、ユーザーがサインインすると、javascript フロントエンドで[javascript (ADAL の Active Directory 認証ライブラリが使用されます。JS)](https://github.com/AzureAD/azure-activedirectory-library-for-js)と、Azure AD から ID トークン (id_token) を取得するための暗黙的な承認権限が付与されます。 トークンはキャッシュされ、クライアントは、OWIN ミドルウェアを使用してセキュリティ保護された Web API バックエンドを呼び出すときに、ベアラートークンとして要求に接続します。
 
 >[!IMPORTANT]
->ここで作成できる例は、教育目的でのみです。 これらの手順では、モデルの必須の要素を公開する最も単純で最低限の実装です。 例では、エラー処理のすべての側面を含まない場合があり、その他の機能に関連します。
+>ここで作成できる例は、学習のみを目的としています。 これらの手順は、モデルの必須要素を公開するために使用できる、最も単純で最小の実装用です。 この例には、エラー処理やその他の関連機能のすべての側面を含めることはできません。
 
 >[!NOTE]
->このチュートリアルでは、該当する**のみ**2016 以降の AD FS サーバー 
+>このチュートリアルは AD FS Server 2016 以降に**のみ**適用されます。 
 
 ## <a name="overview"></a>概要
-このサンプルでは作成します、バックエンド web Api リソースへのアクセスをセキュリティで保護する AD FS に対してシングル ページ アプリケーションのクライアントを認証は、認証フロー。 全体的な認証フローを次に示します
+このサンプルでは、バックエンドの WebAPI リソースへのアクセスをセキュリティで保護するために、単一ページアプリケーションクライアントが AD FS に対して認証を行う認証フローを作成します。 全体の認証フローを次に示します。
 
 
-![AD FS の承認](media/Single-Page-Application-with-AD-FS/authenticationflow.PNG)
+![AD FS 承認](media/Single-Page-Application-with-AD-FS/authenticationflow.PNG)
 
-シングル ページ アプリケーションを使用する場合、ユーザーが、開始の場所にからページや JavaScript ファイルのコレクションを開始する場所と、HTML ビューが読み込まれます。 AD FS の認証を直接そのように、アプリケーション、つまり AD FS インスタンス クライアントの ID に関する重要な情報を把握する Active Directory Authentication Library (ADAL) を構成する必要があります。
+シングルページアプリケーションを使用する場合、ユーザーは、開始ページと、JavaScript ファイルと HTML ビューのコレクションが読み込まれる開始位置に移動します。 Active Directory 認証ライブラリ (ADAL) を構成して、アプリケーションに関する重要な情報 (つまり、AD FS インスタンス、クライアント ID) を把握し、AD FS に認証を送信できるようにする必要があります。
 
-ADAL は、認証するためのトリガーを見て場合、アプリケーションによって提供される情報を使用して、AD FS STS に認証を指示します。  暗黙的な許可フローは、AD FS では、パブリック クライアントとして登録されるシングル ページ アプリケーションが自動的に構成します。 #Fragment を使用して、アプリケーションに返される ID トークンの承認要求の結果。 バックエンドへの呼び出し WebAPI は、この ID トークンを web Api にアクセスするヘッダーにベアラー トークンとして実行します。
+ADAL が認証用のトリガーを確認すると、アプリケーションによって提供される情報が使用され、認証が AD FS STS に送られます。  AD FS にパブリッククライアントとして登録されているシングルページアプリケーションは、暗黙的な許可フローに対して自動的に構成されます。 承認要求は、#fragment を介してアプリケーションに返される ID トークンになります。 さらに、バックエンド WebAPI を呼び出すと、この ID トークンがヘッダーのベアラートークンとして処理され、WebAPI にアクセスできるようになります。
 
 ## <a name="setting-up-the-development-box"></a>開発ボックスの設定
-このチュートリアルでは、Visual Studio 2015 を使用します。 プロジェクトでは、ADAL JS ライブラリを使用します。 ADAL をお読みくださいについて[Active Directory 認証ライブラリ .NET。](https://msdn.microsoft.com/library/azure/mt417579.aspx)
+このチュートリアルでは、Visual Studio 2015 を使用します。 プロジェクトは ADAL JS ライブラリを使用します。 ADAL の詳細については[Active Directory 認証ライブラリ .net](https://msdn.microsoft.com/library/azure/mt417579.aspx)をご覧ください。
 
 ## <a name="setting-up-the-environment"></a>環境のセットアップ
-このチュートリアルでは、使用の基本設定。
+このチュートリアルでは、次の基本的なセットアップを使用します。
 
-1.  DC:AD FS をホストするドメインのドメイン コント ローラー
-2.  AD FS サーバー:ドメインの AD FS サーバー
-3.  開発用コンピューター:マシンがある Visual Studio がインストールされているし、サンプルを開発します。
+1.  DC: AD FS がホストされるドメインのドメインコントローラー
+2.  AD FS Server: ドメインの AD FS サーバー
+3.  開発用コンピューター: Visual Studio がインストールされていて、サンプルを開発しているコンピューター
 
-2 つのマシンをする場合は、使用できます。 DC/AD FS と他のサンプルを開発するための 1 つです。
+必要に応じて、2台のコンピューターのみを使用できます。 DC/AD FS 用、もう1つはサンプルを開発しています。
 
-ドメイン コント ローラーと AD FS をセットアップする方法は、この記事の範囲外です。 追加の配置情報を参照してください。
+ドメインコントローラーと AD FS のセットアップ方法については、この記事では説明しません。 デプロイの詳細については、次を参照してください。
 
 - [AD DS 展開](../../ad-ds/deploy/AD-DS-Deployment.md)
 - [AD FS 展開](../AD-FS-Deployment.md)
 
 
 
-## <a name="clone-or-download-this-repository"></a>複製するか、このリポジトリをダウンロード
-使用する AngularJS シングル ページ アプリへの Azure AD の統合およびそれを変更するために作成したサンプル アプリケーションを代わりに、AD FS を使用して、バックエンド リソースをセキュリティで保護します。
+## <a name="clone-or-download-this-repository"></a>このリポジトリを複製またはダウンロードする
+ここでは、Azure AD を AngularJS シングルページアプリに統合するために作成されたサンプルアプリケーションを使用し、AD FS を使用してバックエンドリソースをセキュリティで保護するように変更します。
 
-シェルまたはコマンド ライン: から
+シェルまたはコマンドラインから:
 
     git clone https://github.com/Azure-Samples/active-directory-angularjs-singlepageapp.git
 
 ## <a name="about-the-code"></a>コードについて
-キー ファイル認証ロジックを含む次のとおりです。
+認証ロジックを含むキーファイルは次のとおりです。
 
-**App.js** - ADAL モジュールの依存関係の挿入、ADAL によって AAD とプロトコルの対話を推進するために使用されるアプリの構成値を提供およびルーティングする必要があります前の認証を使用せずにアクセスできませんを示します。
+**App.config** : adal モジュールの依存関係が挿入され、adal によって使用されるアプリ構成値が提供されます。これにより、AAD とのプロトコルの対話が促進され、以前の認証なしにアクセスする必要のあるルートが示されます。
 
-**index.html** -adal.js への参照が含まれています
+**index .html** -adal への参照が含まれています。
 
-**HomeController.js**-ADAL で login() と logOut() メソッドの活用方法を示しています。
+**HomeController**-ADAL で login () メソッドと logOut () メソッドを活用する方法を示します。
 
-**UserDataController.js** -キャッシュされた id_token からユーザー情報を抽出する方法を示します。
+**UserDataController** -キャッシュされた id_token からユーザー情報を抽出する方法を示します。
 
-**Startup.Auth.cs** -ベアラー認証に Active Directory フェデレーション サービスを使用する web Api の構成が含まれています。
+**Startup.Auth.cs** -ベアラー認証に Active Directory フェデレーションサービスを使用するための構成が含まれています。
 
-## <a name="registering-the-public-client-in-ad-fs"></a>AD FS でのパブリック クライアントの登録
-サンプルでは、WebAPI はでリッスンする構成 https://localhost:44326/します。 アプリケーション グループ**web アプリケーションにアクセスする Web ブラウザー**暗黙的な許可フローのアプリケーションを構成するために使用できます。
+## <a name="registering-the-public-client-in-ad-fs"></a>AD FS にパブリッククライアントを登録しています
+このサンプルでは、WebAPI は https://localhost:44326/でリッスンするように構成されています。 **Web アプリケーションにアクセス**するアプリケーショングループ web ブラウザーは、暗黙的な許可フローアプリケーションを構成するために使用できます。
 
-1. AD FS 管理コンソールを開き、をクリックして**アプリケーション グループの追加**します。 **アプリケーション グループの追加ウィザード**アプリケーション、説明、および select の名前を入力、 **web アプリケーションにアクセスする Web ブラウザー**テンプレートから、**クライアント サーバーアプリケーション**次に示すセクション
+1. AD FS 管理コンソールを開き、 **[アプリケーショングループの追加]** をクリックします。 **アプリケーショングループの追加ウィザード**で、アプリケーションの名前と説明を入力し、次に示すように、 **[クライアント-サーバーアプリケーション]** セクションから**web アプリケーションテンプレートにアクセスする web ブラウザー**を選択します。
 
-    ![新しいアプリケーション グループを作成します。](media/Single-Page-Application-with-AD-FS/appgroup_step1.png)
+    ![新しいアプリケーショングループの作成](media/Single-Page-Application-with-AD-FS/appgroup_step1.png)
 
-2. 次のページで**ネイティブ アプリケーション**アプリケーション クライアント id を指定し、リダイレクト URI を次に示すよう、
+2. 次のページの**ネイティブアプリケーション**で、次に示すように、アプリケーションクライアント識別子とリダイレクト URI を指定します。
 
-    ![新しいアプリケーション グループを作成します。](media/Single-Page-Application-with-AD-FS/appgroup_step2.png)
+    ![新しいアプリケーショングループの作成](media/Single-Page-Application-with-AD-FS/appgroup_step2.png)
 
-3. 次のページで**アクセス制御ポリシーの適用**とアクセス許可のままに*のすべてのユーザーを許可*
+3. 次のページで**Access Control ポリシーを適用**します。アクセス許可は [*すべて許可*] のままにします。
 
-4. [概要] ページに次のようになります
+4. 概要ページは次のようになります。
 
-    ![新しいアプリケーション グループを作成します。](media/Single-Page-Application-with-AD-FS/appgroup_step3.png)
+    ![新しいアプリケーショングループの作成](media/Single-Page-Application-with-AD-FS/appgroup_step3.png)
 
-5. をクリックして**次**をアプリケーション グループの追加を完了し、ウィザードを閉じます。
+5. [**次**へ] をクリックして、アプリケーショングループの追加を完了し、ウィザードを閉じます。
 
-## <a name="modifying-the-sample"></a>このサンプルを変更します。
-ADAL JS を構成します。
+## <a name="modifying-the-sample"></a>サンプルの変更
+ADAL JS の構成
 
-開く、 **app.js**ファイルし、変更、 **adalProvider.init**定義。
+**App.config**ファイルを開き、 **adalProvider**定義を次のように変更します。
 
     adalProvider.init(
         {
@@ -112,16 +112,16 @@ ADAL JS を構成します。
 
 |構成|説明|
 |--------|--------|
-|インスタンス (instance)|お客様の STS URL では、例。 https://fs.contoso.com/|
-|テナント (tenant)|"Adfs"のまま|
-|クライアント Id|これは、シングル ページ アプリケーションのパブリック クライアントを構成するときに指定したクライアント ID です。|
+|インスタンス (instance)|STS URL (例: https://fs.contoso.com/|
+|tenant|' Adfs ' として保持する|
+|clientID|これは、シングルページアプリケーションのパブリッククライアントを構成するときに指定したクライアント ID です。|
 
-## <a name="configure-webapi-to-use-ad-fs"></a>AD FS を使用する web Api を構成します。
-開く、 **Startup.Auth.cs**サンプル ファイルを開き、先頭に次のコードを追加します。
+## <a name="configure-webapi-to-use-ad-fs"></a>AD FS を使用するように WebAPI を構成する
+サンプルの**Startup.Auth.cs**ファイルを開き、先頭に次のコードを追加します。
 
     using System.IdentityModel.Tokens;
 
-削除します。
+から
 
                 app.UseWindowsAzureActiveDirectoryBearerAuthentication(
     new WindowsAzureActiveDirectoryBearerAuthenticationOptions
@@ -130,7 +130,7 @@ ADAL JS を構成します。
     Tenant = ConfigurationManager.AppSettings["ida:Tenant"]
     });
 
-追加します。
+およびを追加します。
 
     app.UseActiveDirectoryFederationServicesBearerAuthentication(
     new ActiveDirectoryFederationServicesBearerAuthenticationOptions
@@ -146,12 +146,12 @@ ADAL JS を構成します。
 
 |パラメーター|説明|
 |--------|--------|
-|ValidAudience|これは、'audience' の値を構成しますトークンに対して確認されます。|
-|ValidIssuer|これが構成の値 ' に対してチェックされるトークンの発行者|
-|MetadataEndpoint|これは、STS のメタデータ情報を指します|
+|ValidAudience|これにより、トークン内で照合される "audience" の値が構成されます。|
+|ValidIssuer|これにより、トークン内でチェックされる "issuer" の値が構成されます。|
+|MetadataEndpoint|これは、STS のメタデータ情報を指します。|
 
-## <a name="add-application-configuration-for-ad-fs"></a>AD FS の構成をアプリケーションを追加します。
-次に示すよう appsettings を変更します。
+## <a name="add-application-configuration-for-ad-fs"></a>AD FS のアプリケーション構成の追加
+Appsettings を次のように変更します。
 
     <appSettings>
     <add key="ida:Audience" value="https://localhost:44326/" />
@@ -160,23 +160,23 @@ ADAL JS を構成します。
       </appSettings>
 
 ## <a name="running-the-solution"></a>ソリューションの実行
-ソリューションのクリーンで、ソリューションをリビルドして実行します。 詳細なトレースを表示するには、Fiddler を起動し、HTTPS 復号化を有効にします。
+ソリューションをクリーンアップし、ソリューションをリビルドして実行します。 詳細なトレースを表示する場合は、Fiddler を起動し、HTTPS の暗号化解除を有効にします。
 
-ブラウザー (Chrome ブラウザーを使用) は、SPA を読み込むし、次の画面が表示されます。
+ブラウザー (Chrome ブラウザーを使用) によって SPA が読み込まれ、次の画面が表示されます。
 
-![クライアントを登録します。](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
+![クライアントを登録する](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
 
-ログインをクリックします。  ToDo リストは、認証フローをトリガーして、ADAL JS で AD fs 認証を指示します。
+[ログイン] をクリックします。  ToDo リストは認証フローをトリガーし、ADAL JS は認証をに送信し AD FS
 
 ![Login](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
 
-Fiddler では、# フラグメント内の URL の一部として返されるトークンを確認できます。
+Fiddler では、# fragment の URL の一部として返されるトークンを確認できます。
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp5a.PNG)
 
-これで、バックエンドでは、ログインのユーザーの ToDo リスト項目を追加する API を呼び出してできます。
+バックエンド API を呼び出して、ログインしているユーザーの ToDo リスト項目を追加できるようになりました。
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 [AD FS の開発](../../ad-fs/AD-FS-Development.md)  

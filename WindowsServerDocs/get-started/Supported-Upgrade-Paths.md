@@ -2,7 +2,7 @@
 title: Windows Server 2016 のアップグレード オプションと変換オプション
 description: サポートされているすべての Windows Server 2016 へのアップグレード パスについて説明します。
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.date: 01/18/2017
@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 299cf420b44e4a15985d00489edf84784316540d
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 2484363db661620844993d52914700cb8b6cdf56
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810576"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391590"
 ---
 # <a name="upgrade-and-conversion-options-for-windows-server-2016"></a>Windows Server 2016 のアップグレード オプションと変換オプション
 

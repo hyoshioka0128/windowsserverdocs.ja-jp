@@ -1,7 +1,7 @@
 ---
-title: 4 個の仮想プロセッサを搭載した Windows 7 を実行する仮想マシンの構成します。
-description: このベスト プラクティス アナライザー ルールのテキストのオンライン バージョン。
-ms.prod: windows-server-threshold
+title: 4つ以下の仮想プロセッサを搭載した Windows 7 を実行する仮想マシンを構成する
+description: このベストプラクティスアナライザールールのテキストのオンラインバージョン。
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,50 +10,50 @@ ms.topic: article
 ms.assetid: 8fcf0868-b543-4f94-aee7-35324346da55
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: ee450f3510e6dcc1d0a32ed5d5a0be549ac8809e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 14b5e0637ad2e6462e13f0e1f18af651bbcc5fc3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848043"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366271"
 ---
-# <a name="configure-virtual-machines-running-windows-7-with-no-more-than-4-virtual-processors"></a>4 個の仮想プロセッサを搭載した Windows 7 を実行する仮想マシンの構成します。
+# <a name="configure-virtual-machines-running-windows-7-with-no-more-than-4-virtual-processors"></a>4つ以下の仮想プロセッサを搭載した Windows 7 を実行する仮想マシンを構成する
 
->適用先:Windows Server 2016
+>適用対象: Windows Server 2016
 
-ベスト プラクティスとスキャンの詳細については、次を参照してください。 [Run Best Practices Analyzer Scans and Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177)します。  
+ベストプラクティスとスキャンの詳細については、「[ベストプラクティスアナライザースキャンの実行」および「スキャン結果の管理](https://go.microsoft.com/fwlink/p/?LinkID=223177)」を参照してください。  
   
 |プロパティ|詳細|  
 |-|-|  
 |**オペレーティング システム**|Windows Server 2016|  
 |**製品/機能**|Hyper-V|  
-|**重要度**|エラー|  
+|**順**|エラー|  
 |**カテゴリ**|構成|  
   
 次のセクションでは、斜体は、この問題のためのベスト プラクティス アナライザー ツールで表示される UI テキストを示します。  
   
 ## <a name="issue"></a>**問題**  
-*4 つ以上の仮想プロセッサを搭載した Windows 7 を実行する仮想マシンが構成されます。*  
+*Windows 7 を実行している仮想マシンは、4つ以上の仮想プロセッサで構成されています。*  
   
-## <a name="impact"></a>**影響**  
-*Microsoft は、次の仮想マシンの構成をサポートしていません。*  
+## <a name="impact"></a>**よる**  
+*Microsoft では、次の仮想マシンの構成をサポートしていません。*  
   
-\<仮想マシンの一覧 >  
+仮想マシンの一覧を \<>  
   
 ## <a name="resolution"></a>**解決方法**  
-*仮想マシンをシャット ダウンし、1 つまたは複数の仮想プロセッサを削除します。*  
+*仮想マシンをシャットダウンし、1つまたは複数の仮想プロセッサを削除します。*  
   
 #### <a name="to-remove-virtual-processors"></a>仮想プロセッサを削除するには  
   
-1.  Hyper-V マネージャーを開きます。 **[スタート]** ボタンをクリックし、**[管理ツール]** をポイントして **[Hyper-V マネージャー]** をクリックします。  
+1.  Hyper-V マネージャーを開きます。 **[スタート]** ボタンをクリックし、 **[管理ツール]** をポイントして **[Hyper-V マネージャー]** をクリックします。  
   
-2.  結果ウィンドウで  **仮想マシン**, 、構成する仮想マシンを選択します。 仮想マシンの状態として表示されるはず**オフ**します。 そうでない場合は、仮想マシンを右クリックし、順にクリックします**シャット ダウン**します。  
+2.  結果ウィンドウで  **仮想マシン**, 、構成する仮想マシンを選択します。 バーチャルマシンの状態は **オフ (オフ**)」と表示されます。 そうでない場合は、バーチャルマシンを右クリックし、 **[シャットダウン]** をクリックします。  
   
 3.  **アクション** ウィンドウの 仮想マシン名をクリックして **設定**します。  
   
-4.  ナビゲーション ウィンドウで、**プロセッサ**します。  
+4.  ナビゲーションウィンドウで、 **[プロセッサ]** をクリックします。  
   
-5.  **プロセッサ**するプロセッサの数を設定 ページで、 **3**以下順にクリックします**OK**。  
+5.  **[プロセッサ]** ページで、プロセッサ数を**3**以下に設定し、[ **OK]** をクリックします。  
   
 
 

@@ -2,18 +2,18 @@
 title: ファイル スクリーンの例外を作成する
 description: この記事では、ファイル スクリーンの例外を作成する方法について説明します。
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1f0e93cb2535862b9259d438de00c3b769c2282c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6a0fa660db6b03104b585c8ee78a4f20aafe5c88
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866303"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403143"
 ---
 # <a name="create-a-file-screen-exception"></a>ファイル スクリーンの例外を作成する
 
@@ -33,21 +33,21 @@ ms.locfileid: "59866303"
 
 1.  **[ファイル スクリーンの管理]** で **[ファイル スクリーン]** ノードをクリックします。
 
-2.  **[ファイル スクリーン]** を右クリックし、**[ファイル スクリーンの例外の作成]** をクリックするか、**[操作]** ウィンドウで **[ファイル スクリーンの例外の作成]** をクリックします。 **[ファイル スクリーンの例外の作成]** ダイアログ ボックスが表示されます。
+2.  **[ファイル スクリーン]** を右クリックし、 **[ファイル スクリーンの例外の作成]** をクリックするか、 **[操作]** ウィンドウで **[ファイル スクリーンの例外の作成]** をクリックします。 **[ファイル スクリーンの例外の作成]** ダイアログ ボックスが表示されます。
 
 3.  **[例外のパス]** テキスト ボックスで、例外が適用されるパスを入力するか選択します。 選択したフォルダーとそのすべてのサブフォルダーに、例外が適用されます。
 
 4.  スクリーン処理から除外するファイルを指定するには、次の手順に従います。
 
     -   **[ファイル グループ]** で、ファイル スクリーンから除外する各ファイル グループを選択します。 ファイル グループのチェック ボックスをオンにするには、ファイル グループ ラベルをダブルクリックします。
-    -   ファイル グループまたは除外するファイルの種類を表示、ファイル グループのラベルをクリックします をクリックしたい場合 **編集**します。
-    -   新しいファイル グループを作成するには、**[作成]** をクリックします。
+    -   ファイルグループに含まれる、または除外するファイルの種類を表示する場合は、ファイルグループラベルをクリックし、[ **編集**] をクリックします。
+    -   新しいファイル グループを作成するには、 **[作成]** をクリックします。
 
 5.  **[OK]** をクリックします。
 
 ## <a name="see-also"></a>関連項目
 
--   [ファイル スクリーンの管理](file-screening-management.md)
--   [スクリーン処理のためのファイル グループを定義します。](define-file-groups-for-screening.md)
+-   [ファイルスクリーン処理の管理](file-screening-management.md)
+-   [スクリーン処理のためにファイル グループを定義する](define-file-groups-for-screening.md)
 
 

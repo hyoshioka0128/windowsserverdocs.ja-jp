@@ -3,7 +3,7 @@ title: MultiPoint サービス システムにソフトウェアをインスト�
 descrption: Learn how to install software for users in MultiPoint Services
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: d4fb5b8b-2d57-40bb-afc7-7cfefc2ae232
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: e68f8ac8b608bbff062c65cbee1566e7da855516
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 12da3044e1801b61c4ee11cdbbc6887afff2e653
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824183"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389100"
 ---
 # <a name="install-software-on-your-multipoint-services-system"></a>MultiPoint サービス システムにソフトウェアをインストールします。
 管理ユーザーとしてログオンしている場合は、コンソール モードで、または、ステーション モードでのステーションから、新しいプログラムをインストールできます。 ただし、コンソール モードでプログラムをインストールすることをお勧めします。  

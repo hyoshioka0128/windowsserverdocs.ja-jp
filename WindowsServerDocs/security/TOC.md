@@ -1,6 +1,5 @@
 # [セキュリティおよび保証](security-and-assurance.md)
 ## [Windows Server 2016 での一般データ保護規則 (GDPR) に対する取り組みの開始](gdpr/gdpr-winserver-whitepaper.md)
-## [SQL Server で常時暗号化用に HGS をセットアップする](set-up-hgs-for-always-encrypted-in-sql-server.md)
 ## [保護されたファブリックとシールドされた VM 用に HGS をセットアップする](guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms-top-node.md)
 ### [概要](guarded-fabric-shielded-vm/guarded-fabric-and-shielded-vms.md)
 ### [計画](guarded-fabric-shielded-vm/guarded-fabric-plan-overview.md)

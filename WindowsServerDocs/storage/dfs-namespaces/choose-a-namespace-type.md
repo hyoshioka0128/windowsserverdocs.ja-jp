@@ -2,35 +2,35 @@
 title: 名前空間の種類を選択する
 description: この記事では、名前空間の種類を選択する方法について説明します。
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f83be7b2ec7dbe2383deb2d0a79e33d7c73f8849
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: becaab1b4c35492200ad3d75d5f31829d85e10f8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873803"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402194"
 ---
 # <a name="choose-a-namespace-type"></a>名前空間の種類を選択する
 
-> 適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
+> 適用対象: Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
-名前空間を作成するとき、2 種類 (スタンドアロン名前空間またはドメイン ベース名前空間) の名前空間のいずれかを選択する必要があります。 さらに、ドメイン ベースの名前空間を選択した場合は、名前空間モードを選択する必要があります。Windows Server 2008 モードまたは Windows 2000 Server モード。
+名前空間を作成するとき、2 種類 (スタンドアロン名前空間またはドメイン ベース名前空間) の名前空間のいずれかを選択する必要があります。 また、ドメインベースの名前空間を選択する場合は、名前空間モード (Windows 2000 サーバーモードまたは Windows Server 2008 モード) を選択する必要があります。
 
 ## <a name="choosing-a-namespace-type"></a>名前空間の種類を選択する
 
 次の条件のいずれかが環境に当てはまる場合、スタンドアロンの名前空間を選択します。
 
--   組織は、Active Directory Domain Services (AD DS) を使用していません。
+-   組織は Active Directory Domain Services (AD DS) を使用していません。
 -   フェールオーバー クラスターを使うことで名前空間の可用性を高めたいと思っている。
--   このトピックの後半の説明に従って、ドメイン ベース名前空間 (Windows Server 2008 モード) の要件を満たしていないドメイン内の 5,000 個を超える DFS フォルダーを単一の名前空間を作成する必要があります。
+-   このトピックで後述するように、ドメインベースの名前空間 (Windows Server 2008 モード) の要件を満たしていないドメインに、5000を超える DFS フォルダーを含む1つの名前空間を作成する必要があります。
 
 > [!NOTE]
-> 名前空間のサイズを確認するには、DFS 管理コンソールで名前空間を右クリックして、**[プロパティ]** をクリックし、**[名前空間のプロパティ]** ダイアログ ボックスで名前空間サイズを表示します。 DFS 名前空間のスケーラビリティについて詳しくは、Microsoft Web サイトの[ファイル サービス](https://technet.microsoft.com/library/cc771548.aspx)に関するページをご覧ください。
+> 名前空間のサイズを確認するには、DFS 管理コンソールで名前空間を右クリックして、 **[プロパティ]** をクリックし、 **[名前空間のプロパティ]** ダイアログ ボックスで名前空間サイズを表示します。 DFS 名前空間のスケーラビリティについて詳しくは、Microsoft Web サイトの[ファイル サービス](https://technet.microsoft.com/library/cc771548.aspx)に関するページをご覧ください。
 
 次の条件のいずれかが環境に当てはまる場合、ドメイン ベースの名前空間を選択します。
 
@@ -39,19 +39,19 @@ ms.locfileid: "59873803"
 
 ## <a name="choosing-a-domain-based-namespace-mode"></a>ドメイン ベースの名前空間モードを選択する
 
-ドメイン ベースの名前空間を選択した場合に、Windows 2000 Server モードまたは Windows Server 2008 モードを使用するかどうかを選択する必要があります。 Windows Server 2008 モードでは、アクセス ベースの列挙とスケーラビリティの向上がサポートされています。 Windows 2000 Server で導入された、ドメイン ベース名前空間は、「ドメイン ベース名前空間 (Windows 2000 Server モード)」と呼ばれるようになりました
+ドメインベースの名前空間を選択する場合は、Windows 2000 サーバーモードと Windows Server 2008 モードのどちらを使用するかを選択する必要があります。 Windows Server 2008 モードでは、アクセスベースの列挙とスケーラビリティの向上がサポートされています。 Windows 2000 Server で導入されたドメインベースの名前空間は、"ドメインベースの名前空間 (Windows 2000 サーバーモード)" と呼ばれるようになりました。
 
-Windows Server 2008 モードを使用するには、ドメインと名前空間は、次の最小要件を満たす必要があります。
+Windows Server 2008 モードを使用するには、ドメインと名前空間が次の最小要件を満たしている必要があります。
 
 -   フォレストは、Windows Server 2003 以上のフォレスト機能レベルを使います。
--   ドメインは、Windows Server 2008 または以上のドメイン機能レベルを使用します。
--   名前空間のすべてのサーバーには、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、または Windows Server 2008 が実行しています。
+-   ドメインは、Windows Server 2008 以上のドメイン機能レベルを使用しています。
+-   すべての名前空間サーバーでは、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、または Windows Server 2008 が実行されています。
 
-お客様の環境がサポートする場合は、新しいドメイン ベース名前空間を作成するときに、Windows Server 2008 モードを選択します。 このモードでは、追加の機能と拡張性を提供し、使用、Windows 2000 Server モードから名前空間を移行する手間が解消されます。
+環境でサポートされている場合は、新しいドメインベースの名前空間を作成するときに、Windows Server 2008 モードを選択します。 このモードでは、追加の機能とスケーラビリティが提供されます。また、Windows 2000 サーバーモードから名前空間を移行することもできなくなります。
 
-名前空間を Windows Server 2008 モードに移行する方法の詳細については、次を参照してください。 [domain-based Namespace を Windows Server 2008 モードに移行](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)します。
+名前空間を Windows Server 2008 モードに移行する方法の詳細については、「[ドメインベースの名前空間を Windows server 2008 モードに移行](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)する」を参照してください。
 
-お客様の環境が Windows Server 2008 モードでドメイン ベースの名前空間をサポートされていない場合は、名前空間の既存の Windows 2000 Server モードを使用します。
+環境で Windows Server 2008 モードのドメインベースの名前空間がサポートされていない場合は、名前空間に対して既存の Windows 2000 サーバーモードを使用します。
 
 ## <a name="comparing-namespace-types-and-modes"></a>名前空間の種類とモードの比較
 
@@ -67,11 +67,11 @@ Windows Server 2008 モードを使用するには、ドメインと名前空間
 |サポートされている最小名前空間サーバー|Windows 2000 Server|Windows 2000 Server|Windows Server 2008|
 |アクセス ベースの列挙 (有効な場合) のサポート|○ (Windows Server 2008 名前空間サーバーが必要)|X|〇|
 |名前空間の可用性を確保するためのサポートされる方法|フェールオーバー クラスターにスタンドアロン名前空間を作成します。|複数の名前空間サーバーを使って名前空間をホストします。 (名前空間サーバーは同じドメイン内にある必要があります)。|複数の名前空間サーバーを使って名前空間をホストします。 (名前空間サーバーは同じドメイン内にある必要があります)。|
-|DFS レプリケーションを使ったフォルダー ターゲットのレプリケートのサポート|AD DS ドメインに参加しているときにサポート対象|サポートされている|サポートされている|
+|DFS レプリケーションを使ったフォルダー ターゲットのレプリケートのサポート|AD DS ドメインに参加しているときにサポート対象|サポート対象|サポート対象|
 
 ## <a name="see-also"></a>関連項目
 
--   [DFS 名前空間を展開します。](deploying-dfs-namespaces.md)
--   [ドメイン ベースの Namespace を Windows Server 2008 モードに移行します。](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)
+-   [DFS 名前空間を展開する](deploying-dfs-namespaces.md)
+-   [ドメインベースの名前空間を Windows Server 2008 モードに移行する](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md)
 
 

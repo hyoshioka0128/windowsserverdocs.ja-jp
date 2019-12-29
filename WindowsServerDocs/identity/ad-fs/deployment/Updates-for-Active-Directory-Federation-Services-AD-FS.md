@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 3/29/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e11865050e6dcf419ed52eaf8ec6b6aaf897bf60
-ms.sourcegitcommit: a4c15b8d255e4934ffb125d9a0deb661539412ee
+ms.openlocfilehash: 58460bdd86c56b2195cc36aa030c9e3acc5c40f0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68701574"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359477"
 ---
 # <a name="required-updates-for-active-directory-federation-services-ad-fs-and-web-application-proxy-wap"></a>Active Directory フェデレーションサービス (AD FS) (AD FS) と Web アプリケーションプロキシ (WAP) に必要な更新
 
@@ -33,7 +33,7 @@ Windows Server 2016 の更新プログラムは、Windows Update によって毎
 |[4489889 (OS ビルド 14393.2879)](https://support.microsoft.com/help/4489889/windows-10-update-kb4489889) | 重複証明書利用者信頼が AD FS 管理コンソールに表示される Active Directory フェデレーションサービス (AD FS) (AD FS) の問題に対処します。 これは、AD FS 管理コンソールを使用して証明書利用者信頼を作成または表示する場合に発生します。</br></br> AD FS 2016 でエクストラネットのスマートロックアウト (ESL) が有効になっている間に発生する、高 Active Directory フェデレーションサービス (AD FS) (ADFS) Web アプリケーションプロキシ (WAP) の待機時間の問題 (10,000 ミリ秒) に対処します。 このセキュリティ更新プログラムは、 [CVE-2018-16794](https://nvd.nist.gov/vuln/detail/CVE-2018-16794)で説明されている脆弱性に対処します。 |2019年3月|
 |[4487006 (OS ビルド 14393.2828)](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) | PowerShell または Active Directory フェデレーションサービス (AD FS) (AD FS) 管理コンソールを使用しているときに、証明書利用者信頼の更新が失敗する原因となる問題に対処します。 この問題は、複数の PassiveRequestorEndpoint を発行するオンラインメタデータ URL を使用するように証明書利用者信頼を構成すると発生します。 エラーは、"MSIS7615:証明書利用者信頼で指定される信頼されたエンドポイントは、その証明書利用者信頼に対して一意である必要があります。 "  </br></br>Azure のパスワード保護ポリシーにより、外部の複雑さのパスワード変更に関する特定のエラーメッセージを表示する問題に対処します。 |2019 年 2 月|
 |[4462928 (OS ビルド 14393.2580)](https://support.microsoft.com/help/4462928/windows-10-update-kb4462928)|Active Directory フェデレーションサービス (AD FS) (ADFS) エクストラネットスマートロックアウト (ESL) と代替ログイン ID 間の相互運用の問題に対処します。 代替ログイン ID が有効になっている場合、AD FS Powershell コマンドレットを呼び出し、AdfsAccountActivity と AdfsAccountLockout を呼び出して、"アカウントが見つかりません" エラーを返します。 AdfsAccountActivity が呼び出されると、既存のエントリを編集する代わりに新しいエントリが追加されます。|2018 年 10 月|
-|[4343884 (OS ビルド 14393.2457)](https://support.microsoft.com/en-us/help/4343884/windows-10-update-kb4343884)|カスタムカルチャ定義を使用するモバイルデバイスで Multi-factor Authentication が正しく機能しない Active Directory フェデレーションサービス (AD FS) (AD FS) の問題に対処します。 </br></br>Windows Hello for Business の問題に対処します。この問題は、新規ユーザーの登録で大幅な遅延 (15 秒) が発生します。 この問題は、ハードウェアセキュリティモジュールを使用して ADFS 登録機関 (RA) 証明書を格納している場合に発生します。|2018 年 8 月|
+|[4343884 (OS ビルド 14393.2457)](https://support.microsoft.com/en-us/help/4343884/windows-10-update-kb4343884)|カスタムカルチャ定義を使用するモバイルデバイスで Multi-Factor Authentication が正しく機能しない Active Directory フェデレーションサービス (AD FS) (AD FS) の問題に対処します。 </br></br>Windows Hello for Business の問題に対処します。この問題は、新規ユーザーの登録で大幅な遅延 (15 秒) が発生します。 この問題は、ハードウェアセキュリティモジュールを使用して ADFS 登録機関 (RA) 証明書を格納している場合に発生します。|2018 年 8 月|
 |[4338822 (OS ビルド 14393.2395)](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822)|AD FS 管理コンソールを作成またはコンソールから証明書利用者信頼を表示するときに重複する証明書利用者信頼を示しています。 AD FS では問題に対処します。</br></br>Windows Hello for Business が失敗すると、ADFS で問題に対処します。 問題は、2 つのクレーム プロバイダーがある場合に発生します。 PIN の登録は失敗し、"400 の内部サーバー エラー。デバイスの識別子を取得できません。"</br></br> 終了しない非アクティブな接続に関連する WAP 問題に対処します。 これにより、システム リソースのリーク (メモリ リークなど)、WAP サービスが応答しなくです。 ユーザー別のログイン オプションを選択できないようにする AD FS 問題に対処します。 これには、ユーザーが証明書ベースの認証を使用してログインする選択が構成されていないときに発生します。 これは、ユーザーが証明書ベースの認証を選択すると、別のログイン オプションを選択してから再試行してくださいにも発生します。 この場合、ブラウザーを閉じるまでには、ユーザー名は証明書ベースの認証ページにリダイレクトします。|2018 年 7 月|
 |[4103720 (OS ビルド 14393.2273)](https://support.microsoft.com/help/4103720/windows-10-update-kb4103720)|PreventTokenReplays が有効になっている場合に、SAML 証明書利用者への IdP によって開始されたログインが失敗するようにする ADFS の問題に対処します。 </br></br>OAUTH がデバイスまたはブラウザーアプリケーションから認証されるときに発生する ADFS の問題に対処します。 ユーザーパスワードの変更によってエラーが生成され、ユーザーはログインするためにアプリまたはブラウザーを終了する必要があります。 </br></br>UTC + 1 以上 (ヨーロッパおよびアジア) でエクストラネットのスマートロックアウトを有効にできなかった問題に対処します。 さらに、次のエラーにより、通常のエクストラネットロックアウトが失敗します。AdfsAccountActivity:UTC への変換時に、datetime の値より大きい datetime 値または MinValue より小さい DateTime 値を JSON にシリアル化することはできません。</br></br>アドレス、ADFS Windows Hello for ビジネスの問題で新しいユーザーが自分の PIN をプロビジョニングできませんにない。 このエラーは、MFA プロバイダーが構成されていない場合に発生します。|2018 年 5 月|
 |[4093120 (OS ビルド 14393.2214)](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120)| 未処理の更新トークンの検証の問題を解決します。 次のエラーが生成されます。"Microsoft..... OAuth.... OAuth Tokenexception:MSIS9312:無効な OAuth 更新トークンを受信しました。 更新トークンは、トークンで許可されている時間よりも前に受信されました。 " |2018 年 4 月|

@@ -1,8 +1,8 @@
 ---
 title: tzutil
-description: 'Windows コマンド」のトピック * * *- '
+description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 41a46ea7974b67cc557973484428480e7beb5484
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 347254bd5a00a8bfb4a80f20d518f1e0e8b593bf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876803"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392301"
 ---
 # <a name="tzutil"></a>tzutil
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
-表示、Windows は時刻ゾーン ユーティリティ。 
+Windows タイムゾーンユーティリティを表示します。 
 ## <a name="syntax"></a>構文
 ```
 tzutil [/?] [/g] [/s <timeZoneID>[_dstoff]] [/l]
@@ -33,26 +33,26 @@ tzutil [/?] [/g] [/s <timeZoneID>[_dstoff]] [/l]
 |パラメーター|説明|
 |-------|--------|
 |/?|コマンド プロンプトにヘルプを表示します。|
-|/g|現在のタイム ゾーン ID を表示します|
-|/s \<timeZoneID>[_dstoff]|指定されたタイム ゾーン ID を使用して現在のタイム ゾーンの設定します。 **_Dstoff**サフィックス (該当する場合) のタイム ゾーンの夏時間調整を無効にします。|
-|/l|リストのすべての有効な時刻は、ゾーンの Id と表示名。 出力になります。<br /><br />-   \<表示名 ><br />-   \<タイム ゾーン ID >|
+|/g|現在のタイムゾーン ID を表示します。|
+|/s \<timeZoneID > [_dstoff]|指定されたタイムゾーン ID を使用して、現在のタイムゾーンを設定します。 **_Dstoff**サフィックスは、タイムゾーンの夏時間調整を無効にします (該当する場合)。|
+|/l|有効なタイムゾーン Id と表示名をすべて一覧表示します。 出力は次のようになります。<br /><br />-   \<表示名 ><br />-   \<タイムゾーン ID >|
 
 ## <a name="remarks"></a>注釈
-終了コードを**0**コマンドが正常に完了したことを示します。
+終了コード**0**は、コマンドが正常に完了したことを示します。
 
 ## <a name="BKMK_Examples"></a>例
-現在のタイム ゾーン ID を表示するには、次のように入力します。
+現在のタイムゾーン ID を表示するには、次のように入力します。
 ```
 tzutil /g
 ```
-現在のタイム ゾーンを太平洋標準時に設定するに次のように入力します。
+現在のタイムゾーンを太平洋標準時に設定するには、次のように入力します。
 ```
 tzutil /s Pacific Standard time
 ```
-太平洋標準時に現在のタイム ゾーンの設定を夏時間の調整を無効にするには、次のように入力します。
+現在のタイムゾーンを太平洋標準時に設定し、夏時間調整を無効にするには、次のように入力します。
 ```
 tzutil /s Pacific Standard time_dstoff
 ```
-## <a name="additional-references"></a>その他の参照
--   [コマンドライン構文キー](command-line-syntax-key.md)
+## <a name="additional-references"></a>その他の参照情報
+-   [コマンド ライン構文の記号](command-line-syntax-key.md)
 
