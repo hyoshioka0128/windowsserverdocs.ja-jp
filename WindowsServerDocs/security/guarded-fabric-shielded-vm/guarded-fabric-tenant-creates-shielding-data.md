@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 1ae6f881e1bd4b9b317e5622f18958f25f692eec
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: 26ff5e27494e2f42a0c8e4d28e2b9820f8d19e6a
+ms.sourcegitcommit: 471464a674a53c468a2f1e28575c91245ce9badf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940803"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75548188"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>テナント用のシールドされた Vm-シールドされた VM を定義するシールドデータの作成
 
@@ -91,13 +91,13 @@ VMM の署名済みテンプレートディスクは一般化されているた�
 
     | 置換文字列 | 置換の例 |
     |---------------------|----------------------|
-    | @IP4Addr-1@         | 192.168.1.10         |
+    | @IP4Addr-1@         | 192.168.1.10/24      |
     | @MACAddr-1@         | Ethernet             |
-    | @Prefix-1-1@        | 192.168.1.0/24       |
+    | @Prefix-1-1@        | 24                   |
     | @NextHop-1-1@       | 192.168.1.254        |
-    | @IP4Addr-2@         | 10.0.20.30           |
+    | @IP4Addr-2@         | 10.0.20.30/24        |
     | @MACAddr-2@         | イーサネット2           |
-    | @Prefix-2-1@        | 10.0.20.0/24         |
+    | @Prefix-2-1@        | 24                   |
     | @NextHop-2-1@       | 10.0.20.1            |
 
 代替文字列を使用する場合は、VM のプロビジョニング処理中に文字列が設定されるようにすることが重要です。 展開時に @ProductKey@ のような文字列が指定されていない場合は、無人セットアップファイルの &lt;ProductKey&gt; ノードを空白のままにすると、特殊化プロセスは失敗し、VM に接続できなくなります。
@@ -255,7 +255,7 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 
 シールドデータファイルを構成するためのその他の方法については、 [ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps)と[New-VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps)のコマンドレットのドキュメントを参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 - [シールドされた VMの展開](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

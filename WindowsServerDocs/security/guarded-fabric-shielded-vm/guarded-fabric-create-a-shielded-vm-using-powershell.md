@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
-ms.openlocfilehash: 317da0ae3c41d142db6f5a076fd3004d9970b815
-ms.sourcegitcommit: de71970be7d81b95610a0977c12d456c3917c331
+ms.openlocfilehash: 6111b3fbff508c3c485f2a998bab8c0b16beaed6
+ms.sourcegitcommit: 471464a674a53c468a2f1e28575c91245ce9badf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71940743"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75548171"
 ---
 # <a name="create-a-shielded-vm-using-powershell"></a>PowerShell を使用してシールドされた VM を作成する
 
@@ -22,7 +22,7 @@ ms.locfileid: "71940743"
 
 簡単に言うと、テンプレートディスク、シールドデータファイル、無人インストール応答ファイル、およびその他のセキュリティアーティファクトを任意のコンピューターに作成し、これらのファイルを保護されたホストにコピーして、シールドされた VM をプロビジョニングします。
 
-## <a name="create-a-signed-template-disk"></a>署名済みテンプレートディスクを作成する
+## <a name="create-a-signed-template-disk"></a>署名されたテンプレート ディスクの作成
 
 新しいシールドされた VM を作成するには、まず、その OS ボリューム (または Linux 上のブートとルートパーティション) に署名されたシールドされた VM テンプレートディスクが必要です。
 テンプレートディスクを作成する方法の詳細については、次のリンク先を参照してください。
@@ -96,9 +96,9 @@ New-ShieldedVM -Name 'MyShieldedVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vh
 
 ```powershell
 $specializationValues = @{
-    "@IP4Addr-1@" = "192.168.1.10"
+    "@IP4Addr-1@" = "192.168.1.10/24"
     "@MacAddr-1@" = "Ethernet"
-    "@Prefix-1-1@" = "192.168.1.0/24"
+    "@Prefix-1-1@" = "24"
     "@NextHop-1-1@" = "192.168.1.254"
 }
 New-ShieldedVM -Name 'MyStaticIPVM' -TemplateDiskPath 'C:\temp\MyTemplateDisk.vhdx' -ShieldingDataFilePath 'C:\temp\Contoso.pdk' -SpecializationValues $specializationValues -Wait
