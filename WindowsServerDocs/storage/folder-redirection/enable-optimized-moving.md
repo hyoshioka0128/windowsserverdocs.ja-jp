@@ -8,29 +8,29 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6c54fee98247b1ce0aa3ef3a2502cf18f314e763
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: edf714bc0d6b39dbe7c5e800e953d7820fe9abc5
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394366"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352607"
 ---
 # <a name="enable-optimized-moves-of-redirected-folders"></a>リダイレクトされたフォルダーの最適化された移動を有効にする
 
->適用対象:Windows 10、windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server (半期チャネル)
+>適用対象: Windows 10、windows 8、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server (半期チャネル)
 
 このトピックでは、リダイレクトされたフォルダー (フォルダーリダイレクト) を新しいファイル共有に最適化して移動する方法について説明します。 このポリシー設定を有効にした場合、管理者が、リダイレクトされたフォルダーをホストしているファイル共有を移動し、グループポリシーでリダイレクトされたフォルダーのターゲットパスを更新すると、キャッシュされたコンテンツは、遅延なしでローカルオフラインファイルキャッシュ内で単に変更されます。ユーザーがデータを損失する可能性があります。
 
 以前は、管理者はグループポリシーでリダイレクトされたフォルダーのターゲットパスを変更し、影響を受けたユーザーの次のサインイン時にクライアントコンピューターがファイルをコピーして、遅延したサインインを行うことができました。 また、管理者はグループポリシーでファイル共有を移動し、リダイレクトされたフォルダーのターゲットパスを更新することもできます。 ただし、移動の開始と移動後の最初の同期の間にクライアントコンピューターでローカルに加えられた変更は失われます。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必要条件
 
 最適化された移動には、次の要件があります。
 
 - フォルダーリダイレクトがセットアップされている必要があります。 詳細については[、「オフラインファイルでのフォルダーリダイレクトの展開](deploy-folder-redirection.md)」を参照してください。
 - クライアントコンピューターでは、Windows 10、Windows 8.1、windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012 または Windows Server (半期チャネル) を実行する必要があります。
 
-## <a name="step-1-enable-optimized-move-in-group-policy"></a>手順 1:グループポリシーで最適化された移動を有効にする
+## <a name="step-1-enable-optimized-move-in-group-policy"></a>手順 1: グループポリシーで最適化された移動を有効にする
 
 フォルダーリダイレクトデータの再配置を最適化するには、グループポリシーを使用して、適切なグループポリシーオブジェクト (GPO) の **[フォルダーリダイレクトサーバーパスのオフラインファイルキャッシュで最適化されたコンテンツの移動を有効**にする] ポリシー設定を有効にします。 このポリシー設定を **無効** または 未構成 に構成すると、クライアントはすべてのフォルダーリダイレクトコンテンツを新しい場所にコピーしてから、サーバーパスが変更**さ**れた場合に以前の場所からコンテンツを削除します。
 
@@ -41,9 +41,9 @@ ms.locfileid: "71394366"
 3. **[フォルダーリダイレクトサーバーパスの変更時にオフラインファイルキャッシュ内のコンテンツの移動を最適化する]** を右クリックし、 **[編集]** を選択します。
 4. **[有効]** を選択し、 **[OK]** を選択します。
 
-## <a name="step-2-relocate-the-file-share-for-redirected-folders"></a>手順 2:リダイレクトされたフォルダーのファイル共有を再配置する
+## <a name="step-2-relocate-the-file-share-for-redirected-folders"></a>手順 2: リダイレクトされたフォルダーのファイル共有を再配置する
 
-ユーザーのリダイレクトされたフォルダーを含むファイル共有を移動する場合は、フォルダーが適切に再配置されるように予防措置をとる必要があります。
+ユーザーのリダイレクトされたフォルダーを含むファイル共有を移動する場合は、フォルダーが適切に再配置されるように注意する必要があります。
 
 >[!IMPORTANT]
 >ユーザーのファイルが使用されている場合、またはファイルの完全な状態が移動中に保持されていない場合、ファイルがネットワーク経由でコピーされたり、オフラインファイルによって生成された同期の競合が発生したり、データが失われたりするため、パフォーマンスが低下する可能性があります。
@@ -59,7 +59,7 @@ ms.locfileid: "71394366"
 
     ユーザーは、移動が完了するまでオフラインファイルを使用してオフラインで作業し、グループポリシーから更新されたフォルダーリダイレクト設定を受信します。
 
-3. バックアップ特権を持つアカウントを使用して、ファイルのタイムスタンプを保持する方法 (バックアップと復元ユーティリティなど) を使用して、ファイル共有の内容を新しい場所に移動します。 **Robocopy**コマンドを使用するには、管理者特権でのコマンドプロンプトを開き、次の```<Source>```コマンドを入力します。ここで、は```<Destination>```ファイル共有の現在の場所で、は新しい場所です。
+3. バックアップ特権を持つアカウントを使用して、ファイルのタイムスタンプを保持する方法 (バックアップと復元ユーティリティなど) を使用して、ファイル共有の内容を新しい場所に移動します。 **Robocopy**コマンドを使用するには、管理者特権でのコマンドプロンプトを開き、次のコマンドを入力します。ここで ```<Source>``` はファイル共有の現在の場所であり、```<Destination>``` は新しい場所です。
 
     ```PowerShell
     Robocopy /B <Source> <Destination> /Copyall /MIR /EFSRAW
@@ -72,7 +72,7 @@ ms.locfileid: "71394366"
 
     ユーザーは、すべてのコンピューターに少なくとも1回サインオンして、各オフラインファイルキャッシュでデータが正しく再配置されるようにする必要があります。
 
-## <a name="more-information"></a>詳細情報
+## <a name="more-information"></a>説明を見る
 
 * [オフラインファイルでフォルダーリダイレクトを展開する](deploy-folder-redirection.md)
 * [移動ユーザー プロファイルを展開する](deploy-roaming-user-profiles.md)
