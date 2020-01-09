@@ -2,8 +2,7 @@
 ## [Windows Admin Center を使用して環境を管理する (新機能)](../manage/windows-admin-center/overview.md)
 ## Windows Server システムと環境の管理
 ### [Windows Server のハイブリッド クラウド印刷を管理する](hybrid-cloud-print/hybrid-cloud-print-overview.md)
-#### [Windows Server のハイブリッド クラウド印刷を事前認証で展開する](hybrid-cloud-print/hybrid-cloud-print-deploy.md)
-#### [Windows Server のハイブリッド クラウド印刷をパススルー認証で展開する](hybrid-cloud-print/hybrid-cloud-print-deploy-passthrough.md)
+#### [Windows Server のハイブリッド クラウド印刷をデプロイする](hybrid-cloud-print/hybrid-cloud-print-deploy.md)
 ### [Server Core インストール オプションとは](server-core/what-is-server-core.md)
 #### [Server Core インストール オプションに含まれる役割、役割サービス、または機能](server-core/server-core-roles-and-services.md)
 #### [Server Core での基本的な管理タスク](server-core/server-core-administer.md)

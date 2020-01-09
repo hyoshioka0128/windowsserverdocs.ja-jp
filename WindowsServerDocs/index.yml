@@ -10,12 +10,12 @@ metadata:
   ms.topic: hub-page
   ms.date: 06/06/2019
   ms.author: lizross
-  ms.openlocfilehash: b16b9235cbcb149ec7f10ce76b0cf594e9bb2a29
-  ms.sourcegitcommit: 30de12eebeb0fc79567d6bb6ab513692ea2415d3
+  ms.openlocfilehash: 77f017388af44a0365113e890b2ae04a9185a2c8
+  ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74853577"
+  ms.lasthandoff: 12/25/2019
+  ms.locfileid: "75351571"
 highlightedContent:
   items:
   - title: Windows Server 2019 の新着情報
@@ -36,9 +36,9 @@ highlightedContent:
   - title: Windows Server 2016 の概要
     itemType: how-to-guide
     url: /windows-server/get-started/server-basics
-  - title: Windows Server 2008 R2 および Windows Server 2008 のサービスの終了
-    itemType: overview
-    url: /windows-server/get-started/modernize-windows-server-2008
+  - title: Windows Server 2008 および 2008 R2 の拡張セキュリティ更新プログラムを使用する
+    itemType: how-to-guide
+    url: /windows-server/get-started/extended-security-updates
   - title: Windows Insider Program for Server
     itemType: overview
     url: /windows-insider/at-work/
@@ -61,7 +61,7 @@ conceptualContent:
     footerLink:
       url: /windows-server/upgrade/upgrade-overview
       text: さらに詳しく
-  - title: ID とアクセス
+  - title: ID およびアクセス
     links:
     - url: /windows-server/identity/ad-ds/ad-ds-getting-started
       itemType: overview
@@ -145,7 +145,7 @@ conceptualContent:
     footerLink:
       url: /windows-server/security/security-and-assurance
       text: さらに詳しく
-  - title: ストレージ
+  - title: 記憶域
     links:
     - url: /windows-server/storage/whats-new-in-storage
       itemType: whats-new
