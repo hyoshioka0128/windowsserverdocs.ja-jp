@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ce4bd83e6eda24c10f65bd9d450a204906ff7fd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 797f93f010a903d6ec21f568d8d665cb2e42e692
+ms.sourcegitcommit: 5ed817fff1262e390403a4f4f6c38fdc12300c29
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71384220"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75702743"
 ---
 # <a name="seceditgeneraterollback"></a>secedit: generaterollback
 
@@ -29,7 +29,7 @@ ms.locfileid: "71384220"
 ## <a name="syntax"></a>構文
 
 ```
-Secedit /generaterollback /db <database file name> /cfg <configuration file name> /rbk <rollback template file name> [log <log file name>] [/quiet]
+Secedit /generaterollback /db <database file name> /cfg <configuration file name> /rbk <rollback template file name> [/log <log file name>] [/quiet]
 ```
 
 ### <a name="parameters"></a>パラメーター
@@ -40,7 +40,7 @@ Secedit /generaterollback /db <database file name> /cfg <configuration file name
 |cfg|必須。</br>分析用のデータベースにインポートするセキュリティ テンプレートのパスとファイル名を指定します。</br>この/cfg オプションを使用すると、 `/db \<database file name>` パラメーター。 これが指定されていない場合、データベースに既に格納されている構成に対して分析を実行します。|
 |rbk|必須。</br>ロールバック情報が書き込まれるセキュリティ テンプレートを指定します。 セキュリティ テンプレートを作成するには、セキュリティ テンプレート スナップインを使用します。 次のコマンドでは、ロールバック ファイルを作成できます。|
 |ログ|(省略可能)。</br>プロセスのログ ファイルのパスとファイル名を指定します。|
-|通知の停止|任意。</br>画面とログの出力を抑制します。 できます分析結果を表示する、セキュリティの構成と分析スナップインを Microsoft 管理コンソール (MMC) を使用しています。|
+|通知の停止|(省略可能)。</br>画面とログの出力を抑制します。 できます分析結果を表示する、セキュリティの構成と分析スナップインを Microsoft 管理コンソール (MMC) を使用しています。|
 
 ## <a name="remarks"></a>注釈
 
