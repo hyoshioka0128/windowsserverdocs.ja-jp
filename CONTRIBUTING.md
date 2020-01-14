@@ -1,6 +1,6 @@
 # <a name="contributing-to-windows-server-technical-documentation"></a>Windows Server 技術ドキュメントへの投稿
 
-Windows Server 技術ドキュメントに関心をありがとうございます。 ドキュメントへのフィードバック、編集、追加に感謝いたします。Windows Server の技術的なコンテンツを保持する 2 つの別々の場所があります。 そのうちの1つはパブリック (windowsserverdocs) で、もう一方はプライベート (windowsserverdocs pr) です。 あなたが誰であるかによって、あなたが貢献する場所が決まります。
+Windows Server 技術ドキュメントにご関心をお寄せいただきありがとうございます。ドキュメントへのフィードバック、編集、追記に感謝いたします。Windows Server の技術的なコンテンツ保持のため、2 つの場所を別々にご用意しております。パブリック (windowsserverdocs) と、プライベート (windowsserverdocs pr) です。マイクロソフトの従業員であるかどうかによって、ご協力いただく場所が異なります。
 
 - **私はマイクロソフトの従業員ではありません。** マイクロソフトの従業員ではない場合、パブリックな場所に貢献する必要があります。 その方法については、この記事を読み進めてください。
 
