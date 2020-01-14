@@ -32,7 +32,12 @@
     "externalReference": [],
     "globalMetadata": {
       "breadcrumb_path": "/windows-server/breadcrumbs/toc.json",
-      "disable_contribution_on_translation_quality": ["MT"],
+      "disable_contribution_on_translation_quality": [
+        "MT",
+        "MTE75",
+        "MTE95",
+        "Blank"
+      ],
       "extendBreadcrumb": true,
       "feedback_system": "GitHub",
       "feedback_github_repo": "MicrosoftDocs/windowsserverdocs.ja-jp",

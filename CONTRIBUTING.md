@@ -4,6 +4,7 @@ Windows Server 技術ドキュメントにご関心をお寄せいただきあ�
 
 - **私はマイクロソフトの従業員ではありません。** マイクロソフトの従業員ではない場合、パブリックな場所に貢献する必要があります。 その方法については、この記事を読み進めてください。
 
+
 - **私はマイクロソフトの従業員です。** マイクロソフトの従業員としてを実行しているに基づいてのオプションがあります。
 
     - **新しい記事を作成します。** 新しい記事を作成するには、作成する必要があり、GitHub アカウントとツールを設定すると、フォークと複製 windowsserverdocs pr リポジトリでは、独自のリモート ブランチを設定、アーティクルを作成および最後に、新しいプル要求の承認および発行を作成します。 これらの手順については、次を参照してください。、 [GitHub および Visual Studio Code を使用して新しい Windows Server の記事を作成](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/Contributor-guide/create-new-using-github.md)記事。
@@ -23,7 +24,7 @@ Windows Server 技術ドキュメントにご関心をお寄せいただきあ�
 
 ### <a name="to-edit-a-topic"></a>トピックを編集するには
 
-1. ページに移動 https://docs.microsoft.com/windows-serverを更新し、選択する**編集**します。
+1. ページに移動 https://docs.microsoft.com/windows-server を更新し、選択する**編集**します。
 
     ![GitHub の Web、[編集] リンクを表示](media/contribute-link.png)
 

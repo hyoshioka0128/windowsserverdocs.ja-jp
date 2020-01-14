@@ -28,7 +28,12 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "disable_contribution_on_translation_quality": ["MT"],
+      "disable_contribution_on_translation_quality": [
+        "MT",
+        "MTE75",
+        "MTE95",
+        "Blank"
+      ],
       "_op_documentIdPathDepotMapping": {
         "./": {
           "depot_name": "WS.EssentialsDocs"

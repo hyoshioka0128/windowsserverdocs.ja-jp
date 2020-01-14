@@ -35,7 +35,7 @@ Mac 用のリモート デスクトップ クライアントを使用して、Ma
 ## <a name="get-the-remote-desktop-client"></a>リモート デスクトップ クライアントを取得する
 以下の手順に従って、Mac 上でリモート デスクトップを使ってみます。
 
-1. Microsoft リモート デスクトップ クライアントからのダウンロード、 [Mac App Store](https://itunes.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12)します。
+1. [Mac App Store](https://itunes.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12)から Microsoft リモート デスクトップ クライアントをダウンロードします。
 2. [リモート接続を受け入れるように、PC を設定します](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop)。 (この手順をスキップすると、PC に接続できません)。
 3. リモート デスクトップ接続またはリモート リソースを追加します。 Windows PC とリモート リソースに直接接続する接続を使用して、RemoteApp およびデスクトップ接続を使用してオンプレミスで公開された RemoteApp プログラム、セッション ベースのデスクトップ、または仮想デスクトップを使用します。 この機能は、企業環境で通常使用できます。
 

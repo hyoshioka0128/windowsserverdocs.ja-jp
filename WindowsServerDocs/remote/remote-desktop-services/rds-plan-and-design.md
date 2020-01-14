@@ -7,18 +7,18 @@ ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
 ms.author: spatnaik
-ms.date: 09/23/2016
+ms.date: 12/06/2019
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 047b08be-7f91-4194-a641-5b6941b92515
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: e3a70f420d841311481962040f9d9ee78c08dd6a
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 9f0758679353efebfcea85eeb082f1dbe188a7ec
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923793"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351840"
 ---
 # <a name="plan-and-design-your-remote-desktop-services-environment"></a>リモート デスクトップ サービス環境の計画と設計
 
@@ -28,7 +28,7 @@ ms.locfileid: "72923793"
 以下の情報を利用して展開の計画と設計を行います。
 
 - [任意の場所での構築](rds-plan-build-anywhere.md)
-- [さまざまな種類のユーザーの要求を満たす](rds-plan-cater-to-users.md)
+- [ネットワークのガイダンス](network-guidance.md)
 - [どこからでもアクセス](rds-plan-access-from-anywhere.md)
 - [高可用性](rds-plan-high-availability.md)
 - [多要素認証](rds-plan-mfa.md)

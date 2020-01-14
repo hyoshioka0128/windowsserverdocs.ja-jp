@@ -5,14 +5,19 @@ ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 author: phstee
-ms.author: NedPyle; Danlo; DKruse
-ms.date: 4/14/2017
-ms.openlocfilehash: 5f772d2333acb2d48bf27168aca42754013dd8be
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: NedPyle; Danlo; DKruse; v-tea
+ms.date: 12/12/2019
+ms.custom:
+- CI ID 111495
+- CSSTroubleshoot
+manager: dcscontentpm
+audience: Admin
+ms.openlocfilehash: 2e37282abd246c8f2da387deda5e8bf4b400a3d8
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370221"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351636"
 ---
 # <a name="performance-tuning-for-file-servers"></a>ファイル サーバーのパフォーマンス チューニング
 
@@ -93,10 +98,24 @@ ms.locfileid: "71370221"
 
     既定は 10 秒です。 これは、ディレクトリ キャッシュのタイムアウトです。
 
-    > [!NOTE]
+    > [!NOTE]  
     > このパラメーターは、ディレクトリのリースがない場合のディレクトリ メタデータのキャッシュを制御します。
      
-
+     > [!NOTE]  
+     > Windows 10 バージョン 1803 の既知の問題は、Windows 10 が大規模なディレクトリをキャッシュする機能に影響します。 コンピューターを Windows 10 バージョン 1803 にアップグレードした後、ユーザーは何千ものファイルとフォルダーが含まれているネットワーク共有にアクセスし、その共有にあるドキュメントを開きます。 どちらの操作でも大幅な遅延が発生します。
+     >  
+     > この問題を解決するには、Windows 10 バージョン 1809 以降のバージョンをインストールします。
+     >  
+     > この問題を回避するには、**DirectoryCacheLifetime** を **0** に設定します。
+     >  
+     > この問題は、Windows 10 の次のエディションに影響します。  
+     > - Windows 10 Enterprise バージョン 1803
+     > - Windows 10 Pro for Workstations バージョン 1803
+     > - Windows 10 Pro Education バージョン 1803
+     > - Windows 10 Professional バージョン 1803
+     > - Windows 10 Education バージョン 1803
+     > - Windows 10 Home バージョン 1803
+   
 -   **DirectoryCacheEntrySizeMax**
 
     ```
@@ -213,7 +232,7 @@ ms.locfileid: "71370221"
 
 クライアント コンピューターの一般的なチューニング パラメーターを使用すると、特に一部の待機時間の長いネットワーク (ブランチ オフィス、データ センター間の通信、ホーム オフィス、モバイル ブロード バンドなど) 上でリモート ファイル共有にアクセスするコンピューターを最適化できます。 この設定は、すべてのコンピューターに最適で妥当というわけでありません。 個々の設定を適用する前に、その影響を評価する必要があります。
 
-| パラメーター                   | Value | Default |
+| パラメーター                   | 値 | 既定 |
 |-----------------------------|-------|---------|
 | DisableBandwidthThrottling  | 1     | 0       |
 | FileInfoCacheEntriesMax     | 32768 | 64      |
