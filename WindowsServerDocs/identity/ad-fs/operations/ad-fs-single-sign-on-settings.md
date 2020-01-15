@@ -9,12 +9,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 311789fdec160faeeeba0ecf26491d1e0cd6105d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 76c34dc518f4578b4ae2ead3459f1d79c191b3d7
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407397"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949197"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS のシングルサインオンの設定
 
@@ -46,7 +46,7 @@ AD FS は、いくつかの種類のシングルサインオンエクスペリ�
   
  前述のように、永続的 SSO が無効になっている場合を除き、登録済みデバイスのユーザーは常に永続的 SSO を取得します。 登録されていないデバイスの場合は、"サインインしたままにする" (KMSI) 機能を有効にすることで、永続的 SSO を実現できます。 
  
- Windows Server 2012 R2 では、"サインインしたままにする" シナリオで PSSO を有効にするには、この修正プログラムをインストールする必要があります。この[修正プログラム](https://support.microsoft.com/en-us/kb/2958298/)は、 [windows RT 8.1、Windows 8.1、および Windows Server 2012 R2 の年 8 2014 月の更新プログラムのロールアップ](https://support.microsoft.com/en-us/kb/2975719)の一部でもあります。   
+ Windows Server 2012 R2 では、"サインインしたままにする" シナリオで PSSO を有効にするには、この修正プログラムをインストールする必要があります。この[修正プログラム](https://support.microsoft.com/kb/2958298/)は、 [windows RT 8.1、Windows 8.1、および Windows Server 2012 R2 の年 8 2014 月の更新プログラムのロールアップ](https://support.microsoft.com/kb/2975719)の一部でもあります。   
 
 タスク | PowerShell | 説明
 ------------ | ------------- | -------------
@@ -103,7 +103,7 @@ Set-AdfsProperties –KmsiLifetimeMins <Int32\>
 ## <a name="psso-revocation"></a>PSSO の失効  
  セキュリティを保護するために、次の条件が満たされたときに以前に発行されたすべての永続的な SSO cookie を拒否する AD FS ます。 これには、AD FS での認証を行うために、ユーザーが資格情報を入力する必要があります。 
   
-- ユーザーによるパスワードの変更  
+- ユーザーがパスワードを変更する  
   
 - 永続 SSO 設定が AD FS で無効になっています  
   
@@ -127,18 +127,18 @@ Set-AdfsProperties -PersistentSsoCutoffTime <DateTime>
 ```
   
 ## <a name="enable-psso-for-office-365-users-to-access-sharepoint-online"></a>Office 365 ユーザーが SharePoint Online にアクセスできるように PSSO を有効にする  
- PSSO が有効になり AD FS で構成されると、ユーザーが認証された後、AD FS は永続的な cookie を書き込みます。 次回ユーザーがサインインしたときに、永続的な cookie がまだ有効である場合、ユーザーは資格情報を入力して再度認証する必要はありません。 また、Microsoft Azure AD と SharePoint Online で永続化をトリガーするために AD FS で次の2つの要求規則を構成することで、Office 365 および SharePoint Online ユーザーの追加の認証プロンプトを回避することもできます。  Office 365 ユーザーが SharePoint online にアクセスできるようにするには、この修正プログラムをインストールする必要があります。この[修正プログラム](https://support.microsoft.com/en-us/kb/2958298/)は、 [windows RT 8.1、Windows 8.1、および Windows Server 2012 R2 の年 8 2014 月の更新プログラムのロールアップ](https://support.microsoft.com/en-us/kb/2975719)の一部でもあります。  
+ PSSO が有効になり AD FS で構成されると、ユーザーが認証された後、AD FS は永続的な cookie を書き込みます。 次回ユーザーがサインインしたときに、永続的な cookie がまだ有効である場合、ユーザーは資格情報を入力して再度認証する必要はありません。 また、Microsoft Azure AD と SharePoint Online で永続化をトリガーするために AD FS で次の2つの要求規則を構成することで、Office 365 および SharePoint Online ユーザーの追加の認証プロンプトを回避することもできます。  Office 365 ユーザーが SharePoint online にアクセスできるようにするには、この修正プログラムをインストールする必要があります。この[修正プログラム](https://support.microsoft.com/kb/2958298/)は、 [windows RT 8.1、Windows 8.1、および Windows Server 2012 R2 の年 8 2014 月の更新プログラムのロールアップ](https://support.microsoft.com/kb/2975719)の一部でもあります。  
   
  InsideCorporateNetwork 要求を通過する発行変換規則  
   
 ```  
 @RuleTemplate = "PassThroughClaims"  
 @RuleName = "Pass through claim - InsideCorporateNetwork"  
-c:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"]  
+c:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"]  
 => issue(claim = c);   
 A custom Issuance Transform rule to pass through the persistent SSO claim  
 @RuleName = "Pass Through Claim - Psso"  
-c:[Type == "http://schemas.microsoft.com/2014/03/psso"]  
+c:[Type == "https://schemas.microsoft.com/2014/03/psso"]  
 => issue(claim = c);  
   
 ```
@@ -174,10 +174,10 @@ c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
   </tr>
 
  <tr align="center">
-    <td>Psso =&gt;設定更新トークン =&gt;</td>
+    <td>PSSO =&gt;更新トークンを設定する =&gt;</td>
     <td>なし</td>
     <td>24時間</td>
-    <td>7日間</td>
+    <td>7 日</td>
     <th></th>
     <td>なし</td>
     <td>24時間</td>

@@ -8,20 +8,20 @@ ms.topic: article
 ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
-ms.openlocfilehash: df455dfb0d2936192a3c2d7825e2d6d031cfe892
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 158681e2038e3d8015933771d06d3bfb24d31586
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361073"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948478"
 ---
 # <a name="health-service-in-windows-server"></a>Windows Server でのヘルスサービス
 
-> 適用対象:Windows Server 2019、Windows Server 2016
+> 適用対象: Windows Server 2019、Windows Server 2016
 
 ヘルスサービスは、Windows Server 2016 の新機能であり、記憶域スペースダイレクトを実行しているクラスターの日常的な監視と操作エクスペリエンスを向上させます。
 
-## <a name="prerequisites"></a>前提条件  
+## <a name="prerequisites"></a>必要条件  
 
 既定では、ヘルス サービスは記憶域スペース ダイレクトで有効になっています。 ヘルス サービスを設定または開始するために、他の操作は必要ありません。 記憶域スペースダイレクトの詳細については、「 [Windows Server 2016 の記憶域スペースダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md)」を参照してください。  
 
@@ -33,7 +33,7 @@ ms.locfileid: "71361073"
 
 「[ヘルスサービスのエラー](health-service-faults.md)」を参照してください。
 
-## <a name="actions"></a>Actions
+## <a name="actions"></a>操作
 
 「[ヘルスサービスアクション](health-service-actions.md)」を参照してください。
 
@@ -92,15 +92,15 @@ ms.locfileid: "71361073"
 
 ### <a name="usage"></a>使用方法  
 
-サポートされているコンポーネントドキュメントでは、XML による構文を使用します。 無料の[Visual Studio Code](http://code.visualstudio.com/)やメモ帳などの任意のテキストエディターを使用して、保存して再利用できる XML ドキュメントを作成することをお勧めします。
+サポートされているコンポーネントドキュメントでは、XML による構文を使用します。 無料の[Visual Studio Code](https://code.visualstudio.com/)やメモ帳などの任意のテキストエディターを使用して、保存して再利用できる XML ドキュメントを作成することをお勧めします。
 
 #### <a name="sections"></a>セクション
 
-ドキュメントには、`Disks` と `Cache` の2つの独立したセクションがあります。
+ドキュメントには、`Disks` と `Cache`という2つの独立したセクションがあります。
 
-@No__t-0 セクションが指定されている場合は、一覧表示されているドライブ (`Disk`) のみがプールへの参加を許可されます。 一覧にないドライブはプールに参加できないため、運用環境での使用が実質的に妨げられます。 このセクションを空のままにすると、すべてのドライブがプールに参加できるようになります。
+`Disks` セクションが指定されている場合は、表示されているドライブ (`Disk`) のみがプールへの参加を許可されます。 一覧にないドライブはプールに参加できないため、運用環境での使用が実質的に妨げられます。 このセクションを空のままにすると、すべてのドライブがプールに参加できるようになります。
 
-@No__t-0 セクションが指定されている場合は、表示されているドライブ (`CacheDisk`) だけがキャッシュに使用されます。 このセクションを空のままにした場合、記憶域スペースダイレクト[メディアの種類とバスの種類に基づいて推測](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically)が試行されます。 ここに表示されているドライブは `Disks` にも表示されます。
+`Cache` セクションが指定されている場合は、表示されているドライブ (`CacheDisk`) だけがキャッシュに使用されます。 このセクションを空のままにした場合、記憶域スペースダイレクト[メディアの種類とバスの種類に基づいて推測](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically)が試行されます。 ここに表示されているドライブも `Disks`に一覧表示されます。
 
 >[!IMPORTANT]
 > サポートされているコンポーネントのドキュメントは、既にプールおよび使用されているドライブには、遡及的には適用されません。  
@@ -141,7 +141,7 @@ ms.locfileid: "71361073"
 
 ```
 
-複数のドライブを一覧表示するには、`<Disk>` または `<CacheDisk>` のタグを追加するだけです。
+複数のドライブを一覧表示するには、単に `<Disk>` または `<CacheDisk>` タグを追加します。
 
 記憶域スペースダイレクトを配置するときにこの XML を挿入するには、`-XML` パラメーターを使用します。
 
@@ -170,10 +170,10 @@ Get-PhysicalDisk | Select Model, Manufacturer, FirmwareVersion
 
 [ヘルスサービス設定](health-service-settings.md)を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 - [レポートのヘルスサービス](health-service-reports.md)
 - [ヘルスサービスエラー](health-service-faults.md)
 - [ヘルスサービスアクション](health-service-actions.md)
 - [ヘルスサービスの設定](health-service-settings.md)
-- [Windows Server 2016 の記憶域スペースダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md)
+- [Windows Server 2016 での記憶域スペース ダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md)

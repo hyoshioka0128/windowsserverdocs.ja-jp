@@ -9,12 +9,12 @@ ms.date: 07/17/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 442aef6daccda2ab3e95690a82f43f642e5a3f73
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 96659164a9eea1784cb529c47dd58be70d546f80
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358748"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948731"
 ---
 # <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>AD FS 2016 以降の OAuth パブリッククライアントを使用してネイティブクライアントアプリケーションを構築する
 
@@ -42,15 +42,15 @@ ms.locfileid: "71358748"
 1. AD FS 管理 で、**アプリケーショングループ** を右クリックし、**アプリケーショングループの追加** を選択します。
 
 2. アプリケーショングループウィザードで、[名前] に任意の名前 (例: NativeToDoListAppGroup) を入力します。 **WEB API テンプレートにアクセスするネイティブアプリケーション**を選択します。 **[次へ]** をクリックします。
- ![アプリケーショングループの追加](media/native-client-with-ad-fs-2016/addapplicationgroup1.png)
+ アプリケーショングループの追加 ![](media/native-client-with-ad-fs-2016/addapplicationgroup1.png)
 
-3. **[ネイティブアプリケーション]** ページで、AD FS によって生成された識別子を確認します。 これは、AD FS がパブリッククライアントアプリを認識する id です。 **クライアント識別子**の値をコピーします。 この値は、アプリケーションコードで**ida: ClientId**の値として後で使用されます。 必要に応じて、ここで任意のカスタム識別子を指定できます。 リダイレクト URI は任意の値です。たとえば、ネイティブ https://ToDoListClient アプリを配置![ します。](media/native-client-with-ad-fs-2016/addapplicationgroup2.png)
+3. **[ネイティブアプリケーション]** ページで、AD FS によって生成された識別子を確認します。 これは、AD FS がパブリッククライアントアプリを認識する id です。 **クライアント識別子**の値をコピーします。 この値は、アプリケーションコードで**ida: ClientId**の値として後で使用されます。 必要に応じて、ここで任意のカスタム識別子を指定できます。 リダイレクト URI は、任意の値、例、put https://ToDoListClient ![ ネイティブアプリ](media/native-client-with-ad-fs-2016/addapplicationgroup2.png)
 
 4. **[WEB api の構成]** ページで、web api の識別子の値を設定します。 この例では、これは Web アプリが実行されていると考えられる**SSL URL**の値にする必要があります。 この値を取得するには、ソリューション内の TooListServer プロジェクトのプロパティをクリックします。 これは後で、ネイティブクライアントアプリケーションの**app.config**ファイルの**todo: TodoListResourceId**値として、また**todo: TodoListBaseAddress**として使用されます。
 ![Web API](media/native-client-with-ad-fs-2016/addapplicationgroup3.png)
 
 5. **[Access Control ポリシーの適用]** を実行し、既定値を設定した状態で**アプリケーションのアクセス許可を構成**します。 [概要] ページは次のようになります。
-![概要](media/native-client-with-ad-fs-2016/addapplicationgroupsummary.png)
+![要約](media/native-client-with-ad-fs-2016/addapplicationgroupsummary.png)
 
 [次へ] をクリックし、ウィザードを完了します。
 
@@ -59,13 +59,13 @@ ms.locfileid: "71358748"
 要求規則を構成するには、先ほど作成したアプリケーショングループを開き、Web API をダブルクリックします。 [発行変換規則] タブを選択し、[規則の追加] ボタンをクリックします。 要求規則の種類で、[カスタム要求規則] を選択し、次のように要求規則を追加します。
 
 ```  
-c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", Issuer == "AD AUTHORITY"]
+c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", Issuer == "AD AUTHORITY"]
  => issue(store = "Active Directory", types = ("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"), query = ";givenName;{0}", param = c.Value);
 ```
 
 ![NameIdentifier 要求規則](media/native-client-with-ad-fs-2016/addnameidentifierclaimrule.png)
 
-### <a name="modify-the-application-code"></a>アプリケーションコードの変更
+### <a name="modify-the-application-code"></a>アプリケーション コードの変更
 
 このセクションでは、サンプル Web API をダウンロードし、Visual Studio で変更する方法について説明します。   [ここに記載](https://github.com/Azure-Samples/active-directory-dotnet-native-desktop)されている Azure AD サンプルを使用します。  
 
@@ -88,11 +88,11 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-native-deskto
 
 **App.config**
 
-* AD FS サービスを表す値を持つキー **ida: Authority**を追加します。 例、 https://fs.contoso.com/adfs/
+* AD FS サービスを表す値を持つキー **ida: Authority**を追加します。 たとえば、 https://fs.contoso.com/adfs/ と記述します。
 * AD FS でのアプリケーショングループの作成時に、**ネイティブアプリケーション**ページで **[クライアント識別子]** の値を使用して**ida: ClientId**キーを変更します。 たとえば、3f07368b-6efd-4f50-a330-d93853f4c855 のようになります。
-* AD FS でアプリケーショングループを作成するときに、 **[WEB API の構成]** ページの **[識別子]** の値を使用して**todo: todo: TodoListResourceId**を変更します。 例、 https://localhost:44321/
-* AD FS でアプリケーショングループを作成するときに、 **[WEB API の構成]** ページの **[識別子]** の値を使用して**todo: TodoListBaseAddress**を変更します。 例、 https://localhost:44321/
-* AD FS でのアプリケーショングループの作成時に、**ネイティブアプリケーション**ページの **[リダイレクト uri]** の値を使用して**ida: redirecturi**の値を設定します。 例、 https://ToDoListClient
+* AD FS でアプリケーショングループを作成するときに、 **[WEB API の構成]** ページの **[識別子]** の値を使用して**todo: todo: TodoListResourceId**を変更します。 たとえば、 https://localhost:44321/ と記述します。
+* AD FS でアプリケーショングループを作成するときに、 **[WEB API の構成]** ページの **[識別子]** の値を使用して**todo: TodoListBaseAddress**を変更します。 たとえば、 https://localhost:44321/ と記述します。
+* AD FS でのアプリケーショングループの作成時に、**ネイティブアプリケーション**ページの **[リダイレクト uri]** の値を使用して**ida: redirecturi**の値を設定します。 たとえば、 https://ToDoListClient と記述します。
 * 読みやすくするために、 **ida: Tenant**と**ida: AADInstance**のキーを削除/コメントすることができます。
 
   ![アプリの構成](media/native-client-with-ad-fs-2016/app_configfile.PNG)
@@ -126,9 +126,9 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-native-deskto
 **Web.config**
 
 * 必要ではないため、キー **ida: テナント**にコメントを付けます
-* フェデレーションサービスの FQDN (例:) を示す値を持つ**ida: Authority**のキーを追加します。 https://fs.contoso.com/adfs/
+* フェデレーションサービスの FQDN を示す値を持つ**ida: Authority**のキーを追加します (例:)。 https://fs.contoso.com/adfs/
 * キー **ida:** アプリケーショングループの追加 の  **Web api の構成** ページで指定した web api 識別子の値を AD FS に変更します。
-* AD FS サービスのフェデレーションメタデータ URL に対応する値を持つキー **ida: AdfsMetadataEndpoint**を追加します。次に例を示します。 https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml
+* AD FS サービスのフェデレーションメタデータ URL (例: https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml ) に対応する値を持つキー **ida: AdfsMetadataEndpoint**を追加します。
 
 ![Web 構成](media/native-client-with-ad-fs-2016/webconfig.PNG)
 
@@ -167,5 +167,5 @@ ConfigureAuth 関数を次のように変更します。
 
 ![サインイン](media/native-client-with-ad-fs-2016/clienttodoadd.png)
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 [AD FS の開発](../../ad-fs/AD-FS-Development.md)  

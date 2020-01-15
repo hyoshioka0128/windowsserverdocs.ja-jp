@@ -9,18 +9,18 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: f62692a420bbc6cdae08fa56ec12b8a2fd357ac8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1ef77613919ea6caf39a7cb41ba575652680466d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406975"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950116"
 ---
 # <a name="whats-new-in-active-directory-domain-services-for-windows-server-2016"></a>Windows Server 2016 の Active Directory Domain Services の新サービス
 
->適用先:Windows Server 2016
+>適用先: Windows Server 2016
 
-Active Directory Domain Services (AD DS) の次の新機能により、組織は Active Directory 環境をセキュリティで保護し、クラウドのみのデプロイとハイブリッドデプロイに移行できるようになります。一部のアプリケーションとサービスは、クラウドでホストされ、他のユーザーはオンプレミスでホストされます。 強化された機能は次のとおりです。  
+Active Directory Domain Services (AD DS) の次の新機能により、組織は Active Directory 環境をセキュリティで保護し、クラウドのみのデプロイとハイブリッドデプロイに移行できるようになります。一部のアプリケーションとサービスは、クラウドでホストされ、他のユーザーはオンプレミスでホストされます。 WebJobs からの改善点は、以下のとおりです。  
   
 - [Privileged access management](https://docs.microsoft.com/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services)  
   
@@ -57,7 +57,7 @@ Privileged access management (PAM) は、ハッシュ、スピアーフィッシ
   
 - Active Directory Windows Server 2012 R2 以降のフォレストの機能レベル。  
   
-## <a name="azure-ad-join"></a>Azure AD への参加
+## <a name="azure-ad-join"></a>Azure AD 参加
 
 Azure Active Directory Join を使用すると、企業や個人のデバイスの機能が向上し、enterprise、business、EDU の各顧客の id エクスペリエンスが向上します。  
   
@@ -72,7 +72,7 @@ Azure Active Directory Join を使用すると、企業や個人のデバイス�
   
 - Windows ドメインに参加できないモバイルデバイス (スマートフォン、phablets) の**組織のリソースにアクセス**する (企業所有か byod かにかかわらず)  
 - Office 365 およびその他の組織のアプリ、web サイト、リソースに**シングルサイン**オンします。  
-- **BYOD デバイスで**は、(オンプレミスのドメインまたは Azure AD から) 個人所有のデバイスに職場アカウントを追加して、条件付きアカウント制御などの新しい機能に確実に準拠させることができるように、アプリと web で仕事用リソースへの SSO を利用することができます。構成証明をデバイスの正常性します。  
+- **BYOD デバイスで**は、(オンプレミスのドメインまたは Azure AD から) 個人所有のデバイスに職場アカウントを追加して、条件付きアカウント制御やデバイスの正常性構成証明などの新しい機能に確実に準拠させることができるように、アプリと web で作業リソースの SSO を利用できます。  
 - **Mdm 統合**により、デバイスを mdm に自動登録できます (Intune またはサードパーティ)  
 - 組織内の複数のユーザーに対して **"キオスク" モードと共有デバイスを設定**する  
 - **開発者エクスペリエンス**を使用すると、共有されたプログラミングスタックで企業と個人の両方のコンテキストに対応するアプリを構築できます。  
@@ -90,9 +90,9 @@ Windows Hello for Business は、キー ベースの認証方法、組織とコ�
   
 ## <a name="deprecation-of-file-replication-service-frs-and-windows-server-2003-functional-levels"></a>ファイルレプリケーションサービス (FRS) と Windows Server 2003 の機能レベルの廃止
 
-ファイルレプリケーションサービス (FRS) と Windows Server 2003 の機能レベルは、以前のバージョンの Windows Server では非推奨とされていましたが、Windows Server 2003 オペレーティングシステムのサポートは終了しています。 そのため、Windows Server 2003 を実行するドメインコントローラーをドメインから削除する必要があります。 以前のバージョンの Windows Server を実行しているドメインコントローラーが環境に追加されないようにするには、ドメインとフォレストの機能レベルを少なくとも Windows Server 2008 に上げる必要があります。
+ファイルレプリケーションサービス (FRS) と Windows Server 2003 の機能レベルは、以前のバージョンの Windows Server では非推奨とされていましたが、Windows Server 2003 オペレーティングシステムのサポートは終了しています。 その結果として、Windows Server 2003 を実行するすべてのドメイン コントローラーを、ドメインから削除する必要があります。 以前のバージョンの Windows Server を実行しているドメインコントローラーが環境に追加されないようにするには、ドメインとフォレストの機能レベルを少なくとも Windows Server 2008 に上げる必要があります。
 
-Windows Server 2008 以上のドメイン機能レベルでは、分散ファイルサービス (DFS) レプリケーションを使用して、ドメインコントローラー間で SYSVOL フォルダーのコンテンツをレプリケートします。 Windows Server 2008 ドメインの機能レベル以上で新しいドメインを作成した場合、SYSVOL のレプリケートには DFS レプリケーションが自動的に使用されます。 ドメインを低い機能レベルで作成した場合は、FRS から SYSVOL へのレプリケーションを使用するように移行する必要があります。 移行手順については、[次の手順](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019\(v=ws.10\))に従うか、[ストレージチームのファイルキャビネットのブログで合理化](http://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)された一連の手順を参照することができます。  
+Windows Server 2008 以上のドメイン機能レベルでは、分散ファイル サービス (DFS) レプリケーションを使用して、ドメイン コントローラー間で SYSVOL フォルダーの内容をレプリケートします。 Windows Server 2008 ドメイン機能レベル以上で新しいドメインを作成した場合、SYSVOL のレプリケートには DFS レプリケーションが自動的に使用されます。 それより低い低い機能レベルでドメイン作成した場合は、SYSVOL のレプリケーションを FRS から DFS に移行する必要があります。 移行手順については、[次の手順](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd640019\(v=ws.10\))に従うか、[ストレージチームのファイルキャビネットのブログで合理化](https://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx)された一連の手順を参照することができます。  
   
 Windows Server 2003 のドメインとフォレストの機能レベルは引き続きサポートされますが、SYSVOL レプリケーションの互換性とサポートを将来的に保証するために、機能レベルを Windows Server 2008 (またはそれ以上) に引き上げる必要があります。 さらに、より高い機能レベルで利用可能な他の多くの利点と機能もあります。 詳細については、次のリソースを参照してください。  
 

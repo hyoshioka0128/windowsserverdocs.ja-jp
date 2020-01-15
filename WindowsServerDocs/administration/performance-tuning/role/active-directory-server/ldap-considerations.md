@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: f6670c8cfd718360518869f0551461c45e5aed27
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 5e407f9f32339e3f9c75e3722ad218228b608b9d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71370282"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947104"
 ---
 # <a name="ldap-considerations-in-adds-performance-tuning"></a>での LDAP に関する考慮事項によるパフォーマンスチューニングの追加
 
@@ -60,7 +60,7 @@ Active Directory に対して使用するクエリを適切に記述、構築、
 
 -   [高コストで非効率的な検索の追跡](https://msdn.microsoft.com/library/ms808539.aspx)
 
--   パフォーマンスモニターの Active Directory 診断データコレクターセット ([SPA の Son: Win2008 以降の AD データコレクターセット](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx))
+-   パフォーマンスモニターの Active Directory 診断データコレクターセット ([SPA の Son: Win2008 以降の AD データコレクターセット](https://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx))
 
 -   [Microsoft Server Performance Advisor](../../../server-performance-advisor/microsoft-server-performance-advisor.md)Active Directory Advisor パック
 
@@ -98,7 +98,7 @@ Active Directory に対して使用するクエリを適切に記述、構築、
 
 -   [インデックス付き属性](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 - [パフォーマンスチューニング Active Directory サーバー](index.md)
 - [ハードウェアに関する考慮事項](hardware-considerations.md)

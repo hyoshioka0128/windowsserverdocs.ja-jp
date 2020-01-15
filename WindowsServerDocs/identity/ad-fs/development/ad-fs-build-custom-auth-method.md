@@ -8,12 +8,12 @@ ms.date: 05/23/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2ef16ddeb241d55b61b484805ff91cb247985d8d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bc881efcd932e36e40f4483ae5a8378884db64a6
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358883"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948865"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>Windows Server での AD FS のためのカスタム認証方法を構築する
 
@@ -60,7 +60,7 @@ ms.locfileid: "71358883"
 
 2.  [クラスライブラリ] を選択し、.NET 4.5 を対象としていることを確認します。
 
-    プロバイダー![を作成する]プロバイダー(media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "を")作成する
+    ![プロバイダーを作成する](media/ad-fs-build-custom-auth-method/Dn783423.71a57ae1-d53d-462b-a846-5b3c02c7d3f2(MSDN.10).jpg "プロバイダーの作成")
 
 3.  AD FS がインストールされている Windows Server 2012 R2 サーバーで、% windir%\\ADFS から**Microsoft のサービス**をコピーし、開発用コンピューターのプロジェクトフォルダーに貼り付けます。
 
@@ -70,13 +70,13 @@ ms.locfileid: "71358883"
 
 6.  **[OK]** をクリックして、新しい参照を確認します。
 
-    プロバイダー![を作成する]プロバイダー(media/ad-fs-build-custom-auth-method/Dn783423.f18df353-9259-4744-b4b6-dd780ce90951(MSDN.10).jpg "を")作成する
+    ![プロバイダーを作成する](media/ad-fs-build-custom-auth-method/Dn783423.f18df353-9259-4744-b4b6-dd780ce90951(MSDN.10).jpg "プロバイダーの作成")
 
     これで、プロバイダーに必要なすべての型を解決するように設定されました。 
 
 7.  プロジェクトに新しいクラスを追加します (プロジェクトを右クリックし、[追加...] **クラス...** )次に示すように、 **Myadapter**のような名前を付けます。
 
-    プロバイダー![を作成する]プロバイダー(media/ad-fs-build-custom-auth-method/Dn783423.6b6a7a8b-9d66-40c7-8a86-a2e3b9e14d09(MSDN.10).jpg "を")作成する
+    ![プロバイダーを作成する](media/ad-fs-build-custom-auth-method/Dn783423.6b6a7a8b-9d66-40c7-8a86-a2e3b9e14d09(MSDN.10).jpg "プロバイダーの作成")
 
 8.  新しいファイル MyAdapter.cs で、既存のコードを次のコードに置き換えます。
 
@@ -227,10 +227,10 @@ ms.locfileid: "71358883"
          /// Returns an array indicating the type of claim that the adapter uses to identify the user being authenticated.
          /// Note that although the property is an array, only the first element is currently used.
          /// MUST BE ONE OF THE FOLLOWING
-         /// "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"
+         /// "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"
          /// "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn"
          /// "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"
-         /// "http://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid"
+         /// "https://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid"
          public string[] IdentityClaims
          {
          get { return new[] { "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn" }; }
@@ -343,7 +343,7 @@ ms.locfileid: "71358883"
 
 14. 次に、[**プロジェクト-\>コンポーネントの追加] を選択します。リソース**ファイルにファイル**リソース**の名前を指定し、[追加] をクリックし**ます。**
 
-   プロバイダー![を作成する]プロバイダー(media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "を")作成する
+   ![プロバイダーを作成する](media/ad-fs-build-custom-auth-method/Dn783423.3369ad8f-f65f-4f36-a6d5-6a3edbc1911a(MSDN.10).jpg "プロバイダーの作成")
 
 15. 次に、**リソース .resx**ファイル内で、[リソースの追加] を選択します。 **既存のファイルを追加**します。  前の手順で保存したテキストファイル (html フラグメントを含む) に移動します。
 
@@ -361,7 +361,7 @@ ms.locfileid: "71358883"
 
 2.  **署名** タブで、 **アセンブリの署名** チェックボックスをオンにし、**厳密な名前のキーファイルを選択**してください で  **\<新規作成...\>** を選択します。キーファイル名とパスワードを入力し、 **OK**をクリックします。  次に **、[アセンブリの署名**がチェックされ、**遅延署名のみ**] がオフになっていることを確認します。  プロパティ **署名** ページは次のようになります。
 
-    プロバイダーをビルドする(media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "プロバイダーを")![ビルドする]
+    ![プロバイダーをビルドする](media/ad-fs-build-custom-auth-method/Dn783423.0b1a1db2-d64e-4bb8-8c01-ef34296a2668(MSDN.10).jpg "プロバイダーの構築")
 
 3.  次に、ソリューションをビルドします。
 
@@ -405,11 +405,11 @@ ms.locfileid: "71358883"
 
 2.  (たとえば、Windows サービススナップインを使用して) AD FS サービスを再起動します。
 
-3.  次のコマンドを実行します: `Get-AdfsAuthenticationProvider`。
+3.  次のコマンドを実行します: `Get-AdfsAuthenticationProvider`
 
     これにより、プロバイダーがシステムのプロバイダーの1つとして表示されます。
 
-    以下に例を示します。
+    次に例を示します。
 
         PS C:\>$typeName = "MFAadapter.MyAdapter, MFAadapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e675eb33c62805a0, processorArchitecture=MSIL”
         PS C:\>Register-AdfsAuthenticationProvider -TypeName $typeName -Name “MyMFAAdapter”
@@ -460,12 +460,12 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
 2. 次に、グローバルまたは証明書利用者固有の規則を構成して、MFA をトリガーします。
 
-   例 1: 外部要求に対して MFA を要求するグローバルルールを作成するには、`PS C:\>Set-AdfsAdditionalAuthenticationRule –AdditionalAuthenticationRules 'c:[type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "http://schemas.microsoft.com/claims/multipleauthn" );'`
+   例 1: 外部要求に対して MFA を要求するグローバルルールを作成するには、`PS C:\>Set-AdfsAdditionalAuthenticationRule –AdditionalAuthenticationRules 'c:[type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type = "https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn" );'`
 
    例 2: 特定の証明書利用者への外部要求に対して MFA を要求する MFA 規則を作成するには  (個々のプロバイダーは、Windows Server 2012 R2 の AD FS の個々の証明書利用者に接続できないことに注意してください)。
 
        PS C:\>$rp = Get-AdfsRelyingPartyTrust –Name <Relying Party Name>
-       PS C:\>Set-AdfsRelyingPartyTrust –TargetRelyingParty $rp –AdditionalAuthenticationRules 'c:[type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type = "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "http://schemas.microsoft.com/claims/multipleauthn" );'
+       PS C:\>Set-AdfsRelyingPartyTrust –TargetRelyingParty $rp –AdditionalAuthenticationRules 'c:[type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", value == "false"] => issue(type = "https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", value = "https://schemas.microsoft.com/claims/multipleauthn" );'
 
 ### <a name="authenticate-with-mfa-using-your-adapter"></a>アダプターを使用して MFA で認証する
 
@@ -487,9 +487,9 @@ Example:`PS C:\>Set-AdfsGlobalAuthenticationPolicy –AdditionalAuthenticationPr
 
     複数のアダプターが構成されている場合は、上記のフレンドリ名を使用して MFA の選択ページが表示されます。
 
-    アダプターを使用し![た認証]アダプター(media/ad-fs-build-custom-auth-method/Dn783423.c98d2712-cbd3-4cb9-ac03-2838b81c4f63(MSDN.10).jpg "での")認証
+    ![アダプターを使用した認証](media/ad-fs-build-custom-auth-method/Dn783423.c98d2712-cbd3-4cb9-ac03-2838b81c4f63(MSDN.10).jpg "アダプターを使用した認証")
 
-    アダプターを使用し![た認証]アダプター(media/ad-fs-build-custom-auth-method/Dn783423.fd3aefc0-ef6c-4a8c-a737-4914c78ff2d2(MSDN.10).jpg "での")認証
+    ![アダプターを使用した認証](media/ad-fs-build-custom-auth-method/Dn783423.fd3aefc0-ef6c-4a8c-a737-4914c78ff2d2(MSDN.10).jpg "アダプターを使用した認証")
 
 これで、インターフェイスを実用的に実装できるようになり、モデルの動作についての知識が得られました。 BeginAuthentication および TryEndAuthentication にブレークポイントを設定するための追加の例として trym を使用できます。  ユーザーが最初に MFA フォームに入力したときに BeginAuthentication が実行され、フォームの送信のたびに TryEndAuthentication がトリガーされることに注意してください。
 
@@ -539,7 +539,7 @@ TryEndAuthentication の実装を思い出してください。
      outgoingClaims = new[] 
      {
      // Return the required authentication method claim, indicating the particulate authentication method used.
-     new Claim( "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", 
+     new Claim( "https://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod", 
      "http://example.com/myauthenticationmethod1" )
      };
      return null;
@@ -559,7 +559,7 @@ TryEndAuthentication の実装を思い出してください。
 
 次に示すように、MFA UI で MFA 関連のすべてのチェックボックスをオフにし、[OK] をクリックします。
 
-![ポリシー](media/ad-fs-build-custom-auth-method/Dn783423.c111b4e7-5b05-413c-8b0f-222a0e91ac1f(MSDN.10).jpg "クリアポリシー")のクリア
+![ポリシーのクリア](media/ad-fs-build-custom-auth-method/Dn783423.c111b4e7-5b05-413c-8b0f-222a0e91ac1f(MSDN.10).jpg "ポリシーのクリア")
 
 ### <a name="unregister-provider-windows-powershell"></a>プロバイダーの登録解除 (Windows PowerShell)
 
@@ -633,11 +633,11 @@ TryEndAuthentication の実装を思い出してください。
 
 MFA 認証ページで「adfabric」と入力すると、成功したサインインが表示されます。
 
-アダプタ(media/ad-fs-build-custom-auth-method/Dn783423.630d8a91-3bfe-4cba-8acf-03eae21530ee(MSDN.10).jpg "を使用")![したサインイン]
+![アダプターを使用したサインイン](media/ad-fs-build-custom-auth-method/Dn783423.630d8a91-3bfe-4cba-8acf-03eae21530ee(MSDN.10).jpg "アダプターを使用したサインイン")
 
-アダプタ(media/ad-fs-build-custom-auth-method/Dn783423.c340fa73-f70f-4870-b8dd-07900fea4469(MSDN.10).jpg "を使用")![したサインイン]
+![アダプターを使用したサインイン](media/ad-fs-build-custom-auth-method/Dn783423.c340fa73-f70f-4870-b8dd-07900fea4469(MSDN.10).jpg "アダプターを使用したサインイン")
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 #### <a name="other-resources"></a>その他のリソース
 

@@ -1,5 +1,5 @@
 ---
-title: cleanmgr.exe
+title: cleanmgr
 description: コマンドラインオプションを使用して、特定のファイルを自動的にクリーンアップするようにディスククリーンアップツール (Cleanmgr.exe) を構成する方法について説明します。
 ms.prod: windows-server
 ms.reviewer: cosmosdarwin
@@ -8,14 +8,14 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 20bc60abc747e6bab0ef59f38d0a392f18d75abe
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0646922f409d4ea8abb85c927a329013e32016de
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379376"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947585"
 ---
-# <a name="cleanmgr"></a>cleanmgr.exe
+# <a name="cleanmgr"></a>cleanmgr
 
 > 適用対象: Windows Server 2019、Windows Server 2016、Windows Server 2012、Windows Server 2008 R2、Windows Server (半期チャネル)
 
@@ -89,4 +89,4 @@ cleanmgr /tuneup:1
 
 ## <a name="additional-references"></a>その他の参照情報
 
-[Windows 10 でドライブの空き容量を増やす](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)
+[Windows 10 でドライブの空き容量を増やす](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)

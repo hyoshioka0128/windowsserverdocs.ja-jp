@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 826769c1405648f37c86f97b4b9134871f4d30ed
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: 227d66dafffd67b0b2e4f67158498cf43c7b59f8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791183"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950367"
 ---
 # <a name="protected-users-security-group"></a>Protected Users セキュリティ グループ
 
@@ -67,8 +67,8 @@ Protected Users グループを作成するには、Windows Server 2012 R2 を�
 |既知の SID/RID|S-1-5-21-<domain>-525|
 |タスクバーの検索ボックスに|ドメイン グローバル|
 |既定のコンテナー|CN=Users、DC=<domain>、DC=|
-|既定のメンバー|なし|
-|～の既定のメンバー|なし|
+|既定のメンバー|None|
+|～の既定のメンバー|None|
 |ADMINSDHOLDER で保護されているか|必須ではない|
 |既定のコンテナーから移動することができるか|[はい]|
 |このグループの管理をサービス管理者以外に委任することができるか|必須ではない|
@@ -89,7 +89,7 @@ Protected Users グループを作成するには、Windows Server 2012 R2 を�
 - Windows 8.1 と Windows Server 2012 R2 以降では、windows digest が有効になっている場合でも、ユーザーのプレーンテキストの資格情報はキャッシュされません。
 
 > [!Note]
-> [Microsoft セキュリティアドバイザリ 2871997](https://technet.microsoft.com/library/security/2871997)をインストールした後、レジストリキーが構成されるまで、Windows ダイジェストは引き続き資格情報をキャッシュします。 詳細については[、「マイクロソフトセキュリティアドバイザリ: 資格情報の保護と管理を向上させるための更新プログラム: 2014 年5月 13](https://support.microsoft.com/en-us/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a)日」を参照してください。
+> [Microsoft セキュリティアドバイザリ 2871997](https://technet.microsoft.com/library/security/2871997)をインストールした後、レジストリキーが構成されるまで、Windows ダイジェストは引き続き資格情報をキャッシュします。 詳細については[、「マイクロソフトセキュリティアドバイザリ: 資格情報の保護と管理を向上させるための更新プログラム: 2014 年5月 13](https://support.microsoft.com/help/2871997/microsoft-security-advisory-update-to-improve-credentials-protection-a)日」を参照してください。
 
 - NTLM では、ユーザーのプレーンテキストの資格情報または NT の一方向の機能 (NTOWF) はキャッシュされません。
 
@@ -112,7 +112,7 @@ Windows Server 2012 R2 ドメインに対して認証される Protected Users �
 
 Protected Users グループのアカウントごとに、TGT の期限切れに対する構成可能ではない設定が指定されます。 通常、ドメイン コントローラーは、ドメイン ポリシー、 **[チケットの最長有効期間]** 、および **[ユーザー チケットを更新できる最長有効期間]** に基づいて TGT の有効期間と更新を設定します。 Protected Users グループの場合、このようなドメイン ポリシーに 600 分が設定されます。
 
-詳細については、「[保護されるアカウントの構成方法](how-to-configure-protected-accounts.md)」をご覧ください。
+詳細については、「 [How to Configure Protected Accounts](how-to-configure-protected-accounts.md)」を参照してください。
 
 ## <a name="troubleshooting"></a>[トラブルシューティング]
 2 つの運用管理ログを使用して、Protected Users に関連するイベントを解決することができます。 これらの新しいログはイベント ビューアーに表示され、既定では無効です。ログは **Applications and Services Logs\Microsoft\Windows\Microsoft\Authentication**に保存されます。

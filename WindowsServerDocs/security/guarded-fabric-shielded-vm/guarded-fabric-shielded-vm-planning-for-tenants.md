@@ -7,16 +7,16 @@ ms.assetid: 392af37f-a02d-4d40-a25d-384211cbbfdd
 manager: dongill
 author: nirb-ms
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: c439a53abea07041e69e50d5d5148dae95243265
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 255429960735d70ff3a4d260bd9090b95882b6bd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386430"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949772"
 ---
 # <a name="guarded-fabric-and-shielded-vm-planning-guide-for-tenants"></a>保護されたファブリックとテナント向けのシールドされた VM 計画ガイド
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、コンプライアンスとセキュリティのために仮想マシン (Vm) を保護する VM 所有者について説明します。 Vm がホスティングプロバイダーの保護されたファブリックとプライベートに保護されたファブリックのどちらで実行されているかにかかわらず、VM 所有者は、シールドされた Vm のセキュリティレベルを制御する必要があります。これには、必要に応じて暗号化を解除する機能が含まれます。
 
@@ -74,7 +74,7 @@ VM がシールドされているか、暗号化がサポートされている�
 
 **必要なシールドデータファイルの数を確認できます。** シールドされたすべての VM を作成するには、1つのシールドデータファイルを使用できます。 ただし、特定のシールドされた VM で4つの項目のいずれかが異なる必要がある場合は、追加のシールドデータファイルが必要です。 たとえば、IT 部門用に1つのシールドデータファイルがあり、人事部用に別のシールドデータファイルがある場合があります。これは、最初の管理者パスワードと RDP 証明書が異なっているためです。
 
-シールドされた VM ごとに個別のシールドデータファイルを使用できますが、必ずしも最適な選択ではなく、適切な理由で実行する必要があります。 たとえば、すべてのシールドされた VM に異なる管理者パスワードが必要な場合は、代わりに、 [Microsoft のローカル管理者パスワードソリューション (LAPS) などの](https://www.microsoft.com/en-us/download/details.aspx?id=46899)パスワード管理サービスまたはツールを使用することを検討してください。
+シールドされた VM ごとに個別のシールドデータファイルを使用できますが、必ずしも最適な選択ではなく、適切な理由で実行する必要があります。 たとえば、すべてのシールドされた VM に異なる管理者パスワードが必要な場合は、代わりに、 [Microsoft のローカル管理者パスワードソリューション (LAPS) などの](https://www.microsoft.com/download/details.aspx?id=46899)パスワード管理サービスまたはツールを使用することを検討してください。
 
 ## <a name="creating-a-shielded-vm-on-a-virtualization-fabric"></a>仮想化ファブリックでのシールドされた VM の作成
 

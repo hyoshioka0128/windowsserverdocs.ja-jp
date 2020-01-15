@@ -1,11 +1,11 @@
 ---
 redirect_url: /windows-server/windows-server
-ms.openlocfilehash: a852dfdda87aa37b403176483ea85f9bdb059e68
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9ef5565af748b4dd592e71ec4bd34a2be58003d9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436003"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947293"
 ---
 # <a name="windows-server-2016"></a>Windows Server 2016
 
@@ -19,42 +19,42 @@ ms.locfileid: "66436003"
 <table border="0" width="100%" align='center'>
   <tr style="text-align:center;">
     <td align='center' style="width:25%; border:0;">
-      <a href="/windows-server/get-started/what-s-new-in-windows-server-2016"> &lt;img 高さ = 145 src =&quot;メディア/機能-新しい-highlight.png&quot; alt =&quot;何&#39;s の新しいアイコン&quot;タイトル =&quot;Windows Server 16 における新機能ですか?&quot;/&gt;</a>
-        <br/>どのような&#39;s 新しいですか?
+      <a href="/windows-server/get-started/what-s-new-in-windows-server-2016">&lt;img height = 145 src =&quot;media/whats-new-highlight&quot; alt =&quot;新しいアイコン&quot;&#39;Title =&quot;Windows Server 16 の新機能</a>&quot;/&gt;
+        <br/>新&#39;機能
     </td>
     <td align='center' style="width:25%; border:0;">
-      <a href="/windows-server/get-started/server-basics"> &lt;img 高さ = 145 src =&quot;メディア/1-getstarted.png&quot; alt =&quot;開始の取得 アイコン&quot;タイトル =&quot;Windows Server 16 の概要&quot; /&gt;</a>
-      <br/>はじめに </td>
+      <a href="/windows-server/get-started/server-basics">&lt;img height = 145 src =&quot;media/1-get開始 .png&quot; alt =&quot;作業の開始アイコン&quot; title =&quot;Windows Server 16&quot; /&gt;の概要</a>
+      <br/>[開始する] </td>
     <td align='center' style="width:25%; border:0;">
-      <a href="/windows-server/administration/index"> &lt;img 高さ = 145 src =&quot;メディア/8-management.png&quot; alt =&quot;管理アイコン&quot;タイトル =&quot;Windows Server の管理&quot; /&gt;</a>
+      <a href="/windows-server/administration/index">&lt;img height = 145 src =&quot;media/8-management .png&quot; alt =&quot;管理アイコン&quot; title =&quot;Windows Server&quot;</a>  /&gt;の管理
       <br/>管理 </td>
     <td align='center' style="width:25%; border:0;">
-      <a href="/windows-server/failover-clustering/failover-clustering-overview"> &lt;img 高さ = 145 src =&quot;メディア/3-failover.png&quot; alt =&quot;フェールオーバー クラスタ リング アイコン&quot;タイトル =&quot;Windows Server フェールオーバー クラスタ リング&quot; /&gt;</a>
+      <a href="/windows-server/failover-clustering/failover-clustering-overview">&lt;img height = 145 src =&quot;media/3-failover. .png&quot; alt =&quot;フェールオーバークラスタリングアイコン&quot; タイトル =&quot;Windows Server フェールオーバークラスタリング&quot;</a>  /&gt;
       <br/>フェールオーバー クラスタリング </td>
   </tr>
   <tr style="text-align:center;">
     <td align='center' style="width:25%; border:0;"><br/>
-      <a href="/windows-server/identity/identity-and-access"> &lt;img 高さ = 145 src =&quot;メディア/4-identity.png&quot; alt =&quot;Id およびアクセスのアイコン&quot;タイトル =&quot;Windows サーバーの Id とアクセス&quot; /&gt;</a>
+      <a href="/windows-server/identity/identity-and-access">&lt;img height = 145 src =&quot;media/4-identity .png&quot; alt =&quot;id とアクセスアイコン&quot; タイトル =&quot;Windows Server id およびアクセス</a>&quot; /&gt;
       <br>ID およびアクセス </td>
     <td align='center' style="width:25%; border:0;"><br/>
-      <a href="/windows-server/networking/networking"> &lt;img 高さ = 145 src =&quot;メディア/6-networking.png&quot; alt =&quot;のネットワーク アイコン&quot;タイトル =&quot;Windows Server ネットワーク&quot; /&gt; </a>
-      <br/>ネットワーク </td>
+      <a href="/windows-server/networking/networking">&lt;img height = 145 src =&quot;media/6-ネットワーク .png&quot; alt =&quot;ネットワークアイコン&quot; title =&quot;Windows Server ネットワーク&quot;</a>  /&gt;
+      <br/>のネットワーク </td>
     <td align='center' style="width:25%; border:0;"><br/>
-      <a href="/windows-server/remote/index"> &lt;img 高さ = 145 src =&quot;media/remote.png&quot; alt =&quot;リモート アイコン&quot;タイトル =&quot;アクセスとサーバーをリモート管理&quot; /&gt; </a>
+      <a href="/windows-server/remote/index">&lt;img height = 145 src =&quot;media/リモート .png&quot; alt =&quot;リモートアイコン&quot; title =&quot;リモートアクセスとサーバー管理&quot;</a>  /&gt;
       <br/>リモート アクセス </td>
     <td align='center' style="width:25%; border:0;"><br/>
-      <a href="/windows-server/security/security-and-assurance"> &lt;img 高さ = 145 src =&quot;メディア/5-security.png&quot; alt =&quot;セキュリティ アイコン&quot;タイトル =&quot;Windows Server のセキュリティおよび保証&quot; /&gt; </a>
+      <a href="/windows-server/security/security-and-assurance">&lt;img height = 145 src =&quot;media/5-security .png&quot; alt =&quot;セキュリティアイコン&quot; title =&quot;Windows Server のセキュリティと保証&quot;</a>  /&gt;
       <br/>セキュリティおよび保証 </td>
   </tr>
   <tr style="text-align:center;">
     <td align='center' style="width:25%; border:0;">&nbsp;</td>
     <td align='center' style="width:25%; border:0;"><br>
-      <a href="/windows-server/storage/storage"> &lt;img 高さ = 145 src =&quot;メディア/7-storage.png&quot; alt =&quot;ストレージ アイコン&quot;タイトル =&quot;Windows Server 記憶域&quot; /&gt; </a>
-      <br/>ストレージ </td>
+      <a href="/windows-server/storage/storage">&lt;img height = 145 src =&quot;media/7-storage .png&quot; alt =&quot;ストレージアイコン&quot; title =&quot;Windows Server storage&quot;</a>  /&gt;
+      <br/>記憶域 </td>
    <td align='center' style="width:25%; border:0;"><br/>
-      <a href="/windows-server/virtualization/virtualization"> &lt;img 高さ = 145 src =&quot;media/virtualization.png&quot; alt =&quot;仮想化アイコン&quot;タイトル =&quot;Windows Server Virtualization&quot; /&gt;</a>
+      <a href="/windows-server/virtualization/virtualization">&lt;img height = 145 src =&quot;media/virtualization .png&quot; alt =&quot;仮想化アイコン&quot; タイトル =&quot;Windows Server virtualization&quot; /</a> &gt;
       <br/>仮想化 </td>
-    <td align='center' style="width:25%; border:0;">&nbsp; </td>
+    <td align='center' style="width:25%; border:0;">[https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/](&nbsp;) </td>
   </tr>
 </table>
 
@@ -68,18 +68,18 @@ ms.locfileid: "66436003"
 
 Windows Server 2016 のエディションには、Standard、Datacenter、Essentials があります。 Windows Server 2016 Datacenter では、仮想化権限が無制限であることに加えて、ソフトウェアによるデータセンターを構築できる新機能も含まれています。 Windows Server 2016 Standard には、制限付きの仮想化権限とエンタープライズ クラスの機能が備わっています。 Windows Server Essentials は、初めてクラウド接続サーバーを使用する方に最適です。 このエディション向けに[幅広いドキュメント](https://go.microsoft.com/fwlink/?LinkID=827171)が用意されています。ここでは、Standard エディションと Datacenter エディションのみについて説明します。 次の表に、Standard エディションと Datacenter エディションの主要な違いの概要を簡単に示します。
 
-|機能|Datacenter|Standard|  
+|機能|Datacenter|標準|  
 |-------------------|----------|-----------------------|  
-|Windows Server のコア機能| ○| ○|
-|OSE/Hyper-V コンテナー|無制限|   2|
+|Windows Server のコア機能| 必須| 必須|
+|OSE/Hyper-V コンテナー|無制限|   2 で保護されたプロセスとして起動されました|
 |Windows Server コンテナー|無制限|   無制限|
-|ホスト ガーディアン サービス| ○| ○|
-|Nano Server インストール オプション| ○| ○|
-|記憶域スペース ダイレクト、記憶域レプリカなどの記憶域機能| ○| no|
-|シールドされた仮想マシン| ○| no|
-|ソフトウェアによるネットワーク制御インフラストラクチャ (ネットワーク コントローラー、ソフトウェア ロード バランサー、マルチテナント ゲートウェイ)| ○| no|
+|ホスト ガーディアン サービス| 必須| 必須|
+|Nano Server インストール オプション| 必須| 必須|
+|記憶域スペース ダイレクト、記憶域レプリカなどの記憶域機能| 必須| ×|
+|シールドされた仮想マシン| 必須| ×|
+|ソフトウェアによるネットワーク制御インフラストラクチャ (ネットワーク コントローラー、ソフトウェア ロード バランサー、マルチテナント ゲートウェイ)| 必須| ×|
 
-詳細については、「[Windows Server 2016 の価格およびライセンス体系](https://www.microsoft.com/en-us/cloud-platform/windows-server-pricing)」および「[Windows Server バージョンの機能の比較](https://www.microsoft.com/en-us/cloud-platform/windows-server-comparison)」を参照してください。
+詳細については、「[Windows Server 2016 の価格およびライセンス体系](https://www.microsoft.com/cloud-platform/windows-server-pricing)」および「[Windows Server バージョンの機能の比較](https://www.microsoft.com/cloud-platform/windows-server-comparison)」を参照してください。
 
 ## <a name="installation-options"></a>インストール オプション
 
@@ -100,9 +100,9 @@ Standard エディションおよび Datacenter エディションには、次�
 <table border="0" width="100%" align='center'>
   <tr style="text-align:center;">
     <td align='center' style="width:33%; border:0;">
-      <a  href="/windows-server/get-started/getting-started-with-nano-server"> <img width="175" src="media/nano.png" alt="Icon representing Nano server" title="Nano Server - 最も軽量" /><br/>Nano Server - <br/>最も明るい重み</a>
-    </td>
-    <td align='center' style="width:33%; border:0;"><a href="/windows-server/get-started/getting-started-with-server-core"> <img width="175" src="media/servercore.png" alt="Icon representing the Server Core installation" title="Server Core - おすすめ" /><br/>Server Core - <br/>お勧めします</a></td>
+      <a  href="/windows-server/get-started/getting-started-with-nano-server"> <img width="175" src="media/nano.png" alt="Icon representing Nano server" title="Nano Server - 最も軽量" /><br/>Nano Server - <br/>
+    </a>最も明るい重み</td>
+    <td align='center' style="width:33%; border:0;"><a href="/windows-server/get-started/getting-started-with-server-core"> <img width="175" src="media/servercore.png" alt="Icon representing the Server Core installation" title="Server Core - おすすめ" /><br/>Server Core - <br/>推奨される</a></td>
    <td align='center' style="width:33%; border:0;"><a href="/windows-server/get-started/getting-started-with-server-with-desktop-experience"><img width="175" src="media/desktop.png" alt="Icon representing the full desktop experience installation option for Windows Server" title="デスクトップ エクスペリエンス - 完全なエクスペリエンス" /><br/>デスクトップ エクスペリエンス - <br/>完全なインターフェイス</a></td>
   </tr>
 </table>
@@ -116,7 +116,7 @@ Standard エディションおよび Datacenter エディションには、次�
 <table border="0" width="100%" align='center'>
   <tr style="text-align:center;">
     <td align='center' style="width:10%; border:0;"></td>
-    <td align='center' style="width:50%; border:0;"><a href="/windows-server/sddc"><img width="400" src="media/sddc/WS16-heading.png" alt="Icon representing SDDC" title="Windows Server ソフトウェア定義データ センター (SDDC)" /><br/>Windows Server ソフトウェアによるデータ センター (SDDC)</a></td>
+    <td align='center' style="width:50%; border:0;"><a href="/windows-server/sddc"><img width="400" src="media/sddc/WS16-heading.png" alt="Icon representing SDDC" title="Windows Server ソフトウェア定義データ センター (SDDC)" /><br/>Windows Server ソフトウェアで定義されたデータセンター (SDDC)</a></td>
     <td align='center' style="width:10%; border:0;"></td>
   </tr>
 </table>

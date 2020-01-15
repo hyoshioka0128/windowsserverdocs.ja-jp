@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 8359532113e04e2247b4af34effc7f5b89d36f34
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e2b8400fc7b7f0e01e000fcb2f6472bdb4059ac8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402415"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949801"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>保護されたファブリックの展開のクイックスタート
 
@@ -22,7 +22,7 @@ ms.locfileid: "71402415"
 
 このトピックでは、保護されたファブリックとは何か、その要件、および展開プロセスの概要について説明します。 詳細な展開手順については、「保護され[たホストとシールドされた vm のホストガーディアンサービスの展開](https://technet.microsoft.com/windows-server-docs/security/guarded-fabric-shielded-vm/guarded-fabric-deploying-hgs-overview)」を参照してください。
 
-ビデオがお好みの場合は、 [Windows Server 2016 でシールドされた vm と保護されたファブリックをデプロイする](https://mva.microsoft.com/en-US/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)Microsoft Virtual Academy コースを参照してください。
+ビデオがお好みの場合は、 [Windows Server 2016 でシールドされた vm と保護されたファブリックをデプロイする](https://mva.microsoft.com/training-courses/deploying-shielded-vms-and-a-guarded-fabric-with-windows-server-2016-17131?l=WFLef7vUD_4604300474)Microsoft Virtual Academy コースを参照してください。
 
 ## <a name="what-is-a-guarded-fabric"></a>保護されたファブリックとは
 

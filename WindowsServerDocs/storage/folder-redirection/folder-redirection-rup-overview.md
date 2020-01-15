@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ae1b23244f141cd0806ee14d3c40117ba72aeebb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a7c37638e25fc0d16447ab57bf369255dab9c859
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402053"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950255"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>フォルダー リダイレクト、オフライン ファイル、移動ユーザー プロファイルの概要
 
@@ -86,7 +86,7 @@ Windows 8、Windows Server 2012 より前では、低速リンクモード (低�
 
 Windows 8 および Windows Server 2012 より前では、従量制課金ネットワーク接続でオフラインファイルを使用しているときに料金を最小限に抑える必要があるユーザーは、モバイルネットワークプロバイダーのツールを使用してデータの使用状況を追跡する必要がありました。 また、ユーザーがローミング中に帯域幅の上限値に達しそうになったり、それを超えたりした場合には、手動でオフライン モードに切り替えました。
 
-コスト対応の同期を使用すると、従量制課金接続では、ローミングと帯域幅の使用量の制限が Windows によって自動的に追跡されます。 ユーザーがローミング中に帯域幅の上限値に達しそうになったり、それを超えた場合には、Windows によってオフライン モードに切り替えられ、同期がすべて実行されなくなります。 その場合も、ユーザーは手動で同期を開始できます。また、管理者は管理職などの特定ユーザーのコスト意識型同期を無効にできます。
+コスト対応の同期を使用すると、従量制課金接続では、ローミングと帯域幅の使用量の制限が Windows によって自動的に追跡されます。 ユーザーがローミング中に帯域幅の上限値に達しそうになったり、それを超えた場合には、Windows によってオフライン モードに切り替えられ、同期がすべて実行されなくなります。 その場合も、ユーザーは手動で同期を開始できます。また、管理者は管理職などの特定ユーザーのコスト意識型同期をオーバーライドできます。
 
 詳細については、「 [Enable Background File Synchronization on Metered Networks](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj127408(v%3dws.11))」を参照してください。
 
@@ -112,7 +112,7 @@ Windows 8 および Windows Server 2012 より前では、従量制課金ネッ�
     1. コンピューターがユーザーのプライマリコンピューターの1つである場合、移動ユーザープロファイルとフォルダーリダイレクトの設定が適用されます。
     2. コンピューターがユーザーのプライマリコンピューターの1つでない場合は、ユーザーのキャッシュされたローカルプロファイル (存在する場合) が読み込まれるか、新しいローカルプロファイルが作成されます。 さらに、ローカル フォルダー リダイレクト構成に格納されている、以前に適用されたグループ ポリシー設定に指定された削除動作に従って、既存のリダイレクトされたフォルダーが削除されます。
 
-詳細については、「[フォルダー リダイレクトと移動ユーザー プロファイル用のプライマリ コンピューターの展開](deploy-primary-computers.md)」を参照してください。
+詳細については、「 [Deploy Primary Computers for Folder Redirection and Roaming User Profiles](deploy-primary-computers.md)」を参照してください。
 
 ## <a name="hardware-requirements"></a>ハードウェア要件
 
@@ -125,14 +125,14 @@ Windows 8 および Windows Server 2012 より前では、従量制課金ネッ�
 - Active Directory Domain Services (AD DS) スキーマを更新して、Windows Server 2012 のスキーマと条件を含める必要があります (Windows Server 2012 以降のドメインコントローラーをインストールすると、スキーマが自動的に更新されます)。 AD DS スキーマのアップグレードの詳細については、「 [Windows Server 2016 へのドメインコントローラーのアップグレード](../../identity/ad-ds/deploy/upgrade-domain-controllers.md)」を参照してください。
 - クライアントコンピューターは、Windows 10、Windows 8.1、Windows 8、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 を実行し、管理している Active Directory ドメインに参加している必要があります。
 
-## <a name="more-information"></a>詳細情報
+## <a name="more-information"></a>説明を見る
 
 その他の関連情報については、次の情報を参照してください。
 
-| コンテンツの種類 | 参考資料 |
+| コンテンツの種類 | 参照先 |
 | --- | --- |
 | 製品評価 | [信頼性の高いファイルサービスとストレージによるインフォメーションワーカーのサポート](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[オフラインファイルの新機能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>)(windows 7 および windows Server 2008 R2)<br>[Windows Vista のオフラインファイルの新機能](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Windows Vista でのオフラインファイルの変更点](<https://technet.microsoft.com/library/2007.11.offline.aspx>)(TechNet Magazine) |
-| 展開 | [フォルダーリダイレクト、オフラインファイル、移動ユーザープロファイルを展開する](deploy-folder-redirection.md)<br>[エンドユーザーデータの集中管理ソリューションの実装: フォルダーリダイレクトとオフラインファイルテクノロジの検証と展開](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[ローミングユーザーデータ展開ガイドの管理](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Windows 7 コンピューターの新しいオフラインファイル機能の構成手順ガイド](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[フォルダーリダイレクトの使用](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[フォルダーリダイレクトの実装](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>)(Windows Server 2003) |
+| 展開 | [フォルダーリダイレクト、オフラインファイル、移動ユーザープロファイルを展開する](deploy-folder-redirection.md)<br>[エンドユーザーデータの集中管理ソリューションの実装: フォルダーリダイレクトとオフラインファイルテクノロジの検証と展開](https://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[ローミングユーザーデータ展開ガイドの管理](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Windows 7 コンピューターの新しいオフラインファイル機能の構成手順ガイド](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[フォルダーリダイレクトの使用](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[フォルダーリダイレクトの実装](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>)(Windows Server 2003) |
 | ツールと設定 | [MSDN のオフラインファイル](https://msdn.microsoft.com/library/cc296092.aspx)<br>[オフラインファイルグループポリシーリファレンス](https://msdn.microsoft.com/library/ms878937.aspx)(Windows 2000) |
 | コミュニティ リソース | [ファイルサービスとストレージフォーラム](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[Scripting Guy さん、こんにちは。Windows のオフラインファイル機能を使用するにはどうすればよいですか。](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[Scripting Guy さん、こんにちは。オフラインファイルを有効または無効にするにはどうすればよいですか。](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
 | 関連テクノロジ|[Windows Server での id とアクセス](../../identity/identity-and-access.md)<br>[Windows Server の記憶域](../storage.md)<br>[リモートアクセスとサーバー管理](../../remote/index.md) |

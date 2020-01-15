@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 12/02/2019
-ms.openlocfilehash: d4046cc10a5e0fdc12cfb9587eef10d4263c2ddd
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 503cd64cac0673829fe21bc15e8ad9d6a83bbb15
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74904027"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950513"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>適切なインストールの種類
 
@@ -56,7 +56,7 @@ Windows 管理センターを使用して、次の Windows オペレーティン
 
 | バージョン | *サーバーマネージャー*を使用した*ノード*の管理 | *クラスターマネージャー*を使用して管理する |
 | ------------------------- |--------------- | ----- |
-| Windows 10 | はい (コンピューターの管理を使用) | 該当なし |
+| Windows 10 | はい (コンピューターの管理を使用) | なし |
 | Windows Server 半期チャネル | [はい] | [はい] |
 | Windows Server 2019 | [はい] | [はい] |
 | Windows Server 2016 | [はい] | はい ([最新の累積的な更新プログラム](../use/manage-hyper-converged.md#prepare-your-windows-server-2016-cluster-for-windows-admin-center)あり) |
@@ -64,14 +64,14 @@ Windows 管理センターを使用して、次の Windows オペレーティン
 | Windows Server 2012 R2 | [はい] | [はい] |
 | Microsoft Hyper-V Server 2012 R2 | [はい] | [はい] |
 | Windows Server 2012 | [はい] | [はい] |
-| Windows Server 2008 R2 | はい (制限された機能) | 該当なし |
+| Windows Server 2008 R2 | はい (制限された機能) | なし |
 
 > [!NOTE]
 > Windows 管理センターには、Windows Server 2008 R2、2012、および 2012 R2 に含まれていない PowerShell 機能が必要です。 Windows 管理センターで管理する場合は、これらのサーバーに Windows Management Framework (WMF) バージョン5.1 以降をインストールする必要があります。
 > 
 > PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。 
 > 
-> WMF がインストールされていない場合は、 [wmf 5.1 をダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=54616)できます。
+> WMF がインストールされていない場合は、 [wmf 5.1 をダウンロード](https://www.microsoft.com/download/details.aspx?id=54616)できます。
 
 ## <a name="high-availability"></a>高可用性
 

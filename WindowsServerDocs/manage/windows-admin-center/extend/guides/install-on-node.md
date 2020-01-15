@@ -8,18 +8,18 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: c5c87be882a32958946198eb6ff1b9d7000577e7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3a93a1105862ffbf4fcbd1d23b15d9bcaa6010dc
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385289"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950500"
 ---
 # <a name="install-extension-payload-on-a-managed-node"></a>管理対象ノードに拡張機能のペイロードをインストールする
 
 >適用対象: Windows Admin Center、Windows Admin Center Preview
 
-## <a name="setup"></a>セットアップ
+## <a name="setup"></a>[セットアップ]
 > [!NOTE]
 > このガイドに従うには、build 1.2.1904.02001 以降が必要です。 ビルド番号を確認するには、Windows 管理センターを開き、右上にある疑問符をクリックします。
 
@@ -144,7 +144,7 @@ export class DefaultModule { }
 
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
-<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+<package xmlns="https://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>contoso.install-on-node</id>
     <version>1.0.0</version>

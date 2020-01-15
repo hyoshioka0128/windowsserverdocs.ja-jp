@@ -1,14 +1,12 @@
 # [Windows Admin Center](overview.md)
 
 ## 概要
-### [Windows Admin Center の概要](understand/windows-admin-center.md)
 ### [Windows Admin Center とは](understand/what-is.md)
 ### [FAQ](understand/faq.md)
 ### [導入事例](understand/case-studies.md)
 ### [関連する管理製品](understand/related-management.md)
-### [動画](understand/videos.md)
 
-## プラン
+## 計画
 ### [適切なインストールの種類](plan/installation-options.md)
 ### [ユーザー アクセス オプション](plan/user-access-options.md)
 
@@ -25,15 +23,14 @@
 ### [共有接続](configure/shared-connections.md)
 ### [PowerShell を使用した自動化](configure/use-powershell.md)
 
-## 使用
-### [作業の開始](use/get-started.md)
+## vmmblue_2
+### [作業開始](use/get-started.md)
 ### [サーバーの管理](use/manage-servers.md)
 ### [ハイパーコンバージド インフラストラクチャの展開](use/deploy-hyperconverged-infrastructure.md)
 ### [ハイパーコンバージド インフラストラクチャの管理](use/manage-hyper-converged.md)
 ### [フェールオーバー クラスターの管理](use/manage-failover-clusters.md)
 ### [Hyper-V 仮想マシンの管理](use/manage-virtual-machines.md)
 ### [ログ](use/logging.md)
-
 
 ## Azure に接続する
 ### [Azure ハイブリッド サービス](azure/index.md)
@@ -47,6 +44,7 @@
 ### [Windows Admin Center の使用による Azure VM の管理](azure/manage-azure-vms.md)
 
 ## サポート
+### [リリース履歴](support/release-history.md)
 ### [サポート ポリシー](support/index.md)
 ### [一般的なトラブルシューティング手順](support/troubleshooting.md)
 ### [既知の問題](support/known-issues.md)
@@ -76,7 +74,7 @@
 #### [最新の SDK への移行](extend/guides/migration-guide-0_1-1_0.md)
 #### [拡張検出バナーを有効にする](extend/guides/extension-discovery-banner.md)
 ### [拡張機能の公開](extend/publish-extensions.md)
-### ケース スタディ
+### 導入事例
 #### [BiitOps](extend/case-studies/biitops.md)
 #### [DataON](extend/case-studies/dataon.md)
 #### [Fujitsu](extend/case-studies/fujitsu.md)

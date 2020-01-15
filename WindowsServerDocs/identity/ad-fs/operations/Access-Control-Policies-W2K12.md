@@ -9,12 +9,12 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 517582661374c388d44362538da6933a916b0039
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7ae66fd47953017652ed1e753279e344e0a6c478
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407753"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949411"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Windows Server 2012 R2 および Windows Server 2012 の Access Control ポリシー AD FS
 
@@ -41,11 +41,11 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
 
 たとえば、次の規則を使用します。
 
-`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
+`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
 
 次のように更新されます。
 
-`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "(/adfs/ls/)|(/adfs/services/trust/2005/windowstransport)|(/adfs/services/trust/13/windowstransport)|(/adfs/services/trust/2005/usernamemixed)|(/adfs/services/trust/13/usernamemixed)|(/adfs/services/trust/2005/certificatemixed)|(/adfs/services/trust/13/certificatemixed)"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`
+`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "(/adfs/ls/)|(/adfs/services/trust/2005/windowstransport)|(/adfs/services/trust/13/windowstransport)|(/adfs/services/trust/2005/usernamemixed)|(/adfs/services/trust/13/usernamemixed)|(/adfs/services/trust/2005/certificatemixed)|(/adfs/services/trust/13/certificatemixed)"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`
 
 
 
@@ -56,7 +56,7 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
 
 ## <a name="client-access-policies-scenarios"></a>クライアントアクセスポリシーのシナリオ  
 
-|**Scenario**|**説明**| 
+|**シナリオ**|**説明**| 
 | --- | --- | 
 |シナリオ 1: Office 365 への外部アクセスをすべてブロックする|Office 365 は社内ネットワークのすべてのクライアントからアクセスできますが、外部クライアントからの要求は外部クライアントの IP アドレスに基づいて拒否されます。|  
 |シナリオ 2: Exchange ActiveSync 以外の Office 365 への外部アクセスをすべてブロックする|Office 365 のアクセスは、社内ネットワーク内のすべてのクライアント、および Exchange ActiveSync を使用する外部クライアントデバイス (スマートフォンなど) から許可されます。 Outlook を使用するような他のすべての外部クライアントはブロックされます。|  
@@ -80,10 +80,10 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
 4.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、 **[カスタム規則を使用して要求を送信]** する を選択し、 **[次へ]** をクリックします。  
 
 5.  **[規則の構成]** ページの **[要求規則名]** の下に、この規則の表示名を入力します。たとえば、"目的の範囲外の IP 要求がある場合は拒否する" などです。 **[カスタムルール]** で、次の要求規則言語構文を入力するか貼り付けます ("x-y-forward-client-ip" の上の値を有効な ip 式に置き換えます)。  
-`c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
+`c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
 6.  **[Finish]** (完了) をクリックします。 [発行承認規則] の一覧に新しい規則が表示されていることを確認してから、[**すべてのユーザーへのアクセスを許可**する] 規則に追加します (拒否規則は、一覧の前に表示されている場合でも優先されます)。  既定の許可アクセス規則がない場合は、次のように要求規則言語を使用して、リストの末尾に1つを追加できます。  </br>
 
-    `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true"); ` 
+    `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true"); ` 
 
 7.  新しいルールを保存するには、 **[要求規則の編集]** ダイアログボックスで [ **OK]** をクリックします。 結果の一覧は次のようになります。  
 
@@ -104,7 +104,7 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
 
 5.  **[規則の構成]** ページの **[要求規則名]** に、この規則の表示名を入力します。たとえば、"目的の範囲外の IP 要求がある場合は、ipoutsiderange 要求を発行します" と表示されます。 **[カスタムルール]** で、次の要求規則言語構文を入力するか貼り付けます ("x-y-forward-client-ip" の上の値を有効な ip 式に置き換えます)。  
 
-    `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
+    `c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 
 6.  **[Finish]** (完了) をクリックします。 **[発行承認規則]** の一覧に新しい規則が表示されていることを確認します。  
 
@@ -116,7 +116,7 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
 
 
 ~~~
-`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application", Value != "Microsoft.Exchange.ActiveSync"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
+`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application", Value != "Microsoft.Exchange.ActiveSync"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 ~~~
 
 10. **[Finish]** (完了) をクリックします。 **[発行承認規則]** の一覧に新しい規則が表示されていることを確認します。  
@@ -128,7 +128,7 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
 13. **[規則の構成]** ページの **[要求規則名]** に、この規則の表示名を入力します。たとえば、"アプリケーション要求が存在するかどうかを確認する" などです。 **[カスタム規則]** で、次の要求規則言語構文を入力するか貼り付けます。  
 
    ```  
-   NOT EXISTS([Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"]) => add(Type = "http://custom/xmsapplication", Value = "fail");  
+   NOT EXISTS([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"]) => add(Type = "http://custom/xmsapplication", Value = "fail");  
    ```  
 
 14. **[Finish]** (完了) をクリックします。 **[発行承認規則]** の一覧に新しい規則が表示されていることを確認します。  
@@ -139,8 +139,8 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
 
 17. **[規則の構成]** ページの **[要求規則名]** に、この規則の表示名を入力します。たとえば、"deny users with ipoutsiderange true and application fail" などです。 **[カスタム規則]** で、次の要求規則言語構文を入力するか貼り付けます。  
 
-`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/xmsapplication", Value == "fail"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`</br>  
-18. **[Finish]** (完了) をクリックします。 新しい規則が前の規則のすぐ下に表示され、[発行承認規則] の一覧の [すべてのユーザーにアクセスを許可する] 規則の前に表示されることを確認します (一覧の前に表示されている場合でも、拒否規則は優先されます)。  </br>既定の許可アクセス規則がない場合は、次のように要求規則言語を使用して、リストの末尾に1つを追加できます。</br></br>      `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
+`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/xmsapplication", Value == "fail"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`</br>  
+18. **[Finish]** (完了) をクリックします。 新しい規則が前の規則のすぐ下に表示され、[発行承認規則] の一覧の [すべてのユーザーにアクセスを許可する] 規則の前に表示されることを確認します (一覧の前に表示されている場合でも、拒否規則は優先されます)。  </br>既定の許可アクセス規則がない場合は、次のように要求規則言語を使用して、リストの末尾に1つを追加できます。</br></br>      `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
 19. 新しいルールを保存するには、**要求規則の編集** ダイアログボックスで OK をクリックします。 結果の一覧は次のようになります。  
 
     ![発行承認ルール](media/Access-Control-Policies-W2K12/clientaccess2.png )  
@@ -158,7 +158,7 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
 4.  **[規則テンプレートの選択]** ページの **[要求規則テンプレート]** で、 **[カスタム規則を使用して要求を送信]** する を選択し、 **[次へ]** をクリックします。  
 
 5.  **[規則の構成]** ページの **[要求規則名]** に、この規則の表示名を入力します。たとえば、"目的の範囲外の IP 要求がある場合は、ipoutsiderange 要求を発行します" と表示されます。 **[カスタムルール]** で、次の要求規則言語構文を入力するか貼り付けます ("x-y-forward-client-ip" の上の値を有効な ip 式に置き換えます)。  </br>
-`c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`   
+`c1:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`   
 6.  **[Finish]** (完了) をクリックします。 **[発行承認規則]** の一覧に新しい規則が表示されていることを確認します。  
 
 7.  次に、 **[要求規則の編集]** ダイアログボックスの **[発行承認規則]** タブで、 **[規則の追加]** をクリックして、要求規則ウィザードを再び開始します。  
@@ -169,12 +169,12 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
 
 
 ~~~
-`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
+`c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
 ~~~
 
 10. **[Finish]** (完了) をクリックします。 [発行承認規則] の一覧に新しい規則が表示されていることを確認してから、[**すべてのユーザーへのアクセスを許可**する] 規則に追加します (拒否規則は、一覧の前に表示されている場合でも優先されます)。  </br></br> 既定の許可アクセス規則がない場合は、次のように要求規則言語を使用して、リストの末尾に1つを追加できます。  
 
-   `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`
+   `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`
 
 11. 新しいルールを保存するには、 **[要求規則の編集]** ダイアログボックスで [ **OK]** をクリックします。 結果の一覧は次のようになります。  
 
@@ -197,7 +197,7 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
 
 
 ~~~
-`c1:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] && c2:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
+`c1:[Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] && c2:[Type == "https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 ~~~
 
 6. **[Finish]** (完了) をクリックします。 **[発行承認規則]** の一覧に新しい規則が表示されていることを確認します。  
@@ -208,7 +208,7 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
 
 9. **[規則の構成]** ページの **[要求規則名]** に、この規則の表示名を入力します。たとえば、"check group SID" のように指定します。 **[カスタム規則]** で、次の要求規則言語構文を入力するか貼り付けます ("groupsid" は、使用している AD グループの実際の sid に置き換えます)。  
 
-    `NOT EXISTS([Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-100"]) => add(Type = "http://custom/groupsid", Value = "fail");`  
+    `NOT EXISTS([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-100"]) => add(Type = "http://custom/groupsid", Value = "fail");`  
 
 10. **[Finish]** (完了) をクリックします。 **[発行承認規則]** の一覧に新しい規則が表示されていることを確認します。  
 
@@ -218,11 +218,11 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
 
 13. **[規則の構成]** ページの **[要求規則名]** に、この規則の表示名を入力します。たとえば、"deny users with ipoutsiderange true and groupsid fail" のように指定します。 **[カスタム規則]** で、次の要求規則言語構文を入力するか貼り付けます。  
 
-   `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/groupsid", Value == "fail"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
+   `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/groupsid", Value == "fail"] => issue(Type = "https://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 
 14. **[Finish]** (完了) をクリックします。 新しい規則が前の規則のすぐ下に表示され、[発行承認規則] の一覧の [すべてのユーザーにアクセスを許可する] 規則の前に表示されることを確認します (一覧の前に表示されている場合でも、拒否規則は優先されます)。  </br></br>既定の許可アクセス規則がない場合は、次のように要求規則言語を使用して、リストの末尾に1つを追加できます。  
 
-   `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`  
+   `c:[] => issue(Type = "https://schemas.microsoft.com/authorization/claims/permit", Value = "true");`  
 
 15. 新しいルールを保存するには、**要求規則の編集** ダイアログボックスで OK をクリックします。 結果の一覧は次のようになります。  
 
@@ -296,7 +296,7 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
  Windows Server 2012 R2 の AD FS では、次の要求の種類を使用して要求コンテキスト情報を提供します。  
 
 ### <a name="x-ms-forwarded-client-ip"></a>X-ミリ秒-クライアント-IP  
- 要求の種類: `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`  
+ 要求の種類: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`  
 
  この AD FS 要求は、要求を行っているユーザー (Outlook クライアントなど) の IP アドレスを突き止めるに "最適な試行" を表します。 この要求には、要求を転送したすべてのプロキシのアドレスを含む、複数の IP アドレスを含めることができます。  この要求は、HTTP から設定されます。 要求の値には、次のいずれかを指定できます。  
 
@@ -318,7 +318,7 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
 >  現在、Exchange Online は IPV4 アドレスのみをサポートしています。IPV6 アドレスはサポートされていません。  
 
 ### <a name="x-ms-client-application"></a>X-MS-クライアント-アプリケーション  
- 要求の種類: `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`  
+ 要求の種類: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`  
 
  この AD FS 要求は、エンドクライアントが使用するプロトコルを表します。このプロトコルは、使用されているアプリケーションに対して弱くなります。  この要求は、現在 Exchange Online によって設定されている HTTP ヘッダーから作成されます。これは、認証要求を AD FS に渡すときに、ヘッダーを入力します。 アプリケーションによっては、この要求の値は次のいずれかになります。  
 
@@ -345,7 +345,7 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
     -   Microsoft. Exchange. Imap  
 
 ### <a name="x-ms-client-user-agent"></a>X-MS-クライアント-ユーザーエージェント  
- 要求の種類: `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`  
+ 要求の種類: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`  
 
  この AD FS 要求は、クライアントがサービスにアクセスするために使用しているデバイスの種類を表す文字列を提供します。 これは、特定のデバイス (特定の種類のスマートフォンなど) へのアクセスをユーザーが禁止する場合に使用できます。  この要求の値の例には、以下の値が含まれます (ただし、これらに限定されません)。  
 
@@ -368,23 +368,23 @@ Windows 10 のドメイン参加とサインオンに必要な AD FS エンド�
   この値が空である可能性もあります。  
 
 ### <a name="x-ms-proxy"></a>X-MS-プロキシ  
- 要求の種類: `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`  
+ 要求の種類: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`  
 
  この AD FS 要求は、要求が Web アプリケーションプロキシを経由して渡されたことを示します。  この要求は、Web アプリケーションプロキシによって作成されます。これにより、バックエンドフェデレーションサービスに認証要求を渡すときにヘッダーが設定されます。 AD FS は、それをクレームに変換します。  
 
  要求の値は、要求を受けた Web アプリケーションプロキシの DNS 名です。  
 
 ### <a name="insidecorporatenetwork"></a>InsideCorporateNetwork  
- 要求の種類: `http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork`  
+ 要求の種類: `https://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork`  
 
  上記のように、この要求の種類は、要求が web アプリケーションプロキシを経由して渡されたかどうかを示します。 Insidecorporatenetwork とは異なり、このブール値は True で、企業ネットワーク内からフェデレーションサービスに直接要求を示します。  
 
 ### <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-エンドポイント-絶対パス (アクティブとパッシブ)  
- 要求の種類: `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`  
+ 要求の種類: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`  
 
  この要求の種類を使用して、"アクティブ" (リッチ) クライアントと "パッシブ" (web ブラウザーベース) クライアントからの要求を特定できます。 これにより、Outlook Web アクセス、SharePoint Online、Office 365 ポータルなどのブラウザーベースのアプリケーションからの外部要求が許可されますが、Microsoft Outlook などのリッチクライアントからの要求はブロックされます。  
 
  要求の値は、要求を受信した AD FS サービスの名前です。  
 
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
  [AD FS の運用](../../ad-fs/AD-FS-2016-Operations.md)

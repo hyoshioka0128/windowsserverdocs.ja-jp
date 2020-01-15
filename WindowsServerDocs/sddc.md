@@ -12,12 +12,12 @@ ms.author: coreyp
 manager: dongill
 ms.date: 06/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 75a565eb9e26e03c1aad221059b327943485c81c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6490bd9a6cb7b305ba9746a357a8c909c7b84555
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403896"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950463"
 ---
 # <a name="windows-server-software-defined-datacenter"></a>Windows Server のソフトウェアによるデータセンター
 
@@ -33,7 +33,7 @@ Microsoft による SDDC の実装は、この記事で説明する Windows Serv
 
 Windows Server と System Center に組み込まれているテクノロジは、Windows Server SDDC エクスペリエンスの主な構成要素です。 ただし、仮想化プラットフォームではありますが、その基盤として適切なハードウェアが必要です。 **Windows Server ソフトウェアによって定義された (WSSD) ソリューション**および**Azure Stack HCI solutions**プログラムに参加している Microsoft パートナーは、企業が適切なハードウェアを獲得し、一日のうちに稼働させるのに役立ちます。
 
-**[MICROSOFT の SDDC の詳細については、ビデオを ![](media/sddc/video.png)ご覧ください](https://mva.microsoft.com/en-US/training-courses/whats-new-in-windows-server-2016-16457?l=YcsJR6sXC_1006218965)。**
+**[MICROSOFT の SDDC の詳細については、ビデオを ![](media/sddc/video.png)ご覧ください](https://mva.microsoft.com/training-courses/whats-new-in-windows-server-2016-16457?l=YcsJR6sXC_1006218965)。**
 
 **[このページのポスターサイズの pdf ファイルをダウンロード](https://github.com/MicrosoftDocs/windowsserverdocs/blob/master/WindowsServerDocs/media/sddc/sddc_poster_0801417_ANSI-E.pdf)![](media/sddc/poster-ico.png)**
 
@@ -47,7 +47,7 @@ Microsoft パートナーは、Windows server ソフトウェアで定義され�
 
 **[Azure Stack HCI ソリューションの詳細について](https://azure.microsoft.com/overview/azure-stack/hci)は、![](media/sddc/learn.png)**
 
-**[Wssd ソリューションの詳細について](https://www.microsoft.com/en-us/cloud-platform/software-defined-datacenter)は ![](media/sddc/learn.png)**
+**[Wssd ソリューションの詳細について](https://www.microsoft.com/cloud-platform/software-defined-datacenter)は ![](media/sddc/learn.png)**
 
 ## <a name="windows-server-virtualized-technologies"></a>Windows Server 仮想化テクノロジ ##
 
@@ -71,7 +71,7 @@ Hyper-V は、Windows 用のハイパーバイザー ベースの仮想化テク
 
 ![](media/sddc/spacer1.png)![](media/sddc/hypervisor.png)
 
-**[Hyper-v ハイパーバイザーの詳細について](https://www.microsoft.com/en-us/cloud-platform/server-virtualization)は ![](media/sddc/learn.png)を参照してください。**
+**[Hyper-v ハイパーバイザーの詳細について](https://www.microsoft.com/cloud-platform/server-virtualization)は ![](media/sddc/learn.png)を参照してください。**
 
 ### <a name="guest-clustering-with-shared-vhdx"></a>共有 VHDX を使用したゲストクラスタリング
 

@@ -1,5 +1,5 @@
 ---
-title: ストレージ
+title: 記憶域
 description: ''
 author: JasonGerend
 manager: elizapo
@@ -11,16 +11,16 @@ ms.topic: landing-page
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 03/08/2019
-ms.openlocfilehash: eadac31cb623a15dd308f7e33f984fe1fb46ffe5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7e7fbd6ce3fcef6b0f8da88927d83f28d3fff0a8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365931"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950224"
 ---
-# <a name="storage"></a>ストレージ
+# <a name="storage"></a>記憶域
 
->適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+>適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 >[!TIP]
 > 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
@@ -41,7 +41,7 @@ Windows Server の記憶域では、仮想化されたワークロードに重�
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h2>最新情報</h2>
+                                            <h2>異なる部分</h2>
                                             <p>Windows Server ストレージの新機能を確認する</p>
                                         </div>
                                     </div>
@@ -124,7 +124,7 @@ Windows Server の記憶域では、仮想化されたワークロードに重�
 <HR />
                         <p><h3><a href="refs/refs-overview.md">ReFS</a></h3> データの可用性を最大化し、多様なワークロードの非常に大きなデータセットに効率よく拡張し、ソフトウェアまたはハードウェアの障害に関係なく、破損に対する回復性によってデータの整合性を確保する、回復力のあるファイルシステム。<p>
 <HR />
-                        <p><h3><a href="file-server/file-server-smb-overview.md">サーバーメッセージブロック (SMB) プロトコル</a></h3> コンピューター上のアプリケーションがファイルの読み取りと書き込みを実行し、コンピューターネットワークのサーバープログラムからサービスを要求できるようにするネットワークファイル共有プロトコル。 SMB プロトコルは、TCP/IP プロトコルをはじめとするネットワーク プロトコルの上位で使用できます。 SMB プロトコルを使えば、アプリケーション (またはアプリケーションのユーザー) がリモート サーバーにあるファイルなどのリソースにアクセスできます。 これにより、リモート サーバー上でアプリケーションがファイルを読み込み、作成、および更新できるようになります。 また、SMB クライアント リクエストを受け取ることができるように設定された任意のサーバー プログラムと通信できます。<p>
+                        <p><h3><a href="file-server/file-server-smb-overview.md">サーバー メッセージ ブロック (SMB) プロトコル</a></h3> コンピューター上のアプリケーションがファイルの読み取りと書き込みを実行し、コンピューターネットワークのサーバープログラムからサービスを要求できるようにするネットワークファイル共有プロトコル。 SMB プロトコルは、TCP/IP プロトコルをはじめとするネットワーク プロトコルの上位で使用できます。 SMB プロトコルを使えば、アプリケーション (またはアプリケーションのユーザー) がリモート サーバーにあるファイルなどのリソースにアクセスできます。 これにより、リモート サーバー上でアプリケーションがファイルを読み込み、作成、および更新できるようになります。 また、SMB クライアント リクエストを受け取ることができるように設定された任意のサーバー プログラムと通信できます。<p>
 <HR />
                         <p><h3><a href="storage-spaces/Storage-class-memory-health.md">ストレージクラスのメモリ</a></h3> は、コンピューターメモリ (非常に高速) と同様にパフォーマンスを提供しますが、通常の記憶域ドライブのデータは永続化されます。 Windows では、記憶域クラス メモリは、処理速度が高速である点を除けば通常のドライブと同様に処理されますが、デバイスの正常性管理の仕組みにいくつかの違いがあります。<p>
 <HR />
@@ -146,4 +146,4 @@ Windows Server の記憶域では、仮想化されたワークロードに重�
 ## <a name="in-azure"></a>Azure の場合
 
 * [Azure Storage](https://azure.microsoft.com/documentation/services/storage/)
-* [Azure StorSimple](https://www.microsoft.com/en-us/cloud-platform/azure-storsimple)
+* [Azure StorSimple](https://www.microsoft.com/cloud-platform/azure-storsimple)

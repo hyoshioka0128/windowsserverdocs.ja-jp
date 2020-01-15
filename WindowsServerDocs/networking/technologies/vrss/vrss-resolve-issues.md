@@ -10,14 +10,14 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/04/2018
-ms.openlocfilehash: 850aa376e8cd0060992573561a0c32af563b88ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3bbb70657cb009ce760ccfe273b24c6df17d3ca7
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405159"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949900"
 ---
-## <a name="resolve-vrss-issues"></a>vRSS の問題を解決する
+# <a name="resolve-vrss-issues"></a>vRSS の問題を解決する
 
 すべての準備手順を完了しても、まだ VM LPs への azure の負荷分散トラフィックが表示されない場合は、さまざまな問題が発生する可能性があります。
 
@@ -34,7 +34,7 @@ ms.locfileid: "71405159"
 
    **現在の設定を表示します。** 
 
-   Vm\(\)またはホスト vNIC \(vRSS\)のホストで、vrss 用の vm で次の PowerShell コマンドレットを実行します。
+   Vm\) では、またはホスト vNIC vRSS\)のホスト \(で、次の PowerShell コマンドレットを VM\(で実行します。
 
    ```PowerShell
    Get-NetAdapterRss
@@ -48,7 +48,7 @@ ms.locfileid: "71405159"
    Enable-NetAdapterRss *
    ```
    
-   他のシステム全体の RSS 構成方法では、netsh を使用します。 新しく使用する機能 
+   他のシステム全体の RSS 構成方法では、netsh を使用します。 vmmblue_2 
    
     ```cmd
    netsh int tcp show global

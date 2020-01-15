@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c902f9a438afd226dfb58dbde9f3c00d57b0ed58
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6cecf2edcb834a963c706fa4a63e7d15b13f7888
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408597"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949627"
 ---
 # <a name="audit-policy-recommendations"></a>監査ポリシーの推奨事項
 
@@ -57,9 +57,9 @@ ms.locfileid: "71408597"
 |**表し**|**推奨**|  
 |使用可能|一般的なシナリオで有効にする|  
 |使用不可|一般的なシナリオで**は有効にしない**|  
-|もし|特定のシナリオで必要な場合、または監査を必要とする役割または機能がコンピューターにインストールされている場合は、を有効にします。|  
+|IF|特定のシナリオで必要な場合、または監査を必要とする役割または機能がコンピューターにインストールされている場合は、を有効にします。|  
 |DC|ドメインコントローラーで有効にする|  
-|省略|推奨事項はありません|  
+|省略|推奨なし|  
 
 **Windows 10、Windows 8、および Windows 7 の監査設定に関する推奨事項**  
 
@@ -77,7 +77,7 @@ ms.locfileid: "71408597"
 |コンピューター アカウントの管理の監査||はいいいえ|そうそう|  
 |配布グループの管理の監査||||  
 |その他のアカウント管理イベントの監査||はいいいえ|そうそう|  
-|セキュリティ グループ管理の監査||はいいいえ|そうそう|  
+|セキュリティ グループの管理の監査||はいいいえ|そうそう|  
 |ユーザー アカウントの管理の監査|はいいいえ|はいいいえ|そうそう|  
 |**詳細な追跡**||||  
 |DPAPI アクティビティの監査|||そうそう|  
@@ -86,7 +86,7 @@ ms.locfileid: "71408597"
 |RPC イベントの監査||||  
 |**DS アクセス**||||  
 |詳細なディレクトリ サービス レプリケーションの監査||||  
-|ディレクトリ サービスのアクセスの監査||||  
+|ディレクトリ サービス アクセスを監査します。||||  
 |ディレクトリ サービスの変更の監査||||  
 |ディレクトリ サービス レプリケーションの監査||||  
 |**ログオンとログオフ**||||  
@@ -120,7 +120,7 @@ ms.locfileid: "71408597"
 |認証ポリシーの変更の監査|はいいいえ|はいいいえ|そうそう|  
 |承認ポリシーの変更の監査||||  
 |フィルタリング プラットフォーム ポリシーの変更の監査||||  
-|MPSSVC ルールレベル ポリシーの変更の監査|||〇  |  
+|MPSSVC ルールレベル ポリシーの変更の監査|||[はい]  |  
 |その他のポリシー変更イベントの監査||||  
 |**特権の使用**||||  
 |重要でない特権の使用の監査||||  
@@ -155,7 +155,7 @@ ms.locfileid: "71408597"
 |コンピューター アカウントの管理の監査||はい DC|そうそう|  
 |配布グループの管理の監査||||  
 |その他のアカウント管理イベントの監査||そうそう|そうそう|  
-|セキュリティ グループ管理の監査||そうそう|そうそう|  
+|セキュリティ グループの管理の監査||そうそう|そうそう|  
 |ユーザー アカウントの管理の監査|はいいいえ|そうそう|そうそう|  
 |**詳細な追跡**||||  
 |DPAPI アクティビティの監査|||そうそう|  
@@ -164,7 +164,7 @@ ms.locfileid: "71408597"
 |RPC イベントの監査||||  
 |**DS アクセス**||||  
 |詳細なディレクトリ サービス レプリケーションの監査||||  
-|ディレクトリ サービスのアクセスの監査||DC DC|DC DC|  
+|ディレクトリ サービス アクセスを監査します。||DC DC|DC DC|  
 |ディレクトリ サービスの変更の監査||DC DC|DC DC|  
 |ディレクトリ サービス レプリケーションの監査||||  
 |**ログオンとログオフ**||||  
@@ -198,7 +198,7 @@ ms.locfileid: "71408597"
 |認証ポリシーの変更の監査|はいいいえ|はいいいえ|そうそう|  
 |承認ポリシーの変更の監査||||  
 |フィルタリング プラットフォーム ポリシーの変更の監査||||  
-|MPSSVC ルールレベル ポリシーの変更の監査|||〇  |  
+|MPSSVC ルールレベル ポリシーの変更の監査|||[はい]  |  
 |その他のポリシー変更イベントの監査||||  
 |**特権の使用**||||  
 |重要でない特権の使用の監査||||  
@@ -285,13 +285,13 @@ ms.locfileid: "71408597"
 ## <a name="additional-information-for-monitoring-active-directory-domain-services"></a>Active Directory Domain Services の監視に関する追加情報  
 AD DS の監視の詳細については、次のリンクを参照してください。  
   
--   [グローバルオブジェクトアクセスの監査はマジック](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)で、windows 7 および windows Server 2008 R2 に追加された高度な監査ポリシーの構成と使用に関する情報を提供します。  
+-   [グローバルオブジェクトアクセスの監査はマジック](https://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx)で、windows 7 および windows Server 2008 R2 に追加された高度な監査ポリシーの構成と使用に関する情報を提供します。  
 
--   [Windows 2008 での監査の変更の概要](http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)-windows 2008 で行われた監査の変更について説明します。  
+-   [Windows 2008 での監査の変更の概要](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)-windows 2008 で行われた監査の変更について説明します。  
 
--   [Vista および2008での優れた監査手法](http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)-windows Vista および windows Server 2008 での監査の興味深い新機能について説明します。この機能を使用して、問題のトラブルシューティングや、環境内で起こっていることを確認できます。  
+-   [Vista および2008での優れた監査手法](https://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx)-windows Vista および windows Server 2008 での監査の興味深い新機能について説明します。この機能を使用して、問題のトラブルシューティングや、環境内で起こっていることを確認できます。  
 
--   [Windows server 2008 および Windows vista で監査を行うためのワンストップショップ](http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)-windows server 2008 および windows vista に含まれる監査機能と情報のコンパイルが含まれています。  
+-   [Windows server 2008 および Windows vista で監査を行うためのワンストップショップ](https://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx)-windows server 2008 および windows vista に含まれる監査機能と情報のコンパイルが含まれています。  
 
 -   [AD DS 監査のステップバイステップガイド](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx)-Windows Server 2008 の新しい Active Directory Domain Services (AD DS) 監査機能について説明します。 また、この新しい機能を実装する手順を示します。  
 

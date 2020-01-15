@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: efc296d43ff6cbe0c409f244160a9c14786d3be0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4c8a357082ba902cddf97b7619228f859259b961
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71378987"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947553"
 ---
 # <a name="cprofile"></a>cprofile
 
@@ -26,8 +26,4 @@ ms.locfileid: "71378987"
 
 Cprofile-Cprofile は非推奨とされており、Windows の将来のリリースでサポートされるとは限りません。
 
-Cprofile .exe:プロファイルをクリーンします。 このツールは、Windows server 2003, Web edition を除くすべての Windows Server 2003 オペレーティングシステムに含まれています。 詳細については[、「ターミナルサービスのツールと設定](https://technet.microsoft.com/library/cc776289(v=ws.10).aspx)」を参照してください。
-
-# #
-
-## #
+Cprofile .exe: プロファイルをクリーンします。 このツールは、Windows server 2003, Web edition を除くすべての Windows Server 2003 オペレーティングシステムに含まれています。 詳細については[、「ターミナルサービスのツールと設定](https://technet.microsoft.com/library/cc776289(v=ws.10).aspx)」を参照してください。

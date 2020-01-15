@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 11/21/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 9a116cc9d86dfe0bb4450efa0f18580a062af722
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: ddc8eea67cde9d6677836af1201e169c911e77e0
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903721"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950482"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Windows 管理センターを使用してサーバーを管理する
 
@@ -21,7 +21,7 @@ ms.locfileid: "74903721"
 
 > [!Tip]
 > Windows Admin Center を初めて使用する場合
-> [Windows Admin Center についての詳細を確認する](../understand/windows-admin-center.md)か、[今すぐダウンロード](https://aka.ms/windowsadmincenter)してください。
+> [Windows 管理センターの詳細については、](../overview.md)こちらを参照してください。
 
 ## <a name="managing-windows-server-machines"></a>Windows Server マシンの管理
 
@@ -59,7 +59,7 @@ Windows 管理センターにサーバーを追加するには:
 | [DNS](#dns) | DNS サーバー構成の表示と管理 |
 | [イベント](#events) | イベントの表示 |
 | [ファイル](#files) | ファイルとフォルダーを参照する |
-| [Firewall](#firewall) | ファイアウォール規則の表示と変更 |
+| [ファイアウォール](#firewall) | ファイアウォール規則の表示と変更 |
 | [インストール済みアプリ](#installed-apps) | インストールされているアプリを表示および削除する |
 | [ローカルユーザーとグループ](#local-users-and-groups) | ローカルユーザーとグループを表示および変更する |
 | [Network](#network) | ネットワークデバイスの表示と変更 |
@@ -77,7 +77,7 @@ Windows 管理センターにサーバーを追加するには:
 | [記憶域移行サービス](#storage-migration-service) | サーバーとファイル共有を Azure または Windows Server 2019 に移行する |
 | [記憶域レプリカ](#storage-replica) | 記憶域レプリカを使用してサーバー間の記憶域レプリケーションを管理する |
 | [システム インサイト](#system-insights) | System Insights を使用すると、サーバーの機能についての洞察を高めることができます。 |
-| [Updates](#updates) | インストールされていることを確認し、新しい更新プログラムを確認します |
+| [更新内容](#updates) | インストールされていることを確認し、新しい更新プログラムを確認します |
 | [仮想マシン](manage-virtual-machines.md) | バーチャルマシンの表示と管理 |
 | [仮想スイッチ](#virtual-switches) | 仮想スイッチの表示と管理 |
 
@@ -189,7 +189,7 @@ Windows 管理センターにサーバーを追加するには:
 
 [**DHCP のフィードバックと提案**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDHCP%5D)された機能を表示します。
 
-## <a name="dns"></a>DNS
+## <a name="dns"></a>[DNS]
 
 **DNS**を使用すると、コンピューターまたはサーバー上の接続されているデバイスを管理できます。
 
@@ -204,7 +204,7 @@ Windows 管理センターにサーバーを追加するには:
 
 [**DHCP のフィードバックと提案**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BDNS%5D)された機能を表示します。
 
-## <a name="events"></a>イベント
+## <a name="events"></a>[イベント]
 
 **イベント**を使用すると、コンピューターまたはサーバー上のイベントログを管理できます。
 
@@ -329,7 +329,7 @@ PowerShell では、次の機能がサポートされています。
 
 [**フィードバックとプロセスの提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BProcesses%5D)します。
 
-## <a name="registry"></a>レジストリ
+## <a name="registry"></a>Registry
 
 **レジストリ**を使用して、コンピューターまたはサーバー上のレジストリキーと値を管理できます。
 
@@ -372,7 +372,7 @@ PowerShell では、次の機能がサポートされています。
 
 [**役割と機能に関するフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BRoles%20and%20Features%5D)します。
 
-## <a name="scheduled-tasks"></a>スケジュールされたタスク
+## <a name="scheduled-tasks"></a>[スケジュールされたタスク]
 
 **スケジュール**されたタスクを使用して、コンピューターまたはサーバー上のスケジュールされたタスクを管理できます。
 
@@ -388,7 +388,7 @@ PowerShell では、次の機能がサポートされています。
 
 スケジュールされた[**タスクのフィードバックと提案された機能を表示**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BScheduled%20Tasks%5D)します。
 
-## <a name="services"></a>サービス
+## <a name="services"></a>[サービス]
 
 **サービス**を使用すると、コンピューターまたはサーバー上のサービスを管理できます。
 
@@ -461,7 +461,7 @@ PowerShell では、次の機能がサポートされています。
 >[!NOTE]
 >System Insights には Windows Server 2019 が必要です。
 
-## <a name="updates"></a>更新プログラム
+## <a name="updates"></a>更新
 
 **更新プログラム**を使用すると、コンピューターまたはサーバーで Microsoft や Windows の更新プログラムを管理できます。
 

@@ -12,16 +12,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1e432a962662995cf570b28d0b9496594f3e10e6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 0c66e655ea6b6c44ee3ba375f75e6532fab74bfb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369857"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948483"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>WSUS メッセージとトラブルシューティングのヒント
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックには、次の WSUS メッセージに関する情報が含まれています。
 
@@ -29,7 +29,7 @@ ms.locfileid: "71369857"
 
 -   "メッセージ ID 6703-WSUS の同期に失敗しました"
 
--   "エラー 0x80070643:インストール中に致命的なエラーが発生した場合
+-   "エラー 0x80070643: インストール中に致命的なエラーが発生しています"
 
 -   "一部のサービスが実行されていません。 次のサービスを確認してください [...] "
 
@@ -47,36 +47,36 @@ ms.locfileid: "71369857"
 -   コンピューターの電源がオフになっています。 (シャットダウンされているか、スリープモードまたは休止状態になっています)。
 
 ## <a name="message-id-6703---wsus-synchronization-failed"></a>メッセージ ID 6703-WSUS の同期に失敗しました
-> メッセージ: 要求が HTTP ステータス503で失敗しました:サービスを利用できません。
+> メッセージ: HTTP ステータス 503: サービスを利用できないため、要求は失敗しました。
 > 
-> ソース:Microsoft UpdateServices. AdminProxy. createUpdateServer.
+> ソース: Microsoft. UpdateServices. 管理. Adminupdateserver
 
 WSUS サーバーで Update Services を開こうとすると、次のエラーが表示されます。
 
-> エラー:接続エラー
+> エラー: 接続エラー
 > 
 > WSUS サーバーへの接続中にエラーが発生しました。 このエラーは、さまざまな理由で発生する可能性があります。 問題が解決しない場合は、ネットワーク管理者に問い合わせてください。 サーバーに再接続するには、[サーバーのリセット] ノードをクリックします。
 
-上記に加えて、WSUS 管理 web サイトの URL にアクセスしようとすると (つまり、`http://CM12CAS:8530`)、次のようなエラーが表示されます。
+上記に加えて、WSUS 管理 web サイトの URL (つまり `http://CM12CAS:8530`) にアクセスしようとすると、次のエラーが表示されます。
 
 > HTTP エラー503。 サービスを利用できません
 
 このような状況では、IIS の WsusPool アプリケーションプールが停止状態になっている可能性が最も高くなります。
 
-また、アプリケーションプールのプライベートメモリ制限 (KB) は、既定値の 1843200 KB に設定されている場合があります。 この問題が発生した場合は、プライベートメモリの上限を 4 GB (400万 KB) に増やし、アプリケーションプールを再起動してください。 プライベートメモリの制限を増やすには、WsusPool アプリケーションプールを選択し、[アプリケーションプールの編集] の [詳細設定] をクリックします。 次に、プライベートメモリの上限を 4 GB (400万 KB) に設定します。 アプリケーションプールが再起動されたら、SMS_WSUS_SYNC_MANAGER コンポーネントのステータスである wcm .log と wsyncmgr.log を監視してエラーを確認します。 環境によっては、プライベートメモリの制限を 8 800万 GB 以上に増やすことが必要になる場合があることに注意してください。
+また、アプリケーションプールのプライベートメモリ制限 (KB) は、既定値の 1843200 KB に設定されている場合があります。 この問題が発生した場合は、プライベートメモリの上限を 4 GB (400万 KB) に増やし、アプリケーションプールを再起動してください。 プライベートメモリの制限を増やすには、WsusPool アプリケーションプールを選択し、[アプリケーションプールの編集] の [詳細設定] をクリックします。 次に、プライベートメモリの上限を 4 GB (400万 KB) に設定します。 アプリケーションプールが再起動されたら、SMS_WSUS_SYNC_MANAGER コンポーネントのステータスである wcm .log と wsyncmgr.log を監視して、エラーを確認します。 環境によっては、プライベートメモリの制限を 8 800万 GB 以上に増やすことが必要になる場合があることに注意してください。
 
-詳細については、以下を参照してください。[ConfigMgr 2012 での WSUS の同期が HTTP 503 エラーで失敗する](http://blogs.technet.com/b/sus/archive/2015/03/23/configmgr-2012-support-tip-wsus-sync-fails-with-http-503-errors.aspx)
+詳細については、「 [ConfigMgr 2012 での WSUS の同期が HTTP 503 エラーで失敗](https://blogs.technet.com/b/sus/archive/2015/03/23/configmgr-2012-support-tip-wsus-sync-fails-with-http-503-errors.aspx)する」を参照してください。
 
-## <a name="error-0x80070643-fatal-error-during-installation"></a>エラー 0x80070643:インストール中に致命的なエラーが発生した
+## <a name="error-0x80070643-fatal-error-during-installation"></a>エラー 0x80070643: インストール中に致命的なエラーが発生した
 WSUS セットアップでは、Microsoft SQL Server を使用してインストールを実行します。 この問題は、WSUS セットアップを実行しているユーザーに、SQL Server のシステム管理者のアクセス許可がないことが原因で発生します。
 
 この問題を解決するには、SQL Server でユーザーアカウントまたはグループアカウントにシステム管理者のアクセス許可を付与してから、WSUS セットアップを再実行します。
 
 ## <a name="some-services-are-not-running-check-the-following-services"></a>一部のサービスが実行されていません。 次のサービスを確認します。
 
-- **Selfupdate**Selfupdate サービスのトラブルシューティングについては、「[自動更新を更新する必要があり](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx)ます」を参照してください。
+- **Selfupdate:** Selfupdate サービスのトラブルシューティングについては、「[自動更新を更新する必要があり](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx)ます」を参照してください。
 
-- **WSSUService:** このサービスは同期を容易にします。 同期に問題がある場合は、 **[スタート]** ボタンをクリックし、 **[管理ツール]** 、 **[サービス]** の順にポイントし、サービスの一覧で **[Windows Server Update Service]** を見つけて、WSUSService にアクセスします。 次の操作を行います。
+- **Wssuservice:** このサービスは同期を容易にします。 同期に問題がある場合は、 **[スタート]** ボタンをクリックし、 **[管理ツール]** 、 **[サービス]** の順にポイントし、サービスの一覧で **[Windows Server Update Service]** を見つけて、WSUSService にアクセスします。 次の手順を実行します。
     
     -   このサービスが実行されていることを確認します。 停止している場合は **[開始]** をクリックし、サービスを更新する場合は **[再起動]** をクリックします。
     

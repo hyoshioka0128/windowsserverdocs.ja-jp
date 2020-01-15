@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 106262b63b5aad0eddb08618eb808d2d9ff5b425
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: 9fb1b91ff389f6abacccaa7464276fc8556c11c5
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "71407809"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948913"
 ---
 # <a name="scenario-web-api-calling-web-api-on-behalf-of-scenario"></a>シナリオ: web api を呼び出している (シナリオに代わって) 
 > 適用対象: AD FS 2019 以降 
@@ -26,8 +26,8 @@ ms.locfileid: "71407809"
 
 
 - クライアント (Web アプリ)-次の図では示されていません-保護された Web API を呼び出し、その "Authorization" Http ヘッダーに JWT ベアラートークンを提供します。 
-- 保護された Web API はトークンを検証し、MSAL [AcquireTokenOnBehalfOf](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_) メソッドを使用して別のトークンを要求 (AD FS) します。これにより、ユーザーの代わりに2つ目の web api (下流の web api) を呼び出すことができます。 
-- 保護された web API は、このトークンを使用して下流 API を呼び出します。 また、AcquireTokenSilentlater を呼び出して、他の下流 Api (ただし、同じユーザーの代わりに) のトークンを要求することもできます。 AcquireTokenSilent は、必要に応じてトークンを更新します。  
+- 保護された Web API はトークンを検証し、MSAL [AcquireTokenOnBehalfOf](https://docs.microsoft.com/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync?view=azure-dotnet#Microsoft_IdentityModel_Clients_ActiveDirectory_AuthenticationContext_AcquireTokenAsync_System_String_Microsoft_IdentityModel_Clients_ActiveDirectory_ClientCredential_Microsoft_IdentityModel_Clients_ActiveDirectory_UserAssertion_) メソッドを使用して別のトークンを要求 (AD FS) します。これにより、ユーザーの代わりに2つ目の web api (下流の web api) を呼び出すことができます。 
+- 保護された Web API は、このトークンを使用してダウン ストリーム API を呼び出します。 また、AcquireTokenSilentlater を呼び出して、他の下流 Api (ただし、同じユーザーの代わりに) のトークンを要求することもできます。 AcquireTokenSilent は、必要に応じてトークンを更新します。  
  
      ![概要](media/adfs-msal-web-api-web-api/webapi1.png)
  
@@ -47,23 +47,23 @@ ADFS で auth シナリオに代わってを構成する方法を理解するに
   
   2. アプリケーショングループウィザードの **[名前]** に「 **WebApiToWebApi** 」と入力し、 **[クライアント-サーバーアプリケーション]** で、 **Web API テンプレートにアクセスするネイティブアプリケーション**を選択します。 **[次へ]** をクリックします。
 
-      ![アプリの登録](media/adfs-msal-web-api-web-api/webapi2.png)
+      ![アプリケーションの登録](media/adfs-msal-web-api-web-api/webapi2.png)
 
-  3. **クライアント識別子**の値をコピーします。 後でアプリケーションの**app.config**ファイルの**ClientId**の値として使用されます。 **リダイレクト URI:**  - https://ToDoListClientには、次のように入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 
+  3. **クライアント識別子**の値をコピーします。 後でアプリケーションの**app.config**ファイルの**ClientId**の値として使用されます。 **リダイレクト URI:**  - https://ToDoListClient には、次のように入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 
   
-      ![アプリの登録](media/adfs-msal-web-api-web-api/webapi3.png)
+      ![アプリケーションの登録](media/adfs-msal-web-api-web-api/webapi3.png)
   
-  4. [Web API の構成] 画面で、**識別子**として「 https://localhost:44321/」と入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 この値**は、後でアプリケーションの app.config** **ファイルと web.config ファイル**で使用されます。  
+  4. [Web API の構成] 画面で、**識別子**として「 https://localhost:44321/ 」と入力します。 **[追加]** をクリックします。 **[次へ]** をクリックします。 この値**は、後でアプリケーションの app.config** **ファイルと web.config ファイル**で使用されます。  
  
-      ![アプリの登録](media/adfs-msal-web-api-web-api/webapi4.png)
+      ![アプリケーションの登録](media/adfs-msal-web-api-web-api/webapi4.png)
 
   5. Access Control ポリシーの適用 画面で、**すべてのユーザーを許可**する を選択し、**次へ** をクリックします。 
   
-      ![アプリの登録](media/adfs-msal-web-api-web-api/webapi5.png)  
+      ![アプリケーションの登録](media/adfs-msal-web-api-web-api/webapi5.png)  
 
   6. [アプリケーションのアクセス許可の構成] 画面で、[ **openid**と**user_impersonation**] を選択します。 **[次へ]** をクリックします。  
   
-      ![アプリの登録](media/adfs-msal-web-api-web-api/webapi6.png)  
+      ![アプリケーションの登録](media/adfs-msal-web-api-web-api/webapi6.png)  
 
   7. 概要 画面で、**次へ** をクリックします。 
 
@@ -72,7 +72,7 @@ ADFS で auth シナリオに代わってを構成する方法を理解するに
 
   9. AD FS 管理 で、**アプリケーショングループ** をクリックし、**WebApiToWebApi**アプリケーショングループ を選択します。 右クリックし、 **[プロパティ]** を選択します。 
   
-      ![アプリの登録](media/adfs-msal-web-api-web-api/webapi7.png)  
+      ![アプリケーションの登録](media/adfs-msal-web-api-web-api/webapi7.png)  
 
   10. WebApiToWebApi のプロパティ 画面で、**アプリケーションの追加...** をクリックします。 
   
@@ -214,7 +214,7 @@ ADFS で auth シナリオに代わってを構成する方法を理解するに
 
      ネイティブアプリの画面が表示されない場合は、プロジェクトリポジトリがシステムに保存されているフォルダーから * msalcache. bin ファイルを検索して削除します。 
   
-  5. AD FS サインインページにリダイレクトされます。 さあ、サインインします。 
+  5. AD FS サインインページにリダイレクトされます。 要求に従ってサインインしてください。 
   
       ![アプリの Reg](media/adfs-msal-web-api-web-api/webapi32.png)
 

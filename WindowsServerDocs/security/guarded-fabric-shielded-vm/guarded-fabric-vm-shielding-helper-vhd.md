@@ -8,19 +8,19 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 7984d1c965c15f7d8c3f3abfdc99f01e3adc215f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2ab9d4afb6e4219c6e6aae23d2d58052f20d3998
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403422"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950326"
 ---
 # <a name="shielded-vms---preparing-a-vm-shielding-helper-vhd"></a>シールドされた Vm-VM シールドヘルパー VHD の準備
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 > [!IMPORTANT]
-> これらの手順を開始する前に、Windows Server 2016 用の最新の累積的な更新プログラムがインストールされていること、または最新の Windows 10[リモートサーバー管理ツール](https://www.microsoft.com/en-us/download/details.aspx?id=45520)を使用していることを確認してください。 それ以外の場合、プロシージャは機能しません。 
+> これらの手順を開始する前に、Windows Server 2016 用の最新の累積的な更新プログラムがインストールされていること、または最新の Windows 10[リモートサーバー管理ツール](https://www.microsoft.com/download/details.aspx?id=45520)を使用していることを確認してください。 それ以外の場合、プロシージャは機能しません。 
 
 このセクションでは、既存の Vm をシールドされた Vm に変換するためのサポートを有効にするホスティングサービスプロバイダーによって実行される手順の概要を説明します。
 
@@ -59,7 +59,7 @@ VMM コンソールで、設定 ウィンドウを開き、**全般** の下に�
 
 ![VMM-ホストガーディアンサービスの設定](../media/Guarded-Fabric-Shielded-VM/guarded-host-vmm-hgs-settings-01.png)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 - [保護されたホストとシールドされた Vm のホスティングサービスプロバイダーの構成手順](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

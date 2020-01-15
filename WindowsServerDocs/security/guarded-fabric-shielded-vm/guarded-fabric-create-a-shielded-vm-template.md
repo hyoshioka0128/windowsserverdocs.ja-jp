@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: 70014c04bbb4425fe3c3fd0379f10cf00abe00ee
-ms.sourcegitcommit: 4b4ff8d9e18b2ddcd1916ffa2cd58fffbed8e7ef
+ms.openlocfilehash: 04fdd52544b69d2c41abcbee00dd00b31bf5f21c
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72986444"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949783"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Windows のシールドされた VM テンプレートディスクを作成する
 
@@ -32,7 +32,7 @@ ms.locfileid: "72986444"
 |-----------|----|
 |GUID パーティションテーブル (GPT) ディスクである必要があります。 | UEFI をサポートする第2世代仮想マシンのために必要|
 |ディスクの種類は、**動的**ではなく**基本**である必要があります。 <br>注: これは、Hyper-v でサポートされている "動的に拡張された" VHDX 機能ではなく、論理ディスクの種類を参照します。 | BitLocker はダイナミックディスクをサポートしていません。|
-|ディスクには、少なくとも2つのパーティションがあります。 1つのパーティションに、Windows がインストールされているドライブを含める必要があります。 これは、BitLocker によって暗号化されるドライブです。 もう1つのパーティションはアクティブなパーティションで、ブートローダーを含み、コンピューターを起動できるように暗号化されていません。|BitLocker に必要|
+|ディスクには、少なくとも2つのパーティションがあります。 1つのパーティションに、Windows がインストールされているドライブを含める必要があります。 これは、BitLocker が暗号化するドライブです。 もう1つのパーティションはアクティブなパーティションで、ブートローダーを含み、コンピューターを起動できるように暗号化されていません。|BitLocker に必要|
 |ファイルシステムが NTFS | BitLocker に必要|
 |VHDX にインストールされているオペレーティングシステムは、次のいずれかになります。<br>-Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 <br>-Windows 10、Windows 8.1、Windows 8| 第2世代仮想マシンと Microsoft セキュアブートテンプレートをサポートするために必要|
 |オペレーティングシステムは一般化されている必要があります (sysprep.exe を実行します)。 | テンプレートのプロビジョニングには、特定のテナントのワークロードに対応する Vm が含まれます。| 
@@ -59,7 +59,7 @@ Windows Server 2016、Windows 10 (リモートサーバー管理ツール、RSAT
 
         Install-WindowsFeature RSAT-Shielded-VM-Tools -Restart
         
-    また、 [Windows 10 リモートサーバー管理ツール](https://www.microsoft.com/en-us/download/details.aspx?id=45520)がインストールされているクライアントコンピューターからサーバーを管理することもできます。
+    また、 [Windows 10 リモートサーバー管理ツール](https://www.microsoft.com/download/details.aspx?id=45520)がインストールされているクライアントコンピューターからサーバーを管理することもできます。
 
 3. 新しいシールドされた Vm のテンプレートディスクとなる VHDX の VSC に署名するための証明書を取得または作成します。 この証明書の詳細は、テナントがシールドデータファイルを作成し、信頼するディスクを承認しているときに、テナントに表示されます。 そのため、この証明書は、自分とテナントが相互に信頼している証明機関から取得することが重要です。 ホストとテナントの両方であるエンタープライズシナリオでは、PKI からこの証明書を発行することを検討できます。
 
@@ -167,7 +167,7 @@ Save-VolumeSignatureCatalog -TemplateDiskPath 'C:\temp\MyLinuxTemplate.vhdx' -Vo
 > [!div class="nextstepaction"]
 > [シールドデータファイルを作成する](guarded-fabric-tenant-creates-shielding-data.md)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 - [保護されたホストとシールドされた Vm のホスティングサービスプロバイダーの構成手順](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

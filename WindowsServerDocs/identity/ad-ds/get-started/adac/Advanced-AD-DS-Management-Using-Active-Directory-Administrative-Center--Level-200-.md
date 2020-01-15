@@ -9,16 +9,16 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 00e307da35911189114257eea88ccaf90ceab1ae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6ec8ac4936889356ef92e82c0c89491e5c853a95
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390718"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949336"
 ---
 # <a name="advanced-ad-ds-management-using-active-directory-administrative-center-level-200"></a>Advanced AD DS Management Using Active Directory Administrative Center (Level 200)
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、更新された Active Directory 管理センターと、そこで使用できる新しい Active Directory のごみ箱、細かい設定が可能なパスワード ポリシー、および Windows PowerShell 履歴ビューアーについて詳しく説明します。これには、アーキテクチャ、一般的なタスクの例、トラブルシューティング情報などが含まれます。 概要については、「 [Active Directory 管理センターの&#40;拡張レベル&#41;100 の概要](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)」を参照してください。  
   
@@ -86,7 +86,7 @@ Windows PowerShell を使用して Active Directory のごみ箱を有効化す�
   
 ### <a name="managing-active-directory-recycle-bin-using-active-directory-administrative-center"></a>Active Directory 管理センターを使用して Active Directory のごみ箱を管理する
 
-このセクションでは、**corp.contoso.com** という名前の既存のドメインを例として使用します。 このドメインでは、ユーザーを **UserAccounts**という名前の親 OU にまとめています。 **UserAccounts** OU には部門の名前が付いた 3 つの子 OU が含まれており、それぞれの子 OU にはさらに OU、ユーザー、およびグループが含まれています。  
+このセクションでは、 **corp.contoso.com**という名前の既存のドメインを例として使用します。 このドメインでは、ユーザーを **UserAccounts**という名前の親 OU にまとめています。 **UserAccounts** OU には部門の名前が付いた 3 つの子 OU が含まれており、それぞれの子 OU にはさらに OU、ユーザー、およびグループが含まれています。  
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_EnableRecycleBinExampleOU.png)  
   
@@ -98,7 +98,7 @@ Active Directory のごみ箱には、フォレストで削除されたすべて
   
 **[削除済みオブジェクト]** コンテナーには、そのドメイン パーティションで復元可能なすべてのオブジェクトが表示されます。 **msDS-deletedObjectLifetime** で指定された期間より前に削除されたオブジェクトは、リサイクルされたオブジェクトと呼ばれます。 Active Directory 管理センターには、リサイクルされたオブジェクトは表示されないため、Active Directory 管理センターを使用してこれらのオブジェクトを復元することはできません。  
   
-ごみ箱のアーキテクチャと処理ルールに関する詳細については「 [The AD Recycle Bin:Understanding, Implementing, Best Practices, and Troubleshooting (AD のごみ箱: 理解、実装、ベスト プラクティス、およびトラブルシューティング)](http://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx)」を参照してください。  
+ごみ箱のアーキテクチャと処理ルールに関する詳細については「 [The AD Recycle Bin:Understanding, Implementing, Best Practices, and Troubleshooting (AD のごみ箱: 理解、実装、ベスト プラクティス、およびトラブルシューティング)](https://blogs.technet.com/b/askds/archive/2009/08/27/the-ad-recycle-bin-understanding-implementing-best-practices-and-troubleshooting.aspx)」を参照してください。  
   
 Active Directory 管理センターでは、コンテナーから返される既定のオブジェクト数を 20,000 に制限しています。 **[管理]** メニューの **[管理の一覧のオプション]** をクリックすると、この制限を 100,000 オブジェクトに増やすことができます。  
   
@@ -122,7 +122,7 @@ Active Directory 管理センターは、強力な条件およびフィルター
 - 名前  
 - 削除するとき  
 - 最後に確認された親  
-- 種類  
+- タスクバーの検索ボックスに  
 - 説明  
 - 市区町村  
 - 国/地域  
@@ -217,14 +217,14 @@ Restore-adobject
 中規模および大規模なエンタープライズ環境では、時間が経つと、[削除済みオブジェクト] コンテナーに 20,000 (場合によっては 100,000) を超えるオブジェクトが蓄積され、すべてのオブジェクトを表示することが困難になる可能性があります。 Active Directory 管理センターのフィルター メカニズムでは、クライアント側のフィルターを使用しているため、上限を超えたオブジェクトを表示することはできません。 この制限を回避するには、次の手順に従ってサーバー側の検索を実行します。  
   
 1. **[削除済みオブジェクト]** コンテナーを右クリックし、 **[このノード配下の検索]** をクリックします。  
-2. シェブロンをクリックして **[+条件の追加]** メニューを表示し、 **[最後の変更が指定の期間内]** を選択して追加します。 最終更新時刻 (**whenChanged** 属性) は、削除時間に非常に近い値であり、ほとんどの環境では同一になります。 このクエリでは、サーバー側の検索が実行されます。  
+2. シェブロンをクリックして **[+条件の追加]** メニューを表示し、 **[最後の変更が指定の期間内]** を選択して追加します。 最終更新時刻 ( **whenChanged** 属性) は、削除時間に非常に近い値であり、ほとんどの環境では同一になります。 このクエリでは、サーバー側の検索が実行されます。  
 3. 結果に対し、さらに表示フィルターや並べ替えなどを使用して、復元する削除済みオブジェクトを特定し、通常の手順で復元を実行します。  
   
 ## <a name="BKMK_FGPP"></a>Active Directory 管理センターを使用した細かい設定が可能なパスワードポリシーの構成と管理  
   
 ### <a name="configuring-fine-grained-password-policies"></a>細かい設定が可能なパスワード ポリシーを構成する
 
-Active Directory 管理センターを使用すると、細かい設定が可能なパスワード ポリシー (FGPP) オブジェクトを作成して管理できます。 FGPP 機能は Windows Server 2008 で導入されましたが、Windows Server 2012 で初めて FGPP のグラフィカル管理インターフェイスが使用できるようになりました。 細かい設定が可能なパスワード ポリシーをドメイン レベルで適用すると、Windows Server 2003 で必要な単一ドメイン パスワードを上書きできます。 複数の FGPP を異なる設定で作成すると、ドメイン内の個々のユーザーまたはグループに対して異なるパスワード ポリシーを適用できます。  
+Active Directory 管理センターを使用すると、細かい設定が可能なパスワード ポリシー (FGPP) オブジェクトを作成して管理できます。 FGPP 機能は Windows Server 2008 で導入されましたが、Windows Server 2012 で初めて FGPP のグラフィカル管理インターフェイスが使用できるようになりました。 細かい設定が可能なパスワード ポリシーをドメイン レベルで適用すると、Windows Server 2003 で必要な単一ドメイン パスワードをオーバーライドできます。 複数の FGPP を異なる設定で作成すると、ドメイン内の個々のユーザーまたはグループに対して異なるパスワード ポリシーを適用できます。  
   
 細かい設定が可能なパスワード ポリシーの詳細については、「 [ステップ バイ ステップ ガイド - 細かい設定が可能なパスワードおよびアカウント ロックアウトのポリシー設定 (Windows Server 2008 R2)](https://technet.microsoft.com/library/cc770842(WS.10).aspx)」を参照してください。  
   
@@ -238,7 +238,7 @@ Active Directory 管理センターを使用すると、細かい設定が可能
   
 ![高度な AD DS 管理](media/Advanced-AD-DS-Management-Using-Active-Directory-Administrative-Center--Level-200-/ADDS_ADAC_TR_CreatePasswordSettings.png)  
   
-すべての必須フィールド (赤いアスタリスク付き) と、必要に応じて省略可能なフィールドに入力します。次に、 **[追加]** をクリックし、このポリシーを適用するユーザーまたはグループを設定します。 FGPP は、指定されたセキュリティ プリンシパルの既定のドメイン ポリシー設定を上書きします。 上の画面では、セキュリティを保護するために、制限が非常に厳しいポリシーを組み込みの Administrator アカウントのみに適用しています。 このポリシーは、通常のユーザーに適用するには複雑すぎる内容ですが、IT プロフェッショナルのみが使用する危険度の高いアカウントには最適です。  
+すべての必須フィールド (赤いアスタリスク付き) と、必要に応じて省略可能なフィールドに入力します。次に、 **[追加]** をクリックし、このポリシーを適用するユーザーまたはグループを設定します。 FGPP は、指定されたセキュリティ プリンシパルの既定のドメイン ポリシー設定をオーバーライドします。 上の画面では、セキュリティを保護するために、制限が非常に厳しいポリシーを組み込みの Administrator アカウントのみに適用しています。 このポリシーは、通常のユーザーに適用するには複雑すぎる内容ですが、IT プロフェッショナルのみが使用する危険度の高いアカウントには最適です。  
   
 また、優先順位を設定し、指定したドメイン内でポリシーを適用するユーザーおよびグループも設定します。  
   
@@ -447,7 +447,7 @@ Verbose レベルに設定すると、各関数の .NET スタックも表示さ
 
 Active Directory Web Services インスタンスが使用できない場合は、次のエラーが表示されます。  
   
-|エラー|操作|
+|Error|操作|
 | --- | --- |  
 |"どのドメインにも接続できません。 接続できるようになったら、更新するか、再試行してください"|Active Directory 管理センター アプリケーションの開始時に表示されます|
 |"Active Directory Web サービス (ADWS) を実行している *<NetBIOS domain name>* ドメインで利用可能なサーバーが見つかりません"|Active Directory 管理センター アプリケーションでドメイン ノードの選択を試行したときに表示されます|
@@ -470,7 +470,7 @@ Active Directory Web Services インスタンスが使用できない場合は�
    Netstat -anob > ports.txt  
    ```
 
-   ports.txt ファイルを調査して、ADWS サービスがポート 9389 でリッスン中であることを確認します。 以下に例を示します。  
+   ports.txt ファイルを調査して、ADWS サービスがポート 9389 でリッスン中であることを確認します。 次に例を示します。  
 
    ```
    TCP    0.0.0.0:9389    0.0.0.0:0    LISTENING    1828  
@@ -484,6 +484,6 @@ Active Directory Web Services インスタンスが使用できない場合は�
   
 4. Active Directory 管理センターが実行されているコンピューターと、NLTEST で返されたドメイン コントローラーに、NetMon または他のネットワーク キャプチャ ユーティリティをインストールします。 両方のコンピューターからネットワーク キャプチャを同時に収集し、その状態で Active Directory 管理センターを起動して、エラーを確認したらキャプチャを停止します。 クライアントが TCP ポート 9389 でドメイン コントローラーと送受信できることを確認します。 パケットが送信されているが到着していない場合、またはパケットが到着しているがドメイン コントローラーの応答がクライアントに到着していない場合は、ネットワーク上のコンピューター間に存在するファイアウォールがそのポートのパケットを破棄している可能性があります。 このファイアウォールは、ソフトウェア、ハードウェア、またはサードパーティ エンドポイント保護 (ウイルス対策) ソフトウェアの一部である可能性があります。  
   
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [AD のごみ箱、細かい設定が可能なパスワード ポリシー、PowerShell 履歴](../../../ad-ds/get-started/adac/Introduction-to-Active-Directory-Administrative-Center-Enhancements--Level-100-.md)  

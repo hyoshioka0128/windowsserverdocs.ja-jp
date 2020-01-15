@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 19e07504dad49c5e23cc49630015529e2a746aa7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f2e8d3bfb5ef907ffb522b5b7be31d1def3001c8
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394447"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949687"
 ---
 # <a name="volume-shadow-copy-service"></a>ボリューム シャドウ コピー サービス
 
@@ -39,13 +39,13 @@ VSS では、バックアップするデータの一貫したシャドウコピ�
 
 VSS を使用する Windows の機能とアプリケーションには、次のものが含まれます。
 
-  - [Windows Server バックアップ](http://go.microsoft.com/fwlink/?linkid=180891)(http://go.microsoft.com/fwlink/?LinkId=180891)  
+  - [Windows Server バックアップ](https://go.microsoft.com/fwlink/?linkid=180891)(https://go.microsoft.com/fwlink/?LinkId=180891)  
       
-  - [共有フォルダーのシャドウコピー](http://go.microsoft.com/fwlink/?linkid=142874) (http://go.microsoft.com/fwlink/?LinkId=142874)  
+  - [共有フォルダーのシャドウコピー](https://go.microsoft.com/fwlink/?linkid=142874) (https://go.microsoft.com/fwlink/?LinkId=142874)  
       
-  - [System Center Data Protection Manager](http://go.microsoft.com/fwlink/?linkid=180892) (http://go.microsoft.com/fwlink/?LinkId=180892)  
+  - [System Center Data Protection Manager](https://go.microsoft.com/fwlink/?linkid=180892) (https://go.microsoft.com/fwlink/?LinkId=180892)  
       
-  - [システムの復元](http://go.microsoft.com/fwlink/?linkid=180893)(http://go.microsoft.com/fwlink/?LinkId=180893)  
+  - [システムの復元](https://go.microsoft.com/fwlink/?linkid=180893)(https://go.microsoft.com/fwlink/?LinkId=180893)  
       
 
 ## <a name="how-volume-shadow-copy-service-works"></a>ボリュームシャドウコピーサービスのしくみ
@@ -136,7 +136,7 @@ VSS を使用する Windows の機能とアプリケーションには、次の�
 </colgroup>
 <thead>
 <tr class="header">
-<th>時間</th>
+<th>［時間］</th>
 <th>ソースデータ (状態とデータ)</th>
 <th>シャドウコピー (状態とデータ)</th>
 </tr>
@@ -177,7 +177,7 @@ VSS を使用する Windows の機能とアプリケーションには、次の�
 </colgroup>
 <thead>
 <tr class="header">
-<th>時間</th>
+<th>［時間］</th>
 <th>ソースデータ (状態とデータ)</th>
 <th>シャドウコピー (状態とデータ)</th>
 </tr>
@@ -227,7 +227,7 @@ VSS を使用する Windows の機能とアプリケーションには、次の�
 
 ソフトウェアプロバイダーは、ハードウェアベースのプロバイダーよりも広範なストレージプラットフォームに適用されます。また、ベーシックディスクや論理ボリュームと同様に機能します。 (論理ボリュームは、2つ以上のディスクの空き領域を組み合わせることによって作成されるボリュームです)。ハードウェアシャドウコピーとは対照的に、ソフトウェアプロバイダーは、オペレーティングシステムリソースを使用してシャドウコピーを保持します。
 
-ベーシックディスクの詳細については、「[ベーシックディスクとボリュームとは何ですか?](http://go.microsoft.com/fwlink/?linkid=180894) 」を参照してください。 (TechNet の http://go.microsoft.com/fwlink/?LinkId=180894)。
+ベーシックディスクの詳細については、「[ベーシックディスクとボリュームとは何ですか?](https://go.microsoft.com/fwlink/?linkid=180894) 」を参照してください。 (TechNet の https://go.microsoft.com/fwlink/?LinkId=180894) 。
 
 ### <a name="system-provider"></a>システムプロバイダー
 
@@ -247,11 +247,11 @@ Windows オペレーティングシステムには、さまざまな Windows 機
 
 これらのライターの詳細については、次の Microsoft Web サイトを参照してください。
 
-  - [インボックス VSS ライター](http://go.microsoft.com/fwlink/?linkid=180895) (http://go.microsoft.com/fwlink/?LinkId=180895)  
+  - [インボックス VSS ライター](https://go.microsoft.com/fwlink/?linkid=180895) (https://go.microsoft.com/fwlink/?LinkId=180895)  
       
-  - [Windows Server 2008 および Windows VISTA SP1 用の新しいインボックス VSS ライター](http://go.microsoft.com/fwlink/?linkid=180896) (http://go.microsoft.com/fwlink/?LinkId=180896)  
+  - [Windows Server 2008 および Windows VISTA SP1 用の新しいインボックス VSS ライター](https://go.microsoft.com/fwlink/?linkid=180896) (https://go.microsoft.com/fwlink/?LinkId=180896)  
       
-  - [Windows Server 2008 R2 および windows 7 用の新しいインボックス VSS ライター](http://go.microsoft.com/fwlink/?linkid=180897) (http://go.microsoft.com/fwlink/?LinkId=180897)  
+  - [Windows Server 2008 R2 および windows 7 用の新しいインボックス VSS ライター](https://go.microsoft.com/fwlink/?linkid=180897) (https://go.microsoft.com/fwlink/?LinkId=180897)  
       
 
 ## <a name="how-shadow-copies-are-used"></a>シャドウコピーの使用方法
@@ -298,7 +298,7 @@ Lun の再同期は、LUN スワップとは異なります。 LUN スワップ�
 
 共有フォルダーのシャドウコピーは、ボリュームシャドウコピーサービスを使用して、ファイルサーバーなどの共有ネットワークリソースに配置されているファイルの特定の時点のコピーを提供します。 共有フォルダーのシャドウコピーを使用すると、ネットワークに保存されている削除または変更されたファイルを迅速に回復できます。 管理者の支援なしで実行できるため、共有フォルダーのシャドウコピーによって生産性が向上し、管理コストが削減されます。
 
-共有フォルダーのシャドウコピーの詳細については、TechNet[の「](http://go.microsoft.com/fwlink/?linkid=180898)共有フォルダーのシャドウコピー http://go.microsoft.com/fwlink/?LinkId=180898)」を参照してください。
+共有フォルダーのシャドウコピーの詳細については、TechNet https://go.microsoft.com/fwlink/?LinkId=180898) の「[共有フォルダーのシャドウコピー](https://go.microsoft.com/fwlink/?linkid=180898)」を参照してください。
 
 ### <a name="data-mining-by-using-transportable-shadow-copies"></a>転送可能シャドウコピーを使用したデータマイニング
 
@@ -328,9 +328,9 @@ Lun の再同期は、LUN スワップとは異なります。 LUN スワップ�
 
 ボリュームシャドウコピーサービストランスポートは、Windows Server 2003 Enterprise Edition、Windows Server 2003 Datacenter Edition、Windows Server 2008、または Windows Server 2008 R2 を実行しているコンピューターの高度なソリューションです。 記憶域配列にハードウェアプロバイダーがある場合にのみ機能します。 シャドウコピートランスポートは、テープバックアップ、データマイニング、テストなど、さまざまな目的で使用できます。
 
-## <a name="frequently-asked-questions"></a>よく寄せられる質問
+## <a name="frequently-asked-questions"></a>AppLocker: Frequently Asked Questions (AppLocker: よく寄せられる質問)
 
-この FAQ は、システム管理者のボリュームシャドウコピーサービス (VSS) に関する質問に回答します。 VSS アプリケーションプログラミングインターフェイスの詳細については、[ Windows デベロッパーセンターのライブラリの「](http://go.microsoft.com/fwlink/?linkid=180899)ボリュームシャドウコピーサービス http://go.microsoft.com/fwlink/?LinkId=180899)」を参照してください。
+この FAQ は、システム管理者のボリュームシャドウコピーサービス (VSS) に関する質問に回答します。 VSS アプリケーションプログラミングインターフェイスの詳細については、 https://go.microsoft.com/fwlink/?LinkId=180899) Windows デベロッパーセンターのライブラリの「[ボリュームシャドウコピーサービス](https://go.microsoft.com/fwlink/?linkid=180899)」を参照してください。
 
 ### <a name="when-was-volume-shadow-copy-service-introduced-on-which-windows-operating-system-versions-is-it-available"></a>Was ボリュームシャドウコピーサービス導入された場合 使用可能な Windows オペレーティングシステムのバージョンを教えてください。
 
@@ -362,9 +362,9 @@ Microsoft 管理コンソールを使用して、ボリュームシャドウコ�
 
 詳細については、次の Microsoft TechNet Web サイトを参照してください。
 
-  - [システムの復元](http://go.microsoft.com/fwlink/?linkid=157113)(http://go.microsoft.com/fwlink/?LinkID=157113)  
+  - [システムの復元](https://go.microsoft.com/fwlink/?linkid=157113)(https://go.microsoft.com/fwlink/?LinkID=157113)  
       
-  - [Windows Server バックアップ](http://go.microsoft.com/fwlink/?linkid=180891)(http://go.microsoft.com/fwlink/?LinkID=180891)  
+  - [Windows Server バックアップ](https://go.microsoft.com/fwlink/?linkid=180891)(https://go.microsoft.com/fwlink/?LinkID=180891)  
       
 
 ### <a name="can-i-exclude-files-from-a-shadow-copy-to-save-space"></a>シャドウコピーからファイルを除外して領域を節約することはできますか。
@@ -384,15 +384,15 @@ VSS は、ボリューム全体のシャドウコピーを作成するように�
 > <LI>ファイルは、ベストエフォート方式でシャドウコピーから削除されます。 つまり、削除されることは保証されていません。<BR><BR></LI></UL>
 
 
-詳細については、MSDN の「[シャドウコピーからのファイルの除外](http://go.microsoft.com/fwlink/?linkid=180904)」 (http://go.microsoft.com/fwlink/?LinkId=180904) を参照してください。
+詳細については、MSDN の「[シャドウコピーからのファイルの除外](https://go.microsoft.com/fwlink/?linkid=180904)」 (https://go.microsoft.com/fwlink/?LinkId=180904) を参照してください。
 
-### <a name="my-non-microsoft-backup-program-failed-with-a-vss-error-what-can-i-do"></a>Microsoft 以外のバックアッププログラムが VSS エラーのために失敗しました。 どうすればいいんでしょうか。
+### <a name="my-non-microsoft-backup-program-failed-with-a-vss-error-what-can-i-do"></a>Microsoft 以外のバックアッププログラムが VSS エラーのために失敗しました。 どうしたらいいのでしょうか。
 
 バックアッププログラムを作成した会社の Web サイトの製品サポートセクションを確認します。 この問題を解決するには、ダウンロードしてインストールできる製品の更新プログラムがある可能性があります。 それ以外の場合は、会社の製品サポート部門にお問い合わせください。
 
 システム管理者は、次の Microsoft TechNet ライブラリ Web サイトにある VSS のトラブルシューティング情報を使用して、VSS 関連の問題に関する診断情報を収集できます。
 
-詳細については、TechNet[の「](http://go.microsoft.com/fwlink/?linkid=180905)ボリュームシャドウコピーサービス http://go.microsoft.com/fwlink/?LinkId=180905)」を参照してください。
+詳細については、TechNet https://go.microsoft.com/fwlink/?LinkId=180905) の「[ボリュームシャドウコピーサービス](https://go.microsoft.com/fwlink/?linkid=180905)」を参照してください。
 
 ### <a name="what-is-the-diff-area"></a>"Diff area" とは何ですか?
 
@@ -417,7 +417,7 @@ VSS は、ボリューム全体のシャドウコピーを作成するように�
 
 ### <a name="can-vss-create-shadow-copies-of-non-ntfs-volumes"></a>VSS では、NTFS 以外のボリュームのシャドウコピーを作成できますか。
 
-[はい]。 ただし、永続的なシャドウコピーは NTFS ボリュームに対してのみ作成できます。 また、システムにマウントされた少なくとも1つのボリュームが NTFS ボリュームである必要があります。
+対応 ただし、永続的なシャドウコピーは NTFS ボリュームに対してのみ作成できます。 また、システムにマウントされた少なくとも1つのボリュームが NTFS ボリュームである必要があります。
 
 ### <a name="whats-the-maximum-number-of-shadow-copies-i-can-create-at-one-time"></a>一度に作成できるシャドウコピーの最大数は何ですか。
 
@@ -431,7 +431,7 @@ VSS は、ボリューム全体のシャドウコピーを作成するように�
 
 **Vssadmin resize shadowstorage**コマンドを入力します。
 
-詳細については、TechNet の「 [Vssadmin resize shadowstorage](http://go.microsoft.com/fwlink/?linkid=180906) (http://go.microsoft.com/fwlink/?LinkId=180906)」を参照してください。
+詳細については、TechNet の「 [Vssadmin resize shadowstorage](https://go.microsoft.com/fwlink/?linkid=180906) (https://go.microsoft.com/fwlink/?LinkId=180906) 」を参照してください。
 
 ### <a name="what-happens-when-i-run-out-of-space"></a>領域が不足した場合はどうなりますか。
 
@@ -441,9 +441,9 @@ VSS は、ボリューム全体のシャドウコピーを作成するように�
 
 Windows オペレーティングシステムには、VSS を操作するための次のツールが用意されています。
 
-  - [DiskShadow](http://go.microsoft.com/fwlink/?linkid=180907) (http://go.microsoft.com/fwlink/?LinkId=180907)  
+  - [DiskShadow](https://go.microsoft.com/fwlink/?linkid=180907) (https://go.microsoft.com/fwlink/?LinkId=180907)  
       
-  - [VssAdmin](http://go.microsoft.com/fwlink/?linkid=84008) (http://go.microsoft.com/fwlink/?LinkId=84008)  
+  - [VssAdmin](https://go.microsoft.com/fwlink/?linkid=84008) (https://go.microsoft.com/fwlink/?LinkId=84008)  
       
 
 ### <a name="diskshadow"></a>DiskShadow
@@ -503,9 +503,9 @@ VSS では、次のレジストリキーを使用できます。
 
 詳細については、MSDN Web サイトの次のエントリを参照してください。
 
-  - [ライターのセキュリティに関する考慮事項](http://go.microsoft.com/fwlink/?linkid=157739)(http://go.microsoft.com/fwlink/?LinkId=157739)  
+  - [ライターのセキュリティに関する考慮事項](https://go.microsoft.com/fwlink/?linkid=157739)(https://go.microsoft.com/fwlink/?LinkId=157739)  
       
-  - [依頼者向けのセキュリティに関する考慮事項](http://go.microsoft.com/fwlink/?linkid=180908)(http://go.microsoft.com/fwlink/?LinkId=180908)  
+  - [依頼者向けのセキュリティに関する考慮事項](https://go.microsoft.com/fwlink/?linkid=180908)(https://go.microsoft.com/fwlink/?LinkId=180908)  
       
 
 ### <a name="maxshadowcopies"></a>MaxShadowCopies
@@ -514,7 +514,7 @@ VSS では、次のレジストリキーを使用できます。
 
 詳細については、MSDN Web サイトの次のエントリを参照してください。
 
-[バックアップと復元のレジストリキーの下の](http://go.microsoft.com/fwlink/?linkid=180909) **MaxShadowCopies** (http://go.microsoft.com/fwlink/?LinkId=180909)
+[バックアップと復元のレジストリキーの下の](https://go.microsoft.com/fwlink/?linkid=180909) **MaxShadowCopies** (https://go.microsoft.com/fwlink/?LinkId=180909)
 
 ### <a name="mindiffareafilesize"></a>Mindiffgram
 
@@ -522,7 +522,7 @@ VSS では、次のレジストリキーを使用できます。
 
 詳細については、MSDN Web サイトの次のエントリを参照してください。
 
-[バックアップと復元のためのレジストリキーの下に](http://go.microsoft.com/fwlink/?linkid=180910)ある**minのサイズ**(http://go.microsoft.com/fwlink/?LinkId=180910)
+[バックアップと復元のためのレジストリキーの下に](https://go.microsoft.com/fwlink/?linkid=180910)ある**minのサイズ**(https://go.microsoft.com/fwlink/?LinkId=180910)
 
 `##`# ' サポートされているオペレーティングシステムのバージョン
 
@@ -546,12 +546,12 @@ VSS では、次のレジストリキーを使用できます。
 <tr class="odd">
 <td><p>LUN の再同期</p></td>
 <td><p>サポートなし</p></td>
-<td><p>Windows Server 2008 R2</p></td>
+<td><p>Windows Server 2008 R2</p></td>
 </tr>
 <tr class="even">
 <td><p><strong>Filesnottosnapshot</strong>レジストリキー</p></td>
 <td><p>Windows Vista</p></td>
-<td><p>Windows Server 2008</p></td>
+<td><p>Windows Server 2008</p></td>
 </tr>
 <tr class="odd">
 <td><p>転送可能シャドウコピー</p></td>
@@ -582,7 +582,7 @@ VSS では、次のレジストリキーを使用できます。
 </colgroup>
 <thead>
 <tr class="header">
-<th><img src="media/volume-shadow-copy-service/Dd560667.note(WS.10).gif" />注</th>
+<th><img src="media/volume-shadow-copy-service/Dd560667.note(WS.10).gif" />注意:</th>
 </tr>
 </thead>
 <tbody>
@@ -595,7 +595,7 @@ VSS では、次のレジストリキーを使用できます。
 <p></p>
 </div></td>
 <td><p>サポートなし</p></td>
-<td><p>Windows Server 2008</p></td>
+<td><p>Windows Server 2008</p></td>
 </tr>
 <tr class="even">
 <td><p>共有フォルダーのシャドウ コピー</p></td>
@@ -605,7 +605,7 @@ VSS では、次のレジストリキーを使用できます。
 <tr class="odd">
 <td><p>転送可能な自動回復されたシャドウコピー</p></td>
 <td><p>サポートなし</p></td>
-<td><p>Windows Server 2008</p></td>
+<td><p>Windows Server 2008</p></td>
 </tr>
 <tr class="even">
 <td><p>同時バックアップセッション (最大 64)</p></td>
@@ -619,12 +619,12 @@ VSS では、次のレジストリキーを使用できます。
 </tr>
 <tr class="even">
 <td><p>バックアップと同時に最大8つの復元セッション</p></td>
-<td><p>Windows 7</p></td>
-<td><p>Windows Server 2003 R2</p></td>
+<td><p>Windows 7</p></td>
+<td><p>Windows Server 2003 R2</p></td>
 </tr>
 </tbody>
 </table>
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 [Windows デベロッパーセンターのボリュームシャドウコピーサービス](https://docs.microsoft.com/windows/desktop/vss/volume-shadow-copy-service-overview)

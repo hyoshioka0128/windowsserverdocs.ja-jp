@@ -7,16 +7,16 @@ ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: bd7787b853395bf461165802251de8b2be5d5a39
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: ded26080ce59b48d7bbc3404684b3dbf926eceaa
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980267"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947464"
 ---
 # <a name="manage-office-365-in-windows-server-essentials"></a>Windows Server Essentials での Office 365 の管理
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 Windows Server Essentials サーバーと Microsoft Office 365 を統合すると、Windows Server Essentials ダッシュボードから、Office 365 サービスとオンラインアカウントをオンプレミスのリソースと共に管理できます。 このトピックでは、サーバーと Office 365 を統合することによって得られるメリット、その方法、Office 365 統合の管理およびトラブルシューティングを行う方法について説明します。  
   
@@ -82,16 +82,16 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
  次のタスクを行います。  
   
--   [ステップ 1: Office 365 の統合要件を確認する](#BKMK_StepOne_VERIFY)  
+-   [手順 1: Office 365 の統合要件を確認する](#BKMK_StepOne_VERIFY)  
   
--   [手順 2:サーバーを Microsoft Office 365 と統合する](#BKMK_StepTwo)  
+-   [手順 2: サーバーを Microsoft Office 365 と統合する](#BKMK_StepTwo)  
   
--   [手順 3:組織のインターネットドメイン名を Office 365 にリンクする (省略可能)](#BKMK_StepThree)  
+-   [手順 3: 組織のインターネットドメイン名を Office 365 にリンクする (省略可能)](#BKMK_StepThree)  
   
-###  <a name="BKMK_StepOne_VERIFY"></a>手順 1:Office 365 の統合要件を確認する  
+###  <a name="BKMK_StepOne_VERIFY"></a>手順 1: Office 365 の統合要件を確認する  
  開始する前に、サーバーが次の要件を満たしてされていることを確認します。  
   
--   サーバーは次のオペレーティング システムのいずれかを搭載しています。Windows server essentials、Windows Server Essentials、または windows server 2012 R2 Standard または windows server 2012 R2 Datacenter オペレーティングシステム (Windows Server Essentials Experience 役割がインストールされている場合)。  
+-   サーバーには、windows server essentials、Windows Server Essentials、windows server 2012 R2 Standard、windows server 2012 R2 Datacenter オペレーティングシステム (Windows server Essentials Experience 役割がインストールされている) のいずれかのオペレーティングシステムが搭載されています。  
   
 -   環境で使用できるドメインコントローラーは1つだけであるため、ドメインコントローラーで Office 365 統合を実行する必要があります。  
   
@@ -104,7 +104,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
 > [!NOTE]
 >  Office 365 を事前にサブスクライブする必要はありません。 Office 365 統合中にサブスクリプションを購入するか、無料試用版にサインアップすることができます。 Office 365 のプランと価格については、「 [office 365 plan for 企業](https://office.microsoft.com/compare-office-365-for-business-plans-FX102918419.aspx?CR_CC=200061904&WT.srch=1&WT.mc_ID=PS_bing_O365Comm_subscribe-to-office-365_Text)」を参照してください。  
   
-###  <a name="BKMK_StepTwo"></a>手順 2:サーバーを Microsoft Office 365 と統合する  
+###  <a name="BKMK_StepTwo"></a>手順 2: サーバーを Microsoft Office 365 と統合する  
  Windows Server Essentials サーバーと Office 365 を統合するには、ドメインコントローラーで次の手順を実行します。  
   
 > [!NOTE]
@@ -136,12 +136,12 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 -   Windows Server Essentials サーバーの **[ストレージ]** ページには、sharepoint Online ライブラリを管理したり、チームサイトのアクセス許可を変更したりするための **[sharepoint ライブラリ]** タブがあります。 Office 365 のすべてのビジネスプランには、これらの基本的な SharePoint Online 機能が含まれています。  
   
-###  <a name="BKMK_StepThree"></a>手順 3:組織のインターネットドメイン名を Office 365 にリンクする (省略可能)  
+###  <a name="BKMK_StepThree"></a>手順 3: 組織のインターネットドメイン名を Office 365 にリンクする (省略可能)  
  組織宛ての電子メールと SharePoint Online リソースの Url で独自のインターネットドメインを使用する場合は、カスタムドメインを Office 365 サブスクリプションにリンクすることができます。 Windows Server Essentials サーバーを Office 365 と統合する場合は、ダッシュボードからこの操作を行うことができます。  
   
  これは、オンラインアカウントを一括作成するときにドメインを使用できるように、ユーザーのオンラインアカウントを作成する前に実行するのが最も簡単です。  
   
- Office 365 にサインアップすると、ドメイン名が取得されます。たとえば、onmicrosoft.com のようになります。 別のドメイン名を使用する場合は、簡単に contoso.com ことができます。 ドメイン名をまだ所有していない場合は購入し、DNS レコードの一部を変更する必要があります。  
+ Office 365 にサインアップすると、ドメイン名が取得*されます。たとえば、onmicrosoft.com*のようになります。 別のドメイン名を使用する場合は、簡単に contoso.com ことができます。 ドメイン名をまだ所有していない場合は購入し、DNS レコードの一部を変更する必要があります。  
   
  Office 365 で使用するカスタムドメインのセットアップには、次の4つのタスクが含まれます。  
   
@@ -179,7 +179,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
      ウィザードが完了した後、ドメイン名レジストラーによって DNS レコードが検証されるまで、少し待機します。 これは自動的に行われます。何もする必要はありません。 しかし、通常は1時間ほどかかります。 ドメインの検証が完了すると、 **Office 365**ページに組織のドメインが一覧表示されます。  
   
 ####  <a name="BKMK_ManuallyConfigureDNS"></a>Office 365 統合の DNS レコードを手動で構成する方法  
- ドメイン名がサーバーによって管理されていないことを [ドメインを Office 365 にリンクする] ウィザードが検出した場合に、構成を完了するには、必要なドメイン ネーム サーバー (DNS) レコードを手動で構成する必要があります。 その場合は、 **%username%\NewDNSRecords_ (n) .txt**で構成する必要がある DNS レコードの一覧があります。ここで *(n)* はランダムな数値です。  
+ ドメイン名がサーバーによって管理されていないことを [ドメインを Office 365 にリンクする] ウィザードが検出した場合に、構成を完了するには、必要なドメイン ネーム サーバー (DNS) レコードを手動で構成する必要があります。 この場合、 **% username% \ NewDNSRecords_ (n) .txt**で構成する必要がある DNS レコードの一覧があります。 *(n)* はランダムな数値です。  
   
  次の表は、追加する必要がある DNS レコードを説明します。 入力方法は、ドメイン名レジストラーによって異なります。 不明な点がある場合は、ドメイン名のレジストラーにお問い合わせください。  
   
@@ -188,8 +188,8 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
 |サービス|必要な DNS レコード|目的|  
 |-------------|--------------------------|-------------|  
 |(複数のサービス)|MX| Office 365 では、このレコードを使用して、特定のドメイン名を所有していることを確認します。 この MX レコードは、電子メール メッセージのルーティングには影響しません。|  
-|Exchange Online|MX|電子メール メッセージのルーティングを実現します。 **重要:** 電子メールを移行する場合は、優先順位ゼロ (**0**) を新しい MX レコードに割り当てないでください。 レコードの値が現在の MX レコードに割り当てられている値より大きいことを確認してください。 電子メールの移行が完了し、電子メールサーバーを Office 365 に変更する準備ができたら、ドメイン名レジストラーに新しい MX レコードの優先順位の値をリセットさせます。|  
-|Exchange Online|エイリアス (CNAME)|ユーザーが Exchange Online と Outlook デスクトップ クライアントまたはモバイル電子メール クライアントとの接続を容易にセットアップできるように支援するための自動検出レコード。 **注:** 組織独自のドメイン名 ( http://mail.contoso.com) https://outlook.com/owa/office365.com) など) を使用して Outlook Web アクセスにアクセスする場合は、次のようにエイリアス (CName) レコードを構成できます。**種類 = CNAME、TTL = 01:00:00、HostName = mail、Address = mail. office365. com**|  
+|Exchange Online|MX|電子メール メッセージのルーティングを実現します。 **重要:** 電子メールを移行する場合は、新しい MX レコードにゼロ (**0**) の設定を割り当てないでください。 レコードの値が現在の MX レコードに割り当てられている値より大きいことを確認してください。 電子メールの移行が完了し、電子メールサーバーを Office 365 に変更する準備ができたら、ドメイン名レジストラーに新しい MX レコードの優先順位の値をリセットさせます。|  
+|Exchange Online|エイリアス (CNAME)|ユーザーが Exchange Online と Outlook デスクトップ クライアントまたはモバイル電子メール クライアントとの接続を容易にセットアップできるように支援するための自動検出レコード。 **注:** 組織独自のドメイン名 (https://outlook.com/owa/office365.com) ではなく http://mail.contoso.com) など、Outlook Web アクセスにアクセスする場合は、次のようにエイリアス (CName) レコードを構成できます (例: **Type = cname、TTL = 01:00:00、HostName = mail、Address = mail. office365 .com**|  
 |Exchange Online|TXT|Office 365 電子メールサーバーによって使用されるドメイン outlook.com が、ドメインの代わりに電子メールを送信する権限を持っていることを指定します。 このレコードを作成すれば、送信電子メールがスパムとしてフラグ付けされるのを容易に防ぐことができます。|  
 |Lync Online|SRV|Windows Live や Yahoo! などのその他のインスタント メッセージング サービスでフェデレーションを有効にするのに役立ちます。|  
 |Lync Online|SRV|ユーザーが Lync デスクトップ クライアントと Microsoft Lync Online の間の接続を簡単にセットアップできるように支援するための自動検出レコード。|  
@@ -197,7 +197,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
 > [!IMPORTANT]
 >  ドメインの確認が完了したら、Office 365 ポータルから DNS レコードを追加したり、その他の変更を加えたりしないでください。  
   
-###  <a name="BKMK_StepFour_ACCOUNTS"></a>次のステップ  
+###  <a name="BKMK_StepFour_ACCOUNTS"></a> 次の手順  
   
 -   ユーザー用の Microsoft Online Services アカウントを作成します。  
   
@@ -211,7 +211,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 -   [Office 365 サブスクリプションを管理し](#BKMK_ManageO365)ますか?サブスクリプションの管理に使用する管理者アカウントを変更します。 Office 365 管理ダッシュボードを開いて、サブスクリプションを管理します。  
   
--   [組織のインターネットドメインを Office 365 にリンク](#BKMK_StepThree)しますか?自分のドメイン宛ての電子メールを送受信できるようにするには、ドメインを Office 365 にリンクします。 (前述の「 [手順 3:組織のドメインを Office 365](#BKMK_StepThree)にリンクします。)  
+-   [組織のインターネットドメインを Office 365 にリンク](#BKMK_StepThree)しますか?自分のドメイン宛ての電子メールを送受信できるようにするには、ドメインを Office 365 にリンクします。 (前述の「[手順 3: 組織のドメインを Office 365 にリンクする](#BKMK_StepThree)」で説明しています)。  
   
 -   [Office 365 統合を無効に](#BKMK_Disable)しますか?Office 365 サービス、サブスクリプション、およびオンラインアカウントをダッシュボードから管理しない場合は、Office 365 統合を無効にすることができます。 これらのサービスは、Office 365 ポータルで引き続き利用できます。  
   
@@ -254,13 +254,13 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
 3.  指示に従ってウィザードを完了します。  
   
 > [!NOTE]
->  Office 365 統合を再び有効にするには、ダッシュボードの**ホーム**ページの **[サービス]** タブにある **[office 365 との統合]** タスクを使用します。 手順について[は、「手順 2:このトピックの前半の「Windows server Essentials](#BKMK_StepTwo)サーバーと Microsoft Office 365 を統合する」を参照してください。  
+>  Office 365 統合を再び有効にするには、ダッシュボードの**ホーム**ページの **[サービス]** タブにある **[office 365 との統合]** タスクを使用します。 手順については、このトピックで前述した「 [手順 2:Windows Server Essentials サーバーと Microsoft Office 365 を統合する](#BKMK_StepTwo)」を参照してください。  
   
 ##  <a name="BKMK_Troubleshoot"></a>Office 365 統合のトラブルシューティング  
  このセクションでは、Windows Server Essentials の Office 365 統合機能を使用するときに発生する可能性のある一般的な問題のトラブルシューティングに役立つ情報を提供します。  
   
 ###  <a name="BKMK_AcctsNotCreated"></a>一部の Microsoft Online Services アカウントが作成されませんでした  
- **[説明]**  
+ **説明**  
   
  ダッシュボードから1つ以上の Microsoft Online Services アカウントを作成できませんでした。  
   
@@ -273,7 +273,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
 3.  この問題が解決しない場合は、サーバーを再起動して、オンライン アカウントの作成を再度試みます。  
   
 ###  <a name="BKMK_ProblemUninstalling"></a>Office 365 統合のアンインストールで問題が発生しました  
- **[説明]**  
+ **説明**  
   
  Office 365 統合を無効にしようとしたときに不明なエラーが発生しました。  
   
@@ -283,11 +283,11 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 2.  エラーが再び発生する場合は、サーバーを再起動し、もう一度試してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>「  
   
--   [Windows Server Essentials のサービス統合の概要-パート1](http://blogs.technet.com/b/sbs/archive/2013/11/04/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)  
+-   [Windows Server Essentials のサービス統合の概要-パート1](https://blogs.technet.com/b/sbs/archive/2013/11/04/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)  
   
--   [Windows Server Essentials のサービス統合の概要-パート2](http://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-2.aspx)  
+-   [Windows Server Essentials のサービス統合の概要-パート2](https://blogs.technet.com/b/sbs/archive/2013/11/06/services-integration-overview-for-windows-server-2012-r2-essentials-part-2.aspx)  
   
 -   [Microsoft Office 365 を使用するクイックスタートガイド](../use/Quick-Start-Guide-to-Using-Microsoft-Office-365-with-Windows-Server-Essentials.md)  
   

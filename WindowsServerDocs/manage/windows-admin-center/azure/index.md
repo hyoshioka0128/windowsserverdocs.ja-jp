@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 05/31/2019
-ms.openlocfilehash: e76d1205c22d6ce484abc86ed5e3c74ac1010f29
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: b82d2eaa9283d99993102f1656262e2eda86cfff
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945285"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950124"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>Azure ハイブリッド サービスへの Windows Server の接続
 
@@ -31,7 +31,7 @@ Windows Admin Center 内で Azure ハイブリッド サービスを使用する
 
 ## <a name="discover-integrated-services-in-the-azure-hybrid-services-tool"></a>Azure ハイブリッド サービス ツールで統合サービスを見つける
 
-[Windows Admin Center](../understand/windows-admin-center.md) の Azure ハイブリッド サービス ツールは、統合されたすべての Azure サービスを一元管理されたハブに集約します。このハブでは、オンプレミスまたはハイブリッド環境に価値をもたらす、利用可能なすべての Azure サービスを簡単に見つけることができます。  
+[Windows Admin Center](../overview.md) の Azure ハイブリッド サービス ツールは、統合されたすべての Azure サービスを一元管理されたハブに集約します。このハブでは、オンプレミスまたはハイブリッド環境に価値をもたらす、利用可能なすべての Azure サービスを簡単に見つけることができます。  
 
 ![Azure ハイブリッド サービス ツールを示している Windows Admin Center のスクリーンショット](../media/azure-services/ahs-discover.png)
 
@@ -155,7 +155,7 @@ Azure Cloud Shell を利用し Windows Admin Center 内で Bash または PowerS
 詳しくは、「[Azure Cloud Shell の概要](https://docs.microsoft.com/azure/cloud-shell/overview)」をご覧ください。
 
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 - [Windows Admin Center を Azure に接続する](azure-integration.md)
 - [Windows Admin Center を Azure に展開する](deploy-wac-in-azure.md)

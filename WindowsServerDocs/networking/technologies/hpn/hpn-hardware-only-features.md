@@ -9,21 +9,21 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/12/2018
-ms.openlocfilehash: 5cf6a5057151c696bc1c29a1dcf6fc18c776605a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d5a4d5f06cd433fa92c617a3cb36e95d09be3b27
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405748"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950449"
 ---
-## <a name="hardware-only-ho-features-and-technologies"></a>ハードウェアのみ (HO) の機能とテクノロジ
+# <a name="hardware-only-ho-features-and-technologies"></a>ハードウェアのみ (HO) の機能とテクノロジ
 
 これらのハードウェアアクセラレータは、ソフトウェアと組み合わせてネットワークのパフォーマンスを向上させますが、ソフトウェア機能の一部には深くません。 これらの例としては、割り込みモデレーション、フロー制御、受信側 IPv4 チェックサムオフロードなどがあります。
 
 >[!TIP]
 >インストールされている NIC でサポートされている場合は、SH およびホー機能を使用できます。 以下の機能の説明では、NIC が機能をサポートしているかどうかを確認する方法について説明します。
 
-### <a name="address-checksum-offload"></a>アドレスチェックサムオフロード
+## <a name="address-checksum-offload"></a>アドレスチェックサムオフロード
 
 アドレスチェックサムオフロードは、送信と受信の両方について、アドレスチェックサム (IP、TCP、UDP) の計算を NIC ハードウェアにオフロードする NIC 機能です。
 
@@ -59,7 +59,7 @@ _**アドレスチェックサムのオフロードの使用に関するヒン�
 
 アドレスチェックサムオフロードは、ワークロードや状況に関係なく、常に有効にする必要があります。 この最も基本的なすべてのオフロードテクノロジは、常にネットワークパフォーマンスを向上させます。 チェックサムオフロードは、receive side scaling (RSS)、receive segment 合体 (RSC)、および large send offload (LSO) を含む他のステートレスオフロードにも必要です。
 
-### <a name="interrupt-moderation-im"></a>割り込みモデレーション (IM)
+## <a name="interrupt-moderation-im"></a>割り込みモデレーション (IM)
 
 IM は、オペレーティングシステムを中断する前に、複数の受信パケットをバッファーします。 NIC は、パケットを受信するとタイマーを開始します。 バッファーがいっぱいになった場合、またはタイマーの有効期限が切れた場合は、NIC によってオペレーティングシステムが中断されます。 
 
@@ -67,18 +67,18 @@ IM は、オペレーティングシステムを中断する前に、複数の�
 
 割り込みを減らし、パケット配信を過度に遅らせるというバランスを取ることができます。 一般に、割り込みモデレーションが有効になっていると、パケット処理の効率が向上します。 高パフォーマンスまたは低待機時間のアプリケーションでは、割り込みのモデレーションを無効にしたり減らしたりすることによる影響を評価する必要がある場合があります。
 
-### <a name="jumbo-frames"></a>Jumbo Frame
+## <a name="jumbo-frames"></a>Jumbo Frame
 
 ジャンボフレームは、アプリケーションが既定の1500バイトよりはるかに大きいフレームを送信できるようにする、NIC およびネットワークの機能です。 通常、ジャンボフレームの制限は約9000バイトですが、サイズが小さくなる場合があります。
 
 Windows Server 2012 R2 では、ジャンボフレームのサポートが変更されていませんでした。
 
-Windows Server 2016 では、新しいオフロードがあります。MTU_for_HNV. この新しいオフロードは、ジャンボフレームの設定と連携して、カプセル化されたトラフィックがホストと隣接するスイッチとの間にセグメンテーションを必要としないようにします。 SDN スタックのこの新機能により、NIC は、提供する MTU とネットワーク上で使用する MTU を自動的に計算します。 これらの MTU 値は、HNV オフロードが使用されている場合は異なります。 (機能の互換性テーブルでは、テーブル1の MTU_for_HNV は、HNVv2 のオフロードに直接関連しているため、HNVv2 のオフロードと同じ対話を行います)。
+Windows Server 2016 では、MTU_for_HNV の新しいオフロードがあります。 この新しいオフロードは、ジャンボフレームの設定と連携して、カプセル化されたトラフィックがホストと隣接するスイッチとの間にセグメンテーションを必要としないようにします。 SDN スタックのこの新機能により、NIC は、提供する MTU とネットワーク上で使用する MTU を自動的に計算します。 これらの MTU 値は、HNV オフロードが使用されている場合は異なります。 (機能の互換性テーブルでは、テーブル1の MTU_for_HNV は、HNVv2 のオフロードに直接関連しているため、HNVv2 のオフロードと同じ対話が行われます)。
 
-### <a name="large-send-offload-lso"></a>Large Send Offload (LSO)
+## <a name="large-send-offload-lso"></a>Large Send Offload (LSO)
 
 LSO を使用すると、アプリケーションは大量のデータブロックを NIC に渡すことができ、NIC はネットワークの最大転送単位 (MTU) 内に収まるパケットにデータを分割します。
 
-### <a name="receive-segment-coalescing-rsc"></a>Receive Segment Coalescing (RSC)
+## <a name="receive-segment-coalescing-rsc"></a>Receive Segment Coalescing (RSC)
 
 受信セグメント結合は、"サイズの大きい受信オフロード" とも呼ばれ、ネットワーク割り込み間に到着した同じストリームの一部であるパケットを、それらをオペレーティングシステムに配信する前に1つのパケットに分割する NIC 機能です。 RSC は、Hyper-v 仮想スイッチにバインドされている Nic では使用できません。 詳細については、「 [Receive Segment 合体 (RSC)](https://docs.microsoft.com/windows-server/networking/technologies/hpn/rsc-in-the-vswitch)」を参照してください。

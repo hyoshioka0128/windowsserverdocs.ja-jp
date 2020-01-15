@@ -9,26 +9,26 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 55d9c600c86b6b64efdb5c7d4437697539f887ae
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 3e620b5597a2d25a7bb02daf80c5812d25f6a987
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402950"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950033"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Azure の同じリージョン内のクラスター記憶域レプリカへのクラスター化
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 Azure の同じリージョン内でストレージレプリケーションをクラスター化するようにクラスターを構成できます。 次の例では、2ノードクラスターを使用していますが、クラスターへのクラスターの記憶域レプリカは2ノードクラスターに制限されていません。 次の図は、相互に通信できる2ノード記憶域スペースダイレクトクラスターであり、同じドメイン内にあり、同じリージョン内に存在します。
 
 プロセスの完全なチュートリアルについては、以下のビデオをご覧ください。
 
 パート1
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE26f2Y]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE26f2Y]
 
 パート2
-> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE269Pq]
+> [!VIDEO https://www.microsoft.com/videoplayer/embed/RE269Pq]
 
 ![アーキテクチャダイアグラムでは、同じリージョン内の Azure のクラスター間ストレージレプリカが紹介されています。](media/Cluster-to-cluster-azure-one-region/architecture.png)
 > [!IMPORTANT]
@@ -36,7 +36,7 @@ Azure の同じリージョン内でストレージレプリケーションを�
 
 1. リージョン内の Azure portal に[リソースグループ](https://ms.portal.azure.com/#create/Microsoft.ResourceGroup)を作成します (**米国西部 2**の**AZ2AZ** )。 
 2. 上で作成したリソースグループ (**AZ2AZ**) に、クラスターごとに1つずつ、2つの[可用性セット](https://ms.portal.azure.com/#create/Microsoft.AvailabilitySet-ARM)を作成します。 
-    a. 可用性セット (**az2azAS1**) b。 可用性セット (**az2azAS2**)
+    」を参照します。 可用性セット (**az2azAS1**) b。 可用性セット (**az2azAS2**)
 3. 以前に作成したリソースグループ (**az2az**) に[仮想ネットワーク](https://ms.portal.azure.com/#create/Microsoft.VirtualNetwork-ARM)(**az2az**) を作成し、少なくとも1つのサブネットを作成します。 
 4. [ネットワークセキュリティグループ](https://ms.portal.azure.com/#create/Microsoft.NetworkSecurityGroup-ARM)(**az2az-nsg**) を作成し、RDP: 3389 に1つの受信セキュリティ規則を追加します。 セットアップが完了したら、この規則を削除することを選択できます。 
 5. 以前に作成したリソースグループ (**AZ2AZ**) で Windows Server[仮想マシン](https://ms.portal.azure.com/#create/Microsoft.WindowsServer2016Datacenter-ARM)を作成します。 以前に作成した仮想ネットワーク (**az2az**) とネットワークセキュリティグループ (**az2az**) を使用します。 
@@ -76,16 +76,16 @@ Azure の同じリージョン内でストレージレプリケーションを�
 11. 各クラスター (**azlbr1**、**azlbr2**) の内部 Standard SKU [Load Balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM)を作成します。 
    
     クラスター IP アドレスをロードバランサーの静的プライベート IP アドレスとして指定します。
-    - azlbr1 = > フロントエンド IP:10.3.0.100 (仮想ネットワーク (**az2az**) サブネットから未使用の IP アドレスを取得する)
+    - azlbr1 = > フロントエンド IP: 10.3.0.100 (仮想ネットワーク (**az2az**) サブネットから未使用の ip アドレスを取得する)
     - 各ロードバランサーのバックエンドプールを作成します。 関連付けられているクラスターノードを追加します。
     - 正常性プローブの作成: ポート59999
-    - 負荷分散規則の作成:有効な Floating IP を使用して HA ポートを許可します。 
+    - 負荷分散規則の作成: 有効な Floating IP を使用して HA ポートを許可します。 
    
     クラスター IP アドレスをロードバランサーの静的プライベート IP アドレスとして指定します。
-    - azlbr2 = > フロントエンド IP:10.3.0.101 (仮想ネットワーク (**az2az**) サブネットから未使用の IP アドレスを取得する)
+    - azlbr2 = > フロントエンド IP: 10.3.0.101 (仮想ネットワーク (**az2az**) サブネットから未使用の ip アドレスを取得する)
     - 各ロードバランサーのバックエンドプールを作成します。 関連付けられているクラスターノードを追加します。
     - 正常性プローブの作成: ポート59999
-    - 負荷分散規則の作成:有効な Floating IP を使用して HA ポートを許可します。 
+    - 負荷分散規則の作成: 有効な Floating IP を使用して HA ポートを許可します。 
    
 12. 各クラスターノードで、ポート 59999 (正常性プローブ) を開きます。 
    
@@ -139,7 +139,7 @@ Azure の同じリージョン内でストレージレプリケーションを�
    
     あるクラスターから別のクラスターへのアクセスを双方向に許可します。
 
-    この例では、次のようになります。
+    この例では次のようになります。
 
     ```PowerShell
       Grant-SRAccess -ComputerName az2az1 -Cluster SRAZC2
@@ -159,7 +159,7 @@ Azure の同じリージョン内でストレージレプリケーションを�
     - ボリュームの場所:-c:\ClusterStorage\DataDisk2
     - ログの場所:-g:
 
-次のコマンドを実行します。
+次に、
 
 ```PowerShell
 

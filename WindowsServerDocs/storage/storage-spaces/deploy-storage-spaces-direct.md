@@ -10,12 +10,12 @@ author: stevenek
 ms.date: 06/07/2019
 description: 記憶域スペースダイレクトを使用して、Windows Server のソフトウェア定義記憶域を、ハイパー集約型インフラストラクチャまたは収束 (disaggregated とも呼ばれる) インフラストラクチャとして展開する手順を説明します。
 ms.localizationpriority: medium
-ms.openlocfilehash: 0ab96f737f7700e202c9d0382c06859c4ea84118
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 60b29cbebb19cd8f1ce364d1eb7e920759375285
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402813"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950021"
 ---
 # <a name="deploy-storage-spaces-direct"></a>記憶域スペース ダイレクトの展開
 
@@ -102,7 +102,7 @@ PS セッションを開始し、接続するノードのサーバー名また�
 Add-Computer -NewName "Server01" -DomainName "contoso.com" -Credential "CONTOSO\User" -Restart -Force  
 ```
 
-ストレージ管理者アカウントが Domain Admins グループのメンバーでない場合は、各ノードのローカルの Administrators グループにストレージ管理者アカウントを追加します。または、さらに詳細には、記憶域管理者に使用するグループを追加します。 次のコマンドを使用できます (または Windows PowerShell 関数を記述して、詳細については、「 [powershell を使用してドメインユーザーをローカルグループに追加](http://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx)する」を参照してください)。
+ストレージ管理者アカウントが Domain Admins グループのメンバーでない場合は、各ノードのローカルの Administrators グループにストレージ管理者アカウントを追加します。または、さらに詳細には、記憶域管理者に使用するグループを追加します。 次のコマンドを使用できます (または Windows PowerShell 関数を記述して、詳細については、「 [powershell を使用してドメインユーザーをローカルグループに追加](https://blogs.technet.com/b/heyscriptingguy/archive/2010/08/19/use-powershell-to-add-domain-users-to-a-local-group.aspx)する」を参照してください)。
 
 ```
 Net localgroup Administrators <Domain\Account> /add
@@ -117,7 +117,7 @@ Net localgroup Administrators <Domain\Account> /add
 - ファイルサーバー (収束展開の場合など、任意のファイル共有をホストする場合)
 - データ センター ブリッジング (iWARP ネットワーク アダプターではなく、RoCEv2 を使用している場合)
 - RSAT クラスタ リング PowerShell
-- Hyper-V の PowerShell
+- Hyper V の PowerShell
 
 PowerShell を使用してインストールするには、 [install-add-windowsfeature](https://docs.microsoft.com/powershell/module/microsoft.windows.servermanager.migration/install-windowsfeature)コマンドレットを使用します。 これは、次のように1つのサーバーで使用できます。
 
@@ -307,7 +307,7 @@ Write-Output "$ClusterName CSV cache size: $CSVCurrentCacheSize MB"
 4. **[クライアントアクセスポイント]** ページで、スケールアウトファイルサーバーの名前を入力します。
 5. 図1に示す**ように、ロールに移動**し、作成したクラスター化されたファイルサーバーロールの横に **[状態]** 列に **[実行中]** と表示されていることを確認して、役割が正常に設定されていることを確認します。
 
-   スケールアウトファイルサーバーフェールオーバークラスターマネージャー表示されて(media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "スケールアウトファイルサーバーいる")![フェールオーバークラスターマネージャーのスクリーンショット]
+   ![スケールアウトファイルサーバーを示すフェールオーバークラスターマネージャーのスクリーンショット](media/Hyper-converged-solution-using-Storage-Spaces-Direct-in-Windows-Server-2016/SOFS_in_FCM.png "スケールアウトファイルサーバーを表示フェールオーバークラスターマネージャー")
 
     **図 1**実行中の状態のスケールアウトファイルサーバーを示すフェールオーバークラスターマネージャー
 
@@ -329,14 +329,14 @@ Add-ClusterScaleOutFileServerRole -Name SOFS -Cluster FSCLUSTER
 
 仮想ディスクを作成して Csv に追加した後、仮想ディスクごとに1つの CSV につき1つのファイル共有を作成します。 Handiest (VMM) は、アクセス許可を処理するので、これを行う方法としては想定されていますが、環境内に存在しない場合は、Windows PowerShell を使用して展開を部分的に自動化できます。 System Center Virtual Machine Manager
 
-[Hyper-v ワークロードの SMB 共有の構成](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)スクリプトに含まれるスクリプトを使用して、グループと共有の作成プロセスを部分的に自動化します。 Hyper-v ワークロード用に記述されているため、他のワークロードを展開する場合は、共有を作成した後で設定を変更したり、追加の手順を実行したりすることが必要になる場合があります。 たとえば、Microsoft SQL Server を使用している場合、SQL Server サービスアカウントには、共有およびファイルシステムに対するフルコントロール権限が付与されている必要があります。
+[Hyper-v ワークロードの SMB 共有の構成](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)スクリプトに含まれるスクリプトを使用して、グループと共有の作成プロセスを部分的に自動化します。 Hyper-v ワークロード用に記述されているため、他のワークロードを展開する場合は、共有を作成した後で設定を変更したり、追加の手順を実行したりすることが必要になる場合があります。 たとえば、Microsoft SQL Server を使用している場合、SQL Server サービスアカウントには、共有およびファイルシステムに対するフルコントロール権限が付与されている必要があります。
 
 > [!NOTE]
 >  System Center Virtual Machine Manager を使用して共有を作成しない限り、クラスターノードを追加するときにグループメンバーシップを更新する必要があります。
 
 PowerShell スクリプトを使用してファイル共有を作成するには、次の手順を実行します。
 
-1. [Hyper-v ワークロードの SMB 共有の構成](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)に含まれるスクリプトを、ファイルサーバークラスターのいずれかのノードにダウンロードします。
+1. [Hyper-v ワークロードの SMB 共有の構成](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)に含まれるスクリプトを、ファイルサーバークラスターのいずれかのノードにダウンロードします。
 2. 管理システムでドメイン管理者の資格情報を使用して Windows PowerShell セッションを開き、次のスクリプトを使用して、Hyper-v コンピューターオブジェクトの Active Directory グループを作成し、変数の値を適切なものに変更します。environment
 
     ```PowerShell
@@ -371,7 +371,7 @@ PowerShell スクリプトを使用してファイル共有を作成するには
 
 ### <a name="step-43-enable-kerberos-constrained-delegation"></a>手順 4.3 Kerberos の制約付き委任を有効にする
 
-リモートのシナリオ管理に Kerberos の制約付き委任を設定し、ライブマイグレーションセキュリティを強化するには、いずれかの記憶域クラスターノードから、 [Hyper-v ワークロードの SMB 共有構成](http://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)に含まれる KCDSetup. ps1 スクリプトを使用します。 スクリプトのための小さなラッパーを次に示します。
+リモートのシナリオ管理に Kerberos の制約付き委任を設定し、ライブマイグレーションセキュリティを強化するには、いずれかの記憶域クラスターノードから、 [Hyper-v ワークロードの SMB 共有構成](https://gallery.technet.microsoft.com/SMB-Share-Configuration-4a36272a)に含まれる KCDSetup. ps1 スクリプトを使用します。 スクリプトのための小さなラッパーを次に示します。
 
 ```PowerShell
 $HyperVClusterName = "Compute01"
@@ -382,13 +382,13 @@ CD $ScriptFolder
 .\KCDSetup.ps1 -HyperVClusterName $HyperVClusterName -ScaleOutFSName $ScaleOutFSName -EnableLM
 ```
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 クラスター化されたファイルサーバーをデプロイした後は、実際のワークロードを導入する前に、合成ワークロードを使用してソリューションのパフォーマンスをテストすることをお勧めします。 これにより、ソリューションが正常に実行されていることを確認し、残存している問題を解決してからワークロードの複雑さを増すことができます。 詳細については、「[合成ワークロードを使用した記憶域スペースのパフォーマンスのテスト](https://technet.microsoft.com/library/dn894707.aspx)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
--   [Windows Server 2016 の記憶域スペースダイレクト](storage-spaces-direct-overview.md)
+-   [Windows Server 2016 での記憶域スペース ダイレクト](storage-spaces-direct-overview.md)
 -   [記憶域スペースダイレクトのキャッシュについて](understand-the-cache.md)
 -   [記憶域スペースダイレクトのボリュームの計画](plan-volumes.md)
 -   [記憶域スペースのフォールトトレランス](storage-spaces-fault-tolerance.md)

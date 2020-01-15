@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: 0e848260dd4ba3b37d1351fba7c24dd3cd283e69
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 11d8abfc23cb0f192ed74a1082e83c8e0c8e87e9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393936"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950093"
 ---
 # <a name="storage-quality-of-service"></a>記憶域のサービスの品質 (QoS)
 
@@ -45,7 +45,7 @@ Windows Server 2016 の記憶域 QoS を使用して、次の作業を実行で�
 
     記憶域 QoS では、記憶域サーバー上にフェールオーバー クラスターが必要ですが、計算サーバーはフェールオーバー クラスターになる必要はありません。 すべてのサーバー (記憶域用と計算用の両方) で、Windows Server 2016 を実行している必要があります。  
 
-    評価を目的とするスケールアウト ファイル サーバーを展開していない場合は、既存のサーバーまたは仮想マシンを使用して構築するための手順について、「[Windows Server 2012 R2 Storage: Step-by-step with Storage Spaces, SMB Scale-Out and Shared VHDX (Physical)](http://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx)」 (Windows Server 2012 R2 記憶域: 記憶域、SMB スケールアウトおよび共有 VHDX を使用した手順 (物理)) を参照してください。  
+    評価を目的とするスケールアウト ファイル サーバーを展開していない場合は、既存のサーバーまたは仮想マシンを使用して構築するための手順について、「[Windows Server 2012 R2 Storage: Step-by-step with Storage Spaces, SMB Scale-Out and Shared VHDX (Physical)](https://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx)」 (Windows Server 2012 R2 記憶域: 記憶域、SMB スケールアウトおよび共有 VHDX を使用した手順 (物理)) を参照してください。  
 
 -   **クラスターの共有ボリュームを使用した hyper-v。** このシナリオでは、次の両方のものが必要です。  
 
@@ -74,7 +74,7 @@ Hyper-V サーバーが仮想マシンを起動すると、それらはポリシ
 |フロー|VHD または VHDX ファイルに対して Hyper-V サーバーによって開かれる各ファイル ハンドルは ”フロー” と見なされます。 仮想マシンに 2 台の仮想ハードディスクが接続されている場合、ファイルごとに 1 つのファイル サーバー クラスターへのフローがあります。 VHDX が複数の仮想マシンで共有されている場合、仮想マシンごとに 1 つのフローがあります。|  
 |InitiatorName|各フローに対応するスケール アウト ファイル サーバーに報告されている仮想マシンの名前です。|  
 |InitiatorID|仮想マシンの ID と一致する識別子。  仮想マシンに同じ InitiatorName が指定されている場合でも、これを使用して常に個別のフローの仮想マシンを一意に識別することができます。|  
-|ポリシー|記憶域 QoS ポリシーは、クラスター データベースに保存され、PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy、PolicyType というプロパティがあります。|  
+|のポリシー|記憶域 QoS ポリシーは、クラスター データベースに保存され、PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy、PolicyType というプロパティがあります。|  
 |PolicyId|ポリシーの一意の識別子。  既定で生成されますが、必要に応じて指定できます。|  
 |MinimumIOPS|ポリシーによって提供される最小の正規化された IOPS。  ”予約” とも呼ばれます。|  
 |MaximumIOPS|ポリシーによって提供される最大の正規化された IOPS。  ”制限” とも呼ばれます。|  
@@ -122,7 +122,7 @@ Windows Server 2016 の Hyper-V の役割には、記憶域 QoS のサポート�
 -   Windows PowerShell: Add-WindowsFeature RSAT-Hyper-V-Tools  
 
 #### <a name="deploy-virtual-machines-to-run-workloads-for-testing"></a>テスト用ワークロードを実行するための仮想マシンを展開する  
-適切なワークロードと共にいくつかの仮想マシンをスケールアウト ファイル サーバー上に保存する必要があります。  負荷のシミュレーションをおよびいくつかのストレス テストの実行方法のヒントについては、推奨されるツール (DiskSpd) のページおよびいくつかの使用例「[DiskSpd, PowerShell and storage performance: measuring IOPs, throughput and latency for both local disks and SMB file shares](http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)」(DiskSpd、PowerShell、および記憶域のパフォーマンス: ローカル ディスクと SMB ファイル共有の両方の IOPS、スループット、および待機時間の測定) を参照してください。  
+適切なワークロードと共にいくつかの仮想マシンをスケールアウト ファイル サーバー上に保存する必要があります。  負荷のシミュレーションをおよびいくつかのストレス テストの実行方法のヒントについては、推奨されるツール (DiskSpd) のページおよびいくつかの使用例「[DiskSpd, PowerShell and storage performance: measuring IOPs, throughput and latency for both local disks and SMB file shares](https://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)」(DiskSpd、PowerShell、および記憶域のパフォーマンス: ローカル ディスクと SMB ファイル共有の両方の IOPS、スループット、および待機時間の測定) を参照してください。  
 
 このガイドに表示されるシナリオの例には、5 つの仮想マシンが含まれています。 BuildVM1、BuildVM2、BuildVM3、BuildVM4 は、低から中程度の記憶域の需要でデスクトップのワークロードを実行しています。 TestVm1 は、最も大きな記憶域の需要でオンライン トランザクション処理ベンチマークを実行しています。  
 
@@ -304,7 +304,7 @@ Aggregated (以前の SingleInstance) と Dedicated (以前の MultiInstance) �
 
 たとえば、最小値が 300 IOPS で最大値が 500 IOPS の Aggregated ポリシーを作成するとします。 このポリシーを 5 つの異なる VHD/VHDx ファイルに適用する場合、5 つの VHD/VHDx ファイルの合計が、300 IOPS (需要があり、記憶域システムがそのパフォーマンスを提供できる場合) 以上で 500 IOPS 未満であることが保証されるかどうかを確認します。 VHD/VHDx ファイルの IOPS の需要が同程度で、記憶域システムがそれを提供できる場合、各 VHD/VHDx ファイルは約 100 IOPS を取得します。  
 
-ただし、類似した制限を持つ Dedicated ポリシーを作成し、それを 5 つの異なる仮想マシン上の VHD/VHDx ファイルに適用した場合、各仮想マシンは 300 IOPS 以上 500 IOPS 未満を取得します。 仮想マシンに同程度の IOPS の高い需要があり、記憶域システムがそれを提供できる場合、各仮想マシンは、約 500 IOPS を取得します。 .  いずれかの仮想マシンに、同じ MulitInstance ポリシーが構成された複数の VHD/VHDx ファイルがある場合、それらは、VM のそのポリシーが適用されたファイルからの合計 IO が、制限を超えないように制限を共有します。  
+ただし、類似した制限を持つ Dedicated ポリシーを作成し、それを 5 つの異なる仮想マシン上の VHD/VHDx ファイルに適用した場合、各仮想マシンは 300 IOPS 以上 500 IOPS 未満を取得します。 仮想マシンに同程度の IOPS の高い需要があり、記憶域システムがそれを提供できる場合、各仮想マシンは、約 500 IOPS を取得します。 の順に移動します。  いずれかの仮想マシンに、同じ MulitInstance ポリシーが構成された複数の VHD/VHDx ファイルがある場合、それらは、VM のそのポリシーが適用されたファイルからの合計 IO が、制限を超えないように制限を共有します。  
 
 そのため、同じパフォーマンス特性を示すようにしたい VHD/VHDx ファイルのグループがあり、複数の類似したポリシーを作成するという問題を回避したい場合、単一の Dedicated ポリシーを作成し、各仮想マシンのファイルに適用することができます。
 
@@ -812,7 +812,7 @@ while ($true)
 }  
 ```  
 
-## <a name="frequently-asked-questions"></a>よく寄せられる質問  
+## <a name="frequently-asked-questions"></a>AppLocker: Frequently Asked Questions (AppLocker: よく寄せられる質問)  
 
 ### <a name="how-do-i-retain-a-storage-qos-policy-being-enforced-for-my-virtual-machine-if-i-move-its-vhdvhdx-files-to-another-storage-cluster"></a>仮想マシンの VHD/VHDx ファイルを別の記憶域クラスターに移動する場合、その仮想マシンに適用されている記憶域 QoS ポリシーをどのようにして維持すればよいですか  
 
@@ -885,7 +885,7 @@ IOPSNormalizationSize
 32768  
 ```    
 
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  
 - [Windows Server 2016 の記憶域レプリカ](../storage-replica/storage-replica-overview.md)  
-- [Windows Server 2016 の記憶域スペースダイレクト](../storage-spaces/storage-spaces-direct-overview.md)  
+- [Windows Server 2016 での記憶域スペース ダイレクト](../storage-spaces/storage-spaces-direct-overview.md)  

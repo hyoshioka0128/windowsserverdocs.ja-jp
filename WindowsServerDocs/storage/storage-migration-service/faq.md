@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 6895c4b5f74beb237378060f82135d6f578986b7
-ms.sourcegitcommit: e92a78f8d307200e64617431a701b9112a9b4e48
+ms.openlocfilehash: b7a6dd37cfc054ead153d274ffa7f0d13844305e
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2019
-ms.locfileid: "71973863"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953029"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>記憶域移行サービスに関してよく寄せられる質問 (FAQ)
 
@@ -42,7 +42,7 @@ Storage Migration Service は、Windows の操作に干渉する可能性があ�
 
 ## <a name="is-domain-controller-migration-supported"></a>ドメインコントローラーの移行はサポートされていますか?
 
-現在、記憶域移行サービスでは、Windows Server 2019 のドメインコントローラーは移行されません。 回避策として、Active Directory ドメインに複数のドメインコントローラーがある場合は、移行する前にドメインコントローラーを降格し、カットオーバーが完了した後で移行先を昇格させます。
+現在、記憶域移行サービスでは、Windows Server 2019 のドメインコントローラーは移行されません。 回避策として、Active Directory ドメインに複数のドメインコントローラーがある場合は、移行する前にドメインコントローラーを降格し、カットオーバーが完了した後で移行先を昇格させます。 ドメインコントローラーの移行元または移行先を移行することを選択した場合は、カットオーバーできません。 またはドメインコントローラーから移行する場合は、ユーザーとグループを移行しないでください。
 
 ## <a name="what-attributes-are-migrated-by-the-storage-migration-service"></a>Storage Migration Service によってどのような属性が移行されますか?
 
@@ -59,17 +59,17 @@ Storage Migration Service は、Windows の操作に干渉する可能性があ�
     - 同時ユーザー数の制限
     - 継続的に利用可能
     - 説明           
-    - データの暗号化
+    - [データの暗号化]
     - Id リモート処理
     - インフラストラクチャ
     - 名前
     - パス
-    - 役割
+    - スコープ
     - スコープ名
     - セキュリティ記述子
-    - シャドウコピー
-    - 既定
-    - Temporary
+    - シャドウ コピー
+    - 特殊
+    - 一時
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>複数のサーバーを1台のサーバーに統合することはできますか。
 
@@ -89,9 +89,9 @@ Storage Migration Service には、Storage Migration Service プロキシサー�
 
 - **対象のオペレーティングシステムに Windows Server 2019 を使用します。** Windows Server 2019 には、Storage Migration Service プロキシサービスが含まれています。 この機能をインストールして Windows Server 2019 の変換先に移行すると、すべての転送は、ソースと宛先の間で直接表示されるように動作します。 対象のコンピューターが Windows Server 2012 R2 または Windows Server 2016 の場合、このサービスは、転送中に orchestrator 上で実行されます。これは、転送がダブルホップで、処理速度が大幅に低下することを意味します。 Windows Server 2012 R2 または Windows Server 2016 の変換先で複数のジョブが実行されている場合、orchestrator はボトルネックになります。 
 
-- **既定の転送スレッドを変更します。** 記憶域移行サービスのプロキシサービスは、指定されたジョブで8個のファイルを同時にコピーします。 Storage Migration Service プロキシを実行しているすべてのノードで、次のレジストリの REG_DWORD 値の名前を10進数で調整することにより、同時コピースレッド数を増やすことができます。
+- **既定の転送スレッドを変更します。** 記憶域移行サービスのプロキシサービスは、指定されたジョブで8個のファイルを同時にコピーします。 Storage Migration Service プロキシを実行しているすべてのノードで、次のレジストリ REG_DWORD 値の名前を10進数で調整することにより、同時コピースレッド数を増やすことができます。
 
-    HKEY_Local_Machine\Software\Microsoft\SMSProxy
+    HKEY_Local_Machine \Software\Microsoft\SMSProxy
     
     FileTransferThreadCount
 
@@ -110,7 +110,7 @@ Storage Migration Service には、Storage Migration Service プロキシサー�
    - NIC チーミングを使用して構成されているその他のネットワークアダプターの1つ
    - RDMA をサポートしているネットワーク アダプター 1 つ以上
 
-- **ドライバーを更新します。** 必要に応じて、最新のベンダーの記憶域とエンクロージャのファームウェアとドライバー、最新のベンダー HBA ドライバー、最新のベンダーの BIOS/UEFI ファームウェア、最新のベンダーネットワークドライバー、最新のマザーボードのチップセットドライバーをソース、ターゲット、および orchestrator にインストールします。サーバー. 必要に応じてノードを再起動します。 共有記憶域およびネットワーク ハードウェアの構成については、ハードウェア ベンダーのドキュメントを参照してください。
+- **ドライバーを更新します。** 必要に応じて、最新のベンダーの記憶域とエンクロージャのファームウェアとドライバー、最新のベンダーの HBA ドライバー、最新のベンダーの BIOS/UEFI ファームウェア、最新のベンダーのネットワークドライバー、最新のマザーボードのチップセットドライバーを、ソース、ターゲット、および orchestrator サーバーにインストールします。 必要に応じてノードを再起動します。 共有記憶域およびネットワーク ハードウェアの構成については、ハードウェア ベンダーのドキュメントを参照してください。
 
 - **高パフォーマンスの処理を有効にします。** サーバーの BIOS および UEFI の設定が、C 状態の無効化、QPI 速度の設定、NUMA の有効化、最大メモリ動作周波数の設定など、高パフォーマンスを有効にする設定であることを確認します。 Windows Server の電源管理が高パフォーマンスに設定されていることを確認します。 必要に応じて再起動します。 移行が完了したら、必ずこれらの状態を適切な状態に戻してください。 
 
@@ -129,12 +129,12 @@ Windows Server 2019 に出荷された記憶域移行サービスのバージョ
 Storage Migration Service では、hidden c:\programdata\microsoft\storagemigrationservice フォルダーに既定でインストールされる拡張ストレージエンジン (ESE) データベースを使用します。 ジョブが追加され、転送が完了すると、このデータベースは拡張されます。ジョブを削除しない場合は、何百万ものファイルを移行した後で、大きなドライブ領域を消費する可能性があります。 データベースを移動する必要がある場合は、次の手順を実行します。
 
 1. Orchestrator コンピューターの "Storage Migration Service" サービスを停止します。
-2. @No__t-0 フォルダーの所有権を取得する
+2. `%programdata%/Microsoft/StorageMigrationService` フォルダーの所有権を取得する
 3. ユーザーアカウントを追加して、その共有とそのすべてのファイルとサブフォルダーを完全に制御できるようにします。
 4. フォルダーを orchestrator コンピューターの別のドライブに移動します。
 5. 次のレジストリ REG_SZ 値を設定します。
 
-    HKEY_Local_Machine\Software\Microsoft\SMS DatabasePath =*別のボリューム上の新しいデータベースフォルダーへのパス*。 
+    HKEY_Local_Machine \Software\Microsoft\SMS DatabasePath =*別のボリューム上の新しいデータベースフォルダーへのパス*。 
 6. システムがそのフォルダーのすべてのファイルとサブフォルダーに対してフルコントロールを持っていることを確認する
 7. 自分のアカウントのアクセス許可を削除します。
 8. "Storage Migration Service" サービスを開始します。
@@ -145,7 +145,7 @@ Storage Migration Service では、hidden c:\programdata\microsoft\storagemigrat
 
 - Windows 10 に含まれているフィードバックハブツールを使用して、[機能の提案] をクリックし、[Windows Server] と [記憶域の移行] のカテゴリを指定します。
 - [Windows Server UserVoice](https://windowsserver.uservoice.com)サイトを使用する
-- 電子メール smsfeed@microsoft.com
+- smsfeed@microsoft.com へのメール
 
 バグを報告するには:
 
@@ -158,6 +158,6 @@ Storage Migration Service では、hidden c:\programdata\microsoft\storagemigrat
  - [Windows Server 2019 Technet フォーラム](https://social.technet.microsoft.com/Forums/en-US/home?forum=ws2019&filter=alltypes&sort=lastpostdesc)の投稿 
  - [Microsoft サポート](https://support.microsoft.com)を使用してサポートケースを開く
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 - [記憶域移行サービスの概要](overview.md)

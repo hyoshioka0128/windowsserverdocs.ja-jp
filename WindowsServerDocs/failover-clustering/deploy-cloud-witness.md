@@ -9,12 +9,12 @@ ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: クラウド内の Windows Server フェールオーバークラスターのミラーリング監視サーバーをホストするために Microsoft Azure を使用する方法 (クラウド監視を展開する方法)
-ms.openlocfilehash: 1f38a1a436cfced8637b743817dc1b3d150f7fa6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ad5ff47a72319fee7650d1d9c0d0616cfaaa22d3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369881"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948173"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>フェールオーバー クラスターのクラウド監視を展開する
 
@@ -26,7 +26,7 @@ ms.locfileid: "71369881"
 
 図1は、Windows Server 2016 を使用したマルチサイトの拡張フェールオーバークラスタークォーラム構成を示しています。 この例の構成 (図 1) では、2つのノード (サイトと呼ばれます) が2つのデータセンターにあります。 クラスターが2つ以上のデータセンターにまたがる可能性があることに注意してください。 また、各データセンターには2つ以上のノードを含めることができます。 このセットアップでの一般的なクラスタークォーラム構成 (自動フェールオーバー SLA) は、各ノードに投票を提供します。 いずれかのデータセンターで停電が発生した場合でも、クラスターを実行し続けることができるように、クォーラム監視に1つの追加の投票が与えられます。 数値演算は単純であり、投票の合計は5件です。クラスターで実行を維持するには、3票が必要です。  
 
-![2 つの他の]サイトの2つのノードを持つファイル共有監視 ((media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_1.png "ファイル共有監視"))  
+![2つの他のサイトの2つのノードを持つ3つ目の独立したサイトでのファイル共有監視](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_1.png "ファイル共有監視")  
 **図 1: ファイル共有監視をクォーラム監視として使用する**  
 
 1つのデータセンターで停電が発生した場合、他のデータセンターのクラスターと同等の機会を提供して実行を維持するには、2つのデータセンター以外の場所でクォーラム監視をホストすることをお勧めします。 通常、これは、クォーラム監視 (ファイル共有監視) として使用されるファイル共有をバッキングするファイルサーバーをホストするために、3つ目の個別のデータセンター (サイト) が必要であることを意味します。  
@@ -75,15 +75,15 @@ Windows Server 2012 R2 以降では、クラスターが監視の投票を自動
 
 ### <a name="to-create-an-azure-storage-account"></a>Azure ストレージアカウントを作成するには
 
-1. [Azure Portal](http://portal.azure.com)にサインインします。
-2. ハブメニューで、[新規-> データ + ストレージ-> ストレージアカウント] を選択します。
+1. [Azure portal](https://portal.azure.com) にサインインします。
+2. [ハブ] メニューで、[新規]、[データ + ストレージ]、[ストレージ アカウント] の順に選択します。
 3. [ストレージアカウントの作成] ページで、次の操作を行います。
-    1. ストレージアカウントの名前を入力します。
-    <br>ストレージアカウント名の長さは 3 ~ 24 文字にする必要があり、数字と小文字のみを含めることができます。 ストレージアカウント名は、Azure 内で一意である必要もあります。
+    1. ストレージ アカウントの名前を入力します。
+    <br>ストレージ アカウント名の長さは 3 から 24 文字である必要があり、数字と小文字のみを使用できます。 ストレージアカウント名は、Azure 内で一意である必要もあります。
         
     2. **[アカウントの種類]** で **、[汎用] を選択し**ます。
     <br>クラウドミラーリング監視サーバーには、Blob ストレージアカウントを使用できません。
-    3. **[パフォーマンス]** で **[標準]** を選択します。
+    3. **[パフォーマンス]** では、 **[Standard]** を選択します。
     <br>クラウド監視に Azure Premium Storage を使用することはできません。
     2. **レプリケーション**の場合は、 **[ローカル冗長ストレージ (LRS)]** を選択します。
     <br>フェールオーバークラスタリングでは、データの読み取り時に一定の整合性を保証する必要がある、アービトレーションポイントとして blob ファイルを使用します。 そのため、**レプリケーション**の種類には **、ローカル冗長ストレージ**を選択する必要があります。
@@ -172,5 +172,5 @@ Set-ClusterQuorum -CloudWitness -AccountName <StorageAccountName> -AccessKey <St
 ### <a name="proxy-considerations-with-cloud-witness"></a>クラウド監視でのプロキシに関する考慮事項  
 クラウド監視では、HTTPS (既定のポート 443) を使用して Azure blob service との通信を確立します。 ネットワークプロキシ経由で HTTPS ポートにアクセスできることを確認します。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 - [Windows Server でのフェールオーバークラスタリングの新機能](whats-new-in-failover-clustering.md)

@@ -15,12 +15,12 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 67d8a66552f77a66e1689989f412a844ef527880
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 016d9d2dcc26572f8d248ef2f4a922da2e456b83
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404331"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949896"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>手順 7.5. Windows 10 デバイスに OMA-URI ベースの VPNv2 プロファイルを作成する
 
@@ -35,7 +35,7 @@ ms.locfileid: "71404331"
 
 このセクションで説明するすべてのものは、VPN を条件付きアクセスで動作させるために最低限必要です。 WIP を使用した分割トンネリングについては説明しません。また、カスタムの Intune デバイス構成プロファイルを作成して AutoVPN の機能を取得します。 以下の設定を、前の手順5で作成した VPN プロファイルに統合し[ます。Windows 10 クライアント Always On VPN 接続を構成](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)します。  この例では、 [Intune ポリシーを使用して VPN クライアントを構成](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune)します。 
 
-**要件**
+**前提条件:**
 
 Windows 10 クライアントコンピューターは、Intune を使用して VPN 接続を使用して既に構成されています。   
 
@@ -54,7 +54,7 @@ Windows 10 クライアントコンピューターは、Intune を使用して V
 3. **\</acceptservername >\</eaptype >** で終わるセクションを見つけて、これら2つの値の間に次の文字列を挿入します。これにより、VPN クライアントに AAD 条件付きアクセス証明書を選択するためのロジックを提供します。
 
     ```XML
-    <TLSExtensions xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2"><FilteringInfo xmlns="http://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV3"><EKUMapping><EKUMap><EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID></EKUMap></EKUMapping><ClientAuthEKUList Enabled="true"><EKUMapInList><EKUName>AAD Conditional Access</EKUName></EKUMapInList></ClientAuthEKUList></FilteringInfo></TLSExtensions>
+    <TLSExtensions xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV2"><FilteringInfo xmlns="https://www.microsoft.com/provisioning/EapTlsConnectionPropertiesV3"><EKUMapping><EKUMap><EKUName>AAD Conditional Access</EKUName><EKUOID>1.3.6.1.4.1.311.87</EKUOID></EKUMap></EKUMapping><ClientAuthEKUList Enabled="true"><EKUMapInList><EKUName>AAD Conditional Access</EKUName></EKUMapInList></ClientAuthEKUList></FilteringInfo></TLSExtensions>
     ```
 
 4. **[条件付きアクセス]** ブレードを選択し、**この VPN 接続のトグル条件付きアクセス**を**有効**にします。
@@ -86,7 +86,7 @@ VPN プロファイルがクライアントデバイスに表示されない場�
 5. **[同期]** を選択し、[設定\\ネットワーク & インターネット\\vpn] の下に vpn プロファイルが表示されることを確認します。
 
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 Azure AD 条件付きアクセスを使用するように VPN プロファイルを構成しました。 
 

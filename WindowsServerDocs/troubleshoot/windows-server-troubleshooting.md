@@ -10,19 +10,19 @@ ms.date: 10/17/2019
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: 829ae15495d54aca8c476909988ea5a44ea487e7
-ms.sourcegitcommit: 8a017624682fe0172076f9169a9fa17aa972907f
+ms.openlocfilehash: 5e6312075fffd62b599fb62f39cc94ca1f309a44
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74852629"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950161"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Windows Server コンポーネントのトラブルシューティング
 
 >- [!TIP]
 > 以前のバージョンの Windows Server に関する情報をお探しの場合は、 Docs.microsoft.com の他の[Windows Server ライブラリ](/previous-versions/windows/)を確認してください。 また、[このサイト](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)で特定の情報を検索することもできます。
 
-Microsoft は、Windows Server の両方の更新プログラムを定期的にリリースします。 お客様のサーバーでセキュリティ更新プログラムなどの今後の更新プログラムを受信できることを確認するには、サーバーを最新の状態に維持する必要があります。 リリース済みの更新プログラムの完全な一覧については、 [windows 10 および Windows Server 2016 の更新履歴](https://support.microsoft.com/en-us/help/4000825/windows-10-windows-server-2016-update-history)を確認してください。
+Microsoft は、Windows Server の両方の更新プログラムを定期的にリリースします。 お客様のサーバーでセキュリティ更新プログラムなどの今後の更新プログラムを受信できることを確認するには、サーバーを最新の状態に維持する必要があります。 リリース済みの更新プログラムの完全な一覧については、 [windows 10 および Windows Server 2016 の更新履歴](https://support.microsoft.com/help/4000825/windows-10-windows-server-2016-update-history)を確認してください。
 
 このセクションには、Windows Server の問題を解決するのに役立つ高度なトラブルシューティングのトピックとリンクが含まれています。 追加のトピックが利用可能になると追加されます。
 

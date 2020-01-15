@@ -9,19 +9,19 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0685e0935a031b2f73474d59b025b70fc735902d
-ms.sourcegitcommit: 73898afec450fb3c2f429ca373f6b48a74b19390
+ms.openlocfilehash: 7fd06c06a2ea7af93b87c471f77b788ac51bddac
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71935042"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949215"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>AD FS 2019 で HTTP セキュリティ応答ヘッダーをカスタマイズする 
  
-一般的なセキュリティの脆弱性から保護するために、管理者はブラウザーベースの保護メカニズムで最新の機能強化を利用できるようにするために、HTTP セキュリティ応答ヘッダーをカスタマイズする機能が追加されました 2019 AD FSAD FS によって送信されます。 これは`Get-AdfsResponseHeaders` 、と`Set-AdfsResponseHeaders`の2つの新しいコマンドレットの導入によって実現されます。  
+一般的なセキュリティの脆弱性から保護するために、管理者はブラウザーベースの保護メカニズムで最新の機能強化を利用できるようにするために、HTTP セキュリティ応答ヘッダーをカスタマイズする機能が追加されました 2019 AD FSAD FS によって送信されます。 これは、`Get-AdfsResponseHeaders` と `Set-AdfsResponseHeaders`の2つの新しいコマンドレットの導入によって実現されます。  
 
 >[!NOTE]
->コマンドレットを使用して HTTP セキュリティ応答ヘッダー (CORS ヘッダーを除く) を`Get-AdfsResponseHeaders`カスタマイズ`Set-AdfsResponseHeaders`する機能: とは、AD FS 2016 に移植ました。 [KB4493473](https://support.microsoft.com/en-us/help/4493473/windows-10-update-kb4493473)と[KB4507459](https://support.microsoft.com/en-us/help/4507459/windows-10-update-kb4507459)をインストールすることによって、AD FS 2016 に機能を追加できます。 
+>コマンドレットを使用して HTTP セキュリティ応答ヘッダー (CORS ヘッダー以外) をカスタマイズする機能は、`Get-AdfsResponseHeaders` と `Set-AdfsResponseHeaders` は AD FS 2016 に移植ました。 [KB4493473](https://support.microsoft.com/help/4493473/windows-10-update-kb4493473)と[KB4507459](https://support.microsoft.com/help/4507459/windows-10-update-kb4507459)をインストールすることによって、AD FS 2016 に機能を追加できます。 
 
 このドキュメントでは、一般的に使用されるセキュリティ応答ヘッダーについて説明し、AD FS 2019 によって送信されるヘッダーをカスタマイズする方法を示します。   
  
@@ -40,11 +40,11 @@ ms.locfileid: "71935042"
 
  
 ## <a name="http-security-response-headers"></a>HTTP セキュリティ応答ヘッダー 
-応答ヘッダーは、AD FS によって web ブラウザーに送信される発信 HTTP 応答に含まれます。 次に示すように、 `Get-AdfsResponseHeaders`コマンドレットを使用してヘッダーを表示できます。  
+応答ヘッダーは、AD FS によって web ブラウザーに送信される発信 HTTP 応答に含まれます。 ヘッダーは、次に示すように、`Get-AdfsResponseHeaders` コマンドレットを使用して一覧表示できます。  
 
 ![ヘッダー応答](media/customize-http-security-headers-ad-fs/header1.png)
 
-上`ResponseHeaders`のスクリーンショットの属性は、すべての HTTP 応答で AD FS によって含まれるセキュリティヘッダーを識別します。 応答ヘッダーは、が (既定値`ResponseHeadersEnabled` ) に`True`設定されている場合にのみ送信されます。 この値をに`False`設定すると、HTTP 応答にセキュリティヘッダーのいずれかを含め AD FS を防ぐことができます。 ただし、これは推奨されません。  これを行うには、次のようにします。
+上のスクリーンショットの `ResponseHeaders` 属性は、すべての HTTP 応答で AD FS によって含まれるセキュリティヘッダーを識別します。 応答ヘッダーは、`ResponseHeadersEnabled` が `True` (既定値) に設定されている場合にのみ送信されます。 この値を `False` に設定すると、HTTP 応答にセキュリティヘッダーのいずれかを含め AD FS を防ぐことができます。 ただし、これは推奨されません。  これを行うには、次のようにします。
 
 ```PowerShell
 Set-AdfsResponseHeaders -EnableResponseHeaders $false
@@ -55,23 +55,23 @@ HSTS は、HTTP と HTTPS の両方のエンドポイントを持つサービス
  
 Web 認証トラフィックのすべての AD FS エンドポイントは、HTTPS 経由で排他的に開かれます。 その結果、AD FS http Strict Transport セキュリティポリシー機構が提供する脅威を効果的に軽減できます (http にリスナーが存在しないため、既定では HTTP へのダウングレードは行われません)。 ヘッダーをカスタマイズするには、次のパラメーターを設定します。
  
-- **最長有効期間 =&lt;&gt;有効期限-** 有効期限 (秒) は、HTTPS を使用してのみサイトにアクセスする必要がある期間を指定します。 既定値と推奨値は31536000秒 (1 年) です。  
+- **最長有効期間 =&lt;有効期限-時間&gt;** –有効期限 (秒) は、HTTPS を使用してのみサイトにアクセスする必要がある期間を指定します。 既定値と推奨値は31536000秒 (1 年) です。  
 - **includeSubDomains** –これは省略可能なパラメーターです。 指定した場合、HSTS ルールもすべてのサブドメインに適用されます。  
  
 #### <a name="hsts-customization"></a>HSTS のカスタマイズ 
-既定では、ヘッダーが有効に`max-age`なり、1年に設定されます。ただし`max-age` 、管理者は、(最長有効期間の値を減らすことは推奨され`Set-AdfsResponseHeaders`ません) を変更することも、コマンドレットを使用してサブドメインの hsts を有効にすることもできます。  
+既定では、ヘッダーが有効になっていて、`max-age` 1 年に設定されています。ただし、管理者は `max-age` を変更することができます (最長有効期間を減らすことは推奨されません)。または、`Set-AdfsResponseHeaders` コマンドレットを使用してサブドメインの HSTS を有効にすることもできます  
  
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Strict-Transport-Security" -SetHeaderValue "max-age=<seconds>; includeSubDomains" 
 ``` 
 
-例: 
+次に例を示します。 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Strict-Transport-Security" -SetHeaderValue "max-age=31536000; includeSubDomains" 
  ```
 
-既定では、ヘッダーは`ResponseHeaders`属性に含まれていますが、管理者は`Set-AdfsResponseHeaders`コマンドレットを使用してヘッダーを削除できます。  
+既定では、ヘッダーは `ResponseHeaders` 属性に含まれています。ただし、管理者は `Set-AdfsResponseHeaders` コマンドレットを使用してヘッダーを削除できます。  
  
 ```PowerShell
 Set-AdfsResponseHeaders -RemoveHeaders "Strict-Transport-Security" 
@@ -82,25 +82,25 @@ AD FS 既定では、対話型ログインの実行時に外部アプリケー�
  
 ただし、まれに、iFrame 対応の対話型 AD FS ログインページを必要とする特定のアプリケーションを信頼する場合があります。 この目的では、' X-Frame オプション ' ヘッダーが使用されます。  
  
-この HTTP セキュリティ応答ヘッダーは、 &lt;フレーム&gt;/&lt;iframe&gt;でページを表示できるかどうかをブラウザーに通知するために使用されます。 ヘッダーは、次のいずれかの値に設定できます。 
+この HTTP セキュリティ応答ヘッダーは、ブラウザーとの通信に使用されます。これは、&lt;フレーム&gt;/&lt;iframe&gt;にページを表示できるかどうかを示します。 ヘッダーは、次のいずれかの値に設定できます。 
  
-- **拒否**–フレーム内のページは表示されません。 これが既定の推奨設定です。  
+- **拒否**–フレーム内のページは表示されません。 これは既定の推奨設定です。  
 - **sameorigin** –原点が web ページの配信元と同じ場合にのみ、ページがフレームに表示されます。 このオプションは、すべての先祖が同じオリジンに含まれていない限り、あまり役に立ちません。  
-- [**許可元<specified origin>**  ]-ページは、配信元 (たとえば、. ") https://www の場合にのみフレームに表示されます。com) は、ヘッダー内の特定のオリジンと一致します。 
+- **allow from <specified origin>** -ページは、配信元 (たとえば、 https://www ) の場合にのみフレームに表示されます。com) は、ヘッダー内の特定のオリジンと一致します。 
 
 #### <a name="x-frame-options-customization"></a>X フレームオプションのカスタマイズ  
-既定では、ヘッダーは [拒否] に設定されます。ただし、管理者は`Set-AdfsResponseHeaders`コマンドレットを使用して値を変更できます。  
+既定では、ヘッダーは [拒否] に設定されます。ただし、管理者は `Set-AdfsResponseHeaders` コマンドレットを使用して値を変更できます。  
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-Frame-Options" -SetHeaderValue "<deny/sameorigin/allow-from<specified origin>>" 
  ```
 
-例: 
+次に例を示します。 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-Frame-Options" -SetHeaderValue "allow-from https://www.example.com" 
  ```
 
-既定では、ヘッダーは`ResponseHeaders`属性に含まれていますが、管理者は`Set-AdfsResponseHeaders`コマンドレットを使用してヘッダーを削除できます。  
+既定では、ヘッダーは `ResponseHeaders` 属性に含まれています。ただし、管理者は `Set-AdfsResponseHeaders` コマンドレットを使用してヘッダーを削除できます。  
 
 ```PowerShell
 Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options" 
@@ -111,22 +111,22 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options"
  
 - **0** : XSS フィルター処理を無効にします。 推奨されません。  
 - **1** : XSS フィルター処理を有効にします。 XSS 攻撃が検出されると、ブラウザーによってページがサニタイズされます。   
-- **1; mode = block** – XSS フィルターを有効にします。 XSS 攻撃が検出されると、ブラウザーはページのレンダリングを防止します。 これが既定の推奨設定です。  
+- **1; mode = block** – XSS フィルターを有効にします。 XSS 攻撃が検出されると、ブラウザーはページのレンダリングを防止します。 これは既定の推奨設定です。  
 
 #### <a name="x-xss-protection-customization"></a>X-XSS-保護のカスタマイズ 
-既定では、ヘッダーは1に設定されます。mode = block;ただし、管理者は`Set-AdfsResponseHeaders`コマンドレットを使用して値を変更できます。  
+既定では、ヘッダーは1に設定されます。mode = block;ただし、管理者は `Set-AdfsResponseHeaders` コマンドレットを使用して値を変更できます。  
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-XSS-Protection" -SetHeaderValue "<0/1/1; mode=block/1; report=<reporting-uri>>" 
 ``` 
 
-例: 
+次に例を示します。 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-XSS-Protection" -SetHeaderValue "1" 
  ```
 
-既定では、ヘッダーは`ResponseHeaders`属性に含まれていますが、管理者は`Set-AdfsResponseHeaders`コマンドレットを使用してヘッダーを削除できます。 
+既定では、ヘッダーは `ResponseHeaders` 属性に含まれています。ただし、管理者は `Set-AdfsResponseHeaders` コマンドレットを使用してヘッダーを削除できます。 
 
 ```PowerShell
 Set-AdfsResponseHeaders -RemoveHeaders "X-XSS-Protection" 
@@ -183,12 +183,12 @@ CSP ヘッダーをカスタマイズする場合は、ブラウザーで web �
  
 **既定の-src**ディレクティブは、各ディレクティブを明示的に指定せずに[-src ディレクティブ](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/default-src)を変更するために使用されます。 たとえば、次の例では、ポリシー1はポリシー2と同じです。  
 
-ポリシー1 
+ポリシー 1 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src 'self'" 
 ```
  
-ポリシー2
+ポリシー 2
 ```PowerShell 
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "script-src ‘self'; img-src ‘self'; font-src 'self';  
 frame-src 'self'; manifest-src 'self'; media-src 'self';" 
@@ -205,15 +205,15 @@ Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue
 - ' unsafe ' インライン ' –ポリシーでこれを指定すると、インライン JavaScript と CSS を使用できます。 
 - ' unsafe-eval ' –ポリシーでこれを指定すると、eval のような JavaScript 機構でテキストを使用できます。 
 - none: これを指定すると、配信元からのコンテンツの読み込みが制限されます。 
-- データ:-データの指定:Uri を使用すると、コンテンツ作成者はドキュメントに小さなファイルをインラインで埋め込むことができます。 使用しないことをお勧めします。  
+- data:-data: Uri を指定すると、コンテンツ作成者はドキュメントに小さなファイルをインラインで埋め込むことができます。 使用しないことをお勧めします。  
  
 >[!NOTE]
 >AD FS は、認証プロセスで JavaScript を使用するため、既定のポリシーに ' unsafe ' インライン ' と ' unsafe-eval ' ソースを含めることで JavaScript を有効にします。  
 
-### <a name="custom-headers"></a>カスタムヘッダー 
+### <a name="custom-headers"></a>カスタム ヘッダー 
 上記のセキュリティ応答ヘッダー (HSTS、CSP、X フレームオプション、X-XSS-Protection、CORS) に加えて、AD FS 2019 は新しいヘッダーを設定する機能を提供します。  
  
-例:新しいヘッダー "TestHeader" を値を "TestHeaderValue" に設定するには 
+例: 新しいヘッダー "TestHeader" を値を "TestHeaderValue" に設定するには 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderValue" 
@@ -230,11 +230,11 @@ Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderV
 |-----|-----|
 |HTTP Strict-Transport-Security (HSTS)|[HSTS ブラウザーの互換性](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security#Browser_compatibility)|
 |X フレームオプション|[X フレームオプションブラウザーの互換性](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility)| 
-|X-XSS-保護|[X-XSS-保護ブラウザーの互換性](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection#Browser_compatibility)| 
-|クロスオリジンリソース共有 (CORS)|[CORS ブラウザーの互換性](https://developer.mozilla.org/docs/Web/HTTP/CORS#Browser_compatibility) 
+|X-XSS-保護|[X-XSS-保護ブラウザーの互換性](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-XSS-Protection#Browser_compatibility)| 
+|クロスオリジン リソース共有 (CORS)|[CORS ブラウザーの互換性](https://developer.mozilla.org/docs/Web/HTTP/CORS#Browser_compatibility) 
 |コンテンツセキュリティポリシー (CSP)|[CSP ブラウザーの互換性](https://developer.mozilla.org/docs/Web/HTTP/CSP#Browser_compatibility) 
 
-## <a name="next"></a>Next
+## <a name="next"></a>[次へ]
 
 - [AD FS ヘルプトラブルシューティングガイドを使用する](https://aka.ms/adfshelp/troubleshooting )
 - [AD FS のトラブルシューティング](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)

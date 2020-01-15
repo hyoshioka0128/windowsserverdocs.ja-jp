@@ -1,6 +1,6 @@
 ---
 title: Windows Server Essentials の概要
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.prod: windows-server-2019-essentials
 ms.reviewer: na
@@ -11,56 +11,56 @@ ms.assetid: 2d0eb084-09dd-4d85-a41a-5d449cc3b504
 author: nnamuhcs
 ms.author: coreyp
 manager: jasgro
-ms.openlocfilehash: c505ddab123d3735d7f6a109fde073b344f090c8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 807ea32a466b6717f61423e58d621a0050047586
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833123"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946849"
 ---
 # <a name="get-started-with-windows-server-essentials"></a>Windows Server Essentials の概要 
 
->適用先:Windows Server 2016 Essentials;Windows Server 2019 Essentials
+>適用対象: Windows Server 2016 Essentials;Windows Server 2019 Essentials
 
-**Windows Server Essentials**エディションは、クラウドに接続されている最初のサーバーに最大 25 ユーザーおよび 50 台のデバイス、小規模企業向けに設計されています。 ただし、任意のバージョンの Windows Server Essentials のインストールを検討している場合はぜひ検討**Microsoft 365**します。 Microsoft 365 を Windows Server Essentials を超えて移動する方法についての詳細については、次を参照してください。 [in Windows Server 2019 Essentials 新](what-s-new-19.md)します。
+**Windows Server Essentials** edition は、クラウドに接続された最初のサーバーで、最大25人のユーザーと50台のデバイスを備えた小規模企業向けに設計されています。 ただし、いずれかのバージョンの Windows Server Essentials をインストールすることを検討している場合は、 **Microsoft 365**について検討することをお勧めします。 Windows Server Essentials を超えて Microsoft 365 に移行する方法の詳細については、「 [Windows server 2019 essentials の新機能](what-s-new-19.md)」を参照してください。
   
-## <a name="in-this-library"></a>このライブラリの内容  
+## <a name="in-this-library"></a>このライブラリで  
  Windows Server Essentials のインストール、設定、管理、利用、トラブルシューティングに関する詳細については、次の文書を参照してください。  
   
 
--   [Windows Server Essentials をインストールします。](../install/Install-Windows-Server-Essentials.md)   
+-   [Windows Server Essentials のインストール](../install/Install-Windows-Server-Essentials.md)   
   
--   [Windows Server Essentials へのサーバー データを移行します。](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)  
+-   [サーバー データの Windows Server Essentials への移行](../migrate/Migrate-Server-Data-to-Windows-Server-Essentials.md)  
   
--   [Windows Server Essentials を管理します。](../manage/Manage-Windows-Server-Essentials.md)  
+-   [Windows Server Essentials の管理](../manage/Manage-Windows-Server-Essentials.md)  
   
--   [Windows Server Essentials を使用します。](../use/Use-Windows-Server-Essentials.md)  
+-   [Windows Server Essentials の使用](../use/Use-Windows-Server-Essentials.md)  
   
--   [Windows Server Essentials をサポートします。](../support/Support-Windows-Server-Essentials.md)  
+-   [Windows Server Essentials のサポート](../support/Support-Windows-Server-Essentials.md)  
   
 ## <a name="updates-and-downloads"></a>更新プログラムとダウンロード  
   
 -   [Windows Server Essentials の評価](https://technet.microsoft.com/evalcenter/dn205288.aspx?wt.mc_id=TEC_144_1_7)  
   
--   [Windows Server Essentials の正常性レポート](https://www.microsoft.com/download/details.aspx?id=35565)  
+-   [Windows Server Essentials 正常性レポート](https://www.microsoft.com/download/details.aspx?id=35565)  
   
--   [Windows Server Essentials 用管理パック](https://www.microsoft.com/download/details.aspx?id=35560)  
+-   [Windows Server Essentials 管理パック](https://www.microsoft.com/download/details.aspx?id=35560)  
  
   
--   **更新プログラム:**「[Windows Server Essentials のサポート](../support/Support-Windows-Server-Essentials.md)」を参照してください。  
+-   **更新プログラム:** 「[Windows Server Essentials のサポート](../support/Support-Windows-Server-Essentials.md)」を参照してください。  
   
 ## <a name="end-to-end-solution-guides"></a>エンド ツー エンド ソリューション ガイド  
   
--    データ ストレージを集中管理する方法については、データ アクセスのアクセス許可を制限し、オンプレミスでも、データをバックアップし、クラウドで、次を参照してください。[小規模および中規模企業でのデータ保護を提供](https://technet.microsoft.com/library/dn582043.aspx)します。  
+-    データストレージを一元化し、データアクセス権限を制限し、オンプレミスとクラウドの両方でデータをバックアップする方法については、「[中小企業でのデータ保護の提供](https://technet.microsoft.com/library/dn582043.aspx)」を参照してください。  
   
--    任意の場所から任意のインターネットに接続されたデバイスでビジネス データを安全にアクセスする方法については、次を参照してください。[小規模および中規模の企業でのリモート アクセスをセキュリティで保護された](https://technet.microsoft.com/library/dn629457.aspx)します。  
+-    任意の場所からインターネットに接続されているデバイス上のビジネスデータに安全にアクセスする方法については、「[小規模および中規模企業でのリモートアクセスのセキュリティ保護](https://technet.microsoft.com/library/dn629457.aspx)」を参照してください。  
   
--    パートナーやベンダーと安全にコラボレーションする方法についてを参照してください。[小規模および中規模企業でのコラボレーションを向上させる](https://technet.microsoft.com/library/dn747893.aspx)します。  
+-    パートナーやベンダーと安全に共同作業する方法については、「[小規模および中規模企業でのコラボレーションの向上](https://technet.microsoft.com/library/dn747893.aspx)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>「  
   
 -   [Windows Server TechNet ライブラリ](https://technet.microsoft.com/library/bb625087.aspx)  
   
--   [Windows Server Essentials と Windows Small Business Server ブログ](http://blogs.technet.com/b/sbs/)  
+-   [Windows Server Essentials および Windows Small Business Server のブログ](https://blogs.technet.com/b/sbs/)  
   
 -   [Windows Server Essentials (Small Business Server) TechNet ライブラリ](https://technet.microsoft.com/library/cc514417.aspx)

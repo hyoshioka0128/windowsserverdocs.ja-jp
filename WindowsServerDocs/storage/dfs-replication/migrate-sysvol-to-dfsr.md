@@ -6,29 +6,29 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 56877bc5ddb3ea5f24f4057051775094654d8bbf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d8d9d47ff8f14ce316d2352729247ab2dcf4acbc
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386036"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949700"
 ---
 # <a name="migrate-sysvol-replication-to-dfs-replication"></a>SYSVOL のレプリケーションを DFS レプリケーションに移行する
 
 
-更新:2010年8月25日
+更新日: 2010 年8月25日
 
-適用先:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、および Windows Server 2008
+適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008
 
 ドメインコントローラーは、SYSVOL という特殊な共有フォルダーを使用して、ログオンスクリプトとグループポリシーオブジェクトファイルを他のドメインコントローラーにレプリケートします。 Windows 2000 Server および Windows Server 2003 では、ファイルレプリケーションサービス (FRS) を使用して SYSVOL をレプリケートします。一方、windows server 2008 では、Windows Server 2008 ドメインの機能レベルを使用するドメインの場合は、新しい DFS レプリケーションサービスを使用します。古いドメインの機能レベルを実行します。
 
 SYSVOL フォルダーをレプリケートするために DFS レプリケーションを使用するには、Windows Server 2008 ドメインの機能レベルを使用する新しいドメインを作成するか、このドキュメントで説明されている手順を使用して既存のドメインをアップグレードし、レプリケーションをに移行します。DFS レプリケーション。
 
-このドキュメントでは、Active Directory Domain Services (AD DS)、FRS、分散ファイルシステムレプリケーション (DFS レプリケーション) に関する基本的な知識があることを前提としています。 詳細については、「 [Active Directory Domain Services の概要](http://go.microsoft.com/fwlink/?linkid=147787)」、「 [FRS の概要](http://go.microsoft.com/fwlink/?linkid=121763)」、または「概要」を参照してください[DFS レプリケーション](http://go.microsoft.com/fwlink/?linkid=121762)
+このドキュメントでは、Active Directory Domain Services (AD DS)、FRS、分散ファイルシステムレプリケーション (DFS レプリケーション) に関する基本的な知識があることを前提としています。 詳細については、「 [Active Directory Domain Services の概要](https://go.microsoft.com/fwlink/?linkid=147787)」、「 [FRS の概要](https://go.microsoft.com/fwlink/?linkid=121763)」、または「概要」を参照してください[DFS レプリケーション](https://go.microsoft.com/fwlink/?linkid=121762)
 
 
 > [!NOTE]
-> このガイドの印刷可能なバージョンをダウンロードするに<a href="http://go.microsoft.com/fwlink/?linkid=150375">は、「SYSVOL レプリケーション移行ガイド:FRS を DFS レプリケーション</a> (http://go.microsoft.com/fwlink/?LinkId=150375)
+> このガイドの印刷可能なバージョンをダウンロードするには、「 <a href="https://go.microsoft.com/fwlink/?linkid=150375">SYSVOL レプリケーション移行ガイド: FRS から DFS レプリケーション</a>(https://go.microsoft.com/fwlink/?LinkId=150375) 」を参照してください。
 <br>
 
 
@@ -70,17 +70,17 @@ SYSVOL フォルダーをレプリケートするために DFS レプリケー�
 
 ## <a name="additional-references"></a>その他の参照情報
 
-[SYSVOL 移行シリーズ:パート 1-SYSVOL 移行プロセスの概要](http://go.microsoft.com/fwlink/?linkid=121756)
+[SYSVOL 移行シリーズ: パート 1-SYSVOL 移行プロセスの概要](https://go.microsoft.com/fwlink/?linkid=121756)
 
-[SYSVOL 移行シリーズ:パート 2-Dfsrmig:SYSVOL 移行ツール](http://go.microsoft.com/fwlink/?linkid=121757)
+[SYSVOL 移行シリーズ: パート 2-Dfsrmig: SYSVOL 移行ツール](https://go.microsoft.com/fwlink/?linkid=121757)
 
-[SYSVOL 移行シリーズ:パート 3: ' 準備済み ' 状態への移行](http://go.microsoft.com/fwlink/?linkid=121758)
+[SYSVOL 移行シリーズ: パート 3-"準備済み" 状態への移行](https://go.microsoft.com/fwlink/?linkid=121758)
 
-[SYSVOL 移行シリーズ:パート 4: "リダイレクト" 状態への移行](http://go.microsoft.com/fwlink/?linkid=121759)
+[SYSVOL 移行シリーズ: パート 4-"リダイレクト" 状態への移行](https://go.microsoft.com/fwlink/?linkid=121759)
 
-[SYSVOL 移行シリーズ:パート 5: "廃止" 状態への移行](http://go.microsoft.com/fwlink/?linkid=121760)
+[SYSVOL 移行シリーズ: パート 5-"削除" 状態への移行](https://go.microsoft.com/fwlink/?linkid=121760)
 
-[Windows Server 2008 の分散ファイルシステムのステップバイステップガイド](http://go.microsoft.com/fwlink/?linkid=85231)
+[Windows Server 2008 の分散ファイルシステムのステップバイステップガイド](https://go.microsoft.com/fwlink/?linkid=85231)
 
-[FRS テクニカルリファレンス](http://go.microsoft.com/fwlink/?linkid=121764)
+[FRS テクニカルリファレンス](https://go.microsoft.com/fwlink/?linkid=121764)
 

@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: c05987360256f7b7ed58911c1ded86586fc8b3aa
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 59c659041c7553d8e97a3bfbefbc3bde24098ef2
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903904"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949936"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center の既知の問題
 
@@ -80,7 +80,7 @@ Windows Admin Center のリモート デスクトップ、PowerShell、および
 
 PowerShell で `$PSVersiontable` を入力して、WMF がインストールされていること、またバージョンが 5.1 以上であることを確認します。
 
-インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://www.microsoft.com/en-us/download/details.aspx?id=54616)できます。
+インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://www.microsoft.com/download/details.aspx?id=54616)できます。
 
 ## <a name="role-based-access-control-rbac"></a>ロールベースのアクセス制御 (RBAC)
 
@@ -96,7 +96,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 - .PFX の暗号化された証明書を現在のユーザー ストアにインポートすることはできません。 [11818622]
 
-### <a name="events"></a>イベント
+### <a name="events"></a>[イベント]
 
 - イベントは、[プロキシ サービスを使用する場合に WebSocket の互換性](#websocket-compatibility-when-using-a-proxy-service)に影響を受けます。
 
@@ -160,7 +160,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 - ダウンレベル: 新しいボリュームを作成する場合、ReFS では、Windows 2012 および 2012 R2 コンピューターでの 64K のアロケーション ユニット サイズのみがサポートされます。 ReFS ボリュームがダウンレベル ターゲットの小さいアロケーション ユニット サイズで作成された場合は、ファイル システムの書式設定が失敗します。 新しいボリュームは使用できません。 解決策は、ボリュームを削除し、64 K のアロケーション ユニット サイズを使用することです。
 
-### <a name="updates"></a>更新プログラム
+### <a name="updates"></a>更新
 
 - 更新プログラムをインストールすると、インストールの状態がキャッシュされ、ブラウザーの更新が必要になる場合があります。
 

@@ -8,16 +8,16 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5449c9e96a5a9ecd08ca35e703a76927f4e27158
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9f611f61150508d9170a6fe6757844bc29759886
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356016"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950473"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>分割\-ブレイン DNS 展開に DNS ポリシーを使用する
 
->適用対象: Windows Server 2016
+>適用先: Windows Server 2016
 
 このトピックを使用して、Windows server DNS のポリシーを構成する方法について&reg; 2016 スプリット ブレイン DNS 展開では、1 つの 2 つのバージョンが存在するゾーンの組織のイントラネット上の内部ユーザーと外部のユーザーは、通常、インターネット上のユーザーに対して使用します。
 
@@ -34,15 +34,15 @@ ms.locfileid: "71356016"
 - [DNS の選択的な再帰制御の例](#bkmk_recursion)
 
 ## <a name="bkmk_sbexample"></a>DNS スプリットブレイン展開の例
-次の例では、DNS ポリシーを使用して、前に説明したスプリットブレイン DNS のシナリオを実現する方法を示します。
+DNS のポリシーを使用して、スプリット ブレイン DNS の既に説明したシナリオを実現する方法の例を次に示します。
 
-ここでは、次のトピックについて説明します。
+このセクションには、次のトピックがあります。
 
 - [DNS スプリットブレイン展開のしくみ](#bkmk_sbhow)
 - [DNS スプリットブレイン展開を構成する方法](#bkmk_sbconfigure)
 
 
-この例では、1 つ架空の企業、www.career.contoso.com で仕事紹介 Web サイトを保持する contoso 社で使用します。
+この例では、1 つ架空の企業、 www.career.contoso.com で仕事紹介 Web サイトを保持する contoso 社で使用します。
 
 サイトには、内部の求人が利用可能な内部ユーザー用、2 つのバージョンがあります。 この内部サイトは、ローカル IP アドレス 10.0.0.39 から入手できます。 
 
@@ -84,9 +84,9 @@ DNS のポリシーを使用して DNS Split-Brain 展開を構成するには�
 ゾーンのスコープは、ゾーンの一意のインスタンスです。 DNS ゾーンは複数のゾーンスコープを持つことができ、各ゾーンスコープには独自の DNS レコードセットが含まれます。 同じレコードが複数のスコープに存在し、異なる IP アドレスまたは同じ IP アドレスを持つことができます。 
 
 > [!NOTE]
-> 既定では、ゾーンのスコープは、DNS ゾーンに存在します。 このゾーンのスコープでは、ゾーンと同じ名前と、従来の DNS の機能がこのスコープで動作します。 この既定のゾーンのスコープは、www.career.contoso.com の外部のバージョンをホストします。
+> 既定では、ゾーンのスコープは、DNS ゾーンに存在します。 このゾーンのスコープでは、ゾーンと同じ名前と、従来の DNS の機能がこのスコープで動作します。 この既定のゾーンのスコープは、 www.career.contoso.com の外部のバージョンをホストします。
 
-次のコマンド例は、内部ゾーン スコープを作成するのにゾーン スコープ contoso.com のパーティション分割に使用できます。 内部のゾーンのスコープは、www.career.contoso.com の内部バージョンを保持するのには使用されます。
+次のコマンド例は、内部ゾーン スコープを作成するのにゾーン スコープ contoso.com のパーティション分割に使用できます。 内部のゾーンのスコープは、 www.career.contoso.com の内部バージョンを保持するのには使用されます。
 
 `Add-DnsServerZoneScope -ZoneName "contoso.com" -Name "internal"`
 
@@ -132,7 +132,7 @@ DNS サーバーは、プライベート インターフェイスでクエリを
 
 DNS のポリシーを使用して、DNS 再帰のオプションを選択コントロールの既に説明したシナリオを実現する方法の例を次に示します。
 
-ここでは、次のトピックについて説明します。
+このセクションには、次のトピックがあります。
 
 - [DNS の選択的再帰制御のしくみ](#bkmk_recursionhow)
 - [DNS の選択的な再帰制御を構成する方法](#bkmk_recursionconfigure)
@@ -156,13 +156,13 @@ Windows Server の以前のバージョンで再帰を有効にするものす�
 
 ### <a name="bkmk_recursionhow"></a>DNS の選択的再帰制御のしくみ
 
-Contoso の DNS サーバーの権限のないクエリを受信した場合、www.microsoft.com は、名前解決の要求は、DNS サーバーのポリシーに対して評価などです。 
+https://www.microsoft.com など、Contoso の DNS サーバーに対して権限のないクエリを受信した場合、名前解決の要求は、DNS サーバーのポリシーに対して評価されます。 
 
 ポリシー レベル、ゾーンのため、これらのクエリは、任意のゾーンにも属さない、 \(スプリット ブレインの例で定義されている\) は評価されません。 
 
 DNS サーバーは、再帰ポリシーとプライベート インターフェイスの一致に受信したクエリを評価、 **SplitBrainRecursionPolicy**します。 このポリシーは、再帰が有効になっている再帰スコープを指しています。
 
-DNS サーバーは、www.microsoft.com のインターネットからの応答を取得する再帰を実行し、ローカルで応答をキャッシュします。 
+次に、DNS サーバーは再帰を実行して、インターネットから https://www.microsoft.com の応答を取得し、応答をローカルにキャッシュします。 
 
 外部インターフェイス、DNS のポリシーの一致なしと既定の再帰設定 - ここでは、クエリを受け取った場合 **無効になっている** -を適用します。
 

@@ -1,5 +1,5 @@
 ---
-title: Cluster Operating System Rolling Upgrade (クラスター オペレーティング システムのローリング アップグレード)
+title: クラスター オペレーティング システムのローリング アップグレード
 ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.topic: get-started-article
@@ -7,18 +7,18 @@ ms.assetid: 6e102c1f-df26-4eaa-bc7a-d0d55d3b82d5
 author: jasongerend
 ms.author: jgerend
 ms.date: 03/27/2018
-ms.openlocfilehash: f7d20a099f287d2ee05ae6e908c173e1eb3cfc66
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: fc1799db76f528a599ef70eec5093da0a76206a2
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361844"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948535"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>クラスターのオペレーティングシステムのローリングアップグレード
 
 > 適用対象: Windows Server 2019、Windows Server 2016
 
-クラスター OS のローリングアップグレードを使用すると、管理者は Hyper-v またはスケールアウトファイルサーバーワークロードを停止せずに、クラスターノードのオペレーティングシステムをアップグレードできます。 この機能を使用すると、サービス レベル アグリーメント (SLA) でのダウンタイムに対するペナルティを回避できます。
+クラスター OS のローリングアップグレードを使用すると、管理者は Hyper-v またはスケールアウトファイルサーバーワークロードを停止せずに、クラスターノードのオペレーティングシステムをアップグレードできます。 この機能を使用すると、サービス レベル アグリーメント (SLA) のダウンタイムに対するペナルティを回避できます。
 
 クラスター OS のローリングアップグレードには、次のような利点があります。
 
@@ -52,7 +52,7 @@ ms.locfileid: "71361844"
 - Windows Server バージョン1709への記憶域スペースダイレクトクラスターのアップグレードはサポートされていません。
 - クラスターワークロードが Hyper-v Vm またはスケールアウトファイルサーバーの場合、ダウンタイムなしのアップグレードを予想できます。
 - 次のいずれかの方法を使用して、Hyper-v ノードに第2レベルのアドレス指定テーブル (SLAT) をサポートする Cpu があることを確認します。  
-        -SLAT に[互換性があるかどうかを確認します。WP8 SDK ヒント 01](http://blogs.msdn.com/b/devfish/archive/2012/11/06/are-you-slat-compatible-wp8-sdk-tip-01.aspx)記事: CPU が SLATs をサポートしているかどうかを確認する2つの方法について説明します。  
+        -SLAT に[互換性があるかどうかを確認します。WP8 SDK ヒント 01](https://blogs.msdn.com/b/devfish/archive/2012/11/06/are-you-slat-compatible-wp8-sdk-tip-01.aspx)記事: CPU が SLATs をサポートしているかどうかを確認する2つの方法について説明します。  
         - [Coreinfo v 3.31](https://technet.microsoft.com/sysinternals/cc835722)ツールをダウンロードして、CPU が SLAT をサポートしているかどうかを判断します。
 
 ## <a name="cluster-transition-states-during-cluster-os-rolling-upgrade"></a>クラスター OS のローリングアップグレード時のクラスターの移行状態
@@ -263,7 +263,7 @@ ClusterFunctionalLevelcmdlet を実行すると、クラスターは "Stage 4" �
     はい。 PowerShell を使用してクラスター OS のローリングアップグレードを自動化するように設計されています。  
 
 **追加のワークロードとフェールオーバー容量を持つ大規模なクラスターの場合、複数のノードを同時にアップグレードすることはできますか。**  
-    [はい]。 OS をアップグレードするためにクラスターから1つのノードが削除されると、クラスターのフェールオーバー用のノードが1つ少なくなるため、フェールオーバーの容量が減少します。 ワークロードとフェールオーバーの容量が十分にある大規模なクラスターでは、複数のノードを同時にアップグレードできます。 クラスターノードを一時的にクラスターに追加することにより、クラスター OS のローリングアップグレードプロセス中に、ワークロードとフェールオーバーの容量を向上させることができます。  
+    対応 OS をアップグレードするためにクラスターから1つのノードが削除されると、クラスターのフェールオーバー用のノードが1つ少なくなるため、フェールオーバーの容量が減少します。 ワークロードとフェールオーバーの容量が十分にある大規模なクラスターでは、複数のノードを同時にアップグレードできます。 クラスターノードを一時的にクラスターに追加することにより、クラスター OS のローリングアップグレードプロセス中に、ワークロードとフェールオーバーの容量を向上させることができます。  
 
 **[`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)が正常に実行された後にクラスターで問題が検出された場合はどうすればよいですか?**  
     [`Update-ClusterFunctionalLevel`](https://docs.microsoft.com/powershell/module/failoverclusters/Update-ClusterFunctionalLevel?view=win10-ps)を実行する前に、システム状態のバックアップを使用してクラスターデータベースをバックアップした場合は、Windows Server 2012 R2 クラスターノードで権限のある復元を実行し、元のクラスターデータベースと構成を復元することができます。  
@@ -277,7 +277,7 @@ ClusterFunctionalLevelcmdlet を実行すると、クラスターは "Stage 4" �
 **System Center 2016 Virtual Machine Manager (SCVMM) を使用して、クラスター OS のローリングアップグレードプロセスを自動化できますか。**  
     はい。 System Center 2016 の VMM を使用して、クラスター OS のローリングアップグレードプロセスを自動化できます。  
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>「  
 -   [リリースノート: Windows Server 2016 に関する重要な問題](../get-started/Release-Notes--Important-Issues-in-Windows-Server-2016-Technical-Preview.md)  
 -   [Windows Server 2016 の新機能](../get-started/What-s-New-in-windows-server-2016.md)  
 -   [Windows Server でのフェールオーバークラスタリングの新機能](whats-new-in-failover-clustering.md)  

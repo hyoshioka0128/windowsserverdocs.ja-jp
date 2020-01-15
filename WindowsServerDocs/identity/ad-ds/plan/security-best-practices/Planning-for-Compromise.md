@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ee1416a00fc0d347b7e05cb12c83f3d3532d693f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d3d08e954b7a2a9ce58eb61dec54f2848ab68c12
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360143"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949161"
 ---
 # <a name="planning-for-compromise"></a>侵害対策を計画する
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 *法 1: 問題が発生した場合、それが起こるまではだれもがそのようなことを考えていません。*[セキュリティ管理に関する10の不変法を](https://technet.microsoft.com/library/cc722488.aspx) -   
   
@@ -103,12 +103,12 @@ Active Directory 環境において、ビジネスに不可欠なユーザー、
 ### <a name="leveraging-nonmigratory-migrations"></a>"Nonmigratory" 移行の活用  
 環境が侵害された可能性があるかどうか、セキュリティが侵害された可能性があること、レガシのデータおよびオブジェクトをレガシ Active Directory のインストールから新しいものに移行しないことがわかっている場合は、技術的にはできない移行アプローチを検討してください。オブジェクトを "移行" します。  
   
-### <a name="user-accounts"></a>ユーザー アカウント  
+### <a name="user-accounts"></a>[ユーザー アカウント]  
 従来の Active Directory から別のフォレストへの移行では、ユーザーオブジェクトの SIDHistory (SID 履歴) 属性を使用して、ユーザーの SID と、ユーザーが従来のフォレストに属していたグループの Sid を格納します。 ユーザーアカウントが新しいフォレストに移行され、従来のフォレスト内のリソースにアクセスする場合、SID 履歴の Sid を使用してアクセストークンが作成され、ユーザーはアカウントの移行前にアクセス権を持っていたリソースにアクセスできるようになります。  
   
 ただし、SID 履歴の管理は、一部の環境では問題があります。これは、ユーザーのアクセストークンを現在および過去の Sid に設定すると、トークンの膨張が発生する可能性があるためです。 トークンの膨張とは、ユーザーのアクセストークンに格納されている必要がある Sid の数が、トークンで使用可能な領域の容量を使用しているか、超えていることを示します。  
   
-トークンのサイズは限られた範囲に拡張できますが、トークンの膨張に対する最終的な解決策は、ユーザーアカウントに関連付けられている Sid の数を減らすことです。これには、グループメンバーシップの合理化、SID 履歴の削除、またはその両方の組み合わせが含まれます。 トークンの膨張の詳細については、「 [MaxTokenSize と Kerberos トークンの膨張](http://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx)」を参照してください。  
+トークンのサイズは限られた範囲に拡張できますが、トークンの膨張に対する最終的な解決策は、ユーザーアカウントに関連付けられている Sid の数を減らすことです。これには、グループメンバーシップの合理化、SID 履歴の削除、またはその両方の組み合わせが含まれます。 トークンの膨張の詳細については、「 [MaxTokenSize と Kerberos トークンの膨張](https://blogs.technet.com/b/shanecothran/archive/2010/07/16/maxtokensize-and-kerberos-token-bloat.aspx)」を参照してください。  
   
 SID 履歴を使用してレガシ環境 (特にグループメンバーシップと SID 履歴が侵害される可能性があります) からユーザーを移行するのではなく、メタディレクトリアプリケーションを利用して、SID 履歴を使用せずにユーザーを "移行" することを検討します。を新しいフォレストに追加します。 新しいフォレストにユーザーアカウントを作成した場合は、メタディレクトリアプリケーションを使用して、そのアカウントをレガシフォレスト内の対応するアカウントにマップできます。  
   
@@ -144,7 +144,7 @@ SID 履歴を使用してレガシ環境 (特にグループメンバーシッ�
   
 たとえば、セキュリティで保護されたワークステーションを使用して機密データやシステムにアクセスし、他のデバイスから機密データにアクセスできないようにするために、役員とその他の Vip が必要とするポリシーを定義できます。 これはユーザーが覚えておく必要のある簡単な原則ですが、このアプローチを適用するために、多数のバックエンドコントロールを実装することができます。  
 
-[認証メカニズムアシュアランス](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)を使用すると、ユーザーがスマートカードを使用してセキュリティで保護されたシステムにログオンしている場合にのみ機密データへのアクセスを許可できます。また、IPsec とユーザー権利の制限を使用して、機密性の高いデータリポジトリに接続できるシステムを制御できます。 [Microsoft Data 分類ツールキット](https://www.microsoft.com/download/details.aspx?id=27123)を使用すると、堅牢なファイル分類インフラストラクチャを構築できます。また、[動的 Access Control](http://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)を実装することで、アクセス試行の特性に基づいてデータへのアクセスを制限し、ビジネスルールを技術的な制御に変換することができます。  
+[認証メカニズムアシュアランス](https://technet.microsoft.com/library/dd391847(v=WS.10).aspx)を使用すると、ユーザーがスマートカードを使用してセキュリティで保護されたシステムにログオンしている場合にのみ機密データへのアクセスを許可できます。また、IPsec とユーザー権利の制限を使用して、機密性の高いデータリポジトリに接続できるシステムを制御できます。 [Microsoft Data 分類ツールキット](https://www.microsoft.com/download/details.aspx?id=27123)を使用すると、堅牢なファイル分類インフラストラクチャを構築できます。また、[動的 Access Control](https://blogs.technet.com/b/windowsserver/archive/2012/05/22/introduction-to-windows-server-2012-dynamic-access-control.aspx)を実装することで、アクセス試行の特性に基づいてデータへのアクセスを制限し、ビジネスルールを技術的な制御に変換することができます。  
   
 セキュリティで保護されたシステムからの機密データへのアクセスは、ユーザーの視点から、セキュリティで保護されていないシステムから実行されます。 ただし、環境の監視と管理の観点からは、ユーザーが機微なデータやシステムにアクセスして、異常なアクセス試行を簡単に検出できるように、特定可能なパターンを作成することができます。  
   

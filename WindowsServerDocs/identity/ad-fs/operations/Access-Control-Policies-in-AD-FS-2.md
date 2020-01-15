@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b0d6133a6fb43b8624dc1329db632fb5dd4aa070
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4f5d2cfa8383bcf3c0813b272f8c4828473b8df9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71358453"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948605"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>AD FS 2.0 のクライアント Access Control ポリシー
 Active Directory フェデレーションサービス (AD FS) 2.0 のクライアントアクセスポリシーでは、リソースへのアクセスを制限または許可することができます。  このドキュメントでは、AD FS 2.0 でクライアントアクセスポリシーを有効にする方法と、最も一般的なシナリオを構成する方法について説明します。
@@ -25,7 +25,7 @@ Active Directory フェデレーションサービス (AD FS) 2.0 のクライ�
 
 ### <a name="step-1-install-the-update-rollup-2-for-ad-fs-20-package-on-your-ad-fs-servers"></a>手順 1: AD FS サーバーに AD FS 2.0 パッケージの更新プログラムのロールアップ2をインストールする
 
-[Active Directory フェデレーションサービス (AD FS) (AD FS) 2.0 パッケージの更新プログラムのロールアップ 2](https://support.microsoft.com/en-us/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0)をダウンロードし、すべてのフェデレーションサーバーとフェデレーションサーバープロキシにインストールします。
+[Active Directory フェデレーションサービス (AD FS) (AD FS) 2.0 パッケージの更新プログラムのロールアップ 2](https://support.microsoft.com/help/2681584/description-of-update-rollup-2-for-active-directory-federation-services-ad-fs-2.0)をダウンロードし、すべてのフェデレーションサーバーとフェデレーションサーバープロキシにインストールします。
 
 ### <a name="step-2-add-five-claim-rules-to-the-active-directory-claims-provider-trust"></a>手順 2: Active Directory 要求プロバイダー信頼に5つの要求規則を追加する
 
@@ -261,7 +261,7 @@ Regex 式は非常に複雑になる可能性があるため、regex 検証ツ�
 
 AD FS サーバー上のセキュリティログへの監査イベントのログ記録を有効にするには AD FS 2.0 の監査の構成」の手順に従います。
 
-### <a name="event-logging"></a>イベントログ
+### <a name="event-logging"></a>イベント ログ
 
 既定では、失敗した要求は、[アプリケーションとサービスログ] \ AD FS 2.0 \ Admin にあるアプリケーションイベントログに記録されます。 AD FS のイベントログの詳細については、「 [AD FS 2.0 イベントログの設定](https://technet.microsoft.com/library/adfs2-troubleshooting-configuring-computers.aspx)」を参照してください。
 
@@ -271,6 +271,6 @@ AD FS トレースイベントは、AD FS 2.0 デバッグログに記録され�
 
 トレースを有効にした後、次のコマンドライン構文を使用して詳細ログ記録レベルを有効にします。 wevtutil sl "AD FS 2.0 Tracing/Debug"/l: 5  
 
-## <a name="related"></a>関連
+## <a name="related"></a>関連情報
 新しい要求の種類の詳細については、「 [AD FS 要求の種類](AD-FS-Claims-Types.md)」を参照してください。
 

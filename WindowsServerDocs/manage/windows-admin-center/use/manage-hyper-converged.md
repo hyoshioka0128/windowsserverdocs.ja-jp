@@ -8,16 +8,16 @@ ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: d692251e1ba0fef43e4eeee6f259f26f4347f3c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6795464bfbadd12fc220e941ad2175eb83d0f050
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356876"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949940"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Windows 管理センターを使用したハイパー集約型インフラストラクチャの管理
 
->適用先:Windows Admin Center、Windows Admin Center Preview
+>適用対象: Windows Admin Center、Windows Admin Center Preview
 
 ## <a name="what-is-hyper-converged-infrastructure"></a>ハイパー集約型インフラストラクチャとは
 
@@ -27,11 +27,11 @@ ms.locfileid: "71356876"
 > ハイパー集約型インフラストラクチャの取得を検討していますか? Microsoft では、これらの[Windows Server ソフトウェアで定義された](https://microsoft.com/wssd)ソリューションをパートナーから推奨しています。 これらは、互換性と信頼性を確保するために、参照アーキテクチャに対して設計、組み立て、検証を行い、迅速に稼働させることができます。
 
 > [!IMPORTANT]
-> この記事で説明されている機能の一部は、Windows 管理センタープレビューでのみ使用できます。 [このバージョンを取得操作方法には](http://aka.ms/windowsadmincenter)
+> この記事で説明されている機能の一部は、Windows 管理センタープレビューでのみ使用できます。 [このバージョンを取得操作方法には](https://aka.ms/windowsadmincenter)
 
 ## <a name="what-is-windows-admin-center"></a>Windows Admin Center とは
 
-[Windows 管理センター](../understand/windows-admin-center.md)は、windows Server 用の次世代管理ツールであり、サーバーマネージャーなどの従来の "組み込み" ツールを後継としています。 これは無料で、インターネットに接続せずにインストールして使用することができます。 Windows 管理センターを使用して、Windows Server 2016 または Windows Server 2019 を実行しているハイパー集約型インフラストラクチャを管理および監視できます。
+[Windows 管理センター](../overview.md)は、windows Server 用の次世代管理ツールであり、サーバーマネージャーなどの従来の "組み込み" ツールを後継としています。 これは無料で、インターネットに接続せずにインストールして使用することができます。 Windows 管理センターを使用して、Windows Server 2016 または Windows Server 2019 を実行しているハイパー集約型インフラストラクチャを管理および監視できます。
 
 ![ハイパー収束クラスターダッシュボード](../media/manage-hyper-converged/hci-dashboard-v1809.png)
 
@@ -46,7 +46,7 @@ ms.locfileid: "71356876"
 
 Microsoft によって積極的に開発されているハイパー集約型インフラストラクチャの Windows 管理センターです。 既存の機能を向上させ、新機能を追加する頻繁な更新プログラムを受信します。
 
-## <a name="before-you-start"></a>開始前の準備
+## <a name="before-you-start"></a>開始前の作業
 
 Windows 管理センターでハイパー集約型インフラストラクチャとしてクラスターを管理するには、Windows Server 2016 または Windows Server 2019 を実行している必要があります。また、Hyper-v と記憶域スペースダイレクトが有効になっている必要があります。 必要に応じて、Windows 管理センターを使用して、ソフトウェアで定義されたネットワークを有効にし、管理することもできます。
 
@@ -57,7 +57,7 @@ Windows 管理センターでハイパー集約型インフラストラクチャ
 
 ハイパー収束インフラストラクチャの windows 管理センターは、Windows Server 2016 のリリース後に追加された管理 Api に依存します。 Windows 管理センターを使用して Windows Server 2016 クラスターを管理するには、次の2つの手順を実行する必要があります。
 
-1. クラスター内のすべてのサーバーに、 [Windows server 2016 (KB4103723) 以降の2018-05 の累積的な更新プログラム](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)がインストールされていることを確認します。 この更新プログラムをダウンロードしてインストールするには、**設定** >  **更新プログラム & セキュリティ** > **Windows Update**にアクセスし、 **Microsoft Update の更新プログラムをオンラインで確認**する を選択します。
+1. クラスター内のすべてのサーバーに、 [Windows server 2016 (KB4103723) 以降の2018-05 の累積的な更新プログラム](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723)がインストールされていることを確認します。 この更新プログラムをダウンロードしてインストールするには、**設定** にアクセスし、セキュリティ**Windows Update** > の **& を更新** >  を選択し、**オンラインで Microsoft Update から更新プログラムを確認**します。
 2. クラスターで管理者として次の PowerShell コマンドレットを実行します。
 
 ```powershell
@@ -76,7 +76,7 @@ Windows 管理センターでハイパー集約型インフラストラクチャ
 次の手順でソフトウェア定義ネットワーク (SDN) を使用するように、Windows Server 2016 または2019を実行しているハイパー集約型インフラストラクチャを構成できます。
 
 1. ハイパー集約型インフラストラクチャホストにインストールした os と同じ OS の VHD を準備します。 この VHD は、すべての NC/SLB/GW Vm に使用されます。
-2. SDN Express の下にあるすべてのフォルダーと[https://github.com/Microsoft/SDN/tree/master/SDNExpress](https://github.com/Microsoft/SDN/tree/master/SDNExpress)ファイルをからダウンロードします。
+2. [https://github.com/Microsoft/SDN/tree/master/SDNExpress](https://github.com/Microsoft/SDN/tree/master/SDNExpress)から SDN Express の下にあるすべてのフォルダーとファイルをダウンロードします。
 3. 展開コンソールを使用して別の VM を準備します。 この VM は SDN ホストにアクセスできる必要があります。 また、VM には RSAT Hyper-v ツールがインストールされている必要があります。
 4. SDN Express 用にダウンロードしたすべてのものをデプロイコンソール VM にコピーします。 この**Sdnexpress**フォルダーを共有します。 次のように、構成ファイル8で定義されているように、すべてのホストが**Sdnexpress**共有フォルダーにアクセスできることを確認します。
    ```
@@ -92,7 +92,7 @@ Windows 管理センターでハイパー集約型インフラストラクチャ
 
 デプロイには約 30 ~ 45 分かかります。
 
-## <a name="get-started"></a>作業開始
+## <a name="get-started"></a>、
 
 デプロイされたハイパースレッディングインフラストラクチャは、Windows 管理センターを使用して管理できます。
 
@@ -135,7 +135,7 @@ Windows 管理センターをまだダウンロードしていない場合はイ
 
 ### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019"></a>Windows Server 2016 と Windows Server 2019 の管理には違いがありますか。
 
-可能。 ハイパースレッディングインフラストラクチャの windows 管理センターは、Windows Server 2016 と Windows Server 2019 の両方のエクスペリエンスを向上させる更新プログラムを頻繁に受信します。 ただし、一部の新機能は、Windows Server 2019 でのみ使用できます。たとえば、重複除去と圧縮の切り替えスイッチなどです。
+対応 ハイパースレッディングインフラストラクチャの windows 管理センターは、Windows Server 2016 と Windows Server 2019 の両方のエクスペリエンスを向上させる更新プログラムを頻繁に受信します。 ただし、一部の新機能は、Windows Server 2019 でのみ使用できます。たとえば、重複除去と圧縮の切り替えスイッチなどです。
 
 ### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>Windows 管理センターを使用して、収束スケールアウトファイルサーバー (SoFS) や Microsoft SQL Server など、他のユースケースの記憶域スペースダイレクトを管理できますか。
 
@@ -161,15 +161,15 @@ Windows Admin Center (別のダウンロードとして利用可能) は、Windo
 
 ### <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center に System Center は必要ですか。
 
-No.
+いいえ。
 
 ### <a name="does-it-require-an-internet-connection"></a>インターネットに接続する必要がありますか。
 
-No.
+いいえ。
 
 Windows 管理センターは Microsoft Azure クラウドとの強力で便利な統合機能を備えていますが、ハイパー集約型インフラストラクチャのコア管理と監視のエクスペリエンスは、完全にオンプレミスにあります。 インターネットに接続せずにインストールして使用することができます。
 
-## <a name="things-to-try"></a>試してみるべきこと
+## <a name="things-to-try"></a>対処方法
 
 作業を開始するだけであれば、次の簡単なチュートリアルでは、Windows 管理センターでのハイパー集約インフラストラクチャの構成と動作について説明しています。 適切な略しを使用して、運用環境に注意してください。 これらのビデオは、Windows 管理センターバージョン1804と、Windows Server 2019 の Insider Preview ビルドで記録されています。
 
@@ -187,17 +187,17 @@ Windows 管理センターは Microsoft Azure クラウドとの強力で便利�
 <table>
     <tr style="border: 0;">
         <td style="padding: 5px; border: 0;">
-            <strong>ボリュームの作成、3方向ミラー</strong>
+            <strong>ボリュームの作成、3方向のミラー</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/o66etKq70N8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
-            <strong>ボリュームの作成、ミラーアクセラレータのパリティ</strong>
-            <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/R72QHudqWpE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+            <strong>ボリューム、ミラーアクセラレータによるパリティ
+             の作成</strong><iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/R72QHudqWpE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
     </tr>
     <tr style="border: 0;">
         <td style="padding: 5px; border: 0;">
-            <strong>ボリュームを開き、ファイルを追加する</strong>
+            <strong>ボリュームを開き、ファイルを追加</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/j59z7ulohs4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
@@ -207,12 +207,12 @@ Windows 管理センターは Microsoft Azure クラウドとの強力で便利�
     </tr>
     <tr style="border: 0;">
         <td style="padding: 5px; border: 0;">
-            <strong>ボリュームの展開</strong>
-            <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/hqyBzipBoTI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+            <strong>ボリューム</strong>
+             の展開<iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/hqyBzipBoTI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
-            <strong>ボリュームの削除</strong>
-            <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/DbjF8r2F6Jo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
+            <strong>ボリューム</strong>
+             の削除<iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/DbjF8r2F6Jo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
     </tr>
 </table>
@@ -223,11 +223,11 @@ Windows 管理センターは Microsoft Azure クラウドとの強力で便利�
 2. Virtual Machines ツールの上部で、 **[インベントリ]** タブを選択し、 **[新規]** をクリックして新しい仮想マシンを作成します。
 3. 仮想マシン名を入力し、第1世代と第2世代の仮想マシンを選択します。
 4. その後、uou は、最初に仮想マシンを作成するホストを選択するか、推奨されるホストを使用します。
-5. 仮想マシンファイルのパスを選択します。 ドロップダウンリストからボリュームを選択するか、 **[参照]** をクリックしてフォルダーピッカーを使用してフォルダーを選択します。 仮想マシンの構成ファイルと仮想ハードディスクファイルは、選択したボリュームまたはパス`\Hyper-V\[virtual machine name]`のパスにある1つのフォルダーに保存されます。
+5. 仮想マシンファイルのパスを選択します。 ドロップダウンリストからボリュームを選択するか、 **[参照]** をクリックしてフォルダーピッカーを使用してフォルダーを選択します。 バーチャルマシンの構成ファイルとバーチャルハードディスクファイルは、選択したボリュームまたはパスの `\Hyper-V\[virtual machine name]` パスの下の1つのフォルダーに保存されます。
 6. 仮想プロセッサの数を選択して、入れ子になった仮想化を有効にするかどうか、メモリ設定、ネットワークアダプター、仮想ハードディスクを構成し、.iso イメージファイルからオペレーティングシステムをインストールするか、ネットワークからインストールするかを選択します。
 7. **[作成]** をクリックして、仮想マシンを作成します。
 8. 仮想マシンが作成され、仮想マシンの一覧に表示されたら、仮想マシンを起動できます。
-9. 仮想マシンが起動したら、VMConnect を使用して仮想マシンのコンソールに接続し、オペレーティングシステムをインストールできます。 一覧から仮想マシンを選択し、[**その他** > の**接続**] をクリックして .rdp ファイルをダウンロードします。 リモートデスクトップ接続アプリで .rdp ファイルを開きます。 これは仮想マシンのコンソールに接続しているため、Hyper-v ホストの管理者の資格情報を入力する必要があります。
+9. 仮想マシンが起動したら、VMConnect を使用して仮想マシンのコンソールに接続し、オペレーティングシステムをインストールできます。 一覧から仮想マシンを選択し、[**詳細** > **接続**] をクリックして .rdp ファイルをダウンロードします。 リモートデスクトップ接続アプリで .rdp ファイルを開きます。 これは仮想マシンのコンソールに接続しているため、Hyper-v ホストの管理者の資格情報を入力する必要があります。
 
 [詳細については、Windows 管理センターを使用した仮想マシンの管理に関するページをご覧](manage-virtual-machines.md)ください。
 
@@ -284,11 +284,11 @@ Windows 管理センターは Microsoft Azure クラウドとの強力で便利�
 
 - [UserVoice で機能要求を送信して投票する](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5Bhci%5D)
 - [Microsoft Tech Community で Windows 管理センターフォーラムに参加する](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
-- ツイート`@servermgmt`
+- `@servermgmt` にツイート
 
-### <a name="see-also"></a>関連項目
+### <a name="see-also"></a>「
 
-- [Windows Admin Center](../understand/windows-admin-center.md)
+- [Windows Admin Center](../overview.md)
 - [記憶域スペース ダイレクト](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
 - [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server)
 - [ソフトウェア定義ネットワーク](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking)

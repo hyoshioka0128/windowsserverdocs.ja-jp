@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: b8dec2877646fd2bfe00da9d5c9047e8edfd6f1d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 74e6e05df037041b6c80239e26b39b5566474326
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386259"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949757"
 ---
 # <a name="ntlm-overview"></a>NTLM Overview
 
@@ -50,14 +50,14 @@ NTLM をサーバー マネージャーから構成することはできませ�
 ## <a name="BKMK_LINKS"></a>関連項目
 次の表に、NTLM とその他の Windows 認証テクノロジに関係するリソースをまとめます。
 
-|コンテンツの種類|参考資料|
+|コンテンツの種類|参照先|
 |--------|-------|
 |**製品評価**|[NTLM 認証の制限の概要](https://technet.microsoft.com/library/dd560653.aspx)<br /><br />[NTLM 認証の変更点](https://technet.microsoft.com/library/dd566199.aspx)|
 |**計画**|[IT インフラストラクチャの脅威モデリングガイド](https://technet.microsoft.com/library/dd941826.aspx)<br /><br />[脅威と対策: Windows Server 2003 および Windows XP のセキュリティ設定](https://technet.microsoft.com/library/dd162275.aspx)<br /><br />[脅威と対策ガイド: Windows Server 2008 および Windows Vista のセキュリティ設定](https://technet.microsoft.com/library/dd349791.aspx)<br /><br />[脅威と対策ガイド: Windows Server 2008 R2 および Windows 7 のセキュリティ設定](https://technet.microsoft.com/library/hh125921.aspx)|
 |**展開**|[認証の拡張保護](https://support.microsoft.com/kb/968389)<br /><br />[NTLM 使用法ガイドの監査と制限](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)<br /><br />[ディレクトリサービスチームに質問する: NTLM ブロックと、Windows 7 のアプリケーション分析と監査の手法](https://blogs.technet.com/askds/archive/2009/10/08/ntlm-blocking-and-you-application-analysis-and-auditing-methodologies-in-windows-7.aspx)<br /><br />[Windows 認証のブログ](https://blogs.technet.com/authentication/)<br /><br />[認証による NTLM パス\-の MaxConcurrentAPI の構成](https://social.technet.microsoft.com/wiki/contents/articles/9759.configuring-maxconcurrentapi-for-ntlm-pass-through-authentication.aspx)|
-|**モーター**|[Microsoft NTLM \(Windows\)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)<br /><br />[\[MS\-NLMP\]: NT LAN Manager \(NTLM\) 認証プロトコルの仕様](https://msdn.microsoft.com/library/cc236621(PROT.10).aspx)<br /><br />[\[MS\-NNTP\]: NT LAN Manager \(NTLM\) 認証: ネットワークニュース転送プロトコル \(NNTP\) 拡張機能](https://msdn.microsoft.com/library/cc236774(PROT.10).aspx)<br /><br />[\[MS\-NTHT\]: NTLM Over HTTP プロトコル仕様](https://msdn.microsoft.com/library/cc237488(PROT.10).aspx)|
+|**開発**|[Microsoft NTLM \(Windows\)](https://msdn.microsoft.com/library/aa378749(VS.85).aspx)<br /><br />[\[MS\-NLMP\]: NT LAN Manager \(NTLM\) 認証プロトコルの仕様](https://msdn.microsoft.com/library/cc236621(PROT.10).aspx)<br /><br />[\[MS\-NNTP\]: NT LAN Manager \(NTLM\) 認証: ネットワークニュース転送プロトコル \(NNTP\) 拡張機能](https://msdn.microsoft.com/library/cc236774(PROT.10).aspx)<br /><br />[\[MS\-NTHT\]: NTLM Over HTTP プロトコル仕様](https://msdn.microsoft.com/library/cc237488(PROT.10).aspx)|
 |**トラブルシューティング**|現在は入手不能|
-|**コミュニティ リソース**|[この木馬はまだ動作していません: NTLM のボトルネックと RPC ランタイム](http://blogs.technet.com/b/askds/archive/2011/09/15/is-this-horse-dead-yet-ntlm-bottlenecks-and-the-rpc-runtime.aspx)|
+|**コミュニティ リソース**|[この木馬はまだ動作していません: NTLM のボトルネックと RPC ランタイム](https://blogs.technet.com/b/askds/archive/2011/09/15/is-this-horse-dead-yet-ntlm-bottlenecks-and-the-rpc-runtime.aspx)|
 
 
 

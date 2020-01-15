@@ -10,16 +10,16 @@ ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: ミラーリングとパリティを含む記憶域スペース ダイレクトにおける回復性オプションの説明。
 ms.localizationpriority: medium
-ms.openlocfilehash: d2220584c0021352110b27c3107d1113eb17ef59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e60a715ffa0097f3f5c615792da3aa0a291d6bd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393809"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950041"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>記憶域スペース ダイレクトでのフォールト トレランスと記憶域の効率
 
->適用対象:Windows Server 2016
+>適用先: Windows Server 2016
 
 このトピックでは、[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)で利用できる回復オプションを紹介し、規模に関する要件、記憶域の効率、一般的な利点、およびそれぞれのトレードオフの概要について説明します。 また、作業を開始するための使用方法についても説明します。このトピックでは、詳細を確認する際に役立つ優れたドキュメントやブログなどのコンテンツを参照しています。
 
@@ -56,7 +56,7 @@ Windows Server 2016 では、記憶域スペース用に 2 種類のミラーリ
 
 ## <a name="parity"></a>パリティ
 
-パリティ エンコード ("イレイジャー コーディング (消失訂正符号)" と呼ばれる場合もあります) では、ビット単位の演算を使用してフォールト トレランスが実現されるため、[複雑さが大幅に増す可能性があります](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/LRC12-cheng20webpage.pdf)。 パリティのしくみはミラーリングよりわかりにくいですが、パリティを理解する際に役立つ、優れたオンライン リソースが多数あります (たとえば、サード パーティの「[Dummies Guide to Erasure Coding](http://smahesh.com/blog/2012/07/01/dummies-guide-to-erasure-coding/)」(イレイジャー コーディングのダミーガイド) など)。 あえて言うなら、パリティではフォールト トレランスを損なうことなく、優れた記憶域の効率が実現されます。
+パリティ エンコード ("イレイジャー コーディング (消失訂正符号)" と呼ばれる場合もあります) では、ビット単位の演算を使用してフォールト トレランスが実現されるため、[複雑さが大幅に増す可能性があります](https://www.microsoft.com/research/wp-content/uploads/2016/02/LRC12-cheng20webpage.pdf)。 パリティのしくみはミラーリングよりわかりにくいですが、パリティを理解する際に役立つ、優れたオンライン リソースが多数あります (たとえば、サード パーティの「[Dummies Guide to Erasure Coding](http://smahesh.com/blog/2012/07/01/dummies-guide-to-erasure-coding/)」(イレイジャー コーディングのダミーガイド) など)。 あえて言うなら、パリティではフォールト トレランスを損なうことなく、優れた記憶域の効率が実現されます。
 
 Windows Server 2016 では、記憶域スペース用に 2 種類のパリティ ("シングル" パリティと "デュアル" パリティ) が用意されています。"デュアル" パリティでは、大規模な場合に対応するための "ローカル再構築コード" と呼ばれる高度な手法が採用されています。
 
@@ -110,19 +110,19 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 |    回復性          |    障害の許容数       |    記憶域の効率      |
 |------------------------|----------------------------|----------------------------|
-|    双方向ミラー      |    1                       |    50.0%                   |
-|    3 方向ミラー    |    2                       |    33.3%                   |
-|    デュアル パリティ         |    2                       |    50.0% ～ 80.0%           |
-|    混在               |    2                       |    33.3% ～ 80.0%           |
+|    双方向ミラー      |    1 で保護されたプロセスとして起動されました                       |    50.0%                   |
+|    3 方向ミラー    |    2 で保護されたプロセスとして起動されました                       |    33.3%                   |
+|    デュアル パリティ         |    2 で保護されたプロセスとして起動されました                       |    50.0% ～ 80.0%           |
+|    ミックス               |    2 で保護されたプロセスとして起動されました                       |    33.3% ～ 80.0%           |
 
 ### <a name="minimum-scale-requirements"></a>最小スケール要件
 
 |    回復性          |    最小限必要な障害ドメイン   |
 |------------------------|-------------------------------------|
-|    双方向ミラー      |    2                                |
-|    3 方向ミラー    |    3                                |
-|    デュアル パリティ         |    4                                |
-|    混在               |    4                                |
+|    双方向ミラー      |    2 で保護されたプロセスとして起動されました                                |
+|    3 方向ミラー    |    3 で保護されたプロセスとして起動されました                                |
+|    デュアル パリティ         |    ホーム フォルダーが置かれているコンピューターにアクセスできない                                |
+|    ミックス               |    ホーム フォルダーが置かれているコンピューターにアクセスできない                                |
 
    >[!TIP]
    > [シャーシまたはラックのフォールト トレランス](../../failover-clustering/fault-domains.md)を使っている場合を除き、障害ドメインの数はサーバーの数を表します。 記憶域スペース ダイレクトの最小要件を満たしている限り、各サーバーのドライブの数は、使用できる回復性の種類に影響しません。 
@@ -133,9 +133,9 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 |    障害ドメイン      |    レイアウト           |    効率性   |
 |-----------------------|---------------------|-----------------|
-|    2                  |    –                |    –            |
-|    3                  |    –                |    –            |
-|    4                  |    RS 2+2           |    50.0%        |
+|    2 で保護されたプロセスとして起動されました                  |    –                |    –            |
+|    3 で保護されたプロセスとして起動されました                  |    –                |    –            |
+|    ホーム フォルダーが置かれているコンピューターにアクセスできない                  |    RS 2+2           |    50.0%        |
 |    5                  |    RS 2+2           |    50.0%        |
 |    6                  |    RS 2+2           |    50.0%        |
 |    7                  |    RS 4+2           |    66.7%        |
@@ -155,9 +155,9 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 |    障害ドメイン      |    レイアウト           |    効率性   |
 |-----------------------|---------------------|-----------------|
-|    2                  |    –                |    –            |
-|    3                  |    –                |    –            |
-|    4                  |    RS 2+2           |    50.0%        |
+|    2 で保護されたプロセスとして起動されました                  |    –                |    –            |
+|    3 で保護されたプロセスとして起動されました                  |    –                |    –            |
+|    ホーム フォルダーが置かれているコンピューターにアクセスできない                  |    RS 2+2           |    50.0%        |
 |    5                  |    RS 2+2           |    50.0%        |
 |    6                  |    RS 2+2           |    50.0%        |
 |    7                  |    RS 4+2           |    66.7%        |
@@ -179,18 +179,18 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 次の 6 つの例は、3 方向ミラーリングやデュアル パリティで対処**できる**状態を示しています。
 
-- **1.**  1つのドライブが失われた (キャッシュドライブを含む)
-- **2.**  1台のサーバーが失われました
+- **1.**    1 つのドライブが失われた (キャッシュ ドライブを含む)
+- **2.**    1 台のサーバーが失われた
 
 ![fault-tolerance-examples-1-and-2](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-12.png)
 
-- **番.**  1台のサーバーと1台のドライブが失われました
-- **4/4.**  異なるサーバーで2つのドライブが失われた
+- **3.**    1 台のサーバーと 1 つのドライブが失われた
+- **4.**    異なるサーバーの 2 つのドライブが失われた
 
 ![fault-tolerance-examples-3-and-4](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-34.png)
 
-- **5/5.**  2台以上のドライブが失われ、最大で2台のサーバーが影響を受ける
-- **4/6.**  2つのサーバーが失われました
+- **5.**    2 台を超えるドライブが失われたが、影響を受けるサーバーが最大で 2 台である
+- **6.**    2 台のサーバーが失われた
 
 ![fault-tolerance-examples-5-and-6](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-56.png)
 
@@ -200,8 +200,8 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 有効期間中は、記憶域スペースでは任意の数の障害に対応できます。これは、各障害が発生した後で、十分な時間があれば、完全な回復状態に復元されるためです。 ただし、特定の時点で、最大で 2 つの障害ドメインが障害の影響を受けても安全です。 したがって、次に示す例は、3 方向ミラーリングやデュアル パリティでは対処**できない**状態です。
 
-- **7.** 3台以上のサーバーで一度にドライブが失われる
-- **8.** 3台以上のサーバーが一度に失われました
+- **7.** 同時に 3 台以上のサーバーでドライブが失われた
+- **8.** 同時に 3 台以上のサーバーが失われた
 
 ![fault-tolerance-examples-7-and-8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
@@ -209,14 +209,14 @@ Windows Server 2016 以降では、記憶域スペース ダイレクトの 1 �
 
 「[記憶域スペース ダイレクトのボリュームの作成](create-volumes.md)」をご覧ください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 以下のすべてのリンクは、このトピックの本文内に記載されています。
 
-- [Windows Server 2016 の記憶域スペースダイレクト](storage-spaces-direct-overview.md)
+- [Windows Server 2016 での記憶域スペース ダイレクト](storage-spaces-direct-overview.md)
 - [Windows Server 2016 での障害ドメインの認識](../../failover-clustering/fault-domains.md)
-- [Microsoft Research による Azure での消去コーディング](https://www.microsoft.com/en-us/research/publication/erasure-coding-in-windows-azure-storage/)
+- [Microsoft Research による Azure での消去コーディング](https://www.microsoft.com/research/publication/erasure-coding-in-windows-azure-storage/)
 - [ローカル再構築コードとパリティボリュームの高速化](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
 - [Storage Management API のボリューム](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
 - [Microsoft Ignite 2016 でのストレージの効率に関するデモ](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
-- [記憶域スペースダイレクトの容量計算ツールのプレビュー](http://aka.ms/s2dcalc)
+- [記憶域スペースダイレクトの容量計算ツールのプレビュー](https://aka.ms/s2dcalc)

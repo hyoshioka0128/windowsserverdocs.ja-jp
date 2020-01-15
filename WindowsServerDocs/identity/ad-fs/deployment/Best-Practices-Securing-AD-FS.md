@@ -9,15 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 15b0c721b620e2891f4452fd54501f4970b7c177
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: abbc9cf76056af4ac421d9a38381bd8d8f666e4c
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71359999"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949530"
 ---
-## <a name="best-practices-for-securing-active-directory-federation-services"></a>Active Directory フェデレーションサービス (AD FS) をセキュリティで保護するためのベストプラクティス
-
+# <a name="best-practices-for-securing-active-directory-federation-services"></a>Active Directory フェデレーションサービス (AD FS) をセキュリティで保護するためのベストプラクティス
 
 このドキュメントでは、Active Directory フェデレーションサービス (AD FS) (AD FS) と Web アプリケーションプロキシのセキュリティで保護された計画と展開のベストプラクティスについて説明します。  この情報には、これらのコンポーネントの既定の動作、および特定のユースケースとセキュリティ要件を持つ組織の追加のセキュリティ構成に関する推奨事項に関する情報が含まれています。
 
@@ -39,32 +38,32 @@ ms.locfileid: "71359999"
 > ポート 808 (Windows Server 2012R2) またはポート 1501 (Windows Server 2016 以降) は、ローカル WCF エンドポイントが構成データをサービスプロセスと Powershell に転送するために使用 AD FS Net.tcp ポートです。 このポートは、Set-adfsproperties | を実行すると表示されます。[NetTcpPort] を選択します。 これは、ファイアウォールで開く必要のないローカルポートですが、ポートスキャンで表示されます。 
 
 ### <a name="azure-ad-connect-and-federation-serverswap"></a>Azure AD Connect とフェデレーションサーバー/WAP
-次の表では、Azure AD Connect サーバーとフェデレーション/WAP サーバー間の通信に必要なポートとプロトコルについて説明します。  
+この表は、Azure AD Connect サーバーとフェデレーション/WAP サーバー間の通信に必要なポートとプロトコルについて説明しています。  
 
 プロトコル |ポート |説明
 --------- | --------- |---------
-HTTP|80 (TCP/UDP)|SSL 証明書を確認するために Crl (証明書失効リスト) をダウンロードするために使用します。
-HTTPS|443 (TCP/UDP)|Azure AD と同期するために使用します。
+HTTP|80 (TCP/UDP)|SSL 証明書を検証するための CRL (証明書失効リスト) をダウンロードするために使用されます。
+HTTPS|443 (TCP/UDP)|Azure AD と同期するために使用されます。
 WinRM|5985| WinRM リスナー
 
 ### <a name="wap-and-federation-servers"></a>WAP とフェデレーションサーバー
-次の表では、フェデレーションサーバーと WAP サーバー間の通信に必要なポートとプロトコルについて説明します。
+この表は、フェデレーション サーバーと WAP サーバー間の通信に必要なポートとプロトコルについて説明しています。
 
 プロトコル |ポート |説明
 --------- | --------- |---------
-HTTPS|443 (TCP/UDP)|認証に使用されます。
+HTTPS|443 (TCP/UDP)|認証で使用されます。
 
 ### <a name="wap-and-users"></a>WAP とユーザー
-次の表では、ユーザーと WAP サーバー間の通信に必要なポートとプロトコルについて説明します。
+この表は、ユーザーと WAP サーバー間の通信に必要なポートとプロトコルについて説明しています。
 
 プロトコル |ポート |説明
 --------- | --------- |--------- |
-HTTPS|443 (TCP/UDP)|デバイスの認証に使用されます。
-TCP|49443 (TCP)|証明書の認証に使用されます。
+HTTPS|443 (TCP/UDP)|デバイスの認証で使用されます。
+TCP|49443 (TCP)|証明書の認証で使用されます。
 
 ハイブリッド展開に必要なポートとプロトコルの詳細については、[こちら](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-ports/)のドキュメントを参照してください。
 
-Azure AD と Office 365 の展開に必要なポートとプロトコルの詳細については、[こちら](https://support.office.com/en-us/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US)のドキュメントを参照してください。
+Azure AD と Office 365 の展開に必要なポートとプロトコルの詳細については、[こちら](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US)のドキュメントを参照してください。
 
 ### <a name="endpoints-enabled"></a>有効なエンドポイント
 
@@ -88,7 +87,7 @@ Azure AD と Office 365 のシナリオにのみ AD FS と WAP を展開する�
     
     PS:\>Set-AdfsEndpoint -TargetAddressPath <address path> -Proxy $false
 
-以下に例を示します。
+たとえば次のようになります。
     
     PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/certificatemixed -Proxy $false
     
@@ -101,13 +100,13 @@ Azure AD と Office 365 のシナリオにのみ AD FS と WAP を展開する�
     
    `PS:\>Get-ADFSProperties`
 
-プロパティが`ExtendedProtectionTokenCheck`です。  既定の設定は [許可] です。これにより、機能をサポートしていないブラウザーとの互換性の問題がなくても、セキュリティ上の利点を実現できます。  
+プロパティが `ExtendedProtectionTokenCheck` です。  既定の設定は [許可] です。これにより、機能をサポートしていないブラウザーとの互換性の問題がなくても、セキュリティ上の利点を実現できます。  
 
 ### <a name="congestion-control-to-protect-the-federation-service"></a>フェデレーションサービスを保護するための輻輳制御
 フェデレーションサービスプロキシ (WAP の一部) は、大量の要求から AD FS サービスを保護するための輻輳制御を提供します。  Web アプリケーションプロキシとフェデレーションサーバーの間の待機時間によって検出されたフェデレーションサーバーが過負荷になっている場合、Web アプリケーションプロキシは外部クライアントの認証要求を拒否します。  この機能は、既定で推奨される待機時間のしきい値レベルで構成されます。
 
 #### <a name="to-verify-the-settings-you-can-do-the-following"></a>設定を確認するには、次の操作を行います。
-1.  Web アプリケーションプロキシコンピューターで、管理者特権でのコマンドウィンドウを起動します。
+1.  Web アプリケーション プロキシ コンピューターで、管理者特権のコマンド ウィンドウを起動します。
 2.  %WINDIR%\adfs\config. で、ADFS ディレクトリに移動します。
 3.  輻輳制御の設定を既定値から '<congestionControl latencyThresholdInMSec="8000" minCongestionWindowSize="64" enabled="true" />' に変更します。
 4.  ファイルを保存し、閉じます。
@@ -160,12 +159,12 @@ AD FS は、プロキシ経由で受信する要求、個々のアプリケー�
 
     PS:\>Install-AdfsFarm -CertificateThumbprint <String> -DecryptionCertificateThumbprint <String> -FederationServiceName <String> -ServiceAccountCredential <PSCredential> -SigningCertificateThumbprint <String>
 
-それぞれの文字の説明は次のとおりです。
+この場合
 
 
-- `CertificateThumbprint`は SSL 証明書です
-- `SigningCertificateThumbprint`は、(HSM で保護されたキーを持つ) 署名証明書です。
-- `DecryptionCertificateThumbprint`は、(HSM で保護されたキーを持つ) 暗号化証明書です。
+- SSL 証明書を `CertificateThumbprint`
+- `SigningCertificateThumbprint` は、(HSM で保護されたキーを持つ) 署名証明書です。
+- `DecryptionCertificateThumbprint` は暗号化証明書 (HSM で保護されたキーを含む) です。
 
 
 

@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 8880f26acd8b32a4ab8a32ede067d158f2d6aed1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 834aa2611ff2b965c9184524fa6782fb4477a4cd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369206"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949135"
 ---
 # <a name="appendix-i-creating-management-accounts-for-protected-accounts-and-groups-in-active-directory"></a>付録 I: Active Directory の保護されたアカウントとグループの管理アカウントを作成する
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 高い特権を持つグループの永続的なメンバーシップに依存しない Active Directory モデルを実装する際の課題の1つは、グループの一時的なメンバーシップが必要になったときに、これらのグループを設定するためのメカニズムが必要であることです。 特権 id 管理ソリューションの中には、ソフトウェアのサービスアカウントに、フォレスト内の各ドメインの DA や管理者などのグループに永続的なメンバーシップが付与されていることが必要です。 ただし、Privileged Identity Management (PIM) ソリューションでは、このような高い権限を持つコンテキストでサービスを実行する必要はありません。  
   
@@ -83,13 +83,13 @@ ms.locfileid: "71369206"
   
     -   SELF  
   
-    -   SYSTEM  
+    -   システム  
   
     -   Domain Admins  
   
     -   Enterprise Admins  
   
-    -   管理者  
+    -   Administrators  
   
     -   Windows 認証アクセスグループ (該当する場合)  
   
@@ -144,7 +144,7 @@ Active Directory のインストールで特権グループのメンバーシッ
    >
    > ホストに対してより安全な暗号化の種類を実装しても、資格情報の盗難攻撃を軽減することはできませんが、セキュリティで保護されたホストの適切な使用と構成が行われます。 特権アカウントによってのみ使用されるホストに対して、より強力な暗号化の種類を設定すると、コンピューターの攻撃対象領域が軽減されます。  
    >
-   > システムおよびアカウントでの暗号化の種類の構成の詳細については、「 [Kerberos でサポートされる暗号化の種類の Windows 構成](http://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)」を参照してください。  
+   > システムおよびアカウントでの暗号化の種類の構成の詳細については、「 [Kerberos でサポートされる暗号化の種類の Windows 構成](https://blogs.msdn.com/b/openspecification/archive/2011/05/31/windows-configurations-for-kerberos-supported-encryption-type.aspx)」を参照してください。  
    >
    > これらの設定は、Windows Server 2012、Windows Server 2008 R2、Windows 8、または Windows 7 を実行しているコンピューターでのみサポートされます。  
   

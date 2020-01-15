@@ -8,27 +8,27 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 1399ed6a50085baa37f06c09b8c3e18ca8bca98b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2e8e9e86f81596c85219c37c07d8fd2e95cc3a49
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395707"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953076"
 ---
 # <a name="accurate-time-for-windows-server-2016"></a>Windows Server 2016 の正確な時刻
 
->適用対象:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 以降
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 以降
 
 Windows タイムサービスは、クライアントとサーバーの時刻の同期プロバイダーにプラグインモデルを使用するコンポーネントです。  Windows には、2つの組み込みクライアントプロバイダーがあり、利用可能なサードパーティのプラグインがあります。 1つのプロバイダーは、 [ntp (RFC 1305)](https://tools.ietf.org/html/rfc1305)または[ms-chap](https://msdn.microsoft.com/library/cc246877.aspx)を使用して、ローカルシステム時刻を ntp または ms ntp に準拠した参照サーバーに同期します。 もう1つのプロバイダーは Hyper-v 用で、仮想マシン (VM) を Hyper-v ホストに同期します。  複数のプロバイダーが存在する場合、Windows は最初に階層レベルを使用して最適なプロバイダーを選択し、次にルート遅延、ルート分散、および finally 時間オフセットを選択します。
 
 > [!NOTE]
-> Windows タイムサービスの簡単な概要については、この[概要ビデオ](https://aka.ms/WS2016TimeVideo)をご覧ください。
+> Windows Time サービスの概要については、こちらの[概要ビデオ](https://aka.ms/WS2016TimeVideo)をご覧ください。
 
 このトピックでは、次のことについて説明します。次のトピックは、正確な時刻を有効にすることに関連しています。 
 
-- 内容
-- 恒常的
-- ベスト プラクティス
+- 改善策
+- 測定
+- 推奨する運用方法
 
 > [!IMPORTANT]
 > Windows 2016 の正確な時刻に関する記事で言及されている補遺は、[こちら](https://windocs.blob.core.windows.net/windocs/WindowsTimeSyncAccuracy_Addendum.pdf)からダウンロードできます。  このドキュメントでは、テストと測定の手法の詳細について説明します。
@@ -39,7 +39,7 @@ Windows タイムサービスは、クライアントとサーバーの時刻の
 ## <a name="domain-hierarchy"></a>ドメイン階層
 ドメインとスタンドアロンの構成は、動作が異なります。
 
-- ドメインメンバーは、認証を使用して時間参照のセキュリティと信頼性を確保する、セキュリティで保護された NTP プロトコルを使用します。  ドメインメンバーは、ドメイン階層とスコアリングシステムによって決定されるマスタークロックと同期します。  ドメインには、時間の階層構造があります。これは、各 DC がより正確な時間階層を持つ親 DC を指します。  階層は、ルートフォレスト内の PDC または DC、またはドメインの適切なタイムサーバーを示す GTIMESERV ドメインフラグを持つ DC に解決されます。  下の「 [GTIMESERV を使用してローカルの Reliable Time サービスを指定](#GTIMESERV)する」セクションを参照してください。
+- ドメインメンバーは、認証を使用して時間参照のセキュリティと信頼性を確保する、セキュリティで保護された NTP プロトコルを使用します。  ドメインメンバーは、ドメイン階層とスコアリングシステムによって決定されるマスタークロックと同期します。  ドメインには、時間の階層構造があります。これは、各 DC がより正確な時間階層を持つ親 DC を指します。  階層は、ルートフォレスト内の PDC または DC、またはドメインの適切なタイムサーバーを示す GTIMESERV ドメインフラグを持つ DC に解決されます。  下の「GTIMESERV を使用してローカルの Reliable Time サービスを指定する」を参照してください。
 
 - スタンドアロンコンピューターは、既定で time.windows.com を使用するように構成されています。  この名前は、DNS サーバーによって解決されます。このサーバーは、Microsoft が所有しているリソースを指している必要があります。  リモートで特定されたすべての時刻参照と同様に、ネットワークが停止すると、同期が妨げられる可能性があります。  ネットワークトラフィックの負荷と非対称ネットワークパスによって、時刻の同期の精度が低下する場合があります。  1ミリ秒の精度を確保するために、リモートタイムソースに依存することはできません。
 

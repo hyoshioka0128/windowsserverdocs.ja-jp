@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 27d456dd274b917233f0484f055b679dc8c73214
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: cce76e006272104033e1437e0ccf6cad5bc47f3f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403506"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950302"
 ---
 # <a name="passwords-overview"></a>パスワードの概要
 
@@ -48,13 +48,13 @@ Windows Server 2012 および Windows 8 では、パスワード機能が非推�
 ## <a name="BKMK_LINKS"></a>関連項目
 次の表に、パスワード機能、テクノロジ、および資格情報の管理に関するその他のリソースを示します。
 
-|コンテンツの種類|参考資料|
+|コンテンツの種類|参照先|
 |--------|-------|
-|**シナリオのドキュメント**|[デジタル id の保護](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
+|**シナリオのドキュメント**|[デジタル id の保護](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)|
 |**運用**|[Active Directory ユーザーとコンピューター](https://technet.microsoft.com/library/cc754217.aspx)|
-|**トラブルシューティング**|[パスワードの有効期限が切れたことを確認する \- Active Directory PowerShell ブログ](http://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
+|**トラブルシューティング**|[パスワードの有効期限が切れたことを確認する \- Active Directory PowerShell ブログ](https://blogs.msdn.com/b/adpowershell/archive/2010/08/09/9970198.aspx)|
 |**セキュリティ**| Windows Server 2008 R2 および Windows 7 の[脅威と対策ガイド: アカウントポリシー](https://technet.microsoft.com/library/hh125920(v=ws.10).aspx)<br /><br />[強力なパスワードを変更および作成](https://www.microsoft.com/security/online-privacy/passwords-create.aspx)するためのガイダンス|
 |**ツールと設定**|[Microsoft ダウンロードセンターの「Windows および Windows Server 用のグループポリシー設定のリファレンス」](https://www.microsoft.com/download/en/details.aspx?amp;displaylang=en&displaylang=en&id=25250)|
-|**コミュニティ リソース**|[デジタル id の保護](http://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<br /><br />[Windows Live ID を使用した Windows 8 へのサインイン](http://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<br /><br />[ピクチャパスワードを使用したサインイン](http://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<br /><br />[ピクチャパスワードのセキュリティの最適化](http://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
+|**コミュニティ リソース**|[デジタル id の保護](https://blogs.msdn.com/b/b8/archive/2011/12/14/protecting-your-digital-identity.aspx)<br /><br />[Windows Live ID を使用した Windows 8 へのサインイン](https://blogs.msdn.com/b/b8/archive/2011/09/26/signing-in-to-windows-8-with-a-windows-live-id.aspx)<br /><br />[ピクチャパスワードを使用したサインイン](https://blogs.msdn.com/b/b8/archive/2011/12/16/signing-in-with-a-picture-password.aspx)<br /><br />[ピクチャパスワードのセキュリティの最適化](https://blogs.msdn.com/b/b8/archive/2011/12/19/optimizing-picture-password-security.aspx)|
 
 

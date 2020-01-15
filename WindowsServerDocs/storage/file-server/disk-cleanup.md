@@ -8,16 +8,16 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 2de3452a3528122beb26f403fb0c73d7ff13efd7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bb93ec15fd138ee65797c9d27413552c3a1759a6
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402114"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949669"
 ---
 # <a name="using-disk-cleanup-on-windows-server"></a>Windows Server でのディスククリーンアップの使用
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
+> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2
 
 ディスククリーンアップツールは、Windows Server 環境内の不要なファイルを消去します。 このツールは、Windows server 2019 および Windows Server 2016 では既定で使用できますが、以前のバージョンの Windows Server で有効にするには、手動でいくつかの手順を実行する必要がある場合があります。
 
@@ -37,11 +37,11 @@ ms.locfileid: "71402114"
 
 1. **[管理]** メニューの **[役割と機能]** の追加 を選択します。
 
-1. **[開始する前に]** ページで、インストールする機能について、移行先サーバーとネットワーク環境が準備されていることを確認します。 **[次へ]** を選択します。
+1. **[開始する前に]** ページで、インストールする機能について、移行先サーバーとネットワーク環境が準備されていることを確認します。 **[次へ]** を選びます。
 
-1. **[インストールの種類の選択]** ページで、 **[役割ベースまたは機能ベースのインストール]** を選択して、すべてのパーツ機能を1台のサーバーにインストールします。 **[次へ]** を選択します。
+1. **[インストールの種類の選択]** ページで、 **[役割ベースまたは機能ベースのインストール]** を選択して、すべてのパーツ機能を1台のサーバーにインストールします。 **[次へ]** を選びます。
 
-1. **[対象サーバーの選択]** ページで、サーバー プールからサーバーを選択するか、オフライン VHD を選択します。 **[次へ]** を選択します。
+1. **[対象サーバーの選択]** ページで、サーバー プールからサーバーを選択するか、オフライン VHD を選択します。 **[次へ]** を選びます。
 
 1. **[サーバーの役割の選択]** ページで、 **[次へ]** を選択します。
 
@@ -61,10 +61,10 @@ ms.locfileid: "71402114"
 
 Cleanmgr.exe を使用するには、前述のようにデスクトップエクスペリエンスをインストールするか、既にサーバー、cleanmgr.exe、および cleanmgr.exe に存在する2つのファイルをコピーします。 次の表を使用して、オペレーティングシステムのファイルを検索します。
 
-| オペレーティング システム  | Architecture  | ファイルの場所  |
+| オペレーティング システム  | アーキテクチャ  | ファイルの場所  |
 | ----------------- | -------------- | --------------- |
-| Windows Server 2008 R2 | 64 ビット | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr_31bf3856ad364e35_6.1.7600.16385_none_c9392808773cd7da\cleanmgr.exe 
-| Windows Server 2008 R2 | 64 ビット | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr.resources_31bf3856ad364e35_6.1.7600.16385_en-us_b9cb6194b257cc63\cleanmgr.exe.mui |
+| Windows Server 2008 R2 | 64 ビット | C:\Windows\winsxs\ amd64_microsoft-Windows-cleanmgr_31bf3856ad364e35_6 16385_none_c9392808773cd7da \cleanmgr.exe 
+| Windows Server 2008 R2 | 64 ビット | C:\Windows\winsxs\ amd64_microsoft resources_31bf3856ad364e35_6-1.7600-\cleanmgr.exe.mui. 16385_en-us_b9cb6194b257cc63 |
 
 Cleanmgr.exe を見つけて、ファイルを場所**System32**に移動します。
 
@@ -76,6 +76,6 @@ Cleanmgr.exe を見つけて、ファイルを場所**System32**に移動しま�
 
 ## <a name="additional-references"></a>その他の参照情報
 
-[Windows 10 でドライブの空き容量を増やす](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)
+[Windows 10 でドライブの空き容量を増やす](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)
 
 [cleanmgr](../../administration/windows-commands/cleanmgr.md)

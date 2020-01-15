@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: de4d64e3dbe4bc7c7cba32f066a696636632224d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 82d0ce962dfab0f7c9e5180e4b471894f507fb26
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403725"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950343"
 ---
 # <a name="what39s-new-for-managed-service-accounts"></a>管理&#39;されたサービスアカウントの新機能
 
@@ -31,7 +31,7 @@ IT プロフェッショナル向けのこのトピックでは、Windows Server
 ## <a name="versions"></a>Windows Server 2012 および Windows 8 での管理されたサービスアカウントの新機能
 ここでは、Windows Server 2012 および Windows 8 で MSA に加えられた機能の変更について説明します。
 
-### <a name="group-managed-service-accounts"></a>グループ管理サービス アカウント
+### <a name="group-managed-service-accounts"></a>Group Managed Service Accounts
 ドメイン アカウントがドメイン内のサーバーに対して構成されている場合、クライアント コンピューターは、そのサービスに対して認証を行い、接続できます。 これまでは、パスワードを管理しなくても ID が提供されたアカウントは 2 種類だけで、 次のような制限もありました。
 
 -   コンピューター アカウントは、1 つのドメイン サーバーに制限され、パスワードはコンピューターによって管理される
@@ -51,12 +51,12 @@ Windows Server 2012 または Windows 8 を実行しているコンピュータ�
 ### <a name="interoperability"></a>削除または非推奨の機能
 Windows Server 2012 の場合、Windows PowerShell コマンドレットは、既定では、サーバーの管理されたサービスアカウントではなく、グループの管理されたサービスアカウントを管理します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
--   [グループの管理されたサービスアカウントの概要](group-managed-service-accounts-overview.md)
+-   [グループの管理されたサービス アカウントの概要](group-managed-service-accounts-overview.md)
 
 -   [Active Directory Domain Services の概要](active-directory-domain-services-overview.md)
 
--   [管理されたサービスアカウント: 理解、実装、ベストプラクティス、およびトラブルシューティング](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
+-   [管理されたサービスアカウント: 理解、実装、ベストプラクティス、およびトラブルシューティング](https://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
 
 

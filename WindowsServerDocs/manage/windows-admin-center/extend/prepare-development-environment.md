@@ -8,16 +8,16 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 09/18/2018
 ms.prod: windows-server
-ms.openlocfilehash: 2aff8c0e43c6813c543511e643471c9cd9bcc292
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 67bd2a476cedd6d522daeaae54081b02fd893fbd
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357036"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949975"
 ---
 # <a name="prepare-your-development-environment"></a>開発環境の準備
 
->適用先:Windows Admin Center、Windows Admin Center Preview
+>適用対象: Windows Admin Center、Windows Admin Center Preview
 
 Windows 管理センター SDK を使用して拡張機能の開発を開始しましょう。  このドキュメントでは、Windows 管理センターの拡張機能をビルドしてテストするために、環境を稼働させるためのプロセスについて説明します。
 
@@ -30,9 +30,9 @@ Windows 管理センター SDK を使用して拡張機能の開発を開始し�
 
 SDK で開発を開始するには、次の前提条件をダウンロードしてインストールします。
 
-* [Windows 管理センター](https://aka.ms/WACDownloadPage)(GA またはプレビューバージョン)
-* Visual Studio または [Visual Studio Code](http://code.visualstudio.com)
-* [ノードパッケージマネージャー](https://npmjs.com/get-npm)(8.12.0 以降)
+* [Windows 管理センター](https://aka.ms/WACDownloadPage) (GA またはプレビューバージョン)
+* Visual Studio または [Visual Studio Code](https://code.visualstudio.com)
+* [ノードパッケージマネージャー](https://npmjs.com/get-npm) (8.12.0 以降)
 * [Nuget](https://www.nuget.org/downloads) (拡張機能の公開用)
 
 > [!NOTE]
@@ -58,7 +58,7 @@ npm install -g windows-admin-center-cli
 ```
 
 >[!NOTE]
->新しいバージョンの@angular/cliをインストールすることはできますが、1.6.5 よりも大きいバージョンをインストールすると、gulp のビルド手順で、ローカル cli のバージョンがインストールされているバージョンと一致しないという警告が表示されます。
+>新しいバージョンの @angular/cliをインストールすることはできますが、1.6.5 よりも大きいバージョンをインストールすると、gulp のビルド手順で、ローカル cli のバージョンがインストールされているバージョンと一致しないという警告が表示されます。
 
 ## <a name="next-steps"></a>次の手順
 

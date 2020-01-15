@@ -1,7 +1,7 @@
 ---
 title: 記憶域スペースダイレクトに関してよく寄せられる質問
 description: 記憶域スペースダイレクトの詳細
-keywords: 記憶域スペース
+keywords: 記憶域
 ms.prod: windows-server
 ms.author: kaushik
 ms.technology: storage-spaces
@@ -9,12 +9,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: df9dac8c761a83a13fb937a99cba3697dce95201
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 19dcc1c57fe7c7eea74b003553a0b0a6ab5508aa
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402796"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950237"
 ---
 # <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>記憶域スペースダイレクトに関してよく寄せられる質問 (FAQ)
 
@@ -22,7 +22,7 @@ ms.locfileid: "71402796"
 
 ## <a name="when-you-use-storage-spaces-direct-with-3-nodes-can-you-get-both-performance-and-capacity-tiers"></a>3つのノードで記憶域スペースダイレクトを使用する場合、パフォーマンスレベルと容量レベルの両方を取得できますか。
 
-はい。2ノードまたは3ノードの記憶域スペースダイレクト構成では、パフォーマンスと容量の両方の層を取得できます。 ただし、2つの容量デバイスがあることを確認する必要があります。 つまり、次の3種類のデバイスをすべて使用する必要があります。NVME、SSD、HDD。
+はい。2ノードまたは3ノードの記憶域スペースダイレクト構成では、パフォーマンスと容量の両方の層を取得できます。 ただし、2つの容量デバイスがあることを確認する必要があります。 つまり、NVME、SSD、HDD の3種類のデバイスをすべて使用する必要があります。
  
 ## <a name="refs-file-system-provides-real-time-tiaring-with-storage-spaces-direct-does-refs-provides-the-same-functionality-with-shared-storage-spaces-in-2016"></a>Refs ファイルシステムでは、記憶域スペースダイレクトを使用したリアルタイムの tiaring が提供されます。 REFS では、2016の共有記憶域スペースと同じ機能が提供されますか。
 
@@ -42,9 +42,9 @@ ms.locfileid: "71402796"
  
 ## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>SSD デバイスで記憶域スペースダイレクトを作成した後、スピンディスク (HDD) を記憶域スペースダイレクトプールに追加することはできますか。
 
-No. 既定では、単一のデバイスの種類を使用してプールを作成すると、キャッシュディスクが構成されず、すべてのディスクが容量に使用されます。 構成に NVME ディスクを追加することができ、NVME ディスクはキャッシュ用に構成されます。
+いいえ。 既定では、単一のデバイスの種類を使用してプールを作成すると、キャッシュディスクが構成されず、すべてのディスクが容量に使用されます。 構成に NVME ディスクを追加することができ、NVME ディスクはキャッシュ用に構成されます。
  
-## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>2ラックの障害ドメインを構成しました。ラック1には、2つの障害ドメインがあります。ラック2には1つの障害ドメインがあります。 各サーバーには、4つの容量 100 GB のデバイスがあります。 プールから 1200 GB の領域をすべて使用できますか。
+## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>2ラック障害ドメインを構成しました: ラック1に2つの障害ドメインがあります。ラック2に1つの障害ドメインがあります。 各サーバーには、4つの容量 100 GB のデバイスがあります。 プールから 1200 GB の領域をすべて使用できますか。
 
 いいえ、使用できるのは 800 GB のみです。 ラック障害ドメインでは、各 chuck とその複製が異なるラックに配置されるように、双方向ミラー構成を使用していることを確認する必要があります。
  
@@ -58,7 +58,7 @@ No. 既定では、単一のデバイスの種類を使用してプールを作�
  
 ## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>キャッシュ、容量、回復性のために確保されているディスクの正確なサイズを示す電卓があるかどうかを確認できます。
 
-記憶域スペース計算ツールを使用すると、計画に役立てることができます。 これは、で http://aka.ms/s2dcalc 入手できます。
+記憶域スペース計算ツールを使用すると、計画に役立てることができます。 これは https://aka.ms/s2dcalc で入手できます。
  
 ## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>6台のサーバーと3つのラックを構成するときに推奨される最適な構成は何ですか。
 
@@ -76,7 +76,7 @@ Get-PhysicalDisk -SerialNumber <SerialNumber> | Enable-StorageMaintenanceMode
 
 ハードウェアの製造元に問い合わせて、サポートを確認することをお勧めします。 ハードウェアベンダーは、ハードウェア上でソリューションをテストし、サポートされているかどうかについてコメントします。 たとえば、このドキュメントの執筆時点では、R730/R730xd/R630 など、8個を超えるドライブスロットを持つサーバーは、SES をサポートし、記憶域スペースダイレクトと互換性があります。 Dell は、記憶域スペースダイレクトの HBA330 のみをサポートしています。 R620 は、SES をサポートしておらず、記憶域スペースダイレクトと互換性がありません。
 
-ハードウェアのサポート情報の詳細については、次の web サイトを参照してください。Windows Server Catalog
+ハードウェアのサポート情報の詳細については、次の web サイトを参照してください: Windows Server Catalog
  
 ## <a name="how-does-storage-spaces-direct-make-use-of-ses"></a>記憶域スペースダイレクトはどのようにして SES を利用しますか。
 

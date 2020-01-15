@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 0ca951c5e4c4fcdba06d0b475a7d7536a9c7f91f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4d809ab1bf2a18dff537bf63620623d576c0b25d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71395456"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949882"
 ---
 # <a name="manage-client-access-licenses"></a>クライアント アクセス ライセンスを管理する
 ステーションとして使用される MultiPoint services を実行しているコンピューターを含め、MultiPoint Services システムに接続するすべてのステーションには、ユーザーごとの有効なリモートデスクトップ*クライアントアクセスライセンス (CAL)* が必要です。
@@ -31,7 +31,7 @@ ms.locfileid: "71395456"
   
 3.  **[ホーム]** タブをクリックし、 **[クライアントアクセスライセンスの追加]** をクリックします。  CAL ライセンスの管理ツールが開きます。
 
-# <a name="set-the-licensing-mode-manually"></a>ライセンスモードを手動で設定する
+## <a name="set-the-licensing-mode-manually"></a>ライセンスモードを手動で設定する
 適切に構成されていない場合、MultiPoint Services のセットアップでは、猶予期間の期限が切れていることを通知するメッセージが表示されます。 ライセンスモードを設定するには、次の手順に従います。
 
 1. **ローカルグループポリシーエディター** (gpedit.msc) を起動します。
@@ -41,12 +41,12 @@ ms.locfileid: "71395456"
 3. 右側のウィンドウで、 **[指定されたリモートデスクトップライセンスサーバーを使用する]** を右クリックし、 **[編集]** を選択します。
    - グループポリシーエディター ダイアログで、**有効** を選択します。
    - **[使用するライセンスサーバー]** フィールドにローカルコンピューターの名前を入力します。
-   - [ **OK]** を選択
+   - **[OK]** を選択します。
   
 4. 右側のウィンドウで、 **[リモートデスクトップライセンスモードの設定]** を右クリックし、 **[編集]** を選択します。
    - グループポリシーエディター ダイアログで、**有効** を選択します。
    - **ライセンスモード**を [デバイスごと/ユーザーごと] に設定します。
-   - [ **OK]** を選択 
+   - **[OK]** を選択します。 
 
   
 ## <a name="see-also"></a>関連項目  

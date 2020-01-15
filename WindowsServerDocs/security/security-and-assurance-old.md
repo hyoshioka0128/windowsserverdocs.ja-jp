@@ -11,41 +11,41 @@ ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: f43e638ca2ffbeafcbc8d23e55f5b03911eb0238
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee0d536eeea5943c0c0e69951a7733d7462b2d9e
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402306"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949731"
 ---
 # <a name="security-and-assurance-in-windows-server"></a>Windows Server のセキュリティおよび保証 
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 >[!TIP]
 > 以前のバージョンの Windows Server に関する情報をお探しの場合は、 docs.microsoft.com の他の [Windows Server ライブラリ](/previous-versions/windows/)を参照してください。 また、[このサイトで検索して](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions)、具体的な情報を確認することもできます。
 
-<img src="../media/landing-icons/security.png" style='float:left; padding:.5em;' alt="Icon representing a lock"> オペレーティング システムに組み込まれている保護の新しい層を使用して、セキュリティ違反に対する防御を強化することができます。 悪意のある攻撃をブロックし、仮想マシン、アプリケーション、およびデータのセキュリティ強化を支援します。
+<img src="../media/landing-icons/security.png" style='float:left; padding:.5em;' alt="Icon representing a lock"> オペレーティング システムに組み込まれている保護の新しい層を使用して、セキュリティ違反に対する防御を強化することができます。 悪意のある攻撃をブロックし、仮想マシン、アプリケーション、およびデータのセキュリティを強化するのを支援します。
 
 
 ### <a name="windows-server-security-blog-posthttpsblogstechnetmicrosoftcomwindowsserver20160425ten-reasons-youll-love-windows-server-2016-8-security"></a>[Windows Server のセキュリティに関するブログの投稿](https://blogs.technet.microsoft.com/windowsserver/2016/04/25/ten-reasons-youll-love-windows-server-2016-8-security/)
 Windows Server セキュリティ チームによるこのブログ記事では、ホスティングおよびハイブリッド クラウド環境のセキュリティを強化する数多くの Windows Servers の改良点が明らかにされています。
 
 ### <a name="datacenter-and-private-cloud-security-bloghttpsblogstechnetmicrosoftcomdatacentersecurity"></a>[データセンターとプライベートクラウドのセキュリティに関するブログ](https://blogs.technet.microsoft.com/datacentersecurity/)
-マイクロソフトのデータ センターおよびプライベート クラウドのセキュリティ チームによる技術コンテンツの中心的なブログ サイトです。                                    
+これは、Microsoft のデータ センターおよびプライベート クラウドのセキュリティ チームによる、技術コンテンツに関する中心的なブログ サイトです。                                    
 
 ### <a name="addressing-emerging-threats-and-landscape-shiftshttpswwwyoutubecomwatchvb5jmyxywx1kfeatureyoutube"></a>[新たな脅威への対処とランドスケープシフト](https://www.youtube.com/watch?v=B5JMYxYWx1k&feature=youtu.be)
-この 6 分間のビデオでは、Anders Vinberg 氏が、Microsoft のセキュリティおよび保証戦略の概要、セキュリティに関係する業界の動向と状況の変化について説明しています。 さらに、基礎となるファブリックからのワークロードを保護し、権限を持つアカウントからの直接的な攻撃から保護するためのマイクロソフトの重要なイニシアティブについて説明しています。 最後に、セキュリティ侵害について、新しい検知および法科学機能が脅威の特定によりいっそう役立つことを説明しています。
+この 6 分間のビデオでは、Anders Vinberg 氏が、Microsoft のセキュリティおよび保証戦略の概要、セキュリティに関係する業界の動向と状況の変化について説明しています。 さらに、基礎となるファブリックからのワークロードを保護し、権限を持つアカウントからの直接的な攻撃から保護するための Microsoft の重要なイニシアティブについて説明しています。 最後に、セキュリティ侵害について、新しい検知および法科学機能が脅威の特定によりいっそう役立つことを説明しています。
 
-### <a name="protecting-your-datacenter-and-cloud-from-emerging-threats-blog-posthttpblogstechnetcombwindowsserverarchive20151118protecting-your-datacenter-and-cloud-november-updateaspx"></a>[新たな脅威からデータセンターとクラウドを保護するブログの投稿](http://blogs.technet.com/b/windowsserver/archive/2015/11/18/protecting-your-datacenter-and-cloud-november-update.aspx)
-このブログ記事では、Microsoft のテクノロジを使用して、データ センターとクラウドへの投資を新たな脅威からどのように保護できるかについて説明しています。                   
+### <a name="protecting-your-datacenter-and-cloud-from-emerging-threats-blog-posthttpsblogstechnetcombwindowsserverarchive20151118protecting-your-datacenter-and-cloud-november-updateaspx"></a>[新たな脅威からデータセンターとクラウドを保護するブログの投稿](https://blogs.technet.com/b/windowsserver/archive/2015/11/18/protecting-your-datacenter-and-cloud-november-update.aspx)
+このブログ投稿では、Microsoft のテクノロジを使用して、データ センターとクラウドへの投資を新たな脅威からどのように保護できるかについて説明されています。                   
 
-### <a name="security-and-assurance-overview-session-at-ignitehttpchannel9msdncomeventsignite2015brk2482"></a>[Ignite のセキュリティと保証の概要セッション](http://channel9.msdn.com/events/ignite/2015/brk2482)
-この Ignite セッションでは、絶え間ない脅威、内部関係者による違反、組織的サイバー犯罪、Microsoft Cloud プラットフォームのセキュリティ (オンプレミスおよび Azure による接続済みサービス) について説明しています。 これには、ワークロード、大規模なエンタープライズ テナント、およびサービス プロバイダーを保護するためのシナリオが含まれます。                                                                   
+### <a name="security-and-assurance-overview-session-at-ignitehttpschannel9msdncomeventsignite2015brk2482"></a>[Ignite のセキュリティと保証の概要セッション](https://channel9.msdn.com/events/ignite/2015/brk2482)
+この Ignite セッションでは、絶え間ない脅威、内部関係者による違反、組織によるサイバー犯罪、Microsoft クラウド プラットフォームのセキュリティ (オンプレミスおよび Azure による接続済みサービス) が説明されています。 これには、ワークロード、大規模なエンタープライズ テナント、およびサービス プロバイダーを保護するためのシナリオが含まれます。                                                                   
 
 ## <a name="secure-virtualization-with-shielded-vms"></a>シールドされた VM による安全な仮想化
 
-### <a name="shielded-vm-in-channel-9httpchannel9msdncomshowsmechanicsintroduction-to-shielded-virtual-machines-in-windows-server-2016"></a>[シールドされた VM に関する Channel 9 のビデオ](http://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
+### <a name="shielded-vm-in-channel-9httpschannel9msdncomshowsmechanicsintroduction-to-shielded-virtual-machines-in-windows-server-2016"></a>[シールドされた VM に関する Channel 9 のビデオ](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
 シールドされた VM テクノロジとその利点の紹介です。                           
 
 ### <a name="shielded-vm-demohttpswwwyoutubecomwatchvxip5qtk-7d8"></a>[シールドされた VM のデモ](https://www.youtube.com/watch?v=xip5Qtk-7d8)
@@ -54,7 +54,7 @@ Windows Server セキュリティ チームによるこのブログ記事では�
 ### <a name="shielded-virtual-machines-in-windows-server-video-walkthroughhttpmicrosoft-cloudcloudguidescomguidesshielded-virtual-machines-in-windows-serverhtm"></a>[Windows Server でのシールドされた仮想マシンについてのビデオ チュートリアル](http://microsoft-cloud.cloudguides.com/Guides/Shielded Virtual Machines in Windows Server.htm)
 このビデオ チュートリアルでは、機密データを Hyper-V ホスト管理者による不正アクセスから守るために、ホスト ガーディアン サービスを使用して、シールドされた仮想マシンを有効にする方法が説明されています。
 
-### <a name="harden-the-fabric-protecting-tenant-secrets-in-hyper-v-ignite-videohttpchannel9msdncomeventsignite2015brk3457"></a>[ファブリックの強化: Hyper-V のテナントの機密情報を保護する (Ignite ビデオ)](http://channel9.msdn.com/events/ignite/2015/brk3457)
+### <a name="harden-the-fabric-protecting-tenant-secrets-in-hyper-v-ignite-videohttpschannel9msdncomeventsignite2015brk3457"></a>[ファブリックの強化: Hyper-v でのテナントシークレットの保護 (Ignite ビデオ)](https://channel9.msdn.com/events/ignite/2015/brk3457)
 
 この Ignite プレゼンテーションでは、Hyper-V および Virtual Machine Manager の機能強化と、シールドされた VM を有効にするための新しいホスト ガーディアン サーバーの役割が説明されています。                
 
@@ -72,23 +72,23 @@ Windows Server セキュリティ チームによるこのブログ記事では�
 
 ## <a name="privileged-access-management"></a>特権アクセスの管理
 ### <a name="securing-privileged-accesshttpstechnetmicrosoftcomwindows-server-docssecuritysecuring-privileged-accesssecuring-privileged-access"></a>[特権アクセスの保護](https://technet.microsoft.com/windows-server-docs/security/securing-privileged-access/securing-privileged-access)
-特権アクセスをセキュリティで保護する方法についてのロードマップを示します。 このロードマップは、サーバー セキュリティ チーム、Microsoft IT、Azure チーム、および Microsoft Consulting Services の知見を結集して作成されています。                           
+特権アクセスをセキュリティで保護する方法についてのロードマップ このロードマップは、サーバー セキュリティ チーム、Microsoft IT、Azure チーム、および Microsoft Consulting Services が有する知見を結集して作成されています。                           
 
 ### <a name="just-in-time-administration-with-microsoft-identity-managerhttpstechnetmicrosoftcomlibrarymt150258aspx"></a>[Microsoft Identity Manager による Just in Time 管理](https://technet.microsoft.com/library/mt150258.aspx)
-この記事では、Just in Time (JIT) 特権アクセス管理のサポートなど、Microsoft Identity Manager の機能について説明されています。                                                                    
+この記事では、Just-In-Time (JIT) 特権アクセス管理のサポートなど、Microsoft Identity Manager に含まれている機能が説明されています。                                                                    
 
-### <a name="protecting-windows-and-microsoft-azure-active-directory-with-privileged-access-managementhttpchannel9msdncomeventsignite2015brk3873"></a>[特権アクセス管理による Windows と Microsoft Azure Active Directory の保護](http://channel9.msdn.com/events/ignite/2015/brk3873)
+### <a name="protecting-windows-and-microsoft-azure-active-directory-with-privileged-access-managementhttpschannel9msdncomeventsignite2015brk3873"></a>[特権アクセス管理による Windows と Microsoft Azure Active Directory の保護](https://channel9.msdn.com/events/ignite/2015/brk3873)
 この Ignite プレゼンテーションでは、Windows Server、PowerShell、Active Directory、Identity Manager、および Azure Active Directory で認証を強化して管理者アクセスのリスクに対処し、Just in Time と Just Enough Administration (JEA) を使用してアクセスを管理するための Microsoft による戦略と投資が取り上げられています。
 
-### <a name="just-enough-administration-articlehttpakamsjea"></a>[Just Enough Administration に関する記事](http://aka.ms/JEA)
-このドキュメントには、Just Enough Administration のビジョンと技術詳細が記載されています。Just Enough Administration は、オペレーターによるアクセスを特定のタスクを実行するのに必要なものだけに制限し、組織のリスクを軽減するように設計された PowerShell のツールキットです。
+### <a name="just-enough-administration-articlehttpsakamsjea"></a>[Just Enough Administration に関する記事](https://aka.ms/JEA)
+このドキュメントには、Just Enough Administration (JEA) のビジョンと技術詳細が記載されています。JEA は、オペレーターによるアクセスを特定のタスクを実行するのに必要なものだけに制限し、組織のリスクを軽減するように設計された PowerShell のツールキットです。
 
 ### <a name="just-enough-administration-demo-videohttpswwwyoutubecomwatchvxnbrbky9p20"></a>[Just Enough Administration のデモ ビデオ](https://www.youtube.com/watch?v=xnBrbkY9P20)
 Just Enough Administration のデモ チュートリアルです。                                                                                                                  
 ## <a name="credential-protection"></a>資格情報の保護
 
 ### <a name="protect-derived-domain-credentials-with-credential-guardhttpsdocsmicrosoftcomwindowssecurityidentity-protectioncredential-guardcredential-guard"></a>[Credential Guard によるドメインの派生資格情報の保護](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)
-Credential Guard は、特権を持つシステム ソフトウェアだけがシークレットにアクセスできるように、仮想化ベースのセキュリティを使用してシークレットを分離します。 これらのシークレットへの未承認のアクセスは、Pass-the-Hash や Pass-the-Ticket など、資格情報の盗難攻撃につながる可能性があります。 Credential Guard は、NTLM パスワード ハッシュや Kerberos チケット保証チケットを保護することでこれらの攻撃を防ぎます。
+Credential Guard は、特権を持つシステム ソフトウェアだけがシークレットにアクセスできるように、仮想化ベースのセキュリティを使用してシークレットを分離します。 これらのシークレットへの不正アクセスは、Pass-the-Hash や Pass-The-Ticket などの、資格情報を盗む攻撃につながる可能性があります。 Credential Guard は、NTLM パスワード ハッシュと Kerberos の Ticket Granting Ticket を保護することで、これらの攻撃を防ぎます。
 
 ### <a name="protect-remote-desktop-credentials-with-remote-credential-guardhttpsdocsmicrosoftcomwindowssecurityidentity-protectionremote-credential-guard"></a>[Remote Credential Guard によるリモート デスクトップ資格情報の保護](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard)
 Remote Credential Guard は、接続を要求しているデバイスに Kerberos 要求をリダイレクトすることにより、リモート デスクトップ接続での資格情報を保護するのに役立ちます。 リモート デスクトップ セッションでシングル サインオンのエクスペリエンスも提供します。                                                                                                        |
@@ -115,14 +115,14 @@ Windows Defender は、アクティブな検出機能を提供して既知のマ
 ### <a name="security-threat-analysis-using-microsoft-operations-management-suitehttpschannel9msdncomeventsignite2015brk3464"></a>[Microsoft Operations Management Suite を使用したセキュリティ上の脅威についての分析](https://channel9.msdn.com/events/ignite/2015/brk3464)
 この Ignite プレゼンテーションでは、Operational Insights を使用して、どのようにセキュリティ上の脅威の分析を実行できるかについて説明されています。
 
-### <a name="microsoft-operations-management-suite-omshttpswwwmicrosoftcomen-usserver-cloudoperations-management-suiteoverviewaspx"></a>[Microsoft Operations Management Suite (OMS)](https://www.microsoft.com/en-us/server-cloud/operations-management-suite/overview.aspx)
+### <a name="microsoft-operations-management-suite-omshttpswwwmicrosoftcomserver-cloudoperations-management-suiteoverviewaspx"></a>[Microsoft Operations Management Suite (OMS)](https://www.microsoft.com/server-cloud/operations-management-suite/overview.aspx)
 Microsoft Operations Management Suite (OMS) セキュリティおよび監査ソリューションは、オンプレミス環境とクラウド環境のセキュリティ ログとファイアウォール イベントを処理して、悪意のある動作を分析および検出します。
 
 ### <a name="oms-and-windows-serverhttpswwwyoutubecomwatchv_sadw1dry2k"></a>[OMS と Windows Server](https://www.youtube.com/watch?v=_SaDw1dRy2k)
 この 3 分間のビデオでは、Windows Server によってブロックされる潜在的な悪意のある動作を検出するのに役立つ OMS を紹介しています。  
 
-### <a name="microsoft-advanced-threat-analyticshttpblogstechnetcombadarchive20150722microsoft-advanced-threat-analytics-coming-next-monthaspx"></a>[Microsoft Advanced Threat Analytics](http://blogs.technet.com/b/ad/archive/2015/07/22/microsoft-advanced-threat-analytics-coming-next-month.aspx)
-このブログ記事では、Active Directory のネットワーク トラフィックと SIEM データに基づいて潜在的な脅威を検出し、アラートを生成するオンプレミス製品である Microsoft Advanced Threat Analytics について説明されています。
+### <a name="microsoft-advanced-threat-analyticshttpsblogstechnetcombadarchive20150722microsoft-advanced-threat-analytics-coming-next-monthaspx"></a>[Microsoft Advanced Threat Analytics](https://blogs.technet.com/b/ad/archive/2015/07/22/microsoft-advanced-threat-analytics-coming-next-month.aspx)
+このブログ投稿では、Active Directory のネットワーク トラフィックと SIEM データに基づいて潜在的な脅威を検出し、アラートを生成するオンプレミス製品である Microsoft Advanced Threat Analytics について説明されています。
 
 ### <a name="microsoft-advanced-threat-analyticshttpswwwyoutubecomwatchv0na9fetrzfwlistpl8nfc9hageb5izgm8hvmrozethrpbdksw"></a>[Microsoft Advanced Threat Analytics](https://www.youtube.com/watch?v=0nA9FeTRZFw&list=PL8nfc9haGeb5IZGM8HvmRozetHRpBDKSw)
 この 3 分間のビデオでは、Microsoft が Windows Server に脅威分析機能をどのように追加しているのかについての概要が示されています。                                                                                 |

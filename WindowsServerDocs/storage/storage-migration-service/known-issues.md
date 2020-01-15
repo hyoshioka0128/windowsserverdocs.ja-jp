@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 9abe199399e577eb06044377c30d5a2dc0e35dd1
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: dccbfd7d3ff6d95615e9efecf840a840b42d0d27
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945227"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949644"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -320,7 +320,36 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
 
 非常に多数のファイルと入れ子になったフォルダーを転送する場合は、この動作が想定されます。 データのサイズが関連していません。 まず、 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)でこの動作を改善し、転送のパフォーマンスを最適化しています。 パフォーマンスをさらに調整するには、「[インベントリと転送のパフォーマンスの最適化](https://docs.microsoft.com/windows-server/storage/storage-migration-service/faq#optimizing-inventory-and-transfer-performance)」を参照してください。
 
+## <a name="data-does-not-transfer-user-renamed-when-migrating-to-or-from-a-domain-controller"></a>データが転送されず、ドメインコントローラーとの間で移行するときにユーザー名が変更される
 
-## <a name="see-also"></a>関連項目
+またはドメインコントローラーからの転送を開始した後、次のようにします。
+
+ 1. データは移行されず、コピー先に共有は作成されません。
+ 2. エラーメッセージが表示されない Windows 管理センターに赤いエラー記号が表示される
+ 3. 1つ以上の AD ユーザーおよびドメインローカルグループの名前または Windows 2000 ログオン属性が変更されました
+ 4. SMS orchestrator にイベント3509が表示されます。
+ 
+ ログ名: StorageMigrationService/Admin Source: StorageMigrationService: Date: 1/10/2020 2:53:48 PM イベント ID: 3509 タスクカテゴリ: なしレベル: エラーキーワード:      
+ ユーザー: NETWORK SERVICE Computer: orc2019-rtm.corp.contoso.com Description: コンピューターの記憶域を転送できませんでした。
+
+ ジョブ: dctest3 Computer: dc02-2019.corp.contoso.com 宛先コンピューター: dc03-2019.corp.contoso.com State: Failed エラー: 53251 エラーメッセージ: ローカルアカウントの移行がエラーシステムで失敗しました。例外:-2147467259 atMigrateSecurity (IDeviceRecord sourceDeviceRecord、IDeviceRecord destinationDeviceRecord、TransferConfiguration config、Guid proxyId、CancellationToken cancelToken) を StorageMigration します。
+
+これは、記憶域移行サービスを使用してドメインコントローラーとの間で移行を実行し、[ユーザーとグループの移行] オプションを使用してアカウントの名前を変更したり再利用したりした場合に想定される動作です。 [ユーザーとグループを転送しない] を選択するのではなく、 DC の移行は[、記憶域の移行サービスではサポートされていません](faq.md)。 DC には実際のローカルユーザーとグループがないため、記憶域移行サービスは、2つのメンバーサーバー間で移行する場合と同様に、これらのセキュリティプリンシパルを処理し、指示に従って Acl の調整を試行します。これにより、エラーが発生し、アカウントが破損またはコピーされます。 
+
+既に転送を1回以上実行している場合は、次のようにします。
+
+ 1. DC に対して次の AD PowerShell コマンドを使用して、変更されたユーザーまたはグループを見つけます (SearchBase をドメインの dinstringuished 名と一致するように変更します)。 
+
+    ```PowerShell
+    Get-ADObject -Filter 'Description -like "*storage migration service renamed*"' -SearchBase 'DC=<domain>,DC=<TLD>' | ft name,distinguishedname
+    ```
+   
+ 2. 元の名前で返されたユーザーについては、"ユーザーログオン名 (Windows 2000)" を編集して、記憶域移行サービスによって追加されたランダムな文字サフィックスを削除します。これにより、このような敗者がログオンできるようになります。
+ 3. 元の名前で返されたグループについては、"グループ名 (Windows 2000 より前)" を編集して、記憶域移行サービスによって追加されたランダムな文字サフィックスを削除します。
+ 4. ストレージ移行サービスによって追加されたサフィックスを含む名前を持つ、無効になっているユーザーまたはグループについては、これらのアカウントを削除できます。 ユーザーアカウントが後で追加されたことを確認するには、ドメインユーザーグループのみが含まれており、作成された日付/時刻がストレージ移行サービス転送の開始時刻と一致するようにします。
+ 
+ ストレージ移行サービスをドメインコントローラーと共に転送用に使用する場合は、Windows 管理センターの [転送の設定] ページで [ユーザーとグループを転送しない] を常に選択してください。
+
+## <a name="see-also"></a>「
 
 - [記憶域移行サービスの概要](overview.md)

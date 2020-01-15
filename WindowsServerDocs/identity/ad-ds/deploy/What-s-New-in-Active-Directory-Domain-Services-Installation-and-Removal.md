@@ -1,6 +1,6 @@
 ---
 ms.assetid: ba7f2b9f-7351-4680-b7d8-a5f270614f1c
-title: Active Directory Domain Services のインストールと削除の新機能
+title: Active Directory ドメイン サービスのインストールと削除の新機能
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
@@ -9,16 +9,16 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 286d3ee6e9c2b9959a4cc60a710b1cb078612201
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1f24615491391d932609d7f80549985818ced8c1
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369562"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947902"
 ---
-# <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory Domain Services のインストールと削除の新機能
+# <a name="whats-new-in-active-directory-domain-services-installation-and-removal"></a>Active Directory ドメイン サービスのインストールと削除の新機能
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 Windows Server 2012 の Active Directory Domain Services (AD DS) の展開は、Windows Server の以前のバージョンよりも簡単かつ高速に行うことができます。 AD DS のインストール処理は Windows PowerShell 上に構築され、サーバー マネージャーに統合されています。 これまで Active Directory 環境へのドメイン コントローラーの導入に必要だった多くの手順が削減されています。 このため、新しい Active Directory 環境を以前よりも簡単かつ効率的に作成することができます。 新しい AD DS 展開プロセスにより、インストールをブロックするようなエラーが発生する可能性が最小限に抑えられます。  
   
@@ -38,7 +38,7 @@ AD DS のインストールには、次の特長があります。
 
 ## <a name="BKMK_ADConfigurationWizard"></a>Active Directory Domain Services 構成ウィザード
 
-Windows Server 2012 以降では、ドメインコントローラーをインストールするときに設定を指定するために、Active Directory Domain Services 構成ウィザードによってレガシ Active Directory ドメインサービスインストールウィザードがユーザーインターフェイス (UI) オプションとして置き換えられます。 Active Directory ドメイン サービス構成ウィザードは、役割の追加ウィザードの完了後に開始されます。  
+Windows Server 2012 以降では、ドメインコントローラーをインストールするときに設定を指定するために、Active Directory Domain Services 構成ウィザードによってレガシ Active Directory ドメインサービスインストールウィザードがユーザーインターフェイス (UI) オプションとして置き換えられます。 Active Directory Domain Services 構成ウィザードは、役割の追加ウィザードの完了後に開始されます。  
 
 > [!WARNING]  
 > レガシ Active Directory ドメインサービスインストールウィザード (dcpromo.exe) は、Windows Server 2012 以降では非推奨とされます。  
@@ -94,7 +94,7 @@ Adprep.exe /forestprep /forest <forest name> /userdomain <user domain name> /use
 
 ### <a name="running-adprep-using-smartcard"></a>スマート カードを使用した adprep の実行
 
-Windows Server 2012 バージョンの adprep.exe は、資格情報としてスマートカードを使用しますが、コマンドラインを使用してスマートカードの資格情報を簡単に指定することはできません。 これを行うためには、PowerShell コマンドレットの Get-Credential を使用してスマート カードの資格情報を取得する方法があります。 次に、 `@@...`として表示される、返された PSCredential オブジェクトのユーザー名を使用します。 パスワードは、スマート カードの PIN です。  
+Windows Server 2012 バージョンの adprep.exe は、資格情報としてスマートカードを使用しますが、コマンドラインを使用してスマートカードの資格情報を簡単に指定することはできません。 これを行うためには、PowerShell コマンドレットの Get-Credential を使用してスマート カードの資格情報を取得する方法があります。 次に、`@@...` として表示される、返された PSCredential オブジェクトのユーザー名を使用します。 パスワードは、スマート カードの PIN です。  
 
 /user が指定されている場合、Adprep.exe には /userdomain が必要です。 スマート カード資格情報の場合、/userdomain はスマート カードで表されている、基になるユーザー アカウントのドメインにする必要があります。  
 
@@ -124,13 +124,13 @@ AD DS インストール ウィザードでは、インストールが開始さ�
 
 ## <a name="BKMK_SystemReqs"></a>システム要件
 
-Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変更されていません。 詳細については、「 [Windows Server 2008 R2 SP1 のシステム要件](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)」 (https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)を参照してください。  
+Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変更されていません。 詳細については、「 [Windows Server 2008 R2 SP1 のシステム要件](https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx)」 (https://www.microsoft.com/windowsserver2008/en/us/system-requirements.aspx) を参照してください。  
 
 機能によっては、追加の要件がある場合があります。 たとえば、仮想ドメインコントローラーの複製機能を使用するには、PDC エミュレーターが Windows Server 2012 を実行し、Hyper-v の役割がインストールされた Windows Server 2012 を実行しているコンピューターが必要です。  
 
 ## <a name="BKMK_KnownIssues"></a>既知の問題
 
-このセクションでは、Windows Server 2012 での AD DS のインストールに影響する既知の問題の一部を示します。 その他の既知の問題については、「[ドメイン コントローラーの展開のトラブルシューティング](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)」を参照してください。  
+このセクションでは、Windows Server 2012 での AD DS のインストールに影響する既知の問題の一部を示します。 その他の既知の問題については、「 [Troubleshooting Domain Controller Deployment](../../ad-ds/deploy/Troubleshooting-Domain-Controller-Deployment.md)」を参照してください。  
 
 - リモートで adprep /forestprep を実行しているときにスキーマ マスターへの WMI アクセスが Windows ファイアウォールによってブロックされると、次のエラーが %systemroot%\system32\debug\adprep にある adprep のログに記録されます。  
 
@@ -168,7 +168,7 @@ Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変�
 
    この場合、次のエラー メッセージが返されます。  
 
-   レプリケーション ソース ドメイン コントローラー *source domain controller name* に接続できません。 (例外: ログインに失敗しました: ユーザー名が不明またはパスワードが無効です)  
+   レプリケーション ソース ドメイン コントローラー *source domain controller name*に接続できません。 (例外: ログインに失敗しました: ユーザー名が不明またはパスワードが無効です)  
 
    ターゲット サーバーをドメインに参加させ、スマート カードを使用してインストールを実行すると、インストールは成功します。  
   
@@ -176,10 +176,10 @@ Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変�
 
    この場合は、ADDSDeployment コマンドレットを、ネイティブの 64 ビット プロセスをサポートしていないコマンドレットとは別に実行する必要があります。  
 
-- Windows Server 2012 には、回復力のあるファイルシステムという名前の新しいファイルシステムがあります。 Resilient File System (ReFS) でフォーマットされたデータ ボリュームに Active Directory データベース、ログ ファイル、または SYSVOL を格納しないでください。 ReFS の詳細については、「 [Windows の次世代ファイル システム ReFS の構築 (Building the next generation file system for Windows: ReFS)](http://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)」を参照してください。  
+- Windows Server 2012 には、回復力のあるファイルシステムという名前の新しいファイルシステムがあります。 Resilient File System (ReFS) でフォーマットされたデータ ボリュームに Active Directory データベース、ログ ファイル、または SYSVOL を格納しないでください。 ReFS の詳細については、「 [Windows の次世代ファイル システム ReFS の構築 (Building the next generation file system for Windows: ReFS)](https://blogs.msdn.com/b/b8/archive/2012/01/16/building-the-next-generation-file-system-for-windows-refs.aspx)」を参照してください。  
 - サーバーマネージャーでは、Server Core インストール上で AD DS またはその他のサーバーの役割を実行していて、Windows Server 2012 にアップグレードされているサーバーでは、イベントと状態が想定どおりに収集されていても、サーバーの役割が赤の状態で表示されることがあります。 プレリリース版の Windows Server 2012 の Server Core インストールを実行するサーバーも影響を受ける可能性があります。  
 
-### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>エラーが発生して重要なレプリケーションが実行されないと、Active Directory ドメイン サービスのインストールがハングする
+### <a name="active-directory-domain-services-installation-hangs-if-an-error-prevents-critical-replication"></a>エラーが発生して重要なレプリケーションが実行されないと、Active Directory Domain Services のインストールがハングする
 
 重要なレプリケーション フェーズ中に AD DS インストールでエラーが発生すると、インストールは無制限にハングする可能性があります。 たとえば、ネットワーク エラーにより重要なレプリケーションが完了できないと、インストールは続行されません。  
   
@@ -232,7 +232,7 @@ Windows server 2012 のシステム要件は、Windows Server 2008 R2 から変�
 
 ### <a name="BKMK_nonnormalDNSNameWarning"></a>正規化されていない DNS 名が指定されると Active Directory Domain Services 構成ウィザードによって警告が表示される
 
-新しいドメインまたはフォレストを作成するときに、正規化されていない国際化文字を含む DNS ドメイン名を指定すると、Active Directory Domain Services 構成ウィザードに、名前の DNS クエリが失敗する可能性があることを示す警告が表示されます。 [配置構成] ページで DNS ドメイン名が指定されている場合でも、ウィザードの [前提条件のチェック] ページに後で警告が表示されます。  
+新しいドメインまたはフォレストを作成するときに、正規化されていない国際化文字を含む DNS ドメイン名を指定すると、Active Directory ドメイン サービス構成ウィザードに、名前の DNS クエリが失敗する可能性があることを示す警告が表示されます。 [配置構成] ページで DNS ドメイン名が指定されている場合でも、ウィザードの [前提条件のチェック] ページに後で警告が表示されます。  
 
 DNS ドメイン名が、füßball や ' ΣΤ ' .com などの非正規化された名前を使用して指定されている場合 (正規化されたバージョンは füssball.com およびβστα.)、WinHTTP でアクセスしようとするクライアントアプリケーションは名前解決 Api を呼び出す前に名前を正規化します。 ユーザーが一部のダイアログで "' ΣΤ ' .com" と入力すると、DNS クエリは "βστα." として送信され、DNS サーバーは "' ΣΤ ' .com" のリソースレコードと一致しません。 ユーザーは名前を解決できません。  
 
@@ -245,6 +245,6 @@ DNS ドメイン名が、füßball や ' ΣΤ ' .com などの非正規化され
 5. 正規化のため、名前は nps.füssball.com に変換され、ネットワーク経由で nps. füßball として照会されます。  
 6. 登録された名前が nps. füßball であるため、クライアントアプリケーションは名前を解決できません。  
 
-Active Directory ドメイン サービス構成ウィザードの [前提条件のチェック] ページに警告が表示される場合は、[配置構成] ページに戻り、正規化された DNS ドメイン名を指定します。 Windows PowerShell を使用して新しいドメインをインストールしている場合は、-DomainName オプションで正規化された DNS 名を指定します。  
+Active Directory Domain Services 構成ウィザードの [前提条件のチェック] ページに警告が表示される場合は、[配置構成] ページに戻り、正規化された DNS ドメイン名を指定します。 Windows PowerShell を使用して新しいドメインをインストールしている場合は、-DomainName オプションで正規化された DNS 名を指定します。  
 
 IDN の詳細については、「 [Handling Internationalized Domain Names (IDNs) (国際化ドメイン名 (IDN) の処理)](https://msdn.microsoft.com/library/windows/desktop/dd318142(v=vs.85).aspx)」を参照してください。  

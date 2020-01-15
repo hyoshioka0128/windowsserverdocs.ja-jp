@@ -8,16 +8,16 @@ manager: alanth
 author: justinha
 ms.technology: security-crdential-protection-and-management
 ms.date: 11/09/2016
-ms.openlocfilehash: 64018f7f118086f3d290cb1ffa9b8d2b3e81c27c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 21c2d3d79653bd02fea9d2ac0d09bd18690a388f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386270"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949743"
 ---
 # <a name="preventing-kerberos-change-password-that-uses-rc4-secret-keys"></a>Kerberos での RC4 秘密キーを使用するパスワードの変更を防ぐ
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2008 R2、および Windows Server 2008
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2008 R2、および Windows Server 2008
 
 IT 担当者向けのこのトピックでは、悪意のあるユーザーがユーザーのアカウントを制御する可能性がある、Kerberos プロトコルのいくつかの制限事項について説明します。 Kerberos ネットワーク認証サービス (V5) 標準 (RFC 4120) には、業界内でよく知られている制限があります。攻撃者がユーザーとして認証したり、攻撃者がユーザーの秘密キーを知っていれば、そのユーザーのパスワードを変更したりできます。
 
@@ -31,8 +31,8 @@ IT 担当者向けのこのトピックでは、悪意のあるユーザーが�
 
     [!NOTE]
     RC4 を無効にすると、システムの再起動が発生することがあるという既知の問題があります。 次の修正プログラムを参照してください。
-    - [Windows Server 2012 R2](https://support.microsoft.com/en-us/kb/3038261)
-    - [Windows Server 2012](https://support.microsoft.com/en-us/kb/3086213)
+    - [Windows Server 2012 R2](https://support.microsoft.com/kb/3038261)
+    - [Windows Server 2012](https://support.microsoft.com/kb/3086213)
     - 以前のバージョンの Windows Server では修正プログラムを利用できません
 
 - Windows Server 2012 R2 ドメインの機能レベル以上に設定されたドメインを展開し、Protected Users セキュリティグループのメンバーとしてユーザーを構成します。 この機能は、Kerberos プロトコルでの RC4 の使用よりも中断するため[、次の「関連](#see-also)項目」セクションのリソースを参照してください。

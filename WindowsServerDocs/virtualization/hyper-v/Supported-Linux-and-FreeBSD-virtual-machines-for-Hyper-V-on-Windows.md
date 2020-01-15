@@ -11,16 +11,16 @@ ms.assetid: 990ff94a-30fb-434b-b4a2-3804a5245ba6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: a3b0df5065427b48bbc9c32d3e8502bfe234fe7b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8be9f8ab768478417fdd6edce5b881ce3610bc1
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366741"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947983"
 ---
 # <a name="supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows"></a>Windows にインストールされた Hyper-v の Linux および FreeBSD 仮想マシンがサポートされています。
 
->適用先:Windows Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server の2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7
+>適用対象: Windows Server 2019、Windows Server 2016、Hyper-v Server 2016、Windows Server 2012 R2、Hyper-v Server 2012 R2、Windows Server 2012、Hyper-v Server 2012、Windows Server 2008 R2、Windows 10、Windows 8.1、Windows 8、Windows 7.1、Windows 7。
 
 HYPER-V では、Linux および FreeBSD の仮想マシンのエミュレートされたとハイパー V 固有の両方のデバイスをサポートします。 エミュレートされたデバイスを実行すると追加のソフトウェアをインストールする必要はありません。 ただしエミュレートされたデバイスは、高パフォーマンスを提供せず、HYPER-V テクノロジを提供する豊富な仮想マシンの管理インフラストラクチャを活用することはできません。 HYPER-V が提供するすべての利点を最大限に活用するために、Linux および FreeBSD のハイパー V 固有のデバイスを使用することをお勧めします。 ハイパースレッディング固有のデバイスを実行するために必要なドライバーのコレクションは、Linux Integration Services (LIS) または FreeBSD Integration Services (BIS) と呼ばれます。
 
@@ -31,7 +31,7 @@ LIS は Linux カーネルに追加されているされ、新しいリリース
 (10.0) の前に古い FreeBSD リリースには、マイクロソフトは、インストール可能な BIS ドライバーおよび FreeBSD の仮想マシンの対応するデーモンが含まれているポートを提供します。 それ以降の FreeBSD リリースの BIS、FreeBSD オペレーティング システムに組み込まれて、個別のダウンロードやインストールは FreeBSD 10.0 に必要な KVP ポート ダウンロード以外は必要ありません。
 
 > [!TIP]
-> - 評価センターから[Windows Server 2019](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019)をダウンロードします。
+> - 評価センターから[Windows Server 2019](https://www.microsoft.com/evalcenter/evaluate-windows-server-2019)をダウンロードします。
 
 このコンテンツの目的は、情報が役立ちますが、HYPER-V 上の Linux または FreeBSD 展開を容易にするためです。 特定の詳細は次のとおりです。
 

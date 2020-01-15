@@ -9,7 +9,7 @@
 ### [VM の負荷分散の詳細](vm-load-balancing-deep-dive.md)
 ### [クラスター セット](../storage/storage-spaces/cluster-sets.md)
 ### [クラスターのアフィニティ](cluster-affinity.md)
-## プラン
+## 計画
 ### [ハードウェア要件](clustering-requirements.md)
 ### [クラスター共有ボリューム (CSV) の使用](failover-cluster-csvs.md)
 ### [ゲスト VM クラスターの使用](../storage/storage-spaces/storage-spaces-direct-in-vm.md)
@@ -32,8 +32,9 @@
 ### [ヘルスサービス](health-service-overview.md)
 #### [レポート](health-service-reports.md)
 #### [障害](health-service-faults.md)
-#### [操作](health-service-actions.md)
+#### [アクション](health-service-actions.md)
 #### [設定](health-service-settings.md)
 ### [クラスター ドメインの移行](cluster-domain-migration.md)
 ### [Windows エラー報告を使用したトラブルシューティング](troubleshooting-using-WER-reports.md)
+### [クラスター システム ログのイベント](system-events.md)
 ## [フェールオーバー クラスタリングの変更履歴のトピック](clustering-change-history.md)
