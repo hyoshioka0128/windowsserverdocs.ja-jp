@@ -11,31 +11,38 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 12/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0a13c7ccb7e1c72534ef63ba6d09f3055af174cb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1edc7c78e2abe5fe4e2bf9cd2c48a6a19d89dbdd
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387768"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75351828"
 ---
 # <a name="whats-new-in-the-ios-client"></a>iOS クライアントの新機能
 
-[iOS 用のリモート デスクトップ クライアント](remote-desktop-ios.md)は定期的に更新され、新機能の追加や問題の修正が行われています。 ここでは、最新の更新プログラムを紹介します。
+[iOS 用のリモート デスクトップ クライアント](remote-desktop-ios.md)は定期的に更新され、新機能の追加や問題の修正が行われています。 このページでは、最新の更新プログラムを紹介します。
 
-## <a name="remote-desktop-ios-beta-client"></a>リモート デスクトップ iOS クライアントのベータ版
+## <a name="updates-for-version-1000"></a>バージョン 10.0.0 の更新内容
 
-*公開日:2019 年 2 月 20 日*
+*公開日:2019 年 12 月 13 日*
 
-[リモート デスクトップ iOS クライアントのベータ版](remote-desktop-ios.md#download-the-remote-desktop-ios-beta-client-from-apple-testflight)が TestFlight で公開されています。 iOS クライアントのベータ版をテストする際は、これが新しい iOS クライアントのプレリリース バージョンであり、製品版のリリースと同じ安定性は保証されないことに注意してください。 このクライアントは定期的に更新され、新機能と修正が追加されていく予定です。 以下で、iOS クライアントのベータ版の機能をいくつか紹介します。
+iOS 用のリモート デスクトップ クライアントが最後に更新されてから、1 年以上経過しています。 しかし、魅力的な新しい更新プログラムが追加されており、今後さらに多くの更新プログラムが定期的に追加される予定です。バージョン 10.0.0 の新機能を次に示します。
 
-- 最新の iOS デバイスでのエクスペリエンスの向上。
-- Swiftpoint GT と ProPoint の物理マウスのサポート。 iOS クライアントのベータ版で[サポートされている入力デバイスの一覧](remote-desktop-ios.md#supported-input-devices)をご覧ください。
-- [Windows 仮想デスクトップ](https://aka.ms/wvd)のサポート。
-- マイクと iPhone ストレージのリダイレクト。
-- AVC420 と AVC444 のサポート。
-- メタル ハードウェア アクセラレーションのサポート。
+- Windows Virtual Desktop サービスのサポート。
+- 新しい接続センター UI。
+- 接続されている PC とアプリを切り替えることができる新しいセッション内 UI。
+- 補助オンスクリーン キーボードの新しいレイアウト。
+- 外部キーボードのサポートの向上。
+- SwiftPoint Bluetooth マウスのサポート。
+- マイクのリダイレクトのサポート。
+- ローカル ストレージのリダイレクトのサポート。
+- カメラのリダイレクトのサポート (Windows 10 バージョン 1809 以降でのみ使用可能)。
+- 新しい iPhone および iPad デバイスのサポート。
+- 濃色テーマと淡色テーマのサポート。
+- リモート PC またはアプリに接続しているときに、携帯電話がロックできるかどうかを制御します。
+- リモート デスクトップのロゴ ボタンを押したままにすることで、セッション内接続バーを折りたたむことができるようになりました。
 
 ## <a name="updates-for-version-8142"></a>バージョン 8.1.42 の更新内容
 
@@ -47,4 +54,8 @@ ms.locfileid: "71387768"
 
 *公開日:2018 年 3 月 28 日*
 
-- CVE-2018-0886 で説明されている CredSSP 暗号化オラクルの修復に対応するための更新。
+- CVE-2018-0886 に記載されている CredSSP の暗号化オラクルの修復への対応が更新されました。
+
+## <a name="how-to-report-issues"></a>問題を報告する方法
+
+Microsoft は、このアプリを最高の状態にし、フィードバックに価値を持たせることに努めています。 問題は、クライアントで **[設定]**  >  **[問題の報告]** に移動することで報告できます。

@@ -1,19 +1,19 @@
 ---
 title: 新しいディスクの初期化
 description: ディスクの管理を使用して新しいディスクを初期化し、使用できるようにする方法。 問題のトラブルシューティングへのリンクも記載しています。
-ms.date: 06/07/2019
+ms.date: 12/20/2019
 ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b38fd0b88cea3fcc386959c08af1169302ddaa1c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: c2cb88d5b30be28a8ab7709e3a3908ce82ae8408
+ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385886"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75352356"
 ---
 # <a name="initialize-new-disks"></a>新しいディスクの初期化
 
@@ -22,13 +22,13 @@ ms.locfileid: "71385886"
 お使いの PC に新しいディスクを追加したが、エクスプローラーに表示されない場合、[ドライブ文字を追加する](change-a-drive-letter.md)か、使用する前にディスクを初期化することが必要な場合があります。 フォーマットされていないドライブのみ初期化できます。 ディスクの初期化では、ディスク上のすべてのデータを消去して Windows で使用できるように準備し、その後ディスクをフォーマットしてディスクにファイルを保存できます。
 
 > [!WARNING]
-> 必要なファイルがディスクに保存されている場合は、初期化しないでください。すべてのファイルが失われます。 代わりに、ディスクのトラブルシューティングを行って、ファイルを読み取れるかどうかを確認することをお勧めします。「[ディスクの状態が "初期化されていません" であるか、ディスクが不足している](troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing)」を参照してください。
+> 必要なファイルがディスクに保存されている場合は、初期化しないでください。すべてのファイルが失われます。 代わりに、ディスクのトラブルシューティングを行って、ファイルを読み取れるかどうかを確認することをお勧めします。「[ディスクの状態が "初期化されていません" であるか、ディスクが不足している](troubleshooting-disk-management.md#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps)」を参照してください。
 
 ## <a name="to-initialize-new-disks"></a>新しいディスクを初期化するには
 
 ディスクの管理を使用して新しいディスクを初期化する方法を次に示します。 PowerShell を使用する場合、[initialize-disk](https://docs.microsoft.com/powershell/module/storage/initialize-disk) コマンドレットを代わりに使用します。
 
-1. 管理者のアクセス許可でディスクの管理を開きます。 
+1. 管理者のアクセス許可でディスクの管理を開きます。
  
     これを行うには、タスクバーの検索ボックスに「**ディスクの管理**」と入力し、 **[ディスクの管理]** を長押しし (または右クリックし)、 **[管理者として実行]**  >  **[はい]** を選択します。 管理者として開くことができない場合は、「**コンピューターの管理**」と入力し、 **[記憶域]**  >  **[ディスクの管理]** を選択します。
 1. [ディスクの管理] で、初期化するディスクを右クリックし、次に **[ディスクの初期化]** をクリックします (図を参照)。 ディスクが *[オフライン]* として一覧表示されている場合、最初にそれを右クリックし、 **[オンライン]** を選択します。
@@ -38,9 +38,14 @@ ms.locfileid: "71385886"
     ![未フォーマットのディスクと、[ディスクの初期化] のショートカット メニューを表示する [ディスクの管理]](media/uninitialized-disk.PNG)
 2. **[ディスクの初期化]** ダイアログ ボックスで (図を参照)、正しいディスクが選択されていることを確認し、 **[OK]** をクリックして既定のパーティション スタイルを受け入れます。 パーティション スタイルを変更する必要がある場合 (GPT または MBR)、「[パーティション スタイルについて - GPT と MBR](#about-partition-styles---gpt-and-mbr)」を参照してください。
 
-     ディスクの状態は、一時的に **[初期化中]** になった後、 **[オンライン]** 状態になります。 初期化が何らかの理由で失敗する場合、「[ディスクの状態が "初期化されていません" であるか、ディスクが不足している](troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing)」を参照してください。
+     ディスクの状態は、一時的に **[初期化中]** になった後、 **[オンライン]** 状態になります。 初期化が何らかの理由で失敗する場合、「[ディスクの状態が "初期化されていません" であるか、ディスクが不足している](troubleshooting-disk-management.md#disks-that-are-missing-or-not-initialized-plus-general-troubleshooting-steps)」を参照してください。
 
     ![GPT パーティション スタイルが選択されている [ディスクの初期化] ダイアログ ボックス](media/initialize-disk.PNG)
+
+3. ドライブの未割り当て領域を長押しし (または右クリックし)、 **[新しいシンプル ボリューム]** を選択します。
+4. **[次へ]** を選択し、ボリュームのサイズを指定し (おそらくはドライブ全体を使用する既定値のままにします)、 **[次へ]** を選択します。
+5. ボリュームに割り当てるドライブ文字を指定し、 **[次へ]** を選択します。
+6. 使用するファイル システム (通常は NTFS) を指定し、 **[次へ]** を選択してから、 **[完了]** を選択します。
 
 ## <a name="about-partition-styles---gpt-and-mbr"></a>パーティション スタイルについて - GPT と MBR
 

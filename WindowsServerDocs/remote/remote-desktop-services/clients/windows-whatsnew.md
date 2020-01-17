@@ -11,18 +11,27 @@ ms.topic: article
 author: heidilohr
 manager: daveba
 ms.author: helohr
-ms.date: 09/11/2019
+ms.date: 01/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: e6d57f2feb5b21385cf247856be05f752ddee0cd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8b97b7a22d59727bedd6bdbd67a19087612ebfa0
+ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404088"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75653047"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Microsoft Store クライアントの新機能
 
 [Windows ストア クライアント](windows.md)は定期的に更新され、新機能の追加と問題の修正が行われています。 ここでは、最新の更新プログラムを紹介します。
+
+## <a name="updates-for-version-1011107"></a>バージョン 10.1.1107 の更新内容
+
+*公開日:2019 年 9 月 4 日*
+
+- ローカル PC とリモート PC の間でファイルをコピーできるようになりました。
+- メール アドレスを使用してリモート リソースにアクセスできるようになりました (管理者によって有効になっている場合)。
+- リモート リソース フィードのユーザー アカウントの割り当てを変更できるようになりました。
+- アプリに、空の既定のアイコンではなく、エクスプローラーでこのアプリに割り当てられた .rdp ファイルの適切なアイコンが表示されるようになりました。
 
 ## <a name="updates-for-version-1011098"></a>バージョン 10.1.1098 の更新内容
 
@@ -43,7 +52,7 @@ ms.locfileid: "71404088"
 - クライアントが最小化された後に再接続すると発生するハングを修正しました。
 - デスクトップをグループ内の任意の場所にドラッグできるようになりました。
 - ジャンプリストから接続を起動できるようになり、必要に応じて別のウィンドウが開きます。
-- 追加のバグ修正。
+- その他のバグ修正。
 
 ## <a name="updates-for-version-1011060"></a>バージョン 10.1.1060 の更新内容
 
@@ -53,7 +62,7 @@ ms.locfileid: "71404088"
 - 仮想デスクトップをローカルで切り替えたときに発生するクラッシュを修正しました。
 - セッションを別のモニターに移動すると、セッションのスケール ファクターも更新されるようになりました。
 - AltGr などの他のシステム キーの処理。
-- 追加のバグ修正。
+- その他のバグ修正。
 
 ## <a name="updates-for-version-1011046"></a>バージョン 10.1.1046 の更新内容
 
@@ -66,4 +75,4 @@ ms.locfileid: "71404088"
 *公開日:2018 年 4 月 2 日*
 
 - CVE-2018-0886 に記載されている CredSSP の暗号化オラクルの修復への対応が更新されました。
-- 追加のバグ修正。
+- その他のバグ修正。
