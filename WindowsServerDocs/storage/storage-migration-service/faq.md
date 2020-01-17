@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: b7a6dd37cfc054ead153d274ffa7f0d13844305e
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: 02829919c53e3488ad7f229ad8bee0d3ead14c9a
+ms.sourcegitcommit: 3f54036c74c5a67799fbc06a8a18a078ccb327f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75953029"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124900"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>記憶域移行サービスに関してよく寄せられる質問 (FAQ)
 
@@ -138,6 +138,10 @@ Storage Migration Service では、hidden c:\programdata\microsoft\storagemigrat
 6. システムがそのフォルダーのすべてのファイルとサブフォルダーに対してフルコントロールを持っていることを確認する
 7. 自分のアカウントのアクセス許可を削除します。
 8. "Storage Migration Service" サービスを開始します。
+
+## <a name="does-the-storage-migration-service-migrate-locally-installed-applications-from-the-source-computer"></a>記憶域移行サービスは、ソースコンピューターからローカルにインストールされたアプリケーションを移行しますか。
+
+いいえ。記憶域移行サービスは、ローカルにインストールされているアプリケーションを移行しません。 移行が完了したら、ソースコンピューター上で実行されていた対象コンピューターにアプリケーションを再インストールします。 ユーザーやアプリケーションを再構成する必要はありません。Storage Migration Service は、サーバーの変更をクライアントに対して非表示にするように設計されています。 
 
 ## <a name="give-feedback"></a>フィードバックの提供、バグの報告、サポートを受けるためのオプションは何ですか?
 

@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: dccbfd7d3ff6d95615e9efecf840a840b42d0d27
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0f549310d568142f819e22422d41a72d38b306e2
+ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949644"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145938"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -25,7 +25,7 @@ ms.locfileid: "75949644"
 
 ## <a name="collecting-logs"></a>Microsoft サポートを操作するときにログファイルを収集する方法
 
-Storage Migration Service には、Orchestrator サービスとプロキシサービスのイベントログが含まれています。 Urchestrator サーバーには常に両方のイベントログが含まれ、プロキシサービスがインストールされている宛先サーバーにはプロキシログが含まれます。 これらのログは次の場所にあります。
+Storage Migration Service には、Orchestrator サービスとプロキシサービスのイベントログが含まれています。 Orchestrator サーバーには常に両方のイベントログが含まれ、プロキシサービスがインストールされている宛先サーバーにはプロキシログが含まれます。 これらのログは次の場所にあります。
 
 - アプリケーションとサービスログ \ Microsoft \ Windows \ StorageMigrationService
 - アプリケーションとサービスログ \ Microsoft \ Windows \ StorageMigrationService

@@ -8,12 +8,12 @@ ms.date: 02/13/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 0ef7860250a0a3d9b14fe24224432e00ee1bba86
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 4da69087ab1df6200394b36c938cb05ec5185045
+ms.sourcegitcommit: 3f54036c74c5a67799fbc06a8a18a078ccb327f9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949656"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76124890"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Storage Migration Service を使用してサーバーを移行する
 
@@ -57,7 +57,15 @@ ms.locfileid: "75949656"
 この手順では、移行先サーバーに配置する場所を指定した後、データを転送します。
 
 1. [**データの転送** > **資格情報の入力**] ページで、移行先サーバーで有効な管理者資格情報を入力し、 **[次へ]** を選択します。
-2. **[変換先のデバイスとマッピングの追加]** ページに、最初の移行元サーバーが表示されます。 移行先のサーバーまたはクラスター化されたファイルサーバーの名前を入力し、 **[デバイスのスキャン]** を選択します。 ドメインに参加しているソースコンピューターから移行する場合は、移行先サーバーを同じドメインに参加させる必要があります。
+2. **[変換先のデバイスとマッピングの追加]** ページに、最初の移行元サーバーが表示されます。 移行先のサーバーまたはクラスター化されたファイルサーバーの名前を入力し、 **[デバイスのスキャン]** を選択します。 ドメインに参加しているソースコンピューターから移行する場合は、移行先サーバーを同じドメインに参加させる必要があります。 [新しい Azure VM の作成] をクリックし、ウィザードを使用して Azure に新しい移行先サーバーをデプロイすることもできます。 これにより、VM のサイズの変更、記憶域のプロビジョニング、ディスクのフォーマット、ドメインへの参加、および Storage Migration Service プロキシの Windows Server 2019 の宛先への追加が自動的に実行されます。 任意のサイズの Windows Server 2019 (推奨)、Windows Server 2016、および Windows Server 2012 R2 の Vm を選択して、管理ディスクを使用することができます。   
+
+ > [!NOTE]
+   > "新しい Azure VM の作成" を使用するには、次のものが必要です。
+   > - 有効な Azure サブスクリプション。
+   > - 作成権限を持つ既存の Azure コンピューティングリソースグループ。
+   > - 既存の Azure Virtual Network とサブネット。 
+   > - Virtual Network とサブネットに関連付けられた Azure Express Route または VPN ソリューション。この Azure IaaS VM からオンプレミスのクライアント、ドメインコントローラー、Storage Migration Service orchestrator コンピューター、Windows 管理センターコンピューターに接続できます。移行するソースコンピューターを指定します。
+
 3. ソースボリュームを移行先ボリュームにマップし、転送しない共有 (Windows システムフォルダーにあるすべての管理共有を含む) の **[含める]** チェックボックスをオフにして、 **[次へ]** を選択します。
    移行元サーバーとそのボリュームと共有、および転送先での転送先の ![スクリーンショット](media/migrate/transfer.png)**図 3: 移行元サーバーとその記憶域が**転送される場所
 4. 移行元サーバーの移行先サーバーとマッピングを追加し、 **[次へ]** を選択します。

@@ -9,12 +9,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b5f2202313c225d57b29997753b090e10b9c2e6c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c36555a8bca7882125451b2c86a0707e3de9b2db
+ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949294"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76145928"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>ユーザー証明書認証の AD FS の構成
 
@@ -54,7 +54,7 @@ Chrome 用にこれを構成する方法の詳細については、こちらの[
 このドキュメントでは、ユーザーの証明書認証用に AD FS が構成されている場合の一般的な問題のトラブルシューティングに焦点を当てています。 
 
 ### <a name="check-if-certificate-trusted-issuers-is-configured-properly-in-all-the-ad-fswap-servers"></a>証明書の信頼された発行者がすべての AD FS/WAP サーバーで適切に構成されているかどうかを確認する
-*一般的な症状: HTTP 204 "https\://certuath.adfs.contoso.com からのコンテンツはありません"*
+*一般的な症状: HTTP 204 "https\://certauth.adfs.contoso.com からのコンテンツはありません"*
 
 AD FS は、基になる windows オペレーティングシステムを使用してユーザー証明書を所有していることを証明し、証明書信頼チェーン検証を行って信頼された発行者と一致していることを確認します。 信頼された発行者と一致させるには、すべてのルートと中間機関がローカルコンピューターの証明機関ストアの信頼された発行者として構成されていることを確認する必要があります。 これを自動的に検証するには、 [AD FS 診断アナライザーツール](https://adfshelp.microsoft.com/DiagnosticsAnalyzer/Analyze)を使用してください。 このツールはすべてのサーバーに対してクエリを行い、適切な証明書が正しくプロビジョニングされていることを確認します。 
 1)  上記のリンクに記載されている手順に従って、ツールをダウンロードして実行します。
