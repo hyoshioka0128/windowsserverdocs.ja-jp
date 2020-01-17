@@ -71,7 +71,7 @@ Server Core は、UI がないだけでなく、次のようなデスクトッ�
 | タスク バー                            | 利用不可   | available (利用可能)                      |
 | タスクバーの通知              | 利用不可   | available (利用可能)                      |
 | Taskmgr-networking                            | available (利用可能)       | available (利用可能)                      |
-| Internet Explorer または Edge          | 利用不可   | available (利用可能)                      |
+| Internet Explorer または Microsoft Edge          | 利用不可   | available (利用可能)                      |
 | 組み込みのヘルプ システム               | 利用不可   | available (利用可能)                      |
 | Windows 10 シェル                   | 利用不可   | available (利用可能)                      |
 | Windows Media Player               | 利用不可   | available (利用可能)                      |

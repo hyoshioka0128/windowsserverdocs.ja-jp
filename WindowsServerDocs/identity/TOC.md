@@ -190,7 +190,7 @@
 ###### [Winlogon 自動再起動サインオン (ARSO)](ad-ds/manage/component-updates/winlogon-automatic-restart-sign-on--arso-.md)
 ###### [TPM キーの構成証明](ad-ds/manage/component-updates/TPM-Key-attestation.md)
 ###### [CA のバックアップと復元の Windows PowerShell コマンドレット](ad-ds/manage/component-updates/CA-Backup-and-Restore-Windows-powershell-cmdlets.md)
-###### [コマンド ライン プロセスの監査](ad-ds/manage/component-updates/Command-line-process-auditing.md)
+###### [コマンド ライン プロセ](ad-ds/manage/component-updates/Command-line-process-auditing.md)スの監査
 ##### [ディレクトリ サービス コンポーネントの更新](ad-ds/manage/component-updates/directory-Services-component-updates.md)
 #### [保護されるアカウントの構成方法](ad-ds/manage/how-to-configure-protected-accounts.md)
 #### [LDAP サーバー Cookie の処理方法](ad-ds/manage/How-LDAP-Server-Cookies-Are-Handled.md)
@@ -392,6 +392,7 @@
 ##### [Windows Server 2012 R2 の AD FS のアクセス制御ポリシー](ad-fs/operations/Access-Control-Policies-W2K12.md)
 ##### [AD FS 2.0 のアクセス制御ポリシー](ad-fs/operations/Access-Control-Policies-in-AD-FS-2.md)
 #### [AD FS 2019 の追加の認証方法](ad-fs/operations/Additional-Authentication-Methods-AD-FS.md)
+#### [AlwaysOn 可用性グループ](ad-fs/operations/ad-fs-always-on.md)
 #### [AD FS prompt login パラメーターのサポート](ad-fs/operations/AD-FS-Prompt-Login.md)
 #### [AD FS のマルチページ サインイン](ad-fs/operations/AD-FS-paginated-sign-in.md)
 #### [AD FS 2016 シングル サイン オンの設定](ad-fs/operations/AD-FS-Single-Sign-On-Settings.md)

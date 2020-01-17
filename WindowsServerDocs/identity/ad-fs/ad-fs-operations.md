@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 99167850ff9ee193aca888d34d98503ea0554c30
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 2db9cd83ed08673835a38e443e90c5eb092f43ac
+ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408552"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76162483"
 ---
 # <a name="ad-fs-operations"></a>AD FS の運用
 
@@ -29,7 +29,8 @@ ms.locfileid: "71408552"
 - [属性ストアを追加する](../ad-fs/operations/Add-an-Attribute-Store.md)
 - [AD FS 2019 で HTTP セキュリティ応答ヘッダーをカスタマイズする](../ad-fs/operations/customize-http-security-headers-ad-fs.md)
 - [管理者以外のユーザーへの AD FS Powershell コマンドレットのアクセスの委任](../ad-fs/operations/delegate-ad-fs-pshell-access.md)
-- [SQL とアドレスの待機時間の微調整](../ad-fs/operations/adfs-sql-latency.md) 
+- [SQL とアドレスの待機時間の微調整](../ad-fs/operations/adfs-sql-latency.md)
+- [AlwaysOn 可用性グループ](../ad-fs/operations/ad-fs-always-on.md) 
 
 
 ## <a name="authentication-configuration"></a>認証の構成
@@ -77,15 +78,15 @@ ms.locfileid: "71408552"
 - [パスワードの有効期限クレームを送信するように AD FS を構成する](../ad-fs/operations/Configure-AD-FS-to-Send-Password-Expiry-Claims.md)
 - [WIA をサポートしないデバイス用にイントラネット フォーム ベースの認証を構成する](../ad-fs/operations/Configure-intranet-forms-based-authentication-for-devices-that-do-not-support-WIA.md)
 
-## <a name="other"></a>その他
+## <a name="other"></a>Other
 - [任意のデバイスからの職場への参加による業務用アプリケーション間の SSO とシームレスな 2 要素認証](../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 - [追加の多要素認証による個人情報アプリケーションのリスク管理](../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 - [条件付きアクセス制御によってリスクを管理する](../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 - [AD FS ラボ環境を設定する](../ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
-- [チュートリアル ガイド: 機密アプリケーションの追加 Multi-Factor Authentication によるリスク管理](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
-- [チュートリアル ガイド: 条件付きアクセス制御によってリスクを管理する](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
-- [チュートリアル: Workplace Join で Windows デバイスをワークプレースに参加させる](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
-- [チュートリアル: Workplace Join で iOS デバイスをワークプレースに参加させる](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+- [チュートリアルガイド: 追加の Multi-Factor Authentication による機密アプリケーションのリスク管理](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
+- [チュートリアルガイド: 条件付き Access Control によるリスク管理](../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
+- [チュートリアル: Windows デバイスでの Workplace Join](../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+- [チュートリアル: iOS デバイスでの Workplace Join](../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
   
 
