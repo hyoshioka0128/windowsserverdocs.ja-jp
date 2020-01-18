@@ -9,16 +9,16 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: cdc6d1c292f554e6d7fedd3fea0b1e9d6673df0c
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 7a98e894f3eaf47e257ab39c640e93101fd76fc8
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529892"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265904"
 ---
 # <a name="clients-cant-connect-and-get-the-class-not-registered-error"></a>クライアントが接続できず、"クラスが登録されていません" というエラーが発生する
 

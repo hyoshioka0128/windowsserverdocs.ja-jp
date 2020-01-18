@@ -8,12 +8,12 @@ ms.date: 06/20/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 785ecd4de86c06dd12eb57e41efaa1103f2afdc5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e5e90119066285ae8e04b392a13ab1a38488f5ee
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357808"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265754"
 ---
 # <a name="fine-tuning-sql-and-addressing-latency-issues-with-ad-fs"></a>AD FS による SQL の微調整と待機時間に関する問題の解決
 [AD FS 2016](https://support.microsoft.com/help/4503294/windows-10-update-kb4503294)の更新では、データベース間の待機時間を削減するために、次の機能強化が導入されました。 AD FS 2019 の今後の更新プログラムには、これらの機能強化が含まれています。
@@ -23,10 +23,12 @@ ms.locfileid: "71357808"
 
 AD FS する最新の更新プログラムでは、待機時間の短縮は、AD FS 構成キャッシュを更新するためのバックグラウンドスレッドの追加と、更新間隔を設定するための設定の対象となります。 データベースキャッシュの更新がバックグラウンドスレッドに移動されるため、要求スレッドでデータベース参照に費やした時間が大幅に短縮されます。  
 
-が true `backgroundCacheRefreshEnabled`に設定されている場合、AD FS によってバックグラウンドスレッドでキャッシュの更新を実行できるようになります。 キャッシュからデータをフェッチする頻度は、を設定`cacheRefreshIntervalSecs`することによって、時刻の値にカスタマイズできます。 が true に設定されている場合`backgroundCacheRefreshEnabled` 、既定値は300秒に設定されます。 値の設定期間が経過すると、AD FS によってキャッシュの更新が開始され、更新の進行中は、古いキャッシュデータが引き続き使用されます。  
+`backgroundCacheRefreshEnabled` が true に設定されている場合、AD FS によってバックグラウンドスレッドでキャッシュの更新を実行できるようになります。 キャッシュからデータをフェッチする頻度は、`cacheRefreshIntervalSecs`を設定することによって、時刻の値にカスタマイズできます。 `backgroundCacheRefreshEnabled` が true に設定されている場合、既定値は300秒に設定されます。 値の設定期間が経過すると、AD FS によってキャッシュの更新が開始され、更新の進行中は、古いキャッシュデータが引き続き使用されます。  
+
+AD FS がアプリケーションの要求を受信すると、AD FS は SQL からアプリケーションを取得し、キャッシュに追加します。 `cacheRefreshIntervalSecs` 値では、キャッシュ内のアプリケーションはバックグラウンドスレッドを使用して更新されます。 キャッシュ内にエントリが存在する間は、バックグラウンド更新の進行中に、受信要求でキャッシュが使用されます。 5 * `cacheRefreshIntervalSecs`のエントリにアクセスしない場合は、キャッシュから削除されます。 構成可能な `maxRelyingPartyEntries` 値に達すると、最も古いエントリがキャッシュから削除されることもあります。
 
 >[!NOTE]
-> データベースで変更が発生したことを示す`cacheRefreshIntervalSecs`通知を ADFS が SQL から受信した場合、キャッシュのデータは値の外部で更新されます。 この通知により、キャッシュの更新がトリガーされます。 
+> データベースで変更が発生したことを示す通知を ADFS が SQL から受信した場合、キャッシュのデータは `cacheRefreshIntervalSecs` 値の外部で更新されます。 この通知により、キャッシュの更新がトリガーされます。 
 
 ### <a name="recommendations-for-setting-the-cache-refresh"></a>キャッシュ更新の設定に関する推奨事項 
 キャッシュ更新の既定値は**5 分**です。 SQL の変更が発生した場合にキャッシュデータが更新されるため、AD FS によって不要なデータ更新を減らすには、 **1 時間**に設定することをお勧めします。  
@@ -51,8 +53,8 @@ AD FS によって SQL の変更のコールバックが登録され、変更時
  
 サポートされている追加の構成可能な値: 
 
-   - **maxRelyingPartyEntries** -AD FS がメモリに保持する証明書利用者エントリの最大数。 この値は、oAuth アプリケーションアクセス許可キャッシュでも使用されます。 RPs よりも多くのアプリケーションアクセス許可があり、すべてがメモリに格納される場合、この値はアプリケーションのアクセス許可の数である必要があります。 既定値は1000です。
-   - **Maxidentity providerentries** -これは、AD FS がメモリに保持する要求プロバイダーエントリの最大数です。 既定値は200です。 
+   - **maxRelyingPartyEntries** -AD FS がメモリに保持する証明書利用者エントリの最大数。 この値は、oAuth アプリケーションアクセス許可キャッシュでも使用されます。 RPs よりも多くのアプリケーションアクセス許可があり、すべてがメモリに格納される場合、この値はアプリケーションのアクセス許可の数である必要があります。 既定値は 1000 です。
+   - **Maxidentity providerentries** -これは、AD FS がメモリに保持する要求プロバイダーエントリの最大数です。 既定値は 200 です。 
    - **Maxcliententries** -これは、AD FS がメモリに保持する OAuth クライアントエントリの最大数です。 既定値は 500 です。 
    - **Maxclaimdescriptor エントリ**-AD FS は、メモリ内に保持される要求記述子エントリの最大数を指定します。 既定値は 500 です。 
    - **Maxnullentries** -これはネガティブキャッシュとして使用されます。 AD FS がデータベース内でエントリを検索し、見つからない場合、AD FS はネガティブキャッシュに追加されます。 これは、そのキャッシュの最大サイズです。 オブジェクトの種類ごとにネガティブキャッシュがあり、すべてのオブジェクトに対する単一のキャッシュではありません。 既定値は50、0000です。 
@@ -65,9 +67,9 @@ AD FS によって SQL の変更のコールバックが登録され、変更時
 
 ### <a name="requirements"></a>要件: 
 複数のアーティファクトデータベースのサポートを設定する前に、すべてのノードで更新を実行し、マルチノードの呼び出しがこの機能を使用して行われるため、バイナリを更新します。 
-  1. アーティファクト DB を作成する配置スクリプトを生成します。複数のアーティファクト DB インスタンスをデプロイするには、管理者がアーティファクトデータベースの SQL 配置スクリプトを生成する必要があります。 この更新の一環として、 `Export-AdfsDeploymentSQLScript`既存のコマンドレットが更新され、必要に応じて、SQL 配置スクリプトを生成する AD FS データベースを指定するパラメーターを使用できるようになりました。 
+  1. アーティファクトデータベースを作成する配置スクリプトを生成する: 複数のアーティファクト DB インスタンスをデプロイするには、管理者がアーティファクトデータベース用の SQL 配置スクリプトを生成する必要があります。 この更新の一環として、既存の `Export-AdfsDeploymentSQLScript`コマンドレットが更新され、必要に応じて、SQL 配置スクリプトを生成する AD FS データベースを指定するパラメーターを使用できるようになりました。 
  
- たとえば、成果物データベースのみの配置スクリプトを生成するには、 `-DatabaseType`パラメーターを指定し、値 "アーティファクト" を渡します。 省略可能`-DatabaseType`なパラメーターは AD FS データベースの種類を指定し、次のように設定できます。All (既定)、成果物、または構成。 パラメーターを`-DatabaseType`指定しない場合、スクリプトはアーティファクトと構成スクリプトの両方を構成します。  
+ たとえば、成果物データベースのみの配置スクリプトを生成するには、`-DatabaseType` パラメーターを指定し、値 "アーティファクト" を渡します。 省略可能な `-DatabaseType` パラメーターでは、AD FS データベースの種類を指定します。 All (既定)、アーティファクト、または構成を設定できます。 `-DatabaseType` パラメーターが指定されていない場合、スクリプトはアーティファクトと構成スクリプトの両方を構成します。  
 
    ```PowerShell
    PS C:\> Export-AdfsDeploymentSQLScript -DestinationFolder <script folder where scripts will be created> -ServiceAccountName <domain\serviceaccount> -DatabaseType "Artifact" 

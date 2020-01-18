@@ -5,14 +5,15 @@ ms.prod: windows-server
 ms.topic: article
 ms.assetid: 07691d5b-046c-45ea-8570-a0a85c3f2d22
 manager: dongill
-author: huu
+author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 6db9ce1db139558bd1a7aa731cb12c1b227ead03
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.date: 01/14/2020
+ms.openlocfilehash: c69fc70282ff61ecce25f6413244d7ba3a5ba3bc
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949759"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265824"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>保護されたファブリック診断ツールを使用したトラブルシューティング
 
@@ -20,21 +21,24 @@ ms.locfileid: "75949759"
 
 このトピックでは、保護されたファブリックのインフラストラクチャのデプロイ、構成、および実行中の操作の一般的なエラーを特定して修復するための、保護されたファブリック診断ツールの使用方法について説明します。 これには、ホストガーディアンサービス (HGS)、保護されたすべてのホスト、および DNS や Active Directory などのサポートサービスが含まれます。 診断ツールを使用すると、保護されていないファブリックの方針に従って、管理者が障害を解決し、正しく構成されていない資産を特定できるようになります。 このツールは、保護されたファブリックの運用を音で区別するためのものではなく、日常の操作中に発生した最も一般的な問題を迅速に検証するためにのみ機能します。
 
-このトピックで使用するコマンドレットのドキュメントについては、 [TechNet](https://technet.microsoft.com/library/mt718834.aspx)を参照してください。
+この記事で使用されているコマンドレットの完全なドキュメントについては、 [HgsDiagnostics モジュールリファレンスを参照](https://docs.microsoft.com/powershell/module/hgsdiagnostics/?view=win10-ps)してください。
 
-[!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)] 
+[!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)]
 
 ## <a name="quick-start"></a>クイック スタート
 
 ローカル管理者特権を持つ Windows PowerShell セッションから次のものを呼び出して、保護されたホストまたは HGS ノードのいずれかを診断できます。
+
 ```PowerShell
 Get-HgsTrace -RunDiagnostics -Detailed
 ```
+
 これにより、現在のホストの役割が自動的に検出され、自動的に検出される可能性のある関連する問題が診断されます。  `-Detailed` スイッチが存在するため、このプロセス中に生成されたすべての結果が表示されます。
 
 このトピックの残りの部分では、複数のホストを一度に診断し、複雑なクロスノード構成の誤りを検出するなどの操作を行うための `Get-HgsTrace` の高度な使用方法について詳しく説明します。
 
 ## <a name="diagnostics-overview"></a>診断の概要
+
 保護されたファブリック診断は、Server Core を実行しているホストを含め、仮想マシンに関連するシールドされたツールと機能がインストールされている任意のホストで利用できます。  現在、診断は次の機能/パッケージに含まれています。
 
 1. ホストガーディアンサービスの役割
@@ -49,6 +53,7 @@ Get-HgsTrace -RunDiagnostics -Detailed
 管理者は `Get-HgsTrace`を実行することで、任意の診断タスクを開始できます。  このコマンドは、実行時に提供されるスイッチに基づいて、トレースコレクションと診断の2つの異なる関数を実行します。  これら2つの組み合わせによって、保護されたファブリック診断ツールの全体が構成されます。  明示的に必須ではありませんが、最も有用な診断では、トレースターゲットで管理者の資格情報を使用してのみ収集できるトレースが必要です。  トレースコレクションを実行しているユーザーが十分な特権を持っていない場合、昇格が必要なトレースは失敗し、他のトレースは成功します。  これにより、権限の低いオペレーターがトリアージを実行しているときに、部分的な診断を行うことができます。 
 
 ### <a name="trace-collection"></a>トレースコレクション
+
 既定では、`Get-HgsTrace` はトレースを収集し、一時フォルダーに保存します。  トレースは、ターゲットホストの後に指定されたフォルダーの形式になり、ホストの構成方法を説明する特殊な形式のファイルが格納されます。  トレースには、トレースを収集するために診断がどのように呼び出されたかを説明するメタデータも含まれています。  このデータは、手動診断の実行時にホストに関する情報を復元するために診断によって使用されます。
 
 必要に応じて、トレースを手動で確認できます。  すべての形式は人間が判読できる (XML) か、標準ツール (X509 証明書や Windows Crypto シェル拡張機能など) を使用して簡単に検査することができます。  ただし、トレースは手動で診断するように設計されていないため、常に `Get-HgsTrace`の診断機能を使用してトレースを処理する方が効率的です。
@@ -58,6 +63,7 @@ Get-HgsTrace -RunDiagnostics -Detailed
 `-Diagnostic` パラメーターを使用すると、指定した診断を操作するために必要なトレースのみをトレースコレクションに限定できます。  これにより、収集されるデータの量だけでなく、診断を呼び出すために必要なアクセス許可も減少します。
 
 ### <a name="diagnosis"></a>Diagnosis
+
 収集されたトレースは、`-Path` パラメーターを使用し、`-RunDiagnostics` スイッチを指定することによって、トレースの場所 `Get-HgsTrace` 指定して診断できます。  さらに、`Get-HgsTrace` は、`-RunDiagnostics` スイッチとトレースターゲットの一覧を提供することで、単一のパスで収集と診断を実行できます。  トレースターゲットが指定されていない場合は、現在のコンピューターが暗黙的なターゲットとして使用され、インストールされている Windows PowerShell モジュールを調べることによってその役割が推論されます。
 
 診断では、特定のエラーの原因となっているトレースターゲット、診断セット、および個々の診断を示す階層形式で結果が得られます。  エラーには、次に実行するアクションを決定する際に、修復と解決策に関する推奨事項が含まれます。  既定では、渡された結果と無関係の結果は非表示になります。  診断によってテストされたすべてを表示するには、`-Detailed` スイッチを指定します。  これにより、状態に関係なくすべての結果が表示されます。
@@ -78,13 +84,17 @@ Get-HgsTrace -RunDiagnostics -Detailed
 暗黙のローカルターゲットは、ロールの推論を使用して、保護されたファブリックで現在のホストがどのロールを果たしているかを判断します。  これは、インストールされている Windows PowerShell モジュールに基づいています。このモジュールは、システムにインストールされている機能にほぼ対応しています。  `HgsServer` モジュールが存在すると、トレースターゲットがロール `HostGuardianService` され、`HgsClient` モジュールの存在によってトレースターゲットがロール `GuardedHost`を取得します。  特定のホストで両方のモジュールを使用することができますが、その場合は、`HostGuardianService` と `GuardedHost`の両方として扱われます。
 
 したがって、ローカルでトレースを収集するための診断の既定の呼び出しは次のとおりです。
+
 ```PowerShell
 Get-HgsTrace
 ```
+
 ...は、次の場合と同じです。
+
 ```PowerShell
 New-HgsTraceTarget -Local | Get-HgsTrace
 ```
+
 > [!TIP]
 > `Get-HgsTrace` は、パイプライン経由で、または `-Target` パラメーターを使用して直接ターゲットを受け入れることができます。  2つの運用の間に違いはありません。
 
@@ -159,6 +169,7 @@ Get-HgsTrace -Target $hgs01,$hgs02,$gh01,$gh02 -RunDiagnostics
    ```PowerShell
    Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
    ```
+
 2. 各ホスト管理者に対して、結果として得られるトレースフォルダーをパッケージ化し、送信するように要求します。  このプロセスは、電子メール、ファイル共有、または組織によって確立されたオペレーティングポリシーと手順に基づくその他のメカニズムによって促進できます。
 
 3. 受信したすべてのトレースを1つのフォルダーにマージします。他のコンテンツやフォルダーは含まれません。
@@ -197,3 +208,15 @@ Get-HgsTrace -RunDiagnostics -Target $hgs03 -Path .\FabricTraces
 ``` 
 
 診断コマンドレットは、事前に収集されたすべてのホストと、トレースする必要がある追加のホストを特定し、必要なトレースを実行します。  事前に収集されたすべてのトレースと新しく収集されたトレースの合計が診断されます。  結果のトレースフォルダーには、古いトレースと新しいトレースの両方が含まれます。
+
+## <a name="known-issues"></a>既知の問題
+
+保護されたファブリック診断モジュールには、Windows Server 2019 または Windows 10、バージョン1809、およびそれ以降のバージョンの OS で実行される場合の既知の制限があります。
+次の機能を使用すると、誤った結果が発生する可能性があります。
+
+* ホストキーの構成証明
+* 構成証明のみの HGS 構成 (SQL Server Always Encrypted シナリオ用)
+* 構成証明ポリシーの既定値が v2 である HGS サーバーで v1 ポリシーアーティファクトを使用する
+
+これらの機能を使用するときの `Get-HgsTrace` エラーは、必ずしも HGS サーバーまたは保護されたホストの構成が正しくないことを示しているわけではありません。
+保護されたホストで `Get-HgsClientConfiguration` などの他の診断ツールを使用して、ホストが構成証明を受けたかどうかをテストします。

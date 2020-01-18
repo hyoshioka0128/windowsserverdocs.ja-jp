@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: abbc9cf76056af4ac421d9a38381bd8d8f666e4c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b96a66c9e28454752fd4999fcfe74cbb15a3ae7d
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949530"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265814"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>Active Directory フェデレーションサービス (AD FS) をセキュリティで保護するためのベストプラクティス
 
@@ -26,6 +26,9 @@ ms.locfileid: "75949530"
 オンプレミス環境でのデプロイでは、内部企業ネットワーク上の1つ以上の AD FS サーバーで構成される標準の展開トポロジを使用することをお勧めします。また、1つ以上の Web アプリケーションプロキシ (WAP) サーバーを DMZ またはエクストラネットネットワークに配置することをお勧めします。  各レイヤー、AD FS および WAP では、ハードウェアまたはソフトウェアのロードバランサーがサーバーファームの前に配置され、トラフィックルーティングを処理します。  ファイアウォールは、各 (FS および proxy) ファームの前にあるロードバランサーの外部 IP アドレスの前に、必要に応じて配置されます。
 
 ![AD FS Standard トポロジ](media/Best-Practices-Securing-AD-FS/adfssec1.png)
+
+>[!NOTE]
+> AD FS には、読み取り専用ドメインコントローラーではなく、完全書き込み可能なドメインコントローラーを機能させる必要があります。 計画されたトポロジに読み取り専用ドメインコントローラーが含まれている場合は、読み取り専用ドメインコントローラーを認証に使用できますが、LDAP 要求の処理には書き込み可能なドメインコントローラーへの接続が必要です。
 
 ## <a name="ports-required"></a>必要なポート
 次の図は、AD FS と WAP の展開のコンポーネント間で有効にする必要があるファイアウォールポートを示しています。  展開に Azure AD/Office 365 が含まれていない場合は、同期の要件を無視できます。

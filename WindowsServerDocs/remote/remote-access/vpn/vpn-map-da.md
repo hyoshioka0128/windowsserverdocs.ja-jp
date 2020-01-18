@@ -9,12 +9,12 @@ ms.date: 11/05/2018
 ms.assetid: 8fe1c810-4599-4493-b4b8-73fa9aa18535
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ba0b3969695611385fb0a0bdc6df900eeab85254
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: 2b9f1e01073f6ef8fdfe89623a383e26f8559977
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791139"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259117"
 ---
 # <a name="always-on-vpn-features-and-functionalities"></a>Always On VPN の機能
 
@@ -53,14 +53,14 @@ ms.locfileid: "74791139"
 |                                       IPv4 と IPv6 の両方がサポートされます。                                        |                                                                                                                                                                 Always On VPN を使用すると、ユーザーは企業ネットワーク上の IPv4 と IPv6 の両方のリソースにアクセスできます。 Always On VPN クライアントでは、IPv6、または VPN ゲートウェイが NAT64 または DNS64 翻訳サービスを提供する必要性に明示的に依存しないデュアル スタック アプローチを使用します。                                                                                                                                                                  |
 |                                2 要素認証または OTP 認証のサポート。                                 |                    Always On VPN プラットフォームは、ネイティブで EAP をサポートしています。これにより、認証ワークフローの一部としてさまざまな Microsoft およびサード パーティの EAP の種類の使用が可能になります。 Always On VPN では特にスマート カード (物理および仮想の両方) と Windows Hello for Business の証明書をサポートし、2 要素認証の要件を満たしています。 また、Always On VPN は、EAP の RADIUS 統合によって、MFA による OTP (ネイティブではサポートされていませんが、サードパーティのプラグインでのみサポートされます) をサポートします。<p><p>次を使用して定義:<br>**VPNv2/ProfileName/のプロファイル/認証**                    |
 |                                  複数ドメインとフォレストのサポート。                                   |                                   Always On VPN プラットフォームでは VPN クライアントが機能するためにドメインに参加している必要がないため、Active Directory Domain Services (AD DS) フォレストまたはドメイン トポロジに依存することはありません。 そのため、グループ ポリシーは、クライアントの構成時に使用しないため、VPN プロファイル設定を定義するための依存関係ではありません。 Active Directory 承認統合は必要ですが、EAP 認証および承認プロセスの一部として RADIUS によって実現できます。                                   |
-|              インターネット/イントラネットのトラフィック分離のための分割トンネルまたは強制トンネルの両方のサポート。               |                                                                                               強制トンネル (既定の操作モード) および分割トンネルの両方をネイティブでサポートするように Always On VPN を構成できます。 Always On VPN では、アプリケーション固有のルーティング ポリシーのための追加の詳細情報を提供しています。<p><p>***注:***<br>ユーザートンネルのみでサポートされます。<p><p>次を使用して定義:<p> **VPNv2/ProfileName/RoutingPolicyType**<br>**VPNv2/ProfileName/用 trafficfilterlist/App/RoutingPolicyType**                                                                                               |
+|              インターネット/イントラネットのトラフィック分離のための分割トンネルまたは強制トンネルの両方のサポート。               |                                                                                               強制トンネル (既定の操作モード) および分割トンネルの両方をネイティブでサポートするように Always On VPN を構成できます。 Always On VPN では、アプリケーション固有のルーティング ポリシーのための追加の詳細情報を提供しています。<p><p>***注:***<br>強制トンネルは、ユーザートンネルのみでサポートされています。 他の VPN トンネルを強制トンネルユーザートンネルと並行してアクティブにすることはできません。<p><p>次を使用して定義:<p> **VPNv2/ProfileName/RoutingPolicyType**<br>**VPNv2/ProfileName/用 trafficfilterlist/App/RoutingPolicyType**                                                                                               |
 |                                          複数のプロトコルのサポート。                                          |                                                                                                                                                                            Always On VPN は、IKEv2 からのフォールバックが必要な場合に、Secure Sockets Layer SSTP をネイティブにサポートするように構成できます。<p><p>***注:***<br>ユーザートンネルは SSTP と IKEv2 をサポートします。デバイストンネルは、SSTP フォールバックがサポートされていない場合にのみ IKEv2 をサポートします。                                                                                                                                                                            |
 |                       企業の接続状態を提供する接続アシスタント。                       |                                                                                                            Always On VPN はネイティブの Network Connectivity Assistant と完全に統合されており、View All Networks インターフェイスから接続状態を提供します。 Windows 10 の作成者の更新プログラム (バージョン 1703) が登場したため、ユーザートンネルの VPN 接続の状態と VPN 接続制御が、ネットワークフライアウト (Windows の組み込み VPN クライアントの場合) でも利用できるようになりました。                                                                                                            |
 | 短い名前、完全修飾ドメイン名 (FQDN)、および DNS サフィックスを使用した企業リソースの名前解決。 | Always On VPN では、1 つ以上の DNS サフィックスを VPN 接続および IP アドレス割り当て処理の一部としてネイティブに定義できます (短い名前、FQDN、または DNS 名前空間全体の企業リソースの名前解決を含む)。 また、Always On VPN では、名前解決ポリシーテーブルを使用して名前空間固有の解決の粒度を指定することもできます。<p><p>***注:***<br>名前解決ポリシーテーブルを使用する場合は、名前解決によって名前解決が妨げられるため、グローバルサフィックスを使用しないようにしてください。<p><p>次を使用して定義:<br>**VPNv2/ProfileName/DnsSuffix**<br>**VPNv2/ProfileName/DomainNameInformationList** |
 
 
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 - [Always On VPN の機能強化についての詳細情報](always-on-vpn/always-on-vpn-enhancements.md)
 

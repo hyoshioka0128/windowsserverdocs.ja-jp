@@ -1,19 +1,19 @@
 ---
 title: ドメインネームシステム (DNS) に関する問題のトラブルシューティング
 description: この記事では、DNS の問題が発生したときにデータを収集する方法について説明します。
-manager: willchen
+manager: dcscontentpm
 ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: a86b1f34c3b21f5bcde710e2a98323492ea51b62
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: 11c52b3beca3afcc0a6bfc8cecee2143dce0f023
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68917779"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265834"
 ---
 # <a name="troubleshooting-domain-name-system-dns-issues"></a>ドメインネームシステム (DNS) に関する問題のトラブルシューティング
  

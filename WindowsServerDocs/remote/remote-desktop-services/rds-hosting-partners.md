@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 9a3cb426-fb39-40c5-ae07-26dbe9e3aed9
 author: lizap
 manager: dongill
-ms.openlocfilehash: 8433aa50d585300df03222b78cf0823985237aa5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 4d9a6d4885566204bf9fc29cd9513d25d1b39deb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403968"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949852"
 ---
 # <a name="remote-desktop-services-hosting-partners-and-assessment"></a>リモート デスクトップ サービスのホスティング パートナーと評価
 
@@ -29,7 +29,7 @@ ms.locfileid: "71403968"
 1. まだなっていなければ、[Microsoft パートナー](https://partner.microsoft.com/)になります。
 2. ["Azure でのリモート デスクトップ サービスを使用した Windows デスクトップとアプリケーションのホスティング" トレーニング セッション](https://mspartnerlp.partner.microsoft.com/LearningPath/LearningPath/DLPaths?trackId=2915&rowId=3603)を視聴します。
 3. [技術的な評価](https://mspartnerlp.partner.microsoft.com/LearningPath/LearningPath/DLPaths?trackId=1660&rowId=2220&trackPathId=9871)を受けます。
-4. [Cloud Platform コンピテンシー要件](https://partner.microsoft.com/en-us/membership/cloud-platform-competency)を満たしていることを確認します。
+4. [Cloud Platform コンピテンシー要件](https://partner.microsoft.com/membership/cloud-platform-competency)を満たしていることを確認します。
 
 既に Microsoft パートナーであり、ご質問がある場合は、 リモート デスクトップ チーム (<rdhostingpartners@microsoft.com>) にお問い合わせください。  
 

@@ -9,16 +9,16 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
 ms.date: 01/02/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8b97b7a22d59727bedd6bdbd67a19087612ebfa0
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 4df34f533742b26ab6ba5c596ff40e558221b574
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75653047"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919714"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Microsoft Store クライアントの新機能
 

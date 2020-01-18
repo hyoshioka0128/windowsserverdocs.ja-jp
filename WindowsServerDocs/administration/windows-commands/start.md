@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e481048c23e634869b0238188d4a0ef8b49cb3e
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.openlocfilehash: 48197b1bc1d1c9f91a6a35b5fb8aad81b229eb6b
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781309"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259087"
 ---
 # <a name="start"></a>スタート
 
@@ -31,7 +31,7 @@ ms.locfileid: "74781309"
 ## <a name="syntax"></a>構文
 
 ```
-start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b {<Command> | <Program>} [<Parameters>]]
+start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/low | /normal | /high | /realtime | /abovenormal | belownormal}] [/affinity <HexAffinity>] [/wait] [/elevate] [/b] [<Command> [<Parameter>... ] | <Program> [<Parameter>... ]]
 ```
 
 ## <a name="parameters"></a>パラメーター
@@ -48,8 +48,8 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 |/wait|アプリケーションを起動し、終了するまで待機します。|
 |/昇格|管理者としてアプリケーションを実行します。|
 |/b|新しいコマンド プロンプト ウィンドウを開くことがなく、アプリケーションを起動します。 CTRL キーを押しながら C キーの処理には、アプリケーションは CTRL + C 処理を有効にしない限りは無視されます。 アプリケーションを中断するのにには、CTRL キーを押しながら BREAK キーを使用します。|
-|/b \<コマンド > \| \<プログラム >|開始するコマンドまたはプログラムを指定します。|
-|\<パラメーター >|コマンドまたはプログラムに渡すパラメーターを指定します。|
+|\<コマンド > \| \<プログラム >|開始するコマンドまたはプログラムを指定します。|
+|パラメーター > を \<しています...|コマンドまたはプログラムに渡すパラメーターを指定します。|
 |/?|コマンド プロンプトにヘルプを表示します。|
 
 ## <a name="remarks"></a>注釈
@@ -59,7 +59,7 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 - 32 ビットのグラフィカル ユーザー インターフェイス (GUI) アプリケーションを実行するときに **cmd** アプリケーションのコマンド プロンプトに戻る前に終了を待ちません。 この動作は、コマンド スクリプトからアプリケーションを実行する場合に発生しません。
 - 拡張機能が含まれていない最初のトークンを使用するコマンドを実行すると Cmd.exe、PATHEXT 環境変数の値を使用して、どのような順序で検索する拡張機能を決定します。 PATHEXT 変数の既定値は、します。  
   ```
-  .COM;.EXE;.BAT;.CMD 
+  .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC 
   ```  
   構文は、各拡張機能を分離することをセミコロンで区切って、パス変数と同じことに注意してください。
 - 他の拡張機能との一致がない場合、実行可能ファイルを検索するとき **開始** ディレクトリ名が名前に一致するかどうかかどうかを確認します。 そのような場合は、 **開始** そのパスに Explorer.exe を開きます。

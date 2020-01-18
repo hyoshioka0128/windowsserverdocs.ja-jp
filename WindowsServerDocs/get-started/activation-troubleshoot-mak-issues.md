@@ -9,12 +9,12 @@ author: Teresa-Motiv
 ms.author: v-tea
 manager: dcscontentpm
 ms.localizationpriority: medium
-ms.openlocfilehash: 25fa6d32571597136580afe062aa8d9c7e2d82b7
-ms.sourcegitcommit: 9855d6b59b1f8722f39ae74ad373ce1530da0ccf
+ms.openlocfilehash: 5ed934e52b11db5b83948ba995eaf31e9ff2cce3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71962988"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947621"
 ---
 # <a name="mak-activation-known-issues"></a>MAK ライセンス認証: 既知の問題
 
@@ -26,7 +26,7 @@ ms.locfileid: "71962988"
 
 ## <a name="the-computer-does-not-activate-over-the-internet"></a>コンピューターがインターネット経由でライセンス認証されない
 
-必要なポートがファイアウォールで開かれていることを確認します。 ポートの一覧については、「[ボリューム ライセンス認証の展開ガイド](http://go.microsoft.com/fwlink/?linkid=150083)」を参照してください。
+必要なポートがファイアウォールで開かれていることを確認します。 ポートの一覧については、「[ボリューム ライセンス認証の展開ガイド](https://go.microsoft.com/fwlink/?linkid=150083)」を参照してください。
 
 ## <a name="internet-and-telephone-activation-fail"></a>インターネットと電話によるライセンス認証が失敗する
 

@@ -9,16 +9,16 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
 ms.date: 01/04/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 09010878e2381e8f1f00d6883a6871fcd69a48be
-ms.sourcegitcommit: 28b71d779386cd31e1511217aa1a6f3ab186bf9b
+ms.openlocfilehash: ff5e2252a71f11f2488c6bdd872fe4e2de35519c
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75682443"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919696"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Windows デスクトップ クライアントの概要
 

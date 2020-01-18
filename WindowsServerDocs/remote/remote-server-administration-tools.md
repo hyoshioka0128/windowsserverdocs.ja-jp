@@ -12,16 +12,16 @@ ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 121914f721cda7cbf0a117527b69568032d5541b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e8e8206531e0939a1b6d6dfd17f5c5dd59947c81
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387095"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259137"
 ---
 # <a name="remote-server-administration-tools"></a>リモート サーバー管理ツール
 
->適用対象:Windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: windows Server 2019、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、Windows 10 のリモートサーバー管理ツールをサポートします。
 
@@ -32,10 +32,10 @@ RSAT を使用すると、IT 管理者は windows 10 PC から Windows Server �
 
 リモートサーバー管理ツールには、サーバーマネージャー、Microsoft 管理コンソール (mmc) スナップイン、コンソール、Windows PowerShell のコマンドレットとプロバイダー、および Windows Server で実行される役割と機能を管理するためのコマンドラインツールが含まれています。
 
-リモートサーバー管理ツールには、リモートサーバーで実行されている役割と機能を管理するために使用できる Windows PowerShell コマンドレットモジュールが含まれています。 Windows PowerShell のリモート管理は、Windows Server 2016 では既定で有効になっていますが、Windows 10 では、既定で無効になっています。 リモートサーバーに対してリモートサーバー管理ツールの一部であるコマンドレットを実行するには、をインストールした後、Windows クライアントコンピューターで管理者特権で開かれた (つまり、管理者として実行される) Windows PowerShell セッションで `Enable-PSremoting` を実行します。リモートサーバー管理ツール。
+リモートサーバー管理ツールには、リモートサーバーで実行されている役割と機能を管理するために使用できる Windows PowerShell コマンドレットモジュールが含まれています。 Windows PowerShell のリモート管理は、Windows Server 2016 では既定で有効になっていますが、Windows 10 では、既定で無効になっています。 リモートサーバーに対してリモートサーバー管理ツールの一部であるコマンドレットを実行するには、リモートサーバー管理ツールのインストール後に Windows クライアントコンピューターで管理者特権で開かれた (つまり、管理者として実行される) Windows PowerShell セッションで `Enable-PSremoting` を実行します。
 
 ## <a name="BKMK_Thresh"></a>Windows 10 のリモートサーバー管理ツール
-リモート サーバー管理ツールの Windows 10 を使用すると、特定のテクノロジと制限付きの場合、Windows Server 2012、または Windows Server 2008 R2 で Windows Server 2016、Windows Server 2012 R2 を実行しているコンピューターを管理できます。
+Windows 10 用のリモートサーバー管理ツールを使用して、windows Server 2019、Windows Server 2016、Windows Server 2012 R2 を実行しているコンピューターで特定のテクノロジを管理し、制限付きの場合は windows Server 2012 または Windows Server 2008 R2 を使用します。
 
 リモート サーバー管理ツールの Windows 10 には、Server Core インストール オプションまたは最小サーバー インターフェイス構成の Windows Server 2016、Windows Server 2012 R2、および場合によって、Windows Server 2012 の Server Core インストール オプションを実行しているコンピューターのリモート管理のサポートが含まれています。 ただし、リモート サーバー管理ツールの Windows 10 は、任意のバージョンの Windows Server オペレーティング システムにインストールできません。
 
@@ -50,7 +50,7 @@ Windows 10 のリモートサーバー管理ツールは、Windows 10 の x86 �
 > [!IMPORTANT]
 > Windows 10 のリモートサーバー管理ツールは、Windows 8.1、Windows 8、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003、または Windows 2000 Server 用の管理ツールパックを実行しているコンピューターにはインストールしないでください。 リモートサーバー管理をインストールする前に、以前のプレリリースバージョンを含む管理ツールパックまたはリモートサーバー管理ツールの古いバージョンをすべて削除し、コンピューターから別の言語またはロケール用のツールをリリースします。Windows 10 用のツール。
 
-このリリースのサーバーマネージャーを使用して、Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 を実行しているリモートサーバーにアクセスして管理するには、いくつかの更新プログラムをインストールして、以前の Windows Server オペレーティングシステムを管理者が管理できるようにする必要があります。r Manager。 Windows 10 リモートサーバー管理ツールのサーバーマネージャーを使用した管理のために Windows Server 2012 R2、Windows Server 2012、および Windows Server 2008 R2 を準備する方法の詳細については、「[サーバーを使用して複数のリモートサーバーを管理する」を参照してください。マネージャー](https://technet.microsoft.com/library/hh831456.aspx)。
+このリリースのサーバーマネージャーを使用して、Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 を実行しているリモートサーバーにアクセスして管理するには、いくつかの更新プログラムをインストールして、以前の Windows Server オペレーティングシステムを管理者が管理できるようにする必要があります。r Manager。 Windows 10 リモートサーバー管理ツールのサーバーマネージャーを使用した管理のために Windows Server 2012 R2、Windows Server 2012、および Windows Server 2008 R2 を準備する方法の詳細については、「サーバーマネージャーを使用して[複数のリモートサーバーを管理](https://technet.microsoft.com/library/hh831456.aspx)する」を参照してください。
 
 Windows PowerShell およびサーバー マネージャーのリモート管理は、リモート サーバー管理ツールの Windows 10 に含まれているツールを使用してそれらを管理するリモート サーバーで有効にする必要があります。 Windows Server 2016、Windows Server 2012 R2、および Windows Server 2012 を実行しているサーバーでは、リモート管理が既定で有効になっています。 リモート管理が無効になっている場合に有効にする方法の詳細については、「 [サーバー マネージャーを使用して複数のリモート サーバーを管理する](https://go.microsoft.com/fwlink/p/?LinkId=241358)」を参照してください。
 
@@ -74,11 +74,11 @@ Windows 10 では、**設定**アプリを開き、 **[オプション機能の�
 
 2018年10月の更新プログラム (1809) より前のバージョンの Windows 10 を使用している場合は、**オンデマンド機能**を使用することはできません。 RSAT パッケージをダウンロードしてインストールする必要があります。
 
-- **前述のように、Windows 10 から直接 RSAT をインストールし**ます。Windows 10 10 月2018更新プログラム (1809) 以降にインストールする場合は、Windows Server 2019 またはそれ以前のバージョンを管理します。
+- Windows 10 10 月2018更新プログラム (1809) 以降で windows Server 2019 またはそれ以前のバージョンを管理する場合は、**前に説明したように、windows 10 から RSAT を直接インストール**します。
 
-- **次に示すように、WS_1803 RSAT パッケージをダウンロードしてインストール**します。Windows 10 年4月2018更新プログラム (1803) 以前にインストールした場合、Windows Server、バージョン1803、または Windows Server のバージョン1709を管理する場合。
+- 次に示すように、 **WS_1803 RSAT パッケージをダウンロードしてインストールし**ます。 Windows 10 年4月2018更新プログラム (1803) をインストールする場合は、windows server、バージョン1803、または windows server のバージョン1709を管理する場合は、「」を参照してください。
 
-- **次に示すように、WS2016 RSAT パッケージをダウンロードしてインストール**します。Windows 10 年4月2018更新プログラム (1803)、またはそれ以前のバージョンを2016管理するためにインストールする場合。
+- **次に示すように、WS2016 RSAT パッケージをダウンロードしてインストールし**ます。 Windows 10 年4月2018更新プログラム (1803) 以前にインストールした場合は、windows Server 2016 または以前のバージョンを管理します。
 
 #### <a name="BKMK_installthresh"></a>RSAT パッケージをダウンロードして、Windows 10 用のリモートサーバー管理ツールをインストールする
 
@@ -141,7 +141,7 @@ Windows 10 のリモートサーバー管理ツールでは、mmc スナップ�
 
 2.  **[管理ツール]** フォルダーで、 **[サーバー マネージャー]** をクリックします。
 
-サーバーマネージャーコンソールの **[ツール]** メニューには表示されませんが、Windows PowerShell コマンドレットおよびコマンドプロンプト管理ツールもリモートサーバー管理ツールの一部として役割と機能にインストールされます。 たとえば、管理者特権 ([管理者として実行]) を使用して Windows PowerShell セッションを開き、コマンドレット `Get-Command -Module RDManagement` を実行した場合、結果には、インストール後にローカルコンピューターで実行できるようになったリモートデスクトップサービスコマンドレットの一覧が含まれます。リモートサーバー管理ツール、リモートデスクトップサービスの役割のすべてまたは一部を実行しているリモートサーバーでコマンドレットが対象になっている場合に限ります。
+サーバーマネージャーコンソールの **[ツール]** メニューには表示されませんが、Windows PowerShell コマンドレットおよびコマンドプロンプト管理ツールもリモートサーバー管理ツールの一部として役割と機能にインストールされます。 たとえば、管理者特権 ([管理者として実行]) を使用して Windows PowerShell セッションを開き、`Get-Command -Module RDManagement`コマンドレットを実行すると、リモートデスクトップサービスの役割のすべてまたは一部を実行しているリモートサーバーでコマンドレットが対象になっている限り、リモートサーバー管理ツールをインストールした後にローカルコンピューターで実行できるようになります。
 
 ##### <a name="to-start-windows-powershell-with-elevated-user-rights-run-as-administrator"></a>管理者特権を使用して Windows PowerShell を起動するには (管理者として実行)
 
@@ -155,43 +155,43 @@ Windows 10 のリモートサーバー管理ツールでは、mmc スナップ�
 
 ## <a name="known-issues"></a>既知の問題
 
-### <a name="issue-rsat-fod-installation-fails-with-error-code-0x800f0954"></a>**問題**:RSAT のインストールがエラーコード0x800f0954 で失敗する
+### <a name="issue-rsat-fod-installation-fails-with-error-code-0x800f0954"></a>**問題**: RSAT のインストールがエラーコード0x800f0954 で失敗する
 
-> **影響**:WSUS/SCCM 環境での Windows 10 1809 (10 2018 月の更新プログラム) での RSAT の更新
+> **影響**: WSUS/SCCM 環境で Windows 10 1809 (10 2018 月の更新プログラム) に RSAT を実行する
 > 
-> **解決策**:WSUS または SCCM を介して更新プログラムを受信するドメインに参加している PC に Ds をインストールするには、グループポリシー設定を変更して、Windows Update またはローカル共有から直接 Ds をダウンロードできるようにする必要があります。 この設定を変更する方法の詳細と手順については、「 [WSUS/SCCM を使用しているときに機能をオンデマンドおよび言語パックで使用できるようにする方法](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)」を参照してください。
+> **解決方法**: WSUS または SCCM から更新プログラムを受信するドメインに参加している PC にインストールするには、グループポリシー設定を変更して、Windows Update またはローカル共有から直接 ds をダウンロードできるようにする必要があります。 この設定を変更する方法の詳細と手順については、「 [WSUS/SCCM を使用しているときに機能をオンデマンドおよび言語パックで使用できるようにする方法](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)」を参照してください。
 
 ---
 
-### <a name="issue-rsat-fod-installation-via-settings-app-does-not-show-statusprogress"></a>**問題**:設定アプリを使用した RSAT のインストールに状態/進行状況が表示されない
+### <a name="issue-rsat-fod-installation-via-settings-app-does-not-show-statusprogress"></a>**問題**: 設定アプリを使用して RSAT をインストールすると、状態または進行状況が表示されない
 
-> **影響**:Windows 10 1809 (2018 年10月の更新プログラム) の RSAT
+> **影響**: Windows 10 1809 (2018 年10月の更新プログラム)
 > 
-> **解決策**:インストールの進行状況を表示するには、 **[戻る]** ボタンをクリックして、 **[オプション機能の管理]** ページの状態を表示します。
+> **解決方法**: インストールの進行状況を確認するには、 **[戻る]** ボタンをクリックして、 **[オプション機能の管理]** ページの状態を表示します。
 
 ---
 
-### <a name="issue-rsat-fod-uninstallation-via-settings-app-may-fail"></a>**問題**:設定アプリを使用した RSAT のアンインストールが失敗することがある
+### <a name="issue-rsat-fod-uninstallation-via-settings-app-may-fail"></a>**問題**: 設定アプリを使用した RSAT のアンインストールが失敗することがある
 
-> **影響**:Windows 10 1809 (2018 年10月の更新プログラム) の RSAT
+> **影響**: Windows 10 1809 (2018 年10月の更新プログラム)
 > 
-> **解決策**:場合によっては、依存関係を手動でアンインストールする必要があることがあります。 具体的には、rsat ツール a が rsat ツール B で必要な場合、rsat ツール B がまだインストールされていると、RSAT ツール A のアンインストールを選択しても失敗します。 この場合、最初に RSAT ツール B をアンインストールしてから、RSAT ツール A をアンインストールします。依存関係を含む RSAT の一覧を参照してください。
+> **解決方法**: アンインストールエラーは、依存関係を手動でアンインストールする必要がある場合があります。 具体的には、rsat ツール a が rsat ツール B で必要な場合、rsat ツール B がまだインストールされていると、RSAT ツール A のアンインストールを選択しても失敗します。 この場合、最初に RSAT ツール B をアンインストールしてから、RSAT ツール A をアンインストールします。依存関係を含む RSAT の一覧を参照してください。
 
 ---
 
-### <a name="issue-rsat-fod-uninstallation-appears-to-succeed-but-the-tool-is-still-installed"></a>**問題**:RSAT のアンインストールは成功したように見えますが、ツールがまだインストールされています
+### <a name="issue-rsat-fod-uninstallation-appears-to-succeed-but-the-tool-is-still-installed"></a>**問題**: RSAT のアンインストールは成功したように見えますが、ツールがまだインストールされています
 
-> **影響**:Windows 10 1809 (2018 年10月の更新プログラム) の RSAT
+> **影響**: Windows 10 1809 (2018 年10月の更新プログラム)
 > 
-> **解決策**:PC を再起動すると、ツールの削除が完了します。
+> **解決方法**: PC を再起動すると、ツールの削除が完了します。
 
 ---
 
-### <a name="issue-rsat-missing-after-windows-10-upgrade"></a>**問題**:Windows 10 のアップグレード後に RSAT が見つからない
+### <a name="issue-rsat-missing-after-windows-10-upgrade"></a>**問題**: Windows 10 のアップグレード後に RSAT が見つからない
 
-> **影響**:任意の RSAT。MSU パッケージのインストール (RSAT に先立って) が自動的に再インストールされない
+> **影響**: RSAT。MSU パッケージのインストール (RSAT に先立って) が自動的に再インストールされない
 > 
-> **解決策**:Rsat が原因で、rsat のインストールを OS のアップグレード間で永続化することはできません。Windows Update パッケージとして配信される MSU。 Windows 10 のアップグレード後に RSAT をもう一度インストールしてください。 この制限は、Windows 10 1809 以降で Ds に移行した理由の1つです。 インストールされている RSAT Ds は、今後の Windows 10 バージョンのアップグレードでも保持されます。
+> **解決方法**: rsat が原因で、rsat のインストールを OS のアップグレード間で永続化することはできません。Windows Update パッケージとして配信される MSU。 Windows 10 のアップグレード後に RSAT をもう一度インストールしてください。 この制限は、Windows 10 1809 以降で Ds に移行した理由の1つです。 インストールされている RSAT Ds は、今後の Windows 10 バージョンのアップグレードでも保持されます。
 
 ## <a name="see-also"></a>関連項目
 >- [Windows 10 のリモートサーバー管理ツール](https://go.microsoft.com/fwlink/?LinkID=404281)

@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0a2bbeeb459fd364db728579dc20015a2474fd25
-ms.sourcegitcommit: e5df3fd267352528eaab5546f817d64d648b297f
+ms.openlocfilehash: 48d93f515a5f3e5f8ce2c3ff9a1b40f300ca57ed
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/18/2019
-ms.locfileid: "74163093"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265744"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS に関してよく寄せられる質問 (FAQ)
 
@@ -66,7 +66,7 @@ AD FS はステートレスシステムです。 そのため、負荷分散は�
 
 ### <a name="what-multi-forest-configurations-are-supported-by-ad-fs"></a>AD FS では、どのようなマルチフォレスト構成がサポートされていますか。
 
-AD FS は複数のフォレスト構成をサポートしており、基盤となる AD DS 信頼ネットワークに依存して、複数の信頼された領域でユーザーを認証します。 双方向のフォレストの信頼を確保することを強くお勧めします。これは、信頼されたサブシステムが問題なく正常に動作するようにするための簡単なセットアップです。 かつ
+AD FS は複数のフォレスト構成をサポートしており、基盤となる AD DS 信頼ネットワークに依存して、複数の信頼された領域でユーザーを認証します。 双方向のフォレストの信頼を確保することを強くお勧めします。これは、信頼されたサブシステムが問題なく正常に動作するようにするための簡単なセットアップです。 さらに、
 
 - パートナー id を含む DMZ フォレストなど一方向のフォレストの信頼がある場合は、corp フォレストに ADFS を展開し、LDAP 経由で接続された別のローカル要求プロバイダー信頼として DMZ フォレストを扱うことをお勧めします。 この場合、Windows 統合認証は、DMZ フォレストのユーザーに対しては機能しません。また、LDAP でサポートされている唯一のメカニズムであるため、パスワード認証を実行する必要があります。 このオプションを追求することができない場合は、DMZ フォレストで別の ADFS を設定し、corp フォレストの ADFS で要求プロバイダー信頼として追加する必要があります。 ユーザーはホーム領域検出を行う必要がありますが、Windows 統合認証とパスワード認証の両方が機能します。 Corp フォレストの ADFS が、DMZ フォレストからユーザーに関する追加のユーザー情報を取得できないようにするため、DMZ フォレストの ADFS で、発行規則に適切な変更を加えてください。
 - ドメインレベルの信頼はサポートされており、機能しますが、フォレストレベルの信頼モデルに移行することを強くお勧めします。 また、名前の UPN ルーティングおよび NETBIOS 名前解決を正確に機能させる必要があります。
@@ -126,7 +126,7 @@ AD FS と WAP サーバーが ATP をサポートする TLS 暗号スイート�
     "array_in_json":{"Items":[{"Name":"Apple","Price":12.3},{"Name":"Grape","Price":3.21}],"Date":"21/11/2010"}
 
 ### <a name="can-i-pass-resource-value-as-part-of-the-scope-value-like-how-requests-are-done-against-azure-ad"></a>Azure AD に対する要求の実行方法など、スコープの値の一部としてリソース値を渡すことはできますか。
-サーバー2019で AD FS を使用すると、スコープパラメーターに埋め込まれたリソース値を渡すことができます。 スコープパラメーターは、各エントリがリソース/スコープとして構成されるスペース区切りのリストとして構成できるようになりました。 次に例を示します。  
+サーバー2019で AD FS を使用すると、スコープパラメーターに埋め込まれたリソース値を渡すことができます。 スコープパラメーターは、各エントリがリソース/スコープとして構成されるスペース区切りのリストとして構成できるようになりました。 例  
 **有効なサンプル要求 > を作成 <**
 
 ### <a name="does-ad-fs-support-pkce-extension"></a>PKCE 拡張機能はサポートさ AD FS ますか?
@@ -236,9 +236,9 @@ AD FS userinfo エンドポイントは、OpenID 標準で指定されている�
 2.  ナビゲーションウィンドウでドメイン名を**右クリック**し、 **[プロパティ] をクリック**します。
 3.  **クリック**セキュリティ ([セキュリティ] タブが表示されていない場合は、[表示] メニューの [高度な機能] をオンにします)。
 4.  **クリック**進め. **クリック**アドイン. **クリック**プリンシパルを選択します。
-5.  [ユーザー、コンピューター、サービスアカウントまたはグループの選択] ダイアログボックスが表示されます。  [選択するオブジェクト名を入力してください] テキストボックスに、「キー管理者グループ」と入力します。  [OK] をクリックします。
+5.  [ユーザー、コンピューター、サービスアカウントまたはグループの選択] ダイアログボックスが表示されます。  [選択するオブジェクト名を入力してください] テキストボックスに、「キー管理者グループ」と入力します。  ［OK］をクリックします。
 6.  適用先 ボックスの一覧で、**子孫ユーザーオブジェクト** を選択します。
-7.  スクロールバーを使用して、ページの一番下までスクロールし、[すべてクリア **] をクリック**します。
+7.  スクロール バーを使用して、ページの下部までスクロールし、 **をクリックして** すべてクリアします。
 8.  **[プロパティ]** セクションで、 **[キーの取得]** を選択して、"キーの入力" リンクを**書き込み**ます。
 
 ### <a name="why-does-modern-authentication-from-android-devices-fail-if-the-server-does-not-send-all-the-intermediate-certificates-in-the-chain-with-the-ssl-cert"></a>サーバーが SSL 証明書を使用してチェーン内のすべての中間証明書を送信しない場合、Android デバイスからの先進認証が失敗するのはなぜですか。
@@ -307,4 +307,7 @@ AD FS 2016 では、トークンのバインドが自動的に有効になり、
 `Set-AdfsProperties -IgnoreTokenBinding $true`
 
 ### <a name="i-have-upgraded-my-farm-from-ad-fs-in-windows-server-2016-to-ad-fs-in-windows-server-2019-the-farm-behavior-level-for-the-ad-fs-farm-has-been-successfully-raised-to-2019-but-the-web-application-proxy-configuration-is-still-displayed-as-windows-server-2016"></a>Windows server 2016 の AD FS から Windows Server 2019 の AD FS にファームをアップグレードしました。 AD FS ファームのファームの動作レベルは正常に2019になりましたが、Web アプリケーションプロキシの構成は Windows Server 2016 として表示されていますか?
-Windows Server 2019 へのアップグレード後、Web アプリケーションプロキシの構成バージョンは、Windows Server 2016 として引き続き表示されます。 Web アプリケーションプロキシには、Windows Server 2019 向けの新バージョン固有の機能がありません。 AD FS でファームの動作レベルが正常に発生した場合、Web アプリケーションプロキシは、設計上、Windows Server 2016 として引き続き表示されます。 
+Windows Server 2019 へのアップグレード後、Web アプリケーションプロキシの構成バージョンは、Windows Server 2016 として引き続き表示されます。 Web アプリケーションプロキシには、Windows Server 2019 向けの新バージョン固有の機能がありません。 AD FS でファームの動作レベルが正常に発生した場合、Web アプリケーションプロキシは、設計上、Windows Server 2016 として引き続き表示されます。
+
+### <a name="can-i-estimate-the-size-of-the-adfsartifactstore-before-enabling-esl"></a>ESL を有効にする前に、ADFSArtifactStore のサイズを見積もることはできますか。
+ESL が有効になっている場合、AD FS は、ADFSArtifactStore データベース内のユーザーのアカウントの利用状況と既知の場所を追跡します。 このデータベースのサイズは、追跡されるユーザー数と既知の場所に対して相対的に調整されます。 ESL を有効にすることを計画している場合は、ADFSArtifactStore データベースのサイズを、10万ユーザーあたり最大 1 GB に増やすことができます。 AD FS ファームが Windows Internal Database (WID) を使用している場合、データベースファイルの既定の場所は C:\Windows\WID\Data. です。 このドライブがいっぱいにならないように、ESL を有効にする前に、少なくとも 5 GB の空き記憶域があることを確認してください。 ディスク記憶域に加えて、ユーザーが50万以下の場合には、1 GB の RAM を追加することにより、合計プロセスメモリの増加を計画します。

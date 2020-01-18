@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 227d66dafffd67b0b2e4f67158498cf43c7b59f8
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 10234611904a4ed5b58939d3fd5ca341221c073c
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950367"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259147"
 ---
 # <a name="protected-users-security-group"></a>Protected Users セキュリティ グループ
 
@@ -115,7 +115,7 @@ Protected Users グループのアカウントごとに、TGT の期限切れに
 詳細については、「 [How to Configure Protected Accounts](how-to-configure-protected-accounts.md)」を参照してください。
 
 ## <a name="troubleshooting"></a>[トラブルシューティング]
-2 つの運用管理ログを使用して、Protected Users に関連するイベントを解決することができます。 これらの新しいログはイベント ビューアーに表示され、既定では無効です。ログは **Applications and Services Logs\Microsoft\Windows\Microsoft\Authentication**に保存されます。
+2 つの運用管理ログを使用して、Protected Users に関連するイベントを解決することができます。 これらの新しいログはイベントビューアーにあり、既定で無効になっており、[**アプリケーションとサービス] Logs\Microsoft\Windows\Authentication**にあります。
 
 |イベント ID とログ|説明|
 |----------|--------|

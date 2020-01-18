@@ -11,13 +11,13 @@ ms.date: 12/12/2019
 ms.tgt_pltfrm: na
 ms.topic: article
 author: Heidilohr
-manager: daveba
-ms.openlocfilehash: f43d05a22211dcf00e06dc712203d6ecf995cc49
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+manager: lizross
+ms.openlocfilehash: 4e3a9bb66389c00bbac04db34d5d2a5b1d1933e1
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75466335"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919919"
 ---
 # <a name="network-guidance"></a>ネットワークのガイダンス
 

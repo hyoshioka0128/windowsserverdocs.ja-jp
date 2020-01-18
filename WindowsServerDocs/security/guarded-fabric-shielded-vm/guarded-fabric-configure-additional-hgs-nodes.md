@@ -7,17 +7,17 @@ ms.assetid: 227f723b-acb2-42a7-bbe3-44e82f930e35
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 10/22/2018
-ms.openlocfilehash: 5277a97f7f58d9d7edb1457cb363cb6ddf1d8b59
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 01/14/2020
+ms.openlocfilehash: ece005617c4a2faac41c2be15967b2f43951517e
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403697"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265864"
 ---
 # <a name="configure-additional-hgs-nodes"></a>追加の HGS ノードを構成する
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 運用環境では、hgs ノードがダウンした場合でも、シールドされた Vm の電源をオンにできるように、高可用性クラスターで HGS を設定する必要があります。 テスト環境では、セカンダリ HGS ノードは必要ありません。
 
@@ -28,7 +28,7 @@ ms.locfileid: "71403697"
 |新しい HGS フォレスト  | [PFX ファイルの使用](#dedicated-hgs-forest-with-pfx-certificates) | [証明書の拇印の使用](#dedicated-hgs-forest-with-certificate-thumbprints) |
 |既存の要塞フォレスト |  [PFX ファイルの使用](#existing-bastion-forest-with-pfx-certificates) | [証明書の拇印の使用](#existing-bastion-forest-with-certificate-thumbprints) |
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必要条件
 
 次の各ノードが追加されていることを確認してください。 
 - プライマリノードと同じハードウェアとソフトウェアの構成 
@@ -116,7 +116,7 @@ ms.locfileid: "71403697"
 SSL 証明書を使用して HGS エンドポイントをセキュリティで保護する場合は、このノード、および HGS クラスター内の他のすべてのノードで SSL 証明書を構成する必要があります。
 SSL 証明書は HGS によってレプリケートさ*れず*、すべてのノードに同じキーを使用する必要はありません (つまり、ノードごとに異なる ssl 証明書を持つことができます)。
 
-SSL 証明書を要求するときは、クラスターの完全修飾ドメイン名 (の`Get-HgsServer`出力に示されているとおり) が、証明書のサブジェクト共通名であるか、サブジェクト代替 DNS 名として含まれていることを確認します。
+SSL 証明書を要求するときは、クラスターの完全修飾ドメイン名 (`Get-HgsServer`の出力に示されているとおり) が、証明書のサブジェクトの共通名であるか、サブジェクト代替 DNS 名として含まれていることを確認します。
 証明機関から証明書を取得したら、 [HgsServer](https://technet.microsoft.com/itpro/powershell/windows/hgsserver/set-hgsserver)で使用するように HGS を構成できます。
 
 ```powershell
@@ -141,16 +141,8 @@ HGS ノードを使用停止にするには:
 
    これにより、クラスターからノードが削除され、構成証明とキー保護サービスがアンインストールされます。 
    クラスター内の最後のノードの場合は、-Force を使用して、Active Directory で最後のノードを削除してクラスターを破棄する必要があることを示す必要があります。 
-   
+
    HGS が要塞フォレスト (既定) に展開されている場合、これは唯一の手順です。 
    必要に応じて、ドメインからコンピューターの参加を解除し、Active Directory から gMSA アカウントを削除できます。
 
-1. HGS によって独自のドメインが作成された場合は、 [hgs をアンインストール](guarded-fabric-manage-hgs.md#clearing-the-hgs-configuration)してドメインを切断し、ドメインコントローラーを降格する必要もあります。
-
-
-
-## <a name="next-step"></a>次の手順
-
-> [!div class="nextstepaction"]
-> [HGS の構成を検証する](guarded-fabric-verify-hgs-configuration.md)
-
+2. HGS によって独自のドメインが作成された場合は、 [hgs をアンインストール](guarded-fabric-manage-hgs.md#clearing-the-hgs-configuration)してドメインを切断し、ドメインコントローラーを降格する必要もあります。

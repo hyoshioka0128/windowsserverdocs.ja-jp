@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 428e35524fbcfe5177b544e1c6cc6fa32ec32056
-ms.sourcegitcommit: 4a03f263952c993dfdf339dd3491c73719854aba
+ms.openlocfilehash: ebcc679b2bc5ab3c6d7c70c9e84ba45697c80165
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74791369"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265594"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>WID データベースを使用した、Windows Server 2016 での AD FS へのアップグレード
 
@@ -32,8 +32,8 @@ Windows Server 2016 の AD FS では、ファームの動作レベル (FBL) が�
 
 | Windows Server のバージョン  | FBL | AD FS 構成データベース名 |
 | ------------- | ------------- | ------------- |
-| 2012 R2  | 1  | AdfsConfiguration |
-| 2016  | 3  | AdfsConfigurationV3 |
+| 2012 R2  | 1 で保護されたプロセスとして起動されました  | AdfsConfiguration |
+| 2016  | 3 で保護されたプロセスとして起動されました  | AdfsConfigurationV3 |
 | 2019  | ホーム フォルダーが置かれているコンピューターにアクセスできない  | AdfsConfigurationV4 |
 
 > [!NOTE]
@@ -101,6 +101,7 @@ Set-AdfsSyncProperties -Role SecondaryComputer -PrimaryComputerName {FQDN}
 ![アップグレード](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_8.png)
 
 8. Windows Server 2016 サーバーで PowerShell を開き、次のコマンドレットを実行します。
+
 
 > [!NOTE]
 > 次の手順を実行する前に、すべての 2012 R2 サーバーをファームから削除する必要があります。

@@ -1,5 +1,5 @@
 ---
-title: 特権アクセスの保護に関する参考資料
+title: 特権アクセスのセキュリティ保護に関する参考資料
 description: Windows Server Active Directory ドメインの運用上のセキュリティ制御
 ms.prod: windows-server
 ms.topic: article
@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 56e1c028a9b18db7b23e8f04e943e4113837b66b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 16d711a288843163b134b0226ed4b8513d7070eb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407222"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950052"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Active Directory 管理階層モデル
 
@@ -139,7 +139,7 @@ Active Directory などの ID システムに依存する資産の数は多い�
 
 ![Active Directory とドメイン コントローラーが依存するシステムの数を最小限に抑える必要があることを示す図](../media/securing-privileged-access-reference-material/PAW_RM_Fig010.JPG)
 
-Active Directory の上位のリスクに対するセキュリティ強化の詳細については、[このページ](http://aka.ms/hardenAD)を参照してください。
+Active Directory の上位のリスクに対するセキュリティ強化の詳細については、[このページ](https://aka.ms/hardenAD)を参照してください。
 
 ## <a name="operational-standards-based-on-clean-source-principle"></a>クリーン ソースの原則に基づく運用基準
 
@@ -156,7 +156,7 @@ Active Directory の上位のリスクに対するセキュリティ強化の詳
 - 前提条件
 - 変更諮問委員会
 - 運用方法
-   - 概要
+   - 要約
    - 基準の詳細
 
 ### <a name="assumptions"></a>前提条件
@@ -168,12 +168,12 @@ Active Directory の上位のリスクに対するセキュリティ強化の詳
 - 管理対象のすべてのワークステーションが Windows 7 以降を実行しており、RDP RestrictedAdmin モードが有効になっている。
 
    > [!NOTE]
-   > RDP RestrictedAdmin モードを有効にする方法については、[このページ](http://aka.ms/RDPRA)を参照してください。
+   > RDP RestrictedAdmin モードを有効にする方法については、[このページ](https://aka.ms/RDPRA)を参照してください。
 
 - スマート カードが使用可能であり、すべての管理アカウントに対して発行されている。
 - 各ドメインの *Builtin \administrator* が、緊急用アクセス アカウントとして指定されている。
 - エンタープライズ ID 管理ソリューションが展開されている。
-- ローカル Administrator アカウントのパスワードを管理するために、[LAPS](http://aka.ms/laps) がサーバーやワークステーションに展開されている。
+- ローカル Administrator アカウントのパスワードを管理するために、[LAPS](https://aka.ms/laps) がサーバーやワークステーションに展開されている。
 - 特権アクセス管理ソリューション (Microsoft Identity Manager など) を導入しているか、採用する計画がある。
 - セキュリティ アラートを監視し、それらに対応する担当者が割り当てられている。
 - Microsoft セキュリティ更新プログラムを迅速に適用するための技術的な能力がある。
@@ -314,7 +314,7 @@ Active Directory の上位のリスクに対するセキュリティ強化の詳
 > [!NOTE]
 > 対話形式でホストにログオンすると、そのホストに資格情報の制御を与えることになるため、このような手順が必要です。
 >
-> ログオンの種類、一般的な管理ツール、資格情報の公開の詳細については、「[管理ツールとログオンの種類](http://aka.ms/admintoolsecurity)」を参照してください。
+> ログオンの種類、一般的な管理ツール、資格情報の公開の詳細については、「[管理ツールとログオンの種類](https://aka.ms/admintoolsecurity)」を参照してください。
 
 ##### <a name="use-of-approved-support-technology-and-methods"></a>承認済みのサポート テクノロジと手法の使用
 
@@ -330,7 +330,7 @@ Active Directory の上位のリスクに対するセキュリティ強化の詳
 このシナリオでは、確実に次の手順を実行してください。
 
 - **リモート サーバーのサポート**: リモートからサーバーにアクセスする場合、階層 0 の管理者は次のガイドラインに従う必要があります。
-  - **プライマリ (ツール)** : ネットワーク ログオン (タイプ 3) を使用するリモート ツール。 詳細については、「[管理ツールとログオンの種類](http://aka.ms/admintoolsecurity)」を参照してください。
+  - **プライマリ (ツール)** : ネットワーク ログオン (タイプ 3) を使用するリモート ツール。 詳細については、「[管理ツールとログオンの種類](https://aka.ms/admintoolsecurity)」を参照してください。
   - **プライマリ (対話形式)** : ドメイン アカウントで、管理ワークステーションから RDP RestrictedAdmin または標準の RDP セッションを使用します。
 
     > [!NOTE]
@@ -366,7 +366,7 @@ Active Directory の上位のリスクに対するセキュリティ強化の詳
    - **プライマリ**: 「肩越し」のサポートは、ツールを使用せずに提供できます。
    - **禁止**: このシナリオでは、ドメイン アカウントの管理者資格情報でのログオンは許可されません。 管理特権が必要な場合は、デスクサイドでのワークステーションのサポートに切り替えます。
 - **リモート ユーザー サポート**: 階層 2 のサポート担当者は物理的にユーザーから離れた場所にいます。
-   - **プライマリ**: リモート アシスタンス、Skype for Business、または類似のユーザー画面共有を使用できます。 詳細については、[Windows リモート アシスタンス](https://windows.microsoft.com/en-us/windows/what-is-windows-remote-assistance)に関するページを参照してください。
+   - **プライマリ**: リモート アシスタンス、Skype for Business、または類似のユーザー画面共有を使用できます。 詳細については、[Windows リモート アシスタンス](https://windows.microsoft.com/windows/what-is-windows-remote-assistance)に関するページを参照してください。
    - **禁止**: このシナリオでは、ドメイン アカウントの管理者資格情報でのログオンは許可されません。 管理特権が必要な場合は、ワークステーションのサポートに切り替えます。
 - **ワークステーションのサポート**: タスクには、ログの表示、ソフトウェアのインストール、ドライバーの更新などのためにシステムへのアクセスが必要な、ワークステーションのメンテナンスやトラブルシューティングの実行が含まれます。
    - **デスクサイドでのワークステーション サポート**: 階層 2 のサポート担当者は物理的にユーザーのワークステーションで作業します。
@@ -489,7 +489,7 @@ Microsoft Azure や Office 365 などのクラウド サービスで管理特権
 
 - **ワークステーションのセキュリティ強化** - [Privileged Access Workstation](../securing-privileged-access/privileged-access-workstations.md) を使用して (フェーズ 3 を通じて) 管理ワークステーションを構築しますが、ドメインのメンバーシップを実稼働環境ではなく管理フォレストに変更します。
 - **サーバーと DC のセキュリティ強化** - 管理フォレスト内のすべてのドメイン コントローラーとサーバーについて、次のことを実行します。
-   - すべてのインストール メディアが、「[インストール メディアのクリーン ソース](http://aka.ms/cleansource)」のガイダンスに従って検証されていることを確認します。
+   - すべてのインストール メディアが、「[インストール メディアのクリーン ソース](https://aka.ms/cleansource)」のガイダンスに従って検証されていることを確認します。
    - 実稼働環境で実現できない場合でも、管理フォレストのサーバーには最新のオペレーティング システムがインストールされていることを確認します。
    - 管理者フォレスト ホストはセキュリティ更新プログラムで自動更新する必要があります。
 
@@ -523,7 +523,7 @@ Microsoft Azure や Office 365 などのクラウド サービスで管理特権
    - 攻撃経路の分析は、新しいソフトウェアをインストールするときに、新しい攻撃が Windows に侵入するのを防ぎます。
 
       > [!NOTE]
-      > [Attack Surface Analyzer (ASA)](https://www.microsoft.com/en-us/download/details.aspx?id=24487) などのツールを利用すれば、ホストの構成設定を評価したり、ソフトウェアや構成変更で侵入した攻撃を特定したりできます。
+      > [Attack Surface Analyzer (ASA)](https://www.microsoft.com/download/details.aspx?id=24487) などのツールを利用すれば、ホストの構成設定を評価したり、ソフトウェアや構成変更で侵入した攻撃を特定したりできます。
 
 - アカウントのセキュリティ強化
    - 多要素認証は、1 つのアカウントを除く、管理フォレスト内のすべてのアカウントについて構成する必要があります。 多要素認証プロセスで障害が発生した場合にアクセスできるように、少なくとも 1 つの管理アカウントはパスワード ベースにしておいてください。 このアカウントは、物理的に厳格な管理プロセスによって保護する必要があります。
@@ -568,19 +568,19 @@ Microsoft Azure や Office 365 などのクラウド サービスで管理特権
 
 次の表に、最も一般的な管理ツールとの接続方法に関するガイダンスを示します。
 
-|接続方法|ログオンの種類|接続先で再利用可能な資格情報|コメント|
+|接続方法|ログオンの種類|接続先で再利用可能な資格情報|備考|
 |-----------|-------|--------------------|------|
-|コンソールでのログオン|Interactive|v|ハードウェアの Remote Access/Lights-Out カードやネットワーク KVMが含まれます。|
+|コンソールでのログオン|Interactive (対話型)|v|ハードウェアの Remote Access/Lights-Out カードやネットワーク KVMが含まれます。|
 |RUNAS|Interactive (対話型)|v||
 |RUNAS /NETWORK|NewCredentials|v|ローカル アクセス用に現在の LSA セッションが複製されますが、ネットワーク リソースに接続するときには、新しい資格情報を使用します。|
 |リモート デスクトップ (成功)|RemoteInteractive|v|リモート デスクトップ クライアントがローカル デバイスとリソースを共有するように構成されている場合、それらのセキュリティも侵害される可能性があります。|
 |リモート デスクトップ (エラー: ログオンの種類が拒否されました)|RemoteInteractive|-|既定では、RDP ログオンが失敗した場合、資格情報は非常に短い間、格納されるだけです。 コンピューターのセキュリティが侵害されている場合、このようにならない可能性があります。|
 |Net use * \\\SERVER|ネットワーク|-||
 |Net use * \\\SERVER /u:user|ネットワーク|-||
-|リモート コンピューターへの MMC スナップイン|ネットワーク|-|以下に例を示します。コンピューターの管理、イベント ビューアー、デバイス マネージャー、サービス|
-|PowerShell WinRM|ネットワーク|-|以下に例を示します。Enter-PSSession server|
+|リモート コンピューターへの MMC スナップイン|ネットワーク|-|例:コンピューターの管理、イベント ビューアー、デバイス マネージャー、サービス|
+|PowerShell WinRM|ネットワーク|-|例:Enter-PSSession server|
 |PowerShell WinRM と CredSSP|NetworkClearText|v|New-PSSession server<br />-Authentication Credssp<br />-Credential cred|
-|PsExec (明示的な資格情報なし)|ネットワーク|-|以下に例を示します。PsExec \\\server cmd|
+|PsExec (明示的な資格情報なし)|ネットワーク|-|例:PsExec \\\server cmd|
 |PsExec (明示的な資格情報あり)|ネットワークと対話型|v|PsExec \\\server -u user -p pwd cmd<br />複数のログオン セッションを作成します。|
 |リモート レジストリ|ネットワーク|-||
 |リモート デスクトップ ゲートウェイ|ネットワーク|-|リモート デスクトップ ゲートウェイへの認証。|
@@ -592,7 +592,7 @@ Web 認証の場合、次の表のリファレンスを使用します。
 
 |接続方法|ログオンの種類|接続先で再利用可能な資格情報|備考|
 |-----------|-------|--------------------|------|
-|IIS の "基本認証"|NetworkCleartext<br />(IIS 6.0+)<br /><br />Interactive<br />(IIS 6.0 よりも前)|v||
+|IIS の "基本認証"|NetworkClearText<br />(IIS 6.0+)<br /><br />Interactive (対話型)<br />(IIS 6.0 よりも前)|v||
 |IIS の "統合 Windows 認証"|ネットワーク|-|NTLM および Kerberos プロバイダー。|
 
 列の定義:
@@ -614,13 +614,13 @@ Windows ベースのコンピューターでは、使用する認証プロトコ
 
 |ログオンの種類|#|受け入れられる認証子|LSA セッションで再利用可能な資格情報|例|
 |-------|---|--------------|--------------------|------|
-|対話型 (別名、ローカルでログオン)|2|パスワード、スマートカード、<br />その他|〇|コンソールのログオン、<br />RUNAS、<br />ハードウェア リモート制御ソリューション (ネットワーク KVM やサーバー内の Remote Access/Lights-Out カードなど)<br />IIS の基本認証 (IIS 6.0 より前のバージョン)|
+|対話型 (別名、ローカルでログオン)|2 で保護されたプロセスとして起動されました|パスワード、スマートカード、<br />その他|はい|コンソールのログオン、<br />RUNAS、<br />ハードウェア リモート制御ソリューション (ネットワーク KVM やサーバー内の Remote Access/Lights-Out カードなど)<br />IIS の基本認証 (IIS 6.0 より前のバージョン)|
 |ネットワーク|3|パスワード、<br />NT ハッシュ、<br />Kerberos チケット|いいえ (委任を有効にし、Kerberos チケットが存在する場合を除く)|NET USE、<br />RPC 呼び出し、<br />リモート レジストリ、<br />IIS の統合 Windows 認証、<br />SQL の Windows 認証|
-|Batch (バッチ)|4|パスワード (通常、LSA シークレットとして格納される)|〇|Scheduled tasks (スケジュールされたタスク)|
-|サービス|5|パスワード (通常、LSA シークレットとして格納される)|〇|Windows サービス|
-|NetworkClearText|8|Password|〇|IIS の基本認証 (IIS 6.0 以降)、<br />Windows PowerShell と CredSSP|
-|NewCredentials|9|パスワード|〇|RUNAS /NETWORK|
-|RemoteInteractive|10|パスワード、スマートカード、<br />その他|〇|リモート デスクトップ (旧称 "ターミナル サービス")|
+|Batch (バッチ)|4|パスワード (通常、LSA シークレットとして格納される)|はい|スケジュールされたタスク|
+|サービス|5|パスワード (通常、LSA シークレットとして格納される)|はい|Windows サービス|
+|NetworkClearText|8|Password|はい|IIS の基本認証 (IIS 6.0 以降)、<br />Windows PowerShell と CredSSP|
+|NewCredentials|9|Password|はい|RUNAS /NETWORK|
+|RemoteInteractive|10|パスワード、スマートカード、<br />その他|はい|リモート デスクトップ (旧称 "ターミナル サービス")|
 
 列の定義:
 

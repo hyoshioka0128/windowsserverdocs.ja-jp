@@ -1,19 +1,19 @@
 ---
 title: DNS クライアントでの DNS クライアント側のキャッシュを無効にする
 description: この記事では、dns クライアントで DNS クライアント側のキャッシュを無効にする方法について説明します。
-manager: willchen
+manager: dcscontentpm
 ms.prod: ''
 ms.technology: networking-dns
 ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 3aeb7cb06f82b6f2220e42866682ce918389bf1d
-ms.sourcegitcommit: b17ccf7f81e58e8f4dd844be8acf784debbb20ae
+ms.openlocfilehash: 51a9dbfd05402a9d018aec3bfea8a5c89e9e5d5e
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69023896"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265844"
 ---
 # <a name="disable-dns-client-side-caching-on-dns-clients"></a>DNS クライアントでの DNS クライアント側のキャッシュを無効にする
 
@@ -47,16 +47,16 @@ Ipconfig ツールを使用して、DNS リゾルバーキャッシュを表示�
 ipconfig /displaydns 
 ```
 
-このコマンドを実行すると、DNS リゾルバーキャッシュの内容が表示されます。これには、ホストファイルからプリロードされた DNS リソースレコードと、システムによって解決された最近のクエリ名が含まれます。 しばらくすると、リゾルバーはキャッシュからレコードを破棄します。 この期間は、DNS リソースレコードに関連付けられている**Time to Live (TTL)** の値によって指定されます。 キャッシュを手動でフラッシュすることもできます。 キャッシュをフラッシュした後、コンピューターは、以前にコンピューターによって解決されたすべての DNS リソースレコードについて、DNS サーバーに対してもう一度クエリを実行する必要があります。 DNS リゾルバーキャッシュのエントリを削除するには、 `ipconfig /flushdns`コマンドプロンプトでを実行します。
+このコマンドを実行すると、DNS リゾルバーキャッシュの内容が表示されます。これには、ホストファイルからプリロードされた DNS リソースレコードと、システムによって解決された最近のクエリ名が含まれます。 しばらくすると、リゾルバーはキャッシュからレコードを破棄します。 この期間は、DNS リソースレコードに関連付けられている**Time to Live (TTL)** の値によって指定されます。 キャッシュを手動でフラッシュすることもできます。 キャッシュをフラッシュした後、コンピューターは、以前にコンピューターによって解決されたすべての DNS リソースレコードについて、DNS サーバーに対してもう一度クエリを実行する必要があります。 DNS リゾルバーキャッシュのエントリを削除するには、コマンドプロンプトで `ipconfig /flushdns` を実行します。
 
 ## <a name="using-the-registry-to-control-the-caching-time"></a>レジストリを使用したキャッシュ時間の制御
 
 > [!IMPORTANT]  
-> このセクションの手順には慎重に従ってください。 レジストリを正しく変更しないと、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
+> 慎重にこのセクションの手順に従います。 誤ってレジストリを変更すると、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
 
 正または負の応答がキャッシュされる時間の長さは、次のレジストリキーのエントリの値によって異なります。
 
-**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNSCache\Parameters**
+**HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\DNSCache\Parameters**
 
 肯定応答の TTL は、次の値のいずれか小さい方になります。 
 
@@ -76,23 +76,23 @@ ipconfig /displaydns
 
 2. レジストリで、次のキーを見つけてクリックします。
 
-   **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters**
+   **HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\Dnscache\Parameters**
 
 3. [編集] メニューの [新規作成] をポイントし、[DWORD 値] をクリックして、次のレジストリ値を追加します。
 
-   - 値の名前:MaxCacheTtl
+   - 値の名前: MaxCacheTtl
 
-     データの種類:REG_DWORD
+     データ型: REG_DWORD
 
-     値のデータ:既定値は86400秒です。 
+     値のデータ: 既定値は86400秒です。 
      
      クライアントの DNS キャッシュの TTL の最大値を1秒に下げると、クライアント側の DNS キャッシュが無効になっているように見えます。    
 
-   - 値の名前:MaxNegativeCacheTtl
+   - 値の名前: MaxNegativeCacheTtl
 
-     データの種類:REG_DWORD
+     データ型: REG_DWORD
 
-     値のデータ:既定値は900秒です。 
+     値のデータ: 既定値は900秒です。 
      
      否定応答をキャッシュしない場合は、値を0に設定します。
 

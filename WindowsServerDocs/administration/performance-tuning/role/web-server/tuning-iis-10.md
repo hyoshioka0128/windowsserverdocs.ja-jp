@@ -7,16 +7,16 @@ ms.topic: landing-page
 ms.author: DavSo; Ericam; YaShi
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8b86bf779a4ea9d67f959dacf125a98a8e26a729
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 5658a101371cf3b865dec04ac76716b536792602
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947132"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265704"
 ---
 # <a name="tuning-iis-100"></a>IIS 10.0 のチューニング
 
-インターネットインフォメーションサービス (IIS) 10.0 は、Windows server 2016 に含まれています。 IIS 8.5 および IIS 7.0 と同様のプロセスモデルを使用します。 カーネルモードの web ドライバー (http.sys) は、HTTP 要求を受信してルーティングし、応答キャッシュからの要求を満たします。 ワーカープロセスによって URL サブ空間が登録され、http.sys によって適切なプロセス (またはアプリケーションプールのプロセスセット) に要求がルーティングされます。
+Windows Server 2016 にはインターネットインフォメーションサービス (IIS) 10.0 が含まれています。 IIS 8.5 および IIS 7.0 と同様のプロセスモデルを使用します。 カーネルモードの web ドライバー (http.sys) は、HTTP 要求を受信してルーティングし、応答キャッシュからの要求を満たします。 ワーカープロセスによって URL サブ空間が登録され、http.sys によって適切なプロセス (またはアプリケーションプールのプロセスセット) に要求がルーティングされます。
 
 Http.sys は、接続管理と要求の処理を担当します。 要求は http.sys キャッシュから提供することも、ワーカープロセスに渡して処理することもできます。 複数のワーカープロセスを構成できます。これにより、コストを削減しながら分離することができます。 要求処理のしくみの詳細については、次の図を参照してください。
 

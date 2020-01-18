@@ -10,16 +10,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b7d8158c-aee1-4c60-8a46-40ce5595b8e8
 author: HeidiLohr
-manager: daveba
+manager: lizross
 ms.author: helohr
 ms.date: 01/07/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b0b44eac6d76fb6d49c00dae0c0abe9450861026
-ms.sourcegitcommit: 28b71d779386cd31e1511217aa1a6f3ab186bf9b
+ms.openlocfilehash: ccf6fa376bfb54498851407bfae175736e75ebc9
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75682433"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919849"
 ---
 # <a name="remote-desktop-clients"></a>リモート デスクトップ クライアント
 
