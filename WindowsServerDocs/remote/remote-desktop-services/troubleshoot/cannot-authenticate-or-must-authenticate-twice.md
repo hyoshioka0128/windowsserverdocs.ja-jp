@@ -9,16 +9,16 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 8af2b1a171a77def2bbb74cc7301e0562cb5b92c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 7dbb037e335af52dacbc56c920b1776be995e753
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870599"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265934"
 ---
 # <a name="user-cant-authenticate-or-must-authenticate-twice"></a>ユーザーが認証できない、または 2 回認証する必要がある
 
@@ -60,13 +60,13 @@ ms.locfileid: "70870599"
 Windows Server 2016 以降では、RCM は AD DS 内のユーザーのオブジェクトをクエリしなくなっています。 リモート デスクトップ サービスの属性を使っているため、RCM で AD DS をクエリする必要がある場合は、クエリを手動で有効にする必要があります。
 
 > [!IMPORTANT]  
-> 慎重にこのセクションの手順に従います。 誤ってレジストリを変更すると、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
+> 慎重にこのセクションの手順に従います。 レジストリを正しく変更しないと、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
 
 RD セッション ホスト サーバーで以前の RCM の動作を有効にするには、次のレジストリ エントリを構成した後、**リモート デスクトップ サービス**のサービスを再起動します。  
   - **HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows NT\\Terminal Services**
   - **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\\<Winstation name\>\\**  
       - 名前: **fQueryUserConfigFromDC**
-      - タイプ: **Reg\_DWORD**
+      - 次のように入力します。**Reg\_DWORD**
       - 値:**1** (10 進)
 
 RD セッション ホスト サーバー以外のサーバーで以前の RCM の動作を有効にするには、これらのレジストリ エントリと、次の追加レジストリ エントリを構成します (その後、サービスを再起動します)。

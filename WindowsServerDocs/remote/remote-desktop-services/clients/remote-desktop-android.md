@@ -10,20 +10,20 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
 ms.date: 12/02/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a1349f1181cdf2ead51a263a3ba62c1789c76b3b
-ms.sourcegitcommit: cbf0c7c37797c22af989639fac82fc0eee94497f
+ms.openlocfilehash: cb0fa7009c4a8fe53810f8b5f058e659c2391dc1
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74700165"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919837"
 ---
 # <a name="get-started-with-the-android-client"></a>Android クライアントの概要
 
->適用対象:Android 4.1 以降
+>適用先:Android 4.1 以降
 
 Android 用リモート デスクトップ クライアントを使用して、Google Play ストアをサポートする Android デバイスまたは Chromebook から直接 Windows のアプリおよびデスクトップを使用することができます。
 
@@ -222,10 +222,10 @@ RD ゲートウェイを削除するには:
 | [マウス モード]    | マウス操作         | ジェスチャ                                                                 |
 |---------------|----------------------|-------------------------------------------------------------------------|
 | 直接タッチ  | 左クリック           | 1 本の指でタップする                                                     |
-| 直接タッチ  | 右クリック          | 1 本の指で長押ししてから離す                              |
+| 直接タッチ  | 右ボタンのクリック          | 1 本の指で長押ししてから離す                              |
 | マウス ポインター | ズーム                 | 2 本の指を使って、ピンチで縮小または指を開いて拡大する。 |
 | マウス ポインター | 左クリック           | 1 本の指でタップする                                                     |
 | マウス ポインター | 左クリックしてドラッグ  | 1 本の指でダブルタップから長押しして、ドラッグする                          |
-| マウス ポインター | 右クリック          | 2 本の指でタップする                                                    |
+| マウス ポインター | 右ボタンのクリック          | 2 本の指でタップする                                                    |
 | マウス ポインター | 右クリックしてドラッグ | 2 本の指でダブルタップから長押しして、ドラッグする                         |
 | マウス ポインター | マウス ホイール          | 2 本の指で長押しして、上または下にドラッグする                     |
