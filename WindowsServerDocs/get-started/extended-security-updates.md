@@ -9,12 +9,12 @@ ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.date: 12/16/2019
-ms.openlocfilehash: a5af1ad5a730f1dc90111734a9b8b1aacc91201b
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: 83ab3663b2c03017ba1bf613a49c394be0511002
+ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75466345"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76162503"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Windows Server 2008 および 2008 R2 の拡張セキュリティ更新プログラム (ESU) を使用する方法
 
@@ -49,6 +49,17 @@ Windows Server の拡張セキュリティ更新プログラム (ESU) には、2
 
 > [!NOTE]
 > Azure で Windows Server 2008 / 2008 R2 の VM を実行する場合、次の手順を行う必要はありません。 Azure VM は、拡張セキュリティ更新プログラムに対して自動的に有効になります。 拡張セキュリティ更新プログラムのリソースとキーを作成する必要はありません。Azure VM で拡張セキュリティ更新プログラムを使用するための追加料金も発生しません。
+
+> [!NOTE]
+> 次の手順を実行する前に、ホワイトリストに登録する情報を [winsvresuchamps@microsoft.com](mailto:winsvresuchamps@microsoft.com) に送信してください。
+> * 顧客名:
+> * Azure サブスクリプション:
+> * EA 契約番号 (ESU の場合):
+> * ESU サーバーの数:
+> 
+> チームが提供された情報を確認し、ホワイトリストにユーザー/サブスクリプションを追加します。
+> 
+> 要求元がホワイトリストに登録されていない場合は、次のエラーが発生する可能性があります。[名前空間 'Microsoft.WindowsESU' でリソースの種類が見つかりませんでした。](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version)
 
 拡張セキュリティ更新プログラムに Azure 以外の VM を登録してキーを作成するには、Azure portal で次の手順を行います。
 

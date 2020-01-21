@@ -30,7 +30,6 @@
 ####### [HGS DNS と一方向の信頼の構成](guarded-fabric-shielded-vm/guarded-fabric-configure-dns-forwarding-and-trust.md)
 ##### [HTTPS の構成](guarded-fabric-shielded-vm/guarded-fabric-configure-hgs-https.md)
 ##### [ノードの追加](guarded-fabric-shielded-vm/guarded-fabric-configure-additional-hgs-nodes.md)
-##### [構成を確認する](guarded-fabric-shielded-vm/guarded-fabric-verify-hgs-configuration.md)
 #### [保護されたホストの展開](guarded-fabric-shielded-vm/guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
 ##### [前提条件](guarded-fabric-shielded-vm/guarded-fabric-guarded-host-prerequisites.md)
 ##### [TPM モード](guarded-fabric-shielded-vm/guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)

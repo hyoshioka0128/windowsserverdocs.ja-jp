@@ -5,37 +5,49 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 09/18/2019
+ms.date: 01/07/2020
 ms.localizationpriority: high
 ms.prod: windows-server
-ms.openlocfilehash: 37be666643dee4e5b9051ae29562a86b23fb71f7
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
+ms.openlocfilehash: 7b3a75258086a73fbd618c2e8221454d7e616556
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903964"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949979"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
-> 適用対象:Windows Admin Center、Windows Admin Center Preview
+> 適用先:Windows Admin Center、Windows Admin Center Preview
 
-**Windows Admin Center** (以前はコードネーム **Project Honolulu**) は Windows Server のインボックス管理ツールの進化形です。ローカルおよびリモート サーバー管理のすべての側面を統合する 1 つのウィンドウです。 ローカルに展開されたブラウザーベースの管理エクスペリエンスのため、インターネット接続や Azure は必要ありません。 Windows Admin Center では、インターネットに接続されていないプライベート ネットワークを含む、展開のあらゆる側面を完全に管理できます。
+Windows Admin Center は、Windows サーバー、クラスター、ハイパーコンバージド インフラストラクチャ、Windows 10 PC を管理するための、ローカルに展開されるブラウザー ベースのアプリです。 Windows 以外の追加費用は必要なく、運用環境で使用できます。
 
-## <a name="introduction"></a>概要
+新機能については、[リリース履歴](support/release-history.md)を参照してください。
 
->[!VIDEO https://www.youtube.com/embed/PcQj6ZklmK0]
+## <a name="download-now"></a>今すぐダウンロード
 
-![Windows Admin Center インフォグラフィック](media/WAC1910Poster_thumb.PNG)
+**Microsoft Evaluation Center から、[Windows Admin Center](https://www.microsoft.com/evalcenter/evaluate-windows-admin-center)** をダウンロードできます。 "評価を開始する" と記載されていますが、これは、Windows または Windows Server のライセンスの一部として含まれる、運用環境での使用のために一般公開されているバージョンです。
+
+インストールの詳細については、[インストール](deploy/install.md)に関する記事を参照してください。 Windows Admin Center の概要に関するヒントは、[概要](use/get-started.md)に関する記事を参照してください。
+
+Windows Admin Center の非プレビュー バージョンの更新は、Microsoft Update を使用して行うことも、手動で Windows Admin Center をダウンロード、インストールして行うこともできます。 Windows Admin Center の各非プレビュー バージョンは、次への非プレビュー バージョンがリリースされてから 30 日が経過するまでサポートされます。 詳細については、Microsoft の[サポート ポリシー](support/index.md)に関するページをご覧ください。
+
+## <a name="windows-admin-center-scenarios"></a>Windows Admin Center のシナリオ
+
+Windows 管理センターを使用して、次のことを行うことができます。
+
+|     |     |
+| --- | --- |
+| ![](media/simple-icon.png)| **サーバー管理の簡素化** <br/> サーバー マネージャーなどの使い慣れたツールの最新バージョンを使用して、サーバーとクラスターを管理できます。 5 分以内にインストールして、環境内ですぐにサーバーを管理できます。ターゲット構成は必要ありません。 詳細については、「[Windows Admin Center とは](understand/what-is.md)」を参照してください。 |
+| ![](media/future-icon.png)| **ハイブリッド ソリューションとの連携** <br/> Azure との統合により、必要に応じてオンプレミスのサーバーを関連するクラウド サービスに接続することができます。 詳細については、[Azure ハイブリッドサービス](azure/index.md)に関する記事を参照してください |
+| ![](media/secure-icon.png)| **ハイパーコンバージド管理の効率化** <br/> Azure Stack HCI または Windows Server のハイパーコンバージド クラスターの管理が効率化します。 簡略化されたワークロードを使用して、VM、記憶域スペース ダイレクトのボリューム、ソフトウェア定義のネットワークなどを作成して管理することができます。 詳細については、「[Manage Hyper-Converged Infrastructure with Windows Admin Center](use/manage-hyper-converged.md)」(Windows Admin Center を使用したハイパーコンバージド インフラストラクチャの管理) を参照してください|
+
+次に、概要を説明するビデオと、詳細を説明するポスターを示します。
+>[!VIDEO https://www.youtube.com/embed/WCWxAp27ERk]
+
+[![Windows Admin Center のポスター](media/WAC1910Poster_thumb_small.PNG)](media/WAC1910Poster_thumb.png)
 
 [PDF をダウンロード](https://github.com/MicrosoftDocs/windowsserverdocs/raw/master/WindowsServerDocs/manage/windows-admin-center/media/WindowsAdminCenter1910Poster.pdf)
 
-## <a name="quick-start"></a>クイック スタート
-
-環境内で Windows Admin Center を数分で稼働できます。
-
-1. [ダウンロード](https://aka.ms/windowsadmincenter)
-2. [インストール](deploy/install.md)
-3. [作業の開始](use/get-started.md)
 
 ## <a name="contents-at-a-glance"></a>内容の一覧
 
@@ -49,11 +61,10 @@ ms.locfileid: "74903964"
             <li><a href="understand/faq.md">FAQ</a>
             <li><a href="understand/case-studies.md">導入事例</a>
             <li><a href="understand/related-management.md">関連する管理製品</a>
-            <li><a href="understand/videos.md">ビデオ</a>
             </ul>
         </td>
         <td style="vertical-align: top;">
-            <h3>プラン</h3>
+            <h3>計画</h3>
             <ul>
             <li><a href="plan/installation-options.md">お客様に適したインストールの種類はどれか?</a>
             <li><a href="plan/user-access-options.md">ユーザー アクセス オプション</a>
@@ -83,7 +94,7 @@ ms.locfileid: "74903964"
     </tr>
     <tr>
         <td style="vertical-align: top;">
-            <h3>使用</h3>
+            <h3>vmmblue_2</h3>
             <ul>
             <li><a href="use/get-started.md">起動と接続の追加</a>
             <li><a href="use/manage-servers.md">サーバーの管理</a>
@@ -108,6 +119,7 @@ ms.locfileid: "74903964"
             <td style="vertical-align: top;">
             <h3>サポート</h3>
             <ul>
+            <li><a href="support/release-history.md">リリース履歴</a>
             <li><a href="support/index.md">サポート ポリシー</a>
             <li><a href="support/troubleshooting.md">一般的なトラブルシューティング手順</a>
             <li><a href="support/known-issues.md">既知の問題</a>
@@ -127,35 +139,51 @@ ms.locfileid: "74903964"
 
 </table>
 
-## <a name="release-history"></a>リリース履歴
+## <a name="video-based-learning"></a>ビデオを使った学習
 
-次の最新の機能について確認してください。
+Microsoft Ignite 2019 セッションのビデオを次に示します。
 
-- バージョン [1910](https://aka.ms/wac1910) は、いくつかの新しい Azure ハイブリッド サービスを導入し、プレビュー段階にあった機能を GA チャネルに取り込む最新の GA リリースです。
-- バージョン [1909](https://aka.ms/wac1909) では、Azure VM 固有の接続の種類が導入され、従来のフェールオーバー クラスターと HCI クラスターの接続の種類が統合されています。
-- バージョン [1908](https://aka.ms/wac1908) では、視覚的な更新、Packetmon、FlowLog Audit、クラスター用 Azure Monitor のオンボード、および HTTPS 経由の WinRM (ポート 5986) のサポートが追加されています。
-- バージョン [1907](https://aka.ms/wac1907) では、Azure コスト見積もりのリンクを追加し、仮想マシンのインポート/エクスポートとタグ付けの機能を強化しました。
-- バージョン [1906](https://aka.ms/wac1906) ではインポート/エクスポート VM を追加しました。Azure アカウントの切り替え。Azure からの接続の追加、接続設定の実験、パフォーマンスの向上、およびパフォーマンス プロファイリング ツール。
-- バージョン 1904.1 は、ゲートウェイ プラグインの安定性を改善するためのメンテナンスに関する更新プログラムでした。
-- バージョン [1904](https://aka.ms/wac1904) は、Azure ハイブリッド サービス ツールを導入し、プレビュー段階にあった機能を GA チャネルに取り込んだ GA リリースでした。
-- バージョン [1903](https://aka.ms/wac1903) では、Azure Monitor からの電子メール通知と、Active Directory から Server または PC 接続を追加する機能と、Active Directory、DHCP、および DNS を管理するための新しいツールが追加されました。
-- バージョン [1902](https://aka.ms/wac1902) では、共有接続リストと、ソフトウェア定義のネットワーク (SDN) 管理に対する改良点 (ACL、ゲートウェイ接続、および論理ネットワークを管理するための新しい SDN ツールを含む) が追加されました。
-- バージョン [1812](https://aka.ms/wac1812) では、濃色テーマ (プレビュー版)、電源構成の設定、BMC 情報、PowerShell による[拡張機能](./configure/using-extensions.md#manage-extensions-with-powershell)と[接続](./use/get-started.md#use-powershell-to-import-or-export-your-connections-with-tags)の管理のサポートが追加されました。
-- バージョン [1809.5](https://aka.ms/wac1809.5) は GA の累積的な更新プログラムでした。プラットフォーム全体にわたるさまざまな品質向上、機能強化、バグ修正と、ハイパーコンバージド インフラストラクチャの管理ソリューションに関するいくつかの新機能を含んでいます。
-- バージョン [1809](https://cloudblogs.microsoft.com/windowsserver/2018/09/20/windows-admin-center-1809-and-sdk-now-generally-available/) は、以前にプレビュー版として提供されていた機能を GA チャネルに公開する GA リリースでした。
-- バージョン [1808](https://aka.ms/WACPreview1808-InsiderBlog) では、"インストールされているアプリ" ツールが追加されたほか、多数の内部改良や、プレビュー SDK に対する大幅な更新が行われました。
-- バージョン [1807](https://aka.ms/WACPreview1807-InsiderBlog) では、合理化された Azure 接続エクスペリエンスが追加されたほか、VM インベントリ ページ、ファイル共有機能、Azure 更新の管理の統合などが強化されました。 
-- バージョン [1806](https://aka.ms/WACPreview1806-InsiderBlog) では、PowerShell スクリプトの表示、SDN 管理、2008 R2 接続、SDN、スケジュールされたタスクが追加され、その他の多くの機能強化が行われました。
-- バージョン 1804.25 - ユーザーが Windows Admin Center を完全にオフラインの環境でインストールすることをサポートするためのメンテナンスに関する更新プログラムです。
-- バージョン [1804](https://cloudblogs.microsoft.com/windowsserver/2018/04/12/announcing-windows-admin-center-our-reimagined-management-experience/) - Project Honolulu は Windows Admin Center になり、セキュリティ機能と役割ベースのアクセス制御が追加されました。 最初の GA リリースです。
-- バージョン [1803](https://blogs.windows.com/windowsexperience/2018/03/13/announcing-project-honolulu-technical-preview-1803-and-rsat-insider-preview-for-windows-10) では、Azure AD アクセス制御、詳細なログ記録、サイズ変更できるコンテンツのサポートが追加され、多数のツールの機能が強化されました。
-- バージョン [1802](https://blogs.windows.com/windowsexperience/2018/02/13/announcing-windows-server-insider-preview-build-17093-project-honolulu-technical-preview-1802) では、アクセシビリティ、ローカライズ、高可用性展開、タグ付け、Hyper-V ホストの設定、ゲートウェイ認証のサポートが追加されました。
-- バージョン [1712](https://blogs.windows.com/windowsexperience/2017/12/19/announcing-project-honolulu-technical-preview-1712-build-05002) では、仮想マシンの機能がさらに追加され、ツール全体のパフォーマンスが向上しました。
-- バージョン [1711](https://cloudblogs.microsoft.com/windowsserver/2017/12/01/1711-update-to-project-honolulu-technical-preview-is-now-available/) では、要望が多かったツール (リモート デスクトップと PowerShell) が追加され、その他の機能が強化されました。
-- バージョン [1709](https://cloudblogs.microsoft.com/windowsserver/2017/09/22/project-honolulu-technical-preview-is-now-available-for-download/) は、最初のパブリック プレビュー リリースとして発売されました。
+- [Windows Admin Center: Azure ハイブリッドの価値を最大限に活用する](https://aka.ms/WAC-BRK3165)
+- [Windows Admin Center: 新機能と今後の予定](https://aka.ms/WAC-BRK2048)
+- [Windows Admin Center を使用して Azure からオンプレミスのサーバーを自動的に監視、セキュリティ保護、更新する](https://aka.ms/WAC-THR2146)
+- [Windows Admin Center のサードパーティの拡張機能を使用して効率化する](https://aka.ms/WAC-THR2140)
+- [Windows Admin Center のエキスパートになろう: 展開、構成、セキュリティのベスト プラクティス](https://aka.ms/WAC-THR2135)
+- [Windows Admin Center: System Center と Microsoft Azure をさらに連携させる](https://aka.ms/WAC-THR2176)
+- [Microsoft Azure ハイブリッド サービスを Windows Admin Center や Windows Server と連携させる方法](https://aka.ms/WAC-THR2073)
+- [ライブ Q & A: Windows Admin Center を使用してハイブリッド サーバー環境を管理する](https://aka.ms/WAC-MLS1055)
+- [ラーニング パス: ハイブリッド管理テクノロジ](https://aka.ms/WAC-HybridMgmtTech)
+- [ハンズオン ラボ: Windows Admin Center とハイブリッド](https://aka.ms/WAC-HOL2019)
+
+Windows Server サミット 2019 セッションのビデオを次に示します。
+
+- [Windows Admin Center でのハイブリッド](https://aka.ms/WAC-WSS2019-GoHybridWAC)
+- [Windows Admin Center v1904 の新機能](https://aka.ms/WAC-WSS2019-WhatsNewv1904)
+
+さらに、いくつかのリソースを次に示します。
+
+- [新たに想像された Windows Admin Center サーバー管理](https://aka.ms/WAC-ServerMgmtReimagined)
+- [Windows Admin Center を使用してサーバーと仮想マシンをどこからでも管理する](https://aka.ms/WAC-Webinar2019)
+- [Windows Admin Center の使用を開始する方法](https://www.youtube.com/embed/PcQj6ZklmK0)
+
+## <a name="see-how-customers-are-benefitting-from-windows-admin-center"></a>Windows Admin Center の活用事例
+
+|     |
+| --- |
+| "[Windows Admin Center] によって、管理システムの管理における弊社の時間と作業が 75% 以上削減されました。"<br> *- Convergent Computing 社、社長、Rand Morimoto 氏* |
+| "[Windows Admin Center] のおかげで、Azure Active Directory との完全な統合により問題なく HTML5 ポータルからリモートでお客様を管理することができます。また、多要素認証を利用することで、セキュリティを向上することができます。"<br/> *- Inside Technologies 社、創設者兼シニア コンサルタント、Silvio Di Benedetto 氏* |
+| “弊社では、より効果的な方法で [Server Core] SKU を展開し、リソースの効率、セキュリティ、および自動化を向上しながら、ある程度の生産性を実現し、スクリプトのみに依存する場合に発生する可能性のあるエラーを削減しています。” <br/> *- VaiSulWeb 社、創設者兼 CEO、Guglielmo Mengora 氏* |
+| “[Windows Admin Center] により、特に SMB 市場のお客様は社内のインフラストラクチャを管理するための使いやすいツールを手にしました。 これにより、管理作業が最小限に抑えられ、多くの時間が節減されます。 そして、一番いいのは、[Windows Admin Center] には追加ライセンス料がないことです。” <br/> *- SecureGUARD 社、常務取締役、Helmut Otto 氏* |
+
+[運用環境で Windows Admin Center を使用している会社の詳細を確認してください。](understand/case-studies.md)
+
+## <a name="related-products"></a>関連製品
+
+Windows Admin Center は、1 つのサーバーまたはクラスターの管理用に設計されています。 これにより、リモート サーバー管理ツール (RSAT)、System Center、Intune、または Azure Stack のような、既存の Microsoft の監視および管理ソリューションが補完されますが、置き換わるものではありません。
+
+[Windows Admin Center で他の Microsoft 管理ソリューションを補完する方法について確認してください。](understand/related-management.md)
 
 ## <a name="stay-updated"></a>更新情報
 
-![ ](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR)[Twitter で Microsoft をフォローする](https://twitter.com/servermgmt)
+![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR)[Twitter で Microsoft をフォローする](https://twitter.com/servermgmt)
 
 ![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw)[こちらのブログを読む](https://blogs.technet.microsoft.com/servermanagement/)
