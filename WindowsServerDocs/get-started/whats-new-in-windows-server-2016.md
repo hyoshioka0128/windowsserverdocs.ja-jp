@@ -1,6 +1,6 @@
 ---
 title: Windows Server 2016 の新機能
-description: コンピューティング、ID、管理、自動化、ネットワーク、セキュリティ、記憶域の新機能について。
+description: コンピューティング、ID、管理、自動化、ネットワーク、セキュリティ、記憶域の新機能は何ですか。
 ms.prod: windows-server
 ms.date: 05/21/2019
 ms.technology: server-general
@@ -10,16 +10,16 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 76cfd0f0cca18fb072883a9e14fae420516bd329
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: afcda1d3f94c5f6fa7524317ac21c5540c07895c
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391363"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948262"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 の新機能
 
->適用対象:Windows Server 2016
+>適用先:Windows Server 2016
 
 ![新聞を示すアイコン](media/whats-new.png) Windows の最新の機能については、「[Windows Server の新機能](whats-new-in-windows-server.md)」を参照してください。 ここでは、Windows Server&reg; 2016 の新機能および変更された機能について説明します。 ここに記載されている新機能と変更された機能は、このリリースを使う際に影響が最も大きいと思われるものです。
 
@@ -27,7 +27,7 @@ ms.locfileid: "71391363"
 
 仮想領域には、Windows Server を設計、展開、および保守する IT プロフェッショナル向けの仮想化製品と機能が含まれます。  
 
-### <a name="general"></a>全般的な情報  
+### <a name="general"></a>全般  
 物理マシンと仮想マシンは、Win32 の時刻と Hyper-V の時刻同期サービスが向上したことによる時刻の精度の向上を享受できます。 Windows Server では、UTC に対して 1 ミリ秒の精度を必要とする今後の規制に準拠しているサービスをホストできるようになりました。  
 
 ### <a name="hyper-v"></a>Hyper-V  
@@ -65,44 +65,44 @@ ID での新機能では、組織が Active Directory 環境をセキュリテ�
 ### <a name="active-directory-certificate-services"></a>Active Directory 証明書サービス  
 Windows Server 2016 の Active Directory 証明書サービス (AD CS) では、TPM キーの構成証明のサポートが強化されます。キーの構成証明にスマート カード KSP を使用でき、ドメインに参加していないデバイスで NDES の登録を使用して、TPM にあるキーを証明できる証明書を取得できるようになりました。  
 
-### <a name="active-directory-domain-services"></a>Active Directory Domain Services  
+### <a name="active-directory-domain-services"></a>[Active Directory Domain Services]  
 Active Directory ドメイン サービスでは、Active Directory 環境をセキュリティで保護し、会社と個人の両方のデバイスの優れた ID 管理環境を実現するのに役立つ機能強化が図られています。 詳細については、[Windows Server 2016 の Active Directory Domain Services (AD DS) の新機能](../identity/whats-new-active-directory-domain-services.md)に関するページを参照してください。   
 
-### <a name="active-directory-federation-services"></a>Active Directory フェデレーション サービス (AD FS)  
-Active Directory フェデレーション サービス (AD FS) の新機能。 Windows Server 2016 の Active Directory フェデレーション サービス (AD FS) には、ライトウェイト ディレクトリ アクセス プロトコル (LDAP) ディレクトリに格納されているユーザーを認証するよう AD FS を構成できる新機能が追加されています。 詳細については、[Windows Server 2016 の AD FS の新機能](../identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)に関する記事を参照してください。  
+### <a name="active-directory-federation-services"></a>Active Directory フェデレーション サービス  
+Active Directory フェデレーション サービスの新機能。 Windows Server 2016 の Active Directory フェデレーション サービス (AD FS) には、ライトウェイト ディレクトリ アクセス プロトコル (LDAP) ディレクトリに格納されているユーザーを認証するよう AD FS を構成できる新機能が追加されています。 詳細については、[Windows Server 2016 の AD FS の新機能](../identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)に関する記事を参照してください。  
 
 ### <a name="web-application-proxy"></a>Web アプリケーション プロキシ  
-Web アプリケーション プロキシの最新バージョンでは、より多くのアプリケーションの発行と事前認証を可能にする新機能に力を入れており、ユーザー エクスペリエンスの向上が図られています。 新機能の一覧をご覧ください。新機能には、Exchange ActiveSync などのリッチ クライアント アプリの事前認証や、SharePoint アプリの発行を容易にするワイルドカード ドメインなどがあります。 詳細については、「[Windows Server 2016 の Web アプリケーション プロキシ](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)」に関するページを参照してください。  
+Web アプリケーション プロキシの最新バージョンでは、より多くのアプリケーションの発行と事前認証を可能にする新機能に力を入れており、ユーザー エクスペリエンスの向上が図られています。 新機能の一覧をご覧ください。新機能には、Exchange ActiveSync などのリッチ クライアント アプリの事前認証や、SharePoint アプリの発行を容易にするワイルドカード ドメインなどがあります。 詳細については、「[Web Application Proxy in Windows Server 2016 (Windows Server 2016 の Web アプリケーション プロキシ)](../remote/remote-access/web-application-proxy/web-application-proxy-windows-server.md)」を参照してください。  
 
 ##  <a name="administrationadministrationmanage-windows-servermd"></a>[管理](../administration/manage-windows-server.md)  
 管理と自動化の領域では、Windows PowerShell など Windows Server 2016 を実行および管理する IT プロフェッショナル向けのツールとリファレンス情報に力を入れています。
 
-Windows PowerShell 5.1 に追加された重要な新機能には、クラスを使った開発のサポートや新しいセキュリティ機能があります。それらの機能により、用途が広がり、使いやすさが向上し、Windows ベースの環境をより簡単かつ包括的に制御および管理できます。 詳細については、「[WMF 5.1 の新しいシナリオと機能](https://docs.microsoft.com/powershell/wmf/5.1/scenarios-features)」を参照してください。
+Windows PowerShell 5.1 に追加された重要な新機能には、クラスを使った開発のサポートや新しいセキュリティ機能があります。それらの機能により、用途が広がり、使いやすさが向上し、Windows ベースの環境をより簡単かつ包括的に制御して管理できます。 詳細については、「[WMF 5.1 の新しいシナリオと機能](https://docs.microsoft.com/powershell/wmf/5.1/scenarios-features)」を参照してください。
 
 Windows Server 2016 には、Nano Server で PowerShell.exe を実行する機能 (リモートのみではなくなりました)、GUI に代わる新しいローカル ユーザーとグループのコマンドレット、PowerShell デバッグのサポートの追加、セキュリティ ログとトランスクリプションおよび JEA に対するサポートの Nano Server への追加など、新しい追加機能があります。
 
-以下では、その他の新しい管理機能を示します。
+次に、その他の新しい管理機能を示します。
 
 ### <a name="powershell-desired-state-configuration-dsc-in-windows-management-framework-wmf-5"></a>Windows Management Framework (WMF) 5 の PowerShell Desired State Configuration (DSC)
 Windows Management Framework 5 には、Windows PowerShell Desired State Configuration (DSC)、Windows リモート管理 (WinRM)、および Windows Management Instrumentation (WMI) に対する更新が含まれています。
 
-Windows Management Framework 5 の DSC 機能のテストの詳細については、[PowerShell DSC の機能の検証](https://blogs.msdn.microsoft.com/powershell/2015/07/06/validate-features-of-powershell-dsc/)に関する一連のブログ記事を参照してください。 ダウンロードするには、「[Windows Management Framework 5.1](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)」を参照してください。
+Windows Management Framework 5 の DSC 機能のテストに関する詳細については、[PowerShell DSC の機能の検証](https://blogs.msdn.microsoft.com/powershell/2015/07/06/validate-features-of-powershell-dsc/)に関する一連のブログ記事を参照してください。 ダウンロードするには、[Windows Management Framework 5.1](https://docs.microsoft.com/powershell/wmf/5.1/install-configure) に関するページを参照してください。
 
 ### <a name="packagemanagement-unified-package-management-for-software-discovery-installation-and-inventory"></a>PackageManagement 統合パッケージ管理によるソフトウェアの検出、インストール、およびインベントリ
 Windows Server 2016 および Windows 10 には、新しい PackageManagement 機能 (旧称 OneGet) が含まれています。この機能により、IT 技術者や DevOps は、インストーラーのテクノロジやソフトウェアの配置場所にかかわらず、ソフトウェアの検出、インストール、およびインベントリ (SDII) をローカルまたはリモートで自動化できます。 
 
-詳細については、「[https://github.com/OneGet/oneget/wiki](https://github.com/OneGet/oneget/wiki)」を参照してください。
+詳細については、[https://github.com/OneGet/oneget/wiki](https://github.com/OneGet/oneget/wiki) を参照してください。
 
 ### <a name="powershell-enhancements-to-assist-digital-forensics-and-help-reduce-security-breaches"></a>デジタル法科学を支援し、セキュリティ侵害の減少に役立つ PowerShell の機能強化
 セキュリティが侵害されたシステムの調査を担当するチーム ("ブルー チーム" とも呼ばれます) を支援するために、PowerShell にログおよびその他の法科学機能が追加されたほか、スクリプトの脆弱性を減らし (制約付きの PowerShell など)、CodeGeneration API をセキュリティで保護するのに役立つ機能が追加されました。
 
-詳しくは、[PowerShell ♥ the Blue Team のブログの記事](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)をご覧ください。
+詳しくは、「[PowerShell とブルー チーム](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)」を参照してください。
 
 ## <a name="networkingnetworkingnetworkingmd"></a>[ネットワーク](../networking/Networking.md)  
 この領域には、IT プロフェッショナルが Windows Server 2016 を設計、展開、保守するためのネットワーク製品と機能が含まれています。  
 
 ### <a name="software-defined-networking"></a>ソフトウェアによるネットワーク制御
-新規または既存の仮想アプライアンスにトラフィックをミラーすることとルート指定することの両方ができるようになりました。 分散型のファイアウォールとネットワーク セキュリティ グループと合わせて、これにより、Azure と同様の方法でワークロードを動的にセグメント化し、セキュリティで保護できます。 次に、System Center Virtual Machine Manager を使用して、ソフトウェアによるネットワーク制御 (SDN) スタック全体を展開および管理できます。 さらに、Docker を使用して、Windows Server コンテナー ネットワーキングを管理し、仮想マシンとだけでなくコンテナーとも SDN ポリシーを関連付けできます。 詳細については、[ソフトウェア定義ネットワーク インフラストラクチャの計画](../networking/sdn/plan/plan-a-software-defined-network-infrastructure.md)に関する記事を参照してください。
+新規または既存の仮想アプライアンスにトラフィックをミラーすることとルート指定することの両方ができるようになりました。 分散型のファイアウォールとネットワーク セキュリティ グループと合わせて、これにより、Azure と同様の方法でワークロードを動的にセグメント化し、セキュリティで保護できます。 次に、System Center Virtual Machine Manager を使用して、ソフトウェアによるネットワーク制御 (SDN) スタック全体を展開および管理できます。 さらに、Docker を使用して、Windows Server コンテナー ネットワーキングを管理し、仮想マシンとだけでなくコンテナーとも SDN ポリシーを関連付けできます。 詳細については、「[ソフトウェア定義ネットワーク インフラストラクチャを計画する](../networking/sdn/plan/plan-a-software-defined-network-infrastructure.md)」を参照してください。
 
 ### <a name="tcp-performance-improvements"></a>TCP パフォーマンスの向上
 既定の初期輻輳ウィンドウ (ICW) が 4 から 10 に増加し、TCP Fast Open (TFO) が実装されました。 TFO により TCP 接続の確立に必要な時間が短縮されるほか、ICW の増加により、初期バーストでさらに大きなオブジェクトを転送できるようになりました。 この組み合わせにより、クライアントとクラウドの間でインターネット オブジェクトを転送するのに必要な時間をさらに短くできます。
@@ -181,21 +181,21 @@ Windows Server 2016 には、フェールオーバー クラスタリング機�
 ### <a name="internet-information-services-iis-100"></a>インターネット インフォメーション サービス (IIS) 10.0
 Windows Server 2016 の IIS 10.0 Web サーバーにより提供される新機能は以下のとおりです。
 
-- ネットワーク スタックでの HTTP/2 プロトコルのサポート。IIS 10.0 と統合されたため、IIS 10.0 Web サイトはサポートされる構成の HTTP/2 要求を自動的に処理できるようになりました。 これにより、接続の効率的な再利用、待機時間の短縮など、多くの強化が HTTP/1.1 に加えられ、Web ページの読み込み時間が短縮されます。 
-- Nano Server での IIS 10.0 の実行および管理機能。 「[Nano Server の IIS](iis-on-nano-server.md)」をご覧ください。
+- ネットワーク スタックでの HTTP/2 プロトコルのサポート。IIS 10.0 と統合されたため、IIS 10.0 Web サイトはサポートされる構成の HTTP/2 要求を自動的に処理できるようになりました。 これにより、接続の効率的な再利用、待機時間の短縮など、多くの機能強化が HTTP/1.1 に加えられ、Web ページの読み込み時間が短縮されます。 
+- Nano Server での IIS 10.0 の実行および管理機能。 「[Nano Server の IIS](iis-on-nano-server.md)」を参照してください。
 - ワイルドカード ホスト ヘッダーのサポート。管理者は、ドメイン向けに Web サーバーをセットアップし、Web サーバーが任意のサブドメインの要求を処理するように設定できます。
 - IIS を管理するための新しい PowerShell モジュール (IISAdministration)。 
 
-詳しくは、「[IIS](https://iis.net/learn)」をご覧ください。
+詳細については、「[IIS](https://iis.net/learn)」を参照してください。
 
 ### <a name="distributed-transaction-coordinator-msdtc"></a>分散トランザクション コーディネーター (MSDTC)
 Microsoft Windows 10 と Windows Server 2016 に 3 つの新機能が追加されました。
 
-- Resource Manager Rejoin の新しいインターフェイスをリソース マネージャーが使って、データベースがエラーのために再起動した後にイン ダウトのトランザクションの結果を調べることができます。 詳しくは、「[IResourceManagerRejoinable::Rejoin](https://msdn.microsoft.com/library/mt203799(v=vs.85).aspx)」をご覧ください。
+- Resource Manager Rejoin の新しいインターフェイスは、データベースがエラーのために再起動された後に未確定トランザクションの結果を調べるために、リソース マネージャーによって使されます。 詳細については、「[IResourceManagerRejoinable::Rejoin](https://msdn.microsoft.com/library/mt203799(v=vs.85).aspx)」を参照してください。
 
-- DSN 名の制限が 256 バイトから 3072 バイトに緩和されました。 詳しくは、「[IDtcToXaHelperFactory::Create](https://msdn.microsoft.com/library/ms686861(v=vs.85).aspx)」、「[IDtcToXaHelperSinglePipe::XARMCreate](https://msdn.microsoft.com/library/ms679248(v=vs.85).aspx)」、または「[IDtcToXaMapper::RequestNewResourceManager](https://msdn.microsoft.com/library/ms680310(v=vs.85).aspx)」をご覧ください。
+- DSN 名の制限が 256 バイトから 3072 バイトに拡張されました。 詳細については、「[IDtcToXaHelperFactory::Create](https://msdn.microsoft.com/library/ms686861(v=vs.85).aspx)」、「[IDtcToXaHelperSinglePipe::XARMCreate](https://msdn.microsoft.com/library/ms679248(v=vs.85).aspx)」、または「[IDtcToXaMapper::RequestNewResourceManager](https://msdn.microsoft.com/library/ms680310(v=vs.85).aspx)」を参照してください。
 
-- トレースが強化され、トレース ログ ファイルにイメージ ファイルのパスが含められるようにレジストリ キーを設定して、確認するトレース ログ ファイルを指定できるようになりました。 MSDTC のトレースの構成について詳しくは、[Windows ベースのコンピューターで MS DTC の診断トレースを有効にする方法に関するページ](https://support.microsoft.com/en-us/kb/926099)をご覧ください。
+- トレースが機能強化され、トレース ログ ファイル名にイメージ ファイルのパスが含まれるようにレジストリ キーを設定して、確認するトレース ログ ファイルを指定できるようになりました。 MSDTC のトレースの構成に関する詳細については、「[Windows ベースのコンピューター上の MS DTC の診断トレースを有効にする方法 ](https://support.microsoft.com/kb/926099)」を参照してください。
 
 
 

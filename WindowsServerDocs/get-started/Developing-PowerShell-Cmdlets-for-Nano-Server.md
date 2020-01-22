@@ -12,19 +12,19 @@ author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 80d6cdd3056d9c7e0a0815ce5856f961d79fcc34
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 434b79508dbf88a90348840573255c3084d6e989
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391784"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948454"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>Nano Server 用の PowerShell コマンドレットを開発する
 
 >適用先:Windows Server 2016
 
 > [!IMPORTANT]
-> Windows Server バージョン 1709 以降、Nano Server は[コンテナー基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、「[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)」をご覧ください。 
+> Windows Server バージョン 1709 以降では、Nano Server は[コンテナーの基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)に関する記事をご覧ください。 
   
 ## <a name="overview"></a>概要  
 すべての Nano Server インストールには PowerShell Core が既定で含まれます。 PowerShell Core は、.NET Core に基づいて作成された PowerShell のフットプリントが小さいエディションであり、Windows のフットプリントが小さいエディション (Nano Server、Windows IoT Core など) で動作します。 PowerShell Core は、PowerShell の他のエディション (Windows Server 2016 で実行される Windows PowerShell など) と同じように動作します。 ただし、Nano Server のフットプリントが小さいため、Nano Server 上の PowerShell Core では、Windows Server 2016 の PowerShell 機能のうち、使用できない機能があります。  
@@ -110,7 +110,7 @@ At line:1 char:1
 仮想マシンまたは物理マシンに Nano Server をインストールするためのクイックスタートおよび詳細な手順については、このトピックの親トピックである「[Nano Server のインストール](Getting-Started-with-Nano-Server.md)」を参照してください。  
   
 > [!NOTE]  
-> Nano Server 上で開発を行うには、New-NanoServerImage の -Development パラメーターを使用して Nano Server をインストールすると便利です。 これにより、署名されていないドライバーのインストール、デバッガー バイナリのコピー、デバッグ用にポートを開く操作、テスト署名、開発者用ライセンスなしでの AppX パッケージのインストールを行うことができるようになります。 次に、例を示します。  
+> Nano Server 上で開発を行うには、New-NanoServerImage の -Development パラメーターを使用して Nano Server をインストールすると便利です。 これにより、署名されていないドライバーのインストール、デバッガー バイナリのコピー、デバッグ用にポートを開く操作、テスト署名、開発者用ライセンスなしでの AppX パッケージのインストールを行うことができるようになります。 たとえば、次のように入力します。  
 >  
 >`New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -Development`  
   
@@ -138,7 +138,7 @@ PowerShell では、コマンドレットに対していくつかの実装の種
 ### <a name="building-c-for-nano-server"></a>Nano Server 向けの C++ のビルド  
 C++ の DLL を Nano Server で実行するには、特定のエディションではなく Nano Server を対象にコンパイルします。  
   
-Nano Server 上の C++ の開発に関する前提条件とチュートリアルについては、「[Developing Native Apps on Nano Server (Nano Server でのネイティブ アプリの開発)](http://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx)」を参照してください。  
+Nano Server 上の C++ の開発に関する前提条件とチュートリアルについては、「[Developing Native Apps on Nano Server (Nano Server でのネイティブ アプリの開発)](https://blogs.technet.com/b/nanoserver/archive/2016/04/27/developing-native-apps-on-nano-server.aspx)」を参照してください。  
   
   
 ## <a name="porting-net-cmdlets"></a>.NET コマンドレットの移植  
@@ -151,7 +151,7 @@ Nano Server 上の C++ の開発に関する前提条件とチュートリアル
   
 PowerShell Core SDK モジュールは、適切な CoreCLR および PowerShell Core 参照アセンブリをセットアップするためのコマンドレット、これらの参照アセンブリをターゲットとする C# プロジェクトを Visual Studio 2015 で作成するためのコマンドレット、および Nano Server コンピューター上にリモート デバッガーをセットアップするためのコマンドレットを公開します。そのため、開発者は、Visual Studio 2015 を使って、Nano Server 上で実行される .NET コマンドレットをリモートでデバッグできます。  
   
-PowerShell Core SDK モジュールを使用するには、Visual Studio 2015 Update 2 が必要です。 Visual Studio 2015 がインストールされていない場合は、[Visual Studio Community 2015](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx) をインストールできます。  
+PowerShell Core SDK モジュールを使用するには、Visual Studio 2015 Update 2 が必要です。 Visual Studio 2015 がインストールされていない場合は、[Visual Studio Community 2015](https://www.visualstudio.com/products/visual-studio-community-vs.aspx) をインストールできます。  
   
 この SDK モジュールは、Visual Studio 2015 でインストールする次の機能にも依存します。  
   

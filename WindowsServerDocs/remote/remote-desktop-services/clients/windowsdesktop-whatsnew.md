@@ -9,16 +9,16 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
-ms.date: 12/04/2019
+ms.date: 01/14/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 5526d401ba26cabcaccfc0b88df9b0e69f8149a5
-ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
+ms.openlocfilehash: f1f4d6b32b8b7d717d2d424e0a60c5edc96f4cac
+ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74829606"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75953071"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows デスクトップ クライアントの新機能
 
@@ -31,7 +31,20 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 |ユーザー グループ |バージョン  |
 |-----------|---------|
 |パブリック     |1.2.535  |
-|Insider    |1.2.535  |
+|Insider    |1.2.594  |
+
+## <a name="updates-for-version-12594"></a>バージョン 1.2.594 の更新内容
+
+*公開日:2020 年 1 月 14 日*
+
+ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cC)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cI)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oh9C)
+
+- デスクトップ接続に使用する表示内容を選択できるようになりました。 この設定を変更するには、デスクトップ接続のアイコンを右クリックして、 **[設定]** を選択します。
+- 接続設定に使用可能な適正なスケール ファクターが表示されなかった問題が修正されました。
+- 接続が開始されたときに表示されるダイアログをナレーターが読み取れない問題が修正されました。
+- Azure Active Directory と Active Directory の名前が一致しなかった場合に、間違ったユーザー名が表示される問題が修正されました。
+- ネットワークに接続していない状態で接続を開始したときに、クライアントからの応答が停止される問題が修正されました。
+- ヘッドセットの接続時にクライアントが応答を停止する原因となった問題が修正されました。
 
 ## <a name="updates-for-version-12535"></a>バージョン 1.2.535 の更新内容
 

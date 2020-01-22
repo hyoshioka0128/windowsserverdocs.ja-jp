@@ -10,16 +10,16 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: b59d93d576967ee83b3efecc2630034eab919bf2
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 7b222104abd5b0b964bac748c3be15049075191d
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403905"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950426"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>パフォーマンス カウンターを使用して、リモート デスクトップ セッション ホストでのアプリのパフォーマンス問題を診断する
 
-> 適用対象:Windows Server 2019、Windows 10
+> 適用先:Windows Server 2019、Windows 10
 
 アプリケーションの実行速度が遅いのか、応答していないのか、診断が最も難しい問題の 1 つがアプリケーション パフォーマンスの低下です。 従来、診断は、CPU、メモリ、ディスク入出力、その他のメトリックの収集から開始し、続いて Windows Performance Analyzer などのツールを使用して問題の原因を見つけようとします。 残念ながら、ほとんどの状況で、リソース消費量カウンターには頻繁かつ大幅な変動があるため、このデータは根本原因の特定には役立ちません。 このため、データを読み取って、報告された問題に関連付けることが困難になっています。 アプリのパフォーマンス問題を迅速に解決できるように、ユーザー入力フローを測定する新しいパフォーマンス カウンターをいくつか追加しました ([Windows Insider Program](https://insider.windows.com) から[ダウンロード](#download-windows-server-insider-software)で入手可)。
 
@@ -42,7 +42,7 @@ ms.locfileid: "71403905"
 
 たとえば、次の表では、ユーザー入力遅延はこの間隔内で 1,000 ミリ秒として報告されます。 ユーザーの "低い" という感覚は、すべての入力合計の平均速度ではなく、ユーザーが経験する最も遅い入力時間 (最長) によって決まるため、このカウンターでは最も遅いユーザー入力遅延が報告されます。
 
-|数値| 0 | 1 | 2 |
+|番号| 0 | 1 | 2 で保護されたプロセスとして起動されました |
 |------|---|---|---|
 |遅延 |16 ミリ秒| 20 ミリ秒| 1,000 ミリ秒|
 
@@ -88,7 +88,7 @@ reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCou
 |プロセスあたりのユーザー入力遅延|2:1000 <Calculator.exe>|  16|
 |プロセスあたりのユーザー入力遅延|1:2000 <Calculator.exe>|  32|
 |セッションあたりのユーザー入力遅延|1|    200|
-|セッションあたりのユーザー入力遅延|2|    16|
+|セッションあたりのユーザー入力遅延|2 で保護されたプロセスとして起動されました|    16|
 |セッションあたりのユーザー入力遅延|平均|  108|
 |セッションあたりのユーザー入力遅延|最大|  200|
 
@@ -140,7 +140,7 @@ CPU 使用量の急増とユーザー入力遅延の間に相関関係がある�
 
 ## <a name="download-windows-server-insider-software"></a>Windows Server Insider ソフトウェアをダウンロードする
 
-登録されている Insider は、[Windows Server Insider プレビュー ダウンロード ページ](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)に直接移動して、最新版の Insider ソフトウェアをダウンロードできます。  Insider として登録する方法については、[サーバーの概要](https://insider.windows.com/en-us/for-business-getting-started-server/)に関するページを参照してください。
+登録されている Insider は、[Windows Server Insider プレビュー ダウンロード ページ](https://www.microsoft.com/software-download/windowsinsiderpreviewserver)に直接移動して、最新版の Insider ソフトウェアをダウンロードできます。  Insider として登録する方法については、[サーバーの概要](https://insider.windows.com/en-us/for-business-getting-started-server/)に関するページを参照してください。
 
 ## <a name="share-your-feedback"></a>フィードバックをお待ちしております
 

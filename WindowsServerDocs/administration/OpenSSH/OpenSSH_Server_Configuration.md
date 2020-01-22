@@ -6,12 +6,12 @@ contributor: maertendMSFT
 ms.product: w10
 author: maertendMSFT
 title: Windows 用 OpenSSH サーバー構成
-ms.openlocfilehash: ed424c33c4cd2c19a9b5e985ab6083bcbcb9fbdc
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 5eb3d86950d169fd01512d330f0c04669beeffae
+ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546260"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76259049"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>Windows 10 1809 および Server 2019 用 OpenSSH Server 構成
 
@@ -84,9 +84,9 @@ Windows OpenSSH の場合、使用できる認証方法は "password" と "publi
 
 ### <a name="hostkey"></a>HostKey
 
-既定値は、%programdata%/ssh/ssh_host_ecdsa_key、%programdata%/ssh/ssh_host_ed25519_key、および %programdata%/ssh/ssh_host_rsa_key です。 既定値が存在しない場合は、サービスの開始時に sshd によってこれらが自動的に生成されます。
+既定値は %programdata%/ssh/ssh_host_ecdsa_key、%programdata%/ssh/ssh_host_ed25519_key、%programdata%/ssh/ssh_host_dsa_key、および %programdata%/ssh/ssh_host_rsa_key です。 既定値が存在しない場合は、サービスの開始時に sshd によってこれらが自動的に生成されます。
 
-### <a name="match"></a>一致
+### <a name="match"></a>照合
 
 このセクションのパターン規則に注意してください。 ユーザー名とグループ名は小文字にする必要があります。
 
@@ -99,7 +99,7 @@ Windows では適用されません。 管理者のログインを防ぐには�
 ファイルベースのログ記録が必要な場合は、LOCAL0 を使用します。 ログは、%programdata%\ssh\logs に生成されます。
 既定値の AUTH を含むその他の値では、ETW にログが記録されます。 詳細については、Windows のログ機能を参照してください。
 
-### <a name="not-supported"></a>サポートされない 
+### <a name="not-supported"></a>サポートされていません。 
 
 Windows Server 2019 および Windows 10 1809 に付属する OpenSSH バージョンでは、次の構成オプションは使用できません。
 
@@ -109,7 +109,7 @@ Windows Server 2019 および Windows 10 1809 に付属する OpenSSH バージ�
 * AuthorizedKeysCommandUser
 * AuthorizedPrincipalsCommand
 * AuthorizedPrincipalsCommandUser
-* Compression
+* 圧縮
 * ExposeAuthInfo
 * GSSAPIAuthentication
 * GSSAPICleanupCredentials

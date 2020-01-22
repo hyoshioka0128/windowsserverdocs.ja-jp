@@ -14,16 +14,16 @@ manager: dongill
 ms.author: elizapo
 date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 700d419d06c0b007ed05be4f82137828f52143e1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8361d1171c2526e701a5418696761a8400c47ca3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404149"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75949869"
 ---
 # <a name="get-started-with-the-ios-client"></a>iOS クライアントの概要
 
->適用対象:Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
+>適用先:Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
 iOS 用のリモート デスクトップ クライアントを使用して、iOS デバイス (iPhone と iPad) から Windows のアプリ、リソース、およびデスクトップを使用することができます。
 
@@ -200,7 +200,7 @@ IOS デバイスでのリモート デスクトップの概要を次の手順に
 クライアントは、標準的なタッチ ジェスチャを使用します。 リモート デスクトップ上でマウス アクションをレプリケートするのにタッチ ジェスチャを使用することもできます。 使用できるマウス モードは、次の表で定義されます。
 
 > [!NOTE]
-> Windows 8 との相互作用またはそれ以降は、直接タッチ モードでネイティブのタッチ ジェスチャがサポートされています。 Windows 8 のジェスチャの詳細については、[タッチ:スワイプ、タップなど](https://windows.microsoft.com/en-US/windows-8/touch-swipe-tap-beyond)に関するページを参照してください。
+> Windows 8 との相互作用またはそれ以降は、直接タッチ モードでネイティブのタッチ ジェスチャがサポートされています。 Windows 8 のジェスチャの詳細については、[タッチ:スワイプ、タップなど](https://windows.microsoft.com/windows-8/touch-swipe-tap-beyond)に関するページを参照してください。
 
 | [マウス モード]    | マウス操作      | ジェスチャ                                                    |
 |---------------|----------------------|------------------------------------------------------------|
@@ -208,7 +208,7 @@ IOS デバイスでのリモート デスクトップの概要を次の手順に
 | 直接タッチ  | 右クリックします。          | 1 本指でタップし、保留中                                      |
 | マウス ポインター | 左クリックします。           | 1 本指でタップ                                               |
 | マウス ポインター | 左クリックしておよびドラッグ  | 1 本の指ダブルタップを押したままをドラッグし、                    |
-| マウス ポインター | 右クリック          | 2 本指でタップ                                               |
+| マウス ポインター | 右クリックします。          | 2 本指でタップ                                               |
 | マウス ポインター | 右クリックし、ドラッグ | 2 本の指ダブルタップを押したままをドラッグし、                    |
 | マウス ポインター | マウス ホイール          | 2 本の指をタップして、保持を上下にドラッグ                |
 | マウス ポインター | ズーム                 | ズーム インまたはズーム アウトする 2 本の指を分散する 2 本の指によるピンチします。 |
@@ -236,7 +236,7 @@ OS に対する制限のため、Ctrl、Option、Function などの特殊キー�
 - End:Alt+Right = End
 - Page Up:Alt+Up = Page Up
 - Page Down:Alt+Down = Page Down
-- ［すべて選択］:Command+A = Ctrl+A (ほとんどのプログラムですべて選択)
+- すべて選択:Command+A = Ctrl+A (ほとんどのプログラムですべて選択)
 - 切り取り:Command+X = Ctrl+X (ほとんどのプログラムで切り取り)
 - コピー:Command+C = Ctrl+C (ほとんどのプログラムでコピー)
 - 貼り付け:Command+V = Ctrl+V (ほとんどのプログラムで貼り付け)

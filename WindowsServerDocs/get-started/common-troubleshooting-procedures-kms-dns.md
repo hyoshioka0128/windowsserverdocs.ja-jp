@@ -8,12 +8,12 @@ ms.assetid: ''
 author: Teresa-Motiv
 ms.author: v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: 3165c926c50c2f91544895e0d328f1dae7424b4a
-ms.sourcegitcommit: b7f55949f166554614f581c9ddcef5a82fa00625
+ms.openlocfilehash: 17d4dc0ce531327db21d660481386fcc56498ae3
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72588036"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948282"
 ---
 # <a name="guidelines-for-troubleshooting-dns-related-activation-issues"></a>DNS に関連するライセンス認証の問題のトラブルシューティングに関するガイドライン
 
@@ -88,10 +88,10 @@ ping コマンドを使用して、DNS サーバーへの基本的な IP 接続�
 
 KMS ホスト サーバーのレジストリを調べて、DNS に登録されているかどうかを確認します。 既定で、KMS ホスト サーバーでは、24 時間に 1 回、DNS SRV レコードが動的に登録されます。 
 > [!IMPORTANT]
-> 慎重にこのセクションの手順に従います。 誤ってレジストリを変更すると、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/en-us/help/322756)します。  
+> 慎重にこのセクションの手順に従います。 レジストリを正しく変更しないと、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。  
 
 この設定を確認するには、次の手順を実行します。
-1. レジストリ エディターを開きます。 これを行うには、 **[スタート]** を右クリックし、 **[ファイル名を指定して実行]** を選択して「**regedit**」と入力し、Enter キーを押します。
+1. レジストリ エディターを起動します。 これを行うには、 **[スタート]** を右クリックし、 **[ファイル名を指定して実行]** を選択して「**regedit**」と入力し、Enter キーを押します。
 1. **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SL** サブキーを見つけて、**DisableDnsPublishing** エントリの値を確認します。 このエントリには、次の有効な値があります。
    - **0** または未定義 (既定値):KMS ホストサーバーで 24 時間ごとに SRV レコードが登録されます。
    - **1**:KMS ホストサーバーでは、自動的に SRV レコードが登録されません。 動的更新がサポートされていない実装の場合は、「[KMS SRV レコードを手動で作成する](#manually-create-a-kms-srv-record)」を参照してください。  
@@ -237,7 +237,7 @@ allow-update { any; };
 ## <a name="configure-the-kms-host-to-publish-in-multiple-dns-domains"></a>複数の DNS ドメインに公開するように KMS ホストを構成する
 
 > [!IMPORTANT]
-> 慎重にこのセクションの手順に従います。 誤ってレジストリを変更すると、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
+> 慎重にこのセクションの手順に従います。 レジストリを正しく変更しないと、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
 
 「[KMS クライアントに KMS ホストを手動で割り当てる](#manually-assign-a-kms-host-to-a-kms-client)」で説明されているように、通常、KMS クライアントでは自動検出プロセスを使用して KMS ホストが識別されます。 このプロセスを実行するには、KMS クライアントコンピューターの DNS ゾーン内の _vlmcs SRV レコードを使用できる必要があります。 DNS ゾーンは、コンピューターのプライマリ DNS サフィックス、または次のいずれかに対応します。
 - ドメインに参加しているコンピューターの場合、DNS システム (Active Directory Domain Services (AD DS) DNS など) によって割り当てられたコンピューターのドメイン。

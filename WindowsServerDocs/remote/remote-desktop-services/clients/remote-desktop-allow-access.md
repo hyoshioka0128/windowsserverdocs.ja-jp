@@ -14,21 +14,21 @@ manager: dongill
 ms.author: elizapo
 ms.date: 06/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6a875f8bddd934ac9fb70ca9c0b86772d9fa63b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: de08101ed1d4d4527242778d657778f1a16b3dad
+ms.sourcegitcommit: 5b055fc1d73375f68149c214152f1d63396dd6ca
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404180"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76248404"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc"></a>リモート デスクトップ - PC へのアクセスを許可する
 
->適用対象:Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
+>適用先:Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
 リモート デスクトップを使用して接続し、[Microsoft リモート デスクトップ クライアント](remote-desktop-clients.md) (Windows、iOS、macOS、Android 向けに提供) を使用してリモート デバイスから PC を制御することができます。 PC へのリモート接続を許可すると、別のデバイスを使用して PC に接続し、自分のデスクで作業しているかのように、すべてのアプリ、ファイル、ネットワーク リソースにアクセスすることができます。  
 
 > [!NOTE]
-> リモート デスクトップを使用して、Windows 10 Pro/Enteprise、Windows 8.1/8 Enterprise/Pro、Windows 7 Professional/Enterprise/Ultimate、および Windows Server の Windows Server 2008 よりも新しいバージョンに接続できます。 (Windows 10 Home のような) Home エディションを実行しているコンピューターには接続できません。 
+> リモート デスクトップを使用して、Windows 10 Pro/Enterprise、Windows 8.1/8 Enterprise/Pro、Windows 7 Professional/Enterprise/Ultimate、および Windows Server の Windows Server 2008 よりも新しいバージョンに接続できます。 (Windows 10 Home のような) Home エディションを実行しているコンピューターには接続できません。 
 
 リモート PC に接続するには、そのコンピューターがオンになっていて、そこにネットワーク接続が備わっており、リモート デスクトップが有効になっている必要があります。また、リモート コンピューターへのネットワーク アクセスが可能 (これはインターネット経由でもかまいません) で、接続のためのアクセス許可を持っている必要があります。 接続のためのアクセス許可については、ユーザーの一覧に含まれている必要があります。 接続を開始する前に、接続先コンピューターの名前を調べ、そのコンピューターのファイアウォールを通したリモート デスクトップ接続が許可されていることを確認するのは良い考えです。
 
@@ -39,7 +39,7 @@ ms.locfileid: "71404180"
 ### <a name="windows-10-fall-creator-update-1709-or-later"></a>Windows 10 Fall Creator Update (1709) 以降
 
 いくつかの簡単なステップで PC のリモート アクセスを構成できます。
-1. 接続先のデバイスで **[スタート]** を選択し、左側の **[設定]** アイコンをクリックします。
+1. 接続先のデバイス上で **[スタート]** を選択し、左側の **[設定]** アイコンをクリックします。
 2. **[システム]** グループを選択し、続いて [ **[リモート デスクトップ]** ](ms-settings:remotedesktop) 項目を選択します。
 3. スライダーを使用してリモート デスクトップを有効にします。
 4. また、接続が容易になるように、PC を起動状態かつ発見可能に保つことをお勧めします。 **[設定の表示]** をクリックして有効にします。
@@ -57,7 +57,7 @@ PC のリモート アクセスを構成するには、[Microsoft リモート �
 
 ## <a name="should-i-enable-remote-desktop"></a>リモート デスクトップを有効にする必要があるか
 
-PC の前に物理的に座っているときにその PC にアクセスするだけであれば、リモート デスクトップを有効にする必要はありません。 リモート デスクトップを有効にすると、ローカル ネットワークから見えている PC 上のポートが開かれます。 リモート デスクトップを有効にするのは、自宅などの信頼できるネットワーク内のみにする必要があります。 また、アクセスが厳密に制御されているような PC では、リモート デスクトップを有効にしないことをお勧めします。
+PC を物理的に使用しているときにアクセスするだけであれば、リモート デスクトップを有効にする必要はありません。 リモート デスクトップを有効にすると、ローカル ネットワークから見えている PC 上のポートが開かれます。 リモート デスクトップを有効にするのは、自宅などの信頼できるネットワーク内のみにする必要があります。 また、アクセスが厳密に制御されているような PC では、リモート デスクトップを有効にしないことをお勧めします。
 
 リモート デスクトップへのアクセスを有効にすると、Administrators グループに属する全員と、選択した追加のユーザーすべてに、コンピューター上の彼らのアカウントにリモートからアクセスする機能を付与していることに注意してください。
 

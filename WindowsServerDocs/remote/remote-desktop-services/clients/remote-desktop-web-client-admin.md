@@ -8,12 +8,12 @@ ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 38f54548e8e68a0ee693c5d8ec80e67057b3d5b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 864a15d7336abb56572ddc783ce41a35d6fc13bf
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71387661"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950415"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>ユーザー用にリモート デスクトップ Web クライアントをセットアップする
 
@@ -28,7 +28,7 @@ ms.locfileid: "71387661"
 
 * [リモート デスクトップの展開](../rds-deploy-infrastructure.md)に、RD ゲートウェイ、RD 接続ブローカー、Windows Server 2016 または 2019 で実行されている RD Web アクセスが含まれることを確認します。
 * デバイスごとではなく、[ユーザーごとのクライアント アクセス ライセンス](../rds-client-access-license.md) (CAL) で配置が構成されていることを確認します。そうでないと、すべてのライセンスが消費されます。
-* RD ゲートウェイに [Windows 10 の KB4025334 更新プログラム](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334)をインストールします。 後の累積的な更新プログラムに、この KB が含まれている可能性があります。
+* RD ゲートウェイに [Windows 10 の KB4025334 更新プログラム](https://support.microsoft.com/help/4025334/windows-10-update-kb4025334)をインストールします。 後の累積的な更新プログラムに、この KB が含まれている可能性があります。
 * RD ゲートウェイの役割と RD Web アクセスの役割のために信頼できるパブリック証明書が構成されていることを確認します。
 * ユーザーが接続するどのコンピューターでも、以下の OS バージョンのいずれかが実行されていることを確認します。
   * Windows 10
@@ -300,7 +300,7 @@ RD Web アクセスの役割で、信頼できる証明書が使用されてい�
 一覧のリソースを参照できても Web クライアントで接続できないとユーザーが報告する場合は、以下のことを確認します。
 
 * RD ゲートウェイの役割は、信頼できるパブリック証明書を使用するように正しく構成されていますか。
-* RD ゲートウェイ サーバーに、必要な更新プログラムがインストールされていますか。 サーバーに [KB4025334 更新プログラム](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334)がインストールされていることを確認します。
+* RD ゲートウェイ サーバーに、必要な更新プログラムがインストールされていますか。 サーバーに [KB4025334 更新プログラム](https://support.microsoft.com/help/4025334/windows-10-update-kb4025334)がインストールされていることを確認します。
 
 接続を試みたときにユーザーが "予期しないサーバー認証証明書を受け取った" というエラー メッセージを受け取る場合、メッセージは証明書の拇印を表示します。 その拇印を使用して RD ブローカー サーバーの証明書マネージャーを検索し、適切な証明書を見つけます。 リモート デスクトップの展開のプロパティ ページで、RD ブローカーの役割で使用されるように証明書が構成されていることを確認します。 証明書が期限切れになっていないことを確認したら、.cer ファイル形式の証明書を RD Web アクセス サーバーにコピーし、かっこに囲まれた値は証明書のファイル パスに置き換えて、RD Web アクセス サーバーで次のコマンドを実行します。
 

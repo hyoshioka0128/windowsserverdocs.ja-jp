@@ -11,12 +11,12 @@ author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: a4880a1a66d9c722cfda9e194c4eff38c5058674
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 13568bb320a3d70bfd6a70d2b9731b460be6f346
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361725"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948491"
 ---
 # <a name="express-update-delivery-isv-support"></a>更新プログラムのエクスプレス配信 ISV のサポート
 
@@ -26,7 +26,7 @@ Windows 10 更新プログラムでは、すべてのパッケージにそれま
 
 Windows では、バージョン 7 以降、[エクスプレス](https://technet.microsoft.com/library/cc708456(v=ws.10).aspx#Anchor_2)と呼ばれる機能を使用して Windows Update ダウンロードのサイズを縮小できるようになりました。コンシューマー デバイスでは既定でサポートされていますが、Windows 10 エンタープライズ デバイスでエクスプレスを利用するには、Windows Server Update Services (WSUS) が必要です。
 
-## <a name="how-microsoft-supports-express"></a>マイクロソフトによるエクスプレスのサポート方法
+## <a name="how-microsoft-supports-express"></a>Microsoft によるエクスプレスのサポート方法
 
 - **WSUS スタンドアロンでのエクスプレス**
 
@@ -53,7 +53,7 @@ ISV は、WSUS と WU クライアントを使用して、更新プログラム�
 3.  [**WU クライアント操作を送信するように ISV クライアント エージェントを設定する**](#BKMK_3)
 
 >[!NOTE]
->2017 年 1 月 (またはそれ以降) の Windows 10 バージョン 1607 リリースの累積的な更新プログラム ([KB3213986 (OS ビルド 14393.693)](https://support.microsoft.com/en-us/help/4009938/january-10-2017-kb3213986-os-build-14393-693) をインストールする必要があります。
+>2017 年 1 月 (またはそれ以降) の Windows 10 バージョン 1607 リリースの累積的な更新プログラム ([KB3213986 (OS ビルド 14393.693)](https://support.microsoft.com/help/4009938/january-10-2017-kb3213986-os-build-14393-693) をインストールする必要があります。
     
    - ISV クライアント エージェントは、承認する更新プログラムと、更新プログラムをダウンロードしてインストールするタイミングを決定します
    - WU クライアントは、ダウンロードするバイト範囲を決定し、ダウンロード要求を開始します

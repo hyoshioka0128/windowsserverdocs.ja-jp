@@ -12,16 +12,16 @@ ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 4e2f7cbaed42dd1c1b1884438467cf59f1529f0c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 64c0daa8ecc2d6b196d4305e3246dadeebf7075a
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391537"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948339"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>リリース ノート:Windows Server 2016 に関する重要な問題
 
->適用対象:Windows Server 2016
+>適用先:Windows Server 2016
 
 これらのリリース ノートでは、Windows Server 2016 オペレーティング システムの最も重大な問題とその回避策 (存在する場合) についてまとめています。 このリリースにおける計画的な変更点、新機能、および修正プログラムについては、「[Windows Server 2016 の新機能](whats-new-in-windows-server-2016.md)」と特定の機能チームからのお知らせを参照してください。 特に指定がない限り、レポートされる問題はそれぞれ、Windows Server 2016 のすべてのエディションおよびインストール オプションに適用されます。
 
@@ -42,7 +42,7 @@ Server Core インストール オプションを使用して Windows Server 201
 ## <a name="containers"></a>コンテナー
 
 [comment]: # (ID:371; 提出者: taylorb; 状態:サインオフ)
-- コンテナーを使用する前に、[Windows 10 Version 1607 用のサービス スタック更新プログラム: 2016 年 8 月 23 日](https://support.microsoft.com/en-us/kb/3176936) またはそれ以降に利用可能になった更新プログラムをインストールしてください。 インストールしないと、コンテナーの作成、開始、または実行に失敗するほか、"Win32 で CreateProcess が失敗しました。RPC サーバーが利用できません" のようなエラーなど、多くの問題が発生します。
+- コンテナーを使用する前に、[Windows 10 Version 1607 用のサービス スタック更新プログラム: 2016 年 8 月 23 日](https://support.microsoft.com/kb/3176936) またはそれ以降に利用可能になった更新プログラムをインストールしてください。 インストールしないと、コンテナーの作成、開始、または実行に失敗するほか、"Win32 で CreateProcess が失敗しました。RPC サーバーが利用できません" のようなエラーなど、多くの問題が発生します。
 
 [comment]: # (ID:373; 提出者: plang; 状態: サインオフ)
 - NanoServerPackage OneGet プロバイダーは、Windows コンテナーでは動作しません。 これを回避するには、(コンテナー以外の) 別のコンピューターで Find-NanoServerPackage および Save-NanoServerPackage を使用して、必要なパッケージをダウンロードします。 その後、ダウンロードしたパッケージをコンテナーにコピーしてインストールします。
@@ -50,12 +50,12 @@ Server Core インストール オプションを使用して Windows Server 201
 ## <a name="device-guard"></a>Device Guard
 
 [comment]: # (ID:369; 提出者: nirb; 状態: サインオフ)
-コードの整合性に対する仮想化ベースの保護、またはシールドされた仮想マシン (コードの整合性に対する仮想化ベースの保護を使用します) を利用する場合、これらのテクノロジは一部のデバイスやアプリケーションとの互換性がない可能性があることに注意してください。 運用システムで機能を有効にする前に、ラボでこのような構成をテストする必要があります。 このテストを行わない場合は、予期しないデータの損失や Stop エラーが発生する可能性があります。
+仮想化ベースでのコード整合性の保護や (仮想化ベースでのコード整合性の保護を使用する) シールドされた仮想マシンを利用する場合、これらのテクノロジは一部のデバイスやアプリケーションとの互換性がない可能性があることに注意してください。 運用システム上で機能を有効にする前に、ラボでこのような構成をテストする必要があります。 これを行わない場合は、予期しないデータの損失や Stop エラーが発生する可能性があります。
 
 ## <a name="microsoft-exchange"></a>Microsoft Exchange
 
 [comment]: # (ID:375; 提出者: wgries; 状態: サインオフ)
-Windows Server 2016 で Microsoft Exchange 2016 CU3 を実行しようとすると、IIS ホスト プロセス W3WP.exe でエラーが発生します。 現時点では、回避策はありません。 サポートされる修正プログラムが利用可能になるまでは、Windows Server 2016 での Exchange 2016 CU3 の展開を延期する必要があります。
+Windows Server 2016 上で Microsoft Exchange 2016 CU3 を実行しようとすると、IIS ホスト プロセス W3WP.exe でエラーが発生します。 現時点では、回避策はありません。 サポートされる修正プログラムが利用可能になるまでは、Windows Server 2016 での Exchange 2016 CU3 の展開を延期する必要があります。
 
 ## <a name="remote-server-administration-tools-rsat"></a>リモート サーバー管理ツール (RSAT)
 
@@ -69,7 +69,7 @@ Anniversary Update より前のバージョンの Windows 10 を実行してい�
 [comment]: # (ID:369; 提出者: nirb; 状態: サインオフ)  
 - シールドされた仮想マシンを運用環境で展開する前に、利用可能なすべての更新プログラムがインストールされていることを確認します。
 
-- コードの整合性に対する仮想化ベースの保護、またはシールドされた仮想マシン (コードの整合性に対する仮想化ベースの保護を使用します) を利用する場合、これらのテクノロジは一部のデバイスやアプリケーションとの互換性がない可能性があることに注意してください。 運用システムで機能を有効にする前に、ラボでこのような構成をテストする必要があります。 このテストを行わない場合は、予期しないデータの損失や Stop エラーが発生する可能性があります。
+- 仮想化ベースでのコード整合性の保護や (仮想化ベースでのコード整合性の保護を使用する) シールドされた仮想マシンを利用する場合、これらのテクノロジは一部のデバイスやアプリケーションとの互換性がない可能性があることに注意してください。 運用システム上で機能を有効にする前に、ラボでこのような構成をテストする必要があります。 これを行わない場合は、予期しないデータの損失や Stop エラーが発生する可能性があります。
 
 ## <a name="start-menu"></a>スタート メニュー
 
@@ -82,15 +82,15 @@ Anniversary Update より前のバージョンの Windows 10 を実行してい�
 
 ## <a name="storport-performance"></a>Storport のパフォーマンス
 
-Windows Server 2016 を新たにインストールして実行した場合、Windows Server 2012 R2 と比較して、一部のシステムでストレージのパフォーマンスが低下することがあります。  Windows Server 2016 の開発では、プラットフォームのセキュリティと信頼性を強化するため、複数の変更が行われました。 これらの中には、Windows Defender を既定で有効にするなど、I/O パスの延伸につながる変更が含まれているため、特定のワークロードとパターンで I/O パフォーマンスが低下する可能性があります。 Windows Defender は、システム保護のための重要な層であるため、無効にすることはお勧めできません。  
+Windows Server 2016 を新たにインストールして実行した場合、Windows Server 2012 R2 と比較して、一部のシステムではストレージのパフォーマンスが低下することがあります。  Windows Server 2016 の開発では、プラットフォームのセキュリティと信頼性を強化するために、複数の変更が行われました。 それらの中には、Windows Defender を既定で有効にするなど、I/O パスの延伸につながる変更が含まれているため、特定のワークロードとパターンで I/O パフォーマンスが低下する可能性があります。 Windows Defender はシステム保護のための重要な層であるため、Microsoft では無効にすることをお勧めしていません。  
 
 ## <a name="copyright"></a>著作権
 
 このドキュメントは「現状有姿のまま」提供されます。 このドキュメントに記載されている情報および見解 (URL 等のインターネット Web サイトに関する情報を含む) は、将来予告なしに変更されることがあります。  
 
-このドキュメントは、マイクロソフト製品に含まれる知的財産に対していかなる法的権利も付与しません。 お客様は、内部的な参照目的に限り、ドキュメントを複製して使用することができます。  
+このドキュメントは、マイクロソフト製品に含まれる知的財産に対していかなる法的権利も付与しません。 お客様は、内部的な参照目的に限り、このドキュメントを複製して使用することができます。  
 
-&copy;2016 Microsoft Corporation. All rights reserved.  
+&copy; 2016 Microsoft Corporation. All rights reserved.  
 
 Microsoft、Active Directory、Hyper-V、Windows、および Windows Server は、米国 Microsoft Corporation の米国およびその他の国における登録商標または商標です。  
 

@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: e6ff22d0563fa11aa633004966b2cd2648ba5877
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d60ba6ffd661aeb284a2ade775e14b9108cbb6c9
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71357705"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75950531"
 ---
 # <a name="securing-privileged-access"></a>特権アクセスの保護
 
@@ -82,15 +82,15 @@ Microsoft では、断固とした敵対者に対して特権アクセスをセ�
 
 ![フェーズ 1 の図:1. 管理者とユーザーの個別のアカウント、2. Just in Time ローカル管理者パスワード、3. 管理ワークステーションのステージ 1、4. ID 攻撃の検出](../media/securing-privileged-access/PAW_LP_Fig6.JPG)
 
-### <a name="1-separate-accounts"></a>1. 個別のアカウント
+### <a name="1-separate-accounts"></a>1.個別のアカウント
 
 インターネット上のリスク (フィッシング攻撃、Web サイトの参閲覧) を特権アクセス アカウントから切り離すために、特権アクセスを持つすべてのスタッフに専用アカウントを作成します。 管理者は、高い特権のアカウントを使用して、Web を閲覧したり、メールをチェックしたり、日常の生産性タスクを実行したりしないでください。 詳細については、参考資料の[個別の管理アカウント](securing-privileged-access-reference-material.md#separate-administrative-accounts)に関するセクションをご覧ください。
 
 オンプレミスの AD 環境と Azure AD 環境の両方で、管理者権限が永続的に割り当てられた、少なくとも 2 つの緊急アクセス用アカウントを作成するには、「[Azure AD で緊急アクセス用アカウントを管理する](/azure/active-directory/users-groups-roles/directory-emergency-access)」の記事のガイダンスに従ってください。 これらのアカウントは、従来の管理者アカウントが障害発生時などに必要なタスクを実行できない場合にのみ使用するためのものです。
 
-### <a name="2-just-in-time-local-admin-passwords"></a>2. Just in Time ローカル管理者パスワード
+### <a name="2-just-in-time-local-admin-passwords"></a>2.Just in Time ローカル管理者パスワード
 
-敵対者がローカルの SAM データベースからローカル管理者アカウントのパスワード ハッシュを盗み、それを悪用してほかのコンピューターを攻撃するリスクを軽減するためには、組織で必ず、各マシンに一意の管理者パスワードを設定する必要があります。 ローカル管理者パスワード ソリューション (LAPS) ツールでは、ワークステーションごとに一意のランダム パスワードを構成できます。サーバーはそれらを、ACL によって保護された Active Directory (AD) に保存します。 これらのローカル管理者アカウントのパスワードのリセットを読み取ったり要求したりできるのは、資格のある承認済みユーザーのみです。 ワークステーションとサーバーで使用するための LAPS は [Microsoft ダウンロード センター](http://Aka.ms/LAPS)で取得できます。
+敵対者がローカルの SAM データベースからローカル管理者アカウントのパスワード ハッシュを盗み、それを悪用してほかのコンピューターを攻撃するリスクを軽減するためには、組織で必ず、各マシンに一意の管理者パスワードを設定する必要があります。 ローカル管理者パスワード ソリューション (LAPS) ツールでは、ワークステーションごとに一意のランダム パスワードを構成できます。サーバーはそれらを、ACL によって保護された Active Directory (AD) に保存します。 これらのローカル管理者アカウントのパスワードのリセットを読み取ったり要求したりできるのは、資格のある承認済みユーザーのみです。 ワークステーションとサーバーで使用するための LAPS は [Microsoft ダウンロード センター](https://aka.ms/LAPS)で取得できます。
 
 LAPS と PAW を使用する環境に関する追加のガイダンスは、「[クリーン ソースの原則に基づく運用基準](securing-privileged-access-reference-material.md#operational-standards-based-on-clean-source-principle)」のセクションでご確認いただけます。
 
@@ -98,7 +98,7 @@ LAPS と PAW を使用する環境に関する追加のガイダンスは、「[
 
 Azure Active Directory と従来のオンプレミス Active Directory の管理者特権を持つユーザーのための最初のセキュリティ対策として、それらのユーザーが、[セキュリティが強化された Windows 10 デバイスの標準](/windows-hardware/design/device-experiences/oem-highly-secure)で構成された Windows 10 デバイスを使用していることを確認します。 特権のある管理者アカウントは、管理ワークステーションのローカル管理者グループのメンバーになることはできません。  ワークステーションに対する構成の変更が必要な場合は、ユーザー アクセス制御 (UAC) による特権の昇格を利用できます。  さらに、Windows 10 セキュリティ ベースラインをワークステーションに適用して、デバイスをさらに強化する必要があります。
 
-### <a name="4-identity-attack-detection"></a>4。ID 攻撃の検出
+### <a name="4-identity-attack-detection"></a>4.ID 攻撃の検出
 
 [Azure Advanced Threat Protection (ATP)](/azure-advanced-threat-protection/what-is-atp) はクラウド ベースのセキュリティ ソリューションであり、オンプレミスの Active Directory 環境を対象とする高度な脅威、侵害された ID、および悪意のあるインサイダーによるアクションの識別、検出、調査支援を行います。
 
@@ -108,13 +108,13 @@ Azure Active Directory と従来のオンプレミス Active Directory の管理
 
 ![フェーズ 2 の図:1. Windows Hello for Business/MFA、2. PAW のロールアウト、3. Just in Time 特権、4. Credential Guard、5. 漏洩した資格情報、6. 横方向の移動の脆弱性の検出](../media/securing-privileged-access/PAW_LP_Fig7.JPG)
 
-### <a name="1-require-windows-hello-for-business-and-mfa"></a>1. Windows Hello for Business と MFA が必要
+### <a name="1-require-windows-hello-for-business-and-mfa"></a>1.Windows Hello for Business と MFA が必要
 
 管理者は、Windows Hello for Business に関連した使いやすさを活用できます。 管理者は、複雑なパスワードを PC の強力な 2 要素認証に置き換えることができます。 攻撃者はデバイスと生体認証情報または PIN の両方を手に入れる必要があり、従業員に知られずにアクセスを獲得することは非常に困難です。 Windows Hello for Business とロールアウトのパスの詳細については、[Windows Hello for Business の概要](/windows/security/identity-protection/hello-for-business/hello-overview)に関する記事を参照してください
 
 Azure MFA を使用した Azure AD で、管理者アカウントの多要素認証 (MFA) を有効にします。 少なくとも、[ベースライン保護の条件付きアクセス ポリシー](/azure/active-directory/conditional-access/baseline-protection#require-mfa-for-admins)を有効にします。Azure Multi-Factor Authentication の詳細については、[クラウドベースの Azure Multi-Factor Authentication の Azure のデプロイ](/azure/active-directory/authentication/howto-mfa-getstarted)に関する記事を参照してください
 
-### <a name="2-deploy-paw-to-all-privileged-identity-access-account-holders"></a>2. すべての特権付き ID アクセス アカウントの所有者に PAW をデプロイする
+### <a name="2-deploy-paw-to-all-privileged-identity-access-account-holders"></a>2.すべての特権付き ID アクセス アカウントの所有者に PAW をデプロイする
 
 メール、Web 閲覧、およびその他の管理以外のタスクで検出された脅威から特権アカウントを分離するプロセスを続行するには、組織の情報システムへの特権アクセス権を持つすべての担当者に専用の特権アクセス ワークステーション (PAW) を実装する必要があります。 PAW のデプロイに関するその他のガイダンスについては、[特権アクセス ワークステーション](privileged-access-workstations.md#paw-phased-implementation)に関する記事を参照してください。
 
@@ -125,17 +125,17 @@ Azure MFA を使用した Azure AD で、管理者アカウントの多要素認
 * Active Directory Domain Services (AD DS) の場合は、Microsoft Identity Manager (MIM) の[特権アクセス マネージャー (PAM)](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services) 機能を使用してください。
 * Azure Active Directory の場合は、[Azure AD Privileged Identity Management (PIM)](/azure/active-directory/privileged-identity-management/pim-deployment-plan) 機能を使用してください。
 
-### <a name="4-enable-windows-defender-credential-guard"></a>4。Windows Defender Credential Guard を有効にする
+### <a name="4-enable-windows-defender-credential-guard"></a>4.Windows Defender Credential Guard を有効にする
 
 Credential Guard を有効にすると、NTLM パスワード ハッシュ、Kerberos チケット保証チケット、およびアプリケーションによってドメイン資格情報として保存された資格情報を保護することができます。 この機能により、盗難に遭った資格情報を使用した環境でのピボットの難易度を高めることで、Pass-the-Hash や Pass-the-Ticket などの資格情報盗用攻撃を防ぐことができます。 Credential Guard のしくみと展開方法については、「[Windows Defender Credential Guard によるドメインの派生資格情報の保護](/windows/security/identity-protection/credential-guard/credential-guard)」の記事をご覧ください。
 
-### <a name="5-leaked-credentials-reporting"></a>5。漏洩した資格情報レポート
+### <a name="5-leaked-credentials-reporting"></a>5.漏洩した資格情報レポート
 
 "Microsoft では、毎日、新たな脅威を特定し、顧客を保護するために、6 兆 5000 億の信号を分析しています" - [Microsoft By the Numbers](https://news.microsoft.com/bythenumbers/cyber-attacks)
 
 Microsoft Azure AD Identity Protection を有効にすると、資格情報が漏洩したユーザーについてレポートを作成し、修復できるようにすることができます。 [Azure AD Identity Protection](/azure/active-directory/identity-protection/index) を利用して、組織が脅威からクラウド環境やハイブリッド環境を保護できるようにすることができます。
 
-### <a name="6-azure-atp-lateral-movement-paths"></a>6。Azure ATP の横移動パス
+### <a name="6-azure-atp-lateral-movement-paths"></a>6.Azure ATP の横移動パス
 
 特権アクセス アカウントの所有者が PAW を管理にのみ使用していることを確認して、侵害された特権のないアカウントが、Pass-the-Hash や Pass-the-Ticket などの資格情報盗用攻撃を介して特権アカウントにアクセスできないようにします。 [Azure ATP の横移動パス (LMP)](/azure-advanced-threat-protection/use-case-lateral-movement-path) では、特権アカウントが危険にさらされる可能性がある場所を特定するためのレポートを簡単に理解できます。
 
@@ -147,11 +147,11 @@ Microsoft Azure AD Identity Protection を有効にすると、資格情報が�
 
 これらの機能は前のフェーズからの手順を基盤とし、防御策をより予防的なものにします。 このフェーズには特定のタイムラインはなく、個々の組織に基づいて実装する時間が長くなる場合があります。
 
-### <a name="1-review-role-based-access-control"></a>1. ロールベースのアクセス制御を確認する
+### <a name="1-review-role-based-access-control"></a>1.ロールベースのアクセス制御を確認する
 
 「[Active Directory 管理層モデル](securing-privileged-access-reference-material.md)」の記事で説明されている 3 つの階層モデルを使用して、下位層の管理者が上位層のリソース (グループ メンバーシップ、ユーザー アカウントの ACL など) への管理アクセス権を持っていないことを確認します。
 
-### <a name="2-reduce-attack-surfaces"></a>2. 攻撃を受ける可能性の低減
+### <a name="2-reduce-attack-surfaces"></a>2.攻撃を受ける可能性の低減
 
 ドメイン、ドメイン コントローラー、ADFS、Azure AD Connect などのシステムのいずれかが侵害されると、組織内の他のシステムが侵害される可能性があるため、これらの ID ワークロードを強化します。 「[Active Directory の攻撃を削減する](../ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface.md)」および「[ID インフラストラクチャを保護するための 5 つのステップ](/azure/security/azure-ad-secure-steps)」の記事で、オンプレミス環境とハイブリッド ID 環境をセキュリティで保護するためのガイダンスを提供しています。
 
@@ -161,7 +161,7 @@ Microsoft Azure AD Identity Protection を有効にすると、資格情報が�
 
 セキュリティ情報およびイベント管理 (SIEM) でのアラートの集計、作成、およびチューニングには熟練したアナリストが必要なため、これは計画を超える部分です (すぐに使用できるアラートが含まれている 30 日の計画の Azure ATP とは異なります)
 
-### <a name="4-leaked-credentials---force-password-reset"></a>4。漏洩した資格情報 - パスワードのリセットを強制する
+### <a name="4-leaked-credentials---force-password-reset"></a>4.漏洩した資格情報 - パスワードのリセットを強制する
 
 パスワードが侵害された疑いがある場合に、Azure AD Identity Protection でパスワードのリセットを自動的に強制できるようにすることで、引き続きセキュリティ体制を強化します。 「[リスク イベントを使用して多要素認証とパスワード変更をトリガーする](/azure/active-directory/authentication/tutorial-risk-based-sspr-mfa)」の記事のガイダンスで、条件付きアクセス ポリシーを使用してこれを有効にする方法について説明しています。
 
