@@ -9,16 +9,16 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
-manager: daveba
+manager: lizross
 ms.author: helohr
 ms.date: 11/15/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 41f5bd7be03e61471683d5fc04df9ee10bc09e58
-ms.sourcegitcommit: 89aea00fe0e00fc8b1a6e20af36ad04df8c9fe5b
+ms.openlocfilehash: b5bf231b2aa3542c9cd276b29e7821bdb5dd7cfb
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/19/2019
-ms.locfileid: "74189475"
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919809"
 ---
 # <a name="whats-new-in-the-web-client"></a>Web クライアントの新機能
 
@@ -111,7 +111,7 @@ ms.locfileid: "74189475"
 ## <a name="updates-for-version-081"></a>バージョン 0.8.1 での更新
 *公開日:2018 年 5 月 17 日*
 
-- CVE-2018-0886 で説明されている CredSSP 暗号化オラクルの修復に対応するための更新。
+- CVE-2018-0886 に記載されている CredSSP の暗号化オラクルの修復への対応が更新されました。
 - 印刷が有効なときに、一部の言語で発生する接続エラーが修正されました。
 - ゲートウェイがデプロイの一部でない場合のエラー メッセージが改良されました。
 - **[ヘルプ]** オプションと **[フィードバック]** オプションが追加されました。

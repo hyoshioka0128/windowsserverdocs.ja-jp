@@ -12,19 +12,19 @@ ms.assetid: 2c2fa45b-6f3b-4663-b421-2da6ecc463bf
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: d395c72a1e21cd8eda043eebf3b72bbd5c9a13e8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f94e2c083f0bc05231543c15120818481afbabb0
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391804"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947853"
 ---
 # <a name="install-nano-server"></a>Nano Server のインストール
 
 >適用先:Windows Server 2016
 
 > [!IMPORTANT]
-> Windows Server バージョン 1709 以降、Nano Server は[コンテナー基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、「[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)」をご覧ください。 
+> Windows Server バージョン 1709 以降では、Nano Server は[コンテナーの基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)に関する記事をご覧ください。 
 
 Windows Server 2016 では、新しいインストール オプションであるNano Server が提供されています。 Nano Server は、プライベート クラウドとデータセンター向けに最適化されたリモート管理サーバー オペレーティング システムです。 Nano Server は Server Core モードの Windows Server に似ていますが、サイズが大幅に小さく、ローカル ログオン機能がありません。さらに、64 ビットのアプリケーション、ツール、およびエージェントのみがサポートされます。 Windows Server と比べて Nano Server の場合は、使用されるディスク領域がかなり小さくなり、セットアップが大幅に速くなり、必要とされる更新と再起動の回数がずっと少なくなります。 再起動も非常に高速化されています。 Nano Server インストール オプションは、Windows Server 2016 の Standard Edition および Datacenter Edition で提供されます。  
 
@@ -49,16 +49,16 @@ Nano Server は、コンテナーおよびマイクロサービスに基づく "
 - Nano Server は、Active Directory ドメイン コントローラーとして使用することはできません。
 - グループ ポリシーはサポートされていません。 ただし、[必要な状態の構成 (DSC)](https://msdn.microsoft.com/powershell/dsc/nanoDsc) を使用することで、設定を大規模に適用できます。
 - プロキシ サーバーを使用してインターネットにアクセスするように、Nano Server を構成することはできません。
-- NIC チーミング (具体的には、LBFO (Load Balancing and Failover: 負荷分散とフェールオーバー) はサポートされていません。 代わりに、スイッチ埋め込みチーミング (SET) がサポートされています。
+- NIC チーミング (具体的には、LBFO (Load Balancing and Failover: 負荷分散とフェールオーバー)) はサポートされていません。 代わりに、スイッチ埋め込みチーミング (SET) がサポートされています。
 - System Center Configuration Manager と System Center Data Protection Manager はサポートされていません。
 - ベスト プラクティス アナライザー (BPA) のコマンドレットおよび BPA とサーバー マネージャーの統合はサポートされていません。
-- Nano Server は仮想ホスト バス アダプター (HBA) をサポートしません。
+- Nano Server では仮想ホスト バス アダプター (HBA) はサポートされません。
 - Nano Server は、プロダクト キーを使ってライセンス認証する必要はありません。 Hyper-V ホストとして機能する場合、Nano Server では[仮想マシンの自動ライセンス認証](https://technet.microsoft.com/library/dn303421%28v=ws.11%29.aspx) (AVMA) はサポートされません。 Nano Server ホストで実行される仮想マシンは、[キー管理サービス](https://technet.microsoft.com/library/jj612867(v=ws.11).aspx) (KMS) と汎用ボリューム ライセンス キーを使うか、[Active Directory によるライセンス認証](https://technet.microsoft.com/library/dn502534(v=ws.11).aspx)を使ってライセンス認証できます。
 - Nano Server に提供される Windows PowerShell のバージョンには、重要な相違点があります。 詳細については、「[PowerShell on Nano Server](PowerShell-on-Nano-Server.md)」 (Nano Server 上の PowerShell) を参照してください。
 - Nano Server は、Current Branch for Business (CBB) モデルでのみサポートされています。現時点で、Nano Server 用の Long-Term Servicing Branch (LTSB) リリースはありません。 詳細については、次のサブセクションを参照してください。
 
 ### <a name="current-branch-for-business"></a>Current Branch for Business
-Nano Server は、開発サイクルが短い "クラウド歩調" で事業を進めているお客様をサポートするために、Current Branch for Business (CBB) と呼ばれる、よりアクティブなモデルで処理されます。 このモデルでは、Nano Server の機能更新のリリースが年に 2 回～ 3 回発生すると予想されます。 このモデルでは、Nano Server を運用環境に展開し運用する場合、[ソフトウェア アシュアランス](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx)が必要です。 サポートを維持するために、管理者は、2 つ後の CBB リリース以内に留まる必要があります。 ただし、これらのリリースで既存の展開の自動更新は行われません。管理者は、必要に応じて、新しい CBB リリースを手動でインストールします。 詳細については、「[Windows Server 2016 new Current Branch for Business servicing option](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)」 (Windows Server 2016 の新しい Current Branch for Business サービス オプション) を参照してください。
+Nano Server は、開発サイクルが短い "クラウド歩調" で事業を進めているお客様をサポートするために、Current Branch for Business (CBB) と呼ばれる、よりアクティブなモデルで処理されます。 このモデルでは、Nano Server の機能更新のリリースが年に 2 回～ 3 回発生すると予想されます。 このモデルでは、Nano Server を運用環境に展開し運用する場合、[ソフトウェア アシュアランス](https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx)が必要です。 サポートを維持するために、管理者は、2 つ後の CBB リリース以内に留まる必要があります。 ただし、これらのリリースで既存の展開の自動更新は行われません。管理者は、必要に応じて、新しい CBB リリースを手動でインストールします。 詳細については、「[Windows Server 2016 new Current Branch for Business servicing option](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)」 (Windows Server 2016 の新しい Current Branch for Business サービス オプション) を参照してください。
 
 デスクトップ エクスペリエンスを使用する Server Core および Server インストール オプションは、5 年間のメインストリーム サポートと 5 年間の延長サポートで構成される [Long-Term Servicing Branch (LTSB) モデル](https://support.microsoft.com/lifecycle#gp%2Fgp_msl_policy)で処理されます。
 
@@ -76,10 +76,10 @@ VHD を構成して Nano Server をインストールするため、クリーン
 > [!IMPORTANT]  
 > セットアップが完了し、必要なサーバーの役割と機能をすべてインストールしたら、Windows Server 2016 に適用可能な更新プログラムがあるかどうかをすぐに確認し、ある場合はインストールします。 Nano Server については、「[Nano Server の管理](Manage-Nano-Server.md)」の「Nano Server の更新を管理する」を参照してください。
 
-### <a name="upgrade"></a>アップグレード
+### <a name="upgrade"></a>アップグレード パッケージ、アップグレード
 Nano Server は Windows Server 2016 の新機能であるため、以前のバージョンのオペレーティング システムから Nano Server へのアップグレード パスはありません。
 
-### <a name="migration"></a>Migration
+### <a name="migration"></a>移行
 Nano Server は Windows Server 2016 の新機能であるため、以前のバージョンのオペレーティング システムから Nano Server への移行パスはありません。
   
 -------------------------------------

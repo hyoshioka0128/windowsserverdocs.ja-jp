@@ -11,26 +11,26 @@ ms.topic: get-started-article
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 4cfd7442f4c696d791349de8d4de903a7edff75a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d0ac67eed766f9b04121fc521557f906f644d42f
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360157"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947709"
 ---
 # <a name="updating-nano-server"></a>Nano Server の更新
 
 > [!IMPORTANT]
-> Windows Server バージョン 1709 以降、Nano Server は[コンテナー基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、「[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)」をご覧ください。 
+> Windows Server バージョン 1709 以降では、Nano Server は[コンテナーの基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)に関する記事をご覧ください。 
 
-Nano Server を最新の状態に保つには、さまざまな方法が用意されています。 Windows Server の他のインストール オプションに比べて、Nano Server では、Windows 10 に近いアクティブなサービス モデルが採用されています。 このような定期的なリリースは、**Current Branch for Business (CBB)** リリースと呼ばれます。 このアプローチは、もっとすばやく改革を取り入れ、クラウド上での短期間の開発ライフサイクルに対応する必要のあるお客様をサポートするものです。 CBB の詳細については、[Windows Server ブログの記事](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)をご覧ください。
+Nano Server を最新の状態に保つには、さまざまな方法が用意されています。 Windows Server の他のインストール オプションに比べて、Nano Server では、Windows 10 に近いよりアクティブなサービス モデルが採用されています。 このような定期的なリリースは、**Current Branch for Business (CBB)** リリースと呼ばれます。 このアプローチは、もっとすばやく改革を取り入れ、クラウド上での短期間の開発ライフサイクルに対応する必要のあるお客様をサポートするものです。 CBB の詳細については、[Windows Server ブログの記事](https://blogs.technet.microsoft.com/windowsserver/2016/07/12/windows-server-2016-new-current-branch-for-business-servicing-option/)をご覧ください。
 
-**これらの CBB リリースの合間**には、Nano Server は一連の*累積的な更新プログラム*によって最新の状態に維持されます。 たとえば、Nano Server の最初の累積的な更新プログラムは、2016 年 9 月 26 日に [KB4093120](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120) でリリースされました。 これ以降の累積的な更新プログラムでは、これらの更新プログラムを Nano Server にインストールするためのさまざまな方法が提供されています。 この記事では、KB3192366 の更新プログラムを例として使い、Nano Server の累積的な更新プログラムを取得して適用する方法を説明します。 累積的な更新プログラムのモデルの詳細については、[Microsoft Update ブログの記事](https://blogs.technet.microsoft.com/mu/2016/10/25/patching-with-windows-server-2016/)を参照してください。
+**これらの CBB リリースの合間**には、Nano Server は一連の "*累積的な更新プログラム*" によって最新の状態に維持されます。 たとえば、Nano Server の最初の累積的な更新プログラムは、2016 年 9 月 26 日に [KB4093120](https://support.microsoft.com/help/4093120/windows-10-update-kb4093120) でリリースされました。 これ以降の累積的な更新プログラムでは、これらの更新プログラムを Nano Server にインストールするためのさまざまな方法を用意しています。 この記事では、KB3192366 の更新プログラムを例として使い、Nano Server の累積的な更新プログラムを取得して適用する方法を説明します。 累積的な更新プログラムのモデルの詳細については、[Microsoft Update ブログの記事](https://blogs.technet.microsoft.com/mu/2016/10/25/patching-with-windows-server-2016/)を参照してください。
 
 > [!NOTE]
-> オプションの Nano Server パッケージをメディアやオンライン リポジトリからインストールする場合、そのパッケージには最近のセキュリティ修正プログラムが含まれていません。 オプションのパッケージとベースのオペレーティング システムの間のバージョンの不一致を避けるためには、オプションのパッケージをインストールした直後に必ず、サーバーを再起動する**前に**、最新の累積的な更新をインストールする必要があります。
+> オプションの Nano Server パッケージをメディアやオンライン リポジトリからインストールした場合、最近のセキュリティ修正プログラムは含まれていません。 オプションのパッケージとベースのオペレーティング システムの間のバージョンの不一致を避けるためには、オプションのパッケージをインストールした直後に必ず、サーバーを再起動する**前に**、最新の累積的な更新プログラムをインストールする必要があります。
 
-Windows Server 2016 の累積的な更新プログラム:2016 年 9 月 26 日 ([KB3192366](https://support.microsoft.com/en-us/kb/3192366)) の場合、前提条件として、最初に Windows 10 バージョン 1607 のサービス スタック更新プログラム:2016 年 8 月 23 日 ([KB3176936](https://support.microsoft.com/en-us/kb/3176936)) をインストールする必要があります。 以下で説明する方法のほとんどでは、.cab 更新プログラム パッケージを収録した .msu ファイルが必要になります。 それぞれの更新プログラム パッケージをダウンロードするには、Microsoft Update カタログの以下のページにアクセスしてください。
+Windows Server 2016 の累積的な更新プログラム:2016 年 9 月 26 日 ([KB3192366](https://support.microsoft.com/kb/3192366)) の場合、前提条件として、最初に Windows 10 バージョン 1607 のサービス スタック更新プログラム:2016 年 8 月 23 日 ([KB3176936](https://support.microsoft.com/kb/3176936)) をインストールする必要があります。 以下で説明するオプションのほとんどでは、.cab 更新プログラム パッケージを収録した .msu ファイルが必要になります。 それぞれの更新プログラム パッケージをダウンロードするには、Microsoft Update カタログの以下のページにアクセスしてください。
 - [https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3192366](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3192366)
 - [https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3176936](https://catalog.update.microsoft.com/v7/site/Search.aspx?q=KB3176936)
 
@@ -47,13 +47,13 @@ Microsoft Update カタログから .msu ファイルをダウンロードした
     copy C:\ServicingPackages_expanded\KB3192366\Windows10.0-KB3192366-x64.cab C:\ServicingPackages_cabs
 ```
 
-その後、展開した .cab ファイルを使って、いくつかの異なる方法からニーズに合った方法で Nano Server イメージに更新プログラムを適用できます。 以降では、使用できる方法を順不同で紹介します。お使いの環境に最も適した方法を選んでください。
+その後、展開した .cab ファイルを使って、いくつかの異なる方法からニーズに合った方法で Nano Server イメージに更新プログラムを適用できます。 以降では、使用できるオプションを順不同で紹介します。お使いの環境に最も適した方法を選んでください。
 
 > [!NOTE]
-> DISM ツールを使って Nano Server をサービスする場合は、サービスの対象となる Nano Server のバージョンと同じかそれよりも新しいバージョンの DISM を使う必要があります。 そのためには、一致するバージョンの Windows から DISM を実行するか、一致するバージョンの [Windows アセスメント & デプロイメント キット (ADK)](https://developer.microsoft.com/en-us/windows/hardware/windows-assessment-deployment-kit) をインストールするか、または Nano Server 上で DISM を実行します。
+> DISM ツールを使って Nano Server をサービスする場合は、サービスの対象となる Nano Server のバージョンと同じかそれよりも新しいバージョンの DISM を使う必要があります。 そのためには、一致するバージョンの Windows から DISM を実行するか、一致するバージョンの [Windows アセスメント & デプロイメント キット (ADK)](https://developer.microsoft.comwindows/hardware/windows-assessment-deployment-kit) をインストールするか、または Nano Server 上で DISM を実行します。
 
 ## <a name="option-1-integrate-a-cumulative-update-into-a-new-image"></a>オプション 1:新しいイメージに累積的な更新プログラムを統合する
-新しい Nano Server イメージを作成する場合は、最新の累積的な更新プログラムをイメージに直接統合して、初回起動時に更新プログラムが完全に適用されるようにすることができます。
+新しい Nano Server イメージを作成する場合は、最新の累積的な更新プログラムをイメージに直接統合して、初回起動時にこれが完全に適用されるようにすることができます。
 
 ```powershell
 New-NanoServerImage -ServicingPackagePath 'C:\ServicingPackages_cabs\Windows10.0-KB3176936-x64.cab', 'C:\ServicingPackages_cabs\Windows10.0-KB3192366-x64.cab' -<other parameters>
@@ -69,7 +69,7 @@ Edit-NanoServerImage -ServicingPackagePath 'C:\ServicingPackages_cabs\Windows10.
 ## <a name="option-3-apply-the-cumulative-update-to-an-existing-offline-vhd-or-vhdx"></a>オプション 3: 既存のオフライン VHD または VHDX に累積的な更新プログラムを適用する
 既に仮想ハード ディスク (VHD または VHDX) がある場合は、DISM ツールを使って仮想ハード ディスクに更新プログラムを適用できます。 ディスクが使用中にならないように、そのディスクを使っているすべての VM をシャットダウンするか、仮想ハード ディスク ファイルのマウントを解除する必要があります。
 
-- PowerShell を使用する
+- PowerShell の使用
 
    ```powershell
    Mount-WindowsImage -ImagePath .\NanoServer.vhdx -Path .\MountDir -Index 1
@@ -77,7 +77,7 @@ Edit-NanoServerImage -ServicingPackagePath 'C:\ServicingPackages_cabs\Windows10.
    Dismount-WindowsImage -Path .\MountDir -Save
    ```
 
-- dism.exe を使用する
+- dism.exe の使用
 
    ```code
    dism.exe /Mount-Image /ImageFile:C:\NanoServer.vhdx /Index:1 /MountDir:C:\MountDir
@@ -89,7 +89,7 @@ Edit-NanoServerImage -ServicingPackagePath 'C:\ServicingPackages_cabs\Windows10.
 実行中の Nano Server VM または物理ホストがあり、更新プログラムの .cab ファイルをダウンロードした場合は、DISM ツールを使って、オペレーティング システムがオンラインの間に更新プログラムを適用できます。 .cab ファイルは、Nano Server 上にローカルにコピーするか、アクセス可能なネットワーク上の場所にコピーする必要があります。 サービス スタック更新プログラムを適用する場合は、サービス スタック更新プログラムの適用後、他の更新プログラムを適用する前に、必ずサーバーを再起動してください。
 
 > [!NOTE]
-> New-NanoServerImage コマンドレットを使って Nano Server の VHD または VHDX イメージを作成した場合、仮想ハード ディスク ファイルの MaxSize を指定しないと既定のサイズの 4 GB になりますが、このサイズでは小さすぎて累積的な更新プログラムを適用できません。 更新プログラムをインストールする前に、Hyper-V マネージャー、ディスクの管理、PowerShell、その他のツールを使って、仮想ハード_ディスクとシステム ボリュームのサイズを 10 GB 以上に拡張するか、または DISM ツールの ScratchDir パラメーターを使って、スクラッチ ディレクトリを 10 GB 以上の空き領域のあるボリュームに設定してください。
+> New-NanoServerImage コマンドレットを使って Nano Server の VHD または VHDX イメージを作成した場合、仮想ハード ディスク ファイルの MaxSize を指定しないと既定のサイズの 4 GB になりますが、このサイズでは小さすぎて累積的な更新プログラムを適用できません。 更新プログラムをインストールする前に、Hyper-V マネージャー、ディスクの管理、PowerShell、その他のツールを使って、仮想ハード ディスクとシステム ボリュームのサイズを 10 GB 以上に拡張するか、DISM ツールの ScratchDir パラメーターを使って、スクラッチ ディレクトリを 10 GB 以上の空き領域のあるボリュームに設定してください。
 
 ```powershell
 $s = New-PSSession -ComputerName (Read-Host "Enter Nano Server IP address") -Credential (Get-Credential)
@@ -97,7 +97,7 @@ Copy-Item -ToSession $s -Path C:\ServicingPackages_cabs -Destination C:\Servicin
 Enter-PSSession $s
 ```
 
-- PowerShell を使用する
+- PowerShell の使用
 
    ```powershell
    # Apply the servicing stack update first and then restart
@@ -110,7 +110,7 @@ Enter-PSSession $s
    Restart-Computer; exit
    ```
 
-- dism.exe を使用する
+- dism.exe の使用
    ```powershell
    # Apply the servicing stack update first and then restart
    dism.exe /Online /Add-Package /PackagePath:C:\ServicingPackages_cabs\Windows10.0-KB3176936-x64.cab
@@ -155,7 +155,7 @@ Enter-PSSession -ComputerName (Read-Host "Enter Nano Server IP address") -Creden
    ```
    
 ## <a name="additional-options"></a>追加オプション
-Nano Server のその他の更新方法には、上記の方法と一部が共通していたり、上記の方法を補完したりするものがあります。 このようなオプションとして、Windows Server Update Services (WSUS)、System Center Virtual Machine Manager (VMM)、タスク スケジューラー、または Microsoft 以外のソリューションを使う方法があります。
+Nano Server のその他の更新方法には、上記の方法と一部が共通していたり、上記の方法を補完したりするものがあります。 このようなオプションとして、Windows Server Update Services (WSUS)、System Center Virtual Machine Manager (VMM)、タスク スケジューラ、または Microsoft 以外のソリューションを使う方法があります。
 - 次のレジストリ キーを設定して、[WSUS 用に Windows Update を構成](https://msdn.microsoft.com/library/dd939844(v=ws.10).aspx)します。
   - WUServer
   - WUStatusServer (通常は WUServer と同じ値を使います)

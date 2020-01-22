@@ -8,12 +8,12 @@ ms.assetid: ''
 author: kaushika-msft
 ms.author: kaushika-msft; v-tea
 ms.localizationpriority: medium
-ms.openlocfilehash: d4d9a8917bf455d8ed84207e2f9ecc6d13d01c3d
-ms.sourcegitcommit: b18ee742662b24b25d29ef1079b1c49f220f1d57
+ms.openlocfilehash: 4e977dbf71eb4afd004a773d06933fd8646ce8eb
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74691865"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947678"
 ---
 # <a name="resolve-windows-activation-error-codes"></a>Windows ライセンス認証のエラー コードの解決
 
@@ -26,7 +26,7 @@ ms.locfileid: "74691865"
 
 Windows の現在のバージョンと最新バージョンのボリューム ライセンス認証の詳細については、[ボリュームライセンス認証 [クライアント]](https://docs.microsoft.com/windows/deployment/volume-activation/volume-activation-windows-10) のページを参照してください。
 
-以前のバージョンの Windows でのボリューム ライセンス認証の詳細については、KB 929712 の「 [Windows Vista、Windows Server 2008、Windows Server 2008 R2、および Windows 7 のボリューム アクティベーション情報](https://support.microsoft.com/en-us/help/929712/volume-activation-information-for-windows-vista-windows-server-2008-wi)」を参照してください。
+以前のバージョンの Windows でのボリューム ライセンス認証の詳細については、KB 929712 の「 [Windows Vista、Windows Server 2008、Windows Server 2008 R2、および Windows 7 のボリューム アクティベーション情報](https://support.microsoft.com/help/929712/volume-activation-information-for-windows-vista-windows-server-2008-wi)」を参照してください。
 
 ## <a name="diagnostic-tool"></a>診断ツール
 
@@ -193,7 +193,7 @@ MAK はサポートされていません。
 
 #### <a name="resolution"></a>解決方法
 
-この問題を解決するには、使用している MAK が、Microsoft によって提供された MAK であることを確認してください。 MAK が有効かどうかを確認するには、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)にお問い合わせください。
+この問題を解決するには、使用している MAK が、Microsoft によって提供された MAK であることを確認してください。 MAK が有効かどうかを確認するには、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/Licensing/existing-customer/activation-centers)にお問い合わせください。
 
 ### <a name="0xc004c001-the-activation-server-determined-the-specified-product-key-is-invalid"></a>0xC004C001 ライセンス認証サーバーで、指定されたプロダクト キーは無効であることが判明しました。
 
@@ -203,7 +203,7 @@ MAK はサポートされていません。
 
 #### <a name="resolution"></a>解決方法
 
-キーが Microsoft によって提供された MAK であることを確認してください。 さらにサポートが必要な場合は、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)にお問い合わせください。
+キーが Microsoft によって提供された MAK であることを確認してください。 さらにサポートが必要な場合は、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/Licensing/existing-customer/activation-centers)にお問い合わせください。
 
 ### <a name="0xc004c003-the-activation-server-determined-the-specified-product-key-is-blocked"></a>0xC004C003 ライセンス認証サーバーで、指定されたプロダクト キーがブロックされていることが判明しました。
 
@@ -213,7 +213,7 @@ MAK は、ライセンス認証サーバーでブロックされています。
 
 #### <a name="resolution"></a>解決方法
 
-新しい MAK を入手するには、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)にお問い合わせください。 新しい MAK を入手したら、もう一度 Windows をインストールし、ライセンス認証してください。  
+新しい MAK を入手するには、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/Licensing/existing-customer/activation-centers)にお問い合わせください。 新しい MAK を入手したら、もう一度 Windows をインストールし、ライセンス認証してください。  
 
 ### <a name="0xc004c008-the-activation-server-determined-that-the-specified-product-key-could-not-be-used"></a>0xC004C008 ライセンス認証サーバーで、指定されたプロダクト キーは使用できないことが判明しました
 
@@ -223,7 +223,7 @@ KMS キーがライセンス認証の制限を超えました。 1 つの KMS �
 
 #### <a name="resolution"></a>解決方法
 
-追加のライセンス認証が必要な場合は、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)にお問い合わせください。  
+追加のライセンス認証が必要な場合は、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/Licensing/existing-customer/activation-centers)にお問い合わせください。  
 
 ### <a name="0xc004c020-the-activation-server-reported-that-the-multiple-activation-key-has-exceeded-its-limit"></a>0xC004C020 ライセンス認証サーバーで、マルチ ライセンス認証キーが制限値を超えたことが報告されました。
 
@@ -233,7 +233,7 @@ MAK がライセンス認証の制限を超えました。 設計上、MAK の�
 
 #### <a name="resolution"></a>解決方法
 
-追加のライセンス認証が必要な場合は、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)にお問い合わせください。
+追加のライセンス認証が必要な場合は、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/Licensing/existing-customer/activation-centers)にお問い合わせください。
 
 ### <a name="0xc004c021-the-activation-server-reported-that-the-multiple-activation-key-extension-limit-has-been-exceeded"></a>0xC004C021 ライセンス認証サーバーで、マルチ ライセンス認証キーの拡張が制限値を超えたことが報告されました。
 
@@ -243,7 +243,7 @@ MAK がライセンス認証の制限を超えました。 設計上、MAK の�
 
 #### <a name="resolution"></a>解決方法
 
-追加のライセンス認証が必要な場合は、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)にお問い合わせください。
+追加のライセンス認証が必要な場合は、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/Licensing/existing-customer/activation-centers)にお問い合わせください。
 
 ### <a name="0xc004f009-the-software-protection-service-reported-that-the-grace-period-expired"></a>0xC004F009 ソフトウェア保護サービスで、猶予期間の期限が切れたことが報告されました。
 
@@ -253,7 +253,7 @@ MAK がライセンス認証の制限を超えました。 設計上、MAK の�
 
 #### <a name="resolution"></a>解決方法
 
-サポートが必要な場合は、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)にお問い合わせください。
+サポートが必要な場合は、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/Licensing/existing-customer/activation-centers)にお問い合わせください。
 
 ### <a name="0xc004f00f-the-software-licensing-server-reported-that-the-hardware-id-binding-is-beyond-level-of-tolerance"></a>0xC004F00F ソフトウェア ライセンス サーバーで、ハードウェア ID バインドが許容範囲のレベルを超えていることが報告されました。
 
@@ -293,7 +293,7 @@ CID が正しく入力されたことを確認します。
 
 このエラー メッセージの全文は次のような内容です。
 
-> エラー:無効なボリューム ライセンス キー。 ライセンス認証をするには、プロダクト キーをマルチ ライセンス認証キー (MAK) または販売キーに変更する必要があります。 You must have a qualifying operating system license AND a Volume license Windows 7 upgrade license, or a full license for Windows 7 from a retail source. (使用条件を満たしているオペレーティング システムのライセンスおよびボリューム ライセンスの Windows 7 アップグレード ライセンスか、または販売元からの Windows 7 完全ライセンスが必要です。) このソフトウェアをこれ以外のどのような状況においてもインストールすることは、契約および該当する著作権に関する法律に違反することになります。  
+> エラー: 無効なボリューム ライセンス キー。 ライセンス認証をするには、プロダクト キーをマルチ ライセンス認証キー (MAK) または販売キーに変更する必要があります。 You must have a qualifying operating system license AND a Volume license Windows 7 upgrade license, or a full license for Windows 7 from a retail source. (使用条件を満たしているオペレーティング システムのライセンスおよびボリューム ライセンスの Windows 7 アップグレード ライセンスか、または販売元からの Windows 7 完全ライセンスが必要です。) このソフトウェアをこれ以外のどのような状況においてもインストールすることは、契約および該当する著作権に関する法律に違反することになります。  
 
 このエラー テキストは正しいですが、あいまいです。 このエラーは、Windows の正規のエディションを実行している OEM システムとして認識する Windows マーカーが、コンピューターの BIOS にないことを示しています。 この情報は、KMS クライアントのライセンス認証に必要です。 このコードの具体的な意味: "エラー: 無効なボリューム ライセンス キー"
 
@@ -310,7 +310,7 @@ Windows 7 ボリューム エディションは、アップグレードのみを
   > ライセンス認証をしようとしたときにエラー 0x80072ee2 が発生した場合は、代わりに以下の電話によるライセンス認証方法を使用します。
 - 次の手順に従って、電話でライセンス認証を行います。
    1. **slmgr /dti** を実行し、インストール ID の値を記録します。 </li>
-   1. 確認 ID を受け取るために、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)にお問い合わせいただき、インストール ID をお伝えください。</li>
+   1. 確認 ID を受け取るために、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/Licensing/existing-customer/activation-centers)にお問い合わせいただき、インストール ID をお伝えください。</li>
    1. 確認 ID を使用してライセンス認証をするには、**slmgr /atp &lt;確認 ID&gt;** を実行します。
 
 ### <a name="0xc004f038-the-count-reported-by-your-key-management-service-kms-is-insufficient"></a>0xC004F038 キー管理サービス (KMS) で報告された数が不足しています。
@@ -392,7 +392,7 @@ Windows ライセンス認証ツール (WAT) で、システムが正規では�
 
 #### <a name="resolution"></a>解決方法
 
-サポートが必要な場合は、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/en-us/Licensing/existing-customer/activation-centers)にお問い合わせください。
+サポートが必要な場合は、[マイクロソフト ライセンス認証専用窓口](https://www.microsoft.com/Licensing/existing-customer/activation-centers)にお問い合わせください。
 
 ### <a name="0xc004f065-the-software-protection-service-reported-that-the-application-is-running-within-the-valid-non-genuine-period"></a>0xC004F065 The Software Protection Service reported that the application is running within the valid non-genuine period (ソフトウェア保護サービスで、アプリケーションは有効な期間内 (非正規版) で実行されていることが報告されました)
 

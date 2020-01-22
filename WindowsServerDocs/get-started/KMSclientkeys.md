@@ -1,6 +1,6 @@
 ---
 title: KMS クライアント セットアップ キー
-description: KMS サーバーから Windows 製品をアクティブ化するために必要なキーです。
+description: KMS サーバーから Windows 製品をアクティブ化するために必要なキー
 ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
@@ -9,16 +9,16 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 11/12/2019
 ms.topic: get-started-article
-ms.openlocfilehash: e2879c56b1dd41b8d357959cca473dd69da77d10
-ms.sourcegitcommit: b9ec35416a06854c1bc875a2b731d42a436fe313
+ms.openlocfilehash: f2320b80fb372a227098f952dc8e7f0758420f34
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73956082"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947827"
 ---
 # <a name="kms-client-setup-keys"></a>KMS クライアント セットアップ キー
 
->適用対象:Windows Server 2019、Windows Server 半期チャネル、Windows Server 2016、Windows 10
+>適用先:Windows Server 2019、Windows Server 半期チャネル、Windows Server 2016、Windows 10
 
 Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows 7、Windows Server 2008 R2、Windows Vista、and Windows Server 2008 のボリューム ライセンス版が実行されているコンピューターは、既定で、追加の構成が必要ない KMS クライアントとなります。
 
@@ -27,21 +27,21 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 
 **ここに記載されているキー (GVLK) を使用するには、お使いのデプロイ内で KMS ホストを先に実行しておく必要があります。** まだ KMS ホストを構成していない場合は、「[KMS ライセンス認証の展開](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx)」でホストの設定手順を参照してください。
 
-コンピューターを KMS ホスト、MAK、または製品版の Windows から KMS クライアントに変換する場合は、次の表を参照して、該当するセットアップ キー (GVLK) をインストールします。 クライアント セットアップ キーをインストールするには、クライアントで管理コマンド プロンプトを開き、「**slmgr /ipk \<セットアップ キー\>** 」と入力し、**Enter** キーを押します。
+コンピューターを KMS ホスト、MAK、または製品版の KMS クライアントから変換する場合は、次の表を参照して、該当するセットアップ キー (GVLK) をインストールしてください。 クライアント セットアップ キーをインストールするには、クライアントで管理コマンド プロンプトを開き、「**slmgr /ipk \<セットアップ キー\>** 」と入力し、**Enter** キーを押します。
 
-| 目的の処理    | 使用するリソース   |
+| …する場合    | …これらのリソースを使用   |
 |--------------------|------------------------|
 | ボリュームライセンス認証シナリオ以外で Windows のライセンスを認証する (つまり、製品版の Windows のライセンスを認証する) 場合、**これらのキーは機能しません**。 | 製品版の Windows には次のリンクを使用します。 |
-| Windows 8.1 または Windows Server 2012 R2 システムのライセンスを認証するときに発生する次のエラーを修正する。“Error:0xC004F050 ソフトウェア ライセンス サービスで、プロダクト キーは無効であることが報告されました”… | Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012 を実行している場合、KMS ホストに[この更新プログラムをインストールします](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2)。 |
+| Windows 8.1 または Windows Server 2012 R2 システムのライセンスを認証するときに発生する次のエラーを修正する。"エラー: 0xC004F050 ソフトウェア ライセンス サービスで、プロダクト キーは無効であることが報告されました”… | Windows 8.1、 Windows Server 2012 R2、Windows 8、Windows Server 2012 を実行している場合、KMS ホストに[この更新プログラムをインストールします](https://support.microsoft.com/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2) 。 |
 
--   [Windows 10 を入手する](https://www.microsoft.com/en-us/windows/get-windows-10)
+-   [Windows 10 を入手する](https://www.microsoft.com/windows/get-windows-10)
 
 -   [新しい Windows プロダクト キーを取得する](https://support.microsoft.com/help/10749/windows-product-key)
 
 -   [正規の Windows のヘルプと使い方](https://support.microsoft.com/help/15087/windows-genuine)
 
 
->   Windows Server 2008 R2 または Windows 7 を実行している場合は、Windows 10 クライアントの KMS ホストとしてのこれらの使用をサポートする更新プログラムを監視します。
+>   Windows Server 2008 R2 または Windows 7 を実行している場合は、Windows 10 クライアントの KMS ホストとしてのこれらの使用をサポートする更新プログラムに注意します。
 
 ## <a name="windows-server-semi-annual-channel-versions"></a>Windows Server 半期チャネル バージョン
 
@@ -71,7 +71,7 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 
 ## <a name="windows-10-all-supported-semi-annual-channel-versions"></a>Windows 10、サポートされているすべての半期チャネル バージョン
 
-サポートされているバージョンとサービス終了日の情報については、「[Windows ライフサイクルのファクト シート](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet)」をご覧ください。
+サポートされているバージョンとサービス終了日の情報については、「[Windows ライフサイクルのファクト シート](https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet)」をご覧ください。
 
 | オペレーティング システムのエディション          | KMS クライアント セットアップ キー          |
 |-----------------------------------|-------------------------------|
@@ -113,7 +113,7 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 
 ## <a name="earlier-versions-of-windows-server"></a>旧バージョンの Windows Server
 
-### <a name="windows-server-version-1803"></a>Windows Server Version 1803
+### <a name="windows-server-version-1803"></a>Windows Server バージョン 1803
 
 | オペレーティング システムのエディション       | KMS クライアント セットアップ キー          |
 |--------------------------------|-------------------------------|
@@ -207,7 +207,7 @@ Windows Server、Windows 10、Windows 8.1、Windows Server 2012 R2、Windows 8�
 | Windows 7 Enterprise E                           | C29WB-22CC8-VJ326-GHFJW-H9DH4 |
 
 
-関連項目
+「
 
 • [ボリューム ライセンス認証の計画](https://technet.microsoft.com/library/jj134042(v=ws.11).aspx)
 

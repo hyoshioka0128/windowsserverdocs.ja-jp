@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 155e828c77670c7c489b334ec3e7c49aa0809d4d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 9e8b0c04137ff3b11cdaa7aba3c7899ca6300848
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391618"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75947739"
 ---
 # <a name="system-requirements"></a>システム要件
 
@@ -43,7 +43,7 @@ Windows Server 2016 のシステム要件の概要は次のとおりです。 �
 > 予定している展開の範囲が多岐にわたる場合、通常適用可能な "推奨" システム要件が現実的ではなくなります。 特定のサーバーの役割に必要なリソースの詳細については、展開する予定の各サーバーの役割のドキュメントで確認してください。 良い結果を得るために、展開のテストを実施して特定の展開シナリオに合ったシステム要件を決定してください。  
 
 
-## <a name="processor"></a>処理者  
+## <a name="processor"></a>プロセッサ  
 プロセッサのパフォーマンスは、プロセッサのクロック周波数だけでなく、プロセッサ コアの数やプロセッサ キャッシュのサイズの影響も受けます。 この製品のプロセッサの要件を次に示します。  
 
 **最小**:  
@@ -122,10 +122,10 @@ Windows Server 2016 を実行するコンピューターでは、PCI Express ア
 > - TPM をオフにする UEFI オプションは必須ではありません。  
 
 ## <a name="installation-of-nano-server"></a>Nano Server のインストール  
-Windows Server 2016 を Nano Server としてインストールする詳細な手順については、「[Nano Server のインストール](Getting-Started-with-Nano-Server.md)」を参照してください。
+Windows Server 2016 を Nano Server としてインストールする詳細な手順については、「[Install Nano Server](Getting-Started-with-Nano-Server.md)」 (Nano Server のインストール) を参照してください。
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="additional-resources"></a>その他の情報
 - [Windows のプロセッサの要件](https://docs.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)
 - [Windows Server 2016 の Standard エディションと Datacenter エディションの比較](https://docs.microsoft.com/windows-server/get-started/2016-edition-comparison)
 - [Windows 10 のシステム要件](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
-- [Windows Server 2016 ライセンス データシートのダウンロード](http://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)
+- [Windows Server 2016 ライセンス データシートのダウンロード](https://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)
