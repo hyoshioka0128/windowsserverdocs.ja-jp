@@ -9,16 +9,16 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.assetid: ''
 author: kaushika-msft
-manager: ''
+manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b11dac044c38f1ae80d4401fbb66af0317ab56
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b934a585b3058cc2eec642cdb1234c8c9a015544
+ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870696"
+ms.lasthandoff: 01/18/2020
+ms.locfileid: "76265954"
 ---
 # <a name="general-remote-desktop-connection-troubleshooting"></a>リモート デスクトップ接続の一般的なトラブルシューティング
 
@@ -202,7 +202,7 @@ RDP ポートを確認または変更するには、レジストリ エディタ
     ```
   
     ![netstat コマンドでは、ポートおよびそれをリッスンしているサービスのリストが生成されます。](../media/troubleshoot-remote-desktop-connections/WPS_netstat.png)
-3. 3\. 状態が「**LISTENING**」の TCP ポート 3389 (または割り当てられた RDP ポート) のエントリを探します。 
+3. 状態が「**LISTENING**」の TCP ポート 3389 (または割り当てられた RDP ポート) のエントリを探します。 
     > [!NOTE]  
    > そのポートを使用しているプロセスまたはサービスのプロセス ID (PID) が、[PID] 列の下に表示されます。
 4. ポート 3389 (または、割り当てられている RDP ポート) を使っているアプリケーションを確認するには、次のコマンドを入力します。  
