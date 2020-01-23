@@ -1,20 +1,20 @@
 ---
 ms.assetid: aa892a85-f95a-4bf1-acbb-e3c36ef02b0d
-title: Windows Server 2016 の Active Directory フェデレーション サービス (AD FS) の新機能
+title: Windows Server 2016 の Active Directory フェデレーション サービスの新機能
 description: ''
 author: billmath
 ms.author: billmath
 manager: daveba
-ms.date: 04/23/2019
+ms.date: 01/22/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6294c7b6ead0a9fa338f8b2cc8134b750f7e3e8f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: adce37d8d06399d3a00221a12f3449244720ade7
+ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385550"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519484"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Active Directory フェデレーション サービス (AD FS) の新機能
 
@@ -87,9 +87,8 @@ AD FS 2019 には、次の展開の更新が含まれるようになりました
  
 サーバー2019で AD FS を使用すると、スコープパラメーターに埋め込まれたリソース値を渡すことができます。 これは Azure AD に対して認証を行う方法と同じです。 
 
-スコープパラメーターは、各エントリがリソース/スコープとして構成されるスペース区切りのリストとして構成できるようになりました。 次に例を示します。  
+スコープパラメーターは、各エントリがリソース/スコープとして構成されるスペース区切りのリストとして構成できるようになりました。 
 
-**有効なサンプル要求 > を作成 <**
 > [!NOTE]
 > 認証要求では、1つのリソースのみを指定できます。 要求に複数のリソースが含まれている場合、AD FS はエラーを返し、認証は失敗します。 
 
@@ -100,7 +99,7 @@ AD FS 2019 には、次の展開の更新が含まれるようになりました
 
 ![Proofkey](media/whats-new-in-active-directory-federation-services-for-windows-server-2016/adfs2019.png)
 
-A. クライアントは、"code_verifier" という名前のシークレットを作成して記録し、変換されたバージョン "t (code_verifier)" ("code_challenge" と呼ばれます) を派生します。これは、変換メソッド "t_m" と共に OAuth 2.0 Authorization 要求で送信されます。 
+A キーを押します。 クライアントは、"code_verifier" という名前のシークレットを作成して記録し、変換されたバージョン "t (code_verifier)" ("code_challenge" と呼ばれます) を派生します。これは、変換メソッド "t_m" と共に OAuth 2.0 Authorization 要求で送信されます。 
 
 B. 承認エンドポイントは通常どおり応答しますが、"t (code_verifier)" と変換メソッドを記録します。 
 
@@ -109,14 +108,14 @@ C. 次にクライアントは、通常どおりアクセストークン要求�
 D. AD FS によって "code_verifier" が変換され、(B) から "t (code_verifier)" と比較されます。  同じでない場合、アクセスは拒否されます。 
 
 #### <a name="faq"></a>FAQ 
-**Q..** Azure AD に対する要求の実行方法など、スコープの値の一部としてリソース値を渡すことはできますか。 
-</br>**ある.** サーバー2019で AD FS を使用すると、スコープパラメーターに埋め込まれたリソース値を渡すことができます。 スコープパラメーターは、各エントリがリソース/スコープとして構成されるスペース区切りのリストとして構成できるようになりました。 次に例を示します。  
+**Q.** Azure AD に対する要求の実行方法など、スコープの値の一部としてリソース値を渡すことはできますか。 
+</br>**A.** サーバー2019で AD FS を使用すると、スコープパラメーターに埋め込まれたリソース値を渡すことができます。 スコープパラメーターは、各エントリがリソース/スコープとして構成されるスペース区切りのリストとして構成できるようになりました。 例  
 **有効なサンプル要求 > を作成 <**
 
-**Q..** PKCE 拡張機能はサポートさ AD FS ますか?
-</br>**ある.** サーバー2019の AD FS では、OAuth 認証コード付与フロー用のコード交換 (PKCE) の証明キーがサポートされています 
+**Q.** PKCE 拡張機能はサポートさ AD FS ますか?
+</br>**A.** サーバー2019の AD FS では、OAuth 認証コード付与フロー用のコード交換 (PKCE) の証明キーがサポートされています 
 
-## <a name="whats-new-in-active-directory-federation-services-for-windows-server-2016"></a>Windows Server 2016 の Active Directory フェデレーション サービス (AD FS) の新機能   
+## <a name="whats-new-in-active-directory-federation-services-for-windows-server-2016"></a>Windows Server 2016 の Active Directory フェデレーション サービスの新機能   
 以前のバージョンの AD FS に関する情報を探している場合は、次の記事を参照してください。  
  [Windows Server 2012 または 2012 R2 の ADFS](https://technet.microsoft.com/library/hh831502.aspx)と[AD FS 2.0](https://technet.microsoft.com/library/adfs2.aspx)  
 
@@ -154,13 +153,17 @@ AD FS では、ハイブリッド シナリオで条件付きアクセス ポリ
 ![新しいもの](media/whats-new-in-active-directory-federation-services-for-windows-server-2016/ADFS_ITPRO4.png)  
 
  クラウドでデバイスベースの条件付きアクセスを使用する方法の詳細については、   
- *  [条件付きアクセスの Azure Active Directory](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access/)
+ *  [Azure Active Directory の条件付きアクセス](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access/)
 
 デバイスベースの条件付きアクセスを AD FS で使用する方法の詳細については、
 *  [AD FS を使用したデバイスベースの条件付きアクセスの計画](../../ad-fs/deployment/Plan-Device-based-Conditional-Access-on-Premises.md)  
 * [AD FS の Access Control ポリシー](../../ad-fs/operations/Access-Control-Policies-in-AD-FS.md)  
 
-### <a name="sign-in-with-windows-hello-for-business"></a>Windows Hello for Business でサインイン   
+### <a name="sign-in-with-windows-hello-for-business"></a>Windows Hello for Business でサインイン  
+
+> [!NOTE]
+> 現在、Google Chrome と Chromium オープンソースプロジェクトブラウザー[上に構築された新しい Microsoft Edge](https://www.microsoft.com/edge?form=MB110A&OCID=MB110A)は、ブラウザーベースのシングルサインオン (SSO) と Microsoft Windows Hello for Business ではサポートされていません。 Internet Explorer または以前のバージョンの Microsoft Edge を使用してください。  
+
 Windows 10 デバイスでは、Windows Helloと Windows Hello for Business、ユーザーのパスワードに置き換えて、ユーザーのジェスチャ (PIN、指紋、顔認識などの生体認証ジェスチャ) によって保護されている強力なデバイス主体ユーザー資格情報を紹介します。 AD FS 2016 では、これらの新しい Windows 10 機能がサポートされているため、ユーザーはパスワードを指定しなくても、イントラネットまたはエクストラネットから AD FS アプリケーションにサインインできるようになります。
 
 詳細については、Microsoft Windows Hello for Business 組織で使用します。

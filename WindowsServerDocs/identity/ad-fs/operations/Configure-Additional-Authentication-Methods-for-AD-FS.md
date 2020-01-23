@@ -9,12 +9,12 @@ ms.date: 07/26/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 89a1f745e1e928a5e5bd79adb94e41fd9da399d9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a7cfc80a1e137a4184afa0e8b33a488f1e35dcfa
+ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948547"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76519454"
 ---
 # <a name="configure-additional-authentication-methods-for-ad-fs"></a>AD FS の追加の認証方法の構成
 
@@ -33,6 +33,7 @@ Windows Server 2012 R2 の AD FS で、Microsoft とサードパーティの認�
 |プロバイダー|提供|詳細情報へのリンク|
 |-|-|-| 
 |aPersona|Microsoft ADFS SSO の aPersona Adaptive Multi-Factor Authentication|[aPersona ASM ADFS アダプター](https://www.apersona.com/adfs)|
+|Cyphercor Inc.|AD FS の LoginTC Multi-Factor Authentication|[LoginTC AD FS コネクタ](https://www.logintc.com/docs/connectors/adfs.html)|
 |Duo Security|AD FS 用の Duo MFA アダプター|[AD FS のための Duo 認証](https://duo.com/docs/adfs)|
 |Futurae|AD FS 用の Futurae Authentication Suite|[Futurae 強力な認証](https://futurae.com)|
 |Gemalto|Gemalto アイデンティティ & セキュリティ サービス|[http://www.gemalto.com/identity](http://www.gemalto.com/identity)|
