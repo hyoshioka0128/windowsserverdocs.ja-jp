@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bd8a26d158f53121074881ac8ff204287f9a19ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a14233e01c19df650d1059e1b60cd5398b05709a
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382968"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75946994"
 ---
 # <a name="manage-software-inventory-logging"></a>ソフトウェア インベントリ ログの管理
 
@@ -31,20 +31,20 @@ ms.locfileid: "71382968"
 - **Windows Server 2012 (Standard または Datacenter Edition)** 
 
 > [!NOTE] 
-> 以下の更新プログラムパッケージを適用する前に、 [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855)がインストールされていることを確認してください。
+> 以下の更新プログラムパッケージを適用する前に、 [WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855)がインストールされていることを確認してください。
 
--  Windows Server 2012 の WMF 4.0 更新プログラム パッケージ: [KB 3119938](https://support.microsoft.com/en-us/kb/3119938)
+-  Windows Server 2012 の WMF 4.0 更新プログラム パッケージ: [KB 3119938](https://support.microsoft.com/kb/3119938)
 
 - **Windows Server 2008 R2 SP1**
 
 > [!NOTE] 
-> 以下の更新プログラムパッケージを適用する前に、 [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855)がインストールされていることを確認してください。
+> 以下の更新プログラムパッケージを適用する前に、 [WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855)がインストールされていることを確認してください。
 
 
-- [.NET Framework 4.5](https://www.microsoft.com/en-us/download/details.aspx?id=30653)が必要
+- [.NET Framework 4.5](https://www.microsoft.com/download/details.aspx?id=30653)が必要
 
 
-- Windows Server 2008 R2 の WMF 4.0 更新プログラム パッケージ: [KB 3109118](https://support.microsoft.com/en-us/kb/3109118)
+- Windows Server 2008 R2 の WMF 4.0 更新プログラム パッケージ: [KB 3109118](https://support.microsoft.com/kb/3109118)
 
 
 この機能を使用したインベントリには、2 つの主な方法があります。  
@@ -90,7 +90,7 @@ SIL ログ記録の開始にはある程度の計画や先見性が含まれま�
 -   [Windows Server 2012 R2 Hyper-v 環境でのソフトウェアインベントリログの使用 (KB 3000850 なし)](manage-software-inventory-logging.md#BKMK_Step12)  
   
 > [!NOTE]  
-> このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳細については、「コマンドレットの使用」を参照してください。
+> このトピックでは、説明した手順の一部を自動化するのに使用できる Windows PowerShell コマンドレットのサンプルを示します。 詳細については、「コマンドレットの使用」を参照してください。
 
   
 ## <a name="BKMK_Step1"></a>ソフトウェアインベントリログの開始と停止  
@@ -127,9 +127,9 @@ SIL ログ記録の開始にはある程度の計画や先見性が含まれま�
   
 3.  正しい SSL 証明書 (自分のネットワーク用) を、データの転送元であるローカル サーバーの **Local Machine/Personal Store** (または **/LocalMachine/MY**) にインストールします。  
   
-**Start-SilLogging** を使用する前に、これらの手順を実行することをお勧めします。  **Start-SilLogging**を使用した後にこれらを使用する場合、必要なのは単に SIL を停止してからもう一度起動することだけです。  または、Publish-SilData コマンドレットを使用し、集計サーバーに、このサーバーのデータを完全に補完するデータがあることを確認します。  
+**Start-SilLogging**を使用する前に、これらの手順を実行することをお勧めします。  **Start-SilLogging**を使用した後にこれらを使用する場合、必要なのは単に SIL を停止してからもう一度起動することだけです。  または、Publish-SilData コマンドレットを使用し、集計サーバーに、このサーバーのデータを完全に補完するデータがあることを確認します。  
   
-SIL フレームワークの全体的な設定の包括的なガイドとしては、「 [Software Inventory Logging Aggregator](software-inventory-logging-aggregator.md)」をご覧ください。  特に、**Publish-SilData** でエラーが発生する場合、または SIL ログが失敗する場合は、トラブルシューティングのセクションをご覧ください。  
+SIL フレームワークの全体的な設定の包括的なガイドとしては、「 [Software Inventory Logging Aggregator](software-inventory-logging-aggregator.md)」をご覧ください。  特に、 **Publish-SilData** でエラーが発生する場合、または SIL ログが失敗する場合は、トラブルシューティングのセクションをご覧ください。  
   
 ## <a name="BKMK_Step2"></a>時間の経過に伴うソフトウェアインベントリログ  
 管理者によってソフトウェア インベントリ ログが開始されると、1 時間ごとのデータ収集と集計サーバー (ターゲット URI) へのデータ転送が始まります。 最初の転送は、 [Get-SilData](https://technet.microsoft.com/library/dn283388.aspx) が取得し、ある時点でコンソールに表示したものと同じデータの完全なデータ セットです。 その後、各間隔で SIL はデータを確認し、最新の収集からデータに変更がない場合は、識別用の小さな受信確認のみをターゲット集計サーバーに転送します。 値が変更されている場合は、SIL は完全なデータ セットを再度送信します。  
@@ -295,7 +295,7 @@ Windows Server 2012 R2 Hyper-v ホストでソフトウェアインベントリ�
   
 ![](../media/software-inventory-logging/SILHyper-VExample2.png)  
   
-## <a name="see-also"></a>参照  
+## <a name="see-also"></a>関連項目  
 [ソフトウェアインベントリログを使ってみる](get-started-with-software-inventory-logging.md)  
 [ソフトウェア インベントリ ログ アグリゲーター](software-inventory-logging-aggregator.md)  
 [Windows PowerShell のソフトウェアインベントリログコマンドレット](https://technet.microsoft.com/library/dn283390.aspx)  

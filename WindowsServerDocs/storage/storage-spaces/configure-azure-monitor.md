@@ -3,20 +3,18 @@ title: Azure Monitor の理解と構成
 description: Azure Monitor とは何か、および Windows Server 2016 および2019で記憶域スペースダイレクトクラスターの電子メールと sms アラートを構成する方法に関する詳細な設定情報。
 keywords: 記憶域スペースダイレクト、azure monitor、通知、電子メール、sms
 ms.assetid: ''
-ms.prod: ''
+ms.prod: windows-server-threshold
 ms.author: adagashe
 ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
-ms.date: 3/26/2019
-ms.localizationpriority: ''
-ms.openlocfilehash: 4a11ad670bdd26cdc771bb5ae357db4928995bb8
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.date: 01/10/2020
+ms.openlocfilehash: 933a22dad76f80b8ff76f604089bfd7c9bf3e207
+ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352633"
----
+ms.lasthandoff: 01/13/2020
+ms.locfileid: "75919978"
 ---
 # <a name="use-azure-monitor-to-send-emails-for-health-service-faults"></a>Azure Monitor を使用してヘルスサービスエラーのメールを送信する
 
@@ -26,6 +24,14 @@ Azure Monitor は、クラウドおよびオンプレミス環境の利用統計
 
 これは、オンプレミスのハイパー収束クラスターに特に役立ちます。 Azure Monitor 統合されたを使用すると、クラスターに何らかの問題が発生した場合 (または収集されたデータに基づいて他のアクティビティにフラグを設定する場合) に、電子メール、テキスト (SMS)、およびその他のアラートを構成して、ping を実行できるようになります。 次に、Azure Monitor の動作、Azure Monitor のインストール方法、通知を送信するように構成する方法について簡単に説明します。
 
+System Center を使用している場合は、Windows Server 2019 と Windows Server 2016 記憶域スペースダイレクトクラスターの両方を監視する[記憶域スペースダイレクト管理パック](https://www.microsoft.com/download/details.aspx?id=100782)を確認してください。
+
+この管理パックには次の機能が含まれています。
+
+* 物理ディスクのヘルスとパフォーマンスの監視
+* 記憶域ノードの正常性とパフォーマンスの監視
+* 記憶域プールの正常性とパフォーマンスの監視
+* ボリュームの回復性の種類と重複除去の状態
 
 ## <a name="understanding-azure-monitor"></a>Azure Monitor について
 
@@ -127,7 +133,7 @@ Microsoft Monitoring Agent for Windows をインストールする前に、Log A
 8. **[インストールの準備完了]** ページで、設定内容を確認し、 **[インストール]** をクリックします。
 9. **[構成は正常に終了しました]** ページで **[完了]** をクリックします。
 
-完了すると、 Microsoft Monitoring Agent に Microsoft 管理エージェント」に記載されたステップに従ってエージェントをインストールします。 構成を検証して、エージェントが Log Analytics に接続されていることを確認できます。 接続されていれば、 **[Azure Log Analytics]** タブに、エージェントにより、**Microsoft Monitoring Agent が Microsoft Log Analytics サービスに正常に接続している**ことを示すメッセージが表示されます。 
+完了すると、 **Microsoft Monitoring Agent** に **Microsoft 管理エージェント**」に記載されたステップに従ってエージェントをインストールします。 構成を検証して、エージェントが Log Analytics に接続されていることを確認できます。 接続されていれば、 **[Azure Log Analytics]** タブに、エージェントにより、**Microsoft Monitoring Agent が Microsoft Log Analytics サービスに正常に接続している**ことを示すメッセージが表示されます。 
 
 ![Log Analytics への MMA 接続の状態](media/configure-azure-monitor/log-analytics-mma-laworkspace-status.png)
 
@@ -234,11 +240,11 @@ Event | where (EventLevelName == "Error")
 10. **[OK]** をクリックしてアクション グループを完成させます。 
 11. **[アラート ルールの作成]** をクリックしてアラート ルールを完成させます。 すぐに実行が開始されます。<br><br> ![新しいアラート ルールの作成の完了](media/configure-azure-monitor/alert-rule-01.png)<br> 
 
-## <a name="see-alerts"></a>アラートを表示する
+### <a name="example-alert"></a>アラートの例
 
 参考までに、Azure でのアラートの例を次に示します。
 
-![Azure でのアラートの Gif "](media/configure-azure-monitor/alert.gif)
+![Azure でのアラートの Gif](media/configure-azure-monitor/alert.gif)
 
 Azure Monitor によって送信される電子メールの例を次に示します。
 

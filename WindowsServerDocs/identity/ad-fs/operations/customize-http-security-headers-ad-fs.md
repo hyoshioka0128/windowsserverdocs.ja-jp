@@ -9,12 +9,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 7fd06c06a2ea7af93b87c471f77b788ac51bddac
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: b81d498c6e601fcce0a0760cb4877fcc98c8beb9
+ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949215"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725797"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>AD FS 2019 で HTTP セキュリティ応答ヘッダーをカスタマイズする 
  
@@ -34,7 +34,7 @@ ms.locfileid: "75949215"
 ## <a name="scenarios"></a>シナリオ 
 1. 管理者は、 [**Http Strict-Transport-Security (HSTS)** ](#http-strict-transport-security-hsts)を有効にしています (HTTPS 暗号化経由のすべての接続を強制します)。これにより、ハッキングされる可能性のあるパブリック wifi アクセスポイントから http を使用して web アプリにアクセスする可能性があるユーザーを保護できます。 また、サブドメインの HSTS を有効にすることで、セキュリティをさらに強化したいと考えています。  
 2. 管理者が、web ページの clickjacked を防ぐために、 [**X フレームオプション**](#x-frame-options)の応答ヘッダーを構成しました (iFrame に web ページが表示されないようにします)。 ただし、新しいビジネス要件によって、異なるオリジン (ドメイン) を持つアプリケーションからデータ (iFrame) を表示する必要があるため、ヘッダー値をカスタマイズする必要があります。
-3. 管理者は[ **、クロス**](#x-xss-protection)スクリプティング攻撃を検出した場合に、クロススクリプティング攻撃を防止し、ページをブロックすることを許可しています。 ただし、編集後にページが読み込まれるようにするには、ヘッダーをカスタマイズする必要があります。  
+3. 管理者は[ **、クロス**](#x-xss-protection)スクリプティング攻撃を検出した場合に、クロススクリプティング攻撃を防止し、ページをブロックすることを許可しています。 ただし、このような場合は、ヘッダーをカスタマイズして、校正後にページを読み込むことができるようにする必要があります。  
 4. 管理者は、[**クロスオリジンリソース共有 (CORS)** ](#cross-origin-resource-sharing-cors-headers)を有効にし、AD FS の配信元 (ドメイン) を設定して、単一ページアプリケーションが別のドメインで web API にアクセスできるようにする必要があります。  
 5. 管理者は、クロスサイトスクリプトとデータインジェクション攻撃を防止するために、[**コンテンツセキュリティポリシー (CSP)** ](#content-security-policy-csp)ヘッダーを有効にしています。これにより、クロスドメイン要求が禁止されます。 ただし、新しいビジネス要件により、web ページが任意の配信元からイメージを読み込んで、メディアを信頼できるプロバイダーに制限するように、ヘッダーをカスタマイズする必要があります。  
 
@@ -84,7 +84,7 @@ AD FS 既定では、対話型ログインの実行時に外部アプリケー�
  
 この HTTP セキュリティ応答ヘッダーは、ブラウザーとの通信に使用されます。これは、&lt;フレーム&gt;/&lt;iframe&gt;にページを表示できるかどうかを示します。 ヘッダーは、次のいずれかの値に設定できます。 
  
-- **拒否**–フレーム内のページは表示されません。 これは既定の推奨設定です。  
+- **拒否**–フレーム内のページは表示されません。 これが既定の推奨設定です。  
 - **sameorigin** –原点が web ページの配信元と同じ場合にのみ、ページがフレームに表示されます。 このオプションは、すべての先祖が同じオリジンに含まれていない限り、あまり役に立ちません。  
 - **allow from <specified origin>** -ページは、配信元 (たとえば、 https://www ) の場合にのみフレームに表示されます。com) は、ヘッダー内の特定のオリジンと一致します。 
 
@@ -111,7 +111,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options"
  
 - **0** : XSS フィルター処理を無効にします。 推奨されません。  
 - **1** : XSS フィルター処理を有効にします。 XSS 攻撃が検出されると、ブラウザーによってページがサニタイズされます。   
-- **1; mode = block** – XSS フィルターを有効にします。 XSS 攻撃が検出されると、ブラウザーはページのレンダリングを防止します。 これは既定の推奨設定です。  
+- **1; mode = block** – XSS フィルターを有効にします。 XSS 攻撃が検出されると、ブラウザーはページのレンダリングを防止します。 これが既定の推奨設定です。  
 
 #### <a name="x-xss-protection-customization"></a>X-XSS-保護のカスタマイズ 
 既定では、ヘッダーは1に設定されます。mode = block;ただし、管理者は `Set-AdfsResponseHeaders` コマンドレットを使用して値を変更できます。  
@@ -183,12 +183,12 @@ CSP ヘッダーをカスタマイズする場合は、ブラウザーで web �
  
 **既定の-src**ディレクティブは、各ディレクティブを明示的に指定せずに[-src ディレクティブ](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/default-src)を変更するために使用されます。 たとえば、次の例では、ポリシー1はポリシー2と同じです。  
 
-ポリシー 1 
+ポリシー1 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src 'self'" 
 ```
  
-ポリシー 2
+ポリシー2
 ```PowerShell 
 Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "script-src ‘self'; img-src ‘self'; font-src 'self';  
 frame-src 'self'; manifest-src 'self'; media-src 'self';" 
@@ -210,7 +210,7 @@ Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue
 >[!NOTE]
 >AD FS は、認証プロセスで JavaScript を使用するため、既定のポリシーに ' unsafe ' インライン ' と ' unsafe-eval ' ソースを含めることで JavaScript を有効にします。  
 
-### <a name="custom-headers"></a>カスタム ヘッダー 
+### <a name="custom-headers"></a>カスタムヘッダー 
 上記のセキュリティ応答ヘッダー (HSTS、CSP、X フレームオプション、X-XSS-Protection、CORS) に加えて、AD FS 2019 は新しいヘッダーを設定する機能を提供します。  
  
 例: 新しいヘッダー "TestHeader" を値を "TestHeaderValue" に設定するには 
@@ -231,7 +231,7 @@ Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderV
 |HTTP Strict-Transport-Security (HSTS)|[HSTS ブラウザーの互換性](https://developer.mozilla.org/docs/Web/HTTP/Headers/Strict-Transport-Security#Browser_compatibility)|
 |X フレームオプション|[X フレームオプションブラウザーの互換性](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility)| 
 |X-XSS-保護|[X-XSS-保護ブラウザーの互換性](https://developer.mozilla.org/docs/Web/HTTP/Headers/X-XSS-Protection#Browser_compatibility)| 
-|クロスオリジン リソース共有 (CORS)|[CORS ブラウザーの互換性](https://developer.mozilla.org/docs/Web/HTTP/CORS#Browser_compatibility) 
+|クロスオリジンリソース共有 (CORS)|[CORS ブラウザーの互換性](https://developer.mozilla.org/docs/Web/HTTP/CORS#Browser_compatibility) 
 |コンテンツセキュリティポリシー (CSP)|[CSP ブラウザーの互換性](https://developer.mozilla.org/docs/Web/HTTP/CSP#Browser_compatibility) 
 
 ## <a name="next"></a>[次へ]

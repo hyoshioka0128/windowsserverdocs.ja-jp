@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: 0977aa1fd9a6848bd7b85bb592b6a82556277e72
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 594c20cbfea521006de6d1ec69763669298376e6
+ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361582"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75948520"
 ---
 >適用対象: Windows Server 2012、Windows Server 2012 R2、Windows Server 2016
 
@@ -25,7 +25,7 @@ ms.locfileid: "71361582"
 
 WSUS データベース (SUSDB) を Windows Internal Database インスタンスから SQL Server のローカルまたはリモートインスタンスに移行するには、次の手順を実行します。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必要条件
 
 - SQL インスタンス。 既定の**MSSQLServer**またはカスタムインスタンスを指定できます。
 - SQL Server Management Studio
@@ -47,7 +47,7 @@ PowerShell (管理者特権) から、次のように実行します。
 
 #### <a name="using-sql-management-studio"></a>SQL Management Studio の使用
 
-1. **SUSDB** -&gt;**タスク**-を右クリックし &gt; [**切断**: ![image1.](images/image1.png)
+1. **SUSDB** -&gt;**タスク**-を右クリックし &gt; **[切断]** : ![image1.](images/image1.png)
 2. [**既存の接続を削除**する] をオンにし、[ **OK]** をクリックします (アクティブな接続が存在する場合は省略可能)。
     ![image2](images/image2.png)
 
@@ -124,7 +124,7 @@ SUSDB をアタッチした後、次の手順を実行して、 **NT AUTHORITY\N
 4. **[ユーザーマッピング]** ページで、次のようにします。
     - **[このログインにマップ]** されたユーザー で、 **[SUSDB]** を選択します。
     - **[データベースロールのメンバーシップ: SUSDB]** で、次のチェックボックスがオンになっていることを確認します。
-        - **共用**
+        - **public**
         - **webService** ![image9](images/image9.png)
 5. **[OK]** をクリックします。
 
@@ -158,7 +158,7 @@ SUSDB をアタッチした後、次の手順を実行して、 **NT AUTHORITY\N
 ### <a name="edit-the-registry-to-point-wsus-to-the-sql-server-instance"></a>レジストリを編集して、WSUS が SQL Server インスタンスを指すようにします。
 
 > [!IMPORTANT]
-> 慎重にこのセクションの手順に従います。 誤ってレジストリを変更すると、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/en-us/help/322756)します。
+> 慎重にこのセクションの手順に従います。 誤ってレジストリを変更すると、重大な問題が発生する可能性があります。 変更する前に、問題が発生した場合に[復元するためにレジストリをバックアップ](https://support.microsoft.com/help/322756)します。
 
 1. **[スタート]** ボタンをクリックし、 **[ファイル名を指定して実行]** をクリックして、「**regedit**」と入力し、 **[OK]** をクリックします。
 2. 次のキーを見つけます。 **HKEY_LOCAL_MACHINE \software\microsoft\updateservices\server\setup\sqlservername**

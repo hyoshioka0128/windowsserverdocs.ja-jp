@@ -9,15 +9,14 @@ ms.date: 3/29/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 31f6c00f829569586630629d2fa18c1fb65cd1d6
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0850145c9281c769c5a2b6532ccb56615abd11b3
+ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949466"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725787"
 ---
 # <a name="required-updates-for-active-directory-federation-services-ad-fs-and-web-application-proxy-wap"></a>Active Directory フェデレーションサービス (AD FS) (AD FS) と Web アプリケーションプロキシ (WAP) に必要な更新
-
 
 2016年10月の時点で、Windows Server のすべてのコンポーネントに対するすべての更新プログラムは、Windows Update (WU) を介してのみリリースされます。  修正プログラムや個別のダウンロードはありません。
 これは、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、および Windows Server 2008 R2 SP1 に適用されます。
@@ -29,7 +28,7 @@ Windows Server 2016 の更新プログラムは、Windows Update によって毎
 
 |KB# |説明|リリース日
 |----- | ----- |-----
-|[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | このセキュリティ更新プログラムは、Active Directory フェデレーションサービス (AD FS) (AD FS) の脆弱性に対処します。これにより、攻撃者がエクストラネットロックアウトポリシーをバイパスできる可能性があります。 |2019 年 7 月|
+|[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | このセキュリティ更新プログラムは、Active Directory フェデレーションサービス (AD FS) (AD FS) の脆弱性に対処します。これにより、攻撃者がエクストラネットロックアウトポリシーをバイパスできる可能性があります。 |2019年7月|
 |[4489889 (OS ビルド 14393.2879)](https://support.microsoft.com/help/4489889/windows-10-update-kb4489889) | 重複証明書利用者信頼が AD FS 管理コンソールに表示される Active Directory フェデレーションサービス (AD FS) (AD FS) の問題に対処します。 これは、AD FS 管理コンソールを使用して証明書利用者信頼を作成または表示する場合に発生します。</br></br> AD FS 2016 でエクストラネットのスマートロックアウト (ESL) が有効になっている間に発生する、高 Active Directory フェデレーションサービス (AD FS) (ADFS) Web アプリケーションプロキシ (WAP) の待機時間の問題 (10,000 ミリ秒) に対処します。 このセキュリティ更新プログラムは、 [CVE-2018-16794](https://nvd.nist.gov/vuln/detail/CVE-2018-16794)で説明されている脆弱性に対処します。 |2019 年 3 月|
 |[4487006 (OS ビルド 14393.2828)](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) | PowerShell または Active Directory フェデレーションサービス (AD FS) (AD FS) 管理コンソールを使用しているときに、証明書利用者信頼の更新が失敗する原因となる問題に対処します。 この問題は、複数の PassiveRequestorEndpoint を発行するオンラインメタデータ URL を使用するように証明書利用者信頼を構成すると発生します。 "MSIS7615: 証明書利用者信頼に指定された信頼されたエンドポイントは、その証明書利用者信頼に対して一意である必要があります。" というエラーが発生します。  </br></br>Azure のパスワード保護ポリシーにより、外部の複雑さのパスワード変更に関する特定のエラーメッセージを表示する問題に対処します。 |2019 年 2 月|
 |[4462928 (OS ビルド 14393.2580)](https://support.microsoft.com/help/4462928/windows-10-update-kb4462928)|Active Directory フェデレーションサービス (AD FS) (ADFS) エクストラネットスマートロックアウト (ESL) と代替ログイン ID 間の相互運用の問題に対処します。 代替ログイン ID が有効になっている場合、AD FS Powershell コマンドレットを呼び出し、AdfsAccountActivity と AdfsAccountLockout を呼び出して、"アカウントが見つかりません" エラーを返します。 AdfsAccountActivity が呼び出されると、既存のエントリを編集する代わりに新しいエントリが追加されます。|2018 年 10 月|
@@ -51,7 +50,7 @@ Windows Server 2012 R2 の Active Directory フェデレーションサービス
 
 |KB# |説明|リリース日
 |----- | ----- |-----
-|[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| このセキュリティ更新プログラムは、Active Directory フェデレーションサービス (AD FS) (AD FS) の脆弱性に対処します。これにより、攻撃者がエクストラネットロックアウトポリシーをバイパスできる可能性があります。 |2019 年 7 月
+|[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| このセキュリティ更新プログラムは、Active Directory フェデレーションサービス (AD FS) (AD FS) の脆弱性に対処します。これにより、攻撃者がエクストラネットロックアウトポリシーをバイパスできる可能性があります。 |2019年7月
 |[4041685](https://support.microsoft.com/kb/4041685)|要求ヘッダーの MSISConext クッキーが最終的にヘッダーサイズの制限をオーバーフローし、HTTP 状態コード400の "Bad Request-Header 長すぎます" で失敗する可能性がある AD FS の問題に対処します。</br></br>認証時に ADFS が "prompt = login" を無視できなくなる問題を修正しました。 非パスワード認証が使用される復元シナリオに "Disabled" オプションが追加されました。|更新プログラムのロールアップの2017年10月のプレビュー
 |[4019217](https://support.microsoft.com/kb/4019217)|サーバー 2012 R2 AD FS サーバーを使用しているときに、トークンブローカーを使用しているワークフォルダークライアントが機能しない|2017年5月の更新プログラムのロールアップ
 |[4015550](https://support.microsoft.com/kb/4015550)|外部ユーザーを認証せず、AD FS WAP が要求をランダムに転送できない AD FS の問題を修正した|2017年4月の更新プログラムのロールアップ
@@ -68,8 +67,8 @@ Windows Server 2012 R2 の Active Directory フェデレーションサービス
 |[3080778](https://support.microsoft.com/kb/3080778)|Windows Server 2012 R2 で MFA アダプターが例外をスローすると AD FS が OnError を呼び出さない|2015 年 7 月
 |[3075610](https://support.microsoft.com/kb/3075610)|Windows Server 2012 R2 で要求プロバイダーを追加または削除した後、セカンダリ AD FS サーバーで信頼関係が失われる|2015 年 7 月
 |[3070080](https://support.microsoft.com/kb/3070080)|ホーム領域の検出は、要求に対応していない証明書利用者信頼に対して正しく機能していません|2015 年 6 月
-|[3052122](https://support.microsoft.com/kb/3052122)|更新により、Windows Server 2012 R2 の AD FS トークンに複合 ID 要求のサポートが追加されます。|2015 年 5 月
-|[3045711](https://support.microsoft.com/kb/3045711)|MS15-040: Active Directory フェデレーションサービス (AD FS) の脆弱性により、情報漏えいが起こる|年 4 月 2015
+|[3052122](https://support.microsoft.com/kb/3052122)|更新により、Windows Server 2012 R2 の AD FS トークンに複合 ID 要求のサポートが追加されます。|5月2015
+|[3045711](https://support.microsoft.com/kb/3045711)|MS15-040: Active Directory フェデレーションサービス (AD FS) の脆弱性により、情報漏えいが起こる|2015年4月
 |[3042127](https://support.microsoft.com/kb/3042127)|Windows Server 2012 R2 で WAP を介して共有メールボックスを開いたときに "HTTP 400-Bad Request" エラーが発生する|2015 年 3 月
 |[3042121](https://support.microsoft.com/kb/3042121)|Windows Server 2012 R2 の Web アプリケーションプロキシ認証トークンの AD FS トークン再生保護|2015 年 3 月
 |[3035025](https://support.microsoft.com/kb/3035025)|Windows Server 2012 R2 で登録されているデバイスをユーザーが使用する必要がないように、パスワード更新機能の修正プログラム|2015 年 1 月
@@ -84,7 +83,7 @@ Windows Server 2012 R2 の Active Directory フェデレーションサービス
 |[2975719](https://support.microsoft.com/kb/2975719)|Windows Server 2012 R2 更新プログラムのロールアップ|2014 年 8 月
 |[2967917](https://support.microsoft.com/kb/2967917)|Windows Server 2012 R2 更新プログラムのロールアップ|2014 年 7 月
 |[2962409](https://support.microsoft.com/kb/2962409)|Windows Server 2012 R2 更新プログラムのロールアップ|2014 年 6 月
-|[2955164](https://support.microsoft.com/kb/2955164)|Windows Server 2012 R2 更新プログラムのロールアップ|2014 年 5 月
+|[2955164](https://support.microsoft.com/kb/2955164)|Windows Server 2012 R2 更新プログラムのロールアップ|5月2014
 |[2919355](https://support.microsoft.com/kb/2919355)|Windows Server 2012 R2 更新プログラムのロールアップ|2014 年 4 月
 
 ## <a name="updates-for-ad-fs-in-windows-server-2012-ad-fs-21-and-ad-fs-20"></a>Windows Server 2012 での AD FS の更新 (AD FS 2.1) と AD FS 2.0
@@ -99,13 +98,13 @@ AD FS 2.0 および2.1 用にリリースされている修正プログラムお
 |[3062577](https://support.microsoft.com/kb/3062577)|MS15-062: Active Directory フェデレーションサービスの脆弱性により、特権が昇格される|2015 年 6 月|AD FS 2.0/2.1
 |[3003381](https://support.microsoft.com/kb/3003381)|MS14-077: Active Directory フェデレーションサービス (AD FS) の脆弱性により、情報が漏えいする可能性があります: 2015 年4月14日|2014 年 11 月|AD FS 2.0/2.1
 |[2987843](https://support.microsoft.com/kb/2987843)|Windows Server 2012 で多くのユーザーが web アプリケーションにログオンすると AD FS フェデレーションサーバーのメモリ使用量が増加し続ける|2014 年 7 月|AD FS 2.1
-|[2957619](https://support.microsoft.com/kb/2957619)|委任されたトークンの AD FS に対する要求が行われると、AD FS の証明書利用者信頼が停止します。|2014 年 5 月|AD FS 2.1
+|[2957619](https://support.microsoft.com/kb/2957619)|委任されたトークンの AD FS に対する要求が行われると、AD FS の証明書利用者信頼が停止します。|5月2014|AD FS 2.1
 |[2926658](https://support.microsoft.com/kb/2926658)|SQL アクセス許可がない場合、ADFS SQL ファームの配置が失敗する|2014 年 10 月|AD FS 2.1
-|[2896713](https://support.microsoft.com/kb/2896713)または[2989956](https://support.microsoft.com/kb/2989956)|AD FS サーバーにセキュリティ更新プログラム2843638をインストールした後で、いくつかの問題を修正するための更新プログラムを利用できます。|2013 年 11 月</br></br>2014 年 9 月|AD FS 2.0/2.1
+|[2896713](https://support.microsoft.com/kb/2896713)または[2989956](https://support.microsoft.com/kb/2989956)|AD FS サーバーにセキュリティ更新プログラム2843638をインストールした後で、いくつかの問題を修正するための更新プログラムを利用できます。|2013年11月</br></br>2014年9月|AD FS 2.0/2.1
 |[2877424](https://support.microsoft.com/kb/2877424)|更新プログラムでは、AD FS 2.1 ファーム内の複数の証明書利用者信頼に対して1つの証明書を使用できます。|2013 年 10 月|AD FS 2.1
-|[2873168](https://support.microsoft.com/kb/2873168)|修正: サードパーティの CSP と HSM を使用し、Windows Server 2008 R2 Service Pack 1 の AD FS 2.0 の更新プログラムのロールアップ3で要求プロバイダー信頼を構成すると、エラーが発生します。|2013 年 9 月|AD FS 2.0
+|[2873168](https://support.microsoft.com/kb/2873168)|修正: サードパーティの CSP と HSM を使用し、Windows Server 2008 R2 Service Pack 1 の AD FS 2.0 の更新プログラムのロールアップ3で要求プロバイダー信頼を構成すると、エラーが発生します。|2013年9月|AD FS 2.0
 |[2861090](https://support.microsoft.com/kb/2861090)|暗号化証明書のサブジェクト名にコンマがあると、Windows Server 2008 R2 SP1 で例外が発生する|2013 年 8 月|AD FS 2.0
-|[2843639](https://support.microsoft.com/kb/2843639)|保護Active Directory フェデレーションサービス (AD FS) の脆弱性により、情報漏えいが起こる|2013 年 11 月|AD FS 2.1
+|[2843639](https://support.microsoft.com/kb/2843639)|保護Active Directory フェデレーションサービス (AD FS) の脆弱性により、情報漏えいが起こる|2013年11月|AD FS 2.1
 |[2843638](https://support.microsoft.com/kb/2843638)|MS13-066: Active Directory フェデレーションサービス (AD FS) 2.0 のセキュリティ更新プログラムの説明: 2013 年8月13日|2013 年 8 月|AD FS 2.0
-|[2827748](https://support.microsoft.com/kb/2827748)|Federationmetadata.xml ファイルには、Windows Server 2012 の WS-TRUST および WS-FEDERATION エンドポイントの MEX エンドポイント情報が含まれていません|2013 年 5 月|AD FS 2.1
+|[2827748](https://support.microsoft.com/kb/2827748)|Federationmetadata.xml ファイルには、Windows Server 2012 の WS-TRUST および WS-FEDERATION エンドポイントの MEX エンドポイント情報が含まれていません|5月2013|AD FS 2.1
 |[2790338](https://support.microsoft.com/kb/2790338)|Active Directory フェデレーションサービス (AD FS) (AD FS) 2.0 の更新プログラムのロールアップ3の説明|2013 年 3 月|AD FS 2.0
