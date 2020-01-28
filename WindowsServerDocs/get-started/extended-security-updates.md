@@ -8,13 +8,13 @@ author: iainfoulds
 ms.author: iainfou
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.date: 12/16/2019
-ms.openlocfilehash: 83ab3663b2c03017ba1bf613a49c394be0511002
-ms.sourcegitcommit: b649047f161cb605df084f18b573f796a584753b
+ms.date: 01/23/2020
+ms.openlocfilehash: 0f3ea0dacc200adaaec5064d19754ad6de0042a6
+ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76162503"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725777"
 ---
 # <a name="how-to-use-windows-server-2008-and-2008-r2-extended-security-updates-esu"></a>Windows Server 2008 および 2008 R2 の拡張セキュリティ更新プログラム (ESU) を使用する方法
 
@@ -43,23 +43,38 @@ Windows Server の拡張セキュリティ更新プログラム (ESU) には、2
 
 詳細については、「[拡張セキュリティ更新プログラムのよくある質問 (FAQ)](https://www.microsoft.com/cloud-platform/extended-security-updates)」を参照してください。
 
+## <a name="how-to-use-extended-security-updates"></a>拡張セキュリティ更新プログラムの使用方法
+
+Windows Server 2008/2008 R2 VM を Azure で実行すると、拡張セキュリティ更新プログラムがそれらの VM に対して自動的に有効になります。 Azure VM で拡張セキュリティ更新プログラムを使用するために何かを構成する必要はなく、追加料金も発生しません。 Azure VM が更新プログラムを受け取るように構成されている場合、拡張セキュリティ更新プログラムはそれらの VM に自動的に配信されます。
+
+オンプレミスの VM や物理サーバーなど、その他の環境では、拡張セキュリティ更新プログラムを手動で要求して構成する必要があります。 拡張セキュリティ更新プログラム (Enterprise Agreement (EA)、Enterprise Agreement Subscription (EAS)、Enrollment for Education Solutions (EES)、Server and Cloud Enrollment (SCE) などのボリューム ライセンス プログラムを通じて入手できます) を既に購入してある場合は、次のいずれかの手順を使用してライセンス認証キーを取得できます。
+
+* [Microsoft ボリューム ライセンス サービス センター](https://www.microsoft.com/Licensing/servicecenter/default.aspx)にサインインして、ライセンス認証キーを表示および取得します。
+* Azure portal で拡張セキュリティ更新プログラムに登録して、Windows Server 2008/R2 のライセンス認証キーを取得します。
+    * このプロセスを完了する手順については、この記事の次の手順を参照してください。
+
 ## <a name="register-for-extended-security-updates"></a>拡張セキュリティ更新プログラムに登録する
 
 拡張セキュリティ更新プログラムを使用するには、マルチ ライセンス認証キー (MAK) を作成して、Windows Server 2008 および 2008 R2 のコンピューターに適用します。 このキーを使用すると、Windows Update サーバーが、引き続きセキュリティ更新プログラムを受信できることを認識します。 オンプレミスのコンピューターのみを使用する場合でも、拡張セキュリティ更新プログラムに登録して、Azure portal でこれらのキーを管理することができます。
 
 > [!NOTE]
-> Azure で Windows Server 2008 / 2008 R2 の VM を実行する場合、次の手順を行う必要はありません。 Azure VM は、拡張セキュリティ更新プログラムに対して自動的に有効になります。 拡張セキュリティ更新プログラムのリソースとキーを作成する必要はありません。Azure VM で拡張セキュリティ更新プログラムを使用するための追加料金も発生しません。
+>
+> Windows Server 2008 と 2008 R2 を Azure VM で実行している場合は、拡張セキュリティ更新プログラムに登録する必要はありません。 オンプレミスの VM や物理サーバーなど、その他の環境では、それらのプログラムに登録して使用する前に、[拡張セキュリティ更新プログラムを購入する](https://www.microsoft.com/licensing/how-to-buy/how-to-buy)必要があります。
 
-> [!NOTE]
-> 次の手順を実行する前に、ホワイトリストに登録する情報を [winsvresuchamps@microsoft.com](mailto:winsvresuchamps@microsoft.com) に送信してください。
+> [!IMPORTANT]
+>
+> ボリューム ライセンス プログラムを使用して拡張セキュリティ更新プログラムを購入するための前述の手順を踏んだことを確認してください。 以下の手順を実行する前に、この機能を使用する承認を得るため、次の情報を [winsvresuchamps@microsoft.com](mailto:winsvresuchamps@microsoft.com) に送信してください。
+>
 > * 顧客名:
 > * Azure サブスクリプション:
 > * EA 契約番号 (ESU の場合):
 > * ESU サーバーの数:
-> 
-> チームが提供された情報を確認し、ホワイトリストにユーザー/サブスクリプションを追加します。
-> 
-> 要求元がホワイトリストに登録されていない場合は、次のエラーが発生する可能性があります。[名前空間 'Microsoft.WindowsESU' でリソースの種類が見つかりませんでした。](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version)
+>
+> 担当のチームが、提供された情報を確認し、承認済みリストにユーザーまたはサブスクリプションを追加します。
+>
+> 要求元が承認されていない場合は、次のエラーが発生する可能性があります。
+>
+> [名前空間 'Microsoft.WindowsESU' でリソースの種類が見つかりませんでした。](https://social.msdn.microsoft.com/Forums/office/94b16a89-3149-43da-865d-abf7dba7b977/the-resource-type-could-not-be-found-in-the-namespace-microsoftwindowsesu-for-api-version)
 
 拡張セキュリティ更新プログラムに Azure 以外の VM を登録してキーを作成するには、Azure portal で次の手順を行います。
 
