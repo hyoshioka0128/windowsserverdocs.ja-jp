@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 99a7df77f5f87b95ccd69ada7148b433a26d0f78
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: c48b5330ee1b9a186885645aaa4c1ac79f1782e7
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948936"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822745"
 ---
 # <a name="appendix-m-document-links-and-recommended-reading"></a>付録 M: ドキュメントのリンクと推奨資料
 
@@ -28,7 +28,7 @@ ms.locfileid: "75948936"
   
 |||  
 |-|-|  
-|**Links**|**URL**|  
+|**Links**|**ハイパーリンク**|  
 |[セキュリティ管理に関する10の不変法](https://technet.microsoft.com/library/cc722488.aspx)|[https://technet.microsoft.com/library/cc722488.aspx](https://technet.microsoft.com/library/cc722488.aspx)|  
 |[Microsoft セキュリティコンプライアンスマネージャー](https://technet.microsoft.com/library/cc677002.aspx)|[https://technet.microsoft.com/library/cc677002.aspx](https://technet.microsoft.com/library/cc677002.aspx)|  
 |[Gartner Symposium ITXPO](http://www.gartner.com/technology/symposium/orlando/)|[http://www.gartner.com/technology/symposium/orlando/](http://www.gartner.com/technology/symposium/orlando/)|  
@@ -55,7 +55,7 @@ ms.locfileid: "75948936"
 |[Hyper-v でのドメインコントローラーの実行](https://technet.microsoft.com/library/dd363553(v=ws.10).aspx)|[https://technet.microsoft.com/library/dd363553(v=ws.10).aspx](https://technet.microsoft.com/library/dd363553(v=ws.10).aspx)|  
 |[Hyper-v セキュリティガイド](https://www.microsoft.com/download/details.aspx?id=16650)|[https://www.microsoft.com/download/details.aspx?id=16650](https://www.microsoft.com/download/details.aspx?id=16650)|  
 |[ディレクトリサービスチームに質問する](https://blogs.technet.com/b/askds/archive/2011/09/12/managing-rid-pool-depletion.aspx)|[https://blogs.technet.com/b/askds/archive/2011/09/12/managing-rid-pool-depletion.aspx](https://blogs.technet.com/b/askds/archive/2011/09/12/managing-rid-pool-depletion.aspx)|  
-|[ドメインと信頼関係のためのファイアウォールを構成する方法](https://support.microsoft.com/kb/179442)|[https://support.microsoft.com/kb/179442](https://support.microsoft.com/kb/179442)|  
+|[ドメインと信頼関係に対してファイアウォールを構成する方法](https://support.microsoft.com/kb/179442)|[https://support.microsoft.com/kb/179442](https://support.microsoft.com/kb/179442)|  
 |[2009 Verizon データ侵害レポート](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf)|[http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf](http://www.verizonbusiness.com/resources/security/reports/2009_databreach_rp.pdf)|  
 |[2012 Verizon データ侵害レポート](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)|[http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf](http://www.verizonbusiness.com/resources/reports/rp_data-breach-investigations-report-2012_en_xg.pdf)|  
 |[Windows 2008 での監査の変更の概要](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)|[https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx](https://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx)|  
@@ -80,7 +80,7 @@ ms.locfileid: "75948936"
 |[MDM の絶対管理](http://www.absolute.com/landing/Google/MDM-google/mobile-device-management)|[http://www.absolute.com/landing/Google/MDM-google/mobile-device-management](http://www.absolute.com/landing/Google/MDM-google/mobile-device-management)|  
 |[このように](http://www.solarwinds.com/eminentware-products.aspx)|[http://www.solarwinds.com/eminentware-products.aspx](http://www.solarwinds.com/eminentware-products.aspx)|  
 |[EminentWare WSUS 拡張パック](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-WSUS-Extension-Pack-005-Datasheet2.pdf)|[http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-WSUS-Extension-Pack-005-Datasheet2.pdf](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-WSUS-Extension-Pack-005-Datasheet2.pdf)|  
-|[EminentWare System Center Configuration Manager 拡張パック](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|[http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|  
+|[EminentWare Configuration Manager 拡張パック](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|[http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf](http://solarwinds-marketing.s3.amazonaws.com/solarwinds/Datasheets/EminentWare-Extension-Pack-for-CM-Datasheet-006-Revised.pdf)|  
 |[GFI ソフトウェア](http://www.gfi.com/?adv=952&loc=58&gclid=CLq9y5603rMCFal7QgodMFkAyA)|[http://www.gfi.com/?adv=952&loc=58&gclid=CLq9y5603rMCFal7QgodMFkAyA](http://www.gfi.com/?adv=952&loc=58&gclid=CLq9y5603rMCFal7QgodMFkAyA)|  
 |[GFI LanGuard](http://www.gfi.com/network-security-vulnerability-scanner/?adv=952&loc=60&gclid=CP2t-7i03rMCFQuCQgodNkAA7g)|[http://www.gfi.com/network-security-vulnerability-scanner/?adv=952&loc=60&gclid=CP2t-7i03rMCFQuCQgodNkAA7g](http://www.gfi.com/network-security-vulnerability-scanner/?adv=952&loc=60&gclid=CP2t-7i03rMCFQuCQgodNkAA7g)|  
 |[Secunia](http://secunia.com/)|[http://secunia.com/](http://secunia.com/)|  
@@ -97,7 +97,7 @@ ms.locfileid: "75948936"
 |[ネットワークからこのコンピューターにアクセスする](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_1)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_1](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_1)|  
 |[オペレーティングシステムの一部として機能](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_3)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_3](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_3)|  
 |[ドメインにワークステーションを追加する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_4)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_4](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_4)|  
-|[プロセスのメモリ クォータの増加](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5)|  
+|[プロセスのメモリクォータを調整する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_5)|  
 |[ローカルログオンを許可する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_6)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_6](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_6)|  
 |[ターミナルサービスを使用したログオンを許可する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_7)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_7](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_7)|  
 |[ファイルとディレクトリのバックアップ](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_8)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_8](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_8)|  
@@ -106,13 +106,13 @@ ms.locfileid: "75948936"
 |[タイムゾーンを変更する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_11)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_11](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_11)|  
 |[ページファイルの作成](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_12)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_12](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_12)|  
 |[トークンオブジェクトを作成する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_13)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_13](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_13)|  
-|[グローバル オブジェクトの作成](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_14)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_14](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_14)|  
-|[永続的共有オブジェクトの作成](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_15)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_15](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_15)|  
-|[シンボリック リンクの作成](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_16)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_16](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_16)|  
+|[グローバルオブジェクトの作成](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_14)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_14](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_14)|  
+|[永続的な共有オブジェクトを作成する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_15)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_15](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_15)|  
+|[シンボリックリンクの作成](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_16)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_16](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_16)|  
 |[プログラムのデバッグ](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_17)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_17](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_17)|  
 |[ネットワークからのこのコンピューターへのアクセスを拒否する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18)|  
 |[バッチジョブとしてのログオンを拒否する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18a)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18a](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_18a)|  
-|[サービスとしてのログオン権限を拒否する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_19)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_19](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_19)|  
+|[サービスとしてのログオンを拒否する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_19)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_19](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_19)|  
 |[ローカルでのログオンを拒否する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_20)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_20](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_20)|  
 |[ターミナルサービスを使用したログオンを拒否する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_21)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_21](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_21)|  
 |[コンピューターおよびユーザーアカウントが委任に対して信頼されるようにする](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_22)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_22](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_22)|  
@@ -120,15 +120,15 @@ ms.locfileid: "75948936"
 |[セキュリティ監査の生成](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_24)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_24](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_24)|  
 |[認証後にクライアントを偽装する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_25)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_25](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_25)|  
 |[プロセスのワーキングセットを増やす](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_26)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_26](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_26)|  
-|[スケジューリング優先順位の繰り上げ](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_27)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_27](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_27)|  
-|[デバイス ドライバーのロードとアンロード](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_28)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_28](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_28)|  
-|[メモリ内のページのロック](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_29)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_29](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_29)|  
+|[スケジュールの優先順位を上げる](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_27)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_27](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_27)|  
+|[デバイスドライバーの読み込みとアンロード](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_28)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_28](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_28)|  
+|[メモリ内のページをロックする](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_29)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_29](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_29)|  
 |[バッチジョブとしてログオンする](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_30)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_30](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_30)|  
 |[サービスとしてログオン](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_31)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_31](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_31)|  
-|[監査とセキュリティ ログの管理](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_32)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_32](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_32)|  
-|[オブジェクト ラベルの変更](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33)|  
-|[ファームウェア環境値の修正](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34)|  
-|[ボリュームの保守タスクを実行](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35)|  
+|[監査とセキュリティログの管理](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_32)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_32](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_32)|  
+|[オブジェクトラベルを変更する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_33)|  
+|[ファームウェアの環境値を変更する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_34)|  
+|[ボリュームの保守タスクを実行する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_35)|  
 |[単一プロセスのプロファイル](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_36)|  
 |[システムパフォーマンスのプロファイル](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_37)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_37](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_37)|  
 |[ドッキングステーションからコンピューターを削除する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_38)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_38](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_38)|  
@@ -137,7 +137,7 @@ ms.locfileid: "75948936"
 |[システムをシャットダウンする](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_41)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_41](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_41)|  
 |[ディレクトリサービスデータの同期](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_42)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_42](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_42)|  
 |[ファイルまたはその他のオブジェクトの所有権を取得する](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_43)|[https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_43](https://technet.microsoft.com/library/db585464-a2be-41b1-b781-e9845182f4b6(v=ws.10)#BKMK_43)|  
-|[アクセス制御](https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx)|[https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx](https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx)|  
+|[Access Control](https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx)|[https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx](https://msdn.microsoft.com/library/aa374860(v=VS.85).aspx)|  
 |[Microsoft サポートの記事251343](https://support.microsoft.com/kb/251343)|[https://support.microsoft.com/kb/251343](https://support.microsoft.com/kb/251343)|  
 |[rootDSE の変更操作](https://msdn.microsoft.com/library/cc223297.aspx)|[https://msdn.microsoft.com/library/cc223297.aspx](https://msdn.microsoft.com/library/cc223297.aspx)|  
 |[AD DS のバックアップと回復の手順ガイド](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx)|[https://technet.microsoft.com/library/cc771290(v=ws.10).aspx](https://technet.microsoft.com/library/cc771290(v=ws.10).aspx)|  
@@ -164,7 +164,7 @@ ms.locfileid: "75948936"
 |[管理者アカウントのセキュリティ計画ガイド](https://www.microsoft.com/download/details.aspx?id=19406)|[https://www.microsoft.com/download/details.aspx?id=19406](https://www.microsoft.com/download/details.aspx?id=19406)|  
 |Windows Server 2003 の[Active Directory インストールをセキュリティで保護するためのベストプラクティスガイド](https://www.microsoft.com/download/details.aspx?id=16755)|[https://www.microsoft.com/download/details.aspx?id=16755](https://www.microsoft.com/download/details.aspx?id=16755)|  
 |Windows Server 2003 の[Active Directory 管理の委任に関するベストプラクティス](https://www.microsoft.com/download/details.aspx?id=21678)|[https://www.microsoft.com/download/details.aspx?id=21678](https://www.microsoft.com/download/details.aspx?id=21678)|  
-|[マイクロソフト サポート ライフサイクル](https://support.microsoft.com/lifecycle/)|[https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx](https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx)|  
+|[Microsoft サポートのライフサイクル](https://support.microsoft.com/lifecycle/)|[https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx](https://support.microsoft.com/common/international.aspx?RDPATH=%2flifecycle%2fdefault.aspx)|  
 |[Active Directory 技術仕様](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|[https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)|  
 |[Nonadministrator ユーザーが委任されている場合に、Windows Server 2003 ベースまたは Windows Server 2008 ベースのドメインコントローラーにコンピューターを参加させると、エラーメッセージ "アクセスが拒否されました"](https://support.microsoft.com/kb/932455)|[https://support.microsoft.com/kb/932455](https://support.microsoft.com/kb/932455)| 
 |[Windows Server 2008 R2 での AD DS 用の認証メカニズム保証の手順ガイド](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|[https://technet.microsoft.com/library/dd378897(WS.10).aspx](https://technet.microsoft.com/library/dd378897(WS.10).aspx)|  
@@ -175,7 +175,7 @@ ms.locfileid: "75948936"
   
 ||  
 |---|  
-|**推奨トピック**|  
+|**推奨資料**|  
 |[2014レポートに関するジョージア州のサイバーの脅威](http://www.gtsecuritysummit.com/2014Report.pdf)|  
 |[Microsoft セキュリティインテリジェンスレポート](https://www.microsoft.com/security/sir/default.aspx)|  
 |[PTH (パススルー) 攻撃とその他の資格情報の盗難手法の緩和](https://download.microsoft.com/download/7/7/A/77ABC5BD-8320-41AF-863C-6ECFB10CB4B9/Mitigating%20Pass-the-Hash%20(PtH)%20Attacks%20and%20Other%20Credential%20Theft%20Techniques_English.pdf)|  
@@ -187,7 +187,7 @@ ms.locfileid: "75948936"
 |[管理者アカウントのセキュリティ計画ガイド](https://www.microsoft.com/download/details.aspx?id=19406)|  
 |Windows Server 2003 の[Active Directory インストールをセキュリティで保護するためのベストプラクティスガイド](https://www.microsoft.com/download/details.aspx?id=16755)|  
 |Windows Server 2003 の[Active Directory 管理の委任に関するベストプラクティス](https://www.microsoft.com/download/details.aspx?id=21678)|  
-|[マイクロソフト サポート ライフサイクル](https://support.microsoft.com/lifecycle/)|  
+|[Microsoft サポートのライフサイクル](https://support.microsoft.com/lifecycle/)|  
 |[Active Directory 技術仕様](https://msdn.microsoft.com/library/cc223122(v=prot.20).aspx)-dSHeuristics 情報|  
 |[Nonadministrator ユーザーが委任されている場合に、Windows Server 2003 ベースまたは Windows Server 2008 ベースのドメインコントローラーにコンピューターを参加させると、エラーメッセージ "アクセスが拒否されました"](https://support.microsoft.com/kb/932455)|  
 |[Active Directory インストールのセキュリティ保護に関するベストプラクティスガイド](https://go.microsoft.com/fwlink/?LinkId=140862)|  
@@ -198,15 +198,15 @@ ms.locfileid: "75948936"
 #### <a name="copyright-information"></a>著作権情報  
 このドキュメントに記載された情報は、各項目に関する発行日現在の Microsoft Corporation の見解を表明するものです。 Microsoft は絶えず変化する市場に対応しなければならないため、ここに記載した情報に対していかなる責務を負うものではなく、発行日以降に提示された情報の正確性を保障するものではありません。  
   
-このホワイト ペーパーは、情報提供のみを目的としています。 このドキュメントでは、Microsoft が明示または黙示を保証するものではありません。  
+このホワイトペーパーは、情報提供のみを目的としています。 このドキュメントでは、Microsoft が明示または黙示を保証するものではありません。  
   
-お客様ご自身の責任において、適用されるすべての著作権関連法規に従ったご使用を願います。 このドキュメントのいかなる部分も、米国 Microsoft Corporation の書面による許諾を受けることなく、その目的を問わず、どのような形態であっても、複製または譲渡することは禁じられています。ここでいう形態とは、複写や記録など、電子的な、または物理的なすべての手段を含みます。ただしこれは、著作権法上のお客様の権利を制限するものではありません。  
+お客様ご自身の責任において、適用されるすべての著作権関連法規に従ったご使用を願います。 著作権に関する権利を制限することなく、このドキュメントのいかなる部分も、お客様のシステムに対して再現、保存、または導入されることはありません。また、任意の形式で、または任意の方法 (電子、機械的、複写、記録、またはその他) で送信することもできません。Microsoft Corporation の書面による許可はありません。  
   
 マイクロソフトは、このドキュメントに記載されている内容に関し、特許権、特許出願、商標権、著作権、またはその他の知的財産権を有する場合があります。 別途マイクロソフトのライセンス契約上に明示の規定のない限り、このドキュメントはこれらの特許、商標、著作権、またはその他の無体財産権に関する権利をお客様に許諾するものではありません。  
   
 Microsoft、Active Directory、BitLocker、Hyper-v、Internet Explorer、Windows Vista、Windows、および Windows Server は、Microsoft Corporation の米国やその他の国における登録商標または商標です。 他のすべての商標は、それぞれの所有者の財産です。  
   
-例として登場する企業、組織、製品、ドメイン名、電子メール アドレス、ロゴ、人物、場所、およびイベントはすべて架空のものです。 実在する企業、団体、製品、ドメイン名、電子メール アドレス、ロゴ、人物、場所、出来事などとは一切関係ありません。  
+例として記載されている会社、組織、製品、ドメイン名、電子メールアドレス、ロゴ、人名、場所、およびイベントは、架空のものです。 実在する企業、団体、製品、ドメイン名、電子メール アドレス、ロゴ、人物、場所、出来事などとは一切関係ありません。  
   
 ? 2013 Microsoft Corporation. All rights reserved.  
   

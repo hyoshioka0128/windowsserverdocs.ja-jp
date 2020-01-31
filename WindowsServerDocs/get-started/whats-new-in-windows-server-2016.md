@@ -10,12 +10,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: afcda1d3f94c5f6fa7524317ac21c5540c07895c
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 0c140c61a5887cc63b2a9d0b468f8d1daf02cd76
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948262"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822715"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Windows Server 2016 の新機能
 
@@ -86,7 +86,7 @@ Windows Server 2016 には、Nano Server で PowerShell.exe を実行する機�
 ### <a name="powershell-desired-state-configuration-dsc-in-windows-management-framework-wmf-5"></a>Windows Management Framework (WMF) 5 の PowerShell Desired State Configuration (DSC)
 Windows Management Framework 5 には、Windows PowerShell Desired State Configuration (DSC)、Windows リモート管理 (WinRM)、および Windows Management Instrumentation (WMI) に対する更新が含まれています。
 
-Windows Management Framework 5 の DSC 機能のテストに関する詳細については、[PowerShell DSC の機能の検証](https://blogs.msdn.microsoft.com/powershell/2015/07/06/validate-features-of-powershell-dsc/)に関する一連のブログ記事を参照してください。 ダウンロードするには、[Windows Management Framework 5.1](https://docs.microsoft.com/powershell/wmf/5.1/install-configure) に関するページを参照してください。
+Windows Management Framework 5 の DSC 機能のテストに関する詳細については、[PowerShell DSC の機能の検証](https://blogs.msdn.microsoft.com/powershell/2015/07/06/validate-features-of-powershell-dsc/)に関する一連のブログ記事を参照してください。 ダウンロードするには、[Windows Management Framework 5.1](https://docs.microsoft.com/powershell/scripting/wmf/setup/install-configure) に関するページを参照してください。
 
 ### <a name="packagemanagement-unified-package-management-for-software-discovery-installation-and-inventory"></a>PackageManagement 統合パッケージ管理によるソフトウェアの検出、インストール、およびインベントリ
 Windows Server 2016 および Windows 10 には、新しい PackageManagement 機能 (旧称 OneGet) が含まれています。この機能により、IT 技術者や DevOps は、インストーラーのテクノロジやソフトウェアの配置場所にかかわらず、ソフトウェアの検出、インストール、およびインベントリ (SDII) をローカルまたはリモートで自動化できます。 
@@ -201,4 +201,3 @@ Microsoft Windows 10 と Windows Server 2016 に 3 つの新機能が追加さ�
 
 ## <a name="see-also"></a>参照  
 -   [リリース ノート:Windows Server 2016 に関する重要な問題](Windows-Server-2016-GA-Release-Notes.md)  
-

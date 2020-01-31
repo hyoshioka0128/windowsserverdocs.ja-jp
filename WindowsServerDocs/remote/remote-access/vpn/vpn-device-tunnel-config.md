@@ -9,12 +9,12 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: a216c490c92461e07fd5093783ec2c3049e8accb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b5be8827cee22b35fb31bf08d1c960b150dcad84
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388031"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822655"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>Windows 10 で VPN デバイストンネルを構成する
 
@@ -46,9 +46,9 @@ Set-VpnAuthProtocol -UserAuthProtocolAccepted Certificate, EAP -RootCertificateN
 
 ## <a name="vpn-device-tunnel-configuration"></a>VPN デバイストンネルの構成
 
-次のサンプルプロファイル XML は、デバイストンネル経由でクライアントが開始したプルのみが必要なシナリオに適したガイダンスを提供します。  トラフィックフィルターは、デバイスのトンネルを管理トラフィックのみに制限するために利用されます。  この構成は、Windows Update、一般的なグループポリシー (GP) と System Center Configuration Manager (SCCM) の更新シナリオ、および、キャッシュされた資格情報を使用しない最初のログオンの VPN 接続、またはパスワードリセットのシナリオに適しています。 
+次のサンプルプロファイル XML は、デバイストンネル経由でクライアントが開始したプルのみが必要なシナリオに適したガイダンスを提供します。  トラフィックフィルターは、デバイスのトンネルを管理トラフィックのみに制限するために利用されます。  この構成は、Windows Update、一般的なグループポリシー (GP) と Microsoft エンドポイント Configuration Manager の更新シナリオ、および、キャッシュされた資格情報を使用しない最初のログオンの VPN 接続、またはパスワードリセットのシナリオに適しています。 
 
-Windows リモート管理 (WinRM)、リモート GPUpdate、およびリモートの SCCM 更新シナリオなど、サーバーによって開始されるプッシュケースの場合は、トラフィックフィルターを使用できないように、デバイストンネルで受信トラフィックを許可する必要があります。  デバイストンネルプロファイルでトラフィックフィルターをオンにすると、デバイストンネルは受信トラフィックを拒否します。  この制限は、今後のリリースでは削除される予定です。
+Windows リモート管理 (WinRM)、リモート GPUpdate、リモート Configuration Manager の更新シナリオなど、サーバーによって開始されるプッシュケースの場合は、トラフィックフィルターを使用できないように、デバイストンネルで受信トラフィックを許可する必要があります。  デバイストンネルプロファイルでトラフィックフィルターをオンにすると、デバイストンネルは受信トラフィックを拒否します。  この制限は、今後のリリースでは削除される予定です。
 
 
 ### <a name="sample-vpn-profilexml"></a>VPN profileXML の例
@@ -165,7 +165,7 @@ $Message = "Complete."
 Write-Host "$Message"
 ```
 
-## <a name="additional-resources"></a>その他のリソース
+## <a name="additional-resources"></a>その他の情報
 
 VPN の展開に役立つその他のリソースを次に示します。
 
@@ -173,7 +173,7 @@ VPN の展開に役立つその他のリソースを次に示します。
 
 VPN クライアント構成リソースは次のとおりです。
 
-- [System Center Configuration Manager で VPN プロファイルを作成する方法](https://docs.microsoft.com/sccm/protect/deploy-use/create-vpn-profiles)
+- [Configuration Manager で VPN プロファイルを作成する方法](https://docs.microsoft.com/configmgr/protect/deploy-use/create-vpn-profiles)
 - [Windows 10 クライアント Always On VPN 接続を構成する](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
 - [VPN プロファイルのオプション](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
 

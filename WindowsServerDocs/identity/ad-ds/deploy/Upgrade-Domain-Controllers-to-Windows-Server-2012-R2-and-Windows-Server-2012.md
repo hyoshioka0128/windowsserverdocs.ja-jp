@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ff38072855d0fd44a083ed6b3c931a6a0ed9f88a
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: f8e5164ee1b5729d30536ae61df7cf3579e57fe6
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947957"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822725"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>ドメイン コントローラーを Windows Server 2012 R2 または Windows Server 2012 にアップグレードする
 
@@ -163,7 +163,7 @@ Windows Server 2008 以降のドメインコントローラーでは、Windows S
 |統合認証のための CBT/拡張保護|なし|Enabled|Microsoft サポート技術情報の[Microsoft セキュリティアドバイザリ (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) および[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251) ) を参照してください。<br /><br />必要に応じて、Microsoft サポート技術情報の[記事 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (https://go.microsoft.com/fwlink/?LinkId=186394) にある修正プログラムを確認してインストールします。|  
 |LMv2|Enabled|無効|Microsoft サポート技術情報の[記事 976918](https://go.microsoft.com/fwlink/?LinkId=178251) (https://go.microsoft.com/fwlink/?LinkId=178251)|  
 
-## <a name="BKMK_SysReqs"></a>オペレーティング システムの要件
+## <a name="BKMK_SysReqs"></a>オペレーティングシステムの要件
 
 次の表に、Windows Server 2012 の最小システム要件を示します。 システム要件とプレインストール情報の詳細については、「 [Windows Server 2012 のインストール](https://technet.microsoft.com/library/jj134246.aspx)」を参照してください。 新しい Active Directory フォレストをインストールするための追加システム要件はありませんが、ドメイン コントローラー、LDAP クライアント要求、および Active Directory 対応アプリケーションのパフォーマンスを向上させるには、Active Directory データベースの内容をキャッシュするための十分なメモリを追加する必要があります。 既存のドメイン コントローラーをアップグレードするか、新しいドメイン コントローラーを既存のフォレストに追加する場合は、次のセクションを参照して、サーバーがディスク領域の要件を満たしていることを確認してください。  
 
@@ -281,18 +281,17 @@ Windows [8 のリモートサーバー管理ツール](https://www.microsoft.com
 
 |製品|注意|  
 |-----------|---------|  
-|[Microsoft Configuration Manager 2007](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|Configuration Manager 2007 SP2 (Configuration Manager 2007 R2 と Configuration Manager 2007 R3 が含まれます):<br /><br />-Windows 8 Pro<br />-Windows 8 Enterprise<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter **Note:** これらはクライアントとして完全にサポートされますが、Configuration Manager 2007 オペレーティングシステムの展開機能を使用して、オペレーティングシステムとして展開するためのサポートを追加する予定はありません。 また、Windows Server 2012 のいずれの SKU でも、サイト サーバーおよびサイト システムはサポートされません。|  
-|[Microsoft SharePoint 2007](https://support.microsoft.com/kb/2728964)|Microsoft Office SharePoint Server 2007 は、Windows Server 2012 へのインストールがサポートされません。|  
 |[Microsoft SharePoint 2010](https://support.microsoft.com/kb/2724471)|をインストールして操作するには、SharePoint 2010 Service Pack 2 が必要です。 <br />Windows Server 2012 サーバー上の SharePoint 2010<br /><br />SharePoint 2010 Foundation を Windows Server 2012 サーバーにインストールして操作するには、SharePoint 2010 Foundation Service Pack 2 が必要です。<br /><br />SharePoint Server 2010 (Service Pack なし) を Windows Server 2012 にインストールするプロセスは失敗します。<br /><br />SharePoint Server 2010 の前提条件のインストーラー (Prerequisiteinstaller.exe) が失敗し、"このプログラムには互換性の問題があります。" というエラーが発生します。 [ヘルプを表示せずにプログラムを実行する] をクリックすると、"SharePoint &#124;を2010インストールできるかどうかの確認 (service pack なし) を Windows server 2012 にインストールすることはできません。" というエラーが表示されます。|  
 |[Microsoft SharePoint 2013](https://technet.microsoft.com/library/cc262485(v=office.15).aspx)|ファーム内のデータベース サーバーの最小要件:<br /><br />64 ビット エディションの Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise、または Datacenter、あるいは 64 ビット エディションの Windows Server 2012 Standard または Datacenter<br /><br />組み込みデータベースを持つ単一サーバーの最小要件:<br /><br />64 ビット エディションの Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise、または Datacenter、あるいは 64 ビット エディションの Windows Server 2012 Standard または Datacenter<br /><br />ファーム内のフロントエンド Web サーバーおよびアプリケーション サーバーの最小要件:<br /><br />64 ビット エディションの Windows Server 2008 R2 Service Pack 1 (SP1) Standard、Enterprise、または Datacenter、あるいは 64 ビット エディションの Windows Server 2012 Standard または Datacenter|  
-|[Microsoft System Center Configuration Manager 2012](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|System Center 2012 Configuration Manager Service Pack 1:<br /><br />Service Pack 1 のリリースで、クライアント サポート マトリックスに次のオペレーティング システムが追加されます。<br /><br />-Windows 8 Pro<br />-Windows 8 Enterprise<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter<br /><br />サイト サーバーの役割はすべて (サイト サーバー、SMS プロバイダー、管理ポイントを含めて)、次のオペレーティング システム エディションのサーバーに展開できます。<br /><br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
+|[Configuration Manager 2012](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|Configuration Manager 2012 Service Pack 1:<br /><br />Service Pack 1 のリリースで、クライアント サポート マトリックスに次のオペレーティング システムが追加されます。<br /><br />-Windows 8 Pro<br />-Windows 8 Enterprise<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter<br /><br />サイト サーバーの役割はすべて (サイト サーバー、SMS プロバイダー、管理ポイントを含めて)、次のオペレーティング システム エディションのサーバーに展開できます。<br /><br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
+|[Microsoft エンドポイント Configuration Manager (現在のブランチ)](https://docs.microsoft.com/configmgr/core/plan-design/configs/supported-configurations)|[Configuration Manager サイトシステムサーバーでサポートされているオペレーティングシステム](https://docs.microsoft.com/configmgr/core/plan-design/configs/supported-operating-systems-for-site-system-servers)。|  
 |[Microsoft Lync Server 2013](https://technet.microsoft.com/library/gg412883.aspx)|Lync Server 2013 には、Windows Server 2008 R2 または Windows Server 2012 が必要です。 Server Core インストールで実行することはできません。 [仮想サーバー](https://technet.microsoft.com/library/gg399035.aspx)で実行できます。|  
 |[Lync Server 2010](https://support.microsoft.com/kb/2777359)|[Lync Server 用の累積的更新プログラム (2012 年 10 月)](https://support.microsoft.com/?kbid=2493736) がインストールされていれば、新しい (アップグレードされていない) Windows Server 2012 のインストールに Lync Server 2010 をインストールすることができます。 Lync Server 2010 の既存インストールのためにオペレーティング システムを Windows Server 2012 にアップグレードすることはできません。 Microsoft Lync Server 2010 グループ チャット サーバーも、Windows Server 2012 ではサポートされていません。|  
 |[System Center 2012 Endpoint Protection](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|System Center 2012 Endpoint Protection Service Pack 1 では、クライアント サポート マトリックスが更新され、次のオペレーティング システムが追加されます。<br /><br />-Windows 8 Pro<br />-Windows 8 Enterprise<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
 |[System Center 2012 Forefront Endpoint Protection](https://blogs.technet.com/b/configmgrteam/archive/2012/09/10/support-questions-about-windows-8-and-windows-server-2012.aspx)|FEP 2010 更新プログラム ロールアップ 1 では、クライアント サポート マトリックスが更新され、次のオペレーティング システムが追加されます。<br /><br />-Windows 8 Pro<br />-Windows 8 Enterprise<br />-Windows Server 2012 Standard<br />-Windows Server 2012 Datacenter|  
 |Forefront Threat Management Gateway (TMG)|TMG の実行がサポートされているのは、Windows Server 2008 および Windows Server 2008 R2 のみです。 詳細については、「 [Forefront TMG のシステム要件](https://technet.microsoft.com/library/dd896981.aspx)」を参照してください。|  
 |Windows Server Update Services|このリリースの WSUS では既に、Windows 8 ベースのコンピューターまたは Windows Server 2012 コンピューターがクライアントとしてサポートされています。|  
-|Windows Server Update Services 3.0|更新プログラムサポート技術情報の記事[2734608](https://support.microsoft.com/kb/2734608)では、WINDOWS SERVER UPDATE SERVICES (wsus) 3.0 SP2 を実行しているサーバーで、windows 8 または windows server 2012 を実行しているコンピューターの更新プログラムを提供します。**注:** スタンドアロンの wsus 3.0 sp2 環境がある場合、または wsus 2007 sp2 を使用する System Center Configuration Manager 3.0 Service Pack 2 環境の場合[は、windows](https://support.microsoft.com/kb/2734608) 8 ベース|  
+|Windows Server Update Services 3.0|更新プログラムサポート技術情報の記事[2734608](https://support.microsoft.com/kb/2734608)では、WINDOWS SERVER UPDATE SERVICES (wsus) 3.0 SP2 を実行しているサーバーで、windows 8 または windows server 2012 を実行しているコンピューターの更新プログラムを提供します。**注:** スタンドアロンの wsus 3.0 sp2 環境がある場合、または wsus 2007 sp2 を使用する Configuration Manager 3.0 Service Pack 2 環境の場合[は、windows](https://support.microsoft.com/kb/2734608) 8 ベース|  
 |[Exchange 2013](https://technet.microsoft.com/library/bb691354.aspx)|Windows Server 2012 Standard および Datacenter は、次の役割に対してサポートされています: スキーマ マスター、グローバル カタログ サーバー、ドメイン コントローラー、メールボックス サーバー、クライアント アクセス サーバー<br /><br />フォレストの機能レベル:Windows Server 2003 以降<br /><br />ソース:Exchange 2013 のシステム要件|  
 |Exchange 2010|[ソース: Exchange 2010 Service Pack 3](https://blogs.technet.com/b/exchange/archive/2012/09/25/announcing-exchange-2010-service-pack-3.aspx)<br /><br />Exchange 2010 Service Pack 3 は、Windows Server 2012 メンバー サーバーにインストールできます。<br /><br />[Exchange 2010 のシステム要件](https://technet.microsoft.com/library/aa996719(EXCHG.141).aspx) には、サポートされている最新のスキーマ マスター、グローバル カタログ、およびドメイン コントローラーとして Windows Server 2008 R2 が記載されています。<br /><br />フォレストの機能レベル:Windows Server 2003 以降|  
 |SQL Server 2012|ソース:サポート技術情報 [2681562](https://support.microsoft.com/kb/2681562)<br /><br />Windows Server 2012 では SQL Server 2012 RTM がサポートされています。|  

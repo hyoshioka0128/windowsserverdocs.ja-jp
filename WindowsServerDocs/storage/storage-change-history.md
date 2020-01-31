@@ -7,14 +7,14 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 12/20/2019
+ms.date: 1/16/2019
 description: IT 担当者向け Windows Server 向けのオンプレミスストレージドキュメントの新しいトピックと更新されたトピック。
-ms.openlocfilehash: d50d4ca5b49b7f895fad3d3866226f95c55ae485
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: eb0e4f5cd357718be298290930bdf6fb9f7f041f
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352777"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822605"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Windows Server のストレージ トピックの変更履歴
 
@@ -24,7 +24,13 @@ ms.locfileid: "75352777"
 
 > Windows Server の更新履歴を探している場合は、「 [windows 10 および Windows server 2019 の更新](https://support.microsoft.com/help/4464619)履歴」または「 [windows server 2016 の更新履歴](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history)」を参照してください。
 
-## <a name="december-2019"></a>2019 年 12 月
+## <a name="january-2020"></a>2020年1月
+
+| 新規または変更されたトピック | 説明 |
+| --- | --- |
+|[永続的なメモリの理解とデプロイ](storage-spaces/deploy-pmem.md) | 既知のハードウェアの問題が追加されました。 |
+
+## <a name="december-2019"></a>2019年12月
 
 | 新規または変更されたトピック                                        | 説明 |
 | ---                                                         | ---           |
@@ -33,7 +39,7 @@ ms.locfileid: "75352777"
 | [ダイナミック ディスクからベーシック ディスクへの再変換](disk-management/change-a-dynamic-disk-back-to-a-basic-disk.md) | コマンドラインでエラーを修正し、顧客からのフィードバックに基づいて情報を追加しました。 |
 
 
-## <a name="august-2019"></a>2019 年 8 月
+## <a name="august-2019"></a>2019年8月
 
 | 新規または変更されたトピック                                        | 説明 |
 | ---                                                         | ---           |
@@ -75,7 +81,7 @@ ms.locfileid: "75352777"
 |---                                                         |---           |
 |[記憶域の再同期を理解して管理する](storage-spaces/understand-storage-resync.md)|新しいトピックです。|
 
-## <a name="december-2018"></a>2018年 12 月
+## <a name="december-2018"></a>2018 年 12 月
 
 |新規または変更されたトピック                                        |説明|
 |---                                                         |---           |
@@ -102,7 +108,7 @@ ms.locfileid: "75352777"
 |[記憶域の新機能](whats-new-in-storage.md)|Windows Server 2019 の新機能について説明しました。|
 |[記憶域レプリカに関する既知の問題](storage-replica/storage-replica-known-issues.md)|新しい更新プログラムに関する情報を追加しました。|
 
-## <a name="september-2018"></a>September 2018
+## <a name="september-2018"></a>2018年9月
 
 |新規または変更されたトピック|説明|
 |---|---|
@@ -112,7 +118,7 @@ ms.locfileid: "75352777"
 | [iSCSI ターゲット サーバー](iscsi/iscsi-target-server.md) | [以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
 | [iSCSI ターゲット サーバーのスケーラビリティ制限](iscsi/iscsi-target-server-limits.md) |[以前のバージョン](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012)のライブラリから移行されています。|
 
-## <a name="june-2018"></a>June 2018
+## <a name="june-2018"></a>2018 年 6 月
 
 |新規または変更されたトピック|説明|
 |---|---|

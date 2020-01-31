@@ -1,6 +1,6 @@
 ---
-title: Always On VPN を DirectAccess からの移行
-description: DirectAccess から Always On VPN への移行には、特定のプロセスに役立ちますが順不同の移行手順の実行に起因する競合状態を最小限に抑えるクライアントを移行する必要があります。
+title: DirectAccess から Always On VPN への移行
+description: DirectAccess から Always On VPN に移行するには、クライアントを移行するための特定のプロセスが必要です。これにより、移行手順を順番に実行することによって発生する競合状態を最小限に抑えることができます。
 manager: dougkim
 ms.prod: windows-server
 ms.technology: networking-ras
@@ -9,75 +9,75 @@ ms.assetid: eeca4cf7-90f0-485d-843c-76c5885c54b0
 ms.author: pashort
 author: shortpatti
 ms.date: 06/07/2018
-ms.openlocfilehash: 94852b33936ece0b329614f428e845f2c7a2ac6a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2bcbc7030d54e96b4ac120b943cc1adc0513feca
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854583"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822642"
 ---
 # <a name="migrate-to-always-on-vpn-and-decommission-directaccess"></a>Always On VPN への移行と DirectAccess の使用停止
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows 10
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows 10
 
-&#171;[**前。** DirectAccess Always On VPN への移行からを計画します。](da-always-on-migration-planning.md)<br>
+&#171;[**前:** VPN 移行を Always On するように DirectAccess を計画する](da-always-on-migration-planning.md)<br>
 
-DirectAccess から Always On VPN への移行には、特定のプロセスに役立ちますが順不同の移行手順の実行に起因する競合状態を最小限に抑えるクライアントを移行する必要があります。 大まかに言えば、移行プロセスは 4 つの主な手順で構成されます。
+DirectAccess から Always On VPN に移行するには、クライアントを移行するための特定のプロセスが必要です。これにより、移行手順を順番に実行することによって発生する競合状態を最小限に抑えることができます。 大まかに言えば、移行プロセスは次の4つの主要な手順で構成されます。
 
-1.  **サイド バイ サイドでの VPN インフラストラクチャをデプロイします。** 移行フェーズと展開に追加する機能を確認した後は、既存の DirectAccess のインフラストラクチャと並行 VPN インフラストラクチャを配置します。  
+1.  **サイドバイサイド VPN インフラストラクチャを展開します。** 移行フェーズと、展開に含める機能を決定したら、既存の DirectAccess インフラストラクチャと共に VPN インフラストラクチャをサイドバイサイドで展開します。  
 
-2.  **証明書と構成をクライアントに展開します。**  VPN インフラストラクチャ準備ができたら、作成し、クライアントに必要な証明書を発行します。 クライアントが証明書を受信したときに、VPN_Profile.ps1 構成スクリプトを配置します。 または、Intune を使用して、VPN クライアントを構成することができます。 正常な VPN 構成の展開を監視するには、Microsoft System Center Configuration Manager または Microsoft Intune を使用します。
+2.  **証明書と構成をクライアントに展開します。**  VPN インフラストラクチャの準備ができたら、必要な証明書を作成してクライアントに発行します。 クライアントが証明書を受け取ったら、VPN_Profile の構成スクリプトを展開します。 または、Intune を使用して VPN クライアントを構成することもできます。 Microsoft Endpoint Configuration Manager または Microsoft Intune を使用して、VPN 構成の展開が成功したかを監視します。
 
 3.  [!INCLUDE [remove-da-security-group-shortdesc-include](../includes/remove-da-security-group-shortdesc-include.md)]
 
 4.  [!INCLUDE [decommission-da-shortdesc-include](../includes/decommission-da-shortdesc-include.md)]
 
-Always On VPN を DirectAccess からの移行プロセスを開始する前に、移行を予定していることを確認します。  移行が計画されていない場合は、次を参照してください。 [、DirectAccess から Always On VPN への移行を計画](da-always-on-migration-planning.md)します。
+DirectAccess から Always On VPN への移行プロセスを開始する前に、移行の計画があることを確認してください。  移行を計画していない場合は、「 [VPN 移行を Always On に DirectAccess を計画する](da-always-on-migration-planning.md)」を参照してください。
 
 >[!TIP] 
->このセクションでは、Always On VPN の展開のステップ バイ ステップ ガイドではありませんが、補完するものではなく[Always On VPN 展開の Windows Server および Windows 10](../vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)し移行に固有の展開のガイダンスを提供します。
+>このセクションでは、Always On VPN の手順については説明していませんが、 [Windows Server と windows 10 向けの Vpn 展開の Always On](../vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)を補完し、移行に固有の展開のガイダンスを提供することを目的としています。
 
-## <a name="deploy-a-side-by-side-vpn-infrastructure"></a>サイド バイ サイドでの VPN インフラストラクチャをデプロイします。
+## <a name="deploy-a-side-by-side-vpn-infrastructure"></a>サイドバイサイド VPN インフラストラクチャを展開する
 
-既存の DirectAccess のインフラストラクチャと並行 VPN インフラストラクチャを展開するとします。  ステップ バイ ステップの詳細については「 [Always On VPN 展開の Windows Server および Windows 10](../vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)をインストールして、Always On VPN インフラストラクチャを構成します。 
+VPN インフラストラクチャは、既存の DirectAccess インフラストラクチャとサイドバイサイドで展開します。  詳細な手順については、「 [ALWAYS ON Vpn Deployment For Windows Server」および「windows 10](../vpn/always-on-vpn/deploy/always-on-vpn-deploy.md) 」を参照して、Always On vpn インフラストラクチャをインストールして構成してください。 
 
-サイド バイ サイド展開は、次の大まかなタスクで構成されます。
+サイドバイサイド展開は、次の大まかなタスクで構成されています。
 
-1.  VPN ユーザー、VPN サーバー、および NPS サーバーのグループを作成します。
+1.  VPN ユーザー、VPN サーバー、および NPS サーバーグループを作成します。
 
-2.  作成し、必要な証明書テンプレートを発行します。
+2.  必要な証明書テンプレートを作成して発行します。
 
 3.  サーバー証明書を登録します。
 
-4.  インストールし、Always On VPN のリモート アクセス サービスを構成します。
+4.  Always On VPN 用のリモートアクセスサービスをインストールして構成します。
 
-5.  インストールし、NPS を構成します。
+5.  NPS をインストールして構成します。
 
-6.  Always On VPN の DNS およびファイアウォール規則を構成します。
+6.  Always On VPN の DNS とファイアウォール規則を構成します。
 
-次の図は、VPN 移行 DirectAccess-に – Always 全体でインフラストラクチャの変更を視覚的な参照を提供します。
+次の図は、DirectAccess から Always On VPN への移行におけるインフラストラクチャの変更を視覚的に示しています。
 
 ![](../../media/DA-to-AlwaysOnVPN/6b64f322f945f837f22a32bf87a228f8.png)
 
-## <a name="deploy-certificates-and-vpn-configuration-script-to-the-clients"></a>証明書と VPN 構成スクリプトをクライアントに展開します。
+## <a name="deploy-certificates-and-vpn-configuration-script-to-the-clients"></a>証明書と VPN 構成スクリプトをクライアントに展開する
 
-VPN クライアント構成の一括、[デプロイ Always On VPN](../vpn/always-on-vpn/deploy/always-on-vpn-deploy-deployment.md)セクション、2 つの追加 DirectAccess から Always On VPN への移行を正常に完了する手順が必要です。 
+Vpn クライアント構成の大部分は[ALWAYS ON vpn の展開](../vpn/always-on-vpn/deploy/always-on-vpn-deploy-deployment.md)セクションにありますが、DirectAccess から Always On VPN への移行を正常に完了するには、2つの追加の手順が必要です。 
 
-いることを確認する必要があります、 **VPN_Profile.ps1**は_後_なしで接続する VPN クライアントが試行しないように、証明書が発行されています。 そのためには、証明書を使用して、Always On VPN 構成を展開する VPN 展開の準備がグループに登録したユーザーのみを追加するスクリプトを実行します。
+VPN クライアントが接続を試行しないように、証明書が発行され_た後_に**VPN_Profile**になるようにする必要があります。 これを行うには、証明書に登録されているユーザーのみを VPN 展開の準備ができているグループに追加するスクリプトを実行します。このグループは、Always On VPN 構成を展開するために使用します。
 
 >[!NOTE] 
->そのユーザー移行の呼び出し回数のいずれかで実行する前に、このプロセスをテストすることをお勧めします。
+>このプロセスは、ユーザーの移行リングで実行する前にテストすることをお勧めします。
 
-1.  **作成し VPN 証明書を発行し、自動登録のグループ ポリシー オブジェクト (GPO) を有効にします。** 従来、証明書ベースの Windows 10 の VPN 展開は、接続を認証できるようにデバイスまたはユーザーのいずれかに証明書が発行されます。 新しい認証証明書を作成して自動登録用にパブリッシュするは作成する必要があり、VPN ユーザー グループを構成した自動登録設定を使用した GPO をデプロイします。 証明書と自動登録を構成する手順については、次を参照してください。[サーバー インフラストラクチャを構成する](../vpn/always-on-vpn/deploy/vpn-deploy-server-infrastructure.md)します。
+1.  **VPN 証明書を作成して発行し、自動登録グループポリシーオブジェクト (GPO) を有効にします。** 従来の証明書ベースの Windows 10 VPN 展開では、接続を認証できるように、デバイスまたはユーザーに対して証明書が発行されます。 新しい認証証明書が作成され、自動登録のために公開された場合、自動登録設定を構成した GPO を作成して、VPN Users グループに展開する必要があります。 証明書と自動登録を構成する手順については、「[サーバーインフラストラクチャの構成](../vpn/always-on-vpn/deploy/vpn-deploy-server-infrastructure.md)」を参照してください。
 
-2.  **VPN ユーザー グループにユーザーを追加します。** VPN ユーザー グループに移行するどのユーザーを追加します。 それらのユーザーは、今後のすべての証明書の更新プログラムを受信できるように移行した後、そのセキュリティ グループに残ります。 続行すると、Always On VPN DirectAccess からのすべてのユーザーに移動するまで、このグループにユーザーを追加します。 
+2.  **VPN ユーザーグループにユーザーを追加します。** VPN ユーザーグループに移行するユーザーを追加します。 これらのユーザーは、後で証明書の更新を受け取ることができるように、移行後にそのセキュリティグループにとどまります。 すべてのユーザーを DirectAccess から Always On VPN に移動するまで、このグループへのユーザーの追加を続けます。 
 
-3.  **VPN 認証証明書を受信したユーザーを特定します。** DirectAccess から移行するため、クライアントが必要な証明書を受信したし、の VPN の構成情報を受信する準備ができてを識別するためのメソッドを追加する必要があります。 実行、 **GetUsersWithCert.ps1** nonrevoked 証明書が指定した AD DS セキュリティ グループに指定したテンプレートの名前を元の発行元は現在のユーザーを追加するスクリプト。 たとえば、実行した後、 **GetUsersWithCert.ps1**スクリプト、すべてのユーザーで、VPN 認証証明書テンプレートは、VPN 展開の準備がグループに追加から有効な証明書が発行されました。
+3.  **VPN 認証証明書を受け取ったユーザーを識別します。** DirectAccess から移行する場合は、クライアントが必要な証明書を受信し、VPN 構成情報を受信する準備ができたことを識別するメソッドを追加する必要があります。 **Getusers Withcert. ps1**スクリプトを実行して、現在失効していない証明書を発行したユーザーを、指定したテンプレート名から、指定した AD DS セキュリティグループに追加します。 たとえば、 **getuser Withcert. ps1**スクリプトを実行すると、Vpn 認証証明書テンプレートから有効な証明書を発行したすべてのユーザーが、vpn 展開の準備ができたグループに追加されます。
 
     >[!NOTE] 
-    >クライアントが必要な証明書を受信したときに識別するためにメソッドがない、前に、VPN 接続に失敗する原因と、ユーザーが発行された証明書、VPN の構成をデプロイできます。 このような状況を回避するには、実行、 **GetUsersWithCert.ps1**証明機関で、または VPN 展開の準備がグループに証明書を受信したユーザーを同期するスケジュールに従ってスクリプトします。 そのセキュリティ グループは、System Center Configuration Manager または Intune を見ると、証明書を受信した前に、マネージ クライアントによって、VPN の構成が表示されませんが、VPN 構成の展開の対象に使用されます。
+    >クライアントが必要な証明書を受け取ったことを特定する方法がない場合は、ユーザーに証明書が発行される前に VPN 構成を展開して、VPN 接続が失敗するようにすることができます。 この状況を回避するには、証明機関またはスケジュールに基づいて**Getusers Withcert. ps1**スクリプトを実行し、証明書を受信したユーザーを VPN 展開の準備ができたグループに同期させます。 その後、そのセキュリティグループを使用して、Microsoft Endpoint Configuration Manager または Intune での VPN 構成の展開をターゲットにします。これにより、管理されたクライアントは、証明書を受信する前に VPN 構成を受信しなくなります。
     
-    ### <a name="getuserswithcertps1"></a>GetUsersWithCert.ps1
+    ### <a name="getuserswithcertps1"></a>Getall Withcert. ps1
     
     ```powershell
     Import-module ActiveDirectory
@@ -117,33 +117,33 @@ VPN クライアント構成の一括、[デプロイ Always On VPN](../vpn/alwa
       }
     ```
 
-4. Always On VPN 構成をデプロイします。 実行して、vpn 認証証明書を発行は、 **GetUsersWithCert.ps1**スクリプトをユーザーが VPN 展開の準備完了のセキュリティ グループに追加されます。
+4. Always On VPN 構成を展開します。 VPN 認証証明書が発行され、 **getusers Withcert. ps1**スクリプトを実行すると、ユーザーが Vpn 展開準備完了セキュリティグループに追加されます。
 
 
-| 使用する場合.  | 結果 |
+| ...  | 結果 |
 | ---- | ---- |
-| System Center Configuration Manager | そのセキュリティ グループのメンバーシップに基づいてユーザーのコレクションを作成します。<br><br>![](../../media/DA-to-AlwaysOnVPN/b38723b3ffcfacd697b83dd41a177f66.png)演算子|
-| Intune | 同期されていると、セキュリティ グループを直接ターゲットだけです。 |
+| Configuration Manager | そのセキュリティグループのメンバーシップに基づいてユーザーコレクションを作成します。<br><br>![](../../media/DA-to-AlwaysOnVPN/b38723b3ffcfacd697b83dd41a177f66.png)演算子|
+| Intune | 同期するときに、セキュリティグループを直接ターゲットにするだけです。 |
 |
     
-実行するたびに、 **GetUsersWithCert.ps1**構成スクリプトでは、System Center Configuration Manager でセキュリティ グループのメンバーシップを更新する AD DS の検出規則も実行する必要があります。 また、メンバーシップの更新プログラムの展開コレクションを頻繁に発生するのに十分なことを確認 (配置スクリプトと検出ルールを使用)。
+**Getユーザー Withcert. ps1**構成スクリプトを実行するたびに、AD DS 検出ルールを実行して Configuration Manager のセキュリティグループメンバーシップを更新する必要もあります。 また、展開コレクションのメンバーシップの更新が頻繁に発生することを確認してください (スクリプトと検出ルールに合わせます)。
 
-System Center Configuration Manager または Intune を使用して、Windows クライアントに Always On VPN を展開する方法の詳細については、次を参照してください。 [Always On VPN 展開の Windows Server および Windows 10](../vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)します。 必ず、ただし、これらの移行に固有のタスクを組み込む。
-
->[!NOTE] 
->単純な Always On VPN 展開および DirectAccess から Always On VPN への移行の重要な違いは、これらの移行に固有のタスクを組み込むことです。 正しく展開ガイドでメソッドを使用するのではなく、セキュリティ グループを対象とするコレクションを定義することを確認します。
-
-
-## <a name="remove-devices-from-the-directaccess-security-group"></a>DirectAccess のセキュリティ グループからデバイスを削除します。
-
-ユーザー認証証明書を受信すると、 **VPN_Profile.ps1**対応する System Center Configuration Manager または Intune での VPN 構成スクリプト展開が成功を確認する構成スクリプト。 それぞれの展開後に、DirectAccess を後で削除できるように DirectAccess のセキュリティ グループからそのユーザーのデバイスを削除します。 Intune と System Center Configuration Manager の両方には、各ユーザーのデバイスを判断するのに役立つユーザーとデバイスの割り当て情報が含まれています。
+Configuration Manager または Intune を使用して Windows クライアントに Always On VPN を展開する方法の詳細については、「 [Windows Server および windows 10 用の Vpn 展開の Always On](../vpn/always-on-vpn/deploy/always-on-vpn-deploy.md)」を参照してください。 ただし、これらの移行に固有のタスクを組み込むには、必ず注意してください。
 
 >[!NOTE] 
->コンピューター グループではなく、組織単位 (Ou) から DirectAccess の Gpo を適用する場合は、OU からユーザーのコンピューター オブジェクトを移動します。
+>これらの移行固有のタスクを組み込むことは、単純な Always On VPN の展開と、DirectAccess から Always On VPN への移行の間の重要な違いです。 展開ガイドのメソッドを使用するのではなく、セキュリティグループを対象とするようにコレクションを適切に定義するようにしてください。
 
-## <a name="decommission-the-directaccess-infrastructure"></a>DirectAccess インフラストラクチャを使用停止します。
 
-Always On VPN へのすべての DirectAccess クライアントの移行が完了したら、DirectAccess インフラストラクチャの使用を停止し、グループ ポリシーからの DirectAccess の設定を削除できます。 環境から DirectAccess を正常に削除するには、次の手順を実行するをお勧めします。
+## <a name="remove-devices-from-the-directaccess-security-group"></a>DirectAccess セキュリティグループからデバイスを削除する
+
+ユーザーが認証証明書と**VPN_Profile**の構成スクリプトを受信すると、Configuration Manager または Intune に、対応する VPN 構成スクリプトの展開が表示されます。 各展開後に、directaccess セキュリティグループからそのユーザーのデバイスを削除して、後で DirectAccess を削除できるようにします。 Intune と Configuration Manager には、各ユーザーのデバイスを特定するのに役立つユーザーデバイスの割り当て情報が含まれています。
+
+>[!NOTE] 
+>コンピューターグループではなく組織単位 (Ou) を使用して DirectAccess Gpo を適用している場合は、ユーザーのコンピューターオブジェクトを OU の外に移動します。
+
+## <a name="decommission-the-directaccess-infrastructure"></a>DirectAccess インフラストラクチャの使用停止
+
+すべての DirectAccess クライアントの Always On VPN への移行が完了したら、DirectAccess インフラストラクチャを使用停止し、グループポリシーから DirectAccess 設定を削除することができます。 Microsoft では、環境から DirectAccess を適切に削除するために、次の手順を実行することをお勧めします。
 
 1.  [!INCLUDE [remove-config-settings-shortdesc-include](../includes/remove-config-settings-shortdesc-include.md)]
 
@@ -151,13 +151,13 @@ Always On VPN へのすべての DirectAccess クライアントの移行が完�
 
 2.  [!INCLUDE [remove-da-security-group-shortdesc-include](../includes/remove-da-security-group-shortdesc-include.md)]
 
-3.  **DNS をクリーンアップします。** 内部 DNS サーバーからすべてのレコードを削除してくださいし、パブリック DNS サーバーに関連する DirectAccess は、たとえば、DA.contoso.com、DAGateway.contoso.com します。
+3.  **DNS をクリーンアップします。** 内部 DNS サーバーと、DirectAccess に関連するパブリック DNS サーバー (たとえば、DA.contoso.com、DAGateway.contoso.com) からすべてのレコードを削除してください。
 
 4.  [!INCLUDE [decommission-da-shortdesc-include](../includes/decommission-da-shortdesc-include.md)]
 
-5.  **Active Directory 証明書サービスからの DirectAccess のすべての証明書を削除します。** DirectAccess は、実装をコンピューターの証明書を使用した場合は、証明機関 コンソールで証明書テンプレートのフォルダーから発行されたテンプレートを削除します。
+5.  **Active Directory 証明書サービスからのすべての DirectAccess 証明書を削除します。** DirectAccess の実装にコンピューター証明書を使用していた場合は、証明機関コンソールの [証明書テンプレート] フォルダーから、発行されたテンプレートを削除します。
 
 ## <a name="next-step"></a>次の手順
-完了したら DirectAccess から Always On VPN への移行します。 
+DirectAccess から Always On VPN への移行が完了しました。 
 
 ---

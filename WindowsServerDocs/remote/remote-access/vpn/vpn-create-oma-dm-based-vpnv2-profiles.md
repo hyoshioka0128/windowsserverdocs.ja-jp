@@ -15,12 +15,12 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 016d9d2dcc26572f8d248ef2f4a922da2e456b83
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 804b7314054691fa0abc19f1cc4e4bffbd6457cf
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949896"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822445"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>手順 7.5. Windows 10 デバイスに OMA-URI ベースの VPNv2 プロファイルを作成する
 
@@ -29,13 +29,13 @@ ms.locfileid: "75949896"
 - [**前へ:** 手順 7.4.条件付きアクセスルート証明書をオンプレミスの AD にデプロイする](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
 - [**次のようになります。** VPN の条件付きアクセスのしくみについて説明します。](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)
 
-この手順では、Intune を使用して OMA-URI ベースの VPNv2 プロファイルを作成し、VPN デバイス構成ポリシーを展開することができます。 VPNv2 プロファイルを作成するために SCCM または PowerShell スクリプトを使用する場合、詳細については、 [VPNV2 CSP 設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)を参照してください。 
+この手順では、Intune を使用して OMA-URI ベースの VPNv2 プロファイルを作成し、VPN デバイス構成ポリシーを展開することができます。 VPNv2 プロファイルを作成するために Microsoft エンドポイント Configuration Manager または PowerShell スクリプトを使用する場合は、 [VPNV2 CSP の設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)に関する詳細を参照してください。 
 
 ## <a name="managed-deployment-using-intune"></a>Intune を使用した管理された展開
 
 このセクションで説明するすべてのものは、VPN を条件付きアクセスで動作させるために最低限必要です。 WIP を使用した分割トンネリングについては説明しません。また、カスタムの Intune デバイス構成プロファイルを作成して AutoVPN の機能を取得します。 以下の設定を、前の手順5で作成した VPN プロファイルに統合し[ます。Windows 10 クライアント Always On VPN 接続を構成](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)します。  この例では、 [Intune ポリシーを使用して VPN クライアントを構成](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md#configure-the-vpn-client-by-using-intune)します。 
 
-**前提条件:**
+**要件**
 
 Windows 10 クライアントコンピューターは、Intune を使用して VPN 接続を使用して既に構成されています。   
 

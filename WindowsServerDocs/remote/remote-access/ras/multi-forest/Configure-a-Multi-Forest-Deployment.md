@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 3c8feff2-cae1-4376-9dfa-21ad3e4d5d99
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 41c4de30482ff09cb0db8a113fa324b7299af43d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 08bd945bf808843286d390a089d9ac070b9a8813
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404539"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822685"
 ---
 # <a name="configure-a-multi-forest-deployment"></a>Configure a Multi-Forest Deployment
 
@@ -76,7 +76,7 @@ ms.locfileid: "71404539"
 この手順には、PowerShell スクリプトの PKISync.ps1 が必要です。 「 [AD CS:PKISync.ps1 Script for Cross-forest Certificate Enrollment (AD CS: フォレスト間証明書登録のための PKISync.ps1 スクリプト)](https://technet.microsoft.com/library/ff961506.aspx)」を参照してください。  
   
 > [!NOTE]  
-> このトピックでは、サンプル Windows PowerShell コマンドレットを紹介します。ここで説明する手順の一部はこのコマンドレットで自動化できます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
+> このトピックでは、説明した手順の一部を自動化するのに使用できる Windows PowerShell コマンドレットのサンプルを示します。 詳細については、次を参照してください。 [コマンドレットを使用した](https://go.microsoft.com/fwlink/p/?linkid=230693)します。  
   
 ### <a name="BKMK_CertPub"></a>Ca を証明書の発行元として構成する  
   
@@ -177,9 +177,9 @@ DNS サフィックス検索一覧では、クライアントは FQDN ではな�
   
 2.  **[ネットワーク ロケーション サーバー]** ページで、 **[次へ]** をクリックします。  
   
-3.  **[DNS]** ページのテーブルで、Forest2 の企業ネットワークの一部である追加の名前サフィックスを入力します。 **[DNS サーバー アドレス]** に、DNS サーバー アドレスを手動または **[検出]** をクリックして入力します。 アドレスを入力しない場合、新しいエントリは NRPT 除外として適用されます。 その後、 **[次へ]** をクリックします。  
+3.  **[DNS]** ページのテーブルで、Forest2 の企業ネットワークの一部である追加の名前サフィックスを入力します。 **[DNS サーバー アドレス]** に、DNS サーバー アドレスを手動または **[検出]** をクリックして入力します。 アドレスを入力しない場合、新しいエントリは NRPT 除外として適用されます。 **[次へ]** をクリックします。  
   
-4.  省略可能: **[DNS サフィックス検索一覧]** ページで、 **[新しいサフィックス]** ボックスにサフィックスを入力し、 **[追加]** をクリックして、DNS サフィックスを追加します。 その後、 **[次へ]** をクリックします。  
+4.  省略可能: **[DNS サフィックス検索一覧]** ページで、 **[新しいサフィックス]** ボックスにサフィックスを入力し、 **[追加]** をクリックして、DNS サフィックスを追加します。 **[次へ]** をクリックします。  
   
 5.  **[管理]** ページで、 **[完了]** をクリックします。  
   
@@ -202,7 +202,7 @@ DNS サフィックス検索一覧では、クライアントは FQDN ではな�
   
 2.  リモート アクセス サーバーのセットアップ ウィザードで、 **[プレフィックスの構成]** をクリックします。  
   
-3.  **[プレフィックスの構成]** ページの **[内部ネットワークの IPv6 プレフィックス]** で、2001:db8:1::/64;2001:db8:2::/64 のようにセミコロンで区切られた追加の IPv6 プレフィックスを追加します。 その後、 **[次へ]** をクリックします。  
+3.  **[プレフィックスの構成]** ページの **[内部ネットワークの IPv6 プレフィックス]** で、2001:db8:1::/64;2001:db8:2::/64 のようにセミコロンで区切られた追加の IPv6 プレフィックスを追加します。 **[次へ]** をクリックします。  
   
 4.  **[認証]** ページで、 **[完了]** をクリックします。  
   
@@ -221,7 +221,7 @@ Forest2 から Windows 8 クライアントコンピューターが DirectAccess
   
 2.  DirectAccess クライアントのセットアップ ウィザードで **[グループの選択]** をクリックし、 **[グループの選択]** ページで **[追加]** をクリックします。  
   
-3.  **[グループの選択]** ダイアログ ボックスで、DirectAccess クライアント コンピューターを含むセキュリティ グループを選択します。 その後、 **[次へ]** をクリックします。  
+3.  **[グループの選択]** ダイアログ ボックスで、DirectAccess クライアント コンピューターを含むセキュリティ グループを選択します。 **[次へ]** をクリックします。  
   
 4.  **[Network Connectivity Assistant]** ページで、 **[完了]** をクリックします。  
   
@@ -236,7 +236,7 @@ Forest2 から Windows 8 クライアントコンピューターが DirectAccess
 ### <a name="RefreshMgmtServers"></a>管理サーバーの一覧を更新する  
 リモート アクセスでは、DirectAccess 構成 GPO を含むすべてのフォレストのインフラストラクチャ サーバーを自動的に検出します。 DirectAccess が Forest1 からサーバーに展開された場合、サーバーの GPO は Forest1 のそのドメインに書き込まれます。 Forest2 からクライアントの DirectAccess へのアクセスを有効にした場合、クライアントの GPO が Forest2 のドメインに書き込まれます。  
   
-DirectAccess を通じてドメイン コントローラーおよび System Center Configuration Manager にアクセスできるようにするには、インフラストラクチャ サーバーの自動検出プロセスが必要です。 検出プロセスを手動で開始する必要があります。  
+ドメインコントローラーと Microsoft エンドポイント Configuration Manager に DirectAccess 経由でアクセスできるようにするには、インフラストラクチャサーバーの自動検出プロセスが必要です。 検出プロセスを手動で開始する必要があります。  
   
 ##### <a name="to-refresh-the-management-servers-list"></a>管理サーバーの一覧を更新するには  
   

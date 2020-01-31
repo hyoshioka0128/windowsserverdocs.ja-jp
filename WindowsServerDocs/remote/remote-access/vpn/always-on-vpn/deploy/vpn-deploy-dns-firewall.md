@@ -9,19 +9,19 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.date: 06/11/2018
-ms.openlocfilehash: 326f1e8d52dc34ad433e8cc3bd4c4e84508026b7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: aa7658587b8434bfbaa6874498215a6b2c9213be
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388079"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822665"
 ---
 # <a name="step-5-configure-dns-and-firewall-settings"></a>手順 5. DNS とファイアウォールの設定を構成する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
-- [**先の：** 手順 4.NPS サーバーをインストールして構成する](vpn-deploy-nps.md)
-- [**次に：** 手順 6.Windows 10 クライアントの Always On VPN 接続を構成する](vpn-deploy-client-vpn-connections.md)
+- [**前へ:** 手順 4.NPS サーバーをインストールして構成する](vpn-deploy-nps.md)
+- [**次のようになります。** 手順 6.Windows 10 クライアント Always On VPN 接続を構成する](vpn-deploy-client-vpn-connections.md)
 
 この手順では、VPN 接続用の DNS とファイアウォールの設定を構成します。
 
@@ -84,4 +84,4 @@ NPS の展開で既定の RADIUS ポートを使用していない場合は、�
 
 ## <a name="next-steps"></a>次の手順
 
-[手順 6.Windows 10 クライアント Always On VPN 接続](vpn-deploy-client-vpn-connections.md)を構成します。この手順では、VPN 接続を使用して、そのインフラストラクチャと通信するように Windows 10 クライアントコンピューターを構成します。 Windows PowerShell、System Center Configuration Manager、Intune など、いくつかのテクノロジを使用して Windows 10 VPN クライアントを構成できます。 3つすべてに、適切な VPN 設定を構成するための XML VPN プロファイルが必要です。
+[手順 6.Windows 10 クライアント Always On VPN 接続を構成](vpn-deploy-client-vpn-connections.md)する: この手順では、vpn 接続を使用して、そのインフラストラクチャと通信するように windows 10 クライアントコンピューターを構成します。 Windows PowerShell、Microsoft Endpoint Configuration Manager、Intune などの Windows 10 VPN クライアントを構成するには、いくつかのテクノロジを使用できます。 3つすべてに、適切な VPN 設定を構成するための XML VPN プロファイルが必要です。

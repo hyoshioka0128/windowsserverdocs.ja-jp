@@ -9,12 +9,12 @@ ms.date: 3/29/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0850145c9281c769c5a2b6532ccb56615abd11b3
-ms.sourcegitcommit: ff0db5ca093a31034ccc5e9156f5e9b45b69bae5
+ms.openlocfilehash: b50b1b7b43002c91ee849f352e255f520f6d96f0
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725787"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822735"
 ---
 # <a name="required-updates-for-active-directory-federation-services-ad-fs-and-web-application-proxy-wap"></a>Active Directory フェデレーションサービス (AD FS) (AD FS) と Web アプリケーションプロキシ (WAP) に必要な更新
 
@@ -28,6 +28,7 @@ Windows Server 2016 の更新プログラムは、Windows Update によって毎
 
 |KB# |説明|リリース日
 |----- | ----- |-----
+|[4534271](https://support.microsoft.com/help/4534271/windows-10-update-kb4534271) | Google Chrome のリリース80では、新しい[SameSite](https://www.chromestatus.com/feature/5088147346030592) cookie ポリシーが既定でサポートされているため AD FS chrome エラーが発生する可能性があります。 詳細については、[こちら](https://docs.microsoft.com/office365/troubleshoot/miscellaneous/chrome-behavior-affects-applications)を参照してください。 |2020年1月|
 |[CVE-2019-1126](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2019-1126) | このセキュリティ更新プログラムは、Active Directory フェデレーションサービス (AD FS) (AD FS) の脆弱性に対処します。これにより、攻撃者がエクストラネットロックアウトポリシーをバイパスできる可能性があります。 |2019年7月|
 |[4489889 (OS ビルド 14393.2879)](https://support.microsoft.com/help/4489889/windows-10-update-kb4489889) | 重複証明書利用者信頼が AD FS 管理コンソールに表示される Active Directory フェデレーションサービス (AD FS) (AD FS) の問題に対処します。 これは、AD FS 管理コンソールを使用して証明書利用者信頼を作成または表示する場合に発生します。</br></br> AD FS 2016 でエクストラネットのスマートロックアウト (ESL) が有効になっている間に発生する、高 Active Directory フェデレーションサービス (AD FS) (ADFS) Web アプリケーションプロキシ (WAP) の待機時間の問題 (10,000 ミリ秒) に対処します。 このセキュリティ更新プログラムは、 [CVE-2018-16794](https://nvd.nist.gov/vuln/detail/CVE-2018-16794)で説明されている脆弱性に対処します。 |2019 年 3 月|
 |[4487006 (OS ビルド 14393.2828)](https://support.microsoft.com/help/4487006/windows-10-update-kb4487006) | PowerShell または Active Directory フェデレーションサービス (AD FS) (AD FS) 管理コンソールを使用しているときに、証明書利用者信頼の更新が失敗する原因となる問題に対処します。 この問題は、複数の PassiveRequestorEndpoint を発行するオンラインメタデータ URL を使用するように証明書利用者信頼を構成すると発生します。 "MSIS7615: 証明書利用者信頼に指定された信頼されたエンドポイントは、その証明書利用者信頼に対して一意である必要があります。" というエラーが発生します。  </br></br>Azure のパスワード保護ポリシーにより、外部の複雑さのパスワード変更に関する特定のエラーメッセージを表示する問題に対処します。 |2019 年 2 月|
@@ -50,6 +51,7 @@ Windows Server 2012 R2 の Active Directory フェデレーションサービス
 
 |KB# |説明|リリース日
 |----- | ----- |-----
+|[4534309](https://support.microsoft.com/help/4534309/windows-8-1-kb4534309)| Google Chrome のリリース80では、新しい[SameSite](https://www.chromestatus.com/feature/5088147346030592) cookie ポリシーが既定でサポートされているため AD FS chrome エラーが発生する可能性があります。 詳細については、[こちら](https://docs.microsoft.com/office365/troubleshoot/miscellaneous/chrome-behavior-affects-applications)を参照してください。 |2020年1月
 |[4507448](https://support.microsoft.com/help/4507448/windows-8-1-update-kb4507448)| このセキュリティ更新プログラムは、Active Directory フェデレーションサービス (AD FS) (AD FS) の脆弱性に対処します。これにより、攻撃者がエクストラネットロックアウトポリシーをバイパスできる可能性があります。 |2019年7月
 |[4041685](https://support.microsoft.com/kb/4041685)|要求ヘッダーの MSISConext クッキーが最終的にヘッダーサイズの制限をオーバーフローし、HTTP 状態コード400の "Bad Request-Header 長すぎます" で失敗する可能性がある AD FS の問題に対処します。</br></br>認証時に ADFS が "prompt = login" を無視できなくなる問題を修正しました。 非パスワード認証が使用される復元シナリオに "Disabled" オプションが追加されました。|更新プログラムのロールアップの2017年10月のプレビュー
 |[4019217](https://support.microsoft.com/kb/4019217)|サーバー 2012 R2 AD FS サーバーを使用しているときに、トークンブローカーを使用しているワークフォルダークライアントが機能しない|2017年5月の更新プログラムのロールアップ

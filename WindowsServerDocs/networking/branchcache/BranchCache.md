@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: a4587cff-c086-49f1-a0bf-cd74b8a44440
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7fe8d948a5f43fdab394490f543f3583167bdfe9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 15d57d12679d7441da080ad671264ca1e5e1f42c
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406763"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822805"
 ---
 # <a name="branchcache"></a>BranchCache
 
@@ -75,7 +75,7 @@ BranchCache は、windows Server 2016 および Windows 10 オペレーティン
   
 ブランチオフィスでは、キャッシュをホストするように構成されているサーバーにコンテンツが格納されます。また、ブランチオフィスでサーバーが使用できない場合は、Windows 10、Windows 8.1、Windows 8、または Windows 7 を実行しているクライアントコンピューターにコンテンツが格納されます。 クライアント コンピューターがコンテンツを要求してメイン オフィスからコンテンツを受信すると、コンテンツがブランチ オフィスにキャッシュされます。すると、同じブランチ オフィスにある他のコンピューターは、WAN リンクを経由してコンテンツ サーバーからコンテンツをダウンロードしなくてもコンテンツをローカルに取得できるようになります。
 
-その後クライアント コンピューターが同じコンテンツを要求するとき、クライアントは、実際のコンテンツではなく、*コンテンツ情報*をサーバーからダウンロードします。 コンテンツ情報は、元のコンテンツのチャンクを使用して計算されるハッシュから構成されます。コンテンツ情報は、元のデータの内容と比較するとサイズが非常に小さくなります。 次に、クライアント コンピューターは、コンテンツ情報を使用して、ブランチ オフィス内のキャッシュからコンテンツを探します。キャッシュがクライアント コンピューターとサーバーのどちらにあるかは関係ありません。 さらに、クライアント コンピューターとサーバーは、コンテンツ情報を使用して、承認されていないユーザーからアクセスを防ぐために、キャッシュされたコンテンツをセキュリティで保護します。
+その後クライアント コンピューターが同じコンテンツを要求するとき、クライアントは、実際のコンテンツではなく、 *コンテンツ情報* をサーバーからダウンロードします。 コンテンツ情報は、元のコンテンツのチャンクを使用して計算されるハッシュから構成されます。コンテンツ情報は、元のデータの内容と比較するとサイズが非常に小さくなります。 次に、クライアント コンピューターは、コンテンツ情報を使用して、ブランチ オフィス内のキャッシュからコンテンツを探します。キャッシュがクライアント コンピューターとサーバーのどちらにあるかは関係ありません。 さらに、クライアント コンピューターとサーバーは、コンテンツ情報を使用して、承認されていないユーザーからアクセスを防ぐために、キャッシュされたコンテンツをセキュリティで保護します。
 
 BranchCache は、ブランチ オフィス内のクライアントとサーバーでコンテンツのクエリ応答時間を向上させることによってエンド ユーザーの生産性を高めます。また、WAN リンク経由のトラフィックが減少するのでネットワーク パフォーマンスの向上にも役立ちます。
 
@@ -124,7 +124,7 @@ BranchCache を展開すると、ソースコンテンツは、メインオフ�
 
 サポートされている Web サーバーには、Web サーバー (IIS) サーバーの役割がインストールされており、ハイパーテキスト転送プロトコル (HTTP) または HTTP セキュリティを使用している windows Server 2016、Windows Server 2012 R2、Windows Server 2012、または Windows Server 2008 R2 を実行しているコンピューターが含まれます。HTTPS)。
 
-さらに、Web サーバーには、BranchCache 機能がインストールされている必要があります。
+加えて、Web サーバーには、BranchCache 機能がインストールされている必要があります。
 
 ### <a name="file-servers"></a>ファイル サーバー
 
@@ -136,7 +136,7 @@ BranchCache を展開すると、ソースコンテンツは、メインオフ�
 
 サポートされるアプリケーションサーバーには、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、またはバックグラウンドインテリジェント転送サービス (BITS) がインストールされ、有効になっている Windows Server 2008 R2 を実行しているコンピューターが含まれます。 
 
-加えて、アプリケーション サーバーには、BranchCache 機能がインストールされている必要があります。 アプリケーションサーバーの例として、Microsoft Windows Server Update Services (WSUS) と Microsoft System Center Configuration Manager ブランチ配布ポイントサーバーを BranchCache コンテンツサーバーとして展開できます。
+加えて、アプリケーション サーバーには、BranchCache 機能がインストールされている必要があります。 アプリケーションサーバーの例として、Microsoft Windows Server Update Services (WSUS) と Microsoft Endpoint Configuration Manager ブランチ配布ポイントサーバーを BranchCache コンテンツサーバーとして展開できます。
 
 ## <a name="BKMK_3a"></a>BranchCache とクラウド
 
@@ -235,7 +235,7 @@ BranchCache の各種機能をサポートするオペレーティング シス�
 -   Windows 7 Pro、BITS サポートのみ
 
 > [!NOTE]
-> BranchCache は、Windows Server 2008 または Windows Vista オペレーティングシステムでは既定では使用できません。 ただし、これらのオペレーティングシステムでは、Windows Management Framework 更新プログラムをダウンロードしてインストールすると、BranchCache 機能はバックグラウンドインテリジェント転送サービス (BITS) プロトコルでのみ使用できます。 詳細については、Windows Management Framework のダウンロードについては、「 [Windows Management framework (Windows PowerShell 2.0、WinRM 2.0、および BITS 4.0)](https://go.microsoft.com/fwlink/?LinkId=188677) https://go.microsoft.com/fwlink/?LinkId=188677」を参照してください。
+> BranchCache は、Windows Server 2008 または Windows Vista オペレーティングシステムでは既定では使用できません。 ただし、これらのオペレーティングシステムでは、Windows Management Framework 更新プログラムをダウンロードしてインストールすると、BranchCache 機能はバックグラウンドインテリジェント転送サービス (BITS) プロトコルでのみ使用できます。 詳細については、Windows Management Framework のダウンロードについては、「 [Windows Management framework (Windows PowerShell 2.0、WinRM 2.0、および BITS 4.0)](https://go.microsoft.com/fwlink/?LinkId=188677) https://go.microsoft.com/fwlink/?LinkId=188677 」を参照してください。
   
 ### <a name="operating-systems-for-branchcache-content-server-functionality"></a>BranchCache コンテンツ サーバー用のオペレーティング システム
 

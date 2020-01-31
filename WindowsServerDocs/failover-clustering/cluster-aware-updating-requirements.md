@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 08/06/2018
 description: クラスター対応更新を使用して、Windows Server を実行しているクラスターに更新プログラムをインストールするための要件。
-ms.openlocfilehash: 501969fad2455195bca485bd8124911d6d75378e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 58538b38db2ddec693d32328a7fb802dcb1c871b
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361323"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822065"
 ---
 # <a name="cluster-aware-updating-requirements-and-best-practices"></a>クラスター対応更新の要件とベストプラクティス
 
@@ -36,7 +36,7 @@ CAU を利用するには、フェールオーバー クラスタリング機能
 |-----------------------|-----------------------|-------------------------|  
 |フェールオーバー クラスタリング機能|すべてのクラスター ノードで必要|すべてのクラスター ノードで必要|  
 |フェールオーバー クラスタリング ツール|すべてのクラスター ノードで必要|-リモート\-更新コンピュータに必要<br />- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps)コマンドレットを実行するすべてのクラスターノードで必要|  
-|CAU のクラスター化された役割|必須|不要|  
+|CAU のクラスター化された役割|必須かどうか|任意|  
 
 ## <a name="obtain-an-administrator-account"></a>管理者アカウントの取得  
 CAU 機能を使用するには、次の管理者要件が必要です。  
@@ -72,9 +72,9 @@ CAU 機能を使用するには、次の管理者要件が必要です。
 |要件|既定の状態|自己\-更新モード|リモート\-更新モード|  
 |---------------|---|-----------------------|-------------------------|  
 |[自動再起動を許可するファイアウォール規則を有効にする](#BKMK_FW)|無効|ファイアウォールが使用される場合にすべてのクラスター ノードで必要|ファイアウォールが使用される場合にすべてのクラスター ノードで必要|  
-|[Windows Management Instrumentation を有効にする](#BKMK_WMI)|有効|すべてのクラスター ノードで必要|すべてのクラスター ノードで必要|  
-|[Windows PowerShell 3.0 または4.0 と Windows PowerShell リモート処理を有効にする](#BKMK_PS)|有効|すべてのクラスター ノードで必要|次を実行するすべてのクラスター ノードで必要:<br /><br />- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps)コマンドレット<br />-更新実行中に PowerShell\-update と post\-更新スクリプトを事前に更新する<br />-クラスター対応更新ウィンドウまたは[テスト\-Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell コマンドレットを使用して、クラスター更新の準備のテストを行います。|  
-|[.NET Framework 4.6 または4.5 のインストール](#BKMK_NET)|有効|すべてのクラスター ノードで必要|次を実行するすべてのクラスター ノードで必要:<br /><br />- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps)コマンドレット<br />-更新実行中に PowerShell\-update と post\-更新スクリプトを事前に更新する<br />-クラスター対応更新ウィンドウまたは[テスト\-Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell コマンドレットを使用して、クラスター更新の準備のテストを行います。|  
+|[Windows Management Instrumentation を有効にする](#BKMK_WMI)|Enabled|すべてのクラスター ノードで必要|すべてのクラスター ノードで必要|  
+|[Windows PowerShell 3.0 または4.0 と Windows PowerShell リモート処理を有効にする](#BKMK_PS)|Enabled|すべてのクラスター ノードで必要|次を実行するすべてのクラスター ノードで必要:<br /><br />- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps)コマンドレット<br />-更新実行中に PowerShell\-update と post\-更新スクリプトを事前に更新する<br />-クラスター対応更新ウィンドウまたは[テスト\-Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell コマンドレットを使用して、クラスター更新の準備のテストを行います。|  
+|[.NET Framework 4.6 または4.5 のインストール](#BKMK_NET)|Enabled|すべてのクラスター ノードで必要|次を実行するすべてのクラスター ノードで必要:<br /><br />- [Save-caudebugtrace](https://docs.microsoft.com/powershell/module/clusterawareupdating/Save-CauDebugTrace?view=win10-ps)コマンドレット<br />-更新実行中に PowerShell\-update と post\-更新スクリプトを事前に更新する<br />-クラスター対応更新ウィンドウまたは[テスト\-Test-causetup](https://docs.microsoft.com/powershell/module/clusterawareupdating/Test-CauSetup?view=win10-ps) Windows PowerShell コマンドレットを使用して、クラスター更新の準備のテストを行います。|  
 
 ### <a name="BKMK_FW"></a>自動再起動を許可するファイアウォール規則を有効にする  
 更新プログラムの適用後に自動再起動を許可するには \(更新プログラムのインストールに再\)起動が必要な場合は、Windows ファイアウォールまたは非\-の Microsoft ファイアウォールがクラスターノードで使用されている場合は、次のトラフィックを許可する各ノードでファイアウォール規則を有効にする必要があります。  
@@ -165,7 +165,7 @@ CAU を使用してクラスター上の既定の**microsoft.windowsupdateplugin
 
 -   WSUS サーバー、Windows 更新、マイクロソフト更新など、同じ更新元を利用するように、すべてのクラスター ノードを等しく構成する必要があります。  
 
--   構成管理システムを使用してネットワーク上のコンピューターにソフトウェア更新を適用する場合は、必要な更新または自動更新からクラスター ノードを除外してください。 構成管理システムの例として、Microsoft System Center Configuration Manager 2007 や Microsoft System Center Virtual Machine Manager 2008 があります。  
+-   構成管理システムを使用してネットワーク上のコンピューターにソフトウェア更新を適用する場合は、必要な更新または自動更新からクラスター ノードを除外してください。 構成管理システムの例としては、Microsoft エンドポイント Configuration Manager、Microsoft System Center Virtual Machine Manager 2008 などがあります。  
 
 -   内部のソフトウェア配布サーバー \(たとえば、WSUS サーバー\) を使用して更新プログラムを格納および展開する場合は、それらのサーバーがクラスターノードの承認済み更新プログラムを正しく識別するようにします。  
 
@@ -231,7 +231,7 @@ BPA は次の 2 通りの方法で実行できます。
 次の表は、クラスター更新の準備のテスト、一部の共通問題、解消手順についてまとめたものです。  
 
 
-|                                                      テスト                                                      |                                                                                                                                               考えられる問題と影響                                                                                                                                               |                                                                                                                                                                                         解消手順                                                                                                                                                                                         |
+|                                                      Server1                                                      |                                                                                                                                               考えられる問題と影響                                                                                                                                               |                                                                                                                                                                                         解消手順                                                                                                                                                                                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |                                     フェールオーバー クラスターを利用できる必要があります                                     |                                                                                       フェールオーバー クラスター名を解決できません。または、1 つまたは複数のノードにアクセスできません。 BPA がクラスターの準備テストを実行できません。                                                                                        |                                                                   -BPA 実行中に指定されたクラスターの名前のスペルを確認します。<br />-クラスターのすべてのノードがオンラインで実行されていることを確認します。<br />-構成の検証ウィザードがフェールオーバークラスターで正常に実行できることを確認します。                                                                    |
 |                    WMI を利用し、フェールオーバー クラスター ノードのリモート管理を有効にする必要があります                    |                                                Windows Management Instrumentation \(WMI\)を使用して、1つまたは複数のフェールオーバークラスターノードのリモート管理が有効になっていません。 ノードのリモート管理が構成されていない場合、CAU はクラスター ノードを更新できません。                                                 |                                                                                                  WMI を利用し、すべてのフェールオーバー クラスター ノードのリモート管理を有効にします。 詳細については、「 [リモート管理のノードの構成](#BKMK_NODE_CONFIG) 」を参照してください。                                                                                                   |
@@ -253,6 +253,6 @@ BPA は次の 2 通りの方法で実行できます。
 |                   すべてのフェールオーバー クラスター ノードで同じ Windows PowerShell スクリプトを使用する必要があります                   |                                                     CAU のクラスター化された役割のすべての実行可能な所有者ノードが、指定された Windows PowerShell 事前\-更新および post\-更新スクリプトの同じコピーを使用しているわけではありません。 自己\-更新実行が失敗したり、予期しない動作が表示されたりする可能性があります。                                                     |                                                                                                                                   CAU のクラスター化された役割のすべての実行可能な所有者ノードが、同じ PowerShell プリ\-更新プログラムを使用し、スクリプト\-更新することを確認します。                                                                                                                                   |
 |         更新実行で、WarnAfter 設定には StopAfter 設定より小さい値を指定する必要があります         |                                                                           指定されている CAU 更新実行タイムアウト値は警告タイムアウトを無効にします。 警告イベント ログが生成される前に更新実行が取り消される可能性があります。                                                                            |                                                                                                                                      更新実行オプションで、 **[WarnAfter]** オプションの値に **[StopAfter]** オプションの値よりも小さい値を指定します。                                                                                                                                       |
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>「  
 
 -   [クラスター対応更新の概要](cluster-aware-updating.md)

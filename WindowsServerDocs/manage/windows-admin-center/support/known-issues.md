@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 59c659041c7553d8e97a3bfbefbc3bde24098ef2
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 4a91d09d6824795a21a9a7cdc7695c407aa70756
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949936"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822705"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center の既知の問題
 
@@ -82,7 +82,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 インストールされていない場合は、[WMF 5.1 をダウンロードしてインストール](https://www.microsoft.com/download/details.aspx?id=54616)できます。
 
-## <a name="role-based-access-control-rbac"></a>ロールベースのアクセス制御 (RBAC)
+## <a name="role-based-access-control-rbac"></a>ロールベースの Access Control (RBAC)
 
 - Windows Defender アプリケーション制御 (WDAC、旧称はコードの整合性) を使用するように構成されているコンピューターでは、RBAC 展開は成功しません。[16568455]
 
@@ -201,7 +201,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 - クラスター (ハイパーコンバージドまたは従来のクラスターのいずれか) を管理するときに、**shell was not found** (シェルが見つかりませんでした) というエラーが発生する場合があります。 この問題が発生した場合は、お使いのブラウザーを再読み込みするか、別のツールに移動して戻ります。 [13882442]
 
-- 完全に構成されていない下位バージョン (Windows Server 2012 または 2012 R2) のクラスターを管理するときに問題が発生することがあります。 この問題の解決方法は、Windows の機能**RSAT クラスタ リング PowerShell**がインストールされ、クラスターの**各メンバー ノード**で有効になっていることを確認することです。 PowerShell でこれを行うには、すべてのクラスター ノードで `Install-WindowsFeature -Name RSAT-Windows-PowerShell` コマンドを入力します。 [12524664]
+- 完全に構成されていない下位バージョン (Windows Server 2012 または 2012 R2) のクラスターを管理するときに問題が発生することがあります。 この問題の解決方法は、Windows の機能**RSAT クラスタ リング PowerShell**がインストールされ、クラスターの**各メンバー ノード**で有効になっていることを確認することです。 PowerShell でこれを行うには、すべてのクラスター ノードで `Install-WindowsFeature -Name RSAT-Clustering-PowerShell` コマンドを入力します。 [12524664]
 
 - クラスターは正しく検出されるように全 FQDN を指定して追加する必要があります。
 

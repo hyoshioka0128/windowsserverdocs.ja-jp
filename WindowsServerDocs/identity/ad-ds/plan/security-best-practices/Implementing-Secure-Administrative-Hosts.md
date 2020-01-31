@@ -1,6 +1,6 @@
 ---
 ms.assetid: eafdddc3-40d7-4a75-8f4f-a45294aabfc8
-title: セキュリティで保護された管理用のホストを実装する
+title: セキュリティで保護された管理ホストを実装する
 description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 56986f2ea9f49bdfc1194ae5342798793524e86c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 241418b87fd0f1e6fa64c4b1267e6d9fcde6b0d3
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408612"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822765"
 ---
-# <a name="implementing-secure-administrative-hosts"></a>セキュリティで保護された管理用のホストを実装する
+# <a name="implementing-secure-administrative-hosts"></a>セキュリティで保護された管理ホストを実装する
 
->適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
 
 セキュリティで保護された管理ホストは、特権アカウントが Active Directory またはドメインコントローラーで管理タスクを実行できる安全なプラットフォームを作成するために特別に構成されたワークステーションまたはサーバーです。ドメインに参加しているシステム、およびドメインに参加しているシステムで実行されているアプリケーション。 この場合、"特権アカウント" は、Active Directory 内の最も特権の高いグループのメンバーであるアカウントだけではなく、管理タスクの実行を許可する権限とアクセス許可を委任されたアカウントに限定されます。  
   
@@ -84,7 +84,7 @@ ms.locfileid: "71408612"
 権限のあるユーザーによる対話型ログオンを許可する必要があります。また、サーバーへのアクセスに不要な他のログオンの種類を削除するか、ブロックする必要があります。  
   
 ### <a name="patch-and-configuration-management"></a>パッチと構成の管理  
-小規模な組織では、Windows システムへの更新プログラムの展開を管理するために Windows Update や[Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) (WSUS) などのオファリングを使用する場合がありますが、大規模な組織では System Center Configuration Manager などのエンタープライズ修正プログラムおよび構成管理ソフトウェアを実装する場合があります。 一般的なサーバーとワークステーションの作成に更新プログラムを展開するために使用するメカニズムに関係なく、ドメインコントローラー、証明機関、管理ホストなどの高度にセキュリティ保護されたシステムの展開を分離することを検討する必要があります。 これらのシステムを一般的な管理インフラストラクチャから分離することにより、管理ソフトウェアまたはサービスアカウントが侵害された場合に、インフラストラクチャ内のセキュリティで保護されたシステムに簡単に侵入することはできません。  
+小規模な組織では、Windows システムへの更新プログラムの展開を管理するために Windows Update や[Windows Server Update Services](https://technet.microsoft.com/windowsserver/bb332157) (WSUS) などのオファリングを使用する場合がありますが、大規模な組織では Microsoft Endpoint Configuration Manager などのエンタープライズ修正プログラムおよび構成管理ソフトウェアを実装する場合があります。 一般的なサーバーとワークステーションの作成に更新プログラムを展開するために使用するメカニズムに関係なく、ドメインコントローラー、証明機関、管理ホストなどの高度にセキュリティ保護されたシステムの展開を分離することを検討する必要があります。 これらのシステムを一般的な管理インフラストラクチャから分離することにより、管理ソフトウェアまたはサービスアカウントが侵害された場合に、インフラストラクチャ内のセキュリティで保護されたシステムに簡単に侵入することはできません。  
   
 セキュリティで保護されたシステムの手動更新プロセスは実装しないでくださいが、セキュリティで保護されたシステムを更新するための個別のインフラストラクチャを構成する必要があります。 非常に大規模な組織でも、このインフラストラクチャは通常、専用の WSUS サーバーとセキュリティで保護されたシステム用の Gpo を使用して実装できます。  
   

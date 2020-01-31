@@ -8,12 +8,12 @@ ms.date: 10/09/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 0f549310d568142f819e22422d41a72d38b306e2
-ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
+ms.openlocfilehash: e5832843dce05832a231ed3a4d7e20cf90f1d183
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76145938"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822595"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -64,11 +64,11 @@ Windows 管理センターを使用して[Windows server 2019 評価](https://ww
 
 Windows 管理センターまたは PowerShell を使用して転送操作の詳細なエラーのみをダウンロードすると、次のエラーが表示されます。
 
- >   ログの転送-ファイアウォールでファイル共有が許可されていることを確認してください。 : Net.tcp:/localhost: 28940/sms/service/1/transfer に送信されるこの要求操作は、構成されたタイムアウト時間 (00:01:00) 内に応答を受信しませんでした。 この操作に割り当てられている時間はより長いタイムアウトの一部である可能性があります。 サービスが処理中であるか、応答メッセージを送信できない可能性があります。 操作のタイムアウトを増やすことを検討してください (チャネル/プロキシをありにキャストし、OperationTimeout プロパティを設定します)。また、サービスがクライアントに接続できることを確認してください。
+ >   ログの転送-ファイアウォールでファイル共有が許可されていることを確認してください。 : Net.tcp:/localhost: 28940/sms/service/1/transfer に送信されるこの要求操作は、構成されたタイムアウト時間 (00:01:00) 内に応答を受信しませんでした。 この操作に割り当てられた時間は、より長いタイムアウト時間の一部であった可能性があります。 これは、サービスが操作を処理中であるか、サービスが応答メッセージを送信できなかったことが原因である可能性があります。 操作のタイムアウトを増やすことを検討してください (チャネル/プロキシをありにキャストし、OperationTimeout プロパティを設定します)。また、サービスがクライアントに接続できることを確認してください。
 
 この問題は、記憶域移行サービスで許可されている既定の1分のタイムアウトではフィルター処理できない、非常に多くの転送ファイルが原因で発生します。 
 
-この問題の回避方法:
+この問題を回避するには:
 
 1. Orchestrator コンピューターで Notepad.exe を使用して *%SYSTEMROOT%\SMS\Microsoft.StorageMigration.Service.exe.config*ファイルを編集し、"sendtimeout" を1分の既定値から10分に変更します。
 
@@ -90,7 +90,7 @@ Windows 管理センターまたは PowerShell を使用して転送操作の詳
 7. "WcfOperationTimeoutInMinutes" を右クリックし、[変更] をクリックします。 
 8. [基本データ] ボックスで、[10 進] をクリックします。
 9. [値のデータ] ボックスに「10」と入力し、[OK] をクリックします。
-10. レジストリ エディターを終了します。
+10. レジストリエディターを終了します。
 11. エラーのみの CSV ファイルをもう一度ダウンロードします。 
 
 この動作は、Windows Server 2019 の今後のリリースで変更される予定です。  
@@ -125,7 +125,7 @@ Windows Server 2019 の展開先コンピューターに Storage Migration Servi
 
 記憶域移行サービスを使用してファイルを新しい宛先に転送する場合は、DFS レプリケーション (DFSR) を構成して、事前シードされたレプリケーションまたは DFSR データベースの複製を使用して、既存の DFSR サーバーを使用してそのデータをレプリケートします。すべてのファイルはハッシュを experiemce ます。不一致とが再レプリケートされます。 データストリーム、セキュリティストリーム、サイズ、および属性はすべて、SMS を使用して転送した後、完全に一致しているように見えます。 ICACLS または DFSR データベース複製デバッグログを使用してファイルを調べると、次のようになります。
 
-ソース ファイル:
+ソースファイル:
 
   icacls d:\test\Source:
 
@@ -220,7 +220,7 @@ Job: foo2 Computer: FS01。TailwindTraders.net State: Failed Error:-2147463168 �
    ```
 ## <a name="error-dll-was-not-found-when-running-inventory-from-a-cluster-node"></a>クラスターノードからインベントリを実行しているときに、エラー "Dll が見つかりませんでした" が発生する
 
-Windows Server 2019 フェールオーバークラスターノードにインストールされ、Windows Server フェールオーバークラスターをターゲットとしているインベントリを実行しようとすると、一般的にファイルサーバーソースを使用すると、次のエラーが表示されます。
+Storage Migration Service を使用してインベントリを実行し、Windows Server フェールオーバークラスターをターゲットにすると、一般的にファイルサーバーソースが使用され、次のエラーが発生します。
 
     DLL not found
     [Error] Failed device discovery stage VolumeInfo with error: (0x80131524) Unable to load DLL 'Microsoft.FailoverClusters.FrameworkSupport.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)   

@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.date: 11/05/2018
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 054a41df281ff9720d381fd4854f34f56ed0307b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 33e00134960ca31ce966198ded0692550e164fd6
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388189"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822411"
 ---
 # <a name="deploy-always-on-vpn"></a>Always On VPN の展開
 
@@ -73,7 +73,7 @@ NPS を構成するには、次のタスクを実行する必要があります�
 
 ## <a name="step-6-configure-windows-10-client-always-on-vpn-connectionsvpn-deploy-client-vpn-connectionsmd"></a>[手順 6.Windows 10 クライアント Always On VPN 接続を構成する](vpn-deploy-client-vpn-connections.md)
 
-この手順では、VPN 接続を使用して、そのインフラストラクチャと通信するように Windows 10 クライアントコンピューターを構成します。 Windows PowerShell、System Center Configuration Manager、Intune など、いくつかのテクノロジを使用して Windows 10 VPN クライアントを構成できます。 3つすべてに、適切な VPN 設定を構成するための XML VPN プロファイルが必要です。
+この手順では、VPN 接続を使用して、そのインフラストラクチャと通信するように Windows 10 クライアントコンピューターを構成します。 Windows PowerShell、Microsoft Endpoint Configuration Manager、Intune などの Windows 10 VPN クライアントを構成するには、いくつかのテクノロジを使用できます。 3つすべてに、適切な VPN 設定を構成するための XML VPN プロファイルが必要です。
 
 ## <a name="step-7-optional-configure-conditional-access-for-vpn-connectivityad-ca-vpn-connectivity-windows10md"></a>[手順 7.OptionalVPN 接続の条件付きアクセスの構成](../../ad-ca-vpn-connectivity-windows10.md)
 

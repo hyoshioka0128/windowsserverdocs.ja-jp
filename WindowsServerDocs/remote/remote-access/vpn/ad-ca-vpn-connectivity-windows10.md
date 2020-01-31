@@ -9,12 +9,12 @@ ms.author: pashort
 author: shortpatti
 ms.date: 06/28/2019
 ms.reviewer: deverette
-ms.openlocfilehash: be50c8eaf789b6f0737cbe07cf10d041d25e74f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: b813e3f978ad1e61e6770edcf26b1c716efcbbe4
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388205"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822485"
 ---
 # <a name="step-7-optional-conditional-access-for-vpn-connectivity-using-azure-ad"></a>手順 7. OptionalAzure AD を使用した VPN 接続の条件付きアクセス
 
@@ -23,7 +23,7 @@ ms.locfileid: "71388205"
 
 この省略可能な手順では、 [Azure Active Directory (Azure AD) 条件付きアクセス](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)を使用して、VPN ユーザーがリソースにアクセスする方法を微調整できます。 仮想プライベートネットワーク (VPN) 接続の条件付きアクセスを使用する Azure AD と、VPN 接続を保護することができます。 条件付きアクセスはポリシー ベースの評価エンジンであり、これを利用することで、Azure Active Directory (Azure AD) に接続されるアプリケーションのアクセス規則を作成できます。
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必要条件
 
 次のトピックについて理解している必要があります。
 
@@ -79,9 +79,9 @@ VPN 接続の条件付きアクセスを構成するには、次のことを行�
 
 ## <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devicesvpn-create-oma-dm-based-vpnv2-profilesmd"></a>[手順 7.5.Windows 10 デバイスに OMA-URI ベースの VPNv2 プロファイルを作成する](vpn-create-oma-dm-based-vpnv2-profiles.md)
 
-この手順では、Intune を使用して OMA-URI ベースの VPNv2 プロファイルを作成し、VPN デバイス構成ポリシーを展開することができます。 VPNv2 プロファイルを作成するために SCCM または PowerShell スクリプトを使用する場合、詳細については、 [VPNV2 CSP 設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)を参照してください。
+この手順では、Intune を使用して OMA-URI ベースの VPNv2 プロファイルを作成し、VPN デバイス構成ポリシーを展開することができます。 Configuration Manager または PowerShell スクリプトを使用して VPNv2 プロファイルを作成する場合、詳細については、 [VPNV2 CSP 設定](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp)を参照してください。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 [手順 7.1.証明書失効リスト (CRL) の確認を無視するように EAP-TLS を構成](vpn-config-eap-tls-to-ignore-crl-checking.md)する: この手順では、 **Ignorenorevocationcheck**を追加し、証明書に CRL 配布ポイントが含まれていない場合にクライアントの認証を許可するように設定する必要があります。 既定では、IgnoreNoRevocationCheck は 0 (無効) に設定されています。
 
@@ -89,7 +89,7 @@ VPN 接続の条件付きアクセスを構成するには、次のことを行�
 
 - [VPNv2 プロファイルを構成](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)する: VPN クライアントは、クラウドベースの条件付きアクセスプラットフォームと統合して、リモートクライアントのデバイスコンプライアンスオプションを提供できるようになりました。 この手順では、 **\<DeviceCompliance > \<有効 > true\<有効**になっている > を使用して、VPNv2 プロファイルを構成します。
 
-- [Windows 10 での自動 vpn プロファイルを使用したリモートアクセスの強化](https://www.microsoft.com/itshowcase/Article/Content/894/Enhancing-remote-access-in-Windows-10-with-an-automatic-VPN-profile): MICROSOFT が VPN 接続の条件付きアクセスを実装する方法について説明します。 VPN プロファイルには、サポートされている認証方法や、デバイスが接続する必要のある VPN サーバーなど、企業ネットワークに接続するためにデバイスが必要とするすべての情報が含まれます。 Windows 10 の記念日更新プログラム (条件付きアクセスやシングルサインオンを含む) の変更により、Always On VPN 接続プロファイルを作成できるようになりました。 System Center Configuration Manager コンソールを使用して、ドメインに参加し、Microsoft Intune 管理されたデバイスの接続プロファイルを作成しました。
+- [Windows 10 での自動 vpn プロファイルを使用したリモートアクセスの強化](https://www.microsoft.com/itshowcase/Article/Content/894/Enhancing-remote-access-in-Windows-10-with-an-automatic-VPN-profile): MICROSOFT が VPN 接続の条件付きアクセスを実装する方法について説明します。 VPN プロファイルには、サポートされている認証方法や、デバイスが接続する必要のある VPN サーバーなど、企業ネットワークに接続するためにデバイスが必要とするすべての情報が含まれます。 Windows 10 の記念日更新プログラム (条件付きアクセスやシングルサインオンを含む) の変更により、Always On VPN 接続プロファイルを作成できるようになりました。
 
 - [Azure Active Directory での条件付きアクセス](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal): セキュリティは、クラウドを使用している組織にとって最も重要な課題です。 クラウドセキュリティの重要な側面は、クラウドリソースの管理に関して、id とアクセスです。 モバイルファースト、クラウドファーストの世界では、ユーザーはどこからでもさまざまなデバイスやアプリを使用して組織のリソースにアクセスできます。 その結果、リソースにアクセスできるユーザーだけでは不十分です。 セキュリティと生産性のバランスを習得するために、IT プロフェッショナルは、アクセス制御の決定にリソースがどのようにアクセスされるかを考慮する必要もあります。
 

@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 79dfc7fbf9e2dcc753829cc53d914f374010f925
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 00a7edf9529e1f116d951fd69d3bfa381d6d413a
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71408331"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822755"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>オンプレミスのデバイス ベースの条件付きアクセスを計画する
 
@@ -30,14 +30,14 @@ AD FS では、ハイブリッド シナリオで条件付きアクセス ポリ
 ### <a name="types-of-registered-devices"></a>登録済みデバイスの種類  
 Azure AD でデバイス オブジェクトとして表されもオンプレミスの AD FS による条件付きアクセスのために使用するすべての登録済みのデバイスの 3 つの種類があります。  
 
-| |作業を追加または学校のアカウント  |Azure AD への参加  |Windows 10 ドメイン参加    
+| |作業を追加または学校のアカウント  |Azure AD 参加  |Windows 10 ドメイン参加    
 | --- | --- |--- | --- |
-|説明    |  ユーザーは、作業内容を追加または学校のアカウントを BYOD デバイスを対話的にします。  **注:** 職場または学校のアカウントを追加することは、Windows 8/8.1 の Workplace Join に代わるものです。       | ユーザーは、その作業の Windows 10 デバイスを Azure AD に参加します。|Windows 10 ドメインに参加したデバイスは、Azure AD に自動的に登録します。|           
+|説明    |  ユーザーは、作業内容を追加または学校のアカウントを BYOD デバイスを対話的にします。  **注:** 追加職場または学校アカウントは、ワークプ レース ジョイン Windows 8/8.1 で置換       | ユーザーは、その作業の Windows 10 デバイスを Azure AD に参加します。|Windows 10 ドメインに参加したデバイスは、Azure AD に自動的に登録します。|           
 |デバイスへのユーザーのログオン     |  職場または学校のアカウントとしての windows ログインはありません。  Microsoft アカウントを使用してログインします。       |   デバイスの登録 (職場または学校) のアカウントとして Windows にログインします。      |     AD のアカウントを使用してログインします。|      
-|デバイスの管理方法    |      MDM ポリシー (とその他の Intune 登録)   | MDM ポリシー (とその他の Intune 登録)        |   グループ ポリシー、System Center Configuration Manager (SCCM) |
+|デバイスの管理方法    |      MDM ポリシー (とその他の Intune 登録)   | MDM ポリシー (とその他の Intune 登録)        |   グループポリシー、Configuration Manager |
 |Azure AD の信頼の種類|社内参加済み|Azure AD 参加済み|ドメインに参加する  |     
 |W10 設定の場所    | 設定 > アカウント > お客様のアカウント > 職場または学校のアカウントを追加        | 設定 > システム > に関する > Azure AD に参加       |   設定 > システム > に関する > ドメインに参加します。 |       
-|IOS および Android デバイスにも使用可能ですか。   |    はい     |       いいえ  |   いいえ   |   
+|IOS および Android デバイスにも使用可能ですか。   |    [はい]     |       必須ではない  |   必須ではない   |   
 
   
 
@@ -73,13 +73,13 @@ AD FS の構成の詳細については、アクセス制御ポリシーは、�
 #### <a name="authenticated-devices"></a>認証済みのデバイス  
 認証済みのデバイスは、登録されているデバイス (Intune およびサード パーティの mdm で有効 for Windows 10、Android と iOS のみの Intune) MDM に登録していないですです。   
 
-認証済みのデバイスがある、 **isManaged** AD FS 要求の値を持つ **FALSE**します。 (一方、登録されていないデバイスが不足してこの要求います)。認証済みのデバイス (と登録されているすべてのデバイス) がわかっています AD FS 要求の値を持つ **TRUE**します。  
+認証済みのデバイスがある、 **isManaged** AD FS 要求の値を持つ **FALSE**します。 (登録されていないデバイスは、この要求を一切受けません)。 認証されたデバイス (およびすべての登録済みデバイス) には、isKnown の AD FS 要求の値が**TRUE**になります。  
 
-#### <a name="managed-devices"></a>管理対象のデバイス:   
+#### <a name="managed-devices"></a>マネージド デバイス:   
 
-管理対象デバイスは、MDM. に登録されている登録済みのデバイス  
+マネージド デバイスは、MDM. に登録されている登録済みのデバイス  
 
-管理対象デバイスが isManaged AD FS クレームの値が **TRUE**します。  
+マネージド デバイスが isManaged AD FS クレームの値が **TRUE**します。  
 
 #### <a name="devices-compliant-with-mdm-or-group-policies"></a>(MDM またはグループ ポリシー) に準拠したデバイス  
 対応のデバイスはのみに登録されていない MDM が MDM ポリシーに準拠して、登録済みのデバイスです。 (対応情報は、MDM とおよび Azure AD に書き込まれます)。  
@@ -89,7 +89,7 @@ AD FS の構成の詳細については、アクセス制御ポリシーは、�
 AD FS 2016 デバイスと条件付きアクセスの信頼性情報の一覧については、次を参照してください。 [参照](#reference)します。  
 
 
-## <a name="reference"></a>参照  
+## <a name="reference"></a>辞書/リファレンス  
 #### <a name="complete-list-of-new-ad-fs-2016-and-device-claims"></a>新しい AD FS 2016 とデバイスの要求の完全なリスト  
 
 * https://schemas.microsoft.com/ws/2014/01/identity/claims/anchorclaimtype  
