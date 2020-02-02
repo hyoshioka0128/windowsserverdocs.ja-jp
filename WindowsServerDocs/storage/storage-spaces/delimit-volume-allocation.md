@@ -6,22 +6,22 @@ ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: faf9547833764e9075e86515d1f486a5a3f61ff8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 19e5a38ca406878b7dbc5a187b0057e97e4fe2d1
+ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872080"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76918301"
 ---
 # <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>記憶域スペースダイレクトのボリュームの割り当てを区切ります。
-> 適用対象:Windows Server 2019
+> 適用対象: Windows Server 2019
 
 Windows Server 2019 では、記憶域スペースダイレクトでボリュームの割り当てを手動で区切るオプションが導入されています。 これにより、特定の条件下でフォールトトレランスを大幅に向上させることができますが、管理上の考慮事項と複雑さが増加します。 このトピックでは、そのしくみについて説明し、PowerShell の例を示します。
 
    > [!IMPORTANT]
    > この機能は、Windows Server 2019 で新しく追加された機能です。 Windows Server 2016 では使用できません。 
 
-## <a name="prerequisites"></a>前提条件
+## <a name="prerequisites"></a>必要条件
 
 ### <a name="green-checkmark-iconmediadelimit-volume-allocationsupportedpng-consider-using-this-option-if"></a>![緑のチェックマークアイコン。](media/delimit-volume-allocation/supported.png) 次の場合に、このオプションの使用を検討してください。
 
@@ -33,7 +33,7 @@ Windows Server 2019 では、記憶域スペースダイレクトでボリュー
 - クラスターのサーバー数が6台未満です。もしくは
 - クラスターが[パリティ](storage-spaces-fault-tolerance.md#parity)または[ミラーアクセラレータによるパリティ](storage-spaces-fault-tolerance.md#mirror-accelerated-parity)回復性を使用する
 
-## <a name="understand"></a>概要
+## <a name="understand"></a>説明
 
 ### <a name="review-regular-allocation"></a>レビュー: 通常の割り当て
 
@@ -53,17 +53,12 @@ Windows Server 2019 では、記憶域スペースダイレクトでボリュー
 
 ### <a name="new-delimited-allocation"></a>新規: 区切られた割り当て
 
-区切られた割り当てでは、使用するサーバーのサブセットを指定します (3 方向ミラーの場合は3つ)。 ボリュームは、以前と同様に3回コピーされるスラブに分割されますが、すべてのサーバーに割り当てられるのではなく、**指定したサーバーのサブセットにのみスラブが割り当てら**れます。
+区切られた割り当てでは、使用するサーバーのサブセットを指定します (最小 4)。 ボリュームは、以前と同様に3回コピーされるスラブに分割されますが、すべてのサーバーに割り当てられるのではなく、**指定したサーバーのサブセットにのみスラブが割り当てら**れます。
 
-![ボリュームがスラブの3つのスタックに分割され、6台のサーバーにのみ分散していることを示す図。](media/delimit-volume-allocation/delimited-allocation.png)
-
+たとえば、8ノードクラスター (ノード 1 ~ 8) を使用している場合は、ノード1、2、3、4のディスクにのみ配置するボリュームを指定できます。
 #### <a name="advantages"></a>長所
 
-この割り当てにより、ボリュームは同時に3つの障害が発生する可能性があります。実際、この場合、継続の確率は 0% (通常の割り当て) から 95% (区切られた割り当て) に増加します。 直感的に言えば、サーバー4、5、または6に依存しないため、障害の影響を受けません。
-
-上記の例では、サーバー1、3、および5は同時に失敗します。 区切られた割り当てにより、サーバー2にすべてのスラブのコピーが含まれることが保証されるため、すべてのスラブには残ったコピーがあり、ボリュームはオンラインのままでアクセスできます。
-
-![6台のサーバーのうちの3台が赤で強調表示されていて、全体的なボリュームが緑であることを示す図。](media/delimit-volume-allocation/delimited-does-survive.png)
+この例の割り当てでは、ボリュームは同時に3つのエラーが発生する可能性があります。 ノード1、2、および6がダウンした場合、ボリュームの3つのデータコピーを保持しているノードのうち2つだけがダウンし、ボリュームはオンラインのままになります。
 
 存続確率は、サーバーの数とその他の要因によって異なります。詳細については、「[分析](#analysis)」を参照してください。
 
@@ -79,7 +74,7 @@ Windows Server 2019 では、記憶域スペースダイレクトでボリュー
 
 ## <a name="usage-in-powershell"></a>PowerShell での使用法
 
-コマンドレットを使用`New-Volume`して記憶域スペースダイレクトでボリュームを作成できます。
+`New-Volume` コマンドレットを使用して記憶域スペースダイレクトにボリュームを作成できます。
 
 たとえば、通常の3方向ミラーボリュームを作成するには、次のようにします。
 
@@ -91,7 +86,7 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
 
 3方向ミラーボリュームを作成し、その割り当てを区切るには、次のようにします。
 
-1. まず、クラスター内のサーバーを変数`$Servers`に割り当てます。
+1. まず、クラスター内のサーバーを `$Servers`変数に割り当てます。
 
     ```PowerShell
     $Servers = Get-StorageFaultDomain -Type StorageScaleUnit | Sort FriendlyName
@@ -100,36 +95,36 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
    > [!TIP]
    > 記憶域スペースダイレクトでは、"ストレージスケールユニット" という用語は、直接接続されたドライブとドライブを持つ直接接続された外部エンクロージャを含む、1台のサーバーに接続されているすべての未加工のストレージを指します。 このコンテキストでは、' server ' と同じです。
 
-2. 新しい`-StorageFaultDomainsToUse`パラメーターで使用するサーバーと、に`$Servers`インデックスを付けることによって、どのサーバーを使用するかを指定します。 たとえば、1番目、2番目、および3番目のサーバー (インデックス0、1、および 2) への割り当てを区切るには、次のようにします。
+2. 新しい `-StorageFaultDomainsToUse` パラメーターで使用するサーバーと、`$Servers`にインデックスを付けることによって、どのサーバーを使用するかを指定します。 たとえば、1番目、2番目、3番目、および4番目のサーバー (インデックス0、1、2、および 3) への割り当てを区切るには、次のようにします。
 
     ```PowerShell
-    New-Volume -FriendlyName "MyVolume" -Size 100GB -StorageFaultDomainsToUse $Servers[0,1,2]
+    New-Volume -FriendlyName "MyVolume" -Size 100GB -StorageFaultDomainsToUse $Servers[0,1,2,3]
     ```
 
 ### <a name="see-a-delimited-allocation"></a>区切られた割り当てを表示する
 
-*Myvolume*がどのように割り当てられて`Get-VirtualDiskFootprintBySSU.ps1`いるかを確認するには、[付録](#appendix)のスクリプトを使用します。
+*Myvolume*がどのように割り当てられているかを確認するには、 [「付録](#appendix):」の `Get-VirtualDiskFootprintBySSU.ps1` スクリプトを使用します。
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         100 GB  100 GB  100 GB  0       0       0      
+MyVolume                300 GB         100 GB  100 GB  100 GB  100 GB  0       0      
 ```
 
-Server1、Server2、および Server3 にのみ、 *Myvolume*のスラブが含まれていることに注意してください。
+Server1、Server2、Server3、およびサーバー4にのみ、 *Myvolume*のスラブが含まれていることに注意してください。
 
 ### <a name="change-a-delimited-allocation"></a>区切られた割り当てを変更する
 
-新しい`Add-StorageFaultDomain`コマンドレットと`Remove-StorageFaultDomain`コマンドレットを使用して、割り当ての区切り方法を変更します。
+新しい `Add-StorageFaultDomain` および `Remove-StorageFaultDomain` のコマンドレットを使用して、割り当ての区切り方法を変更します。
 
 たとえば、1台のサーバーで*Myvolume*を移動するには、次のようにします。
 
-1. 4番目のサーバーがスラブ*Myvolume*を格納**できる**ことを指定します。
+1. 5番目のサーバーがスラブ*Myvolume*を格納**できる**ことを指定します。
 
     ```PowerShell
-    Get-VirtualDisk MyVolume | Add-StorageFaultDomain -StorageFaultDomains $Servers[3]
+    Get-VirtualDisk MyVolume | Add-StorageFaultDomain -StorageFaultDomains $Servers[4]
     ```
 
 2. 最初のサーバーがスラブの*Myvolume*を格納**できない**ことを指定します。
@@ -144,66 +139,48 @@ Server1、Server2、および Server3 にのみ、 *Myvolume*のスラブが含�
     Get-StoragePool S2D* | Optimize-StoragePool
     ```
 
-![サーバー1、2、および3からサーバー2、3、および4へのスラブの移行を示す図](media/delimit-volume-allocation/move.gif)
+`Get-StorageJob`による再調整の進行状況を監視できます。
 
-で`Get-StorageJob`は、再調整の進行状況を監視できます。
-
-完了したら、をもう一度実行`Get-VirtualDiskFootprintBySSU.ps1`して、 *myvolume*が移動したことを確認します。
+完了したら、`Get-VirtualDiskFootprintBySSU.ps1` を再実行して、 *Myvolume*が移動したことを確認します。
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
 
 VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 Server6
 ----------------------- -------------- ------- ------- ------- ------- ------- -------
-MyVolume                300 GB         0       100 GB  100 GB  100 GB  0       0      
+MyVolume                300 GB         0       100 GB  100 GB  100 GB  100 GB  0      
 ```
 
-Server1 には*Myvolume*のスラブがなく、代わりに Server04 が使用することに注意してください。
+Server1 には*Myvolume*のスラブがなく、代わりに Server5 が使用することに注意してください。
 
 ## <a name="best-practices"></a>ベスト プラクティス
 
 区切られたボリューム割り当てを使用する場合のベストプラクティスを次に示します。
 
-### <a name="choose-three-servers"></a>3台のサーバーを選択する
+### <a name="choose-four-servers"></a>4台のサーバーを選択する
 
-3方向ミラーボリュームを3台のサーバーに区切ります。
+3方向ミラーボリュームをそれぞれ4台のサーバーに区切ります。
 
 ### <a name="balance-storage"></a>ストレージのバランスを取る
 
 各サーバーに割り当てられる記憶域の量を調整します。ボリュームのサイズについては考慮します。
 
-### <a name="every-delimited-allocation-unique"></a>区切られた割り当てごとに一意
+### <a name="stagger-delimited-allocation-volumes"></a>区切られた割り当てボリュームの時差
 
-フォールトトレランスを最大化するには、各ボリュームの割り当てを一意にします。つまり、*すべて*のサーバーが別のボリュームと共有されることはありません (重複は問題ありません)。 N 台のサーバーでは、"N choose 3" という一意の組み合わせがあります。これは、いくつかの一般的なクラスターサイズの意味です。
+フォールトトレランスを最大化するには、各ボリュームの割り当てを一意にします。つまり、*すべて*のサーバーが別のボリュームと共有されることはありません (重複は問題ありません)。 
 
-| サーバーの数 (N) | 一意に区切られた割り当ての数 (N 選択 3) |
-|-----------------------|-----------------------------------------------------|
-| 6                     | 20                                                  |
-| 8                     | 56                                                  |
-| 12                    | 220                                                 |
-| 16                    | 560                                                 |
-
-   > [!TIP]
-   > ここでは、連結の方法について説明し[、記法を選択](https://betterexplained.com/articles/easy-permutations-and-combinations/)します。
-
-フォールトトレランスを最大化する例を次に示します。各ボリュームには、一意の区切られた割り当てがあります。
-
-![一意の割り当て](media/delimit-volume-allocation/unique-allocation.png)
-
-反対に、次の例では、最初の3つのボリュームで同じ区切られた割り当て (サーバー1、2、3) が使用され、最後の3つのボリュームでは、同じ区切られた割り当て (サーバー4、5、および 6) が使用されます。 フォールトトレランスを最大にすることはできません。3台のサーバーで障害が発生した場合、複数のボリュームがオフラインになり、一度にアクセスできなくなる可能性があります。
-
-![一意でない割り当て](media/delimit-volume-allocation/non-unique-allocation.png)
+たとえば、8ノードシステムの場合: Volume 1: Servers 1、2、3、4 Volume 2: Servers 5、6、7、8 Volume 3: Servers 3、4、5、6 Volume 4: Servers 1、2、7、8
 
 ## <a name="analysis"></a>分析
 
 このセクションでは、障害の数とクラスターサイズの機能として、ボリュームがオンラインでアクセス可能である (または、オンラインでアクセス可能なストレージ全体の予想される割合) ことを示す算術確率を導き出します。
 
    > [!NOTE]
-   > このセクションは省略可能です。 数値演算の場合は、「」を参照してください。 そうでない場合は、心配しないでください。[PowerShell の使用方法](#usage-in-powershell)と[ベストプラクティス](#best-practices)は、区切られた割り当てを正常に実装するために必要な作業です。
+   > このセクションは省略可能です。 数値演算の場合は、「」を参照してください。 そうでない場合は心配しないでください。 [PowerShell の使用方法](#usage-in-powershell)と[ベストプラクティス](#best-practices)は、区切られた割り当てを正常に実装するために必要な作業です。
 
 ### <a name="up-to-two-failures-is-always-okay"></a>常に最大2つのエラーが発生する
 
-3方向ミラーボリュームは、割り当てに関係なく、[これらの例](storage-spaces-fault-tolerance.md#examples)が示しているように、同時に最大2つの障害に対応できます。 2つのドライブに障害が発生した場合、または2台のサーバーで障害が発生した場合、またはいずれかの場合は、通常の割り当てであっても、3方向ミラーボリュームはオンラインになり、アクセスできます。
+3方向ミラーボリュームはいずれも、割り当てに関係なく、同時に最大2つの障害に対応できます。 2つのドライブに障害が発生した場合、または2台のサーバーで障害が発生した場合、またはいずれかの場合は、通常の割り当てであっても、3方向ミラーボリュームはオンラインになり、アクセスできます。
 
 ### <a name="more-than-half-the-cluster-failing-is-never-okay"></a>クラスターの障害が半分を超えると、問題ありません。
 
@@ -211,65 +188,19 @@ Server1 には*Myvolume*のスラブがなく、代わりに Server04 が使用�
 
 ### <a name="what-about-in-between"></a>の間には何があるでしょうか。
 
-3回以上の障害が発生しても、少なくとも半数のサーバーとドライブが稼働状態になっている場合、障害が発生しているサーバーによっては、区切られた割り当てを持つボリュームがオンラインでアクセス可能な状態になることがあります。 数値を実行して、正確な確率を調べてみましょう。
-
-わかりやすくするために、上記のベストプラクティスに従って、ボリュームが独立して均等に分散 (IID) されることを想定しています。また、ボリュームの割り当てごとに一意の組み合わせを使用できます。 特定のボリュームが存続する確率は、予測の直線性によって最終的には、ストレージ全体の予想される割合でもあります。 
-
-**N 個**のサーバーで**障害が発生した場合**、そのうちの**3**に割り当てられたボリュームは、-との場合にはオフラインになります。 **3 つ**すべてのエラーが発生**している場合は、** **F**の失敗を発生させる **(N choose f)** 方法があります。 **(f choose 3)** は、ボリュームがオフラインになり、アクセスできなくなる可能性があります。 確率は次のように表すことができます。
-
-![P_offline = Fc3/NcF](media/delimit-volume-allocation/probability-volume-offline.png)
-
-それ以外の場合、ボリュームはオンラインのままで、アクセスできます。
-
-![P_online = 1 – (Fc3/NcF)](media/delimit-volume-allocation/probability-volume-online.png)
-
-次の表は、いくつかの一般的なクラスターサイズと最大5つの障害の確率を評価し、区切られた割り当てにより、すべてのケースでの通常の割り当てと比較してフォールトトレランスが向上することを明らかにします。
-
-### <a name="with-6-servers"></a>6台のサーバー
-
-| 割り当て                           | 残存の1件のエラーの確率 | 残存の2つのエラーの確率 | 残りの3つのエラーの確率 | 残っている4つのエラーの確率 | 残っている5つのエラーの確率 |
-|--------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| 標準、すべての6台のサーバーに分散 | 100%                               | 100%                                | 0                                  | 0                                  | 0                                  |
-| 3台のサーバーのみに区切られます。          | 100%                               | 100%                                | 95.0%                               | 0                                  | 0                                  |
-
-   > [!NOTE]
-   > サーバーの合計6個を超える障害が発生すると、クラスターはクォーラムを失います。
-
-### <a name="with-8-servers"></a>8台のサーバー
-
-| 割り当て                           | 残存の1件のエラーの確率 | 残存の2つのエラーの確率 | 残りの3つのエラーの確率 | 残っている4つのエラーの確率 | 残っている5つのエラーの確率 |
-|--------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| 標準、すべての8台のサーバーに分散 | 100%                               | 100%                                | 0                                  | 0                                  | 0                                  |
-| 3台のサーバーのみに区切られます。          | 100%                               | 100%                                | 98.2%                               | 94.3%                               | 0                                  |
-
-   > [!NOTE]
-   > 合計で8台のサーバーの障害が発生すると、クラスターはクォーラムを失います。
-
-### <a name="with-12-servers"></a>12台のサーバー
-
-| 割り当て                            | 残存の1件のエラーの確率 | 残存の2つのエラーの確率 | 残りの3つのエラーの確率 | 残っている4つのエラーの確率 | 残っている5つのエラーの確率 |
-|---------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| 標準、12のすべてのサーバーに分散 | 100%                               | 100%                                | 0                                  | 0                                  | 0                                  |
-| 3台のサーバーのみに区切られます。           | 100%                               | 100%                                | 99.5%                               | 99.2%                               | 98.7%                               |
-
-### <a name="with-16-servers"></a>16台のサーバー
-
-| 割り当て                            | 残存の1件のエラーの確率 | 残存の2つのエラーの確率 | 残りの3つのエラーの確率 | 残っている4つのエラーの確率 | 残っている5つのエラーの確率 |
-|---------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| 標準、16台すべてのサーバーにまたがる | 100%                               | 100%                                | 0                                  | 0                                  | 0                                  |
-| 3台のサーバーのみに区切られます。           | 100%                               | 100%                                | 99.8%                               | 99.8%                               | 99.8%                               |
+3回以上の障害が発生しても、少なくとも半数のサーバーとドライブが稼働状態になっている場合、障害が発生しているサーバーによっては、区切られた割り当てを持つボリュームがオンラインでアクセス可能な状態になることがあります。
 
 ## <a name="frequently-asked-questions"></a>よく寄せられる質問
 
 ### <a name="can-i-delimit-some-volumes-but-not-others"></a>いくつかのボリュームを区切ることはできますか。
 
-可能。 割り当てを区切るかどうかによって、ボリュームごとに選択できます。
+対応 割り当てを区切るかどうかによって、ボリュームごとに選択できます。
 
 ### <a name="does-delimited-allocation-change-how-drive-replacement-works"></a>区切られた割り当てはドライブ置換の動作を変更しますか。
 
 いいえ。通常の割り当てと同じです。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
 - [記憶域スペースダイレクトのフォールトトレランス](storage-spaces-fault-tolerance.md)
@@ -278,7 +209,7 @@ Server1 には*Myvolume*のスラブがなく、代わりに Server04 が使用�
 
 このスクリプトは、ボリュームがどのように割り当てられているかを確認するのに役立ちます。
 
-前述のとおりに使用するには、コピー/貼り付け`Get-VirtualDiskFootprintBySSU.ps1`を行って、名前を付けて保存します。
+前述のように使用するには、コピー/貼り付けを行って `Get-VirtualDiskFootprintBySSU.ps1`として保存します。
 
 ```PowerShell
 Function ConvertTo-PrettyCapacity {

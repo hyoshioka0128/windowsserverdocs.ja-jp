@@ -253,7 +253,7 @@
 ### [SDN の計画](sdn/plan/Plan-a-Software-Defined-Network-Infrastructure.md)
 #### [ネットワーク コントローラーを展開するためのインストールおよび準備の要件](sdn/plan/Installation-and-Preparation-Requirements-for-Deploying-Network-Controller.md)
 
-### [SDN の展開](sdn/deploy/Deploy-Software-Defined-Networking.md)
+### SDN の展開
 #### [SDN インフラストラクチャの展開](sdn/deploy/Deploy-a-Software-Defined-Network-Infrastructure.md)
 ##### [スクリプトを使用して SDN インフラストラクチャを展開する](sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)
 #### [Windows PowerShell を使用して SDN テクノロジを展開する](sdn/deploy/Deploy-Software-Defined-Network-Technologies-using-Windows-powershell.md)

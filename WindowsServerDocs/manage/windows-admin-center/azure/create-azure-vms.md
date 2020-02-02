@@ -9,12 +9,12 @@ manager: jgerend
 ms.date: 01/28/2020
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: 551f97d257b7ea3d05cdded73421d2e5c088171e
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 1a31fac97a6697909774a084045ad5746b7241f3
+ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76830618"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76918269"
 ---
 # <a name="deploy-azure-virtual-machines-from-within-windows-admin-center"></a>Windows 管理センター内から Azure 仮想マシンをデプロイする
 
@@ -48,14 +48,19 @@ Azure VM のデプロイの手順とウィザードは、シナリオによっ�
 
 ### <a name="deploying-azure-vms-as-part-of-storage-migration-service"></a>Storage Migration Service の一部としての Azure Vm のデプロイ
 
-Windows 管理センター内の*記憶域移行サービス*ツールから、1つまたは複数の移行元サーバーのインベントリを実行します。 *データ転送*フェーズが完了したら、[*変換先の指定*] ページで **[新しい Azure VM の作成]** を選択し、 **[VM の作成]** をクリックします。 これにより、移行先として Windows Server 2012 R2、Windows Server 2016、または Windows Server 2019 の Azure VM を選択するステップバイステップの作成ツールが開始されます。 Storage Migration Service は、ソースに合わせて推奨される VM サイズを提供しますが、 **[すべてのサイズを表示]** をクリックして上書きすることができます。 ソースサーバーのデータは、管理ディスクとそのファイルシステムを自動的に構成するため、および新しい Azure VM を Active Directory ドメインに参加させるためにも使用されます。 VM が Windows Server 2019 (推奨) の場合、Windows 管理センターでは、Storage Migration Service プロキシ機能がインストールされます。 Azure VM を作成すると、Windows 管理センターは通常のストレージ移行サービスの転送ワークフローに戻ります。  
-
+1. Windows 管理センター内の*記憶域移行サービス*ツールから、1つまたは複数の移行元サーバーのインベントリを実行します。
+2. *データ転送*フェーズが完了したら、[*変換先の指定*] ページで **[新しい Azure VM の作成]** を選択し、 **[VM の作成]** をクリックします。<br><br>
+これにより、移行先として Windows Server 2012 R2、Windows Server 2016、または Windows Server 2019 の Azure VM を選択するステップバイステップの作成ツールが開始されます。 Storage Migration Service は、ソースに合わせて推奨される VM サイズを提供しますが、 **[すべてのサイズを表示]** をクリックして上書きすることができます。
+<br><br>ソースサーバーのデータは、管理ディスクとそのファイルシステムを自動的に構成するため、および新しい Azure VM を Active Directory ドメインに参加させるためにも使用されます。 VM が Windows Server 2019 (推奨) の場合、Windows 管理センターでは、Storage Migration Service プロキシ機能がインストールされます。 Azure VM を作成すると、Windows 管理センターは通常のストレージ移行サービスの転送ワークフローに戻ります。  
 
 ### <a name="deploying-azure-vms-as-part-of-storage-replica"></a>ストレージレプリカの一部としての Azure Vm のデプロイ
 
-Windows 管理センター内の*記憶域レプリカ*ツールの [*パートナーシップ*] タブで、 **[新規]** をクリックし、[*別のサーバーとのレプリケート*] で **[新しい Azure VM を使用]** する をクリックし、 **[次へ]** をクリックします。 移行元サーバーの情報とレプリケーショングループ名を指定し、 **[次へ]** をクリックします。 これにより、移行元のターゲットとして Windows Server 2016 または Windows Server 2019 Azure VM が自動的に選択されるプロセスが開始されます。 Storage Migration Service では、ソースに一致する VM サイズが推奨されますが、 **[すべてのサイズを表示]** を選択してこれを上書きできます。 インベントリデータは、管理ディスクとそのファイルシステムを自動的に構成するため、および新しい Azure VM を Active Directory ドメインに参加させるために使用されます。 Windows 管理センターで Azure VM を作成した後、レプリケーショングループ名を指定し、 **[作成]** をクリックします。 その後、Windows 管理センターは、データの保護を開始するための通常の記憶域レプリカ初期同期プロセスを開始します。
-
+1. Windows 管理センター内の*記憶域レプリカ*ツールの [*パートナーシップ*] タブで、 **[新規作成]** を選択し、[*別のサーバーとのレプリケート*] で **[新しい Azure VM を使用]** する を選択し、 **[次へ]** を選択します。
+2. 移行元サーバーの情報とレプリケーショングループ名を指定し、 **[次へ]** を選択します。<br><br>
+これにより、移行元のターゲットとして Windows Server 2016 または Windows Server 2019 Azure VM が自動的に選択されるプロセスが開始されます。 Storage Migration Service では、ソースに一致する VM サイズが推奨されますが、 **[すべてのサイズを表示]** を選択してこれを上書きできます。 インベントリデータは、管理ディスクとそのファイルシステムを自動的に構成するため、および新しい Azure VM を Active Directory ドメインに参加させるために使用されます。 
+3. Windows 管理センターで Azure VM を作成した後、レプリケーショングループ名を入力し、 **[作成]** を選択します。 その後、Windows 管理センターは、データの保護を開始するための通常の記憶域レプリカ初期同期プロセスを開始します。
 
 ### <a name="deploying-a-new-standalone-azure-vm"></a>新しいスタンドアロン Azure VM のデプロイ
 
-Windows Admin Center 内の *[すべての接続]* ページから **[追加]** に移動し、 **[Azure VM]** の下で **[新規作成]** を選択します。 これにより、Windows Server 2012 R2、Windows Server 2016、または Windows Server 2019 の Azure VM を選択し、サイズを選択し、管理ディスクを追加し、必要に応じて Active Directory ドメインに参加するためのステップバイステップ作成ツールが開始されます。
+1. Windows 管理センター内の [*すべての接続*] ページで、 **[追加]** を選択します。
+2. [ *AZURE VM* ] セクションで、 **[新規作成]** を選択します。<br><br> これにより、Windows Server 2012 R2、Windows Server 2016、または Windows Server 2019 の Azure VM を選択し、サイズを選択し、管理ディスクを追加し、必要に応じて Active Directory ドメインに参加するためのステップバイステップ作成ツールが開始されます。
