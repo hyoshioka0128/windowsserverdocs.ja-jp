@@ -65,7 +65,7 @@ Web 認証トラフィックのすべての AD FS エンドポイントは、HTT
 Set-AdfsResponseHeaders -SetHeaderName "Strict-Transport-Security" -SetHeaderValue "max-age=<seconds>; includeSubDomains" 
 ``` 
 
-次に例を示します。 
+例: 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "Strict-Transport-Security" -SetHeaderValue "max-age=31536000; includeSubDomains" 
@@ -86,7 +86,7 @@ AD FS 既定では、対話型ログインの実行時に外部アプリケー�
  
 - **拒否**–フレーム内のページは表示されません。 これが既定の推奨設定です。  
 - **sameorigin** –原点が web ページの配信元と同じ場合にのみ、ページがフレームに表示されます。 このオプションは、すべての先祖が同じオリジンに含まれていない限り、あまり役に立ちません。  
-- **allow from <specified origin>** -ページは、配信元 (たとえば、 https://www ) の場合にのみフレームに表示されます。com) は、ヘッダー内の特定のオリジンと一致します。 
+- **allow from <specified origin>** -ページは、配信元 (たとえば、 https://www) の場合にのみフレームに表示されます。com) は、ヘッダー内の特定のオリジンと一致します。 
 
 #### <a name="x-frame-options-customization"></a>X フレームオプションのカスタマイズ  
 既定では、ヘッダーは [拒否] に設定されます。ただし、管理者は `Set-AdfsResponseHeaders` コマンドレットを使用して値を変更できます。  
@@ -94,7 +94,7 @@ AD FS 既定では、対話型ログインの実行時に外部アプリケー�
 Set-AdfsResponseHeaders -SetHeaderName "X-Frame-Options" -SetHeaderValue "<deny/sameorigin/allow-from<specified origin>>" 
  ```
 
-次に例を示します。 
+例: 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-Frame-Options" -SetHeaderValue "allow-from https://www.example.com" 
@@ -109,7 +109,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options"
 ### <a name="x-xss-protection"></a>X-XSS-保護 
 この HTTP セキュリティ応答ヘッダーは、クロスサイトスクリプティング (XSS) 攻撃がブラウザーによって検出されたときに、web ページの読み込みを停止するために使用されます。 これは XSS フィルターと呼ばれます。 ヘッダーは、次のいずれかの値に設定できます。
  
-- **0** : XSS フィルター処理を無効にします。 推奨されません。  
+- **0** : XSS フィルター処理を無効にします。 推奨しません。  
 - **1** : XSS フィルター処理を有効にします。 XSS 攻撃が検出されると、ブラウザーによってページがサニタイズされます。   
 - **1; mode = block** – XSS フィルターを有効にします。 XSS 攻撃が検出されると、ブラウザーはページのレンダリングを防止します。 これが既定の推奨設定です。  
 
@@ -120,7 +120,7 @@ Set-AdfsResponseHeaders -RemoveHeaders "X-Frame-Options"
 Set-AdfsResponseHeaders -SetHeaderName "X-XSS-Protection" -SetHeaderValue "<0/1/1; mode=block/1; report=<reporting-uri>>" 
 ``` 
 
-次に例を示します。 
+例: 
 
 ```PowerShell
 Set-AdfsResponseHeaders -SetHeaderName "X-XSS-Protection" -SetHeaderValue "1" 
@@ -210,7 +210,7 @@ Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue
 >[!NOTE]
 >AD FS は、認証プロセスで JavaScript を使用するため、既定のポリシーに ' unsafe ' インライン ' と ' unsafe-eval ' ソースを含めることで JavaScript を有効にします。  
 
-### <a name="custom-headers"></a>カスタムヘッダー 
+### <a name="custom-headers"></a>カスタム ヘッダー 
 上記のセキュリティ応答ヘッダー (HSTS、CSP、X フレームオプション、X-XSS-Protection、CORS) に加えて、AD FS 2019 は新しいヘッダーを設定する機能を提供します。  
  
 例: 新しいヘッダー "TestHeader" を値を "TestHeaderValue" に設定するには 
@@ -234,7 +234,7 @@ Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderV
 |クロスオリジンリソース共有 (CORS)|[CORS ブラウザーの互換性](https://developer.mozilla.org/docs/Web/HTTP/CORS#Browser_compatibility) 
 |コンテンツセキュリティポリシー (CSP)|[CSP ブラウザーの互換性](https://developer.mozilla.org/docs/Web/HTTP/CSP#Browser_compatibility) 
 
-## <a name="next"></a>[次へ]
+## <a name="next"></a>次へ
 
 - [AD FS ヘルプトラブルシューティングガイドを使用する](https://aka.ms/adfshelp/troubleshooting )
 - [AD FS のトラブルシューティング](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)
