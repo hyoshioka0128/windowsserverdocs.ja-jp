@@ -41,6 +41,7 @@
 #### [Azure Update Management](azure/azure-update-management.md)
 ### [Windows Admin Center を Azure に接続する](azure/azure-integration.md)
 ### [Windows Admin Center を Azure に展開する](azure/deploy-wac-in-azure.md)
+### [Windows Admin Center の使用による Azure VM の作成](azure/create-azure-vms.md)
 ### [Windows Admin Center の使用による Azure VM の管理](azure/manage-azure-vms.md)
 
 ## サポート
