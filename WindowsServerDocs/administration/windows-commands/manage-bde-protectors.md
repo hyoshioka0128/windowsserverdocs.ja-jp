@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/06/2018
-ms.openlocfilehash: 7b25f6fe3c8a067d843fc12e9c1d1955a9606c09
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 86e170e199c7286d883f1248610c6f195add5b01
+ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71373942"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77013037"
 ---
 # <a name="manage-bde-protectors"></a>manage-bde: プロテクター
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 BitLocker 暗号化キーの保護方法を管理します。 このコマンドの使用方法の例については、次を参照してください。 [例](#BKMK_Examples)します。
 ## <a name="syntax"></a>構文
@@ -48,7 +48,7 @@ manage-bde -protectors [{-get|-add|-delete|-disable|-enable|-adbackup|-aadbackup
 
 ### <a name="BKMK_addprotectors"></a>-構文とパラメーターを追加する
 ```
-manage-bde  protectors  add [<Drive>] [-forceupgrade] [-recoverypassword <NumericalPassword>] [-recoverykey <pathToExternalKeydirectory>]
+manage-bde  -protectors  -add [<Drive>] [-forceupgrade] [-recoverypassword <NumericalPassword>] [-recoverykey <pathToExternalKeydirectory>]
 [-startupkey <pathToExternalKeydirectory>] [-certificate {-cf <pathToCertificateFile>|-ct <CertificateThumbprint>}] [-tpm] [-tpmandpin] 
 [-tpmandstartupkey <pathToExternalKeydirectory>] [-tpmandpinandstartupkey <pathToExternalKeydirectory>] [-password][-adaccountorgroup <securityidentifier> [-computername <Name>] 
 [{-?|/?}] [{-help|-h}]
@@ -78,7 +78,7 @@ manage-bde  protectors  add [<Drive>] [-forceupgrade] [-recoverypassword <Numeri
 
 ### <a name="BKMK_deleteprotectors"></a>-構文とパラメーターの削除
 ```
-manage-bde  protectors  delete <Drive> [-type {recoverypassword|externalkey|certificate|tpm|tpmandstartupkey|tpmandpin|tpmandpinandstartupkey|Password|Identity}] 
+manage-bde  -protectors  -delete <Drive> [-type {recoverypassword|externalkey|certificate|tpm|tpmandstartupkey|tpmandpin|tpmandpinandstartupkey|Password|Identity}] 
 [-id <KeyProtectorID>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
@@ -88,13 +88,13 @@ manage-bde  protectors  delete <Drive> [-type {recoverypassword|externalkey|cert
 |         型          |                               削除するキー保護機能を識別します。 使用することも **-t** としてこのコマンドの簡易版です。                               |
 |    recoverypassword    |                                                 任意の回復パスワードのキー プロテクターを削除するかを指定します。                                                 |
 |      externalkey       |                                        ドライブに関連付けられているすべての外部キー プロテクターを削除するかを指定します。                                         |
-|      証明書 (certificate)       |                                       ドライブに関連付けられているすべての証明書のキー プロテクターを削除するかを指定します。                                       |
+|      証明書       |                                       ドライブに関連付けられているすべての証明書のキー プロテクターを削除するかを指定します。                                       |
 |          tpm           |                                        TPM のみキー プロテクター ドライブに関連付けられているを削除するかを指定します。                                         |
 |    tpmandstartupkey    |                                このドライブに関連付けられている TPM およびスタートアップキーに基づくキープロテクターを削除することを指定します。                                |
 |       tpmandpin        |                                    ドライブに関連付けられている TPM および PIN ベースのキー保護機能を削除する必要があることを指定します。                                    |
 | tpmandpinandstartupkey |                             ドライブに関連付けられている TPM、PIN、およびスタートアップキーに基づくキープロテクターを削除する必要があることを指定します。                             |
 |        password        |                                        ドライブに関連付けられているパスワード キーの保護を削除するかを指定します。                                         |
-|        ID        |                                        ドライブに関連付けられているすべての id キー プロテクターを削除するかを指定します。                                         |
+|        id        |                                        ドライブに関連付けられているすべての id キー プロテクターを削除するかを指定します。                                         |
 |          -id           |                キー識別子を使用して削除するキー保護機能を識別します。 このパラメーターは、代わりのオプションを **-型** パラメーター。                 |
 |    <KeyProtectorID>    |        個々 のキー保護機能、ドライブを削除するを識別します。 使用して、キー保護機能の Id を表示できる、 **から manage-bde-プロテクター-取得** コマンドです。         |
 |     -computername      | Manage-bde.exe を使用して、別のコンピューター上の BitLocker 保護を変更することを指定します。 また、このコマンドの省略版として **-cn**を使用することもできます。 |
@@ -104,7 +104,7 @@ manage-bde  protectors  delete <Drive> [-type {recoverypassword|externalkey|cert
 
 ### <a name="BKMK_disableprot"></a>-構文とパラメーターを無効にする
 ```
-manage-bde  protectors  disable <Drive> [-RebootCount <integer 0 - 15>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
+manage-bde  -protectors  -disable <Drive> [-RebootCount <integer 0 - 15>] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
 |   パラメーター   |                                                                                                                                                                                                                   説明                                                                                                                                                                                                                    |
@@ -119,23 +119,23 @@ manage-bde  protectors  disable <Drive> [-RebootCount <integer 0 - 15>] [-comput
 ## <a name="BKMK_Examples"></a>例
 次の例を使用して、 **-プロテクター** ドライブ E に証明書ファイルで確認された証明書キー保護機能を追加するコマンド
 ```
-manage-bde  protectors  add E: -certificate  cf "c:\File Folder\Filename.cer"
+manage-bde  -protectors  -add E: -certificate  -cf "c:\File Folder\Filename.cer"
 ```
 次の例を使用して、 **-プロテクター** を追加するコマンド、 **adaccountorgroup** ドライブ E にドメインとユーザー名で識別されるキーの保護機能
 ```
-manage-bde  protectors  add E: -sid DOMAIN\user
+manage-bde  -protectors  -add E: -sid DOMAIN\user
 ```
 次の例では、**プロテクター**コマンドを使用して、コンピューターが3回再起動されるまで保護を無効にしています。
 ```
-manage-bde  protectors  disable C: -rc 3
+manage-bde  -protectors  -disable C: -rc 3
 ```
 次の例では、 **-プロテクター**コマンドを使用して、C ドライブのすべての TPM とスタートアップキーに基づくキープロテクターを削除しています。
 ```
-manage-bde  protectors  delete C: -type tpmandstartupkey
+manage-bde  -protectors -delete C: -type tpmandstartupkey
 ```
 次の例を使用して、 **-プロテクター** ドライブ C のすべての回復情報を AD DS にバックアップするコマンドです。
 ```
-manage-bde  protectors  adbackup C:
+manage-bde  -protectors  -adbackup C:
 ```
 ## <a name="additional-references"></a>その他の参照情報
 -   [コマンド ライン構文の記号](command-line-syntax-key.md)

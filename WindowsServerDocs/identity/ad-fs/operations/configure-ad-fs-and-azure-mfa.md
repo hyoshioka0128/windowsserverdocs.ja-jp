@@ -9,12 +9,12 @@ ms.date: 01/28/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a4f9d8fa71671c4ad4651008729d4cee53c8ee2f
-ms.sourcegitcommit: 74107a32efe1e53b36c938166600739a79dd0f51
+ms.openlocfilehash: c3a7e7c420ef63adc906e6558ed7aff6819e983c
+ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76918258"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77013057"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>AD FS を使用して Azure MFA を認証プロバイダーとして構成する
 
@@ -174,7 +174,7 @@ Azure AD PowerShell モジュールを使用して、(各 AD FS サーバー上�
 PS C:/> New-MsolServicePrincipalCredential -AppPrincipalId 981f26a1-7f43-403b-a875-f8b09b8cd720 -Type Asymmetric -Usage Verify -Value $newcert
 ```
 
-`$certbase64` は新しい証明書です。  Base64 でエンコードされた証明書を取得するには、(秘密キーを使用せずに) DER でエンコードされたファイルとして証明書をエクスポートし、Notepad.exe で開き、PowerShell セッションにコピーして貼り付け、変数 `$certbase64`に割り当てます。
+`$newcert` は新しい証明書です。 Base64 でエンコードされた証明書を取得するには、(秘密キーを使用せずに) DER でエンコードされたファイルとして証明書をエクスポートし、Notepad.exe で開き、PowerShell セッションにコピーして貼り付け、変数 `$newcert`に割り当てます。
 
 ### <a name="verify-that-the-new-certificates-will-be-used-for-azure-mfa"></a>新しい証明書が Azure MFA に使用されることを確認する
 

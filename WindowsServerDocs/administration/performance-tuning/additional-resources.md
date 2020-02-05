@@ -7,19 +7,19 @@ ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: ee14a2bd9290dbaa5653640a80528d163635142d
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 3c011d3c6e75fb1d5212d9b1ec3c6e6c69fac5d6
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947212"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001867"
 ---
 # <a name="additional-performance-tuning-resources"></a>その他のパフォーマンスチューニングリソース
 
 このチューニングガイドで説明されている概念の詳細については、このトピックのリンクを使用してください。
 
 ## <a name="microsoft-windows-server-websites"></a>Microsoft Windows Server Web サイト
--   [Windows Server カタログ](http://www.windowsservercatalog.com/)
+-   [Windows Server カタログ](https://www.windowsservercatalog.com/)
 
 -   [Windows Sysinternals](https://technet.microsoft.com/sysinternals/default.aspx)
 
