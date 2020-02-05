@@ -8,16 +8,16 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: 3d443ff123cc041196f59d93d156415c34bdf70f
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 06f92e0a2f74ed229b42e936583a7f75d4584234
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947871"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822115"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Windows Server サービス チャネル: LTSC と SAC
 
->適用先:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+>適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 Windows Server のユーザーは、長期サービス チャネルと半期チャネルの 2 つのリリース チャネルを利用できます。
 
@@ -25,7 +25,7 @@ Windows Server のユーザーは、長期サービス チャネルと半期チ�
 
 ## <a name="long-term-servicing-channel-ltsc"></a>長期サービス チャネル (LTSC)
 
-以前から使用されているリリース モデルです (旧称、“Long-Term Servicing *Branch*”)。このモデルでは、Windows Server の新しいメジャー バージョンが、2 ～ 3 年ごとにリリースされます。 ユーザーは、5 年間のメインストリーム サポートとそれに続く 5 年間の延長サポートを受けることができます。 このチャネルは、さらに長期のサービス オプションと機能安定性を必要とするシステムに適しています。 Windows Server 2016 およびそれ以前のバージョンの Windows Server の展開環境に対する、新しい半期チャネルのリリースによる影響はありません。 長期的なサービス チャネルでは、引き続きセキュリティ更新プログラムとセキュリティ以外の更新プログラムが提供されますが、新機能は提供されません。
+以前から使用されているリリース モデルです (旧称、“Long-Term Servicing *Branch*”)。このモデルでは、Windows Server の新しいメジャー バージョンが、2 ～ 3 年ごとにリリースされます。 ユーザーは、5 年間のメインストリーム サポートとそれに続く 5 年間の延長サポートを受けることができます。 このチャネルは、長期のサービス オプションと機能安定性を必要とするシステムに適しています。 Windows Server 2016 およびそれ以前のバージョンの Windows Server の展開環境に対する、新しい半期チャネルのリリースによる影響はありません。 長期的なサービス チャネルでは、引き続きセキュリティ更新プログラムとセキュリティ以外の更新プログラムが提供されますが、新機能は提供されません。
 
 > [!Note]  
 > **現在の LTSC 製品は Windows Server 2019 です**。 このチャネルを維持する場合は、Windows Server 2019 をインストールする (または使用を継続する) 必要があります。この場合、Server Core インストール オプションまたはデスクトップ エクスペリエンス搭載サーバーのインストール オプションでインストールすることができます。
@@ -76,9 +76,9 @@ IT 担当者が Windows Server を操作するためのツールは数多く存�
 
 - **Windows Update (スタンドアロン)** : このオプションは、インターネットに接続されていて、Windows Update が有効にされているサーバーでのみ利用できます。
 - **Windows Server Update Services (WSUS)** は、Windows 10 と Windows Server の更新プログラムを詳細に管理することができ、Windows Server オペレーティング システムでネイティブに利用できます。 更新プログラムを延期できることに加えて、更新プログラムの承認層を追加し、準備できるたびに特定のコンピューターまたはコンピューターのグループに展開することを選択できます。
-- **System Center Configuration Manager** では、サービスをきめ細かく制御できます。 IT 担当者は、更新プログラムを延期、承認することができ、展開のターゲットを設定し、帯域幅の使用と展開回数を管理するための複数のオプションを選択できます。
+- **Microsoft Endpoint Configuration Manager** では、サービスを最も制御できます。 IT 担当者は、更新プログラムを延期、承認することができ、展開のターゲットを設定し、帯域幅の使用と展開回数を管理するための複数のオプションを選択できます。
 
-リソース、スタッフ、および専門知識に基づいて、既に、これらのオプションのいずれか 1 つまたは複数を使用している場合、 半期チャネルのリリースでも、同じプロセスを引き続き使用できます。たとえば、既に更新プログラムの管理に System Center Configuration Manager を使用している場合は、それを使い続けることができます。 同様に、WSUS を使っている場合は、引き続きそれを使うことができます。
+リソース、スタッフ、および専門知識に基づいて、既に、これらのオプションのいずれか 1 つまたは複数を使用している場合、 半期チャネルのリリースでも、同じプロセスを引き続き使用できます。たとえば、既に更新プログラムの管理に Configuration Manager を使用している場合は、それを使い続けることができます。 同様に、WSUS を使っている場合は、引き続きそれを使うことができます。
 
 ## <a name="where-to-obtain-semi-annual-channel-releases"></a>半期チャネルのリリースを入手する場所
 
@@ -171,7 +171,7 @@ Name    :     ServerCore.AppCompatibility~~~~0.0.1.0
 State   :     Installed
 ````
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 
 [Windows Server 半期チャネルで Nano Server に加えられる変更](../get-started/nano-in-semi-annual-channel.md)
 
