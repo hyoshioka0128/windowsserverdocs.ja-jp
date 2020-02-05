@@ -13,20 +13,20 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 15906e8cc1e5e85a471f1b8725435eb60852f6f5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f69a1fe4f3c17123f91ade3b6aebdb5f7bab9982
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71382867"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001787"
 ---
 # <a name="get-started-with-user-access-logging"></a>ユーザーアクセスログを使ってみる
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 ユーザーアクセスログ (UAL) は、ローカルサーバー上の役割と製品ごとにクライアント使用状況データを集計する Windows Server の機能です。 Windows server 管理者は、ローカルサーバー上の役割とサービスについて、クライアントコンピューターからの要求を定量化するのに役立ちます。  
   
-UAL は既定でインストールされ、有効になっており、ほぼリアルタイムでデータを収集します。 UAL は無効にすることも有効にすることもできますが、管理者構成は必要ありません。 詳細については、「 [Manage User Access Logging](Manage-User-Access-Logging.md)」を参照してください。 ユーザーアクセスログサービスは、ロールと製品ごとのクライアント使用状況データをローカルデータベースファイルに集計します。  IT 管理者は後で Windows Management Instrumentation (WMI) または Windows PowerShell コマンドレットを使用し、サーバー ロール (またはソフトウェア製品) 別、ユーザー別、ローカル サーバー別、日付別に数量とインスタンスを取得できます。  
+UAL は既定でインストールされ、有効になっており、ほぼリアルタイムでデータを収集します。 UAL は無効にすることも有効にすることもできますが、管理者構成は必要ありません。 詳細については、「[ユーザー アクセス ログの管理](Manage-User-Access-Logging.md)」を参照してください。 ユーザーアクセスログサービスは、ロールと製品ごとのクライアント使用状況データをローカルデータベースファイルに集計します。  IT 管理者は後で Windows Management Instrumentation (WMI) または Windows PowerShell コマンドレットを使用し、サーバー ロール (またはソフトウェア製品) 別、ユーザー別、ローカル サーバー別、日付別に数量とインスタンスを取得できます。  
   
 > [!NOTE]  
 > UAL は [Microsoft Assessment and Planning Toolkit](https://go.microsoft.com/fwlink/?LinkID=111000)をサポートします。  
@@ -75,7 +75,7 @@ UAL では、次のタスクを実行できます。
 -   Web サーバー (IIS)  
   
     > [!WARNING]  
-    > IIS で UAL を使用するには、iisual.exe を実行する必要があります。 詳細については、「 [Analyzing Client Usage Data with IIS User Access Logging (IIS ユーザー アクセス ログでのクライアント使用状況データの分析)](http://www.iis.net/learn/manage/configuring-security/analyzing-client-usage-data-with-iis-user-access-logging)」を参照してください。  
+    > IIS で UAL を使用するには、iisual.exe を実行する必要があります。 詳細については、「 [Analyzing Client Usage Data with IIS User Access Logging (IIS ユーザー アクセス ログでのクライアント使用状況データの分析)](https://www.iis.net/learn/manage/configuring-security/analyzing-client-usage-data-with-iis-user-access-logging)」を参照してください。  
   
 -   Microsoft メッセージ キュー (MSMQ) サービス  
   
@@ -99,12 +99,12 @@ UAL では、次のタスクを実行できます。
 |-----------------|---------|  
 |ほぼリアルタイムでクライアント要求イベント データを収集し、集計します。|最大 3 年分のデータを保存できます。 **重要:** 管理者は、組織のプライバシーポリシーとローカル規制に従って、収集されたデータとデータ保有期間のコンプライアンスを強制する必要があります。|  
 |WMI または Windows PowerShell インターフェイスを利用して UAL に問い合わせ、ローカルまたはリモート サーバーのクライアント要求データを取得します。|UAL では、1 つのビューで進行中の使用状況データを参照できます。 サーバー管理者とエンタープライズ管理者は、このデータを取得し、ビジネス管理者と連携し、ボリューム ソフトウェア ライセンスを最適な方法で利用できます。|  
-|既定で有効になっています。|サーバー管理者がこの機能を構成しなくても、すべてのコア機能は利用できるし、動作します。|  
+|既定で有効になります。|サーバー管理者がこの機能を構成しなくても、すべてのコア機能は利用できるし、動作します。|  
   
 ## <a name="data-logged-with-ual"></a>UAL で記録されたデータ  
 UAL では次のユーザー関連データが記録されます。  
   
-|data|説明|  
+|Data|説明|  
 |--------|---------------|  
 |**UserName**|インストールされている役割と製品からの UAL エントリを伴うクライアントでのユーザー名 (該当する場合)。|  
 |**ActivityCount**|特定のユーザーが役割またはサービスにアクセスした回数。|  
@@ -117,7 +117,7 @@ UAL では次のユーザー関連データが記録されます。
   
 UAL では次のデバイス関連データが記録されます。  
   
-|data|説明|  
+|Data|説明|  
 |--------|---------------|  
 |**IPAddress**|役割またはサービスにアクセスするために使用されるクライアント デバイスの IP アドレス。|  
 |**ActivityCount**|特定のデバイスが役割またはサービスにアクセスした回数。|  
@@ -131,7 +131,7 @@ UAL では次のデバイス関連データが記録されます。
 ## <a name="BKMK_SOFT"></a>ソフトウェア要件  
 UAL は、Windows Server 2012 以降のバージョンの Windows Server を実行しているすべてのコンピューターで使用できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [User Access Logging (ユーザー アクセス ログ)](https://msdn.microsoft.com/library/windows/desktop/hh437528(v=vs.85).aspx) (MSDN)  
 [ユーザー アクセス ログの管理](Manage-User-Access-Logging.md)  
   
