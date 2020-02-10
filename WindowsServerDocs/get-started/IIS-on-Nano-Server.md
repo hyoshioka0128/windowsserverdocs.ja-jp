@@ -12,19 +12,19 @@ ms.assetid: 16984724-2d77-4d7b-9738-3dff375ed68c
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 04c2d7eab2f149505758ab21f08cd6b8bdb74b85
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 96a5e5f23ad3cdfc829fd141c3c90f6c200f06c9
+ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360304"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "77001807"
 ---
 # <a name="iis-on-nano-server"></a>Nano Server の IIS
 
 >適用先:Windows Server 2016
 
 > [!IMPORTANT]
-> Windows Server バージョン 1709 以降、Nano Server は[コンテナー基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、「[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)」をご覧ください。 
+> Windows Server バージョン 1709 以降では、Nano Server は[コンテナーの基本 OS イメージ](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image)としてのみ提供されます。 その意味については、[Nano Server に加えられる変更](nano-in-semi-annual-channel.md)に関する記事をご覧ください。 
 
 -Package パラメーターと Microsoft-NanoServer-IIS-Package を使用して、Nano Server にインターネット インフォメーション サービス (IIS) のサーバーの役割をインストールできます。 パッケージのインストールなど、Nano Server の構成の詳細については、「[Nano Server のインストール](Getting-Started-with-Nano-Server.md)」を参照してください。  
 
@@ -33,21 +33,21 @@ Nano Server の今回のリリースでは、次の IIS 機能を使用できま
 |機能|既定で有効|  
 |-----------|----------------------|  
 |**一般的な HTTP 機能**||  
-|既定のドキュメント|○|  
-|ディレクトリの参照|○|  
-|HTTP エラー|○|  
-|静的コンテンツ|○|  
+|既定のドキュメント|x|  
+|ディレクトリの参照|x|  
+|HTTP エラー|x|  
+|静的コンテンツ|x|  
 |HTTP リダイレクト||  
 |**正常性と診断**||  
-|HTTP ログ|○|  
+|HTTP ログ|x|  
 |カスタム ログ||  
 |要求監視||  
 |トレース||  
 |**パフォーマンス**||  
-|静的コンテンツの圧縮|○|  
+|静的コンテンツの圧縮|x|  
 |動的コンテンツの圧縮||  
 |**セキュリティ**||  
-|要求のフィルタリング|○|  
+|要求のフィルタリング|x|  
 |基本認証||  
 |クライアント証明書マッピング認証||  
 |ダイジェスト認証||  
@@ -63,9 +63,9 @@ Nano Server の今回のリリースでは、次の IIS 機能を使用できま
 |サーバー側インクルード||  
 |WebSocket プロトコル||  
 |**管理ツール**||  
-|Windows PowerShell 用 IISAdministration モジュール|○|  
+|Windows PowerShell 用 IISAdministration モジュール|x|  
 
-IIS の他の構成 (ASP.NET、PHP、Java の使用など) に関する一連の記事と、その他の関連するコンテンツは、[http://iis.net/learn](http://iis.net/learn) で公開されています。  
+IIS の他の構成 (ASP.NET、PHP、Java の使用など) に関する一連の記事と、その他の関連するコンテンツは、[http://iis.net/learn](https://iis.net/learn) で公開されています。  
 
 ## <a name="installing-iis-on-nano-server"></a>Nano Server での IIS のインストール  
 このサーバーの役割は、オフライン (Nano Server が停止した状態) でもオンライン (Nano Server が実行中) でもインストールできますが、オフライン インストールをお勧めします。  
@@ -242,7 +242,7 @@ PS C:\> $sm.ApplicationPools.Add("DemoAppPool")
     $sm.CommitChanges()  
     ```  
 
-    さらに、次の構文を使用して特定のホスト名に Server Name Indication (SNI) を使用することもできます: `$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
+    さらに、次の構文を使用して特定のホスト名に Server Name Indication (SNI) を使用することもできます: `$sm.Sites["Default Web Site"].Bindings.Add("*:443: www.foo.bar.com", $hash, "My", "Sni".`  
 
 ## <a name="appendix-1-list-of-iis-sub-features"></a>付録 1:IIS サブ機能の一覧
 
@@ -361,7 +361,7 @@ IIS の各機能は、構成要素のセットとして存在します。 この
 |`<modules>`|`<add name="FailedRequestsTracingModule" lockItem="true" />`|  
 |`<traceProviderDefinitions>`|`<traceProviderDefinitions><br />    <add name="WWW Server" guid\="{3a2a4e84-4c21-4981-ae10-3fda0d9b0f83}"><br />        <areas><br />            <clear /><br />            <add name="Authentication" value="2" /><br />            <add name="Security" value="4" /><br />            <add name="Filter" value="8" /><br />            <add name="StaticFile" value="16" /><br />            <add name="CGI" value="32" /><br />            <add name="Compression" value="64" /><br />            <add name="Cache" value="128" /><br />            <add name="RequestNotifications" value="256" /><br />            <add name="Module" value="512" /><br />            <add name="FastCGI" value="4096" /><br />            <add name="WebSocket" value="16384" /><br />        </areas><br />    </add><br />    <add name="ISAPI Extension" guid="{a1c2040e-8840-4c31-ba11-9871031a19ea}"><br />        <areas><br />            <clear /><br />        </areas><br />    </add><br /></traceProviderDefinitions>`|  
 
-### <a name="performance"></a>パフォーマンス  
+### <a name="performance"></a>[パフォーマンス]  
 **静的コンテンツの圧縮**  
 
 |セクション|構成要素|  
