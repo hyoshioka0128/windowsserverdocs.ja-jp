@@ -14,12 +14,12 @@ ms.date: 1/24/2020
 ms.topic: landing-page
 author: kaushika-msft
 ms.author: kaushika
-ms.openlocfilehash: 593fc4abbdce3ed53fa8d7ef73d529558b100bcc
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: cd4e61a9fac5b1a1f6a1b66309e514ef75b1e4db
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001797"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125133"
 ---
 # <a name="troubleshooting-windows-server-components"></a>Windows Server コンポーネントのトラブルシューティング
 
@@ -46,17 +46,17 @@ Microsoft は、Windows Server の両方の更新プログラムを定期的に�
 
 ## <a name="troubleshoot-startup-and-restart"></a>スタートアップと再起動のトラブルシューティング
 
-- [Windows スタートアップの高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup.md)
-- [64ビットバージョンの Windows で適切なページファイルのサイズを確認する方法](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size.md)
-- [カーネルまたは完全なクラッシュダンプを生成する](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump.md)
-- [ページファイルの概要](https://docs.microsoft.com/windows/client-management/introduction-page-file.md)
-- [Windows でのシステムエラーと回復オプションの構成](https://docs.microsoft.com/windows/client-management/system-failure-recovery-options.md)
-- [Windows ブートに関する問題の詳細なトラブルシューティング](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems.md)
-- [Windows ベースのコンピューターフリーズの高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze.md)
-- [停止エラーまたはブルースクリーンエラーの高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors.md)
-- [Stop エラー7B または Inaccessible_Boot_Device の高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device.md)
-- [イベント ID 41 の高度なトラブルシューティング "システムは最初に正常にシャットダウンされずに再起動されました"](https://docs.microsoft.com/windows/client-management/troubleshoot-event-id-41-restart.md)
-- [Box の Broadcom ネットワークアダプタードライバーを更新すると停止エラーが発生する](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-error-on-broadcom-driver-update.md)
+- [Windows スタートアップの高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-startup)
+- [64ビットバージョンの Windows で適切なページファイルのサイズを確認する方法](https://docs.microsoft.com/windows/client-management/determine-appropriate-page-file-size)
+- [カーネルまたは完全なクラッシュダンプを生成する](https://docs.microsoft.com/windows/client-management/generate-kernel-or-complete-crash-dump)
+- [ページファイルの概要](https://docs.microsoft.com/windows/client-management/introduction-page-file)
+- [Windows でのシステムエラーと回復オプションの構成](https://docs.microsoft.com/windows/client-management/system-failure-recovery-options)
+- [Windows ブートに関する問題の詳細なトラブルシューティング](https://docs.microsoft.com/windows/client-management/advanced-troubleshooting-boot-problems)
+- [Windows ベースのコンピューターフリーズの高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-windows-freeze)
+- [停止エラーまたはブルースクリーンエラーの高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-errors)
+- [Stop エラー7B または Inaccessible_Boot_Device の高度なトラブルシューティング](https://docs.microsoft.com/windows/client-management/troubleshoot-inaccessible-boot-device)
+- [イベント ID 41 の高度なトラブルシューティング "システムは最初に正常にシャットダウンされずに再起動されました"](https://docs.microsoft.com/windows/client-management/troubleshoot-event-id-41-restart)
+- [Box の Broadcom ネットワークアダプタードライバーを更新すると停止エラーが発生する](https://docs.microsoft.com/windows/client-management/troubleshoot-stop-error-on-broadcom-driver-update)
 
 ## <a name="troubleshoot-ad-forest-recovery"></a>AD フォレストの回復に関するトラブルシューティング
 

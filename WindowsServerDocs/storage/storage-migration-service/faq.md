@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 02829919c53e3488ad7f229ad8bee0d3ead14c9a
-ms.sourcegitcommit: 3f54036c74c5a67799fbc06a8a18a078ccb327f9
+ms.openlocfilehash: a28b25c55b9ad66cd16f3d9e370fec22ec0f2a5d
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76124900"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125143"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>記憶域移行サービスに関してよく寄せられる質問 (FAQ)
 
@@ -27,6 +27,10 @@ Storage Migration Service は、Windows の操作に干渉する可能性があ�
 - $Recycle.bin、recycler、Recycled、システム ボリューム情報、$UpgDrv$、$SysReset、$Windows ~ $Windows。 bt によって ~ %.ls、Windows.old、ブート、回復、Documents and Settings。
 - pagefile.sys、hiberfil.sys、bootsect.exe、winpepge.sys、config、config.sys、bootmgr、bootnxt のうちのすべてのファイルを
 - 移行先の除外されたフォルダーと競合する、移行元サーバー上のすべてのファイルまたはフォルダー。 <br>たとえば、ソースに N:\Windows フォルダーがあり、それが C:\ にマップされているとします。コピー先のボリュームは、格納されている内容に関係なく転送されません。これは、変換先の C:\Windows システムフォルダーが影響を受ける可能性があるためです。
+
+## <a name="are-locked-files-migrated"></a>ロックされたファイルは移行されますか?
+
+ストレージ移行サービスは、アプリケーションが排他的にロックするファイルを移行しません。 このサービスは、再試行の間隔が60秒になると、自動的に3回再試行されます。また、試行回数と遅延を制御できます。 また、転送を再実行して、共有違反によって以前にスキップされたファイルのみをコピーすることもできます。
 
 ## <a name="are-domain-migrations-supported"></a>ドメインの移行はサポートされていますか?
 
@@ -59,17 +63,17 @@ Storage Migration Service は、Windows の操作に干渉する可能性があ�
     - 同時ユーザー数の制限
     - 継続的に利用可能
     - 説明           
-    - [データの暗号化]
+    - データの暗号化
     - Id リモート処理
     - インフラストラクチャ
     - 名前
     - パス
-    - スコープ
+    - 役割
     - スコープ名
     - セキュリティ記述子
-    - シャドウ コピー
+    - シャドウコピー
     - 特殊
-    - 一時
+    - Temporary
 
 ## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>複数のサーバーを1台のサーバーに統合することはできますか。
 
@@ -143,13 +147,21 @@ Storage Migration Service では、hidden c:\programdata\microsoft\storagemigrat
 
 いいえ。記憶域移行サービスは、ローカルにインストールされているアプリケーションを移行しません。 移行が完了したら、ソースコンピューター上で実行されていた対象コンピューターにアプリケーションを再インストールします。 ユーザーやアプリケーションを再構成する必要はありません。Storage Migration Service は、サーバーの変更をクライアントに対して非表示にするように設計されています。 
 
+## <a name="what-happens-with-existing-files-on-the-destination-server"></a>移行先サーバーの既存のファイルはどうなりますか。
+
+転送を実行すると、記憶域移行サービスは、移行元サーバーからのデータをミラー化することを探します。 データが上書きされる可能性があるため、移行先サーバーに実稼働データまたは接続されているユーザーを含めることはできません。 既定では、最初の転送によって、移行先サーバー上のデータのバックアップコピーが保護機能として作成されます。 以降のすべての転送で、既定では、ストレージ移行サービスはデータを転送先にミラー化します。これは、新しいファイルを追加するだけでなく、任意の既存のファイルを上書きし、ソースに存在しないファイルを削除することを意味します。 この動作は意図的なものであり、ソースコンピューターに対して完全な忠実性を提供します。 
+
+## <a name="what-do-the-error-numbers-mean-in-the-transfer-csv"></a>CSV 転送でのエラー番号の意味
+
+転送 CSV ファイルで検出されたほとんどのエラーは、Windows システムエラーコードです。 各エラーの意味を確認するには、 [Win32 エラーコードのドキュメント](https://docs.microsoft.com/windows/win32/debug/system-error-codes)を参照してください。 
+
 ## <a name="give-feedback"></a>フィードバックの提供、バグの報告、サポートを受けるためのオプションは何ですか?
 
 ストレージ移行サービスに関するフィードバックを提供するには:
 
 - Windows 10 に含まれているフィードバックハブツールを使用して、[機能の提案] をクリックし、[Windows Server] と [記憶域の移行] のカテゴリを指定します。
 - [Windows Server UserVoice](https://windowsserver.uservoice.com)サイトを使用する
-- smsfeed@microsoft.com へのメール
+- 電子メール smsfeed@microsoft.com
 
 バグを報告するには:
 
@@ -162,6 +174,6 @@ Storage Migration Service では、hidden c:\programdata\microsoft\storagemigrat
  - [Windows Server 2019 Technet フォーラム](https://social.technet.microsoft.com/Forums/en-US/home?forum=ws2019&filter=alltypes&sort=lastpostdesc)の投稿 
  - [Microsoft サポート](https://support.microsoft.com)を使用してサポートケースを開く
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 
 - [記憶域移行サービスの概要](overview.md)
