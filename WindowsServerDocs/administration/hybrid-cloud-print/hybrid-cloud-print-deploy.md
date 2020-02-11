@@ -12,12 +12,12 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: c756aaeb293f9e6822e979e0f305f0c4f98adf72
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: 77462ab74ee63677362b779615376e831c71de00
+ms.sourcegitcommit: eca5bb75d1db20ac07232cea759b6b542626c02f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352101"
+ms.lasthandoff: 02/10/2020
+ms.locfileid: "77114531"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print"></a>Windows Server ハイブリッドクラウド印刷の展開
 
@@ -107,7 +107,7 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 
     ![AAD は API 5 を公開します](../media/hybrid-cloud-print/AAD-AppRegistration-ECP-ExposeAPI-ScopeName.png)
 
-3. API アクセス許可を追加する
+3. API のアクセス許可の追加
     - アプリの登録ブレードに戻ります。 ネイティブアプリをクリックし、[API のアクセス許可] を選択します。 **[アクセス許可の追加]** をクリックします。
 
     ![AAD API アクセス許可1](../media/hybrid-cloud-print/AAD-AppRegistration-APIPermission.png)
@@ -149,17 +149,17 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 
     ![AAD アプリプロキシ3](../media/hybrid-cloud-print/AAD-EnterpriseApp-ECP-AppProxy.png)
 
-    - **[Azure Active Directory]**  >  **[アプリの登録]** に移動します。 [検出サービス] をクリックします。 **[概要]** で、アプリケーション ID URI が既定から **[アプリケーションプロキシ]** の下の外部 URL に変更されていることを確認します。 この URI は、プリントサーバーのセットアップ、クライアント MDM ポリシー、およびプリンタの発行時に使用されます。
+    - **Azure Active Directory** > **アプリの登録**にアクセスします。 [検出サービス] をクリックします。 **[概要]** で、アプリケーション ID URI が既定から **[アプリケーションプロキシ]** の下の外部 URL に変更されていることを確認します。 この URI は、プリントサーバーのセットアップ、クライアント MDM ポリシー、およびプリンタの発行時に使用されます。
 
     ![AAD アプリプロキシ4](../media/hybrid-cloud-print/AAD-AppRegistration-Mopria-Overview.png)
 
-5. アプリケーションへのユーザーの割り当て
+5. アプリケーションにユーザーを割り当てる
     - **[すべてのアプリケーション]**  >  **[エンタープライズアプリケーション]**  > **Azure Active Directory**にアクセスします。 検出サービスを検索してクリックします
     - **[ユーザーとグループ]** をクリックしてユーザーを割り当てるか、 **[プロパティ]** をクリックして [**ユーザー割り当てが必要]** を **[いいえ]** に変更します。
     - Enterprise Cloud Print service についても同じ手順を繰り返します。
 
 6. ネイティブアプリでリダイレクト URI を構成する
-    - **[Azure Active Directory]**  >  **[アプリの登録]** に移動します。 ネイティブアプリをクリックします。 **[概要]** にアクセスし、**アプリケーション (クライアント) ID**をコピーします。
+    - **Azure Active Directory** > **アプリの登録**にアクセスします。 ネイティブアプリをクリックします。 **[概要]** にアクセスし、**アプリケーション (クライアント) ID**をコピーします。
 
     ![AAD リダイレクト URI 1](../media/hybrid-cloud-print/AAD-AppRegistration-Native-Overview.png)
 
@@ -178,7 +178,7 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 1. プリントサーバーに、使用可能なすべての Windows Update がインストールされていることを確認します。 注: 17763.165 以降をビルドするには、サーバー2019にパッチを適用する必要があります。
     - 次のサーバーの役割をインストールします。
         - プリントサーバーの役割
-        - インターネット インフォメーション サービス (IIS)
+        - インターネットインフォメーションサービス (IIS)
     - サーバーの役割のインストール方法の詳細について[は、「役割と機能の追加ウィザードを使用して役割、役割サービス、および機能をインストール](https://docs.microsoft.com/windows-server/administration/server-manager/install-or-uninstall-roles-role-services-or-features#BKMK_installarfw)する」を参照してください。
 
     ![プリントサーバーの役割](../media/hybrid-cloud-print/PrintServer-Roles.png)
@@ -199,7 +199,7 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 
         `"C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0"`
 
-    - を実行します。
+    - [実行]
 
         `.\CloudPrintDeploy.ps1 -AzureTenant <Azure Active Directory domain name> -AzureTenantGuid <Azure Active Directory ID>`
 
@@ -215,9 +215,9 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 
     ![プリントサーバークラウドの印刷配置](../media/hybrid-cloud-print/PrintServer-CloudPrintDeploy.png)
 
-    - ログファイルを調べて、エラーが発生していないかどうかを確認します。 `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0>notepad CloudPrintDeploy.log`
+    - ログファイルを調べて、エラーが発生していないかどうかを確認します。 `C:\Program Files\WindowsPowerShell\Modules\PublishCloudPrinter\1.0.0.0\CloudPrintDeploy.log`
 
-4. 管理者特権のコマンドプロンプトで RegitEdit を開きます。 コンピューター \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService. にアクセス
+4. 管理者特権のコマンドプロンプトで**Regitedit**を実行します。 コンピューター \ HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\CloudPrint\EnterpriseCloudPrintService. にアクセス
     - AzureAudience がエンタープライズクラウド印刷アプリのアプリケーション ID URI に設定されていることを確認してください。
     - AzureTenant が Azure AD ドメイン名に設定されていることを確認します。
 
@@ -238,7 +238,7 @@ HCP サービスとの認証された通信を有効にするには、3つのア
     - サードパーティプロバイダーにドメインを登録する場合は、SSL 証明書を使用して IIS エンドポイントを構成する必要があります。 詳細については、この[ガイド](https://www.sslsupportdesk.com/microsoft-server-2016-iis-10-10-5-ssl-installation/)を参照してください。
 
 8. SQLite パッケージをインストールします。
-   - 管理者特権の PowerShell コマンド プロンプトを開きます。
+   - 管理者特権の PowerShell コマンドプロンプトを開きます。
    - 次のコマンドを実行して、システムのデータをダウンロードします。
 
         `Register-PackageSource -Name nuget.org -ProviderName NuGet -Location https://www.nuget.org/api/v2/ -Trusted -Force`
@@ -332,7 +332,7 @@ HCP サービスとの認証された通信を有効にするには、3つのア
     - Azure portal で、[**すべてのアプリケーション** >  > **エンタープライズアプリケーション**] **Azure Active Directory**にアクセスします。
     - [Mo先読み Adiscoveryservice アプリ] を選択します。
     - **アプリケーションプロキシ**にアクセスします。 事前認証方法を**Azure Active Directory**に変更します。
-    - **[Single sign-on]\(シングル サインオン\)** に移動します。 シングルサインオンの方法として [統合 Windows 認証] を選択します。
+    - **[シングルサインオン]** にアクセスします。 シングルサインオンの方法として [統合 Windows 認証] を選択します。
     - **内部アプリケーション spn**をプリントサーバーコンピューターの spn に設定します。
     - [委任された**ログイン id** ] を "ユーザープリンシパル名" に設定します。
     - EntperiseCloudPrint アプリに対して繰り返します。
@@ -351,7 +351,7 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 
 > 注: Microsoft Intune サービスを使用している場合は、[Cloud Printer] (クラウドプリンター) カテゴリの下にこれらの設定が表示されます。
 
-|Intune の表示名                     |のポリシー                         |
+|Intune の表示名                     |ポリシー                         |
 |----------------------------------------|-------------------------------|
 |プリンター検出 URL                   |Cloudプリンター Discoveryendpoint  |
 |プリンターアクセス機関の URL            |CloudPrintOAuthAuthority       |
@@ -414,7 +414,7 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 
         `Publish-CloudPrinter -Printer <string> -Manufacturer <string> -Model <string> -OrgLocation <string> -Sddl <string> -DiscoveryEndpoint <string> -PrintServerEndpoint <string> -AzureClientId <string> -AzureTenantGuid <string> -DiscoveryResourceId <string>`
 
-        サンプル コマンド:
+        サンプルコマンド:
 
         `Publish-CloudPrinter -Printer HcpTestPrinter -Manufacturer Manufacturer1 -Model Model1 -OrgLocation '{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"MyCompany", "depth":1}, {"category":"site", "vs":"MyCity, State", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor_name", "vs":1, "depth":4}, {"category":"room_name", "vs":"1111", "depth":5}]}' -Sddl "O:BAG:DUD:(A;OICI;FA;;;WD)" -DiscoveryEndpoint "https://mopriadiscoveryservice-contoso.msappproxy.net/mcs" -PrintServerEndpoint "https://enterprisecloudprint-contoso.msappproxy.net/ecp" -AzureClientId "dbe4feeb-cb69-40fc-91aa-73272f6d8fe1" -AzureTenantGuid "8de6a14a-5a23-4c1c-9ae4-1481ce356034" -DiscoveryResourceId "https://mopriadiscoveryservice-contoso.msappproxy.net/mcs/"`
 
@@ -422,14 +422,14 @@ HCP サービスとの認証された通信を有効にするには、3つのア
 
         `Publish-CloudPrinter -Query -DiscoveryEndpoint <string> -AzureClientId <string> -AzureTenantGuid <string> -DiscoveryResourceId <string>`
 
-        サンプル コマンド:
+        サンプルコマンド:
 
         `Publish-CloudPrinter -Query -DiscoveryEndpoint "https://mopriadiscoveryservice-contoso.msappproxy.net/mcs" -AzureClientId "dbe4feeb-cb69-40fc-91aa-73272f6d8fe1" -AzureTenantGuid "8de6a14a-5a23-4c1c-9ae4-1481ce356034" -DiscoveryResourceId "https://mopriadiscoveryservice-contoso.msappproxy.net/mcs/"`
 
 ## <a name="verify-the-deployment"></a>展開を確認する
 
 MDM ポリシーが構成されている Azure AD 参加済みデバイスの場合:
-- Web ブラウザーを開き *、 https://mopriadiscoveryservice- msappproxy.net/mcs/services*にアクセスします。
+- Web ブラウザーを開き *、 https://mopriadiscoveryservice-msappproxy.net/mcs/services*にアクセスします。
 - このエンドポイントの一連の機能を説明する JSON テキストが表示されます。
 - **[設定]** **[デバイス]**  > [**プリンター] & [スキャナー**] の > にアクセスします。
     - **[プリンターまたはスキャナーの追加]** をクリックします。
@@ -443,19 +443,21 @@ MDM ポリシーが構成されている Azure AD 参加済みデバイスの場
 
 > 注: "EcpPrintTest" プリンターを使用している場合は、プリントサーバーコンピューターの "C:\\Ecpprinttest\\Ecpprinttest. xps" の場所に出力ファイルがあります。
 
-## <a name="troubleshooting"></a>[トラブルシューティング]
+## <a name="troubleshooting"></a>トラブルシューティング
 
-エラーのトラブルシューティングに役立つさまざまなログがあります。
-- Windows 10 クライアントの場合。
-    - フィードバックハブを使用して、新しいフィードバックを追加します。
-        - **[スタート]** をクリックし、「フィードバックハブ」と入力します。
-        - [カテゴリ] で、[**問題**、**デバイス、ドライバー**、**印刷**] を選択します。
-        - 詳細を追加するセクションで、 **[記録の開始]** ボタンをクリックします。
-        - 失敗した印刷ジョブを再試行します。
-        - フィードバックハブに戻り、 **[記録の停止]** ボタンをクリックします。
-        - **[送信]** をクリックしてフィードバックを送信します。
-    - Azure AD 操作のログを表示するには、イベントビューアーを使用します。 **[スタート]** をクリックし、「イベントビューアー」と入力します。 Microsoft > Windows > AAD > 操作 > [アプリケーションとサービスログ] に移動します。
-- コネクタサーバー。
-    - アプリケーションプロキシのログを表示するには、イベントビューアーを使用します。 **[スタート]** をクリックし、「イベントビューアー」と入力します。 アプリケーションとサービスログ > Microsoft > AadApplicationProxy > Connector > Admin に移動します。
-- プリントサーバー上。
-    - 探索サービスアプリとエンタープライズクラウド印刷アプリのログは、C:\inetpub\logs\LogFiles\W3SVC1. にあります。
+HCP の展開時に発生する一般的な問題を以下に示します。
+
+|エラー |推奨される手順 |
+|------|------|
+|CloudPrintDeploy PowerShell スクリプトが失敗しました | <ul><li>Windows Server に最新の更新プログラムがあることを確認します。</li><li>Windows Server Update Services (WSUS) を使用する場合は、 [wsus/SCCM を使用しているときに、オンデマンド機能と言語パックを使用できるようにする方法に関する説明](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs)を参照してください。</li></ul> |
+|SQLite のインストールが失敗しました。メッセージ: パッケージ ' system.string ' の依存関係ループが検出されました | Install-Package system.string-providername-providername の依存関係<br>EF6-providername の依存関係をインストールします。<br>パッケージのインストール-providername-providername nuget-SkipDependencies<br><br>パッケージが正常にダウンロードされたら、すべてのバージョンが同じであることを確認します。 指定されていない場合は、上記のコマンドに-requiredversion パラメーターを追加し、それらを同じバージョンに設定します。 |
+|プリンタの発行に失敗しました | <ul><li>パススルー事前認証の場合、プリンターを公開するユーザーに、パブリッシングデータベースに対する適切なアクセス許可が付与されていることを確認します。</li><li>事前認証を Azure AD には、IIS で Windows 認証が有効になっていることを確認します。 手順5.3 を参照してください。 また、まずパススルー認証を試してください。 パススルー事前認証が機能する場合、問題はアプリケーションプロキシに関連している可能性があります。 「[アプリケーションプロキシの問題とエラーメッセージのトラブルシューティング」を](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-troubleshoot)参照してください。 パススルーに切り替えると、シングルサインオンの設定がリセットされることに注意してください。手順5を再実行して、事前認証 Azure AD をセットアップします。</li></ul> |
+|印刷ジョブが "プリンターに送信" 状態のままになる | <ul><li>コネクタサーバーで TLS 1.2 が有効になっていることを確認します。 手順2.1 のリンク先の記事を参照してください。</li><li>コネクタサーバーで HTTP2 が無効になっていることを確認します。 手順2.1 のリンク先の記事を参照してください。</li></ul> |
+
+トラブルシューティングに役立つログの場所を以下に示します。
+
+|コンポーネント |ログの場所 |
+|------|------|
+|Windows 10 クライアント | <ul><li>Azure AD 操作のログを表示するには、イベントビューアーを使用します。 **[スタート]** をクリックし、「イベントビューアー」と入力します。 Microsoft > Windows > AAD > 操作 > [アプリケーションとサービスログ] に移動します。</li><li>フィードバックハブを使用してログを収集します。 [フィードバックハブアプリを使用して Microsoft にフィードバックを送信する](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app)</li></ul> |
+|コネクタサーバー | アプリケーションプロキシのログを表示するには、イベントビューアーを使用します。 **[スタート]** をクリックし、「イベントビューアー」と入力します。 アプリケーションとサービスログ > Microsoft > AadApplicationProxy > Connector > Admin に移動します。 |
+|プリント サーバー | 探索サービスアプリとエンタープライズクラウド印刷アプリのログは、C:\inetpub\logs\LogFiles\W3SVC1. にあります。 |
