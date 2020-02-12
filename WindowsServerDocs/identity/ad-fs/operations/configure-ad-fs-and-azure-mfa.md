@@ -9,12 +9,12 @@ ms.date: 01/28/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c3a7e7c420ef63adc906e6558ed7aff6819e983c
-ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
+ms.openlocfilehash: b658644d1ba7cec1b02a2a51331cd7b7152efc77
+ms.sourcegitcommit: 75e611fd5de8b8aa03fc26c2a3d5dbf8211b8ce3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77013057"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77145491"
 ---
 # <a name="configure-azure-mfa-as-authentication-provider-with-ad-fs"></a>AD FS を使用して Azure MFA を認証プロバイダーとして構成する
 
@@ -135,7 +135,7 @@ Set-AdfsAzureMfaTenant -TenantId <tenant ID> -ClientId 981f26a1-7f43-403b-a875-f
 1. AD FS サーバーで**レジストリエディター**を開きます。
 1. `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ADFS` に移動します。 次のレジストリキー値を作成します。
 
-    | レジストリ キー       | Value |
+    | レジストリ キー       | 値 |
     |--------------------|-----------------------------------|
     | SasUrl             | https://adnotifications.windowsazure.us/StrongAuthenticationService.svc/Connector |
     | StsUrl             | https://login.microsoftonline.us |
@@ -160,11 +160,14 @@ Set-AdfsAzureMfaTenant -TenantId <tenant ID> -ClientId 981f26a1-7f43-403b-a875-f
 
 証明書の有効期間が間もなく終了する場合は、各 AD FS サーバーに新しい Azure MFA 証明書を生成して、更新プロセスを開始します。 PowerShell コマンドウィンドウで、次のコマンドレットを使用して、各 AD FS サーバーに新しい証明書を生成します。
 
+> [!CAUTION]
+> 証明書の有効期限が既に切れている場合は、次のコマンドに `-Renew $true` パラメーターを追加しないでください。 このシナリオでは、既存の有効期限が切れた証明書は、そのまま残され、追加の証明書が作成されるのではなく、新しい証明書に置き換えられます。
+
 ```
 PS C:\> $newcert = New-AdfsAzureMfaTenantCertificate -TenantId <tenant id such as contoso.onmicrosoft.com> -Renew $true
 ```
 
-このコマンドレットの結果として、2日後2日 + 2 年後に有効な新しい証明書が生成されます。  AD FS と Azure MFA の操作は、このコマンドレットまたは新しい証明書の影響を受けません。 (注: 2 日間の遅延は意図的であり、以下の手順を実行して、テナントの新しい証明書を構成するための時間を提供します。 AD FS は、Azure MFA でその証明書を使用して開始します)。
+証明書の有効期限がまだ切れていない場合は、2日後2日 + 2 年後に有効な新しい証明書が生成されます。 AD FS と Azure MFA の操作は、このコマンドレットまたは新しい証明書の影響を受けません。 (注: 2 日間の遅延は意図的であり、以下の手順を実行して、テナントの新しい証明書を構成するための時間を提供します。 AD FS は、Azure MFA でその証明書を使用して開始します)。
 
 ### <a name="configure-each-new-ad-fs-azure-mfa-certificate-in-the-azure-ad-tenant"></a>Azure AD テナントでの新しい AD FS Azure MFA 証明書の構成
 
@@ -174,7 +177,7 @@ Azure AD PowerShell モジュールを使用して、(各 AD FS サーバー上�
 PS C:/> New-MsolServicePrincipalCredential -AppPrincipalId 981f26a1-7f43-403b-a875-f8b09b8cd720 -Type Asymmetric -Usage Verify -Value $newcert
 ```
 
-`$newcert` は新しい証明書です。 Base64 でエンコードされた証明書を取得するには、(秘密キーを使用せずに) DER でエンコードされたファイルとして証明書をエクスポートし、Notepad.exe で開き、PowerShell セッションにコピーして貼り付け、変数 `$newcert`に割り当てます。
+以前の証明書の有効期限が既に切れている場合は、AD FS サービスを再起動して新しい証明書を取得します。 期限切れになる前に証明書を更新した場合は、AD FS サービスを再起動する必要はありません。
 
 ### <a name="verify-that-the-new-certificates-will-be-used-for-azure-mfa"></a>新しい証明書が Azure MFA に使用されることを確認する
 
@@ -303,6 +306,6 @@ Azure MFA をプライマリ認証として使用している場合、校正ユ�
     Set-AdfsWebConfig -ActiveThemeName "ProofUp"
     ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ:
 
 [AD FS と Azure MFA によって使用される TLS/SSL プロトコルと暗号スイートを管理する](manage-ssl-protocols-in-ad-fs.md)
