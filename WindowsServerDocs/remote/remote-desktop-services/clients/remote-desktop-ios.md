@@ -9,17 +9,17 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 03ec5a3d-d3f2-4afd-9405-ae58b6ecc91c
-author: lizap
-manager: dongill
-ms.author: elizapo
-date: 08/27/2019
+author: Heidilohr
+manager: lizross
+ms.author: helohr
+date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 8361d1171c2526e701a5418696761a8400c47ca3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 1724f24a794003aaae0ac89ee892269eed045114
+ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949869"
+ms.lasthandoff: 02/13/2020
+ms.locfileid: "77179356"
 ---
 # <a name="get-started-with-the-ios-client"></a>iOS クライアントの概要
 
@@ -33,60 +33,13 @@ iOS 用のリモート デスクトップ クライアントを使用して、iO
 > - iOS クライアントの新しいリリースについて興味がありますか。 [iOS のリモート デスクトップの新機能](ios-whatsnew.md)に関するページを確認してください。
 > - iOS クライアントは、iOS 6.x 以降を実行しているデバイスをサポートしています。
 
-## <a name="get-the-remote-desktop-beta-client-and-start-using-it"></a>リモート デスクトップ ベータ版クライアントを入手して使用を開始する
-Apple TestFlight で現在利用可能な iOS ベータ版クライアントは、Windows 仮想デスクトップのリソースへの接続をサポートしています。
-
-### <a name="download-the-remote-desktop-ios-beta-client-from-apple-testflight"></a>Apple TestFlight からリモート デスクトップ iOS ベータ版のクライアントをダウンロードする
-iOS デバイスでリモート デスクトップ ベータ版クライアントを設定する方法を次に示します。
-
-1. iOS デバイスに [Apple TestFlight](https://apps.apple.com/us/app/testflight/id899247664) アプリをインストールします。
-2. iOS デバイスでブラウザーを開き、[aka.ms/rdiosbeta](https://aka.ms/rdiosbeta) に移動します。
-3. ラベル **[Step 2 Join the Beta]** \(手順 2 ベータ版に参加\) の下で、 **[テストを開始]** を選択します。
-4. TestFlight アプリにリダイレクトされたら、 **[同意する]** を選択してからクライアントを **[インストール]** します。
-
-### <a name="add-a-connection-to-a-pc"></a>PC への接続を追加する
-PC へのリモート接続を作成するには、次のようにします。
-
-1. 接続センターで、 **+** をタップし、次に **[Add PC]** \(PC を追加\) をタップします。
-2. **[PC Name]** \(PC の名前\) にリモート PC の名前を入力します。 Windows コンピューター名、インターネット ドメイン名、または IP アドレスを指定できます。 PC の名前をポート情報を追加することもできます (たとえば、 **MyDesktop:3389** または **10.0.0.1:3389**)。
-3. リモート PC のアクセスに使用する**ユーザー アカウント**を選択します。
-   - リモート PC に接続するたびにクライアントが資格情報を要求するようにするには、 **[Ask Every Time]** \(毎回確認する\) を選択します。
-   - 頻繁に使用するアカウントを保存するには、 **[Add User Account]** \(ユーザー アカウントの追加\) を選択します。これにより、サインインするたびに資格情報を入力する必要がなくなります。 [これらの手順](#manage-your-user-accounts)に従ってユーザー アカウントを管理してください。
-4. 下記のオプションのパラメータを設定することもできます。
-   - **[Friendly Name]** \(フレンドリ名\) に、接続する PC の覚えやすい名前を入力できます。
-   - **[Admin Mode]** \(管理者モード\) により、リモート PC の管理者セッションに接続できます。
-   - **[Swap Mouse Buttons]** \(マウス ボタンの入れ替え\) により、右と左のマウス ジェスチャで送信されるコマンドを入れ替えます。 左ききのユーザーに最適です。
-   - **[Gateway]** \(ゲートウェイ\) は、外部ネットワークからコンピューターに接続するために使用するリモート デスクトップ ゲートウェイです。 詳細については、システム管理者に問い合わせてください。
-   - **[Sound]** \(サウンド\) では、リモート セッションでオーディオに使用するデバイスを選択します。 ローカル デバイスまたはリモート デバイスでサウンドを再生するか、またはまったく再生しないことを選択できます。
-   - **[Microphone]** \(マイク\) は、マイクのリダイレクトを有効にします。 この設定は既定では無効になっています。
-   - **[Camera]** \(カメラ\) は、カメラのリダイレクトを有効にします。 この設定は既定では無効になっています。
-   - **[Clipboard]** \(クリップボード\) は、クリップボードのリダイレクトを有効にします。 既定では、この設定は有効になっています。
-   - **[Storage]** \(ストレージ\) は、ローカル ストレージのリダイレクトを有効にします。 この設定は既定では無効になっています。
-5. **[Save]** \(保存\) を選択して、リモート PC 接続を追加します。
-
-### <a name="add-remote-resources"></a>リモート リソースを追加する
-リモート リソースとは、管理者が公開した RemoteApp プログラム、セッション ベースのデスクトップ、および仮想デスクトップです。iOS クライアントは、**リモート デスクトップ サービス**および **Windows 仮想デスクトップ**の展開から公開されたリソースをサポートします。 リモート リソースを追加します。
-
-1. 接続センターで、 **+** をタップし、次に **[Add Workspace]** \(ワークスペースを追加\) をタップします。
-2. **[Feed URL]** \(フィード URL\) を入力します。 URL またはメール アドレスを指定できます。
-   - **[URL]** は、管理者によって提供される、RD Web アクセス サーバーの URL です。Windows 仮想デスクトップからリソースにアクセスする場合は、`https://rdweb.wvd.microsoft.com` を使用できます。
-   - **[Email]** \(電子メール\) を使用する予定の場合は、このフィールドにメール アドレスを入力してください。 これにより、管理者によって構成されている場合、メール アドレスに関連付けられている RD Web アクセス サーバーを検索するようにクライアントに指示します。
-3. **[Next]** \(次へ\) をタップします。
-4. 入力を求められたら、サインイン情報を入力します。 これは、展開によって異なる場合があり、次のものが含まれる場合があります。
-   - **[User name]** \(ユーザー名\)。リソースにアクセスする許可を持つユーザー名です。
-   - **[Password]** \(パスワード\)。ユーザー名に関連付けられているパスワード。
-   - **[Additional factor]** \(追加要素\)。管理者によって認証がそのように構成されている場合に要求される場合があります。
-5. タップ **保存**します。
-
-リモート リソースが、接続センターで表示されます。
-
 ## <a name="get-the-remote-desktop-client-and-start-using-it"></a>リモート デスクトップ クライアントを取得して使用を開始する
 
 ### <a name="download-the-remote-desktop-client-from-the-ios-store"></a>iOS Store からリモート デスクトップ クライアントをダウンロードする
 
 IOS デバイスでのリモート デスクトップの概要を次の手順に従います。
 
-1. Microsoft リモート デスクトップ クライアントからのダウンロード [iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8)します。
+1. [iOS App Store](https://aka.ms/rdios) または [iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8) から Microsoft リモート デスクトップ クライアントをダウンロードします。
 2. [リモート接続を受け入れるように、PC を設定します](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop)。
 3. [リモート デスクトップ接続](#add-a-remote-desktop-connection)または[リモート リソース](#add-a-remote-resource)を追加します。 Windows PC とリモート リソースに直接接続する接続を使用して、RemoteApp およびデスクトップ接続を使用してオンプレミスで公開された RemoteApp プログラム、セッション ベースのデスクトップ、または仮想デスクトップを使用します。 この機能は、企業環境で通常使用できます。
 
@@ -143,7 +96,7 @@ IOS デバイスでのリモート デスクトップの概要を次の手順に
 
 1. 接続センターで、 **[Settings]** \(設定\)、 **[User Accounts]** \(ユーザー アカウント\) の順にタップします。
 2. 削除するアカウントを選択します。
-3. タップ **削除**します。   
+3. タップ **削除**します。
 
 ## <a name="connect-to-an-rd-gateway-to-access-internal-assets"></a>RD ゲートウェイに接続して内部資産にアクセスする
 
@@ -158,6 +111,7 @@ IOS デバイスでのリモート デスクトップの概要を次の手順に
    - **ユーザー名** -ユーザー名とは、接続先のリモート デスクトップ ゲートウェイに使用するパスワード。 選択することも **接続の資格情報を使用して** 、リモート デスクトップ接続に使用されるものと同じユーザー名とパスワードを使用します。
 
 ## <a name="navigate-the-remote-desktop-session"></a>リモートデスクトップ セッションをナビゲートする
+
 リモート デスクトップ セッションを開始すると、セッションのナビゲートに使用できる利用可能なツールがあります。
 
 ### <a name="start-a-remote-desktop-connection"></a>リモート デスクトップ接続を開始します。
@@ -178,6 +132,7 @@ IOS デバイスでのリモート デスクトップの概要を次の手順に
 - **Move the connection bar (接続バーを移動)** :接続バーを長押しし、画面の上部の新しい場所にドラッグ アンド ドロップします。
 
 ### <a name="session-selection"></a>セッションの選択
+
 複数の接続を同時に別の Pc を開くことができます。 画面の左側にあるセッションの選択バーを表示する接続バーをタップします。 セッションの選択バーを使用すると、開いている接続を表示し、切り替えることができます。
 
 - リモート リソースを開いているセッションでのアプリ間で切り替えます。
@@ -215,9 +170,7 @@ IOS デバイスでのリモート デスクトップの概要を次の手順に
 
 ## <a name="supported-input-devices"></a>サポートされている入力デバイス
 
-[リモート デスクトップ iOS ベータ版のクライアント](https://aka.ms/rdiosbeta)は、Swiftpoint GT と ProPoint の物理マウスをサポートしています。 Swiftpoint は、iOS ベータ版クライアント ユーザーに GT の[特別割引](https://www.swiftpoint.com/microsoft/)を提供しています。
-
-iOS クライアントは現在、Swiftpoint マウスのみをサポートしています。 今後の他のデバイスに対するサポートのニュースについては、「[iOS クライアントの新機能](ios-whatsnew.md)」と [iOS App Store](https://aka.ms/rdios) に関するページを参照してください。
+iOS クライアントは現在、Swiftpoint GT および ProPoint マウスのみをサポートしています。 デバイス サポートの詳細については、「[iOS クライアント の新機能](ios-whatsnew.md)」および [iOS App Store](https://aka.ms/rdios)を参照してください。
 
 ## <a name="use-a-keyboard-in-a-remote-session"></a>リモート セッションでキーボードを使用する
 

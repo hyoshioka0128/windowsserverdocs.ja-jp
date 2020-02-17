@@ -8,12 +8,12 @@ ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 864a15d7336abb56572ddc783ce41a35d6fc13bf
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a8521eae302ade84904e3ba09c001eac21fffd6a
+ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950415"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77125153"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>ユーザー用にリモート デスクトップ Web クライアントをセットアップする
 
@@ -170,10 +170,12 @@ Web クライアントのすべてのトレースを削除するには、以下�
 
 「[リモート デスクトップ Web クライアントを発行する方法](remote-desktop-web-client-admin.md#how-to-publish-the-remote-desktop-web-client)」の説明に従い、手順 4. および 5. を以下に置き換えます。
 
-4. リモート デスクトップの Web クライアント管理 PowerShell モジュールをローカル フォルダーからインポートします。
-    ```PowerShell
-    Import-Module -Name "C:\WebClient\"
-    ```
+4. 最新の Web クライアント管理 PowerShell モジュールを取得するには、次の 2 つのオプションがあります。
+    - リモート デスクトップ Web クライアントの管理 PowerShell モジュールをインポートします。
+      ```PowerShell
+      Import-Module -Name RDWebClientManagement
+      ```
+    - ダウンロードした RDWebClientManagement フォルダーを **$env:psmodulePath** に一覧表示されているローカルの PowerShell モジュールフォルダーのいずれかにコピーするか、ダウンロードしたファイルを含むフォルダーへのパスを **$env:psmodulePath** に追加します。
 
 5. ローカル フォルダーから最新バージョンのリモート デスクトップ Web クライアントを展開します (適切な zip ファイルに置き換えてください)。
     ```PowerShell
