@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 134aab85-664f-4d44-87ef-9e5fd389071f
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 64c0daa8ecc2d6b196d4305e3246dadeebf7075a
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: f4568e1781dbe385d8abe8a96f07841391506738
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948339"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822165"
 ---
 # <a name="release-notes-important-issues-in-windows-server-2016"></a>リリース ノート:Windows Server 2016 に関する重要な問題
 
@@ -29,7 +29,7 @@ ms.locfileid: "75948339"
 
 ## <a name="express-updates-available-starting-in-november-2018-new"></a>2018 年 11 月 から利用できる高速更新プログラム (新規)
 
-2018 年 11 月の "火曜日の更新" の更新から、Windows では Windows Server 2016 用の[高速更新プログラム](express-updates.md)が再発行されます。 WSUS と System Center Configuration Manager (SCCM) を使用している場合、Windows Server 2016 更新用の 2 つのパッケージ (完全更新プログラムと高速更新プログラム) が再表示されます。 お使いのサーバー環境で高速更新プログラムを使用する場合、高速更新プログラムを正しくインストールするには、2017 年 11 月以降の完全更新プログラム (KB# 4048953) を使用してサーバーが更新されていることを確認する必要があります。 2017 11B 更新プログラム (KB 4048953) 以降更新されていないサーバーで高速更新プログラムを試行した場合、無限ループに入って帯域幅や CPU リソースを消費する繰り返しエラーが発生します。 このシナリオが発生した場合は、高速更新プログラムのプッシュを停止し、最新の完全更新プログラムをプッシュして、エラー ループを停止します。
+2018 年 11 月の "火曜日の更新" の更新から、Windows では Windows Server 2016 用の[高速更新プログラム](express-updates.md)が再発行されます。 WSUS と Configuration Manager を使用している場合、Windows Server 2016 更新用の 2 つのパッケージ (完全更新プログラムと高速更新プログラム) が再表示されます。 お使いのサーバー環境で高速更新プログラムを使用する場合、高速更新プログラムを正しくインストールするには、2017 年 11 月以降の完全更新プログラム (KB# 4048953) を使用してサーバーが更新されていることを確認する必要があります。 2017 11B 更新プログラム (KB 4048953) 以降更新されていないサーバーで高速更新プログラムを試行した場合、無限ループに入って帯域幅や CPU リソースを消費する繰り返しエラーが発生します。 このシナリオが発生した場合は、高速更新プログラムのプッシュを停止し、最新の完全更新プログラムをプッシュして、エラー ループを停止します。
 
 ## <a name="server-core-installation-option"></a>Server Core インストール オプション
 

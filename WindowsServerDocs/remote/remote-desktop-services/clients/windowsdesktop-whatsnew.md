@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/14/2020
+ms.date: 01/29/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: f1f4d6b32b8b7d717d2d424e0a60c5edc96f4cac
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: b2d5215c7089ce1aadbeae68890dca1a0ae1c294
+ms.sourcegitcommit: 9077469e372d2aafcad890cbc4e4a24c58a3838c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75953071"
+ms.lasthandoff: 01/30/2020
+ms.locfileid: "76889446"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows デスクトップ クライアントの新機能
 
@@ -30,14 +30,14 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 
 |ユーザー グループ |バージョン  |
 |-----------|---------|
-|パブリック     |1.2.535  |
-|Insider    |1.2.594  |
+|パブリック     |1.2.605  |
+|Insider    |1.2.605  |
 
-## <a name="updates-for-version-12594"></a>バージョン 1.2.594 の更新内容
+## <a name="updates-for-version-12605"></a>バージョン 1.2.605 の更新内容
 
-*公開日:2020 年 1 月 14 日*
+*公開日:2020 年 1 月 29 日*
 
-ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cC)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4o4cI)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oh9C)
+ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oHrD)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oJZs)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4oXhD)
 
 - デスクトップ接続に使用する表示内容を選択できるようになりました。 この設定を変更するには、デスクトップ接続のアイコンを右クリックして、 **[設定]** を選択します。
 - 接続設定に使用可能な適正なスケール ファクターが表示されなかった問題が修正されました。

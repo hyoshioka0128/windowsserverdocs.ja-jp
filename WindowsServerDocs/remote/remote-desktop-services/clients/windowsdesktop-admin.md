@@ -13,12 +13,12 @@ manager: lizross
 ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2195c3bafaa01a1b1c16c17889d5e04d7213a5b6
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: c0a9f11aea9e24cc1a2bab275aae8dc0a81e9cba
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919706"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822363"
 ---
 # <a name="windows-desktop-client-for-admins"></a>管理者のための Windows デスクトップ クライアント
 
@@ -28,7 +28,7 @@ ms.locfileid: "75919706"
 
 ## <a name="installation-options"></a>インストール オプション
 
-ユーザーはダウンロード後にクライアントを直接インストールできますが、管理者が複数のデバイスに展開する場合は、他の方法でデバイスにクライアントを展開することもできます。 グループ ポリシーまたは System Center Configuration Manager を使用して展開すると、コマンド ラインを使用してインストーラーをサイレント モードで実行できます。 デバイスごとまたはユーザーごとにクライアントを展開するには、次のコマンドを実行します。
+ユーザーはダウンロード後にクライアントを直接インストールできますが、管理者が複数のデバイスに展開する場合は、他の方法でデバイスにクライアントを展開することもできます。 グループ ポリシーまたは Microsoft Endpoint Configuration Manager を使用して展開すると、コマンド ラインを使用してインストーラーをサイレント モードで実行できます。 デバイスごとまたはユーザーごとにクライアントを展開するには、次のコマンドを実行します。
 
 ### <a name="per-device-installation"></a>デバイスごとのインストール
 
