@@ -1,6 +1,6 @@
 ---
-title: Windows 管理センターでのユーザーアクセスオプション
-description: Windows 管理センターでのユーザーアクセスオプションと id プロバイダー (Project ホノルル)
+title: Windows Admin Center でのユーザー アクセス オプション
+description: Windows Admin Center でのユーザー アクセス オプションと ID プロバイダー (Project Honolulu)
 ms.technology: manage
 ms.topic: article
 author: haley-rowland
@@ -10,96 +10,96 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 084cdae0bf8ca0eb3aff1f4679d30978b860efef
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71356916"
 ---
-# <a name="user-access-options-with-windows-admin-center"></a>Windows 管理センターでのユーザーアクセスオプション
+# <a name="user-access-options-with-windows-admin-center"></a>Windows Admin Center でのユーザー アクセス オプション
 
 >適用先:Windows Admin Center、Windows Admin Center Preview
 
-Windows Server に展開されている場合、Windows 管理センターでは、サーバー環境を一元的に管理することができます。 Windows 管理センターへのアクセスを制御することにより、管理ランドスケープのセキュリティを向上させることができます。
+Windows Server に展開されている場合、Windows Admin Center ではサーバー環境を一元的に管理することができます。 Windows Admin Center へのアクセスを制御することにより、管理環境のセキュリティを向上できます。
 
-## <a name="gateway-access-roles"></a>ゲートウェイアクセスの役割
+## <a name="gateway-access-roles"></a>ゲートウェイ アクセスのロール
 
-Windows 管理センターでは、ゲートウェイサービスにアクセスするための2つのロール (ゲートウェイユーザーとゲートウェイ管理者) が定義されています。
+Windows Admin Center では、ゲートウェイ サービスにアクセスするための 2 つのロール (ゲートウェイ ユーザーとゲートウェイ管理者) が定義されています。
 
 > [!NOTE]
-> ゲートウェイへのアクセスは、ゲートウェイが参照できるターゲットサーバーへのアクセスを意味しません。 対象サーバーを管理するには、対象サーバーで管理者特権を持つ資格情報を使用して接続する必要があります。
+> ゲートウェイへのアクセスは、そのゲートウェイが参照できるターゲット サーバーへのアクセスを意味するものではありません。 ターゲット サーバーを管理するには、ユーザーは、ターゲット サーバーの管理者特権を持つ資格情報を使用して接続する必要があります。
 
-**ゲートウェイユーザー**は、Windows 管理センターゲートウェイサービスに接続して、そのゲートウェイを介してサーバーを管理できますが、アクセス許可や、ゲートウェイに対する認証に使用される認証メカニズムを変更することはできません。
+**ゲートウェイ ユーザー**は、Windows Admin Center ゲートウェイ サービスに接続し、そのゲートウェイを介してサーバーを管理できますが、ゲートウェイに対する認証に使用されるアクセス許可や認証メカニズムを変更することはできません。
 
-**ゲートウェイ管理者**は、アクセスを許可するユーザーと、ユーザーがゲートウェイに対して認証する方法を構成できます。
+**ゲートウェイ管理者**は、誰がゲートウェイにアクセスできるかと、ゲートウェイにアクセスするユーザーの認証方法を構成できます。
 
 >[!NOTE]
-> Windows 管理センターでアクセスグループが定義されていない場合、ロールにはゲートウェイサーバーへの Windows アカウントのアクセスが反映されます。 
+> Windows Admin Center にアクセス グループが定義されていない場合、ロールにはゲートウェイ サーバーへの Windows アカウントのアクセス権が反映されます。 
 
-[Windows 管理センターでゲートウェイユーザーと管理者アクセスを構成します。](../configure/user-access-control.md)
+[Windows Admin Center でゲートウェイ ユーザーと管理者のアクセス権を構成します](../configure/user-access-control.md)。
 
-## <a name="identity-provider-options"></a>Id プロバイダーのオプション
+## <a name="identity-provider-options"></a>ID プロバイダーのオプション
 
 ゲートウェイ管理者は、次のいずれかを選択できます。
 
- - [Active Directory/ローカルコンピューターグループ](../configure/user-access-control.md#active-directory-or-local-machine-groups)
- - [Windows 管理センターの id プロバイダーとしての Azure Active Directory](../configure/user-access-control.md#azure-active-directory)
+ - [Active Directory またはローカル コンピューターのグループ](../configure/user-access-control.md#active-directory-or-local-machine-groups)
+ - [Windows Admin Center の ID プロバイダーとしての Azure Active Directory](../configure/user-access-control.md#azure-active-directory)
 
 
 ### <a name="smartcard-authentication"></a>スマートカード認証
 
-Active Directory またはローカルコンピューターグループを id プロバイダーとして使用する場合、Windows 管理センターにアクセスするユーザーに対して、追加のスマートカードベースのセキュリティグループのメンバーになるように要求することによって、スマートカード認証を適用できます。 [Windows 管理センターでスマートカード認証を構成します。](../configure/user-access-control.md#active-directory-or-local-machine-groups)
+Active Directory またはローカル マシンのグループを ID プロバイダーとして使用する場合、Windows Admin Center にアクセスするユーザーに対し、追加のスマートカードベースのセキュリティ グループのメンバーになるよう要求することによって、スマートカード認証を実施できます。 [Windows Admin Center でスマートカード認証を構成します](../configure/user-access-control.md#active-directory-or-local-machine-groups)。
 
 ### <a name="conditional-access-and-multi-factor-authentication"></a>条件付きアクセスと多要素認証
 
-ゲートウェイに Azure AD 認証を要求することにより、Azure AD によって提供される条件付きアクセスや多要素認証などの追加のセキュリティ機能を利用できます。 [Azure Active Directory を使用した条件付きアクセスの構成の詳細については、こちらをご覧ください。](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
+ゲートウェイに対して Azure AD 認証を要求することにより、Azure AD で提供されている条件付きアクセスや多要素認証などの追加のセキュリティ機能を利用できます。 [Azure Active Directory を使用した条件付きアクセスの構成の詳細については、こちらを参照してください。](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
-## <a name="role-based-access-control"></a>役割ベースのアクセス制御
+## <a name="role-based-access-control"></a>ロール基準のアクセス制御
 
-既定では、ユーザーは、Windows 管理センターを使用して管理するコンピューターに対して完全なローカル管理者特権を必要とします。
-これにより、コンピューターにリモート接続して、システム設定を表示および変更するための十分なアクセス許可があることを確認できます。
-ただし、ユーザーによっては、ジョブを実行するためにコンピューターへの無制限のアクセスが必要になる場合があります。
-Windows 管理センターで**ロールベースのアクセス制御**を使用すると、ローカルの完全な管理者ではなく、このようなユーザーにコンピューターへの制限付きアクセスを提供できます。
+既定では、ユーザーは、Windows Admin Center を使用して管理するマシンに対して完全なローカル管理者特権を必要とします。
+これにより、マシンへのリモート接続が可能となり、システム設定を表示および変更するために必要なアクセス許可を持つことができます。
+ただし、ユーザーによっては、ジョブを実行するためにマシンへの無制限のアクセス権を必要としない場合があります。
+Windows Admin Center で**ロールベースのアクセス制御**を使用すると、そのようなユーザーに対して、完全なローカル管理者としてのアクセス権ではなく、マシンへの制限付きアクセス権を付与できます。
 
-Windows 管理センターでのロールベースのアクセス制御は、管理エンドポイントが[十分](https://aka.ms/jeadocs)にある PowerShell を使用して各管理対象サーバーを構成することによって機能します。
-このエンドポイントでは、各ロールが管理できるシステムの側面や、ロールに割り当てられているユーザーなど、ロールが定義されます。
-ユーザーが制限付きのエンドポイントに接続すると、システムを管理するための一時的なローカル管理者アカウントが自動的に作成されます。
-これにより、独自の委任モデルを持たないツールでも、引き続き Windows 管理センターで管理できるようになります。
-一時アカウントは、ユーザーが Windows 管理センターを使用してコンピューターの管理を停止すると、自動的に削除されます。
+Windows Admin Center でのロールベースのアクセス制御は、PowerShell の [Just Enough Administration](https://aka.ms/jeadocs) エンドポイントを使用して各管理対象サーバーを構成することにより機能します。
+このエンドポイントでは、各ロールが管理できるシステムの側面や、ロールに割り当てられているユーザーなど、ロール定義を行います。
+ユーザーが制限付きエンドポイントに接続すると、代わりにシステムを管理するための一時的なローカル管理者アカウントが作成されます。
+これにより、独自の委任モデルを持たないツールでも、引き続き Windows Admin Center を使用して管理できます。
+この一時アカウントは、ユーザーが Windows Admin Center を使用したマシン管理を行わなくなると、自動的に削除されます。
 
-ユーザーがロールベースのアクセス制御を使用して構成されたコンピューターに接続すると、Windows 管理センターは、ローカル管理者であるかどうかを最初に確認します。
-これらのユーザーは、制限なしで Windows 管理センター全体のエクスペリエンスを受け取ります。
-それ以外の場合、Windows 管理センターは、ユーザーが定義済みロールのいずれかに属しているかどうかを確認します。
-ユーザーは、Windows 管理センターロールに属しているが、完全な管理者ではない場合は、*アクセスが制限*されていると言います。
-最後に、ユーザーが管理者でもロールのメンバーでもない場合は、コンピューターを管理するためのアクセスが拒否されます。
+ユーザーがロールベースのアクセス制御を使用して構成されたマシンに接続すると、Windows Admin Center では、ローカル管理者であるかどうかを最初に確認します。
+そうである場合は、Windows Admin Center のフル機能を制限なしで使用できます。
+そうでない場合、Windows Admin Center は、ユーザーが定義済みロールのいずれかに属しているかどうかを確認します。
+Windows Admin Center のロールに属していても、完全な管理者でない場合、ユーザーには "*制限付きアクセス権*" が与えられることになります。
+最後に、ユーザーが管理者でもロールのメンバーでもない場合は、マシンを管理するためのアクセスは拒否されます。
 
-ロールベースのアクセス制御は、サーバーマネージャーおよびフェールオーバークラスターソリューションで使用できます。
+ロールベースのアクセス制御は、サーバー マネージャーおよびフェールオーバー クラスターのソリューションで使用できます。
 
 ### <a name="available-roles"></a>［利用できる役割］
 
-Windows 管理センターでは、次のエンドユーザーロールがサポートされています。
+Windows Admin Center では、次のエンドユーザー ロールがサポートされています。
 
 ロール名 | 使用目的
 ----------|-------------
-管理者 | リモートデスクトップまたは PowerShell へのアクセス権をユーザーに付与することなく、Windows 管理センターのほとんどの機能を使用できます。 この役割は、コンピューター上の管理エントリポイントを制限する "ジャンプサーバー" のシナリオに適しています。
+Administrators | ユーザーは Windows Admin Center のほとんどの機能を使用できます。リモート デスクトップおよび PowerShell へのアクセス権は付与されません。 このロールは、マシン上の管理エントリ ポイントを制限する "ジャンプ サーバー" のシナリオに適しています。
 Readers | ユーザーはサーバー上の情報や設定を表示できますが、変更することはできません。
-Hyper-V 管理者 | ユーザーは Hyper-v 仮想マシンとスイッチに変更を加えることができますが、他の機能は読み取り専用アクセスに制限されます。
+Hyper-V 管理者 | ユーザーは Hyper-V 仮想マシンとスイッチに変更を加えることができますが、他の機能は読み取り専用アクセスに制限されます。
 
-次の組み込みの拡張機能は、ユーザーが制限付きアクセスで接続した場合に機能が制限されます。
+次の組み込みの拡張機能では、ユーザーが制限付きアクセスで接続した場合、機能が制限されます。
 
-- ファイル (ファイルのアップロードまたはダウンロードなし)
+- ファイル (ファイルのアップロードまたはダウンロードはできない)
 - PowerShell (利用不可)
-- リモートデスクトップ (利用不可)
+- リモート デスクトップ (利用不可)
 - 記憶域レプリカ (利用不可)
 
-現時点では、組織のカスタムロールを作成することはできませんが、各ロールへのアクセスを許可するユーザーを選択できます。
+現時点では、組織のカスタム ロールを作成することはできませんが、どのユーザーに各ロールへのアクセスを付与するかを選択することはできます。
 
 ### <a name="preparing-for-role-based-access-control"></a>ロールベースのアクセス制御の準備
 
-一時的なローカルアカウントを利用するには、Windows 管理センターでロールベースのアクセス制御をサポートするように各ターゲットコンピューターを構成する必要があります。
-構成プロセスでは、必要な状態の構成を使用して、PowerShell スクリプトと、十分な管理エンドポイントをコンピューターにインストールする必要があります。
+一時的ローカル アカウントを利用するには、Windows Admin Center でロールベースのアクセス制御をサポートするように各ターゲット マシンを構成する必要があります。
+構成プロセスでは、Desired State Configuration を使用して、PowerShell スクリプトと Just Enough Administration エンドポイントをマシンにインストールする必要があります。
 
-コンピューターが数台しかない場合は、Windows 管理センターのロールベースのアクセス制御ページを使用して、各コンピューターに構成を個別に適用することができます。
-個々のコンピューターでロールベースのアクセス制御を設定すると、各ロールへのアクセスを制御するためのローカルセキュリティグループが作成されます。
-ユーザーまたは他のセキュリティグループには、ロールセキュリティグループのメンバーとして追加することによって、アクセスを許可できます。
+コンピューターが数台しかない場合は、Windows Admin Center にあるロールベースのアクセス制御ページを使用することで、個々のコンピューターに構成を簡単に適用できます。
+個々のコンピューターにロールベースのアクセス制御を設定すると、各ロールへのアクセスを制御するローカル セキュリティ グループが作成されます。
+ユーザーまたは他のセキュリティ グループには、ロール セキュリティ グループのメンバーとして追加することによって、アクセスを許可できます。
 
-複数のコンピューターでのエンタープライズ規模の展開では、ゲートウェイから構成スクリプトをダウンロードし、Desired State Configuration プルサーバー、Azure Automation、または優先管理ツールを使用してコンピューターに配布することができます。
+複数のコンピューターにわたるエンタープライズ全体の展開では、ゲートウェイから構成スクリプトをダウンロードし、Desired State Configuration プル サーバー、Azure Automation、または必要に応じて管理ツールを使用して、お使いのコンピューターに配布できます。

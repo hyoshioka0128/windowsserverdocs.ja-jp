@@ -12,12 +12,12 @@ ms.assetid: 2c2fa45b-6f3b-4663-b421-2da6ecc463bf
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: f94e2c083f0bc05231543c15120818481afbabb0
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 09f031c19c8f6d1105d47b9f22d52db30e9c57ef
+ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947853"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76822155"
 ---
 # <a name="install-nano-server"></a>Nano Server のインストール
 
@@ -50,7 +50,7 @@ Nano Server は、コンテナーおよびマイクロサービスに基づく "
 - グループ ポリシーはサポートされていません。 ただし、[必要な状態の構成 (DSC)](https://msdn.microsoft.com/powershell/dsc/nanoDsc) を使用することで、設定を大規模に適用できます。
 - プロキシ サーバーを使用してインターネットにアクセスするように、Nano Server を構成することはできません。
 - NIC チーミング (具体的には、LBFO (Load Balancing and Failover: 負荷分散とフェールオーバー)) はサポートされていません。 代わりに、スイッチ埋め込みチーミング (SET) がサポートされています。
-- System Center Configuration Manager と System Center Data Protection Manager はサポートされていません。
+- Microsoft Endpoint Configuration Manager と System Center Data Protection Manager はサポートされていません。
 - ベスト プラクティス アナライザー (BPA) のコマンドレットおよび BPA とサーバー マネージャーの統合はサポートされていません。
 - Nano Server では仮想ホスト バス アダプター (HBA) はサポートされません。
 - Nano Server は、プロダクト キーを使ってライセンス認証する必要はありません。 Hyper-V ホストとして機能する場合、Nano Server では[仮想マシンの自動ライセンス認証](https://technet.microsoft.com/library/dn303421%28v=ws.11%29.aspx) (AVMA) はサポートされません。 Nano Server ホストで実行される仮想マシンは、[キー管理サービス](https://technet.microsoft.com/library/jj612867(v=ws.11).aspx) (KMS) と汎用ボリューム ライセンス キーを使うか、[Active Directory によるライセンス認証](https://technet.microsoft.com/library/dn502534(v=ws.11).aspx)を使ってライセンス認証できます。

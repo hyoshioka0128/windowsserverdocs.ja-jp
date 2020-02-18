@@ -1,6 +1,6 @@
 ---
-title: Hyper-v の第2世代仮想マシンのセキュリティ設定
-description: 第2世代仮想マシンの Hyper-v マネージャーで使用できるセキュリティ設定について説明します。
+title: Hyper-V の第 2 世代仮想マシンのセキュリティ設定
+description: 第 2 世代仮想マシン向けに Hyper-V マネージャーで使用できるセキュリティ設定について説明します
 ms.prod: windows-server
 ms.service: na
 manager: dongill
@@ -13,59 +13,59 @@ ms.author: kathydav
 ms.date: 10/04/2016
 ms.openlocfilehash: 82544a58a8d46b3063605557be3c63cfa799e4fb
 ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 09/27/2019
 ms.locfileid: "71364243"
 ---
-# <a name="generation-2-virtual-machine-security-settings-for-hyper-v"></a>Hyper-v の第2世代仮想マシンのセキュリティ設定
+# <a name="generation-2-virtual-machine-security-settings-for-hyper-v"></a>Hyper-V の第 2 世代仮想マシンのセキュリティ設定
 
 >適用先:Windows Server 2016、Microsoft Hyper-V Server 2016、Windows Server 2019、Microsoft Hyper-V Server 2019
 
-Hyper-v マネージャーの仮想マシンのセキュリティ設定を使用して、仮想マシンのデータと状態を保護します。 バーチャルマシンは、ホスト上で実行される可能性のあるマルウェアとデータセンター管理者の両方で、検査、盗難、改ざんを防ぐことができます。 取得するセキュリティのレベルは、実行するホストハードウェア、バーチャルマシンの世代、およびホストガーディアンサービスと呼ばれるサービスを設定するかどうかによって決まります。このサービスは、ホストがシールドされたバーチャルマシンを起動するのを承認します。  
+仮想マシンのデータおよび状態の保護を促進するには、Hyper-V マネージャー内の仮想マシンのセキュリティ設定を使用します。 ホスト上で実行される可能性のあるマルウェアとデータセンター管理者の両方による閲覧、盗難、改ざんから仮想マシンを保護できます。 得られるセキュリティのレベルは、実行するホスト ハードウェア、仮想マシンの世代、およびホスト ガーディアン サービス (シールドされた仮想マシンの起動することをホストの承認により許可するサービス) を設定するかどうかによって決まります。  
 
-ホストガーディアンサービスは、Windows Server 2016 の新しい役割です。 正当な Hyper-v ホストを識別し、特定のバーチャルマシンを実行できるようにします。 最も一般的には、データセンターのホストガーディアンサービスを設定します。 ただし、ホストガーディアンサービスを設定せずに、シールドされた仮想マシンをローカルで実行するように作成することもできます。 後で、シールドされたバーチャルマシンをホストガーディアンファブリックに配布できます。  
+ホスト ガーディアン サービスは、Windows Server 2016 の新しい役割です。 これは、正当な Hyper-V ホストを識別し、それらが特定の仮想マシンを実行することを許可します。 ホスト ガーディアン サービスを設定する例として最も一般的なのはデータセンターです。 ただし、ホスト ガーディアン サービスを設定せずに、シールドされた仮想マシンを作成してローカルで実行することができます。 シールドされた仮想マシンは、後でホスト ガーディアン ファブリックに割り振ることができます。  
 
-ホストガーディアンサービスを設定していない場合、または Hyper-v ホストでローカルモードで実行していて、ホストにバーチャルマシン所有者のガーディアンキーがある場合は、このトピックで説明する設定を変更できます。   ガーディアンキーの所有者は、秘密キーまたは公開キーを作成して共有し、そのキーで作成されたすべての仮想マシンを所有する組織です。  
+ホスト ガーディアン サービスが、未設定の場合、または仮想マシン所有者のガーディアン キーが存在する Hyper-V ホスト上でローカル モードで実行されている場合は、このトピックで説明する設定を変更できます。   ガーディアン キーの所有者は、秘密キーまたは公開キーを作成して共有し、そのキーを使用して作成されたすべての仮想マシンを所有する組織です。  
 
-ホストガーディアンサービスを使用して仮想マシンのセキュリティを強化する方法については、次のリソースを参照してください。  
+ホスト ガーディアン サービスを使用して仮想マシンのセキュリティを強化する方法については、次のリソースを参照してください。  
 
-- [ファブリックの強化: Hyper-v でのテナントシークレットの保護 (Ignite ビデオ) ](https://go.microsoft.com/fwlink/?LinkId=746379)
-- [保護されたファブリックとシールドされた Vm](https://go.microsoft.com/fwlink/?LinkId=746381)
+- [ファブリックの強化: Hyper-V のテナントの機密情報を保護する (Ignite ビデオ)](https://go.microsoft.com/fwlink/?LinkId=746379)
+- [保護されたファブリックとシールドされた VM](https://go.microsoft.com/fwlink/?LinkId=746381)
 
-## <a name="secure-boot-setting-in-hyper-v-manager"></a>Hyper-v マネージャーでのセキュアブート設定  
+## <a name="secure-boot-setting-in-hyper-v-manager"></a>Hyper-V マネージャーでのセキュア ブートの設定  
 
-セキュアブートは、第2世代仮想マシンで使用可能な機能であり、許可されていないファームウェア、オペレーティングシステム、または Unified Extensible Firmware Interface (UEFI) ドライバー (オプション Rom とも呼ばれます) が起動時に実行されるのを防ぐのに役立ちます。 セキュアブートは既定で有効になっています。 Windows または Linux ディストリビューションのオペレーティングシステムを実行する第2世代仮想マシンでセキュアブートを使用できます。  
+セキュア ブートは、第 2 世代仮想マシンで使用できる機能です。これにより、無許可のファームウェア、オペレーティング システム、または Unified Extensible Firmware Interface (UEFI) ドライバー (オプション ROM とも呼ばれます) が起動時に実行されないようにします。 セキュア ブートは既定で有効になっています。 Windows または Linux ディストリビューションのオペレーティング システムが実行されている第 2 世代仮想マシンでセキュア ブートを使用できます。  
 
-次の表に示すテンプレートは、ブートプロセスの整合性を確認するために必要な証明書を示しています。  
+次の表に記載されているテンプレートは、ブート プロセスの整合性を検証するために必要な証明書を示しています。  
 
 |テンプレート名|説明|  
 |-----------------|---------------|  
-|Microsoft Windows|Windows オペレーティングシステムの仮想マシンをセキュアブートする場合に選択します。|  
-|Microsoft UEFI 証明機関|Linux ディストリビューションオペレーティングシステム用の仮想マシンをセキュアブートする場合に選択します。|  
-|オープンソースのシールドされた VM|このテンプレートは[、Linux ベースのシールド](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-create-a-linux-shielded-vm-template)された vm のブートをセキュリティで保護するために活用されています。|
+|Microsoft Windows|Windows オペレーティング システムの仮想マシンのセキュア ブートを有効にする場合に選択します。|  
+|Microsoft UEFI 証明機関|Linux ディストリビューションのオペレーティング システムの仮想マシンのセキュア ブートを有効にする場合に選択します。|  
+|オープン ソースのシールドされた VM|このテンプレートは、[Linux ベースのシールドされた VM](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-create-a-linux-shielded-vm-template) のセキュア ブートを有効にする場合に利用します。|
 
 詳しくは、次のトピックをご覧ください。  
 
-- [Windows 10 セキュリティの概要](https://docs.microsoft.com/windows/security/threat-protection/overview-of-threat-mitigations-in-windows-10)  
-- [Hyper-v に第1世代または第2世代の仮想マシンを作成する必要がありますか。](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)  
-- [Hyper-v 上の Linux および FreeBSD Virtual Machines](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)  
+- [Windows 10 のセキュリティの概要](https://docs.microsoft.com/windows/security/threat-protection/overview-of-threat-mitigations-in-windows-10)  
+- [Hyper-V で第 1 世代または第 2 世代の仮想マシンを作成する必要がありますか](../plan/Should-I-create-a-generation-1-or-2-virtual-machine-in-Hyper-V.md)  
+- [Hyper-V での Linux および FreeBSD の仮想マシン](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)  
 
-## <a name="encryption-support-settings-in-hyper-v-manager"></a>Hyper-v マネージャーでの暗号化サポートの設定
+## <a name="encryption-support-settings-in-hyper-v-manager"></a>Hyper-V マネージャーでの暗号化のサポートの設定
 
-次の暗号化サポートオプションを選択することで、仮想マシンのデータと状態を保護することができます。  
+次の暗号化サポート オプションを選択することで、仮想マシンのデータと状態を保護できます。  
 
-- **トラステッドプラットフォームモジュールを有効に**する-仮想マシンで仮想化されたトラステッドプラットフォームモジュール (TPM) チップを使用できるようにします。 これにより、ゲストは BitLocker を使用して仮想マシンディスクを暗号化することができます。
-  - Hyper-v ホストが Windows 10 1511 を実行している場合は、分離ユーザーモードを有効にする必要があります。 
-- **状態と VM の移行トラフィックを暗号化**する-仮想マシンの保存された状態とライブマイグレーションのトラフィックを暗号化します。
+- **トラステッド プラットフォーム モジュールを有効にする** - この設定によって、仮想マシンで仮想化されたトラステッド プラットフォーム モジュール (TPM) チップを使用できるようになります。 これにより、ゲストは BitLocker を使用して仮想マシン ディスクを暗号化できます。
+  - Hyper-V ホストで Windows 10 1511 が実行されている場合は、分離ユーザー モードを有効にする必要があります。 
+- **状態と仮想マシンのマイグレーション トラフィックの暗号化** - 仮想マシンの保存された状態とライブ マイグレーション トラフィックを暗号化します。
 
-### <a name="enable-isolated-user-mode"></a>分離ユーザーモードを有効にする
+### <a name="enable-isolated-user-mode"></a>分離ユーザー モードを有効にする
 
-Windows 10 記念日更新より前のバージョンの Windows を実行している Hyper-v ホストで [**トラステッドプラットフォームモジュールを有効**にする] を選択した場合は、分離ユーザーモードを有効にする必要があります。 これは、Windows Server 2016 または Windows 10 周年更新プログラム以降を実行する Hyper-v ホストに対しては必要ありません。
+Windows 10 Anniversary Update より前のバージョンの Windows を実行している Hyper-V ホストで **[トラステッド プラットフォーム モジュールを有効にする]** を選択した場合は、分離ユーザー モードを有効にする必要があります。 Windows Server 2016 または Windows 10 Anniversary Update 以降を実行している Hyper-V ホストの場合は、これを行う必要はありません。
 
-分離ユーザーモードは、Hyper-v ホスト上の仮想保護モードでセキュリティアプリケーションをホストするランタイム環境です。 仮想保護モードは、仮想 TPM チップの状態を保護および保護するために使用されます。  
+分離ユーザー モードは、Hyper-V ホスト上の仮想保護モード内でセキュリティ アプリケーションをホストするランタイム環境です。 仮想保護モードは、仮想 TPM チップの状態を保護するために使用されます。  
 
-以前のバージョンの Windows 10 を実行する Hyper-v ホストで分離ユーザーモードを有効にするには、  
+以前のバージョンの Windows 10 を実行している Hyper-V ホストで分離ユーザー モードを有効にするには、  
 
 1.  管理者として Windows PowerShell を開きます。  
 
@@ -78,11 +78,11 @@ Windows 10 記念日更新より前のバージョンの Windows を実行して
 
     ```  
 
-仮想 TPM が有効になっている仮想マシンを、Windows Server 2016、Windows 10 ビルド10586以降のバージョンを実行している任意のホストに移行することができます。 ただし、別のホストに移行する場合は、起動できないことがあります。 バーチャルマシンを実行する新しいホストを承認するには、そのバーチャルマシンのキープロテクターを更新する必要があります。 詳細については、「保護された[ファブリックとシールド](https://go.microsoft.com/fwlink/?LinkId=746381)された vm」および「 [Windows Server 上の hyper-v のシステム要件](../System-requirements-for-Hyper-V-on-Windows.md)」を参照してください。  
+仮想 TPM が有効になっている仮想マシンは、Windows Server 2016 または Windows 10 ビルド 10586 以降のバージョンを実行しているホストに移行できます。 ただし、別のホストに移行すると、起動できないことがあります。 新しいホストで仮想マシンを実行することを承認するために、その仮想マシンのキーの保護機能を更新する必要があります。 詳細については、「[保護されたファブリックとシールドされた VM](https://go.microsoft.com/fwlink/?LinkId=746381)」および「[Windows Server 上の Hyper-V のシステム要件](../System-requirements-for-Hyper-V-on-Windows.md)」 を参照してください。  
 
-## <a name="security-policy-in-hyper-v-manager"></a>Hyper-v マネージャーのセキュリティポリシー  
-仮想マシンのセキュリティを強化するには、[**シールドを有効**にする] オプションを使用して、コンソール接続、PowerShell Direct、一部の統合コンポーネントなどの管理機能を無効にします。 このオプションを選択すると、 **[セキュアブート]** 、 **[トラステッドプラットフォームモジュールを有効に]** する、 **[暗号化の状態と VM の移行のトラフィック]** オプションが選択され、適用されます。   
+## <a name="security-policy-in-hyper-v-manager"></a>Hyper-V マネージャーのセキュリティ ポリシー  
+仮想マシンのセキュリティを向上させるには、 **[Enable Shielding]\(シールドを有効にする\)** オプションを使用して、コンソール接続、PowerShell Direct、一部の統合コンポーネントなどの管理機能を無効にしてください。 このオプションを選択すると、 **[セキュア ブート]** 、 **[トラステッド プラットフォーム モジュールを有効にする]** 、 **[状態と仮想マシンのマイグレーション トラフィックの暗号化]** の各オプションが選択および適用されます。   
 
-ホストガーディアンサービスを設定せずに、シールドされた仮想マシンをローカルで実行することができます。 ただし、別のホストに移行する場合は、起動できないことがあります。 バーチャルマシンを実行する新しいホストを承認するには、そのバーチャルマシンのキープロテクターを更新する必要があります。 詳細については、「[保護されたファブリックとシールドされた VM](https://go.microsoft.com/fwlink/?LinkId=746381)」を参照してください。  
+ホスト ガーディアン サービスを設定せずに、シールドされた仮想マシンをローカルで実行できます。 ただし、別のホストに移行すると、起動できないことがあります。 新しいホストで仮想マシンを実行することを承認するために、その仮想マシンのキーの保護機能を更新する必要があります。 詳細については、「[保護されたファブリックとシールドされた VM](https://go.microsoft.com/fwlink/?LinkId=746381)」を参照してください。  
 
-Windows Server のセキュリティの詳細については、「[セキュリティと保証](../../../security/Security-and-Assurance.md)」を参照してください。  
+Windows Server のセキュリティの詳細については、「[セキュリティおよび保証](../../../security/Security-and-Assurance.md)」を参照してください。  
