@@ -51,7 +51,7 @@ DFS レプリケーションを使用した SYSVOL のレプリケートにつ�
 
 ### <a name="can-i-upgrade-from-frs-to-dfs-replication-without-losing-configuration-settings"></a>構成設定を失わずに、FRS から DFS レプリケーションにアップグレードできますか?
 
-対応 レプリケーションを FRS から DFS レプリケーションに移行するには、次のドキュメントを参照してください。
+はい。 レプリケーションを FRS から DFS レプリケーションに移行するには、次のドキュメントを参照してください。
 
   - SYSVOL フォルダー以外のフォルダーのレプリケーションを移行するには、「[DFS 操作ガイド: FRS から DFS レプリケーションへの移行](https://go.microsoft.com/fwlink/?linkid=192776)」および [FRS2DFSR – FRS から DFSR への移行ユーティリティ](https://go.microsoft.com/fwlink/?linkid=195437) (https://go.microsoft.com/fwlink/?LinkID=195437) を参照してください。  
       
@@ -60,7 +60,7 @@ DFS レプリケーションを使用した SYSVOL のレプリケートにつ�
 
 ### <a name="can-i-use-dfs-replication-in-a-mixed-windowsunix-environment"></a>Windows と UNIX が混在する環境で DFS レプリケーションを使用できますか?
 
-対応 DFS レプリケーションでサポートされているのは、Windows Server が実行されているサーバー間での内容のレプリケートだけですが、UNIX クライアントは Windows Server 上のファイル共有にアクセスできます。 そのためには、ネットワーク ファイル システム (NFS) 用のサービスを DFS レプリケーション サーバーにインストールします。
+はい。 DFS レプリケーションでサポートされているのは、Windows Server が実行されているサーバー間での内容のレプリケートだけですが、UNIX クライアントは Windows Server 上のファイル共有にアクセスできます。 そのためには、ネットワーク ファイル システム (NFS) 用のサービスを DFS レプリケーション サーバーにインストールします。
 
 また、多くの UNIX クライアントに含まれる SMB/CIFS クライアント機能を使用して、Windows ファイル共有に直接アクセスすることもできます。ただし、この機能は、制限がある場合や、Windows 環境への変更が必要な場合がよくあります (グループ ポリシーを使用した SMB 署名の無効化など)。
 
@@ -68,7 +68,7 @@ DFS レプリケーションは、Windows Server オペレーティングシス�
 
 ### <a name="can-i-use-the-volume-shadow-copy-service-with-dfs-replication"></a>DFS レプリケーションでボリューム シャドウ コピー サービスを使用できますか?
 
-対応 DFS レプリケーションはボリューム シャドウ コピー サービス (VSS) ボリュームでサポートされており、以前のスナップショットを以前のバージョンのクライアントで正常に復元できます。
+はい。 DFS レプリケーションはボリューム シャドウ コピー サービス (VSS) ボリュームでサポートされており、以前のスナップショットを以前のバージョンのクライアントで正常に復元できます。
 
 ### <a name="can-i-use-windowsbackup-ntbackupexe-to-remotely-back-up-a-replicated-folder"></a>Windows バックアップ (Ntbackup.exe) を使用して、レプリケート フォルダーをリモート環境からバックアップできますか?
 
@@ -78,7 +78,7 @@ DFS レプリケーションは、Windows Server オペレーティングシス�
 
 ### <a name="do-file-system-policies-impact-dfs-replication"></a>ファイル システム ポリシーは DFS レプリケーションに影響しますか?
 
-対応 レプリケート フォルダーには、ファイル システム ポリシーを構成しないでください。 ファイル システム ポリシーでは、すべてのグループ ポリシー更新間隔で NTFS のアクセス許可が再適用されます。 これにより、開かれているファイルは閉じられるまでレプリケートされないため、共有違反が発生する可能性があります。
+はい。 レプリケート フォルダーには、ファイル システム ポリシーを構成しないでください。 ファイル システム ポリシーでは、すべてのグループ ポリシー更新間隔で NTFS のアクセス許可が再適用されます。 これにより、開かれているファイルは閉じられるまでレプリケートされないため、共有違反が発生する可能性があります。
 
 ### <a name="does-dfs-replication-replicate-mailboxes-hosted-on-microsoft-exchange-server"></a>DFS レプリケーションでは、Microsoft Exchange Server でホストされているメールボックスはレプリケートされますか?
 
@@ -86,7 +86,7 @@ DFS レプリケーションは、Windows Server オペレーティングシス�
 
 ### <a name="does-dfs-replication-support-file-screens-created-by-file-server-resource-manager"></a>DFS レプリケーションでは、ファイル サーバー リソース マネージャーによって作成されたファイル スクリーンはサポートされますか?
 
-対応 ただし、ファイル サーバー リソース マネージャー (FSRM) でのファイル スクリーンの設定が、レプリケーションの両側で一致している必要があります。 さらに、DFS レプリケーションには、レプリケーションから特定のファイルとファイルの種類を除外するために使用できる、ファイルとフォルダー用の独自のフィルター メカニズムがあります。
+はい。 ただし、ファイル サーバー リソース マネージャー (FSRM) でのファイル スクリーンの設定が、レプリケーションの両側で一致している必要があります。 さらに、DFS レプリケーションには、レプリケーションから特定のファイルとファイルの種類を除外するために使用できる、ファイルとフォルダー用の独自のフィルター メカニズムがあります。
 
 ファイル スクリーンまたはクォータを実装するためのベスト プラクティスを次に示します。
 
@@ -115,7 +115,7 @@ DFS レプリケーションは、Windows Server オペレーティングシス�
 
 ### <a name="is-dfs-replication-compatible-with-ris-and-wds"></a>DFS レプリケーションは RIS および WDS と互換性がありますか?
 
-対応 DFS レプリケーションでは、単一インスタンス記憶域 (SIS) が有効になっているボリュームをレプリケートします。 SIS は、リモート インストール サービス (RIS)、Windows 展開サービス (WDS)、Windows Storage Server によって使用されます。
+はい。 DFS レプリケーションでは、単一インスタンス記憶域 (SIS) が有効になっているボリュームをレプリケートします。 SIS は、リモート インストール サービス (RIS)、Windows 展開サービス (WDS)、Windows Storage Server によって使用されます。
 
 ### <a name="is-it-possible-to-use-dfs-replication-with-offline-files"></a>オフライン ファイルで DFS レプリケーションを使用できますか?
 
@@ -156,7 +156,7 @@ DFS レプリケーションで Microsoft Outlook の個人用フォルダー �
 
 ### <a name="can-more-than-one-folder-be-replicated-on-a-single-server"></a>1 台のサーバー上の複数のフォルダーをレプリケートできますか?
 
-対応 DFS レプリケーションを使うと、サーバー間で多数のフォルダーをレプリケートできます。 各レプリケート フォルダーのルート パスが一意であり、重複していないことを確認してください。 たとえば、D:\\Sales と D:\\Accounting は 2 つのレプリケート対象フォルダーのルート パスにできますが、D:\\Sales と D:\\Sales\\Reports を 2 つのレプリケート フォルダーのルート パスにすることはできません。
+はい。 DFS レプリケーションを使うと、サーバー間で多数のフォルダーをレプリケートできます。 各レプリケート フォルダーのルート パスが一意であり、重複していないことを確認してください。 たとえば、D:\\Sales と D:\\Accounting は 2 つのレプリケート対象フォルダーのルート パスにできますが、D:\\Sales と D:\\Sales\\Reports を 2 つのレプリケート フォルダーのルート パスにすることはできません。
 
 ### <a name="does-dfs-replication-require-dfs-namespaces"></a>DFS レプリケーションに DFS 名前空間は必要ですか?
 
@@ -168,7 +168,7 @@ DFS レプリケーションで Microsoft Outlook の個人用フォルダー �
 
 ### <a name="does-dfs-replication-support-replicating-an-entire-volume"></a>DFS レプリケーションではボリューム全体のレプリケーションがサポートされますか?
 
-対応 ただし、最初に Windows Server 2003 Service Pack 2 または修正プログラムをインストールする必要があります。 詳しくは、Microsoft サポート技術情報の[記事 920335](https://go.microsoft.com/fwlink/?linkid=76776) (https://go.microsoft.com/fwlink/?LinkId=76776) を参照してください。 また、ボリューム全体をレプリケートすると、次の問題が発生する可能性があります。
+はい。 ただし、最初に Windows Server 2003 Service Pack 2 または修正プログラムをインストールする必要があります。 詳しくは、Microsoft サポート技術情報の[記事 920335](https://go.microsoft.com/fwlink/?linkid=76776) (https://go.microsoft.com/fwlink/?LinkId=76776) を参照してください。 また、ボリューム全体をレプリケートすると、次の問題が発生する可能性があります。
 
   - ボリュームに Windows のページング ファイルが含まれている場合、レプリケーションは失敗し、システム イベント ログに DFSR イベント 4312 が記録されます。  
       
@@ -183,7 +183,7 @@ DFS レプリケーションで Microsoft Outlook の個人用フォルダー �
 
 ### <a name="does-dfs-replication-work-across-wireless-networks"></a>DFS レプリケーションはワイヤレス ネットワークで動作しますか?
 
-対応 DFS レプリケーションは、接続の種類に依存しません。
+はい。 DFS レプリケーションは、接続の種類に依存しません。
 
 ### <a name="does-dfs-replication-work-on-refs-or-fat-volumes"></a>DFS レプリケーションは ReFS ボリュームまたは FAT ボリュームで動作しますか?
 
@@ -191,7 +191,7 @@ DFS レプリケーションで Microsoft Outlook の個人用フォルダー �
 
 ### <a name="does-dfs-replication-work-with-sparse-files"></a>DFS レプリケーションはスパース ファイルで動作しますか?
 
-対応 スパース ファイルをレプリケートできます。 受信側メンバーでは、**スパース**属性が保持されます。
+はい。 スパース ファイルをレプリケートできます。 受信側メンバーでは、**スパース**属性が保持されます。
 
 ### <a name="do-i-need-to-log-in-as-administrator-to-replicate-files"></a>ファイルをレプリケートするには、管理者としてログインする必要がありますか?
 
@@ -205,7 +205,7 @@ DFS レプリケーション メンバーをアップグレードまたは置換
 
 ### <a name="is-dfs-replication-suitable-for-replicating-roaming-profiles"></a>DFS レプリケーションは移動プロファイルのレプリケーションに適していますか?
 
-対応 移動ユーザー プロファイルをレプリケートするときは、特定のシナリオがサポートされます。 サポートされるシナリオについては、[レプリケートされるユーザー プロファイル データに関する Microsoft のサポートに関する声明](https://go.microsoft.com/fwlink/?linkid=201282) (https://go.microsoft.com/fwlink/?LinkId=201282) に関するページをご覧ください。
+はい。 移動ユーザー プロファイルをレプリケートするときは、特定のシナリオがサポートされます。 サポートされるシナリオについては、[レプリケートされるユーザー プロファイル データに関する Microsoft のサポートに関する声明](https://go.microsoft.com/fwlink/?linkid=201282) (https://go.microsoft.com/fwlink/?LinkId=201282) に関するページをご覧ください。
 
 ### <a name="is-there-a-file-character-limit-or-limit-to-the-folder-depth"></a>ファイルの文字またはフォルダーの深さに制限はありますか?
 
@@ -263,7 +263,7 @@ DFS レプリケーションでは、構成情報を格納するために、Acti
 
 ### <a name="can-i-automate-the-health-report-to-receive-warnings"></a>正常性レポートを自動化して警告を受け取ることはできますか?
 
-対応 正常性レポートを自動化するには、次の 3 つの方法があります。
+はい。 正常性レポートを自動化するには、次の 3 つの方法があります。
 
   - Windows Server 2012 R2 または DfsrAdmin.exe に含まれる DFSR Windows PowerShell モジュールをスケジュールされたタスクと共に使用して、正常性レポートを定期的に生成します。 詳しくは、[DFS レプリケーションの正常性レポートの自動化](https://go.microsoft.com/fwlink/?linkid=74010) (https://go.microsoft.com/fwlink/?LinkId=74010) に関するページをご覧ください。  
       
@@ -274,11 +274,11 @@ DFS レプリケーションでは、構成情報を格納するために、Acti
 
 ### <a name="can-i-use-microsoft-system-center-operations-manager-to-monitor-dfs-replication"></a>Microsoft System Center Operations Manager を使用して DFS レプリケーションを監視できますか?
 
-対応 詳しくは、Microsoft ダウンロード センターの「[System Center Operations Manager 2007 用の DFS レプリケーション管理パック](https://go.microsoft.com/fwlink/?linkid=182265)」 (https://go.microsoft.com/fwlink/?LinkId=182265) をご覧ください。
+はい。 詳しくは、Microsoft ダウンロード センターの「[System Center Operations Manager 2007 用の DFS レプリケーション管理パック](https://go.microsoft.com/fwlink/?linkid=182265)」 (https://go.microsoft.com/fwlink/?LinkId=182265) をご覧ください。
 
 ### <a name="does-dfs-replication-support-remote-management"></a>DFS レプリケーションではリモート管理はサポートされていますか?
 
-対応 DFS レプリケーションでは、DFS 管理コンソールと **[レプリケーション グループの追加]** コマンドを使用してリモート管理がサポートされています。 たとえば、フォレストでサーバー A と B をメンバーとして定義されているレプリケーション グループに、サーバー A で接続できます。
+はい。 DFS レプリケーションでは、DFS 管理コンソールと **[レプリケーション グループの追加]** コマンドを使用してリモート管理がサポートされています。 たとえば、フォレストでサーバー A と B をメンバーとして定義されているレプリケーション グループに、サーバー A で接続できます。
 
 DFS 管理は、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 R2 に含まれます。 他のバージョンの Windows から DFS レプリケーションを管理するには、リモート デスクトップまたは [Windows 7 用のリモート サーバー管理ツール](https://technet.microsoft.com/library/Ee449475)を使用します。
 
@@ -298,7 +298,7 @@ DFS 管理は、Windows Server 2012 R2、Windows Server 2012、Windows Server�
 
 ### <a name="is-there-a-way-to-know-the-state-of-replication"></a>レプリケーションの状態を知る方法はありますか?
 
-対応 レプリケーションを監視するには、いくつかの方法があります。
+はい。 レプリケーションを監視するには、いくつかの方法があります。
 
   - DFS レプリケーションには、プロアクティブな監視を提供する System Center Operations Manager 用の管理パックが用意されています。  
       
@@ -365,17 +365,17 @@ DFS レプリケーションによって使用されるディスク、メモリ�
 
 ### <a name="are-changes-compressed-before-being-replicated"></a>変更はレプリケートされる前に圧縮されますか?
 
-対応 ファイルの変更部分は、すべての種類のファイルに対して送信される前に圧縮されます。ただし、以下のファイルは既に圧縮されているため除きます: .wma、.wmv、.zip、.jpg、.mpg、.mpeg、.m1v、.mp2、.mp3、.mpa、.cab、.wav、.snd、.au、.asf、.wm、.avi、.z、.gz、.tgz、.frx。 これらのファイルの種類の圧縮設定は、Windows Server 2003 R2 では構成できません。
+はい。 ファイルの変更部分は、すべての種類のファイルに対して送信される前に圧縮されます。ただし、以下のファイルは既に圧縮されているため除きます: .wma、.wmv、.zip、.jpg、.mpg、.mpeg、.m1v、.mp2、.mp3、.mpa、.cab、.wav、.snd、.au、.asf、.wm、.avi、.z、.gz、.tgz、.frx。 これらのファイルの種類の圧縮設定は、Windows Server 2003 R2 では構成できません。
 
 ### <a name="can-an-administrator-turn-off-rdc-or-change-the-threshold"></a>管理者は、RDC を無効にしたり、しきい値を変更したりできますか?
 
-対応 特定の接続のプロパティ ページを使用して、RDC を無効にすることができます。 RDC を無効にすると、帯域幅の制約がない高速ローカル エリア ネットワーク (LAN) リンク、または主に 64 KB 未満のファイルで構成されるレプリケーション グループで、CPU 使用率とレプリケーション待機時間が減少します。 接続で RDC を無効にする場合は、変更前と変更後にレプリケーションの効率をテストして、レプリケーションのパフォーマンスが向上したことを確認してください。
+はい。 特定の接続のプロパティ ページを使用して、RDC を無効にすることができます。 RDC を無効にすると、帯域幅の制約がない高速ローカル エリア ネットワーク (LAN) リンク、または主に 64 KB 未満のファイルで構成されるレプリケーション グループで、CPU 使用率とレプリケーション待機時間が減少します。 接続で RDC を無効にする場合は、変更前と変更後にレプリケーションの効率をテストして、レプリケーションのパフォーマンスが向上したことを確認してください。
 
 RDC サイズのしきい値を変更するには、**Dfsradmin Connection Set** コマンドまたは DFS レプリケーション WMI プロバイダーを使用するか、構成 XML ファイルを手動で編集します。
 
 ### <a name="does-rdc-work-on-all-file-types"></a>RDC はすべてのファイルの種類で動作しますか?
 
-対応 RDC では、ファイルのデータの種類に関係なく、ブロック レベルで相違が計算されます。 ただし、Word 文書、PST ファイル、VHD イメージなどの特定のファイルの種類では、RDC がより効率的に動作します。
+はい。 RDC では、ファイルのデータの種類に関係なく、ブロック レベルで相違が計算されます。 ただし、Word 文書、PST ファイル、VHD イメージなどの特定のファイルの種類では、RDC がより効率的に動作します。
 
 ### <a name="how-does-rdc-work-on-a-compressed-file"></a>圧縮されたファイルでは RDC はどのように動作しますか?
 
@@ -523,11 +523,11 @@ DFS レプリケーションでは、FILE\_ATTRIBUTE\_TEMPORARY の値はレプ�
 
 ### <a name="can-i-control-which-member-is-replicated"></a>レプリケートされるメンバーを制御できますか?
 
-対応 レプリケーション グループを作成するときに、トポロジを選択できます。 または、 **[トポロジなし]** を選択し、レプリケーション グループの作成後に手動で接続を構成することもできます。
+はい。 レプリケーション グループを作成するときに、トポロジを選択できます。 または、 **[トポロジなし]** を選択し、レプリケーション グループの作成後に手動で接続を構成することもできます。
 
 ### <a name="can-i-seed-a-replication-group-member-with-data-prior-to-the-initial-replication"></a>初期レプリケーションの前に、レプリケーション グループ メンバーにデータをシードできますか?
 
-対応 DFS レプリケーションでは、初期レプリケーションの前に、レプリケーション グループ メンバーにファイルをコピーできます。 この "事前設定" により、初期レプリケーションの間にレプリケートされるデータの量を大幅に削減できます。
+はい。 DFS レプリケーションでは、初期レプリケーションの前に、レプリケーション グループ メンバーにファイルをコピーできます。 この "事前設定" により、初期レプリケーションの間にレプリケートされるデータの量を大幅に削減できます。
 
 ファイルで異なっているのが実際の属性またはタイムスタンプだけの場合、初期レプリケーションで内容をレプリケートする必要はありません。 実際の属性とは、Win32 関数 `SetFileAttributes` によって設定できる属性です。 詳しくは、MSDN ライブラリの「[SetFileAttributes 関数](https://go.microsoft.com/fwlink/?linkid=182269)」 (https://go.microsoft.com/fwlink/?LinkId=182269) をご覧ください。 2 つのファイルの間で圧縮などの他の属性が異なっている場合は、ファイルの内容がレプリケートされます。
 
@@ -539,7 +539,7 @@ DFSR データベースの事前シードと複製については、「[Windows 
 
 ### <a name="does-dfs-replication-overcome-common-file-replication-service-issues"></a>ファイル レプリケーション サービスの一般的な問題は DFS レプリケーションによって解決しますか?
 
-対応 DFS レプリケーションでは、次の 3 つの一般的な FRS の問題が解決されます。
+はい。 DFS レプリケーションでは、次の 3 つの一般的な FRS の問題が解決されます。
 
   - ジャーナルのラップ: DFS レプリケーションを使うと、ジャーナルのラップが即座に回復されます。 レプリケーションが再度有効にされる前に、既存の各ファイルまたはフォルダーは journalWrap としてマークされ、ファイル システムに対して検証されます。 回復の間に、このボリュームはどちらの方向のレプリケーションにも使用できません。  
       
@@ -573,7 +573,7 @@ DFSR データベースの事前シードと複製については、「[Windows 
 
 ### <a name="does-dfs-replication-replicate-updated-permissions-on-a-file-or-folder"></a>DFS レプリケーションでは、ファイルまたはフォルダーで更新されたアクセス許可がレプリケートされますか?
 
-対応 DFS レプリケーションを使うと、ファイルとフォルダーに対するアクセス許可の変更がレプリケートされます。 アクセス制御リスト (ACL) に関連付けられているファイルの部分のみがレプリケートされますが、DFS レプリケーションではファイル全体をステージング領域に読み取る必要があります。
+はい。 DFS レプリケーションを使うと、ファイルとフォルダーに対するアクセス許可の変更がレプリケートされます。 アクセス制御リスト (ACL) に関連付けられているファイルの部分のみがレプリケートされますが、DFS レプリケーションではファイル全体をステージング領域に読み取る必要があります。
 
 
 > [!NOTE]
@@ -587,7 +587,7 @@ DFS レプリケーションでは、競合があってもファイルはマー�
 
 ### <a name="does-dfs-replication-use-encryption-when-transmitting-data"></a>DFS レプリケーションでは、データの送信時に暗号化が使用されますか?
 
-対応 DFS レプリケーションでは、リモート プロシージャ コール (RPC) 接続で暗号化が使用されます。
+はい。 DFS レプリケーションでは、リモート プロシージャ コール (RPC) 接続で暗号化が使用されます。
 
 ### <a name="is-it-possible-to-disable-the-use-of-encrypted-rpc"></a>暗号化された RPC の使用を無効にすることはできますか?
 
@@ -618,7 +618,7 @@ DFS 管理を使用することで、直ちにレプリケーションを強制�
 
 ### <a name="is-it-possible-to-configure-one-way-replication-with-dfs-replication"></a>DFS レプリケーションで一方向のレプリケーションを構成することはできますか?
 
-対応 Windows Server 2012 または Windows Server 2008 R2 を使用している場合は、一方向の接続を介して内容がレプリケートされる読み取り専用のレプリケート フォルダーを作成できます。 詳しくは、「[特定のメンバーでレプリケート フォルダーを読み取り専用にする](https://go.microsoft.com/fwlink/?linkid=156740)」 (https://go.microsoft.com/fwlink/?LinkId=156740) をご覧ください。
+はい。 Windows Server 2012 または Windows Server 2008 R2 を使用している場合は、一方向の接続を介して内容がレプリケートされる読み取り専用のレプリケート フォルダーを作成できます。 詳しくは、「[特定のメンバーでレプリケート フォルダーを読み取り専用にする](https://go.microsoft.com/fwlink/?linkid=156740)」 (https://go.microsoft.com/fwlink/?LinkId=156740) をご覧ください。
 
 Windows Server 2008 または Windows Server 2003 R2 の DFS レプリケーションでは、一方向のレプリケーション接続の作成はサポートされていません。 それを行うと、正常性チェックのトポロジ エラー、ステージングの問題、DFS レプリケーション データベースに関する問題など、さまざまな問題が発生する可能性があります。
 
@@ -678,7 +678,7 @@ DFS レプリケーションによって競合が検出されると、最後に�
 
 ### <a name="is-it-possible-to-change-the-location-of-the-staging-folder-with-the-dfs-management-tool"></a>DFS 管理ツールを使用して、ステージング フォルダーの場所を変更することはできますか?
 
-対応 ステージング フォルダーの場所は、レプリケーション グループの各メンバーについて、 **[プロパティ]** ダイアログ ボックスの **[詳細]** タブで構成します。
+はい。 ステージング フォルダーの場所は、レプリケーション グループの各メンバーについて、 **[プロパティ]** ダイアログ ボックスの **[詳細]** タブで構成します。
 
 ### <a name="when-are-files-staged"></a>ファイルはどのようなときにステージングされますか?
 
