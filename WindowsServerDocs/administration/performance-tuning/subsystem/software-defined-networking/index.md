@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: grcusanz; AnPaul
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8227c94e6785f4acf9135aac12406b6ac98a0910
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8ef8a991b8ababa13c0a7a7be605c6dbe2af17a2
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71383520"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465456"
 ---
 # <a name="performance-tuning-software-defined-networks"></a>ソフトウェア定義ネットワークのパフォーマンス チューニング
 
