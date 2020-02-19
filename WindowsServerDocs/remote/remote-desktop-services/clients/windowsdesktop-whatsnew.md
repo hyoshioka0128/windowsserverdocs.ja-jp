@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/29/2020
+ms.date: 02/11/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: b2d5215c7089ce1aadbeae68890dca1a0ae1c294
-ms.sourcegitcommit: 9077469e372d2aafcad890cbc4e4a24c58a3838c
+ms.openlocfilehash: 3f8b035eef5bb956012627b5e2c7c59adaa8cd32
+ms.sourcegitcommit: 5797a2e67211651070404a5893f5c0a91c63e960
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76889446"
+ms.lasthandoff: 02/12/2020
+ms.locfileid: "77155386"
 ---
 # <a name="whats-new-in-the-windows-desktop-client"></a>Windows デスクトップ クライアントの新機能
 
@@ -31,7 +31,20 @@ Windows デスクトップ クライアントの詳細については、「[Wind
 |ユーザー グループ |バージョン  |
 |-----------|---------|
 |パブリック     |1.2.605  |
-|Insider    |1.2.605  |
+|Insider    |1.2.673  |
+
+## <a name="updates-for-version-12673"></a>バージョン 1.2.673 の更新内容
+
+*公開日:2020 年 2 月 11 日*
+
+ダウンロード:[Windows 64 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pPJm)、[Windows 32 ビット](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pFbw)、[Windows ARM64](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4pN07)
+
+- RDP ファイルに署名がない場合、または signscope プロパティのいずれかが変更されている場合、Windows Virtual Desktop への接続がブロックされるようになりました。
+- ワークスペースが空であるか削除されている場合は、接続センターが空ではないように見えます。
+- トラブルシューティングを改善するために、切断メッセージにアクティビティ ID とエラー コードを追加しました。 **Ctrl + C** でダイアログ メッセージをコピーできます。
+- デスクトップ接続の設定でディスプレイが検出されない原因となった問題を修正しました。
+- クライアントの更新プログラムによって PC が自動的に再起動されることはなくなりました。
+- ウィンドウなしのアイコンは、タスクバーに表示されなくなります。
 
 ## <a name="updates-for-version-12605"></a>バージョン 1.2.605 の更新内容
 
