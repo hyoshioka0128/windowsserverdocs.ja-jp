@@ -9,16 +9,16 @@ ms.topic: article
 author: adagashe
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 53f48421bddd416d24c5f46e53652cc89c10c785
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d271d92a14278e52a6020c60f96f48b1c8b35871
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402849"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465306"
 ---
 # <a name="understand-and-monitor-storage-resync"></a>記憶域の再同期を理解して管理する
 
->適用対象:Windows Server 2019
+>適用対象: Windows Server 2019
 
 記憶域の再同期アラートは、Windows Server 2019 の[記憶域スペースダイレクト](storage-spaces-direct-overview.md)の新機能であり、記憶域が再同期されたときにヘルスサービスがエラーをスローできるようにします。 このアラートは、再同期が発生したときに通知するのに役立ちます。これにより、誤ってサーバーを増やしたりすることはありません (複数の障害ドメインが影響を受け、クラスターが停止する可能性があります)。 
 
@@ -112,7 +112,7 @@ Regeneration          00:01:19              Running               50            
 
 一覧表示されている記憶域ジョブはボリュームごとに表示されるため、このビューの方がはるかに細分化されています。実行中のジョブの一覧を確認したり、個々の進行状況を追跡したりすることができます。 このコマンドレットは、Windows Server 2016 と2019の両方で動作します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [メンテナンスのためサーバーをオフラインにする](maintain-servers.md)
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)

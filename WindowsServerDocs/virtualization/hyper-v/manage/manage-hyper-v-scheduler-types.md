@@ -9,23 +9,23 @@ ms.prod: windows-server-hyper-v
 ms.technology: virtualization
 ms.localizationpriority: low
 ms.assetid: 6cb13f84-cb50-4e60-a685-54f67c9146be
-ms.openlocfilehash: c7c2de8354d067faf0dcf1787c3e178421e2ac03
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8ba413b831c7b11780113ee2ffd3cce598781a44
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872029"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465576"
 ---
 # <a name="managing-hyper-v-hypervisor-scheduler-types"></a>Hyper-v ハイパーバイザーのスケジューラの種類の管理
 
->適用先:Windows 10、Windows Server 2016、Windows Server、version 1709、Windows Server、version 1803、Windows Server 2019
+>適用対象: Windows 10、Windows Server 2016、Windows Server、version 1709、Windows Server、version 1803、Windows Server 2019
 
 この記事では、Windows Server 2016 で初めて導入された仮想プロセッサスケジューリングロジックの新しいモードについて説明します。 これらのモードまたはスケジューラの種類によって、Hyper-v ハイパーバイザーがゲスト仮想プロセッサ間での作業の割り当てと管理を行う方法が決まります。 Hyper-v ホスト管理者は、ゲスト仮想マシン (Vm) に最適なハイパーバイザースケジューラの種類を選択し、スケジュールロジックを利用するように Vm を構成できます。
 
 >[!NOTE]
 >このドキュメントで説明されているハイパーバイザースケジューラ機能を使用するには、更新プログラムが必要です。 詳細については、「[必須の更新プログラム](#required-updates)」を参照してください。
 
-## <a name="background"></a>背景情報
+## <a name="background"></a>背景
 
 Hyper-v 仮想プロセッサスケジュールの背後にあるロジックと制御について説明する前に、この記事で説明されている基本的な概念を確認することをお勧めします。
 
@@ -66,7 +66,7 @@ Windows Server 2016 以降では、Hyper-v ハイパーバイザーは、ハイ�
 
 クラシックスケジューラは、windows Server 2016 Hyper-v を含む、Windows Hyper-v ハイパーバイザーの開始以降のすべてのバージョンに対して既定の設定になっています。 クラシックスケジューラは、ゲスト仮想プロセッサに対してフェアシェアのプリエンプティブなラウンドロビンスケジューリングモデルを提供します。
 
-従来のスケジューラの種類は、プライベートクラウドやホスティングプロバイダーなどに使用される従来の Hyper-v の大部分に最も適しています。 パフォーマンス特性はよく理解されており、VPs から LPs へのフェールオーバー、多数の異種 Vm とワークロードの実行など、さまざまな仮想化シナリオをサポートするために最適に最適化されています。パフォーマンス Vm は、制限のない Hyper-v の完全な機能セットをサポートします。
+従来のスケジューラの種類は、プライベートクラウドやホスティングプロバイダーなどに使用される従来の Hyper-v の大部分に最も適しています。 パフォーマンス特性はよく理解されており、VPs から LPs へのサブスクリプションの超過、多数の異種 Vm とワークロードを同時に実行するなど、さまざまな仮想化シナリオをサポートするために最適に最適化されています。パフォーマンス Vm は、制限のない Hyper-v の完全な機能セットをサポートします。
 
 ### <a name="the-core-scheduler"></a>コアスケジューラ
 
@@ -122,8 +122,8 @@ Hyper-v によって提供される仮想マシンのプロセッサリソース
 Set-VMProcessor -VMName <VMName> -HwThreadCountPerCore <n>
 ```
 
-<n>は、ゲスト VM に表示される、コアあたりの SMT スレッド数です。  
-<n> = 0 は、コア値あたりのホストの SMT スレッド数に一致するように HwThreadCountPerCore 値を設定します。
+ここで <n> は、ゲスト VM に表示される、コアあたりの SMT スレッド数です。  
+<n> = 0 は、コア値あたりのホストの SMT スレッド数に一致するように HwThreadCountPerCore 値を設定することに注意してください。
 
 >[!NOTE] 
 >HwThreadCountPerCore = 0 の設定は、Windows Server 2019 以降でサポートされています。
@@ -148,7 +148,7 @@ Windows Server 2016 Hyper-v では、従来のハイパーバイザースケジ�
 >[!NOTE]
 >このドキュメントで説明されているハイパーバイザースケジューラ機能を使用するには、次の更新プログラムが必要です。 これらの更新プログラムには、ホストの構成に必要な新しい ' hypervisorスケジューラの種類 ' BCD オプションをサポートするための変更が含まれています。
 
-| バージョン | リリース  | 更新が必要 | サポート技術情報の記事 |
+| バージョン | 解放  | 更新が必要 | サポート技術情報の記事 |
 |--------------------|------|---------|-------------:|
 |Windows Server 2016 | 1607 | 2018.07 C | [KB4338822](https://support.microsoft.com/help/4338822/windows-10-update-kb4338822) |
 |Windows Server 2016 | 1703 | 2018.07 C | [KB4338827](https://support.microsoft.com/help/4338827/windows-10-update-kb4338827) |
@@ -165,7 +165,7 @@ Windows Server 2016 Hyper-v では、従来のハイパーバイザースケジ�
      bcdedit /set hypervisorschedulertype type
 ```
 
-`type`は次のいずれかです。
+`type` は次のいずれかになります。
 
 * クラシック
 * Core

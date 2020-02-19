@@ -11,12 +11,12 @@ ms.assetid: a9ee931d-91fc-40cf-9a15-ed6fa6965cb6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 1690230d326d7e32175ccde5da1e5fae421a76d0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 829a3897ef54155e34ced75721ec048ba16b342a
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366799"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465176"
 ---
 # <a name="feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v"></a>Hyper-v 上の Linux および FreeBSD 仮想マシンの機能の説明
 
@@ -70,7 +70,7 @@ ms.locfileid: "71366799"
 |動的メモリ - バルーニング|ホストは、操作中にバーチャルマシンが使用できるメモリの量を動的に増減できます。 プロビジョニング前に、管理者は仮想マシンの [設定] パネルで動的メモリを有効にし、仮想マシンの起動メモリ、最小メモリ、最大メモリを指定します。 バーチャルマシンが動作中の場合動的メモリを無効にすることはできません。また、最小および最大の設定のみを変更できます。 (これらのメモリサイズは 128 MB の倍数として指定することをお勧めします)。<br /><br />仮想マシンが最初に起動されたときに、使用可能なメモリが**起動メモリ**と同じになります。 アプリケーションのワークロードによってメモリの需要が増加するにつれて、Hyper-v はホットアドメカニズム (上記) を使用して、より多くのメモリを仮想マシンに動的に割り当てます。 メモリの需要に応じて、Hyper-v はバルーンメカニズムを使用して仮想マシンからメモリを自動的にプロビジョニング解除する場合があります。 Hyper-v は、**最小メモリ**パラメーターの下にメモリをプロビジョニング解除しません。<br /><br />Hyper-v マネージャーの [メモリ] タブには、仮想マシンに割り当てられているメモリの量が表示されますが、仮想マシン内のメモリ統計には割り当てられたメモリの量が表示されます。<br /><br />詳細については、「 [hyper-v 動的メモリの概要](https://technet.microsoft.com/library/hh831766.aspx)」を参照してください。<br /><br />|
 |ランタイムのメモリのサイズ変更|管理者は、バーチャルマシンの操作中に使用可能なメモリの量を設定できます。これには、メモリ ("ホットアド") を増やすか、メモリを小さくします ("ホット削除")。 メモリは、バルーンドライバーを使用して Hyper-v に返されます (動的メモリ「バルーニング」を参照してください)。 バルーンドライバーは、"floor" と呼ばれるバルーニングの後に最小の空きメモリ容量を保持します。したがって、割り当てられたメモリは、現在の需要とこのフロア金額の下に縮小することはできません。 Hyper-v マネージャーの [メモリ] タブには、仮想マシンに割り当てられているメモリの量が表示されますが、仮想マシン内のメモリ統計には割り当てられたメモリの量が表示されます。 (メモリ値は 128 MB の倍数として指定することをお勧めします)。|
 
-## <a name="video"></a>Video
+## <a name="video"></a>ビデオ
 
 |**機能**|**説明**|
 |-|-|
@@ -91,7 +91,7 @@ ms.locfileid: "71366799"
 
 |**機能**|**説明**|
 |-|-|
-|UEFI を使用したブート|この機能により、Unified Extensible Firmware Interface (UEFI) を使用して仮想マシンを起動できます。<br /><br />詳細については、「 [Generation 2 Virtual Machine Overview](https://technet.microsoft.com/library/dn282285.aspx)」を参照してください。|
+|UEFI を使用したブート|この機能により、Unified Extensible Firmware Interface (UEFI) を使用して仮想マシンを起動できます。<br /><br />詳細については、「[ジェネレーション 2 仮想マシンの概要](https://technet.microsoft.com/library/dn282285.aspx)」を参照してください。|
 |セキュアブート|この機能により、バーチャルマシンで UEFI ベースのセキュアブートモードを使用できるようになります。 仮想マシンを保護モードで起動すると、UEFI データストアに存在する署名を使用して、さまざまなオペレーティングシステムコンポーネントが検証されます。<br /><br />詳細については、次を参照してください。 [セキュア ブート](https://technet.microsoft.com/library/dn486875.aspx)します。|
 
 ## <a name="see-also"></a>参照

@@ -8,12 +8,12 @@ ms.date: 06/13/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: d54c33e092204f208590bd15db0d3c7fe7f852f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f4973da0d9e0c347cff8fc910f96277055b66dec
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407894"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465546"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>OAuth と ADAL を使用して単一ページの web アプリケーションを構築します。AD FS 2016 以降を使用した JS
 
@@ -40,7 +40,7 @@ ADAL が認証用のトリガーを確認すると、アプリケーションに
 ## <a name="setting-up-the-development-box"></a>開発ボックスの設定
 このチュートリアルでは、Visual Studio 2015 を使用します。 プロジェクトは ADAL JS ライブラリを使用します。 ADAL の詳細については[Active Directory 認証ライブラリ .net](https://msdn.microsoft.com/library/azure/mt417579.aspx)をご覧ください。
 
-## <a name="setting-up-the-environment"></a>環境のセットアップ
+## <a name="setting-up-the-environment"></a>環境の設定
 このチュートリアルでは、次の基本的なセットアップを使用します。
 
 1.  DC: AD FS がホストされるドメインのドメインコントローラー
@@ -113,7 +113,7 @@ ADAL JS の構成
 |構成|説明|
 |--------|--------|
 |インスタンス (instance)|STS URL (例: https://fs.contoso.com/|
-|tenant|' Adfs ' として保持する|
+|テナント|' Adfs ' として保持する|
 |clientID|これは、シングルページアプリケーションのパブリッククライアントを構成するときに指定したクライアント ID です。|
 
 ## <a name="configure-webapi-to-use-ad-fs"></a>AD FS を使用するように WebAPI を構成する
@@ -168,7 +168,7 @@ Appsettings を次のように変更します。
 
 [ログイン] をクリックします。  ToDo リストは認証フローをトリガーし、ADAL JS は認証をに送信し AD FS
 
-![Login](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
+![ログイン](media/Single-Page-Application-with-AD-FS/singleapp4a.PNG)
 
 Fiddler では、# fragment の URL の一部として返されるトークンを確認できます。
 
@@ -178,5 +178,5 @@ Fiddler では、# fragment の URL の一部として返されるトークン�
 
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 [AD FS の開発](../../ad-fs/AD-FS-Development.md)  

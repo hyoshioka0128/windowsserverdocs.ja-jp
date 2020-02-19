@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 44fb4c02421a431edb502daecaa38f00fb4dd2ad
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: e0c581a29db92cfb73e4225c72e7e1c2bad4ca68
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407533"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465280"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>AD FS のための SSL/TLS プロトコルと暗号スイートの管理
 次のドキュメントでは、で使用される特定の TLS/SSL プロトコルおよび暗号スイートを無効にして有効にする方法について説明し AD FS
@@ -26,7 +26,7 @@ Schannel は、SSL、TLS、および DTLS という標準的なインターネ�
 
 暗号スイートは、暗号化アルゴリズムのセットです。 TLS/SSL プロトコルの schannel SSP 実装では、暗号スイートのアルゴリズムを使用してキーを作成し、情報を暗号化します。 暗号スイートでは、次のタスクごとに 1 つのアルゴリズムが指定されています。
 
-- キーの交換
+- キー交換
 - 一括暗号化
 - メッセージ認証
 
@@ -34,13 +34,13 @@ AD FS は、Schannel を使用して、セキュリティで保護された通�
 
 ## <a name="managing-the-tlsssl-protocols-and-cipher-suites"></a>TLS/SSL プロトコルと暗号スイートの管理
 > [!IMPORTANT]
-> ここでは、レジストリの変更方法を説明する手順について説明します。 ただし、レジストリを正しく変更していない場合、重大な問題が発生する可能性があります。 そのため、手順は確認の上、注意して行ってください。 
+> ここでは、レジストリの変更方法を説明する手順について説明します。 レジストリを誤って変更すると、深刻な問題が発生する可能性があります。 そのため、手順は確認の上、注意して行ってください。 
 > 
 > SCHANNEL の既定のセキュリティ設定を変更すると、特定のクライアントとサーバー間の通信が中断または防止される可能性があることに注意してください。  これは、セキュリティで保護された通信が必要で、通信をネゴシエートするプロトコルがない場合に発生します。
 > 
 > これらの変更を適用する場合は、ファーム内のすべての AD FS サーバーに適用する必要があります。  これらの変更を適用した後、再起動が必要になります。
 
-Todays の日と age では、サーバーのセキュリティ強化と、古いまたは脆弱な暗号スイートの削除が、多くの組織にとって大きな優先事項になりつつあります。  サーバーをテストし、これらのプロトコルとスイートに関する詳細情報を提供するソフトウェアスイートが用意されています。  準拠した状態を維持するため、またはセキュリティで保護された評価を実現するために、弱いプロトコルや暗号スイートの削除または無効化が必要になりました。  このドキュメントの残りの部分では、特定のプロトコルと暗号スイートを有効または無効にする方法について説明します。
+今日の日と時代には、サーバーのセキュリティ強化と、古いまたは脆弱な暗号スイートの削除が、多くの組織にとって大きな優先事項となってきています。  サーバーをテストし、これらのプロトコルとスイートに関する詳細情報を提供するソフトウェアスイートが用意されています。  準拠した状態を維持するため、またはセキュリティで保護された評価を実現するために、弱いプロトコルや暗号スイートの削除または無効化が必要になりました。  このドキュメントの残りの部分では、特定のプロトコルと暗号スイートを有効または無効にする方法について説明します。
 
 次のレジストリキーは同じ場所にあります: HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols.  Regedit または PowerShell を使用して、これらのプロトコルと暗号スイートを有効または無効にします。
 
@@ -235,7 +235,7 @@ RC4 を有効または無効にするには、次のレジストリキーとそ�
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 40/128]"Enabled" = dword: 00000000
 - [HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 56/128]"Enabled" = dword: 00000000 
 
-### <a name="using-powershell"></a>PowerShell を使用する
+### <a name="using-powershell"></a>PowerShell の使用
 
 ```powershell
     ([Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]::LocalMachine,$env:COMPUTERNAME)).CreateSubKey('SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 128/128') 

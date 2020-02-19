@@ -9,12 +9,12 @@ ms.date: 07/02/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8b47cdc4770b1ed6478d1502ed5264164e99352b
-ms.sourcegitcommit: a33404f92867089bb9b0defcd50960ff231eef3f
+ms.openlocfilehash: 2570aae52da2925a62dd6c9262af325fb5461fff
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77013047"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465266"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>AD FS の迅速な復元ツール
 
@@ -29,6 +29,9 @@ AD FS 高速復元ツールは、次のシナリオで使用できます。
     - ツールを使用して、オンライン AD FS サーバーの代わりに迅速に展開できるコールドスタンバイインストール AD FS を作成します。
 2. 同一のテスト環境と運用環境をデプロイする
     - ツールを使用すると、テスト環境で実稼働 AD FS の正確なコピーをすばやく作成したり、検証済みのテスト構成を運用環境にすばやく配置したりすることが可能です。
+3. SQL ベースの構成から WID への移行またはその逆の移行
+    - このツールを使用して、SQL ベースのファーム構成から WID へ、またはその逆方向に移動します。 
+
 
 >[!NOTE] 
 >SQL マージレプリケーションまたは Always on 可用性グループを使用している場合、高速復元ツールはサポートされていません。 代替手段として、SQL ベースのバックアップと SSL 証明書のバックアップを使用することをお勧めします。

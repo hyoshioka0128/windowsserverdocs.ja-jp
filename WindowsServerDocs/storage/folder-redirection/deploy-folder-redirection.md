@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 21172d9d3e6d91af691986bfd84b0e32049f3b88
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 6d8f6bf0df67b76028945403352bd135e6641a5a
+ms.sourcegitcommit: ab3967d71dcbb962079af194875de58e7c32c4e2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401964"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76967416"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>フォルダー リダイレクトとオフライン ファイルを展開する
 
@@ -74,7 +74,7 @@ Windows Server 2019、Windows Server 2016、および Windows Server 2012 でフ
 
 1. サーバー マネージャーのナビゲーション ウィンドウで **[ファイル サービスと記憶域サービス]** を選択し、 **[共有]** を選択して共有のページを表示します。
 2. **[共有]** タイルで、 **[タスク]** を選択してから **[新しい共有]** を選択します。 新しい共有ウィザードが表示されます。
-3. **[プロファイルの選択]** ページで、 **[SMB 共有 – -簡易]** を選択します。 ファイル サーバー リソース マネージャーをインストールしており、フォルダー管理プロパティを使用している場合は、代わりに **[SMB 共有 - 高度]** を選択します。
+3. **[プロファイルの選択]** ページで、 **[SMB 共有 – 簡易]** を選択します。 ファイル サーバー リソース マネージャーをインストールしており、フォルダー管理プロパティを使用している場合は、代わりに **[SMB 共有 - 高度]** を選択します。
 4. **[共有の場所]** ページで、共有を作成するサーバーとボリュームを選択します。
 5. **[共有名]** ページで、 **[共有名]** ボックスに共有の名前 (例: **Users$** ) を入力します。
     >[!TIP]
@@ -201,4 +201,4 @@ Windows Server 2019、Windows Server 2016、および Windows Server 2012 でフ
 * [オフライン ファイルの高度な機能を有効にする](enable-always-offline.md)
 * [レプリケートされたユーザー プロファイル データに関する Microsoft のサポート表明](https://blogs.technet.microsoft.com/askds/2010/09/01/microsofts-support-statement-around-replicated-user-profile-data/)
 * [DISM を使用したアプリのサイドローディング](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-8.1-and-8/hh852635(v=win.10)>)
-* [Windows ランタイム ベース アプリのパッケージ化、展開、クエリのトラブルシューティング](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)
+* [Windows ランタイムベース アプリのパッケージ化、展開、クエリのトラブルシューティング](https://msdn.microsoft.com/library/windows/desktop/hh973484.aspx)

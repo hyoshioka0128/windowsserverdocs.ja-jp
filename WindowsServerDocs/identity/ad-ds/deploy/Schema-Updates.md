@@ -9,12 +9,12 @@ ms.date: 12/02/2019
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 63f5fabec343f7825442334375e637b0eb5adc59
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.openlocfilehash: 90389d726939baa7618c13e63e7485dd8fa09e6b
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75351765"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465166"
 ---
 # <a name="windows-server-active-directory-schema-updates"></a>Windows Server Active Directory スキーマの更新
 
@@ -1420,7 +1420,7 @@ changetype: ntdsSchemaAdd
 objectClass: attributeSchema
 cn: ms-DS-Maximum-Registration-Inactivity-Period
 adminDisplayName: ms-DS-Maximum-Registration-Inactivity-Period
-adminDescription: The maximum ammount of days used to detect inactivty of registration objects.
+adminDescription: The maximum amount of days used to detect inactivty of registration objects.
 ldapDisplayName: msDS-MaximumRegistrationInactivityPeriod
 attributeId: 1.2.840.113556.1.4.2242
 omSyntax: 2
@@ -4654,7 +4654,7 @@ changetype: ntdsSchemaAdd
 objectClass: attributeSchema
 ldapDisplayName: msDS-IsPrimaryComputerFor
 adminDisplayName: ms-DS-Is-Primary-Computer-For
-adminDescription: Backlink atribute for msDS-IsPrimaryComputer.
+adminDescription: Backlink attribute for msDS-IsPrimaryComputer.
 attributeId: 1.2.840.113556.1.4.2168
 attributeSyntax: 2.5.5.1
 omSyntax: 127
@@ -5908,7 +5908,7 @@ systemFlags: 2
 # Add these two objects first. If the DC is running a 1717.IDS schema,
 # these were deleted just before this. So add them first so that
 # the system does not run without them for long
-# They are not dependant on any schema changes
+# They are not dependent on any schema changes
 
 dn: CN=container-Display,CN=409,CN=DisplaySpecifiers,CN=Configuration,DC=X
 changetype: add
@@ -31840,7 +31840,7 @@ attributeDisplayNames: mobile,Mobile Number
 attributeDisplayNames: otherMobile,Mobile Number (Others)
 -
 
-# The following add is preceded by a delete seperately since some DCs may have it.
+# The following add is preceded by a delete separately since some DCs may have it.
 # If not, this is just skipped
 
 dn: CN=Contact-Display,CN=409,CN=DisplaySpecifiers,CN=Configuration,DC=X
@@ -39440,7 +39440,7 @@ objectVersion: 30
 
 ```
 
-### <a name="sch31ldf"></a>sch31.ldf
+### <a name="sch31ldf"></a>Sch31
 
 ```
 dn: CN=Gecos,CN=Schema,CN=Configuration,DC=X
@@ -39556,7 +39556,7 @@ changetype: ntdsSchemaAdd
 objectClass: attributeSchema
 ldapDisplayName: macAddress
 adminDisplayName: macAddress
-adminDescription: MAC address in maximal, colon seperated hex notation
+adminDescription: MAC address in maximal, colon separated hex notation
 attributeId: 1.3.6.1.1.1.1.22
 attributeSyntax: 2.5.5.5
 omSyntax: 22
@@ -41423,7 +41423,7 @@ changetype: ntdsSchemaAdd
 objectClass: classSchema
 ldapDisplayName: ipNetwork
 adminDisplayName: ipNetwork
-adminDescription: Abstraction of a network. The distinguished value of the cn attribute denotes the network's cannonical name
+adminDescription: Abstraction of a network. The distinguished value of the cn attribute denotes the network's canonical name
 governsId: 1.3.6.1.1.1.2.7
 objectClassCategory: 1
 rdnAttId: 2.5.4.3
@@ -48574,7 +48574,7 @@ objectVersion: 47
 
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ:
 
 [ドメイン全体のスキーマ更新操作](Domain-Wide-Updates.md)
 

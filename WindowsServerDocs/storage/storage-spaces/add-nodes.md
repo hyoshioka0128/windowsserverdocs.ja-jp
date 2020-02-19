@@ -10,16 +10,16 @@ author: cosmosdarwin
 ms.date: 11/06/2017
 description: 記憶域スペースダイレクトクラスターにサーバーまたはドライブを追加する方法
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d5949b8fce7253371ee7ecea5118596f713f037
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f5fb9da903bb76de3a075fa7feeeaba468d802c2
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71393782"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465626"
 ---
 # <a name="adding-servers-or-drives-to-storage-spaces-direct"></a>サーバーまたはドライブを記憶域スペース ダイレクトに追加する
 
->適用対象:Windows Server 2019、Windows Server 2016
+>適用対象: Windows Server 2019、Windows Server 2016
 
 このトピックでは、サーバーやドライブを記憶域スペース ダイレクトに追加する方法について説明します。
 
@@ -81,7 +81,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 
 #### <a name="option-3"></a>オプション 3
 
-*Capacity* と呼ばれる **StorageTier** テンプレートに対して **PhysicalDiskRedundancy = 2** を設定し、その階層を参照してボリュームを作成します。
+**Capacity** と呼ばれる **StorageTier** テンプレートに対して *PhysicalDiskRedundancy = 2* を設定し、その階層を参照してボリュームを作成します。
 
 ```PowerShell
 Set-StorageTier -FriendlyName Capacity -PhysicalDiskRedundancy 2 
@@ -121,7 +121,7 @@ New-Volume -FriendlyName <Name> -FileSystem CSVFS_ReFS -StoragePoolFriendlyName 
 
 #### <a name="option-3"></a>オプション 3
 
-単に既存の階層テンプレートを削除し、2 つの新しい階層を作成するのが一番簡単な方法です。 この方法は、階層テンプレートを参照して作成された既存のボリュームには影響しません。テンプレートのみが影響を受けます。
+単に既存の階層テンプレートを削除し、2 つの新しい階層を作成するのが一番簡単な方法です。 これは、階層テンプレートを参照することによって作成された既存のボリュームには影響しません。これはテンプレートにすぎません。
 
 ```PowerShell
 Remove-StorageTier -FriendlyName Capacity
@@ -130,7 +130,7 @@ New-StorageTier -StoragePoolFriendlyName S2D* -MediaType HDD -PhysicalDiskRedund
 New-StorageTier -StoragePoolFriendlyName S2D* -MediaType HDD -PhysicalDiskRedundancy 2 -ResiliencySettingName Parity -FriendlyName Capacity
 ```
 
-これで完了です。 これらの階層テンプレートを参照することにより、ミラーリングによってパリティが高速化されたボリュームを作成することができます。
+以上で終わりです。 これらの階層テンプレートを参照することにより、ミラーリングによってパリティが高速化されたボリュームを作成することができます。
 
 #### <a name="example"></a>例
 

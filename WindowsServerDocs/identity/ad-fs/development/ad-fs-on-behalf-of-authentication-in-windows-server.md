@@ -9,12 +9,12 @@ ms.date: 02/22/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 70281f581974493d3182fb6fdd8f35cb37bed4bf
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 028396bffff6449a296e2922846fe2fc379fe624
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001907"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465616"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>AD FS 2016 以降で OAuth を使用して、の代理 (OBO) を使用して多層アプリケーションを構築する
 
@@ -59,7 +59,7 @@ WebAPIOBO | ユーザーが ToDoItem を追加したときに必要な操作を�
 
 このサンプルでは、SQL LocalDB v1.0 も使用されています。 サンプルで作業する前に、SQL LocalDB をインストールします。
 
-## <a name="setting-up-the-environment"></a>環境のセットアップ
+## <a name="setting-up-the-environment"></a>環境の設定
 次の基本的なセットアップを使用します。
 
 1. **DC**: AD FS がホストされるドメインのドメインコントローラー
@@ -274,9 +274,9 @@ ToDoListService WebAPI を構成したときと同じように、ウィザード
 * Web.config ファイルを開きます。
 * 次のキーを変更する
 
-| キー                      | Value                                                                                                                                                                                                                   |
+| Key                      | 値                                                                                                                                                                                                                   |
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ida: 対象ユーザー             | ToDoListService WebAPI を構成するときに AD FS に指定された ToDoListService の ID (例: https://localhost:44321/ )。                                                                                         |
+| ida: 対象ユーザー             | ToDoListService WebAPI を構成するときに AD FS に指定された ToDoListService の ID (例: https://localhost:44321/)。                                                                                         |
 | ida: ClientID             | ToDoListService WebAPI を構成するときに AD FS に指定された ToDoListService の ID (例: <https://localhost:44321/>)。 </br>**Ida: Audience と ida: ClientID が相互に一致することが非常に重要です。** |
 | ida: ClientSecret         | これは、で ToDoListService クライアントを構成したときに生成されたシークレット AD FS AD FS                                                                                                                   |
 | ida: AdfsMetadataEndpoint | これは AD FS メタデータの URL です (例: https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
@@ -494,10 +494,10 @@ F5 キーを押してソリューションを実行します
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
 Fiddler で詳細なトレースを確認することもできます。 Fiddler を起動し、HTTPS の暗号化解除を有効にします。 /Adfs/oautincludes エンドポイントに対して2つの要求が実行されていることがわかります。
-最初の相互作用では、アクセスコードをトークンエンドポイントに提示し、 https://localhost:44321/ ![ AD FS OBO のアクセストークンを取得](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
+最初の相互作用では、アクセスコードをトークンエンドポイントに提示し、 https://localhost:44321/ ![AD FS OBO のアクセストークンを取得](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
 
 トークンエンドポイントとの2つ目のやり取りでは、 **requested_token_use**が**on_behalf_of**として設定されていて、中間層 web サービス用に取得したアクセストークンを使用していることを確認できます。つまり、の代わりにトークンを取得するアサーションとして https://localhost:44321/ ます。
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 [AD FS の開発](../../ad-fs/AD-FS-Development.md)  

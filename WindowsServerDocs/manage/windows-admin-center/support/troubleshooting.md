@@ -8,12 +8,12 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 0b4e02e6759bdb91ea51b5dcf5e1d0ae307d13b4
-ms.sourcegitcommit: 1da993bbb7d578a542e224dde07f93adfcd2f489
+ms.openlocfilehash: 5df216d8c7b829a6c60db4e5d771824a7bacdb47
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567099"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465326"
 ---
 # <a name="troubleshooting-windows-admin-center"></a>Windows Admin Center のトラブルシューティング
 
@@ -165,8 +165,10 @@ Windows Admin Center のインストール時に、Windows Admin Center でゲ�
 
    > [!TIP]
    > すべての TrustedHosts を一度に設定する簡単な方法として、ワイルドカードを使用することができます。
-   > 
-   >     Set-Item WSMan:\localhost\Client\TrustedHosts -Value '*'
+   >
+   > ```powershell
+   > Set-Item WSMan:\localhost\Client\TrustedHosts -Value '*'
+   > ```
 
 4. テストが完了したら、管理者特権の PowerShell セッションから次のコマンドを実行し、TrustedHosts 設定をクリアできます。
 
@@ -191,14 +193,14 @@ netsh http delete urlacl url=https://+:443/
 
 ## <a name="azure-features-dont-work-properly-in-edge"></a>Azure の機能がエッジで適切に動作しない
 
-エッジには、Windows 管理センターでの Azure ログインに影響を与えるセキュリティゾーンに関連する[既知の問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)があります。 Edge を使用しているときに Azure の機能を使用する際に問題が発生した場合は、 https://login.microsoftonline.com 、 https://login.live.com 、ゲートウェイの URL を信頼済みサイトとして追加し、クライアント側ブラウザーで Edge ポップアップブロックの設定を許可されたサイトに追加してみてください。 
+エッジには、Windows 管理センターでの Azure ログインに影響を与えるセキュリティゾーンに関連する[既知の問題](https://github.com/AzureAD/azure-activedirectory-library-for-js/wiki/Known-issues-on-Edge)があります。 Edge を使用しているときに Azure の機能を使用する際に問題が発生した場合は、 https://login.microsoftonline.com、 https://login.live.com、ゲートウェイの URL を信頼済みサイトとして追加し、クライアント側ブラウザーで Edge ポップアップブロックの設定を許可されたサイトに追加してみてください。 
 
-これには、次の手順を実行します。
+これを行うには :
 1. Windows の スタート メニューの **インターネットオプション** を検索します。
 2. **[セキュリティ]** タブにアクセスします。
-3. **[信頼済みサイト]** オプションで、 **[サイト]** ボタンをクリックし、表示されるダイアログボックスに url を追加します。 ゲートウェイの URL だけでなく https://login.microsoftonline.com と https://login.live.com も追加する必要があります。
+3. **[信頼済みサイト]** オプションで、 **[サイト]** ボタンをクリックし、表示されるダイアログボックスに url を追加します。 ゲートウェイの URL だけでなく https://login.microsoftonline.com と https://login.live.comも追加する必要があります。
 4. **[プライバシー]** タブにアクセスします。
-5. **[ポップアップブロック]** セクションで、 **[設定]** ボタンをクリックし、表示されるダイアログボックスに url を追加します。 ゲートウェイの URL だけでなく https://login.microsoftonline.com と https://login.live.com も追加する必要があります。
+5. **[ポップアップブロック]** セクションで、 **[設定]** ボタンをクリックし、表示されるダイアログボックスに url を追加します。 ゲートウェイの URL だけでなく https://login.microsoftonline.com と https://login.live.comも追加する必要があります。
 
 ## <a name="having-an-issue-with-an-azure-related-feature"></a>Azure 関連の機能に問題がある場合は、
 
@@ -231,9 +233,9 @@ wacFeedbackAzure@microsoft.com に次の情報を含む電子メールをお送�
 * 既定のポートの設定でインストールしましたか。
     * そうでない場合、どのポートを指定しましたか。
 * Windows Admin Center が**インストールされている**コンピューターはドメインに参加していますか。
-* Windows Admin Center が**インストールされている** Windows [バージョン](#check-the-windows-version):
+* Windows Admin Center が[インストールされている](#check-the-windows-version) Windows **バージョン**:
 * **管理しようとしている**コンピューターはドメインに参加していますか。
-* **管理しようとしている**コンピューターの Windows [バージョン](#check-the-windows-version):
+* [管理しようとしている](#check-the-windows-version)コンピューターの Windows **バージョン**:
 * どのブラウザーを使用していますか。
     * Google Chrome を使用している場合、バージョンは何ですか。 ([ヘルプ] > [Google Chromeについて])
 

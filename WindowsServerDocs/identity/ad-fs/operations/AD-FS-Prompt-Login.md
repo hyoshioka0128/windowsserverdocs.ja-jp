@@ -9,12 +9,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cb91bb61adf97fee6f157ca44eb657e20670a1e7
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: a80678f5d2773e3fcd7a95032853249dc36d5616
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948682"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465526"
 ---
 # <a name="active-directory-federation-services-promptlogin-parameter-support"></a>Active Directory フェデレーションサービス (AD FS) prompt = ログインパラメーターのサポート
 
@@ -49,7 +49,7 @@ Windows Server 2012 R2 では、2016年7月の更新プログラムのロール�
 Azure AD PowerShell モジュールを使用して、設定を構成します。
 
 > [!NOTE]
-> 現在、この `prompt=login` 機能は、(`PromptLoginBehavior` プロパティにより有効にされ) [Azure AD Powershell モジュールのバージョン1.0](https://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=59185) でのみ使用できます。このコマンドレットには、set-msoldomainfederationsettings などの "msol" を含む名前が付いています。  現在、Azure AD PowerShell モジュールの ' version 2.0 ' 経由では使用できません。このコマンドレットには、"AzureAD\*" のような名前が付いています。
+> `prompt=login` 機能 (`PromptLoginBehavior` プロパティによって有効) は現在、 [Azure AD Powershell モジュールのバージョン 1.0](https://connect.microsoft.com/site1164/Downloads/DownloadDetails.aspx?DownloadID=59185)でのみ使用できます。このコマンドレットには、set-msoldomainfederationsettings などの "msol" を含む名前が付いています。  現在、Azure AD PowerShell モジュールの ' version 2.0 ' 経由では使用できません。このコマンドレットには、"AzureAD\*" のような名前が付いています。
 
 1. まず、次の PowerShell コマンドを実行して、フェデレーションドメインの `PreferredAuthenticationProtocol`、`SupportsMfa`、および `PromptLoginBehavior` の現在の値を取得します。
 
@@ -63,7 +63,7 @@ Azure AD PowerShell モジュールを使用して、設定を構成します。
 ![Get-MsolDomainFederationSettings](media/AD-FS-Prompt-Login/GetMsol.png)
 
 > [!NOTE]
-> `PreferredAuthenticationMethod` プロパティが空 (`$null`) の場合、`TranslateToFreshPasswordAuth`の既定の動作を意味します。
+> プロパティ `PromptLoginBehavior` の値が空 (`$null`) の場合、`TranslateToFreshPasswordAuth` の動作が使用されます。
 
 2. 次のコマンドを実行して、`PromptLoginBehavior` の目的の値を構成します。
 
