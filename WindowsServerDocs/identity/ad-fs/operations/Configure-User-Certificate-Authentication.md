@@ -9,12 +9,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c36555a8bca7882125451b2c86a0707e3de9b2db
-ms.sourcegitcommit: 8771a9f5b37b685e49e2dd03c107a975bf174683
+ms.openlocfilehash: 6c8a3b30a337c164227bf344b5704cc7e782461a
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76145928"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517517"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>ユーザー証明書認証の AD FS の構成
 
@@ -23,7 +23,7 @@ ms.locfileid: "76145928"
 * ユーザーがモバイルデバイスにプロビジョニングされた証明書を使用している
 
 
-## <a name="prerequisites"></a>必要条件
+## <a name="prerequisites"></a>前提条件
 1) [この記事](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md)で説明されているいずれかのモードを使用して、有効にする AD FS ユーザー証明書認証のモードを決定します。
 2) ユーザー証明書信頼チェーンが、すべての AD FS および WAP サーバー (中間証明機関を含む) によって信頼されている & インストールされていることを確認します。 通常、これは AD FS/WAP サーバー上の GPO を使用して行われます。
 3)  ユーザー証明書の信頼チェーンのルート証明書が、の NTAuth ストアにあることを確認し Active Directory
@@ -39,8 +39,10 @@ AD FS 管理コンソールまたは PowerShell コマンドレット `Set-AdfsG
 Azure AD 証明書認証の AD FS を構成する場合は、証明書の発行者とシリアル番号に必要な[Azure AD 設定](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities)と[AD FS 要求規則](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements)を構成していることを確認します。
 
 また、いくつかのオプションの側面もあります。
-- EKU (要求の種類 https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku) に加えて、証明書のフィールドと拡張機能に基づく要求を使用する場合は、Active Directory 要求プロバイダー信頼の規則に従って追加の要求パスを構成します。  利用可能な証明書の要求の完全な一覧については、以下を参照してください。  
+- EKU (要求の種類 https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku)に加えて、証明書のフィールドと拡張機能に基づく要求を使用する場合は、Active Directory 要求プロバイダー信頼の規則に従って追加の要求パスを構成します。  利用可能な証明書の要求の完全な一覧については、以下を参照してください。  
 - 証明書の種類に基づいてアクセスを制限する必要がある場合は、アプリケーションの発行承認規則 AD FS で、証明書の追加のプロパティを使用できます。 一般的なシナリオは、"MDM プロバイダーによってプロビジョニングされた証明書のみを許可する" または "スマートカード証明書のみを許可する" です。
+>[!IMPORTANT]
+> 認証にデバイスコードフローを使用し、Azure AD 以外の IDP (例: AD FS) を使用してデバイス認証を実行すると、デバイスベースのアクセスを強制することはできません (たとえば、サードパーティの MDM サービスを使用して管理されているデバイスのみが Azure AD リソースに対して許可されます)。 Azure AD で企業リソースへのアクセスを保護し、データの漏えいを防ぐには、Azure AD デバイスベースの条件付きアクセスを構成する必要があります (Azure AD 条件付きアクセスでデバイスが "準拠しているとマークされている必要があります")。
 - [この記事](https://technet.microsoft.com/library/dn786429(v=ws.11).aspx)の「クライアント認証の信頼された発行者の管理」にあるガイダンスを使用して、クライアント証明書に対して許可されている発行証明機関を構成します。
 - 証明書認証を行う場合は、エンドユーザーのニーズに合わせてサインインページを変更することをお勧めします。 一般的なケースとしては、(a) "X509 証明書によるサインイン" をエンドユーザーにとって使いやすいものに変更します。
 
@@ -90,7 +92,7 @@ AD FS では、クライアントデバイス (またはブラウザー) とロ�
     *   「`netsh http add sslcert ipport=0.0.0.0:{your_certauth_port} certhash={your_certhash} appid={your_applicaitonGUID}`」と入力します。
 
 ### <a name="check-if-the-client-device-has-been-provisioned-with-the-certificate-correctly"></a>クライアントデバイスに証明書が正しくプロビジョニングされているかどうかを確認する
-一部のデバイスは正常に機能していますが、他のデバイスは動作していません。 この場合、通常、クライアントデバイスにユーザー証明書が正しくプロビジョニングされていないことが原因です。 次の手順に従ってください。 
+一部のデバイスは正常に機能していますが、他のデバイスは動作していません。 この場合、通常、クライアントデバイスにユーザー証明書が正しくプロビジョニングされていないことが原因です。 次の手順に従います。 
 1)  この問題が Android デバイスに固有のものである場合、最も一般的な問題は、証明書チェーンが Android デバイスで完全に信頼されていないことです。  MDM ベンダーに問い合わせて、証明書が正しくプロビジョニングされており、チェーン全体が Android デバイスで完全に信頼されていることを確認します。 
 2)  この問題が Windows デバイスに固有のものである場合は、ログインしているユーザーの Windows 証明書ストア (システム/コンピューターではありません) を確認して、証明書が正しくプロビジョニングされているかどうかを確認します。
 3)  クライアントユーザー証明書を .cer ファイルにエクスポートし、コマンド "certutil-f-urlfetch-verify certificatefilename .cer" を実行します。
@@ -115,9 +117,9 @@ AD FS では、クライアントデバイス (またはブラウザー) とロ�
 
 ## <a name="reference-complete-list-of-user-certificate-claim-types-and-example-values"></a>参照: ユーザー証明書の要求の種類と値の例の完全な一覧
 
-|                                         要求の種類                                         |                              Example Value                               |
+|                                         要求の種類                                         |                              値の例                               |
 |--------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
-|         https://schemas.microsoft.com/2012/12/certificatecontext/field/x509version         |                                    3 で保護されたプロセスとして起動されました                                     |
+|         https://schemas.microsoft.com/2012/12/certificatecontext/field/x509version         |                                    3                                     |
 |     https://schemas.microsoft.com/2012/12/certificatecontext/field/signaturealgorithm      |                                sha256RSA                                 |
 |           https://schemas.microsoft.com/2012/12/certificatecontext/field/issuer            |                 CN = entca、DC = domain、DC = contoso、DC = com                  |
 |         https://schemas.microsoft.com/2012/12/certificatecontext/field/issuername          |                 CN = entca、DC = domain、DC = contoso、DC = com                  |
@@ -126,7 +128,7 @@ AD FS では、クライアントデバイス (またはブラウザー) とロ�
 |           https://schemas.microsoft.com/2012/12/certificatecontext/field/subject           |   E =user@contoso.com、CN = user、CN = Users、DC = domain、DC = contoso、DC = com   |
 |         https://schemas.microsoft.com/2012/12/certificatecontext/field/subjectname         |   E =user@contoso.com、CN = user、CN = Users、DC = domain、DC = contoso、DC = com   |
 |           https://schemas.microsoft.com/2012/12/certificatecontext/field/rawdata           |                {Base64 でエンコードされたデジタル証明書データ}                 |
-|        https://schemas.microsoft.com/2012/12/certificatecontext/extension/keyusage         |                             DigitalSignature                             |
+|        https://schemas.microsoft.com/2012/12/certificatecontext/extension/keyusage         |                             Digitalsignature ビット                             |
 |        https://schemas.microsoft.com/2012/12/certificatecontext/extension/keyusage         |                             KeyEncipherment                              |
 |  https://schemas.microsoft.com/2012/12/certificatecontext/extension/subjectkeyidentifier   |                 9D11941EC06FACCCCB1B116B56AA97F3987D620A                 |
 | https://schemas.microsoft.com/2012/12/certificatecontext/extension/authoritykeyidentifier  |    キー Id = d6 13 e3 6b bc e5 d8 15 52 0a fd 36 6a d5 0b 51 f3 0b 25 7f     |

@@ -8,12 +8,12 @@ ms.date: 02/10/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 77a23e5787283aa93d6f2f303cf45b461ccf52dd
-ms.sourcegitcommit: f0fcfee992b76f1ad5dad460d4557f06ee425083
+ms.openlocfilehash: 92742929e3826fca3cf87cb84341d3aecec0d55d
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77125113"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517497"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -40,7 +40,7 @@ README で使用状況を確認します。
 
 Windows 管理センターの1809バージョンを使用して Windows Server 2019 orchestrator を管理する場合、記憶域移行サービスのツールオプションは表示されません。 
 
-Windows 管理センターの記憶域移行サービス拡張機能は、Windows Server 2019 バージョン1809以降のオペレーティングシステムのみを管理するようにバージョンにバインドされています。 以前の Windows Server オペレーティングシステムまたは insider preview を管理するために使用する場合、ツールは表示されません。 この動作は仕様による結果です。 
+Windows 管理センターの記憶域移行サービス拡張機能は、Windows Server 2019 バージョン1809以降のオペレーティングシステムのみを管理するようにバージョンにバインドされています。 以前の Windows Server オペレーティングシステムまたは insider preview を管理するために使用する場合、ツールは表示されません。 この動作は仕様です。 
 
 解決するには、Windows Server 2019 ビルド1809以降を使用またはアップグレードします。
 
@@ -110,12 +110,25 @@ Windows Server 2019 の展開先コンピューターに Storage Migration Servi
 
 転送元コンピューターから移行先コンピューターにファイルをインベントリしたり転送したりするときに、管理者グループのアクセス許可が削除されたファイルは移行に失敗します。 記憶域移行サービスの確認-プロキシデバッグは次のように表示されます。
 
-  ログ名: StorageMigrationService/Debug Source: StorageMigrationService: 2/26/2019 9:00:04 AM イベント ID: 1万 Task Category: None Level: Error Keywords::-プロキシ/Debug Source::      
-  ユーザー: NETWORK SERVICE Computer: srv1.contoso.com Description:
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Debug
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          2/26/2019 9:00:04 AM
+    Event ID:      10000
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      srv1.contoso.com
+    Description:
 
-  02/26/2019-09:00: 04.860 [Error] \\srv1 の転送エラーです。 (5) アクセスが拒否されています。
-スタックトレース: FileDirUtils での StorageMigration (String fileName、DesiredAccess desiredAccess、ShareMode shareMode、FlagsAndAttributes FlagsAndAttributes) でのスタックトレースの場合、次の場所に移動します。FileDirUtils の StorageMigration (文字列パス) で、StorageMigration (FileInfo ファイル) をに移動します。このファイルには、(FileInfo ファイル) を指定します。StorageMigration () at StorageMigration () で、InitializeSourceFileInfo () をに移動します。このファイルの場所に移動してください。StorageMigration () [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs:: TryTransfer::55]」を実行してください ()。
-
+    02/26/2019-09:00:04.860 [Error] Transfer error for \\srv1.contoso.com\public\indy.png: (5) Access is denied.
+    Stack Trace:
+     at Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.OpenFile(String fileName, DesiredAccess desiredAccess, ShareMode shareMode, CreationDisposition creationDisposition, FlagsAndAttributes flagsAndAttributes)
+     at Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetTargetFile(String path)
+     at Microsoft.StorageMigration.Proxy.Service.Transfer.FileDirUtils.GetTargetFile(FileInfo file)
+     at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.InitializeSourceFileInfo()
+     at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.Transfer()
+     at Microsoft.StorageMigration.Proxy.Service.Transfer.FileTransfer.TryTransfer()   
 
 この問題は、backup 特権が呼び出されていないストレージ移行サービスのコード障害が原因で発生します。 
 
@@ -137,11 +150,19 @@ Windows Server 2019 の展開先コンピューターに Storage Migration Servi
 
 DFSR デバッグログ:
 
-  20190308 10:18: 53.116 3948 DBCL 4045 [警告] Dbcl:: IDTableImportUpdate 不一致レコードが見つかりました。 
+    20190308 10:18:53.116 3948 DBCL  4045 [WARN] DBClone::IDTableImportUpdate Mismatch record was found. 
 
-  ローカル ACL ハッシュ: 1BCDFE03-A18BCE01-D1AE9859-23A0A5F6 LastWriteTime: 20190308 18:09: 44.876 FileSizeLow: 1131654 Filesizelow: 0属性:32 
+    Local ACL hash:1BCDFE03-A18BCE01-D1AE9859-23A0A5F6 
+    LastWriteTime:20190308 18:09:44.876 
+    FileSizeLow:1131654 
+    FileSizeHigh:0 
+    Attributes:32 
 
-  複製 ACL ハッシュ:**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B** lastwritetime: 20190308 18:09: 44.876 FileSizeLow: 1131654 Filesizelow: 0属性:32 
+    Clone ACL hash:**DDC4FCE4-DDF329C4-977CED6D-F4D72A5B** 
+    LastWriteTime:20190308 18:09:44.876 
+    FileSizeLow:1131654 
+    FileSizeHigh:0 
+    Attributes:32 
 
 この問題は[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) update によって修正されています
 
@@ -149,8 +170,8 @@ DFSR デバッグログ:
 
 Windows Server 2008 R2 ソースコンピューターからデータを転送しようとすると、データは転送されず、次のエラーが表示されます。  
 
-  どのエンドポイントでもストレージを転送できませんでした。
-0x9044
+    Couldn't transfer storage on any of the endpoints.
+    0x9044
 
 このエラーが発生するのは、Windows Server 2008 R2 コンピューターに、Windows Update からの重要な更新プログラムと重要な更新プログラムのすべてが完全にパッチされていない場合です。 記憶域移行サービスに関係なく、Windows Server 2008 R2 コンピューターをセキュリティ上の目的で修正することを常にお勧めします。これは、オペレーティングシステムに新しいバージョンの Windows Server のセキュリティ強化が含まれていないためです。
 
@@ -158,26 +179,30 @@ Windows Server 2008 R2 ソースコンピューターからデータを転送し
 
 ソースコンピューターからデータを転送しようとすると、一部またはすべての共有が転送されず、概要エラーが発生します。
 
-   どのエンドポイントでもストレージを転送できませんでした。
-0x9044
+    Couldn't transfer storage on any of the endpoints.
+    0x9044
 
 SMB 転送の詳細を調べると、次のエラーが表示されます。
 
-   ソースデバイスがオンラインであるかどうかを確認してください。アクセスできませんでした。
+    Check if the source device is online - we couldn't access it.
 
 StorageMigrationService/Admin イベントログを調べると、次のように表示されます。
 
-   ストレージを転送できませんでした。
+    Couldn't transfer storage.
 
-   ジョブ: Job1 ID:  
-   状態: 失敗したエラー: 36931 エラーメッセージ: 
+    Job: Job1
+    ID:  
+    State: Failed
+    Error: 36931
+    Error Message: 
 
    ガイダンス: 詳細なエラーを確認し、転送要件が満たされていることを確認します。 転送ジョブで、移行元と移行先のコンピューターを転送できませんでした。 これは、orchestrator コンピューターが移行元または移行先のコンピューターにアクセスできなかったか、ファイアウォール規則が原因の可能性があります。または、アクセス許可が不足している可能性があります。
 
 StorageMigrationService/Debug ログを調べると、次のように表示されます。
 
-   07/02/2019-13:35: 57.231 [Error] 転送の検証に失敗しました。 ErrorCode: 40961、ソースエンドポイントに到達できない、または存在しない、または送信元の資格情報が無効である、または認証されたユーザーにアクセスするための十分なアクセス許可がありません。
-StorageMigration で StorageMigration () を実行します。 TransferRequestHandler には、ProcessRequest (FileTransferRequest fileTransferRequest, Guid operationId) を入力します (FileTransferRequest fileTransferRequest、Guid operationId)   [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
+    07/02/2019-13:35:57.231 [Error] Transfer validation failed. ErrorCode: 40961, Source endpoint is not reachable, or doesn't exist, or source credentials are invalid, or authenticated user doesn't have sufficient permissions to access it.
+    at Microsoft.StorageMigration.Proxy.Service.Transfer.TransferOperation.Validate()
+    at Microsoft.StorageMigration.Proxy.Service.Transfer.TransferRequestHandler.ProcessRequest(FileTransferRequest fileTransferRequest, Guid operationId)    
 
 これは、移行アカウントが SMB 共有に対して少なくとも読み取りアクセス許可を持っていない場合にマニフェストを作成するコードの欠陥でした。 この問題は、累積的な更新プログラム[4520062](https://support.microsoft.com/help/4520062/windows-10-update-kb4520062)で最初に修正されました。 
 
@@ -185,15 +210,55 @@ StorageMigration で StorageMigration () を実行します。 TransferRequestHa
 
 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)をインストールしてインベントリを実行しようとすると、次のエラーでインベントリが失敗します。
 
-  HRESULT からの例外: 0x80005000
+    EXCEPTION FROM HRESULT: 0x80005000
   
-  ログ名: StorageMigrationService/Admin Source: StorageMigrationService: Date: 9/9/2019 5:21:42 PM イベント ID: 2503 タスクカテゴリ: なしレベル: エラーキーワード:      
-  ユーザー: NETWORK SERVICE Computer: FS02。TailwindTraders.net Description: コンピューターのインベントリを実行できませんでした。
-ジョブ: foo2 ID: 20ac3f75-4945-41d1-9a79-d11dbb57798b State: 失敗したエラー: 36934 エラーメッセージ: すべてのデバイスのインベントリに失敗しました。詳細なエラーを確認し、在庫の要件が満たされていることを確認してください。 ジョブは、指定されたソースコンピューターのいずれもインベントリできませんでした。 これは、orchestrator コンピューターがネットワーク経由でアクセスできなかったか、ファイアウォール規則またはアクセス許可がないことが原因である可能性があります。
+    Log Name:      Microsoft-Windows-StorageMigrationService/Admin
+    Source:        Microsoft-Windows-StorageMigrationService
+    Date:          9/9/2019 5:21:42 PM
+    Event ID:      2503
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      FS02.TailwindTraders.net
+    Description:
+    Couldn't inventory the computers.
+    Job: foo2
+    ID: 20ac3f75-4945-41d1-9a79-d11dbb57798b
+    State: Failed
+    Error: 36934
+    Error Message: Inventory failed for all devices
+    Guidance: Check the detailed error and make sure the inventory requirements are met. The job couldn't inventory any of the specified source computers. This could be because the orchestrator computer couldn't reach it over the network, possibly due to a firewall rule or missing permissions.
   
-  ログ名: StorageMigrationService/Admin Source: StorageMigrationService: Date: 9/9/2019 5:21:42 PM イベント ID: 2509 タスクカテゴリ: なしレベル: エラーキーワード:      
-  ユーザー: NETWORK SERVICE Computer: FS02。TailwindTraders.net の説明: コンピューターのインベントリを実行できませんでした。
-Job: foo2 Computer: FS01。TailwindTraders.net State: Failed Error:-2147463168 エラーメッセージ: ガイダンス: 詳細なエラーを確認し、在庫の要件が満たされていることを確認してください。 インベントリは、指定されたソースコンピューターの側面を特定できませんでした。 これは、ソースまたはブロックされているファイアウォールポートに対するアクセス許可または特権がないことが原因である可能性があります。
+    Log Name:      Microsoft-Windows-StorageMigrationService/Admin
+    Source:        Microsoft-Windows-StorageMigrationService
+    Date:          9/9/2019 5:21:42 PM
+    Event ID:      2509
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      FS02.TailwindTraders.net
+    Description:
+    Couldn't inventory a computer.
+    Job: foo2
+    Computer: FS01.TailwindTraders.net
+    State: Failed
+    Error: -2147463168
+    Error Message: 
+    Guidance: Check the detailed error and make sure the inventory requirements are met. The inventory couldn't determine any aspects of the specified source computer. This could be because of missing permissions or privileges on the source or a blocked firewall port.
+  
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Debug
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          2/14/2020 1:18:21 PM
+    Event ID:      10000
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      2019-rtm-orc.ned.contoso.com
+    Description:
+    02/14/2020-13:18:21.097 [Erro] Failed device discovery stage SystemInfo with error: (0x80005000) Unknown error (0x80005000)   
   
 このエラーは、'meghan@contoso.com' などのユーザープリンシパル名 (UPN) の形式で移行資格情報を指定した場合に、ストレージ移行サービスのコードの不具合が原因で発生します。 Storage Migration Service orchestrator サービスは、この形式を正しく解析できません。そのため、KB4512534 と19H1 でのクラスター移行サポートに追加されたドメイン参照でエラーが発生します。
 
@@ -203,8 +268,9 @@ Job: foo2 Computer: FS01。TailwindTraders.net State: Failed Error:-2147463168 �
 
 クラスター化されたファイルサーバーに対してデータを転送しようとすると、次のようなエラーが発生します。 
 
-   プロキシサービスがインストールされ、実行されていることを確認してから、操作をやり直してください。 プロキシは現在使用できません。
-0x9006 ServiceError0x9006、StorageMigration。 UnregisterSmsProxyCommand
+    Make sure the proxy service is installed and running, and then try again. The proxy isn't currently available.
+    0x9006
+    ServiceError0x9006,Microsoft.StorageMigration.Commands.UnregisterSmsProxyCommand
 
 このエラーが発生するのは、ファイルサーバーリソースが元の Windows Server 2019 クラスター所有者ノードから新しいノードに移動され、そのノードに Storage Migration Service プロキシ機能がインストールされていない場合です。
 
@@ -329,10 +395,25 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
  3. 1つ以上の AD ユーザーおよびドメインローカルグループの名前または Windows 2000 ログオン属性が変更されました
  4. SMS orchestrator にイベント3509が表示されます。
  
- ログ名: StorageMigrationService/Admin Source: StorageMigrationService: Date: 1/10/2020 2:53:48 PM イベント ID: 3509 タスクカテゴリ: なしレベル: エラーキーワード:      
- ユーザー: NETWORK SERVICE Computer: orc2019-rtm.corp.contoso.com Description: コンピューターの記憶域を転送できませんでした。
+        Log Name:      Microsoft-Windows-StorageMigrationService/Admin
+        Source:        Microsoft-Windows-StorageMigrationService
+        Date:          1/10/2020 2:53:48 PM
+        Event ID:      3509
+        Task Category: None
+        Level:         Error
+        Keywords:      
+        User:          NETWORK SERVICE
+        Computer:      orc2019-rtm.corp.contoso.com
+        Description:
+        Couldn't transfer storage for a computer.
 
- ジョブ: dctest3 Computer: dc02-2019.corp.contoso.com 宛先コンピューター: dc03-2019.corp.contoso.com State: Failed エラー: 53251 エラーメッセージ: ローカルアカウントの移行がエラーシステムで失敗しました。例外:-2147467259 atMigrateSecurity (IDeviceRecord sourceDeviceRecord、IDeviceRecord destinationDeviceRecord、TransferConfiguration config、Guid proxyId、CancellationToken cancelToken) を StorageMigration します。
+        Job: dctest3
+        Computer: dc02-2019.corp.contoso.com
+        Destination Computer: dc03-2019.corp.contoso.com
+        State: Failed
+        Error: 53251
+        Error Message: Local accounts migration failed with error System.Exception: -2147467259
+           at Microsoft.StorageMigration.Service.DeviceHelper.MigrateSecurity(IDeviceRecord sourceDeviceRecord, IDeviceRecord destinationDeviceRecord, TransferConfiguration config, Guid proxyId, CancellationToken cancelToken)
 
 これは、記憶域移行サービスを使用してドメインコントローラーとの間で移行を実行し、[ユーザーとグループの移行] オプションを使用してアカウントの名前を変更したり再利用したりした場合に想定される動作です。 [ユーザーとグループを転送しない] を選択するのではなく、 DC の移行は[、記憶域の移行サービスではサポートされていません](faq.md)。 DC には実際のローカルユーザーとグループがないため、記憶域移行サービスは、2つのメンバーサーバー間で移行する場合と同様に、これらのセキュリティプリンシパルを処理し、指示に従って Acl の調整を試行します。これにより、エラーが発生し、アカウントが破損またはコピーされます。 
 
@@ -409,6 +490,6 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
  - ソース移行アカウントに、ソースコンピューターに接続するためのリモートレジストリアクセス許可がありません。
  - ソース移行アカウントには、ソースコンピューターのレジストリ内で、"HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" または "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\" の下に読み取りアクセス許可がありません。LanmanServer
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [記憶域移行サービスの概要](overview.md)

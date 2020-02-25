@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b96a66c9e28454752fd4999fcfe74cbb15a3ae7d
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 717308a157d7f4a5f54e3aef2e829fbed9f12152
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265814"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517547"
 ---
 # <a name="best-practices-for-securing-active-directory-federation-services"></a>Active Directory フェデレーションサービス (AD FS) をセキュリティで保護するためのベストプラクティス
 
@@ -41,30 +41,30 @@ ms.locfileid: "76265814"
 > ポート 808 (Windows Server 2012R2) またはポート 1501 (Windows Server 2016 以降) は、ローカル WCF エンドポイントが構成データをサービスプロセスと Powershell に転送するために使用 AD FS Net.tcp ポートです。 このポートは、Set-adfsproperties | を実行すると表示されます。[NetTcpPort] を選択します。 これは、ファイアウォールで開く必要のないローカルポートですが、ポートスキャンで表示されます。 
 
 ### <a name="azure-ad-connect-and-federation-serverswap"></a>Azure AD Connect とフェデレーションサーバー/WAP
-この表は、Azure AD Connect サーバーとフェデレーション/WAP サーバー間の通信に必要なポートとプロトコルについて説明しています。  
+次の表では、Azure AD Connect サーバーとフェデレーション/WAP サーバー間の通信に必要なポートとプロトコルについて説明します。  
 
-プロトコル |ポート |説明
+[プロトコル] |[ポート] |説明
 --------- | --------- |---------
-HTTP|80 (TCP/UDP)|SSL 証明書を検証するための CRL (証明書失効リスト) をダウンロードするために使用されます。
-HTTPS|443 (TCP/UDP)|Azure AD と同期するために使用されます。
+HTTP|80 (TCP/UDP)|SSL 証明書を確認するために Crl (証明書失効リスト) をダウンロードするために使用します。
+HTTPS|443 (TCP/UDP)|Azure AD と同期するために使用します。
 WinRM|5985| WinRM リスナー
 
 ### <a name="wap-and-federation-servers"></a>WAP とフェデレーションサーバー
-この表は、フェデレーション サーバーと WAP サーバー間の通信に必要なポートとプロトコルについて説明しています。
+次の表では、フェデレーションサーバーと WAP サーバー間の通信に必要なポートとプロトコルについて説明します。
 
-プロトコル |ポート |説明
+[プロトコル] |[ポート] |説明
 --------- | --------- |---------
-HTTPS|443 (TCP/UDP)|認証で使用されます。
+HTTPS|443 (TCP/UDP)|認証に使用されます。
 
 ### <a name="wap-and-users"></a>WAP とユーザー
-この表は、ユーザーと WAP サーバー間の通信に必要なポートとプロトコルについて説明しています。
+次の表では、ユーザーと WAP サーバー間の通信に必要なポートとプロトコルについて説明します。
 
-プロトコル |ポート |説明
+[プロトコル] |[ポート] |説明
 --------- | --------- |--------- |
-HTTPS|443 (TCP/UDP)|デバイスの認証で使用されます。
-TCP|49443 (TCP)|証明書の認証で使用されます。
+HTTPS|443 (TCP/UDP)|デバイスの認証に使用されます。
+TCP|49443 (TCP)|証明書の認証に使用されます。
 
-ハイブリッド展開に必要なポートとプロトコルの詳細については、[こちら](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-ports/)のドキュメントを参照してください。
+ハイブリッド展開に必要なポートとプロトコルの詳細については、[こちら](https://docs.microsoft.com/azure/active-directory/hybrid/reference-connect-ports)のドキュメントを参照してください。
 
 Azure AD と Office 365 の展開に必要なポートとプロトコルの詳細については、[こちら](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=en-US&rs=en-US&ad=US)のドキュメントを参照してください。
 
@@ -90,7 +90,7 @@ Azure AD と Office 365 のシナリオにのみ AD FS と WAP を展開する�
     
     PS:\>Set-AdfsEndpoint -TargetAddressPath <address path> -Proxy $false
 
-たとえば次のようになります。
+例 :
     
     PS:\>Set-AdfsEndpoint -TargetAddressPath /adfs/services/trust/13/certificatemixed -Proxy $false
     
@@ -103,7 +103,7 @@ Azure AD と Office 365 のシナリオにのみ AD FS と WAP を展開する�
     
    `PS:\>Get-ADFSProperties`
 
-プロパティが `ExtendedProtectionTokenCheck` です。  既定の設定は [許可] です。これにより、機能をサポートしていないブラウザーとの互換性の問題がなくても、セキュリティ上の利点を実現できます。  
+プロパティが `ExtendedProtectionTokenCheck`。  既定の設定は [許可] です。これにより、機能をサポートしていないブラウザーとの互換性の問題がなくても、セキュリティ上の利点を実現できます。  
 
 ### <a name="congestion-control-to-protect-the-federation-service"></a>フェデレーションサービスを保護するための輻輳制御
 フェデレーションサービスプロキシ (WAP の一部) は、大量の要求から AD FS サービスを保護するための輻輳制御を提供します。  Web アプリケーションプロキシとフェデレーションサーバーの間の待機時間によって検出されたフェデレーションサーバーが過負荷になっている場合、Web アプリケーションプロキシは外部クライアントの認証要求を拒否します。  この機能は、既定で推奨される待機時間のしきい値レベルで構成されます。
