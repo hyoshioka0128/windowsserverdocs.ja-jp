@@ -60,6 +60,7 @@
 ## [実行と調整](rds-run-and-tune.md)
 ### [個人用デスクトップ セッション コレクションを管理する](rds-manage-personal-collection.md)
 ### [VDI デスクトップで推奨される構成](rds-vdi-recommendations.md)
+### [仮想デスクトップ インフラストラクチャ (VDI) ロール用の Windows 10 バージョン 1909 の最適化](rds_vdi-recommendations-1909.md)
 ### [仮想デスクトップ インフラストラクチャ (VDI) ロール用の Windows 10 バージョン 1803 の最適化](rds-vdi-recommendations-1803.md)
 ### [RDS コレクションでのユーザーの管理](rds-user-management.md)
 ### [Windows Server の PowerShell を使用して RDS タイトル "Work Resources" をカスタマイズする](rds-work-resources.md)
