@@ -7,19 +7,19 @@ author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
-ms.date: 06/06/2019
-ms.openlocfilehash: 8c17671f2f15d1373973dcf2fbafc753f0a163a6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 02/25/2020
+ms.openlocfilehash: fb53ae74e471d590f83e1017662f33bb5a4b7c1d
+ms.sourcegitcommit: 92e0e4224563106adc9a7f1e90f27da468859d90
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402889"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77608804"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>記憶域スペース ダイレクトのボリュームの作成
 
-> 適用対象:Windows Server 2019、Windows Server 2016
+> 適用対象: Windows Server 2019、Windows Server 2016
 
-このトピックでは、Windows 管理センター、PowerShell、またはフェールオーバークラスターマネージャーを使用して記憶域スペースダイレクトクラスターにボリュームを作成する方法について説明します。
+このトピックでは、Windows 管理センターと PowerShell を使用して記憶域スペースダイレクトクラスターにボリュームを作成する方法について説明します。
 
 > [!TIP]
 > まだボリュームを計画していない場合は、まず「[記憶域スペース ダイレクトのボリュームの計画](plan-volumes.md)」をご覧ください。
@@ -42,7 +42,7 @@ Windows 管理センターで3方向ミラーボリュームを作成するに�
 
 ## <a name="create-a-mirror-accelerated-parity-volume"></a>ミラーアクセラレータによるパリティボリュームの作成
 
-ミラーアクセラレータによって、HDD 上のボリュームのフットプリントが減少します。 たとえば、3方向ミラーボリュームは、10テラバイトのサイズごとに、フットプリントとして 30 tb が必要になることを意味します。 フットプリントのオーバーヘッドを軽減するには、ミラーアクセラレータによるパリティを使用してボリュームを作成します。 これにより、最大でアクティブな 20% のデータをミラー化し、残りの領域を効率的に使用することで、4台のサーバーのみで、30テラバイトから 22 tb までのフットプリントを削減できます。 このパリティとミラーの比率を調整して、ワークロードに適したパフォーマンスと容量のトレードオフを実現できます。 たとえば、90% のパリティと 10% のミラーはパフォーマンスが低下しますが、フットプリントはさらに合理化されます。
+ミラーアクセラレータによって、HDD 上のボリュームのフットプリントが減少します。 たとえば、3方向ミラーボリュームは、10テラバイトのサイズごとに、フットプリントとして 30 tb が必要になることを意味します。 フットプリントのオーバーヘッドを軽減するには、ミラーアクセラレータによるパリティを使用してボリュームを作成します。 これにより、最大でアクティブな20% のデータをミラー化し、残りの領域を効率的に使用することで、4台のサーバーのみで、30テラバイトから 22 tb までのフットプリントを削減できます。 このパリティとミラーの比率を調整して、ワークロードに適したパフォーマンスと容量のトレードオフを実現できます。 たとえば、90% のパリティと10% のミラーはパフォーマンスが低下しますが、フットプリントはさらに合理化されます。
 
 Windows 管理センターでミラーアクセラレータを使用してボリュームを作成するには、次のようにします。
 
@@ -100,15 +100,15 @@ Windows 管理センターでミラーアクセラレータを使用してボリ
 
 **New-Volume** コマンドレットには、必須のパラメーターが 4 つあります。
 
-- **フレンドリ**任意の文字列 ( *"Volume1"* など)
-- **FileSystem** **CSVFS_ReFS** (推奨) または**CSVFS_NTFS**のいずれか
-- **StoragePoolFriendlyName**ストレージプールの名前 ( *"S2D On ClusterName"* など)
-- **サイズ:** ボリュームのサイズ ( *"10 tb"* など)
+- **FriendlyName:** 任意の文字列。 *"Volume1"* など
+- **FileSystem:** **CSVFS_ReFS** (推奨) または **CSVFS_NTFS**
+- **StoragePoolFriendlyName:** 記憶域プールの名前。 *"S2D on ClusterName"* など
+- **Size:** ボリュームのサイズ。 *"10TB"* など
 
    > [!NOTE]
    > Windows (PowerShell を含む) では 2 進数を使ってカウントされますが、ドライブのラベルには 10 進数が使われていることがよくあります。 1,000,000,000,000 バイトと定義される "1 テラバイト" のドライブが、Windows で約 "909 GB" となるのはこのためです。 これは正常な動作です。 **New-Volume** を使ってボリュームを作成するときは、**Size** パラメーターを 2 進数で指定してください。 たとえば、"909GB" または "0.909495TB" と指定すると約 1,000,000,000,000 バイトのボリュームが作成されます。
 
-### <a name="example-with-2-or-3-servers"></a>例:2または3台のサーバー
+### <a name="example-with-2-or-3-servers"></a>例: サーバーが 2 台または 3 台の場合
 
 処理を簡単にするため、展開にサーバーが 2 台しかない場合、記憶域スペース ダイレクトは回復性のために双方向ミラーリングを自動的に使います。 展開にサーバーが 3 台しかない場合、3 方向ミラーリングを自動的に使います。
 
@@ -116,11 +116,11 @@ Windows 管理センターでミラーアクセラレータを使用してボリ
 New-Volume -FriendlyName "Volume1" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB
 ```
 
-### <a name="example-with-4-servers"></a>例:4台以上のサーバー
+### <a name="example-with-4-servers"></a>例: サーバーが 4 台以上の場合
 
 サーバーが 4 台以上の場合、オプションの **ResiliencySettingName** パラメーターを使って回復性の種類を選択できます。
 
--   **ResiliencySettingName** **ミラー**または**パリティ**。
+-   **ResiliencySettingName:** **Mirror** または **Parity**。
 
 次の例では、 *"Volume2"* は 3 方向ミラーリングを使い、 *"Volume3"* はデュアル パリティ (多くの場合 "イレイジャー コーディング" と呼ばれます) を使います。
 
@@ -129,7 +129,7 @@ New-Volume -FriendlyName "Volume2" -FileSystem CSVFS_ReFS -StoragePoolFriendlyNa
 New-Volume -FriendlyName "Volume3" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -Size 1TB -ResiliencySettingName Parity
 ```
 
-### <a name="example-using-storage-tiers"></a>例:記憶域階層の使用
+### <a name="example-using-storage-tiers"></a>例: 記憶域階層の使用
 
 3 種類のドライブが存在する展開では、1 つのボリュームが SSD 階層と HDD 階層をまたぐことができます。 同様に、サーバーが 4 台以上存在する展開では、1 つのボリュームにミラーリングとデュアル パリティを混在させることができます。
 
@@ -149,43 +149,9 @@ Get-StorageTier | Select FriendlyName, ResiliencySettingName, PhysicalDiskRedund
 New-Volume -FriendlyName "Volume4" -FileSystem CSVFS_ReFS -StoragePoolFriendlyName S2D* -StorageTierFriendlyNames Performance, Capacity -StorageTierSizes 300GB, 700GB
 ```
 
-## <a name="create-volumes-using-failover-cluster-manager"></a>フェールオーバー クラスター マネージャーを使ったボリュームの作成
+書き込みが完了しました。 複数のボリュームを作成するには、必要に応じて手順を繰り返します。
 
-フェイルオーバー クラスター マネージャーから*仮想ディスクの新規作成ウィザード (記憶域スペース ダイレクト)* 、*ボリュームの新規作成ウィザード*の順に使ってボリュームを作成することもできますが、このワークフローは手動の手順が多いため推奨されません。
-
-主に 3 つの手順があります。
-
-### <a name="step-1-create-virtual-disk"></a>手順 1:仮想ディスクの作成
-
-![仮想ディスクの新規作成](media/creating-volumes/GUI-Step-1.png)
-
-1. フェールオーバー クラスター マネージャーで、 **[記憶域]**  ->  **[プール]** の順に移動します。
-2. 右側の操作ウィンドウで **[仮想ディスクの新規作成]** を選択するか、プールを右クリックして **[仮想ディスクの新規作成]** を選択します。
-3. 記憶域プールを選択して **[OK]** をクリックします。 *仮想ディスクの新規作成ウィザード (記憶域スペース ダイレクト)* が開きます。
-4. ウィザードを使って仮想ディスクに名前を付け、そのサイズを指定します。
-5. 選択内容を確認し、 **[作成]** をクリックします。
-6. 閉じる前に **[このウィザードを閉じるときにボリュームを作成します]** チェック ボックスがオンになっていることを確認してください。
-
-### <a name="step-2-create-volume"></a>手順 2:ボリュームの作成
-
-*ボリュームの新規作成ウィザード*が開きます。
-
-7. 前の手順で作成した仮想ディスクを選択し、 **[次へ]** をクリックします。
-8. ボリュームのサイズを指定し (既定値: 仮想ディスクと同じサイズ)、 **[次へ]** をクリックします。 
-9. ボリュームにドライブ文字を割り当てるか、 **[ドライブ文字またはフォルダーに割り当てません]** を選択して **[次へ]** をクリックします。
-10. 使用するファイルシステムを指定して、割り当て単位サイズを *[既定]* のままにし、ボリュームに名前を付けて **[次へ]** をクリックします。
-11. 選択内容を確認し、 **[作成]** 、 **[閉じる]** の順にクリックします。
-
-### <a name="step-3-add-to-cluster-shared-volumes"></a>手順 3:クラスターの共有ボリュームに追加する
-
-![クラスターの共有ボリュームへの追加](media/creating-volumes/GUI-Step-2.png)
-
-12. フェールオーバー クラスター マネージャーで、 **[記憶域]**  ->  **[ディスク]** の順に移動します。
-13. 前の手順で作成した仮想ディスクを選択し、右側の操作ウィンドウから **[クラスターの共有ボリュームへの追加]** を選択するか、仮想ディスクを右クリックして **[クラスターの共有ボリュームへの追加]** を選択します。
-
-これで完了です。 複数のボリュームを作成するには、必要に応じて手順を繰り返します。
-
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
 - [記憶域スペースダイレクトのボリュームの計画](plan-volumes.md)

@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.date: 11/05/2018
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 33e00134960ca31ce966198ded0692550e164fd6
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 8383aea81e91f52473fd564abf315423abfa83b1
+ms.sourcegitcommit: 9bc7a0478d72944f714f8041fa4506e0d1ed0366
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822411"
+ms.lasthandoff: 02/25/2020
+ms.locfileid: "77607071"
 ---
 # <a name="deploy-always-on-vpn"></a>Always On VPN の展開
 
@@ -27,16 +27,16 @@ ms.locfileid: "76822411"
 
 次の図は Always On VPN をデプロイする場合のさまざまなシナリオのワークフロープロセスを示しています。
 
-![Always On VPN 展開ワークフローのフローチャート](../../../../media/Always-On-Vpn/always-on-vpn-deployment-workflow-sm.png)
+[Always On VPN 展開ワークフローの ![フローチャート](../../../../media/Always-On-Vpn/always-on-vpn-deployment-workflow-sm.png)](../../../../media/Always-On-Vpn/always-on-vpn-deployment-workflow.png)
 
->[!IMPORTANT]
->この展開では、Active Directory Domain Services、Active Directory 証明書サービス、およびネットワークポリシーサーバーを実行しているコンピューターなどのインフラストラクチャサーバーが Windows Server 2016 を実行している必要はありません。 Windows server 2012 R2 など、以前のバージョンの Windows Server を、インフラストラクチャサーバーおよびリモートアクセスを実行しているサーバーに使用できます。
+> [!IMPORTANT]
+> この展開では、Active Directory Domain Services、Active Directory 証明書サービス、およびネットワークポリシーサーバーを実行しているコンピューターなどのインフラストラクチャサーバーが Windows Server 2016 を実行している必要はありません。 Windows server 2012 R2 など、以前のバージョンの Windows Server を、インフラストラクチャサーバーおよびリモートアクセスを実行しているサーバーに使用できます。
 
-## <a name="step-1-plan-the-always-on-vpn-deploymentalways-on-vpn-deploy-planningmd"></a>[手順 1.VPN 展開の Always On を計画する](always-on-vpn-deploy-planning.md)
+## <a name="step-1-plan-the-always-on-vpn-deployment"></a>[手順 1.VPN 展開の Always On を計画する](always-on-vpn-deploy-planning.md)
 
 この手順では、Always On VPN 展開の計画と準備を開始します。 を VPN サーバーとして使用する予定のコンピューターにリモートアクセスサーバーの役割をインストールする前に、 適切な計画の後で、Always On VPN を展開し、必要に応じて Azure AD を使用して VPN 接続の条件付きアクセスを構成します。
 
-## <a name="step-2-configure-the-always-on-vpn-server-infrastructurevpn-deploy-server-infrastructuremd"></a>[手順 2.Always On VPN サーバーインフラストラクチャの構成](vpn-deploy-server-infrastructure.md)
+## <a name="step-2-configure-the-always-on-vpn-server-infrastructure"></a>[手順 2.Always On VPN サーバーインフラストラクチャの構成](vpn-deploy-server-infrastructure.md)
 
 この手順では、VPN をサポートするために必要なサーバー側コンポーネントをインストールして構成します。 サーバー側のコンポーネントには、ユーザー、VPN サーバー、および NPS サーバーによって使用される証明書を配布するように PKI を構成することが含まれます。  また、IKEv2 接続をサポートするように RRAS を構成し、VPN 接続の承認を実行するために NPS サーバーを構成します。
 
@@ -46,7 +46,7 @@ ms.locfileid: "76822411"
 - **Active Directory 証明書サーバーの CA:** ユーザー認証、VPN サーバー認証、および NPS サーバー認証証明書テンプレートを作成します。
 - **ドメインに参加している Windows 10 クライアントの場合:** ユーザー証明書を登録および検証します。
 
-## <a name="step-3-configure-the-remote-access-server-for-always-on-vpnvpn-deploy-rasmd"></a>[手順 3.Always On VPN 用にリモートアクセスサーバーを構成する](vpn-deploy-ras.md)
+## <a name="step-3-configure-the-remote-access-server-for-always-on-vpn"></a>[手順 3.Always On VPN 用にリモートアクセスサーバーを構成する](vpn-deploy-ras.md)
 
 この手順では、IKEv2 VPN 接続を許可するようにリモートアクセス VPN を構成し、他の VPN プロトコルからの接続を拒否して、承認された VPN クライアントに接続するために IP アドレスを発行するための静的 IP アドレスプールを割り当てます。
 
@@ -55,7 +55,7 @@ RAS を構成するには、次のタスクを実行する必要があります�
 - VPN サーバー証明書の登録と検証
 - リモートアクセス VPN のインストールと構成
 
-## <a name="step-4-install-and-configure-the-nps-servervpn-deploy-npsmd"></a>[手順 4.NPS サーバーをインストールして構成する](vpn-deploy-nps.md)
+## <a name="step-4-install-and-configure-the-nps-server"></a>[手順 4.NPS サーバーをインストールして構成する](vpn-deploy-nps.md)
 
 この手順では、Windows PowerShell またはサーバーマネージャーの役割と機能の追加ウィザードを使用して、ネットワークポリシーサーバー (NPS) をインストールします。 また、NPS が VPN サーバーから受信する接続要求のすべての認証、承認、およびアカウンティングの各作業を処理するように構成します。
 
@@ -67,15 +67,15 @@ NPS を構成するには、次のタスクを実行する必要があります�
 - NPS でネットワークポリシーを構成する
 - NPS サーバー証明書を自動登録する
 
-## <a name="step-5-configure-dns-and-firewall-settings-for-always-on-vpnvpn-deploy-dns-firewallmd"></a>[手順 5.Always On VPN の DNS とファイアウォールの設定を構成する](vpn-deploy-dns-firewall.md)
+## <a name="step-5-configure-dns-and-firewall-settings-for-always-on-vpn"></a>[手順 5.Always On VPN の DNS とファイアウォールの設定を構成する](vpn-deploy-dns-firewall.md)
 
 この手順では、DNS とファイアウォールの設定を構成します。 リモート VPN クライアントは、接続するときに、内部のクライアントが使用しているのと同じ DNS サーバーを使用します。これにより、内部ワークステーションの他の部分と同じ方法で名前を解決できます。 
 
-## <a name="step-6-configure-windows-10-client-always-on-vpn-connectionsvpn-deploy-client-vpn-connectionsmd"></a>[手順 6.Windows 10 クライアント Always On VPN 接続を構成する](vpn-deploy-client-vpn-connections.md)
+## <a name="step-6-configure-windows-10-client-always-on-vpn-connections"></a>[手順 6.Windows 10 クライアント Always On VPN 接続を構成する](vpn-deploy-client-vpn-connections.md)
 
 この手順では、VPN 接続を使用して、そのインフラストラクチャと通信するように Windows 10 クライアントコンピューターを構成します。 Windows PowerShell、Microsoft Endpoint Configuration Manager、Intune などの Windows 10 VPN クライアントを構成するには、いくつかのテクノロジを使用できます。 3つすべてに、適切な VPN 設定を構成するための XML VPN プロファイルが必要です。
 
-## <a name="step-7-optional-configure-conditional-access-for-vpn-connectivityad-ca-vpn-connectivity-windows10md"></a>[手順 7.OptionalVPN 接続の条件付きアクセスの構成](../../ad-ca-vpn-connectivity-windows10.md)
+## <a name="step-7-optional-configure-conditional-access-for-vpn-connectivity"></a>[手順 7.OptionalVPN 接続の条件付きアクセスの構成](../../ad-ca-vpn-connectivity-windows10.md)
 
 この省略可能な手順では、承認された VPN ユーザーがリソースにアクセスする方法を微調整できます。 VPN 接続に Azure AD 条件付きアクセスを使用すると、VPN 接続を保護することができます。 条件付きアクセスは、ポリシーベースの評価エンジンであり、Azure AD 接続されたアプリケーションに対するアクセス規則を作成できます。 詳細については、「 [Azure Active Directory (Azure AD) 条件付きアクセス](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal)」を参照してください。
 
