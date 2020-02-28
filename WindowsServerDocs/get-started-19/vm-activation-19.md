@@ -85,7 +85,7 @@ Windows Server 2019 には以下の AVMA キーを使用できます。
 |エディション|   AVMA キー|
 |-|-|
 |Datacenter|    H3RNG-8C32Q-Q8FRX-6TDXV-WMBMW|
-|標準|  TNK62-RXVTB-4P47B-2D623-4GF74|
+|Standard|  TNK62-RXVTB-4P47B-2D623-4GF74|
 |Essentials|    2CTP7-NHT64-BP62M-FV6GG-HFV28|
  
 Windows Server バージョン 1909、1903、および 1809 には以下の AVMA キーを使用できます。
@@ -93,14 +93,14 @@ Windows Server バージョン 1909、1903、および 1809 には以下の AVMA
 |エディション|   AVMA キー|
 |-|-|
 |Datacenter|    H3RNG-8C32Q-Q8FRX-6TDXV-WMBMW|
-|標準|  TNK62-RXVTB-4P47B-2D623-4GF74|
+|Standard|  TNK62-RXVTB-4P47B-2D623-4GF74|
 
 Windows Server バージョン 1803 および 1709 には以下の AVMA キーを使用できます。
 
 |エディション|AVMA キー|
 |-|-|
 |Datacenter|TMJ3Y-NTRTM-FJYXT-T22BY-CWG3J|
-|標準|C3RCX-M6NRP-6CXC9-TW2F2-4RHYD|
+|Standard|C3RCX-M6NRP-6CXC9-TW2F2-4RHYD|
 
 
 Windows Server 2016 には以下の AVMA キーを使用できます。
@@ -108,7 +108,7 @@ Windows Server 2016 には以下の AVMA キーを使用できます。
 |エディション|AVMA キー|
 |-|-|
 |Datacenter|TMJ3Y-NTRTM-FJYXT-T22BY-CWG3J|
-|標準|C3RCX-M6NRP-6CXC9-TW2F2-4RHYD|
+|Standard|C3RCX-M6NRP-6CXC9-TW2F2-4RHYD|
 |Essentials|B4YNW-62DX9-W8V6M-82649-MHBKQ|
 
 
@@ -117,7 +117,7 @@ Windows Server 2012 R2 では、次の AVMA キーを使用できます。
 |エディション|AVMA キー|
 |-|-|
 |Datacenter|Y4TGP-NPTV9-HTC2H-7MGQ3-DV4TW|
-|標準|DBGBW-NPF86-BJVTX-K3WKJ-MTB6V|
+|Standard|DBGBW-NPF86-BJVTX-K3WKJ-MTB6V|
 |Essentials|K2XGM-NMBT3-2R6Q8-WF2FK-P36R2|
 
 ## <a name="reporting-and-tracking"></a>レポートと追跡
