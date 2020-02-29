@@ -13,18 +13,17 @@ ms.topic: article
 ms.assetid: 938adb3d-71ab-488b-b2f2-57b29df210d7
 author: evaseydl
 manager: scottman
-ms.openlocfilehash: 4280491b8f47ce2d16ecf2cb33dbdb21ac35365b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: eaf3aa737718ce2c0e4654319bea7079e3f92373
+ms.sourcegitcommit: a4b489d0597b6a73c905d3448d5bc332efd6191b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403974"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77675353"
 ---
 # <a name="additional-remote-desktop-resources"></a>その他のリモート デスクトップ リソース
 
 情報だけでなく、ここで、Windows Server 2016 ライブラリについて説明し、リモート デスクトップ サービスのヘルプを表示する、次のリソースを使用できます。
 
-- Twitter であれば、 [@RDS4U](https://twitter.com/RDS4U) を使用してください
 - 一般にリモート デスクトップ サービスに関するディスカッションに参加、 [RDS に関する TechNet フォーラム](https://aka.ms/technetforum-rds)します。
 - Windows、Android、iOS、および Mac 用のリモート デスクトップのアプリケーション/クライアントの詳細については、次を参照してください。、 [リモート デスクトップ クライアントに関する TechNet フォーラム](https://aka.ms/technetforum-rdc)します。
 - MultiPoint のチェック アウト、 [MultiPoint に関する TechNet フォーラム](https://aka.ms/multipoint-forum)します。
