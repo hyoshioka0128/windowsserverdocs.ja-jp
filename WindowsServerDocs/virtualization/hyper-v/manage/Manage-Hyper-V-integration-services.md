@@ -10,14 +10,14 @@ ms.topic: article
 ms.prod: windows-server
 ms.service: na
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: 39d57afbd8c4df78764c5975d4cc3d48848475c1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bcf8109530043f5e0a6d141c484233c4364fb307
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71392765"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169572"
 ---
->適用対象: Windows 10、Windows Server 2016、Windows Server 2019
+>適用対象: Windows 10、Windows Server 2012、Windows Server 2012R2、Windows Server 2016、Windows Server 2019
 
 # <a name="manage-hyper-v-integration-services"></a>Hyper-v Integration Services を管理する
 
@@ -194,7 +194,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
    - **hv_kvp_daemon**: このデーモンでは、組み込みキーと外部キーの値のペアを設定および照会できます。
    - **hv_fcopy_daemon**: このデーモンは、ホストとゲスト間にファイルコピーサービスを実装します。  
 
-### <a name="examples"></a>例
+### <a name="examples"></a>使用例
 
 これらの例では、`hv_kvp_daemon`という名前の KVP デーモンを停止して開始する方法を示します。
 
@@ -226,12 +226,12 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 
 仮想マシンの最高のパフォーマンスと最新機能を利用するには、統合サービスを最新の状態に保つことをお勧めします。 これは、Windows Update から重要な更新プログラムを取得するように設定されている場合、ほとんどの Windows ゲストで既定で発生します。 現在のカーネルを使用している Linux ゲストは、カーネルを更新すると最新の統合コンポーネントを受け取ります。
 
-**Windows 10 ホストで実行されている仮想マシンの場合:**
+**Windows 10 または Windows Server 2016/2019 ホストで実行されている仮想マシンの場合:**
 
 > [!NOTE]
-> イメージファイル vmguest .iso は、不要になったため、Windows 10 の Hyper-v には含まれていません。
+> イメージファイル vmguest .iso は、Windows 10/Windows Server 2016/2019 の Hyper-v に含まれていません。これは不要になったためです。
 
-| Guest  | 更新方法 | 説明 |
+| ゲスト  | 更新方法 | 説明 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
 | Windows 8.1 | Windows Update | |
@@ -250,14 +250,14 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 | - | | |
 | Linux ゲスト | パッケージ マネージャー | Linux 用 Integration services はディストリビューションに組み込まれていますが、オプションの更新プログラムが利用可能な場合もあります。 ******** |
 
-\* データ交換統合サービスを有効にできない場合、これらのゲストの統合サービスは、[ダウンロードセンター](https://support.microsoft.com/kb/3071740)からキャビネット (cab) ファイルとして入手できます。 Cab を適用する手順については、こちらの[ブログ記事](https://blogs.technet.com/b/virtualization/archive/2015/07/24/integration-components-available-for-virtual-machines-not-connected-to-windows-update.aspx)をご覧ください。
+\* データ交換統合サービスを有効にできない場合、これらのゲストの統合サービスは、[ダウンロードセンター](https://support.microsoft.com/kb/3071740)からキャビネット (cab) ファイルとして入手できます。 Cab を適用する手順については、こちらの[ブログ記事](https://techcommunity.microsoft.com/t5/virtualization/integration-components-available-for-virtual-machines-not/ba-p/382247)をご覧ください。
 
-**Windows 8.1 ホストで実行されている仮想マシンの場合:**
+**Windows 8.1 または Windows Server 2012R2 ホストで実行されている仮想マシンの場合:**
 
-| Guest  | 更新方法 | 説明 |
+| ゲスト  | 更新方法 | 説明 |
 |:---------|:---------|:---------|
 | Windows 10 | Windows Update | |
-| Windows 8.1 | Windows Update | |
+| Windows 8.1 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | Windows 8 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | Windows 7 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | Windows Vista (SP 2) | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
@@ -265,7 +265,7 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 | - | | |
 | Windows Server 2016 | Windows Update | |
 | Windows Server 半期チャネル | Windows Update | |
-| Windows Server 2012 R2 | Windows Update | |
+| Windows Server 2012 R2 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | Windows Server 2012 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | Windows Server 2008 R2 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | Windows Server 2008 (SP 2) | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
@@ -277,17 +277,17 @@ REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesV
 | Linux ゲスト | パッケージ マネージャー | Linux 用 Integration services はディストリビューションに組み込まれていますが、オプションの更新プログラムが利用可能な場合もあります。 ** |
 
 
-**Windows 8 ホストで実行されている仮想マシンの場合:**
+**Windows 8 または Windows Server 2012 ホストで実行されている仮想マシンの場合:**
 
-| Guest  | 更新方法 | 説明 |
+| ゲスト  | 更新方法 | 説明 |
 |:---------|:---------|:---------|
-| Windows 8.1 | Windows Update | |
+| Windows 8.1 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | Windows 8 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | Windows 7 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | Windows Vista (SP 2) | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | Windows XP (SP 2、SP 3) | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | - | | |
-| Windows Server 2012 R2 | Windows Update | |
+| Windows Server 2012 R2 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | Windows Server 2012 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
 | Windows Server 2008 R2 | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。|
 | Windows Server 2008 (SP 2) | 統合サービス ディスク | 以下の[手順](#install-or-update-integration-services)を参照してください。 |
@@ -302,8 +302,11 @@ Linux ゲストの詳細については、「 [Windows 上の hyper-v のサポ�
 
 ## <a name="install-or-update-integration-services"></a>Integration services のインストールまたは更新
 
-Windows Server 2016 と Windows 10 より前のホストでは、ゲストオペレーティングシステムの統合サービスを手動でインストールまたは更新する必要があります。 
-  
+> [!NOTE]
+> Windows Server 2016 と Windows 10 より前のホストでは、ゲストオペレーティングシステムの統合サービスを**手動でインストールまたは更新**する必要があります。 
+
+Integration services を手動でインストールまたは更新する手順は次のとおりです。
+
 1.  Hyper-V マネージャーを開きます。 サーバーマネージャーの ツール メニューで、 **Hyper-v マネージャー** をクリックします。  
   
 2.  仮想マシンに接続します。 仮想マシンを右クリックし、 **[接続]** をクリックします。  
@@ -312,4 +315,7 @@ Windows Server 2016 と Windows 10 より前のホストでは、ゲストオペ
   
 4.  インストールが完了すると、すべての統合サービスを使用できるようになります。
 
-これらの手順は、オンライン仮想マシン用の Windows PowerShell セッション内で自動化または実行することはできません。 オフラインの VHDX イメージに適用できます。こちらの[ブログ記事をご覧](https://blogs.technet.microsoft.com/virtualization/2013/04/18/how-to-install-integration-services-when-the-virtual-machine-is-not-running/)ください。
+> [!NOTE]
+> これらの手順は、**オンライン**仮想マシン用の Windows PowerShell セッション内で自動化または実行**することはできません**。
+> **オフライン**の VHDX イメージに適用できます。「[仮想マシンが実行されていない場合の統合サービスのインストール方法」を](https://docs.microsoft.com/virtualization/community/team-blog/2013/20130418-how-to-install-integration-services-when-the-virtual-machine-is-not-running)参照してください。
+> また、Vm を**オンライン**で**Configuration Manager**を使用した統合サービスのデプロイを自動化することもできますが、インストールの最後に vm を再起動する必要があります。「 [Config Manager と DISM を使用した vm への hyper-v Integration Services のデプロイ](https://docs.microsoft.com/archive/blogs/manageabilityguys/deploying-hyper-v-integration-services-to-vms-using-config-manager-and-dism)」を参照してください。
