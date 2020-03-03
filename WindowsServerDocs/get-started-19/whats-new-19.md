@@ -8,26 +8,26 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: 13eed225dfc144d5e7e59be13dbed14d4de8bb01
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: dd8cd6700323075a380aa062bfa1d208b3e30f83
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71360780"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465496"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Windows Server 2019 の新機能
 
-> 適用対象:Windows Server 2019
+> 適用先:Windows Server 2019
 
 このトピックでは、Windows Server 2019 の新機能の一部について説明します。 Windows Server 2019 は Windows Server 2016 の強力な基盤の上に構築されています。また、次の 4 つの主要テーマに沿って多数の技術革新が組み込まれています: ハイブリッド クラウド、セキュリティ、アプリケーション プラットフォーム、およびハイパー コンバージド インフラストラクチャ (HCI)。
 
 Windows Server 半期チャネル リリースの新機能については、「[Windows Server の新機能](../get-started/whats-new-in-windows-server.md)」を参照してください。
 
-## <a name="general"></a>全般的な情報
+## <a name="general"></a>全般
 
 ### <a name="windows-admin-center"></a>Windows Admin Center
 
-Windows Admin Center は、サーバー、クラスター、ハイパーコンバージド インフラストラクチャ、Windows 10 PC を管理するための、ローカルに展開されるブラウザー ベースのアプリです。 Windows 以外の追加費用は必要なく、実稼働環境で使用できます。
+Windows Admin Center は、サーバー、クラスター、ハイパーコンバージド インフラストラクチャ、Windows 10 PC を管理するための、ローカルに展開されるブラウザー ベースのアプリです。 Windows 以外の追加費用は必要なく、運用環境で使用できます。
 
 Windows Admin Center は、Windows Server 2019 にも、Windows 10、以前のバージョンの Windows、Windows Server にもインストールすることができます。これを使用すれば、Windows Server 2008 R2 以降を実行しているサーバーおよびクラスターを管理することができます。
 
@@ -107,7 +107,7 @@ SDN の新機能の完全な一覧については、「[Windows Server 2019 の 
 
 - 高いスループットを提供するために、既定の TCP 輻輳プロバイダーが Cubic に変更されました。
 
-## <a name="storage"></a>ストレージ
+## <a name="storage"></a>記憶域
 
 Windows Server 2019 でストレージに行った変更の一部を次に示します。 詳細については、「[記憶域の新機能](../storage/whats-new-in-storage.md)」を参照してください。
 
