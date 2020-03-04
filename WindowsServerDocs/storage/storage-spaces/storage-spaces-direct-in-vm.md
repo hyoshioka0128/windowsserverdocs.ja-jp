@@ -9,16 +9,16 @@ author: eldenchristensen
 ms.date: 10/25/2017
 description: Microsoft Azure など、仮想マシンのゲストクラスターに記憶域スペースダイレクトを展開する方法。
 ms.localizationpriority: medium
-ms.openlocfilehash: ab0ce792c5a948e763a48493a78ccdac7a6fe74c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 34241183a56cdb9be4690e1edd68b56320cc01de
+ms.sourcegitcommit: a6ec589a39ef104ec2be958cd09d2f679816a5ab
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366046"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78261921"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>ゲスト仮想マシンクラスターでの記憶域スペースダイレクトの使用
 
-> 適用対象:Windows Server 2019、Windows Server 2016
+> 適用対象: Windows Server 2019、Windows Server 2016
 
 記憶域スペースダイレクトは、このトピックで説明するように、物理サーバーのクラスターまたは仮想マシンのゲストクラスターに展開できます。 この種類のデプロイは、プライベートクラウドまたはパブリッククラウド上の一連の Vm で仮想共有記憶域を提供し、アプリケーションの高可用性ソリューションを使用してアプリケーションの可用性を高めることができます。
 
@@ -49,7 +49,7 @@ Azure[テンプレート](https://github.com/robotechredmond/301-storage-spaces-
 
     -   Hyper-v – Vm で AntiAffinityClassNames を構成して、ノード間で Vm を分離します。
 
-    -   VMware – ESX ホスト間で Vm を分離するために、"個別の Virtual Machines" という種類の DRS ルールを作成して、VM と VM の間のアンチアフィニティルールを構成します。 記憶域スペースダイレクトで使用するために提示されたディスクでは、準仮想化 SCSI (PVSCSI) アダプタを使用する必要があります。 Windows Server での PVSCSI のサポートについては、 https://kb.vmware.com/s/article/1010398 を参照してください。
+    -   VMware – ESX ホスト間で Vm を分離するために、"個別の Virtual Machines" という種類の DRS ルールを作成して、VM と VM の間のアンチアフィニティルールを構成します。 記憶域スペースダイレクトで使用するために提示されたディスクでは、準仮想化 SCSI (PVSCSI) アダプタを使用する必要があります。 Windows Server での PVSCSI のサポートについては、 https://kb.vmware.com/s/article/1010398を参照してください。
 
 -   低待機時間/高パフォーマンスストレージの活用-Azure Premium Storage managed disks が必要です
 
@@ -65,10 +65,6 @@ Azure[テンプレート](https://github.com/robotechredmond/301-storage-spaces-
     Get-storagesubsystem clus* | set-storagehealthsetting -name “System.Storage.PhysicalDisk.AutoReplace.Enabled” -value “False”
     ```
 
--   サポートしていないバージョン:ホストレベルの仮想ディスクのスナップショット/復元
-
-    代わりに、従来のゲストレベルのバックアップソリューションを使用して、記憶域スペースダイレクトボリューム上のデータをバックアップおよび復元します。
-
 -   ゲストクラスターにおける VHD/VHDX/VMDK ストレージの待機時間の回復性を高めるには、記憶域スペースの i/o タイムアウト値を増やします。
 
     `HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\spaceport\\Parameters\\HwTimeout`
@@ -77,7 +73,17 @@ Azure[テンプレート](https://github.com/robotechredmond/301-storage-spaces-
 
     16進数の7530に相当する10進数は、3万です。これは30秒です。 既定値は 1770 16 進数、つまり、6秒の 6000 Decimal であることに注意してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="not-supported"></a>サポートされない
+
+-   ホストレベルの仮想ディスクのスナップショット/復元
+
+    代わりに、従来のゲストレベルのバックアップソリューションを使用して、記憶域スペースダイレクトボリューム上のデータをバックアップおよび復元します。
+
+-   ホストレベルの仮想ディスクサイズの変更
+
+    仮想マシンを介して公開される仮想ディスクは、同じサイズと特性を保持する必要があります。 記憶域プールに容量を追加するには、各仮想マシンに仮想ディスクを追加し、プールに追加します。 現在の仮想ディスクと同じサイズおよび特性の仮想ディスクを使用することを強くお勧めします。
+
+## <a name="see-also"></a>参照
 
 [記憶域スペースダイレクト、ビデオ、ステップバイステップガイドをデプロイするための追加の Azure IAAS VM テンプレート](https://techcommunity.microsoft.com/t5/Failover-Clustering/Deploying-IaaS-VM-Guest-Clusters-in-Microsoft-Azure/ba-p/372126)。
 

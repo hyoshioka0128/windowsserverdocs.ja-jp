@@ -204,6 +204,7 @@
 ### [ネットワーク シェル (netsh) のサンプル バッチ ファイル](technologies/netsh/netsh-wins.md)
 ### [netsh http コマンド](technologies/netsh/netsh-http.md)
 ### [netsh interface portproxy コマンド](technologies/netsh/netsh-interface-portproxy.md)
+### [netsh mbn コマンド](technologies/netsh/netsh-mbn.md)
 
 ## [ネットワーク サブシステムのパフォーマンスの調整](technologies/network-subsystem/net-sub-performance-top.md)
 ### [ネットワーク アダプターを選択する](technologies/network-subsystem/net-sub-choose-nic.md)
