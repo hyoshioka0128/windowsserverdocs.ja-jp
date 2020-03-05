@@ -13,12 +13,12 @@ manager: dcscontentpm
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0932bbbb87c6fcae9dc0b871bd605302acdb25cc
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.openlocfilehash: 2c54442a5ce1322f4157de5dbf82d1c662c6f91d
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265914"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465596"
 ---
 # <a name="remote-desktop-client-disconnects-and-cant-reconnect-to-the-same-session"></a>リモート デスクトップ クライアントが切断され、同じセッションに再接続できない
 

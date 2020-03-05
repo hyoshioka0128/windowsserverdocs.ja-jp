@@ -9,12 +9,12 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: c8ab160699bc6a961f4fbed6c58cf072a395a313
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a2f4c9ac05e72083fab3e3a926dbdd2876214a7b
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407428"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517537"
 ---
 # <a name="ad-fs-requirements"></a>AD FS の要件
 
@@ -206,7 +206,7 @@ WID と SQL Server ファームでサポートされている AD FS サーバー
   
 Web アプリケーション プロキシとフェデレーション サーバー ファームの間にあるファイアウォールと、クライアントと Web アプリケーション プロキシ間にあるファイアウォールの両方で、受信方向の TCP ポート 443 を有効にする必要があります。  
   
-さらに、クライアント ユーザー証明書認証 \(X509 ユーザー証明書を使用した clientTLS 認証\) が必要で、ポート 443 の certauth エンドポイントが有効ではない場合、AD FS 2016 ではクライアントと Web アプリケーション プロキシ間のファイアウォールで、受信方向の TCP ポート 49443 を有効にする必要があります。 これは、Web アプリケーション プロキシとフェデレーション サーバー間のファイアウォールでは必要ありません\)。 
+さらに、クライアント ユーザー証明書認証 \(X509 ユーザー証明書を使用した clientTLS 認証\) が必要で、ポート 443 の certauth エンドポイントが有効ではない場合、AD FS 2016 ではクライアントと Web アプリケーション プロキシ間のファイアウォールで、受信方向の TCP ポート 49443 を有効にする必要があります。 これは、Web アプリケーション プロキシとフェデレーション サーバー間のファイアウォールでは必要ありません。 
 
 ハイブリッド ポートの要件の詳細については、[ハイブリッド ID のポートとプロトコル](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-ports)に関する記事を参照してください。 
 
