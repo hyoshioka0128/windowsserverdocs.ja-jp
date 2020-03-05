@@ -9,12 +9,12 @@ manager: mtillman
 ms.date: 03/22/2019
 ms.technology: identity-adds
 ms.assetid: 7a3114c8-bda8-49bb-83a8-4e04340ab221
-ms.openlocfilehash: 67e35a47467b1f5f66bfd073c6f9db06094ea3f9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 25a5c2222f50b37bff2bcfe41184d6d9fa35995c
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391027"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465506"
 ---
 # <a name="safely-virtualizing-active-directory-domain-services-ad-ds"></a>Active Directory Domain Services (AD DS) の安全な仮想化
 
@@ -103,7 +103,7 @@ Windows Server 2012 では、AD DS は VM-GenerationID を認識するハイパ�
 > [!CAUTION]
 > 偶発的に運用環境内のドメイン コントローラーがスナップショットに戻った場合には、アプリケーションのベンダーと、その仮想マシンでホストされているサービスのベンダーに問い合わせ、スナップショットを復元した後でこれらのプログラムの状態を検証する方法を確認してください。
 
-詳細については、「[仮想化ドメイン コントローラーの安全な復元アーキテクチャ](../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)」を参照してください。
+詳細については、「 [Virtualized domain controller safe restore architecture](../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)」を参照してください。
 
 ## <a name="recovering-from-a-usn-rollback"></a>USN ロールバックからの回復
 
@@ -129,7 +129,7 @@ USN ロールバックから回復するアプローチには、次の 2 つが�
 
 バックアップのソースとしてスナップショットを使用することもできます。 または、「[適切なシステム状態データのバックアップが使用できない場合の仮想ドメイン コントローラーの復元](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd363553%28v%3dws.10%29#restoring-a-virtual-domain-controller-when-an-appropriate-system-state-data-backup-is-not-available)」セクションの手順を使用して、データベース自体に新しい呼び出し ID を与えるように設定することもできます
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 * 仮想化ドメイン コントローラーのトラブルシューティングにの詳細については、「 [Virtualized Domain Controller Troubleshooting](../ad-ds/manage/virtual-dc/Virtualized-Domain-Controller-Troubleshooting.md)」を参照してください。
 * [Windows タイムサービス (W32Time) の詳細情報](../../networking/windows-time-service/windows-time-service-top.md)

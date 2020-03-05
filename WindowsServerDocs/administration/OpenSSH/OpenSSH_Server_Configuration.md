@@ -6,12 +6,12 @@ contributor: maertendMSFT
 ms.product: w10
 author: maertendMSFT
 title: Windows 用 OpenSSH サーバー構成
-ms.openlocfilehash: 5eb3d86950d169fd01512d330f0c04669beeffae
-ms.sourcegitcommit: 51e0b575ef43cd16b2dab2db31c1d416e66eebe8
+ms.openlocfilehash: 61e6e24e6682802fd07e70dcb49aa0f382e1638e
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76259049"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169592"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>Windows 10 1809 および Server 2019 用 OpenSSH Server 構成
 
@@ -76,7 +76,7 @@ Windows OpenSSH の場合、使用できる認証方法は "password" と "publi
 
 ### <a name="authorizedkeysfile"></a>AuthorizedKeysFile 
 
-既定値は ".ssh/authorized_keys .ssh/authorized_keys2" です。 パスが絶対パスでない場合は、ユーザーのホーム ディレクトリ (またはプロファイル イメージ パス) に対して相対的に取得されます。 例: c:\users\user
+既定値は ".ssh/authorized_keys .ssh/authorized_keys2" です。 パスが絶対パスでない場合は、ユーザーのホーム ディレクトリ (またはプロファイル イメージ パス) に対して相対的に取得されます。 例: c:\users\user ユーザーが管理者グループに属している場合は、%programdata%/ssh/administrators_authorized_keys が代わりに使用されることに注意してください。
 
 ### <a name="chrootdirectory-support-added-in-v7700"></a>ChrootDirectory (v7.7.0.0 に追加されたサポート)
 

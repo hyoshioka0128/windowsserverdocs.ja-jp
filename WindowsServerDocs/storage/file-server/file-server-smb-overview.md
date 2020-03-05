@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 01/10/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 416145a8c4ec20eaf46cf4b5ac88a0cdf38bdf33
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.openlocfilehash: aafcfcd4d0f2f14836c5b7dee2bdbccbf99fa887
+ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919882"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78169622"
 ---
 # <a name="overview-of-file-sharing-using-the-smb-3-protocol-in-windows-server"></a>Windows Server の SMB 3 プロトコルを使用したファイル共有の概要
 
@@ -41,7 +41,7 @@ ms.locfileid: "75919882"
 
 | 機能  | 新規/更新  | 要約  |
 | --------- | --------- | --------- |
-| 継続的に使用できないファイル共有上のディスクへの書き込みを必要とする機能 | 新規 | ソフトウェアおよびハードウェア スタックから物理ディスクまでのファイル共有への書き込みが、書き込み操作が完了して戻る前に確実に行われるように、`NET USE /WRITETHROUGH` コマンドまたは `New-SMBMapping -UseWriteThrough` PowerShell コマンドレットを使用してファイル共有でのライトスルーを有効にすることができます。 ライトスルーを使用すると、パフォーマンスが低下することがあります。詳細については、ブログ記事「[SMB でのライトスルー動作の制御](https://techcommunity.microsoft.com/t5/storage-at-microsoft/controlling-write-through-behaviors-in-smb/bc-p/1083417#M677)」を参照してください。 |
+| 継続的に使用できないファイル共有上のディスクへの書き込みを必要とする機能 | 新規 | ソフトウェアおよびハードウェア スタックから物理ディスクまでのファイル共有への書き込みが、書き込み操作が完了して戻る前に確実に行われるように、`NET USE /WRITETHROUGH` コマンドまたは `New-SMBMapping -UseWriteThrough` PowerShell コマンドレットを使用してファイル共有でのライトスルーを有効にできます。 ライトスルーを使用すると、パフォーマンスが低下することがあります。詳細については、ブログ記事「[SMB でのライトスルー動作の制御](https://techcommunity.microsoft.com/t5/storage-at-microsoft/controlling-write-through-behaviors-in-smb/bc-p/1083417#M677)」を参照してください。 |
 
 ## <a name="features-added-in-windows-server-version-1709-and-windows-10-version-1709"></a>Windows Server バージョン 1709、Windows 10、バージョン 1709 で追加された機能
 

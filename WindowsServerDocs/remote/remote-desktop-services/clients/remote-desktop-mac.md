@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e73511709bfbee69a6dcbaaff4341c8b067079f3
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: ca68087ad238cbbd06c56e41dd65f318adae5222
+ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949865"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77465476"
 ---
 # <a name="get-started-with-the-macos-client"></a>macOS クライアントの概要
 
@@ -40,7 +40,7 @@ Mac 用のリモート デスクトップ クライアントを使用して、Ma
 3. リモート デスクトップ接続またはリモート リソースを追加します。 Windows PC とリモート リソースに直接接続する接続を使用して、RemoteApp およびデスクトップ接続を使用してオンプレミスで公開された RemoteApp プログラム、セッション ベースのデスクトップ、または仮想デスクトップを使用します。 この機能は、企業環境で通常使用できます。
 
 ## <a name="what-about-the-mac-beta-client"></a>Mac クライアントのベータ版について教えてください。
-HockeyApp 上のプレビュー チャネルで新機能をテストしています。 チェック アウトするか? [Mac 用 Microsoft リモート デスクトップ](https://go.microsoft.com/fwlink/?LinkID=619698)に移動して、 **[ダウンロード]** をクリックします。 ベータ版のクライアントをダウンロードする HockeyApp にサインインまたはアカウントを作成する必要はありません。
+AppCenter 上のプレビュー チャネルで新機能をテストしています。 チェック アウトするか? [Mac 用 Microsoft リモート デスクトップ](https://aka.ms/rdmacbeta)に移動して、 **[ダウンロード]** をクリックします。 ベータ版のクライアントをダウンロードするために、アカウントを作成したり AppCenter にサインインしたりする必要はありません。
 
 既にクライアントがある場合は、最新のバージョンがあることを確認する更新を確認することができます。 ベータ版クライアント をクリックして **Microsoft リモート デスクトップ Beta** クリックして、上にある **更新プログラムの確認**します。 
 

@@ -7,12 +7,12 @@ ms.topic: upgrade
 author: RobHindman
 ms.author: robhind
 ms.date: 09/16/2019
-ms.openlocfilehash: 62fe4f00cef121e6241a403ee339047cda9488b5
-ms.sourcegitcommit: 9a6a692a7b2a93f52bb9e2de549753e81d758d28
+ms.openlocfilehash: 8510b37c652dc7dfa95569a64dff8b1b75372a2d
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72591089"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517567"
 ---
 # <a name="upgrade-windows-server-2016-to-windows-server-2019"></a>Windows Server 2016 から Windows Server 2019 へのアップグレード
 
@@ -20,11 +20,11 @@ ms.locfileid: "72591089"
 
 ## <a name="before-you-begin-your-in-place-upgrade"></a>インプレース アップグレードを開始する前に
 
-Windows Server のアップグレードを開始する前に、診断とトラブルシューティングのためにデバイスから情報を収集することをお勧めします。 この情報は、アップグレードが失敗した場合にのみ使用することを目的としているため、デバイスから到達できる場所に情報を保存しておく必要があります。
+Windows Server のアップグレードを開始する前に、診断とトラブルシューティングのためにデバイスから情報を収集することをお勧めします。 この情報は、アップグレードが失敗した場合にのみ使用することを目的としているため、デバイスからアクセスできる場所に保存しておく必要があります。
 
 ### <a name="to-collect-your-info"></a>情報を収集するには
 
-1. コマンド プロンプトを開き、`c:\Windows\system32` にアクセスして、「**systeminfo.exe**」と入力します。
+1. コマンド プロンプトを開き、`c:\Windows\system32` に移動して、「**systeminfo.exe**」と入力します。
 
 2. 結果として得られたシステム情報をデバイスから任意の場所にコピーして貼り付け、保存します。
 
@@ -44,21 +44,21 @@ Windows Server 関連のすべての情報を収集したら、オペレーテ�
 
 3. **[はい]** を選択して、セットアップ プロセスを開始します。
 
-    ![セットアップを開始するアクセス許可を要求するユーザー アカウント制御](media/upgrade-2016-2019/start-setup-uac-box.png)
+    ![セットアップを開始するためのアクセス許可を要求するユーザー アカウント制御](media/upgrade-2016-2019/start-setup-uac-box.png)
 
-4. インターネットに接続されているデバイスの場合は、 **[Download updates, drivers and optional features (recommended)]\(更新プログラム、ドライバー、およびオプション機能をダウンロード (推奨)\)** オプションを選択し、 **[次へ]** を選択します。
+4. インターネットに接続されているデバイスの場合は、 **[Download updates, drivers and optional features (recommended)]\(更新プログラム、ドライバー、オプション機能をダウンロードする (推奨)\)** オプションを選択し、 **[次へ]** を選択します。
 
-    ![重要な Windows 更新プログラムを取得するためにオンラインにすることを選択する画面](media/upgrade-2016-2019/online-updates-win-setup.png)
+    ![重要な Windows 更新プログラムをオンラインで取得することを選択する画面](media/upgrade-2016-2019/online-updates-win-setup.png)
 
-5. セットアップでデバイスの構成が確認されます。その完了を待ってから、 **[次へ]** を選択します。
+5. デバイスの構成が確認されます。その完了を待ってから、 **[次へ]** を選択します。
 
-6. Windows Server メディアを受信した配布チャネル (製品版、ボリューム ライセンス、OEM、ODM など) とサーバーのライセンスに応じて、続行するためにライセンス キーを入力するように求められる場合があります。
+6. Windows Server メディアを受け取った配布チャネル (製品版、ボリューム ライセンス、OEM、ODM など) とサーバーのライセンスによっては、続行するためにライセンス キーを入力するように求められる場合があります。
 
 7. インストールする Windows Server 2019 エディションを選択し、 **[次へ]** を選択します。
 
-    ![インストールする Windows Server 2016 エディションを選択する画面](media/upgrade-2016-2019/select-os-edition.png)
+    ![インストールする Windows Server 2019 エディションを選択する画面](media/upgrade-2016-2019/select-os-edition.png)
 
-8. **[同意する]** を選択して、配布チャネル (製品版、ボリューム ライセンス、OEM、ODM など) に基づいて、ライセンス契約の条項に同意します。
+8. 配布チャネル (製品版、ボリューム ライセンス、OEM、ODM など) に応じて、 **[同意する]** を選択して、ライセンス条項に同意します。
 
     ![使用許諾契約書に同意する画面](media/upgrade-2016-2019/license-terms.png)
 
@@ -66,23 +66,23 @@ Windows Server 関連のすべての情報を収集したら、オペレーテ�
 
     ![インストールの種類を選択する画面](media/upgrade-2016-2019/choose-install-upgrade.png)
 
-10. セットアップによってデバイスが分析されたら、 **[インストール]** を選択してアップグレードを進めるように求められます。
+10. セットアップによるデバイスの分析後、 **[インストール]** を選択してアップグレードを進めるように求められます。
 
     ![アップグレードを開始する準備ができていることを示す画面](media/upgrade-2016-2019/ready-to-install.png)
 
-    インプレース アップグレードが開始され、進行状況を示す **[Windows のアップグレード]** 画面が表示されます。 アップグレードが完了すると、サーバーが再起動します。
+    インプレース アップグレードが開始され、進行状況を示す **[Windows をアップグレードしています]** 画面が表示されます。 アップグレードが完了すると、サーバーが再起動します。
 
     ![アップグレードの進行状況を表示している画面](media/upgrade-2016-2019/upgrading-windows-with-progress.png)
 
 ## <a name="after-your-upgrade-is-done"></a>アップグレードの完了後
 
-アップグレードが完了したら、Windows Server 2019 へのアップグレードが成功したことを確認する必要があります。
+アップグレードの完了後、Windows Server 2019 へのアップグレードが成功したことを確認する必要があります。
 
 ### <a name="to-make-sure-your-upgrade-was-successful"></a>アップグレードが成功したかどうかを確認するには
 
 1. レジストリ エディターを開き、`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion` キーに移動して、**ProductName** を表示します。 **Windows Server 2019 Datacenter** など、Windows Server 2019 のエディションが表示されるはずです。
 
-2. すべてのアプリケーションが実行されており、アプリケーションへのクライアント接続が正常に行われることを確認します。
+2. すべてのアプリケーションが実行されており、アプリケーションへのクライアント接続が正常に行われていることを確認します。
 
 アップグレード中に問題が発生したと思われる場合は、`%SystemRoot%\Panther` (通常は `C:\Windows\Panther`) ディレクトリをコピーして zip 圧縮し、Microsoft サポートにお問い合わせください。
 

@@ -9,12 +9,12 @@ ms.date: 01/22/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: adce37d8d06399d3a00221a12f3449244720ade7
-ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
+ms.openlocfilehash: 8061f41dab0f02bccd59a659e0bcd209bd73a249
+ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519484"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77517557"
 ---
 # <a name="whats-new-in-active-directory-federation-services"></a>Active Directory フェデレーション サービス (AD FS) の新機能
 
@@ -108,6 +108,18 @@ C. クライアントからは通常どおりアクセス トークン要求で�
 D. AD FS によって "code_verifier" が変換され、(B) の "t(code_verifier)" と比較されます。  同じでない場合、アクセスは拒否されます。 
 
 #### <a name="faq"></a>FAQ 
+> [!NOTE] 
+> ADFS 管理者イベント ログで、次のエラーが発生することがあります。Received invalid Oauth request. The client 'NAME' is forbidden to access the resource with scope 'ugs'. (無効な Oauth 要求を受け取りました。クライアント 'NAME' はスコープ 'ugs' のリソースへのアクセスを禁止されています。) このエラーを修復するには、次のようにします。 
+> 1. AD FS 管理コンソールを起動します。 [Services]\(サービス\) > [Scope Descriptions]\(スコープ記述\) を参照します
+> 2. [Scope Descriptions]\(スコープ記述\) を右クリックし、[Add Scope Description]\(スコープ記述の追加\) を選択します
+> 3. 名前に「ugs」と入力し、[適用] > [OK] をクリックします
+> 4. 管理者として PowerShell を起動します
+> 5. コマンド "Get-AdfsApplicationPermission" を実行します。 ClientRoleIdentifier を含む ScopeNames :{openid, aza} を探します。 ObjectIdentifier をメモしておきます。
+> 6. コマンド "Set-AdfsApplicationPermission -TargetIdentifier <手順 5 の ObjectIdentifier> -AddScope 'ugs' を実行します
+> 7. ADFS サービスを再起動します。
+> 8. クライアント側:クライアントを再起動します。 ユーザーは WHFB をプロビジョニングするように求められます。
+> 9. プロビジョニング ウィンドウがポップアップ表示されない場合は、NGC トレース ログを収集し、さらにトラブルシューティングを行う必要があります。
+
 **Q.** Azure AD に対する要求方法のように、スコープ値の一部としてリソース値を渡すことはできますか? 
 </br>**A.** Server 2019 の AD FS では、リソース値をスコープ パラメーターに埋め込んで渡すことができます。 スコープ パラメーターは、各エントリがリソース/スコープとして構成された、スペース区切りのリストとして作成できるようになりました。 例  
 **<有効なサンプル要求を作成する>**
