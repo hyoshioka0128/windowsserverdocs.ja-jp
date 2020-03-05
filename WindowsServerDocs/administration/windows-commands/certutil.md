@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45c9946cc53fe3a901c3f6ee53f082a5b3d086c0
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 71525e4051a079eb9a3d0c8c197c8157b53e5e67
+ms.sourcegitcommit: 1f3ffff0af340868dcf3a2cfef5b8f8aea69d96d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379653"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278547"
 ---
 # <a name="certutil"></a>certutil
 
 Certutil は、証明書サービスの一部としてインストールされるコマンドラインプログラムです。 Certutil を使用して、証明機関 (CA) の構成情報のダンプと表示、証明書サービスの構成、CA コンポーネントのバックアップと復元、証明書、キーペア、証明書チェーンの検証を行うことができます。
 
-追加のパラメーターを指定せずに証明機関で certutil を実行すると、現在の証明機関の構成が表示されます。 Cerutil が非証明機関で実行される場合、コマンドは既定で certutil [-dump](#-dump)動詞を実行します。
+追加のパラメーターを指定せずに証明機関で certutil を実行すると、現在の証明機関の構成が表示されます。 Certutil が非証明機関で実行されている場合、コマンドは既定で certutil [-dump](#-dump)動詞を実行します。
 
 > [!WARNING]
 > 以前のバージョンの certutil では、このドキュメントで説明されているすべてのオプションが提供されない場合があります。 「[構文表記](#syntax-notations)」セクションに示されているコマンドを実行すると、certutil の特定のバージョンで提供されるすべてのオプションを確認できます。
@@ -38,11 +38,11 @@ Certutil は、証明書サービスの一部としてインストールされ�
 - [[オプション](#options)]
 - [その他の certutil の例](#additional-certutil-examples)
 
-## <a name="verbs"></a>[動詞]
+## <a name="verbs"></a>動詞
 
 次の表では、certutil コマンドで使用できる動詞について説明します。
 
-|[動詞]|説明|
+|動詞|説明|
 |-----|-----------|
 |[-ダンプ](#-dump)|構成情報またはファイルをダンプする|
 |[-asn](#-asn)|Asn.1 ファイルを解析する|
@@ -143,17 +143,17 @@ Certutil は、証明書サービスの一部としてインストールされ�
   - `certutil -v -? > certutilhelp.txt`
   - `notepad certutilhelp.txt`
 
-次の表では、コマンドライン構文を示すために使用される表記法について説明します。
+次の表に、コマンド ライン構文を示すために使用される表記規則の説明を示します。
 
 
 |            表し             |                  説明                  |
 |---------------------------------|-----------------------------------------------|
-| 角かっこまたは中かっこを含まないテキスト |         表示されるように入力する必要がある項目          |
+| 角かっこ ([ ]) または中かっこ ({ }) がないテキスト |         表記されているとおりに入力する必要がある項目          |
 |  山かっこ内のテキストを \<>  | 値を指定する必要があるプレースホルダー |
 |  [角かっこ内のテキスト]  |                省略可能な項目                 |
-|      {中かっこ内のテキスト}       |       必須項目のセット1つ選択する       |
+|      {中かっこ内のテキスト}       |       1 つを選択する必要がある必須項目のセット       |
 |         縦棒 (          |                       )                       |
-|          省略記号 (...)           |          繰り返し可能な項目           |
+|          省略記号 (…)           |          繰り返し指定できる項目           |
 
 [メニュー](#menu)に戻る
 
@@ -1626,9 +1626,9 @@ CertUtil [オプション]-GetKey SearchToken の取得 |OutputFileBaseName の�
 
 SearchToken: 回復するキーと証明書を選択するために使用します。
 
-次のいずれかを指定できます。
+次のいずれかを使用できます。
 
-1. 証明書の共通名
+1. [証明書の共通名]
 2. 証明書のシリアル番号
 3. 証明書 SHA-1 ハッシュ (拇印)
 4. 証明書キー Id SHA-1 ハッシュ (サブジェクトキー識別子)
@@ -1712,7 +1712,7 @@ Salt: EPF 出力ファイル salt 文字列
 |-UnicodeText|出力ファイルを Unicode で書き込む|
 |-gmt|時刻を GMT として表示します|
 |-秒|秒とミリ秒を使用して時刻を表示する|
-|-サイレント|サイレントフラグを使用して crypt コンテキストを取得する|
+|-silent|サイレントフラグを使用して crypt コンテキストを取得する|
 |-分割|埋め込みの asn.1 要素を分割し、ファイルに保存する|
 |-v|詳細操作|
 |-privatekey|パスワードと秘密キーのデータを表示する|
@@ -1720,18 +1720,18 @@ Salt: EPF 出力ファイル salt 文字列
 |-urlfetch|AIA 証明書と CDP Crl を取得して検証する|
 |-config Machine\CAName|CA とコンピューター名の文字列|
 |-PolicyServer URLOrId|ポリシーサーバーの URL または Id。選択 U/I の場合は、-PolicyServer を使用します。 すべてのポリシーサーバーで、-PolicyServer \* を使用します。|
-|-匿名|匿名の SSL 資格情報を使用する|
+|-Anonymous|匿名の SSL 資格情報を使用する|
 |-Kerberos|Kerberos SSL 資格情報を使用する|
 |-ClientCertificate ClientCertId|X.509 証明書の SSL 資格情報を使用します。 選択 U/I の場合は、-clientCertificate を使用します。|
 |-ユーザー名|SSL 資格情報には名前付きアカウントを使用します。 選択 U/I の場合は、-UserName を使用します。|
-|-Cert CertId|署名用の証明書|
+|-Cert CertId|署名証明書|
 |-dc DCName|特定のドメインコントローラーをターゲットにする|
 |-RestrictionList を制限する|コンマ区切りの制限リスト。 各制限は、列名、関係演算子、および定数整数、文字列、または日付で構成されます。 並べ替え順序を示すには、1つの列名の前にプラスまたはマイナス記号を付けることができます。 例:</br>"RequestId = 47"</br>"+ RequesterName > = a, RequesterName < b"</br>"-RequesterName > ドメイン、ディスポジション = 21"|
 |-out ColumnList|コンマ区切りの列リスト|
-|-p パスワード|パスワード|
+|-p パスワード|Password|
 |-ProtectTo SAMNameAndSIDList|SAM 名/SID リストをコンマで区切って指定します。|
 |-csp プロバイダー|プロバイダー|
-|-t タイムアウト|URL フェッチのタイムアウト (ミリ秒)|
+|-t Timeout|URL フェッチのタイムアウト (ミリ秒)|
 |-symkeyalg SymmetricKeyAlgorithm [, KeyLength]|オプションのキー長を持つ対称キーアルゴリズムの名前 (例: AES、128、または 3DES)|
 
 [メニュー](#menu)に戻る

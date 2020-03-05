@@ -1,5 +1,5 @@
 ---
-title: 呼び出し
+title: call
 description: 'Windows コマンドに関するトピック * * * *- '
 ms.custom: na
 ms.prod: windows-server
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: 0e5f9f2b0102c12ee0925bb434fdeddde85e34cd
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 89097ec5d3711b3d8831f8c33b3778ed0752246f
+ms.sourcegitcommit: ee8fa8e1293f29229b5ce1b0f3d4a07ba99568f5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71379718"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78280193"
 ---
-# <a name="call"></a>呼び出し
+# <a name="call"></a>call
 
 
 
@@ -45,7 +45,7 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 |      BatchParameters > の \<       |                                            バッチプログラムに必要なコマンドライン情報を指定します。                                             |
 |           :\<ラベル >           |                                            バッチプログラムコントロールのジャンプ先のラベルを指定します。                                             |
 |         \<の引数 >          |                     バッチプログラムの新しいインスタンスに渡されるコマンドライン情報を指定します。このとき、: Label から開始し*ます。*                     |
-|              /?               |                                                             コマンド プロンプトにヘルプを表示します。                                                             |
+|              /?               |                                                             コマンド プロンプトでヘルプを表示します。                                                             |
 
 ## <a name="batch-parameters"></a>バッチパラメーター
 
@@ -78,9 +78,9 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 |% ~ dp $ PATH: 1|**%1**の path 環境変数に示されているディレクトリを検索し、見つかった最初のディレクトリのドライブ文字とパスに展開します。|
 |% ~ ftza1|**%1**を拡張して、 **dir**コマンドと同様の出力を表示します。|
 
-上記の例では、 **%1**と PATH を他の有効な値に置き換えることができます。 <strong>%~</strong>構文は、有効な引数の数値によって終了します。 <strong>%~</strong>修飾子は、 **%\\\*** と共に使用することはできません。
+上記の例では、 **%1**と PATH を他の有効な値に置き換えることができます。 <strong>%~</strong>構文は、有効な引数の数値によって終了します。 <strong>%~</strong>修飾子は、 **%\*** と共に使用することはできません。
 
-## <a name="remarks"></a>注釈
+## <a name="remarks"></a>コメント
 
 -   バッチパラメーターの使用
 
@@ -96,9 +96,9 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
     自身を呼び出すバッチプログラムを作成できます。 ただし、終了条件を指定する必要があります。 それ以外の場合、親と子のバッチプログラムは無限にループする可能性があります。
 -   コマンド拡張機能の使用
 
-    コマンド拡張機能が有効になっている場合は、呼び出しの対象として **ラベル** *が受け入れら* れます。 正しい構文は次のとおりです。
+    コマンド拡張機能が有効になっている場合は、呼び出しの対象として*ラベル***が受け入れら**れます。 正しい構文は次のとおりです。
 
-    `call :\<Label> <Arguments>`
+    `call :<Label> <Arguments>`
 
 ## <a name="BKMK_examples"></a>例
 
