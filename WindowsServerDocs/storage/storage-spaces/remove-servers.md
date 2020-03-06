@@ -11,15 +11,15 @@ description: Windows Server で記憶域スペース ダイレクト クラス�
 ms.date: 2/5/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: ce8caef2b51279c97cc012045750b7a73d97a4ba
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402811"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370742"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>記憶域スペース ダイレクトでのサーバーの削除
 
->適用対象:Windows Server 2019、Windows Server 2016
+>適用対象: Windows Server 2019、Windows Server 2016
 
 このトピックでは、PowerShell を使って[記憶域スペース ダイレクト](storage-spaces-direct-overview.md)でサーバーを削除する方法について説明します。
 
@@ -79,6 +79,6 @@ Windows はそのサーバーに保存されたデータをすべてクラスタ
    >[!NOTE]
    > 障害発生時やメンテナンス時など、短期的にサーバーが減ってもかまいません。 しかし、ボリュームが完全に正常な状態に戻るには、上に示したサーバーの最小数が必要です。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
