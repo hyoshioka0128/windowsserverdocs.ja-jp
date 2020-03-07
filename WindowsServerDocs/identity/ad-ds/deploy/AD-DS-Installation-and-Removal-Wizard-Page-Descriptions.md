@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 3563c30e86c53435c10cafc840a71c7b8c526943
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71391204"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371567"
 ---
 # <a name="ad-ds-installation-and-removal-wizard-page-descriptions"></a>AD DS インストール ウィザードおよび削除ウィザードのページの説明
 
@@ -40,7 +40,7 @@ ms.locfileid: "71391204"
   
 -   [前提条件の確認](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_PrerqCheckPage)  
   
--   [結果](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_Results)  
+-   [生じ](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_Results)  
   
 -   [役割の削除の資格情報](../../ad-ds/deploy/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions.md#BKMK_RemovalCredsPage)  
   
@@ -127,7 +127,7 @@ ms.locfileid: "71391204"
 -   **[ドメイン コントローラー オプション]** ページでは、フォレストの構成から適切な Active Directory 論理**サイト名**を選択することもできます。 既定では、最も適切なサブネットのサイトが選択されます。 サイトが 1 つだけの場合は、そのサイトが自動的に選択されます。  
   
     > [!IMPORTANT]  
-    > サーバーが Active Directory サブネットに属しておらず、複数のサイトが存在する場合は、何も選択されておらず、一覧からサイトを選択するまで **[次へ**] ボタンは使用できません。  
+    > サーバーが Active Directory のサブネットに属しておらず複数のサイトがある場合は、既定では何も選択されず、リストからサイトを選択するまで **[次へ]** ボタンは使用できません。  
   
 ドメインを作成する方法の詳細については、「 [Install a New Windows Server 2012 Active Directory Child また&#40;は Tree&#41;domain Level 200](../../ad-ds/deploy/../../ad-ds/deploy/../../ad-ds/deploy/Install-a-New-Windows-Server-2012-Active-Directory-Child-or-Tree-Domain--Level-200-.md)」を参照してください。  
   
@@ -175,7 +175,7 @@ DNS サーバーをインストールするときは、ゾーンに対する権�
   
 -   委任される管理者アカウントには、RODC に対するローカル管理アクセス許可が与えられます。 これらのユーザーは、ローカルコンピューターの Administrators グループに相当する特権を使用して操作できます。 これらのユーザーは、Domain Admins グループまたはドメインの組み込みの Administrator グループのメンバーではありません。 このオプションは、ドメインの管理アクセス許可を与えることなく支社の管理を委任する場合に便利です。 管理の委任の構成は必要ありません。 詳細については、「[管理者の役割の分離](https://technet.microsoft.com/library/cc753170(v=WS.10).aspx)」を参照してください。  
   
--   パスワード レプリケーション ポリシーはアクセス制御リスト (ACL) として機能します。 パスワード レプリケーション ポリシーによって、RODC がパスワードをキャッシュできるかどうかが決まります。 RODC は、認証済みのユーザーまたはコンピューターのログオン要求を受け取った後、パスワード レプリケーション ポリシーを参照して、アカウントのパスワードをキャッシュする必要があるかどうかを判別します。 同じアカウントによる以降のログオンをいっそう効率よく実行できます。  
+-   パスワード レプリケーション ポリシーは、アクセス制御リスト (ACL) として機能します。 パスワード レプリケーション ポリシーによって、RODC がパスワードをキャッシュできるかどうかが決まります。 認証されたユーザーまたはコンピューターのログオン要求を受け取った RODC は、パスワード レプリケーション ポリシーを参照して、そのアカウントのパスワードをキャッシュする必要があるかどうかを判断します。 同じアカウントによる以降のログオンをいっそう効率よく実行できます。  
   
     パスワード レプリケーション ポリシー (PRP) には、パスワードをキャッシュできるアカウント、およびパスワードのキャッシュを明示的に拒否されているアカウントが列記されています。 キャッシュできるアカウントのリストにユーザーおよびコンピューターが含まれていたとしても、RODC がそのアカウントのパスワードを実際にキャッシュしているとは限りません。 たとえば、管理者は事前に RODC がキャッシュするアカウントを指定できます。 これにより、RODC はハブ サイトへの WAN リンクがオフラインであっても、それらのアカウントを認証できます。  
   
@@ -210,7 +210,7 @@ AD DS データベース (NTDS.DIT)、ログ ファイル、SYSVOL の場所を�
 ## <a name="BKMK_AdprepCreds"></a>準備オプション  
 ![AD DS インストール](media/AD-DS-Installation-and-Removal-Wizard-Page-Descriptions/ADDS_SMI_PreparationOptions.gif)  
   
-現在のログオンで使用している資格情報が adprep.exe コマンドを実行するには十分ではなく、AD DS のインストールを完了するために adprep を実行する必要がある場合は、adprep.exe を実行するための資格情報の入力を求められます。 Windows Server 2012 を実行する最初のドメインコントローラーを既存のドメインまたはフォレストに追加するには、Adprep を実行する必要があります。 具体的な機能は次のとおりです。  
+現在のログオンで使用している資格情報が adprep.exe コマンドを実行するには十分ではなく、AD DS のインストールを完了するために adprep を実行する必要がある場合は、adprep.exe を実行するための資格情報の入力を求められます。 Windows Server 2012 を実行する最初のドメインコントローラーを既存のドメインまたはフォレストに追加するには、Adprep を実行する必要があります。 より詳細な情報:  
   
 -   Windows Server 2012 を実行する最初のドメインコントローラーを既存のフォレストに追加するには、Adprep/forestprep を実行する必要があります。 このコマンドは、Enterprise Admins グループ、Schema Admins グループ、およびスキーマ マスターをホストするドメインの Domain Admins グループのメンバーが実行する必要があります。 このコマンドが正常に完了するには、コマンドを実行するコンピューターとフォレストのスキーマ マスターが接続されている必要があります。  
   

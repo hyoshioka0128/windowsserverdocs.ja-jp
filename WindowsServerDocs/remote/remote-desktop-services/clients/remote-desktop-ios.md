@@ -15,11 +15,11 @@ ms.author: helohr
 date: 02/11/2020
 ms.localizationpriority: medium
 ms.openlocfilehash: ef13227a9f7b83f01786bbb11498da912c86581b
-ms.sourcegitcommit: 32211610ad9a24d282b35ed8c0aaa179497c63bf
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "77780821"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370686"
 ---
 # <a name="get-started-with-the-ios-client"></a>iOS クライアントの概要
 
