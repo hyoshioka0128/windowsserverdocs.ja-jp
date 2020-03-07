@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 05/31/2019
 ms.openlocfilehash: b82d2eaa9283d99993102f1656262e2eda86cfff
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
-ms.translationtype: HT
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950124"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371754"
 ---
 # <a name="connecting-windows-server-to-azure-hybrid-services"></a>Azure ハイブリッド サービスへの Windows Server の接続
 
@@ -155,7 +155,7 @@ Azure Cloud Shell を利用し Windows Admin Center 内で Bash または PowerS
 詳しくは、「[Azure Cloud Shell の概要](https://docs.microsoft.com/azure/cloud-shell/overview)」をご覧ください。
 
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>参照
 
 - [Windows Admin Center を Azure に接続する](azure-integration.md)
 - [Windows Admin Center を Azure に展開する](deploy-wac-in-azure.md)
