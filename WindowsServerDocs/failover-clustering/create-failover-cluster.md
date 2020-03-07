@@ -9,11 +9,11 @@ ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: d85866284272d80727d3fdb21c6e6447bd3ded2f
-ms.sourcegitcommit: c5709021aa98abd075d7a8f912d4fd2263db8803
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2020
-ms.locfileid: "76265764"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370636"
 ---
 # <a name="create-a-failover-cluster"></a>フェールオーバー クラスターを作成する
 
@@ -21,15 +21,15 @@ ms.locfileid: "76265764"
 
 このトピックでは、フェールオーバー クラスター マネージャー スナップインまたは Windows PowerShell を使用してフェールオーバー クラスターを作成する方法について説明します。 このトピックは、Active Directory ドメイン サービス (AD DS) でクラスターおよび関連するクラスター化された役割のコンピューター オブジェクトを作成する一般的な展開を対象としています。 記憶域スペースダイレクトクラスターをデプロイする場合は、「 [Deploy 記憶域スペースダイレクト](../storage/storage-spaces/deploy-storage-spaces-direct.md)」を参照してください。
 
-Active Directory デタッチされたクラスターを展開することもできます。 この展開方法を使用すると、AD DS でコンピューター オブジェクトを作成するための権限を要求したり、AD DS でコンピューター オブジェクトがプレステージされるように要求したりしなくても、フェールオーバー クラスターを作成できます。 この方法は Windows PowerShell のみで使用でき、特定のシナリオのみに対して推奨されます。 詳細については、「 [Deploy an Active Directory-Detached Cluster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))」を参照してください。
+Active Directory デタッチされたクラスターを展開することもできます。 この展開方法を使用すると、AD DS でコンピューター オブジェクトを作成するための権限を要求したり、AD DS でコンピューター オブジェクトがプレステージされるように要求したりしなくても、フェールオーバー クラスターを作成できます。 この方法は Windows PowerShell のみで使用でき、特定のシナリオのみに対して推奨されます。 詳細については、「[Active Directory からデタッチされたクラスターを展開する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))」を参照してください。
 
 #### <a name="checklist-create-a-failover-cluster"></a>チェックリスト: フェールオーバークラスターを作成する
 
-| 状況 | タスク | 辞書/リファレンス |
+| 状態 | タスク | 参照 |
 | ---    | ---  | ---       |
-| ☐    | 前提条件を検証する | [前提条件を確認します](#verify-the-prerequisites) |
+| ☐    | 前提条件を検証する | [前提条件を確認する](#verify-the-prerequisites) |
 | ☐    | クラスター ノードとして追加する各サーバーにフェールオーバー クラスタリング機能をインストールする | [フェールオーバークラスタリング機能をインストールする](#install-the-failover-clustering-feature) |
-| ☐    | クラスター検証ウィザードを実行して構成を検証する | [構成の検証](#validate-the-configuration) |
+| ☐    | クラスター検証ウィザードを実行して構成を検証する | [構成を検証する](#validate-the-configuration) |
 | ☐ | クラスターの作成ウィザードを実行してフェールオーバー クラスターを作成する | [フェールオーバークラスターを作成する](#create-the-failover-cluster) |
 | ☐ | クラスター化された役割を作成してクラスター ワークロードをホストする | [クラスター化された役割の作成](#create-clustered-roles) |
 
@@ -38,7 +38,7 @@ Active Directory デタッチされたクラスターを展開することもで
 開始する前に、次の前提条件を検証します。
 
 - クラスター ノードとして追加するすべてのサーバーで同じバージョンの Windows Server が実行されていることを確認します。
-- ハードウェア要件を確認し、目的の構成がサポートされていることを確認します。 詳細については、「 [Failover Clustering Hardware Requirements and Storage Options](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj612869(v%3dws.11))」を参照してください。 記憶域スペースダイレクトクラスターを作成する場合は、「[ハードウェア要件の記憶域スペースダイレクト](../storage/storage-spaces/storage-spaces-direct-hardware-requirements.md)」を参照してください。
+- ハードウェア要件を確認し、目的の構成がサポートされていることを確認します。 詳細については、「[フェールオーバー クラスタリングのハードウェア要件と記憶域オプション](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj612869(v%3dws.11))」を参照してください。 記憶域スペースダイレクトクラスターを作成する場合は、「[ハードウェア要件の記憶域スペースダイレクト](../storage/storage-spaces/storage-spaces-direct-hardware-requirements.md)」を参照してください。
 - クラスターの作成中にクラスター化された記憶域を追加するには、すべてのサーバーが記憶域にアクセスできることを確認します。 (クラスターの作成後にクラスター化された記憶域を追加することもできます)。
 - クラスター ノードとして追加するすべてのサーバーが同じ Active Directory ドメインに参加していることを確認します。
 - (オプション) 組織単位 (OU) を作成し、クラスター ノードとして追加するサーバーのコンピューター アカウントを OU に移動します。 ベスト プラクティスとして、フェールオーバー クラスターを AD DS で専用の OU に配置することをお勧めします。 これにより、クラスター ノードに影響を及ぼすグループ ポリシー設定またはセキュリティ テンプレート設定をより細かく制御できるようになります。 また、クラスターを専用の OU に分離することによって、クラスターのコンピューター オブジェクトが誤って削除されるのを防ぐことができます。
@@ -47,11 +47,11 @@ Active Directory デタッチされたクラスターを展開することもで
 
 - クラスターを作成するために使用するアカウントが、クラスター ノードとして追加するすべてのサーバーに対する管理者権限を持つドメイン ユーザーであることを確認します。
 - 次のいずれかに該当することを確認します。
-    - クラスターを作成するユーザーが、OU に対して、またはクラスターを形成するサーバーが存在するコンテナーに対して、 **コンピューター オブジェクトを作成する** 権限を持っている。
-    - **コンピューター オブジェクトを作成する** 権限を持っていない場合、クラスターのコンピューター オブジェクトをプレステージするようにドメイン管理者に依頼している。 詳細については、「 [Prestage Cluster Computer Objects in Active Directory Domain Services](prestage-cluster-adds.md)」を参照してください。
+    - クラスターを作成するユーザーが、OU に対して、またはクラスターを形成するサーバーが存在するコンテナーに対して、**コンピューター オブジェクトを作成する**権限を持っている。
+    - **コンピューター オブジェクトを作成する**権限を持っていない場合、クラスターのコンピューター オブジェクトをプレステージするようにドメイン管理者に依頼している。 詳細については、「[Active Directory ドメイン サービスでクラスター コンピューター オブジェクトをプレステージする](prestage-cluster-adds.md)」を参照してください。
 
 > [!NOTE]
-> Windows Server 2012 R2 で Active Directory デタッチされたクラスターを作成する場合、この要件は適用されません。 詳細については、「 [Deploy an Active Directory-Detached Cluster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))」を参照してください。
+> Windows Server 2012 R2 で Active Directory デタッチされたクラスターを作成する場合、この要件は適用されません。 詳細については、「[Active Directory からデタッチされたクラスターを展開する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))」を参照してください。
 
 ## <a name="install-the-failover-clustering-feature"></a>フェールオーバー クラスター機能をインストールする
 
@@ -87,33 +87,33 @@ Active Directory デタッチされたクラスターを展開することもで
 
 1. リモート サーバー管理ツールからフェールオーバー クラスター管理ツールをインストールしたコンピューター、またはフェールオーバー クラスタリング機能をインストールしたサーバーで、フェールオーバー クラスター マネージャーを起動します。 サーバーでこれを行うにはサーバーマネージャーを起動し、 **[ツール]** メニューの **[フェールオーバークラスターマネージャー]** をクリックします。
 2. **フェールオーバークラスターマネージャー**ウィンドウの **[管理]** で、 **[構成の検証]** を選択します。
-3. **[開始する前に]** ページで、 **[次へ]** を選択します。
-4. **[サーバーまたはクラスターの選択]** ページの **[名前の入力]** ボックスに、フェールオーバークラスターノードとして追加する予定のサーバーの NetBIOS 名または完全修飾ドメイン名を入力し、 **[追加]** を選択します。 追加するサーバーごとに、この手順を繰り返します。 一度に複数のサーバーを追加するには、名前をコンマまたはセミコロンで区切って入力します。 たとえば、`server1.contoso.com, server2.contoso.com`の形式で名前を入力します。 操作が完了したら、 **[次へ]** をクリックします。
+3. **[開始する前]** に ページで、 **[次へ]** を選択します。
+4. **[サーバーまたはクラスターの選択]** ページの **[名前の入力]** ボックスに、フェールオーバークラスターノードとして追加する予定のサーバーの NetBIOS 名または完全修飾ドメイン名を入力し、 **[追加]** を選択します。 追加するサーバーごとに、この手順を繰り返します。 一度に複数のサーバーを追加するには、名前をコンマまたはセミコロンで区切って入力します。 たとえば、`server1.contoso.com, server2.contoso.com`の形式で名前を入力します。 操作が完了したら、 **[次へ]** を選択します。
 5. **[テストオプション]** ページで、 **[すべてのテストを実行する (推奨)]** を選択し、 **[次へ]** を選択します。
 6. **[確認]** ページで、 **[次へ]** を選択します。
 
     検証ページに、実行されているテストのステータスが表示されます。
 7. **[概要]** ページで、次のいずれかの操作を実行します。
     
-      - テストが正常に完了し、構成がクラスタリングに適していることを確認し、クラスターをすぐに作成する場合は、検証された **[ノードを使用してクラスターを今すぐ作成]** する チェックボックスがオンになっていることを確認し、 **[完了]** を選択します。 次に、「 [フェールオーバー クラスターを作成する](#create-the-failover-cluster) 」の手順 4 に進みます。
+      - テストが正常に完了し、構成がクラスタリングに適していることを確認し、クラスターをすぐに作成する場合は、検証された **[ノードを使用してクラスターを今すぐ作成]** する チェックボックスがオンになっていることを確認し、 **[完了]** を選択します。 次に、「[フェールオーバー クラスターを作成する](#create-the-failover-cluster)」の手順 4 に進みます。
       - 結果で警告またはエラーが発生したことが示された場合は、 **[レポートの表示]** を選択して詳細を表示し、修正が必要な問題を特定します。 特定の検証テストで警告が発生した場合、フェールオーバー クラスターのこの面はサポートされるものの、推奨されるベスト プラクティスを満たしていない可能性があります。
         
         > [!NOTE]
         > 記憶域の永続的な予約の検証テストで警告が発生した場合は、ブログ記事「 [Windows フェールオーバー クラスター検証の警告でディスクが記憶域の永続的な予約をサポートしていないことが示された場合](https://blogs.msdn.microsoft.com/clustering/2013/05/24/validate-storage-spaces-persistent-reservation-test-results-with-warning/) 」を参照してください。
 
-ハードウェア検証テストの詳細については、「 [Validate Hardware for a Failover Cluster](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)>)」を参照してください。
+ハードウェア検証テストの詳細については、「[フェールオーバー クラスター用ハードウェアを検証する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)>)」を参照してください。
 
 ## <a name="create-the-failover-cluster"></a>フェールオーバー クラスターを作成する
 
-この手順を完了するには、ログオンに使用するユーザー アカウントが、このトピックの「 [前提条件を検証する](#verify-the-prerequisites) 」セクションで説明した要件を満たしている必要があります。
+この手順を完了するには、ログオンに使用するユーザー アカウントが、このトピックの「[前提条件を検証する](#verify-the-prerequisites)」セクションで説明した要件を満たしている必要があります。
 
 1. サーバー マネージャーを起動します。
 2. **[ツール]** メニューの **[フェールオーバークラスターマネージャー]** をクリックします。
 3. **フェールオーバークラスターマネージャー**ウィンドウの **[管理]** で、 **[クラスターの作成]** を選択します。
     
-    クラスターの作成ウィザードが表示されます。
-4. **[開始する前に]** ページで、 **[次へ]** を選択します。
-5. **[サーバーの選択**] ページが表示されたら、 **[名前の入力]** ボックスに、フェールオーバークラスターノードとして追加する予定のサーバーの NetBIOS 名または完全修飾ドメイン名を入力し、 **[追加]** を選択します。 追加するサーバーごとに、この手順を繰り返します。 一度に複数のサーバーを追加するには、名前をコンマまたはセミコロンで区切って入力します。 たとえば、 *server1.contoso.com; server2.contoso.com*という形式で入力します。 操作が完了したら、 **[次へ]** をクリックします。
+    クラスターの作成ウィザードが開きます。
+4. **[開始する前]** に ページで、 **[次へ]** を選択します。
+5. **[サーバーの選択**] ページが表示されたら、 **[名前の入力]** ボックスに、フェールオーバークラスターノードとして追加する予定のサーバーの NetBIOS 名または完全修飾ドメイン名を入力し、 **[追加]** を選択します。 追加するサーバーごとに、この手順を繰り返します。 一度に複数のサーバーを追加するには、名前をコンマまたはセミコロンで区切って入力します。 たとえば、*server1.contoso.com; server2.contoso.com* という形式で入力します。 操作が完了したら、 **[次へ]** を選択します。
     
     > [!NOTE]
     > [構成の検証手順](#validate-the-configuration)で検証を実行した直後にクラスターを作成することを選択した場合、 **[サーバーの選択**] ページは表示されません。 検証済みのノードはクラスターの作成ウィザードに自動的に追加されるため、それらをもう一度入力する必要はありません。
@@ -130,11 +130,11 @@ Active Directory デタッチされたクラスターを展開することもで
       >[!NOTE]
       > Windows Server 2019 を使用している場合は、クラスターに分散ネットワーク名を使用することもできます。 分散ネットワーク名では、クラスターの専用 IP アドレスを要求するのではなく、メンバーサーバーの IP アドレスを使用します。 既定では、Windows は、Azure でクラスターを作成していることを検出すると (クラスターの内部ロードバランサーを作成する必要はありません)、分散ネットワーク名を使用します。オンプレミスで実行している場合は、通常の静的または IP アドレスを使用します。 詳細については、「[分散ネットワーク名](https://blogs.windows.com/windowsexperience/2018/08/14/announcing-windows-server-2019-insider-preview-build-17733/#W0YAxO8BfwBRbkzG.97)」を参照してください。
     
-    3. 操作が完了したら、 **[次へ]** をクリックします。
+    3. 操作が完了したら、 **[次へ]** を選択します。
 8. **[確認]** ページで、設定を確認します。 既定では、 **[使用可能な記憶域をすべてクラスターに追加する]** チェック ボックスがオンになっています。 次のいずれかの場合は、このチェック ボックスをオフにします。
     
       - 記憶域を後で構成する。
-      - クラスター化された記憶域スペースをフェールオーバー クラスター マネージャーまたはフェールオーバー クラスタリング Windows PowerShell コマンドレットで作成する予定であり、ファイル サービスおよび記憶域サービスで記憶域スペースをまだ作成していない。 詳細については、「 [Deploy Clustered Storage Spaces](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)」を参照してください。
+      - クラスター化された記憶域スペースをフェールオーバー クラスター マネージャーまたはフェールオーバー クラスタリング Windows PowerShell コマンドレットで作成する予定であり、ファイル サービスおよび記憶域サービスで記憶域スペースをまだ作成していない。 詳細については、「[クラスター化された記憶域スペースを展開する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)」を参照してください。
 9. フェールオーバークラスターを作成するには、 **[次へ]** を選択します。
 10. **[概要]** ページで、フェールオーバー クラスターが正常に作成されたことを確認します。 警告またはエラーが発生した場合は、概要出力を表示するか、 **[レポートの表示]** を選択して完全なレポートを表示します。 **[完了]** を選択します。
 11. クラスターが作成されたことを確認するには、クラスター名がナビゲーション ツリーの **[フェールオーバー クラスター マネージャー]** の下に表示されていることを確認します。 クラスター名を展開し、 **[ノード]** 、 **[記憶域]** 、または **[ネットワーク]** の下の項目を選択して、関連付けられているリソースを表示することができます。
@@ -160,17 +160,17 @@ Active Directory デタッチされたクラスターを展開することもで
    | ---------       | ---------                    |
    | 名前空間サーバー     |   名前空間 (ファイルサーバーロールの一部)       |
    | DFS 名前空間サーバー     |  DHCP サーバーの役割       |
-   | 分散トランザクション コーディネーター (DTC)     | None        |
-   | ファイル サーバー     |  ファイル サーバーの管理       |
-   | 汎用アプリケーション     |  適用できません       |
-   | 汎用スクリプト     |   適用できません      |
-   | 汎用サービス     |   適用できません      |
-   | Hyper-V レプリカ ブローカー     |   Hyper-V の役割      |
+   | 分散トランザクション コーディネータ (DTC)     | なし        |
+   | ファイル サーバー     |  ファイル サーバーの役割       |
+   | 汎用アプリケーション     |  該当なし       |
+   | 汎用スクリプト     |   該当なし      |
+   | 汎用サービス     |   該当なし      |
+   | Hyper-V レプリカ ブローカー     |   Hyper-V ロール      |
    | iSCSI ターゲット サーバー     |    iSCSI ターゲット サーバー (ファイル サーバーの役割の一部)     |
    | iSNS サーバー     |  iSNS サーバー サービスの機能       |
    | メッセージ キュー     |  メッセージ キュー サービスの機能       |
-   | 他のサーバー     |  None       |
-   | 仮想マシン     |  Hyper-V の役割       |
+   | 他のサーバー     |  なし       |
+   | Virtual Machine     |  Hyper-V ロール       |
    | WINS サーバー     |   WINS サーバーの機能      |
 
 2. フェールオーバークラスターマネージャーで、クラスター名を展開し、 **[役割]** を右クリックして、 **[役割の構成]** を選択します。
@@ -182,7 +182,7 @@ Active Directory デタッチされたクラスターを展開することもで
 次の Windows PowerShell コマンドレットは、このトピックの前の手順と同じ機能を実行します。 1 行ずつ各コマンドレットを入力します。書式上の制約から複数行に改行されて表示される場合もあります。
 
 > [!NOTE]
-> Windows Server 2012 R2 で Active Directory デタッチされたクラスターを作成するには、Windows PowerShell を使用する必要があります。 構文については、「 [Deploy an Active Directory-Detached Cluster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))」を参照してください。
+> Windows Server 2012 R2 で Active Directory デタッチされたクラスターを作成するには、Windows PowerShell を使用する必要があります。 詳細については、「[Active Directory からデタッチされたクラスターを展開する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))」を参照してください。
 
 次の例では、フェールオーバー クラスター機能をインストールします。
 
@@ -190,7 +190,7 @@ Active Directory デタッチされたクラスターを展開することもで
 Install-WindowsFeature –Name Failover-Clustering –IncludeManagementTools
 ```
 
-次の例では、 *Server1* および *Server2*という名前のコンピューターですべてのクラスター検証テストを実行します。
+次の例では、*Server1* および *Server2* という名前のコンピューターですべてのクラスター検証テストを実行します。
 
 ```PowerShell
 Test-Cluster –Node Server1, Server2
@@ -199,7 +199,7 @@ Test-Cluster –Node Server1, Server2
 > [!NOTE]
 > **テストクラスター**コマンドレットは、現在の作業ディレクトリのログファイルに結果を出力します。 例: C:\Users\<username > \Appdata\local\temp)
 
-次の例では、 *Server1* および *Server2* というノードを持つ *MyCluster*という名前のフェールオーバー クラスターを作成し、静的 IP アドレス *192.168.1.12*を割り当て、使用可能な記憶域をすべてフェールオーバー クラスターに追加します。
+次の例では、*Server1* および *Server2* というノードを持つ *MyCluster* という名前のフェールオーバー クラスターを作成し、静的 IP アドレス *192.168.1.12* を割り当て、使用可能な記憶域をすべてフェールオーバー クラスターに追加します。
 
 ```PowerShell
 New-Cluster –Name MyCluster –Node Server1, Server2 –StaticAddress 192.168.1.12
@@ -211,7 +211,7 @@ New-Cluster –Name MyCluster –Node Server1, Server2 –StaticAddress 192.168.
 New-Cluster –Name MyCluster –Node Server1, Server2 –StaticAddress 192.168.1.12 -NoStorage
 ```
 
-次の例では、 *MyCluster* という名前のクラスターをドメイン *Contoso.com* の *Cluster*OU に作成します。
+次の例では、*MyCluster* という名前のクラスターをドメイン *Contoso.com* の *Cluster* OU に作成します。
 
 ```PowerShell
 New-Cluster -Name CN=MyCluster,OU=Cluster,DC=Contoso,DC=com -Node Server1, Server2
@@ -219,11 +219,11 @@ New-Cluster -Name CN=MyCluster,OU=Cluster,DC=Contoso,DC=com -Node Server1, Serve
 
 クラスター化された役割を追加する方法の例については、「 [Add-ClusterFileServerRole](https://docs.microsoft.com/powershell/module/failoverclusters/add-clusterfileserverrole?view=win10-ps) 」や「 [Add-ClusterGenericApplicationRole](https://docs.microsoft.com/powershell/module/failoverclusters/add-clustergenericapplicationrole?view=win10-ps)」などのトピックを参照してください。
 
-## <a name="more-information"></a>説明を見る
+## <a name="more-information"></a>詳細
 
   - [フェールオーバー クラスタリング](failover-clustering.md)
   - [Hyper-v クラスターを展開する](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj863389(v%3dws.11)>)
-  - [アプリケーションデータのスケールアウトファイルサーバー](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831349(v%3dws.11)>)
+  - [アプリケーション データ用のスケールアウト ファイル サーバー](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831349(v%3dws.11)>)
   - [Active Directory デタッチされたクラスターを展開する](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))
   - [高可用性のためのゲストクラスタリングの使用](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn440540(v%3dws.11)>)
   - [クラスター対応更新](cluster-aware-updating.md)
