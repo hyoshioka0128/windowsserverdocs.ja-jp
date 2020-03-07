@@ -13,15 +13,15 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 48eb7009215e484fb00e704c7b328340240321d2
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865158"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371225"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>Windows Server Essentials でのデバイスの管理
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
  
  以下のセクションでは、サーバーのデバイス管理機能について説明し、さらに、ネットワーク上のデバイスを設定して使用する方法について説明します。  
   
@@ -74,7 +74,7 @@ ms.locfileid: "70865158"
   
 ### <a name="computer-tasks-in-the-dashboard"></a>ダッシュボードでのコンピューターに関するタスク  
   
-|タスク名|説明|  
+|[タスク名]|説明|  
 |---------------|-----------------|  
 |コンピューターのプロパティの表示|選択したコンピューターの一般的な情報が表示されます。さらに、コンピューターのバックアップの詳細を確認することができます。|  
 |このコンピューターのバックアップの設定|バックアップの設定ウィザードを実行します。|  
@@ -100,7 +100,7 @@ ms.locfileid: "70865158"
   
 3.  ユーザー アカウント一覧で、変更するユーザー アカウントを選択します。  
   
-4.  [**ユーザー\>アカウントタスクの <** ] ウィンドウで、 **[アカウントのプロパティの表示]** をクリックします。 ユーザー アカウントの **[プロパティ]** ページが表示されます。  
+4.  **< ユーザーアカウントの\> のタスク** ウィンドウで、**アカウントのプロパティの表示** をクリックします。 ユーザー アカウントの **[プロパティ]** ページが表示されます。  
   
 5.  **[コンピューター アクセス]** タブで、このユーザーがリモートでアクセスできるコンピューターを選択し、 **[OK]** をクリックします。  
   
@@ -127,9 +127,9 @@ ms.locfileid: "70865158"
   
 2.  ナビゲーション バーで、 **[デバイス]** をクリックします。  
   
-3.  Windows Server Essentials の場合:グローバルの **[ユーザー タスク]** ウィンドウで、 **[グループ ポリシーの実装]** をクリックします。  
+3.  Windows Server Essentials の場合: グローバル **[ユーザーのタスク]** ウィンドウで、 **[グループポリシーの実装]** をクリックします。  
   
-     Windows Server Essentials の場合:グローバルの **[デバイス タスク]** ウィンドウで、 **[グループ ポリシーの実装]** をクリックします。  
+     Windows Server Essentials の場合: グローバル **[デバイスタスク]** ウィンドウで、 **[グループポリシーの実装]** をクリックします。  
   
 4.  グループ ポリシーの実装ウィザードが開きます。  
   
@@ -175,13 +175,13 @@ ms.locfileid: "70865158"
   
 1.  コンピューターの一覧で、プロパティを表示または変更するアカウントを選択します。  
   
-2.  [ **< Computername\>タスク**] ウィンドウで、 **[コンピューターのプロパティの表示]** をクリックします。 コンピューターの **[プロパティ]** ページが表示されます。  
+2.  **< Computername\> のタスク**ウィンドウで、 **[コンピューターのプロパティの表示]** をクリックします。 コンピューターの **[プロパティ]** ページが表示されます。  
   
 3.  タブをクリックすると、そのコンピューターのプロパティが表示されます。  
   
 4.  コンピューターのプロパティに対して行った変更を保存するには、 **[適用]** をクリックします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 -   [リモート Web アクセスの管理](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   

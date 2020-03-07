@@ -8,15 +8,15 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
 ms.openlocfilehash: ace6eb30ae6df2dc29aacc05eb7852e03145df4f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386859"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370656"
 ---
 # <a name="guarded-fabric-and-shielded-vms-overview"></a>保護されたファブリックとシールドされた VM の概要
 
->適用対象:Windows Server 2019、Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: windows server 2019、Windows Server (半期チャネル)、Windows Server 2016
 
 ## <a name="overview-of-the-guarded-fabric"></a>保護されたファブリックの概要
 
@@ -34,7 +34,7 @@ ms.locfileid: "71386859"
 
 ![保護されたホスト ファブリック](../media/Guarded-Fabric-Shielded-VM/Guarded-Host-Overview-Diagram.png)
 
-## <a name="video-introduction-to-shielded-virtual-machines"></a>ビデオ:シールドされた仮想マシンの概要 
+## <a name="video-introduction-to-shielded-virtual-machines"></a>ビデオ: シールドされた仮想マシンの概要 
 
 <iframe src="https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016/player" width="650" height="440" allowFullScreen frameBorder="0"></iframe>
 
@@ -49,7 +49,7 @@ HGS は、保護されたファブリックのさまざまな構成証明モー�
 
 | **ホスト用に選択した構成証明モード**                                            | **ホストの保証** |
 |-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|**TPM-信頼された構成証明:** は、可能な限り強力な保護を提供しますが、さらに多くの構成手順も必要です。 ホストのハードウェアとファームウェアには、セキュアブートが有効になっている TPM 2.0 と UEFI 2.3.1 が含まれている必要があります。 | 保護されたホストは、TPM id、メジャーブートシーケンス、およびコード整合性ポリシーに基づいて承認され、承認されたコードのみが実行されるようにします。| 
+|**TPM によって信頼された構成証明:** 最強の保護を実現しますが、必要な構成手順が多くなります。 ホストのハードウェアとファームウェアには、セキュアブートが有効になっている TPM 2.0 と UEFI 2.3.1 が含まれている必要があります。 | 保護されたホストは、TPM id、メジャーブートシーケンス、およびコード整合性ポリシーに基づいて承認され、承認されたコードのみが実行されるようにします。| 
 | **ホストキーの構成証明:** TPM 2.0 を使用できない既存のホストハードウェアをサポートすることを目的としています。 必要な構成手順が少なく、一般的なサーバー ハードウェアに対応します。 | 保護されたホストは、キーの所有に基づいて承認されます。 | 
 
 **管理者によって信頼された構成証明**書という別のモードは、Windows Server 2019 以降では非推奨とされます。 このモードは、指定された Active Directory Domain Services (AD DS) セキュリティグループの保護されたホストメンバーシップに基づいています。 ホストキーの構成証明は同様のホスト id を提供し、セットアップが簡単です。 
@@ -106,14 +106,14 @@ HGS は、シールドされた VM をシールドを作成する方法ととも
 |VM の状態とライブ マイグレーション トラフィックの暗号化 | はい、必須/構成可能 |  はい、必須/強制  |
 |統合コンポーネント | ファブリック管理者が構成可能      | 特定の統合コンポーネント (例: データ交換、PowerShell ダイレクト) はブロック |
 |仮想マシン接続 (コンソール)、HID デバイス (例: キーボード、マウス) | オン、無効化は不可 | Windows Server バージョン1803以降のホストで有効になります。以前のホストでは無効 |
-|COM/シリアル ポート   | Supported                             | 無効 (有効化は不可) |
-|デバッガーを VM プロセスにアタッチします。<sup>1</sup>| Supported          | 無効 (有効化は不可) |
+|COM/シリアル ポート   | サポート対象                             | 無効 (有効化は不可) |
+|デバッガーを VM プロセスにアタッチします。<sup>1</sup>| サポート対象          | 無効 (有効化は不可) |
 
 <sup>1</sup>プロセスに直接アタッチされる従来のデバッガー (WinDbg など) は、シールドされた vm に対してブロックされます。これは、VM のワーカープロセス (vmwp .exe) が保護されたプロセスライト (PPL) であるためです。 LiveKd によって使用されるような代替のデバッグ手法はブロックされません。 シールドされた Vm とは異なり、暗号化がサポートされている Vm のワーカープロセスは PPL として実行されないため、WinDbg などの従来のデバッガーは引き続き正常に機能します。 
 
 シールドされた VM と暗号化サポート VM の両方は、ライブ マイグレーション、Hyper-V レプリカ、VM チェックポイントといった一般的なファブリック管理機能を引き続きサポートします。
 
-## <a name="the-host-guardian-service-in-action-how-a-shielded-vm-is-powered-on"></a>ホストガーディアンサービスは次のように動作します。シールドされた VM の電源をオンにする方法
+## <a name="the-host-guardian-service-in-action-how-a-shielded-vm-is-powered-on"></a>ホスト ガーディアン サービスが実行中: シールドされた VM をオンにする方法
 
 ![シールド データファイル](../media/Guarded-Fabric-Shielded-VM/shielded-vms-how-a-shielded-vm-is-powered-on.png)
 
@@ -125,7 +125,7 @@ HGS は、シールドされた VM をシールドを作成する方法ととも
 
     保護されたホストが、構成証明を要求します。 構成証明モードは、ホスト ガーディアン サービスで指定されます。
 
-    **TPM-信頼された構成証明**:Hyper-v ホストは次の情報を送信します。
+    **TPM-信頼された構成証明**: hyper-v ホストは次の情報を送信します。
 
        - TPM 識別情報 (その保証キー)
        - 最新のブート シーケンスで起動されたプロセスに関する情報 (TCG ログ)
@@ -133,9 +133,9 @@ HGS は、シールドされた VM をシールドを作成する方法ととも
 
        Attestation happens when the host starts and every 8 hours thereafter. If for some reason a host doesn't have an attestation certificate when a VM tries to start, this also triggers attestation.
 
-    **ホストキーの構成証明**:Hyper-v ホストは、キーペアの公開半分を送信します。 HGS は、ホストキーが登録されていることを検証します。 
+    **ホストキーの構成証明**: hyper-v ホストは、キーペアの公開半分を送信します。 HGS は、ホストキーが登録されていることを検証します。 
     
-    **管理者によって信頼された構成証明**:Hyper-v ホストは、ホストがあるセキュリティグループを識別する Kerberos チケットを送信します。 信頼された HGS 管理者によって先に構成されたセキュリティ グループにそのホストが属していることを HGS が検証します。
+    **管理者によって信頼された構成証明**: ホストが属するセキュリティ グループを識別する Kerberos チケットが Hyper-V ホストから送信されます。 信頼された HGS 管理者によって先に構成されたセキュリティ グループにそのホストが属していることを HGS が検証します。
 
 3. 構成証明が成功 (または失敗) します。
 
@@ -164,7 +164,7 @@ HGS は、シールドされた VM をシールドを作成する方法ととも
 
 ## <a name="guarded-fabric-and-shielded-vm-glossary"></a>保護されたファブリックとシールドされた VM の用語集
 
-| 項目              | 定義           |
+| 用語              | Definition           |
 |----------|------------|
 | ホスト ガーディアン サービス (HGS) | セキュリティで保護されたベア メタル サーバー クラスターにインストールされている Windows Server の役割です。この役割では、Hyper-V ホストの正常性を測定できます。シールドされた VM をオンにするときや、シールドされた VM のライブ マイグレーションを実行するときに、正常な Hyper-V ホストにキーをリリースすることもできます。 これら 2 つの機能はシールドされた VM ソリューションに必須であり、それぞれ**構成証明サービス**と**キー保護サービス**と呼ばれます。 |
 | 保護されたホスト | シールドされた VM を実行できる Hyper-V ホスト。 ホストは、HGS の構成証明サービスによって正常と見なされた場合にのみ、_保護_されていると見なすことができます。 Hyper-V ホストがまだ構成証明されていない場合や、構造証明に失敗した場合は、シールドされた VM をオンにしたり、シールドされた VM をそのようなホストにライブ マイグレートしたりすることはできません。 |
@@ -176,9 +176,9 @@ HGS は、シールドされた VM をシールドを作成する方法ととも
 | 仮想化ベースのセキュリティ (VBS) | 管理者から保護されている Hyper-v ベースの処理およびストレージ環境。 仮想保護モードのシステムでは、オペレーティング システムの管理者に表示されないオペレーティング システム キーを格納できます。|
 | 仮想 TPM | トラステッド プラットフォーム モジュール (TPM) の仮想化されたバージョン。 Windows Server 2016 の Hyper-v 以降では、物理 TPM で物理マシンを暗号化できるのと同じように、仮想 TPM 2.0 デバイスを提供して仮想マシンを暗号化できます。|
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)
-- ブログ[データセンターとプライベートクラウドのセキュリティに関するブログ](https://blogs.technet.microsoft.com/datacentersecurity/)
-- ビデオ:[シールドされた Virtual Machines の概要](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
-- ビデオ:[Windows Server 2016 Hyper-v を使用したシールドされた Vm の詳細](https://channel9.msdn.com/events/Ignite/2016/BRK3124)
+- ブログ:[データセンターとプライベートクラウドのセキュリティ](https://blogs.technet.microsoft.com/datacentersecurity/)に関するブログ
+- ビデオ: シールドされた[Virtual Machines の概要](https://channel9.msdn.com/Shows/Mechanics/Introduction-to-Shielded-Virtual-Machines-in-Windows-Server-2016)
+- ビデオ: [Windows Server 2016 hyper-v を使用したシールドされた vm の](https://channel9.msdn.com/events/Ignite/2016/BRK3124)詳細

@@ -9,11 +9,11 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 09/25/2019
 ms.openlocfilehash: 26ff5e27494e2f42a0c8e4d28e2b9820f8d19e6a
-ms.sourcegitcommit: 471464a674a53c468a2f1e28575c91245ce9badf
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75548188"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370756"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>テナント用のシールドされた Vm-シールドされた VM を定義するシールドデータの作成
 
@@ -92,7 +92,7 @@ VMM の署名済みテンプレートディスクは一般化されているた�
     | 置換文字列 | 置換の例 |
     |---------------------|----------------------|
     | @IP4Addr-1@         | 192.168.1.10/24      |
-    | @MACAddr-1@         | Ethernet             |
+    | @MACAddr-1@         | イーサネット             |
     | @Prefix-1-1@        | 24                   |
     | @NextHop-1-1@       | 192.168.1.254        |
     | @IP4Addr-2@         | 10.0.20.30/24        |
@@ -255,7 +255,7 @@ New-ShieldingDataFile -ShieldingDataFilePath "C:\temp\Marketing-LBI.pdk" -Policy
 
 シールドデータファイルを構成するためのその他の方法については、 [ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps)と[New-VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps)のコマンドレットのドキュメントを参照してください。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>参照
 
 - [シールドされた VMの展開](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 - [保護されたファブリックとシールドされた VM](guarded-fabric-and-shielded-vms-top-node.md)

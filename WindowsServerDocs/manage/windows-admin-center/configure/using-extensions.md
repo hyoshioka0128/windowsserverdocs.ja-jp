@@ -8,15 +8,15 @@ ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 7c1a70e36dfac9b23ded8f920ffcc8cccbfff023
-ms.sourcegitcommit: 7c7fc443ecd0a81bff6ed6dbeeaf4f24582ba339
-ms.translationtype: HT
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2019
-ms.locfileid: "74903950"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371120"
 ---
 # <a name="install-and-manage-extensions"></a>拡張機能のインストールと管理
 
->適用先:Windows Admin Center、Windows Admin Center Preview
+>適用対象: Windows Admin Center、Windows Admin Center Preview
 
 Windows Admin Center は拡張可能なプラットフォームとして構築されています。各接続の種類とツールは、個別にインストール、アンインストール、更新が可能な拡張機能です。 Microsoft や他の開発者から発行された新しい拡張機能を検索し、Windows Admin Center インストール全体を更新することなく、個別にインストールおよび更新できます。 また、個別の NuGet フィードまたはファイル共有を構成し、組織内で使用する拡張機能を配布することもできます。
 
@@ -86,4 +86,4 @@ Windows Admin Center プレビューには、ゲートウェイ拡張機能を�
 
 [!INCLUDE [ps-extensions](../includes/ps-extensions.md)]
 
-### <a name="learn-more-about-building-an-extension-with-the-windows-admin-center-sdkextendextensibility-overviewmd"></a>[Windows Admin Center SDK を使用した拡張機能の構築の詳細については、こちらを参照してください](../extend/extensibility-overview.md)。
+### <a name="learn-more-about-building-an-extension-with-the-windows-admin-center-sdk"></a>[Windows Admin Center SDK を使用した拡張機能の構築の詳細については、こちらを参照してください](../extend/extensibility-overview.md)。

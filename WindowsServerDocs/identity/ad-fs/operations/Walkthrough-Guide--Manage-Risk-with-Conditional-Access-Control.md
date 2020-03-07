@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: aefcd597a580de526a758c6d026c6c91d02d10c8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407465"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371664"
 ---
 # <a name="walkthrough-guide-manage-risk-with-conditional-access-control"></a>チュートリアル ガイド:条件付きアクセス制御によってリスクを管理する
 
@@ -66,7 +66,7 @@ ms.locfileid: "71407465"
     アプリケーションへのアクセスが許可されます。
 
 ## <a name="BKMK_3"></a>手順 3: ユーザーデータに基づいて条件付きアクセス制御ポリシーを構成する
-この手順では、ユーザーのグループ メンバーシップ データに基づくアクセス制御ポリシーを設定します。 つまり、サンプル アプリケーションである **claimapp** を表す証明書利用者信頼について、フェデレーション サーバーで **発行承認規則**を構成します。 この規則のロジックにより、 **Robert Hatley** AD ユーザーは**Finance**グループに属しているため、このアプリケーションにアクセスするために必要な要求が発行されます。 **Robert Hatley**アカウントを**Finance**グループに追加しました。「 [Windows Server 2012 R2 の AD FS 用のラボ環境をセットアップ](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)する」をご確認ください。
+この手順では、ユーザーのグループ メンバーシップ データに基づくアクセス制御ポリシーを設定します。 つまり、サンプル アプリケーションである **claimapp** を表す証明書利用者信頼について、フェデレーション サーバーで**発行承認規則**を構成します。 この規則のロジックにより、 **Robert Hatley** AD ユーザーは**Finance**グループに属しているため、このアプリケーションにアクセスするために必要な要求が発行されます。 **Robert Hatley**アカウントを**Finance**グループに追加しました。「 [Windows Server 2012 R2 の AD FS 用のラボ環境をセットアップ](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)する」をご確認ください。
 
 AD FS 管理コンソールまたは Windows PowerShell のいずれかを使用してこのタスクを完了できます。
 
@@ -86,7 +86,7 @@ AD FS 管理コンソールまたは Windows PowerShell のいずれかを使用
 
     2.  **[入力方向の要求の種類]** として **[グループ SID]** を選択します。
 
-    3.  **[参照]** をクリックし、AD テスト グループの名前として「 **Finance** 」と入力します。この名前は **[入力方向の要求の値]** に解決されます。
+    3.  **[参照]** をクリックし、AD テスト グループの名前として「**Finance**」と入力します。この名前は **[入力方向の要求の値]** に解決されます。
 
     4.  **[この入力方向の要求を行ったユーザーのアクセスを拒否]** オプションを選択します。
 
@@ -114,7 +114,7 @@ Set-AdfsRelyingPartyTrust -TargetRelyingParty $rp -IssuanceAuthorizationRules $G
 > <group_SID> を必ず AD グループ **Finance** の SID の値に置き換えます。
 
 ## <a name="BKMK_4"></a>手順 4: 条件付きアクセス制御メカニズムを確認する
-この手順では、前の手順で設定した条件付きアクセス制御ポリシーを確認します。 次の手順を使用して、**Finance** グループに属している AD ユーザー **Robert Hatley** はサンプル アプリケーションにアクセスでき、**Finance** グループに属していない AD ユーザーはサンプル アプリケーションにアクセスできないことを確認できます。
+この手順では、前の手順で設定した条件付きアクセス制御ポリシーを確認します。 次の手順を使用して、AD ユーザー **Robert Hatley** が **Finance** グループに属しているためサンプル アプリケーションにアクセスできること、**Finance** グループに属していない AD ユーザーはサンプル アプリケーションにアクセスできないことを確認できます。
 
 1.  クライアントコンピューターで、ブラウザーウィンドウを開き、サンプルアプリケーションに移動します。 **https://webserv1.contoso.com/claimapp**
 

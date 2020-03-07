@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 03/24/2019
 ms.openlocfilehash: 28108a79bbdc654f6437a698c158a3f74d4423ba
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407016"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371130"
 ---
 # <a name="monitor-servers-and-configure-alerts-with-azure-monitor-from-windows-admin-center"></a>Windows 管理センターからサーバーを監視し、Azure Monitor でアラートを構成する
 

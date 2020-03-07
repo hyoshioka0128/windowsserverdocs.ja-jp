@@ -15,11 +15,11 @@ ms.author: helohr
 ms.date: 12/02/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: cb0fa7009c4a8fe53810f8b5f058e659c2391dc1
-ms.sourcegitcommit: 76469d1b7465800315eaca3e0c7f0438fc3939ed
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2020
-ms.locfileid: "75919837"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78370687"
 ---
 # <a name="get-started-with-the-android-client"></a>Android クライアントの概要
 
