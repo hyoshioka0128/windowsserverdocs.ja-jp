@@ -1,6 +1,6 @@
 ---
 title: Windows Server Essentials でのサーバー バックアップの管理
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,35 +13,35 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 7e40a4675cf77d55a3047b41e0ab852fd7cd9de9
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433213"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371220"
 ---
 # <a name="manage-server-backup-in-windows-server-essentials"></a>Windows Server Essentials でのサーバー バックアップの管理
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
   
  次のトピックには、Windows Server Essentials ダッシュボードを使用して実行できるバックアップの一般的なタスクに関する情報が含まれています。  
   
--   [バックアップを選択する必要がありますか。](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_WhichBackup)  
+-   [どのバックアップを選択すればよいですか?](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_WhichBackup)  
   
 -   [サーバー バックアップのセットアップまたはカスタマイズ](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [進行中のサーバー バックアップを停止します。](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [サーバーバックアップの停止中](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_2)  
   
--   [バックアップのリモート管理します。](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_3)  
+-   [バックアップのリモート管理](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_3)  
   
--   [サーバーのバックアップを無効にします。](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_4)  
+-   [サーバーバックアップを無効にする](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_4)  
   
--   [サーバー バックアップの設定の詳細します。](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_5)  
+-   [サーバーバックアップのセットアップに関する詳細情報](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_5)  
   
--   [サーバーのハード ドライブのパーティションを再作成します。](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_6)  
+-   [サーバーのハードドライブのパーティションを再分割する](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_6)  
   
--   [サーバー バックアップからファイルとフォルダーを復元します。](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_7)  
+-   [サーバーバックアップからのファイルとフォルダーの復元](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_7)  
   
-##  <a name="BKMK_WhichBackup"></a> バックアップを選択する必要がありますか。  
+##  <a name="BKMK_WhichBackup"></a>どのバックアップを選択すればよいですか?  
  ごく最近の正しいバックアップがあり、そのバックアップに重要なデータがすべて格納されていることがわかっている場合は、バックアップの選択は簡単です。 古いバックアップから、サーバーまたはコンピューターへの復元を実行する際にバックアップの復元先を選ぶ場合、調査や場合によって何らかの妥協が必要になることがあります。  
   
 #### <a name="to-choose-a-backup"></a>バックアップを選択するには  
@@ -54,15 +54,15 @@ ms.locfileid: "66433213"
   
 4.  ベスト プラクティスとして、ファイルやフォルダーを別の場所に復元し、ファイルやフォルダーの所有者に指示して、必要なファイルやフォルダーを元の場所に移すことができます。 移動後は、別の場所に残っているファイルやフォルダーは削除できます。  
   
-##  <a name="BKMK_1"></a> セットアップまたはサーバーのバックアップのカスタマイズ  
+##  <a name="BKMK_1"></a>サーバーバックアップのセットアップまたはカスタマイズ  
  サーバーのバックアップがインストール時に自動的に構成されることはありません。 日次バックアップのスケジュールを設定して、サーバーとサーバー上のデータを自動的に保護する必要があります。 ほとんどの組織は数日間作成されたデータを失う余裕はないため、毎日のバックアップ計画を維持することをお勧めします。 詳細については、「[サーバー バックアップのセットアップまたはカスタマイズ](Set-up-or-customize-server-backup.md)」を参照してください。  
   
-##  <a name="BKMK_2"></a> 進行中のサーバー バックアップを停止します。  
+##  <a name="BKMK_2"></a>サーバーバックアップの停止中  
  サーバー バックアップがスケジュール設定した時刻に自動的に起動した場合でも、手動で開始した場合でも、進行中のバックアップを停止することができます。  
   
 #### <a name="to-stop-a-backup-in-progress"></a>進行中のバックアップを停止するには  
   
-1.  ダッシュボードを開きます。  
+1.  [ダッシュボード] を開きます。  
   
 2.  ナビゲーション バーで、 **[デバイス]** をクリックします。  
   
@@ -70,7 +70,7 @@ ms.locfileid: "66433213"
   
 4.  **[はい]** をクリックして、操作を確定します。  
   
-##  <a name="BKMK_3"></a> バックアップのリモート管理します。  
+##  <a name="BKMK_3"></a>バックアップのリモート管理  
  オフィスを離れている間に、Windows Server Essentials のリモート Web アクセスを使って、Windows Server Essentials ダッシュボードにアクセスして、サーバーを管理することができます。  
   
 #### <a name="to-use-remote-web-access-to-manage-your-server"></a>リモート Web アクセスを使用して、サーバーを管理するには  
@@ -81,13 +81,13 @@ ms.locfileid: "66433213"
   
 3. プロンプトが表示されたら、ユーザー名とパスワードを入力します。  
   
-4. リモート Web アクセスでサーバーの名前をクリックすると、ダッシュ ボードのログオン ページが表示されます。  
+4. リモート Web アクセスでサーバーの名前をクリックすると、ダッシュボードのログオンページが表示されます。  
   
 5. 管理者としてダッシュボードにログオンし、 **[デバイス]** をクリックします。  
   
-   リモート Web アクセスの詳細については、次を参照してください。[リモート Web アクセスの概要](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview)します。  
+   リモート Web アクセスの詳細については、「 [remote Web アクセスの概要](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview)」を参照してください。  
   
-##  <a name="BKMK_4"></a> サーバーのバックアップを無効にします。  
+##  <a name="BKMK_4"></a>サーバーバックアップを無効にする  
  日次バックアップのスケジュールを設定して、サーバーとサーバー上のデータを自動的に保護する必要があります。 ほとんどの組織は数日間作成されたデータを失う余裕はないため、毎日のバックアップ計画を維持することをお勧めします。  
   
  既にサーバー バックアップを構成していて、後になってサード パーティ製アプリケーションを使ってサーバーをバックアップする場合は、Windows Server Essentials のサーバー バックアップを無効にできます。  
@@ -105,16 +105,16 @@ ms.locfileid: "66433213"
   
 4.  サーバー バックアップのカスタマイズ ウィザードが表示されます。  
   
-5.  **[構成オプション]** ページで、 **[サーバー バックアップを無効にする]** をクリックします。 ウィザードの指示に従います。  
+5.  **[構成オプション]** ページで、 **[サーバー バックアップを無効にする]** をクリックします。 ウィザードの指示に従って操作します。  
   
-##  <a name="BKMK_5"></a> サーバー バックアップの設定の詳細します。  
+##  <a name="BKMK_5"></a>サーバーバックアップのセットアップに関する詳細情報  
  サーバーのセットアップ中は、サーバー バックアップは有効になりません。  
   
 > [!NOTE]
 >  サーバーのバックアップを構成するときに、そのバックアップ先のハード ドライブとして使用するサーバーに、少なくとも 1 つの外部のハード ディスク ドライブを接続してください。  
   
-###  <a name="BKMK_Target"></a> バックアップ先ドライブ  
- 複数の外部記憶域ドライブをバックアップに使用し、オンサイトとオフサイトの記憶域場所をローテーションすることができます。 これにより、オンサイトのハードウェアで物理的破損が発生しても、データの回復がサポートされるため、障害対策計画を向上させることができます。  
+###  <a name="BKMK_Target"></a>バックアップ先ドライブ  
+ 複数の外部記憶域ドライブをバックアップに使用し、オンサイトとオフサイトの記憶域場所をローテーションすることができます。 このような格納方法は、オンサイトのハードウェアに物理的な損傷が発生した場合のデータの回復に役立つため、障害対策の計画を改善できます。  
   
  サーバー バックアップ用にストレージ ドライブを選択した場合、以下の点を考慮してください。  
   
@@ -159,7 +159,7 @@ ms.locfileid: "66433213"
   
  たとえば大量のハード ドライブ容量を使用する、テレビ番組の録画が記録されているフォルダーがあるとします。 通常、これらのファイルは見終わった後に削除するため、これらのファイルをバックアップしないことを選択できます。 または、保持することを目的としない一時ファイルが含まれているフォルダーが存在している場合もあります。  
   
-##  <a name="BKMK_6"></a> サーバーのハード ドライブのパーティションを再作成します。  
+##  <a name="BKMK_6"></a>サーバーのハードドライブのパーティションを再分割する  
  フォーマットされていない内部ハード ディスク ドライブが、Windows Server Essentials サーバーで検出された場合、新しいハード ドライブの追加ウィザードへのリンクが含まれている正常性アラートが生成されます。 新しいハード ドライブの追加ウィザードでは、ハード ドライブをフォーマットするためのさまざまなオプションを使用する手順が表示されます。 ウィザードが終了すると、ドライブのサイズに応じて、ハードドライブ上にフォーマット済みの論理ハード ドライブが 1 つまたは複数作成され、NTFS としてフォーマットされます。  
   
  ハード ディスク ドライブ パーティションの再作成が必要な場合、以下の手順に従ってください。  
@@ -182,20 +182,20 @@ ms.locfileid: "66433213"
     > [!NOTE]
     >  ハード ディスク ドライブ上のすべての未割り当ての領域に対して、この手順を繰り返します。  
   
-##  <a name="BKMK_7"></a> サーバー バックアップからファイルとフォルダーを復元します。  
+##  <a name="BKMK_7"></a>サーバーバックアップからのファイルとフォルダーの復元  
  サーバー バックアップから個々 のファイルとフォルダーを参照して復元できます。  
   
 #### <a name="to-restore-files-and-folders-from-a-server-backup"></a>ファイルとフォルダーをサーバーのバックアップから復元するには  
   
 1.  ダッシュボードを開き、 **[デバイス]** タブをクリックします。  
   
-2.  サーバー名をクリックし、 **作業** ウィンドウで **[サーバーのファイルまたはフォルダーの復元]** をクリックします。  
+2.  サーバー名をクリックし、**作業**ウィンドウで **[サーバーのファイルまたはフォルダーの復元]** をクリックします。  
   
 3.  ファイルまたはフォルダーの復元ウィザードが開きます。 ウィザードの指示に従って、ファイルまたはフォルダーを復元します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
--   [バックアップの管理と復元](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)  
+-   [バックアップと復元の管理](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)  
   
 -   [Windows Server Essentials の管理](Manage-Windows-Server-Essentials.md)  
   

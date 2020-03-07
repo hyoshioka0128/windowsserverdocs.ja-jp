@@ -8,15 +8,15 @@ ms.author: harowl
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: d681e5007cd3ae3c14de774df0bc85abc23b51d7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
-ms.translationtype: HT
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406832"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371690"
 ---
 # <a name="windows-admin-center-and-related-management-solutions-from-microsoft"></a>Windows Admin Center と Microsoft の関連する管理ソリューション
 
->適用先:Windows Admin Center、Windows Admin Center Preview
+>適用対象: Windows Admin Center、Windows Admin Center Preview
 
 [Windows Admin Center](windows-admin-center.md) は、従来のインボックス サーバー管理ツールを進化させたもので、トラブルシューティングまたは構成のためにリモート デスクトップ (RDP) を使用してサーバーに接続した可能性のある状況に対するものです。 これは、その他の既存の Microsoft 管理ソリューションを置き換えるものではなく、むしろ、以下に説明するように、これらのソリューションを補完するものです。
 
@@ -45,6 +45,6 @@ ms.locfileid: "71406832"
 |Hyper-V、記憶域スペース ダイレクト、および SDN を統合した、**個別**の 2 から 4 のノード **HCI** クラスターの最適化された管理|SCVMM を使用して**ベア メタル**から**データ センター規模**で Hyper-V、Windows Server クラスターを展開および管理|
 |**HCI で監視**のみ; クラスター正常性サービスは履歴を格納します。 1 番目と 3 番目のパーティ**管理ツール拡張機能**の拡張可能なプラットフォーム|アラート、通知、サード パーティ製負荷監視を備えた SCOM での**拡張可能** & **スケーラブルな監視**プラットフォーム; 履歴用 SQL|
 |**ハイブリッド**への最も簡単なブリッジ; オンボードであり、データ保護、レプリケーション、更新プログラムなどにさまざまな Azure サービスを使用|**組み込み**データ保護、レプリケーション、更新プログラム (DPM/VMM/SCCM)。 Log Analytics および Service Map とのハイブリッド統合|
-|次の Windows Server の**プラットフォーム機能に焦点を当てます**。Storage Migration Service、Storage Replica、System Insights など。|**追加のプラットフォーム**:Orchestrator/SMA での自動化。SCSM およびその他のサービス管理ツールとの統合|
+|Windows Server の**プラットフォーム機能**を活用します。記憶域移行サービス、記憶域レプリカ、System Insights などです。|**追加のプラットフォーム**: ORCHESTRATOR/SMA の自動化。SCSM & 他のサービス管理ツールとの統合|
 
 #### <a name="each-delivers-targeted-value-independently-better-together-with-complementary-capabilities"></a>それぞれは独立して目標値を提供します; 補完機能と**一緒に使用するとより適切**です。
