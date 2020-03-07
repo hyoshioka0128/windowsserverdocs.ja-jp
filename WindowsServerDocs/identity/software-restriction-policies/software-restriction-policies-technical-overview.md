@@ -1,5 +1,5 @@
 ---
-title: ソフトウェアの制限のポリシーの技術概要
+title: ソフトウェア制限のポリシーの技術概要 (英語ページの可能性があります)
 description: Windows Server のセキュリティ
 ms.custom: na
 ms.prod: windows-server
@@ -14,19 +14,19 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
 ms.openlocfilehash: 293239c9f746f939b06d45d6e8c1a50b59e2bc43
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407139"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371738"
 ---
-# <a name="software-restriction-policies-technical-overview"></a>ソフトウェアの制限のポリシーの技術概要
+# <a name="software-restriction-policies-technical-overview"></a>ソフトウェア制限のポリシーの技術概要 (英語ページの可能性があります)
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、ソフトウェアの制限のポリシーについて説明します。この機能を使用するタイミングと方法、過去のリリースで実装された変更点、および Windows で始まるソフトウェアの制限のポリシーの作成と展開に役立つその他のリソースへのリンクを示します。サーバー2008および Windows Vista。
 
-## <a name="introduction"></a>概要
+## <a name="introduction"></a>はじめに
 ソフトウェアの制限のポリシーを使用すると、管理者は、ソフトウェアを特定し、ローカルコンピューターで実行する機能を制御するためのグループポリシー主導のメカニズムを利用できます。 これらのポリシーは、Microsoft Windows オペレーティングシステム (Windows Server 2003 および Windows XP Professional 以降) を実行しているコンピューターを既知の競合から保護し、悪意のあるウイルスなどのセキュリティ上の脅威からコンピューターを保護するために使用できます。トロイの木馬プログラムです。 ソフトウェアの制限のポリシーを使えば、コンピューターの構成に厳格な制限を加え、指定したアプリケーションに限って実行を許可することもできます。 ソフトウェアの制限のポリシーは、Microsoft Active Directory とグループ ポリシーに統合されています。 スタンドアロン コンピューター上でソフトウェアの制限のポリシーを作成することも可能です。
 
 ソフトウェアの制限のポリシーは信頼ポリシーであり、スクリプトなどの必ずしも信頼できないコードの実行を制限するために管理者が設定する規則です。 ローカルグループポリシーエディターに対するソフトウェアの制限のポリシーの拡張機能は、アプリケーションの使用を制限するための設定をローカルコンピューターまたはドメイン全体で管理できる、単一のユーザーインターフェイスを提供します。
@@ -75,7 +75,7 @@ IT 組織とユーザーは、どのソフトウェアを実行するのが安�
 ## <a name="BKMK_Diffs_Changes"></a>機能の相違点と変更点
 Windows Server 2012 および Windows 8 では、SRP の機能に変更はありません。
 
-**サポートされるバージョン**
+**サポートされているバージョン**
 
 ソフトウェアの制限のポリシーは、windows server 2012 を含む windows Server 2003 以降および windows 8 を含む Windows XP 以降を実行しているコンピューターでのみ構成および適用できます。
 
@@ -97,7 +97,7 @@ Windows Server 2012 および Windows 8 では、SRP の機能に変更はあり
 |指定されたファイルの種類|SRP では、実行可能なファイルの種類の一覧をサポートしています。この一覧は拡張できます。 管理者は、実行可能と見なす必要があるファイルの拡張子を追加できます。|AppLocker では、この機能はサポートされません。 AppLocker では、現在、次のファイル拡張子がサポートされます。<br /><br />-実行可能ファイル (.exe、.com)<br />-Dll (.ocx、.dll)<br />-スクリプト (.vbs、.js、ps1、.cmd、.bat)<br />-Windows インストーラー (.msi、.mst、.msp)<br />-パッケージアプリインストーラー (.appx)|
 |規則の種類|SRP では、4 つの規則の種類がサポートされます。<br /><br />-ハッシュ<br />-Path<br />-署名<br />-インターネットゾーン|AppLocker では、3 つの規則の種類がサポートされます。<br /><br />-ハッシュ<br />-Path<br />-パブリッシャー|
 |ハッシュ値の編集|SRP を使用すると、管理者はカスタムハッシュ値を指定できます。|AppLocker では、ハッシュ値自体が計算されます。 内部的には、ポータブル実行可能ファイル (Exe および Dll) と Windows インストーラーの SHA1 Authenticode ハッシュと、残りの場合は SHA1 フラットファイルハッシュを使用します。|
-|さまざまなセキュリティ レベルのサポート|SRP 管理者は、アプリを実行できるアクセス許可を指定できます。 そのため、管理者は、メモ帳が常に制限されたアクセス許可で実行され、管理者特権を使用せずに実行されるように規則を構成できます。<br /><br />Windows Vista 以前の SRP では、複数のセキュリティ レベルがサポートされます。 Windows 7 では、一覧は次の2つのレベルのみに制限されていました。[許可しない] と [無制限] (基本ユーザーは [禁止] に変換されます)。|AppLocker では、セキュリティ レベルがサポートされません。|
+|さまざまなセキュリティ レベルのサポート|SRP 管理者は、アプリを実行できるアクセス許可を指定できます。 そのため、管理者は、メモ帳が常に制限されたアクセス許可で実行され、管理者特権を使用せずに実行されるように規則を構成できます。<br /><br />Windows Vista 以前の SRP では、複数のセキュリティ レベルがサポートされます。 Windows 7 では、この一覧は、[許可しない] と [無制限] の2つのレベルに制限されていました (基本ユーザーは許可されていません)。|AppLocker では、セキュリティ レベルがサポートされません。|
 |パッケージアプリとパッケージアプリのインストーラーを管理する|利用できません。|.appx は、AppLocker が管理できる有効なファイルの種類です。|
 |ユーザーまたはユーザー グループへの規則のターゲット設定|SRP の規則は、特定のコンピューター上のすべてのユーザーに適用されます。|AppLocker 規則は、特定のユーザーまたはユーザー グループを対象にできます。|
 |規則の例外のサポート|SRP では、規則の例外がサポートされません。|AppLocker の規則には例外を含めることができます。これにより、管理者は "Regedit.exe を除くすべてのウィンドウを許可する" などの規則を作成できます。|
@@ -123,7 +123,7 @@ Windows Server 2012 および Windows 8 では、SRP の機能に変更はあり
 
 -   Authenticode および WinVerify 信頼 Api は、署名された実行可能ファイルを処理するために使用されます。
 
--   イベントビューアー。 ソフトウェアの制限のポリシーによって使用される関数は、イベントをイベントビューアーログに記録します。
+-   イベント ビューアー。 ソフトウェアの制限のポリシーによって使用される関数は、イベントをイベントビューアーログに記録します。
 
 -   ポリシーの結果セット (RSoP)。クライアントに適用される有効なポリシーの診断に役立ちます。
 
@@ -173,14 +173,14 @@ SRP アーキテクチャの詳細、SRP がルール、プロセス、および
 
 -   別のドメインまたはサイトの GPO にリンクすると、パフォーマンスが低下する可能性があります。
 
-## <a name="additional-resources"></a>その他の技術情報
+## <a name="additional-resources"></a>その他のリソース
 
-|コンテンツの種類|リファレンス|
+|コンテンツの種類|参照|
 |--------|-------|
 |**計画**|[ソフトウェアの制限のポリシーに関するテクニカルリファレンス](https://technet.microsoft.com/library/cc728085(v=WS.10).aspx)|
 |**運用**|[ソフトウェア制限ポリシーの管理](administer-software-restriction-policies.md)|
 |**トラブルシューティング**|[ソフトウェアの制限のポリシーのトラブルシューティング (2003)](https://technet.microsoft.com/library/cc737011(v=WS.10).aspx)|
-|**Security**|[ソフトウェアの制限のポリシーに関する脅威と対策 (2008)](https://technet.microsoft.com/library/dd349795(v=WS.10).aspx)<br /><br />[ソフトウェアの制限のポリシーに関する脅威と対策 (2008 R2)](https://technet.microsoft.com/library/hh125926(v=WS.10).aspx)|
+|**セキュリティ**|[ソフトウェアの制限のポリシーに関する脅威と対策 (2008)](https://technet.microsoft.com/library/dd349795(v=WS.10).aspx)<br /><br />[ソフトウェアの制限のポリシーに関する脅威と対策 (2008 R2)](https://technet.microsoft.com/library/hh125926(v=WS.10).aspx)|
 |**ツールと設定**|[ソフトウェアの制限のポリシーのツールと設定 (2003)](https://technet.microsoft.com/library/cc782454(v=WS.10).aspx)|
 |**コミュニティ リソース**|[ソフトウェアの制限のポリシーによるアプリケーションのロックダウン](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
 

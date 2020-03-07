@@ -10,15 +10,15 @@ author: vpetter
 ms.date: 03/27/2018
 ms.localizationpriority: ''
 ms.openlocfilehash: 46c633af8cf82ac43d2a787a7193685d88ad0ecc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71361009"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371784"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Windows エラー報告を使用したフェールオーバークラスターのトラブルシューティング 
 
-> 適用対象:Windows Server 2019、Windows Server 2016、Windows Server
+> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server
 
 Windows エラー報告 (WER) は、高度な管理者または階層3のサポートが Windows によって検出された情報を収集し、マイクロソフトに報告するために役立つ、柔軟なイベントベースのフィードバックインフラストラクチャです。とは、使用可能な任意のソリューションをユーザーに提供します。 この[リファレンス](https://docs.microsoft.com/powershell/module/windowserrorreporting/)では、すべての WindowsErrorReporting コマンドレットの説明と構文について説明します。
 
@@ -255,7 +255,7 @@ DynamicSig[29].Name=FailureTime
 DynamicSig[29].Value=2017//12//12-22:38:05.485
 ```
 
-リソースをオンラインにできなかったため、ダンプは収集されませんでしたが、Windows エラー報告レポートはログを収集しました。 Microsoft Message Analyzer を使用してすべての .evtx ファイルを開くと、システムチャネル、アプリケーションチャネル、フェールオーバークラスター診断チャネル、およびその他のクエリを使用して収集されたすべての情報が表示されます **。** 汎用チャネル。
+リソースをオンラインにできなかったため、ダンプは収集されませんでしたが、Windows エラー報告レポートはログを収集しました。 Microsoft Message Analyzer を使用してすべての **.evtx**ファイルを開くと、システムチャネル、アプリケーションチャネル、フェールオーバークラスター診断チャネル、および他のいくつかの汎用チャネルを通じて収集されたすべての情報が表示されます。
 
 ```powershell
 PS C:\Windows\system32> (Get-ClusterResourceType -Name "Physical Disk").DumpLogQuery
@@ -302,7 +302,7 @@ Message Analyzer を使用すると、プロトコルメッセージングトラ
 
 ![プロバイダー別にグループ化されたログ](media/troubleshooting-using-WER-reports/logs-grouped-by-providers.png)
 
-ディスクが失敗した原因を特定するには、 **FailoverClustering/diagnostics**と**FailoverClustering/DiagnosticVerbose**の下のイベントに移動します。 その後、次のクエリを実行します。**EventData ["LogString"] に "Cluster Disk 10" が含まれて**います。  これにより、次の出力が得られます。
+ディスクが失敗した原因を特定するには、 **FailoverClustering/diagnostics**と**FailoverClustering/DiagnosticVerbose**の下のイベントに移動します。 次のクエリを実行します。 **EventData ["LogString"] に "Cluster Disk 10" が含まれて**います。  これにより、次の出力が得られます。
 
 ![実行中のログクエリの出力](media/troubleshooting-using-WER-reports/output-of-running-log-query.png)
 
@@ -398,9 +398,9 @@ DynamicSig[29].Name=HangThreadId
 DynamicSig[29].Value=10008
 ```
 
-ダンプで収集するサービスとプロセスの一覧は、次のプロパティによって制御されます。**PS C:\Windows\system32 > (Get ClusterResourceType-Name "Physical Disk")。DumpServicesSmphost**
+ダンプで収集するサービスとプロセスの一覧は、 **PS C:\Windows\system32 > (Get ClusterResourceType-Name "Physical Disk") プロパティによって制御されます。DumpServicesSmphost**
 
-ハングが発生した原因を特定するには、dum ファイルを開きます。 その後、次のクエリを実行します。**EventData ["LogString"] に "Cluster Disk 10" が含まれています。** これにより、次の出力が得られます。
+ハングが発生した原因を特定するには、dum ファイルを開きます。 次のクエリを実行します。 **EventData ["LogString"] に "Cluster Disk 10" が含まれている**と、次の出力が得られます。
 
 ![実行中のログクエリ2の出力](media/troubleshooting-using-WER-reports/output-of-running-log-query-2.png)
 

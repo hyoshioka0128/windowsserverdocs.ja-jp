@@ -11,11 +11,11 @@ ms.date: 06/07/2019
 description: 記憶域スペースダイレクトを使用して、Windows Server のソフトウェア定義記憶域を、ハイパー集約型インフラストラクチャまたは収束 (disaggregated とも呼ばれる) インフラストラクチャとして展開する手順を説明します。
 ms.localizationpriority: medium
 ms.openlocfilehash: 60b29cbebb19cd8f1ce364d1eb7e920759375285
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950021"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371774"
 ---
 # <a name="deploy-storage-spaces-direct"></a>記憶域スペース ダイレクトの展開
 
@@ -29,7 +29,7 @@ ms.locfileid: "75950021"
 > [!Tip]
 > Microsoft Azure に含まれる Hyper-v 仮想マシンを使用して、[ハードウェアなしで記憶域スペースダイレクトを評価](storage-spaces-direct-in-vm.md)することができます。 また、トレーニング目的で使用する[Windows Server の迅速なラボデプロイスクリプト](https://aka.ms/wslab)を確認することもできます。
 
-## <a name="before-you-start"></a>開始前の作業
+## <a name="before-you-start"></a>開始する前に
 
 記憶域スペースダイレクトの[ハードウェア要件](Storage-Spaces-Direct-Hardware-Requirements.md)を確認し、このドキュメントを読み、いくつかの手順に関連する全体的なアプローチと重要な注意事項について理解してください。
 
@@ -117,7 +117,7 @@ Net localgroup Administrators <Domain\Account> /add
 - ファイルサーバー (収束展開の場合など、任意のファイル共有をホストする場合)
 - データ センター ブリッジング (iWARP ネットワーク アダプターではなく、RoCEv2 を使用している場合)
 - RSAT クラスタ リング PowerShell
-- Hyper V の PowerShell
+- Hyper-V の PowerShell
 
 PowerShell を使用してインストールするには、 [install-add-windowsfeature](https://docs.microsoft.com/powershell/module/microsoft.windows.servermanager.migration/install-windowsfeature)コマンドレットを使用します。 これは、次のように1つのサーバーで使用できます。
 
@@ -216,7 +216,7 @@ Test-Cluster –Node <MachineName1, MachineName2, MachineName3, MachineName4> �
 
 この手順では、次の PowerShell コマンドレットを使用して、前の手順でクラスター作成のために検証したノードを含むクラスターを作成します。
 
-クラスターを作成すると、"クラスター化された役割の作成中に問題が発生したため、起動できない可能性があります" という警告が表示されます。 詳細については、以下のレポート ファイルを参照してください" という警告が表示されます。 この警告は無視しても問題ありません。 クラスター クォーラムで使用可能なディスクがないことが原因です。 クラスターの作成後にファイル共有監視またはクラウド監視を構成することをお勧めします。
+クラスターを作成すると、"クラスター化された役割の作成中に問題が発生したため、起動できない可能性があります" という警告が表示されます。 詳細については、以下のレポート ファイルを参照してください" という警告が表示されます。 この警告は無視してかまいません。 クラスター クォーラムで使用可能なディスクがないことが原因です。 クラスターの作成後にファイル共有監視またはクラウド監視を構成することをお勧めします。
 
 > [!Note]
 > サーバーで静的 IP アドレスを使用している場合は、以下のコマンドを変更して静的 IP アドレスを反映させます。その場合、以下のパラメーターを追加し、IP アドレスとして –StaticAddress &lt;X.X.X.X&gt; を指定します。
@@ -382,13 +382,13 @@ CD $ScriptFolder
 .\KCDSetup.ps1 -HyperVClusterName $HyperVClusterName -ScaleOutFSName $ScaleOutFSName -EnableLM
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ:
 
 クラスター化されたファイルサーバーをデプロイした後は、実際のワークロードを導入する前に、合成ワークロードを使用してソリューションのパフォーマンスをテストすることをお勧めします。 これにより、ソリューションが正常に実行されていることを確認し、残存している問題を解決してからワークロードの複雑さを増すことができます。 詳細については、「[合成ワークロードを使用した記憶域スペースのパフォーマンスのテスト](https://technet.microsoft.com/library/dn894707.aspx)」を参照してください。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>参照
 
--   [Windows Server 2016 での記憶域スペース ダイレクト](storage-spaces-direct-overview.md)
+-   [Windows Server 2016 の記憶域スペースダイレクト](storage-spaces-direct-overview.md)
 -   [記憶域スペースダイレクトのキャッシュについて](understand-the-cache.md)
 -   [記憶域スペースダイレクトのボリュームの計画](plan-volumes.md)
 -   [記憶域スペースのフォールトトレランス](storage-spaces-fault-tolerance.md)
