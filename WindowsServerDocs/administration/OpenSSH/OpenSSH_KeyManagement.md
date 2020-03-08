@@ -6,12 +6,12 @@ contributor: maertendMSFT
 author: maertendMSFT
 title: Windows 用 OpenSSH Server 構成
 ms.product: w10
-ms.openlocfilehash: fa3d40617a04c092403d9d2e018bd2eb82d20cd9
-ms.sourcegitcommit: effbc183bf4b370905d95c975626c1ccde057401
+ms.openlocfilehash: 5b2fbc974223a6e4e611f92ce2a0c32bc77eca5d
+ms.sourcegitcommit: d46f3a1b238ab773900089b0de7279326789a327
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74781319"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78214923"
 ---
 # <a name="openssh-key-management"></a>OpenSSH キーの管理
 
@@ -145,7 +145,7 @@ ssh-add ~\.ssh\id_ed25519
 # Make sure that the .ssh directory exists in your server's home folder
 ssh user1@domain1@contoso.com mkdir C:\users\user1\.ssh\
 
-# Use scp to opy the public key file generated previously to authorized_keys on your server
+# Use scp to copy the public key file generated previously to authorized_keys on your server
 scp C:\Users\user1\.ssh\id_ed25519.pub user1@domain1@contoso.com:C:\Users\user1\.ssh\authorized_keys
 
 # Appropriately ACL the authorized_keys file on your server  

@@ -10,11 +10,11 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
 ms.openlocfilehash: 86d7b2ff99debbecec930693fb93dc965fefc59e
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517597"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371320"
 ---
 # <a name="privileged-access-workstations"></a>Privileged Access Workstations
 
