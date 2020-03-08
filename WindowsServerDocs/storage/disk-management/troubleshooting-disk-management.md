@@ -9,11 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 7eeb462d31391a228ec0e89afb09673ef14b51cf
-ms.sourcegitcommit: bfe9c5f7141f4f2343a4edf432856f07db1410aa
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75352366"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371250"
 ---
 # <a name="troubleshooting-disk-management"></a>ディスクの管理のトラブルシューティング
 
@@ -195,6 +195,6 @@ ms.locfileid: "75352366"
 > [!NOTE]
 > ワークグループ内のリモート接続はサポートされていません。 ローカル コンピューターとリモート コンピューターはいずれもドメインのメンバーである必要があります。
 
-「
+関連項目
 
 - [Windows 10 のドライブの空き領域を増やす](https://support.microsoft.com/help/12425/windows-10-free-up-drive-space)」も参照してください
