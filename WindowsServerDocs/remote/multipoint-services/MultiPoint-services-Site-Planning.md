@@ -14,11 +14,11 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.openlocfilehash: 744e49f47f7144dac82dbe68c885060b0c08490d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71389597"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371876"
 ---
 # <a name="multipoint-services-site-planning"></a>MultiPoint Services のサイトの計画
 MultiPoint Services を実行している1台以上のコンピューターとそれに関連付けられているステーションが配置される場所を考慮する必要があります。  
@@ -127,8 +127,8 @@ USB ゼロクライアントまたはステーションハブが連続してデ�
 次のコンポーネントでは、電源ストリップまたはアウトレットへのアクセスが必要です。  
   
 -   Server  
--   [モニタ] をクリックします。
--   中間ハブ\((使用されている場合)\) 
+-   監視
+-   使用する場合、中間ハブ \(\) 
 -   一部の USB ゼロクライアント  
 -   電源が入っている USB デバイス (一部の外部記憶装置や DVD ドライブなど)  
   
@@ -154,6 +154,6 @@ USB ゼロクライアントまたはステーションハブが連続してデ�
   
 ![MultiPoint Services アクティビティセンター](./media/WMSActivityCenter.gif)  
   
-**小規模ビジネスオフィス**このセットアップでは、MultiPoint Services を実行しているコンピューターを中央の場所に配置し、オフィス内のユーザーがローカルエリアネットワーク\(LAN\)を使用してそのコンピューターに接続します。  
+**小規模ビジネスオフィス**このセットアップでは、MultiPoint Services を実行しているコンピューターを中央の場所に配置し、オフィス内のユーザーがローカルエリアネットワーク \(LAN\)を使用してそのコンピューターに接続します。  
   
 ![USB ゼロ クライアント接続ステーション](./media/Diagram1.gif)

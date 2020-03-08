@@ -9,15 +9,15 @@ ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 39af45506ff7023cebe437992e90f6d4ec051333
-ms.sourcegitcommit: da6c4fa55a6a72924ac363753d04c5b682cee55b
-ms.translationtype: HT
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77624896"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371714"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>ユーザー アクセス制御とアクセス許可を構成する
 
-> 適用先:Windows Admin Center、Windows Admin Center Preview
+> 適用対象: Windows 管理センター、Windows 管理センタープレビュー
 
 Windows Admin Center のユーザー アクセス制御オプションについてよく理解していない場合は、[こちら](../plan/user-access-options.md)で確認してください。
 
@@ -105,13 +105,13 @@ Windows Admin Center ゲートウェイへのアクセスを制御するため�
 
 [Azure Active Directory を使用した条件付きアクセスの構成の詳細については、こちらを参照してください。](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
-## <a name="configure-single-sign-on"></a>シングル サインオンを構成する
+## <a name="configure-single-sign-on"></a>シングル サインオンの構成
 
 **Windows Server にサービスとしてデプロイされた場合のシングル サインオン**
 
 Windows 10 に Windows Admin Center をインストールすると、シングル サインオンを使用できるようになります。 ただし、Windows Server 上で Windows Admin Center を使用する場合は、シングル サインオンを使用する前に、環境内に何らかの形式の Kerberos 委任を設定する必要があります。 委任によってゲートウェイ マシンが信頼済みとして構成され、ターゲット ノードに委任されます。 
 
-環境内で[リソースベースの制約付き委任](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview)を構成するには、次の PowerShell の例を使用します。 この例は、contoso.com ドメインの Windows Admin Center ゲートウェイ [wac.contoso.com] からの委任を受け入れるように Windows サーバー [node01.contoso.com] を構成する方法を示しています。
+環境内で[リソースベースの制約付き委任](https://docs.microsoft.com/windows-server/security/kerberos/kerberos-constrained-delegation-overview)を構成するには、次の PowerShell の例を使用します。 この例では、windows Server [node01.contoso.com] を構成して、contoso.com ドメインの Windows 管理センターゲートウェイ [wac.contoso.com] から委任を受け入れる方法を示します。
 
 ```powershell
 Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToAccount (Get-ADComputer wac)
@@ -123,7 +123,7 @@ Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToA
 Set-ADComputer -Identity (Get-ADComputer node01) -PrincipalsAllowedToDelegateToAccount $null
 ```
 
-## <a name="role-based-access-control"></a>ロール基準のアクセス制御
+## <a name="role-based-access-control"></a>役割ベースのアクセス制御
 
 ロールベースのアクセス制御を使用すると、ローカルの完全な管理者にするのではなく、マシンへの制限付きアクセス権をユーザーに付与できるようになります。
 [ロールベースのアクセス制御と使用できるロールについては、こちらを参照してください。](../plan/user-access-options.md#role-based-access-control)

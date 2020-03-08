@@ -14,11 +14,11 @@ ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: c0a9f11aea9e24cc1a2bab275aae8dc0a81e9cba
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822363"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371814"
 ---
 # <a name="windows-desktop-client-for-admins"></a>管理者のための Windows デスクトップ クライアント
 

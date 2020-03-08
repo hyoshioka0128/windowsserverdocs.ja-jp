@@ -11,11 +11,11 @@ author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
 ms.openlocfilehash: 73d64cd143b7bbd13e0eb9bb5fadfbb1e7c65416
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950448"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371834"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Always On VPN の高度な機能
 
@@ -33,7 +33,7 @@ ms.locfileid: "75950448"
 |オプション  |説明  |
 |---------|---------|
 |サーバーの復元と負荷分散     |高可用性を必要とする環境や、大量の要求をサポートする環境では、ネットワークポリシーサーバー (NPS) を実行している複数のサーバー間で負荷分散を使用して、を有効にすることで、リモートアクセスのパフォーマンスと回復性を向上させることができます。リモートアクセスサーバーのクラスタリング。<p>関連ドキュメント:<ul><li>[NPS プロキシサーバーの負荷分散](../../../../../networking/technologies/nps/nps-manage-proxy-lb.md)</li><li>[クラスターでのリモート アクセスの展開](https://docs.microsoft.com/windows-server/remote/remote-access/ras/cluster/deploy-remote-access-in-cluster)</li></ul>        |
-|地理的なサイトの復元     |IP ベースの地理位置情報の場合は、Windows Server 2016 の DNS でグローバル Traffic Manager を使用できます。 より堅牢な地理的負荷分散を行うには、Microsoft Azure Traffic Manager などのグローバルサーバー負荷分散ソリューションを使用できます。<p>関連ドキュメント:<ul><li>[Traffic Manager の概要](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview)</li><li>[Microsoft Azure のトラフィック マネージャー](https://azure.microsoft.com/services/traffic-manager)</li></ul>         |
+|地理的なサイトの復元     |IP ベースの地理位置情報の場合は、Windows Server 2016 の DNS でグローバル Traffic Manager を使用できます。 より堅牢な地理的負荷分散を行うには、Microsoft Azure Traffic Manager などのグローバルサーバー負荷分散ソリューションを使用できます。<p>関連ドキュメント:<ul><li>[Traffic Manager の概要](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview)</li><li>[Microsoft Azure Traffic Manager](https://azure.microsoft.com/services/traffic-manager)</li></ul>         |
 
 ## <a name="advanced-authentication"></a>高度な認証
 
@@ -52,7 +52,7 @@ ms.locfileid: "75950448"
 |---------|---------|
 |トラフィックのフィルター処理     |VPN クライアントがアクセスできるアプリケーションを選択する必要がある場合は、VPN トラフィックフィルターを有効にすることができます。<p>詳細については、「 [VPN のセキュリティ機能](https://docs.microsoft.com/windows/access-protection/vpn/vpn-security-features)」を参照してください。         |
 |アプリ トリガー VPN     |特定のアプリケーションまたはアプリケーションの種類が開始されたときに、自動的に接続するように VPN プロファイルを構成することができます。<p>このオプションおよびその他のトリガーオプションの詳細については、「 [VPN 自動トリガープロファイルのオプション](https://docs.microsoft.com/windows/access-protection/vpn/vpn-auto-trigger-profile)」を参照してください。         |
-|VPN 条件付きアクセス   |条件付きアクセスとデバイスコンプライアンスでは、管理対象デバイスが VPN に接続するには、標準に準拠している必要があります。 VPN の条件付きアクセスの高度な機能の1つとして、クライアント認証証明書に**1.3.6.1.4.1.311.87**の "AAD 条件付きアクセス" OID が含まれているもののみに vpn 接続を制限することができます。<p>VPN 接続を制限するには、次の操作を行う必要があります。<ol><li>NPS サーバーで、 **[ネットワークポリシーサーバー]** スナップインを開きます。</li><li>[**ポリシー** > **ネットワークポリシー**] を展開します。</li><li>**[仮想プライベートネットワーク (VPN) 接続]** ネットワークポリシーを右クリックし、 **[プロパティ]** を選択します。</li><li>**[Settings]\(設定\)** タブを選択します。</li><li>**[ベンダー固有]** を選択し、 **[追加]** を選択します。</li><li>**[許可-証明書-OID]** オプションを選択し、 **[追加]** を選択します。</li><li>**1.3.6.1.4.1.311.87**の AAD 条件付きアクセス OID を属性値として貼り付け、[ **OK]** を2回選択します。</li><li>**[閉じる]** を選択し、 **[適用]** を選択します。<p>これらの手順を実行した後、有効期間の短いクラウド証明書以外の証明書を使用して VPN クライアントが接続しようとすると、接続は失敗します。</li></ol>条件付きアクセスの詳細については、「 [VPN と条件付きアクセス](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)」を参照してください。   |
+|VPN 条件付きアクセス   |条件付きアクセスとデバイスコンプライアンスでは、管理対象デバイスが VPN に接続するには、標準に準拠している必要があります。 VPN の条件付きアクセスの高度な機能の1つとして、クライアント認証証明書に**1.3.6.1.4.1.311.87**の "AAD 条件付きアクセス" OID が含まれているもののみに vpn 接続を制限することができます。<p>VPN 接続を制限するには、次の操作を行う必要があります。<ol><li>NPS サーバーで、 **[ネットワークポリシーサーバー]** スナップインを開きます。</li><li>[**ポリシー** > **ネットワークポリシー**] を展開します。</li><li>**[仮想プライベートネットワーク (VPN) 接続]** ネットワークポリシーを右クリックし、 **[プロパティ]** を選択します。</li><li>**[設定]** タブを選択します。</li><li>**[ベンダー固有]** を選択し、 **[追加]** を選択します。</li><li>**[許可-証明書-OID]** オプションを選択し、 **[追加]** を選択します。</li><li>**1.3.6.1.4.1.311.87**の AAD 条件付きアクセス OID を属性値として貼り付け、[ **OK]** を2回選択します。</li><li>**[閉じる]** を選択し、 **[適用]** を選択します。<p>これらの手順を実行した後、有効期間の短いクラウド証明書以外の証明書を使用して VPN クライアントが接続しようとすると、接続は失敗します。</li></ol>条件付きアクセスの詳細については、「 [VPN と条件付きアクセス](https://docs.microsoft.com/windows/access-protection/vpn/vpn-conditional-access)」を参照してください。   |
 
 
 ---
@@ -64,11 +64,11 @@ ms.locfileid: "75950448"
 
 次の表に、Windows の各バージョンの修正プログラムを含むリリースを示します。
 
-|オペレーティング システムのバージョン |リリース  |
+|オペレーティング システムのバージョン |解放  |
 |---------|---------|
 |Windows Server バージョン 1903  |[KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) |
 |Windows Server 2019<br />Windows Server、バージョン 1809  |[KB4505658](https://support.microsoft.com/help/4505658/windows-10-update-kb4505658)  |
-|Windows Server バージョン 1803  |[KB4507466](https://support.microsoft.com/help/4507466/windows-10-update-kb4507466)  |
+|Windows Server Version 1803  |[KB4507466](https://support.microsoft.com/help/4507466/windows-10-update-kb4507466)  |
 |Windows Server バージョン 1709  |[KB4507465](https://support.microsoft.com/help/4507465/windows-10-update-kb4507465)  |
 |Windows Server 2016、バージョン1607  |[KB4503294](https://support.microsoft.com/help/4503294/windows-10-update-kb4503294) |
 
@@ -149,13 +149,13 @@ Windows 10 での TPM キーの構成証明の詳細については、「 [Tpm �
 ## <a name="related-topics"></a>関連トピック
 - [Nps プロキシサーバーの負荷分散](../../../../../networking/technologies/nps/nps-manage-proxy-lb.md): 仮想プライベートネットワーク (VPN) サーバーやワイヤレスアクセスポイントなどのネットワークアクセスサーバーであるリモート認証ダイヤルインユーザーサービス (RADIUS) クライアントは、接続要求を作成し、NPS などの radius サーバーに送信します。 場合によっては、NPS サーバーで一度に受信する接続要求が多すぎると、パフォーマンスが低下したり、過負荷になったりすることがあります。
 
-- [Traffic Manager の概要](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview): このトピックでは、Azure Traffic Manager の概要を説明します。これにより、サービスエンドポイントへのユーザートラフィックの分散を制御できます。 Traffic Manager では、ドメイン ネーム システム (DNS) を使用して、トラフィック ルーティング方法とエンドポイントの正常性に基づいて最適なエンドポイントにクライアント要求を送信します。 
+- [Traffic Manager の概要](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview): このトピックでは、Azure Traffic Manager の概要を説明します。これにより、サービスエンドポイントへのユーザートラフィックの分散を制御できます。 Traffic Manager では、ドメインネームシステム (DNS) を使用して、トラフィックルーティング方法とエンドポイントの正常性に基づいて、最も適切なエンドポイントにクライアント要求を送信します。 
 
 - [Windows Hello For Business](https://docs.microsoft.com/windows/access-protection/hello-for-business/hello-identity-verification): このトピックでは、クラウドのみのデプロイやハイブリッドデプロイなどの前提条件について説明します。  このトピックでは、Windows Hello for Business に関してよく寄せられる質問の一覧も示します。
 
-- [技術的なケーススタディ: windows 10 で Windows hello For business を使用したリモートアクセスの有効化](https://msdn.microsoft.com/library/mt728163.aspx): このテクニカルケーススタディでは、Microsoft が windows Hello for business を使用してリモートアクセスを実装する方法について説明します。  Windows Hello for Business は、組織とコンシューマー向けの、パスワードを超える秘密/公開キーまたは証明書ベースの認証方式です。 この認証方法で使用されるキー ペア資格情報は、パスワードの代わりに使用でき、侵害、盗難、フィッシングに対する耐性があります。 
+- [技術的なケーススタディ: windows 10 で Windows hello For business を使用したリモートアクセスの有効化](https://msdn.microsoft.com/library/mt728163.aspx): このテクニカルケーススタディでは、Microsoft が windows Hello for business を使用してリモートアクセスを実装する方法について説明します。  Windows Hello for Business は、パスワードを超えている組織や利用者にとって、秘密/公開キーまたは証明書ベースの認証方法です。 この形式の認証は、パスワードを置き換えることができるキーペア資格情報に依存しており、侵害、盗難、フィッシングに対する耐性があります。 
 
-- [Radius 認証と azure Multi-Factor Authentication Server の統合](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius): このトピックでは、azure MULTI-FACTOR AUTHENTICATION SERVER で radius クライアント認証を追加して構成する手順について説明します。 RADIUS は、認証要求を受け入れ、それらの要求を処理する標準のプロトコルです。 Azure Multi-Factor Authentication Server は RADIUS サーバーとして機能します。 
+- [Radius 認証と azure Multi-Factor Authentication Server の統合](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-server-radius): このトピックでは、azure MULTI-FACTOR AUTHENTICATION SERVER で radius クライアント認証を追加して構成する手順について説明します。 RADIUS は、認証要求を受け入れ、それらの要求を処理する標準のプロトコルです。 Azure Multi-Factor Authentication Server は RADIUS サーバーとして機能することができます。 
 
 - [Vpn のセキュリティ機能](https://docs.microsoft.com/windows/access-protection/vpn/vpn-security-features): このトピックでは、Vpn のロックダウン、vpn との Windows INFORMATION PROTECTION (WIP) 統合、およびトラフィックフィルターに関する vpn セキュリティガイドラインを示します。 
 

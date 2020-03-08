@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: e53b267f1319681f4a1914b16aaed149134054a8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71407076"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371420"
 ---
 # <a name="dynamic-access-control-scenario-overview"></a>ダイナミック アクセス制御:シナリオの概要
 
@@ -45,7 +45,7 @@ Windows Server 2012 では、ファイルサーバー全体にデータガバナ
   
 ## <a name="BKMK_APP"></a>動的 Access Control コンテンツロードマップ  
   
-|シナリオ|評価|プラン|展開|操作|  
+|シナリオ|［評価］|プラン|配置|操作|  
 |------------|------------|--------|----------|-----------|  
 |**シナリオ: 集約型アクセスポリシー**<br /><br />ファイルの集約型アクセス ポリシーを作成すると、組織は、ユーザーの信頼性情報、デバイスの信頼性情報、およびリソース プロパティを使用した条件式を含む承認ポリシーを一元的に展開および管理できるようになります。 集約型アクセス ポリシーは、コンプライアンス上およびビジネス上の法的要件に基づきます。 また、Active Directory 内で作成およびホストされるため、容易に管理および展開できます。<br /><br />**フォレスト間での信頼性情報の展開**<br /><br />Windows Server 2012 では、AD DS が各フォレストで "要求ディクショナリ" を保持し、フォレスト内で使用されているすべての要求の種類が Active Directory フォレストレベルで定義されています。 プリンシパルが信頼の境界を越える必要があるシナリオは多数あります。 このシナリオでは信頼性情報が信頼の境界を越える方法について説明します。|[動的 Access Control: シナリオの概要](Dynamic-Access-Control--Scenario-Overview.md)<br /><br />[フォレスト間にわたる要求の展開](Deploy-Claims-Across-Forests.md)|[計画: 集約型アクセスポリシーの展開](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f)<br /><br />[ビジネス要求を集約型アクセスポリシーにマップする -   プロセス](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_1)<br />[動的 Access Control の管理の委任を -   する](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_3.1)<br />[集約型アクセスポリシーを計画するための -   の例外メカニズム](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_3.2)<br /><br />ユーザーの信頼性情報を使う場合のベスト プラクティス<br /><br />[ユーザードメインの要求を有効にするための適切構成を選択](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_DC_OP3)-   <br />[ユーザーの要求を有効にするための操作の](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_3.4.2)-   <br />[集約型アクセスポリシーを使用せずにファイルサーバーの随意 acl でユーザー要求を使用する場合の -   の考慮事項](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_5)<br /><br />[デバイスの信頼性情報とデバイスのセキュリティグループの使用](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_DeviceClaims)<br /><br />[静的なデバイスの信頼性情報を使用する場合の -   の考慮事項](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_4.1)<br />[デバイスの信頼性情報を有効にするための操作の](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f#BKMK_4.3)-   <br /><br />展開用ツール<br /><br />-   [データ分類ツールキット](https://go.microsoft.com/fwlink/?LinkId=%20244300)|[集約型アクセスポリシー &#40;のデモンストレーション手順を展開する&#41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)<br /><br />[フォレスト&#40;間での要求の展開のデモンストレーション手順&#41;](Deploy-Claims-Across-Forests--Demonstration-Steps-.md)|-集約型アクセスポリシーのモデリング|  
 |**シナリオ: ファイルアクセスの監査**<br /><br />セキュリティ監査は、企業のセキュリティ維持の最も強力なサポート手段の 1 つです。 セキュリティ監査の重要な目標の 1 つがコンプライアンス遵守です。 たとえば、Sarbanes Oxley、HIPAA、および Payment Card Industry (PCI) などの業界標準は、データ セキュリティとプライバシーに関する厳格なルール セットへの準拠を企業に要求します。 セキュリティ監査によってこれらのポリシーが存在するかどうかが明確化されます。つまり、監査ポリシーによって各種の標準に準拠しているかどうかが証明されます。 さらにセキュリティ監査は、異常な動作の検出、セキュリティ ポリシー内のギャップの特定と解消、さらに、ユーザー アクティビティの記録を作成し、これを使用して法的分析を実施することで、法的責任を問われる可能性のある動作の防止にも役立ちます。|[シナリオ: ファイルアクセスの監査](Scenario--File-Access-Auditing.md)|[ファイル アクセスの監査の計画](Plan-for-File-Access-Auditing.md)|[中央監査ポリシー &#40;を使用したセキュリティ監査の展開のデモンストレーション手順&#41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)|[ファイルサーバーに適用される集約型アクセスポリシーを監視](https://technet.microsoft.com/library/jj574188.aspx)-   には<br />[ファイルとフォルダーに関連付けられた集約型アクセスポリシーを監視](https://technet.microsoft.com/library/jj574198.aspx)-   には<br />[ファイルとフォルダーのリソース属性を監視 -   には](https://technet.microsoft.com/library/jj574208.aspx)<br />[要求の種類を監視](https://technet.microsoft.com/library/jj574086.aspx)-   <br />[サインイン時にユーザーとデバイスの信頼性情報を監視 -   には](https://technet.microsoft.com/library/jj574082.aspx)<br />[集約型アクセスポリシーとルールの定義を監視](https://technet.microsoft.com/library/jj574115.aspx)-   には<br />[リソース属性の定義を監視](https://technet.microsoft.com/library/jj574155.aspx)-   <br />[リムーバブル記憶装置の使用を監視](https://technet.microsoft.com/library/jj574128.aspx)-   ます。|  
@@ -59,7 +59,7 @@ Windows Server 2012 では、ファイルサーバー全体にデータガバナ
   
 ## <a name="BKMK_LINKS"></a>関連項目  
   
-|コンテンツの種類|参考資料|  
+|コンテンツの種類|参照|  
 |----------------|--------------|  
 |**製品評価**|-   [動的 Access Control レビューアーガイド](https://go.microsoft.com/fwlink/?LinkId=244309)<br />[動的 Access Control 開発者ガイド](https://go.microsoft.com/fwlink/?LinkId=245870)の -   |  
 |**計画**|[集約型アクセスポリシーの展開を計画](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f)-   <br />[ファイルアクセスの監査の -   計画](Plan-for-File-Access-Auditing.md)|  
