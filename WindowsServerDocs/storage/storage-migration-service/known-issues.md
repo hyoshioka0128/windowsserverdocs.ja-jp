@@ -3,17 +3,17 @@ title: 記憶域移行サービスの既知の問題
 description: 記憶域移行サービスの既知の問題とトラブルシューティングサポート (Microsoft サポートのログを収集する方法など)。
 author: nedpyle
 ms.author: nedpyle
-manager: siroy
+manager: tiaascs
 ms.date: 02/10/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 92742929e3826fca3cf87cb84341d3aecec0d55d
-ms.sourcegitcommit: 1c75e4b3f5895f9fa33efffd06822dca301d4835
+ms.openlocfilehash: a9759f0ea8835c8e07bcd298b75024e3ee29c9ed
+ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77517497"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78856346"
 ---
 # <a name="storage-migration-service-known-issues"></a>記憶域移行サービスの既知の問題
 
@@ -295,13 +295,15 @@ Storage Migration Service を使用してインベントリを実行し、Window
 
 ## <a name="error-there-are-no-more-endpoints-available-from-the-endpoint-mapper-when-running-inventory-against-a-windows-server-2003-source-computer"></a>Windows Server 2003 ソースコンピュータに対してインベントリを実行すると、"エンドポイントマッパーから使用できるエンドポイントがありません" というエラーが表示される
 
-Storage Migration Service orchestrator サーバーで[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)累積更新プログラムを適用して修正プログラムを適用してインベントリを実行しようとすると、次のエラーが表示されます。
+Windows Server 2003 ソースコンピューターに対して Storage Migration Service orchestrator を使用してインベントリを実行しようとすると、次のエラーが表示されます。
 
     There are no more endpoints available from the endpoint mapper  
 
-この問題を回避するには、記憶域移行サービス orchestrator コンピューターから、KB4512534 の累積的な更新プログラム (およびそれを置き換えたもの) を一時的にアンインストールします。 移行が完了したら、最新の累積的な更新プログラムを再インストールします。  
+この問題は、 [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) update によって解決されます。
 
-状況によっては、KB4512534 またはその置き換えられる更新プログラムをアンインストールすると、記憶域移行サービスが開始されなくなる場合があることに注意してください。 この問題を解決するには、Storage Migration Service データベースをバックアップして削除します。
+## <a name="uninstalling-a-cumulutative-update-prevents-storage-migration-service-from-starting"></a>Cumulutative update をアンインストールすると、記憶域移行サービスが開始されない
+
+Windows Server の累積更新プログラムをアンインストールすると、記憶域移行サービスの開始が妨げられる可能性があります。 この問題を解決するには、Storage Migration Service データベースをバックアップして削除します。
 
 1.  管理者特権でのコマンドプロンプトを開きます。ここでは、Storage Migration Service orchestrator サーバーの管理者のメンバーで、次を実行します。
 
@@ -343,7 +345,7 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
 
 この問題は、以前のバージョンの Windows Server で API が不足していることが原因で発生します。 現時点では、Windows Server 2008 および Windows Server 2003 クラスターを移行する方法はありません。 Windows Server 2008 R2 クラスターでは、インベントリと転送を実行できます。その後、クラスターのソースファイルサーバーリソースのネット名と IP アドレスを手動で変更して、移行先クラスターのネット名と IP アドレスを変更することで、手動でカットオーバーを実行できます。元のソースに一致するアドレス。 
 
-## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>"38% のソースコンピューターのネットワークインターフェイスのマッピングが停止しています..." 
+## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer-when-using-dhcp"></a>"38% のソースコンピューターのネットワークインターフェイスのマッピングが停止しています..."DHCP を使用する場合 
 
 ソースコンピュータに対して切り取りを実行しようとしたときに、1つまたは複数のネットワークインターフェイスで新しい静的 (DHCP ではない) IP アドレスを使用するようにソースコンピュータを設定した場合、カットオーバーはフェーズで "38%" ソースコンピューターのネットワークインターフェイスのマッピング中にスタックします。 "SMS イベントログに次のエラーが表示されます。
 
@@ -372,13 +374,7 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
 
 この問題は、新しい静的 IP アドレス、サブネット、およびゲートウェイを指定した場合にのみ、Windows 管理センターの [切り替えの構成] 画面で [DHCP を使用する] を選択した場合には発生しません。 
 
-この問題は、 [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) update の回帰によって発生します。 現在、この問題には次の2つの回避策があります。
-
-  - カットオーバー前: カットオーバー時に新しい静的 IP アドレスを設定するのではなく、[DHCP を使用する] を選択し、DHCP スコープがそのサブネットを対象としていることを確認します。 SMS では、ソースコンピューターインターフェイスで DHCP を使用するようにソースコンピューターを構成し、カットオーバーを正常に実行します。 
-  
-  - [切り取り] が既にスタックしている場合は、ソースコンピューターにログオンし、dhcp スコープがそのサブネットを対象としていることを確認した後で、そのネットワークインターフェイスで DHCP を有効にします。 ソースコンピュータが DHCP によって提供される IP アドレスを取得すると、SMS は通常どおりカットを続行します。
-  
-どちらの回避策でも、カットオーバーが完了した後で、DHCP の使用に適しているかどうかに応じて、古いソースコンピューターに静的 IP アドレスを設定できます。   
+この問題は、 [KB4537818](https://support.microsoft.com/help/4537818/windows-10-update-kb4537818) update によって解決されます。
 
 ## <a name="slower-than-expected-re-transfer-performance"></a>予想される再転送パフォーマンスを低下させる
 
@@ -489,6 +485,48 @@ Windows Server 2008 R2 クラスターソースに対して切り取りを実行
  - ファイアウォールは、Orchestrator から移行元サーバーへのリモートレジストリ接続を許可しません。
  - ソース移行アカウントに、ソースコンピューターに接続するためのリモートレジストリアクセス許可がありません。
  - ソース移行アカウントには、ソースコンピューターのレジストリ内で、"HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows NT\CurrentVersion" または "HKEY_LOCAL_MACHINE \SYSTEM\CurrentControlSet\Services\" の下に読み取りアクセス許可がありません。LanmanServer
+ 
+ ## <a name="cutover-hangs-on-38-mapping-network-interfaces-on-the-source-computer"></a>"38% のソースコンピューターのネットワークインターフェイスのマッピングが停止しています..." 
+
+ソースコンピュータに対して切り取りを実行しようとすると、"38% ソース上のネットワークインターフェイスのマッピングが終了しました" というフェーズでカットオーバーが停止します。SMS イベントログに次のエラーが表示されます。
+
+    Log Name:      Microsoft-Windows-StorageMigrationService-Proxy/Admin
+    Source:        Microsoft-Windows-StorageMigrationService-Proxy
+    Date:          1/11/2020 8:51:14 AM
+    Event ID:      20505
+    Task Category: None
+    Level:         Error
+    Keywords:      
+    User:          NETWORK SERVICE
+    Computer:      nedwardo.contosocom
+    Description:
+    Couldn't establish a CIM session with the computer.
+
+    Computer: 172.16.10.37
+    User Name: nedwardo\MsftSmsStorMigratSvc
+    Error: 40970
+    Error Message: Unknown error (0xa00a)
+
+    Guidance: Confirm that the Netlogon service on the computer is reachable through RPC and that the credentials provided are correct.
+
+この問題は、ソースコンピュータで次のレジストリ値を設定するグループポリシーが原因で発生します。
+
+ "HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System LocalAccountTokenFilterPolicy = 0"
+ 
+この設定は、標準グループポリシーの一部ではなく、 [Microsoft セキュリティコンプライアンスツールキット](https://www.microsoft.com/download/details.aspx?id=55319)を使用して構成されたアドオンです。
+ 
+ - Windows Server 2012 R2: "コンピューターの構成 \ 管理用テンプレート \ Templates\SCM: ネットワークログオン時にハッシュ Mitigations\Apply UAC の制限をローカルアカウントに渡す"
+ - Widows サーバー 2016: "コンピューターの構成 \ 管理用テンプレート \ セキュリティガイド \ ネットワークログオン時に UAC の制限をローカルアカウントに適用する"
+ 
+また、カスタムレジストリ設定でグループポリシー設定を使用して設定することもできます。 GPRESULT ツールを使用して、どのポリシーがこの設定をソースコンピュータに適用しているかを判断できます。
+
+Storage Migration Service は、削除プロセスの一環として、一時的に[LocalAccountTokenFilterPolicy](https://support.microsoft.com/help/951016/description-of-user-account-control-and-remote-restrictions-in-windows)を有効にし、完了したら削除します。 競合するグループポリシーオブジェクト (GPO) を適用グループポリシーと、記憶域移行サービスが上書きされ、カットオーバーができなくなります。
+
+この問題を回避するには、次のいずれかのオプションを使用します。
+
+1. この競合する GPO を適用する Active Directory OU から、移行元コンピューターを一時的に移動します。 
+2. この競合するポリシーを適用する GPO を一時的に無効にします。
+3. この設定を [無効] に設定し、他の Gpo より優先順位の高い、移行元サーバーの特定の OU に適用する新しい GPO を一時的に作成します。
 
 ## <a name="see-also"></a>参照
 

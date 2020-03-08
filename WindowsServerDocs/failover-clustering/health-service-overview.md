@@ -9,11 +9,11 @@ ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
 ms.openlocfilehash: 158681e2038e3d8015933771d06d3bfb24d31586
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75948478"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78865401"
 ---
 # <a name="health-service-in-windows-server"></a>Windows Server でのヘルスサービス
 
@@ -21,7 +21,7 @@ ms.locfileid: "75948478"
 
 ヘルスサービスは、Windows Server 2016 の新機能であり、記憶域スペースダイレクトを実行しているクラスターの日常的な監視と操作エクスペリエンスを向上させます。
 
-## <a name="prerequisites"></a>必要条件  
+## <a name="prerequisites"></a>前提条件  
 
 既定では、ヘルス サービスは記憶域スペース ダイレクトで有効になっています。 ヘルス サービスを設定または開始するために、他の操作は必要ありません。 記憶域スペースダイレクトの詳細については、「 [Windows Server 2016 の記憶域スペースダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md)」を参照してください。  
 
@@ -29,7 +29,7 @@ ms.locfileid: "75948478"
 
 「[ヘルスサービスレポート](health-service-reports.md)」を参照してください。
 
-## <a name="faults"></a>障害
+## <a name="faults"></a>フォールト
 
 「[ヘルスサービスのエラー](health-service-faults.md)」を参照してください。
 
@@ -37,7 +37,7 @@ ms.locfileid: "75948478"
 
 「[ヘルスサービスアクション](health-service-actions.md)」を参照してください。
 
-## <a name="automation"></a>自動化  
+## <a name="automation"></a>[オートメーション]  
 
 このセクションでは、ディスクのライフサイクルにおいて、ヘルス サービスで自動化されるワークフローについて説明します。  
 
@@ -90,7 +90,7 @@ ms.locfileid: "75948478"
 
 ヘルスサービスには、記憶域スペースダイレクトによって使用されるコンポーネントを、管理者またはソリューションベンダーから提供されるサポートされているコンポーネントドキュメントに限定するための実施メカニズムが用意されています。 このメカニズムにより、サポートされていないハードウェアが誤って使用されるのを防ぐことができるため、保証やサポート契約の順守に役立ちます。 現在、この機能は、Ssd、Hdd、NVMe ドライブを含む物理ディスクデバイスに限定されています。 サポートされているコンポーネントドキュメントでは、モデル、製造元 (オプション)、およびファームウェアのバージョン (オプション) を制限できます。
 
-### <a name="usage"></a>使用方法  
+### <a name="usage"></a>使用法  
 
 サポートされているコンポーネントドキュメントでは、XML による構文を使用します。 無料の[Visual Studio Code](https://code.visualstudio.com/)やメモ帳などの任意のテキストエディターを使用して、保存して再利用できる XML ドキュメントを作成することをお勧めします。
 
@@ -170,10 +170,10 @@ Get-PhysicalDisk | Select Model, Manufacturer, FirmwareVersion
 
 [ヘルスサービス設定](health-service-settings.md)を参照してください。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>参照
 
 - [レポートのヘルスサービス](health-service-reports.md)
 - [ヘルスサービスエラー](health-service-faults.md)
 - [ヘルスサービスアクション](health-service-actions.md)
 - [ヘルスサービスの設定](health-service-settings.md)
-- [Windows Server 2016 での記憶域スペース ダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md)
+- [Windows Server 2016 の記憶域スペースダイレクト](../storage/storage-spaces/storage-spaces-direct-overview.md)
