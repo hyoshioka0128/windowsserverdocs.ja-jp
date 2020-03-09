@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
 ms.openlocfilehash: b299ddc823b3fbbd5818f96202e3c01faf0762d7
-ms.sourcegitcommit: 9687d3eb221b89061a48bf1e73fb3b25bee69f9a
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78169602"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371654"
 ---
 # <a name="ad-fs-requirements"></a>AD FS の要件
 
@@ -353,6 +353,6 @@ AD FS は、エンドユーザーがデバイスに参加するときに、デ�
 ## <a name="BKMK_13"></a>アクセス許可の要件  
 AD FS のインストールと初期構成を実行する管理者は、ローカルドメインのドメイン管理者のアクセス許可を持っている必要があります。つまり、フェデレーションサーバーが参加しているドメイン \(ます。\)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [Windows Server 2012 R2 での AD FS 設計ガイド](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
