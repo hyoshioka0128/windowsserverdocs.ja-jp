@@ -13,21 +13,21 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: f6a5d6fd42c5cd7e92821e1157748054c741ef04
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68914683"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78371177"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>Windows Server Essentials でのリモート Web アクセスの使用
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
   
   リモート Web アクセスは、インターネットに接続しているどこからでも Web ブラウザーを介してネットワーク上のファイルやフォルダーやコンピューターにアクセスできるようにする Windows Server Essentials の機能です。 
   
   リモート Web アクセスを利用すると、外出中も Windows Server Essentials ネットワークに接続された状態を維持できます。 リモート Web アクセスにログオンするときに、Windows Server Essentials ネットワーク上のコンピューターに接続し、ダッシュボードを開いて Windows Server Essentials ネットワークを管理し、サーバー上のすべての共有フォルダーとメディアファイルにアクセスすることができます。  
   
- このトピックのセクションは次のとおりです。  
+ このトピックは次のセクションで構成されます。  
   
 
 -   [リモート Web アクセスに接続する](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
@@ -60,7 +60,7 @@ ms.locfileid: "68914683"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-network-computer"></a>ネットワーク コンピューターからリモート Web アクセスにログオンするには  
   
-1.  Web ブラウザーを開き、アドレスバーに「 https://」と入力して「 _<\>_ 」と入力し、enter キーを押します。  
+1.  Web ブラウザーを開き、アドレス**バーに「** https://」と入力して [_servername\><_ ] と入力し、enter キーを押します。  
   
     > [!NOTE]
     >  を https に含めるようにしてください。  
@@ -69,7 +69,7 @@ ms.locfileid: "68914683"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-remote-computer"></a>リモート コンピューターからリモート Web アクセスにログオンするには  
   
-1.  Web ブラウザーを開き、アドレスバーに「 **https://** _<\>_ 」と入力して、enter キーを押します。  
+1.  Web ブラウザーを開き、アドレス**バーに「** **https://** _\><_ 」と入力して、enter キーを押します。  
   
     > [!NOTE]
     >  ドメイン名情報はネットワーク管理者から取得できます。 を https に含めるようにしてください。  
@@ -123,7 +123,7 @@ ms.locfileid: "68914683"
 -   コンピューターから Windows Server Essentials にファイルをアップロードします (送信します)。  
   
     > [!NOTE]
-    >  リモート Web アクセスにアップロードできるのはファイルだけです。フォルダーはアップロードできません。 サーバーの **[共有フォルダー]** のファイルとフォルダーの階層をお使いのコンピューターと同じにする場合、リモート Web アクセスでサーバーにフォルダーを作成し、その作成したフォルダーにファイルをアップロードする必要があります。 サーバー フォルダーの作成については、「 [Add or move a server folder](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)」を参照してください。  
+    >  リモート Web アクセスにアップロードできるのはファイルだけです。フォルダーはアップロードできません。 サーバーの **[共有フォルダー]** のファイルとフォルダーの階層をお使いのコンピューターと同じにする場合、リモート Web アクセスでサーバーにフォルダーを作成し、その作成したフォルダーにファイルをアップロードする必要があります。 サーバー フォルダーの作成方法に関する情報については、「[サーバー フォルダーを追加または移動する](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5)」を参照してください。  
   
 -   Windows Server Essentials からサーバーにファイルとフォルダーをダウンロードします (受け取ります)。  
   
@@ -314,13 +314,13 @@ ms.locfileid: "68914683"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>モバイル デバイスからリモート Web アクセスにログオンするには  
   
-1.  Web ブラウザーを開き、アドレスバーに「 **https://** _<\>_ 」と入力します。  を https に含めるようにしてください。  
+1.  Web ブラウザーを開き、アドレスバーに「 **https://** _\><_  **」と**入力します。  を https に含めるようにしてください。  
   
 2.  [リモート Web アクセスログオン] ページで、テキストボックスにユーザー名とパスワードを入力し、矢印をクリックします。 リモート Web アクセスのモバイル バージョンにログオンされます。  
   
 ##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>リモート Web アクセスのデスクトップ バージョンに切り替えるには  
   
-1.  Web ブラウザーを開き、アドレスバーに「 **https://** _<\>_ 」と入力します。  を https に含めるようにしてください。  
+1.  Web ブラウザーを開き、アドレスバーに「 **https://** _\><_  **」と**入力します。  を https に含めるようにしてください。  
   
 2.  リモート Web アクセスログオン ページで、テキストボックスにユーザー名とパスワードを入力し、**デスクトップバージョンの表示** をクリックして、矢印をクリックします。 リモート Web アクセスのデスクトップ バージョンにログオンされます。  
   
@@ -328,7 +328,7 @@ ms.locfileid: "68914683"
   
 1. ログオフします。  
   
-2. Web ブラウザーを開き、アドレスバーに「 **https://** _<\>_ 」と入力します。 を https に含めるようにしてください。  
+2. Web ブラウザーを開き、アドレスバーに「 **https://** _< ドメイン名\>_ **/remote/m** 」と入力します。 を https に含めるようにしてください。  
   
 3. リモート Web アクセスのモバイルバージョンが表示されます。 [リモート Web アクセスログオン] ページで、テキストボックスにユーザー名とパスワードを入力し、矢印をクリックします。 リモート Web アクセスのモバイルバージョンにログオンしています。  
   
@@ -351,7 +351,7 @@ ms.locfileid: "68914683"
   
 -   Firefox  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 -   [リモート Web アクセスの管理](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
