@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e1e0235e50945fadd09fe9dd5ffeaf6d7119e482
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 875edcf191596d181ec0d70a83f9f3c20f5d5f4a
+ms.sourcegitcommit: a6ec589a39ef104ec2be958cd09d2f679816a5ab
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71385598"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78261941"
 ---
 # <a name="ad-fs-openid-connectoauth-flows-and-application-scenarios"></a>AD FS OpenID 接続/OAuth フローとアプリケーション シナリオ
 AD FS 2016 以降に適用されます
@@ -292,7 +292,7 @@ OBO フローを構成するための以下の手順について、次の図を�
 
   1. クライアント アプリケーションは、トークン A を使用して API A に要求を発行します。  
   注: AD FS で OBO フローを構成する際、スコープ `user_impersonation` が選択されていること、およびクライアントが要求で `user_impersonation` スコープを要求していることを確認してください。 
-  2. API A が AD FS トークン発行エンドポイントに対して認証を行い、API B にアクセスするためのトークンを要求します。注: AD FS でこのフローを構成する際、API A が、API A のリソース ID と同じ値の clientID を持つサーバー アプリケーションとしても登録されていることを確認してください。詳細については、On-Behalf Of のサンプル (リンクを追加) に関する記事を参照してください。  
+  2. API A が AD FS トークン発行エンドポイントに対して認証を行い、API B にアクセスするためのトークンを要求します。注: AD FS でこのフローを構成する際、API A が、API A のリソース ID と同じ値の clientID を持つサーバー アプリケーションとしても登録されていることを確認してください。
   3. AD FS トークン発行エンドポイントは、トークン A を使用して API A の資格情報を検証し、API B (トークン B) のアクセス トークンを発行します。 
   4. API B への要求の承認ヘッダー内にトークン B が設定されます。 
   5. セキュリティで保護されたリソースからのデータが API B から返されます。 
