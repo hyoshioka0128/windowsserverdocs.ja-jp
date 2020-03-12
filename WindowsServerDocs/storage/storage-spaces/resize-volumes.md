@@ -7,18 +7,21 @@ author: cosmosdarwin
 ms.author: cosdar
 manager: eldenc
 ms.technology: storage-spaces
-ms.date: 05/07/2019
-ms.openlocfilehash: 20482fe1728b12d4fe56dcfa397352fbb4b4f981
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.date: 03/10/2020
+ms.openlocfilehash: 4ce41da1da3dc90f698008902170d7cc1541619c
+ms.sourcegitcommit: bb2eb0b12f2a32113899a59aa5644bc6e8cab3d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366092"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79089348"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>記憶域スペース ダイレクトのボリュームの拡張
-> 適用対象:Windows Server 2019、Windows Server 2016
+> 適用対象: Windows Server 2019、Windows Server 2016
 
 このトピックでは、Windows 管理センターを使用して[記憶域スペースダイレクト](storage-spaces-direct-overview.md)クラスター上のボリュームのサイズを変更する手順について説明します。
+
+> [!WARNING]
+> **サポートされていません: 記憶域スペースダイレクトで使用される基になるストレージのサイズを変更します。** Azure に含まれる仮想化ストレージ環境で記憶域スペースダイレクトを実行している場合、仮想マシンが使用する記憶装置の特性のサイズ変更や変更はサポートされていないため、データにアクセスできなくなります。 代わりに、「[サーバーまたはドライブの追加](add-nodes.md)」セクションの手順に従って、ボリュームを拡張する前に容量を追加します。
 
 ボリュームのサイズを変更する方法に関する簡単なビデオをご覧ください。
 
@@ -50,7 +53,7 @@ ms.locfileid: "71366092"
 
 ボリュームについてよく知るため、PowerShell で対応する名詞を使って **Get-** を実行してみます。
 
-以下に例を示します。
+例 :
 
 ```PowerShell
 Get-VirtualDisk
@@ -111,7 +114,7 @@ Get-StorageTier <FriendlyName> | Resize-StorageTier -Size <Size>
 
 **StorageTier** をサイズ変更すると、**VirtualDisk** と **Disk** も自動的に追従し、サイズ変更されます。
 
-![記憶域階層のサイズ変更](media/resize-volumes/Resize-StorageTier.gif)
+![Resize-StorageTier](media/resize-volumes/Resize-StorageTier.gif)
 
 ### <a name="step-2--resize-the-partition"></a>手順 2 - パーティションのサイズ変更
 
@@ -134,12 +137,12 @@ $Partition | Resize-Partition -Size ($Partition | Get-PartitionSupportedSize).Si
 
 ![パーティションのサイズ変更](media/resize-volumes/Resize-Partition.gif)
 
-これで完了です。
+以上で終わりです。
 
 > [!TIP]
 > **Get-Volume** を実行して、ボリュームが新しいサイズになっていることを確認できます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Windows Server 2016 の記憶域スペースダイレクト](storage-spaces-direct-overview.md)
 - [記憶域スペースダイレクトのボリュームの計画](plan-volumes.md)
