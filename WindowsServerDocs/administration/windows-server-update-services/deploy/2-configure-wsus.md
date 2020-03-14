@@ -11,24 +11,24 @@ ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: d1a78d2006a45bb2af8f87a91d7bb888964ddbcb
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
-ms.translationtype: MT
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371634"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323504"
 ---
-# <a name="step-2-configure-wsus"></a>手順 2: WSUS を構成する
+# <a name="step-2-configure-wsus"></a>手順 2:WSUS を構成する
 
->適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
+>適用先:Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 WSUS サーバーの役割をサーバーにインストールした後、その役割を適切に構成する必要があります。 次のチェック リストでは、WSUS サーバーの初期構成に関連した手順の概要を示します。
 
 |タスク|説明|
 |----|--------|
 |[2.1. ネットワーク接続を構成する](#21-configure-network-connections)|ネットワーク構成ウィザードを使用して、クラスター ネットワークを構成します。|
-|[2.2. wsus 構成ウィザードを使用して WSUS を構成する](#22-configure-wsus-by-using-the-wsus-configuration-wizard)|WSUS 構成ウィザードを使用して、基本の WSUS 構成を実行します。|
-|[2.3. WSUS コンピューターグループを構成する](#23-configure-wsus-computer-groups)|組織内の更新を管理するために、WSUS 管理コンソールでコンピューター グループを作成します。|
-|[2.4. クライアントの更新プログラムを構成する](#24-configure-client-updates)|クライアント コンピューターに自動更新を適用する方法とタイミングを指定します。|
+|[2.2. WSUS 構成ウィザードを使用して WSUS を構成する](#22-configure-wsus-by-using-the-wsus-configuration-wizard)|WSUS 構成ウィザードを使用して、基本の WSUS 構成を実行します。|
+|[2.3. WSUS コンピューター グループを構成する](#23-configure-wsus-computer-groups)|組織内の更新を管理するために、WSUS 管理コンソールでコンピューター グループを作成します。|
+|[2.4. クライアントの更新を構成する](#24-configure-client-updates)|クライアント コンピューターに自動更新を適用する方法とタイミングを指定します。|
 |[2.5. Secure Sockets Layer プロトコルを使用して WSUS をセキュリティで保護する](#25-secure-wsus-with-the-secure-sockets-layer-protocol)|Windows Server Update Services (WSUS) を保護するために Secure Sockets Layer (SSL) プロトコルを構成します。|
 
 ## <a name="21-configure-network-connections"></a>2.1. ネットワーク接続を構成する
@@ -99,7 +99,7 @@ WSUS とインターネットの間に企業ファイアウォールがある場
 WSUS サーバー上のファイアウォールは、これらのポートで受信トラフィックを許可するように構成する必要があります。
 
 ### <a name="213-connection-between-clients-windows-update-agent-and-wsus-servers"></a>2.1.3. クライアント (Windows Update エージェント) と WSUS サーバー間の接続
-リッスンする側のインターフェイスとポートは、WSUS 用の IIS サイトのほか、クライアント PC の構成に使用されるすべてのグループ ポリシー設定で構成されます。 既定のポートは、前の「**WSUS サーバー間の接続**」セクションで指定されているものと同じです。加えて、これらのポートで受信トラフィックを許可するように WSUS サーバー上のファイアウォールを構成する必要があります。
+リッスンする側のインターフェイスとポートは、WSUS 用の IIS サイトのほか、クライアント PC の構成に使用されるすべてのグループ ポリシー設定で構成されます。 既定のポートは、前の「 **WSUS サーバー間の接続**」セクションで指定されているものと同じです。加えて、これらのポートで受信トラフィックを許可するように WSUS サーバー上のファイアウォールを構成する必要があります。
 
 ## <a name="configure-the-proxy-server"></a>プロキシ サーバーを構成する
 企業ネットワークでプロキシ サーバーを使用する場合、プロキシ サーバーは、HTTP プロトコルと SSL プロトコルをサポートし、基本認証または Windows 認証を使用する必要があります。 これらの要件は、次の構成のいずれかを使用して満たすことができます。
@@ -155,13 +155,13 @@ WSUS の構成に HTTP プロトコルを使用するプロキシ サーバー�
 
     5.  プロキシ サーバーで基本認証がサポートされる場合は、 **[基本認証を許可する (クリア テキストでパスワードを送信する)]** チェック ボックスをオンにします。
 
-    6.  **[OK]** をクリックすると、
+    6.  **[OK]** をクリックします。
 
     ###### <a name="to-remove-a-proxy-server-from-the-wsus-configuration"></a>WSUS の構成からプロキシ サーバーを削除するには
 
     1.  プロキシ サーバーを WSUS の構成から削除するには、 **[同期時にプロキシ サーバーを使用する]** チェック ボックスをオフにします。
 
-    2.  **[OK]** をクリックすると、
+    2.  **[OK]** をクリックします。
 
 ## <a name="22-configure-wsus-by-using-the-wsus-configuration-wizard"></a>2.2. WSUS 構成ウィザードを使用して WSUS を構成する
 次の手順では、WSUS 構成ウィザードを使用していることを前提としています。このウィザードは、WSUS 管理コンソールを初めて起動したときに表示されます。 **[オプション]** ページを使用してこれらの構成を行う方法については、後ほど説明します。
@@ -232,7 +232,7 @@ WSUS の構成に HTTP プロトコルを使用するプロキシ サーバー�
 基本的な WSUS の構成が完了したら、WSUS 管理コンソールを使用して設定を変更する方法については、以下のセクションを参照してください。
 
 ## <a name="23-configure-wsus-computer-groups"></a>2.3. WSUS コンピューター グループを構成する
-コンピューター グループは、Windows Server Update Services (WSUS) の展開において重要な要素です。 コンピューター グループでは、更新プログラムをテストし、特定のコンピューターを更新プログラムのターゲットに指定することを許可します。 既定のコンピューターグループは、[すべてのコンピューター] と [割り当てられていないコンピューター] の2つです。 既定では、クライアント コンピューターが初めて WSUS サーバーに接続すると、サーバーによって、そのクライアント コンピューターがこれら両方のグループに追加されます。
+コンピューター グループは、Windows Server Update Services (WSUS) の展開において重要な要素です。 コンピューター グループでは、更新プログラムをテストし、特定のコンピューターを更新プログラムのターゲットに指定することを許可します。 既定のコンピューター グループには、"すべてのコンピューター" と "割り当てられていないコンピューター" の 2 つがあります。 既定では、クライアント コンピューターが初めて WSUS サーバーに接続すると、サーバーによって、そのクライアント コンピューターがこれら両方のグループに追加されます。
 
 カスタム コンピューター グループは、組織で更新プログラムを管理するのに必要な数だけ作成することができます。 更新プログラムを組織内の他のコンピューターに展開する前に、少なくとも 1 つのコンピューター グループを作成して更新プログラムをテストすることをお勧めします。
 
@@ -262,9 +262,9 @@ WSUS セットアップでは、WSUS サーバーに接続する各クライア�
 
 クライアント コンピューターの自動更新を構成するには、次の手順を使用します。
 
--   [手順 4: 自動更新のグループポリシー設定を構成する](4-configure-group-policy-settings-for-automatic-updates.md)
+-   [手順 4:自動更新のグループ ポリシー設定を構成する](4-configure-group-policy-settings-for-automatic-updates.md)
 
--   [2.3. このトピックのコンピューターグループを構成する](#23-configure-wsus-computer-groups)
+-   [2.3. コンピューター グループを構成する](#23-configure-wsus-computer-groups) (このトピック)
 
 ### <a name="configure-automatic-updates-in-group-policy"></a>グループ ポリシーで自動更新を構成する
 
@@ -306,7 +306,7 @@ WSUS セットアップでは、WSUS サーバーに接続する各クライア�
     > [!WARNING]
     > WSUS サーバーのイントラネット アドレスを入力する場合は、使用するポートが指定されていることを確認してください。 既定では、WSUS は、HTTP にはポート 8530、HTTPS にはポート 8531 を使用します。 たとえば、HTTP を使用する場合は、「 **http://servername:8530** 」と入力する必要があります。
 
-10. **[OK]** をクリックすると、
+10. **[OK]** をクリックします。
 
 クライアント コンピューターのセットアップ後、WSUS 管理コンソールの **[コンピューター]** ページにこのコンピューターが表示されるまで数分かかります。 ドメイン ベースのグループ ポリシー オブジェクトを使用して構成されているクライアント コンピューターでは、グループ ポリシーによって新しいポリシー設定がクライアント コンピューターに適用されるのに約 20 分間かかる場合があります。 既定では、グループ ポリシーはバックグラウンドで 90 分に 1 回、0 ～ 30 分のランダム オフセットで更新されます。 グループ ポリシーをすぐに更新する場合は、クライアント コンピューターでコマンド プロンプト ウィンドウを開き、「gpupdate /force」と入力します。
 

@@ -13,15 +13,15 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.openlocfilehash: cf189b15ca15fb556424b5e4931f19d4be356d4d
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78370776"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323374"
 ---
 # <a name="desktop-hosting-service"></a>デスクトップ ホスティング サービス
 
->適用先:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
+>適用対象:Windows Server (半期チャネル)、Windows Server 2019、Windows Server 2016
 
 この記事では、デスクトップ ホスティング サービスのコンポーネントについて詳しく説明します。
 
@@ -31,7 +31,7 @@ ms.locfileid: "78370776"
 
 プロバイダーのデスクトップ ホスティング サービスは、分離されたテナント環境のセットとして実装されます。 各テナントの環境は、ストレージ コンテナー、一連の仮想マシン、および Azure サービスの組み合わせで構成されます。これらはすべて、分離された仮想ネットワークを介して通信します。 各仮想マシンには、テナントのホストされたデスクトップ環境を構成する 1 つ以上のコンポーネントが含まれています。 次のサブセクションでは、各テナントのホストされたデスクトップ環境を構成するコンポーネントについて説明します。
 
-## <a name="active-directory-domain-services"></a>[Active Directory Domain Services]
+## <a name="active-directory-domain-services"></a>Active Directory Domain Services
 
 Active Directory Domain Services (AD DS) は、テナントのユーザーがデスクトップとアプリケーションにサインインしてワークロードを実行できるように、ドメインおよびフォレストの情報を提供します。 また、これにより、Windows アプリケーションに必要になる場合があるファイル共有とデータベースの設定や接続も行えます。
 

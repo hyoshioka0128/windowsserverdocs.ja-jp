@@ -13,11 +13,11 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: a1b1a5492a6e5dbc48899b3918314676884e0454
-ms.sourcegitcommit: 39244de670f712857a5fdd56630e95d57b7001a5
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74897685"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322094"
 ---
 # <a name="install-the-windows-server-essentials-log-collector"></a>Windows Server Essentials Log Collector のインストール
 
@@ -47,14 +47,14 @@ Windows Server Essentials Log Collector のインストールウィザードで�
   
 ##### <a name="to-uninstall-and-reinstall-the-log-collector"></a>Log Collector をアンインストールおよび再インストールするには  
   
-1.  ダッシュボードを開きます。  
+1.  [ダッシュボード] を開きます。  
   
 2.  **[アドイン]** タブをクリックし、一覧から **[Log Collector]** を選択して、 **[アンインストール]** をクリックします。  
   
 
-3.  前述の「 [To install the Log Collector](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall)」にある手順を実行し、Log Collector をダウンロードしてインストールします。  
+3.  前の手順「[Log Collector をインストールするには](Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall)」にある手順を実行し、Log Collector をダウンロードしてインストールします。  
 
-3.  前述の「 [To install the Log Collector](../support/Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall)」にある手順を実行し、Log Collector をダウンロードしてインストールします。  
+3.  前の手順「[Log Collector をインストールするには](../support/Install-the-Windows-Server-Essentials-Log-Collector.md#BKMK_ToInstall)」にある手順を実行し、Log Collector をダウンロードしてインストールします。  
 
   
 ### <a name="manually-install-the-log-collector"></a>Log Collector を手動でインストールする  

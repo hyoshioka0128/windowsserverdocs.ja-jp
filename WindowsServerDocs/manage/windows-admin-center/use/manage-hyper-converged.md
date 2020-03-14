@@ -9,11 +9,11 @@ ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server
 ms.openlocfilehash: 6795464bfbadd12fc220e941ad2175eb83d0f050
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75949940"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322864"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Windows 管理センターを使用したハイパー集約型インフラストラクチャの管理
 
@@ -46,7 +46,7 @@ ms.locfileid: "75949940"
 
 Microsoft によって積極的に開発されているハイパー集約型インフラストラクチャの Windows 管理センターです。 既存の機能を向上させ、新機能を追加する頻繁な更新プログラムを受信します。
 
-## <a name="before-you-start"></a>開始前の作業
+## <a name="before-you-start"></a>開始する前に
 
 Windows 管理センターでハイパー集約型インフラストラクチャとしてクラスターを管理するには、Windows Server 2016 または Windows Server 2019 を実行している必要があります。また、Hyper-v と記憶域スペースダイレクトが有効になっている必要があります。 必要に応じて、Windows 管理センターを使用して、ソフトウェアで定義されたネットワークを有効にし、管理することもできます。
 
@@ -92,7 +92,7 @@ Windows 管理センターでハイパー集約型インフラストラクチャ
 
 デプロイには約 30 ~ 45 分かかります。
 
-## <a name="get-started"></a>、
+## <a name="get-started"></a>作業開始
 
 デプロイされたハイパースレッディングインフラストラクチャは、Windows 管理センターを使用して管理できます。
 
@@ -135,7 +135,7 @@ Windows 管理センターをまだダウンロードしていない場合はイ
 
 ### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019"></a>Windows Server 2016 と Windows Server 2019 の管理には違いがありますか。
 
-対応 ハイパースレッディングインフラストラクチャの windows 管理センターは、Windows Server 2016 と Windows Server 2019 の両方のエクスペリエンスを向上させる更新プログラムを頻繁に受信します。 ただし、一部の新機能は、Windows Server 2019 でのみ使用できます。たとえば、重複除去と圧縮の切り替えスイッチなどです。
+はい。 ハイパースレッディングインフラストラクチャの windows 管理センターは、Windows Server 2016 と Windows Server 2019 の両方のエクスペリエンスを向上させる更新プログラムを頻繁に受信します。 ただし、一部の新機能は、Windows Server 2019 でのみ使用できます。たとえば、重複除去と圧縮の切り替えスイッチなどです。
 
 ### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>Windows 管理センターを使用して、収束スケールアウトファイルサーバー (SoFS) や Microsoft SQL Server など、他のユースケースの記憶域スペースダイレクトを管理できますか。
 
@@ -161,15 +161,15 @@ Windows Admin Center (別のダウンロードとして利用可能) は、Windo
 
 ### <a name="does-windows-admin-center-require-system-center"></a>Windows Admin Center に System Center は必要ですか。
 
-いいえ。
+No:
 
 ### <a name="does-it-require-an-internet-connection"></a>インターネットに接続する必要がありますか。
 
-いいえ。
+No:
 
 Windows 管理センターは Microsoft Azure クラウドとの強力で便利な統合機能を備えていますが、ハイパー集約型インフラストラクチャのコア管理と監視のエクスペリエンスは、完全にオンプレミスにあります。 インターネットに接続せずにインストールして使用することができます。
 
-## <a name="things-to-try"></a>対処方法
+## <a name="things-to-try"></a>試してみるべきこと
 
 作業を開始するだけであれば、次の簡単なチュートリアルでは、Windows 管理センターでのハイパー集約インフラストラクチャの構成と動作について説明しています。 適切な略しを使用して、運用環境に注意してください。 これらのビデオは、Windows 管理センターバージョン1804と、Windows Server 2019 の Insider Preview ビルドで記録されています。
 
@@ -217,7 +217,7 @@ Windows 管理センターは Microsoft Azure クラウドとの強力で便利�
     </tr>
 </table>
 
-### <a name="create-a-new-virtual-machine"></a>新しい仮想マシンを作成する
+### <a name="create-a-new-virtual-machine"></a>新しいバーチャル マシンの作成
 
 1. 左側のナビゲーションウィンドウで **[Virtual Machines]** ツールをクリックします。
 2. Virtual Machines ツールの上部で、 **[インベントリ]** タブを選択し、 **[新規]** をクリックして新しい仮想マシンを作成します。
@@ -225,7 +225,7 @@ Windows 管理センターは Microsoft Azure クラウドとの強力で便利�
 4. その後、uou は、最初に仮想マシンを作成するホストを選択するか、推奨されるホストを使用します。
 5. 仮想マシンファイルのパスを選択します。 ドロップダウンリストからボリュームを選択するか、 **[参照]** をクリックしてフォルダーピッカーを使用してフォルダーを選択します。 バーチャルマシンの構成ファイルとバーチャルハードディスクファイルは、選択したボリュームまたはパスの `\Hyper-V\[virtual machine name]` パスの下の1つのフォルダーに保存されます。
 6. 仮想プロセッサの数を選択して、入れ子になった仮想化を有効にするかどうか、メモリ設定、ネットワークアダプター、仮想ハードディスクを構成し、.iso イメージファイルからオペレーティングシステムをインストールするか、ネットワークからインストールするかを選択します。
-7. **[作成]** をクリックして、仮想マシンを作成します。
+7. **[作成]** をクリックして、バーチャル マシンを作成します。
 8. 仮想マシンが作成され、仮想マシンの一覧に表示されたら、仮想マシンを起動できます。
 9. 仮想マシンが起動したら、VMConnect を使用して仮想マシンのコンソールに接続し、オペレーティングシステムをインストールできます。 一覧から仮想マシンを選択し、[**詳細** > **接続**] をクリックして .rdp ファイルをダウンロードします。 リモートデスクトップ接続アプリで .rdp ファイルを開きます。 これは仮想マシンのコンソールに接続しているため、Hyper-v ホストの管理者の資格情報を入力する必要があります。
 
@@ -286,7 +286,7 @@ Windows 管理センターは Microsoft Azure クラウドとの強力で便利�
 - [Microsoft Tech Community で Windows 管理センターフォーラムに参加する](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
 - `@servermgmt` にツイート
 
-### <a name="see-also"></a>「
+### <a name="see-also"></a>参照
 
 - [Windows Admin Center](../overview.md)
 - [記憶域スペース ダイレクト](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview)

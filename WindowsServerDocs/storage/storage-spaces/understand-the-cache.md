@@ -10,11 +10,11 @@ author: cosmosdarwin
 ms.date: 07/17/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: f2c2e0435d06c18dbacab4e85db770ba86e654b3
-ms.sourcegitcommit: b5c12007b4c8fdad56076d4827790a79686596af
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78865421"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322344"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>記憶域スペース ダイレクトのキャッシュについて
 

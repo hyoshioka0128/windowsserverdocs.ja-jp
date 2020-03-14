@@ -12,11 +12,11 @@ author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
 ms.openlocfilehash: fce9b45f538b0d506b621b888d413c99590b1362
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465556"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322704"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>HYPER-V でジェネレーション 1 または 2 の仮想マシンを作成するか。
 
@@ -253,6 +253,6 @@ COM ポートを追加するには:
 
 ## <a name="see-also"></a>参照  
 
-- [Hyper-v 上の Linux および FreeBSD Virtual Machines](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
-- [VMConnect を使用して Hyper-v 仮想マシン上のローカルリソースを使用する](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)
+- [Hyper-V での Linux および FreeBSD の仮想マシン](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)
+- [VMConnect を使って Hyper-V 仮想マシン上でローカル リソースを使用する](../learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md)
 - [Windows Server 2016 での Hyper-v のスケーラビリティの計画](Plan-for-Hyper-V-scalability-in-Windows-Server-2016.md)

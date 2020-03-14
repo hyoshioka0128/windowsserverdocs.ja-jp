@@ -14,15 +14,15 @@ ms.author: helohr
 ms.date: 09/16/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: c0a9f11aea9e24cc1a2bab275aae8dc0a81e9cba
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371814"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323664"
 ---
 # <a name="windows-desktop-client-for-admins"></a>管理者のための Windows デスクトップ クライアント
 
->適用先:Windows 10 および Windows 7
+>適用対象:Windows 10 および Windows 7
 
 このトピックでは、管理者にとって役に立つ Windows デスクトップ クライアントに関する追加情報を示します。 基本的な使用方法については、「[Windows デスクトップ クライアントの概要](windowsdesktop.md)」を参照してください。
 

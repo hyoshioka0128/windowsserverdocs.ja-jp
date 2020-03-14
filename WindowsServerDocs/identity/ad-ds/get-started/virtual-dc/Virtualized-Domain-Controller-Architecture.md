@@ -10,15 +10,15 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: e8673b9e66a0aa3b6bea89b91ae5022efb26c65c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71390509"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323154"
 ---
 # <a name="virtualized-domain-controller-architecture"></a>仮想化ドメイン コントローラーのアーキテクチャ
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
 このトピックでは、仮想化ドメイン コントローラーの複製および安全な復元のアーキテクチャについて説明します。 複製と安全な復元のプロセスをフローチャートで示し、その後プロセスの各手順について詳しく取り上げます。  
   
@@ -60,7 +60,7 @@ VM-GenerationID をサポートするハイパーバイザーに複製メディ�
   
     1.  ID が一致する場合、これは新しい仮想マシンではないため、複製は行われません。 DCCloneConfig.xml ファイルが存在する場合は、複製が行われないように、時間/日付スタンプが含まれるファイルの名前が変更されます。 サーバーは引き続き正常に起動されます。 Windows Server 2012 で仮想ドメイン コントローラーを再起動すると、すべてこのように動作します。  
   
-    2.  2 つの ID が一致しない場合、これは、以前のドメイン コントローラーの NTDS.DIT が含まれる新しい仮想マシン (または、復元されたスナップショット) です。 DCCloneConfig.xml ファイルが存在する場合は、複製操作が続行されます。 存在しない場合は、スナップショット復元操作が引き続き行われます。 「 [Virtualized domain controller safe restore architecture](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)」を参照してください。  
+    2.  2 つの ID が一致しない場合、これは、以前のドメイン コントローラーの NTDS.DIT が含まれる新しい仮想マシン (または、復元されたスナップショット) です。 DCCloneConfig.xml ファイルが存在する場合は、複製操作が続行されます。 存在しない場合は、スナップショット復元操作が引き続き行われます。 「[仮想化ドメイン コントローラーの安全な復元のアーキテクチャ](../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/../../../ad-ds/get-started/virtual-dc/Virtualized-Domain-Controller-Architecture.md#BKMK_SafeRestoreArch)」を参照してください。  
   
     3.  ハイパーバイザーが比較のための VM-Generation ID を提供していないのに、DCCloneConfig.xml ファイルが存在する場合は、ネットワークでドメイン コントローラーが重複しないようにファイル名が変更され、ゲストは DSRM でブートされます。 dccloneconfig.xml ファイルがない場合、ゲストは正常にブートされます (ネットワーク上に重複ドメイン コントローラーが存在する可能性があります)。 この重複ドメインコントローラーを再利用する方法の詳細については、Microsoft サポート技術情報の記事 [2742970](https://support.microsoft.com/kb/2742970)を参照してください。  
   
@@ -182,7 +182,7 @@ AD DSは、ハイパーバイザー プラットフォームを使用して **VM
   
 1.  Time T1 の時点で、ハイパーバイザー管理者は仮想 DC1 のスナップショットを取得します。 この段階の DC1 には、USN 値 (実際は**highestCommittedUsn** ) 100、InvocationId (この図では ID として示されています) A (実際は GUID) が設定されています。 savedVMGID 値は、DC の DIT ファイルの VM-GenerationID です ( **msDS-GenerationId**という名前の属性の DC のコンピューター オブジェクトに対して格納)。 VMGID は、仮想マシン ドライバーから使用できる VM-GenerationId の現在の値です。 この値は、ハイパーバイザーによって提供されます。  
   
-2.  次の Time T2 で、100 人のユーザーがこの DC に追加されています (ユーザーを、Time T1 と Time T2 の間にこの DC で実行された可能性のある更新の例と考えます。実際の更新では、ユーザーの作成、グループの作成、パスワードの更新、属性の更新などが混在しています)。 この例では、更新ごとに 1 つの一意の USN が使用されます (実際は、ユーザー作成により複数の USN が使用される可能性があります)。 DC1 は、これらの更新をコミットする前に、データベースの VM-GenerationID の値 (savedVMGID) が、ドライバーから使用できる現在の値 (VMGID) と同じかどうかを確認します。 同じ場合は、ロールバックがまだ行われていないため、更新はコミットされ、USN は 200 になります。これは次の更新では USN 201 が使用されることを意味します。 InvocationId、savedVMGID、または VMGID に変更はありません。 これらの更新は、次のレプリケーション サイクルで DC2 にレプリケートされます。 DC2 は、ここで表現されている高基準値 (および**UptoDatenessVector**) を、DC1 (A) @USN = 200 として単純に更新します。 つまり、DC2 は、USN 200 を介した nvocationId A のコンテキストでは、DC1 からのすべての更新を認識します。  
+2.  次の Time T2 で、100 人のユーザーがこの DC に追加されています (ユーザーを、Time T1 と Time T2 の間にこの DC で実行された可能性のある更新の例と考えます。実際の更新では、ユーザーの作成、グループの作成、パスワードの更新、属性の更新などが混在しています)。 この例では、更新ごとに 1 つの一意の USN が使用されます (実際は、ユーザー作成により複数の USN が使用される可能性があります)。 DC1 は、これらの更新をコミットする前に、データベースの VM-GenerationID の値 (savedVMGID) が、ドライバーから使用できる現在の値 (VMGID) と同じかどうかを確認します。 同じ場合は、ロールバックがまだ行われていないため、更新はコミットされ、USN は 200 になります。これは次の更新では USN 201 が使用されることを意味します。 InvocationId、savedVMGID、または VMGID に変更はありません。 これらの更新は、次のレプリケーション サイクルで DC2 にレプリケートされます。 DC2 は、ここで表される高基準値 (および**UptoDatenessVector**) を、DC1 (A) @USN = 200 として単純に更新します。 つまり、DC2 は、USN 200 を介した nvocationId A のコンテキストでは、DC1 からのすべての更新を認識します。  
   
 3.  Time T3 の時点で、Time T1 で取得されたスナップショットが DC1 に適用されます。 DC1 がロールバックされたため、その USN は 100 にロールバックされます。これは、DC1 が USN を 101 から使用して、以降の更新と関連付ける可能性があることを示しています。 ただし、この時点で、VMGID の値は、VM-GenerationID をサポートするハイパーバイザーによって異なります。  
   

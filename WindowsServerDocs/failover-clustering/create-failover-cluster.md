@@ -9,11 +9,11 @@ ms.technology: storage-failover-clustering
 ms.date: 06/06/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: d85866284272d80727d3fdb21c6e6447bd3ded2f
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78370636"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322814"
 ---
 # <a name="create-a-failover-cluster"></a>フェールオーバー クラスターを作成する
 

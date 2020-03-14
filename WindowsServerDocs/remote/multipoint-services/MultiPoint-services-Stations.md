@@ -14,11 +14,11 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.openlocfilehash: 7b8f757d552bf54cd7f4eed0783ba8e0062b9d30
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371824"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322804"
 ---
 # <a name="multipoint--stations"></a>MultiPoint ステーション
 MultiPoint サービス システムの環境で *ステーション* MultiPoint サービスを実行しているコンピューターに接続するためのユーザーのエンドポイントします。 各ステーションは、ユーザーに独立した Windows 10 エクスペリエンスを提供します。 次のステーションの種類がサポートされています。  

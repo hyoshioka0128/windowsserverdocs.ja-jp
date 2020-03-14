@@ -5,15 +5,14 @@ ms.prod: windows-server
 ms.date: 11/10/2017
 ms.technology: server-general
 ms.topic: article
-author: greg-lindsay
-ms.author: greg-lindsay
+ms.author: chrisrin
 ms.localizationpriority: high
-ms.openlocfilehash: 946c1266f1c2cdc78cedac6794abb9f8d26696cd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 9b6c7742428d278de363f561211018b77d6a3ddf
+ms.sourcegitcommit: 5197a87e659589bcc8d2a32069803ae736b02892
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947698"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79376269"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Windows Server 向け Azure ハイブリッド特典
 
@@ -92,10 +91,10 @@ Windows Server 向け Azure ハイブリッド特典の詳細については、A
 
 Windows Server のソフトウェア アシュアランスやサブスクリプションは、以下のマイクロソフトのライセンス チャネルを組み合わせて購入できます。
 
-| ［チャネル］                      | 開く     | OVS      | Select/Select Plus  | MPSA       | EA/EAS   |
+| Channel                      | Open     | OVS      | Select/Select Plus  | MPSA       | EA/EAS   |
 |------------------------------|----------|----------|-----------------------|-----------|----------|
 | 一般的なサイズ (デバイス数)  | 5 から 250    | 5 から 250    | >250                  | >250      | >500     |
-| SA/サブスクリプション            | オプション | 含まれる | オプション              | オプション  | 含まれる |
+| SA/サブスクリプション            | 省略可能 | 含まれる | 省略可能              | 省略可能  | 含まれる |
 
 マイクロソフトは、Azure ハイブリッド特典の使用の適格性を確認するために、随時、エンド カスタマーを監査する権利を留保します。 
 

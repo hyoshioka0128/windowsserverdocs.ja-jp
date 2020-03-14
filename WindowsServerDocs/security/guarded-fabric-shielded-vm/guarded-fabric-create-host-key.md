@@ -9,11 +9,11 @@ author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
 ms.openlocfilehash: 2aea6c8416a0f3af04ad6056c5d09a4d07708eaa
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371794"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322014"
 ---
 # <a name="create-a-host-key-and-add-it-to-hgs"></a>ホストキーを作成して HGS に追加する
 

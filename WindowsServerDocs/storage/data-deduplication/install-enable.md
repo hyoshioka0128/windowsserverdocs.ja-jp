@@ -10,11 +10,11 @@ ms.author: wgries
 ms.date: 05/09/2017
 description: Windows Server でのデータ重複除去のインストール方法、ワークロードがデータ重複除去に適切であるかどうかを判断する、ボリュームでデータ重複除去を有効にする
 ms.openlocfilehash: 36c9894fd8916643340134698f36af3bd50c34d8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71402317"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322424"
 ---
 # <a name="install-and-enable-data-deduplication"></a>データ重複除去のインストールと有効化
 > 適用対象: Windows Server (半期チャネル)、Windows Server 2016

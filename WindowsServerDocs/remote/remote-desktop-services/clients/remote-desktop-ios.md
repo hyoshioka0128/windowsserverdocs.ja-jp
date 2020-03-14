@@ -15,15 +15,15 @@ ms.author: helohr
 date: 02/11/2020
 ms.localizationpriority: medium
 ms.openlocfilehash: ef13227a9f7b83f01786bbb11498da912c86581b
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78370686"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323464"
 ---
 # <a name="get-started-with-the-ios-client"></a>iOS クライアントの概要
 
->適用先:Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
+>適用対象:Windows 10、Windows 8.1、Windows Server 2019、Windows Server 2016、Windows Server 2012 R2
 
 iOS 用のリモート デスクトップ クライアントを使用して、iOS デバイス (iPhone と iPad) から Windows のアプリ、リソース、およびデスクトップを使用することができます。
 
@@ -163,7 +163,7 @@ IOS デバイスでのリモート デスクトップの概要を次の手順に
 | 直接タッチ  | 右クリックします。          | 1 本指でタップし、保留中                                      |
 | マウス ポインター | 左クリックします。           | 1 本指でタップ                                               |
 | マウス ポインター | 左クリックしておよびドラッグ  | 1 本の指ダブルタップを押したままをドラッグし、                    |
-| マウス ポインター | 右クリックします。          | 2 本指でタップ                                               |
+| マウス ポインター | 右クリック          | 2 本指でタップ                                               |
 | マウス ポインター | 右クリックし、ドラッグ | 2 本の指ダブルタップを押したままをドラッグし、                    |
 | マウス ポインター | マウス ホイール          | 2 本の指をタップして、保持を上下にドラッグ                |
 | マウス ポインター | ズーム                 | ズーム インまたはズーム アウトする 2 本の指を分散する 2 本の指によるピンチします。 |

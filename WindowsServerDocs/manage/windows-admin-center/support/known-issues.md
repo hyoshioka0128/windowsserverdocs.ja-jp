@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 06/07/2019
 ms.openlocfilehash: 4a91d09d6824795a21a9a7cdc7695c407aa70756
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822705"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322924"
 ---
 # <a name="windows-admin-center-known-issues"></a>Windows Admin Center の既知の問題
 
@@ -27,7 +27,7 @@ ms.locfileid: "76822705"
 
 - 1024未満のポートの使用はサポートされていません。 サービスモードでは、必要に応じて、指定したポートにリダイレクトするようにポート80を構成できます。
 
-## <a name="general"></a>[全般]
+## <a name="general"></a>全般
 
 - Windows **Server 2016**にゲートウェイとしてインストールされている Windows 管理センターを使用している場合は、```Faulting application name: sme.exe``` と ```Faulting module name: WsmSvc.dll```を含むイベントログでエラーが発生すると、サービスがクラッシュする可能性があります。 これは、Windows Server 2019 で修正されたバグが原因です。 Windows Server 2016 の修正プログラムには、2019の累積的な更新プログラム[KB4480977](https://www.catalog.update.microsoft.com/Search.aspx?q=4480977)が含まれています。
 
@@ -53,7 +53,7 @@ ms.locfileid: "76822705"
 
 ### <a name="microsoft-edge"></a>Microsoft Edge
 
-- Windows 管理センターがサービスとして展開されていて、ブラウザーとして Microsoft Edge を使用している場合は、新しいブラウザーウィンドウを起動した後にゲートウェイを Azure に接続できないことがあります。 追加することで、この問題を回避しようとしています。 https://login.microsoftonline.com 、 https://login.live.com 、として、ゲートウェイの URL が信頼済みサイトとクライアント側のブラウザーでポップアップ ブロックの設定のサイトを許可されているとします。 この問題を解決する方法については、[トラブルシューティングガイド](troubleshooting.md#azure-features-dont-work-properly-in-edge)を参照してください。 [17990376]
+- Windows 管理センターがサービスとして展開されていて、ブラウザーとして Microsoft Edge を使用している場合は、新しいブラウザーウィンドウを起動した後にゲートウェイを Azure に接続できないことがあります。 この問題を回避するには、ゲートウェイの https://login.microsoftonline.com、 https://login.live.com、および URL を信頼済みサイトとして追加し、クライアント側ブラウザーでポップアップブロックの設定に許可されたサイトを追加します。 この問題を解決する方法については、[トラブルシューティングガイド](troubleshooting.md#azure-features-dont-work-properly-in-edge)を参照してください。 [17990376]
 
 ### <a name="google-chrome"></a>Google Chrome
 
@@ -96,7 +96,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 - .PFX の暗号化された証明書を現在のユーザー ストアにインポートすることはできません。 [11818622]
 
-### <a name="events"></a>[イベント]
+### <a name="events"></a>イベント
 
 - イベントは、[プロキシ サービスを使用する場合に WebSocket の互換性](#websocket-compatibility-when-using-a-proxy-service)に影響を受けます。
 
@@ -142,7 +142,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
   - Alt + Tab
   - ファンクション キー
   - Windows キー
-  - PrintScreen
+  - PrtScn
 
 ### <a name="roles-and-features"></a>役割と機能
 
@@ -152,7 +152,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 - 自動的に再起動するように選択した場合、状態が 100% に更新される前に、再起動が行われます。 [13098852]
 
-### <a name="storage"></a>記憶域
+### <a name="storage"></a>ストレージ
 
 - ダウンレベル: DVD/CD/フロッピー ドライブは、ダウンレベルのボリュームとして表示されません。
 
@@ -160,7 +160,7 @@ PowerShell で `$PSVersiontable` を入力して、WMF がインストールさ�
 
 - ダウンレベル: 新しいボリュームを作成する場合、ReFS では、Windows 2012 および 2012 R2 コンピューターでの 64K のアロケーション ユニット サイズのみがサポートされます。 ReFS ボリュームがダウンレベル ターゲットの小さいアロケーション ユニット サイズで作成された場合は、ファイル システムの書式設定が失敗します。 新しいボリュームは使用できません。 解決策は、ボリュームを削除し、64 K のアロケーション ユニット サイズを使用することです。
 
-### <a name="updates"></a>更新
+### <a name="updates"></a>更新プログラム
 
 - 更新プログラムをインストールすると、インストールの状態がキャッシュされ、ブラウザーの更新が必要になる場合があります。
 

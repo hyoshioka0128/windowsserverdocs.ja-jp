@@ -8,11 +8,11 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.openlocfilehash: 41912c90beacbb0c0c285ea4da8305c1afdf2a51
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71386542"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322604"
 ---
 # <a name="managing-the-host-guardian-service"></a>ホストガーディアンサービスの管理
 
@@ -341,7 +341,7 @@ TPM によって信頼された構成証明の場合、HGS にはいくつかの
 これらのポリシーには、セキュリティ上の理由から無効にできないことを意味する "ロック" があります。
 次の表では、各既定のポリシーの目的について説明します。
 
-ポリシー名                    | 目的
+[ポリシー名]                    | 目的
 -------------------------------|-----------------------------------------------------
 Hgs_SecureBootEnabled          | ホストでセキュアブートが有効になっている必要があります。 これは、スタートアップバイナリとその他の UEFI ロック設定を測定するために必要です。
 Hgs_UefiDebugDisabled          | ホストでカーネルデバッガーが有効になっていないことを確認します。 ユーザーモードのデバッガーは、コード整合性ポリシーでブロックされます。

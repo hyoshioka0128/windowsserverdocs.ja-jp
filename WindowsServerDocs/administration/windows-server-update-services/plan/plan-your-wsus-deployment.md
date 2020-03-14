@@ -11,11 +11,11 @@ ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
 ms.openlocfilehash: 37e3a7788ccd409f4002f5fe2d7ea087e89b3419
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369836"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323524"
 ---
 # <a name="plan-your-wsus-deployment"></a>WSUS 展開を計画する
 

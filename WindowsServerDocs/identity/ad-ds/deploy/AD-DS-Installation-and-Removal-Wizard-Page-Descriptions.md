@@ -10,11 +10,11 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: 3563c30e86c53435c10cafc840a71c7b8c526943
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371567"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323254"
 ---
 # <a name="ad-ds-installation-and-removal-wizard-page-descriptions"></a>AD DS インストール ウィザードおよび削除ウィザードのページの説明
 

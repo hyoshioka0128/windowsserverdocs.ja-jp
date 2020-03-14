@@ -9,11 +9,11 @@ ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: da0f541c34c7f8687822bec365364fdd406fa3c3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369737"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322694"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>フェールオーバークラスターでクラスターの共有ボリュームを使用する
 
@@ -103,14 +103,14 @@ CSV を使用するには、記憶域とディスクが次の要件を満たし�
 - **クラスター記憶域の CSV ディスクまたは他のディスクの選択**。 クラスター化された仮想マシン用のディスクを 1 つ以上選択する場合は、各ディスクの使用方法を検討します。 ディスクが Hyper-V によって作成されるファイル (VHD ファイルや構成ファイルなど) を格納するために使用される場合は、クラスター記憶域の CSV ディスクまたはその他の使用可能なディスクを選択できます。 ディスクが仮想マシンに直接アタッチされる物理ディスク (パススルー ディスク) である場合は、CSV ディスクを選択できず、クラスター記憶域のその他の使用可能なディスクから選択する必要があります。
 - **ディスクを識別するためのパス名**。 CSV のディスクは、パス名で識別されます。 各パスは、ノードのシステムドライブの **\\ClusterStorage**フォルダーの下に番号付きのボリュームとして表示されます。 このパスは、クラスター内のどのノードから参照しても同じです。 必要な場合、ボリューム名を変更できます。
 
-CSV 用の記憶域の要件については、記憶域のベンダーが提供するガイドラインを確認してください。 CSV 用の記憶域の計画に関するその他の考慮事項については、後述の「 [フェールオーバー クラスターで CSV を使用するための計画](#plan-to-use-csv-in-a-failover-cluster) 」を参照してください。
+CSV 用の記憶域の要件については、記憶域のベンダーが提供するガイドラインを確認してください。 CSV 用の記憶域の計画に関するその他の考慮事項については、このトピックの「[フェールオーバー クラスターで CSV を使用するための計画](#plan-to-use-csv-in-a-failover-cluster)」を参照してください。
 
 ### <a name="node-requirements"></a>ノードの要件
 
 CSV を使用するには、ノードが次の要件を満たしている必要があります。
 
 - **システム ディスクのドライブ文字**。 すべてのノードで、システム ディスクのドライブ文字は同じにする必要があります。
-- **認証プロトコル**。 NTLM プロトコルをすべてのノードで有効にする必要があります。 これは既定で有効になっています。
+- **認証プロトコル**。 NTLM プロトコルをすべてのノードで有効にする必要があります。 既定では、これが有効になります。
 
 ## <a name="plan-to-use-csv-in-a-failover-cluster"></a>フェールオーバー クラスターで CSV を使用するための計画
 
@@ -163,9 +163,9 @@ CSV を使用するフェールオーバー クラスターの記憶域構成を
 
 #### <a name="windows-powershell-equivalent-commands-add-a-disk-to-available-storage"></a>Windows PowerShell の同等のコマンド (使用可能な記憶域にディスクを追加する)
 
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
-次の例では、クラスターに追加できる状態にあるディスクを識別し、それらを **使用可能記憶域** グループに追加します。
+次の例では、クラスターに追加できる状態にあるディスクを識別し、それらを**使用可能記憶域**グループに追加します。
 
 ```PowerShell
 Get-ClusterAvailableDisk | Add-ClusterDisk
@@ -183,9 +183,9 @@ Get-ClusterAvailableDisk | Add-ClusterDisk
 
 #### <a name="windows-powershell-equivalent-commands-add-a-disk-to-csv"></a>Windows PowerShell の同等のコマンド (CSV へのディスクの追加)
 
-以下の Windows PowerShell コマンドレットは、前述の手順と同じ機能を実行します。 ここでは書式上の制約のために、折り返されて複数の行にわたって表示される場合もありますが、各コマンドレットは 1 行に入力します。
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。
 
-次の例では、 *使用可能記憶域* にある **Cluster Disk 1** をローカル クラスター上の CSV に追加します。
+次の例では、*使用可能記憶域*にある **Cluster Disk 1** をローカル クラスター上の CSV に追加します。
 
 ```PowerShell
 Add-ClusterSharedVolume –Name "Cluster Disk 1"
@@ -255,7 +255,7 @@ CSV 用のバックアップ アプリケーションとバックアップ ス�
 > [!WARNING]
 > バックアップ データを CSV ボリュームに復元する必要がある場合は、バックアップ アプリケーションに、クラスター ノードにまたがってアプリケーション間の整合性が維持されるデータを維持および復元する機能と、その機能に対する制限があるかどうかを確認してください。 たとえば、一部のアプリケーションでは、CSV ボリュームをバックアップしたノードとは異なるノードで CSV を復元する場合、復元を実行するノードでアプリケーションの状態に関する重要なデータを誤って上書きする可能性があります。
 
-## <a name="more-information"></a>詳細情報
+## <a name="more-information"></a>詳細
 
 - [フェールオーバー クラスタリング](failover-clustering.md)
 - [クラスター化された記憶域スペースの展開](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)

@@ -10,11 +10,11 @@ author: cosmosdarwin
 ms.date: 06/28/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 52c600068d5dd447ff9faa7c40788664e222a83a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366892"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322784"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>記憶域スペース ダイレクトのボリュームの計画
 
@@ -151,7 +151,7 @@ SQL Server データベースやパフォーマンスが重視される Hyper-V 
 
 サーバー (ドライブが最大 4 台) あたりドライブ 1 台分に相当する容量を予約することをお勧めします。 各自の判断でさらに多く予約することができますが、この最小推奨容量で、ドライブの障害発生後インプレースの即時並行修復が正常に行われます。
 
-![予約](media/plan-volumes/reserve.png)
+![reserve](media/plan-volumes/reserve.png)
 
 たとえば、サーバーが 2 台あって容量が 1 TB のドライブを使っている場合、2 x 1 = 2 TB のプールを予約として取っておきます。 サーバーが 3 台あって容量が 1 TB のドライブを使っている場合、3 x 1 = 3 TB を予約として取っておきます。 サーバーが 4 台以上あって容量が 1 TB のドライブを使っている場合、4 x 1 = 4 TB を予約として取っておきます。
 
@@ -195,11 +195,11 @@ SQL Server データベースやパフォーマンスが重視される Hyper-V 
 
 簡潔にするため、この例を通じて 10 進法の単位を使っています (つまり、1 TB = 1,000,000,000,000 バイト)。 しかし、Windows の記憶域の数量は 2 進法の単位で表示されます。 たとえば、2 TB の各ドライブは Windows では 1.82 TiB と表示されます。 同様に、128 TB の記憶域プールは 116.41 TiB と表示されます。 これは正常な動作です。
 
-## <a name="usage"></a>使用方法
+## <a name="usage"></a>使用法
 
 「[記憶域スペース ダイレクトのボリュームの作成](create-volumes.md)」をご覧ください。
 
-### <a name="see-also"></a>関連項目
+### <a name="see-also"></a>参照
 
 - [記憶域スペースダイレクトの概要](storage-spaces-direct-overview.md)
 - [記憶域スペースダイレクトのドライブの選択](choosing-drives.md)

@@ -10,11 +10,11 @@ author: vpetter
 ms.date: 03/27/2018
 ms.localizationpriority: ''
 ms.openlocfilehash: 46c633af8cf82ac43d2a787a7193685d88ad0ecc
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78371784"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322154"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Windows エラー報告を使用したフェールオーバークラスターのトラブルシューティング 
 

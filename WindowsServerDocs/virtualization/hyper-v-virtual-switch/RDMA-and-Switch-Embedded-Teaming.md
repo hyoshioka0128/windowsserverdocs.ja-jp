@@ -9,13 +9,13 @@ ms.assetid: 68c35b64-4d24-42be-90c9-184f2b5f19be
 ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: b39cac842f115a1828c666eec52f17f80971510c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365691"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322714"
 ---
-# <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>リモート ダイレクト メモリ アクセス\(RDMA\)スイッチ埋め込みチーミング\(SET\)
+# <a name="remote-direct-memory-access-rdma-and-switch-embedded-teaming-set"></a>リモートダイレクトメモリアクセス \(RDMA\) とスイッチ埋め込みチーミング \(設定\)
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016
 

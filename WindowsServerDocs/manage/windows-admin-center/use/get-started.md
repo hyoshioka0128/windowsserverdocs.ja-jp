@@ -9,11 +9,11 @@ ms.localizationpriority: medium
 ms.prod: windows-server
 ms.date: 02/15/2019
 ms.openlocfilehash: fc8e6ffa39320cfc73bf3f5bd0a5bc765ded24b4
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950521"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322874"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Windows 管理センターを使ってみる
 
@@ -52,7 +52,7 @@ Windows 管理センターのインストールが完了したら、メインの
 
  **単一のサーバーまたはクラスターを管理ノードとして追加する**
 
-1. をクリックして **+ 追加** **すべて接続**します。
+1. **[すべての接続]** の下にある **[+ 追加]** をクリックします。
 
    ![](../media/launch/addserver0.png)
 
@@ -117,7 +117,7 @@ Windows 管理センターが Windows Server でサービスモードで実行�
 
 **ローカル管理者パスワードソリューション (LAPS)**
 
-お使いの環境で[LAPS](https://technet.microsoft.com/mt227395.aspx)を使用していて、Windows 管理センターが WINDOWS 10 PC にインストールされている場合は、LAPS の資格情報を使用して、管理対象ノードで認証を行うことができます。 **このシナリオを使用する場合は、** [フィードバックを提供してください ](https://aka.ms/WACFeedback)。
+お使いの環境で[LAPS](https://technet.microsoft.com/mt227395.aspx)を使用していて、Windows 管理センターが WINDOWS 10 PC にインストールされている場合は、LAPS の資格情報を使用して、管理対象ノードで認証を行うことができます。 **このシナリオを使用する場合は、フィードバックを提供してください** [provide feedback](https://aka.ms/WACFeedback)。
 
 ## <a name="using-tags-to-organize-your-connections"></a>タグを使用した接続の整理
 

@@ -10,15 +10,15 @@ ms.topic: article
 ms.prod: windows-server
 ms.technology: identity-adds
 ms.openlocfilehash: ffc2849fa5e18f7984814d6187cf83d68566409b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71369644"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323244"
 ---
 # <a name="simplified-administration-appendix"></a>付録: 管理の簡素化
 
->適用先:Windows Server 2016 では、Windows Server 2012 R2、Windows Server 2012
+>適用対象: Windows Server 2016、Windows Server 2012 R2、Windows Server 2012
 
   
 -   [サーバーマネージャーサーバーの追加 ダイアログ (Active Directory)](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)  
@@ -81,7 +81,7 @@ Get-Module -ListAvailable
   
 ```  
   
-**[モジュールのインポート]** コマンドを使用する場合の主な例は、"AD:" にアクセスする必要がある場合です。Windows PowerShell 仮想ドライブと、モジュールが既に読み込まれているものはありません。 たとえば、次のコマンドを使用します。  
+使用するためのメインのケース、 **モジュールのインポート** コマンドにアクセスする必要がある場合、"AD:"、Windows PowerShell 仮想ドライブが既に読み込まれて、モジュールです。 たとえば、次のコマンドを使用します。  
   
 ```  
 import-module activedirectory  

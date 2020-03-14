@@ -9,15 +9,15 @@ ms.topic: article
 author: jasongerend
 ms.date: 05/29/2019
 ms.openlocfilehash: ffcff036a7e30018e523def055ce3aeb8d30c225
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71365839"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322334"
 ---
 # <a name="whats-new-in-storage-in-windows-server"></a>Windows Server での記憶域の新機能
 
->適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+>適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 このトピックでは、Windows Server 2019、Windows Server 2016、および Windows Server 半期チャネルリリースでの記憶域の新機能と変更された機能について説明します。
 
@@ -143,13 +143,13 @@ Windows 管理センターでは、サーバーマネージャーツールを使
 
 ### <a name="smb"></a>SMB
 
-- **SMB1 とゲスト認証の削除**: Windows Server では、既定では、SMB1 クライアントとサーバーがインストールされなくなりました。 さらに、SMB2 以降のゲストとして認証する機能は、既定で無効になっています。 詳細については、[Windows 10 バージョン 1709 および Windows Server 1709 のバージョンで、SMBv1 が 既定でインストールされない問題に関するページ](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)をご覧ください。 
+- **Smb1 およびゲスト認証の削除**: 既定では、Windows Server では、smb1 クライアントとサーバーがインストールされなくなりました。 さらに、SMB2 以降のゲストとして認証する機能は、既定で無効になっています。 詳細については、[Windows 10 バージョン 1709 および Windows Server 1709 のバージョンで、SMBv1 が 既定でインストールされない問題に関するページ](https://support.microsoft.com/help/4034314/smbv1-is-not-installed-by-default-in-windows-10-rs3-and-windows-server)をご覧ください。 
 
 - **SMB2/SMB3 のセキュリティと互換性**: レガシ アプリケーションについて SMB2+ の oplock を無効にする機能や、クライアントからの接続ごとに署名や暗号化を要求する機能など、セキュリティやアプリケーションの互換性のための新しいオプションが追加されました。 詳細については、SMBShare PowerShell モジュールのヘルプを確認してください。
 
 ### <a name="data-deduplication"></a>データ重複除去
 
-- **データ重複除去で ReFS をサポート**: ReFS による最新ファイル システムの長所とデータ重複除去のいずれかを選択する必要がなくなりました。ReFS を有効にしているときにいつでもデータ重複除去を有効にできるようになりました。 ReFS によって記憶域の効率が 95% 以上向上します。
+- **データ重複除去で ReFS をサポート**: ReFS による最新のファイル システムの長所とデータ重複除去のいずれかを選択する必要がなくなりました。ReFS を有効にした状態でデータ重複除去が有効にすることができます。 ReFS によって記憶域の効率が 95% 以上向上します。
 - **重複除去されたボリュームへの最適化された送受信のための DataPort API**: 開発者は、データ重複除去によって効率的にデータを保存する方法に関する知識を活用して、ボリューム、サーバー、クラスター間で効率的にデータを移動することができます。
 
 ### <a name="file-server-resource-manager"></a>ファイル サーバー リソース マネージャー
@@ -173,7 +173,7 @@ Windows Server バージョン1709は、半期チャネルの最初の Windows S
 記憶域レプリカによって追加されたディザスターリカバリー保護が拡張され、次のものが含まれるようになりました。
 
 - **テスト フェールオーバー**: 宛先の記憶域をマウントするオプションが、テスト フェールオーバー機能によって可能になりました。 レプリケートされた記憶域のスナップショットを、宛先ノードで、テストやバックアップの目的で、一時的にマウントすることができます。 詳細については、「[記憶域レプリカについてよく寄せられる質問](https://aka.ms/srfaq)」をご覧ください。
-- **Windows 管理センターのサポート**:Windows 管理センターでは、サーバーマネージャーツールを使用して、レプリケーションのグラフィカル管理をサポートできるようになりました。 これには、サーバー間のレプリケーション、クラスター間のレプリケーション、およびストレッチクラスターレプリケーションが含まれます。
+- **Windows 管理センターのサポート**: サーバーマネージャーツールを使用して、Windows 管理センターでレプリケーションのグラフィカル管理をサポートできるようになりました。 これには、サーバー間のレプリケーション、クラスター間のレプリケーション、およびストレッチクラスターレプリケーションが含まれます。
 
 記憶域レプリカには、次の機能強化も含まれています。
 
@@ -188,7 +188,7 @@ Windows Server バージョン1709は、半期チャネルの最初の Windows S
 
 ### <a name="data-deduplication"></a>データ重複除去
 
-- **データ重複除去で ReFS をサポート**: ReFS による最新ファイル システムの長所とデータ重複除去のいずれかを選択する必要がなくなりました。ReFS を有効にしているときにいつでもデータ重複除去を有効にできるようになりました。 ReFS によって記憶域の効率が 95% 以上向上します。
+- **データ重複除去で ReFS をサポート**: ReFS による最新のファイル システムの長所とデータ重複除去のいずれかを選択する必要がなくなりました。ReFS を有効にした状態でデータ重複除去が有効にすることができます。 ReFS によって記憶域の効率が 95% 以上向上します。
 - **重複除去されたボリュームへの最適化された送受信のための DataPort API**: 開発者は、データ重複除去によって効率的にデータを保存する方法に関する知識を活用して、ボリューム、サーバー、クラスター間で効率的にデータを移動することができます。
 
 ## <a name="whats-new-in-storage-in-windows-server-2016"></a>Windows Server 2016 での記憶域の新機能
@@ -269,7 +269,7 @@ SMB 署名と相互認証が使用できない場合、Windows 10 または Wind
 > [!NOTE]  
 > これらの設定のレジストリ値は既定では存在しませんが、セキュリティ強化の規則は、グループ ポリシーまたはその他のレジストリ値でオーバーライドされるまで引き続き適用されます。  
 
-これらのセキュリティ強化の詳細については、「UNC セキュリティ強化」を参照してください。 マイクロソフトサポート技術情報の記事[3000483](https://support.microsoft.com/kb/3000483)および [MS15-011 & MS15 を参照してください。グループ ポリシーのセキュリティ強化](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy)。  
+UNC ハードニングとも呼ばれる、これらのセキュリティ機能強化の詳細については、マイクロソフト サポート技術情報の記事 [3000483](https://support.microsoft.com/kb/3000483) および「[MS15-011 & MS15-014: Hardening Group Policy (MS15-011 & MS15-014: グループ ポリシーのセキュリティ強化)](https://blogs.technet.microsoft.com/srd/2015/02/10/ms15-011-ms15-014-hardening-group-policy)」を参照してください。  
 
 ### <a name="work-folders"></a>ワーク フォルダー
 ワークフォルダーサーバーが Windows Server 2016 を実行していて、ワークフォルダークライアントが Windows 10 の場合、変更通知が改善されました。
@@ -297,5 +297,5 @@ ReFS では、以下の点が強化されています。
 **動作の相違点**<br>
 これらの機能は、Windows Server 2016 での新機能です。 
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 * [Windows Server 2016 の新機能](../get-started/what-s-new-in-windows-server-2016.md)  
