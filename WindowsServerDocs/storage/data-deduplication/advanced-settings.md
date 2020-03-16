@@ -9,11 +9,11 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: 1d0677cec134ddeb4c706d0f1231f2c26b39967e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71403217"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79322644"
 ---
 # <a name="advanced-data-deduplication-settings"></a>高度なデータ重複除去の設定
 
@@ -26,10 +26,10 @@ ms.locfileid: "71403217"
 
 ### <a id="modifying-job-schedules-change-schedule"></a>データ重複除去スケジュールの変更
 データ重複除去ジョブは、Windows タスク スケジューラを使用してスケジュールされ、パス Microsoft\Windows\Deduplication で表示および編集できます。 データ重複除去には、スケジュールを簡単にするいくつかのコマンドレットが含まれます。
-* [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx)には、現在スケジュールされているジョブが表示されます。
-* [`New-DedupSchedule`](https://technet.microsoft.com/library/hh848445.aspx)新しいスケジュールされたジョブを作成します。
-* [`Set-DedupSchedule`](https://technet.microsoft.com/library/hh848447.aspx)によって、既存のスケジュールされたジョブが変更されます。
-* スケジュールされたジョブを[`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx)削除します。
+* [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx) は現在スケジュールされているジョブを表示します。
+* [`New-DedupSchedule`](https://technet.microsoft.com/library/hh848445.aspx) は新しくスケジュールされたジョブを作成します。
+* [`Set-DedupSchedule`](https://technet.microsoft.com/library/hh848447.aspx) は既存のスケジュールされたジョブを変更します。
+* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx) はスケジュールされたジョブを削除します。
 
 データ重複除去ジョブを実行する時間を変更する最も一般的な理由は、ジョブが業務時間外に実行されるようにするためです。 次の手順の例は、週末と平日の午後 7:00 にアイドル状態となるハイパーコンバージド Hyper-V ホストの、*晴れた日*のシナリオでデータ重複除去スケジュールを変更する方法を示しています。 スケジュールを変更するには、管理者コンテキストで次の PowerShell コマンドレットを実行します。
 
@@ -69,7 +69,7 @@ ms.locfileid: "71403217"
     <thead>
         <tr>
             <th style="min-width:125px">パラメーター名</th>
-            <th>定義</th>
+            <th>Definition</th>
             <th>使用可能な値</th>
             <th>この値を設定する理由</th>
         </tr>
@@ -88,7 +88,7 @@ ms.locfileid: "71403217"
             <td>この値は、スケジュールされている必要があるジョブの種類であるため、必要です。 タスクをスケジュールした後は、この値を変更できません。</td>
         </tr>
         <tr>
-            <td>Priority</td>
+            <td>優先順位</td>
             <td>スケジュールされたジョブのシステム優先順位</td>
             <td>
                 <ul>
@@ -114,7 +114,7 @@ ms.locfileid: "71403217"
             <td>スケジュールされたタスクは、少なくともいずれかの曜日に実行する必要があります。</td>
         </tr>
         <tr>
-            <td>Cores</td>
+            <td>コア</td>
             <td>ジョブが使用するシステム上のコアの割合</td>
             <td>(パーセントを示す) 整数 0 ~ 100</td>
             <td>ジョブがシステム上のコンピューティング リソースに与える影響のレベルを制御するため</td>
@@ -132,7 +132,7 @@ ms.locfileid: "71403217"
             <td>ジョブを削除せずに無効にするため</td>
         </tr>
         <tr>
-            <td>完全</td>
+            <td>[完全]</td>
             <td>フル ガベージ コレクション ジョブのスケジュール</td>
             <td>スイッチ (true または false)</td>
             <td>既定では、4 番目のジョブはすべてガベージ コレクション ジョブです。 このスイッチを使用して、より頻繁に実行されるフル ガベージ コレクションをスケジュールできます。</td>
@@ -150,7 +150,7 @@ ms.locfileid: "71403217"
             <td>ジョブがシステム上のコンピューティング リソースに与える影響のレベルを制御するため</td>
         </tr>
         <tr>
-            <td>名前</td>
+            <td>Name</td>
             <td>スケジュールされたジョブの名前</td>
             <td>String</td>
             <td>ジョブには一意に識別できる名前が必要であるため。</td>
@@ -200,7 +200,7 @@ ms.locfileid: "71403217"
     <thead>
         <tr>
             <th style="min-width:125px">設定名</th>
-            <th>定義</th>
+            <th>Definition</th>
             <th>使用可能な値</th>
             <th>この値を変更する理由</th>
         </tr>
@@ -296,7 +296,7 @@ ms.locfileid: "71403217"
     <thead>
         <tr>
             <th style="min-width:125px">設定名</th>
-            <th>定義</th>
+            <th>Definition</th>
             <th>使用可能な値</th>
             <th>変更する理由</th>
         </tr>

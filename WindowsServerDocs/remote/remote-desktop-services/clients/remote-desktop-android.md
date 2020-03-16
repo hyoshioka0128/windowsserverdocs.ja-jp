@@ -12,14 +12,14 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 12/02/2019
+ms.date: 03/12/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: cb0fa7009c4a8fe53810f8b5f058e659c2391dc1
-ms.sourcegitcommit: 06ae7c34c648538e15c4d9fe330668e7df32fbba
+ms.openlocfilehash: d4ef08107c816aebf6563e57e5e76b12b793d472
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78370687"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323424"
 ---
 # <a name="get-started-with-the-android-client"></a>Android クライアントの概要
 
@@ -229,3 +229,11 @@ RD ゲートウェイを削除するには:
 | マウス ポインター | 右ボタンのクリック          | 2 本の指でタップする                                                    |
 | マウス ポインター | 右クリックしてドラッグ | 2 本の指でダブルタップから長押しして、ドラッグする                         |
 | マウス ポインター | マウス ホイール          | 2 本の指で長押しして、上または下にドラッグする                     |
+
+## <a name="join-the-beta-channel"></a>Beta チャネルに参加する
+
+他のユーザーより前に最新の機能にアクセスしたい場合、または新しいバージョンがリリースされる前に問題の検出をお手伝いいただける場合は、Beta チャネルをご利用ください。 Beta チャネルは、エンタープライズ管理者が環境内のユーザーに対して新しいバージョンの Android クライアントを検証するのにも優れた方法です。
+
+Beta に参加するには、プレビュー バージョンへのアクセスに同意して、クライアントをダウンロードするだけです。 Google Play ストアを通じて、プレビュー バージョンを直接受け取ることができます。
+
+[Beta に参加する](https://play.google.com/apps/testing/com.microsoft.rdc.androidx)

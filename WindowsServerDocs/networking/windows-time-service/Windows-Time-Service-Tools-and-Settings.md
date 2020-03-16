@@ -14,15 +14,15 @@ ms.custom:
 - CSSTroubleshoot
 audience: Admin
 ms.openlocfilehash: e99c07428a1689e3c079ff2570759c849a61e945
-ms.sourcegitcommit: 839fc8e38bdd7a2389ea7c06c5d4f86c8938740f
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77652204"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79323474"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Windows タイム サービスのツールと設定
 
-> 適用先:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 以降
+> 適用対象:Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows 10 以降
 
 このトピックでは、Windows タイム サービス (W32Time) のツールと設定について説明します。  
 
@@ -294,7 +294,7 @@ Windows タイム サービスでは、次のレジストリ サブキーの下�
 | レジストリ エントリ | バージョン | 説明 |
 | --- | --- | --- |
 |**AllowNonstandardModeCombinations** |すべてのバージョン |ピア間の同期で非標準モードの組み合わせが許可されることを示します。 ドメイン メンバーに対する既定値は **1** です。 スタンドアロン クライアントとサーバーに対する既定値は **1** です。 |
-|**NtpServer** |すべてのバージョン |コンピューターでのタイムスタンプの取得元になる、スペースで区切られたピアのリストを指定します。これは、1 行に 1 つ以上の DNS 名または IP アドレスで構成されます。 リストされる各 DNS 名または IP アドレスは一意である必要があります。 ドメインに接続されているコンピューターは、正式な米国の時刻など、より信頼性の高いタイム ソースと同期する必要があります。  <ul><li>0x01 SpecialInterval </li><li>0x02 UseAsFallbackOnly</li><li>0x04 SymmetricActive:このモードの詳細については、「[Windows タイムサーバー: 3.3 動作モード](https://go.microsoft.com/fwlink/?LinkId=208012)」を参照してください。</li><li>0x08 Client</li></ul><br />ドメイン メンバーには、このレジストリ エントリの既定値はありません。 スタンドアロン クライアントとサーバーに対する既定値は time.windows.com,0x1 です。<br /><br />**注:**<br />使用できる NTP サーバーの詳細については、KB 262680 の「[インターネット上で利用可能な簡易ネットワーク タイム プロトコル (SNTP) タイム サーバーの一覧](https://support.microsoft.com/help/262680/a-list-of-the-simple-network-time-protocol-sntp-time-servers-that-are)」を参照してください。 |
+|**NtpServer** |すべてのバージョン |コンピューターでのタイムスタンプの取得元になる、スペースで区切られたピアのリストを指定します。これは、1 行に 1 つ以上の DNS 名または IP アドレスで構成されます。 リストされる各 DNS 名または IP アドレスは一意である必要があります。 ドメインに接続されているコンピューターは、正式な米国の時刻など、より信頼性の高いタイム ソースと同期する必要があります。  <ul><li>0x01 SpecialInterval </li><li>0x02 UseAsFallbackOnly</li><li>0x04 SymmetricActive:このモードの詳細については、「[Windows タイムサーバー:3.3 動作モード](https://go.microsoft.com/fwlink/?LinkId=208012)」を参照してください。</li><li>0x08 Client</li></ul><br />ドメイン メンバーには、このレジストリ エントリの既定値はありません。 スタンドアロン クライアントとサーバーに対する既定値は time.windows.com,0x1 です。<br /><br />**注:**<br />使用できる NTP サーバーの詳細については、KB 262680 の「[インターネット上で利用可能な簡易ネットワーク タイム プロトコル (SNTP) タイム サーバーの一覧](https://support.microsoft.com/help/262680/a-list-of-the-simple-network-time-protocol-sntp-time-servers-that-are)」を参照してください。 |
 |**ServiceDll** |すべてのバージョン |W32Time によって管理されます。 これには Windows オペレーティング システムで使用される予約済みのデータが含まれています。この設定を変更すると、予期しない結果が発生する可能性があります。 ドメイン メンバーとスタンドアロン クライアントおよびサーバーの両方において、この DLL の既定の場所は、%windir%\System32\W32Time.dll です。 |
 |**ServiceMain** |すべてのバージョン |W32Time によって管理されます。 これには Windows オペレーティング システムで使用される予約済みのデータが含まれています。この設定を変更すると、予期しない結果が発生する可能性があります。 ドメイン メンバーに対する既定値は **SvchostEntry_W32Time** です。 スタンドアロン クライアントとサーバーに対する既定値は **SvchostEntry_W32Time** です。 |
 |**Type** |すべてのバージョン |どのピアからの同期を受け入れるかを示します。  <ul><li>**NoSync**: タイム サービスは他のソースと同期しません。</li><li>**NTP**: タイム サービスは、**NtpServer** レジストリ エントリで指定されたサーバーと同期します。</li><li>**NT5DS**: タイム サービスはドメイン階層から同期します。  </li><li>**AllSync**: タイム サービスは、使用可能なすべての同期メカニズムを使用します。  </li></ul>ドメイン メンバーに対する既定値は **NT5DS** です。 スタンドアロン クライアントとサーバーに対する既定値は **NTP** です。 |
@@ -327,7 +327,7 @@ Windows タイム サービスでは、次のレジストリ サブキーの下�
 
 ## <a name="reference-pre-set-values-for-the-windows-time-service-gpo-settings"></a>参照 :Windows タイム サービス GPO 設定のプリセット値  
 
-次の表に、Windows タイム サービスに関連付けられているグローバル グループ ポリシー設定と、各設定に関連付けられたプリセット値の一覧を示します。 各設定の詳細については、この記事の最初の方にある「[参照: Windows タイム サービスのレジストリ エントリ](#reference-windows-time-service-registry-entries)」を参照してください。 次の設定は、**グローバル構成設定**と呼ばれる 1 つの GPO に含まれています。  
+次の表に、Windows タイム サービスに関連付けられているグローバル グループ ポリシー設定と、各設定に関連付けられたプリセット値の一覧を示します。 各設定の詳細については、この記事の最初の方にある「[参照 :Windows タイム サービスのレジストリ エントリ](#reference-windows-time-service-registry-entries)」を参照してください。 次の設定は、**グローバル構成設定**と呼ばれる 1 つの GPO に含まれています。  
 
 ### <a name="pre-set-values-for-global-group-policy-settings"></a>"グローバルグループポリシー" 設定のプリセット値
 
@@ -351,7 +351,7 @@ Windows タイム サービスでは、次のレジストリ サブキーの下�
 
 ### <a name="pre-set-values-for-configure-windows-ntp-client-settings"></a>"Windows NTP クライアントを構成する" 設定のプリセット値
 
-次の表に、**Windows NTP クライアントの構成** GPO についての選択可能な設定、および Windows タイム サービスに関連付けられているプリセット値の一覧を示します。 各設定の詳細については、この記事の最初の方にある「[参照: Windows タイム サービスのレジストリ エントリ](#reference-windows-time-service-registry-entries)」を参照してください。  
+次の表に、**Windows NTP クライアントの構成** GPO についての選択可能な設定、および Windows タイム サービスに関連付けられているプリセット値の一覧を示します。 各設定の詳細については、この記事の最初の方にある「[参照 :Windows タイム サービスのレジストリ エントリ](#reference-windows-time-service-registry-entries)」を参照してください。  
 
 |グループ ポリシー設定|プリセット値|  
 |------------------------|-----------------|  

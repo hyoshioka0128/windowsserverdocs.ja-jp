@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: ca68087ad238cbbd06c56e41dd65f318adae5222
-ms.sourcegitcommit: 2a15de216edde8b8e240a4aa679dc6d470e4159e
+ms.openlocfilehash: 1b2ea23e95796f6cce90a1dc90de896c2242084a
+ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77465476"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79319996"
 ---
 # <a name="get-started-with-the-macos-client"></a>macOS クライアントの概要
 
@@ -68,7 +68,7 @@ AppCenter 上のプレビュー チャネルで新機能をテストしていま
    - リモート セッションにローカル フォルダーをリダイレクトする
    - ローカル プリンターを転送する
    - スマート カードを転送する
-4. **[Save]** (保存) をクリックします。
+4. **[保存]** をクリックします。
 
 接続を開始するには、ダブルクリックするだけです。 同じことがリモート リソースにも当てはまります。
 
@@ -76,7 +76,7 @@ AppCenter 上のプレビュー チャネルで新機能をテストしていま
 リモート デスクトップ接続の定義をエクスポートし、それを別のデバイスで使用できます。 リモート デスクトップは、個別に保存されます。RDP ファイル。
 
 1. 接続センターでは、リモート デスクトップを右クリックします。
-2. クリックして **エクスポート**します。
+2. **[Export]** (エクスポート) をクリックします。
 3. リモート デスクトップを保存する場所を参照します。RDP ファイルです。
 4. **[OK]** をクリックします。
 
@@ -99,7 +99,7 @@ AppCenter 上のプレビュー チャネルで新機能をテストしていま
    - **フィード URL** の RD Web アクセス サーバーの URL。 電子メール アドレスに関連付けられている RD Web アクセス サーバーを検索するクライアントに通知この: このフィールドに、会社の電子メール アカウントを入力することもできます。
    - **ユーザー名** -に接続している RD Web アクセス サーバーを使用するユーザー名。
    - **パスワード** -に接続している RD Web アクセス サーバーを使用するパスワード。
-3. **[Save]** (保存) をクリックします。
+3. **[保存]** をクリックします。
 
 
 リモート リソースが、接続センターで表示されます。
@@ -164,7 +164,7 @@ Mac のキーボード レイアウトは、Windows キーボードのレイア�
 
 ## <a name="support-for-remote-desktop-gateway-pluggable-authentication-and-authorization"></a>リモート デスクトップ ゲートウェイのプラグ可能な認証と承認のためのサポート
 
-Windows Server 2012 R2 には、新しい認証方法、リモート デスクトップ ゲートウェイのプラグ可能な認証および承認で、カスタム認証のルーチンの柔軟性を高めるのサポートが導入されました。 できるようになりましたこの認証モデル Mac クライアントを使用します。 
+Windows Server 2012 R2 には、新しい認証方法、リモート デスクトップ ゲートウェイのプラグ可能な認証および承認で、カスタム認証のルーチンの柔軟性を高めるのサポートが導入されました。 この認証モデルを Mac クライアントで試すことができるようになりました。 
 
 > [!IMPORTANT]
 > Windows 8.1 より前に、カスタムの認証と承認モデルはサポートされていませんが、上記の記事では、それらについて説明します。
@@ -174,4 +174,3 @@ Windows Server 2012 R2 には、新しい認証方法、リモート デスク�
 
 > [!TIP]
 > 意見やご質問はへようこそ は常にします。 ただし、投稿しないでくださいコメント機能を使用して、この記事の最後に、トラブルシューティングのヘルプを要求します。 代わりに移動、 [リモート デスクトップ クライアントのフォーラム](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) し、新しいスレッドを開始します。 機能の候補があるか。 内の指定、 [クライアント ユーザーの声フォーラム](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android)します。
-
