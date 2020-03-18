@@ -8,16 +8,16 @@ ms.author: jol
 ms.date: 09/17/2018
 ms.localizationpriority: medium
 ms.prod: windows-server
-ms.openlocfilehash: ee8c0203be25b30f173b1887de506844d5b58738
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 90f5b670744b812769164a7a2c70fc673fe4089f
+ms.sourcegitcommit: 3cb84bc0bd4be0f9333b7c85cda858c38730cb3a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406914"
+ms.lasthandoff: 03/17/2020
+ms.locfileid: "79432451"
 ---
 # <a name="extensions-for-windows-admin-center"></a>Windows Admin Center の拡張機能
 
->適用先:Windows Admin Center、Windows Admin Center Preview
+>適用対象: Windows Admin Center、Windows Admin Center Preview
 
 Windows Admin Center は拡張可能なプラットフォームとして構築され、パートナーと開発者が Windows Admin Center 内で既存の機能を利用できるようにすることで、他の IT 管理製品およびソリューションとシームレスに統合し、お客様に付加価値を提供しています。 Windows Admin Center の各ソリューションおよびツールは、パートナーと開発者が利用できるのと同じ拡張機能を使用して拡張機能として構築されています。そのため、現在 Windows Admin Center で利用可能なものと同様の強力なツールを作成することができます。
 
@@ -27,10 +27,10 @@ Windows Admin Center 拡張機能は、HTML5、CSS、Angular、TypeScript、jQue
 
 次に、Windows 管理センターの拡張機能を開発することによって、製品と顧客にもたらす価値を示します。
 
-- **Windows 管理センターツールとの統合:** Windows 管理センターのサーバーおよびクラスター管理ツールと製品とサービスを統合し、統合されたシームレスなエンドツーエンドの監視、管理、トラブルシューティングのエクスペリエンスを顧客に提供します。
-- **プラットフォームのセキュリティ、id、および管理機能を活用します。** Windows 管理センターのプラットフォーム機能を活用して、今日の複雑な要件を満たすために、Azure Active Directory (AAD) のサポート、Multi-Factor Authentication、ロールベースの Access Control (RBAC)、ログ記録、製品とサービスの監査を有効にします。IT 組織。
-- **最新の web テクノロジを使用して開発します。** HTML5、CSS、角度、TypeScript、jQuery などの最新の web テクノロジや、Windows 管理センター SDK に含まれる豊富で強力な UI コントロールを使用して、魅力的なユーザーエクスペリエンスをすばやく構築できます。
-- **製品の支援を拡張する:** 新しい Windows 管理センターエコシステムの一部となるのは、急速に成長している顧客ベースを支援し、今年後半に Windows Server 2019 の発売を利用することです。
+- **Windows Admin Center ツールとの統合:** Windows Admin Center でサーバーおよびクラスター管理ツールを使用して製品とサービスを統合し、監視、管理、トラブルシューティングの統一されたシームレスなエンド ツー エンドのエクスペリエンスをお客様に提供できます。
+- **プラットフォームのセキュリティ、id、および管理機能を活用します。** Windows 管理センターのプラットフォーム機能を活用して、現在の IT 組織の複雑な要件を満たすことで、Azure Active Directory (AAD) のサポート、Multi-Factor Authentication、ロールベースの Access Control (RBAC)、ログ記録、製品とサービスの監査を有効にします。
+- **最新の Web テクノロジを使用した開発:** HTML5、CSS、Angular、TypeScript および jQuery、また Windows Admin Center SDK に含まれる充実した強力な UI コントロールを含む最新の Web テクノロジを使用して、魅力的なユーザー エクスペリエンスを簡単に作成できます。
+- **製品のアウトリーチの拡大:** 急速に拡大する顧客基盤へのアウトリーチを持つ新しい Windows Admin Center エコシステムに参加し、今年後半発売の Windows Server 2019 の推進力を利用できます。
 
 ## <a name="start-developing-with-the-windows-admin-center-sdk"></a>Windows 管理センター SDK を使用した開発の開始
 
@@ -85,9 +85,3 @@ Lenovo XClarity インテグレーターの拡張機能は、Windows 管理セ�
 QCT Management Suite 拡張機能は、QCT Azure Stack HCI 認定システムの物理サーバーの監視と管理を提供することで、Windows 管理センターを補完します。 QCT Management Suite 拡張機能には、サーバーのハードウェア情報が表示されます。また、物理ディスクを効率的に、ハードウェアイベントログツール、および S.M.A.R.T. に置き換えるための直感的なウィザード UI が用意されています。 ベースの予測ディスク管理。 [QCT Management Suite 拡張機能の詳細については、こちらを参照して](case-studies/qct.md)ください。
 
 ![QCT 拡張機能](../media/extensibility-overview/qct-extension.png)
-
-### <a name="squared-up"></a>Squared Up
-
-Squared Up により、System Center Operations Manager に基づくクラス最高の監視エクスペリエンスと、Azure Log Analytics、Application Insights、およびその他の監視ソリューションとの統合機能が提供されます。 [Squared Up の拡張機能](https://squaredup.com/product/honolulu/windows-admin-center-extension/?utm_source=microsoft-docs&utm_medium=public-relations&utm_campaign=honolulu)により、過去のパフォーマンス データやライブ アプリケーションのトポロジと依存関係を Windows Admin Center が提供するサーバーおよびクラスター管理のコンテキストにもたらしています。また、初期のお客様は、多数の異なるソースからの膨大なデータを単一のエクスペリエンスに統合することの価値を高く評価しています。 [Squared Up の拡張機能と開発エクスペリエンスの詳細については、こちらを参照してください](case-studies/squared-up.md)。
-
-![Squared Up の拡張機能](../media/extensibility-overview/squaredup-extension.png)
