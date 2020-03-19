@@ -8,16 +8,16 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: 11d8abfc23cb0f192ed74a1082e83c8e0c8e87e9
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: ed7d7ca4f41784f2ae12220eb2e30077e2467175
+ms.sourcegitcommit: 056d355516f199e8a505c32b9aa685d0cde89e44
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75950093"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79518747"
 ---
 # <a name="storage-quality-of-service"></a>記憶域のサービスの品質 (QoS)
 
-> 適用対象: Windows Server (半期チャネル)、Windows Server 2016
+> 適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 Windows Server 2016 の記憶域のサービスの品質 (QoS) では、Hyper-V とスケールアウト ファイル サーバーの役割を使用して仮想マシンのために記憶域のパフォーマンスを一元的に監視および管理する方法を提供します。 この機能は、同一のファイル サーバー クラスターを使用している複数の仮想マシン間で記憶域リソースの公平性を自動的に向上させ、正規化された IOPS の単位でポリシー ベースの最小と最大のパフォーマンス目標を構成できるようにします。  
 
@@ -71,10 +71,10 @@ Hyper-V サーバーが仮想マシンを起動すると、それらはポリシ
 |用語|説明|  
 |--------|---------------|  
 |正規化された IOPS|すべての記憶域の使用状況は、”正規化された IOPS” で測定されます。  これは、1 秒あたりの記憶域の入出力操作の数です。  8 KB 以下の IO はすべて 1 つの正規化された IO と見なされます。  8 KB より大きいすべての IO は、複数の正規化された IO と見なされます。 たとえば、256 KB の要求は、32 の正規化された IOPS として扱われます。<br /><br />Windows Server 2016 には、IO を正規化するために使用するサイズを指定する機能が含まれています。  記憶域クラスター上で、正規化されたサイズを指定し、クラスター全体の正規化の計算に適用することができます。  既定値は、8 KB のままです。|  
-|フロー|VHD または VHDX ファイルに対して Hyper-V サーバーによって開かれる各ファイル ハンドルは ”フロー” と見なされます。 仮想マシンに 2 台の仮想ハードディスクが接続されている場合、ファイルごとに 1 つのファイル サーバー クラスターへのフローがあります。 VHDX が複数の仮想マシンで共有されている場合、仮想マシンごとに 1 つのフローがあります。|  
+|[フロー]|VHD または VHDX ファイルに対して Hyper-V サーバーによって開かれる各ファイル ハンドルは ”フロー” と見なされます。 仮想マシンに 2 台の仮想ハードディスクが接続されている場合、ファイルごとに 1 つのファイル サーバー クラスターへのフローがあります。 VHDX が複数の仮想マシンで共有されている場合、仮想マシンごとに 1 つのフローがあります。|  
 |InitiatorName|各フローに対応するスケール アウト ファイル サーバーに報告されている仮想マシンの名前です。|  
 |InitiatorID|仮想マシンの ID と一致する識別子。  仮想マシンに同じ InitiatorName が指定されている場合でも、これを使用して常に個別のフローの仮想マシンを一意に識別することができます。|  
-|のポリシー|記憶域 QoS ポリシーは、クラスター データベースに保存され、PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy、PolicyType というプロパティがあります。|  
+|ポリシー|記憶域 QoS ポリシーは、クラスター データベースに保存され、PolicyId、MinimumIOPS、MaximumIOPS、ParentPolicy、PolicyType というプロパティがあります。|  
 |PolicyId|ポリシーの一意の識別子。  既定で生成されますが、必要に応じて指定できます。|  
 |MinimumIOPS|ポリシーによって提供される最小の正規化された IOPS。  ”予約” とも呼ばれます。|  
 |MaximumIOPS|ポリシーによって提供される最大の正規化された IOPS。  ”制限” とも呼ばれます。|  
@@ -127,7 +127,7 @@ Windows Server 2016 の Hyper-V の役割には、記憶域 QoS のサポート�
 このガイドに表示されるシナリオの例には、5 つの仮想マシンが含まれています。 BuildVM1、BuildVM2、BuildVM3、BuildVM4 は、低から中程度の記憶域の需要でデスクトップのワークロードを実行しています。 TestVm1 は、最も大きな記憶域の需要でオンライン トランザクション処理ベンチマークを実行しています。  
 
 ### <a name="view-current-storage-performance-metrics"></a>現在のパフォーマンス メトリックを表示する  
-このセクションの内容:  
+ここでは、次の内容について説明します。  
 
 -   `Get-StorageQosFlow` コマンドレットを使用したフローのクエリ方法。  
 
@@ -304,7 +304,7 @@ Aggregated (以前の SingleInstance) と Dedicated (以前の MultiInstance) �
 
 たとえば、最小値が 300 IOPS で最大値が 500 IOPS の Aggregated ポリシーを作成するとします。 このポリシーを 5 つの異なる VHD/VHDx ファイルに適用する場合、5 つの VHD/VHDx ファイルの合計が、300 IOPS (需要があり、記憶域システムがそのパフォーマンスを提供できる場合) 以上で 500 IOPS 未満であることが保証されるかどうかを確認します。 VHD/VHDx ファイルの IOPS の需要が同程度で、記憶域システムがそれを提供できる場合、各 VHD/VHDx ファイルは約 100 IOPS を取得します。  
 
-ただし、類似した制限を持つ Dedicated ポリシーを作成し、それを 5 つの異なる仮想マシン上の VHD/VHDx ファイルに適用した場合、各仮想マシンは 300 IOPS 以上 500 IOPS 未満を取得します。 仮想マシンに同程度の IOPS の高い需要があり、記憶域システムがそれを提供できる場合、各仮想マシンは、約 500 IOPS を取得します。 の順に移動します。  いずれかの仮想マシンに、同じ MulitInstance ポリシーが構成された複数の VHD/VHDx ファイルがある場合、それらは、VM のそのポリシーが適用されたファイルからの合計 IO が、制限を超えないように制限を共有します。  
+ただし、類似した制限を持つ Dedicated ポリシーを作成し、それを 5 つの異なる仮想マシン上の VHD/VHDx ファイルに適用した場合、各仮想マシンは 300 IOPS 以上 500 IOPS 未満を取得します。 仮想マシンに同程度の IOPS の高い需要があり、記憶域システムがそれを提供できる場合、各仮想マシンは、約 500 IOPS を取得します。 。  いずれかの仮想マシンに、同じ MulitInstance ポリシーが構成された複数の VHD/VHDx ファイルがある場合、それらは、VM のそのポリシーが適用されたファイルからの合計 IO が、制限を超えないように制限を共有します。  
 
 そのため、同じパフォーマンス特性を示すようにしたい VHD/VHDx ファイルのグループがあり、複数の類似したポリシーを作成するという問題を回避したい場合、単一の Dedicated ポリシーを作成し、各仮想マシンのファイルに適用することができます。
 
@@ -812,7 +812,7 @@ while ($true)
 }  
 ```  
 
-## <a name="frequently-asked-questions"></a>AppLocker: Frequently Asked Questions (AppLocker: よく寄せられる質問)  
+## <a name="frequently-asked-questions"></a>よく寄せられる質問  
 
 ### <a name="how-do-i-retain-a-storage-qos-policy-being-enforced-for-my-virtual-machine-if-i-move-its-vhdvhdx-files-to-another-storage-cluster"></a>仮想マシンの VHD/VHDx ファイルを別の記憶域クラスターに移動する場合、その仮想マシンに適用されている記憶域 QoS ポリシーをどのようにして維持すればよいですか  
 
@@ -885,7 +885,7 @@ IOPSNormalizationSize
 32768  
 ```    
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  
 - [Windows Server 2016 の記憶域レプリカ](../storage-replica/storage-replica-overview.md)  
-- [Windows Server 2016 での記憶域スペース ダイレクト](../storage-spaces/storage-spaces-direct-overview.md)  
+- [Windows Server 2016 の記憶域スペースダイレクト](../storage-spaces/storage-spaces-direct-overview.md)  
