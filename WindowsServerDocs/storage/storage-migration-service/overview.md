@@ -8,12 +8,12 @@ ms.date: 01/17/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 1a98de21e91fc7bdc431e7413c44089ce750bc05
-ms.sourcegitcommit: 840d1d8851f68936db3934c80796fb8722d3c64a
+ms.openlocfilehash: 70ce4ebca35e071cf6e27fe429d3c4e6f67d342c
+ms.sourcegitcommit: 8b801bd86e2ddf8255899b11f547daa920e5f651
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2020
-ms.locfileid: "76519474"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80110675"
 ---
 # <a name="storage-migration-service-overview"></a>記憶域移行サービスの概要
 
@@ -58,7 +58,7 @@ Storage Migration Service を使用するには、次のものが必要です。
 - ファイルとデータを移行する**ソースサーバー**または**フェールオーバークラスター**
 - に移行する Windows Server 2019 (クラスター化またはスタンドアロン) を実行している**移行先サーバー** 。 Windows Server 2016 と Windows Server 2012 R2 も同様に動作しますが、約50% 低速です。
 - 移行を管理するために Windows Server 2019 を実行する**orchestrator サーバー**  <br>少数のサーバーのみを移行していて、いずれかのサーバーで Windows Server 2019 を実行している場合は、そのサーバーを orchestrator として使用できます。 より多くのサーバーを移行する場合は、別の orchestrator サーバーを使用することをお勧めします。
-- 記憶域移行サービスのユーザーインターフェイスを実行する**PC またはサーバー [Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md)** 。 PowerShell を使用して移行を管理する場合を除きます。 Windows 管理センターと Windows Server 2019 のバージョンの両方が、バージョン1809以降である必要があります。
+- 記憶域移行サービスのユーザーインターフェイスを実行する**PC またはサーバー [Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md)**  。 PowerShell を使用して移行を管理する場合を除きます。 Windows 管理センターと Windows Server 2019 のバージョンの両方が、バージョン1809以降である必要があります。
 
 Orchestrator とセットアップ先のコンピューターには、少なくとも2つのコアまたは2つの vCPUs と、少なくとも 2 GB のメモリがあることを強くお勧めします。 プロセッサとメモリが増えると、インベントリおよび転送操作の速度が大幅に向上します。
 
@@ -70,7 +70,7 @@ Orchestrator とセットアップ先のコンピューターには、少なく�
 - 移行元と移行先のコンピューターでは、次のファイアウォール規則の*受信*が有効になっている必要があります (ただし、既に有効になっている可能性があります)。
   - ファイルとプリンターの共有 (SMB 受信)
   - Netlogon サービス (NP 受信)
-  - DCOM-In (Windows Management Instrumentation)
+  - Windows Management Instrumentation (DCOM)
   - Windows Management Instrumentation (WMI-In)
   
   > [!TIP]
@@ -100,7 +100,7 @@ Orchestrator とセットアップ先のコンピューターには、少なく�
 - Windows Server 2016 Essentials
 - Windows Server 2019 Essentials
 - Windows Storage Server 2008
-- Windows Storage Server 2008 R2
+- Windows Storage Server 2008 R2
 - Windows Storage Server 2012
 - Windows Storage Server 2012 R2
 - Windows Storage Server 2016
@@ -130,6 +130,10 @@ Orchestrator が Windows Server バージョン1903以降を実行している�
 > [!TIP]
 > Windows Server 2019 または Windows Server を実行している移行先サーバー、半期チャネル以降では、以前のバージョンの Windows Server の転送パフォーマンスが2倍になっています。 このパフォーマンスの向上は、組み込みの Storage Migration Service プロキシサービスが含まれていることによるものであり、まだ開いていない場合は、必要なファイアウォールポートも開きます。
 
+## <a name="azure-vm-migration"></a>Azure VM の移行
+
+Windows 管理センターバージョン1910では、Azure 仮想マシンをデプロイできます。 これにより、VM のデプロイが記憶域移行サービスに統合されます。 ワークロードをデプロイする前に手動で Azure Portal で新しいサーバーと Vm を作成するのではなく、必要な手順と構成がない場合もあります。 Windows 管理センターでは、Azure VM のデプロイ、ストレージの構成、ドメインへの参加、役割のインストールを行うことができます。次に、分散システムを設定します。 
+
 ## <a name="whats-new-in-storage-migration-service"></a>Storage Migration Service の新機能
 
 Windows Server バージョン1903以降、または[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)がインストールされている以前のバージョンの windows Server で Storage Migration Server orchestrator を実行する場合は、次の新機能を使用できます。
@@ -140,7 +144,7 @@ Windows Server バージョン1903以降、または[KB4512534](https://support.
 - Azure File Sync を使用した Azure へ移行された共有のより簡単な同期
 - Azure などの新しいネットワークへの移行
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>参照
 
 - [記憶域移行サービスを使用してファイルサーバーを移行する](migrate-data.md)
 - [記憶域移行サービスに関してよく寄せられる質問 (FAQ)](faq.md)
