@@ -11,14 +11,14 @@ ms.topic: article
 author: heidilohr
 manager: lizross
 ms.author: helohr
-ms.date: 01/29/2020
+ms.date: 03/04/2020
 ms.localizationpriority: medium
-ms.openlocfilehash: 1753780474332a6d5786a5804fc1b4fe5e3d8883
-ms.sourcegitcommit: 9077469e372d2aafcad890cbc4e4a24c58a3838c
+ms.openlocfilehash: 8b7aefa169fe2121c5a2da1f913714d23d989d16
+ms.sourcegitcommit: 056d355516f199e8a505c32b9aa685d0cde89e44
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/30/2020
-ms.locfileid: "76889436"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79518737"
 ---
 # <a name="get-started-with-the-windows-desktop-client"></a>Windows デスクトップ クライアントの概要
 
@@ -134,5 +134,6 @@ Windows のお使いのバージョンに対応したクライアントを選択
 
 クライアント ログを取得するには、次の操作を実行します。
 
-1. **エクスプローラー**を開きます。
-2. **%temp%\DiagOutputDir\RdClientAutoTrace** フォルダーに移動します。
+1. アクティブなセッションがないこと、およびクライアント プロセスがバックグラウンドで実行されていないことを確認します。そのためには、システム トレイの **[リモート デスクトップ]** アイコンを右クリックし、 **[セッションをすべて切断]** を選択します。
+2. **エクスプローラー**を開きます。
+3. **%temp%\DiagOutputDir\RdClientAutoTrace** フォルダーに移動します。
