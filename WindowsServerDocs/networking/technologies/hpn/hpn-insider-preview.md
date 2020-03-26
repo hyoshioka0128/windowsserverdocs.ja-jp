@@ -9,19 +9,19 @@ ms.date: 09/12/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 7098e81f486a5b0b4974c19b47e2d48c6f98832b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: bca603344047ea5cc890bf9976ca5a6c79514136
+ms.sourcegitcommit: 9feb093a0acb8834c9ef3c066667c7062d85e6e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355364"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80289797"
 ---
-# <a name="insider-preview"></a>Insider Preview
+# <a name="new-hpn-features-in-windows-server-2019"></a>Windows Server 2019 の新しい HPN 機能
 
 
 ## <a name="dynamic-vrss-and-vmmq"></a>動的な vRSS と VMMQ
 
->適用対象:Windows Server 2019
+>適用対象: Windows Server 2019
 
 以前は、仮想マシンのキューと仮想マシンのマルチキューを使用すると、ネットワークスループットは最初に 10GbE mark 以降に到達したため、個々の Vm へのスループットが大幅に向上しました。 残念ながら、成功に必要な計画、基準、チューニング、および監視が大きな作業になりました。多くの場合、IT 管理者が使用することを想定しています。 
 
@@ -35,7 +35,7 @@ Windows Server 2019 では、必要に応じて、ネットワークワークロ
 
 ## <a name="receive-segment-coalescing-rsc-in-the-vswitch"></a>vSwitch の Receive Segment Coalescing (RSC)
 
->適用対象:Windows Server 2019 および Windows 10 バージョン1809
+>適用対象: Windows Server 2019 および Windows 10、バージョン1809
 
 VSwitch での受信セグメント結合 (RSC) は、データが vSwitch を走査する前に、複数の TCP セグメントを大きなセグメントに分割する拡張機能です。 大きなセグメントを使用すると、仮想ワークロードのネットワークパフォーマンスが向上します。
 

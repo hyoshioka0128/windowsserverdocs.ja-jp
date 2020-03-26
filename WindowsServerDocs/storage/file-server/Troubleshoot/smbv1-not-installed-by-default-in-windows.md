@@ -7,16 +7,16 @@ audience: ITPro
 ms.topic: article
 ms.author: delhan
 ms.date: 12/25/2019
-ms.openlocfilehash: 9a6e9778e0ce1e50a70e68832390321fb2d9f971
-ms.sourcegitcommit: 8cf04db0bc44fd98f4321dca334e38c6573fae6c
+ms.openlocfilehash: 27869820e49257d059d124bac3f515ac91fef7b0
+ms.sourcegitcommit: 30afd51d74cb6472720fb13ec47d80cf42b20c27
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75654363"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80272318"
 ---
 # <a name="smbv1-is-not-installed-by-default-in-windows-10-version-1709-windows-server-version-1709-and-later-versions"></a>SMBv1 は、Windows 10 バージョン1709、Windows Server バージョン1709以降のバージョンでは既定でインストールされません。
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>要約
 
 Windows 10 秋の更新プログラムおよび Windows Server バージョン 1709 (RS3) 以降のバージョンでは、Server Message Block version 1 (SMBv1) のネットワークプロトコルは既定でインストールされなくなりました。 2007年以降、SMBv2 以降のプロトコルに置き換えられました。 Microsoft は、2014の SMBv1 プロトコルを一般に非推奨としました。 
 
@@ -114,7 +114,7 @@ The client has SMB1 disabled or uninstalled. For more information: https://go.mi
 > [!NOTE]
 > Windows 10 バージョン1709は、"作成者の更新" とも呼ばれます。   
 
-## <a name="more-information"></a>説明
+## <a name="more-information"></a>詳細
 
 この問題を回避するには、SMBv1 のみをサポートしている製品の製造元に連絡し、SMBv 2.02 以降のバージョンをサポートするソフトウェアまたはファームウェアの更新プログラムを要求します。 既知のベンダーとその SMBv1 の要件の最新の一覧については、次の Windows および Windows Server Storage エンジニアリングチームのブログ記事を参照してください。 
 
@@ -146,8 +146,22 @@ Computer Browser サービスは、SMBv1 プロトコルを利用して、Window
 これらの回避策を使用できない場合、またはアプリケーションの製造元がサポートされているバージョンの SMB を提供できない場合は、「 [Windows の SMBv1、SMBv2、および SMBv3 を検出、有効化、および無効化する方法](detect-enable-and-disable-smbv1-v2-v3.md)」の手順に従って、手動で SMBv1 を再度有効にすることができます。
 
 > [!IMPORTANT]
-> SMBv1 を再インストールしないことを強くお勧めします。 これは、この古いプロトコルには、ランサムウェアやその他のマルウェアに関する既知のセキュリティ問題があるためです。   
+> SMBv1 を再インストールしないことを強くお勧めします。 これは、この古いプロトコルには、ランサムウェアやその他のマルウェアに関する既知のセキュリティ問題があるためです。  
 
-## <a name="references"></a>参照先
+#### <a name="windows-server-best-practices-analyzer-messaging"></a>Windows Server ベストプラクティスアナライザーメッセージング
+
+Windows Server 2012 以降のサーバー操作システムには、ファイルサーバー用のベストプラクティスアナライザー (BPA) が含まれています。 SMB1 をアンインストールするための正しいオンラインガイダンスに従っている場合、この BPA を実行すると、矛盾した警告メッセージが返されます。
+
+    Title: The SMB 1.0 file sharing protocol should be enabled
+    Severity: Warning
+    Date: 3/25/2020 12:38:47 PM
+    Category: Configuration
+    Problem: The Server Message Block 1.0 (SMB 1.0) file sharing protocol is disabled on this file server.
+    Impact: SMB not in a default configuration, which could lead to less than optimal behavior.
+    Resolution: Use Registry Editor to enable the SMB 1.0 protocol.
+
+この特定の BPA 規則のガイダンスは無視してください。非推奨とされます。 繰り返し: SMB 1.0 を有効にしないでください。
+
+## <a name="references"></a>参照
 
 [SMB1 の使用を停止する](https://aka.ms/stopusingsmb1)
