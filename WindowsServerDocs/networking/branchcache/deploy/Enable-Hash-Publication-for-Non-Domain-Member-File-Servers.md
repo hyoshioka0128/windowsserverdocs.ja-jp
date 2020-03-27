@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 11584b73-f9e2-4530-afa5-b8df970e6b24
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: e870863b497c17b4b56265d99d91274e34690767
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 223ffd17f1e623f974e97c787fb8b18a806e5d0c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356542"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319265"
 ---
 # <a name="enable-hash-publication-for-non-domain-member-file-servers"></a>非ドメイン メンバー ファイル サーバーでハッシュの発行を有効にする
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 次の手順を使用して、Windows Server 2016 を実行しているファイルサーバーで、ファイルサービスサーバーの役割がインストールされている**ネットワークファイル用 branchcache**役割サービスを使用して、ローカルコンピューターグループポリシーを使用して BranchCache のハッシュの発行を構成できます。  
   
@@ -26,18 +26,17 @@ ms.locfileid: "71356542"
 メンバーシップ **管理者**, 、または同等がこの手順を実行するために必要な最小値。  
   
 > [!NOTE]  
-> 1つまたは複数のドメインメンバーファイルサーバーがある場合は、それらを Active Directory Domain Services の組織単位 (OU) に追加し、グループポリシーを使用して、個別に構成するのではなく、一度にすべてのファイルサーバーに対してハッシュの発行を構成することができます。各ファイルサーバー。 詳細については、「 [ドメイン メンバー ファイル サーバーでハッシュの発行を有効にする
-](../../branchcache/deploy/Enable-Hash-Publication-for-Domain-Member-File-Servers.md)」を参照してください。  
+> 1つまたは複数のドメインメンバーファイルサーバーがある場合は、それらを Active Directory Domain Services の組織単位 (OU) に追加し、グループポリシーを使用して、個別に構成するのではなく、一度にすべてのファイルサーバーに対してハッシュの発行を構成することができます。各ファイルサーバー。 詳細については、「 [Enable Hash Publication For Domain Member File Servers](../../branchcache/deploy/Enable-Hash-Publication-for-Domain-Member-File-Servers.md)」を参照してください。  
   
 ### <a name="to-enable-hash-publication-for-one-file-server"></a>1つのファイルサーバーでハッシュの発行を有効にするには  
   
-1.  Windows PowerShell を開き、「 **mmc**」と入力して、Enter キーを押します。 Microsoft 管理コンソール (MMC) が開きます。  
+1.  Windows PowerShell を開き、「**mmc**」と入力して、Enter キーを押します。 Microsoft 管理コンソール (MMC) が開きます。  
   
-2.  MMC で、 **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。 **[スナップインの追加と削除]** ダイアログボックスが表示されます。  
+2.  MMC の **[ファイル]** メニューで、 **[スナップインの追加と削除]** をクリックします。 **[スナップインの追加と削除]** ダイアログボックスが表示されます。  
   
 3.  **[スナップインの追加と削除]** の **[使用できるスナップ]** イン で、 **[グループポリシーオブジェクトエディター]** をダブルクリックします。 [ローカルコンピューター] オブジェクトが選択された状態で、グループポリシーウィザードが開きます。 **[完了]** をクリックし、 **[OK]** をクリックします。  
   
-4.  ローカルグループポリシーエディター MMC で、次のパスを展開します。**ローカルコンピューターポリシー**、**コンピューターの構成**、**管理用テンプレート**、**ネットワーク**、 **Lanman サーバー**。 **[Lanman サーバー]** をクリックします。  
+4.  ローカルグループポリシーエディター MMC で、 **[ローカルコンピューターポリシー]** 、 **[コンピューターの構成]** 、 **[管理用テンプレート]** 、 **[ネットワーク]** 、 **[Lanman サーバー]** の順に展開します。 **[Lanman サーバー]** をクリックします。  
   
 5.  詳細ウィンドウで、 **[BranchCache のハッシュの発行]** をダブルクリックします。 **[BranchCache のハッシュの発行]** ダイアログボックスが開きます。  
   
@@ -51,7 +50,7 @@ ms.locfileid: "71356542"
   
     3.  ファイル共有で BranchCache が有効になっている場合でも、コンピューター上のすべての共有フォルダーでハッシュの発行を許可しない場合は、[**すべての共有フォルダーでハッシュの発行を許可**しない] をクリックします。  
   
-8.  **[OK]** をクリックします。  
+8.  **[OK]** をクリックすると、  
   
 
 

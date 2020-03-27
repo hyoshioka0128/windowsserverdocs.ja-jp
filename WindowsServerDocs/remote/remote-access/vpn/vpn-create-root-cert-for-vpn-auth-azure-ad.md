@@ -7,16 +7,16 @@ ms.technology: networking-ras
 ms.workload: identity
 ms.topic: article
 ms.date: 06/28/2019
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 41e98648ab963347f8370233c320f5e38b5d4d96
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: def4c0d7437dd297460d0a863cd2568325825ca9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388008"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319033"
 ---
 # <a name="step-72-create-conditional-access-root-certificates-for-vpn-authentication-with-azure-ad"></a>手順 7.2. Azure AD を使用した VPN 認証用の条件付きアクセスルート証明書の作成
 
@@ -51,6 +51,6 @@ VPN クライアントは、資格情報の検証のために Azure AD によっ
 6. **[新規]** ページで、次の手順を実行します。 a. **[期間の選択**] で、1、2、または3年を選択します。
    b. **[作成]** を選択します。
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次のステップ:
 
 [手順 7.3.条件付きアクセスポリシーを構成](vpn-config-conditional-access-policy.md)する: この手順では、VPN 接続の条件付きアクセスポリシーを構成します。

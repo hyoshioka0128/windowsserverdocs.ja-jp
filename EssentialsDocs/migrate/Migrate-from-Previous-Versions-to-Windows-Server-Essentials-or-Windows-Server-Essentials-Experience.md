@@ -2,18 +2,18 @@
 title: 以前のバージョンから Windows Server Essentials または Windows Server Essentials エクスペリエンスに移行する
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 2974fb3a-5150-43fd-a73f-3e5074eb5d03
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f58a8f83fed4185ee51145b988cfef1074f889c7
-ms.sourcegitcommit: e817a130c2ed9caaddd1def1b2edac0c798a6aa2
+ms.openlocfilehash: 55b31785de6e17232a717d534fcb21a24d9052bd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74945138"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318891"
 ---
 # <a name="migrate-from-previous-versions-to-windows-server-essentials-or-windows-server-essentials-experience"></a>以前のバージョンから Windows Server Essentials または Windows Server Essentials エクスペリエンスに移行する
 
@@ -54,11 +54,11 @@ ms.locfileid: "74945138"
   
    いくつかの移行手順では、管理者としてコマンド プロンプト ウィンドウを開く必要があります。 次の手順でこの方法について説明します。  
   
-###  <a name="BKMK_OpenACommandPromptAsAdmin"></a>移行元サーバーで管理者としてコマンドプロンプトウィンドウを開くには  
+###  <a name="to-open-a-command-prompt-window-on-the-source-server-as-an-administrator"></a><a name="BKMK_OpenACommandPromptAsAdmin"></a>移行元サーバーで管理者としてコマンドプロンプトウィンドウを開くには  
   
-1.  **[開始]** をクリックします。  
+1.  **[スタート]** をクリックします。  
   
-2.  検索ボックスに「 **cmd**」と入力します。  
+2.  検索ボックスに「**cmd**」と入力します。  
   
 3.  結果一覧で **[cmd]** を右クリックし、 **[管理者として実行]** をクリックします。  
   
@@ -68,7 +68,7 @@ ms.locfileid: "74945138"
   
 2.  結果一覧で **[cmd]** を右クリックし、 **[管理者として実行]** をクリックします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 -   [サーバー データの Windows Server Essentials への移行](Migrate-Server-Data-to-Windows-Server-Essentials.md)
 
