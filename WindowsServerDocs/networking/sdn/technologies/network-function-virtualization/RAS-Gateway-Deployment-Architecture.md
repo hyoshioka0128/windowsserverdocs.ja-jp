@@ -10,18 +10,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: d46e4e91-ece0-41da-a812-af8ab153edc4
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7b3bd47052e482b562e84d5c44b928c0744b223c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 91d8081261d3cbc5e2da61cc2b5a9737e76a0dc7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405918"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309804"
 ---
 # <a name="ras-gateway-deployment-architecture"></a>RAS ゲートウェイの展開アーキテクチャ
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、ras ゲートウェイプール、リフレクターのルーティング、個々のテナント用の複数のゲートウェイの展開など、RAS ゲートウェイのクラウドサービスプロバイダー (CSP) の展開について説明します。  
   
@@ -29,7 +29,7 @@ ms.locfileid: "71405918"
   
 また、新しいテナントの追加、同期とデータプレーンのルーティング、ゲートウェイとルートリフレクターのフェールオーバーなどのプロセスに関する情報など、デプロイの例も提供されています。  
   
-このトピックは次のセクションで構成されます。  
+このトピックの内容は次のとおりです。  
   
 -   [RAS ゲートウェイの新機能を使用して展開を設計する](#bkmk_new)  
   
@@ -43,7 +43,7 @@ ms.locfileid: "71405918"
   
 -   [RAS ゲートウェイの新機能を使用する利点](#bkmk_advantages)  
   
-## <a name="bkmk_new"></a>RAS ゲートウェイの新機能を使用して展開を設計する  
+## <a name="using-ras-gateway-new-features-to-design-your--deployment"></a><a name="bkmk_new"></a>RAS ゲートウェイの新機能を使用して展開を設計する  
 RAS ゲートウェイには、データセンターにゲートウェイインフラストラクチャを展開する方法を変更して改善する、複数の新機能が含まれています。  
   
 ### <a name="bgp-route-reflector"></a>BGP ルートリフレクター  
@@ -51,22 +51,22 @@ Border Gateway Protocol (BGP) ルートリフレクター機能が RAS ゲート
   
 詳細については、「 [RAS ゲートウェイの新機能](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)」を参照してください。  
   
-### <a name="bkmk_pools"></a>ゲートウェイプール  
+### <a name="gateway-pools"></a><a name="bkmk_pools"></a>ゲートウェイプール  
 Windows Server 2016 では、さまざまな種類のゲートウェイプールを多数作成できます。 ゲートウェイプールには、RAS ゲートウェイのインスタンスが多数含まれており、物理ネットワークと仮想ネットワークの間でネットワークトラフィックをルーティングします。  
   
 詳細については、「RAS ゲートウェイと[Ras ゲートウェイの高可用性](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)の[新機能](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)」を参照してください。  
   
-### <a name="bkmk_gps"></a>ゲートウェイプールのスケーラビリティ  
+### <a name="gateway-pool-scalability"></a><a name="bkmk_gps"></a>ゲートウェイプールのスケーラビリティ  
 プール内のゲートウェイ Vm を追加または削除することで、ゲートウェイプールを簡単にスケールアップまたはスケールダウンできます。 ゲートウェイを削除または追加しても、プールによって提供されるサービスは中断されません。 また、ゲートウェイのプール全体を追加および削除することもできます。  
   
 詳細については、「RAS ゲートウェイと[Ras ゲートウェイの高可用性](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)の[新機能](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)」を参照してください。  
   
-### <a name="bkmk_m"></a>M + N ゲートウェイプールの冗長性  
+### <a name="mn-gateway-pool-redundancy"></a><a name="bkmk_m"></a>M + N ゲートウェイプールの冗長性  
 すべてのゲートウェイプールは M + N 冗長です。 これは、"m" 個のアクティブなゲートウェイ Vm が、"N" 個のスタンバイゲートウェイ Vm によってバックアップされることを意味します。 M + N 冗長性を使用すると、RAS ゲートウェイを展開するときに必要な信頼性レベルを柔軟に決定できます。  
   
 詳細については、「RAS ゲートウェイと[Ras ゲートウェイの高可用性](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)の[新機能](../../../sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)」を参照してください。  
   
-## <a name="bkmk_example"></a>配置例  
+## <a name="example-deployment"></a><a name="bkmk_example"></a>配置例  
 次の図は、2つのテナント (Contoso と Woodgrove) と Fabrikam CSP データセンター間で構成されたサイト間 VPN 接続を介した eBGP ピアリングの例を示しています。  
   
 ![サイト間 VPN 経由の eBGP ピアリング](../../../media/RAS-Gateway-Deployment-Architecture/ras_gateway_architecture.png)  
@@ -82,7 +82,7 @@ Windows Server 2016 では、さまざまな種類のゲートウェイプール
   
 ネットワークコントローラーは、Hyper-v ネットワーク仮想化ポリシーを Contoso および Woodgrove の仮想ネットワークにプッシュします。また、ras のポリシーと、ソフトウェアの負荷分散として構成されている Multiplexers ((MUXes) に対して、RAS ゲートウェイおよび負荷分散ポリシーをプッシュします。管理.  
   
-## <a name="bkmk_tenant"></a>新しいテナントと顧客アドレス (CA) 空間 eBGP ピアリングの追加  
+## <a name="adding-new-tenants-and-customer-address-ca-space-ebgp-peering"></a><a name="bkmk_tenant"></a>新しいテナントと顧客アドレス (CA) 空間 eBGP ピアリングの追加  
 新しい顧客に署名し、データセンターに新しいテナントとして顧客を追加する場合、次のプロセスを使用できます。その多くは、ネットワークコントローラーと RAS ゲートウェイ eBGP ルーターによって自動的に実行されます。  
   
 1.  テナントの要件に従って、新しい仮想ネットワークとワークロードをプロビジョニングします。  
@@ -103,7 +103,7 @@ Windows Server 2016 では、さまざまな種類のゲートウェイプール
   
 6.  CA スペース BGP ルーティングを使用すると、エンタープライズサイトと CSP RAS ゲートウェイルートリフレクター間の eBGP ピアリングも確立されます。  
   
-## <a name="bkmk_route"></a>ルートの同期とデータプレーンのルーティング  
+## <a name="route-synchronization-and-data-plane-routing"></a><a name="bkmk_route"></a>ルートの同期とデータプレーンのルーティング  
 エンタープライズサイトと CSP RAS ゲートウェイルートリフレクターの間に eBGP ピアリングが確立されると、ルートリフレクターは動的な BGP ルーティングを使用してすべてのエンタープライズルートを学習します。 ルートリフレクターは、すべてのルートリフレクタークライアント間でこれらのルートを同期して、すべてが同じルートセットで構成されるようにします。  
   
 また、ルートリフレクターは、ルート同期を使用して、これらの統合ルートをネットワークコントローラーに更新します。 その後、ネットワークコントローラーは、ルートを Hyper-v ネットワーク仮想化ポリシーに変換し、エンドツーエンドのデータパスルーティングが確実にプロビジョニングされるようにファブリックネットワークを構成します。 このプロセスにより、テナントのエンタープライズサイトからテナントの仮想ネットワークにアクセスできるようになります。  
@@ -114,7 +114,7 @@ Windows Server 2016 では、さまざまな種類のゲートウェイプール
   
 さらに。 テナント仮想ネットワークからリモートテナントエンタープライズサイトへのトラフィックの返送は、Direct Server Return (DSR) と呼ばれるプロセスである SLBs をバイパスします。  
   
-## <a name="bkmk_failover"></a>ネットワークコントローラーと RAS ゲートウェイの応答、およびルートリフレクターのフェールオーバー  
+## <a name="how-network-controller-responds-to-ras-gateway-and-route-reflector-failover"></a><a name="bkmk_failover"></a>ネットワークコントローラーと RAS ゲートウェイの応答、およびルートリフレクターのフェールオーバー  
 次の2つのフェールオーバーシナリオが考えられます。1つは RAS ゲートウェイルートリフレクタークライアント、もう1つは RAS ゲートウェイルートリフレクター用、もう1つはネットワークコントローラーがいずれかの構成で Vm のフェールオーバーを処理する方法に関する情報を含みます。  
   
 ### <a name="vm-failure-of-a-ras-gateway-bgp-route-reflector-client"></a>RAS ゲートウェイの BGP ルートリフレクタークライアントの VM エラー  
@@ -146,7 +146,7 @@ Windows Server 2016 では、さまざまな種類のゲートウェイプール
   
 -   BGP ルートを選択した後、RAS ゲートウェイの BGP ルートリフレクターは、データセンター内のテナントルートリフレクタークライアントを更新し、ネットワークコントローラーとのルートを同期して、エンドツーエンドのデータパスをテナントトラフィックに使用できるようにします。  
   
-## <a name="bkmk_advantages"></a>RAS ゲートウェイの新機能を使用する利点  
+## <a name="advantages-of-using-new-ras-gateway-features"></a><a name="bkmk_advantages"></a>RAS ゲートウェイの新機能を使用する利点  
 RAS ゲートウェイの展開を設計するときに、これらの新しい RAS ゲートウェイ機能を使用する利点をいくつか次に示します。  
   
 **RAS ゲートウェイのスケーラビリティ**  

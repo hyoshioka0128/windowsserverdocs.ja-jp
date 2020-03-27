@@ -5,16 +5,16 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8a79e590a273d7d7ccb673e5043bed2fcd1aeace
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 8ebdceedbe793eba545e57fd991114158cb647be
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822675"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313378"
 ---
 # <a name="always-on-vpn-enhancements"></a>Always On VPN の機能強化
 
@@ -72,7 +72,7 @@ Always On VPN 接続の主な機能強化は次のとおりです。
 |            **信頼されたネットワーク検出**            |                                                                                    Always On VPN には、ユーザーが企業の境界内の信頼されたネットワークに接続されている場合に VPN 接続がトリガーされないように、この機能が含まれています。 この機能を、前に説明したいずれかのトリガーメソッドと組み合わせることで、シームレスな "必要なときにのみ接続する" ユーザーエクスペリエンスを実現できます。                                                                                     |
 | **[デバイストンネル](../vpn-device-tunnel-config.md)** | Always On VPN を使用すると、デバイスまたはコンピューター用の専用 VPN プロファイルを作成できます。 ユーザーがデバイスまたはコンピューターにログオンした後にのみ接続する*ユーザートンネル*とは異なり、*デバイストンネル*を使用すると、ユーザーがサインインする前に VPN が接続を確立できます。 デバイストンネルとユーザートンネルはどちらも、VPN プロファイルとは独立して動作し、同時に接続できます。また、必要に応じて、さまざまな認証方法やその他の VPN 構成設定を使用できます。 |
 
-## <a name="networking"></a>のネットワーク
+## <a name="networking"></a>ネットワーク
 
 Always On VPN でのネットワークの機能強化の一部を次に示します。
 
@@ -96,7 +96,7 @@ Always On VPN の構成と互換性の強化点を次に示します。
 | **さまざまな管理および展開のメカニズム** |                                                                                                                                 Windows PowerShell、Microsoft Endpoint Configuration Manager、Intune またはサードパーティのモバイルデバイス管理 (MDM) ツール、Windows 構成デザイナーなど、さまざまな管理および展開メカニズムを使用して、VPN 設定 ( *vpn プロファイル*と呼ばれる) を管理できます。 これらのオプションは、使用するクライアント管理ツールに関係なく、Always On VPN の構成を簡略化します。                                                                                                                                 |
 |     **標準化された VPN プロファイルの定義**      |                                                                                                                                                                                                                                  Always On VPN では、標準の XML プロファイル (ProfileXML) を使用した構成がサポートされており、ほとんどの管理ツールセットと配置ツールセットで使用される標準の構成テンプレート形式が提供されます。                                                                                                                                                                                                                                   |
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ:
 
 - [いくつかの高度な Always On VPN 機能について説明します。](deploy/always-on-vpn-adv-options.md)
 

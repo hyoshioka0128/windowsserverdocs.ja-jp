@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4b0240a3-b927-4a1e-b241-5f8f29a9552f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2da5bc3008b9b686ddb2bce460ced39f98183f28
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 22f4475df00e975ffc5cd0956a0126673a67f907
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71394618"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309275"
 ---
 # <a name="bgp-windows-powershell-command-reference"></a>BGP Windows PowerShell コマンド リファレンス
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを参照として使用して、Windows PowerShell スクリプトを記述し、RAS ゲートウェイおよびリモートアクセスローカルエリアネットワーク (LAN) ルーターから BGP 機能を追加、構成、および削除することができます。  
   
@@ -32,7 +32,7 @@ ms.locfileid: "71394618"
 ## <a name="bgp-command-reference"></a>BGP コマンドリファレンス  
 次のセクションでは、各 BGP コマンドのコマンド名、目的、構文、および各コマンドの詳細情報を含むリモートアクセス参照のコマンドへのリンクを示します。  
   
-このリファレンスには、次のセクションが含まれています。  
+このリファレンスには次のセクションが含まれています。  
   
 -   [コマンドの追加](#bkmk_add)  
   
@@ -52,7 +52,7 @@ ms.locfileid: "71394618"
   
 -   [アンインストールコマンド](#bkmk_uninstall)  
   
-### <a name="bkmk_add"></a>コマンドの追加  
+### <a name="add-commands"></a><a name="bkmk_add"></a>コマンドの追加  
 BGP の Add コマンドを次に示します。  
   
 [Add-bgpcustomroute](https://technet.microsoft.com/library/dn262684.aspx)  
@@ -103,7 +103,7 @@ Bgp ピアに BGP ルーティングポリシーを追加します。
 Add-BgpRoutingPolicyForPeer -Direction <PolicyDirection> {Ingress | Egress} -PolicyName <String[]> [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-PeerName <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_clear"></a>コマンドのクリア  
+### <a name="clear-commands"></a><a name="bkmk_clear"></a>コマンドのクリア  
 BGP の Clear コマンドを次に示します。  
   
 [BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463114.aspx)  
@@ -114,7 +114,7 @@ BGP の Clear コマンドを次に示します。
 Clear-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-Prefix <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_disable"></a>コマンドを無効および有効にする  
+### <a name="disable-and-enable-commands"></a><a name="bkmk_disable"></a>コマンドを無効および有効にする  
 BGP の Disable コマンドと Enable コマンドを次に示します。  
   
 [BgpRouteFlapDampening](https://technet.microsoft.com/library/mt463100.aspx)  
@@ -133,7 +133,7 @@ Disable-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-Informati
 Enable-BgpRouteFlapDampening [-CimSession <CimSession[]> ] [-Force] [-InformationAction <ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <String> ] [-PassThru] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_get"></a>コマンドの取得  
+### <a name="get-commands"></a><a name="bkmk_get"></a>コマンドの取得  
 BGP の Get コマンドを次に示します。  
   
 [Add-bgpcustomroute](https://technet.microsoft.com/library/dn262664.aspx)  
@@ -200,7 +200,7 @@ BGP ピアリング関連のメッセージとルートアドバタイズの統�
 Get-BgpStatistics [-CimSession <CimSession[]> ] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-PeerName <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_install"></a>コマンドのインストール  
+### <a name="install-commands"></a><a name="bkmk_install"></a>コマンドのインストール  
 RAS ゲートウェイと BGP のインストールコマンドを次に示します。  
   
 [インストール-RemoteAccess](https://technet.microsoft.com/library/hh918408.aspx)  
@@ -234,7 +234,7 @@ Enable-RemoteAccessRoutingDomain -Name $Fabrikam_RoutingDomain -Type All -PassTh
 Install-RemoteAccess -VpnType RoutingOnly  
 ```  
   
-### <a name="bkmk_remove"></a>コマンドの削除  
+### <a name="remove-commands"></a><a name="bkmk_remove"></a>コマンドの削除  
 BGP の Remove コマンドを次に示します。  
   
 [Add-bgpcustomroute](https://technet.microsoft.com/library/dn262669.aspx)  
@@ -286,7 +286,7 @@ Parameter Set: Remove1
 Remove-BgpRoutingPolicyForPeer [-CimSession <CimSession[]> ] [-Direction <PolicyDirection> {Ingress | Egress} ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-PeerName <String[]> ] [-PolicyName <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_set"></a>コマンドの設定  
+### <a name="set-commands"></a><a name="bkmk_set"></a>コマンドの設定  
 BGP の Set コマンドを次に示します。  
   
 [Bgp](https://technet.microsoft.com/library/dn262673.aspx)  
@@ -337,7 +337,7 @@ BGP ピアの BGP ルーティングポリシーを変更します。
 Set-BgpRoutingPolicyForPeer -Direction <PolicyDirection> {Ingress | Egress} -PolicyName <String[]> [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-PeerName <String[]> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_start"></a>開始コマンドと停止コマンド  
+### <a name="start-and-stop-commands"></a><a name="bkmk_start"></a>開始コマンドと停止コマンド  
 BGP の開始コマンドと停止コマンドを次に示します。  
   
 [Bgp](https://technet.microsoft.com/library/dn262683.aspx)  
@@ -356,7 +356,7 @@ BGP ピアのルーティングセッションを停止します。
 Stop-BgpPeer [-Name] <String[]> [-CimSession <CimSession[]> ] [-Force] [-InformationAction <System.Management.Automation.ActionPreference> {SilentlyContinue | Stop | Continue | Inquire | Ignore | Suspend} ] [-InformationVariable <System.String> ] [-RoutingDomain <String> ] [-ThrottleLimit <Int32> ] [-Confirm] [-WhatIf] [ <CommonParameters>] [ <WorkflowParameters>]  
 ```  
   
-### <a name="bkmk_uninstall"></a>アンインストールコマンド  
+### <a name="uninstall-commands"></a><a name="bkmk_uninstall"></a>アンインストールコマンド  
 RAS ゲートウェイと BGP のアンインストールコマンドを次に示します。  
   
 [アンインストール-RemoteAccess](https://technet.microsoft.com/library/hh918390.aspx)  

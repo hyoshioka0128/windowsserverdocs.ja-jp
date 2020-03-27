@@ -6,18 +6,18 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 0bc6746f-2adb-43d8-a503-52f473833164
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 297044397088bfb64b51e1553d3f69d5b933e81b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c20c21c39e44d7eb3da812bbe71f175d0688d6c0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405908"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309651"
 ---
 # <a name="troubleshooting-converged-nic-configurations"></a>収束 NIC 構成のトラブルシューティング
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 次のスクリプトを使用して、Hyper-v ホストで RDMA 構成が正しいかどうかを確認できます。
 
@@ -82,7 +82,7 @@ RDMA 構成を確認するための追加の手順として、Hyper-v サーバ�
 
 ## <a name="get-netadapterqos"></a>Get-netadapterqos
 
-次の Windows PowerShell コマンドを実行して\(、\)ネットワークアダプターのサービス品質 (QoS) 構成を表示できます。
+次の Windows PowerShell コマンドを実行して、QoS\) 構成 \(ネットワークアダプターのサービス品質を確認できます。
 
     Get-NetAdapterQos
 
@@ -96,7 +96,7 @@ RDMA 構成を確認するための追加の手順として、Hyper-v サーバ�
 
 予期しない結果が発生した場合は、次の手順を実行します。
 
-1. 物理ネットワークアダプターがデータセンターブリッジング\(DCB\)と QoS をサポートしていることを確認する
+1. 物理ネットワークアダプターがデータセンターブリッジング \(DCB\) と QoS をサポートしていることを確認します。
 2. ネットワークアダプターのドライバーが最新であることを確認します。
 
 --- 
@@ -125,7 +125,7 @@ RDMA 構成を確認するための追加の手順として、Hyper-v サーバ�
 
 ## <a name="get-smbclientnetworkinterface"></a>SmbClientNetworkInterface
 
-次のコマンドを使用して、rdma に対して有効にした仮想 NIC が SMB\-で rdma 対応として報告されていることを確認できます。
+次のコマンドを使用して、RDMA に対して有効にした仮想 NIC が SMB で対応できる RDMA\-として報告されていることを確認できます。
 
     Get-SmbClientNetworkInterface
 
@@ -145,9 +145,9 @@ RDMA に対して有効にされた仮想 NIC は、SMB で RDMA 対応として
 
 --- 
 
-## <a name="vstat-mellanox-specific"></a>\(Mellanox 固有の vst\)
+## <a name="vstat-mellanox-specific"></a>\(Mellanox 固有の\) における vst
 
-Mellanox ネットワークアダプターを使用している場合は、 **vstat**コマンドを使用して、hyper-v ノードで\(の RDMA\) over 収束イーサネット roce バージョンを確認できます。
+Mellanox ネットワークアダプターを使用している場合は、 **vstat**コマンドを使用して、hyper-v ノードで\) バージョンの roce に対して RDMA Over 収束イーサネット \(を確認できます。
 
 ### <a name="vstat-expected-results"></a>期待される結果の vst
 

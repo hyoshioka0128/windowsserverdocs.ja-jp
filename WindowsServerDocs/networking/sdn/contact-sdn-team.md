@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: f9945c55-c2d0-448f-86dd-8c734e1b2987
-ms.author: pashort
+ms.author: lizross
 author: kallie-b
-ms.openlocfilehash: a62a661fc9bb665f71f0e16cb3298ff52f3137db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 84c0847313542953543316ceb6c3d9cffb99c2dc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355985"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309972"
 ---
 # <a name="contact-the-datacenter-and-cloud-networking-team"></a>データセンターおよびクラウド ネットワーク チームへのお問い合わせ
 
@@ -23,17 +23,17 @@ Microsoft の**ソフトウェア定義ネットワーク \(SDN\)** と**コン�
 
 Microsoft teams に連絡するには多くの方法があります。 SDN チームでは、コミュニティで使用されるすべての手段に従うことをお勧めしますが、ここでは、最もアクティブになる傾向のあるフォーラムの一覧を示します。 *これらはユーザーにとって重要なリソースです。そのため、最も近いものを見ることができます。*
 
-## <a name="twitterhttpstwittercommicrosoft_sdn"></a>[Twitter](https://twitter.com/Microsoft_SDN)
+## <a name="twitter"></a>[Twitter](https://twitter.com/Microsoft_SDN)
 
 最近、Twitter での存在を[@Microsoft_SDN](https://twitter.com/Microsoft_SDN)として立ち上げました。 Twitter のハンドルを使用して、質問をしたり、フィードバックを提供したり、機能/ドキュメントの要求を行ったりすることができます。
 > 質問/フィードバック/要求にアクセスできる場所に加えて、Twitter と Windows コンテナーネットワーク関連のすべての情報を入手するための場所を検討してください。 Twitter は**ニュースを投稿**し、**新機能**を発表し、コミュニティに**最新のブログやリソース**を紹介します。
 
-## <a name="github-microsoftsdn-repohttpsgithubcommicrosoftsdnissues"></a>GitHub ([Microsoft/SDN リポジトリ](https://github.com/Microsoft/SDN/issues))
+## <a name="github-microsoftsdn-repo"></a>GitHub ([Microsoft/SDN リポジトリ](https://github.com/Microsoft/SDN/issues))
 GitHub リポジトリから SDN チームに問題を送信するに[は、こちら](https://github.com/Microsoft/SDN/issues)を参照してください。 これは、**トラブルシューティング**を行ったり、**バグを報告**したりするのに最適な場所です。
 
 > GitHub は、ツイートに簡単に適合させることができるものよりも詳細な情報が含まれているトピックに関するお問い合わせに最適な場所です。 *SDN のデプロイに関するヘルプが必要ですか?お客様の組織固有のニーズにどのような機能がどのように適合しているかわからない場合は、潜在的なバグによって保持されているか。* GitHub の問題を送信することによって、お客様と連絡を取ることができるすばらしい理由です。
 
-## <a name="microsoft-docshttpsdocsmicrosoftcom"></a>[Microsoft Docs](https://docs.microsoft.com/)
+## <a name="microsoft-docs"></a>[Microsoft Docs](https://docs.microsoft.com/)
 [コンテナーネットワークのドキュメント](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)は[Microsoft Docs (docs.microsoft.com)](https://docs.microsoft.com/)にあります。これには、**コメント機能が組み込ま**れています。 サインインしたときにコメントに返信したり Microsoft Docs に返信したりするには、参照する Microsoft Docs ページの一番下までスクロールし、コメントを作成して送信します。
 
 > [Microsoft Docs](https://docs.microsoft.com/)は、Microsoft の新しい統合ドキュメントサイトです。 私たちのチームの[SDN ドキュメント](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking)のほとんどは TechNet に残されていますが、[コンテナーネットワークのドキュメント](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-networking)は Microsoft Docs にあります。

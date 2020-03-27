@@ -1,9 +1,9 @@
 ---
 title: Windows Server Essentials でのアプリケーションの管理
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,24 +12,24 @@ ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1a60a9e7fd958d447b4770431a69546f0ad6f229
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 7701cbc11ec691b4d4aadd5668dce6438eb9a076
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433348"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311417"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>Windows Server Essentials でのアプリケーションの管理
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
  
- サーバーで Windows Server Essentials ダッシュ ボードおよび Windows Server Essentials エクスペリエンス役割がインストールされた Windows Server 2012 R2 では、一般的な管理タスクを実行できます。 これらのタスクを実行するには、次の手順を参照してください。  
+ Windows server essentials および windows Server 2012 R2 のサーバーダッシュボードは、Windows Server Essentials エクスペリエンスの役割がインストールされているため、一般的な管理タスクを実行できます。 これらのタスクを実行するには、次の手順を参照してください。  
   
--   [ダッシュ ボードでのアプリケーション管理タスク](Manage-Applications-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [ダッシュボードでのアプリケーション管理タスク](Manage-Applications-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [インストールまたはダッシュ ボードを使用してアドインを削除します。](Manage-Applications-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [ダッシュボードを使用したアドインのインストールまたは削除](Manage-Applications-in-Windows-Server-Essentials.md#BKMK_2)  
   
-##  <a name="BKMK_1"></a> ダッシュ ボードでのアプリケーション管理タスク  
+##  <a name="application-management-tasks-in-the-dashboard"></a><a name="BKMK_1"></a>ダッシュボードでのアプリケーション管理タスク  
  ダッシュボードの **[アプリケーション]** 管理ページには、次の項目が表示されます。  
   
 - 次の情報を含む、インストールされているアドインの一覧  
@@ -48,7 +48,7 @@ ms.locfileid: "66433348"
   
   次の表は、サーバー ダッシュボードで利用できるさまざまなアドインの管理タスクについて説明しています。 一部のタスクはアドインに固有であり、一覧からアドインを選択した場合にのみ表示されます。  
   
-|タスク名|説明|  
+|[タスク名]|説明|  
 |---------------|-----------------|  
 |アドインの削除|サーバーおよびネットワーク上の他のすべてのコンピューターから、選択したアドインを削除します。|  
 |ネットワーク上のコンピューターへのアドインのインストール|ネットワーク上の他のすべてのコンピューターへの選択したアドインのインストールをスケジュールできます。|  
@@ -56,16 +56,16 @@ ms.locfileid: "66433348"
 |アドインの更新|サーバーやネットワーク コンピューターにインストールされているアドインの更新プログラムをダウンロードしてインストールできます。|  
 |アドインのサブスクリプションの更新|インターネット ブラウザーから Web サイトを開いて、アドインのサブスクリプションを更新できます。|  
 |アドインのプライバシーに関する声明の確認|インターネット ブラウザーから Web サイトを開いて、プライバシーに関する声明を確認できます。|  
-|インストールまたはすれば、アドインを削除しますか。|インターネット ブラウザーから Web ページを開いて、該当するヘルプ トピックを表示します。|  
+|アドインのインストールまたは削除方法|インターネット ブラウザーから Web ページを開いて、該当するヘルプ トピックを表示します。|  
   
-##  <a name="BKMK_2"></a> インストールまたはダッシュ ボードを使用してアドインを削除します。  
+##  <a name="install-or-remove-add-ins-using-the-dashboard"></a><a name="BKMK_2"></a>ダッシュボードを使用したアドインのインストールまたは削除  
  アドインは、サーバーに追加機能を提供するソフトウェア アプリケーションです。 Microsoft および他の独立系ソフトウェア ベンダー (ISV) から多数のアドインを利用できます。  
   
  アドインが提供する拡張機能を活用するには、サーバー上にアドインをインストールする必要があります。  
   
 #### <a name="to-install-an-add-in-from-microsoft-pinpoint"></a>Microsoft Pinpoint からアドインをインストールするには  
   
-1.  サーバー ダッシュボードで、 **[アプリケーション]** をクリックし、 **[Microsoft Pinpoint]** タブをクリックします。使用可能なアドインの一覧が表示されます。  
+1.  サーバーダッシュボードで、 **[アプリケーション]** をクリックし、 **[Microsoft Pinpoint]** タブをクリックします。 使用可能なアドインの一覧が表示されます。  
   
 2.  インストールするアドインをクリックします。 アドインの情報ページが表示されます。  
   
@@ -98,8 +98,8 @@ ms.locfileid: "66433348"
     > [!NOTE]
     >  アドインを完全に削除するには、ダッシュボードの再起動が必要な場合があります。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
--   [ダッシュ ボードの概要](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)  
+-   [ダッシュボードの概要](Overview-of-the-Dashboard-in-Windows-Server-Essentials.md)  
   
 -   [Windows Server Essentials の管理](Manage-Windows-Server-Essentials.md)

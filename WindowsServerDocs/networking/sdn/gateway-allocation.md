@@ -6,15 +6,15 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/22/2018
-ms.openlocfilehash: fc59fc9d7dc22b9c5567bae314b4312d76fcff19
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 8e0709360449e1175988b14a963047ee72f26ade
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406131"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313034"
 ---
 # <a name="gateway-bandwidth-allocation"></a>ゲートウェイ帯域幅の割り当て
 

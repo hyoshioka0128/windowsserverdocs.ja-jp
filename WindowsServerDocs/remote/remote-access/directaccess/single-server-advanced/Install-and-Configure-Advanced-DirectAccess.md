@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f45e5b6f-fc66-4deb-bed4-a1baa3cc6dae
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 971885b4e99b3ac83c26bf6df43c275a5b729510
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: cbc4e3ca18443152ca9af45c8b47130394f4b8df
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388641"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309166"
 ---
 # <a name="install-and-configure-advanced-directaccess"></a>高度な DirectAccess のインストールと構成
 

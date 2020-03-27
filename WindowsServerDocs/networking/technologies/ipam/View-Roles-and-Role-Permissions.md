@@ -10,22 +10,22 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: da8dce90-b54c-4ded-a48a-0cda5ccf1d8a
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9f35f4a79bcdfebaedb2e5be5c34725d13a04fe9
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 748b4a2547285edf6b04fc124d75facd245c38c9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71401866"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309463"
 ---
 # <a name="view-roles-and-role-permissions"></a>役割および役割のアクセス許可を表示する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、IPAM クライアントコンソールで Access Control ユーザーロールを表示する方法について説明します。  
   
-メンバーシップ **管理者**, 、同等の権限をこの手順を実行するために必要な最低限のですか。  
+この手順を実行するには、**Administrators** のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
   
 ### <a name="to-view-access-control-roles"></a>Access Control の役割を表示するには  
   
@@ -41,7 +41,7 @@ ms.locfileid: "71401866"
   
     ![ロール権限の表示](../../media/View-Roles-and-Role-Permissions/ipam_ViewRoles_02.jpg)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ロールベースの Access Control](Role-based-Access-Control.md)  
 [IPAM の管理](Manage-IPAM.md)  
   

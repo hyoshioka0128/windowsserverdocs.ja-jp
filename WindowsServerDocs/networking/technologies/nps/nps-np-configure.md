@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: fe77655a-e2be-4949-92e1-aaaa215d86ea
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a2bde42ba9b9489ddcd8fb3673ec5ddf1fd4d970
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 683a2919a88a1ce399c996a6798b3f8d03c298a1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322564"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315774"
 ---
 # <a name="configure-network-policies"></a>ネットワーク ポリシーを構成する
 

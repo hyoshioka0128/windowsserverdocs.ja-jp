@@ -10,15 +10,15 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: e8df3619-f365-4070-8117-888c88db13eb
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 05/25/2018
-ms.openlocfilehash: 4c80aa5cc42c9c340e2699eed29bedeb9027f6bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 1ffa0337f3ba67d4a2f26518640d8a78251bd518
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404623"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308324"
 ---
 # <a name="configure-a-remote-access-cluster"></a>リモート アクセス クラスターを構成する
 

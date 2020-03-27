@@ -10,19 +10,19 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3c62f533-1815-4f08-96b1-dc271f5a2b36
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/24/2018
-ms.openlocfilehash: 3e0678fb204e0895bf4429e8bb877a3f1c0e7a97
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ef588cfc93216f13490ef3196ec0990b9e7f48d3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355858"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309795"
 ---
 # <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>VM を作成し、テナントの仮想ネットワークまたは VLAN に接続する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、テナント VM を作成し、Hyper-v ネットワーク仮想化を使用して作成した仮想ネットワークまたは仮想ローカルエリアネットワーク (VLAN) に接続します。 Windows PowerShell Network Controller コマンドレットを使用して、仮想ネットワークまたは NetworkControllerRESTWrappers に接続し、VLAN に接続することができます。
 

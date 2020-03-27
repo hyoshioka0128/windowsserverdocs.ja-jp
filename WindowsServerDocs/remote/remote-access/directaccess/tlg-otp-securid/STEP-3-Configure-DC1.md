@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 836a2a08-3d22-48d2-873e-80d7e57ebbd6
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 7655208fb537e78839f2b459c8df0e24c0573aa7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 8104868103fff29044041136b48c59d966cc7bd0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367547"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80314404"
 ---
 # <a name="step-3-configure-dc1"></a>手順 3 DC1 を構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 DC1 は、corp.contoso.com ドメインのドメインコントローラー、DNS サーバー、および DHCP サーバーとして機能します。 DC1 を次のように構成します。  
   
@@ -31,7 +31,7 @@ DC1 は、corp.contoso.com ドメインのドメインコントローラー、DN
   
 2.  **[アカウント]** タブで、 **[ユーザーログオン名]** が User1 に設定されていることを確認します。 それ以外の場合は、 **[ユーザーログオン名]** フィールドに「 **User1** 」と入力します。  
   
-3.  **[OK]** をクリックします。 **[Active Directory ユーザーとコンピューター]** コンソールを閉じます。  
+3.  **[OK]** をクリックすると、 **[Active Directory ユーザーとコンピューター]** コンソールを閉じます。  
   
 
 

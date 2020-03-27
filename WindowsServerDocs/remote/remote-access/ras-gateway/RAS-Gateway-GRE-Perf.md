@@ -7,14 +7,14 @@ ms.date: ''
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: c051b2ec-de0f-49d1-82b9-5742b259cd7c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 79a6e822c3ff36f789a7a08b8cd56163014185a4
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9188fc73cd65290474eb9f21342b88d0fce2e15b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404682"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308570"
 ---
 # <a name="ras-gateway-gre-tunnel-throughput-and-performance"></a>RAS ゲートウェイ GRE トンネルのスループットとパフォーマンス
 

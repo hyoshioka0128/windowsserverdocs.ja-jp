@@ -6,16 +6,16 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 07/24/2019
-ms.author: pashort, v-tea
-author: shortpatti
+ms.author: lizross, v-tea
+author: eross-msft
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 73d64cd143b7bbd13e0eb9bb5fadfbb1e7c65416
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 30a8e3053f263ffad3be940a52e845fb7159dde1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322544"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313297"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Always On VPN の高度な機能
 

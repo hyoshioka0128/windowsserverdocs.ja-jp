@@ -8,8 +8,8 @@ metadata:
   text: Always On VPN では、個人所有のデバイスを含め、接続されているすべてのデバイスにリモート アクセスするための 1 つのまとまりのあるソリューションが提供されます。 Always On VPN では、接続の種類がユーザーまたはデバイス専用である必要はなく、両方の組み合わせにすることができます。 たとえば、リモート デバイス管理用のデバイス認証を有効にし、会社の内部サイトとサービスへの接続に対するユーザー認証を有効にすることができます。
   keywords: 'Windows 10, Windows Server, Windows Server 2016, リモート アクセス, VPN'
   ms.localizationpriority: high
-  author: shortpatti
-  ms.author: pashort
+  author: eross-msft
+  ms.author: lizross
   ms.date: 11/05/2018
   ms.topic: article
   ms.devlang: na

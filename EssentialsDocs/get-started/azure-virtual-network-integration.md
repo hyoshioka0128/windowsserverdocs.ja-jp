@@ -1,9 +1,9 @@
 ---
-title: Azure の仮想ネットワーク統合
-description: Windows Server Essentials を使用する方法について説明します
+title: Azure Virtual network の統合
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,65 +12,65 @@ ms.assetid: d7d38505-cff5-4f15-9fd5-ae6dba15ce88
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 673cb5a2292bab113aefb1de37f80bf4d880b467
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 92c8241d861e72d5f9f409a334e6edbeed5eae4c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433907"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310573"
 ---
-# <a name="azure-virtual-network-integration"></a>Azure の仮想ネットワーク統合
+# <a name="azure-virtual-network-integration"></a>Azure Virtual network の統合
 
->適用先:Windows Server 2016 Essentials
+>適用対象: Windows Server 2016 Essentials
 
-組織にクラウド コンピューティングの方法と、ことはほとんどありませんが、移動すべてのリソース 100% 一度に 1 つがではなく、一部のリソースは、クラウドとオンプレミスでもいくつかのアプローチを実行します。 このハイブリッド アプローチにより、組織だけでなく、クラウドにいくつかのコンピューティング リソースを移動するが、新しいハードウェアを取得することがなく、IT インフラストラクチャを拡張することができます。
+組織がクラウドコンピューティングを行う方法を採用するのは、ほとんどの場合、すべてのリソースを一度に100% 移動するだけでなく、一部のリソースがクラウド内にあり、一部がオンプレミスにある場合もあります。 このハイブリッドアプローチにより、組織はコンピューティングリソースをクラウドに簡単に移行できるだけでなく、新しいハードウェアを購入しなくても IT インフラストラクチャを拡張することができます。
 
-コンピューティングには、このハイブリッド アプローチを実装すると、シームレスな方法は、両方の場所のリソースで互いと通信する必要があります。 Azure の仮想ネットワークは、組織は、ポイント ツー ポイント (P2P) を作成できるようにする Azure のサービスまたはサイト間 (S2S) 仮想プライベート ネットワークのように参照してください (仮想マシン記憶域など) は Azure で実行されているリソースをシームレスなアプリケーションとリソースのアクセスをローカル ネットワーク。
+このハイブリッドアプローチをコンピューティングに実装する場合は、両方の場所にあるリソースが相互に通信するためのシームレスな方法が必要です。 Azure 仮想ネットワークは、azure で実行されているリソース (仮想マシンやストレージなど) が、次のように表示されるポイントツーポイント (P2P) またはサイト間 (S2S) 仮想プライベートネットワークを作成できるようにする Azure サービスです。アプリケーションとリソースへのシームレスなアクセスを可能にするローカルネットワーク。
 
-Azure Virtual network の構成は複雑になることができます。 Windows Server Essentials 2016 では、ネットワーク環境に最も適切な既定値を選択するのに役立つ簡単なウィザードを介して Azure 仮想ネットワークに簡単に構成できます。 Azure 仮想ネットワークの導入し、の統合を開始するためのクイック リンクを提供する Windows Essentials ダッシュ ボードの Microsoft クラウド サービスのセクションに新しい Azure の仮想ネットワーク統合タスクが追加されて次のスクリーン ショットに示すように、.
+Azure 仮想ネットワークの構成は複雑になる可能性があります。 Windows Server Essentials 2016 では、簡単なウィザードを使用して Azure 仮想ネットワークを簡単に構成できます。このウィザードを使用すると、ネットワーク環境に最適な既定値を選択できます。 次のスクリーンショットに示すように、Azure virtual network を導入し、統合を開始するためのクイックリンクを提供するために、Windows Essentials ダッシュボードの [Microsoft Cloud Services] セクションに新しい Azure 仮想ネットワーク統合タスクが追加されました.
 
-![Windows Server Essentials ダッシュ ボードのホーム ページで、[概要] タブを示すスクリーン ショット。 [概要] タブの [サービス] を選択すると Azure Virtual network が現在無効になっている Microsoft クラウド サービスの統合サービスでダッシュ ボードを示します。](media/azure-virtual-network-1.PNG)
+![Windows Server Essentials ダッシュボードのホームページにある [作業の開始] タブを示すスクリーンショット。 [作業の開始] タブの [サービス] セクションが選択されています。ダッシュボードは、Azure 仮想ネットワークが現在無効になっている Microsoft Cloud Services 統合の下に表示されます。](media/azure-virtual-network-1.PNG)
 
-クリックすると、**今すぐ統合**、上記のスクリーン ショットでの Azure 仮想ネットワークのリンクと、Microsoft Azure アカウントにログインするように求めるダイアログ ボックスが表示されます。 Microsoft Azure アカウントがない、この画面は、Azure アカウントのサインアップ ポータルにリダイレクトする、1 つのオプションをサインアップする必要があります。
+上のスクリーンショットの Azure 仮想ネットワークの **[今すぐ統合]** リンクをクリックすると、Microsoft Azure アカウントにログインするよう求めるダイアログボックスが表示されます。 Microsoft Azure アカウントを持っていない場合は、この画面でサインアップするオプションが表示されます。これにより、Azure アカウントのサインアップポータルにリダイレクトされます。
 
-![統合と Azure の仮想ネットワークのウィザードの Microsoft Azure にサインイン ページを示すスクリーン ショット。](media/azure-virtual-network-2.PNG)
+![Azure 仮想ネットワークとの統合ウィザードの [Microsoft Azure へのサインイン] ページを示すスクリーンショット。](media/azure-virtual-network-2.PNG)
 
-いったんサインインすると azure が表示されます関連付ける Azure の仮想にサブスクリプションを選択するオプションを使用してサービスのネットワークします。
+Azure にサインインすると、Azure Virtual network サービスに関連付けるサブスクリプションを選択するためのオプションが表示されます。
 
-![Azure の仮想ネットワークのウィザードとの統合の個人用の Microsoft Azure サブスクリプション ページを示すスクリーン ショット。](media/azure-virtual-network-3.PNG)
+![Azure 仮想ネットワークとの統合ウィザードの [My Microsoft Azure サブスクリプション] ページを示すスクリーンショット。](media/azure-virtual-network-3.PNG)
 
-1 回の Azure 仮想ネットワークで使用する Azure サブスクリプションは、新しい Azure の仮想ネットワークを作成するオプションが表示されますまたはいずれかが既にこのサブスクリプションのセットアップ、入手可能になったドロップダウン ボックスが表示するを選択しました。 ローカル ネットワーク内のリソースを識別するために Azure Virtual network を使用するローカル ネットワークの名前を選択することもされます。 最後は、Azure の仮想ネットワークをホストする必要がある Azure リージョンを選択します。 物理的に、ローカル ネットワークに最も近い場所を選択するが、Azure サービスではホストのリソースと通信するための帯域速度を最適化するために通常最適です。
+Azure 仮想ネットワークに使用する Azure サブスクリプションを選択すると、新しい Azure 仮想ネットワークを作成するためのオプションが表示されます。また、このサブスクリプションに既に設定されている場合は、ドロップダウンボックスに表示されます。 また、Azure 仮想ネットワークがローカルネットワーク内のリソースを識別するために使用するローカルネットワークの名前も選択します。 最後に、Azure 仮想ネットワークをホストする Azure リージョンを選択します。 ローカルネットワークに物理的に近い場所を選択するのは、通常、Azure サービスでホストする可能性のあるリソースと通信するための帯域幅を最適化する場合に最適です。
 
-![統合と Azure の仮想ネットワークのウィザードの設定を Azure 仮想ネットワーク ページを示すスクリーン ショット。](media/azure-virtual-network-4.PNG)
+![Azure 仮想ネットワークとの統合ウィザードの [Azure 仮想ネットワークの設定] ページを示すスクリーンショット。](media/azure-virtual-network-4.PNG)
 
-統合プロセスの最後の手順、S2S VPN 接続のために使用する VPN デバイスをセットアップすることです。 ほとんどの小規模企業が、環境内でいくつかのサーバーのみがある、Microsoft Azure に接続する VPN ルーターを適切に構成する IT スタッフがないので、既定の選択はリソースする VPN サーバーとして Windows Server Essentials サーバーをセットアップします。ローカル ネットワークでは、Azure の仮想ネットワーク内のリソースにアクセスするために接続します。 ただし、VPN サーバーとして、環境内で別のサーバーを使用するものではなく、または VPN ルーターを使用するようではなく、これらのオプションを選択できます。
+統合プロセスの最後の手順では、S2S VPN 接続に使用される VPN デバイスを設定します。 ほとんどの小規模企業は環境内に少数のサーバーしかなく、Microsoft Azure に接続するように VPN ルーターを適切に構成する IT スタッフがいないため、既定の選択では、Windows Server Essentials サーバーを、リソースとして使用される VPN サーバーとしてセットアップします。では、Azure 仮想ネットワーク内のリソースにアクセスするために、ローカルネットワークのに接続されます。 ただし、環境内の別のサーバーを VPN サーバーとして使用する場合、または VPN ルーターを使用する場合は、これらのオプションを選択できます。
 
-ルーターの種類とモデルのバリエーションにより、Windows Server Essentials が VPN ルーターを自動的に構成する試みません。 この統合ウィザードで、VPN ルーターを選択すると、接続に必要な Azure での適切なルーティング構成のデバイスの種類の Azure 仮想ネットワークのみに通知します。
+ルーターの種類とモデルのバリエーションにより、Windows Server Essentials は VPN ルーターの自動構成を試行しません。 この統合ウィザードで VPN ルーターを選択すると、デバイスの種類の Azure 仮想ネットワークに対してのみ、Azure で接続のために必要な適切なルーティング構成が通知されます。
 
-統合ウィザードを完了すると、新しいタブが Azure 仮想ネットワークの Windows Server Essentials ダッシュ ボードに表示されます。
+統合ウィザードを完了すると、Azure 仮想ネットワーク用の Windows Server Essentials ダッシュボードに新しいタブが表示されます。
 
-![Windows Server Essentials ダッシュ ボードの Azure VNet のページを示すスクリーン ショット。 Azure の仮想ネットワーク タブが選択され、構成と状態が表示されます。](media/azure-virtual-network-5.PNG)
+![Windows Server Essentials ダッシュボードの [Azure VNet] ページを示すスクリーンショット。 [Azure Virtual network] タブが選択され、[構成中] という状態が表示されます。](media/azure-virtual-network-5.PNG)
 
->!クラウドでの Azure 仮想ネットワークの構成を完了するメモには、30 分の上に長い時間がかかります。 この期間中、構成の状態は、ダッシュ ボードの Azure 仮想ネットワークの状態 ページで表示にされます。
+>!注クラウド内の Azure 仮想ネットワークの構成を完了するには、30分を超える時間がかかることがあります。 この間、ダッシュボードの [Azure 仮想ネットワークの状態] ページに、構成の状態が表示されます。
 
-Azure Virtual network の構成が完了すると、状態は Connected に変更され、入力/出力データ、ゲートウェイの IP アドレス、ローカルの IP アドレスとアカウントの詳細など、Azure Virtual network の詳細が表示されます。
+Azure 仮想ネットワークの構成が完了すると、状態が [接続済み] に変わり、Azure 仮想ネットワークの詳細 (入力/出力、ゲートウェイ IP アドレス、ローカル IP アドレス、アカウントの詳細など) が表示されます。
 
-![Windows Server Essentials ダッシュ ボードの Azure VNet のページを示すスクリーン ショット。 Azure の仮想ネットワーク] タブが選択されているし、接続状態が表示され、この状態情報 [仮想ネットワークの詳細が表示されます。](media/azure-virtual-network-6.PNG)
+![Windows Server Essentials ダッシュボードの [Azure VNet] ページを示すスクリーンショット。 [Azure Virtual network] タブが選択され、状態が [接続済み] と表示されます。この状態情報には、仮想ネットワークの詳細が表示されます。](media/azure-virtual-network-6.PNG)
 
-ダッシュ ボードの右側にある [タスク] ウィンドウで、さまざまなタスクのために実行できる Azure 仮想ネットワークでです。
+ダッシュボードの右側の [タスク] ウィンドウには、Azure 仮想ネットワークで実行できるさまざまなタスクがあります。
 
--   **Azure VNET から切断**Azure Virtual network をセットアップは無料、ですが、オンプレミスと Azure での他の Vnet に接続する VPN gateway の料金が発生します。 Azure VNET から切断するには、すべての課金が停止します。
+-   **AZURE VNET からの切断**Azure 仮想ネットワークのセットアップは無料ですが、オンプレミスと Azure のその他の Vnet に接続する VPN gateway には料金が発生します。 Azure VNET から切断すると、すべての課金が停止します。
 
--   **VPN デバイスを切り替える**VPN サーバーから VPN ルーターに変更することこのタスクは有効にするスイッチを作成および Azure VNET に通知することです。
+-   **VPN デバイスを切り替える**VPN サーバーから VPN ルーターに変更する場合は、このタスクを使用してスイッチを作成し、Azure VNET に通知することができます。
 
--   **Azure VNET を構成する**このタスクでは、Azure VNET の Azure portal の構成 ページにリダイレクトして、Azure VNET の高度な構成オプションを変更することができます。
+-   **AZURE VNET の構成**このタスクでは、azure vnet の [Azure portal の構成] ページにリダイレクトして、Azure VNET の詳細な構成オプションを変更できます。
 
--   **ステータスの更新**入力/出力データを含む Azure VNET の接続状態を更新する [状態] ページを更新します。
+-   **更新状態**[状態] ページを更新し、データを含む Azure VNET の接続状態を更新します。
 
--   **Azure VNET の統合を無効にする**Azure VNET の接続を切断し、Windows Server Essentials ダッシュ ボードからの統合を削除します。 この Azure VNET は削除されません、Azure では、後で、ダッシュ ボードと Azure VNET を再統合する場合は、設定が保持も注意してください。
+-   **Azure VNET 統合を無効にする**Azure VNET を切断し、Windows Server Essentials ダッシュボードから統合を削除します。 Azure VNET は削除されませんが、後で Azure VNET をダッシュボードに再度統合する場合は、azure に設定が保持されます。
 
--   **詳細については、Azure VNET は** [ https://azure.microsoft.com/services/virtual-network/](https://azure.microsoft.com/services/virtual-network/)します。
+-   **AZURE VNET** [https://azure.microsoft.com/services/virtual-network/](https://azure.microsoft.com/services/virtual-network/)の詳細については、こちらをご覧ください。
 
-<a name="see-also"></a>関連項目
+<a name="see-also"></a>参照
 --------
 [Windows Server Essentials の概要](get-started.md)

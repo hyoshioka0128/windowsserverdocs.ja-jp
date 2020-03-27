@@ -11,18 +11,18 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/25/2018
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 22983c085f2b9d9e7e16810e25c6fa50111f9fa6
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 479c9fe4895f4181f8a776f024a7ff3c047fbc0e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404348"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307816"
 ---
-# <a name="step-73-configure-the-conditional-access-policy"></a>手順 7.3. 条件付きアクセスポリシーを構成する
+# <a name="step-73-configure-the-conditional-access-policy"></a>手順 7.3. 条件付きアクセス ポリシーを構成する
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016、Windows Server 2012 R2、Windows 10
 
@@ -93,5 +93,5 @@ VPN ユーザーグループに割り当てられている条件付きアクセ�
 9.  **[新規]** ページで、 **[作成]** を選択します。
 
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次のステップ:
 [手順 7.4.条件付きアクセスルート証明書をオンプレミスの AD にデプロイ](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)する: この手順では、条件付きアクセスルート証明書を VPN 認証用の信頼されたルート証明書としてオンプレミスの ad にデプロイします。

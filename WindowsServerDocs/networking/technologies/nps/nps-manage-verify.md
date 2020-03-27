@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: fc77450e-2af1-47ba-bb23-1fd36d9efdbf
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9ba1f5f494228f6bdba22b300a2336fa6eb37690
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5a99cfb62d3ce331ef2d90fe13afe99a6d14960c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405368"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315885"
 ---
 # <a name="verify-configuration-after-nps-changes"></a>NPS の変更後の構成を確認する
 

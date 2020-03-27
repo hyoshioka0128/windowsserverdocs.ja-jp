@@ -3,7 +3,7 @@ title: Windows Server Essentials でのサーバー フォルダーの管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 090cf1b8-7b9b-48b9-ae85-b98477b8d7cc
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 0c46d19f4f172786e0ffe7f3b9dd7ac1d8f4fcf0
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 6ba5dd5e5978687c9d80a6d34e5e622aaa37c4b9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322234"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311126"
 ---
 # <a name="manage-server-folders-in-windows-server-essentials"></a>Windows Server Essentials でのサーバー フォルダーの管理
 
@@ -39,7 +39,7 @@ ms.locfileid: "79322234"
   
 -   [シャドウコピーについて](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_Shadow)  
   
-##  <a name="BKMK_2"></a>ダッシュボードを使用してサーバーフォルダーを管理する  
+##  <a name="manage-server-folders-using-the-dashboard"></a><a name="BKMK_2"></a>ダッシュボードを使用してサーバーフォルダーを管理する  
  Windows Server Essentials ダッシュボードを使用して、一般的な管理タスクを実行することができます。 ダッシュボードの **[サーバー フォルダー]** ページでは、次の機能が提供されます。  
   
 - サーバーのフォルダーの一覧 (以下の項目が表示されます):  
@@ -72,7 +72,7 @@ ms.locfileid: "79322234"
 |フォルダーの追加|新しいサーバー フォルダーを作成し、各ユーザー アカウントに許可されるアクセス レベルを割り当てることができます。|  
 |サーバー フォルダーの概要|サーバー フォルダーの使用と機能を説明しているヘルプ項目を、インターネットで開きます。|  
   
-##  <a name="BKMK_1"></a>サーバーフォルダーへのアクセスの管理  
+##  <a name="manage-access-to-server-folders"></a><a name="BKMK_1"></a>サーバーフォルダーへのアクセスの管理  
  Windows Server Essentials では、サーバー フォルダーを使用することで、クライアント コンピューター上のファイルを、一元化された場所に格納することができます。 サーバー フォルダーにファイルを格納すると、常に各クライアントから安全な方法でアクセスできる場所にファイルが格納されます。  
   
  サーバー フォルダーを使用してファイルを保存すると、次のことができるようになります。  
@@ -105,7 +105,7 @@ ms.locfileid: "79322234"
   
 -   [サーバーフォルダーのプロパティを表示または変更する](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_10)  
   
-###  <a name="BKMK_Hide"></a>サーバーフォルダーの非表示  
+###  <a name="hide-server-folders"></a><a name="BKMK_Hide"></a>サーバーフォルダーの非表示  
  ネットワーク管理者は、これらのサーバー フォルダーのいずれかを非表示にしたり、リモート Web アクセス Web サイトや Web サービス アプリケーション (My Server など) に表示されるようにすることができます。  
   
 > [!NOTE]
@@ -123,7 +123,7 @@ ms.locfileid: "79322234"
   
 5.  **< FolderName\> のプロパティ** の **共有** をクリックし、**このフォルダーをリモート Web アクセスおよび Web サービスアプリケーションから非表示**にする をオンにして、**適用** をクリックします。  
   
-###  <a name="BKMK_Perms"></a>サーバーフォルダーへのアクセス許可の設定  
+###  <a name="set-permissions-to-server-folders"></a><a name="BKMK_Perms"></a>サーバーフォルダーへのアクセス許可の設定  
  ダッシュボードを使用して、サーバー上で追加する任意のサーバー フォルダーでは、3 つの異なるアクセス設定を選択できます。  
   
 -   **読み取り/書き込み**  
@@ -162,7 +162,7 @@ ms.locfileid: "79322234"
 > [!NOTE]
 >  **[ファイル履歴バックアップ]** 、 **[フォルダー リダイレクト]** 、および **[ユーザー]** サーバー フォルダーの共有アクセス許可を変更することはできません。 そのため、これらのサーバー フォルダーのフォルダー プロパティには、 **[共有]** タブがありません。  
   
-###  <a name="BKMK_10"></a>サーバーフォルダーのプロパティを表示または変更する  
+###  <a name="view-or-modify-server-folder-properties"></a><a name="BKMK_10"></a>サーバーフォルダーのプロパティを表示または変更する  
  サーバー フォルダー名とサーバー フォルダーの説明を変更したり、サーバー フォルダーにアクセスするユーザー アカウントを定義するには、ダッシュボードの **[サーバー フォルダー]** タブの **[フォルダーのプロパティを表示]** タスクを介して実行します。  
   
 > [!NOTE]
@@ -183,7 +183,7 @@ ms.locfileid: "79322234"
     > [!NOTE]
     >  また、windows server essentials エクスペリエンスの役割がインストールされている windows server Essentials および Windows Server 2012 R2 では、サーバーフォルダーが指定したサイズに達したときに警告メッセージを表示するフォルダークォータを変更することもできます。  
   
-##  <a name="BKMK_5"></a>サーバーフォルダーを追加または移動する  
+##  <a name="add-or-move-a-server-folder"></a><a name="BKMK_5"></a>サーバーフォルダーを追加または移動する  
  セットアップ時に作成される既定のサーバー フォルダーに加え、**さらに多くのサーバー フォルダーを追加**して、サーバーにファイルを保存することができます。 プライマリ サーバーまたは Windows Server Essentials を実行しているメンバー サーバーで、サーバー フォルダーを追加できます。  
   
  必要な場合に、フォルダーの移動ウィザードを使って、Windows Server Essentials を実行しているプライマリ サーバー上にあり、ダッシュボードの **[サーバー フォルダー]** タブに表示されている **サーバー フォルダーを別のハード ドライブに移動**することができます。 次の場合に、サーバー フォルダーを別のハード ディスク ドライブのロケーション アドレスに移動できます。  
@@ -226,7 +226,7 @@ ms.locfileid: "79322234"
   
 - クォータ  
   
-###  <a name="BKMK_6"></a>サーバーフォルダーを追加または移動する場所  
+###  <a name="where-to-add-or-move-a-server-folder"></a><a name="BKMK_6"></a>サーバーフォルダーを追加または移動する場所  
  通常、サーバー フォルダーは、空き領域が最も大きいハード ドライブに追加または移動する必要があります。 システム ドライブはオペレーティング システムとその更新プログラムに必要な領域が占有されてしまう可能性があるため、可能であればシステム ドライブに共有フォルダーを移動しないでください。 また、外付けハード ドライブにサーバー フォルダーを追加したり、移動したりしないでください。外付けハード ドライブは簡単に取り外すことが可能で、その結果、ファイルにアクセスできなくなる可能性があるためです。 代わりに、内部ドライブにフォルダーを作成することをお勧めします。  
   
  サーバー フォルダーを次の場所に追加したり、移動したりすることはできません。これらの場所を追加先または移動先に選択すると、エラーが発生します。  
@@ -278,7 +278,7 @@ ms.locfileid: "79322234"
   
 5.  指示に従ってウィザードを完了します。  
   
-##  <a name="BKMK_9"></a>不足しているサーバーフォルダーの追加  
+##  <a name="add-a-missing-server-folder"></a><a name="BKMK_9"></a>不足しているサーバーフォルダーの追加  
  定義済みのサーバーフォルダーがサーバーによって検出された場合会社、ユーザー、クライアントコンピューターのバックアップ、ファイル履歴のバックアップ、またはフォルダーリダイレクト? が共有されなくなりました (何らかの理由で)。この問題を解決するためにユーザーを導くアラートが生成されます。 サーバー バックアップからフォルダーを復元することをお勧めします。 ただし、サーバーがバックアップされていない場合は、見つからないフォルダーを選択し、 **[見つからないフォルダーの再作成]** をクリックして、サーバー フォルダーの場所を再構成します。  
   
 > [!NOTE]
@@ -288,10 +288,10 @@ ms.locfileid: "79322234"
   
  サーバーバックアップからのファイルの復元の詳細については、「[バックアップと復元の管理](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)」トピックの「ファイルとフォルダーの復元に関する詳細情報」セクションを参照してください。  
   
-##  <a name="BKMK_11"></a>共有フォルダーについて  
+##  <a name="understand-shared-folders"></a><a name="BKMK_11"></a>共有フォルダーについて  
  サーバーに接続されているデバイスから、Windows Server Essentials 上の共有フォルダーにアクセスするには、いくつかの方法があります。 詳細については、「[共有フォルダーの使用](../use/Use-Shared-Folders-in-Windows-Server-Essentials.md)」を参照してください。  
   
-##  <a name="BKMK_Shadow"></a>シャドウコピーについて  
+##  <a name="understand-shadow-copies"></a><a name="BKMK_Shadow"></a>シャドウコピーについて  
  サーバーのシャドウ コピーを使用すると、過去の特定の時点で存在していた共有ファイルとフォルダーを表示できます。 以前のバージョンのファイル、つまりシャドウ コピーにアクセスすることによって、ユーザーには次のようなメリットがあります。  
   
 1. **誤って削除されたファイルを回復します**。 ファイルを誤って削除した場合は、以前のバージョンのファイルを開き、安全な場所にコピーできます。  

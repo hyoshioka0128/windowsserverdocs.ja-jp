@@ -5,16 +5,16 @@ ms.prod: windows-server
 manager: dougkim
 ms.technology: compute
 ms.topic: article
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 ms.localizationpriority: medium
 ms.date: 03/16/2018
-ms.openlocfilehash: bbbd8ea812a25b0d538dcb87a380184412235b99
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d5a3390f1a072e5d155f19a97fe90ef481436f33
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71364037"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307918"
 ---
 # <a name="virtualization"></a>仮想化
 
@@ -139,7 +139,7 @@ Windows Server 仮想化テクノロジには、Hyper-v、Hyper-v 仮想スイ�
 
 
 
-## <a name="related"></a>関連
+## <a name="related"></a>の関係
 
 Hyper-V では、仮想化環境を作成するために特定のハードウェアが必要です。 詳細については、「[Windows Server 2016 の Hyper-V のシステム要件](./hyper-v/system-requirements-for-hyper-v-on-windows.md)」を参照してください。 
 

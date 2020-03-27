@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f009fdd1-94e6-4ccb-8c6e-609a5394db53
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 4b2d8cb1538de35a97ae83888d26abd7ad7bc8b3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: ad09bdef0fba9f8114a09e3ddadb8237be2b7d9f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388321"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308705"
 ---
 # <a name="step-3-install-and-configure-client2"></a>手順 3. のインストールと構成
 

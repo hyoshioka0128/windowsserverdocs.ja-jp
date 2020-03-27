@@ -1,9 +1,9 @@
 ---
 title: ワイヤレス ネットワークのサポートの構成
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: 4d7020d4-fd46-4858-a406-de5c0f21ea06
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c5c98727b81bf37fdb3f90c612270462a51908c8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4ce5f167339d7910b10f90bea5bbeae5606b5cf2
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833113"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312213"
 ---
 # <a name="configure-support-for-a-wireless-network"></a>ワイヤレス ネットワークのサポートの構成
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 ワイヤレス ネットワークをサポートするようにオペレーティング システムを構成できます。 サーバー上でワイヤレス サポートを有効にするには、次の要件を満たしている必要があります。  
   
@@ -47,10 +47,10 @@ ms.locfileid: "59833113"
 -   サーバー上にアドホック ネットワークが作成されている場合、ワイヤレス ネットワーク アダプターをアドホック ネットワーク専用にして、ユーザーがインターネット接続を取得するためネットワーク ケーブルを常にサーバーに差し込めるようにする必要があります。  
   
 > [!NOTE]
->  ネットワーク接続の構成の詳細については、「 [Preconfiguring a Router](Preconfiguring-a-Router.md)」を参照してください。  
+>  ネットワーク接続の構成の詳細については、「[ルーターの事前構成](Preconfiguring-a-Router.md)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
- [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   
+## <a name="see-also"></a>参照  
+ [イメージ  の作成とカスタマイズ](Creating-and-Customizing-the-Image.md)  
  [追加のカスタマイズ](Additional-Customizations.md)   
- [イメージの展開の準備](Preparing-the-Image-for-Deployment.md)   
+ [展開  のイメージの準備](Preparing-the-Image-for-Deployment.md)  
  [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)

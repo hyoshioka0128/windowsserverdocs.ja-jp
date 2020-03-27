@@ -3,7 +3,7 @@ title: Windows Server Essentials でのデバイスの管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 48eb7009215e484fb00e704c7b328340240321d2
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: cd43826579bff16e4bdf50bba956f19a39fec5e6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322324"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311315"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>Windows Server Essentials でのデバイスの管理
 
@@ -37,7 +37,7 @@ ms.locfileid: "79322324"
   
 -   [コンピューターのプロパティの表示](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_8)  
   
-##  <a name="BKMK_1"></a>ダッシュボードを使用してデバイスを管理する  
+##  <a name="manage-devices-by-using-the-dashboard"></a><a name="BKMK_1"></a>ダッシュボードを使用してデバイスを管理する  
  Windows Server Essentials では、Windows Server Essentials ダッシュボードを使用して、一般的な管理タスクを実行することができます。 ダッシュボードの **[デバイス]** ページには、次の項目が表示されます。  
   
 -   次の情報を含む、ネットワーク コンピューターの一覧  
@@ -89,7 +89,7 @@ ms.locfileid: "79322324"
 |コンピューターをサーバーに接続する方法|コンピューターをネットワークに参加させるために実行する手順が説明されているヘルプ トピックが開きます。|  
 |グループ ポリシーの実装|ドメインに参加している Windows 8 および Windows 7 コンピューターにポリシー設定を適用します。|  
   
-##  <a name="BKMK_2"></a>特定のネットワークコンピューターにログオンするためのアクセス許可をユーザーアカウントに割り当てる  
+##  <a name="assign-user-accounts-permission-to-log-on-to-specific-network-computers"></a><a name="BKMK_2"></a>特定のネットワークコンピューターにログオンするためのアクセス許可をユーザーアカウントに割り当てる  
  リモートの場所から Windows Server Essentials ネットワークにアクセスする場合、ユーザーが特定のネットワーク コンピューターのみにログオンできるように、ユーザー アカウントにアクセス許可を割り当てることができます。  
   
 #### <a name="to-change-the-computer-access-for-a-user-account"></a>ユーザー アカウントのコンピューター アクセスを変更するには  
@@ -104,7 +104,7 @@ ms.locfileid: "79322324"
   
 5.  **[コンピューター アクセス]** タブで、このユーザーがリモートでアクセスできるコンピューターを選択し、 **[OK]** をクリックします。  
   
-##  <a name="BKMK_3"></a>サーバーからコンピューターを削除する  
+##  <a name="remove-a-computer-from-the-server"></a><a name="BKMK_3"></a>サーバーからコンピューターを削除する  
  ダッシュボードを使用して Windows Server Essentials を実行しているサーバーから削除されたコンピューターは、サーバーによって管理されなくなります。 その結果、サーバーは、ネットワークから削除されたコンピューターのバックアップの作成や状態の監視を停止します。  
   
 > [!NOTE]
@@ -118,7 +118,7 @@ ms.locfileid: "79322324"
   
 3.  コンピューターの一覧で、ネットワークから削除するコンピューターを右クリックし、 **[コンピューターの削除]** をクリックします。  
   
-##  <a name="BKMK_5"></a>フォルダーリダイレクトとセキュリティのグループポリシー設定を構成する  
+##  <a name="configure-group-policy-settings-for-folder-redirection-and-security"></a><a name="BKMK_5"></a>フォルダーリダイレクトとセキュリティのグループポリシー設定を構成する  
  Windows Server Essentials ダッシュボードを使用して、グループ ポリシーを構成し、Windows Server Essentials ネットワーク内のコンピューターにそのポリシーを展開できます。 Windows Server Essentials のグループ ポリシーには、Windows Update、Windows Defender、およびネットワーク ファイアウォールに影響を与えるフォルダー リダイレクトとセキュリティの設定が含まれます。  
   
 #### <a name="to-configure-group-policy-in-windows-server-essentials"></a>Windows Server Essentials のグループ ポリシーを構成するには  
@@ -139,7 +139,7 @@ ms.locfileid: "79322324"
   
 7.  **[完了]** をクリックして、グループ ポリシー設定を実装します。  
   
-##  <a name="BKMK_7"></a>リモートデスクトップセッションを使用してネットワークコンピューターに接続する  
+##  <a name="connect-to-a-network-computer-by-using-a-remote-desktop-session"></a><a name="BKMK_7"></a>リモートデスクトップセッションを使用してネットワークコンピューターに接続する  
  オフィスから離れた場所にいるときに Windows Server Essentials ネットワークコンピューターにリモートアクセスするには、Web ブラウザーを使用して組織のリモート Web アクセス web サイトにログオンし、 **[コンピューター]** タブでコンピューターの名前をクリックします。  
   
  **[状態]** 列に次の値が表示され、ネットワーク上のコンピューターに接続できるかどうかを示します。  
@@ -160,7 +160,7 @@ ms.locfileid: "79322324"
   
      コンピューターの接続がファイアウォールにより拒まれています。あるいは、リモート デスクトップがそのコンピューターで、またはグループ ポリシーにより無効になっています。 変更があった場合、この状態の更新に最大 6 時間かかることがあります。  
   
-##  <a name="BKMK_8"></a>コンピューターのプロパティの表示  
+##  <a name="view-computer-properties"></a><a name="BKMK_8"></a>コンピューターのプロパティの表示  
  Windows Server Essentials ダッシュボードの **[デバイス]** セクションには、ネットワーク コンピューターの一覧が表示されます。 また、各コンピューターに関する追加情報も提供されます。  
   
 #### <a name="to-view-a-list-of-computers"></a>コンピューターの一覧を表示するには  

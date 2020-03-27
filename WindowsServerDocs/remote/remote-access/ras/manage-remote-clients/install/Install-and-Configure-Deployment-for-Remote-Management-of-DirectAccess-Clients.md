@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4adce101-1e30-439e-b78b-65b26479f33e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c28e29e57728c2d4fa6fec9bc6f86b5c7b7b70a5
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 255144dba4a18fd358d9bd4ef9759f92b3c31902
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404599"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308163"
 ---
 # <a name="install-and-configure-deployment-for-remote-management-of-directaccess-clients"></a>DirectAccess クライアントのリモート管理の展開をインストールして構成する
 

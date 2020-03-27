@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 10c7a49c-5671-4bec-b562-13fdd67f4629
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: f226c4c4b8a7517458ede95b4e237b567e0c49df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 0de0fcf37e31b91d0fa69d61d42586524f26b92b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404665"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308525"
 ---
 # <a name="test-lab-guide-demonstrate-directaccess-with-otp-authentication-and-rsa-securid"></a>テスト ラボ ガイド: OTP 認証と RSA SecurID を使用した DirectAccess のデモンストレーション
 

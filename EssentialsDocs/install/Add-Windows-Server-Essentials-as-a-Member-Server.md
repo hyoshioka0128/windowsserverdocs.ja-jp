@@ -3,7 +3,7 @@ title: Windows Server Essentials をメンバー サーバーとして追加
 description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: d09dd82f-f7d2-47ce-862d-fd9869f2021c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 09943f9708af3839ff21717316853fab9ba0283b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 4b87c066885ed2bf0ac6dfa29496317310b062d9
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865049"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310178"
 ---
 # <a name="add-windows-server-essentials-as-a-member-server"></a>Windows Server Essentials をメンバー サーバーとして追加
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 このトピックは、windows server Essentials Experience 役割がインストールされた windows Server 2012 R2 Standard、Windows Server 2012 R2 Datacenter、または Windows Server 2016 を実行するサーバーに適用されます。 このドキュメントの残りの部分では、Windows Server Essentials Experience 役割を Windows Server Essentials と呼んでいます。  
   
@@ -51,7 +51,7 @@ ms.locfileid: "70865049"
   
 1. 2 台目のサーバーへの Windows Server Essentials のインストールが完了したら、Windows Server Essentials の構成ウィザードを閉じます。  
   
-2. **検索** ボックスに **System Settings** と入力し、検索結果で **システムの詳細設定の表示** をクリックします。  
+2. **検索** ボックスに「**System Settings**」と入力し、検索結果で「**システムの詳細設定の表示** をクリックします。  
   
 3. **[システムのプロパティ]** で、 **[コンピューター名]** タブをクリックします。  
   
@@ -59,7 +59,7 @@ ms.locfileid: "70865049"
   
 5. **[コンピューター名/ドメイン]** 名の変更 の **[メンバー]** セクションで、Windows server Essentials を実行しているサーバーを**ワークグループ**または**ドメイン**のどちらに参加させるかを選択します。  
   
-   -   サーバーをワークグループに追加するには、「 **workgroup**」と入力し、 **[OK]** をクリックします。  
+   -   サーバーをワークグループに追加するには、「**workgroup**」と入力し、 **[OK]** をクリックします。  
   
    -   このサーバーを既存の Active Directory ドメインに参加させるには、ドメインの名前を入力して、 **[OK]** をクリックします。  
   
@@ -86,7 +86,7 @@ ms.locfileid: "70865049"
   
 7.  デスクトップで、ダッシュボード アイコンをクリックし、サーバーを起動します。 ホーム ページで、 **[セットアップ]** タブに示されている **[作業の開始]** タスクを実行します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 
 -   [Windows Server Essentials のインストール](Install-Windows-Server-Essentials.md)

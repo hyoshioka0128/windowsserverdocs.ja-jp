@@ -7,23 +7,23 @@ ms.service: virtual-network
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: b491089c-5bcb-49d4-95b1-915b7ce69f88
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 02/14/2019
-ms.openlocfilehash: b71b17760ec11d7d2ea6a3bfeb118899be9504e7
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: f6a33d59cedecc49b50d01ebffb0fef9fe460afd
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405958"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317214"
 ---
 # <a name="sdn-technologies"></a>SDN テクノロジ
 
->適用対象:Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
+>適用対象: Windows Server 2019、Windows Server 2016、Windows Server (半期チャネル)
 
 このセクションのトピックでは、Windows Server 2016 に含まれるソフトウェア定義ネットワークテクノロジの概要と技術情報について説明します。  
 
-## <a name="network-controllernetwork-controllernetwork-controllermd"></a>[ネットワーク コントローラー](network-controller/Network-Controller.md)
+## <a name="network-controller"></a>[ネットワーク コントローラー](network-controller/Network-Controller.md)
 
 ネットワークコントローラーは、データセンター内の仮想および物理ネットワークインフラストラクチャの管理、構成、監視、およびトラブルシューティングを行うための、一元化されたプログラミング可能な自動化ポイントを提供します。 ネットワークコントローラーを使用すると、ネットワークデバイスやサービスを手動で構成する代わりに、ネットワークインフラストラクチャの構成を自動化できます。 
 
@@ -41,21 +41,21 @@ Windows PowerShell、表現的な状態転送 (REST) API、または管理アプ
 - VPN ゲートウェイ (リモートアクセスサービス (RAS) マルチテナントゲートウェイを含む) 
 - ロード バランサー 
   
-## <a name="hyper-v-network-virtualizationhyper-v-network-virtualizationhyper-v-network-virtualizationmd"></a>[Hyper-v ネットワーク仮想化](hyper-v-network-virtualization/Hyper-V-Network-Virtualization.md)
+## <a name="hyper-v-network-virtualization"></a>[Hyper-v ネットワーク仮想化](hyper-v-network-virtualization/Hyper-V-Network-Virtualization.md)
 
 Hyper-v ネットワーク仮想化 (HNV) は、仮想ネットワークを使用して、物理ネットワークからアプリケーションとワークロードを抽象化するのに役立ちます。 仮想ネットワークでは、共有の物理ネットワーク ファブリックで実行されているときに、必要なマルチ テナント分離を提供し、リソースの使用率を高めることができます。 既存の投資を確実に転送できるように、既存のネットワーク歯車に仮想ネットワークを設定することができます。 また、仮想ネットワークは、仮想ローカルエリアネットワーク (Vlan) と互換性があります。
   
-## <a name="hyper-v-virtual-switchvirtualizationhyper-v-virtual-switchhyper-v-virtual-switchmd"></a>[Hyper-V 仮想スイッチ](../../../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md) 
+## <a name="hyper-v-virtual-switch"></a>[Hyper-V 仮想スイッチ](../../../virtualization/hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md) 
 
 Hyper-v 仮想スイッチは、hyper-v サーバーの役割をインストールした後に Hyper-v マネージャーで使用できる、ソフトウェアベースのレイヤー2イーサネットネットワークスイッチです。 このスイッチには、仮想マシンを仮想ネットワークと物理ネットワークの両方に接続するための、プログラムで管理される拡張可能な機能が含まれています。 また、Hyper-v 仮想スイッチでは、セキュリティ、分離、およびサービスレベルに対してポリシーが適用されます。
   
 スイッチ埋め込みチーミング (SET) とリモートダイレクトメモリアクセス (RDMA) を使用して、Hyper-v 仮想スイッチを展開することもできます。 詳細については、このトピックの「[リモートダイレクトメモリアクセス (RDMA) とスイッチ埋め込みチーミング (SET)](#remote-direct-memory-access-rdma-and-switch-embedded-teaming-set) 」セクションを参照してください。
 
-## <a name="internal-dns-service-idns-for-sdnidns-for-sdnmd"></a>[SDN の内部 DNS サービス (Idn)](Idns-for-Sdn.md)
+## <a name="internal-dns-service-idns-for-sdn"></a>[SDN の内部 DNS サービス (Idn)](Idns-for-Sdn.md)
 
 ホストされている仮想マシン (Vm) とアプリケーションは、ネットワーク内およびインターネット上の外部リソースと通信するために DNS を必要とします。 Idn では、分離されたローカル名前空間とインターネットリソースの DNS 名前解決サービスをテナントに提供できます。 
   
-## <a name="network-function-virtualizationnetwork-function-virtualizationnetwork-function-virtualizationmd"></a>[ネットワーク機能の仮想化](network-function-virtualization/Network-Function-Virtualization.md)
+## <a name="network-function-virtualization"></a>[ネットワーク機能の仮想化](network-function-virtualization/Network-Function-Virtualization.md)
 
 ロードバランサー、ファイアウォール、ルーター、スイッチなどのハードウェアアプライアンスは、ますます仮想アプライアンスになりつつあります。 Microsoft は、仮想化されたネットワーク、スイッチ、ゲートウェイ、Nat、ロードバランサー、およびファイアウォールを備えています。 この「ネットワーク機能の仮想化」は、サーバーの仮想化とネットワーク仮想化の自然な流れです。 仮想アプライアンスが急速に登場し、新しい市場が作成されます。 常に興味を引くと両方の仮想化プラットフォームで運動量を取得し、クラウド サービスです。 
   
@@ -77,14 +77,14 @@ Windows Server 2016 では、スイッチ埋め込みチーミング (SET) の�
   
 さらに、Windows PowerShell コマンドを使用して、データセンターブリッジング (DCB) を有効にしたり、RDMA 仮想 NIC (vNIC) を使用して Hyper-v 仮想スイッチを作成したり、セットと RDMA vNICs を使用して Hyper-v 仮想スイッチを作成したりすることもできます。 詳細については、「[リモートダイレクトメモリアクセス (RDMA) とスイッチ埋め込みチーミング (SET)](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/rdma-and-switch-embedded-teaming.md)」を参照してください。
 
-## <a name="border-gateway-protocol-bgpremoteremote-accessbgpborder-gateway-protocol-bgpmd"></a>[Border Gateway Protocol (BGP)](../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)
+## <a name="border-gateway-protocol-bgp"></a>[Border Gateway Protocol (BGP)](../../../remote/remote-access/bgp/Border-Gateway-Protocol-BGP.md)
   
 Border Gateway Protocol (BGP) は、サイト間 VPN 接続を使用するサイト間のルートを自動的に学習する動的ルーティングプロトコルです。 そのため、BGP ではルーターの手動構成を減らすことができます。   RAS ゲートウェイを構成すると、BGP では、テナントの VM ネットワークとリモートサイト間のネットワークトラフィックのルーティングを管理できます。  
   
-## <a name="software-load-balancing-slb-for-sdnnetwork-function-virtualizationsoftware-load-balancing-for-sdnmd"></a>[SDN のソフトウェア負荷分散 (SLB)](network-function-virtualization/software-load-balancing-for-sdn.md)
+## <a name="software-load-balancing-slb-for-sdn"></a>[SDN のソフトウェア負荷分散 (SLB)](network-function-virtualization/software-load-balancing-for-sdn.md)
 SDN を展開するクラウドサービスプロバイダー (Csp) と企業は、ソフトウェア負荷分散 (SLB) を使用して、テナントとテナントの顧客ネットワークトラフィックを仮想ネットワークリソース間で均等に分散させることができます。 Windows Server SLB により、同じワークロードをホストする複数のサーバーであり、高可用性とスケーラビリティを提供することです。 
 
-## <a name="windows-server-containerscontainerscontainer-networking-overviewmd"></a>[Windows Server コンテナー](Containers/Container-networking-overview.md)
+## <a name="windows-server-containers"></a>[Windows Server コンテナー](Containers/Container-networking-overview.md)
 
 Windows Server コンテナーは、同じコンテナーホストで実行されている他のサービスからアプリケーションまたはサービスを分離する、オペレーティングシステムの簡易仮想化の方法です。 各コンテナーには、独自のオペレーティングシステム、プロセス、ファイルシステム、レジストリ、および IP アドレスがあり、仮想ネットワークに接続できます。 
 

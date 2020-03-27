@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/10/2018
-ms.openlocfilehash: 38d104bc3ceca478f0e261b3a364b5d4448b22f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: a16d82e4db1e92a5dd20f6b4feb88f0619d50cc4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406012"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317509"
 ---
 # <a name="requirements-for-deploying-network-controller"></a>ネットワークコントローラーを展開するための要件
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 ネットワークコントローラーを展開するために、1台以上のコンピューターまたは Vm、1台のコンピューターまたは VM を必要とするデータセンターを準備します。 ネットワークコントローラーを展開する前に、セキュリティグループ、ログファイルの場所 (必要な場合)、および動的 DNS の登録を構成する必要があります。
 
@@ -61,7 +61,7 @@ ms.locfileid: "71406012"
 最後に、同じサブネットまたは異なるサブネットにネットワークコントローラークラスターノードを展開します。 
 
 
-|         もし...         |                                                                                                                                                         結果                                                                                                                                                         |
+|         条件         |                                                                                                                                                         結果                                                                                                                                                         |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  同じサブネット上で、  |                                                                                                                                ネットワークコントローラーの REST IP アドレスを指定する必要があります。                                                                                                                                 |
 | 異なるサブネットでは、 | ネットワークコントローラーの REST DNS 名を指定する必要があります。これは、展開プロセスで作成します。 また、次の操作を行う必要があります。<ul><li>Dns サーバーで、ネットワークコントローラーの DNS 名の DNS 動的更新を構成します。</li><li>DNS 動的更新をネットワークコントローラーノードのみに制限します。</li></ul> |
@@ -134,7 +134,7 @@ TP5 ベースの展開の自動化では、Active Directory が使用可能で�
 >VMM を使用して展開する場合は、インフラストラクチャの仮想マシン (VMM サーバー、AD/DNS、SQL Server など) が、図に示されている4つのホストのいずれかでホストされていないことを確認してください。  
 
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ:
 [ソフトウェアで定義されたネットワークインフラストラクチャを計画](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure)します。
 
 ## <a name="related-topics"></a>関連トピック

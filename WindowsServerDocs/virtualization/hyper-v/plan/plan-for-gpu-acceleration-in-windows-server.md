@@ -1,19 +1,19 @@
 ---
 title: Windows Server での GPU アクセラレーションの計画
 description: DDA や RemoteFX vGPU など、GPU アクセラレーション用のさまざまな Hyper-v テクノロジについて説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: rickman
 author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 08/21/2019
-ms.openlocfilehash: f62357de1ab167d0a6be4eb63b9d6d23bfac7371
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 7ca8d29b58dc8682575d9cb8b0f26aa49b257335
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923904"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307851"
 ---
 # <a name="plan-for-gpu-acceleration-in-windows-server"></a>Windows Server での GPU アクセラレーションの計画
 
@@ -26,7 +26,7 @@ ms.locfileid: "72923904"
 ワークロードによっては、GPU アクセラレータを考慮する必要がある場合があります。 GPU アクセラレーションを選択する前に、次の点を考慮する必要があります。
 
 - **アプリとデスクトップのリモート処理 (VDI/DaaS) ワークロード**: Windows Server を使用してアプリまたはデスクトップリモート処理サービスを構築している場合は、ユーザーが実行する予定のアプリのカタログを検討してください。 CAD/CAM アプリ、シミュレーションアプリ、ゲーム、レンダリング/視覚化アプリなど、一部の種類のアプリは、スムーズで応答性の高い対話機能を提供するために、3D レンダリングに大きく依存しています。 ほとんどのお客様は、これらの種類のアプリで適切なユーザーエクスペリエンスを実現するために Gpu を使用することを検討しています。
-- **リモートでのレンダリング、エンコーディング、および視覚化ワークロード**: これらのグラフィック指向のワークロードは、効率的な3d レンダリングやフレームエンコード/デコードなどの GPU の特殊な機能に大きく依存している傾向があります。コスト効果とスループット目標。 この種類のワークロードでは、1つの GPU 対応 VM が、多くの CPU 専用 Vm のスループットと一致することができます。
+- **リモートでのレンダリング、エンコード、および視覚化ワークロード**: これらのグラフィック指向のワークロードは、コスト効果とスループットの目標を達成するために、効率的な3d レンダリングやフレームエンコード/デコードなど、GPU の特殊な機能に大きく依存する傾向があります。 この種類のワークロードでは、1つの GPU 対応 VM が、多くの CPU 専用 Vm のスループットと一致することができます。
 - **HPC ワークロードと ML ワークロード**: ハイパフォーマンスコンピューティングおよび機械学習モデルのトレーニングや推論など、データ並列計算の高度なワークロードについては、gpu によって、結果への時間、推定時間、トレーニング時間が大幅に短縮されます。 また、同等のパフォーマンスレベルでは、CPU のみのアーキテクチャよりもコスト効果が高くなる可能性があります。 多くの HPC および機械学習フレームワークには、GPU アクセラレーションを有効にするオプションがあります。これが特定のワークロードにメリットをもたらす可能性があるかどうかを検討します。
 
 ## <a name="gpu-virtualization-in-windows-server"></a>Windows Server での GPU 仮想化
@@ -60,7 +60,7 @@ RemoteFX vGPU は、1つの物理 GPU を複数の仮想マシン間で共有す
 
 詳しくは、次のトピックをご覧ください。
 
-- [RemoteFX vGPU を使用してグラフィックスデバイスをデプロイする](../deploy/deploy-graphics-devices-using-remotefx-vgpu.md)
+- [RemoteFX vGPU を使ったグラフィックス デバイスの展開](../deploy/deploy-graphics-devices-using-remotefx-vgpu.md)
 - [RemoteFX 3D ビデオアダプター (vGPU) のサポート](../../../remote/remote-desktop-services/rds-supported-config.md#remotefx-3d-video-adapter-vgpu-support)
 
 ## <a name="comparing-dda-and-remotefx-vgpu"></a>DDA と RemoteFX vGPU の比較
@@ -74,9 +74,9 @@ RemoteFX vGPU は、1つの物理 GPU を複数の仮想マシン間で共有す
 | アプリの互換性     | DX 11.1、OpenGL 4.4、OpenCL 1.1                                                     | ベンダーから提供されるすべての GPU 機能 (DX 12、OpenGL、CUDA)                       |
 | AVC444                | 既定で有効                                                                  | 使用可能なグループポリシー                                                      |
 | GPU VRAM              | 最大 1 GB の専用 VRAM                                                           | GPU でサポートされている VRAM まで                                                     |
-| フレーム レート            | 最大 30 fps                                                                         | 最大 60 fps                                                                         |
+| フレーム率            | 最大 30 fps                                                                         | 最大 60 fps                                                                         |
 | ゲスト内の GPU ドライバー   | RemoteFX 3D アダプター ディスプレイ ドライバー (Microsoft)                                      | GPU ベンダードライバー (NVIDIA、AMD、Intel)                                              |
-| ホスト OS のサポート       | WIN ENT LTSB 2016 Estonian 64 Bits                                                                 | Windows Server 2016;Windows Server 2019                                            |
+| ホスト OS のサポート       | Windows Server 2016                                                                 | Windows Server 2016;Windows Server 2019                                            |
 | ゲスト OS のサポート      | Windows Server 2012 R2Windows Server 2016;Windows 7 SP1、Windows 8.1;Windows 10 | Windows Server 2012 R2Windows Server 2016;Windows Server 2019;Windows 10;マシン |
 | ハイパーバイザー            | Microsoft Hyper-V                                                                   | Microsoft Hyper-V                                                                   |
 | GPU ハードウェア          | エンタープライズ GPU (Nvidia Quadro/GRID または AMD FirePro)                         | エンタープライズ GPU (Nvidia Quadro/GRID または AMD FirePro)                         |

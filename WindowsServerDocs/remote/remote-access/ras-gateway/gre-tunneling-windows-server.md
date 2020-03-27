@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: df2023bf-ba64-481e-b222-6f709edaa5c1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: be57bc0ce1b509c49f269618765c79f380fd3b12
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d246f0e56681f75e4336ed225d1557a0e05c581b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404676"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308556"
 ---
 # <a name="gre-tunneling-in-windows-server-2016"></a>Windows Server 2016 の GRE トンネリング
 
@@ -64,19 +64,19 @@ GRE トンネル機能では、Microsoft テクノロジを使用してサービ
 
 GRE トンネル機能が対処する主なシナリオを次に示します。  
   
-### <a name="BKMK_Access"></a>テナントの仮想ネットワークからテナントの物理ネットワークへのアクセス
+### <a name="access-from-tenant-virtual-networks-to-tenant-physical-networks"></a><a name="BKMK_Access"></a>テナントの仮想ネットワークからテナントの物理ネットワークへのアクセス
 
 このシナリオでは、ホスティングサービスプロバイダーの内部に配置されたテナントの仮想ネットワークからテナントの物理ネットワークへのアクセスを、スケーラブルな方法で提供できます。 GRE トンネルエンドポイントはマルチテナントゲートウェイ上に確立され、もう1つの GRE トンネルエンドポイントは、物理ネットワーク上のサードパーティデバイスで確立されます。 レイヤー3のトラフィックは、仮想ネットワーク内の仮想マシンと物理ネットワーク上のサードパーティデバイスの間でルーティングされます。  
   
 ![ホスト側の物理ネットワークとテナントの仮想ネットワークを接続する GRE トンネル](../../media/gre-tunneling-in-windows-server/GRE_.png)  
   
-### <a name="BKMK_Speed"></a>高速接続
+### <a name="high-speed-connectivity"></a><a name="BKMK_Speed"></a>高速接続
 
 このシナリオでは、オンプレミスのテナントネットワークからホスティングサービスプロバイダーネットワークに配置されている仮想ネットワークへの高速接続を実現するスケーラブルな方法を使用できます。 テナントは、プロトコルラベルの切り替え (MPLS) を使用してサービスプロバイダーネットワークに接続します。これにより、ホスティングサービスプロバイダーのエッジルーターとテナントの仮想ネットワークへのマルチテナントゲートウェイとの間に GRE トンネルが確立されます。  
   
 ![テナントエンタープライズ MPLS ネットワークとテナント仮想ネットワークを接続する GRE トンネル](../../media/gre-tunneling-in-windows-server/GRE-.png)  
   
-### <a name="BKMK_Integration"></a>VLAN ベースの分離との統合
+### <a name="integration-with-vlan-based-isolation"></a><a name="BKMK_Integration"></a>VLAN ベースの分離との統合
 
 このシナリオでは、VLAN ベースの分離と Hyper-v ネットワーク仮想化を統合できます。 ホスティングプロバイダーネットワーク上の物理ネットワークには、VLAN ベースの分離を使用するロードバランサーが含まれています。 マルチテナントゲートウェイは、物理ネットワーク上のロードバランサーと仮想ネットワーク上のマルチテナントゲートウェイとの間で GRE トンネルを確立します。  
   
@@ -84,7 +84,7 @@ GRE トンネル機能が対処する主なシナリオを次に示します。
   
 ![テナント仮想ネットワークを接続する複数の GRE トンネル](../../media/gre-tunneling-in-windows-server/GRE-VLANIsolation.png)  
   
-### <a name="BKMK_Shared"></a>共有リソースへのアクセス
+### <a name="access-shared-resources"></a><a name="BKMK_Shared"></a>共有リソースへのアクセス
 
 このシナリオでは、ホスティングプロバイダーネットワークに配置されている物理ネットワーク上の共有リソースにアクセスできます。  
   
@@ -96,7 +96,7 @@ GRE トンネル機能が対処する主なシナリオを次に示します。
   
 ![複数のトンネルを使用して複数の仮想ネットワークに接続するシングルテナントゲートウェイ](../../media/gre-tunneling-in-windows-server/GRE-SharedResource.png)  
   
-### <a name="BKMK_thirdparty"></a>テナントへのサードパーティ製デバイスのサービス
+### <a name="services-of-third-party-devices-to-tenants"></a><a name="BKMK_thirdparty"></a>テナントへのサードパーティ製デバイスのサービス
 
 このシナリオは、サードパーティ製デバイス (ハードウェアロードバランサーなど) をテナントの仮想ネットワークトラフィックフローに統合するために使用できます。 たとえば、エンタープライズサイトから送信されるトラフィックは、S2S トンネルを介してマルチテナントゲートウェイに渡されます。 トラフィックは、GRE トンネル経由でロードバランサーにルーティングされます。 ロードバランサーは、企業の仮想ネットワーク上の複数の仮想マシンにトラフィックをルーティングします。 仮想ネットワーク内の IP アドレスが重複する可能性がある別のテナントでも同じことが行われます。 ネットワークトラフィックは、Vlan を使用してロードバランサー上で分離され、Vlan をサポートするすべてのレイヤー3デバイスに適用されます。  
   
@@ -110,7 +110,7 @@ GRE トンネルゲートウェイを含むゲートウェイを展開する例�
   
 [スクリプトを使用してソフトウェアで定義されたネットワークインフラストラクチャを展開する](../../../networking/sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md)
   
-## <a name="more-information"></a>詳細情報
+## <a name="more-information"></a>詳細
 
 S2S ゲートウェイの展開の詳細については、次のトピックを参照してください。  
   

@@ -3,7 +3,7 @@ title: Windows Server Essentials のサポート
 description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: ac12e9a9-ba7a-480a-9249-6e216c70941b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d6855e777ea6e59ce5a9596adc9ba2e186b0a3e5
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 9142f44e61a7361bd4c40bdfdb5869e326d67343
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947383"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318668"
 ---
 # <a name="support-windows-server-essentials"></a>Windows Server Essentials のサポート
 
@@ -25,7 +25,7 @@ ms.locfileid: "75947383"
 
 このトピックでは、Windows Server Essentials のサポート オプションおよびトラブルシューティング オプションを示します。  
   
-##  <a name="BKMK_Top"></a>上位のサポートソリューションと更新プログラム  
+##  <a name="top-support-solutions-and-updates"></a><a name="BKMK_Top"></a>上位のサポートソリューションと更新プログラム  
   
 -   [Windows Server 2012 R2 および Windows Server 2012 の上位サポートソリューション](https://blogs.technet.com/b/topsupportsolutions/archive/2014/02/04/top-support-solutions-for-microsoft-windows-server-2012.aspx)  
   
@@ -41,7 +41,7 @@ ms.locfileid: "75947383"
   
 -   [修正プログラム: Windows Server Essentials で Windows Server Update Services ロールを有効にすることはできません](https://support.microsoft.com/kb/2762663)(2013 年2月)  
   
-## <a name="troubleshoot"></a>[トラブルシューティング]  
+## <a name="troubleshoot"></a>トラブルシューティング  
  このセクションでは、Windows Server Essentials を使用する場合に発生する可能性のある、一般的な問題のトラブルシューティングに役立つ情報を提供します。 トラブルシューティング情報は、主要な製品機能に対応する論理的な場所に構成されています。  
   
 -   [Windows Server Essentials ベスト プラクティス アナライザー (BPA) ツールで使用される規則](../migrate/Rules-used-by-the-Windows-Server-Essentials-Best-Practices-Analyzer--BPA--Tool.md)  
@@ -126,7 +126,7 @@ ms.locfileid: "75947383"
   
 -    パートナーやベンダーと安全に共同作業する方法については、「[小規模および中規模企業でのコラボレーションの向上](https://technet.microsoft.com/library/dn747893.aspx)」を参照してください。  
   
-## <a name="see-also"></a>「  
+## <a name="see-also"></a>参照  
   
 -   [Windows Server Essentials のインストール](../install/Install-Windows-Server-Essentials.md)  
   

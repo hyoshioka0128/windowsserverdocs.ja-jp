@@ -2,21 +2,21 @@
 title: Windows Server Essentials ユーザーのオンライン アカウントの管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: c09f4cf6-4d12-49fe-9ae4-e6cb14027b9d
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: dc3170c7d5267eef6f339dc229b1b9daaf9ac9ec
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 302b5e79f4495c792fd0b30392988720f5594c58
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980279"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311245"
 ---
 # <a name="manage-online-accounts-for-windows-server-essentials-users"></a>Windows Server Essentials ユーザーのオンライン アカウントの管理
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 Windows Server Essentials サーバーと Microsoft Office 365 を統合すると、ダッシュボードからユーザーアカウントと共にオンラインアカウントを管理できます。 このトピックでは、ダッシュボードからユーザーの Microsoft Online Services アカウントを管理し、ダッシュボードからオンラインアカウントを作成および管理する方法、Exchange Online の電子メールアドレスと配布グループを管理する方法によって得られるメリットについて説明します。ダッシュボードから。  
 
@@ -39,7 +39,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 -   [Exchange Online の配布グループの管理](#BKMK_SECTION_ManageDistributionGroups)  
   
-##  <a name="BKMK_WhyManageOnlineAccounts"></a>ダッシュボードからオンラインアカウントを管理する必要があるのはなぜですか。  
+##  <a name="why-should-i-manage-my-online-accounts-from-the-dashboard"></a><a name="BKMK_WhyManageOnlineAccounts"></a>ダッシュボードからオンラインアカウントを管理する必要があるのはなぜですか。  
  ダッシュボードを使用して Microsoft Online Services アカウントをユーザーアカウントに割り当てると、アカウントのパスワードが自動的に同期され、ユーザーアカウントのライフサイクル全体で2つのアカウントを一緒に維持することができます。  
   
  同じパスワードを使用してサーバー上のリソースや Office 365 にアクセスできるユーザーにとって便利です。 また、社内のリソースに必要な、Office 365 のリソースへのアクセスにも同じパスワード要件を適用できます。  
@@ -56,12 +56,12 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
  ダッシュボードから最初のオンラインアカウントを作成すると、もう1つの利点があります。 単一の操作で、すべてのユーザーのオンライン アカウントを作成できます。 一方、従業員が既に Office 365 を使用していて、新しい Windows Server Essentials サーバーを設定している場合は、1回の操作でオンラインアカウントからすべてのユーザーアカウントを作成できます。 詳細については、「[オンライン アカウントの作成](#BKMK_SECTION_CreateOnlineAccounts)」を参照してください。  
   
 ### <a name="manage-email-addresses-and-distribution-groups-from-the-dashboard"></a>ダッシュボードから電子メール アドレスと配布グループを管理する  
- Exchange Online の電子メール アドレスと配布グループは、ダッシュボードから管理することができます。 また、電子メールアドレスで組織のインターネットドメインを使用することもできます。 Office 365 にサインインしなくても、ダッシュボードからすべての操作を行うことができます。 (ダッシュボードから配布グループを管理するには、Windows Server Essentials を使用する必要があります。 この機能は、Windows Server Essentials ではサポートされていません。)詳細については、「[Exchange Online の電子メール アドレスの管理](#BKMK_SECTION_ManageEmailAddresses)」と「[Exchange Online の配布グループの管理](#BKMK_SECTION_ManageDistributionGroups)」を参照してください。  
+ Exchange Online の電子メール アドレスと配布グループは、ダッシュボードから管理することができます。 また、電子メールアドレスで組織のインターネットドメインを使用することもできます。 Office 365 にサインインしなくても、ダッシュボードからすべての操作を行うことができます。 (ダッシュボードから配布グループを管理するには、Windows Server Essentials を使用する必要があります。 この機能は、Windows Server Essentials ではサポートされていません。)詳細については、「 [Exchange online の電子メールアドレスを管理](#BKMK_SECTION_ManageEmailAddresses)する」と「 [exchange online の配布グループを管理](#BKMK_SECTION_ManageDistributionGroups)する」を参照してください。  
   
 ### <a name="manage-the-user-account-and-online-account-together"></a>ユーザー アカウントとオンライン アカウントを一緒に管理する  
- また、アカウントのライフサイクル全体で、ユーザーアカウントと共にオンラインアカウントを管理できます。 ユーザー アカウントを非アクティブにすると、Microsoft Online Services でオンライン アカウントも非アクティブにされます。 ユーザー アカウントを削除すると、オンライン アカウントも削除されます。 詳細については、「 [オンライン アカウントの管理](#BKMK_SECTION_ManageOnlineAccounts)」を参照してください。  
+ また、アカウントのライフサイクル全体で、ユーザーアカウントと共にオンラインアカウントを管理できます。 ユーザー アカウントを非アクティブにすると、Microsoft Online Services でオンライン アカウントも非アクティブにされます。 ユーザー アカウントを削除すると、オンライン アカウントも削除されます。 詳細については、「[オンライン アカウントを管理する](#BKMK_SECTION_ManageOnlineAccounts)」を参照してください。  
   
-##  <a name="BKMK_SECTION_CreateOnlineAccounts"></a>オンラインアカウントを作成する  
+##  <a name="create-online-accounts"></a><a name="BKMK_SECTION_CreateOnlineAccounts"></a>オンラインアカウントを作成する  
  サーバーを Office 365 と統合すると、ダッシュボードからユーザー用の Microsoft Online Services アカウントを作成できるようになります。 オンラインアカウントの作成には、柔軟性が非常に高くなります。 新しい Office 365 サブスクリプションを所有している場合は、すべてのユーザーのオンラインアカウントを一括作成できます。 Office 365 でオンラインアカウントを既に作成している場合は、心配しないでください。 新しいサーバーをセットアップする場合は、オンラインアカウントをインポートすることによって、サーバー上にユーザーアカウントを作成できます。 また、個々のユーザーアカウントを作成するとき、または既存のユーザーアカウントにオンラインアカウントを追加するときに、新規または既存のオンラインアカウントを割り当てることができます。  
   
  **ライセンス要件**作成するオンラインアカウントごとにユーザーライセンスが必要になります。 ダッシュボードの **[office 365]** ページで、office 365 サブスクリプションを通じて使用可能なユーザーライセンスの数を確認します。 ユーザーライセンスを追加する必要がある場合は、office 365 で Office 365 サブスクリプションを開くことができます。  
@@ -84,7 +84,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
 > [!NOTE]
 >  Windows Server Essentials を使用している場合は、これらの手順全体で*Microsoft Online Services アカウント*ではなく、 *Office 365 アカウント*が表示されます。 このプロセスは同じですが、Windows Server Essentials では用語が変更されています。  
   
-###  <a name="BKMK_ToBulkCreateOnlineAccounts"></a>既存のユーザーアカウントのオンラインアカウントを一括作成するには  
+###  <a name="to-bulk-create-online-accounts-for-your-existing-user-accounts"></a><a name="BKMK_ToBulkCreateOnlineAccounts"></a>既存のユーザーアカウントのオンラインアカウントを一括作成するには  
   
 1.  管理者としてサーバーにサインインし、Windows Server Essentials ダッシュボードを開きます。  
   
@@ -103,7 +103,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 6.  Microsoft オンライン アカウントを使用できるようになったことをユーザーに通知します。 ユーザーは、Office 365 にサインインする前に、ネットワークユーザーアカウントのパスワードを変更する必要があります。 手順については、「[新しい Microsoft オンライン アカウントの使用を開始する](#BKMK_ToBeginUsingAnOnlineAccount)」を参照してください。  
   
-###  <a name="BKMK_ToBeginUsingAnOnlineAccount"></a>新しい Microsoft オンラインアカウントの使用を開始するには  
+###  <a name="to-begin-using-a-new-microsoft-online-account"></a><a name="BKMK_ToBeginUsingAnOnlineAccount"></a>新しい Microsoft オンラインアカウントの使用を開始するには  
   
 1.  ネットワーク ユーザー アカウントを使用してコンピューターにサインインします。  
   
@@ -116,7 +116,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
     > [!IMPORTANT]
     >  Office 365 では、オンラインアカウントのパスワードを変更しないでください。 それを行うと、パスワード同期化が無効になります。 ネットワーク ユーザー アカウントのパスワードを変更するたびに、オンライン パスワードが更新されます。  
   
-###  <a name="BKMK_ToImportUserAccounts"></a>既存のオンラインアカウントからユーザーアカウントをインポートするには  
+###  <a name="to-import-user-accounts-from-your-existing-online-accounts"></a><a name="BKMK_ToImportUserAccounts"></a>既存のオンラインアカウントからユーザーアカウントをインポートするには  
   
 1.  ダッシュボードで、 **[ユーザー]** ページを開きます。  
   
@@ -130,7 +130,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
     2.  必要に応じて、ユーザー アカウントに割り当てられる一時的なパスワードを表示するリンクをクリックします。 新しいアカウント名と一緒に一時パスワードをユーザーに付与する必要があります  
   
-         (アカウントを作成すると、次のファイルにこれらのパスワードが表示されます。*SystemDrive*\ Users\\*Office365admin*\\*newserveruser*.txt。 *Office365admin*は、サーバー上で Office 365 を管理するために使用されるネットワークアカウントで、 *newserveruser*は新しいものです。ユーザーアカウント名。)  
+         (アカウントを作成した後、このファイルには、 *SystemDrive*\ Users\\*Office365admin*\\*newserveruser*.txt というパスワードが記載されています。ここで、 *Office365admin*は、サーバー上で Office 365 を管理するために使用されるネットワークアカウントで、 *newserveruser*は新しいユーザーアカウント名です)。  
   
     3.  **[次へ]** をクリックして、ユーザー アカウントを作成します。  
   
@@ -138,7 +138,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
      オンラインアカウントのパスワードは、今後、ユーザーアカウントと同期されることを確認してください。 Office 365 では、オンラインパスワードを変更しないようにしてください。  
   
-###  <a name="BKMK_ToCreateaNewUserAccount"></a>オンラインアカウントが割り当てられた新しいユーザーアカウントを作成するには  
+###  <a name="to-create-a-new-user-account-with-an-online-account-assigned-to-it"></a><a name="BKMK_ToCreateaNewUserAccount"></a>オンラインアカウントが割り当てられた新しいユーザーアカウントを作成するには  
   
 1.  ダッシュボードで、 **[ユーザー]** をクリックします。  
   
@@ -148,9 +148,9 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 4.  **[Microsoft Online Services アカウントの割り当て]** ページで、ユーザー用に新しいオンライン アカウントを作成するか、または既存のオンライン アカウントを割り当てます。  
   
-    -   新しいオンライン アカウントを作成するには、 **[新しい Microsoft Online Services アカウントを作成し、それをこのユーザー アカウントに割り当てる]** をクリックし、Microsoft Online Services アカウントの名前を入力します (既定では、ユーザー名はオンライン ID に使用されます)。 その後、 **[次へ]** をクリックします。  
+    -   新しいオンライン アカウントを作成するには、 **[新しい Microsoft Online Services アカウントを作成し、それをこのユーザー アカウントに割り当てる]** をクリックし、Microsoft Online Services アカウントの名前を入力します (既定では、ユーザー名はオンライン ID に使用されます)。 続けて、 **[次へ]** をクリックします。  
   
-    -   既存の Microsoft オンライン アカウントを割り当てるには、 **[既存の Microsoft Online Services アカウントをこのユーザー アカウントに割り当てる]** をクリックし、ドロップダウン リストから既存のアカウントを選択します。 その後、 **[次へ]** をクリックします。  
+    -   既存の Microsoft オンライン アカウントを割り当てるには、 **[既存の Microsoft Online Services アカウントをこのユーザー アカウントに割り当てる]** をクリックし、ドロップダウン リストから既存のアカウントを選択します。 続けて、 **[次へ]** をクリックします。  
   
     > [!NOTE]
     >  Windows Server Essentials では、Microsoft Online Services アカウントは、ウィザードおよびダッシュボードラベルでは Office 365 アカウントと呼ばれます。  
@@ -159,7 +159,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 6.  新しいオンライン アカウントで Office 365 にサインインするには事前にユーザー アカウントのパスワードを変更しておく必要があることを、ユーザーに通知します。 手順については、「[新しい Microsoft オンライン アカウントの使用を開始する](#BKMK_ToBeginUsingAnOnlineAccount)」を参照してください。  
   
-#### <a name="BKMK_ToAssignAnOnlineAccount"></a>オンラインアカウントをユーザーアカウントに割り当てるには  
+#### <a name="to-assign-an-online-account-to-a-user-account"></a><a name="BKMK_ToAssignAnOnlineAccount"></a>オンラインアカウントをユーザーアカウントに割り当てるには  
   
 1.  ダッシュボードで、 **[ユーザー]** をクリックします。  
   
@@ -171,17 +171,17 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 5.  新しいオンライン アカウントで Office 365 にサインインするには事前にユーザー アカウントのパスワードを変更しておく必要があることを、ユーザーに通知します。 手順については、「[新しい Microsoft オンライン アカウントの使用を開始する](#BKMK_ToBeginUsingAnOnlineAccount)」を参照してください。  
   
-##  <a name="BKMK_SECTION_ManageOnlineAccounts"></a>オンラインアカウントの管理  
+##  <a name="manage-online-accounts"></a><a name="BKMK_SECTION_ManageOnlineAccounts"></a>オンラインアカウントの管理  
  Windows Server Essentials でユーザーアカウントにオンラインアカウントを追加すると、アカウントのライフサイクル全体で両方のアカウントをまとめて管理できます。  
   
-###  <a name="BKMK_UnderstandingAccountStatus"></a>オンラインアカウントの状態について  
+###  <a name="understanding-the-online-account-status"></a><a name="BKMK_UnderstandingAccountStatus"></a>オンラインアカウントの状態について  
  Microsoft Online Services アカウントをユーザー アカウントに割り当てると、ダッシュボードの **[ユーザー]** ページの **[Microsoft オンライン アカウント]** 列にアカウントの電子メール アドレスが表示されます (Windows Server Essentials では、列ラベルは**Office 365 アカウント**です)。  
   
 -   電子メール アドレスの横にある青いアイコンは、オンライン アカウントがアクティブであることを示します。 つまり、アカウントには現在の Office 365 ライセンスがあり、ユーザーはオンライン ID を使用して Office 365 にサインインできます。  
   
 -   電子メールアドレスの横にある灰色のアイコンは、ライセンスがアクティブでなくなったか、オンラインアカウントが割り当て解除されているために、オンラインアカウントが非アクティブであることを示しています。する。 ユーザーのオンラインアカウントの割り当てを解除すると、ライセンスが削除され、ユーザーはアカウントを使用して Office 365 にサインインできなくなります。 ただし、サーバーは、ユーザーアカウント名と Office 365 電子メールアドレスの間のマッピングを維持します。  
   
-###  <a name="BKMK_UnassignOnlineAccount"></a>オンラインアカウントへのアクセスを制限する  
+###  <a name="restrict-access-to-an-online-account"></a><a name="BKMK_UnassignOnlineAccount"></a>オンラインアカウントへのアクセスを制限する  
  ユーザーが退職した場合、または Office 365 サービスへのアクセスを制限する必要がある場合は、どうすればよいですか。 Windows Server Essentials でユーザーアカウントと共にユーザーのオンラインアカウントを管理する場合、次の3つのオプションがあります。  
   
 -   **オンラインアカウントの割り当てを解除し**ますか?サーバー上のリソースへのアクセスを防止せずに、ユーザーが Office 365 を使用しないようにする場合は、オンラインアカウントの割り当てを解除する必要があります。 Office 365 ライセンスがリリースされ、ユーザーは Office 365 へのサインインがブロックされます。 ただし、サーバーは、ユーザーアカウント名と Office 365 電子メールアドレスの間のマッピングを維持します。 手順については、「[ユーザーアカウントからオンラインアカウントの割り当てを解除するに](#BKMK_ToUnassignAnOnlineAccount)は」を参照してください。  
@@ -193,7 +193,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
     > [!WARNING]
     >  オンライン アカウントが削除されると、ユーザー データは Microsoft Online Services のデータ保持ポリシーの影響下に置かれるので注意してください。 従業員が退職した後にユーザーデータを保持する必要がある場合は、ユーザーアカウントを削除するのではなく、非アクティブにします。  
   
-####  <a name="BKMK_ToUnassignAnOnlineAccount"></a>ユーザーアカウントからオンラインアカウントの割り当てを解除するには  
+####  <a name="to-unassign-an-online-account-from-a-user-account"></a><a name="BKMK_ToUnassignAnOnlineAccount"></a>ユーザーアカウントからオンラインアカウントの割り当てを解除するには  
   
 1.  ダッシュボードで、 **[ユーザー]** をクリックします。  
   
@@ -201,10 +201,10 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 3.  確認のプロンプトで、 **[はい]** をクリックします。  
   
-##  <a name="BKMK_SECTION_ManageEmailAddresses"></a>Exchange Online の電子メールアドレスを管理する  
+##  <a name="manage-email-addresses-for-exchange-online"></a><a name="BKMK_SECTION_ManageEmailAddresses"></a>Exchange Online の電子メールアドレスを管理する  
  Windows Server Essentials でユーザーのオンラインアカウントに電子メールアドレスを追加することにより、Exchange Online の複数の電子メールアドレスでユーザーが電子メールを受信できるようにすることができます。  
   
-###  <a name="BKMK_PROC_AddEmailAliases"></a>ユーザーの Microsoft オンラインアカウントに電子メールアドレスを追加するには  
+###  <a name="to-add-additional-email-addresses-to-a-user-s-microsoft-online-account"></a><a name="BKMK_PROC_AddEmailAliases"></a>ユーザーの Microsoft オンラインアカウントに電子メールアドレスを追加するには  
   
 1.  Windows Server Essentials ダッシュボードで、 **[ユーザー]** をクリックします。  
   
@@ -216,7 +216,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 5.  **[OK]** を 2 回クリックします。  
   
-##  <a name="BKMK_SECTION_ManageDistributionGroups"></a>Exchange Online の配布グループの管理 (Windows Server Essentials のみ)  
+##  <a name="manage-distribution-groups-for-exchange-online-windows-server-essentials-only"></a><a name="BKMK_SECTION_ManageDistributionGroups"></a>Exchange Online の配布グループの管理 (Windows Server Essentials のみ)  
  Windows Server Essentials サーバーと Office 365 を統合すると、Windows Server Essentials ダッシュボードから Exchange Online の配布グループを作成および管理できるようになります。 この操作は、 **[ユーザー]** ページに追加された **[配布グループ]** タブで行います。 Exchange Online サブスクリプションを持っている場合は、このタブのみ表示されます。 この機能は、Windows Server Essentials では使用できません。  
   
  以下の手順を使用して次のことを行います。  
@@ -229,7 +229,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 -   [配布グループの削除](#BKMK_RemoveDistributionGroup)  
   
-###  <a name="BKMK_PROCEDURE_AddDistGroup"></a>配布グループを追加するには  
+###  <a name="to-add-a-distribution-group"></a><a name="BKMK_PROCEDURE_AddDistGroup"></a>配布グループを追加するには  
   
 1.  Windows Server Essentials のダッシュボードで、 **[ユーザー]** をクリックし、 **[配布グループ]** タブをクリックします。  
   
@@ -243,11 +243,11 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
     -   既定では、配布グループは、組織の外部の人からの電子メールを受信できます。 これを許可しないようにする場合は、該当するオプションをオフにします。  
   
-4.  **[グループ メンバーの追加]** ページの **[追加]** ボタンを使用して、オンライン アカウントが割り当てられているアクティブなユーザー アカウント、およびその他の配布グループを、新しい配布グループに追加します。 その後、 **[次へ]** をクリックします。  
+4.  **[グループ メンバーの追加]** ページの **[追加]** ボタンを使用して、オンライン アカウントが割り当てられているアクティブなユーザー アカウント、およびその他の配布グループを、新しい配布グループに追加します。 続けて、 **[次へ]** をクリックします。  
   
      Exchange Online で新しい配布グループが作成されます。  
   
-###  <a name="BKMK_ChangeGroupMembers"></a>配布グループのメンバを変更するには  
+###  <a name="to-change-the-members-of-a-distribution-group"></a><a name="BKMK_ChangeGroupMembers"></a>配布グループのメンバを変更するには  
   
 1.  ダッシュボードで、 **[ユーザー]** をクリックし、 **[配布グループ]** タブをクリックします。  
   
@@ -255,7 +255,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 3.  **[追加]** ボタンと **[削除]** ボタンを使用し、配布グループに対してアクティブなオンライン アカウントの追加または削除を行います。 **[次へ]** をクリックし、Exchange Online で配布グループ メンバーシップを更新します。  
   
-###  <a name="BKMK_EditUserMemberships"></a>ユーザーの配布グループのメンバーシップを変更するには  
+###  <a name="to-change-a-user-s-distribution-group-memberships"></a><a name="BKMK_EditUserMemberships"></a>ユーザーの配布グループのメンバーシップを変更するには  
   
 1.  ダッシュボードで、 **[ユーザー]** をクリックします。  
   
@@ -267,7 +267,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 5.  **[OK]** をクリックして、更新済のユーザー アカウント プロパティを保存します。  
   
-###  <a name="BKMK_RemoveDistributionGroup"></a>配布グループを削除するには  
+###  <a name="to-remove-a-distribution-group"></a><a name="BKMK_RemoveDistributionGroup"></a>配布グループを削除するには  
   
 1.  ダッシュボードで、 **[ユーザー]** をクリックし、 **[配布グループ]** タブをクリックします。  
   
@@ -277,7 +277,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
      配布グループが Exchange Online から削除されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 -   [ユーザー アカウントの管理](Manage-User-Accounts-in-Windows-Server-Essentials.md)  
   

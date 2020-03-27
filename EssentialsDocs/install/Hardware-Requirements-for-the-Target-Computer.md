@@ -3,7 +3,7 @@ title: ターゲット コンピューターのハードウェア要件
 description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: c20b06b9-ce0d-4c20-bf49-257c3f5dc01b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: aa8964d9cc7e0aea20b48756e378c053dfa60d9a
-ms.sourcegitcommit: 3f9bcd188dda12dc5803defb47b2c3a907504255
+ms.openlocfilehash: 2ab2608095ffe6c0f2006f9f52cce106ff68cffc
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "77001857"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313256"
 ---
 # <a name="hardware-requirements-for-the-target-computer"></a>ターゲット コンピューターのハードウェア要件
 

@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8ccb91973dfb3493b534bdbc8fc4e2bcb26b26b8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 4e6c8379f225dbeefd7c97ac96b9a0047dfd4a0b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404961"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309218"
 ---
 # <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>詳細設定を使用した単一の DirectAccess サーバーの展開
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、単一の DirectAccess サーバーを使用する DirectAccess シナリオの概要を説明し、詳細設定を使用して DirectAccess を展開できるようにします。  
   
@@ -32,11 +32,11 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
   
 -   [DirectAccess の展開の前提条件](../../../remote-access/directaccess/Prerequisites-for-Deploying-DirectAccess.md)  
   
-## <a name="BKMK_OVER"></a>シナリオの説明  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>シナリオの説明  
 このシナリオでは、windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 のいずれかを実行している1台のコンピューターが、詳細設定の DirectAccess サーバーとして構成されています。  
   
 > [!NOTE]  
-> 単純な設定を使用して基本的な展開を構成する場合は、「[作業の開始ウィザードを使用して単一の DirectAccess サーバーを展開する](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)」を参照してください。 単純なシナリオでは、DirectAccess はウィザードで規定の設定を使用して構成され、証明機関 (CA) または Active Directory セキュリティ グループなどのインフラストラクチャ設定の構成は必要ありません。  
+> 単純な設定のみを使用して基本的なデプロイを構成する場合は、「 [Deploy a Single DirectAccess Server Using the Getting Started Wizard](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)」を参照してください。 単純なシナリオでは、DirectAccess はウィザードで規定の設定を使用して構成され、証明機関 (CA) または Active Directory セキュリティ グループなどのインフラストラクチャ設定の構成は必要ありません。  
   
 ## <a name="in-this-scenario"></a>このシナリオの内容  
 詳細設定を使用して単一の DirectAccess サーバーを設定するには、いくつかの計画と展開の手順を完了する必要があります。  
@@ -73,14 +73,14 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
   
 展開の手順の詳細については、「[高度な DirectAccess のインストールと構成](../../../remote-access/directaccess/single-server-advanced/Install-and-Configure-Advanced-DirectAccess.md)」を参照してください。  
   
-## <a name="BKMK_APP"></a>実用的なアプリケーション  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>実用的なアプリケーション  
 単一の DirectAccess サーバーを展開すると、次のことが実現されます。  
   
 -   **簡単操作**: Windows 10、Windows 8.1、Windows 8、および Windows 7 を実行する管理されたクライアントコンピューターを DirectAccess クライアントコンピューターとして構成できます。 そうしたクライアントは、インターネット上に存在しているときは、VPN 接続にログインしなくても、DirectAccess を経由して内部ネットワーク リソースにアクセスできます。 これらのオペレーティング システムが実行されていないクライアント コンピューターは、VPN 経由で内部ネットワークに接続できます。  
   
 -   **簡単な管理**: リモート アクセス管理者は、クライアント コンピューターが企業内部ネットワーク上に存在しない場合でも、インターネット上に存在する DirectAccess クライアント コンピューターを DirectAccess 経由でリモート管理できます。 企業の要件を満たしていないクライアント コンピューターを管理サーバーによって自動的に修正できます。 DirectAccess と VPN は両方とも同じコンソールで管理され、同じウィザードを使用します。 さらに、単一のリモート アクセス管理コンソールから 1 台以上の DirectAccess サーバーを管理できます。  
   
-## <a name="BKMK_NEW"></a>このシナリオに必要な役割と機能  
+## <a name="roles-and-features-required-for-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに必要な役割と機能  
 次の表に、このシナリオに必要な役割と機能を示します。  
   
 |役割/機能|このシナリオのサポート方法|  
@@ -88,7 +88,7 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
 |リモート アクセスの役割|この役割をインストールまたはアンインストールするには、サーバー マネージャー コンソールまたは Windows PowerShell を使用します。 この役割には、DirectAccess サービス、ルーティングとリモート アクセス サービス (RRAS) が含まれます。 リモート アクセスの役割は、次の 2 つのコンポーネントで構成されています。<br/><br/>1. DirectAccess および RRAS VPN。 DirectAccess と VPN は、リモートアクセス管理コンソールで一緒に管理されます。<br/>2. RRAS ルーティング。 RRAS ルーティング機能は、従来のルーティングとリモートアクセスコンソールで管理されます。<br /><br />リモート アクセス サーバーの役割は、次のサーバーの役割や機能に依存しています。<br/><br/> -インターネットインフォメーションサービス (IIS) Web サーバー-この機能は、DirectAccess サーバーのネットワークロケーションサーバーと既定の Web プローブを構成するために必要です。<br/> -Windows Internal Database。 DirectAccess サーバーでのローカルアカウンティングに使用されます。|  
 |リモート アクセス管理ツールの機能|この機能は、次のようにインストールされます。<br /><br />-リモートアクセスの役割をインストールするときに、DirectAccess サーバーに既定でインストールされ、リモート管理コンソールのユーザーインターフェイスと Windows PowerShell コマンドレットをサポートします。<br />-必要に応じて、DirectAccess サーバーの役割を実行していないサーバーにインストールできます。 この場合は、DirectAccess および VPN が実行されているリモート アクセス コンピューターのリモート管理に使用されます。<br /><br />リモート アクセス管理ツールの機能は、次の要素で構成されています。<br /><br />-リモートアクセスのグラフィカルユーザーインターフェイス (GUI)<br />-Windows PowerShell 用リモートアクセスモジュール<br /><br />次の要素と依存関係があります。<br /><br />-グループポリシー管理コンソール<br />-RAS 接続マネージャー管理キット (CMAK)<br />-Windows PowerShell 3.0<br />-グラフィカル管理ツールとインフラストラクチャ|  
   
-## <a name="BKMK_HARD"></a>ハードウェア要件  
+## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>ハードウェア要件  
 このシナリオのハードウェア要件は次のとおりです。  
   
 -   サーバーの要件:  
@@ -110,7 +110,7 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
     -   クライアントコンピューターは、Windows 10、Windows 8、または Windows 7 を実行している必要があります。  
   
         > [!NOTE]  
-        > DirectAccess クライアントとして使用できるオペレーティングシステムは次のとおりです。Windows 10、windows Server 2012 R2、Windows Server 2012、Windows 8 Enterprise、Windows 7 Enterprise、または Windows 7 Ultimate。  
+        > 次のオペレーティングシステムは、DirectAccess クライアントとして使用できます。 Windows 10、Windows Server 2012 R2、Windows Server 2012、Windows 8 Enterprise、Windows 7 Enterprise、または Windows 7 Ultimate。  
   
 -   インフラストラクチャと管理サーバーの要件:  
   
@@ -120,7 +120,7 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
   
     -   VPN が有効になっており、静的アドレス プールを使用しない場合は、VPN クライアントに IP アドレスを自動的に割り当てるために DHCP サーバーが必要です。  
   
-## <a name="BKMK_SOFT"></a>ソフトウェア要件  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>ソフトウェア要件  
 このシナリオには、さまざまな要件があります。  
   
 -   サーバーの要件:  
@@ -143,10 +143,10 @@ DirectAccess を展開する前に、次のトピックを使用して、前提�
         > [!IMPORTANT]  
         > DirectAccess 展開で Teredo を有効にしており、Windows 7 クライアントへのアクセスを提供する場合は、クライアントが Windows 7 SP1 にアップグレードされていることを確認します。 Windows 7 RTM を使用しているクライアントは、Teredo 経由で接続することはできません。 ただし、これらのクライアントでも IP-HTTPS で企業ネットワークに接続することはできます。  
   
-## <a name="BKMK_LINKS"></a>関連項目  
+## <a name="see-also"></a><a name="BKMK_LINKS"></a>関連項目  
 次の表に、関連リソースへのリンクを示します。  
   
-|コンテンツの種類|リファレンス|  
+|コンテンツの種類|参照|  
 |--------|-------|  
 |**展開**|[Windows Server の DirectAccess 展開パス](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<br /><br />[はじめにウィザードを使用して単一の DirectAccess サーバーを展開する](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
 |**ツールと設定**|[リモートアクセスの PowerShell コマンドレット](https://technet.microsoft.com/library/hh918399.aspx)|  

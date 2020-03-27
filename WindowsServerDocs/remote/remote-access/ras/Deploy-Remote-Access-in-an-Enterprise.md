@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4781df0a-158b-4562-b8f5-32b27615a4f8
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1ab337da85387be8c7d960315bb28644fa3a8a93
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: aebdbd02ebe256872b52e794c755e0d590b175a5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367501"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308477"
 ---
 # <a name="deploy-remote-access-in-an-enterprise"></a>企業でのリモート アクセスの展開
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、企業向けの DirectAccess のシナリオについて説明します。  
   
@@ -37,11 +37,11 @@ ms.locfileid: "71367501"
   
 -   [DirectAccess を展開するための前提条件) の前提条件](https://technet.microsoft.com/windows-server-docs/networking/remote-access/directaccess/prerequisites-for-deploying-directaccess)  
   
-## <a name="BKMK_OVER"></a>シナリオの説明  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>シナリオの説明  
 リモート アクセスは、Windows ネットワーク負荷分散 (NLB) または外部のロード バランサーを使用して負荷分散するクラスターへの複数のリモート アクセス サーバーの展開、リモート アクセス サーバーが地理的に離れた場所に設置されているマルチサイト展開のセットアップ、ワンタイム パスワード (OTP) を使用してクライアントの 2 要素認証を行う DirectAccess の展開など、さまざまなエンタープライズ機能を備えています。  
   
 ## <a name="in-this-scenario"></a>このシナリオの内容  
-各エンタープライズ シナリオについては、計画と展開の手順を含むドキュメントで説明します。 詳細については、以下をご覧ください。  
+各エンタープライズ シナリオについては、計画と展開の手順を含むドキュメントで説明します。 詳しくは、次のトピックをご覧ください。  
   
 -   [クラスターへのリモートアクセスの展開](cluster/Deploy-Remote-Access-In-Cluster.md)  
   
@@ -51,7 +51,7 @@ ms.locfileid: "71367501"
   
 -   [マルチフォレスト環境でのリモートアクセスの展開](multi-forest/Deploy-Remote-Access-in-a-Multi-Forest-Environment.md)  
   
-## <a name="BKMK_APP"></a>実用的なアプリケーション  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>実用的なアプリケーション  
 リモート アクセスのエンタープライズ シナリオでは、次のことが実現されます。  
   
 -   **可用性の向上**。 クラスターに複数のリモートアクセスサーバーを展開すると、スケーラビリティが実現され、スループットとユーザー数の容量が増加します。 クラスターの負荷を分散することで、高可用性が実現されます。 クラスター内のサーバーで障害が発生しても、リモート ユーザーはクラスター内の別のサーバーを経由して企業内部ネットワークに引き続きアクセスすることができます。 クラスターは仮想 IP (VIP) アドレスを使用してクラスターに接続するため、フェールオーバーは透過的です。  
@@ -62,13 +62,13 @@ ms.locfileid: "71367501"
   
 -   **セキュリティ**。 標準 Active Directory パスワードの代わりにワンタイムパスワード (OTP) を使用して強力なクライアント認証を展開すると、セキュリティが強化されます。  
   
-## <a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
 次の表に、このエンタープライズ シナリオで使用する役割と機能を示します。  
   
 |役割/機能|このシナリオのサポート方法|  
 |---------|-----------------|  
 |リモート アクセス サーバーの役割|この役割をインストールまたはアンインストールするには、サーバー マネージャー コンソールを使用します。 この役割には、以前は Windows Server 2008 R2 の機能であった DirectAccess と、以前はネットワーク ポリシーとアクセス サービス (NPAS) サーバーの役割の役割サービスであったリモート アクセス サービスの両方が含まれています。 リモート アクセスの役割は、次の 2 つのコンポーネントで構成されています。<br /><br />1. DirectAccess およびルーティングとリモートアクセスサービス (RRAS) VPN-DirectAccess と VPN は、リモートアクセス管理コンソールで一緒に管理されます。<br />2. RRAS ルーティング-RRAS ルーティング機能は、従来のルーティングとリモートアクセスコンソールで管理されます。<br /><br />リモート アクセス サーバーの役割は、次のサーバーの機能に依存しています。<br /><br />-インターネットインフォメーションサービス (IIS)-この機能は、ネットワークロケーションサーバーと既定の web プローブを構成するために必要です。<br />-グループポリシー管理コンソール機能-DirectAccess で Active Directory でグループポリシーオブジェクト (Gpo) を作成および管理するために必要な機能であり、サーバーの役割に必要な機能としてインストールする必要があります。|  
-|リモート アクセス管理ツールの機能|この機能は、次のようにインストールされます。<br /><br />-リモートアクセスの役割をインストールするときに、リモートアクセスサーバーに既定でインストールされ、リモート管理コンソールのユーザーインターフェイスをサポートします。<br />-必要に応じて、リモートアクセスサーバーの役割を実行していないサーバーにインストールできます。 この場合は、DirectAccess および VPN が実行されているリモート アクセス コンピューターのリモート管理に使用されます。<br /><br />リモート アクセス管理ツールの機能は、次の要素で構成されています。<br /><br />1. リモート アクセス GUI およびコマンド ライン ツール<br />2. Windows PowerShell 用のリモート アクセス モジュール<br /><br />次の要素と依存関係があります。<br /><br />1. グループ ポリシー管理コンソール<br />2. RAS 接続マネージャー管理キット (CMAK)<br />3.Windows PowerShell 3.0<br />4。グラフィカル管理ツールとインフラストラクチャ|  
+|リモート アクセス管理ツールの機能|この機能は、次のようにインストールされます。<br /><br />-リモートアクセスの役割をインストールするときに、リモートアクセスサーバーに既定でインストールされ、リモート管理コンソールのユーザーインターフェイスをサポートします。<br />-必要に応じて、リモートアクセスサーバーの役割を実行していないサーバーにインストールできます。 この場合は、DirectAccess および VPN が実行されているリモート アクセス コンピューターのリモート管理に使用されます。<br /><br />リモート アクセス管理ツールの機能は、次の要素で構成されています。<br /><br />1. リモートアクセス GUI およびコマンドラインツール<br />2. Windows PowerShell 用リモートアクセスモジュール<br /><br />次の要素と依存関係があります。<br /><br />1. グループポリシー管理コンソール<br />2. RAS 接続マネージャー管理キット (CMAK)<br />3. Windows PowerShell 3.0<br />4. グラフィカルな管理ツールとインフラストラクチャ|  
 |Windows NLB|この機能を使用すると、複数のリモート アクセス サーバーの負荷を分散できます。|  
   
 

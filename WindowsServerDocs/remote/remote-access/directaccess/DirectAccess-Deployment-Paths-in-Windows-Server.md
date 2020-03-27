@@ -10,20 +10,20 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 22ccd5c3-0a26-484c-88c8-54119d1228cc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: edbc9a3e44f3f2aa2586f7c82462255beec3733b
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f2874f5ab75723f6a0fec137dd1f1cd7d6a2efbb
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405001"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310965"
 ---
 # <a name="directaccess-deployment-paths-in-windows-server"></a>Windows Server の DirectAccess 展開パス
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
-このトピックでは、次の2つの主要なリモートアクセス展開パスに関するドキュメントの一覧を示します。**基本**と**詳細設定**。  
+このトピックでは、2つの主要なリモートアクセス展開パス (**基本**と**詳細**) に関するドキュメントの一覧を示します。  
   
 以下のセクションを使用すると、DirectAccess の基本展開パスと高度な展開パスの違いを理解できます。また、ドキュメントリンクを使用して、目的に最適な展開ガイドを見つけることができます。  
   

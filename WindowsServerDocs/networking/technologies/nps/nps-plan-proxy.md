@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: ca77d64a-065b-4bf2-8252-3e75f71b7734
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 29a48275dfd56cbf223e0fca0c9c276f35a675cc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d64fceaf7242b7fe44912f105229c132ef9ee3b3
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71396016"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315754"
 ---
 # <a name="plan-nps-as-a-radius-proxy"></a>NPS を RADIUS プロキシとして計画する
 
@@ -107,9 +107,9 @@ NPS を RADIUS プロキシとして使用して、接続要求を1つまたは�
 
 次の属性に対して規則を作成できます。
 
-- "ステーション ID" と呼ばれます。 ネットワークアクセスサーバー (NAS) の電話番号。 この属性の値は文字列です。 パターンマッチング構文を使用すると、区分コードを指定できます。
+- "ステーション ID" と呼ばれます。 ネットワークアクセスサーバー (NAS) の電話番号。 この属性の値は文字列です。 パターン マッチング構文を使用して市外局番を指定できます。
 
-- コーリングステーション ID。 呼び出し元によって使用される電話番号。 この属性の値は文字列です。 パターンマッチング構文を使用すると、区分コードを指定できます。
+- コーリングステーション ID。 呼び出し元によって使用される電話番号。 この属性の値は文字列です。 パターン マッチング構文を使用して市外局番を指定できます。
 
 - ユーザー名。 アクセスクライアントによって提供され、RADIUS のアクセス要求メッセージに NAS によって含まれているユーザー名。 この属性の値は、通常、領域名とユーザーアカウント名を含む文字列です。
 

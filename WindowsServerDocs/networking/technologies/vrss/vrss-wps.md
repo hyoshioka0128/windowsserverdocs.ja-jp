@@ -7,15 +7,15 @@ ms.topic: article
 ms.assetid: 49e93b9f-46d9-4cee-bcda-1c4634893ddd
 ms.localizationpriority: medium
 manager: dougkim
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 09/05/2018
-ms.openlocfilehash: bb915f72e53d28c73a9c2e405b3b0edd656953db
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: d049f5c66c70fbdc7c95823e9377c570480c9ada
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405275"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80315229"
 ---
 # <a name="windows-powershell-commands-for-rss-and-vrss"></a>RSS および vRSS 用の Windows PowerShell コマンド
 

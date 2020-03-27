@@ -6,15 +6,15 @@ ms.date: 11/05/2018
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
-ms.openlocfilehash: b5be8827cee22b35fb31bf08d1c960b150dcad84
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: ebf7a18c462909fa7b07b7c52b6e8a8083d0ab9b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822655"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308072"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>Windows 10 で VPN デバイストンネルを構成する
 
@@ -165,7 +165,7 @@ $Message = "Complete."
 Write-Host "$Message"
 ```
 
-## <a name="additional-resources"></a>その他の情報
+## <a name="additional-resources"></a>その他のリソース
 
 VPN の展開に役立つその他のリソースを次に示します。
 

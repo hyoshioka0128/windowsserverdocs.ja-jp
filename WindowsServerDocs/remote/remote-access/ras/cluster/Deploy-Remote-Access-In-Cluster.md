@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 5e4108eee0c62ae4d4db31560b31a6f90751c6b8
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9a025c82b5bece3a4719905c4e28333c42aac35c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404651"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308381"
 ---
 # <a name="deploy-remote-access-in-a-cluster"></a>クラスターでのリモート アクセスの展開
 
@@ -25,7 +25,7 @@ ms.locfileid: "71404651"
 
 Windows Server 2016 および Windows Server 2012 は、DirectAccess とリモートアクセスサービス \(RAS\) VPN を1つのリモートアクセスの役割に結合します。 リモートアクセスは、さまざまなエンタープライズシナリオで展開できます。 この概要では、Windows ネットワーク負荷分散 \(NLB\) を使用して負荷分散されたクラスターに複数のリモートアクセスサーバーを展開するエンタープライズシナリオの概要を説明します。または、\(ELB\)(たとえば、F5 Big\-IP など) の外部ロードバランサーを使用して負荷分散します。  
 
-## <a name="BKMK_OVER"></a>シナリオの説明  
+## <a name="scenario-description"></a><a name="BKMK_OVER"></a>シナリオの説明  
 クラスター展開では、複数のリモートアクセスサーバーを1つのユニットに収集します。これは、リモートアクセスクラスターの外部仮想 IP \(VIP\) アドレスを使用して、DirectAccess または VPN 経由で内部企業ネットワークに接続するリモートクライアントコンピューターの単一の接続ポイントとして機能します。  クラスターへのトラフィックは、Windows NLB を使用して、または F5 Big\-IP\)などの外部ロードバランサー \(で負荷分散されます。  
 
 ## <a name="prerequisites"></a>前提条件  
@@ -58,16 +58,16 @@ Windows Server 2016 および Windows Server 2012 は、DirectAccess とリモ�
 
 3.  [リモートアクセスクラスターを構成](configure/Configure-a-Remote-Access-Cluster.md)します。 これは、Windows NLB または外部ロードバランサー用の単一サーバーの準備、クラスターに参加するための追加のサーバーの準備、負荷分散の有効化など、さまざまな構成手順で構成されています。  
 
-## <a name="BKMK_APP"></a>実用的なアプリケーション  
+## <a name="practical-applications"></a><a name="BKMK_APP"></a>実用的なアプリケーション  
 複数のサーバーをサーバー クラスターにまとめると、次のことが実現されます。  
 
 -   スケーラビリティ。 1台のリモートアクセスサーバーでは、限られたレベルのサーバー信頼性と拡張性の高いパフォーマンスが提供されます。 2 台以上のサーバーのリソースを 1 つのクラスターにグループ化すると、対応可能なユーザー数とスループットの容量が増加します。  
 
--   高可用性。 クラスターは、常に\-アクセスに高可用性を提供します。 クラスター内のサーバーで障害が発生しても、リモート ユーザーはクラスター内の別のサーバーを経由して企業ネットワークに引き続きアクセスすることができます。 クラスター内のすべてのサーバーは、同じクラスター仮想 IP \(VIP\) アドレスのセットを持ち、サーバーごとに一意の専用 IP アドレスを維持します。  
+-   高可用性 : クラスターは、常に\-アクセスに高可用性を提供します。 クラスター内のサーバーで障害が発生しても、リモート ユーザーはクラスター内の別のサーバーを経由して企業ネットワークに引き続きアクセスすることができます。 クラスター内のすべてのサーバーは、同じクラスター仮想 IP \(VIP\) アドレスのセットを持ち、サーバーごとに一意の専用 IP アドレスを維持します。  
 
 -   \-管理の\-を簡単にします。 クラスターを使用すると、複数のサーバーを1つのエンティティとして管理できます。 クラスター サーバー全体で共有設定を簡単に設定できます。 リモートアクセスの設定は、クラスター内の任意のサーバーから管理することも、リモートサーバー管理ツール \(RSAT\)を使用してリモートで管理することもできます。 また、単一のリモート アクセス管理コンソールからクラスター全体を監視できます。  
 
-## <a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
+## <a name="roles-and-features-included-in-this-scenario"></a><a name="BKMK_NEW"></a>このシナリオに含まれる役割と機能  
 次の表に、このシナリオに必要な役割と機能を示します。  
 
 |役割\/機能|このシナリオのサポート方法|  
@@ -76,7 +76,7 @@ Windows Server 2016 および Windows Server 2012 は、DirectAccess とリモ�
 |リモート アクセス管理ツールの機能|この機能は、次のようにインストールされます。<br /><br />-リモートアクセスの役割をインストールするときに、リモートアクセスサーバーに既定でインストールされ、リモート管理コンソールのユーザーインターフェイスをサポートします。<br />-必要に応じて、リモートアクセスサーバーの役割を実行していないサーバーにインストールできます。 この場合は、DirectAccess および VPN が実行されているリモート アクセス コンピューターのリモート管理に使用されます。<br /><br />リモート アクセス管理ツールの機能は、次の要素で構成されています。<br /><br />-リモートアクセス GUI およびコマンドラインツール<br />-Windows PowerShell 用リモートアクセスモジュール<br /><br />次の要素と依存関係があります。<br /><br />-グループポリシー管理コンソール<br />-RAS 接続マネージャー管理キット \(CMAK\)<br />-Windows PowerShell 3.0<br />-グラフィカル管理ツールとインフラストラクチャ|  
 |ネットワーク負荷分散|この機能により、Windows NLB を使用してクラスターの負荷を分散します。|  
 
-## <a name="BKMK_HARD"></a>ハードウェア要件  
+## <a name="hardware-requirements"></a><a name="BKMK_HARD"></a>ハードウェア要件  
 このシナリオのハードウェア要件は次のとおりです。  
 
 -   少なくとも2台のコンピューターで、Windows Server 2012 のハードウェア要件を満たしている必要があります。  
@@ -85,7 +85,7 @@ Windows Server 2016 および Windows Server 2012 は、DirectAccess とリモ�
 
 -   このシナリオをテストするには、Always On VPN クライアントとして構成された Windows 10 を実行しているコンピューターが少なくとも1台必要です。   
 
-## <a name="BKMK_SOFT"></a>ソフトウェア要件  
+## <a name="software-requirements"></a><a name="BKMK_SOFT"></a>ソフトウェア要件  
 このシナリオには、さまざまな要件があります。  
 
 -   単一サーバーの展開のソフトウェア要件。 詳細について[は、「単一の DirectAccess サーバーを拡張設定で展開する](../../directaccess/single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)」を参照してください。 1つのリモートアクセス)。  
@@ -100,12 +100,12 @@ Windows Server 2016 および Windows Server 2012 は、DirectAccess とリモ�
 
     -   サーバー クラスターの DirectAccess クライアント コンピューターに割り当てられている IPv6 プレフィックスは 59 ビットである必要があります。 VPN が有効な場合は、VPN プレフィックスも 59 ビットである必要があります。  
 
-## <a name="KnownIssues"></a>既知の問題  
+## <a name="known-issues"></a><a name="KnownIssues"></a>既知の問題  
 クラスター構成シナリオには、次の既知の問題があります。  
 
 -   1つのネットワークアダプターを使用して IPv4\-のみの展開で DirectAccess を構成し、既定の DNS64 \(": 3333::\)" を含む IPv6 アドレスをネットワークアダプターに自動的に構成した後、リモートアクセス管理コンソールを使用して負荷\-分散を有効にしようとすると、ユーザーに IPv6 DIP の入力を求めるメッセージが表示されます。 IPv6 DIP を指定すると、 **[コミット]** をクリックした後に "パラメーターが正しくありません" というエラーで構成が失敗します。  
 
-    この問題の解決策は、以下のとおりです。  
+    この問題を解決するには、次の手順を実行します。  
 
     1.  「 [Back up and Restore Remote Access Configuration (リモート アクセスの構成のバックアップと復元)](https://gallery.technet.microsoft.com/Back-up-and-Restore-Remote-e157e6a6)」からバックアップおよび復元用のスクリプトをダウンロードします。  
 
@@ -113,7 +113,7 @@ Windows Server 2016 および Windows Server 2012 は、DirectAccess とリモ�
 
     3.  失敗した手順まで、負荷分散の有効化を試みます。 [負荷分散の有効化] ダイアログボックスで、詳細領域を展開し、詳細領域を右\-クリックして、 **[スクリプトのコピー]** をクリックします。  
 
-    4.  メモ帳を開き、クリップボードの内容を貼り付けます。 次に、例を示します。  
+    4.  メモ帳を開き、クリップボードの内容を貼り付けます。 例 :  
 
         ```  
         Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress @('10.244.4.19 /255.255.255.0','fdc4:29bd:abde:3333::2/128') -InternetVirtualIPAddress @('fdc4:29bd:abde:3333::1/128', '10.244.4.21 /255.255.255.0') -ComputerName 'DA1.domain1.corp.contoso.com' -Verbose  
@@ -121,7 +121,7 @@ Windows Server 2016 および Windows Server 2012 は、DirectAccess とリモ�
 
     5.  開いているリモート アクセス ダイアログ ボックスをすべて閉じ、リモート アクセス管理コンソールを閉じます。  
 
-    6.  貼り付けたテキストを編集して、IPv6 アドレスを削除します。 次に、例を示します。  
+    6.  貼り付けたテキストを編集して、IPv6 アドレスを削除します。 例 :  
 
         ```  
         Set-RemoteAccessLoadBalancer -InternetDedicatedIPAddress @('10.244.4.19 /255.255.255.0') -InternetVirtualIPAddress @('10.244.4.21 /255.255.255.0') -ComputerName 'DA1.domain1.corp.contoso.com' -Verbose  

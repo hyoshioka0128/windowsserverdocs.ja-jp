@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: b9b77cfd-8dd4-476b-a118-f3d6bf59e7b1
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9cce81998c6041aea223da29979a53d6069f599c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c9bc2b54927905346c980ef2b14d65310ca930b8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404746"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308581"
 ---
 # <a name="step-6-test-directaccess-connectivity-from-the-homenet-subnet"></a>手順 6. Homenet サブネットからの DirectAccess 接続のテスト
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 DirectAccess のワンタイムパスワード (OTP) の展開が完了し、Homenet サブネットからの接続のテストを開始できるようになりました。  
   
@@ -29,13 +29,13 @@ DirectAccess のワンタイムパスワード (OTP) の展開が完了し、Hom
   
 1. CLIENT1 で、 **User1**としてログオンしていることを確認します。  
   
-2. **スタート**画面で、「**powershell**」と入力し、 **[powershell]** を右クリックします。次に、 **[詳細設定]** をクリックし、 **[管理者として実行]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+2. **スタート**画面で、「**powershell**」と入力し、 **[powershell]** を右クリックします。次に、 **[詳細設定]** をクリックし、 **[管理者として実行]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 3. Windows PowerShell ウィンドウで、「 **gpupdate/force**」と入力し、enter キーを押します。  
   
 4. ネットワーク上のサブネットから CLIENT1 を取り外し、Homenet サブネットに接続します。  
   
-5. CLIENT1 で Internet Explorer を開き、アドレスバーに「 **https://app1.corp.contoso.com/** 」と入力して、enter キーを押します。 F5 キーを押す。  
+5. CLIENT1 で Internet Explorer を開き、アドレスバーに「 **https://app1.corp.contoso.com/** 」と入力して、enter キーを押します。 F5 キーを押します。  
   
    サイトを開けません。  
   
@@ -51,15 +51,15 @@ DirectAccess のワンタイムパスワード (OTP) の展開が完了し、Hom
   
 11. 以前にコピーした8桁のトークンコードを貼り付けて、[ **OK]** をクリックします。 認証が完了するまで待ちます。 DirectAccess Workplace の接続状態が **接続**中 "になります。  
   
-12. Internet Explorer で、アドレスバーに「 **https://app1.corp.contoso.com/** 」と入力し、enter キーを押します。 F5 キーを押す。 APP1 の既定の IIS Web サイトが表示されます。  
+12. Internet Explorer のアドレスバーに「 **https://app1.corp.contoso.com/** 」と入力し、enter キーを押します。 F5 キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
   
-13. Internet Explorer のアドレスバーに「 **https://app2.corp.contoso.com/** 」と入力し、enter キーを押します。 F5 キーを押す。 APP2 に既定の IIS web サイトが表示されます。  
+13. Internet Explorer のアドレスバーに「 **https://app2.corp.contoso.com/** 」と入力し、enter キーを押します。 F5 キーを押します。 APP2 に既定の IIS web サイトが表示されます。  
   
-14. **スタート**画面で、「<strong>\\ \ app1\files</strong>」と入力し、enter キーを押します。  
+14. **スタート**画面で、「<strong>\\\app1\files</strong>」と入力し、enter キーを押します。  
   
 15. **ファイル** 共有フォルダー ウィンドウで、**例の .txt**ファイルをダブルクリックします。 例の .txt ファイルの内容が表示されます。  
   
-16. **スタート**画面で、「<strong>\\ \ app2\files</strong>」と入力し、enter キーを押します。  
+16. **スタート**画面で、「<strong>\\\app2\files</strong>」と入力し、enter キーを押します。  
   
 17. **ファイル** 共有フォルダー ウィンドウで、**新しいテキストドキュメント .txt**ファイルをダブルクリックします。 新しいテキストドキュメント .txt ファイルの内容が表示されます。  
   

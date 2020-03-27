@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2018
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 804b7314054691fa0abc19f1cc4e4bffbd6457cf
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 1f004ec59c8d2eac2a944a69bbbfc9af76b39826
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822445"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307721"
 ---
 # <a name="step-75-create-oma-dm-based-vpnv2-profiles-to-windows-10-devices"></a>手順 7.5. Windows 10 デバイスに OMA-URI ベースの VPNv2 プロファイルを作成する
 
@@ -86,7 +86,7 @@ VPN プロファイルがクライアントデバイスに表示されない場�
 5. **[同期]** を選択し、[設定\\ネットワーク & インターネット\\vpn] の下に vpn プロファイルが表示されることを確認します。
 
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ:
 
 Azure AD 条件付きアクセスを使用するように VPN プロファイルを構成しました。 
 

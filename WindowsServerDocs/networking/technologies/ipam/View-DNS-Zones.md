@@ -10,22 +10,22 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2cfe4e40-ec6d-4541-baa9-d772409fe27c
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: a362eb5d7b1a80d8b90bdf565debecb187d7a254
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: f60f80f20b5465918f34d5c0140d5a461d90c571
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405587"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312381"
 ---
 # <a name="view-dns-zones"></a>DNS ゾーンを表示する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、IPAM クライアントコンソールで DNS ゾーンを表示する方法について説明します。  
   
-メンバーシップ **管理者**, 、同等の権限をこの手順を実行するために必要な最低限のですか。  
+この手順を実行するには、**Administrators** のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
   
 ### <a name="to-view-dns-zones-in-the-ipam-client-console"></a>IPAM クライアントコンソールで DNS ゾーンを表示するには  
   
@@ -43,7 +43,7 @@ ms.locfileid: "71405587"
   
     -   条件付きフォワーダー  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [DNS ゾーンの管理](DNS-Zone-Management.md)  
 [IPAM の管理](Manage-IPAM.md)  
   

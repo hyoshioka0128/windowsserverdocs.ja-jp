@@ -10,18 +10,18 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 673c5bfb-b590-4932-8e54-ca0a466d90cc
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 17aadbb789052be7f33822ce49f3b797f2211d55
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 608bc4b2805639e2638ac12f74b712c812ce165f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71367381"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308243"
 ---
 # <a name="step-2-plan-cluster-servers"></a>手順 2. クラスターサーバーを計画する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 単一のリモートアクセスサーバーを展開した後、クラスターにサーバーを追加することを計画します。  
   
@@ -30,11 +30,11 @@ ms.locfileid: "71367381"
 |[2.1 役割と機能のインストール](#BKMK_Install)|クラスターに追加する各サーバーについて、リモートアクセスの役割と Windows NLB 機能 (必要な場合) のインストールを計画し、トポロジ、IP アドレス指定、ルーティング、および転送を計画します。|  
 |[2.2 サーバー設定を構成する](#BKMK_Config)|クラスターに追加する各サーバーの設定を構成します。 仮想マシンを使用して、負荷分散されたサーバーのクラスターを構成できることに注意してください。 ルーティングと接続が正しく機能するためには、MAC アドレスのスプーフィングを使用するようにバーチャルマシンを構成する必要があります。|  
   
-## <a name="BKMK_Install"></a>2.1 役割と機能のインストール  
+## <a name="21-installing-roles-and-features"></a><a name="BKMK_Install"></a>2.1 役割と機能のインストール  
 クラスターに参加する各サーバーについて、リモートアクセスの役割のインストールを計画します。 また、Windows NLB を使用してクラスターへのトラフィックを負荷分散する場合は、ネットワーク負荷分散 (NLB) 機能をインストールする計画を立てます。 詳細については、「[ネットワーク負荷分散](https://technet.microsoft.com/windows-server-docs/networking/technologies/network-load-balancing)」を参照してください。  
   
-## <a name="BKMK_Config"></a>2.2 サーバー設定を構成する  
-クラスターに追加する各サーバーについて、IP アドレスとドメインの設定を計画します。 次のことを考慮してください。  
+## <a name="22-configure-server-settings"></a><a name="BKMK_Config"></a>2.2 サーバー設定を構成する  
+クラスターに追加する各サーバーについて、IP アドレスとドメインの設定を計画します。 次の点に注意してください。  
   
 1.  クラスター内のサーバーはすべて同じドメインに属している必要があります。  
   

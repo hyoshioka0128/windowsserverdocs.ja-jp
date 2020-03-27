@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: d6159e91-f77c-42ec-9180-14bbb230ad17
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 61a6b1ac1dede4caf8d5633ce6a75e2005e190df
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 41bb7f5f0637bd4b1f1bfa3c0451debff58a3e5a
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71356194"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318429"
 ---
 # <a name="import-data-packages-on-the-hosted-cache-server-optional"></a>ホスト型キャッシュサーバーにデータパッケージをインポートする \(オプション\)
 

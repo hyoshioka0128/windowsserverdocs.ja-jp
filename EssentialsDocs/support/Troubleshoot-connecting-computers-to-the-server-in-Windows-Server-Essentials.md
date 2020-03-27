@@ -1,9 +1,9 @@
 ---
 title: Windows Server Essentials 内のサーバーにコンピューターを接続する場合のトラブルシューティング
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,21 +12,21 @@ ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 52ec9bf1caa4cb4c7ed661eec1448f3f2a4be980
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 4e2a707bf72ca7e371b6503116262e737102c769
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436048"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318591"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>Windows Server Essentials 内のサーバーにコンピューターを接続する場合のトラブルシューティング
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials 
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials 
   
- このトピックには、Windows Server Essentials または Windows Server Essentials を実行するサーバーにコンピューターを接続するときに発生する可能性がある問題のトラブルシューティング ガイダンスが含まれています。  
+ このトピックでは、Windows Server Essentials または Windows Server Essentials を実行しているサーバーにコンピューターを接続するときに発生する可能性がある問題のトラブルシューティングのガイダンスを示します。  
   
 > [!NOTE]
->  Windows Server Essentials と Windows Server Essentials コミュニティの最新のトラブルシューティング情報について、お勧めしますをご覧ください、 [Windows Server Essentials フォーラム](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserveressentials)します。 Windows Server Essentials フォーラムは、ヘルプを検索したり、質問したりするために最適な場所です。  
+>  Windows Server Essentials および Windows Server Essentials コミュニティの最新のトラブルシューティング情報については、 [Windows Server Essentials フォーラム](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=winserveressentials)を参照することをお勧めします。 Windows Server Essentials フォーラムは、ヘルプを検索したり、質問したりするために最適な場所です。  
   
  このトピックでは、次の問題に関する解決策を取り上げます。  
   
@@ -49,7 +49,7 @@ ms.locfileid: "66436048"
   
 -   問題 9:[問題 9](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueAutologon)  
   
--   問題 10:[10 の問題](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueOldLogs)  
+-   問題 10:[問題 10](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueOldLogs)  
   
 -   問題 11:[問題 11](Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_UpgradeClientOS)  
 
@@ -71,45 +71,45 @@ ms.locfileid: "66436048"
   
 -   問題 9:[問題 9](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueAutologon)  
   
--   問題 10:[10 の問題](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueOldLogs)  
+-   問題 10:[問題 10](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_ConnectorIssueOldLogs)  
   
 -   問題 11:[問題 11](../support/Troubleshoot-connecting-computers-to-the-server-in-Windows-Server-Essentials.md#BKMK_UpgradeClientOS)  
 
   
-##  <a name="BMRK_Package"></a> 問題 1  
+##  <a name="issue-1"></a><a name="BMRK_Package"></a>問題1  
  **問題**  
   
- インストールが成功しなかったパッケージが表示されます。 Windows Server Essentials コネクターをもう一度インストールしてみてください。 問題が解決しない場合、コンピューターをサーバーに接続するときに、ネットワーク管理者のエラーを連絡します。  
+ パッケージのインストールが成功しませんでした。 Windows Server Essentials コネクターをもう一度インストールしてみてください。 問題が解決しない場合は、コンピューターをサーバーに接続するときに、ネットワーク管理者のエラーに問い合わせてください  
   
  **説明**  
   
- この問題は、他の Windows 更新プログラムまたはアプリケーションのインストールが保留中とコネクタのインストールが取り消されたときに、Windows Server Essentials を実行しているサーバーにコンピューターを接続する場合に発生する可能性があります。  
+ この問題は、Windows Server Essentials を実行しているサーバーにコンピューターを接続しているときに、他の Windows 更新プログラムまたはアプリケーションのインストールが保留中で、コネクタのインストールがキャンセルされた場合に発生する可能性があります。  
   
  **ソリューション**  
   
  他のすべての更新プログラムまたはアプリケーション インストールを完了します。 ダイアログが表示されたら、コンピューターを再起動します。  
   
-##  <a name="BKMK_ConnectorIssue2"></a> 問題 2  
+##  <a name="issue-2"></a><a name="BKMK_ConnectorIssue2"></a>問題2  
  **問題**  
   
- コンピューターを Windows Server Essentials に参加させることはできません。  
+ コンピューターを Windows Server Essentials に参加させることはできません  
   
  **説明**  
   
- コンピューター名に非 ASCII 文字があるコンピューターは、Windows Server Essentials に参加することはできません。 コンピューター名に ASCII 以外の文字が含まれている場合、「予期しないエラーが発生しました」というエラー メッセージが表示されます。  
+ コンピューター名に ASCII 以外の文字が含まれているコンピューターを Windows Server Essentials に参加させることはできません。 コンピューター名に ASCII 以外の文字が含まれている場合、「予期しないエラーが発生しました」というエラー メッセージが表示されます。  
   
  **ソリューション**  
   
- ASCII 文字のみを含む名前のクライアント コンピューターの名前を変更し、コンピューターを Windows Server Essentials に再度追加しよいます。  
+ クライアントコンピューターの名前を ASCII 文字のみが含まれる名前に変更してから、コンピューターを Windows Server Essentials にもう一度追加してみてください。  
   
-##  <a name="BKMK_ConnectorIssue2a"></a> 問題 3  
+##  <a name="issue-3"></a><a name="BKMK_ConnectorIssue2a"></a>問題3  
  **問題**  
   
- 「コネクタ ソフトウェア インストールが取り消されたときエラーが発生、サーバーにコンピューターを接続する  
+ コンピューターをサーバーに接続すると、コネクタソフトウェアのインストールがキャンセルされてエラーが発生する  
   
  **説明**  
   
- コンピューターをサーバーに接続できるようにするには、システム アカウントは、Windows Server Essentials ダッシュ ボードに表示されるサーバー フォルダーに対するフル コントロール アクセス許可が必要です。 必要なアクセス許可が付与されていない場合、「コネクター ソフトウェアのインストールが取り消されます」というエラー メッセージが表示されます。  
+ コンピューターをサーバーに接続できるようにするには、SYSTEM アカウントに、Windows Server Essentials ダッシュボードに表示されるサーバーフォルダーに対するフルコントロールのアクセス許可が必要です。 必要なアクセス許可が付与されていない場合、「コネクター ソフトウェアのインストールが取り消されます」というエラー メッセージが表示されます。  
   
  **ソリューション**  
   
@@ -117,7 +117,7 @@ ms.locfileid: "66436048"
   
 #### <a name="to-grant-the-system-account-full-control-permissions-on-a-server-folder"></a>サーバー フォルダーに対するフル コントロール アクセス許可を SYSTEM アカウントに付与するには  
   
-1.  Windows Server Essentials ダッシュ ボードを開きます。  
+1.  Windows Server Essentials ダッシュボードを開きます。  
   
 2.  **[記憶域]** をクリックし、 **[サーバー フォルダー]** をクリックします。  
   
@@ -133,14 +133,14 @@ ms.locfileid: "66436048"
   
 8.  **[OK]** を 2 回クリックし、アクセス許可を更新して **[プロパティ]** を閉じます。  
   
-##  <a name="BKMK_ConnectorIssueNetFramework"></a> 問題 4  
+##  <a name="issue-4"></a><a name="BKMK_ConnectorIssueNetFramework"></a>問題4  
  **問題**  
   
- 表示されるこのアプリケーションを実行する、次のバージョンの .NET Framework のいずれかをインストールする必要があります。V4.5.50709」というエラー メッセージが表示される  
+ このアプリケーションを実行するには、コンピューターをサーバーに接続するときに、次のいずれかのバージョンの .NET Framework: V 4.5.50709 "エラーをインストールする必要があります。  
   
  **説明**  
   
- コンピューターを Windows Server Essentials を実行しているサーバーまたは Windows Server Essentials に接続するときに、ウィザードは、コンピューター上の .NET Framework バージョン 4.5.50709 のインストールしようとします。 ただし、.NET Framework version 4.5 の以前のリリースが存在する場合、更新リリースをインストールすることはできませんし、このエラー メッセージとの接続が失敗します。このアプリケーションを実行するには、次のバージョンの .NET Framework のいずれかをインストールする必要があります。V4.5.50709。 .NET Framework の適切なバージョンを取得する方法については、アプリケーション発行者に問い合わせてください。  
+ Windows Server Essentials または Windows Server Essentials を実行しているサーバーにコンピューターを接続すると、ウィザードは .NET Framework バージョン4.5.50709 をコンピューターにインストールしようとします。 ただし、以前のリリースの .NET Framework バージョン4.5 が存在する場合、更新されたリリースをインストールすることはできません。また、このアプリケーションを実行するには、次のいずれかのバージョンの .NET Framework をインストールする必要があります。V 4.5.50709。 適切なバージョンの .NET Framework を取得する方法については、割り当て発行者に問い合わせてください。  
   
  **ソリューション**  
   
@@ -156,16 +156,16 @@ ms.locfileid: "66436048"
   
 4.  .NET Framework 4.5 のアンインストールが正常に実行された後、サーバーにコンピューターを接続します。 適切なリリースの .NET Framework 4.5 がコネクター ソフトウェアと一緒にインストールされます。  
   
-##  <a name="BKMK_Time"></a> 問題 5  
+##  <a name="issue-5"></a><a name="BKMK_Time"></a>問題5  
  **問題**  
   
- 取得は、サーバーは使用できません。 この問題を解決するには、ネットワークの担当者にお問い合わせください。 というエラー メッセージが表示される  
+ サーバーを取得できません。 この問題を解決するには、ネットワークの担当者にお問い合わせください。 というエラー メッセージが表示される  
   
  **説明**  
   
- 接続対象コンピューターの日時がサーバーの日時と同期されていない場合に生じる可能性があります。  Windows Server Essentials と Windows Server Essentials は、時刻の同期サービスを使用して、Windows Server Essentials または Windows Server Essentials ネットワークで実行しているコンピューターの日時を同期します。 既定の認証プロトコルでは認証プロセスの一環としてサーバー時刻が使用されるため、同期された時刻は重要です。 たとえば、クライアント コンピューターの時計が正しい日付と時刻、Windows Server Essentials に同期されていない、または Windows Server Essentials の認証が誤っている場合は、侵入の試みとしてのログオン要求を解釈し、ユーザーへのアクセスを拒否します。  
+ 接続対象コンピューターの日時がサーバーの日時と同期されていない場合に生じる可能性があります。  Windows Server Essentials と Windows Server Essentials では、時刻同期サービスを使用して、Windows Server Essentials または Windows Server Essentials ネットワークで実行されているコンピューターの日付と時刻を同期します。 既定の認証プロトコルでは認証プロセスの一環としてサーバー時刻が使用されるため、同期された時刻は重要です。 たとえば、クライアントコンピューターの時計が正しい日付と時刻に同期されていない場合、Windows Server Essentials または Windows Server Essentials の認証では、ログオン要求が誤って侵入の試みとして解釈され、ユーザーへのアクセスが拒否されることがあります。  
   
- これは、サーバーの空きメモリが 5% 未満である場合に発生することができます。  
+ これは、サーバーの空きメモリが5% 未満の場合に発生する可能性があります。  
   
  Windows Essentials Server に対する VPN 接続が既に確立されていて、ドメイン アドレスを使用して内部設置型のコネクター ソフトウェアを設定しようとすると発生する可能性があります。  
   
@@ -179,7 +179,7 @@ ms.locfileid: "66436048"
   
 #### <a name="to-change-the-date-and-time-on-the-client-computer"></a>クライアント コンピューターの日時を変更するには  
   
-1. クライアント コンピューターの [スタート] ページで、 **[コントロール パネル]** を開きます。  
+1. クライアント コンピューターの スタート ページで、**コントロール パネル** を開きます。  
   
 2. [コントロール パネル] で、 **[時計、言語、および地域]** をクリックし、 **[日付と時刻]** をクリックします。  
   
@@ -193,7 +193,7 @@ ms.locfileid: "66436048"
   
 #### <a name="to-change-the-date-and-time-on-the-server"></a>サーバー上の日付と時刻を変更するには  
   
-1.  Windows Server Essentials または Windows Server Essentials のインストールおよび構成中に設定したパスワードを使用して、サーバーにログオンします。  
+1.  Windows Server Essentials または Windows Server Essentials のインストールと構成時に設定したパスワードを使用して、サーバーにログオンします。  
   
     > [!NOTE]
     >  サーバーをリモートで管理している場合、リモート デスクトップ接続を使用してサーバーにログオンする必要があります。  
@@ -208,10 +208,10 @@ ms.locfileid: "66436048"
   
 6.  クライアント コンピューターで、サーバーへの接続を再試行します。 手順については、「コンピューターをサーバーに接続する方法」を参照してください。  
   
-##  <a name="BKMK_ServiceStopped"></a> 問題 6  
+##  <a name="issue-6"></a><a name="BKMK_ServiceStopped"></a>問題6  
  **問題**  
   
- 取得する、予期しないエラーが発生しました。 この問題を解決するには、ネットワークの担当者にお問い合わせください。 というエラー メッセージが表示される  
+ 予期しないエラーが発生しました。 この問題を解決するには、ネットワークの担当者にお問い合わせください。 というエラー メッセージが表示される  
   
  **説明**  
   
@@ -231,18 +231,18 @@ ms.locfileid: "66436048"
   
 3.  **[操作]** ウィンドウで、 **[開始]** をクリックします。  
   
-##  <a name="BKMK_ConnectorIssueReconnect"></a> 問題 7  
+##  <a name="issue-7"></a><a name="BKMK_ConnectorIssueReconnect"></a>問題7  
  **問題**  
   
- 接続試行が失敗した後、コンピューターをサーバーに接続しようとすると警告が表示されるこの名前のコンピューターは既にサーバーに接続されています。  
+ 接続の試行が失敗した後にコンピューターをサーバーに接続しようとすると、"この名前のコンピューターは既にサーバーに接続されています" という警告が表示されます。  
   
  **説明**  
   
- 以前に行ったサーバーへのコンピューターの接続の試行を取り消した場合、または中断した場合に、再び接続を試行すると、この名前のコンピューターは既にサーバーに接続されています。 これは、初めてサーバーに接続を試みたときに証明書が発行されているために生じます。  
+ 以前にコンピューターをサーバーに接続しようとしたときに、キャンセルまたは中断された場合は、もう一度接続しようとすると、次の警告が表示されることがあります。この名前のコンピューターは既にサーバーに接続されています。 これは、初めてサーバーに接続を試みたときに証明書が発行されているために生じます。  
   
  **解決策**: 同じ名前の他のコンピューターが対象のサーバーに接続されていないことが分かっている場合には、 **[次へ]** をクリックして次の手順を実行して、 **[コンピューターをサーバーに接続]** ウィザードを完了します。  
   
-##  <a name="BKMK_JoinWin7"></a> 問題 8  
+##  <a name="issue-8"></a><a name="BKMK_JoinWin7"></a>問題8  
  **問題**  
   
  Windows 7 Home が実行されているクライアント コンピューターをサーバーに接続しようとすると、コネクター ソフトウェアを実行するための Web ページが開くものの、クライアント コンピューターがサーバーに接続できない  
@@ -255,30 +255,30 @@ ms.locfileid: "66436048"
   
  ルーターでマルチキャストを無効にします。 一部のルーターでは、RIP-2M ルーティング プロトコルの無効化もそれに含まれる場合があります。 詳細については、ルーターの製造元によって提供されているドキュメントを参照してください。  
   
-##  <a name="BKMK_ConnectorIssueAutologon"></a> 問題 9  
+##  <a name="issue-9"></a><a name="BKMK_ConnectorIssueAutologon"></a>問題9  
  **問題**  
   
  サーバーにコンピューターを接続した後、自動ログオンが機能しなくなった  
   
  **説明**  
   
- コンピューターを Windows Server Essentials に接続するときに、ユーザー アカウントの自動ログオンが設定されている場合は、コネクタ ソフトウェアがコンピューターにインストールされているときに、設定が上書きされます。  
+ コンピューターを Windows Server Essentials に接続するときに、ユーザーアカウントに自動ログオンが設定されている場合、この設定はコンピューターにコネクタソフトウェアがインストールされているときに上書きされます。  
   
  **解決策**: この問題を解決するには、コンピューターをサーバーに接続するときに、ユーザー アカウントに使用するパスワードをメモしてください。 コネクター ソフトウェアのインストール後、そのアカウントを使用するように自動ログオンを構成します。  
   
 > [!NOTE]
->  Windows Server Essentials ドメイン アカウントでは、既定のパスワード ポリシー要件を満たすパスワードが必要です。  
+>  Windows Server Essentials ドメインアカウントには、既定のパスワードポリシー要件を満たすパスワードが必要です。  
   
-##  <a name="BKMK_ConnectorIssueOldLogs"></a> 10 の問題  
+##  <a name="issue-10"></a><a name="BKMK_ConnectorIssueOldLogs"></a>問題10  
  **問題**  
   
  プレリリース版のコネクター ソフトウェアをアンインストールしても既存のログが削除されない  
   
  **説明**  
   
- サーバーに接続されている各コンピューターからコネクタ ソフトウェアを削除してし、リリースをインストールするコンピューターを接続する必要があります Windows Server Essentials のプレリリース (ベータ版または RC) 版からリリース バージョンに更新した後コネクタ ソフトウェアのバージョンです。  
+ プレリリース (ベータ版または RC) 版の Windows Server Essentials からリリース版に更新した後、サーバーに接続されている各コンピューターからコネクタソフトウェアを削除してから、コンピューターを再接続して、リリースされたをインストールする必要があります。コネクタソフトウェアのバージョン。  
   
- ただし、ネットワーク コンピューターからコネクター ソフトウェアを削除しても、そのコンピューター上の %ProgramData%\Microsoft\Windows Server\Logs\ フォルダー内の既存のログ ファイルは削除されません。 Logs フォルダーを削除しない場合は、コンピューターを Windows Server Essentials のリリース バージョンに接続するときに、ログ ファイルが破損しているなります。  
+ ただし、ネットワーク コンピューターからコネクター ソフトウェアを削除しても、そのコンピューター上の %ProgramData%\Microsoft\Windows Server\Logs\ フォルダー内の既存のログ ファイルは削除されません。 Logs フォルダーを削除しないと、Windows Server Essentials のリリース版にコンピューターを接続したときに、ログファイルが破損する可能性があります。  
   
  **解決策**: ログ ファイルの破損を回避するには、Logs フォルダーを手動で削除してから、更新されたサーバーに対してクライアント コンピューターを再接続します。  
   
@@ -290,7 +290,7 @@ ms.locfileid: "66436048"
   
 3.  コンピューターを再度サーバーに接続します。 それにより、リリース版のコネクター ソフトウェアがインストールされ、新しい Logs フォルダーとログ ファイルが作成されます。  
   
-##  <a name="BKMK_UpgradeClientOS"></a> 問題 11  
+##  <a name="issue-11"></a><a name="BKMK_UpgradeClientOS"></a>問題11  
  **問題**  
   
  クライアント コンピューター上でオペレーティング システムをアップグレードしたい  
@@ -301,12 +301,12 @@ ms.locfileid: "66436048"
   
  **ソリューション**  
   
- クライアントのオペレーティング システムを別のバージョンにアップグレードするには (たとえば、Windows XP を Windows Vista へ、または Windows Vista を Windows 7 へアップグレードする場合)、コネクター ソフトウェアをアンインストールする必要があります。 [コントロール パネル] の **[プログラムの追加と削除]** を使用します。 Http://&lt を開くことでクライアント コネクタを再インストールできるクライアント オペレーティング システムのアップグレードが完了したら、*server*>]、[Web ブラウザーで接続を <*サーバー*> の名前を指定します、 Windows Server Essentials サーバー。  
+ クライアントのオペレーティング システムを別のバージョンにアップグレードするには (たとえば、Windows XP を Windows Vista へ、または Windows Vista を Windows 7 へアップグレードする場合)、コネクター ソフトウェアをアンインストールする必要があります。 [コントロール パネル] の **[プログラムの追加と削除]** を使用します。 クライアントのオペレーティングシステムのアップグレードが完了したら、 http://<*server*> を開き、Web ブラウザーで [接続] を開いて、クライアントコネクタを再インストールできます。ここで <*server*> は、Windows server Essentials サーバーの名前です。  
   
  コネクター ソフトウェアがインストールされているクライアントをアップグレードした場合には、 **[プログラムの追加と削除]** または **[プログラムと機能]** を使用してコネクター ソフトウェアをアンインストールします。 その後、コネクター ソフトウェアを再びインストールします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
 -   [Windows Server Essentials の管理](../manage/Manage-Windows-Server-Essentials.md)  
   
--   [Windows 2012 Server Essentials ConnectComputer トラブルシューティング (TechNet Wiki)](https://social.technet.microsoft.com/wiki/contents/articles/14370.windows-2012-server-essentials-connectcomputer-troubleshooting.aspx)
+-   [Windows 2012 Server Essentials ConnectComputer のトラブルシューティング (TechNet Wiki)](https://social.technet.microsoft.com/wiki/contents/articles/14370.windows-2012-server-essentials-connectcomputer-troubleshooting.aspx)

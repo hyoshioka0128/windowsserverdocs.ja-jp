@@ -3,7 +3,7 @@ title: Windows Server Essentials でのデジタル メディアの管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: 9378bffa-487c-43ca-9ec3-7e7864d2dd9a
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8d7c4f0432e1f840717776ee5df00d64c39b18fd
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: 560fe8b7cb03b5c0840e604767f4682b8779f502
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947488"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311302"
 ---
 # <a name="manage-digital-media-in-windows-server-essentials"></a>Windows Server Essentials でのデジタル メディアの管理
 
@@ -38,7 +38,7 @@ ms.locfileid: "75947488"
   
 -   [デジタルメディアファイルをサーバーに追加する](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_5)  
   
--   [許可またはサーバー上のメディア ライブラリへのアクセス制限](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)  
+-   [サーバー上のメディアライブラリへのアクセスを許可または制限する](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)  
   
 -   [メディアライブラリの名前を変更する](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_8)  
   
@@ -50,7 +50,7 @@ ms.locfileid: "75947488"
   
 -   [メディアファイルの種類に関する既知の問題](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_KnownIssues)  
   
-##  <a name="BKMK_1"></a>デジタルメディアの概要  
+##  <a name="digital-media-overview"></a><a name="BKMK_1"></a>デジタルメディアの概要  
  デジタル メディアとは、コード化されている (デジタル圧縮されている) オーディオ、動画、写真コンテンツを指します。 コンテンツをコード化すると、オーディオや動画の入力が Windows Media ファイルなどのデジタル メディアに変換されます。 コード化したデジタル メディアはコンピューターで簡単に操作、配信、再生できます。コンピューター ネットワークで簡単に転送できます。  
   
  デジタル メディアの種類の例:Windows Media Audio (WMA)、Windows Media Video (WMV)、MP3、JPEG、AVI Windows Media Player でサポートされるデジタル メディアに関する詳細については、「 [Windows Media Player でサポートされるファイルの種類](https://support.microsoft.com/kb/316992)」を参照してください。  
@@ -64,23 +64,23 @@ ms.locfileid: "75947488"
   
 -   **写真のスライドショーを行う**。 サーバーの **[フォト]** 共有フォルダーにデジタル写真を保存し、自宅または職場で、テレビに接続されているコンピューターまたは Xbox 360 からデジタル写真にアクセスできます。 写真をスライドショーで見ることができます。テレビが写真のための大きな額に変わります。  
   
-###  <a name="BKMK_1.5"></a>コピーによって保護されたメディアを共有する  
+###  <a name="sharing-copy-protected-media"></a><a name="BKMK_1.5"></a>コピーによって保護されたメディアを共有する  
   Windows Server Essentials では、コピーによって保護されたメディアの共有はサポートされていません。 これにはオンライン ミュージック ストアで購入した音楽が含まれます。  
   
  コピー防止機能が付いたメディアは、その購入に利用したコンピューターまたはデバイスでのみ再生できます。 コピー防止機能は、複数のコンピューターまたはデバイスでメディアを再生する行為を防ぐものです。メディアをサーバーにコピーし、そこから再生する場合も同様です。 ただし、コピーによって保護されたメディアを Windows Server Essentials に保存し、そのメディアの購入に使用したコンピューターまたはデバイスでメディアを再生し続けることができます。  
   
-##  <a name="BKMK_2"></a>ダッシュボードを使用してメディアサーバーを管理する  
+##  <a name="manage-media-server-using-the-dashboard"></a><a name="BKMK_2"></a>ダッシュボードを使用してメディアサーバーを管理する  
   Windows Server Essentials では、Windows Server Essentials ダッシュボードを使用して一般的な管理タスクを実行できます。 ダッシュボードの **[サーバー設定]** ページの **[メディア]** タブは次の機能を提供します。  
   
 |セクション|機能|  
 |-------------|-------------------|  
 |メディア サーバー|**[オン/オフ]** ボタンでは、メディア ストリーム配信のオンとオフを切り替えることができます。|  
 |動画ストリーム配信の画質|ドロップダウン矢印で、サーバーから再生する動画のストリーム配信時の画質を選択できます。|  
-|メディア ライブラリ|メディア ライブラリの名前を表示します。 ライブラリの既定の名前は「 **Digital Media Library**」です。これはメディア ストリーム配信をオンにしたときに作成されます。 メディア ライブラリ名を変更するには、「 [Rename the media library](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_8)」を参照してください。 **[カスタマイズ]** をクリックし、メディア ライブラリで共有するフォルダーをカスタマイズできます。|  
+|メディア ライブラリ|メディア ライブラリの名前を表示します。 ライブラリの既定の名前は「**Digital Media Library**」です。これはメディア ストリーム配信をオンにしたときに作成されます。 メディア ライブラリの名前を変更する方法については、「[メディア ライブラリの名前を変更する](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_8)」を参照してください。 **[カスタマイズ]** をクリックし、メディア ライブラリで共有するフォルダーをカスタマイズできます。|  
   
- 詳細については、「 [Allow or restrict access to a media library on the server](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6) 」と「 [Sharing copy-protected media](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_1.5)」を参照してください。  
+ 詳細については、「[サーバーのメディア ライブラリを許可または制限する](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)」と「[コピー防止機能が付いたメディアの共有](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_1.5)」を参照してください。  
   
-##  <a name="BKMK_3"></a>メディアストリーミングのしくみ  
+##  <a name="how-media-streaming-works"></a><a name="BKMK_3"></a>メディアストリーミングのしくみ  
  Windows Server Essentials のメディアストリーミング機能を使用すると、ネットワークに接続されたコンピューターと一部のデジタルメディアデバイスで、サーバーに格納されているデジタルメディアファイルを再生できます。  
   
  メディア サーバーをオンにすると、メディア ライブラリで共有しているコンテンツをサーバーからストリーム配信されるメディアを受信できるネットワーク上のデバイスで再生できます。 ほとんどの種類のデジタル メディア ファイルをストリーム配信できます。 最も一般的なストリーム配信可能ファイルには次のようなものがあります。  
@@ -105,7 +105,7 @@ ms.locfileid: "75947488"
   
   詳細については、「[メディアストリーム配信の有効化または無効化](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4)」を参照してください。  
   
-##  <a name="BKMK_4"></a>メディアストリーミングを有効または無効にする  
+##  <a name="turn-media-streaming-on-or-off"></a><a name="BKMK_4"></a>メディアストリーミングを有効または無効にする  
  コンピューター、携帯電話、テレビ、デジタルメディアレシーバー、Windows Media Center 用 extender (Xbox を含む) など、サポートされているデジタルメディアレシーバー (DMR) にファイルをストリーミングすることで、Windows Server Essentials の音楽、ビデオ、および画像を共有できます。360) およびその他の個人用電子機器。  
   
  Windows Server Essentials と互換性のあるデジタルメディアデバイスの最新の一覧については、「 [Windows 互換性センター](https://www.microsoft.com/windows/compatibility/CompatCenter/Home)」を参照してください。  
@@ -113,7 +113,7 @@ ms.locfileid: "75947488"
 ### <a name="enabling-media-sharing"></a>メディア共有を有効にする  
  Windows Server Essentials に格納されているメディアを共有するには、メディアストリーミングを有効にする必要があります。 メディア ストリーム配信は既定でオフになっています。  
   
-####  <a name="BKMK_2.5"></a>メディアストリーミングを有効または無効にするには  
+####  <a name="to-turn-media-streaming-on-or-off"></a><a name="BKMK_2.5"></a>メディアストリーミングを有効または無効にするには  
   
 1. Windows Server Essentials ダッシュボードを開きます。  
   
@@ -129,9 +129,9 @@ ms.locfileid: "75947488"
   
    Windows Media Player でサポートされるデジタル メディア タイプに関する詳細については、「 [Windows Media Player でサポートされるファイルの種類](https://support.microsoft.com/kb/316992)」を参照してください。  
   
-   詳細については、「 [Allow or restrict access to a media library on the server](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)」を参照してください。  
+   詳細については、「[サーバーのメディア ライブラリへのアクセスを許可または制限する](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6)」を参照してください。  
   
-##  <a name="BKMK_5"></a>デジタルメディアファイルをサーバーに追加する  
+##  <a name="add-digital-media-files-to-the-server"></a><a name="BKMK_5"></a>デジタルメディアファイルをサーバーに追加する  
  サーバー管理者は、サーバーに直接アクセスするか、リモートの Web アクセスサイトを使用してダッシュボードにサインインすることにより、メディアライブラリの共有フォルダーにデジタルメディアを追加できます。 他のユーザーは、スタートパッドの **[共有フォルダー]** 接続を使用するか、リモート Web アクセスサイトを使用するか、Windows Phone 用の My server アプリを使用して、サーバーにメディアファイルを追加できます。 メディアの再生の詳細については、「[デジタルメディアを再生](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)する」を参照してください。  
   
 > [!NOTE]
@@ -141,7 +141,7 @@ ms.locfileid: "75947488"
   
 1.  次の方法のいずれかを利用してサーバーにサインインします。  
   
-    1.  リモート Web アクセスにログオンする方法については、「 [Log on to Remote Web Access](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)」を参照してください。  
+    1.  リモート Web アクセスにログオンする方法については、「[リモート Web アクセスにログオンする](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)」を参照してください。  
   
     2.  スタートパッドを使用したサインインの詳細については、「[スタートパッドの概要](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md)」を参照してください。  
   
@@ -149,7 +149,7 @@ ms.locfileid: "75947488"
   
 3.  追加するメディア ファイルをサーバーの共有フォルダーにコピーして貼り付けるか、ドラッグアンドドロップします。  
   
-##  <a name="BKMK_6"></a> 許可またはサーバー上のメディア ライブラリへのアクセス制限  
+##  <a name="allow-or-restrict-access-to-a-media-library-on-the-server"></a><a name="BKMK_6"></a>サーバー上のメディアライブラリへのアクセスを許可または制限する  
   
 -   メディア共有をオンにすると、次の 4 つの事前定義フォルダー作成されます。ミュージック、ピクチャ、ビデオ、録画されたテレビ これらのフォルダーがサーバーに既にあった場合、メディア共有用の共有フォルダーとしてその既存のフォルダーが再利用されます。 既存のフォルダーのメディアコンテンツとユーザーのアクセス許可はすべて保持され、すべてのネットワークユーザーと共有されます。  
   
@@ -157,8 +157,8 @@ ms.locfileid: "75947488"
   
 -   共有フォルダーに対してメディアライブラリ共有を有効にすると、サポートされているすべてのデジタルメディアプレーヤーまたは Windows Server Essentials ネットワークにアクセスできる DMR が、その共有フォルダーのデジタルメディアにもアクセスできるようになります。 たとえば、無線ネットワークが安全でない場合、無線ネットワークの範囲内にいれば、だれでもそのフォルダーのデジタル メディアにアクセスできる可能性があります。 メディア ライブラリ共有をオンにする前に、無線ネットワークの安全を確認してください。 詳細については、無線アクセス ポイントの文書を参照してください。  
   
-##  <a name="BKMK_8"></a>メディアライブラリの名前を変更する  
- メディア ライブラリの既定の名前は「 **Digital Media Server**」です。 これは、Windows Server Essentials でメディアストリーム配信を有効にしたときに作成されます。 メディアストリーミングを有効にする方法の詳細については、「[メディアストリーミングを有効または無効にするには」を](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.5)参照してください。 サーバー ダッシュボードを利用すれば、メディア ライブラリ名をいつでも変更できます。  
+##  <a name="rename-the-media-library"></a><a name="BKMK_8"></a>メディアライブラリの名前を変更する  
+ メディア ライブラリの既定の名前は「**Digital Media Server**」です。 これは、Windows Server Essentials でメディアストリーム配信を有効にしたときに作成されます。 メディアストリーミングを有効にする方法の詳細については、「[メディアストリーミングを有効または無効にするには」を](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.5)参照してください。 サーバー ダッシュボードを利用すれば、メディア ライブラリ名をいつでも変更できます。  
   
 #### <a name="to-rename-the-media-library"></a>メディア ライブラリの名前を変更するには  
   
@@ -172,7 +172,7 @@ ms.locfileid: "75947488"
   
 5.  **[メディア ライブラリの名前を変更する]** ダイアログ ボックスで、メディア ライブラリの新しい名前を入力し、 **[OK]** をクリックします。  
   
-##  <a name="BKMK_9"></a>デジタルメディアの共有を停止する  
+##  <a name="stop-sharing-digital-media"></a><a name="BKMK_9"></a>デジタルメディアの共有を停止する  
  サーバー管理者は、Windows Server Essentials を実行しているサーバー上の共有フォルダーに保存されているデジタルメディアの共有を停止できます。  
   
 #### <a name="to-stop-sharing-media-in-shared-folders"></a>共有フォルダーのメディアの共有を停止するには  
@@ -189,13 +189,13 @@ ms.locfileid: "75947488"
   
 4.  **[適用]** または **[OK]** をクリックし、変更を保存します。  
   
-##  <a name="BKMK_10"></a>サーバーメッセージブロック (SMB) プロトコルを使用してサーバー上の共有ファイルにアクセスするメディアデバイスを有効にする  
+##  <a name="enable-media-devices-that-use-the-server-message-block-smb-protocol-to-access-shared-files-on-the-server"></a><a name="BKMK_10"></a>サーバーメッセージブロック (SMB) プロトコルを使用してサーバー上の共有ファイルにアクセスするメディアデバイスを有効にする  
  (メディア ストリーム配信の) DLNA の代わりに、ネットワークのファイルと共有のアクセスにサーバー メッセージ ブロック (SMB) を利用するデバイスでは、ゲスト アカウントを有効にする必要があります。 この設定により、ネットワーク上のすべてのデバイスまたはユーザーが認証なしで共有フォルダーの内容を表示できます。  
   
 > [!CAUTION]
 >  ゲスト アカウントを有効にすると、既定ではだれでもサーバー上の共有リソースにアクセスできます。  
   
-##  <a name="BKMK_CommonProcessors"></a>共通のプロセッサとそれらがサポートするビデオプロファイル  
+##  <a name="common-processors-and-the-video-profiles-they-support"></a><a name="BKMK_CommonProcessors"></a>共通のプロセッサとそれらがサポートするビデオプロファイル  
  Windows Server Essentials サーバーからメディアをストリーミングするには、Windows 7 または Windows 8 オペレーティングシステムを実行しているコンピューター、またはその他のネットワークデバイス (デジタルメディアプレーヤーなど)、または Media Center extender (Xbox 360 など) を使用できます。 ネットワークから離れた場所にいるとき、リモート Web アクセス メディア プレーヤーを利用し、サーバーに保存されているファイルを再生できます。  
   
  200 KBps ～ 10 MBps のデータ転送速度が必要です。 ご利用のコンピューターとデバイスが認識し、再生できるメディア形式を使用する必要があります。 すべてのデバイスで同じメディア形式をサポートしているわけではありません。所有しているメディア ファイルをご利用のコンピューターとデバイスで再生する方法はあるはずです。  
@@ -223,7 +223,7 @@ ms.locfileid: "75947488"
 > [!NOTE]
 >  リモート Web アクセス経由で高解像度の動画をストリーム配信する場合、スコアが 6.0 以上のプロセッサが必要になります。  
   
-##  <a name="BKMK_KnownIssues"></a>メディアファイルの種類に関する既知の問題  
+##  <a name="known-issues-with-media-file-types"></a><a name="BKMK_KnownIssues"></a>メディアファイルの種類に関する既知の問題  
  リモート Web アクセスのメディア ストリーム配信機能は、Windows Media Player 12 ネットワーク共有サービスを利用します。 リモート Web アクセスのメディア ストリーム配信は Windows Media Player 12 と Silverlight 4 でサポートされるオーディオ、動画、ピクチャのファイル タイプをサポートします。  
   
  次の表は、リモート Web アクセスのメディア ストリーム配信でサポートされるファイル タイプ (形式) の一覧です。 この表にないメディア ファイル タイプがサーバーに置かれている場合、リモート Web アクセスのメディア ストリーム配信ではそのファイル タイプをストリーム配信できません。  
@@ -238,7 +238,7 @@ ms.locfileid: "75947488"
 |CD オーディオ ディスク|.cda|  
 |DVD-Video ディスク|.vob|  
 |JPEG ピクチャ ファイル|.jpg|  
-|MP3 オーディオ ファイル|.mp3 と .m3u|  
+|MP3 オーディオ ファイル|.mp3 および .m3u|  
 |MPEG 動画ファイル|.mpeg、.mpg、.m1v、.mpa、.mpe、.mp4、.mp4v、.m4v、.m4a、.mov|  
 |Windows のオーディオ ファイルと動画ファイル|.avi と .wav|  
 |Windows Media のオーディオ ファイルと動画ファイル|.asf、.asx、.wax、.wm、.wma、.wmd、.wmp、.wmv、.wmx、.wpl、.wvx|  
@@ -248,7 +248,7 @@ ms.locfileid: "75947488"
   
  サポートされるファイル形式の詳細については、「 [Windows Media Player でサポートされるファイルの種類](https://go.microsoft.com/fwlink/p/?LinkID=196118) 」、および Silverlight の場合は、「 [サポートされるメディア形式、プロトコル、ログ フィールド](https://go.microsoft.com/fwlink/p/?LinkId=203339) 」を参照してください。  
   
-## <a name="see-also"></a>「  
+## <a name="see-also"></a>参照  
   
 -   [デジタルメディアを再生する](../use/Play-Digital-Media-in-Windows-Server-Essentials.md)  
   

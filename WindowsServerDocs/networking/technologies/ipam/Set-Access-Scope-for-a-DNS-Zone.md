@@ -10,22 +10,22 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6a211dde-80eb-4888-b5bb-4e28fe8dc7df
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6155cee3f1924486f1358632dcef2fba7046edb3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 870acde822fb5c8c038139710facb71208df3387
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355130"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309565"
 ---
 # <a name="set-access-scope-for-a-dns-zone"></a>DNS ゾーンのアクセス スコープを設定する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを使用して、IPAM クライアントコンソールを使用して DNS ゾーンのアクセススコープを設定できます。  
   
-メンバーシップ **管理者**, 、同等の権限をこの手順を実行するために必要な最低限のですか。  
+この手順を実行するには、**Administrators** のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
   
 ### <a name="to-set-the-access-scope-for-a-dns-zone"></a>DNS ゾーンのアクセススコープを設定するには  
   
@@ -43,7 +43,7 @@ ms.locfileid: "71355130"
   
     ![ゾーンのアクセススコープが変更されていることを確認します。](../../media/Set-Access-Scope-for-a-DNS-Zone/ipam_SetAccessScopeOfZone_04.jpg)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [ロールベースの Access Control](Role-based-Access-Control.md)  
 [IPAM の管理](Manage-IPAM.md)  
   

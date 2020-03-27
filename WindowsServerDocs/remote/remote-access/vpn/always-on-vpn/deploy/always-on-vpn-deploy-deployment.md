@@ -7,14 +7,14 @@ ms.topic: article
 ms.assetid: ad748de2-d175-47bf-b05f-707dc48692cf
 ms.localizationpriority: medium
 ms.date: 11/05/2018
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 8383aea81e91f52473fd564abf315423abfa83b1
-ms.sourcegitcommit: 9bc7a0478d72944f714f8041fa4506e0d1ed0366
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 852d7b0ee79193a603c621cfa7b0525b31ebb3b4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2020
-ms.locfileid: "77607071"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313313"
 ---
 # <a name="deploy-always-on-vpn"></a>Always On VPN の展開
 

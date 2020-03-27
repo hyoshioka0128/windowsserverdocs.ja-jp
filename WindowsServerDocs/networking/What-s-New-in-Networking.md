@@ -5,18 +5,18 @@ ms.prod: windows-server
 ms.technology: networking
 ms.topic: get-started-article
 ms.assetid: 08fb7563-d319-48a9-b181-ca0ca3032c18
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: da2166d28edda5662797824d9b26ad930f51083c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 35c3c3b2610918e8b0fd69ccf04422e3f6df4d0e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406751"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318547"
 ---
 # <a name="whats-new-in-networking"></a>ネットワークの新機能
 
->適用対象:Windows Server 2016
+>適用対象: Windows Server 2016
 
 Windows Server 2016 の新機能または強化されたネットワークテクノロジは次のとおりです。  
   Upd このトピックの内容は次のとおりです。  
@@ -25,7 +25,7 @@ Windows Server 2016 の新機能または強化されたネットワークテク
   
 -   [追加のネットワークテクノロジの新機能](#bkmk_existing)  
   
-## <a name="bkmk_features"></a>新しいネットワーク機能とテクノロジ
+## <a name="new-networking-features-and-technologies"></a><a name="bkmk_features"></a>新しいネットワーク機能とテクノロジ
 
 ネットワークは、ソフトウェア定義データセンター (SDDC) プラットフォームの基本部分であり、Windows Server 2016 では、組織にとって完全に実現された SDDC ソリューションへの移行を支援するための、ソフトウェアによるネットワーク制御 (SDN) テクノロジが新たに強化されています。  
   
@@ -52,7 +52,7 @@ Windows Server 2016 の新機能または強化されたネットワークテク
         詳細については、「 [Ras ゲートウェイの新機能](sdn/technologies/network-function-virtualization/What-s-New-in-RAS-Gateway.md)」および「 [SDN の ras ゲートウェイ](sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)」を参照してください。  
           
     - **ソフトウェア Load Balancer (SLB) とネットワークアドレス変換 (NAT)** 。 北南部と東西部のレイヤー4のロードバランサーと NAT は、Direct Server Return をサポートすることでスループットを向上させます。この場合、ネットワークトラフィックの戻り値は、負荷分散マルチプレクサーをバイパスできます。  
-       詳細については、「[&#40;SDN のソフトウェアの負荷分散 (SLB)&#41;](sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)」を参照してください。  
+       詳細については、次を参照してください。 [ソフトウェアによる負荷分散と #40 です。SLB & #41 です。SDN の](sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)です。  
   
     詳細については、次を参照してください。 [ネットワーク機能の仮想化](sdn/technologies/network-function-virtualization/Network-Function-Virtualization.md)します。  
   
@@ -70,30 +70,30 @@ SDN の詳細については、「 [Software &#40;Defined&#41;network SDN](sdn/s
   
 -   **パケットダイレクト**。  パケットダイレクトは、ネットワークトラフィックのスループットと待機時間の短いパケット処理インフラストラクチャを提供します。  
   
--   **スイッチ埋め込みチーミング (SET)** 。        SET は、HYPER-V 仮想スイッチに統合されている NIC チーミング ソリューションです。 SET は最大 8 つの物理 NIC を 1 つのチームにチーミングし、可用性を向上させ、フェールオーバーを提供します。 Windows Server 2016 では、サーバー メッセージ ブロック (SMB) および RDMA の使用に制限されている SET チームを作成できます。 さらに、SET チームを使用して、HYPER-V ネットワーク仮想化のネットワーク トラフィックを分散することができます。 詳細については、「[リモート ダイレクト メモリ アクセス &#40;RDMA&#41; とスイッチ埋め込みチーミング &#40;SET&#41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)」を参照してください。  
+-   **埋め込みチーミング (SET) を切り替え**ます。        SET は、HYPER-V 仮想スイッチに統合されている NIC チーミング ソリューションです。 SET は最大 8 つの物理 NIC を 1 つのチームにチーミングし、可用性を向上させ、フェールオーバーを提供します。 Windows Server 2016 では、サーバー メッセージ ブロック (SMB) および RDMA の使用に制限されている SET チームを作成できます。 さらに、SET チームを使用して、HYPER-V ネットワーク仮想化のネットワーク トラフィックを分散することができます。 詳細については、次を参照してください。 [リモート ダイレクト メモリ アクセス (&) #40 です。RDMA と #41 です。スイッチには、チーム化 (&) #40; が含まれているとセットと #41;](../virtualization/hyper-v-virtual-switch/RDMA-and-Switch-Embedded-Teaming.md)します。  
   
-## <a name="bkmk_existing"></a>追加のネットワークテクノロジの新機能
+## <a name="new-features-for-additional-networking-technologies"></a><a name="bkmk_existing"></a>追加のネットワークテクノロジの新機能
 
 ここでは、使い慣れたネットワークテクノロジの新機能について説明します。
   
-## <a name="bkmk_dhcp"></a>列挙  
+## <a name="dhcp"></a><a name="bkmk_dhcp"></a>列挙  
 DHCP は、プライベート イントラネットなど、TCP/IP ベースのネットワークにおいて、ホストの構成に伴う管理の負担と複雑さを低減することを目的に策定されたインターネット技術標準化委員会 (IETF) の標準です。 DHCP クライアントに TCP/IP を構成するプロセスは、DHCP サーバー サービスを使うことによって自動化されます。  
   
 詳細については、「 [DHCP の新機能](technologies/dhcp/What-s-New-in-DHCP.md)」を参照してください。  
   
-## <a name="bkmk_dns"></a>DNS  
+## <a name="dns"></a><a name="bkmk_dns"></a>DNS  
 DNS は、TCP/IP ネットワーク内のコンピューターやネットワーク サービスの名前を解決するためのシステムです。 DNS 名によって、コンピューターやサービスをわかりやすい名前で特定することができます。 ユーザーがアプリケーションで DNS 名を入力すると、DNS サービスは入力された DNS 名を、その名前に関連付けられている他の情報 (IP アドレスなど) に解決できます。  
   
 DNS クライアントと DNS サーバーに関する情報を次に示します。  
   
-### <a name="bkmk_dnsc"></a>DNS クライアント  
+### <a name="dns-client"></a><a name="bkmk_dnsc"></a>DNS クライアント  
 次に、新しいまたは強化された DNS クライアントテクノロジを示します。  
   
 -   **DNS クライアントのサービスバインド**。 Windows 10 では、DNS クライアントサービスは、複数のネットワークインターフェイスを持つコンピューターの拡張サポートを提供します。  
   
 詳細については、「 [Windows Server 2016 の DNS クライアントの新機能](dns/What-s-New-in-DNS-Client.md)」を参照してください。  
   
-### <a name="bkmk_dnss"></a>DNS サーバー  
+### <a name="dns-server"></a><a name="bkmk_dnss"></a>DNS サーバー  
 次に、新しいまたは強化された DNS サーバーテクノロジを示します。  
   
 -   **DNS ポリシー**。  Dns ポリシーを構成して、dns サーバーが DNS クエリにどのように応答するかを指定できます。 DNS 応答は、クライアントの IP アドレス (場所)、時刻、およびその他のいくつかのパラメーターに基づいています。 DNS ポリシーを使用すると、場所を認識する DNS、トラフィック管理、負荷分散、スプリットブレイン DNS などのシナリオが可能になります。  
@@ -118,17 +118,17 @@ DNS クライアントと DNS サーバーに関する情報を次に示しま�
   
 詳細については、「 [Windows server 2016 の DNS サーバーの新機能](dns/What-s-New-in-DNS-Server.md)」を参照してください。  
   
-## <a name="bkmk_GRE"></a>GRE トンネリング  
+## <a name="gre-tunneling"></a><a name="bkmk_GRE"></a>GRE トンネリング  
 RAS ゲートウェイは、サイト間接続のための高可用性汎用ルーティングカプセル化 (GRE) トンネルと、ゲートウェイの M + N 冗長性をサポートするようになりました。 GRE は軽量のトンネリング プロトコルで、インターネット プロトコル インターネットワークを介して Point-to-Point 仮想リンク内のさまざまなネットワーク レイヤー プロトコルをカプセル化できます。  
   
 詳細については、「 [Windows Server 2016 の GRE トンネリング](../remote/remote-access/ras-gateway/gre-tunneling-windows-server.md)」を参照してください。  
   
-## <a name="HNV"></a>Hyper-v ネットワーク仮想化  
+## <a name="hyper-v-network-virtualization"></a><a name="HNV"></a>Hyper-v ネットワーク仮想化  
 Windows Server 2012 で導入された Hyper-v ネットワーク仮想化 (HNV) を使用すると、共有の物理ネットワークインフラストラクチャ上で顧客ネットワークを仮想化することができます。 HNV では、物理ネットワークファブリックに必要な変更を最小限に抑えて、サービスプロバイダーは、サービスプロバイダークラウド、プライベートクラウド、または Microsoft Azure パブリッククラウドの3つのクラウド全体で、テナントのワークロードをデプロイおよび移行する機敏性を提供します。  
   
 詳細については、「 [Windows Server 2016 での Hyper-v ネットワーク仮想化の新機能](sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md)」を参照してください。  
   
-## <a name="bkmk_ipam"></a>IPAM  
+## <a name="ipam"></a><a name="bkmk_ipam"></a>IPAM  
 IPAM は、組織のネットワーク上の IP アドレスと DNS インフラストラクチャに高度なカスタマイズが可能な管理および監視機能を提供します。 IPAM を使用すると、動的ホスト構成プロトコル (DHCP) とドメインネームシステム (DNS) を実行しているサーバーの監視、監査、および管理を行うことができます。  
   
 -   **IP アドレスの管理が強化**されました。  

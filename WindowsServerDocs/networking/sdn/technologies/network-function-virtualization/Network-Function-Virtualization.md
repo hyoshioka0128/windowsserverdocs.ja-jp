@@ -10,14 +10,14 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 79df3bbe-48fd-4eff-8df6-35f6317566f3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 338d5a285f2524932a91a66db186554cd0f50e2a
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1d5d5aaae5983e062dae203c60a7001f36e5629b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355660"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309817"
 ---
 # <a name="network-function-virtualization"></a>ネットワーク機能の仮想化
 
@@ -33,10 +33,10 @@ ms.locfileid: "71355660"
   
 今日のソフトウェアで定義されているデータ センター、(ロード バランサー、ファイアウォール、ルーター、スイッチ、およびなど) などのハードウェア アプライアンスで実行されているネットワークの機能がますますされている仮想化仮想アプライアンスとして。 この「ネットワーク機能の仮想化」は、サーバーの仮想化とネットワーク仮想化の自然な流れです。 仮想アプライアンスが急速に登場し、新しい市場が作成されます。 常に興味を引くと両方の仮想化プラットフォームで運動量を取得し、クラウド サービスです。  
   
-Microsoft には、Windows Server 2012 R2 で始まる仮想アプライアンスとしてスタンドアロン ゲートウェイが含まれています。 詳細については、「 [Windows Server ゲートウェイ](https://technet.microsoft.com/library/dn313101.aspx)」を参照してください。 今すぐ Windows Server 2016 microsoft を展開し、ネットワーク機能の仮想化市場への投資を続行します。  
+Microsoft には、Windows Server 2012 R2 で始まる仮想アプライアンスとしてスタンドアロン ゲートウェイが含まれています。 詳細については、「[Windows Server ゲートウェイ](https://technet.microsoft.com/library/dn313101.aspx)」を参照してください。 今すぐ Windows Server 2016 microsoft を展開し、ネットワーク機能の仮想化市場への投資を続行します。  
   
 ## <a name="virtual-appliance-benefits"></a>仮想アプライアンスの利点  
-仮想アプライアンスは、動的かつ簡単にカスタマイズした、事前構成済みの仮想マシンのため、変更です。 1 つまたは複数の仮想マシンをパッケージ化、更新、および単位として管理できます。 ネットワーク (SDN) を定義したソフトウェアと連携して、機敏性と柔軟性今日のクラウド ベースのインフラストラクチャにします。 次に、例を示します。  
+仮想アプライアンスは、動的かつ簡単にカスタマイズした、事前構成済みの仮想マシンのため、変更です。 1 つまたは複数の仮想マシンをパッケージ化、更新、および単位として管理できます。 ネットワーク (SDN) を定義したソフトウェアと連携して、機敏性と柔軟性今日のクラウド ベースのインフラストラクチャにします。 例 :  
   
 -   SDN は、プールされたおよび動的なリソースとして、ネットワークを表示します。  
   
@@ -90,7 +90,7 @@ Microsoft SDN の詳細については、次を参照してください。 [ソ�
 ## <a name="why-microsoft-is-a-great-platform-for-virtual-appliances"></a>なぜマイクロソフトは、仮想アプライアンスに適したプラットフォーム  
 ![仮想ネットワーク スタック](../../../media/Network-Function-Virtualization/Microsoft-Network-Function-Virtualization.png)  
   
-Microsoft プラットフォームが最適なプラットフォームをビルドし、仮想アプライアンスを展開するエンジニア リングされています。 その理由を次に示します。  
+Microsoft プラットフォームが最適なプラットフォームをビルドし、仮想アプライアンスを展開するエンジニア リングされています。 理由は次のとおりです。  
   
 -   Microsoft では、Windows Server 2016 で重要な仮想化されたネットワーク機能を提供します。  
   

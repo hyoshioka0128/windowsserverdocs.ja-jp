@@ -6,18 +6,18 @@ ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: ef9828f8-c0ad-431d-ae52-e2065532e68f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9c313b88e2502a99baf5962a1f2eb224d67a38dc
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 5c74ca9fe60374d1bc1396d95c2e34cc5cd1fdd6
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406176"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317762"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-servers"></a>プライマリ サーバーでの地理的な場所ベースのトラフィック管理に DNS ポリシーを使用する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックは、最も近いリソースの IP アドレスがクライアントに提供する、クライアントと、クライアントが接続しようとするのにリソースの両方の地理的場所に基づいて、DNS クライアント クエリに応答するのにプライマリ DNS サーバーを許可するように DNS のポリシーを構成するのに方法については、使用できます。  
   
@@ -42,7 +42,7 @@ ms.locfileid: "71406176"
 - **[拒否]** 。 DNS サーバーは、そのクエリのようなエラー応答を返します。          
 - **[許可]** 。 DNS サーバーは、管理トラフィックの応答で応答します。          
   
-##  <a name="bkmk_example"></a>地理的な場所ベースのトラフィック管理の例
+##  <a name="geo-location-based-traffic-management-example"></a><a name="bkmk_example"></a>地理的な場所ベースのトラフィック管理の例
 
 DNS クエリを実行するクライアントの物理的な場所に基づいてトラフィックのリダイレクトを実現するために、DNS のポリシーを使用する方法の例を次に示します。   
   
@@ -50,13 +50,13 @@ DNS クエリを実行するクライアントの物理的な場所に基づい�
   
 Contoso クラウド サービスとは、米国とヨーロッパに 2 つのデータ センターです。 ヨーロッパのデータ センターでは、woodgrove.com 用のポータルを順序付け食品をホストします。   
   
-Woodgrove.com お客様が企業の web サイトから応答性の高いエクスペリエンスを入手することを確認、Woodgrove では、ヨーロッパのデータ センターに送られますヨーロッパ言語のクライアントと u. s. データ センターに送られますアメリカ合衆国のクライアントを希望しています。 世界中の他の場所にあるお客様は、データ センターのいずれかに送信できます。   
+Woodgrove.com お客様が企業の web サイトから応答性の高いエクスペリエンスを入手することを確認、Woodgrove では、ヨーロッパのデータ センターに送られますヨーロッパ言語のクライアントと u. s. データ センターに送られますアメリカのクライアントを希望しています。 世界中の他の場所にあるお客様は、データ センターのいずれかに送信できます。   
   
 次の図は、このシナリオを示しています。  
   
 ![地理的な場所ベースのトラフィック管理の例](../../media/DNS-Policy-Geo1/dns_policy_geo1.png)  
   
-##  <a name="bkmk_works"></a>DNS 名前解決プロセスのしくみ  
+##  <a name="how-the-dns-name-resolution-process-works"></a><a name="bkmk_works"></a>DNS 名前解決プロセスのしくみ  
   
 名前解決の処理中に、ユーザーは www.woodgrove.com に接続しようとします。 これは、結果、ユーザーのコンピューターにネットワーク接続のプロパティで構成されている DNS サーバーに送信される DNS 名前解決の要求。 通常、これはキャッシュの競合回避モジュールとして動作している地域の ISP によって提供される DNS サーバーであり、LDNS と呼びます。   
   
@@ -69,7 +69,7 @@ Contoso のクラウド サービスは、DNS サーバーのポリシーを使�
 >[!NOTE]  
 >DNS のポリシーは、DNS クエリを含む UDP と TCP パケットの送信元 IP を使用します。 クエリでは、複数の競合回避モジュール/LDNS ホップを使用してプライマリ サーバーに達すると、ポリシーは、DNS サーバーがクエリを受信する元となる最後の競合回避モジュールの ip アドレスのみを検討します。  
   
-##  <a name="bkmk_config"></a>Geo ロケーションベースのクエリ応答の DNS ポリシーを構成する方法  
+##  <a name="how-to-configure-dns-policy-for-geo-location-based-query-responses"></a><a name="bkmk_config"></a>Geo ロケーションベースのクエリ応答の DNS ポリシーを構成する方法  
 地理的な場所ベースのクエリ応答の DNS のポリシーを構成するには、次の手順を実行する必要があります。  
   
 1. [DNS クライアントサブネットを作成する](#bkmk_subnets)  
@@ -85,7 +85,7 @@ Contoso のクラウド サービスは、DNS サーバーのポリシーを使�
 >[!IMPORTANT]  
 >以下のセクションには、多くのパラメーターの値の例を含む Windows PowerShell コマンドの例が含まれています。 これらのコマンドで値の例は、これらのコマンドを実行する前に、展開に対応する値を置き換えることを確認します。  
   
-### <a name="bkmk_subnets"></a>DNS クライアントサブネットを作成する  
+### <a name="create-the-dns-client-subnets"></a><a name="bkmk_subnets"></a>DNS クライアントサブネットを作成する  
   
 最初の手順では、サブネットまたは IP アドレス空間のトラフィックをリダイレクトする領域を識別します。 たとえば、米国およびヨーロッパのトラフィックをリダイレクトする場合は、サブネットまたは IP アドレス空間がこれらの領域を識別する必要があります。  
   
@@ -101,7 +101,7 @@ Contoso のクラウド サービスは、DNS サーバーのポリシーを使�
   
 詳細については、次を参照してください。 [追加 DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps)します。  
   
-### <a name="bkmk_scopes"></a>ゾーンのスコープを作成する  
+### <a name="create-zone-scopes"></a><a name="bkmk_scopes"></a>ゾーンのスコープを作成する  
 クライアントのサブネットを構成した後は、2 つの異なるゾーン スコープにリダイレクトするトラフィックの 1 つのスコープに構成されている DNS クライアントのサブネットごとのゾーンをパーティション分割する必要があります。   
   
 など DNS 名 www.woodgrove.com のトラフィックをリダイレクトする場合は、woodgrove.com ゾーン、米国およびヨーロッパの 2 つの別のゾーン スコープを作成する必要があります。  
@@ -120,7 +120,7 @@ Contoso のクラウド サービスは、DNS サーバーのポリシーを使�
 
 詳細については、次を参照してください。 [追加 DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)します。  
   
-### <a name="bkmk_records"></a>ゾーンのスコープにレコードを追加する  
+### <a name="add-records-to-the-zone-scopes"></a><a name="bkmk_records"></a>ゾーンのスコープにレコードを追加する  
 2 つのゾーンのスコープに web サーバーのホストを表すレコードを追加する必要があります。   
   
 たとえば、 **USZoneScope** と **EuropeZoneScope**します。 USZoneScope、u. s. データ センター; にある IP アドレス、192.0.0.1 レコード www.woodgrove.com を追加することができます。EuropeZoneScope ヨーロッパ データ センターの IP アドレス 141.1.0.1 で同じレコード (www.woodgrove.com) を追加できます。   
@@ -145,7 +145,7 @@ Contoso のクラウド サービスは、DNS サーバーのポリシーを使�
   
 詳細については、次を参照してください。 [追加 DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps)します。  
   
-### <a name="bkmk_policies"></a>ポリシーを作成する  
+### <a name="create-the-policies"></a><a name="bkmk_policies"></a>ポリシーを作成する  
 サブネットを作成した後は、しパーティション (ゾーン スコープ) には、レコードを追加した、サブネット、およびパーティションに接続しているポリシーは、DNS クライアントのサブネットのいずれかのソースから、クエリの結果が、クエリの応答が、ゾーンの正しい範囲から返されます。 を作成する必要があります。 ポリシーの既定のゾーンのスコープをマッピングするため必要はありません。   
   
 次の Windows PowerShell コマンドを使用すると、DNS クライアントのサブネットへのリンクとゾーン スコープに、DNS のポリシーを作成します。   

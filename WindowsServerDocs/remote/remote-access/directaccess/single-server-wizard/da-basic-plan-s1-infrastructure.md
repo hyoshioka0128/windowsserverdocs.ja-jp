@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 6f4c727dc8f7905502d47119bd0e911537e827aa
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 9c71ef26f9e4ba5d20705827109d9ad22fe5c7ab
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404877"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308891"
 ---
 # <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>手順1基本的な DirectAccess インフラストラクチャを計画する
 1台のサーバーでの基本的な DirectAccess 展開の最初の手順は、展開に必要なインフラストラクチャを計画することです。 このトピックでは、インフラストラクチャの計画手順を説明します。  
@@ -33,7 +33,7 @@ ms.locfileid: "71404877"
   
 計画タスクは特定の順序で実行する必要はありません。  
   
-## <a name="bkmk_1_1_Network_svr_top_settings"></a>ネットワークトポロジと設定を計画する  
+## <a name="plan-network-topology-and-settings"></a><a name="bkmk_1_1_Network_svr_top_settings"></a>ネットワークトポロジと設定を計画する  
   
 ### <a name="plan-network-adapters-and-ip-addressing"></a>ネットワーク アダプターと IP アドレス指定を計画する  
   
@@ -55,8 +55,8 @@ ms.locfileid: "71404877"
   
     ||外部ネットワーク アダプター|内部ネットワーク アダプター<sup>1</sup>|ルーティングの要件|  
     |-|--------------|--------------------|------------|  
-    |IPv4 イントラネットおよび IPv4 インターネット|次を構成します。<br /><br />-適切なサブネットマスクを持つ1つの静的パブリック IPv4 アドレス。<br />-インターネットファイアウォールまたはローカルインターネットサービスプロバイダーの既定のゲートウェイ IPv4 アドレス \(ISP\) ルーター。|次を構成します。<br /><br />適切なサブネット マスクを持つ IPv4 イントラネット アドレスが。<br />-イントラネット名前空間の特定の DNS サフィックスを\-接続。 DNS サーバーは内部インターフェイスにも構成する必要があります。<br />-イントラネットインターフェイスに既定のゲートウェイを構成しないでください。|内部 IPv4 ネットワーク上のすべてのサブネットに到達できるように DirectAccess サーバーを構成するには、次のようにします。<br /><br />1. イントラネット上のすべての場所の IPv4 アドレス空間を一覧表示します。<br />2. **route add \-p**または**netsh interface ipv4 add route**コマンドを使用して、ipv4 アドレス空間を静的ルートとして DirectAccess サーバーの ipv4 ルーティングテーブルに追加します。|  
-    |IPv6 インターネットおよび IPv6 イントラネット|次を構成します。<br /><br />-ISP によって提供される自動構成されたアドレス構成を使用します。<br />- **Route print**コマンドを使用して、ISP ルーターを指す既定の ipv6 ルートが ipv6 ルーティングテーブルに存在することを確認します。<br />-ISP ルーターとイントラネットルーターが RFC 4191 で説明されている既定のルーター基本設定を使用し、ローカルイントラネットルーターよりも高い既定の基本設定を使用しているかどうかを確認します。 どちらについても使用している場合は、既定のルートに他の構成は必要ありません。 ISP ルーターの高度な基本設定によって、DirectAccess サーバーの既定の IPv6 アクティブ ルートが IPv6 インターネットを示すことが保証されます。<br /><br />DirectAccess サーバーは IPv6 ルーターであるため、ネイティブ IPv6 インフラストラクチャがある場合は、インターネット インターフェイスからイントラネット上のドメイン コントローラーに到達することもできます。 この場合は、境界ネットワーク内のドメインコントローラーにパケットフィルターを追加して、DirectAccess サーバーのインターネット\-接続インターフェイスの IPv6 アドレスに接続できないようにします。|次を構成します。<br /><br />-既定の基本設定レベルを使用していない場合は、 **netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes\=enabled**コマンドを使用して、イントラネットインターフェイスを構成します。 このコマンドを実行すると、イントラネット ルーターを示す既定のルートがそれ以上 IPv6 ルーティング テーブルに追加されないことが保証されます。 イントラネット インターフェイスの InterfaceIndex は、netsh interface show interface コマンドの表示で確認できます。|IPv6 イントラネットがある場合、IPv6 のすべての場所に到達できるように DirectAccess サーバーを構成するには、次のようにします。<br /><br />1. イントラネット上のすべての場所の IPv6 アドレス空間を一覧表示します。<br />2. **netsh interface ipv6 add route**コマンドを使用して、ipv6 アドレス空間を静的ルートとして DirectAccess サーバーの ipv6 ルーティングテーブルに追加します。|  
+    |IPv4 イントラネットおよび IPv4 インターネット|次の内容を構成します。<br /><br />-適切なサブネットマスクを持つ1つの静的パブリック IPv4 アドレス。<br />-インターネットファイアウォールまたはローカルインターネットサービスプロバイダーの既定のゲートウェイ IPv4 アドレス \(ISP\) ルーター。|次の内容を構成します。<br /><br />適切なサブネット マスクを持つ IPv4 イントラネット アドレスが。<br />-イントラネット名前空間の特定の DNS サフィックスを\-接続。 DNS サーバーは内部インターフェイスにも構成する必要があります。<br />-イントラネットインターフェイスに既定のゲートウェイを構成しないでください。|内部 IPv4 ネットワーク上のすべてのサブネットに到達できるように DirectAccess サーバーを構成するには、次のようにします。<br /><br />1. イントラネット上のすべての場所の IPv4 アドレス空間を一覧表示します。<br />2. **route add \-p**または**netsh interface ipv4 add route**コマンドを使用して、ipv4 アドレス空間を静的ルートとして DirectAccess サーバーの ipv4 ルーティングテーブルに追加します。|  
+    |IPv6 インターネットおよび IPv6 イントラネット|次の内容を構成します。<br /><br />-ISP によって提供される自動構成されたアドレス構成を使用します。<br />- **Route print**コマンドを使用して、ISP ルーターを指す既定の ipv6 ルートが ipv6 ルーティングテーブルに存在することを確認します。<br />-ISP ルーターとイントラネットルーターが RFC 4191 で説明されている既定のルーター基本設定を使用し、ローカルイントラネットルーターよりも高い既定の基本設定を使用しているかどうかを確認します。 どちらについても使用している場合は、既定のルートに他の構成は必要ありません。 ISP ルーターの高度な基本設定によって、DirectAccess サーバーの既定の IPv6 アクティブ ルートが IPv6 インターネットを示すことが保証されます。<br /><br />DirectAccess サーバーは IPv6 ルーターであるため、ネイティブ IPv6 インフラストラクチャがある場合は、インターネット インターフェイスからイントラネット上のドメイン コントローラーに到達することもできます。 この場合は、境界ネットワーク内のドメインコントローラーにパケットフィルターを追加して、DirectAccess サーバーのインターネット\-接続インターフェイスの IPv6 アドレスに接続できないようにします。|次の内容を構成します。<br /><br />-既定の基本設定レベルを使用していない場合は、 **netsh interface ipv6 Set InterfaceIndex ignoredefaultroutes\=enabled**コマンドを使用して、イントラネットインターフェイスを構成します。 このコマンドを実行すると、イントラネット ルーターを示す既定のルートがそれ以上 IPv6 ルーティング テーブルに追加されないことが保証されます。 イントラネット インターフェイスの InterfaceIndex は、netsh interface show interface コマンドの表示で確認できます。|IPv6 イントラネットがある場合、IPv6 のすべての場所に到達できるように DirectAccess サーバーを構成するには、次のようにします。<br /><br />1. イントラネット上のすべての場所の IPv6 アドレス空間を一覧表示します。<br />2. **netsh interface ipv6 add route**コマンドを使用して、ipv6 アドレス空間を静的ルートとして DirectAccess サーバーの ipv6 ルーティングテーブルに追加します。|  
     |IPv4 インターネットおよび IPv6 イントラネット|DirectAccess サーバーは、IPv4 インターネット上の 6to4 リレーへの Microsoft 6to4 Adapter インターフェイスを使って、既定の IPv6 ルート トラフィックを転送します。 次のコマンドを使用して、ネイティブ IPv6 が企業\) ネットワークに展開されていない場合に使用される IPv4 インターネット \(で、Microsoft 6to4 リレーの IPv4 アドレス用に DirectAccess サーバーを構成できます。 netsh interface IPv6 6to4 set relay name\=192.88.99.1 state\=enabled コマンド。|||  
   
     > [!NOTE]  
@@ -65,7 +65,7 @@ ms.locfileid: "71404877"
     > 1.  パブリック IPv4 アドレスが割り当てられている DirectAccess クライアントは、6to4 移行テクノロジを使ってイントラネットに接続します。 DirectAccess クライアントが6to4 を使用して DirectAccess サーバーに接続できない場合は、IP\-HTTPS が使用されます。  
     > 2.  ネイティブ IPv6 クライアント コンピューターは、ネイティブ IPv6 経由で DirectAccess サーバーに接続できます。移行テクノロジを必要としません。  
   
-### <a name="ConfigFirewalls"></a>ファイアウォールの要件を計画する  
+### <a name="plan-firewall-requirements"></a><a name="ConfigFirewalls"></a>ファイアウォールの要件を計画する  
 エッジ ファイアウォールの背後に設置された DirectAccess サーバーが IPv4 インターネット上にあるときは、DirectAccess トラフィックについて次の例外が必要になります。  
   
 -   6to4 トラフィック-IP プロトコル41の受信と送信。  
@@ -89,7 +89,7 @@ DirectAccess サーバーが IPv6 インターネット上にあるときは、D
   
 -   すべての IPv4\/IPv6 トラフィックに対する TCP\/UDP  
   
-### <a name="bkmk_1_2_CAs_and_certs"></a>証明書の要件を計画する  
+### <a name="plan-certificate-requirements"></a><a name="bkmk_1_2_CAs_and_certs"></a>証明書の要件を計画する  
 IPsec の証明書の要件には、DirectAccess クライアント コンピューターと DirectAccess サーバーとの間で IPsec 接続を確立するときにクライアントによって使用されるコンピューター証明書と、DirectAccess クライアントとの IPsec 接続を確立するために DirectAccess サーバーによって使用されるコンピューター証明書が含まれます。 Windows Server 2012 R2 および Windows Server 2012 の DirectAccess の場合、これらの IPsec 証明書の使用は必須ではありません。 作業の開始ウィザードでは、証明書を要求せずに IPsec 認証を実行する Kerberos プロキシとして機能するように DirectAccess サーバーを構成します。
   
 1.  **IP\-HTTPS サーバー**。 DirectAccess を構成すると、DirectAccess サーバーは、IP\-HTTPS web リスナーとして機能するように自動的に構成されます。 IP\-HTTPS サイトには web サイト証明書が必要です。クライアントコンピューターは、証明書の CRL\) サイト \(証明書失効リストに接続できる必要があります。 DirectAccess の有効化ウィザードでは、SSTP VPN 証明書の使用を試みます。 SSTP が構成されていない場合は、IP\-HTTPS の証明書がコンピューターの個人用ストアに存在するかどうかを確認します。 使用できるものがない場合は、自己\-署名入り証明書が自動的に作成されます。
@@ -104,7 +104,7 @@ IPsec の証明書の要件には、DirectAccess クライアント コンピュ
 ||内部 CA-内部 CA を使用して、IP\-HTTPS 証明書を発行できます。ただし、CRL 配布ポイントが外部で使用可能であることを確認する必要があります。|自己\-署名入り証明書-ネットワークロケーションサーバーの web サイトの自己\-署名入り証明書を使用できます。ただし、マルチサイト展開では、自己\-署名入り証明書を使用することはできません。|  
 ||自己\-署名入り証明書-IP\-HTTPS サーバーに自己\-署名された証明書を使用できます。ただし、CRL 配布ポイントが外部で使用可能であることを確認する必要があります。 自己\-署名入り証明書をマルチサイト展開で使用することはできません。||  
   
-#### <a name="bkmk_website_cert_IPHTTPS"></a>IP\-HTTPS およびネットワークロケーションサーバーの証明書を計画する  
+#### <a name="plan-certificates-for-ip-https-and-network-location-server"></a><a name="bkmk_website_cert_IPHTTPS"></a>IP\-HTTPS およびネットワークロケーションサーバーの証明書を計画する  
 この目的で証明書をプロビジョニングする場合は、「[詳細設定を使用して単一の DirectAccess サーバーを展開する](../single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)」を参照してください。 使用できる証明書がない場合は、はじめにウィザードによって、自己\-署名入り証明書が自動的に作成されます。
   
 > [!NOTE]
@@ -146,14 +146,14 @@ DirectAccess 展開では、次のことについて DNS が必要です。
 > [!NOTE]  
 > DirectAccess をデプロイする場合は、Windows Server 2003 を搭載している DNS サーバーは使用しないことをお勧めします。 Windows Server 2003 の DNS サーバーは IPv6 のレコードをサポートしていますが、Microsoft による Windows Server 2003 のサポートは終了しています。 さらに、ファイル レプリケーション サービスでの問題のため、ドメイン コントローラーが Windows Server 2003 を搭載している場合は、DirectAccess をデプロイしないでください。 詳細については、次を参照してください。 [DirectAccess サポートされない構成](../DirectAccess-Unsupported-Configurations.md)します。  
   
-### <a name="bkmk_1_4_NLS"></a>ネットワークロケーションサーバーを計画する  
+### <a name="plan-the-network-location-server"></a><a name="bkmk_1_4_NLS"></a>ネットワークロケーションサーバーを計画する  
 ネットワーク ロケーション サーバーは、DirectAccess クライアントが企業ネットワーク内に配置されているかどうかを検出するのに使用する Web サイトです。 企業ネットワーク内のクライアントは内部リソースにアクセスするのに DirectAccess を使用せず、リソースに直接接続します。  
   
 作業の開始ウィザードでは、ネットワーク ロケーション サーバーが DirectAccess サーバー上に自動的にセットアップされ、DirectAccess の展開時に Web サイトが自動的に作成されます。 これによって、証明書基盤を使用しないシンプルなインストールが実現します。
   
 自己\-署名入り証明書を使用せずに、ネットワークロケーションサーバーを展開する場合は、 [「詳細設定を使用して単一の DirectAccess サーバーを展開](../single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)する」を参照してください。
   
-### <a name="bkmk_1_6_AD"></a>計画 Active Directory  
+### <a name="plan-active-directory"></a><a name="bkmk_1_6_AD"></a>計画 Active Directory  
 DirectAccess では、次のように Active Directory および Active Directory グループポリシーオブジェクトを使用します。
   
 -   **認証**。 Active Directory を認証に使用します。 DirectAccess トンネルでは、内部リソースにアクセスするユーザーに対して Kerberos 認証を使用します。
@@ -184,7 +184,7 @@ DirectAccess 展開用に Active Directory を計画するときは、次のこ�
 > - DirectAccess サーバーはドメイン コントローラーになることができません。  
 > - DirectAccess に使用される Active Directory ドメインコントローラーは、DirectAccess サーバーの外部インターネットアダプターから到達できないこと \(必要があります。このアダプターは、Windows ファイアウォール\)のドメインプロファイルに含まれていてはなりません。  
   
-### <a name="bkmk_1_7_GPOs"></a>グループポリシーオブジェクトの計画  
+### <a name="plan-group-policy-objects"></a><a name="bkmk_1_7_GPOs"></a>グループポリシーオブジェクトの計画  
 DirectAccess の構成時に構成された DirectAccess 設定は、GPO\)\(グループポリシーオブジェクトに収集されます。 次に示すとおり、DirectAccess の設定は 2 つの異なる GPO に読み込まれて配布されます。  
   
 -   **DirectAccess クライアント GPO**。 この GPO には、IPv6 移行テクノロジ設定、NRPT エントリ、セキュリティが強化された Windows ファイアウォール接続セキュリティの規則を含むクライアント設定が含まれます。 この GPO は、クライアント コンピューターに対して指定されたセキュリティ グループに適用されます。  
@@ -250,7 +250,7 @@ DirectAccess サーバー、クライアント、またはアプリケーショ�
   
 3.  GPO が見つからないというエラー メッセージが表示されます。 **[構成設定の削除]** をクリックします。 完了後、サーバーは\-構成されていない状態に復元されます。  
   
-### <a name="BKMK_Links"></a>次のステップ  
+### <a name="next-step"></a><a name="BKMK_Links"></a>次のステップ  
   
 -   [手順 2: 基本的な DirectAccess 展開を計画する](da-basic-plan-s2-deployment.md)  
   

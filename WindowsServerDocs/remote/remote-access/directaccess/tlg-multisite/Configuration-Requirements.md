@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: aaabdf3b-d926-48d9-9d01-358668da88ba
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0140c58cd955fabe87710b1530f2de3132b4147c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 140b6c8b78c696e0e30b8549f4dda8a49ccd0789
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404767"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310698"
 ---
 # <a name="configuration-requirements"></a>構成要件
 

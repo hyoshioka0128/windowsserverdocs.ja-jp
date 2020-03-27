@@ -11,14 +11,14 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8e9e5c81-aa61-479e-abaf-64c5e95f90dc
 ms.author: grcusanz
-author: shortpatti
+author: eross-msft
 ms.date: 08/26/2018
-ms.openlocfilehash: 05704beeae27bd9de9ad0c5cf578581c650a976f
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 200d53d856d4b37daffde0c6213ec4f5eb26773d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406032"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80317572"
 ---
 # <a name="guest-clustering-in-a-virtual-network"></a>仮想ネットワークでのゲスト クラスタリング
 

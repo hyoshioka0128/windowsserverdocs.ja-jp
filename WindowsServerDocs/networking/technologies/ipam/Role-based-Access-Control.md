@@ -10,18 +10,18 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ecdfc589-fa14-4bb3-ab7e-456ebc719385
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: cf6b8418482b606c86bac77b2790e3365e80bf5d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dc4dc26a5079a34cdaa3d455e59f6bfb4d1f74c1
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355159"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309520"
 ---
 # <a name="role-based-access-control"></a>役割ベースのアクセス制御
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、IPAM でのロールベースのアクセス制御の使用について説明します。  
   
@@ -42,7 +42,7 @@ ms.locfileid: "71355159"
   
 -   ユーザーは、特定のゾーンの DNS リソースレコードを編集できます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [サーバーマネージャーを使用してロールベースの Access Control を管理する](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Server-Manager.md)  
 [Windows PowerShell を使用して役割ベースの Access Control を管理する](../../technologies/ipam/Manage-Role-Based-Access-Control-with-Windows-PowerShell.md)  
 [IPAM の管理](Manage-IPAM.md)  

@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: b6b8ebfe0a6b42fe174d4b376b981641f043cf58
-ms.sourcegitcommit: 3d5a8357491b6bbd180d1238ea98f23bfc544ac7
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: c53adce68168ac4890f14c766e10b2b886dd598c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75827679"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308951"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>手順1基本的な DirectAccess インフラストラクチャを構成する
 
@@ -36,10 +36,10 @@ ms.locfileid: "75827679"
 |セキュリティ グループを構成する|DirectAccess クライアント コンピューターを含むセキュリティ グループと、展開で必要な他の任意のセキュリティ グループを構成します。|  
   
 > [!NOTE]  
-> このトピックでは、説明した手順の一部を自動化するのに使用できる Windows PowerShell コマンドレットのサンプルを示します。 詳細については、次を参照してください。 [コマンドレットを使用した](https://go.microsoft.com/fwlink/p/?linkid=230693)します。  
+> このトピックには、説明する手順の一部を自動化するために使用できるサンプルの Windows PowerShell コマンドレットが含まれます。 詳しくは、 [コマンドレットの使用に関するページ](https://go.microsoft.com/fwlink/p/?linkid=230693)をご覧ください。  
   
-## <a name="ConfigNetworkSettings"></a>サーバーのネットワーク設定を構成する  
-IPv4 と IPv6 を使用した環境での単一サーバーの展開には次のネットワーク インフラストラクチャ設定が必要です。 使用してすべての IP アドレスが構成されている **アダプターの設定を変更する** で、 **Windows ネットワークと共有センター**します。  
+## <a name="configure-server-network-settings"></a><a name="ConfigNetworkSettings"></a>サーバーのネットワーク設定を構成する  
+IPv4 と IPv6 を使用した環境での単一サーバーの展開には次のネットワーク インフラストラクチャ設定が必要です。 すべての IP アドレスは、Windows の **[ネットワークと共有センター]** の **[アダプターの設定の変更**] を使用して構成されます。  
   
 -   エッジ トポロジ  
   
@@ -74,14 +74,14 @@ IPv4 と IPv6 を使用した環境での単一サーバーの展開には次の
 >   
 >     IPsec ポリシーの名前は、DirectAccess DaServerToInfra と DirectAccess DaServerToCorp です。  
   
-## <a name="ConfigRouting"></a>企業ネットワークでルーティングを構成する  
+## <a name="configure-routing-in-the-corporate-network"></a><a name="ConfigRouting"></a>企業ネットワークでルーティングを構成する  
 次のように、企業ネットワークでルーティングを構成します。  
   
 -   組織でネィティブ IPv6 が展開されている場合、内部ネットワーク上のルーターがリモート アクセス サーバー経由で IPv6 トラフィックをルーティングするようにルートを追加します。  
   
 -   リモート アクセス サーバー上で組織の IPv4 および IPv6 ルートを手動で構成します。 組織 (/48) の IPv6 プレフィックスが付いたすべてのトラフィックが内部ネットワークに転送されるように、公開されたルートを追加します。 さらに、IPv4 トラフィックの場合、IPv4 トラフィックが内部ネットワークに転送されるように、明示的なルートを追加します。  
   
-## <a name="ConfigFirewalls"></a>ファイアウォールを構成する  
+## <a name="configure-firewalls"></a><a name="ConfigFirewalls"></a>ファイアウォールを構成する  
 展開で追加のファイアウォールを使用し、リモート アクセス サーバーが IPv4 インターネット上にある場合は、次のインターネットに接続するファイアウォール例外をリモート アクセス トラフィックに適用します。  
   
 -   6to4 トラフィックの IP プロトコル 41 の受信および送信します。  
@@ -106,24 +106,24 @@ IPv4 と IPv6 を使用した環境での単一サーバーの展開には次の
   
 -   すべての IPv4/IPv6 トラフィックに対する TCP/UDP  
   
-## <a name="ConfigDNS"></a>DNS サーバーを構成する  
+## <a name="configure-the-dns-server"></a><a name="ConfigDNS"></a>DNS サーバーを構成する  
 展開内の内部ネットワークのネットワーク ロケーション サーバー Web サイトの DNS エントリを手動で構成する必要があります。  
   
-### <a name="NLS_DNS"></a>ネットワークロケーションサーバーと NCSI プローブ DNS レコードを作成するには  
+### <a name="to-create-the-network-location-server-and-ncsi-probe-dns-records"></a><a name="NLS_DNS"></a>ネットワークロケーションサーバーと NCSI プローブ DNS レコードを作成するには  
   
 1.  内部ネットワークの DNS サーバー上で実行 **dnsmgmt.msc** ENTER キーを押します。  
   
-2.  左側のウィンドウで、 **DNS マネージャー** コンソールで、ドメインの前方参照ゾーンを展開します。 ドメインを右クリックし、クリックして **新しいホスト (A または AAAA)** します。  
+2.  **[DNS マネージャー]** コンソールの左側のウィンドウで、ドメインの前方参照ゾーンを展開します。 ドメインを右クリックし、 **[新しいホスト (A または AAAA)]** をクリックします。  
   
-3.  **新しいホスト** ダイアログ ボックスで、 **名 (使用して親ドメイン名空白の場合)** (これは DirectAccess クライアントがネットワーク ロケーション サーバーへの接続に使用する名前です)、ネットワーク ロケーション サーバー web サイトの DNS 名を入力します。 **IP アドレス** ボックスで、ネットワーク ロケーション サーバーの IPv4 アドレスを入力してをクリックし、 **ホストの追加**します。 **DNS** ダイアログ ボックスで、をクリックして **[ok]** します。  
+3.  **[新しいホスト]** ダイアログ ボックスで、[**名前 (空欄の場合は親ドメインを使用)]** ボックスに、ネットワーク ロケーション サーバー Web サイトの DNS 名を入力します (これは DirectAccess クライアントがネットワーク ロケーション サーバーに接続するために使用する名前です)。 **[IP アドレス]** ボックスにネットワーク ロケーション サーバーの IPv4 アドレスを入力して、 **[ホストの追加]** をクリックします。 **[DNS]** ダイアログ ボックスで、 **[OK]** をクリックします。  
   
-4.  **新しいホスト** ダイアログ ボックスで、 **名 (使用して親ドメイン名空白の場合)**  (既定の web プローブの名前は directaccess webprobehost) の web プローブの DNS 名を入力します。 **IP アドレス** ボックス、web プローブの IPv4 アドレスを入力し、クリックして **ホストの追加**します。 directaccess-corpconnectivityhost および手動で作成した接続検証ツールに対し、このプロセスを繰り返します。 **DNS** ダイアログ ボックスで、をクリックして **[ok]** します。  
+4.  **[新しいホスト]** ダイアログ ボックスで、[**名前 (空欄の場合は親ドメインを使用)]** ボックスに、Web プローブの DNS 名を入力します (既定の Web プローブの名前は directaccess-webprobehost です)。 **[IP アドレス]** ボックスに Web プローブの IPv4 アドレスを入力して、 **[ホストの追加]** をクリックします。 directaccess-corpconnectivityhost と手動で作成した接続検証方法について、このプロセスを繰り返します。 **[DNS]** ダイアログ ボックスで、 **[OK]** をクリックします。  
   
 5.  **[完了]** をクリックします。  
   
 windows PowerShell の ![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
 
-次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 各コマンドレットを単一行に入力します。ただし、ここでは、書式上の制約があるために、複数行に改行されて表示される場合があります。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 Add-DnsServerResourceRecordA -Name <network_location_server_name> -ZoneName <DNS_zone_name> -IPv4Address <network_location_server_IPv4_address>  
@@ -136,7 +136,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 -   **CRL 失効確認** の DirectAccess は DirectAccess クライアントとリモート アクセス サーバー間の IP-HTTPS 接続、DirectAccess クライアントとネットワーク ロケーション サーバー間での HTTPS ベースの接続、証明書の失効確認を使用します。 どちらの場合も、DirectAccess クライアントは、CRL 配布ポイントの場所の解決とアクセスができる必要があります。  
   
-## <a name="ConfigAD"></a>Active Directory の構成  
+## <a name="configure-active-directory"></a><a name="ConfigAD"></a>Active Directory の構成  
 リモート アクセス サーバーとすべての DirectAccess クライアント コンピューターは Active Directory ドメインに参加している必要があります。 DirectAccess クライアント コンピューターは、次のいずれかのドメインの種類のメンバーである必要があります。  
   
 -   リモート アクセス サーバーと同じフォレストに属するドメイン。  
@@ -147,7 +147,7 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 #### <a name="to-join-the-remote-access-server-to-a-domain"></a>リモート アクセス サーバーをドメインに追加するには  
   
-1.  サーバー マネージャーで、クリックして **ローカル サーバー**します。 詳細ウィンドウで、 **[コンピューター名]** の横にあるリンクをクリックします。  
+1.  サーバー マネージャーで **[ローカル サーバー]** をクリックします。 詳細ウィンドウで、 **[コンピューター名]** の横にあるリンクをクリックします。  
   
 2.  **[システムのプロパティ]** ダイアログボックスで、 **[コンピューター名]** タブをクリックします。 **[コンピューター名]** タブで、 **[変更]** をクリックします。  
   
@@ -167,13 +167,13 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 1.  実行 **explorer.exe**します。  
   
-2.  コンピューターのアイコンを右クリックし、をクリックして **プロパティ**します。  
+2.  コンピューター アイコンを右クリックし、**プロパティ** をクリックします。  
   
-3.  **システム** ] ページで [ **システムの詳細設定**します。  
+3.  **[システム]** ページで、 **[システムの詳細設定]** をクリックします。  
   
-4.  **システム プロパティ** ] ダイアログ ボックスの [、 **コンピューター名** ] タブ、[ **変更**します。  
+4.  **[システムのプロパティ]** ダイアログ ボックスの **[コンピューター名]** タブで **[変更]** をクリックします。  
   
-5.  **コンピューター名**, 、サーバーをドメインに参加する際にも、コンピューター名を変更する場合は、コンピューターの名前を入力します。 **[次のメンバー]** で **[ドメイン]** をクリックし、サーバーの追加先のドメイン名 (corp.contoso.com など) 入力し、 **[OK]** をクリックします。  
+5.  サーバーをドメインに追加するときにコンピューター名も変更する場合は、 **[コンピューター名]** にコンピューター名を入力します。 **[次のメンバー]** で **[ドメイン]** をクリックし、サーバーの追加先のドメイン名 (corp.contoso.com など) 入力し、 **[OK]** をクリックします。  
   
 6.  ユーザー名とパスワードを求めるメッセージが表示されたら、ドメインにコンピューターを追加する権限を持つユーザーのユーザー名とパスワードを入力し、 **[OK]** をクリックします。  
   
@@ -181,11 +181,11 @@ Add-DnsServerResourceRecordAAAA -Name <network_location_server_name> -ZoneName <
   
 8.  コンピューターを再起動するよう求めるメッセージが表示されたら、 **[OK]** をクリックします。  
   
-9. **システム プロパティ**  ダイアログ ボックスを閉じる をクリックします。 クリックして **今すぐ再起動** 入力を求められたらします。  
+9. **システムのプロパティ** ダイアログ ボックスで、閉じる をクリックします。 指示に従い、 **[今すぐ再起動する]** をクリックします。  
   
 windows PowerShell の ![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>windows powershell の同等のコマンド</em>***  
   
-次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 各コマンドレットを単一行に入力します。ただし、ここでは、書式上の制約があるために、複数行に改行されて表示される場合があります。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 以下の Add-Computer コマンドを入力した後に、ドメイン資格情報を指定する必要があります。  
   
@@ -194,7 +194,7 @@ Add-Computer -DomainName <domain_name>
 Restart-Computer  
 ```  
   
-## <a name="ConfigGPOs"></a>Gpo を構成する  
+## <a name="configure-gpos"></a><a name="ConfigGPOs"></a>Gpo を構成する  
 リモート アクセスを展開する 2 つのグループ ポリシー オブジェクトの最小値を必要とします。 1 つのグループ ポリシー オブジェクトは、リモート アクセス サーバーの設定を格納し、DirectAccess クライアント コンピューターの設定が含まれています。 リモート アクセスを構成するときに、ウィザードは自動的に必要なグループ ポリシー オブジェクトを作成します。 ただし、名前付け規則を実施する組織、またはグループ ポリシー オブジェクトを作成または更新に必要なアクセス許可がないは、リモート アクセスを構成する前に、作成する必要があります。  
   
 グループ ポリシー オブジェクトを作成するを参照してください。 [を作成し、グループ ポリシー オブジェクトを編集](https://technet.microsoft.com/library/cc754740.aspx)します。  
@@ -213,33 +213,33 @@ Restart-Computer
 > [!Warning]
 > Directaccess セットアップウィザード以外の任意の方法を使用して directaccess を構成する (DirectAccess グループポリシーオブジェクトを直接変更する、サーバーまたはクライアントの既定のポリシー設定を手動で変更するなど) ことはサポートされていません。
   
-## <a name="ConfigSGs"></a>セキュリティグループの構成  
+## <a name="configure-security-groups"></a><a name="ConfigSGs"></a>セキュリティグループの構成  
 クライアント コンピューターのグループ ポリシー オブジェクトに含まれる DirectAccess 設定は、リモート アクセスを構成するときに指定したセキュリティ グループのメンバーであるコンピューターにのみ適用されます。  
   
-### <a name="Sec_Group"></a>DirectAccess クライアントのセキュリティグループを作成するには  
+### <a name="to-create-a-security-group-for-directaccess-clients"></a><a name="Sec_Group"></a>DirectAccess クライアントのセキュリティグループを作成するには  
   
-1.  実行 **dsa.msc**します。 **Active Directory ユーザーとコンピューター** コンソールの左側のウィンドウで、セキュリティ グループを含むを右クリックし、ドメインを展開する **ユーザー**, 、 をポイント **新規**, 、クリックして **グループ**します。  
+1.  実行 **dsa.msc**します。 **[Active Directory ユーザーとコンピューター]** コンソールの左側のウィンドウで、セキュリティ グループを含むドメインを展開し、 **[Users]** を右クリックし、 **[新規作成]** をクリックして、 **[グループ]** をクリックします。  
   
-2.  **新しいオブジェクト - グループ** ダイアログ ボックスで、 **グループ名**, 、セキュリティ グループの名前を入力します。  
+2.  **[新しいオブジェクト - グループ]** ダイアログ ボックスで、 **[グループ名]** の下にセキュリティ グループの名前を入力します。  
   
-3.  [ **グループのスコープ**, 、] をクリックして **グローバル**, [ **グループの種類**, 、] をクリックして **セキュリティ**, 、順にクリック **OK**します。  
+3.  **[グループのスコープ]** の下で **[グローバル]** をクリックし、 **[グループの種類]** の下で **[セキュリティ]** をクリックし、 **[OK]** をクリックします。  
   
-4.  DirectAccess クライアント コンピューターのセキュリティ グループをダブルクリックし、プロパティ ダイアログ ボックスをクリックして、 **メンバー**  タブをクリックします。  
+4.  DirectAccess クライアント コンピューター セキュリティ グループをダブルクリックし、プロパティー ダイアログ ボックスで、 **[メンバー]** タブをクリックします。  
   
 5.  **[メンバー]** タブで **[追加]** をクリックします。  
   
-6.  **[ユーザー、連絡先、コンピューター、またはサービス アカウント** ] ダイアログ ボックスで、クリックして、DirectAccess 用に有効にするクライアント コンピューターを選択 **OK**します。  
+6.  **[ユーザー、連絡先、コンピューター、サービス アカウントまたはグループの選択]** ダイアログ ボックスで、DirectAccess 用に有効にするクライアント コンピューターを選択し、 **[OK]** をクリックします。  
   
 windows PowerShell の ![](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)**Windows powershell の同等のコマンド**  
   
-次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 各コマンドレットを単一行に入力します。ただし、ここでは、書式上の制約があるために、複数行に改行されて表示される場合があります。  
+次の Windows PowerShell コマンドレットは、前の手順と同じ機能を実行します。 書式上の制約のため、複数行にわたって折り返される場合でも、各コマンドレットは 1 行に入力してください。  
   
 ```  
 New-ADGroup -GroupScope global -Name <DirectAccess_clients_group_name>  
 Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_name>  
 ```  
   
-## <a name="BKMK_Links"></a>次のステップ  
+## <a name="next-step"></a><a name="BKMK_Links"></a>次のステップ  
   
 -   [手順 2: 基本的な DirectAccess サーバーを構成する](da-basic-configure-s2-server.md)  
   

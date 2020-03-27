@@ -6,14 +6,14 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: article
 ms.assetid: 69e0e28a-98ae-4ade-bd27-ce2ad7eb310f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 28abdfe8295ad3f9fac29b8cc80aeebe2992392c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 083558762051283115211d10d32ebb6fd3ad3953
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71366871"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308033"
 ---
 # <a name="configure-and-view-vlan-settings-on-hyper-v-virtual-switch-ports"></a>Hyper-V 仮想スイッチ ポートで VLAN 設定を構成および表示する
 
@@ -53,7 +53,7 @@ VLAN スイッチのポート設定を構成および表示するには、次の
 
 また、両方の構成方法を使用して、同じスイッチポート VLAN 設定を構成しないようにすることも重要です。 この場合、スイッチポートが正しく構成されていないため、ネットワーク通信でエラーが発生する可能性があります。
 
-### <a name="resources"></a>参考資料
+### <a name="resources"></a>リソース
 
 このトピックで説明されている Windows PowerShell コマンドの詳細については、以下を参照してください。
 

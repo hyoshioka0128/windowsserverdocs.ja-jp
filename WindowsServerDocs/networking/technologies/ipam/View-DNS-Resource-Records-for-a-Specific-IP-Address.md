@@ -10,22 +10,22 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f590fb86-4195-4f90-98cb-e90459d4c1e3
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 63fc52644b4f08d745891763265cc8f929e89910
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 170be9d3d47374188640ef4b132adce9043e4e29
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355092"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309472"
 ---
 # <a name="view-dns-resource-records-for-a-specific-ip-address"></a>特定の IP アドレスの DNS リソース レコードを表示する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックを使用すると、選択した IP アドレスに関連付けられている DNS リソースレコードを表示できます。  
   
-メンバーシップ **管理者**, 、同等の権限をこの手順を実行するために必要な最低限のですか。  
+この手順を実行するには、**Administrators** のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
   
 ### <a name="to-view-resource-records-for-an-ip-address"></a>IP アドレスのリソースレコードを表示するには  
   
@@ -39,7 +39,7 @@ ms.locfileid: "71355092"
   
     ![DNS リソースレコードの表示](../../media/View-DNS-Resource-Records-for-a-Specific-IP-Address/ipam_IPInventory_02.jpg)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [DNS リソースレコードの管理](DNS-Resource-Record-Management.md)  
 [IPAM の管理](Manage-IPAM.md)  
   

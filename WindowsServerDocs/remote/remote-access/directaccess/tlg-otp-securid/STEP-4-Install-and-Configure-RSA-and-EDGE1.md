@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d46ede6f-1a21-414d-b8c3-6b5c87344b9d
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 3519e9d6e89b26a733b6b0178334f86e284bddfb
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 1a2244422c8b625f5641fb775a2e503b096b07b5
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404753"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308615"
 ---
 # <a name="step-4-install-and-configure-rsa-and-edge1"></a>手順 4 RSA と EDGE1 をインストールして構成する
 
@@ -49,17 +49,17 @@ RSA の展開を構成するには、次の手順を実行します。
   
 11. OTP 認証をサポートするように EDGE1 を構成します。 DirectAccess 用の OTP を構成し、構成を確認します。  
   
-## <a name="InstallOS"></a>RSA サーバーへのオペレーティングシステムのインストール  
+## <a name="install-the-operating-system-on-the-rsa-server"></a><a name="InstallOS"></a>RSA サーバーへのオペレーティングシステムのインストール  
   
 1.  RSA で、windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 のインストールを開始します。  
   
-2.  指示に従ってインストールを完了します。これには、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 (フルインストール) とローカル管理者アカウントの強力なパスワードを指定します。 ローカルの Administrator アカウントを使用してログオンします。  
+2.  指示に従ってインストールを完了します。これには、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 (フルインストール) とローカル管理者アカウントの強力なパスワードを指定します。 ローカル管理者アカウントを使用してログオンします。  
   
 3.  インターネットにアクセスできるネットワークに RSA を接続し Windows Update を実行して、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 の最新の更新プログラムをインストールしてから、インターネットから切断します。  
   
 4.  RSA を企業ネットワークサブネットに接続します。  
   
-## <a name="TCP"></a>RSA で TCP/IP を構成する  
+## <a name="configure-tcpip-on-rsa"></a><a name="TCP"></a>RSA で TCP/IP を構成する  
   
 1.  初期構成タスクで、 **[ネットワークの構成]** をクリックします。  
   
@@ -67,7 +67,7 @@ RSA の展開を構成するには、次の手順を実行します。
   
 3.  **[インターネット プロトコル バージョン 4 (TCP/IPv4)]** をクリックし、 **[プロパティ]** をクリックします。  
   
-4.  **[次の IP アドレスを使う]** をクリックします。 **[IP アドレス]** に、「 **10.0.0.5**」と入力します。 **[サブネット マスク]** に、「 **255.255.255.0**」と入力します。 **[デフォルトゲートウェイ]** に、「 **10.0.0.2**」と入力します。 **[次の dns サーバーのアドレスを使用する]** をクリックし、 **[優先 dns サーバー]** に「 **10.0.0.1**」と入力します。  
+4.  **[次の IP アドレスを使う]** をクリックします。 **[IP アドレス]** に、「**10.0.0.5**」と入力します。 **[サブネット マスク]** に、「**255.255.255.0**」と入力します。 **[デフォルトゲートウェイ]** に、「 **10.0.0.2**」と入力します。 **[次の dns サーバーのアドレスを使用する]** をクリックし、 **[優先 dns サーバー]** に「 **10.0.0.1**」と入力します。  
   
 5.  **[詳細設定]** 、 **[DNS]** タブの順にクリックします。  
   
@@ -77,7 +77,7 @@ RSA の展開を構成するには、次の手順を実行します。
   
 8.  **[ネットワーク接続]** ウィンドウを閉じます。  
   
-## <a name="copyinstfiles"></a>認証マネージャーのインストールファイルを RSA サーバーにコピーする  
+## <a name="copy-authentication-manager-installation-files-to-the-rsa-server"></a><a name="copyinstfiles"></a>認証マネージャーのインストールファイルを RSA サーバーにコピーする  
   
 1.  RSA サーバーで、C:\ rsa インストールフォルダーを作成します。  
   
@@ -87,7 +87,7 @@ RSA の展開を構成するには、次の手順を実行します。
   
 4.  RSA ライセンスファイルを C:\ rsa Installation\ license および Token にコピーします。  
   
-## <a name="JoinDomain"></a>RSA サーバーを CORP ドメインに参加させる  
+## <a name="join-the-rsa-server-to-the-corp-domain"></a><a name="JoinDomain"></a>RSA サーバーを CORP ドメインに参加させる  
   
 1.  **マイコンピューター**を右クリックし、 **[プロパティ]** をクリックします。  
   
@@ -107,9 +107,9 @@ RSA の展開を構成するには、次の手順を実行します。
   
 9. コンピューターが再起動したら、「 **User1** 」と入力し、**ログオン先** ボックスの一覧で CORP を選択して、 **OK**をクリックします。  
   
-## <a name="BKMK_Firewall"></a>RSA で Windows ファイアウォールを無効にする  
+## <a name="disable-windows-firewall-on-rsa"></a><a name="BKMK_Firewall"></a>RSA で Windows ファイアウォールを無効にする  
   
-1.  をクリックして**開始**、 をクリックして**コントロール パネルの** 、 をクリックして**システムとセキュリティ**、 をクリック**Windows ファイアウォール**します。  
+1.  **[スタート]** 、 **[コントロールパネル]** 、 **[システムとセキュリティ]** 、 **[Windows ファイアウォール]** の順にクリックします。  
   
 2.  [ **Windows ファイアウォールの有効化または無効化] を**クリックします。  
   
@@ -117,7 +117,7 @@ RSA の展開を構成するには、次の手順を実行します。
   
 4.  [ **OK]** をクリックし、[Windows ファイアウォール] を閉じます。  
   
-## <a name="install"></a>Rsa サーバーに RSA Authentication Manager をインストールする  
+## <a name="install-rsa-authentication-manager-on-the-rsa-server"></a><a name="install"></a>Rsa サーバーに RSA Authentication Manager をインストールする  
   
 1.  この処理中にセキュリティ警告メッセージがいつでも表示される場合は、 **[実行]** をクリックして続行します。  
   
@@ -145,7 +145,7 @@ RSA の展開を構成するには、次の手順を実行します。
   
 13. インストールが完了したら、 **[完了]** をクリックします。  
   
-## <a name="confiauthmgr"></a>RSA Authentication Manager の構成  
+## <a name="configure-rsa-authentication-manager"></a><a name="confiauthmgr"></a>RSA Authentication Manager の構成  
   
 1.  RSA セキュリティコンソールが自動的に開かない場合は、RSA コンピューターのデスクトップで、[RSA Security Console] をダブルクリックします。  
   
@@ -257,13 +257,13 @@ RSA の展開を構成するには、次の手順を実行します。
   
     7.  RSA Authentication Manager メディア auth_mgr コピーから、\win32-5.0-x86\ agent_nsload の x86_64 \ am\r sa-ace_nsload をインストールします。  
   
-## <a name="BKMK_DAProbeUser"></a>DAProbeUser の作成  
+## <a name="create-daprobeuser"></a><a name="BKMK_DAProbeUser"></a>DAProbeUser の作成  
   
 1.  **RSA セキュリティコンソール**で、 **[id]** タブをクリックし、 **[ユーザー]** をクリックして、 **[新規追加]** をクリックします。  
   
 2.  **[Last Name:]** セクションに **「Probe**」と入力し、 **[User ID:]** セクションに「 **DAProbeUser**」と入力します。 **[パスワード]** と **[パスワードの確認]** 入力 セクションに、強力なパスワードを入力します。 **[次回ログオン時にパスワードの変更をユーザーに要求する]** チェックボックスをオフにし、 **[保存]** をクリックします。  
   
-## <a name="InstToken"></a>CLIENT1 に RSA SecurID ソフトウェアトークンをインストールする  
+## <a name="install-rsa-securid-software-token-on-client1"></a><a name="InstToken"></a>CLIENT1 に RSA SecurID ソフトウェアトークンをインストールする  
 CLIENT1 に SecurID ソフトウェアトークンをインストールするには、次の手順に従います。  
   
 #### <a name="install-securid-software-token"></a>SecurID ソフトウェアトークンのインストール  
@@ -278,7 +278,7 @@ CLIENT1 に SecurID ソフトウェアトークンをインストールするに
   
 5.  **[セットアップの種類]** ダイアログボックスで **[標準]** を選択し、 **[次へ]** をクリックして、 **[インストール]** をクリックします。  
   
-6.  **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+6.  **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 7.  **[RSA SecurID ソフトウェアトークンを起動]** する チェックボックスをオンにし、 **[完了]** をクリックします。  
   
@@ -288,7 +288,7 @@ CLIENT1 に SecurID ソフトウェアトークンをインストールするに
   
 10. **[OK]** を 2 回クリックします。  
   
-## <a name="configAuthAgt"></a>RSA 認証エージェントとして EDGE1 を構成する  
+## <a name="configure-edge1-as-an-rsa-authentication-agent"></a><a name="configAuthAgt"></a>RSA 認証エージェントとして EDGE1 を構成する  
 RSA 認証を実行するように EDGE1 を構成するには、次の手順に従います。  
   
 #### <a name="configure-the-rsa-authentication-agent"></a>RSA 認証エージェントの構成  
@@ -307,11 +307,11 @@ RSA 認証を実行するように EDGE1 を構成するには、次の手順に
   
 5. 管理者特権でのコマンドプロンプトを開き、C:\windows\syswow64 に移動します。  
   
-6. 「 **Agent_nsload-f ノード <password>** 」と入力します。ここで <password> は、最初の RSA 構成で作成した強力なパスワードです。 Enter キーを押します。  
+6. 「 **Agent_nsload-f ノード <password>** 」と入力します。ここで <password> は、最初の RSA 構成で作成した強力なパスワードです。 [Enter] キーを押します。  
   
 7. C:\Windows\SysWOW64\securid を C:\windows\system32 にコピーします。  
   
-## <a name="configOTP"></a>OTP 認証をサポートするように EDGE1 を構成する  
+## <a name="configure-edge1-to-support-otp-authentication"></a><a name="configOTP"></a>OTP 認証をサポートするように EDGE1 を構成する  
 DirectAccess 用の OTP を構成し、構成を確認するには、次の手順に従います。  
   
 #### <a name="configure-otp-for-directaccess"></a>DirectAccess 用の OTP を構成する  
@@ -320,7 +320,7 @@ DirectAccess 用の OTP を構成し、構成を確認するには、次の手�
   
 2.  サーバー ウィンドウで  **EDGE1** を右クリックし、**リモートアクセス管理** を選択します。  
   
-3.  **[構成]** をクリックします。  
+3.  [構成] をクリックします。  
   
 4.  **[DirectAccess セットアップ]** ウィンドウの **[手順 2-リモートアクセスサーバー]** で、 **[編集]** をクリックします。  
   
@@ -335,13 +335,13 @@ DirectAccess 用の OTP を構成し、構成を確認するには、次の手�
   
 8.  **OTP CA サーバー** セクションで、APP1.corp.contoso.com を選択し、**追加** をクリックします。 **[次へ]** をクリックします。  
   
-9. **[Otp 証明書テンプレート]** ページで、 **[参照]** をクリックして、otp 認証用に発行された証明書の登録に使用する証明書テンプレートを選択し、 **[証明書テンプレート]** ダイアログボックスで **[DAOTPLogon]** を選択します。 **[OK]** をクリックします。 **[参照]** をクリックして、OTP 証明書の登録要求に署名するためにリモートアクセスサーバーによって使用される証明書を登録するために使用する証明書テンプレートを選択し、 **[証明書テンプレート]** ダイアログボックスで **[DAOTPRA]** を選択します。 **[OK]** をクリックします。 **[次へ]** をクリックします。  
+9. **[Otp 証明書テンプレート]** ページで、 **[参照]** をクリックして、otp 認証用に発行された証明書の登録に使用する証明書テンプレートを選択し、 **[証明書テンプレート]** ダイアログボックスで **[DAOTPLogon]** を選択します。 **[OK]** をクリックすると、 **[参照]** をクリックして、OTP 証明書の登録要求に署名するためにリモートアクセスサーバーによって使用される証明書を登録するために使用する証明書テンプレートを選択し、 **[証明書テンプレート]** ダイアログボックスで **[DAOTPRA]** を選択します。 **[OK]** をクリックします。 **[次へ]** をクリックします。  
   
 10. **[リモートアクセスサーバーのセットアップ]** ページで、 **[完了]** をクリックし、 **DirectAccess エキスパートウィザード**の **[完了]** をクリックします。  
   
 11. **[リモートアクセスの確認]** ダイアログボックスで **[適用]** をクリックし、DirectAccess ポリシーが更新されるまで待ち、 **[閉じる]** をクリックします。  
   
-12. **[スタート]** 画面で、 **「powershell**」と入力し、 **[powershell]** を右クリックして、 **[詳細設定]** をクリックし、 **[管理者として実行]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示されたら、表示された操作が正しいことを確認し、 **[はい]** をクリックします。  
+12. **[スタート]** 画面で、 **「powershell**」と入力し、 **[powershell]** を右クリックして、 **[詳細設定]** をクリックし、 **[管理者として実行]** をクリックします。 **[ユーザー アカウント制御]** ダイアログ ボックスが表示された場合、表示された操作が目的の操作であることを確認して、 **[はい]** をクリックします。  
   
 13. Windows PowerShell ウィンドウで、「 **gpupdate/force** 」と入力し、enter キーを押します。  
   

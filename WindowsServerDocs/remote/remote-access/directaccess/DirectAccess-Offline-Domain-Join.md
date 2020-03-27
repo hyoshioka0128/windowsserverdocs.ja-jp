@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 55528736-6c19-40bd-99e8-5668169ef3c7
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 229e2955c7f382ff630829990a9dd6485d62652e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 09ed401fa4912a48033e4a51a29309e3fd4cc998
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71388876"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310906"
 ---
 # <a name="directaccess-offline-domain-join"></a>DirectAccess オフライン ドメイン参加
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このガイドでは、DirectAccess でオフラインドメイン参加を実行する手順について説明します。 オフラインドメイン参加中に、コンピューターが物理的または VPN 接続を使用せずにドメインに参加するように構成されている。  
   
@@ -44,12 +44,12 @@ Windows Server 2008 R2 で導入されたドメインコントローラーには
   
 3.  対象のコンピューターを再起動すると、コンピューターがドメインに参加します。  
   
-### <a name="BKMK_ODJOverview"></a>DirectAccess ポリシーを使用したオフラインドメイン参加のシナリオの概要  
+### <a name="offline-domain-join-with-directaccess-policies-scenario-overview"></a><a name="BKMK_ODJOverview"></a>DirectAccess ポリシーを使用したオフラインドメイン参加のシナリオの概要  
 DirectAccess オフラインドメイン参加とは、windows Server 2016、Windows Server 2012、Windows 10、および Windows 8 を実行しているコンピューターが、企業ネットワークに物理的に参加したり、VPN 経由で接続したりせずにドメインに参加するために使用できるプロセスです。 これにより、企業ネットワークに接続されていない場所からドメインにコンピューターを参加させることができます。 DirectAccess のオフラインドメイン参加により、リモートプロビジョニングを可能にする DirectAccess ポリシーがクライアントに提供されます。  
   
 ドメイン参加は、コンピューターアカウントを作成し、Windows オペレーティングシステムを実行しているコンピューターと Active Directory ドメインとの間に信頼関係を確立します。  
   
-## <a name="BKMK_ODJRequirements"></a>オフラインドメイン参加の準備  
+## <a name="prepare-for-offline-domain-join"></a><a name="BKMK_ODJRequirements"></a>オフラインドメイン参加の準備  
   
 1.  コンピューターアカウントを作成します。  
   
@@ -57,7 +57,7 @@ DirectAccess オフラインドメイン参加とは、windows Server 2016、Win
   
 3.  新しいクライアントに適用される、必要なコンピューター証明書、グループポリシー、およびグループポリシーオブジェクトを収集します。  
   
-. 次のセクションでは、Djoin を使用して DirectAccess のオフラインドメイン参加を実行するためのオペレーティングシステムの要件と資格情報の要件について説明します。  
+。 次のセクションでは、Djoin を使用して DirectAccess のオフラインドメイン参加を実行するためのオペレーティングシステムの要件と資格情報の要件について説明します。  
   
 ### <a name="operating-system-requirements"></a>オペレーティング システムの要件  
 DirectAccess では、Windows Server 2016、Windows Server 2012、または Windows 8 を実行しているコンピューターでのみ、Djoin を実行できます。 コンピューターアカウントデータを AD DS にプロビジョニングするために Djoin を実行するコンピューターでは、Windows Server 2016、Windows 10、Windows Server 2012、または Windows 8 が実行されている必要があります。 ドメインに参加させるコンピューターは、Windows Server 2016、Windows 10、Windows Server 2012、または Windows 8 も実行している必要があります。  
@@ -76,7 +76,7 @@ DirectAccess では、Windows Server 2016、Windows Server 2012、または Wind
 #### <a name="granting-user-rights-to-join-workstations-to-the-domain"></a>ワークステーションをドメインに参加させるためのユーザー権限を付与する  
 グループポリシー管理コンソール (GPMC) を使用してドメインポリシーを変更したり、ユーザーにワークステーションをドメインに追加する権限を付与する設定を持つ新しいポリシーを作成したりできます。  
   
-ユーザー権限を付与するには、 **Domain Admins**のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  適切なアカウントおよびグループメンバーシップの使用方法の詳細については、「[ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)(https://go.microsoft.com/fwlink/?LinkId=83477) 」を参照してください。   
+ユーザー権限を付与するには、 **Domain Admins**のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  適切なアカウントおよびグループメンバーシップの使用方法の詳細については、「[ローカルおよびドメインの既定のグループ](https://go.microsoft.com/fwlink/?LinkId=83477)」 (https://go.microsoft.com/fwlink/?LinkId=83477)を参照してください。   
   
 ###### <a name="to-grant-rights-to-join-workstations-to-a-domain"></a>ドメインにワークステーションを参加させる権限を付与するには  
   
@@ -84,7 +84,7 @@ DirectAccess では、Windows Server 2016、Windows Server 2012、または Wind
   
 2.  フォレストの名前をダブルクリックし、 **[ドメイン]** をダブルクリックします。次に、コンピューターに参加するドメインの名前をダブルクリックし、 **[既定のドメインポリシー]** を右クリックして、 **[編集]** をクリックします。  
   
-3.  コンソールツリーで、**コンピューターの構成** をダブルクリックし、**ポリシー** をダブルクリックします。次に、**Windows の設定** をダブルクリックし、**セキュリティの設定** をダブルクリックし、**ローカルポリシー** をダブルクリックしてから、 をダブルクリック**します。ユーザー権利の割り当て**。  
+3.  コンソールツリーで、 **[コンピューターの構成]** をダブルクリックし、 **[ポリシー]** をダブルクリックします。次に、 **[Windows の設定]** をダブルクリックし、 **[セキュリティの設定]** をダブルクリックします。次に、 **[ローカルポリシー]** をダブルクリックし、 **[ユーザー権利の割り当て]** をダブルクリックします。  
   
 4.  詳細ウィンドウで、 **[ドメインへのワークステーションの追加]** をダブルクリックします。  
   
@@ -92,12 +92,12 @@ DirectAccess では、Windows Server 2016、Windows Server 2012、または Wind
   
 6.  ユーザーに権限を付与するアカウントの名前を入力し、[ **OK]** を2回クリックします。  
   
-## <a name="BKMK_ODKSxS"></a>オフラインドメイン参加プロセス  
+## <a name="offline-domain-join-process"></a><a name="BKMK_ODKSxS"></a>オフラインドメイン参加プロセス  
 管理者特権のコマンドプロンプトで Djoin を実行し、コンピューターアカウントのメタデータをプロビジョニングします。 プロビジョニングコマンドを実行すると、コンピューターアカウントのメタデータが、コマンドの一部として指定したバイナリファイルに作成されます。  
   
-オフラインドメイン参加時にコンピューターアカウントをプロビジョニングするために使用される NetProvisionComputerAccount 関数の詳細については、「 [NetProvisionComputerAccount 関数](https://go.microsoft.com/fwlink/?LinkId=162426)(https://go.microsoft.com/fwlink/?LinkId=162426) 」を参照してください。 対象のコンピューターでローカルに実行される NetRequestOfflineDomainJoin 関数の詳細については、「 [Netrequestofflinedomainjoin 関数](https://go.microsoft.com/fwlink/?LinkId=162427)(https://go.microsoft.com/fwlink/?LinkId=162427) 」を参照してください。  
+オフラインドメイン参加時にコンピューターアカウントをプロビジョニングするために使用される NetProvisionComputerAccount 関数の詳細については、「 [NetProvisionComputerAccount 関数](https://go.microsoft.com/fwlink/?LinkId=162426)(https://go.microsoft.com/fwlink/?LinkId=162426)」を参照してください。 対象のコンピューターでローカルに実行される NetRequestOfflineDomainJoin 関数の詳細については、「 [Netrequestofflinedomainjoin 関数](https://go.microsoft.com/fwlink/?LinkId=162427)(https://go.microsoft.com/fwlink/?LinkId=162427)」を参照してください。  
   
-## <a name="BKMK_ODJSteps"></a>DirectAccess オフラインドメイン参加を実行するための手順  
+## <a name="steps-for-performing-a-directaccess-offline-domain-join"></a><a name="BKMK_ODJSteps"></a>DirectAccess オフラインドメイン参加を実行するための手順  
 オフラインドメイン参加プロセスには、次の手順が含まれます。  
   
 1.  リモートクライアントごとに新しいコンピューターアカウントを作成し、企業ネットワーク内の既存のドメインに参加しているコンピューターから、Djoin .exe コマンドを使用してプロビジョニングパッケージを生成します。  
@@ -114,7 +114,7 @@ DirectAccess では、Windows Server 2016、Windows Server 2012、または Wind
   
 オフラインドメイン参加を実行するには、次の手順を実行します。  
   
-##### <a name="option1-create-a-provisioning-package-for-the-client-without-pki"></a>オプション 1:PKI を使用しないクライアント用のプロビジョニングパッケージを作成する  
+##### <a name="option1-create-a-provisioning-package-for-the-client-without-pki"></a>オプション 1: PKI を使用しないクライアントのプロビジョニングパッケージを作成する  
   
 1.  リモートアクセスサーバーのコマンドプロンプトで、次のコマンドを入力してコンピューターアカウントをプロビジョニングします。  
   
@@ -122,7 +122,7 @@ DirectAccess では、Windows Server 2016、Windows Server 2012、または Wind
     Djoin /provision /domain <your domain name> /machine <remote machine name> /policynames DA Client GPO name /rootcacerts /savefile c:\files\provision.txt /reuse  
     ```  
   
-##### <a name="option2-create-a-provisioning-package-for-the-client-with-pki"></a>Option2PKI を使用してクライアントのプロビジョニングパッケージを作成する  
+##### <a name="option2-create-a-provisioning-package-for-the-client-with-pki"></a>Option2: PKI を使用してクライアントのプロビジョニングパッケージを作成する  
   
 1.  リモートアクセスサーバーのコマンドプロンプトで、次のコマンドを入力してコンピューターアカウントをプロビジョニングします。  
   
@@ -158,7 +158,7 @@ DirectAccess では、Windows Server 2016、Windows Server 2012、または Wind
   
 3.  クライアントコンピューターを再起動します。 コンピューターがドメインに参加します。 再起動後、クライアントはドメインに参加し、DirectAccess を使用して企業ネットワークに接続されます。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [NetProvisionComputerAccount 関数](https://go.microsoft.com/fwlink/?LinkId=162426)  
 [NetRequestOfflineDomainJoin 関数](https://go.microsoft.com/fwlink/?LinkId=162427)  
   

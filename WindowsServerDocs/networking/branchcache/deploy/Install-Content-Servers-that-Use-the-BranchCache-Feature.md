@@ -1,21 +1,21 @@
 ---
-title: BranchCache 機能を使用するコンテンツ サーバーをインストールします。
+title: BranchCache 機能を使用するコンテンツ サーバーをインストールする
 description: このトピックは、BranchCache 展開ガイドの Windows Server 2016、ブランチ オフィスに WAN 帯域幅使用量を最適化するために分散され、ホスト型キャッシュ モードで BranchCache を展開する方法を示しますの一部
 manager: brianlic
 ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: get-started-article
 ms.assetid: 0f00ae6e-ae1b-41e3-8c50-65226b5b9c9e
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 9287408446b81805e3c13ff876535a615ecb03d5
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: dd02dff51d2d1a1a389765f6af7857083529834c
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822795"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80319254"
 ---
-# <a name="install-content-servers-that-use-the-branchcache-feature"></a>BranchCache 機能を使用するコンテンツ サーバーをインストールします。
+# <a name="install-content-servers-that-use-the-branchcache-feature"></a>BranchCache 機能を使用するコンテンツ サーバーをインストールする
 
 >適用対象: Windows Server (半期チャネル)、Windows Server 2016
 

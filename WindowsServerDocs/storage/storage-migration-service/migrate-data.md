@@ -4,16 +4,16 @@ description: 検索エンジンの結果に関するトピックの簡単な説�
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 02/13/2019
+ms.date: 03/25/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 20aa5fbc40efc5a3a439361dadfac0f47f4b41d8
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: cb1ac2fc1c7d4ed0a7f57bbe95cb9989bc85e99e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822625"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310560"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Storage Migration Service を使用してサーバーを移行する
 
@@ -60,12 +60,15 @@ ms.locfileid: "76822625"
 1. [**データの転送** > **資格情報の入力**] ページで、移行先サーバーで有効な管理者資格情報を入力し、 **[次へ]** を選択します。
 2. **[変換先のデバイスとマッピングの追加]** ページに、最初の移行元サーバーが表示されます。 移行先のサーバーまたはクラスター化されたファイルサーバーの名前を入力し、 **[デバイスのスキャン]** を選択します。 ドメインに参加しているソースコンピューターから移行する場合は、移行先サーバーを同じドメインに参加させる必要があります。 [新しい Azure VM の作成] をクリックし、ウィザードを使用して Azure に新しい移行先サーバーをデプロイすることもできます。 これにより、VM のサイズの変更、記憶域のプロビジョニング、ディスクのフォーマット、ドメインへの参加、および Storage Migration Service プロキシの Windows Server 2019 の宛先への追加が自動的に実行されます。 任意のサイズの Windows Server 2019 (推奨)、Windows Server 2016、および Windows Server 2012 R2 の Vm を選択して、管理ディスクを使用することができます。   
 
- > [!NOTE]
-   > "新しい Azure VM の作成" を使用するには、次のものが必要です。
-   > - 有効な Azure サブスクリプション。
-   > - 作成権限を持つ既存の Azure コンピューティングリソースグループ。
-   > - 既存の Azure Virtual Network とサブネット。 
-   > - Virtual Network とサブネットに関連付けられた Azure Express Route または VPN ソリューション。この Azure IaaS VM からオンプレミスのクライアント、ドメインコントローラー、Storage Migration Service orchestrator コンピューター、Windows 管理センターコンピューターに接続できます。移行するソースコンピューターを指定します。
+    > [!NOTE]
+    > "新しい Azure VM の作成" を使用するには、次のものが必要です。
+    > - 有効な Azure サブスクリプション。
+    > - 作成権限を持つ既存の Azure コンピューティングリソースグループ。
+    > - 既存の Azure Virtual Network とサブネット。 
+    > - Virtual Network とサブネットに関連付けられた Azure Express Route または VPN ソリューション。この Azure IaaS VM からオンプレミスのクライアント、ドメインコントローラー、Storage Migration Service orchestrator コンピューター、Windows 管理センターコンピューターに接続できます。移行するソースコンピューターを指定します。
+   
+    Storage Migration Service を使用して Azure Vm に移行する方法を示すビデオを次に示します。
+    > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ] 
 
 3. ソースボリュームを移行先ボリュームにマップし、転送しない共有 (Windows システムフォルダーにあるすべての管理共有を含む) の **[含める]** チェックボックスをオフにして、 **[次へ]** を選択します。
    移行元サーバーとそのボリュームと共有、および転送先での転送先の ![スクリーンショット](media/migrate/transfer.png)**図 3: 移行元サーバーとその記憶域が**転送される場所
@@ -111,7 +114,7 @@ ms.locfileid: "76822625"
 7. **[ソースとターゲットのデバイスの検証]** ページで **[検証]** を選択し、 **[次へ]** を選択します。
 8. カットオーバーを実行する準備ができたら、 **[カットオーバーの開始]** を選択します。 <br>ユーザーとアプリは、アドレスと名前を移動し、サーバーをそれぞれ数回再起動しても、移行の影響を受けないように、中断が発生する可能性があります。 カットオーバーの所要時間は、サーバーの再起動の速度と、Active Directory および DNS のレプリケーション時間によって異なります。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>参照
 
 - [記憶域移行サービスの概要](overview.md)
 - [記憶域移行サービスに関してよく寄せられる質問 (FAQ)](faq.md)

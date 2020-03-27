@@ -10,15 +10,15 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 2448d381-55aa-4c14-997a-202c537c6727
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/23/2018
-ms.openlocfilehash: 294466ef70a9ffc230953b48bb292938be519eac
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: ee3aa93c02419667b05a987f548ef4d14285231d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406115"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313072"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>Windows PowerShell を使用してネットワーク コントローラーを展開する
 
@@ -27,9 +27,9 @@ ms.locfileid: "71406115"
 このトピックでは、windows PowerShell を使用して、Windows Server 2016 を実行している1つ以上の仮想マシン (Vm) にネットワークコントローラーを展開する方法について説明します。
 
 >[!IMPORTANT]
->ネットワークコントローラーのサーバーの役割を物理ホストに展開しないでください。 ネットワーク コント ローラーを展開するには、ホストにインストールされている HYPER-V 仮想マシン\(VM\)でネットワーク コントローラー サーバーの役割をインストールする必要があります。 次の 3 つの異なる HYPER\-V ホスト上の VM にでネットワーク コントローラーをインストールした後、Windows PowerShell コマンド \-New-NetworkControllerServer\( を使用してホストをネットワーク コント ローラーに追加して、ソフトウェア定義ネットワーク\)SDN**のHYPER**Vホストを有効にする必要があります。 これにより、SDN ソフトウェア ロード バランサーが機能するようになります。 詳細については、[New-NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver) を参照してください。
+>ネットワークコントローラーのサーバーの役割を物理ホストに展開しないでください。 ネットワークコントローラーを展開するには、hyper-v ホストにインストールされている VM\) \(Hyper-v 仮想マシンにネットワークコントローラーサーバーの役割をインストールする必要があります。 3つの異なる\-Hyper-v ホスト上の Vm にネットワークコントローラーをインストールした後、Windows PowerShell コマンド**NetworkControllerServer**を使用してネットワークコントローラーにホストを追加することで、ソフトウェアで定義されたネットワーク \(SDN\) 用のハイパー\-V ホストを有効にする必要があります。 これにより、SDN ソフトウェア ロード バランサーが機能するようになります。 詳細については、「 [NetworkControllerServer](https://technet.microsoft.com/itpro/powershell/windows/network-controller/new-networkcontrollerserver)」を参照してください。
 
-このトピックは次のセクションで構成されます。
+このトピックの内容は次のとおりです。
 
 - [ネットワークコントローラーのサーバーの役割をインストールする](#install-the-network-controller-server-role)
 
@@ -50,9 +50,9 @@ ms.locfileid: "71406115"
 次の手順を使用して、仮想マシン \(VM\)にネットワークコントローラーサーバーの役割をインストールできます。
 
 >[!IMPORTANT]
->ネットワークコントローラーのサーバーの役割を物理ホストに展開しないでください。 ネットワーク コント ローラーを展開するには、ホストにインストールされている HYPER-V 仮想マシン\(VM\)でネットワーク コントローラー サーバーの役割をインストールする必要があります。 3つの異なる\-Hyper-v ホスト上の Vm にネットワークコントローラーをインストールした後で、ネットワークコントローラーにホストを追加することによって、ソフトウェアで定義されたネットワーク \(SDN\) に対して、ハイパー\-V ホストを有効にする必要があります。 これにより、SDN ソフトウェア ロード バランサーが機能するようになります。
+>ネットワークコントローラーのサーバーの役割を物理ホストに展開しないでください。 ネットワークコントローラーを展開するには、hyper-v ホストにインストールされている VM\) \(Hyper-v 仮想マシンにネットワークコントローラーサーバーの役割をインストールする必要があります。 3つの異なる\-Hyper-v ホスト上の Vm にネットワークコントローラーをインストールした後で、ネットワークコントローラーにホストを追加することによって、ソフトウェアで定義されたネットワーク \(SDN\) に対して、ハイパー\-V ホストを有効にする必要があります。 これにより、SDN ソフトウェア ロード バランサーが機能するようになります。
 
-メンバーシップ **管理者**, 、同等の権限をこの手順を実行するために必要な最低限のですか。  
+この手順を実行するには、**Administrators** のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
 
 >[!NOTE]
 >Windows PowerShell の代わりにサーバーマネージャーを使用してネットワークコントローラーをインストールする場合は、「[を使用したネットワークコントローラーサーバーの役割のインストール](https://technet.microsoft.com/library/mt403348.aspx)」を参照してくださいサーバーマネージャー
@@ -88,7 +88,7 @@ New-NetworkControllerNodeObject -Name <string> -Server <String> -FaultDomain <st
 
 |パラメーター|説明|
 |-------------|---------------|
-|名前|**Name**パラメーターは、クラスターに追加するサーバーのフレンドリ名を指定します。|
+|Name|**Name**パラメーターは、クラスターに追加するサーバーのフレンドリ名を指定します。|
 |Server|**Server**パラメーターは、クラスターに追加するサーバーのホスト名、完全修飾ドメイン名 (FQDN)、または IP アドレスを指定します。 ドメインに参加しているコンピューターの場合は、FQDN が必要です。|
 |FaultDomain|**Faultdomain**パラメーターは、クラスターに追加するサーバーの障害ドメインを指定します。 このパラメーターは、クラスターに追加するサーバーと同時にエラーが発生する可能性のあるサーバーを定義します。 このエラーは、電源やネットワークのソースなどの物理的な依存関係が共有されていることが原因である可能性があります。 フォールトドメインは、通常、これらの共有依存関係に関連する階層を表します。これにより、障害ドメインツリーの上位のポイントから、より多くのサーバーに障害が発生する可能性が高くなります。 実行時に、ネットワークコントローラーはクラスター内の障害ドメインを考慮し、ネットワークコントローラーサービスを分散して、別々の障害ドメインに配置しようとします。 このプロセスにより、1つの障害ドメインで障害が発生した場合に、そのサービスとその状態の可用性が損なわれないようにすることができます。 障害ドメインは、階層形式で指定します。 たとえば、"Fd:/DC1/ラック 1/datac" の場合、DC1 はデータセンター名、ラック1はラック名、datacはノードが配置されているホストの名前です。|
 |RestInterface|**RestInterface**パラメーターは、指定された状態の転送 (REST) 通信が終了するノード上のインターフェイスの名前を指定します。 このネットワークコントローラーインターフェイスは、ネットワークの管理レイヤーから Northbound API 要求を受信します。|

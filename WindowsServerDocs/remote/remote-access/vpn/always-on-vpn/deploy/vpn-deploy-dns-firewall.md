@@ -6,15 +6,15 @@ ms.technology: networking-ras
 ms.topic: article
 ms.assetid: d8cf3bae-45bf-4ffa-9205-290d555c59da
 ms.localizationpriority: medium
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 06/11/2018
-ms.openlocfilehash: aa7658587b8434bfbaa6874498215a6b2c9213be
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 394e589028d9d3d22851ea970346b0f150fee393
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822665"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309403"
 ---
 # <a name="step-5-configure-dns-and-firewall-settings"></a>手順 5. DNS とファイアウォールの設定を構成する
 
@@ -82,6 +82,6 @@ VPN サーバーと NPS サーバーで既定の RADIUS ポート構成を使用
 
 NPS の展開で既定の RADIUS ポートを使用していない場合は、使用しているポートで RADIUS トラフィックを許可するようにファイアウォールを構成する必要があります。 詳細については、「 [Configure firewall FOR RADIUS Traffic](../../../../../networking/technologies/nps/nps-firewalls-configure.md)」を参照してください。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ:
 
 [手順 6.Windows 10 クライアント Always On VPN 接続を構成](vpn-deploy-client-vpn-connections.md)する: この手順では、vpn 接続を使用して、そのインフラストラクチャと通信するように windows 10 クライアントコンピューターを構成します。 Windows PowerShell、Microsoft Endpoint Configuration Manager、Intune などの Windows 10 VPN クライアントを構成するには、いくつかのテクノロジを使用できます。 3つすべてに、適切な VPN 設定を構成するための XML VPN プロファイルが必要です。

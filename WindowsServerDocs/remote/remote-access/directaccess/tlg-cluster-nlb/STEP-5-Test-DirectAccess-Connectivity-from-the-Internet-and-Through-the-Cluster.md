@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8399bdfa-809a-45e4-9963-f9b6a631007f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 1b5708e51b2653444fb3eb636baac6a165dfc55d
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 92641ccf19f77becd9ed5476cd8c0178f4090f49
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404847"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310831"
 ---
 # <a name="step-5-test-directaccess-connectivity-from-the-internet-and-through-the-cluster"></a>手順 5. インターネットとクラスターを使用した DirectAccess 接続のテスト
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 CLIENT1 は、DirectAccess テストの準備ができました。  
   
@@ -50,11 +50,11 @@ CLIENT1 は、DirectAccess テストの準備ができました。
   
 6. 次の手順については、Windows PowerShell ウィンドウを開いたままにしておきます。  
   
-7. Internet explorer を開き、Internet Explorer のアドレスバーに **https://app1/** を入力して、enter キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
+7. Internet explorer を開き、Internet Explorer のアドレスバーに「 **https://app1/** 」と入力して、enter キーを押します。 APP1 の既定の IIS Web サイトが表示されます。  
   
 8. Internet Explorer のアドレスバーに「 **https://app2/** 」と入力し、enter キーを押します。 APP2 の既定の Web サイトが表示されます。  
   
-9. **スタート**画面で、「<strong>\\ \ App2\Files</strong>」と入力し、enter キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
+9. **スタート**画面で、「<strong>\\\App2\Files</strong>」と入力し、enter キーを押します。 [新しいテキスト ドキュメント] ファイルをダブルクリックします。  
   
     これは、SMB を使用して IPv4 のみのサーバーに接続し、リソースドメイン内のリソースを取得できることを示しています。  
   
@@ -62,7 +62,7 @@ CLIENT1 は、DirectAccess テストの準備ができました。
   
 11. セキュリティが強化された**Windows ファイアウォール**コンソールで、**プライベート**プロファイルまたは**パブリックプロファイル**のみがアクティブになっていることに注意してください。 DirectAccess が正しく機能するためには、Windows ファイアウォールが有効になっている必要があります。 Windows ファイアウォールが無効になっている場合、DirectAccess 接続は機能しません。  
   
-12. コンソールの左側のウィンドウで、 **[監視]** ノードを展開し、 **[接続セキュリティの規則]** ノードをクリックします。 アクティブな接続セキュリティ規則が表示されます。**Directaccess ポリシー-ClientToCorp**、 **Directaccess ポリシー-ClientToDNS64NAT64PrefixExemption**、 **Directaccess ポリシー-Clienttocorp**、および**directaccess ポリシー-clienttonla免除**。 中央のペインを右にスクロールすると、 **1 番目の [認証方法**] 列と **[2 番目の認証方法]** 列が表示されます。 最初のルール (ClientToCorp) が Kerberos V5 を使用してイントラネットトンネルを確立し、3番目のルール (clienttocorp) が NTLMv2 を使用してインフラストラクチャトンネルを確立することに注意してください。  
+12. コンソールの左側のウィンドウで、 **[監視]** ノードを展開し、 **[接続セキュリティの規則]** ノードをクリックします。 アクティブな接続セキュリティ規則 ( **Directaccess ポリシー-ClientToCorp**、 **Directaccess ポリシー-ClientToDNS64NAT64PrefixExemption**、 **Directaccess ポリシー-Clienttocorp**、および**directaccess ポリシー-clienttonla免除**) が表示されます。 中央のペインを右にスクロールすると、 **1 番目の [認証方法**] 列と **[2 番目の認証方法]** 列が表示されます。 最初のルール (ClientToCorp) が Kerberos V5 を使用してイントラネットトンネルを確立し、3番目のルール (clienttocorp) が NTLMv2 を使用してインフラストラクチャトンネルを確立することに注意してください。  
   
 13. コンソールの左側のウィンドウで、 **[セキュリティアソシエーション]** ノードを展開し、 **[メインモード]** ノードをクリックします。 「インフラストラクチャトンネルのセキュリティアソシエーション」では、NTLMv2 と、Kerberos V5 を使用したイントラネットトンネルセキュリティの関連付けに注意してください。 **2 番目の認証方法**として **[ユーザー (Kerberos V5)]** と表示されているエントリを右クリックし、 **[プロパティ]** をクリックします。 **[全般]** タブで、 **2 番目の認証ローカル ID**が**CORP\User1**であることを確認します。これは、User1 が Kerberos を使用して CORP ドメインに対して正常に認証できたことを示します。  
   
@@ -76,9 +76,9 @@ CLIENT1 は、DirectAccess テストの準備ができました。
   
 3. Windows PowerShell ウィンドウで、APP2 と ping を行います。 両方のリソースから応答を受信する必要があります。  
   
-4. **スタート**画面で、「<strong>\\ \ app2\files</strong>」と入力します。 APP2 コンピューターに共有フォルダーが表示されます。 APP2 でファイル共有を開く機能は、ユーザーに対して Kerberos 認証を必要とする2番目のトンネルが正常に機能していることを示します。  
+4. **スタート**画面で、「<strong>\\\app2\files</strong>」と入力します。 APP2 コンピューターに共有フォルダーが表示されます。 APP2 でファイル共有を開く機能は、ユーザーに対して Kerberos 認証を必要とする2番目のトンネルが正常に機能していることを示します。  
   
-5. Internet Explorer を開き、web サイト https://app1/ と https://app2/ を開きます。 両方の web サイトを開く機能により、1番目と2番目のトンネルが稼働していることが確認されます。 Internet Explorer を閉じます。  
+5. Internet Explorer を開き、web サイト https://app1/ を開き https://app2/を開きます。 両方の web サイトを開く機能により、1番目と2番目のトンネルが稼働していることが確認されます。 Internet Explorer を閉じます。  
   
 6. EDGE2 コンピューターを起動します。  
   

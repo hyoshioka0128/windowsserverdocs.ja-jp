@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: cd1e9efd-19e9-49e7-8432-881f661c9792
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 487b85713d415cdda9ee40548091abdb5fe7fc2e
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: abc3038cfe0dacb09c115f37289fe72f1c14b96d
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404832"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308853"
 ---
 # <a name="overview-of-the-directaccess-cluster-nlb-test-lab-scenario"></a>DirectAccess クラスター/NLB テスト ラボのシナリオの概要
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このテスト ラボのシナリオでは、DirectAccess に展開されます。  
   

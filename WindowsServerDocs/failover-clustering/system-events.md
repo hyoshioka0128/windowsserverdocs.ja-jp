@@ -1,18 +1,18 @@
 ---
 title: フェールオーバークラスタリングのシステムログイベント
 description: Windows Server システムログのフェールオーバークラスタリングイベントの一覧。 これらのイベントを使用して、クラスターのトラブルシューティングを行うことができます。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 01/14/2020
-ms.openlocfilehash: 5c2606b96b42d08cc66da2e19596240c21bf4b88
-ms.sourcegitcommit: 10331ff4f74bac50e208ba8ec8a63d10cfa768cc
+ms.openlocfilehash: 0346b56ad2fe8a60ab84b7e6ab43e0558ed1c85b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75956454"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310052"
 ---
 # <a name="failover-clustering-system-log-events"></a>フェールオーバークラスタリングのシステムログイベント
 
@@ -924,7 +924,7 @@ Active Directory で、ネットワーク名のコンピューターオブジェ
 
 ### <a name="event-5398-nm_event_cluster_failed_to_form"></a>イベント 5398: NM_EVENT_CLUSTER_FAILED_TO_FORM
 
-クラスターを開始できませんでした。 クラスター構成データの最新コピーは、クラスターを開始しようとしているノードのセット内では使用できませんでした。 ノードのセットがメンバーシップに含まれておらず、その結果、構成データの更新を受信できなかったため、クラスターへの変更が発生しました。 の順に移動します。<br><br>クラスターを開始するために必要な投票: %1<br>利用可能な投票: %2<br>投票があるノード: %3
+クラスターを開始できませんでした。 クラスター構成データの最新コピーは、クラスターを開始しようとしているノードのセット内では使用できませんでした。 ノードのセットがメンバーシップに含まれておらず、その結果、構成データの更新を受信できなかったため、クラスターへの変更が発生しました。 。<br><br>クラスターを開始するために必要な投票: %1<br>利用可能な投票: %2<br>投票があるノード: %3
 
 #### <a name="guidance"></a>ガイダンス
 
@@ -1250,6 +1250,6 @@ ChkDsk からの追加情報については、アプリケーションイベン�
 クラスターの物理ディスクリソース ' %1 ' がソフトウェアスナップショットを削除しました。 クラスターの共有ボリューム ' %2 ' のソフトウェアスナップショットは ' %3 ' 日より古いため、削除されました。 スナップショット ID は ' %4 ' でしたが、' %6 ' のノード ' %5 ' から作成されました。
 バックアップジョブの完了後に、バックアップアプリケーションによってスナップショットが削除されることが想定されています。 スナップショットが存在することが予想される時間を超過しました。 バックアップアプリケーションで、バックアップジョブが正常に完了していることを確認します。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>参照
 
 -   [Windows Server 2008 でのフェールオーバークラスタリングコンポーネントの詳細なイベント情報](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753362(v%3dws.10))

@@ -4,16 +4,16 @@ description: Storage Migration Service を使用すると、Windows Server ま�
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 01/17/2020
+ms.date: 03/26/2020
 ms.topic: article
 ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 70ce4ebca35e071cf6e27fe429d3c4e6f67d342c
-ms.sourcegitcommit: 8b801bd86e2ddf8255899b11f547daa920e5f651
+ms.openlocfilehash: 0765c43333f23fb09c0f69ceca1ff21cfce25874
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80110675"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310503"
 ---
 # <a name="storage-migration-service-overview"></a>記憶域移行サービスの概要
 
@@ -21,7 +21,7 @@ ms.locfileid: "80110675"
 
 Storage Migration Service を使用すると、Windows Server または Azure にストレージを簡単に移行できます。 Windows と Linux のサーバー上のデータをインベントリし、そのデータを新しいサーバーまたは Azure virtual machines に転送するグラフィカルツールを提供します。 また、記憶域移行サービスでは、サーバーの id を移行先サーバーに転送するオプションも用意されています。これにより、アプリとユーザーがリンクまたはパスを変更することなくデータにアクセスできるようになります。
 
-このトピックでは、記憶域移行サービスを使用する理由、移行プロセスのしくみ、および移行元サーバーと移行先サーバーの要件について説明します。
+このトピックでは、記憶域移行サービスを使用する理由、移行プロセスのしくみ、移行元サーバーと移行先サーバーの要件、および[記憶域移行サービスの新機能](#whats-new-in-storage-migration-service)について説明します。
 
 ## <a name="why-use-storage-migration-service"></a>記憶域移行サービスを使用する理由
 
@@ -134,7 +134,12 @@ Orchestrator が Windows Server バージョン1903以降を実行している�
 
 Windows 管理センターバージョン1910では、Azure 仮想マシンをデプロイできます。 これにより、VM のデプロイが記憶域移行サービスに統合されます。 ワークロードをデプロイする前に手動で Azure Portal で新しいサーバーと Vm を作成するのではなく、必要な手順と構成がない場合もあります。 Windows 管理センターでは、Azure VM のデプロイ、ストレージの構成、ドメインへの参加、役割のインストールを行うことができます。次に、分散システムを設定します。 
 
+   Storage Migration Service を使用して Azure Vm に移行する方法を示すビデオを次に示します。
+   > [!VIDEO https://www.youtube-nocookie.com/embed/k8Z9LuVL0xQ] 
+
 ## <a name="whats-new-in-storage-migration-service"></a>Storage Migration Service の新機能
+
+Windows 管理センターバージョン1910では、Azure 仮想マシンをデプロイする機能が追加されています。 これにより、Azure VM のデプロイがストレージ移行サービスに統合されます。 詳細については、「 [AZURE VM の移行](#azure-vm-migration)」を参照してください。
 
 Windows Server バージョン1903以降、または[KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534)がインストールされている以前のバージョンの windows Server で Storage Migration Server orchestrator を実行する場合は、次の新機能を使用できます。
 

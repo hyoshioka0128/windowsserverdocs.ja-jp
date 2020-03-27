@@ -10,18 +10,18 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc20b1a0-540d-4531-a176-50b87c071600
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 0c6bff2acc15b7ff90731e0113ae0d5a429c635c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 3cd73f1a5e2612f4551be1f16e49e9645c5e12c0
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404797"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80308731"
 ---
 # <a name="step-2-install-and-configure-router1"></a>手順 2. ROUTER1 をインストールして構成する
 
->適用先:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このマルチサイトのテストラボガイドでは、ルーターコンピューターは、企業ネットワークと2ネットワークのサブネット間に IPv4 と IPv6 のブリッジを提供し、ip-https および Teredo トラフィックのルーターとして機能します。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "71404797"
   
 1.  Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 (フルインストール) のインストールを開始します。  
   
-2.  手順に従ってインストールを完了し、ローカルの Administrator アカウントの強力なパスワードを指定します。 ローカルの Administrator アカウントを使用してログオンします。  
+2.  手順に従ってインストールを完了し、ローカルの Administrator アカウントの強力なパスワードを指定します。 ローカル管理者アカウントを使用してログオンします。  
   
 3.  ROUTER1 をインターネットにアクセスできるネットワークに接続し Windows Update を実行して、Windows Server 2016、Windows Server 2012 R2、または Windows Server 2012 の最新の更新プログラムをインストールしてから、インターネットから切断します。  
   

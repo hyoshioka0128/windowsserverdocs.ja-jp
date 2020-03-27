@@ -1,9 +1,9 @@
 ---
 title: Windows Server Essentials の移行先サーバーでフォルダー リダイレクトを構成する
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,26 +12,26 @@ ms.assetid: fe77ba67-128c-4fc3-9361-30fa6af42516
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6709aa2a342efd5837cf340b645961499baff6a5
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 44fb54a654689285c5db6d178e6d1c714779b91b
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433012"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310604"
 ---
 # <a name="configure-folder-redirection-on-the-windows-server-essentials-destination-server"></a>Windows Server Essentials の移行先サーバーでフォルダー リダイレクトを構成する
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 移行元サーバーでフォルダー リダイレクトが有効になっている場合、このタスクを実行します。  
   
- 最初に、古いフォルダー リダイレクト グループ ポリシーの設定を削除します。 Windows Server Essentials ダッシュ ボードを使用して、移行先サーバーでフォルダー リダイレクトを有効にします。  
+ 最初に、古いフォルダー リダイレクト グループ ポリシーの設定を削除します。 次に、Windows Server Essentials ダッシュボードを使用して、移行先サーバーでフォルダーリダイレクトを有効にします。  
   
 ### <a name="to-delete-the-old-folder-redirection-group-policy-setting"></a>古いフォルダー リダイレクト グループ ポリシーの設定を削除するには  
   
 1. 移行先サーバーで、 **[グループ ポリシーの管理]** 管理ツールを開きます。  
   
-2. **Group Policy Management**、展開**フォレスト:** <em>ネットワーク ドメイン名</em>、展開**ドメイン**、展開*ネットワーク ドメイン名*、順に展開**グループ ポリシー オブジェクト**します。  
+2. **グループポリシー管理** で、 **フォレスト:** <em>ネットワークドメイン名</em>、**ドメイン**、*ネットワークドメイン名* の順に展開し、**グループポリシーオブジェクト** を展開します。  
   
 3. **[SBS グループ ポリシー フォルダー リダイレクト]** を右クリックし、 **[削除]** をクリックします。  
   
@@ -43,7 +43,7 @@ ms.locfileid: "66433012"
   
 ### <a name="to-enable-folder-redirection-on-the-destination-server"></a>移行先サーバーでフォルダー リダイレクトを有効にするには  
   
-1. 移行先サーバーでは、Windows Server Essentials ダッシュ ボードを開きます。  
+1. 移行先サーバーで、Windows Server Essentials ダッシュボードを開きます。  
   
 2. ナビゲーション バーで、 **[デバイス]** をクリックします。  
   

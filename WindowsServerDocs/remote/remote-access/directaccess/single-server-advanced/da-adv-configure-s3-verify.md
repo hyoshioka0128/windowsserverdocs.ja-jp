@@ -10,14 +10,14 @@ ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: ae8bbff0-c981-4bc6-8df1-861621d0627f
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 51ce3fa1a72420f7272141bb5361b20360b7000c
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 6d8f9b5ecbc322de12cb00179a4ebb044fbd2baf
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404907"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309096"
 ---
 # <a name="step-3-verify-the-advanced-directaccess-deployment"></a>手順 3-高度な DirectAccess 展開を確認する
 
@@ -37,7 +37,7 @@ ms.locfileid: "71404907"
   
     すべての企業リソースにアクセスできます。  
   
-## <a name="BKMK_Links"></a>前の手順  
+## <a name="previous-step"></a><a name="BKMK_Links"></a>前の手順  
   
 -   [手順 2: DirectAccess サーバーの構成](Step-2-Configuring-DirectAccess-Servers.md)  
   

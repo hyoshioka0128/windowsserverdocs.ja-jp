@@ -10,22 +10,22 @@ ms.technology: networking-ipam
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: a35164e1-11ad-47c8-9843-580d30c70d07
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2175cf9c740d7b727ba017922a77c94d4379c891
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: b2fa8ff6742dc393a5a2cc962c7f849049b5ef31
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355277"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312419"
 ---
 # <a name="edit-a-dns-zone"></a>DNS ゾーンを編集する
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 このトピックでは、IPAM クライアントコンソールで DNS ゾーンを編集する方法について説明します。  
   
-メンバーシップ **管理者**, 、同等の権限をこの手順を実行するために必要な最低限のですか。  
+この手順を実行するには、**Administrators** のメンバーシップ、またはそれと同等のメンバーシップが最低限必要です。  
   
 ### <a name="to-edit-a-dns-zone"></a>DNS ゾーンを編集するには  
   
@@ -49,7 +49,7 @@ ms.locfileid: "71355277"
   
     ![DNS ゾーンの編集](../../media/Edit-a-DNS-Zone/ipam_EditZone_02.jpg)  
   
-6.  **[DNS ゾーンの編集]** ダイアログボックスが開き、 **[全般**] ページが選択された状態で表示されます。 必要に応じて、一般的なゾーンのプロパティを編集します。**DNS サーバー**、**ゾーンカテゴリ**、**ゾーンの種類**を選択し、 **[適用]** をクリックします。編集が完了したら、[ **OK]** をクリックします。  
+6.  **[DNS ゾーンの編集]** ダイアログボックスが開き、 **[全般**] ページが選択された状態で表示されます。 必要に応じて、 **[DNS サーバー]** 、 **[ゾーンカテゴリ]** 、 **[ゾーンの種類]** の 全般 ゾーンプロパティを編集し、 **[適用]** をクリックします。編集が完了したら、[ **OK]** をクリックします。  
   
     ![ゾーンのプロパティを編集して保存する](../../media/Edit-a-DNS-Zone/ipam_EditZone_03a.jpg)  
   
@@ -59,7 +59,7 @@ ms.locfileid: "71355277"
   
 8.  必要に応じて、追加のゾーンプロパティページ名 (ネームサーバー、SOA、ゾーン転送) を選択し、編集を行い、 **[適用]** または [ **OK]** をクリックします。 ゾーンの編集をすべて確認するには、 **[概要]** をクリックし、 **[OK]** をクリックします。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 [DNS ゾーンの管理](DNS-Zone-Management.md)  
 [IPAM の管理](Manage-IPAM.md)  
   

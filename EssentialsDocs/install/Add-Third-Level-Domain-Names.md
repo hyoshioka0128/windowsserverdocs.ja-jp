@@ -1,9 +1,9 @@
 ---
 title: 第 3 レベル ドメイン名の追加
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,42 +12,42 @@ ms.assetid: e5b4a362-1881-4024-ae4e-cc3b05e50103
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 64bf24e45155fdd981e2061b3de7ebce1c53b36c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5608fb5417b9e958b45d150879daccc3b7767e59
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833323"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310235"
 ---
 # <a name="add-third-level-domain-names"></a>第 3 レベル ドメイン名の追加
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 ユーザーが Set Up Domain Name ウィザードで第 3 レベル ドメイン名を要求する機能を追加できます。 これには、オペレーティング システムのドメイン マネージャーによって使用されるコード アセンブリを作成してインストールします。  
   
 ## <a name="create-a-provider-of-third-level-domain-names"></a>第 3 レベル ドメイン名のプロバイダーの作成  
  第 3 レベル ドメイン名を使用できるようにするには、ドメイン名をウィザードに提供するコード アセンブリを作成してインストールします。 これを行うには、次のタスクを完了します。  
   
--   [IDomainSignupProvider インターフェイスの実装のアセンブリへの追加します。](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)  
+-   [IDomainSignupProvider インターフェイスの実装をアセンブリに追加します。](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)  
   
--   [IDomainMaintenanceProvider インターフェイスの実装のアセンブリへの追加します。](Add-Third-Level-Domain-Names.md#BKMK_DomainMaintenance)  
+-   [IDomainMaintenanceProvider インターフェイスの実装をアセンブリに追加します。](Add-Third-Level-Domain-Names.md#BKMK_DomainMaintenance)  
   
--   [アセンブリに Authenticode 署名で署名します。](Add-Third-Level-Domain-Names.md#BKMK_SignAssembly)  
+-   [Authenticode 署名を使用してアセンブリに署名する](Add-Third-Level-Domain-Names.md#BKMK_SignAssembly)  
   
--   [参照コンピューターで、アセンブリをインストールします。](Add-Third-Level-Domain-Names.md#BKMK_InstallAssembly)  
+-   [参照コンピューターにアセンブリをインストールする](Add-Third-Level-Domain-Names.md#BKMK_InstallAssembly)  
   
--   [Windows Server Domain Name Management サービスを再起動します。](Add-Third-Level-Domain-Names.md#BKMK_RestartService)  
+-   [Windows Server ドメインネーム管理サービスを再起動する](Add-Third-Level-Domain-Names.md#BKMK_RestartService)  
   
-###  <a name="BKMK_DomainSignup"></a> IDomainSignupProvider インターフェイスの実装のアセンブリへの追加します。  
+###  <a name="add-an-implementation-of-the-idomainsignupprovider-interface-to-the-assembly"></a><a name="BKMK_DomainSignup"></a>IDomainSignupProvider インターフェイスの実装をアセンブリに追加します。  
  ドメイン サービスをウィザードに追加するには、IDomainSignupProvider インターフェイスが使用されます。  
   
 ##### <a name="to-add-the-idomainsignupprovider-code-to-the-assembly"></a>IDomainSignupProvider コードをアセンブリに追加するには  
   
-1.  **[スタート]** メニューのプログラムを右クリックし、**[管理者として実行]** を選択して、Visual Studio 2008 を管理者として開きます。  
+1.  **[スタート]** メニューのプログラムを右クリックし、 **[管理者として実行]** を選択して、Visual Studio 2008 を管理者として開きます。  
   
-2.  をクリックして**ファイル**、 をクリックして**新規**、クリックして**プロジェクト**です。  
+2.  **[ファイル]** をクリックし、 **[新規作成]** をクリックし、 **[プロジェクト]** をクリックします。  
   
-3.  **[新しいプロジェクト]** ダイアログ ボックスで、**[Visual C#]**、次に **[クラス ライブラリ]** をクリックし、ソリューションの名前を入力して、**[OK]** をクリックします。  
+3.  **[新しいプロジェクト]** ダイアログ ボックスで、 **[Visual C#]** 、次に **[クラス ライブラリ]** をクリックし、ソリューションの名前を入力して、 **[OK]** をクリックします。  
   
 4.  Class1.cs ファイルの名前を変更します。 たとえば、MyDomainNameProvider.cs  
   
@@ -278,7 +278,7 @@ ms.locfileid: "59833323"
   
 21. プロジェクトを保存したら、次の手順でプロジェクトへの追加を行うため、プロジェクトを閉じないでください。 次の手順を完了するまでプロジェクトをビルドすることはできません。  
   
-###  <a name="BKMK_DomainMaintenance"></a> IDomainMaintenanceProvider インターフェイスの実装のアセンブリへの追加します。  
+###  <a name="add-an-implementation-of-the-idomainmaintenanceprovider-interface-to-the-assembly"></a><a name="BKMK_DomainMaintenance"></a>IDomainMaintenanceProvider インターフェイスの実装をアセンブリに追加します。  
  作成した後にドメインを維持するには、IDomainMaintenanceProvider が使用されます。  
   
 ##### <a name="to-add-the-idomainmaintenanceprovider-code-to-the-assembly"></a>IDomainMaintenanceProvider コードをアセンブリに追加するには  
@@ -517,10 +517,10 @@ ms.locfileid: "59833323"
   
 14. 保存し、ソリューションをビルドします。  
   
-###  <a name="BKMK_SignAssembly"></a> アセンブリに Authenticode 署名で署名します。  
+###  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>Authenticode 署名を使用してアセンブリに署名する  
  オペレーティング システムで使用するために、アセンブリを Authenticode で署名する必要があります。 アセンブリの署名の詳細については、「 [Authenticode によるコードの署名と確認 (英語の場合があります)](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)」を参照してください。  
   
-###  <a name="BKMK_InstallAssembly"></a> 参照コンピューターで、アセンブリをインストールします。  
+###  <a name="install-the-assembly-on-the-reference-computer"></a><a name="BKMK_InstallAssembly"></a>参照コンピューターにアセンブリをインストールする  
  アセンブリを参照コンピューターのフォルダーに配置します。 次の手順でレジストリに入力するため、フォルダーのパスをメモしておきます。  
   
 ### <a name="add-a-key-to-the-registry"></a>キーのレジストリへの追加  
@@ -528,59 +528,59 @@ ms.locfileid: "59833323"
   
 ##### <a name="to-add-a-key-to-the-registry"></a>キーをレジストリに追加するには  
   
-1.  参照コンピューターで、**[スタート]** をクリックし、「**regedit**」と入力して、**Enter** キーを押します。  
+1.  参照コンピューターで、 **[スタート]** ボタンをクリックし、「**regedit**」と入力して、**Enter** キーを押します。  
   
-2.  左のウィンドウで、**[HKEY_LOCAL_MACHINE]**、**[SOFTWARE]**、**[Microsoft]**、**[Windows Server]**、**[Domain Managers]**、**[Providers]** の順に展開します。  
+2.  左のウィンドウで、 **[HKEY_LOCAL_MACHINE]** 、 **[SOFTWARE]** 、 **[Microsoft]** 、 **[Windows Server]** 、 **[Domain Managers]** 、 **[Providers]** の順に展開します。  
   
-3.  **[Providers]** を右クリックし、**[新規作成]** をクリックして、**[キー]** をクリックします。  
+3.  **[Providers]** を右クリックし、 **[新規作成]** をクリックして、 **[キー]** をクリックします。  
   
 4.  プロバイダーの識別子をキーの名前として入力します。 識別子は、「[IDomainSignupProvider インターフェイスの実装のアセンブリへの追加](Add-Third-Level-Domain-Names.md#BKMK_DomainSignup)」の手順 8 でプロバイダーに対して定義した GUID です。  
   
-5.  先ほど作成したキーを右クリックし、**[文字列値]** をクリックします。  
+5.  先ほど作成したキーを右クリックし、 **[文字列値]** をクリックします。  
   
 6.  文字列の名前に対して「**Assembly**」と入力し、**Enter** キーを押します。  
   
-7.  右側のウィンドウで、新しい **Assembly** 文字列を右クリックし、**[変更]** をクリックします。  
+7.  右側のウィンドウで、新しい **Assembly** 文字列を右クリックし、 **[変更]** をクリックします。  
   
-8.  前に作成したアセンブリ ファイルへの完全なパスを入力し、**[OK]** をクリックします。  
+8.  前に作成したアセンブリ ファイルへの完全なパスを入力し、 **[OK]** をクリックします。  
   
-9. キーを再度右クリックし、**[文字列値]** をクリックします。  
+9. キーを再度右クリックし、 **[文字列値]** をクリックします。  
   
-10. 文字列の名前に対して「 **Enabled** 」と入力し、 **Enter**キーを押します。  
+10. 文字列の名前に対して「**Enabled**」と入力し、**Enter** キーを押します。  
   
-11. 右側のウィンドウで、新しい **Enabled** 文字列を右クリックし、**[変更]** をクリックします。  
+11. 右側のウィンドウで、新しい **Enabled** 文字列を右クリックし、 **[変更]** をクリックします。  
   
-12. 「 **True**」と入力し、**[OK]** をクリックします。  
+12. 「**True**」と入力し、 **[OK]** をクリックします。  
   
-13. キーを再度右クリックし、**[文字列値]** をクリックします。  
+13. キーを再度右クリックし、 **[文字列値]** をクリックします。  
   
 14. 文字列の名前に対して「**Type**」と入力し、**Enter** キーを押します。  
   
-15. 右側のウィンドウで、新しい **Type** 文字列を右クリックし、**[変更]** をクリックします。  
+15. 右側のウィンドウで、新しい **Type** 文字列を右クリックし、 **[変更]** をクリックします。  
   
-16. アセンブリで定義されたプロバイダーの完全なクラス名を入力し、**[OK]** をクリックします。  
+16. アセンブリで定義されたプロバイダーの完全なクラス名を入力し、 **[OK]** をクリックします。  
   
-###  <a name="BKMK_RestartService"></a> Windows Server Domain Name Management サービスを再起動します。  
+###  <a name="restart-the-windows-server-domain-name-management-service"></a><a name="BKMK_RestartService"></a>Windows Server ドメインネーム管理サービスを再起動する  
  プロバイダーがオペレーティング システムに対して使用できるようになるには、Windows Server Domain Management サービスを再起動する必要があります。  
   
-##### <a name="restart-the-service"></a>サービスを再起動します。  
+##### <a name="restart-the-service"></a>サービスの再開  
   
-1.  **[スタート]** をクリックし、「 **mmc**」と入力して、 **Enter**キーを押します。  
+1.  **[スタート]** ボタンをクリックし、「**mmc**」と入力して、**Enter** キーを押します。  
   
 2.  サービス スナップインがコンソールの一覧に表示されていない場合、サービス スナップインを追加するために次の手順を完了します。  
   
-    1.  **[ファイル]**、 **[スナップインの追加と削除]** の順にクリックします。  
+    1.  **[ファイル]** メニューの **[スナップインの追加と削除]** をクリックします。  
   
-    2.  **[利用できるスナップイン]** の一覧で、**[サービス]**、**[追加]** の順にクリックします。  
+    2.  **[利用できるスナップイン]** の一覧で、 **[サービス]** 、 **[追加]** の順にクリックします。  
   
-    3.  **[サービス]** ダイアログ ボックスで、**[ローカル コンピューター]** が選択されていることを確認し、**[完了]** をクリックします。  
+    3.  **[サービス]** ダイアログ ボックスで、 **[ローカル コンピューター]** が選択されていることを確認し、 **[完了]** をクリックします。  
   
     4.  **[OK]** をクリックして **[スナップインの追加と削除]** ダイアログ ボックスを閉じます。  
   
-3.  **[サービス]** をダブルクリックし、**[Windows Server Domain Management]** までスクロールして選択し、**[サービスを再開]** をクリックします。  
+3.  **[サービス]** をダブルクリックし、 **[Windows Server Domain Management]** までスクロールして選択し、 **[サービスを再開]** をクリックします。  
   
-## <a name="see-also"></a>関連項目  
- [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   
+## <a name="see-also"></a>参照  
+ [イメージ  の作成とカスタマイズ](Creating-and-Customizing-the-Image.md)  
  [追加のカスタマイズ](Additional-Customizations.md)   
- [イメージの展開の準備](Preparing-the-Image-for-Deployment.md)   
+ [展開  のイメージの準備](Preparing-the-Image-for-Deployment.md)  
  [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)

@@ -6,14 +6,14 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: d635f96516040fcb30504f752c8194b0323c63f3
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d61287b82cd6d3b869b1120d3cb21b3c8792bd1e
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71405773"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80312749"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>データセンターブリッジング (DCB) の管理
 
@@ -36,7 +36,7 @@ Windows Server 2016 では、グローバルポリシーストアに DCB 構成�
 
 1. DCBX を無効にするビットを false にする
 
-2. ネットワークアダプターで DCB を有効にします。 「 [ネットワークアダプターの DCB 設定を有効にして表示する](#bkmk_enabledcb)」を参照してください。
+2. ネットワークアダプターで DCB を有効にします。 「 [Enable And DISPLAY DCB Settings On Network Adapters](#bkmk_enabledcb)」を参照してください。
 
 >[!NOTE]
 >DCBX を使用してスイッチから DCB を構成する場合は、「 [Dcbx の設定](#dcb-configuration-on-network-adapters)」を参照してください。
@@ -428,7 +428,7 @@ DCB が Windows Server 2016 にインストールされているかどうかに�
 
 スイッチから DCB を構成し、DCBX を使用して構成をネットワークアダプターに伝達する場合は、ネットワークアダプターで DCB を有効にした後で、ネットワークアダプター上で受信および適用された構成をオペレーティングシステム側から調べることができます。
 
-###  <a name="bkmk_enabledcb"></a>ネットワークアダプターの DCB 設定を有効にして表示する
+###  <a name="enable-and-display-dcb-settings-on--network-adapters"></a><a name="bkmk_enabledcb"></a>ネットワークアダプターの DCB 設定を有効にして表示する
 
 ```
 PS C:\> Enable-NetAdapterQos M1
@@ -470,18 +470,18 @@ Capabilities :                       Hardware     Current
                NumTCs(Max/ETS/PFC) : 8/8/8        0/0/0  
 
 ```
-## <a name="bkmk_wps"></a>DCB 用の Windows PowerShell コマンド
+## <a name="windows-powershell-commands-for-dcb"></a><a name="bkmk_wps"></a>DCB 用の Windows PowerShell コマンド
 
 Windows Server 2016 と Windows Server 2012 R2 の両方に対応する DCB Windows PowerShell コマンドがあります。 Windows server 2016 では、Windows Server 2012 R2 のすべてのコマンドを使用できます。
 
 ### <a name="windows-server-2016-windows-powershell-commands-for-dcb"></a>Windows Server 2016 DCB 用の Windows PowerShell コマンド
 
-Windows Server 2016 の次のトピックでは、Windows PowerShell コマンドレットの説明と構文を提供します。すべてのデータセンターのブリッジング \(DCB\) のサービス品質 \(QoS\)\-特定のコマンドレットを使用します。 コマンドレットの先頭の動詞に基づいて、アルファベット順に記載しています。
+Windows Server 2016 の次のトピックでは、Windows PowerShell コマンドレットの説明と構文を提供します。すべてのデータセンターのブリッジング \(DCB\) のサービス品質 \(QoS\)\-特定のコマンドレットを使用します。 コマンドレットは、それぞれの先頭の動詞に使用されているアルファベットの順に並んでいます。
 
 - [DcbQoS モジュール](https://technet.microsoft.com/itpro/powershell/windows/dcbqos/dcbqos)
 
 ### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>DCB 用の windows Server 2012 R2 Windows PowerShell コマンド
 
-Windows Server 2012 R2 の次のトピックでは、Windows PowerShell コマンドレットの説明と構文を提供します。すべてのデータセンターのブリッジング \(DCB\) のサービス品質 \(QoS\)\-特定のコマンドレットを使用します。 コマンドレットの先頭の動詞に基づいて、アルファベット順に記載しています。
+Windows Server 2012 R2 の次のトピックでは、Windows PowerShell コマンドレットの説明と構文を提供します。すべてのデータセンターのブリッジング \(DCB\) のサービス品質 \(QoS\)\-特定のコマンドレットを使用します。 コマンドレットは、それぞれの先頭の動詞に使用されているアルファベットの順に並んでいます。
 
 - [Windows PowerShell のデータセンターブリッジング (DCB) のサービス品質 (QoS) コマンドレット](https://technet.microsoft.com/library/hh967440.aspx)

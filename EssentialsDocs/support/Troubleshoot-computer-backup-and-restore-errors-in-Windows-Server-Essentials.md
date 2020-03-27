@@ -1,9 +1,9 @@
 ---
 title: Windows Server Essentials でのコンピューター バックアップと復元エラーのトラブルシューティング
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 06/25/2013
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,23 +12,23 @@ ms.assetid: 5cc73aff-d2c0-4cf9-a23d-ef928ae5ddc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 37e79661442ba9f66a564b6c6c8fb57db1978454
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 28e3564c93f192563626bfb44992ef9bc4a49598
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812333"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313245"
 ---
 # <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>Windows Server Essentials でのコンピューター バックアップと復元エラーのトラブルシューティング
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 以下の手順を使用して、バックアップ構成の問題、不完全または失敗したバックアップ、バックアップの正常性アラート、およびファイル、フォルダー、またはシステムの完全復元の問題などの Windows Server Essentials でのコンピューターのバックアップのトラブルシューティングを行います。  
   
 > [!NOTE]
->  Windows Server Essentials コミュニティの最新のトラブルシューティング情報について、次を参照してください。、 [Windows Server Essentials フォーラム](https://social.technet.microsoft.com/Forums//winserveressentials/threads)します。  
+>  Windows Server Essentials コミュニティの最新のトラブルシューティング情報については、 [Windows Server Essentials フォーラム](https://social.technet.microsoft.com/Forums//winserveressentials/threads)を参照してください。  
   
-##  <a name="BKMK_TroubleshootBackupConfigurationIssues"></a> 接続されているコンピューターのバックアップの構成の問題をトラブルシューティングします。  
+##  <a name="troubleshoot-backup-configuration-issues-for-a-connected-computer"></a><a name="BKMK_TroubleshootBackupConfigurationIssues"></a>接続されているコンピューターのバックアップ構成の問題のトラブルシューティング  
  以下の手順を使用して、Windows Server Essentials サーバーにバックアップされるコンピューターのバックアップ構成の問題のトラブルシューティングを行います。  
   
 ### <a name="errors"></a>エラー  
@@ -51,11 +51,11 @@ ms.locfileid: "59812333"
   
     ###### <a name="to-start-computer-backup-services-on-the-server"></a>サーバーでコンピューターのバックアップ サービスを開始するには  
   
-    1.  サーバーで、**[スタート]** をクリックし、**[管理ツール]** をクリックして、**[サービス]** をクリックします。  
+    1.  サーバーで、 **[スタート]** をクリックし、 **[管理ツール]** をクリックして、 **[サービス]** をクリックします。  
   
-    2.  下にスクロールし、**[Windows Server Client Computer Backup Provider Service]** をクリックします。 サービスの状態が **[開始]** でない場合、サービスを右クリックし、**[開始]** をクリックします。  
+    2.  下にスクロールし、 **[Windows Server Client Computer Backup Provider Service]** をクリックします。 サービスの状態が **[開始]** でない場合、サービスを右クリックし、 **[開始]** をクリックします。  
   
-    3.  **[Windows Server Client Computer Backup Service]** をクリックします。 サービスの状態が **[開始]** でない場合、サービスを右クリックし、**[開始]** をクリックします。  
+    3.  **[Windows Server Client Computer Backup Service]** をクリックします。 サービスの状態が **[開始]** でない場合、サービスを右クリックし、 **[開始]** をクリックします。  
   
     4.  **[サービス]** を閉じます。  
   
@@ -63,17 +63,17 @@ ms.locfileid: "59812333"
   
     ###### <a name="to-start-the-computer-backup-service-on-the-client-computer"></a>クライアント コンピューターでコンピューターのバックアップ サービスを開始するには  
   
-    1.  クライアント コンピューターで、**[スタート]** をクリックし、**[プログラムとファイルの検索]** ボックスに、「**サービス**」と入力して、Enter キーを押します。  
+    1.  クライアント コンピューターで、 **[スタート]** をクリックし、 **[プログラムとファイルの検索]** ボックスに、「**サービス**」と入力して、Enter キーを押します。  
   
-    2.  下にスクロールし、**[Windows Server Client Computer Backup Provider Service]** をクリックします。 サービスの状態が **[開始]** でない場合、サービスを右クリックし、**[開始]** をクリックします。  
+    2.  下にスクロールし、 **[Windows Server Client Computer Backup Provider Service]** をクリックします。 サービスの状態が **[開始]** でない場合、サービスを右クリックし、 **[開始]** をクリックします。  
   
     3.  **[サービス]** を閉じます。  
   
 5.  アラートを調べて、バックアップ データベースにエラーがあるかどうかを判断します。 エラーがある場合は、アラートの指示に従って、バックアップ データベースを修復します。  
   
-6.  コンピューターから Windows Server Essentials コネクタ ソフトウェアをアンインストールし、再インストールします。 詳細については、「 [Uninstall the Connector software](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13) 」および「 [Install the Connector software](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11)」を参照してください。  
+6.  コンピューターから Windows Server Essentials コネクタ ソフトウェアをアンインストールし、再インストールします。 詳細については、トピック「[コネクタ ソフトウェアのアンインストール](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)」と「[コネクタ ソフトウェアのインストール](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11)」を参照してください。  
   
-##  <a name="BKMK_TroubleshootaBackupThatDidNotCompleteProperly"></a> 正常に完了しなかったバックアップをトラブルシューティングします。  
+##  <a name="troubleshoot-a-backup-that-did-not-complete-properly"></a><a name="BKMK_TroubleshootaBackupThatDidNotCompleteProperly"></a>正常に完了しなかったバックアップのトラブルシューティング  
  バックアップが失敗状態である場合、成功したバックアップの部分がなく、復元するために使用できるデータがありません。 ただし、バックアップが不完全状態である場合は、バックアップ構成に指定されたすべての項目がバックアップされたわけではありませんが、一部のデータは復元に使用できる可能性があります。  
   
 ### <a name="errors"></a>エラー  
@@ -86,11 +86,11 @@ ms.locfileid: "59812333"
   
 ##### <a name="to-identify-volumes-that-were-not-backed-up-successfully"></a>正常にバックアップされなかったボリュームを識別するには  
   
-1.  Windows Server Essentials ダッシュボードを開き、**[コンピューターとバックアップ]** をクリックします。  
+1.  Windows Server Essentials ダッシュボードを開き、 **[コンピューターとバックアップ]** をクリックします。  
   
-2.  バックアップが正常に完了しなかったコンピューターの名前をクリックし、**[タスク]** ウィンドウの **[コンピューターのプロパティの表示]** をクリックします。  
+2.  バックアップが正常に完了しなかったコンピューターの名前をクリックし、 **[タスク]** ウィンドウの **[コンピューターのプロパティの表示]** をクリックします。  
   
-3.  正常に完了しなかったバックアップをクリックし、**[詳細の表示]** をクリックします。  
+3.  正常に完了しなかったバックアップをクリックし、 **[詳細の表示]** をクリックします。  
   
 4.  **[バックアップの詳細]** ダイアログ ボックスで、バックアップが成功したすべてのボリュームの状態に緑のチェックが表示されます。  
   
@@ -98,7 +98,7 @@ ms.locfileid: "59812333"
   
 1.  コンピューターに接続されているハード ディスクがオンになっていて、正しく機能していることを確認します。  
   
-2.  **chkdsk/f/r** を実行して、ハード ディスク上のエラーを修正し (**/f**)、不良セクターから読み取り可能な情報を回復します (**/r**)。 **chkdsk**の実行の詳細については、「 [CHKDSK](https://go.microsoft.com/fwlink/?LinkId=206562)」を参照してください。  
+2.  **chkdsk/f/r** を実行して、ハード ディスク上のエラーを修正し ( **/f**)、不良セクターから読み取り可能な情報を回復します ( **/r**)。 **chkdsk**の実行の詳細については、「 [CHKDSK](https://go.microsoft.com/fwlink/?LinkId=206562)」を参照してください。  
   
 3.  バックアップの実行中に、コンピューターがシャットダウンしていないか、またはネットワークから切断されていないことを確認します。  
   
@@ -110,7 +110,7 @@ ms.locfileid: "59812333"
   
         ###### <a name="to-extend-a-volume"></a>ボリュームを拡張するには  
   
-        1.  [コントロール パネル] で、**[システムとセキュリティ]** をクリックします。  
+        1.  コントロール パネル で、**システムとセキュリティ** をクリックします。  
   
         2.  **[管理ツール]** の **[ハード ディスク パーティションの作成とフォーマット]** をクリックします。  
   
@@ -132,7 +132,7 @@ ms.locfileid: "59812333"
   
 6.  ボリューム シャドウ コピー サービス (VSS) の問題のトラブルシューティングを行うには、コマンド プロンプトで **vssadmin** を実行します。 **vssadmin**の詳細については、 [VSSADMIN](https://go.microsoft.com/fwlink/?LinkID=94332)を参照してください。  
   
-##  <a name="BKMK_TroubleshootBackupHealthAlertIssues"></a> バックアップの正常性アラートに関する問題をトラブルシューティングします。  
+##  <a name="troubleshoot-backup-health-alert-issues"></a><a name="BKMK_TroubleshootBackupHealthAlertIssues"></a>バックアップ正常性アラートの問題のトラブルシューティング  
   
 ### <a name="errors"></a>エラー  
   
@@ -150,22 +150,22 @@ ms.locfileid: "59812333"
   
     ###### <a name="to-start-backup-services-on-the-server"></a>サーバーでバックアップ サービスを開始するには  
   
-    1.  サーバーで、**[スタート]** をクリックし、**[管理ツール]** をクリックして、**[サービス]** をクリックします。  
+    1.  サーバーで、 **[スタート]** をクリックし、 **[管理ツール]** をクリックして、 **[サービス]** をクリックします。  
   
         > [!NOTE]
         >  サーバーをリモートで管理している場合、リモート デスクトップ接続を使用して、サーバーのデスクトップにアクセスする必要があります。 リモート デスクトップ接続の使用については、「 [リモート デスクトップ接続を使用した別のコンピューターへの接続](https://windows.microsoft.com/windows-vista/Connect-to-another-computer-using-Remote-Desktop-Connection)」を参照してください。  
   
-    2.  下にスクロールし、**[Windows Server Client Computer Backup Provider Service]** をクリックします。 サービスの状態が **[開始]** でない場合、サービスを右クリックし、**[開始]** をクリックします。  
+    2.  下にスクロールし、 **[Windows Server Client Computer Backup Provider Service]** をクリックします。 サービスの状態が **[開始]** でない場合、サービスを右クリックし、 **[開始]** をクリックします。  
   
-    3.  **[Windows Server Client Computer Backup Service]** をクリックします。 サービスの状態が **[開始]** でない場合、サービスを右クリックし、**[開始]** をクリックします。  
+    3.  **[Windows Server Client Computer Backup Service]** をクリックします。 サービスの状態が **[開始]** でない場合、サービスを右クリックし、 **[開始]** をクリックします。  
   
     4.  **[サービス]** を閉じます。  
   
     ###### <a name="to-start-backup-services-on-a-client-computer"></a>クライアント コンピューターでバックアップ サービスを開始するには  
   
-    1.  クライアント コンピューターで、**[スタート]** をクリックし、**[プログラムとファイルの検索]** ボックスに、「 **サービス** 」と入力して、Enter キーを押します。  
+    1.  クライアント コンピューターで、 **[スタート]** をクリックし、 **[プログラムとファイルの検索]** ボックスに、「**サービス**」と入力して、Enter キーを押します。  
   
-    2.  **[Windows Server Client Computer Backup Provider Service]** を右クリックし、**[開始]** をクリックします。  
+    2.  **[Windows Server Client Computer Backup Provider Service]** を右クリックし、 **[開始]** をクリックします。  
   
     3.  **[サービス]** を閉じます。  
   
@@ -175,7 +175,7 @@ ms.locfileid: "59812333"
   
 5.  正常性アラートで、クライアント バックアップに影響を及ぼす可能性がある他の問題を確認します。  
   
-##  <a name="BKMK_FileAndFolder"></a> ファイルまたはフォルダーの復元をトラブルシューティングします。  
+##  <a name="troubleshoot-a-file-or-folder-restore"></a><a name="BKMK_FileAndFolder"></a>ファイルまたはフォルダーの復元のトラブルシューティング  
   
 ### <a name="errors"></a>エラー  
   
@@ -197,33 +197,33 @@ ms.locfileid: "59812333"
   
     ###### <a name="to-check-the-status-of-the-windows-server-solution-computer-restore-driver"></a>Windows Server Solution Computer Restore Driver の状態を確認するには  
   
-    1.  **[スタート]** をクリックし、**[プログラムとファイルの検索]** ボックスに、「**デバイス マネージャー**」と入力して、Enter キーを押します。  
+    1.  **[スタート]** をクリックし、 **[プログラムとファイルの検索]** ボックスに、「**デバイス マネージャー**」と入力して、Enter キーを押します。  
   
-    2.  デバイス マネージャーで **[システム デバイス]** をクリックし、**[Windows Server Solutions Computer Restore Driver]** までスクロールします。  
+    2.  デバイス マネージャーで **[システム デバイス]** をクリックし、 **[Windows Server Solutions Computer Restore Driver]** までスクロールします。  
   
     3.  ドライバーが表示されていない場合:  
   
         1.  管理者特権でコマンド プロンプトを開き、次のコマンドを実行します。  
   
-             **%ProgramFiles%\Windows Server\Bin\BackupDriverInstaller.exe?  �i**  
+             **%ProgramFiles%\Windows Server\Bin\BackupDriverInstaller.exe?-i**  
   
         2.  デバイス マネージャーを更新します。 ドライバーが表示されるはずです。  
   
-    4.  表示されたアイコンがコンピューター モニターである場合、ドライバーが正しくインストールされ実行しています。 デバイス マネージャーを閉じます。  
+    4.  表示されたアイコンがコンピューター モニターである場合、ドライバーが正しくインストールされ実行しています。 [デバイス マネージャー] を閉じます。  
   
     5.  表示されたアイコンがコンピューター モニターでない場合  
   
-        1.  **[Windows Server Solutions Computer Restore Driver]** を右クリックし、**[プロパティ]** をクリックします。  
+        1.  **[Windows Server Solutions Computer Restore Driver]** を右クリックし、 **[プロパティ]** をクリックします。  
   
-        2.  **[ドライバー]** タブをクリックし、**[ドライバーの更新]** をクリックします。  
+        2.  **[ドライバー]** タブをクリックし、 **[ドライバーの更新]** をクリックします。  
   
         3.  **[自動的に更新されたドライバー ソフトウェアを検索します]** をクリックし、手順に従って、ドライバーを更新します。  
   
-    6.  デバイス マネージャーを閉じます。  
+    6.  [デバイス マネージャー] を閉じます。  
   
-6.  コンピューターから Windows Server Essentials コネクタ ソフトウェアをアンインストールし、再インストールします。 詳細については、「 [Uninstall the Connector software](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13) 」および「 [Install the Connector software](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11)」を参照してください。  
+6.  コンピューターから Windows Server Essentials コネクタ ソフトウェアをアンインストールし、再インストールします。 詳細については、トピック「[コネクタ ソフトウェアのアンインストール](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)」と「[コネクタ ソフトウェアのインストール](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11)」を参照してください。  
   
-##  <a name="BKMK_Troubleshootfullsystemrestoreissues"></a> システムの完全復元をトラブルシューティングします。  
+##  <a name="troubleshoot-a-full-system-restore"></a><a name="BKMK_Troubleshootfullsystemrestoreissues"></a>システムの完全復元のトラブルシューティング  
   
 ### <a name="errors"></a>エラー  
   
@@ -238,10 +238,10 @@ ms.locfileid: "59812333"
   
 2.  コネクタ ソフトウェアをアンインストールします。 詳細については、「[コネクタ ソフトウェアのアンインストール](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13)」を参照してください。  
   
-3.  ドメインからコンピューターを削除します。 詳細については、「 [Remove a computer from a Windows domain](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)」を参照してください。  
+3.  ドメインからコンピューターを削除します。 詳細については、「[Windows ドメインからコンピューターを削除する](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_8)」を参照してください。  
   
-4.  コンピューターを再度サーバーに接続します。 詳細については、「 [Connect computers to the server](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)」を参照してください。  
+4.  コンピューターを再度サーバーに接続します。 詳細については、「[コンピューターをサーバーに接続する方法](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)」を参照してください。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
   
--   [Windows Server Essentials をサポートします。](Support-Windows-Server-Essentials.md)
+-   [Windows Server Essentials のサポート](Support-Windows-Server-Essentials.md)

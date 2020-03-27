@@ -1,9 +1,9 @@
 ---
 title: 共有フォルダーのカスタマイズ
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,16 +12,16 @@ ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d8f52cbe76204bb00cb15c3093f69daf3d8abb6e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 387f9570e87bd2bd65266489b0f3eac6c945e3be
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433537"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311914"
 ---
 # <a name="customize-shared-folders"></a>共有フォルダーのカスタマイズ
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
 既定では、サーバー フォルダーはディスク 0 の最大のデータ パーティションに作成されます。 パートナーは次の手順で、場所をカスタマイズし、追加のサーバー フォルダーを指定できます。  
   
@@ -39,7 +39,7 @@ ms.locfileid: "66433537"
   
    5.  キーの名前を「**Storage**」にします。  
   
-   6.  ナビゲーション ウィンドウで、新しい **Storage**レジストリ キーを右クリックし、 **[DWORD (32 ビット) 値]** をクリックします。  
+   6.  ナビゲーション ウィンドウで、新しい **Storage** レジストリ キーを右クリックし、 **[DWORD (32 ビット) 値]** をクリックします。  
   
    7.  文字列の名前を「**CreateFoldersOnSystem**」にします。  
   
@@ -47,17 +47,17 @@ ms.locfileid: "66433537"
   
    9. この新しいキーの値を **1** に設定し、 **[OK]** をクリックします。  
   
-2. PostIC.cmd スクリプトを使用して、フォルダーを別の場所に移動するか、追加のフォルダーを作成します。 次の例を参照してください。[例 1:カスタム フォルダーを作成し、Windows PowerShell を使用して、既定のフォルダーを PostIC.cmd から新しい場所に移動](Customize-Shared-Folders.md#BKMK_Example1)します。  
+2. PostIC.cmd スクリプトを使用して、フォルダーを別の場所に移動するか、追加のフォルダーを作成します。 例については、「[例 1: Windows PowerShell を使用して、カスタム フォルダーを作成し、既定のフォルダーを PostIC.cmd から新しい場所に移動する](Customize-Shared-Folders.md#BKMK_Example1)」を参照してください。  
   
-3. Windows Server Solutions SDK を使用して、フォルダーを別の場所に移動するか、追加のフォルダーを作成します。 次の例を参照してください。[例 2:カスタム フォルダーを作成し、Windows Server Solutions SDK を使用して既存のフォルダーを移動](Customize-Shared-Folders.md#BKMK_Example2)します。  
+3. Windows Server Solutions SDK を使用して、フォルダーを別の場所に移動するか、追加のフォルダーを作成します。 例については、「[例 2: Windows Server Solutions SDK を使用して、カスタム フォルダーを作成し、既存のフォルダーを移動する](Customize-Shared-Folders.md#BKMK_Example2)」を参照してください。  
   
    パートナーは必要に応じてデータ フォルダーをドライブ C に残しておくことができます。これにより、エンド ユーザーまたは再販業者はデータ ドライブのデータ フォルダーのレイアウトを決定できるようになります。  
   
-###  <a name="BKMK_Example1"></a> 例 1:Windows PowerShell を使用して、カスタム フォルダーを作成し、既定のフォルダーを PostIC.cmd から新しい場所に移動する  
+###  <a name="example-1-create-a-custom-folder-and-move-the-default-folders-to-a-new-location-from-posticcmd-by-using-windows-powershell"></a><a name="BKMK_Example1"></a>例 1: Windows PowerShell を使用してカスタムフォルダーを作成し、Postic.cmd から新しい場所に既定のフォルダーを移動する  
   
-1.  詳述するよう後の初期構成タスクを実行するための PostIC.cmd ファイルを作成、[初期構成の投稿を実行しているタスクのための PostIC.cmd ファイルを作成する](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)セクション。  
+1.  「[初期構成後のタスクを実行するための PostIC.cmd ファイルの作成](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md)」セクションで詳細に説明されているように、初期構成後のタスクを実行するための PostIC.cmd ファイルを作成します。  
   
-2.  メモ帳を使用して、 **customizefolders.ps1** という名前のファイルを C:\Windows\Setup\Scripts フォルダー内に作成し、次の Windows PowerShell® コマンドをファイルに貼り付けます (目的の動作に応じて該当する行のマークを解除します)。  
+2.  メモ帳を使用して、**customizefolders.ps1** という名前のファイルを C:\Windows\Setup\Scripts フォルダー内に作成し、次の Windows PowerShell® コマンドをファイルに貼り付けます (目的の動作に応じて該当する行のマークを解除します)。  
   
     ```  
     # Move the Documents folder to D:\ServerFolders  
@@ -99,7 +99,7 @@ ms.locfileid: "66433537"
     Set ERRORLEVEL=%error_level%  
     ```  
   
-###  <a name="BKMK_Example2"></a> 例 2:Windows Server Solutions SDK を使用して、カスタム フォルダーを作成し、既存のフォルダーを移動する  
+###  <a name="example-2-create-a-custom-folder-and-move-an-existing-folder-by-using-the-windows-server-solutions-sdk"></a><a name="BKMK_Example2"></a>例 2: Windows Server Solutions SDK を使用してカスタムフォルダーを作成し、既存のフォルダーを移動する  
  作成したコードは、実行可能ファイルとしてコンパイルし、PostIC.cmd ファイルから呼び出すか、インストール済みのアドインから直接呼び出すことができます。  
   
 ```  
@@ -143,8 +143,8 @@ static void Main(string[] args)
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   
+## <a name="see-also"></a>参照  
+ [イメージ  の作成とカスタマイズ](Creating-and-Customizing-the-Image.md)  
  [追加のカスタマイズ](Additional-Customizations.md)   
- [イメージの展開の準備](Preparing-the-Image-for-Deployment.md)   
+ [展開  のイメージの準備](Preparing-the-Image-for-Deployment.md)  
  [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)

@@ -6,15 +6,15 @@ ms.technology: networking
 ms.topic: article
 ms.assetid: cd4908f0-0d6f-4c02-8f98-4dc88c3dcb65
 ms.date: 11/05/2018
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.localizationpriority: medium
-ms.openlocfilehash: fdd409dee5a7a957580daeeb05209336edfd86f6
-ms.sourcegitcommit: 07c9d4ea72528401314e2789e3bc2e688fc96001
+ms.openlocfilehash: 55e99d4a02b88a7b5367d3b389237bf96829fd89
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76822615"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80307806"
 ---
 # <a name="virtual-private-networking-vpn"></a>仮想プライベート ネットワーク (VPN)
 

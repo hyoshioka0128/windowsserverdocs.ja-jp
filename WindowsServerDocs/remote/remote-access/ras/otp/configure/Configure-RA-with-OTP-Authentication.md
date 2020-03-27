@@ -10,14 +10,14 @@ ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 82505b18-dd77-4dd1-aa27-b2962b8241ca
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: c4340b59fd797d5d9d0e6270409b562128c0ccc1
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: d41d89c925c4741de51028678640143fa7618d87
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71404415"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80313661"
 ---
 # <a name="configure-remote-access-with-otp-authentication"></a>OTP 認証を使用するリモート アクセスを構成する
 

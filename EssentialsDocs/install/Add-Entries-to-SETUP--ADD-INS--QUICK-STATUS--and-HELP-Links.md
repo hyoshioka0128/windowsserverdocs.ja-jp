@@ -1,9 +1,9 @@
 ---
 title: セットアップ リンク、アドイン リンク、簡単な状態リンク、ヘルプ リンクへのエントリの追加
-description: Windows Server Essentials を使用する方法について説明します
+description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,18 +12,18 @@ ms.assetid: c0a8f10d-fd85-4c8d-b9bb-176cb1db1f46
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f0a66d0d36a3012369a9bc26c513dad069235ad8
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 074e4e638a1fe96bedf2c8340ec71848a8fa4ac4
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433794"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310276"
 ---
 # <a name="add-entries-to-setup-add-ins-quick-status-and-help-links"></a>セットアップ リンク、アドイン リンク、簡単な状態リンク、ヘルプ リンクへのエントリの追加
 
->適用先:Windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
+>適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-**[セットアップ]** 、 **[アドイン]** 、 **[簡単な状態]** タスク一覧にタスクを追加でき、ダッシュボードのホーム ページの [コミュニティ リンク] セクションにリンクを追加できます。 タスクやリンクをこれらの一覧とセクションに追加するには、OEMHomePageContent.home ファイルという名前の XML ファイルまたは OEMHomePageContent.dll という名前の埋め込みリソース ファイルを %ProgramFiles%\Windows Server\Bin\Addins\Home に配置します。 埋め込みリソース ファイルを使用して、追加したタスクとリンクのテキストをローカライズできます。 .home ファイルには、タスクとリンクの XML 定義が含まれます。  
+**セットアップ**、**アドイン**、**簡単な状態** タスク一覧にタスクを追加でき、ダッシュボードのホーム ページの コミュニティ リンク セクションにリンクを追加できます。 タスクやリンクをこれらの一覧とセクションに追加するには、OEMHomePageContent.home ファイルという名前の XML ファイルまたは OEMHomePageContent.dll という名前の埋め込みリソース ファイルを %ProgramFiles%\Windows Server\Bin\Addins\Home に配置します。 埋め込みリソース ファイルを使用して、追加したタスクとリンクのテキストをローカライズできます。 .home ファイルには、タスクとリンクの XML 定義が含まれます。  
   
 ## <a name="adding-tasks-to-the-setup-add-ins-quick-status-task-lists-and-adding-links-to-help-task"></a>セットアップ、アドイン、簡単な状態タスク一覧にタスクを追加し、ヘルプ タスクにリンクを追加する  
  **[セットアップ]** 、 **[アドイン]** 、 **[簡単な状態]** タスク一覧にタスクを追加し、 **[ヘルプ]** タスクにリンクを追加するには、XML を使用してタスクとリンクを定義し、任意で埋め込みリソース ファイルを作成して、ファイルをサーバーにインストールします。 XML ファイルをリソース ファイルなしでサーバーにインストールする場合、OEMHomePageContent.home という名前にする必要があります。 アセンブリが XML ファイルとリソース ファイルのインストールに使用されている場合、OEMHomePageContent.dll という名前にし、Authenticode 署名する必要があります。  
@@ -35,15 +35,15 @@ ms.locfileid: "66433794"
   
 1. スタート メニューのプログラムを右クリックし、**管理者として実行** を選択して、Visual Studio 2010 以降を管理者として開きます。  
   
-2. をクリックして**ファイル**、 をクリックして**新規**、クリックして**プロジェクト**です。  
+2. **[ファイル]** をクリックし、 **[新規作成]** をクリックし、 **[プロジェクト]** をクリックします。  
   
-3. **[テンプレート]** ウィンドウで、 **[クラス ライブラリ]** をクリックし、 **[名前]** ボックスに「 **OEMHomePageContent** 」と入力して、 **[OK]** をクリックします。  
+3. **[テンプレート]** ウィンドウで、 **[クラス ライブラリ]** をクリックし、 **[名前]** ボックスに「**OEMHomePageContent**」と入力して、 **[OK]** をクリックします。  
   
 4. Class1.cs ファイルを削除します。  
   
 5. 新しいプロジェクトを右クリックし、 **[追加]** をクリックし、 **[新しい項目]** をクリックします。  
   
-6. **[テンプレート]** ウィンドウで **[XML ファイル]** をクリックし、 **[名前]** ボックスに「 **OEMHomePageContent.home** 」と入力して、 **[追加]** をクリックします。  
+6. **[テンプレート]** ウィンドウで **[XML ファイル]** をクリックし、 **[名前]** ボックスに「**OEMHomePageContent.home**」と入力して、 **[追加]** をクリックします。  
   
    > [!NOTE]
    >  XML ファイルをリソース ファイルなしでインストールする場合、OEMHomePageContent.home という名前にする必要があります。 アセンブリに含める場合は、拡張子が .home である限り、任意の名前を指定できます。  
@@ -103,17 +103,17 @@ ms.locfileid: "66433794"
    |---------------|-----------------|  
    |Name (Task)|一覧のタスクに表示される名前です。 埋め込みリソース ファイルを作成する場合、この属性の値は文字列リソースです。|  
    |description (Task)|タスクの説明です。 埋め込みリソース ファイルを作成する場合、この属性の値は文字列リソースです。|  
-   |id (Task)|タスクの識別子です。 この識別子は、GUID でなければなりません。 **exe** タスクには新しい GUID を作成しますが、 **グローバル** タスクには、サブタブの作業ウィンドウに対してタスクを定義したときに作成した GUID を使用します。GUID の作成の詳細については、「 [Guid の作成 (guidgen.exe)](https://go.microsoft.com/fwlink/?LinkId=116098)」を参照してください。|  
+   |id (Task)|タスクの識別子です。 この識別子は、GUID でなければなりません。 **Exe**タスクに対して新しい guid を作成しますが、**グローバル**タスクの場合は、サブタブの作業ウィンドウに対してタスクを定義したときに作成した guid を使用します。GUID の作成の詳細については、「 [guid の作成 (guidgen.exe)](https://go.microsoft.com/fwlink/?LinkId=116098)」を参照してください。|  
    |image|このフィールドは無視されます。|  
    |Name (Action)|タスクの名前を表示します。|  
-   |Type (Action)|タスクの種類を説明します。 タスクは、 **グローバル** タスク、 **exe**、または URL タスクのいずれかです。 **グローバル** タスクは、サブタブの作業ウィンドウに対してタスクを定義したときに作成したグローバル タスクと同じグローバル タスクです。サブタブの作業ウィンドウとホーム ページの作業の開始タスクまたは共通タスクのリストで使用できるグローバル タスクの作成の詳細については、サポート クラスの œCreating を参照してください。内に œHow:サブ タブを作成しますか。[Windows Server Solutions SDK](https://go.microsoft.com/fwlink/?LinkID=248648)します。 **exe** タスクは、作業の開始タスク一覧または共通タスク一覧からアプリケーションを実行するために使用できます。|  
-   |exelocation|タスクに関連付けられているアプリケーションへのパスです。 この属性は、 **exe** タスクに対してのみ使用されます。|  
+   |Type (Action)|タスクの種類を説明します。 タスクは、**グローバル** タスク、**exe**、または URL タスクのいずれかです。 **グローバル**タスクは、サブタブの作業ウィンドウのタスクを定義するときに作成したのと同じグローバルタスクです。サブタブの [タスク] ウィンドウと、ホームページの [はじめにタスク] または [一般的なタスク] の一覧の両方で使用できるグローバルタスクの作成の詳細については、「サポートクラスの作成」を参照してください。ここでは、サブタブを作成する方法について説明します。[Windows Server SOLUTIONS SDK](https://go.microsoft.com/fwlink/?LinkID=248648)の。 **exe** タスクは、作業の開始タスク一覧または共通タスク一覧からアプリケーションを実行するために使用できます。|  
+   |exelocation|タスクに関連付けられているアプリケーションへのパスです。 この属性は、**exe** タスクに対してのみ使用されます。|  
    |replaceid|このタスクに置き換えられるタスクの識別子です。|  
-   |アセンブリ (assembly)|簡単な状態のクエリを実装するためのクラスを提供するアセンブリの AssemblyName。 アセンブリは、Program files \ windows server \bin に配置する必要がある\\します。|  
-   |クラス|クラスの名前で簡単な状態のクエリを実装します。 このクラスは、**ITaskStatusQuery** インターフェイスを実装する必要があります。|  
+   |assembly|簡単な状態のクエリを実装するためのクラスを提供するアセンブリの AssemblyName。 アセンブリは、Program files \ windows server\bin\\に配置されている必要があります。|  
+   |class|クラスの名前で簡単な状態のクエリを実装します。 このクラスは、**ITaskStatusQuery** インターフェイスを実装する必要があります。|  
    |Title (link)|リンクに表示されるテキストです。 埋め込みリソース ファイルを作成する場合、この属性の値は文字列リソースです。|  
    |Description (link)|リンク先の説明です。 埋め込みリソース ファイルを作成する場合、この属性の値は文字列リソースです。|  
-   |ShellExecPath|アプリケーションへのパスまたは URL です。<br /><br /> **注:** 環境変数が ShellExecPath 属性でサポートされます。|  
+   |ShellExecPath|アプリケーションへのパスまたは URL です。<br /><br /> **注:** 環境変数は、ShellExecPath 属性でサポートされています。|  
   
     次のコード例は、アプリケーションへのリンクの定義方法を示しています。  
   
@@ -142,16 +142,16 @@ ms.locfileid: "66433794"
 #### <a name="change-the-status-of-a-setupadd-ins-task"></a>セットアップ/アドイン タスクのステータスの変更  
  [セットアップ] と [アドイン] の一覧に表示されるタスクのステータスを、完了 (アドイン用に構成されています) と完了していません (アドイン用に構成されていません) で切り替えることができます。  
   
- 新しいタスクに関連付けられるアプリケーションを定義するときは、Microsoft.WindowsServerSolutions.Administration.ObjectModel.TaskStatusHelper 名前空間の SetTaskStatus メソッドを使用して、タスクのステータスを変更することができます (このメソッドは Windows Server Solutions SDK に付属していますが、ドキュメント化されていません)。 たとえば、列挙値 TaskStatus.Complete で SetTaskStatus メソッドを呼び出し、チェック マークを灰色から緑色に変更できます (SetTaskStatus(id, TaskStatus.Complete)、 **id** はタスクの識別子)。 使用可能な列挙値は TaskStatus.Complete、TaskStatus.Incomplete、TaskStatus.Hidden です。  
+ 新しいタスクに関連付けられるアプリケーションを定義するときは、Microsoft.WindowsServerSolutions.Administration.ObjectModel.TaskStatusHelper 名前空間の SetTaskStatus メソッドを使用して、タスクのステータスを変更することができます (このメソッドは Windows Server Solutions SDK に付属していますが、ドキュメント化されていません)。 たとえば、列挙値 TaskStatus.Complete で SetTaskStatus メソッドを呼び出し、チェック マークを灰色から緑色に変更できます (SetTaskStatus(id, TaskStatus.Complete)、**id** はタスクの識別子)。 使用可能な列挙値は TaskStatus.Complete、TaskStatus.Incomplete、TaskStatus.Hidden です。  
   
 ##### <a name="replace-tasks"></a>タスクの置換  
  タスクの GUID をタスク定義の replaceid 属性に追加することで、作業の開始タスクまたは共通タスク一覧で事前に定義されたタスクを置換できます。 次の表は、タスクと、ダッシュボードで置換できる対応する識別子の一覧です。  
   
-|タスク名|識別子|  
+|[タスク名]|[Identifier]|  
 |---------------|----------------|  
 |他のマイクロソフト製品の更新プログラムの入手|8412D35A-13EE-4112-AE0B-F7DBC83EA83D|  
 |サーバー バックアップのセットアップ|F68B3F3F-19DE-499D-9ACB-4BB41B8FF420|  
-|Anywhere Access のセットアップ|8991302D-676A-4A7C-B244-D1E08AE0EFEA|  
+|Anywhere Access をセットアップする|8991302D-676A-4A7C-B244-D1E08AE0EFEA|  
 |電子メール アラート通知のセットアップ|DE6F2B36-F19C-4FAF-998B-9772300E3530|  
 |ユーザー アカウントの追加|6D5B5D5F-2EC7-4B1F-9580-4DB084B278B1|  
 |サーバー フォルダーの追加|03F1F438-D94E-439B-A9F7-0C817C37D625|  
@@ -169,7 +169,7 @@ ms.locfileid: "66433794"
   
 1.  タスク用に作成したプロジェクトを右クリックし、 **[追加]** をクリックし、 **[新しい項目]** をクリックします。  
   
-2.  **[テンプレート]** ウィンドウで、 **[リソース ファイル]** をクリックし、 **[名前]** ボックスに「 **OEMHomePageContent.home.resx** 」と入力して、 **[追加]** をクリックします。  
+2.  **[テンプレート]** ウィンドウで、 **[リソース ファイル]** をクリックし、 **[名前]** ボックスに「**OEMHomePageContent.home.resx**」と入力して、 **[追加]** をクリックします。  
   
     > [!NOTE]
     >  リソース ファイルには、拡張子が .home.resx である限り、任意の名前を指定できます。  
@@ -201,11 +201,11 @@ ms.locfileid: "66433794"
   
 5.  OEMHomePageContent.home.resx ファイルを保存し、ソリューションをビルドします。  
   
-#####  <a name="BKMK_SignAssembly"></a> アセンブリに Authenticode 署名で署名します。  
+#####  <a name="sign-the-assembly-with-an-authenticode-signature"></a><a name="BKMK_SignAssembly"></a>Authenticode 署名を使用してアセンブリに署名する  
  オペレーティング システムで使用するために、アセンブリを Authenticode で署名する必要があります。 アセンブリの署名の詳細については、「 [Authenticode によるコードの署名と確認 (英語の場合があります)](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode)」を参照してください。  
   
 ##### <a name="install-the-task-files"></a>タスクのファイルのインストール  
- .Home を作成した後、。 home.resx ファイル、する必要がありますサーバーにインストールします。  
+ .home および .home.resx ファイルを作成した後、ファイルをサーバーにインストールする必要があります。  
   
 ###### <a name="to-install-the-task-files"></a>タスクのファイルをインストールするには  
   
@@ -213,8 +213,8 @@ ms.locfileid: "66433794"
   
 2.  埋め込みリソース ファイルを作成しなかった場合、OEMHomePageContent.home ファイルをサーバー上の **%ProgramFiles%\Windows Server\Bin\Addins\Home** にコピーします。 埋め込みリソース ファイルを作成した場合、OEMHomePageContent.dll ファイルをサーバー上の **%ProgramFiles%\Windows Server\Bin\Addins\Home** にコピーします。  
   
-## <a name="see-also"></a>関連項目  
- [作成して、イメージをカスタマイズします。](Creating-and-Customizing-the-Image.md)   
+## <a name="see-also"></a>参照  
+ [イメージ  の作成とカスタマイズ](Creating-and-Customizing-the-Image.md)  
  [追加のカスタマイズ](Additional-Customizations.md)   
- [イメージの展開の準備](Preparing-the-Image-for-Deployment.md)   
+ [展開  のイメージの準備](Preparing-the-Image-for-Deployment.md)  
  [カスタマー エクスペリエンスのテスト](Testing-the-Customer-Experience.md)

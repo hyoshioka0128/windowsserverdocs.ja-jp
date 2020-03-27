@@ -3,18 +3,18 @@ ms.assetid: ''
 title: Windows Server 2019 の HPN 機能の Insider Preview
 description: Windows Server 2019 の新しい高パフォーマンスネットワーク機能について説明します。
 manager: dougkim
-author: shortpatti
-ms.author: pashort
+author: eross-msft
+ms.author: lizross
 ms.date: 09/12/2018
 ms.topic: article
 ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: bca603344047ea5cc890bf9976ca5a6c79514136
-ms.sourcegitcommit: 9feb093a0acb8834c9ef3c066667c7062d85e6e1
+ms.openlocfilehash: 03a652372fd86b11a87863330bf9536a28367167
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/26/2020
-ms.locfileid: "80289797"
+ms.locfileid: "80316951"
 ---
 # <a name="new-hpn-features-in-windows-server-2019"></a>Windows Server 2019 の新しい HPN 機能
 
@@ -27,7 +27,7 @@ ms.locfileid: "80289797"
 
 Windows Server 2019 では、必要に応じて、ネットワークワークロードの処理を動的に拡散およびチューニングすることで、これらの最適化が向上しています。 Windows Server 2019 では、ピーク時の効率が確保され、IT 管理者の構成の負荷が排除されます。
 
-詳細については、以下をご覧ください。
+詳しくは、次のトピックをご覧ください。
 
 -   [お知らせのブログ](https://blogs.technet.microsoft.com/networking/2018/08/22/netperf4vw/)
 
@@ -43,7 +43,7 @@ VSwitch での受信セグメント結合 (RSC) は、データが vSwitch を�
 
 既定では、vSwitch の RSC は外部仮想スイッチで有効になっています。
 
-詳細については、以下をご覧ください。
+詳しくは、次のトピックをご覧ください。
 
 -  [お知らせのブログ](https://blogs.technet.microsoft.com/networking/2018/08/22/netperf4vw/)
 

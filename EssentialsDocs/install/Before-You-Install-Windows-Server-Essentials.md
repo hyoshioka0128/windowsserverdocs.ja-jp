@@ -3,7 +3,7 @@ title: Windows Server Essentials をインストールする前に
 description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,18 +12,18 @@ ms.assetid: 8d0893bd-e2b7-4494-9537-02b1cbbcd57a
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 4629c0ba04cc7ee617a2fc6b6a73a19b9e45ada8
-ms.sourcegitcommit: 3d76683718ec6f38613f552f518ebfc6a5db5401
+ms.openlocfilehash: 7268ebbfffd034780635e693cd6aa6380f30dd91
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74829549"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310106"
 ---
 # <a name="before-you-install-windows-server-essentials"></a>Windows Server Essentials をインストールする前に
 
 >適用対象: windows Server 2016 Essentials、Windows Server 2012 R2 Essentials、Windows Server 2012 Essentials
 
-##  <a name="BKMK_BeforeYouBegin"></a>Windows Server Essentials のインストールを開始する前に、次のタスクを実行します。  
+##  <a name="before-you-begin-your-installation-of--windows-server-essentials-perform-the-following-tasks"></a><a name="BKMK_BeforeYouBegin"></a>Windows Server Essentials のインストールを開始する前に、次のタスクを実行します。  
 
 -   **コンピューターが最小ハードウェア要件を満たしていることを確認します**。 これには、追加のハードウェアが必要かどうかの判断や、ハードウェアのドライバーが Windows Server Essentials でサポートされているかどうかの確認が含まれます。 詳細については、「 [Windows Server Essentials のシステム要件](../get-started/system-requirements.md)」を参照してください。   
 
@@ -57,7 +57,7 @@ ms.locfileid: "74829549"
 
 - **Windows Server Essentials リリースのドキュメントを参照して**ください。 リリースドキュメントには、Windows Server Essentials を適切にインストールおよび構成するために重要な最新情報が記載されています。 リリースドキュメントを表示または印刷するには、「 [Windows Server Essentials のリリースドキュメント](../get-started/release-notes.md)」を参照してください。  
 
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
 
 -   [Windows Server Essentials のインストール](Install-Windows-Server-Essentials.md)
 

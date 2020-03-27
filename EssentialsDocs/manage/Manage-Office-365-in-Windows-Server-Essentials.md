@@ -2,17 +2,17 @@
 title: Windows Server Essentials での Office 365 の管理
 description: Windows Server Essentials の使用方法について説明します。
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 3f8485e4-e10f-4f38-8a5e-d5227abd0d84
 author: nnamuhcs
 ms.author: daveba
-ms.openlocfilehash: ded26080ce59b48d7bbc3404684b3dbf926eceaa
-ms.sourcegitcommit: 083ff9bed4867604dfe1cb42914550da05093d25
+ms.openlocfilehash: d8051431f55a7a3e05f0a1917a003df044533571
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75947464"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80311255"
 ---
 # <a name="manage-office-365-in-windows-server-essentials"></a>Windows Server Essentials での Office 365 の管理
 
@@ -35,7 +35,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 -   [Office 365 統合のトラブルシューティング](Manage-Office-365-in-Windows-Server-Essentials.md#BKMK_Troubleshoot)  
   
-##  <a name="BKMK_IntegrationOverview"></a>Office 365 をサーバーと統合する必要があるのはなぜですか。  
+##  <a name="why-should-i-integrate-office-365-with-my-server"></a><a name="BKMK_IntegrationOverview"></a>Office 365 をサーバーと統合する必要があるのはなぜですか。  
  Office 365 を Windows Server Essentials サーバーと統合するには、さまざまな理由があります。 社内の一部のリソースを管理していても、他のサービスに Office 365 を使用している場合は、2か所ではなく、オンプレミスのリソースと共に、Office 365 のサービスとリソースをダッシュボードから管理することができます。  
   
 - ユーザーアカウントと共に Office 365 へのアクセス権をユーザーに与えるオンラインアカウントを管理します。  
@@ -77,7 +77,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
   -   My Server 2012 R2 アプリを使用して、ノート pc、モバイルデバイス、または Windows phone から SharePoint Online ライブラリ内のドキュメントを操作します。 詳細については、「 [My Server アプリを使用する](../use/Use-the-My-Server-App-to-Connect-to-Windows-Server-Essentials.md)」を参照してください。 この機能は、Windows Server Essentials でのみ使用できます。  
   
-##  <a name="BKMK_Configure"></a>Office 365 統合のセットアップ  
+##  <a name="set-up-office-365-integration"></a><a name="BKMK_Configure"></a>Office 365 統合のセットアップ  
  サーバーのインストールが完了したら、いつでもサーバーを Office 365 と統合できます。 Office 365 サブスクリプションをお持ちでない場合は、購入するか、無料試用版サブスクリプションにサインアップすることができます。  
   
  次のタスクを行います。  
@@ -88,7 +88,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 -   [手順 3: 組織のインターネットドメイン名を Office 365 にリンクする (省略可能)](#BKMK_StepThree)  
   
-###  <a name="BKMK_StepOne_VERIFY"></a>手順 1: Office 365 の統合要件を確認する  
+###  <a name="step-1-verify-office-365-integration-requirements"></a><a name="BKMK_StepOne_VERIFY"></a>手順 1: Office 365 の統合要件を確認する  
  開始する前に、サーバーが次の要件を満たしてされていることを確認します。  
   
 -   サーバーには、windows server essentials、Windows Server Essentials、windows server 2012 R2 Standard、windows server 2012 R2 Datacenter オペレーティングシステム (Windows server Essentials Experience 役割がインストールされている) のいずれかのオペレーティングシステムが搭載されています。  
@@ -104,7 +104,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
 > [!NOTE]
 >  Office 365 を事前にサブスクライブする必要はありません。 Office 365 統合中にサブスクリプションを購入するか、無料試用版にサインアップすることができます。 Office 365 のプランと価格については、「 [office 365 plan for 企業](https://office.microsoft.com/compare-office-365-for-business-plans-FX102918419.aspx?CR_CC=200061904&WT.srch=1&WT.mc_ID=PS_bing_O365Comm_subscribe-to-office-365_Text)」を参照してください。  
   
-###  <a name="BKMK_StepTwo"></a>手順 2: サーバーを Microsoft Office 365 と統合する  
+###  <a name="step-2-integrate-the-server-with-microsoft-office-365"></a><a name="BKMK_StepTwo"></a>手順 2: サーバーを Microsoft Office 365 と統合する  
  Windows Server Essentials サーバーと Office 365 を統合するには、ドメインコントローラーで次の手順を実行します。  
   
 > [!NOTE]
@@ -136,7 +136,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 -   Windows Server Essentials サーバーの **[ストレージ]** ページには、sharepoint Online ライブラリを管理したり、チームサイトのアクセス許可を変更したりするための **[sharepoint ライブラリ]** タブがあります。 Office 365 のすべてのビジネスプランには、これらの基本的な SharePoint Online 機能が含まれています。  
   
-###  <a name="BKMK_StepThree"></a>手順 3: 組織のインターネットドメイン名を Office 365 にリンクする (省略可能)  
+###  <a name="step-3-link-your-organizations-internet-domain-name-to-office-365-optional"></a><a name="BKMK_StepThree"></a>手順 3: 組織のインターネットドメイン名を Office 365 にリンクする (省略可能)  
  組織宛ての電子メールと SharePoint Online リソースの Url で独自のインターネットドメインを使用する場合は、カスタムドメインを Office 365 サブスクリプションにリンクすることができます。 Windows Server Essentials サーバーを Office 365 と統合する場合は、ダッシュボードからこの操作を行うことができます。  
   
  これは、オンラインアカウントを一括作成するときにドメインを使用できるように、ユーザーのオンラインアカウントを作成する前に実行するのが最も簡単です。  
@@ -172,24 +172,24 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
     > [!NOTE]
     >  ウィザードを使用して新しいドメイン名を登録するには、ウィザードとのシームレスな統合を提供するために Microsoft と提携しているドメイン名サービス プロバイダーのいずれかを使用する必要があります。 ドメイン名レジストラ－を見つけるには、「 [ドメイン名の購入方法](https://office.microsoft.com/office365-suite-help/how-to-buy-a-domain-name-HA102819883.aspx?CTT=5&origin=HA102818660)」を参照してください。  
   
-3.  ドメイン名がサーバーで管理されていないことがウィザードによって検出された場合は、構成を完了するために必要な DNS レコードを手動で構成する必要があります。 手順については、後述の「 [Office 365 統合の DNS レコードを手動で構成する方法](#BKMK_ManuallyConfigureDNS)」を参照してください。  
+3.  ドメイン名がサーバーで管理されていないことがウィザードによって検出された場合は、構成を完了するために必要な DNS レコードを手動で構成する必要があります。 手順については、このトピックで後述する「[Office 365 統合の DNS レコードを手動で構成する方法](#BKMK_ManuallyConfigureDNS)」を参照してください。  
   
 4.  ドメインが Office 365 で使用されていることを確認します。  
   
      ウィザードが完了した後、ドメイン名レジストラーによって DNS レコードが検証されるまで、少し待機します。 これは自動的に行われます。何もする必要はありません。 しかし、通常は1時間ほどかかります。 ドメインの検証が完了すると、 **Office 365**ページに組織のドメインが一覧表示されます。  
   
-####  <a name="BKMK_ManuallyConfigureDNS"></a>Office 365 統合の DNS レコードを手動で構成する方法  
+####  <a name="how-to-manually-configure-dns-records-for-office-365-integration"></a><a name="BKMK_ManuallyConfigureDNS"></a>Office 365 統合の DNS レコードを手動で構成する方法  
  ドメイン名がサーバーによって管理されていないことを [ドメインを Office 365 にリンクする] ウィザードが検出した場合に、構成を完了するには、必要なドメイン ネーム サーバー (DNS) レコードを手動で構成する必要があります。 この場合、 **% username% \ NewDNSRecords_ (n) .txt**で構成する必要がある DNS レコードの一覧があります。 *(n)* はランダムな数値です。  
   
  次の表は、追加する必要がある DNS レコードを説明します。 入力方法は、ドメイン名レジストラーによって異なります。 不明な点がある場合は、ドメイン名のレジストラーにお問い合わせください。  
   
 ### <a name="required-dns-records-for-linking-a-custom-internet-domain-name-to-office-365"></a>カスタム インターネット ドメイン名を Office 365 にリンクするために必要な DNS レコード  
   
-|サービス|必要な DNS レコード|目的|  
+|Service|必要な DNS レコード|目的|  
 |-------------|--------------------------|-------------|  
 |(複数のサービス)|MX| Office 365 では、このレコードを使用して、特定のドメイン名を所有していることを確認します。 この MX レコードは、電子メール メッセージのルーティングには影響しません。|  
 |Exchange Online|MX|電子メール メッセージのルーティングを実現します。 **重要:** 電子メールを移行する場合は、新しい MX レコードにゼロ (**0**) の設定を割り当てないでください。 レコードの値が現在の MX レコードに割り当てられている値より大きいことを確認してください。 電子メールの移行が完了し、電子メールサーバーを Office 365 に変更する準備ができたら、ドメイン名レジストラーに新しい MX レコードの優先順位の値をリセットさせます。|  
-|Exchange Online|エイリアス (CNAME)|ユーザーが Exchange Online と Outlook デスクトップ クライアントまたはモバイル電子メール クライアントとの接続を容易にセットアップできるように支援するための自動検出レコード。 **注:** 組織独自のドメイン名 (https://outlook.com/owa/office365.com) ではなく http://mail.contoso.com) など、Outlook Web アクセスにアクセスする場合は、次のようにエイリアス (CName) レコードを構成できます (例: **Type = cname、TTL = 01:00:00、HostName = mail、Address = mail. office365 .com**|  
+|Exchange Online|エイリアス (CNAME)|ユーザーが Exchange Online と Outlook デスクトップ クライアントまたはモバイル電子メール クライアントとの接続を容易にセットアップできるように支援するための自動検出レコード。 **注:** 組織独自のドメイン名 (https://outlook.com/owa/office365.com)ではなく http://mail.contoso.com) など、Outlook Web アクセスにアクセスする場合は、次のようにエイリアス (CName) レコードを構成できます (例: **Type = cname、TTL = 01:00:00、HostName = mail、Address = mail. office365 .com**|  
 |Exchange Online|TXT|Office 365 電子メールサーバーによって使用されるドメイン outlook.com が、ドメインの代わりに電子メールを送信する権限を持っていることを指定します。 このレコードを作成すれば、送信電子メールがスパムとしてフラグ付けされるのを容易に防ぐことができます。|  
 |Lync Online|SRV|Windows Live や Yahoo! などのその他のインスタント メッセージング サービスでフェデレーションを有効にするのに役立ちます。|  
 |Lync Online|SRV|ユーザーが Lync デスクトップ クライアントと Microsoft Lync Online の間の接続を簡単にセットアップできるように支援するための自動検出レコード。|  
@@ -197,7 +197,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
 > [!IMPORTANT]
 >  ドメインの確認が完了したら、Office 365 ポータルから DNS レコードを追加したり、その他の変更を加えたりしないでください。  
   
-###  <a name="BKMK_StepFour_ACCOUNTS"></a> 次の手順  
+###  <a name="next-step"></a><a name="BKMK_StepFour_ACCOUNTS"></a>次のステップ  
   
 -   ユーザー用の Microsoft Online Services アカウントを作成します。  
   
@@ -206,7 +206,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
 > [!NOTE]
 >  Windows Server Essentials のダッシュボードでは、Microsoft Online Services アカウントは Office 365 アカウントと呼ばれます。 アカウントは同じで、用語だけが変更されています。  
   
-##  <a name="BKMK_ManageIntegration"></a>Office 365 統合の管理  
+##  <a name="manage-office-365-integration"></a><a name="BKMK_ManageIntegration"></a>Office 365 統合の管理  
  サーバーを Office 365 と統合すると、ダッシュボードの **[office 365]** ページに office 365 サブスクリプションに関する情報が表示され、これらのタスクが使用できるようになります。  
   
 -   [Office 365 サブスクリプションを管理し](#BKMK_ManageO365)ますか?サブスクリプションの管理に使用する管理者アカウントを変更します。 Office 365 管理ダッシュボードを開いて、サブスクリプションを管理します。  
@@ -215,7 +215,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 -   [Office 365 統合を無効に](#BKMK_Disable)しますか?Office 365 サービス、サブスクリプション、およびオンラインアカウントをダッシュボードから管理しない場合は、Office 365 統合を無効にすることができます。 これらのサービスは、Office 365 ポータルで引き続き利用できます。  
   
-###  <a name="BKMK_ManageO365"></a>Office 365 サブスクリプションを管理する  
+###  <a name="manage-your-office-365-subscription"></a><a name="BKMK_ManageO365"></a>Office 365 サブスクリプションを管理する  
  サーバーでの作業中に Office 365 サブスクリプションに変更を加える必要がある場合は、ダッシュボードの **[office 365]** ページから office 365 のサブスクリプションを開くことができます。 また、サーバーが Office 365 サービスに変更を加えるときに使用する管理者アカウントを変更することもできます。  
   
 ##### <a name="to-open-your-subscription-on-the-office-365-admin-dashboard"></a>Office 365 の管理ダッシュボードでサブスクリプションを開くには  
@@ -238,7 +238,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 4.  **[閉じる]** をクリックします。 ダッシュボードが再起動します。  
   
-###  <a name="BKMK_Disable"></a>Office 365 統合を無効にする  
+###  <a name="disable-office-365-integration"></a><a name="BKMK_Disable"></a>Office 365 統合を無効にする  
  Office 365 サービスとオンラインアカウントをダッシュボードから管理しない場合は、Office 365 の統合を無効にすることができます。 Office 365 サブスクリプションはアクティブなままで、ダッシュボードから行った構成の変更は引き続き有効です。 たとえば、Office 365 サブスクリプションにリンクしたドメイン名に対応する電子メールを受信します。 すべての電子メールが失われることはなく、モバイルデバイス用に設定したコントロールは引き続き Exchange Online で使用されます。  
   
  今後は、office 365 のサブスクリプション、サービス、およびリソースを Office 365 で管理します。ユーザーは、Office 365 でオンラインアカウントのパスワードを管理する必要があります。 パスワード同期は行われなくなり、ユーザーアカウントを無効にしたり削除したりしても、ユーザーのオンラインアカウントに影響はありません。  
@@ -256,10 +256,10 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
 > [!NOTE]
 >  Office 365 統合を再び有効にするには、ダッシュボードの**ホーム**ページの **[サービス]** タブにある **[office 365 との統合]** タスクを使用します。 手順については、このトピックで前述した「 [手順 2:Windows Server Essentials サーバーと Microsoft Office 365 を統合する](#BKMK_StepTwo)」を参照してください。  
   
-##  <a name="BKMK_Troubleshoot"></a>Office 365 統合のトラブルシューティング  
+##  <a name="troubleshoot-office-365-integration"></a><a name="BKMK_Troubleshoot"></a>Office 365 統合のトラブルシューティング  
  このセクションでは、Windows Server Essentials の Office 365 統合機能を使用するときに発生する可能性のある一般的な問題のトラブルシューティングに役立つ情報を提供します。  
   
-###  <a name="BKMK_AcctsNotCreated"></a>一部の Microsoft Online Services アカウントが作成されませんでした  
+###  <a name="some-microsoft-online-services-accounts-were-not-created"></a><a name="BKMK_AcctsNotCreated"></a>一部の Microsoft Online Services アカウントが作成されませんでした  
  **説明**  
   
  ダッシュボードから1つ以上の Microsoft Online Services アカウントを作成できませんでした。  
@@ -272,7 +272,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 3.  この問題が解決しない場合は、サーバーを再起動して、オンライン アカウントの作成を再度試みます。  
   
-###  <a name="BKMK_ProblemUninstalling"></a>Office 365 統合のアンインストールで問題が発生しました  
+###  <a name="there-was-a-problem-uninstalling-office-365-integration"></a><a name="BKMK_ProblemUninstalling"></a>Office 365 統合のアンインストールで問題が発生しました  
  **説明**  
   
  Office 365 統合を無効にしようとしたときに不明なエラーが発生しました。  
@@ -283,7 +283,7 @@ Windows Server Essentials サーバーと Microsoft Office 365 を統合する�
   
 2.  エラーが再び発生する場合は、サーバーを再起動し、もう一度試してください。  
   
-## <a name="see-also"></a>「  
+## <a name="see-also"></a>参照  
   
 -   [Windows Server Essentials のサービス統合の概要-パート1](https://blogs.technet.com/b/sbs/archive/2013/11/04/services-integration-overview-for-windows-server-2012-r2-essentials-part-1.aspx)  
   

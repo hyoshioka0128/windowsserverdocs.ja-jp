@@ -3,7 +3,7 @@ title: Windows Server Essentials Log Collector のインストール
 description: Windows Server Essentials の使用方法について説明します。
 ms.custom: na
 ms.date: 10/03/2016
-ms.prod: windows-server-2016-essentials
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.tgt_pltfrm: na
@@ -12,12 +12,12 @@ ms.assetid: d271c54f-1ffa-464e-afa5-27b8df61854e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a1b1a5492a6e5dbc48899b3918314676884e0454
-ms.sourcegitcommit: 0a0a45bec6583162ba5e4b17979f0b5a0c179ab2
+ms.openlocfilehash: 75faeb3fe1c9ced32a37f2ac96ffedbadb2db76f
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79322094"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80318683"
 ---
 # <a name="install-the-windows-server-essentials-log-collector"></a>Windows Server Essentials Log Collector のインストール
 
@@ -25,7 +25,7 @@ ms.locfileid: "79322094"
 
 Windows Server Essentials Log Collector のインストールウィザードでは、Log Collector がスタートパッドアドインとしてインストールされます。 ネットワーク コンピューターまたはサーバー、またはその両方に Log Collector をインストールして使用できます。 インストールが完了したら、Log Collector がダッシュボードに表示されます。  
   
-###  <a name="BKMK_ToInstall"></a>Log Collector をインストールするには  
+###  <a name="to-install-the-log-collector"></a><a name="BKMK_ToInstall"></a>Log Collector をインストールするには  
   
 1.  Log Collector インストール パッケージをネットワーク上の任意のサーバーまたはコンピューターにダウンロードします。  
   
@@ -42,7 +42,7 @@ Windows Server Essentials Log Collector のインストールウィザードで�
   
 6.  **[アドインのインストール]** をクリックします。  
   
-###  <a name="BKMK_Reinstall"></a>Log Collector を再インストールしています  
+###  <a name="reinstalling-the-log-collector"></a><a name="BKMK_Reinstall"></a>Log Collector を再インストールしています  
  Log Collector を再インストールする必要がある場合は、サーバーおよびネットワーク コンピューター上の Log Collector をアンインストールして、再インストールする必要があります。 ダッシュボードからサーバー上の Log Collector をアンインストールすると、すべてのネットワーク コンピューターで自動的に Log Collector がアンインストールされます。  
   
 ##### <a name="to-uninstall-and-reinstall-the-log-collector"></a>Log Collector をアンインストールおよび再インストールするには  

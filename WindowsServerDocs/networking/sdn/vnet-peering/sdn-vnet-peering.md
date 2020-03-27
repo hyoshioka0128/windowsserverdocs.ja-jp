@@ -6,19 +6,19 @@ ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
-ms.author: pashort
-author: shortpatti
+ms.author: lizross
+author: eross-msft
 ms.date: 08/08/2018
-ms.openlocfilehash: ccdcbb953939345ef5e9a45dff87fc7af62eb7bf
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.openlocfilehash: 01c768aefa685b688c2ed3f777c44a4665b5e4a7
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71355489"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309679"
 ---
 # <a name="virtual-network-peering"></a>仮想ネットワーク ピアリング
 
->適用対象:Windows Server
+>適用対象: Windows Server
 
 仮想ネットワークピアリングを使用すると、2つの仮想ネットワークをシームレスに接続できます。 ピアリングされた接続のために、仮想ネットワークは1つとして表示されます。 
 
@@ -83,14 +83,14 @@ ms.locfileid: "71355489"
 
 ピアリング接続の状態は、次のいずれかの状態になる可能性があります。
 
--   **開始**最初の仮想ネットワークから2番目の仮想ネットワークへのピアリングを作成するときに表示されます。
+-   **開始済み:** 最初の仮想ネットワークから2番目の仮想ネットワークへのピアリングを作成するときに表示されます。
 
--   **中**2番目の仮想ネットワークから1つ目の仮想ネットワークへのピアリングを作成した後に表示されます。 最初の仮想ネットワークのピアリング状態が、開始から接続済みに変わります。 仮想ネットワークピアリングを正常に確立するには、両方の仮想ネットワークピアの状態が Connected である必要があります。
+-   **接続済み:** 2番目の仮想ネットワークから1つ目の仮想ネットワークへのピアリングを作成した後に表示されます。 最初の仮想ネットワークのピアリング状態が、開始から接続済みに変わります。 仮想ネットワークピアリングを正常に確立するには、両方の仮想ネットワークピアの状態が Connected である必要があります。
 
--   **切り離し**1つの仮想ネットワークが別の仮想ネットワークから切断された場合に表示されます。
+-   **切断:** 1つの仮想ネットワークが別の仮想ネットワークから切断された場合に表示されます。
 
 [状態のインフォグラフィック]
 
-## <a name="next-steps"></a>次の手順
-[仮想ネットワークピアリングを構成し](sdn-configure-vnet-peering.md)ます。この手順では、Windows PowerShell を使用して HNV プロバイダーの論理ネットワークを検索し、それぞれが1つのサブネットを持つ2つの仮想ネットワークを作成します。 2つの仮想ネットワーク間のピアリングを構成することもできます。
+## <a name="next-steps"></a>次のステップ:
+[仮想ネットワークピアリングを構成](sdn-configure-vnet-peering.md)する: この手順では、Windows PowerShell を使用して hnv プロバイダーの論理ネットワークを検索し、それぞれが1つのサブネットを持つ2つの仮想ネットワークを作成します。 2つの仮想ネットワーク間のピアリングを構成することもできます。
 

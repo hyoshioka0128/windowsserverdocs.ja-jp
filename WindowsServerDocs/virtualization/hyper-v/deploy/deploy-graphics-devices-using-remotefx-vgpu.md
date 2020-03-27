@@ -1,19 +1,19 @@
 ---
 title: RemoteFX vGPU を使用してグラフィックスデバイスをデプロイする
 description: Windows Server で RemoteFX vGPU をデプロイして構成する方法について説明します。
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: rickman
 author: rick-man
 ms.author: rickman
 manager: stevelee
 ms.topic: article
 ms.date: 08/21/2019
-ms.openlocfilehash: 7111899557279d825191948e737d83d7467ce786
-ms.sourcegitcommit: 81198fbf9e46830b7f77dcd345b02abb71ae0ac2
+ms.openlocfilehash: 4ae185232ec39d92997929f8f916ff49caf26dcf
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72923914"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80310511"
 ---
 # <a name="deploy-graphics-devices-using-remotefx-vgpu"></a>RemoteFX vGPU を使用してグラフィックスデバイスをデプロイする
 
@@ -25,7 +25,7 @@ RemoteFX の vGPU 機能を使用すると、複数の仮想マシンが物理 G
 
 ホストシステムの要件:
 
-- WIN ENT LTSB 2016 Estonian 64 Bits
+- Windows Server 2016
 - WDDM 1.2 互換のドライバーを使用した DirectX 11.0 互換の GPU
 - 第2レベルのアドレス変換 (SLAT) をサポートする CPU
 

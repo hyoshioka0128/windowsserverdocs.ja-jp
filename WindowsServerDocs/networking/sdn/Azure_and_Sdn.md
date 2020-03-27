@@ -10,18 +10,18 @@ ms.technology: networking-sdn
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 79e87013-7f27-4031-8383-288bcb291731
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: ea279a6131c06d5bb991edbbf22c1ba0d5ffc592
-ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.author: lizross
+author: eross-msft
+ms.openlocfilehash: 503048688679cab352ce246c07ccb9316f8216d8
+ms.sourcegitcommit: da7b9bce1eba369bcd156639276f6899714e279f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71406146"
+ms.lasthandoff: 03/26/2020
+ms.locfileid: "80309994"
 ---
 # <a name="microsoft-azure-and-software-defined-networking"></a>Microsoft Azure とソフトウェア定義ネットワーク
 
->適用対象:Windows Server (半期チャネル)、Windows Server 2016
+>適用対象: Windows Server (半期チャネル)、Windows Server 2016
 
 Microsoft Azure は、Microsoft のクラウドプラットフォームです。これは、コンピューティング、ストレージ、データ、ネットワーク、アプリといった統合サービスのコレクションであり、より迅速に移行し、より多くの作業を行い、コストを節約するのに役立ちます。  
   
